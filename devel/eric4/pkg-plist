@@ -1,656 +1,671 @@
-%%DOCSDIR%%/Help/source.qch
-%%DOCSDIR%%/LICENSE.GPL3
-%%DOCSDIR%%/README-MacOSX.txt
-%%DOCSDIR%%/README-PyXML.txt
-%%DOCSDIR%%/README-eric4-doc.txt
-%%DOCSDIR%%/README-i18n.txt
-%%DOCSDIR%%/README-passive-debugging.txt
-%%DOCSDIR%%/Source/eric4.DataViews.CodeMetrics.html
-%%DOCSDIR%%/Source/eric4.DataViews.CodeMetricsDialog.html
-%%DOCSDIR%%/Source/eric4.DataViews.PyCoverageDialog.html
-%%DOCSDIR%%/Source/eric4.DataViews.PyProfileDialog.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python.AsyncFile.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python.AsyncIO.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python.DCTestResult.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python.DebugBase.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python.DebugClient.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python.DebugClientBase.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python.DebugClientCapabilities.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python.DebugClientThreads.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python.DebugConfig.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python.DebugProtocol.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python.DebugThread.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python.FlexCompleter.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python.PyProfile.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python.eric4dbgstub.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python.getpass.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python3.AsyncFile.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python3.AsyncIO.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python3.DCTestResult.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python3.DebugBase.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python3.DebugClient.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python3.DebugClientBase.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python3.DebugClientCapabilities.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python3.DebugClientThreads.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python3.DebugConfig.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python3.DebugProtocol.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python3.DebugThread.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python3.FlexCompleter.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python3.PyProfile.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python3.eric4dbgstub.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Python3.getpass.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Ruby.AsyncFile.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Ruby.AsyncIO.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Ruby.Completer.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Ruby.Config.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Ruby.DebugClient.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Ruby.DebugClientBaseModule.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Ruby.DebugClientCapabilities.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Ruby.DebugProtocol.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Ruby.DebugQuit.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Ruby.Debuggee.html
-%%DOCSDIR%%/Source/eric4.DebugClients.Ruby.__init__.html
-%%DOCSDIR%%/Source/eric4.Debugger.BreakPointModel.html
-%%DOCSDIR%%/Source/eric4.Debugger.BreakPointViewer.html
-%%DOCSDIR%%/Source/eric4.Debugger.Config.html
-%%DOCSDIR%%/Source/eric4.Debugger.DebugClientCapabilities.html
-%%DOCSDIR%%/Source/eric4.Debugger.DebugProtocol.html
-%%DOCSDIR%%/Source/eric4.Debugger.DebugServer.html
-%%DOCSDIR%%/Source/eric4.Debugger.DebugUI.html
-%%DOCSDIR%%/Source/eric4.Debugger.DebugViewer.html
-%%DOCSDIR%%/Source/eric4.Debugger.DebuggerInterfaceNone.html
-%%DOCSDIR%%/Source/eric4.Debugger.DebuggerInterfacePython.html
-%%DOCSDIR%%/Source/eric4.Debugger.DebuggerInterfacePython3.html
-%%DOCSDIR%%/Source/eric4.Debugger.DebuggerInterfaceRuby.html
-%%DOCSDIR%%/Source/eric4.Debugger.EditBreakpointDialog.html
-%%DOCSDIR%%/Source/eric4.Debugger.EditWatchpointDialog.html
-%%DOCSDIR%%/Source/eric4.Debugger.ExceptionLogger.html
-%%DOCSDIR%%/Source/eric4.Debugger.ExceptionsFilterDialog.html
-%%DOCSDIR%%/Source/eric4.Debugger.StartDialog.html
-%%DOCSDIR%%/Source/eric4.Debugger.VariableDetailDialog.html
-%%DOCSDIR%%/Source/eric4.Debugger.VariablesFilterDialog.html
-%%DOCSDIR%%/Source/eric4.Debugger.VariablesViewer.html
-%%DOCSDIR%%/Source/eric4.Debugger.WatchPointModel.html
-%%DOCSDIR%%/Source/eric4.Debugger.WatchPointViewer.html
-%%DOCSDIR%%/Source/eric4.DocumentationTools.APIGenerator.html
-%%DOCSDIR%%/Source/eric4.DocumentationTools.Config.html
-%%DOCSDIR%%/Source/eric4.DocumentationTools.IndexGenerator.html
-%%DOCSDIR%%/Source/eric4.DocumentationTools.ModuleDocumentor.html
-%%DOCSDIR%%/Source/eric4.DocumentationTools.QtHelpGenerator.html
-%%DOCSDIR%%/Source/eric4.DocumentationTools.TemplatesListsStyle.html
-%%DOCSDIR%%/Source/eric4.DocumentationTools.TemplatesListsStyleCSS.html
-%%DOCSDIR%%/Source/eric4.DocumentationTools.__init__.html
-%%DOCSDIR%%/Source/eric4.E4Graphics.E4ArrowItem.html
-%%DOCSDIR%%/Source/eric4.E4Graphics.E4GraphicsView.html
-%%DOCSDIR%%/Source/eric4.E4Gui.E4Action.html
-%%DOCSDIR%%/Source/eric4.E4Gui.E4Completers.html
-%%DOCSDIR%%/Source/eric4.E4Gui.E4Led.html
-%%DOCSDIR%%/Source/eric4.E4Gui.E4LineEdit.html
-%%DOCSDIR%%/Source/eric4.E4Gui.E4ListView.html
-%%DOCSDIR%%/Source/eric4.E4Gui.E4ModelMenu.html
-%%DOCSDIR%%/Source/eric4.E4Gui.E4ModelToolBar.html
-%%DOCSDIR%%/Source/eric4.E4Gui.E4SideBar.html
-%%DOCSDIR%%/Source/eric4.E4Gui.E4SingleApplication.html
-%%DOCSDIR%%/Source/eric4.E4Gui.E4SqueezeLabels.html
-%%DOCSDIR%%/Source/eric4.E4Gui.E4TabWidget.html
-%%DOCSDIR%%/Source/eric4.E4Gui.E4TableView.html
-%%DOCSDIR%%/Source/eric4.E4Gui.E4ToolBarDialog.html
-%%DOCSDIR%%/Source/eric4.E4Gui.E4ToolBarManager.html
-%%DOCSDIR%%/Source/eric4.E4Gui.E4ToolBox.html
-%%DOCSDIR%%/Source/eric4.E4Gui.E4TreeSortFilterProxyModel.html
-%%DOCSDIR%%/Source/eric4.E4Gui.E4TreeView.html
-%%DOCSDIR%%/Source/eric4.E4Network.E4NetworkHeaderDetailsDialog.html
-%%DOCSDIR%%/Source/eric4.E4Network.E4NetworkMonitor.html
-%%DOCSDIR%%/Source/eric4.E4Network.E4NetworkProxyFactory.html
-%%DOCSDIR%%/Source/eric4.E4XML.Config.html
-%%DOCSDIR%%/Source/eric4.E4XML.DebuggerPropertiesHandler.html
-%%DOCSDIR%%/Source/eric4.E4XML.DebuggerPropertiesWriter.html
-%%DOCSDIR%%/Source/eric4.E4XML.HighlightingStylesHandler.html
-%%DOCSDIR%%/Source/eric4.E4XML.HighlightingStylesWriter.html
-%%DOCSDIR%%/Source/eric4.E4XML.MultiProjectHandler.html
-%%DOCSDIR%%/Source/eric4.E4XML.MultiProjectWriter.html
-%%DOCSDIR%%/Source/eric4.E4XML.PluginRepositoryHandler.html
-%%DOCSDIR%%/Source/eric4.E4XML.ProjectHandler.html
-%%DOCSDIR%%/Source/eric4.E4XML.ProjectWriter.html
-%%DOCSDIR%%/Source/eric4.E4XML.SessionHandler.html
-%%DOCSDIR%%/Source/eric4.E4XML.SessionWriter.html
-%%DOCSDIR%%/Source/eric4.E4XML.ShortcutsHandler.html
-%%DOCSDIR%%/Source/eric4.E4XML.ShortcutsWriter.html
-%%DOCSDIR%%/Source/eric4.E4XML.TasksHandler.html
-%%DOCSDIR%%/Source/eric4.E4XML.TasksWriter.html
-%%DOCSDIR%%/Source/eric4.E4XML.TemplatesHandler.html
-%%DOCSDIR%%/Source/eric4.E4XML.TemplatesWriter.html
-%%DOCSDIR%%/Source/eric4.E4XML.UserProjectHandler.html
-%%DOCSDIR%%/Source/eric4.E4XML.UserProjectWriter.html
-%%DOCSDIR%%/Source/eric4.E4XML.XMLEntityResolver.html
-%%DOCSDIR%%/Source/eric4.E4XML.XMLErrorHandler.html
-%%DOCSDIR%%/Source/eric4.E4XML.XMLHandlerBase.html
-%%DOCSDIR%%/Source/eric4.E4XML.XMLMessageDialog.html
-%%DOCSDIR%%/Source/eric4.E4XML.XMLUtilities.html
-%%DOCSDIR%%/Source/eric4.E4XML.XMLWriterBase.html
-%%DOCSDIR%%/Source/eric4.Globals.__init__.html
-%%DOCSDIR%%/Source/eric4.Graphics.ApplicationDiagram.html
-%%DOCSDIR%%/Source/eric4.Graphics.AssociationItem.html
-%%DOCSDIR%%/Source/eric4.Graphics.ClassItem.html
-%%DOCSDIR%%/Source/eric4.Graphics.GraphicsUtilities.html
-%%DOCSDIR%%/Source/eric4.Graphics.ImportsDiagram.html
-%%DOCSDIR%%/Source/eric4.Graphics.ModuleItem.html
-%%DOCSDIR%%/Source/eric4.Graphics.PackageDiagram.html
-%%DOCSDIR%%/Source/eric4.Graphics.PackageItem.html
-%%DOCSDIR%%/Source/eric4.Graphics.PixmapDiagram.html
-%%DOCSDIR%%/Source/eric4.Graphics.SvgDiagram.html
-%%DOCSDIR%%/Source/eric4.Graphics.UMLClassDiagram.html
-%%DOCSDIR%%/Source/eric4.Graphics.UMLDialog.html
-%%DOCSDIR%%/Source/eric4.Graphics.UMLGraphicsView.html
-%%DOCSDIR%%/Source/eric4.Graphics.UMLItem.html
-%%DOCSDIR%%/Source/eric4.Graphics.UMLSceneSizeDialog.html
-%%DOCSDIR%%/Source/eric4.Graphics.ZoomDialog.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.AdBlock.AdBlockAccessHandler.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.AdBlock.AdBlockBlockedNetworkReply.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.AdBlock.AdBlockDialog.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.AdBlock.AdBlockManager.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.AdBlock.AdBlockModel.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.AdBlock.AdBlockNetwork.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.AdBlock.AdBlockPage.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.AdBlock.AdBlockRule.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.AdBlock.AdBlockSubscription.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.Bookmarks.AddBookmarkDialog.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.Bookmarks.BookmarkNode.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.Bookmarks.BookmarksDialog.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.Bookmarks.BookmarksManager.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.Bookmarks.BookmarksMenu.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.Bookmarks.BookmarksModel.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.Bookmarks.BookmarksToolBar.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.Bookmarks.DefaultBookmarks.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.Bookmarks.XbelReader.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.Bookmarks.XbelWriter.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.CookieJar.CookieDetailsDialog.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.CookieJar.CookieExceptionsModel.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.CookieJar.CookieJar.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.CookieJar.CookieModel.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.CookieJar.CookiesConfigurationDialog.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.CookieJar.CookiesDialog.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.CookieJar.CookiesExceptionsDialog.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.DownloadDialog.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.HTMLResources.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.HelpBrowserWV.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.HelpClearPrivateDataDialog.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.HelpDocsInstaller.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.HelpIndexWidget.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.HelpLanguagesDialog.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.HelpSearchWidget.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.HelpTocWidget.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.HelpTopicDialog.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.HelpWebSearchWidget.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.HelpWindow.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.History.HistoryCompleter.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.History.HistoryDialog.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.History.HistoryFilterModel.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.History.HistoryManager.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.History.HistoryMenu.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.History.HistoryModel.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.History.HistoryTreeModel.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.JavaScriptResources.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.Network.AboutAccessHandler.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.Network.EmptyNetworkReply.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.Network.NetworkAccessManager.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.Network.NetworkAccessManagerProxy.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.Network.NetworkDiskCache.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.Network.NetworkProtocolUnknownErrorReply.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.Network.NetworkReply.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.Network.PyrcAccessHandler.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.Network.QtHelpAccessHandler.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.Network.SchemeAccessHandler.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.OpenSearch.OpenSearchDefaultEngines.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.OpenSearch.OpenSearchDialog.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.OpenSearch.OpenSearchEditDialog.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.OpenSearch.OpenSearchEngine.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.OpenSearch.OpenSearchEngineAction.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.OpenSearch.OpenSearchEngineModel.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.OpenSearch.OpenSearchManager.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.OpenSearch.OpenSearchReader.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.OpenSearch.OpenSearchWriter.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.Passwords.PasswordManager.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.Passwords.PasswordModel.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.Passwords.PasswordsDialog.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.QtHelpDocumentationDialog.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.QtHelpFiltersDialog.html
-%%DOCSDIR%%/Source/eric4.Helpviewer.SearchWidget.html
-%%DOCSDIR%%/Source/eric4.IconEditor.IconEditorGrid.html
-%%DOCSDIR%%/Source/eric4.IconEditor.IconEditorPalette.html
-%%DOCSDIR%%/Source/eric4.IconEditor.IconEditorWindow.html
-%%DOCSDIR%%/Source/eric4.IconEditor.IconSizeDialog.html
-%%DOCSDIR%%/Source/eric4.IconEditor.IconZoomDialog.html
-%%DOCSDIR%%/Source/eric4.IconEditor.cursors.cursors_rc.html
-%%DOCSDIR%%/Source/eric4.KdeQt.KQApplication.html
-%%DOCSDIR%%/Source/eric4.KdeQt.KQColorDialog.html
-%%DOCSDIR%%/Source/eric4.KdeQt.KQFileDialog.html
-%%DOCSDIR%%/Source/eric4.KdeQt.KQFontDialog.html
-%%DOCSDIR%%/Source/eric4.KdeQt.KQInputDialog.html
-%%DOCSDIR%%/Source/eric4.KdeQt.KQMainWindow.html
-%%DOCSDIR%%/Source/eric4.KdeQt.KQMessageBox.html
-%%DOCSDIR%%/Source/eric4.KdeQt.KQPrintDialog.html
-%%DOCSDIR%%/Source/eric4.KdeQt.KQPrinter.html
-%%DOCSDIR%%/Source/eric4.KdeQt.KQProgressDialog.html
-%%DOCSDIR%%/Source/eric4.KdeQt.__init__.html
-%%DOCSDIR%%/Source/eric4.MultiProject.AddProjectDialog.html
-%%DOCSDIR%%/Source/eric4.MultiProject.MultiProject.html
-%%DOCSDIR%%/Source/eric4.MultiProject.MultiProjectBrowser.html
-%%DOCSDIR%%/Source/eric4.MultiProject.PropertiesDialog.html
-%%DOCSDIR%%/Source/eric4.PluginManager.PluginDetailsDialog.html
-%%DOCSDIR%%/Source/eric4.PluginManager.PluginExceptions.html
-%%DOCSDIR%%/Source/eric4.PluginManager.PluginInfoDialog.html
-%%DOCSDIR%%/Source/eric4.PluginManager.PluginInstallDialog.html
-%%DOCSDIR%%/Source/eric4.PluginManager.PluginManager.html
-%%DOCSDIR%%/Source/eric4.PluginManager.PluginRepositoryDialog.html
-%%DOCSDIR%%/Source/eric4.PluginManager.PluginUninstallDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.AboutPlugin.AboutDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.CheckerPlugins.SyntaxChecker.SyntaxCheckerDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.CheckerPlugins.Tabnanny.Tabnanny.html
-%%DOCSDIR%%/Source/eric4.Plugins.CheckerPlugins.Tabnanny.TabnannyDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.DocumentationPlugins.Ericapi.EricapiConfigDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.DocumentationPlugins.Ericapi.EricapiExecDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.DocumentationPlugins.Ericdoc.EricdocConfigDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.DocumentationPlugins.Ericdoc.EricdocExecDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.PluginAbout.html
-%%DOCSDIR%%/Source/eric4.Plugins.PluginEricapi.html
-%%DOCSDIR%%/Source/eric4.Plugins.PluginEricdoc.html
-%%DOCSDIR%%/Source/eric4.Plugins.PluginSyntaxChecker.html
-%%DOCSDIR%%/Source/eric4.Plugins.PluginTabnanny.html
-%%DOCSDIR%%/Source/eric4.Plugins.PluginVcsPySvn.html
-%%DOCSDIR%%/Source/eric4.Plugins.PluginVcsSubversion.html
-%%DOCSDIR%%/Source/eric4.Plugins.PluginVmListspace.html
-%%DOCSDIR%%/Source/eric4.Plugins.PluginVmMdiArea.html
-%%DOCSDIR%%/Source/eric4.Plugins.PluginVmTabview.html
-%%DOCSDIR%%/Source/eric4.Plugins.PluginVmWorkspace.html
-%%DOCSDIR%%/Source/eric4.Plugins.PluginWizardPyRegExp.html
-%%DOCSDIR%%/Source/eric4.Plugins.PluginWizardQColorDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.PluginWizardQFileDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.PluginWizardQFontDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.PluginWizardQInputDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.PluginWizardQMessageBox.html
-%%DOCSDIR%%/Source/eric4.Plugins.PluginWizardQRegExp.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.Config.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.ConfigurationPage.SubversionPage.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.ProjectBrowserHelper.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.ProjectHelper.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnBlameDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnChangeListsDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnCommandDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnCommitDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnConst.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnCopyDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnDialogMixin.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnDiffDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnInfoDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnLogBrowserDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnLogDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnLoginDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnMergeDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnNewProjectOptionsDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnOptionsDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnPropDelDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnPropListDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnPropSetDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnRelocateDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnRepoBrowserDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnRevisionSelectionDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnStatusDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnStatusMonitorThread.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnSwitchDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnTagBranchListDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnTagDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnUrlSelectionDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnUtilities.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.subversion.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.Config.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.ConfigurationPage.SubversionPage.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.ProjectBrowserHelper.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.ProjectHelper.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnBlameDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnChangeListsDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnCommandDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnCommitDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnCopyDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnDiffDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnLogBrowserDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnLogDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnMergeDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnNewProjectOptionsDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnOptionsDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnPropListDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnPropSetDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnRelocateDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnRepoBrowserDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnRevisionSelectionDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnStatusDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnStatusMonitorThread.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnSwitchDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnTagBranchListDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnTagDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnUrlSelectionDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnUtilities.html
-%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.subversion.html
-%%DOCSDIR%%/Source/eric4.Plugins.ViewManagerPlugins.Listspace.Listspace.html
-%%DOCSDIR%%/Source/eric4.Plugins.ViewManagerPlugins.MdiArea.MdiArea.html
-%%DOCSDIR%%/Source/eric4.Plugins.ViewManagerPlugins.Tabview.Tabview.html
-%%DOCSDIR%%/Source/eric4.Plugins.ViewManagerPlugins.Workspace.Workspace.html
-%%DOCSDIR%%/Source/eric4.Plugins.WizardPlugins.ColorDialogWizard.ColorDialogWizardDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.WizardPlugins.FileDialogWizard.FileDialogWizardDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.WizardPlugins.FontDialogWizard.FontDialogWizardDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.WizardPlugins.InputDialogWizard.InputDialogWizardDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.WizardPlugins.MessageBoxWizard.MessageBoxWizardDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.WizardPlugins.PyRegExpWizard.PyRegExpWizardCharactersDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.WizardPlugins.PyRegExpWizard.PyRegExpWizardDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.WizardPlugins.PyRegExpWizard.PyRegExpWizardRepeatDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.WizardPlugins.QRegExpWizard.QRegExpWizardCharactersDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.WizardPlugins.QRegExpWizard.QRegExpWizardDialog.html
-%%DOCSDIR%%/Source/eric4.Plugins.WizardPlugins.QRegExpWizard.QRegExpWizardRepeatDialog.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationDialog.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.ApplicationPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.ConfigurationPageBase.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.CorbaPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.DebuggerGeneralPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.DebuggerPython3Page.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.DebuggerPythonPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.DebuggerRubyPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorAPIsPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorAutocompletionPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorAutocompletionQScintillaPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorCalltipsPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorCalltipsQScintillaPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorExportersPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorFilePage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorGeneralPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorHighlightersPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorHighlightingStylesPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorKeywordsPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorPropertiesPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorSearchPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorSpellCheckingPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorStylesPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorTypingPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EmailPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.GraphicsPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.HelpAppearancePage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.HelpDocumentationPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.HelpViewersPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.HelpWebBrowserPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.IconsPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.IconsPreviewDialog.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.InterfacePage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.MultiProjectPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.NetworkPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.PluginManagerPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.PrinterPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.ProjectBrowserPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.ProjectPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.PythonPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.QtPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.ShellPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.TasksPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.TemplatesPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.TrayStarterPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.VcsPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.ViewmanagerPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.PreferencesLexer.html
-%%DOCSDIR%%/Source/eric4.Preferences.ProgramsDialog.html
-%%DOCSDIR%%/Source/eric4.Preferences.ShortcutDialog.html
-%%DOCSDIR%%/Source/eric4.Preferences.Shortcuts.html
-%%DOCSDIR%%/Source/eric4.Preferences.ShortcutsDialog.html
-%%DOCSDIR%%/Source/eric4.Preferences.ToolConfigurationDialog.html
-%%DOCSDIR%%/Source/eric4.Preferences.ToolGroupConfigurationDialog.html
-%%DOCSDIR%%/Source/eric4.Preferences.ViewProfileDialog.html
-%%DOCSDIR%%/Source/eric4.Preferences.__init__.html
-%%DOCSDIR%%/Source/eric4.Project.AddDirectoryDialog.html
-%%DOCSDIR%%/Source/eric4.Project.AddFileDialog.html
-%%DOCSDIR%%/Source/eric4.Project.AddFoundFilesDialog.html
-%%DOCSDIR%%/Source/eric4.Project.AddLanguageDialog.html
-%%DOCSDIR%%/Source/eric4.Project.CreateDialogCodeDialog.html
-%%DOCSDIR%%/Source/eric4.Project.DebuggerPropertiesDialog.html
-%%DOCSDIR%%/Source/eric4.Project.FiletypeAssociationDialog.html
-%%DOCSDIR%%/Source/eric4.Project.LexerAssociationDialog.html
-%%DOCSDIR%%/Source/eric4.Project.NewDialogClassDialog.html
-%%DOCSDIR%%/Source/eric4.Project.NewPythonPackageDialog.html
-%%DOCSDIR%%/Source/eric4.Project.Project.html
-%%DOCSDIR%%/Source/eric4.Project.ProjectBaseBrowser.html
-%%DOCSDIR%%/Source/eric4.Project.ProjectBrowser.html
-%%DOCSDIR%%/Source/eric4.Project.ProjectBrowserFlags.html
-%%DOCSDIR%%/Source/eric4.Project.ProjectBrowserModel.html
-%%DOCSDIR%%/Source/eric4.Project.ProjectBrowserSortFilterProxyModel.html
-%%DOCSDIR%%/Source/eric4.Project.ProjectFormsBrowser.html
-%%DOCSDIR%%/Source/eric4.Project.ProjectInterfacesBrowser.html
-%%DOCSDIR%%/Source/eric4.Project.ProjectOthersBrowser.html
-%%DOCSDIR%%/Source/eric4.Project.ProjectResourcesBrowser.html
-%%DOCSDIR%%/Source/eric4.Project.ProjectSourcesBrowser.html
-%%DOCSDIR%%/Source/eric4.Project.ProjectTranslationsBrowser.html
-%%DOCSDIR%%/Source/eric4.Project.PropertiesDialog.html
-%%DOCSDIR%%/Source/eric4.Project.SpellingPropertiesDialog.html
-%%DOCSDIR%%/Source/eric4.Project.TranslationPropertiesDialog.html
-%%DOCSDIR%%/Source/eric4.Project.UserPropertiesDialog.html
-%%DOCSDIR%%/Source/eric4.PyUnit.UnittestDialog.html
-%%DOCSDIR%%/Source/eric4.QScintilla.APIsManager.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Editor.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Exporters.ExporterBase.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Exporters.ExporterHTML.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Exporters.ExporterPDF.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Exporters.ExporterRTF.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Exporters.ExporterTEX.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Exporters.__init__.html
-%%DOCSDIR%%/Source/eric4.QScintilla.GotoDialog.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.Lexer.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerBash.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerBatch.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerCMake.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerCPP.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerCSS.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerCSharp.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerContainer.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerD.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerDiff.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerFortran.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerFortran77.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerHTML.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerIDL.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerJava.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerJavaScript.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerLua.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerMakefile.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerMatlab.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerOctave.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerPOV.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerPascal.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerPerl.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerPostScript.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerProperties.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerPygments.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerPython.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerRuby.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerSQL.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerTCL.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerTeX.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerVHDL.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerXML.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerYAML.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.__init__.html
-%%DOCSDIR%%/Source/eric4.QScintilla.MiniEditor.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Printer.html
-%%DOCSDIR%%/Source/eric4.QScintilla.QsciScintillaCompat.html
-%%DOCSDIR%%/Source/eric4.QScintilla.SearchReplaceWidget.html
-%%DOCSDIR%%/Source/eric4.QScintilla.Shell.html
-%%DOCSDIR%%/Source/eric4.QScintilla.ShellHistoryDialog.html
-%%DOCSDIR%%/Source/eric4.QScintilla.SpellChecker.html
-%%DOCSDIR%%/Source/eric4.QScintilla.SpellCheckingDialog.html
-%%DOCSDIR%%/Source/eric4.QScintilla.TypingCompleters.CompleterBase.html
-%%DOCSDIR%%/Source/eric4.QScintilla.TypingCompleters.CompleterPython.html
-%%DOCSDIR%%/Source/eric4.QScintilla.TypingCompleters.CompleterRuby.html
-%%DOCSDIR%%/Source/eric4.QScintilla.TypingCompleters.__init__.html
-%%DOCSDIR%%/Source/eric4.QScintilla.ZoomDialog.html
-%%DOCSDIR%%/Source/eric4.QScintilla.__init__.html
-%%DOCSDIR%%/Source/eric4.SqlBrowser.SqlBrowser.html
-%%DOCSDIR%%/Source/eric4.SqlBrowser.SqlBrowserWidget.html
-%%DOCSDIR%%/Source/eric4.SqlBrowser.SqlConnectionDialog.html
-%%DOCSDIR%%/Source/eric4.SqlBrowser.SqlConnectionWidget.html
-%%DOCSDIR%%/Source/eric4.Tasks.TaskFilterConfigDialog.html
-%%DOCSDIR%%/Source/eric4.Tasks.TaskPropertiesDialog.html
-%%DOCSDIR%%/Source/eric4.Tasks.TaskViewer.html
-%%DOCSDIR%%/Source/eric4.Templates.TemplateMultipleVariablesDialog.html
-%%DOCSDIR%%/Source/eric4.Templates.TemplatePropertiesDialog.html
-%%DOCSDIR%%/Source/eric4.Templates.TemplateSingleVariableDialog.html
-%%DOCSDIR%%/Source/eric4.Templates.TemplateViewer.html
-%%DOCSDIR%%/Source/eric4.Tools.TRPreviewer.html
-%%DOCSDIR%%/Source/eric4.Tools.TRSingleApplication.html
-%%DOCSDIR%%/Source/eric4.Tools.TrayStarter.html
-%%DOCSDIR%%/Source/eric4.Tools.UIPreviewer.html
-%%DOCSDIR%%/Source/eric4.UI.AuthenticationDialog.html
-%%DOCSDIR%%/Source/eric4.UI.Browser.html
-%%DOCSDIR%%/Source/eric4.UI.BrowserModel.html
-%%DOCSDIR%%/Source/eric4.UI.BrowserSortFilterProxyModel.html
-%%DOCSDIR%%/Source/eric4.UI.CompareDialog.html
-%%DOCSDIR%%/Source/eric4.UI.Config.html
-%%DOCSDIR%%/Source/eric4.UI.DeleteFilesConfirmationDialog.html
-%%DOCSDIR%%/Source/eric4.UI.DiffDialog.html
-%%DOCSDIR%%/Source/eric4.UI.EmailDialog.html
-%%DOCSDIR%%/Source/eric4.UI.ErrorLogDialog.html
-%%DOCSDIR%%/Source/eric4.UI.FindFileDialog.html
-%%DOCSDIR%%/Source/eric4.UI.FindFileNameDialog.html
-%%DOCSDIR%%/Source/eric4.UI.Info.html
-%%DOCSDIR%%/Source/eric4.UI.LogView.html
-%%DOCSDIR%%/Source/eric4.UI.PixmapCache.html
-%%DOCSDIR%%/Source/eric4.UI.SplashScreen.html
-%%DOCSDIR%%/Source/eric4.UI.UserInterface.html
-%%DOCSDIR%%/Source/eric4.Utilities.AutoSaver.html
-%%DOCSDIR%%/Source/eric4.Utilities.ClassBrowsers.ClbrBaseClasses.html
-%%DOCSDIR%%/Source/eric4.Utilities.ClassBrowsers.__init__.html
-%%DOCSDIR%%/Source/eric4.Utilities.ClassBrowsers.idlclbr.html
-%%DOCSDIR%%/Source/eric4.Utilities.ClassBrowsers.pyclbr.html
-%%DOCSDIR%%/Source/eric4.Utilities.ClassBrowsers.rbclbr.html
-%%DOCSDIR%%/Source/eric4.Utilities.ModuleParser.html
-%%DOCSDIR%%/Source/eric4.Utilities.SingleApplication.html
-%%DOCSDIR%%/Source/eric4.Utilities.Startup.html
-%%DOCSDIR%%/Source/eric4.Utilities.__init__.html
-%%DOCSDIR%%/Source/eric4.Utilities.uic.html
-%%DOCSDIR%%/Source/eric4.VCS.CommandOptionsDialog.html
-%%DOCSDIR%%/Source/eric4.VCS.ProjectBrowserHelper.html
-%%DOCSDIR%%/Source/eric4.VCS.ProjectHelper.html
-%%DOCSDIR%%/Source/eric4.VCS.RepositoryInfoDialog.html
-%%DOCSDIR%%/Source/eric4.VCS.StatusMonitorLed.html
-%%DOCSDIR%%/Source/eric4.VCS.StatusMonitorThread.html
-%%DOCSDIR%%/Source/eric4.VCS.VersionControl.html
-%%DOCSDIR%%/Source/eric4.VCS.__init__.html
-%%DOCSDIR%%/Source/eric4.ViewManager.BookmarkedFilesDialog.html
-%%DOCSDIR%%/Source/eric4.ViewManager.ViewManager.html
-%%DOCSDIR%%/Source/eric4.ViewManager.__init__.html
-%%DOCSDIR%%/Source/eric4.compileUiFiles.html
-%%DOCSDIR%%/Source/eric4.eric4.html
-%%DOCSDIR%%/Source/eric4.eric4_api.html
-%%DOCSDIR%%/Source/eric4.eric4_compare.html
-%%DOCSDIR%%/Source/eric4.eric4_configure.html
-%%DOCSDIR%%/Source/eric4.eric4_diff.html
-%%DOCSDIR%%/Source/eric4.eric4_doc.html
-%%DOCSDIR%%/Source/eric4.eric4_editor.html
-%%DOCSDIR%%/Source/eric4.eric4_iconeditor.html
-%%DOCSDIR%%/Source/eric4.eric4_plugininstall.html
-%%DOCSDIR%%/Source/eric4.eric4_pluginrepository.html
-%%DOCSDIR%%/Source/eric4.eric4_pluginuninstall.html
-%%DOCSDIR%%/Source/eric4.eric4_qregexp.html
-%%DOCSDIR%%/Source/eric4.eric4_re.html
-%%DOCSDIR%%/Source/eric4.eric4_sqlbrowser.html
-%%DOCSDIR%%/Source/eric4.eric4_tray.html
-%%DOCSDIR%%/Source/eric4.eric4_trpreviewer.html
-%%DOCSDIR%%/Source/eric4.eric4_uipreviewer.html
-%%DOCSDIR%%/Source/eric4.eric4_unittest.html
-%%DOCSDIR%%/Source/eric4.eric4_webbrowser.html
-%%DOCSDIR%%/Source/eric4.eric4config.html
-%%DOCSDIR%%/Source/eric4.install-i18n.html
-%%DOCSDIR%%/Source/eric4.install.html
-%%DOCSDIR%%/Source/eric4.patch_modpython.html
-%%DOCSDIR%%/Source/eric4.patch_pyxml.html
-%%DOCSDIR%%/Source/eric4.uninstall.html
-%%DOCSDIR%%/Source/index-eric4.DataViews.html
-%%DOCSDIR%%/Source/index-eric4.DebugClients.Python.html
-%%DOCSDIR%%/Source/index-eric4.DebugClients.Python3.html
-%%DOCSDIR%%/Source/index-eric4.DebugClients.Ruby.html
-%%DOCSDIR%%/Source/index-eric4.DebugClients.html
-%%DOCSDIR%%/Source/index-eric4.Debugger.html
-%%DOCSDIR%%/Source/index-eric4.DocumentationTools.html
-%%DOCSDIR%%/Source/index-eric4.E4Graphics.html
-%%DOCSDIR%%/Source/index-eric4.E4Gui.html
-%%DOCSDIR%%/Source/index-eric4.E4Network.html
-%%DOCSDIR%%/Source/index-eric4.E4XML.html
-%%DOCSDIR%%/Source/index-eric4.Globals.html
-%%DOCSDIR%%/Source/index-eric4.Graphics.html
-%%DOCSDIR%%/Source/index-eric4.Helpviewer.AdBlock.html
-%%DOCSDIR%%/Source/index-eric4.Helpviewer.Bookmarks.html
-%%DOCSDIR%%/Source/index-eric4.Helpviewer.CookieJar.html
-%%DOCSDIR%%/Source/index-eric4.Helpviewer.History.html
-%%DOCSDIR%%/Source/index-eric4.Helpviewer.Network.html
-%%DOCSDIR%%/Source/index-eric4.Helpviewer.OpenSearch.html
-%%DOCSDIR%%/Source/index-eric4.Helpviewer.Passwords.html
-%%DOCSDIR%%/Source/index-eric4.Helpviewer.html
-%%DOCSDIR%%/Source/index-eric4.IconEditor.cursors.html
-%%DOCSDIR%%/Source/index-eric4.IconEditor.html
-%%DOCSDIR%%/Source/index-eric4.KdeQt.html
-%%DOCSDIR%%/Source/index-eric4.MultiProject.html
-%%DOCSDIR%%/Source/index-eric4.PluginManager.html
-%%DOCSDIR%%/Source/index-eric4.Plugins.AboutPlugin.html
-%%DOCSDIR%%/Source/index-eric4.Plugins.CheckerPlugins.SyntaxChecker.html
-%%DOCSDIR%%/Source/index-eric4.Plugins.CheckerPlugins.Tabnanny.html
-%%DOCSDIR%%/Source/index-eric4.Plugins.CheckerPlugins.html
-%%DOCSDIR%%/Source/index-eric4.Plugins.DocumentationPlugins.Ericapi.html
-%%DOCSDIR%%/Source/index-eric4.Plugins.DocumentationPlugins.Ericdoc.html
-%%DOCSDIR%%/Source/index-eric4.Plugins.DocumentationPlugins.html
-%%DOCSDIR%%/Source/index-eric4.Plugins.VcsPlugins.html
-%%DOCSDIR%%/Source/index-eric4.Plugins.VcsPlugins.vcsPySvn.ConfigurationPage.html
-%%DOCSDIR%%/Source/index-eric4.Plugins.VcsPlugins.vcsPySvn.html
-%%DOCSDIR%%/Source/index-eric4.Plugins.VcsPlugins.vcsSubversion.ConfigurationPage.html
-%%DOCSDIR%%/Source/index-eric4.Plugins.VcsPlugins.vcsSubversion.html
-%%DOCSDIR%%/Source/index-eric4.Plugins.ViewManagerPlugins.Listspace.html
-%%DOCSDIR%%/Source/index-eric4.Plugins.ViewManagerPlugins.MdiArea.html
-%%DOCSDIR%%/Source/index-eric4.Plugins.ViewManagerPlugins.Tabview.html
-%%DOCSDIR%%/Source/index-eric4.Plugins.ViewManagerPlugins.Workspace.html
-%%DOCSDIR%%/Source/index-eric4.Plugins.ViewManagerPlugins.html
-%%DOCSDIR%%/Source/index-eric4.Plugins.WizardPlugins.ColorDialogWizard.html
-%%DOCSDIR%%/Source/index-eric4.Plugins.WizardPlugins.FileDialogWizard.html
-%%DOCSDIR%%/Source/index-eric4.Plugins.WizardPlugins.FontDialogWizard.html
-%%DOCSDIR%%/Source/index-eric4.Plugins.WizardPlugins.InputDialogWizard.html
-%%DOCSDIR%%/Source/index-eric4.Plugins.WizardPlugins.MessageBoxWizard.html
-%%DOCSDIR%%/Source/index-eric4.Plugins.WizardPlugins.PyRegExpWizard.html
-%%DOCSDIR%%/Source/index-eric4.Plugins.WizardPlugins.QRegExpWizard.html
-%%DOCSDIR%%/Source/index-eric4.Plugins.WizardPlugins.html
-%%DOCSDIR%%/Source/index-eric4.Plugins.html
-%%DOCSDIR%%/Source/index-eric4.Preferences.ConfigurationPages.html
-%%DOCSDIR%%/Source/index-eric4.Preferences.html
-%%DOCSDIR%%/Source/index-eric4.Project.html
-%%DOCSDIR%%/Source/index-eric4.PyUnit.html
-%%DOCSDIR%%/Source/index-eric4.QScintilla.Exporters.html
-%%DOCSDIR%%/Source/index-eric4.QScintilla.Lexers.html
-%%DOCSDIR%%/Source/index-eric4.QScintilla.TypingCompleters.html
-%%DOCSDIR%%/Source/index-eric4.QScintilla.html
-%%DOCSDIR%%/Source/index-eric4.SqlBrowser.html
-%%DOCSDIR%%/Source/index-eric4.Tasks.html
-%%DOCSDIR%%/Source/index-eric4.Templates.html
-%%DOCSDIR%%/Source/index-eric4.Tools.html
-%%DOCSDIR%%/Source/index-eric4.UI.html
-%%DOCSDIR%%/Source/index-eric4.Utilities.ClassBrowsers.html
-%%DOCSDIR%%/Source/index-eric4.Utilities.html
-%%DOCSDIR%%/Source/index-eric4.VCS.html
-%%DOCSDIR%%/Source/index-eric4.ViewManager.html
-%%DOCSDIR%%/Source/index-eric4.html
-%%DOCSDIR%%/Source/index.html
-%%DOCSDIR%%/THANKS
-%%DOCSDIR%%/changelog
-%%EXAMPLESDIR%%/hallo.py
-%%EXAMPLESDIR%%/hallo.pyc
-%%EXAMPLESDIR%%/modpython.py
-%%EXAMPLESDIR%%/modpython.pyc
-%%EXAMPLESDIR%%/modpython_dbg.py
-%%EXAMPLESDIR%%/modpython_dbg.pyc
-%%EXAMPLESDIR%%/rhallo.py
-%%EXAMPLESDIR%%/rhallo.pyc
-%%PYTHON_SITELIBDIR%%/eric4.pth
+bin/eric4
+bin/eric4_api
+bin/eric4_compare
+bin/eric4_configure
+bin/eric4_diff
+bin/eric4_doc
+bin/eric4_editor
+bin/eric4_iconeditor
+bin/eric4_plugininstall
+bin/eric4_pluginrepository
+bin/eric4_pluginuninstall
+bin/eric4_qregexp
+bin/eric4_re
+bin/eric4_sqlbrowser
+bin/eric4_tray
+bin/eric4_trpreviewer
+bin/eric4_uipreviewer
+bin/eric4_unittest
+bin/eric4_webbrowser
+lib/python2.7/site-packages/eric4.pth
+lib/python2.7/site-packages/eric4config.py
+lib/python2.7/site-packages/eric4config.pyc
+lib/python2.7/site-packages/eric4plugins/__init__.py
+share/applications/eric4.desktop
+%%PORTDOCS%%%%DOCSDIR%%/Help/source.qch
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.GPL3
+%%PORTDOCS%%%%DOCSDIR%%/README-MacOSX.txt
+%%PORTDOCS%%%%DOCSDIR%%/README-PyXML.txt
+%%PORTDOCS%%%%DOCSDIR%%/README-eric4-doc.txt
+%%PORTDOCS%%%%DOCSDIR%%/README-i18n.txt
+%%PORTDOCS%%%%DOCSDIR%%/README-passive-debugging.txt
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DataViews.CodeMetrics.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DataViews.CodeMetricsDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DataViews.PyCoverageDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DataViews.PyProfileDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python.AsyncFile.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python.AsyncIO.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python.DCTestResult.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python.DebugBase.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python.DebugClient.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python.DebugClientBase.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python.DebugClientCapabilities.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python.DebugClientThreads.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python.DebugConfig.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python.DebugProtocol.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python.DebugThread.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python.FlexCompleter.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python.PyProfile.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python.eric4dbgstub.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python.getpass.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python3.AsyncFile.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python3.AsyncIO.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python3.DCTestResult.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python3.DebugBase.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python3.DebugClient.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python3.DebugClientBase.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python3.DebugClientCapabilities.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python3.DebugClientThreads.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python3.DebugConfig.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python3.DebugProtocol.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python3.DebugThread.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python3.FlexCompleter.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python3.PyProfile.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python3.eric4dbgstub.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Python3.getpass.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Ruby.AsyncFile.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Ruby.AsyncIO.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Ruby.Completer.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Ruby.Config.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Ruby.DebugClient.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Ruby.DebugClientBaseModule.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Ruby.DebugClientCapabilities.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Ruby.DebugProtocol.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Ruby.DebugQuit.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Ruby.Debuggee.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DebugClients.Ruby.__init__.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Debugger.BreakPointModel.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Debugger.BreakPointViewer.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Debugger.Config.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Debugger.DebugClientCapabilities.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Debugger.DebugProtocol.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Debugger.DebugServer.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Debugger.DebugUI.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Debugger.DebugViewer.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Debugger.DebuggerInterfaceNone.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Debugger.DebuggerInterfacePython.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Debugger.DebuggerInterfacePython3.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Debugger.DebuggerInterfaceRuby.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Debugger.EditBreakpointDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Debugger.EditWatchpointDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Debugger.ExceptionLogger.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Debugger.ExceptionsFilterDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Debugger.StartDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Debugger.VariableDetailDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Debugger.VariablesFilterDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Debugger.VariablesViewer.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Debugger.WatchPointModel.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Debugger.WatchPointViewer.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DocumentationTools.APIGenerator.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DocumentationTools.Config.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DocumentationTools.IndexGenerator.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DocumentationTools.ModuleDocumentor.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DocumentationTools.QtHelpGenerator.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DocumentationTools.TemplatesListsStyle.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DocumentationTools.TemplatesListsStyleCSS.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.DocumentationTools.__init__.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4Graphics.E4ArrowItem.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4Graphics.E4GraphicsView.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4Gui.E4Action.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4Gui.E4Completers.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4Gui.E4Led.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4Gui.E4LineEdit.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4Gui.E4ListView.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4Gui.E4ModelMenu.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4Gui.E4ModelToolBar.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4Gui.E4SideBar.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4Gui.E4SingleApplication.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4Gui.E4SqueezeLabels.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4Gui.E4TabWidget.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4Gui.E4TableView.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4Gui.E4ToolBarDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4Gui.E4ToolBarManager.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4Gui.E4ToolBox.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4Gui.E4TreeSortFilterProxyModel.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4Gui.E4TreeView.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4Network.E4NetworkHeaderDetailsDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4Network.E4NetworkMonitor.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4Network.E4NetworkProxyFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4XML.Config.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4XML.DebuggerPropertiesHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4XML.DebuggerPropertiesWriter.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4XML.HighlightingStylesHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4XML.HighlightingStylesWriter.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4XML.MultiProjectHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4XML.MultiProjectWriter.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4XML.PluginRepositoryHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4XML.ProjectHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4XML.ProjectWriter.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4XML.SessionHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4XML.SessionWriter.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4XML.ShortcutsHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4XML.ShortcutsWriter.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4XML.TasksHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4XML.TasksWriter.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4XML.TemplatesHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4XML.TemplatesWriter.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4XML.UserProjectHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4XML.UserProjectWriter.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4XML.XMLEntityResolver.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4XML.XMLErrorHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4XML.XMLHandlerBase.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4XML.XMLMessageDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4XML.XMLUtilities.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.E4XML.XMLWriterBase.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Globals.__init__.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Graphics.ApplicationDiagram.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Graphics.AssociationItem.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Graphics.ClassItem.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Graphics.GraphicsUtilities.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Graphics.ImportsDiagram.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Graphics.ModuleItem.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Graphics.PackageDiagram.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Graphics.PackageItem.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Graphics.PixmapDiagram.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Graphics.SvgDiagram.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Graphics.UMLClassDiagram.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Graphics.UMLDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Graphics.UMLGraphicsView.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Graphics.UMLItem.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Graphics.UMLSceneSizeDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Graphics.ZoomDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.AdBlock.AdBlockAccessHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.AdBlock.AdBlockBlockedNetworkReply.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.AdBlock.AdBlockDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.AdBlock.AdBlockManager.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.AdBlock.AdBlockModel.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.AdBlock.AdBlockNetwork.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.AdBlock.AdBlockPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.AdBlock.AdBlockRule.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.AdBlock.AdBlockSubscription.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.Bookmarks.AddBookmarkDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.Bookmarks.BookmarkNode.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.Bookmarks.BookmarksDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.Bookmarks.BookmarksManager.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.Bookmarks.BookmarksMenu.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.Bookmarks.BookmarksModel.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.Bookmarks.BookmarksToolBar.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.Bookmarks.DefaultBookmarks.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.Bookmarks.XbelReader.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.Bookmarks.XbelWriter.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.CookieJar.CookieDetailsDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.CookieJar.CookieExceptionsModel.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.CookieJar.CookieJar.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.CookieJar.CookieModel.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.CookieJar.CookiesConfigurationDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.CookieJar.CookiesDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.CookieJar.CookiesExceptionsDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.DownloadDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.HTMLResources.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.HelpBrowserWV.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.HelpClearPrivateDataDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.HelpDocsInstaller.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.HelpIndexWidget.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.HelpLanguagesDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.HelpSearchWidget.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.HelpTocWidget.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.HelpTopicDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.HelpWebSearchWidget.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.HelpWindow.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.History.HistoryCompleter.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.History.HistoryDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.History.HistoryFilterModel.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.History.HistoryManager.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.History.HistoryMenu.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.History.HistoryModel.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.History.HistoryTreeModel.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.JavaScriptResources.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.Network.AboutAccessHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.Network.EmptyNetworkReply.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.Network.NetworkAccessManager.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.Network.NetworkAccessManagerProxy.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.Network.NetworkDiskCache.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.Network.NetworkProtocolUnknownErrorReply.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.Network.NetworkReply.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.Network.PyrcAccessHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.Network.QtHelpAccessHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.Network.SchemeAccessHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.OpenSearch.OpenSearchDefaultEngines.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.OpenSearch.OpenSearchDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.OpenSearch.OpenSearchEditDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.OpenSearch.OpenSearchEngine.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.OpenSearch.OpenSearchEngineAction.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.OpenSearch.OpenSearchEngineModel.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.OpenSearch.OpenSearchManager.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.OpenSearch.OpenSearchReader.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.OpenSearch.OpenSearchWriter.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.Passwords.PasswordManager.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.Passwords.PasswordModel.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.Passwords.PasswordsDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.QtHelpDocumentationDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.QtHelpFiltersDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Helpviewer.SearchWidget.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.IconEditor.IconEditorGrid.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.IconEditor.IconEditorPalette.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.IconEditor.IconEditorWindow.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.IconEditor.IconSizeDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.IconEditor.IconZoomDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.IconEditor.cursors.cursors_rc.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.KdeQt.KQApplication.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.KdeQt.KQColorDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.KdeQt.KQFileDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.KdeQt.KQFontDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.KdeQt.KQInputDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.KdeQt.KQMainWindow.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.KdeQt.KQMessageBox.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.KdeQt.KQPrintDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.KdeQt.KQPrinter.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.KdeQt.KQProgressDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.KdeQt.__init__.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.MultiProject.AddProjectDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.MultiProject.MultiProject.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.MultiProject.MultiProjectBrowser.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.MultiProject.PropertiesDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.PluginManager.PluginDetailsDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.PluginManager.PluginExceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.PluginManager.PluginInfoDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.PluginManager.PluginInstallDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.PluginManager.PluginManager.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.PluginManager.PluginRepositoryDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.PluginManager.PluginUninstallDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.AboutPlugin.AboutDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.CheckerPlugins.SyntaxChecker.SyntaxCheckerDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.CheckerPlugins.Tabnanny.Tabnanny.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.CheckerPlugins.Tabnanny.TabnannyDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.DocumentationPlugins.Ericapi.EricapiConfigDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.DocumentationPlugins.Ericapi.EricapiExecDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.DocumentationPlugins.Ericdoc.EricdocConfigDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.DocumentationPlugins.Ericdoc.EricdocExecDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.PluginAbout.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.PluginEricapi.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.PluginEricdoc.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.PluginSyntaxChecker.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.PluginTabnanny.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.PluginVcsPySvn.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.PluginVcsSubversion.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.PluginVmListspace.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.PluginVmMdiArea.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.PluginVmTabview.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.PluginVmWorkspace.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.PluginWizardPyRegExp.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.PluginWizardQColorDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.PluginWizardQFileDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.PluginWizardQFontDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.PluginWizardQInputDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.PluginWizardQMessageBox.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.PluginWizardQRegExp.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.Config.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.ConfigurationPage.SubversionPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.ProjectBrowserHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.ProjectHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnBlameDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnChangeListsDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnCommandDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnCommitDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnConst.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnCopyDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnDialogMixin.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnDiffDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnInfoDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnLogBrowserDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnLogDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnLoginDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnMergeDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnNewProjectOptionsDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnOptionsDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnPropDelDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnPropListDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnPropSetDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnRelocateDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnRepoBrowserDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnRevisionSelectionDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnStatusDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnStatusMonitorThread.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnSwitchDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnTagBranchListDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnTagDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnUrlSelectionDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnUtilities.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.subversion.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.Config.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.ConfigurationPage.SubversionPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.ProjectBrowserHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.ProjectHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnBlameDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnChangeListsDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnCommandDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnCommitDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnCopyDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnDiffDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnLogBrowserDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnLogDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnMergeDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnNewProjectOptionsDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnOptionsDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnPropListDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnPropSetDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnRelocateDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnRepoBrowserDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnRevisionSelectionDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnStatusDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnStatusMonitorThread.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnSwitchDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnTagBranchListDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnTagDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnUrlSelectionDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnUtilities.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.subversion.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.ViewManagerPlugins.Listspace.Listspace.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.ViewManagerPlugins.MdiArea.MdiArea.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.ViewManagerPlugins.Tabview.Tabview.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.ViewManagerPlugins.Workspace.Workspace.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.WizardPlugins.ColorDialogWizard.ColorDialogWizardDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.WizardPlugins.FileDialogWizard.FileDialogWizardDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.WizardPlugins.FontDialogWizard.FontDialogWizardDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.WizardPlugins.InputDialogWizard.InputDialogWizardDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.WizardPlugins.MessageBoxWizard.MessageBoxWizardDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.WizardPlugins.PyRegExpWizard.PyRegExpWizardCharactersDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.WizardPlugins.PyRegExpWizard.PyRegExpWizardDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.WizardPlugins.PyRegExpWizard.PyRegExpWizardRepeatDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.WizardPlugins.QRegExpWizard.QRegExpWizardCharactersDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.WizardPlugins.QRegExpWizard.QRegExpWizardDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Plugins.WizardPlugins.QRegExpWizard.QRegExpWizardRepeatDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.ApplicationPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.ConfigurationPageBase.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.CorbaPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.DebuggerGeneralPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.DebuggerPython3Page.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.DebuggerPythonPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.DebuggerRubyPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorAPIsPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorAutocompletionPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorAutocompletionQScintillaPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorCalltipsPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorCalltipsQScintillaPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorExportersPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorFilePage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorGeneralPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorHighlightersPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorHighlightingStylesPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorKeywordsPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorPropertiesPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorSearchPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorSpellCheckingPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorStylesPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorTypingPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EmailPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.GraphicsPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.HelpAppearancePage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.HelpDocumentationPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.HelpViewersPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.HelpWebBrowserPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.IconsPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.IconsPreviewDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.InterfacePage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.MultiProjectPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.NetworkPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.PluginManagerPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.PrinterPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.ProjectBrowserPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.ProjectPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.PythonPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.QtPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.ShellPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.TasksPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.TemplatesPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.TrayStarterPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.VcsPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.ViewmanagerPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.PreferencesLexer.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ProgramsDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ShortcutDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.Shortcuts.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ShortcutsDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ToolConfigurationDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ToolGroupConfigurationDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.ViewProfileDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Preferences.__init__.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Project.AddDirectoryDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Project.AddFileDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Project.AddFoundFilesDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Project.AddLanguageDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Project.CreateDialogCodeDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Project.DebuggerPropertiesDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Project.FiletypeAssociationDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Project.LexerAssociationDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Project.NewDialogClassDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Project.NewPythonPackageDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Project.Project.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Project.ProjectBaseBrowser.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Project.ProjectBrowser.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Project.ProjectBrowserFlags.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Project.ProjectBrowserModel.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Project.ProjectBrowserSortFilterProxyModel.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Project.ProjectFormsBrowser.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Project.ProjectInterfacesBrowser.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Project.ProjectOthersBrowser.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Project.ProjectResourcesBrowser.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Project.ProjectSourcesBrowser.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Project.ProjectTranslationsBrowser.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Project.PropertiesDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Project.SpellingPropertiesDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Project.TranslationPropertiesDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Project.UserPropertiesDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.PyUnit.UnittestDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.APIsManager.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Editor.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Exporters.ExporterBase.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Exporters.ExporterHTML.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Exporters.ExporterPDF.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Exporters.ExporterRTF.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Exporters.ExporterTEX.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Exporters.__init__.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.GotoDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.Lexer.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerBash.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerBatch.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerCMake.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerCPP.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerCSS.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerCSharp.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerContainer.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerD.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerDiff.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerFortran.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerFortran77.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerHTML.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerIDL.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerJava.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerJavaScript.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerLua.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerMakefile.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerMatlab.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerOctave.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerPOV.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerPascal.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerPerl.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerPostScript.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerProperties.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerPygments.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerPython.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerRuby.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerSQL.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerTCL.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerTeX.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerVHDL.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerXML.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerYAML.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.__init__.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.MiniEditor.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Printer.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.QsciScintillaCompat.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.SearchReplaceWidget.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.Shell.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.ShellHistoryDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.SpellChecker.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.SpellCheckingDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.TypingCompleters.CompleterBase.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.TypingCompleters.CompleterPython.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.TypingCompleters.CompleterRuby.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.TypingCompleters.__init__.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.ZoomDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.QScintilla.__init__.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.SqlBrowser.SqlBrowser.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.SqlBrowser.SqlBrowserWidget.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.SqlBrowser.SqlConnectionDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.SqlBrowser.SqlConnectionWidget.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Tasks.TaskFilterConfigDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Tasks.TaskPropertiesDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Tasks.TaskViewer.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Templates.TemplateMultipleVariablesDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Templates.TemplatePropertiesDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Templates.TemplateSingleVariableDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Templates.TemplateViewer.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Tools.TRPreviewer.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Tools.TRSingleApplication.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Tools.TrayStarter.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Tools.UIPreviewer.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.UI.AuthenticationDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.UI.Browser.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.UI.BrowserModel.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.UI.BrowserSortFilterProxyModel.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.UI.CompareDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.UI.Config.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.UI.DeleteFilesConfirmationDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.UI.DiffDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.UI.EmailDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.UI.ErrorLogDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.UI.FindFileDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.UI.FindFileNameDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.UI.Info.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.UI.LogView.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.UI.PixmapCache.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.UI.SplashScreen.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.UI.UserInterface.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Utilities.AutoSaver.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Utilities.ClassBrowsers.ClbrBaseClasses.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Utilities.ClassBrowsers.__init__.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Utilities.ClassBrowsers.idlclbr.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Utilities.ClassBrowsers.pyclbr.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Utilities.ClassBrowsers.rbclbr.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Utilities.ModuleParser.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Utilities.SingleApplication.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Utilities.Startup.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Utilities.__init__.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.Utilities.uic.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.VCS.CommandOptionsDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.VCS.ProjectBrowserHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.VCS.ProjectHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.VCS.RepositoryInfoDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.VCS.StatusMonitorLed.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.VCS.StatusMonitorThread.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.VCS.VersionControl.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.VCS.__init__.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.ViewManager.BookmarkedFilesDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.ViewManager.ViewManager.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.ViewManager.__init__.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.compileUiFiles.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.eric4.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.eric4_api.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.eric4_compare.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.eric4_configure.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.eric4_diff.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.eric4_doc.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.eric4_editor.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.eric4_iconeditor.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.eric4_plugininstall.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.eric4_pluginrepository.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.eric4_pluginuninstall.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.eric4_qregexp.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.eric4_re.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.eric4_sqlbrowser.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.eric4_tray.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.eric4_trpreviewer.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.eric4_uipreviewer.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.eric4_unittest.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.eric4_webbrowser.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.eric4config.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.install-i18n.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.install.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.patch_modpython.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.patch_pyxml.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/eric4.uninstall.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.DataViews.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.DebugClients.Python.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.DebugClients.Python3.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.DebugClients.Ruby.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.DebugClients.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Debugger.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.DocumentationTools.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.E4Graphics.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.E4Gui.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.E4Network.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.E4XML.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Globals.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Graphics.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Helpviewer.AdBlock.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Helpviewer.Bookmarks.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Helpviewer.CookieJar.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Helpviewer.History.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Helpviewer.Network.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Helpviewer.OpenSearch.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Helpviewer.Passwords.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Helpviewer.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.IconEditor.cursors.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.IconEditor.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.KdeQt.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.MultiProject.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.PluginManager.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Plugins.AboutPlugin.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Plugins.CheckerPlugins.SyntaxChecker.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Plugins.CheckerPlugins.Tabnanny.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Plugins.CheckerPlugins.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Plugins.DocumentationPlugins.Ericapi.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Plugins.DocumentationPlugins.Ericdoc.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Plugins.DocumentationPlugins.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Plugins.VcsPlugins.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Plugins.VcsPlugins.vcsPySvn.ConfigurationPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Plugins.VcsPlugins.vcsPySvn.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Plugins.VcsPlugins.vcsSubversion.ConfigurationPage.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Plugins.VcsPlugins.vcsSubversion.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Plugins.ViewManagerPlugins.Listspace.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Plugins.ViewManagerPlugins.MdiArea.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Plugins.ViewManagerPlugins.Tabview.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Plugins.ViewManagerPlugins.Workspace.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Plugins.ViewManagerPlugins.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Plugins.WizardPlugins.ColorDialogWizard.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Plugins.WizardPlugins.FileDialogWizard.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Plugins.WizardPlugins.FontDialogWizard.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Plugins.WizardPlugins.InputDialogWizard.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Plugins.WizardPlugins.MessageBoxWizard.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Plugins.WizardPlugins.PyRegExpWizard.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Plugins.WizardPlugins.QRegExpWizard.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Plugins.WizardPlugins.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Plugins.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Preferences.ConfigurationPages.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Preferences.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Project.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.PyUnit.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.QScintilla.Exporters.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.QScintilla.Lexers.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.QScintilla.TypingCompleters.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.QScintilla.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.SqlBrowser.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Tasks.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Templates.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Tools.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.UI.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Utilities.ClassBrowsers.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.Utilities.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.VCS.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.ViewManager.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index-eric4.html
+%%PORTDOCS%%%%DOCSDIR%%/Source/index.html
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/changelog
 %%DATADIR%%/CSSs/default.css
 %%DATADIR%%/CodeTemplates/impl_pyqt.py.tmpl
 %%DATADIR%%/CodeTemplates/impl_pyqt.py3.tmpl
@@ -1324,6 +1339,8 @@
 %%DATADIR%%/MultiProject/Ui_PropertiesDialog.pyc
 %%DATADIR%%/MultiProject/__init__.py
 %%DATADIR%%/MultiProject/__init__.pyc
+%%DATADIR%%/Others/default.e4k
+%%DATADIR%%/Others/default_Mac.e4k
 %%DATADIR%%/PluginManager/PluginDetailsDialog.py
 %%DATADIR%%/PluginManager/PluginDetailsDialog.pyc
 %%DATADIR%%/PluginManager/PluginExceptions.py
@@ -2571,8 +2588,6 @@
 %%DATADIR%%/__init__.pyc
 %%DATADIR%%/compileUiFiles.py
 %%DATADIR%%/compileUiFiles.pyc
-%%DATADIR%%/Others/default.e4k
-%%DATADIR%%/Others/default_Mac.e4k
 %%DATADIR%%/eric4.py
 %%DATADIR%%/eric4.pyc
 %%DATADIR%%/eric4.pyw
@@ -2999,29 +3014,14 @@
 %%DATADIR%%/pixmaps/eric_small.png
 %%DATADIR%%/uninstall.py
 %%DATADIR%%/uninstall.pyc
-%%PYTHON_SITELIBDIR%%/eric4config.py
-%%PYTHON_SITELIBDIR%%/eric4config.pyc
-%%DATADIR%%/eric4plugins/__init__.py
-bin/eric4
-bin/eric4_api
-bin/eric4_compare
-bin/eric4_configure
-bin/eric4_diff
-bin/eric4_doc
-bin/eric4_editor
-bin/eric4_iconeditor
-bin/eric4_plugininstall
-bin/eric4_pluginrepository
-bin/eric4_pluginuninstall
-bin/eric4_qregexp
-bin/eric4_re
-bin/eric4_sqlbrowser
-bin/eric4_tray
-bin/eric4_trpreviewer
-bin/eric4_uipreviewer
-bin/eric4_unittest
-bin/eric4_webbrowser
-share/applications/eric4.desktop
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hallo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hallo.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/modpython.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/modpython.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/modpython_dbg.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/modpython_dbg.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rhallo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rhallo.pyc
 share/pixmaps/eric.png
 share/qt4/qsci/api/python/eric4.api
 share/qt4/qsci/api/python/zope-2.10.7.api
@@ -3029,111 +3029,111 @@ share/qt4/qsci/api/python/zope-2.11.2.api
 share/qt4/qsci/api/python/zope-3.3.1.api
 share/qt4/qsci/api/ruby/Ruby-1.8.7.api
 share/qt4/qsci/api/ruby/eric4.api
-@exec /bin/mkdir -p %D/%%DATADIR%%/i18n
 @dirrmtry share/qt4/qsci/api/ruby
 @dirrmtry share/qt4/qsci/api/python
+@dirrmtry share/qt4/qsci/api
+@dirrmtry share/qt4/qsci
+@dirrmtry share/qt4
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+@dirrmtry %%DATADIR%%/pixmaps
+@dirrmtry %%DATADIR%%/icons/default
+@dirrmtry %%DATADIR%%/icons
+@dirrmtry %%DATADIR%%/i18n
+@dirrmtry %%DATADIR%%/ViewManager
+@dirrmtry %%DATADIR%%/VCS
+@dirrmtry %%DATADIR%%/Utilities/ClassBrowsers
+@dirrmtry %%DATADIR%%/Utilities
+@dirrmtry %%DATADIR%%/UI
+@dirrmtry %%DATADIR%%/Tools
+@dirrmtry %%DATADIR%%/ThirdParty/SimpleJSON/simplejson
+@dirrmtry %%DATADIR%%/ThirdParty/SimpleJSON
+@dirrmtry %%DATADIR%%/ThirdParty/Pygments/pygments/styles
+@dirrmtry %%DATADIR%%/ThirdParty/Pygments/pygments/lexers
+@dirrmtry %%DATADIR%%/ThirdParty/Pygments/pygments/formatters
+@dirrmtry %%DATADIR%%/ThirdParty/Pygments/pygments/filters
+@dirrmtry %%DATADIR%%/ThirdParty/Pygments/pygments
+@dirrmtry %%DATADIR%%/ThirdParty/Pygments
+@dirrmtry %%DATADIR%%/ThirdParty/CharDet/chardet
+@dirrmtry %%DATADIR%%/ThirdParty/CharDet
+@dirrmtry %%DATADIR%%/ThirdParty
+@dirrmtry %%DATADIR%%/Templates
+@dirrmtry %%DATADIR%%/Tasks
+@dirrmtry %%DATADIR%%/Styles
+@dirrmtry %%DATADIR%%/SqlBrowser
+@dirrmtry %%DATADIR%%/QScintilla/TypingCompleters
+@dirrmtry %%DATADIR%%/QScintilla/Lexers
+@dirrmtry %%DATADIR%%/QScintilla/Exporters
+@dirrmtry %%DATADIR%%/QScintilla
+@dirrmtry %%DATADIR%%/PyUnit
+@dirrmtry %%DATADIR%%/Project
+@dirrmtry %%DATADIR%%/Preferences/ConfigurationPages
+@dirrmtry %%DATADIR%%/Preferences
+@dirrmtry %%DATADIR%%/Plugins/WizardPlugins/QRegExpWizard
+@dirrmtry %%DATADIR%%/Plugins/WizardPlugins/PyRegExpWizard
+@dirrmtry %%DATADIR%%/Plugins/WizardPlugins/MessageBoxWizard
+@dirrmtry %%DATADIR%%/Plugins/WizardPlugins/InputDialogWizard
+@dirrmtry %%DATADIR%%/Plugins/WizardPlugins/FontDialogWizard
+@dirrmtry %%DATADIR%%/Plugins/WizardPlugins/FileDialogWizard
+@dirrmtry %%DATADIR%%/Plugins/WizardPlugins/ColorDialogWizard
+@dirrmtry %%DATADIR%%/Plugins/WizardPlugins
+@dirrmtry %%DATADIR%%/Plugins/ViewManagerPlugins/Workspace
+@dirrmtry %%DATADIR%%/Plugins/ViewManagerPlugins/Tabview
+@dirrmtry %%DATADIR%%/Plugins/ViewManagerPlugins/MdiArea
+@dirrmtry %%DATADIR%%/Plugins/ViewManagerPlugins/Listspace
+@dirrmtry %%DATADIR%%/Plugins/ViewManagerPlugins
+@dirrmtry %%DATADIR%%/Plugins/VcsPlugins/vcsSubversion/icons
+@dirrmtry %%DATADIR%%/Plugins/VcsPlugins/vcsSubversion/ConfigurationPage
+@dirrmtry %%DATADIR%%/Plugins/VcsPlugins/vcsSubversion
+@dirrmtry %%DATADIR%%/Plugins/VcsPlugins/vcsPySvn/icons
+@dirrmtry %%DATADIR%%/Plugins/VcsPlugins/vcsPySvn/ConfigurationPage
+@dirrmtry %%DATADIR%%/Plugins/VcsPlugins/vcsPySvn
+@dirrmtry %%DATADIR%%/Plugins/VcsPlugins
+@dirrmtry %%DATADIR%%/Plugins/DocumentationPlugins/Ericdoc
+@dirrmtry %%DATADIR%%/Plugins/DocumentationPlugins/Ericapi
+@dirrmtry %%DATADIR%%/Plugins/DocumentationPlugins
+@dirrmtry %%DATADIR%%/Plugins/CheckerPlugins/Tabnanny
+@dirrmtry %%DATADIR%%/Plugins/CheckerPlugins/SyntaxChecker
+@dirrmtry %%DATADIR%%/Plugins/CheckerPlugins
+@dirrmtry %%DATADIR%%/Plugins/AboutPlugin
+@dirrmtry %%DATADIR%%/Plugins
+@dirrmtry %%DATADIR%%/PluginManager
+@dirrmtry %%DATADIR%%/Others
+@dirrmtry %%DATADIR%%/MultiProject
+@dirrmtry %%DATADIR%%/KdeQt
+@dirrmtry %%DATADIR%%/IconEditor/cursors
+@dirrmtry %%DATADIR%%/IconEditor
+@dirrmtry %%DATADIR%%/Helpviewer/Passwords
+@dirrmtry %%DATADIR%%/Helpviewer/OpenSearch
+@dirrmtry %%DATADIR%%/Helpviewer/Network
+@dirrmtry %%DATADIR%%/Helpviewer/History
+@dirrmtry %%DATADIR%%/Helpviewer/CookieJar
+@dirrmtry %%DATADIR%%/Helpviewer/Bookmarks
+@dirrmtry %%DATADIR%%/Helpviewer/AdBlock
+@dirrmtry %%DATADIR%%/Helpviewer
+@dirrmtry %%DATADIR%%/Graphics
+@dirrmtry %%DATADIR%%/Globals
+@dirrmtry %%DATADIR%%/E4XML
+@dirrmtry %%DATADIR%%/E4Network
+@dirrmtry %%DATADIR%%/E4Gui
+@dirrmtry %%DATADIR%%/E4Graphics
+@dirrmtry %%DATADIR%%/DocumentationTools
+@dirrmtry %%DATADIR%%/DesignerTemplates
+@dirrmtry %%DATADIR%%/Debugger
+@dirrmtry %%DATADIR%%/DebugClients/Ruby
+@dirrmtry %%DATADIR%%/DebugClients/Python3/coverage
+@dirrmtry %%DATADIR%%/DebugClients/Python3
+@dirrmtry %%DATADIR%%/DebugClients/Python/coverage
+@dirrmtry %%DATADIR%%/DebugClients/Python
+@dirrmtry %%DATADIR%%/DebugClients
+@dirrmtry %%DATADIR%%/DataViews
+@dirrmtry %%DATADIR%%/DTDs
+@dirrmtry %%DATADIR%%/CodeTemplates
+@dirrmtry %%DATADIR%%/CSSs
+@dirrmtry %%DATADIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/Source
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/Help
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrmtry share/applications
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/icons/default
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/i18n
-@dirrm %%DATADIR%%/eric4plugins
-@dirrm %%DATADIR%%/ViewManager
-@dirrm %%DATADIR%%/VCS
-@dirrm %%DATADIR%%/Utilities/ClassBrowsers
-@dirrm %%DATADIR%%/Utilities
-@dirrm %%DATADIR%%/UI
-@dirrm %%DATADIR%%/Tools
-@dirrm %%DATADIR%%/ThirdParty/SimpleJSON/simplejson
-@dirrm %%DATADIR%%/ThirdParty/SimpleJSON
-@dirrm %%DATADIR%%/ThirdParty/Pygments/pygments/styles
-@dirrm %%DATADIR%%/ThirdParty/Pygments/pygments/lexers
-@dirrm %%DATADIR%%/ThirdParty/Pygments/pygments/formatters
-@dirrm %%DATADIR%%/ThirdParty/Pygments/pygments/filters
-@dirrm %%DATADIR%%/ThirdParty/Pygments/pygments
-@dirrm %%DATADIR%%/ThirdParty/Pygments
-@dirrm %%DATADIR%%/ThirdParty/CharDet/chardet
-@dirrm %%DATADIR%%/ThirdParty/CharDet
-@dirrm %%DATADIR%%/ThirdParty
-@dirrm %%DATADIR%%/Templates
-@dirrm %%DATADIR%%/Tasks
-@dirrm %%DATADIR%%/Styles
-@dirrm %%DATADIR%%/SqlBrowser
-@dirrm %%DATADIR%%/QScintilla/TypingCompleters
-@dirrm %%DATADIR%%/QScintilla/Lexers
-@dirrm %%DATADIR%%/QScintilla/Exporters
-@dirrm %%DATADIR%%/QScintilla
-@dirrm %%DATADIR%%/PyUnit
-@dirrm %%DATADIR%%/Project
-@dirrm %%DATADIR%%/Preferences/ConfigurationPages
-@dirrm %%DATADIR%%/Preferences
-@dirrm %%DATADIR%%/Plugins/WizardPlugins/QRegExpWizard
-@dirrm %%DATADIR%%/Plugins/WizardPlugins/PyRegExpWizard
-@dirrm %%DATADIR%%/Plugins/WizardPlugins/MessageBoxWizard
-@dirrm %%DATADIR%%/Plugins/WizardPlugins/InputDialogWizard
-@dirrm %%DATADIR%%/Plugins/WizardPlugins/FontDialogWizard
-@dirrm %%DATADIR%%/Plugins/WizardPlugins/FileDialogWizard
-@dirrm %%DATADIR%%/Plugins/WizardPlugins/ColorDialogWizard
-@dirrm %%DATADIR%%/Plugins/WizardPlugins
-@dirrm %%DATADIR%%/Plugins/ViewManagerPlugins/Workspace
-@dirrm %%DATADIR%%/Plugins/ViewManagerPlugins/Tabview
-@dirrm %%DATADIR%%/Plugins/ViewManagerPlugins/MdiArea
-@dirrm %%DATADIR%%/Plugins/ViewManagerPlugins/Listspace
-@dirrm %%DATADIR%%/Plugins/ViewManagerPlugins
-@dirrm %%DATADIR%%/Plugins/VcsPlugins/vcsSubversion/icons
-@dirrm %%DATADIR%%/Plugins/VcsPlugins/vcsSubversion/ConfigurationPage
-@dirrm %%DATADIR%%/Plugins/VcsPlugins/vcsSubversion
-@dirrm %%DATADIR%%/Plugins/VcsPlugins/vcsPySvn/icons
-@dirrm %%DATADIR%%/Plugins/VcsPlugins/vcsPySvn/ConfigurationPage
-@dirrm %%DATADIR%%/Plugins/VcsPlugins/vcsPySvn
-@dirrm %%DATADIR%%/Plugins/VcsPlugins
-@dirrm %%DATADIR%%/Plugins/DocumentationPlugins/Ericdoc
-@dirrm %%DATADIR%%/Plugins/DocumentationPlugins/Ericapi
-@dirrm %%DATADIR%%/Plugins/DocumentationPlugins
-@dirrm %%DATADIR%%/Plugins/CheckerPlugins/Tabnanny
-@dirrm %%DATADIR%%/Plugins/CheckerPlugins/SyntaxChecker
-@dirrm %%DATADIR%%/Plugins/CheckerPlugins
-@dirrm %%DATADIR%%/Plugins/AboutPlugin
-@dirrm %%DATADIR%%/Plugins
-@dirrm %%DATADIR%%/PluginManager
-@dirrm %%DATADIR%%/Others
-@dirrm %%DATADIR%%/MultiProject
-@dirrm %%DATADIR%%/KdeQt
-@dirrm %%DATADIR%%/IconEditor/cursors
-@dirrm %%DATADIR%%/IconEditor
-@dirrm %%DATADIR%%/Helpviewer/Passwords
-@dirrm %%DATADIR%%/Helpviewer/OpenSearch
-@dirrm %%DATADIR%%/Helpviewer/Network
-@dirrm %%DATADIR%%/Helpviewer/History
-@dirrm %%DATADIR%%/Helpviewer/CookieJar
-@dirrm %%DATADIR%%/Helpviewer/Bookmarks
-@dirrm %%DATADIR%%/Helpviewer/AdBlock
-@dirrm %%DATADIR%%/Helpviewer
-@dirrm %%DATADIR%%/Graphics
-@dirrm %%DATADIR%%/Globals
-@dirrm %%DATADIR%%/E4XML
-@dirrm %%DATADIR%%/E4Network
-@dirrm %%DATADIR%%/E4Gui
-@dirrm %%DATADIR%%/E4Graphics
-@dirrm %%DATADIR%%/DocumentationTools
-@dirrm %%DATADIR%%/DesignerTemplates
-@dirrm %%DATADIR%%/Debugger
-@dirrm %%DATADIR%%/DebugClients/Ruby
-@dirrm %%DATADIR%%/DebugClients/Python3/coverage
-@dirrm %%DATADIR%%/DebugClients/Python3
-@dirrm %%DATADIR%%/DebugClients/Python/coverage
-@dirrm %%DATADIR%%/DebugClients/Python
-@dirrm %%DATADIR%%/DebugClients
-@dirrm %%DATADIR%%/DataViews
-@dirrm %%DATADIR%%/DTDs
-@dirrm %%DATADIR%%/CodeTemplates
-@dirrm %%DATADIR%%/CSSs
-@dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DOCSDIR%%/Source
-@dirrm %%DOCSDIR%%/Help
-@dirrm %%DOCSDIR%%
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@dirrmtry lib/python2.7/site-packages/eric4plugins
+@dirrmtry lib/python2.7/site-packages
+@dirrmtry lib/python2.7

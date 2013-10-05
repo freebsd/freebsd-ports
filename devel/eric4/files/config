@@ -17,6 +17,6 @@ cfg = {
     'ericCodeTemplatesDir' : 'DATADIR/CodeTemplates',
     'ericOthersDir'        : 'DATADIR/Others',
     'bindir'               : 'PREFIX/bin',
-    'mdir'                 : 'DATADIR',
+    'mdir'                 : 'PYTHON_SITELIBDIR',
     'apidir'               : 'LOCALBASE/share/qt4/qsci/api',
 }

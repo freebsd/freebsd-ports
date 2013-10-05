@@ -3,5 +3,4 @@
 
 CATEGORIES=	russian devel python
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../devel/eric4/Makefile.inc"
