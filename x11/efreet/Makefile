@@ -22,5 +22,4 @@ USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--disable-nls
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
