@@ -39,6 +39,11 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/Gtk.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/base/.packlist
+%%PERL5_MAN3%%/Gtk.3pm.gz
+%%PERL5_MAN3%%/Gtk::CListModel.3pm.gz
+%%PERL5_MAN3%%/Gtk::cookbook.3pm.gz
+%%PERL5_MAN3%%/Gtk::objects.3pm.gz
+%%PERL5_MAN3%%/Gtk::reference.3pm.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk/LWP
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Install
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk
