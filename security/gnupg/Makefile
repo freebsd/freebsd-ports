@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnupg
-PORTVERSION=	2.0.21
+PORTVERSION=	2.0.22
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
@@ -29,7 +29,7 @@ USES=		iconv
 USE_LDCONFIG=	YES
 CONFIGURE_ARGS+=	--enable-symcryptrun
 
-OPTIONS_DEFINE=		PINENTRY LDAP SCDAEMON CURL GPGSM KDNS STD_SOCKET NLS
+OPTIONS_DEFINE=		PINENTRY LDAP SCDAEMON CURL GPGSM KDNS STD_SOCKET NLS DOCS SUID_GPG
 PINENTRY_DESC=		Use pinentry
 LDAP_DESC=		LDAP keyserver interface
 SCDAEMON_DESC=		Enable Smartcard daemon (with libusb)
@@ -37,20 +37,14 @@ CURL_DESC=		Use the real curl library (worked around if no)
 GPGSM_DESC=		Enable GPGSM (requires LDAP)
 KDNS_DESC=		Use DNS CERT helper
 STD_SOCKET_DESC=	Use standard socket for agent
+SUID_GPG_DESC=		Install GPG with suid
 OPTIONS_DEFAULT=	CURL
 NO_OPTIONS_SORT=	YES
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=	--disable-doc
-.else
-MAN1=		gpg2.1 gpgsm.1 gpgv2.1 gpg-agent.1 scdaemon.1 watchgnupg.1 \
-		gpgconf.1 gpg-preset-passphrase.1 gpg-connect-agent.1 \
-		gpgparsemail.1 symcryptrun.1 gpgsm-gencert.sh.1
-MAN8=		addgnupghome.8 applygnupgdefaults.8
-INFO=		gnupg
 .endif
 
 .if ${PORT_OPTIONS:MPINENTRY}
@@ -122,8 +116,8 @@ post-patch:
 
 post-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.if defined(WITH_SUID_GPG)
-	${CHMOD} u+s ${PREFIX}/bin/gpg2
+.if ${PORT_OPTIONS:MSUID_GPG}
+	${CHMOD} u+s ${STAGEDIR}${PREFIX}/bin/gpg2
 .endif
 	@${CAT} ${PKGMESSAGE}
 
