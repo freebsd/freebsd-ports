@@ -10,6 +10,15 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20131005:
+AUTHOR: bdrewery@FreeBSD.org
+
+  PATCHFILES now support an optional :-pX flag that notes which patch strip
+  level to use. This allows multiple patches in 1 port to use different
+  PATCH_DIST_STRIP values without changing PATCH_DIST_STRIP.
+
+  Syntax: PATCHFILES= patch[:-pX][:distgroup]
+
 20131003:
 AUTHOR: bapt@FreeBSD.org
 
