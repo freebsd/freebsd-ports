@@ -72,9 +72,6 @@ jenkins_prestart() {
 		chown "${jenkins_user}:${jenkins_group}" "${jenkins_log_file}"
 		chmod 640 "${jenkins_log_file}"
 	fi
-	if [ ! -d "${jenkins_home}" ]; then
-		install -d -o "${jenkins_user}" -g "${jenkins_group}" -m 750 "${jenkins_home}"
-	fi
 	if [ ! -d "/var/run/jenkins" ]; then
 		install -d -o "${jenkins_user}" -g "${jenkins_group}" -m 750 "/var/run/jenkins"
 	fi
