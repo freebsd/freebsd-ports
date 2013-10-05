@@ -15,7 +15,7 @@ RUN_DEPENDS=	autob5:${PORTSDIR}/chinese/autoconvert
 
 PROJECTHOST=	chinese-fortune
 NO_BUILD=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_BZIP2=	yes
 SUB_FILES=	pkg-message
 
