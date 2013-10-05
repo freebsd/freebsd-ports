@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://launchpadlibrarian.net/101701273/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Organise and manage a collection of bzr branches
 
 LICENSE=	GPLv2

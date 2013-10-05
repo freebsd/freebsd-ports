@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://launchpadlibrarian.net/94774555/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provide fast loading of revision control data into bzr
 
 LICENSE=	GPLv2

@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	https://launchpadlibrarian.net/102178824/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin for bzr to work with svn
 
 LICENSE=	GPLv2
