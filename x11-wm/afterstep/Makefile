@@ -8,6 +8,7 @@ CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dinoex
 DISTNAME=	AfterStep-${PORTVERSION}
+PKGNAMESUFFIX=	1
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Window manager originally based on the Bowman NeXTstep clone
