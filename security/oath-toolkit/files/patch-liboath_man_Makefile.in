@@ -1,0 +1,43 @@
+--- liboath/man/Makefile.in.orig	2013-10-05 13:22:16.000000000 +0000
++++ liboath/man/Makefile.in	2013-10-05 13:37:05.265332575 +0000
+@@ -1127,31 +1127,7 @@
+ 	oath_totp_validate2_callback.3 oath_totp_validate3.3 \
+ 	oath_totp_validate3_callback.3 oath_strerror.3 \
+ 	oath_strerror_name.3
+-all: $(BUILT_SOURCES)
+-	$(MAKE) $(AM_MAKEFLAGS) all-am
+ 
+-.SUFFIXES:
+-$(srcdir)/Makefile.in:  $(srcdir)/Makefile.am $(srcdir)/gdoc.mk $(srcdir)/Makefile.gdoc $(am__configure_deps)
+-	@for dep in $?; do \
+-	  case '$(am__configure_deps)' in \
+-	    *$$dep*) \
+-	      ( cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh ) \
+-	        && { if test -f $@; then exit 0; else break; fi; }; \
+-	      exit 1;; \
+-	  esac; \
+-	done; \
+-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign man/Makefile'; \
+-	$(am__cd) $(top_srcdir) && \
+-	  $(AUTOMAKE) --foreign man/Makefile
+-.PRECIOUS: Makefile
+-Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
+-	@case '$?' in \
+-	  *config.status*) \
+-	    cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh;; \
+-	  *) \
+-	    echo ' cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)'; \
+-	    cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe);; \
+-	esac;
+ $(srcdir)/gdoc.mk $(srcdir)/Makefile.gdoc:
+ 
+ $(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
+@@ -1256,7 +1232,7 @@
+ 	for dir in "$(DESTDIR)$(man3dir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+-install: $(BUILT_SOURCES)
++install:
+ 	$(MAKE) $(AM_MAKEFLAGS) install-am
+ install-exec: install-exec-am
+ install-data: install-data-am
