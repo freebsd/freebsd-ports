@@ -10,7 +10,6 @@ RUN_DEPENDS=	clamd:${PORTSDIR}/security/clamav
 
 CLAWS_PLUGINS_BUILD=	clamd
 
-NO_STAGE=	yes
 post-install:
 	@${ECHO}
 	@${ECHO_CMD} "********************************************************************************"

@@ -12,10 +12,10 @@ PLIST_FILES+=	share/claws-mail/matcherrc2perlfilter.pl
 
 CLAWS_PLUGINS_BUILD=	perl
 
-NO_STAGE=	yes
 post-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/src/plugins/perl/tools/matcherrc2perlfilter.pl \
-		${PREFIX}/share/claws-mail/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/claws-mail
+	${INSTALL_SCRIPT} ${WRKSRC}/src/plugins/perl/tools/matcherrc2perlfilter.pl \
+		${STAGEDIR}${PREFIX}/share/claws-mail/
 
 .include "../claws-mail/Makefile.claws"
 .include <bsd.port.mk>
