@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	owncloud
-PORTVERSION=	5.0.11
-PORTREVISION=	1
+PORTVERSION=	5.0.12
 CATEGORIES=	www
 MASTER_SITES=	http://download.owncloud.org/community/
 
@@ -17,7 +16,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_BZIP2=	yes
 USE_PHP=	ctype curl dom fileinfo filter gd hash iconv json mbstring \
 		mysql openssl pdo pdo_mysql pdo_sqlite session simplexml \
-		sqlite3 xml wddx zip zlib
+		sqlite3 xml xmlreader xsl wddx zip zlib
 WANT_PHP_WEB=	yes
 DEFAULT_PHP_VER=5
 
@@ -27,14 +26,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
 	@cd ${WRKSRC} && \
 	    ${FIND} -s -d . -type f -print | \
 		${SED} -e "s#^\.#${WWWDIR_REL}#" >> ${TMPPLIST}
