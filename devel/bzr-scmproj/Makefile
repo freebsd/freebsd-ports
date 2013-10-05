@@ -1,4 +1,4 @@
-# Created by: Carlo Strub <cs@FreeBSD.org>
+# Created by: Carlo Strub
 # $FreeBSD$
 
 PORTNAME=	bzr-scmproj
