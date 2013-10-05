@@ -12,8 +12,8 @@ COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2 \
-		pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2 \
+		libpcre.so:${PORTSDIR}/devel/pcre
 BUILD_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
 
 CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^3].*
@@ -58,7 +58,6 @@ REPLICATION_DESC=	Enable replication
 SNMP_5_DESC=		Enable SNMP support
 SQLITE_DESC=		Enable SQLite backend (experimental)
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Autocreate Inbox and Autosieve patches from UoA
@@ -159,7 +158,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif
 
 .if ${PORT_OPTIONS:MSNMP_5}
-LIB_DEPENDS+=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=--with-snmp=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-snmp=no
@@ -190,10 +189,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure
 CYRUS_USER?=	cyrus
 CYRUS_GROUP?=	cyrus
 
-MAN1=		cyradm.1 imtest.1 installsieve.1 lmtptest.1 mupdatetest.1 \
-		nntptest.1 pop3test.1 sieveshell.1 sivtest.1 smtptest.1
-MAN3=		imclient.3
-MAN5=		cyrus.conf.5 imapd.conf.5 krb.equiv.5
 CYRUS_MAN3=	Cyrus::IMAP.3 Cyrus::IMAP::Admin.3 Cyrus::IMAP::IMSP.3 \
 		Cyrus::IMAP::Shell.3 Cyrus::SIEVE::managesieve.3
 CYRUS_MAN8=	arbitron.8 chk_cyrus.8 nntpd.8 ctl_cyrusdb.8 ctl_deliver.8 \
@@ -221,87 +216,87 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGINSTALL=	${WRKDIR}/pkg-install
 
 post-patch:
-		@${SED} -e "s|%%CYRUS_USER%%|${CYRUS_USER}|g" \
-			-e "s|%%PREFIX%%|${PREFIX}|g" \
-			-e "s|%%EXAMPLESDIR%%|${EXAMPLESDIR}|g" \
-			${.CURDIR}/pkg-install > ${PKGINSTALL}
-		@${SED} -e "s|%%CYRUS_USER%%|${CYRUS_USER}|g" \
-			-e "s|%%PREFIX%%|${PREFIX}|g" \
-			-e "s|%%EXAMPLESDIR%%|${EXAMPLESDIR}|g" \
-			${.CURDIR}/pkg-deinstall > ${PKGDEINSTALL}
-		@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|" \
-				  -e "s|%%CYRUS_USER%%|${CYRUS_USER}|g" \
-				  -e "s|%%CYRUS_GROUP%%|${CYRUS_GROUP}|g" \
-			${WRKSRC}/tools/mkimap
-		@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|g" \
-				  -e "s|/usr/sieve|/var/imap/sieve|g" \
-			${WRKSRC}/tools/masssievec
-		@${REINPLACE_CMD} -e "s|-lpthread|\$$(PTHREAD_LIBS)|g" \
-			${WRKSRC}/imap/Makefile.in
-		@${SED} -e "s|%%PREFIX%%|${PREFIX}|g;" \
-			${FILESDIR}/cyrus-imapd-man.conf \
-			> ${WRKDIR}/cyrus-imapd-man.conf
+	@${SED} -e "s|%%CYRUS_USER%%|${CYRUS_USER}|g" \
+		-e "s|%%PREFIX%%|${PREFIX}|g" \
+		-e "s|%%EXAMPLESDIR%%|${EXAMPLESDIR}|g" \
+		${.CURDIR}/pkg-install > ${PKGINSTALL}
+	@${SED} -e "s|%%CYRUS_USER%%|${CYRUS_USER}|g" \
+		-e "s|%%PREFIX%%|${PREFIX}|g" \
+		-e "s|%%EXAMPLESDIR%%|${EXAMPLESDIR}|g" \
+		${.CURDIR}/pkg-deinstall > ${PKGDEINSTALL}
+	@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|" \
+			  -e "s|%%CYRUS_USER%%|${CYRUS_USER}|g" \
+			  -e "s|%%CYRUS_GROUP%%|${CYRUS_GROUP}|g" \
+		${WRKSRC}/tools/mkimap
+	@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|g" \
+			  -e "s|/usr/sieve|/var/imap/sieve|g" \
+		${WRKSRC}/tools/masssievec
+	@${REINPLACE_CMD} -e "s|-lpthread|\$$(PTHREAD_LIBS)|g" \
+		${WRKSRC}/imap/Makefile.in
+	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g;" \
+		${FILESDIR}/cyrus-imapd-man.conf \
+		> ${WRKDIR}/cyrus-imapd-man.conf
 .if ${PORT_OPTIONS:MDRAC}
-		@${RM} -rf ${WRKSRC}/autom4te.cache
+	@${RM} -rf ${WRKSRC}/autom4te.cache
 .endif
 
 post-install:
 .for f in ${CYRUS_MAN3}
-		@${GZIP_CMD} ${PREFIX}/${PERLMAN}/man/man3/${f}
-		@${ECHO_CMD} ${PERLMAN}/man/man3/${f}.gz >>${TMPPLIST}
+	@${GZIP_CMD} ${STAGEDIR}${PREFIX}/${PERLMAN}/man/man3/${f}
+	@${ECHO_CMD} ${PERLMAN}/man/man3/${f}.gz >>${TMPPLIST}
 .endfor
 .for f in ${CYRUS_MAN8}
-		@${GZIP_CMD} ${PREFIX}/cyrus/man/man8/${f}
-		@${ECHO_CMD} cyrus/man/man8/${f}.gz >>${TMPPLIST}
+	@${GZIP_CMD} ${STAGEDIR}${PREFIX}/cyrus/man/man8/${f}
+	@${ECHO_CMD} cyrus/man/man8/${f}.gz >>${TMPPLIST}
 .endfor
-		@${ECHO_CMD} "@dirrm cyrus/man/man8" >>${TMPPLIST}
-		@${ECHO_CMD} "@dirrm cyrus/man" >>${TMPPLIST}
-		@${ECHO_CMD} "@dirrm cyrus" >>${TMPPLIST}
+	@${ECHO_CMD} "@dirrm cyrus/man/man8" >>${TMPPLIST}
+	@${ECHO_CMD} "@dirrm cyrus/man" >>${TMPPLIST}
+	@${ECHO_CMD} "@dirrm cyrus" >>${TMPPLIST}
 .if ${PORT_OPTIONS:MDOCS}
-		@${MKDIR} ${DOCSDIR}/man
-		@${MKDIR} ${DOCSDIR}/text
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/man
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/text
 .for f in ${DOCS}
-		@${INSTALL_DATA} ${WRKSRC}/doc/${f}.html ${DOCSDIR}
-		@${ECHO_CMD} share/doc/${PORTNAME}/${f}.html >>${TMPPLIST}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${f}.html ${STAGEDIR}${DOCSDIR}
+	@${ECHO_CMD} share/doc/${PORTNAME}/${f}.html >>${TMPPLIST}
 .endfor
 .for f in ${MAN1} ${MAN3} ${MAN5} ${CYRUS_MAN8}
-		@if [ -f ${WRKSRC}/doc/man/${f}.html ]; then \
+	@if [ -f ${WRKSRC}/doc/man/${f}.html ]; then \
 		${INSTALL_DATA} ${WRKSRC}/doc/man/${f}.html \
-			${DOCSDIR}/man/${f}.html; \
+			${STAGEDIR}${DOCSDIR}/man/${f}.html; \
 		${ECHO_CMD} share/doc/${PORTNAME}/man/${f}.html \
 			>>${TMPPLIST}; \
-		fi
+	fi
 .endfor
 .for f in cyrusv2.mc murder.fig murder.png netnews.fig netnews.png
-		@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
-		@${ECHO_CMD} share/doc/${PORTNAME}/${f} >>${TMPPLIST}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
+	@${ECHO_CMD} share/doc/${PORTNAME}/${f} >>${TMPPLIST}
 .endfor
 .for f in ${DOCS}
-		@${INSTALL_DATA} ${WRKSRC}/doc/text/${f} ${DOCSDIR}/text
-		@${ECHO_CMD} share/doc/${PORTNAME}/text/${f} >>${TMPPLIST}
+	@${INSTALL_DATA} ${WRKSRC}/doc/text/${f} \
+		${STAGEDIR}${DOCSDIR}/text
+	@${ECHO_CMD} share/doc/${PORTNAME}/text/${f} >>${TMPPLIST}
 .endfor
-		@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}/text" >>${TMPPLIST}
-		@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}/man" >>${TMPPLIST}
-		@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}" >>${TMPPLIST}
+	@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}/text" >>${TMPPLIST}
+	@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}/man" >>${TMPPLIST}
+	@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}" >>${TMPPLIST}
 .endif
-		@${MKDIR} ${EXAMPLESDIR}
-		@${INSTALL_DATA} ${FILESDIR}/imapd.conf ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${FILESDIR}/imapd.conf \
+		${STAGEDIR}${EXAMPLESDIR}
 .for f in ${CONFS}
-		@${INSTALL_DATA} ${WRKSRC}/master/conf/${f} ${EXAMPLESDIR}
-		@${ECHO_CMD} ${EXAMPLESDIR:S,^${PREFIX}/,,}/${f} >>${TMPPLIST}
+	@${INSTALL_DATA} ${WRKSRC}/master/conf/${f} \
+		${STAGEDIR}${EXAMPLESDIR}
+	@${ECHO_CMD} ${EXAMPLESDIR:S,^${PREFIX}/,,}/${f} >>${TMPPLIST}
 .endfor
-		@${ECHO_CMD} @dirrm ${EXAMPLESDIR:S,^${PREFIX}/,,} \
-			>>${TMPPLIST}
-		@${INSTALL_SCRIPT} ${WRKSRC}/tools/mkimap \
-			${PREFIX}/cyrus/bin/mkimap
-		@${INSTALL_SCRIPT} ${WRKSRC}/tools/masssievec \
-			${PREFIX}/cyrus/bin/masssievec
+	@${ECHO_CMD} @dirrm ${EXAMPLESDIR:S,^${PREFIX}/,,} \
+		>>${TMPPLIST}
+	@${INSTALL_SCRIPT} ${WRKSRC}/tools/mkimap \
+		${STAGEDIR}${PREFIX}/cyrus/bin/mkimap
+	@${INSTALL_SCRIPT} ${WRKSRC}/tools/masssievec \
+		${STAGEDIR}${PREFIX}/cyrus/bin/masssievec
 .if ${OSVERSION} >= 900022
-		@${INSTALL_DATA} ${WRKDIR}/cyrus-imapd-man.conf \
-			${PREFIX}/etc/man.d/cyrus-imapd.conf
+	@${INSTALL_DATA} ${WRKDIR}/cyrus-imapd-man.conf \
+		${STAGEDIR}${PREFIX}/etc/man.d/cyrus-imapd.conf
 .endif
-		@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} \
-			POST-INSTALL
-		@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
