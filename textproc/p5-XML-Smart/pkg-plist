@@ -14,6 +14,11 @@
 %%SITE_PERL%%/XML/Smart/Tutorial.pod
 %%SITE_PERL%%/XML/Smart/XPath.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Smart/.packlist
+%%PERL5_MAN3%%/XML::Smart.3.gz
+%%PERL5_MAN3%%/XML::Smart::DTD.3.gz
+%%PERL5_MAN3%%/XML::Smart::FAQ.3.gz
+%%PERL5_MAN3%%/XML::Smart::Shared.3.gz
+%%PERL5_MAN3%%/XML::Smart::Tutorial.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Smart
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML/Smart
