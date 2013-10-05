@@ -191,6 +191,8 @@ post-patch:
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/man/man3
 	@${MKDIR} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto
+	@${MKDIR} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/machine
+	@${MKDIR} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/sys
 	@${MKDIR} ${STAGEDIR}${SITE_PERL}/auto
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/perl${PERL_VERSION}
 .if ${OSVERSION} >= 900022
