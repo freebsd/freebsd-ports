@@ -1,7 +1,0 @@
-bin/gxmlviewer
-bin/xmlview-control
-bin/xmlformatter
-lib/gxmlviewer/plugins/npgxmlviewer.so
-share/oaf/GNOME_XMLView.oaf
-@dirrm lib/gxmlviewer/plugins
-@dirrm lib/gxmlviewer
