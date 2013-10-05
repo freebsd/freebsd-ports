@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QE is a PE2-like editor program under U*nix
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 post-configure:
 	@${REINPLACE_CMD} -e '49s,-s,,' ${WRKSRC}/src/Makefile
