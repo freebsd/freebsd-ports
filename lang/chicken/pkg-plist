@@ -16,7 +16,6 @@ lib/chicken/6/files.import.so
 lib/chicken/6/foreign.import.so
 lib/chicken/6/irregex.import.so
 lib/chicken/6/lolevel.import.so
-lib/chicken/6/modules.db
 lib/chicken/6/ports.import.so
 lib/chicken/6/posix.import.so
 lib/chicken/6/setup-api.import.so
@@ -35,6 +34,14 @@ lib/chicken/6/utils.import.so
 lib/libchicken.a
 lib/libchicken.so
 lib/libchicken.so.6
+man/man1/chicken-bug.1.gz
+man/man1/chicken-install.1.gz
+man/man1/chicken-profile.1.gz
+man/man1/chicken-status.1.gz
+man/man1/chicken-uninstall.1.gz
+man/man1/chicken.1.gz
+man/man1/csc.1.gz
+man/man1/csi.1.gz
 %%DATADIR%%/setup.defaults
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
@@ -95,6 +102,8 @@ lib/libchicken.so.6
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual.css
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec %D/bin/chicken-install -update-db
+@unexec rm -f %D/lib/chicken/6/modules.db
 @dirrm %%DATADIR%%
 @dirrm lib/chicken/6
 @dirrm lib/chicken
