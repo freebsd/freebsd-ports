@@ -1,0 +1,10 @@
+--- ./kmymoney/CMakeLists.txt.orig	2013-10-05 10:07:28.000000000 -0400
++++ ./kmymoney/CMakeLists.txt	2013-10-05 10:08:07.000000000 -0400
+@@ -99,7 +99,6 @@
+ INSTALL(FILES x-kmymoney.xml
+   DESTINATION ${XDG_MIME_INSTALL_DIR})
+ 
+-UPDATE_XDG_MIMETYPES(${XDG_MIME_INSTALL_DIR})
+ 
+ ########## Application Icons #############
+ INSTALL(DIRECTORY icons/oxygen
