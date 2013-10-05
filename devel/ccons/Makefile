@@ -1,48 +1,45 @@
+# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ccons
-PORTVERSION=	r243
+PORTVERSION=	r251
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	danilogondolfo@gmail.com
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Interactive Console for the C Programming Language
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/llvm-config:${PORTSDIR}/devel/llvm \
-		${LOCALBASE}/bin/clang:${PORTSDIR}/lang/clang \
-		${LOCALBASE}/bin/ld:${PORTSDIR}/devel/binutils
-LIB_DEPENDS=	ncurses:${PORTSDIR}/devel/ncurses
+BUILD_DEPENDS=	llvm-config33:${PORTSDIR}/devel/llvm33 \
+		clang++33:${PORTSDIR}/lang/clang33
+LIB_DEPENDS=	libncurses.so:${PORTSDIR}/devel/ncurses
 
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		cmake
-CMAKE_ARGS+=	-DLLVM_CONFIG_EXECUTABLE:FILEPATH=${LOCALBASE}/bin/llvm-config
-
-CXX=	${LOCALBASE}/bin/clang++
+CMAKE_ARGS+=	-DLLVM_CONFIG_EXECUTABLE=${LOCALBASE}/bin/llvm-config33
 CXXFLAGS+=	-fno-rtti
-LDFLAGS+=	-lclangFrontendTool -lclangFrontend -lclangDriver -lclangSerialization \
-		-lclangCodeGen -lclangParse -lclangSema -lclangStaticAnalyzerCheckers \
-		-lclangStaticAnalyzerCore -lclangAnalysis -lclang -lclangAST -lclangLex \
-		-lclangBasic -ledit -lm
+LDFLAGS+=	-lclang
+CXX=	clang++33
+CC=		clang33
 
-PLIST_FILES=	bin/ccons
+PLIST_FILES=	bin/ccons man/man1/ccons.1.gz
 
 WRKSRC=	${WRKDIR}/ccons
 
-
-MAN1=	ccons.1
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1000054
+CXXFLAGS+=	-stdlib=libc++
+.endif
 
 .if ${OSVERSION} < 900044
 BROKEN=	ccons does not work on FreeBSD < 9.0-RELEASE
 .endif
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/ccons ${PREFIX}/bin/ccons
-	@${INSTALL_MAN} ${WRKSRC}/man/ccons.1 ${MAN1PREFIX}/man/man1/ccons.1
+	@${INSTALL_PROGRAM} ${WRKSRC}/ccons ${STAGEDIR}${PREFIX}/bin/ccons
+	@${INSTALL_MAN} ${WRKSRC}/man/ccons.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/ccons.1
 
 .include <bsd.port.post.mk>
