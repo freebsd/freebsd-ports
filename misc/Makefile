@@ -274,7 +274,6 @@
     SUBDIR += metromap
     SUBDIR += mime-support
     SUBDIR += mirmon
-    SUBDIR += misterproper
     SUBDIR += mmv
     SUBDIR += mshell
     SUBDIR += mtail

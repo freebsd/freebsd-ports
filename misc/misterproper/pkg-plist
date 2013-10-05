@@ -1,8 +1,0 @@
-bin/misterproper
-share/locale/de/LC_MESSAGES/misterproper.mo
-share/locale/es/LC_MESSAGES/misterproper.mo
-share/locale/fr/LC_MESSAGES/misterproper.mo
-share/locale/pt/LC_MESSAGES/misterproper.mo
-share/locale/sv/LC_MESSAGES/misterproper.mo
-share/pixmaps/misterproper/misterproper.xpm
-@dirrm share/pixmaps/misterproper

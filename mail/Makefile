@@ -287,7 +287,6 @@
     SUBDIR += ml
     SUBDIR += mlmmj
     SUBDIR += mls
-    SUBDIR += mmc
     SUBDIR += mmr
     SUBDIR += movemail
     SUBDIR += mpop

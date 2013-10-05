@@ -91,7 +91,6 @@
     SUBDIR += bomber
     SUBDIR += bomberclone
     SUBDIR += bomberinstinct
-    SUBDIR += bombermaze
     SUBDIR += bombherman
     SUBDIR += bomns
     SUBDIR += boswars
@@ -316,7 +315,6 @@
     SUBDIR += glchess
     SUBDIR += glest
     SUBDIR += glest-data
-    SUBDIR += glife
     SUBDIR += glightoff
     SUBDIR += glmaze
     SUBDIR += glob2
@@ -327,7 +325,6 @@
     SUBDIR += gmines
     SUBDIR += gnake
     SUBDIR += gnarr
-    SUBDIR += gnmm
     SUBDIR += gno3dtet
     SUBDIR += gnome-games
     SUBDIR += gnome-games-extra-data
@@ -335,7 +332,6 @@
     SUBDIR += gnomebreakout
     SUBDIR += gnomechess
     SUBDIR += gnomekiss
-    SUBDIR += gnomermind
     SUBDIR += gnomesudoku
     SUBDIR += gnono
     SUBDIR += gnubg

@@ -16,7 +16,6 @@
     SUBDIR += fidogate
     SUBDIR += fidogate-ds
     SUBDIR += golded+
-    SUBDIR += grn
     SUBDIR += gup
     SUBDIR += hellanzb
     SUBDIR += husky-base

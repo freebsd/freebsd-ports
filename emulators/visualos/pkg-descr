@@ -1,9 +1,0 @@
-VisualOS is a "visual simulator of an operating system", that will help
-study and understand the way a real systems work.
-
-It allows the user to insert processes in the running system, assigning them
-properties (memory usage, processing bursts, IO accesses) and VisualOS will
-dynamically show different graphical representations of each subsystem. It is
-also possible to select the algorithm to be used in each case.
-
-WWW: http://sourceforge.net/projects/visualos/

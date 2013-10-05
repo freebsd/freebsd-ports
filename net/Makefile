@@ -175,7 +175,6 @@
     SUBDIR += gnome-mud
     SUBDIR += gnome-netstatus
     SUBDIR += gnome-nettool
-    SUBDIR += gnome-vnc
     SUBDIR += gnu-dico
     SUBDIR += gnu-radius
     SUBDIR += go.net

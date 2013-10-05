@@ -1040,7 +1040,6 @@
     SUBDIR += xosview
     SUBDIR += xsi
     SUBDIR += xstow
-    SUBDIR += xsu
     SUBDIR += xsysstats
     SUBDIR += xvidcap
     SUBDIR += yawho

@@ -1,7 +1,0 @@
-bin/gnmm
-share/gnome/apps/Games/gnmm.desktop
-share/locale/de/LC_MESSAGES/gnmm.mo
-share/pixmaps/gnmm-logo.png
-share/pixmaps/gnmm/board.png
-share/pixmaps/gnmm/pieces.png
-@dirrm share/pixmaps/gnmm
