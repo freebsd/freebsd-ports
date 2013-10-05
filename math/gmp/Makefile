@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmp
-PORTVERSION=	5.1.2
+PORTVERSION=	5.1.3
 CATEGORIES=	math devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gmp
@@ -15,7 +15,7 @@ LICENSE=	LGPL3
 OPTIONS_DEFINE=	CPU_OPTS
 CPU_OPTS_DESC=	Enable assembly optimizations for your CPU
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 HAS_CONFIGURE=	yes
 GNU_CONFIGURE=	no # needed, since the following line would add it
 USE_AUTOTOOLS=	libtool
