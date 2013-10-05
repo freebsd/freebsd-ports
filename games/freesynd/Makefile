@@ -14,7 +14,7 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 USES=		cmake
 USE_SDL=	sdl image mixer
 
-SUB_FILES=	freesynd.sh pkg-message
+SUB_FILES=	pkg-message
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
