@@ -2,6 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	27610
+PORTREVISION=	1
 CATEGORIES=	print perl5
 MASTER_SITES=	ftp://tug.org/tex-archive/systems/texlive/tlnet/archive/
 PKGNAMESUFFIX=	-infra
@@ -11,6 +12,8 @@ DIST_SUBDIR=	TeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Basic TeXLive infrastructure
 
+USES=		perl5
+USE_PERL5=	run
 USE_XZ=		yes
 USE_TEX=	texlive texmf
 NO_BUILD=	yes
