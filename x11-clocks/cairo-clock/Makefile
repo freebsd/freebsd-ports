@@ -34,6 +34,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,.gz,,; s,datadir)\/man,prefix)\/man,' \
 		${WRKSRC}/man/Makefile.in
 
+post-configure:
+.if ${OSVERSION} > 1000000 || ${CC:Mclang} != ""
+	@${REINPLACE_CMD} -e 's,--export-dynamic,-export-dynamic,' \
+		${WRKSRC}/src/Makefile
+.endif
+
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
