@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Term-Menus
-PORTVERSION=	2.45
+PORTVERSION=	2.46
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:REEDFISH
@@ -23,7 +23,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Term::Menus.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
