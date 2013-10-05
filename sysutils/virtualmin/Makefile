@@ -15,7 +15,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/webmin/webmin-init:${PORTSDIR}/sysutils/webmin
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/virtual-server
 
-NO_STAGE=	yes
 post-extract:
 	@${RM} -r ${WRKSRC}/images/.xvpics
 	@${FIND} ${WRKSRC} -name "*.swp" -delete
@@ -25,11 +24,8 @@ post-extract:
 	@${FIND} ${WRKSRC} -type d -empty | ${XARGS} ${RMDIR}
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/webmin
-	@${MKDIR} ${PREFIX}/etc/webmin/virtual-server
-	@${CP} -r ${WRKSRC} ${PREFIX}/lib/webmin
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/webmin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/webmin/virtual-server
+	${CP} -r ${WRKSRC} ${STAGEDIR}${PREFIX}/lib/webmin
 
 .include <bsd.port.mk>
