@@ -17,14 +17,12 @@ LICENSE=	BSD
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_EFL=	ecore libtool_hack
-USES=		pkgconfig
+USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 BUILD_WRKSRC=	${WRKSRC}/src/lib/ecore_con
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-NO_STAGE=	yes
 .include "../../devel/ecore-main/Makefile.inc"
 
 CONFIGURE_ARGS+=	--enable-ecore-con
@@ -36,14 +34,14 @@ OPTIONS_DEFAULT=CARES CURL SSL
 
 .if ${PORT_OPTIONS:MCARES}
 CONFIGURE_ARGS+=	--enable-cares
-LIB_DEPENDS+=		cares:${PORTSDIR}/dns/c-ares
+LIB_DEPENDS+=		libcares.so:${PORTSDIR}/dns/c-ares
 .else
 CONFIGURE_ARGS+=	--disable-cares
 .endif
 
 .if ${PORT_OPTIONS:MCURL}
 CONFIGURE_ARGS+=	--enable-curl
-LIB_DEPENDS+=		curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=		libcurl.so:${PORTSDIR}/ftp/curl
 .else
 CONFIGURE_ARGS+=	--disable-curl
 .endif
@@ -64,6 +62,6 @@ post-patch:
 post-install:
 	@${REINPLACE_CMD} 's/ openssl//' ${WRKSRC}/ecore-con.pc
 	${INSTALL_DATA} ${WRKSRC}/ecore-con.pc \
-		${PREFIX}/libdata/pkgconfig/
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/
 
 .include <bsd.port.mk>
