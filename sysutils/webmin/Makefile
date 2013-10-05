@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webmin
-PORTVERSION=	1.630
+PORTVERSION=	1.650
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf \
@@ -26,7 +26,6 @@ SUB_FILES=	pkg-message
 
 WEBMIN_MODULES=
 
-NO_STAGE=	yes
 post-extract:
 	@${RM} -f ${WRKSRC}/mount/freebsd-mounts-?
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \
@@ -59,38 +58,12 @@ post-patch:
 	@${PRINTF} "g/^FreeBSD/m0\nwq\n" | ex ${WRKSRC}/os_list.txt
 
 do-build:
+	@${PYTHON_CMD} -mcompileall ${WRKSRC}/ajaxterm/ajaxterm/
+	@${PYTHON_CMD} -O -mcompileall ${WRKSRC}/ajaxterm/ajaxterm/
 	@${CC} ${CFLAGS} -o ${WRKSRC}/mount/freebsd-mounts-7 ${WRKSRC}/mount/freebsd-mounts-7.c
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/webmin
-	@${CP} -r ${WRKSRC}/* ${PREFIX}/lib/webmin
-
-post-install:
-	@${PYTHON_CMD} -O -mcompileall ${PREFIX}/lib/webmin/ajaxterm/ajaxterm/
-	@${PYTHON_CMD} -mcompileall ${PREFIX}/lib/webmin/ajaxterm/ajaxterm/
-
-	@cd ${WRKSRC} ; ${FIND} * -type f -o -type l | ${SORT} | ${AWK} \
-		'{ print "lib/webmin/" $$1 }' > ${WRKDIR}/PLIST.lib-webmin
-	@cd ${WRKSRC} ; ${FIND} * -type f -name "*.py" | ${SED} -e "s/\\.py/.pyc/" | ${SORT} | ${AWK} \
-		'{ print "lib/webmin/" $$1 }' >> ${WRKDIR}/PLIST.lib-webmin
-	@cd ${WRKSRC} ; ${FIND} * -type f -name "*.py" | ${SED} -e "s/\\.py/.pyo/" | ${SORT} | ${AWK} \
-		'{ print "lib/webmin/" $$1 }' >> ${WRKDIR}/PLIST.lib-webmin
-	@cd ${WRKSRC} ; ${FIND} * -type d -empty | ${SORT} -r | ${AWK} \
-		'{ print "lib/webmin/" $$1 }' | ${SED} -e 's#^#@exec mkdir -p %D/#g' \
-		>> ${WRKDIR}/PLIST.lib-webmin
-	@cd ${WRKSRC} ; ${FIND} * -type d | ${SORT} -r | ${AWK} \
-		'{ print "lib/webmin/" $$1 }' | ${SED} -e 's/^/@dirrm /g' \
-		>> ${WRKDIR}/PLIST.lib-webmin
-	@${ECHO_CMD} "r ${TMPPLIST}"			> ${WRKDIR}/ex.script
-	@${ECHO_CMD} "/Insert PLIST.lib-webmin"		>> ${WRKDIR}/ex.script
-	@${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
-	@${ECHO_CMD} "r ${WRKDIR}/PLIST.lib-webmin"	>> ${WRKDIR}/ex.script
-	@${ECHO_CMD} "x!"				>> ${WRKDIR}/ex.script
-	@${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-lib-webmin
-	@cd ${WRKDIR} ; ex < ex.script
-	@if [ -d ${PREFIX}/etc/webmin ]; then \
-		${PREFIX}/lib/webmin/setup.sh; \
-	fi
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/webmin
+	${CP} -r ${WRKSRC}/* ${STAGEDIR}${PREFIX}/lib/webmin
 
 .include <bsd.port.mk>
