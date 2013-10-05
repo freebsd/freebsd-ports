@@ -42,7 +42,6 @@
     SUBDIR += gplcver
     SUBDIR += gspiceui
     SUBDIR += gtkwave
-    SUBDIR += gwave
     SUBDIR += impact
     SUBDIR += irsim
     SUBDIR += iverilog
