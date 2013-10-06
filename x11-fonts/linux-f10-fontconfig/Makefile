@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	An XML-based font configuration API for X Windows (Linux Fedora 10)
+COMMENT=	XML-based font configuration API for X Windows (Linux Fedora 10)
 
 CONFLICTS=	linux-fontconfig-[0-9]* linux-f8-fontconfig-[0-9]*
 
@@ -23,14 +23,14 @@ USE_LDCONFIG=	yes
 
 # We will use some other configuration file, so delete a linux one
 # Don't let the linux fc-cache mess up the native cache file
-NO_STAGE=	yes
 post-extract:
 		@${RM} -r ${WRKSRC}/etc ${WRKSRC}/usr/share/fonts ${WRKSRC}/var \
 			${WRKSRC}/usr/bin/fc-cache \
 			${WRKSRC}/usr/share/man/man1/fc-cache.1.gz
 
 post-install:
-		@${LN} -s ${LOCALBASE}/etc/fonts ${PREFIX}/etc/
+		${MKDIR} ${STAGEDIR}${PREFIX}/etc
+		@${LN} -s ${LOCALBASE}/etc/fonts ${STAGEDIR}${PREFIX}/etc/
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
