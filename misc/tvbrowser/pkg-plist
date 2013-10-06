@@ -75,14 +75,14 @@ share/applications/tvbrowser.desktop
 %%DATADIR%%/tvbrowser.sh
 %%DATADIR%%/website.url
 %%DATADIR%%/wiki.url
-@dirrm %%DATADIR%%/themepacks
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/personas/ecb70d5c-f606-4052-9059-5c501842d6c3
-@dirrm %%DATADIR%%/personas/3f9cd798-2b32-468c-a827-8c117d8a4b0c
-@dirrm %%DATADIR%%/personas/3b862288-9900-4c09-99e9-b34d5f926a42
-@dirrm %%DATADIR%%/personas
-@dirrm %%DATADIR%%/imgs
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/hyphen
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%/themepacks
+@dirrmtry %%DATADIR%%/plugins
+@dirrmtry %%DATADIR%%/personas/ecb70d5c-f606-4052-9059-5c501842d6c3
+@dirrmtry %%DATADIR%%/personas/3f9cd798-2b32-468c-a827-8c117d8a4b0c
+@dirrmtry %%DATADIR%%/personas/3b862288-9900-4c09-99e9-b34d5f926a42
+@dirrmtry %%DATADIR%%/personas
+@dirrmtry %%DATADIR%%/imgs
+@dirrmtry %%DATADIR%%/icons
+@dirrmtry %%DATADIR%%/hyphen
+@dirrmtry %%DATADIR%%
 @dirrmtry share/applications
