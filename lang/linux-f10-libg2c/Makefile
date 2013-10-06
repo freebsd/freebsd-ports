@@ -23,5 +23,4 @@ SRC_DISTFILES=	compat-gcc-34-${PORTVERSION}-${RPMVERSION}.src.rpm
 
 PLIST_FILES=	usr/lib/libg2c.so.0 usr/lib/libg2c.so.0.0.0
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
