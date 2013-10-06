@@ -1,6 +1,9 @@
 bin/egrep
 bin/fgrep
 bin/grep
+man/man1/egrep.1.gz
+man/man1/fgrep.1.gz
+man/man1/grep.1.gz
 %%NLS%%share/locale/af/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/be/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/grep.mo
