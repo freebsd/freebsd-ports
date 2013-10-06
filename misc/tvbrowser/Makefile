@@ -17,14 +17,17 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 SUB_FILES=	tvbrowser
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/share/applications/
-	@${REINPLACE_CMD} -e "s/${PORTNAME}\.sh/${PORTNAME}/" ${WRKSRC}/${PORTNAME}.desktop
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${PREFIX}/share/applications/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/applications/
+	@${REINPLACE_CMD} -e "s/${PORTNAME}\.sh/${PORTNAME}/" \
+		${WRKSRC}/${PORTNAME}.desktop
+	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop \
+		${STAGEDIR}${PREFIX}/share/applications/
 	@${RM} ${WRKSRC}/${PORTNAME}.desktop ${WRKSRC}/${PORTNAME}.desktop.bak
-	@cd ${WRKSRC} && ${FIND} . -type d -exec ${MKDIR} "${DATADIR}/{}" \;
-	@cd ${WRKSRC} && ${FIND} . -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
-	@${INSTALL_SCRIPT} ${WRKDIR}/tvbrowser ${PREFIX}/bin
+	@cd ${WRKSRC} && ${FIND} . -type d -exec \
+		${MKDIR} "${STAGEDIR}${DATADIR}/{}" \;
+	@cd ${WRKSRC} && ${FIND} . -type f -exec \
+		${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/{}" \;
+	@${INSTALL_SCRIPT} ${WRKDIR}/tvbrowser ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
