@@ -16,5 +16,4 @@ RPMVERSION=	1.fc10
 USE_LDCONFIG=	yes
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
