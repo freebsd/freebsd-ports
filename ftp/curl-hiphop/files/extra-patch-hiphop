@@ -1,7 +1,7 @@
---- include/curl/multi.h.orig	20 May 2008 10:21:50 -0000	1.45
-+++ include/curl/multi.h	29 Jan 2010 23:45:18 -0000
-@@ -135,6 +135,19 @@
-                                        int *max_fd);
+--- include/curl/multi.h.orig	2013-06-23 04:32:16.000000000 +0800
++++ include/curl/multi.h	2013-08-18 01:15:02.455786067 +0800
+@@ -161,6 +161,19 @@
+                                       int *ret);
  
   /*
 +  * Name:    curl_multi_select()
@@ -20,16 +20,15 @@
    * Name:    curl_multi_perform()
    *
    * Desc:    When the app thinks there's data available for curl it calls this
-
---- lib/multi.c.orig	2012-01-23 16:31:30.000000000 +0100
-+++ lib/multi.c	2012-07-13 13:50:34.314507221 +0200
-@@ -941,6 +941,80 @@
+--- lib/multi.c.orig	2013-08-10 05:41:42.000000000 +0800
++++ lib/multi.c	2013-08-18 01:15:02.458784982 +0800
+@@ -922,6 +922,80 @@
    return CURLM_OK;
  }
  
 +CURLMcode curl_multi_select(CURLM *multi_handle, int timeout_ms, int *ret) {
 +  struct Curl_multi *multi=(struct Curl_multi *)multi_handle;
-+  struct Curl_one_easy *easy;
++  struct SessionHandle *easy;
 +  curl_socket_t sockbunch[MAX_SOCKSPEREASYHANDLE];
 +  int bitmap;
 +  int i;
@@ -40,8 +39,8 @@
 +  if(!GOOD_MULTI_HANDLE(multi))
 +    return CURLM_BAD_HANDLE;
 +
-+  easy=multi->easy.next;
-+  while(easy != &multi->easy) {
++  easy=multi->easyp->next;
++  while(easy != &multi->easyp) {
 +    bitmap = multi_getsock(easy, sockbunch, MAX_SOCKSPEREASYHANDLE);
 +
 +    for(i=0; i< MAX_SOCKSPEREASYHANDLE; i++) {
@@ -66,8 +65,8 @@
 +  ufds = (struct pollfd *)malloc(nfds * sizeof(struct pollfd));
 +  nfds = 0;
 +
-+  easy=multi->easy.next;
-+  while(easy != &multi->easy) {
++  easy=multi->easyp->next;
++  while(easy != &multi->easyp) {
 +    bitmap = multi_getsock(easy, sockbunch, MAX_SOCKSPEREASYHANDLE);
 +
 +    for(i=0; i< MAX_SOCKSPEREASYHANDLE; i++) {
@@ -103,4 +102,4 @@
 +
  static CURLMcode multi_runsingle(struct Curl_multi *multi,
                                   struct timeval now,
-                                  struct Curl_one_easy *easy)
+                                  struct SessionHandle *easy)
