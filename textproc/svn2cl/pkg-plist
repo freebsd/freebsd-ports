@@ -1,4 +1,5 @@
 bin/svn2cl
+man/man1/svn2cl.1.gz
 %%DATADIR%%/authors.xml
 %%DATADIR%%/svn2cl.xsl
 %%DATADIR%%/svn2html.css
