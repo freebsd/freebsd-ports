@@ -15,24 +15,20 @@ BUILD_WRKSRC=	${WRKSRC}/src
 PLIST_FILES=	bin/aribas
 PORTDOCS=	README aribas.doc aribas.man aribas.tut
 PORTEXAMPLES=	README factor.ari pi.ari queens.ari
-MAN1=		aribas.1
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^CC/d;' \
 	       -e '/^CFLAGS/{s/=/+=/;s/-O -v//;}' \
 		-e 's/CC) -o/CC) $$(CFLAGS) -o/' ${BUILD_WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/aribas ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${MAN1PREFIX}/man/man1/
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/examples/|} ${EXAMPLESDIR}
-.endif
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${DOCSDIR}/
-.endif
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/aribas ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/examples/|} \
+		${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
