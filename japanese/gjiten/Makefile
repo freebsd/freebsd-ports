@@ -13,7 +13,7 @@ OPTIONS_DEFINE=	UTF8 KANJIPAD DOCS NLS
 UTF8_DESC=	Use UTF-8 edict dictionaries
 KANJIPAD_DESC=	Use Kanjipad
 
-USE_GNOME=	gtk20 gconf2 libglade libgnomeui
+USE_GNOME=	gtk20 gconf2 libglade2 libgnomeui
 USES=		gmake pkgconfig
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
