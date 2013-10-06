@@ -197,8 +197,8 @@ do-install:
 #
 # Do install without using linux rpm system
 #
-	@cd ${WRKSRC} && ${FIND} * -type d | ${GREP} -v "^stage" | ${PAX} -rw ${STAGEDIR}${PREFIX}
-	@cd ${WRKSRC} && ${FIND} * -path ./stage -prune ! -type d \
+	@cd ${WRKSRC} && ${FIND} * ! -path "stage*" -type d -exec ${MKDIR} "${STAGEDIR}${PREFIX}/{}" \;
+	@cd ${WRKSRC} && ${FIND} * ! -path "stage/*" ! -type d \
 		| ${CPIO} -pm -R root:wheel ${STAGEDIR}${PREFIX}
 
 	@${LN} -sf /var/tmp ${STAGEDIR}${PREFIX}/usr/tmp
