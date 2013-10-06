@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cyassl
-PORTVERSION=	2.7.0
+PORTVERSION=	2.8.0
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.yassl.com/
 
@@ -20,7 +20,6 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 USE_LDCONFIG=	yes
 PORTDOCS=	*
 
-NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} \
 		-e 's|$${prefix}/cyassl/include|$${prefix}/include/cyassl|' \
