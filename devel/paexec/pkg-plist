@@ -1,0 +1,44 @@
+bin/paexec
+bin/paexec_reorder
+man/man1/paexec.1.gz
+man/man1/paexec_reorder.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/paexec.pdf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/all_substr/cmd_all_substr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/all_substr/run_all_substr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cc_wrapper/cmd_cc_wrapper
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cc_wrapper/func1.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cc_wrapper/func2.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cc_wrapper/func3.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cc_wrapper/run_cc_wrapper
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cc_wrapper2/func1.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cc_wrapper2/func2.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cc_wrapper2/func3.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cc_wrapper2/run_cc_wrapper2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dirtest/run_dirtest
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dirtest/tasks
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/divide/cmd_divide
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/divide/cmd_divide2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/divide/run_divide
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/divide/run_divide2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/make_package/cmd_make_package
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/make_package/cmd_xxx_failed_make_package
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/make_package/run_cycle_make_package
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/make_package/run_make_package
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/make_package/tasks
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/make_package/tasks2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/make_package/tasks_cycle
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/toupper/cmd_toupper
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/toupper/run_toupper
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/toupper
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/make_package
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/divide
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/dirtest
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/cc_wrapper2
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/cc_wrapper
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/all_substr
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
