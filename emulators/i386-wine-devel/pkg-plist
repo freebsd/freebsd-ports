@@ -143,6 +143,7 @@ include/wine/windows/bitsmsg.h
 include/wine/windows/cderr.h
 include/wine/windows/cfgmgr32.h
 include/wine/windows/cguid.h
+include/wine/windows/chprst.idl
 include/wine/windows/cierror.h
 include/wine/windows/clusapi.h
 include/wine/windows/cmdbas.idl
@@ -184,6 +185,8 @@ include/wine/windows/d3d10misc.h
 include/wine/windows/d3d10shader.h
 include/wine/windows/d3d11.h
 include/wine/windows/d3d11.idl
+include/wine/windows/d3d11sdklayers.h
+include/wine/windows/d3d11sdklayers.idl
 include/wine/windows/d3d11shader.h
 include/wine/windows/d3d8.h
 include/wine/windows/d3d8caps.h
@@ -249,6 +252,7 @@ include/wine/windows/ddrawgdi.h
 include/wine/windows/ddrawi.h
 include/wine/windows/ddstream.h
 include/wine/windows/ddstream.idl
+include/wine/windows/delayloadhandler.h
 include/wine/windows/devenum.idl
 include/wine/windows/devguid.h
 include/wine/windows/devicetopology.h
@@ -325,6 +329,7 @@ include/wine/windows/exdisp.idl
 include/wine/windows/exdispid.h
 include/wine/windows/fci.h
 include/wine/windows/fdi.h
+include/wine/windows/fileapi.h
 include/wine/windows/fltdefs.h
 include/wine/windows/fusion.h
 include/wine/windows/fusion.idl
@@ -378,6 +383,8 @@ include/wine/windows/inaddr.h
 include/wine/windows/indexsrv.h
 include/wine/windows/indexsrv.idl
 include/wine/windows/initguid.h
+include/wine/windows/inputscope.h
+include/wine/windows/inputscope.idl
 include/wine/windows/intshcut.h
 include/wine/windows/ipexport.h
 include/wine/windows/iphlpapi.h
@@ -683,6 +690,8 @@ include/wine/windows/vsstyle.h
 include/wine/windows/vssym32.h
 include/wine/windows/wbemcli.h
 include/wine/windows/wbemcli.idl
+include/wine/windows/wbemdisp.h
+include/wine/windows/wbemdisp.idl
 include/wine/windows/wbemprov.h
 include/wine/windows/wbemprov.idl
 include/wine/windows/werapi.h
@@ -723,6 +732,7 @@ include/wine/windows/winresrc.h
 include/wine/windows/winsafer.h
 include/wine/windows/winscard.h
 include/wine/windows/winsmcrd.h
+include/wine/windows/winsnmp.h
 include/wine/windows/winsock.h
 include/wine/windows/winsock2.h
 include/wine/windows/winspool.h
@@ -786,8 +796,6 @@ lib32/.libGL/dri/tdfx_dri.so
 lib32/.libGL/dri/unichrome_dri.so
 lib32/.libGL/libGL.so.1
 lib32/libGLU.so.1
-lib32/libICE.so.6
-lib32/libSM.so.6
 lib32/libX11-xcb.so.1
 lib32/libX11.so.6
 lib32/libXau.so.6
@@ -847,6 +855,7 @@ lib32/wine/appwiz.cpl.so
 lib32/wine/aspnet_regiis.exe.so
 lib32/wine/atl.dll.so
 lib32/wine/atl100.dll.so
+lib32/wine/atl110.dll.so
 lib32/wine/atl80.dll.so
 lib32/wine/attrib.exe.so
 lib32/wine/authz.dll.so
@@ -872,6 +881,7 @@ lib32/wine/comm.drv16.so
 lib32/wine/commdlg.dll16.so
 lib32/wine/compobj.dll16.so
 lib32/wine/compstui.dll.so
+lib32/wine/comsvcs.dll.so
 lib32/wine/conhost.exe.so
 lib32/wine/control.exe.so
 lib32/wine/credui.dll.so
@@ -915,6 +925,8 @@ lib32/wine/d3dx10_40.dll.so
 lib32/wine/d3dx10_41.dll.so
 lib32/wine/d3dx10_42.dll.so
 lib32/wine/d3dx10_43.dll.so
+lib32/wine/d3dx11_42.dll.so
+lib32/wine/d3dx11_43.dll.so
 lib32/wine/d3dx9_24.dll.so
 lib32/wine/d3dx9_25.dll.so
 lib32/wine/d3dx9_26.dll.so
@@ -1007,6 +1019,7 @@ lib32/wine/fakedlls/appwiz.cpl
 lib32/wine/fakedlls/aspnet_regiis.exe
 lib32/wine/fakedlls/atl.dll
 lib32/wine/fakedlls/atl100.dll
+lib32/wine/fakedlls/atl110.dll
 lib32/wine/fakedlls/atl80.dll
 lib32/wine/fakedlls/attrib.exe
 lib32/wine/fakedlls/authz.dll
@@ -1032,6 +1045,7 @@ lib32/wine/fakedlls/comm.drv16
 lib32/wine/fakedlls/commdlg.dll16
 lib32/wine/fakedlls/compobj.dll16
 lib32/wine/fakedlls/compstui.dll
+lib32/wine/fakedlls/comsvcs.dll
 lib32/wine/fakedlls/conhost.exe
 lib32/wine/fakedlls/control.exe
 lib32/wine/fakedlls/credui.dll
@@ -1075,6 +1089,8 @@ lib32/wine/fakedlls/d3dx10_40.dll
 lib32/wine/fakedlls/d3dx10_41.dll
 lib32/wine/fakedlls/d3dx10_42.dll
 lib32/wine/fakedlls/d3dx10_43.dll
+lib32/wine/fakedlls/d3dx11_42.dll
+lib32/wine/fakedlls/d3dx11_43.dll
 lib32/wine/fakedlls/d3dx9_24.dll
 lib32/wine/fakedlls/d3dx9_25.dll
 lib32/wine/fakedlls/d3dx9_26.dll
@@ -1277,6 +1293,7 @@ lib32/wine/fakedlls/msxml6.dll
 lib32/wine/fakedlls/nddeapi.dll
 lib32/wine/fakedlls/net.exe
 lib32/wine/fakedlls/netapi32.dll
+lib32/wine/fakedlls/netcfgx.dll
 lib32/wine/fakedlls/netsh.exe
 lib32/wine/fakedlls/netstat.exe
 lib32/wine/fakedlls/newdev.dll
@@ -1396,6 +1413,7 @@ lib32/wine/fakedlls/system.drv16
 lib32/wine/fakedlls/t2embed.dll
 lib32/wine/fakedlls/tapi32.dll
 lib32/wine/fakedlls/taskkill.exe
+lib32/wine/fakedlls/tasklist.exe
 lib32/wine/fakedlls/taskmgr.exe
 lib32/wine/fakedlls/termsv.exe
 lib32/wine/fakedlls/toolhelp.dll16
@@ -1431,6 +1449,7 @@ lib32/wine/fakedlls/vtdapi.vxd
 lib32/wine/fakedlls/vwin32.vxd
 lib32/wine/fakedlls/w32skrnl.dll
 lib32/wine/fakedlls/w32sys.dll16
+lib32/wine/fakedlls/wbemdisp.dll
 lib32/wine/fakedlls/wbemprox.dll
 lib32/wine/fakedlls/webservices.dll
 lib32/wine/fakedlls/wer.dll
@@ -1502,6 +1521,7 @@ lib32/wine/fakedlls/xcopy.exe
 lib32/wine/fakedlls/xinput1_1.dll
 lib32/wine/fakedlls/xinput1_2.dll
 lib32/wine/fakedlls/xinput1_3.dll
+lib32/wine/fakedlls/xinput1_4.dll
 lib32/wine/fakedlls/xinput9_1_0.dll
 lib32/wine/fakedlls/xmllite.dll
 lib32/wine/fakedlls/xolehlp.dll
@@ -1573,6 +1593,7 @@ lib32/wine/libclusapi.def
 lib32/wine/libcomctl32.def
 lib32/wine/libcomdlg32.def
 lib32/wine/libcompstui.def
+lib32/wine/libcomsvcs.def
 lib32/wine/libcredui.def
 lib32/wine/libcrtdll.def
 lib32/wine/libcrypt32.def
@@ -1718,6 +1739,7 @@ lib32/wine/libwldap32.def
 lib32/wine/libwnaspi32.def
 lib32/wine/libwow32.def
 lib32/wine/libws2_32.def
+lib32/wine/libwsnmp32.def
 lib32/wine/libwsock32.def
 lib32/wine/libwtsapi32.def
 lib32/wine/libxinput.def
@@ -1810,6 +1832,7 @@ lib32/wine/msxml6.dll.so
 lib32/wine/nddeapi.dll.so
 lib32/wine/net.exe.so
 lib32/wine/netapi32.dll.so
+lib32/wine/netcfgx.dll.so
 lib32/wine/netsh.exe.so
 lib32/wine/netstat.exe.so
 lib32/wine/newdev.dll.so
@@ -1929,6 +1952,7 @@ lib32/wine/system.drv16.so
 lib32/wine/t2embed.dll.so
 lib32/wine/tapi32.dll.so
 lib32/wine/taskkill.exe.so
+lib32/wine/tasklist.exe.so
 lib32/wine/taskmgr.exe.so
 lib32/wine/termsv.exe.so
 lib32/wine/toolhelp.dll16.so
@@ -1964,6 +1988,7 @@ lib32/wine/vtdapi.vxd.so
 lib32/wine/vwin32.vxd.so
 lib32/wine/w32skrnl.dll.so
 lib32/wine/w32sys.dll16.so
+lib32/wine/wbemdisp.dll.so
 lib32/wine/wbemprox.dll.so
 lib32/wine/webservices.dll.so
 lib32/wine/wer.dll.so
@@ -2035,6 +2060,7 @@ lib32/wine/xcopy.exe.so
 lib32/wine/xinput1_1.dll.so
 lib32/wine/xinput1_2.dll.so
 lib32/wine/xinput1_3.dll.so
+lib32/wine/xinput1_4.dll.so
 lib32/wine/xinput9_1_0.dll.so
 lib32/wine/xmllite.dll.so
 lib32/wine/xolehlp.dll.so
