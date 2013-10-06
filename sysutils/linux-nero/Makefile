@@ -23,5 +23,9 @@ USE_LDCONFIG=	yes
 BRANDELF_DIRS=	usr/bin
 SRC_DISTFILES=
 
-NO_STAGE=	yes
+# normalize permissions of symbolic links to prevent a package with
+# missing files
+post-extract:
+	${FIND} ${WRKSRC} -type l -exec ${CHMOD} -h 0755 {} \;
+
 .include <bsd.port.mk>
