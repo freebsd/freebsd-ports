@@ -10,6 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Color vt102 terminal emulator with transparency support
 
+MAKE_JOBS_UNSAFE= yes
+
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --enable-wtmp \

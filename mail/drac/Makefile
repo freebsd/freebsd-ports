@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic Relay Authorization Control, a POP-before-SMTP implementation
 
+MAKE_JOBS_UNSAFE= yes
+
 .if defined(WITH_POSTFIX_DB3)
 LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
 .endif

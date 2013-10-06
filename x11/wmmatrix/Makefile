@@ -10,10 +10,12 @@ MASTER_SITES=	http://www.cs.mun.ca/~gstarkes/wmaker/dockapps/files/ \
 DISTNAME=	wmMatrix-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A DockApp that runs a version of the xmatrix screenhack
+COMMENT=	DockApp that runs a version of the xmatrix screenhack
+
+MAKE_JOBS_UNSAFE= yes
 
 PLIST_FILES=	bin/wmmatrix
-USE_GMAKE=	yes
+USES=		gmake
 USE_XORG=	xpm
 ALL_TARGET=	clean all
 

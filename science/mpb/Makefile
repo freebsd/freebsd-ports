@@ -12,6 +12,8 @@ COMMENT=	MIT Photonic-Bands
 
 LICENSE=	GPLv2
 
+MAKE_JOBS_UNSAFE= yes
+
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	fftw:${PORTSDIR}/math/fftw \
 		hdf5:${PORTSDIR}/science/hdf5 \
