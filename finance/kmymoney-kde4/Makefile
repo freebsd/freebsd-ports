@@ -51,16 +51,11 @@ OFX_CMAKE_OFF=		-DENABLE_LIBOFX:BOOL=OFF
 
 QUOTES_DESC=		Enable online price quotes
 QUOTES_USES=		perl5
+QUOTES_USE=		PERL5=run
 QUOTES_RUN_DEPENDS=	p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
 			p5-Finance-Quote>=0:${PORTSDIR}/finance/p5-Finance-Quote \
 			p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 			p5-XML-Writer>=0:${PORTSDIR}/textproc/p5-XML-Writer \
 			p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MQUOTES}
-USE_PERL5=	run
-.endif
 
 .include <bsd.port.mk>
