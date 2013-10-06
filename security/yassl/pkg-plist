@@ -3,6 +3,7 @@ lib/libcyassl.a
 lib/libcyassl.la
 lib/libcyassl.so
 lib/libcyassl.so.5
+lib/pkgconfig/cyassl.pc
 include/cyassl/openssl/asn1.h
 include/cyassl/openssl/bio.h
 include/cyassl/openssl/bn.h
@@ -85,6 +86,7 @@ include/cyassl/sniffer_error.h
 include/cyassl/ssl.h
 include/cyassl/test.h
 include/cyassl/version.h
+@dirrmtry lib/pkgconfig
 @dirrm include/cyassl/openssl
 @dirrm include/cyassl/ctaocrypt
 @dirrm include/cyassl
