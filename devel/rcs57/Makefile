@@ -15,7 +15,8 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-MAN1=	ci.1 co.1 ident.1 merge.1 rcs.1 rcsclean.1 rcsdiff.1 rcsmerge.1 rlog.1
+MAN1=	ci.1 co.1 ident.1 merge.1 rcs.1 rcsclean.1 rcsdiff.1 rcsintro.1 \
+	rcsmerge.1 rlog.1
 MAN5=	rcsfile.5
 
 NO_STAGE=	yes
