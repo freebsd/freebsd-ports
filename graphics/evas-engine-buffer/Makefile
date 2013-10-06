@@ -14,19 +14,17 @@ COMMENT=	A hardware accelerated canvas API (buffer engine)
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		pkgconfig
+USES=		gmake pkgconfig
 USE_EFL=	evas librt_hack libtool_hack
 USE_LDCONFIG=	yes
 BUILD_WRKSRC=	${WRKSRC}/src/modules/engines/buffer
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-NO_STAGE=	yes
 .include "../evas-core/Makefile.inc"
 CONFIGURE_ARGS+=	--enable-buffer
 
@@ -38,6 +36,6 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/evas-software-buffer.pc \
-		${PREFIX}/libdata/pkgconfig/
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/
 
 .include <bsd.port.mk>
