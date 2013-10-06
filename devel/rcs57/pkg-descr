@@ -1,0 +1,11 @@
+The Revision Control System (RCS) manages multiple revisions of files.  RCS
+automates the storing, retrieval, logging, identification, and merging of
+revisions.  RCS is useful for text that is revised frequently, including source
+code, programs, documentation, graphics, papers, and form letters.
+
+This port is gnu rcs 5.7. It is compatible with the rcs that was in FreeBSD
+prior to its removal in FreeBSD-10.0. Some ports will not work with changes
+made to rcs (e.g. changes to command line syntax) following the rcs 5.7
+release.
+
+WWW: http://www.gnu.org/software/rcs/
