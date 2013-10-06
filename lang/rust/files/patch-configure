@@ -1,14 +1,14 @@
---- configure.orig	2013-04-06 12:44:15.918202587 +0800
-+++ configure	2013-04-06 12:45:10.302044128 +0800
-@@ -401,7 +401,6 @@
+--- configure.orig	2013-09-27 13:30:39.473857288 +0800
++++ configure	2013-09-27 13:30:56.427856617 +0800
+@@ -405,7 +405,6 @@
  step_msg "looking for build programs"
  
  probe_need CFG_PERL        perl
--probe_need CFG_CURL        curl
+-probe_need CFG_CURLORWGET  curl wget
  probe_need CFG_PYTHON      python2.7 python2.6 python2 python
  
  python_version=$($CFG_PYTHON -V 2>&1)
-@@ -511,15 +510,6 @@
+@@ -520,15 +519,6 @@
      fi
  fi
  
