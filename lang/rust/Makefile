@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		http://static.rust-lang.org/stage0-snapshots/:boot
@@ -15,7 +15,7 @@ COMMENT=	A language with a focus on memory safety and concurrency
 
 RUST_SOURCE=	${DISTNAME}${EXTRACT_SUFX}
 RUST_BOOT=	rust-stage0-${RUST_BOOT_SIG}.tar.bz2
-RUST_BOOT_SIG=	2013-06-23-f827561-freebsd-x86_64-a05bdda2d9ec0e66336d81b98bee8a95442a501f
+RUST_BOOT_SIG=	2013-09-23-348d844-freebsd-x86_64-8b99ec197e441f013c5ba0788f8bcfa689bfc75e
 RUST_TARGET=	x86_64-unknown-freebsd
 
 ONLY_FOR_ARCHS=	amd64
@@ -25,9 +25,11 @@ USES=		gmake perl5
 USE_PERL5=	build
 USE_PYTHON_BUILD=	2.6-2.7
 
-MAKE_JOBS_UNSAFE=	yes
-
-MAN1=	rustc.1
+MAN1=	rust.1 \
+	rustc.1 \
+	rustdoc.1 \
+	rusti.1 \
+	rustpkg.1
 
 OPTIONS_DEFINE=		RUSTPKG
 RUSTPKG_DESC=		Build with package manager
@@ -37,18 +39,13 @@ NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900044
-EXTRA_PATCHES+=	${FILESDIR}/log2.patch \
-		${FILESDIR}/llvm.patch
+BROKEN=		Only compiles on 9.0-RELEASE and later
 .endif
 
-.if ${OSVERSION} >= 900044
 LIB_DEPENDS+=	unwind:${PORTSDIR}/devel/libunwind
 CC=		clang
 CXX=		clang++
 CONFIGURE_ARGS+=	--enable-clang
-.else
-USE_GCC=	yes
-.endif
 
 .if ${PORT_OPTIONS:MRUSTPKG}
 RUN_DEPENDS+=	git:${PORTSDIR}/devel/git
