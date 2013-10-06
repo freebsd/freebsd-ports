@@ -25,6 +25,6 @@ USES=		pathfix
 
 PROJECTHOST=	quvi
 
-NSFW_CONFIGURE_ARGS=	--with-nsfw
+NSFW_CONFIGURE_WITH=	nsfw
 
 .include <bsd.port.mk>
