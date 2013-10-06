@@ -20,5 +20,4 @@ DOCSDIR_REL=	usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	AUTHORS COPYING COPYING.LIB ChangeLog NEWS README THANKS TODO libtasn1.pdf
 DESCR=		${.CURDIR}/../libtasn1/pkg-descr
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

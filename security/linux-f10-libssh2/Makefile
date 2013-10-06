@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	The library implementing the SSH2 protocol (Linux Fedora 10)
+COMMENT=	Library implementing the SSH2 protocol (Linux Fedora 10)
 
 CONFLICTS=	linux-f8-libssh2-[0-9]*
 
@@ -24,5 +24,4 @@ DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
