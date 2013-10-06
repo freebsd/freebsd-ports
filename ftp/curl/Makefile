@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	curl
-PORTVERSION=	7.31.0
-PORTREVISION=	1
+PORTVERSION=	7.32.0
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		LOCAL/sunpoet
@@ -20,7 +19,7 @@ OPTIONS_DEFINE=	CA_BUNDLE COOKIES CURL_DEBUG DEBUG DOCS EXAMPLES GSSAPI IDN IPV6
 OPTIONS_RADIO=	RESOLV SSL
 OPTIONS_RADIO_RESOLV=	CARES THREADED_RESOLVER
 OPTIONS_RADIO_SSL=	CYASSL GNUTLS NSS OPENSSL POLARSSL
-OPTIONS_DEFAULT=CA_BUNDLE GSSAPI IPV6 OPENSSL PROXY RESOLV THREADED_RESOLVER SSL TLS_SRP
+OPTIONS_DEFAULT=CA_BUNDLE COOKIES GSSAPI IPV6 OPENSSL PROXY RESOLV THREADED_RESOLVER SSL TLS_SRP
 CA_BUNDLE_DESC=	Install CA bundle for OpenSSL
 COOKIES_DESC=	Cookies support
 CURL_DEBUG_DESC=cURL debug memory tracking
@@ -47,31 +46,10 @@ DOCS=		BINDINGS BUGS CONTRIBUTE DISTRO-DILEMMA FAQ FEATURES HISTORY \
 		MANUAL README.netware README.win32 RESOURCES SSLCERTS THANKS \
 		TODO TheArtOfHttpScripting VERSIONS curl-config.html \
 		curl-config.pdf curl.html curl.pdf index.html
-MAN1=		curl.1 curl-config.1 mk-ca-bundle.1
-MAN3=		curl_easy_cleanup.3 curl_easy_duphandle.3 curl_easy_escape.3 \
-		curl_easy_getinfo.3 curl_easy_init.3 curl_easy_pause.3 \
-		curl_easy_perform.3 curl_easy_recv.3 curl_easy_reset.3 \
-		curl_easy_send.3 curl_easy_setopt.3 curl_easy_strerror.3 \
-		curl_easy_unescape.3 curl_escape.3 curl_formadd.3 \
-		curl_formfree.3 curl_formget.3 curl_free.3 curl_getdate.3 \
-		curl_getenv.3 curl_global_cleanup.3 curl_global_init.3 \
-		curl_global_init_mem.3 curl_mprintf.3 curl_multi_add_handle.3 \
-		curl_multi_assign.3 curl_multi_cleanup.3 curl_multi_fdset.3 \
-		curl_multi_info_read.3 curl_multi_init.3 curl_multi_perform.3 \
-		curl_multi_remove_handle.3 curl_multi_setopt.3 \
-		curl_multi_socket.3 curl_multi_socket_action.3 \
-	 	curl_multi_strerror.3 curl_multi_timeout.3 curl_multi_wait.3 \
-		curl_share_cleanup.3 curl_share_init.3 curl_share_setopt.3 \
-		curl_share_strerror.3 curl_slist_append.3 \
-		curl_slist_free_all.3 curl_strequal.3 curl_unescape.3 \
-		curl_version.3 curl_version_info.3 libcurl.3 libcurl-easy.3 \
-		libcurl-errors.3 libcurl-multi.3 libcurl-share.3 \
-		libcurl-tutorial.3
 .endif
 
 SLAVEDIRS=	ftp/curl-hiphop
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCA_BUNDLE} && !${PORT_OPTIONS:MOPENSSL}
@@ -255,15 +233,15 @@ post-patch:
 
 post-install:
 .if !defined(BUILDING_HIPHOP)
-	${INSTALL_DATA} ${WRKSRC}/docs/libcurl/libcurl.m4 ${PREFIX}/share/aclocal/
+	${INSTALL_DATA} ${WRKSRC}/docs/libcurl/libcurl.m4 ${STAGEDIR}${PREFIX}/share/aclocal/
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/ ${DOCSDIR}/libcurl/
-	cd ${WRKSRC}/docs/ && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
-	cd ${WRKSRC}/docs/libcurl/ && ${INSTALL_DATA} ABI *.html *.pdf *.m4 ${DOCSDIR}/libcurl/
+	${MKDIR} ${DOCSDIR}/ ${STAGEDIR}${DOCSDIR}/libcurl/
+	cd ${WRKSRC}/docs/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/docs/libcurl/ && ${INSTALL_DATA} ABI *.html *.pdf *.m4 ${STAGEDIR}${DOCSDIR}/libcurl/
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}/
-	cd ${WRKSRC}/docs/examples/ && ${INSTALL_DATA} README Makefile.example makefile* *.c *.cpp ${EXAMPLESDIR}/
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	cd ${WRKSRC}/docs/examples/ && ${INSTALL_DATA} README Makefile.example makefile* *.c *.cpp ${STAGEDIR}${EXAMPLESDIR}/
 .endif
 .endif
 
