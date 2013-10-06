@@ -1,0 +1,12 @@
+bin/aribas
+man/man1/aribas.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/aribas.doc
+%%PORTDOCS%%%%DOCSDIR%%/aribas.man
+%%PORTDOCS%%%%DOCSDIR%%/aribas.tut
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/factor.ari
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pi.ari
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/queens.ari
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
