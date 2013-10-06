@@ -12,8 +12,6 @@ COMMENT=	Sendmail milter wich uses McAfee Virus Scan or clamav
 
 LICENSE=	BSD
 
-NO_STAGE=	yes
-
 CFLAGS+=	-Wall ${PTHREAD_CFLAGS:S=""==}
 LIBS+=		-lmilter ${PTHREAD_LIBS}
 PLIST_SUB+=	ANTIVIRUS=${ANTIVIRUS_DIR}
@@ -45,11 +43,13 @@ do-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/antivirus \
-		${PREFIX}/libexec/antivirus
-	${INSTALL_DATA} ${WRKSRC}/antivirus.conf ${PREFIX}/etc/antivirus.conf-dist
-	${INSTALL_DATA} ${WRKSRC}/clamav.conf ${PREFIX}/etc/antivirus.conf-clamav
-	${MKDIR} ${ANTIVIRUS_DIR}/spool ${ANTIVIRUS_DIR}/run ${ANTIVIRUS_DIR}/quarantine
-	${CHOWN} -R nobody:nobody ${ANTIVIRUS_DIR}/
+		${STAGEDIR}${PREFIX}/libexec/antivirus
+	${INSTALL_DATA} ${WRKSRC}/antivirus.conf \
+		${STAGEDIR}${PREFIX}/etc/antivirus.conf-dist
+	${INSTALL_DATA} ${WRKSRC}/clamav.conf \
+		${STAGEDIR}${PREFIX}/etc/antivirus.conf-clamav
+	${MKDIR} ${STAGEDIR}${ANTIVIRUS_DIR}/spool ${STAGEDIR}${ANTIVIRUS_DIR}/run ${STAGEDIR}${ANTIVIRUS_DIR}/quarantine
+	${CHOWN} -R nobody:nobody ${STAGEDIR}${ANTIVIRUS_DIR}/
 	@${ECHO_MSG} "Add to your *.mc configfile:"
 	@${ECHO_MSG} "INPUT_MAIL_FILTER(\`antivirus', \`S=local:${ANTIVIRUS_DIR}/antivirus.sock, F=')"
 
