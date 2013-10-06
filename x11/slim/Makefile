@@ -3,6 +3,7 @@
 
 PORTNAME=	slim
 PORTVERSION=	1.3.5
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.berlios.de/pub/slim/ \
 		SF/slim.berlios
@@ -12,14 +13,14 @@ COMMENT=	Graphical login manager for X11, derived from Login.app
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus \
-		pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2 \
-		ck-connector:${PORTSDIR}/sysutils/consolekit \
-		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
+		libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libck-connector.so:${PORTSDIR}/sysutils/consolekit \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
 USES=		cmake pkgconfig
 USE_XORG=	ice sm x11 xau xcb xdmcp xext xft xmu xorg-server xrender xt
@@ -28,11 +29,9 @@ SUB_FILES=	pkg-message
 
 CMAKE_ARGS=	-DUSE_CONSOLEKIT=yes
 
-MAN1=		slim.1
+OPTIONS_DEFINE=		PAM
+OPTIONS_DEFAULT=	PAM
 
-OPTIONS_DEFINE=	PAM
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPAM}
@@ -55,15 +54,8 @@ post-patch:
 		${WRKSRC}/CMakeLists.txt
 
 post-install:
-	@if [ ! -f ${PREFIX}/etc/slim.conf ]; then \
-		${CP} ${PREFIX}/etc/slim.conf.sample ${PREFIX}/etc/slim.conf ; \
-	fi
 .	if ${PORT_OPTIONS:MPAM}
-	@${INSTALL_DATA} ${FILESDIR}/pam.conf ${PREFIX}/etc/pam.d/slim.default
-	@if [ ! -f ${PREFIX}/etc/pam.d/slim ]; then \
-		${CP} ${PREFIX}/etc/pam.d/slim.default ${PREFIX}/etc/pam.d/slim ; \
-	fi
+	${INSTALL_DATA} ${FILESDIR}/pam.conf ${STAGEDIR}${PREFIX}/etc/pam.d/slim.default
 .	endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
