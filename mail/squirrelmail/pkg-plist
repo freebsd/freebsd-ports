@@ -374,6 +374,86 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/themes/techno_blue.php
 %%SQUIRRELDIR%%/themes/turquoise.php
 %%SQUIRRELDIR%%/themes/wood_theme.php
+%%PORTDOCS%%%%DOCSDIR%%/.htaccess
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.themes
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADE
+%%PORTDOCS%%%%DOCSDIR%%/authentication.txt
+%%PORTDOCS%%%%DOCSDIR%%/ie_ssl.txt
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/index.php
+%%PORTDOCS%%%%DOCSDIR%%/plugins/README.plugins
+%%PORTDOCS%%%%DOCSDIR%%/plugins/administrator/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/plugins/bug_report/README
+%%PORTDOCS%%%%DOCSDIR%%/plugins/calendar/README
+%%PORTDOCS%%%%DOCSDIR%%/plugins/delete_move_next/README
+%%PORTDOCS%%%%DOCSDIR%%/plugins/demo/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/plugins/demo/README
+%%PORTDOCS%%%%DOCSDIR%%/plugins/filters/README
+%%PORTDOCS%%%%DOCSDIR%%/plugins/filters/bulkquery/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/plugins/filters/bulkquery/README
+%%PORTDOCS%%%%DOCSDIR%%/plugins/fortune/README
+%%PORTDOCS%%%%DOCSDIR%%/plugins/info/README
+%%PORTDOCS%%%%DOCSDIR%%/plugins/listcommands/README
+%%PORTDOCS%%%%DOCSDIR%%/plugins/mail_fetch/README
+%%PORTDOCS%%%%DOCSDIR%%/plugins/newmail/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/plugins/newmail/README
+%%PORTDOCS%%%%DOCSDIR%%/plugins/spamcop/README
+%%PORTDOCS%%%%DOCSDIR%%/plugins/squirrelspell/CRYPTO
+%%PORTDOCS%%%%DOCSDIR%%/plugins/squirrelspell/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/plugins/squirrelspell/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/plugins/squirrelspell/PRIVACY
+%%PORTDOCS%%%%DOCSDIR%%/plugins/squirrelspell/README
+%%PORTDOCS%%%%DOCSDIR%%/plugins/squirrelspell/UPGRADING
+%%PORTDOCS%%%%DOCSDIR%%/plugins/test/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/plugins/test/README
+%%PORTDOCS%%%%DOCSDIR%%/plugins/translate/README
+%%PORTDOCS%%%%DOCSDIR%%/presets.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.2/Notes-1.2.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.2/Notes-1.2.1.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.2/Notes-1.2.2.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.2/Notes-1.2.3.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.2/Notes-1.2.4.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.2/Notes-1.2.5.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.2/Notes-1.2.6.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.3/Notes-1.3.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.3/Notes-1.3.1.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.3/Notes-1.3.2.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.4/Notes-1.4.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.4/Notes-1.4.1.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.4/Notes-1.4.10.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.4/Notes-1.4.10a.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.4/Notes-1.4.11.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.4/Notes-1.4.12.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.4/Notes-1.4.13.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.4/Notes-1.4.15.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.4/Notes-1.4.16.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.4/Notes-1.4.17.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.4/Notes-1.4.18.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.4/Notes-1.4.19.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.4/Notes-1.4.2.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.4/Notes-1.4.20-RC2.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.4/Notes-1.4.20.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.4/Notes-1.4.20RC1.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.4/Notes-1.4.21.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.4/Notes-1.4.3.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.4/Notes-1.4.3a.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.4/Notes-1.4.4.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.4/Notes-1.4.5.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.4/Notes-1.4.6.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.4/Notes-1.4.7.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.4/Notes-1.4.8.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.4/Notes-1.4.9.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_archive/1.4/Notes-1.4.9a.txt
+%%PORTDOCS%%%%DOCSDIR%%/russian_apache.txt
+%%PORTDOCS%%%%DOCSDIR%%/security.txt
+%%PORTDOCS%%%%DOCSDIR%%/translating.txt
+%%PORTDOCS%%%%DOCSDIR%%/translating_help.txt
 @dirrm %%SQUIRRELDIR%%/themes/css
 @dirrm %%SQUIRRELDIR%%/themes
 @dirrm %%SQUIRRELDIR%%/src
@@ -418,3 +498,25 @@ etc/periodic/daily/111.clean-squirrelmail
 @dirrmtry %%SQUIRRELDIR%%
 @dirrmtry etc/periodic/daily
 @dirrmtry etc/periodic
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/release_notes_archive/1.4
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/release_notes_archive/1.3
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/release_notes_archive/1.2
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/release_notes_archive
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/translate
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/test
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/squirrelspell
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/spamcop
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/newmail
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/mail_fetch
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/listcommands
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/info
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/fortune
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/filters/bulkquery
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/filters
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/demo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/delete_move_next
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/calendar
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/bug_report
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/administrator
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/plugins
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

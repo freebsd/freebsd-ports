@@ -42,16 +42,11 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION} \
 SUB_FILES=	pkg-message pkg-install pkg-deinstall
 SUB_LIST=	SQUIRRELDIR=${SQUIRRELDIR} SMUSER=${SMUSER} SMGROUP=${SMGROUP}
 
-PORTDOCS=	* .htaccess
-
 CONFLICTS=	squirreloutlook-[0-9]*
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+DATABASE_RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 
-.if ${PORT_OPTIONS:MDATABASE}
-RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLDAP}
 USE_PHP+=	ldap
@@ -65,22 +60,10 @@ pre-everything::
 .endif
 
 post-patch:
-.ifndef PATCH_DEBUG
-	@${RM} -f \
-		${WRKSRC}/class/deliver/Deliver.class.php.orig \
-		${WRKSRC}/config/config_default.php.orig \
-		${WRKSRC}/functions/global.php.orig \
-		${WRKSRC}/functions/i18n.php.orig \
-		${WRKSRC}/functions/imap_search.php.orig \
-		${WRKSRC}/src/addrbook_search_html.php.orig \
-		${WRKSRC}/src/compose.php.orig
-.endif
 	@${REINPLACE_CMD} -e 's|ispell|${LOCALBASE}/bin/ispell|g' \
 		${WRKSRC}/plugins/squirrelspell/sqspell_config.php
 	@${REINPLACE_CMD} -e 's|/usr/bin/fortune|/usr/games/fortune|g' \
 		${WRKSRC}/plugins/fortune/fortune_functions.php
-	@${RM} ${WRKSRC}/plugins/squirrelspell/sqspell_config.php.bak \
-		${WRKSRC}/plugins/fortune/fortune_functions.php.bak
 
 # Rearrange the documentation
 do-build:
@@ -96,27 +79,28 @@ do-build:
 	${MV} plugins/squirrelspell/doc/* doc/plugins/squirrelspell ; \
 	${RM} -f doc/plugins/squirrelspell/index.php ; \
 	${RM} -rf plugins/squirrelspell/doc
-	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${ECHO} "left_refresh=300" >> ${WRKSRC}/data/default_pref
 	@${MV} ${WRKSRC}/config/config_local.php ${WRKSRC}/config/config_local.php.sample
 
+pre-install:
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
+	@${FIND} ${WRKSRC} -name '*.bak' -delete
+
 do-install:
-	${MKDIR} ${PREFIX}/etc/periodic/daily
-	${INSTALL_SCRIPT} ${FILESDIR}/111.clean-squirrelmail ${PREFIX}/etc/periodic/daily
-	${MKDIR} ${SQUIRRELDIR}
-	${INSTALL_DATA} ${WRKSRC}/index.php ${SQUIRRELDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/configure ${SQUIRRELDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily
+	${INSTALL_SCRIPT} ${FILESDIR}/111.clean-squirrelmail ${STAGEDIR}${PREFIX}/etc/periodic/daily
+	${MKDIR} ${STAGEDIR}${SQUIRRELDIR}
+	${INSTALL_DATA} ${WRKSRC}/index.php ${STAGEDIR}${SQUIRRELDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/configure ${STAGEDIR}${SQUIRRELDIR}
 .for DIR in class config data functions help images include locale plugins po src themes
-	cd ${WRKSRC} && ${FIND} ${DIR} | ${CPIO} -pdmu --quiet ${SQUIRRELDIR}
+	cd ${WRKSRC} && ${FIND} ${DIR} | ${CPIO} -pdmu --quiet ${STAGEDIR}${SQUIRRELDIR}
 .endfor
-	${CHOWN} -R ${SMUSER}:${SMGROUP} ${SQUIRRELDIR}/data
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${FIND} . | ${CPIO} -pdmu --quiet ${DOCSDIR}
-.endif
+	${CHOWN} -R ${SMUSER}:${SMGROUP} ${STAGEDIR}${SQUIRRELDIR}/data
+
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${FIND} . | ${CPIO} -pdmu --quiet ${STAGEDIR}${DOCSDIR}
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
