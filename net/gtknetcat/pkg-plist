@@ -1,0 +1,18 @@
+bin/gtknetcat
+%%PYTHON_SITELIBDIR%%/gtknetcat/__init__.py
+%%PYTHON_SITELIBDIR%%/gtknetcat/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gtknetcat/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gtknetcat/globals.py
+%%PYTHON_SITELIBDIR%%/gtknetcat/globals.pyc
+%%PYTHON_SITELIBDIR%%/gtknetcat/globals.pyo
+%%PYTHON_SITELIBDIR%%/gtknetcat/gtknetcat.py
+%%PYTHON_SITELIBDIR%%/gtknetcat/gtknetcat.pyc
+%%PYTHON_SITELIBDIR%%/gtknetcat/gtknetcat.pyo
+libexec/gtknetcat.py
+share/applications/gtknetcat.desktop
+share/gtknetcat/wizard.glade
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/gtknetcat.mo
+share/pixmaps/gtknetcat.png
+@dirrm share/gtknetcat
+@dirrmtry share/applications
+@dirrm %%PYTHON_SITELIBDIR%%/gtknetcat
