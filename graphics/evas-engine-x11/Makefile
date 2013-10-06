@@ -14,7 +14,7 @@ COMMENT=	A hardware accelerated canvas API (X11 engine)
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
@@ -26,7 +26,6 @@ USE_LDCONFIG=	yes
 BUILD_WRKSRC=	${WRKSRC}/src/modules/engines/software_x11
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-NO_STAGE=	yes
 .include "../evas-core/Makefile.inc"
 CONFIGURE_ARGS+=	--enable-software-xlib
 
@@ -38,6 +37,6 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/evas-software-x11.pc \
-		${PREFIX}/libdata/pkgconfig/
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/
 
 .include <bsd.port.mk>
