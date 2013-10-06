@@ -11,31 +11,27 @@ COMMENT=	Tool for analyzing Windows recycle bin
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
-
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gettext iconv
+USES=		gettext pkgconfig
 USE_GNOME=	glib20
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_FILES=	bin/rifiuti bin/rifiuti-vista
-
-MAN1=		rifiuti.1
-MLINKS=		rifiuti.1 rifiuti-vista.1
+PLIST_FILES=	bin/rifiuti \
+		bin/rifiuti-vista \
+		man/man1/rifiuti.1.gz \
+		man/man1/rifiuti-vista.1.gz
+PORTDOCS=	AUTHORS ChangeLog NEWS README THANKS TODO
 
 OPTIONS_DEFINE=	DOCS
 
-PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README THANKS TODO
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
