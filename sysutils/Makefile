@@ -894,6 +894,7 @@
     SUBDIR += syslog-ng
     SUBDIR += syslog-ng-devel
     SUBDIR += syslog-ng2
+    SUBDIR += syslog-ng33
     SUBDIR += syslogger
     SUBDIR += sysrc
     SUBDIR += system-tools-backends
