@@ -11,6 +11,8 @@ DISTNAME=	ofcp-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line client to FreeNet Network
 
+MAKE_JOBS_UNSAFE= yes
+
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 USE_BZIP2=	yes
