@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	snobol4
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.ultimate.com/snobol/
 
@@ -12,14 +12,9 @@ COMMENT=	A port of Macro SNOBOL4, supports full SNOBOL4 plus SPITBOL
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--snolibdir=${PREFIX}/lib/${PORTNAME}
-USE_GMAKE=	yes
+USES=		gmake
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
-MAN1=		sdb.1 snobol4.1
-MAN3=		snolib.3 snobol4dbm.3 snobol4random.3 \
-		snobol4readline.3 snobol4tcl.3 snobol4time.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's:[^=]*\.tmp$$:${WRKSRC}/&:' ${WRKSRC}/configure
 
