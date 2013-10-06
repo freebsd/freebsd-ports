@@ -3,6 +3,7 @@
 
 PORTNAME=	texinfo
 PORTVERSION=	5.2.20130926
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	GNU \
 		ftp://ftp.stack.nl/pub/users/johans/texinfo/${PORTVERSION:E}/
