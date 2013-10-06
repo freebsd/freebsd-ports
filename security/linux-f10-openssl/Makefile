@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	The OpenSSL toolkit (Linux Fedora 10)
+COMMENT=	OpenSSL toolkit (Linux Fedora 10)
 
 CONFLICTS=	linux-openssl-[0-9]* linux-f8-openssl-[0-9]*
 
@@ -22,5 +22,4 @@ USE_LDCONFIG=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -27,5 +27,4 @@ PLIST_FILES+=	"@exec mkdir -p %D/etc/sasl2"
 DOCSDIR=	usr/share/doc/cyrus-sasl-lib-${PORTVERSION}
 PORTDOCS=	AUTHORS COPYING NEWS README advanced.html appconvert.html components.html gssapi.html index.html install.html macosx.html mechanisms.html options.html plugprog.html programming.html readme.html sysadmin.html upgrading.html windows.html
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

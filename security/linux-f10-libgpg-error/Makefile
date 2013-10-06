@@ -19,5 +19,4 @@ BRANDELF_FILES=	usr/bin/gpg-error
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 DESCR=		${.CURDIR}/../libgpg-error/pkg-descr
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

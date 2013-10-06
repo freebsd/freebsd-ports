@@ -19,8 +19,7 @@ PLIST_FILES=	lib/libgcrypt.so.11 lib/libgcrypt.so.11.5.2
 PLIST_DIRSTRY=	etc/gcrypt
 DESCR=		${.CURDIR}/../libgcrypt/pkg-descr
 
-NO_STAGE=	yes
 post-install:
-	@${MKDIR} ${PREFIX}/etc/gcrypt
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/gcrypt
 
 .include <bsd.port.mk>
