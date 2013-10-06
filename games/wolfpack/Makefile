@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wolfpack
-PORTVERSION=	4.3.31
+PORTVERSION=	4.3.32
 CATEGORIES=	games
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	empserver/${DISTNAME}
@@ -31,6 +31,7 @@ MAN6=		empire.6 emp_server.6 empdump.6 empsched.6 \
 		fairland.6 files.6 pconfig.6
 
 NO_STAGE=	yes
+
 .include <bsd.port.pre.mk>
 
 post-patch:
