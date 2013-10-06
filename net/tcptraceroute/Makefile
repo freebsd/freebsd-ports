@@ -11,18 +11,11 @@ MASTER_SITES=	http://michael.toren.net/code/tcptraceroute/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Traceroute implementation using TCP packets
 
-BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
+LICENSE=	GPLv2
 
-MAN8=	tcptraceroute.8
+BUILD_DEPENDS=	${LOCALBASE}/bin/libnet10-config:${PORTSDIR}/net/libnet10
 
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
-
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e 's|libnet-config|${LIBNET_CONFIG}|' \
-		${WRKSRC}/${MAKEFILE}
-
-post-install:
-	@${CHMOD} u+s ${PREFIX}/sbin/tcptraceroute
+	@${REINPLACE_CMD} -e 's|libnet-config|libnet10-config|' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

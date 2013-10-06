@@ -29,8 +29,8 @@
  
  install: tcptraceroute
 -	install -D tcptraceroute $(DESTDIR)/tcptraceroute
-+	install -c -s tcptraceroute $(BINDIR)/tcptraceroute
-+	install -c -m 444 tcptraceroute.8 $(MANDIR)/man8/tcptraceroute.8
++	install -c -s tcptraceroute $(DESTDIR)$(BINDIR)/tcptraceroute
++	install -c -m 444 tcptraceroute.8 $(DESTDIR)$(MANDIR)/man8/tcptraceroute.8
  
  distrib: clean changelog man
  
