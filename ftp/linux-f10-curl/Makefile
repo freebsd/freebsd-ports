@@ -16,7 +16,7 @@ ALWAYS_KEEP_DISTFILES=	YES
 .endif
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	The command line tool for transferring files with URL syntax (Linux Fedora 10)
+COMMENT=	Command line tool for transferring files with URL syntax (Linux Fedora 10)
 
 CONFLICTS=	linux-curl-[0-9]* linux-f8-curl-[0-9]*
 
@@ -28,12 +28,9 @@ USE_LDCONFIG=	yes
 BRANDELF_FILES=	usr/bin/curl
 DESCR=	${.CURDIR}/../${PORTNAME}/pkg-descr
 
-PLIST_FILES=	usr/bin/curl usr/lib/libcurl.so.4 usr/lib/libcurl.so.4.1.1
+PLIST_FILES=	usr/bin/curl usr/lib/libcurl.so.4 usr/lib/libcurl.so.4.1.1 \
+		usr/share/man/man1/curl.1.gz
 DOCSDIR=	usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	BUGS COPYING FEATURES README TODO CHANGES FAQ MANUAL RESOURCES TheArtOfHttpScripting
-MANPREFIX=	${PREFIX}/usr/share
-MAN1=		curl.1
-MANCOMPRESSED=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
