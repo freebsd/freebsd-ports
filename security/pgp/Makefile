@@ -16,7 +16,7 @@ NO_STAGE=	yes
 
 WRKSRC=		${WRKDIR}/src
 MAKEFILE=	makefile
-ALL_TARGET=	freebsd-${ARCH}
+ALL_TARGET=	freebsd-${ARCH:S/x86_64/amd64/}
 MAKE_ENV=	OS_CFLAGS="${CFLAGS}"
 PGPLIB=		${PREFIX}/share/pgp
 MAN1=		pgp.1 pgp2.1
