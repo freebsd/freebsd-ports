@@ -80,6 +80,10 @@ post-patch:
 post-configure:
 	@${MV} ${WRKSRC}/irssi.conf ${WRKSRC}/irssi.conf.sample
 
+pre-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/irssi
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/irssi/modules
+
 post-install:
 	@${ECHO_MSG} "You may install x11-themes/irssi-themes for"
 	@${ECHO_MSG} " additional themes."
