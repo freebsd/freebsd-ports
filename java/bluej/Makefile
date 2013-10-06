@@ -19,12 +19,15 @@ NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
-NO_STAGE=	yes
 do-install:
-	@${ECHO} Starting BlueJ graphical installer...  Please install to default path of
-	@${ECHO} ${PREFIX}/bluej.  Close the installer when done.
-	@cd ${PREFIX}; ${JAVA_HOME}/bin/java -jar ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
-	-@${MKDIR} ${PREFIX}/bin
-	@${LN} -sf ${PREFIX}/bluej/bluej ${PREFIX}/bin/bluej
+	@${ECHO} Starting BlueJ graphical installer...  
+	@${ECHO} Please install to default path of
+	@${ECHO} ${STAGEDIR}${PREFIX}/bluej.
+	@${ECHO} Close the installer when done.
+	@cd ${STAGEDIR}${PREFIX}; ${JAVA_HOME}/bin/java \
+		-jar ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
+	-@${MKDIR} ${STAGEDIR}${PREFIX}/bin
+	@${LN} -sf ${STAGEDIR}${PREFIX}/bluej/bluej \
+		${STAGEDIR}${PREFIX}/bin/bluej
 
 .include <bsd.port.mk>
