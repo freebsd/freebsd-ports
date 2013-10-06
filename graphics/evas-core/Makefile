@@ -14,7 +14,7 @@ COMMENT=	A hardware accelerated canvas API (core library)
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
@@ -26,7 +26,6 @@ USE_LDCONFIG=	yes
 DATADIR=	${PREFIX}/share/evas
 EXAMPLESDIR=	${PREFIX}/share/examples/evas
 
-NO_STAGE=	yes
 .include "Makefile.inc"
 
 OPTIONS_DEFINE=	EET FONTCONFIG FRIBIDI
@@ -36,14 +35,14 @@ EET_DESC=	EET font loader
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFONTCONFIG}
-LIB_DEPENDS+=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS+=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 CONFIGURE_ARGS+=--enable-fontconfig
 .else
 CONFIGURE_ARGS+=--disable-fontconfig
 .endif
 
 .if ${PORT_OPTIONS:MFRIBIDI}
-LIB_DEPENDS+=	fribidi:${PORTSDIR}/converters/fribidi
+LIB_DEPENDS+=	libfribidi.so:${PORTSDIR}/converters/fribidi
 CONFIGURE_ARGS+=--enable-fribidi
 .else
 CONFIGURE_ARGS+=--disable-fribidi
@@ -65,10 +64,5 @@ CONFIGURE_ARGS+=--disable-install-examples
 post-patch:
 	@${REINPLACE_CMD} -e 's|= \$$(datadir)/\$$(PACKAGE)/examples|= $$(datadir)/examples/$$(PACKAGE)|' \
 		${WRKSRC}/src/examples/Makefile.in
-
-post-install:
-.if empty(PORT_OPTIONS:MEXAMPLES)
-	@${RMDIR} ${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>
