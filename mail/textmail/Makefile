@@ -14,7 +14,7 @@ RUN_DEPENDS=	antiword:${PORTSDIR}/textproc/antiword \
 		catdoc:${PORTSDIR}/textproc/catdoc \
 		xls2csv:${PORTSDIR}/textproc/catdoc \
 		lynx:${PORTSDIR}/www/lynx \
-		${LOCALBASE}/libexec/xpdf/pdftotext:${PORTSDIR}/graphics/xpdf
+		pdftotext:${PORTSDIR}/graphics/poppler-utils
 
 USES=		perl5
 PLIST_FILES=	bin/${PORTNAME}
