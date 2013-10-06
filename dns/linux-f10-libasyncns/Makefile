@@ -16,5 +16,4 @@ RPMVERSION=	1.fc10
 USE_LDCONFIG=	yes
 AUTOMATIC_PLIST=yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

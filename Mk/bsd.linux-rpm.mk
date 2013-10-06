@@ -153,8 +153,8 @@ pre-install: linux-rpm-generate-plist
 .    if !target(linux-rpm-generate-plist)
 linux-rpm-generate-plist:
 	cd ${WRKSRC} && \
-	${FIND} * -path ./stage -prune ! -type d | ${SORT} > ${PLIST} && \
-	${FIND} * | ${GREP} -v "^stage" | ${SORT} | ${SED} -e 's|^|@dirrm |' > ${PLIST}.dirs
+	${FIND} * ! -path "stage/*" ! -type d | ${SORT} > ${PLIST} && \
+	${FIND} * ! -path "stage*" -type d | ${SORT} | ${SED} -e 's|^|@dirrm |' > ${PLIST}.dirs
 	@${GREP} '^@dirrm' ${PORTSDIR}/emulators/linux_base-${_LINUX_BASE_SUFFIX}/pkg-plist | ${SED} 's:^@dirrmtry:@dirrm:g' | ${SORT} > ${PLIST}.shared-dirs
 	@${COMM} -1 -3 ${PLIST}.shared-dirs ${PLIST}.dirs | ${SORT} -r >> ${PLIST}
 .    endif
@@ -170,16 +170,16 @@ do-install:
 .	if ${BRANDELF_FILES}
 		@cd ${WRKSRC} && ${BRANDELF} -t Linux ${BRANDELF_FILES}
 .	endif
-	cd ${WRKSRC} && ${FIND} * -type d | ${GREP} -v "^stage" | ${PAX} -rw ${STAGEDIR}/${PREFIX}
-	cd ${WRKSRC} && ${FIND} * -path ./stage -prune ! -type d | ${CPIO} -pm -R root:wheel ${STAGEDIR}${PREFIX}
+	cd ${WRKSRC} && ${FIND} * ! -path "stage*" -type d -exec ${MKDIR} "${STAGEDIR}${PREFIX}/{}" \;
+	cd ${WRKSRC} && ${FIND} * ! -path "stage/*" ! -type d | ${CPIO} -pm -R root:wheel ${STAGEDIR}${PREFIX}
 .  endif
 
 .  if !target(new-plist)
 new-plist: build
 	@${RM} -f ${PLIST}.new
 	@cd ${WRKSRC} && \
-		${FIND} * -path ./stage -prune ! -type d | ${SORT} > ${PLIST}.new; \
-		${FIND} -d * -path ./stage -prune -type d | ${SED} -e 's|^|@dirrm |' >> ${PLIST}.new; \
+		${FIND} * ! -path "stage/*" ! -type d | ${SORT} > ${PLIST}.new; \
+		${FIND} -d * ! -path "stage*" -type d | ${SED} -e 's|^|@dirrm |' >> ${PLIST}.new; \
 	done
 .  endif
 
