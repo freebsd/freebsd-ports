@@ -149,7 +149,6 @@
     SUBDIR += fuzzdb
     SUBDIR += fwanalog
     SUBDIR += fwbuilder
-    SUBDIR += fwbuilder-devel
     SUBDIR += fwipe
     SUBDIR += fwknop
     SUBDIR += fwlogwatch
