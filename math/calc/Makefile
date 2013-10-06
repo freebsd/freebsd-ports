@@ -2,18 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	calc
-PORTVERSION=	2.12.4.10
+PORTVERSION=	2.12.4.13
 CATEGORIES=	math
 MASTER_SITES=	SF
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Arbitrary precision calculator
 
+USES=		gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
 MAKE_JOBS_UNSAFE=	yes
+NO_STAGE=	yes
 
 MAN1=		calc.1
 
@@ -29,5 +30,4 @@ PLIST_SUB+=	VERSION=${PORTVERSION}	VER1=${PORTVERSION:R} \
 regression-test: build
 	( cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} check )
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
