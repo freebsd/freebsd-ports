@@ -21,13 +21,11 @@ BRANDELF_DIRS=	usr/bin
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	usr/bin/xmlcatalog usr/bin/xmllint \
-		usr/lib/libxml2.so.2 usr/lib/libxml2.so.${PORTVERSION}
+		usr/lib/libxml2.so.2 usr/lib/libxml2.so.${PORTVERSION} \
+		usr/share/man/man1/xmlcatalog.1.gz \
+		usr/share/man/man1/xmllint.1.gz usr/share/man/man3/libxml.3.gz
 DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	AUTHORS ChangeLog.gz Copyright NEWS README TODO
-MANPREFIX=	${PREFIX}/usr/share
-MAN1=		xmlcatalog.1 xmllint.1
-MAN3=		libxml.3
-MANCOMPRESSED=	yes
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>
