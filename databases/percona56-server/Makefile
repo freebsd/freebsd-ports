@@ -13,7 +13,7 @@ MAINTAINER=	flo@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
 SLAVEDIRS=	databases/percona56-client
-USES=		bison cmake
+USES=		bison cmake shebangfix
 
 OPTIONS_DEFINE=	OPENSSL FASTMTX
 OPTIONS_DEFAULT=	OPENSSL
@@ -39,6 +39,8 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DWITH_EDITLINE=system \
 		-DWITH_LIBWRAP=1 \
 		-DHAVE_PAM=0
+
+SHEBANG_FILES=	scripts/*.pl* scripts/*.sh
 
 .ifdef USE_MYSQL
 .error You have `USE_MYSQL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
