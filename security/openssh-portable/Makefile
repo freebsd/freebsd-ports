@@ -253,8 +253,8 @@ pre-install:
 .endif
 
 post-install:
-	${INSTALL_DATA} -c ${WRKSRC}/ssh_config.out ${STAGEDIR}${ETCSSH}/ssh_config-dist
-	${INSTALL_DATA} -c ${WRKSRC}/sshd_config.out ${STAGEDIR}${ETCSSH}/sshd_config-dist
+	${INSTALL_DATA} ${WRKSRC}/ssh_config.out ${STAGEDIR}${ETCSSH}/ssh_config-dist
+	${INSTALL_DATA} ${WRKSRC}/sshd_config.out ${STAGEDIR}${ETCSSH}/sshd_config-dist
 
 test:	build
 	(cd ${WRKSRC}/regress && ${SETENV} OBJ=${WRKDIR} ${MAKE_ENV} TEST_SHELL=/bin/sh \
