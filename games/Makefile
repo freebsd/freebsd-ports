@@ -387,6 +387,7 @@
     SUBDIR += hlstats
     SUBDIR += hlstatsx
     SUBDIR += hohlin
+    SUBDIR += hoichess
     SUBDIR += holotz-castle
     SUBDIR += icbm3d
     SUBDIR += icebreaker
