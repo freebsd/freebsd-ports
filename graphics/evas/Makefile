@@ -31,7 +31,6 @@ ${NODE}_DESC=	Install ${NODE:L} engine
 ${NODE}_DESC=	Install ${NODE:L} loader
 .endfor
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .for NODE in ${OPTIONS_MULTI_ENGINES}
