@@ -1,6 +1,9 @@
 bin/ftpcp
 bin/ftpcopy
 bin/ftpls
+man/man1/ftpcopy.1.gz
+man/man1/ftpcp.1.gz
+man/man1/ftpls.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README

@@ -14,9 +14,8 @@ USE_PERL5=	build
 
 WRKSRC=		${WRKDIR}/web/${DISTNAME}
 
-MAN1=		ftpcopy.1 ftpcp.1 ftpls.1
+.include <bsd.port.options.mk>
 
-NO_STAGE=	yes
 pre-build:
 	${ECHO} "${CC}" >${WRKSRC}/src/conf-cc
 	${ECHO} "${CPPFLAGS} ${CFLAGS}" >${WRKSRC}/src/conf-cflags
@@ -24,14 +23,14 @@ pre-build:
 
 do-install:
 	cd ${WRKSRC}/compile && \
-		${INSTALL_PROGRAM} ftpcopy ftpls ${PREFIX}/bin && \
-		${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1 && \
-		${INSTALL_SCRIPT} ftpcp ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR} && \
+		${INSTALL_PROGRAM} ftpcopy ftpls ${STAGEDIR}${PREFIX}/bin && \
+		${INSTALL_MAN} *.1 ${STAGEDIR}${PREFIX}/man/man1 && \
+		${INSTALL_SCRIPT} ftpcp ${STAGEDIR}${PREFIX}/bin
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR} && \
 	cd ${WRKSRC}/compile && \
 		${INSTALL_DATA} ChangeLog NEWS \
-			README THANKS ftpcopy.html ftpls.html ${DOCSDIR}
+			README THANKS ftpcopy.html ftpls.html ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
