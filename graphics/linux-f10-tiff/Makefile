@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	The TIFF library, Linux/i386 binary (Linux Fedora 10)
+COMMENT=	TIFF library, Linux/i386 binary (Linux Fedora 10)
 
 CONFLICTS=	linux-tiff-[0-9]* linux-f8-tiff-[0-9]*
 
@@ -26,5 +26,4 @@ USE_LDCONFIG=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

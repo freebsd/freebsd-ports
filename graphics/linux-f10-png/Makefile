@@ -30,5 +30,4 @@ DOCSDIR=	${PREFIX}/usr/share/doc/libpng-${PORTVERSION}
 PORTDOCS=	CHANGES LICENSE README TODO example.c libpng-1.2.37.txt
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

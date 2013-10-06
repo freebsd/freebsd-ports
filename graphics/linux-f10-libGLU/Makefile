@@ -25,5 +25,4 @@ SRC_DISTFILES=	mesa-${PORTVERSION}-${RPMVERSION}.src.rpm
 PLIST_FILES=	usr/lib/libGLU.so.1 usr/lib/libGLU.so.1.3.070300
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

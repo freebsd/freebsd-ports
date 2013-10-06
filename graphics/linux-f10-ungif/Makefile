@@ -27,5 +27,4 @@ PLIST_FILES=	usr/lib/libgif.so.4 \
 DOCSDIR=	${PREFIX}/usr/share/doc/giflib-${PORTVERSION}
 PORTDOCS=	AUTHORS BUGS COPYING ChangeLog NEWS ONEWS README TODO
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

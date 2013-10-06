@@ -23,5 +23,4 @@ USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
