@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	xboard
-PORTVERSION=	4.7.1
-PORTREVISION=	2
+PORTVERSION=	4.7.2
 CATEGORIES=	games
 MASTER_SITES=	GNU
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	X frontend for Crafty, GNUChess, Chess Servers, or e-mail chess
 
-LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
 
 OPTIONS_DEFINE=	NLS CRAFTY FAIRYMAX GNUCHESS KNIGHTCAP PHALANX
 OPTIONS_DEFAULT=
@@ -27,7 +26,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=MKDIR_P="${MKDIR}"
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAN6=		xboard.6
 INFO=		xboard
 USE_PERL5=	build
 INSTALLS_ICONS=	yes
@@ -35,7 +33,6 @@ DATADIR=	${PREFIX}/share/games/${PORTNAME}
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README SHORTLOG TODO
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCRAFTY}
@@ -80,11 +77,12 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/cmail ${PREFIX}/bin/
-	@${CP} -pn ${PREFIX}/etc/xboard.conf.dist ${PREFIX}/etc/xboard.conf
+	@${INSTALL_SCRIPT} ${WRKSRC}/cmail ${STAGEDIR}${PREFIX}/bin/
+	@${CP} -pn ${STAGEDIR}${PREFIX}/etc/xboard.conf.dist \
+		${STAGEDIR}${PREFIX}/etc/xboard.conf
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
