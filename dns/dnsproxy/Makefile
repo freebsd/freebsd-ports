@@ -7,7 +7,7 @@ CATEGORIES=	dns
 MASTER_SITES=	http://www.wolfermann.org/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A proxy for DNS queries
+COMMENT=	proxy for DNS queries
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.so:${PORTSDIR}/devel/libevent
 
@@ -28,7 +28,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/dnsproxy ${PREFIX}/sbin
 	@${INSTALL_MAN} ${WRKSRC}/dnsproxy.1 ${MAN1PREFIX}/man/man1
 	@${MKDIR} ${ETCDIR}
-	@${INSTALL_DATA} -v ${WRKSRC}/dnsproxy.conf ${ETCDIR}/dnsproxy.conf.sample
+	@${INSTALL_DATA} ${WRKSRC}/dnsproxy.conf ${ETCDIR}/dnsproxy.conf.sample
 
 post-install:
 	${CAT} ${PKGMESSAGE}

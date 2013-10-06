@@ -113,9 +113,9 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 . for portdoc in ${PORTDOCS}
 	@if [ -f ${WRKDIR}/${portdoc} ]; then \
-		${INSTALL_DATA} -v ${WRKDIR}/${portdoc} ${DOCSDIR}/;  \
+		${INSTALL_DATA} ${WRKDIR}/${portdoc} ${DOCSDIR}/;  \
 	else \
-		${INSTALL_DATA} -v ${WRKSRC}/${portdoc} ${DOCSDIR}/;  \
+		${INSTALL_DATA} ${WRKSRC}/${portdoc} ${DOCSDIR}/;  \
 	fi
 . endfor
 .endif
