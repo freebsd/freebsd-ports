@@ -22,8 +22,6 @@ RPMVERSION=	5.fc10
 BRANELF_FILES=	usr/bin/wish8.5
 USE_LDCONFIG=	yes
 
-PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 DESCR=		${.CURDIR}/../${PORTNAME}${PKGNAMESUFFIX}/pkg-descr
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
