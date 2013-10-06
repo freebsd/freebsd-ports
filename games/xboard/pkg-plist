@@ -1,5 +1,6 @@
 bin/xboard
 bin/cmail
+man/man6/xboard.6.gz
 share/applications/xboard.desktop
 share/applications/xboard-config.desktop
 share/applications/xboard-fen-viewer.desktop
@@ -7,9 +8,6 @@ share/applications/xboard-pgn-viewer.desktop
 share/applications/xboard-tourney.desktop
 share/icons/hicolor/48x48/apps/xboard.png
 share/icons/hicolor/scalable/apps/xboard.svg
-share/mime/application/x-chess-pgn.xml
-share/mime/application/x-xboard-opt.xml
-share/mime/application/x-xboard-trn.xml
 share/mime/packages/xboard.xml
 %%DATADIR%%/pixmaps/textures/board32.xpm
 %%DATADIR%%/pixmaps/textures/board48.xpm
@@ -164,6 +162,8 @@ share/mime/packages/xboard.xml
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
 @unexec if cmp -s %D/etc/xboard.conf.dist %D/etc/xboard.conf; then rm -f %D/etc/xboard.conf; fi
 etc/xboard.conf.dist
 @exec cp -pn %D/%F %B/xboard.conf
