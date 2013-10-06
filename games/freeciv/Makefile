@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeciv
-PORTVERSION=	2.3.4
+PORTVERSION=	2.4.0
 CATEGORIES=	games
 MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION}
 
@@ -17,16 +17,13 @@ USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} --program-transform-name=
-
-MAN6=		freeciv-server.6 freeciv-client.6 \
-		freeciv-xaw.6 freeciv-sdl.6 freeciv-gtk2.6 \
-		freeciv-manual.6 freeciv-modpack.6
+CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} --program-transform-name= \
+		--enable-aimodules --enable-shared \
+		--enable-fcdb=sqlite3
 
 OPTIONS_DEFINE?=	X11 SDL MYSQL IPV6
-OPTIONS_DEFAULT?=	X11 MYSQL IPV6
+OPTIONS_DEFAULT?=	X11 IPV6
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSDL} && empty(PORT_OPTIONS:MX11)
@@ -34,15 +31,16 @@ IGNORE=		cannot use SDL without X11: re-run make config
 .endif
 
 .if ${PORT_OPTIONS:MX11}
-LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff \
-		png15:${PORTSDIR}/graphics/png \
-		ggz:${PORTSDIR}/games/libggz \
-		ggz-gtk:${PORTSDIR}/games/ggz-gtk-client \
-		ggzcore:${PORTSDIR}/games/ggz-client-libs \
-		ggzmod:${PORTSDIR}/games/ggz-client-libs
+LIB_DEPENDS+=	libtiff.so:${PORTSDIR}/graphics/tiff \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libggz.so:${PORTSDIR}/games/libggz \
+		libggz-gtk.so:${PORTSDIR}/games/ggz-gtk-client \
+		libggzcore.so:${PORTSDIR}/games/ggz-client-libs \
+		libggzmod.so:${PORTSDIR}/games/ggz-client-libs
 USE_XORG=	xpm
 USE_SDL=	mixer
 USE_GNOME=	gtk20
+USE_SQLITE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS+=--enable-client=gtk
 CONFLICTS=	freeciv-nox11-[0-9]*
@@ -62,7 +60,7 @@ PLIST_SUB+=	SDL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-CONFIGURE_ARGS+=--enable-auth --with-mysql-prefix=${LOCALBASE}
+CONFIGURE_ARGS+=--enable-fcdb=mysql --with-mysql-prefix=${LOCALBASE}
 USE_MYSQL=	yes
 .endif
 
@@ -79,13 +77,13 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name Makefile.in|${XARGS} ${REINPLACE_CMD} -e\
-		'/pkgdatadir/s|$$[(]datadir[)]/@PACKAGE@|${DATADIR}|'
+	@${FIND} ${WRKSRC} -name Makefile.in|${XARGS} ${REINPLACE_CMD} -e \
+		'/pkgdatadir/s|[(]datadir)/@PACKAGE@|(prefix)/${DATADIR_REL}|'
 
 .if ${PORT_OPTIONS:MX11}
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/data/civclient.dsc ${DATADIR}/
-	@cd ${PREFIX}/bin && ${LN} -s freeciv-gtk2 freeciv-client
+	@${INSTALL_DATA} ${WRKSRC}/data/civclient.dsc ${STAGEDIR}/${DATADIR}/
+	@cd ${STAGEDIR}/${PREFIX}/bin && ${LN} -s freeciv-gtk2 freeciv-client
 .endif
 
 .include <bsd.port.mk>
