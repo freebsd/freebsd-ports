@@ -24,5 +24,4 @@ DOCSDIR=		usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=		AUTHORS COPYING ChangeLog NEWS README TODO
 DESCR=			${.CURDIR}/../${PORTNAME}/pkg-descr
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

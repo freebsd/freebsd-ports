@@ -20,5 +20,4 @@ DESCR=		${.CURDIR}/../dbus/pkg-descr
 
 PLIST_FILES=	lib/libdbus-1.so.3 lib/libdbus-1.so.3.4.0
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

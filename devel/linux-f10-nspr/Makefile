@@ -20,5 +20,4 @@ RPMVERSION=	1.fc10.1
 PLIST_FILES=	lib/libnspr4.so lib/libplc4.so lib/libplds4.so
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

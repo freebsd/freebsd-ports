@@ -27,5 +27,4 @@ DOCSDIR=	${PREFIX}/usr/share/doc/${LINUX_NAME}-${PORTVERSION}
 PORTDOCS=	BUGS COPYING CREDITS README-SDL.txt
 DESCR=		${.CURDIR}/../${PORTNAME}12/pkg-descr
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
