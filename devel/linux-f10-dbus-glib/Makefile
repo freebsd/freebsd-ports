@@ -24,5 +24,4 @@ DOCSDIR=	usr/share/doc/dbus-glib-0.76
 PORTDOCS=	COPYING ChangeLog NEWS
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
