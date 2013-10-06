@@ -5004,3 +5004,4 @@ net/gnome-vnc||2013-10-05|Depends on EOLed gnome1
 news/grn||2013-10-05|Depends on EOLed gnome1
 security/fpm||2013-10-05|Depends on EOLed gnome1
 sysutils/xsu||2013-10-05|Depends on EOLed gnome1
+securty/fwbuilder-devel||2013-10-05|Appears not to be actively developed any more.
