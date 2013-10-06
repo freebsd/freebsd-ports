@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	danilogondolfo@gmail.com
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Parallel executor, distributes tasks over network
 
 LICENSE=	MIT
@@ -24,26 +24,11 @@ MAKE_ENV=	SUBPRJ_DFLT="${SUBPRJ_DFLT}"
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		${PORTNAME}.1 \
-		${PORTNAME}_reorder.1
-PORTDOCS=	*
-PORTEXAMPLES=	*
-PLIST_FILES=	bin/${PORTNAME} \
-		bin/${PORTNAME}_reorder
-
-SUBPRJ_DFLT=	${PORTNAME}
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-SUBPRJ_DFLT+=	doc
-.endif
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-SUBPRJ_DFLT+=	examples
-MAKE_ENV+=	EGDIR="${EXAMPLESDIR}"
-.endif
+SUBPRJ_DFLT=	paexec doc examples
+MAKE_ENV+=	EGDIR="${STAGEDIR}${EXAMPLESDIR}" \
+			DOCDIR="${STAGEDIR}${DOCSDIR}" \
+			BINDIR="${STAGEDIR}${PREFIX}/bin" \
+			MANDIR="${STAGEDIR}${MANPREFIX}/man"
 
 do-build:
 	@${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/mkcmake -C ${WRKSRC}
@@ -51,8 +36,6 @@ do-build:
 do-install:
 	@${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/mkcmake -C ${WRKSRC} \
 		${INSTALL_TARGET}
-.if ${PORT_OPTIONS:MDOCS}
-	${INSTALL_DATA} ${WRKSRC}/presentation/${PORTNAME}.pdf ${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${WRKSRC}/presentation/${PORTNAME}.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
