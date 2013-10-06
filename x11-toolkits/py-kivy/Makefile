@@ -45,6 +45,9 @@ ARCH!=		uname -p
 .endif
 .if ${ARCH} == i386
 OPTIONS_GROUP_VIDEO+=	PYGLET
+.if !defined(WITH_NEW_XORG)
+BROKEN=		Does not compile with old libGL on i386: Undefined symbol glBlendEquationSeparate
+.endif
 .endif
 
 CAMERA_DESC=	Camera support
