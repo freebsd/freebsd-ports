@@ -696,51 +696,54 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/worker.py
 %%PYTHON_SITELIBDIR%%/mercurial/worker.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/worker.pyo
+man/man1/hg.1.gz
+man/man5/hgignore.5.gz
+man/man5/hgrc.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDATA%%%%DATADIR%%/contrib/bash_completion
-%%PORTDATA%%%%DATADIR%%/contrib/casesmash.py
-%%PORTDATA%%%%DATADIR%%/contrib/check-code.py
-%%PORTDATA%%%%DATADIR%%/contrib/convert-repo
-%%PORTDATA%%%%DATADIR%%/contrib/debugcmdserver.py
-%%PORTDATA%%%%DATADIR%%/contrib/debugshell.py
-%%PORTDATA%%%%DATADIR%%/contrib/dumprevlog
-%%PORTDATA%%%%DATADIR%%/contrib/hg-ssh
-%%PORTDATA%%%%DATADIR%%/contrib/hgfixes/__init__.py
-%%PORTDATA%%%%DATADIR%%/contrib/hgfixes/fix_bytes.py
-%%PORTDATA%%%%DATADIR%%/contrib/hgfixes/fix_bytesmod.py
-%%PORTDATA%%%%DATADIR%%/contrib/hgfixes/fix_leftover_imports.py
-%%PORTDATA%%%%DATADIR%%/contrib/hgk
-%%PORTDATA%%%%DATADIR%%/contrib/hgsh/Makefile
-%%PORTDATA%%%%DATADIR%%/contrib/hgsh/hgsh.c
-%%PORTDATA%%%%DATADIR%%/contrib/mercurial.el
-%%PORTDATA%%%%DATADIR%%/contrib/mergetools.hgrc
-%%PORTDATA%%%%DATADIR%%/contrib/mq.el
-%%PORTDATA%%%%DATADIR%%/contrib/perf.py
-%%PORTDATA%%%%DATADIR%%/contrib/pylintrc
-%%PORTDATA%%%%DATADIR%%/contrib/python-hook-examples.py
-%%PORTDATA%%%%DATADIR%%/contrib/sample.hgrc
-%%PORTDATA%%%%DATADIR%%/contrib/simplemerge
-%%PORTDATA%%%%DATADIR%%/contrib/tcsh_completion
-%%PORTDATA%%%%DATADIR%%/contrib/tcsh_completion_build.sh
-%%PORTDATA%%%%DATADIR%%/contrib/tmplrewrite.py
-%%PORTDATA%%%%DATADIR%%/contrib/undumprevlog
-%%PORTDATA%%%%DATADIR%%/contrib/vim/HGAnnotate.vim
-%%PORTDATA%%%%DATADIR%%/contrib/vim/hg-menu.vim
-%%PORTDATA%%%%DATADIR%%/contrib/vim/hgcommand.vim
-%%PORTDATA%%%%DATADIR%%/contrib/vim/hgtest.vim
-%%PORTDATA%%%%DATADIR%%/contrib/vim/patchreview.txt
-%%PORTDATA%%%%DATADIR%%/contrib/vim/patchreview.vim
-%%PORTDATA%%%%DATADIR%%/contrib/zsh_completion
-%%PORTDATA%%%%DATADIR%%/www/hgweb.cgi
-%%PORTDATA%%%%DATADIR%%/www/hgweb.fcgi
-%%PORTDATA%%%%DATADIR%%/www/hgweb.wsgi
-%%PORTDATA%%@dirrm %%DATADIR%%/www
-%%PORTDATA%%@dirrm %%DATADIR%%/contrib/vim
-%%PORTDATA%%@dirrm %%DATADIR%%/contrib/hgsh
-%%PORTDATA%%@dirrm %%DATADIR%%/contrib/hgfixes
-%%PORTDATA%%@dirrm %%DATADIR%%/contrib
-%%PORTDATA%%@dirrm %%DATADIR%%
+%%DATA%%%%DATADIR%%/contrib/bash_completion
+%%DATA%%%%DATADIR%%/contrib/casesmash.py
+%%DATA%%%%DATADIR%%/contrib/check-code.py
+%%DATA%%%%DATADIR%%/contrib/convert-repo
+%%DATA%%%%DATADIR%%/contrib/debugcmdserver.py
+%%DATA%%%%DATADIR%%/contrib/debugshell.py
+%%DATA%%%%DATADIR%%/contrib/dumprevlog
+%%DATA%%%%DATADIR%%/contrib/hg-ssh
+%%DATA%%%%DATADIR%%/contrib/hgfixes/__init__.py
+%%DATA%%%%DATADIR%%/contrib/hgfixes/fix_bytes.py
+%%DATA%%%%DATADIR%%/contrib/hgfixes/fix_bytesmod.py
+%%DATA%%%%DATADIR%%/contrib/hgfixes/fix_leftover_imports.py
+%%DATA%%%%DATADIR%%/contrib/hgk
+%%DATA%%%%DATADIR%%/contrib/hgsh/Makefile
+%%DATA%%%%DATADIR%%/contrib/hgsh/hgsh.c
+%%DATA%%%%DATADIR%%/contrib/mercurial.el
+%%DATA%%%%DATADIR%%/contrib/mergetools.hgrc
+%%DATA%%%%DATADIR%%/contrib/mq.el
+%%DATA%%%%DATADIR%%/contrib/perf.py
+%%DATA%%%%DATADIR%%/contrib/pylintrc
+%%DATA%%%%DATADIR%%/contrib/python-hook-examples.py
+%%DATA%%%%DATADIR%%/contrib/sample.hgrc
+%%DATA%%%%DATADIR%%/contrib/simplemerge
+%%DATA%%%%DATADIR%%/contrib/tcsh_completion
+%%DATA%%%%DATADIR%%/contrib/tcsh_completion_build.sh
+%%DATA%%%%DATADIR%%/contrib/tmplrewrite.py
+%%DATA%%%%DATADIR%%/contrib/undumprevlog
+%%DATA%%%%DATADIR%%/contrib/vim/HGAnnotate.vim
+%%DATA%%%%DATADIR%%/contrib/vim/hg-menu.vim
+%%DATA%%%%DATADIR%%/contrib/vim/hgcommand.vim
+%%DATA%%%%DATADIR%%/contrib/vim/hgtest.vim
+%%DATA%%%%DATADIR%%/contrib/vim/patchreview.txt
+%%DATA%%%%DATADIR%%/contrib/vim/patchreview.vim
+%%DATA%%%%DATADIR%%/contrib/zsh_completion
+%%DATA%%%%DATADIR%%/www/hgweb.cgi
+%%DATA%%%%DATADIR%%/www/hgweb.fcgi
+%%DATA%%%%DATADIR%%/www/hgweb.wsgi
+%%DATA%%@dirrm %%DATADIR%%/www
+%%DATA%%@dirrm %%DATADIR%%/contrib/vim
+%%DATA%%@dirrm %%DATADIR%%/contrib/hgsh
+%%DATA%%@dirrm %%DATADIR%%/contrib/hgfixes
+%%DATA%%@dirrm %%DATADIR%%/contrib
+%%DATA%%@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/static
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/spartan

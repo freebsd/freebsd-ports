@@ -11,7 +11,6 @@ COMMENT=	Fast, lightweight source control management system
 
 LICENSE=	GPLv2
 
-NO_STAGE=	yes
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
 
@@ -20,8 +19,6 @@ OPTIONS_DEFAULT=DATA
 OPTIONS_SUB=	yes
 CA_BUNDLE_DESC=	Install CA Certificates
 
-MAN1=		hg.1
-MAN5=		hgignore.5 hgrc.5
 SUB_FILES=	pkg-message
 
 CONTRIB_FILES=	bash_completion \
@@ -70,25 +67,25 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-setup.py
 .endif
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/doc/*.5 ${PREFIX}/man/man5/
+	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/*.5 ${STAGEDIR}${PREFIX}/man/man5/
 .if ${PORT_OPTIONS:MDATA}
-	${MKDIR} ${DATADIR}
-	${MKDIR} ${DATADIR}/contrib
-	${MKDIR} ${DATADIR}/contrib/hgfixes
-	${MKDIR} ${DATADIR}/contrib/hgsh
-	${MKDIR} ${DATADIR}/contrib/vim
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}/contrib
+	${MKDIR} ${STAGEDIR}${DATADIR}/contrib/hgfixes
+	${MKDIR} ${STAGEDIR}${DATADIR}/contrib/hgsh
+	${MKDIR} ${STAGEDIR}${DATADIR}/contrib/vim
 	for f in ${CONTRIB_FILES}; do \
-		${CP} -p ${WRKSRC}/contrib/$${f} ${DATADIR}/contrib/$${f}; \
+		${CP} -p ${WRKSRC}/contrib/$${f} ${STAGEDIR}${DATADIR}/contrib/$${f}; \
 	done
-	${MKDIR} ${DATADIR}/www
-	${INSTALL_DATA} ${WRKSRC}/*.cgi ${DATADIR}/www
-	${INSTALL_DATA} ${WRKSRC}/contrib/hgweb.fcgi ${DATADIR}/www
-	${INSTALL_DATA} ${WRKSRC}/contrib/hgweb.wsgi ${DATADIR}/www
+	${MKDIR} ${STAGEDIR}${DATADIR}/www
+	${INSTALL_DATA} ${WRKSRC}/*.cgi ${STAGEDIR}${DATADIR}/www
+	${INSTALL_DATA} ${WRKSRC}/contrib/hgweb.fcgi ${STAGEDIR}${DATADIR}/www
+	${INSTALL_DATA} ${WRKSRC}/contrib/hgweb.wsgi ${STAGEDIR}${DATADIR}/www
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
