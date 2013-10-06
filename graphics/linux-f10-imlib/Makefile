@@ -20,5 +20,4 @@ BRANDELF_FILES=	usr/bin/imlib_config
 USE_LDCONFIG=	yes
 PLIST=		${PKGDIR}/pkg-plist.${LINUX_RPM_ARCH}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

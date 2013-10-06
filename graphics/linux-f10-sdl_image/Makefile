@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	A simple library to load images as SDL interfaces (Linux Fedora 10)
+COMMENT=	Simple library to load images as SDL interfaces (Linux Fedora 10)
 
 CONFLICTS=	linux-sdl_image-[0-9]* linux-f8-sdl_image-[0-9]*
 
@@ -29,5 +29,4 @@ DOCSDIR=	${PREFIX}/usr/share/doc/${LINUX_NAME}-${PORTVERSION}
 PORTDOCS=	CHANGES COPYING README
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

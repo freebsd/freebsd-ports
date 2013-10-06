@@ -19,5 +19,4 @@ LINUX_DIST_VER=	10
 RPMVERSION=	36.fc9
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

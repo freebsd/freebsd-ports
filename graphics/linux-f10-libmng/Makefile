@@ -22,5 +22,4 @@ USE_LDCONFIG=	yes
 
 PLIST_FILES=	usr/lib/libmng.so.1 usr/lib/libmng.so.1.0.0
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

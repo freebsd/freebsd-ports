@@ -34,5 +34,4 @@ USE_LINUX_APPS=	xorglibs
 LINUX_DIST_VER=	10
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -26,5 +26,4 @@ DOCSDIR=	${PREFIX}/usr/share/doc/libpng10-${PORTVERSION}
 PORTDOCS=	ANNOUNCE CHANGES LICENSE README TODO Y2KINFO
 DESCR=		${.CURDIR}/../png/pkg-descr
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
