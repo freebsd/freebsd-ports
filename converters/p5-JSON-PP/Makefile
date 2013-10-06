@@ -17,13 +17,6 @@ LICENSE_COMB=	dual
 USE_PERL5=	configure
 USES=		perl5
 
-MAN1=		p5json_pp.1
-MAN3=		JSON::PP.3 \
-		JSON::PP::Boolean.3
-
-SUB_FILES=	pkg-install
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400
@@ -37,6 +30,8 @@ pre-patch:
 	@${REINPLACE_CMD} -e 's|bin/json_pp|bin/p5json_pp|' ${WRKSRC}/MANIFEST ${WRKSRC}/Makefile.PL
 
 post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.if ${PERL_LEVEL} < 501400
+	${CP} -p ${STAGEDIR}${PREFIX}/bin/p5json_pp ${STAGEDIR}${PREFIX}/bin/json_pp
+.endif
 
 .include <bsd.port.post.mk>
