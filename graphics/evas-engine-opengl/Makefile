@@ -14,7 +14,7 @@ COMMENT=	A hardware accelerated canvas API (OpenGL engine)
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
@@ -27,7 +27,6 @@ USE_LDCONFIG=	yes
 BUILD_WRKSRC=	${WRKSRC}/src/modules/engines/gl_x11
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-NO_STAGE=	yes
 .include "../evas-core/Makefile.inc"
 CONFIGURE_ARGS+=	--enable-gl-xlib
 
@@ -44,6 +43,6 @@ pre-build:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/evas-opengl-x11.pc \
-		${PREFIX}/libdata/pkgconfig/
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/
 
 .include <bsd.port.mk>
