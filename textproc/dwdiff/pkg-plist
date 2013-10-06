@@ -1,10 +1,20 @@
 bin/dwdiff
 bin/dwfilter
+man/man1/dwdiff.1.gz
+man/man1/dwfilter.1.gz
+%%NLS%%man/nl.UTF-8/man1/dwdiff.1.gz
+%%NLS%%man/nl.UTF-8/man1/dwfilter.1.gz
+%%NLS%%man/nl/man1/dwdiff.1.gz
+%%NLS%%man/nl/man1/dwfilter.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%NLS%%share/locale/de/LC_MESSAGES/dwdiff.mo
 %%NLS%%share/locale/es/LC_MESSAGES/dwdiff.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/dwdiff.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/dwdiff.mo
+%%NLS%%@dirrmtry man/nl/man1
 %%NLS%%@dirrmtry man/nl.UTF-8/man1
 %%NLS%%@dirrmtry man/nl.UTF-8
-%%NLS%%@dirrmtry man/nl/man1
 %%NLS%%@dirrmtry man/nl
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
