@@ -79,6 +79,11 @@ NO_STAGE=	yes
 MAKE_ENV+=	CCACHE_DISABLE=yes
 .endif
 
+.if  ${OSVERSION} >= 1000055
+# IMPORTANT: Newer versions of rcs will NOT work with fwbuilder.
+RUN_DEPENDS=	rcs:${PORTSDIR}/devel/rcs57
+.endif
+
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/fwbuilder
 	@${ECHO} If you are upgrading from a previous version of fwbuilder,
