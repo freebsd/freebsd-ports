@@ -29,7 +29,6 @@ USES=		perl5
 .if ${PERL_LEVEL} >= 501600
 PLIST_SUB+=	EXE_FILES="@comment "
 .else
-MAN1+=		zipdetails.1
 PLIST_SUB+=	EXE_FILES=""
 .endif
 

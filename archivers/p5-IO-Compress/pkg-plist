@@ -45,6 +45,7 @@
 %%PERL5_MAN3%%/IO::Uncompress::Inflate.3.gz
 %%PERL5_MAN3%%/IO::Uncompress::RawInflate.3.gz
 %%PERL5_MAN3%%/IO::Uncompress::Unzip.3.gz
+%%EXE_FILES%%man/man1/zipdetails.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Compress
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
 @dirrmtry %%SITE_PERL%%/IO/Uncompress/Adapter
