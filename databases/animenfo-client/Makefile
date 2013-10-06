@@ -13,12 +13,10 @@ COMMENT=	AnimeNfo client
 
 LICENSE=	GPLv2
 
-NO_STAGE=	yes
-
 USE_GMAKE=	yes
 PLIST_FILES=	bin/animenfo-client
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/animenfo-client ${PREFIX}/bin/
+	@${INSTALL_PROGRAM} ${WRKSRC}/animenfo-client ${STAGEDIR}/${PREFIX}/bin/
 
 .include <bsd.port.mk>
