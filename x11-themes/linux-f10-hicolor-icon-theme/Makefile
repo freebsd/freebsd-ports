@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	linux-f10-
 DISTFILES=	# empty
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	A high-color icon theme shell from the FreeDesktop project
+COMMENT=	High-color icon theme shell from the FreeDesktop project
 
 CONFLICTS=	linux-hicolor-icon-theme-[0-9]* linux-f8-hicolor-icon-theme-[0-9]*
 
@@ -20,9 +20,8 @@ USE_LINUX=	yes
 USE_LINUX_PREFIX=	yes
 PLIST_FILES=	usr/share/icons/hicolor
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL} -d ${PREFIX}/usr/share/icons
-	${LN} -fs ${LOCALBASE}/share/icons/hicolor ${PREFIX}/usr/share/icons
+	${INSTALL} -d ${STAGEDIR}${PREFIX}/usr/share/icons
+	${LN} -fs ${LOCALBASE}/share/icons/hicolor ${STAGEDIR}${PREFIX}/usr/share/icons
 
 .include <bsd.port.mk>
