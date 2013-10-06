@@ -12,7 +12,7 @@ COMMENT=	Thumbnail generator library
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	exif:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif
 
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
@@ -29,7 +29,6 @@ OPTIONS_DEFAULT=EMOTION ETHUMBD
 EMOTION_DESC=	Build with Emotion module
 ETHUMBD_DESC=	Build ethumbd daemon (requires dbus)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEMOTION}
