@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tralics
-PORTVERSION=	2.15.0
+PORTVERSION=	2.15.1
 DISTVERSIONPREFIX=	src-
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp-sop.inria.fr/marelle/tralics/src/
@@ -17,8 +17,7 @@ ALL_TARGET=	${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${STAGEDIR}${PREFIX}/bin)
 
 .include <bsd.port.mk>
