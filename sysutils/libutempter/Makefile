@@ -10,14 +10,14 @@ MASTER_SITES=	ftp://ftp.altlinux.org/pub/people/ldv/utempter/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interface to record user sessions to utmp and wtmp files
 
+USES=		gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900004
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 900004
 IGNORE=		is now contained in the base system
 .endif
 
