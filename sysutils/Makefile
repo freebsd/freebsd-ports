@@ -344,6 +344,7 @@
     SUBDIR += gpart
     SUBDIR += gpkgdep
     SUBDIR += gpte
+    SUBDIR += graffer
     SUBDIR += graid5
     SUBDIR += graphicboot
     SUBDIR += graveman
