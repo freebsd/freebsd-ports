@@ -23,9 +23,8 @@ LIB_DEPENDS=	assuan:${PORTSDIR}/security/libassuan \
 		pth:${PORTSDIR}/devel/pth
 
 USE_BZIP2=	YES
-USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
-USES=		iconv
+USES=		gmake iconv
 USE_LDCONFIG=	YES
 CONFIGURE_ARGS+=	--enable-symcryptrun
 
@@ -40,11 +39,14 @@ STD_SOCKET_DESC=	Use standard socket for agent
 SUID_GPG_DESC=		Install GPG with suid
 OPTIONS_DEFAULT=	CURL
 NO_OPTIONS_SORT=	YES
+OPTIONS_SUB=		YES
 
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=	--disable-doc
+.else
+INFO=		gnupg
 .endif
 
 .if ${PORT_OPTIONS:MPINENTRY}
@@ -54,27 +56,21 @@ RUN_DEPENDS+=	pinentry>0:${PORTSDIR}/security/pinentry
 .if ${PORT_OPTIONS:MGPGSM}
 RUN_DEPENDS+=	dirmngr:${PORTSDIR}/security/dirmngr
 PORT_OPTIONS+=	LDAP
-PLIST_SUB+=	GPGSM=""
 .else
 CONFIGURE_ARGS+=--disable-gpgsm
-PLIST_SUB+=	GPGSM="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	YES
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
-PLIST_SUB+=	LDAP=""
 .else
 CONFIGURE_ARGS+=--disable-ldap
-PLIST_SUB+=	LDAP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MKDNS}
 LIB_DEPENDS+=	adns:${PORTSDIR}/dns/adns
-PLIST_SUB+=	ADNS=""
 .else
 CONFIGURE_SUB=	-e '/GPGKEYS_KDNS=/s/".*"/""/'
-PLIST_SUB+=	ADNS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSTD_SOCKET}
@@ -84,18 +80,14 @@ CONFIGURE_ARGS+=--enable-standard-socket
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 CONFIGURE_ARGS+=--enable-nls
-PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSCDAEMON}
 CONFIGURE_ARGS+=--enable-scdaemon
-PLIST_SUB+=	SCDAEMON=""
 .else
 CONFIGURE_ARGS+=--disable-scdaemon
-PLIST_SUB+=	SCDAEMON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCURL}
@@ -113,12 +105,5 @@ post-patch:
 		${WRKSRC}/acinclude.m4 ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "/#include <utmp.h>/d" \
 		${WRKSRC}/tools/symcryptrun.c
-
-post-install:
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.if ${PORT_OPTIONS:MSUID_GPG}
-	${CHMOD} u+s ${STAGEDIR}${PREFIX}/bin/gpg2
-.endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
