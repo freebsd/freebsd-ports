@@ -64,6 +64,7 @@ libdata/pkgconfig/libquvi-scripts.pc
 %%NSFW%%%%DATADIR%%/lua/website/youjizz.lua
 %%DATADIR%%/lua/website/youtube.lua
 %%DATADIR%%/version
+man/man7/libquvi-scripts.7.gz
 @dirrm %%DATADIR%%/lua/website/quvi
 @dirrm %%DATADIR%%/lua/website
 @dirrm %%DATADIR%%/lua/util
