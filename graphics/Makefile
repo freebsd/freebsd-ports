@@ -280,6 +280,7 @@
     SUBDIR += glew
     SUBDIR += glexcess
     SUBDIR += glfw
+    SUBDIR += glfw-devel
     SUBDIR += glide3
     SUBDIR += glitz
     SUBDIR += gliv
