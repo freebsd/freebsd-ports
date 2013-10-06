@@ -21,5 +21,4 @@ USE_LDCONFIG=	yes
 PLIST_FILES=	usr/lib/libcups.so.2 usr/lib/libcupsimage.so.2
 DESCR=		${.CURDIR}/../cups-base/pkg-descr
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
