@@ -1,4 +1,5 @@
 bin/gm4
+man/man1/gm4.1.gz
 %%EXAMPLESDIR%%/capitalize.m4
 %%EXAMPLESDIR%%/capitalize2.m4
 %%EXAMPLESDIR%%/comments.m4
