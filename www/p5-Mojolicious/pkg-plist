@@ -109,6 +109,8 @@ bin/morbo
 %%SITE_PERL%%/Mojolicious/Sessions.pm
 %%SITE_PERL%%/Mojolicious/Static.pm
 %%SITE_PERL%%/Mojolicious/Types.pm
+%%SITE_PERL%%/Mojolicious/Validator.pm
+%%SITE_PERL%%/Mojolicious/Validator/Validation.pm
 %%SITE_PERL%%/Mojolicious/public/favicon.ico
 %%SITE_PERL%%/Mojolicious/public/mojo/failraptor.png
 %%SITE_PERL%%/Mojolicious/public/mojo/jquery/jquery.js
@@ -266,6 +268,8 @@ bin/morbo
 %%PERL5_MAN3%%/Mojolicious::Sessions.3.gz
 %%PERL5_MAN3%%/Mojolicious::Static.3.gz
 %%PERL5_MAN3%%/Mojolicious::Types.3.gz
+%%PERL5_MAN3%%/Mojolicious::Validator.3.gz
+%%PERL5_MAN3%%/Mojolicious::Validator::Validation.3.gz
 %%PERL5_MAN3%%/Test::Mojo.3.gz
 %%PERL5_MAN3%%/ojo.3.gz
 man/man1/hypnotoad.1.gz
@@ -278,6 +282,7 @@ man/man1/morbo.1.gz
 @dirrm %%SITE_PERL%%/Mojolicious/public/mojo/prettify
 @dirrm %%SITE_PERL%%/Mojolicious/public/mojo
 @dirrm %%SITE_PERL%%/Mojolicious/public
+@dirrm %%SITE_PERL%%/Mojolicious/Validator
 @dirrm %%SITE_PERL%%/Mojolicious/Routes
 @dirrmtry %%SITE_PERL%%/Mojolicious/Plugin
 @dirrm %%SITE_PERL%%/Mojolicious/Guides
