@@ -196,6 +196,7 @@
     SUBDIR += gstreamer1-plugins-libmms
     SUBDIR += gtic
     SUBDIR += gtk-vnc
+    SUBDIR += gtknetcat
     SUBDIR += gupnp
     SUBDIR += gupnp-av
     SUBDIR += gupnp-igd
