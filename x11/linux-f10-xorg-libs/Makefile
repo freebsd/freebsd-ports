@@ -95,8 +95,8 @@ USE_LINUX_APPS=		fontconfig
 LINUX_DIST_VER=		10
 USE_LDCONFIG=		yes
 
-NO_STAGE=	yes
 post-install:
-	@${INSTALL_DATA} ${FILESDIR}/xorg-x11-i386.conf ${PREFIX}/etc/ld.so.conf.d
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/ld.so.conf.d
+	@${INSTALL_DATA} ${FILESDIR}/xorg-x11-i386.conf ${STAGEDIR}${PREFIX}/etc/ld.so.conf.d
 
 .include <bsd.port.mk>
