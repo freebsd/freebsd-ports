@@ -11,22 +11,21 @@ COMMENT=	A powerful RAW image processing application
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		iptcdata:${PORTSDIR}/graphics/libiptcdata \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		lcms2:${PORTSDIR}/graphics/lcms2 \
-		png15:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff \
-		sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
-		fftw3:${PORTSDIR}/math/fftw3 \
-		fftw3f:${PORTSDIR}/math/fftw3-float \
-		canberra-gtk3:${PORTSDIR}/audio/libcanberra-gtk3
+LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
+		libiptcdata.so:${PORTSDIR}/graphics/libiptcdata \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
+		libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
+		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
 
 USES=		cmake:outsource pkgconfig
 USE_XZ=		yes
 USE_GNOME=	gtk20 glib20
 USE_LDCONFIG=	yes
-NO_STAGE=	yes
 # base GCC and clang in 9.1-RELEASE are insufficient:
 USE_GCC=	yes
 CFLAGS+=	-I${LOCALBASE}/include -fPIC ${PTHREAD_CFLAGS}
@@ -44,7 +43,6 @@ CMAKE_ARGS+=	-DDOCDIR="${DOCSDIR}" \
 SUB_FILES=	rawtherapee
 SUB_LIST=	RTDIR="${RTDIR}"
 INSTALLS_ICONS=	yes
-MAN1=		rawtherapee.1
 
 RTDIR=		${PREFIX}/libdata/${PORTNAME}
 
@@ -62,7 +60,7 @@ post-patch:
 # paranoia: run rawtherapee --help to be sure it finds all its
 # shared libraries (this hinges on proper RPATH setting and propagation)
 post-install:
-	${PREFIX}/bin/rawtherapee --help 2>&1 \
+	${SETENV} HOME=/dev/null ${STAGEDIR}${PREFIX}/bin/rawtherapee --help 2>&1 \
 	| ${EGREP} -q "RawTherapee, version ${PKGVERSION:C/_.*//:C/,.*//}"
 
 .include <bsd.port.pre.mk>
