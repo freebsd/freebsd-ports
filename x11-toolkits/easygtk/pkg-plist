@@ -1,8 +1,0 @@
-include/easygtk.h
-lib/libeasygtk.a
-lib/libeasygtk.so
-lib/libeasygtk.so.1
-%%PORTDOCS%%%%DOCSDIR%%/manual.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.c
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

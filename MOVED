@@ -5013,3 +5013,5 @@ devel/bonobo||2013-10-07|Component of the obsolete gnome1
 devel/oaf||2013-10-07|Component of the obsolete gnome1
 print/gnome-print||2013-10-07|Component of the obsolete gnome1
 mail/mavbiff||2013-10-07|Obsoleted
+finance/gnofin||2013-10-07|Depends on EOLed gnome1
+x11-toolkits/easygtk||2013-10-07|Depends on EOLed gnome1
