@@ -1,0 +1,40 @@
+--- wemux.orig	2012-03-29 02:17:10.000000000 +0200
++++ wemux	2013-10-06 14:54:20.000000000 +0200
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!%%PREFIX%%/bin/bash
+ # wemux by Matt Furden @zolrath
+ # version 2.2.0
+ #
+@@ -7,8 +7,9 @@
+ # or pairing, which will allow them to edit your file (shared cursor) or work
+ # in another window (separate cursors) in the hosts tmux session.
+ #
+-# To set a user as host add their username to the host_list in /etc/wemux.conf
+-# Other configuations options are also located in /etc/wemux.conf
++# To set a user as host add their username to the host_list in
++# %%PREFIX%%/etc/wemux.conf
++# Other configuations options are also located in %%PREFIX%%/etc/wemux.conf
+ #
+ # For environments with multiple hosts running their own independent sessions
+ # on the same machine wemux can join different sessions with the wemux join
+@@ -42,7 +43,7 @@
+ version="2.2.0"
+ 
+ # Setup and Configuration Files.
+-# Default settings, modify them in the /etc/wemux.conf file:
++# Default settings, modify them in the %%PREFIX%%/etc/wemux.conf file:
+ host_list=(root)
+ socket_prefix="/tmp/wemux"
+ options="-u"
+@@ -60,8 +61,8 @@
+ # Set $EDITOR default to vi if not configured on host machine.
+ editor=${EDITOR:="vi"}
+ 
+-# Load configuration options from /etc/wemux.conf
+-[ -f /etc/wemux.conf ] && . /etc/wemux.conf
++# Load configuration options from %%PREFIX%%/etc/wemux.conf
++[ -f %%PREFIX%%/etc/wemux.conf ] && . %%PREFIX%%/etc/wemux.conf
+ 
+ # Sanitize session name, replace spaces and underscores with dashes.
+ # Remove all non alpha-numeric characters, convert to lowercase.
