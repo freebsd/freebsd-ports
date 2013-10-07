@@ -6,3 +6,4 @@ lib/libblkid.so
 lib/libblkid.a
 libdata/pkgconfig/blkid.pc
 @dirrm include/blkid
+man/man3/libblkid.3.gz
