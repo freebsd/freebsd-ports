@@ -88,7 +88,6 @@
     SUBDIR += gtweakui
     SUBDIR += gucharmap
     SUBDIR += gworkspace
-    SUBDIR += gworkspace-clipbook
     SUBDIR += gworkspace-gwmetadata
     SUBDIR += gxmessage
     SUBDIR += gxneur
