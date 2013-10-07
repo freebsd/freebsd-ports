@@ -235,7 +235,7 @@ post-install:
 .if !defined(BUILDING_HIPHOP)
 	${INSTALL_DATA} ${WRKSRC}/docs/libcurl/libcurl.m4 ${STAGEDIR}${PREFIX}/share/aclocal/
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/ ${STAGEDIR}${DOCSDIR}/libcurl/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/ ${STAGEDIR}${DOCSDIR}/libcurl/
 	cd ${WRKSRC}/docs/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/docs/libcurl/ && ${INSTALL_DATA} ABI *.html *.pdf *.m4 ${STAGEDIR}${DOCSDIR}/libcurl/
 .endif
