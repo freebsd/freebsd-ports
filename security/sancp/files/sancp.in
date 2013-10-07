@@ -16,41 +16,6 @@
 #				Default: %%PREFIX%%/etc/sancp.conf
 # sancp_interface (str):	Default: none - MUST BE SET
 #
-# Command Line Options: (cmdline)
-#   ---------------------
-#
-#	-? or -h  this help screen
-#	-c <filename>  specify the configuration/rules filename
-#	-d <directory>  specify the directory for output files
-#	-i <device>  set the network device to listen on (default: 'any')
-#	-g <gid>   set a group identity
-#	-u <uid>   set a user identity
-#	-r <pcapfile>  pcap file to read (overrides -i)
-#	-B "<bpf expression>"  set a bpf expression (alternative to -F <filename>)
-#	-D (daemon) forks, prints msgs to syslog only and overrides -C option
-#	-K (console) enable additional printing of 'realtimes' to stdout (suppressed by option -D)
-#	-F <bpf filename>  file containing a bpf filter expression, overrides (alternative to -B)
-#	-H --human-readable  write IP addresses in dotted notation and TCPflag fields in hex 
-#	-R  Set default for realtime to 'pass' (default is 'log') disables realtime, but rules can override
-#	-S  Set default for stats to 'pass' (default is 'log') disables stats, but rules can override
-#	-P  Set default for pcap to 'pass' (default is 'log') disables pcap, but rules can override
-#	-I or --enable_icmp_mixed  record 'code' and 'type' fields for ICMP
-#		to the fields 's_port' and 'd_port'.
-#		note: affects how related icmp packets are correlated 
-#	-V  display version
-#    --shift  (debug) force interpretation of packet starting at byte[2] 
-#                    normally performed when reading from the 'any' interface
-#	--strip-80211  strip 802.1Q headers from 802.1Q packets; used to 
-# 	  decode 802.1Q encapsulated packets - affects -A option, 
-#	--log-facility <facility>  where facility can be 'LOCAL1' - 'LOCAL7'
-#		The default log facility used by SANCP is LOG_DAEMON 
-#
-#      Debug mode for pcap data logging
-#	-A  records ALL traffic frames to a pcap file named 'debug_pcap_raw'
-#	  (despite rules). Packets are logged here prior to decoding or handling. 
-#	  Use -F or -B option to restrict what is collectedi.
-#	  Pcap data logged using this option is affected by the --strip-80211 cmdline option
-#	  The configuration file equivalent to this is 'default debug_pcap_raw enable'
 
 . /etc/rc.subr
 

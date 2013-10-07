@@ -20,9 +20,5 @@ sancp.conf has been altered (you used sancp for something else) a
 new conf file, named sguil-sancp.conf-sample will be installed in the
 %%PREFIX%%/etc directory.  You should use that one for sguil.
 
-All of the configuration options for sancp are documented in the 
-startup script in %%PREFIX%%/etc/rc.d (don't forget to specify interface
-in /etc/rc.conf)
-
 If you're running sguil, you probably want to use at least the following flags:
 sancp_flags="-D -P -R -u sancp -g sancp -d /var/log/sancp"
