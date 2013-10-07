@@ -7,10 +7,14 @@ PORTREVISION=	15
 CATEGORIES=	textproc
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	stardict-3
+PKGNAMESUFFIX=	2
 DIST_SUBDIR=	stardict
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform and international dictionary written in Gtk2
+
+DEPRECATED=	Newer version available in ports: textproc/stardict3
+EXPIRATION_DATE=	2013-11-07
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
@@ -18,7 +22,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix
 USES=		gettext gmake pkgconfig
-PKGNAMESUFFIX=	2
 
 OPTIONS_DEFINE=	GNOME
 OPTIONS_DEFAULT=	GNOME
