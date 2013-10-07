@@ -5007,3 +5007,4 @@ sysutils/xsu||2013-10-05|Depends on EOLed gnome1
 securty/fwbuilder-devel||2013-10-05|Appears not to be actively developed any more.
 devel/libglade||2013-10-07|Composent of the obsolete gnome1
 databases/gnome-db||2013-10-07|Composent of the obsolete gnome1
+databases/libgda||2013-10-07|Composent of the obsolete gnome1
