@@ -105,6 +105,12 @@ INDEX_SHELL=		/bin/sh
 INDEX_PORTS=.
 .endif
 
+.if exists(/usr/libexec/make_index)
+MAKE_INDEX=	/usr/libexec/make_index /dev/stdin
+.else
+MAKE_INDEX=	perl ${.CURDIR}/Tools/make_index
+.endif
+
 ${INDEXDIR}/${INDEXFILE}:
 	@${INDEX_ECHO_1ST} "Generating ${INDEXFILE} - please wait.."; \
 	if [ "${INDEX_PRISTINE}" != "" ]; then \
@@ -135,7 +141,7 @@ ${INDEXDIR}/${INDEXFILE}:
 			echo; \
 		fi; \
 		exit 1); \
-	cat $${tmpdir}/${INDEXFILE}.desc.* | (cd ${.CURDIR} ; /usr/libexec/make_index /dev/stdin) | \
+	cat $${tmpdir}/${INDEXFILE}.desc.* | (cd ${.CURDIR} ; ${MAKE_INDEX}) | \
 		sed -e 's/  */ /g' -e 's/|  */|/g' -e 's/  *|/|/g' -e 's./..g' | \
 		sort -t '|' +1 -2 | \
 		sed -e 's../.g' > ${INDEXDIR}/${INDEXFILE}.tmp; \
