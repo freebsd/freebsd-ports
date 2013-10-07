@@ -1,13 +1,27 @@
---- configure.org	2011-05-04 20:30:40.000000000 +0200
-+++ configure	2011-05-04 20:31:06.000000000 +0200
-@@ -29,8 +29,8 @@
- TARGET=`uname -s`
- EBUILD_COMPAT=0
+--- configure.orig	2013-10-07 13:59:48.000000000 +0200
++++ configure		2013-10-07 16:30:19.000000000 +0200
+@@ -105,12 +105,12 @@
+ fi
  
--CFLAGS='-g -O2'
--LDFLAGS='-g -Wall -O2'
-+CFLAGS="${CFLAGS} -g -O2"
-+LDFLAGS="${LDFLAGS} -g -Wall -O2"
+ if [ $USE_CLANG -eq 0 ]; then
+-  CFLAGS='-g -Wall -O2'
+-  LDFLAGS='-g -Wall -O2'
++  CFLAGS='${CFLAGS} -g -Wall -O2'
++  LDFLAGS='${LDFLAGS} -g -Wall -O2'
+   COMPILER='gcc'
+ else
+-  CFLAGS='-g -O2'
+-  LDFLAGS='-g -O2'
++  CFLAGS='${CFLAGS} -g -O2'
++  LDFLAGS='${LDFLAGS} -g -O2'
+   COMPILER='clang'
+ fi
  
- PREFIX='/usr/local'
- BINDIR=''
+@@ -151,7 +151,6 @@
+ # use ./configure instead
+ 
+ TARGET := $TARGET
+-CC := $COMPILER
+ CFLAGS := $CFLAGS
+ LDFLAGS := $LDFLAGS
+ STRIP := strip
