@@ -22,6 +22,5 @@ PLIST_FILES=	usr/lib/libglade-gnome.so.0 usr/lib/libglade-gnome.so.0.4.2 \
 		usr/lib/libglade.so.0 usr/lib/libglade.so.0.4.2
 DOCSDIR=	usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>
