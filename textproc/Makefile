@@ -391,7 +391,6 @@
     SUBDIR += libwps
     SUBDIR += libxdiff
     SUBDIR += libxml
-    SUBDIR += libxml++
     SUBDIR += libxml++26
     SUBDIR += libxml++26-reference
     SUBDIR += libxml2
