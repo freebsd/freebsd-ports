@@ -14,14 +14,10 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_GCC=	4.2+	# uses nested functions
-USE_GMAKE=	yes
+USES=		gmake
 
 MAKE_ARGS+=	CFLAGS="${CFLAGS} -I. -Wall -Wstrict-prototypes -Wextra -Wno-unused-parameter"
 
-MAN1=		wiggle.1
-PLIST_FILES=	bin/wiggle
-
-NO_STAGE=	yes
 pre-patch:
 		${REINPLACE_CMD} -Ee 's,\./dotest,bash ./dotest,' ${WRKSRC}/Makefile
 		${REINPLACE_CMD} -Ee "s,/usr/bin/time -o .time -f '%U',," ${WRKSRC}/dotest
@@ -30,7 +26,7 @@ pre-patch:
 		${REINPLACE_CMD} -Ee 's|(^[[:space:]]+[[:<:]])cols = cols;|\1(void)cols;|' ${WRKSRC}/vpatch.c
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/wiggle ${PREFIX}/bin/
-		${INSTALL_MAN} ${WRKSRC}/wiggle.1 ${PREFIX}/man/man1/
+		${INSTALL_PROGRAM} ${WRKSRC}/wiggle ${STAGEDIR}${PREFIX}/bin/
+		${INSTALL_MAN} ${WRKSRC}/wiggle.1 ${STAGEDIR}${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
