@@ -96,7 +96,6 @@
     SUBDIR += glom
     SUBDIR += gnats4
     SUBDIR += gnatsweb4
-    SUBDIR += gnome-db
     SUBDIR += godis
     SUBDIR += gomysql
     SUBDIR += gosqlite3
