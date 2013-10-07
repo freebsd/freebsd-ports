@@ -29,16 +29,15 @@ PASSIVETEX_DESC=	Add dependency on PassiveTeX
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	BASH=${BASH_CMD} GETOPT=${GETOPT_CMD} PDFXMLTEX=${PDFXMLTEX_CMD}
+MAKE_ENV+=	HOME=/dev/null
 
 BASH_CMD=	${LOCALBASE}/bin/bash
 GETOPT_CMD=	${LOCALBASE}/bin/getopt
 XSL_DIR=	${LOCALBASE}/share/xsl/docbook
 PDFXMLTEX_CMD=	${LOCALBASE}/bin/pdftex
 
-MAN1=		xmlif.1 xmlto.1
 PORTDOCS=	AUTHORS COPYING ChangeLog NEWS THANKS
 # these two documentation files do not convey information useful for
-NO_STAGE=	yes
 # the FreeBSD port at this time:
 # PORTDOCS+=	FAQ README
 
@@ -68,8 +67,8 @@ post-patch:
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>

@@ -1,5 +1,7 @@
 bin/xmlif
 bin/xmlto
+man/man1/xmlif.1.gz
+man/man1/xmlto.1.gz
 %%DATADIR%%/format/docbook/awt
 %%DATADIR%%/format/docbook/dvi
 %%DATADIR%%/format/docbook/epub
