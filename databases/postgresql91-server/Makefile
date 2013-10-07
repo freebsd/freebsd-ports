@@ -7,8 +7,7 @@ PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
-PKGNAMESUFFIX?=	${DISTV:S/.//}-server
-DISTV=	${DISTVERSION:R}
+PKGNAMESUFFIX?=	-server
 
 MAINTAINER?=	pgsql@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
@@ -25,8 +24,10 @@ ICU_PATCHFILE?=	pg-910-icu-2012-12-19.diff.gz
 
 .if !defined(SLAVE_ONLY)
 UNIQUENAME?=	${PORTNAME}${DISTVERSION:R:S/.//}
+LATEST_LINK?=	${PKGNAMEPREFIX}${UNIQUENAME}${PKGNAMESUFFIX}
 .else # Contrib has different options from -client/-server
 UNIQUENAME?=	${PORTNAME}${DISTVERSION:R:S/.//}${PKGNAMESUFFIX}
+LATEST_LINK?=	${PKGNAMEPREFIX}${UNIQUENAME}
 .endif
 
 PKGINSTALL?=	${PKGDIR}/pkg-install${PKGNAMESUFFIX}

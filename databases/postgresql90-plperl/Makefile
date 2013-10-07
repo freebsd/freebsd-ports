@@ -3,8 +3,7 @@
 
 PORTNAME=	postgresql
 CATEGORIES=	databases perl5
-PKGNAMESUFFIX?=	${DISTV:S/.//}-plperl
-DISTV=	${DISTVERSION:R}
+PKGNAMESUFFIX=	-plperl
 
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	Write SQL functions for PostgreSQL using Perl5
