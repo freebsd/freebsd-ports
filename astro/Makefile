@@ -47,7 +47,6 @@
     SUBDIR += mkgmap-splitter
     SUBDIR += mymoon
     SUBDIR += nightfall
-    SUBDIR += nova
     SUBDIR += openmap
     SUBDIR += openuniverse
     SUBDIR += osmium
