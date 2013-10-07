@@ -14,6 +14,7 @@ USES=		perl5 gmake pkgconfig
 USE_GNOME=	gtk20
 MAKE_ARGS=	OPTIMIZE="${CFLAGS}" PREFIX="${PREFIX}" \
 		GTKINC="`pkg-config --cflags gtk+-2.0`"
+LDFLAGS+=	-lm
 
 PORTDOCS=	README
 PLIST_FILES=	bin/kanjipad bin/kpengine %%DATADIR%%/jdata.dat

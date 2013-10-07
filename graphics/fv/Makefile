@@ -24,7 +24,7 @@ ALL_TARGET=	${PORTNAME}
 CXXFLAGS+=	$$(pkg-config --cflags libpng15) \
 		-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	$$(pkg-config --libs libpng15) \
-		-L${LOCALBASE}/lib -lglut -lGLU -lGL -lbz2 -lm ${PTHREAD_LIBS}
+		-L${LOCALBASE}/lib -lglut -lGLU -lGL -lbz2 -lm -lz ${PTHREAD_LIBS}
 
 PORTDOCS=	AUTHORS ChangeLog README
 PLIST_FILES=	bin/${PORTNAME}

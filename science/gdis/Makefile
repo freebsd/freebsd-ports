@@ -19,6 +19,7 @@ USE_GL=		glu
 USE_GNOME=	gtk20
 USES=		gmake pkgconfig
 MAKEFILE=	GNUmakefile
+LDFLAGS+=	-lm
 
 PORTDOCS=	CHANGELOG README TODO
 PLIST_FILES=	bin/gdis %%DATADIR%%/gdis.elements %%DATADIR%%/gdis.library \

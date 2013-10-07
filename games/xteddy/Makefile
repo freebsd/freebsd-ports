@@ -16,7 +16,7 @@ USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib lXext
 
 MAN6=		xteddy.6
 PLIST_FILES=	bin/xteddy bin/xteddy_test bin/xtoys \

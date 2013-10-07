@@ -17,6 +17,7 @@ USES=		pkgconfig
 USE_XORG=	x11
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+LDFLAGS+=	-lm
 
 MAN1=		vgd.1 vgseer.1 viewglob.1
 
