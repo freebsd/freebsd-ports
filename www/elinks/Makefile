@@ -199,7 +199,7 @@ CONFIGURE_ARGS+=	${ICONV_CONFIGURE_ARG}
 #
 .if exists(/usr/include/execinfo.h)
 LDFLAGS+=	-lexecinfo
-.else if exists(${LOCALBASE}/include/execinfo.h)
+.elif exists(${LOCALBASE}/include/execinfo.h)
 LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 .endif
