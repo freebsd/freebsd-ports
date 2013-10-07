@@ -14,19 +14,18 @@ COMMENT=	A Free Toolkit For Developing Mapping Applications
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
-		icuuc:${PORTSDIR}/devel/icu \
-		boost_system:${PORTSDIR}/devel/boost-libs \
-		boost_python:${PORTSDIR}/devel/boost-python-libs
+LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj \
+		libicuuc.so:${PORTSDIR}/devel/icu \
+		libboost_system.so:${PORTSDIR}/devel/boost-libs \
+		libboost_python.so:${PORTSDIR}/devel/boost-python-libs
 BUILD_DEPENDS=	${LOCALBASE}/bin/freetype-config:${PORTSDIR}/print/freetype2 \
 		${PYTHON_PKGNAMEPREFIX}icu>=0.8.1:${PORTSDIR}/devel/py-icu
 
 USE_BZIP2=	yes
-USES=		pkgconfig
+USES=		pkgconfig scons
 USE_GNOME=	libxml2
 USE_PYTHON=	2.6+
 USE_LDCONFIG=	yes
-USE_SCONS=	yes
 WARNING_CXXFLAGS?=	-w
 
 INPUT_PLUGINS=	geojson python raster shape
@@ -54,14 +53,13 @@ DOCSRCDIR2=	${WRKSRC}/docs
 DOCSDIR2=	${DOCSDIR}/docs
 DOC_FILES2=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCAIRO}
 LIB_DEPENDS+=	cairo:${PORTSDIR}/graphics/cairo
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cairo>=1.8.2:${PORTSDIR}/graphics/py-cairo
 .else
-SCONS_ARGS+=	CAIRO=False
+MAKE_ARGS+=	CAIRO=False
 .endif
 
 .if ${PORT_OPTIONS:MCSV}
@@ -97,19 +95,19 @@ BUILD_DEPENDS+=	sqlite3>=3.7.12:${PORTSDIR}/databases/sqlite3
 .if ${PORT_OPTIONS:MJPEG}
 LIB_DEPENDS+=   jpeg:${PORTSDIR}/graphics/jpeg
 .else
-SCONS_ARGS+=	JPEG=False
+MAKE_ARGS+=	JPEG=False
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
 LIB_DEPENDS+=   png15:${PORTSDIR}/graphics/png
 .else
-SCONS_ARGS+=	PNG=False
+MAKE_ARGS+=	PNG=False
 .endif
 
 .if ${PORT_OPTIONS:MTIFF}
 LIB_DEPENDS+=   tiff:${PORTSDIR}/graphics/tiff
 .else
-SCONS_ARGS+=	TIFF=False
+MAKE_ARGS+=	TIFF=False
 .endif
 
 .include <bsd.port.pre.mk>
@@ -118,9 +116,10 @@ SCONS_ARGS+=	TIFF=False
 IGNORE=		does not install: runs out of virtual memory
 .endif
 
-SCONS_ARGS+=	WARNING_CXXFLAGS=${WARNING_CXXFLAGS}
-SCONS_ARGS+=	INPUT_PLUGINS="`${ECHO} ${INPUT_PLUGINS} | ${TR} ' ' ,`"
-SCONS_ARGS+=	JOBS=${MAKE_JOBS_NUMBER}
+MAKE_ARGS+=	WARNING_CXXFLAGS=${WARNING_CXXFLAGS}
+MAKE_ARGS+=	INPUT_PLUGINS="`${ECHO} ${INPUT_PLUGINS} | ${TR} ' ' ,`"
+MAKE_ARGS+=	JOBS=${MAKE_JOBS_NUMBER}
+MAKE_ARGS+=	${MAKE_ENV}
 
 pre-configure:
 .if ${PORT_OPTIONS:MSQLITE3}
@@ -137,16 +136,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \
 		${WRKSRC}/SConstruct
 
-do-install:
-	@cd ${INSTALL_WRKSRC} && ${SETENV} ${SCONS_BUILDENV} ${SCONS_BIN} \
-		${SCONS_INSTALL_TARGET}
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR2}
-	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${DOCSDIR2}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
+	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
 
 .include <bsd.port.post.mk>
