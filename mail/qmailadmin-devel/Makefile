@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 MAINTAINER=	ismail.yenigul@endersys.com.tr
 COMMENT=	CGI program for administering Qmail with vchkpw/vpopmail
 
+PKGNAMESUFFIX=	-devel
+
 # vpopmail installation directory
 #
 # NB: change this with extreme caution!  For instance, if vpopmail is not
@@ -34,7 +36,6 @@ RUN_DEPENDS+=	ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx
 .endif
 
 CONFLICTS=	qmailadmin-1.*
-LATEST_LINK=	qmailadmin-devel
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES

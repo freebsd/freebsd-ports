@@ -27,7 +27,7 @@ RUN_DEPENDS+=	p5-MIME-Types>=0:${PORTSDIR}/mail/p5-MIME-Types \
 PAPERSIZE?=	letter
 RUN_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-${PAPERSIZE}
 
-LATEST_LINK=	cvsweb3
+PKGNAMESUFFIX=	3
 CONFLICTS=	cvsweb-2.*
 
 USES=		perl5

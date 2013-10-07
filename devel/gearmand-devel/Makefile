@@ -26,7 +26,7 @@ GID_FILES=	../../GIDs
 .endif
 .endif
 
-LATEST_LINK=	gearmand-devel
+PKGNAMESUFFIX=	-devel
 
 USERS=		gearmand
 GROUPS=		gearmand

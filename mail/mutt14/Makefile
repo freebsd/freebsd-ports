@@ -23,7 +23,7 @@ MAINTAINER?=	udo.schweigert@siemens.com
 COMMENT?=	The Mongrel of Mailers (part Elm, Pine, Mush, mh, etc.)
 
 CONFLICTS?=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-devel-[0-9]* mutt-devel-lite-[0-9]* mutt-lite-[0-9]* zh-mutt-devel-[0-9]* mutt-[^1].[^4]*
-LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}14${PKGNAMESUFFIX}
+PKGNAMESUFFIX=	14
 
 OPTIONS_DEFINE=	NLS SGML_DOCS LOCALES_FIX MUTT_XFACE MUTT_FLOCK MUTT_ICONV GSSAPI
 OPTIONS_DEFAULT=	MUTT_FLOCK MUTT_ICONV GSSAPI
@@ -47,7 +47,7 @@ MUTT_ICONV_DESC=	Enable mutt's iconv character conversion feature
 USE_OPENSSL=	yes
 
 .if defined (MUTT_LITE)
-PKGNAMESUFFIX=	-lite
+PKGNAMESUFFIX=	14-lite
 OPTIONS_EXCLUDE=	SGML_DOCS
 .endif
 
