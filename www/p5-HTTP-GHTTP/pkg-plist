@@ -1,8 +1,0 @@
-bin/g-request
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/GHTTP/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/HTTP/GHTTP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/GHTTP/GHTTP.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/GHTTP/GHTTP.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/GHTTP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/HTTP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
