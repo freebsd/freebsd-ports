@@ -388,7 +388,6 @@
     SUBDIR += libapreq2
     SUBDIR += libecap
     SUBDIR += libepc
-    SUBDIR += libghttp
     SUBDIR += libgtkhtml
     SUBDIR += libmicrohttpd
     SUBDIR += libwww

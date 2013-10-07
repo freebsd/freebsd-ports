@@ -1,7 +1,0 @@
-etc/ghttpConf.sh
-include/ghttp.h
-include/ghttp_constants.h
-lib/libghttp.a
-lib/libghttp.la
-lib/libghttp.so
-lib/libghttp.so.1
