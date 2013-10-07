@@ -12,6 +12,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	TCL module for accessing MySQL databases
 
+PATCH_DEPENDS=	rcsdiff:${PORTSDIR}/devel/rcs
+
 USE_MYSQL=	41+
 USE_TCL=	84+
 TCL_NODOT=	tcl${TCL_VER:S/.//}
