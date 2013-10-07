@@ -7,6 +7,9 @@ lib/libflickcurl.la
 lib/libflickcurl.so
 lib/libflickcurl.so.0
 libdata/pkgconfig/flickcurl.pc
+man/man1/flickcurl.1.gz
+man/man1/flickcurl-config.1.gz
+man/man1/flickrdf.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/appgarden-commercial-picker.png
 %%PORTDOCS%%%%DOCSDIR%%/appgarden-edit-auth-flow-mobile.png
 %%PORTDOCS%%%%DOCSDIR%%/appgarden-edit-auth-flow.png
