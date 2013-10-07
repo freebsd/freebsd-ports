@@ -1,10 +1,11 @@
 # $FreeBSD$
 
-PORTNAME=	rcs57
+PORTNAME=	rcs
 PORTVERSION=	5.7
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+PKGNAMESUFFIX=	57
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Version control system (as was in FreeBSD prior to removal)

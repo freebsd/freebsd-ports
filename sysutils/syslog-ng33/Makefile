@@ -1,10 +1,11 @@
 # Created by: Ivan Lago <ivan.lago@ifom-ieo-campus.it>
 # $FreeBSD$
 
-PORTNAME=	syslog-ng33
+PORTNAME=	syslog-ng
 PORTVERSION=	3.3.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/$(PORTVERSION)/source/
+PKGNAMESUFFIX=	33
 DISTFILES=	$(PORTNAME)_$(PORTVERSION).tar.gz
 
 MAINTAINER=	cy@FreeBSD.org
