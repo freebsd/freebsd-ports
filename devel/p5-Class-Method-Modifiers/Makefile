@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Class-Method-Modifiers
-PORTVERSION=	2.06
+PORTVERSION=	2.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,12 +13,13 @@ COMMENT=	Provides Moose-like method modifiers
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-CPAN-Meta-Check>=0.007:${PORTSDIR}/devel/p5-CPAN-Meta-Check \
-		p5-Test-CheckDeps>=0.006:${PORTSDIR}/devel/p5-Test-CheckDeps \
-		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
-		p5-Test-Warnings>=0:${PORTSDIR}/devel/p5-Test-Warnings
+TEST_DEPENDS=	p5-Test-CheckDeps>=0.007:${PORTSDIR}/devel/p5-Test-CheckDeps \
+		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
+NO_STAGE=	yes
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuildtiny
+
+MAN3=		Class::Method::Modifiers.3
 
 .include <bsd.port.mk>
