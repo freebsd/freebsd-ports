@@ -20,7 +20,7 @@ USE_BZIP2=
 USE_QT4=	corelib dbus gui linguist moc network qmake qtestlib rcc uic webkit xml
 CMAKE_ENV=	CSYNC_DIR=${LOCALBASE}
 CMAKE_ARGS=	-DCSYNC_INCLUDE_PATH:STRING=${LOCALBASE}/include/ocsync/
-USE_GCC=	4.6+
+USE_GCC=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
