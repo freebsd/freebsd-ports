@@ -1,6 +1,8 @@
 bin/newlisp
 %%GUISERV%%bin/newlisp-edit
 bin/newlispdoc
+man/man1/newlisp.1.gz
+man/man1/newlispdoc.1.gz
 %%GUISERV%%%%PORTDOCS%%%%DOCSDIR%%/guiserver/guiserver.lsp.html
 %%GUISERV%%%%PORTDOCS%%%%DOCSDIR%%/guiserver/index.html
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
@@ -8,16 +10,18 @@ bin/newlispdoc
 %%PORTDOCS%%%%DOCSDIR%%/ExpressionEvaluation.html
 %%PORTDOCS%%%%DOCSDIR%%/MemoryManagement.html
 %%PORTDOCS%%%%DOCSDIR%%/manual_frame.html
-%%PORTDOCS%%%%DOCSDIR%%/newLISP-10.5.3-Release.html
+%%PORTDOCS%%%%DOCSDIR%%/newLISP-10.5.4-Release.html
 %%PORTDOCS%%%%DOCSDIR%%/newLISPdoc.html
 %%PORTDOCS%%%%DOCSDIR%%/newlisp_index.html
 %%PORTDOCS%%%%DOCSDIR%%/newlisp_manual.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/async
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/client
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/env.cgi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/finger
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/form.cgi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/form.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/httpd-conf.lsp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/newLISP-Excel-Import.xls
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/observer
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/opengl-demo-ffi.lsp
@@ -87,10 +91,10 @@ bin/newlispdoc
 %%DATADIR%%/modules/unix.lsp
 %%DATADIR%%/modules/xmlrpc-client.lsp
 %%DATADIR%%/modules/zlib.lsp
-%%DATADIR%%/util/httpd-conf.lsp
-%%DATADIR%%/util/link.lsp
+%%DATADIR%%/util/README.txt
 %%DATADIR%%/util/newlisp.jsf
 %%DATADIR%%/util/newlisp.vim
+%%DATADIR%%/util/standard.lsp
 %%DATADIR%%/util/syntax.cgi
 @dirrm %%DATADIR%%/util
 @dirrm %%DATADIR%%/modules

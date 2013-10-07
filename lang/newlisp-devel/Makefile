@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	newlisp
-PORTVERSION=	10.5.3
+PORTVERSION=	10.5.4
 CATEGORIES=	lang
 MASTER_SITES=	http://www.newlisp.org/downloads/
 PKGNAMESUFFIX=	-devel
@@ -14,6 +14,8 @@ COMMENT=	LISP like scripting language
 LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi
 
 CONFLICTS=	newlisp-[0-9]*
+
+IGNORE=		no development version currently available
 
 HAS_CONFIGURE=	yes
 ALL_TARGET=	default
@@ -34,7 +36,6 @@ OPTIONS_DEFINE=	GMP GSL MYSQL PGSQL SQLITE GUISERV
 GSL_DESC=	GSL (GNU Scientific Library)
 GUISERV_DESC=	Install GUI server (in Java)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CFLAGS+=	-I${LOCALBASE}/include
@@ -93,8 +94,8 @@ PLIST_SUB+=	GUISERV="@comment "
 post-patch:
 	@${REINPLACE_CMD} -E -e "s,install -m 644, \$${BSD_INSTALL_DATA},g" \
 		-e "s,install -m 755, \$${BSD_INSTALL_SCRIPT},g" \
-		-e "s,^(datadir=).*,\1${PREFIX}/share,g" \
-		-e "s,^(bindir=).*,\1${PREFIX}/bin,g" \
+		-e "s,^(datadir=).*,\1${STAGEDIR}${PREFIX}/share,g" \
+		-e "s,^(bindir=).*,\1${STAGEDIR}${PREFIX}/bin,g" \
 		${WRKSRC}/Makefile
 
 	@${REINPLACE_CMD} -E \
@@ -129,49 +130,49 @@ post-patch:
 		${WRKSRC}/newlisp.h
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/newlisp ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/util/newlispdoc ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/newlisp ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/util/newlispdoc ${STAGEDIR}${PREFIX}/bin
 
-	@${MKDIR} ${DATADIR}/util
+	@${MKDIR} ${STAGEDIR}${DATADIR}/util
 	${INSTALL_DATA} ${WRKSRC}/util/syntax.cgi \
-			${WRKSRC}/util/newlisp.vim \
-			${WRKSRC}/util/link.lsp \
-			${WRKSRC}/util/httpd-conf.lsp \
+			${WRKSRC}/util/README.txt \
 			${WRKSRC}/util/newlisp.jsf \
-			${DATADIR}/util
+			${WRKSRC}/util/newlisp.vim \
+			${WRKSRC}/util/standard.lsp \
+			${STAGEDIR}${DATADIR}/util
 
-	@${MKDIR} ${DATADIR}/modules
+	@${MKDIR} ${STAGEDIR}${DATADIR}/modules
 	${INSTALL_DATA} ${MODULES:S,^,${WRKSRC}/modules/,:S,$,.lsp,} \
-		${DATADIR}/modules
+		${STAGEDIR}${DATADIR}/modules
 
-	${INSTALL_MAN} ${WRKSRC}/doc/newlisp.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/newlispdoc.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/newlisp.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/newlispdoc.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .if ${PORT_OPTIONS:MGUISERV}
-	@${MKDIR} ${DATADIR}/guiserver
+	@${MKDIR} ${STAGEDIR}${DATADIR}/guiserver
 	@(cd ${WRKSRC}/guiserver/ && ${COPYTREE_SHARE} \*.lsp \
-		${DATADIR}/guiserver/ \
+		${STAGEDIR}${DATADIR}/guiserver/ \
 		"! -name guiserver.lsp ! -name newlisp-edit.lsp")
-	${INSTALL_DATA} ${WRKSRC}/guiserver/guiserver.jar ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/guiserver/guiserver.lsp ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/guiserver/guiserver.jar ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/guiserver/guiserver.lsp ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/guiserver/newlisp-edit.lsp \
-		${PREFIX}/bin/newlisp-edit
+		${STAGEDIR}${PREFIX}/bin/newlisp-edit
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${DOCSDIR}
 .if ${PORT_OPTIONS:MGUISERV}
-	@${MKDIR} ${DOCSDIR}/guiserver
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/guiserver
 	${INSTALL_DATA} ${WRKSRC}/guiserver/index.html \
 		${WRKSRC}/guiserver/guiserver.lsp.html \
-		${DOCSDIR}/guiserver
+		${STAGEDIR}${DOCSDIR}/guiserver
 .endif
 .endif
 
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
