@@ -8,11 +8,9 @@ CATEGORIES=	deskutils kde
 MASTER_SITES=	SF
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	A Qt/KDE viewer for CHM files
+COMMENT=	Qt/KDE viewer for CHM files
 
-LIB_DEPENDS=	chm.0:${PORTSDIR}/misc/chmlib
-
-LATEST_LINK=	${PORTNAME}-kde4
+LIB_DEPENDS=	libchm.so:${PORTSDIR}/misc/chmlib
 
 USES=		cmake
 USE_KDE4=	kdeprefix kdelibs automoc4

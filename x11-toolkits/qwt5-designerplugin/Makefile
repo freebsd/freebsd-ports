@@ -4,12 +4,12 @@ PORTNAME=	qwt
 PORTVERSION=	5.2.3
 CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	SF
-PKGNAMESUFFIX=	-designerplugin
+PKGNAMESUFFIX=	5-designerplugin
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt Designer plugin for Qwt
 
-LIB_DEPENDS=	qwt.5:${PORTSDIR}/x11-toolkits/qwt5
+LIB_DEPENDS=	libqwt.so:${PORTSDIR}/x11-toolkits/qwt5
 
 USE_QT4=	designer moc_build qmake_build rcc_build
 USE_BZIP2=	yes

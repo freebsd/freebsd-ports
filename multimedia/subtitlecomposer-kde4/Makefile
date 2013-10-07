@@ -14,8 +14,6 @@ USES=		cmake
 USE_KDE4=	kdeprefix kdelibs automoc4 sharedmime
 USE_QT4=	gui qmake_build moc_build rcc_build uic_build
 
-LATEST_LINK=	${PORTNAME}-kde4
-
 OPTIONS_DEFINE=	GSTREAMER MPLAYER XINE
 OPTIONS_DEFAULT=	MPLAYER
 
@@ -31,7 +29,7 @@ RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 .endif
 
 .if ${PORT_OPTIONS:MXINE}
-LIB_DEPENDS+=	xine.2:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	libxine.so:${PORTSDIR}/multimedia/libxine
 .else
 CMAKE_ARGS+=	-DWITH_Xine:Bool=Off
 .endif
