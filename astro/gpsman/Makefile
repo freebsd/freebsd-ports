@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpsman
-PORTVERSION=	6.4.4
+PORTVERSION=	6.4.4.2
 CATEGORIES=	astro tk geography
 MASTER_SITES=	SF/${PORTNAME}/distrib
 EXTRACT_SUFX=	.tgz
@@ -10,20 +10,17 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	david@catwhisker.org
 COMMENT=	A Tcl/Tk-based GPS management utility
 
-USE_TK_RUN=	84+
+OPTIONS_DEFINE=	DOCS
+
+USES+=		tk:wrapper,run
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-SUB_FILES=	pkg-message
-NO_STAGE=	yes
+GPSMANDIR=	${PREFIX}/lib/${PORTNAME}
+PLIST_SUB+=	GPSMANDIR=${GPSMANDIR:S/${PREFIX}\///}
 NO_BUILD=	yes
 PORTDOCS=	*
-PORTDATA=	*
-PLIST_FILES=	bin/gpsman
 
-# MAN1=		gpsman.1
-# MANCOMPRESSED=	yes
-
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 800045
 GPSMAN_DEFAULT_PORT?=	/dev/cuad0
@@ -31,34 +28,34 @@ GPSMAN_DEFAULT_PORT?=	/dev/cuad0
 GPSMAN_DEFAULT_PORT?=	/dev/cuau0
 .endif
 
-post-patch:
-	@(cd ${WRKSRC} && ${REINPLACE_CMD} "s|/dev/ttyS0|${GPSMAN_DEFAULT_PORT}|" \
- 		util/exerciser.tcl manual/html/info/l_realtime.doc.txt gpsman.tcl)
+.if ${PORT_OPTIONS:MDOCS}
+SUB_FILES=	pkg-message
+.endif
 
-pre-install:
-	@${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/gpsman.tcl
+post-patch:
+	@${REINPLACE_CMD} "s|/dev/ttyS0|${GPSMAN_DEFAULT_PORT}|" \
+ 		${WRKSRC}/util/exerciser.tcl \
+		${WRKSRC}/manual/html/info/l_realtime.doc.txt \
+		${WRKSRC}/gpsman.tcl
+	@${REINPLACE_CMD} -e "s:%%WISH%%:${WISH}:; s:%%GPSMANDIR%%:${GPSMANDIR}:g" ${WRKSRC}/gpsman.tcl
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/gpsman/gmsrc/gmicons
-	@${MKDIR} ${PREFIX}/share/gpsman/util
-	${INSTALL_DATA} ${WRKSRC}/gmsrc/*.tcl ${PREFIX}/share/gpsman/gmsrc
-	${INSTALL_DATA} ${WRKSRC}/gmsrc/gmicons/* ${PREFIX}/share/gpsman/gmsrc/gmicons
-	${INSTALL_DATA} ${WRKSRC}/util/*.sh ${PREFIX}/share/gpsman/util
-	${INSTALL_DATA} ${WRKSRC}/util/*.tcl ${PREFIX}/share/gpsman/util
-	${INSTALL_SCRIPT} ${WRKSRC}/gpsman.tcl ${PREFIX}/share/gpsman
-	${LN} -fs ${PREFIX}/share/gpsman/gpsman.tcl ${PREFIX}/bin/gpsman
-#	${INSTALL_MAN} ${WRKSRC}/gpsman.1 ${PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/gpsman/html/info
-	${INSTALL_DATA} ${WRKSRC}/manual/*.pdf ${PREFIX}/share/doc/gpsman
-	${INSTALL_DATA} ${WRKSRC}/manual/html/*.html ${PREFIX}/share/doc/gpsman/html
-	${RM} ${PREFIX}/share/doc/gpsman/html/index.html
-	${LN} ${PREFIX}/share/doc/gpsman/html/GPSMandoc.html ${PREFIX}/share/doc/gpsman/html/index.html
-	${INSTALL_DATA} ${WRKSRC}/manual/html/*.gif ${PREFIX}/share/doc/gpsman/html
+	${INSTALL_SCRIPT} ${WRKSRC}/gpsman.tcl ${STAGEDIR}${PREFIX}/bin/gpsman
+	${INSTALL_MAN} ${WRKSRC}/man/man1/gpsman.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${GPSMANDIR}/gmsrc/gmicons ${STAGEDIR}${GPSMANDIR}/util
+	${INSTALL_DATA} ${WRKSRC}/gmsrc/*.tcl ${STAGEDIR}${GPSMANDIR}/gmsrc
+	${INSTALL_DATA} ${WRKSRC}/gmsrc/gmicons/* ${STAGEDIR}${GPSMANDIR}/gmsrc/gmicons
+	${INSTALL_DATA} ${WRKSRC}/util/*.sh ${STAGEDIR}${GPSMANDIR}/util
+	${INSTALL_DATA} ${WRKSRC}/util/*.tcl ${STAGEDIR}${GPSMANDIR}/util
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html/info
+	${INSTALL_DATA} ${WRKSRC}/manual/*.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/manual/html/*.html ${STAGEDIR}${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/manual/html/*.gif ${STAGEDIR}${DOCSDIR}/html
 .for i in gif txt ps
-	${INSTALL_DATA} ${WRKSRC}/manual/html/info/*.${i} ${PREFIX}/share/doc/gpsman/html/info
+	${INSTALL_DATA} ${WRKSRC}/manual/html/info/*.${i} ${STAGEDIR}${DOCSDIR}/html/info
 .endfor
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

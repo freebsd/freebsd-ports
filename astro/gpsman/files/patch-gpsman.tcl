@@ -7,7 +7,7 @@ diff -ruN gpsman.tcl gpsman.tcl
  #!/bin/sh
  # This is a Tcl/Tk script to be interpreted by wish (Tk8.3 or better): \
 -exec wish "$0" -- "$@"
-+exec wish8.4 "$0" -- "$@"
++exec %%WISH%% "$0" -- "$@"
  
  #
  #  gpsman --- GPS Manager: a manager for GPS receiver data
@@ -16,7 +16,7 @@ diff -ruN gpsman.tcl gpsman.tcl
  
   # path to directory containing program files
 -set SRCDIR gmsrc
-+set SRCDIR %%PREFIX%%/share/gpsman/gmsrc
++set SRCDIR %%GPSMANDIR%%/gmsrc
  
  # all other defaults configuration is now done in file $SRCDIR/config.tcl
  
