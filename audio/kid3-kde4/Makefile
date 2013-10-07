@@ -11,8 +11,6 @@ COMMENT=	MP3/Ogg/FLAC tag editor for KDE
 
 LICENSE=	GPLv2
 
-LATEST_LINK=	${PORTNAME}-kde4
-
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 NO_STAGE=	yes
 USE_QT4=	qmake_build moc_build rcc_build uic_build
@@ -22,57 +20,36 @@ OPTIONS_DEFINE=	FLAC ID3LIB MP4V2 VORBIS TAGLIB CHROMAPRINT
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 FLAC_DESC=	Support for FLAC files
+FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
+FLAC_CMAKE_ON=		-DWITH_FLAC=ON
+FLAC_CMAKE_OFF=		-DWITH_FLAC=OFF
+
 ID3LIB_DESC=	Support for mp3 files
+ID3LIB_LIB_DEPENDS=	libid3-3.8.so:${PORTSDIR}/audio/id3lib
+ID3LIB_CMAKE_ON=	-DWITH_ID3LIB=ON
+ID3LIB_CMAKE_OFF=	-DWITH_ID3LIB=OFF
+
 MP4V2_DESC=	Support for mp4 files
+MP4V2_LIB_DEPENDS=	libmp4v2.so:${PORTSDIR}/multimedia/mp4v2
+MP4V2_CMAKE_ON=		-DWITH_MP4V2=ON
+MP4V2_CMAKE_OFF=	-DWITH_MP4V2=OFF
+
 VORBIS_DESC=	Support for Ogg/Vorbis files
+VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
+			libogg.so:${PORTSDIR}/audio/libogg
+VORBIS_CMAKE_ON=	-DWITH_VORBIS=ON
+VORBIS_CMAKE_OFF=	-DWITH_VORBIS=OFF
+
 TAGLIB_DESC=	Support for various audio formats
+TAGLIB_LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
+TAGLIB_CMAKE_ON=	-DWITH_TAGLIB=ON
+TAGLIB_CMAKE_OFF=	-DWITH_TAGLIB=OFF
+
 CHROMAPRINT_DESC=	Support for Chromaprint audio fingerprints
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MFLAC}
-CMAKE_ARGS+=	-DWITH_FLAC=ON
-LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
-.else
-CMAKE_ARGS+=	-DWITH_FLAC=OFF
-.endif
-
-.if ${PORT_OPTIONS:MID3LIB}
-CMAKE_ARGS+=	-DWITH_ID3LIB=ON
-LIB_DEPENDS+=	id3-3.8.3:${PORTSDIR}/audio/id3lib
-.else
-CMAKE_ARGS+=	-DWITH_ID3LIB=OFF
-.endif
-
-.if ${PORT_OPTIONS:MMP4V2}
-CMAKE_ARGS+=	-DWITH_MP4V2=ON
-LIB_DEPENDS+=	mp4v2.10:${PORTSDIR}/multimedia/mp4v2
-.else
-CMAKE_ARGS+=	-DWITH_MP4V2=OFF
-.endif
-
-.if ${PORT_OPTIONS:MVORBIS}
-CMAKE_ARGS+=	-DWITH_VORBIS=ON
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis \
-		ogg:${PORTSDIR}/audio/libogg
-.else
-CMAKE_ARGS+=	-DWITH_VORBIS=OFF
-.endif
-
-.if ${PORT_OPTIONS:MTAGLIB}
-CMAKE_ARGS+=	-DWITH_TAGLIB=ON
-LIB_DEPENDS+=	tag.1:${PORTSDIR}/audio/taglib
-.else
-CMAKE_ARGS+=	-DWITH_TAGLIB=OFF
-.endif
-
-.if ${PORT_OPTIONS:MCHROMAPRINT}
-CMAKE_ARGS+=	-DWITH_CHROMAPRINT=ON \
-		-DWITH_FFMPEG=ON
-LIB_DEPENDS+=	chromaprint:${PORTSDIR}/audio/chromaprint
-.else
-CMAKE_ARGS+=	-DWITH_CHROMAPRINT=OFF
-.endif
+CHROMAPRINT_LIB_DEPENDS=	libchromaprint.so:${PORTSDIR}/audio/chromaprint
+CHROMAPRINT_CMAKE_ON=	-DWITH_CHROMAPRINT=ON \
+			-DWITH_FFMPEG=ON
+CHROMAPRINT_CMAKE_OFF=	-DWITH_CHROMAPRINT=OFF
 
 pre-configure:
 	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/CMakeLists.txt

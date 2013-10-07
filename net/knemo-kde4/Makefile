@@ -9,8 +9,6 @@ DISTNAME=	12956-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	KDE network monitor
 
-LATEST_LINK=	${PORTNAME}-kde4
-
 USE_BZIP2=	yes
 USES=		cmake
 USE_QT4=	qmake_build moc_build uic_build rcc_build
@@ -19,10 +17,5 @@ USE_KDE4=	kdeprefix kdelibs workspace automoc4
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800000
-BROKEN=		does not build on 7.X
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -9,11 +9,9 @@ MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${DISTVERSION}/src
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	A user friendly IRC client for KDE
+COMMENT=	User friendly IRC client for KDE
 
-LIB_DEPENDS=	qca.2:${PORTSDIR}/devel/qca
-
-LATEST_LINK=	${PORTNAME}-kde4
+LIB_DEPENDS=	libqca.so:${PORTSDIR}/devel/qca
 
 USE_XZ=		yes
 USES=		cmake

@@ -4,6 +4,7 @@ PORTNAME=	qwt
 PORTVERSION=	5.2.3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
+PKGNAMESUFFIX=	5
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt Widgets for Technical Applications
