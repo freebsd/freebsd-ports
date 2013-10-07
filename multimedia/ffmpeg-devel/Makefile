@@ -3,7 +3,7 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	2012-10-13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://git.videolan.org/
 PKGNAMESUFFIX=	-devel
