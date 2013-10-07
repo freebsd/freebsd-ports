@@ -1,0 +1,15 @@
+--- samples/sample.conf.in.orig	2007-11-16 17:58:32.000000000 +0100
++++ samples/sample.conf.in	2013-10-05 15:30:39.997329900 +0200
+@@ -53,9 +53,9 @@
+ }
+ 
+ dest adult {
+-	domainlist	dest/adult/domains
+-	urllist		dest/adult/urls
+-	expressionlist	dest/adult/expressions
++	domainlist	porn/domains
++	urllist		porn/urls
++	expressionlist	porn/expressions
+ 	redirect 	http://admin.foo.bar.de/cgi/blocked?clientaddr=%a+clientname=%n+clientuser=%i+clientgroup=%s+targetgroup=%t+url=%u
+ }
+ 

@@ -1,5 +1,7 @@
 bin/squidGuard
+@unexec if cmp -s %D/etc/squid/squidGuard.conf.sample %D/etc/squid/squidGuard.conf; then rm -f %D/etc/squid/squidGuard.conf; fi
 etc/squid/squidGuard.conf.sample
+@exec if [ ! -f %D/etc/squid/squidGuard.conf ]; then cp -p %D/%F %B/squidGuard.conf; fi
 %%PORTDOCS%%%%DOCSDIR%%/LDAPFlow.txt
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/authentication.html
@@ -30,43 +32,48 @@ etc/squid/squidGuard.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/troubleshoot.html
 %%PORTDOCS%%%%DOCSDIR%%/troubleshoot.txt
 %%PORTDOCS%%%%DOCSDIR%%/squidGuard.gif
-%%BLACKLIST%%%%PORTDOCS%%%%DOCSDIR%%/README.blacklists
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%BLACKLIST%%@cwd %%SAMPLE_BL_DIR%%
-%%BLACKLIST%%ads/domains
-%%BLACKLIST%%ads/urls
-%%BLACKLIST%%aggressive/domains
-%%BLACKLIST%%aggressive/urls
-%%BLACKLIST%%audio-video/domains
-%%BLACKLIST%%audio-video/urls
-%%BLACKLIST%%drugs/domains
-%%BLACKLIST%%drugs/urls
-%%BLACKLIST%%gambling/domains
-%%BLACKLIST%%gambling/urls
-%%BLACKLIST%%hacking/domains
-%%BLACKLIST%%hacking/urls
-%%BLACKLIST%%mail/domains
-%%BLACKLIST%%porn/domains
-%%BLACKLIST%%porn/urls
-%%BLACKLIST%%porn/expressions
-%%BLACKLIST%%proxy/domains
-%%BLACKLIST%%proxy/urls
-%%BLACKLIST%%violence/domains
-%%BLACKLIST%%violence/urls
-%%BLACKLIST%%violence/expressions
-%%BLACKLIST%%warez/domains
-%%BLACKLIST%%warez/urls
-%%BLACKLIST%%@dirrm ads
-%%BLACKLIST%%@dirrm aggressive
-%%BLACKLIST%%@dirrm audio-video
-%%BLACKLIST%%@dirrm drugs
-%%BLACKLIST%%@dirrm gambling
-%%BLACKLIST%%@dirrm hacking
-%%BLACKLIST%%@dirrm mail
-%%BLACKLIST%%@dirrm porn
-%%BLACKLIST%%@dirrm proxy
-%%BLACKLIST%%@dirrm violence
-%%BLACKLIST%%@dirrm warez
-%%BLACKLIST%%@cwd /
-%%BLACKLIST%%@dirrm %%SAMPLE_BL_DIR%%
-%%BLACKLIST%%@dirrmtry %%DATADIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/ads/domains
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/ads/urls
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/blacklists/ads
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/aggressive/domains
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/aggressive/urls
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/blacklists/aggressive
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/audio-video/domains
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/audio-video/urls
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/blacklists/audio-video
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/drugs/domains
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/drugs/urls
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/blacklists/drugs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/gambling/domains
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/gambling/urls
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/blacklists/gambling
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/hacking/domains
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/hacking/urls
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/blacklists/hacking
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/mail/domains
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/blacklists/mail
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/porn/domains
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/porn/expressions
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/porn/urls
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/blacklists/porn
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/proxy/domains
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/proxy/urls
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/blacklists/proxy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/violence/domains
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/violence/expressions
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/violence/urls
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/blacklists/violence
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/warez/domains
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/warez/urls
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/blacklists/warez
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/blacklists
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.blacklists
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@exec chown -R %%SQUID_UID%%:%%SQUID_GID%% %D/%%EXAMPLESDIR%%/blacklists
+%%PORTEXAMPLES%%@exec chmod -R 550 %D/%%EXAMPLESDIR%%/blacklists
+@exec mkdir -p %%DATADIR%% || true
+@exec mkdir -p %%LOGDIR%% || true
+%%PORTEXAMPLES%%@exec chown -R %%SQUID_UID%%:%%SQUID_GID%% %%LOGDIR%%
+@exec rmdir %%DATADIR%% /var/db/fbsdmon 2>/dev/null || true
+@exec rmdir %%LOGDIR%% /var/db/fbsdmon 2>/dev/null || true
