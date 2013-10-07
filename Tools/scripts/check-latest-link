@@ -47,10 +47,9 @@ maint=$(awk '{print $2}' < .latest_full | sort -ui | tr '\n' ' ')
   echo
   echo "The following list includes ports maintained by you that have duplicate"
   echo "LATEST_LINK values.  They should either be modified to use a unique"
-  echo "LATEST_LINK or suppressed using NO_LATEST_LINK, to avoid overwriting"
-  echo "each other in the packages/Latest directory.  If your ports conflict with"
-  echo "ports maintained by another person, please coordinate your efforts with"
-  echo "them."
+  echo "PKGNAME, e.g. by using PKGNAMESUFFIX.  Note that NO_LATEST_LINK is"
+  echo "deprecated.  See the portmgr blog post for more information:"
+  echo "http://blogs.freebsdish.org/portmgr/2013/10/03/package-name-collisions/"
   echo
   echo
   echo "Thanks,"
