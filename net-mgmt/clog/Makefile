@@ -10,6 +10,8 @@ MASTER_SITE_SUBDIR=	obrien
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	Tcp connection logger daemon
 
+PATCH_DEPENDS=	rcsdiff:${PORTSDIR}/devel/rcs
+
 WRKSRC=		${WRKDIR}/clog
 ALL_TARGET=	freebsd
 MAN8=		clog.8
