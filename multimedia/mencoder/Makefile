@@ -3,7 +3,7 @@
 
 PORTNAME=	mencoder
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	Convenient video file and movie encoder
 
@@ -88,7 +88,7 @@ CONFIGURE_ARGS+=	--disable-faac
 .endif
 
 .if ${PORT_OPTIONS:MX264}
-LIB_DEPENDS+=		x264.125:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=		x264:${PORTSDIR}/multimedia/x264
 .else
 CONFIGURE_ARGS+=	--disable-x264
 .endif

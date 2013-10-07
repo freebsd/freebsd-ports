@@ -3,7 +3,6 @@
 
 PORTNAME=	x264
 PORTVERSION=	0.${X264_BUILD}.${X264_REV}
-PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/ \
 		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
@@ -20,11 +19,11 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	yasm>=0.6.0:${PORTSDIR}/devel/yasm \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
-X264_BUILD=	125
-X264_REV=	2201
-X264_COMMIT=	37be55213a39db40cf159ada319bd482a1b00680
+X264_BUILD=	136
+X264_REV=	2358
+X264_COMMIT=	3361d59a0a83dcb8b321cc0eb8e6ba68ca49c7d4
 X264_GITVER=	${X264_COMMIT:C/^(.......).*$/\1/g}
-X264_SNAPSHOT=	20120721
+X264_SNAPSHOT=	20130827
 
 USES=		gmake
 USE_BZIP2=	yes
@@ -41,7 +40,8 @@ X11_OUTPUT_DESC=	Enable X11 Output
 
 CONFIGURE_ARGS+=	--extra-cflags="-I${LOCALBASE}/include" \
 			--extra-ldflags="-L${LOCALBASE}/lib" \
-			--enable-static --enable-shared
+			--enable-static --enable-shared \
+			--disable-opencl
 
 PLIST_SUB+=	X264_BUILD=${X264_BUILD}
 

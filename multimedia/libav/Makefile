@@ -2,7 +2,7 @@
 
 PORTNAME=	libav
 PORTVERSION=	9.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://libav.org/releases/
 
