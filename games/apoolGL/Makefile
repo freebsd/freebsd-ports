@@ -13,7 +13,6 @@ COMMENT=	Another billiards simulator
 
 USE_SDL=	sdl
 USE_GL=		gl
-LDFLAGS+=	-lm
 
 PORTDOCS=	ApoolGL.txt CHANGELOG OpenGL-Features
 
@@ -25,7 +24,7 @@ post-patch:
 do-build:
 	${CC} ${CFLAGS} -DDATADIR="\"${DATADIR}\"" \
 		`${SDL_CONFIG} --cflags --libs` \
-		-I${LOCALBASE}/include -L${LOCALBASE}/lib -lGL -lGLU \
+		-I${LOCALBASE}/include -L${LOCALBASE}/lib -lGL -lGLU -lm \
 		-o ${WRKSRC}/apool ${WRKSRC}/*.c
 
 do-install:
