@@ -990,6 +990,7 @@
     SUBDIR += webjob
     SUBDIR += webmin
     SUBDIR += weedit
+    SUBDIR += wemux
     SUBDIR += whatpix
     SUBDIR += whowatch
     SUBDIR += wiimms
