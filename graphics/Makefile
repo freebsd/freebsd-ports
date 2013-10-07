@@ -290,7 +290,6 @@
     SUBDIR += gmt
     SUBDIR += gnash
     SUBDIR += gnofract4d
-    SUBDIR += gnomecanvas
     SUBDIR += gnustep-slideshow
     SUBDIR += gnustep-slideshowkit
     SUBDIR += gocr
