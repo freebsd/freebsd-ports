@@ -135,7 +135,7 @@ ${INDEXDIR}/${INDEXFILE}:
 			echo; \
 		fi; \
 		exit 1); \
-	cat $${tmpdir}/${INDEXFILE}.desc.* | (cd ${.CURDIR} ; perl ${.CURDIR}/Tools/make_index) | \
+	cat $${tmpdir}/${INDEXFILE}.desc.* | (cd ${.CURDIR} ; /usr/libexec/make_index /dev/stdin) | \
 		sed -e 's/  */ /g' -e 's/|  */|/g' -e 's/  *|/|/g' -e 's./..g' | \
 		sort -t '|' +1 -2 | \
 		sed -e 's../.g' > ${INDEXDIR}/${INDEXFILE}.tmp; \
