@@ -2,6 +2,7 @@
 %%SITE_PERL%%/Bread/Board/BlockInjection.pm
 %%SITE_PERL%%/Bread/Board/ConstructorInjection.pm
 %%SITE_PERL%%/Bread/Board/Container.pm
+%%SITE_PERL%%/Bread/Board/Container/FromParameterized.pm
 %%SITE_PERL%%/Bread/Board/Container/Parameterized.pm
 %%SITE_PERL%%/Bread/Board/Dependency.pm
 %%SITE_PERL%%/Bread/Board/Dumper.pm
@@ -32,6 +33,7 @@
 %%PERL5_MAN3%%/Bread::Board::BlockInjection.3.gz
 %%PERL5_MAN3%%/Bread::Board::ConstructorInjection.3.gz
 %%PERL5_MAN3%%/Bread::Board::Container.3.gz
+%%PERL5_MAN3%%/Bread::Board::Container::FromParameterized.3.gz
 %%PERL5_MAN3%%/Bread::Board::Container::Parameterized.3.gz
 %%PERL5_MAN3%%/Bread::Board::Dependency.3.gz
 %%PERL5_MAN3%%/Bread::Board::Dumper.3.gz
