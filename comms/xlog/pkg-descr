@@ -4,7 +4,8 @@ location in latitude and longitude and distance and heading in
 kilometers or miles, both for short and long path. Locator distance
 and heading calculation for VHF logging is also supported.
 
-Xlog supports cabrillo and ADIF and can import twlog and editest files.
+Xlog supports cabrillo, ADIF, trlog, and EDI and can import 
+twlog, editest and OH1AA logbook files.
 It also has the ability to customise log fields which makes it ideal for
 use in those countries that have odd logging rules such as the U.K. Also
 included is the ability to log using the FCC emissions codes.
