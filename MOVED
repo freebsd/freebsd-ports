@@ -5018,3 +5018,4 @@ x11-toolkits/easygtk||2013-10-07|Depends on EOLed gnome1
 graphics/gnoemcanvas||2013-10-07|Component of the obsolete gnome1
 www/p5-HTTP-GHTTP||2013-10-07|Depends on EOLed gnome1 libraries
 www/libghttp||2013-10-07|Component of the obsolete gnome1
+deskutils/gworkspace-clipbook||2013-10-07|Replaced by tabbed shelf in GWorkspace
