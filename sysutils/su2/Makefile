@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://ftp.ccs.neu.edu/pub/sysadmin/
 MAINTAINER=	gd@rambler-co.ru
 COMMENT=	An enhanced su, allows users to su with own password + more
 
+PATCH_DEPENDS=	rcsdiff:${PORTSDIR}/devel/rcs
+
 NO_CDROM=	Don't sell for profit
 
 MAN1=		su2.1
