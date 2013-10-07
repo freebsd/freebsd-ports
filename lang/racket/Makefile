@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	racket
-PORTVERSION=	5.3.1
+PORTVERSION=	5.3.6
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://download.racket-lang.org/installers/${PORTVERSION}/${PORTNAME}/ \
 		http://www.eecs.northwestern.edu/racket/${PORTVERSION}/${PORTNAME}/ \
@@ -30,7 +30,6 @@ CONFIGURE_ARGS=	--enable-shared --enable-pthread \
 		--enable-lt=${LIBTOOL}
 CONFIGURE_SCRIPT=../configure
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(WITHOUT_X11)
@@ -40,8 +39,6 @@ IGNORE=		requires X11; use lang/racket-textual instead
 .if ${ARCH} == "i386"
 MANUAL_PACKAGE_BUILD=	i386 requires kern.maxdsiz="640M" to build
 .endif
-
-USE_GNOME=	pango
 
 LIB_DEPENDS+=	ffi:${PORTSDIR}/devel/libffi		\
 		cairo:${PORTSDIR}/graphics/cairo	\
@@ -60,15 +57,14 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src/build
 USES+=		iconv
-USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:env
-
-MAN1=		drracket.1 gracket.1 mred.1 mzc.1 mzscheme.1 plt-help.1 \
-		racket.1 raco.1 setup-plt.1
+USE_GNOME=	pango
+USE_LDCONFIG=	yes
+USE_SQLITE=	3
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-PLIST_SUB+=	ARCH=${ARCH}
+RACKET_PLIST=	${WRKDIR}/pkg-plist
 
 .include <bsd.port.pre.mk>
 
@@ -80,6 +76,6 @@ pre-patch:
 	@${MKDIR} ${WRKSRC}
 
 post-patch:
-	@${FIND} ${WRKDIR} -name *.orig -delete
+	@${FIND} ${WRKSRC} -name *.orig -delete
 
 .include <bsd.port.post.mk>
