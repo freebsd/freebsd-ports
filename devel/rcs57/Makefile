@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTNAME=	rcs
+PORTNAME=	rcs57
 PORTVERSION=	5.7
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -10,7 +10,6 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Version control system (as was in FreeBSD prior to removal)
 
 CONFLICTS=	rcs-5.[89]*
-LATEST_LINK=	${PORTNAME}57
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes

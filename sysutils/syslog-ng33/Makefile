@@ -1,7 +1,7 @@
 # Created by: Ivan Lago <ivan.lago@ifom-ieo-campus.it>
 # $FreeBSD$
 
-PORTNAME=	syslog-ng
+PORTNAME=	syslog-ng33
 PORTVERSION=	3.3.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/$(PORTVERSION)/source/
@@ -10,7 +10,6 @@ DISTFILES=	$(PORTNAME)_$(PORTVERSION).tar.gz
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A powerful syslogd replacement
 
-LATEST_LINK=	${PORTNAME}33
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng-devel-[0-9]*
 WRKSRC=		$(WRKDIR)/$(PORTNAME)-$(PORTVERSION)
