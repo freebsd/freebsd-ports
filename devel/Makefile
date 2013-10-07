@@ -134,7 +134,6 @@
     SUBDIR += boehm-gc
     SUBDIR += boehm-gc-redirect
     SUBDIR += boehm-gc-threaded
-    SUBDIR += bonobo
     SUBDIR += boost-all
     SUBDIR += boost-docs
     SUBDIR += boost-jam
@@ -1290,7 +1289,6 @@
     SUBDIR += npth
     SUBDIR += nspr
     SUBDIR += nxt-python
-    SUBDIR += oaf
     SUBDIR += obby
     SUBDIR += obfuscatejs
     SUBDIR += ocaml-annexlib
