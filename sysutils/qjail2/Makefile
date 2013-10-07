@@ -11,7 +11,7 @@ COMMENT=	Utility to quickly deploy and manage jails
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
-LATEST_LINK=	${PORTNAME}2
+PKGNAMESUFFIX=	2
 
 MAN8=		qjail.8 qjail-intro.8 qjail.conf.8 qjail-howto.8
 
