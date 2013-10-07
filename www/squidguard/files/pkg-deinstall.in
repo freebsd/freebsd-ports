@@ -1,11 +1,12 @@
 #!/bin/sh
 # $FreeBSD$
 
-if [ "$2" != "POST-DEINSTALL" ]; then
-    exit 0
+if [ "$2" != "DEINSTALL" ]; then
+	exit 0
 fi
 
-echo "If you are completely removing squidguard you may want to also"
-echo "manually delete the blacklists in %%DATADIR%%"
+# Remove database files created if the sample blacklists were
+# compiled.
+find %%EXAMPLESDIR%% -name '*.db' -delete 
 
 exit 0

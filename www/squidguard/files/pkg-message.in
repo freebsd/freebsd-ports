@@ -1,10 +1,24 @@
 ===================================================================
-= In order to activate %%PORTNAME%% you have to edit squid.conf
-= To the contain "url_rewrite_program %%PREFIX%%/bin/%%PORTNAME%%"
-= and create a configuration file for %%PORTNAME%%.
-=
-= On disinstallation if you want to completely remove the blacklists
-= you will have to manually remove what remains in %%DATADIR%%.
-= 
-= To activate the changes do a %%PREFIX%%/sbin/squid -k reconfigure
+ In order to activate %%PORTNAME%% you have to edit squid.conf
+ To the contain "url_rewrite_program %%PREFIX%%/bin/%%PORTNAME%%"
+ and create a configuration file for %%PORTNAME%%.
+
+ Sample blacklists have been installed in %%EXAMPLESDIR%%.
+
+ A sample configuration file has beeen installed in
+ %%PREFIX%%/etc/squid/squidGuard.conf.sample.
+
+ You need to edit the configuration and compile the blacklist
+ you choose to use with:
+ squidGuard -d -C all
+
+ Please bear in mind that this is just a sample configuration file
+ and for any real world usage you need to download or create your
+ own updated blacklists and create your own configuration file.
+
+ Check documentation here:
+
+ http://www.squidguard.org/Doc/
+
+ To activate the changes do a %%PREFIX%%/sbin/squid -k reconfigure
 ===================================================================

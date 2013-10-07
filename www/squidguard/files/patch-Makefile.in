@@ -1,6 +1,6 @@
 --- Makefile.in.orig	2008-05-17 20:36:44.000000000 +0200
-+++ Makefile.in	2008-12-29 18:15:29.429334258 +0100
-@@ -47,12 +47,6 @@
++++ Makefile.in	2013-09-24 12:55:55.029854067 +0200
+@@ -47,48 +47,33 @@
  
  install-conf:
  	@echo Installing configuration file  ;
@@ -10,12 +10,34 @@
 -		chown -R $(SQUIDUSER) $(prefix)/squidGuard || exit 1  ; \
 -		echo Assigned $(prefix)/squidGuard to user $(SQUIDUSER) ; \
 -	fi ; 
- 	@if [ ! -d $(dbhomedir) ]; then \
- 		$(MKINSTALLDIRS) $(dbhomedir) ; \
- 		echo Created directory $(dbhomedir) ; \
-@@ -70,15 +64,6 @@
- 		mkdir -p `dirname $(configfile)` ; \
- 		echo No configuration directory found. Created `dirname $(configfile)`. ; \
+-	@if [ ! -d $(dbhomedir) ]; then \
+-		$(MKINSTALLDIRS) $(dbhomedir) ; \
+-		echo Created directory $(dbhomedir) ; \
+-		chown -R $(SQUIDUSER) $(dbhomedir) || exit 1 ; \
+-		echo Assigned $(dbhomedir) to user $(SQUIDUSER) ; \
++	@if [ ! -d $(DESTDIR)$(dbhomedir) ]; then \
++		$(MKINSTALLDIRS) $(DESTDIR)$(dbhomedir) ; \
++		echo Created directory $(DESTDIR)$(dbhomedir) ; \
++		chown -R $(SQUIDUSER) $(DESTDIR)$(dbhomedir) || exit 1 ; \
++		echo Assigned $(DESTDIR)$(dbhomedir) to user $(SQUIDUSER) ; \
+ 	fi ; 
+ 	@if [ ! -d $(logdir) ]; then \
+-		$(MKINSTALLDIRS) $(logdir) ; \
+-		echo Created directory $(logdir) ; \
+-		chown -R $(SQUIDUSER) $(logdir) || exit 1 ; \
+-		echo Assigned $(logdir) to user $(SQUIDUSER) ; \
++		$(MKINSTALLDIRS) $(DESTDIR)$(logdir) ; \
++		echo Created directory $(DESTDIR)$(logdir) ; \
++		chown -R $(SQUIDUSER) $(DESTDIR)$(logdir) || exit 1 ; \
++		echo Assigned $(DESTDIR)$(logdir) to user $(SQUIDUSER) ; \
+ 	fi ; 
+-	@if [ ! -d `dirname $(configfile)` ]; then \
++	@if [ ! -d `dirname $(DESTDIR)$(configfile)` ]; then \
+ 		umask 022 ; \
+-		mkdir -p `dirname $(configfile)` ; \
+-		echo No configuration directory found. Created `dirname $(configfile)`. ; \
++		mkdir -p `dirname $(DESTDIR)$(configfile)` ; \
++		echo No configuration directory found. Created `dirname $(DESTDIR)$(configfile)`. ; \
  	fi;
 -	@if test ! -f $(configfile); then \
 -		cp samples/sample.conf $(configfile) || exit 1  ; \
@@ -29,3 +51,16 @@
  	@echo ;
  	@echo Congratulation. SquidGuard is sucessfully installed. ;
  	@echo ;
+ 
+ install-build:
+ 	@echo Installing squidGuard 
+-	@if [ ! -d $(bindir) ]; then \
+-		$(MKINSTALLDIRS) $(bindir) ; \
++	@if [ ! -d $(DESTDIR)$(bindir) ]; then \
++		$(MKINSTALLDIRS) $(DESTDIR)$(bindir) ; \
+ 	fi ; \
+-	cp src/squidGuard $(bindir) || exit 1 ;  \
++	cp src/squidGuard $(DESTDIR)$(bindir) || exit 1 ;  \
+ 	echo Done. ;
+ 
+ clean::
