@@ -17,7 +17,7 @@ COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
 LICENSE=	AL2
 
-NO_LATEST_LINK=	yes
+PKGNAMESUFFIX=	3
 
 USE_GNOME=	desktopfileutils gtk20 libxslt libidl glib20
 USE_XORG=	x11 ice xaw xau xext xrender xrandr \

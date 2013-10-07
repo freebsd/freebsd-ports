@@ -18,7 +18,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix
 USES=		gettext gmake pkgconfig
-LATEST_LINK=	stardict2
+PKGNAMESUFFIX=	2
 
 OPTIONS_DEFINE=	GNOME
 OPTIONS_DEFAULT=	GNOME
