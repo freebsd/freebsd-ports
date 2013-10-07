@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tar
-PORTVERSION=	1.26
+PORTVERSION=	1.27
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -13,8 +13,7 @@ COMMENT=	GNU version of the traditional tape archiver
 
 INFO=		tar
 
-USES=		iconv
-USE_AUTOTOOLS=	autoconf:env	# autom4te
+USES=		iconv:${STATIC_ARGS}
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g \
@@ -29,11 +28,19 @@ CONFIGURE_ENV+=	gl_cv_func_mknod_works=yes
 OPTIONS_DEFINE=	NLS STATIC
 OPTIONS_SUB=	yes
 
-NLS_USES=	gettext
+NLS_USES=	gettext:${STATIC_ARGS}
 NLS_CONFIGURE_ENABLE=	nls
 
 STATIC_LDFLAGS=	-static
 STATIC_CONFIGURE_ENV=	SHLIBEXT=""
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSTATIC}
+STATIC_ARGS=	build
+.else
+STATIC_ARGS=	lib
+.endif
 
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
