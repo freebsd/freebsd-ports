@@ -14,7 +14,7 @@ USES=        pathfix gettext gmake pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -lz
 
 MAN1=		gmanedit.1
 

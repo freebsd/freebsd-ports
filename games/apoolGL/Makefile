@@ -13,6 +13,7 @@ COMMENT=	Another billiards simulator
 
 USE_SDL=	sdl
 USE_GL=		gl
+LDFLAGS+=	-lm
 
 PORTDOCS=	ApoolGL.txt CHANGELOG OpenGL-Features
 
