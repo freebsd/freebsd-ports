@@ -1,4 +1,5 @@
 bin/sancp
-@unexec if cmp -s %D/etc/sancp.conf %D/etc/sancp.conf-dist; then rm -f %D/etc/sancp.conf; fi
-etc/sancp.conf-dist
-@exec cp -n %D/%F %B/sancp.conf
+@unexec if cmp -s %D/etc/sancp.conf %D/etc/sancp.conf.dist ; then rm -f %D/etc/sancp.conf ; fi
+etc/sancp.conf.dist
+@exec if [ ! -f %D/etc/sancp.conf ] ; then cp -p %D/%F %B/sancp.conf; fi
+@dirrmtry /var/log/sancp
