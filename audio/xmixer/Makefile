@@ -30,6 +30,7 @@ PLIST_FILES+=	bin/xgmixer
 .else
 USE_XORG=	x11 xt ice xaw
 PROGRAMS=	xmixer
+LDFLAGS+=	-L${LOCALBASE}/lib -lX11
 .endif
 
 post-patch:

@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -logg
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -logg -lm
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \

@@ -12,6 +12,7 @@ COMMENT=	Voxel-style landscape rendering fly-by
 
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
+LDFLAGS+=	-lm
 
 NO_STAGE=	yes
 do-install:

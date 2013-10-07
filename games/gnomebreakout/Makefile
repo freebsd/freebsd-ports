@@ -11,11 +11,11 @@ DISTNAME=	gnome-breakout-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME version of the classic breakout game
 
-USES=        pathfix pkgconfig
+USES=		pathfix pkgconfig
 USE_GNOME=	gnomeprefix libgnomeui
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -lm
 
 NO_STAGE=	yes
 post-patch:

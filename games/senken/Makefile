@@ -9,12 +9,13 @@ MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A city simulation game
+COMMENT=	City simulation game
 
 USES=		pkgconfig
 USE_GNOME=	gtk20
 USE_SDL=	image sdl
 GNU_CONFIGURE=	yes
+LDFLAGS+=	-lm
 
 NO_STAGE=	yes
 post-patch:

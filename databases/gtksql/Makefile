@@ -15,9 +15,9 @@ LIB_DEPENDS=	avahi-client:${PORTSDIR}/net/avahi-app
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
-USES=		pkgconfig
-USE_GMAKE=	yes
+USES=		pkgconfig gmake
 USE_GNOME=	gtk20
+LDFLAGS+=	-L${LOCALBASE}/lib -lgmodule-2.0
 
 MAN1=		${PORTNAME}.1
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
