@@ -53,6 +53,7 @@ PLIST_SUB+=	DIRECTFB="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
+LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
 PLIST_SUB+=	ALSA=""
 .else
 PLIST_SUB+=	ALSA="@comment "
