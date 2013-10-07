@@ -28,7 +28,7 @@ python_CMD?=		${LOCALBASE}/bin/python2
 SHEBANG_FILES=		examples/*.py examples/*/*.py waf test/*.py
 
 do-configure:
-	@cd ${WRKSRC} && ${ENV} ${CONFIGURE_ENV} ./waf configure
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./waf configure
 
 do-build:
 	@cd ${WRKSRC} && ./waf
