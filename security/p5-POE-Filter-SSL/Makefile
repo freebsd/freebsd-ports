@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	POE-Filter-SSL
-PORTVERSION=	0.24
+PORTVERSION=	0.27
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PRIVI
@@ -24,6 +24,5 @@ RUN_DEPENDS=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
 
 USES=		perl5
 USE_PERL5=	configure
-NO_WRKSUBDIR=
 
 .include <bsd.port.mk>
