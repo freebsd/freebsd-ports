@@ -91,7 +91,6 @@
     SUBDIR += gimp-gutenprint
     SUBDIR += gl2ps
     SUBDIR += gnome-cups-manager
-    SUBDIR += gnome-print
     SUBDIR += gnome-specimen
     SUBDIR += gnomephotoprinter
     SUBDIR += gribouy
