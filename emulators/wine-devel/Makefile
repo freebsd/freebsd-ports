@@ -25,7 +25,7 @@ LIB_DEPENDS=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 
 CONFLICTS_INSTALL=	i386-wine-* wine-1.4* wine-1.6*
 
-LATEST_LINK?=	wine-devel
+PKGNAMESUFFIX=	-devel
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GCC=	any

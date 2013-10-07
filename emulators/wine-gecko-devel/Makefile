@@ -15,7 +15,7 @@ COMMENT=	Gecko Layout Engine for Wine development branch (HTML support)
 LICENSE=	MPL GPLv2 GPLv3 LGPL21 LGPL3
 LICENSE_COMB=	multi
 
-LATEST_LINK=	wine-gecko-devel
+PKGNAMESUFFIX=	-devel
 NO_BUILD=	yes
 PLIST_SUB+=	GECKO_VERSION="${DISTVERSION}"
 DATADIR=	${PREFIX}/share/wine

@@ -14,7 +14,7 @@ COMMENT=	GKrellM volume plugin
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
-LATEST_LINK=	gkrellmvolume2
+PKGNAMESUFFIX=	2
 WRKSRC=		${WRKDIR}/gkrellm-volume
 
 PLIST_FILES=	libexec/gkrellm2/plugins/volume.so \
