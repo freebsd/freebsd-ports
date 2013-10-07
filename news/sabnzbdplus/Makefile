@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sabnzbdplus
-PORTVERSION=	0.7.14
+PORTVERSION=	0.7.16
 CATEGORIES=	news
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	SABnzbd-${PORTVERSION}-src
@@ -92,7 +92,6 @@ UNRAR_DESC=	Often required for unpacking many downloads
 FEEDPARSER_DESC=	rss-feed support
 YENC_DESC=	yenc support
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MPAR2CMDLINE}
@@ -124,24 +123,24 @@ post-patch:
 # the NO_BUILD option stops execution after configure. This should really be
 # post-build
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/SABnzbd.py ${PREFIX}/bin
-	${INSTALL} -d ${PYTHONPREFIX_SITELIBDIR}/sabnzbd
-	cd ${WRKSRC}/sabnzbd && ${COPYTREE_SHARE} \* ${PYTHONPREFIX_SITELIBDIR}/sabnzbd
-	${INSTALL} -d ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/SABnzbd.py ${STAGEDIR}${PREFIX}/bin
+	${INSTALL} -d ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/sabnzbd
+	cd ${WRKSRC}/sabnzbd && ${COPYTREE_SHARE} \* ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/sabnzbd
+	${INSTALL} -d ${STAGEDIR}${DATADIR}
+	${INSTALL} -d ${STAGEDIR}${PREFIX}/sabnzbd
 .for i in cherrypy gntp interfaces locale po tools util
-	${MKDIR} ${DATADIR}/${i}
-	cd ${WRKSRC}/${i} && ${COPYTREE_SHARE} \* ${DATADIR}/${i}
+	${MKDIR} ${STAGEDIR}${DATADIR}/${i}
+	cd ${WRKSRC}/${i} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/${i}
 .endfor
 
-post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-	${MKDIR} ${PREFIX}/sabnzbd
-	${CHOWN} _sabnzbd:_sabnzbd ${PREFIX}/sabnzbd
+
+post-install:
 	@${CAT} ${WRKDIR}/pkg-message
 
 .include <bsd.port.post.mk>
