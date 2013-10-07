@@ -877,7 +877,6 @@
     SUBDIR += xsynth-dssi
     SUBDIR += xvmixer
     SUBDIR += xwave
-    SUBDIR += yamt
     SUBDIR += yell
     SUBDIR += zinf
     SUBDIR += zynaddsubfx
