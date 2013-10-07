@@ -56,8 +56,8 @@ WEB_AUTH=			nvu
 # Non-version specific components
 _LINUX_APPS_ALL=	allegro alsalib arts aspell atk cairo cups-libs curl dri esound expat fontconfig \
 					freealut gdkpixbuf gnutls gtk gtk2 hicontheme imlib jpeg libaudiofile \
-					libg2c libgcrypt libglade libglade2 libglu libgpg-error libmng libogg \
-					libsigcpp20 libtasn1 libtheora 	libvorbis libxml libxml2 mikmod naslibs \
+					libg2c libgcrypt libglade2 libglu libgpg-error libmng libogg \
+					libsigcpp20 libtasn1 libtheora libvorbis libxml2 mikmod naslibs \
 					ncurses-base openal openmotif openssl pango png png10 scimgtk \
 					scimlibs sdl12 sdlimage sdlmixer tiff xorglibs ucl ungif upx webauth
 
@@ -210,10 +210,6 @@ libgcrypt_f10_FILE=	${LINUXBASE}/lib/libgcrypt.so.11.5.2
 libgcrypt_DETECT=	${libgcrypt${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libgcrypt_PORT=		${PORTSDIR}/security/linux${LINUX_DIST_SUFFIX}-libgcrypt
 
-libglade_f10_FILE=	${LINUXBASE}/usr/lib/libglade.so.0.4.2
-libglade_DETECT=	${libglade${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
-libglade_PORT=		${PORTSDIR}/devel/linux${LINUX_DIST_SUFFIX}-libglade
-
 libglade2_f10_FILE=	${LINUXBASE}/usr/lib/libglade-2.0.so.0.0.7
 libglade2_DETECT=	${libglade2${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libglade2_PORT=		${PORTSDIR}/devel/linux${LINUX_DIST_SUFFIX}-libglade2
@@ -264,10 +260,6 @@ libvorbis_f10_FILE=	${LINUXBASE}/usr/lib/libvorbis.so.0.4.0
 libvorbis_DETECT=	${libvorbis${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libvorbis_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-libvorbis
 libvorbis_DEPENDS=	libogg
-
-libxml_f10_FILE=	${LINUXBASE}/usr/lib/libxml.so.1.8.17
-libxml_DETECT=		${libxml${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
-libxml_PORT=		${PORTSDIR}/textproc/linux${LINUX_DIST_SUFFIX}-libxml
 
 libxml2_f10_FILE=	${LINUXBASE}/usr/lib/libxml2.so.2.7.3
 libxml2_DETECT=		${libxml2${LINUX_DIST_SUFFIX:S/-/_/}_FILE}

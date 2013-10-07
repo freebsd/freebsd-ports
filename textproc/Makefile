@@ -402,7 +402,6 @@
     SUBDIR += link-grammar
     SUBDIR += linux-f10-aspell
     SUBDIR += linux-f10-expat
-    SUBDIR += linux-f10-libxml
     SUBDIR += linux-f10-libxml2
     SUBDIR += linux-f10-scim-gtk
     SUBDIR += linux-f10-scim-libs
