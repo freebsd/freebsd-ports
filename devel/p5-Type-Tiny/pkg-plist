@@ -5,6 +5,7 @@
 %%SITE_PERL%%/Reply/Plugin/TypeTiny.pm
 %%SITE_PERL%%/Test/TypeTiny.pm
 %%SITE_PERL%%/Type/Coercion.pm
+%%SITE_PERL%%/Type/Coercion/FromMoose.pm
 %%SITE_PERL%%/Type/Coercion/Union.pm
 %%SITE_PERL%%/Type/Exception.pm
 %%SITE_PERL%%/Type/Exception/Assertion.pm
@@ -40,6 +41,7 @@
 %%PERL5_MAN3%%/Reply::Plugin::TypeTiny.3.gz
 %%PERL5_MAN3%%/Test::TypeTiny.3.gz
 %%PERL5_MAN3%%/Type::Coercion.3.gz
+%%PERL5_MAN3%%/Type::Coercion::FromMoose.3.gz
 %%PERL5_MAN3%%/Type::Coercion::Union.3.gz
 %%PERL5_MAN3%%/Type::Exception.3.gz
 %%PERL5_MAN3%%/Type::Exception::Assertion.3.gz
