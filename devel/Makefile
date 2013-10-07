@@ -1006,7 +1006,6 @@
     SUBDIR += libghthash
     SUBDIR += libgii
     SUBDIR += libgit2
-    SUBDIR += libglade
     SUBDIR += libglade-java
     SUBDIR += libglade2
     SUBDIR += libglade2-reference
