@@ -38,7 +38,7 @@ SHEBANG_FILES=	Utils/*.pl \
 		extern/zlib/zlib2ansi
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -lpthread
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>

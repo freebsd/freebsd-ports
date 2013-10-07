@@ -25,7 +25,7 @@ PLIST_FILES=	bin/kludge3d
 CPPFLAGS+=	-I${LOCALBASE}/include \
 		-I${PYTHON_INCLUDEDIR} ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib \
-		-L${PYTHON_LIBDIR}/config ${PTHREAD_LIBS}
+		-L${PYTHON_LIBDIR}/config -lm ${PTHREAD_LIBS}
 
 NO_STAGE=	yes
 post-patch:

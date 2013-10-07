@@ -17,6 +17,7 @@ USES=		pathfix gmake pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
+LDFLAGS+=	-lm
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
