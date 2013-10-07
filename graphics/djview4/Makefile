@@ -17,6 +17,7 @@ LIB_DEPENDS=	djvulibre:${PORTSDIR}/graphics/djvulibre
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
 USE_QT4=	gui network rcc_build uic_build moc_build qmake_build
+USE_XORG=	sm ice xt
 QT_NONSTANDARD=	yes
 CONFIGURE_ARGS=	--x-includes="${LOCALBASE}/include" \
 		--x-libraries="${LOCALBASE}/lib"
