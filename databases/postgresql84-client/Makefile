@@ -3,7 +3,8 @@
 
 PORTNAME=	postgresql
 PORTREVISION=	0
-PKGNAMESUFFIX=	-client
+PKGNAMESUFFIX?=	${DISTV:S/.//}-client
+DISTV=	${DISTVERSION:R}
 
 COMMENT=	PostgreSQL database (client)
 
