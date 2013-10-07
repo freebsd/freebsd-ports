@@ -15,7 +15,7 @@ WITHOUT_NLS=	yes
 OPTIONSFILE=	# works around optionsNG trouble
 MASTERDIR=	${.CURDIR}/../../sysutils/e2fsprogs
 MAKE_ARGS=	LIB_SUBDIRS=lib/uuid
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 ALL_TARGET=	libs
 INSTALL_TARGET=	install install-shlibs
@@ -23,17 +23,8 @@ INSTALL_WRKSRC=	${WRKSRC}/lib/uuid
 FILESDIR=	${.CURDIR}/files
 USE_RC_SUBR=	uuidd
 
-MAN1=		uuidgen.1
-
-MAN3=		uuid.3 uuid_clear.3 uuid_compare.3 uuid_copy.3 uuid_generate.3 \
-		uuid_is_null.3 uuid_parse.3 uuid_time.3 uuid_unparse.3 \
-		uuid_generate_random.3 uuid_generate_time.3
-
-MAN8=		uuidd.8
-
 PKGDIR=		${.CURDIR}
 
-NO_STAGE=	yes
 post-patch::
 	${REINPLACE_CMD} -e 's,/var/lib/libuuid,/var/run/libuuid,g' \
 	    -e 's,/usr/sbin/uuidd,${PREFIX}/sbin/uuidd,' \
@@ -51,10 +42,9 @@ post-build:
 	cd ${INSTALL_WRKSRC} && ( ulimit -t 5 && ${GMAKE} check )
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/misc/uuidgen ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/misc/uuidgen.1 ${MAN8PREFIX}/man/man1/
-	${INSTALL_PROGRAM} ${WRKSRC}/misc/uuidd ${PREFIX}/sbin/
-	${INSTALL_MAN} ${WRKSRC}/misc/uuidd.8 ${MAN8PREFIX}/man/man8/
-	${MKDIR} /var/run/libuuid
+	${INSTALL_PROGRAM} ${WRKSRC}/misc/uuidgen ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/misc/uuidgen.1 ${STAGEDIR}${MAN8PREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/misc/uuidd ${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_MAN} ${WRKSRC}/misc/uuidd.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
 
 .include "${MASTERDIR}/Makefile"
