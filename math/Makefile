@@ -360,6 +360,7 @@
     SUBDIR += octave-forge-video
     SUBDIR += octave-forge-xraylib
     SUBDIR += octave-forge-zenity
+    SUBDIR += ogdf
     SUBDIR += oleo
     SUBDIR += open-axiom
     SUBDIR += openblas
