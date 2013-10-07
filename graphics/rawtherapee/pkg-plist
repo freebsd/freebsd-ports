@@ -1,4 +1,5 @@
 bin/rawtherapee
+man/man1/rawtherapee.1.gz
 share/applications/rawtherapee.desktop
 %%DOCSDIR%%/AUTHORS.txt
 %%DOCSDIR%%/AboutThisBuild.txt
@@ -765,4 +766,18 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 @dirrm %%DATADIR%%/dcpprofiles
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrmtry share/applications
