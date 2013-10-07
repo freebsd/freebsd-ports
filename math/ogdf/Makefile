@@ -12,11 +12,11 @@ DISTNAME=	ogdf.v2012.07
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	C++ class library for the automatic layout of diagrams
 
+LICENSE=	GPLv2
+
 OPTIONS_DEFINE=	COIN ABACUS
 COIN_DESC=	Use the Coin Open Solver Interface (Osi)
 ABACUS_DESC=	Use the ABACUS branch-and-cut library
-
-LICENSE=	GPLv2
 
 USE_ZIP=	yes
 USE_LDCONFIG=	yes
@@ -24,11 +24,10 @@ USE_PYTHON=	build
 
 WRKSRC=		${WRKDIR}/${PORTNAME:U}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCOIN}
-LIB_DEPENDS+=	Clp:${PORTSDIR}/math/coinmp
+LIB_DEPENDS+=	libClp.so:${PORTSDIR}/math/coinmp
 USE_COIN=	true
 .else
 USE_COIN=	false
@@ -36,7 +35,7 @@ USE_COIN=	false
 
 .if ${PORT_OPTIONS:MABACUS}
 USE_GCC=	4.4+
-LIB_DEPENDS+=	abacus-osi:${PORTSDIR}/math/abacus
+LIB_DEPENDS+=	libabacus-osi.so:${PORTSDIR}/math/abacus
 USE_ABACUS=	true
 USE_COIN=	true
 .else
@@ -55,8 +54,8 @@ do-configure:
 	cd ${WRKSRC} && ${PYTHON_CMD} makeMakefile.py
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/_release/libOGDF.so ${PREFIX}/lib/libOGDF.so.1
-	${LN} -sf libOGDF.so.1 ${PREFIX}/lib/libOGDF.so
-	cd ${WRKSRC} && ${COPYTREE_SHARE} ogdf ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/_release/libOGDF.so ${STAGEDIR}${PREFIX}/lib/libOGDF.so.1
+	${LN} -sf libOGDF.so.1 ${STAGEDIR}${PREFIX}/lib/libOGDF.so
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ogdf ${STAGEDIR}${PREFIX}/include
 
 .include <bsd.port.mk>
