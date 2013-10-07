@@ -498,5 +498,4 @@ bin/SABnzbd.py
 @dirrm %%PYTHON_SITELIBDIR%%/sabnzbd/utils
 @dirrm %%PYTHON_SITELIBDIR%%/sabnzbd
 @dirrmtry %%PYTHON_SITELIBDIR%%
-@exec mkdir -p %D/sabnzbd
 @exec chown _sabnzbd:_sabnzbd %D/sabnzbd
