@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Parse-ErrorString-Perl
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,10 +21,4 @@ TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		check_perldiag.1
-MAN3=		Parse::ErrorString::Perl.3 \
-		Parse::ErrorString::Perl::ErrorItem.3 \
-		Parse::ErrorString::Perl::StackItem.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
