@@ -17,10 +17,6 @@ LICENSE=	BSD
 
 CONFLICTS?=		openssh-3.* ssh-1.* ssh2-3.*
 
-# XXX: ports/52706 will allow using DEFAULT,x509 here.
-PATCH_SITES+=		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
-			http://mirror.shatow.net/freebsd/${PORTNAME}/:x509
-
 USE_AUTOTOOLS=		autoconf autoheader
 USE_OPENSSL=		yes
 GNU_CONFIGURE=		yes
@@ -215,6 +211,7 @@ PLIST_SUB+=		BASE="@comment "
 .endif
 
 # After all
+PATCH_SITES+=		http://mirror.shatow.net/freebsd/${PORTNAME}/:DEFAULT,x509
 SUB_LIST+=		ETCSSH="${ETCSSH}"
 CONFIGURE_ARGS+=	--sysconfdir=${ETCSSH} --with-privsep-path=${EMPTYDIR}
 .if !empty(CONFIGURE_LIBS)
