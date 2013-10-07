@@ -6,7 +6,7 @@ PORTVERSION=	2.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.c-s.li/ports/
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Enhances tmux to make multi-user terminal multiplexing easier
 
 LICENSE=	MIT
