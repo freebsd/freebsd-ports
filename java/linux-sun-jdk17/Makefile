@@ -18,7 +18,7 @@ DEMO_DESC=	Install demos and samples
 
 NO_CDROM=	License does not allow distribution with fee
 RESTRICTED=	Redistribution of repackaged binaries not permitted
-LATEST_LINK=	linux-sun-jdk17
+PKGNAMESUFFIX=	17
 
 WRKSRC=		${WRKDIR}/jdk${DL_JDK_VERSION}
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
