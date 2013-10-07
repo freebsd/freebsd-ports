@@ -5021,3 +5021,4 @@ www/libghttp||2013-10-07|Component of the obsolete gnome1
 deskutils/gworkspace-clipbook||2013-10-07|Replaced by tabbed shelf in GWorkspace
 audio/yamt||2013-10-07|Depends on EOLed gnome1 libraries
 astro/nova||2013-10-07|Developement ceased 8 years ago, depends on some gnome1 libraries
+textproc/libxml++||2013-10-07|Component of the obsolete gnome1
