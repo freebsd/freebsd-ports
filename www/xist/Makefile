@@ -17,6 +17,8 @@ RUN_DEPENDS=	${PYXML} \
 		${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.7:${PORTSDIR}/www/py-cssutils
 
+CONFLICTS_INSTALL=	py*-ll-core-1*
+
 USE_PYTHON=		-2.7
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
