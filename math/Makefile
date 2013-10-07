@@ -82,6 +82,7 @@
     SUBDIR += chaco
     SUBDIR += chryzodus
     SUBDIR += clarence
+    SUBDIR += clasp
     SUBDIR += clipper
     SUBDIR += cln
     SUBDIR += cloog
@@ -250,6 +251,7 @@
     SUBDIR += metis-edf
     SUBDIR += metis4
     SUBDIR += mingw32-libgmp
+    SUBDIR += minisat
     SUBDIR += miracl
     SUBDIR += moo
     SUBDIR += mpc
