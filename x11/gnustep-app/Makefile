@@ -47,7 +47,6 @@ USE_GNUSTEP_SYSTEM_APPS+=	\
 	SystemPreferences:deskutils/systempreferences \
 	WrapperFactory:deskutils/gnustep-wrapper \
 	GRubik:games/grubik \
-	ClipBook:deskutils/gworkspace-clipbook \
 	MDFinder:deskutils/gworkspace-gwmetadata \
 
 USE_GNUSTEP_LOCAL_APPS+=	\
