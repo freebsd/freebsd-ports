@@ -44,6 +44,7 @@
     SUBDIR += R-cran-xts
     SUBDIR += R-cran-zoo
     SUBDIR += aamath
+    SUBDIR += abacus
     SUBDIR += abakus
     SUBDIR += abs
     SUBDIR += add
