@@ -2,6 +2,7 @@
 
 PORTNAME=	xkeyboard-config
 PORTVERSION=	2.9
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -32,7 +33,7 @@ NO_STAGE=	yes
 
 # !nls case doesn't work correctly, comment it out.
 #.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext iconv
+USES+=		gettext:build iconv
 PLIST_SUB+=	NLS=""
 #.else
 #CONFIGURE_ARGS+=--disable-nls
