@@ -2,42 +2,38 @@
 # $FreeBSD$
 
 PORTNAME=	fox
-PORTVERSION=	${MAJORVER}.${SHVER}
+PORTVERSION=	1.6.49
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.fox-toolkit.org/pub/ \
     		http://ftp.fox-toolkit.org/pub/
+PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Fast and extensive C++ GUI toolkit -- ver.1.6
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff \
-		Xft:${PORTSDIR}/x11-fonts/libXft
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff
 
-LATEST_LINK=	fox16
+MAJORVER=	${PORTVERSION:R}
+PLIST_SUB+=	MAJORVER=${MAJORVER}
 
-MAJORVER=	1.6
-SHVER=		49
-PLIST_SUB+=	MAJORVER=${MAJORVER} SHVER=${SHVER}
-
-USE_GNOME=	lthack gnomehack
+USES+=		pathfix
+USE_AUTOTOOLS=	libtool
+USE_GNOME=	lthack ltverhack
 USE_GL=		yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-opengl --with-x
 USE_LDCONFIG=	yes
-
-MAN1=		shutterbug.1 reswrap.1
+CONFIGURE_ARGS=	--with-opengl --with-x
+PORTDOCS=	*
 
 CPPFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	OPTIMIZED_CFLAGS CUPS DEBUG APPS PROFILE SHM XFT
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS CUPS DEBUG DOCS APPS PROFILE SHM XFT
 OPTIONS_DEFAULT=SHM XFT
 APPS_DESC=	Install sample applications
 SHM_DESC=	Shared Memory support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 ##
@@ -45,7 +41,8 @@ NO_STAGE=	yes
 ##
 #
 .if ${PORT_OPTIONS:MXFT}
-CONFIGURE_ARGS+=	--with-xft=yes
+CONFIGURE_ARGS+=--with-xft=yes
+USE_XORG+=	xft
 CPPFLAGS+=	`freetype-config --cflags`
 LDFLAGS+=	`freetype-config --libs`
 .else
@@ -59,7 +56,7 @@ CONFIGURE_ARGS+=	--with-xshm=no
 .endif
 #
 .if ${PORT_OPTIONS:MCUPS}
-LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-client
+LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client
 .endif
 #
 .if ${PORT_OPTIONS:MDEBUG}
@@ -69,7 +66,6 @@ CONFIGURE_ARGS+=	--enable-release
 .endif
 #
 .if ${PORT_OPTIONS:MAPPS}
-MAN1+=		PathFinder.1 adie.1 calculator.1
 PLIST_SUB+=	APPS=""
 .else
 PLIST_SUB+=	APPS="@comment "
@@ -88,12 +84,19 @@ CONFIGURE_ARGS+=	--with-profiling=gprof
 .endif
 
 post-patch:
+# Rename man pages as in manpage.1 --> manpage-16.1 to avoid
+# conflicts with fox14 and fox17
+	files=$$(${FIND} ${WRKSRC} -name *.1); \
+	for f in $$files; do \
+		${MV} $$f `echo $$f | sed -e 's|\.1|-16.1|'`; \
+	done;
+	${FIND} ${WRKSRC} -name Makefile.am -o -name Makefile.in | ${XARGS} \
+	    ${REINPLACE_CMD} -i '' -e '/man_MANS/s|\.1|-16.1|g'
 	${REINPLACE_CMD} -e '/^Libs:/s|$$| ${PTHREAD_LIBS}|; s|"||g' ${WRKSRC}/fox.pc.in
 # CXXFLAGS safeness
 	@${REINPLACE_CMD} -E -e \
 		's|-O2|${CXXFLAGS}|g ; \
-		 s|-lc_r|${PTHREAD_LIBS}|g ; \
-		 s|FOX_INTERFACE_VERSION=0|FOX_INTERFACE_VERSION=${SHVER}|g' \
+		 s|-lc_r|${PTHREAD_LIBS}|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 # doc prefix safeness
 	@${REINPLACE_CMD} -E -e \
