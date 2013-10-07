@@ -16,7 +16,7 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
 NO_CDROM=	License does not allow distribution with fee
 RESTRICTED=	Redistribution of repackaged binaries not permitted
-LATEST_LINK=	linux-sun-jre16
+PKGNAMESUFFIX=	16
 
 WRKSRC=		${WRKDIR}/jre${DL_JRE_VERSION}
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
