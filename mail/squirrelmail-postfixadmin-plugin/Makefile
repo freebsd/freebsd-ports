@@ -14,6 +14,9 @@ DIST_SUBDIR=	squirrelmail
 MAINTAINER=	ports.maintainer@evilphi.com
 COMMENT=	Lets users change password, vacation, and forwarding
 
+DEPRECATED=	Now distributed with postfixadmin
+EXPIRATION_DATE=	2013-11-01
+
 RUN_DEPENDS=	ZendFramework>=1.9.0:${PORTSDIR}/www/zend-framework1
 
 USE_BZIP2=	yes
