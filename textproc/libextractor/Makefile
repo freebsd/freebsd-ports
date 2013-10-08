@@ -3,7 +3,7 @@
 
 PORTNAME=	libextractor
 PORTVERSION=	0.6.2
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,8 +18,8 @@ USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/libextractor
 CONFIGURE_ARGS=	--disable-ltdl-install
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include/ffmpeg0 -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib/ffmpeg0 -L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 
 EXTRACT_AFTER_ARGS=	--exclude libltdl
@@ -35,7 +35,12 @@ OPTIONS_DEFAULT=	EXIV2 FLAC MPEG2 VORBIS GSF POPPLER RPM QT FFMPEG
 NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+	@${REINPLACE_CMD} \
+		-e 's|-lpthread|${PTHREAD_LIBS}|g' \
+		-e 's|-lavcodec|-lavcodec0|g' \
+		-e 's|-lavformat|-lavformat0|g' \
+		-e 's|-lswscale|-lswscale0|g' \
+		-e 's|-lavutil|-lavutil0|g' \
 		${WRKSRC}/src/plugins/Makefile.*
 	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g' \
 		-e 's|-lstdc++||g' \
@@ -120,10 +125,10 @@ PLIST_SUB+=	QT="@comment "
 
 # FFMPEG can be disabled
 .if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	avformat:${PORTSDIR}/multimedia/ffmpeg
-LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
-LIB_DEPENDS+=	swscale:${PORTSDIR}/multimedia/ffmpeg
-LIB_DEPENDS+=	avutil:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavformat0.so:${PORTSDIR}/multimedia/ffmpeg0
+LIB_DEPENDS+=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0
+LIB_DEPENDS+=	libswscale0.so:${PORTSDIR}/multimedia/ffmpeg0
+LIB_DEPENDS+=	libavutil0.so:${PORTSDIR}/multimedia/ffmpeg0
 CONFIGURE_ARGS+=--enable-ffmpeg
 PLIST_SUB+=	FFMPEG=""
 .else
