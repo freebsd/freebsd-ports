@@ -14,7 +14,4 @@ COMMENT=	A Simple wrapper around hiredis C client
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Redis::hiredis.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
