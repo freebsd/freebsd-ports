@@ -5024,3 +5024,4 @@ textproc/libxml++||2013-10-07|Component of the obsolete gnome1
 devel/linux-f10-libglade|devel/linux-f10-libglade2|2013-10-07|Unused
 textproc/linux-f10-libxml|textproc/linux-f10-libxml2|2013-10-07|Unused
 www/moodle23||2013-10-08|Has expired: Unmaintained upstream
+sysutils/easypbi||2013-10-08|Obsolete: Use sysutils/pcbsd-utils-qt4 instead
