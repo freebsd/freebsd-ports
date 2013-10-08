@@ -179,6 +179,7 @@ lib/webmin/acl/images/smallicon.gif
 lib/webmin/acl/images/sql.gif
 lib/webmin/acl/images/sync.gif
 lib/webmin/acl/images/tick.gif
+lib/webmin/acl/images/twofactor.gif
 lib/webmin/acl/images/unix.gif
 lib/webmin/acl/index.cgi
 lib/webmin/acl/lang/ar
@@ -246,10 +247,13 @@ lib/webmin/acl/save_group.cgi
 lib/webmin/acl/save_pass.cgi
 lib/webmin/acl/save_sql.cgi
 lib/webmin/acl/save_sync.cgi
+lib/webmin/acl/save_twofactor.cgi
 lib/webmin/acl/save_unix.cgi
 lib/webmin/acl/save_user.cgi
 lib/webmin/acl/schema.cgi
 lib/webmin/acl/switch.cgi
+lib/webmin/acl/twofactor.pl
+lib/webmin/acl/twofactor_form.cgi
 lib/webmin/acl/useradmin_update.pl
 lib/webmin/acl/webmin.schema
 lib/webmin/acl_security.pl
@@ -3906,6 +3910,8 @@ lib/webmin/cron/help/help.it.UTF-8.html
 lib/webmin/cron/help/help.it.html
 lib/webmin/cron/help/help.nl.UTF-8.html
 lib/webmin/cron/help/help.nl.html
+lib/webmin/cron/help/help.no.UTF-8.html
+lib/webmin/cron/help/help.no.html
 lib/webmin/cron/help/help.sv.UTF-8.html
 lib/webmin/cron/help/help.sv.html
 lib/webmin/cron/help/help.zh_TW.Big5.html
@@ -3926,6 +3932,8 @@ lib/webmin/cron/help/intro.it.UTF-8.html
 lib/webmin/cron/help/intro.it.html
 lib/webmin/cron/help/intro.nl.UTF-8.html
 lib/webmin/cron/help/intro.nl.html
+lib/webmin/cron/help/intro.no.UTF-8.html
+lib/webmin/cron/help/intro.no.html
 lib/webmin/cron/help/intro.sv.UTF-8.html
 lib/webmin/cron/help/intro.sv.html
 lib/webmin/cron/help/intro.zh_TW.Big5.html
@@ -5696,6 +5704,8 @@ lib/webmin/fdisk/fdisk-lib.pl
 lib/webmin/fdisk/feedback_files.pl
 lib/webmin/fdisk/fsck.cgi
 lib/webmin/fdisk/fsck_form.cgi
+lib/webmin/fdisk/help/A.ca.UTF-8.html
+lib/webmin/fdisk/help/A.ca.html
 lib/webmin/fdisk/help/A.es.UTF-8.html
 lib/webmin/fdisk/help/A.es.html
 lib/webmin/fdisk/help/A.fr.UTF-8.html
@@ -13298,6 +13308,7 @@ lib/webmin/password_form.cgi
 lib/webmin/perlpath.pl
 lib/webmin/phpini/CHANGELOG
 lib/webmin/phpini/acl_security.pl
+lib/webmin/phpini/backup_config.pl
 lib/webmin/phpini/cgi_args.pl
 lib/webmin/phpini/config
 lib/webmin/phpini/config-debian-linux
@@ -18052,6 +18063,7 @@ lib/webmin/sendmail/help/opt_MaxQueueRunSize.sv.UTF-8.html
 lib/webmin/sendmail/help/opt_MaxQueueRunSize.sv.html
 lib/webmin/sendmail/help/opt_MaxQueueRunSize.zh_TW.Big5.html
 lib/webmin/sendmail/help/opt_MaxQueueRunSize.zh_TW.UTF-8.html
+lib/webmin/sendmail/help/opt_MaxRecipientsPerMessage.html
 lib/webmin/sendmail/help/opt_MinFreeBlocks.ca.UTF-8.html
 lib/webmin/sendmail/help/opt_MinFreeBlocks.ca.html
 lib/webmin/sendmail/help/opt_MinFreeBlocks.es.UTF-8.html
@@ -18615,6 +18627,7 @@ lib/webmin/sgiexports/log_parser.pl
 lib/webmin/sgiexports/module.info
 lib/webmin/sgiexports/save_export.cgi
 lib/webmin/sgiexports/sgiexports-lib.pl
+lib/webmin/shell/CHANGELOG
 lib/webmin/shell/acl_security.pl
 lib/webmin/shell/config
 lib/webmin/shell/config.info
@@ -18622,6 +18635,8 @@ lib/webmin/shell/config.info.ca
 lib/webmin/shell/config.info.ca.UTF-8
 lib/webmin/shell/config.info.cz
 lib/webmin/shell/config.info.cz.UTF-8
+lib/webmin/shell/config.info.de
+lib/webmin/shell/config.info.de.UTF-8
 lib/webmin/shell/config.info.es
 lib/webmin/shell/config.info.es.UTF-8
 lib/webmin/shell/config.info.fr
@@ -18699,6 +18714,8 @@ lib/webmin/shorewall/config.info.fr
 lib/webmin/shorewall/config.info.fr.UTF-8
 lib/webmin/shorewall/config.info.nl
 lib/webmin/shorewall/config.info.nl.UTF-8
+lib/webmin/shorewall/config.info.no
+lib/webmin/shorewall/config.info.no.UTF-8
 lib/webmin/shorewall/defaultacl
 lib/webmin/shorewall/delete.cgi
 lib/webmin/shorewall/down.cgi
@@ -18744,6 +18761,8 @@ lib/webmin/shorewall/lang/hu
 lib/webmin/shorewall/lang/hu.UTF-8
 lib/webmin/shorewall/lang/nl
 lib/webmin/shorewall/lang/nl.UTF-8
+lib/webmin/shorewall/lang/no
+lib/webmin/shorewall/lang/no.UTF-8
 lib/webmin/shorewall/lang/tr
 lib/webmin/shorewall/lang/zh_CN
 lib/webmin/shorewall/lang/zh_CN.UTF-8
@@ -21312,6 +21331,8 @@ lib/webmin/useradmin/help/2nd.fr.html
 lib/webmin/useradmin/help/2nd.html
 lib/webmin/useradmin/help/2nd.nl.UTF-8.html
 lib/webmin/useradmin/help/2nd.nl.html
+lib/webmin/useradmin/help/2nd.no.UTF-8.html
+lib/webmin/useradmin/help/2nd.no.html
 lib/webmin/useradmin/help/2nd.pl.UTF-8.html
 lib/webmin/useradmin/help/2nd.pl.html
 lib/webmin/useradmin/help/2nd.ru_RU.html
@@ -21328,6 +21349,8 @@ lib/webmin/useradmin/help/ask.fa.html
 lib/webmin/useradmin/help/ask.html
 lib/webmin/useradmin/help/ask.nl.UTF-8.html
 lib/webmin/useradmin/help/ask.nl.html
+lib/webmin/useradmin/help/ask.no.UTF-8.html
+lib/webmin/useradmin/help/ask.no.html
 lib/webmin/useradmin/help/change.ca.UTF-8.html
 lib/webmin/useradmin/help/change.ca.html
 lib/webmin/useradmin/help/change.es.UTF-8.html
@@ -21338,6 +21361,8 @@ lib/webmin/useradmin/help/change.fr.html
 lib/webmin/useradmin/help/change.html
 lib/webmin/useradmin/help/change.nl.UTF-8.html
 lib/webmin/useradmin/help/change.nl.html
+lib/webmin/useradmin/help/change.no.UTF-8.html
+lib/webmin/useradmin/help/change.no.html
 lib/webmin/useradmin/help/change.pl.UTF-8.html
 lib/webmin/useradmin/help/change.pl.html
 lib/webmin/useradmin/help/change.ru_RU.html
@@ -21356,6 +21381,8 @@ lib/webmin/useradmin/help/change2.fr.html
 lib/webmin/useradmin/help/change2.html
 lib/webmin/useradmin/help/change2.nl.UTF-8.html
 lib/webmin/useradmin/help/change2.nl.html
+lib/webmin/useradmin/help/change2.no.UTF-8.html
+lib/webmin/useradmin/help/change2.no.html
 lib/webmin/useradmin/help/change2.pl.UTF-8.html
 lib/webmin/useradmin/help/change2.pl.html
 lib/webmin/useradmin/help/change2.ru_RU.html
@@ -21374,6 +21401,8 @@ lib/webmin/useradmin/help/chgid.fr.html
 lib/webmin/useradmin/help/chgid.html
 lib/webmin/useradmin/help/chgid.nl.UTF-8.html
 lib/webmin/useradmin/help/chgid.nl.html
+lib/webmin/useradmin/help/chgid.no.UTF-8.html
+lib/webmin/useradmin/help/chgid.no.html
 lib/webmin/useradmin/help/chgid.pl.UTF-8.html
 lib/webmin/useradmin/help/chgid.pl.html
 lib/webmin/useradmin/help/chgid.ru_RU.html
@@ -22470,6 +22499,7 @@ lib/webmin/webmin/change_startpage.cgi
 lib/webmin/webmin/change_status.cgi
 lib/webmin/webmin/change_syslet.cgi
 lib/webmin/webmin/change_theme.cgi
+lib/webmin/webmin/change_twofactor.cgi
 lib/webmin/webmin/change_ui.cgi
 lib/webmin/webmin/change_web.cgi
 lib/webmin/webmin/clear_blocked.cgi
@@ -22546,6 +22576,7 @@ lib/webmin/webmin/edit_startpage.cgi
 lib/webmin/webmin/edit_status.cgi
 lib/webmin/webmin/edit_syslet.cgi
 lib/webmin/webmin/edit_themes.cgi
+lib/webmin/webmin/edit_twofactor.cgi
 lib/webmin/webmin/edit_ui.cgi
 lib/webmin/webmin/edit_upgrade.cgi
 lib/webmin/webmin/edit_web.cgi
@@ -22554,6 +22585,7 @@ lib/webmin/webmin/export_mod.cgi
 lib/webmin/webmin/feedback_files.pl
 lib/webmin/webmin/fix_os.cgi
 lib/webmin/webmin/gnupg-lib.pl
+lib/webmin/webmin/help/twofactor.html
 lib/webmin/webmin/images/access.gif
 lib/webmin/webmin/images/advanced.gif
 lib/webmin/webmin/images/anon.gif
@@ -22581,6 +22613,7 @@ lib/webmin/webmin/images/startpage.gif
 lib/webmin/webmin/images/status.gif
 lib/webmin/webmin/images/syslet.gif
 lib/webmin/webmin/images/themes.gif
+lib/webmin/webmin/images/twofactor.gif
 lib/webmin/webmin/images/ui.gif
 lib/webmin/webmin/images/upgrade.gif
 lib/webmin/webmin/images/web.gif
@@ -23296,6 +23329,7 @@ lib/webmin/zones/zones-lib.pl
 @dirrm lib/webmin/webmin/subdir
 @dirrm lib/webmin/webmin/lang
 @dirrm lib/webmin/webmin/images
+@dirrm lib/webmin/webmin/help
 @dirrm lib/webmin/webmin
 @dirrm lib/webmin/webalizer/lang
 @dirrm lib/webmin/webalizer/images
