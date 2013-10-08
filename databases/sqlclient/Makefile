@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	sqlclient
-PORTVERSION=	1.5.3
+PORTVERSION=	1.7.0
 CATEGORIES=	databases gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	libs
 DISTNAME=	SQLClient-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	theraven@FreeBSD.org
 COMMENT=	Lightweight database abstraction layer
 
 LICENSE=	LGPL21
@@ -33,5 +33,4 @@ PLIST_SUB+=	MAJORLIBVERSION2=${DEFAULT_LIBVERSION2:C/([0-9]).*/\1/1}
 
 PERFORMANCE_PORT?=	devel/performance
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
