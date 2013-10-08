@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chattahoochie
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.mammothcheese.ca/
 
