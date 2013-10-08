@@ -22,7 +22,4 @@ RUN_DEPENDS=	p5-Dancer>=1.175:${PORTSDIR}/www/p5-Dancer \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Dancer::Plugin::SiteMap.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
