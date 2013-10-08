@@ -2,9 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	vcalendar
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	vCalendar plugin for Claws Mail
+
+EXTRA_PATCHES=	${FILESDIR}/patch-src__plugins__vcalendar__vcal_meeting_gtk.c
 
 CLAWS_PLUGINS_BUILD=	vcalendar
 
