@@ -1,0 +1,31 @@
+--- configure.orig	2011-06-21 21:29:25.000000000 +0200
++++ configure	2011-06-23 13:36:46.099381871 +0200
+@@ -1657,7 +1657,7 @@
+ nm_opts='-g'
+ 
+ # machine
+-arch_default=$(uname -m)
++arch_default=$(uname -p)
+ cpu="generic"
+ 
+ # OS
+@@ -2966,8 +2966,8 @@
+ texi2html -version > /dev/null 2>&1 && enable texi2html || disable texi2html
+ 
+ check_header linux/fb.h
+-check_header linux/videodev.h
+-check_header linux/videodev2.h
++#check_header linux/videodev.h
++#check_header linux/videodev2.h
+ check_header sys/videoio.h
+ 
+ check_func_headers "windows.h vfw.h" capCreateCaptureWindow "$vfwcap_indev_extralibs"
+@@ -3322,7 +3322,7 @@
+ SRC_PATH="$source_path"
+ SRC_PATH_BARE=$source_path
+ CC_IDENT=$cc_ident
+-ARCH=$arch
++FFMPEG_ARCH=$arch
+ CC=$cc
+ AS=$as
+ LD=$ld
