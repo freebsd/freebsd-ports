@@ -11,32 +11,27 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk frontends to CVS and Subversion
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	tkdiff:${PORTSDIR}/textproc/tkdiff
 
 NO_BUILD=	yes
-
 USE_TCL_WRAPPER=yes
 USE_TK_WRAPPER=	yes
 
-MAN1=		tkcvs.1
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/tkcvs/tkcvs ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/tkcvs/tkcvs.1 ${MAN1PREFIX}/man/man1
-	@${MKDIR} ${PREFIX}/lib/tkcvs
-	${INSTALL_DATA} ${WRKSRC}/tkcvs/*.tcl ${PREFIX}/lib/tkcvs
-	${INSTALL_DATA} ${WRKSRC}/tkcvs/tclIndex ${PREFIX}/lib/tkcvs
-	@${MKDIR} ${PREFIX}/lib/tkcvs/bitmaps
-	${INSTALL_DATA} ${WRKSRC}/tkcvs/bitmaps/*.gif ${PREFIX}/lib/tkcvs/bitmaps
-	${INSTALL_DATA} ${WRKSRC}/tkcvs/bitmaps/*.xbm ${PREFIX}/lib/tkcvs/bitmaps
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/tkcvs/tkcvs ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/tkcvs/tkcvs.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/tkcvs
+	${INSTALL_DATA} ${WRKSRC}/tkcvs/*.tcl ${STAGEDIR}${PREFIX}/lib/tkcvs
+	${INSTALL_DATA} ${WRKSRC}/tkcvs/tclIndex ${STAGEDIR}${PREFIX}/lib/tkcvs
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/tkcvs/bitmaps
+	${INSTALL_DATA} ${WRKSRC}/tkcvs/bitmaps/*.gif ${STAGEDIR}${PREFIX}/lib/tkcvs/bitmaps
+	${INSTALL_DATA} ${WRKSRC}/tkcvs/bitmaps/*.xbm ${STAGEDIR}${PREFIX}/lib/tkcvs/bitmaps
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in CHANGELOG.txt FAQ.txt INSTALL
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
