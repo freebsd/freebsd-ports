@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20131008:
+  AFFECT: all users
+  AUTHOR: bapt@FreeBSD.org
+
+  A new USES has been added: compiler.mk, this uses allows porters to
+  select a compiler for a given port based on the features the port needs
+  By default this will always try to find clang > 3.3.
+  If the user prefers using gcc then the following macro should be added
+  to user's make.conf: FAVORITE_COMPILER=gcc
+
 20131004:
   AFFECTS: users of net-mgmt/nrpe2
   AUTHOR: ohauer@FreeBSD.org
