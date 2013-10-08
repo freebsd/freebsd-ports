@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eGroupware
-PORTVERSION=	1.8.005.20131001
+PORTVERSION=	1.8.005.20131007
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}-1.8/${PORTNAME}-${PORTVERSION}
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2 \
@@ -83,7 +83,7 @@ WRKSRC=	${WRKDIR}/egroupware
 EG_DIR=	www/eg
 EG_WWWDIR=	${PREFIX}/${EG_DIR}
 EG_DATA=	www/egdata
-EG_DATADIR=	${PREFIX}/www/egdata
+EG_DATADIR=	${PREFIX}/${EG_DATA}
 
 pre-install:
 	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s#${WRKSRC}#${EG_DIR}#g" >${PLIST}
