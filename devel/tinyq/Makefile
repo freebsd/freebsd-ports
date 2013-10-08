@@ -3,23 +3,23 @@
 
 PORTNAME=	tinyq
 PORTVERSION=	3.0.6
-PORTREVISION=	2
-PORTEPOCH=	0
+PORTREVISION=	3
 CATEGORIES=	devel kde
 MASTER_SITES=	http://www.uwyn.com/download/tinyq/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A stripped down version of Qt 3 for use as a utility library
+COMMENT=	Stripped down version of Qt 3 for use as a utility library
 
+USES=		gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=-thread -stl -prefix ${PREFIX}/tinyq
+CONFIGURE_ARGS+=-thread -stl -prefix ${PREFIX}/tinyq -docdir ${DOCSDIR}
 CONFIGURE_ENV+=	QTDIR="${WRKSRC}"
-MAKE_ENV+=	QTDIR="${WRKSRC}"
+MAKE_ENV+=	QTDIR="${WRKSRC}" INSTALL_ROOT="${STAGEDIR}"
 REINPLACE_ARGS=	-i ''
 
-NO_STAGE=	yes
+PORT_OPTIONS=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2|${CXXFLAGS}|' \
 		-e 's|gcc|${CC}|' \

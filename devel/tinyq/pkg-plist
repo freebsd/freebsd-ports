@@ -1,260 +1,260 @@
+%%PORTDOCS%%%%DOCSDIR%%/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/classes.html
+%%PORTDOCS%%%%DOCSDIR%%/groups.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/logo32.png
+%%PORTDOCS%%%%DOCSDIR%%/mainclasses.html
+%%PORTDOCS%%%%DOCSDIR%%/qasciicache-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qasciicache-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qasciicache.html
+%%PORTDOCS%%%%DOCSDIR%%/qasciicacheiterator-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qasciicacheiterator.html
+%%PORTDOCS%%%%DOCSDIR%%/qasciidict-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qasciidict-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qasciidict.html
+%%PORTDOCS%%%%DOCSDIR%%/qasciidictiterator-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qasciidictiterator.html
+%%PORTDOCS%%%%DOCSDIR%%/qbitarray-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qbitarray-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qbitarray.html
+%%PORTDOCS%%%%DOCSDIR%%/qbuffer-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qbuffer-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qbuffer.html
+%%PORTDOCS%%%%DOCSDIR%%/qcache-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qcache-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qcache.html
+%%PORTDOCS%%%%DOCSDIR%%/qcacheiterator-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qcacheiterator.html
+%%PORTDOCS%%%%DOCSDIR%%/qcstring-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qcstring-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qcstring.html
+%%PORTDOCS%%%%DOCSDIR%%/qdatastream-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qdatastream-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qdatastream.html
+%%PORTDOCS%%%%DOCSDIR%%/qdatetime-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qdatetime-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qdatetime.html
+%%PORTDOCS%%%%DOCSDIR%%/qdatetimeedit-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qdatetimeedit-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qdatetimeedit.html
+%%PORTDOCS%%%%DOCSDIR%%/qdict-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qdict-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qdict.html
+%%PORTDOCS%%%%DOCSDIR%%/qdictiterator-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qdictiterator.html
+%%PORTDOCS%%%%DOCSDIR%%/qdir-example.html
+%%PORTDOCS%%%%DOCSDIR%%/qdir-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qdir-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qdir.html
+%%PORTDOCS%%%%DOCSDIR%%/qdirectpainter-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qdirectpainter.html
+%%PORTDOCS%%%%DOCSDIR%%/qdirectpainter_qws-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qdom-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomattr-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomattr.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomcdatasection-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomcdatasection.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomcharacterdata-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomcharacterdata.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomcomment-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomcomment.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomdocument-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomdocument.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomdocumentfragment-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomdocumentfragment.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomdocumenttype-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomdocumenttype.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomelement-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomelement.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomentity-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomentity.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomentityreference-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomentityreference.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomimplementation-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomimplementation.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomnamednodemap-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomnamednodemap.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomnode-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomnode.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomnodelist-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomnodelist.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomnotation-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomnotation.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomprocessinginstruction-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomprocessinginstruction.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomtext-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qdomtext.html
+%%PORTDOCS%%%%DOCSDIR%%/qfile-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qfile-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qfile.html
+%%PORTDOCS%%%%DOCSDIR%%/qfiledialog-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qfiledialog-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qfiledialog.html
+%%PORTDOCS%%%%DOCSDIR%%/qfiledlg-m.png
+%%PORTDOCS%%%%DOCSDIR%%/qfiledlg-w.png
+%%PORTDOCS%%%%DOCSDIR%%/qfileiconprovider-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qfileiconprovider.html
+%%PORTDOCS%%%%DOCSDIR%%/qfileinfo-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qfileinfo-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qfileinfo.html
+%%PORTDOCS%%%%DOCSDIR%%/qfilepreview-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qfilepreview.html
+%%PORTDOCS%%%%DOCSDIR%%/qglobal-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qintcache-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qintcache-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qintcache.html
+%%PORTDOCS%%%%DOCSDIR%%/qintcacheiterator-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qintcacheiterator.html
+%%PORTDOCS%%%%DOCSDIR%%/qintdict-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qintdict-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qintdict.html
+%%PORTDOCS%%%%DOCSDIR%%/qintdictiterator-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qintdictiterator.html
+%%PORTDOCS%%%%DOCSDIR%%/qiodevice-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qiodevice-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qiodevice.html
+%%PORTDOCS%%%%DOCSDIR%%/qiodevicesource-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qiodevicesource.html
+%%PORTDOCS%%%%DOCSDIR%%/qlibrary-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qlibrary-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qlibrary.html
+%%PORTDOCS%%%%DOCSDIR%%/qmap-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qmap-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qmap.html
+%%PORTDOCS%%%%DOCSDIR%%/qmapconstiterator-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qmapconstiterator.html
+%%PORTDOCS%%%%DOCSDIR%%/qmapiterator-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qmapiterator.html
+%%PORTDOCS%%%%DOCSDIR%%/qmemarray-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qmemarray-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qmemarray.html
+%%PORTDOCS%%%%DOCSDIR%%/qmutex-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qmutex-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qmutex.html
+%%PORTDOCS%%%%DOCSDIR%%/qnamespace-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qpair-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qpair-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qpair.html
+%%PORTDOCS%%%%DOCSDIR%%/qptrcollection-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qptrcollection-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qptrcollection.html
+%%PORTDOCS%%%%DOCSDIR%%/qptrdict-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qptrdict-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qptrdict.html
+%%PORTDOCS%%%%DOCSDIR%%/qptrdictiterator-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qptrdictiterator.html
+%%PORTDOCS%%%%DOCSDIR%%/qptrlist-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qptrlist-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qptrlist.html
+%%PORTDOCS%%%%DOCSDIR%%/qptrlistiterator-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qptrlistiterator.html
+%%PORTDOCS%%%%DOCSDIR%%/qptrqueue-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qptrqueue-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qptrqueue.html
+%%PORTDOCS%%%%DOCSDIR%%/qptrstack-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qptrstack-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qptrstack.html
+%%PORTDOCS%%%%DOCSDIR%%/qptrvector-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qptrvector-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qptrvector.html
+%%PORTDOCS%%%%DOCSDIR%%/qregexp-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qregexp-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qregexp.html
+%%PORTDOCS%%%%DOCSDIR%%/qregexpvalidator-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qregexpvalidator.html
+%%PORTDOCS%%%%DOCSDIR%%/qsemaphore-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qsemaphore-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qsemaphore.html
+%%PORTDOCS%%%%DOCSDIR%%/qsettings-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qsettings-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qsettings.html
+%%PORTDOCS%%%%DOCSDIR%%/qsortedlist-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qsortedlist-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qsortedlist.html
+%%PORTDOCS%%%%DOCSDIR%%/qstring-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qstring-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qstring.html
+%%PORTDOCS%%%%DOCSDIR%%/qstringlist-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qstringlist-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qstringlist.html
+%%PORTDOCS%%%%DOCSDIR%%/qstrlist-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qstrlist-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qstrlist.html
+%%PORTDOCS%%%%DOCSDIR%%/qstrlistiterator-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qstrlistiterator.html
+%%PORTDOCS%%%%DOCSDIR%%/qtextcodec-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qtextcodec-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qtextcodec.html
+%%PORTDOCS%%%%DOCSDIR%%/qtextcodecplugin-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qtextcodecplugin-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qtextcodecplugin.html
+%%PORTDOCS%%%%DOCSDIR%%/qtextstream-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qtextstream-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qtextstream.html
+%%PORTDOCS%%%%DOCSDIR%%/qthread-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qthread-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qthread.html
+%%PORTDOCS%%%%DOCSDIR%%/qtl-qvaluelist-example.html
+%%PORTDOCS%%%%DOCSDIR%%/qtl.html
+%%PORTDOCS%%%%DOCSDIR%%/qtlogo.png
+%%PORTDOCS%%%%DOCSDIR%%/qtsciicodec-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qtsciicodec-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qtsciicodec.html
+%%PORTDOCS%%%%DOCSDIR%%/qurl-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qurl-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qurl.html
+%%PORTDOCS%%%%DOCSDIR%%/qurlinfo-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qurlinfo-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qurlinfo.html
+%%PORTDOCS%%%%DOCSDIR%%/qurloperator-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qurloperator-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qurloperator.html
+%%PORTDOCS%%%%DOCSDIR%%/qvaluelist-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qvaluelist-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qvaluelist.html
+%%PORTDOCS%%%%DOCSDIR%%/qvaluelistconstiterator-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qvaluelistconstiterator.html
+%%PORTDOCS%%%%DOCSDIR%%/qvaluelistiterator-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qvaluelistiterator.html
+%%PORTDOCS%%%%DOCSDIR%%/qvaluestack-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qvaluestack-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qvaluestack.html
+%%PORTDOCS%%%%DOCSDIR%%/qvaluevector-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qvaluevector-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qvaluevector.html
+%%PORTDOCS%%%%DOCSDIR%%/qwaitcondition-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qwaitcondition-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qwaitcondition.html
+%%PORTDOCS%%%%DOCSDIR%%/qxml-h.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmlattributes-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmlattributes.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmlcontenthandler-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmlcontenthandler.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmldeclhandler-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmldeclhandler.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmldefaulthandler-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmldefaulthandler.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmldtdhandler-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmldtdhandler.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmlentityresolver-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmlentityresolver.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmlerrorhandler-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmlerrorhandler.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmlinputsource-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmlinputsource.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmllexicalhandler-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmllexicalhandler.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmllocator-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmllocator.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmlnamespacesupport-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmlnamespacesupport.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmlparseexception-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmlparseexception.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmlreader-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmlreader.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmlsimplereader-members.html
+%%PORTDOCS%%%%DOCSDIR%%/qxmlsimplereader.html
 tinyq/bin/qmake
-tinyq/doc/annotated.html
-tinyq/doc/classes.html
-tinyq/doc/groups.html
-tinyq/doc/index.html
-tinyq/doc/logo32.png
-tinyq/doc/mainclasses.html
-tinyq/doc/qasciicache-h.html
-tinyq/doc/qasciicache-members.html
-tinyq/doc/qasciicache.html
-tinyq/doc/qasciicacheiterator-members.html
-tinyq/doc/qasciicacheiterator.html
-tinyq/doc/qasciidict-h.html
-tinyq/doc/qasciidict-members.html
-tinyq/doc/qasciidict.html
-tinyq/doc/qasciidictiterator-members.html
-tinyq/doc/qasciidictiterator.html
-tinyq/doc/qbitarray-h.html
-tinyq/doc/qbitarray-members.html
-tinyq/doc/qbitarray.html
-tinyq/doc/qbuffer-h.html
-tinyq/doc/qbuffer-members.html
-tinyq/doc/qbuffer.html
-tinyq/doc/qcache-h.html
-tinyq/doc/qcache-members.html
-tinyq/doc/qcache.html
-tinyq/doc/qcacheiterator-members.html
-tinyq/doc/qcacheiterator.html
-tinyq/doc/qcstring-h.html
-tinyq/doc/qcstring-members.html
-tinyq/doc/qcstring.html
-tinyq/doc/qdatastream-h.html
-tinyq/doc/qdatastream-members.html
-tinyq/doc/qdatastream.html
-tinyq/doc/qdatetime-h.html
-tinyq/doc/qdatetime-members.html
-tinyq/doc/qdatetime.html
-tinyq/doc/qdatetimeedit-h.html
-tinyq/doc/qdatetimeedit-members.html
-tinyq/doc/qdatetimeedit.html
-tinyq/doc/qdict-h.html
-tinyq/doc/qdict-members.html
-tinyq/doc/qdict.html
-tinyq/doc/qdictiterator-members.html
-tinyq/doc/qdictiterator.html
-tinyq/doc/qdir-example.html
-tinyq/doc/qdir-h.html
-tinyq/doc/qdir-members.html
-tinyq/doc/qdir.html
-tinyq/doc/qdirectpainter-members.html
-tinyq/doc/qdirectpainter.html
-tinyq/doc/qdirectpainter_qws-h.html
-tinyq/doc/qdom-h.html
-tinyq/doc/qdomattr-members.html
-tinyq/doc/qdomattr.html
-tinyq/doc/qdomcdatasection-members.html
-tinyq/doc/qdomcdatasection.html
-tinyq/doc/qdomcharacterdata-members.html
-tinyq/doc/qdomcharacterdata.html
-tinyq/doc/qdomcomment-members.html
-tinyq/doc/qdomcomment.html
-tinyq/doc/qdomdocument-members.html
-tinyq/doc/qdomdocument.html
-tinyq/doc/qdomdocumentfragment-members.html
-tinyq/doc/qdomdocumentfragment.html
-tinyq/doc/qdomdocumenttype-members.html
-tinyq/doc/qdomdocumenttype.html
-tinyq/doc/qdomelement-members.html
-tinyq/doc/qdomelement.html
-tinyq/doc/qdomentity-members.html
-tinyq/doc/qdomentity.html
-tinyq/doc/qdomentityreference-members.html
-tinyq/doc/qdomentityreference.html
-tinyq/doc/qdomimplementation-members.html
-tinyq/doc/qdomimplementation.html
-tinyq/doc/qdomnamednodemap-members.html
-tinyq/doc/qdomnamednodemap.html
-tinyq/doc/qdomnode-members.html
-tinyq/doc/qdomnode.html
-tinyq/doc/qdomnodelist-members.html
-tinyq/doc/qdomnodelist.html
-tinyq/doc/qdomnotation-members.html
-tinyq/doc/qdomnotation.html
-tinyq/doc/qdomprocessinginstruction-members.html
-tinyq/doc/qdomprocessinginstruction.html
-tinyq/doc/qdomtext-members.html
-tinyq/doc/qdomtext.html
-tinyq/doc/qfile-h.html
-tinyq/doc/qfile-members.html
-tinyq/doc/qfile.html
-tinyq/doc/qfiledialog-h.html
-tinyq/doc/qfiledialog-members.html
-tinyq/doc/qfiledialog.html
-tinyq/doc/qfiledlg-m.png
-tinyq/doc/qfiledlg-w.png
-tinyq/doc/qfileiconprovider-members.html
-tinyq/doc/qfileiconprovider.html
-tinyq/doc/qfileinfo-h.html
-tinyq/doc/qfileinfo-members.html
-tinyq/doc/qfileinfo.html
-tinyq/doc/qfilepreview-members.html
-tinyq/doc/qfilepreview.html
-tinyq/doc/qglobal-h.html
-tinyq/doc/qintcache-h.html
-tinyq/doc/qintcache-members.html
-tinyq/doc/qintcache.html
-tinyq/doc/qintcacheiterator-members.html
-tinyq/doc/qintcacheiterator.html
-tinyq/doc/qintdict-h.html
-tinyq/doc/qintdict-members.html
-tinyq/doc/qintdict.html
-tinyq/doc/qintdictiterator-members.html
-tinyq/doc/qintdictiterator.html
-tinyq/doc/qiodevice-h.html
-tinyq/doc/qiodevice-members.html
-tinyq/doc/qiodevice.html
-tinyq/doc/qiodevicesource-members.html
-tinyq/doc/qiodevicesource.html
-tinyq/doc/qlibrary-h.html
-tinyq/doc/qlibrary-members.html
-tinyq/doc/qlibrary.html
-tinyq/doc/qmap-h.html
-tinyq/doc/qmap-members.html
-tinyq/doc/qmap.html
-tinyq/doc/qmapconstiterator-members.html
-tinyq/doc/qmapconstiterator.html
-tinyq/doc/qmapiterator-members.html
-tinyq/doc/qmapiterator.html
-tinyq/doc/qmemarray-h.html
-tinyq/doc/qmemarray-members.html
-tinyq/doc/qmemarray.html
-tinyq/doc/qmutex-h.html
-tinyq/doc/qmutex-members.html
-tinyq/doc/qmutex.html
-tinyq/doc/qnamespace-h.html
-tinyq/doc/qpair-h.html
-tinyq/doc/qpair-members.html
-tinyq/doc/qpair.html
-tinyq/doc/qptrcollection-h.html
-tinyq/doc/qptrcollection-members.html
-tinyq/doc/qptrcollection.html
-tinyq/doc/qptrdict-h.html
-tinyq/doc/qptrdict-members.html
-tinyq/doc/qptrdict.html
-tinyq/doc/qptrdictiterator-members.html
-tinyq/doc/qptrdictiterator.html
-tinyq/doc/qptrlist-h.html
-tinyq/doc/qptrlist-members.html
-tinyq/doc/qptrlist.html
-tinyq/doc/qptrlistiterator-members.html
-tinyq/doc/qptrlistiterator.html
-tinyq/doc/qptrqueue-h.html
-tinyq/doc/qptrqueue-members.html
-tinyq/doc/qptrqueue.html
-tinyq/doc/qptrstack-h.html
-tinyq/doc/qptrstack-members.html
-tinyq/doc/qptrstack.html
-tinyq/doc/qptrvector-h.html
-tinyq/doc/qptrvector-members.html
-tinyq/doc/qptrvector.html
-tinyq/doc/qregexp-h.html
-tinyq/doc/qregexp-members.html
-tinyq/doc/qregexp.html
-tinyq/doc/qregexpvalidator-members.html
-tinyq/doc/qregexpvalidator.html
-tinyq/doc/qsemaphore-h.html
-tinyq/doc/qsemaphore-members.html
-tinyq/doc/qsemaphore.html
-tinyq/doc/qsettings-h.html
-tinyq/doc/qsettings-members.html
-tinyq/doc/qsettings.html
-tinyq/doc/qsortedlist-h.html
-tinyq/doc/qsortedlist-members.html
-tinyq/doc/qsortedlist.html
-tinyq/doc/qstring-h.html
-tinyq/doc/qstring-members.html
-tinyq/doc/qstring.html
-tinyq/doc/qstringlist-h.html
-tinyq/doc/qstringlist-members.html
-tinyq/doc/qstringlist.html
-tinyq/doc/qstrlist-h.html
-tinyq/doc/qstrlist-members.html
-tinyq/doc/qstrlist.html
-tinyq/doc/qstrlistiterator-members.html
-tinyq/doc/qstrlistiterator.html
-tinyq/doc/qtextcodec-h.html
-tinyq/doc/qtextcodec-members.html
-tinyq/doc/qtextcodec.html
-tinyq/doc/qtextcodecplugin-h.html
-tinyq/doc/qtextcodecplugin-members.html
-tinyq/doc/qtextcodecplugin.html
-tinyq/doc/qtextstream-h.html
-tinyq/doc/qtextstream-members.html
-tinyq/doc/qtextstream.html
-tinyq/doc/qthread-h.html
-tinyq/doc/qthread-members.html
-tinyq/doc/qthread.html
-tinyq/doc/qtl-qvaluelist-example.html
-tinyq/doc/qtl.html
-tinyq/doc/qtlogo.png
-tinyq/doc/qtsciicodec-h.html
-tinyq/doc/qtsciicodec-members.html
-tinyq/doc/qtsciicodec.html
-tinyq/doc/qurl-h.html
-tinyq/doc/qurl-members.html
-tinyq/doc/qurl.html
-tinyq/doc/qurlinfo-h.html
-tinyq/doc/qurlinfo-members.html
-tinyq/doc/qurlinfo.html
-tinyq/doc/qurloperator-h.html
-tinyq/doc/qurloperator-members.html
-tinyq/doc/qurloperator.html
-tinyq/doc/qvaluelist-h.html
-tinyq/doc/qvaluelist-members.html
-tinyq/doc/qvaluelist.html
-tinyq/doc/qvaluelistconstiterator-members.html
-tinyq/doc/qvaluelistconstiterator.html
-tinyq/doc/qvaluelistiterator-members.html
-tinyq/doc/qvaluelistiterator.html
-tinyq/doc/qvaluestack-h.html
-tinyq/doc/qvaluestack-members.html
-tinyq/doc/qvaluestack.html
-tinyq/doc/qvaluevector-h.html
-tinyq/doc/qvaluevector-members.html
-tinyq/doc/qvaluevector.html
-tinyq/doc/qwaitcondition-h.html
-tinyq/doc/qwaitcondition-members.html
-tinyq/doc/qwaitcondition.html
-tinyq/doc/qxml-h.html
-tinyq/doc/qxmlattributes-members.html
-tinyq/doc/qxmlattributes.html
-tinyq/doc/qxmlcontenthandler-members.html
-tinyq/doc/qxmlcontenthandler.html
-tinyq/doc/qxmldeclhandler-members.html
-tinyq/doc/qxmldeclhandler.html
-tinyq/doc/qxmldefaulthandler-members.html
-tinyq/doc/qxmldefaulthandler.html
-tinyq/doc/qxmldtdhandler-members.html
-tinyq/doc/qxmldtdhandler.html
-tinyq/doc/qxmlentityresolver-members.html
-tinyq/doc/qxmlentityresolver.html
-tinyq/doc/qxmlerrorhandler-members.html
-tinyq/doc/qxmlerrorhandler.html
-tinyq/doc/qxmlinputsource-members.html
-tinyq/doc/qxmlinputsource.html
-tinyq/doc/qxmllexicalhandler-members.html
-tinyq/doc/qxmllexicalhandler.html
-tinyq/doc/qxmllocator-members.html
-tinyq/doc/qxmllocator.html
-tinyq/doc/qxmlnamespacesupport-members.html
-tinyq/doc/qxmlnamespacesupport.html
-tinyq/doc/qxmlparseexception-members.html
-tinyq/doc/qxmlparseexception.html
-tinyq/doc/qxmlreader-members.html
-tinyq/doc/qxmlreader.html
-tinyq/doc/qxmlsimplereader-members.html
-tinyq/doc/qxmlsimplereader.html
 tinyq/include/private/qdir_p.h
 tinyq/include/private/qfiledefs_p.h
 tinyq/include/private/qlibrary_p.h
@@ -414,53 +414,53 @@ tinyq/mkspecs/unixware7-cc/qmake.conf
 tinyq/mkspecs/unixware7-cc/qplatformdefs.h
 tinyq/mkspecs/unixware7-g++/qmake.conf
 tinyq/mkspecs/unixware7-g++/qplatformdefs.h
-@dirrm tinyq/mkspecs/unixware7-g++
-@dirrm tinyq/mkspecs/unixware7-cc
-@dirrm tinyq/mkspecs/unixware-g++
-@dirrm tinyq/mkspecs/ultrix-g++
-@dirrm tinyq/mkspecs/tru64-g++
-@dirrm tinyq/mkspecs/tru64-cxx
-@dirrm tinyq/mkspecs/sunos-g++
-@dirrm tinyq/mkspecs/solaris-kcc
-@dirrm tinyq/mkspecs/solaris-g++-64
-@dirrm tinyq/mkspecs/solaris-g++
-@dirrm tinyq/mkspecs/solaris-cc
-@dirrm tinyq/mkspecs/solaris-64
-@dirrm tinyq/mkspecs/sco-g++
-@dirrm tinyq/mkspecs/sco-cc
-@dirrm tinyq/mkspecs/reliant-cds
-@dirrm tinyq/mkspecs/reliant-64
-@dirrm tinyq/mkspecs/qnx-g++
-@dirrm tinyq/mkspecs/openunix-g++
-@dirrm tinyq/mkspecs/openunix-cc
-@dirrm tinyq/mkspecs/openbsd-g++
-@dirrm tinyq/mkspecs/netbsd-g++
-@dirrm tinyq/mkspecs/linux-pgcc
-@dirrm tinyq/mkspecs/linux-kcc
-@dirrm tinyq/mkspecs/linux-icc
-@dirrm tinyq/mkspecs/linux-g++
-@dirrm tinyq/mkspecs/linux-cxx
-@dirrm tinyq/mkspecs/irix-o32
-@dirrm tinyq/mkspecs/irix-n32
-@dirrm tinyq/mkspecs/irix-g++
-@dirrm tinyq/mkspecs/irix-64
-@dirrm tinyq/mkspecs/hurd-g++
-@dirrm tinyq/mkspecs/hpux-o64
-@dirrm tinyq/mkspecs/hpux-n64
-@dirrm tinyq/mkspecs/hpux-g++
-@dirrm tinyq/mkspecs/hpux-cc
-@dirrm tinyq/mkspecs/hpux-acc
-@dirrm tinyq/mkspecs/freebsd-g++
-@dirrm tinyq/mkspecs/dgux-g++
-@dirrm tinyq/mkspecs/default
-@dirrm tinyq/mkspecs/bsdi-g++
-@dirrm tinyq/mkspecs/aix-xlc
-@dirrm tinyq/mkspecs/aix-g++
-@dirrm tinyq/mkspecs/aix-64
-@dirrm tinyq/mkspecs
-@dirrm tinyq/lib
-@dirrm tinyq/include/private
-@dirrm tinyq/include
-@dirrm tinyq/doc
-@dirrm tinyq/bin
-@dirrm tinyq
+@dirrmtry tinyq/mkspecs/unixware7-g++
+@dirrmtry tinyq/mkspecs/unixware7-cc
+@dirrmtry tinyq/mkspecs/unixware-g++
+@dirrmtry tinyq/mkspecs/ultrix-g++
+@dirrmtry tinyq/mkspecs/tru64-g++
+@dirrmtry tinyq/mkspecs/tru64-cxx
+@dirrmtry tinyq/mkspecs/sunos-g++
+@dirrmtry tinyq/mkspecs/solaris-kcc
+@dirrmtry tinyq/mkspecs/solaris-g++-64
+@dirrmtry tinyq/mkspecs/solaris-g++
+@dirrmtry tinyq/mkspecs/solaris-cc
+@dirrmtry tinyq/mkspecs/solaris-64
+@dirrmtry tinyq/mkspecs/sco-g++
+@dirrmtry tinyq/mkspecs/sco-cc
+@dirrmtry tinyq/mkspecs/reliant-cds
+@dirrmtry tinyq/mkspecs/reliant-64
+@dirrmtry tinyq/mkspecs/qnx-g++
+@dirrmtry tinyq/mkspecs/openunix-g++
+@dirrmtry tinyq/mkspecs/openunix-cc
+@dirrmtry tinyq/mkspecs/openbsd-g++
+@dirrmtry tinyq/mkspecs/netbsd-g++
+@dirrmtry tinyq/mkspecs/linux-pgcc
+@dirrmtry tinyq/mkspecs/linux-kcc
+@dirrmtry tinyq/mkspecs/linux-icc
+@dirrmtry tinyq/mkspecs/linux-g++
+@dirrmtry tinyq/mkspecs/linux-cxx
+@dirrmtry tinyq/mkspecs/irix-o32
+@dirrmtry tinyq/mkspecs/irix-n32
+@dirrmtry tinyq/mkspecs/irix-g++
+@dirrmtry tinyq/mkspecs/irix-64
+@dirrmtry tinyq/mkspecs/hurd-g++
+@dirrmtry tinyq/mkspecs/hpux-o64
+@dirrmtry tinyq/mkspecs/hpux-n64
+@dirrmtry tinyq/mkspecs/hpux-g++
+@dirrmtry tinyq/mkspecs/hpux-cc
+@dirrmtry tinyq/mkspecs/hpux-acc
+@dirrmtry tinyq/mkspecs/freebsd-g++
+@dirrmtry tinyq/mkspecs/dgux-g++
+@dirrmtry tinyq/mkspecs/default
+@dirrmtry tinyq/mkspecs/bsdi-g++
+@dirrmtry tinyq/mkspecs/aix-xlc
+@dirrmtry tinyq/mkspecs/aix-g++
+@dirrmtry tinyq/mkspecs/aix-64
+@dirrmtry tinyq/mkspecs
+@dirrmtry tinyq/lib
+@dirrmtry tinyq/include/private
+@dirrmtry tinyq/include
+@dirrmtry tinyq/bin
+@dirrmtry tinyq
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
