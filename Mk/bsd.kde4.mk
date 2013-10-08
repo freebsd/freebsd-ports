@@ -305,7 +305,9 @@ IGNORE=				can't be installed: unknown USE_KDE4 component '${component}'
 post-install:	post-install-sharedmime
 . if !target(post-install-sharedmime)
 post-install-sharedmime:
+.  if defined(NO_STAGE)
 	@-${LOCALBASE}/bin/update-mime-database ${KDE4_PREFIX}/share/mime
+.  endif
 	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${LOCALBASE}/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true" >> ${TMPPLIST}
 . endif
