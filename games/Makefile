@@ -877,6 +877,7 @@
     SUBDIR += sol
     SUBDIR += solarconquest
     SUBDIR += solarwolf
+    SUBDIR += solarus
     SUBDIR += sopwith
     SUBDIR += spacejunk
     SUBDIR += speak
