@@ -27,7 +27,7 @@ CPPFLAGS+=	`${LOCALBASE}/bin/pkgconf --cflags SDL_image gl` \
 		-I ${LOCALBASE}/include
 LDFLAGS+=	`${LOCALBASE}/bin/pkgconf --libs SDL_image gl` \
 		`${LOCALBASE}/bin/smpeg-config --libs` \
-		-L ${LOCALBASE}/lib -lGLU -lglut
+		-L ${LOCALBASE}/lib -lGLU -lglut -lm
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>

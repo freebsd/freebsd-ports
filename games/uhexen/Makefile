@@ -12,6 +12,7 @@ COMMENT=	Yet another port of Hexen, popular game from Raven Software
 
 USE_GMAKE=	yes
 USE_SDL=	mixer sdl
+MAKE_ENV+=	EXTRA_LIBS=-lm
 
 OPTIONS_DEFINE=	MUSIC
 OPTIONS_DEFAULT=	MUSIC
