@@ -17,6 +17,7 @@ etc/wmconfig/Shells
 etc/wmconfig/System
 etc/wmconfig/Utilities
 @dirrm etc/wmconfig
+man/man1/wmconfig.1x.gz
 %%NLS%%share/locale/de/LC_MESSAGES/wmconfig.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/wmconfig.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/wmconfig.mo
