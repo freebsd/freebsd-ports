@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	WWW-Search
-PORTVERSION=	2.512
+PORTVERSION=	2.513
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -39,18 +39,4 @@ USES=		perl5
 USE_PERL5=	configure
 USE_DOS2UNIX=	yes
 
-MAN1=		AutoSearch.1 \
-		WebSearch.1
-MAN3=		WWW::Search.3 \
-		WWW::SearchResult.3 \
-		WWW::Search::Null.3 \
-		WWW::Search::Null::Count.3 \
-		WWW::Search::Null::Empty.3 \
-		WWW::Search::Null::Error.3 \
-		WWW::Search::Null::NoVersion.3 \
-		WWW::Search::Result.3 \
-		WWW::Search::Simple.3 \
-		WWW::Search::Test.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
