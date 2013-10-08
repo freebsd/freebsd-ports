@@ -2,19 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	drood
-PORTVERSION=	3.6
+PORTVERSION=	3.8
 CATEGORIES=	www
 MASTER_SITES=	http://www.mammothcheese.ca/
 
 MAINTAINER=	jimmy@mammothcheese.ca
 COMMENT=	Lightweight kqueue-based http/1.1 server
 
-MAN8=		drood.8 plunger.8
+MAN8=		drood.8
 
 MANCOMPRESSED=	yes
 
 NO_STAGE=	yes
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

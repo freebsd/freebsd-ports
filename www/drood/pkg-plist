@@ -1,7 +1,5 @@
 bin/drood
-bin/plunger
 etc/rc.d/drood
-etc/rc.d/plunger
 @unexec if cmp -s %D/etc/drood/types.tab %D/etc/drood/types.tab.dist; then rm -f %D/etc/drood/types.tab; fi
 etc/drood/types.tab.dist
 @dirrm etc/drood
