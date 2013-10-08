@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://log69.com/downloads/
 DISTNAME=	${PORTNAME}_sources_v${PORTVERSION}
 
-MAINTAINER=	han@log69.com
+MAINTAINER=	mail@log69.com
 COMMENT=	Auto Adjust Photo, automatic color correction of photos
 
 LIB_DEPENDS=	jasper:${PORTSDIR}/graphics/jasper \
