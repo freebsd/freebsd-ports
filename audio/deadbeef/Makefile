@@ -3,7 +3,7 @@
 
 PORTNAME=	deadbeef
 PORTVERSION=	0.5.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -166,9 +166,10 @@ PLIST_SUB+=	OGG="@comment "
 
 .if ${PORT_OPTIONS:MFFMPEG}
 PLIST_SUB+=	FFMPEG=""
-LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg \
-		avformat:${PORTSDIR}/multimedia/ffmpeg \
-		avutil:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0 \
+		libavformat0.so:${PORTSDIR}/multimedia/ffmpeg0 \
+		libavutil0.so:${PORTSDIR}/multimedia/ffmpeg0
+CONFIGURE_ARGS+=	--enable-ffmpeg
 .else
 CONFIGURE_ARGS+=	--disable-ffmpeg
 PLIST_SUB+=	FFMPEG="@comment "
@@ -359,6 +360,11 @@ post-patch:
 		${WRKSRC}/plugins/supereq/Makefile.in
 	@${REINPLACE_CMD} -e 's,/etc/timidity++/timidity-freepats.cfg:/etc/timidity/freepats.cfg:/etc/timidity/,${LOCALBASE}/share/,' \
 		${WRKSRC}/plugins/wildmidi/wildmidiplug.c
+	@${REINPLACE_CMD} \
+		-e 's,libavcodec ,libavcodec0 ,g' \
+		-e 's,libavutil ,libavutil0 ,g' \
+		-e 's,libavformat ,libavformat0 ,g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.pre.mk>
 
