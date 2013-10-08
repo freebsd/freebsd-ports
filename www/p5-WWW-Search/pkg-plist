@@ -1,5 +1,7 @@
 bin/AutoSearch
 bin/WebSearch
+man/man1/AutoSearch.1.gz
+man/man1/WebSearch.1.gz
 %%SITE_PERL%%/WWW/Search.pm
 %%SITE_PERL%%/WWW/Search/Null.pm
 %%SITE_PERL%%/WWW/Search/Null/Count.pm
@@ -11,6 +13,16 @@ bin/WebSearch
 %%SITE_PERL%%/WWW/Search/Test.pm
 %%SITE_PERL%%/WWW/SearchResult.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search/.packlist
+%%PERL5_MAN3%%/WWW::Search.3.gz
+%%PERL5_MAN3%%/WWW::SearchResult.3.gz
+%%PERL5_MAN3%%/WWW::Search::Null.3.gz
+%%PERL5_MAN3%%/WWW::Search::Null::Count.3.gz
+%%PERL5_MAN3%%/WWW::Search::Null::Empty.3.gz
+%%PERL5_MAN3%%/WWW::Search::Null::Error.3.gz
+%%PERL5_MAN3%%/WWW::Search::Null::NoVersion.3.gz
+%%PERL5_MAN3%%/WWW::Search::Result.3.gz
+%%PERL5_MAN3%%/WWW::Search::Simple.3.gz
+%%PERL5_MAN3%%/WWW::Search::Test.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
 @dirrm %%SITE_PERL%%/WWW/Search/Null
