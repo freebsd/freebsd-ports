@@ -16,8 +16,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		gmake
-USE_GCC=	yes
+USES=		gmake compiler:c++11-lang
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-default-config-file=${PREFIX}/etc/rvm.conf \
 		--enable-assume-stl-memory-exception
