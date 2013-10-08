@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wmconfig
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.arrishq.net/files/
 
@@ -14,32 +14,22 @@ LICENSE=	GPLv2
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
-MAN1=		wmconfig.1x
-
 PORTDOCS=	AUTHORS ChangeLog COPYING README TODO
 
 OPTIONS_DEFINE=	NLS DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_SUB=	yes
+NLS_CONFIGURE_ENABLE=nls
+NLS_CPPFLAGS=	-I${LOCALBASE}/include
+NLS_LDFLAGS=	-L${LOCALBASE}/lib
+NLS_USES=	gettext
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CONFIGURE_ARGS+=--enable-nls
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+.include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
