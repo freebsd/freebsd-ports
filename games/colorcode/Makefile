@@ -11,7 +11,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Advanced MasterMind game and solver
 
 USE_QT4=	gui moc_build qmake_build rcc_build uic_build
-HAS_CONFIGURE=	yes
+USES=		qmake
 WRKSRC=		${WRKDIR}/ColorCode-${PORTVERSION}
 
 DESKTOP_ENTRIES=	"ColorCode" "${COMMENT}" \
@@ -21,14 +21,10 @@ DESKTOP_ENTRIES=	"ColorCode" "${COMMENT}" \
 PLIST_FILES=	bin/colorcode \
 		share/pixmaps/colorcode.png
 
-NO_STAGE=	yes
-do-configure:
-	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS}
-
 do-install:
-	${MKDIR} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/colorcode ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/pixmaps
-	${INSTALL_DATA}	${WRKSRC}/img/cc64.png	${PREFIX}/share/pixmaps/colorcode.png
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/colorcode ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
+	${INSTALL_DATA}	${WRKSRC}/img/cc64.png	${STAGEDIR}${PREFIX}/share/pixmaps/colorcode.png
 
 .include <bsd.port.mk>
