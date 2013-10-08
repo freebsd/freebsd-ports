@@ -174,7 +174,7 @@ EXTRA_PATCHES+=	${FILESDIR}/alsa-disable.patch
 DISTFILES+=	${JTREGFILE}:jtreg
 EXTRACT_ONLY+=	${JTREGFILE}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
-USE_DISPLAY=	yes
+USES+=		display
 .else
 EXTRA_PATCHES+=	${FILESDIR}/test_gamma-disable.patch
 .endif
@@ -277,7 +277,8 @@ test: build-depends build
 	    -fp ${LOCALBASE}/lib/X11/fonts/misc > /dev/null 2>&1 & \
 	    ${ECHO_CMD} $$! > ${WRKDIR}/.Xvfb.pid
 .endif
-	@-(cd ${WRKSRC}/jdk/test; ${SETENV} ${MAKE_ENV} ${GMAKE} tests)
+	@-(cd ${WRKSRC}/jdk/test; ${SETENV} ${MAKE_ENV} \
+	    PLATFORM=bsd ARCH=${ARCH:S/i386/i586/} ${GMAKE} tests)
 .if !defined(DISPLAY)
 	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
