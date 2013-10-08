@@ -12,10 +12,10 @@ COMMENT=	A music player and a collection manager based on Qt4
 
 BUILD_DEPENDS=	audiere-config:${PORTSDIR}/audio/audiere \
 		${LOCALBASE}/lib/libdumb.a:${PORTSDIR}/audio/dumb
-LIB_DEPENDS=	avcodec:${PORTSDIR}/multimedia/ffmpeg \
-		avformat:${PORTSDIR}/multimedia/ffmpeg \
-		avutil:${PORTSDIR}/multimedia/ffmpeg \
-		tag:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0 \
+		libavformat0.so:${PORTSDIR}/multimedia/ffmpeg0 \
+		libavutil0.so:${PORTSDIR}/multimedia/ffmpeg0 \
+		libtag.so:${PORTSDIR}/audio/taglib
 
 USE_LDCONFIG=	yes
 USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build \
@@ -26,6 +26,14 @@ USE_SDL=	sdl
 QMAKEFLAGS+=	"CONFIG+=player_phonon"
 MAKE_ENV+=	INSTALL_ROOT=${PREFIX}
 QMAKEPRO=	Cuberok.pro
+
+post-patch:
+	@${REINPLACE_CMD} \
+		-e 's,libavcodec,libavcodec0,g' \
+		-e 's,libavutil,libavutil0,g' \
+		-e 's,libavformat,libavformat0,g' \
+		${WRKSRC}/Cuberok.pro \
+		${WRKSRC}/plugins/player_ffmpeg/player_ffmpeg.pro
 
 do-configure:
 	cd ${WRKSRC} && ${REINPLACE_CMD} -e 's/lib64/lib/g' \
