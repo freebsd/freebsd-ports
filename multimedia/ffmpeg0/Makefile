@@ -451,5 +451,15 @@ post-install:
 .for i in ${PROGS}
 	${INSTALL_MAN} ${WRKSRC}/doc/${i}.1 ${STAGEDIR}${MANPREFIX}/man/man1/${i}0.1
 .endfor
+	@${REINPLACE_CMD} \
+		-e 's|libavcodec|libavcodec0|' \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/libavformat0.pc
+	@${REINPLACE_CMD} \
+		-e 's|libavutil|libavutil0|' \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/libavcodec0.pc \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/libswscale0.pc
+	@${REINPLACE_CMD} \
+		-e 's|libavformat|libavformat0|' \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/libavdevice0.pc
 
 .include <bsd.port.post.mk>
