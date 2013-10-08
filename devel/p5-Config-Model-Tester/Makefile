@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Config-Model-Tester
-PORTVERSION=	2.046
+PORTVERSION=	2.047
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,6 @@ LICENSE=	LGPL21
 
 # Do not add p5-Config-Model to TEST_DEPENDS to avoid cyclic dependency
 BUILD_DEPENDS=	p5-File-Copy-Recursive>=0:${PORTSDIR}/devel/p5-File-Copy-Recursive \
-		p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir \
 		p5-Log-Log4perl>=1.11:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-Path-Class>=0.29:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
@@ -26,10 +25,10 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS_INSTALL=	p5-Config-Model-2.0[0-3][0-9] p5-Config-Model-2.040
 
+NO_STAGE=	yes
 USE_PERL5=	modbuild
 USES=		perl5
 
 MAN3=		Config::Model::Tester.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
