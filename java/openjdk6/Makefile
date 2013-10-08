@@ -275,7 +275,7 @@ test: build-depends build
 .if !defined(DISPLAY)
 	@${LOCALBASE}/bin/Xvfb :1001 -screen 0 800x600x24 \
 	    -fp ${LOCALBASE}/lib/X11/fonts/misc > /dev/null 2>&1 & \
-	    ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
+	    ${ECHO_CMD} $$! > ${WRKDIR}/.Xvfb.pid
 .endif
 	@-(cd ${WRKSRC}/jdk/test; ${SETENV} ${MAKE_ENV} ${GMAKE} tests)
 .if !defined(DISPLAY)
@@ -321,8 +321,8 @@ do-install:
 	    ${STAGEDIR}${PREFIX}/openjdk6-fastdebug/jre/lib/${ARCH}
 .endif
 .endif
-	@${ECHO} "#!/bin/sh" > ${PKGDEINSTALL}
-	@${ECHO} "#!/bin/sh" > ${PKGINSTALL}
+	@${ECHO_CMD} "#!/bin/sh" > ${PKGDEINSTALL}
+	@${ECHO_CMD} "#!/bin/sh" > ${PKGINSTALL}
 .if defined(BUILD_JRE)
 	@cd ${STAGEDIR}${PREFIX}/openjdk6-jre && \
 	    ${FIND} -s . -not -type d | \
@@ -333,9 +333,9 @@ do-install:
 	@cd ${STAGEDIR}${PREFIX}/openjdk6-jre && \
 	    ${FIND} . -type d -not -depth 0 | ${SORT} -r | \
 	    ${SED} 's,^\.,@dirrm openjdk6-jre/,' >> ${TMPPLIST}
-	@${ECHO} "@dirrm openjdk6-jre" >> ${TMPPLIST}
-	@${ECHO} '${TEST} $$2 = DEINSTALL && ${LOCALBASE}/bin/unregistervm ${PREFIX}/openjdk6-jre/bin/java' >> ${PKGDEINSTALL}
-	@${ECHO} '${TEST} $$2 = POST-INSTALL && ${LOCALBASE}/bin/registervm "${PREFIX}/openjdk6-jre/bin/java # OpenJDK6 JRE"' >> ${PKGINSTALL}
+	@${ECHO_CMD} "@dirrm openjdk6-jre" >> ${TMPPLIST}
+	@${ECHO_CMD} '${TEST} $$2 = DEINSTALL && ${LOCALBASE}/bin/unregistervm ${PREFIX}/openjdk6-jre/bin/java' >> ${PKGDEINSTALL}
+	@${ECHO_CMD} '${TEST} $$2 = POST-INSTALL && ${LOCALBASE}/bin/registervm "${PREFIX}/openjdk6-jre/bin/java # OpenJDK6 JRE"' >> ${PKGINSTALL}
 .else
 	@cd ${STAGEDIR}${PREFIX}/openjdk6 && \
 	    ${FIND} -s . -not -type d | \
@@ -346,9 +346,9 @@ do-install:
 	@cd ${STAGEDIR}${PREFIX}/openjdk6 && \
 	    ${FIND} . -type d -not -depth 0 | ${SORT} -r | \
 	    ${SED} 's,^\./,@dirrm openjdk6/,' >> ${TMPPLIST}
-	@${ECHO} "@dirrm openjdk6" >> ${TMPPLIST}
-	@${ECHO} '${TEST} $$2 = DEINSTALL && ${LOCALBASE}/bin/unregistervm ${PREFIX}/openjdk6/bin/java' >> ${PKGDEINSTALL}
-	@${ECHO} '${TEST} $$2 = POST-INSTALL && ${LOCALBASE}/bin/registervm "${PREFIX}/openjdk6/bin/java # OpenJDK6"' >> ${PKGINSTALL}
+	@${ECHO_CMD} "@dirrm openjdk6" >> ${TMPPLIST}
+	@${ECHO_CMD} '${TEST} $$2 = DEINSTALL && ${LOCALBASE}/bin/unregistervm ${PREFIX}/openjdk6/bin/java' >> ${PKGDEINSTALL}
+	@${ECHO_CMD} '${TEST} $$2 = POST-INSTALL && ${LOCALBASE}/bin/registervm "${PREFIX}/openjdk6/bin/java # OpenJDK6"' >> ${PKGINSTALL}
 .if ${PORT_OPTIONS:MFASTDEBUG}
 	@cd ${STAGEDIR}${PREFIX}/openjdk6-fastdebug && \
 	    ${FIND} -s . -not -type d | \
@@ -359,12 +359,12 @@ do-install:
 	@cd ${STAGEDIR}${PREFIX}/openjdk6-fastdebug && \
 	    ${FIND} . -type d -not -depth 0 | ${SORT} -r | \
 	    ${SED} 's,^\./,@dirrm openjdk6-fastdebug/,' >> ${TMPPLIST}
-	@${ECHO} "@dirrm openjdk6-fastdebug" >> ${TMPPLIST}
-	@${ECHO} '${TEST} $$2 = DEINSTALL && ${LOCALBASE}/bin/unregistervm ${PREFIX}/openjdk6-fastdebug/bin/java' >> ${PKGDEINSTALL}
-	@${ECHO} '${TEST} $$2 = POST-INSTALL && ${LOCALBASE}/bin/registervm "${PREFIX}/openjdk6-fastdebug/bin/java # OpenJDK6"' >> ${PKGINSTALL}
+	@${ECHO_CMD} "@dirrm openjdk6-fastdebug" >> ${TMPPLIST}
+	@${ECHO_CMD} '${TEST} $$2 = DEINSTALL && ${LOCALBASE}/bin/unregistervm ${PREFIX}/openjdk6-fastdebug/bin/java' >> ${PKGDEINSTALL}
+	@${ECHO_CMD} '${TEST} $$2 = POST-INSTALL && ${LOCALBASE}/bin/registervm "${PREFIX}/openjdk6-fastdebug/bin/java # OpenJDK6"' >> ${PKGINSTALL}
 .endif
 .endif
-	@${ECHO} "exit 0" >> ${PKGDEINSTALL}
-	@${ECHO} "exit 0" >> ${PKGINSTALL}
+	@${ECHO_CMD} "exit 0" >> ${PKGDEINSTALL}
+	@${ECHO_CMD} "exit 0" >> ${PKGINSTALL}
 
 .include <bsd.port.post.mk>
