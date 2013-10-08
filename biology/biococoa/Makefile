@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	biococoa
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 PORTREVISION=	0
 CATEGORIES=	biology gnustep
 MASTER_SITES=	http://bioinformatics.org/biococoa/downloads/ ${MASTER_SITE_DEBIAN}
@@ -21,5 +21,4 @@ USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/biococoa-${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
