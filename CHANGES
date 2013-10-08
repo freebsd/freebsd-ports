@@ -11,6 +11,24 @@ in the release notes and/or placed into UPDATING.
 All ports committers are allowed to commit to this file.
 
 20131008:
+AUTHOR: bapt@FreeBSD.org
+
+  New "compiler" USES to be able to select the compiler based on the
+  features it provides.
+  Supported arguments are:
+  - c++11-lang: the port needs a c++11 aware compiler what ever standard
+  library it uses, implies features
+  - c++11-lib: the port needs a c++11 standard library, implies features
+  - c11: the ports needs a c11 aware compiler implies features
+  - features: this will create a COMPILER_FEATURES variable which contains
+  the list of features ${CC} do support, implies env.
+  - env: the COMPILER_TYPE will be set to either gcc or clang.
+
+  By default the uses will try to use clang33 from ports when nothing in
+  base is relevant except if the user explicitly defines
+  FAVORITE_COMPILER=gcc in his make.conf
+
+20131008:
 AUTHOR: makc@FreeBSD.org
 
   New USES: qmake, configure tool widely used among Qt based projects.
