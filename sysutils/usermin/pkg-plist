@@ -1396,6 +1396,8 @@ lib/usermin/cron/help/help.it.UTF-8.html
 lib/usermin/cron/help/help.it.html
 lib/usermin/cron/help/help.nl.UTF-8.html
 lib/usermin/cron/help/help.nl.html
+lib/usermin/cron/help/help.no.UTF-8.html
+lib/usermin/cron/help/help.no.html
 lib/usermin/cron/help/help.sv.UTF-8.html
 lib/usermin/cron/help/help.sv.html
 lib/usermin/cron/help/help.zh_TW.Big5.html
@@ -1416,6 +1418,8 @@ lib/usermin/cron/help/intro.it.UTF-8.html
 lib/usermin/cron/help/intro.it.html
 lib/usermin/cron/help/intro.nl.UTF-8.html
 lib/usermin/cron/help/intro.nl.html
+lib/usermin/cron/help/intro.no.UTF-8.html
+lib/usermin/cron/help/intro.no.html
 lib/usermin/cron/help/intro.sv.UTF-8.html
 lib/usermin/cron/help/intro.sv.html
 lib/usermin/cron/help/intro.zh_TW.Big5.html
