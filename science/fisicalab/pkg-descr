@@ -1,0 +1,18 @@
+FisicaLab (can be pronounced as PhysicsLab) is an educational application to
+solve physics problems. Its main objective is let the user to focus in physics
+concepts, leaving aside the mathematical details (FisicaLab take care of them).
+This allows the user to become familiar with the physical concepts without
+running the risk of getting lost in mathematical details. And so, when the user
+gain confidence in applying physical concepts, will be better prepared to solve
+the problems by hand (with pen and paper). The latest release of FisicaLab have
+the following modules:
+
+ - Kinematics of particles 2D.
+ - Circular kinematics of particles 2D.
+ - Static of particles 2D.
+ - Static of rigid bodies 2D.
+ - Dynamics of particles 2D.
+ - Circular dynamics of particles 2D.
+ - Heat, calorimetry, ideal gas and expansion.
+
+WWW: http://www.nongnu.org/fisicalab/

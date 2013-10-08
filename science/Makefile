@@ -50,6 +50,7 @@
     SUBDIR += fastcap
     SUBDIR += fasthenry
     SUBDIR += felt
+    SUBDIR += fisicalab
     SUBDIR += flounder
     SUBDIR += fvcom
     SUBDIR += fvcom-mpi
