@@ -2,7 +2,7 @@
 
 PORTNAME=	amide
 PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -40,7 +40,7 @@ DCMTK_LIB_DEPENDS=		libdcmdata.so:${PORTSDIR}/devel/dcmtk
 FAME_CONFIGURE_ENABLE=		libfame
 FAME_LIB_DEPENDS=		libfame.so:${PORTSDIR}/multimedia/libfame
 FFMPEG_CONFIGURE_ENABLE=	ffmpeg
-FFMPEG_LIB_DEPENDS=		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG_LIB_DEPENDS=		libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0
 GSL_CONFIGURE_ENABLE=		libgsl
 GSL_LIB_DEPENDS=		libgsl.so:${PORTSDIR}/math/gsl
 VOLPACK_CONFIGURE_ENABLE=	libvolpack
@@ -52,7 +52,10 @@ NLS_CONFIGURE_ENABLE=		nls
 post-patch:
 	@${TOUCH} ${WRKSRC}/aclocal.m4 ${WRKSRC}/Makefile.in \
 		${WRKSRC}/amide_config.h.in
-	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' \
+	@${REINPLACE_CMD} \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		-e 's|libavcodec|libavcodec0|g' \
+		-e 's|libavutil|libavutil0|g' \
 		${WRKSRC}/configure
 
 .include <bsd.port.mk>
