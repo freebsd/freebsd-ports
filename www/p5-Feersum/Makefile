@@ -28,12 +28,4 @@ TEST_DEPENDS=	p5-AnyEvent>=5.26.1:${PORTSDIR}/devel/p5-AnyEvent \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		feersum.1
-MAN3=		Feersum.3 \
-		Feersum::Connection.3 \
-		Feersum::Connection::Handle.3 \
-		Feersum::Runner.3 \
-		Plack::Handler::Feersum.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
