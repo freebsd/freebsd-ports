@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Eval-LineNumbers
-PORTVERSION=	0.33
+PORTVERSION=	0.34
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MUIR/modules
@@ -16,8 +16,5 @@ LICENSE_COMB=	dual
 
 USE_PERL5=	configure
 USES=		perl5
-
-post-patch:
-	@${REINPLACE_CMD} -e '/NAME/ s|Eval-LineNumbers|Eval::LineNumbers|' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
