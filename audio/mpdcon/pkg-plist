@@ -11,6 +11,9 @@ GNUstep/Local/Applications/MPDCon.app/Resources/Current.tiff
 GNUstep/Local/Applications/MPDCon.app/Resources/GNUstep.tiff
 GNUstep/Local/Applications/MPDCon.app/Resources/Info-gnustep.plist
 GNUstep/Local/Applications/MPDCon.app/Resources/Install
+GNUstep/Local/Applications/MPDCon.app/Resources/LyricsInspector.gorm/data.classes
+GNUstep/Local/Applications/MPDCon.app/Resources/LyricsInspector.gorm/data.info
+GNUstep/Local/Applications/MPDCon.app/Resources/LyricsInspector.gorm/objects.gorm
 GNUstep/Local/Applications/MPDCon.app/Resources/MPDCon.desktop
 GNUstep/Local/Applications/MPDCon.app/Resources/MPDCon.tiff
 GNUstep/Local/Applications/MPDCon.app/Resources/MoveSong.tiff
@@ -31,6 +34,9 @@ GNUstep/Local/Applications/MPDCon.app/Resources/Player.gorm/data.classes
 GNUstep/Local/Applications/MPDCon.app/Resources/Player.gorm/data.info
 GNUstep/Local/Applications/MPDCon.app/Resources/Player.gorm/objects.gorm
 GNUstep/Local/Applications/MPDCon.app/Resources/Playlist.tiff
+GNUstep/Local/Applications/MPDCon.app/Resources/PlaylistInspector.gorm/data.classes
+GNUstep/Local/Applications/MPDCon.app/Resources/PlaylistInspector.gorm/data.info
+GNUstep/Local/Applications/MPDCon.app/Resources/PlaylistInspector.gorm/objects.gorm
 GNUstep/Local/Applications/MPDCon.app/Resources/PlaylistViewer.gorm/Current.tiff
 GNUstep/Local/Applications/MPDCon.app/Resources/PlaylistViewer.gorm/data.classes
 GNUstep/Local/Applications/MPDCon.app/Resources/PlaylistViewer.gorm/data.info
@@ -44,18 +50,25 @@ GNUstep/Local/Applications/MPDCon.app/Resources/Preferences.gorm/objects.gorm
 GNUstep/Local/Applications/MPDCon.app/Resources/Prev.tiff
 GNUstep/Local/Applications/MPDCon.app/Resources/Repeat.tiff
 GNUstep/Local/Applications/MPDCon.app/Resources/Shuffle.tiff
+GNUstep/Local/Applications/MPDCon.app/Resources/SongInspector.gorm/data.classes
+GNUstep/Local/Applications/MPDCon.app/Resources/SongInspector.gorm/data.info
+GNUstep/Local/Applications/MPDCon.app/Resources/SongInspector.gorm/objects.gorm
+GNUstep/Local/Applications/MPDCon.app/Resources/Star.tiff
 GNUstep/Local/Applications/MPDCon.app/Resources/StatisticsViewer.gorm/data.classes
 GNUstep/Local/Applications/MPDCon.app/Resources/StatisticsViewer.gorm/data.info
 GNUstep/Local/Applications/MPDCon.app/Resources/StatisticsViewer.gorm/objects.gorm
 GNUstep/Local/Applications/MPDCon.app/Resources/Stop.tiff
 GNUstep/Local/Applications/MPDCon.app/stamp.make
 GNUstep/Local/Tools/MPDCon
-@dirrm GNUstep/Local/Applications/MPDCon.app/Resources/StatisticsViewer.gorm
-@dirrm GNUstep/Local/Applications/MPDCon.app/Resources/Preferences.gorm
-@dirrm GNUstep/Local/Applications/MPDCon.app/Resources/PlaylistsManager.gorm
-@dirrm GNUstep/Local/Applications/MPDCon.app/Resources/PlaylistViewer.gorm
-@dirrm GNUstep/Local/Applications/MPDCon.app/Resources/Player.gorm
-@dirrm GNUstep/Local/Applications/MPDCon.app/Resources/CrossfadeView.gorm
-@dirrm GNUstep/Local/Applications/MPDCon.app/Resources/Collection.gorm
-@dirrm GNUstep/Local/Applications/MPDCon.app/Resources
-@dirrm GNUstep/Local/Applications/MPDCon.app
+@dirrmtry GNUstep/Local/Applications/MPDCon.app/Resources/StatisticsViewer.gorm
+@dirrmtry GNUstep/Local/Applications/MPDCon.app/Resources/SongInspector.gorm
+@dirrmtry GNUstep/Local/Applications/MPDCon.app/Resources/Preferences.gorm
+@dirrmtry GNUstep/Local/Applications/MPDCon.app/Resources/PlaylistsManager.gorm
+@dirrmtry GNUstep/Local/Applications/MPDCon.app/Resources/PlaylistViewer.gorm
+@dirrmtry GNUstep/Local/Applications/MPDCon.app/Resources/PlaylistInspector.gorm
+@dirrmtry GNUstep/Local/Applications/MPDCon.app/Resources/Player.gorm
+@dirrmtry GNUstep/Local/Applications/MPDCon.app/Resources/LyricsInspector.gorm
+@dirrmtry GNUstep/Local/Applications/MPDCon.app/Resources/CrossfadeView.gorm
+@dirrmtry GNUstep/Local/Applications/MPDCon.app/Resources/Collection.gorm
+@dirrmtry GNUstep/Local/Applications/MPDCon.app/Resources
+@dirrmtry GNUstep/Local/Applications/MPDCon.app
