@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.io.com/~manoj/file/
 MAINTAINER=	jos@catnook.com
 COMMENT=	Portable tools to manage processes and networked services
 
+EXPIRATION_DATE=	2013-11-01
+
 BROKEN=		Unfetchable due to MASTER_SITES reorganization
 USES=		gmake
 USE_BZIP2=	yes
