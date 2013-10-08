@@ -1,0 +1,20 @@
+--- Makefile.in.orig	2013-10-08 11:01:04.306764000 +0200
++++ Makefile.in	2013-10-08 11:27:51.000000000 +0200
+@@ -728,7 +728,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-gtksqldocDATA
++install-data-am: 
+ 
+ install-dvi: install-dvi-recursive
+ 
+@@ -764,7 +764,7 @@
+ 
+ ps-am:
+ 
+-uninstall-am: uninstall-gtksqldocDATA
++uninstall-am: 
+ 
+ .MAKE: $(RECURSIVE_CLEAN_TARGETS) $(RECURSIVE_TARGETS) install-am \
+ 	install-strip
