@@ -12,6 +12,7 @@ COMMENT=	GRaphics Over Miscellaneous Objects (Gromit)
 
 USE_GNOME=	gtk20
 USES=		pkgconfig
+CFLAGS+=	-lm
 
 DOCS=		AUTHORS ChangeLog README
 

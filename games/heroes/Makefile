@@ -47,7 +47,7 @@ MAN6=		heroes.6 heroeslvl.6
 INFO=		heroes
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib -lsmpeg ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib -lsmpeg -lm ${PTHREAD_LIBS}
 
 NO_STAGE=	yes
 pre-everything::

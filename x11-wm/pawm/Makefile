@@ -14,6 +14,7 @@ USE_XORG=	x11 xft xrandr xrender xpm
 USES=		cmake pkgconfig
 CMAKE_ARGS=	-DCMAKE_CONFIG_PREFIX:STRING="${PREFIX}/etc" \
 		-DX11_LIBRARY_DIRS:STRING="${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib -lXext -lXrender
 
 .if defined(WITH_SN)
 LIB_DEPENDS+=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification

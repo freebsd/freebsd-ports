@@ -25,6 +25,7 @@ USES=		cmake:outsource
 CMAKE_SOURCE_PATH=	${WRKSRC}/doomsday
 CFLAGS+=	-I${LOCALBASE}/include/libpng15
 CMAKE_ARGS+=	-DCMAKE_EXE_LINKER_FLAGS:STRING="-Wl,--export-dynamic"
+LDFLAGS+=	-lm
 
 MAN6=		doomsday.6
 
