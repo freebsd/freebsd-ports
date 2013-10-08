@@ -25,6 +25,7 @@ USE_XORG=	xrandr
 USE_DOS2UNIX=	*.pro *.cpp  *.h *.ui *.ui *.rc *.htm *.dat *.css
 USE_QT4=	moc_build qmake_build rcc_build uic_build iconengines imageformats \
 		corelib svg xml opengl network
+QMAKEFLAGS=	QMAKE_LFLAGS="-L${LOCALBASE}/lib -lX11 -lSDL-1.2"
 
 PORTDOCS=	README
 

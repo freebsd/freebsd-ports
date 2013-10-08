@@ -15,6 +15,7 @@ USE_ZIP=	yes
 INSTALLS_ICONS=	yes
 USE_QT4=	gui xml qmake_build uic_build moc_build multimedia \
 		rcc_build
+QMAKEFLAGS=	QMAKE_LFLAGS="-lz"
 USE_DOS2UNIX=	rc/alarm.pri
 
 NO_STAGE=	yes
