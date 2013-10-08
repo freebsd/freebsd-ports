@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	check_memcached_paranoid
-PORTVERSION=	0.20091016
-PORTREVISION=	1
+PORTVERSION=	0.20131004
 CATEGORIES=	net-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -10,7 +9,7 @@ DISTFILES=	# none
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Nagios plugin for checking memcached
 
-LIB_DEPENDS=	memcache:${PORTSDIR}/databases/libmemcache
+LIB_DEPENDS=	memcached:${PORTSDIR}/databases/libmemcached
 BUILD_DEPENDS=	nagios-plugins>0:${PLUGINS} \
 		${EXTRA_DEPENDS} \
 		${NONEXISTENT}:${PLUGINS}:build
@@ -26,7 +25,6 @@ EXTRA_DEPENDS=	automake>0:${PORTSDIR}/devel/automake \
 		libtool>0:${PORTSDIR}/devel/libtool \
 		gmake:${PORTSDIR}/devel/gmake
 
-NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${FILESDIR}/${FILE} ${WRKSRC}
@@ -34,15 +32,16 @@ do-extract:
 do-build:
 	cd ${WRKSRC}; \
 	NDIR=$$(${NDIR_CMD}); \
-	${CC} ${CFLAGS} -DLOCALEDIR=\"${LOCALBASE}/share/locale\" \
+	${CC} ${CFLAGS} -DLOCALEDIR=\"${LOCALBASE}/share/locale\" -D__need_getopt \
 		-I$${NDIR} -I$${NDIR}/plugins -I$${NDIR}/gl -I$${NDIR}/lib -I${LOCALBASE}/include \
 		-o ${PORTNAME} \
 		$${NDIR}/plugins/netutils.o $${NDIR}/plugins/utils.o \
 		$${NDIR}/lib/utils_base.o $${NDIR}/gl/getopt.o $${NDIR}/gl/getopt1.o \
 		$${NDIR}/gl/sha1.o \
-		-L${LOCALBASE}/lib -lintl -lmemcache ${FILE}
+		-L${LOCALBASE}/lib -lintl -lmemcached ${FILE}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/libexec/nagios
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/libexec/nagios
 
 .include <bsd.port.mk>
