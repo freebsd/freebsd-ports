@@ -7,6 +7,12 @@ bin/feersum
 %%SITE_PERL%%/%%PERL_ARCH%%/Feersum/Runner.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Feersum/Connection.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Feersum/Connection/Handle.pm
+man/man1/feersum.1.gz
+%%PERL5_MAN3%%/Feersum.3.gz
+%%PERL5_MAN3%%/Feersum::Connection.3.gz
+%%PERL5_MAN3%%/Feersum::Connection::Handle.3.gz
+%%PERL5_MAN3%%/Feersum::Runner.3.gz
+%%PERL5_MAN3%%/Plack::Handler::Feersum.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Feersum
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Plack/Handler
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Plack
