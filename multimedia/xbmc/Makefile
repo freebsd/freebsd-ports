@@ -21,31 +21,31 @@ BUILD_DEPENDS=	enca:${PORTSDIR}/converters/enca \
 		dvdread-config:${PORTSDIR}/multimedia/libdvdread \
 		gtk-update-icon-cache:${PORTSDIR}/x11-toolkits/gtk20 \
 		swig2.0:${PORTSDIR}/devel/swig20
-LIB_DEPENDS=	ass:${PORTSDIR}/multimedia/libass \
-		boost_thread:${PORTSDIR}/devel/boost-libs \
-		cdio:${PORTSDIR}/sysutils/libcdio	\
-		curl:${PORTSDIR}/ftp/curl \
-		dbus-1:${PORTSDIR}/devel/dbus \
-		enca:${PORTSDIR}/converters/enca \
-		GLEW:${PORTSDIR}/graphics/glew \
-		FLAC:${PORTSDIR}/audio/flac \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		freetype:${PORTSDIR}/print/freetype2 \
-		fribidi:${PORTSDIR}/converters/fribidi \
-		lzo2:${PORTSDIR}/archivers/lzo2 \
-		jasper:${PORTSDIR}/graphics/jasper \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		mad:${PORTSDIR}/audio/libmad \
-		modplug:${PORTSDIR}/audio/libmodplug \
-		mpeg2:${PORTSDIR}/multimedia/libmpeg2 \
-		pcre:${PORTSDIR}/devel/pcre \
-		png15:${PORTSDIR}/graphics/png \
-		samplerate:${PORTSDIR}/audio/libsamplerate \
-		sqlite3:${PORTSDIR}/databases/sqlite3 \
-		tag:${PORTSDIR}/audio/taglib \
-		tinyxml:${PORTSDIR}/textproc/tinyxml \
-		vorbis:${PORTSDIR}/audio/libvorbis \
-		yajl:${PORTSDIR}/devel/yajl
+LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass \
+		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libcdio.so:${PORTSDIR}/sysutils/libcdio	\
+		libcurl.so:${PORTSDIR}/ftp/curl \
+		libdbus-1.so:${PORTSDIR}/devel/dbus \
+		libenca.so:${PORTSDIR}/converters/enca \
+		libGLEW.so:${PORTSDIR}/graphics/glew \
+		libFLAC.so:${PORTSDIR}/audio/flac \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libfribidi.so:${PORTSDIR}/converters/fribidi \
+		liblzo2.so:${PORTSDIR}/archivers/lzo2 \
+		libjasper.so:${PORTSDIR}/graphics/jasper \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libmad.so:${PORTSDIR}/audio/libmad \
+		libmodplug.so:${PORTSDIR}/audio/libmodplug \
+		libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2 \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
+		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
+		libtag.so:${PORTSDIR}/audio/taglib \
+		libtinyxml.so:${PORTSDIR}/textproc/tinyxml \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libyajl.so:${PORTSDIR}/devel/yajl
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		glxinfo:${PORTSDIR}/graphics/mesa-demos \
 		nmblookup:${PORTSDIR}/net/samba-nmblookup \
@@ -53,8 +53,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
 FETCH_ARGS=	-Fpr
-USES=		pkgconfig
-USE_GMAKE=	yes
+USES=		gmake iconv pkgconfig
 USE_AUTOTOOLS=	autoconf libtool automake libltdl
 GNU_CONFIGURE=	yes
 USE_XORG=	xt xmu xrandr xtst
@@ -89,7 +88,6 @@ VORBIS_DESC=	Ogg Vorbis audio encoder
 OPTIONS_DEFAULT=	AIRPLAY AVAHI CEC LAME LIBBLURAY HAL MYSQL \
 			RTMP SFTP SMB VORBIS WEBSERVER
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900000
@@ -97,9 +95,6 @@ OPTIONS_DEFAULT+=	EXTERNAL_FFMPEG
 .endif
 
 CONFIGURE_ARGS+=	--disable-nfs
-
-MAN1=	xbmc.bin.1
-MLINKS=	xbmc.bin.1 xbmc.1
 
 .include <bsd.port.options.mk>
 
@@ -269,11 +264,16 @@ post-patch:
 		${WRKSRC}/lib/libsidplay2/libsidplay/src/mos656x/mos656x.h
 	${REINPLACE_CMD} 's;make;gmake;' ${WRKSRC}/bootstrap
 	${REINPLACE_CMD} 's;which swig;&2.0;' ${WRKSRC}/codegenerator.mk
+.if empty(ICONV_LIB)
+	${REINPLACE_CMD}  -e 's;^checking for main in -liconv\.\.\.;checking for iconv...;' \
+			-e 's;-liconv;${ICONV_LIB};' ${WRKSRC}/configure
+.endif
 
 run-autotools:
 	@cd ${WRKSRC} && ${SH} ./bootstrap
 
 post-install:
-	@${INSTALL_MAN} ${WRKSRC}/docs/manpages/xbmc.bin.1 ${MAN1PREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/docs/manpages/xbmc.bin.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	@(cd ${STAGEDIR}${MAN1PREFIX}/man/man1 && ${LN} -sf xbmc.bin.1.gz xbmc.1.gz)
 
 .include <bsd.port.post.mk>
