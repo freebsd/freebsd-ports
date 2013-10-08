@@ -4,10 +4,14 @@ bin/qpxtool
 bin/qscan
 bin/qscand
 bin/readdvd
+include/qpxtool/colors.h
 include/qpxtool/common_functions.h
+include/qpxtool/csstables.h
 include/qpxtool/pioneer_spdctl.h
 include/qpxtool/plextor_features.h
 include/qpxtool/qpx_mmc.h
+include/qpxtool/qpx_mmc_defs.h
+include/qpxtool/qpx_opcodes.h
 include/qpxtool/qpx_scan.h
 include/qpxtool/qpx_scan_plugin_api.h
 include/qpxtool/qpx_transport.h
@@ -39,11 +43,18 @@ lib/qpxtool/libqscan_nec.so
 lib/qpxtool/libqscan_pioneer.so
 lib/qpxtool/libqscan_plextor.so
 lib/qpxtool/libqscan_tsst.so
+man/man1/cdvdcontrol.1.gz
+man/man1/f1tattoo.1.gz
+man/man1/qpxtool.1.gz
+man/man1/qscan.1.gz
+man/man1/qscand.1.gz
+man/man1/readdvd.1.gz
+man/man8/pxfw.8.gz
 sbin/pxfw
 share/applications/qpxtool.desktop
 share/pixmaps/qpxtool.png
-%%DATADIR%%/locale/qpxtool.ru_RU.qm
 %%DATADIR%%/locale/qpxtool.de_DE.qm
+%%DATADIR%%/locale/qpxtool.ru_RU.qm
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
