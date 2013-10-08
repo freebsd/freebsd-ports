@@ -1,4 +1,3 @@
-lib/libtn.a
 include/tn/colors.h
 include/tn/dscheme.h
 include/tn/elements.h
@@ -13,22 +12,23 @@ include/tn/tn_c_w32.h
 include/tn/tn_h_nc.h
 include/tn/tn_h_w32.h
 include/tn/xmem.h
-%%PORTDOCS%%share/doc/terminality/curs1.c
-%%PORTDOCS%%share/doc/terminality/extra1.c
-%%PORTDOCS%%share/doc/terminality/extra2.c
-%%PORTDOCS%%share/doc/terminality/hello1.c
-%%PORTDOCS%%share/doc/terminality/hello2.c
-%%PORTDOCS%%share/doc/terminality/index.html
-%%PORTDOCS%%share/doc/terminality/keyb1.c
-%%PORTDOCS%%share/doc/terminality/ref-tn.html
-%%PORTDOCS%%share/doc/terminality/screenshot/curs1.png
-%%PORTDOCS%%share/doc/terminality/screenshot/extra1.png
-%%PORTDOCS%%share/doc/terminality/screenshot/extra2.png
-%%PORTDOCS%%share/doc/terminality/screenshot/hello1.png
-%%PORTDOCS%%share/doc/terminality/screenshot/hello2.png
-%%PORTDOCS%%share/doc/terminality/screenshot/keyb1.png
-%%PORTDOCS%%share/doc/terminality/tutor-extra.html
-%%PORTDOCS%%share/doc/terminality/tutor-tn.html
-%%PORTDOCS%%@dirrm share/doc/terminality/screenshot
-%%PORTDOCS%%@dirrm share/doc/terminality
-@dirrm include/tn
+lib/libtn.a
+%%PORTDOCS%%%%DOCSDIR%%/curs1.c
+%%PORTDOCS%%%%DOCSDIR%%/extra1.c
+%%PORTDOCS%%%%DOCSDIR%%/extra2.c
+%%PORTDOCS%%%%DOCSDIR%%/hello1.c
+%%PORTDOCS%%%%DOCSDIR%%/hello2.c
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/keyb1.c
+%%PORTDOCS%%%%DOCSDIR%%/ref-tn.html
+%%PORTDOCS%%%%DOCSDIR%%/screenshot/curs1.png
+%%PORTDOCS%%%%DOCSDIR%%/screenshot/extra1.png
+%%PORTDOCS%%%%DOCSDIR%%/screenshot/extra2.png
+%%PORTDOCS%%%%DOCSDIR%%/screenshot/hello1.png
+%%PORTDOCS%%%%DOCSDIR%%/screenshot/hello2.png
+%%PORTDOCS%%%%DOCSDIR%%/screenshot/keyb1.png
+%%PORTDOCS%%%%DOCSDIR%%/tutor-extra.html
+%%PORTDOCS%%%%DOCSDIR%%/tutor-tn.html
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/screenshot
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry include/tn
