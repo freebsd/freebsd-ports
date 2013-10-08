@@ -14,6 +14,21 @@
 %%SITE_PERL%%/Number/Tolerant/Type/plus_or_minus_pct.pm
 %%SITE_PERL%%/Number/Tolerant/Type/to.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/Tolerant/.packlist
+%%PERL5_MAN3%%/Number::Tolerant.3.gz
+%%PERL5_MAN3%%/Number::Tolerant::Constant.3.gz
+%%PERL5_MAN3%%/Number::Tolerant::Type.3.gz
+%%PERL5_MAN3%%/Number::Tolerant::Type::constant.3.gz
+%%PERL5_MAN3%%/Number::Tolerant::Type::infinite.3.gz
+%%PERL5_MAN3%%/Number::Tolerant::Type::less_than.3.gz
+%%PERL5_MAN3%%/Number::Tolerant::Type::more_than.3.gz
+%%PERL5_MAN3%%/Number::Tolerant::Type::offset.3.gz
+%%PERL5_MAN3%%/Number::Tolerant::Type::or_less.3.gz
+%%PERL5_MAN3%%/Number::Tolerant::Type::or_more.3.gz
+%%PERL5_MAN3%%/Number::Tolerant::Type::plus_or_minus.3.gz
+%%PERL5_MAN3%%/Number::Tolerant::Type::plus_or_minus_pct.3.gz
+%%PERL5_MAN3%%/Number::Tolerant::Type::to.3.gz
+%%PERL5_MAN3%%/Number::Tolerant::Union.3.gz
+%%PERL5_MAN3%%/Test::Tolerant.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/Tolerant
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number
 @dirrm %%SITE_PERL%%/Number/Tolerant/Type
