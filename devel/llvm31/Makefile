@@ -3,6 +3,7 @@
 
 PORTNAME=	llvm31
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTNAME=	llvm-${PORTVERSION}.src
@@ -22,7 +23,6 @@ CONFLICTS=	llvm-[3]* llvm-devel-[23]* llvm29-*
 
 USES=		gmake perl5
 GNU_CONFIGURE=	yes
-USE_GCC=	4.2+
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	yes
 

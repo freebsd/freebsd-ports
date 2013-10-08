@@ -3,6 +3,7 @@
 
 PORTNAME=	clang31
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTNAME=	clang-${PORTVERSION}.src
@@ -35,7 +36,6 @@ BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 
 GNU_CONFIGURE=	yes
 USES=		gmake perl5
-USE_GCC=	4.2+
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 
