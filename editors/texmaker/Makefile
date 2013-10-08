@@ -10,46 +10,35 @@ MASTER_SITES=	http://www.xm1math.net/texmaker/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	LaTeX Development Environment
 
-LIB_DEPENDS=	poppler:${PORTSDIR}/graphics/poppler \
-		poppler-qt4:${PORTSDIR}/graphics/poppler-qt4
+LIB_DEPENDS=	libpoppler.so:${PORTSDIR}/graphics/poppler \
+		libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
+USES=		qmake
 USE_BZIP2=	yes
 USE_GHOSTSCRIPT=yes
 USE_QT4=	gui network xml webkit \
 		moc_build qmake_build rcc_build uic_build
 USE_TEX=	latex dvipsk
-HAS_CONFIGURE=	yes
-QMAKE_ARGS=	PREFIX=${PREFIX} ICONDIR=${PREFIX}/share/pixmaps \
+QMAKE_ARGS=	ICONDIR=${PREFIX}/share/pixmaps \
 		DESKTOPDIR=${DESKTOPDIR}
 
 OPTIONS_DEFINE=	GV XDVI
+
 GV_DESC=	View ps files with gv
+GV_RUN_DEPENDS+=	gv:${PORTSDIR}/print/gv
+
 XDVI_DESC=	View dvi files with xdvi
+XDVI_RUN_DEPENDS+=	xdvi:${PORTSDIR}/print/xdvik
 
 STRIP_FILES=	bin/texmaker
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MXDVI}
-RUN_DEPENDS+=	xdvi:${PORTSDIR}/print/xdvik
-.endif
-
-.if ${PORT_OPTIONS:MGV}
-RUN_DEPENDS+=	gv:${PORTSDIR}/print/gv
-.endif
 
 pre-configure:
 	${REINPLACE_CMD} -e 's,/usr/include,${LOCALBASE}/include,g' \
 		-e 's,/usr/lib,${LOCALBASE}/lib,g' \
 		${WRKSRC}/texmaker.pro
 
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS} texmaker.pro
-
 post-install:
-	${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}
+	${STRIP_CMD} ${STRIP_FILES:S,^,${STAGEDIR}${PREFIX}/,}
 
 .include <bsd.port.mk>
