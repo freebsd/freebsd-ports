@@ -9,7 +9,7 @@ CATEGORIES=	multimedia audio kde
 MASTER_SITES=	http://kmplayer.kde.org/pkgs/
 PKGNAMESUFFIX=	-kde4
 
-MAINTAINER=	kris@pcbsd.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	KDE frontend to Phonon / KDE4
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
