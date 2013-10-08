@@ -27,7 +27,4 @@ RUN_DEPENDS=	p5-Dancer>0:${PORTSDIR}/www/p5-Dancer \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Dancer::Plugin::Passphrase.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
