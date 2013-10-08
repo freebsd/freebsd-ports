@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	gworkspace
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	deskutils gnustep
 #MASTER_SITES=	http://www.gnustep.it/enrico/gworkspace/
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	usr-apps
 PKGNAMESUFFIX=	-gwmetadata${PKGNAMESUFFIX2}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	theraven@FreeBSD.org
 COMMENT=	GWMetadata for GNUstep workspace manager
 
 LICENSE=	GPLv2
@@ -36,7 +36,6 @@ MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
 GWORKSPACE_PORT?=	deskutils/gworkspace
 PREFERENCEPANES_PORT?=	deskutils/preferencepanes
 
-NO_STAGE=	yes
 post-patch:
 	${CP} ${WRKSRC}/gmds/mdextractor/Extractors/JpegExtractor/GNUmakefile.in \
 		${WRKSRC}/gmds/mdextractor/Extractors/JpegExtractor/GNUmakefile
