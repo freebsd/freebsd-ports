@@ -321,9 +321,6 @@ do-install:
 	    ${STAGEDIR}${PREFIX}/openjdk6-fastdebug/jre/lib/${ARCH}
 .endif
 .endif
-
-post-install:
-	@${RM} -f ${TMPPLIST}
 	@${ECHO} "#!/bin/sh" > ${PKGDEINSTALL}
 	@${ECHO} "#!/bin/sh" > ${PKGINSTALL}
 .if defined(BUILD_JRE)
