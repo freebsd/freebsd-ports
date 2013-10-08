@@ -26,11 +26,6 @@ USES=		gmake perl5
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	yes
 
-_CCVERSION=	${CC} --version
-.if ${_CCVERSION:Mclang}
-USE_CXXSTD=	c++11
-.endif
-
 # Suggested tweaks from http://llvm.org/docs/Packaging.html
 CONFIGURE_ARGS+=	--enable-shared
 MAKE_ARGS+=		REQUIRES_RTTI=1
