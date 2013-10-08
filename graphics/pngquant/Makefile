@@ -48,6 +48,9 @@ OPENMP_LDFLAGS=	-lgomp -pthread
 CFLAGS+=	-DNDEBUG
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-$$(MAKEFLAGS)||' ${WRKSRC}/Makefile
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pngquant ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/pngquant.1 ${STAGEDIR}${MANPREFIX}/man/man1
