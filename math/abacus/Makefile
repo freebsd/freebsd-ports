@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libClp.so:${PORTSDIR}/math/coinmp
 
-USE_GCC=	4.4+
+USE_GCC=	yes
 USES=		gmake perl5
 USE_PERL5=	build
 USE_LDCONFIG=	yes
