@@ -6,7 +6,7 @@ PORTVERSION=	0.8
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unique image postprocessing application
 
 LICENSE=	GPLv3
@@ -17,11 +17,12 @@ USE_WX=		2.8+
 
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
 post-patch:
-	${REINPLACE_CMD} -e 's,-Ofast.*},${CXXFLAGS},' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's,-Ofast.*},${CXXFLAGS}, ; \
+		s,CXXFLAGS_WX +=,& ${CXXFLAGS} -I${LOCALBASE}/include,' \
+			${WRKSRC}/${MAKEFILE}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
