@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wackford-squeers
-PORTVERSION=	1.16
+PORTVERSION=	1.17
 CATEGORIES=	net
 MASTER_SITES=	http://www.mammothcheese.ca/
 
