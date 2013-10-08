@@ -17,7 +17,6 @@ USE_ZIP=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	${OPSYS} ${ARCH:C/.*(64)/\1/}
-MAKE_ARGS=	CC="${CC}"
 ALL_TARGET=	${PORTNAME}
 WRKSRC=		${WRKDIR}/mvdsv
 
@@ -35,7 +34,6 @@ OPTIONS_DEFAULT+=	KQUEUE
 
 KQUEUE_DESC=	Kqueue support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MKQUEUE}
@@ -47,17 +45,10 @@ MAKE_ARGS+=	-DWITHOUT_X86_ASM
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's,gcc,${CC},' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,^inline ,,' ${WRKSRC}/source/sv_sys_unix.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-
-post-install:
-# Checking for presence of ${PKGMESSAGE} explicitly does not work here
-.if exists(${.CURDIR}/pkg-message)
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
