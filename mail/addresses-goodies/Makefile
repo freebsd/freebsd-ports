@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	addresses
-PORTVERSION=	0.4.7
+PORTVERSION=	0.4.8
 PORTREVISION=	1
 CATEGORIES=	mail gnustep
 MASTER_SITES=   ${MASTER_SITE_SAVANNAH}
@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=     gap
 PKGNAMESUFFIX=	-goodies${PKGNAMESUFFIX2}
 DISTNAME=	Addresses-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	theraven@FreeBSD.org
 COMMENT=	Goodies for addressbook for GNUstep
 
 LICENSE=	LGPL21
@@ -23,12 +23,11 @@ USE_GNUSTEP_LOCAL_LIBS+=	Addresses:${ADDRESSES_PORT}
 USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 
 UNIQUENAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
-WRKSRC=		${WRKDIR}/Addresses/Goodies
+WRKSRC=		${WRKDIR}/Addresses-${PORTVERSION}/Goodies
 
 ADDRESSES_PORT?=	mail/addresses
 GWORKSPACE_PORT?=	deskutils/gworkspace
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|LDAPAddressBook||' \
 		-e 's|VCFViewer||' \
