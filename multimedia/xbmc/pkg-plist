@@ -31,6 +31,8 @@ lib/xbmc/system/players/paplayer/timidity-%%ARCH%%-freebsd.so
 lib/xbmc/system/players/paplayer/vgmstream-%%ARCH%%-freebsd.so
 lib/xbmc/xbmc-xrandr
 lib/xbmc/xbmc.bin
+man/man1/xbmc.bin.1.gz
+man/man1/xbmc.1.gz
 %%DOCSDIR%%/LICENSE.GPL
 %%DOCSDIR%%/README.linux
 %%DOCSDIR%%/copying.txt
