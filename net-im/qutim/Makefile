@@ -13,6 +13,9 @@ DISTNAME=	qutim_${PORTVERSION}_svn529
 MAINTAINER=	webmaster@kibab.com
 COMMENT=	Qt4-based multiprotocol IM client with advanced features
 
+DEPRECATED=	Old version, a new one needs to be ported from scratch
+EXPIRATION_DATE=	2013-11-05
+
 USE_QT4=	designer_build	\
 		gui		\
 		imageformats	\
