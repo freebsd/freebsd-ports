@@ -19,6 +19,7 @@ LIB_DEPENDS=	poppler-qt4:${PORTSDIR}/graphics/poppler-qt4
 USES=		pkgconfig
 USE_QT4=	qmake_build gui corelib rcc_build moc_build uic_build \
 		dbus xml scripttools designer_build
+QMAKEFLAGS=	QMAKE_LFLAGS="-lz"
 QMAKE_ARGS=	INSTALL_PREFIX=${PREFIX} \
 		DATA_DIR=${DATADIR} \
 		DOCS_DIR=${DOCSDIR} \
