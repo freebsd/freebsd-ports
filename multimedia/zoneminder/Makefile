@@ -3,7 +3,7 @@
 
 PORTNAME=	zoneminder
 PORTVERSION=	1.25.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www2.zoneminder.com/downloads/ \
 		http://www.zoneminder.com/downloads/
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/sudo:${PORTSDIR}/security/sudo
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		netpbm.1:${PORTSDIR}/graphics/netpbm \
 		pcre.3:${PORTSDIR}/devel/pcre \
-		avutil.1:${PORTSDIR}/multimedia/ffmpeg
+		libavutil0.so:${PORTSDIR}/multimedia/ffmpeg0
 BUILD_DEPENDS=	${LOCALBASE}/bin/php-config:${PORTSDIR}/lang/php5-extensions \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
@@ -36,6 +36,8 @@ USE_PHP=	json mysql session
 USE_MYSQL=	yes
 USE_RC_SUBR=	zoneminder
 
+CFLAGS+=	-I${LOCALBASE}/include/ffmpeg0 -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib/ffmpeg0
 CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} \
 		--with-webdir=${WWWDIR}/data \
 		--with-cgidir=${WWWDIR}/cgi-bin \
@@ -110,7 +112,15 @@ post-configure:
 post-patch:
 	${REINPLACE_CMD} -e 's,/bin:/usr/bin,/bin:/usr/bin:${LOCALBASE}/bin,g' ${WRKSRC}/scripts/*.pl.in
 	${REINPLACE_CMD} -e 's,sudo,${LOCALBASE}/bin/sudo,g' ${WRKSRC}/scripts/zmpkg.pl.in
-	${REINPLACE_CMD} -e 's," == "," = ",g' ${WRKSRC}/configure
+	${REINPLACE_CMD} \
+		-e 's," == "," = ",g' \
+		-e 's,lavcodec,lavcodec0,g' \
+		-e 's,lavformat,lavformat0,g' \
+		-e 's,lavutil,lavutil0,g' \
+		-e 's,lavdevice,lavdevice0,g' \
+		-e 's,lswscale,lswscale0,g' \
+		-e 's,^FFMPEG_CFLAGS=.*,,g' \
+		${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's,ZM_V4L2,ZM_HAS_V4L2,g' ${WRKSRC}//web/skins/classic/views/monitorprobe.php
 
 pre-build:
