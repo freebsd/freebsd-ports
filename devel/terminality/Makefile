@@ -9,18 +9,17 @@ MASTER_SITE_SUBDIR=	gabor
 DISTNAME=	tn-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A cross-platform terminal manipulation library
+COMMENT=	Cross-platform terminal manipulation library
 
 USE_CSTD=	gnu89
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	@${MKDIR} ${PREFIX}/include/tn
-	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/tn
-	${INSTALL_DATA} ${WRKSRC}/libtn.a ${PREFIX}/lib
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/screenshot
-	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/tn
+	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/tn
+	${INSTALL_DATA} ${WRKSRC}/libtn.a ${STAGEDIR}${PREFIX}/lib
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${CP} -R ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
