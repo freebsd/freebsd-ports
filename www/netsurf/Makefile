@@ -20,10 +20,10 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 
 ALL_TARGET=	#empty
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-lssl
+LDFLAGS+=	-lssl -lcrypto -L${LOCALBASE}/lib ${ICONV_LIB}
 MAKE_ARGS=	HOST_CC="${CC}" CC="${CC}" CCOPT="" HOST="${OPSYS}" \
 		WARNFLAGS="" Q="" OPTCFLAGS="${CFLAGS}"
-USES=		bison gmake pkgconfig
+USES=		bison gmake pkgconfig iconv
 USE_GNOME=	librsvg2
 
 NSFB_VERSION=	0.1.0
