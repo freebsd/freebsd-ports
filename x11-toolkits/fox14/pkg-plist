@@ -1,9 +1,9 @@
-%%APPS%%bin/fox-1.4/PathFinder
-%%APPS%%bin/fox-1.4/adie
-%%APPS%%bin/fox-1.4/calculator
-bin/fox-1.4/fox-config
-bin/fox-1.4/reswrap
-bin/fox-1.4/shutterbug
+%%APPS%%bin/fox-%%MAJORVER%%/PathFinder
+%%APPS%%bin/fox-%%MAJORVER%%/adie
+%%APPS%%bin/fox-%%MAJORVER%%/calculator
+bin/fox-%%MAJORVER%%/fox-config
+bin/fox-%%MAJORVER%%/reswrap
+bin/fox-%%MAJORVER%%/shutterbug
 include/fox-%%MAJORVER%%/FX4Splitter.h
 include/fox-%%MAJORVER%%/FX7Segment.h
 include/fox-%%MAJORVER%%/FXAccelTable.h
@@ -246,3 +246,4 @@ man/man1/reswrap-14.1.gz
 %%APPS%%man/man1/calculator-14.1.gz
 @dirrm include/fox-%%MAJORVER%%/chart
 @dirrm include/fox-%%MAJORVER%%
+@dirrm bin/fox-%%MAJORVER%%
