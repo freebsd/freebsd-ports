@@ -10,6 +10,14 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20131008:
+AUTHOR: makc@FreeBSD.org
+
+  New USES: qmake, configure tool widely used among Qt based projects.
+  New framework is stage-friendly. To convert existing ports remove
+  custom configure target, adjust QMAKE_ENV, QMAKE_ARGS, QMAKE_PRO if
+  required (see Mk/Uses/qmake.mk for details).
+
 20131005:
 AUTHOR: bdrewery@FreeBSD.org
 
