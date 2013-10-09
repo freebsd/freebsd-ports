@@ -3583,9 +3583,9 @@ patch-dos2unix:
 	@${FIND} -E ${WRKSRC} -type f -iregex '${DOS2UNIX_REGEX}' -print0 | \
 			${XARGS} -0 ${REINPLACE_CMD} -i '' -e 's/$$//'
 .else
-	@${ECHO_MSG} "===>   Converting DOS text file to UNIX text file: ${f}"
 .if ${USE_DOS2UNIX:M*/*}
 .for f in ${USE_DOS2UNIX}
+	@${ECHO_MSG} "===>   Converting DOS text file to UNIX text file: ${f}"
 	@${REINPLACE_CMD} -i '' -e 's/$$//' ${WRKSRC}/${f}
 .endfor
 .else
