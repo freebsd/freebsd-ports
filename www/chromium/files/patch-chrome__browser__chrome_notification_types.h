@@ -1,5 +1,5 @@
---- chrome/common/chrome_notification_types.h.orig	2012-07-25 23:17:58.000000000 +0300
-+++ chrome/common/chrome_notification_types.h	2012-07-25 23:18:37.000000000 +0300
+--- chrome/browser/chrome_notification_types.h.orig	2012-07-25 23:17:58.000000000 +0300
++++ chrome/browser/chrome_notification_types.h	2012-07-25 23:18:37.000000000 +0300
 @@ -54,13 +54,13 @@
    // that was closed, no details are expected.
    NOTIFICATION_WINDOW_CLOSED,

@@ -1,10 +1,11 @@
+# Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
 
 #TODO eadler: s/python/python2/g on a number of files, chromium does not build with python3
 
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
-DISTVERSION=	29.0.1547.76
+DISTVERSION=	30.0.1599.66
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/:testdata \
 		http://download.goodking.org/downloads/:browser \
@@ -19,7 +20,7 @@ LICENSE=	BSD LGPL21 MPL
 LICENSE_COMB=	multi
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
-CFLAGS+=	-fno-stack-protector
+CFLAGS+=	-fno-stack-protector -Wno-unknown-warning-option
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		bash:${PORTSDIR}/shells/bash \
@@ -139,9 +140,9 @@ CXX=		clang++
 .endif
 GYP_DEFINES+=	clang=1
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
-.if ${OSVERSION} >= 1000054
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libc++
-.endif
+#.if ${OSVERSION} >= 1000054
+#EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libc++
+#.endif
 .endif
 
 .if ${PORT_OPTIONS:MTEST}
@@ -155,7 +156,7 @@ TEST_TARGETS=	base_unittests \
 		sql_unittests \
 		net_unittests \
 		content_unittests
-EXCLUDED_TESTS=
+EXCLUDED_TESTS=	GpuDriverBugListTest.CurrentDriverBugListValidation
 NINJA_TARGETS+=	${TEST_TARGETS}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:browser \
 		${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}:testdata
@@ -202,7 +203,7 @@ post-patch:
 		${WRKSRC}/third_party/libvpx/libvpx.gyp \
 		${WRKSRC}/crypto/crypto.gyp \
 		${WRKSRC}/v8/tools/gyp/v8.gyp \
-		${WRKSRC}/v8/build/common.gypi
+		${WRKSRC}/v8/build/toolchain.gypi
 	@${REINPLACE_CMD} -e "s|/usr/bin/gcc|${CC}|" \
 		${WRKSRC}/third_party/WebKit/Source/core/core.gypi
 	@${REINPLACE_CMD} -e "s|'../courgette/courgette.gyp:courgette_lib',||" \

@@ -67,7 +67,6 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/breakpointsList.css
 %%DATADIR%%/resources/inspector/buildSystemOnly.js
 %%DATADIR%%/resources/inspector/flameChart.css
-%%DATADIR%%/resources/inspector/showhint.css
 %%DATADIR%%/resources/inspector/sidebarPane.css
 %%DATADIR%%/resources/inspector/auditsPanel.css
 %%DATADIR%%/resources/inspector/AuditsPanel.js
@@ -185,14 +184,11 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/Images/timelinePillPurple.png
 %%DATADIR%%/resources/inspector/Images/timelinePillRed.png
 %%DATADIR%%/resources/inspector/Images/timelinePillYellow.png
-%%DATADIR%%/resources/inspector/Images/toolbarIcons.png
-%%DATADIR%%/resources/inspector/Images/toolbarIconsSmall.png
 %%DATADIR%%/resources/inspector/Images/toolbarItemSelected.png
 %%DATADIR%%/resources/inspector/Images/trackHoriz.png
 %%DATADIR%%/resources/inspector/Images/trackVert.png
 %%DATADIR%%/resources/inspector/indexedDBViews.css
 %%DATADIR%%/resources/inspector/inspectorCommon.css
-%%DATADIR%%/resources/inspector/nativeMemoryProfiler.css
 %%DATADIR%%/resources/inspector/navigatorView.css
 %%DATADIR%%/resources/inspector/networkLogView.css
 %%DATADIR%%/resources/inspector/networkPanel.css
@@ -210,7 +206,6 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/spectrum.css
 %%DATADIR%%/resources/inspector/splitView.css
 %%DATADIR%%/resources/inspector/tabbedPane.css
-%%DATADIR%%/resources/inspector/textEditor.css
 %%DATADIR%%/resources/inspector/textPrompt.css
 %%DATADIR%%/resources/inspector/timelinePanel.css
 %%DATADIR%%/resources/inspector/TimelinePanel.js

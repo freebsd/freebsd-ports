@@ -1,0 +1,29 @@
+--- chrome/app/policy/policy_templates.json.orig	2013-09-24 21:57:03.000000000 +0300
++++ chrome/app/policy/policy_templates.json	2013-09-24 21:59:32.000000000 +0300
+@@ -1365,7 +1365,7 @@
+           'name': 'GSSAPILibraryName',
+           'type': 'string',
+           'schema': { 'type': 'string' },
+-          'supported_on': ['chrome.linux:9-'],
++          'supported_on': ['chrome.linux:9-', 'chrome.freebsd:9-'],
+           'features': {
+             'dynamic_refresh': False,
+             'per_profile': False,
+@@ -3251,7 +3251,7 @@
+       'name': 'RequireOnlineRevocationChecksForLocalAnchors',
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'supported_on': ['chrome_os:0.30-', 'chrome.linux:30-', 'chrome.win:30-'],
++      'supported_on': ['chrome_os:0.30-', 'chrome.linux:30-', 'chrome.freebsd:30-', 'chrome.win:30-'],
+       'features': {
+         'dynamic_refresh': True,
+         'per_profile': False,
+@@ -3766,7 +3766,7 @@
+       'name': 'BackgroundModeEnabled',
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'supported_on': ['chrome.win:19-', 'chrome.linux:19-'],
++      'supported_on': ['chrome.win:19-', 'chrome.linux:19-', 'chrome.freebsd:19-'],
+       'features': {
+         'can_be_recommended': True,
+         'dynamic_refresh': True,

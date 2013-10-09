@@ -28,3 +28,26 @@
  #include <string>
  
  #include "base/gtest_prod_util.h"
+--- third_party/libjingle/source/talk/base/network.h.orig	2013-05-26 21:44:12.257312749 +0200
++++ third_party/libjingle/source/talk/base/network.h	2013-05-26 21:45:08.869297313 +0200
+@@ -38,6 +38,10 @@
+ #include "talk/base/messagehandler.h"
+ #include "talk/base/sigslot.h"
+ 
++#if defined(OS_FREEBSD)
++#include <sys/types.h>
++#endif
++
+ #if defined(POSIX)
+ struct ifaddrs;
+ #endif  // defined(POSIX)
+--- base/sys_info_freebsd.cc.orig	2013-05-17 22:44:42.000000000 +0200
++++ base/sys_info_freebsd.cc	2013-05-26 22:57:45.885322785 +0200
+@@ -4,6 +4,7 @@
+ 
+ #include "base/sys_info.h"
+ 
++#include <sys/types.h>
+ #include <sys/sysctl.h>
+ 
+ #include "base/logging.h"
