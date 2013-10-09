@@ -14,6 +14,8 @@ COMMENT=	File splitter, GTK and CLI versions
 USE_GNOME=	#
 USES=		gmake pkgconfig
 
+MAKE_ARGS=	CC="${CC}"
+
 PORTDOCS=	README
 
 OPTIONS_DEFINE=	CLI GTK2 LANG_ES LANG_EN LANG_FR
