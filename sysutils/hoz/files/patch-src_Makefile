@@ -1,10 +1,6 @@
 --- Makefile	2004-01-12 11:23:38.000000000 -0500
-+++ Makefile	2013-10-09 15:41:27.000000000 -0500
-@@ -1,17 +1,16 @@
- 
--CC = gcc
-+CC ?= gcc
- 
++++ Makefile	2013-10-09 16:05:16.000000000 -0500
+@@ -4,14 +4,13 @@
  OBJ = hoz.o hozgtk.o hozgtk_c.o hozgtk_i.o hozgtk_s.o hozcli.o
  LINKOBJ  = hoz.o hozcli.o
  GLINKOBJ  = hoz.o hozgtk.o hozgtk_c.o hozgtk_i.o hozgtk_s.o
