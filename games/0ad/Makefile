@@ -24,7 +24,7 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-alpha
 BUILD_WRKSRC=	${WRKSRC}/build/workspaces/gcc
 MAKE_ARGS=	config=release
-USES=		gmake pkgconfig
+USES=		compiler:c++11-lang gmake pkgconfig
 USE_XZ=		yes
 USE_SDL=	sdl
 USE_GNOME=	libxml2 gtk20
@@ -42,27 +42,10 @@ MANUAL_PACKAGE_BUILD=	yes # huge
 
 PORTDATA=	*
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-# Taken from Mk/bsd.gnustep.mk
-.if exists(${DESTDIR}/usr/bin/clang)
-__CLANG!=		${DESTDIR}/usr/bin/clang --version | head -1 | \
-		${SED} -e 's/.*clang version \([0-9]\)\.\([0-9]\).*/\1\2/'
-.else
-__CLANG=		0
-.endif
-
-.if ${__CLANG} < 33 && ${OSVERSION} > 900014
-BUILD_DEPENDS+= ${LOCALBASE}/bin/clang33:${PORTSDIR}/lang/clang33
-CPP=		${LOCALBASE}/bin/clang-cpp33
-CC=		${LOCALBASE}/bin/clang33
-CXX=		${LOCALBASE}/bin/clang++33
-.elif ${OSVERSION} < 900014
-USE_GCC=	yes
-.else
-CPP=		/usr/bin/clang-cpp
-CC=		/usr/bin/clang
-CXX=		/usr/bin/clang++
+.if ${OSVERSION} < 900014
+FAVORITE_COMPILER=	gcc
 .endif
 
 post-patch:
@@ -87,4 +70,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/binaries/data && ${COPYTREE_SHARE} "config mods tests tools" ${STAGEDIR}${DATADIR})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
