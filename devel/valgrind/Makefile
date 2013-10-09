@@ -18,12 +18,6 @@ CONFLICTS=	valgrind-snapshot-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-MAN1=		callgrind_control.1 \
-		callgrind_annotate.1 \
-		valgrind.1 \
-		ms_print.1 \
-		cg_annotate.1
-
 LIB32_PATH?=	${DESTDIR}/usr/lib32/libc.so
 
 OPTIONS_DEFINE=		MPI
@@ -42,7 +36,6 @@ USES=		pathfix pkgconfig gmake perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-NO_STAGE=	yes
 
 PORTDOCS=	html
 
