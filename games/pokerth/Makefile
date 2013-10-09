@@ -23,14 +23,12 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libprotobuf.so:${PORTSDIR}/devel/protobuf
 BUILD_DEPENDS=	${LOCALBASE}/include/libircclient.h:${PORTSDIR}/irc/libircclient
 
-USES=		iconv gmake
+USES=		iconv gmake qmake
 USE_BZIP2=	yes
 USE_QT4=	gui corelib network sql sql-sqlite3 qmake_build \
 		moc_build rcc_build uic_build
 USE_SDL=	mixer
-HAS_CONFIGURE=	yes
-QMAKE_ARGS+=	PREFIX=${PREFIX}
-MAKE_ARGS+=	INSTALL_ROOT=${STAGEDIR}
+QMAKE_PRO=	pokerth.pro
 
 PORTDOCS=	server_setup_howto.txt
 
@@ -43,9 +41,6 @@ post-patch:
 		-e 's|LIB_DIRS =.*|LIB_DIRS = ${LOCALBASE}/lib|g' \
 		-e '/.*QMAKE_CXXFLAGS.*/d' \
 		${WRKSRC}/*.pro
-
-do-configure:
-	@cd ${CONFIGURE_WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKE_ARGS} pokerth.pro
 
 post-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/pokerth_server ${STAGEDIR}${PREFIX}/bin
