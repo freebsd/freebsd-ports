@@ -8,15 +8,15 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.portaudio.com/archives/
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/}
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Portable cross-platform Audio API
 
 LICENSE=	MIT
 
 USES=		gmake
-NO_STAGE=	yes
 USE_ZIP=	yes
 GNU_CONFIGURE=	yes
+MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 USE_DOS2UNIX=	yes
 USE_LDCONFIG=	yes
 
@@ -35,18 +35,14 @@ DOCSRCDIR2=	${WRKSRC}/docs
 DOCSDIR2=	${DOCSDIR}/docs
 DOC_FILES2=	*.html *.txt *.pdf
 
-OPTIONS_DEFINE=		PATEST
+OPTIONS_DEFINE=		DOCS PATEST
 OPTIONS_DEFAULT=	PATEST
 
 PATEST_DESC=	PortAudio Test Programs
 
-.include <bsd.port.options.mk>
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MPATEST}
-PLIST_SUB+=	PATEST=""
-.else
-PLIST_SUB+=	PATEST="@comment "
-.endif
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|#include <malloc.h>|#include <stdlib.h>|' ${WRKSRC}/pa_unix_oss/pa_unix.h
@@ -59,15 +55,15 @@ pre-configure:
 
 post-install:
 	@${LN} -sf libportaudio.so \
-		${PREFIX}/lib/libportaudio.so.${SHLIB_VERSION}
+		${STAGEDIR}${PREFIX}/lib/libportaudio.so.${SHLIB_VERSION}
+
 .if ${PORT_OPTIONS:MPATEST}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/* ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin/
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${DOCSDIR}
-	${MKDIR} ${DOCSDIR2}
-	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${DOCSDIR2}
-.endif
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
+	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
 
 .include <bsd.port.mk>
