@@ -2,23 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	openjdk6
-PORTVERSION=	b27
-PORTREVISION?=	8
+PORTVERSION=	b28
+PORTREVISION?=	0
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,} \
-		http://download.java.net/jaxp/openjdk/jdk6/:jaxp \
-		http://icedtea.classpath.org/download/drops/:jaxp \
-		https://java.net/downloads/jax-ws/OpenJDK6/:jaf \
-		http://icedtea.classpath.org/download/drops/:jaf \
-		http://download.java.net/glassfish/components/jax-ws/openjdk/jdk6/:jaxws \
-		http://icedtea.classpath.org/download/drops/:jaxws \
 		http://download.java.net/openjdk/jtreg/promoted/4.1/b05/:jtreg \
-		http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/
+		https://java.net/projects/openjdk6/downloads/download/ \
+		LOCAL
+MASTER_SITE_SUBDIR=	jkim
 DISTNAME=	openjdk-6-src-${PORTVERSION}-${OPENJDK_BUILDDATE}
 DISTFILES=	${ANTFILE}:ant \
-		${JAXPFILE}:jaxp \
-		${JAFFILE}:jaf \
-		${JAXWSFILE}:jaxws \
 		${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${ANTFILE}
 
@@ -27,7 +20,7 @@ COMMENT?=	Oracle's Java 6 virtual machine release under the GPL v2
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_DISTFILES=${JAXPFILE} ${JAFFILE} ${JAXWSFILE} ${DISTNAME}${EXTRACT_SUFX}
+LICENSE_DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip \
@@ -36,7 +29,7 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
 
-OPENJDK_BUILDDATE=	26_oct_2012
+OPENJDK_BUILDDATE=	04_oct_2013
 
 OPTIONS_DEFINE=	ICEDTEA IPV6 POLICY SOUND TZUPDATE
 OPTIONS_DEFAULT=ICEDTEA IPV6 TZUPDATE
@@ -72,12 +65,6 @@ USE_XORG=	x11 xext xi xt xtst
 ANTVERSION=	1.8.4
 ANTFILE=	apache-ant-${ANTVERSION}-bin.tar.bz2
 
-JAXP_BUILD=	144_05
-JAXPFILE=	jaxp${JAXP_BUILD}.zip
-JAF_BUILD=	b20
-JAFFILE=	jdk6-jaf-${JAF_BUILD}.zip
-JAXWS_BUILD=	2_1_6-2011_06_13
-JAXWSFILE=	jdk6-jaxws${JAXWS_BUILD}.zip
 JTREG_BUILD=	b05_29_nov_2012
 JTREGFILE=	jtreg-4.1-bin-${JTREG_BUILD}.zip
 UPDATE_VERSION=	32
@@ -124,7 +111,6 @@ MAKE_ENV=	LANG=C LC_ALL=C OS= \
 		ALT_FREETYPE_LIB_PATH=${LOCALBASE}/lib \
 		ALT_X11_PATH=${LOCALBASE} \
 		ALT_PACKAGE_PATH=${LOCALBASE} \
-		ALT_DROPS_DIR=${DISTDIR} \
 		ANT_HOME=${WRKDIR}/apache-ant-${ANTVERSION} \
 		JAVACMD=${BOOTSTRAPJDKDIR}/bin/java \
 		BUILD_NUMBER=${PORTVERSION} \
@@ -132,11 +118,8 @@ MAKE_ENV=	LANG=C LC_ALL=C OS= \
 		MILESTONE=fcs \
 		JDK_UPDATE_VERSION=${UPDATE_VERSION}
 
-# HotSpot wants CCC instead of CXX.  Also, HotSpot SA wants GCC.
-MAKE_ENV+=	CCC="${CXX}" GCC="${CC}"
-
 # XXX Turn off -Werror from HotSpot.
-MAKE_ENV+=	WARNINGS_ARE_ERRORS="${WARNINGS_ARE_ERRORS}"
+MAKE_ENV+=	COMPILER_WARNINGS_FATAL=false
 
 # XXX Turn off parallel build by default.
 _MAKE_JOBS=	#
@@ -174,29 +157,26 @@ EXTRA_PATCHES+=	${FILESDIR}/alsa-disable.patch
 DISTFILES+=	${JTREGFILE}:jtreg
 EXTRACT_ONLY+=	${JTREGFILE}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
-USES+=		display
+USES+=		display:test
 .else
 EXTRA_PATCHES+=	${FILESDIR}/test_gamma-disable.patch
 .endif
 
+.if !empty(ICONV_LIB)
+ICONV_INCLUDE=	-I${LOCALBASE}/include
+ICONV_LIBS=	-L${LOCALBASE}/lib ${ICONV_LIB}
+.else
+ICONV_INCLUDE=
+ICONV_LIBS=
+.endif
+
 COPYDIRS=	\
-	hotspot/src/os/linux/vm \
-	hotspot/src/os_cpu/linux_x86/vm \
-	hotspot/agent/src/os/linux \
-	hotspot/make/linux \
-	hotspot/make/linux/makefiles \
-	hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/linux \
-	hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/linux/amd64 \
-	hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/linux/x86 \
-	hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/linux \
-	hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/linux_amd64 \
-	hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/linux_x86 \
 	jdk/src/linux/doc/man
 
 COPYFILES=	\
 	corba/make/common/Defs-linux.gmk \
 	corba/make/common/shared/Defs-linux.gmk \
-	hotspot/agent/src/share/classes/sun/jvm/hotspot/LinuxVtblAccess.java \
+	hotspot/src/os/linux/vm/decoder_linux.cpp \
 	jdk/make/com/sun/tools/attach/mapfile-linux \
 	jdk/make/common/Defs-linux.gmk \
 	jdk/make/common/shared/Defs-linux.gmk \
@@ -239,6 +219,12 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} \
+	    -e "s|%%ICONV_INC%%|${ICONV_INCLUDE}|" \
+	    -e "s|%%ICONV_LIB%%|${ICONV_LIBS}|" \
+	    ${WRKSRC}/Makefile ${WRKSRC}/jdk/make/java/instrument/Makefile \
+	    ${WRKSRC}/jdk/make/java/npt/Makefile \
+	    ${WRKSRC}/jdk/make/sun/splashscreen/Makefile
+	@${REINPLACE_CMD} \
 	    -e "s|/lib:/usr/lib|/lib:/usr/lib:${LOCALBASE}/lib|" \
 	    ${WRKSRC}/hotspot/src/os/bsd/vm/os_bsd.cpp
 .if ${PORT_OPTIONS:MPOLICY}
@@ -246,8 +232,17 @@ post-patch:
 	    -e 's|policy install-limited|policy install-unlimited|' \
 	    ${WRKSRC}/jdk/make/javax/crypto/Makefile
 .endif
-.if empty(ICONV_LIB)
-	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/libiconv.patch
+	@${REINPLACE_CMD} \
+	    -e "s|%%LOCALBASE%%|${LOCALBASE}|" \
+	    ${WRKSRC}/jdk/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java
+.if defined(BUILD_JRE)
+	@${REINPLACE_CMD} \
+	    -e "s|%%OPENJDK_HOME%%|${PREFIX}/openjdk6-jre|" \
+	    ${WRKSRC}/jdk/src/solaris/bin/java_md.c
+.else
+	@${REINPLACE_CMD} \
+	    -e "s|%%OPENJDK_HOME%%|${PREFIX}/openjdk6|" \
+	    ${WRKSRC}/jdk/src/solaris/bin/java_md.c
 .endif
 
 post-build:
@@ -271,21 +266,20 @@ post-build:
 .endif
 	@${ECHO_MSG} ""
 
-test: build-depends build
-.if !defined(DISPLAY)
-	@${LOCALBASE}/bin/Xvfb :1001 -screen 0 800x600x24 \
-	    -fp ${LOCALBASE}/lib/X11/fonts/misc > /dev/null 2>&1 & \
-	    ${ECHO_CMD} $$! > ${WRKDIR}/.Xvfb.pid
+.if defined(DISPLAY)
+_TEST_SEQ=	do-test
+.else
+_TEST_SEQ=	pre-test do-test post-test
+.ORDER: ${_TEST_SEQ}
 .endif
-	@-(cd ${WRKSRC}/jdk/test; ${SETENV} ${MAKE_ENV} \
-	    PLATFORM=bsd ARCH=${ARCH:S/i386/i586/} ${GMAKE} tests)
-.if !defined(DISPLAY)
-	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
-	@${RM} -f ${WRKDIR}/.Xvfb.pid
-.endif
+test: ${_TEST_SEQ}
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You can run \"make test\" again to re-execute only the failed tests."
 	@${ECHO_MSG} ""
+
+do-test: build-depends build
+	@-(cd ${WRKSRC}/jdk/test; ${SETENV} PLATFORM=bsd ARCH=${ARCH} \
+	    ${MAKE_ENV} ${GMAKE} tests)
 .endif
 
 do-install:
@@ -368,4 +362,4 @@ do-install:
 	@${ECHO_CMD} "exit 0" >> ${PKGDEINSTALL}
 	@${ECHO_CMD} "exit 0" >> ${PKGINSTALL}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
