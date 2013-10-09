@@ -16,7 +16,7 @@ COMMENT=	The ffmpeg shared extension for php
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
 		libavutil0.so:${PORTSDIR}/multimedia/ffmpeg0
 
-CFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include/ffmpeg0
 LDFLAGS+=	-L${LOCALBASE}/lib/ffmpeg0
 USE_BZIP2=	yes
 USE_PHP=	yes
@@ -41,6 +41,8 @@ pre-configure:
 		-e 's,lavformat,lavformat0,g' \
 		-e 's,lavutil,lavutil0,g' \
 		-e 's,lswscale,lswscale0,g' \
+		-e 's,include/libavcodec,include/ffmpeg0/libavcodec,g' \
+		-e 's,/libavcodec.so,/ffmpeg0/libavcodec0.so,g' \
 		${WRKSRC}/configure
 
 post-configure:
