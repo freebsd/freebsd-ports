@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	6.3.0
+PORTVERSION=	6.4.1
 PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
@@ -14,13 +14,13 @@ COMMENT=	Tools to extract from/get info about/create Matroska media streams
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis \
-		ogg:${PORTSDIR}/audio/libogg \
-		boost_regex:${PORTSDIR}/devel/boost-libs \
-		ebml:${PORTSDIR}/textproc/libebml \
-		matroska:${PORTSDIR}/multimedia/libmatroska
+LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libogg.so:${PORTSDIR}/audio/libogg \
+		libboost_regex.so:${PORTSDIR}/devel/boost-libs \
+		libebml.so:${PORTSDIR}/textproc/libebml \
+		libmatroska.so:${PORTSDIR}/multimedia/libmatroska
 
-USES=		pkgconfig gettext iconv
+USES=		pkgconfig gettext iconv compiler:c++11-lib
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_RAKE=	yes
@@ -35,56 +35,30 @@ CONFIGURE_ARGS=	--disable-qt \
 		--with-boost-system=boost_system \
 		--with-boost-regex=boost_regex
 
-MANLANG=	"" ja zh_CN nl uk
-MAN1=		mkvextract.1 mkvinfo.1 mkvmerge.1 mkvpropedit.1
-
 OPTIONS_DEFINE=	WXGTK FLAC CURL
 OPTIONS_DEFAULT=WXGTK FLAC CURL
 
-_CCVERSION=	${CC} --version
-.if !${_CCVERSION:MCLANG} || ${OSVERSION} < 1000054
-USE_GCC=	yes
-.endif
+BROKEN_sparc64=	Does not install on sparc64
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not install on sparc64
-.endif
-
-.if defined(BATCH)
-MAKE_ENV+=	V=1
-.endif
-
-.if ${PORT_OPTIONS:MWXGTK}
-USE_WX=		2.8+
+OPTIONS_SUB=	yes
+WXGTK_USE=	WX=2.8+
+WXGTK_CONFIGURE_ENABLE=	gui
 WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
-MAN1+=		mmg.1
-PLIST_SUB+=	GUI=""
-.else
-CONFIGURE_ARGS+=--disable-gui
-PLIST_SUB+=	GUI="@comment "
-.endif
 
-.if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
-CONFIGURE_ARGS+=	--with-flac
-.else
-CONFIGURE_ARGS+=	--without-flac
-.endif
+FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
+FLAC_CONFIGURE_WITH=	flac
 
-.if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
-.else
-CONFIGURE_ARGS+=	--without-curl
+CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_CONFIGURE_WITH=	curl
+.if defined(BATCH)
+MAKE_ENV+=	V=1
 .endif
 
 do-build:
 	@(cd ${WRKSRC}/; unset PREFIX; ${RAKE_BIN})
 
 do-install:
-	@(cd ${WRKSRC}/; unset PREFIX;  ${RAKE_BIN} install)
+	@(cd ${WRKSRC}/; unset PREFIX;  ${RAKE_BIN} ${MAKE_ARGS} install)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
