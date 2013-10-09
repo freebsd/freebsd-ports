@@ -17,15 +17,14 @@ LICENSE_NAME_APL1=	Adaptive Public License version 1.0
 LICENSE_FILE_APL1=	${WRKSRC}/COPYING
 LICENSE_PERMS_APL1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
-		expat:${PORTSDIR}/textproc/expat2 \
-		curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libcurl.so:${PORTSDIR}/ftp/curl
 
 PROJECTHOST=	musicip-libofa
 USE_DOS2UNIX=	yes
-NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool
-USES=	pathfix
+USES=		pathfix
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
