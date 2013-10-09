@@ -3,7 +3,7 @@
 
 PORTNAME=	vdr-plugin-softhddevice
 PORTVERSION=	0.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/1000/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - softhddevice plugin
 
-LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg \
+LIB_DEPENDS+=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0 \
 		vdpau:${PORTSDIR}/multimedia/libvdpau \
 		xcb-keysyms:${PORTSDIR}/x11/xcb-util-keysyms \
 		asound:${PORTSDIR}/audio/alsa-lib
@@ -43,6 +43,9 @@ CONFIG+= 	-DUSE_VAAPI
 .endif
 
 post-patch: post-patch-plugin
+	@${REINPLACE_CMD} \
+		-e 's,libavcodec,libavcodec0,g' \
+		${WRKSRC}/Makefile
 
 post-install: post-install-pluginlocales
 .if ${PORT_OPTIONS:MDOCS}
