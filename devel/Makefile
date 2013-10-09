@@ -4444,7 +4444,7 @@
     SUBDIR += ustl
     SUBDIR += uthash
     SUBDIR += valgrind
-    SUBDIR += valgrind-snapshot
+    SUBDIR += valgrind-devel
     SUBDIR += valide
     SUBDIR += varconf
     SUBDIR += vera++
