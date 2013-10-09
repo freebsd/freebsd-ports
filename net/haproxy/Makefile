@@ -14,8 +14,8 @@ LICENSE_COMB=	multi
 
 CONFLICTS=	haproxy-devel-[0-9]*
 
+USES=		gmake
 USE_RC_SUBR=	haproxy
-USE_GMAKE=	yes
 SUB_FILES=	pkg-message
 MAN1=		haproxy.1
 
@@ -31,15 +31,13 @@ NO_STAGE=	yes
 
 MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS CC=${CC}
 
-.if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
-
 .if ${PORT_OPTIONS:MDPCRE}
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 MAKE_ARGS+=	"USE_PCRE=1"
 .endif
 .if ${PORT_OPTIONS:MSPCRE}
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre
 MAKE_ARGS+=	"USE_STATIC_PCRE=1"
-.endif
 .endif
 
 do-install:

@@ -13,9 +13,9 @@ COMMENT=	The Reliable, High Performance TCP/HTTP Load Balancer
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+USES=		gmake
 CONFLICTS=	haproxy-[1234567890]\*
 USE_RC_SUBR=	haproxy
-USE_GMAKE=	yes
 SUB_FILES=	pkg-message
 MAN1=		haproxy.1
 
@@ -32,15 +32,13 @@ NO_STAGE=	yes
 MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS USE_GETADDRINFO=1 \
 		USE_ZLIB=1 CC="${CC}" CFLAGS="${CFLAGS}"
 
-.if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
-
 .if ${PORT_OPTIONS:MDPCRE}
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 MAKE_ARGS+=	"USE_PCRE=1"
 .endif
 .if ${PORT_OPTIONS:MSPCRE}
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre
 MAKE_ARGS+=	"USE_STATIC_PCRE=1"
-.endif
 .endif
 
 .if ${PORT_OPTIONS:MOPENSSL}
