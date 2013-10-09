@@ -14,7 +14,7 @@ RUN_DEPENDS=	dosbox:${PORTSDIR}/emulators/dosbox
 
 USE_BZIP2=	yes
 USE_QT4=	gui network xml uic_build moc_build qmake_build rcc_build
-HAS_CONFIGURE=	yes
+USES=		qmake
 
 PLIST_FILES=	bin/dboxfe \
 		bin/dboxfetray \
@@ -22,29 +22,20 @@ PLIST_FILES=	bin/dboxfe \
 
 DESKTOP_ENTRIES=	"DBoxFE" "DOSBox configuration manager" \
 		"${PREFIX}/share/pixmaps/dboxfe.png" \
-		"dboxfe" "Utility;Qt;" false \
+		"dboxfe" "Utility;Qt;" true \
 		"DBoxFEtray" "DBoxFE systray icon" \
 		"${PREFIX}/share/pixmaps/dboxfe.png" \
-		"dboxfetray" "Utility;Qt;TrayIcon;" false
+		"dboxfetray" "Utility;Qt;TrayIcon;" true
 
-PRO_DIRS=	. dboxfetray
-
-NO_STAGE=	yes
-do-configure:
-.for dir in ${PRO_DIRS}
-	@(cd ${WRKSRC}/${dir} && \
-		${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS})
-.endfor
-
-do-build:
-.for dir in ${PRO_DIRS}
-	@(cd ${WRKSRC}/${dir} && ${SETENV} ${MAKE_ENV} ${MAKE})
-.endfor
+post-build:
+	@(cd ${WRKSRC}/dboxfetray && \
+		${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS} && \
+		${SETENV} ${MAKE_ENV} ${MAKE})
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/dboxfe ${PREFIX}/bin/dboxfe
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/dboxfetray ${PREFIX}/bin/dboxfetray
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/dboxfe ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/dboxfetray ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/dboxfetray/res/dboxfetray.png \
-		${PREFIX}/share/pixmaps/dboxfe.png
+		${STAGEDIR}${PREFIX}/share/pixmaps/dboxfe.png
 
 .include <bsd.port.mk>

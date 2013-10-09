@@ -9,11 +9,9 @@ PKGNAMESUFFIX=	5
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt Widgets for Technical Applications
 
+USES=		gmake qmake
 USE_QT4=	gui svg moc_build qmake_build
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-QMAKE_ARGS+=	-recursive PREFIX=${PREFIX}
-HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 PORTSCOUT=	limit:^5\.
 
@@ -25,19 +23,13 @@ STRIP_FILES=	lib/libqwt.so.${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-.include <${FILESDIR}/Makefile.man>
-
-do-configure:
-	(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS})
+.include <bsd.port.options.mk>
 
 post-install:
-	${MKDIR} ${PREFIX}/man/man3
-	${INSTALL_MAN} ${WRKSRC}/doc/man/man3/Qwt* ${PREFIX}/man/man3
-	${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}
+	${INSTALL_MAN} ${WRKSRC}/doc/man/man3/Qwt* ${STAGEDIR}${PREFIX}/man/man3
+	${STRIP_CMD} ${STRIP_FILES:S,^,${STAGEDIR}${PREFIX}/,}
 .if ${PORT_OPTIONS:MDOCS}
-	(cd ${WRKSRC}/doc/html/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
+	(cd ${WRKSRC}/doc/html/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -10,24 +10,19 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Tetris-like puzzle game based on a hexagonal grid
 
 USE_QT4=	gui qmake_build moc_build rcc_build
-HAS_CONFIGURE=	yes
+USES=		qmake
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.xpm
 
 DESKTOP_ENTRIES=	"HexGlass" "${COMMENT}" \
 			"${PREFIX}/share/pixmaps/${PORTNAME}.xpm" \
-			"${PORTNAME}" "BlocksGame;Game;" false
-
-NO_STAGE=	yes
-do-configure:
-	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS}
+			"${PORTNAME}" "BlocksGame;Game;" true
 
 do-install:
-	${MKDIR} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/pixmaps
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/resources/logo512x512.xpm \
-		${PREFIX}/share/pixmaps/${PORTNAME}.xpm
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.xpm
 
 .include <bsd.port.mk>

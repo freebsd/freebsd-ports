@@ -11,15 +11,14 @@ COMMENT=	Qt 4 based frontend for QEMU
 
 USE_BZIP2=	yes
 USE_QT4=	gui xml uic_build moc_build qmake_build rcc_build
-HAS_CONFIGURE=	yes
+USES=		qmake
 CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
 
 DESKTOP_ENTRIES="QtEmu" "QEMU frontend" "" \
-		"qtemu" "" false
+		"qtemu" "" true
 
 OPTIONS_DEFINE=	DOCS NLS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -29,18 +28,19 @@ PLIST_SUB+=	NLS=""
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-do-configure:
-	(cd ${WRKSRC} && ${LOCALBASE}/bin/lrelease-qt4 -verbose qtemu.pro \
-	&& ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS})
+post-configure:
+.if ${PORT_OPTIONS:MNLS}
+	(cd ${WRKSRC} && ${LOCALBASE}/bin/lrelease-qt4 qtemu.pro)
+.endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/qtemu ${PREFIX}/bin/qtemu
+	${INSTALL_PROGRAM} ${WRKSRC}/qtemu ${STAGEDIR}${PREFIX}/bin/qtemu
 .if ${PORT_OPTIONS:MNLS}
-	${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}/translations/ && ${COPYTREE_SHARE} 'qtemu*.qm' ${DATADIR}/translations)
+	@${MKDIR} ${STAGEDIR}${DATADIR}/translations
+	${INSTALL_DATA} ${WRKSRC}/translations/qtemu*.qm ${STAGEDIR}${DATADIR}/translations
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	(cd ${WRKSRC}/help/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
+	(cd ${WRKSRC}/help && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>

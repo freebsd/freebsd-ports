@@ -1,4 +1,5 @@
 bin/qtiplot
+man/man1/qtiplot.1.gz
 %%DATADIR%%/fitPlugins/libexp_saturation.so
 %%DATADIR%%/fitPlugins/libexp_saturation.so.1
 %%DATADIR%%/fitPlugins/libexp_saturation.so.1.0
