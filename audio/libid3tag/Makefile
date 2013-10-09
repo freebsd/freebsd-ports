@@ -13,8 +13,6 @@ COMMENT=	ID3 tags library (part of MAD project)
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-NO_STAGE=	yes
-
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		pkgconfig
@@ -26,6 +24,6 @@ post-build:
 	cd ${WRKSRC} && CONFIG_FILES=id3tag.pc CONFIG_HEADERS= ${SH} ./config.status
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/id3tag.pc ${PREFIX}/libdata/pkgconfig/
+	${INSTALL_DATA} ${WRKSRC}/id3tag.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
 
 .include <bsd.port.mk>
