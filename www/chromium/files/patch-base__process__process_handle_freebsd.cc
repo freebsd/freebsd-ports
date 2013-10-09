@@ -1,15 +1,15 @@
---- base/process_util_freebsd.cc.orig	2013-08-19 02:53:01.000000000 +0300
-+++ base/process_util_freebsd.cc	2013-08-31 13:54:23.000000000 +0300
-@@ -18,7 +18,7 @@
- #include <unistd.h>
+--- base/process/process_handle_freebsd.cc.orig	2013-09-20 05:35:17.000000000 +0300
++++ base/process/process_handle_freebsd.cc	2013-09-24 20:41:45.000000000 +0300
+@@ -6,33 +6,35 @@
  
- #include "base/logging.h"
--#include "base/string_tokenizer.h"
-+#include "base/strings/string_tokenizer.h"
- #include "base/strings/string_number_conversions.h"
- #include "base/strings/string_split.h"
- #include "base/strings/string_util.h"
-@@ -28,27 +28,27 @@
+ #include <sys/sysctl.h>
+ #include <sys/types.h>
+-#include <unistd.h>
++#include <sys/user.h>
++
++#include "base/logging.h"
+ 
+ namespace base {
  
  ProcessId GetParentProcessId(ProcessHandle process) {
    struct kinfo_proc info;

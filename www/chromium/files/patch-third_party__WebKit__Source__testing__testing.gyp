@@ -1,6 +1,6 @@
---- third_party/WebKit/Tools/DumpRenderTree/DumpRenderTree.gyp/DumpRenderTree.gyp.orig	2013-08-19 03:03:10.000000000 +0300
-+++ third_party/WebKit/Tools/DumpRenderTree/DumpRenderTree.gyp/DumpRenderTree.gyp	2013-08-30 23:14:53.000000000 +0300
-@@ -377,5 +377,12 @@
+--- third_party/WebKit/Source/testing/testing.gyp.orig	2013-09-03 23:36:08.000000000 +0300
++++ third_party/WebKit/Source/testing/testing.gyp	2013-09-03 23:37:05.000000000 +0300
+@@ -339,5 +339,12 @@
                  },
              },
          }],
