@@ -1,5 +1,5 @@
---- pdns/Makefile.in.orig	2013-06-27 13:47:04.000000000 +0200
-+++ pdns/Makefile.in	2013-06-28 10:28:35.191325678 +0200
+--- ./pdns/Makefile.in.orig	2013-07-05 03:30:48.000000000 -0300
++++ ./pdns/Makefile.in	2013-10-09 16:39:02.000000000 -0300
 @@ -49,7 +49,7 @@
  	nproxy$(EXEEXT) notify$(EXEEXT) pdnssec$(EXEEXT) \
  	dnsbulktest$(EXEEXT) nsec3dig$(EXEEXT)
@@ -18,6 +18,17 @@
  @BOTAN18_TRUE@am__append_14 = botan18signers.cc botansigners.cc
  @BOTAN18_TRUE@am__append_15 = $(BOTAN18_LIBS) -lgmp
  @CRYPTOPP_TRUE@am__append_16 = cryptoppsigners.cc
+@@ -717,8 +717,8 @@
+ top_srcdir = @top_srcdir@
+ @HAVE_LIBPOLARSSL_FALSE@AM_CXXFLAGS = -DSYSCONFDIR=\"@sysconfdir@\" -DLIBDIR=\"@libdir@\" -DLOCALSTATEDIR=\"@socketdir@\" -Ibackends/bind @THREADFLAGS@ $(LUA_CFLAGS) $(SQLITE3_CFLAGS) -Iext/polarssl-1.1.2/include -Iext/rapidjson/include
+ @HAVE_LIBPOLARSSL_TRUE@AM_CXXFLAGS = -DSYSCONFDIR=\"@sysconfdir@\" -DLIBDIR=\"@libdir@\" -DLOCALSTATEDIR=\"@socketdir@\" -Ibackends/bind @THREADFLAGS@ $(LUA_CFLAGS) $(SQLITE3_CFLAGS) -I ext/rapidjson/include
+-AM_CPPFLAGS = -Ibackends/bind $(BOOST_CPPFLAGS) @THREADFLAGS@ \
+-	$(LIBCURL_CFLAGS) $(am__append_1) $(am__append_2)
++AM_CPPFLAGS = -Ibackends/bind @THREADFLAGS@ \
++	$(am__append_1) $(am__append_2) $(BOOST_CPPFLAGS)
+ EXTRA_DIST = dnslabeltext.rl dnslabeltext.cc mtasker.cc inflighter.cc docs/pdns_control.8  \
+ 	docs/pdns_server.8 docs/zone2sql.8 docs/zone2ldap.8 docs/pdnssec.8 \
+ 	docs/dnsreplay.8 docs/dnsscope.8 docs/dnswasher.8 docs/pdnssec.8 docs/zone2ldap.8 \
 @@ -766,7 +766,7 @@
  pdns_server_LDFLAGS = @moduleobjects@ @modulelibs@ @DYNLINKFLAGS@ @LIBDL@ @THREADFLAGS@  $(BOOST_SERIALIZATION_LDFLAGS) -rdynamic 
  pdns_server_LDADD = ext/polarssl-1.1.2/library/libpolarssl.a \
