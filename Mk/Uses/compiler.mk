@@ -11,6 +11,7 @@
 # c++11-lang:	The port need a compiler understanding C++11
 # c++11-lib:	The port need a compiler understanding C++11 and with a C++11 ready standard library
 # c11:		The port need a compiler understanding c11
+# openmp:	The port need a compiler understanding openmp
 # features:	The port will determine the features supported by the default compiler
 #
 # Variable to test after <bsd.port.pre.mk>
@@ -39,6 +40,8 @@ _COMPILER_ARGS+=	features c11
 _COMPILER_ARGS+=	features
 .elif ${compiler_ARGS} == env
 _COMPILER_ARGS+=	env
+.elif ${compiler_ARGS} == openmp
+_COMPILER_ARGS+=	env openmp
 .else
 IGNORE=	Invalid argument "${compiler_ARGS}", valid arguments are: ${VALID_ARGS}
 _COMPILER_ARGS=	#
@@ -54,6 +57,12 @@ COMPILER_VERSION=	${_CCVERSION:M[0-9].[0-9]*:C/([0-9]).([0-9]).*/\1\2/g}
 COMPILER_TYPE=	clang
 .elif ${_CCVERSION:Mgcc*} || ${_CCVERSION:M\(GCC\)}
 COMPILER_TYPE=	gcc
+.endif
+
+.if ${_COMPILER_ARGS:Mopenmp}
+.if ${COMPILER_TYPE} == clang
+USE_GCC=	any
+.endif
 .endif
 
 .if ${_COMPILER_ARGS:Mfeatures}
