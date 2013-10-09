@@ -16,7 +16,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
-USES=		cmake pkgconfig
+USES=		cmake compiler:c++11-lang pkgconfig
 USE_LUA=	yes
 USE_SDL=	mixer
 USE_DOS2UNIX=	CMake/FindFFmpeg.cmake \
@@ -33,15 +33,8 @@ MOVIES_LIB_DEPENDS=	libswresample1.so:${PORTSDIR}/multimedia/ffmpeg1
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MMOVIES}
-# partly copied from editors/libreoffice
-.if exists(/usr/bin/clang) && ${OSVERSION} > 900014
-CC=		/usr/bin/clang
-CPP=		/usr/bin/clang-cpp
-CXX=		/usr/bin/clang++
-.else
-USE_GCC=	yes
-.endif
+.if ${PORT_OPTIONS:MMOVIES} && ${OSVERSION} < 900014
+FAVORITE_COMPILER=	gcc
 .endif
 
 post-patch:
