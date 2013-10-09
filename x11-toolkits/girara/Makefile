@@ -10,27 +10,16 @@ MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	GTK2 Interface Library for Zathura PDF Viewer
 
 USE_GNOME=	glib20 gtk20
-USES=		gmake pkgconfig
+USES=		compiler:c11 gmake pkgconfig
 USE_LDCONFIG=	yes
+LIBDIR=		${PREFIX}/lib
+
+OPTIONS_DEFINE=	NLS
+
+OPTIONS_SUB=	yes
+NLS_USES=	gettext
 
 .include <bsd.port.options.mk>
-
-.if exists(/usr/bin/clang) && ${OSVERSION} > 900014
-CC=		/usr/bin/clang
-CPP=		/usr/bin/clang-cpp
-CXX=		/usr/bin/clang++
-.else
-USE_GCC=	yes
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-LIBDIR=		${PREFIX}/lib
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's|$${LIBDIR}/pkgconfig|${PREFIX}/libdata/pkgconfig|g'\
