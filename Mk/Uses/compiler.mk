@@ -80,9 +80,9 @@ COMPILER_FEATURES+=	${std}
 .endif
 
 .if ${_COMPILER_ARGS:Mc++11-lib}
-.if !${COMPILER_FEATURES:Mc++11-lang}
+.if !${COMPILER_FEATURES:Mc++11}
 USE_GCC=	yes
-.elif ${COMPILER_TYPE} == clang && ${COMPILER_FEATURES:Mc++11-lib}
+.elif ${COMPILER_TYPE} == clang && ${COMPILER_FEATURES:Mlibstdc++}
 USE_GCC=	yes
 .endif
 .endif
