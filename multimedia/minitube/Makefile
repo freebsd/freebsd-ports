@@ -11,19 +11,18 @@ COMMENT=	TV-like client for YouTube
 USE_QT4=	gui network xml dbus phonon phonon-gst \
 		qmake_build moc_build rcc_build imageformats_run
 USE_GSTREAMER=	ffmpeg
-HAS_CONFIGURE=	yes
+USES=		qmake
 INSTALLS_ICONS=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-QMAKE_ARGS=	-recursive PREFIX=${PREFIX} QMAKE_LRELEASE=${LRELEASE} ${QMAKE_PRO}
+QMAKE_ARGS=	QMAKE_LRELEASE=${QT_LRELEASE}
 QMAKE_PRO=	${WRKSRC}/${PORTNAME}.pro
-LRELEASE=	${LOCALBASE}/bin/lrelease-qt4
+QT_LRELEASE=	${LOCALBASE}/bin/lrelease-qt4
 
 STRIP_FILES=	bin/minitube
 
 OPTIONS_DEFINE=	NLS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -39,10 +38,7 @@ pre-configure:
 	${REINPLACE_CMD} -e '/include(locale\/locale.pri)/d' ${QMAKE_PRO}
 .endif
 
-do-configure:
-	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS}
-
 post-install:
-	${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}
+	${STRIP_CMD} ${STRIP_FILES:S,^,${STAGEDIR}${PREFIX}/,}
 
 .include <bsd.port.mk>

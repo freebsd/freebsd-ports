@@ -16,17 +16,13 @@ RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 USE_ZIP=	yes
 USE_QT4=	qt3support moc_build porting_build qmake_build uic3_build
 USE_GHOSTSCRIPT_RUN=	yes
+USES=		qmake
 
 DESKTOP_ENTRIES=	"KPDFTool" "${COMMENT}" "kpdftool" \
-			"kpdftool" "Qt;Utility;" false
-
-NO_STAGE=	yes
-do-configure:
-	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS}
+			"kpdftool" "Qt;Utility;" true
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	cd ${WRKSRC}/icons && ${COPYTREE_SHARE} hicolor ${PREFIX}/share/icons/
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	cd ${WRKSRC}/icons && ${COPYTREE_SHARE} hicolor ${STAGEDIR}${PREFIX}/share/icons/
 
 .include <bsd.port.mk>

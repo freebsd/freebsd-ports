@@ -11,36 +11,32 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Data analysis and scientific plotting
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmuparser.a:${PORTSDIR}/math/muparser
-LIB_DEPENDS=	gsl:${PORTSDIR}/math/gsl \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl \
+		libpng15.so:${PORTSDIR}/graphics/png
 # use bundled modified libraries
 # 		qwt.5:${PORTSDIR}/x11-toolkits/qwt5 \
 # 		qwtplot3d-qt4:${PORTSDIR}/math/qwtplot3d-qt4
 
+USES=		gmake qmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_QT4=	gui opengl svg qt3support network assistantclient \
 		moc_build qmake_build rcc_build
 USE_GL=		glu
-HAS_CONFIGURE=	yes
-QMAKE_ARGS+=	-recursive PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} \
-		PYTHON_CMD=${PYTHON_CMD}
+QMAKE_ARGS+=	LOCALBASE=${LOCALBASE} PYTHON_CMD=${PYTHON_CMD}
 USE_DOS2UNIX=	*.pro
-MAN1=		qtiplot.1
 
 DESKTOP_ENTRIES="QtiPlot" "Data analysis and plotting" \
 		"${DATADIR}/qtiplot.png" \
-		"qtiplot" "" false
+		"qtiplot" "" true
 
 OPTIONS_DEFINE=	DOCS PYTHON NLS DEBUG
-OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+OPTIONS_DEFAULT=	DOCS PYTHON NLS
 
 DOCS_DESC=	Install the QtiPlot Handbook
 PYTHON_DESC=	Python scripting support
 
 STRIP_FILES=	bin/qtiplot share/qtiplot/fitPlugins/*.so.1.0.0
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
@@ -66,54 +62,51 @@ PLIST_SUB+=	NLS=""
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
 post-extract:
-	@${CP} ${FILESDIR}/build.conf ${WRKSRC}
+	${CP} ${FILESDIR}/build.conf ${WRKSRC}
 
 post-patch:
 .if ${PORT_OPTIONS:MPYTHON}
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e \
 		'/^sys.path.append/s|"\."|"${DATADIR}"|' \
 		${WRKSRC}/${PORTNAME}/qtiplotrc.py
 .else
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e \
 		"s/SCRIPTING_LANGS.*Python//" \
 		${WRKSRC}/build.conf
 .endif
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e \
 		's|/usr/local/qtiplot/fitPlugins|${DATADIR}/fitPlugins|' \
 		${WRKSRC}/qtiplot/src/core/ApplicationWindow.cpp
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e \
 		's|target.path=.*|target.path=${DATADIR}/fitPlugins|g' \
 		${WRKSRC}/fitPlugins/*/*.pro
-	@${REINPLACE_CMD} -e '/^system($$$$LUPDATE/d; /^system($$$$LRELEASE/d' \
+	${REINPLACE_CMD} -e '/^system($$$$LUPDATE/d; /^system($$$$LRELEASE/d' \
 		${WRKSRC}/${PORTNAME}/qtiplot.pro
 .if ${PORT_OPTIONS:MDEBUG}
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e \
 		"/^CONFIG.*release/s|release|debug|" \
 		${WRKSRC}/build.conf
 .endif
 .if !${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e \
 		"/INSTALLS.*translations/d" \
 		${WRKSRC}/${PORTNAME}/qtiplot.pro
 .endif
 
-do-configure:
+pre-configure:
 .if ${PORT_OPTIONS:MNLS}
-	@(cd ${WRKSRC}/qtiplot && ${LOCALBASE}/bin/lrelease-qt4 -compress qtiplot.pro)
+	cd ${WRKSRC}/qtiplot && ${LOCALBASE}/bin/lrelease-qt4 -compress qtiplot.pro
 .endif
-	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS} )
 
 post-install:
-	${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}
-	${INSTALL_DATA} ${WRKSRC}/qtiplot_logo.png ${DATADIR}/qtiplot.png
+	${STRIP_CMD} ${STRIP_FILES:S,^,${STAGEDIR}${PREFIX}/,}
+	${INSTALL_DATA} ${WRKSRC}/qtiplot_logo.png ${STAGEDIR}${DATADIR}/qtiplot.png
 .if ${PORT_OPTIONS:MPYTHON}
 .for s in qtiplotrc.py qtiUtil.py
-	@(cd ${WRKSRC}/qtiplot && ${PYTHON_CMD} -c "import py_compile; py_compile.compile('${s}')")
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/${s}c ${DATADIR}/${s}c
+	cd ${WRKSRC}/qtiplot && ${PYTHON_CMD} -c "import py_compile; py_compile.compile('${s}')"
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/${s}c ${STAGEDIR}${DATADIR}/${s}c
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
