@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/gsed
 man/man1/gsed.1.gz
 %%EXAMPLESDIR%%/binary.sed
@@ -44,5 +43,5 @@ man/man1/gsed.1.gz
 %%NLS%%share/locale/vi/LC_MESSAGES/sed.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/sed.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/sed.mo
-@dirrmtry %%NLS%%share/locale/ast/LC_MESSAGES
-@dirrmtry %%NLS%%share/locale/ast
+%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ast
