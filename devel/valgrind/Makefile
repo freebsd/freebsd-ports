@@ -14,7 +14,7 @@ COMMENT=	Memory debugging and profiling tool
 
 LICENSE=	GPLv2
 
-CONFLICTS=	valgrind-snapshot-[0-9]*
+CONFLICTS=	valgrind-devel-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 

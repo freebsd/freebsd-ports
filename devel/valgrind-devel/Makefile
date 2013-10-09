@@ -7,7 +7,7 @@ PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/stass/valgrind-freebsd/downloads/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/
-PKGNAMESUFFIX=	-snapshot
+PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
 
 MAINTAINER=	bdrewery@FreeBSD.org
@@ -16,15 +16,8 @@ COMMENT=	Memory debugging and profiling tool
 LICENSE=	GPLv2
 
 CONFLICTS=	valgrind-[0-9]*
-LATEST_LINK=	valgrind-snapshot
 
 ONLY_FOR_ARCHS=	i386 amd64
-
-MAN1=		callgrind_control.1 \
-		callgrind_annotate.1 \
-		valgrind.1 \
-		ms_print.1 \
-		cg_annotate.1
 
 LIB32_PATH?=	${DESTDIR}/usr/lib32/libc.so
 
@@ -44,7 +37,6 @@ USES=		pathfix pkgconfig gmake perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-NO_STAGE=	yes
 
 PORTDOCS=	html
 
