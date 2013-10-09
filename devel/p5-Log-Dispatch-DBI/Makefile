@@ -13,13 +13,9 @@ COMMENT=	A Log::Dispatch output class for logging to database via DBI interface
 BUILD_DEPENDS=	p5-Log-Dispatch>=2.0:${PORTSDIR}/devel/p5-Log-Dispatch \
 		p5-DBI>0:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 TEST_DEPENDS=	p5-DBD-CSV>0:${PORTSDIR}/databases/p5-DBD-CSV
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Log::Dispatch::DBI.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
