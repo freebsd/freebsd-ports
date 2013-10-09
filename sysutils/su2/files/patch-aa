@@ -6,7 +6,7 @@
  # 
 -DEST=/usr/local
 +PREFIX?=/usr/local
-+DEST=${PREFIX}
++DEST=${DESTDIR}${PREFIX}
  BINDIR=$(DEST)/bin
 -MANDIR=$(DEST)/man
 +MANDIR=$(DEST)/man/man1
@@ -35,7 +35,7 @@
 +
  install: su2
 -	install -c -m 4711 -o root su2 $(BINDIR)/su2
-+	install -c -s -m 4711 -o root su2 $(BINDIR)/su2
++	install -c -s -m 4711 su2 $(BINDIR)/su2
  	install -c su2.man $(MANDIR)/su2.1
  
  clean:
