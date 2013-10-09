@@ -19,14 +19,13 @@ LICENSE_TEXT_COMMERCIAL=	License available from CertiVox for commercial use and
 LICENSE_TEXT_COMMERCIAL+=	to not be bound by the terms of the AGPLv3. Visit
 LICENSE_TEXT_COMMERCIAL+=	http://certivox.com/index.php/solutions/miracl-crypto-sdk/
 LICENSE_TEXT_COMMERCIAL+=	for more details.
-LICENSE_FILE=	${FILESDIR}/LICENSE
+LICENSE_FILE=			${FILESDIR}/LICENSE
 LICENSE_PERMS_COMMERCIAL=	dist-mirror dist-sell pkg-mirror pkg-sell no-auto-accept
 
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_ZIP=	yes
 USE_LDCONFIG=	yes
-NO_STAGE=	yes
 
 EXTRACT_BEFORE_ARGS=	-j -aa -L -q
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
@@ -34,7 +33,7 @@ EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 PLIST_FILES=	lib/libmiracl.a \
 		include/miracl.h include/mirdef.h
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"
 BUILDCMD=	linux
@@ -71,11 +70,11 @@ do-build:
 do-install:
 # lib
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.a \
-		${PREFIX}/lib/lib${PORTNAME}.a
+		${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.a
 # headers
 	@${INSTALL_DATA} ${WRKSRC}/miracl.h \
-		${PREFIX}/include/miracl.h
+		${STAGEDIR}${PREFIX}/include/miracl.h
 	@${INSTALL_DATA} ${WRKSRC}/mirdef.h \
-		${PREFIX}/include/mirdef.h
+		${STAGEDIR}${PREFIX}/include/mirdef.h
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
