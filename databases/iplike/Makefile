@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	iplike
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	databases
 MASTER_SITES=	SF/opennms/IPLIKE/stable-2.0/
 
@@ -17,9 +17,5 @@ SUB_FILES=	pkg-message
 PLIST_FILES=	lib/postgresql/iplike.la \
 	lib/postgresql/iplike.so \
 	sbin/install_iplike.sh
-
-NO_STAGE=	yes
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
