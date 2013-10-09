@@ -5,4 +5,4 @@ In addition to executing scripts in the directory you are entering or leaving,
 ondir also executes scripts in directories that are traversed on the way to that
 directory.
 
-WWW: http://swapoff.org/wiki/OnDir
+WWW: http://swapoff.org/ondir.html
