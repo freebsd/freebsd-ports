@@ -1098,7 +1098,6 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%share/git-core/contrib/hooks/multimail/git_multimail.py
 %%CONTRIB%%share/git-core/contrib/hooks/multimail/migrate-mailhook-config
 %%CONTRIB%%share/git-core/contrib/hooks/multimail/post-receive
-%%CONTRIB%%share/git-core/contrib/hooks/multimail/git_multimail.py
 %%CONTRIB%%share/git-core/contrib/hooks/post-receive-email
 %%CONTRIB%%share/git-core/contrib/hooks/pre-auto-gc-battery
 %%CONTRIB%%share/git-core/contrib/hooks/setgitperms.perl
@@ -1196,13 +1195,11 @@ share/git-core/templates/info/exclude
 @dirrmtry share/git-core/templates/hooks
 @dirrm share/git-core/templates/info
 @dirrmtry share/git-core/templates
-%%CONTRIB%%@dirrm share/git-core/contrib/blameview
 %%CONTRIB%%@dirrm share/git-core/contrib/buildsystems/Generators
 %%CONTRIB%%@dirrm share/git-core/contrib/buildsystems
 %%CONTRIB%%@dirrm share/git-core/contrib/ciabot
 %%CONTRIB%%@dirrm share/git-core/contrib/completion
 %%CONTRIB%%@dirrm share/git-core/contrib/contacts
-%%CONTRIB%%@dirrm share/git-core/contrib/continuous
 %%CONTRIB%%@dirrm share/git-core/contrib/convert-objects
 %%CONTRIB%%@dirrm share/git-core/contrib/credential/gnome-keyring
 %%CONTRIB%%@dirrm share/git-core/contrib/credential/osxkeychain
@@ -1226,7 +1223,6 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%@dirrm share/git-core/contrib/mw-to-git/t/
 %%CONTRIB%%@dirrm share/git-core/contrib/mw-to-git/
 %%CONTRIB%%@dirrm share/git-core/contrib/p4import
-%%CONTRIB%%@dirrm share/git-core/contrib/patches
 %%CONTRIB%%@dirrm share/git-core/contrib/persistent-https
 %%CONTRIB%%@dirrm share/git-core/contrib/remote-helpers
 %%CONTRIB%%@dirrm share/git-core/contrib/subtree/t
