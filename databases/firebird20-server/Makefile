@@ -108,6 +108,10 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+CFLAGS+=	-DAMD64
+.endif
+
 .if !defined(CLIENT_ONLY)
 
 USERS=	${PORTNAME}
