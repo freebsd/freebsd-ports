@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	listen
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Listen to file modifications and notify about the changes
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-celluloid>=0.15.1:${PORTSDIR}/devel/rubygem-celluloid \
+RUN_DEPENDS=	rubygem-celluloid>=0.15.2:${PORTSDIR}/devel/rubygem-celluloid \
 		rubygem-rb-kqueue>=0.2.0:${PORTSDIR}/devel/rubygem-rb-kqueue
 
 NO_STAGE=	yes
