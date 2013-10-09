@@ -6,6 +6,7 @@ lib/libcppunit.a
 lib/libcppunit.la
 lib/libcppunit.so
 libdata/pkgconfig/cppunit.pc
+man/man1/cppunit-config.1.gz
 share/aclocal/cppunit.m4
 %%HTMLDOCS%%%%DOCSDIR%%/index.html
 %%HTMLDOCS%%%%DOCSDIR%%/_additional_message_8cpp.html
