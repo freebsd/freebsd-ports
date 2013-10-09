@@ -44,6 +44,15 @@ lib/libpipebackend.a
 lib/libpipebackend.la
 lib/libpipebackend.so
 lib/libpipebackend.so.0
+%%WITHTOOLS%%man/man1/dnstcpbench.1.gz
+%%WITHTOOLS%%man/man8/dnsreplay.8.gz
+%%WITHTOOLS%%man/man8/dnsscope.8.gz
+%%WITHTOOLS%%man/man8/dnswasher.8.gz
+man/man8/pdns_control.8.gz
+man/man8/pdns_server.8.gz
+man/man8/pdnssec.8.gz
+man/man8/zone2ldap.8.gz
+man/man8/zone2sql.8.gz
 @unexec if cmp -s %D/etc/pdns/pdns.conf %D/etc/pdns/pdns.conf-dist; then rm -f %D/etc/pdns/pdns.conf; fi
 etc/pdns/pdns.conf-dist
 @exec [ -f %B/pdns.conf ] || cp %B/%f %B/pdns.conf

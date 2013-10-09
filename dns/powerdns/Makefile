@@ -8,11 +8,11 @@ MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
 
 MAINTAINER=	tremere@cainites.net
-COMMENT=	An advanced DNS server with multiple backends including SQL
+COMMENT=	Advanced DNS server with multiple backends including SQL
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	boost_serialization:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_serialization.so:${PORTSDIR}/devel/boost-libs
 
 USE_LUA=	5.1
 LUA_COMPS=	lua
@@ -34,21 +34,22 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		MKDIR="${MKDIR}" \
 		DISTNAME="${DISTNAME}" \
 		POWERDNS_OPTIONS="${POWERDNS_OPTIONS}"
-MAN8=		pdns_control.8 pdns_server.8 zone2sql.8 pdnssec.8 zone2ldap.8
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	PGSQL PGSQL_LOCAL MYSQL MYSQL_LOCAL SQLITE SQLITE3 \
+OPTIONS_DEFINE=	PGSQL PGSQL_LOCAL MYSQL MYSQL_LOCAL \
 		OPENDBX OPENLDAP OPENLDAP_LOCAL GEO POLARSSL TOOLS
 OPTIONS_MULTI=	DNSSEC
 OPTIONS_MULTI_DNSSEC=	BOTAN110 CRYPTOPP
+
+OPTIONS_RADIO=	SQLITE
+OPTIONS_RADIO_SQLITE=	SQLITE2 SQLITE3
+SQLITE2_DESC=	SQLite 2 database support
 
 PGSQL_DESC=		PostgreSQL backend
 PGSQL_LOCAL_DESC=	RUN_DEPEND on PostgreSQL server
 MYSQL_DESC=		MySQL backend
 MYSQL_LOCAL_DESC=	RUN_DEPEND on MySQL server
-SQLITE_DESC=		SQLite 2 backend
-SQLITE3_DESC=		SQLite 3 backend
 OPENDBX_DESC=		OpenDBX backend
 OPENLDAP_DESC=		OpenLDAP backend
 OPENLDAP_LOCAL_DESC=	RUN_DEPEND on OpenLDAP server
@@ -61,10 +62,7 @@ TOOLS_DESC=		Build extra tools
 
 OPTIONS_DEFAULT=	PGSQL DNSSEC BOTAN110 POLARSSL
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.include <bsd.port.pre.mk>
 
 USE_RC_SUBR+=	pdns
 
@@ -80,10 +78,6 @@ CONFIGURE_MODULES+=	"geo"
 PLIST_SUB+=		WITHGEO=""
 .else
 PLIST_SUB+=		WITHGEO="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE} && ${PORT_OPTIONS:MSQLITE3}
-BROKEN=	choose only one SQLite backend version
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
@@ -156,7 +150,7 @@ PLIST_SUB+=		WITHSQLITE3="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOPENDBX}
-LIB_DEPENDS+=		opendbx:${PORTSDIR}/databases/opendbx
+LIB_DEPENDS+=		libopendbx.so:${PORTSDIR}/databases/opendbx
 CONFIGURE_MODULES+=	"opendbx"
 PLIST_SUB+=		WITHOPENDBX=""
 CXXFLAGS+=		-L${LOCALBASE}/lib
@@ -167,17 +161,17 @@ PLIST_SUB+=		WITHOPENDBX="@comment "
 .if ${PORT_OPTIONS:MPOLARSSL}
 CONFIGURE_ARGS+=	--without-system-polarssl
 .else
-LIB_DEPENDS+=		polarssl:${PORTSDIR}/security/polarssl
+LIB_DEPENDS+=		libpolarssl.so:${PORTSDIR}/security/polarssl
 .endif
 
 .if ${PORT_OPTIONS:MBOTAN110}
 CONFIGURE_ARGS+=	--enable-botan1.10
-LIB_DEPENDS+=		botan-1.10:${PORTSDIR}/security/botan110
+LIB_DEPENDS+=		libbotan-1.10.so:${PORTSDIR}/security/botan110
 .endif
 
 .if ${PORT_OPTIONS:MCRYPTOPP}
 .if exists(${LOCALBASE}/lib/libcryptopp.so)
-LIB_DEPENDS+=		cryptopp:${PORTSDIR}/security/cryptopp
+LIB_DEPENDS+=		libcryptopp.so:${PORTSDIR}/security/cryptopp
 .else
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
 .endif
@@ -199,22 +193,16 @@ post-patch:
 .endif
 
 post-install:
-.if !exists(${PREFIX}/etc/pdns/pdns.conf)
-	${INSTALL_DATA} ${PREFIX}/etc/pdns/pdns.conf-dist ${PREFIX}/etc/pdns/pdns.conf
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for i in pdns.conf
-	${INSTALL_DATA} ${FILESDIR}/$i ${EXAMPLESDIR}/
+	${INSTALL_DATA} ${FILESDIR}/$i ${STAGEDIR}${EXAMPLESDIR}/
 .endfor
-.endif
 .for j in libgpgsqlbackend.so libgmysqlbackend.so libgsqlitebackend.so \
 	libgsqlite3backend.so libldapbackend.so libopendbxbackend.so \
 	libgeobackend.so libpipebackend.so
-	@if ([ -f ${PREFIX}/lib/$j ] && [ ! -f ${PREFIX}/lib/$j.0 ]); then \
-		${LN} -sf ${PREFIX}/lib/$j ${PREFIX}/lib/$j.0; \
+	@if ([ -f ${STAGEDIR}${PREFIX}/lib/$j ] && [ ! -f ${STAGEDIR}${PREFIX}/lib/$j.0 ]); then \
+		${LN} -sf ${PREFIX}/lib/$j ${STAGEDIR}${PREFIX}/lib/$j.0; \
 	fi
 .endfor
-	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
