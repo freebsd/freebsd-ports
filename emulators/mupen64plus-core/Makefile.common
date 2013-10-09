@@ -24,9 +24,7 @@ LIB_DEPENDS+=		png15:${PORTSDIR}/graphics/png
 .endif
 
 .if ${PKGNAMESUFFIX} == "-video-glide64mk"
-#USE_GCC=	yes
-
-LIBDEPENDS+=		boost_thread:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS+=		boost_thread:${PORTSDIR}/devel/boost-libs
 .endif
 
 .if ${PKGNAMESUFFIX} != "-core"
