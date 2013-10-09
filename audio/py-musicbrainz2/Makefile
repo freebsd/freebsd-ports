@@ -14,11 +14,11 @@ MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Next Generation Python bindings for MusicBrainz
 
 LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-LIB_DEPENDS=	discid:${PORTSDIR}/audio/libdiscid
+LIB_DEPENDS=	libdiscid.so:${PORTSDIR}/audio/libdiscid
 
 USE_PYTHON=	-2.7
-NO_STAGE=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	python-musicbrainz2
 
