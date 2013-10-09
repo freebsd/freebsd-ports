@@ -1,4 +1,6 @@
+bin/be.contacts
 bin/trojita
+lib/libtrojita_plugins.so
 share/applications/trojita.desktop
 share/icons/hicolor/32x32/apps/trojita.png
 share/icons/hicolor/scalable/apps/trojita.svg
@@ -20,12 +22,15 @@ share/icons/hicolor/scalable/apps/trojita.svg
 %%DATADIR%%/locale/trojita_common_pl.qm
 %%DATADIR%%/locale/trojita_common_pt.qm
 %%DATADIR%%/locale/trojita_common_pt_BR.qm
+%%DATADIR%%/locale/trojita_common_ro.qm
 %%DATADIR%%/locale/trojita_common_sk.qm
 %%DATADIR%%/locale/trojita_common_sv.qm
 %%DATADIR%%/locale/trojita_common_tr.qm
+%%DATADIR%%/locale/trojita_common_ug.qm
 %%DATADIR%%/locale/trojita_common_uk.qm
-%%DATADIR%%/locale/trojita_common_x-test.qm
+%%DATADIR%%/locale/trojita_common_x_test.qm
 %%DATADIR%%/locale/trojita_common_zh_CN.qm
 %%DATADIR%%/locale/trojita_common_zh_TW.qm
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
