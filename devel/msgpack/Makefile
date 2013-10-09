@@ -16,8 +16,6 @@ USE_LDCONFIG=	yes
 .if ${ARCH} == "sparc64"
 # required for __sync _* atomic operations on sparc
 USE_GCC=	yes
-.else
-USE_GCC=	4.2+
 .endif
 
 .if ${ARCH} == "i386"
