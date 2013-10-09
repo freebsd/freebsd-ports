@@ -1129,6 +1129,7 @@ _DISTDIR?=		${DISTDIR}/${DIST_SUBDIR}
 INDEXDIR?=		${PORTSDIR}
 SRC_BASE?=		/usr/src
 USESDIR?=		${PORTSDIR}/Mk/Uses
+SCRIPTSDIR?=	${PORTSDIR}/Mk/Scripts
 LIB_DIRS?=		/lib /usr/lib ${LOCALBASE}/lib
 
 .if defined(FORCE_STAGE)
@@ -4341,11 +4342,17 @@ _STAGE_SUSEQ=	create-users-groups do-install post-install post-stage compress-ma
 				install-rc-script install-ldconfig-file install-license \
 				install-desktop-entries add-plist-info add-plist-docs add-plist-examples \
 				add-plist-data add-plist-post fix-plist-sequence
+.if defined(DEVELOPER)
+_STAGE_SUSEQ+=	stage-qa
+.endif
 .else
 _STAGE_SEQ+=	create-users-groups do-install post-install post-stage compress-man \
 				install-rc-script install-ldconfig-file install-license \
 				install-desktop-entries add-plist-info add-plist-docs add-plist-examples \
 				add-plist-data add-plist-post fix-plist-sequence
+.if defined(DEVELOPER)
+_STAGE_SEQ+=	stage-qa
+.endif
 .endif
 .if defined(WITH_PKGNG)
 _INSTALL_DEP=	stage

@@ -6,6 +6,8 @@ STAGEDIR?=	${WRKDIR}/stage
 DESTDIRNAME?=	DESTDIR
 
 MAKE_ARGS+=	${DESTDIRNAME}=${STAGEDIR}
+QA_ENV+=		STAGEDIR=${STAGEDIR} PREFIX=${PREFIX} \
+		LOCALBASE=${LOCALBASE}
 
 .if !target(stage-dir)
 stage-dir:
@@ -152,4 +154,10 @@ check-orphans: stage
 		-e "s,\(.*\)${EXAMPLESDIR},%%PORTEXAMPLES%%\1%%EXAMPLESDIR%%,g" \
 		-e "s,${DATADIR},%%DATADIR%%,g" \
 		-e "s,${PREFIX}/,,g" | ${GREP} -v "^@dirrmtry share/licenses" || ${TRUE}
+.endif
+
+.if !target(stage-qa)
+stage-qa:
+	@${ECHO_CMD} "====> Running Q/A tests" ; \
+	${SETENV} ${QA_ENV} ${SH} ${SCRIPTSDIR}/qa.sh
 .endif
