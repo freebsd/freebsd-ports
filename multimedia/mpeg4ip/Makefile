@@ -21,7 +21,7 @@ LIB_DEPENDS=	faac:${PORTSDIR}/audio/faac \
 		id3tag:${PORTSDIR}/audio/libid3tag \
 		a52:${PORTSDIR}/audio/liba52 \
 		mpeg2:${PORTSDIR}/multimedia/libmpeg2	\
-		avcodec:${PORTSDIR}/multimedia/ffmpeg \
+		libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0 \
 		x264:${PORTSDIR}/multimedia/x264
 RUN_DEPENDS=	mp4v2>=1.9.1:${PORTSDIR}/multimedia/mp4v2
 
@@ -30,8 +30,8 @@ USE_SDL=	sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include/SDL -I${LOCALBASE}/include/ffmpeg -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include/SDL -I${LOCALBASE}/include/ffmpeg0 -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib/ffmpeg0 -L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ARGS=	--enable-ffmpeg=${LOCALBASE} \
 		--enable-mp4live \
 		--disable-static
@@ -165,7 +165,7 @@ pre-configure:
 		${WRKSRC}/doc/mp4v2/Makefile.in
 # objformat
 	@${FIND} ${WRKSRC} -name configure | ${XARGS} ${REINPLACE_CMD} -e 's|echo aout|echo elf|'
-	@${REINPLACE_CMD} -e 's|$${enable_ffmpeg}/lib/libavcodec.a|-lavcodec -lswscale|g' \
+	@${REINPLACE_CMD} -e 's|$${enable_ffmpeg}/lib/libavcodec.a|-lavcodec0 -lswscale0|g' \
 		${WRKSRC}/configure
 
 # replace bundled mp4v2 with placeholder

@@ -1,5 +1,5 @@
---- configure.orig	2010-12-09 12:24:43.000000000 -0800
-+++ configure	2010-12-09 12:25:28.000000000 -0800
+--- configure.orig	2007-10-08 12:11:23.000000000 -0300
++++ configure	2013-10-08 22:35:24.628157749 -0300
 @@ -24544,13 +24544,12 @@
  fi
  
@@ -31,8 +31,26 @@
  echo "$as_me: have enable ffmpeg $enable_ffmpeg" >&6;}
 -     FFMPEG_INC=-I${enable_ffmpeg}/libavcodec
 -     FFMPEG_LIB="${enable_ffmpeg}/libavcodec/libavcodec.a -lz"
-+     FFMPEG_INC=-I${enable_ffmpeg}/include/ffmpeg
++     FFMPEG_INC=-I${enable_ffmpeg}/include/ffmpeg0
 +     FFMPEG_LIB="${enable_ffmpeg}/lib/libavcodec.a -lz"
       saveCFLAGS="$CFLAGS"
       CFLAGS="$CFLAGS $FFMPEG_INC"
       { echo "$as_me:$LINENO: checking for AVRational" >&5
+@@ -26613,7 +26610,7 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+-#include <avcodec.h>
++#include <libavcodec/avcodec.h>
+ 
+ int
+ main ()
+@@ -27008,7 +27005,7 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+-#include <ffmpeg/avcodec.h>
++#include <libavcodec/avcodec.h>
+ 
+ int
+ main ()
