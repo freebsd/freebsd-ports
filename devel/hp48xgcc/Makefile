@@ -33,7 +33,7 @@ INSTALL_TARGET=	build-lib
 MAKE_ARGS=	GCC_SRC="${GCC_DIR}" GCC_VERSION="${GCC_VER}" \
 		CFLAGS="${CFLAGS}" CLIB="" ROOT="${PREFIX}" \
 		INSTALL_PROG="${INSTALL_PROGRAM}" \
-		INSTALL_DATA="${INSTALL_DATA}"
+		INSTALL_DATA="${INSTALL_DATA}" LDXX="${CXX}"
 
 post-extract: .SILENT
 # Extract GCC distribution separately because of USE_ZIP/.tar.gz conflict
@@ -49,8 +49,6 @@ post-extract: .SILENT
 	${ECHO_CMD} '#define HAVE_VPRINTF' >> ${GCC_DIR}/config/xm-freebsd.h
 # Do not install extra copies of GPL (we use license framework instead)
 	${REINPLACE_CMD} -e '/COPYING/d' ${WRKSRC}/make.pubfiles
-# Unbreak against Clang and other strict C++ compilers
-	${REINPLACE_CMD} -e 's/main (/int &void/' ${WRKSRC}/objdump/bool.cc
 
 NO_STAGE=	yes
 do-configure:

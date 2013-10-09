@@ -9,7 +9,7 @@
  
  template <class T>
  class List;
-@@ -35,13 +35,13 @@
+@@ -35,13 +35,13 @@ public:	
  	ListItem( void ) : T()
  #ifdef DEBUG
  	 , next((ListItem *)0), prev((ListItem *)0)
@@ -25,7 +25,7 @@
  	  { };
  
  	ListItem * get_next(void) const {
-@@ -59,6 +59,9 @@
+@@ -59,6 +59,9 @@ LAZYOPS(template <class T>,ListItem<T>)
  
  
  template <class T>
@@ -35,7 +35,7 @@
  class List {
  	
  protected:
-@@ -239,7 +242,7 @@
+@@ -239,7 +242,7 @@ public:
  		return last;
  	};
  	
@@ -44,7 +44,16 @@
  };
  
  template <class T>
-@@ -306,4 +309,4 @@
+@@ -260,7 +263,7 @@ void List<T>::clear(void) {
+ 
+ 
+ template <class T>
+-ostream & operator<< (ostream & o, const List<T> & l) {
++std::ostream & operator<< (std::ostream & o, const List<T> & l) {
+ 	o << "List with " << l.length() << " elements:\n";
+ 	ListItem<T> * li = l.get_head();
+ 	int i = 1;
+@@ -306,4 +309,4 @@ BOstream & operator<< (BOstream & o, con
  }
  
  
