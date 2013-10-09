@@ -1,4 +1,3 @@
-checkbashisms is a perl script that checks for commonly used
-bash features that are not supported by POSIX shells.
+Debian script that checks for bashisms
 
-WWW: http://sourceforge.net/projects/checkbaskisms
+WWW: http://packages.qa.debian.org/d/devscripts.html

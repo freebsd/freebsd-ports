@@ -1,36 +1,32 @@
 # $FreeBSD$
 
 PORTNAME=	checkbashisms
-PORTVERSION=	2.0.0.2
+PORTVERSION=	2.12.6
 CATEGORIES=	devel perl5
-MASTER_SITES=	SF/${SF_PROJECT}/${DISTVERSION}
-DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=
+MASTER_SITES=	DEBIAN/pool/main/d/devscripts/
+DISTNAME=	devscripts_${PORTVERSION}
 
-MAINTAINER=	bdrewery@FreeBSD.org
-COMMENT=	Script to check for Bash features not defined by POSIX
+MAINTAINER=	nukama+maintainer@gmail.com
+COMMENT=	Debian script that checks for bash-isms
 
 LICENSE=	GPLv2
 
-SF_PROJECT=	checkbaskisms
-
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
-NO_STAGE=	yes
+WRKSRC=		${WRKDIR}/devscripts-${PORTVERSION}
+SHEBANG_FILES=	scripts/checkbashisms.pl
 
-PLIST_FILES=	bin/${DISTNAME}
+PLIST_FILES=	bin/checkbashisms \
+		man/man1/checkbashisms.1.gz
 
-do-extract:
-	@${MKDIR} ${WRKSRC}
-	@${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}
-
-do-patch:
-	@${REINPLACE_CMD} -e "s| /usr/bin/perl|${PERL}|" \
-		${WRKSRC}/${DISTNAME}
+post-patch:
+	@${REINPLACE_CMD} -e 's|###VERSION###|${PORTVERSION}|' ${WRKSRC}/scripts/checkbashisms.pl
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin/${DISTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/checkbashisms.pl \
+	    ${STAGEDIR}${PREFIX}/bin/checkbashisms
+	${INSTALL_MAN} ${WRKSRC}/scripts/checkbashisms.1 \
+	    ${STAGEDIR}${MANPREFIX}/man/man1/
 
 .include <bsd.port.mk>
