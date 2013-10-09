@@ -14,8 +14,8 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	guile>=1.8.6:${PORTSDIR}/lang/guile \
     		${LOCALBASE}/share/guile/1.8/slibcat:${PORTSDIR}/lang/slib-guile
-LIB_DEPENDS=	gnome-keyring:${PORTSDIR}/security/libgnome-keyring \
-		goffice-0.8:${PORTSDIR}/devel/goffice
+LIB_DEPENDS=	libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
+		libgoffice-0.8.so:${PORTSDIR}/devel/goffice
 RUN_DEPENDS=	guile>=1.8.6:${PORTSDIR}/lang/guile \
 		${LOCALBASE}/share/guile/1.8/slibcat:${PORTSDIR}/lang/slib-guile \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
@@ -30,6 +30,21 @@ DATABASE_DESC=	Enable SQL database backends
 LOCALE_TAX_DESC=	Enable localized tax categories
 WEBKIT_DESC=	Use webkit instead of gtkhtml for the HTML engine
 
+OPTIONS_SUB=		yes
+AQBANKING_CONFIGURE_ENABLE=aqbanking
+AQBANKING_LIB_DEPENDS=	libgwengui-gtk2.so:${PORTSDIR}/devel/gwenhywfar-gtk2 \
+			libktoblzcheck.so:${PORTSDIR}/finance/ktoblzcheck \
+			libaqbanking.so:${PORTSDIR}/finance/aqbanking
+OFX_CONFIGURE_ENABLE=	ofx
+OFX_LIB_DEPENDS=	libofx.so:${PORTSDIR}/finance/libofx
+DATABASE_CONFIGURE_ENABLE=dbi
+DATABASE_LIB_DEPENDS=	libdbi.so:${PORTSDIR}/databases/libdbi
+LOCALE_TAX_CONFIGURE_ON=--enable-locale-specific-tax
+WEBKIT_CONFIGURE_ON=	--with-html-engine=webkit
+WEBKIT_LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
+PYTHON_CONFIGURE_ON=	--enable-python-bindings
+PYTHON_USE=		PYTHON=yes
+
 USE_BZIP2=	yes
 USES=		gettext gmake pkgconfig perl5
 INSTALLS_ICONS=	yes
@@ -40,8 +55,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-error-on-warning \
 		--disable-doxygen
-
-MAN1=		gnucash.1
 
 GCONF_SCHEMAS=	apps_gnucash_dialog_business_common.schemas \
 		apps_gnucash_dialog_commodities.schemas \
@@ -59,66 +72,22 @@ GCONF_SCHEMAS=	apps_gnucash_dialog_business_common.schemas \
 		apps_gnucash_window_pages_account_tree.schemas \
 		apps_gnucash_window_pages_register.schemas
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAQBANKING}
-LIB_DEPENDS+=	gwengui-gtk2:${PORTSDIR}/devel/gwenhywfar-gtk2 \
-		ktoblzcheck:${PORTSDIR}/finance/ktoblzcheck \
-		aqbanking:${PORTSDIR}/finance/aqbanking
-
 GCONF_SCHEMAS+=	apps_gnucash_dialog_hbci.schemas
-CONFIGURE_ARGS+=--enable-aqbanking
-PLIST_SUB+=	AQBANKING=""
-.else
-CONFIGURE_ARGS+=--disable-aqbanking
-PLIST_SUB+=	AQBANKING="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MOFX}
-CONFIGURE_ARGS+=--enable-ofx
-LIB_DEPENDS+=	ofx:${PORTSDIR}/finance/libofx
-PLIST_SUB+=	OFX=""
-.else
-CONFIGURE_ARGS+=--disable-ofx
-PLIST_SUB+=	OFX="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDATABASE}
-CONFIGURE_ARGS+=--enable-dbi
-LIB_DEPENDS+=	dbi:${PORTSDIR}/databases/libdbi
-PLIST_SUB+=	DATABASE=""
-.else
-CONFIGURE_ARGS+=--disable-dbi
-PLIST_SUB+=	DATABASE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MLOCALE_TAX}
-CONFIGURE_ARGS+=--enable-locale-specific-tax
-.endif
-
-.if ${PORT_OPTIONS:MWEBKIT}
-CONFIGURE_ARGS+=--with-html-engine=webkit
-LIB_DEPENDS+=	webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2
-.else
+.if ! ${PORT_OPTIONS:MWEBKIT}
 USE_GNOME+=	gtkhtml3
-.endif
-
-.if ${PORT_OPTIONS:MPYTHON}
-CONFIGURE_ARGS+=--enable-python-bindings
-USE_PYTHON=	yes
-PLIST_SUB+=	PYTHON=""
-.else
-PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 post-install:
 .if ${PORT_OPTIONS:MPYTHON}
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
-		${PYTHON_SITELIBDIR:S|${LOCALBASE}|${PREFIX}|}/${PORTNAME}
+		${STAGEDIR}${PYTHON_SITELIBDIR:S|${LOCALBASE}|${PREFIX}|}/${PORTNAME}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
-		${PYTHON_SITELIBDIR:S|${LOCALBASE}|${PREFIX}|}/${PORTNAME}
+		${STAGEDIR}${PYTHON_SITELIBDIR:S|${LOCALBASE}|${PREFIX}|}/${PORTNAME}
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

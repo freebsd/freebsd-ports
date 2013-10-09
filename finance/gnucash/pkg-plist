@@ -334,6 +334,7 @@ lib/libgnc-qof.so.1
 libexec/gnucash/overrides/gnucash-env
 libexec/gnucash/overrides/gnucash-make-guids
 libexec/gnucash/overrides/guile
+man/man1/gnucash.1.gz
 share/applications/gnucash.desktop
 share/gnucash/accounts/C/acctchrt_brokerage.gnucash-xea
 share/gnucash/accounts/C/acctchrt_business.gnucash-xea
