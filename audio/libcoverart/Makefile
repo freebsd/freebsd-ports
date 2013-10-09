@@ -11,11 +11,10 @@ COMMENT=	Library for accessing the MusicBrainz cover art archive
 
 LICENSE=	LGPL20
 
-LIB_DEPENDS=	jansson:${PORTSDIR}/devel/jansson \
-		neon:${PORTSDIR}/www/neon29
+LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson \
+		libneon.so:${PORTSDIR}/www/neon29
 
 USES=		cmake
-NO_STAGE=	yes
 USE_LDCONFIG=	yes
 
 # {PROJECT_VERSION} is not a variable nor a typo, just part of the directory name
