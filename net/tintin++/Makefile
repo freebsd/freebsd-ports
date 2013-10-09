@@ -33,7 +33,6 @@ PORTDOCS=	${DOCS:T}
 
 SLAVEDIRS=	chinese/tintin++
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBIG5}
@@ -44,10 +43,10 @@ post-configure:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tt++ ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/tt++ ${STAGEDIR}${PREFIX}/bin/
 .if ${PORT_OPTIONS:MDOCS}
-	${INSTALL} -d ${DOCSDIR}/
-	cd ${WRKSRC}/../ && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/../ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
