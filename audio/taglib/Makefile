@@ -14,25 +14,19 @@ LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
 LICENSE_FILE_MPL=	${WRKSRC}/COPYING.MPL
 
-OPTIONS_DEFINE=	RCC
-
-RCC_DESC=	Build with RusXMMS librcc patches (experimental)
-
 USES=		cmake
-NO_STAGE=	yes
 CMAKE_ARGS=	-DWITH_ASF:BOOL=ON \
 		-DWITH_MP4:BOOL=ON
 USE_LDCONFIG=	yes
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	RCC
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MRCC}
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-rcc
-LIB_DEPENDS+=	rcc:${PORTSDIR}/devel/librcc
-PLIST_SUB+=	RCC=""
-.else
-PLIST_SUB+=	RCC="@comment "
-.endif
+RCC_DESC=		Build with RusXMMS librcc patches (experimental)
+RCC_EXTRA_PATCHES=	${FILESDIR}/extrapatch-rcc
+RCC_LIB_DEPENDS=	librcc.so:${PORTSDIR}/devel/librcc
+
+.include <bsd.port.options.mk>
 
 post-patch:
 .if ${PORT_OPTIONS:MRCC}
