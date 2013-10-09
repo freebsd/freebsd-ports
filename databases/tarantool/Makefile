@@ -14,7 +14,7 @@ LICENSE=	BSD
 
 TR_REV=		96-gae1ec01
 MAKE_JOBS_UNSAFE=yes
-USES=		cmake gettext:build gmake iconv perl5
+USES=		cmake gettext:build gmake iconv perl5 compiler:c++11-lang
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-message
@@ -25,7 +25,6 @@ CLIENT_DESC=	Enable client
 DEBUG_DESC=	Enable debug
 MYSQL_DESC=	Install MySQL plugin
 PGSQL_DESC=	Install PostgreSQL plugin
-USE_BINUTILS=	yes
 
 OPTIONS_DEFAULT=CLIENT
 
@@ -34,22 +33,6 @@ MAN1=		tarantool_box.1
 NO_STAGE=	yes
 
 .include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 900014 && !exists(${LOCALBASE}/bin/clang33)
-# No clang++ installed, use GCC from ports:
-USE_GCC=	4.6+
-.else
-.if ${OSVERSION} < 1000052
-BUILD_DEPENDS+=	clang33:${PORTSDIR}/lang/clang33
-CC=		clang33
-CXX=		clang++33
-CPP=		clang-cpp33
-.else
-CC=		clang
-CXX=		clang++
-CPP=		clang-cpp
-.endif
-.endif
 
 .if ${PORT_OPTIONS:MCLIENT}
 CMAKE_ARGS+=	-DENABLE_CLIENT=true
