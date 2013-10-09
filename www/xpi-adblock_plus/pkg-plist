@@ -441,23 +441,33 @@
 %%XPI_XPIDIR%%/chrome/skin/abp-status-16.png
 %%XPI_XPIDIR%%/chrome/skin/abp-status.png
 %%XPI_XPIDIR%%/chrome/skin/ajax-loader.gif
+%%XPI_XPIDIR%%/chrome/skin/arrow-down.png
+%%XPI_XPIDIR%%/chrome/skin/arrow-up.png
+%%XPI_XPIDIR%%/chrome/skin/background-candomore.png
+%%XPI_XPIDIR%%/chrome/skin/background-main.png
+%%XPI_XPIDIR%%/chrome/skin/background-share.png
 %%XPI_XPIDIR%%/chrome/skin/background.png
 %%XPI_XPIDIR%%/chrome/skin/checkbox.png
 %%XPI_XPIDIR%%/chrome/skin/close.png
 %%XPI_XPIDIR%%/chrome/skin/composer.css
+%%XPI_XPIDIR%%/chrome/skin/donate.png
 %%XPI_XPIDIR%%/chrome/skin/features/malware.png
 %%XPI_XPIDIR%%/chrome/skin/features/social.png
 %%XPI_XPIDIR%%/chrome/skin/features/tracking.png
 %%XPI_XPIDIR%%/chrome/skin/filters.css
 %%XPI_XPIDIR%%/chrome/skin/firstRun.css
+%%XPI_XPIDIR%%/chrome/skin/fonts/CreteRound-Italic.otf
+%%XPI_XPIDIR%%/chrome/skin/fonts/CreteRound-Regular.otf
 %%XPI_XPIDIR%%/chrome/skin/item-state.png
 %%XPI_XPIDIR%%/chrome/skin/overlay.css
 %%XPI_XPIDIR%%/chrome/skin/sendReport.css
 %%XPI_XPIDIR%%/chrome/skin/sidebar.css
 %%XPI_XPIDIR%%/chrome/skin/slow.png
 %%XPI_XPIDIR%%/chrome/skin/social/facebook.png
-%%XPI_XPIDIR%%/chrome/skin/social/gplus.png
+%%XPI_XPIDIR%%/chrome/skin/social/googleplus.png
+%%XPI_XPIDIR%%/chrome/skin/social/renren.png
 %%XPI_XPIDIR%%/chrome/skin/social/twitter.png
+%%XPI_XPIDIR%%/chrome/skin/social/weibo.png
 %%XPI_XPIDIR%%/chrome/skin/subscriptionSelection.css
 %%XPI_XPIDIR%%/chrome.manifest
 %%XPI_XPIDIR%%/defaults/patterns.ini
@@ -544,6 +554,7 @@
 @dirrm %%XPI_XPIDIR%%/chrome/locale/zh-TW
 @dirrm %%XPI_XPIDIR%%/chrome/locale
 @dirrm %%XPI_XPIDIR%%/chrome/skin/features
+@dirrm %%XPI_XPIDIR%%/chrome/skin/fonts
 @dirrm %%XPI_XPIDIR%%/chrome/skin/social
 @dirrm %%XPI_XPIDIR%%/chrome/skin
 @dirrm %%XPI_XPIDIR%%/chrome
