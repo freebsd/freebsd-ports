@@ -23,21 +23,31 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_GCC=	any
 USES=		cmake
 USE_QT4=	gui qt3support xml  moc_build qmake_build rcc_build uic_build
-CXXFLAGS+=	-I${PREFIX}/include \
-		-I${PREFIX}/include/libavcodec \
-		-I${PREFIX}/include/libavformat \
-		-I${PREFIX}/include/libswscale
+CXXFLAGS+=	-I${LOCALBASE}/include \
+		-I${LOCALBASE}/include/libavcodec \
+		-I${LOCALBASE}/include/libavformat \
+		-I${LOCALBASE}/include/libswscale
 
-MAN1=		dvbcut.1
-PLIST_FILES=	bin/dvbcut
-
-NO_STAGE=	yes
+#NO_STAGE=	yes
+#MAN1=		dvbcut.1
 
 pre-patch:
 		cd ${WRKSRC} && ${BZCAT} ${FILESDIR}/use-qt4.diff.bz2 | ${PATCH} -p2
 
+post-build:
+		$(SED) -e 's;@prefix@/dvbcut/share/icons;'${PREFIX}/share/icons/dvbcut';' \
+			< ${WRKSRC}/dvbcut.desktop.in \
+			> ${WRKSRC}/dvbcut.desktop
+
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/src/dvbcut ${PREFIX}/bin
-		${INSTALL_MAN} ${WRKSRC}/dvbcut.1 ${MANPREFIX}/man/man1
+		${INSTALL_PROGRAM} ${WRKSRC}/src/dvbcut ${STAGEDIR}${PREFIX}/bin/
+		${INSTALL_MAN} ${WRKSRC}/dvbcut.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+		${MKDIR} $(STAGEDIR)$(PREFIX)/share/applications
+	        $(INSTALL_DATA) ${WRKSRC}/dvbcut.desktop $(STAGEDIR)$(PREFIX)/share/applications/
+		${MKDIR} $(STAGEDIR)$(PREFIX)/share/icons/dvbcut
+	       	$(INSTALL_DATA) ${WRKSRC}/dvbcut.svg $(STAGEDIR)$(PREFIX)/share/icons/dvbcut/
+	       	$(INSTALL_DATA) ${WRKSRC}/icons/* $(STAGEDIR)$(PREFIX)/share/icons/dvbcut/
+		${MKDIR} $(STAGEDIR)$(PREFIX)/share/mime/packages
+	       	$(INSTALL_DATA) ${WRKSRC}/dvbcut.xml $(STAGEDIR)$(PREFIX)/share/mime/packages/
 
 .include <bsd.port.mk>

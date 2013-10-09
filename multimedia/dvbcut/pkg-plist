@@ -1,0 +1,18 @@
+bin/dvbcut
+share/applications/dvbcut.desktop
+share/mime/packages/dvbcut.xml
+share/icons/dvbcut/bookmark.png
+share/icons/dvbcut/chapter.svgz
+share/icons/dvbcut/dvbcut.svg
+share/icons/dvbcut/play.svgz
+share/icons/dvbcut/stop.png
+share/icons/dvbcut/play.png
+share/icons/dvbcut/icons.qrc.orig
+share/icons/dvbcut/bookmark.svgz
+share/icons/dvbcut/icons.qrc
+share/icons/dvbcut/chapter.png
+share/icons/dvbcut/stop.svgz
+man/man1/dvbcut.1.gz
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@dirrm share/icons/dvbcut
