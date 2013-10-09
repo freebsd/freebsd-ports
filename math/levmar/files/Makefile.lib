@@ -8,6 +8,6 @@ SHLIB_MINOR=	5
 SRCS=	lm.c Axb.c misc.c lmlec.c lmbc.c lmblec.c lmbleic.c
 
 beforeinstall:
-	${BSD_INSTALL_DATA} ${.CURDIR}/levmar.h ${PREFIX}/include
+	${BSD_INSTALL_DATA} ${.CURDIR}/levmar.h ${DESTDIR}${PREFIX}/include
 
 .include <bsd.lib.mk>
