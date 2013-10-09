@@ -16,9 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
-PLIST_FILES=	bin/pxz
-MAN1=	pxz.1
+USES=		compiler:openmp
+PLIST_FILES=	bin/pxz man/man1/pxz.1.gz
 
 MAKE_ENV+=	BINDIR=${PREFIX}/bin \
 		MANDIR=${MANPREFIX}/man
