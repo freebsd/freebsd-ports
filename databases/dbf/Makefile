@@ -16,9 +16,8 @@ OPTIONS_DEFINE=	NLS
 WRKSRC=		${WRKDIR}/lib${PORTNAME}
 
 USE_ZIP=	yes
-USES=        pathfix
+USES=		pathfix
 USE_GNOME=	intltool
-USE_GCC=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_prog_DOC_TO_MAN=""
 USE_LDCONFIG=	yes
