@@ -5,4 +5,4 @@ connect via the web, IM, and SMS. Twitter exposes a web services API
 (http://twitter.com/help/api) and this library is intended to make it
 even easier for python programmers to use.
 
-WWW: http://code.google.com/p/python-twitter/
+WWW: https://github.com/bear/python-twitter
