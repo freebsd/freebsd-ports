@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	levmar
-PORTVERSION=	2.5
-PORTREVISION=	3
+PORTVERSION=	2.6
 CATEGORIES=	math
-MASTER_SITES=	http://www.ics.forth.gr/~lourakis/levmar/
+MASTER_SITES=	http://users.ics.forth.gr/~lourakis/levmar/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
@@ -17,10 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_LDCONFIG=	yes
 USE_FORTRAN=	yes
 
-OPTIONS_DEFINE=	PROFILE
+OPTIONS_DEFINE=	DOCS EXAMPLES PROFILE
 PROFILE_DESC=	Build a profiling library
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libgoto2p.so)
@@ -32,30 +30,26 @@ WITH_BLAS?=	reference
 .endif
 
 .if ${WITH_BLAS} == "reference"
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas \
-		lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas \
+		liblapack.so:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
 .elif ${WITH_BLAS} == "gotoblas"
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
-LIB_DEPENDS+=	goto2p.1:${PORTSDIR}/math/gotoblas
+LIB_DEPENDS+=	libgoto2p.so:${PORTSDIR}/math/gotoblas
 BLAS=		-lgoto2p
 LAPACK=		-lgoto2p
 .elif ${WITH_BLAS} == "atlas"
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
 BLAS=		-lptf77blas
 LAPACK=		-lalapack -lptcblas
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	README.txt
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
 PORTEXAMPLES=	lmdemo.c Makefile.demo
-.endif
 PLIST_FILES=	include/levmar.h \
 	lib/liblevmar.a \
 	lib/liblevmar.so \
@@ -86,14 +80,10 @@ post-extract:
 			${WRKSRC}/Makefile.demo
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@(cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR})
 
 test check: install
 	@( cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} Makefile.demo \
