@@ -17,24 +17,16 @@ OPTIONS_DEFAULT=	MTPZ
 MTPZ_DESC=	Enable functionality to connect to MTPZ devices
 
 USES=		pathfix pkgconfig iconv
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMTPZ}
-LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
-.else
-CONFIGURE_ARGS+=--disable-mtpz
-.endif
-
-.include <bsd.port.pre.mk>
-
 CONFIGURE_ENV+=	LIBUSB_CFLAGS="-I/usr/include" LIBUSB_LIBS="-lusb" LIBS="-lusb"
+
+MTPZ_CONFIGURE_ENABLE=	mtpz
+MTPZ_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -48,4 +40,4 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|__builtin_bswap|bswap|g' ${WRKSRC}/src/mtpz.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
