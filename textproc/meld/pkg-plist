@@ -250,7 +250,6 @@ share/icons/hicolor/scalable/apps/meld.svg
 %%DATADIR%%/ui/tab-placeholder.ui
 %%DATADIR%%/ui/vcview-ui.xml
 %%DATADIR%%/ui/vcview.ui
-share/mime/application/x-meld-comparison.xml
 share/mime/packages/meld.xml
 share/omf/meld/meld-C.omf
 share/omf/meld/meld-es.omf
