@@ -3,7 +3,7 @@
 
 PORTNAME=	libstroke
 PORTVERSION=	0.5.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	http://etla.net/libstroke/
 
@@ -14,21 +14,9 @@ USES=		gmake
 USE_CSTD=	gnu89
 USE_XORG=	x11
 USE_AUTOTOOLS=	libtool
-WANT_GNOME=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	GTK1
-GTK1_DESC=	Build with legacy Gtk+/GNOME stroke support
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGTK1} || !empty(HAVE_GNOME:Mgtk12)
-USE_GNOME+=	gtk12
-PLIST_SUB+=	GS=""
-.else
-PLIST_SUB+=	GS="@comment "
-.endif
+CONFIGURE_ARGS=	--disable-gtktest
 
 post-patch:
 	@${REINPLACE_CMD} -e \
