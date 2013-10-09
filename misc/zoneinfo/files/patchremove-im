@@ -1,9 +1,9 @@
---- zone.tab.orig	Tue Aug 29 18:09:24 2006
-+++ zone.tab	Tue Aug 29 18:09:30 2006
-@@ -206,7 +206,7 @@
- ID	-0232+14042	Asia/Jayapura	Irian Jaya & the Moluccas
+--- zone.tab.orig	2013-09-11 10:47:17.000000000 +1000
++++ zone.tab	2013-10-10 06:13:41.000000000 +1100
+@@ -225,7 +225,7 @@
+ ID	-0232+14042	Asia/Jayapura	west New Guinea (Irian Jaya) & Malukus (Moluccas)
  IE	+5320-00615	Europe/Dublin
- IL	+3146+03514	Asia/Jerusalem
+ IL	+314650+0351326	Asia/Jerusalem
 -IM	+5409-00428	Europe/Isle_of_Man
 +#IM	+5409-00428	Europe/Isle_of_Man
  IN	+2232+08822	Asia/Kolkata
