@@ -290,8 +290,8 @@ man/man1/irssi.1.gz
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irc
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Irssi
-@dirrm lib/irssi/modules
-@dirrm lib/irssi
+%%WITH_PROXY%%@dirrm lib/irssi/modules
+%%WITH_PROXY%%@dirrm lib/irssi
 @dirrm include/irssi/src/lib-config
 @dirrm include/irssi/src/irc/notifylist
 @dirrm include/irssi/src/irc/flood
