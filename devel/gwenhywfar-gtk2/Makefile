@@ -10,5 +10,4 @@ MASTERDIR=	${.CURDIR}/../../devel/gwenhywfar
 SLAVEPORT=	gtk2
 PLIST=		${.CURDIR}/pkg-plist
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
