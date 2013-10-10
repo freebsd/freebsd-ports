@@ -11,6 +11,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A search tool for Eijiro by ruby
 
+BROKEN=		has broken dependacy
+EXPIRATION_DATE=	2013-10-10
+
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/mmap.so:${PORTSDIR}/devel/ruby-mmap
 
 NOT_FOR_ARCHS=	amd64
