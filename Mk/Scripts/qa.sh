@@ -71,7 +71,27 @@ stripped() {
 	done
 }
 
-checks="shebang symlinks paths stripped"
+desktopfileutils() {
+	if [ -z "${USESDESKTOPFILEUTILS}" ]; then
+		grep -q MimeType= ${STAGEDIR}${PREFIX}/share/applications/*.desktop 2>/dev/null &&
+		warn "you need USES=desktop-file-utils"
+	else
+		grep -q MimeType= ${STAGEDIR}${PREFIX}/share/applications/*.desktop 2>/dev/null ||
+		warn "you may not need USES=desktop-file-utils"
+	fi
+}
+
+sharedmimeinfo() {
+	if [ -z "${USESSHAREDMIMEINFO}" ]; then
+		find ${STAGEDIR}${PREFIX}/share/mime/packages/*.xml ! -name "freedesktop\.org\.xml" -quit 2>/dev/null &&
+		warn "you need USES=shared-mime-info"
+	else
+		find ${STAGEDIR}${PREFIX}/share/mime/packages/*.xml ! -name "freedesktop\.org\.xml" -quit 2>/dev/null ||
+		warn "you may not need USES=shared-mime-info"
+	fi
+}
+
+checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo"
 
 ret=0
 cd ${STAGEDIR}
