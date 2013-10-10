@@ -22,26 +22,30 @@ USE_LDCONFIG=	yes
 USES=		gmake
 
 PLIST_DIRS=	include/pci
-PLIST_FILES=	${LIBPCI_FILES} lib/libpci.so.3
+PLIST_FILES=	${LIBPCI_FILES} \
+		lib/libpci.so
 
-LIBPCI_FILES=	include/pci/config.h include/pci/header.h include/pci/pci.h \
-		include/pci/types.h lib/libpci.a lib/libpci.so \
+LIBPCI_FILES=	include/pci/config.h \
+		include/pci/header.h \
+		include/pci/pci.h \
+		include/pci/types.h \
+		lib/libpci.a \
+		lib/libpci.so.3 \
 		libdata/pkgconfig/libpci.pc
 
-NO_STAGE=	yes
 post-patch:
 	@${LN} -s . ${WRKSRC}/lib/pci
 	@${REINPLACE_CMD} -e '/^CC=/d; /^CFLAGS=/ s|=|+=|; /^IDSDIR=/ s|$$|/pciids|; /^OPT=/d; /^PREFIX=/d' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} 's|^#include "|&pci/|' ${WRKSRC}/lib/pci.h
 
 post-build:
-	cd ${WRKSRC}/lib/ && ${CC} ${CFLAGS} -shared *.o -lz -o libpci.so
+	@cd ${WRKSRC}/lib/ && ${CC} ${CFLAGS} ${STRIP} -shared *.o -lz -o libpci.so.3
 
 do-install:
-	${MKDIR} ${PREFIX}/include/pci/
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/pci/
 .for file in ${LIBPCI_FILES}
-	${INSTALL_DATA} ${WRKSRC}/lib/${file:T} ${PREFIX}/${file}
+	${INSTALL_DATA} ${WRKSRC}/lib/${file:T} ${STAGEDIR}${PREFIX}/${file}
 .endfor
-	${LN} -fs libpci.so ${PREFIX}/lib/libpci.so.3
+	${LN} -fs libpci.so.3 ${STAGEDIR}${PREFIX}/lib/libpci.so
 
 .include <bsd.port.mk>
