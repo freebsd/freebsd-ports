@@ -5095,7 +5095,7 @@ _INSTALL_DEPENDS=	\
 				fi; \
 			elif [ -n "${USE_PACKAGE_DEPENDS_ONLY}" -a "$${target}" = "${DEPENDS_TARGET}" ]; then \
 				${ECHO_MSG} "===>   ${PKGNAME} depends on package: $${subpkgfile} - not found"; \
-				${ECHO_MSG} "===>   USE_PACKAGE_DEPENDS_ONLY set - will not build from source"; \
+				${ECHO_MSG} "===>   USE_PACKAGE_DEPENDS_ONLY set - not building missing dependency from source"; \
 				exit 1; \
 			else \
 			  (cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
