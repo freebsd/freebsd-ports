@@ -10,8 +10,8 @@ MASTER_SITES=	http://libopenraw.freedesktop.org/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for camera RAW files decoding
 
-LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 USES=		pkgconfig
 USE_GNOME=	libxml2
@@ -24,16 +24,9 @@ CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include
 OPTIONS_DEFINE=	GNOME
 OPTIONS_DEFAULT=	GNOME
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGNOME}
-USE_GNOME=	gtk20
-PLIST_SUB+=	GNOME=""
-.else
-CONFIGURE_ARGS+=--disable-gnome
-PLIST_SUB+=	GNOME="@comment "
-.endif
+OPTIONS_SUB=	yes
+GNOME_CONFIGURE_ENABLE=	gnome
+GNOME_USE=	GNOME=gtk20
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|' ${WRKSRC}/configure
