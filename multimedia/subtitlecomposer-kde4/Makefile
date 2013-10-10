@@ -10,34 +10,23 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Subtitle editor for KDE
 
 USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake:outsource gettext
 USE_KDE4=	kdeprefix kdelibs automoc4 sharedmime
-USE_QT4=	gui qmake_build moc_build rcc_build uic_build
+USE_QT4=	qmake_build moc_build rcc_build uic_build phonon
 
-OPTIONS_DEFINE=	GSTREAMER MPLAYER XINE
-OPTIONS_DEFAULT=	MPLAYER
+OPTIONS_GROUP=	BACKEND
+BACKEND_DESC=	Additional video backens
+OPTIONS_GROUP_BACKEND=	GSTREAMER MPLAYER XINE
 
-MPLAYER_DESC=	Enable MPlayer backend (recommended)
-XINE_DESC=	Enable Xine backend
-GSTREAMER_DESC=	Enable GStreamer backend (broken)
+MPLAYER_DESC=	Install MPlayer
+MPLAYER_RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+XINE_DESC=	Build Xine backend
+XINE_LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine
+XINE_CMAKE_OFF=	-DWITH_Xine:Bool=Off
 
-.if ${PORT_OPTIONS:MMPLAYER}
-RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
-.endif
-
-.if ${PORT_OPTIONS:MXINE}
-LIB_DEPENDS+=	libxine.so:${PORTSDIR}/multimedia/libxine
-.else
-CMAKE_ARGS+=	-DWITH_Xine:Bool=Off
-.endif
-
-.if ${PORT_OPTIONS:MGSTREAMER}
-USE_GSTREAMER=	yes
-.else
-CMAKE_ARGS+=	-DWITH_GStreamer:Bool=Off
-.endif
+GSTREAMER_DESC=	Build GStreamer backend (broken)
+GSTREAMER_USE=	GSTREAMER=yes
+GSTREAMER_CMAKE_OFF=	-DWITH_GStreamer:Bool=Off
 
 .include <bsd.port.mk>
