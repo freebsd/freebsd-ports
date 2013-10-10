@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bmake
-PORTVERSION=	20130904
+PORTVERSION=	20131001
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/sjg/ \
 		http://www.gtlib.cc.gatech.edu/pub/NetBSD/misc/sjg/ \
@@ -17,26 +17,23 @@ LICENSE=	BSD
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAN1=		bmake.1
-
 post-patch:	.SILENT
 	${REINPLACE_CMD} 's/^\.Nx/NetBSD/' ${WRKDIR}/bmake/bmake.1
 
-NO_STAGE=	yes
 do-build:
 	${SETENV} ${MAKE_ENV} ${SH} ${WRKDIR}/bmake/boot-strap \
 		--with-default-sys-path='.../share/mk:${PREFIX}/share/mk' \
 		-m ${WRKDIR}/mk objdir=${WRKDIR}/obj prefix=${PREFIX}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/obj/bmake ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKDIR}/bmake/bmake.1 ${MAN1PREFIX}/man/man1
-	${SH} ${WRKDIR}/mk/install-mk ${PREFIX}/share/mk
-	cd ${PREFIX} ;						\
+	${INSTALL_PROGRAM} ${WRKDIR}/obj/bmake ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKDIR}/bmake/bmake.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${SH} ${WRKDIR}/mk/install-mk ${STAGEDIR}${PREFIX}/share/mk
+	cd ${STAGEDIR}${PREFIX} ;						\
 	    ${FIND} share/mk -type f -o -type l			\
 	    	| ${SORT}					\
 	    	>${WRKDIR}/PLIST.share-mk
-	cd ${PREFIX} ;						\
+	cd ${STAGEDIR}${PREFIX} ;						\
 	    ${FIND} share/mk/${_DATADIR} -type d		\
 	    	| ${SORT} -r | ${SED} -e 's/^/@dirrm /g'	\
 		>>${WRKDIR}/PLIST.share-mk
