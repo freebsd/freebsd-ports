@@ -1,4 +1,5 @@
 bin/bmake
+man/man1/bmake.1.gz
 @comment Insert PLIST.share-mk here
 @comment -=[ begin PLIST.share-mk ]=-
 @comment -=[ end PLIST.share-mk ]=-
