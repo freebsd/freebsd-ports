@@ -12,6 +12,12 @@ COMMENT=	The traditional 4.4BSD /bin/csh C-shell
 
 USE_BZIP2=	yes
 
+.include <bsd.port.pre.mk>
+
+.if  ${OSVERSION} >= 1000055
+BUILD_DEPENDS=    rcs:${PORTSDIR}/devel/rcs57
+.endif
+
 NO_WRKSUBDIR=	yes
 MAN1=		44bsd-csh.1
 PORTDOCS=	paper.ascii.gz
@@ -40,4 +46,4 @@ tarup:
 	cd ${WRKSRC} ; rm * USD.doc/*
 	cd ${WRKSRC} ; ${TAR} cvyf /tmp/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
