@@ -38,7 +38,7 @@ PLIST_SUB+=		WITH_PYTHON="@comment "
 
 .if ${PORT_OPTIONS:MRUBY}
 .include "../../Mk/bsd.ruby.mk"
-BUILD_DEPENDS+=		${LOCALBASE}/bin/ruby:${PORTSDIR}/lang/ruby18
+BUILD_DEPENDS+=		${LOCALBASE}/bin/ruby:${PORTSDIR}/lang/ruby19
 CONFIGURE_ARGS+=	--with-ruby
 PLIST_SUB+=		WITH_RUBY=""
 .else
