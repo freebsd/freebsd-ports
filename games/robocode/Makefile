@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	robocode
-PORTVERSION=	1.8.2.0
+PORTVERSION=	1.8.3.0
 CATEGORIES=	games java
 MASTER_SITES=	SF \
 		SF/nemysisfreebsdp/:icons
@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}-setup.jar \
 DIST_SUBDIR=	java
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}-setup.jar
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Game for learning Java[tm] programming language
 
 LICENSE=	EPL
@@ -23,42 +23,37 @@ JAVA_EXTRACT=	yes
 JAVA_RUN=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+USE_DOS2UNIX=	*.html *.MF *.battle *.java *.txt *.properties *.tpt
 
 PORTDOCS=	ReadMe.html ReadMe.txt versions.md
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-SUB_FILES=	${PORTNAME}.sh pkg-message
+SUB_FILES=	${PORTNAME}-sh pkg-message
 
 DESKTOP_ENTRIES="Robocode" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Game;StrategyGame;" false
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .for d in battles compilers javadoc libs license roborumble robots templates
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${DATADIR})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
 .endfor
 
 .for d in *.ico *.sh versions.md
-	@(${INSTALL_DATA} ${WRKSRC}/${d} ${DATADIR})
+	@(${INSTALL_DATA} ${WRKSRC}/${d} ${STAGEDIR}${DATADIR})
 .endfor
 
-post-install:
-	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${PREFIX}/share/pixmaps
-	${MKDIR} -m a+rwx ${DATADIR}/config
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
+	@${MKDIR} ${STAGEDIR}${DATADIR}/config
+	@(cd ${STAGEDIR}${DATADIR} && ${CHMOD} -R 775 config roborumble robots)
+	@${CHMOD} +x ${STAGEDIR}${DATADIR}/*.sh
 
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
-
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
