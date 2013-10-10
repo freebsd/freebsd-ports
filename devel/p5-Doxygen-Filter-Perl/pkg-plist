@@ -1,0 +1,13 @@
+bin/doxygen-filter-perl
+%%PERL5_MAN3%%/Doxygen::Filter::Perl.3.gz
+%%PERL5_MAN3%%/Doxygen::Filter::Perl::POD.3.gz
+%%SITE_PERL%%/Doxygen/Filter.pm
+%%SITE_PERL%%/Doxygen/Filter/Perl.pm
+%%SITE_PERL%%/Doxygen/Filter/Perl/POD.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Doxygen/Filter/Perl/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Doxygen/Filter/Perl
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Doxygen/Filter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Doxygen
+@dirrmtry %%SITE_PERL%%/Doxygen/Filter/Perl
+@dirrmtry %%SITE_PERL%%/Doxygen/Filter
+@dirrmtry %%SITE_PERL%%/Doxygen
