@@ -3,7 +3,8 @@
 
 PORTNAME=	postgresql
 PORTREVISION=	0
-PKGNAMESUFFIX=	-docs
+PKGNAMESUFFIX?=        ${DISTV:S/.//}-docs
+DISTV= ${DISTVERSION:R}
 
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	The PostgreSQL documentation set
@@ -15,6 +16,7 @@ WANT_PGSQL_VER?=84
 
 NO_BUILD=	YES
 SLAVE_ONLY=	YES
+COMPONENT=	-docs
 PATCHDIR=	mustnotexist
 
 PGDOCSDIR?=	${DOCSDIR}/release-${PGSQL_VER}

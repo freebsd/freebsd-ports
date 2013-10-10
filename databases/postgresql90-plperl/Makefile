@@ -3,7 +3,8 @@
 
 PORTNAME=	postgresql
 CATEGORIES=	databases perl5
-PKGNAMESUFFIX=	-plperl
+PKGNAMESUFFIX?=	${DISTV:S/.//}-plperl
+DISTV=	${DISTVERSION:R}
 
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	Write SQL functions for PostgreSQL using Perl5
@@ -20,6 +21,7 @@ CONFIGURE_ARGS=	--with-perl
 BUILD_DIRS=	src/backend src/pl/plperl
 INSTALL_DIRS=	src/pl/plperl
 SLAVE_ONLY=	yes
+COMPONENT=	-plperl
 
 NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
