@@ -3,6 +3,7 @@
 
 PORTNAME=	App-GitGot
 PORTVERSION=	1.09
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GENEHACK
@@ -15,7 +16,6 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Config-INI>=0:${PORTSDIR}/devel/p5-Config-INI \
-		p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper \
 		p5-File-Copy-Recursive>=0:${PORTSDIR}/devel/p5-File-Copy-Recursive \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-Git-Wrapper>=0.014:${PORTSDIR}/devel/p5-Git-Wrapper \
@@ -24,7 +24,6 @@ BUILD_DEPENDS=	p5-Config-INI>=0:${PORTSDIR}/devel/p5-Config-INI \
 		p5-MouseX-NativeTraits>=0:${PORTSDIR}/devel/p5-MouseX-NativeTraits \
 		p5-Net-GitHub>=0:${PORTSDIR}/net/p5-Net-GitHub \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
-		p5-Term-ANSIColor>=0:${PORTSDIR}/devel/p5-Term-ANSIColor \
 		p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
