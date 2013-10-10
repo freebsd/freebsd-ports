@@ -189,6 +189,55 @@ libdata/pkgconfig/libfreeipmi.pc
 libdata/pkgconfig/libipmiconsole.pc
 libdata/pkgconfig/libipmidetect.pc
 libdata/pkgconfig/libipmimonitoring.pc
+man/man3/libfreeipmi.3.gz
+man/man3/libipmiconsole.3.gz
+man/man3/libipmidetect.3.gz
+man/man3/libipmimonitoring.3.gz
+man/man5/bmc-config.conf.5.gz
+man/man5/freeipmi.conf.5.gz
+man/man5/freeipmi_interpret_sel.conf.5.gz
+man/man5/freeipmi_interpret_sensor.conf.5.gz
+man/man5/ipmi_monitoring_sensors.conf.5.gz
+man/man5/ipmiconsole.conf.5.gz
+man/man5/ipmidetect.conf.5.gz
+man/man5/ipmidetectd.conf.5.gz
+man/man5/ipmimonitoring.conf.5.gz
+man/man5/ipmimonitoring_sensors.conf.5.gz
+man/man5/ipmipower.conf.5.gz
+man/man5/ipmiseld.conf.5.gz
+man/man5/libipmiconsole.conf.5.gz
+man/man5/libipmimonitoring.conf.5.gz
+man/man7/freeipmi.7.gz
+man/man8/bmc-config.8.gz
+man/man8/bmc-device.8.gz
+man/man8/bmc-info.8.gz
+man/man8/bmc-watchdog.8.gz
+man/man8/ipmi-chassis.8.gz
+man/man8/ipmi-chassis-config.8.gz
+man/man8/ipmi-console.8.gz
+man/man8/ipmi-dcmi.8.gz
+man/man8/ipmi-detect.8.gz
+man/man8/ipmi-fru.8.gz
+man/man8/ipmi-locate.8.gz
+man/man8/ipmi-oem.8.gz
+man/man8/ipmi-pef-config.8.gz
+man/man8/ipmi-pet.8.gz
+man/man8/ipmi-ping.8.gz
+man/man8/ipmi-power.8.gz
+man/man8/ipmi-raw.8.gz
+man/man8/ipmi-sel.8.gz
+man/man8/ipmi-sensors.8.gz
+man/man8/ipmi-sensors-config.8.gz
+man/man8/ipmiconsole.8.gz
+man/man8/ipmidetect.8.gz
+man/man8/ipmidetectd.8.gz
+man/man8/ipmimonitoring.8.gz
+man/man8/ipmiping.8.gz
+man/man8/ipmipower.8.gz
+man/man8/ipmiseld.8.gz
+man/man8/pef-config.8.gz
+man/man8/rmcp-ping.8.gz
+man/man8/rmcpping.8.gz
 sbin/bmc-config
 sbin/bmc-device
 sbin/bmc-info
@@ -277,17 +326,16 @@ sbin/rmcpping
 %%PORTDOCS%%%%DOCSDIR%%/freeipmi-libraries.txt
 %%PORTDOCS%%%%DOCSDIR%%/freeipmi-oem-documentation-requirements.txt
 %%PORTDOCS%%%%DOCSDIR%%/freeipmi-testing.txt
+@exec mkdir -m 0700 -p %%CACHE_DIR%%/ipmimonitoringsdrcache %%LOG_DIR%% %%RUN_DIR%%
+@exec touch %%RUN_DIR%%/ipckey
+@unexec rm -f %%RUN_DIR%%/ipckey
+@unexec rmdir %%CACHE_DIR%%/ipmimonitoringsdrcache %%CACHE_DIR%% %%LOG_DIR%% %%RUN_DIR%% 2>/dev/null || true
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib/pet
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib/nagios
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib/libipmimonitoring
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib/ganglia
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec mkdir -p %%CACHE_DIR%%/ipmimonitoringsdrcache %%LOG_DIR%% %%RUN_DIR%%
-@exec touch %%RUN_DIR%%/ipckey
-@exec chmod 0700 %%CACHE_DIR%% %%LOG_DIR%% %%RUN_DIR%%
-@unexec rm -f %%RUN_DIR%%/ipckey
-@unexec rmdir %%CACHE_DIR%%/ipmimonitoringsdrcache %%CACHE_DIR%% %%LOG_DIR%% %%RUN_DIR%% 2>/dev/null || true
 @dirrm include/freeipmi/util
 @dirrm include/freeipmi/templates
 @dirrm include/freeipmi/spec
