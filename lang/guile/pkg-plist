@@ -135,6 +135,7 @@ lib/libguilereadline-v-17.la
 lib/libguilereadline-v-17.so
 lib/libguilereadline-v-17.so.17
 libdata/pkgconfig/guile-1.8.pc
+man/man1/guile.1.gz
 share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/guile-procedures.txt
 %%DATADIR%%/%%GUILE_VER%%/ice-9/and-let-star.scm

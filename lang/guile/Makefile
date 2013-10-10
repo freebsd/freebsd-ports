@@ -11,11 +11,10 @@ MASTER_SITE_SUBDIR=	guile
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Ubiquitous Intelligent Language for Extension
 
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
 USE_AUTOTOOLS=	autoconf libltdl
-USE_GMAKE=	yes
-USES=		gettext ncurses
+USES=		gettext gmake ncurses
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -24,15 +23,12 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 GUILE_VER=	1.8
 PLIST_SUB=	GUILE_VER=${GUILE_VER}
 
-MAN1=		guile.1
-
 REINPLACE_FILES=	libguile/smob.c libguile/filesys.c libguile/gc.c \
 			libguile/mallocs.c libguile/eval.c libguile/gc-malloc.c \
 			libguile/ports.c libguile/gc-mark.c libguile/gc_os_dep.c
 
 INFO=		goops guile-tut guile r5rs
 
-NO_STAGE=	yes
 post-extract:
 	cd ${WRKSRC}; ${CHMOD} u+w ${REINPLACE_FILES}
 	@${FIND} ${WRKSRC}/doc -name "*.info*" -delete

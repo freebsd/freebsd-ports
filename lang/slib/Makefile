@@ -11,24 +11,21 @@ DISTFILES=	slib-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable scheme library
 
-USE_GMAKE=	yes
+USES=		gmake
 ALL_TARGET=	slib.info
 INFO=		slib
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/lib/slib|${PREFIX}/share/slib|' ${WRKSRC}/guile.init
 
 do-install:
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.scm ${WRKSRC}/*.init ${WRKSRC}/*.txt \
-		${WRKSRC}/*.xyz ${WRKSRC}/*.ps ${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/slib.info ${MANPREFIX}/info
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+		${WRKSRC}/*.xyz ${WRKSRC}/*.ps ${STAGEDIR}${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/slib.info ${STAGEDIR}${MANPREFIX}/info
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ANNOUNCE ChangeLog FAQ README
-	${INSTALL_MAN} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
