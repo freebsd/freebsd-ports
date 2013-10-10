@@ -30,7 +30,6 @@ USE_GCC=	4.2+	# triggers compiler error on gcc 3.4
 WANT_GSTREAMER=	yes
 USE_GNOME=	libxml2
 USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm xv
-USE_AUTOTOOLS=	libltdl
 INSTALLS_ICONS=	yes
 
 # jemalloc leads to infinite recursion on FreeBSD
@@ -200,9 +199,12 @@ PLIST_SUB+=		VAAPI="@comment "
 # Media handler options processing
 #
 .if ${PORT_OPTIONS:MFFMPEG} && empty(PORT_OPTIONS:MGSTREAMER)
-LIB_DEPENDS+=		avcodec:${PORTSDIR}/multimedia/ffmpeg
-CONFIGURE_ARGS+=	--enable-media=ffmpeg
+LIB_DEPENDS+=		libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0
+CONFIGURE_ARGS+=	--enable-media=ffmpeg \
+			--with-ffmpeg-incl=${LOCALBASE}/include/ffmpeg0/libavcodec \
+			--with-ffmpeg-lib=${LOCALBASE}/lib/ffmpeg0
 USE_SDL+=		sdl
+MAKE_ARGS+=		INCLUDES="-I${LOCALBASE}/include/ffmpeg0"
 .elif empty(PORT_OPTIONS:MFFMPEG) && ${PORT_OPTIONS:MGSTREAMER}
 USE_GSTREAMER=		yes
 CONFIGURE_ARGS+=	--enable-media=gst
