@@ -15,7 +15,6 @@ COMMENT=	Professional CAD system
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash	\
-		qmake:${PORTSDIR}/devel/qmake	\
 		${LOCALBASE}/lib/libopenNURBS.a:${PORTSDIR}/graphics/opennurbs
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
@@ -23,19 +22,19 @@ FETCH_ARGS=	-Fpr
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_JOBS_UNSAFE=yes
 
-USES=		gmake
+USES=		gmake qmake
 USE_LDCONFIG=	yes
-USE_QT4=	qmake clucene codecs-cn codecs-jp codecs-kr codecs-tw corelib	\
-		dbus designer gui help imageformats moc network opengl rcc script	\
-		scripttools sql svg uic xml xmlpatterns webkit
+USE_QT4=	qmake_build codecs-cn codecs-jp codecs-kr codecs-tw corelib \
+		designer gui help imageformats moc_build network opengl rcc_build script \
+		scripttools sql svg uic_build xml xmlpatterns webkit
 USE_GL=		glu
 
-DESKTOP_ENTRIES="${PORTNAME:U}"	\
-		"A free application for computer aided drafting in two dimensions"\
+DESKTOP_ENTRIES="QCad"	\
+		"" \
 		"${DATADIR}/scripts/qcad_icon.png"	\
 		"${PREFIX}/bin/qcad-bin"	\
-		"Engineering;"	\
-		""
+		""	\
+		true
 
 .if defined(WITH_DEBUG)
 RESDIR=		${WRKSRC}/debug
@@ -50,35 +49,31 @@ SHRDIR=		fonts libraries patterns plugins scripts ts
 QSCRIPTS=	bbox dwg2bmp dwg2pdf dwg2svg
 SUB_FILES=	${QSCRIPTS}
 
-NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|"	\
 		${WRKSRC}/src/core/RSettings.cpp
-
-do-configure:
-	cd ${WRKSRC} && ${QMAKE} -r
+# 4.8.4 is the last supported Qt 4 version
+	${REINPLACE_CMD} -e '/qt-labs-qtscriptgenerator/s,$$$${QT_VERSION},4.8.4,' \
+		${WRKSRC}/src/3rdparty/3rdparty.pro
 
 do-install:
-	${INSTALL_PROGRAM} ${RESDIR}/qcad-bin ${PREFIX}/bin/
-	${LN} -sf ${PREFIX}/bin/qcad-bin ${PREFIX}/bin/qcad
+	${INSTALL_PROGRAM} ${RESDIR}/qcad-bin ${STAGEDIR}${PREFIX}/bin/
+	${LN} -sf ${PREFIX}/bin/qcad-bin ${STAGEDIR}${PREFIX}/bin/qcad
 .for prog in ${QSCRIPTS}
-	${INSTALL_SCRIPT} ${WRKDIR}/${prog} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/${prog} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for lib in ${SHRLIBS:C|^|lib|:C|$|.so|}
-	${INSTALL_LIB} ${RESDIR}/${lib} ${PREFIX}/lib/${lib}.0
-	${LN} -sf ${PREFIX}/lib/${lib}.0 ${PREFIX}/lib/${lib}
+	${INSTALL_LIB} ${RESDIR}/${lib} ${STAGEDIR}${PREFIX}/lib/${lib}.0
+	${LN} -sf ${PREFIX}/lib/${lib}.0 ${STAGEDIR}${PREFIX}/lib/${lib}
 .endfor
 .for lib in ${STALIBS:C|^|lib|:C|$|.a|}
-	${INSTALL_LIB} ${RESDIR}/${lib} ${PREFIX}/lib/
+	${INSTALL_LIB} ${RESDIR}/${lib} ${STAGEDIR}${PREFIX}/lib/
 .endfor
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 .for dir in ${SHRDIR}
-	${CP} -Rp ${WRKSRC}/${dir} ${DATADIR}/
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${DATADIR}
 .endfor
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
