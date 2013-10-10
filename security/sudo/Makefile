@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sudo
-DISTVERSION=	1.8.7
-PORTREVISION=	1
+DISTVERSION=	1.8.8
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SUDO}
 
@@ -28,7 +27,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 
 OPTIONS_DEFINE=	LDAP INSULTS DISABLE_ROOT_SUDO DISABLE_AUTH NOARGS_SHELL \
 		AUDIT OPIE NLS
-OPTIONS_DEFAULT=	AUDIT NLS
+OPTIONS_DEFAULT=	AUDIT
 
 INSULTS_DESC=	Enable insults on failures
 DISABLE_ROOT_SUDO_DESC=	Do not allow root to run sudo
@@ -37,7 +36,7 @@ NOARGS_SHELL_DESC=	Run a shell if no arguments are given
 AUDIT_DESC=	Enable BSM audit support
 OPIE_DESC=	Enable one-time passwords (no PAM support)
 
-LOGFAC?=	local2
+LOGFAC?=	authpriv
 CONFIGURE_ARGS+=	--with-logfac=${LOGFAC}
 
 # This is intentionally not an option.
@@ -47,7 +46,6 @@ CONFIGURE_ARGS+=	--with-logfac=${LOGFAC}
 CONFIGURE_ARGS+=	--with-secure-path="${SUDO_SECURE_PATH}"
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "arm"
@@ -102,10 +100,6 @@ CONFIGURE_ARGS+=	--with-opie
 CONFIGURE_ARGS+=	--with-pam
 .endif
 
-MAN5+=		sudoers.5 sudo.conf.5
-MAN8=		sudo.8 visudo.8 sudoreplay.8 sudo_plugin.8
-MLINKS=		sudo.8 sudoedit.8
-
 post-patch:
 	@${REINPLACE_CMD} -E '/install-(binaries|noexec):/,/^$$/ \
 		s/\$$\(INSTALL\)/& ${STRIP}/;s/-b\~/-b ~/' \
@@ -119,14 +113,7 @@ post-patch:
 .endif
 
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/pam.conf ${PREFIX}/etc/pam.d/sudo.default
-	if [ ! -f ${PREFIX}/etc/pam.d/sudo ]; then \
-		${CP} -p ${PREFIX}/etc/pam.d/sudo.default \
-		${PREFIX}/etc/pam.d/sudo ; \
-	fi
-	if [ ! -f ${PREFIX}/etc/sudoers ]; then \
-		${CP} -p ${PREFIX}/etc/sudoers.sample ${PREFIX}/etc/sudoers; \
-	fi
-	${TOUCH} ${PREFIX}/etc/sudoers.d/.keep-me
+	${INSTALL_DATA} ${FILESDIR}/pam.conf ${STAGEDIR}${PREFIX}/etc/pam.d/sudo.default
+	${TOUCH} ${STAGEDIR}${PREFIX}/etc/sudoers.d/.keep-me
 
 .include <bsd.port.mk>
