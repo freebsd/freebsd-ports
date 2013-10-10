@@ -1,10 +1,10 @@
-%%CONF_DIR%%/freeipmi.conf.sample
-%%CONF_DIR%%/ipmiseld.conf
-%%CONF_DIR%%/freeipmi_interpret_sel.conf
-%%CONF_DIR%%/freeipmi_interpret_sensor.conf
-%%CONF_DIR%%/ipmidetect.conf
-%%CONF_DIR%%/ipmidetectd.conf
-%%CONF_DIR%%/libipmiconsole.conf
+%%ETCDIR%%/freeipmi.conf.sample
+%%ETCDIR%%/ipmiseld.conf
+%%ETCDIR%%/freeipmi_interpret_sel.conf
+%%ETCDIR%%/freeipmi_interpret_sensor.conf
+%%ETCDIR%%/ipmidetect.conf
+%%ETCDIR%%/ipmidetectd.conf
+%%ETCDIR%%/libipmiconsole.conf
 include/freeipmi/api/ipmi-api.h
 include/freeipmi/api/ipmi-chassis-cmds-api.h
 include/freeipmi/api/ipmi-dcmi-cmds-api.h
@@ -306,4 +306,4 @@ sbin/rmcpping
 @dirrm include/freeipmi/cmds
 @dirrm include/freeipmi/api
 @dirrm include/freeipmi
-@dirrmtry %%CONF_DIR%%
+@dirrmtry %%ETCDIR%%

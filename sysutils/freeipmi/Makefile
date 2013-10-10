@@ -20,7 +20,7 @@ IOPERM_DESC=	Use i386_set_ioperm (i386/amd64 only)
 
 CONFIGURE_ARGS=	--disable-init-scripts \
 		--localstatedir=/var \
-		--sysconfdir=${CONF_DIR} \
+		--sysconfdir=${ETCDIR} \
 		--with-ipmi-monitoring-sdr-cache-dir=${CACHE_DIR}/ipmimonitoringsdrcache \
 		--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig
 CONFIGURE_ENV=	PTHREAD_LIBS=-pthread ac_cv_path_CPP=${CPP}
@@ -50,11 +50,9 @@ MAN8=		bmc-config.8 bmc-device.8 bmc-info.8 bmc-watchdog.8 \
 		ipmiconsole.8 ipmidetect.8 ipmidetectd.8 ipmimonitoring.8 \
 		ipmiping.8 ipmipower.8 ipmiseld.8 pef-config.8 rmcp-ping.8 \
 		rmcpping.8
-PLIST_SUB=	CACHE_DIR=${CACHE_DIR} CONF_DIR=${ETCDIR:S/^${PREFIX}\///} \
-		LOG_DIR=${LOG_DIR} RUN_DIR=${RUN_DIR}
+PLIST_SUB=	CACHE_DIR=${CACHE_DIR} LOG_DIR=${LOG_DIR} RUN_DIR=${RUN_DIR}
 
 CACHE_DIR?=	/var/db/${PORTNAME}
-CONF_DIR?=	${ETCDIR}
 LOG_DIR=	/var/log/${PORTNAME}
 RUN_DIR=	/var/lib/${PORTNAME}
 
