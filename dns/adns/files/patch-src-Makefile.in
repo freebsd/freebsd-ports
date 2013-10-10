@@ -1,0 +1,16 @@
+--- src/Makefile.in.orig	2006-05-10 12:58:03.000000000 +0200
++++ src/Makefile.in	2013-10-09 10:46:18.314690101 +0200
+@@ -28,10 +28,10 @@
+ include		adns.make
+ 
+ install:
+-		mkdir -p $(libdir) $(includedir)
++		mkdir -p $(DESTDIR)$(libdir) $(DESTDIR)$(includedir)
+ 		set -xe; for f in $(TARGETS); \
+-			do $(INSTALL_DATA) $$f $(libdir)/$$f; done
+-		$(INSTALL_DATA) $(srcdir)/../src/adns.h $(includedir)/adns.h
++			do $(INSTALL_DATA) $$f $(DESTDIR)$(libdir)/$$f; done
++		$(INSTALL_DATA) $(srcdir)/../src/adns.h $(DESTDIR)$(includedir)/adns.h
+ 
+ uninstall:
+ 		for f in $(TARGETS); do rm -f $(libdir)/$$f; done
