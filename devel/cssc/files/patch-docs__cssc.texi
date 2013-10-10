@@ -1,0 +1,11 @@
+--- ./docs/cssc.texi.orig	2010-05-16 13:52:32.000000000 -0400
++++ ./docs/cssc.texi	2013-10-10 00:25:34.000000000 -0400
+@@ -5,7 +5,7 @@
+ 
+ @dircategory Miscellaneous
+ @direntry
+-* cssc: (cssc).		The GNU work-alike replacement for SCCS.
++* cssc: (cssc).			The GNU work-alike replacement for SCCS.
+ @end direntry
+ 
+ @copying

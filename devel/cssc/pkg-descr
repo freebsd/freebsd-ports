@@ -1,15 +1,18 @@
-This is GNU CSSC, a workalike for the source code control system SCCS.
-It is based on the MySC package by Ross Ridge.
+CSSC is the GNU Project's replacement for SCCS.  SCCS is a proprietary suite
+of tools which is provided with most commercial versions of Unix.  The purpose
+behind CSSC is to provide a work-alike for SCCS which can be used on the
+various Free versions of Unix.
 
-SCCS commands implemented this package are: admin, cdc, delta, get,
-prs, prt, sccsdiff, rmdel, sact, unget and what.  Not all options and
-capabilities of the commands have been implemented yet, and the comb,
-val and vc commands are not provided at all.
+SCCS was the only major form of source code control on Unix platforms for many
+years, until RCS came along.  SCCS was an effective method for small projects,
+but these days it is less popular, particularly for projects involving large
+numbers of files.  A certain amount of old software is still in SCCS form, and
+CSSC is designed to retrieve that software.  Once retrieved, it is recommended
+to bring the source under the control of a more modern source code control
+system, such as git or Apache Subversion.
 
-Unimplemented features include consistency checking (admin -h),
-ignored deltas (delta -g), printing the differences after a delta
-(delta -p), l-files (get -l), and getting a delta by sequence number
-(get -a).  Some features like including and excluding deltas (get -i
--x) have been implemented but not extensively tested.
+However, SCCS (and CSSC) is still perfectly adequate for small projects.  For
+example, if you are familiar with SCCS, it is not unreasonable to control the
+files in /etc and /usr/local/etc on your private FreeBSD machine with CSSC.
 
-FreeBSD port made by Oliver Fromme <olli@fromme.com>
+WWW: http://www.gnu.org/software/cssc/
