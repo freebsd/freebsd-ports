@@ -10,6 +10,9 @@ MASTER_SITES=		LOCAL/bapt \
 MAINTAINER=		portmgr@FreeBSD.org
 COMMENT=		FreeBSD -STABLE version of the package tools
 
+DEPRECATED=		Replaced by ports-mgmt/pkg
+EXPIRATION_DATE=	2014-04-30
+
 LICENSE=		BSD
 
 MANCOMPRESSED=		yes
