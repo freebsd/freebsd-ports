@@ -22,8 +22,4 @@ RPMVERSION=	35.fc10
 USE_LDCONFIG=	yes
 SRC_DISTFILES=	scim-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}
 
-NO_STAGE=	yes
-post-install:
-	@chroot ${PREFIX} /usr/bin/gtk-query-immodules-2.0-32 > ${PREFIX}/etc/gtk-2.0/${LINUX_RPM_ARCH}-redhat-linux-gnu/gtk.immodules
-
 .include <bsd.port.mk>
