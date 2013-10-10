@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pciids
-PORTVERSION=	20130823
+PORTVERSION=	20131010
 CATEGORIES=	misc
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -12,15 +12,15 @@ COMMENT=	Database of all known IDs used in PCI devices
 LICENSE=	BSD GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USE_XZ=		yes
 NO_BUILD=	yes
+USE_XZ=		yes
+
 PLIST_FILES=	%%DATADIR%%/pci.ids
 PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/pci.ids ${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/pci.ids ${STAGEDIR}${DATADIR}/
 
 # maintainer section:
 
