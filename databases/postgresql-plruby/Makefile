@@ -62,7 +62,7 @@ post-install:
 		's,^${PREFIX}/?,,' >> ${TMPPLIST}
 	@${FIND} -ds ${RUBY_MODDOCDIR} -type d -print | ${SED} -E -e \
 		's,^${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/share/doc/ruby18/ 2>/dev/null || true" \
+	@${ECHO_CMD} "@unexec rmdir %D/share/doc/ruby19/ 2>/dev/null || true" \
 		>> ${TMPPLIST}
 .endif
 	@${CAT} ${PKGMESSAGE}
