@@ -14,8 +14,7 @@ COMMENT=	Validating XML parser from the Apache XML Project
 
 CONFLICTS=	xerces_c-[0-9]* xerces-c2-[0-9]*
 
-USE_GMAKE=	yes
-USES=	pathfix
+USES=		gmake pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
@@ -23,11 +22,8 @@ CONFIGURE_ARGS+=--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 		--enable-netaccessor-socket
 MAKE_ENV+=	XERCESCROOT=${WRKSRC}
 
-MAKE_JOBS_UNSAFE=yes
-
-NO_STAGE=	yes
 post-install:
-	${LN} -sf libxerces-c-${PORTVERSION:R}.so ${PREFIX}/lib/libxerces-c.so.${PORTVERSION:R:R}
+	${LN} -sf libxerces-c-${PORTVERSION:R}.so ${STAGEDIR}${PREFIX}/lib/libxerces-c.so.${PORTVERSION:R:R}
 
 test:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
