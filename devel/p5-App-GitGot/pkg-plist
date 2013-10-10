@@ -23,6 +23,30 @@ bin/got-complete
 %%SITE_PERL%%/App/GitGot/Repo.pm
 %%SITE_PERL%%/App/GitGot/Repo/Git.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/GitGot/.packlist
+%%PERL5_MAN3%%/App::GitGot.3.gz
+%%PERL5_MAN3%%/App::GitGot::Command.3.gz
+%%PERL5_MAN3%%/App::GitGot::Command::add.3.gz
+%%PERL5_MAN3%%/App::GitGot::Command::chdir.3.gz
+%%PERL5_MAN3%%/App::GitGot::Command::clone.3.gz
+%%PERL5_MAN3%%/App::GitGot::Command::fork.3.gz
+%%PERL5_MAN3%%/App::GitGot::Command::gc.3.gz
+%%PERL5_MAN3%%/App::GitGot::Command::list.3.gz
+%%PERL5_MAN3%%/App::GitGot::Command::move.3.gz
+%%PERL5_MAN3%%/App::GitGot::Command::mux.3.gz
+%%PERL5_MAN3%%/App::GitGot::Command::push.3.gz
+%%PERL5_MAN3%%/App::GitGot::Command::remove.3.gz
+%%PERL5_MAN3%%/App::GitGot::Command::status.3.gz
+%%PERL5_MAN3%%/App::GitGot::Command::this.3.gz
+%%PERL5_MAN3%%/App::GitGot::Command::update.3.gz
+%%PERL5_MAN3%%/App::GitGot::Command::update_status.3.gz
+%%PERL5_MAN3%%/App::GitGot::Command::version.3.gz
+%%PERL5_MAN3%%/App::GitGot::Outputter.3.gz
+%%PERL5_MAN3%%/App::GitGot::Outputter::dark.3.gz
+%%PERL5_MAN3%%/App::GitGot::Outputter::light.3.gz
+%%PERL5_MAN3%%/App::GitGot::Repo.3.gz
+%%PERL5_MAN3%%/App::GitGot::Repo::Git.3.gz
+man/man1/got-complete.1.gz
+man/man1/got.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/GitGot
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
 @dirrm %%SITE_PERL%%/App/GitGot/Repo
