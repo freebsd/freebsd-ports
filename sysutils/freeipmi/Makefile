@@ -12,11 +12,11 @@ COMMENT=	Library and tools to support IPMI-capable hardware
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	argp:${PORTSDIR}/devel/argp-standalone \
-		gcrypt:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	libargp.so:${PORTSDIR}/devel/argp-standalone \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 OPTIONS_DEFINE=	DEBUG DOCS IOPERM
-IOPERM_DESC=	Use i386_set_ioperm (i386/amd64 only)
+IOPERM_DESC=	Use i386_set_ioperm
 
 CONFIGURE_ARGS=	--disable-init-scripts \
 		--localstatedir=/var \
@@ -25,53 +25,32 @@ CONFIGURE_ARGS=	--disable-init-scripts \
 		--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig
 CONFIGURE_ENV=	PTHREAD_LIBS=-pthread ac_cv_path_CPP=${CPP}
 CPPFLAGS+=	-I${LOCALBASE}/include
+MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	"invokes i386 asm"
+ONLY_FOR_ARCHS_REASON=	invokes i386 asm
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USES=		gmake
+USES=		gmake shebangfix
 
 INFO=		freeipmi-faq
-MAN3=		libfreeipmi.3 libipmiconsole.3 libipmidetect.3 libipmimonitoring.3
-MAN5=		bmc-config.conf.5 freeipmi.conf.5 freeipmi_interpret_sel.conf.5 \
-		freeipmi_interpret_sensor.conf.5 ipmi_monitoring_sensors.conf.5 \
-		ipmiconsole.conf.5 ipmidetect.conf.5 ipmidetectd.conf.5 \
-		ipmimonitoring.conf.5 ipmimonitoring_sensors.conf.5 \
-		ipmipower.conf.5 ipmiseld.conf.5 libipmiconsole.conf.5 \
-		libipmimonitoring.conf.5
-MAN7=		freeipmi.7
-MAN8=		bmc-config.8 bmc-device.8 bmc-info.8 bmc-watchdog.8 \
-		ipmi-chassis.8 ipmi-chassis-config.8 ipmi-console.8 ipmi-dcmi.8 \
-		ipmi-detect.8 ipmi-fru.8 ipmi-locate.8 ipmi-oem.8 \
-		ipmi-pef-config.8 ipmi-pet.8 ipmi-ping.8 ipmi-power.8 \
-		ipmi-raw.8 ipmi-sel.8 ipmi-sensors.8 ipmi-sensors-config.8 \
-		ipmiconsole.8 ipmidetect.8 ipmidetectd.8 ipmimonitoring.8 \
-		ipmiping.8 ipmipower.8 ipmiseld.8 pef-config.8 rmcp-ping.8 \
-		rmcpping.8
 PLIST_SUB=	CACHE_DIR=${CACHE_DIR} LOG_DIR=${LOG_DIR} RUN_DIR=${RUN_DIR}
 
 CACHE_DIR?=	/var/db/${PORTNAME}
 LOG_DIR=	/var/log/${PORTNAME}
 RUN_DIR=	/var/lib/${PORTNAME}
 
-NO_STAGE=	yes
+SHEBANG_FILES=	contrib/ganglia/ganglia_ipmi_sensors.pl \
+		contrib/nagios/nagios_ipmi_sensors.pl \
+		contrib/pet/check_rmcpping \
+		contrib/pet/petalert.pl
+
+DEBUG_CONFIGURE_ARGS=	--enable-debug --enable-trace
+DEBUG_MAKE_ENV=		INSTALL_STRIP_FLAG=""
+IOPERM_CPPFLAGS=	-DUSE_IOPERM
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=--enable-debug --enable-trace
-.endif
-
-.if ${PORT_OPTIONS:MIOPERM}
-CPPFLAGS+=	-DUSE_IOPERM
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MIOPERM} && ${ARCH} == "amd64" && ${OSVERSION} < 800000
-BROKEN=		IOPERM option is not available on FreeBSD/amd64 7.x
-.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.man' -o -name '*.pre.in' | ${XARGS} -I % ${REINPLACE_CMD} -e '/^\.\\\"/ s|$$|"|' %
@@ -85,7 +64,6 @@ post-patch:
 .endif
 
 post-install:
-	${MKDIR} ${LOG_DIR}/
-	${CHMOD} 0700 ${CACHE_DIR}/ ${LOG_DIR}/ ${RUN_DIR}/
+	${MKDIR} -m 0700 ${CACHE_DIR}/ipmimonitoringsdrcache ${LOG_DIR}/ ${RUN_DIR}/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
