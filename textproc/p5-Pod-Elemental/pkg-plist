@@ -25,6 +25,32 @@
 %%SITE_PERL%%/Pod/Elemental/Types.pm
 %%SITE_PERL%%/Pod/Elemental.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Elemental/.packlist
+%%PERL5_MAN3%%/Pod::Elemental.3.gz
+%%PERL5_MAN3%%/Pod::Elemental::Autoblank.3.gz
+%%PERL5_MAN3%%/Pod::Elemental::Autochomp.3.gz
+%%PERL5_MAN3%%/Pod::Elemental::Command.3.gz
+%%PERL5_MAN3%%/Pod::Elemental::Document.3.gz
+%%PERL5_MAN3%%/Pod::Elemental::Element::Generic::Blank.3.gz
+%%PERL5_MAN3%%/Pod::Elemental::Element::Generic::Command.3.gz
+%%PERL5_MAN3%%/Pod::Elemental::Element::Generic::Nonpod.3.gz
+%%PERL5_MAN3%%/Pod::Elemental::Element::Generic::Text.3.gz
+%%PERL5_MAN3%%/Pod::Elemental::Element::Nested.3.gz
+%%PERL5_MAN3%%/Pod::Elemental::Element::Pod5::Command.3.gz
+%%PERL5_MAN3%%/Pod::Elemental::Element::Pod5::Data.3.gz
+%%PERL5_MAN3%%/Pod::Elemental::Element::Pod5::Nonpod.3.gz
+%%PERL5_MAN3%%/Pod::Elemental::Element::Pod5::Ordinary.3.gz
+%%PERL5_MAN3%%/Pod::Elemental::Element::Pod5::Region.3.gz
+%%PERL5_MAN3%%/Pod::Elemental::Element::Pod5::Verbatim.3.gz
+%%PERL5_MAN3%%/Pod::Elemental::Flat.3.gz
+%%PERL5_MAN3%%/Pod::Elemental::Node.3.gz
+%%PERL5_MAN3%%/Pod::Elemental::Objectifier.3.gz
+%%PERL5_MAN3%%/Pod::Elemental::Paragraph.3.gz
+%%PERL5_MAN3%%/Pod::Elemental::Selectors.3.gz
+%%PERL5_MAN3%%/Pod::Elemental::Transformer.3.gz
+%%PERL5_MAN3%%/Pod::Elemental::Transformer::Gatherer.3.gz
+%%PERL5_MAN3%%/Pod::Elemental::Transformer::Nester.3.gz
+%%PERL5_MAN3%%/Pod::Elemental::Transformer::Pod5.3.gz
+%%PERL5_MAN3%%/Pod::Elemental::Types.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Elemental
 @dirrmtry %%SITE_PERL%%/Pod/Elemental/Element/Generic
 @dirrmtry %%SITE_PERL%%/Pod/Elemental/Element/Pod5
