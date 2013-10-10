@@ -3,7 +3,7 @@
 
 PORTNAME=	xbmc
 PORTVERSION=	70
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/nox
 PKGNAMESUFFIX=	-pvr-ppa-odk
@@ -30,7 +30,7 @@ LIB_DEPENDS=	asound:${PORTSDIR}/audio/alsa-lib	\
 		dbus-1:${PORTSDIR}/devel/dbus \
 		enca:${PORTSDIR}/converters/enca \
 		GLEW:${PORTSDIR}/graphics/glew \
-		avcodec:${PORTSDIR}/multimedia/ffmpeg	\
+		avcodec0:${PORTSDIR}/multimedia/ffmpeg0	\
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype:${PORTSDIR}/print/freetype2 \
 		fribidi:${PORTSDIR}/converters/fribidi \
@@ -94,7 +94,9 @@ DESKTOP_ENTRIES="XBMC" \
 		"AudioVideo;Video;" \
 		true
 
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include/ffmpeg0
+CXXFLAGS+=	-I${LOCALBASE}/include/ffmpeg0
+CFLAGS+=	-I${LOCALBASE}/include/ffmpeg0
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS+=	--enable-external-libraries
@@ -218,6 +220,15 @@ post-patch:
 		${WRKSRC}/lib/libsidplay2/libsidplay/unix/my_macros.m4 \
 		${WRKSRC}/lib/timidity/configure.in \
 		${WRKSRC}/xbmc/screensavers/rsxs-0.9/acinclude.m4
+	@${REINPLACE_CMD} \
+		-e 's|libavcodec |libavcodec0 |g' \
+		-e 's|libavfilter |libavfilter0 |g' \
+		-e 's|libavformat |libavformat0 |g' \
+		-e 's|libavutil |libavutil0 |g' \
+		-e 's|libpostproc |libpostproc0 |g' \
+		-e 's|libswscale"|libswscale0"|g' \
+		-e 's|avcodec\]|avcodec0\]|g' \
+		${WRKSRC}/configure.in
 	${RM} ${WRKSRC}/addons/library.xbmc.addon/libXBMC_addon.h.orig
 # XXX somehow there are still references to linux libraries, if you find
 # where they come from please tell us!
