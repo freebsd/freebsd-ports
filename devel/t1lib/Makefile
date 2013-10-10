@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	libs/graphics
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Type 1 font rasterization library for Unix/X11
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_AUTOTOOLS=	libtool
 ALL_TARGET=	without_doc
 USE_LDCONFIG=	yes
@@ -20,17 +20,9 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	X11 DOCS
 OPTIONS_DEFAULT=	X11
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MX11}
-USE_XORG=	xaw
-CONFIGURE_ARGS+=	--with-x
-PLIST_SUB+=	X11=""
-.else
-CONFIGURE_ARGS+=	--without-x
-PLIST_SUB+=	X11="@comment "
-.endif
+OPTIONS_SUB=	yes
+X11_USE=	XORG=xaw
+X11_CONFIGURE_WITH=	x
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
@@ -41,9 +33,7 @@ post-patch:
 		's|_LT_CURRENT=.*$$|_LT_CURRENT=5|g' ${WRKSRC}/configure
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/t1lib_doc.pdf ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/t1lib_doc.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
