@@ -12,22 +12,16 @@ COMMENT=	Easy to use asynchronous-capable DNS client library and utilities
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-
-USES=	gmake
+USES=		gmake
 
 LIBVERSION=	1
 PLIST_SUB+=	LIBVERSION="${LIBVERSION}"
 
 DOCS=		COPYING GPL-vs-LGPL INSTALL LICENCE.WAIVERS README README.html TODO changelog
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-install:
-	${STRIP_CMD} ${PREFIX}/bin/adnslogres ${PREFIX}/bin/adnshost
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-.endif
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/adnslogres ${STAGEDIR}${PREFIX}/bin/adnshost
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
