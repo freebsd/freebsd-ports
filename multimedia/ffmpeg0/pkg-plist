@@ -4,7 +4,7 @@ bin/ffprobe%%SUFF%%
 %%FFSERVER%%@unexec if cmp -s %D/etc/ffserver%%SUFF%%.conf %D/etc/ffserver%%SUFF%%.conf-dist; then rm -f %D/etc/ffserver%%SUFF%%.conf; fi
 %%FFSERVER%%etc/ffserver%%SUFF%%.conf-dist
 %%FFSERVER%%@exec [ -f %B/ffserver%%SUFF%%.conf ] || cp %B/%f %B/ffserver%%SUFF%%.conf
-etc/rc.d/ffserver%%SUFF%%
+%%FFSERVER%%etc/rc.d/ffserver%%SUFF%%
 include/ffmpeg%%SUFF%%/libavcodec/avcodec.h
 include/ffmpeg%%SUFF%%/libavcodec/avfft.h
 include/ffmpeg%%SUFF%%/libavcodec/dxva2.h
@@ -97,7 +97,7 @@ libdata/pkgconfig/libpostproc0.pc
 libdata/pkgconfig/libswscale0.pc
 man/man1/ffmpeg%%SUFF%%.1.gz
 man/man1/ffprobe%%SUFF%%.1.gz
-man/man1/ffserver%%SUFF%%.1.gz
+%%FFSERVER%%man/man1/ffserver%%SUFF%%.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/APIchanges
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
@@ -114,7 +114,7 @@ man/man1/ffserver%%SUFF%%.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/fate.txt
 %%PORTDOCS%%%%DOCSDIR%%/ffmpeg.html
 %%PORTDOCS%%%%DOCSDIR%%/ffprobe.html
-%%PORTDOCS%%%%DOCSDIR%%/ffserver.html
+%%FFSERVER%%%%PORTDOCS%%%%DOCSDIR%%/ffserver.html
 %%PORTDOCS%%%%DOCSDIR%%/general.html
 %%PORTDOCS%%%%DOCSDIR%%/git-howto.txt
 %%PORTDOCS%%%%DOCSDIR%%/issue_tracker.txt
