@@ -136,6 +136,8 @@ bin/asciidoc.py
 @unexec if cmp -s %D/%%ETCDIR%%/xhtml11-quirks.conf.sample %D/%%ETCDIR%%/xhtml11-quirks.conf; then rm -f %D/%%ETCDIR%%/xhtml11-quirks.conf; fi
 %%ETCDIR%%/xhtml11-quirks.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/xhtml11-quirks.conf ] ; then cp -p %D/%F %B/xhtml11-quirks.conf; fi
+man/man1/a2x.1.gz
+man/man1/asciidoc.1.gz
 %%VIM%%%%VIM_DATADIR%%share/vim/ftdetect/asciidoc_filetype.vim
 %%VIM%%%%VIM_DATADIR%%share/vim/syntax/asciidoc.vim
 %%VIM%%@dirrmtry share/vim/%%VIM_DATADIR%%/syntax

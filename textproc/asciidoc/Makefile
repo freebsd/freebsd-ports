@@ -17,13 +17,12 @@ RUN_DEPENDS=	python2:${PORTSDIR}/lang/python2
 
 OPTIONS_DEFINE=	VIM
 OPTIONS_DEFAULT=VIM
+OPTIONS_SUB=	yes
 VIM_DESC=	Install Vim ftdetect & syntax files
 
 GNU_CONFIGURE=	yes
 USE_PYTHON=	-2.7
 USES=		gmake
-
-MAN1=		a2x.1 asciidoc.1
 
 CONF_FILES=	asciidoc.conf docbook45.conf \
 		filters/code/code-filter.conf \
@@ -38,15 +37,14 @@ CONF_FILES=	asciidoc.conf docbook45.conf \
 		latex.conf slidy.conf text.conf wordpress.conf \
 		xhtml11.conf xhtml11-quirks.conf
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MVIM}
 MAKE_ENV+=	vimdir=${PREFIX}/share/vim/${VIM_DATADIR}
-PLIST_SUB+=	VIM="" VIM_DATADIR=${VIM_DATADIR}
+PLIST_SUB+=	VIM_DATADIR=${VIM_DATADIR}
 VIM__DATADIR!=	${MAKE} -C ../../editors/vim/ -V _DATADIR
 .else
-PLIST_SUB+=	VIM="@comment " VIM_DATADIR=""
+PLIST_SUB+=	VIM_DATADIR=""
 .endif
 
 post-patch:
@@ -59,13 +57,13 @@ post-patch:
 
 pre-install:
 .if ${PORT_OPTIONS:MVIM}
-	@${MKDIR} ${PREFIX}/share/vim/${VIM_DATADIR}/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/vim/${VIM_DATADIR}/
 .endif
 
 post-install:
 .for conf_file in ${CONF_FILES}
-	@if [ ! -f ${ETCDIR}/${conf_file} ]; then \
-		${CP} -p ${ETCDIR}/${conf_file}.sample ${ETCDIR}/${conf_file} ; \
+	@if [ ! -f ${STAGEDIR}${ETCDIR}/${conf_file} ]; then \
+		${CP} -p ${STAGEDIR}${ETCDIR}/${conf_file}.sample ${STAGEDIR}${ETCDIR}/${conf_file} ; \
 	fi
 .endfor
 
