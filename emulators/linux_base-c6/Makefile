@@ -106,7 +106,6 @@ NO_WRKSUBDIR=		yes
 DISTINFO_FILE?=		${MASTERDIR}/distinfo.${LINUX_RPM_ARCH}
 PLIST_SUB=		GLIBCVER="2.12"
 
-NO_STAGE=	yes
 # TODO:
 # - move master sites to bsd.sites.mk
 # - add 2-3 mirrors from each country (http://www.centos.org/modules/tinycontent/index.php?id=31)
@@ -116,9 +115,6 @@ NO_STAGE=	yes
 #   if we need to add something to the linuxulator
 
 EXTRACT_ONLY=		${BIN_DISTFILES}
-EXTRACT_CMD?=		${TAR}
-EXTRACT_BEFORE_ARGS?=	-xf
-EXTRACT_AFTER_ARGS?=
 
 .include <bsd.port.pre.mk>
 
@@ -198,35 +194,25 @@ do-build:
 
 do-install:
 #
-# Handle the loading of the linux loadable kernel module if required.
-#
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-#
 # Do install without using linux rpm system
 #
-	@cd ${WRKSRC} && ${FIND} * -type d -exec ${MKDIR} "${PREFIX}/{}" \;
-	@cd ${WRKSRC} && ${FIND} * ! -type d \
-		| ${CPIO} -pm -R root:wheel ${PREFIX}
+	@cd ${WRKSRC} && ${FIND} * ! -path "stage*" -type d -exec ${MKDIR} "${STAGEDIR}${PREFIX}/{}" \;
+	@cd ${WRKSRC} && ${FIND} * ! -path "stage/*" ! -type d \
+		| ${CPIO} -pm -R root:wheel ${STAGEDIR}${PREFIX}
 
-	@${LN} -sf /var/tmp ${PREFIX}/usr/tmp
-	@${CHOWN} root:wheel ${PREFIX}/var/lock ${PREFIX}/var/spool/mail
-	@${CHMOD} 755 ${PREFIX}/var/lock ${PREFIX}/var/spool/mail
+	@${LN} -sf /var/tmp ${STAGEDIR}${PREFIX}/usr/tmp
+	@${CHMOD} 755 ${STAGEDIR}${PREFIX}/var/lock ${STAGEDIR}${PREFIX}/var/spool/mail
 #
 # Let some linux applications (e.g. print/acroread8) print with default settings
 #
-	@${INSTALL_SCRIPT} ${FILESDIR}/lp ${PREFIX}/usr/bin
+	@${INSTALL_SCRIPT} ${FILESDIR}/lp ${STAGEDIR}${PREFIX}/usr/bin
 
 post-install:
-#
-# Handle mounting linux procfs if exists at /etc/fstab and
-# installing etc/nsswitch.conf, etc/yp.conf if so far they don't exist
-#
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-#
-# And finally show the pkg-message
-#
-	@${ECHO} ''
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO} ''
+	if [ ! -f ${PREFIX}/etc/krb5.conf ] ; then \
+		${CP} -p ${STAGEDIR}${PREFIX}/etc/krb5.conf.dist ${STAGEDIR}${PREFIX}/etc/krb5.conf ; \
+	fi
+	if [ ! -f ${PREFIX}/etc/yp.conf ] ; then \
+		${CP} -p ${STAGEDIR}${PREFIX}/etc/yp.conf.sample ${STAGEDIR}${PREFIX}/etc/yp.conf ; \
+	fi
 
 .include <bsd.port.post.mk>

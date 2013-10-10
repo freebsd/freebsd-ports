@@ -58,8 +58,9 @@ etc/hosts.deny
 etc/inputrc
 etc/issue
 etc/issue.net
-etc/krb5.conf
+@unexec if cmp -s %D/etc/krb5.conf.dist %D/etc/krb5.conf ; then rm -f %D/etc/krb5.conf ; fi
 etc/krb5.conf.dist
+@exec if [ ! -f %D/etc/krb5.conf ] ; then cp -p %D/%F %B/krb5.conf ; fi
 etc/ld.so.cache
 etc/ld.so.conf
 etc/mke2fs.conf
@@ -90,8 +91,9 @@ etc/skel/.bash_profile
 etc/skel/.bashrc
 etc/system-release
 etc/system-release-cpe
-etc/yp.conf
+@unexec if cmp -s %D/etc/yp.conf.sample %D/etc/yp.conf ; then rm -f %D/etc/yp.cpnf ; fi
 etc/yp.conf.sample
+@exec if [ ! -f %D/etc/yp.conf ] ; then cp -p %D/%F %B/yp.conf ; fi
 etc/yum.repos.d/CentOS-Base.repo
 etc/yum.repos.d/CentOS-Debuginfo.repo
 etc/yum.repos.d/CentOS-Media.repo
@@ -1878,7 +1880,7 @@ usr/share/man/man8/resize2fs.8.gz
 usr/share/man/man8/setcap.8.gz
 usr/share/man/man8/setserial.8.gz
 usr/share/man/man8/tune2fs.8.gz
-var/cache/ldconfig/aux-cache
+@unexec rm -f %D/var/cache/ldconfig/aux-cache
 var/mail
 @dirrm bin
 @dirrm var/yp
