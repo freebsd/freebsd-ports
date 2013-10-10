@@ -18,11 +18,6 @@ BUILD_DEPENDS=	${LOCALBASE}/share/slib/require.scm:${PORTSDIR}/lang/slib \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_BUILD=	yes
-
-NO_STAGE=	yes
-do-install:
-	${LN} -shf ${PREFIX}/share/slib ${LOCALBASE}/share/guile/1.8/slib
-	${LOCALBASE}/bin/guile -q -c \
-	"(use-modules (ice-9 slib))(require 'new-catalog)"
+NO_INSTALL=	yes
 
 .include <bsd.port.mk>
