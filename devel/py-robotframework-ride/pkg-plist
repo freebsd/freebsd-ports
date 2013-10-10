@@ -71,6 +71,9 @@ bin/ride_postinstall.py
 %%PYTHON_SITELIBDIR%%/robotide/contrib/testrunner/testrunnerplugin.py
 %%PYTHON_SITELIBDIR%%/robotide/contrib/testrunner/testrunnerplugin.pyc
 %%PYTHON_SITELIBDIR%%/robotide/contrib/testrunner/testrunnerplugin.pyo
+%%PYTHON_SITELIBDIR%%/robotide/contrib/testrunner/usages.py
+%%PYTHON_SITELIBDIR%%/robotide/contrib/testrunner/usages.pyc
+%%PYTHON_SITELIBDIR%%/robotide/contrib/testrunner/usages.pyo
 %%PYTHON_SITELIBDIR%%/robotide/controller/__init__.py
 %%PYTHON_SITELIBDIR%%/robotide/controller/__init__.pyc
 %%PYTHON_SITELIBDIR%%/robotide/controller/__init__.pyo
@@ -305,6 +308,9 @@ bin/ride_postinstall.py
 %%PYTHON_SITELIBDIR%%/robotide/lib/robot/libraries/OperatingSystem.py
 %%PYTHON_SITELIBDIR%%/robotide/lib/robot/libraries/OperatingSystem.pyc
 %%PYTHON_SITELIBDIR%%/robotide/lib/robot/libraries/OperatingSystem.pyo
+%%PYTHON_SITELIBDIR%%/robotide/lib/robot/libraries/Process.py
+%%PYTHON_SITELIBDIR%%/robotide/lib/robot/libraries/Process.pyc
+%%PYTHON_SITELIBDIR%%/robotide/lib/robot/libraries/Process.pyo
 %%PYTHON_SITELIBDIR%%/robotide/lib/robot/libraries/Remote.py
 %%PYTHON_SITELIBDIR%%/robotide/lib/robot/libraries/Remote.pyc
 %%PYTHON_SITELIBDIR%%/robotide/lib/robot/libraries/Remote.pyo
@@ -608,6 +614,9 @@ bin/ride_postinstall.py
 %%PYTHON_SITELIBDIR%%/robotide/lib/robot/running/timeouts/timeoutwin.py
 %%PYTHON_SITELIBDIR%%/robotide/lib/robot/running/timeouts/timeoutwin.pyc
 %%PYTHON_SITELIBDIR%%/robotide/lib/robot/running/timeouts/timeoutwin.pyo
+%%PYTHON_SITELIBDIR%%/robotide/lib/robot/running/usererrorhandler.pyc
+%%PYTHON_SITELIBDIR%%/robotide/lib/robot/running/usererrorhandler.py
+%%PYTHON_SITELIBDIR%%/robotide/lib/robot/running/usererrorhandler.pyo
 %%PYTHON_SITELIBDIR%%/robotide/lib/robot/running/userkeyword.py
 %%PYTHON_SITELIBDIR%%/robotide/lib/robot/running/userkeyword.pyc
 %%PYTHON_SITELIBDIR%%/robotide/lib/robot/running/userkeyword.pyo
@@ -864,6 +873,9 @@ bin/ride_postinstall.py
 %%PYTHON_SITELIBDIR%%/robotide/spec/librarymanager.py
 %%PYTHON_SITELIBDIR%%/robotide/spec/librarymanager.pyc
 %%PYTHON_SITELIBDIR%%/robotide/spec/librarymanager.pyo
+%%PYTHON_SITELIBDIR%%/robotide/spec/specimporter.py
+%%PYTHON_SITELIBDIR%%/robotide/spec/specimporter.pyc
+%%PYTHON_SITELIBDIR%%/robotide/spec/specimporter.pyo
 %%PYTHON_SITELIBDIR%%/robotide/spec/xmlreaders.py
 %%PYTHON_SITELIBDIR%%/robotide/spec/xmlreaders.pyc
 %%PYTHON_SITELIBDIR%%/robotide/spec/xmlreaders.pyo
