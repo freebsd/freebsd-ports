@@ -1,0 +1,6 @@
+etc/rc.d/hastmon
+sbin/hastmon
+sbin/hastmonctl
+man/man5/hastmon.conf.5.gz
+man/man8/hastmon.8.gz
+man/man8/hastmonctl.8.gz
