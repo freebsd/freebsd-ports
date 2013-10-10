@@ -737,7 +737,53 @@
  }
  
  // Most versions of bsd have a bug where the number of processors are
-@@ -997,7 +1038,7 @@
+@@ -337,7 +378,35 @@
+                      "environment on Bsd when /proc filesystem is not mounted.";
+ #endif
+ 
+-#ifdef _ALLBSD_SOURCE
++#if defined(__FreeBSD__)
++void os::Bsd::initialize_system_info() {
++  int cpu_val = sysconf(_SC_NPROCESSORS_CONF);
++  if (cpu_val >= 1)
++    set_processor_count(cpu_val);
++  else
++    set_processor_count(1);   // fallback
++
++#ifdef _SC_PHYS_PAGES
++  long phys_pages = sysconf(_SC_PHYS_PAGES);
++  if (phys_pages > 0)
++    _physical_memory = (julong)phys_pages * _page_size;
++  else
++    _physical_memory = 256*1024*1024;       // fallback (XXXBSD?)
++#else
++  int mib[2];
++  size_t len;
++  u_long mem_val;
++
++  mib[0] = CTL_HW;
++  mib[1] = HW_PHYSMEM;
++  len = sizeof(mem_val);
++  if (sysctl(mib, 2, &mem_val, &len, NULL, 0) != -1)
++    _physical_memory = mem_val;
++  else
++    _physical_memory = 256*1024*1024;       // fallback (XXXBSD?)
++#endif
++ }
++#elif defined(_ALLBSD_SOURCE)
+ void os::Bsd::initialize_system_info() {
+   int mib[2];
+   size_t len;
+@@ -452,7 +521,7 @@
+  *        7: The default directories, normally /lib and /usr/lib.
+  */
+ #ifndef DEFAULT_LIBPATH
+-#define DEFAULT_LIBPATH "/lib:/usr/lib"
++#define DEFAULT_LIBPATH "/lib:/usr/lib:%%LOCALBASE%%/lib"
+ #endif
+ 
+ #define EXTENSIONS_DIR  "/lib/ext"
+@@ -997,7 +1066,7 @@
      return NULL;
    }
  
@@ -746,7 +792,7 @@
  #ifdef __APPLE__
    // thread_id is mach thread on macos
    osthread->set_thread_id(::mach_thread_self());
-@@ -1009,6 +1050,7 @@
+@@ -1009,6 +1078,7 @@
    // thread_id is kernel thread id (similar to Solaris LWP id)
    osthread->set_thread_id(os::Bsd::gettid());
  
@@ -754,7 +800,7 @@
    if (UseNUMA) {
      int lgrp_id = os::numa_get_group_id();
      if (lgrp_id != -1) {
-@@ -1016,6 +1058,7 @@
+@@ -1016,6 +1086,7 @@
      }
    }
  #endif
@@ -762,7 +808,7 @@
    // initialize signal mask for this thread
    os::Bsd::hotspot_sigmask(thread);
  
-@@ -1194,7 +1237,7 @@
+@@ -1194,7 +1265,7 @@
    }
  
    // Store pthread info into the OSThread
@@ -771,11 +817,12 @@
  #ifdef __APPLE__
    osthread->set_thread_id(::mach_thread_self());
  #else
-@@ -2366,6 +2409,24 @@
+@@ -2366,7 +2437,23 @@
    st->print("Memory:");
    st->print(" %dk page", os::vm_page_size()>>10);
  
-+#ifdef __FreeBSD__
+-#ifndef _ALLBSD_SOURCE
++#if defined(__FreeBSD__)
 +  struct xswdev xsw;
 +  size_t mibsize, size;
 +  int mib[16], n, total = 0, used = 0;
@@ -791,12 +838,11 @@
 +      used += xsw.xsw_used;
 +    }
 +  }
-+#endif
-+
- #ifndef _ALLBSD_SOURCE
++#elif !defined(_ALLBSD_SOURCE)
    // values in struct sysinfo are "unsigned long"
    struct sysinfo si;
-@@ -2376,17 +2437,22 @@
+   sysinfo(&si);
+@@ -2376,17 +2463,22 @@
              os::physical_memory() >> 10);
    st->print("(" UINT64_FORMAT "k free)",
              os::available_memory() >> 10);
@@ -821,7 +867,7 @@
    st->cr();
  }
  
-@@ -2533,10 +2599,17 @@
+@@ -2533,10 +2625,17 @@
          jrelib_p = buf + len;
  
          // Add the appropriate library subdir
@@ -839,7 +885,7 @@
  
          // Add the appropriate client or server subdir
          len = strlen(buf);
-@@ -3654,8 +3727,8 @@
+@@ -3654,8 +3753,8 @@
    return OS_OK;
  #else
    int ret = setpriority(PRIO_PROCESS, thread->osthread()->thread_id(), newpri);
@@ -849,7 +895,7 @@
  }
  
  OSReturn os::get_native_priority(const Thread* const thread, int *priority_ptr) {
-@@ -4634,6 +4707,20 @@
+@@ -4634,6 +4733,20 @@
  
  int os::active_processor_count() {
  #ifdef _ALLBSD_SOURCE
@@ -934,15 +980,17 @@
  
  #ifndef GAMMA
  #include "manifest_info.h"
-@@ -96,7 +99,7 @@
+@@ -96,8 +99,8 @@
   *      A collection of useful strings. One should think of these as #define
   *      entries, but actual strings can be more efficient (with many compilers).
   */
 -#ifdef __linux__
+-static const char *system_dir   = "/usr/java";
 +#if defined(__linux__) || defined(_ALLBSD_SOURCE)
- static const char *system_dir   = "/usr/java";
++static const char *system_dir   = "%%JAVA_HOME%%";
  static const char *user_dir     = "/java";
  #else /* Solaris */
+ static const char *system_dir   = "/usr/jdk";
 @@ -526,7 +529,7 @@
         * LD_LIBRARY_PATH.  Note that this prevents any possible infinite
         * loop of execv() because we test for the prefix, above.
@@ -1040,6 +1088,15 @@
  
  #if defined(_ALLBSD_SOURCE) && defined(i586)
  
+@@ -1508,7 +1538,7 @@
+     }
+   }
+   if (_launcher_debug) {
+-    printf("linux_" LIBARCHNAME "_ServerClassMachine: %s\n",
++    printf("bsd_" LIBARCHNAME "_ServerClassMachine: %s\n",
+            (result == JNI_TRUE ? "true" : "false"));
+   }
+   return result;
 @@ -1672,7 +1702,7 @@
      while (dp != NULL) {
          cp = strchr(dp, (int)':');
@@ -2355,6 +2412,17 @@
  OTHER_LDLIBS = $(JVMLIB)
 +endif
 +
+--- jdk/make/javax/crypto/Makefile
++++ jdk/make/javax/crypto/Makefile
+@@ -155,7 +155,7 @@
+ #
+ 
+ ifdef OPENJDK
+-all: build-jar install-jar build-policy install-limited
++all: build-jar install-jar build-policy install-%%POLICY%%
+ else  # OPENJDK
+ ifeq ($(strip $(FILES_java)),)
+ all:
 --- jdk/make/javax/sound/FILES_c.gmk
 +++ jdk/make/javax/sound/FILES_c.gmk
 @@ -34,6 +34,8 @@
@@ -2720,8 +2788,8 @@
 +  ifeq ($(PLATFORM), bsd)
 +    CFLAGS += -DPNG_NO_MMX_CODE
 +    CPPFLAGS += -I$(OPENWIN_HOME)/include \
-+                -I$(OPENWIN_HOME)/include/X11/extensions \
-+                %%ICONV_INC%%
++                -I$(OPENWIN_HOME)/include/X11/extensions
++    CPPFLAGS += %%ICONV_INC%%
 +    OTHER_LDLIBS += -L$(OPENWIN_LIB) -lX11 -lXext %%ICONV_LIB%% $(LIBM) -pthread
 +  else
 +    CPPFLAGS += -I$(OPENWIN_HOME)/include -I$(OPENWIN_HOME)/include/X11/extensions
@@ -3068,22 +3136,10 @@
                      userHome + sep + ".themes",
                      System.getProperty("swing.metacitythemedir"),
 +		    "%%LOCALBASE%%/share/themes",
-+		    "%%LOCALBASE%%/gnome/themes",
++		    "%%LOCALBASE%%/share/gnome/themes",
                      "/usr/share/themes",
                      "/usr/gnome/share/themes",  // Debian/Redhat/Solaris
                      "/opt/gnome2/share/themes"  // SuSE
---- jdk/src/share/classes/com/sun/jmx/snmp/SnmpPduTrap.java
-+++ jdk/src/share/classes/com/sun/jmx/snmp/SnmpPduTrap.java
-@@ -78,6 +78,9 @@
-      */
-     public long            timeStamp ;
- 
-+    // TODO: IcedTea: I am a stub.
-+    static public int trapAuthenticationFailure = 0;
-+
- 
- 
-     /**
 --- jdk/src/share/classes/java/awt/Font.java
 +++ jdk/src/share/classes/java/awt/Font.java
 @@ -449,18 +449,19 @@
@@ -6535,7 +6591,7 @@
 -#ifdef __linux__
 -static const char *system_dir   = "/usr/java";
 +#if defined(__FreeBSD__)
-+static const char *system_dir	= "%%OPENJDK_HOME%%";
++static const char *system_dir	= "%%JAVA_HOME%%";
 +static const char *user_dir	= "/java";
 +#elif defined(__NetBSD__)
 +static const char *system_dir	= "/usr/local/openjdk6";
