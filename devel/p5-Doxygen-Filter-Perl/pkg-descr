@@ -1,5 +1,5 @@
 Doxygen Filter is an input filter for Doxygen enabling support for Perl code
-documentation. Doxygen is quite a powerful code documentation system that
+documentation.  Doxygen is quite a powerful code documentation system that
 already has built-in support for multiple programming languages.
 
-WWW: http://www.bigsister.ch/doxygenfilter/doxygenfilter.html
+WWW: http://perldoxygen.sourceforge.net/

@@ -1904,6 +1904,7 @@
     SUBDIR += p5-Dist-Joseki
     SUBDIR += p5-Dist-Metadata
     SUBDIR += p5-Dist-Zilla
+    SUBDIR += p5-Doxygen-Filter-Perl
     SUBDIR += p5-DynaLoader-Functions
     SUBDIR += p5-EV
     SUBDIR += p5-Env-PS1
@@ -2999,7 +3000,6 @@
     SUBDIR += p5-constant-def
     SUBDIR += p5-constant-lexical
     SUBDIR += p5-cpan-listchanges
-    SUBDIR += p5-doxygenfilter
     SUBDIR += p5-enum
     SUBDIR += p5-ex-lib
     SUBDIR += p5-experimental
