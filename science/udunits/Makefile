@@ -16,6 +16,7 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 CONFIGURE_ENV=	ac_cv_header_CUnit_CUnit_h=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
