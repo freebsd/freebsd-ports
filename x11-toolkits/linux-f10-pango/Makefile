@@ -26,7 +26,4 @@ USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
-post-install:
-	@${STAGEDIR}${PREFIX}/usr/bin/pango-querymodules-32 > ${STAGEDIR}${PREFIX}/etc/pango/i686-pc-linux-gnu/pango.modules
-
 .include <bsd.port.mk>
