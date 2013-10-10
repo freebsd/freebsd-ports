@@ -3,7 +3,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b28
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,} \
 		http://download.java.net/openjdk/jtreg/promoted/4.1/b05/:jtreg \
@@ -52,6 +52,7 @@ USES=		gmake iconv motif
 
 .include <bsd.port.options.mk>
 .include "${.CURDIR}/../openjdk6/Makefile.icedtea"
+.include "${.CURDIR}/../openjdk6/Makefile.test"
 
 EXTRA_PATCHES=	${ICEDTEA_PATCHES}
 
@@ -129,7 +130,7 @@ ALL_TARGET=	debug_build
 OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}-debug
 .else
 OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}
-WARNINGS_ARE_ERRORS?=	-w
+MAKE_ENV+=	WARNINGS_ARE_ERRORS=-w
 .endif
 
 # disable FASTDEBUG_BUILD by default to improve compile time.
@@ -160,14 +161,6 @@ USES+=		display:test
 EXTRA_PATCHES+=	${FILESDIR}/test_gamma-disable.patch
 .endif
 
-.if !empty(ICONV_LIB)
-ICONV_INCLUDE=	-I${LOCALBASE}/include
-ICONV_LIBS=	-L${LOCALBASE}/lib ${ICONV_LIB}
-.else
-ICONV_INCLUDE=
-ICONV_LIBS=
-.endif
-
 COPYDIRS=	\
 	jdk/src/linux/doc/man
 
@@ -188,6 +181,16 @@ COPYFILES=	\
 	jdk/src/solaris/hpi/include/largefile_linux.h \
 	jdk/src/solaris/native/java/net/linux_close.c \
 	jdk/src/solaris/native/sun/tools/attach/LinuxVirtualMachine.c
+
+.include <bsd.port.pre.mk>
+
+.if ${ICONV_PREFIX} == "/usr"
+ICONV_INCLUDE=
+ICONV_LIBS=
+.else
+ICONV_INCLUDE=	-I${LOCALBASE}/include
+ICONV_LIBS=	-L${LOCALBASE}/lib ${ICONV_LIB}
+.endif
 
 post-extract:
 	@for d in ${COPYDIRS}; do \
@@ -210,7 +213,7 @@ post-extract:
 	@${SED} "s|/usr/local|${LOCALBASE}|" \
 	    ${FILESDIR}/fontconfig.properties > \
 	    ${WRKSRC}/jdk/src/solaris/classes/sun/awt/fontconfigs/bsd.fontconfig.properties
-	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|" ${FILESDIR}/Makefile.test > \
+	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|" ${FILESDIR}/Makefile.test.in > \
 	    ${WRKSRC}/jdk/test/Makefile
 	@${FIND} ${WRKSRC}/jdk/test -type f -name \*.sh -exec ${SED} -i "" \
 	    -e s/Linux/FreeBSD/g {} \;
@@ -222,24 +225,23 @@ post-patch:
 	    ${WRKSRC}/Makefile ${WRKSRC}/jdk/make/java/instrument/Makefile \
 	    ${WRKSRC}/jdk/make/java/npt/Makefile \
 	    ${WRKSRC}/jdk/make/sun/splashscreen/Makefile
-	@${REINPLACE_CMD} \
-	    -e "s|/lib:/usr/lib|/lib:/usr/lib:${LOCALBASE}/lib|" \
-	    ${WRKSRC}/hotspot/src/os/bsd/vm/os_bsd.cpp
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|" \
+	    ${WRKSRC}/hotspot/src/os/bsd/vm/os_bsd.cpp \
+	    ${WRKSRC}/jdk/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java
 .if ${PORT_OPTIONS:MPOLICY}
-	@${REINPLACE_CMD} \
-	    -e 's|policy install-limited|policy install-unlimited|' \
+	@${REINPLACE_CMD} -e 's|%%POLICY%%|unlimited|' \
+	    ${WRKSRC}/jdk/make/javax/crypto/Makefile
+.else
+	@${REINPLACE_CMD} -e 's|%%POLICY%%|limited|' \
 	    ${WRKSRC}/jdk/make/javax/crypto/Makefile
 .endif
-	@${REINPLACE_CMD} \
-	    -e "s|%%LOCALBASE%%|${LOCALBASE}|" \
-	    ${WRKSRC}/jdk/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java
 .if defined(BUILD_JRE)
-	@${REINPLACE_CMD} \
-	    -e "s|%%OPENJDK_HOME%%|${PREFIX}/openjdk6-jre|" \
+	@${REINPLACE_CMD} -e "s|%%JAVA_HOME%%|${PREFIX}/openjdk6-jre|" \
+	    ${WRKSRC}/hotspot/src/os/posix/launcher/java_md.c \
 	    ${WRKSRC}/jdk/src/solaris/bin/java_md.c
 .else
-	@${REINPLACE_CMD} \
-	    -e "s|%%OPENJDK_HOME%%|${PREFIX}/openjdk6|" \
+	@${REINPLACE_CMD} -e "s|%%JAVA_HOME%%|${PREFIX}/openjdk6|" \
+	    ${WRKSRC}/hotspot/src/os/posix/launcher/java_md.c \
 	    ${WRKSRC}/jdk/src/solaris/bin/java_md.c
 .endif
 
@@ -263,21 +265,6 @@ post-build:
 	@${ECHO_MSG} "Unset the environment DISPLAY variable to run tests in a virtual X server."
 .endif
 	@${ECHO_MSG} ""
-
-.if defined(DISPLAY)
-_TEST_SEQ=	do-test
-.else
-_TEST_SEQ=	pre-test do-test post-test
-.ORDER: ${_TEST_SEQ}
-.endif
-test: ${_TEST_SEQ}
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You can run \"make test\" again to re-execute only the failed tests."
-	@${ECHO_MSG} ""
-
-do-test: build-depends build
-	@-(cd ${WRKSRC}/jdk/test; ${SETENV} PLATFORM=bsd ARCH=${ARCH} \
-	    ${MAKE_ENV} ${GMAKE} tests)
 .endif
 
 do-install:
@@ -360,4 +347,4 @@ do-install:
 	@${ECHO_CMD} "exit 0" >> ${PKGDEINSTALL}
 	@${ECHO_CMD} "exit 0" >> ${PKGINSTALL}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
