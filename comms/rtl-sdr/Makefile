@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rtl-sdr
-PORTVERSION=	20130116
+PORTVERSION=	20130913
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
@@ -13,9 +13,8 @@ COMMENT=	Commandline tool that performs SDR with RTL2832-based USB sticks
 
 LICENSE=	GPLv2
 
-USES=		pkgconfig
+USES=		gmake pkgconfig
 USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env libtool
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -23,12 +22,7 @@ USE_LDCONFIG=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/librtlsdr
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800069
-IGNORE=	requires FreeBSD 8.0 or later
-.endif
 
 .if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
