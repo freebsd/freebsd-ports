@@ -49,6 +49,7 @@ include/vamos/world/Gl_World.h
 include/vamos/world/Interactive_Driver.h
 include/vamos/world/Robot_Driver.h
 include/vamos/world/Sounds.h
+include/vamos/world/Timing_Info.h
 include/vamos/world/World.h
 lib/libvamos-body.a
 lib/libvamos-body.la
@@ -82,13 +83,33 @@ share/pixmaps/vamos.png
 %%DATADIR%%/cars/F1-1967-wishbone.ac
 %%DATADIR%%/cars/F1-1967.ac
 %%DATADIR%%/cars/F1-1967.xml
+%%DATADIR%%/cars/F1-black.ac
+%%DATADIR%%/cars/F1-blue.ac
+%%DATADIR%%/cars/F1-red.ac
+%%DATADIR%%/cars/F1-silver.ac
 %%DATADIR%%/cars/F1-stator.ac
+%%DATADIR%%/cars/F1-white.ac
 %%DATADIR%%/cars/F1-wishbone.ac
 %%DATADIR%%/cars/F1.ac
 %%DATADIR%%/cars/F1.xml
+%%DATADIR%%/cars/F1/1.xml
+%%DATADIR%%/cars/F1/2.xml
+%%DATADIR%%/cars/F1/3.xml
+%%DATADIR%%/cars/F1/4.xml
+%%DATADIR%%/cars/F1/5.xml
+%%DATADIR%%/cars/GT-black.ac
+%%DATADIR%%/cars/GT-blue.ac
+%%DATADIR%%/cars/GT-green.ac
 %%DATADIR%%/cars/GT-interior.ac
+%%DATADIR%%/cars/GT-red.ac
+%%DATADIR%%/cars/GT-yellow.ac
 %%DATADIR%%/cars/GT.ac
 %%DATADIR%%/cars/GT.xml
+%%DATADIR%%/cars/GT/1.xml
+%%DATADIR%%/cars/GT/2.xml
+%%DATADIR%%/cars/GT/3.xml
+%%DATADIR%%/cars/GT/4.xml
+%%DATADIR%%/cars/GT/5.xml
 %%DATADIR%%/cars/default-car.xml
 %%DATADIR%%/cars/front-drive.xml
 %%DATADIR%%/cars/trainer.xml
@@ -203,6 +224,8 @@ share/pixmaps/vamos.png
 @dirrm %%DATADIR%%/textures
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/controls
+@dirrm %%DATADIR%%/cars/GT
+@dirrm %%DATADIR%%/cars/F1
 @dirrm %%DATADIR%%/cars
 @dirrm %%DATADIR%%
 @dirrm include/vamos/world

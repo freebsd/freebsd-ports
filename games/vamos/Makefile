@@ -2,20 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	vamos
-PORTVERSION=	0.7.0
-PORTREVISION=	3
+PORTVERSION=	0.7.1
 CATEGORIES=	games
-MASTER_SITES=	SF \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/ \
 		SF/nemysisfreebsdp/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}_icons${EXTRACT_SUFX}:icons
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Automotive simulation framework
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
+		libpng15.so:${PORTSDIR}/graphics/png
 
 USES=		pkgconfig
 USE_OPENAL=	al alut
@@ -23,19 +23,23 @@ USE_XORG=	sm ice x11 xi xext xmu
 USE_GL=		glut
 USE_SDL=	sdl
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ARGS=	ac_cv_header_boost_test_unit_test_hpp=no \
-		ac_cv_lib_freeglut_glutGetModifiers=no
+CONFIGURE_ARGS=	ac_cv_lib_freeglut_glutGetModifiers=no \
+		--disable-unit-tests
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-# Wrong versioning upstream
-PORTSCOUT=	skipv:0.7.1
-
 INFO=		vamos
 
-PORTDOCS=	AUTHORS ChangeLog README TODO
+PORTDOCS=	*
+
+DOCSRCDIR1=	${WRKSRC}
+DOC_FILES1=	AUTHORS ChangeLog README TODO
+
+DOCSRCDIR2=	${WRKSRC}/doc
+DOCSDIR2=	${DOCSDIR}/doc
+DOC_FILES2=	matrixfaq.htm
 
 INSTALLS_ICONS=	yes
 ICON_SIZES=	32x32 48x48 64x64 72x72 96x96
@@ -44,9 +48,6 @@ DESKTOP_ENTRIES="Vamos" "${COMMENT}" ${PORTNAME} \
 		"${PORTNAME}" "Game;ArcadeGame;" false
 
 OPTIONS_DEFINE=	DOCS
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 post-extract:
 	@${CHMOD} ${BINMODE} ${WRKSRC}/config/install-sh
@@ -61,15 +62,16 @@ post-patch:
 
 post-install:
 .for s in ${ICON_SIZES}
-	${MKDIR} ${PREFIX}/share/icons/hicolor/${s}/apps
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}_${s}.png \
-		${PREFIX}/share/icons/hicolor/${s}/apps/${PORTNAME}.png
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/${PORTNAME}.png
 .endfor
-	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${PREFIX}/share/pixmaps
+	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
+	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
 
 .include <bsd.port.mk>
