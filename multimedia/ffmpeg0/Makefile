@@ -3,6 +3,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.7.15
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -457,6 +458,7 @@ post-install:
 	@${REINPLACE_CMD} \
 		-e 's|libavutil|libavutil0|' \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/libavcodec0.pc \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/libpostproc0.pc \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/libswscale0.pc
 	@${REINPLACE_CMD} \
 		-e 's|libavformat|libavformat0|' \
