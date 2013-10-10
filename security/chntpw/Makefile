@@ -10,27 +10,36 @@ DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Utility to set the password and edit registry on Microsoft NT system
 
-USE_ZIP=	yes
-USE_GMAKE=	yes
-USE_OPENSSL=	yes
+LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	i386
+OPTIONS_DEFINE=	DOCS
+
+USE_ZIP=	yes
+USE_OPENSSL=	yes
+USES=		gmake
+
+ONLY_FOR_ARCHS=	i386 amd64
 
 PLIST_FILES=	bin/chntpw
 PORTDOCS=	README.txt WinReg.txt regedit.txt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e '10 s,/usr,$$\(OPENSSLBASE\),' \
-		${WRKSRC}/Makefile
+.include <bsd.port.pre.mk>
 
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/chntpw ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+post-patch:
+	@${REINPLACE_CMD} -e '/^CC=/d; /^OSSLPATH=/ s|=.*|=${OPENSSLBASE}|' ${WRKSRC}/Makefile
+.if ${ARCH} == "amd64"
+	@${REINPLACE_CMD} -e '/^CFLAGS=/ s| -m32||' ${WRKSRC}/Makefile
 .endif
 
-.include <bsd.port.mk>
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/chntpw ${STAGEDIR}${PREFIX}/bin
+
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+.endif
+
+.include <bsd.port.post.mk>
