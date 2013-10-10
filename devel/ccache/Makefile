@@ -3,7 +3,7 @@
 
 PORTNAME=	ccache
 PORTVERSION=	3.1.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.samba.org/ftp/ccache/ \
 		CRITICAL
@@ -14,20 +14,20 @@ COMMENT=	Tool to minimize the compile time of C/C++ programs
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
-NO_STAGE=	yes
 
 HOWTO=		ccache-howto-freebsd.txt
 CCLINKDIR=	libexec/ccache
 SUB_FILES=	${HOWTO} world-ccache pkg-message ccache-update-links.sh
 
-MAN1=		ccache.1
-
 PORTDOCS=	ccache-howto-freebsd.txt MANUAL.html
 
-OPTIONS_DEFINE=	CLANGLINK LLVMLINK STATIC DOCS
+OPTIONS_DEFINE=	CLANGLINK LLVMLINK STATIC DOCS TINDERBOX
 
 CLANGLINK_DESC=	Create clang compiler links if clang is installed
 LLVMLINK_DESC=	Create llvm compiler links if llvm is installed
+TINDERBOX_DESC=	Create tarball for tinderbox usage
+
+OPTIONS_SUB=	yes
 
 STATIC_LDFLAGS=	-static
 
@@ -57,7 +57,7 @@ SUB_LIST+=	CCACHE_COMPILERS="${CCACHE_COMPILERS}" \
 		HOWTO="${HOWTO}"
 
 post-build:
-.if !defined(TINDERBOX)
+.if ${PORT_OPTIONS:MTINDERBOX}
 	@${MKDIR} ${WRKDIR}/tb/opt
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${WRKDIR}/tb/opt
 .for l in ${CCACHE_COMPILERS}
@@ -67,27 +67,26 @@ post-build:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ccache ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
-	@${MKDIR} ${PREFIX}/${CCLINKDIR}/world
+	${INSTALL_PROGRAM} ${WRKSRC}/ccache ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/ccache.1 ${STAGEDIR}${PREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${PREFIX}/${CCLINKDIR}/world
 	${INSTALL_SCRIPT} ${WRKDIR}/world-ccache \
-		${PREFIX}/${CCLINKDIR}/world/ccache
+		${STAGEDIR}${PREFIX}/${CCLINKDIR}/world/ccache
 	${INSTALL_SCRIPT} ${WRKDIR}/ccache-update-links.sh \
-		${PREFIX}/bin/ccache-update-links
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.tar ${DATADIR}
+		${STAGEDIR}${PREFIX}/bin/ccache-update-links
+.if ${PORT_OPTIONS:MTINDERBOX}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.tar ${STAGEDIR}${DATADIR}
+.endif
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/MANUAL.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${HOWTO} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/MANUAL.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${HOWTO} ${STAGEDIR}${DOCSDIR}
 .endif
 
 post-install:
-	@${ECHO_CMD} "Creating compiler links..."
-	@${PREFIX}/bin/ccache-update-links -v
-	@${CAT} ${PKGMESSAGE}
 .if ${PORT_OPTIONS:MCLANGLINK}
-	@${CAT} ${FILESDIR}/pkg-message-clang
+	@${CAT} ${FILESDIR}/pkg-message-clang >> ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.mk>

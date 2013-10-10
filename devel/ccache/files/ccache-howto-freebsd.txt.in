@@ -2,12 +2,16 @@
 # $FreeBSD$
 #
 
-To use ccache add the following to /etc/make.conf.
+To use ccache for ports, just add WITH_CCACHE_BUILD=yes to
+/etc/make.conf. The rest of this guide is for building
+/usr/src and other checkouts.
+
+To use ccache for base add the following to /etc/make.conf.
 You can replace cc and c++ with the compilers of your choice.
 (remember that only GCC and Clang can build world and kernel)
 
 .if (!empty(.CURDIR:M/usr/src*) || !empty(.CURDIR:M/usr/obj*))
-.if !defined(NOCCACHE)
+.if !defined(NOCCACHE) && exists(%%PREFIX%%/%%CCLINKDIR%%/world/cc)
 CC:=${CC:C,^cc,%%PREFIX%%/%%CCLINKDIR%%/world/cc,1}
 CXX:=${CXX:C,^c\+\+,%%PREFIX%%/%%CCLINKDIR%%/world/c++,1}
 .endif
@@ -54,10 +58,6 @@ Just add this to /etc/make.conf if you want to hide them:
 .if ${CC:T} == "clang"
 CFLAGS+=	-Qunused-arguments
 .endif
-
-!!! WARNING !!!
-Please make sure you have the compiler installed before you do this or your
-build will fail because it will not be able to find the compiler.
 
 Any time you change CC/CXX you need to reinstall devel/libtool or you
 will run in to problems.
