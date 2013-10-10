@@ -253,9 +253,9 @@ share/pixmaps/robocode.png
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/robots/sampleteam
 @dirrm %%DATADIR%%/robots/sampleex
-@dirrm %%DATADIR%%/robots/sample
-@dirrm %%DATADIR%%/robots
-@dirrm %%DATADIR%%/roborumble
+@dirrmtry %%DATADIR%%/robots/sample
+@dirrmtry %%DATADIR%%/robots
+@dirrmtry %%DATADIR%%/roborumble
 @dirrm %%DATADIR%%/license
 @dirrm %%DATADIR%%/libs
 @dirrm %%DATADIR%%/javadoc/robocode/util
