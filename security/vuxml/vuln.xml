@@ -51,6 +51,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9003b500-31e3-11e3-b0d0-20cf30e32f6d">
+    <topic>mod_fcgid -- possible heap buffer overwrite</topic>
+    <affects>
+      <package>
+	<name>ap22-mod_fcgid</name>
+	<range><lt>2.3.9</lt></range>
+      </package>
+      <package>
+	<name>ap24-mod_fcgid</name>
+	<range><lt>2.3.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Apache Project reports:</p>
+	<blockquote cite="https://mail-archives.apache.org/mod_mbox/httpd-cvs/201309.mbox/%3C20130929174048.13B962388831@eris.apache.org%3E">
+	  <p>Fix possible heap buffer overwrite.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4365</cvename>
+    </references>
+    <dates>
+      <discovery>2013-09-29</discovery>
+      <entry>2013-10-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="749b5587-2da1-11e3-b1a9-b499baab0cbe">
     <topic>gnupg -- possible infinite recursion in the compressed packet parser</topic>
     <affects>
