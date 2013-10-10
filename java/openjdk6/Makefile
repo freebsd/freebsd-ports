@@ -25,7 +25,7 @@ LICENSE_DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 BUILD_DEPENDS=	${LOCALBASE}/bin/zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip \
 		${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups-client
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
 
@@ -68,8 +68,6 @@ ANTFILE=	apache-ant-${ANTVERSION}-bin.tar.bz2
 JTREG_BUILD=	b05_29_nov_2012
 JTREGFILE=	jtreg-4.1-bin-${JTREG_BUILD}.zip
 UPDATE_VERSION=	32
-
-.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MIPV6}
 CATEGORIES+=	ipv6
@@ -147,7 +145,7 @@ MAKE_ENV+=	DONT_ENABLE_IPV6="YES"
 
 .if ${PORT_OPTIONS:MSOUND}
 EXTRA_PATCHES+=	${FILESDIR}/alsa-enable.patch
-LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
 RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
 .else
 EXTRA_PATCHES+=	${FILESDIR}/alsa-disable.patch
