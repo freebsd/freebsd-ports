@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ace
-PORTVERSION=	6.2.0
+PORTVERSION=	6.2.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://download.dre.vanderbilt.edu/previous_versions/ \
 		http://download.dre.vanderbilt.edu/previous_versions/
@@ -11,19 +11,13 @@ DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adaptive Communication Environment for C++
 
-OPTIONS_DEFINE=	SSL TRIO X11 FLTK TK QT4
-OPTIONS_DEFAULT=SSL
-TRIO_DESC=	Trio portable string functions
-FLTK_DESC=	FLTK GUI toolkit
-
 CONFLICTS=	ace+tao-5*
 
 WRKSRC=		${WRKDIR}/ACE_wrappers
 
 USE_BZIP2=	yes
-USES=		pkgconfig perl5
+USES=		gmake perl5 pkgconfig
 USE_PERL5=	build
-USE_GMAKE=	yes
 MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/lib" ACE_ROOT="${WRKSRC}" \
 		CROSS-COMPILE=1
 MAKEFILE=	GNUmakefile
@@ -34,55 +28,31 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=		FLTK QT4 SSL TK TRIO X11
+OPTIONS_DEFAULT=	SSL
+OPTIONS_SUB=		yes
 
-.if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=	yes
-MAKE_ENV+=	ssl=1
-PLIST_SUB+=	OPENSSL=""
-.else
-PLIST_SUB+=	OPENSSL="@comment "
-.endif
+FLTK_DESC=		FLTK GUI toolkit
+FLTK_LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+FLTK_MAKE_ENV=		fl=1
 
-.if ${PORT_OPTIONS:MTRIO}
-BUILD_DEPENDS+=	trio>=0:${PORTSDIR}/devel/trio
-MAKE_ENV+=	trio=1
-.endif
+QT4_USE=		QT4=corelib gui moc_build
+QT4_MAKE_ENV=		qt=1 qt4=1 QTDIR="${QT_PREFIX}"
+QT4_CPPFLAGS=		-I${QT_INCDIR}
+QT4_LDFLAGS=		-L${QT_LIBDIR}
 
-.if ${PORT_OPTIONS:MX11}
-USE_XORG=	xt
-MAKE_ENV+=	xt=1
-PLIST_SUB+=	X11=""
-.else
-PLIST_SUB+=	X11="@comment "
-.endif
+SSL_USE=		OPENSSL=yes
+SSL_MAKE_ENV=		ssl=1
 
-.if ${PORT_OPTIONS:MFLTK}
-LIB_DEPENDS+=	fltk:${PORTSDIR}/x11-toolkits/fltk
-MAKE_ENV+=	fl=1
-PLIST_SUB+=	FLTK=""
-.else
-PLIST_SUB+=	FLTK="@comment "
-.endif
+TK_USES=		tk
+TK_MAKE_ENV=		tk=1
 
-.if ${PORT_OPTIONS:MTK}
-USES+=		tk
-MAKE_ENV+=	tk=1
-PLIST_SUB+=	TK=""
-.else
-PLIST_SUB+=	TK="@comment "
-.endif
+TRIO_DESC=		Trio portable string functions
+TRIO_BUILD_DEPENDS=	trio>=0:${PORTSDIR}/devel/trio
+TRIO_MAKE_ENV=		trio=1
 
-.if ${PORT_OPTIONS:MQT4}
-USE_QT4=	corelib gui moc_build
-MAKE_ENV+=	qt=1 qt4=1 QTDIR="${QT_PREFIX}"
-CPPFLAGS+=	-I${QT_INCDIR}
-LDFLAGS+=	-L${QT_LIBDIR}
-PLIST_SUB+=	QT=""
-.else
-PLIST_SUB+=	QT="@comment "
-.endif
+X11_USE=		XORG=xt
+X11_MAKE_ENV=		xt=1
 
 .include <bsd.port.pre.mk>
 
@@ -116,12 +86,12 @@ do-configure:
 
 post-install:
 	@for f in `${LS} -d \
-		${PREFIX}/lib/libACE*.so.${PORTVERSION} \
-		${PREFIX}/lib/libJAWS.so.${PORTVERSION} \
-		${PREFIX}/lib/libKokyu.so.${PORTVERSION} \
+		${STAGEDIR}${PREFIX}/lib/libACE*.so.${PORTVERSION} \
+		${STAGEDIR}${PREFIX}/lib/libJAWS.so.${PORTVERSION} \
+		${STAGEDIR}${PREFIX}/lib/libKokyu.so.${PORTVERSION} \
 		| ${XARGS} ${BASENAME}`; do \
 		n=`echo $${f}|sed -e 's/.so.${PORTVERSION}/.so/'`; \
-		${LN} -sf $${n}.${PORTVERSION} ${PREFIX}/lib/$${n}.6; \
+		${LN} -sf $${n}.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/$${n}.6; \
 	done
 
 .include <bsd.port.post.mk>

@@ -396,13 +396,13 @@ include/ace/INet/FTP_Session.cpp
 include/ace/INet/FTP_Session.h
 include/ace/INet/FTP_URL.h
 include/ace/INet/FTP_URL.inl
-%%OPENSSL%%include/ace/INet/HTTPS_Context.h
-%%OPENSSL%%include/ace/INet/HTTPS_Context.inl
-%%OPENSSL%%include/ace/INet/HTTPS_Session.cpp
-%%OPENSSL%%include/ace/INet/HTTPS_Session.h
-%%OPENSSL%%include/ace/INet/HTTPS_SessionFactory.h
-%%OPENSSL%%include/ace/INet/HTTPS_URL.h
-%%OPENSSL%%include/ace/INet/HTTPS_URL.inl
+%%SSL%%include/ace/INet/HTTPS_Context.h
+%%SSL%%include/ace/INet/HTTPS_Context.inl
+%%SSL%%include/ace/INet/HTTPS_Session.cpp
+%%SSL%%include/ace/INet/HTTPS_Session.h
+%%SSL%%include/ace/INet/HTTPS_SessionFactory.h
+%%SSL%%include/ace/INet/HTTPS_URL.h
+%%SSL%%include/ace/INet/HTTPS_URL.inl
 include/ace/INet/HTTP_BasicAuthentication.h
 include/ace/INet/HTTP_BasicAuthentication.inl
 include/ace/INet/HTTP_ClientRequestHandler.h
@@ -431,21 +431,21 @@ include/ace/INet/HeaderBase.h
 include/ace/INet/HeaderBase.inl
 include/ace/INet/INet_Export.h
 include/ace/INet/INet_Log.h
-%%OPENSSL%%include/ace/INet/INet_SSL_Export.h
+%%SSL%%include/ace/INet/INet_SSL_Export.h
 include/ace/INet/IOS_util.h
 include/ace/INet/Request.h
 include/ace/INet/RequestHandler.h
 include/ace/INet/Response.h
-%%OPENSSL%%include/ace/INet/SSLSock_IOStream.cpp
-%%OPENSSL%%include/ace/INet/SSLSock_IOStream.h
-%%OPENSSL%%include/ace/INet/SSL_CallbackManager.h
-%%OPENSSL%%include/ace/INet/SSL_CallbackManager.inl
-%%OPENSSL%%include/ace/INet/SSL_CertificateCallback.h
-%%OPENSSL%%include/ace/INet/SSL_CertificateCallback.inl
-%%OPENSSL%%include/ace/INet/SSL_PasswordCallback.h
-%%OPENSSL%%include/ace/INet/SSL_Proxy_Connector.h
-%%OPENSSL%%include/ace/INet/SSL_X509Cert.h
-%%OPENSSL%%include/ace/INet/SSL_X509Cert.inl
+%%SSL%%include/ace/INet/SSLSock_IOStream.cpp
+%%SSL%%include/ace/INet/SSLSock_IOStream.h
+%%SSL%%include/ace/INet/SSL_CallbackManager.h
+%%SSL%%include/ace/INet/SSL_CallbackManager.inl
+%%SSL%%include/ace/INet/SSL_CertificateCallback.h
+%%SSL%%include/ace/INet/SSL_CertificateCallback.inl
+%%SSL%%include/ace/INet/SSL_PasswordCallback.h
+%%SSL%%include/ace/INet/SSL_Proxy_Connector.h
+%%SSL%%include/ace/INet/SSL_X509Cert.h
+%%SSL%%include/ace/INet/SSL_X509Cert.inl
 include/ace/INet/Sock_IOStream.cpp
 include/ace/INet/Sock_IOStream.h
 include/ace/INet/StreamHandler.cpp
@@ -750,8 +750,8 @@ include/ace/Process_Semaphore.h
 include/ace/Process_Semaphore.inl
 include/ace/Profile_Timer.h
 include/ace/Profile_Timer.inl
-%%QT%%include/ace/QtReactor/ACE_QtReactor_export.h
-%%QT%%include/ace/QtReactor/QtReactor.h
+%%QT4%%include/ace/QtReactor/ACE_QtReactor_export.h
+%%QT4%%include/ace/QtReactor/QtReactor.h
 include/ace/RB_Tree.cpp
 include/ace/RB_Tree.h
 include/ace/RB_Tree.inl
@@ -837,22 +837,22 @@ include/ace/SPIPE_Connector.h
 include/ace/SPIPE_Connector.inl
 include/ace/SPIPE_Stream.h
 include/ace/SPIPE_Stream.inl
-%%OPENSSL%%include/ace/SSL/SSL_Asynch_BIO.h
-%%OPENSSL%%include/ace/SSL/SSL_Asynch_Stream.h
-%%OPENSSL%%include/ace/SSL/SSL_Asynch_Stream.inl
-%%OPENSSL%%include/ace/SSL/SSL_Context.h
-%%OPENSSL%%include/ace/SSL/SSL_Context.inl
-%%OPENSSL%%include/ace/SSL/SSL_Export.h
-%%OPENSSL%%include/ace/SSL/SSL_Initializer.h
-%%OPENSSL%%include/ace/SSL/SSL_SOCK.h
-%%OPENSSL%%include/ace/SSL/SSL_SOCK.inl
-%%OPENSSL%%include/ace/SSL/SSL_SOCK_Acceptor.h
-%%OPENSSL%%include/ace/SSL/SSL_SOCK_Acceptor.inl
-%%OPENSSL%%include/ace/SSL/SSL_SOCK_Connector.h
-%%OPENSSL%%include/ace/SSL/SSL_SOCK_Connector.inl
-%%OPENSSL%%include/ace/SSL/SSL_SOCK_Stream.h
-%%OPENSSL%%include/ace/SSL/SSL_SOCK_Stream.inl
-%%OPENSSL%%include/ace/SSL/sslconf.h
+%%SSL%%include/ace/SSL/SSL_Asynch_BIO.h
+%%SSL%%include/ace/SSL/SSL_Asynch_Stream.h
+%%SSL%%include/ace/SSL/SSL_Asynch_Stream.inl
+%%SSL%%include/ace/SSL/SSL_Context.h
+%%SSL%%include/ace/SSL/SSL_Context.inl
+%%SSL%%include/ace/SSL/SSL_Export.h
+%%SSL%%include/ace/SSL/SSL_Initializer.h
+%%SSL%%include/ace/SSL/SSL_SOCK.h
+%%SSL%%include/ace/SSL/SSL_SOCK.inl
+%%SSL%%include/ace/SSL/SSL_SOCK_Acceptor.h
+%%SSL%%include/ace/SSL/SSL_SOCK_Acceptor.inl
+%%SSL%%include/ace/SSL/SSL_SOCK_Connector.h
+%%SSL%%include/ace/SSL/SSL_SOCK_Connector.inl
+%%SSL%%include/ace/SSL/SSL_SOCK_Stream.h
+%%SSL%%include/ace/SSL/SSL_SOCK_Stream.inl
+%%SSL%%include/ace/SSL/sslconf.h
 include/ace/SString.h
 include/ace/SString.inl
 include/ace/SStringfwd.h
@@ -1102,6 +1102,7 @@ include/ace/config-macosx-iOS-hardware.h
 include/ace/config-macosx-iOS-simulator.h
 include/ace/config-macosx-leopard.h
 include/ace/config-macosx-lion.h
+include/ace/config-macosx-mavericks.h
 include/ace/config-macosx-mountainlion.h
 include/ace/config-macosx-panther.h
 include/ace/config-macosx-snowleopard.h
@@ -1133,6 +1134,7 @@ include/ace/config-vxworks6.6.h
 include/ace/config-vxworks6.7.h
 include/ace/config-vxworks6.8.h
 include/ace/config-vxworks6.9.h
+include/ace/config-win32-borland.h
 include/ace/config-win32-cegcc.h
 include/ace/config-win32-common.h
 include/ace/config-win32-dmc.h
@@ -1277,24 +1279,24 @@ lib/libACE_HTBP.so.%%VERSION%%
 lib/libACE_INet.so
 lib/libACE_INet.so.6
 lib/libACE_INet.so.%%VERSION%%
-%%OPENSSL%%lib/libACE_INet_SSL.so
-%%OPENSSL%%lib/libACE_INet_SSL.so.6
-%%OPENSSL%%lib/libACE_INet_SSL.so.%%VERSION%%
+%%SSL%%lib/libACE_INet_SSL.so
+%%SSL%%lib/libACE_INet_SSL.so.6
+%%SSL%%lib/libACE_INet_SSL.so.%%VERSION%%
 lib/libACE_Monitor_Control.so
 lib/libACE_Monitor_Control.so.6
 lib/libACE_Monitor_Control.so.%%VERSION%%
-%%QT%%lib/libACE_QtReactor.so
-%%QT%%lib/libACE_QtReactor.so.6
-%%QT%%lib/libACE_QtReactor.so.%%VERSION%%
+%%QT4%%lib/libACE_QtReactor.so
+%%QT4%%lib/libACE_QtReactor.so.6
+%%QT4%%lib/libACE_QtReactor.so.%%VERSION%%
 lib/libACE_RLECompression.so
 lib/libACE_RLECompression.so.6
 lib/libACE_RLECompression.so.%%VERSION%%
 lib/libACE_RMCast.so
 lib/libACE_RMCast.so.6
 lib/libACE_RMCast.so.%%VERSION%%
-%%OPENSSL%%lib/libACE_SSL.so
-%%OPENSSL%%lib/libACE_SSL.so.6
-%%OPENSSL%%lib/libACE_SSL.so.%%VERSION%%
+%%SSL%%lib/libACE_SSL.so
+%%SSL%%lib/libACE_SSL.so.6
+%%SSL%%lib/libACE_SSL.so.%%VERSION%%
 lib/libACE_TMCast.so
 lib/libACE_TMCast.so.6
 lib/libACE_TMCast.so.%%VERSION%%
@@ -1319,10 +1321,10 @@ libdata/pkgconfig/ACE_ETCL_Parser.pc
 %%FLTK%%libdata/pkgconfig/ACE_FlReactor.pc
 libdata/pkgconfig/ACE_HTBP.pc
 libdata/pkgconfig/ACE_INet.pc
-%%OPENSSL%%libdata/pkgconfig/ACE_INet_SSL.pc
-%%QT%%libdata/pkgconfig/ACE_QtReactor.pc
+%%SSL%%libdata/pkgconfig/ACE_INet_SSL.pc
+%%QT4%%libdata/pkgconfig/ACE_QtReactor.pc
 libdata/pkgconfig/ACE_RMCast.pc
-%%OPENSSL%%libdata/pkgconfig/ACE_SSL.pc
+%%SSL%%libdata/pkgconfig/ACE_SSL.pc
 libdata/pkgconfig/ACE_TMCast.pc
 %%TK%%libdata/pkgconfig/ACE_TkReactor.pc
 %%X11%%libdata/pkgconfig/ACE_XtReactor.pc
@@ -1380,6 +1382,7 @@ libdata/pkgconfig/Kokyu.pc
 %%DATADIR%%/bin/MakeProjectCreator/config/acenosubsets.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/acexml.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/avoids_ace_for_tao.mpb
+%%DATADIR%%/bin/MakeProjectCreator/config/bmake.features
 %%DATADIR%%/bin/MakeProjectCreator/config/conv_lib.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/core.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/crosscompile.mpb
@@ -1419,6 +1422,7 @@ libdata/pkgconfig/Kokyu.pc
 %%DATADIR%%/bin/MakeProjectCreator/config/vc10nmake.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/vc11.features
 %%DATADIR%%/bin/MakeProjectCreator/config/vc11nmake.mpb
+%%DATADIR%%/bin/MakeProjectCreator/config/vc12nmake.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/vc71.features
 %%DATADIR%%/bin/MakeProjectCreator/config/vc8.features
 %%DATADIR%%/bin/MakeProjectCreator/config/vc8nmake.mpb
@@ -1503,6 +1507,7 @@ libdata/pkgconfig/Kokyu.pc
 %%DATADIR%%/include/makeinclude/platform_macosx_icc.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_leopard.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_lion.GNU
+%%DATADIR%%/include/makeinclude/platform_macosx_mavericks.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_mountainlion.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_panther.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_snowleopard.GNU
@@ -1562,8 +1567,8 @@ libdata/pkgconfig/Kokyu.pc
 %%TK%%@dirrm include/ace/TkReactor
 @dirrm include/ace/TMCast
 @dirrm include/ace/RMCast
-%%QT%%@dirrm include/ace/QtReactor
-%%OPENSSL%%@dirrm include/ace/SSL
+%%QT4%%@dirrm include/ace/QtReactor
+%%SSL%%@dirrm include/ace/SSL
 @dirrm include/ace/Monitor_Control
 @dirrm include/ace/INet
 @dirrm include/ace/HTBP
