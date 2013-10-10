@@ -5,14 +5,18 @@ PORTNAME=		kicad
 DISTVERSION=    r${BZR_SRC_REV}
 PORTREVISION=	3
 CATEGORIES=		cad
-DIST_SUBDIR=		${PORTNAME}
 MASTER_SITES=   ${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=     mr
 PKGNAMESUFFIX=  -devel
+DIST_SUBDIR=		${PORTNAME}
 # Additional patches: http://svn.openmoko.org/trunk/gta02-core/kicad-patches/
 
 MAINTAINER=		mr@FreeBSD.org
 COMMENT=		Schematic and PCB editing software
+
+BUILD_DEPENDS=	wxgtk2-2.8-config:${PORTSDIR}/x11-toolkits/wxgtk28 \
+		bzr:${PORTSDIR}/devel/bzr \
+		${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/bzrlib/plugins/bzrtools/bzrtools.py:${PORTSDIR}/devel/bzrtools
 
 LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
 
@@ -45,11 +49,6 @@ CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}"
 
 NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-BUILD_DEPENDS=	wxgtk2-2.8-config:${PORTSDIR}/x11-toolkits/wxgtk28 \
-		bzr:${PORTSDIR}/devel/bzr \
-		${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/bzrlib/plugins/bzrtools/bzrtools.py:${PORTSDIR}/devel/bzrtools
 
 #.if !defined(WITHOUT_GTA2CORE)
 #PATCH_STRIP=	-p1
@@ -59,7 +58,7 @@ BUILD_DEPENDS=	wxgtk2-2.8-config:${PORTSDIR}/x11-toolkits/wxgtk28 \
 #.endif
 
 .if exists(${LOCALBASE}/bin/konqueror)
-RUN_DEPENDS+=	konqueror:${PORTSDIR}/x11/kdebase3
+RUN_DEPENDS+=	konqueror:${PORTSDIR}/x11/kde4-baseapps
 .else
 RUN_DEPENDS+=	xpdf:${PORTSDIR}/graphics/xpdf
 .endif
@@ -88,7 +87,7 @@ FETCH_DEPENDS+= bzr:${PORTSDIR}/devel/bzr
 
 do-fetch:
 	${MKDIR} ${WRKDIR}
-	${ECHO} ${WRKSRC} 
+	${ECHO} ${WRKSRC}
 	bzr export -r ${BZR_SRC_REV} ${WRKSRC} lp:kicad
 	bzr export -r ${BZR_LIB_REV} ${WRKDIR}/kicad-library lp:~kicad-lib-committers/kicad/library
 	bzr export -r ${BZR_DOC_REV} ${WRKDIR}/kicad-doc lp:~kicad-developers/kicad/doc
@@ -158,8 +157,8 @@ PLIST_FILE_LIST=	bin/freeroute.jnlp \
 			share/mime/packages/kicad.xml \
 			share/applications/kicad.desktop \
 			share/applications/eeschema.desktop
-			
-PLIST_DIR_LIST=		lib/kicad	
+
+PLIST_DIR_LIST=		lib/kicad
 
 PLIST_SHAREDDIR_LIST=	share/applications \
 			share/mimelnk/application \
@@ -184,4 +183,4 @@ build-plist:
 			-e 's|${DOCSDIR}|%%DOCSDIR%%|' \
 			-e 's|^|@dirrm |' >> ${PLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
