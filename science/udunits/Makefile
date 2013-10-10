@@ -21,7 +21,6 @@ USE_LDCONFIG=	yes
 
 INFO=		udunits2 udunits2lib udunits2prog
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/install-data-hook$$/d' ${WRKSRC}/lib/Makefile.in
 
