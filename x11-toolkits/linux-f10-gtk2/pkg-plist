@@ -1,7 +1,7 @@
 @comment file listing
 etc/gtk-2.0/im-multipress.conf
-etc/gtk-2.0/i386-redhat-linux-gnu/gtk.immodules
-etc/gtk-2.0/i386-redhat-linux-gnu/gdk-pixbuf.loaders
+@unexec rm %D/etc/gtk-2.0/i386-redhat-linux-gnu/gtk.immodules
+@unexec rm %D/etc/gtk-2.0/i386-redhat-linux-gnu/gdk-pixbuf.loaders
 usr/bin/gdk-pixbuf-query-loaders-32
 usr/bin/gtk-query-immodules-2.0-32
 usr/bin/gtk-update-icon-cache
