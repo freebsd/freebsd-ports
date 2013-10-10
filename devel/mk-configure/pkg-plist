@@ -16,6 +16,14 @@ bin/mkcmake
 %%DATADIR%%/custom/prog_flex
 %%DATADIR%%/custom/prog_gawk
 %%DATADIR%%/custom/prog_gm4
+man/man1/mkc_check_custom.1.gz
+man/man1/mkc_check_decl.1.gz
+man/man1/mkc_check_funclib.1.gz
+man/man1/mkc_check_header.1.gz
+man/man1/mkc_check_prog.1.gz
+man/man1/mkc_check_sizeof.1.gz
+man/man1/mkcmake.1.gz
+man/man7/mk-configure.7.gz
 @dirrm %%DATADIR%%/custom
 @dirrm %%DATADIR%%
 share/mkc-mk/configure.mk
