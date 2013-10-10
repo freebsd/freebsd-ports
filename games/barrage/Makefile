@@ -11,11 +11,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Destroy as many targets as possible
 
 USE_SDL=	sdl mixer
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--with-profile-path=/var/games
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/games/|/|g' ${WRKSRC}/configure
 
