@@ -380,6 +380,7 @@
     SUBDIR += xotcl
     SUBDIR += yabasic
     SUBDIR += yap
+    SUBDIR += yap-devel
     SUBDIR += yorick
     SUBDIR += ypsilon
 
