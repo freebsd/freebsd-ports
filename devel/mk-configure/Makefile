@@ -3,6 +3,7 @@
 
 PORTNAME=	mk-configure
 PORTVERSION=	0.24.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -21,18 +22,12 @@ INSTALL_TARGET=	installdirs install
 PORTDOCS=	README NEWS TODO COPYRIGHT FAQ presentation.pdf
 PORTEXAMPLES=	*
 
-MAN1=		mkc_check_funclib.1 mkc_check_header.1 mkc_check_sizeof.1 \
-		mkc_check_decl.1 mkc_check_prog.1 mkc_check_custom.1 \
-		mkcmake.1
-MAN7=		mk-configure.7
-
 .if !defined(NOPORTDOCS)
 MAKE_ENV+=	EXTRAFILES="${PORTDOCS:C|.*\.pdf|doc/&|}"
 .else
 MAKE_ENV+=	EXTRAFILES=""
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	@${ECHO_CMD} "MKDEP ?= bmkdep" >> ${WRKSRC}/sys.mk
 
@@ -44,7 +39,7 @@ do-install:
 	@${SETENV} ${MAKE_ENV} ${BMAKE} -C ${INSTALL_WRKSRC} ${MAKE_FLAGS} ${MAKEFILE} \
 		${_MAKE_JOBS} ${MAKE_ARGS} ${INSTALL_TARGET}
 .if !defined(NOPORTEXAMPLES)
-	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
+	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
