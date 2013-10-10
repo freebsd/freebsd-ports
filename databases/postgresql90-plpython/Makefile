@@ -2,7 +2,8 @@
 
 PORTNAME=	postgresql
 CATEGORIES=	databases python
-PKGNAMESUFFIX=	-plpython
+PKGNAMESUFFIX?=	${DISTV:S/.//}-plpython
+DISTV= ${DISTVERSION:R}
 
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	Module for using Python to write SQL functions
@@ -17,6 +18,7 @@ USE_PYTHON?=	yes
 PYTHON_MAJOR_VER=	${PYTHON_VER:R}
 CONFIGURE_ARGS=	--with-python
 PLIST_SUB=	PYTHON_MAJOR_VER=${PYTHON_MAJOR_VER}
+COMPONENT=	-plpython
 
 .if ${PYTHON_MAJOR_VER} == 3
 PLIST_SUB+=	PYTHON3=""
