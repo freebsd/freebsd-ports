@@ -7,16 +7,15 @@ CATEGORIES=	textproc
 MASTER_SITES=	ftp://cam.ctan.org/tex-archive/support/lacheck/ \
 		http://www.heim2.tu-clausthal.de/~upp/lacheck/
 
-MAINTAINER=	uwe.pierau@tu-clausthal.de
-COMMENT=	A tool for finding common mistakes in LaTeX documents
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Tool for finding common mistakes in LaTeX documents
 
-MAN1=		lacheck.1
-PLIST_FILES=	bin/lacheck
+PLIST_FILES=	bin/lacheck \
+		man/man1/lacheck.1.gz
 ALL_TARGET=	lacheck lacheck.1
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/lacheck ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/lacheck.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/lacheck ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/lacheck.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

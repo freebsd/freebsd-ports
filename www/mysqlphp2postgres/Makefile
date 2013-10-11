@@ -7,11 +7,13 @@ CATEGORIES=	www
 MASTER_SITES=	http://downloads.mikekohn.net/mp2p/ \
 		http://www.heim2.tu-clausthal.de/~upp/mysqlphp2postgres/
 
-MAINTAINER=	uwe.pierau@tu-clausthal.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert MySQL calls in a PHP page into PostgreSQL calls
 
 ALL_TARGET=	default
 PLIST_FILES=	bin/mysqlphp2postgres
 
-NO_STAGE=	yes
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+
 .include <bsd.port.mk>
