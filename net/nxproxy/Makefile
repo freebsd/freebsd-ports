@@ -11,22 +11,24 @@ DISTFILES=	nxcomp-${DISTVERSION:S/2/1/}.tar.gz:nxcomp\
 		nxproxy-${DISTVERSION}.tar.gz:nxproxy
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An x2go helper program
-
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		jpeg:${PORTSDIR}/graphics/jpeg
+COMMENT=	Helper program for x2go
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg
+
 CONFLICTS=	nxserver-[0-9]*
-GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf
+
 USE_XORG=	ice x11 sm
-CXXFLAGS+=	-I${LOCALBASE}/include/libpng15
-CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS}"
+USE_GCC=	any
+USE_AUTOTOOLS=	autoconf
+
+CPPFLAGS+=	$$(libpng-config --I_opts)
+LDFLAGS+=	$$(libpng-config --L_opts)
+
 PLIST_FILES=	bin/nxproxy bin/setsid
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc" && ${OSVERSION} > 900000
@@ -37,24 +39,28 @@ post-extract:
 	${LN} -sf ${WRKDIR}/nxcomp-${DISTVERSION:S/2/1/} ${WRKDIR}/nxcomp
 
 post-patch:
-	${REINPLACE_CMD} -e "s,-O3,${CFLAGS}," ${WRKSRC}/configure.in \
-		${WRKDIR}/nxcomp/configure.in
-	${REINPLACE_CMD} -e "s,-lXcomp, -L${PREFIX}/lib -lpng -ljpeg ../nxcomp/libXcomp.a," \
-		${WRKSRC}/configure.in
-.if ${OSVERSION} < 700000
-	${REINPLACE_CMD} -e "s,result = unsetenv,unsetenv," ${WRKDIR}/nxcomp/Children.cpp
-.endif
+	@${REINPLACE_CMD} -e \
+		'/-O3/s|^|#|' ${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e \
+		'/-O3/s|^|#|' ${WRKDIR}/nxcomp/configure.in
+	@${REINPLACE_CMD} -e \
+		's|-Wpointer-arith|@CPPFLAGS@|' ${WRKDIR}/nxcomp/Makefile.in
 
 pre-configure:
 	cd ${WRKDIR}/nxcomp; ${AUTOCONF}
-	cd ${WRKDIR}/nxcomp; ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS};
+	cd ${WRKDIR}/nxcomp; ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} \
+		${CONFIGURE_ARGS} --without-symbols \
+		CC="${CC}" CFLAGS="${CFLAGS}" \
+		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 pre-build:
 	cd ${WRKDIR}/nxcomp; ${MAKE_ENV} ${MAKE}
 	cd ${WRKSRC}; ${CC} ${CFLAGS} ${FILESDIR}/setsid.c -o setsid
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/nxproxy ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/setsid ${PREFIX}/bin
+.for i in nxproxy setsid
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${i} ${STAGEDIR}${PREFIX}/bin)
+.endfor
 
 .include <bsd.port.post.mk>
