@@ -1,6 +1,6 @@
---- uwsgiconfig.py.orig	2013-05-26 10:08:32.000000000 +0400
-+++ uwsgiconfig.py	2013-06-03 15:21:58.000000000 +0400
-@@ -613,15 +613,6 @@
+--- uwsgiconfig.py.bak	2013-10-11 07:59:20.000000000 +0400
++++ uwsgiconfig.py	2013-10-11 15:06:52.000000000 +0400
+@@ -694,15 +694,6 @@
              self.cflags.append('-DUWSGI_HAS_IFADDRS')
              report['ifaddrs'] = True
  
@@ -13,6 +13,6 @@
 -                self.libs.append('-lexecinfo')
 -                report['execinfo'] = True
 -
-         if self.has_include('zlib.h'):
-             self.cflags.append('-DUWSGI_ZLIB')
-             self.libs.append('-lz')
+         if uwsgi_os == 'GNU/kFreeBSD':
+             if self.has_include('execinfo.h'):
+                 self.cflags.append('-DUWSGI_HAS_EXECINFO')
