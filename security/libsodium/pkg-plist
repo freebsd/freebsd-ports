@@ -18,7 +18,7 @@ include/sodium/crypto_hashblocks_sha512.h
 include/sodium/crypto_onetimeauth.h
 include/sodium/crypto_onetimeauth_poly1305.h
 include/sodium/crypto_onetimeauth_poly1305_53.h
-include/sodium/crypto_onetimeauth_poly1305_ref.h
+include/sodium/crypto_onetimeauth_poly1305_donna.h
 include/sodium/crypto_scalarmult.h
 include/sodium/crypto_scalarmult_curve25519.h
 include/sodium/crypto_secretbox.h
@@ -50,7 +50,8 @@ include/sodium/randombytes_sysrandom.h
 include/sodium/utils.h
 include/sodium/version.h
 include/sodium.h
-lib/libsodium.so.6
+libdata/pkgconfig/libsodium.pc
+lib/libsodium.so.7
 lib/libsodium.so
 lib/libsodium.la
 lib/libsodium.a
