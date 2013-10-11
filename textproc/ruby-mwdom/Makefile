@@ -11,6 +11,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	DOM level2 module, XMLWriter and XHTMLWriter for Ruby
 
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2013-10-10
+
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/xpathtree.rb:${PORTSDIR}/textproc/ruby-xmlscan-old
 
 USE_BZIP2=	yes
