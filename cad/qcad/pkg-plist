@@ -138,7 +138,6 @@ lib/libstemmer.a
 %%DATADIR%%/libraries/default/misc/Bath plan.dxf
 %%DATADIR%%/libraries/default/misc/Window 900.dxf
 %%DATADIR%%/libraries/default/misc/rect.dxf
-%%DATADIR%%/libraries/default/misc/~Window 900.dxf
 %%DATADIR%%/libraries/templates/_META/meta.rdf
 %%DATADIR%%/libraries/templates/empty.dxf
 %%DATADIR%%/libraries/templates/imperial/_META/meta.rdf
@@ -423,6 +422,7 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Block/Block.pro
 %%DATADIR%%/scripts/Block/BlockDialog.js
 %%DATADIR%%/scripts/Block/BlockDialog.ui
+%%DATADIR%%/scripts/Block/BlockInsert.js
 %%DATADIR%%/scripts/Block/CreateBlock/CreateBlock.js
 %%DATADIR%%/scripts/Block/CreateBlock/CreateBlock.pro
 %%DATADIR%%/scripts/Block/CreateBlock/CreateBlock.svg
@@ -493,6 +493,34 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Block/CreateLibraryItem/ts/CreateLibraryItem_pl.ts
 %%DATADIR%%/scripts/Block/CreateLibraryItem/ts/CreateLibraryItem_pt.qm
 %%DATADIR%%/scripts/Block/CreateLibraryItem/ts/CreateLibraryItem_pt.ts
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/DeselectBlockReferences.js
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/DeselectBlockReferences.pro
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/DeselectBlockReferences.svg
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/DeselectBlockReferencesInit.js
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/doc/DeselectBlockReferences_de.html
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/doc/DeselectBlockReferences_desc_de.html
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/doc/DeselectBlockReferences_desc_en.html
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/doc/DeselectBlockReferences_desc_es.html
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/doc/DeselectBlockReferences_desc_fr.html
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/doc/DeselectBlockReferences_desc_it.html
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/doc/DeselectBlockReferences_desc_ja.html
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/doc/DeselectBlockReferences_desc_pt.html
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/doc/DeselectBlockReferences_en.html
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/doc/DeselectBlockReferences_ja.html
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/ts/DeselectBlockReferences_de.qm
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/ts/DeselectBlockReferences_de.ts
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/ts/DeselectBlockReferences_es.qm
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/ts/DeselectBlockReferences_es.ts
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/ts/DeselectBlockReferences_fr.qm
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/ts/DeselectBlockReferences_fr.ts
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/ts/DeselectBlockReferences_it.qm
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/ts/DeselectBlockReferences_it.ts
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/ts/DeselectBlockReferences_ja.qm
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/ts/DeselectBlockReferences_ja.ts
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/ts/DeselectBlockReferences_pl.qm
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/ts/DeselectBlockReferences_pl.ts
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/ts/DeselectBlockReferences_pt.qm
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/ts/DeselectBlockReferences_pt.ts
 %%DATADIR%%/scripts/Block/EditBlock/EditBlock.js
 %%DATADIR%%/scripts/Block/EditBlock/EditBlock.pro
 %%DATADIR%%/scripts/Block/EditBlock/EditBlock.svg
@@ -664,6 +692,53 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Block/InsertBlock/ts/InsertBlock_pl.ts
 %%DATADIR%%/scripts/Block/InsertBlock/ts/InsertBlock_pt.qm
 %%DATADIR%%/scripts/Block/InsertBlock/ts/InsertBlock_pt.ts
+%%DATADIR%%/scripts/Block/InsertBlockItem/FlipHorizontal.svg
+%%DATADIR%%/scripts/Block/InsertBlockItem/FlipVertical.svg
+%%DATADIR%%/scripts/Block/InsertBlockItem/InsertBlockItem.js
+%%DATADIR%%/scripts/Block/InsertBlockItem/InsertBlockItem.pro
+%%DATADIR%%/scripts/Block/InsertBlockItem/InsertBlockItem.svg
+%%DATADIR%%/scripts/Block/InsertBlockItem/InsertBlockItem.ui
+%%DATADIR%%/scripts/Block/InsertBlockItem/InsertBlockItemInit.js
+%%DATADIR%%/scripts/Block/InsertBlockItem/doc/InsertBlockItem_desc_en.html
+%%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlockItem_de.qm
+%%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlockItem_de.ts
+%%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlockItem_es.qm
+%%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlockItem_es.ts
+%%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlockItem_fr.qm
+%%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlockItem_fr.ts
+%%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlockItem_it.qm
+%%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlockItem_it.ts
+%%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlockItem_ja.qm
+%%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlockItem_ja.ts
+%%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlockItem_pl.qm
+%%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlockItem_pl.ts
+%%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlockItem_pt.qm
+%%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlockItem_pt.ts
+%%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlock_de.ts
+%%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlock_es.ts
+%%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlock_fr.ts
+%%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlock_it.ts
+%%DATADIR%%/scripts/Block/InsertScriptItem/InsertScriptItem.js
+%%DATADIR%%/scripts/Block/InsertScriptItem/InsertScriptItem.pro
+%%DATADIR%%/scripts/Block/InsertScriptItem/InsertScriptItemInit.js
+%%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScriptItem_de.qm
+%%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScriptItem_de.ts
+%%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScriptItem_es.qm
+%%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScriptItem_es.ts
+%%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScriptItem_fr.qm
+%%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScriptItem_fr.ts
+%%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScriptItem_it.qm
+%%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScriptItem_it.ts
+%%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScriptItem_ja.qm
+%%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScriptItem_ja.ts
+%%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScriptItem_pl.qm
+%%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScriptItem_pl.ts
+%%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScriptItem_pt.qm
+%%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScriptItem_pt.ts
+%%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScript_de.ts
+%%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScript_es.ts
+%%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScript_fr.ts
+%%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScript_it.ts
 %%DATADIR%%/scripts/Block/RemoveBlock/RemoveBlock.js
 %%DATADIR%%/scripts/Block/RemoveBlock/RemoveBlock.pro
 %%DATADIR%%/scripts/Block/RemoveBlock/RemoveBlock.svg
@@ -728,6 +803,34 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Block/RenameBlock/ts/RenameBlock_pl.ts
 %%DATADIR%%/scripts/Block/RenameBlock/ts/RenameBlock_pt.qm
 %%DATADIR%%/scripts/Block/RenameBlock/ts/RenameBlock_pt.ts
+%%DATADIR%%/scripts/Block/SelectBlockReferences/SelectBlockReferences.js
+%%DATADIR%%/scripts/Block/SelectBlockReferences/SelectBlockReferences.pro
+%%DATADIR%%/scripts/Block/SelectBlockReferences/SelectBlockReferences.svg
+%%DATADIR%%/scripts/Block/SelectBlockReferences/SelectBlockReferencesInit.js
+%%DATADIR%%/scripts/Block/SelectBlockReferences/doc/SelectBlockReferences_de.html
+%%DATADIR%%/scripts/Block/SelectBlockReferences/doc/SelectBlockReferences_desc_de.html
+%%DATADIR%%/scripts/Block/SelectBlockReferences/doc/SelectBlockReferences_desc_en.html
+%%DATADIR%%/scripts/Block/SelectBlockReferences/doc/SelectBlockReferences_desc_es.html
+%%DATADIR%%/scripts/Block/SelectBlockReferences/doc/SelectBlockReferences_desc_fr.html
+%%DATADIR%%/scripts/Block/SelectBlockReferences/doc/SelectBlockReferences_desc_it.html
+%%DATADIR%%/scripts/Block/SelectBlockReferences/doc/SelectBlockReferences_desc_ja.html
+%%DATADIR%%/scripts/Block/SelectBlockReferences/doc/SelectBlockReferences_desc_pt.html
+%%DATADIR%%/scripts/Block/SelectBlockReferences/doc/SelectBlockReferences_en.html
+%%DATADIR%%/scripts/Block/SelectBlockReferences/doc/SelectBlockReferences_ja.html
+%%DATADIR%%/scripts/Block/SelectBlockReferences/ts/SelectBlockReferences_de.qm
+%%DATADIR%%/scripts/Block/SelectBlockReferences/ts/SelectBlockReferences_de.ts
+%%DATADIR%%/scripts/Block/SelectBlockReferences/ts/SelectBlockReferences_es.qm
+%%DATADIR%%/scripts/Block/SelectBlockReferences/ts/SelectBlockReferences_es.ts
+%%DATADIR%%/scripts/Block/SelectBlockReferences/ts/SelectBlockReferences_fr.qm
+%%DATADIR%%/scripts/Block/SelectBlockReferences/ts/SelectBlockReferences_fr.ts
+%%DATADIR%%/scripts/Block/SelectBlockReferences/ts/SelectBlockReferences_it.qm
+%%DATADIR%%/scripts/Block/SelectBlockReferences/ts/SelectBlockReferences_it.ts
+%%DATADIR%%/scripts/Block/SelectBlockReferences/ts/SelectBlockReferences_ja.qm
+%%DATADIR%%/scripts/Block/SelectBlockReferences/ts/SelectBlockReferences_ja.ts
+%%DATADIR%%/scripts/Block/SelectBlockReferences/ts/SelectBlockReferences_pl.qm
+%%DATADIR%%/scripts/Block/SelectBlockReferences/ts/SelectBlockReferences_pl.ts
+%%DATADIR%%/scripts/Block/SelectBlockReferences/ts/SelectBlockReferences_pt.qm
+%%DATADIR%%/scripts/Block/SelectBlockReferences/ts/SelectBlockReferences_pt.ts
 %%DATADIR%%/scripts/Block/ShowAllBlocks/ShowAllBlocks.js
 %%DATADIR%%/scripts/Block/ShowAllBlocks/ShowAllBlocks.pro
 %%DATADIR%%/scripts/Block/ShowAllBlocks/ShowAllBlocks.svg
@@ -3054,7 +3157,6 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Line/doc/Line_it.html
 %%DATADIR%%/scripts/Draw/Line/doc/Line_ja.html
 %%DATADIR%%/scripts/Draw/Line/doc/Line_pt.html
-%%DATADIR%%/scripts/Draw/Line/doit.sh
 %%DATADIR%%/scripts/Draw/Line/ts/Line_de.qm
 %%DATADIR%%/scripts/Draw/Line/ts/Line_de.ts
 %%DATADIR%%/scripts/Draw/Line/ts/Line_es.qm
@@ -3283,6 +3385,9 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Text/Text.pro
 %%DATADIR%%/scripts/Draw/Text/Text.svg
 %%DATADIR%%/scripts/Draw/Text/Text.ui
+%%DATADIR%%/scripts/Draw/Text/TextDialog/AlignBaseCenter.svg
+%%DATADIR%%/scripts/Draw/Text/TextDialog/AlignBaseLeft.svg
+%%DATADIR%%/scripts/Draw/Text/TextDialog/AlignBaseRight.svg
 %%DATADIR%%/scripts/Draw/Text/TextDialog/AlignBottomCenter.svg
 %%DATADIR%%/scripts/Draw/Text/TextDialog/AlignBottomLeft.svg
 %%DATADIR%%/scripts/Draw/Text/TextDialog/AlignBottomRight.svg
@@ -3958,53 +4063,6 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/Esc/ts/Esc_pt.qm
 %%DATADIR%%/scripts/Edit/Esc/ts/Esc_pt.ts
 %%DATADIR%%/scripts/Edit/Expand.svg
-%%DATADIR%%/scripts/Edit/InsertBlockItem/FlipHorizontal.svg
-%%DATADIR%%/scripts/Edit/InsertBlockItem/FlipVertical.svg
-%%DATADIR%%/scripts/Edit/InsertBlockItem/InsertBlockItem.js
-%%DATADIR%%/scripts/Edit/InsertBlockItem/InsertBlockItem.pro
-%%DATADIR%%/scripts/Edit/InsertBlockItem/InsertBlockItem.svg
-%%DATADIR%%/scripts/Edit/InsertBlockItem/InsertBlockItem.ui
-%%DATADIR%%/scripts/Edit/InsertBlockItem/InsertBlockItemInit.js
-%%DATADIR%%/scripts/Edit/InsertBlockItem/doc/InsertBlockItem_desc_en.html
-%%DATADIR%%/scripts/Edit/InsertBlockItem/ts/InsertBlockItem_de.qm
-%%DATADIR%%/scripts/Edit/InsertBlockItem/ts/InsertBlockItem_de.ts
-%%DATADIR%%/scripts/Edit/InsertBlockItem/ts/InsertBlockItem_es.qm
-%%DATADIR%%/scripts/Edit/InsertBlockItem/ts/InsertBlockItem_es.ts
-%%DATADIR%%/scripts/Edit/InsertBlockItem/ts/InsertBlockItem_fr.qm
-%%DATADIR%%/scripts/Edit/InsertBlockItem/ts/InsertBlockItem_fr.ts
-%%DATADIR%%/scripts/Edit/InsertBlockItem/ts/InsertBlockItem_it.qm
-%%DATADIR%%/scripts/Edit/InsertBlockItem/ts/InsertBlockItem_it.ts
-%%DATADIR%%/scripts/Edit/InsertBlockItem/ts/InsertBlockItem_ja.qm
-%%DATADIR%%/scripts/Edit/InsertBlockItem/ts/InsertBlockItem_ja.ts
-%%DATADIR%%/scripts/Edit/InsertBlockItem/ts/InsertBlockItem_pl.qm
-%%DATADIR%%/scripts/Edit/InsertBlockItem/ts/InsertBlockItem_pl.ts
-%%DATADIR%%/scripts/Edit/InsertBlockItem/ts/InsertBlockItem_pt.qm
-%%DATADIR%%/scripts/Edit/InsertBlockItem/ts/InsertBlockItem_pt.ts
-%%DATADIR%%/scripts/Edit/InsertBlockItem/ts/InsertBlock_de.ts
-%%DATADIR%%/scripts/Edit/InsertBlockItem/ts/InsertBlock_es.ts
-%%DATADIR%%/scripts/Edit/InsertBlockItem/ts/InsertBlock_fr.ts
-%%DATADIR%%/scripts/Edit/InsertBlockItem/ts/InsertBlock_it.ts
-%%DATADIR%%/scripts/Edit/InsertScriptItem/InsertScriptItem.js
-%%DATADIR%%/scripts/Edit/InsertScriptItem/InsertScriptItem.pro
-%%DATADIR%%/scripts/Edit/InsertScriptItem/InsertScriptItemInit.js
-%%DATADIR%%/scripts/Edit/InsertScriptItem/ts/InsertScriptItem_de.qm
-%%DATADIR%%/scripts/Edit/InsertScriptItem/ts/InsertScriptItem_de.ts
-%%DATADIR%%/scripts/Edit/InsertScriptItem/ts/InsertScriptItem_es.qm
-%%DATADIR%%/scripts/Edit/InsertScriptItem/ts/InsertScriptItem_es.ts
-%%DATADIR%%/scripts/Edit/InsertScriptItem/ts/InsertScriptItem_fr.qm
-%%DATADIR%%/scripts/Edit/InsertScriptItem/ts/InsertScriptItem_fr.ts
-%%DATADIR%%/scripts/Edit/InsertScriptItem/ts/InsertScriptItem_it.qm
-%%DATADIR%%/scripts/Edit/InsertScriptItem/ts/InsertScriptItem_it.ts
-%%DATADIR%%/scripts/Edit/InsertScriptItem/ts/InsertScriptItem_ja.qm
-%%DATADIR%%/scripts/Edit/InsertScriptItem/ts/InsertScriptItem_ja.ts
-%%DATADIR%%/scripts/Edit/InsertScriptItem/ts/InsertScriptItem_pl.qm
-%%DATADIR%%/scripts/Edit/InsertScriptItem/ts/InsertScriptItem_pl.ts
-%%DATADIR%%/scripts/Edit/InsertScriptItem/ts/InsertScriptItem_pt.qm
-%%DATADIR%%/scripts/Edit/InsertScriptItem/ts/InsertScriptItem_pt.ts
-%%DATADIR%%/scripts/Edit/InsertScriptItem/ts/InsertScript_de.ts
-%%DATADIR%%/scripts/Edit/InsertScriptItem/ts/InsertScript_es.ts
-%%DATADIR%%/scripts/Edit/InsertScriptItem/ts/InsertScript_fr.ts
-%%DATADIR%%/scripts/Edit/InsertScriptItem/ts/InsertScript_it.ts
 %%DATADIR%%/scripts/Edit/Paste/FlipHorizontal.svg
 %%DATADIR%%/scripts/Edit/Paste/FlipVertical.svg
 %%DATADIR%%/scripts/Edit/Paste/Paste.js
@@ -4527,6 +4585,7 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/File/SvgImport/SvgImport.js
 %%DATADIR%%/scripts/File/SvgImport/SvgImport.pro
 %%DATADIR%%/scripts/File/SvgImport/SvgImport.svg
+%%DATADIR%%/scripts/File/SvgImport/SvgImportDialog.ui
 %%DATADIR%%/scripts/File/SvgImport/SvgImportInit.js
 %%DATADIR%%/scripts/File/SvgImport/doc/SvgImport_de.html
 %%DATADIR%%/scripts/File/SvgImport/doc/SvgImport_desc_de.html
@@ -5007,6 +5066,13 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Information/InfoPosition/InfoPosition.svg
 %%DATADIR%%/scripts/Information/InfoPosition/InfoPositionInit.js
 %%DATADIR%%/scripts/Information/InfoPosition/doc/InfoPosition_de.html
+%%DATADIR%%/scripts/Information/InfoPosition/doc/InfoPosition_desc_de.html
+%%DATADIR%%/scripts/Information/InfoPosition/doc/InfoPosition_desc_en.html
+%%DATADIR%%/scripts/Information/InfoPosition/doc/InfoPosition_desc_es.html
+%%DATADIR%%/scripts/Information/InfoPosition/doc/InfoPosition_desc_fr.html
+%%DATADIR%%/scripts/Information/InfoPosition/doc/InfoPosition_desc_it.html
+%%DATADIR%%/scripts/Information/InfoPosition/doc/InfoPosition_desc_ja.html
+%%DATADIR%%/scripts/Information/InfoPosition/doc/InfoPosition_desc_pt.html
 %%DATADIR%%/scripts/Information/InfoPosition/doc/InfoPosition_en.html
 %%DATADIR%%/scripts/Information/InfoPosition/doc/InfoPosition_es.html
 %%DATADIR%%/scripts/Information/InfoPosition/doc/InfoPosition_fr.html
@@ -5027,17 +5093,76 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Information/InfoPosition/ts/InfoPosition_pl.ts
 %%DATADIR%%/scripts/Information/InfoPosition/ts/InfoPosition_pt.qm
 %%DATADIR%%/scripts/Information/InfoPosition/ts/InfoPosition_pt.ts
+%%DATADIR%%/scripts/Information/InfoPositionPol/InfoPositionPol.js
+%%DATADIR%%/scripts/Information/InfoPositionPol/InfoPositionPol.pro
+%%DATADIR%%/scripts/Information/InfoPositionPol/InfoPositionPol.svg
+%%DATADIR%%/scripts/Information/InfoPositionPol/InfoPositionPolInit.js
+%%DATADIR%%/scripts/Information/InfoPositionPol/doc/InfoPositionPol_de.html
+%%DATADIR%%/scripts/Information/InfoPositionPol/doc/InfoPositionPol_desc_de.html
+%%DATADIR%%/scripts/Information/InfoPositionPol/doc/InfoPositionPol_desc_en.html
+%%DATADIR%%/scripts/Information/InfoPositionPol/doc/InfoPositionPol_desc_es.html
+%%DATADIR%%/scripts/Information/InfoPositionPol/doc/InfoPositionPol_desc_fr.html
+%%DATADIR%%/scripts/Information/InfoPositionPol/doc/InfoPositionPol_desc_it.html
+%%DATADIR%%/scripts/Information/InfoPositionPol/doc/InfoPositionPol_desc_ja.html
+%%DATADIR%%/scripts/Information/InfoPositionPol/doc/InfoPositionPol_desc_pt.html
+%%DATADIR%%/scripts/Information/InfoPositionPol/doc/InfoPositionPol_en.html
+%%DATADIR%%/scripts/Information/InfoPositionPol/doc/InfoPositionPol_ja.html
+%%DATADIR%%/scripts/Information/InfoPositionPol/ts/InfoPositionPol_de.qm
+%%DATADIR%%/scripts/Information/InfoPositionPol/ts/InfoPositionPol_de.ts
+%%DATADIR%%/scripts/Information/InfoPositionPol/ts/InfoPositionPol_es.qm
+%%DATADIR%%/scripts/Information/InfoPositionPol/ts/InfoPositionPol_es.ts
+%%DATADIR%%/scripts/Information/InfoPositionPol/ts/InfoPositionPol_fr.qm
+%%DATADIR%%/scripts/Information/InfoPositionPol/ts/InfoPositionPol_fr.ts
+%%DATADIR%%/scripts/Information/InfoPositionPol/ts/InfoPositionPol_it.qm
+%%DATADIR%%/scripts/Information/InfoPositionPol/ts/InfoPositionPol_it.ts
+%%DATADIR%%/scripts/Information/InfoPositionPol/ts/InfoPositionPol_ja.qm
+%%DATADIR%%/scripts/Information/InfoPositionPol/ts/InfoPositionPol_ja.ts
+%%DATADIR%%/scripts/Information/InfoPositionPol/ts/InfoPositionPol_pl.qm
+%%DATADIR%%/scripts/Information/InfoPositionPol/ts/InfoPositionPol_pl.ts
+%%DATADIR%%/scripts/Information/InfoPositionPol/ts/InfoPositionPol_pt.qm
+%%DATADIR%%/scripts/Information/InfoPositionPol/ts/InfoPositionPol_pt.ts
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/InfoPositionPolRel.js
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/InfoPositionPolRel.pro
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/InfoPositionPolRel.svg
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/InfoPositionPolRelInit.js
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/doc/InfoPositionPolRel_de.html
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/doc/InfoPositionPolRel_desc_de.html
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/doc/InfoPositionPolRel_desc_en.html
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/doc/InfoPositionPolRel_desc_es.html
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/doc/InfoPositionPolRel_desc_fr.html
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/doc/InfoPositionPolRel_desc_it.html
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/doc/InfoPositionPolRel_desc_ja.html
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/doc/InfoPositionPolRel_desc_pt.html
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/doc/InfoPositionPolRel_en.html
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/doc/InfoPositionPolRel_ja.html
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/ts/InfoPositionPolRel_de.qm
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/ts/InfoPositionPolRel_de.ts
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/ts/InfoPositionPolRel_es.qm
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/ts/InfoPositionPolRel_es.ts
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/ts/InfoPositionPolRel_fr.qm
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/ts/InfoPositionPolRel_fr.ts
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/ts/InfoPositionPolRel_it.qm
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/ts/InfoPositionPolRel_it.ts
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/ts/InfoPositionPolRel_ja.qm
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/ts/InfoPositionPolRel_ja.ts
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/ts/InfoPositionPolRel_pl.qm
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/ts/InfoPositionPolRel_pl.ts
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/ts/InfoPositionPolRel_pt.qm
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/ts/InfoPositionPolRel_pt.ts
 %%DATADIR%%/scripts/Information/InfoPositionRel/InfoPositionRel.js
 %%DATADIR%%/scripts/Information/InfoPositionRel/InfoPositionRel.pro
 %%DATADIR%%/scripts/Information/InfoPositionRel/InfoPositionRel.svg
 %%DATADIR%%/scripts/Information/InfoPositionRel/InfoPositionRelInit.js
 %%DATADIR%%/scripts/Information/InfoPositionRel/doc/InfoPositionRel_de.html
+%%DATADIR%%/scripts/Information/InfoPositionRel/doc/InfoPositionRel_desc_de.html
+%%DATADIR%%/scripts/Information/InfoPositionRel/doc/InfoPositionRel_desc_en.html
+%%DATADIR%%/scripts/Information/InfoPositionRel/doc/InfoPositionRel_desc_es.html
+%%DATADIR%%/scripts/Information/InfoPositionRel/doc/InfoPositionRel_desc_fr.html
+%%DATADIR%%/scripts/Information/InfoPositionRel/doc/InfoPositionRel_desc_it.html
+%%DATADIR%%/scripts/Information/InfoPositionRel/doc/InfoPositionRel_desc_ja.html
+%%DATADIR%%/scripts/Information/InfoPositionRel/doc/InfoPositionRel_desc_pt.html
 %%DATADIR%%/scripts/Information/InfoPositionRel/doc/InfoPositionRel_en.html
-%%DATADIR%%/scripts/Information/InfoPositionRel/doc/InfoPositionRel_es.html
-%%DATADIR%%/scripts/Information/InfoPositionRel/doc/InfoPositionRel_fr.html
-%%DATADIR%%/scripts/Information/InfoPositionRel/doc/InfoPositionRel_it.html
 %%DATADIR%%/scripts/Information/InfoPositionRel/doc/InfoPositionRel_ja.html
-%%DATADIR%%/scripts/Information/InfoPositionRel/doc/InfoPositionRel_pt.html
 %%DATADIR%%/scripts/Information/InfoPositionRel/ts/InfoPositionRel_de.qm
 %%DATADIR%%/scripts/Information/InfoPositionRel/ts/InfoPositionRel_de.ts
 %%DATADIR%%/scripts/Information/InfoPositionRel/ts/InfoPositionRel_es.qm
@@ -5055,7 +5180,9 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Information/Information.js
 %%DATADIR%%/scripts/Information/Information.pro
 %%DATADIR%%/scripts/Information/Information.svg
+%%DATADIR%%/scripts/Information/Information.ui
 %%DATADIR%%/scripts/Information/doc/Information_de.html
+%%DATADIR%%/scripts/Information/doc/Information_desc_de.html
 %%DATADIR%%/scripts/Information/doc/Information_desc_en.html
 %%DATADIR%%/scripts/Information/doc/Information_en.html
 %%DATADIR%%/scripts/Information/doc/Information_es.html
@@ -5112,6 +5239,34 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Layer/AddLayer/ts/AddLayer_pl.ts
 %%DATADIR%%/scripts/Layer/AddLayer/ts/AddLayer_pt.qm
 %%DATADIR%%/scripts/Layer/AddLayer/ts/AddLayer_pt.ts
+%%DATADIR%%/scripts/Layer/DeselectLayer/DeselectLayer.js
+%%DATADIR%%/scripts/Layer/DeselectLayer/DeselectLayer.pro
+%%DATADIR%%/scripts/Layer/DeselectLayer/DeselectLayer.svg
+%%DATADIR%%/scripts/Layer/DeselectLayer/DeselectLayerInit.js
+%%DATADIR%%/scripts/Layer/DeselectLayer/doc/DeselectLayer_de.html
+%%DATADIR%%/scripts/Layer/DeselectLayer/doc/DeselectLayer_desc_de.html
+%%DATADIR%%/scripts/Layer/DeselectLayer/doc/DeselectLayer_desc_en.html
+%%DATADIR%%/scripts/Layer/DeselectLayer/doc/DeselectLayer_desc_es.html
+%%DATADIR%%/scripts/Layer/DeselectLayer/doc/DeselectLayer_desc_fr.html
+%%DATADIR%%/scripts/Layer/DeselectLayer/doc/DeselectLayer_desc_it.html
+%%DATADIR%%/scripts/Layer/DeselectLayer/doc/DeselectLayer_desc_ja.html
+%%DATADIR%%/scripts/Layer/DeselectLayer/doc/DeselectLayer_desc_pt.html
+%%DATADIR%%/scripts/Layer/DeselectLayer/doc/DeselectLayer_en.html
+%%DATADIR%%/scripts/Layer/DeselectLayer/doc/DeselectLayer_ja.html
+%%DATADIR%%/scripts/Layer/DeselectLayer/ts/DeselectLayer_de.qm
+%%DATADIR%%/scripts/Layer/DeselectLayer/ts/DeselectLayer_de.ts
+%%DATADIR%%/scripts/Layer/DeselectLayer/ts/DeselectLayer_es.qm
+%%DATADIR%%/scripts/Layer/DeselectLayer/ts/DeselectLayer_es.ts
+%%DATADIR%%/scripts/Layer/DeselectLayer/ts/DeselectLayer_fr.qm
+%%DATADIR%%/scripts/Layer/DeselectLayer/ts/DeselectLayer_fr.ts
+%%DATADIR%%/scripts/Layer/DeselectLayer/ts/DeselectLayer_it.qm
+%%DATADIR%%/scripts/Layer/DeselectLayer/ts/DeselectLayer_it.ts
+%%DATADIR%%/scripts/Layer/DeselectLayer/ts/DeselectLayer_ja.qm
+%%DATADIR%%/scripts/Layer/DeselectLayer/ts/DeselectLayer_ja.ts
+%%DATADIR%%/scripts/Layer/DeselectLayer/ts/DeselectLayer_pl.qm
+%%DATADIR%%/scripts/Layer/DeselectLayer/ts/DeselectLayer_pl.ts
+%%DATADIR%%/scripts/Layer/DeselectLayer/ts/DeselectLayer_pt.qm
+%%DATADIR%%/scripts/Layer/DeselectLayer/ts/DeselectLayer_pt.ts
 %%DATADIR%%/scripts/Layer/EditLayer/EditLayer.js
 %%DATADIR%%/scripts/Layer/EditLayer/EditLayer.pro
 %%DATADIR%%/scripts/Layer/EditLayer/EditLayer.svg
@@ -5214,6 +5369,34 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Layer/RemoveLayer/ts/RemoveLayer_pt.ts
 %%DATADIR%%/scripts/Layer/RemoveLayer/ts/Remove_de.ts
 %%DATADIR%%/scripts/Layer/RemoveLayer/ts/Remove_fr.ts
+%%DATADIR%%/scripts/Layer/SelectLayer/SelectLayer.js
+%%DATADIR%%/scripts/Layer/SelectLayer/SelectLayer.pro
+%%DATADIR%%/scripts/Layer/SelectLayer/SelectLayer.svg
+%%DATADIR%%/scripts/Layer/SelectLayer/SelectLayerInit.js
+%%DATADIR%%/scripts/Layer/SelectLayer/doc/SelectLayer_de.html
+%%DATADIR%%/scripts/Layer/SelectLayer/doc/SelectLayer_desc_de.html
+%%DATADIR%%/scripts/Layer/SelectLayer/doc/SelectLayer_desc_en.html
+%%DATADIR%%/scripts/Layer/SelectLayer/doc/SelectLayer_desc_es.html
+%%DATADIR%%/scripts/Layer/SelectLayer/doc/SelectLayer_desc_fr.html
+%%DATADIR%%/scripts/Layer/SelectLayer/doc/SelectLayer_desc_it.html
+%%DATADIR%%/scripts/Layer/SelectLayer/doc/SelectLayer_desc_ja.html
+%%DATADIR%%/scripts/Layer/SelectLayer/doc/SelectLayer_desc_pt.html
+%%DATADIR%%/scripts/Layer/SelectLayer/doc/SelectLayer_en.html
+%%DATADIR%%/scripts/Layer/SelectLayer/doc/SelectLayer_ja.html
+%%DATADIR%%/scripts/Layer/SelectLayer/ts/SelectLayer_de.qm
+%%DATADIR%%/scripts/Layer/SelectLayer/ts/SelectLayer_de.ts
+%%DATADIR%%/scripts/Layer/SelectLayer/ts/SelectLayer_es.qm
+%%DATADIR%%/scripts/Layer/SelectLayer/ts/SelectLayer_es.ts
+%%DATADIR%%/scripts/Layer/SelectLayer/ts/SelectLayer_fr.qm
+%%DATADIR%%/scripts/Layer/SelectLayer/ts/SelectLayer_fr.ts
+%%DATADIR%%/scripts/Layer/SelectLayer/ts/SelectLayer_it.qm
+%%DATADIR%%/scripts/Layer/SelectLayer/ts/SelectLayer_it.ts
+%%DATADIR%%/scripts/Layer/SelectLayer/ts/SelectLayer_ja.qm
+%%DATADIR%%/scripts/Layer/SelectLayer/ts/SelectLayer_ja.ts
+%%DATADIR%%/scripts/Layer/SelectLayer/ts/SelectLayer_pl.qm
+%%DATADIR%%/scripts/Layer/SelectLayer/ts/SelectLayer_pl.ts
+%%DATADIR%%/scripts/Layer/SelectLayer/ts/SelectLayer_pt.qm
+%%DATADIR%%/scripts/Layer/SelectLayer/ts/SelectLayer_pt.ts
 %%DATADIR%%/scripts/Layer/ShowActiveLayer/ShowActiveLayer.js
 %%DATADIR%%/scripts/Layer/ShowActiveLayer/ShowActiveLayer.pro
 %%DATADIR%%/scripts/Layer/ShowActiveLayer/ShowActiveLayer.svg
@@ -5453,6 +5636,25 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ts/LayerExamples_pt.qm
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ts/LayerExamples_pt.ts
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ts/ts.pro
+%%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ExTransactionListener/ExTransactionListener.js
+%%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ExTransactionListener/ExTransactionListener.pro
+%%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ListenerExamples.js
+%%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ListenerExamples.pro
+%%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ts/ListenerExamples_de.qm
+%%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ts/ListenerExamples_de.ts
+%%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ts/ListenerExamples_es.qm
+%%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ts/ListenerExamples_es.ts
+%%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ts/ListenerExamples_fr.qm
+%%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ts/ListenerExamples_fr.ts
+%%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ts/ListenerExamples_it.qm
+%%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ts/ListenerExamples_it.ts
+%%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ts/ListenerExamples_ja.qm
+%%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ts/ListenerExamples_ja.ts
+%%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ts/ListenerExamples_pl.qm
+%%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ts/ListenerExamples_pl.ts
+%%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ts/ListenerExamples_pt.qm
+%%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ts/ListenerExamples_pt.ts
+%%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ts/ts.pro
 %%DATADIR%%/scripts/Misc/Examples/MathExamples/ExMathSpiral/ExMathSpiral.js
 %%DATADIR%%/scripts/Misc/Examples/MathExamples/ExMathSpiral/ExMathSpiral.pro
 %%DATADIR%%/scripts/Misc/Examples/MathExamples/MathExamples.js
@@ -5491,6 +5693,26 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/ModifyExamples/ts/ModifyExamples_pt.qm
 %%DATADIR%%/scripts/Misc/Examples/ModifyExamples/ts/ModifyExamples_pt.ts
 %%DATADIR%%/scripts/Misc/Examples/ModifyExamples/ts/ts.pro
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ExMainWindow/ExMainWindow.js
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ExMainWindow/ExMainWindow.pro
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ExMainWindow/MyAction.svg
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/QtExamples.js
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/QtExamples.pro
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ts/QtExamples_de.qm
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ts/QtExamples_de.ts
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ts/QtExamples_es.qm
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ts/QtExamples_es.ts
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ts/QtExamples_fr.qm
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ts/QtExamples_fr.ts
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ts/QtExamples_it.qm
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ts/QtExamples_it.ts
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ts/QtExamples_ja.qm
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ts/QtExamples_ja.ts
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ts/QtExamples_pl.qm
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ts/QtExamples_pl.ts
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ts/QtExamples_pt.qm
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ts/QtExamples_pt.ts
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ts/ts.pro
 %%DATADIR%%/scripts/Misc/Examples/SystemExamples/ExDirListing/ExDirListing.js
 %%DATADIR%%/scripts/Misc/Examples/SystemExamples/ExDirListing/ExDirListing.pro
 %%DATADIR%%/scripts/Misc/Examples/SystemExamples/SystemExamples.js
@@ -5650,20 +5872,20 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/doc/Examples_ja.html
 %%DATADIR%%/scripts/Misc/doc/Misc_de.html
 %%DATADIR%%/scripts/Misc/doc/Misc_ja.html
-%%DATADIR%%/scripts/Misc/ts/Examples_de.qm
-%%DATADIR%%/scripts/Misc/ts/Examples_de.ts
-%%DATADIR%%/scripts/Misc/ts/Examples_es.qm
-%%DATADIR%%/scripts/Misc/ts/Examples_es.ts
-%%DATADIR%%/scripts/Misc/ts/Examples_fr.qm
-%%DATADIR%%/scripts/Misc/ts/Examples_fr.ts
-%%DATADIR%%/scripts/Misc/ts/Examples_it.qm
-%%DATADIR%%/scripts/Misc/ts/Examples_it.ts
-%%DATADIR%%/scripts/Misc/ts/Examples_ja.qm
-%%DATADIR%%/scripts/Misc/ts/Examples_ja.ts
-%%DATADIR%%/scripts/Misc/ts/Examples_pl.qm
-%%DATADIR%%/scripts/Misc/ts/Examples_pl.ts
-%%DATADIR%%/scripts/Misc/ts/Examples_pt.qm
-%%DATADIR%%/scripts/Misc/ts/Examples_pt.ts
+%%DATADIR%%/scripts/Misc/ts/Misc_de.qm
+%%DATADIR%%/scripts/Misc/ts/Misc_de.ts
+%%DATADIR%%/scripts/Misc/ts/Misc_es.qm
+%%DATADIR%%/scripts/Misc/ts/Misc_es.ts
+%%DATADIR%%/scripts/Misc/ts/Misc_fr.qm
+%%DATADIR%%/scripts/Misc/ts/Misc_fr.ts
+%%DATADIR%%/scripts/Misc/ts/Misc_it.qm
+%%DATADIR%%/scripts/Misc/ts/Misc_it.ts
+%%DATADIR%%/scripts/Misc/ts/Misc_ja.qm
+%%DATADIR%%/scripts/Misc/ts/Misc_ja.ts
+%%DATADIR%%/scripts/Misc/ts/Misc_pl.qm
+%%DATADIR%%/scripts/Misc/ts/Misc_pl.ts
+%%DATADIR%%/scripts/Misc/ts/Misc_pt.qm
+%%DATADIR%%/scripts/Misc/ts/Misc_pt.ts
 %%DATADIR%%/scripts/Misc/ts/ts.pro
 %%DATADIR%%/scripts/Modify/AutoTrim/AutoTrim.js
 %%DATADIR%%/scripts/Modify/AutoTrim/AutoTrim.pro
@@ -6978,46 +7200,46 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Select/SelectIntersectedEntities/ts/SelectIntersectedEntities_pl.ts
 %%DATADIR%%/scripts/Select/SelectIntersectedEntities/ts/SelectIntersectedEntities_pt.qm
 %%DATADIR%%/scripts/Select/SelectIntersectedEntities/ts/SelectIntersectedEntities_pt.ts
-%%DATADIR%%/scripts/Select/SelectLayer/SelectLayer.js
-%%DATADIR%%/scripts/Select/SelectLayer/SelectLayer.pro
-%%DATADIR%%/scripts/Select/SelectLayer/SelectLayer.svg
-%%DATADIR%%/scripts/Select/SelectLayer/SelectLayer.ui
-%%DATADIR%%/scripts/Select/SelectLayer/SelectLayerInit.js
-%%DATADIR%%/scripts/Select/SelectLayer/doc/SelectLayer_de.html
-%%DATADIR%%/scripts/Select/SelectLayer/doc/SelectLayer_desc_de.html
-%%DATADIR%%/scripts/Select/SelectLayer/doc/SelectLayer_desc_en.html
-%%DATADIR%%/scripts/Select/SelectLayer/doc/SelectLayer_desc_es.html
-%%DATADIR%%/scripts/Select/SelectLayer/doc/SelectLayer_desc_fr.html
-%%DATADIR%%/scripts/Select/SelectLayer/doc/SelectLayer_desc_it.html
-%%DATADIR%%/scripts/Select/SelectLayer/doc/SelectLayer_desc_ja.html
-%%DATADIR%%/scripts/Select/SelectLayer/doc/SelectLayer_desc_pt.html
-%%DATADIR%%/scripts/Select/SelectLayer/doc/SelectLayer_en.html
-%%DATADIR%%/scripts/Select/SelectLayer/doc/SelectLayer_es.html
-%%DATADIR%%/scripts/Select/SelectLayer/doc/SelectLayer_fr.html
-%%DATADIR%%/scripts/Select/SelectLayer/doc/SelectLayer_it.html
-%%DATADIR%%/scripts/Select/SelectLayer/doc/SelectLayer_ja.html
-%%DATADIR%%/scripts/Select/SelectLayer/doc/SelectLayer_proc_de.html
-%%DATADIR%%/scripts/Select/SelectLayer/doc/SelectLayer_proc_en.html
-%%DATADIR%%/scripts/Select/SelectLayer/doc/SelectLayer_proc_es.html
-%%DATADIR%%/scripts/Select/SelectLayer/doc/SelectLayer_proc_fr.html
-%%DATADIR%%/scripts/Select/SelectLayer/doc/SelectLayer_proc_it.html
-%%DATADIR%%/scripts/Select/SelectLayer/doc/SelectLayer_proc_ja.html
-%%DATADIR%%/scripts/Select/SelectLayer/doc/SelectLayer_proc_pt.html
-%%DATADIR%%/scripts/Select/SelectLayer/doc/SelectLayer_pt.html
-%%DATADIR%%/scripts/Select/SelectLayer/ts/SelectLayer_de.qm
-%%DATADIR%%/scripts/Select/SelectLayer/ts/SelectLayer_de.ts
-%%DATADIR%%/scripts/Select/SelectLayer/ts/SelectLayer_es.qm
-%%DATADIR%%/scripts/Select/SelectLayer/ts/SelectLayer_es.ts
-%%DATADIR%%/scripts/Select/SelectLayer/ts/SelectLayer_fr.qm
-%%DATADIR%%/scripts/Select/SelectLayer/ts/SelectLayer_fr.ts
-%%DATADIR%%/scripts/Select/SelectLayer/ts/SelectLayer_it.qm
-%%DATADIR%%/scripts/Select/SelectLayer/ts/SelectLayer_it.ts
-%%DATADIR%%/scripts/Select/SelectLayer/ts/SelectLayer_ja.qm
-%%DATADIR%%/scripts/Select/SelectLayer/ts/SelectLayer_ja.ts
-%%DATADIR%%/scripts/Select/SelectLayer/ts/SelectLayer_pl.qm
-%%DATADIR%%/scripts/Select/SelectLayer/ts/SelectLayer_pl.ts
-%%DATADIR%%/scripts/Select/SelectLayer/ts/SelectLayer_pt.qm
-%%DATADIR%%/scripts/Select/SelectLayer/ts/SelectLayer_pt.ts
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/SelectLayerByEntity.js
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/SelectLayerByEntity.pro
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/SelectLayerByEntity.svg
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/SelectLayerByEntity.ui
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/SelectLayerByEntityInit.js
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/doc/SelectLayerByEntity_de.html
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/doc/SelectLayerByEntity_desc_de.html
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/doc/SelectLayerByEntity_desc_en.html
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/doc/SelectLayerByEntity_desc_es.html
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/doc/SelectLayerByEntity_desc_fr.html
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/doc/SelectLayerByEntity_desc_it.html
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/doc/SelectLayerByEntity_desc_ja.html
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/doc/SelectLayerByEntity_desc_pt.html
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/doc/SelectLayerByEntity_en.html
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/doc/SelectLayerByEntity_es.html
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/doc/SelectLayerByEntity_fr.html
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/doc/SelectLayerByEntity_it.html
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/doc/SelectLayerByEntity_ja.html
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/doc/SelectLayerByEntity_proc_de.html
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/doc/SelectLayerByEntity_proc_en.html
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/doc/SelectLayerByEntity_proc_es.html
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/doc/SelectLayerByEntity_proc_fr.html
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/doc/SelectLayerByEntity_proc_it.html
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/doc/SelectLayerByEntity_proc_ja.html
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/doc/SelectLayerByEntity_proc_pt.html
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/doc/SelectLayerByEntity_pt.html
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/ts/SelectLayerByEntity_de.qm
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/ts/SelectLayerByEntity_de.ts
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/ts/SelectLayerByEntity_es.qm
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/ts/SelectLayerByEntity_es.ts
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/ts/SelectLayerByEntity_fr.qm
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/ts/SelectLayerByEntity_fr.ts
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/ts/SelectLayerByEntity_it.qm
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/ts/SelectLayerByEntity_it.ts
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/ts/SelectLayerByEntity_ja.qm
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/ts/SelectLayerByEntity_ja.ts
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/ts/SelectLayerByEntity_pl.qm
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/ts/SelectLayerByEntity_pl.ts
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/ts/SelectLayerByEntity_pt.qm
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/ts/SelectLayerByEntity_pt.ts
 %%DATADIR%%/scripts/Select/SelectRectangle/SelectRectangle.js
 %%DATADIR%%/scripts/Select/SelectRectangle/SelectRectangle.pro
 %%DATADIR%%/scripts/Select/SelectRectangle/SelectRectangle.svg
@@ -9269,9 +9491,9 @@ lib/libstemmer.a
 @dirrm %%DATADIR%%/scripts/Select/SelectRectangle/ts
 @dirrm %%DATADIR%%/scripts/Select/SelectRectangle/doc
 @dirrm %%DATADIR%%/scripts/Select/SelectRectangle
-@dirrm %%DATADIR%%/scripts/Select/SelectLayer/ts
-@dirrm %%DATADIR%%/scripts/Select/SelectLayer/doc
-@dirrm %%DATADIR%%/scripts/Select/SelectLayer
+@dirrm %%DATADIR%%/scripts/Select/SelectLayerByEntity/ts
+@dirrm %%DATADIR%%/scripts/Select/SelectLayerByEntity/doc
+@dirrm %%DATADIR%%/scripts/Select/SelectLayerByEntity
 @dirrm %%DATADIR%%/scripts/Select/SelectIntersectedEntities/ts
 @dirrm %%DATADIR%%/scripts/Select/SelectIntersectedEntities/doc
 @dirrm %%DATADIR%%/scripts/Select/SelectIntersectedEntities
@@ -9463,12 +9685,18 @@ lib/libstemmer.a
 @dirrm %%DATADIR%%/scripts/Misc/Examples/SystemExamples/ts
 @dirrm %%DATADIR%%/scripts/Misc/Examples/SystemExamples/ExDirListing
 @dirrm %%DATADIR%%/scripts/Misc/Examples/SystemExamples
+@dirrm %%DATADIR%%/scripts/Misc/Examples/QtExamples/ts
+@dirrm %%DATADIR%%/scripts/Misc/Examples/QtExamples/ExMainWindow
+@dirrm %%DATADIR%%/scripts/Misc/Examples/QtExamples
 @dirrm %%DATADIR%%/scripts/Misc/Examples/ModifyExamples/ts
 @dirrm %%DATADIR%%/scripts/Misc/Examples/ModifyExamples/ExChangeFontToArial
 @dirrm %%DATADIR%%/scripts/Misc/Examples/ModifyExamples
 @dirrm %%DATADIR%%/scripts/Misc/Examples/MathExamples/ts
 @dirrm %%DATADIR%%/scripts/Misc/Examples/MathExamples/ExMathSpiral
 @dirrm %%DATADIR%%/scripts/Misc/Examples/MathExamples
+@dirrm %%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ts
+@dirrm %%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ExTransactionListener
+@dirrm %%DATADIR%%/scripts/Misc/Examples/ListenerExamples
 @dirrm %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ts
 @dirrm %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExLayerWhiteToBlack
 @dirrm %%DATADIR%%/scripts/Misc/Examples/LayerExamples
@@ -9504,6 +9732,9 @@ lib/libstemmer.a
 @dirrm %%DATADIR%%/scripts/Layer/ShowActiveLayer/ts
 @dirrm %%DATADIR%%/scripts/Layer/ShowActiveLayer/doc
 @dirrm %%DATADIR%%/scripts/Layer/ShowActiveLayer
+@dirrm %%DATADIR%%/scripts/Layer/SelectLayer/ts
+@dirrm %%DATADIR%%/scripts/Layer/SelectLayer/doc
+@dirrm %%DATADIR%%/scripts/Layer/SelectLayer
 @dirrm %%DATADIR%%/scripts/Layer/RemoveLayer/ts
 @dirrm %%DATADIR%%/scripts/Layer/RemoveLayer/doc
 @dirrm %%DATADIR%%/scripts/Layer/RemoveLayer
@@ -9513,6 +9744,9 @@ lib/libstemmer.a
 @dirrm %%DATADIR%%/scripts/Layer/EditLayer/ts
 @dirrm %%DATADIR%%/scripts/Layer/EditLayer/doc
 @dirrm %%DATADIR%%/scripts/Layer/EditLayer
+@dirrm %%DATADIR%%/scripts/Layer/DeselectLayer/ts
+@dirrm %%DATADIR%%/scripts/Layer/DeselectLayer/doc
+@dirrm %%DATADIR%%/scripts/Layer/DeselectLayer
 @dirrm %%DATADIR%%/scripts/Layer/AddLayer/ts
 @dirrm %%DATADIR%%/scripts/Layer/AddLayer/doc
 @dirrm %%DATADIR%%/scripts/Layer/AddLayer/Tests/required
@@ -9524,6 +9758,12 @@ lib/libstemmer.a
 @dirrm %%DATADIR%%/scripts/Information/InfoPositionRel/ts
 @dirrm %%DATADIR%%/scripts/Information/InfoPositionRel/doc
 @dirrm %%DATADIR%%/scripts/Information/InfoPositionRel
+@dirrm %%DATADIR%%/scripts/Information/InfoPositionPolRel/ts
+@dirrm %%DATADIR%%/scripts/Information/InfoPositionPolRel/doc
+@dirrm %%DATADIR%%/scripts/Information/InfoPositionPolRel
+@dirrm %%DATADIR%%/scripts/Information/InfoPositionPol/ts
+@dirrm %%DATADIR%%/scripts/Information/InfoPositionPol/doc
+@dirrm %%DATADIR%%/scripts/Information/InfoPositionPol
 @dirrm %%DATADIR%%/scripts/Information/InfoPosition/ts
 @dirrm %%DATADIR%%/scripts/Information/InfoPosition/doc
 @dirrm %%DATADIR%%/scripts/Information/InfoPosition
@@ -9626,11 +9866,6 @@ lib/libstemmer.a
 @dirrm %%DATADIR%%/scripts/Edit/Paste/ts
 @dirrm %%DATADIR%%/scripts/Edit/Paste/doc
 @dirrm %%DATADIR%%/scripts/Edit/Paste
-@dirrm %%DATADIR%%/scripts/Edit/InsertScriptItem/ts
-@dirrm %%DATADIR%%/scripts/Edit/InsertScriptItem
-@dirrm %%DATADIR%%/scripts/Edit/InsertBlockItem/ts
-@dirrm %%DATADIR%%/scripts/Edit/InsertBlockItem/doc
-@dirrm %%DATADIR%%/scripts/Edit/InsertBlockItem
 @dirrm %%DATADIR%%/scripts/Edit/Esc/ts
 @dirrm %%DATADIR%%/scripts/Edit/Esc/doc
 @dirrm %%DATADIR%%/scripts/Edit/Esc
@@ -10014,12 +10249,20 @@ lib/libstemmer.a
 @dirrm %%DATADIR%%/scripts/Block/ShowAllBlocks/ts
 @dirrm %%DATADIR%%/scripts/Block/ShowAllBlocks/doc
 @dirrm %%DATADIR%%/scripts/Block/ShowAllBlocks
+@dirrm %%DATADIR%%/scripts/Block/SelectBlockReferences/ts
+@dirrm %%DATADIR%%/scripts/Block/SelectBlockReferences/doc
+@dirrm %%DATADIR%%/scripts/Block/SelectBlockReferences
 @dirrm %%DATADIR%%/scripts/Block/RenameBlock/ts
 @dirrm %%DATADIR%%/scripts/Block/RenameBlock/doc
 @dirrm %%DATADIR%%/scripts/Block/RenameBlock
 @dirrm %%DATADIR%%/scripts/Block/RemoveBlock/ts
 @dirrm %%DATADIR%%/scripts/Block/RemoveBlock/doc
 @dirrm %%DATADIR%%/scripts/Block/RemoveBlock
+@dirrm %%DATADIR%%/scripts/Block/InsertScriptItem/ts
+@dirrm %%DATADIR%%/scripts/Block/InsertScriptItem
+@dirrm %%DATADIR%%/scripts/Block/InsertBlockItem/ts
+@dirrm %%DATADIR%%/scripts/Block/InsertBlockItem/doc
+@dirrm %%DATADIR%%/scripts/Block/InsertBlockItem
 @dirrm %%DATADIR%%/scripts/Block/InsertBlock/ts
 @dirrm %%DATADIR%%/scripts/Block/InsertBlock/doc
 @dirrm %%DATADIR%%/scripts/Block/InsertBlock
@@ -10035,6 +10278,9 @@ lib/libstemmer.a
 @dirrm %%DATADIR%%/scripts/Block/EditBlock/ts
 @dirrm %%DATADIR%%/scripts/Block/EditBlock/doc
 @dirrm %%DATADIR%%/scripts/Block/EditBlock
+@dirrm %%DATADIR%%/scripts/Block/DeselectBlockReferences/ts
+@dirrm %%DATADIR%%/scripts/Block/DeselectBlockReferences/doc
+@dirrm %%DATADIR%%/scripts/Block/DeselectBlockReferences
 @dirrm %%DATADIR%%/scripts/Block/CreateLibraryItem/ts
 @dirrm %%DATADIR%%/scripts/Block/CreateLibraryItem/doc
 @dirrm %%DATADIR%%/scripts/Block/CreateLibraryItem
@@ -10075,3 +10321,4 @@ lib/libstemmer.a
 @dirrm %%DATADIR%%/libraries/default
 @dirrm %%DATADIR%%/libraries
 @dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%
