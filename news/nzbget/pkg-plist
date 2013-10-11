@@ -1,8 +1,6 @@
 bin/nzbget
-bin/nzbget-postprocess.sh
 sbin/nzbgetd
 %%DATADIR%%/nzbget.conf
-%%DATADIR%%/nzbget-postprocess.conf
 %%DATADIR%%/webui/config.js
 %%DATADIR%%/webui/downloads.js
 %%DATADIR%%/webui/edit.js
@@ -24,8 +22,6 @@ sbin/nzbgetd
 %%DATADIR%%/webui/lib/jquery.js
 %%DATADIR%%/webui/lib/jquery.min.js
 %%DATADIR%%/webui/messages.js
-%%DATADIR%%/webui/nzbget-postprocess.conf
-%%DATADIR%%/webui/nzbget.conf
 %%DATADIR%%/webui/status.js
 %%DATADIR%%/webui/style.css
 %%DATADIR%%/webui/upload.js
@@ -33,6 +29,9 @@ sbin/nzbgetd
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/ppscripts/EMail.py
+%%DATADIR%%/ppscripts/Logger.py
+@dirrmtry %%DATADIR%%/ppscripts
 @dirrm %%DATADIR%%/webui/img
 @dirrm %%DATADIR%%/webui/lib
 @dirrm %%DATADIR%%/webui
