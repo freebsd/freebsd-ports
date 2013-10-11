@@ -9,6 +9,9 @@ MASTER_SITES=	RG
 MAINTAINER=	gogo@cs.uni-sb.de
 COMMENT=	Manage static websites using Haml and Sass
 
+DEPRECATED=     No longer maintained upstream
+EXPIRATION_DATE=        2013-10-15
+
 RUN_DEPENDS=	rubygem-haml>=2.0.0:${PORTSDIR}/www/rubygem-haml \
 		rubygem-mongrel>=1.1.5:${PORTSDIR}/www/rubygem-mongrel \
 		rubygem-rack>=1.0:${PORTSDIR}/www/rubygem-rack \
