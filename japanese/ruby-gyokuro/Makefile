@@ -12,6 +12,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby library which wraps Ruby/ChaSen
 
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2013-10-10
+
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/chasen.so:${PORTSDIR}/japanese/ruby-chasen
 
 USE_RUBY=	yes
