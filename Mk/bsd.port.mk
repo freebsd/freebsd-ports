@@ -205,11 +205,12 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  to skip this port by setting ${BATCH}, or compiling only
 #				  the interactive ports by setting ${INTERACTIVE}.
 #				  Default: not set.
-# USE_SUBMAKE	- Set this if you want that each of the port's main 6 targets
-#				  (extract, patch, configure, build, install and package) to be
-#				  executed in a separate make(1) process. Useful when one of
-#				  the stages needs to influence make(1) variables of the later
-#				  stages using ${WRKDIR}/Makefile.inc generated on the fly.
+# USE_SUBMAKE	- Set this if you want that each of the port's main 7 targets
+#				  (extract, patch, configure, build, stage, install and
+#				  package) to be executed in a separate make(1) process.
+#				  Useful when one of the stages needs to influence make(1)
+#				  variables of the later stages using ${WRKDIR}/Makefile.inc
+#				  generated on the fly.
 #				  Default: not set.
 #
 # Set these if your port only makes sense to certain architectures.
@@ -4407,7 +4408,7 @@ fetch: ${_FETCH_DEP} ${_FETCH_SEQ}
 pkg: ${_PKG_DEP} ${_PKG_SEQ}
 .endif
 
-# Main logic. The loop generates 6 main targets and using cookies
+# Main logic. The loop generates 7 main targets and using cookies
 # ensures that those already completed are skipped.
 
 .for target in extract patch configure build stage install package
