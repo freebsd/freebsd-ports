@@ -300,7 +300,6 @@
     SUBDIR += ruby-doc-stdlib
     SUBDIR += ruby-lua4
     SUBDIR += ruby-man
-    SUBDIR += ruby-mode.el
     SUBDIR += ruby-programmingruby
     SUBDIR += ruby-reference
     SUBDIR += ruby-usersguide

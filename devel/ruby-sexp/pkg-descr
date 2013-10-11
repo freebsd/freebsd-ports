@@ -1,5 +1,0 @@
-S-Expression is a pure Ruby library to parse strings
-of Lisp style s-expressions into native Ruby style
-s-expressions and back again.
-
-WWW: http://sexp.rubyforge.org/

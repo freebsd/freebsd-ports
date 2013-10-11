@@ -1,4 +1,0 @@
-%%RUBY_SITELIBDIR%%/sexp.rb
-%%RUBY_SITELIBDIR%%/sexpressions.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/example.rb
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%

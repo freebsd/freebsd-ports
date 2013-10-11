@@ -905,8 +905,6 @@
     SUBDIR += ruby-image_size
     SUBDIR += ruby-imlib2
     SUBDIR += ruby-ming
-    SUBDIR += ruby-opengl
-    SUBDIR += ruby-pgplot
     SUBDIR += ruby-rmagick
     SUBDIR += ruby-rsvg2
     SUBDIR += ruby-svg
@@ -935,7 +933,6 @@
     SUBDIR += rubygem-rmagick
     SUBDIR += rubygem-rsvg2
     SUBDIR += rubygem-scruffy
-    SUBDIR += rubygem-turing
     SUBDIR += rubyphoto
     SUBDIR += s10sh
     SUBDIR += sage

@@ -1,5 +1,0 @@
-%%RUBY_SITELIBDIR%%/xml/xslt.rb
-%%RUBY_SITEARCHLIBDIR%%/xslt_lib.so
-@dirrmtry %%RUBY_SITELIBDIR%%/xml
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

@@ -1,5 +1,0 @@
-Ruby-htmltools tools for parsing and manipulating HTML text in Ruby.
-It can be used for programmatically access outside HTML-pages.
-I hope to extend it to become a web-publishing framework in the future.
-
-WWW: http://ruby-htmltools.rubyforge.org/

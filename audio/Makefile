@@ -672,8 +672,6 @@
     SUBDIR += ruby-mp3tag
     SUBDIR += ruby-smf
     SUBDIR += ruby-taglib
-    SUBDIR += ruby-vorbisfile
-    SUBDIR += ruby-xmms
     SUBDIR += ruby-xmms2
     SUBDIR += rubygem-librmpd
     SUBDIR += rubygem-ogginfo

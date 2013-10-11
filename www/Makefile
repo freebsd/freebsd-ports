@@ -1724,7 +1724,6 @@
     SUBDIR += ruby-amazon
     SUBDIR += ruby-aws
     SUBDIR += ruby-borges
-    SUBDIR += ruby-cruisecontrolrb
     SUBDIR += ruby-div
     SUBDIR += ruby-fcgi
     SUBDIR += ruby-fcgiwrap
@@ -1812,7 +1811,6 @@
     SUBDIR += rubygem-rfeedfinder
     SUBDIR += rubygem-robotex
     SUBDIR += rubygem-robots
-    SUBDIR += rubygem-rubyfulsoup
     SUBDIR += rubygem-scrapi
     SUBDIR += rubygem-scrubyt
     SUBDIR += rubygem-selenium-webdriver

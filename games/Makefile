@@ -830,7 +830,6 @@
     SUBDIR += rt2-demo
     SUBDIR += rtb
     SUBDIR += rubix
-    SUBDIR += ruby-exmars
     SUBDIR += sampsvr
     SUBDIR += sarien
     SUBDIR += sauerbraten

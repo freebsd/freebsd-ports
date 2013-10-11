@@ -844,7 +844,6 @@
     SUBDIR += rifiuti2
     SUBDIR += rkhunter
     SUBDIR += rndpassw
-    SUBDIR += ruby-acl
     SUBDIR += ruby-camellia
     SUBDIR += ruby-crypt
     SUBDIR += ruby-gpgme

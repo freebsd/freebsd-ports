@@ -1,9 +1,0 @@
-Formosa is a Ruby library for processing Taiwanese languages. Major languages
-spoken in Taiwan include Holo, Hakka, Mandarin and those of the indigenous
-people. Formosa is the Ruby branch of the lib-formosa project
-(http://code.google.com/p/lib-formosa/).
-
-Currently, we focus on the processing of the Holo (Southern Min) language,
-with necessary tools such as SyllableComposer available for general use.
-
-WWW: http://formosa.rubyforge.org
