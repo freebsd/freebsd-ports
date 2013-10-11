@@ -13,8 +13,16 @@ COMMENT=	List information about file(s) and directories
 
 WRKSRC=		${WRKDIR}/sls
 
-MAN1=		sls.1
-PLIST_FILES=	bin/sls
+PLIST_FILES=	bin/sls \
+		man/man1/sls.1.gz
 
-NO_STAGE=	yes
+ALL_TARGET=	sls
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|CFLAGS|#&|' ${WRKSRC}/Makefile
+
+do-install:
+	${CP} ${WRKSRC}/sls ${STAGEDIR}${PREFIX}/bin
+	${CP} ${WRKSRC}/sls.1 ${STAGEDIR}${PREFIX}/man/man1
+
 .include <bsd.port.mk>
