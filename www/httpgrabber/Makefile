@@ -9,6 +9,7 @@ MASTER_SITES=	http://www.mavetju.org/download/
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	HTTP network traffic grabber and extractor
 
+BROKEN=		depends on removed net/ngrep-lib
 LIB_DEPENDS=	ngrep.1:${PORTSDIR}/net/ngrep-lib
 
 MAN8=		httpgrabber.8
