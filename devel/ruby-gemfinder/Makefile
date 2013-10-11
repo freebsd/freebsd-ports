@@ -13,6 +13,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A simple class browser (built with Ruby/Tk) for Ruby modules/programs
 
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2013-10-10
+
 RUN_DEPENDS=	${RUBY_LIBDIR}/tk.rb:${PORTSDIR}/x11-toolkits/ruby-tk
 
 USE_RUBY=	yes
