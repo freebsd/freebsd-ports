@@ -79,6 +79,7 @@ desktopfileutils() {
 		grep -q MimeType= ${STAGEDIR}${PREFIX}/share/applications/*.desktop 2>/dev/null ||
 		warn "you may not need USES=desktop-file-utils"
 	fi
+	return 0
 }
 
 sharedmimeinfo() {
@@ -89,6 +90,7 @@ sharedmimeinfo() {
 		find ${STAGEDIR}${PREFIX}/share/mime/packages/*.xml ! -name "freedesktop\.org\.xml" -quit 2>/dev/null ||
 		warn "you may not need USES=shared-mime-info"
 	fi
+	return 0
 }
 
 checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo"
