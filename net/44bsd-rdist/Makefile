@@ -10,11 +10,18 @@ MASTER_SITE_SUBDIR=	cy
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The traditional 4.4BSD rdist
 
+
 USE_BZIP2=	yes
 
 NO_WRKSUBDIR=	yes
 MAN1=		44bsd-rdist.1
 PLIST_FILES=	bin/44bsd-rdist
+
+.include <bsd.port.pre.mk>
+
+.if  ${OSVERSION} >= 1000055
+BUILD_DEPENDS=    rcs:${PORTSDIR}/devel/rcs57
+.endif
 
 NO_STAGE=	yes
 post-extract:
@@ -28,4 +35,4 @@ tarup:
 	-cd ${WRKSRC} ; ${RM} *
 	cd ${WRKSRC} ; ${TAR} cvyf /tmp/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} .
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
