@@ -3,28 +3,30 @@
 
 PORTNAME=	ts
 PORTVERSION=	0.7.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://vicerveza.homeunix.net/~viric/soft/ts/ CENKES
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Serial task spooler
 
-USE_GMAKE=	yes
-PLIST_FILES=	bin/ts
+USES=		gmake
+PLIST_FILES=	bin/ts \
+		man/man8/ts.8.gz
 PORTDOCS=	OBJECTIVES PROTOCOL README TRICKS
-MAN1=		ts.1
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/^GLIBCFLAGS/d;/^CFLAGS/d'\
 		${WRKSRC}/Makefile
 
+# Install man page as ts.8 to avoid conflict with security/openssl
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ts ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/ts.1 ${MAN1PREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/ts ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/ts.1 ${STAGEDIR}${MAN1PREFIX}/man/man8/ts.8
 .ifndef NOPORTDOCS
-	${INSTALL} -d ${DOCSDIR}/
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+	${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
