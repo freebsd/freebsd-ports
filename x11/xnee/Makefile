@@ -17,9 +17,6 @@ USES=		gmake pathfix
 
 CONFIGURE_ARGS=	--enable-cli --disable-doc --disable-xinput2
 
-MAN1=		cnee.1 xnee.1
-INFO=		xnee
-
 OPTIONS_DEFINE=	GNEE PNEE
 OPTIONS_SUB=	yes
 GNEE_DESC=	GUI frontend
@@ -28,12 +25,10 @@ PNEE_DESC=	GNOME panel frontend
 GNEE_CONFIGURE_ENABLE=	gui
 PNEE_CONFIGURE_ENABLE=	gnome-applet
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNEE}
 USE_GNOME+=	gtk20
-MAN1+=		gnee.1
 DESKTOP_ENTRIES=	"Gnee" "${COMMENT}" "${PORTNAME}.png" \
 			"gnee" "Development;" true
 .endif
@@ -41,7 +36,6 @@ DESKTOP_ENTRIES=	"Gnee" "${COMMENT}" "${PORTNAME}.png" \
 .if ${PORT_OPTIONS:MPNEE}
 BROKEN=		Does not build, needs newer gnomepanel
 USE_GNOME+=	gnomepanel
-MAN1+=		pnee.1
 .else
 CONFIGURE_ENV+=	libgnomeui_CFLAGS="${TRUE}" \
 		libgnomeui_LIBS="${TRUE}"
@@ -70,6 +64,6 @@ post-patch:
 		's|cp $$(PNEE)|$$(INSTALL_PROGRAM) $$(PNEE)|g' ${WRKSRC}/pnee/src/Makefile.in
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/doc/xnee.info ${PREFIX}/${INFO_PATH}
+	${INSTALL_DATA} ${WRKSRC}/doc/xnee.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
 
 .include <bsd.port.mk>
