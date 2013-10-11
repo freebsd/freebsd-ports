@@ -5069,3 +5069,4 @@ textproc/rubygem-htmltools||2013-10-11|Has expired: Does not work with Ruby 1.9
 www/ruby-cruisecontrolrb||2013-10-11|Has expired: Does not work with Ruby 1.9
 www/rubygem-rubyfulsoup||2013-10-11|Has expired: Does not work with Ruby 1.9
 x11/ruby-gtktrayicon||2013-10-11|Has expired: Does not work with Ruby 1.9
+net/ngrep-lib||2013-10-11|Obsoleted

@@ -429,7 +429,6 @@
     SUBDIR += ng_daphne
     SUBDIR += ng_mikrotik_eoip
     SUBDIR += ngrep
-    SUBDIR += ngrep-lib
     SUBDIR += nifmon
     SUBDIR += nload
     SUBDIR += nocatsplash
