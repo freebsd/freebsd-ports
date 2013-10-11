@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qcad
-PORTVERSION=	3.2.1.0
+PORTVERSION=	3.3.3.0
 CATEGORIES=	cad
 MASTER_SITES=	http://github.com/${PORTNAME}/${PORTNAME}/archive/${DISTNAME}.tar.gz?dummy=/	\
 		https://github.com/${PORTNAME}/${PORTNAME}/archive/${DISTNAME}.tar.gz?dummy=/
@@ -20,7 +20,6 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
 FETCH_ARGS=	-Fpr
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-MAKE_JOBS_UNSAFE=yes
 
 USES=		gmake qmake
 USE_LDCONFIG=	yes
@@ -52,9 +51,6 @@ SUB_FILES=	${QSCRIPTS}
 pre-configure:
 	${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|"	\
 		${WRKSRC}/src/core/RSettings.cpp
-# 4.8.4 is the last supported Qt 4 version
-	${REINPLACE_CMD} -e '/qt-labs-qtscriptgenerator/s,$$$${QT_VERSION},4.8.4,' \
-		${WRKSRC}/src/3rdparty/3rdparty.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${RESDIR}/qcad-bin ${STAGEDIR}${PREFIX}/bin/
