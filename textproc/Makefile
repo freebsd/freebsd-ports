@@ -1265,7 +1265,6 @@
     SUBDIR += ruby-amrita
     SUBDIR += ruby-deplate
     SUBDIR += ruby-diff
-    SUBDIR += ruby-erbscan
     SUBDIR += ruby-escape
     SUBDIR += ruby-format
     SUBDIR += ruby-hikidoc
@@ -1275,7 +1274,6 @@
     SUBDIR += ruby-htmlsplit
     SUBDIR += ruby-htree
     SUBDIR += ruby-liquid
-    SUBDIR += ruby-mwdom
     SUBDIR += ruby-rd-mode.el
     SUBDIR += ruby-rdtool
     SUBDIR += ruby-rss
@@ -1285,8 +1283,6 @@
     SUBDIR += ruby-xmlconfigfile
     SUBDIR += ruby-xmlparser
     SUBDIR += ruby-xmlscan
-    SUBDIR += ruby-xmlscan-old
-    SUBDIR += ruby-xslt
     SUBDIR += rubygem-albino
     SUBDIR += rubygem-augeas
     SUBDIR += rubygem-charlock_holmes
@@ -1302,11 +1298,9 @@
     SUBDIR += rubygem-fast_xs
     SUBDIR += rubygem-fast_xs073
     SUBDIR += rubygem-ferret
-    SUBDIR += rubygem-formosa
     SUBDIR += rubygem-heredoc_unindent
     SUBDIR += rubygem-hikidoc
     SUBDIR += rubygem-htmlentities
-    SUBDIR += rubygem-htmltools
     SUBDIR += rubygem-ini
     SUBDIR += rubygem-itextomml
     SUBDIR += rubygem-jsmin

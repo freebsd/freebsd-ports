@@ -263,15 +263,11 @@
     SUBDIR += roget-fpw
     SUBDIR += rogue_s
     SUBDIR += rskkserv
-    SUBDIR += ruby-chasen
     SUBDIR += ruby-eb
-    SUBDIR += ruby-gyokuro
     SUBDIR += ruby-man
     SUBDIR += ruby-mecab
     SUBDIR += ruby-ming
-    SUBDIR += ruby-rdic
     SUBDIR += ruby-romkan
-    SUBDIR += ruby-slang
     SUBDIR += ruby-uconv
     SUBDIR += ruby-usersguide
     SUBDIR += rubygem-jpmobile

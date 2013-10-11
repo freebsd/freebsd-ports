@@ -401,7 +401,6 @@
     SUBDIR += ruby-progressbar
     SUBDIR += ruby-vpim
     SUBDIR += rubygem-mime-types
-    SUBDIR += rubygem-ohcount
     SUBDIR += rubygem-rabbit
     SUBDIR += rubygem-vpim
     SUBDIR += saaghar

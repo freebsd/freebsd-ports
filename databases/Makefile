@@ -810,7 +810,6 @@
     SUBDIR += rrdtool10
     SUBDIR += rrdtool12
     SUBDIR += ruby-bdb
-    SUBDIR += ruby-bdb1
     SUBDIR += ruby-cdb
     SUBDIR += ruby-dbd_mysql
     SUBDIR += ruby-dbd_odbc
@@ -820,7 +819,6 @@
     SUBDIR += ruby-dbi
     SUBDIR += ruby-frontbase
     SUBDIR += ruby-gdbm
-    SUBDIR += ruby-interbase
     SUBDIR += ruby-memcache
     SUBDIR += ruby-msql
     SUBDIR += ruby-mysql

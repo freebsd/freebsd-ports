@@ -1,7 +1,0 @@
-This Gem provides access to the functions, macros,
-global variables and constants of the ncurses library.
-These are mapped to a Ruby Module named "Ncurses".
-Functions and external variables are implemented as
-singleton functions of the Module Ncurses.
-
-WWW: http://ncurses-ruby.berlios.de/

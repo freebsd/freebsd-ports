@@ -1,7 +1,0 @@
-RuDL: Rubified or Rubyesque Directmedia Layer
-
-This is a high level library to access the low level multimedia power
-of SDL, rather than just a direct API wrapper. (cf. Ruby/SDL)
-
-Author: Danny van Bruggen <danny@froukepc.dhs.org>
-WWW:	http://rudl.sourceforge.net
