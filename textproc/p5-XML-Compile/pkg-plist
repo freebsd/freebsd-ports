@@ -1,6 +1,5 @@
-bin/xml2yaml
 bin/schema2example
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/.packlist
+bin/xml2yaml
 %%SITE_PERL%%/XML/Compile.pm
 %%SITE_PERL%%/XML/Compile.pod
 %%SITE_PERL%%/XML/Compile/FAQ.pod
@@ -36,6 +35,23 @@ bin/schema2example
 %%SITE_PERL%%/XML/Compile/xsd/2001-XMLSchema.dtd
 %%SITE_PERL%%/XML/Compile/xsd/2001-XMLSchema.xsd
 %%SITE_PERL%%/XML/Compile/xsd/2001-datatypes.dtd
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/.packlist
+%%PERL5_MAN3%%/XML::Compile.3.gz
+%%PERL5_MAN3%%/XML::Compile::FAQ.3.gz
+%%PERL5_MAN3%%/XML::Compile::Iterator.3.gz
+%%PERL5_MAN3%%/XML::Compile::Schema.3.gz
+%%PERL5_MAN3%%/XML::Compile::Schema::BuiltInFacets.3.gz
+%%PERL5_MAN3%%/XML::Compile::Schema::BuiltInTypes.3.gz
+%%PERL5_MAN3%%/XML::Compile::Schema::Instance.3.gz
+%%PERL5_MAN3%%/XML::Compile::Schema::NameSpaces.3.gz
+%%PERL5_MAN3%%/XML::Compile::Schema::Specs.3.gz
+%%PERL5_MAN3%%/XML::Compile::Translate.3.gz
+%%PERL5_MAN3%%/XML::Compile::Translate::Reader.3.gz
+%%PERL5_MAN3%%/XML::Compile::Translate::Template.3.gz
+%%PERL5_MAN3%%/XML::Compile::Translate::Writer.3.gz
+%%PERL5_MAN3%%/XML::Compile::Util.3.gz
+man/man1/schema2example.1.gz
+man/man1/xml2yaml.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML/Compile/xsd
