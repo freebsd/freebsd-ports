@@ -12,6 +12,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A ruby library to work with s-expressions
 
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2013-10-10
+
 RUN_DEPENDS=	rubygem-rparsec>0:${PORTSDIR}/devel/rubygem-rparsec
 
 USE_RUBY=	yes
