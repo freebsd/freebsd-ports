@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnudatalanguage
-DISTVERSION=	0.9.3
-PORTREVISION=	3
+DISTVERSION=	0.9.4
 CATEGORIES=	science lang
 MASTER_SITES=	SF/${PORTNAME}/gdl/${DISTVERSION}
 .if defined(BUILD_PYTHON_MODULE)
@@ -16,8 +15,9 @@ COMMENT?=	GDL, a free IDL compatible incremental compiler
 
 LICENSE=	GPLv2
 
+#NO_STAGE=	yes
+
 #---------------------------------------------------------------------------
-NO_STAGE=	yes
 # You may define these options:
 #
 # - WITHOUT_GRAPHICSMAGICK:	remove GraphicsMagick support
@@ -25,66 +25,85 @@ NO_STAGE=	yes
 # - WITHOUT_NETCDF:		remove netCDF support
 # - WITHOUT_HDF:		remove HDF 4 suppport (conflict with netCDF)
 # - WITHOUT_PYTHON:		don't build the interface to python
-# - WITH_FFTW3:			faster fft routine than GSL
+# - WITHOUT_FFTW3:		remove FFTW (faster fft routine than GSL)
+# - WITHOUT_EIGEN		remove Eigen support (boost performance)
+# - WITHOUT_UDUNITS		remove unit conversion in IMSL_CONSTANT
 #
 #---------------------------------------------------------------------------
 
 LIB_DEPENDS+=	libplplotd.so:${PORTSDIR}/math/plplot	\
-		libps.so:${PORTSDIR}/print/pslib		\
-		libgsl.so:${PORTSDIR}/math/gsl		\
-		libdps.so:${PORTSDIR}/x11/dgs
+		libps.so:${PORTSDIR}/print/pslib	\
+		libgsl.so:${PORTSDIR}/math/gsl
+
+USE_DOS2UNIX=	src/plotting_xyouts.cpp
 
 USE_GCC=	yes
 USE_WX=		2.8
 USE_XORG=	x11
-USES=		pkgconfig
-GNU_CONFIGURE=	yes
+USES=		pkgconfig cmake
+
 # Disable ncurses and readline from ports
 # Disable ImageMagick (does'nt work with plplot because dynamic drivers
 #	are enabled by default)
-CONFIGURE_ARGS=	--with-ncursesdir=/usr --with-readlinedir=/usr --without-Magick
-CONFIGURE_ENV=	wxConfig=${WX_CONFIG}
-CPPFLAGS+=	${CFLAGS} -fno-inline ${PTHREAD_CFLAGS} -I${LOCALBASE}/include ${GM_INC}
+# TODO: add a slave port for mpich - ATM just deactivate its support.
+CMAKE_ARGS=	-DREADLINEDIR:STRING="/usr"		\
+		-DNCURSESDIR:STRING="/usr"		\
+		-DMPICH:BOOL=NO				\
+		-DMAGICK:BOOL=NO
+CPPFLAGS+=	${CFLAGS} -fno-inline ${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 
 SLAVEDIRS=	science/py-gnudatalanguage
 
 .if defined(BUILD_PYTHON_MODULE)
 CATEGORIES+=	python
-CONFIGURE_ARGS+=--enable-python_module --with-openmp=no
+CMAKE_ARGS+=	-DPYTHON_MODULE:BOOL=YES -DOPENMP:BOOL=NO
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/GDL.so
 PLIST_SUB+=	MASTER="@comment "
 .else
-MAN1=		gdl.1
+CMAKE_ARGS+=	-DPYTHON_MODULE:BOOL=NO
 PLIST_SUB+=	MASTER=""
 .endif
 
 .if !defined(WITHOUT_GRAPHICSMAGICK)
 LIB_DEPENDS+=	libGraphicsMagick.so.12:${PORTSDIR}/graphics/GraphicsMagick13
-CONFIGURE_ARGS+=--with-GraphicsMagick=${LOCALBASE}
-GM_INC=		-I${LOCALBASE}/include/GraphicsMagick
+CMAKE_ARGS+=	-DGRAPHICSMAGICK:BOOL=YES
 .else
-CONFIGURE_ARGS+=--with-Magick=no
+CMAKE_ARGS+=	-DGRAPHICSMAGICK:BOOL=NO
 .endif
 
 .if !defined(WITHOUT_HDF5)
 LIB_DEPENDS+=	libhdf5.so.7:${PORTSDIR}/science/hdf5-18
-CONFIGURE_ARGS+=--with-hdf5=${LOCALBASE}
+CMAKE_ARGS+=	-DHDF5:BOOL=YES
 .else
-CONFIGURE_ARGS+=--with-hdf5=no
+CMAKE_ARGS+=	-DHDF5:BOOL=NO
 .endif
 
 .if !defined(WITHOUT_NETCDF)
 LIB_DEPENDS+=	libnetcdf.so:${PORTSDIR}/science/netcdf
-CONFIGURE_ARGS+=--with-netcdf=${LOCALBASE} --with-hdf=no
+CMAKE_ARGS+=	-DNETCDF:BOOL=YES -DHDF:BOOL=NO
 .else
-CONFIGURE_ARGS+=--with-netcdf=no
+CMAKE_ARGS+=	-DNETCDF:BOOL=NO
 . if !defined(WITHOUT_HDF)
 LIB_DEPENDS+=	libdf.so.2:${PORTSDIR}/science/hdf
-CONFIGURE_ARGS+=--with-hdf=${LOCALBASE}
+CMAKE_ARGS+=	-DHDF:BOOL=YES
 . else
-CONFIGURE_ARGS+=--with-hdf=no
+CMAKE_ARGS+=	-DHDF:BOOL=NO
 . endif
+.endif
+
+.if !defined(WITHOUT_EIGEN)
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/eigen3.pc:${PORTSDIR}/math/eigen3
+CMAKE_ARGS+=	-DEIGEN3:BOOL=YES
+.else
+CMAKE_ARGS+=	-DEIGEN3:BOOL=NO
+.endif
+
+.if !defined(WITHOUT_UDUNITS)
+LIB_DEPENDS+=	libudunits2.so:${PORTSDIR}/science/udunits
+CMAKE_ARGS+=	-DUDUNITS:BOOL=YES
+.else
+CMAKE_ARGS+=	-DUDUNITS:BOOL=NO
 .endif
 
 .if !defined(WITHOUT_PYTHON) || defined(BUILD_PYTHON_MODULE)
@@ -92,10 +111,9 @@ USE_PYTHON=	-2.7
 BUILD_DEPENDS+=	${PYNUMPY}
 RUN_DEPENDS+=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:${PORTSDIR}/math/py-matplotlib
-CONFIGURE_ENV+=	PYTHON_VERSION=${PYTHON_VER}
-CONFIGURE_ARGS+=--with-python=${PYTHONBASE}
+CMAKE_ARGS+=	-DPYTHON:BOOL=YES -DPYTHONVERSION:STRING="${PYTHON_VER}"
 .else
-CONFIGURE_ARGS+=--with-python=no
+CMAKE_ARGS+=	-DPYTHON:BOOL=NO
 .endif
 
 .include <bsd.port.pre.mk>
@@ -104,18 +122,13 @@ CONFIGURE_ARGS+=--with-python=no
 BROKEN=	Does not build with ancient binutils
 .endif
 
-.if defined(PACKAGE_BUILDING) || exists(${LOCALBASE}/lib/libfftw3.so)
-WITH_FFTW3=	yes
-.endif
-.if defined(WITH_FFTW3)
+.if !defined(WITHOUT_FFTW3)
 LIB_DEPENDS+=	libfftw3.so:${PORTSDIR}/math/fftw3		\
 		libfftw3f.so:${PORTSDIR}/math/fftw3-float
-CONFIGURE_ARGS+=--with-fftw=${LOCALBASE}
+CMAKE_ARGS+=	-DFFTW:BOOL=YES
+.else
+CMAKE_ARGS+=	-DFFTW:BOOL=NO
 .endif
-
-pre-configure:
-	${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|g'	\
-		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .if defined(BUILD_PYTHON_MODULE)
 do-install:
@@ -123,12 +136,10 @@ do-install:
 .endif
 
 .if !defined(BUILD_PYTHON_MODULE)
-post-install:
+post-stage:
 . if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}/testsuite
-	(cd ${WRKSRC}/testsuite && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/testsuite/)
-	${RM} ${EXAMPLESDIR}/testsuite/Makefile.in.orig
-	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/testsuite
+	(cd ${WRKSRC}/testsuite && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}/testsuite/)
 . endif
 .endif
 

@@ -1,11 +1,33 @@
 %%MASTER%%bin/gdl
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/CMakeDirectoryInformation.cmake
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/check.dir/DependInfo.cmake
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/check.dir/build.make
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/check.dir/cmake_clean.cmake
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/check.dir/progress.make
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/launchtest.dir/DependInfo.cmake
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/launchtest.dir/build.make
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/launchtest.dir/cmake_clean.cmake
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/launchtest.dir/depend.make
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/launchtest.dir/flags.make
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/launchtest.dir/link.txt
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/launchtest.dir/progress.make
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/progress.marks
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/test_ce.dir/DependInfo.cmake
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/test_ce.dir/build.make
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/test_ce.dir/cmake_clean.cmake
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/test_ce.dir/depend.make
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/test_ce.dir/flags.make
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/test_ce.dir/link.txt
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/test_ce.dir/progress.make
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeLists.txt
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CTestTestfile.cmake
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/Makefile
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/Makefile.am
-%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/Makefile.in
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/README
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/Saturn.jpg
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/benchmark/bench_matrix_multiply.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/checks
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/cmake_install.cmake
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/example.grib
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/image_test.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/launchtest.c
@@ -17,6 +39,7 @@
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test-total.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_MathFunctionsDim.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_angles.pro
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_array_equal.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_axis.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_base64.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_besel.pro
@@ -68,6 +91,7 @@
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bug_3488003.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bug_3559291.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_byte_conversion.pro
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bytscl.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_call_function.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_call_procedure.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_ce.pro
@@ -129,6 +153,7 @@
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_known_bugs.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_ludc_lusol.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_map.pro
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_matrix_multiply.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_memory.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_minmax.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_moment.pro
@@ -136,6 +161,7 @@
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_multiroots.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_nans_in_sort_and_median.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_nestedloop.pro
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_netcdf.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_ntags.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_op_elem.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_op_power.pro
@@ -182,6 +208,7 @@
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_stregex.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_strmatch.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_strsplit.pro
+%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_structures.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_suite.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_surface_basic.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_systime.pro
@@ -199,7 +226,6 @@
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_widgets.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_zeropoly.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_zip.pro
-%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/testsuite/launchtest.c
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/try
 %%MASTER%%%%DATADIR%%/AUTHORS
 %%MASTER%%%%DATADIR%%/README
@@ -211,6 +237,7 @@
 %%MASTER%%%%DATADIR%%/lib/calendar.pro
 %%MASTER%%%%DATADIR%%/lib/congrid.pro
 %%MASTER%%%%DATADIR%%/lib/correlate.pro
+%%MASTER%%%%DATADIR%%/lib/delvar.pro
 %%MASTER%%%%DATADIR%%/lib/deriv.pro
 %%MASTER%%%%DATADIR%%/lib/diag_matrix.pro
 %%MASTER%%%%DATADIR%%/lib/dialog_message.pro
@@ -226,15 +253,16 @@
 %%MASTER%%%%DATADIR%%/lib/dicom/gdlffdicom_time.pro
 %%MASTER%%%%DATADIR%%/lib/dicom/gdlffdicom_trim.pro
 %%MASTER%%%%DATADIR%%/lib/dist.pro
+%%MASTER%%%%DATADIR%%/lib/doc_library.pro
 %%MASTER%%%%DATADIR%%/lib/envi/read_envi_file.pro
 %%MASTER%%%%DATADIR%%/lib/envi/test_write_read_envi.pro
 %%MASTER%%%%DATADIR%%/lib/envi/write_envi_file.pro
 %%MASTER%%%%DATADIR%%/lib/escape_special_char.pro
 %%MASTER%%%%DATADIR%%/lib/factorial.pro
-%%MASTER%%%%DATADIR%%/lib/file_basename.pro
+%%MASTER%%%%DATADIR%%/lib/file_basename_old.pro
 %%MASTER%%%%DATADIR%%/lib/file_copy.pro
 %%MASTER%%%%DATADIR%%/lib/file_delete.pro
-%%MASTER%%%%DATADIR%%/lib/file_dirname.pro
+%%MASTER%%%%DATADIR%%/lib/file_dirname_old.pro
 %%MASTER%%%%DATADIR%%/lib/file_expand_path.pro
 %%MASTER%%%%DATADIR%%/lib/file_lines.pro
 %%MASTER%%%%DATADIR%%/lib/file_which.pro
@@ -264,6 +292,8 @@
 %%MASTER%%%%DATADIR%%/lib/meanabsdev.pro
 %%MASTER%%%%DATADIR%%/lib/moment.pro
 %%MASTER%%%%DATADIR%%/lib/norm.pro
+%%MASTER%%%%DATADIR%%/lib/online_help.pro
+%%MASTER%%%%DATADIR%%/lib/oploterr.pro
 %%MASTER%%%%DATADIR%%/lib/path_sep.pro
 %%MASTER%%%%DATADIR%%/lib/ploterr.pro
 %%MASTER%%%%DATADIR%%/lib/poly.pro
@@ -327,10 +357,15 @@
 %%MASTER%%%%DATADIR%%/lib/write_pict.pro
 %%MASTER%%%%DATADIR%%/lib/write_png.pro
 %%MASTER%%%%DATADIR%%/lib/zenity_check.pro
+%%MASTER%%man/man1/gdl.1.gz
 %%MASTER%%@dirrm %%DATADIR%%/lib/envi
 %%MASTER%%@dirrm %%DATADIR%%/lib/dicom
 %%MASTER%%@dirrm %%DATADIR%%/lib
 %%MASTER%%@dirrm %%DATADIR%%
-%%MASTER%%%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/testsuite/testsuite
-%%MASTER%%%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/testsuite
-%%MASTER%%%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%MASTER%%%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/testsuite/benchmark
+%%MASTER%%%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/testsuite/CMakeFiles/test_ce.dir
+%%MASTER%%%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/testsuite/CMakeFiles/launchtest.dir
+%%MASTER%%%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/testsuite/CMakeFiles/check.dir
+%%MASTER%%%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/testsuite/CMakeFiles
+%%MASTER%%%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/testsuite
+%%MASTER%%%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

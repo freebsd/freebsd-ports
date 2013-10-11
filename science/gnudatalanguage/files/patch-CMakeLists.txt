@@ -1,0 +1,11 @@
+--- ./CMakeLists.txt.orig	2013-09-28 17:03:32.000000000 +0200
++++ ./CMakeLists.txt	2013-09-30 16:19:09.000000000 +0200
+@@ -752,7 +752,7 @@
+ endif(NOT PYTHON_MODULE)
+ 
+ install(FILES ${CMAKE_SOURCE_DIR}/AUTHORS ${CMAKE_SOURCE_DIR}/README DESTINATION ${CMAKE_INSTALL_PREFIX}/${GDL_DATA_DIR})
+-install(FILES ${CMAKE_SOURCE_DIR}/doc/gdl.1 DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/man1)
++install(FILES ${CMAKE_SOURCE_DIR}/doc/gdl.1 DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1)
+ 
+ # substitute variables in configure.h.cmake and move it to configure.h
+ configure_file(${CMAKE_SOURCE_DIR}/config.h.cmake ${CMAKE_BINARY_DIR}/config.h)
