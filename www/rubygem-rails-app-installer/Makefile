@@ -10,6 +10,9 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	An installer for Rails apps
 
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2013-10-10
+
 RUN_DEPENDS=	rubygem-sqlite3-ruby>=1.1.0:${PORTSDIR}/databases/rubygem-sqlite3-ruby \
 		rubygem-mongrel>=0.3.13.3:${PORTSDIR}/www/rubygem-mongrel \
 		rubygem-mongrel_cluster>=0.2.0:${PORTSDIR}/www/rubygem-mongrel_cluster
