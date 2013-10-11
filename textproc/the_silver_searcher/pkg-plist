@@ -1,0 +1,4 @@
+bin/ag
+share/the_silver_searcher/completions/ag.bashcomp.sh
+@dirrm share/the_silver_searcher/completions
+@dirrm share/the_silver_searcher
