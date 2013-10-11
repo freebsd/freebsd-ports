@@ -13,6 +13,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby extension library to use SDL library
 
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2013-10-10
+
 BUILD_DEPENDS=	${NONEXISTENT}:${RUBY_OPENGL_PORTDIR}:patch
 
 RUBY_OPENGL_PORTDIR=	${PORTSDIR}/graphics/ruby-opengl
