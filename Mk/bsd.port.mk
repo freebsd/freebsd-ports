@@ -2182,7 +2182,7 @@ BUILD_FAIL_MESSAGE+=	Try to set MAKE_JOBS_UNSAFE=yes and rebuild before reportin
 # Support NO_CCACHE for common setups, require WITH_CCACHE_BUILD, and
 # don't use if ccache already set in CC
 .if !defined(NO_CCACHE) && defined(WITH_CCACHE_BUILD) && !${CC:M*ccache*} && \
-  !defined(NO_BUILD)
+  !defined(NO_BUILD) && !defined(NOCCACHE)
 # Avoid depends loops between pkg and ccache
 .	if !${.CURDIR:M*/devel/ccache} && !${.CURDIR:M*/ports-mgmt/pkg}
 BUILD_DEPENDS+=		${LOCALBASE}/bin/ccache:${PORTSDIR}/devel/ccache
