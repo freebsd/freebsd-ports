@@ -1,6 +1,14 @@
---- base/sys_info_freebsd.cc.orig	2012-11-27 10:01:52.000000000 +0200
-+++ base/sys_info_freebsd.cc	2012-12-09 18:04:30.000000000 +0200
-@@ -23,6 +23,19 @@
+--- base/sys_info_freebsd.cc.orig	2013-09-28 19:09:58.000000000 +0200
++++ base/sys_info_freebsd.cc	2013-10-09 17:13:04.000000000 +0200
+@@ -4,6 +4,7 @@
+ 
+ #include "base/sys_info.h"
+ 
++#include <sys/types.h>
+ #include <sys/sysctl.h>
+ 
+ #include "base/logging.h"
+@@ -23,6 +24,19 @@
  }
  
  // static
@@ -20,7 +28,7 @@
  size_t SysInfo::MaxSharedMemorySize() {
    size_t limit;
    size_t size = sizeof(limit);
-@@ -33,4 +46,25 @@
+@@ -33,4 +47,25 @@
    return limit;
  }
  

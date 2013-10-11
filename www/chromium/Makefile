@@ -47,12 +47,13 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/a
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_XZ=		yes
-USES=		bison desktop-file-utils pkgconfig perl5
+USES=		bison desktop-file-utils pkgconfig perl5 shebangfix
 USE_PERL5=	build
 USE_PYTHON_BUILD=	2.6-2.7
 USE_XORG=	scrnsaverproto x11 xproto xscrnsaver xtst
 USE_GNOME=	glib20 gtk20 dconf libxslt
 
+SHEBANG_FILES=	chrome/tools/build/linux/chrome-wrapper
 NINJA_TARGETS=	chrome
 
 # See build/common.gypi for all the available variables.
@@ -140,9 +141,10 @@ CXX=		clang++
 .endif
 GYP_DEFINES+=	clang=1
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
-#.if ${OSVERSION} >= 1000054
-#EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libc++
-#.endif
+.endif
+
+.if ${OSVERSION} >= 1000052
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-fixup-execinfo
 .endif
 
 .if ${PORT_OPTIONS:MTEST}
