@@ -18,17 +18,13 @@ RUN_DEPENDS=	${RUBY_PKGNAMEPREFIX}gdbm>=0:${PORTSDIR}/databases/ruby-gdbm
 NO_BUILD=	yes
 USE_RUBY=	yes
 
-OPTIONS_DEFINE=	CHASEN DOCS MECAB
+OPTIONS_DEFINE=	DOCS MECAB
 
-CHASEN_DESC=	Japanese Morphological Analysis Support
 MECAB_DESC=	Part-of-Speech and Morphological Analyzer
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MCHASEN}
-RUN_DEPENDS+=	ja-${RUBY_PKGNAMEPREFIX}chasen>=0:${PORTSDIR}/japanese/ruby-chasen
-.endif
 .if ${PORT_OPTIONS:MMECAB}
 RUN_DEPENDS+=	ja-${RUBY_PKGNAMEPREFIX}mecab>=0:${PORTSDIR}/japanese/ruby-mecab
 .endif
