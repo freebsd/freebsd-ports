@@ -12,6 +12,9 @@ DISTFILES=	# none
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Emacs lisp modules for the Ruby language
 
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2013-10-10
+
 FETCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch
 
 USE_RUBY=	yes
