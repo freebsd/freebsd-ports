@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsodium
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	security
 MASTER_SITES=	http://download.dnscrypt.org/libsodium/releases/
 
@@ -12,19 +12,21 @@ LICENSE=	ISCL
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USES=	pkgconfig
 
-PORTDOCS=	AUTHORS NEWS THANKS
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
+PORTDOCS=	AUTHORS README.markdown THANKS
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
+		${WRKSRC}/Makefile.in
+
 post-build:
 	cd ${WRKSRC} && ${MAKE} check
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
