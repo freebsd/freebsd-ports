@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sam2p
-PORTVERSION=	0.49.1
-PORTREVISION=	1
+PORTVERSION=	0.49.2
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
@@ -17,31 +16,29 @@ RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		cjpeg:${PORTSDIR}/graphics/jpeg \
 		tif22pnm:${PORTSDIR}/graphics/tif22pnm
 
-USES=		perl5
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+USES=		gmake perl5
 USE_PERL5=	build
+USE_GCC=	any
 USE_GHOSTSCRIPT_RUN=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_pts_bash="${SH}"
-MAKE_ARGS=	CXXX="${CXX}" LDALL="${CXX}" CXXFLAGSB="${CXXFLAGS}"
+CONFIGURE_ARGS=	--enable-gif
+MAKE_ARGS=	CXXX="${CXX}" LDALL="${CXX}" CXXFLAGSB="${CXXFLAGS}" CC=${CC} CXX=${CXX}
 ALL_TARGET=	${PORTNAME}
 
-PORTDOCS=	README
+PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
-.endif
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
