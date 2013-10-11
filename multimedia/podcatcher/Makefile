@@ -11,7 +11,6 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Podcast client for the command line
 
 USE_RUBY=	yes
-RUBY_VER=	1.8
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
