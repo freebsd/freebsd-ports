@@ -1,31 +1,33 @@
 @unexec %D/etc/rc.d/syslog-ng.sh stop > /dev/null 2>&1 || true
-etc/scl.conf
+@unexec if cmp -s %D/etc/scl.conf %D/etc/scl.conf.dist; then rm -f %D/etc/scl.conf; fi
+etc/scl.conf.dist
+@exec test -f %B/scl.conf || cp %B/%f %B/scl.conf
 @unexec if cmp -s %D/etc/syslog-ng.conf %D/etc/syslog-ng.conf.dist; then rm -f %D/etc/syslog-ng.conf; fi
 etc/syslog-ng.conf.dist
-@exec test -f %B/syslog-ng.conf || cp -p %B/%f %B/syslog-ng.conf
+@exec test -f %B/syslog-ng.conf || cp %B/%f %B/syslog-ng.conf
 etc/syslog-ng.conf.sample
 bin/loggen
 bin/pdbtool
 bin/update-patterndb
-sbin/syslog-ng
-sbin/syslog-ng-ctl
 include/syslog-ng/afinter.h
 include/syslog-ng/alarms.h
 include/syslog-ng/apphook.h
 include/syslog-ng/atomic.h
 include/syslog-ng/block-ref-parser.h
+include/syslog-ng/cfg-args.h
 include/syslog-ng/cfg-grammar.h
+include/syslog-ng/cfg-lexer-subst.h
 include/syslog-ng/cfg-lexer.h
 include/syslog-ng/cfg-parser.h
+include/syslog-ng/cfg-tree.h
 include/syslog-ng/cfg.h
 include/syslog-ng/children.h
-include/syslog-ng/cfg-args.h
-include/syslog-ng/cfg-lexer-subst.h
 include/syslog-ng/compat.h
 include/syslog-ng/control.h
 include/syslog-ng/crypto.h
 include/syslog-ng/dnscache.h
 include/syslog-ng/driver.h
+include/syslog-ng/file-perms.h
 include/syslog-ng/filter-expr-parser.h
 include/syslog-ng/filter.h
 include/syslog-ng/gprocess.h
@@ -36,7 +38,6 @@ include/syslog-ng/logmpx.h
 include/syslog-ng/logmsg.h
 include/syslog-ng/logparser.h
 include/syslog-ng/logpipe.h
-include/syslog-ng/logproto.h
 include/syslog-ng/logproto-buffered-server.h
 include/syslog-ng/logproto-builtins.h
 include/syslog-ng/logproto-client.h
@@ -47,6 +48,7 @@ include/syslog-ng/logproto-record-server.h
 include/syslog-ng/logproto-server.h
 include/syslog-ng/logproto-text-client.h
 include/syslog-ng/logproto-text-server.h
+include/syslog-ng/logproto.h
 include/syslog-ng/logqueue-fifo.h
 include/syslog-ng/logqueue.h
 include/syslog-ng/logreader.h
@@ -80,24 +82,19 @@ include/syslog-ng/tls-support.h
 include/syslog-ng/tlscontext.h
 include/syslog-ng/tlstransport.h
 include/syslog-ng/utils.h
+include/syslog-ng/uuid.h
 include/syslog-ng/value-pairs.h
 include/syslog-ng/versioning.h
-include/syslog-ng/cfg-tree.h
-include/syslog-ng/file-perms.h
-include/syslog-ng/uuid.h
 include/syslog-ng/vptransform.h
+lib/libsyslog-ng-3.4.3.so
 lib/libsyslog-ng.la
 lib/libsyslog-ng.so
-lib/libsyslog-ng-3.4.3.so
-libdata/pkgconfig/syslog-ng.pc
-lib/syslog-ng/libcryptofuncs.la
-lib/syslog-ng/libcryptofuncs.so
+lib/syslog-ng/libafamqp.la
+lib/syslog-ng/libafamqp.so
 lib/syslog-ng/libaffile.la
 lib/syslog-ng/libaffile.so
 lib/syslog-ng/libafmongodb.la
 lib/syslog-ng/libafmongodb.so
-lib/syslog-ng/libafamqp.la
-lib/syslog-ng/libafamqp.so
 lib/syslog-ng/libafprog.la
 lib/syslog-ng/libafprog.so
 lib/syslog-ng/libafsocket-notls.la
@@ -109,6 +106,8 @@ lib/syslog-ng/libbasicfuncs.la
 lib/syslog-ng/libbasicfuncs.so
 lib/syslog-ng/libconfgen.la
 lib/syslog-ng/libconfgen.so
+lib/syslog-ng/libcryptofuncs.la
+lib/syslog-ng/libcryptofuncs.so
 lib/syslog-ng/libcsvparser.la
 lib/syslog-ng/libcsvparser.so
 lib/syslog-ng/libdbparser.la
@@ -119,6 +118,14 @@ lib/syslog-ng/libsyslogformat.la
 lib/syslog-ng/libsyslogformat.so
 lib/syslog-ng/libsystem-source.la
 lib/syslog-ng/libsystem-source.so
+libdata/pkgconfig/syslog-ng.pc
+man/man1/loggen.1.gz
+man/man1/pdbtool.1.gz
+man/man1/syslog-ng-ctl.1.gz
+man/man5/syslog-ng.conf.5.gz
+man/man8/syslog-ng.8.gz
+sbin/syslog-ng
+sbin/syslog-ng-ctl
 share/include/scl/pacct/plugin.conf
 share/include/scl/syslogconf/README
 share/include/scl/syslogconf/convert-syslogconf.awk
@@ -135,14 +142,14 @@ share/xsd/patterndb-4.xsd
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/syslog-ng
-@dirrm lib/syslog-ng
+@dirrm share/xsd
+@dirrmtry share/tools
 @dirrm share/include/scl/system
 @dirrm share/include/scl/syslogconf
 @dirrm share/include/scl/pacct
 @dirrm share/include/scl
 @dirrm share/include
-@dirrmtry share/tools
-@dirrm share/xsd
-@exec mkdir %D/etc/patterndb.d
+@dirrm lib/syslog-ng
+@dirrm include/syslog-ng
+@exec mkdir -p %D/etc/patterndb.d
 @dirrmtry etc/patterndb.d
