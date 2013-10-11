@@ -27,6 +27,7 @@ share/icons/hicolor/scalable/apps/parole.svg
 %%NLS%%share/locale/da/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/de/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/el/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/en_AU/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/es/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/parole.mo
