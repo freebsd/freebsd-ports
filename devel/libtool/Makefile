@@ -3,7 +3,7 @@
 
 PORTNAME?=	libtool
 PORTVERSION=	2.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libtool
@@ -26,6 +26,10 @@ MAN1=		libtool.1 libtoolize.1
 .endif
 
 NO_STAGE=	yes
+
+post-extract:
+	@${RM} -f ${WRKSRC}/doc/*.info*
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|sed gsed|sed|g' \
 		-e 's|CC=cc|CC=${CC}|g' \
