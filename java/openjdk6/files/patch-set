@@ -266,17 +266,6 @@
  endif
  
  # _BOOTDIR1: First choice for a Bootstrap JDK, previous released JDK.
---- corba/make/common/shared/Defs-java.gmk
-+++ corba/make/common/shared/Defs-java.gmk
-@@ -38,7 +38,7 @@
-   #   Suspect this may not be needed anymore.
-   JAVA_MEM_FLAGS   += -Xms$(MAX_VM_MEMORY)m -XX:-Inline
- else
--  JAVA_MEM_FLAGS   += -Xms$(MIN_VM_MEMORY)m -XX:PermSize=32m -XX:MaxPermSize=160m
-+  JAVA_MEM_FLAGS   += -Xms$(MIN_VM_MEMORY)m
- endif
- 
- # 
 --- corba/make/common/shared/Defs-utils.gmk
 +++ corba/make/common/shared/Defs-utils.gmk
 @@ -53,6 +53,13 @@
@@ -681,14 +670,14 @@
 +  static const char *vm_stats[] = {
 +    "vm.stats.vm.v_free_count",
 +    "vm.stats.vm.v_cache_count",
-+    /* "vm.stats.vm.v_inactive_count", */
-+    NULL
++    "vm.stats.vm.v_inactive_count"
 +  };
 +  size_t size;
 +  julong free_pages;
 +  u_int i, npages;
 +
-+  for (i = 0, free_pages = 0, size = sizeof(npages); vm_stats[i] != NULL; i++) {
++  for (i = 0, free_pages = 0; i < nitems(vm_stats); i++) {
++    size = sizeof(npages);
 +    if (sysctlbyname(vm_stats[i], &npages, &size, NULL, 0) == -1) {
 +      free_pages = 0;
 +      break;
@@ -827,7 +816,7 @@
 +  size_t mibsize, size;
 +  int mib[16], n, total = 0, used = 0;
 +
-+  mibsize = sizeof(mib) / sizeof(mib[0]);
++  mibsize = nitems(mib);
 +  if (sysctlnametomib("vm.swap_info", mib, &mibsize) != -1) {
 +    for (n = 0; ; n++) {
 +      mib[mibsize] = n;
@@ -1713,17 +1702,6 @@
  # Import JDK images allow for partial builds, components not built are
  #    imported (or copied from) these import areas when needed.
  
---- jdk/make/common/shared/Defs-java.gmk
-+++ jdk/make/common/shared/Defs-java.gmk
-@@ -42,7 +42,7 @@
-   #   Suspect this may not be needed anymore.
-   JAVA_MEM_FLAGS   += -Xms$(MAX_VM_MEMORY)m -XX:-Inline
- else
--  JAVA_MEM_FLAGS   += -Xms$(MIN_VM_MEMORY)m -XX:PermSize=32m -XX:MaxPermSize=160m
-+  JAVA_MEM_FLAGS   += -Xms$(MIN_VM_MEMORY)m
- endif
- 
- # 
 --- jdk/make/common/shared/Defs-utils.gmk
 +++ jdk/make/common/shared/Defs-utils.gmk
 @@ -80,6 +80,13 @@
