@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTML-Scrubber
-PORTVERSION=	0.09
+PORTVERSION=	0.11
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,14 +10,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for scrubbing/sanitizing html
 
-BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
-		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
+BUILD_DEPENDS=	p5-HTML-Parser>=3.47:${PORTSDIR}/www/p5-HTML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_STAGE=	yes
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 
 MAN3=		HTML::Scrubber.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
