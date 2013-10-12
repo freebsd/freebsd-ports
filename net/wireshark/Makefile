@@ -42,11 +42,12 @@ WIRESHARK_LIBS=
 .for x in capinfos editcap mergecap rawshark text2pcap dftest randpkt \
     reordercap
 .if defined(LITE)
-PLIST_SUB+=		${x:U}="@comment $x not installed"
+PLIST_SUB+=		${x:U}="@comment $x not installed" \
+    			${x:U}_MAN="@comment $x not installed "
 CONFIGURE_ARGS+=	--enable-$x=no
 .else
-PLIST_SUB+=		${x:U}=bin/$x
-MAN1+=			$x.1
+PLIST_SUB+=		${x:U}=bin/$x \
+    			${x:U}_MAN=""
 .endif
 .endfor
 
@@ -59,7 +60,6 @@ RTP_DESC=		Enable support for playing back RTP streams
 ADNS_DESC=		Enable asynchronous DNS lookup support
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
@@ -69,12 +69,12 @@ USE_XORG=		x11
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MX11}
-MAN1+=		wireshark.1
-PLIST_SUB+=	WIRESHARK=bin/wireshark
+PLIST_SUB+=	WIRESHARK=bin/wireshark WIRESHARK_MAN=""
 USE_GNOME+=	gtk20
 WIRESHARK_LIBS+=${PTHREAD_LIBS}
 .else
-PLIST_SUB+=	WIRESHARK="@comment wireshark not built"
+PLIST_SUB+=	WIRESHARK="@comment wireshark not built" \
+		WIRESHARK_MAN="@comment wireshark not built "
 USE_GNOME+=	glib20
 CONFIGURE_ARGS+=	--enable-wireshark=no \
 			--disable-gtktest
@@ -165,9 +165,6 @@ CONFIGURE_ARGS+=--with-libgcrypt-prefix=${LOCALBASE}
 CONFIGURE_ARGS+=--with-krb5=no
 .endif
 
-MAN1+=	dumpcap.1 tshark.1
-MAN4+=	wireshark-filter.4
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LUA_INCDIR%%|${LUA_INCDIR}|g ; \
 	    	s|-Wl,--as-needed|| ; \
@@ -175,6 +172,7 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/image/hi48-app-wireshark.png ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/image/hi48-app-wireshark.png \
+	    ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.post.mk>
