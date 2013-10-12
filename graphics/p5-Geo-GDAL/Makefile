@@ -23,6 +23,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/swig/perl
 NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's| install| pure_install|' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|(const char \*)""|(char \*)""|' ${WRKSRC}/gdal_wrap.cpp ${WRKSRC}/ogr_wrap.cpp
 
 regression-test test: build
 	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE} test || ${TRUE}
