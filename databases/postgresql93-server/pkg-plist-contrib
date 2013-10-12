@@ -99,7 +99,8 @@ share/postgresql/extension/fuzzystrmatch--1.0.sql
 share/postgresql/extension/fuzzystrmatch--unpackaged--1.0.sql
 share/postgresql/extension/fuzzystrmatch.control
 share/postgresql/extension/hstore--1.0--1.1.sql
-share/postgresql/extension/hstore--1.1.sql
+share/postgresql/extension/hstore--1.1--1.2.sql
+share/postgresql/extension/hstore--1.2.sql
 share/postgresql/extension/hstore--unpackaged--1.0.sql
 share/postgresql/extension/hstore.control
 share/postgresql/extension/insert_username--1.0.sql
