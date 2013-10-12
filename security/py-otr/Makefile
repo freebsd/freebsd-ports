@@ -8,8 +8,8 @@ MASTER_SITES=	http://python-otr.pentabarf.de/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-otr-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A set of python bindings for libotr
+MAINTAINER=	cs@FreeBSD.org
+COMMENT=	Python bindings for libotr
 
 BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 # This should be updated to the newer version of libotr
