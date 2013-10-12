@@ -1157,11 +1157,11 @@ sub check_depends_syntax {
 					"USES[+]=gettext.");
 			}
 
-			# check USE_GMAKE
+			# check USES=gmake
 			if ($m{'dep'} =~ /^(gmake|\${GMAKE})$/) {
 				&perror("WARN", $file, -1, "dependency to $1 ".
 					"listed in $j. consider using ".
-					"USE_GMAKE.");
+					"USES[+]=gmake.");
 			}
 
 			# check USE_QT
@@ -1867,6 +1867,7 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 				&& $curline !~ /^NO_CDROM(.)?=[^\n]+$i/m
 				&& $curline !~ /^MAINTAINER(.)?=[^\n]+$i/m
 				&& $curline !~ /^CATEGORIES(.)?=[^\n]+$i/m
+				&& $curline !~ /^USES(.)?=[^\n]+$i/m
 				&& $curline !~ /^WX_COMPS(.)?=[^\n]+$i/m
 				&& $curline !~ /^\s*#.+$/m
 				&& $curline !~ /\-\-$i/m
@@ -2839,7 +2840,8 @@ MAINTAINER COMMENT
 	} else { # check for correctness
 		if (($makevar{COMMENT} !~ /^["\[0-9A-Z]/) || ($makevar{COMMENT} =~ m/\.$/)) { #"
 			&perror("WARN", $file, -1, "COMMENT should begin with a capital, and end without a period");
-		} elsif (length($makevar{COMMENT}) > 70) {
+		}
+		if (length($makevar{COMMENT}) > 70) {
 			&perror("WARN", $file, -1, "COMMENT exceeds 70 characters limit.");
 		}
 	}
