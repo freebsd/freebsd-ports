@@ -12,6 +12,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	lee@writequit.org
 COMMENT=	Collaborative attack-analysis tool for security researchers
 
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2013-10-15
+
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
