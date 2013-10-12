@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird
-DISTVERSION=	24.0
-PORTREVISION=	1
+DISTVERSION=	24.0.1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source
 DISTFILES=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
@@ -21,7 +20,7 @@ BUILD_DEPENDS=	nspr>=4.10:${PORTSDIR}/devel/nspr \
 		unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 
-EM_VERSION=	1.5.2
+EM_VERSION=	1.6
 L_VERSION=	2.6b3
 
 SSP_UNSAFE=	yes
@@ -74,11 +73,6 @@ MOZSRC:=	${WRKSRC}/mozilla
 
 XPI_LIBDIR=	${PREFIX}/lib/xpi
 
-# libprldap60.so: Undefined symbol "PR_GetCurrentThread"
-.if ${ARCH} == i386
-USE_GCC?=	yes
-.endif
-
 .if ${PORT_OPTIONS:MENIGMAIL}
 MASTER_SITES+=	https://www.enigmail.net/download/source/:enigmail
 DISTFILES+=	${EM_DISTFILE}:enigmail
@@ -91,8 +85,6 @@ EM_ID=		${PORTNAME}@mozilla-enigmail.org
 EM_ID_RFILES=	${XPI_LIBDIR}/${EM_ID}/install.rdf \
 		${XPI_LIBDIR}/${EM_ID}/components/enigmail.js \
 		${XPI_LIBDIR}/${EM_ID}/modules/enigmailCommon.jsm
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-enigmail-ipc-src-Makefile
-EXTRA_PATCHES+=	${FILESDIR}/extra-bug886095
 .endif
 
 .if ${PORT_OPTIONS:MLIGHTNING}
