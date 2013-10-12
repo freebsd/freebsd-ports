@@ -8,7 +8,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=scim-imengine/37309
 
-MAINTAINER=	ume@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM IMEngine module using Anthy
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
