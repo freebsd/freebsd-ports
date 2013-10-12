@@ -6,6 +6,7 @@ PORTVERSION=	2.1.13
 PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	http://gkrellm.luon.net/files/
+PKGNAMESUFFIX=	2
 DISTNAME=	gkrellm-volume-${PORTVERSION}
 
 MAINTAINER=	ume@FreeBSD.org
@@ -14,7 +15,6 @@ COMMENT=	GKrellM volume plugin
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
-PKGNAMESUFFIX=	2
 WRKSRC=		${WRKDIR}/gkrellm-volume
 
 PLIST_FILES=	libexec/gkrellm2/plugins/volume.so \

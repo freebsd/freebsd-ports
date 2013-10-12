@@ -6,6 +6,7 @@ PORTVERSION=	2.1.22
 PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	http://gkrellm.luon.net/files/
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	GKrellM XMMS Plugin
@@ -13,7 +14,6 @@ COMMENT=	GKrellM XMMS Plugin
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
-LATEST_LINK=	gkrellmms2
 WRKSRC=		${WRKDIR}/gkrellmms
 
 PLIST_FILES=	libexec/gkrellm2/plugins/gkrellmms.so \
