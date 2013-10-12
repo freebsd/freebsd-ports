@@ -1,8 +1,8 @@
 bin/mason.pl
 %%SITE_PERL%%/HTML/Mason.pm
 %%SITE_PERL%%/HTML/Mason/Admin.pod
-%%SITE_PERL%%/HTML/Mason/ApacheHandler.pm
 %%SITE_PERL%%/HTML/Mason/Apache/Request.pm
+%%SITE_PERL%%/HTML/Mason/ApacheHandler.pm
 %%SITE_PERL%%/HTML/Mason/CGIHandler.pm
 %%SITE_PERL%%/HTML/Mason/Cache/BaseCache.pm
 %%SITE_PERL%%/HTML/Mason/Compiler.pm
@@ -32,13 +32,43 @@ bin/mason.pl
 %%SITE_PERL%%/HTML/Mason/Tools.pm
 %%SITE_PERL%%/HTML/Mason/Utils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Mason/.packlist
+%%PERL5_MAN3%%/HTML::Mason.3.gz
+%%PERL5_MAN3%%/HTML::Mason::Admin.3.gz
+%%PERL5_MAN3%%/HTML::Mason::ApacheHandler.3.gz
+%%PERL5_MAN3%%/HTML::Mason::CGIHandler.3.gz
+%%PERL5_MAN3%%/HTML::Mason::Cache::BaseCache.3.gz
+%%PERL5_MAN3%%/HTML::Mason::Compiler.3.gz
+%%PERL5_MAN3%%/HTML::Mason::Compiler::ToObject.3.gz
+%%PERL5_MAN3%%/HTML::Mason::Component.3.gz
+%%PERL5_MAN3%%/HTML::Mason::Component::FileBased.3.gz
+%%PERL5_MAN3%%/HTML::Mason::Component::Subcomponent.3.gz
+%%PERL5_MAN3%%/HTML::Mason::ComponentSource.3.gz
+%%PERL5_MAN3%%/HTML::Mason::Devel.3.gz
+%%PERL5_MAN3%%/HTML::Mason::Escapes.3.gz
+%%PERL5_MAN3%%/HTML::Mason::Exceptions.3.gz
+%%PERL5_MAN3%%/HTML::Mason::FakeApache.3.gz
+%%PERL5_MAN3%%/HTML::Mason::Interp.3.gz
+%%PERL5_MAN3%%/HTML::Mason::Lexer.3.gz
+%%PERL5_MAN3%%/HTML::Mason::MethodMaker.3.gz
+%%PERL5_MAN3%%/HTML::Mason::Params.3.gz
+%%PERL5_MAN3%%/HTML::Mason::Parser.3.gz
+%%PERL5_MAN3%%/HTML::Mason::Plugin.3.gz
+%%PERL5_MAN3%%/HTML::Mason::Plugin::Context.3.gz
+%%PERL5_MAN3%%/HTML::Mason::Request.3.gz
+%%PERL5_MAN3%%/HTML::Mason::Resolver.3.gz
+%%PERL5_MAN3%%/HTML::Mason::Resolver::File.3.gz
+%%PERL5_MAN3%%/HTML::Mason::Resolver::Null.3.gz
+%%PERL5_MAN3%%/HTML::Mason::Subclassing.3.gz
+%%PERL5_MAN3%%/HTML::Mason::Tests.3.gz
+%%PERL5_MAN3%%/HTML::Mason::Tools.3.gz
+%%PERL5_MAN3%%/HTML::Mason::Utils.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Mason
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
-@dirrm %%SITE_PERL%%/HTML/Mason/Apache
-@dirrm %%SITE_PERL%%/HTML/Mason/Cache
-@dirrm %%SITE_PERL%%/HTML/Mason/Compiler
-@dirrm %%SITE_PERL%%/HTML/Mason/Component
-@dirrm %%SITE_PERL%%/HTML/Mason/Plugin
 @dirrm %%SITE_PERL%%/HTML/Mason/Resolver
+@dirrm %%SITE_PERL%%/HTML/Mason/Plugin
+@dirrm %%SITE_PERL%%/HTML/Mason/Component
+@dirrm %%SITE_PERL%%/HTML/Mason/Compiler
+@dirrm %%SITE_PERL%%/HTML/Mason/Cache
+@dirrm %%SITE_PERL%%/HTML/Mason/Apache
 @dirrm %%SITE_PERL%%/HTML/Mason
 @dirrmtry %%SITE_PERL%%/HTML
