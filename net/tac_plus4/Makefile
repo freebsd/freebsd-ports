@@ -18,17 +18,11 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-groupid=$$(/usr/bin/id -g tacacs 2>/dev/null || echo '559') \
 		--with-userid=$$(/usr/bin/id -u tacacs 2>/dev/null || echo '559')
 
-MAN5=		tac_plus.conf.5
-MAN8=		tac_plus.8 tac_pwd.8
+USERS=		tacacs
+GROUPS=		tacacs
 
 CONFLICTS=	ru-tac+ia-[0-9]* tac_plus-libradius-[0-9]*
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
 MAKE_JOBS_UNSAFE=	yes
-.endif
 
 # check expiration dates against 'expire' field of master.passwd file
 .if defined(TAC_EXPIRE_MASTER_PASSWD)
@@ -51,14 +45,9 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/tac_plus.conf.example ${PREFIX}/etc
-.if !defined(PACKAGE_BUILDING)
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/tac_plus
-	${INSTALL_DATA} ${WRKSRC}/users_guide ${PREFIX}/share/doc/tac_plus
-	${INSTALL_SCRIPT} ${WRKSRC}/tac_convert ${PREFIX}/share/doc/tac_plus
-.endif
+	${INSTALL_DATA} ${FILESDIR}/tac_plus.conf.example ${STAGEDIR}${PREFIX}/etc
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/tac_plus
+	${INSTALL_DATA} ${WRKSRC}/users_guide ${STAGEDIR}${PREFIX}/share/doc/tac_plus
+	${INSTALL_SCRIPT} ${WRKSRC}/tac_convert ${STAGEDIR}${PREFIX}/share/doc/tac_plus
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

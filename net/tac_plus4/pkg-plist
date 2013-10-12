@@ -6,6 +6,9 @@ lib/libtacacs.a
 lib/libtacacs.la
 lib/libtacacs.so
 lib/libtacacs.so.1
+man/man5/tac_plus.conf.5.gz
+man/man8/tac_plus.8.gz
+man/man8/tac_pwd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/tac_convert
 %%PORTDOCS%%%%DOCSDIR%%/users_guide
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
