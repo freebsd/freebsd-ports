@@ -14,7 +14,7 @@ COMMENT=	Additional loader for Evas (raw)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	raw:${PORTSDIR}/graphics/libraw
+LIB_DEPENDS=	libraw.so:${PORTSDIR}/graphics/libraw
 
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
@@ -25,11 +25,10 @@ USE_LDCONFIG=	yes
 
 BINSRC=		${WRKSRC}/src/bin/${PORTNAME}
 
-NO_STAGE=	yes
 do-build:
-	${MAKE} -C ${BINSRC}
+	${MAKE} ${MAKE_ARGS} -C ${BINSRC}
 
 do-install:
-	${MAKE} -C ${BINSRC} install
+	${MAKE} ${MAKE_ARGS} -C ${BINSRC} install
 
 .include <bsd.port.mk>
