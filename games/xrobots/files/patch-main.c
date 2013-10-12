@@ -1,6 +1,6 @@
---- main.c.orig	Thu Jan 22 06:34:05 1998
-+++ main.c	Sat Feb 28 03:53:04 2004
-@@ -170,25 +170,25 @@
+--- main.c.orig	1998-01-23 01:34:05.000000000 +1100
++++ main.c	2013-10-13 01:30:59.000000000 +1100
+@@ -170,31 +170,31 @@
  	{"-scorefile","scorefile",XrmoptionSepArg, NULL },
  };
  
@@ -36,11 +36,17 @@
  };
  
  /*----------------------------------------------------------------------*/
-@@ -205,6 +205,16 @@
- 	 new_game_command;
+ 
+ main(argc, argv)
+-  unsigned int argc;
++  int argc;
+   char **argv;
+ {
+   Arg args[1];
+@@ -206,6 +206,16 @@
  
    srandom(getpid());
-+
+ 
 +  application_resources[0].resource_offset=(Cardinal)&fg;
 +  application_resources[1].resource_offset=(Cardinal)&bg;
 +  application_resources[2].resource_offset=(Cardinal)&spiffy;
@@ -50,6 +56,7 @@
 +  application_resources[6].resource_offset=(Cardinal)&diewaiting;
 +  application_resources[7].resource_offset=(Cardinal)&translations;
 +  application_resources[8].resource_offset=(Cardinal)&score_filename;
- 
++
    top_shell = XtInitialize(argv[0], "xrobots", options, XtNumber(options),
    (int *)&argc, argv);
+   XtSetValues(top_shell, arglisttop_shell, XtNumber(arglisttop_shell));
