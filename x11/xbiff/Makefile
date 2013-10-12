@@ -9,8 +9,6 @@ COMMENT=	Mailbox flag for X
 
 XORG_CAT=	app
 USE_XORG=	xbitmaps xext xaw
-MAN1=		xbiff.1
-PLIST_FILES=	bin/xbiff
+PLIST_FILES=	bin/xbiff man/man1/xbiff.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
