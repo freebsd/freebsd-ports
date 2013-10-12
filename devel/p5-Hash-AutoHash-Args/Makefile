@@ -13,8 +13,6 @@ COMMENT=	Object-oriented processing of keyword-based argument lists
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-#		p5-Scalar-List-Utils>=1.32:${PORTSDIR}/lang/p5-Scalar-List-Utils
-#		p5-List-MoreUtils>=0.33:${PORTSDIR}/lang/p5-List-MoreUtils
 BUILD_DEPENDS=	p5-Hash-AutoHash>=1.17:${PORTSDIR}/devel/p5-Hash-AutoHash
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0.110:${PORTSDIR}/devel/p5-Test-Deep \
