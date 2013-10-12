@@ -10,7 +10,7 @@ MASTER_SITES=	http://gkrellm.luon.net/files/
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	GKrellM XMMS Plugin
 
-LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
