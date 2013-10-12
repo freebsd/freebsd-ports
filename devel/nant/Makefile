@@ -13,12 +13,12 @@ COMMENT=	.NET build tool inspired by Ant
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
+BUILD_DEPENDS=	${LOCALBASE}/bin/mono:${PORTSDIR}/lang/mono
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-INSTALL_TARGET=	install prefix=${PREFIX}
+INSTALL_TARGET=	install destdir=${STAGEDIR} prefix=${PREFIX}
 MAKE_JOBS_UNSAFE=	yes
 USES=		gmake pkgconfig
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -26,7 +26,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 DATADIR=	${PREFIX}/share/NAnt
 DOCSDIR=	${PREFIX}/share/doc/NAnt
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -37,8 +36,8 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}/
-	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}/
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/
 .endif
 
 regression-test test: build
