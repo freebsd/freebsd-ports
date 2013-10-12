@@ -1,25 +1,4 @@
 #!/bin/sh
 
-# The executable needs to be run from its data directory, and needs to store
-# configuration in it. We therefore mirror the data directory hierarchy in
-# ~/.XXX, and create symlinks to the data files, but the configuration files
-# are copied, and write permission for the user is added to them.
-
-APPNAME="assaultcube"
 CUBE_OPTIONS=
-
-if [ -d ~/.$APPNAME ]
-then
-	echo "Using existing ~/.$APPNAME directory."
-else
-	echo "Creating ~/.$APPNAME directory."
-	cd %%DATADIR%% || exit 1
-	find * -type d -exec mkdir -p ~/.$APPNAME/{} \;
-	find * -type f -name "*.cfg" \
-	    -exec cp %%DATADIR%%/{} ~/.$APPNAME/{} \; \
-	    -exec chmod u+w ~/.$APPNAME/{} \; 2>/dev/null
-	find * -type f -exec ln -s %%DATADIR%%/{} ~/.$APPNAME/{} \; 2>/dev/null
-fi
-
-cd ~/.$APPNAME || exit 1
-exec %%PREFIX%%/libexec/${APPNAME}_master ${CUBE_OPTIONS} "$@"
+cd %%DATADIR%% && exec %%PREFIX%%/libexec/assaultcube_master ${CUBE_OPTIONS} "$@"

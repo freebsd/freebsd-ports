@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	assaultcube
-PORTVERSION=	1.1.0.4
-PORTREVISION=	4
+PORTVERSION=	1.2.0.0
 CATEGORIES=	games
 MASTER_SITES=	SF/actiongame/AssaultCube%20Version%20${PORTVERSION}
-DISTFILES=	AssaultCube_v${PORTVERSION}_source${EXTRACT_SUFX} \
-		AssaultCube_v${PORTVERSION}${EXTRACT_SUFX}
+DISTNAME=	AssaultCube_v${PORTVERSION}
 
 MAINTAINER=	lightside@gmx.com
 COMMENT=	Total conversion of the FPS game called Cube
@@ -26,10 +24,10 @@ LICENSE_PERMS_OTHER=	dist-mirror pkg-mirror auto-accept
 
 USE_BZIP2=	yes
 USE_OPENAL=	al
-USE_GMAKE=	yes
+USES=	gmake
 GNU_CONFIGURE=	yes
 ALL_TARGET=	libenet
-WRKSRC=		${WRKDIR}/${PORTVERSION}
+WRKSRC=		${WRKDIR}/AssaultCube_v${PORTVERSION}
 CONFIGURE_ARGS=	--enable-shared=no --enable-static=yes
 CONFIGURE_WRKSRC=	${WRKSRC}/source/enet
 BUILD_WRKSRC=	${WRKSRC}/source/src
@@ -45,10 +43,10 @@ CLIENT_DESC=	Build client
 DEDICATED_DESC=	Build dedicated server
 MASTER_DESC=	Build master server
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 USES+=		gettext
 USE_GL=		yes
 USE_SDL=	image mixer sdl
@@ -75,16 +73,16 @@ ACUBE_BIN+=	master
 
 do-install:
 .for f in ${ACUBE_BIN}
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}_${f} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/ac_${f} ${PREFIX}/libexec/${PORTNAME}_${f}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}_${f} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/ac_${f} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}_${f}
 .endfor
 .if !defined(NOPORTDATA)
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDATA}" ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDATA}" ${STAGEDIR}${DATADIR}
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 .endif
 
 post-install:
