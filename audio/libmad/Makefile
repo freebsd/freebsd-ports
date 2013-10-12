@@ -5,32 +5,32 @@ PORTNAME=	libmad
 PORTVERSION=	0.15.1b
 PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	SF/mad/${PORTNAME}/${PORTVERSION} \
-		ftp://ftp.mars.org/pub/mpeg/
+MASTER_SITES=	SF/mad/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Libmad library (part of MAD project)
 
 OPTIONS_DEFINE=	SPEED
 SPEED_DESC=	Optimize for speed over accuracy
 
-USE_AUTOTOOLS=	libtool
+CONFIGURE_ARGS=	--disable-debugging --enable-sso
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-debugging \
-		--enable-sso
+
+SUB_LIST=	VERSION=${PORTVERSION}
+SUB_FILES=	mad.pc
 
 SPEED_CONFIGURE_ON=	--enable-speed
 SPEED_CONFIGURE_OFF=	--enable-accuracy
 
 post-patch:
-	@${SED} -e 's|%PREFIX%|${PREFIX}|g ; s|%VERSION%|${PORTVERSION}|g' \
-		${FILESDIR}/mad.pc.in > ${WRKDIR}/mad.pc
-	@${REINPLACE_CMD} -e 's| -fforce-mem||' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's| -fforce-mem||' ${WRKSRC}/configure
+
+post-build:
+	@${STRIP_CMD} ${WRKSRC}/.libs/libmad.so.2
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
-	${INSTALL_DATA} ${WRKDIR}/mad.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	${INSTALL_DATA} ${WRKDIR}/mad.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
 
 .include <bsd.port.mk>
