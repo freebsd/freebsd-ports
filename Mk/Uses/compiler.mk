@@ -61,7 +61,7 @@ COMPILER_TYPE=	gcc
 
 .if ${_COMPILER_ARGS:Mopenmp}
 .if ${COMPILER_TYPE} == clang
-USE_GCC=	any
+USE_GCC=	yes
 .endif
 .endif
 
