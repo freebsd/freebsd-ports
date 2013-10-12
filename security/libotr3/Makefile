@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.cypherpunks.ca/otr/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Portable OTR Messaging Library and toolkit
 
 BUILD_DEPENDS=	pkgconf>0:${PORTSDIR}/devel/pkgconf
