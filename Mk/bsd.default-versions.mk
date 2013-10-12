@@ -4,7 +4,7 @@
 #
 # Handle the default versions for users chosable multi versions.
 #
-# It expects users to define DEFAULT_VERSIONS in there make.conf
+# It expects users to define DEFAULT_VERSIONS in their make.conf
 # Syntax is the following:
 #
 # DEFAULT_VERSIONS=	perl5=5.18 ruby=2.0
