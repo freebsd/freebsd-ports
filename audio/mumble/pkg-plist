@@ -5,16 +5,17 @@ lib/libmumble.so
 lib/libmumble.so.1
 lib/libmumble.so.1.2
 lib/libmumble.so.1.2.4
+man/man1/mumble.1.gz
 share/applications/mumble.desktop
-share/services/mumble.protocol
 share/icons/hicolor/128x128/apps/mumble.png
 share/icons/hicolor/scalable/apps/mumble.svg
 share/pixmaps/mumble.xpm
-@dirrmtry share/applications
+share/services/mumble.protocol
 @dirrmtry share/services
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
+@dirrmtry share/applications
