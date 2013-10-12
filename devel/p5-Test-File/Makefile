@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-File
-PORTVERSION=	1.34
+PORTVERSION=	1.35
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,4 @@ TEST_DEPENDS=	p5-Test-Manifest>=1.14:${PORTSDIR}/devel/p5-Test-Manifest
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Test::File.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
