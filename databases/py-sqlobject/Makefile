@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	sqlobject
-PORTVERSION=	1.3.2
+PORTVERSION=	1.5.0
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	SQLObject-${PORTVERSION}
 
-MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A python object for manipulation with SQL table row
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Python object for manipulation with SQL table row
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}formencode>=1.2.2:${PORTSDIR}/www/py-formencode
 RUN_DEPENDS:=	${BUILD_DEPENDS}
