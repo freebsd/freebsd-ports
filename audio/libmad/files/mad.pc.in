@@ -1,4 +1,4 @@
-prefix=%PREFIX%
+prefix=%%PREFIX%%
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include
@@ -6,6 +6,6 @@ includedir=${prefix}/include
 Name: mad
 Description: MPEG Audio Decoder
 Requires:
-Version: %VERSION%
+Version: %%VERSION%%
 Libs: -L${libdir} -lmad -lm
 Cflags: -I${includedir}
