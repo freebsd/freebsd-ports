@@ -26,11 +26,4 @@ USES=		perl5
 
 MAN3=		Class::AutoClass.3
 
-.include <bsd.port.pre.mk>
-
-#.if ${PERL_LEVEL} < 501400
-#BUILD_DEPENDS+=	p5-Carp>=1.20:${PORTSDIR}/devel/p5-Carp
-#RUN_DEPENDS+=	p5-Carp>=1.20:${PORTSDIR}/devel/p5-Carp
-#.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
