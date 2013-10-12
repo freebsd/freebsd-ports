@@ -14,21 +14,19 @@ COMMENT=	A hardware accelerated canvas API (TIFF loader)
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
-		freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
+		libfreetype.so:${PORTSDIR}/print/freetype2
 
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		pkgconfig
+USES=		gmake pkgconfig
 USE_EFL=	evas librt_hack libtool_hack
 USE_LDCONFIG=	yes
 
 MAKEDIRS=	${WRKSRC}/src/modules/loaders/tiff \
 		${WRKSRC}/src/modules/savers/tiff
 
-NO_STAGE=	yes
 .include "../evas-core/Makefile.inc"
 CONFIGURE_ARGS+=	--enable-image-loader-tiff
 
