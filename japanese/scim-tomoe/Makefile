@@ -7,7 +7,7 @@ PORTREVISION=	8
 CATEGORIES=	japanese
 MASTER_SITES=	SF/tomoe/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ume@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM IMEngine module using Tomoe
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
