@@ -14,7 +14,7 @@ COMMENT=	Additional loader for Evas (ps)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	spectre:${PORTSDIR}/print/libspectre
+LIB_DEPENDS=	libspectre.so:${PORTSDIR}/print/libspectre
 
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
@@ -25,11 +25,10 @@ USE_LDCONFIG=	yes
 
 BINSRC=		${WRKSRC}/src/bin/${PORTNAME}
 
-NO_STAGE=	yes
 do-build:
-	${MAKE} -C ${BINSRC}
+	${MAKE} ${MAKE_ARGS} -C ${BINSRC}
 
 do-install:
-	${MAKE} -C ${BINSRC} install
+	${MAKE} ${MAKE_ARGS} -C ${BINSRC} install
 
 .include <bsd.port.mk>
