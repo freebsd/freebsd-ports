@@ -14,7 +14,7 @@ COMMENT=	Additional loader for Evas (pdf)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	poppler:${PORTSDIR}/graphics/poppler
+LIB_DEPENDS=	libpoppler.so:${PORTSDIR}/graphics/poppler
 
 USES=		pkgconfig
 DIST_SUBDIR=	e17
@@ -25,11 +25,10 @@ USE_LDCONFIG=	yes
 
 BINSRC=		${WRKSRC}/src/bin/${PORTNAME}
 
-NO_STAGE=	yes
 do-build:
-	${MAKE} -C ${BINSRC}
+	${MAKE} ${MAKE_ARGS} -C ${BINSRC}
 
 do-install:
-	${MAKE} -C ${BINSRC} install
+	${MAKE} ${MAKE_ARGS} -C ${BINSRC} install
 
 .include <bsd.port.mk>
