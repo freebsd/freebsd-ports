@@ -2,19 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	bomberclone
-PORTVERSION=	0.11.8
-PORTREVISION=	8
+PORTVERSION=	0.11.9
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	http://master.dl.sourceforge.net/project/${PORTNAME}/${PORTNAME}/
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Reimplementation of Atomic Bomber Man
 
 USE_SDL=	image mixer sdl
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--target=""
+CONFIGURE_ARGS=	--target="" --disable-werror
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CXXFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 
