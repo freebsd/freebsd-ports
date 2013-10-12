@@ -14,8 +14,8 @@ COMMENT=	A hardware accelerated canvas API (GIF loader)
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	gif:${PORTSDIR}/graphics/giflib \
-		freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
+		libfreetype.so:${PORTSDIR}/print/freetype2
 
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
@@ -26,7 +26,6 @@ USE_LDCONFIG=	yes
 
 MAKEDIRS=	${WRKSRC}/src/modules/loaders/gif
 
-NO_STAGE=	yes
 .include "../evas-core/Makefile.inc"
 CONFIGURE_ARGS+=	--enable-image-loader-gif
 
