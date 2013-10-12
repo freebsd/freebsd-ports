@@ -14,8 +14,8 @@ COMMENT=	A very artistic X window manager
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
-		xcb-keysyms:${PORTSDIR}/x11/xcb-util-keysyms
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms
 
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
@@ -35,7 +35,6 @@ CONFIGURE_ARGS=	--with-profile=MEDIUM_PC \
 OPTIONS_DEFINE=	ILLUME
 ILLUME_DESC=	Enable illume module
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MILLUME}
@@ -61,9 +60,6 @@ post-patch:
 		${WRKSRC}/src/bin/Makefile.in
 	@${REINPLACE_CMD} -e 's|@E_FM_LIBS@|@E_FM_LIBS@ -lehal -leukit|' \
 		${WRKSRC}/src/bin/e_fm/Makefile.in
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not install on sparc64: signal 10
