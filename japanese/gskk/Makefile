@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.ohnolab.org/~kimoto/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.t
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	ume@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SKK's dictionary for Canna
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/cannaserver:${PORTSDIR}/japanese/canna-server
