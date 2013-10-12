@@ -12,14 +12,6 @@ COMMENT=	Dynamically change some settings of an xterm
 
 GNU_CONFIGURE=	yes
 MAKE_ARGS+=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}"
-USE_GMAKE=	yes
-MAN1=		xtermset.1
-MAN5=		terms.5
-
-MANCOMPRESSED=	no
-
-NO_STAGE=	yes
-post-install:
-	${STRIP_CMD} ${PREFIX}/bin/xtermset
+USES=		gmake
 
 .include <bsd.port.mk>
