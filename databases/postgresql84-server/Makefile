@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=	postgresql
-DISTVERSION?=	8.4.17
-PORTREVISION?=	1
+DISTVERSION?=	8.4.18
+PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -13,10 +13,10 @@ DISTV=	${DISTVERSION:R}
 MAINTAINER?=	pgsql@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
 
-CONFLICTS?=	${PORTNAME}[^${PORTVERSION:R:R}].*-client.* \
-		${PORTNAME}${COMPONENT}[^${PORTVERSION:R:R}].* \
-		${PORTNAME}8.[^${PORTVERSION:R:E}].*-client.* \
-		${PORTNAME}${COMPONENT}8.[^${PORTVERSION:R:E}].*
+CONFLICTS?=	${PORTNAME}[^${PORTVERSION:R:R}]?-client* \
+		${PORTNAME}${COMPONENT}-[^${PORTVERSION:R:R}].* \
+		${PORTNAME}8[^${PORTVERSION:R:E}]-client* \
+		${PORTNAME}${COMPONENT}-8.[^${PORTVERSION:R:E}].*
 
 WRKSRC=		${WRKDIR}/postgresql-${DISTVERSION}
 DIST_SUBDIR=	postgresql
