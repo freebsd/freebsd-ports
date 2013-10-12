@@ -7,6 +7,7 @@ CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ume
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	A GTK based system monitor
@@ -28,7 +29,7 @@ GKRELLM_CLIENT_DESC=	GKrellM Client
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGKRELLM_CLIENT}
-CONFLICTS=	gkrellm-1.*
+CONFLICTS=	gkrellm-[^2].* gkrellm[^2]-[^2].*
 USE_GNOME=	gtk20
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext

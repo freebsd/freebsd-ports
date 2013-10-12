@@ -12,14 +12,11 @@ MASTER_SITE_SUBDIR=	ume
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	A GTK based system monitor
 
-CONFLICTS=	gkrellm-2.*
+CONFLICTS=	gkrellm-[^1].* gkrellm[^1]-[^1].*
 
-NO_LATEST_LINK=	yes
-
+USES=		gettext gmake
 USE_BZIP2=	yes
 USE_GNOME=	imlib
-USES=		gettext
-USE_GMAKE=	yes
 
 INCLUDES=	gkrellm.h gkrellm_public_proto.h
 MAN1=		gkrellm.1
