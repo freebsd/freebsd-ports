@@ -14,21 +14,19 @@ COMMENT=	A hardware accelerated canvas API (JPEG loader)
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libfreetype.so:${PORTSDIR}/print/freetype2
 
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		pkgconfig
+USES=		gmake pkgconfig
 USE_EFL=	evas librt_hack libtool_hack
 USE_LDCONFIG=	yes
 
 MAKEDIRS=	${WRKSRC}/src/modules/loaders/jpeg \
 		${WRKSRC}/src/modules/savers/jpeg
 
-NO_STAGE=	yes
 .include "../evas-core/Makefile.inc"
 CONFIGURE_ARGS+=	--enable-image-loader-jpeg
 
