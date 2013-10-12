@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.282 2013/07/14 16:08:12 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.285 2013/10/12 16:41:24 marcus Exp $
 #
 
 use strict;
@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 14;
-my $micro = 4;
+my $micro = 5;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -353,7 +353,8 @@ if ($committer) {
 		} elsif (/^\./) {
 			&perror("WARN", $fullname, -1, "dotfiles are not preferred. ".
 					"If this file is a dotfile to be installed as an example, ".
-					"consider importing it as \"dot$_\".");
+					"consider importing it as \"dot$_\".") unless
+					(-d && $_ eq '.svn');
 		} elsif (/[^-.a-zA-Z0-9_\+]/) {
 			&perror("WARN", $fullname, -1, "only use characters ".
 					"[-_.a-zA-Z0-9+] for patch or script names.");
@@ -1157,7 +1158,7 @@ sub check_depends_syntax {
 					"USES[+]=gettext.");
 			}
 
-			# check USES=gmake
+			# check USE_GMAKE
 			if ($m{'dep'} =~ /^(gmake|\${GMAKE})$/) {
 				&perror("WARN", $file, -1, "dependency to $1 ".
 					"listed in $j. consider using ".
@@ -1358,7 +1359,7 @@ sub checkmakefile {
 		#&perror("FATAL", $file, 3, "do not add extra ".
 		#		"empty comments after header.");
 		}
-	# special case for $rcsidsrt\n$MCom: portlint/portlint.pl,v 1.282 2013/07/14 16:08:12 marcus Exp $
+	# special case for $rcsidsrt\n$MCom: portlint/portlint.pl,v 1.285 2013/10/12 16:41:24 marcus Exp $
 	} elsif ($lines[1] =~ /^# \$$rcsidstr[:\$]/ and $lines[2] =~ /^#\s+\$MCom[:\$]/ and $lines[3] =~ /^$/) {
 		# DO NOTHING
 	} elsif ($lines[1] !~ /^# \$$rcsidstr[:\$]/ or $lines[2] !~ /^$/) {
