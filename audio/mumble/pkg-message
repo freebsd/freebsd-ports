@@ -1,7 +1,0 @@
-On FreeBSD versions <8.0 you need to load sem.ko into your kernel
-otherwise mumble won't start and you will get an error message about an
-invalid system call.
-
-To make this persistent over a reboot add
-	sem_load="YES"
-to your /boot/loader.conf
