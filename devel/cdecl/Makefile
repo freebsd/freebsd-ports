@@ -14,21 +14,18 @@ USE_CSTD=	c89
 
 USES=		readline
 ALL_TARGET=	${PORTNAME}
-MAN1=		cdecl.1
-MLINKS=		cdecl.1 c++decl.1
 PORTDOCS=	testset testset++
-PLIST_FILES=	bin/cdecl bin/c++decl
-
+PLIST_FILES=	bin/cdecl bin/c++decl man/man1/cdecl.1.gz man/man1/c++decl.1.gz
+MAKE_ENV+=	STAGEDIR=$(STAGEDIR)
 
 CONFLICTS=	cutils-[0-9]*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/testset* ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/testset* ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

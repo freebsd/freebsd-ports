@@ -24,12 +24,13 @@
  
  install: cdecl
 -	$(INSTALL) cdecl $(BINDIR)
-+	${BSD_INSTALL_PROGRAM} cdecl $(BINDIR)
- 	ln $(BINDIR)/cdecl $(BINDIR)/c++decl
++	${BSD_INSTALL_PROGRAM} cdecl $(STAGEDIR)$(BINDIR)
+-	ln $(BINDIR)/cdecl $(BINDIR)/c++decl
++	ln -s $(BINDIR)/cdecl $(STAGEDIR)$(BINDIR)/c++decl
 -	$(INSTALL_DATA) cdecl.1 $(MANDIR)
 -	$(INSTALL_DATA) c++decl.1 $(MANDIR)
-+	${BSD_INSTALL_MAN} cdecl.1 $(MANDIR)
-+	${BSD_INSTALL_MAN} c++decl.1 $(MANDIR)
++	${BSD_INSTALL_MAN} cdecl.1 $(STAGEDIR)$(MANDIR)
++	ln -s $(MANDIR)/cdecl.1 $(STAGEDIR)$(MANDIR)/c++decl.1
  
  clean:
  	rm -f cdgram.c cdlex.c cdecl y.output c++decl
