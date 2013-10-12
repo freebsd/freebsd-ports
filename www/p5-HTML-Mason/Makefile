@@ -6,7 +6,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dsh@vlink.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance, dynamic web site authoring system
 
 LICENSE=	ART10 GPLv1
