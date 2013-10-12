@@ -10,6 +10,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Perform consistency checks on DNS zones
 
+DEPRECATED=     Does not work with Ruby 1.9
+EXPIRATION_DATE=        2013-10-15
+
 .if defined(WITH_X11)
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
 .endif
