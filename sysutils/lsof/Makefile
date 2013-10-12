@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lsof
-DISTVERSION=	4.88D
+DISTVERSION=	4.88E
 PORTEPOCH=	8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/ \
@@ -37,7 +37,9 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/${SRCBALL_NAME}
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 
-NO_STAGE=	yes
+USES=		shebangfix
+SHEBANG_FILES=	scripts/sort_res.perl5
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "arm"
@@ -47,8 +49,8 @@ BROKEN=		Does not compile on arm
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-n freebsd
 CONFIGURE_ENV=	LSOF_CC="${CC}" FREEBSD_SYS="${SRC_BASE}/sys"
-PLIST_FILES=	sbin/lsof
-MAN8=		lsof.8
+PLIST_FILES=	man/man8/lsof.8.gz \
+		sbin/lsof
 
 .if !exists(${SRC_BASE}/sys/kern/kern_lockf.c)
 IGNORE=		requires kernel sources
@@ -70,14 +72,14 @@ post-extract:
 .endif
 
 do-install:
-	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -m 2755 -g kmem ${WRKSRC}/lsof ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/lsof.8 ${MAN8PREFIX}/man/man8/lsof.8
-	@${MKDIR} ${PREFIX}/share/lsof
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/share/lsof
-	@${CHMOD} 0444 ${PREFIX}/share/lsof/00*
+	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -m 2755 -g kmem ${WRKSRC}/lsof ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/lsof.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/lsof.8
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/lsof
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${STAGEDIR}${PREFIX}/share/lsof
+	@${CHMOD} 0444 ${STAGEDIR}${PREFIX}/share/lsof/00*
 
 post-install:
-	cd ${PREFIX} && \
+	cd ${STAGEDIR}${PREFIX} && \
 	    ${FIND} -s share/lsof -type f -o -type l >>${TMPPLIST} ;\
 	    ${FIND} -d share/lsof -type d \
 	        | ${SED} -e 's/^/@dirrm /g' >>${TMPPLIST}
