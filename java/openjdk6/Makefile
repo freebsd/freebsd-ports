@@ -3,7 +3,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b28
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,} \
 		http://download.java.net/openjdk/jtreg/promoted/4.1/b05/:jtreg \
@@ -39,7 +39,9 @@ SOUND_DESC=	Enable sound support
 TZUPDATE_DESC=	Update the time zone data
 
 .if !defined(BUILD_JRE)
-OPTIONS_DEFINE+=DEBUG FASTDEBUG TEST
+OPTIONS_DEFINE+=TEST
+OPTIONS_RADIO=	Debugging
+OPTIONS_RADIO_Debugging=	DEBUG FASTDEBUG
 DEBUG_DESC=	Enable legacy debugging support
 FASTDEBUG_DESC=	Include fastdebug build
 TEST_DESC=	Add support for running regression test
@@ -48,7 +50,7 @@ TEST_DESC=	Add support for running regression test
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGINSTALL=	${WRKDIR}/pkg-install
 
-USES=		gmake iconv motif
+USES=		compiler gmake iconv motif
 
 .include <bsd.port.options.mk>
 .include "${.CURDIR}/../openjdk6/Makefile.icedtea"
@@ -117,9 +119,6 @@ MAKE_ENV=	LANG=C LC_ALL=C OS= \
 		MILESTONE=fcs \
 		JDK_UPDATE_VERSION=${UPDATE_VERSION}
 
-# XXX Turn off -Werror from HotSpot.
-MAKE_ENV+=	COMPILER_WARNINGS_FATAL=false
-
 # XXX Turn off parallel build by default.
 _MAKE_JOBS=	#
 MAKE_ENV+=	ALT_PARALLEL_COMPILE_JOBS=${MAKE_JOBS_NUMBER} \
@@ -130,7 +129,6 @@ ALL_TARGET=	debug_build
 OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}-debug
 .else
 OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}
-MAKE_ENV+=	WARNINGS_ARE_ERRORS=-w
 .endif
 
 # disable FASTDEBUG_BUILD by default to improve compile time.
@@ -190,6 +188,13 @@ ICONV_LIBS=
 .else
 ICONV_INCLUDE=	-I${LOCALBASE}/include
 ICONV_LIBS=	-L${LOCALBASE}/lib ${ICONV_LIB}
+.endif
+
+.if defined(COMPILER_TYPE) && ${COMPILER_TYPE} == "clang"
+MAKE_ENV+=	COMPILER_WARNINGS_FATAL=false
+.if empty(PORT_OPTIONS:MDEBUG) && empty(PORT_OPTIONS:MFASTDEBUG)
+MAKE_ENV+=	WARNINGS_ARE_ERRORS=-w
+.endif
 .endif
 
 post-extract:
@@ -280,7 +285,7 @@ do-install:
 .else
 	@cd ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image && \
 	    ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/openjdk6 \
-	    "! ( -type d -name bin -prune )"
+	    "-not ( -type d -name bin -prune )"
 	@cd ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image && \
 	    ${COPYTREE_BIN} "bin jre/bin" ${STAGEDIR}${PREFIX}/openjdk6
 	@cd ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image && \
