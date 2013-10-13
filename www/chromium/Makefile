@@ -29,8 +29,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		ninja:${PORTSDIR}/devel/ninja \
 		v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat
 
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
-		libcairo.so:${PORTSDIR}/graphics/cairo \
+LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libasound.so:${PORTSDIR}/audio/alsa-lib \
@@ -143,8 +142,11 @@ GYP_DEFINES+=	clang=1
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 .endif
 
-.if ${OSVERSION} >= 1000052
+.if ${OSVERSION} >= 1000052 && !exists(${LOCALBASE}/include/execinfo.h)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-fixup-execinfo
+.endif
+.if ${OSVERSION} < 1000052
+LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 .endif
 
 .if ${PORT_OPTIONS:MTEST}
