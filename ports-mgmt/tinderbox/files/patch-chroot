@@ -363,6 +363,7 @@ diff -u -r1.176 tc_command.sh
  }
  
  addPortToBuild () {
+ 
 ? .fslckout
 ? .fslckout-mjFA3F63973
 Index: lib/tc_command.sh
@@ -371,40 +372,34 @@ RCS file: /space/cvs/marcuscom-cvs/portstools/tinderbox/lib/tc_command.sh,v
 retrieving revision 1.177
 diff -u -r1.177 tc_command.sh
 --- lib/tc_command.sh	8 Oct 2013 16:06:48 -0000	1.177
-+++ lib/tc_command.sh	12 Oct 2013 11:27:28 -0000
-@@ -1973,6 +1973,8 @@
- 	# Need to do this in a subshell so as to only hide the host
- 	# environment during makefile creation
- 	(
-+	    # Everything is done in chroot, so SRCBASE is relative to /
-+	    export SRCBASE=/usr/src
- 	    export PORTBUILD_ARGS="$(echo ${pbargs})"
- 	    buildenvNoHost ${build}
- 	    buildenv ${jail} ${portstree} ${build}
-@@ -2102,6 +2104,8 @@
-     if [ -n "${SRCBASE}" ]; then
- 	save_SRCBASE=${SRCBASE}
-     fi
-+    # Everything is done in chroot, so SRCBASE is relative to /
-+    export SRCBASE=/usr/src
++++ lib/tc_command.sh	13 Oct 2013 12:54:19 -0000
+@@ -1418,6 +1418,10 @@
+     # Finalize environment
+     cp /etc/resolv.conf ${BUILD_DIR}/etc || touch ${BUILD_DIR}/etc/resolv.conf
  
-     buildenv ${jail} ${portsTree} ${build}
-     buildenvNoHost ${build}
++    # This works around the SRCBASE issue... this needs fixing properly
++    mkdir -p ${BUILD_DIR}/${SRCBASE%/*}
++    ln -s ${BUILD_DIR}/usr/src ${BUILD_DIR}/${SRCBASE}
++
+     return 0
+ }
+ 
 Index: lib/tinderlib.sh
 ===================================================================
 RCS file: /space/cvs/marcuscom-cvs/portstools/tinderbox/lib/tinderlib.sh,v
 retrieving revision 1.85
 diff -u -r1.85 tinderlib.sh
 --- lib/tinderlib.sh	7 Oct 2013 16:36:54 -0000	1.85
-+++ lib/tinderlib.sh	12 Oct 2013 11:27:29 -0000
-@@ -506,7 +506,9 @@
++++ lib/tinderlib.sh	13 Oct 2013 12:54:19 -0000
+@@ -506,7 +506,10 @@
      save_IFS=${IFS}
      IFS='
  '
 -    # Do not set SRCBASE here-- we use chroots nowadays so /usr/src is there
++
 +    # Allow SRCBASE to be overridden
 +    eval "export SRCBASE=${SRCBASE:-`realpath $(tinderLoc jail ${jail})/src`}" \
-+	>/dev/null 2>&1
++        >/dev/null 2>&1
  
      # Set ARCH (needed for cross-building)
      export ARCH=$(${tc} getJailArch -j ${jail})
