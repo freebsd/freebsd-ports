@@ -48,8 +48,10 @@ BDB_CONFIGURE_ON=	--with-dblib=berkeley \
 			--with-bdb-libdir=${BDB_LIB_DIR} \
 			--with-bdb-incdir=${BDB_INCLUDE_DIR} \
 			--with-bdb=${BDB_LIB_NAME}
+BDB_USE=		BDB=yes
 BDB_CONFIGURE_OFF=	--with-dblib=ndbm
 OPENLDAP_DESC=		Use OpenLDAP
+OPENLDAP_USE=		OPENLDAP=yes
 OPENLDAP_CONFIGURE_ON=	--with-ldap=${LOCALBASE}
 HTTPFORM_DESC=		Enable HTTP form authentication
 HTTPFORM_CONFIGURE_ENABLE=httpform
@@ -57,7 +59,6 @@ HTTPFORM_CONFIGURE_ENABLE=httpform
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MBDB}
-USE_BDB=	yes
 INVALID_BDB_VER=2
 .endif
 
@@ -65,7 +66,6 @@ INVALID_BDB_VER=2
 .if defined(WITH_OPENLDAP_VER)
 WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 .endif
-USE_OPENLDAP=	yes
 .endif
 
 .if !defined(WITHOUT_GSSAPI) && defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.so)

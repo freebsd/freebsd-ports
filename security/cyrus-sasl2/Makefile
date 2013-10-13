@@ -54,18 +54,23 @@ KEEP_DB_OPEN_DESC=	Keep handle to Berkeley DB open
 KEEP_DB_OPEN_CONFIGURE_ENABLE=keep-db-open
 OBSOLETE_CRAM_ATTR_DESC=cmusaslsecretCRAM-MD5 property
 OBSOLETE_CRAM_ATTR_CONFIGURE_OFF=--enable-obsolete_cram_attr=no
+BDB_USE=		BDB=yes
 BDB_CONFIGURE_ON=	--with-dblib=berkeley \
 			--with-bdb-libdir=${BDB_LIB_DIR} \
 			--with-bdb-incdir=${BDB_INCLUDE_DIR} \
 			--with-bdb=${BDB_LIB_NAME}
 BDB_CONFIGURE_OFF=	--with-dblib=ndbm
+MYSQL_USE=		MYSQL=yes
 MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}
 MYSQL_CONFIGURE_OFF=	--without-mysql
+PGSQL_USE=		PGSQL=yes
 PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}
 PGSQL_CONFIGURE_OFF=	--without-pgsql
 SQLITE2_DESC=		SQLite 2 database
+SQLITE2_USE=		SQLITE=2
 SQLITE2_CONFIGURE_ON=	--with-sqlite=${LOCALBASE}
 SQLITE2_CONFIGURE_OFF=	--without-sqlite
+SQLITE3_USE=		SQLITE=3
 SQLITE3_CONFIGURE_ON=	--with-sqlite3=${LOCALBASE}
 SQLITE3_CONFIGURE_OFF=	--without-sqlite3
 CRAM_DESC=		CRAM-MD5 authentication
@@ -86,27 +91,10 @@ SCRAM_CONFIGURE_ENABLE=	scram
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MBDB}
-USE_BDB=	yes
 INVALID_BDB_VER=2
 SASLDB_NAME=	sasldb2
 .else
 SASLDB_NAME=	sasldb2.db
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE2}
-USE_SQLITE=	2
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE3}
-USE_SQLITE=	3
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL} || ${PORT_OPTIONS:MPGSQL} || \
