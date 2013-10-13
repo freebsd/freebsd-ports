@@ -10,6 +10,6 @@ the base system.  Please be aware of this when upgrading your
 OpenSSH port, and if truly necessary, re-enable remote root login
 by readjusting this option in your sshd_config.
 
-Users are encouraged to create single-purpose users with ssh keys
-and very narrowly defined sudo privileges instead of using root
-for automated tasks.
+Users are encouraged to create single-purpose users with ssh keys, disable
+Password auth with 'PasswordAuthentication no' and define very narrow sudo
+privileges instead of using root for automated tasks.

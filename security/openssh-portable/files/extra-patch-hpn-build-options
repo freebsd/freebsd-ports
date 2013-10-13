@@ -1,0 +1,142 @@
+--- sshconnect2.c.orig	2013-10-11 08:52:17.836129741 -0500
++++ sshconnect2.c	2013-10-11 08:53:05.776132295 -0500
+@@ -451,6 +451,7 @@ ssh_userauth2(const char *local_user, co
+                 }
+         }
+ 
++#ifdef AES_THREADED
+         /* if we are using aes-ctr there can be issues in either a fork or sandbox
+          * so the initial aes-ctr is defined to point to the original single process
+          * evp. After authentication we'll be past the fork and the sandboxed privsep
+@@ -466,6 +467,7 @@ ssh_userauth2(const char *local_user, co
+                 cipher_reset_multithreaded();
+                 packet_request_rekeying();
+         }
++#endif
+ 
+ 	debug("Authentication succeeded (%s).", authctxt.method->name);
+ }
+--- sshd.c.orig	2013-10-11 08:52:17.848126748 -0500
++++ sshd.c	2013-10-11 08:53:25.929132033 -0500
+@@ -2186,6 +2186,7 @@ main(int ac, char **av)
+ 
+ 	/* Start session. */
+ 
++#ifdef AES_THREADED
+ 	/* if we are using aes-ctr there can be issues in either a fork or sandbox
+          * so the initial aes-ctr is defined to point ot the original single process
+ 	 * evp. After authentication we'll be past the fork and the sandboxed privsep
+@@ -2201,6 +2202,7 @@ main(int ac, char **av)
+ 		cipher_reset_multithreaded();
+ 		packet_request_rekeying();
+ 	}
++#endif
+ 
+ 	do_authenticated(authctxt);
+ 
+--- readconf.c.orig	2013-10-11 09:24:10.812126846 -0500
++++ readconf.c	2013-10-11 09:19:12.295135966 -0500
+@@ -251,12 +251,16 @@ static struct {
+ 	{ "kexalgorithms", oKexAlgorithms },
+ 	{ "ipqos", oIPQoS },
+ 	{ "requesttty", oRequestTTY },
++#ifdef NONECIPHER
+ 	{ "noneenabled", oNoneEnabled },
+         { "noneswitch", oNoneSwitch },
++#endif
++#ifdef HPN
+ 	{ "tcprcvbufpoll", oTcpRcvBufPoll },
+ 	{ "tcprcvbuf", oTcpRcvBuf },
+ 	{ "hpndisabled", oHPNDisabled },
+ 	{ "hpnbuffersize", oHPNBufferSize },
++#endif
+ 	{ "ignoreunknown", oIgnoreUnknown },
+ 
+ 	{ NULL, oBadOption }
+@@ -1417,12 +1421,20 @@ fill_default_options(Options * options)
+ 		options->server_alive_interval = 0;
+ 	if (options->server_alive_count_max == -1)
+ 		options->server_alive_count_max = 3;
++#ifdef NONECIPHER
+ 	if (options->none_switch == -1)
++#endif
+ 		options->none_switch = 0;
++#ifdef NONECIPHER
+ 	if (options->none_enabled == -1)
++#endif
+ 		options->none_enabled = 0;
++#ifdef HPN
+ 	if (options->hpn_disabled == -1)
+ 	        options->hpn_disabled = 0;
++#else
++	options->hpn_disabled = 1;
++#endif
+ 	if (options->hpn_buffer_size > -1)
+ 	{
+ 	  /* if a user tries to set the size to 0 set it to 1KB */
+--- servconf.c.orig	2013-10-11 09:24:44.734138483 -0500
++++ servconf.c	2013-10-11 09:25:50.777137928 -0500
+@@ -305,10 +305,16 @@ fill_default_server_options(ServerOption
+ 		options->permit_tun = SSH_TUNMODE_NO;
+ 	if (options->zero_knowledge_password_authentication == -1)
+ 		options->zero_knowledge_password_authentication = 0;
++#ifdef NONECIPHER
+ 	if (options->none_enabled == -1) 
++#endif
+ 		options->none_enabled = 0;
++#ifdef HPN
+ 	if (options->hpn_disabled == -1) 
+ 		options->hpn_disabled = 0;
++#else
++	options->hpn_disabled = 1;
++#endif
+ 
+ 	if (options->hpn_buffer_size == -1) {
+ 		/* option not explicitly set. Now we have to figure out */
+--- configure.ac.orig	2013-10-12 17:17:41.525139481 -0500
++++ configure.ac	2013-10-12 17:18:35.610130039 -0500
+@@ -3968,6 +3968,34 @@
+     ]
+ ) # maildir
+ 
++#check whether user wants HPN support
++HPN_MSG="no"
++AC_ARG_WITH(hpn,
++	[  --with-hpn             Enable HPN support],
++	[ if test "x$withval" != "xno" ; then
++		AC_DEFINE(HPN,1,[Define if you want HPN support.])
++		HPN_MSG="yes"
++	fi ]
++)
++#check whether user wants NONECIPHER support
++NONECIPHER_MSG="no"
++AC_ARG_WITH(nonecipher,
++	[  --with-nonecipher             Enable NONECIPHER support],
++	[ if test "x$withval" != "xno" ; then
++		AC_DEFINE(NONECIPHER,1,[Define if you want NONECIPHER support.])
++		NONECIPHER_MSG="yes"
++	fi ]
++)
++#check whether user wants AES_THREADED support
++AES_THREADED_MSG="no"
++AC_ARG_WITH(aes-threaded,
++	[  --with-aes-threaded             Enable AES_THREADED support],
++	[ if test "x$withval" != "xno" ; then
++		AC_DEFINE(AES_THREADED,1,[Define if you want AES_THREADED support.])
++		AES_THREADED_MSG="yes"
++	fi ]
++)
++
+ if test ! -z "$cross_compiling" && test "x$cross_compiling" = "xyes"; then
+ 	AC_MSG_WARN([cross compiling: Disabling /dev/ptmx test])
+ 	disable_ptmx_check=yes
+@@ -4636,6 +4664,9 @@
+ echo "                  BSD Auth support: $BSD_AUTH_MSG"
+ echo "              Random number source: $RAND_MSG"
+ echo "             Privsep sandbox style: $SANDBOX_STYLE"
++echo "                       HPN support: $HPN_MSG"
++echo "                NONECIPHER support: $NONECIPHER_MSG"
++echo "              AES_THREADED support: $AES_THREADED_MSG"
+ 
+ echo ""
+ 

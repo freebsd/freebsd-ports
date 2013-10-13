@@ -41,8 +41,8 @@
 +		    LOGIN_SETENV|LOGIN_SETPATH);
 +		copy_environment(environ, &env, &envsize);
 +		for (var = environ; *var != NULL; ++var)
-+			xfree(*var);
-+		xfree(environ);
++			free(*var);
++		free(environ);
 +		environ = senv;
  #else /* HAVE_LOGIN_CAP */
  # ifndef HAVE_CYGWIN
