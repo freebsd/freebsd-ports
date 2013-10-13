@@ -40,9 +40,8 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 BUILD_WRKSRC=	${WRKSRC}/tools/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
+EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
 
-NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -E -e 's|^TARGET[[:blank:]]*=[[:blank:]]*([a-z]+)|TARGET=\1-qt4|g' \
 		${BUILD_WRKSRC}/${PORTNAME}.pro ${BUILD_WRKSRC}/${PORTNAME}/${PORTNAME}.pro \
@@ -55,6 +54,6 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA} ${BUILD_WRKSRC}/linguist/images/icons/linguist-128-32.png \
-		${PREFIX}/share/pixmaps/linguist-qt4.png
+		${STAGEDIR}${PREFIX}/share/pixmaps/linguist-qt4.png
 
 .include <bsd.port.mk>

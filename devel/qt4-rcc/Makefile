@@ -9,6 +9,8 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt resource compiler
 
+BROKEN_arm=	does not compile
+
 USE_QT4=	qmake_build
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
@@ -35,9 +37,8 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 BUILD_WRKSRC=	${WRKSRC}/src/tools/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
+EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
 
-NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's|target.path.*|target.path=${PREFIX}/bin|g' \
 		${BUILD_WRKSRC}/${PORTNAME}.pro
@@ -47,10 +48,4 @@ pre-configure:
 pre-build:
 	cd ${BUILD_WRKSRC}/../bootstrap && ${MAKE}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "arm"
-BROKEN=		does not configure on arm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

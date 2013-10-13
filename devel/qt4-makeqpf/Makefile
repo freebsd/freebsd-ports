@@ -9,6 +9,8 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt qtopia font creator
 
+BROKEN_sparc64=	does not compile
+
 USE_QT4=	qmake_build moc_build rcc_build uic_build corelib gui
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
@@ -35,18 +37,7 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 BUILD_WRKSRC=	${WRKSRC}/tools/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 802502
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch__tools__makeqpf__qpf2.cpp
-.endif
-
-.if ${ARCH} == "sparc64"
-BROKEN=		does not compile on sparc64
-.endif
+EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|^TARGET[[:blank:]]*=[[:blank:]]*|TARGET=${PORTNAME}-qt4|g' \
@@ -57,4 +48,4 @@ pre-configure:
 	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/bin/uic
 	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/bin/rcc
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -3078,7 +3078,6 @@
 %%DOCSDIR%%/html/images/qvbox-m.png
 %%DOCSDIR%%/html/images/qvboxlayout-with-5-children.png
 %%DOCSDIR%%/html/images/qwebview-diagram.png
-%%DOCSDIR%%/html/images/qwebview-url.png
 %%DOCSDIR%%/html/images/qwindowsstyle.png
 %%DOCSDIR%%/html/images/qwindowsxpstyle.png
 %%DOCSDIR%%/html/images/qwsserver_keyboardfilter.png
@@ -7364,7 +7363,6 @@
 %%DOCSDIR%%/html/stylesheet.html
 %%DOCSDIR%%/html/supported-platforms.html
 %%DOCSDIR%%/html/symbian-platform-security-requirements.html
-%%DOCSDIR%%/html/symbian-support.html
 %%DOCSDIR%%/html/symbian-with-qt-introduction.html
 %%DOCSDIR%%/html/symbianexceptionsafety.html
 %%DOCSDIR%%/html/technology-apis.html
@@ -8148,7 +8146,6 @@
 %%DOCSDIR%%/qch/qt.qch
 @dirrm %%DOCSDIR%%/qch
 @dirrm %%DOCSDIR%%/html/style
-@exec mkdir -p %D/%%DOCSDIR%%/html/scripts
 @dirrm %%DOCSDIR%%/html/scripts
 @dirrm %%DOCSDIR%%/html/images/used-in-examples/widgets/tooltips/images
 @dirrm %%DOCSDIR%%/html/images/used-in-examples/widgets/tooltips

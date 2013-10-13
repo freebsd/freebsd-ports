@@ -39,12 +39,13 @@
      echo "Creating qmake. Please wait..."
  
      OLD_QCONFIG_H=
-@@ -5831,14 +5826,6 @@
+@@ -5995,15 +5995,6 @@
+        QMakeVar add QMAKE_CXXFLAGS -fpermissive
          X11TESTS_FLAGS="$X11TESTS_FLAGS -fpermissive"
      fi
- 
+-
 -    # Check we actually have X11 :-)
--    "$unixtests/compile.test" "$XQMAKESPEC" "$QMAKE_CONFIG" $OPT_VERBOSE "$relpath" "$outpath" config.tests/x11/xlib "XLib" $L_FLAGS $I_FLAGS $l_FLAGS $X11TESTS_FLAGS
+-    compileTest x11/xlib "XLib" $X11TESTS_FLAGS
 -    if [ $? != "0" ]; then
 -        echo "Basic XLib functionality test failed!"
 -        echo " You might need to modify the include and library search paths by editing"

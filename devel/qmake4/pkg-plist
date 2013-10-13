@@ -9,6 +9,10 @@ share/qt4/mkspecs/aix-xlc/qmake.conf
 share/qt4/mkspecs/aix-xlc/qplatformdefs.h
 share/qt4/mkspecs/blackberry-armv7le-qcc/qmake.conf
 share/qt4/mkspecs/blackberry-armv7le-qcc/qplatformdefs.h
+share/qt4/mkspecs/blackberry-playbook-armv7le-qcc/qmake.conf
+share/qt4/mkspecs/blackberry-playbook-armv7le-qcc/qplatformdefs.h
+share/qt4/mkspecs/blackberry-playbook-x86-qcc/qmake.conf
+share/qt4/mkspecs/blackberry-playbook-x86-qcc/qplatformdefs.h
 share/qt4/mkspecs/blackberry-x86-qcc/qmake.conf
 share/qt4/mkspecs/blackberry-x86-qcc/qplatformdefs.h
 share/qt4/mkspecs/common/aix/qplatformdefs.h
@@ -201,6 +205,8 @@ share/qt4/mkspecs/features/win32/windows.prf
 share/qt4/mkspecs/features/yacc.prf
 share/qt4/mkspecs/freebsd-clang/qmake.conf
 share/qt4/mkspecs/freebsd-clang/qplatformdefs.h
+share/qt4/mkspecs/freebsd-clang++33/qmake.conf
+share/qt4/mkspecs/freebsd-clang++33/qplatformdefs.h
 share/qt4/mkspecs/freebsd-g++/qmake.conf
 share/qt4/mkspecs/freebsd-g++/qplatformdefs.h
 share/qt4/mkspecs/freebsd-g++42/qmake.conf
@@ -213,6 +219,8 @@ share/qt4/mkspecs/freebsd-g++47/qmake.conf
 share/qt4/mkspecs/freebsd-g++47/qplatformdefs.h
 share/qt4/mkspecs/freebsd-g++48/qmake.conf
 share/qt4/mkspecs/freebsd-g++48/qplatformdefs.h
+share/qt4/mkspecs/freebsd-g++49/qmake.conf
+share/qt4/mkspecs/freebsd-g++49/qplatformdefs.h
 share/qt4/mkspecs/freebsd-icc/qmake.conf
 share/qt4/mkspecs/freebsd-icc/qplatformdefs.h
 share/qt4/mkspecs/hpux-acc-64/qmake.conf
@@ -708,12 +716,14 @@ share/qt4/mkspecs/wincewm65professional-msvc2008/qplatformdefs.h
 @dirrm share/qt4/mkspecs/hpux-acc-64
 @dirrm share/qt4/mkspecs/hpux-acc
 @dirrm share/qt4/mkspecs/freebsd-icc
+@dirrm share/qt4/mkspecs/freebsd-g++49
 @dirrm share/qt4/mkspecs/freebsd-g++48
 @dirrm share/qt4/mkspecs/freebsd-g++47
 @dirrm share/qt4/mkspecs/freebsd-g++46
 @dirrm share/qt4/mkspecs/freebsd-g++44
 @dirrm share/qt4/mkspecs/freebsd-g++42
 @dirrm share/qt4/mkspecs/freebsd-g++
+@dirrm share/qt4/mkspecs/freebsd-clang++33
 @dirrm share/qt4/mkspecs/freebsd-clang
 @dirrm share/qt4/mkspecs/features/win32
 @dirrm share/qt4/mkspecs/features/unix
@@ -737,6 +747,8 @@ share/qt4/mkspecs/wincewm65professional-msvc2008/qplatformdefs.h
 @dirrm share/qt4/mkspecs/common/aix
 @dirrm share/qt4/mkspecs/common
 @dirrm share/qt4/mkspecs/blackberry-x86-qcc
+@dirrm share/qt4/mkspecs/blackberry-playbook-x86-qcc
+@dirrm share/qt4/mkspecs/blackberry-playbook-armv7le-qcc
 @dirrm share/qt4/mkspecs/blackberry-armv7le-qcc
 @dirrm share/qt4/mkspecs/aix-xlc-64
 @dirrm share/qt4/mkspecs/aix-xlc

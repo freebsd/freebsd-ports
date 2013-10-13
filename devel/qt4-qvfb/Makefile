@@ -42,9 +42,8 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 CONFIGURE_ARGS+=	-I../../include/Qt -I../../include
 
-EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
+EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
 
-NO_STAGE=	yes
 pre-configure:
 	${MKDIR} ${WRKSRC}/mkspecs
 	${REINPLACE_CMD} -e 's|^TARGET.*|TARGET=qvfb-qt4|g' \
@@ -56,6 +55,6 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA} ${BUILD_WRKSRC}/images/logo.png \
-		${PREFIX}/share/pixmaps/qvfb-qt4.png
+		${STAGEDIR}${PREFIX}/share/pixmaps/qvfb-qt4.png
 
 .include <bsd.port.mk>

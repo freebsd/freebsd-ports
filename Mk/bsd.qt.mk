@@ -34,6 +34,10 @@ DISTNAME=	qt-everywhere-opensource-src-${QT4_VERSION}
 DIST_SUBDIR=	KDE
 #CONFLICTS+=	Currently there are no conflicts \o/
 
+
+# Stage support
+DESTDIRNAME=	INSTALL_ROOT
+
 # rene: can go after a while
 CONFLICTS_BUILD=	qt-3.* qt-copy-3.*
 
@@ -106,9 +110,7 @@ QMAKE?=		${QT_PREFIX}/bin/qmake-qt4
 QMAKEFLAGS+=	QMAKE_CC="${CC}" QMAKE_CXX="${CXX}" \
 		QMAKE_LINK="${CXX}" QMAKE_LINK_SHLIB="${CXX}" \
 		QMAKE_LINK_C="${CC}" QMAKE_LINK_C_SHLIB="${CC}" \
-		QMAKE_CFLAGS="${CFLAGS}" QMAKE_CXXFLAGS="${CXXFLAGS}" \
-		QMAKE_CFLAGS_THREAD="${PTHREAD_CFLAGS}" \
-		QMAKE_LFLAGS_THREAD="${PTHREAD_LIBS}"
+		QMAKE_CFLAGS="${CFLAGS}" QMAKE_CXXFLAGS="${CXXFLAGS}"
 
 QTCPPFLAGS?=
 QTCGFLIBS?=
@@ -118,7 +120,7 @@ QTCGFLIBS?=
 #
 # QT4 version
 #
-QT4_VERSION?=		4.8.4
+QT4_VERSION?=		4.8.5
 
 _USE_QT4_ALL=	accessible assistant assistant-adp assistantclient \
 			clucene codecs-cn codecs-jp codecs-kr codecs-tw corelib \

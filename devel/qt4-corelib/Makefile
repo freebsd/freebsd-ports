@@ -3,7 +3,6 @@
 
 PORTNAME=	corelib
 DISTVERSION=	${QT4_VERSION}
-PORTREVISION=	5
 CATEGORIES?=	devel
 PKGNAMEPREFIX=	qt4-
 
@@ -41,9 +40,8 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
+EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../devel/qt4/files/Makefile.options"
 
 .if empty(QT4_OPTIONS:MCUPS)
@@ -79,8 +77,9 @@ post-configure:
 		${WRKSRC}/lib/pkgconfig/QtCore.pc
 
 post-install:
-	${MKDIR} ${PREFIX}/lib/qt4/plugins
-	${TOUCH} ${PREFIX}/lib/qt4/plugins/.keep_me
-	${INSTALL_DATA} ${WRKSRC}/mkspecs/qconfig.pri ${PREFIX}/share/qt4/mkspecs/
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/qt4/plugins
+	${TOUCH} ${STAGEDIR}${PREFIX}/lib/qt4/plugins/.keep_me
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/qt4/mkspecs
+	${INSTALL_DATA} ${WRKSRC}/mkspecs/qconfig.pri ${STAGEDIR}${PREFIX}/share/qt4/mkspecs/
 
 .include <bsd.port.mk>

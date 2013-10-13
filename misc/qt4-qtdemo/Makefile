@@ -9,6 +9,7 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt demonstration and example programs
 
+USES=		pkgconfig
 USE_QT4=	qmake_build moc_build rcc_build uic_build corelib designer \
 		gui network opengl sql svg qtestlib xml imageformats_run dbus \
 		script webkit phonon help assistant_run phonon-gst scripttools \
@@ -40,9 +41,8 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 BUILD_WRKSRC=	${WRKSRC}/demos
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
+EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/app +=/s|"assistant"|"assistant-qt4"|' \
 		${BUILD_WRKSRC}/${PORTNAME}/menumanager.cpp \
@@ -57,10 +57,10 @@ pre-configure:
 	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/bin/rcc
 
 post-build:
-	cd ${WRKSRC}/examples && ${SETENV} MAKEOBJDIR=. ${MAKE}
+	cd ${WRKSRC}/examples && ${SETENV} MAKEOBJDIR=. ${MAKE} ${_MAKE_JOBS}
 
 post-install:
-	cd ${WRKSRC}/examples && ${SETENV} MAKEOBJDIR=. ${MAKE} install
-	${FIND} -E ${PREFIX}/share/examples/qt4/examples/declarative/cppextensions -regex ".*\.(moc|obj|pch|rcc)" -type d | ${XARGS} ${RM} -r
+	cd ${WRKSRC}/examples && ${SETENV} MAKEOBJDIR=. ${MAKE} ${MAKE_ARGS} install
+	${FIND} -E ${STAGEDIR}${PREFIX}/share/examples/qt4/examples/declarative/cppextensions -regex ".*\.(moc|obj|pch|rcc)" -type d | ${XARGS} ${RM} -r
 
 .include <bsd.port.mk>

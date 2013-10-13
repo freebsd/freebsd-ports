@@ -18,13 +18,14 @@ COMMENT=	Qt documentation browser, adp compat version
 USE_QT4=	qmake_build moc_build rcc_build uic_build corelib \
 		gui network xml doc dbus
 
+# stage support
+DESTDIRNAME=	INSTALL_ROOT
 ALL_TARGET=	first
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C/src/version/}
 
 PLIST_FILES=	bin/assistant_adp
 
-NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's|$$$$\[QT_INSTALL_BINS]|${PREFIX}/bin|g' \
 		${WRKSRC}/compat.pro

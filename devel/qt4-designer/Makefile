@@ -42,9 +42,8 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 BUILD_WRKSRC=	${WRKSRC}/tools/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
+EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
 
-NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's|^TARGET.*|TARGET=designer-qt4|g' \
 		${BUILD_WRKSRC}/src/${PORTNAME}/${PORTNAME}.pro
@@ -71,6 +70,6 @@ pre-install:
 
 post-install:
 	${INSTALL_DATA} ${BUILD_WRKSRC}/src/designer/images/designer.png \
-		${PREFIX}/share/pixmaps/designer-qt4.png
+		${STAGEDIR}${PREFIX}/share/pixmaps/designer-qt4.png
 
 .include <bsd.port.mk>

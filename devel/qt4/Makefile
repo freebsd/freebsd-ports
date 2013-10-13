@@ -26,7 +26,7 @@ CODECS_DESC=	CN, JP, KR, TW codecs support
 SQL_PLUGINS_DESC=	Install database plugins for QtSql
 TOOLS_DESC=	Install Qt tools (qmake, moc, etc.)
 
-NO_STAGE=	yes
+NO_MTREE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCODECS}
