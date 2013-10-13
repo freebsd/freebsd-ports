@@ -5072,3 +5072,5 @@ net/ngrep-lib||2013-10-11|Obsoleted
 www/node04||2013-10-11|Has expired: Unsupported upstream, not compatible with current
 www/node06||2013-10-11|Has expired: Unsupported upstream, not compatible with current
 math/matrices||2013-10-12|Has expired: Unmaintained upstream
+games/nethack33-gnome|games/nethack33|2013-10-13|Has expired: Uses deprecated gnome 1.x libraries
+games/nethack34-gnome|games/nethack34|2013-10-13|Has expired: Uses deprecated gnome 1.x libraries

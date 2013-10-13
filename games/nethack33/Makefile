@@ -37,11 +37,7 @@ PKGDEINSTALL=   ${WRKDIR}/pkg-deinstall
 USE_XORG=	xaw xpm
 GRAPHICS=	X11_GRAPHICS
 .else
-.if ${PKGNAMESUFFIX} == "-gnome"
-CATEGORIES=	games gnome
-USE_GNOME=	gnomelibs
-GRAPHICS=	GNOME_GRAPHICS
-.elif ${PKGNAMESUFFIX} == "-nox11"
+.if ${PKGNAMESUFFIX} == "-nox11"
 GRAPHICS=	# none
 .endif
 .endif
@@ -58,8 +54,7 @@ PLIST_SUB+=	HACKLINK="@comment "
 .endif
 
 pre-everything::
-.if defined(WITH_GNOME_GRAPHICS) \
-		|| defined(WITH_TTY_GRAPHICS) || defined(WITHOUT_X11)
+.if defined(WITH_TTY_GRAPHICS) || defined(WITHOUT_X11)
 	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	@${ECHO_MSG} " You cannot install nethack and ${PKGBASE} in parallel   "
 	@${ECHO_MSG} " But ${PKGBASE} read your prior nethack scores           "
@@ -69,7 +64,6 @@ pre-everything::
 .else
 	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	@${ECHO_MSG} " You may use the following build options:                "
-	@${ECHO_MSG} " WITH_GNOME_GRAPHICS=yes            build with GNOME GUI "
 	@${ECHO_MSG} " WITH_TTY_GRAPHICS=yes              build with no GUI    "
 	@${ECHO_MSG} " WITHOUT_X11=yes                    same as above        "
 	@${ECHO_MSG} "                                                         "
