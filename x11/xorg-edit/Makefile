@@ -18,7 +18,7 @@ USE_BZIP2=	yes
 USE_DOS2UNIX=	*.cpp *.h
 USE_WX=		2.6+
 WX_UNICODE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 PLIST_FILES=	bin/xorg-edit \
 		lib/xorg-edit/de_DE/LC_MESSAGES/xorg-edit.mo \

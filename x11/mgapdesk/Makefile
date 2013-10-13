@@ -15,7 +15,7 @@ COMMENT=	Matrox Powerdesk for *nix
 IGNORE=		needs an old XFree86/X.org header file to build
 
 USE_GNOME=	gtk12
-USE_GMAKE=	YES
+USES=		gmake
 USE_AUTOTOOLS=	autoconf213
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

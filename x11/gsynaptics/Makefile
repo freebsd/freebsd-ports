@@ -13,9 +13,8 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	xf86-input-synaptics>0:${PORTSDIR}/x11-drivers/xf86-input-synaptics
 
-USES=		pathfix pkgconfig gettext
+USES=		pathfix pkgconfig gettext gmake
 USE_GNOME=	gconf2 libglade2 gnomedocutils
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

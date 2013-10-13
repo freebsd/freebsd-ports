@@ -14,8 +14,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to translate mouse wheel actions into X keyboard events
 
 USE_XORG=	x11 xpm xtst xext xmu
-USE_GMAKE=	YES
-GNU_CONFIGURE=	YES
+USES=		gmake
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gpm
 
 MAN1=		imwheel.1

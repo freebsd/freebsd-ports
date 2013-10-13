@@ -17,8 +17,7 @@ LIB_DEPENDS=	wnck-1:${PORTSDIR}/x11-toolkits/libwnck \
 		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		pathfix pkgconfig gettext
+USES=		pathfix pkgconfig gettext gmake
 USE_GNOME=	glib20 gtk20 pygtk2
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes

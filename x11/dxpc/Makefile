@@ -15,7 +15,7 @@ LIB_DEPENDS=	lzo2.2:${PORTSDIR}/archivers/lzo2
 LICENSE=	BSD
 
 USE_XORG=	x11
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lzo-lib=${LOCALBASE}
 
