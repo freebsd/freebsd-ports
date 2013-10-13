@@ -1,6 +1,6 @@
---- ./gzip.cpp.orig	2008-04-06 15:43:16.000000000 +0300
-+++ ./gzip.cpp	2008-04-06 15:43:48.000000000 +0300
-@@ -0,0 +1,63 @@
+--- gzip.cpp.orig	2013-10-06 17:11:38.000000000 +0400
++++ gzip.cpp	2013-10-06 17:12:35.000000000 +0400
+@@ -0,0 +1,64 @@
 +/* Copyright (C) 2007  John Whitney
 + *
 + * This program is free software; you can redistribute it and/or modify
@@ -23,6 +23,7 @@
 +#include "tmpstore.h"
 +#include "gzip.h"
 +#include <stdio.h>
++#include <stdlib.h>
 +
 +int gzip_found = 0;
 +char *gzip_name = NULL;

@@ -1,5 +1,14 @@
---- deltup.cpp.orig	2007-07-13 09:22:20.000000000 +0600
-+++ deltup.cpp		2008-03-10 14:03:08.000000000 +0500
+--- deltup.cpp.orig	2007-07-13 07:22:20.000000000 +0400
++++ deltup.cpp	2013-10-06 17:15:15.000000000 +0400
+@@ -16,7 +16,7 @@
+ //#include <sys/wait.h>
+ //#include <unistd.h> 
+ //#include <sys/signal.h>
+-//#include <stdlib.h>
++#include <stdlib.h>
+ //#include <string.h>
+ //#include <stdio.h>
+ //#include <stdarg.h>
 @@ -32,6 +32,7 @@
  #include "filetypes.h"
  #include "system.h"
@@ -83,7 +92,7 @@
      doneTmpFile(gzip_temp);
    } else if (file2.type==BZIP2) {
 @@ -365,7 +375,10 @@
-                            bzip2_name[i]);
+ 	                    bzip2_name[i]);
        } else fprintf(stderr, "Error: Deltup cannot find the proper bzip2 to rebuild the package\n");
        break;
 -    case GZIP: gzip_without_header(f.uname, finalName, c); break;
