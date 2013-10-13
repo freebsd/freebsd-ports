@@ -5074,3 +5074,6 @@ www/node06||2013-10-11|Has expired: Unsupported upstream, not compatible with cu
 math/matrices||2013-10-12|Has expired: Unmaintained upstream
 games/nethack33-gnome|games/nethack33|2013-10-13|Has expired: Uses deprecated gnome 1.x libraries
 games/nethack34-gnome|games/nethack34|2013-10-13|Has expired: Uses deprecated gnome 1.x libraries
+emulators/linux-ePSXe||2013-10-13|Removed, uses Linux GTK1 libraries
+emulators/linux-peops-spu||2013-10-13|Removed, uses Linux GTK1 libraries
+math/linux-relview||2013-10-13|Removed, uses Linux GTK1 libraries
