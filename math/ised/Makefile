@@ -13,6 +13,7 @@ LICENSE=	GPLv3
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+# ./base.h:620:14: error: invalid output constraint '=ir' in asm
 USE_GCC=	yes
 
 PLIST_FILES=		bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
