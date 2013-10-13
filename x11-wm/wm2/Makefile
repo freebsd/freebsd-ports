@@ -9,19 +9,18 @@ MASTER_SITES=	http://www.all-day-breakfast.com/wm2/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A very simple window manager for X
+COMMENT=	Simple window manager for X
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
 USE_XORG=	x11 xext xmu
 ALL_TARGET=	depend wm2
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wm2 ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/wm2 ${STAGEDIR}${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
