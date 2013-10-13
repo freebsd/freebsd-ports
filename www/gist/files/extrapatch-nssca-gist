@@ -1,0 +1,11 @@
+--- gist.orig	2013-03-21 21:19:12.580541283 +0800
++++ gist	2013-03-21 21:18:07.352536038 +0800
+@@ -1224,7 +1224,7 @@
+ 
+     http.use_ssl = true
+     http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+-    http.ca_file = ca_cert
++    http.ca_file = "%%LOCALBASE%%/share/certs/ca-root-nss.crt"
+ 
+     req = Net::HTTP::Post.new(url.path)
+     req.body = JSON.generate(data(files, private_gist, description))
