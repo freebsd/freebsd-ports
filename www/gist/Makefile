@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	www net
 
 MAINTAINER=	changlp@cs.nctu.edu.tw
-COMMENT=	A Gist pastebin posting command
+COMMENT=	Gist pastebin posting command
 
 OPTIONS_DEFINE=	NSSCA
 NSSCA_DESC=	Use certificates provided in security/ca_root_nss
