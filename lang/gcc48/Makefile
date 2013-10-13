@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	4.8.2.s20130919
+PORTVERSION=	4.8.2.s20131010
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${DISTVERSION}
@@ -10,9 +10,9 @@ MASTER_SITE_SUBDIR=	snapshots/${DISTVERSION}
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.8
 
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
-		mpfr:${PORTSDIR}/math/mpfr \
-		mpc:${PORTSDIR}/math/mpc
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
+		libmpfr.so:${PORTSDIR}/math/mpfr \
+		libmpc.so:${PORTSDIR}/math/mpc
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 
