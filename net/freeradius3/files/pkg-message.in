@@ -1,0 +1,53 @@
+===============================================================================
+
+To enable FreeRADIUS, put the following line in /etc/rc.conf
+
+radiusd_enable="YES"
+
+
+The sample configuration can be found at
+%%EXAMPLESDIR%%/raddb
+
+If you are upgrading FreeRADIUS, you are advised to use this as a reference
+for updating your configuration.
+
+
+FreeRADIUS will look for its configuration directory at
+%%PREFIX%%/etc/raddb by default.
+
+If you did not already have a configuration at this location, the sample
+configuration has been copied to this location and has been bootstrapped.
+
+
+If you wish to point FreeRADIUS to a configuration at a different
+location, put the following line in /etc/rc.conf
+
+radiusd_flags="-d /path/to/raddb"
+
+
+To start the server in normal (daemon) mode, run:
+
+%%PREFIX%%/etc/rc.d/radiusd start
+
+and to stop the server, run:
+
+%%PREFIX%%/etc/rc.d/radiusd stop
+
+
+To start the server in debugging mode, run:
+
+%%PREFIX%%/etc/rc.d/radiusd debug
+
+
+You are advised to make cautious changes to the configuration, and to test
+frequently, using debugging mode where necessary. Try to resist the
+temptation to disable or delete things that you don't understand - you may
+well break things!
+
+%%PORTDOCS%%The documentation has been installed at %%DOCSDIR%%
+%%PORTDOCS%%
+Useful configuration advice can be found in the FreeRADIUS Wiki at
+http://wiki.freeradius.org
+
+===============================================================================
+
