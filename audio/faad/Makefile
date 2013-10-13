@@ -3,7 +3,7 @@
 
 PORTNAME=	faad2
 PORTVERSION=	2.7
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/faac/${PORTNAME}-src/${PORTNAME}-${PORTVERSION}
@@ -38,5 +38,11 @@ post-patch:
 
 pre-configure:
 	@cd ${WRKSRC}; ${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE} --automake
+
+post-configure:
+	@${REINPLACE_CMD} "s/444/644/g" ${WRKSRC}/common/mp4ff/Makefile
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfaad.so.2
 
 .include <bsd.port.mk>
