@@ -52,20 +52,21 @@ CLASSPATH=.
 CLASSPATH:=${CLASSPATH}:${JAVALIBDIR}/${jar}
 .endfor
 
-NO_STAGE=	yes
 post-patch:
 	${RM} -rf ${WRKSRC}/org/eclipse
 	@${SED} -E -e 's|%%CLASSPATH%%|${CLASSPATH}|' \
 		${FILESDIR}/build.xml > ${WRKSRC}/build.xml
 
 do-install:
-	${MKDIR} ${JAVAJARDIR}
-	${INSTALL_DATA} ${WRKSRC}/dist/lib/${JARFILE} ${JAVAJARDIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/dist/lib/${JARFILE} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 .for s in 16 32 64
-	${MKDIR} ${PREFIX}/share/icons/hicolor/${s}x${s}/apps
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/apps
 	${INSTALL_DATA} ${WRKDIR}/org/gudy/azureus2/ui/icons/a${s}.png \
-		${PREFIX}/share/icons/hicolor/${s}x${s}/apps/${PORTNAME}.png
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/apps/${PORTNAME}.png
 .endfor
 
 .include <bsd.port.mk>
+.undef MAKE_ARGS
