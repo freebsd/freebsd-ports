@@ -3,7 +3,7 @@
 
 PORTNAME=	mumble
 PORTVERSION=	1.2.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/Mumble/${PORTVERSION}
 
@@ -45,7 +45,7 @@ USE_QT4+=	dbus
 .if ! ${PORT_OPTIONS:MBONJOUR}
 CONFIG+=	no-bonjour
 .else
-LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
+LIB_DEPENDS+=	libdns_sd.so:${PORTSDIR}/net/mDNSResponder
 .endif
 
 post-patch:
