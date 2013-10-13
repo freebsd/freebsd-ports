@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	1.7.3
+DISTVERSION=	1.7.4
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
 		http://ibiblio.org/pub/linux/system/emulators/wine/
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER?=	gerald@FreeBSD.org
 COMMENT?=	Microsoft Windows compatibility environment
@@ -16,16 +17,15 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
-LIB_DEPENDS=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		freetype:${PORTSDIR}/print/freetype2 \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		lcms2:${PORTSDIR}/graphics/lcms2 \
-		png15:${PORTSDIR}/graphics/png \
-		xml2:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libxml2.so:${PORTSDIR}/textproc/libxml2
 
 CONFLICTS_INSTALL=	i386-wine-* wine-1.4* wine-1.6*
 
-PKGNAMESUFFIX=	-devel
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GCC=	any
@@ -50,9 +50,8 @@ MAN1=		msiexec.1 notepad.1 regedit.1 regsvr32.1 widl.1 wine.1 \
 MLINKS=		winegcc.1 winecpp.1 \
 		winegcc.1 wineg++.1
 ONLY_FOR_ARCHS=	i386
-USES=		bison
+USES=		bison gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GL=		glu
 USE_XORG=	xcursor xi xpm xrandr xrender
 
@@ -74,7 +73,7 @@ NO_STAGE=	yes
 
 .if ${PORT_OPTIONS:MCUPS}
 CONFIGURE_ARGS+=	--with-cups
-LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-client
+LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client
 .else
 CONFIGURE_ARGS+=	--without-cups
 .endif
@@ -85,14 +84,14 @@ RUN_DEPENDS+=	dosbox:${PORTSDIR}/emulators/dosbox
 
 .if ${PORT_OPTIONS:MGNUTLS}
 CONFIGURE_ARGS+=	--with-gnutls
-LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--without-gnutls
 .endif
 
 .if ${PORT_OPTIONS:MHAL}
 CONFIGURE_ARGS+=	--with-hal
-LIB_DEPENDS+=	hal:${PORTSDIR}/sysutils/hal
+LIB_DEPENDS+=	libhal.so:${PORTSDIR}/sysutils/hal
 .else
 CONFIGURE_ARGS+=	--without-hal
 .endif
@@ -106,7 +105,7 @@ CONFIGURE_ARGS+=	--without-ldap
 
 .if ${PORT_OPTIONS:MLIBXSLT}
 CONFIGURE_ARGS+=	--with-xslt
-LIB_DEPENDS+=	xslt:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS+=	libxslt.so:${PORTSDIR}/textproc/libxslt
 .else
 CONFIGURE_ARGS+=	--without-xslt
 .endif
