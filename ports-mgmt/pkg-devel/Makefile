@@ -2,7 +2,7 @@
 
 PORTNAME=	pkg
 DISTVERSION=	1.1.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://files.etoilebsd.net/pkg/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
