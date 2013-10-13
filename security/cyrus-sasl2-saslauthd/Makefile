@@ -14,7 +14,7 @@ COMMENT=	SASL authentication server for cyrus-sasl2
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 
 CYRUS_SASL2_DIR=${MASTERDIR}/../cyrus-sasl2
 DISTINFO_FILE=	${CYRUS_SASL2_DIR}/distinfo
@@ -22,15 +22,11 @@ PATCHDIR=	${CYRUS_SASL2_DIR}/files
 INSTALL_WRKSRC=	${WRKSRC}/saslauthd
 DOCSDIR=	${PREFIX}/share/doc/cyrus-sasl2
 
-
 # This doesn't work due to absence of .al support in our libtool
 #USE_AUTOTOOLS=	libtool
 #LIBTOOLFILES=	${CONFIGURE_SCRIPT} saslauthd/configure
 
-MAN8=		saslauthd.8
-
 USE_RC_SUBR=	saslauthd
-
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 
@@ -48,21 +44,21 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 CONFIGURE_ENV+=	andrew_cv_runpath_switch=none
 
 OPTIONS_DEFINE=		BDB OPENLDAP HTTPFORM
+BDB_CONFIGURE_ON=	--with-dblib=berkeley \
+			--with-bdb-libdir=${BDB_LIB_DIR} \
+			--with-bdb-incdir=${BDB_INCLUDE_DIR} \
+			--with-bdb=${BDB_LIB_NAME}
+BDB_CONFIGURE_OFF=	--with-dblib=ndbm
 OPENLDAP_DESC=		Use OpenLDAP
+OPENLDAP_CONFIGURE_ON=	--with-ldap=${LOCALBASE}
 HTTPFORM_DESC=		Enable HTTP form authentication
+HTTPFORM_CONFIGURE_ENABLE=httpform
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MBDB}
 USE_BDB=	yes
 INVALID_BDB_VER=2
-CONFIGURE_ARGS+=--with-dblib=berkeley \
-		--with-bdb-libdir=${BDB_LIB_DIR} \
-		--with-bdb-incdir=${BDB_INCLUDE_DIR} \
-		--with-bdb=${BDB_LIB_NAME}
-.else
-CONFIGURE_ARGS+=--with-dblib=ndbm
 .endif
 
 .if ${PORT_OPTIONS:MOPENLDAP}
@@ -70,11 +66,6 @@ CONFIGURE_ARGS+=--with-dblib=ndbm
 WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 .endif
 USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
-.endif
-
-.if ${PORT_OPTIONS:MHTTPFORM}
-CONFIGURE_ARGS+=--enable-httpform
 .endif
 
 .if !defined(WITHOUT_GSSAPI) && defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.so)
@@ -119,26 +110,21 @@ do-build:
 
 post-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/saslauthd/saslcache \
-		${PREFIX}/sbin/saslcache
+		${STAGEDIR}${PREFIX}/sbin/saslcache
 	@${INSTALL_PROGRAM} ${WRKSRC}/saslauthd/testsaslauthd \
-		${PREFIX}/sbin/testsaslauthd
+		${STAGEDIR}${PREFIX}/sbin/testsaslauthd
 .if ${SASLAUTHD_RUNPATH} != /var/run/saslauthd
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "SASLAUTHD_RUNPATH was specified."
 	@${ECHO_MSG} "Make sure you create ${SASLAUTHD_RUNPATH}."
 	@${ECHO_MSG} ""
-.else
-	${MKDIR} -m 770 ${SASLAUTHD_RUNPATH}
-	${CHOWN} ${CYRUS_USER}:mail ${SASLAUTHD_RUNPATH}
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}/saslauthd
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/saslauthd
 .for file in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/saslauthd/${file} ${DOCSDIR}/saslauthd
+	@${INSTALL_DATA} ${WRKSRC}/saslauthd/${file} \
+		${STAGEDIR}${DOCSDIR}/saslauthd
 .endfor
 .endif
-	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} \
-		POST-INSTALL
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
