@@ -1,13 +1,5 @@
 --- v8/src/platform-posix.h.orig	2013-09-28 19:29:53.000000000 +0200
 +++ v8/src/platform-posix.h	2013-10-11 17:28:41.000000000 +0200
-@@ -29,6 +29,7 @@
- #define V8_PLATFORM_POSIX_H_
- 
- #if !defined(ANDROID)
-+#include <unistd.h> // size_t
- #include <cxxabi.h>
- #endif
- #include <stdio.h>
 @@ -40,12 +41,12 @@
  
  // Used by platform implementation files during OS::DumpBacktrace()
