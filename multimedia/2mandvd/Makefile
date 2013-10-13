@@ -12,7 +12,7 @@ COMMENT=	DVD authoring and slideshow tool
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	avcodec:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
 		notify-send:${PORTSDIR}/devel/libnotify \
 		exif:${PORTSDIR}/graphics/exif \
@@ -30,20 +30,17 @@ RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		perl5
+USES=		perl5 qmake gmake
 USE_QT4=	corelib gui opengl \
 		linguist_build moc_build qmake_build rcc_build uic_build
 USE_GL=		glu
 USE_SDL=	sdl
 USE_PERL5=	run
-USE_GMAKE=	yes
-MAKE_ENV=	QTDIR="${QT_PREFIX}"
 
 DATADIR=	${PREFIX}/share/2ManDVD
 
 LRELEASE=	${LOCALBASE}/bin/lrelease-qt4
 
-NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} -name "*~" -delete
 
@@ -66,21 +63,18 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|Ne slideshow|New slidshow|' ${WRKSRC}/2mandvd_en.ts
 
-do-configure:
-	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS})
-
 pre-build:
 	(cd ${WRKSRC} && ${LRELEASE} 2mandvd_en.ts)
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} 2ManDVD ${PREFIX}/bin)
-	@${MKDIR} ${DATADIR}
-	(cd ${WRKSRC} && ${INSTALL_SCRIPT} fake.pl ${DATADIR})
-	(cd ${WRKSRC} && ${INSTALL_DATA} *.qm ${DATADIR})
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} Bibliotheque ${DATADIR})
-	@${MKDIR} ${DESKTOPDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} 2ManDVD.desktop ${DESKTOPDIR})
-	(cd ${WRKSRC}/Interface && ${INSTALL_DATA} mandvdico.png \
-		${PREFIX}/share/pixmaps)
+	${INSTALL_PROGRAM} ${WRKSRC}/2ManDVD ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/fake.pl ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.qm ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} Bibliotheque ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/2ManDVD.desktop ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/Interface/mandvdico.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>

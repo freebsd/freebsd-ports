@@ -11,6 +11,8 @@ COMMENT=	Qt client for the X2Go system
 
 LICENSE=	GPLv2
 
+# Avoid clash with libssh from base
+BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
 LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client \
 		libssh.so:${PORTSDIR}/security/libssh
 RUN_DEPENDS=	nxproxy:${PORTSDIR}/net/nxproxy \
@@ -19,10 +21,11 @@ RUN_DEPENDS=	nxproxy:${PORTSDIR}/net/nxproxy \
 OPTIONS_DEFINE=	LDAP DOCS
 OPTIONS_DEFAULT=LDAP
 
+USES=		qmake
 USE_XORG=	xpm
 USE_QT4=	gui network svg \
 		linguist_build moc_build qmake_build rcc_build uic_build
-QMAKEFLAGS=	QMAKE_LRELEASE="${QT_PREFIX}/bin/lrelease-qt4"
+QMAKE_ARGS=	QMAKE_LRELEASE="${QT_PREFIX}/bin/lrelease-qt4"
 INSTALLS_ICONS=	yes
 
 .include <bsd.port.options.mk>
@@ -30,9 +33,9 @@ INSTALLS_ICONS=	yes
 .if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
 CFLAGS+=	-DUSELDAP
-QMAKEFLAGS+=	LIBS+="-lX11 -lXpm -lcups -lldap"
+QMAKE_ARGS+=	LIBS+="-lX11 -lXpm -lcups -lldap"
 .else
-QMAKEFLAGS+=	LIBS+="-lX11 -lXpm -lcups"
+QMAKE_ARGS+=	LIBS+="-lX11 -lXpm -lcups"
 .endif
 
 post-patch:
@@ -41,9 +44,6 @@ post-patch:
 		's|Q_OS_LINUX|Q_OS_UNIX| ; \
 		 /<linux\/fs.h>/s|^|//| ; \
 		 /#define USELDAP/s|^|//|'
-
-do-configure:
-	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS})
 
 pre-build:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \

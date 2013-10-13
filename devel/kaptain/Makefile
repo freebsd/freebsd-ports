@@ -14,15 +14,15 @@ LICENSE=	GPLv2 # (or later)
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+USES=		qmake
 USE_QT4=	qt3support moc_build qmake_build
 
-MAN1=		kaptain.1
 INFO=		kaptain
 PORTDOCS=	*
 PORTEXAMPLES=	*
-PLIST_FILES=	bin/kaptain
+PLIST_FILES=	bin/kaptain \
+		man/man1/kaptain.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -32,27 +32,20 @@ post-patch:
 		${REINPLACE_CMD} -e \
 		's|/usr/bin/kaptain|${SETENV} kaptain|'
 
-do-configure:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS})
-
 do-install:
-	(cd ${WRKSRC} \
-		&& ${INSTALL_PROGRAM} kaptain ${PREFIX}/bin)
-	(cd ${WRKSRC}/man \
-		&& ${INSTALL_MAN} kaptain.1 ${MANPREFIX}/man/man1)
-	(cd ${WRKSRC}/doc \
-		&& ${INSTALL_DATA} kaptain.info ${PREFIX}/${INFO_PATH})
+	${INSTALL_PROGRAM} ${WRKSRC}/kaptain ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/kaptain.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/doc/kaptain.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} \
-		&& ${INSTALL_DATA} README ${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc \
-		&& ${INSTALL_DATA} *.gif *.html *.png *.tgz ${DOCSDIR})
+		&& ${INSTALL_DATA} *.gif *.html *.png *.tgz ${STAGEDIR}${DOCSDIR})
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples \
-		&& ${INSTALL_DATA} *.kaptn *.tgz ${EXAMPLESDIR})
+		&& ${INSTALL_DATA} *.kaptn *.tgz ${STAGEDIR}${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>

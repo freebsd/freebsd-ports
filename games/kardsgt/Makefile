@@ -10,38 +10,37 @@ MASTER_SITES=	SAVANNAH
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Card game suite
 
+USES=		qmake
 USE_QT4=	assistantclient corelib gui network \
 		moc_build qmake_build rcc_build uic_build
 ALL_TARGET=	qmake release
 MAKE_JOBS_UNSAFE=	yes
 
-MAN6=		kardsgt.6
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^QT +=|#QT +=|g' \
 		${WRKSRC}/src/src.pro
 	@${REINPLACE_CMD} -e 's|/usr/share/kardsgt/|${DATADIR}/|g' \
 		${WRKSRC}/src/kardsgtinterface.cpp
 
-do-configure:
-	@(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS})
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/release/kardsgt ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/src/doc/kardsgt.6 ${MAN6PREFIX}/man/man6
-	@${MKDIR} ${PREFIX}/share/icons
-	${INSTALL_DATA} ${WRKSRC}/src/images/kardsgt.png ${PREFIX}/share/icons
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/src/doc/*.dcf ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/src/doc/*.html ${DATADIR}
-	@${MKDIR} ${DATADIR}/images
-	${INSTALL_DATA} ${WRKSRC}/src/doc/images/*.jpg ${DATADIR}/images
-	${INSTALL_DATA} ${WRKSRC}/src/doc/images/*.png ${DATADIR}/images
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/release/kardsgt ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/src/doc/kardsgt.6 ${STAGEDIR}${MAN6PREFIX}/man/man6
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons
+	${INSTALL_DATA} ${WRKSRC}/src/images/kardsgt.png ${STAGEDIR}${PREFIX}/share/icons
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/src/doc/*.dcf ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/src/doc/*.html ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/images
+	${INSTALL_DATA} ${WRKSRC}/src/doc/images/*.jpg ${STAGEDIR}${DATADIR}/images
+	${INSTALL_DATA} ${WRKSRC}/src/doc/images/*.png ${STAGEDIR}${DATADIR}/images
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in CREDITS ChangeLog README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

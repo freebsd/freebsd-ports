@@ -8,54 +8,57 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Simple QT-based financial manager
+COMMENT=	Simple Qt-based financial manager
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	qwt6:${PORTSDIR}/x11-toolkits/qwt6
+LIB_DEPENDS=	libqwt6.so:${PORTSDIR}/x11-toolkits/qwt6
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS DEBUG
 
+USES=		qmake
 USE_QT4=	corelib gui sql moc_build qmake_build rcc_build uic_build
 USE_GCC=	yes
 USE_LDCONFIG=	yes
 
 CXXFLAGS+=	-fpermissive
 
-DESKTOP_ENTRIES="QHacc" "" "" "${PORTNAME}" "" ""
+DESKTOP_ENTRIES="QHacc" "Financial manager" "" "${PORTNAME}" "" ""
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDEBUG}
+BUILD_TYPE=	debug
+.else
+BUILD_TYPE=	release
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^INSTALLDIR/s|=.*|=${DATADIR}| ; \
 		 /^QWTINCS/s|=.*|=${LOCALBASE}/include/qwt6| ; \
 		 /^QWTLIBS/s|=.*|=${LOCALBASE}/lib -lqwt6| ; \
-		 /+= debug/s|^|#|' ${WRKSRC}/user.pri
+		 /^CONFIG +=/s|debug|${BUILD_TYPE}|' ${WRKSRC}/user.pri
 	@${REINPLACE_CMD} -e \
 		's|/usr/include|${LOCALBASE}/include| ; \
 		 s|-lqwt||' ${WRKSRC}/gui/gui.pro
 	@${REINPLACE_CMD} -e \
 		's|/../qm/|/../share/qhacc/|' ${WRKSRC}/gui/main.cpp
 
-do-configure:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS})
-
 do-install:
-	(cd ${WRKSRC}/gui/build/release && ${INSTALL_PROGRAM} \
-		qhacc ${PREFIX}/bin)
-	(cd ${WRKSRC}/engine/build/release && ${INSTALL_DATA} \
-		libengine.so.1.0.0 ${PREFIX}/lib)
-	@${LN} -sf libengine.so.1.0.0 ${PREFIX}/lib/libengine.so
-	@${LN} -sf libengine.so.1.0.0 ${PREFIX}/lib/libengine.so.1
-	@${LN} -sf libengine.so.1.0.0 ${PREFIX}/lib/libengine.so.1.0
-	@${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}/qm && ${INSTALL_DATA} *.qm ${DATADIR})
+	${INSTALL_PROGRAM} ${WRKSRC}/gui/build/${BUILD_TYPE}/qhacc \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_LIB} ${WRKSRC}/engine/build/${BUILD_TYPE}/libengine.so.1.0.0 \
+		${STAGEDIR}${PREFIX}/lib
+	@${LN} -sf libengine.so.1.0.0 ${STAGEDIR}${PREFIX}/lib/libengine.so
+	@${LN} -sf libengine.so.1.0.0 ${STAGEDIR}${PREFIX}/lib/libengine.so.1
+	@${LN} -sf libengine.so.1.0.0 ${STAGEDIR}${PREFIX}/lib/libengine.so.1.0
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/qm/*.qm ${STAGEDIR}${DATADIR}
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in AUTHORS ChangeLog README THANKS TODO UPGRADE
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

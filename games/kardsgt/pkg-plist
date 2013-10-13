@@ -1,4 +1,5 @@
 bin/kardsgt
+man/man6/kardsgt.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
