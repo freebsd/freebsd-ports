@@ -9,7 +9,8 @@ MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
-		portaudio:${PORTSDIR}/audio/portaudio2
+		portaudio:${PORTSDIR}/audio/portaudio2 \
+		cblas:${PORTSDIR}/math/cblas
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
