@@ -9,19 +9,19 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	../old-gnu/dgs
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A display ghostscript system
+COMMENT=	Display ghostscript system
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff
 
 MAKE_JOBS_UNSAFE=	yes
 NO_STAGE=	yes
 
 USE_GHOSTSCRIPT_RUN=	yes
 USE_XORG=	xt sm ice xext x11
-USE_GMAKE=	yes
 USE_GNOME=	glib12
+USES=		gmake
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
