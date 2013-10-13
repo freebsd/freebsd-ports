@@ -1,6 +1,8 @@
 %%SITE_PERL%%/Pod/Eventual.pm
 %%SITE_PERL%%/Pod/Eventual/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Eventual/.packlist
+%%PERL5_MAN3%%/Pod::Eventual.3.gz
+%%PERL5_MAN3%%/Pod::Eventual::Simple.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Eventual
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
 @dirrmtry %%SITE_PERL%%/Pod/Eventual
