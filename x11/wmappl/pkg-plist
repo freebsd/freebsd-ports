@@ -666,4 +666,6 @@ share/wmappl/xterm.xpm
 share/wmappl/xv.xpm
 share/wmappl/yingyang.xpm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+man/man1/wmappl.1.gz
+man/man5/wmapplrc.5.gz
 @dirrm share/wmappl
