@@ -1,0 +1,4 @@
+FastImage finds the size or type of an image given its uri by
+fetching as little as needed.
+
+WWW: https://github.com/sdsykes/fastimage
