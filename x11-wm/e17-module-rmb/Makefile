@@ -21,5 +21,4 @@ GNU_CONFIGURE=	yes
 USE_EFL=	libtool_hack modarch_hack
 USES=		pkgconfig
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

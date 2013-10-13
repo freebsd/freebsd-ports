@@ -33,7 +33,6 @@ OPTIONS_DEFAULT+=	${M:U:S,-,_,g}
 ${M:U:S,-,_,g}_DESC=	Install ${M} module
 .endfor
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .for M in ${MODULES}
