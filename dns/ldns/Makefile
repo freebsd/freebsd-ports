@@ -3,7 +3,7 @@
 
 PORTNAME=	ldns
 PORTVERSION=	1.6.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/ \
 		CRITICAL
