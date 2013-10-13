@@ -43,12 +43,5 @@ CXXFLAGS+=-DQT_NO_TEXTCODEC -DQT_NO_UNICODETABLES -DQT_NO_COMPONENT \
 
 PROG_CXX=	qmake-qt4
 BINDIR=	${PREFIX}/bin
-SHAREDIR=${PREFIX}/share/qt4
-
-${SHAREDIR}:
-	mkdir -p "$@"
-
-beforeinstall: ${SHAREDIR}
-	cp -Rp ${.CURDIR:H}/mkspecs ${SHAREDIR}
 
 .include <bsd.prog.mk>

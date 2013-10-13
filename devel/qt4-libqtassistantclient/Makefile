@@ -19,12 +19,13 @@ USE_QT4=	qmake_build moc_build rcc_build corelib gui network
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 ALL_TARGET=	first
+# stage support
+DESTDIRNAME=	INSTALL_ROOT
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C/src/version/}
 BUILD_WRKSRC=	${WRKSRC}/lib
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's|$$$$\[QT_INSTALL_HEADERS]|${PREFIX}/${QT_INCDIR_REL}|g' \
 		-e 's|$$$$\[QT_INSTALL_LIBS]|${PREFIX}/${QT_LIBDIR_REL}|g' \
@@ -48,9 +49,10 @@ pre-build:
 		${BUILD_WRKSRC}/QtAssistant
 
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/QAssistantClient ${PREFIX}/${QT_INCDIR_REL}/QtAssistant
-	${INSTALL_DATA} ${FILESDIR}/QtAssistant ${PREFIX}/${QT_INCDIR_REL}/QtAssistant
-	${MKDIR} ${PREFIX}/share/qt4/mkspecs/features
-	${INSTALL_DATA} ${WRKSRC}/features/assistant.prf ${PREFIX}/share/qt4/mkspecs/features
+	${MKDIR} ${STAGEDIR}${PREFIX}/${QT_INCDIR_REL}/QtAssistant
+	${INSTALL_DATA} ${FILESDIR}/QAssistantClient ${STAGEDIR}${PREFIX}/${QT_INCDIR_REL}/QtAssistant
+	${INSTALL_DATA} ${FILESDIR}/QtAssistant ${STAGEDIR}${PREFIX}/${QT_INCDIR_REL}/QtAssistant
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/qt4/mkspecs/features
+	${INSTALL_DATA} ${WRKSRC}/features/assistant.prf ${STAGEDIR}${PREFIX}/share/qt4/mkspecs/features
 
 .include <bsd.port.mk>

@@ -14,6 +14,7 @@ OPTIONS_DEFAULT=PHONON
 
 PHONON_DESC=	Multimedia via Phonon (implies GStreamer)
 
+USES=		pkgconfig
 USE_QT4=	qmake_build moc_build rcc_build uic_build \
 		dbus gui xml
 QT_NONSTANDARD=	yes
@@ -41,7 +42,6 @@ DO_NOT_EXTRACT=	demos doc examples mkspecs qmake translations \
 EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 .endfor
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPHONON}
@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=-no-phonon -no-gstreamer
 BUILD_WRKSRC=	${WRKSRC}/tools/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
+EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|^TARGET.*|TARGET=qtconfig-qt4|g' \
@@ -68,6 +68,6 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA} ${BUILD_WRKSRC}/images/appicon.png \
-		${PREFIX}/share/pixmaps/qtconfig-qt4.png
+		${STAGEDIR}${PREFIX}/share/pixmaps/qtconfig-qt4.png
 
 .include <bsd.port.mk>

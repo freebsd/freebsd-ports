@@ -29,5 +29,10 @@ MAKE_ENV+=	DB="${DB}" DRIVER="${DRIVER}" MOC="${MOC}" \
 		QT_LIBDIR="${QT_LIBDIR}"
 PLIST_SUB=	DB=${DB}
 
-NO_STAGE=	yes
+SQL_PLUGINDIR=	${PREFIX}/${QT_PLUGINDIR_REL}/sqldrivers
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${SQL_PLUGINDIR}
+	${INSTALL_LIB} ${WRKSRC}/libqsql${DB}.so ${STAGEDIR}${SQL_PLUGINDIR}
+
 .include <bsd.port.mk>

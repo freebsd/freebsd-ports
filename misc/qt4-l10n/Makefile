@@ -14,12 +14,11 @@ QT_NONSTANDARD=	yes
 
 EXTRACT_AFTER_ARGS+=	--include '${DISTNAME}/translations'
 
-NO_STAGE=	yes
 do-build:
 	${LOCALBASE}/bin/lrelease-qt4 ${WRKSRC}/translations/*.ts
 
 do-install:
-	${MKDIR} ${PREFIX}/share/qt4/translations
-	${INSTALL_DATA} ${WRKSRC}/translations/*.qm ${PREFIX}/share/qt4/translations
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/qt4/translations
+	${INSTALL_DATA} ${WRKSRC}/translations/*.qm ${STAGEDIR}${PREFIX}/share/qt4/translations
 
 .include <bsd.port.mk>

@@ -17,10 +17,10 @@ EXTRACT_AFTER_ARGS=	'${DISTNAME}/doc'
 
 DOCSDIR=	${PREFIX}/share/doc/qt4
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DOCSDIR} && \
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${DOCSDIR} && \
-	${COPYTREE_SHARE} qch ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR} && \
+	cd ${WRKSRC}/doc && \
+	${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR} && \
+	${COPYTREE_SHARE} qch ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

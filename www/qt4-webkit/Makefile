@@ -3,7 +3,6 @@
 
 PORTNAME=	webkit
 DISTVERSION=	${QT4_VERSION}
-PORTREVISION=	1
 CATEGORIES?=	www
 PKGNAMEPREFIX=	qt4-
 
@@ -40,14 +39,13 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 CONFIGURE_ARGS+=	-I../../../../include/Qt -I../../../../include
 
-EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
+EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
 
 OPTIONS_DEFINE=	GSTREAMER
 OPTIONS_DEFAULT=	GSTREAMER
 
 GSTREAMER_DESC=	HTML5 audio and video via GStreamer
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGSTREAMER}

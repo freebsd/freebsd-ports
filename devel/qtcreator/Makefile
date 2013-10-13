@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qtcreator
-DISTVERSION=	2.6.1
+DISTVERSION=	2.8.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_QT:S/$/:qtcreator/} \
 		${MASTER_SITE_QT}
@@ -26,14 +26,16 @@ USE_QT4=	qmake_build moc_build rcc_build uic_build \
 		dbus designer gui help-tools_build network script \
 		sql svg xml webkit qdoc3_build
 HAS_CONFIGURE=	yes
-MAKE_ENV+=	INSTALL_ROOT=${PREFIX}
 MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	all docs
 INSTALL_TARGET=	install install_docs
+MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
-QMAKE_ARGS=	-recursive CONFIG+="configure" ${QMAKE_PRO}
+QMAKE_ARGS=	-recursive CONFIG+="configure" QTC_PREFIX=${PREFIX} ${QMAKE_PRO}
 QMAKE_PRO=	${WRKSRC}/${PORTNAME}.pro
+# stage support
+DESTDIRNAME=	INSTALL_ROOT
 
 # Build Qt Quick Designer (requires update on every Qt update).
 QT_DISTNAME=	qt-everywhere-opensource-src-${QT4_VERSION}
@@ -51,14 +53,17 @@ INSTALL_WRKSRC=		${CONFIGURE_WRKSRC}
 DESKTOP_ENTRIES=	"Qt Creator" "${COMMENT}" "QtProject-qtcreator" \
 			"${PREFIX}/bin/${PORTNAME}" "Development;Qt;" true
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|lrelease|lrelease-qt4|' \
 		${WRKSRC}/share/qtcreator/translations/translations.pro
 	${REINPLACE_CMD} -e 's|lupdate|lupdate-qt4|' \
 		${WRKSRC}/share/qtcreator/translations/translations.pro
-	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+	${REINPLACE_CMD} -e 's|/usr/bin/gnuplot|${LOCALBASE}/gnuplot|' \
+		${WRKSRC}/share/qtcreator/dumper/gbridge.py
+	${REINPLACE_CMD} -e 's|/usr/bin/ant|${LOCALBASE}/ant|' \
 		${WRKSRC}/src/plugins/android/androidsettingswidget.cpp
+
+	${RM} ${WRKSRC}/share/qtcreator/dumper/gbridge.py.bak
 
 do-configure:
 	${MKDIR} ${CONFIGURE_WRKSRC}

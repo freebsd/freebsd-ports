@@ -13,6 +13,8 @@ USE_QT4=	qmake_build moc_build corelib gui svg xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
+USES=		pkgconfig
+
 HAS_CONFIGURE=	yes
 
 ALL_TARGET=	first
@@ -35,9 +37,8 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 BUILD_WRKSRC=	${WRKSRC}/src/plugins/${PORTNAME}/svgiconengine
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
+EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
 
-NO_STAGE=	yes
 pre-configure:
 	${MKDIR} ${WRKSRC}/mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake

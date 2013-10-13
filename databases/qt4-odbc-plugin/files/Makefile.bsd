@@ -7,21 +7,14 @@ CXXFLAGS+=	-I${DRIVER} \
 		-I${QT_INCDIR}/QtCore \
 		-I${QT_INCDIR}/QtSql \
 		-I${LOCALBASE}/include \
-		${PTHREAD_CFLAGS} -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII \
+		-DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII \
 		-DQT_PLUGIN -DQT_SQL_LIB -DQT_CORE_LIB -D_LARGEFILE64_SOURCE \
 		-D_LARGEFILE_SOURCE -DQT_SHARED -DUNICODE
-LDADD=		-L${QT_LIBDIR} -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lQtSql -lodbc
+LDADD=		-L${QT_LIBDIR} -L${LOCALBASE}/lib -pthread -lQtSql -lodbc
 MOC?=		${LOCALBASE}/bin/moc-qt4
 SRCS=		main.cpp qsql_${DB}.cpp moc_qsql_${DB}.cpp
 
-LIBDIR=		${PREFIX}/lib/qt4/plugins/sqldrivers
-
-${LIBDIR}:
-	mkdir -p ${LIBDIR}
-
 moc_qsql_${DB}.cpp: qsql_${DB}.h
 	$(MOC) $(.ALLSRC) -o $(.TARGET)
-
-beforeinstall:	${LIBDIR}
 
 .include <bsd.lib.mk>

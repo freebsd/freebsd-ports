@@ -3,7 +3,6 @@
 
 PORTNAME=	qmake
 DISTVERSION=	${QT4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt4-
 
@@ -37,7 +36,6 @@ EXTRACT_AFTER_ARGS= \
 	'${DISTNAME}/tools/shared/symbian' \
 	'${DISTNAME}/tools/shared/windows'
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2|${CXXFLAGS}|' \
 		-e 's|/usr/local|${LOCALBASE}|' \
@@ -60,9 +58,16 @@ post-patch:
 		-e 's|gcc46|clang|g' \
 		-e 's|g++46|clang++|g' \
 		${WRKSRC}/../mkspecs/freebsd-clang/qmake.conf
+# mkspec for devel/clang33
+	@${CP} -PpR ${WRKSRC}/../mkspecs/freebsd-g++46 ${WRKSRC}/../mkspecs/freebsd-clang++33
+	@${REINPLACE_CMD} -e 's|g++-unix.conf|clang.conf|g' \
+		-e 's|freebsd-g++46|freebsd-clang++33|g' \
+		-e 's|gcc46|clang33|g' \
+		-e 's|g++46|clang++33|g' \
+		${WRKSRC}/../mkspecs/freebsd-clang++33/qmake.conf
 
 # Add mkspecs for the different GCC versions in the ports tree
-.for v in 42 44 47 48
+.for v in 42 44 47 48 49
 	@${CP} -PpR ${WRKSRC}/../mkspecs/freebsd-g++46 ${WRKSRC}/../mkspecs/freebsd-g++${v}
 	@${REINPLACE_CMD} -e 's|46|${v}|g' \
 		${WRKSRC}/../mkspecs/freebsd-g++${v}/qmake.conf
@@ -76,7 +81,10 @@ do-configure:
 	${ECHO} '/* empty */' > ${WRKSRC}/qconfig.h
 	${LN} ${WRKSRC}/qconfig.h ${WRKSRC}/../src/corelib/global/qconfig.h
 
-post-install:
-	${LN} -sf ${PREFIX}/share/qt4/mkspecs/freebsd-${QMAKE_BASE_COMPILER} ${PREFIX}/share/qt4/mkspecs/default
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/qmake-qt4 ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/qt4 && \
+	cd ${WRKSRC}/.. && ${COPYTREE_SHARE} mkspecs ${STAGEDIR}${PREFIX}/share/qt4
+	${LN} -sf ${PREFIX}/share/qt4/mkspecs/freebsd-${QMAKE_BASE_COMPILER} ${STAGEDIR}${PREFIX}/share/qt4/mkspecs/default
 
 .include <bsd.port.mk>

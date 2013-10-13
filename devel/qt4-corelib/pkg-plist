@@ -89,6 +89,7 @@ include/qt4/Qt/qline.h
 include/qt4/Qt/qlinkedlist.h
 include/qt4/Qt/qlist.h
 include/qt4/Qt/qlocale.h
+include/qt4/Qt/qlocale_blackberry.h
 include/qt4/Qt/qmap.h
 include/qt4/Qt/qmargins.h
 include/qt4/Qt/qmath.h
@@ -189,6 +190,7 @@ include/qt4/QtCore/QAnimationGroup
 include/qt4/QtCore/QArgument
 include/qt4/QtCore/QAtomicInt
 include/qt4/QtCore/QAtomicPointer
+include/qt4/QtCore/QBBSystemLocaleData
 include/qt4/QtCore/QBasicAtomicInt
 include/qt4/QtCore/QBasicAtomicPointer
 include/qt4/QtCore/QBasicTimer
@@ -535,6 +537,7 @@ include/qt4/QtCore/qline.h
 include/qt4/QtCore/qlinkedlist.h
 include/qt4/QtCore/qlist.h
 include/qt4/QtCore/qlocale.h
+include/qt4/QtCore/qlocale_blackberry.h
 include/qt4/QtCore/qmap.h
 include/qt4/QtCore/qmargins.h
 include/qt4/QtCore/qmath.h
