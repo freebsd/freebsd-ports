@@ -9,22 +9,22 @@ CATEGORIES=	deskutils
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Notes-taking application based on Qt4
+COMMENT=	Notes-taking application based on Qt 4
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		pcre:${PORTSDIR}/devel/pcre \
-		png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2 \
-		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
 OPTIONS_DEFINE=	DOCS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		gettext iconv
+USES=		gettext iconv qmake
 USE_GNOME=	glib20
 USE_QT4=	corelib gui xml moc_build qmake_build rcc_build uic_build
 USE_XORG=	ice sm x11 xau xcb xdmcp xext xrender
@@ -33,28 +33,20 @@ PORTDOCS=	CHANGELOG TODO
 PLIST_FILES=	bin/${PORTNAME} share/pixmaps/${PORTNAME}.png
 
 DESKTOP_ENTRIES=	"Nagaina" \
-			"${COMMENT}" \
+			"Notes-taking application" \
 			"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
 			"${PORTNAME}" \
 			"Qt;Office;Utility;" \
-			"false"
+			"true"
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-do-configure:
-	@(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS})
-
 post-install:
-	(cd ${WRKSRC}/bin \
-		&& ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin)
-	(cd ${WRKSRC}/images \
-		&& ${INSTALL_DATA} ${PORTNAME}.png ${PREFIX}/share/pixmaps)
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/images/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${doc} ${DOCSDIR})
-.endfor
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

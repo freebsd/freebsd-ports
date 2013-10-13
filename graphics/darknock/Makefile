@@ -14,6 +14,7 @@ LICENSE=	GPLv2 # (or later)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USES=		qmake
 USE_QT4=	gui linguist_build moc_build qmake_build rcc_build uic_build
 
 PORTDOCS=	changelog
@@ -24,11 +25,10 @@ DESKTOP_ENTRIES=	"${PORTNAME}" \
 			"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
 			"${PORTNAME}" \
 			"Graphics;Qt;" \
-			"false"
+			"true"
 
 LRELEASE=	${QT_PREFIX}/bin/lrelease-qt4
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -42,22 +42,19 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/darknock|${DATADIR}|g' \
 		${WRKSRC}/src/main.cpp
 
-pre-build:
+pre-configure:
 	@${LRELEASE} ${BUILD_WRKSRC}/${PORTNAME}.pro
-	@(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS})
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/images/${PORTNAME}.png ${PREFIX}/share/pixmaps
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/images/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps
 .if ${PORT_OPTIONS:MNLS}
-	@${MKDIR} ${DATADIR}/locale
-	${INSTALL_DATA} ${WRKSRC}/locale/*.qm ${DATADIR}/locale
+	@${MKDIR} ${STAGEDIR}${DATADIR}/locale
+	${INSTALL_DATA} ${WRKSRC}/locale/*.qm ${STAGEDIR}${DATADIR}/locale
 .endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/changelog ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

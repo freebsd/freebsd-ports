@@ -20,19 +20,21 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/archivers/p7zip:patch \
 		${NONEXISTENT}:${PORTSDIR}/multimedia/mediainfo:build
-LIB_DEPENDS=	tar:${PORTSDIR}/devel/libtar \
-		exif:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS=	libtar.so:${PORTSDIR}/devel/libtar \
+		libexif.so:${PORTSDIR}/graphics/libexif
 
 OPTIONS_DEFINE=	DOCS
 
-BUILD_WRKSRC=	${WRKSRC}/src
+CONFIGURE_WRKSRC=	${WRKSRC}/src
+BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
 
+USES=		qmake
 USE_BZIP2=	yes
 USE_QT4=	corelib gui xml \
 		linguist_build moc_build qmake_build uic_build
 INSTALLS_ICONS=	yes
 
-QMAKEFLAGS+=	INCLUDEPATH+="${L7Z_WRKSRC}/Lib7Zip" \
+QMAKE_ARGS+=	INCLUDEPATH+="${L7Z_WRKSRC}/Lib7Zip" \
 		INCLUDEPATH+="${MIF_WRKSRC}/MediaInfoLib/Source" \
 		INCLUDEPATH+="${MIF_WRKSRC}/ZenLib/Source" \
 		LIBS+="${L7Z_WRKSRC}/Lib7Zip/lib7zip.a" \
@@ -42,6 +44,7 @@ QMAKEFLAGS+=	INCLUDEPATH+="${L7Z_WRKSRC}/Lib7Zip" \
 		DEFINES+="MEDIAINFO_STATIC" \
 		DEFINES+="MEDIAINFO_UNICODE" \
 		DEFINES+="USE_LIBEXIF"
+QMAKE_PRO=	${PORTNAME}.pro
 LRELEASE=	${QT_PREFIX}/bin/lrelease-qt4
 
 # spoof tinderbox: build deps for multimedia/mediainfo
@@ -63,7 +66,6 @@ L7Z_VERSION=	1.6.3
 L7Z_DISTFILE=	${L7Z_NAME}-${L7Z_VERSION}.tar.gz
 L7Z_WRKSRC=	${WRKDIR}/${L7Z_NAME}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 P7Z_WRKSRC=	$$(cd ${PORTSDIR}/archivers/p7zip && ${MAKE} -V WRKSRC)
@@ -75,7 +77,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		'/LIBS/s|^|#|' ${BUILD_WRKSRC}/${PORTNAME}.pro
+		'/LIBS/s|^|#|' ${BUILD_WRKSRC}/${QMAKE_PRO}
 	@${REINPLACE_CMD} -e \
 		's|/dev/sr0|/dev/cd0|' ${BUILD_WRKSRC}/config.cpp
 	@${REINPLACE_CMD} -e \
@@ -86,35 +88,29 @@ pre-configure:
 		CC="${CC}" CFLAGS="${CFLAGS}" \
 		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 		P7ZIP_SOURCE_DIR="${P7Z_WRKSRC}"
-
-do-configure:
-	@${LRELEASE} ${BUILD_WRKSRC}/${PORTNAME}.pro
-	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} \
-		${PORTNAME}.pro ${QMAKEFLAGS}
+	@${LRELEASE} ${BUILD_WRKSRC}/${QMAKE_PRO}
 
 pre-build:
 	@cd ${L7Z_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
 
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png ${DATADIR}
-	@${MKDIR} ${DATADIR}/translations
-	${INSTALL_DATA} ${BUILD_WRKSRC}/lang/*.qm ${DATADIR}/translations
-	@${MKDIR} ${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/translations
+	${INSTALL_DATA} ${BUILD_WRKSRC}/lang/*.qm ${STAGEDIR}${DATADIR}/translations
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}_logo.svg \
-		${PREFIX}/share/icons/hicolor/scalable/apps/${PORTNAME}_logo.svg
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${PORTNAME}_logo.svg
 .for size in 16 22 32 48 64
-	@${MKDIR} ${PREFIX}/share/icons/hicolor/${size}x${size}/apps
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${size}x${size}/apps
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}_logo_${size}x${size}.png \
-		${PREFIX}/share/icons/hicolor/${size}x${size}/apps/${PORTNAME}_logo.png
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${size}x${size}/apps/${PORTNAME}_logo.png
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>

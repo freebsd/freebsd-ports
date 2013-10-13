@@ -13,13 +13,12 @@ COMMENT=	Go board and SGF editor written with the Qt library
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_BZIP2=	yes
-USES=		desktop-file-utils
+USES=		desktop-file-utils qmake
 USE_QT4=	gui network qtestlib moc_build qmake_build rcc_build uic_build
 
 PLIST_FILES=	bin/qgo share/applications/qgo.desktop share/pixmaps/qgo.png
 PLIST_DIRSTRY=	share/applications
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/Icon/s|=.*|=${PREFIX}/share/pixmaps/qgo.png| ; \
@@ -29,14 +28,11 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/src/mainwindow_settings.cpp
 
-do-configure:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS})
-
 do-install:
-	(cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} qgo ${PREFIX}/bin)
-	@${MKDIR} ${DESKTOPDIR}
-	(cd ${WRKSRC}/src && ${INSTALL_DATA} qgo.desktop ${DESKTOPDIR})
-	(cd ${WRKSRC}/src/ressources/pics && ${INSTALL_DATA} qgo.png \
-		${PREFIX}/share/pixmaps)
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/qgo ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/qgo.desktop ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/ressources/pics/qgo.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>

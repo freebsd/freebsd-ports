@@ -13,13 +13,13 @@ COMMENT=	Free, multi-service communication client from Rambler
 
 LICENSE=	GPLv3
 
+USES=		qmake
 USE_DOS2UNIX=	config.inc
 USE_XORG=	xscrnsaver
 USE_QT4=	qmake_build moc_build rcc_build uic_build designer_build \
 		webkit
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 post-patch:
 # Remove bogus Byte Order Mark (BOM) from some source files
 	@${REINPLACE_CMD} -e '1s/^[^#]*//' ${WRKSRC}/src/utils/balloontip.*
@@ -34,8 +34,5 @@ post-patch:
 # Do not install yet another copy of GPL, we have LICENSE knob for this
 	@${REINPLACE_CMD} -e 's| ../../COPYING||' \
 		${WRKSRC}/src/loader/loader.pro
-
-pre-build:
-	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS}
 
 .include <bsd.port.mk>

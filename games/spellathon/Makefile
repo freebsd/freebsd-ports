@@ -12,41 +12,39 @@ COMMENT=	Word game to test your English vocabulary skills
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		pcre:${PORTSDIR}/devel/pcre \
-		png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2 \
-		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
 CXXFLAGS+=	-fPIC
-USES=		gettext iconv
+USES=		gettext iconv qmake
 USE_GNOME=	glib20
 USE_QT4=	corelib gui moc_build qmake_build rcc_build uic_build
 USE_XORG=	ice sm x11 xau xcb xdmcp xext xrender
 USE_LDCONFIG=	yes
 
+CONFIGURE_WRKSRC=	${WRKSRC}/src/gui
+
 DESKTOP_ENTRIES="Spellathon" "${COMMENT}" "" "${PORTNAME}" "Education;Languages;" "true"
 
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|$${CC}|$${CXX}|g ; \
-		 s|$${CFLAGS}|$${CXXFLAGS}|g ; \
-		 s|qmake-qt4|${TRUE}|'
+		s|$${CFLAGS}|$${CXXFLAGS}|g ; \
+		s|qmake-qt4|${TRUE}|'
 	@${REINPLACE_CMD} \
 		's|dict/words.txt|${DATADIR}/words.txt|' ${WRKSRC}/src/logic/defines.h
 
-do-configure:
-	@(cd ${WRKSRC}/src/gui && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS})
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/spellathon ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/spellathon-cl ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/libspellathon.so.0.0 ${PREFIX}/lib
-	${LN} -sf libspellathon.so.0.0 ${PREFIX}/lib/libspellathon.so
-	${LN} -sf libspellathon.so.0.0 ${PREFIX}/lib/libspellathon.so.0
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/dict/words.txt ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/spellathon ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/spellathon-cl ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/libspellathon.so.0.0 ${STAGEDIR}${PREFIX}/lib
+	${LN} -sf libspellathon.so.0.0 ${STAGEDIR}${PREFIX}/lib/libspellathon.so
+	${LN} -sf libspellathon.so.0.0 ${STAGEDIR}${PREFIX}/lib/libspellathon.so.0
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/dict/words.txt ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
