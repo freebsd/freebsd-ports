@@ -19,7 +19,6 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
-NO_STAGE=	yes
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-configdir=${PREFIX}/lib/sasl2:${PREFIX}/etc/sasl2 \
@@ -35,23 +34,6 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--disable-krb4
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}2
-
-MAN3=		sasl.3 sasl_authorize_t.3 sasl_auxprop.3 \
-		sasl_auxprop_getctx.3 sasl_auxprop_request.3 \
-		sasl_callbacks.3 sasl_canon_user_t.3 \
-		sasl_chalprompt_t.3 sasl_checkapop.3 sasl_checkpass.3 \
-		sasl_client_init.3 sasl_client_new.3 sasl_client_start.3 \
-		sasl_client_step.3 sasl_decode.3 sasl_dispose.3 sasl_done.3 \
-		sasl_encode.3 sasl_encodev.3 sasl_errdetail.3 sasl_errors.3 \
-		sasl_errstring.3 sasl_getconfpath_t.3 sasl_getopt_t.3 \
-		sasl_getpath_t.3 sasl_getprop.3 sasl_getrealm_t.3 \
-		sasl_getsecret_t.3 sasl_getsimple_t.3 sasl_global_listmech.3 \
-		sasl_idle.3 sasl_listmech.3 sasl_log_t.3 \
-		sasl_server_init.3 sasl_server_new.3 sasl_server_start.3 \
-		sasl_server_step.3 sasl_server_userdb_checkpass_t.3 \
-		sasl_server_userdb_setpass_t.3 sasl_setpass.3 sasl_setprop.3 \
-		sasl_user_exists.3 sasl_verifyfile_t.3
-MAN8=		pluginviewer.8 sasldblistusers2.8 saslpasswd2.8
 
 NO_OPTIONS_SORT=	yes
 OPTIONS_DEFINE=		ALWAYSTRUE AUTHDAEMOND KEEP_DB_OPEN \
@@ -206,27 +188,21 @@ post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${PERL} -wpi.bak \
 		-e 's/\$$\*\.Tpo/$$&.$$./g'
 
-# Create Cyrus user and group
-pre-su-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}/html
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 .for f in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .for f in ${DOC2}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .for f in ${HTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${f}.html ${DOCSDIR}/html
+	@${INSTALL_DATA} ${WRKSRC}/doc/${f}.html \
+		${STAGEDIR}${DOCSDIR}/html
 .endfor
-	@${INSTALL_DATA} ${FILESDIR}/Sendmail.README ${DOCSDIR}
+	@${INSTALL_DATA} ${FILESDIR}/Sendmail.README \
+		${STAGEDIR}${DOCSDIR}
 .endif
-	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>
