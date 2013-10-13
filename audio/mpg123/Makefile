@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpg123
-PORTVERSION=	1.15.4
+PORTVERSION=	1.16.0
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF \
 		http://www.mpg123.de/download/
@@ -12,6 +12,7 @@ COMMENT=	Command-line player for MPEG Layer 1, 2, and 3 audio files
 
 LICENSE=	LGPL21
 
+USES=		gmake
 USE_BZIP2=	yes
 NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool libltdl
