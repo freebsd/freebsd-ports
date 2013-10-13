@@ -13,8 +13,6 @@ COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LATEST_LINK=	${PORTNAME}2
-
 USES=		perl5
 USE_PERL5=	patch
 USE_AUTOTOOLS=	libtool
@@ -62,62 +60,71 @@ OPTIONS_RADIO=		SQLITE
 OPTIONS_RADIO_SQLITE=	SQLITE2 SQLITE3
 OPTIONS_GROUP=		MECH
 OPTIONS_GROUP_MECH=	CRAM DIGEST LOGIN NTLM OTP PLAIN SCRAM
-OPTIONS_DEFAULT=	AUTHDAEMOND OBSOLETE_CRAM_ATTR CRAM DIGEST LOGIN NTLM \
-			OTP PLAIN SCRAM
+OPTIONS_DEFAULT=	AUTHDAEMOND OBSOLETE_CRAM_ATTR CRAM DIGEST \
+			LOGIN NTLM OTP PLAIN SCRAM
+OPTIONS_SUB=		yes
 ALWAYSTRUE_DESC=	the alwaystrue password verifier
+ALWAYSTRUE_CONFIGURE_ENABLE=alwaystrue
 AUTHDAEMOND_DESC=	use of authdaemon
+AUTHDAEMOND_CONFIGURE_ON=--with-authdaemond=/var/run/authdaemond/socket
+AUTHDAEMOND_CONFIGURE_OFF=--with-authdaemond=no
 KEEP_DB_OPEN_DESC=	Keep handle to Berkeley DB open
+KEEP_DB_OPEN_CONFIGURE_ENABLE=keep-db-open
 OBSOLETE_CRAM_ATTR_DESC=cmusaslsecretCRAM-MD5 property
+OBSOLETE_CRAM_ATTR_CONFIGURE_OFF=--enable-obsolete_cram_attr=no
+BDB_CONFIGURE_ON=	--with-dblib=berkeley \
+			--with-bdb-libdir=${BDB_LIB_DIR} \
+			--with-bdb-incdir=${BDB_INCLUDE_DIR} \
+			--with-bdb=${BDB_LIB_NAME}
+BDB_CONFIGURE_OFF=	--with-dblib=ndbm
+MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}
+MYSQL_CONFIGURE_OFF=	--without-mysql
+PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}
+PGSQL_CONFIGURE_OFF=	--without-pgsql
 SQLITE2_DESC=		SQLite 2 database
+SQLITE2_CONFIGURE_ON=	--with-sqlite=${LOCALBASE}
+SQLITE2_CONFIGURE_OFF=	--without-sqlite
+SQLITE3_CONFIGURE_ON=	--with-sqlite3=${LOCALBASE}
+SQLITE3_CONFIGURE_OFF=	--without-sqlite3
 CRAM_DESC=		CRAM-MD5 authentication
+CRAM_CONFIGURE_ENABLE=	cram
 DIGEST_DESC=		DIGEST-MD5 authentication
+DIGEST_CONFIGURE_ENABLE=digest
 LOGIN_DESC=		LOGIN authentication
+LOGIN_CONFIGURE_ENABLE=	login
 NTLM_DESC=		NTLM authentication
+NTLM_CONFIGURE_ENABLE=	ntlm
 OTP_DESC=		OTP authentication
+OTP_CONFIGURE_ENABLE=	otp
 PLAIN_DESC=		PLAIN authentication
+PLAIN_CONFIGURE_ENABLE=	plain
 SCRAM_DESC=		SCRAM authentication
+SCRAM_CONFIGURE_ENABLE=	scram
 
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MBDB}
 USE_BDB=	yes
 INVALID_BDB_VER=2
-CONFIGURE_ARGS+=--with-dblib=berkeley \
-		--with-bdb-libdir=${BDB_LIB_DIR} \
-		--with-bdb-incdir=${BDB_INCLUDE_DIR} \
-		--with-bdb=${BDB_LIB_NAME}
 SASLDB_NAME=	sasldb2
 .else
-CONFIGURE_ARGS+=--with-dblib=ndbm
 SASLDB_NAME=	sasldb2.db
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
-CONFIGURE_ARGS+=--with-mysql=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--without-mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
-CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--without-pgsql
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE2}
 USE_SQLITE=	2
-CONFIGURE_ARGS+=--with-sqlite=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--without-sqlite
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE3}
 USE_SQLITE=	3
-CONFIGURE_ARGS+=--with-sqlite3=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--without-sqlite3
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL} || ${PORT_OPTIONS:MPGSQL} || \
@@ -125,62 +132,6 @@ CONFIGURE_ARGS+=--without-sqlite3
 CONFIGURE_ARGS+=--enable-sql
 .else
 SQL=	"@comment "
-.endif
-
-.if ${PORT_OPTIONS:MALWAYSTRUE}
-CONFIGURE_ARGS+=--enable-alwaystrue
-.endif
-
-.if ${PORT_OPTIONS:MKEEP_DB_OPEN}
-CONFIGURE_ARGS+=--enable-keep-db-open
-.endif
-
-.if !${PORT_OPTIONS:MOBSOLETE_CRAM_ATTR}
-CONFIGURE_ARGS+=--enable-obsolete_cram_attr=no
-.endif
-
-.if ${PORT_OPTIONS:MAUTHDAEMOND}
-CONFIGURE_ARGS+=--with-authdaemond=/var/run/authdaemond/socket
-.else
-CONFIGURE_ARGS+=--with-authdaemond=no
-.endif
-
-.if ${PORT_OPTIONS:MLOGIN}
-CONFIGURE_ARGS+=--enable-login
-.else
-LOGIN=	"@comment "
-.endif
-
-.if !${PORT_OPTIONS:MPLAIN}
-CONFIGURE_ARGS+=--disable-plain
-PLAIN=	"@comment "
-.endif
-
-.if !${PORT_OPTIONS:MOTP}
-CONFIGURE_ARGS+=--disable-otp
-OTP=	"@comment "
-.endif
-
-.if !${PORT_OPTIONS:MCRAM}
-CONFIGURE_ARGS+=--disable-cram
-CRAM=	"@comment "
-.endif
-
-.if !${PORT_OPTIONS:MDIGEST}
-CONFIGURE_ARGS+=--disable-digest
-DIGEST=	"@comment "
-.endif
-
-.if ${PORT_OPTIONS:MNTLM}
-CONFIGURE_ARGS+=--enable-ntlm
-.else
-CONFIGURE_ARGS+=--disable-ntlm
-NTLM=	"@comment "
-.endif
-
-.if !${PORT_OPTIONS:MSCRAM}
-CONFIGURE_ARGS+=--disable-scram
-SCRAM=	"@comment "
 .endif
 
 .if ${ARCH} == "amd64"
@@ -225,16 +176,9 @@ HTDOCS=	advanced appconvert components gssapi index install macosx \
 	mechanisms options plugprog programming readme sysadmin upgrading \
 	windows
 
-PLIST_SUB=	PREFIX=${PREFIX} \
-		LOGIN=${LOGIN} \
-		PLAIN=${PLAIN} \
-		OTP=${OTP} \
-		CRAM=${CRAM} \
-		DIGEST=${DIGEST} \
-		NTLM=${NTLM} \
+PLIST_SUB+=	PREFIX=${PREFIX} \
 		GSSAPI=${GSSAPI} \
 		EBONES=${EBONES} \
-		SCRAM=${SCRAM} \
 		SQL=${SQL} \
 		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///}
 
