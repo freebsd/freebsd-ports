@@ -231,7 +231,7 @@ class TdiaryInstall
 
   def tdiaryConfReplace(filename)
     s = ''
-    File.open(filename) { |fp|
+    File.open(filename, "r:UTF-8") { |fp|
       fp.each { |line|
         line = "@data_path = '#{@passwd.dir}/#{@diarydir}'\n" if line =~ /^\@data_path\s/
         line = "@author_name = '#{@author_name}'\n" if line =~ /^\@author_name\s/

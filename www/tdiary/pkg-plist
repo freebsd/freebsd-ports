@@ -1,3 +1,4 @@
+%%WWWDIR%%/bin/tdiary
 %%WWWDIR%%/data/.htaccess
 %%WWWDIR%%/dot.htaccess
 %%WWWDIR%%/index.fcgi
@@ -12,6 +13,7 @@
 %%WWWDIR%%/js/category.js
 %%WWWDIR%%/js/category_autocomplete.js
 %%WWWDIR%%/js/comment_ajax.js
+%%WWWDIR%%/js/comment_emoji_autocomplete.js
 %%WWWDIR%%/js/draft.js
 %%WWWDIR%%/js/highlight.js
 %%WWWDIR%%/js/image.js
@@ -22,8 +24,6 @@
 %%WWWDIR%%/misc/filter/plugin/antispamservice.rb
 %%WWWDIR%%/misc/filter/plugin/en/antispamservice.rb
 %%WWWDIR%%/misc/filter/plugin/ja/antispamservice.rb
-%%WWWDIR%%/misc/gemfiles/ruby18.gemfile
-%%WWWDIR%%/misc/gemfiles/ruby18.gemfile.lock
 %%WWWDIR%%/misc/lib/README
 %%WWWDIR%%/misc/lib/compatible.rb
 %%WWWDIR%%/misc/lib/fcgi_patch.rb
@@ -55,6 +55,7 @@
 %%WWWDIR%%/misc/plugin/category.rb
 %%WWWDIR%%/misc/plugin/category_autocomplete.rb
 %%WWWDIR%%/misc/plugin/comment_ajax.rb
+%%WWWDIR%%/misc/plugin/comment_emoji_autocomplete.rb
 %%WWWDIR%%/misc/plugin/comment_mail-qmail.rb
 %%WWWDIR%%/misc/plugin/comment_mail-sendmail.rb
 %%WWWDIR%%/misc/plugin/comment_mail-smtp.rb
@@ -224,17 +225,20 @@
 %%WWWDIR%%/tdiary.conf.beginner
 %%WWWDIR%%/tdiary.conf.sample
 %%WWWDIR%%/tdiary.conf.sample-en
+%%WWWDIR%%/tdiary.gemspec
 %%WWWDIR%%/tdiary.rb
 %%WWWDIR%%/tdiary/admin.rb
 %%WWWDIR%%/tdiary/application.rb
+%%WWWDIR%%/tdiary/application/configuration.rb
+%%WWWDIR%%/tdiary/application/extensions/omniauth.rb
 %%WWWDIR%%/tdiary/author_only_base.rb
 %%WWWDIR%%/tdiary/base.rb
+%%WWWDIR%%/tdiary/cli.rb
 %%WWWDIR%%/tdiary/comment.rb
 %%WWWDIR%%/tdiary/comment_manager.rb
 %%WWWDIR%%/tdiary/compatible.rb
 %%WWWDIR%%/tdiary/config.rb
 %%WWWDIR%%/tdiary/core_ext.rb
-%%WWWDIR%%/tdiary/deploy.rb
 %%WWWDIR%%/tdiary/dispatcher.rb
 %%WWWDIR%%/tdiary/dispatcher/index_main.rb
 %%WWWDIR%%/tdiary/dispatcher/update_main.rb
@@ -252,10 +256,12 @@
 %%WWWDIR%%/tdiary/lang/en.rb
 %%WWWDIR%%/tdiary/lang/ja.rb
 %%WWWDIR%%/tdiary/plugin.rb
+%%WWWDIR%%/tdiary/rack.rb
 %%WWWDIR%%/tdiary/rack/assets/precompile.rb
 %%WWWDIR%%/tdiary/rack/auth/basic.rb
 %%WWWDIR%%/tdiary/rack/auth/omniauth.rb
 %%WWWDIR%%/tdiary/rack/html_anchor.rb
+%%WWWDIR%%/tdiary/rack/static.rb
 %%WWWDIR%%/tdiary/rack/valid_request_path.rb
 %%WWWDIR%%/tdiary/referer_manager.rb
 %%WWWDIR%%/tdiary/request.rb
@@ -264,6 +270,7 @@
 %%WWWDIR%%/tdiary/style.rb
 %%WWWDIR%%/tdiary/style/tdiary_style.rb
 %%WWWDIR%%/tdiary/style/wiki_style.rb
+%%WWWDIR%%/tdiary/tasks.rb
 %%WWWDIR%%/tdiary/tasks/assets.rake
 %%WWWDIR%%/tdiary/tasks/auth.rake
 %%WWWDIR%%/tdiary/tasks/db.rake
@@ -275,6 +282,7 @@
 %%WWWDIR%%/tdiary/tasks/rspec.rake
 %%WWWDIR%%/tdiary/tasks/server.rake
 %%WWWDIR%%/tdiary/tasks/test.rake
+%%WWWDIR%%/tdiary/version.rb
 %%WWWDIR%%/tdiary/view.rb
 %%WWWDIR%%/tdiary/view_helper.rb
 %%WWWDIR%%/theme/3minutes/3minutes.css
@@ -1889,114 +1897,6 @@
 %%WWWDIR%%/theme/zef/zef.css
 %%WWWDIR%%/update.fcgi
 %%WWWDIR%%/update.rb
-%%WWWDIR%%/vendor/imagesize-0.1.1/lib
-%%WWWDIR%%/vendor/jasmine-jquery-1.4.2/jasmine-jquery.js
-%%WWWDIR%%/vendor/jquery-1.8/jquery.js
-%%WWWDIR%%/vendor/rdtool-0.6.38/COPYING.txt
-%%WWWDIR%%/vendor/rdtool-0.6.38/Gemfile
-%%WWWDIR%%/vendor/rdtool-0.6.38/HISTORY
-%%WWWDIR%%/vendor/rdtool-0.6.38/LGPL-2.1
-%%WWWDIR%%/vendor/rdtool-0.6.38/LICENSE.txt
-%%WWWDIR%%/vendor/rdtool-0.6.38/README.html
-%%WWWDIR%%/vendor/rdtool-0.6.38/README.ja.html
-%%WWWDIR%%/vendor/rdtool-0.6.38/README.rd
-%%WWWDIR%%/vendor/rdtool-0.6.38/README.rd.ja
-%%WWWDIR%%/vendor/rdtool-0.6.38/Rakefile
-%%WWWDIR%%/vendor/rdtool-0.6.38/TODO
-%%WWWDIR%%/vendor/rdtool-0.6.38/bin/rd2
-%%WWWDIR%%/vendor/rdtool-0.6.38/bin/rdswap.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/block-element.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/complex-list-item.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/desclist.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/document-struct.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/dot.rd2rc
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/element.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/filter.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/head-filter.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/inline-element.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/labeled-element.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/list.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/loose-struct.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/methodlist.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/output-format-visitor.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/package.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/parser-util.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/post-install
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/pre-setup.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/rbl-file.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/rbl-suite.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/rd-struct.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/rd2html-ext-lib.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/rd2html-ext-opt.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/rd2html-lib.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/rd2html-opt.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/rd2man-lib.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/rd2rdo-lib.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/rd2rmi-lib.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/rdblockparser.ry
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/rdblockparser.tab.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/rdfmt.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/rdinlineparser.ry
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/rdinlineparser.tab.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/rdvisitor.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/reference-resolver.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/search-file.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/tree.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/version.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd/visitor.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/rdtool.gemspec
-%%WWWDIR%%/vendor/rdtool-0.6.38/setup.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/data/includee1.html
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/data/includee2.html
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/data/includee3.nothtml
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/data/includee4.xhtml
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/data/label.rbl
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/data/label2.rbl
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/data/sub/includee2.html
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/data/sub/includee4.html
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/dummy-observer.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/dummy.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/temp-dir.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-block-parser.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-desclist-item.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-document-element.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-document-struct.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-element.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-headline.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-inline-parser.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-list-item.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-list.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-methodlist-item.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-nonterminal-element.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-nonterminal-inline.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-output-format-visitor.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-parser-util.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-rbl-file.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-rbl-suite.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-rd2html-lib.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-rdtree.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-rdvisitor.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-reference-resolver.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-reference.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-search-file.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-terminal-inline.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-textblock.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-tree.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-version.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/test/test-visitor.rb
-%%WWWDIR%%/vendor/rdtool-0.6.38/utils/rd-mode.el
-@dirrm %%WWWDIR%%/vendor/rdtool-0.6.38/utils
-@dirrm %%WWWDIR%%/vendor/rdtool-0.6.38/test/data/sub
-@dirrm %%WWWDIR%%/vendor/rdtool-0.6.38/test/data
-@dirrm %%WWWDIR%%/vendor/rdtool-0.6.38/test
-@dirrm %%WWWDIR%%/vendor/rdtool-0.6.38/lib/rd
-@dirrm %%WWWDIR%%/vendor/rdtool-0.6.38/lib
-@dirrm %%WWWDIR%%/vendor/rdtool-0.6.38/bin
-@dirrm %%WWWDIR%%/vendor/rdtool-0.6.38
-@dirrm %%WWWDIR%%/vendor/jquery-1.8
-@dirrm %%WWWDIR%%/vendor/jasmine-jquery-1.4.2
-@dirrm %%WWWDIR%%/vendor/imagesize-0.1.1
-@dirrm %%WWWDIR%%/vendor
 @dirrm %%WWWDIR%%/theme/zef
 @dirrm %%WWWDIR%%/theme/yukon
 @dirrm %%WWWDIR%%/theme/ymck
@@ -2353,6 +2253,8 @@
 @dirrm %%WWWDIR%%/tdiary/io
 @dirrm %%WWWDIR%%/tdiary/filter
 @dirrm %%WWWDIR%%/tdiary/dispatcher
+@dirrm %%WWWDIR%%/tdiary/application/extensions
+@dirrm %%WWWDIR%%/tdiary/application
 @dirrm %%WWWDIR%%/tdiary
 @dirrm %%WWWDIR%%/skel
 @dirrm %%WWWDIR%%/plugin/ja
@@ -2375,7 +2277,6 @@
 @dirrm %%WWWDIR%%/misc/paas/cloudfoundry
 @dirrm %%WWWDIR%%/misc/paas
 @dirrm %%WWWDIR%%/misc/lib
-@dirrm %%WWWDIR%%/misc/gemfiles
 @dirrm %%WWWDIR%%/misc/filter/plugin/ja
 @dirrm %%WWWDIR%%/misc/filter/plugin/en
 @dirrm %%WWWDIR%%/misc/filter/plugin
@@ -2383,4 +2284,5 @@
 @dirrm %%WWWDIR%%/misc
 @dirrm %%WWWDIR%%/js
 @dirrm %%WWWDIR%%/data
+@dirrm %%WWWDIR%%/bin
 @dirrm %%WWWDIR%%
