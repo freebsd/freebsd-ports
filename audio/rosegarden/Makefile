@@ -22,7 +22,6 @@ RUN_DEPENDS=	dssi_osc_update:${PORTSDIR}/audio/dssi \
 		lilypond:${PORTSDIR}/print/lilypond
 
 USES=		gmake pkgconfig
-NO_STAGE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	QTLIBDIR=${QT_LIBDIR}
