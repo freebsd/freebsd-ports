@@ -30,7 +30,7 @@ USE_PERL5=	configure
 
 MODPERL_BUILD_DEPENDS=	p5-libapreq2>=0:${PORTSDIR}/www/p5-libapreq2
 MODPERL_RUN_DEPENDS=	p5-libapreq2>=0:${PORTSDIR}/www/p5-libapreq2
-MODPERL_USE=		APACHE_RUN=yes
+MODPERL_USE=		APACHE_RUN=22+
 
 post-patch:
 	@${REINPLACE_CMD} -e '/bin\/convert/d' ${WRKSRC}/Makefile.PL
