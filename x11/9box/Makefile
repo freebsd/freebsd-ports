@@ -12,18 +12,17 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	9box can "pack" windows inside itself
 
 PLIST_FILES=	bin/9box
-USE_GMAKE=	yes
+USES=		gmake
 USE_XORG=	xbitmaps x11 xt
 
 BUILD_WRKSRC=	${WRKSRC}/src
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g; \
 		s|%%CC%%|${CC}|g' \
 		${WRKSRC}/src/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/9box ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/9box ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
