@@ -37,12 +37,7 @@ HACKDOCSDIR?=	share/doc/${HACKNAME}
 USE_XORG=	xaw xpm
 GRAPHICS=	X11_GRAPHICS
 .else
-.if ${PKGNAMESUFFIX} == "-gnome"
-MAKE_JOBS_UNSAFE=	yes
-CATEGORIES=	games gnome
-USE_GNOME=	gnomelibs
-GRAPHICS=	GNOME_GRAPHICS
-.elif ${PKGNAMESUFFIX} == "-nox11"
+.if ${PKGNAMESUFFIX} == "-nox11"
 GRAPHICS=	# none
 #
 # Patch notes:
