@@ -1,4 +1,6 @@
 bin/mpg123
+bin/mpg123-id3dump
+bin/mpg123-strip
 include/mpg123.h
 lib/libmpg123.a
 lib/libmpg123.la
