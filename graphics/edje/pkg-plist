@@ -4,6 +4,7 @@ bin/edje_recc
 bin/edje_inspector
 bin/edje_external_inspector
 bin/edje_player
+bin/edje_watch
 include/edje-1/Edje.h
 include/edje-1/Edje_Edit.h
 lib/libedje.so
