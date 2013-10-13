@@ -17,7 +17,7 @@ USE_XORG=	xpm x11 xext sm ice
 MAKE_ENV=	DATADIR="${DATADIR}"
 
 .if defined(.PARSEDIR)
-USE_GMAKE=	yes
+USES+=		gmake
 .endif
 
 MAN1=	wmappl.1

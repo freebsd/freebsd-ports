@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.fukt.bsnet.se/~per/temperature/
 DISTNAME=	Temperature.app-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A dockable WindowMaker applet which displays the local temperature
+COMMENT=	Dockable WindowMaker applet which displays the local temperature
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

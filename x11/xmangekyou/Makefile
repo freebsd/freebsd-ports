@@ -8,7 +8,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://ftp.vector.co.jp/pack/unix/art/anime/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A kaleidoscope on X
+COMMENT=	Kaleidoscope on X
 
 USE_XORG=	x11 xpm xaw
 ALL_TARGET=	xmangekyou

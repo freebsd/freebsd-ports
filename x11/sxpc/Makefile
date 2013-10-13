@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	utilities
 EXTRACT_SUFX=	.shar.Z
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The Simple X Protocol Compressor
+COMMENT=	Simple X Protocol Compressor
 
 USES=		imake
 NO_WRKSUBDIR=	yes

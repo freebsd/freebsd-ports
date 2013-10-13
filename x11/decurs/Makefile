@@ -9,9 +9,9 @@ MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ \
 		#http://varg.dyndns.org/psi/files/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A program that lets you edit your X11 mouse cursors
+COMMENT=	Lets you edit your X11 mouse cursors
 
-LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtkmm20
+LIB_DEPENDS=	libgtkmm-2.0.6.so:${PORTSDIR}/x11-toolkits/gtkmm20
 
 USE_XORG=	x11
 USE_GNOME=	gtk20

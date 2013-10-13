@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A fast and customizable dockbar
+COMMENT=	Fast and customizable dockbar
 
 GNU_CONFIGURE=	yes
 USES=		pathfix pkgconfig

@@ -8,12 +8,12 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A program for display calibration of X11-Servers with ICC profiles
+COMMENT=	Program for display calibration of X11-Servers with ICC profiles
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	README README.profilers
 USE_XORG=	x11 xext sm xxf86vm
-USE_GMAKE=	yes
+USES=		gmake
 
 DEFINES=	-DXCALIB_VERSION=\"${PORTVERSION}\" -DUNIX
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib -lm -lX11 -lXxf86vm -lXext

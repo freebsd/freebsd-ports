@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://freefriends.org/arnold/Source/ \
 EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple menu patterned after Plan9
+COMMENT=	Simple menu patterned after Plan9
 
 EXTRACT_CMD=	${GZCAT}
 EXTRACT_BEFORE_ARGS=	# empty

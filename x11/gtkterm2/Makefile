@@ -8,11 +8,10 @@ CATEGORIES=	x11
 MASTER_SITES=	SF/gtkterm/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple GTK-2 terminal with tabs
+COMMENT=	Simple GTK-2 terminal with tabs
 
 USE_GNOME=	vte
-USE_GMAKE=	yes
-USES=		pkgconfig
+USES=		pkgconfig gmake
 USE_AUTOTOOLS=	libtool
 
 PORTDOCS=	README

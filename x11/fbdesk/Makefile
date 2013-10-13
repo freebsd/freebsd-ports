@@ -9,11 +9,11 @@ MASTER_SITES=	http://fluxbox.sourceforge.net/download/ \
 		GENTOO/distfiles
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Fluxbox utility to create and manage icons on the desktop
+COMMENT=	Fluxbox utility to create and manage icons on the desktop
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 OPTIONS_DEFINE=	IMLIB2 DOCS
 OPTIONS_DEFAULT=	IMLIB2

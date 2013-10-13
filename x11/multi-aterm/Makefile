@@ -8,7 +8,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://www.nongnu.org/materm/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A multi terminal based on aterm
+COMMENT=	Multi terminal based on aterm
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes

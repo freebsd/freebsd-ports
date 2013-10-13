@@ -8,9 +8,9 @@ CATEGORIES=	x11
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An anti-aliased font support for gtk+
+COMMENT=	Anti-aliased font support for gtk+
 
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+LIB_DEPENDS=	libXft.so:${PORTSDIR}/x11-fonts/libXft
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gtk12

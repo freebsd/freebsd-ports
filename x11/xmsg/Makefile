@@ -8,7 +8,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://www.generalconcepts.com/resources/software/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The X11R4 version of xmessage updated for X11R5 and renamed
+COMMENT=	Shows a message on the screen
 
 MAN1=		xmsg.1
 MANCOMPRESSED=	yes

@@ -8,7 +8,7 @@ CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://greek0.net/wmbutton/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A dockapp that displays 9 buttons to run apps of your choice
+COMMENT=	Dockapp that displays 9 buttons to run apps of your choice
 
 LICENSE=	GPLv2
 
