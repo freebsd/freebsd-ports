@@ -233,7 +233,6 @@
     SUBDIR += libtommath
     SUBDIR += libtsnnls
     SUBDIR += linpack
-    SUBDIR += linux-relview
     SUBDIR += lll_spect
     SUBDIR += lp_solve
     SUBDIR += lrng

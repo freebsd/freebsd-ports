@@ -70,10 +70,8 @@
     SUBDIR += lib765
     SUBDIR += libdsk
     SUBDIR += libspectrum
-    SUBDIR += linux-ePSXe
     SUBDIR += linux-geepee32
     SUBDIR += linux-peops-softgpu
-    SUBDIR += linux-peops-spu
     SUBDIR += linux-pete-mesagpu
     SUBDIR += linux-pete-xgl2gpu
     SUBDIR += linux-systemsimcell
