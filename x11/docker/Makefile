@@ -9,7 +9,7 @@ MASTER_SITES=	http://offload2.icculus.org:9090/openbox/2/docker/ \
 		http://offload1.icculus.org:9090/openbox/2/docker/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A dockapp with support for GNOME2 and KDE3 tray icons
+COMMENT=	Dockapp with support for GNOME2 and KDE3 tray icons
 
 LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -20,7 +20,6 @@ USES=		gmake pkgconfig
 
 PLIST_FILES=	bin/docker
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^PREFIX=|PREFIX?=| ; \
@@ -31,6 +30,6 @@ post-patch:
 		 s|-lX11||' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
