@@ -8,7 +8,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://bbdock.nethence.com/download/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An application launcher for Blackbox-like window manager
+COMMENT=	Application launcher for Blackbox-like window manager
 
 LICENSE=	BSD
 
@@ -21,13 +21,12 @@ PORTDOCS=	README
 
 PLIST_FILES=	bin/bbdock
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
