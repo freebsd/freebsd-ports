@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	View an area of the screen at a certain magnification
 
 USE_GNOME=	imlib
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} `${IMLIB_CONFIG} --cflags-gdk`" \
 		LIBS="`${IMLIB_CONFIG} --libs-gdk`"
 ALL_TARGET=	peeper
