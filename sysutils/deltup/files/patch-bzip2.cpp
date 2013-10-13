@@ -1,14 +1,15 @@
---- bzip2.cpp.orig	2007-03-25 04:59:24.000000000 +0600
-+++ bzip2.cpp		2008-03-09 23:37:35.000000000 +0500
-@@ -19,6 +19,7 @@
+--- bzip2.cpp.orig	2007-03-25 01:59:24.000000000 +0300
++++ bzip2.cpp	2013-10-06 17:12:16.000000000 +0400
+@@ -19,6 +19,8 @@
  #include "system.h"
  #include "tmpstore.h"
  #include "bzip2.h"
 +#include <stdio.h>
++#include <stdlib.h>
  
  char *bzip2_compressor_name[MAX_BZIP2_COMPRESSORS] = {"0.9.0c", "1.0.2", "1.0.3", "1.0.4"};
  char *bzip2_name[MAX_BZIP2_COMPRESSORS] = {NULL, NULL, NULL, NULL};
-@@ -31,14 +32,12 @@
+@@ -31,14 +33,12 @@
    system(command.c_str());
  
    FILE * fp;
@@ -25,7 +26,7 @@
  //                 printf("Retrieved line of length %zu :\n", read);
  //                 printf("%s", line);
         char *v = strstr(line, "Version");
-@@ -56,8 +55,8 @@
+@@ -56,8 +56,8 @@
         }
         fname = line;
    }
