@@ -11,7 +11,7 @@ DISTNAME=	tomoe-gtk-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	TOMOE GTK+ library
 
-LIB_DEPENDS=	tomoe.1:${PORTSDIR}/japanese/tomoe
+LIB_DEPENDS=	libtomoe.so:${PORTSDIR}/japanese/tomoe
 
 USE_GNOME=	lthack gnomehack gtk20
 GNU_CONFIGURE=	yes
@@ -20,14 +20,13 @@ USE_LDCONFIG=	yes
 
 #OPTIONS=	GUCHARMAP	"Compile with gucharmap"		on
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 #.if defined(WITHOUT_GUCHARMAP)
 CONFIGURE_ARGS+=--with-gucharmap=no
 PLIST_SUB+=	GUCHARMAP="@comment "
 #.else
-#LIB_DEPENDS+=	gucharmap.6:${PORTSDIR}/deskutils/gucharmap
+#LIB_DEPENDS+=	libgucharmap.so:${PORTSDIR}/deskutils/gucharmap
 #PLIST_SUB+=	GUCHARMAP=""
 #.endif
 
