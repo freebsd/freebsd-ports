@@ -9,15 +9,15 @@ MASTER_SITES=	ftp://ftp.cs.brown.edu/pub/xmx/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An X protocol multiplexor
+COMMENT=	X protocol multiplexor
 
 USE_XORG=	x11
 
-MAN1=		xmx.1
-PLIST_FILES=	bin/xmx
+PLIST_FILES=	bin/xmx man/man1/xmx.1.gz
 
-NO_STAGE=	yes
+MAKE_ARGS+=	BIN=${STAGEDIR}${PREFIX}/bin/ MANPATH=${STAGEDIR}${MAN1PREFIX}/man/
+
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/xmx
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xmx
 
 .include <bsd.port.mk>
