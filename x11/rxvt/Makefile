@@ -8,7 +8,7 @@ CATEGORIES+=	x11
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A low memory usage xterm replacement that supports color
+COMMENT=	Low memory usage xterm replacement that supports color
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes

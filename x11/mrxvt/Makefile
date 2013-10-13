@@ -9,10 +9,10 @@ MASTER_SITES=	SF/materm/${PORTNAME}%20source/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tabbed version of rxvt
+COMMENT=	Tabbed version of rxvt
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libjpeg.so.11:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png
 
 CONFLICTS=	mrxvt-0.5.*
 

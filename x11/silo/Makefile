@@ -8,7 +8,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://doublef.nm.ru/silo/sources/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple X11 launcher extensible in any programming language
+COMMENT=	Simple X11 launcher extensible in any programming language
 
 DEPRECATED=	Upstream has disappeared
 EXPIRATION_DATE=	2013-10-18

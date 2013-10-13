@@ -9,7 +9,7 @@ MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ \
 		#http://varg.dyndns.org/psi/files/xcurs/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An editor for new XFree86/X.Org style full-color cursors properties
+COMMENT=	Editor for new X.Org style full-color cursors properties
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 

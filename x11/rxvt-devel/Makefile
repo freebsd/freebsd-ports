@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-dev/${PORTVERSION}
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A low memory usage xterm replacement that supports color
+COMMENT=	Low memory usage xterm replacement that supports color
 
 USE_AUTOTOOLS=	libtool
 USES=		perl5

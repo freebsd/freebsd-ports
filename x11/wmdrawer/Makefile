@@ -12,11 +12,10 @@ DISTFILES=	${EXTRACT_ONLY}:tarball \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A dockapp which provides a drawer to launch applications
+COMMENT=	Dockapp which provides a drawer to launch applications
 
 USE_GNOME=	gdkpixbuf
-USE_GMAKE=	yes
-USES=		pkgconfig
+USES=		pkgconfig gmake
 CONFIGURE_ENV+=	DOCSDIR=${DOCSDIR}
 MAKE_ENV+=	${CONFIGURE_ENV}
 

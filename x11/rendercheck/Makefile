@@ -6,7 +6,7 @@ PORTVERSION=	1.4
 CATEGORIES=	x11
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A small program for testing basic Render extension conformance
+COMMENT=	Small program for testing basic Render extension conformance
 
 XORG_CAT=	app
 USE_XORG=	xrender
