@@ -25,23 +25,21 @@ RESTRICTED=	Redistribution not allowed
 RESTRICTED_FILES=	${DISTFILES:Nlinux-f10-flashsupport*:C/:[^:]+$//}
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 
 USE_NPAPI=	linux-*
 NPAPI_FILES=	libflashplayer.so
-
-CONFLICTS=	linux-flashplugin-9* linux-f8-flashplugin10* linux-f10-flashplugin10*
 
 OPTIONS_DEFINE=	GNOME
 GNOME_DESC=	include gnome support for .desktop file
 
 OPTIONS_SUB=	yes
-GNOME_USES=	desktop-file-utils
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNOME}
+USES+=		desktop-file-utils
 INSTALLS_ICONS=	yes
 .endif
 
