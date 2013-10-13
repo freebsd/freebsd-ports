@@ -34,6 +34,7 @@ export PORTSDIR=${BASEDIR}/ports
 export SRCDIR8=${BASEDIR}/src.8
 export SRCDIR9=${BASEDIR}/src.9
 export SRCDIR10=${BASEDIR}/src.10
+export SRCDIR11=${BASEDIR}/src.11
 
 # Target architecture if not set in the environment
 if [ "${ARCH}" = "" ]; then
@@ -138,9 +139,11 @@ OSVERSION9=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR9
 ${SVN} -q up ${SRCDIR10}/sys/sys
 OSVERSION10=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR10}/sys/sys/param.h)
 
+${SVN} -q up ${SRCDIR11}/sys/sys
+OSVERSION11=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR11}/sys/sys/param.h)
 
 cd ${PORTSDIR}
-rm -f INDEX-8 INDEX-8.bz2 INDEX-9 INDEX-9.bz2 INDEX-10 INDEX-10.bz2
+rm -f INDEX-8 INDEX-8.bz2 INDEX-9 INDEX-9.bz2 INDEX-10 INDEX-10.bz2 INDEX-11 INDEX-11.bz2
 (${SVN} up 2>1 ) > svn.log
 if grep -q ^C svn.log ; then
   (echo "svn update failed with conflicts:";
@@ -148,7 +151,7 @@ if grep -q ^C svn.log ; then
     exit 1
 fi
 
-for branch in 8.x 9.x 10.x; do
+for branch in 8.x 9.x 10.x 11.x; do
     release=$(echo $branch | sed -e 's,.x,,')
 
     eval _osver=\$OSVERSION${release}
