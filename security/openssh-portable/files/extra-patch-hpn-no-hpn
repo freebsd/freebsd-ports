@@ -1,0 +1,32 @@
+--- sshd_config.orig	2013-10-12 06:40:05.766128740 -0500
++++ sshd_config	2013-10-12 06:40:06.646129924 -0500
+@@ -125,20 +125,6 @@
+ # override default of no subsystems
+ Subsystem	sftp	/usr/libexec/sftp-server
+ 
+-# the following are HPN related configuration options
+-# tcp receive buffer polling. disable in non autotuning kernels
+-#TcpRcvBufPoll yes
+- 
+-# disable hpn performance boosts
+-#HPNDisabled no
+-
+-# buffer size for hpn to non-hpn connections
+-#HPNBufferSize 2048
+-
+-
+-# allow the use of the none cipher
+-#NoneEnabled no
+-
+ # Example of overriding settings on a per-user basis
+ #Match User anoncvs
+ #	X11Forwarding no
+--- version.h.orig	2013-10-12 06:42:19.578133368 -0500
++++ version.h	2013-10-12 06:42:28.581136160 -0500
+@@ -3,5 +3,4 @@
+ #define SSH_VERSION	"OpenSSH_6.3"
+ 
+ #define SSH_PORTABLE	"p1"
+-#define SSH_HPN         "-hpn14v2"
+-#define SSH_RELEASE	SSH_VERSION SSH_PORTABLE SSH_HPN
++#define SSH_RELEASE	SSH_VERSION SSH_PORTABLE
