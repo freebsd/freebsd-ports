@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate Allegro dialogs in a very simple way
 
 LIB_DEPENDS=	liballeg.so:${PORTSDIR}/devel/allegro
