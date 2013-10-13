@@ -15,10 +15,10 @@ OPTIONS_DEFINE=	GNUTLS
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 
-MAN1=		wmbiff.1
-MAN5=		wmbiffrc.5
 PLIST_FILES=	bin/wmbiff \
 		lib/wmbiff/security.debian.rb \
+		man/man1/wmbiff.1.gz \
+		man/man5/wmbiffrc.5.gz \
 		%%DATADIR%%/sample.wmbiffrc \
 		%%DATADIR%%/skins/wmbiff-master-contrast.xpm \
 		%%DATADIR%%/skins/wmbiff-master-led.xpm
@@ -26,7 +26,6 @@ PLIST_DIRS=	%%DATADIR%%/skins \
 		%%DATADIR%% \
 		lib/wmbiff
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGNUTLS}
@@ -41,6 +40,6 @@ CONFIGURE_ARGS+=	--disable-crypto
 post-install:
 	@${ECHO_MSG} "===>   Installing sample.wmbiffrc to ${DATADIR}"
 	@${ECHO_MSG} "===>   Modify it to suit your needs and copy to ~/.wmbiffrc"
-	@${INSTALL_DATA} -m 644 ${WRKSRC}/wmbiff/sample.wmbiffrc ${DATADIR}
+	@${INSTALL_DATA} -m 644 ${WRKSRC}/wmbiff/sample.wmbiffrc ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.post.mk>
