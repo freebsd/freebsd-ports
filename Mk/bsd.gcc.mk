@@ -42,7 +42,7 @@ GCC_Include_MAINTAINER=		gerald@FreeBSD.org
 
 # All GCC versions supported by the ports framework.  Keep them in
 # ascending order and in sync with the table below. 
-GCCVERSIONS=	030402 040200 040400 040600 040700 040800
+GCCVERSIONS=	030402 040200 040400 040600 040700 040800 040900
 
 # The first field if the OSVERSION in which it appeared in the base.
 # The second field is the OSVERSION in which it disappeared from the base.
@@ -53,6 +53,7 @@ GCCVERSION_040400=	     0       0 4.4
 GCCVERSION_040600=	     0       0 4.6
 GCCVERSION_040700=	     0       0 4.7
 GCCVERSION_040800=	     0       0 4.8
+GCCVERSION_040900=	     0       0 4.9
 
 GCC_DEFAULT_VERSION=	4.6
 GCC_DEFAULT_V=	${GCC_DEFAULT_VERSION:S/.//}
