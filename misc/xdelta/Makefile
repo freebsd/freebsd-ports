@@ -16,6 +16,4 @@ USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-NO_LATEST_LINK=	yes
-
 .include <bsd.port.mk>
