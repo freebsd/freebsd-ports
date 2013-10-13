@@ -3,6 +3,16 @@ bin/razor-check
 bin/razor-client
 bin/razor-report
 bin/razor-revoke
+%%PERL5_MAN3%%/Razor2::Errorhandler.3.gz
+%%PERL5_MAN3%%/Razor2::Preproc::deHTMLxs.3.gz
+%%PERL5_MAN3%%/Razor2::Syslog.3.gz
+man/man1/razor-admin.1.gz
+man/man1/razor-check.1.gz
+man/man1/razor-report.1.gz
+man/man1/razor-revoke.1.gz
+man/man5/razor-agent.conf.5.gz
+man/man5/razor-agents.5.gz
+man/man5/razor-whitelist.5.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Client/Agent.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Client/Config.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Client/Core.pm
