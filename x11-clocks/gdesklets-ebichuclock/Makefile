@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.gdesklets.info/archive/
 PKGNAMEPREFIX=	gdesklets-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A very simple clock with a small Ebichu picture in it
+COMMENT=	Simple clock with a small Ebichu picture in it
 
 RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		${LOCALBASE}/share/gdesklets/Sensors/Clock/__init__.py:${PORTSDIR}/x11-clocks/gdesklets-clock
@@ -25,13 +25,11 @@ SUB_LIST=	NAME="${NAME}"
 DATADIR=	${PREFIX}/share/gdesklets
 NAME=		ebichuclock
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${DATADIR}/Displays/${NAME}
-	${INSTALL_DATA} ${WRKSRC}/*.display ${DATADIR}/Displays/${NAME}
-	@${MKDIR} ${DATADIR}/Displays/${NAME}/gfx
-	${INSTALL_DATA} ${WRKSRC}/gfx/*.png ${DATADIR}/Displays/${NAME}/gfx
-	${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}/Displays/${NAME}
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/Displays/${NAME}
+	${INSTALL_DATA} ${WRKSRC}/*.display ${STAGEDIR}${DATADIR}/Displays/${NAME}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/Displays/${NAME}/gfx
+	${INSTALL_DATA} ${WRKSRC}/gfx/*.png ${STAGEDIR}${DATADIR}/Displays/${NAME}/gfx
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DATADIR}/Displays/${NAME}
 
 .include <bsd.port.mk>
