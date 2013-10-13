@@ -1,0 +1,79 @@
+--- ./src/main/radattr.mk.orig	2013-10-13 11:44:04.000000000 -0400
++++ ./src/main/radattr.mk	2013-10-13 11:44:13.000000000 -0400
+@@ -2,4 +2,4 @@
+ SOURCES		:= radattr.c
+ 
+ TGT_PREREQS	:= libfreeradius-server.a libfreeradius-radius.a
+-TGT_LDLIBS	:= $(LIBS)
++TGT_LDLIBS	:= $(LIBS) $(OPENSSL_LIBS)
+--- ./src/main/radclient.mk.orig	2013-10-13 11:34:24.000000000 -0400
++++ ./src/main/radclient.mk	2013-10-13 11:35:07.000000000 -0400
+@@ -6,3 +6,4 @@
+ 
+ SRC_CFLAGS	:= -I${top_srcdir}/src/modules/rlm_mschap
+ TGT_LDLIBS	:= $(LIBS) -ltalloc
++TGT_LDLIBS	+= $(OPENSSL_LIBS)
+--- ./src/main/radconf2xml.mk.orig	2013-10-13 11:47:43.000000000 -0400
++++ ./src/main/radconf2xml.mk	2013-10-13 11:47:51.000000000 -0400
+@@ -2,4 +2,4 @@
+ SOURCES		:= radconf2xml.c
+ 
+ TGT_PREREQS	:= libfreeradius-server.a libfreeradius-radius.a
+-TGT_LDLIBS	:= $(LIBS)
++TGT_LDLIBS	:= $(LIBS) $(OPENSSL_LIBS)
+--- ./src/main/radmin.mk.orig	2013-10-13 11:39:32.000000000 -0400
++++ ./src/main/radmin.mk	2013-10-13 11:39:42.000000000 -0400
+@@ -4,4 +4,4 @@
+ 
+ TGT_INSTALLDIR  := ${sbindir}
+ TGT_PREREQS	:= libfreeradius-server.a libfreeradius-radius.a
+-TGT_LDLIBS	:= $(LIBS) $(LIBREADLINE) -ltalloc
++TGT_LDLIBS	:= $(LIBS) $(LIBREADLINE) -ltalloc $(OPENSSL_LIBS)
+--- ./src/main/radwho.mk.orig	2013-10-13 11:50:42.000000000 -0400
++++ ./src/main/radwho.mk	2013-10-13 11:50:49.000000000 -0400
+@@ -2,4 +2,4 @@
+ SOURCES		:= radwho.c
+ 
+ TGT_PREREQS	:= libfreeradius-server.a libfreeradius-radius.a
+-TGT_LDLIBS	:= $(LIBS)
++TGT_LDLIBS	:= $(LIBS) $(OPENSSL_LIBS)
+--- ./src/modules/proto_dhcp/dhcpclient.mk.orig	2013-10-13 11:16:59.000000000 -0400
++++ ./src/modules/proto_dhcp/dhcpclient.mk	2013-10-13 11:17:06.000000000 -0400
+@@ -3,3 +3,4 @@
+ 
+ TGT_PREREQS	:= libfreeradius-radius.a
+ TGT_LDLIBS	:= $(LIBS)
++TGT_LDLIBS      += $(OPENSSL_LIBS)
+--- ./src/modules/rlm_ippool/rlm_ippool.mk.orig	2013-10-13 10:44:02.000000000 -0400
++++ ./src/modules/rlm_ippool/rlm_ippool.mk	2013-10-13 10:44:08.000000000 -0400
+@@ -7,3 +7,4 @@
+ 
+ SRC_CFLAGS	:= $(rlm_ippool_CFLAGS) 
+ TGT_LDLIBS	:= $(rlm_ippool_LDLIBS)
++TGT_LDLIBS      += $(OPENSSL_LIBS)
+--- ./src/modules/rlm_ippool/rlm_ippool_tool.mk.orig	2013-10-13 10:46:12.000000000 -0400
++++ ./src/modules/rlm_ippool/rlm_ippool_tool.mk	2013-10-13 10:46:26.000000000 -0400
+@@ -9,5 +9,6 @@
+ 
+ SRC_CFLAGS	:= $(rlm_ippool_CFLAGS) 
+ TGT_LDLIBS	:= $(rlm_ippool_LDLIBS)
++TGT_LDLIBS      += $(OPENSSL_LIBS)
+ 
+ MAN		:= rlm_ippool_tool.8
+--- ./src/modules/rlm_mschap/smbencrypt.mk.orig	2013-10-13 10:42:52.000000000 -0400
++++ ./src/modules/rlm_mschap/smbencrypt.mk	2013-10-13 10:43:14.000000000 -0400
+@@ -6,5 +6,5 @@
+ 
+ SRC_CFLAGS	:= 
+ TGT_LDLIBS	:= $(LIBS)
+-
++TGT_LDLIBS      += $(OPENSSL_LIBS)
+ 
+--- ./src/main/radsniff.mk.in.orig	2013-10-13 11:37:18.000000000 -0400
++++ ./src/main/radsniff.mk.in	2013-10-13 11:37:32.000000000 -0400
+@@ -9,4 +9,4 @@
+ SOURCES		:= radsniff.c
+ 
+ TGT_PREREQS	:= libfreeradius-radius.a
+-TGT_LDLIBS	:= $(LIBS) $(PCAP_LIBS)
++TGT_LDLIBS	:= $(LIBS) $(PCAP_LIBS) $(OPENSSL_LIBS)
