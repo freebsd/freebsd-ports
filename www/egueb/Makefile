@@ -22,7 +22,6 @@ USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--disable-static
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|@LEX@|${LOCALBASE}/bin/flex|" \
 		${WRKSRC}/ecss/lib/Makefile.in
