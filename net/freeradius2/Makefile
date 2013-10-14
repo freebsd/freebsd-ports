@@ -6,9 +6,7 @@ DISTVERSION=	2.2.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
-		ftp://ftp.uk.freeradius.org/pub/radius/%SUBDIR%/ \
 		http://ftp.cc.uoc.gr/mirrors/ftp.freeradius.org/%SUBDIR%/ \
-		http://freeradius.portal-to-web.de/%SUBDIR%/ \
 		http://mirrors.rit.edu/zi/
 MASTER_SITE_SUBDIR=	. old
 DISTNAME=	freeradius-server-${DISTVERSION}
