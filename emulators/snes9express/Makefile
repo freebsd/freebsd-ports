@@ -10,13 +10,15 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK interface for snes9x
 
+LICENSE=	GPLv2 # (or later)
+
 RUN_DEPENDS=	snes9x:${PORTSDIR}/emulators/snes9x
 
 USE_GNOME=	gtk20
-USES=		gettext
+USES=		gettext pkgconfig
 GNU_CONFIGURE=	yes
 
-BROKEN=		does not build
+BROKEN_sparc64=	does not compile on sparc64
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 PLIST_FILES=	bin/${PORTNAME} \
@@ -24,26 +26,20 @@ PLIST_FILES=	bin/${PORTNAME} \
 		%%DATADIR%%/snsp.s9xskin
 PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
+# fix build with clang
+CFLAGS+= -Wno-return-type
+
 post-patch:
+	@${REINPLACE_CMD} -e 's|(gzFile\*)||' \
+					-e 's|\*fptr;|fptr;|' ${WRKSRC}/rom.cc
 	@${REINPLACE_CMD} -e 's|<endian\.h>|<sys/endian.h>|' \
 		${WRKSRC}/s9xskin.cc
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.s9xskin ${DATADIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.s9xskin ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
