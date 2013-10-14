@@ -19,22 +19,15 @@ TEST_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent
 
 OPTIONS_DEFINE=	ANYEVENT EVENT
 OPTIONS_DEFAULT=ANYEVENT EVENT
-EVENT_DESC=	Use Event as underlying event handler
 ANYEVENT_DESC=	Use AnyEvent as underlying event handler
+EVENT_DESC=	Use Event as underlying event handler
 
 USE_PERL5=	configure
 USES=		perl5
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MANYEVENT}
-BUILD_DEPENDS+=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent
-RUN_DEPENDS+=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent
-.endif
-
-.if ${PORT_OPTIONS:MEVENT}
-BUILD_DEPENDS+=	p5-Event>=0:${PORTSDIR}/devel/p5-Event
-RUN_DEPENDS+=	p5-Event>=0:${PORTSDIR}/devel/p5-Event
-.endif
+ANYEVENT_BUILD_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent
+ANYEVENT_RUN_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent
+EVENT_BUILD_DEPENDS=	p5-Event>=0:${PORTSDIR}/devel/p5-Event
+EVENT_RUN_DEPENDS=	p5-Event>=0:${PORTSDIR}/devel/p5-Event
 
 .include <bsd.port.mk>
