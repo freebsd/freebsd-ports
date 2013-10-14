@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dropbear
-PORTVERSION=	2013.58
+PORTVERSION=	2013.59
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://matt.ucc.asn.au/dropbear/releases/
 
@@ -16,12 +16,13 @@ USES=	gmake
 USE_RC_SUBR=	${PORTNAME}
 
 PLIST_FILES=	bin/dbclient \
-		bin/dropbearkey \
 		bin/dropbearconvert \
+		bin/dropbearkey \
 		sbin/dropbear \
 		man/man1/dbclient.1.gz \
-		man/man8/dropbear.8.gz \
-		man/man8/dropbearkey.8.gz
+		man/man1/dropbearconvert.1.gz \
+		man/man1/dropbearkey.1.gz \
+		man/man8/dropbear.8.gz
 
 PLIST_DIRSTRY=	etc/dropbear
 
@@ -36,10 +37,15 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,make clean,\$${MAKE} clean," \
 				${WRKSRC}/libtomcrypt/Makefile.in
 
-post-install:
+do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/dropbear
+	${INSTALL_PROGRAM} ${WRKSRC}/dbclient ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/dropbearconvert ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/dropbearkey ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/dropbear ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/dropbearconvert.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/dropbearkey.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/dbclient.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/dropbear.8 ${STAGEDIR}${MAN1PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/dropbearkey.8 ${STAGEDIR}${MAN1PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/dropbear.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 
 .include <bsd.port.mk>
