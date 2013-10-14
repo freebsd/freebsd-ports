@@ -9,4 +9,4 @@ and MIDI-CCs. As most functionality is located in shared libraries,
 creating alternative user-interfaces is easy. A versatile console mode
 interface is included in the package.
 
-WWW: http://www.eca.cx/ecasound/
+WWW: http://nosignal.fi/ecasound/
