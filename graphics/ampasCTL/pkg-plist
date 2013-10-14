@@ -1,3 +1,6 @@
+bin/ctlrender
+bin/exr_ctl_exr
+bin/exrdpx
 include/CTL/CtlAddr.h
 include/CTL/CtlAlign.h
 include/CTL/CtlColorSpace.h
@@ -14,22 +17,32 @@ include/CTL/CtlRcPtr.h
 include/CTL/CtlReadWriteAccess.h
 include/CTL/CtlSimdInterpreter.h
 include/CTL/CtlSparseMatrix.h
+include/CTL/CtlStdType.h
 include/CTL/CtlSymbolTable.h
 include/CTL/CtlSyntaxTree.h
 include/CTL/CtlTokens.h
 include/CTL/CtlType.h
+include/CTL/CtlTypeStorage.h
 include/CTL/CtlVersion.h
-lib/libIlmCtl.a
-lib/libIlmCtl.la
+include/OpenEXR/ImfCtlApplyTransforms.h
+lib/CTL/change_saturation.ctl
+lib/CTL/transform_DPX_EXR.ctl
+lib/CTL/transform_EXR_DPX.ctl
+lib/CTL/utilities.ctl
+lib/cmake/CTL/CTLConfig.cmake
+lib/cmake/CTL/CTLConfigVersion.cmake
+lib/cmake/CTL/CTLLibraryDepends.cmake
 lib/libIlmCtl.so
-lib/libIlmCtl.so.2
-lib/libIlmCtlMath.a
-lib/libIlmCtlMath.la
+lib/libIlmCtl.so.1.5.0
 lib/libIlmCtlMath.so
-lib/libIlmCtlMath.so.2
-lib/libIlmCtlSimd.a
-lib/libIlmCtlSimd.la
+lib/libIlmCtlMath.so.1.5.0
 lib/libIlmCtlSimd.so
-lib/libIlmCtlSimd.so.2
+lib/libIlmCtlSimd.so.1.5.0
+lib/libIlmImfCtl.so
 libdata/pkgconfig/CTL.pc
+libdata/pkgconfig/OpenEXR_CTL.pc
+@dirrm lib/cmake/CTL
+@dirrmtry lib/cmake
+@dirrm lib/CTL
+@dirrmtry include/OpenEXR
 @dirrm include/CTL
