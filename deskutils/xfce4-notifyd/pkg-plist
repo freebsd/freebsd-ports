@@ -1,5 +1,6 @@
 bin/xfce4-notifyd-config
 lib/xfce4/notifyd/xfce4-notifyd
+man/man1/xfce4-notifyd-config.1.gz
 share/applications/xfce4-notifyd-config.desktop
 share/dbus-1/services/org.xfce.xfce4-notifyd.Notifications.service
 share/icons/hicolor/48x48/apps/xfce4-notifyd.png
