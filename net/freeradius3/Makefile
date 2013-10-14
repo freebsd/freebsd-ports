@@ -3,13 +3,14 @@
 
 PORTNAME=	freeradius
 DISTVERSION=	3.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
 		http://ftp.cc.uoc.gr/mirrors/ftp.freeradius.org/%SUBDIR%/ \
 		http://mirrors.rit.edu/zi/
 MASTER_SITE_SUBDIR=	. old
+PKGNAMESUFFIX=	3
 DISTNAME=	freeradius-server-${DISTVERSION}
 
 MAINTAINER=	zi@FreeBSD.org
