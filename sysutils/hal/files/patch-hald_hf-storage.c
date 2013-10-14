@@ -1,5 +1,5 @@
---- hald/freebsd/hf-storage.c.orig	2009-08-24 08:42:29.000000000 -0400
-+++ hald/freebsd/hf-storage.c	2011-07-20 20:52:51.000000000 -0400
+--- ./hald/freebsd/hf-storage.c.orig	2009-08-24 14:42:29.000000000 +0200
++++ ./hald/freebsd/hf-storage.c	2013-06-10 16:22:36.080280935 +0200
 @@ -30,6 +30,7 @@
  #include <limits.h>
  #include <inttypes.h>
@@ -8,7 +8,18 @@
  #include <sys/param.h>
  #include <sys/types.h>
  #include <sys/disklabel.h>
-@@ -418,10 +419,41 @@ hf_storage_parse_conftxt (const char *co
+@@ -174,6 +175,10 @@ hf_storage_device_probe_geom (HalDevice 
+   if (! geom_obj)
+     return;
+ 
++  /* Exclude /dev/diskid/ labels as they are duplicates. */
++  if (strncmp(geom_obj->dev, "diskid/", 7) == 0)
++    return;
++
+   node = g_node_find(hf_storage_geom_tree, G_PRE_ORDER, G_TRAVERSE_ALL,
+                      GUINT_TO_POINTER(geom_obj->hash));
+ 
+@@ -418,10 +423,41 @@ hf_storage_parse_conftxt (const char *co
  	  continue;
  	}
  
@@ -50,7 +61,7 @@
        geom_obj->type = -1;	/* We use -1 here to denote a missing type. */
        geom_obj->hash = hash;
  
-@@ -458,6 +490,13 @@ hf_storage_parse_conftxt (const char *co
+@@ -458,6 +494,13 @@ hf_storage_parse_conftxt (const char *co
                              {
                                g_free(geom_obj->class);
  			      geom_obj->class = g_strdup(fields[12]);
@@ -64,7 +75,7 @@
  			    }
  			}
  		    }
-@@ -589,11 +628,18 @@ hf_storage_devd_notify (const char *syst
+@@ -589,11 +632,18 @@ hf_storage_devd_notify (const char *syst
    char *conftxt;
    GSList *new_disks;
  
@@ -84,7 +95,7 @@
    new_disks = hf_storage_parse_conftxt(conftxt);
    g_free(conftxt);
  
-@@ -669,7 +715,7 @@ hf_storage_conftxt_timeout_cb (gpointer 
+@@ -669,7 +719,7 @@ hf_storage_conftxt_timeout_cb (gpointer 
    if (hf_is_waiting)
      return TRUE;
  
