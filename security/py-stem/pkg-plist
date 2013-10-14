@@ -25,12 +25,18 @@
 %%PYTHON_SITELIBDIR%%/stem/descriptor/reader.py
 %%PYTHON_SITELIBDIR%%/stem/descriptor/reader.pyc
 %%PYTHON_SITELIBDIR%%/stem/descriptor/reader.pyo
+%%PYTHON_SITELIBDIR%%/stem/descriptor/remote.py
+%%PYTHON_SITELIBDIR%%/stem/descriptor/remote.pyc
+%%PYTHON_SITELIBDIR%%/stem/descriptor/remote.pyo
 %%PYTHON_SITELIBDIR%%/stem/descriptor/router_status_entry.py
 %%PYTHON_SITELIBDIR%%/stem/descriptor/router_status_entry.pyc
 %%PYTHON_SITELIBDIR%%/stem/descriptor/router_status_entry.pyo
 %%PYTHON_SITELIBDIR%%/stem/descriptor/server_descriptor.py
 %%PYTHON_SITELIBDIR%%/stem/descriptor/server_descriptor.pyc
 %%PYTHON_SITELIBDIR%%/stem/descriptor/server_descriptor.pyo
+%%PYTHON_SITELIBDIR%%/stem/descriptor/tordnsel.py
+%%PYTHON_SITELIBDIR%%/stem/descriptor/tordnsel.pyc
+%%PYTHON_SITELIBDIR%%/stem/descriptor/tordnsel.pyo
 %%PYTHON_SITELIBDIR%%/stem/exit_policy.py
 %%PYTHON_SITELIBDIR%%/stem/exit_policy.pyc
 %%PYTHON_SITELIBDIR%%/stem/exit_policy.pyo
@@ -79,6 +85,9 @@
 %%PYTHON_SITELIBDIR%%/stem/util/log.py
 %%PYTHON_SITELIBDIR%%/stem/util/log.pyc
 %%PYTHON_SITELIBDIR%%/stem/util/log.pyo
+%%PYTHON_SITELIBDIR%%/stem/util/lru_cache.py
+%%PYTHON_SITELIBDIR%%/stem/util/lru_cache.pyc
+%%PYTHON_SITELIBDIR%%/stem/util/lru_cache.pyo
 %%PYTHON_SITELIBDIR%%/stem/util/ordereddict.py
 %%PYTHON_SITELIBDIR%%/stem/util/ordereddict.pyc
 %%PYTHON_SITELIBDIR%%/stem/util/ordereddict.pyo
@@ -104,3 +113,5 @@
 @dirrm %%PYTHON_SITELIBDIR%%/stem/response
 @dirrm %%PYTHON_SITELIBDIR%%/stem/descriptor
 @dirrm %%PYTHON_SITELIBDIR%%/stem
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%
