@@ -3,6 +3,7 @@
 
 PORTNAME=	freeradius
 DISTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -28,8 +29,7 @@ CONFLICTS=	gnu-radius-[0-9].* openradius-[0-9].* radiusd-cistron-[0-9].* \
 USE_RC_SUBR=	radiusd
 
 USES=		gmake
-HAS_CONFIGURE=	yes
-USE_AUTOTOOLS=	libltdl libtool autoconf
+GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
 MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
@@ -341,8 +341,7 @@ SUB_LIST+=	PORTDOCS=""
 .if ${OPENSSLLIB} != "/usr/lib"
 CONFIGURE_ARGS+=--with-openssl-libraries=${OPENSSLLIB}
 .endif
-CONFIGURE_ARGS+=--with-system-libtool --with-system-libltdl \
-		--disable-ltdl-install --with-logdir=${LOGDIR} \
+CONFIGURE_ARGS+=--with-logdir=${LOGDIR} \
 		--with-openssl-includes=${OPENSSLINC} \
 		--prefix=${PREFIX} --libdir=${PREFIX}/${FREERADIUS_LIBDIR} \
 		--localstatedir=/var \
