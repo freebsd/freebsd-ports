@@ -2,21 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	CGI-Expand
-PORTVERSION=	2.03
+PORTVERSION=	2.04
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Convert flat hash to nested data using TT2's dot convention
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Convert flat hash to nested data using TT2 dot convention
 
-BUILD_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-USES=		perl5
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+
 USE_PERL5=	configure
+USES=		perl5
 
-MAN3=	CGI::Expand.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

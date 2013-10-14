@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Expand/.packlist
 %%SITE_PERL%%/CGI/Expand.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Expand/.packlist
+%%PERL5_MAN3%%/CGI::Expand.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Expand
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
 @dirrmtry %%SITE_PERL%%/CGI
