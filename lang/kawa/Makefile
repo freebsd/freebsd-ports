@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kawa
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	lang scheme java
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	kawa
@@ -12,22 +12,25 @@ COMMENT=	Java-based Scheme implementation
 
 LICENSE=	MIT
 
+BUILD_DEPENDS=	makeinfo:${PORTSDIR}/print/texinfo
+
 USES=		gmake
 USE_JAVA=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ARGS=	--enable-kawa-frontend \
 		--with-java-source=${JAVA_PORT_VERSION} \
 		--with-libtool
+CONFIGURE_ENV+=	MAKEINFO=${LOCALBASE}/bin/makeinfo
 
-MAN1=		kawa.1 qexo.1
+MAKE_JOBS_UNSAFE=yes
+
 INFO=		kawa
 
 PLIST_FILES=	bin/kawa bin/qexo share/java/kawa.jar \
-		share/java/kawa-${PORTVERSION}.jar
+		share/java/kawa-${PORTVERSION}.jar \
+		man/man1/kawa.1.gz man/man1/qexo.1.gz \
 
-NO_STAGE=	yes
 pre-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} \
 		-e '/^JAR =/s|[a-zA-Z]*$$|${JAR}|g;'
