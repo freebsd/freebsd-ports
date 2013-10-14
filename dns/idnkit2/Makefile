@@ -5,6 +5,7 @@ PORTNAME=	idnkit
 PORTVERSION=	2.2
 CATEGORIES=	dns
 MASTER_SITES=	http://jprs.co.jp/idn/
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	fbsd@grid.einherjar.de
 COMMENT=	Internationalized Domain Name toolkit 2
@@ -13,7 +14,6 @@ LICENSE_PERMS=	# permissive
 LICENSE_NAME=	OSCL
 LICENSE_FILE=	LICENSE.txt
 
-LATEST_LINK=	${PORTNAME}${PORTVERSION:R}
 CONFLICTS_INSTALL=	idnkit-1.*
 
 USE_AUTOTOOLS=	libtool

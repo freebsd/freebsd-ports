@@ -6,7 +6,7 @@ PORTVERSION=	1.7.40
 PORTREVISION=	2
 CATEGORIES=	databases devel
 MASTER_SITES=	http://tangentsoft.net/mysql++/releases/
-PKGNAMESUFFIX=	-mysql${MYSQL_VER}
+PKGNAMESUFFIX=	1-mysql${MYSQL_VER}
 
 MAINTAINER=	sergey@network-asp.biz
 COMMENT=	Complex C++ API for MySQL${MYSQL_VER}
@@ -19,7 +19,6 @@ CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} \
 USE_LDCONFIG=	yes
 
 CONFLICTS=	${PORTNAME}*-2.*
-NO_LATEST_LINK=	yes
 
 NO_STAGE=	yes
 post-install:

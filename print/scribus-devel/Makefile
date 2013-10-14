@@ -8,6 +8,7 @@ CATEGORIES=	print editors
 MASTER_SITES=	http://download.tuxfamily.org/bartcoding/FreeBSD/ \
 				${MASTER_SITE_LOCAL}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${SVN_REV}
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	coder@tuxfamily.org
 COMMENT=	Comprehensive desktop publishing program
@@ -32,7 +33,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinte
 
 CONFLICTS=	scribus-1.[0-4]*
 
-NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
 USE_QT4=	gui linguist_build moc_build qmake_build rcc_build uic_build xml network
 USE_GNOME=	desktopfileutils libartlgpl2 libxml2

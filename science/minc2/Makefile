@@ -15,6 +15,7 @@ PORTVERSION=	2.2.00
 PORTREVISION=	1
 CATEGORIES=	science biology
 MASTER_SITES=	http://packages.bic.mni.mcgill.ca/tgz/
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Medical Imaging NetCDF
@@ -31,7 +32,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CMAKE_ARGS=	-DMINC2_BUILD_SHARED_LIBS:BOOL=YES
 
 CONFLICTS=	minc-1* zh-tk-[0-9]*
-LATEST_LINK=	minc2
 
 NO_STAGE=	yes
 post-install:

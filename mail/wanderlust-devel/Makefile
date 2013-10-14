@@ -8,7 +8,7 @@ CATEGORIES=	mail elisp
 MASTER_SITES=	http://www.jpl.org/ftp/pub/github-snapshots/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nobutaka
-PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
+PKGNAMESUFFIX=	-devel-${EMACS_PORT_NAME}
 DISTNAME=	wanderlust-${SNAPDATE}${SNAPTIME}
 
 MAINTAINER=	nobutaka@FreeBSD.org

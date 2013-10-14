@@ -6,6 +6,7 @@ PORTREVISION=	4
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
+PKGNAMESUFFIX=	33
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Low Level Virtual Machine

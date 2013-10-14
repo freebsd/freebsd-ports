@@ -5,6 +5,7 @@ PORTVERSION=	2.3.1
 CATEGORIES=	devel
 MASTER_SITES=	http://milki.github.io/${PORTNAME}/ \
 		LOCAL/tdb
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	milki@rescomp.berkeley.edu
 COMMENT=	An access control layer on top of git
