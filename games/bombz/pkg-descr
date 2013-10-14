@@ -1,0 +1,9 @@
+Bombz is a simple 2D puzzle game. It doesn't really have a plot. The object is
+to blow up all the bombs on each level then escape off the edge of the screen.
+To blow up a bomb, push it to where you want to cause an explosion, then collect
+a match (originally a detonator in the Archimedes version) and touch the bomb
+again and quickly get out of the way. A bomb destroys everything surrounding it
+except the metallic walls; if it blows up another bomb, that takes out
+everything around it too so you can set off chain reactions.
+
+WWW: http://bombz.sourceforge.net/
