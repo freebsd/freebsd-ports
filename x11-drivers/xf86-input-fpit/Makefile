@@ -10,11 +10,8 @@ COMMENT=	X.Org fpit input driver
 XORG_CAT=	driver
 USE_XORG=	xrandr
 
-MAN4=		fpit.4x
-
 .if !defined(WITH_NEW_XORG)
 IGNORE=		does not build with X server 1.7.7
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

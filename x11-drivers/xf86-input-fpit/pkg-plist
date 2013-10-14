@@ -1,6 +1,7 @@
 lib/xorg/modules/input/fpit_drv.la
 lib/xorg/modules/input/fpit_drv.so
 share/X11/xorg.conf.d/50-fpit.conf
+man/man4/fpit.4x.gz
 @dirrmtry lib/xorg/modules/input
 @dirrmtry lib/xorg/modules
 @dirrmtry lib/xorg
