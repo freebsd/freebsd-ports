@@ -2,31 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	tktray
-PORTVERSION=	1.1
-PORTREVISION=	2
+PORTVERSION=	1.3.9
 CATEGORIES=	x11-toolkits tk
-MASTER_SITES=	http://www.sw4me.com/ CENKES
-DISTNAME=	${TKPKG}
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	System tray icon support
 
-USE_TK=		84
+USES+=		tk
 USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} --with-tk=${TK_LIBDIR} \
-		--with-tkinclude=${TK_INCLUDEDIR} --enable-shared
-CPPFLAGS+=	-I${TK_INCLUDEDIR}/generic -I${TCL_INCLUDEDIR}/generic
+CONFIGURE_ARGS=	-exec-prefix=${PREFIX} \
+		--with-tcl=${TCL_LIBDIR} \
+		--with-tk=${TK_LIBDIR}
 TKPKG=		${PORTNAME}${PORTVERSION}
-PLIST_SUB=	TKPKG=${TKPKG}
-USE_LDCONFIG=	${PREFIX}/lib/${TKPKG}
-MANN=		${PORTNAME}.n
 
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -Ee '/^.+TCLLIBPATH/s#$$# \\#' ${WRKSRC}/Makefile.in
-
-post-install:
-	@${LN} -sf ${USE_LDCONFIG}/lib${TKPKG}.so ${USE_LDCONFIG}/lib${TKPKG}.so.0
+PLIST_FILES=	lib/${TKPKG}/libtktray.so.1 \
+		lib/${TKPKG}/pkgIndex.tcl \
+		man/mann/${PORTNAME}.n.gz
+PLIST_DIRS=	lib/${TKPKG}
 
 .include <bsd.port.mk>
