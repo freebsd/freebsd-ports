@@ -11,9 +11,9 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce's panel
 
-LIB_DEPENDS=	wnck-1:${PORTSDIR}/x11-toolkits/libwnck \
-		cairo:${PORTSDIR}/graphics/cairo \
-		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libwnck-1.so:${PORTSDIR}/x11-toolkits/libwnck \
+		libcairo.so:${PORTSDIR}/graphics/cairo \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
 USES=	desktop-file-utils gmake pathfix perl5 pkgconfig
 GNU_CONFIGURE=	yes
@@ -28,7 +28,6 @@ CONFIGURE_ARGS+=--enable-gio-unix
 
 OPTIONS_DEFINE=		NLS DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
