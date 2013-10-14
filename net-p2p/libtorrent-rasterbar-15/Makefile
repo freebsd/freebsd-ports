@@ -6,6 +6,7 @@ PORTREVISION?=	4
 CATEGORIES?=	net-p2p ipv6
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	libtorrent
+PKGNAMESUFFIX=	-15
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	C++ library implementing a BitTorrent client
@@ -14,8 +15,6 @@ BROKEN=		Does not build with recent boost
 
 
 CONFLICTS+=	libtorrent-rasterbar-0.1[46789].*
-
-NO_LATEST_LINK=	yes
 
 BUILD_DEPENDS=	pkgconf>0:${PORTSDIR}/devel/pkgconf
 LIB_DEPENDS+=	boost_date_time:${PORTSDIR}/devel/boost-libs \

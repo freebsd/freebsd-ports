@@ -6,7 +6,7 @@ PORTVERSION=	3.0.11
 CATEGORIES=	chinese www
 MASTER_SITES=	http://www.phpbb-tw.net/phpbb/download/ \
 		http://freebsd.ee.ccu.edu.tw/phpBB/
-PKGNAMESUFFIX=	-tw
+PKGNAMESUFFIX=	3-tw
 DISTNAME=	phpBB-${PORTVERSION}
 
 MAINTAINER=	appleboy.tw@gmail.com

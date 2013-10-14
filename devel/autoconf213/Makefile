@@ -8,6 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ade/gnu
 DISTNAME=	autoconf-000227
+PKGNAMESUFFIX=	213
 
 # note: before committing to this port, contact portmgr to arrange for an
 # experimental ports run.  Untested commits may be backed out at portmgr's
@@ -21,7 +22,6 @@ RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 
 BUILD_VERSION=	2.13
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
-LATEST_LINK=	autoconf213
 USE_BZIP2=	yes
 USES=		perl5
 GNU_CONFIGURE=	yes

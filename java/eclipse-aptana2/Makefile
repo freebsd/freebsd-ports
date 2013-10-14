@@ -7,6 +7,7 @@ PORTVERSION=	2.0.5.1278522500
 CATEGORIES=	java devel
 MASTER_SITES=	http://nivi.interfree.it/distfiles/eclipse-aptana2/
 PKGNAMEPREFIX=	eclipse-
+PKGNAMESUFFIX=	2
 DISTNAME=	com.aptana.ide.feature.studio-${PORTVERSION}-5-7857HJ97CFF61HN1HZHtem5tN7
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -17,8 +18,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 CONFLICTS_INSTALL=	eclipse-aptana-1*
 
 JAVA_VERSION=	1.6+
-
-LATEST_LINK?=	${PKGNAMEPREFIX}aptana2
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

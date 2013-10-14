@@ -7,6 +7,7 @@ CATEGORIES=	textproc java
 MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	lucene/solr/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
+PKGNAMESUFFIX=	3
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	High performance search server built using Lucene Java
@@ -15,7 +16,6 @@ LICENSE=	AL2
 
 CONFLICT=	apache-solr-4.1.*
 
-NO_LATEST_LINK=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
