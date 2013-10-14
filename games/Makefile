@@ -92,6 +92,7 @@
     SUBDIR += bomberclone
     SUBDIR += bomberinstinct
     SUBDIR += bombherman
+    SUBDIR += bombz
     SUBDIR += bomns
     SUBDIR += boswars
     SUBDIR += bovo
