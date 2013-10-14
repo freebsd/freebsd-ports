@@ -1,15 +1,14 @@
 ====
 
-*** WARNING: Do not use this software in data critical production environments,
-only in safe test environments! This software is still BETA! ***
+To enable the Hg-Git extension it has to be added in either
 
-To enable the Hg-Git extension make sure you have the following lines in your
-Mercurial global configuration file '~/.hgrc':
+'$PREFIX/etc/mercurial/hgrc' (per-system),
+'$HOME/.hgrc' (per-user) or
+'<repo>/.hg/hgrc' (per-repository)
+
+Mercurial configuration file:
 
 [extensions]
 hggit =
-
-Note: As of Mercurial 1.8 the required bookmarks extension became a core
-functionality and can be removed from the extensions list.
 
 ====

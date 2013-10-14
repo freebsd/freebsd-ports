@@ -12,17 +12,13 @@ COMMENT=	Mercurial extension to pull from or push to a Git repository
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}dulwich>=0.8.7:${PORTSDIR}/devel/dulwich \
-		mercurial>=2.5.2:${PORTSDIR}/devel/mercurial \
+RUN_DEPENDS=	${PKGNAMEPREFIX}dulwich>=*:${PORTSDIR}/devel/dulwich \
+		mercurial>=*:${PORTSDIR}/devel/mercurial \
 		${PKGNAMEPREFIX}ordereddict>=1.1:${PORTSDIR}/devel/py-ordereddict
 
-
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_PKGNAME=	${PORTNAME:S/-/_/}
-
-NO_STAGE=	yes
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
