@@ -54,5 +54,5 @@ lib/libsvn_swig_py-1.so.0
 %%PYTHON_SITELIBDIR%%/svn/repos.pyc
 %%PYTHON_SITELIBDIR%%/svn/wc.py
 %%PYTHON_SITELIBDIR%%/svn/wc.pyc
-@dirrm %%PYTHON_SITELIBDIR%%/libsvn
 @dirrm %%PYTHON_SITELIBDIR%%/svn
+@dirrm %%PYTHON_SITELIBDIR%%/libsvn

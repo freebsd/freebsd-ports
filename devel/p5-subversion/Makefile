@@ -17,29 +17,20 @@ PKGDIR=		${.CURDIR}
 
 USES=		perl5
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}
-MAN3=		SVN::Base.3 \
-		SVN::Client.3 \
-		SVN::Core.3 \
-		SVN::Delta.3 \
-		SVN::Fs.3 \
-		SVN::Ra.3 \
-		SVN::Repos.3 \
-		SVN::Wc.3
-
 SVN_BUILD_BINDINGS=yes
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile.common"
 
 CATEGORIES+=	perl5
 
 do-build:
-	cd ${WRKSRC} ; ${MAKE} swig-pl-lib ; ${MAKE} swig-pl
+	${MAKE} -C ${WRKSRC} swig-pl-lib ${MAKE_ARGS}
+	${MAKE} -C ${WRKSRC} swig-pl ${MAKE_ARGS}
+
+pre-install:
+	${REINPLACE_CMD} '/SWIG_PL_DIR/s, install$$, all pure_install,g' ${WRKSRC}/Makefile
 
 do-install:
-	cd ${WRKSRC} ; \
-	${REINPLACE_CMD} '/SWIG_PL_DIR/s, install$$, all pure_install,g' ${WRKSRC}/Makefile ; \
-	${MAKE} install-swig-pl
+	${MAKE} -C ${WRKSRC} install-swig-pl ${MAKE_ARGS}
 
 .include <bsd.port.post.mk>
