@@ -14,19 +14,17 @@ COMMENT=	Widgets library for the Xfce desktop environment
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libutil xfconf
 INSTALLS_ICONS=	yes
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig gmake
 
 CONFIGURE_ARGS=	--with-vendor-info=FreeBSD
 
 OPTIONS_DEFINE=		DOCS NLS NOTIFY GLADE
 OPTIONS_DEFAULT=	NOTIFY
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -47,14 +45,14 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNOTIFY}
-LIB_DEPENDS+=	startup-notification-1:${PORTSDIR}/x11/startup-notification
+LIB_DEPENDS+=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
 CONFIGURE_ARGS+=--enable-startup-notification
 .else
 CONFIGURE_ARGS+=--disable-startup-notification
 .endif
 
 .if ${PORT_OPTIONS:MGLADE}
-LIB_DEPENDS+=	gladeui-1:${PORTSDIR}/devel/glade3
+LIB_DEPENDS+=	libgladeui-1.so:${PORTSDIR}/devel/glade3
 CONFIGURE_ARGS+=--enable-gladeui
 .else
 CONFIGURE_ARGS+=--disable-gladeui

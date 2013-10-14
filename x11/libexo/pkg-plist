@@ -33,6 +33,8 @@ lib/libexo-1.so.1
 lib/xfce4/exo-1/exo-compose-mail-1
 lib/xfce4/exo-1/exo-helper-1
 libdata/pkgconfig/exo-1.pc
+man/man1/exo-csource.1.gz
+man/man1/exo-open.1.gz
 share/applications/exo-file-manager.desktop
 share/applications/exo-mail-reader.desktop
 share/applications/exo-preferred-applications.desktop

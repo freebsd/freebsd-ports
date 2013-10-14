@@ -72,7 +72,7 @@ share/dbus-1/services/org.xfce.Xfconf.service
 %%NLS%%share/locale/ur_PK/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfconf.mo
-%%PERLBIND%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/perllocal.pod
+%%PERLBIND%%%%PERL5_MAN3%%/Xfce4::Xfconf.3.gz
 %%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Xfce4/Xfconf/Xfconf.so
 %%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Xfce4/Xfconf/Xfconf.bs
 %%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Xfce4/Xfconf/.packlist
