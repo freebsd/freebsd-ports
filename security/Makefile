@@ -784,6 +784,7 @@
     SUBDIR += py-slowaes
     SUBDIR += py-ssh
     SUBDIR += py-sslstrip
+    SUBDIR += py-stem
     SUBDIR += py-tlslite
     SUBDIR += py-trustedpickle
     SUBDIR += py-twistedConch
@@ -945,7 +946,6 @@
     SUBDIR += starttls
     SUBDIR += stegdetect
     SUBDIR += steghide
-    SUBDIR += stem
     SUBDIR += strobe
     SUBDIR += strongswan
     SUBDIR += stunnel
