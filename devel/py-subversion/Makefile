@@ -19,15 +19,15 @@ USE_PYTHON=	yes
 
 SVN_BUILD_BINDINGS=	yes
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile.common"
 
 CATEGORIES+=	python
 
 do-build:
-	cd ${WRKSRC} ; ${MAKE} swig-py-lib ; ${MAKE} swig-py
+	${MAKE} -C ${WRKSRC} swig-py-lib ${MAKE_ARGS}
+	${MAKE} -C ${WRKSRC} swig-py ${MAKE_ARGS}
 
 do-install:
-	cd ${WRKSRC} ; ${MAKE} install-swig-py
+	${MAKE} -C ${WRKSRC} install-swig-py ${MAKE_ARGS}
 
 .include <bsd.port.post.mk>

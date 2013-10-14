@@ -2,6 +2,14 @@ lib/libsvn_swig_perl-1.a
 lib/libsvn_swig_perl-1.la
 lib/libsvn_swig_perl-1.so
 lib/libsvn_swig_perl-1.so.0
+%%PERL5_MAN3%%/SVN::Base.3.gz
+%%PERL5_MAN3%%/SVN::Client.3.gz
+%%PERL5_MAN3%%/SVN::Core.3.gz
+%%PERL5_MAN3%%/SVN::Delta.3.gz
+%%PERL5_MAN3%%/SVN::Fs.3.gz
+%%PERL5_MAN3%%/SVN::Ra.3.gz
+%%PERL5_MAN3%%/SVN::Repos.3.gz
+%%PERL5_MAN3%%/SVN::Wc.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/SVN/Base.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SVN/Client.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SVN/Core.pm
@@ -30,7 +38,7 @@ lib/libsvn_swig_perl-1.so.0
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Ra
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Fs
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Delta
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Client
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Core
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Client
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/SVN

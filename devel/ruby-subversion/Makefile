@@ -9,7 +9,8 @@ COMMENT=	Ruby bindings for version control system
 .if defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == 16
 MASTERDIR=	${.CURDIR}/../../devel/subversion16
 .elif defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == 17
-MASTERDIR=	${.CURDIR}/../../devel/subversion16
+BROKEN=	does not build with subversion17
+MASTERDIR=	${.CURDIR}/../../devel/subversion17
 .else
 MASTERDIR=	${.CURDIR}/../../devel/subversion
 .endif
@@ -19,15 +20,15 @@ USE_RUBY=	yes
 
 SVN_BUILD_BINDINGS=yes
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile.common"
 
 CATEGORIES+=	ruby
 
 do-build:
-	cd ${WRKSRC} ; ${MAKE} swig-rb-lib ; ${MAKE} swig-rb
+	${MAKE} -C ${WRKSRC} swig-rb-lib ${MAKE_ARGS}
+	${MAKE} -C ${WRKSRC} swig-rb ${MAKE_ARGS}
 
 do-install:
-	cd ${WRKSRC} ; ${MAKE} install-swig-rb
+	${MAKE} -C ${WRKSRC} install-swig-rb ${MAKE_ARGS}
 
 .include <bsd.port.post.mk>
