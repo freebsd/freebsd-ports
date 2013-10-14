@@ -140,6 +140,7 @@ CXX=		clang++
 .endif
 GYP_DEFINES+=	clang=1
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
+CONFIGURE_ENV+=	AR=/usr/bin/ar
 .endif
 
 .if ${OSVERSION} >= 1000052 && !exists(${LOCALBASE}/include/execinfo.h)
