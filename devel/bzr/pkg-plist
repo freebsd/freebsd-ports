@@ -2440,6 +2440,7 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/xml_serializer.py
 %%PYTHON_SITELIBDIR%%/bzrlib/xml_serializer.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/xml_serializer.pyo
+man/man1/bzr.1.gz
 share/locale/ar/LC_MESSAGES/bzr.mo
 share/locale/ast/LC_MESSAGES/bzr.mo
 share/locale/bs/LC_MESSAGES/bzr.mo
@@ -2478,82 +2479,20 @@ share/locale/ug/LC_MESSAGES/bzr.mo
 share/locale/uk/LC_MESSAGES/bzr.mo
 share/locale/vi/LC_MESSAGES/bzr.mo
 share/locale/zh_CN/LC_MESSAGES/bzr.mo
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/vi/LC_MESSAGES
-@dirrmtry share/locale/vi
-@dirrmtry share/locale/uk/LC_MESSAGES
-@dirrmtry share/locale/uk
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
-@dirrmtry share/locale/tr/LC_MESSAGES
-@dirrmtry share/locale/tr
-@dirrmtry share/locale/sv/LC_MESSAGES
-@dirrmtry share/locale/sv
-@dirrmtry share/locale/sr/LC_MESSAGES
-@dirrmtry share/locale/sr
-@dirrmtry share/locale/sk/LC_MESSAGES
-@dirrmtry share/locale/sk
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/sco/LC_MESSAGES
 @dirrmtry share/locale/sco
-@dirrmtry share/locale/ru/LC_MESSAGES
-@dirrmtry share/locale/ru
-@dirrmtry share/locale/ro/LC_MESSAGES
-@dirrmtry share/locale/ro
-@dirrmtry share/locale/pt_BR/LC_MESSAGES
-@dirrmtry share/locale/pt_BR
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
-@dirrmtry share/locale/nl/LC_MESSAGES
-@dirrmtry share/locale/nl
-@dirrmtry share/locale/nb/LC_MESSAGES
-@dirrmtry share/locale/nb
 @dirrmtry share/locale/my/LC_MESSAGES
 @dirrmtry share/locale/my
-@dirrmtry share/locale/ms/LC_MESSAGES
-@dirrmtry share/locale/ms
-@dirrmtry share/locale/ko/LC_MESSAGES
-@dirrmtry share/locale/ko
-@dirrmtry share/locale/ja/LC_MESSAGES
-@dirrmtry share/locale/ja
-@dirrmtry share/locale/it/LC_MESSAGES
-@dirrmtry share/locale/it
-@dirrmtry share/locale/id/LC_MESSAGES
-@dirrmtry share/locale/id
-@dirrmtry share/locale/he/LC_MESSAGES
-@dirrmtry share/locale/he
-@dirrmtry share/locale/gl/LC_MESSAGES
-@dirrmtry share/locale/gl
-@dirrmtry share/locale/fr/LC_MESSAGES
-@dirrmtry share/locale/fr
 @dirrmtry share/locale/fo/LC_MESSAGES
 @dirrmtry share/locale/fo
-@dirrmtry share/locale/fa/LC_MESSAGES
-@dirrmtry share/locale/fa
-@dirrmtry share/locale/es/LC_MESSAGES
-@dirrmtry share/locale/es
-@dirrmtry share/locale/en_GB/LC_MESSAGES
-@dirrmtry share/locale/en_GB
-@dirrmtry share/locale/en_AU/LC_MESSAGES
-@dirrmtry share/locale/en_AU
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/el
-@dirrmtry share/locale/de/LC_MESSAGES
-@dirrmtry share/locale/de
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
-@dirrmtry share/locale/bs/LC_MESSAGES
-@dirrmtry share/locale/bs
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
-@dirrmtry share/locale/ar/LC_MESSAGES
-@dirrmtry share/locale/ar
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/version_info_formats
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/util/tests
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/util/configobj
