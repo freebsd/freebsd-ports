@@ -4283,6 +4283,7 @@
     SUBDIR += sdl_console
     SUBDIR += sdl_sge
     SUBDIR += sdlmm
+    SUBDIR += sdlskk
     SUBDIR += sdts++
     SUBDIR += sedsed
     SUBDIR += seed
