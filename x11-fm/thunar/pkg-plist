@@ -29,6 +29,7 @@ lib/libthunarx-2.so.0
 %%PLUGIN_TPA%%lib/xfce4/panel/plugins/libthunar-tpa.la
 %%PLUGIN_TPA%%lib/xfce4/panel/plugins/libthunar-tpa.so
 libdata/pkgconfig/thunarx-2.pc
+man/man1/Thunar.1.gz
 share/Thunar/sendto/thunar-sendto-email.desktop
 share/applications/Thunar-bulk-rename.desktop
 share/applications/Thunar-folder-handler.desktop
