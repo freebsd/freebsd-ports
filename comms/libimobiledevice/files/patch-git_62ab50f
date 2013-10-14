@@ -1,0 +1,11 @@
+--- ./cython/lockdown.pxi.orig	2013-03-07 23:05:33.000000000 +0100
++++ ./cython/lockdown.pxi	2013-10-14 02:44:26.489878883 +0200
+@@ -221,7 +221,7 @@
+             char* c_session_id = NULL
+             bint ssl_enabled
+             bytes session_id
+-        err = lockdownd_start_session(self._c_client, host_id, &c_session_id, &ssl_enabled)
++        err = lockdownd_start_session(self._c_client, host_id, &c_session_id, <int *>&ssl_enabled)
+         try:
+             self.handle_error(err)
+ 

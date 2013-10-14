@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Python bindings for libimobiledevice
 
-LIB_DEPENDS=	imobiledevice:${PORTSDIR}/${MASTER_PORT}
+LIB_DEPENDS=	libimobiledevice.so:${PORTSDIR}/${MASTER_PORT}
 BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython \
 		${PYTHON_SITELIBDIR}/plist.so:${PORTSDIR}/devel/py-libplist
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/plist.so:${PORTSDIR}/devel/py-libplist
@@ -24,7 +24,6 @@ PLIST_FILES=	${PYTHONPREFIX_SITELIBDIR:S,^${PREFIX}/,,}/imobiledevice.a \
 		${PYTHONPREFIX_SITELIBDIR:S,^${PREFIX}/,,}/imobiledevice.la \
 		${PYTHONPREFIX_SITELIBDIR:S,^${PREFIX}/,,}/imobiledevice.so
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,../src/libimobiledevice.la,${LOCALBASE}/lib/libimobiledevice.la,' \
 		${BUILD_WRKSRC}/Makefile.in
