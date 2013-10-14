@@ -23,7 +23,7 @@ BUILD_DEPENDS+=	${_GETTEXT_DEPENDS}
 .elif ${gettext_ARGS} == "run"
 RUN_DEPENDS+=	${_GETTEXT_DEPENDS}
 .elif ${gettext_ARGS} == "lib"
-LIB_DEPENDS+=	intl:${PORTSDIR}/devel/gettext
+LIB_DEPENDS+=	libintl.so:${PORTSDIR}/devel/gettext
 .else
 IGNORE=	USES=gettext - invalid args: [${gettext_ARGS}] specifed
 .endif

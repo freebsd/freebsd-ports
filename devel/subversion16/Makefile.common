@@ -20,8 +20,8 @@ LICENSE=	AL2
 CONFLICTS_INSTALL+=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-1.[7|8].[0-9]*
 LATEST_LINK=		${PKGNAMEPREFIX}${PORTNAME}16${PKGNAMESUFFIX}
 
-LIB_DEPENDS+=		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
-			expat:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
+			libexpat.so:${PORTSDIR}/textproc/expat2
 
 CONFIGURE_ARGS+=	--with-ssl \
 			--without-swig \
@@ -30,7 +30,7 @@ CONFIGURE_ARGS+=	--with-ssl \
 
 .if defined(SVN_BUILD_BINDINGS)
 CONFLICTS_BUILD+=	${PORTNAME}-1.[7|8].[0-9]*
-LIB_DEPENDS+=		svn_client-1.0:${PORTSDIR}/devel/subversion16
+LIB_DEPENDS+=		libsvn_client-1.so:${PORTSDIR}/devel/subversion16
 OPTIONSFILE=		${PORT_DBDIR}/${PORTNAME}16/options
 OPTIONS=		# Dirty hack: if OPTIONS is not defined, OPTIONSFILE will not be included
 .endif
@@ -40,7 +40,7 @@ OPTIONS=		# Dirty hack: if OPTIONS is not defined, OPTIONSFILE will not be inclu
 
 # Default is "on"
 .if ${PORT_OPTIONS:MNEON}
-LIB_DEPENDS+=	neon.27:${PORTSDIR}/www/neon29
+LIB_DEPENDS+=	libneon.so:${PORTSDIR}/www/neon29
 PLIST_SUB+=	NEON=""
 .else
 CONFIGURE_ARGS+=--without-neon
@@ -48,7 +48,7 @@ PLIST_SUB+=	NEON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSASL}
-LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=--with-sasl=${LOCALBASE}
 PLIST_SUB+=	SASL=""
 .else
@@ -86,7 +86,7 @@ SVNGROUP?=	svn
 SVNUSER?=	svn
 .endif
 
-LIB_DEPENDS+= apr-1:${PORTSDIR}/devel/apr1
+LIB_DEPENDS+=	libapr-1.so:${PORTSDIR}/devel/apr1
 APR_CONFIG=   ${LOCALBASE}/bin/apr-1-config
 APU_CONFIG=   ${LOCALBASE}/bin/apu-1-config
 
@@ -100,7 +100,7 @@ PLIST_SUB+=     SVNAUTHZ_VALIDATE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSERF}
-LIB_DEPENDS+=	serf-1:${PORTSDIR}/www/serf
+LIB_DEPENDS+=	libserf-1.so:${PORTSDIR}/www/serf
 CONFIGURE_ARGS+=--with-serf=${LOCALBASE}
 PLIST_SUB+=	SERF=""
 .else
@@ -133,7 +133,7 @@ PLIST_SUB+=	DYNAMIC_ENABLED=""
 .endif
 
 .if ${PORT_OPTIONS:MGNOME_KEYRING}
-LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
+LIB_DEPENDS+=	libgcr.so:${PORTSDIR}/security/gnome-keyring
 CONFIGURE_ARGS+=--with-gnome-keyring
 PLIST_SUB+=	GNOME_KEYRING=""
 .else
