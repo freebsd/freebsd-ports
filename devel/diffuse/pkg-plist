@@ -1,7 +1,11 @@
 bin/diffuse
 etc/diffuserc
+man/man1/diffuse.1.gz
 %%MENU%%share/applications/diffuse.desktop
 %%MENU%%share/pixmaps/diffuse.png
+%%NLS%%man/cs/man1/diffuse.1.gz
+%%NLS%%man/it/man1/diffuse.1.gz
+%%NLS%%man/ru/man1/diffuse.1.gz
 %%NLS%%share/locale/cs/LC_MESSAGES/diffuse.mo
 %%NLS%%share/locale/de/LC_MESSAGES/diffuse.mo
 %%NLS%%share/locale/es/LC_MESSAGES/diffuse.mo
@@ -11,9 +15,10 @@ etc/diffuserc
 %%NLS%%share/locale/pl/LC_MESSAGES/diffuse.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/diffuse.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/diffuse.mo
-@dirrmtry man/cs/man1
-@dirrmtry man/cs
-@dirrmtry man/it/man1
-@dirrmtry man/it
-@dirrmtry man/ru/man1
-@dirrmtry man/ru
+%%MENU%%@dirrmtry share/applications
+%%NLS%%@dirrmtry man/cs/man1
+%%NLS%%@dirrmtry man/cs
+%%NLS%%@dirrmtry man/it/man1
+%%NLS%%@dirrmtry man/it
+%%NLS%%@dirrmtry man/ru/man1
+%%NLS%%@dirrmtry man/ru
