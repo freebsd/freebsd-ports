@@ -5077,3 +5077,4 @@ games/nethack34-gnome|games/nethack34|2013-10-13|Has expired: Uses deprecated gn
 emulators/linux-ePSXe||2013-10-13|Removed, uses Linux GTK1 libraries
 emulators/linux-peops-spu||2013-10-13|Removed, uses Linux GTK1 libraries
 math/linux-relview||2013-10-13|Removed, uses Linux GTK1 libraries
+science/ovt||2013-10-14|Depends on the EOLed vtk4
