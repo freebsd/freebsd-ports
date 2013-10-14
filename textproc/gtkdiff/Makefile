@@ -10,6 +10,9 @@ MASTER_SITES=	TUCOWS
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A frontend for diff(1)
 
+DEPRECATED=	Gnome1 EOLed by upstream for a while.
+EXPIRATION_DATE=	2013-11-05
+
 USE_GNOME=	gnomehack gnomeprefix gnomelibs
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
