@@ -6,6 +6,7 @@ PORTVERSION=	3.0.11
 CATEGORIES=	www
 MASTER_SITES=	https://www.phpbb.com/files/release/
 DISTNAME=	phpBB-${PORTVERSION}
+PKGNAMESUFFIX=	3
 
 MAINTAINER=	appleboy.tw@gmail.com
 COMMENT=	A PHP-based bulletin board / discussion forum system
@@ -26,7 +27,6 @@ PHPBBURL?=	phpBB3
 #
 # End of user-configurable variables.
 
-LATEST_LINK?=	phpbb3
 WRKSRC=		${WRKDIR}/phpBB3
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
