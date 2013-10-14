@@ -41,6 +41,10 @@ bin/serviio-console
 @unexec cmp %D/%%ETCDIR%%/profiles.xml %D/%%ETCDIR%%/profiles.dist.xml && rm -f %D/%%ETCDIR%%/profiles.xml || echo Modified profiles.xml remains in %D/%%ETCDIR%%
 @unexec cmp %D/%%ETCDIR%%/log4j.xml %D/%%ETCDIR%%/log4j.dist.xml && rm -f %D/%%ETCDIR%%/log4j.xml || echo Modified log4j.xml remains in %D/%%ETCDIR%%
 @unexec cmp %D/%%ETCDIR%%/console-log4j.properties %D/%%ETCDIR%%/console-log4j.dist.properties && rm -f %D/%%ETCDIR%%/console-log4j.properties || echo Modified console-log4j.properties remains in %D/%%ETCDIR%%
+@exec [ -f %D/%%ETCDIR%%/application-profiles.xml ] || cp -v %D/%%ETCDIR%%/application-profiles.dist.xml %D/%%ETCDIR%%/application-profiles.xml
+@exec [ -f %D/%%ETCDIR%%/profiles.xml ] || cp -v %D/%%ETCDIR%%/profiles.dist.xml %D/%%ETCDIR%%/profiles.xml
+@exec [ -f %D/%%ETCDIR%%/log4j.xml ] || cp -v %D/%%ETCDIR%%/log4j.dist.xml %D/%%ETCDIR%%/log4j.xml
+@exec [ -f %D/%%ETCDIR%%/console-log4j.properties ] || cp -v %D/%%ETCDIR%%/console-log4j.dist.properties %D/%%ETCDIR%%/console-log4j.properties
 %%ETCDIR%%/profiles.dist.xml
 %%ETCDIR%%/log4j.dist.xml
 %%ETCDIR%%/application-profiles.dist.xml
