@@ -5084,3 +5084,4 @@ math/vtk-headers||2013-10-14|Deprecated consider using vtk5
 math/vtk-java||2013-10-14|Deprecated consider using vtk5
 math/vtk-python||2013-10-14|Deprecated consider using vtk5
 math/vtk-tcl||2013-10-14|Deprecated consider using vtk5
+science/mayavi||2013-10-14|Depends on the EOLed vtk4
