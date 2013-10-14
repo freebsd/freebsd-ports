@@ -5,8 +5,8 @@ This release of Mail::SPF fully conforms to RFC 4408 and passes the 2006.11
 release of the official test-suite <http://www.openspf.org/Test_Suite>.
 
 The Mail::SPF source package includes the following additional tools:
+- spfquery: A command-line tool for performing SPF checks.
+- spfd:     A daemon for services that perform SPF checks frequently.
 
-  * spfquery:  A command-line tool for performing SPF checks.
-  * spfd:      A daemon for services that perform SPF checks frequently.
-
+WWW: http://search.cpan.org/dist/Mail-SPF/
 WWW: http://www.openspf.org/
