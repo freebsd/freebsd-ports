@@ -48,7 +48,6 @@ OPTIONS_DEFAULT=	NLS UNIQUE
 UNIQUE_DESC=	Single instance support
 ZEITGEIST_DESC=	User logs activities
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # WAF needs that
@@ -72,14 +71,14 @@ PLIST_SUB+=	APIDOCS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MUNIQUE}
-LIB_DEPENDS+=	unique-1:${PORTSDIR}/x11-toolkits/unique
+LIB_DEPENDS+=	libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
 CONFIGURE_ARGS+=--enable-unique
 .else
 CONFIGURE_ARGS+=--disable-unique
 .endif
 
 .if ${PORT_OPTIONS:MZEITGEIST}
-LIB_DEPENDS+=	zeitgeist-1:${PORTSDIR}/sysutils/libzeitgeist
+LIB_DEPENDS+=	libzeitgeist-1.0.so:${PORTSDIR}/sysutils/libzeitgeist
 CONFIGURE_ARGS+=--enable-zeitgeist
 .else
 CONFIGURE_ARGS+=--disable-zeitgeist
@@ -88,9 +87,9 @@ CONFIGURE_ARGS+=--disable-zeitgeist
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 .for dir in katze midori
-	@${MKDIR} ${DOCSDIR}/api/${dir}/html
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/api/${dir}/html
 	@cd ${WRKSRC}/_build/docs/api/${dir}/html && \
-		${COPYTREE_SHARE} . ${DOCSDIR}/api/${dir}/html
+		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/api/${dir}/html
 .endfor
 .endif
 
