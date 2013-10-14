@@ -15,11 +15,10 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	glib20 gnomehack gtk20
 USE_XFCE=	configenv	# to get MASTER_SITE_SUBDIR something has to be defined
-USES=		pkgconfig
+USES=		pkgconfig gmake
 
 CONFIGURE_ARGS+=--disable-glibtest \
 	--enable-gtk2 \
 	--disable-gtk3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
