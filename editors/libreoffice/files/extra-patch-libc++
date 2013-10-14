@@ -247,7 +247,7 @@
  //==================================================================================================
 --- bridges/source/cpp_uno/gcc3_linux_intel/share.hxx.orig	2013-08-13 16:11:48.000000000 -0400
 +++ bridges/source/cpp_uno/gcc3_linux_intel/share.hxx	2013-09-18 13:06:17.000000000 -0400
-@@ -25,6 +25,37 @@
+@@ -25,10 +25,39 @@
  
  #include <uno/any2.h>
  
@@ -284,8 +284,12 @@
 +
  namespace CPPU_CURRENT_NAMESPACE
  {
+-
+-void dummy_can_throw_anything( char const * );
  
-@@ -86,6 +117,13 @@
+ // ----- following decl from libstdc++-v3/libsupc++/unwind-cxx.h and unwind.h
+ 
+@@ -86,6 +115,15 @@
      void *thrown_exception, void *tinfo, void (*dest) (void *) ) __attribute__((noreturn));
  #endif
  
@@ -295,6 +299,8 @@
 +
 +namespace CPPU_CURRENT_NAMESPACE
 +{
++
++void dummy_can_throw_anything( char const * );
 +
  // -----
  
