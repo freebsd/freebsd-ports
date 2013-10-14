@@ -1,0 +1,15 @@
+bin/pat2ppm
+bin/patextract
+bin/png2pat
+bin/rgb2pat
+bin/visgrep
+bin/xmousepos
+bin/xte
+man/man1/pat2ppm.1.gz
+man/man1/patextract.1.gz
+man/man1/png2pat.1.gz
+man/man1/rgb2pat.1.gz
+man/man1/visgrep.1.gz
+man/man1/xmousepos.1.gz
+man/man1/xte.1.gz
+man/man7/xautomation.7.gz
