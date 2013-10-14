@@ -13,7 +13,7 @@ MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	D-Bus-based configuration storage system
 
 BUILD_DEPENDS=	p5-XML-Parser>=2.41:${PORTSDIR}/textproc/p5-XML-Parser
-LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
@@ -26,9 +26,6 @@ USES=		gmake pathfix pkgconfig perl5
 
 OPTIONS_DEFINE=		DOCS PERL NLS
 
-MAN3PREFIX?=	${PREFIX}/lib/perl5/${PERL_VER}
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -40,11 +37,11 @@ PLIST_SUB+=	APIDOCS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPERL}
-MAN3=		Xfce4::Xfconf.3
-BUILD_DEPENDS+=	p5-ExtUtils-Depends>=0.300:${PORTSDIR}/devel/p5-ExtUtils-Depends \
-		p5-ExtUtils-PkgConfig>=1.12:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
-		p5-Glib2>=1.200:${PORTSDIR}/devel/p5-Glib2
+BUILD_DEPENDS+=	p5-ExtUtils-Depends>=0.304:${PORTSDIR}/devel/p5-ExtUtils-Depends \
+		p5-ExtUtils-PkgConfig>=1.15:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
+		p5-Glib2>=1.280:${PORTSDIR}/devel/p5-Glib2
 RUN_DEPENDS+=	${BUILD_DEPENDS}
+USE_PERL5+=	run
 CONFIGURE_ARGS+=--enable-perl-bindings
 PLIST_SUB+=	PERLBIND=""
 .else
@@ -61,4 +58,8 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
+post-install:
+.if ${PORT_OPTIONS:MPERL}
+	@${RM} ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod
+.endif
 .include <bsd.port.mk>
