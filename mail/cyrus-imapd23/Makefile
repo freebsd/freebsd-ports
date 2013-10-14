@@ -39,23 +39,51 @@ CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=		AUTOCREATE AUTOSIEVE BDB DRAC IDLED LDAP_PTLOADER \
-			LISTEXT MURDER MYSQL NETSCAPEHACK NNTP PGSQL \
-			REPLICATION SNMP_5 SQLITE
+OPTIONS_DEFINE=		AUTOCREATE AUTOSIEVE BDB DRAC IDLED \
+			LDAP_PTLOADER LISTEXT MURDER MYSQL \
+			NETSCAPEHACK NNTP PGSQL REPLICATION SNMP_5 \
+			SQLITE
 OPTIONS_DEFAULT=	BDB
+OPTIONS_SUB=		yes
 AUTOCREATE_DESC=	Use autocreate INBOX patch (UoA)
 AUTOSIEVE_DESC=		Use autosievefolder patch (UoA)
+BDB_USE=		BDB=yes
+BDB_CONFIGURE_ON=	--with-bdb-incdir=${BDB_INCLUDE_DIR} \
+			--with-bdb-libdir=${LOCALBASE}/lib
 DRAC_DESC=		Enable DRAC support
+DRAC_CONFIGURE_ON=	--with-drac=${LOCALBASE}
+DRAC_BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 IDLED_DESC=		Enable IMAP idled support
+IDLED_CONFIGURE_ENABLE=	idled
 LDAP_PTLOADER_DESC=	Enable LDAP ptloader
+LDAP_PTLOADER_USE=	OPENLDAP=yes
+LDAP_PTLOADER_CONFIGURE_ON=--with-ldap=${LOCALBASE}
 LISTEXT_DESC=		Enable IMAP List extensions
+LISTEXT_CONFIGURE_ENABLE=listext
 MURDER_DESC=		Enable IMAP Murder support
+MURDER_CONFIGURE_ENABLE=murder
+MURDER_CFLAGS=		${PTHREAD_CFLAGS}
+MURDER_MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
+MYSQL_USE=		MYSQL=yes
+MYSQL_CONFIGURE_ON=	--with-mysql=yes \
+			--with-mysql-libdir=${LOCALBASE}/lib/mysql \
+			--with-mysql-incdir=${LOCALBASE}/include/mysql
 NETSCAPEHACK_DESC=	Enable X-NETSCAPE extensions
+NETSCAPEHACK_CONFIGURE_ENABLE=netscapehack
 NNTP_DESC=		Enable NNTP support
+NNTP_CONFIGURE_ENABLE=	nntp
 PGSQL_DESC=		Enable PostgreSQL backend (experimental)
+PGSQL_USE=		PGSQL=yes
+PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}
 REPLICATION_DESC=	Enable replication
+REPLICATION_CONFIGURE_ENABLE=replication
 SNMP_5_DESC=		Enable SNMP support
+SNMP_5_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+SNMP_5_CONFIGURE_ON=	--with-snmp=${LOCALBASE}
+SNMP_5_CONFIGURE_OFF=	--with-snmp=no
 SQLITE_DESC=		Enable SQLite backend (experimental)
+SQLITE_USE=		SQLITE=yes
+SQLITE_CONFIGURE_ON=	--with-sqlite=${LOCALBASE}
 
 .include <bsd.port.pre.mk>
 
@@ -70,9 +98,6 @@ PATCH_SITES+=	http://email.uoa.gr/download/cyrus/${PORTNAME}-2.3.16/
 .if ${PORT_OPTIONS:MAUTOCREATE}
 AUTOCREATE_VERSION=	0.10-0
 PATCHFILES+=	${PORTNAME}-2.3.16-autocreate-${AUTOCREATE_VERSION}.diff
-PLIST_SUB+=	AUTOCREATE=""
-.else
-PLIST_SUB+=	AUTOCREATE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MAUTOSIEVE}
@@ -81,67 +106,9 @@ PATCHFILES+=	${PORTNAME}-2.3.16-autosieve-${AUTOSIEVE_VERSION}.diff
 .endif
 
 .if ${PORT_OPTIONS:MBDB}
-USE_BDB=	yes
 INVALID_BDB_VER=2
-CONFIGURE_ARGS+=--with-bdb-incdir=${BDB_INCLUDE_DIR} \
-		--with-bdb-libdir=${LOCALBASE}/lib
 .else
 BDB_LIB_NAME=	no
-.endif
-
-.if ${PORT_OPTIONS:MNNTP}
-CONFIGURE_ARGS+=--enable-nntp
-PLIST_SUB+=	NNTP=""
-.else
-PLIST_SUB+=	NNTP="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMURDER}
-CONFIGURE_ARGS+=--enable-murder
-CFLAGS+=	${PTHREAD_CFLAGS}
-MAKE_ENV+=	PTHREAD_LIBS=${PTHREAD_LIBS}
-PLIST_SUB+=	MURDER=""
-.else
-PLIST_SUB+=	MURDER="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MIDLED}
-CONFIGURE_ARGS+=--enable-idled
-PLIST_SUB+=	IDLED=""
-.else
-PLIST_SUB+=	IDLED="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-CONFIGURE_ARGS+=--with-mysql=yes \
-		--with-mysql-libdir=${LOCALBASE}/lib/mysql \
-		--with-mysql-incdir=${LOCALBASE}/include/mysql
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
-CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE=	yes
-CONFIGURE_ARGS+=--with-sqlite=${LOCALBASE}
-.endif
-
-.if ${PORT_OPTIONS:MREPLICATION}
-CONFIGURE_ARGS+=--enable-replication
-PLIST_SUB+=	REPLICATION=""
-.else
-PLIST_SUB+=	REPLICATION="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MLISTEXT}
-CONFIGURE_ARGS+=--enable-listext
-.endif
-
-.if ${PORT_OPTIONS:MNETSCAPEHACK}
-CONFIGURE_ARGS+=--enable-netscapehack
 .endif
 
 .if ${PORT_OPTIONS:MDRAC}
@@ -152,23 +119,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure.in \
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cmulocal::sasl2.m4
 .endif
 USE_AUTOTOOLS=	autoconf autoheader
-CONFIGURE_ARGS+=--with-drac=${LOCALBASE}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
-.endif
-
-.if ${PORT_OPTIONS:MSNMP_5}
-LIB_DEPENDS+=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
-CONFIGURE_ARGS+=--with-snmp=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-snmp=no
-.endif
-
-.if ${PORT_OPTIONS:MLDAP_PTLOADER}
-USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
-PLIST_SUB+=	LDAP_PTLOADER=""
-.else
-PLIST_SUB+=	LDAP_PTLOADER="@comment "
 .endif
 
 .if ${OSVERSION} >= 900022
