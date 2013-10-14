@@ -1,8 +1,7 @@
-@stopdaemon dovecot
 bin/doveadm
 bin/doveconf
 bin/dsync
-%%PORT%%%%ETCDIR%%/README
+%%PORTDOCS%%%%ETCDIR%%/README
 include/dovecot/abspath.h
 include/dovecot/access-lookup.h
 include/dovecot/anvil-client.h
@@ -616,4 +615,4 @@ share/aclocal/dovecot.m4
 @dirrmtry lib/dovecot/auth
 @dirrm lib/dovecot
 @dirrm include/dovecot
-@dirrmtry %%ETCDIR%%
+%%PORTDOCS%%@dirrmtry %%ETCDIR%%
