@@ -6,6 +6,9 @@ PORTREVISION=	2
 COMMENT=	Python bindings for libtorrent-rasterbar-15
 CATEGORIES=	net-p2p python
 
+DEPRECATED=	Unusable, development ceased
+EXPIRATION_DATE=2013-12-13
+
 USE_PYTHON=	yes
 
 LIB_DEPENDS+=	boost_python:${PORTSDIR}/devel/boost-python-libs \
