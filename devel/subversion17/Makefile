@@ -127,7 +127,7 @@ USES+=		gettext:build
 .if ${PORT_OPTIONS:MBDB}
 BDB_BUILD_DEPENDS=	yes
 .endif
-OLD_LIB_DEPENDS:=	${LIB_DEPENDS:S!^!${LOCALBASE}/lib/lib!:C!(\.[0-9]+)?:!.a:!}
+OLD_LIB_DEPENDS:=	${LIB_DEPENDS:S!^!${LOCALBASE}/lib/!:C!(\.so|\.[0-9]+)?:!.a:!}
 BUILD_DEPENDS+=		${OLD_LIB_DEPENDS}
 LIB_DEPENDS=
 .endif
