@@ -2,40 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	tkdnd
-PORTVERSION=	1.0
-DISTVERSION=	1.0.20040304
-PORTREVISION=	3
+PORTVERSION=	2.6
 CATEGORIES=	x11-toolkits tk
-MASTER_SITES=	CENKES
-# Distfile prepared from SourceForge CVS
+MASTER_SITES=	SF/${PORTNAME}/TkDND/TkDND%20${PORTVERSION}/
+DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Native drag and drop capabilities
+MAINTAINER=	tcltk@FreeBSD.org
+COMMENT=	Native drag and drop capabilities for Tk
 
-USE_BZIP2=	yes
-USE_TK=		yes
+USES+=		tk:85+
 USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} --with-tk=${TK_LIBDIR} \
-		--with-tclinclude=${TCL_INCLUDEDIR} --with-tkinclude=${TK_INCLUDEDIR} --enable-shared
-CPPFLAGS+=	-I${TK_INCLUDEDIR}/generic -I${TCL_INCLUDEDIR}/generic
+CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
+		--with-tcl=${TCL_LIBDIR} \
+		--with-tk=${TK_LIBDIR} \
+		--with-tclinclude=${TCL_INCLUDEDIR} \
+		--with-tkinclude=${TK_INCLUDEDIR}
+
 TKPKG=		${PORTNAME}${PORTVERSION}
 PLIST_SUB=	TKPKG=${TKPKG}
 USE_LDCONFIG=	${PREFIX}/lib/${TKPKG}
-MANN=		${PORTNAME}.n
-
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -Ee '/^install:/s#install-doc##' -e 's#.*txt.*##' ${WRKSRC}/Makefile.in
+WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 
 post-install:
-	@${LN} -sf ${USE_LDCONFIG}/lib${TKPKG}.so ${USE_LDCONFIG}/lib${TKPKG}.so.0
-	@${INSTALL_MAN} ${WRKSRC}/doc/tkDND.n ${MANNPREFIX}/man/mann/${MANN}
+	@${INSTALL_MAN} ${WRKSRC}/doc/tkDND.n ${STAGEDIR}/${PREFIX}/man/mann/${MANN}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900000
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
