@@ -6,6 +6,7 @@
 ### ====================================================================== ###
 
 PATH=$PATH:%%PREFIX%%/bin
+HOME=/var/db/serviio/home
 SERVIIO_HOME=%%JAVAJARDIR%%/serviio
 SERVIIO_CLASS_PATH="$SERVIIO_HOME/serviio.jar"
 # Setup the classpath
@@ -16,7 +17,7 @@ done
 SERVIIO_CLASS_PATH="$SERVIIO_CLASS_PATH:%%ETCDIR%%"
 
 # Setup Serviio specific properties
-JAVA_OPTS="-Djava.net.preferIPv4Stack=true -Djava.awt.headless=true -Dderby.system.home=/var/db/serviio -Dserviio.home=$SERVIIO_HOME -Dffmpeg.location=%%LOCALBASE%%/bin/ffmpeg1"
+JAVA_OPTS="-Djava.net.preferIPv4Stack=true -Djava.awt.headless=true -Dderby.system.home=/var/db/serviio -Dserviio.home=$HOME -Dffmpeg.location=%%LOCALBASE%%/bin/ffmpeg1"
 JAVA_OPTS="${JAVA_OPTS} -Djcs.auxiliary.DC.attributes.DiskPath=/var/db/serviio"
 
 
@@ -31,4 +32,5 @@ do
 done
 
 # Execute the JVM in the foreground
+export HOME PATH
 exec java -Xmx512M -Xms20M -XX:+UseParNewGC -XX:MinHeapFreeRatio=10 -XX:MaxHeapFreeRatio=20 $JAVA_OPTS -classpath "$SERVIIO_CLASS_PATH" org.serviio.MediaServer "$@" 2>&1 >/dev/null
