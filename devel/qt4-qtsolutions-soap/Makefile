@@ -15,6 +15,8 @@ COMMENT=	QT4 Solutions SOAP Component
 
 DESCR=		${.CURDIR}/pkg-descr
 
+PATCHDIR=	${.CURDIR}/files
+
 SUB_PROJECT_NAME=	qtsoap
 LIBRARY_NAME=		libQtSolutions_SOAP-head.so
 LIBRARY_HEADERS=	qtsoap.h \
