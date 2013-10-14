@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	Geo-Coder-Many
-PORTVERSION=	0.40
+PORTVERSION=	0.42
 CATEGORIES=	misc geography perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Module to tie together multiple Geo::Coder::* modules
