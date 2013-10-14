@@ -1,4 +1,0 @@
-lib/%%TKPKG%%/lib%%TKPKG%%.so
-lib/%%TKPKG%%/lib%%TKPKG%%.so.0
-lib/%%TKPKG%%/pkgIndex.tcl
-@dirrm lib/%%TKPKG%%
