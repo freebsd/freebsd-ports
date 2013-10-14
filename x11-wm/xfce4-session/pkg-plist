@@ -26,6 +26,8 @@ lib/xfce4/session/splash-engines/libsimple.la
 lib/xfce4/session/splash-engines/libsimple.so
 lib/xfce4/session/xfsm-shutdown-helper
 libdata/pkgconfig/xfce4-session-2.0.pc
+man/man1/xfce4-session-logout.1.gz
+man/man1/xfce4-session.1.gz
 share/applications/xfce-session-settings.desktop
 share/applications/xfce4-session-logout.desktop
 share/xsessions/xfce.desktop

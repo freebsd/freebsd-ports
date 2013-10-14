@@ -12,8 +12,8 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce's window manager
 
-LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		wnck-1:${PORTSDIR}/x11-toolkits/libwnck
+LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libwnck-1.so:${PORTSDIR}/x11-toolkits/libwnck
 
 CONFIGURE_ARGS=	--enable-xsync \
 		--enable-render \
@@ -22,8 +22,7 @@ CONFIGURE_ARGS=	--enable-xsync \
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
-USES=		pathfix pkgconfig
-USE_GMAKE=	yes
+USES=		pathfix pkgconfig gmake
 USE_GNOME=	gtk20 intltool intlhack
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libmenu libutil xfconf
@@ -34,7 +33,6 @@ OPTIONS_DEFINE=		COMPOSITE NLS NOTIFY REVMOUSE
 OPTIONS_DEFAULT=	COMPOSITE NOTIFY
 REVMOUSE_DESC=		Reverse mouse workspace changing direction
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCOMPOSITE}
@@ -53,7 +51,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNOTIFY}
-LIB_DEPENDS+=	startup-notification-1:${PORTSDIR}/x11/startup-notification
+LIB_DEPENDS+=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
 CONFIGURE_ARGS+=--enable-startup-notification
 .else
 CONFIGURE_ARGS+=--disable-startup-notification
