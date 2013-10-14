@@ -1,0 +1,15 @@
+ACES Container Reference Implementation
+
+This folder contains a reference implementation for an ACES container
+file writer intended to be used with the Academy Color Encoding System (ACES).
+The resulting file is compliant with the ACES container specification
+(SMPTE S2065-4). However, there are a few things that are not demonstrated by
+this reference implementation.
+
+    Stereo channels
+    EndOfFileFiller
+    Arbitrary attributes and naming validations
+    half type attributes
+    keycode value validations
+
+WWW: https://github.com/ampas/aces_container

@@ -39,6 +39,7 @@
     SUBDIR += agg
     SUBDIR += alpng
     SUBDIR += amide
+    SUBDIR += ampasACES-container
     SUBDIR += ampasCTL
     SUBDIR += animorph
     SUBDIR += aoi

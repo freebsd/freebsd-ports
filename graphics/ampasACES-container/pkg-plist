@@ -1,0 +1,21 @@
+include/aces/aces_Writer.h
+include/aces/aces_attributestructs.h
+include/aces/aces_errors.h
+include/aces/aces_formatter.h
+include/aces/aces_genericWriter.h
+include/aces/aces_iostat.h
+include/aces/aces_items.h
+include/aces/aces_log.h
+include/aces/aces_timing.h
+include/aces/aces_types.h
+include/aces/aces_typesAndRationals.h
+include/aces/aces_writeattributes.h
+lib/cmake/AcesContainer/AcesContainerConfig.cmake
+lib/cmake/AcesContainer/AcesContainerConfigVersion.cmake
+lib/cmake/AcesContainer/AcesContainerTargets-release.cmake
+lib/cmake/AcesContainer/AcesContainerTargets.cmake
+lib/libAcesContainer.so
+libdata/pkgconfig/AcesContainer.pc
+@dirrmtry lib/cmake/AcesContainer
+@dirrmtry lib/cmake
+@dirrm include/aces
