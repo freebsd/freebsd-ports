@@ -5078,3 +5078,9 @@ emulators/linux-ePSXe||2013-10-13|Removed, uses Linux GTK1 libraries
 emulators/linux-peops-spu||2013-10-13|Removed, uses Linux GTK1 libraries
 math/linux-relview||2013-10-13|Removed, uses Linux GTK1 libraries
 science/ovt||2013-10-14|Depends on the EOLed vtk4
+math/vtk-data||2013-10-14|Deprecated consider using vtk5
+math/vtk-examples||2013-10-14|Deprecated consider using vtk5
+math/vtk-headers||2013-10-14|Deprecated consider using vtk5
+math/vtk-java||2013-10-14|Deprecated consider using vtk5
+math/vtk-python||2013-10-14|Deprecated consider using vtk5
+math/vtk-tcl||2013-10-14|Deprecated consider using vtk5

@@ -643,13 +643,6 @@
     SUBDIR += units
     SUBDIR += unixstat
     SUBDIR += unuran
-    SUBDIR += vtk
-    SUBDIR += vtk-data
-    SUBDIR += vtk-examples
-    SUBDIR += vtk-headers
-    SUBDIR += vtk-java
-    SUBDIR += vtk-python
-    SUBDIR += vtk-tcl
     SUBDIR += vtk5
     SUBDIR += vtk5-data
     SUBDIR += wcalc
