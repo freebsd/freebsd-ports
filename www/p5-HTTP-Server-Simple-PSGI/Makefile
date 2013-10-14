@@ -2,20 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	HTTP-Server-Simple-PSGI
-PORTVERSION=	0.14
+PORTVERSION=	0.16
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PSGI handler for HTTP::Server::Simple
 
-RUN_DEPENDS=	p5-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-HTTP-Server-Simple
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-USES=		perl5
+BUILD_DEPENDS=	p5-HTTP-Server-Simple>=0.42:${PORTSDIR}/www/p5-HTTP-Server-Simple
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 USE_PERL5=	configure
+USES=		perl5
 
-MAN3=		HTTP::Server::Simple::PSGI.3
+post-patch:
+# Remove bundle Plack::Handler::HTTP::Server::Simple
+	@${RM} -fr ${WRKSRC}/lib/Plack/
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
