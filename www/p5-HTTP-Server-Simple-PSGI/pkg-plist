@@ -1,6 +1,7 @@
 %%SITE_PERL%%/HTTP/Server/Simple/PSGI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Server/Simple/PSGI/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Server/Simple/PSGI
+%%PERL5_MAN3%%/HTTP::Server::Simple::PSGI.3.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Server/Simple/PSGI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Server/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Server
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
