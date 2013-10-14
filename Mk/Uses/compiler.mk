@@ -55,7 +55,7 @@ _CCVERSION!=	${CC} --version
 COMPILER_VERSION=	${_CCVERSION:M[0-9].[0-9]*:C/([0-9]).([0-9]).*/\1\2/g}
 .if ${_CCVERSION:Mclang}
 COMPILER_TYPE=	clang
-.elif ${_CCVERSION:Mgcc*} || ${_CCVERSION:M\(GCC\)}
+.else
 COMPILER_TYPE=	gcc
 .endif
 
