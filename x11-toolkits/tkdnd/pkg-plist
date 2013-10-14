@@ -1,5 +1,9 @@
-lib/%%TKPKG%%/lib%%TKPKG%%.so
-lib/%%TKPKG%%/lib%%TKPKG%%.so.0
+lib/%%TKPKG%%/libtkdnd.so.1
 lib/%%TKPKG%%/pkgIndex.tcl
 lib/%%TKPKG%%/tkdnd.tcl
+lib/%%TKPKG%%/tkdnd_compat.tcl
+lib/%%TKPKG%%/tkdnd_macosx.tcl
+lib/%%TKPKG%%/tkdnd_unix.tcl
+lib/%%TKPKG%%/tkdnd_windows.tcl
+man/mann/tkDND.n.gz
 @dirrm lib/%%TKPKG%%
