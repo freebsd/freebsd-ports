@@ -14,26 +14,19 @@ COMMENT=	C API for reading and writing ArcView Shapefiles
 
 LICENSE=	LGPL20
 
+OPTIONS_DEFINE=	DOCS PROJ
+OPTIONS_SUB=	yes
+
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DEBUG DOCS PROJ
+PROJ_LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDEBUG}
-DEBUG=		-DDEBUG -DDEBUG2 -g
-.else
-DEBUG=		# empty
-.endif
-
 .if ${PORT_OPTIONS:MPROJ}
-LIB_DEPENDS+=	proj:${PORTSDIR}/graphics/proj
-PLIST_SUB+=	PROJ=""
 PROJ=		-DPROJ4
 .else
-PLIST_SUB+=	PROJ="@comment "
 PROJ=		-DNO_PROJ4
 .endif
 
@@ -48,17 +41,16 @@ ENDIAN=		-D_BIG_ENDIAN	# mips*eb, powerpc, powerpc64 and sparc
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e 's|%%DEBUG%%|${DEBUG}|g' \
 		-e 's|%%LIBTOOL%%|${LIBTOOL}|g' \
 		-e 's|%%ENDIAN%%|${ENDIAN}|g' \
 		-e 's|%%PROJ%%|${PROJ}|g' \
 			${WRKSRC}/Makefile ${WRKSRC}/contrib/Makefile
 
 post-install:
-	${LN} -s libshp.so.1 ${PREFIX}/lib/libshp.so
+	${LN} -s libshp.so.1 ${STAGEDIR}${PREFIX}/lib/libshp.so
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/web/*.html ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/web/*.html ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.post.mk>

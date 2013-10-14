@@ -1,5 +1,5 @@
---- Makefile.orig	2011-07-24 14:15:51.000000000 +0800
-+++ Makefile	2011-12-24 03:00:00.000000000 +0800
+--- Makefile.orig	2011-07-24 12:32:26.000000000 +0800
++++ Makefile	2013-10-13 21:38:40.590435497 +0800
 @@ -1,16 +1,19 @@
  
 -PREFIX	=	/usr/local
@@ -36,12 +36,12 @@
  lib_install:	libshp.a
 -	cp libshp.a $(PREFIX)/lib
 -	cp shapefil.h $(PREFIX)/include
-+	$(BSD_INSTALL_DATA) shapefil.h $(PREFIX)/include/
-+	$(BSD_INSTALL_LIB) libshp.a libshp.so.1 $(PREFIX)/lib/
++	$(BSD_INSTALL_DATA) shapefil.h $(DESTDIR)$(PREFIX)/include/
++	$(BSD_INSTALL_LIB) libshp.a libshp.so.1 $(DESTDIR)$(PREFIX)/lib/
  
  bin_install:	$(SHPBIN)
 -	cp $(SHPBIN) $(PREFIX)/bin
-+	$(BSD_INSTALL_PROGRAM) $(SHPBIN) $(PREFIX)/bin/
++	$(BSD_INSTALL_PROGRAM) $(SHPBIN) $(DESTDIR)$(PREFIX)/bin/
 +
 +contrib_install:
 +	(cd contrib/; ${MAKE} %%PROJ%% install; cd ..)
