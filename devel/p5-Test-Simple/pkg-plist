@@ -7,6 +7,14 @@
 %%SITE_PERL%%/Test/Simple.pm
 %%SITE_PERL%%/Test/Tutorial.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Simple/.packlist
+%%PERL5_MAN3%%/Test::Builder.3.gz
+%%PERL5_MAN3%%/Test::Builder::IO::Scalar.3.gz
+%%PERL5_MAN3%%/Test::Builder::Module.3.gz
+%%PERL5_MAN3%%/Test::Builder::Tester.3.gz
+%%PERL5_MAN3%%/Test::Builder::Tester::Color.3.gz
+%%PERL5_MAN3%%/Test::More.3.gz
+%%PERL5_MAN3%%/Test::Simple.3.gz
+%%PERL5_MAN3%%/Test::Tutorial.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
 @dirrmtry %%SITE_PERL%%/Test/Builder/Tester
