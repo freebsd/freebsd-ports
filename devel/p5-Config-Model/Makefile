@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Config-Model
-PORTVERSION=	2.043
+PORTVERSION=	2.044
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DDUMONT
@@ -20,20 +20,21 @@ BUILD_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-Hash-Merge>=0.12:${PORTSDIR}/textproc/p5-Hash-Merge \
+		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Log-Log4perl>=1.11:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-Mouse>=0:${PORTSDIR}/devel/p5-Mouse \
 		p5-MouseX-NativeTraits>=0:${PORTSDIR}/devel/p5-MouseX-NativeTraits \
 		p5-MouseX-StrictConstructor>=0:${PORTSDIR}/devel/p5-MouseX-StrictConstructor \
 		p5-Parse-RecDescent>=1.90.0:${PORTSDIR}/devel/p5-Parse-RecDescent \
+		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Pod-POM>=0:${PORTSDIR}/textproc/p5-Pod-POM \
 		p5-Text-Autoformat>=0:${PORTSDIR}/textproc/p5-Text-Autoformat \
 		p5-Text-Diff>=0:${PORTSDIR}/textproc/p5-Text-Diff \
 		p5-YAML>=0.30.3:${PORTSDIR}/textproc/p5-YAML \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Config-Model-Tester>=2.046:${PORTSDIR}/devel/p5-Config-Model-Tester \
-		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
+TEST_DEPENDS=	p5-Config-Model-Tester>=2.044:${PORTSDIR}/devel/p5-Config-Model-Tester \
 		p5-Probe-Perl>=0:${PORTSDIR}/sysutils/p5-Probe-Perl \
 		p5-Test-Command>=0:${PORTSDIR}/devel/p5-Test-Command \
 		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
@@ -42,10 +43,12 @@ TEST_DEPENDS=	p5-Config-Model-Tester>=2.046:${PORTSDIR}/devel/p5-Config-Model-Te
 		p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
 		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
+NO_STAGE=	yes
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN1=		cme.1 config-edit.1
+MAN1=		cme.1 \
+		config-edit.1
 MAN3=		Config::Model.3 \
 		Config::Model::Annotation.3 \
 		Config::Model::AnyId.3 \
@@ -53,6 +56,7 @@ MAN3=		Config::Model.3 \
 		Config::Model::Backend::Any.3 \
 		Config::Model::Backend::Fstab.3 \
 		Config::Model::Backend::IniFile.3 \
+		Config::Model::Backend::Json.3 \
 		Config::Model::Backend::PlainFile.3 \
 		Config::Model::Backend::ShellVar.3 \
 		Config::Model::Backend::Yaml.3 \
@@ -91,5 +95,4 @@ MAN3=		Config::Model.3 \
 		Config::Model::models::Multistrap::Section.3 \
 		Config::Model::models::PopCon.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
