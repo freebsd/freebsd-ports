@@ -6,6 +6,8 @@ lib/libraptor2.la
 lib/libraptor2.so
 lib/libraptor2.so.0
 libdata/pkgconfig/raptor2.pc
+man/man1/rapper.1.gz
+man/man3/libraptor2.3.gz
 share/gtk-doc/html/raptor2/home.png
 share/gtk-doc/html/raptor2/index.html
 share/gtk-doc/html/raptor2/index.sgml
