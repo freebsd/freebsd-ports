@@ -11,17 +11,16 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce 4 settings application
 
-LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_XFCE=	configenv garcon libexo libmenu libutil xfconf
 USE_XORG=	inputproto x11 xi
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig gmake
 
 CONFIGURE_ARGS=	--enable-pluggable-dialogs \
 		--enable-gio-unix
@@ -30,11 +29,10 @@ OPTIONS_DEFINE=		XKLAVIER XCURSOR XRANDR NOTIFY NLS SOUND
 OPTIONS_DEFAULT=	XKLAVIER XCURSOR XRANDR NOTIFY NLS
 SOUND_DESC=		Enable sound control
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXKLAVIER}
-LIB_DEPENDS+=	xklavier:${PORTSDIR}/x11/libxklavier
+LIB_DEPENDS+=	libxklavier.so:${PORTSDIR}/x11/libxklavier
 CONFIGURE_ARGS+=--enable-libxklavier
 .else
 CONFIGURE_ARGS+=--disable-libxklavier
@@ -57,7 +55,7 @@ PLIST_SUB+=	XRANDR="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNOTIFY}
-LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=--enable-libnotify
 .else
 CONFIGURE_ARGS+=--disable-libnotify
@@ -73,7 +71,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSOUND}
-LIB_DEPENDS+=	canberra:${PORTSDIR}/audio/libcanberra
+LIB_DEPENDS+=	libcanberra.so:${PORTSDIR}/audio/libcanberra
 CONFIGURE_ARGS+=--enable-sound-settings
 .else
 CONFIGURE_ARGS+=--disable-sound-settings
