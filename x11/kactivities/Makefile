@@ -2,6 +2,7 @@
 
 PORTNAME=	kactivities
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -14,7 +15,7 @@ CONFLICTS_INSTALL=	kdelibs-4.7.* kde-runtime-4.7.*
 
 USE_XZ=		yes
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix soprano nepomuk-core
-USES=		cmake:outsource
+USES=		cmake:outsource compiler:c++11-lang
 USE_QT4=	declarative moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes
 
