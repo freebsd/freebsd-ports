@@ -19,7 +19,7 @@ CONFLICTS=	qt4-phonon-4*
 PHONON_BRANCH=	stable
 
 USE_KDE4=	kdehier kdeprefix automoc4
-USE_QT4=	dbus gui \
+USE_QT4=	corelib dbus gui \
 		qmake_build moc_build rcc_build uic_build
 USE_XZ=		yes
 USES=		cmake
@@ -30,7 +30,6 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	PULSEAUDIO
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
@@ -49,13 +48,14 @@ pre-configure:
 		${PATCH_WRKSRC}/CMakeLists.txt
 
 post-install:
-	${LN} -sf ${PREFIX}/include/phonon ${QT_INCDIR}/phonon
-	${LN} -sf ${PREFIX}/include/phonon ${QT_INCDIR}/Phonon
-	${LN} -sf ${PREFIX}/include/KDE/Phonon ${PREFIX}/include/phonon/Phonon
+	${MKDIR} ${STAGEDIR}${QT_INCDIR}
+	${MKDIR} ${STAGEDIR}${QT_LIBDIR}
+	${LN} -sf ${PREFIX}/include/phonon ${STAGEDIR}${QT_INCDIR}/phonon
+	${LN} -sf ${PREFIX}/include/phonon ${STAGEDIR}${QT_INCDIR}/Phonon
+	${LN} -sf ${PREFIX}/include/KDE/Phonon ${STAGEDIR}${PREFIX}/include/phonon/Phonon
 .for lib in phonon phononexperimental
-	${LN} -sf ${PREFIX}/lib/lib${lib}.so.${PORTVERSION} ${QT_LIBDIR}/lib${lib}.so
-	${LN} -sf ${PREFIX}/lib/lib${lib}.so.${PORTVERSION} ${QT_LIBDIR}/lib${lib}.so.4
+	${LN} -sf ${PREFIX}/lib/lib${lib}.so.${PORTVERSION} ${STAGEDIR}${QT_LIBDIR}/lib${lib}.so
+	${LN} -sf ${PREFIX}/lib/lib${lib}.so.${PORTVERSION} ${STAGEDIR}${QT_LIBDIR}/lib${lib}.so.4
 .endfor
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
