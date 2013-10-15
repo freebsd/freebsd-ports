@@ -38,7 +38,6 @@
     SUBDIR += asql
     SUBDIR += asterisk-stat
     SUBDIR += aswedit
-    SUBDIR += aswiki
     SUBDIR += atutor
     SUBDIR += august
     SUBDIR += autoindex2
@@ -1725,7 +1724,6 @@
     SUBDIR += ruby-fcgi
     SUBDIR += ruby-fcgiwrap
     SUBDIR += ruby-google
-    SUBDIR += ruby-nora
     SUBDIR += ruby-wgettsv
     SUBDIR += rubygem-actionpack
     SUBDIR += rubygem-activeresource
@@ -1815,7 +1813,6 @@
     SUBDIR += rubygem-sinatra
     SUBDIR += rubygem-sinatra-r18n
     SUBDIR += rubygem-sinatra-respond_to
-    SUBDIR += rubygem-staticmatic
     SUBDIR += rubygem-taggable
     SUBDIR += rubygem-thin
     SUBDIR += rubygem-tinyatom

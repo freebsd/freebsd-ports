@@ -1262,7 +1262,6 @@
     SUBDIR += rtfx
     SUBDIR += rubber
     SUBDIR += ruby-amatch
-    SUBDIR += ruby-amrita
     SUBDIR += ruby-deplate
     SUBDIR += ruby-diff
     SUBDIR += ruby-escape

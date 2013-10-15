@@ -298,7 +298,6 @@
     SUBDIR += rscheme
     SUBDIR += rubinius
     SUBDIR += ruby-doc-stdlib
-    SUBDIR += ruby-lua4
     SUBDIR += ruby-man
     SUBDIR += ruby-programmingruby
     SUBDIR += ruby-reference
