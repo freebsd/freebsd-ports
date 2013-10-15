@@ -16,6 +16,11 @@ JAVA_VERSION=	1.6+
 NO_BUILD=	YES
 
 RESTRICTED=	Licensee may not distribute the software, evaluation edition
+BROKEN=		Distfile unfetchable after version update
+DEPRECATED=	XXE becomes unfetchable every 3-4 months as distfile is\
+		replaced with new version.  This high-maintenance port\
+		requires a maintainer to avoid removal.
+EXPIRATION_DATE=	2013-11-15		
 
 BINS=		convertdoc csscheck deploywebstart translatexxe xmltool xxe
 
