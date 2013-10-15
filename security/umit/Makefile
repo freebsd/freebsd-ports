@@ -3,7 +3,7 @@
 
 PORTNAME=	umit
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,22 +21,8 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386" || ${PYTHON_REL} > 260
-WITHOUT_PSYCO=	yes
-.endif
-
-.ifndef(WITHOUT_PSYCO)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
-.endif
-
-pre-everything::
-.ifndef(WITHOUT_PSYCO)
-	@${ECHO_MSG} '===> Define WITHOUT_PSYCO to disable devel/py-psyco optimization'
-.endif
 
 post-patch:
 	${REINPLACE_CMD} 's/self.build_html_doc()//' ${WRKSRC}/setup.py
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

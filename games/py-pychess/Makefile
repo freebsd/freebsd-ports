@@ -17,13 +17,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=3-2.5.1_1:${PORTSDIR}/databases/py-
 
 INSTALLS_ICONS=	yes
 
-OPTIONS_DEFINE=	PYGSTREAMER CRAFTY GNUCHESS PHALANX SJENG STRONGPLAYER STOCKFISH
+OPTIONS_DEFINE=	PYGSTREAMER CRAFTY GNUCHESS PHALANX SJENG STOCKFISH
 PYGSTREAMER_DESC=	Install gst-python for audio support
 CRAFTY_DESC=	Install crafty (chess engine)
 GNUCHESS_DESC=	Install gnuchess (chess engine)
 PHALANX_DESC=	Install phalanx (chess engine)
 SJENG_DESC=	Install sjeng (chess engine)
-STRONGPLAYER_DESC=	Install psyco/gmpy (strong player)
 STOCKFISH_DESC=	Install stockfish (chess engine)
 
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
@@ -68,11 +67,6 @@ RUN_DEPENDS+=	phalanx:${PORTSDIR}/games/phalanx
 
 .if ${PORT_OPTIONS:MSJENG}
 RUN_DEPENDS+=	sjeng:${PORTSDIR}/games/sjeng
-.endif
-
-.if ${PORT_OPTIONS:MSTRONGPLAYER}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psyco>=1.6:${PORTSDIR}/devel/py-psyco
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gmpy>=1.13:${PORTSDIR}/math/py-gmpy
 .endif
 
 .if ${PORT_OPTIONS:MSTOCKFISH}
