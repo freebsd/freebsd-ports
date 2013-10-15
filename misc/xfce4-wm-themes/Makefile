@@ -11,12 +11,12 @@ DISTNAME=	xfwm4-themes-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	Xfce 4 window decoration themes for xfwm4
+COMMENT=	Additional themes for xfwm4
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_XFCE=	configenv	# to get MASTER_SITE_SUBDIR something has to be defined
+USES=	gmake
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

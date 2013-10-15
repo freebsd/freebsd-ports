@@ -12,13 +12,12 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Calendar application to manage your time with Xfce 4
 
-LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USES=		pkgconfig gettext pathfix desktop-file-utils
+USES=		pkgconfig gettext desktop-file-utils gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu panel
 USE_XORG=	xext xrender xinerama xi xrandr xcursor xcomposite xdamage x11 \
@@ -29,9 +28,6 @@ OPTIONS_DEFAULT=	DBUS NOTIFY
 
 ICAL_DESC=	libical support
 
-MAN1=		globaltime.1 orage.1 tz_convert.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBDB}
@@ -46,7 +42,7 @@ CONFIGURE_ARGS+=--with-bdb4=no
 
 .if ${PORT_OPTIONS:MICAL}
 CONFIGURE_ARGS+=--enable-libical
-LIB_DEPENDS+=	ical:${PORTSDIR}/devel/libical
+LIB_DEPENDS+=	libical.so:${PORTSDIR}/devel/libical
 CFLAGS+=	-I${LOCALBASE}/include/libical
 PLIST_SUB+=	WITH_ICAL="@comment "
 .else
@@ -55,7 +51,7 @@ PLIST_SUB+=	WITH_ICAL=""
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 CONFIGURE_ARGS+=--enable-dbus
 PLIST_SUB+=	DBUS=""
 .else
@@ -64,7 +60,7 @@ PLIST_SUB+=	DBUS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNOTIFY}
-LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=--enable-libnotify
 .else
 CONFIGURE_ARGS+=--disable-libnotify

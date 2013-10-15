@@ -2,72 +2,73 @@ bin/xfce4-screenshooter
 lib/xfce4/panel/plugins/libscreenshooterplugin.la
 lib/xfce4/panel/plugins/libscreenshooterplugin.so
 lib/xfce4/panel/plugins/libscreenshooterplugin.so.0
+man/man1/xfce4-screenshooter.1.gz
 share/applications/xfce4-screenshooter.desktop
-%%PORTDOCS%%%%DOCSDIR%%/ast/images/xfce4-screenshooter-dialog1.png
-%%PORTDOCS%%%%DOCSDIR%%/ast/images/xfce4-screenshooter-dialog2.png
-%%PORTDOCS%%%%DOCSDIR%%/ast/images/xfce4-screenshooter-zimagez-login-dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/ast/images/xfce4-screenshooter-zimagez-result-dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/ast/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/C/images/xfce4-screenshooter-dialog1.png
-%%PORTDOCS%%%%DOCSDIR%%/html/C/images/xfce4-screenshooter-dialog2.png
-%%PORTDOCS%%%%DOCSDIR%%/html/C/images/xfce4-screenshooter-zimagez-login-dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/html/C/images/xfce4-screenshooter-zimagez-result-dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/html/C/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ca/images/xfce4-screenshooter-dialog1.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ca/images/xfce4-screenshooter-dialog2.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ca/images/xfce4-screenshooter-zimagez-login-dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ca/images/xfce4-screenshooter-zimagez-result-dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ca/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/da/images/xfce4-screenshooter-dialog1.png
-%%PORTDOCS%%%%DOCSDIR%%/html/da/images/xfce4-screenshooter-dialog2.png
-%%PORTDOCS%%%%DOCSDIR%%/html/da/images/xfce4-screenshooter-zimagez-login-dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/html/da/images/xfce4-screenshooter-zimagez-result-dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/html/da/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/es/images/xfce4-screenshooter-dialog1.png
-%%PORTDOCS%%%%DOCSDIR%%/html/es/images/xfce4-screenshooter-dialog2.png
-%%PORTDOCS%%%%DOCSDIR%%/html/es/images/xfce4-screenshooter-zimagez-login-dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/html/es/images/xfce4-screenshooter-zimagez-result-dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/html/es/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/fr/images/xfce4-screenshooter-dialog1.png
-%%PORTDOCS%%%%DOCSDIR%%/html/fr/images/xfce4-screenshooter-dialog2.png
-%%PORTDOCS%%%%DOCSDIR%%/html/fr/images/xfce4-screenshooter-zimagez-login-dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/html/fr/images/xfce4-screenshooter-zimagez-result-dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/html/fr/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/gl/images/xfce4-screenshooter-dialog1.png
-%%PORTDOCS%%%%DOCSDIR%%/html/gl/images/xfce4-screenshooter-dialog2.png
-%%PORTDOCS%%%%DOCSDIR%%/html/gl/images/xfce4-screenshooter-zimagez-login-dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/html/gl/images/xfce4-screenshooter-zimagez-result-dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/html/gl/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/id/images/xfce4-screenshooter-dialog1.png
-%%PORTDOCS%%%%DOCSDIR%%/html/id/images/xfce4-screenshooter-dialog2.png
-%%PORTDOCS%%%%DOCSDIR%%/html/id/images/xfce4-screenshooter-zimagez-login-dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/html/id/images/xfce4-screenshooter-zimagez-result-dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/html/id/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/it/images/xfce4-screenshooter-dialog1.png
-%%PORTDOCS%%%%DOCSDIR%%/html/it/images/xfce4-screenshooter-dialog2.png
-%%PORTDOCS%%%%DOCSDIR%%/html/it/images/xfce4-screenshooter-zimagez-login-dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/html/it/images/xfce4-screenshooter-zimagez-result-dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/html/it/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ja/images/xfce4-screenshooter-dialog1.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ja/images/xfce4-screenshooter-dialog2.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ja/images/xfce4-screenshooter-zimagez-login-dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ja/images/xfce4-screenshooter-zimagez-result-dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ja/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/pt/images/xfce4-screenshooter-dialog1.png
-%%PORTDOCS%%%%DOCSDIR%%/html/pt/images/xfce4-screenshooter-dialog2.png
-%%PORTDOCS%%%%DOCSDIR%%/html/pt/images/xfce4-screenshooter-zimagez-login-dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/html/pt/images/xfce4-screenshooter-zimagez-result-dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/html/pt/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/tr/images/xfce4-screenshooter-dialog1.png
-%%PORTDOCS%%%%DOCSDIR%%/html/tr/images/xfce4-screenshooter-dialog2.png
-%%PORTDOCS%%%%DOCSDIR%%/html/tr/images/xfce4-screenshooter-zimagez-login-dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/html/tr/images/xfce4-screenshooter-zimagez-result-dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/html/tr/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/zh_CN/images/xfce4-screenshooter-dialog1.png
-%%PORTDOCS%%%%DOCSDIR%%/html/zh_CN/images/xfce4-screenshooter-dialog2.png
-%%PORTDOCS%%%%DOCSDIR%%/html/zh_CN/images/xfce4-screenshooter-zimagez-login-dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/html/zh_CN/images/xfce4-screenshooter-zimagez-result-dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/html/zh_CN/index.html
+%%DOCSDIR%%/ast/images/xfce4-screenshooter-dialog1.png
+%%DOCSDIR%%/ast/images/xfce4-screenshooter-dialog2.png
+%%DOCSDIR%%/ast/images/xfce4-screenshooter-zimagez-login-dialog.png
+%%DOCSDIR%%/ast/images/xfce4-screenshooter-zimagez-result-dialog.png
+%%DOCSDIR%%/ast/index.html
+%%DOCSDIR%%/html/C/images/xfce4-screenshooter-dialog1.png
+%%DOCSDIR%%/html/C/images/xfce4-screenshooter-dialog2.png
+%%DOCSDIR%%/html/C/images/xfce4-screenshooter-zimagez-login-dialog.png
+%%DOCSDIR%%/html/C/images/xfce4-screenshooter-zimagez-result-dialog.png
+%%DOCSDIR%%/html/C/index.html
+%%DOCSDIR%%/html/ca/images/xfce4-screenshooter-dialog1.png
+%%DOCSDIR%%/html/ca/images/xfce4-screenshooter-dialog2.png
+%%DOCSDIR%%/html/ca/images/xfce4-screenshooter-zimagez-login-dialog.png
+%%DOCSDIR%%/html/ca/images/xfce4-screenshooter-zimagez-result-dialog.png
+%%DOCSDIR%%/html/ca/index.html
+%%DOCSDIR%%/html/da/images/xfce4-screenshooter-dialog1.png
+%%DOCSDIR%%/html/da/images/xfce4-screenshooter-dialog2.png
+%%DOCSDIR%%/html/da/images/xfce4-screenshooter-zimagez-login-dialog.png
+%%DOCSDIR%%/html/da/images/xfce4-screenshooter-zimagez-result-dialog.png
+%%DOCSDIR%%/html/da/index.html
+%%DOCSDIR%%/html/es/images/xfce4-screenshooter-dialog1.png
+%%DOCSDIR%%/html/es/images/xfce4-screenshooter-dialog2.png
+%%DOCSDIR%%/html/es/images/xfce4-screenshooter-zimagez-login-dialog.png
+%%DOCSDIR%%/html/es/images/xfce4-screenshooter-zimagez-result-dialog.png
+%%DOCSDIR%%/html/es/index.html
+%%DOCSDIR%%/html/fr/images/xfce4-screenshooter-dialog1.png
+%%DOCSDIR%%/html/fr/images/xfce4-screenshooter-dialog2.png
+%%DOCSDIR%%/html/fr/images/xfce4-screenshooter-zimagez-login-dialog.png
+%%DOCSDIR%%/html/fr/images/xfce4-screenshooter-zimagez-result-dialog.png
+%%DOCSDIR%%/html/fr/index.html
+%%DOCSDIR%%/html/gl/images/xfce4-screenshooter-dialog1.png
+%%DOCSDIR%%/html/gl/images/xfce4-screenshooter-dialog2.png
+%%DOCSDIR%%/html/gl/images/xfce4-screenshooter-zimagez-login-dialog.png
+%%DOCSDIR%%/html/gl/images/xfce4-screenshooter-zimagez-result-dialog.png
+%%DOCSDIR%%/html/gl/index.html
+%%DOCSDIR%%/html/id/images/xfce4-screenshooter-dialog1.png
+%%DOCSDIR%%/html/id/images/xfce4-screenshooter-dialog2.png
+%%DOCSDIR%%/html/id/images/xfce4-screenshooter-zimagez-login-dialog.png
+%%DOCSDIR%%/html/id/images/xfce4-screenshooter-zimagez-result-dialog.png
+%%DOCSDIR%%/html/id/index.html
+%%DOCSDIR%%/html/it/images/xfce4-screenshooter-dialog1.png
+%%DOCSDIR%%/html/it/images/xfce4-screenshooter-dialog2.png
+%%DOCSDIR%%/html/it/images/xfce4-screenshooter-zimagez-login-dialog.png
+%%DOCSDIR%%/html/it/images/xfce4-screenshooter-zimagez-result-dialog.png
+%%DOCSDIR%%/html/it/index.html
+%%DOCSDIR%%/html/ja/images/xfce4-screenshooter-dialog1.png
+%%DOCSDIR%%/html/ja/images/xfce4-screenshooter-dialog2.png
+%%DOCSDIR%%/html/ja/images/xfce4-screenshooter-zimagez-login-dialog.png
+%%DOCSDIR%%/html/ja/images/xfce4-screenshooter-zimagez-result-dialog.png
+%%DOCSDIR%%/html/ja/index.html
+%%DOCSDIR%%/html/pt/images/xfce4-screenshooter-dialog1.png
+%%DOCSDIR%%/html/pt/images/xfce4-screenshooter-dialog2.png
+%%DOCSDIR%%/html/pt/images/xfce4-screenshooter-zimagez-login-dialog.png
+%%DOCSDIR%%/html/pt/images/xfce4-screenshooter-zimagez-result-dialog.png
+%%DOCSDIR%%/html/pt/index.html
+%%DOCSDIR%%/html/tr/images/xfce4-screenshooter-dialog1.png
+%%DOCSDIR%%/html/tr/images/xfce4-screenshooter-dialog2.png
+%%DOCSDIR%%/html/tr/images/xfce4-screenshooter-zimagez-login-dialog.png
+%%DOCSDIR%%/html/tr/images/xfce4-screenshooter-zimagez-result-dialog.png
+%%DOCSDIR%%/html/tr/index.html
+%%DOCSDIR%%/html/zh_CN/images/xfce4-screenshooter-dialog1.png
+%%DOCSDIR%%/html/zh_CN/images/xfce4-screenshooter-dialog2.png
+%%DOCSDIR%%/html/zh_CN/images/xfce4-screenshooter-zimagez-login-dialog.png
+%%DOCSDIR%%/html/zh_CN/images/xfce4-screenshooter-zimagez-result-dialog.png
+%%DOCSDIR%%/html/zh_CN/index.html
 share/icons/hicolor/48x48/apps/applets-screenshooter.png
 share/icons/hicolor/scalable/apps/applets-screenshooter.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/xfce4-screenshooter.mo
@@ -126,34 +127,34 @@ share/xfce4/panel/plugins/screenshooter.desktop
 @dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/zh_CN/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/zh_CN
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/tr/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/tr
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/pt/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/pt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/ja/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/ja
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/it/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/it
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/id/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/id
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/gl/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/gl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/fr/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/fr
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/es/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/es
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/da/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/da
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/ca/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/ca
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/C/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/C
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ast/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ast
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DOCSDIR%%/html/zh_CN/images
+@dirrm %%DOCSDIR%%/html/zh_CN
+@dirrm %%DOCSDIR%%/html/tr/images
+@dirrm %%DOCSDIR%%/html/tr
+@dirrm %%DOCSDIR%%/html/pt/images
+@dirrm %%DOCSDIR%%/html/pt
+@dirrm %%DOCSDIR%%/html/ja/images
+@dirrm %%DOCSDIR%%/html/ja
+@dirrm %%DOCSDIR%%/html/it/images
+@dirrm %%DOCSDIR%%/html/it
+@dirrm %%DOCSDIR%%/html/id/images
+@dirrm %%DOCSDIR%%/html/id
+@dirrm %%DOCSDIR%%/html/gl/images
+@dirrm %%DOCSDIR%%/html/gl
+@dirrm %%DOCSDIR%%/html/fr/images
+@dirrm %%DOCSDIR%%/html/fr
+@dirrm %%DOCSDIR%%/html/es/images
+@dirrm %%DOCSDIR%%/html/es
+@dirrm %%DOCSDIR%%/html/da/images
+@dirrm %%DOCSDIR%%/html/da
+@dirrm %%DOCSDIR%%/html/ca/images
+@dirrm %%DOCSDIR%%/html/ca
+@dirrm %%DOCSDIR%%/html/C/images
+@dirrm %%DOCSDIR%%/html/C
+@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%/ast/images
+@dirrm %%DOCSDIR%%/ast
+@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
 @dirrmtry lib/xfce4/panel/plugins
 @dirrmtry lib/xfce4/panel
