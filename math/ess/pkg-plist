@@ -40,6 +40,8 @@
 %%EMACS_SITE_LISPDIR%%/ess-eldoc.elc
 %%EMACS_SITE_LISPDIR%%/ess-font-lock.el
 %%EMACS_SITE_LISPDIR%%/ess-font-lock.elc
+%%EMACS_SITE_LISPDIR%%/ess-gretl.el
+%%EMACS_SITE_LISPDIR%%/ess-gretl.elc
 %%EMACS_SITE_LISPDIR%%/ess-help.el
 %%EMACS_SITE_LISPDIR%%/ess-help.elc
 %%EMACS_SITE_LISPDIR%%/ess-inf.el
