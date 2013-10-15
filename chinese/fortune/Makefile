@@ -9,7 +9,7 @@ MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	fortune-mod-zh-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A very classic fortune file in Chinese
+COMMENT=	Classic fortune file in Chinese
 
 RUN_DEPENDS=	autob5:${PORTSDIR}/chinese/autoconvert
 
@@ -23,13 +23,9 @@ SUB_FILES=	pkg-message
 IGNORE=		needs the FreeBSD games distribution
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/|${PREFIX}/|" \
 		-e "s|strfile|/usr/games/strfile|" \
 		${WRKSRC}/src/Makefile
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
