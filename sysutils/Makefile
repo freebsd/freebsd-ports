@@ -356,7 +356,6 @@
     SUBDIR += gstreamer1-plugins-cdio
     SUBDIR += gtk-imonc
     SUBDIR += gtk-send-pr
-    SUBDIR += gupsc
     SUBDIR += hachoir-metadata
     SUBDIR += hachoir-subfile
     SUBDIR += hachoir-urwid
