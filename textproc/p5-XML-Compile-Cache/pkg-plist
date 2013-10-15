@@ -1,6 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/Cache/.packlist
 %%SITE_PERL%%/XML/Compile/Cache.pm
 %%SITE_PERL%%/XML/Compile/Cache.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/Cache/.packlist
+%%PERL5_MAN3%%/XML::Compile::Cache.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/Cache
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
