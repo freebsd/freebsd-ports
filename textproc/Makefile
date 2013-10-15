@@ -75,7 +75,6 @@
     SUBDIR += coco
     SUBDIR += code2html
     SUBDIR += codespell
-    SUBDIR += cole
     SUBDIR += colordiff
     SUBDIR += confetti
     SUBDIR += confget
@@ -1510,7 +1509,6 @@
     SUBDIR += xincluder
     SUBDIR += xlhtml
     SUBDIR += xlreader
-    SUBDIR += xls2xml
     SUBDIR += xml-commons
     SUBDIR += xml-format
     SUBDIR += xml-i18n-tools
