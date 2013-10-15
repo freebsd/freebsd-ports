@@ -19,13 +19,12 @@ WRKSRC=		${WRKDIR}/rinetd-${PORTVERSION}
 
 USE_DOS2UNIX=	yes
 
-MAN8=		rinetd.8
 PORTDOCS=	index.html
-PLIST_FILES=	sbin/rinetd
+PLIST_FILES=	sbin/rinetd \
+		man/man8/rinetd.8.gz
 
 USE_RC_SUBR=	rinetd
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:
@@ -40,9 +39,10 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} ; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+.endfor
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

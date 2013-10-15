@@ -9,14 +9,14 @@
 +all: rinetd
 +
 +rinetd: rinetd.o match.o getopt.o
-+	cc ${CFLAGS} rinetd.o match.o getopt.o -o rinetd
++	${CC} ${CFLAGS} rinetd.o match.o getopt.o -o rinetd
 +
 +getopt.o:
-+	cc ${CFLAGS} -c getopt.c
++	${CC} ${CFLAGS} -c getopt.c
  
  install: rinetd
 -	install -m 700 rinetd /usr/sbin
 -	install -m 644 rinetd.8 /usr/man/man8
-+	install -C -o root -g wheel -m 755 rinetd ${PREFIX}/sbin
-+	install -C -o root -g wheel -m 644 rinetd.8 ${PREFIX}/man/man8
++	install -s -m 755 rinetd ${DESTDIR}${PREFIX}/sbin
++	install -m 644 rinetd.8 ${DESTDIR}${PREFIX}/man/man8
  
