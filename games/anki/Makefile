@@ -2,19 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	anki
-PORTVERSION=	2.0.12
-PORTREVISION=	1
+PORTVERSION=	2.0.13
 CATEGORIES=	games python
 MASTER_SITES=	http://ankisrs.net/download/mirror/
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	python
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Flashcard trainer with spaced repetition
 
-LICENSE=	AGPLv3 # (or later)
+LICENSE=	AGPLv3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyaudio>0:${PORTSDIR}/audio/py-pyaudio \
+RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
+		mplayer:${PORTSDIR}/multimedia/mplayer \
+		${PYTHON_PKGNAMEPREFIX}pyaudio>0:${PORTSDIR}/audio/py-pyaudio \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy>0:${PORTSDIR}/databases/py-sqlalchemy \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}qt4-network>=4.4:${PORTSDIR}/net/py-qt4-network \
@@ -27,9 +28,6 @@ USES=		desktop-file-utils gettext:run shared-mime-info
 USE_PYTHON=	-2.7
 USE_QT4=	network_run webkit_run
 
-MAN1=		${PORTNAME}.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/|${PREFIX}/share/|' \
 		${WRKSRC}/runanki
@@ -41,23 +39,21 @@ do-build:
 	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/runanki ${PREFIX}/bin/${PORTNAME}
-	@${MKDIR} ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/runanki ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 .for i in anki aqt designer locale oldanki tests tools
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${DATADIR})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${DATADIR})
 .endfor
 
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
-	@${MKDIR} ${DESKTOPDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${DESKTOPDIR}
-	@${MKDIR} ${PREFIX}/share/mime/packages
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/mime/packages/
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.xml \
-		${PREFIX}/share/mime/packages
-	@${MKDIR} ${PREFIX}/share/pixmaps
+		${STAGEDIR}${PREFIX}/share/mime/packages/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps/
 .for p in *.png *.xpm
 	${INSTALL_DATA} ${WRKSRC}/${p} \
-		${PREFIX}/share/pixmaps
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 .endfor
 
 .include <bsd.port.mk>
