@@ -1,5 +1,6 @@
 bin/fr
 %%DATADIR%%/FontControl.tcl
+%%DATADIR%%/aftp.tcl
 %%DATADIR%%/balloon.tcl
 %%DATADIR%%/bitmaps/bitmapeditor
 %%DATADIR%%/bitmaps/cross.bit
@@ -20,32 +21,54 @@ bin/fr
 %%DATADIR%%/bitmaps/up.bit
 %%DATADIR%%/bitmaps/update.bit
 %%DATADIR%%/bitmaps/xterm.bit
+%%DATADIR%%/centerWin.tcl
 %%DATADIR%%/chmod.tcl
 %%DATADIR%%/cmd.tcl
+%%DATADIR%%/cmdcomplete.tcl
+%%DATADIR%%/colorList.tcl
 %%DATADIR%%/config.tcl
 %%DATADIR%%/cript.tcl
-%%DATADIR%%/dialog.tcl
-%%DATADIR%%/displays.tcl
 %%DATADIR%%/editfont.tcl
+%%DATADIR%%/entrydialog.tcl
 %%DATADIR%%/font.tcl
 %%DATADIR%%/fr
 %%DATADIR%%/frcolor.tcl
 %%DATADIR%%/frftp
+%%DATADIR%%/frputs.tcl
 %%DATADIR%%/frutils.tcl
 %%DATADIR%%/ftp.tcl
 %%DATADIR%%/ftp_control.tcl
 %%DATADIR%%/http.tcl
-%%DATADIR%%/icon.xpm
+%%DATADIR%%/packages/expect/expect.tcl
+%%DATADIR%%/packages/expect/pkgIndex.tcl
 %%DATADIR%%/packages/ftp/ftp.tcl
 %%DATADIR%%/packages/ftp/pkgIndex.tcl
-%%DATADIR%%/packages/list
+%%DATADIR%%/packages/inotify/i686/libinotify1.4.1.so
+%%DATADIR%%/packages/inotify/i686/pkgIndex.tcl
+%%DATADIR%%/packages/inotify/x86_64/libinotify1.4.1.so
+%%DATADIR%%/packages/inotify/x86_64/pkgIndex.tcl
 %%DATADIR%%/packages/log/log.tcl
 %%DATADIR%%/packages/log/pkgIndex.tcl
+%%DATADIR%%/replacetearoff.tcl
 %%DATADIR%%/sftp.tcl
+%%DATADIR%%/smart_dialog.tcl
 %%DATADIR%%/tclIndex
 %%DATADIR%%/tclmultilistbox.tcl
+%%DATADIR%%/textsearch.tcl
+%%DATADIR%%/doc/FAQ
+%%DATADIR%%/doc/HISTORY
+%%DATADIR%%/doc/KnownBugs.txt
+%%DATADIR%%/doc/QuickStart.txt
+%%DATADIR%%/doc/README
+%%DATADIR%%/doc/Tips.txt
+%%DATADIR%%/doc/Users_Guide.txt
 @dirrm %%DATADIR%%/packages/log
+@dirrm %%DATADIR%%/packages/inotify/x86_64
+@dirrm %%DATADIR%%/packages/inotify/i686
+@dirrm %%DATADIR%%/packages/inotify
 @dirrm %%DATADIR%%/packages/ftp
+@dirrm %%DATADIR%%/packages/expect
 @dirrm %%DATADIR%%/packages
+@dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/bitmaps
 @dirrm %%DATADIR%%

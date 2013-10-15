@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	filerunner
-PORTVERSION=	12.05.23.16
+PORTVERSION=	13.07.25.13
 CATEGORIES=	x11-fm tk
-MASTER_SITES=	SF/${PORTNAME}/Release-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/release-${PORTVERSION:S/.0/./}
 DISTNAME=	fr-${PORTVERSION:S/.0/./}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Tcl/Tk-based filemanager with FTP capabilities
 
 LICENSE=	GPLv2
@@ -15,28 +15,25 @@ LICENSE=	GPLv2
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
-USE_TK_WRAPPER=	yes
+USES+=		tk:run
 
-PORTDOCS=	FAQ HISTORY README *.txt
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+post-patch:
+	${REINPLACE_CMD} -e 's|%%WISH%%|${WISH}|' ${WRKSRC}/fr
 
 do-install:
-	@${MKDIR} ${DATADIR}
-.for file in fr frftp tclIndex *.tcl *.xpm
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/doc
+.for file in fr frftp tclIndex *.tcl
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DATADIR}
+.endfor
+.for file in FAQ HISTORY README *.txt
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${STAGEDIR}${DATADIR}/doc
 .endfor
 .for dir in bitmaps packages
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${DATADIR}
 .endfor
 .for file in fr frftp frcolor.tcl
-	@${CHMOD} ${BINMODE} ${DATADIR}/${file}
+	@${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/${file}
 .endfor
-	@${LN} -sf ${DATADIR}/fr ${PREFIX}/bin/fr
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${LN} -sf ${DATADIR}/fr ${STAGEDIR}${PREFIX}/bin/fr
 
 .include <bsd.port.mk>

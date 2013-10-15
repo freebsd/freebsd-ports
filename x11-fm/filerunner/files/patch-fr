@@ -1,19 +1,8 @@
---- ./fr.orig	2012-10-26 06:24:13.000000000 -0400
-+++ ./fr	2012-10-26 06:25:32.000000000 -0400
-@@ -1,6 +1,6 @@
- #! /bin/sh
- # -*- tcl -*- \
--    exec wish "$0" "$@"
-+    exec wish "$0"
+--- fr.orig	2013-10-15 09:26:02.000000000 +0200
++++ fr	2013-10-15 09:27:49.000000000 +0200
+@@ -1,4 +1,4 @@
+-#! /usr/bin/env wish
++#! %%WISH%%
+ # -*- tcl -*-
  
- #set g }
  
-@@ -4509,7 +4509,7 @@
-   }
-   
-   if { ! [info exists glob(doclib_fr)] } {
--    set glob(doclib_fr) $glob(lib_fr)
-+    set glob(doclib_fr) $glob(lib_fr)/../doc/filerunner
-   }
-   foreach pkg [split [read [open $glob(lib_fr)/packages/list ]] "\n" ] {
- #    puts ">$pkg<"
