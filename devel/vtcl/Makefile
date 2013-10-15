@@ -8,18 +8,24 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.6.1.a1
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An Application Development Environment For the TCL/TK language
+COMMENT=	Application Development Environment for Tcl/Tk
 
 LICENSE=	GPLv2
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 NO_BUILD=	yes
 
-USE_TK=		yes
+USES+=		tk:84
 USE_DOS2UNIX=	configure
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	${PREFIX}
 
-NO_STAGE=	yes
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|wish8.5|${WISH:T}| ; \
@@ -28,28 +34,28 @@ post-patch:
 		's|require -exact Tk|require Tk|' ${WRKSRC}/lib/tkcon.tcl
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/vtcl ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/lib/vtcl
+	${INSTALL_SCRIPT} ${WRKSRC}/vtcl ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vtcl
 .for data in ChangeLog README vtcl.tcl
-	${INSTALL_DATA} ${WRKSRC}/${data} ${PREFIX}/lib/vtcl
+	${INSTALL_DATA} ${WRKSRC}/${data} ${STAGEDIR}${PREFIX}/lib/vtcl
 .endfor
-	@${MKDIR} ${PREFIX}/lib/vtcl/images
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vtcl/images
 .for sufx in gif ppm xbm xpm
-	${INSTALL_DATA} ${WRKSRC}/images/*.${sufx} ${PREFIX}/lib/vtcl/images
+	${INSTALL_DATA} ${WRKSRC}/images/*.${sufx} ${STAGEDIR}${PREFIX}/lib/vtcl/images
 .endfor
-	@${MKDIR} ${PREFIX}/lib/vtcl/images/edit
-	${INSTALL_DATA} ${WRKSRC}/images/edit/*.gif ${PREFIX}/lib/vtcl/images/edit
-	@${MKDIR} ${PREFIX}/lib/vtcl/lib
-	@(cd ${WRKSRC}/lib && ${COPYTREE_SHARE} . ${PREFIX}/lib/vtcl/lib)
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vtcl/images/edit
+	${INSTALL_DATA} ${WRKSRC}/images/edit/*.gif ${STAGEDIR}${PREFIX}/lib/vtcl/images/edit
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vtcl/lib
+	@(cd ${WRKSRC}/lib && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/vtcl/lib)
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 .endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}/sample
-	@(cd ${WRKSRC}/sample && ${COPYTREE_SHARE} . ${EXAMPLESDIR}/sample)
-	@${MKDIR} ${EXAMPLESDIR}/demo
-	@(cd ${WRKSRC}/demo && ${COPYTREE_SHARE} . ${EXAMPLESDIR}/demo)
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/sample
+	@(cd ${WRKSRC}/sample && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/sample)
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/demo
+	@(cd ${WRKSRC}/demo && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/demo)
 .endif
 
 .include <bsd.port.mk>
