@@ -1,5 +1,0 @@
-bin/gupsc
-share/locale/no/LC_MESSAGES/gupsc.mo
-share/gnome/apps/System/gupsc.desktop
-share/pixmaps/gupsc/ups.png
-@dirrm share/pixmaps/gupsc

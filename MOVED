@@ -5087,3 +5087,4 @@ math/vtk-tcl||2013-10-14|Deprecated consider using vtk5
 science/mayavi||2013-10-14|Depends on the EOLed vtk4
 www/httpgrabber||2013-10-14|Depended on net/ngrep-lib
 security/stem|security/py-stem|2013-10-14|This is a Python library
+sysutils/gupsc||2013-10-15|Depends on the obsolete gnome1
