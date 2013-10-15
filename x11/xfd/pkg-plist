@@ -1,4 +1,5 @@
 bin/xfd
+man/man1/xfd.1.gz
 share/X11/app-defaults/Xfd
 @dirrmtry share/X11/app-defaults
 @dirrmtry share/X11
