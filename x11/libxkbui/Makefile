@@ -11,6 +11,4 @@ COMMENT=	The xkbui library
 
 XORG_CAT=	lib
 USE_XORG=	x11 xt xkbfile kbproto:both
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
