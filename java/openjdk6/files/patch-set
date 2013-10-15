@@ -676,7 +676,7 @@
 +  julong free_pages;
 +  u_int i, npages;
 +
-+  for (i = 0, free_pages = 0; i < nitems(vm_stats); i++) {
++  for (i = 0, free_pages = 0; i < sizeof(vm_stats) / sizeof(vm_stats[0]); i++) {
 +    size = sizeof(npages);
 +    if (sysctlbyname(vm_stats[i], &npages, &size, NULL, 0) == -1) {
 +      free_pages = 0;
@@ -816,7 +816,7 @@
 +  size_t mibsize, size;
 +  int mib[16], n, total = 0, used = 0;
 +
-+  mibsize = nitems(mib);
++  mibsize = sizeof(mib) / sizeof(mib[0]);
 +  if (sysctlnametomib("vm.swap_info", mib, &mibsize) != -1) {
 +    for (n = 0; ; n++) {
 +      mib[mibsize] = n;
