@@ -37,6 +37,9 @@ INSTALLDIR=	${STAGEDIR}${PREFIX}/${JDK_ROOT}
 .if ${OSVERSION} >= 900010
 RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libz.so.5:${PORTSDIR}/misc/compat8x
 .endif
+.if ${OSVERSION} >= 1000054
+RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x
+.endif
 
 .if ${ARCH} == "i386"
 PLIST_SUB+=	CLIENTVM=""
