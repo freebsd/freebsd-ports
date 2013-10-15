@@ -483,6 +483,7 @@
     SUBDIR += lbreakout
     SUBDIR += lbreakout2
     SUBDIR += ldmud
+    SUBDIR += legend-of-edgar
     SUBDIR += legends
     SUBDIR += legesmotus
     SUBDIR += lexter
