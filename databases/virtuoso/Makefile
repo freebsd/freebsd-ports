@@ -41,7 +41,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	PATH=${LOCALBASE}/bin:${PATH}\
 		ISQL=isql-vt
 USE_RC_SUBR=	virtuoso
-ONLY_FOR_ARCHS=	i386 amd64 sparc64
 USERS=		virtuoso
 GROUPS=		virtuoso
 
