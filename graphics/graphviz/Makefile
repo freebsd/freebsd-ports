@@ -234,7 +234,7 @@ CONFIGURE_ARGS+=	--without-gnomeui
 
 .if ${PORT_OPTIONS:MSMYRNA}
 CONFIGURE_ARGS+=	--with-glade=yes
-USE_GNOME+=		gnomelibs libglade2
+USE_GNOME+=		libglade2
 .if empty(PORT_OPTIONS:MGTK2)
 IGNORE=			option GTK2 is required for option SMYRNA
 .endif
