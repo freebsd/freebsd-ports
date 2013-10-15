@@ -12,6 +12,4 @@ LICENSE=	MIT
 
 XORG_CAT=	lib
 USE_XORG=	x11 renderproto:both xproto:both
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
