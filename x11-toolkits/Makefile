@@ -229,7 +229,6 @@
     SUBDIR += ruby-gtksourceview2
     SUBDIR += ruby-pango
     SUBDIR += ruby-poppler
-    SUBDIR += ruby-tk
     SUBDIR += ruby-vte
     SUBDIR += rubygem-gdk3
     SUBDIR += rubygem-gtk2
