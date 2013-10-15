@@ -37,7 +37,6 @@ ARGS=		-b ${PREFIX}/bin \
 		CC="${CC}" CXX="${CXX}" LINK="${CXX}" LINK_SHLIB="${CXX}" \
 		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../py-qt4/bsd.pyqt.mk"
 .include <bsd.port.options.mk>
 
@@ -69,8 +68,8 @@ post-configure:
 		${WRKSRC}/qpy/QtCore/Makefile
 
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/Qt.py ${PYTHONPREFIX_SITELIBDIR}/PyQt4 &&\
-		cd ${PYTHONPREFIX_SITELIBDIR}/PyQt4 &&\
+	${INSTALL_DATA} ${FILESDIR}/Qt.py ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/PyQt4 &&\
+		cd ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/PyQt4 &&\
 		${PYTHON_CMD} ${PYTHON_LIBDIR}/py_compile.py\
 		`ls *.py */*.py */*/*.py` &&\
 		${PYTHON_CMD} -O ${PYTHON_LIBDIR}/py_compile.py\

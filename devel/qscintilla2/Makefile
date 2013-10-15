@@ -23,7 +23,6 @@ QMAKE_ARGS=	-unix PREFIX=${PREFIX}
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../py-qt4/bsd.pyqt.mk"
 .include <bsd.port.options.mk>
 
@@ -35,10 +34,10 @@ PLIST_SUB+=	NLS="@comment "
 
 post-patch:
 	cd ${BUILD_WRKSRC} && ${REINPLACE_CMD} -e \
-		's|$$$$\[QT_INSTALL_HEADERS\]|${PREFIX}/${QT_INCDIR_REL}|; \
-		s|$$$$\[QT_INSTALL_LIBS\]|${PREFIX}/${QT_LIBDIR_REL}|; \
-		s|$$$$\[QT_INSTALL_TRANSLATIONS\]|${PREFIX}/share/qt4/translations|; \
-		s|$$$$\[QT_INSTALL_DATA\]|${PREFIX}/share/qt4|' \
+		's|$$$$\[QT_INSTALL_HEADERS\]|${STAGEDIR}${PREFIX}/${QT_INCDIR_REL}|; \
+		s|$$$$\[QT_INSTALL_LIBS\]|${STAGEDIR}${PREFIX}/${QT_LIBDIR_REL}|; \
+		s|$$$$\[QT_INSTALL_TRANSLATIONS\]|${STAGEDIR}${PREFIX}/share/qt4/translations|; \
+		s|$$$$\[QT_INSTALL_DATA\]|${STAGEDIR}${PREFIX}/share/qt4|' \
 		qscintilla.pro
 
 .if empty(PORT_OPTIONS:MNLS)
@@ -53,15 +52,15 @@ do-configure:
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC} &&\
-		${MKDIR} ${DOCSDIR}/html ${DOCSDIR}/Scintilla &&\
-		${INSTALL_DATA} NEWS README ${DOCSDIR} &&\
-		${INSTALL_DATA} doc/html-Qt4Qt5/* ${DOCSDIR}/html &&\
-		${INSTALL_DATA} doc/Scintilla/* ${DOCSDIR}/Scintilla
+		${MKDIR} ${STAGEDIR}${DOCSDIR}/html ${STAGEDIR}${DOCSDIR}/Scintilla &&\
+		${INSTALL_DATA} NEWS README ${STAGEDIR}${DOCSDIR} &&\
+		${INSTALL_DATA} doc/html-Qt4Qt5/* ${STAGEDIR}${DOCSDIR}/html &&\
+		${INSTALL_DATA} doc/Scintilla/* ${STAGEDIR}${DOCSDIR}/Scintilla
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
 	cd ${WRKSRC}/example-Qt4Qt5 &&\
-		${MKDIR} ${EXAMPLESDIR}/images &&\
-		${INSTALL_DATA} *.* ${EXAMPLESDIR} &&\
-		${INSTALL_DATA} images/* ${EXAMPLESDIR}/images
+		${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/images &&\
+		${INSTALL_DATA} *.* ${STAGEDIR}${EXAMPLESDIR} &&\
+		${INSTALL_DATA} images/* ${STAGEDIR}${EXAMPLESDIR}/images
 .endif
 .include <bsd.port.mk>

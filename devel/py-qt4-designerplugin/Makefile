@@ -19,6 +19,11 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}designer>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4
 BUILD_WRKSRC=	${WRKSRC}/designer
 INSTALL_WRKSRC=	${WRKSRC}/designer
 
+# For staging support.
+# TODO: Once all the PyQt ports start using configure-ng.py, this can be
+#       moved to bsd.pyqt.mk itself.
+DESTDIRNAME=	INSTALL_ROOT
+
 DISTINFO_FILE=	${PYQT4_DISTINFO_FILE}
 HAS_CONFIGURE=	yes
 USE_PYTHON=	2.5+
@@ -34,7 +39,6 @@ ARGS=		-b ${PREFIX}/bin \
 		CC="${CC}" CXX="${CXX}" LINK="${CXX}" LINK_SHLIB="${CXX}" \
 		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../py-qt4/bsd.pyqt.mk"
 
 .if defined(WITH_DEBUG)
