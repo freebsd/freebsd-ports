@@ -14,6 +14,7 @@ bin/mason.pl
 %%SITE_PERL%%/HTML/Mason/Devel.pod
 %%SITE_PERL%%/HTML/Mason/Escapes.pm
 %%SITE_PERL%%/HTML/Mason/Exceptions.pm
+%%SITE_PERL%%/HTML/Mason/FAQ.pod
 %%SITE_PERL%%/HTML/Mason/FakeApache.pm
 %%SITE_PERL%%/HTML/Mason/Handler.pm
 %%SITE_PERL%%/HTML/Mason/Interp.pm
@@ -46,6 +47,7 @@ bin/mason.pl
 %%PERL5_MAN3%%/HTML::Mason::Devel.3.gz
 %%PERL5_MAN3%%/HTML::Mason::Escapes.3.gz
 %%PERL5_MAN3%%/HTML::Mason::Exceptions.3.gz
+%%PERL5_MAN3%%/HTML::Mason::FAQ.3.gz
 %%PERL5_MAN3%%/HTML::Mason::FakeApache.3.gz
 %%PERL5_MAN3%%/HTML::Mason::Interp.3.gz
 %%PERL5_MAN3%%/HTML::Mason::Lexer.3.gz
