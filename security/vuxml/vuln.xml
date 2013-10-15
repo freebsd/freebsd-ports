@@ -51,6 +51,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="710cd5d5-35cb-11e3-85f9-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>30.0.1599.101</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>5 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[292422] High CVE-2013-2925: Use after free in XHR. Credit to
+	      Atte Kettunen of OUSPG.</li>
+	    <li>[294456] High CVE-2013-2926: Use after free in editing. Credit
+	      to cloudfuzzer.</li>
+	    <li>[297478] High CVE-2013-2927: Use after free in forms. Credit
+	      to cloudfuzzer.</li>
+	    <li>[305790] High CVE-2013-2928: Various fixes from internal
+	      audits, fuzzing and other initiatives.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2925</cvename>
+      <cvename>CVE-2013-2926</cvename>
+      <cvename>CVE-2013-2927</cvename>
+      <cvename>CVE-2013-2928</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2013-10-15</discovery>
+      <entry>2013-10-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9003b500-31e3-11e3-b0d0-20cf30e32f6d">
     <topic>mod_fcgid -- possible heap buffer overwrite</topic>
     <affects>
