@@ -10,10 +10,10 @@ COMMENT=	Thermal and C-state reporting utility for Intel-Core-i CPUs
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
+USES=		gmake
 
-MAN1=		i7z.1
-PLIST_FILES=	bin/i7z
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/${PORTNAME}.1.gz
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -21,10 +21,9 @@ ONLY_FOR_ARCHS=	i386 amd64
 # default FreeBSD optimization levels (-O2, -O3, -Os)
 CFLAGS+=	-fno-schedule-insns2 -fno-schedule-insns -fno-caller-saves
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.man \
-		${MANPREFIX}/man/man1/${MAN1}
+		${STAGEDIR}${MANPREFIX}/man/man1/${PORTNAME}.1
 
 .include <bsd.port.mk>
