@@ -33,14 +33,6 @@ FOF_DIR=	${PREFIX}/lib/${PORTNAME}
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-WITHOUT_PSYCO=	yes
-.endif
-
-.if !defined(WITHOUT_PSYCO)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
-.endif
-
 do-install:
 	${MKDIR} ${FOF_DIR}/${PORTNAME:S/f/F/g:S/o/O/}
 	@cd ${WRKSRC}/src && \
