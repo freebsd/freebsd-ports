@@ -10,8 +10,6 @@ COMMENT=	Program to list application's resources
 XORG_CAT=	app
 USE_XORG=	x11 xt
 
-MAN1=		appres.1
-PLIST_FILES=	bin/appres
+PLIST_FILES=	bin/appres man/man1/appres.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
