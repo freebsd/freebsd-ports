@@ -6,9 +6,23 @@ Forwarded: not-needed
 Author: Peter Pentchev <roam@FreeBSD.org>
 Last-Update: 2010-12-19
 
---- configure.orig	2013-06-22 06:29:35.000000000 +0800
-+++ configure	2013-09-18 01:39:42.256041308 +0800
-@@ -3626,9 +3626,10 @@
+--- configure.orig	2013-08-05 19:28:53.000000000 +0800
++++ configure	2013-10-16 00:49:08.164433303 +0800
+@@ -3554,9 +3554,10 @@
+       -I*)
+         xc_bad_var_ldflags=yes
+         ;;
+-      -l* | --library=*)
+-        xc_bad_var_ldflags=yes
+-        ;;
++# Temporarily disable -l* flag check for SSP support (Mk/bsd.ssp.mk)
++#      -l* | --library=*)
++#        xc_bad_var_ldflags=yes
++#        ;;
+     esac
+   done
+   if test $xc_bad_var_ldflags = yes; then
+@@ -3626,9 +3627,10 @@
    xc_bad_var_cflags=no
    for xc_word in $CFLAGS; do
      case "$xc_word" in
@@ -22,7 +36,7 @@ Last-Update: 2010-12-19
        -U*)
          xc_bad_var_cflags=yes
          ;;
-@@ -16922,6 +16923,8 @@
+@@ -16922,6 +16924,8 @@
      tmp_CFLAGS="$CFLAGS"
      tmp_CPPFLAGS="$CPPFLAGS"
  
@@ -31,7 +45,7 @@ Last-Update: 2010-12-19
      ac_var_stripped=""
    for word1 in $tmp_CFLAGS; do
      ac_var_strip_word="no"
-@@ -16952,6 +16955,7 @@
+@@ -16952,6 +16956,7 @@
    done
      tmp_CPPFLAGS="$ac_var_stripped"
    squeeze tmp_CPPFLAGS
@@ -39,7 +53,7 @@ Last-Update: 2010-12-19
  
      #
      if test "$want_debug" = "yes"; then
-@@ -17169,6 +17173,8 @@
+@@ -17169,6 +17174,8 @@
      #
      if test "$honor_optimize_option" = "yes"; then
  
@@ -48,7 +62,7 @@ Last-Update: 2010-12-19
      ac_var_stripped=""
    for word1 in $tmp_CFLAGS; do
      ac_var_strip_word="no"
-@@ -17199,6 +17205,7 @@
+@@ -17199,6 +17206,7 @@
    done
      tmp_CPPFLAGS="$ac_var_stripped"
    squeeze tmp_CPPFLAGS
@@ -56,7 +70,7 @@ Last-Update: 2010-12-19
  
        if test "$want_optimize" = "yes"; then
          { $as_echo "$as_me:${as_lineno-$LINENO}: checking if compiler accepts optimizer enabling options" >&5
-@@ -21624,7 +21631,8 @@
+@@ -21624,7 +21632,8 @@
          PKGTEST="no"
      PREFIX_OPENSSL=$OPT_SSL
  
@@ -66,7 +80,7 @@ Last-Update: 2010-12-19
      { $as_echo "$as_me:${as_lineno-$LINENO}: PKG_CONFIG_LIBDIR will be set to \"$OPENSSL_PCDIR\"" >&5
  $as_echo "$as_me: PKG_CONFIG_LIBDIR will be set to \"$OPENSSL_PCDIR\"" >&6;}
      if test -f "$OPENSSL_PCDIR/openssl.pc"; then
-@@ -24972,29 +24980,30 @@
+@@ -24972,29 +24981,30 @@
      ;;
    off)
          LIB_RTMP="-lrtmp"
@@ -106,7 +120,21 @@ Last-Update: 2010-12-19
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -39266,9 +39275,10 @@
+@@ -39194,9 +39204,10 @@
+       -I*)
+         xc_bad_var_ldflags=yes
+         ;;
+-      -l* | --library=*)
+-        xc_bad_var_ldflags=yes
+-        ;;
++# Temporarily disable -l* flag check for SSP support (Mk/bsd.ssp.mk)
++#      -l* | --library=*)
++#        xc_bad_var_ldflags=yes
++#        ;;
+     esac
+   done
+   if test $xc_bad_var_ldflags = yes; then
+@@ -39266,9 +39277,10 @@
    xc_bad_var_cflags=no
    for xc_word in $CFLAGS; do
      case "$xc_word" in
