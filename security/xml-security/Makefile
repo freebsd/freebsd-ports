@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xml-security
-PORTVERSION=	1.5.3
+PORTVERSION=	1.5.5
 CATEGORIES=	security java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	santuario/java-library/${PORTVERSION:S/./_/g}
@@ -17,6 +17,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-
 
 LICENSE=	AL2
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -24,30 +25,39 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/./_/g}
 USE_ANT=	yes
 MAKE_ENV=	ANT_INCLUDE_SHARED_JARS=YES
 ALL_TARGET=	jar
-.if !defined(NOPORTDOCS)
-ALL_TARGET+=	javadoc
-.endif
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
 PLIST_FILES=	%%JAVAJARDIR%%/xmlsec.jar
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+ALL_TARGET+=	javadoc
+.endif
+
+do-build:
+	@(cd ${BUILD_WRKSRC}; \
+		${SETENV} ${MAKE_ENV} ${ANT} ${ALL_TARGET})
+
 do-install:
 	@${ECHO} -n ">> Installing JAR as ${JAVAJARDIR}/xmlsec.jar..."
-	@${INSTALL_DATA} ${WRKSRC}/build/xmlsec-${PORTVERSION}.jar ${JAVAJARDIR}/xmlsec.jar
+	@${INSTALL_DATA} ${WRKSRC}/build/xmlsec-${PORTVERSION}.jar \
+		${STAGEDIR}/${JAVAJARDIR}/xmlsec.jar
 	@${ECHO} " [ DONE ]"
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/build/docs/html && ${COPYTREE_SHARE} javadoc ${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	@(cd ${WRKSRC}/build/docs/html && ${COPYTREE_SHARE} javadoc \
+		${STAGEDIR}/${DOCSDIR})
 	@${ECHO} " [ DONE ]"
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${ECHO} -n ">> Installing examples in ${EXAMPLESDIR}..."
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/samples && ${COPYTREE_SHARE} "javax org" ${EXAMPLESDIR})
+	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
+	@(cd ${WRKSRC}/samples && ${COPYTREE_SHARE} "javax org" \
+		${STAGEDIR}/${EXAMPLESDIR})
 	@${ECHO} " [ DONE ]"
 .endif
 
