@@ -475,7 +475,7 @@ sbin/snmptrapd
 %%WITH_PYTHON%%%%PYINSTALL%%
 %%WITH_PYTHON%%%%PYUNINSTALL%%
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp_python-%%PYDISTUTILS_PKGVERSION%%-py%%PYTHON_VER%%.egg
-@exec mkdir /var/agentx
+@exec mkdir -p /var/agentx
 @dirrm include/net-snmp/system
 @dirrm include/net-snmp/machine
 @dirrm include/net-snmp/library
