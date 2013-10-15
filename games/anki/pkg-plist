@@ -1,4 +1,5 @@
 bin/anki
+man/man1/anki.1.gz
 %%DATADIR%%/anki/__init__.py
 %%DATADIR%%/anki/__init__.pyc
 %%DATADIR%%/anki/__init__.pyo
@@ -529,12 +530,14 @@ bin/anki
 %%DATADIR%%/locale/fa/LC_MESSAGES/anki.mo
 %%DATADIR%%/locale/fi/LC_MESSAGES/anki.mo
 %%DATADIR%%/locale/fr/LC_MESSAGES/anki.mo
+%%DATADIR%%/locale/gl/LC_MESSAGES/anki.mo
 %%DATADIR%%/locale/gu/LC_MESSAGES/anki.mo
 %%DATADIR%%/locale/he/LC_MESSAGES/anki.mo
 %%DATADIR%%/locale/hr/LC_MESSAGES/anki.mo
 %%DATADIR%%/locale/hu/LC_MESSAGES/anki.mo
 %%DATADIR%%/locale/it/LC_MESSAGES/anki.mo
 %%DATADIR%%/locale/ja/LC_MESSAGES/anki.mo
+%%DATADIR%%/locale/km/LC_MESSAGES/anki.mo
 %%DATADIR%%/locale/ko/LC_MESSAGES/anki.mo
 %%DATADIR%%/locale/lt/LC_MESSAGES/anki.mo
 %%DATADIR%%/locale/lv/LC_MESSAGES/anki.mo
@@ -682,6 +685,8 @@ bin/anki
 %%DATADIR%%/tests/support/text-2fields.txt
 %%DATADIR%%/tests/support/text-tags.txt
 %%DATADIR%%/tests/support/text-update.txt
+%%DATADIR%%/tests/support/update1.apkg
+%%DATADIR%%/tests/support/update2.apkg
 %%DATADIR%%/tests/test_cards.py
 %%DATADIR%%/tests/test_cards.pyc
 %%DATADIR%%/tests/test_cards.pyo
@@ -794,6 +799,8 @@ share/pixmaps/anki.xpm
 @dirrm %%DATADIR%%/locale/lt
 @dirrm %%DATADIR%%/locale/ko/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/ko
+@dirrm %%DATADIR%%/locale/km/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/km
 @dirrm %%DATADIR%%/locale/ja/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/ja
 @dirrm %%DATADIR%%/locale/it/LC_MESSAGES
@@ -806,6 +813,8 @@ share/pixmaps/anki.xpm
 @dirrm %%DATADIR%%/locale/he
 @dirrm %%DATADIR%%/locale/gu/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/gu
+@dirrm %%DATADIR%%/locale/gl/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/gl
 @dirrm %%DATADIR%%/locale/fr/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/fr
 @dirrm %%DATADIR%%/locale/fi/LC_MESSAGES
