@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ess
-DISTVERSION=	13.05
-PORTREVISION=	1
+DISTVERSION=	13.09
 CATEGORIES=	math
 MASTER_SITES=	http://ess.r-project.org/downloads/ess/
 EXTRACT_SUFX=	.tgz
@@ -16,21 +15,25 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	R:${PORTSDIR}/math/R
 
 USE_EMACS=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
 INFO=	ess
 .endif
 
+#attention, dirty hack: because 'ETCDIR =' is typed _with_ trailing
+#space in Makefile, $STAGEDIR append fails without the additional
+#space in the port
 post-patch: .SILENT
 	${REINPLACE_CMD} -e "\|^PREFIX=|d" -e "\|^INSTALL=|d" \
 		-e "\|^EMACS=|s|=.*|=${EMACS_NAME}|" \
-		-e "\|^ETCDIR=|s|=.*|=${PREFIX}/${EMACS_LIBDIR}/etc/ess|" \
-		-e "\|^INFODIR=|s|=.*|=${PREFIX}/${INFO_PATH}|" \
-		-e "\|^LISPDIR=|s|=.*|=${PREFIX}/${EMACS_SITE_LISPDIR}|" \
+		-e "\|^ETCDIR\ =|s|=.*|=${STAGEDIR}${PREFIX}/${EMACS_LIBDIR}/etc/ess|" \
+		-e "\|^INFODIR=|s|=.*|=${STAGEDIR}${PREFIX}/${INFO_PATH}|" \
+		-e "\|^LISPDIR=|s|=.*|=${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}|" \
 		${WRKSRC}/Makeconf
 	${REINPLACE_CMD} -e "\|cd doc; \$$(MAKE) \$$@|d" \
 		${WRKSRC}/Makefile
@@ -50,8 +53,5 @@ post-install:
 	@(cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} \
 		${MAKE_ARGS} install-info)
 .endif
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
 
 .include <bsd.port.mk>
