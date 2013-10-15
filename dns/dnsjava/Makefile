@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dnsjava
-PORTVERSION=	2.1.5
+PORTVERSION=	2.1.6
 CATEGORIES=	dns java
 MASTER_SITES=	http://www.dnsjava.org/download/
 
