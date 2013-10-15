@@ -23,9 +23,6 @@ CONFIGURE_ARGS+=	--datadir=${PREFIX}/lib \
 			--disable-specs
 CONFIGURE_ENV+=	ac_cv_path_PS2PDF=""
 
-NO_STAGE=	yes
-.include "${.CURDIR}/manpages"
-
 post-patch:
 	@${REINPLACE_CMD} 's/test.*-traditional.*;/true;/' \
 		${WRKSRC}/configure
