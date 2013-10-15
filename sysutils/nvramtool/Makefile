@@ -7,20 +7,18 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.zonov.org/${PORTNAME}/
 
 MAINTAINER=	zont@FreeBSD.org
-COMMENT=	A utility for reading, writing the contents of CMOS memory
+COMMENT=	Utility for reading, writing the contents of CMOS memory
 
+USES=		gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man8/${PORTNAME}.8.gz
 
-MAN8=		${PORTNAME}.8
-
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/cli/${MAN8} ${MANPREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/cli/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>
