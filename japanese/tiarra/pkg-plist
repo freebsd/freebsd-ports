@@ -255,8 +255,5 @@ tiarra/sample.conf
 tiarra/tiarra
 tiarra/tiarra-conf.el
 tiarra/tiarra-conf.l
-@dirrm tiarra/log
-@exec mkdir %D/tiarra/log
-@exec chown %%TIARRA_USER%%:%%TIARRA_GROUP%% %D/tiarra/log
-@exec chmod o-rwx %D/tiarra/log
-@dirrm tiarra
+@dirrmtry tiarra/log
+@dirrmtry tiarra
