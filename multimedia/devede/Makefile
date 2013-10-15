@@ -23,10 +23,8 @@ USE_PYTHON=	yes
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	IBUS NLS
-OPTIONS_DEFINE_i386=	PSYCO
 OPTIONS_DEFAULT=	IBUS
 IBUS_DESC=	iBus support
-PSYCO_DESC=	devel/py-psyco optimization support
 
 DEJAVU_FONTSDIR=	${LOCALBASE}/lib/X11/fonts/dejavu
 DEJAVU_FONTFILE=	${DEJAVU_FONTSDIR}/DejaVuSans.ttf
@@ -46,11 +44,6 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 PORTDOCS=	*
-
-.if ${PORT_OPTIONS:MPSYCO}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
-EXTRA_PATCHES+=	${FILESDIR}/extra-psyco-patch-devede.py
-.endif
 
 post-patch:
 # Fix general locations
