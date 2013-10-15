@@ -171,7 +171,6 @@ _LUA_VERS_LISTS=		_LUA_VER_INSTALLED WANT_LUA_VER WITH_LUA_VER
 _LUA_PORT_lua_4.0=		lang/lua4
 _LUA_DEPTYPE_lua_4.0=	lib
 _LUA_PORT_tolua_4.0=	lang/tolua4
-_LUA_PORT_ruby_4.0=		lang/ruby-lua4
 
 _LUA_PORT_lua_5.0=		lang/lua50
 _LUA_DEPTYPE_lua_5.0=	lib
