@@ -101,10 +101,6 @@ USE_GNOME+=	gtk12
 USE_GNOME+=	imlib
 .endif
 
-.if ${HAVE_GNOME:Mgnomelibs} || ${PORT_OPTIONS:MGNOME}
-USE_GNOME+=	gnomelibs
-.endif
-
 MAN1=	FvwmAnimate.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmButtons.1 \
 	FvwmCommand.1 FvwmConsole.1 FvwmConsoleC.pl.1 FvwmCpp.1 FvwmDebug.1 \
 	FvwmDragWell.1 FvwmEvent.1 FvwmForm.1 FvwmGtkDebug.1 FvwmIconBox.1 \

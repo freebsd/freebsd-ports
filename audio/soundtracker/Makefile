@@ -4,7 +4,7 @@
 PORTNAME=	soundtracker
 PORTVERSION=	0.6.8
 PORTREVISION=	14
-CATEGORIES=	audio gnome
+CATEGORIES=	audio
 MASTER_SITES=	http://www.soundtracker.org/dl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	v${PORTVERSION:R}
 
@@ -13,7 +13,7 @@ COMMENT=	Mod player/tracking tool which supports XM and MOD formats
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 GNU_CONFIGURE=	yes
 USES=		pathfix pkgconfig
@@ -23,10 +23,11 @@ USE_GNOME=	esound gdkpixbuf
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	GNOME1 JACK SDL NLS
+OPTIONS_DEFINE=	JACK SDL NLS
 OPTIONS_DEFINE_i386=	ASM
-GNOME1_DESC=	Use GNOME 1.x (enables envelope editing)
 ASM_DESC=	Use optimized assembly (potentially unstable)
+
+CONFIGURE_ARGS+=	--disable-gnome
 
 DESKTOP_ENTRIES="SoundTracker" "Pattern-oriented music editor" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.xpm" \
@@ -36,13 +37,6 @@ DESKTOP_ENTRIES="SoundTracker" "Pattern-oriented music editor" \
 
 .if ${PORT_OPTIONS:MASM}
 CONFIGURE_ARGS+=	--enable-asm
-.endif
-
-.if ${PORT_OPTIONS:MGNOME}
-USE_GNOME+=	gnomelibs gnomeprefix
-CONFIGURE_ARGS+=	--enable-gnome
-.else
-CONFIGURE_ARGS+=	--disable-gnome
 .endif
 
 .if ${PORT_OPTIONS:MJACK}

@@ -57,14 +57,6 @@ PLIST_SUB+=	NLS="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mgnomelibs}!="" && ! ${PORT_OPTIONS:MGTK2}
-USE_GNOME+=	gnomeprefix gnomelibs
-PLIST_SUB+=	MYGNOME=""
-MAKE_ENV=	HAVE_GNOME=1
-.else
-PLIST_SUB+=	MYGNOME="@comment "
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		s|DATADIRNAME=lib|DATADIRNAME=share|g ; \

@@ -1,7 +1,6 @@
 bin/gftp
 %%NOX11:%%bin/gftp-gtk
 bin/gftp-text
-%%NOX11:%%%%MYGNOME%%share/applications/gftp.desktop
 %%NOX11:%%%%DATADIR%%/COPYING
 %%NOX11:%%%%DATADIR%%/bookmarks
 %%NOX11:%%%%DATADIR%%/connect.xpm
@@ -89,7 +88,6 @@ bin/gftp-text
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gftp.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/gftp.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gftp.mo
-%%NOX11:%%%%MYGNOME%%share/pixmaps/gftp.png
 %%NOX11:%%@dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrmtry share/locale/dz/LC_MESSAGES

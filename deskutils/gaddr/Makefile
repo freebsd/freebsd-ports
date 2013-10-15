@@ -14,16 +14,7 @@ COMMENT=	GTK 1.x address book
 PLIST_FILES=	bin/gaddr
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
-WANT_GNOME=	yes
 
 MAKE_ARGS+=	PREFIX="${STAGEDIR}${PREFIX}"
-
-.include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mgnomelibs}!=""
-USE_GNOME+=	gnomelibs
-PKGNAMESUFFIX=	-gnome
-CONFIGURE_ARGS+=--enable-gnome
-.endif
 
 .include <bsd.port.post.mk>

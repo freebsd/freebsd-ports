@@ -26,6 +26,8 @@ GNU_CONFIGURE=	yes
 
 MAN1=		gnp.1
 
+CONFIGURE_ARGS=	--disable-gnome
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -33,13 +35,6 @@ DOCVERSION=	1.2.0
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mgnomelibs}!=""
-USE_GNOME+=	gnomelibs
-PKGNAMESUFFIX=	-gnome
-.else
-CONFIGURE_ARGS+=--disable-gnome
-.endif
 
 .if defined(NOPORTDOCS)
 PLIST_SUB+=	NOPORTDOCS=""
