@@ -8,7 +8,7 @@ CATEGORIES=	java
 MASTER_SITES=	SF/${PORTNAME}/Jikes/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A very fast Java source to byte-code compiler made available by IBM
+COMMENT=	Java source to byte-code compiler made available by IBM
 
 MAN1=		jikes.1
 

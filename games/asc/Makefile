@@ -12,7 +12,7 @@ DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A turn based, multiplayer strategic game with very nice graphics
+COMMENT=	Turn based, multiplayer strategic game with nice graphics
 
 LICENSE=	GPLv2
 

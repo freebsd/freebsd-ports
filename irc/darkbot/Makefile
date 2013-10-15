@@ -10,7 +10,7 @@ MASTER_SITES=	http://darkbot.sourceforge.net/archive/unix/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	IRC talking bot with a very fast algorithm for its database
+COMMENT=	IRC talking bot with a fast algorithm for its database
 
 SUB_FILES=	pkg-message
 
