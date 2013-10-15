@@ -7,8 +7,7 @@ PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
-PKGNAMESUFFIX?=	${DISTV:S/.//}-server
-DISTV=	${DISTVERSION:R}
+PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
 
 MAINTAINER?=	pgsql@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
