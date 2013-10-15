@@ -53,7 +53,6 @@
     SUBDIR += gnome-icons-snowish
     SUBDIR += gnome-icons-stylish
     SUBDIR += gnome-icons-ximian-south
-    SUBDIR += gnome-look
     SUBDIR += gnome-themes
     SUBDIR += gnome-themes-extras
     SUBDIR += greybird-theme
@@ -68,8 +67,6 @@
     SUBDIR += gtk-cleanice-engine
     SUBDIR += gtk-digital-cream-theme
     SUBDIR += gtk-digital-harmony-theme
-    SUBDIR += gtk-engines
-    SUBDIR += gtk-engines-collection
     SUBDIR += gtk-engines2
     SUBDIR += gtk-envy-theme
     SUBDIR += gtk-equinox-engine
@@ -165,7 +162,6 @@
     SUBDIR += sawfish-themes
     SUBDIR += slim-themes
     SUBDIR += thewidgetfactory
-    SUBDIR += thinice
     SUBDIR += ubuntulooks
     SUBDIR += xcursor-themes
     SUBDIR += xmms-bluecurve-theme
