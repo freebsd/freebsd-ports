@@ -75,5 +75,5 @@ etc/squid/squidGuard.conf.sample
 @exec mkdir -p %%DATADIR%% || true
 @exec mkdir -p %%LOGDIR%% || true
 %%PORTEXAMPLES%%@exec chown -R %%SQUID_UID%%:%%SQUID_GID%% %%LOGDIR%%
-@exec rmdir %%DATADIR%% /var/db/fbsdmon 2>/dev/null || true
-@exec rmdir %%LOGDIR%% /var/db/fbsdmon 2>/dev/null || true
+@exec rmdir %%DATADIR%% 2>/dev/null || true
+@exec rmdir %%LOGDIR%% 2>/dev/null || true
