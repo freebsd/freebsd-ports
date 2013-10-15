@@ -5089,3 +5089,4 @@ www/httpgrabber||2013-10-14|Depended on net/ngrep-lib
 security/stem|security/py-stem|2013-10-14|This is a Python library
 sysutils/gupsc||2013-10-15|Depends on the obsolete gnome1
 net/diradmin||2013-10-15|Depends on the obsolete gnome1
+devel/hypersrc||2013-10-15|Depends on the obsolete gnome1
