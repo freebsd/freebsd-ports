@@ -14,10 +14,10 @@ MAN1=		hashcash.1 sha1-hashcash.1
 PLIST_FILES=	bin/hashcash bin/sha1
 PORTDOCS=	CHANGELOG LICENSE README
 ALL_TARGET=	generic
+NO_STAGE=	yes
 
 .if defined(NOPORTDOCS)
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/DOC_INSTALL_PATH/d' ${WRKSRC}/Makefile
 .endif
