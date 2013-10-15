@@ -18,6 +18,10 @@ lib/X11/fonts/local/3270gt32.pcf.gz
 lib/X11/fonts/local/3270gt32b.pcf.gz
 lib/X11/fonts/local/3270gt8.pcf.gz
 lib/X11/fonts/local/3270h.pcf.gz
+man/man1/x3270-script.man.gz
+man/man1/x3270.man.gz
+man/man1/x3270if.man.gz
+man/man5/ibm_hosts.man.gz
 @exec /bin/chmod u+w %D/lib/X11/fonts/local %D/lib/X11/fonts/local/fonts.dir
 @exec %D/bin/mkfontdir %D/lib/X11/fonts/local
 @exec /bin/chmod u=rwx,go=rx %D/lib/X11/fonts/local
