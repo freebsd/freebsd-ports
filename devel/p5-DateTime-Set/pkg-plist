@@ -3,8 +3,12 @@
 %%SITE_PERL%%/DateTime/SpanSet.pm
 %%SITE_PERL%%/Set/Infinite/_recurrence.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Set/.packlist
+%%PERL5_MAN3%%/DateTime::Set.3.gz
+%%PERL5_MAN3%%/DateTime::Span.3.gz
+%%PERL5_MAN3%%/DateTime::SpanSet.3.gz
+%%PERL5_MAN3%%/Set::Infinite::_recurrence.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Set
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime
-@dirrmtry %%SITE_PERL%%/DateTime
 @dirrmtry %%SITE_PERL%%/Set/Infinite
 @dirrmtry %%SITE_PERL%%/Set
+@dirrmtry %%SITE_PERL%%/DateTime
