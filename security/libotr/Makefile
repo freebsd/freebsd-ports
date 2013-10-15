@@ -6,7 +6,8 @@ PORTVERSION=	4.0.0
 # confirmed via testing that it is necessary
 PORTREVISION=	2
 CATEGORIES=	security net-im net
-MASTER_SITES=	http://www.cypherpunks.ca/otr/
+MASTER_SITES=	https://otr.cypherpunks.ca/ \
+		http://www.c-s.li/ports/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -17,24 +18,14 @@ BUILD_DEPENDS=	pkgconf>0:${PORTSDIR}/devel/pkgconf
 LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
-
 CONFLICTS=	libotr-3.*
 
 USE_AUTOTOOLS=	autoconf libtool
 USE_LDCONFIG=	yes
 
-MAN1=		otr_toolkit.1
-MLINKS=		otr_toolkit.1 otr_parse.1 \
-		otr_toolkit.1 otr_sesskeys.1 \
-		otr_toolkit.1 otr_mackey.1 \
-		otr_toolkit.1 otr_readforge.1 \
-		otr_toolkit.1 otr_modify.1 \
-		otr_toolkit.1 otr_remac.1
-
 verify: checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
