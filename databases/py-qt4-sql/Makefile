@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}gui>=${PYQT4_VERSION}:${PORTSDIR}/x11-toolkits/py-q
 DISTINFO_FILE=	${PYQT4_DISTINFO_FILE}
 HAS_CONFIGURE=	yes
 USE_PYTHON=	2.5+
-USE_QT4=	sql qmake_build
+USE_QT4=	moc_build sql qmake_build
 
 OPTIONS_DEFINE=	API
 OPTIONS_DEFAULT=API
@@ -38,7 +38,6 @@ ARGS=		-b ${PREFIX}/bin \
 		CC="${CC}" CXX="${CXX}" LINK="${CXX}" LINK_SHLIB="${CXX}" \
 		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../devel/py-qt4/bsd.pyqt.mk"
 .include <bsd.port.options.mk>
 

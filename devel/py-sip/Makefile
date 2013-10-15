@@ -12,7 +12,7 @@ DISTNAME=	${SIP_DISTNAME}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python to C and C++ bindings generator
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 
 DATADIR=	${PREFIX}/share/py-${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
@@ -24,7 +24,6 @@ ARGS=		-b ${PREFIX}/bin -d ${PYTHONPREFIX_SITELIBDIR} \
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../py-qt4/bsd.pyqt.mk"
 .include <bsd.port.options.mk>
 
@@ -37,11 +36,11 @@ do-configure:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR} && cd ${WRKSRC}/doc/html && \
-		${COPYTREE_SHARE} \. ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR} && cd ${WRKSRC}/doc/html && \
+		${COPYTREE_SHARE} \. ${STAGEDIR}${DOCSDIR}
 .endif
-	${MKDIR} ${DATADIR} &&\
-		cd ${PYTHONPREFIX_SITELIBDIR} &&\
+	${MKDIR} ${STAGEDIR}${DATADIR} &&\
+		cd ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} &&\
 		${PYTHON_CMD} -c "import sipconfig" &&\
 		${PYTHON_CMD} -O -c "import sipconfig" &&\
 		${PYTHON_CMD} -c "import sipdistutils" &&\
