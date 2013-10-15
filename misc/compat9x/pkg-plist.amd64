@@ -11,12 +11,14 @@ lib/compat/libkadm5srv.so.10
 lib/compat/libkafs5.so.10
 lib/compat/libkrb5.so.10
 lib/compat/libkvm.so.5
+lib/compat/liblwres.so.80
 lib/compat/libmd.so.5
 lib/compat/libncp.so.4
 lib/compat/libodialog.so.7
 lib/compat/libroken.so.10
 lib/compat/libssl.so.6
 lib/compat/libstdc++.so.6
+lib/compat/libsupc++.so.1
 lib/compat/libusb.so.2
 lib32/compat/libarchive.so.5
 lib32/compat/libasn1.so.10
@@ -37,6 +39,7 @@ lib32/compat/libodialog.so.7
 lib32/compat/libroken.so.10
 lib32/compat/libssl.so.6
 lib32/compat/libstdc++.so.6
+lib32/compat/libsupc++.so.1
 lib32/compat/libusb.so.2
 @dirrmtry lib/compat
 @dirrmtry lib32/compat
