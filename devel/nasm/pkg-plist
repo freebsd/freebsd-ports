@@ -7,3 +7,14 @@ bin/rdf2bin
 bin/rdfdump
 bin/rdflib
 bin/rdx
+man/man1/ldrdf.1.gz
+man/man1/nasm.1.gz
+man/man1/ndisasm.1.gz
+man/man1/rdf2bin.1.gz
+man/man1/rdf2com.1.gz
+man/man1/rdf2ihx.1.gz
+man/man1/rdf2ith.1.gz
+man/man1/rdf2srec.1.gz
+man/man1/rdfdump.1.gz
+man/man1/rdflib.1.gz
+man/man1/rdx.1.gz
