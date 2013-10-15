@@ -136,7 +136,6 @@
     SUBDIR += firewalk
     SUBDIR += fl0p
     SUBDIR += flawfinder
-    SUBDIR += flowtag
     SUBDIR += fpc-hash
     SUBDIR += fpc-openssl
     SUBDIR += fprint_demo
