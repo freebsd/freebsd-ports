@@ -88,106 +88,8 @@ TEST_DEPENDS=	p5-Test-WWW-Mechanize-Catalyst>=0:${PORTSDIR}/devel/p5-Test-WWW-Me
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	mojomojo_cgi.pl.1 \
-	mojomojo_create.pl.1 \
-	mojomojo_fastcgi.pl.1 \
-	mojomojo_fastcgi_manage.pl.1 \
-	mojomojo_server.pl.1 \
-	mojomojo_spawn_db.pl.1 \
-	mojomojo_test.pl.1 \
-	mojomojo_update_db.pl.1
-MAN3=	MojoMojo.3 \
-	MojoMojo::Controller::Admin.3 \
-	MojoMojo::Controller::Attachment.3 \
-	MojoMojo::Controller::Comment.3 \
-	MojoMojo::Controller::Export.3 \
-	MojoMojo::Controller::Gallery.3 \
-	MojoMojo::Controller::Image.3 \
-	MojoMojo::Controller::JSON.3 \
-	MojoMojo::Controller::Journal.3 \
-	MojoMojo::Controller::Jsrpc.3 \
-	MojoMojo::Controller::Page.3 \
-	MojoMojo::Controller::PageAdmin.3 \
-	MojoMojo::Controller::Root.3 \
-	MojoMojo::Controller::Tag.3 \
-	MojoMojo::Controller::User.3 \
-	MojoMojo::Declaw.3 \
-	MojoMojo::Extension.3 \
-	MojoMojo::Extensions::Counter.3 \
-	MojoMojo::Formatter.3 \
-	MojoMojo::Formatter::Amazon.3 \
-	MojoMojo::Formatter::CPANHyperlink.3 \
-	MojoMojo::Formatter::Comment.3 \
-	MojoMojo::Formatter::Defang.3 \
-	MojoMojo::Formatter::Dir.3 \
-	MojoMojo::Formatter::DocBook.3 \
-	MojoMojo::Formatter::DocBook::Colorize.3 \
-	MojoMojo::Formatter::Emote.3 \
-	MojoMojo::Formatter::File.3 \
-	MojoMojo::Formatter::File::DocBook.3 \
-	MojoMojo::Formatter::File::Image.3 \
-	MojoMojo::Formatter::File::Pod.3 \
-	MojoMojo::Formatter::File::Text.3 \
-	MojoMojo::Formatter::Gist.3 \
-	MojoMojo::Formatter::GoogleSearch.3 \
-	MojoMojo::Formatter::GoogleCalendar.3 \
-	MojoMojo::Formatter::IDLink.3 \
-	MojoMojo::Formatter::IRCLog.3 \
-	MojoMojo::Formatter::Include.3 \
-	MojoMojo::Formatter::Main.3 \
-	MojoMojo::Formatter::Markdown.3 \
-	MojoMojo::Formatter::Pod.3 \
-	MojoMojo::Formatter::RSS.3 \
-	MojoMojo::Formatter::Redirect.3 \
-	MojoMojo::Formatter::SyntaxHighlight.3 \
-	MojoMojo::Formatter::TOC.3 \
-	MojoMojo::Formatter::Text.3 \
-	MojoMojo::Formatter::Textile.3 \
-	MojoMojo::Formatter::Wiki.3 \
-	MojoMojo::Formatter::WikipediaLink.3 \
-	MojoMojo::Formatter::YouTube.3 \
-	MojoMojo::I18N.3 \
-	MojoMojo::Installation.3 \
-	MojoMojo::Model::DBIC.3 \
-	MojoMojo::Model::Search.3 \
-	MojoMojo::Model::Themes.3 \
-	MojoMojo::Prefs.3 \
-	MojoMojo::Schema.3 \
-	MojoMojo::Schema::Base::Result.3 \
-	MojoMojo::Schema::Base::ResultSet.3 \
-	MojoMojo::Schema::Result::Attachment.3 \
-	MojoMojo::Schema::Result::Comment.3 \
-	MojoMojo::Schema::Result::Content.3 \
-	MojoMojo::Schema::Result::Entry.3 \
-	MojoMojo::Schema::Result::Journal.3 \
-	MojoMojo::Schema::Result::Link.3 \
-	MojoMojo::Schema::Result::Page.3 \
-	MojoMojo::Schema::Result::PageVersion.3 \
-	MojoMojo::Schema::Result::PathPermissions.3 \
-	MojoMojo::Schema::Result::Person.3 \
-	MojoMojo::Schema::Result::Photo.3 \
-	MojoMojo::Schema::Result::Preference.3 \
-	MojoMojo::Schema::Result::Role.3 \
-	MojoMojo::Schema::Result::RoleMember.3 \
-	MojoMojo::Schema::Result::RolePrivilege.3 \
-	MojoMojo::Schema::Result::Tag.3 \
-	MojoMojo::Schema::Result::WantedPage.3 \
-	MojoMojo::Schema::ResultSet::Attachment.3 \
-	MojoMojo::Schema::ResultSet::Content.3 \
-	MojoMojo::Schema::ResultSet::Page.3 \
-	MojoMojo::Schema::ResultSet::Person.3 \
-	MojoMojo::Schema::ResultSet::Role.3 \
-	MojoMojo::Schema::ResultSet::Tag.3 \
-	MojoMojo::View::Email.3 \
-	MojoMojo::View::JSON.3 \
-	MojoMojo::View::TT.3 \
-	MojoMojo::WordDiff.3 \
-	Text::SmartyPants.3 \
-	Text::Wikispaces2Markdown.3
-
 OPTIONS_DEFINE=	DEPLOY FASTCGI TOCGEN RECAPTCHA SYNTAX_HIGHLIGHT RSS_FORMATTER \
 		DOCBOOK_FORMATTER POD_FORMATTER TRANSCLUSION AMAZON EMOTICONS
-
 DEPLOY_DESC=		Automatic database deployment
 TOCGEN_DESC=		Table of Contents generator
 RECAPTCHA_DESC=		reCAPTCHA for anonymous edits
@@ -199,53 +101,31 @@ TRANSCLUSION_DESC=	Transclusion support
 AMAZON_DESC=		Amazon boxes
 EMOTICONS_DESC=		Emoticons
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDEPLOY}
-RUN_DEPENDS+=	p5-SQL-Translator>=0.09006:${PORTSDIR}/databases/p5-SQL-Translator
-.endif
-
-.if ${PORT_OPTIONS:MFASTCGI}
-RUN_DEPENDS+=	p5-FCGI-ProcManager>=0:${PORTSDIR}/www/p5-FCGI-ProcManager
-.endif
-
-.if ${PORT_OPTIONS:MTOCGEN}
-RUN_DEPENDS+=	p5-HTML-Toc>=1.10:${PORTSDIR}/www/p5-HTML-Toc
-.endif
-
-.if ${PORT_OPTIONS:MRECAPTCHA}
-RUN_DEPENDS+=	p5-HTML-FormFu>=0:${PORTSDIR}/www/p5-HTML-FormFu
-.endif
-
-.if ${PORT_OPTIONS:MSYNTAX_HIGHLIGHT}
-RUN_DEPENDS+=	p5-Syntax-Highlight-Engine-Kate>=0:${PORTSDIR}/textproc/p5-Syntax-Highlight-Engine-Kate
-.endif
-
-.if ${PORT_OPTIONS:MRSS_FORMATTER}
-RUN_DEPENDS+=	p5-XML-Feed>=0:${PORTSDIR}/textproc/p5-XML-Feed
-.endif
-
-.if ${PORT_OPTIONS:MDOCBOOK_FORMATTER}
-RUN_DEPENDS+=	p5-XML-LibXML>=1.66:${PORTSDIR}/textproc/p5-XML-LibXML \
-		p5-XML-LibXSLT>=1.66:${PORTSDIR}/textproc/p5-XML-LibXSLT
-.endif
-
-.if ${PORT_OPTIONS:MPOD_FORMATTER}
-RUN_DEPENDS+=	p5-Pod-Simple>=3.01:${PORTSDIR}/textproc/p5-Pod-Simple
-.endif
-
-.if ${PORT_OPTIONS:MTRANSCLUSION}
-RUN_DEPENDS+=	p5-URI-Fetch>=0:${PORTSDIR}/www/p5-URI-Fetch \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-.endif
-
-.if ${PORT_OPTIONS:MAMAZON}
-RUN_DEPENDS+=	p5-Net-Amazon>=0:${PORTSDIR}/net/p5-Net-Amazon
-.endif
-
-.if ${PORT_OPTIONS:MEMOTICONS}
-RUN_DEPENDS+=	p5-Text-Emoticon-MSN>=0:${PORTSDIR}/textproc/p5-Text-Emoticon-MSN
-.endif
+DEPLOY_BUILD_DEPENDS=		p5-SQL-Translator>=0.09006:${PORTSDIR}/databases/p5-SQL-Translator
+DEPLOY_RUN_DEPENDS=		p5-SQL-Translator>=0.09006:${PORTSDIR}/databases/p5-SQL-Translator
+FASTCGI_BUILD_DEPENDS=		p5-FCGI-ProcManager>=0:${PORTSDIR}/www/p5-FCGI-ProcManager
+FASTCGI_RUN_DEPENDS=		p5-FCGI-ProcManager>=0:${PORTSDIR}/www/p5-FCGI-ProcManager
+TOCGEN_BUILD_DEPENDS=		p5-HTML-Toc>=1.10:${PORTSDIR}/www/p5-HTML-Toc
+TOCGEN_RUN_DEPENDS=		p5-HTML-Toc>=1.10:${PORTSDIR}/www/p5-HTML-Toc
+RECAPTCHA_BUILD_DEPENDS=	p5-HTML-FormFu>=0:${PORTSDIR}/www/p5-HTML-FormFu
+RECAPTCHA_RUN_DEPENDS=		p5-HTML-FormFu>=0:${PORTSDIR}/www/p5-HTML-FormFu
+SYNTAX_HIGHLIGHT_BUILD_DEPENDS=	p5-Syntax-Highlight-Engine-Kate>=0:${PORTSDIR}/textproc/p5-Syntax-Highlight-Engine-Kate
+SYNTAX_HIGHLIGHT_RUN_DEPENDS=	p5-Syntax-Highlight-Engine-Kate>=0:${PORTSDIR}/textproc/p5-Syntax-Highlight-Engine-Kate
+RSS_FORMATTER_BUILD_DEPENDS=	p5-XML-Feed>=0:${PORTSDIR}/textproc/p5-XML-Feed
+RSS_FORMATTER_RUN_DEPENDS=	p5-XML-Feed>=0:${PORTSDIR}/textproc/p5-XML-Feed
+DOCBOOK_FORMATTER_BUILD_DEPENDS=p5-XML-LibXML>=1.66:${PORTSDIR}/textproc/p5-XML-LibXML \
+				p5-XML-LibXSLT>=1.66:${PORTSDIR}/textproc/p5-XML-LibXSLT
+DOCBOOK_FORMATTER_RUN_DEPENDS=	p5-XML-LibXML>=1.66:${PORTSDIR}/textproc/p5-XML-LibXML \
+				p5-XML-LibXSLT>=1.66:${PORTSDIR}/textproc/p5-XML-LibXSLT
+POD_FORMATTER_BUILD_DEPENDS=	p5-Pod-Simple>=3.01:${PORTSDIR}/textproc/p5-Pod-Simple
+POD_FORMATTER_RUN_DEPENDS=	p5-Pod-Simple>=3.01:${PORTSDIR}/textproc/p5-Pod-Simple
+TRANSCLUSION_BUILD_DEPENDS=	p5-URI-Fetch>=0:${PORTSDIR}/www/p5-URI-Fetch \
+				p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+TRANSCLUSION_RUN_DEPENDS=	p5-URI-Fetch>=0:${PORTSDIR}/www/p5-URI-Fetch \
+				p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+AMAZON_BUILD_DEPENDS=		p5-Net-Amazon>=0:${PORTSDIR}/net/p5-Net-Amazon
+AMAZON_RUN_DEPENDS=		p5-Net-Amazon>=0:${PORTSDIR}/net/p5-Net-Amazon
+EMOTICONS_BUILD_DEPENDS=	p5-Text-Emoticon-MSN>=0:${PORTSDIR}/textproc/p5-Text-Emoticon-MSN
+EMOTICONS_RUN_DEPENDS=		p5-Text-Emoticon-MSN>=0:${PORTSDIR}/textproc/p5-Text-Emoticon-MSN
 
 .include <bsd.port.mk>
