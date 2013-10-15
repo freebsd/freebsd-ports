@@ -850,7 +850,6 @@
     SUBDIR += hub
     SUBDIR += hwloc
     SUBDIR += hyena
-    SUBDIR += hypersrc
     SUBDIR += ice
     SUBDIR += icmake
     SUBDIR += icu
