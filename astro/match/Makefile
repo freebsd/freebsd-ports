@@ -14,10 +14,5 @@ LICENSE=	GPLv2
 
 CONFLICTS=	avenger-[0-9]*
 GNU_CONFIGURE=	yes
-NO_STAGE=	yes
-
-MAN1=		match.1
-
-PLIST_FILES=	bin/apply_match bin/match bin/project_coords
 
 .include <bsd.port.mk>

@@ -1,0 +1,4 @@
+bin/apply_match
+bin/match
+bin/project_coords
+man/man1/match.1.gz
