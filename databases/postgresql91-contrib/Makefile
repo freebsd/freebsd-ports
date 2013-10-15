@@ -3,14 +3,13 @@
 
 PORTNAME=	postgresql
 CATEGORIES=	databases
-PKGNAMESUFFIX?=	${DISTV:S/.//}-contrib
-DISTV=	${DISTVERSION:R}
+PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
 
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	The contrib utilities from the PostgreSQL distribution
 
-LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libxslt.so:${PORTSDIR}/textproc/libxslt \
+		libxml2.so:${PORTSDIR}/textproc/libxml2
 
 USE_PGSQL=	yes
 DEFAULT_PGSQL_VER=91
