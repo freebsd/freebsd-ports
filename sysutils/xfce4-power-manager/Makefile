@@ -26,6 +26,4 @@ USE_XORG=	xrandr x11 xext
 CONFIGURE_ARGS=	--disable-network-manager \
 		--enable-polkit
 
-NO_MTREE=	yes
-
 .include <bsd.port.mk>
