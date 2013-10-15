@@ -11,6 +11,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	XML parser library for GNOME
 
 DEPRECATED=	Last release in 2002, unsupported by developers
+EXPIRATION_DATE=	2013-11-05
 
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
