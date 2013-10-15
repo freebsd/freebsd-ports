@@ -17,4 +17,4 @@ USE_GNOME=	gtk12
 
 MAKE_ARGS+=	PREFIX="${STAGEDIR}${PREFIX}"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
