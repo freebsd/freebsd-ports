@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libevt
-DISTVERSION=	alpha-20130923
+DISTVERSION=	alpha-20131013
 CATEGORIES=	devel
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSYm01VnUtLXNUZ2M/ \
 		LOCAL/antoine
