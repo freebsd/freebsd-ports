@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	newt
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.8
 CATEGORIES=	devel www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -19,8 +19,8 @@ USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	newt
-
 NO_STAGE=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e '/SEARCH_PATH/ s,=",="${LOCALBASE} ${PREFIX} ,' \
 		${WRKSRC}/config.m4
