@@ -4,7 +4,7 @@
 PKGNAMESUFFIX=	-canna
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A very lightweight Emacs-clone with Japanese and Canna support
+COMMENT=	Lightweight Emacs-clone with Japanese and Canna support
 
 MASTERDIR=	${.CURDIR}/../ng
 

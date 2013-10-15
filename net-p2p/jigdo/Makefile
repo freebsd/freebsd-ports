@@ -8,7 +8,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	http://atterer.org/sites/atterer/files/2009-08/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Utility used to retrieve very large files over the Internet
+COMMENT=	Utility used to retrieve large files over the Internet
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 

@@ -9,7 +9,7 @@ MASTER_SITES=	LOCAL/chinsan \
 DISTNAME=	zh-fortunetw-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A very classic fortune file in Taiwan
+COMMENT=	Classic fortune file in Taiwan
 
 NO_BUILD=	yes
 

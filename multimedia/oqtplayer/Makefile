@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME:L}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Very very small, not functional, video OpenQuicktime (TM) player
+COMMENT=	Small, not functional, video OpenQuicktime (TM) player
 
 LIB_DEPENDS=	openquicktime.0:${PORTSDIR}/multimedia/openquicktime
 
