@@ -10,6 +10,4 @@ COMMENT=	Old X library
 XORG_CAT=	lib
 USE_XORG=	x11
 USE_AUTOTOOLS=	libtool
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
