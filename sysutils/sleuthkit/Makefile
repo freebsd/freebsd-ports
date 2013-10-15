@@ -3,6 +3,7 @@
 
 PORTNAME=	sleuthkit
 PORTVERSION=	4.1.2
+PORTREVISION=	1
 CATEGORIES=	sysutils security
 MASTER_SITES=	SF
 
@@ -24,6 +25,7 @@ RUN_DEPENDS=	p5-DateTime-TimeZone>=0:${PORTSDIR}/devel/p5-DateTime-TimeZone \
 CONFLICTS=	ja-ls-[0-9]* icat-[0-9]*
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_path_PERL="${PERL}"
 USES=		perl5
 USE_LDCONFIG=	yes
 DATADIR=	${PREFIX}/share/tsk
