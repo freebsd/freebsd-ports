@@ -1,5 +1,0 @@
-getxml is an XML internationalization tool; it is comprised of getxml-extract
-(makes the header for the gettext tool) and getxml-merge (merges XML and po
-files). 
-
-WWW: http://www.gnu.org/software/toutdoux/en/index.html

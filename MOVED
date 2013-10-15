@@ -5094,3 +5094,6 @@ x11-themes/gnome-look||2013-10-15|Component of the obsolete gnome1
 x11-themes/thinice||2013-10-15|Component of the obsolete gnome1
 x11-themes/gtk-engines||2013-10-15|Component of the obsolete gnome1
 x11-themes/gtk-engines-collection||2013-10-15|Component of the obsolete gnome1
+devel/getxml||2013-10-15|Depends on EOLed libxml1
+textproc/xls2xml||2013-10-15|Depends on EOLed libxml1
+textproc/cole||2013-10-15|Upstream has disappeared
