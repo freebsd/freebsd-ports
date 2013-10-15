@@ -8,4 +8,4 @@ been provided by Xlib.
 The util-cursor module implements the XCB cursor library, which is th XCB
 replacement for libXcursor.
 
-WWW:	http://xcb.freedesktop.org/
+WWW: http://xcb.freedesktop.org/
