@@ -5104,3 +5104,4 @@ textproc/ruby-amrita||2013-10-15|Has expired: Does not work with Ruby 1.9
 security/flowtag||2013-10-15|Has expired: Does not work with Ruby 1.9
 lang/ruby-lua4||2013-10-15|Has expired: Does not work with Ruby 1.9
 dns/dnsdoctor||2013-10-15|Has expired: Does not work with Ruby 1.9
+devel/py-psyco||2013-10-15|Has expired: only bulds with lang/python26

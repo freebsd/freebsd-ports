@@ -3653,7 +3653,6 @@
     SUBDIR += py-protobuf
     SUBDIR += py-protocols
     SUBDIR += py-protocols-devel
-    SUBDIR += py-psyco
     SUBDIR += py-ptrace
     SUBDIR += py-pudb
     SUBDIR += py-px
