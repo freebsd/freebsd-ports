@@ -5090,3 +5090,7 @@ security/stem|security/py-stem|2013-10-14|This is a Python library
 sysutils/gupsc||2013-10-15|Depends on the obsolete gnome1
 net/diradmin||2013-10-15|Depends on the obsolete gnome1
 devel/hypersrc||2013-10-15|Depends on the obsolete gnome1
+x11-themes/gnome-look||2013-10-15|Component of the obsolete gnome1
+x11-themes/thinice||2013-10-15|Component of the obsolete gnome1
+x11-themes/gtk-engines||2013-10-15|Component of the obsolete gnome1
+x11-themes/gtk-engines-collection||2013-10-15|Component of the obsolete gnome1

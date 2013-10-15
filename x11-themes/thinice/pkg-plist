@@ -1,8 +1,0 @@
-lib/gtk/themes/engines/libthinice.a
-lib/gtk/themes/engines/libthinice.la
-lib/gtk/themes/engines/libthinice.so
-share/themes/ThinIce/ICON.png
-share/themes/ThinIce/README.html
-share/themes/ThinIce/gtk/gtkrc
-@dirrm share/themes/ThinIce/gtk
-@dirrmtry share/themes/ThinIce
