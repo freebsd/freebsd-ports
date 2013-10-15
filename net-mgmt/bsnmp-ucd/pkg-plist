@@ -1,6 +1,5 @@
-lib/snmp_ucd.a
-lib/snmp_ucd.la
 lib/snmp_ucd.so
 lib/snmp_ucd.so.1
+man/man8/bsnmp-ucd.8.gz
 %%EXAMPLESDIR%%/snmpd.config.sample
 @dirrm %%EXAMPLESDIR%%
