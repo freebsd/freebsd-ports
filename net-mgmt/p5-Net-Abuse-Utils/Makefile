@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Abuse-Utils
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,10 +22,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::Abuse::Utils.3
-
-NO_STAGE=	yes
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/ip-info.pl ${PREFIX}/sbin/
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/ip-info.pl ${STAGEDIR}${PREFIX}/sbin/
 
 .include <bsd.port.mk>
