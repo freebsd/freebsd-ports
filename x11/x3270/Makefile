@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	x3270
-PORTVERSION=	3.3.10
+PORTVERSION=	3.3.13
 CATEGORIES=	x11 net
-MASTER_SITES=	http://x3270.bgp.nu/download/
-EXTRACT_SUFX=	ga5-src.tgz
+MASTER_SITES=	http://x3270.bgp.nu/download/current/
+EXTRACT_SUFX=	ga7-src.tgz
 
 MAINTAINER=	ecrist@secure-computing.net
 COMMENT=	3270 Terminal emulator
@@ -33,14 +33,27 @@ MAKE_ARGS+=	COMPRESSMANCMD="${DO_NADA}" \
 		INSTDATFLAGS="${_SHROWNGRP} -m ${SHAREMODE}" \
 		INSTMANFLAGS="${_MANOWNGRP} -m ${MANMODE}"
 
-WRKSRC=		${WRKDIR}/x3270-${PORTVERSION:R}
-MAN1=		x3270.1 x3270if.1 x3270-script.1
-MAN5=		ibm_hosts.5
-MANCOMPRESSED=	no
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
-NO_STAGE=	yes
+PORTDOCS=	README README.dbcs
+PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-patch:
 	${REINPLACE_CMD} -e 's|\$$(INSTALL) -c|$$(INSTALL) $$(INSTALLFLAGS)|g' \
 		${WRKSRC}/Imakefile.in
+
+post-install:
+.for m in x3270-script.man x3270.man x3270if.man
+	@(cd ${WRKSRC} ; ${INSTALL_MAN} ${m} ${STAGEDIR}${MAN1PREFIX}/man/man1/)
+.endfor
+	${INSTALL_MAN} ${WRKSRC}/ibm_hosts.man ${STAGEDIR}${MAN5PREFIX}/man/man5/
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+	@(cd ${WRKSRC}/Examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} html ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
