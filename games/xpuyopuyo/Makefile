@@ -22,20 +22,14 @@ OPTIONS_DEFINE=	MIKMOD ROTATE_FIXED AIBREED
 ROTATE_FIXED_DESC=	Fix position of one blob during rotation
 AIBREED_DESC=	Allow AI breeding
 
+CONFIGURE_ARGS+=	--without-gnome
+
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MMIKMOD} || exists(${LOCALBASE}/lib/libmikmod.a)
 LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
 CONFIGURE_ARGS+=--with-libmikmod-prefix=${LOCALBASE}
-.endif
-
-.if ${HAVE_GNOME:Mgnomelibs}!=""
-USES=		pathfix
-USE_GNOME+=	gnomelibs
-PKGNAMESUFFIX=	-gnome
-.else
-CONFIGURE_ARGS+=	--without-gnome
 .endif
 
 .if ${PORT_OPTIONS:MROTATE_FIXED}

@@ -22,19 +22,12 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ZIP=	yes
 NO_BUILD=	yes
-WANT_GNOME=	yes
 PORTDOCS=	*
 
 REINPLACE_ARGS=	-i ""
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mgnomelibs}!=""
-PLIST_SUB+=	GNOMELINKS=""
-.else
-PLIST_SUB+=	GNOMELINKS="@comment "
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,#!sh,#!/bin/sh,g" \
@@ -56,12 +49,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .else
 	@${ECHO_MSG} "---> Skipping documentation"
-.endif
-
-.if ${HAVE_GNOME:Mgnomelibs}!=""
-	@${ECHO_MSG} "---> Installing GNOME application links"
-	${INSTALL_DATA} ${DISTDIR}/jump.desktop ${LOCALBASE}/share/applications/
-	${INSTALL_DATA} ${DISTDIR}/jump.png ${LOCALBASE}/share/pixmaps/
 .endif
 
 .include <bsd.port.post.mk>
