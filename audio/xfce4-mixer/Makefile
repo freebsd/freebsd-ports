@@ -12,13 +12,12 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Volume control for the Xfce desktop
 
-LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-	unique-1:${PORTSDIR}/x11-toolkits/unique
+LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+	libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS= yes
 USES=		gmake pkgconfig gettext pathfix
-NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu libutil panel xfconf
@@ -30,12 +29,10 @@ OPTIONS_DEFINE=	KEYBIND
 
 KEYBIND_DESC=	Multimedia keyboard shortcuts
 
-MAN1=	xfce4-mixer.1
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKEYBIND}
-LIB_DEPENDS+=	keybinder:${PORTSDIR}/x11/keybinder
+LIB_DEPENDS+=	libkeybinder.so:${PORTSDIR}/x11/keybinder
 CONFIGURE_ARGS+=--enable-keybinder
 .else
 CONFIGURE_ARGS+=--disable-keybinder

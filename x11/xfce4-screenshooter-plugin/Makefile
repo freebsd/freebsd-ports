@@ -13,19 +13,15 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Desktop Screenshot plugin for Xfce
 
-LIB_DEPENDS=	soup-2:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_XFCE=	configenv libexo libmenu libutil panel
-USES=		pkgconfig
+USES=		pkgconfig gmake
 
-MAN1=		xfce4-screenshooter.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

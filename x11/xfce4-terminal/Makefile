@@ -14,21 +14,15 @@ COMMENT=	Terminal emulator for the X windowing system
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gtk20 glib20 intltool intlhack vte libxml2 
 USE_XFCE=	configenv libmenu
 USE_XORG=	x11
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig gmake
 
 CONFIGURE_ARGS=	--without-gnome-default-appsdir
 
 OPTIONS_DEFINE=	NLS
 
-MAN1=		xfce4-terminal.1
-MANLANG=	"" ar ca da de el es fr gl id it ja ko lt \
-	pl pt pt_BR ru sr sv tr ug uk zh_CN
-
-NO_STAGE=	yes
 .include  <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -12,16 +12,13 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Graphical MPD client focusing on low footprint
 
-LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd
+LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd
 
 USE_BZIP2=	yes
-NO_STAGE=	yes
 INSTALLS_ICONS=	yes
 USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu libutil
-
-MAN1=	xfmpc.1
 
 .include <bsd.port.mk>

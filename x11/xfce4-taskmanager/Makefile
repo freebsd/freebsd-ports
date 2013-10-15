@@ -10,24 +10,18 @@ MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	A task manager for Xfce
+COMMENT=	Task manager for the Xfce desktop
 
-LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
-	wnck-1.22:${PORTSDIR}/x11-toolkits/libwnck
+LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
+	libwnck-1.so:${PORTSDIR}/x11-toolkits/libwnck
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USES=		gettext gmake pkgconfig
-USE_GNOME=	gtk20 desktopfileutils intltool intlhack
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+USE_GNOME=	gtk20 intltool intlhack
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|prefix)/$$(DATADIRNAME)|datadir)|' \
 		${WRKSRC}/po/Makefile.in.in
 
-post-install:
-	@-update-desktop-database
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

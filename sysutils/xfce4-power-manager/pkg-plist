@@ -3,6 +3,8 @@ bin/xfce4-power-manager
 bin/xfce4-power-manager-settings
 etc/xdg/autostart/xfce4-power-manager.desktop
 lib/xfce4/panel-plugins/xfce4-brightness-plugin
+man/man1/xfce4-power-manager.1.gz
+man/man1/xfce4-power-manager-settings.1.gz
 sbin/xfpm-power-backlight-helper
 share/applications/xfce4-power-manager-settings.desktop
 share/icons/hicolor/128x128/devices/processor.png
@@ -289,8 +291,6 @@ share/xfce4/panel-plugins/xfce4-brightness-plugin.desktop
 @dirrmtry share/xfce4
 @dirrmtry share/polkit-1/actions
 @dirrmtry share/polkit-1
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
 @dirrmtry share/locale/ur_PK/LC_MESSAGES
 @dirrmtry share/locale/ur_PK
 @dirrmtry share/locale/ur/LC_MESSAGES
@@ -301,47 +301,10 @@ share/xfce4/panel-plugins/xfce4-brightness-plugin.desktop
 @dirrmtry share/locale/te
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
-@dirrmtry share/locale/ro/LC_MESSAGES
-@dirrmtry share/locale/ro
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/nn/LC_MESSAGES
-@dirrmtry share/locale/nn
-@dirrmtry share/locale/lt/LC_MESSAGES
-@dirrmtry share/locale/lt
-@dirrmtry share/locale/ko/LC_MESSAGES
-@dirrmtry share/locale/ko
 @dirrmtry share/locale/kk/LC_MESSAGES
 @dirrmtry share/locale/kk
-@dirrmtry share/locale/is/LC_MESSAGES
-@dirrmtry share/locale/is
-@dirrmtry share/locale/hr/LC_MESSAGES
-@dirrmtry share/locale/hr
-@dirrmtry share/locale/bg/LC_MESSAGES
-@dirrmtry share/locale/bg
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
-@dirrmtry share/locale/ar/LC_MESSAGES
-@dirrmtry share/locale/ar
-@dirrmtry share/icons/hicolor/scalable/status
-@dirrmtry share/icons/hicolor/scalable/actions
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/48x48/status
-@dirrmtry share/icons/hicolor/48x48/actions
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/24x24/status
-@dirrmtry share/icons/hicolor/24x24/actions
-@dirrmtry share/icons/hicolor/24x24
-@dirrmtry share/icons/hicolor/22x22/status
-@dirrmtry share/icons/hicolor/22x22/actions
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/status
-@dirrmtry share/icons/hicolor/16x16/actions
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/128x128/devices
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
 @dirrmtry share/applications
 @dirrmtry lib/xfce4/panel-plugins
 @dirrmtry lib/xfce4

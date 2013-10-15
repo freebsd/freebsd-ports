@@ -2,6 +2,9 @@ bin/globaltime
 bin/orage
 bin/tz_convert
 libexec/xfce4/panel-plugins/xfce4-orageclock-plugin
+man/man1/globaltime.1.gz
+man/man1/orage.1.gz
+man/man1/tz_convert.1.gz
 share/applications/globaltime.desktop
 share/applications/xfcalendar.desktop
 share/applications/xfce-xfcalendar-settings.desktop
