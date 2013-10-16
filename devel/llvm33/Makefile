@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	3.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -23,7 +23,6 @@ USES=		gmake perl5
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_PREFIX=	${LLVM_PREFIX}
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
-USE_PYTHON_BUILD=	yes
 
 SUB_FILES=	llvm-wrapper.sh
 SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
@@ -36,13 +35,15 @@ LIBNAME=		libLLVM-${DISTVERSION:C/\rc[0-9]//}.so
 CONFIGURE_ARGS+=	--enable-bindings=none
 CONFIGURE_ARGS+=	--enable-optimized
 
-OPTIONS_DEFINE=	ASSERTS CMAKE DOCS LTOPLUGIN MANPAGES
+OPTIONS_DEFINE=	ASSERTS CMAKE DOCS LIT LTOPLUGIN MANPAGES
 
 ASSERTS_DESC=	Enable assertions (thread unsafe)
 CMAKE_DESC=	Build cmake support files
+LIT_DESC=	Install lit and FileCheck test tools (requires python)
 LTOPLUGIN_DESC=	Build LTO plugin (requires gold)
 
-OPTIONS_DEFAULT=	CMAKE MANPAGES
+OPTIONS_DEFAULT=	CMAKE LIT MANPAGES
+OPTIONS_SUB=	yes
 
 PLIST_SUB+=		PORTVERSION=${PORTVERSION}
 
@@ -101,6 +102,14 @@ CONFIGURE_ARGS+=	--enable-docs
 CONFIGURE_ARGS+=	--disable-docs
 .endif
 
+.if ${PORT_OPTIONS:MLIT}
+MAN1SRCS+=		lit.1
+USE_PYTHON=		yes
+LIT_COMMANDS=		lit llvm-lit FileCheck
+.else
+USE_PYTHON_BUILD=	yes
+.endif
+
 .if ${PORT_OPTIONS:MLTOPLUGIN}
 BUILD_DEPENDS+=		ld.gold:${PORTSDIR}/devel/binutils
 RUN_DEPENDS+=		ld.gold:${PORTSDIR}/devel/binutils
@@ -109,11 +118,11 @@ PLIST_FILES+=		llvm${LLVM_SUFFIX}/lib/LLVMgold.so
 .endif
 
 .if ${PORT_OPTIONS:MMANPAGES}
-MAN1SRCS=	bugpoint.1 lit.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
+MAN1SRCS+=	bugpoint.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 		llvm-bcanalyzer.1 llvm-config.1 llvm-cov.1 llvm-diff.1 \
 		llvm-dis.1 llvm-extract.1 llvm-link.1 llvm-nm.1 \
 		llvm-prof.1 llvm-ranlib.1 llvm-stress.1 opt.1 tblgen.1
-PLIST_FILES+==	${MAN1SRCS:S|^|man/man1/|:S|.1$|${LLVM_SUFFIX}.1.gz|}
+PLIST_FILES+=	${MAN1SRCS:S|^|man/man1/|:S|.1$|${LLVM_SUFFIX}.1.gz|}
 .endif
 
 .include <bsd.port.pre.mk>
@@ -139,6 +148,10 @@ post-patch:
 	    ${WRKSRC}/Makefile.config.in
 	${REINPLACE_CMD} -e 's|\(PROJ_mandir.*:=\).*$$|\1${MANPREFIX}/man|g' \
 	    ${WRKSRC}/Makefile.config.in
+	${REINPLACE_CMD} -e 's|import lit|import lit${LLVM_SUFFIX}|' \
+	    -e 's|from lit|from lit${LLVM_SUFFIX}|' \
+	    -e 's|lit\.|lit${LLVM_SUFFIX}.|' \
+	    ${WRKSRC}/utils/lit/lit.py ${WRKSRC}/utils/lit/lit/*.py
 
 .if ${PORT_OPTIONS:MCMAKE}
 post-configure:
@@ -178,6 +191,23 @@ post-install:
 	${FIND} ${WRKSRC}/docs/_build/html -type f | \
 	    ${XARGS} -I _DOC_ ${INSTALL_DATA} _DOC_ ${STAGEDIR}${DOCSDIR}/html/
 .endif
+.if ${PORT_OPTIONS:MLIT}
+	${INSTALL_SCRIPT} ${WRKSRC}/utils/lit/lit.py \
+	    ${STAGEDIR}${LLVM_PREFIX}/bin/lit
+	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/lit \
+	    ${STAGEDIR}${LLVM_PREFIX}/bin/llvm-lit
+	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/lit \
+	    ${STAGEDIR}${PREFIX}/bin/lit${LLVM_SUFFIX}
+	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/lit \
+	    ${STAGEDIR}${PREFIX}/bin/llvm-lit${LLVM_SUFFIX}
+	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/lit${LLVM_SUFFIX}
+	${INSTALL_DATA} ${WRKSRC}/utils/lit/lit/*.py \
+	    ${STAGEDIR}${PYTHON_SITELIBDIR}/lit${LLVM_SUFFIX}
+	${INSTALL_PROGRAM} ${WRKSRC}/Release/bin/FileCheck \
+	    ${STAGEDIR}${LLVM_PREFIX}/bin/
+	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/FileCheck \
+	    ${STAGEDIR}${PREFIX}/bin/FileCheck${LLVM_SUFFIX}
+.endif
 .if ${PORT_OPTIONS:MMANPAGES}
 	for man in ${MAN1SRCS}; do \
 		${INSTALL_MAN} ${WRKSRC}/docs/_build/man/$${man} \
@@ -199,18 +229,27 @@ build-plist:
 .for command in ${COMMANDS}
 	${ECHO_CMD} bin/${command}${LLVM_SUFFIX} >> ${PLIST}
 .endfor
-	${FIND} ${LLVM_PREFIX} -type f -o -type l | \
-	    ${GREP} -v man/man1 | ${SED} -e 's|${PREFIX}/||' \
+.for command in ${LIT_COMMANDS}
+	${ECHO_CMD} %%LIT%%bin/${command}${LLVM_SUFFIX} >> ${PLIST}
+	${ECHO_CMD} %%LIT%%${LLVM_PREFIX:S|${PREFIX}||}bin/${command} >> ${PLIST}
+.endfor
+	${FIND} ${STAGEDIR}${LLVM_PREFIX} -type f -o -type l | \
+	    ${GREP} -v 'lit$$' | ${GREP} -v 'FileCheck$$' | \
+	    ${GREP} -v man/man1 | ${SED} -e 's|${STAGEDIR}${PREFIX}/||' \
 	    -e 's|${PORTVERSION}|%%PORTVERSION%%|' | \
 	    ${SORT} >> ${PLIST}
-	${FIND} ${DOCSDIR} -type f | \
-	    ${SED} -e 's|${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | \
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/lit${LLVM_SUFFIX} | \
+	    ${SED} -e 's|${STAGEDIR}${PYTHON_SITELIBDIR}|%%LIT%%%%PYTHON_SITELIBDIR%%|' | \
 	    ${SORT} >> ${PLIST}
-	${FIND} ${LLVM_PREFIX} -type d | \
-	    ${SED} -e 's|${PREFIX}/||' | \
+	${FIND} ${STAGEDIR}${DOCSDIR} -type f | \
+	    ${SED} -e 's|${STAGEDIR}${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | \
+	    ${SORT} >> ${PLIST}
+	${FIND} ${STAGEDIR}${LLVM_PREFIX} -type d | \
+	    ${SED} -e 's|${STAGEDIR}${PREFIX}/||' | \
 	    ${SORT} -r | ${SED} -e 's|^|@dirrm |' >> ${PLIST}
-	${FIND} ${DOCSDIR} -type d | \
-	    ${SED} -e 's|${DOCSDIR}|%%PORTDOCS%%@dirrm %%DOCSDIR%%|' | \
+	echo "%%LIT%%@dirrm %%PYTHON_SITELIBDIR%%/lit${LLVM_SUFFIX}" >> ${PLIST}
+	${FIND} ${STAGEDIR}${DOCSDIR} -type d | \
+	    ${SED} -e 's|${STAGEDIR}${DOCSDIR}|%%PORTDOCS%%@dirrm %%DOCSDIR%%|' | \
 	    ${SORT} -r >> ${PLIST}
 
 .if make(svn-patch)
