@@ -20,9 +20,9 @@
 -	cp a2kfcnv ${PREFIX}/bin
 +	cp todos ${DISTDIR}/bin
 +	-rm -f ${DISTDIR}/bin/fromdos ${DISTDIR}/bin/fromwin ${DISTDIR}/bin/towin
-+	ln -f ${PREFIX}/bin/todos ${DISTDIR}/bin/fromdos
-+	ln -f ${PREFIX}/bin/todos ${DISTDIR}/bin/fromwin
-+	ln -f ${PREFIX}/bin/todos ${DISTDIR}/bin/towin
++	ln -sf ${PREFIX}/bin/todos ${DISTDIR}/bin/fromdos
++	ln -sf ${PREFIX}/bin/todos ${DISTDIR}/bin/fromwin
++	ln -sf ${PREFIX}/bin/todos ${DISTDIR}/bin/towin
 +	cp a2kfcnv ${DISTDIR}/bin
  
  clean:
