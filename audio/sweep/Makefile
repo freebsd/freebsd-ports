@@ -11,14 +11,13 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sound editor for the GNOME/GTK+2 desktop
 
-LIB_DEPENDS=	mad:${PORTSDIR}/audio/libmad \
-		samplerate:${PORTSDIR}/audio/libsamplerate \
-		sndfile:${PORTSDIR}/audio/libsndfile \
-		vorbis:${PORTSDIR}/audio/libvorbis \
-		speex:${PORTSDIR}/audio/speex
+LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad \
+		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
+		libsndfile.so:${PORTSDIR}/audio/libsndfile \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libspeex.so:${PORTSDIR}/audio/speex
 
 USE_BZIP2=	yes
-NO_STAGE=	yes
 USES=		pathfix gettext pkgconfig gmake
 USE_GNOME=	gtk20
 USE_AUTOTOOLS=	libtool
@@ -31,8 +30,6 @@ CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
 		--with-vorbis-includes=${LOCALBASE}/include/vorbis \
 		--with-ogg-libraries=${LOCALBASE}/lib \
 		--with-ogg-includes=${LOCALBASE}/include/ogg
-
-MAN1=		${PORTNAME}.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^ac_enable_alsa=yes|ac_enable_alsa=no|g ; \
