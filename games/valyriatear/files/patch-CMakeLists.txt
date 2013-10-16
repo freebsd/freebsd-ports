@@ -1,0 +1,15 @@
+--- CMakeLists.txt.orig	2013-09-24 15:33:12.000000000 +0400
++++ CMakeLists.txt	2013-10-08 04:14:13.346487900 +0400
+@@ -51,8 +51,10 @@
+ ADD_SUBDIRECTORY(src)
+ 
+ # Add data packages
+-FIND_PACKAGE(Gettext)
+-ADD_SUBDIRECTORY(po)
++IF(NOT DISABLE_TRANSLATIONS)
++    FIND_PACKAGE(Gettext)
++    ADD_SUBDIRECTORY(po)
++ENDIF(NOT DISABLE_TRANSLATIONS)
+ 
+ # CPack installation part
+ If(UNIX)
