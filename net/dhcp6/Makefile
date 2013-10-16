@@ -15,25 +15,24 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --with-localdbdir=/var/db
+GNU_CONFIGURE_PREFIX=	${STAGEDIR}${PREFIX}
+MANPREFIX=	${STAGEDIR}${PREFIX}
+CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc \
+		--with-localdbdir=/var/db
 USE_RC_SUBR=	dhcp6c dhcp6relay dhcp6s
 PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
 
-MAN5=		dhcp6c.conf.5 dhcp6s.conf.5
-MAN8=		dhcp6c.8 dhcp6s.8 dhcp6relay.8 dhcp6ctl.8
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} \
-		dhcp6c.conf.sample dhcp6s.conf.sample \
-		${PREFIX}/etc
+	    dhcp6c.conf.sample dhcp6s.conf.sample \
+	    ${STAGEDIR}${PREFIX}/etc
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
