@@ -296,7 +296,6 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.7.85/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.7.86/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.7.87/content
-%%PORTDOCS%%%%DOCSDIR%%/upgrade/3.8-branded-queues-extension
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.8-ical-extension
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.8.0/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.8.1/content
@@ -350,6 +349,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.13/schema.Pg
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.13/schema.mysql
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.13/schema.Oracle
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.18/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/generate-rtaddressregexp
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/sanity-check-stylesheets.pl
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/shrink_cgm_table.pl
@@ -1521,9 +1521,7 @@ share/rt40/po/zh_TW.po
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/yui/assets
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/yui
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang
-@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/lang
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor/dialogs
-@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/uicolor
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/templates/templates/images
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/templates/templates
@@ -1539,7 +1537,6 @@ share/rt40/po/zh_TW.po
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/styles
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/lang
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar/dialogs
-@dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/specialchar
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/images
 @dirrm share/rt40/html/NoAuth/RichText/ckeditor/plugins/smiley/dialogs
@@ -1657,6 +1654,7 @@ share/rt40/po/zh_TW.po
 @dirrm share/rt40/fonts
 @dirrmtry share/rt40/etc
 @dirrm share/rt40
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.18
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.13
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.12
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.9
