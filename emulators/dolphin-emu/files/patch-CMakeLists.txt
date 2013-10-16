@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2013-03-20 18:05:37.000000000 +0100
-+++ CMakeLists.txt	2013-03-20 18:21:02.000000000 +0100
-@@ -302,51 +302,81 @@
+--- CMakeLists.txt.orig	2013-09-16 04:58:51.000000000 +0200
++++ CMakeLists.txt	2013-09-16 05:15:59.000000000 +0200
+@@ -351,51 +351,81 @@
  		message("OpenMP parallelization disabled")
  	endif()
  
@@ -111,13 +111,12 @@
 +		message("OpenAL sound backend disabled")
 +	endif()
  
- # Note: We do not need to explicitly check for X11 as it is done in the cmake
- # FindOpenGL module on linux.
-@@ -375,22 +405,33 @@
+ 	if(UNIX AND NOT APPLE)
+ 		# Note: The convention is to check USE_X11 or USE_WAYLAND where needed.
+@@ -455,21 +485,32 @@
  		check_libav()
  	endif()
  
--	include(CheckCXXSourceRuns)
 -	set(CMAKE_REQUIRED_LIBRARIES portaudio)
 -	CHECK_CXX_SOURCE_RUNS(
 -		"#include <portaudio.h>
@@ -130,7 +129,6 @@
 -		set(PORTAUDIO_FOUND TRUE)
 +	option(DISABLE_PORTAUDIO "Disable PortAudio (mic) support" OFF)
 +	if(NOT DISABLE_PORTAUDIO)
-+		include(CheckCXXSourceRuns)
 +		include_directories(BEFORE ${CMAKE_INSTALL_PREFIX}/include/portaudio2)
 +		link_directories(${CMAKE_INSTALL_PREFIX}/lib/portaudio2)
 +		set(CMAKE_REQUIRED_INCLUDES ${CMAKE_INSTALL_PREFIX}/include/portaudio2)
@@ -160,21 +158,3 @@
  
  	if(OPROFILING)
  		check_lib(OPROFILE opagent opagent.h)
-@@ -668,10 +709,13 @@
- 	install(DIRECTORY Data/User/ DESTINATION ${datadir}/user PATTERN)
- 	install(DIRECTORY Data/Sys/ DESTINATION ${datadir}/sys PATTERN)
- endif()
--include(FindGettext)
--if(GETTEXT_FOUND AND NOT DISABLE_WX)
--	file(GLOB LINGUAS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} Languages/po/*.po) 
--	GETTEXT_CREATE_TRANSLATIONS(Languages/po/dolphin-emu.pot ALL ${LINGUAS})
-+option(DISABLE_NLS "Disable native language support (NLS)" OFF)
-+if(NOT DISABLE_NLS)
-+	include(FindGettext)
-+	if(GETTEXT_FOUND AND NOT DISABLE_WX)
-+		file(GLOB LINGUAS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} Languages/po/*.po)
-+		GETTEXT_CREATE_TRANSLATIONS(Languages/po/dolphin-emu.pot ALL ${LINGUAS})
-+	endif()
- endif()
- if((NOT ${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD|Darwin"))
- 	install(FILES Data/license.txt DESTINATION ${datadir})
