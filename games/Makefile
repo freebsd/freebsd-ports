@@ -699,6 +699,7 @@
     SUBDIR += pairs
     SUBDIR += palapeli
     SUBDIR += palomino
+    SUBDIR += pangzero
     SUBDIR += passage
     SUBDIR += patapizza-tetris
     SUBDIR += pathological

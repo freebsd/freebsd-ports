@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+cd "%%DATADIR%%"/bin
+exec /usr/bin/env perl ./pangzero "${@}"
