@@ -51,7 +51,7 @@ share/icons/hicolor/48x48/apps/squeeze.png
 share/icons/hicolor/scalable/apps/squeeze.svg
 share/applications/squeeze.desktop
 @dirrmtry share/pixmaps/squeeze
-@dirrmtry share/gtk-doc/html/libsqueeze
+%%GTKDOC%%@dirrm share/gtk-doc/html/libsqueeze
 @dirrmtry libexec/thunar-archive-plugin
 @dirrmtry include/libsqueeze-0.2/libsqueeze
 @dirrmtry include/libsqueeze-0.2
