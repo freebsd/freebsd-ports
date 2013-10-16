@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	xtide
-PORTVERSION=	2.13.1
+PORTVERSION=	2.13.2
 CATEGORIES=	astro geography
 MASTER_SITES=	ftp://ftp.flaterco.com/xtide/ \
 		http://www.c-s.li/ports/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${TCD_DISTNAME}${EXTRACT_SUFX} \
+		${TCD_DISTNAME}-r3${EXTRACT_SUFX} \
 		${HARM_DISTNAME}-free${EXTRACT_SUFX}
 
 MAINTAINER=	cs@FreeBSD.org
@@ -17,16 +17,12 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
-NO_STAGE=	yes
 USE_BZIP2=	yes
 USES=		gmake
 USE_GCC=	yes
 GNU_CONFIGURE=	yes
 
-MAN1=		tide.1
-MAN8=		xttpd.8
-
-CPPFLAGS+=	-I../${TCD_DISTNAME} -I${LOCALBASE}/include/libpng15
+CPPFLAGS+=	-I../${TCD_DISTNAME} -I${LOCALBASE}/include/libpng15 -Wno-deprecated-declarations
 LDFLAGS+=	-L../${TCD_DISTNAME}/.libs -L${LOCALBASE}/lib
 
 TCD_DISTNAME=	libtcd-2.2.5
@@ -51,7 +47,6 @@ ALL_TARGET+=	tide xttpd
 PLIST_SUB+=	X11="@comment "
 .else
 USE_XORG+=	xpm xaw
-MAN1+=		xtide.1
 PLIST_SUB+=	X11=""
 .endif
 
@@ -78,32 +73,27 @@ post-configure:
 		< ${FILESDIR}/xtide.conf.example > ${WRKDIR}/xtide.conf.example
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tide ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tide ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MX11}
-	${INSTALL_PROGRAM} ${WRKSRC}/xtide ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xtide.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/xtide ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xtide.1 ${STAGEDIR}${MANPREFIX}/man/man1
 .endif
-	${INSTALL_PROGRAM} ${WRKSRC}/xttpd ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/tide.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/xttpd.8 ${MAN8PREFIX}/man/man8
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/harmonics.tcd ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/xtide.conf.example ${PREFIX}/etc
+	${INSTALL_PROGRAM} ${WRKSRC}/xttpd ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/tide.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/xttpd.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/harmonics.tcd ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/xtide.conf.example ${STAGEDIR}${PREFIX}/etc
 
 post-install:
-.if !exists(${PREFIX}/etc/xtide.conf)
-	${INSTALL_DATA} ${WRKDIR}/xtide.conf.example ${PREFIX}/etc/xtide.conf
-	${CHMOD} 644 ${PREFIX}/etc/xtide.conf
-.endif
-
 .if ${PORT_OPTIONS:MWVS}
-	@${MKDIR} ${DATADIR}/wvs
-	${INSTALL_DATA} ${WRKDIR}/wvs1.dat ${DATADIR}/wvs
-	${INSTALL_DATA} ${WRKDIR}/wvs12.dat ${DATADIR}/wvs
-	${INSTALL_DATA} ${WRKDIR}/wvs250k.dat ${DATADIR}/wvs
-	${INSTALL_DATA} ${WRKDIR}/wvs3.dat ${DATADIR}/wvs
-	${INSTALL_DATA} ${WRKDIR}/wvs43.dat ${DATADIR}/wvs
-	${INSTALL_DATA} ${WRKDIR}/wvsfull.dat ${DATADIR}/wvs
+	@${MKDIR} ${STAGEDIR}${DATADIR}/wvs
+	${INSTALL_DATA} ${WRKDIR}/wvs1.dat ${STAGEDIR}${DATADIR}/wvs
+	${INSTALL_DATA} ${WRKDIR}/wvs12.dat ${STAGEDIR}${DATADIR}/wvs
+	${INSTALL_DATA} ${WRKDIR}/wvs250k.dat ${STAGEDIR}${DATADIR}/wvs
+	${INSTALL_DATA} ${WRKDIR}/wvs3.dat ${STAGEDIR}${DATADIR}/wvs
+	${INSTALL_DATA} ${WRKDIR}/wvs43.dat ${STAGEDIR}${DATADIR}/wvs
+	${INSTALL_DATA} ${WRKDIR}/wvsfull.dat ${STAGEDIR}${DATADIR}/wvs
 .endif
 
 .include <bsd.port.mk>

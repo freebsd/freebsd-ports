@@ -1,6 +1,9 @@
 bin/tide
 %%X11%%bin/xtide
 bin/xttpd
+man/man1/tide.1.gz
+%%X11%%man/man1/xtide.1.gz
+man/man8/xttpd.8.gz
 %%DATADIR%%/harmonics.tcd
 %%WVS%%%%DATADIR%%/wvs/wvs1.dat
 %%WVS%%%%DATADIR%%/wvs/wvs12.dat
@@ -10,6 +13,6 @@ bin/xttpd
 %%WVS%%%%DATADIR%%/wvs/wvsfull.dat
 %%WVS%%@dirrm %%DATADIR%%/wvs
 @dirrm %%DATADIR%%
-@unexec if cmp -s %D/etc/xtide.conf.example %D/etc/xtide.conf; then rm -f %D/etc/xtide.conf; fi
+@unexec if cmp -s %D/etc/xtide.conf %D/etc/xtide.conf.example ; then rm -f %D/etc/xtide.conf ; fi
 etc/xtide.conf.example
-@exec if [ ! -f %D/etc/xtide.conf ] ; then cp -p %D/%F %B/xtide.conf; fi
+@exec if [ ! -f %D/etc/xtide.conf ]; then cp -p %D/%F %B/xtide.conf; fi
