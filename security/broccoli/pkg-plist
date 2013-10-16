@@ -1,0 +1,18 @@
+bin/broccoli-config
+@exec mkdir -p %B
+@unexec cmp -s %D/etc/broccoli.conf.sample %D/etc/broccoli.conf && rm %D/etc/broccoli.conf || true
+etc/broccoli.conf.sample
+@exec test -f %B/broccoli.conf || cp -p %D/%F %B/broccoli.conf
+include/broccoli.h
+lib/libbroccoli.a
+lib/libbroccoli.so
+lib/libbroccoli.so.5
+lib/libbroccoli.so.5.1.0
+%%PYTHON%%lib/python/_broccoli_intern.so
+%%PYTHON%%lib/python/broccoli.py
+%%RUBY%%lib/ruby/broccoli_ext.so
+%%CLEANUP_PREFIX%%@dirrmtry lib
+%%CLEANUP_PREFIX%%@dirrmtry include
+%%CLEANUP_PREFIX%%@dirrmtry etc
+%%CLEANUP_PREFIX%%@dirrmtry bin
+%%CLEANUP_PREFIX%%@dirrmtry %D
