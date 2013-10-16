@@ -15,10 +15,9 @@ LICENSE_FILE=	${WRKSRC}/readme.txt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 USES=		iconv
 USE_DOS2UNIX=	yes
-MAKE_ARGS=	CPP="${CXX}" CC="${CC}" OBJ="${UNALZ_OBJS}" \
+MAKE_ARGS+=	CPP="${CXX}" CC="${CC}" OBJ="${UNALZ_OBJS}" \
 		LDFLAGS="${LDFLAGS}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	posix-utf8
 
@@ -35,6 +34,6 @@ post-patch:
 		'/<sys\/timeb.h>/d' ${WRKSRC}/main.cpp
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin)
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
