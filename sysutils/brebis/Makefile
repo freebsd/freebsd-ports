@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	brebis
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	sysutils archivers
-MASTER_SITES=	http://brebisproject.org/attachments/download/7/ \
+MASTER_SITES=	http://brebisproject.org/attachments/download/8/ \
 		LOCAL/martymac
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -17,11 +17,8 @@ USE_PYDISTUTILS=	yes
 
 PLIST_SUB+=	PYTHON_SUFFIX=${PYTHON_SUFFIX}
 
-MAN1=	brebis.1
-MANCOMPRESSED=	no
 PORTDOCS=	README
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -29,9 +26,9 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
