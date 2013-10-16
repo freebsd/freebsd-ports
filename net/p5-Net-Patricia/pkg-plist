@@ -2,6 +2,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Patricia/Patricia.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Patricia/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/Patricia.pm
+%%PERL5_MAN3%%/Net::Patricia.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Patricia
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net

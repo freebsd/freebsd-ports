@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Patricia
-PORTVERSION=	1.21
+PORTVERSION=	1.22
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,4 @@ RUN_DEPENDS=	p5-Socket6>=0:${PORTSDIR}/net/p5-Socket6
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::Patricia.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
