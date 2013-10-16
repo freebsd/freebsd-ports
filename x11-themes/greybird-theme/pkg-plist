@@ -11,6 +11,8 @@ share/themes/Greybird/gtk-2.0/apps/xfce-panel.rc
 share/themes/Greybird/gtk-2.0/gtkrc
 share/themes/Greybird/gtk-2.0/resize_grip.png
 share/themes/Greybird/gtk-3.0/apps/gnome-applications.css
+share/themes/Greybird/gtk-3.0/apps/granite-widgets.css
+share/themes/Greybird/gtk-3.0/apps/xfce.css
 share/themes/Greybird/gtk-3.0/assets/checkbox-checked-hover.png
 share/themes/Greybird/gtk-3.0/assets/checkbox-checked-insensitive.png
 share/themes/Greybird/gtk-3.0/assets/checkbox-checked.png
