@@ -18,22 +18,26 @@ SCONS_ARGS=	prefix=${PREFIX} SONAME="libtolua++-${LUA_VER}.so"
 CFLAGS+=	-I${LUA_INCDIR}
 LDFLAGS+=	-L${LUA_LIBDIR}
 
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e "s|'lualib',||" ${WRKSRC}/config_posix.py
+TGT_BINDIR=	${LUA_BINDIR:C/^${LOCALBASE}/${PREFIX}/}
+TGT_INCDIR=	${LUA_INCDIR:C/^${LOCALBASE}/${PREFIX}/}
+TGT_LIBDIR=	${LUA_LIBDIR:C/^${LOCALBASE}/${PREFIX}/}
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/tolua++ ${LUA_BINDIR}
-	${LN} -sf ${LUA_SUBDIR}/tolua++ ${PREFIX}/bin/tolua++-${LUA_VER}
-	${INSTALL_DATA} ${WRKSRC}/include/tolua++.h ${LUA_INCDIR}
-	${INSTALL_DATA} ${WRKSRC}/lib/libtolua++.a ${LUA_LIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/lib/libtolua++.so ${LUA_LIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/lib/libtolua++.so ${PREFIX}/lib/libtolua++-${LUA_VER}.so
-
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64" && ${OSVERSION} > 900000
 BROKEN=		Does not install on sparc64-9
 .endif
 
-.include <bsd.port.post.mk>
+post-patch:
+	@${REINPLACE_CMD} -e "s|'lualib',||" ${WRKSRC}/config_posix.py
+
+do-install:
+	${MKDIR} ${STAGEDIR}${TGT_BINDIR} ${STAGEDIR}${TGT_INCDIR} ${STAGEDIR}${TGT_LIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/tolua++ ${STAGEDIR}${TGT_BINDIR}
+	${LN} -sf ${LUA_SUBDIR}/tolua++ ${STAGEDIR}${PREFIX}/bin/tolua++-${LUA_VER}
+	${INSTALL_DATA} ${WRKSRC}/include/tolua++.h ${STAGEDIR}${TGT_INCDIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/libtolua++.a ${STAGEDIR}${TGT_LIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/libtolua++.so ${STAGEDIR}${TGT_LIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/libtolua++.so ${STAGEDIR}${PREFIX}/lib/libtolua++-${LUA_VER}.so
+
+.include <bsd.port.mk>
