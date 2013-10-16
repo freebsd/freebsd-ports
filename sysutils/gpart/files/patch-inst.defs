@@ -1,12 +1,12 @@
---- ./inst.defs.orig	2000-12-13 23:45:49.000000000 +0100
-+++ ./inst.defs	2011-03-17 01:15:54.000000000 +0100
+--- inst.defs.orig	2000-12-14 01:45:49.000000000 +0300
++++ inst.defs	2013-10-17 00:03:33.617772686 +0400
 @@ -1,8 +1,8 @@
  #
  # installation directories for gpart
  #
 -prefix=/usr/local
 -bindir=$(prefix)/bin
-+prefix=$(PREFIX)
++prefix=$(DESTDIR)$(PREFIX)
 +bindir=$(prefix)/sbin
  libdir=$(prefix)/lib
  mandir=$(prefix)/man
