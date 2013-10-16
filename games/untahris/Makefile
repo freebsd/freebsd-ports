@@ -19,7 +19,8 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	*
 PORTDATA=	*
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -29,19 +30,17 @@ post-patch:
 
 do-build:
 	cd ${WRKSRC} && ${CXX} ${CXXFLAGS} `${SDL_CONFIG} --libs --cflags` \
-		-lSDL_net -lSDL_ttf -lSDL_mixer untahris.cpp -o untahris
+		-lSDL_net -lSDL_ttf -lSDL_mixer untahris.cpp -o ${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/untahris ${PREFIX}/bin/
-.if !defined(NOPORTDATA)
-	${MKDIR} ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${DATADIR}
 .for f in VeraBd.ttf graph16*.unt *.wav
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}/
 .endfor
-.endif
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
