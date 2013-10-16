@@ -23,12 +23,11 @@ WRKSRC=		${WRKDIR}/QuantumStyle
 PLIST_FILES=	${QT_PLUGINDIR_REL}/styles/libquantumstyle.so
 PLIST_DIRSTRY=	${QT_PLUGINDIR_REL}/styles
 
-NO_STAGE=	yes
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS}
 
 do-install:
-	${MKDIR} ${PREFIX}/${QT_PLUGINDIR_REL}/styles/
-	${INSTALL_PROGRAM} ${WRKSRC}/style/libquantumstyle.so ${PREFIX}/${QT_PLUGINDIR_REL}/styles/
+	${MKDIR} ${STAGEDIR}${PREFIX}/${QT_PLUGINDIR_REL}/styles/
+	${INSTALL_PROGRAM} ${WRKSRC}/style/libquantumstyle.so ${STAGEDIR}${PREFIX}/${QT_PLUGINDIR_REL}/styles/
 
 .include <bsd.port.mk>
