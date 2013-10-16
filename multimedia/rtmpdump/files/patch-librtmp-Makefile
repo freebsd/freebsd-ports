@@ -1,5 +1,5 @@
---- librtmp/Makefile.orig	2011-07-12 09:24:33.000000000 +0900
-+++ librtmp/Makefile	2013-07-05 11:19:02.000000000 +0900
+--- librtmp/Makefile.orig	2013-10-07 03:52:05.000000000 +0900
++++ librtmp/Makefile	2013-10-07 03:59:04.000000000 +0900
 @@ -1,19 +1,21 @@
  VERSION=v2.4
  
@@ -26,23 +26,24 @@
  
  SYS=posix
  CRYPTO=OPENSSL
-@@ -23,13 +25,13 @@
+@@ -23,14 +25,14 @@
  DEF_GNUTLS=-DUSE_GNUTLS
  DEF_=-DNO_CRYPTO
- REQ_GNUTLS=gnutls
+ REQ_GNUTLS=gnutls,hogweed,nettle
 -REQ_OPENSSL=libssl,libcrypto
 +#REQ_OPENSSL=libssl,libcrypto
+ PUB_GNUTLS=-lgmp
  LIBZ=-lz
  LIBS_posix=
  LIBS_darwin=
  LIBS_mingw=-lws2_32 -lwinmm -lgdi32
- LIB_GNUTLS=-lgnutls -lgcrypt $(LIBZ)
+ LIB_GNUTLS=-lgnutls -lhogweed -lnettle -lgmp $(LIBZ)
 -LIB_OPENSSL=-lssl -lcrypto $(LIBZ)
-+LIB_OPENSSL=-L${OPENSSLLIB} -lssl -lcrypto $(LIBZ)
++LIB_OPENSSL=-L$(OPENSSLLIB) -lssl -lcrypto $(LIBZ)
  LIB_POLARSSL=-lpolarssl $(LIBZ)
  PRIVATE_LIBS=$(LIBS_$(SYS))
  CRYPTO_LIB=$(LIB_$(CRYPTO)) $(PRIVATE_LIBS)
-@@ -67,7 +69,8 @@
+@@ -74,7 +76,8 @@
  
  DEF=-DRTMPDUMP_VERSION=\"$(VERSION)\" $(CRYPTO_DEF) $(XDEF)
  OPT=-O2
@@ -52,23 +53,24 @@
  LDFLAGS=$(XLDFLAGS)
  
  
-@@ -95,15 +98,17 @@
+@@ -102,16 +105,18 @@
  	sed -e "s;@prefix@;$(prefix);" -e "s;@libdir@;$(libdir);" \
  		-e "s;@VERSION@;$(VERSION);" \
  		-e "s;@CRYPTO_REQ@;$(CRYPTO_REQ);" \
 +		-e "s;@OPENSSLLIB@;$(OPENSSLLIB);" \
 +		-e "s;@OPENSSLINC@;$(OPENSSLINC);" \
+ 		-e "s;@PUBLIC_LIBS@;$(PUBLIC_LIBS);" \
  		-e "s;@PRIVATE_LIBS@;$(PRIVATE_LIBS);" librtmp.pc.in > $@
  
  install:	install_base $(SO_INST)
  
  install_base:	librtmp.a librtmp.pc
--	-mkdir -p $(INCDIR) $(LIBDIR)/pkgconfig $(MANDIR)/man3
-+	-mkdir -p $(INCDIR) $(LIBDATADIR)/pkgconfig $(MANDIR)/man3
+-	-mkdir -p $(INCDIR) $(LIBDIR)/pkgconfig $(MANDIR)/man3 $(SODIR)
++	-mkdir -p $(INCDIR) $(LIBDATADIRDIR)/pkgconfig $(MANDIR)/man3 $(SODIR)
  	cp amf.h http.h log.h rtmp.h $(INCDIR)
  	cp librtmp.a $(LIBDIR)
 -	cp librtmp.pc $(LIBDIR)/pkgconfig
 +	cp librtmp.pc $(LIBDATADIR)/pkgconfig
  	cp librtmp.3 $(MANDIR)/man3
  
- install_so:	librtmp.$(SO_EXT)
+ install_so:	librtmp$(SO_EXT)
