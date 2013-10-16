@@ -13,19 +13,28 @@ COMMENT=	Mine sweeper game that uses triangles instead of squares
 
 USE_SDL=	sdl
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/${PORTNAME}
+PORTDATA=	*
+PORTDOCS=	*
+
+DESKTOP_ENTRIES="Trimines" \
+		"Trimines" \
+		"" \
+		"trimines" \
+		"Game;LogicGame;" \
+		""
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/|' ${WRKSRC}/src/gfx.c
 
 do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} src/main.c -o ./trimines \
+	cd ${WRKSRC} && ${CC} ${CFLAGS} src/main.c -o ./${PORTNAME} \
 		`${SDL_CONFIG} --cflags --libs`
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/trimines ${PREFIX}/bin
-.for dir in counter menu misc triangles
-	${MKDIR} ${DATADIR}/${dir}
-	${INSTALL_DATA} ${WRKSRC}/data/${dir}/* ${DATADIR}/${dir}
-.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	cd ${WRKSRC}/data && ${COPYTREE_SHARE} "*" ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
