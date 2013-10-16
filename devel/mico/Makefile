@@ -63,7 +63,7 @@ CONFIGURE_ARGS+=	--with-gtk=${LOCALBASE}
 MICO_GTK=		"@comment "
 .endif
 .if ${PORT_OPTIONS:MTCL}
-USE_TCL=		yes
+USES+=			tcl
 CONFIGURE_ARGS+=	--with-tcl
 CPPFLAGS+=		-I${TCL_INCLUDEDIR}
 LDFLAGS+=		-L${LOCALBASE}/lib
