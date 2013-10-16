@@ -9,8 +9,8 @@ export LIBDIR="lib"                  # Name of the library directory
 export DEFAULT_PREFIX="/usr/local"
 
 # Compiler and Linker
-export CC="gcc"                       # C Compiler
-export CXX="g++"                      # C++ Compiler
+export CC="cc"                        # C Compiler
+export CXX="c++"                      # C++ Compiler
 export LINK=$CXX                      # Executable Linker
 export DLLLINK="$CXX -shared"         # Dynamic Library Linker
 export LIBLINK="ar cru"               # Static Library Linker
