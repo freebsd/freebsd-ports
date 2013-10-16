@@ -20,7 +20,7 @@
 -	cp i386/xwinwrap /usr/bin
 +INSTALL = /usr/bin/install -m 755
 +PREFIX = /usr/local
-+CC = gcc
++CC = cc
 +ARCH = `uname -p`
 +
 +TARGET = xwinwrap
