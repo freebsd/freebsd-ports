@@ -15,6 +15,7 @@ PLIST_FILES=	bin/ehnt etc/rc.d/ehntserv.sh.sample \
 PLIST_DIRS+=	share/ehnt
 
 PORTDOCS=	README
+STPREFIX=	${STAGEDIR}${PREFIX}
 
 MAN1=		ehnt.1
 MAN8=		ehntserv.8
@@ -23,16 +24,16 @@ post-extract:
 	${TOUCH} ${WRKSRC}/asnc.txt
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ehnt ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/ehntserv ${PREFIX}/sbin/
-	${INSTALL_SCRIPT} ${FILESDIR}/ehntserv.sh.sample ${PREFIX}/etc/rc.d/
-	${INSTALL_MAN} ${WRKSRC}/ehnt.1 ${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/ehntserv.8 ${PREFIX}/man/man8/
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/asnc.txt ${DATADIR}/
+	${INSTALL_PROGRAM} ${WRKSRC}/ehnt ${STPREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/ehntserv ${STPREFIX}/sbin/
+	${INSTALL_SCRIPT} ${FILESDIR}/ehntserv.sh.sample ${STPREFIX}/etc/rc.d/
+	${INSTALL_MAN} ${WRKSRC}/ehnt.1 ${STPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/ehntserv.8 ${STPREFIX}/man/man8/
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/asnc.txt ${STAGEDIR}${DATADIR}/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
