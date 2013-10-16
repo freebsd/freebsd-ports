@@ -11,3 +11,9 @@ sbin/dhcp6c
 sbin/dhcp6relay
 sbin/dhcp6s
 sbin/dhcp6ctl
+man/man5/dhcp6c.conf.5
+man/man5/dhcp6s.conf.5
+man/man8/dhcp6c.8
+man/man8/dhcp6ctl.8
+man/man8/dhcp6relay.8
+man/man8/dhcp6s.8
