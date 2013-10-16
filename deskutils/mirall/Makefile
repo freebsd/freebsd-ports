@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mirall
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://download.owncloud.com/download/
 
@@ -30,11 +30,6 @@ INSTALLS_ICONS=	yes
 # OPTIONS_DEFAULT=
 # 
 # DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
-# 
-# .include <bsd.port.options.mk>
-# 
-# .if ${PORT_OPTIONS:MDOCS}
-# USE_TEX=	latex:build
-# .endif
+# DOCS_USE=	TEX=latex:build
 
 .include <bsd.port.mk>

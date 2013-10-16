@@ -2,7 +2,7 @@ bin/owncloud
 etc/ownCloud/sync-exclude.lst
 lib/libowncloudsync.so
 lib/libowncloudsync.so.0
-lib/libowncloudsync.so.1.4.0
+lib/libowncloudsync.so.1.4.1
 share/applications/owncloud.desktop
 share/icons/hicolor/128x128/apps/owncloud.png
 share/icons/hicolor/22x22/apps/owncloud.png
