@@ -189,7 +189,7 @@ check-install-conflicts:
 			${ECHO_MSG} "      $${entry}"; \
 		done; \
 		${ECHO_MSG}; \
-		${ECHO_MSG} "      Please remove them first with pkg_delete(1)."; \
+		${ECHO_MSG} "      Please remove them first with pkg delete."; \
 		exit 1; \
 	fi
 .else
@@ -208,7 +208,7 @@ check-install-conflicts:
 		done; \
 		${ECHO_MSG}; \
 		${ECHO_MSG} "      They install files into the same place."; \
-		${ECHO_MSG} "      Please remove them first with pkg_delete(1)."; \
+		${ECHO_MSG} "      Please remove them first with pkg delete."; \
 		exit 1; \
 	fi
 .endif # defined(DEFER_CONFLICTS_CHECK)
