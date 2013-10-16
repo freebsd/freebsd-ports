@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ajaxplorer
-PORTVERSION=	5.0.3
+PORTVERSION=	5.0.4
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/stable-channel/${PORTVERSION}
 DISTNAME=	${PORTNAME}-core-${PORTVERSION}
@@ -12,6 +12,11 @@ COMMENT=	Ajax web file management system
 LICENSE=	AGPLv3
 
 NO_BUILD=	yes
+USES=		shebangfix
+php_OLD_CMD=	/php
+SHEBANG_FILES=	plugins/core.mq/ws-server.php \
+		plugins/core.mq/vendor/phpws/demo_ssl.php \
+		plugins/core.mq/vendor/phpws/demo.php
 USE_PHP=	dom mcrypt gd
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.php
