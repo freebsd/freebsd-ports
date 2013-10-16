@@ -11,6 +11,8 @@ DISTNAME=	PanoTools
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Software to view, create, edit, and remap panoramic images
 
+DEPRECATED=	Vendor site is gone, archive is from 2001 and depends on to-be-removed libpng
+
 NO_BUILD=	yes
 USE_LINUX_PREFIX=yes
 USE_LDCONFIG=	yes
