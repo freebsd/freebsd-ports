@@ -463,6 +463,7 @@ llvm33/lib/libclangStaticAnalyzerCheckers.a
 llvm33/lib/libclangStaticAnalyzerCore.a
 llvm33/lib/libclangStaticAnalyzerFrontend.a
 llvm33/lib/libclangTooling.a
+man/man1/clang33.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/clang/clang.html
 %%PORTDOCS%%%%DOCSDIR%%/html/clang/manpage.css
 %%PORTDOCS%%%%DOCSDIR%%/ps/clang.ps

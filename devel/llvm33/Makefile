@@ -78,7 +78,6 @@ FIRST_COMMAND=	${COMMANDS:C/^/XXXX/1:MXXXX*:C/^XXXX//}
 # Enable AMD r600 backend used by the r600/radeonsi graphics/dri gallium drivers
 CONFIGURE_ARGS+=--enable-experimental-targets=R600
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MASSERTS}
@@ -114,7 +113,7 @@ MAN1SRCS=	bugpoint.1 lit.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 		llvm-bcanalyzer.1 llvm-config.1 llvm-cov.1 llvm-diff.1 \
 		llvm-dis.1 llvm-extract.1 llvm-link.1 llvm-nm.1 \
 		llvm-prof.1 llvm-ranlib.1 llvm-stress.1 opt.1 tblgen.1
-MAN1=	${MAN1SRCS:S/.1/${LLVM_SUFFIX}.1/}
+PLIST_FILES+==	${MAN1SRCS:S|^|man/man1/|:S|.1$|${LLVM_SUFFIX}.1.gz|}
 .endif
 
 .include <bsd.port.pre.mk>
@@ -159,29 +158,30 @@ post-build:
 .endif
 
 post-install:
-	${MV} ${PREFIX}/llvm33/lib/${LIBNAME} ${LLVM_PREFIX}/lib/${LIBNAME}.0
-	${LN} -sf ${LIBNAME}.0 ${LLVM_PREFIX}/lib/${LIBNAME}
+	${MV} ${STAGEDIR}${PREFIX}/llvm33/lib/${LIBNAME} \
+	    ${STAGEDIR}${LLVM_PREFIX}/lib/${LIBNAME}.0
+	${LN} -sf ${LIBNAME}.0 ${STAGEDIR}${LLVM_PREFIX}/lib/${LIBNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/llvm-wrapper.sh \
-	    ${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX}
+	    ${STAGEDIR}${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX}
 .for command in ${COMMANDS:C/^/XXXX/1:NXXXX*}
-	${LN} -f ${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX} \
-	    ${PREFIX}/bin/${command}${LLVM_SUFFIX}
+	${LN} -f ${STAGEDIR}${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX} \
+	    ${STAGEDIR}${PREFIX}/bin/${command}${LLVM_SUFFIX}
 .endfor
 .if ${PORT_OPTIONS:MCMAKE}
-	${MKDIR} ${DATADIR}/cmake
-	${INSTALL_DATA} ${WRKSRC}/cmake/modules/*.cmake ${DATADIR}/cmake/
-	${INSTALL_DATA} ${WRKDIR}/cmake/share/llvm/cmake/*.cmake \
-	    ${DATADIR}/cmake/
+	${MKDIR} ${STAGEDIR}${DATADIR}/cmake
+	${INSTALL_DATA} ${WRKSRC}/cmake/modules/*.cmake \
+	    ${WRKDIR}/cmake/share/llvm/cmake/*.cmake \
+	    ${STAGEDIR}${DATADIR}/cmake/
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/html
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 	${FIND} ${WRKSRC}/docs/_build/html -type f | \
-	    ${XARGS} -I _DOC_ ${INSTALL_DATA} _DOC_ ${DOCSDIR}/html/
+	    ${XARGS} -I _DOC_ ${INSTALL_DATA} _DOC_ ${STAGEDIR}${DOCSDIR}/html/
 .endif
 .if ${PORT_OPTIONS:MMANPAGES}
 	for man in ${MAN1SRCS}; do \
 		${INSTALL_MAN} ${WRKSRC}/docs/_build/man/$${man} \
-		     ${MANPREFIX}/man/man1/$${man%.1}${LLVM_SUFFIX}.1 ; \
+		    ${STAGEDIR}${MANPREFIX}/man/man1/$${man%.1}${LLVM_SUFFIX}.1 ; \
 	done
 .endif
 
