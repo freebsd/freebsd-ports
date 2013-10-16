@@ -45,6 +45,7 @@
     SUBDIR += botan
     SUBDIR += botan110
     SUBDIR += bro
+    SUBDIR += broccoli
     SUBDIR += bruteblock
     SUBDIR += bruteforceblocker
     SUBDIR += bsdsfv
