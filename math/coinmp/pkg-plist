@@ -245,7 +245,7 @@ lib/libOsiClp.so.12
 lib/libOsiCommonTests.la
 lib/libOsiCommonTests.so
 lib/libOsiCommonTests.so.11
-lib/pkgconfig/coindatasample.pc
+libdata/pkgconfig/coindatasample.pc
 libdata/pkgconfig/clp.pc
 libdata/pkgconfig/osi-clp.pc
 libdata/pkgconfig/cbc.pc
@@ -256,4 +256,3 @@ libdata/pkgconfig/coinmp.pc
 libdata/pkgconfig/osi-cbc.pc
 libdata/pkgconfig/osi-unittests.pc
 @dirrm include/coin
-@dirrmtry lib/pkgconfig
