@@ -12,3 +12,6 @@ lib/librtmp.a
 lib/librtmp.so
 lib/librtmp.so.0
 libdata/pkgconfig/librtmp.pc
+man/man1/rtmpdump.1.gz
+man/man3/librtmp.3.gz
+man/man8/rtmpgw.8.gz
