@@ -23,12 +23,11 @@ WRKSRC=		${WRKDIR}/floatstyle-${PORTVERSION}
 PLIST_FILES=	${QT_PLUGINDIR_REL}/styles/libfloatstyle.so
 PLIST_DIRSTRY=	${QT_PLUGINDIR_REL}/styles
 
-NO_STAGE=	yes
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS}
 
 do-install:
-	${MKDIR} ${PREFIX}/${QT_PLUGINDIR_REL}/styles/
-	${INSTALL_PROGRAM} ${WRKSRC}/libfloatstyle.so ${PREFIX}/${QT_PLUGINDIR_REL}/styles/
+	${MKDIR} ${STAGEDIR}${PREFIX}/${QT_PLUGINDIR_REL}/styles/
+	${INSTALL_PROGRAM} ${WRKSRC}/libfloatstyle.so ${STAGEDIR}${PREFIX}/${QT_PLUGINDIR_REL}/styles/
 
 .include <bsd.port.mk>
