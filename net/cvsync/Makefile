@@ -17,28 +17,30 @@ USE_GMAKE=	yes
 USE_RC_SUBR=	cvsyncd
 USE_OPENSSL=	yes
 
-MAN1=		cvscan.1 cvsup2cvsync.1 cvsync.1 cvsync2cvsup.1 cvsyncd.1 \
-		rcscan.1 rcscmp.1
 PORTDOCS=	ChangeLog FAQ TODO
 PORTEXAMPLES=	cvsync.conf cvsyncd-FreeBSD.conf \
 		cvsyncd-NetBSD.conf cvsyncd-OpenBSD.conf
 
-MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
+MAKE_ENV+=	DESTDIR="${STAGEDIR}" \
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		INSTALL= \
+		INSTALL_BIN_OPTS="${INSTALL_PROGRAM}" \
+		INSTALL_MAN_OPTS="${INSTALL_MAN}"
 MAKE_FLAGS=	OSVER="${OSVERSION}" HASH_TYPE=openssl
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/samples && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/samples && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
