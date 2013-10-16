@@ -14,7 +14,6 @@ COMMENT=	A tiny system load meter for gkrellm
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
-PLIST_FILES=	libexec/gkrellm2/plugins/gkrellflynn.so
 USES=		pkgconfig
 USE_GNOME=	gtk20
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -c -fPIC"
@@ -23,9 +22,11 @@ ALL_TARGET=	${PORTNAME}.so
 CFLAGS+=	`pkg-config --cflags gtk+-2.0 gthread-2.0` \
 		-I${LOCALBASE}/include -DGKRELLM2
 
-NO_STAGE=	yes
+PLIST_FILES=	libexec/gkrellm2/plugins/gkrellflynn.so
+
 do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
 	${INSTALL_PROGRAM} ${WRKSRC}/gkrellflynn.so \
-		${PREFIX}/libexec/gkrellm2/plugins
+		${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
 
 .include <bsd.port.mk>
