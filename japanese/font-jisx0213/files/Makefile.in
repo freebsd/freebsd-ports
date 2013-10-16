@@ -2,6 +2,9 @@
 .SUFFIXES:
 .SUFFIXES: .bdf .pcf
 
+.if defined(STAGEDIR) && !empty(STAGEDIR)
+PREFIX:=	${STAGEDIR}${PREFIX}
+.endif
 LOCALBASE?=	/usr/local
 GZIP_CMD?=	/usr/bin/gzip
 MKBOLD_CMD?=	${LOCALBASE}/bin/mkbold

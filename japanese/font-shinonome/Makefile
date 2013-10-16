@@ -1,11 +1,12 @@
 # Created by: Yoichi NAKAYAMA <yoichi@eken.phys.nagoya-u.ac.jp>
 # $FreeBSD$
 
-PORTNAME=	font-shinonome
+PORTNAME=	shinonome
 PORTVERSION=	0.9.11.p1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://openlab.jp/efont/dist/shinonome/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
+PKGNAMEPREFIX=	ja-font-
 DISTNAME=	${PORTNAME:C/^font-//}-${PORTVERSION:C/.p/p/}
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -19,6 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME:C/^font-//}-${PORTVERSION:C/.p.*$//}
 USE_BZIP2=	yes
 PLIST_SUB=	X_FONTSDIR=${X_FONTSDIR} \
 		LOCAL_FONTSDIR=${LOCAL_FONTSDIR}
+DATADIR=	${PREFIX}/share/font-${PORTNAME}
 SUB_FILES=	pkg-install
 SUB_LIST=	X_FONTSDIR=${PREFIX}/${X_FONTSDIR} \
 		FONTSALIAS=${DATADIR}/fonts.alias
@@ -51,7 +53,6 @@ FONTNAMES=\
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:
@@ -63,18 +64,23 @@ do-build:
 	@${ECHO_CMD} "Done"
 
 do-install:
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${FONTNAMES:C/$/.pcf.gz/} fonts.alias ${DATADIR}
-	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/shinonome
-	${LN} -s -f ${DATADIR}/*.pcf.gz ${PREFIX}/${LOCAL_FONTSDIR}/shinonome/
-	${MKDIR} ${PREFIX}/${X_FONTSDIR}/misc
-	${LN} -s -f ${DATADIR}/*.pcf.gz ${PREFIX}/${X_FONTSDIR}/misc/
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${FONTNAMES:C/$/.pcf.gz/} fonts.alias \
+	    ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${LOCAL_FONTSDIR}/shinonome
+	cd ${STAGEDIR}${PREFIX}/${LOCAL_FONTSDIR}/shinonome && ${LN} -s -f \
+	    ../${LOCAL_FONTSDIR:C,[^/]+,..,g}/${DATADIR_REL}/*.pcf.gz .
+	${MKDIR} ${STAGEDIR}${PREFIX}/${X_FONTSDIR}/misc
+	cd ${STAGEDIR}${PREFIX}/${X_FONTSDIR}/misc && ${LN} -s -f \
+	    ../${X_FONTSDIR:C,[^/]+,..,g}/${DATADIR_REL}/*.pcf.gz .
 
-post-install:
+post-su-install:
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+post-install:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
