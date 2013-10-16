@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	owncloud-csync
-PORTVERSION=	0.90.0
+PORTVERSION=	0.90.2
 CATEGORIES=	net kde
 MASTER_SITES=	http://download.owncloud.com/download/
 DISTNAME=	ocsync-${PORTVERSION}
@@ -20,8 +20,7 @@ LIB_DEPENDS=	libiniparser.so:${PORTSDIR}/devel/iniparser \
 USES=		cmake:outsource iconv pkgconfig
 USE_BZIP2=	yes
 USE_SQLITE=	yes
-CMAKE_ARGS+=	-DWITH_LOG4C=NO \
-		-DUNIT_TESTING=NO \
+CMAKE_ARGS+=	-DUNIT_TESTING=NO \
 		-DMAN_INSTALL_DIR=${MANPREFIX}/man
 
 USE_LDCONFIG=	yes

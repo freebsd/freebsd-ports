@@ -1,33 +1,6 @@
 bin/ocsync
 %%ETCDIR%%/ocsync.conf
 %%ETCDIR%%/ocsync_exclude.conf
-%%DOCSDIR%%/userguide/csync.html
-%%DOCSDIR%%/userguide/images/icons/README
-%%DOCSDIR%%/userguide/images/icons/callouts/1.png
-%%DOCSDIR%%/userguide/images/icons/callouts/10.png
-%%DOCSDIR%%/userguide/images/icons/callouts/11.png
-%%DOCSDIR%%/userguide/images/icons/callouts/12.png
-%%DOCSDIR%%/userguide/images/icons/callouts/13.png
-%%DOCSDIR%%/userguide/images/icons/callouts/14.png
-%%DOCSDIR%%/userguide/images/icons/callouts/15.png
-%%DOCSDIR%%/userguide/images/icons/callouts/2.png
-%%DOCSDIR%%/userguide/images/icons/callouts/3.png
-%%DOCSDIR%%/userguide/images/icons/callouts/4.png
-%%DOCSDIR%%/userguide/images/icons/callouts/5.png
-%%DOCSDIR%%/userguide/images/icons/callouts/6.png
-%%DOCSDIR%%/userguide/images/icons/callouts/7.png
-%%DOCSDIR%%/userguide/images/icons/callouts/8.png
-%%DOCSDIR%%/userguide/images/icons/callouts/9.png
-%%DOCSDIR%%/userguide/images/icons/caution.png
-%%DOCSDIR%%/userguide/images/icons/example.png
-%%DOCSDIR%%/userguide/images/icons/home.png
-%%DOCSDIR%%/userguide/images/icons/important.png
-%%DOCSDIR%%/userguide/images/icons/next.png
-%%DOCSDIR%%/userguide/images/icons/note.png
-%%DOCSDIR%%/userguide/images/icons/prev.png
-%%DOCSDIR%%/userguide/images/icons/tip.png
-%%DOCSDIR%%/userguide/images/icons/up.png
-%%DOCSDIR%%/userguide/images/icons/warning.png
 include/ocsync/csync.h
 include/ocsync/csync_version.h
 include/ocsync/csync_vio.h
@@ -40,14 +13,41 @@ lib/libocsync.so
 lib/libocsync.so.0
 lib/libocsync.so.0.2.1
 lib/ocsync-0/ocsync_owncloud.so
-lib/ocsync-0/ocsync_smb.so
 lib/ocsync-0/ocsync_sftp.so
+lib/ocsync-0/ocsync_smb.so
 man/man1/ocsync.1.gz
-@dirrm lib/ocsync-0
-@dirrm include/ocsync
+%%PORTDOCS%%%%DOCSDIR%%/userguide/csync.html
+%%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/README
+%%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/callouts/1.png
+%%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/callouts/10.png
+%%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/callouts/11.png
+%%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/callouts/12.png
+%%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/callouts/13.png
+%%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/callouts/14.png
+%%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/callouts/15.png
+%%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/callouts/2.png
+%%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/callouts/3.png
+%%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/callouts/4.png
+%%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/callouts/5.png
+%%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/callouts/6.png
+%%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/callouts/7.png
+%%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/callouts/8.png
+%%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/callouts/9.png
+%%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/caution.png
+%%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/example.png
+%%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/home.png
+%%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/important.png
+%%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/next.png
+%%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/note.png
+%%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/prev.png
+%%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/tip.png
+%%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/up.png
+%%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/warning.png
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/userguide/images/icons/callouts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/userguide/images/icons
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/userguide/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/userguide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry lib/ocsync-0
+@dirrmtry include/ocsync
 @dirrmtry %%ETCDIR%%
-@dirrm %%DOCSDIR%%/userguide/images/icons/callouts
-@dirrm %%DOCSDIR%%/userguide/images/icons
-@dirrm %%DOCSDIR%%/userguide/images
-@dirrm %%DOCSDIR%%/userguide
-@dirrmtry %%DOCSDIR%%
