@@ -5,12 +5,12 @@ include/gmerlin/bgavdefs.h
 include/gmerlin/bgav_version.h
 %%GMERLIN%%lib/gmerlin/plugins/i_avdec.la
 %%GMERLIN%%lib/gmerlin/plugins/i_avdec.so
-%%CDIO%%%%DVDREAD%%lib/gmerlin/plugins/i_dvd.la
-%%CDIO%%%%DVDREAD%%lib/gmerlin/plugins/i_dvd.so
-lib/gmerlin/plugins/i_dvb.la
-lib/gmerlin/plugins/i_dvb.so
-%%CDIO%%lib/gmerlin/plugins/i_vcd.la
-%%CDIO%%lib/gmerlin/plugins/i_vcd.so
+%%GMERLIN%%%%CDIO%%%%DVDREAD%%lib/gmerlin/plugins/i_dvd.la
+%%GMERLIN%%%%CDIO%%%%DVDREAD%%lib/gmerlin/plugins/i_dvd.so
+%%GMERLIN%%lib/gmerlin/plugins/i_dvb.la
+%%GMERLIN%%lib/gmerlin/plugins/i_dvb.so
+%%GMERLIN%%%%CDIO%%lib/gmerlin/plugins/i_vcd.la
+%%GMERLIN%%%%CDIO%%lib/gmerlin/plugins/i_vcd.so
 lib/libgmerlin_avdec.la
 lib/libgmerlin_avdec.so
 lib/libgmerlin_avdec.so.1
@@ -18,4 +18,6 @@ libdata/pkgconfig/gmerlin_avdec.pc
 %%PORTDOCS%%%%DOCSDIR%%/README
 share/locale/de/LC_MESSAGES/gmerlin-avdecoder.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%GMERLIN%%@dirrmtry lib/gmerlin/plugins
+%%GMERLIN%%@dirrmtry lib/gmerlin
 @dirrmtry include/gmerlin
