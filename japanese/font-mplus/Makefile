@@ -40,52 +40,60 @@ X_FONTSDIR=	lib/X11/fonts
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:
 	cd ${WRKDIR}/${PORTNAME}_bitmap_fonts-2.2.4 && \
-		${CAT} fonts_e/fonts.alias fonts_e/euro/fonts.alias \
-		fonts_j/fonts.alias | ${SORT} -r > ${WRKDIR}/fonts.alias
+	    ${CAT} fonts_e/fonts.alias fonts_e/euro/fonts.alias \
+	    fonts_j/fonts.alias | ${SORT} -r > ${WRKDIR}/fonts.alias
 
-pre-su-install:
-	${MKDIR} ${DATADIR}/TTF ${DATADIR}/bitmap
+pre-install:
+	${MKDIR} ${STAGEDIR}${DATADIR}/TTF ${STAGEDIR}${DATADIR}/bitmap
 
 do-install: do-install-bitmap do-install-outline
 
 do-install-bitmap:
 	cd ${WRKDIR}/${PORTNAME}_bitmap_fonts-2.2.4 && \
-		${SETENV} DESTDIR="${DATADIR}/bitmap" \
-		${SH} ${WRKDIR}/${PORTNAME}_bitmap_fonts-2.2.4/install_mplus_fonts
-	${INSTALL_DATA} ${WRKDIR}/fonts.alias ${DATADIR}/bitmap
-	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/mplus
-	${LN} -s -f ${DATADIR}/bitmap/*.pcf.gz ${PREFIX}/${LOCAL_FONTSDIR}/${PORTNAME}/
-	${MKDIR} ${PREFIX}/${X_FONTSDIR}/misc
-	${LN} -s -f ${DATADIR}/bitmap/*.pcf.gz ${PREFIX}/${X_FONTSDIR}/misc/
+	    ${SETENV} DESTDIR="${STAGEDIR}${DATADIR}/bitmap" \
+	    ${SH} ${WRKDIR}/${PORTNAME}_bitmap_fonts-2.2.4/install_mplus_fonts
+	${INSTALL_DATA} ${WRKDIR}/fonts.alias ${STAGEDIR}${DATADIR}/bitmap
+	${MKDIR} ${STAGEDIR}${PREFIX}/${LOCAL_FONTSDIR}/${PORTNAME}
+	cd ${STAGEDIR}/${PREFIX}/${LOCAL_FONTSDIR}/${PORTNAME} && \
+	    ${LN} -s -f ../${LOCAL_FONTSDIR:C,[^/]+,..,g}/${DATADIR_REL}/bitmap/*.pcf.gz .
+	${MKDIR} ${STAGEDIR}${PREFIX}/${X_FONTSDIR}/misc
+	cd ${STAGEDIR}${PREFIX}/${X_FONTSDIR}/misc && \
+	    ${LN} -s -f ../${X_FONTSDIR:C,[^/]+,..,g}/${DATADIR_REL}/bitmap/*.pcf.gz .
 
 do-install-outline:
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-TESTFLIGHT-055/*.ttf ${DATADIR}/TTF
-	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/TTF
-	${LN} -s -f ${DATADIR}/TTF/*.ttf ${PREFIX}/${LOCAL_FONTSDIR}/TTF/
-	${MKDIR} ${PREFIX}/${X_FONTSDIR}/TTF
-	${LN} -s -f ${DATADIR}/TTF/*.ttf ${PREFIX}/${X_FONTSDIR}/TTF/
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-TESTFLIGHT-055/*.ttf \
+	    ${STAGEDIR}${DATADIR}/TTF
+	${MKDIR} ${STAGEDIR}${PREFIX}/${LOCAL_FONTSDIR}/TTF
+	cd ${STAGEDIR}${PREFIX}/${LOCAL_FONTSDIR}/TTF && ${LN} -s -f \
+	    ../${LOCAL_FONTSDIR:C,[^/]+,..,g}/${DATADIR_REL}/TTF/*.ttf .
+	${MKDIR} ${STAGEDIR}${PREFIX}/${X_FONTSDIR}/TTF
+	cd ${STAGEDIR}${PREFIX}/${X_FONTSDIR}/TTF && ${LN} -s -f \
+	    ../${X_FONTSDIR:C,[^/]+,..,g}/${DATADIR_REL}/TTF/*.ttf .
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail \
+	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d
 	${INSTALL_DATA} ${FILESDIR}/20-unhint-${PORTNAME}.conf \
-		${FILESDIR}/62-fonts-${PORTNAME}.conf \
-		${PREFIX}/etc/fonts/conf.avail
+	    ${FILESDIR}/62-fonts-${PORTNAME}.conf \
+	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail
 	${LN} -s -f ../conf.avail/20-unhint-${PORTNAME}.conf \
-		${PREFIX}/etc/fonts/conf.d/20-unhint-${PORTNAME}.conf
+	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/20-unhint-${PORTNAME}.conf
 	${LN} -s -f ../conf.avail/62-fonts-${PORTNAME}.conf \
-		${PREFIX}/etc/fonts/conf.d/62-fonts-${PORTNAME}.conf
+	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/62-fonts-${PORTNAME}.conf
 
-post-install:
+post-su-install:
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+post-install:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	for F in ${PORTDOCS:M*.bitmap:S,.bitmap$,,}; do \
-		${INSTALL_DATA} ${WRKDIR}/${PORTNAME}_bitmap_fonts-2.2.4/$${F} ${DOCSDIR}/$${F}.bitmap; \
+		${INSTALL_DATA} ${WRKDIR}/${PORTNAME}_bitmap_fonts-2.2.4/$${F} ${STAGEDIR}${DOCSDIR}/$${F}.bitmap; \
 	done
 	for F in ${PORTDOCS:M*.outline:S,.outline$,,}; do \
-		${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-TESTFLIGHT-055/$${F} ${DOCSDIR}/$${F}.outline; \
+		${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-TESTFLIGHT-055/$${F} ${STAGEDIR}${DOCSDIR}/$${F}.outline; \
 	done
 .endif
 

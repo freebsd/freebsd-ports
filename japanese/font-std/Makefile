@@ -31,14 +31,13 @@ STD_GothicBBB-Medium=	${LOCALBASE}/share/font-ipa/ipag.otf
 STD_Ryumin-Light.gs7=	${LOCALBASE}/share/font-mplus-ipa/fonts/ipam.ttf
 STD_GothicBBB-Medium.gs7=	${LOCALBASE}/share/font-mplus-ipa/fonts/ipag.ttf
 
-NO_STAGE=	yes
 do-fetch:
 	@${DO_NADA}
 
 do-install:
-	${MKDIR} ${PREFIX}/${FONTSDIR}/std.ja_JP
+	${MKDIR} ${STAGEDIR}${PREFIX}/${FONTSDIR}/std.ja_JP
 .for F in ${STD}
-	${LN} -s -f ${STD_${F}} ${PREFIX}/${FONTSDIR}/std.ja_JP/${F}
+	${LN} -s -f ${STD_${F}} ${STAGEDIR}${PREFIX}/${FONTSDIR}/std.ja_JP/${F}
 .endfor
 
 .include <bsd.port.mk>

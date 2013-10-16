@@ -33,34 +33,35 @@ X_FONTSDIR=	lib/X11/fonts
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WRKSRC}
-	${CP} -R ${WRKSRC}/opfc-ModuleHP-1.1.1_withIPAFonts_and_Mplus/* \
-		${DATADIR}
-	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/TTF
-	${LN} -s -f ${DATADIR}/fonts/M+*.ttf \
-		${PREFIX}/${LOCAL_FONTSDIR}/TTF/
-	${MKDIR} ${PREFIX}/${X_FONTSDIR}/TTF
-	${LN} -s -f ${DATADIR}/fonts/M+*.ttf \
-			${PREFIX}/${X_FONTSDIR}/TTF/
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC}/opfc-ModuleHP-1.1.1_withIPAFonts_and_Mplus && \
+	    ${COPYTREE_SHARE} . ${STAGEDIR}/${DATADIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${LOCAL_FONTSDIR}/TTF
+	cd ${STAGEDIR}${PREFIX}/${LOCAL_FONTSDIR}/TTF && ${LN} -s -f \
+	    ../${LOCAL_FONTSDIR:C,[^/]+,..,g}/${DATADIR_REL}/fonts/M+*.ttf .
+	${MKDIR} ${STAGEDIR}${PREFIX}/${X_FONTSDIR}/TTF
+	cd ${STAGEDIR}${PREFIX}/${X_FONTSDIR}/TTF && ${LN} -s -f \
+	    ../${X_FONTSDIR:C,[^/]+,..,g}/${DATADIR_REL}/fonts/M+*.ttf .
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail \
+	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d
 	${INSTALL_DATA} ${FILESDIR}/20-unhint-${PORTNAME}.conf \
-		${FILESDIR}/62-fonts-${PORTNAME}.conf \
-		${PREFIX}/etc/fonts/conf.avail
+	    ${FILESDIR}/62-fonts-${PORTNAME}.conf \
+	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail
 	${LN} -s -f ../conf.avail/20-unhint-${PORTNAME}.conf \
-		${PREFIX}/etc/fonts/conf.d/20-unhint-${PORTNAME}.conf
+	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/20-unhint-${PORTNAME}.conf
 	${LN} -s -f ../conf.avail/62-fonts-${PORTNAME}.conf \
-		${PREFIX}/etc/fonts/conf.d/62-fonts-${PORTNAME}.conf
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/62-fonts-${PORTNAME}.conf
 
-post-install:
-	${LOCALBASE}/bin/fc-cache -s -f -v ${PREFIX}/${X_FONTSDIR}/TTF
+post-su-install:
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
+.if ${PORT_OPTIONS:MDOCS}
+post-install:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
