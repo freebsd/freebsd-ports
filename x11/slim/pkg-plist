@@ -6,9 +6,9 @@ man/man1/slim.1.gz
 @dirrmtry %%DATADIR%%/themes/default
 @dirrmtry %%DATADIR%%/themes
 @dirrmtry %%DATADIR%%
-@unexec if cmp -s %D/etc/slim.conf.sample %D/etc/slim.conf ; then rm -f %D/etc/slim.conf ; fi
+@unexec if cmp -s %D/etc/slim.conf.sample %D/etc/slim.conf; then rm -f %D/etc/slim.conf; fi
 etc/slim.conf.sample
-@exec if [ ! -f %D/etc/slim.conf ]; then cp -p %D/%F %B/slim .conf; fi
-%%PAM%%@unexec if cmp -s %D/etc/pam.d/slim.default %D/etc/pam.d/slim ; then rm -f %D/etc/pam.d/slim ; fi
+@exec if [ ! -f %D/etc/slim.conf ]; then cp -p %D/%F %B/slim.conf; fi
+%%PAM%%@unexec if cmp -s %D/etc/pam.d/slim.default %D/etc/pam.d/slim; then rm -f %D/etc/pam.d/slim; fi
 %%PAM%%etc/pam.d/slim.default
-%%PAM%%@exec if [ ! -f %D/etc/pam.d/slim ]; then cp -p %D/%F %B/pam.d/slim fi
+%%PAM%%@exec if [ ! -f %D/etc/pam.d/slim ]; then cp -p %D/%F %B/pam.d/slim; fi
