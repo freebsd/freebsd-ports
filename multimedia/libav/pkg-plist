@@ -102,6 +102,8 @@ libdata/pkgconfig/libavformat.pc
 libdata/pkgconfig/libavresample.pc
 libdata/pkgconfig/libavutil.pc
 libdata/pkgconfig/libswscale.pc
+man/man1/avconv.1.gz
+man/man1/avprobe.1.gz
 %%DATADIR%%/libvpx-1080p.avpreset
 %%DATADIR%%/libvpx-1080p50_60.avpreset
 %%DATADIR%%/libvpx-360p.avpreset
