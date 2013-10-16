@@ -23,6 +23,7 @@ include/clang/AST/ASTContext.h
 include/clang/AST/ASTDiagnostic.h
 include/clang/AST/ASTFwd.h
 include/clang/AST/ASTImporter.h
+include/clang/AST/ASTLambda.h
 include/clang/AST/ASTMutationListener.h
 include/clang/AST/ASTTypeTraits.h
 include/clang/AST/ASTUnresolvedSet.h
@@ -311,6 +312,7 @@ include/clang/Rewrite/Frontend/FixItRewriter.h
 include/clang/Rewrite/Frontend/FrontendActions.h
 include/clang/Rewrite/Frontend/Rewriters.h
 include/clang/Sema/AnalysisBasedWarnings.h
+include/clang/Sema/AttrParsedAttrImpl.inc
 include/clang/Sema/AttrParsedAttrKinds.inc
 include/clang/Sema/AttrParsedAttrList.inc
 include/clang/Sema/AttrSpellingListIndex.inc
@@ -434,7 +436,9 @@ lib/clang/%%CLANG_RELEASE%%/include/popcntintrin.h
 lib/clang/%%CLANG_RELEASE%%/include/prfchwintrin.h
 lib/clang/%%CLANG_RELEASE%%/include/rdseedintrin.h
 lib/clang/%%CLANG_RELEASE%%/include/rtmintrin.h
+lib/clang/%%CLANG_RELEASE%%/include/shaintrin.h
 lib/clang/%%CLANG_RELEASE%%/include/smmintrin.h
+lib/clang/%%CLANG_RELEASE%%/include/tbmintrin.h
 lib/clang/%%CLANG_RELEASE%%/include/tmmintrin.h
 lib/clang/%%CLANG_RELEASE%%/include/wmmintrin.h
 lib/clang/%%CLANG_RELEASE%%/include/x86intrin.h
@@ -465,6 +469,7 @@ lib/libclangStaticAnalyzerCheckers.a
 lib/libclangStaticAnalyzerCore.a
 lib/libclangStaticAnalyzerFrontend.a
 lib/libclangTooling.a
+man/man1/clang.1.gz
 %%DATADIR%%/scanview.css
 %%DATADIR%%/sorttable.js
 %%PORTDOCS%%%%DOCSDIR%%/html.tar.gz

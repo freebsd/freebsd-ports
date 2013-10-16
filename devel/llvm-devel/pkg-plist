@@ -9,12 +9,14 @@
 %%PYTHON_SITELIBDIR%%/lit/__init__.py
 %%PYTHON_SITELIBDIR%%/lit/discovery.py
 %%PYTHON_SITELIBDIR%%/lit/main.py
+%%PYTHON_SITELIBDIR%%/lit/run.py
 %%PYTHON_SITELIBDIR%%/lit/util.py
 bin/FileCheck
 bin/bugpoint
 bin/lit
 bin/llc
 bin/lli
+bin/lli-child-target
 bin/llvm-ar
 bin/llvm-as
 bin/llvm-bcanalyzer
@@ -30,7 +32,7 @@ bin/llvm-mc
 bin/llvm-mcmarkup
 bin/llvm-nm
 bin/llvm-objdump
-bin/llvm-prof
+bin/llvm-ranlib
 bin/llvm-readobj
 bin/llvm-rtdyld
 bin/llvm-size
@@ -156,14 +158,7 @@ include/llvm/Analysis/MemoryBuiltins.h
 include/llvm/Analysis/MemoryDependenceAnalysis.h
 include/llvm/Analysis/PHITransAddr.h
 include/llvm/Analysis/Passes.h
-include/llvm/Analysis/PathNumbering.h
-include/llvm/Analysis/PathProfileInfo.h
 include/llvm/Analysis/PostDominators.h
-include/llvm/Analysis/ProfileDataLoader.h
-include/llvm/Analysis/ProfileDataTypes.h
-include/llvm/Analysis/ProfileInfo.h
-include/llvm/Analysis/ProfileInfoLoader.h
-include/llvm/Analysis/ProfileInfoTypes.h
 include/llvm/Analysis/PtrUseVisitor.h
 include/llvm/Analysis/RegionInfo.h
 include/llvm/Analysis/RegionIterator.h
@@ -269,6 +264,7 @@ include/llvm/CodeGen/SelectionDAG.h
 include/llvm/CodeGen/SelectionDAGISel.h
 include/llvm/CodeGen/SelectionDAGNodes.h
 include/llvm/CodeGen/SlotIndexes.h
+include/llvm/CodeGen/StackProtector.h
 include/llvm/CodeGen/TargetLoweringObjectFileImpl.h
 include/llvm/CodeGen/TargetSchedule.h
 include/llvm/CodeGen/ValueTypes.h
@@ -347,6 +343,8 @@ include/llvm/IR/ValueSymbolTable.h
 include/llvm/IRReader/IRReader.h
 include/llvm/InitializePasses.h
 include/llvm/InstVisitor.h
+include/llvm/LTO/LTOCodeGenerator.h
+include/llvm/LTO/LTOModule.h
 include/llvm/LinkAllIR.h
 include/llvm/LinkAllPasses.h
 include/llvm/Linker.h
@@ -424,7 +422,6 @@ include/llvm/Object/ELFTypes.h
 include/llvm/Object/ELFYAML.h
 include/llvm/Object/Error.h
 include/llvm/Object/MachO.h
-include/llvm/Object/MachOFormat.h
 include/llvm/Object/MachOUniversal.h
 include/llvm/Object/ObjectFile.h
 include/llvm/Object/RelocVisitor.h
@@ -489,8 +486,6 @@ include/llvm/Support/GraphWriter.h
 include/llvm/Support/Host.h
 include/llvm/Support/IncludeFile.h
 include/llvm/Support/InstIterator.h
-include/llvm/Support/IntegersSubset.h
-include/llvm/Support/IntegersSubsetMapping.h
 include/llvm/Support/LEB128.h
 include/llvm/Support/LICENSE.TXT
 include/llvm/Support/LeakDetector.h
@@ -540,6 +535,7 @@ include/llvm/Support/Threading.h
 include/llvm/Support/TimeValue.h
 include/llvm/Support/Timer.h
 include/llvm/Support/ToolOutputFile.h
+include/llvm/Support/Unicode.h
 include/llvm/Support/UnicodeCharRanges.h
 include/llvm/Support/Valgrind.h
 include/llvm/Support/ValueHandle.h
@@ -556,6 +552,7 @@ include/llvm/TableGen/Error.h
 include/llvm/TableGen/Main.h
 include/llvm/TableGen/Record.h
 include/llvm/TableGen/StringMatcher.h
+include/llvm/TableGen/StringToOffsetTable.h
 include/llvm/TableGen/TableGenBackend.h
 include/llvm/Target/CostTable.h
 include/llvm/Target/Mangler.h
@@ -641,6 +638,7 @@ lib/libLLVMInstCombine.a
 lib/libLLVMInstrumentation.a
 lib/libLLVMInterpreter.a
 lib/libLLVMJIT.a
+lib/libLLVMLTO.a
 lib/libLLVMLinker.a
 lib/libLLVMMC.a
 lib/libLLVMMCDisassembler.a
@@ -705,8 +703,6 @@ lib/libLLVMipa.a
 lib/libLLVMipo.a
 lib/libLTO.a
 lib/libLTO.so
-lib/libprofile_rt.a
-lib/libprofile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/html.tar.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/.buildinfo
 %%PORTDOCS%%%%DOCSDIR%%/html/AliasAnalysis.html
@@ -758,6 +754,8 @@ lib/libprofile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/html/HowToAddABuilder.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/HowToBuildOnARM.html
 %%PORTDOCS%%%%DOCSDIR%%/html/HowToBuildOnARM.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/HowToCrossCompileLLVM.html
+%%PORTDOCS%%%%DOCSDIR%%/html/HowToCrossCompileLLVM.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/HowToReleaseLLVM.html
 %%PORTDOCS%%%%DOCSDIR%%/html/HowToReleaseLLVM.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/HowToSetUpLLVMStyleRTTI.html
@@ -946,6 +944,7 @@ lib/libprofile_rt.so
 @dirrm include/llvm/Object
 @dirrm include/llvm/MC/MCParser
 @dirrm include/llvm/MC
+@dirrm include/llvm/LTO
 @dirrm include/llvm/IRReader
 @dirrm include/llvm/IR
 @dirrm include/llvm/ExecutionEngine

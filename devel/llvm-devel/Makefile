@@ -38,7 +38,6 @@ OPTIONS_DEFAULT=	CMAKE MANPAGES
 LLVM_RELEASE=	${PORTVERSION:C/\.r[0-9]*//}
 PLIST_SUB+=	LLVM_RELEASE=${LLVM_RELEASE}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MASSERTS}
@@ -70,11 +69,11 @@ PLIST_FILES+=		lib/LLVMgold.so
 .endif
 
 .if ${PORT_OPTIONS:MMANPAGES}
-MAN1=		bugpoint.1 lit.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
+_MAN1=		bugpoint.1 lit.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 		llvm-bcanalyzer.1 llvm-config.1 llvm-cov.1 llvm-diff.1 \
 		llvm-dis.1 llvm-extract.1 llvm-link.1 llvm-nm.1 \
 		llvm-prof.1 llvm-stress.1 opt.1 tblgen.1
-MLINKS=		lit.1 llvm-lit.1
+PLIST_FILES+=	man/man1/llvm-lit.1.gz ${_MAN1:S|^|man/man1/|:S|$|.gz|}
 .endif
 
 .include <bsd.port.pre.mk>
@@ -139,28 +138,31 @@ post-build:
 .endif
 
 post-install:
-	${MV} ${PREFIX}/lib/${LIBNAME} ${PREFIX}/lib/${LIBNAME}.0
-	${LN} -sf ${LIBNAME}.0 ${PREFIX}/lib/${LIBNAME}
-	${INSTALL_SCRIPT} ${WRKSRC}/utils/lit/lit.py ${PREFIX}/bin/lit
-	${LN} -sf lit ${PREFIX}/bin/llvm-lit
-	${MKDIR} ${PYTHON_SITELIBDIR}/lit
-	${INSTALL_DATA} ${WRKSRC}/utils/lit/lit/*.py ${PYTHON_SITELIBDIR}/lit
-	${INSTALL_PROGRAM} ${WRKSRC}/Release/bin/FileCheck ${PREFIX}/bin/
+	${MV} ${STAGEDIR}${PREFIX}/lib/${LIBNAME} ${STAGEDIR}${PREFIX}/lib/${LIBNAME}.0
+	${LN} -sf ${LIBNAME}.0 ${STAGEDIR}${PREFIX}/lib/${LIBNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/utils/lit/lit.py ${STAGEDIR}${PREFIX}/bin/lit
+	${LN} -sf lit ${STAGEDIR}${PREFIX}/bin/llvm-lit
+	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/lit
+	${INSTALL_DATA} ${WRKSRC}/utils/lit/lit/*.py ${STAGEDIR}${PYTHON_SITELIBDIR}/lit
+	${INSTALL_PROGRAM} ${WRKSRC}/Release/bin/FileCheck ${STAGEDIR}${PREFIX}/bin/
 .if ${PORT_OPTIONS:MCMAKE}
-	${MKDIR} ${DATADIR}/cmake
-	${INSTALL_DATA} ${WRKSRC}/cmake/modules/*.cmake ${DATADIR}/cmake/
-	${INSTALL_DATA} ${WRKDIR}/cmake/share/llvm/cmake/*.cmake \
-	    ${DATADIR}/cmake/
+	${MKDIR} ${STAGEDIR}${DATADIR}/cmake
+	${INSTALL_DATA} ${WRKSRC}/cmake/modules/*.cmake \
+	    ${WRKDIR}/cmake/share/llvm/cmake/*.cmake \
+	    ${STAGEDIR}${DATADIR}/cmake/
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/html
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 	${FIND} ${WRKSRC}/docs/_build/html -type f | \
-	    ${XARGS} -I _DOC_ ${INSTALL_DATA} _DOC_ ${DOCSDIR}/html/
+	    ${XARGS} -I _DOC_ ${INSTALL_DATA} _DOC_ ${STAGEDIR}${DOCSDIR}/html/
 .endif
-.for man in ${MAN1}
+.if ${PORT_OPTIONS:MMANPAGES}
+.for man in ${_MAN1}
 	@${INSTALL_MAN} ${WRKSRC}/docs/_build/man/${man} \
-	     ${MANPREFIX}/man/man1/
+	     ${STAGEDIR}${MANPREFIX}/man/man1/
 .endfor
+	${LN} -sf ${STAGEDIR}${MANPREFIX}/man/man1/lit.1 ${STAGEDIR}${MANPREFIX}/man/man1/llvm-lit.1
+.endif
 
 TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} LD_LIBRARY_PATH=${WRKSRC}/Release/lib ${GMAKE} check-local-lit)'
 regression-test: ${BUILD_COOKIE}
@@ -176,6 +178,7 @@ PLIST_FILE_LIST=	bin/FileCheck \
 			bin/lit \
 			bin/llc \
 			bin/lli \
+			bin/lli-child-target \
 			bin/llvm-ar \
 			bin/llvm-as \
 			bin/llvm-bcanalyzer \
@@ -191,7 +194,7 @@ PLIST_FILE_LIST=	bin/FileCheck \
 			bin/llvm-mcmarkup \
 			bin/llvm-nm \
 			bin/llvm-objdump \
-			bin/llvm-prof \
+			bin/llvm-ranlib \
 			bin/llvm-readobj \
 			bin/llvm-rtdyld \
 			bin/llvm-size \
@@ -203,9 +206,7 @@ PLIST_FILE_LIST=	bin/FileCheck \
 			lib/BugpointPasses.so \
 			lib/LLVMHello.so \
 			lib/libLTO.* \
-			lib/libLLVM* \
-			lib/libprofile_rt.a \
-			lib/libprofile_rt.so
+			lib/libLLVM*
 PLIST_DIR_LIST=		include/llvm-c \
 			include/llvm \
 			${PYTHON_SITELIBDIR:S;${PYTHONBASE}/;;}/lit

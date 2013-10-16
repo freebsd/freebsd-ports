@@ -20,6 +20,7 @@ RUN_DEPENDS+=	${CC}:${PORTSDIR}/lang/gcc \
 
 OPTIONS_DEFINE=	DOCS
 
+USES=		compiler:features
 USE_BZIP2=	yes
 USE_GCC=	4.6
 USE_GMAKE=	yes
@@ -33,7 +34,6 @@ GCC_LIBDIR=		lib/${CC}
 ALL_TARGET=
 MAKE_ARGS=	GCC=${LOCALBASE}/bin/${CC} VERBOSE=1
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../devel/llvm-devel/Makefile.svn_rev"
 
 PLIST_FILES=		${GCC_LIBDIR}/${DRAGONEGG_SO}
@@ -42,6 +42,12 @@ PLIST_FILES=		${GCC_LIBDIR}/${DRAGONEGG_SO}
 
 .if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=		README
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_FEATURES:Mlibc++}
+IGNORE=	"Dragonegg can't work if LLVM was built with libc++"
 .endif
 
 .if defined(BOOTSTRAP) || defined(SVN_FETCH)
@@ -66,11 +72,12 @@ post-patch:
 	    ${WRKSRC}/README
 
 do-install:
+	mkdir -p ${STAGEDIR}${LOCALBASE}/${GCC_LIBDIR}
 	${INSTALL_LIB} ${WRKSRC}/dragonegg.so \
-	    ${LOCALBASE}/${GCC_LIBDIR}/${DRAGONEGG_SO}
+	    ${STAGEDIR}${LOCALBASE}/${GCC_LIBDIR}/${DRAGONEGG_SO}
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

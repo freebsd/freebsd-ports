@@ -50,11 +50,8 @@ MIPS_FPHACK_DESC=	MIPS long double hack (breaks ABI)
 
 CONFIGURE_ARGS+=	--enable-optimized
 
-MAN1=		clang.1
-
 PLIST_SUB+=	CLANG_RELEASE=${CLANG_RELEASE}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MASSERTS}
@@ -131,23 +128,24 @@ post-build:
 	@cd ${WRKSRC}/tools/clang/docs/tools && ${GMAKE} clang.1
 
 post-install:
-	@${LN} -sf clang ${PREFIX}/bin/clang-cpp
+	@${LN} -sf clang ${STAGEDIR}${PREFIX}/bin/clang-cpp
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer \
 		${WRKSRC}/tools/clang/tools/scan-build/c++-analyzer \
 		${WRKSRC}/tools/clang/tools/scan-build/scan-build \
 		${WRKSRC}/tools/clang/tools/scan-view/scan-view \
-	    ${PREFIX}/bin
-	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}
-	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/Resources
+	    ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Resources
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-view/*.py \
-	    ${PYTHONPREFIX_SITELIBDIR}
+	    ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-view/Resources/* \
-	    ${PYTHONPREFIX_SITELIBDIR}/Resources
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/scanview.css ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/sorttable.js ${DATADIR}
+	    ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Resources
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/scanview.css \
+	    ${WRKSRC}/tools/clang/tools/scan-build/sorttable.js \
+	    ${STAGEDIR}${DATADIR}
 	@${INSTALL_MAN} ${WRKSRC}/tools/clang/docs/tools/clang.1 \
-	    ${MANPREFIX}/man/man1/
+	    ${STAGEDIR}${MANPREFIX}/man/man1/
 
 TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} ${GMAKE} check)'
 regression-test: ${BUILD_COOKIE}
@@ -169,7 +167,8 @@ PLIST_FILE_LIST=	bin/ccc-analyzer \
 			bin/clang-tblgen \
 			bin/scan-build \
 			bin/scan-view \
-			lib/libclang*
+			lib/libclang* \
+			man/man1/clang.1.gz
 PLIST_DIR_LIST=		include/clang \
 			include/clang-c \
 			lib/clang
