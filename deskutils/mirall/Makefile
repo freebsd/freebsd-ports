@@ -3,6 +3,7 @@
 
 PORTNAME=	mirall
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://download.owncloud.com/download/
 
@@ -24,12 +25,23 @@ USE_GCC=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
-# It seems to be able to generate docs, but, it's not working.
-#
-# OPTIONS_DEFINE=	DOCS
-# OPTIONS_DEFAULT=
-# 
-# DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
-# DOCS_USE=	TEX=latex:build
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=
+
+DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+DOCS_USE=	TEX=latex:build
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+CMAKE_ARGS+=	WITH_DOC=TRUE
+ALL_TARGET=	all doc-html doc-pdf
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
+	@${INSTALL_DATA} ${INSTALL_WRKSRC}/doc/latex/ownCloudClientManual.pdf ${STAGEDIR}${DOCSDIR}
+	@cd ${INSTALL_WRKSRC}/doc/html/unthemed ; ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/html
+.endif
 
 .include <bsd.port.mk>
