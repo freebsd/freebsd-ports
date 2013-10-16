@@ -1,20 +1,54 @@
-@comment $FreeBSD$
-bin/binpac
 bin/bro
-lib/libbinpac.a
-include/binpac.h
-include/binpac_analyzer.h
-include/binpac_buffer.h
-include/binpac_bytestring.h
-include/binpac_exception.h
-include/binpac_regex.h
-%%BROCCOLI%%bin/broccoli-config
-%%BROCCOLI%%include/broccoli.h
-%%BROCCOLI%%lib/libbinpac.a
-%%BROCCOLI%%lib/libbroccoli.a
-%%BROCCOLI%%lib/libbroccoli.so
-%%BROCCOLI%%lib/libbroccoli.so.5
-%%BROCCOLI%%lib/libbroccoli.so.5.1.0
+bin/bro-cut
+@exec mkdir -p %D/etc
+@exec mkdir -p %D/logs
+%%BROCTL%%bin/broctl
+%%BROCTL%%bin/capstats
+%%BROCTL%%bin/trace-summary
+%%BROCTL%%@unexec if cmp -s %D/etc/broctl.cfg.sample %D/etc/broctl.cfg ; then rm -f %D/etc/broctl.cfg; fi
+%%BROCTL%%etc/broctl.cfg.sample
+%%BROCTL%%@exec if [ ! -f %D/etc/broctl.cfg ] ; then cp -p %D/etc/broctl.cfg.sample %D/etc/broctl.cfg; fi
+%%BROCTL%%@unexec if cmp -s %D/etc/networks.cfg.sample %D/etc/networks.cfg ; then rm -f %D/etc/networks.cfg; fi
+%%BROCTL%%etc/networks.cfg.sample
+%%BROCTL%%@exec if [ ! -f %D/etc/networks.cfg ] ; then cp -p %D/etc/networks.cfg.sample %D/etc/networks.cfg; fi
+%%BROCTL%%@unexec if cmp -s %D/etc/node.cfg.sample %D/etc/node.cfg ; then rm -f %D/etc/node.cfg; fi
+%%BROCTL%%etc/node.cfg.sample
+%%BROCTL%%@exec if [ ! -f %D/etc/node.cfg ] ; then cp -p %D/etc/node.cfg.sample %D/etc/node.cfg; fi
+%%BROCTL%%lib/broctl/BroControl/__init__.py
+%%BROCTL%%lib/broctl/BroControl/__init__.pyc
+%%BROCTL%%lib/broctl/BroControl/config.py
+%%BROCTL%%lib/broctl/BroControl/config.pyc
+%%BROCTL%%lib/broctl/BroControl/control.py
+%%BROCTL%%lib/broctl/BroControl/control.pyc
+%%BROCTL%%lib/broctl/BroControl/cron.py
+%%BROCTL%%lib/broctl/BroControl/cron.pyc
+%%BROCTL%%lib/broctl/BroControl/doc.py
+%%BROCTL%%lib/broctl/BroControl/doc.pyc
+%%BROCTL%%lib/broctl/BroControl/execute.py
+%%BROCTL%%lib/broctl/BroControl/execute.pyc
+%%BROCTL%%lib/broctl/BroControl/install.py
+%%BROCTL%%lib/broctl/BroControl/install.pyc
+%%BROCTL%%lib/broctl/BroControl/node.py
+%%BROCTL%%lib/broctl/BroControl/node.pyc
+%%BROCTL%%lib/broctl/BroControl/options.py
+%%BROCTL%%lib/broctl/BroControl/options.pyc
+%%BROCTL%%lib/broctl/BroControl/plugin.py
+%%BROCTL%%lib/broctl/BroControl/plugin.pyc
+%%BROCTL%%lib/broctl/BroControl/pluginreg.py
+%%BROCTL%%lib/broctl/BroControl/pluginreg.pyc
+%%BROCTL%%lib/broctl/BroControl/util.py
+%%BROCTL%%lib/broctl/BroControl/util.pyc
+%%BROCTL%%lib/broctl/SubnetTree.py
+%%BROCTL%%@unexec rm -f %D/lib/broctl/SubnetTree.pyc
+%%BROCTL%%lib/broctl/_SubnetTree.so
+%%BROCTL%%lib/broctl/plugins/TestPlugin.py
+%%BROCTL%%lib/broctl/plugins/TestPlugin.pyc
+%%BROCTL%%lib/broctl/plugins/lb_myricom.py
+%%BROCTL%%lib/broctl/plugins/lb_myricom.pyc
+%%BROCTL%%lib/broctl/plugins/lb_pf_ring.py
+%%BROCTL%%lib/broctl/plugins/lb_pf_ring.pyc
+%%BROCTL%%lib/broctl/plugins/ps.py
+%%BROCTL%%lib/broctl/plugins/ps.pyc
 %%DATADIR%%/base/bro.bif.bro
 %%DATADIR%%/base/const.bif.bro
 %%DATADIR%%/base/event.bif.bro
@@ -127,6 +161,12 @@ include/binpac_regex.h
 %%DATADIR%%/base/utils/site.bro
 %%DATADIR%%/base/utils/strings.bro
 %%DATADIR%%/base/utils/thresholds.bro
+%%BROCTL%%%%DATADIR%%/broctl/__load__.bro
+%%BROCTL%%%%DATADIR%%/broctl/auto.bro
+%%BROCTL%%%%DATADIR%%/broctl/check.bro
+%%BROCTL%%%%DATADIR%%/broctl/main.bro
+%%BROCTL%%%%DATADIR%%/broctl/process-trace.bro
+%%BROCTL%%%%DATADIR%%/broctl/standalone.bro
 %%DATADIR%%/policy/frameworks/communication/listen.bro
 %%DATADIR%%/policy/frameworks/control/controllee.bro
 %%DATADIR%%/policy/frameworks/control/controller.bro
@@ -186,6 +226,70 @@ include/binpac_regex.h
 %%DATADIR%%/site/local-proxy.bro
 %%DATADIR%%/site/local-worker.bro
 %%DATADIR%%/site/local.bro
+%%BROCTL%%%%DATADIR%%ctl/scripts/archive-log
+%%BROCTL%%%%DATADIR%%ctl/scripts/broctl-config.sh
+%%BROCTL%%%%DATADIR%%ctl/scripts/cflow-stats
+%%BROCTL%%%%DATADIR%%ctl/scripts/check-config
+%%BROCTL%%%%DATADIR%%ctl/scripts/crash-diag
+%%BROCTL%%%%DATADIR%%ctl/scripts/create-link-for-log
+%%BROCTL%%%%DATADIR%%ctl/scripts/delete-log
+%%BROCTL%%%%DATADIR%%ctl/scripts/expire-logs
+%%BROCTL%%%%DATADIR%%ctl/scripts/fmt-time
+%%BROCTL%%%%DATADIR%%ctl/scripts/get-prof-log
+%%BROCTL%%%%DATADIR%%ctl/scripts/helpers/cat-file
+%%BROCTL%%%%DATADIR%%ctl/scripts/helpers/check-pid
+%%BROCTL%%%%DATADIR%%ctl/scripts/helpers/df
+%%BROCTL%%%%DATADIR%%ctl/scripts/helpers/exists
+%%BROCTL%%%%DATADIR%%ctl/scripts/helpers/gdb-attach
+%%BROCTL%%%%DATADIR%%ctl/scripts/helpers/get-childs
+%%BROCTL%%%%DATADIR%%ctl/scripts/helpers/is-dir
+%%BROCTL%%%%DATADIR%%ctl/scripts/helpers/rmdir
+%%BROCTL%%%%DATADIR%%ctl/scripts/helpers/run-cmd
+%%BROCTL%%%%DATADIR%%ctl/scripts/helpers/start
+%%BROCTL%%%%DATADIR%%ctl/scripts/helpers/stop
+%%BROCTL%%%%DATADIR%%ctl/scripts/helpers/to-bytes.awk
+%%BROCTL%%%%DATADIR%%ctl/scripts/helpers/top
+%%BROCTL%%%%DATADIR%%ctl/scripts/is-alive
+%%BROCTL%%%%DATADIR%%ctl/scripts/local-interfaces
+%%BROCTL%%%%DATADIR%%ctl/scripts/mail-contents
+%%BROCTL%%%%DATADIR%%ctl/scripts/make-archive-name
+%%BROCTL%%%%DATADIR%%ctl/scripts/post-terminate
+%%BROCTL%%%%DATADIR%%ctl/scripts/postprocessors/summarize-connections
+%%BROCTL%%%%DATADIR%%ctl/scripts/remove-link-for-log
+%%BROCTL%%%%DATADIR%%ctl/scripts/remove-log
+%%BROCTL%%%%DATADIR%%ctl/scripts/run-bro
+%%BROCTL%%%%DATADIR%%ctl/scripts/run-bro-on-trace
+%%BROCTL%%%%DATADIR%%ctl/scripts/send-mail
+%%BROCTL%%%%DATADIR%%ctl/scripts/set-bro-path
+%%BROCTL%%%%DATADIR%%ctl/scripts/stat-ctime
+%%BROCTL%%%%DATADIR%%ctl/scripts/stats-to-csv
+%%BROCTL%%%%DATADIR%%ctl/scripts/update
+%%BROCTL%%%%DATADIR%%ctl/scripts/update-stats
+%%BROCTL%%@dirrm %%DATADIR%%ctl/scripts/postprocessors
+%%BROCTL%%@dirrm %%DATADIR%%ctl/scripts/helpers
+%%BROCTL%%@dirrm %%DATADIR%%ctl/scripts
+%%BROCTL%%@dirrm %%DATADIR%%ctl
+%%BROCTL%%@unexec rm -f %D/spool/broctl-config.sh
+%%BROCTL%%@unexec rm -f %D/spool/broctl.dat
+%%BROCTL%%@unexec rm -f %D/logs/current
+%%BROCTL%%@unexec rm -f %D/spool/installed-scripts-do-not-touch/auto/broctl-config.bro
+%%BROCTL%%@unexec rm -f %D/spool/installed-scripts-do-not-touch/auto/local-networks.bro
+%%BROCTL%%@unexec rm -f %D/spool/installed-scripts-do-not-touch/auto/standalone-layout.bro
+%%BROCTL%%@unexec rm -f %D/spool/installed-scripts-do-not-touch/site/local-manager.bro
+%%BROCTL%%@unexec rm -f %D/spool/installed-scripts-do-not-touch/site/local-proxy.bro
+%%BROCTL%%@unexec rm -f %D/spool/installed-scripts-do-not-touch/site/local-worker.bro
+%%BROCTL%%@unexec rm -f %D/spool/installed-scripts-do-not-touch/site/local.bro
+%%BROCTL%%@dirrmtry spool/tmp
+%%BROCTL%%@dirrmtry spool/scripts
+%%BROCTL%%@dirrmtry spool/logs
+%%BROCTL%%@dirrm spool/installed-scripts-do-not-touch/site
+%%BROCTL%%@dirrm spool/installed-scripts-do-not-touch/auto
+%%BROCTL%%@dirrm spool/installed-scripts-do-not-touch
+%%BROCTL%%@dirrm spool
+%%BROCTL%%@dirrm %%DATADIR%%/broctl
+%%BROCTL%%@dirrm lib/broctl/plugins
+%%BROCTL%%@dirrm lib/broctl/BroControl
+%%BROCTL%%@dirrm lib/broctl
 @dirrm %%DATADIR%%/site
 @dirrm %%DATADIR%%/policy/tuning/defaults
 @dirrm %%DATADIR%%/policy/tuning
@@ -244,3 +348,11 @@ include/binpac_regex.h
 @dirrm %%DATADIR%%/base/frameworks
 @dirrm %%DATADIR%%/base
 @dirrm %%DATADIR%%
+%%CLEANUP_PREFIX%%@dirrmtry share
+@dirrmtry logs
+%%CLEANUP_PREFIX%%@dirrmtry lib
+%%CLEANUP_PREFIX%%@dirrmtry include
+%%CLEANUP_PREFIX%%@dirrmtry etc
+%%CLEANUP_PREFIX%%@dirrmtry bin
+%%CLEANUP_PREFIX%%@dirrmtry %D
+%%BROCTL%%@exec %D/bin/broctl install
