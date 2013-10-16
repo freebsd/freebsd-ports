@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- scripts/gen-yaws-generated.orig
++++ scripts/gen-yaws-generated
+@@ -9,6 +9,6 @@
+     ../scripts/Subst %VSN% "${YAWS_VSN}" | \
+     ../scripts/Subst %VARDIR% "${VARDIR}" | \
+     ../scripts/Subst %localinstall% $1 | \
+-    ../scripts/Subst %ETCDIR% "${ETCDIR}"
++    ../scripts/Subst %ETCDIR% "!!PREFIX!!/etc"
+ 
+ exit 0
