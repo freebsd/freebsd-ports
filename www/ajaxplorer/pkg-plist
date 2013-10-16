@@ -793,7 +793,6 @@
 %%WWWDIR%%/plugins/core.conf/plugin_doc.html
 %%WWWDIR%%/plugins/core.conf/standard_conf_actions.xml
 %%WWWDIR%%/plugins/core.index/manifest.xml
-%%WWWDIR%%/plugins/core.licence/class.ShareCenter.php
 %%WWWDIR%%/plugins/core.log/class.AJXP_Logger.php
 %%WWWDIR%%/plugins/core.log/class.AbstractLogDriver.php
 %%WWWDIR%%/plugins/core.log/manifest.xml
@@ -1332,6 +1331,8 @@
 %%WWWDIR%%/plugins/feed.sql/manifest.xml
 %%WWWDIR%%/plugins/gui.ajax/AjaXplorerOrange.png
 %%WWWDIR%%/plugins/gui.ajax/AjxpLogo250.png
+%%WWWDIR%%/plugins/gui.ajax/LoginBoxLogo.png
+%%WWWDIR%%/plugins/gui.ajax/PydioLogo250.png
 %%WWWDIR%%/plugins/gui.ajax/ajxpclient_actions.xml
 %%WWWDIR%%/plugins/gui.ajax/class.AJXP_ClientDriver.php
 %%WWWDIR%%/plugins/gui.ajax/gui-ajax-umbra.png
@@ -3534,7 +3535,6 @@
 @dirrm %%WWWDIR%%/plugins/core.mailer/i18n
 @dirrm %%WWWDIR%%/plugins/core.mailer
 @dirrm %%WWWDIR%%/plugins/core.log
-@dirrm %%WWWDIR%%/plugins/core.licence
 @dirrm %%WWWDIR%%/plugins/core.index
 @dirrm %%WWWDIR%%/plugins/core.conf/i18n/conf
 @dirrm %%WWWDIR%%/plugins/core.conf/i18n
