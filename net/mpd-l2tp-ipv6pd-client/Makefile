@@ -19,18 +19,16 @@ USE_RC_SUBR=	yes
 OPTIONS_SINGLE=		MPD
 OPTIONS_SINGLE_MPD=	MPD4 MPD5
 OPTIONS_DEFAULT=	MPD5
+OPTIONS_SUB=		yes
 MPD4_DESC=		Use mpd4
 MPD5_DESC=		Use mpd5
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMPD4}
 MPD_NAME=	mpd4
-MPD4=		""
 .else
 MPD_NAME=	mpd5
-MPD4=		"@comment "
 .endif
 
 BUILD_DEPENDS=	${MPD_NAME}:${PORTSDIR}/net/${MPD_NAME}
@@ -56,9 +54,8 @@ SCRIPTS_ENV=	WRKDIR="${WRKDIR}" \
 		SED="${SED}" \
 		WHICH="${WHICH}"
 
-PLIST_SUB=	CONF_DIR=${CONF_DIR} \
-		MPD_NAME=${MPD_NAME} \
-		MPD4=${MPD4}
+PLIST_SUB+=	CONF_DIR=${CONF_DIR} \
+		MPD_NAME=${MPD_NAME}
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -77,24 +74,29 @@ do-install:
 		${ECHO_CMD} "    ${PREFIX}/${CONF_DIR}/mpd.secret"; \
 		exit 1; \
 	fi
-	@${MKDIR} ${PREFIX}/${CONF_DIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${CONF_DIR}
 .if ${PORT_OPTIONS:MMPD4}
-	@${INSTALL_DATA} ${WRKDIR}/mpd.conf ${PREFIX}/${CONF_DIR}/mpd.conf
-	@${INSTALL_DATA} ${WRKDIR}/mpd.links ${PREFIX}/${CONF_DIR}/mpd.links
+	@${INSTALL_DATA} ${WRKDIR}/mpd.conf \
+		${STAGEDIR}${PREFIX}/${CONF_DIR}/mpd.conf
+	@${INSTALL_DATA} ${WRKDIR}/mpd.links \
+		${STAGEDIR}${PREFIX}/${CONF_DIR}/mpd.links
 .else
-	@${INSTALL_DATA} ${WRKDIR}/mpd5.conf ${PREFIX}/${CONF_DIR}/mpd.conf
+	@${INSTALL_DATA} ${WRKDIR}/mpd5.conf \
+		${STAGEDIR}${PREFIX}/${CONF_DIR}/mpd.conf
 .endif
 .for f in ${MPD_CONF_FILES}
-	@${INSTALL_DATA} ${WRKDIR}/${f} ${PREFIX}/${CONF_DIR}/${f}
+	@${INSTALL_DATA} ${WRKDIR}/${f} \
+		${STAGEDIR}${PREFIX}/${CONF_DIR}/${f}
 .endfor
-	@${INSTALL_DATA} ${WRKDIR}/mpd ${PREFIX}/${CONF_DIR}/${MPD_NAME}
+	@${INSTALL_DATA} ${WRKDIR}/mpd \
+		${STAGEDIR}${PREFIX}/${CONF_DIR}/${MPD_NAME}
 .for f in ${SCRIPT_FILES}
-	@${INSTALL_SCRIPT} ${WRKDIR}/${f} ${PREFIX}/${CONF_DIR}/${f}
+	@${INSTALL_SCRIPT} ${WRKDIR}/${f} \
+		${STAGEDIR}${PREFIX}/${CONF_DIR}/${f}
 .endfor
 .for f in ${SECRET_FILES}
-	@${INSTALL} ${COPY} -o ${SHAREOWN} -g ${SHAREGRP} -m 400 \
-	    ${WRKDIR}/${f} ${PREFIX}/${CONF_DIR}/${f}
+	@${INSTALL} ${COPY} -m 400 ${WRKDIR}/${f} \
+		${STAGEDIR}${PREFIX}/${CONF_DIR}/${f}
 .endfor
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
