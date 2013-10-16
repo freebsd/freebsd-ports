@@ -13,17 +13,16 @@ COMMENT=	Jigsaw puzzle with tetrominoes
 
 USE_BZIP2=	yes
 USE_QT4=	corelib gui moc_build opengl qmake_build rcc_build xml
-WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
+DESTDIRNAME=	INSTALL_ROOT
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS} \
 		PREFIX=${PREFIX} tetzle.pro
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tetzle ${PREFIX}/bin
+	${CHMOD} ${BINMODE} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
