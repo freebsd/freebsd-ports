@@ -1,44 +1,41 @@
-# New ports collection makefile for:	eaccelerator
-# Date created:			Sat Mar 1 13:55:55 CET 2003
-# Whom:				Alex Dupre <sysadmin@alexdupre.com>
-#
+# Created by: Alex Dupre <sysadmin@alexdupre.com>
 # $FreeBSD$
-#
 
 PORTNAME=	eaccelerator
-PORTVERSION=	0.9.6.1
-PORTREVISION=	1
+PORTVERSION=	0.9.7
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/eAccelerator%20${PORTVERSION}/ \
-		http://bart.eaccelerator.net/source/${PORTVERSION}/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A free open-source PHP accelerator & optimizer
 
-OPTIONS=	DOCCOMM "Retain doc-comments in internal php structures" off
+LICENSE=	GPLv2
+OPTIONS_DEFINE=	DOCCOMM
+DOCCOMM_DESC=	Retain doc-comments in internal php structures
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	${PORTNAME}
+GH_TAGNAME=	${GH_COMMIT}
+GH_COMMIT=	42067ac
+
+OPTIONS_DEFINE=	DOCCOMM
+
+DOCCOMM_DESC=	Retain doc-comments in internal php structures
 
 USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
-DEFAULT_PHP_VER=53
-IGNORE_WITH_PHP=5
 
 CONFIGURE_ARGS=	--enable-eaccelerator=shared \
-		--with-eaccelerator-userid=80 \
-		--without-eaccelerator-use-inode
+		--with-eaccelerator-userid=80
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
-
-USE_BZIP2=	yes
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PORTDOCS=	*
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_DOCCOMM)
+.if ${PORT_OPTIONS:MDOCCOMM}
 CONFIGURE_ARGS+=--with-eaccelerator-doc-comment-inclusion
 .endif
 
@@ -48,7 +45,7 @@ do-install:
 	       ${PREFIX}/lib/php/${PHP_EXT_DIR}
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
@@ -58,4 +55,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/dasm.php ${EXAMPLESDIR}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
