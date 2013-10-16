@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	scala-docs
-PORTVERSION=	2.10.2
+PORTVERSION=	2.10.3
 CATEGORIES=	lang java
-MASTER_SITES=	http://www.scala-lang.org/downloads/distrib/files/
+MASTER_SITES=	http://www.scala-lang.org/files/archive/
 EXTRACT_SUFX=	.txz
 
 MAINTAINER=	ale@FreeBSD.org
@@ -15,7 +15,6 @@ NO_BUILD=	yes
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MDOCS}
@@ -24,8 +23,8 @@ IGNORE=		port only installs documentation
 
 do-install:
 	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} \* ${DOCSDIR}/)
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DOCSDIR}/)
 	@${ECHO} " [ DONE ]"
 
 .include <bsd.port.mk>
