@@ -139,6 +139,7 @@
     SUBDIR += flawfinder
     SUBDIR += fpc-hash
     SUBDIR += fpc-openssl
+    SUBDIR += fpm2
     SUBDIR += fprint_demo
     SUBDIR += fragroute
     SUBDIR += fragrouter
