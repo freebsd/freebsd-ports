@@ -1,3 +1,4 @@
+# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pev
@@ -6,8 +7,8 @@ PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 
-MAINTAINER=	danilogondolfo@gmail.com
-COMMENT=	The PE analysis toolkit
+MAINTAINER=	danilo@FreeBSD.org
+COMMENT=	PE analysis toolkit
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
