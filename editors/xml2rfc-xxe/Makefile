@@ -12,6 +12,9 @@ COMMENT=	xml2rfc configuration for XMLMind XML editor
 
 RUN_DEPENDS=	xxe:${PORTSDIR}/editors/xxe
 
+DEPRECATED=	Depends on editors/xxe, which is due to be removed due to lack of maintainer
+EXPIRATION_DATE=	2013-11-15
+
 USE_ZIP=	YES
 NO_BUILD=	YES
 WRKSRC=		${WRKDIR}/xml2rfc
