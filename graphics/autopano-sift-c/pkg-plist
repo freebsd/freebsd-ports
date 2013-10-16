@@ -1,0 +1,8 @@
+bin/autopano
+bin/autopano-c-complete.sh
+bin/autopano-sift-c
+bin/generatekeys
+man/man1/autopano-c-complete.1.gz
+man/man1/autopano.1.gz
+man/man1/generatekeys.1.gz
+man/man7/autopano-sift-c.7.gz
