@@ -25,6 +25,12 @@ bin/llvm-symbolizer33
 bin/llvm-tblgen33
 bin/macho-dump33
 bin/opt33
+%%LIT%%bin/lit33
+%%LIT%%/llvm33bin/lit
+%%LIT%%bin/llvm-lit33
+%%LIT%%/llvm33bin/llvm-lit
+%%LIT%%bin/FileCheck33
+%%LIT%%/llvm33bin/FileCheck
 llvm33/bin/bugpoint
 llvm33/bin/llc
 llvm33/bin/lli
@@ -710,6 +716,20 @@ llvm33/lib/libLTO.a
 llvm33/lib/libLTO.so
 llvm33/lib/libprofile_rt.a
 llvm33/lib/libprofile_rt.so
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit33
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit33/LitConfig.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit33/LitTestCase.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit33/ProgressBar.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit33/ShCommands.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit33/ShUtil.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit33/Test.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit33/TestFormats.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit33/TestRunner.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit33/TestingConfig.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit33/Util.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit33/__init__.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit33/discovery.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit33/main.py
 %%PORTDOCS%%%%DOCSDIR%%/html.tar.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/.buildinfo
 %%PORTDOCS%%%%DOCSDIR%%/html/AliasAnalysis.html
@@ -960,5 +980,6 @@ llvm33/lib/libprofile_rt.so
 @dirrm llvm33/include
 @dirrm llvm33/bin
 @dirrm llvm33
+%%LIT%%@dirrm %%PYTHON_SITELIBDIR%%/lit33
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
