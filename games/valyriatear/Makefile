@@ -2,43 +2,51 @@
 # $FreeBSD$
 
 PORTNAME=	valyriatear
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.6.0
 CATEGORIES=	games
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	Bertram25
-GH_PROJECT=	ValyriaTear
-GH_COMMIT=	3af3e06
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Open Source J-RPG based on the Hero of Allacrost engine
 
+# Valyria Tear underwent a licensing audit.
+# The main game is GPLv2 but artwork/music/fonts are a variety of licenses:
+# GPLv2, GPLv3 (with font exception), OFL-1.1, CC0, CC-BY-3, and CC-BY-SA-3.
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
-		vorbis:${PORTSDIR}/audio/libvorbis \
-		png15:${PORTSDIR}/graphics/png \
-		jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libpng.so:${PORTSDIR}/graphics/png
 
-USES=		cmake gettext iconv
+USE_GITHUB=	yes
+GH_ACCOUNT=	Bertram25
+GH_PROJECT=	ValyriaTear
+GH_COMMIT=	a324297
+
+USES=		cmake iconv
+CMAKE_ARGS=	-DUSE_PCH_COMPILATION=OFF
 USE_SDL=	sdl image ttf
 USE_GL=		gl
 USE_OPENAL=	yes
 USE_LUA=	5.1
-USE_GCC=	yes # problems in luabind; recheck with next update
-LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB} -lintl
+INSTALLS_ICONS=	yes
 
 PORTDOCS=	*
+PORTDATA=	*
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_DEFAULT=DOCS NLS
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MDOCS}
+NLS_CMAKE_OFF=	-DDISABLE_TRANSLATIONS=ON
+NLS_CMAKE_ON=	-DDISABLE_TRANSLATIONS=OFF
+NLS_USES=	gettext
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+		${WRKSRC}/CMake/Modules/*.cmake
+
 post-install:
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/MANUAL ${DOCSDIR}/
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/MANUAL ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
