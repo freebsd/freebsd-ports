@@ -11,10 +11,10 @@ MASTER_SITES=	GOOGLE_CODE \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Texture Tools with support for DirectX 10 texture formats
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		tiff:${PORTSDIR}/graphics/tiff \
-		IlmImf:${PORTSDIR}/graphics/OpenEXR
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
 
 USES=		cmake
 CMAKE_ARGS=	-DNVTT_SHARED=TRUE
@@ -27,9 +27,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 PORTDOCS=	NVIDIA_Texture_Tools_README.txt ChangeLog
 
 OPTIONS_DEFINE=	COMPRESSUI DOCS
+OPTIONS_DEFAULT=DOCS
+
 COMPRESSUI_DESC=Build compressor UI (requires Qt4)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCOMPRESSUI}
@@ -40,7 +41,7 @@ PLIST_SUB+=	COMPRESSUI=""
 PLIST_SUB+=	COMPRESSUI="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		does not build
@@ -57,12 +58,10 @@ post-patch:
 		${WRKSRC}/src/CMakeLists.txt
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
