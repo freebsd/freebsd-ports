@@ -49,11 +49,9 @@ OPTIONS_DEFINE=	ASSERTS DOCS
 
 ASSERTS_DESC=	Enable assertions (thread unsafe)
 
-CONFIGURE_ARGS+=	--enable-optimized
+CONFIGURE_ARGS+=	--enable-optimized --enable-shared
 # Build some docs manually later
 CONFIGURE_ARGS+=	--disable-docs
-
-MAN1=		clang${LLVM_SUFFIX}.1
 
 PLIST_SUB+=		PORTVERSION=${PORTVERSION}
 
@@ -66,7 +64,6 @@ COMMANDS=	c-index-test \
 		clang-tblgen
 FIRST_COMMAND=	${COMMANDS:C/^/XXXX/1:MXXXX*:C/^XXXX//}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MASSERTS}
@@ -113,18 +110,18 @@ post-build:
 .endif
 
 post-install:
-	${LN} -sf ${LLVM_PREFIX}/bin/clang ${LLVM_PREFIX}/bin/clang-cpp
+	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/clang ${STAGEDIR}${LLVM_PREFIX}/bin/clang-cpp
 	${INSTALL_SCRIPT} ${WRKDIR}/llvm-wrapper.sh \
-	     ${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX}
+	     ${STAGEDIR}${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX}
 .for command in ${COMMANDS:C/^/XXXX/1:NXXXX*}
-	${LN} -f ${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX} \
-	    ${PREFIX}/bin/${command}${LLVM_SUFFIX}
+	${LN} -f ${STAGEDIR}${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX} \
+	    ${STAGEDIR}${PREFIX}/bin/${command}${LLVM_SUFFIX}
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
-	cd ${WRKSRC}/tools/clang/docs/tools && ${GMAKE} install-html install-ps
+	cd ${WRKSRC}/tools/clang/docs/tools && ${GMAKE} DESTDIR=${STAGEDIR}/ install-html install-ps
 .endif
 	${INSTALL_MAN} ${WRKSRC}/tools/clang/docs/tools/clang.1 \
-	    ${MANPREFIX}/man/man1/clang${LLVM_SUFFIX}.1
+	    ${STAGEDIR}${MANPREFIX}/man/man1/clang${LLVM_SUFFIX}.1
 
 PLIST_FILE_LIST=	${COMMANDS:S|^|bin/|} \
 			lib/libclang*
@@ -140,6 +137,7 @@ build-plist:
 	(ls ${PLIST_FILE_LIST:S|^|${LLVM_PREFIX}/|}; \
 	    ${FIND} ${PLIST_DIR_LIST:S|^|${LLVM_PREFIX}/|} -type f) | \
 	    ${SED} -e 's|${PREFIX}/||' | ${SORT} >> ${PLIST}
+	echo man/man1/clang${LLVM_SUFFIX}.1.gz >> ${PLIST}
 	${FIND} ${DOCSDIR} -type f | \
 	    ${SED} -e 's|${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | \
 	    ${SORT} >> ${PLIST}
