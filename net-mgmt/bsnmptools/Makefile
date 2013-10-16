@@ -9,7 +9,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.ringlet.net/~shteryana/snmp/ CENKES
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	carlos.santos@hp.com
+MAINTAINER=	unixmania@gmail.com
 COMMENT=	Snmp client tools
 
 USE_LDCONFIG=	yes
