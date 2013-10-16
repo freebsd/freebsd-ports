@@ -18,12 +18,11 @@ LDFLAGS+=	-lm
 CPP=		#
 USE_CSTD=	gnu89
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/../${PORTNAME} ${PREFIX}/bin/
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/../${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 	cd ${WRKSRC}/../example && ${INSTALL_DATA} \
 		dancer.config dancer.users \
-		dancer.funcs dancer.explain ${DATADIR}
+		dancer.funcs dancer.explain ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
