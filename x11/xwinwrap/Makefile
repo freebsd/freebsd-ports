@@ -16,6 +16,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 USE_BZIP2=	yes
 USE_XORG=	x11 xproto xrender xext
 PLIST_FILES=	bin/${PORTNAME}
+MAKE_ARGS+=	PREFIX=${PREFIX}
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
