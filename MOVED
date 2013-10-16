@@ -5106,3 +5106,4 @@ lang/ruby-lua4||2013-10-15|Has expired: Does not work with Ruby 1.9
 dns/dnsdoctor||2013-10-15|Has expired: Does not work with Ruby 1.9
 devel/py-psyco||2013-10-15|Has expired: only bulds with lang/python26
 x11-toolkits/ruby-tk||2013-10-15|Has expired: Does not work with Ruby 1.9
+emulators/dolphin-emu-devel|emulators/dolphin-emu|2013-10-16|Has reached stable quality
