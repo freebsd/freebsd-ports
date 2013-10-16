@@ -19,9 +19,6 @@ USES=		perl5
 USE_PERL5=	configure patch
 CONFIGURE_ARGS=	</dev/null
 
-MAN3=		POE::Component::RRDTool.3
-
-NO_STAGE=	yes
 post-patch:
 	@${PERL} -pi -e 's/(\(\$$maj, \$$min, \$$sub\))/$$1; $$1/' \
 		${WRKSRC}/Makefile.PL
