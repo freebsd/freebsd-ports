@@ -1,0 +1,11 @@
+A simple tool to convert packet captures in 802.11 format to Ethernet format.
+Lots of tools can only understand Ethernet link types, so I wrote this 
+tool to convert captures to a format that they can understand.
+Note that this tool is really only useful for encrypted traffic.
+
+Specify a wireless packet capture as an input file, and the name of the
+desired Ethernet-format output file. Wlan2eth will only convert data frames
+to the output file, which will likely result in a significantly smaller output
+packet capture file. Note that wlan2eth will only convert unencrypted frames.
+
+WWW: http://www.willhackforsushi.com/?page_id=79
