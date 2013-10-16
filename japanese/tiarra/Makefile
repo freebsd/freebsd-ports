@@ -17,13 +17,15 @@ USE_PERL5=	run
 USE_BZIP2=	yes
 USE_RC_SUBR=	tiarra
 NO_BUILD=	yes
-NEED_ROOT=	yes
 
 USERS=		${TIARRA_USER}
 GROUPS=		${TIARRA_GROUP}
 
 SUB_FILES=	pkg-message
 SUB_LIST=	TIARRA_USER=${TIARRA_USER}
+
+PLIST_SUB=	TIARRA_USER=${TIARRA_USER} \
+		TIARRA_GROUP=${TIARRA_GROUP}
 
 TIARRA_USER=	tiarra
 TIARRA_GROUP=	tiarra
@@ -32,10 +34,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/tiarra
 	@${TAR} cfC - ${WRKSRC} . | \
 		${TAR} xfC - ${STAGEDIR}${PREFIX}/tiarra
-	@${CHOWN} -R ${BINOWN}:${BINGRP} ${STAGEDIR}${PREFIX}/tiarra
 	@${MKDIR} ${STAGEDIR}${PREFIX}/tiarra/log
-	@${CHOWN} -R ${TIARRA_USER}:${TIARRA_GROUP} \
-		${STAGEDIR}${PREFIX}/tiarra/log
 	@${CHMOD} o-rwx ${STAGEDIR}${PREFIX}/tiarra/log
 
 .include <bsd.port.mk>

@@ -255,5 +255,6 @@ tiarra/sample.conf
 tiarra/tiarra
 tiarra/tiarra-conf.el
 tiarra/tiarra-conf.l
+@exec chown %%TIARRA_USER%%:%%TIARRA_GROUP%% %D/tiarra/log
 @dirrmtry tiarra/log
 @dirrmtry tiarra
