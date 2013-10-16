@@ -13,15 +13,15 @@ COMMENT=	IRC proxy server
 WRKSRC=		${WRKDIR}/tircproxy-0.4
 GNU_CONFIGURE=	YES
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tircproxy ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/tircproxy ${STAGEDIR}${PREFIX}/sbin
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${ECHO_MSG} "===>   Installing tircproxy docs in ${DOCSDIR}"
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
