@@ -42,8 +42,8 @@ post-patch:
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
-	cd ${WRKSRC}/documentation && ${MAKE} docinstall
-	cd ${WRKSRC}/test && ${MAKE} install
+	cd ${WRKSRC}/documentation && ${MAKE} ${MAKE_ARGS} docinstall
+	cd ${WRKSRC}/test && ${MAKE} ${MAKE_ARGS} install
 .endif
 
 .include <bsd.port.mk>
