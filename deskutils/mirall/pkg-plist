@@ -1,9 +1,72 @@
 bin/owncloud
-etc/ownCloud/sync-exclude.lst
+@unexec if cmp -s %D/etc/ownCloud/sync-exclude.lst.sample %D/etc/ownCloud/sync-exclude.lst; then rm -f %D/etc/ownCloud/sync-exclude.lst; fi
+etc/ownCloud/sync-exclude.lst.sample
+@exec if [ ! -f %D/etc/ownCloud/sync-exclude.lst ] ; then cp -p %D/%F %B/sync-exclude.lst; fi
 lib/libowncloudsync.so
 lib/libowncloudsync.so.0
 lib/libowncloudsync.so.1.4.1
 share/applications/owncloud.desktop
+%%PORTDOCS%%%%DOCSDIR%%/html/.buildinfo
+%%PORTDOCS%%%%DOCSDIR%%/html/_images/icon.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_images/ignored_files_editor.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_images/menu.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_images/settings_account.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_images/settings_general.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_images/settings_network.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_images/sync_protocol.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_images/wizard_overview.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_images/wizard_targetfolder.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_images/wizard_url.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_images/wizard_user.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/accountsetup.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/advancedusage.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/architecture.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/building.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/conffile.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/glossary.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/introduction.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/options.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/owncloud.1.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/troubleshooting.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/visualtour.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/ajax-loader.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/basic.css
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/comment-bright.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/comment-close.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/comment.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/default.css
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/doctools.js
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/down-pressed.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/down.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/file.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/jquery.js
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/minus.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/plus.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/pygments.css
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/searchtools.js
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/sidebar.js
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/underscore.js
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/up-pressed.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/up.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/websupport.js
+%%PORTDOCS%%%%DOCSDIR%%/html/accountsetup.html
+%%PORTDOCS%%%%DOCSDIR%%/html/advancedusage.html
+%%PORTDOCS%%%%DOCSDIR%%/html/architecture.html
+%%PORTDOCS%%%%DOCSDIR%%/html/building.html
+%%PORTDOCS%%%%DOCSDIR%%/html/conffile.html
+%%PORTDOCS%%%%DOCSDIR%%/html/genindex.html
+%%PORTDOCS%%%%DOCSDIR%%/html/glossary.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/introduction.html
+%%PORTDOCS%%%%DOCSDIR%%/html/objects.inv
+%%PORTDOCS%%%%DOCSDIR%%/html/options.html
+%%PORTDOCS%%%%DOCSDIR%%/html/owncloud.1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/search.html
+%%PORTDOCS%%%%DOCSDIR%%/html/searchindex.js
+%%PORTDOCS%%%%DOCSDIR%%/html/troubleshooting.html
+%%PORTDOCS%%%%DOCSDIR%%/html/visualtour.html
+%%PORTDOCS%%%%DOCSDIR%%/ownCloudClientManual.pdf
 share/icons/hicolor/128x128/apps/owncloud.png
 share/icons/hicolor/22x22/apps/owncloud.png
 share/icons/hicolor/32x32/apps/owncloud.png
@@ -52,5 +115,10 @@ share/owncloud/i18n/mirall_zh_TW.qm
 @dirrmtry share/icons/hicolor/128x128
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_static
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_sources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
-@dirrm etc/ownCloud
+@dirrmtry etc/ownCloud
