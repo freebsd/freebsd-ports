@@ -1,0 +1,21 @@
+--- aux/broctl/CMakeLists.txt.orig	2012-07-20 07:00:08.000000000 -0700
++++ aux/broctl/CMakeLists.txt	2013-09-26 19:39:22.000000000 -0700
+@@ -209,15 +209,15 @@
+ InstallPackageConfigFile(
+     ${CMAKE_CURRENT_BINARY_DIR}/etc/broctl.cfg
+     ${ETC}
+-    broctl.cfg)
++    broctl.cfg.sample)
+ InstallPackageConfigFile(
+     ${CMAKE_CURRENT_SOURCE_DIR}/etc/networks.cfg
+     ${ETC}
+-    networks.cfg)
++    networks.cfg.sample)
+ InstallPackageConfigFile(
+     ${CMAKE_CURRENT_SOURCE_DIR}/etc/node.cfg
+     ${ETC}
+-    node.cfg)
++    node.cfg.sample)
+ 
+ ########################################################################
+ ## Packaging Setup
