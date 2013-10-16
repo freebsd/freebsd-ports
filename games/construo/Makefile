@@ -11,7 +11,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A fun construction toy
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_XORG=	sm ice x11 xext xxf86vm
 USE_GL=		gl glu
 
@@ -19,18 +19,25 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lGLU
 CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --datadir=${DATADIR}
 
+PLIST_FILES=	bin/${PORTNAME} bin/${PORTNAME}.x11
+PORTDATA=	*
+
+DESKTOP_ENTRIES="Construo" \
+		"${COMMENT}" \
+		"" \
+		"${PORTNAME}" \
+		"Game;Simulation;" \
+		""
+
 OPTIONS_DEFINE=	GLUT
 OPTIONS_DEFAULT=GLUT
 GLUT_DESC=	Use glut
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGLUT}
 USE_GL+=	glut
-PLIST_SUB+=	GLUTBIN:=""
-.else
-PLIST_SUB+=	GLUTBIN:="@comment "
+PLIST_FILES+=	bin/${PORTNAME}.glut
 .endif
 
 post-patch:
@@ -45,9 +52,9 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MGLUT}
-	cd ${PREFIX}/bin && ${LN} -s ${PORTNAME}.glut ${PORTNAME}
+	cd ${STAGEDIR}${PREFIX}/bin && ${LN} -s ${PORTNAME}.glut ${PORTNAME}
 .else
-	cd ${PREFIX}/bin && ${LN} -s ${PORTNAME}.x11 ${PORTNAME}
+	cd ${STAGEDIR}${PREFIX}/bin && ${LN} -s ${PORTNAME}.x11 ${PORTNAME}
 .endif
 
 .include <bsd.port.mk>
