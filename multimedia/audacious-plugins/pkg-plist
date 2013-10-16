@@ -123,8 +123,10 @@ share/audacious/ui/playlist.ui
 %%NLS%%share/locale/be/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/da/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/de/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/el/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/es/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/es_AR/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/es_MX/LC_MESSAGES/audacious-plugins.mo
