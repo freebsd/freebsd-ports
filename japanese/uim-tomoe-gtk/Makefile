@@ -10,9 +10,9 @@ MASTER_SITES=	SF/tomoe/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	UIM helper program for Tomoe
 
-LIB_DEPENDS=	tomoe.1:${PORTSDIR}/japanese/tomoe \
-		tomoe-gtk.1:${PORTSDIR}/japanese/libtomoe-gtk \
-		uim.8:${PORTSDIR}/textproc/uim
+LIB_DEPENDS=	libtomoe.so:${PORTSDIR}/japanese/tomoe \
+		libtomoe-gtk.so:${PORTSDIR}/japanese/libtomoe-gtk \
+		libuim.so:${PORTSDIR}/textproc/uim
 
 USE_GNOME=	lthack gtk20
 USES=		gettext gmake pkgconfig
@@ -23,5 +23,4 @@ PLIST_FILES=	bin/uim-tomoe-gtk \
 
 CONFIGURE_ENV+=	GMSGFMT="${LOCALBASE}/bin/msgfmt"
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
