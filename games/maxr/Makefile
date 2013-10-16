@@ -17,6 +17,9 @@ USE_SDL=	sdl mixer net
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+PLIST_FILES=	bin/${PORTNAME}
+PORTDATA=	*
+
 DESKTOP_ENTRIES="M.A.X.R." \
 		"Mechanized Assault and Exploration Reloaded" \
 		"${DATADIR}/maxr.png" \
@@ -24,7 +27,6 @@ DESKTOP_ENTRIES="M.A.X.R." \
 		"Game;StrategyGame;" \
 		false
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^LIBS=/ s|-lSDL_|`${SDL_CONFIG} --libs` &|' \
 		-e '/^LIBS=/ s|-lSDL |`${SDL_CONFIG} --libs` |' \
