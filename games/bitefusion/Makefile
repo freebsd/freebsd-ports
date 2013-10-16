@@ -12,14 +12,20 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A snake game with 8 levels
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_SDL=	sdl
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 PLIST_FILES=	bin/bitefusion
 
-NO_STAGE=	yes
+DESKTOP_ENTRIES="Bitefusion" \
+		"${COMMENT}" \
+		"" \
+		"${PORTNAME}" \
+		"Game;ArcadeGame;" \
+		""
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-linux-gnu|-portbld-freebsd|' \
 		${WRKSRC}/configure
