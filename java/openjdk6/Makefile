@@ -56,7 +56,7 @@ USES=		compiler gmake iconv motif
 .include "${.CURDIR}/../openjdk6/Makefile.icedtea"
 .include "${.CURDIR}/../openjdk6/Makefile.test"
 
-EXTRA_PATCHES=	${ICEDTEA_PATCHES}
+EXTRA_PATCHES+=	${ICEDTEA_PATCHES}
 
 # java extracts directly to the cwd
 WRKSRC=		${WRKDIR}
