@@ -770,6 +770,7 @@
     SUBDIR += py-plone.protect
     SUBDIR += py-plone.session
     SUBDIR += py-posix1e
+    SUBDIR += py-potr
     SUBDIR += py-pow
     SUBDIR += py-pyclamd
     SUBDIR += py-pycrypto

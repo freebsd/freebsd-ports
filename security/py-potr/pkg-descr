@@ -1,0 +1,3 @@
+This is a pure Python OTR implementation; it does not bind to libotr.
+
+WWW: https://github.com/afflux/pure-python-otr/
