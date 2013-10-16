@@ -14,19 +14,19 @@ COMMENT=	Tries to recover lost partition tables and file systems
 LICENSE=	GPLv2
 
 USES=		gmake
-MAN8=		gpart.8
-PLIST_FILES=	sbin/gpart
+PLIST_FILES=	sbin/gpart man/man8/gpart.8.gz
 CFLAGS+=	-std=c99
 
-.if defined(WANT_STATIC)
-MAKE_ARGS+=	LDFLAGS=-static
-.endif
+OPTIONS_DEFINE=	STATIC
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} != "i386" && ${ARCH} != "alpha" && ${ARCH} != "amd64"
 BROKEN=		Only compiles on i386, amd64 and alpha.
 .endif
 
-.include <bsd.port.post.mk>
+.if ${PORT_OPTIONS:MSTATIC}
+LDFLAGS+=	-static
+.endif
+
+.include <bsd.port.mk>
