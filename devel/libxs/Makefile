@@ -12,6 +12,7 @@ COMMENT=	Open source lightweight messaging layer
 GNU_CONFIGURE=	yes
 USES=	pathfix pkgconfig
 USE_LDCONFIG=	yes
+USE_GCC=	yes
 
 OPTIONS_DEFINE=	DEBUG DOCS PLUGINS ZMQ
 EXTERNAL_DESC=	PGM extension from ports
