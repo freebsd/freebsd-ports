@@ -6,7 +6,7 @@
 # See http://www.infracaninophile.co.uk/articles/sphinxse.html
 
 PORTNAME=	sphinxsearch
-PORTVERSION=	2.0.9
+PORTVERSION=	2.1.2
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://sphinxsearch.com/files/
 DISTNAME=	sphinx-${PORTVERSION}-release
@@ -20,7 +20,7 @@ LICENSE=	GPLv2
 # If expat is present on the system and configure finds it, it will
 # unconditionally link the output binary against it.  There's no way
 # of turning this off.  So for consistency, make sure it's always on.
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 OPTIONS_DEFINE=	ICONV ID64 LIBSTEMMER MYSQL OPTIMIZED_CFLAGS PGSQL \
 		SYSLOG UNIXODBC
@@ -39,7 +39,6 @@ OPTIONS_DEFAULT=	ICONV MYSQL SYSLOG
 CONFLICTS=	sphinxsearch-devel-[0-9]* dpsearch-[0-9]* rdb-[0-9]* \
 		swish++-[0-9]* xaira-[0-9]*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # The port will successfully compile with both PGSQL and MYSQL support
@@ -152,9 +151,9 @@ PORTEXAMPLES=	*
 
 .if ${PORT_OPTIONS:MDOCS}
 DOCS=		doc/sphinx.css doc/sphinx.html doc/sphinx.txt doc/sphinx.xml
-MAN1=		indexer.1 indextool.1 search.1 spelldump.1
-MAN8=		searchd.8
 DOCSRC=		${WRKSRC}/doc
+MAN1SRC=	indexer.1 indextool.1 search.1 spelldump.1
+MAN8SRC=	searchd.8
 .endif
 
 post-extract:
@@ -183,42 +182,37 @@ post-patch:
 do-install: install-bin install-docs install-man install-examples
 
 install-bin:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/indexer   ${PREFIX}/bin/indexer
-	${INSTALL_PROGRAM} ${WRKSRC}/src/indextool ${PREFIX}/bin/indextool
-	${INSTALL_PROGRAM} ${WRKSRC}/src/search	   ${PREFIX}/bin/search
-	${INSTALL_PROGRAM} ${WRKSRC}/src/spelldump ${PREFIX}/bin/spelldump
-	${INSTALL_PROGRAM} ${WRKSRC}/src/searchd   ${PREFIX}/sbin/searchd
-	${INSTALL_DATA}	   ${WRKSRC}/sphinx.conf.dist ${CFGFILE}.sample
+	${INSTALL_PROGRAM} ${WRKSRC}/src/indexer   ${STAGEDIR}${PREFIX}/bin/indexer
+	${INSTALL_PROGRAM} ${WRKSRC}/src/indextool ${STAGEDIR}${PREFIX}/bin/indextool
+	${INSTALL_PROGRAM} ${WRKSRC}/src/search	   ${STAGEDIR}${PREFIX}/bin/search
+	${INSTALL_PROGRAM} ${WRKSRC}/src/spelldump ${STAGEDIR}${PREFIX}/bin/spelldump
+	${INSTALL_PROGRAM} ${WRKSRC}/src/searchd   ${STAGEDIR}${PREFIX}/sbin/searchd
+	${INSTALL_DATA}	   ${WRKSRC}/sphinx.conf.dist ${STAGEDIR}${CFGFILE}.sample
 
 install-docs:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
 install-man:
 .if ${PORT_OPTIONS:MDOCS}
-.for man in ${MAN1}
-	${INSTALL_MAN} ${DOCSRC}/${man} ${MANPREFIX}/man/man1/${man}
+.for man in ${MAN1SRC}
+	${INSTALL_MAN} ${DOCSRC}/${man} ${STAGEDIR}${MANPREFIX}/man/man1/${man}
 .endfor
-.for man in ${MAN8}
-	${INSTALL_MAN} ${DOCSRC}/${man} ${MANPREFIX}/man/man8/${man}
+.for man in ${MAN8SRC}
+	${INSTALL_MAN} ${DOCSRC}/${man} ${STAGEDIR}${MANPREFIX}/man/man8/${man}
 .endfor
 .endif
 
 install-examples:
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for example in ${EXAMPLES}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${example} ${EXAMPLESDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${example} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 .endif
-
-post-install-cfg:
-	@if [ ! -f ${CFGFILE} ]; then \
-	  ${CP} -p ${CFGFILE}.sample ${CFGFILE} ; \
-	fi
 
 .include <bsd.port.mk>
