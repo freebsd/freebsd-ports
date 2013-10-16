@@ -12,13 +12,21 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Find all matching pairs of icons as fast as possible
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_SDL=	sdl mixer image ttf
 
 CPPFLAGS+=	`${SDL_CONFIG} --cflags`
 LDFLAGS+=	`${SDL_CONFIG} --libs`
 
-MAN6=		concentration.6
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man6/${PORTNAME}.6.gz
+PORTDATA=	*
 
-NO_STAGE=	yes
+DESKTOP_ENTRIES="Concentration" \
+		"${COMMENT}" \
+		"${DATADIR}/pics/cover.png" \
+		"${PORTNAME}" \
+		"Game;LogicGame;" \
+		""
+
 .include <bsd.port.mk>
