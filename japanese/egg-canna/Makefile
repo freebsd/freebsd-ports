@@ -18,7 +18,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_EMACS=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${EMACS_MAJOR_VER} >= 23
@@ -45,9 +44,10 @@ do-build:
 		-f batch-byte-compile ${DISTNAME}
 
 do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
 	@${INSTALL_DATA} ${WRKSRC}/${DISTNAME} \
-		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
+		${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
 	@${INSTALL_DATA} ${WRKSRC}/${DISTNAME}c \
-		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
+		${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
 
 .include <bsd.port.post.mk>
