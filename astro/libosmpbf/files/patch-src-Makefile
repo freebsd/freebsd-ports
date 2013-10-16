@@ -19,12 +19,12 @@
 -	install -m 644 -g root -o root ../include/osmpbf/osmpbf.h $(DESTDIR)/usr/include/osmpbf
 -	install -m 644 -g root -o root ../include/osmpbf/fileformat.pb.h $(DESTDIR)/usr/include/osmpbf
 -	install -m 644 -g root -o root ../include/osmpbf/osmformat.pb.h $(DESTDIR)/usr/include/osmpbf
-+	install -m 755 -d $(PREFIX)/lib
-+	install -m 644 libosmpbf.a $(PREFIX)/lib
-+	install -m 755 -d $(PREFIX)/include/osmpbf
-+	install -m 644 ../include/osmpbf/osmpbf.h $(PREFIX)/include/osmpbf
-+	install -m 644 ../include/osmpbf/fileformat.pb.h $(PREFIX)/include/osmpbf
-+	install -m 644 ../include/osmpbf/osmformat.pb.h $(PREFIX)/include/osmpbf
++	install -m 755 -d $(DESTDIR)$(PREFIX)/lib
++	install -m 644 libosmpbf.a $(DESTDIR)$(PREFIX)/lib
++	install -m 755 -d $(DESTDIR)$(PREFIX)/include/osmpbf
++	install -m 644 ../include/osmpbf/osmpbf.h $(DESTDIR)$(PREFIX)/include/osmpbf
++	install -m 644 ../include/osmpbf/fileformat.pb.h $(DESTDIR)$(PREFIX)/include/osmpbf
++	install -m 644 ../include/osmpbf/osmformat.pb.h $(DESTDIR)$(PREFIX)/include/osmpbf
  
  clean:
  	rm -f *.pb.h *.pb.cc *.pb.o libosmpbf.a
