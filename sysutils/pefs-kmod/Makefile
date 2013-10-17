@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pefs
-DISTVERSION=	2013-09-14
+DISTVERSION=	2013-10-13
 CATEGORIES=	sysutils kld
 MASTER_SITES=	https://pefs.googlecode.com/files/
 PKGNAMESUFFIX=	-kmod

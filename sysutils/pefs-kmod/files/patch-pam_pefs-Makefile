@@ -1,0 +1,9 @@
+--- lib/libpam/modules/pam_pefs/Makefile.orig	2013-10-13 11:08:05.000000000 -0700
++++ lib/libpam/modules/pam_pefs/Makefile	2013-10-13 11:08:33.000000000 -0700
+@@ -26,3 +26,6 @@
+ .PATH: ${SYS}/fs/pefs
+ .PATH: ${SYS}/crypto/rijndael
+ .PATH: ${SYS}/crypto/sha2
++
++# Fix build without OBJDIR for shared components
++.NOPATH: ${OBJS}
