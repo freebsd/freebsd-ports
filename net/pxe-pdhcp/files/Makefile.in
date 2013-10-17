@@ -15,7 +15,7 @@ FILES=		README.md
 FILESDIR?=	${PREFIX}/share/doc/${PROG}
 
 beforeinstall:
-	mkdir -p ${FILESDIR}
+	mkdir -p ${DESTDIR}${FILESDIR}
 .endif
 
 .include <bsd.prog.mk>
