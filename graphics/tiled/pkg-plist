@@ -13,6 +13,10 @@ lib/tiled/plugins/liblua.so
 lib/tiled/plugins/libreplicaisland.so
 lib/tiled/plugins/libtengine.so
 lib/tiled/plugins/libtmw.so
+man/man1/automappingconverter.1.gz
+man/man1/tiled.1.gz
+man/man1/tmxrasterizer.1.gz
+man/man1/tmxviewer.1.gz
 share/applications/tiled.desktop
 share/icons/hicolor/16x16/apps/tiled.png
 share/icons/hicolor/32x32/apps/tiled.png
