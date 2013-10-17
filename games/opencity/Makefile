@@ -19,16 +19,9 @@ USE_GL=		gl glu
 USE_GCC=	any
 
 PORTDOCS=	*
+PORTDATA=	*
 
-MAN6=		opencity.6
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MDOCS}
-post-patch:
-	@${REINPLACE_CMD} -e '/install-data-am/ s|install-docsDATA||' \
-		${WRKSRC}/docs/Makefile.in
-.endif
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
 
 .include <bsd.port.mk>
