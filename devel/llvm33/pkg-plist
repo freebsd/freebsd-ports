@@ -716,7 +716,6 @@ llvm33/lib/libLTO.a
 llvm33/lib/libLTO.so
 llvm33/lib/libprofile_rt.a
 llvm33/lib/libprofile_rt.so
-%%LIT%%%%PYTHON_SITELIBDIR%%/lit33
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit33/LitConfig.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit33/LitTestCase.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit33/ProgressBar.py
