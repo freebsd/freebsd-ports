@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libass
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.2
 CATEGORIES=	multimedia devel
 MASTER_SITES=	GOOGLE_CODE
 
@@ -21,5 +21,8 @@ USE_XZ=	yes
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}.so.*
 
 .include <bsd.port.mk>
