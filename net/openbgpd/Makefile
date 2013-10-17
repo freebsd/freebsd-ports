@@ -14,29 +14,21 @@ COMMENT=	Free implementation of the Border Gateway Protocol, Version 4
 
 CONFLICTS=	zebra-[0-9]* quagga-[0-9]*
 
-OPTIONS_DEFINE=	IPV6LLPEER
-OPTIONS_DEFAULT=IPV6LLPEER
-IPV6LLPEER_DESC=Support nexthop using IPv6 link-local address
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not build
-.endif
-
 WRKSRC=		${WRKDIR}
-MANCOMPRESSED=	yes
 USE_RC_SUBR=	${PORTNAME}
-PLIST_FILES=	sbin/bgpctl sbin/bgpd
+PLIST_FILES=	sbin/bgpctl sbin/bgpd man/man5/bgpd.conf.5.gz \
+		man/man8/bgpctl.8.gz man/man8/bgpd.8.gz
 SUB_FILES=	pkg-message
 USERS=		_bgpd
 GROUPS=		_bgpd
 
-MAN5=		bgpd.conf.5
-MAN8=		bgpctl.8 bgpd.8
+OPTIONS_DEFINE=	IPV6LLPEER
+OPTIONS_DEFAULT=IPV6LLPEER
+IPV6LLPEER_DESC=Support nexthop using IPv6 link-local address
 
-.if !defined(WITHOUT_IPV6LLPEER)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MIPV6LLPEER)
 MAKE_ARGS=	-DIPV6_LINKLOCAL_PEER
 .endif
 
@@ -46,7 +38,4 @@ post-patch:
 		${WRKSRC}/bgpd/bgpd.conf.5		\
 		${WRKSRC}/bgpctl/bgpctl.8
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
