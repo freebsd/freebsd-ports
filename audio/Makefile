@@ -15,15 +15,6 @@
     SUBDIR += adplay
     SUBDIR += afsp
     SUBDIR += aften
-    SUBDIR += akode
-    SUBDIR += akode-plugins-ffmpeg
-    SUBDIR += akode-plugins-jack
-    SUBDIR += akode-plugins-mpc
-    SUBDIR += akode-plugins-mpeg
-    SUBDIR += akode-plugins-oss
-    SUBDIR += akode-plugins-pulseaudio
-    SUBDIR += akode-plugins-resampler
-    SUBDIR += akode-plugins-xiph
     SUBDIR += alac
     SUBDIR += alienwah
     SUBDIR += alsa-lib
