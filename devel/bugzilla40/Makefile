@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla
-PORTVERSION=	4.0.10
+PORTVERSION=	4.0.11
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -43,8 +43,6 @@ EMPTY_DIRS_LIST=data graphs contrib lib t xt
 .if ${PORT_OPTIONS:MMODPERL}
 USE_APACHE_RUN=	22+
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
@@ -175,4 +173,4 @@ do-install:	.SILENT
 		${FIND} . -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${WWWDIR}/contrib/{}" \;
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

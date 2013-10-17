@@ -11,9 +11,7 @@ DISTNAME=	Bugzilla-ja-${PORTVERSION}-template
 MAINTAINER=	bugzilla@FreeBSD.org
 COMMENT=	Japanese localization for Bugzilla
 
-RUN_DEPENDS=	bugzilla>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla44
-
-LATEST_LINK=	${PKGNAMEPREFIX}bugzilla44
+RUN_DEPENDS=	bugzilla44>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla44
 
 NO_WRKSUBDIR=	yes
 
