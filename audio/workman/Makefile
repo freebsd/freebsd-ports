@@ -12,17 +12,11 @@ DISTNAME=	WorkMan-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Look-based CD player tool
 
-LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
+LIB_DEPENDS=	libxview.so:${PORTSDIR}/x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/workman
 USES=		imake
-NO_STAGE=	yes
 USE_XORG=	x11 xext
-MAN1=		workman.1
-MAN5=		workmandb.5
-PLIST_FILES=	bin/workman lib/help/workman.info
-
-post-install:
-	${GZIP_CMD} ${PREFIX}/man/man5/workmandb.5
+PLIST_FILES=	bin/workman lib/help/workman.info man/man1/workman.1.gz man/man5/workmandb.5.gz
 
 .include <bsd.port.mk>
