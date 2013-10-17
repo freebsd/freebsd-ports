@@ -1,0 +1,11 @@
+--- Makefile.orig	2013-10-18 04:17:46.000000000 +1100
++++ Makefile	2013-10-18 04:17:55.000000000 +1100
+@@ -2,7 +2,7 @@
+ SHARE_PREFIX=$(PREFIX)/share/xpired
+ CFLAGS=`sdl-config --cflags` -DUNIX -DPREFIX=\"$(PREFIX)\" -DSHARE_PREFIX=\"$(SHARE_PREFIX)\"
+ LDFLAGS=`sdl-config --libs` -lSDL -lSDL_mixer -lSDL_image -lSDL_gfx
+-CC=gcc
++CC=cc
+ 
+ BINARIES = xpired xpiredit
+ 
