@@ -24,6 +24,8 @@ DOCS_DESC=	Install README
 PLIST_FILES=	lib/liblite-malloc-shared.so \
 		lib/liblite-malloc-static.a
 
+MAKE_ARGS+=	CXX=${CXX}
+
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
