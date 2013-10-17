@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seed7
-DISTVERSION=	05_20130908
+DISTVERSION=	05_20131013
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -13,8 +13,9 @@ COMMENT=	High-level, extensible programming language
 
 LICENSE=	LGPL21
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 USE_XORG=	x11
-MAN1=		s7.1 s7c.1
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
@@ -32,7 +33,6 @@ S7_LIBS=	s7_comp.a s7_con.a s7_draw.a s7_data.a seed7_05.a
 PORTEXAMPLES=	*
 PORTDOCS=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 MAKEFILE=	mk_freebsd.mk
@@ -47,29 +47,29 @@ do-build:
 
 do-install:
 #	install interpreter and compiler
-	${INSTALL_PROGRAM} ${WRKSRC}/../bin/s7 ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/../prg/s7c ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/../bin/s7 ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/../prg/s7c ${STAGEDIR}${PREFIX}/bin
 #	install seed7 library
-	${INSTALL} -d ${SEED7_LIBRARY}
-	cd ${WRKSRC}/../lib && ${COPYTREE_SHARE} '*.s7i' ${SEED7_LIBRARY}
+	${INSTALL} -d ${STAGEDIR}${SEED7_LIBRARY}
+	cd ${WRKSRC}/../lib && ${COPYTREE_SHARE} '*.s7i' ${STAGEDIR}${SEED7_LIBRARY}
 #	install static libraries
-	${INSTALL} -d ${S7_LIB_DIR}
+	${INSTALL} -d ${STAGEDIR}${S7_LIB_DIR}
 .for s7_lib in ${S7_LIBS}
-	${INSTALL_DATA} ${WRKSRC}/../bin/${s7_lib} ${S7_LIB_DIR}
+	${INSTALL_DATA} ${WRKSRC}/../bin/${s7_lib} ${STAGEDIR}${S7_LIB_DIR}
 .endfor
 #	install PORTDOCS
 .if ${PORT_OPTIONS:MDOCS}
-	${INSTALL} -d ${DOCSDIR}
-	cd ${WRKSRC}/../doc && ${COPYTREE_SHARE} \* ${DOCSDIR}
+	${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/../doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
 .endif
 #	install PORTEXAMPLES
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${INSTALL} -d ${EXAMPLESDIR}
-	cd ${WRKSRC}/../prg && ${COPYTREE_SHARE} '*.dna *.sd7 *.dat *.s7i' ${EXAMPLESDIR}
+	${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/../prg && ${COPYTREE_SHARE} '*.dna *.sd7 *.dat *.s7i' ${STAGEDIR}${EXAMPLESDIR}
 .endif
 #	insall man pages
-	${INSTALL_DATA} ${WRKSRC}/../doc/s7.1 ${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/../doc/s7c.1 ${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/../doc/s7.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/../doc/s7c.1 ${STAGEDIR}${PREFIX}/man/man1
 
 regression-test: build
 	cd ${WRKSRC} && ${MAKE} -f ${MAKEFILE} test
