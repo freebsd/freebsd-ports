@@ -11,50 +11,45 @@ MASTER_SITES=	http://www.fishies.org.uk/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Fly a little plane around and shoot things and drop bombs
 
-USE_AUTOTOOLS=	libtool
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_SDL=	sdl
 USE_DOS2UNIX=	yes
+SUB_FILES=	${PORTNAME}
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-PORTDOCS=	README
+PLIST_FILES=	bin/${PORTNAME} libexec/${PORTNAME}
+PORTDATA=	*
+PORTDOCS=	*
+CPPFLAGS+=	-DAP_PATH="\"${DATADIR}/\""
 
 DESKTOP_ENTRIES="Apricots" \
-		"Fly a little plane around and shoot things and drop bombs" \
+		"${COMMENT}" \
 		"" \
-		"apricots" \
+		"${PORTNAME}" \
 		"Game;ArcadeGame;" \
 		false
 
-OPTIONS_DEFINE=	OPENAL
-OPTIONS_DEFAULT=OPENAL
+OPTIONS_DEFINE=	DOCS OPENAL
+OPTIONS_DEFAULT=DOCS OPENAL
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENAL}
 USE_OPENAL=	al alut
+CPPFLAGS+=	-DAP_AUDIO_OPENAL
+LDFLAGS+=	-L${LOCALBASE}/lib -lopenal -lalut
 .endif
 
-post-patch:
-	@${CP} -pP ${WRKSRC}/configure.in ${WRKSRC}/configure.in.in
-.if ${PORT_OPTIONS:MOPENAL}
-	@${REINPLACE_CMD} -e '/^LIBS = / s|$$| -lopenal -lalut|' \
-		${WRKSRC}/apricots/Makefile.in
-.else
-	@${REINPLACE_CMD} -e 's|-DAP_AUDIO_OPENAL||' ${WRKSRC}/configure
-.endif
-	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure ${WRKSRC}/ac*.m4
+do-build:
+	cd ${WRKSRC}/apricots && ${CXX} ${CXXFLAGS} ${CPPFLAGS} ${LDFLAGS} \
+		`${SDL_CONFIG} --cflags --libs` *.cpp -o ${PORTNAME}
 
-.if ${PORT_OPTIONS:MDOCS}
-post-install:
-	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+do-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/apricots/${PORTNAME} ${STAGEDIR}${PREFIX}/libexec
+	${MKDIR} ${STAGEDIR}${DATADIR}
+.for ext in wav shapes psf cfg
+	${INSTALL_DATA} ${WRKSRC}/apricots/*.${ext} ${STAGEDIR}${DATADIR}
 .endfor
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
