@@ -11,19 +11,21 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Command line Java app for processing OpenStreetMap data
 
-NO_STAGE=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
+PLIST_FILES=	bin/${PORTNAME}
+PORTDATA=	*
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(MYAPP_HOME=\).*|\1${DATADIR}|' ${WRKSRC}/bin/osmosis
 
 do-install:
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "script config lib" ${DATADIR}/
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/osmosis ${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "script config lib" ${STAGEDIR}${DATADIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/osmosis ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
