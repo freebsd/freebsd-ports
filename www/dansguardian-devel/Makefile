@@ -3,6 +3,7 @@
 
 PORTNAME=	dansguardian
 PORTVERSION=	2.12.0.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/dansguardian
 
@@ -13,7 +14,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USE_RC_SUBR=	dansguardian
-USES=		pkgconfig
+USES=		iconv pkgconfig
 USE_BZIP2=	yes
 
 CONFLICTS=	dansguardian-2.10.*
@@ -97,8 +98,7 @@ PLIST_SUB+=		SCANNERS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNTLM}
-CONFIGURE_ARGS+=	--enable-ntlm ${ICONV_CONFIGURE_BASE}
-USES+=			iconv
+CONFIGURE_ARGS+=	--enable-ntlm
 PLIST_SUB+=		NTLMCONF=""
 .else
 PLIST_SUB+=		NTLMCONF="@comment "
