@@ -1,5 +1,5 @@
---- Makefile.orig	2013-01-02 08:02:25.000000000 +0900
-+++ Makefile	2013-01-02 08:02:30.000000000 +0900
+--- Makefile.orig	2011-10-23 17:03:36.000000000 +0900
++++ Makefile	2013-10-17 12:59:19.000000000 +0900
 @@ -51,7 +51,7 @@
  		$(MTRACE_OBJS) $(MSTAT_OBJS)
  SRCS          = $(OBJS:.o=.c)
@@ -9,3 +9,19 @@
  
  LINT          = splint
  LINTFLAGS     = $(MCAST_INCLUDE) $(filter-out -W -Wall -Werror, $(CFLAGS)) -posix-lib -weak -skipposixheaders
+@@ -70,13 +70,13 @@
+ install: $(EXECS)
+ 	@install -d $(DESTDIR)$(prefix)/sbin
+ 	@install -d $(DESTDIR)$(sysconfdir)
+-	@install -d $(DESTDIR)$(datadir)
++	@[ -z "${doc}" ] || install -d $(DESTDIR)$(datadir)
+ 	@install -d $(DESTDIR)$(mandir)
+ 	@for file in $(EXECS); do \
+ 		install -m 0755 $$file $(DESTDIR)$(prefix)/sbin/$$file; \
+ 	done
+ 	@install -b -m 0644 $(CONFIG) $(DESTDIR)$(sysconfdir)/$(CONFIG)
+-	@for file in $(DISTFILES); do \
++	@[ -z "${doc}" ] || for file in $(DISTFILES); do \
+ 		install -m 0644 $$file $(DESTDIR)$(datadir)/$$file; \
+ 	done
+ 	@for file in $(MANS); do \

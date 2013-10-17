@@ -18,16 +18,17 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	sysconfdir=${PREFIX}/etc \
 		mandir=${MAN8PREFIX}/man/man8
-
-MAN8=		map-mbone.8 mrouted.8 mrinfo.8 mtrace.8
 PORTDOCS=	README AUTHORS ChangeLog
-
 PLIST_FILES=	sbin/map-mbone sbin/mrouted sbin/mrinfo sbin/mtrace \
-		etc/mrouted.conf
+		etc/mrouted.conf man/man8/map-mbone.8.gz \
+		man/man8/mrinfo.8.gz man/man8/mrouted.8.gz \
+		man/man8/mtrace.8.gz
+OPTIONS_DEFINE=	DOCS
 
-.ifdef	NOPORTDOCS
-MAKE_ARGS+=	datadir=${WRKDIR}/doc
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+MAKE_ARGS+=	datadir=${DOCSDIR} doc=yes
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
