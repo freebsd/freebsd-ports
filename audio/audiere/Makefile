@@ -11,7 +11,6 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	High-level audio API
 
 GNU_CONFIGURE=	yes
-NO_STAGE=	yes
 USES=		gmake
 WANT_WX=	yes
 USE_AUTOTOOLS=	autoconf
@@ -49,7 +48,7 @@ CONFIGURE_REPLACES+='/AC_CHECK_LIB/ s|dumb|no_&|'
 .endif
 
 .if ${PORT_OPTIONS:MCDAUDIO}
-LIB_DEPENDS+=	cdaudio:${PORTSDIR}/audio/libcdaudio
+LIB_DEPENDS+=	libcdaudio.so:${PORTSDIR}/audio/libcdaudio
 .else
 CONFIGURE_REPLACES+='/AC_CHECK_LIB/ s|cdaudio|no_&|'
 .endif
@@ -57,14 +56,14 @@ CONFIGURE_REPLACES+='/AC_CHECK_LIB/ s|cdaudio|no_&|'
 # since dumb is a static lib and it depends on ogg, we should
 # link audiere with ogg as well
 .if ${PORT_OPTIONS:MVORBIS} || ${PORT_OPTIONS:MDUMB}
-LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis \
-		ogg:${PORTSDIR}/audio/libogg
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libogg.so:${PORTSDIR}/audio/libogg
 .else
 CONFIGURE_REPLACES+='/AC_CHECK_HEADER/ s|vorbis|no_&|'
 .endif
 
 .if ${PORT_OPTIONS:MSPEEX}
-LIB_DEPENDS+=	speex:${PORTSDIR}/audio/speex
+LIB_DEPENDS+=	libspeex.so:${PORTSDIR}/audio/speex
 .else
 CONFIGURE_REPLACES+='/AC_CHECK_HEADER/ s|speex|no_&|'
 .endif
@@ -75,11 +74,9 @@ post-patch:
 		${WRKSRC}/configure.in
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
