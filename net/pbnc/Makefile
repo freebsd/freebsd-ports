@@ -22,18 +22,19 @@ PORTDOCS= 	pbnc.readme
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-install:
 	${REINPLACE_CMD} 's,^#!/usr/bin/perl,#!${PERL},' ${WRKSRC}/pbnc.pl
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/pbnc.cfg ${PREFIX}/etc/pbnc.cfg
-	${INSTALL_SCRIPT} ${WRKSRC}/pbnc.pl ${PREFIX}/bin/pbnc.pl
+	${INSTALL_DATA} ${WRKSRC}/pbnc.cfg ${STAGEDIR}${PREFIX}/etc/pbnc.cfg
+	${INSTALL_SCRIPT} ${WRKSRC}/pbnc.pl ${STAGEDIR}${PREFIX}/bin/pbnc.pl
+
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+post-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
