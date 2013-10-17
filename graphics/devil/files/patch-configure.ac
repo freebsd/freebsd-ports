@@ -1,0 +1,19 @@
+--- configure.ac.orig	2009-03-08 23:43:03.000000000 +0300
++++ configure.ac	2013-10-17 08:08:52.015773416 +0400
+@@ -330,6 +330,8 @@
+ dnl Give users chance to disable check for these two libraries that can't be disabled 
+ dnl by any other means...
+ dnl 
++AC_LANG_PUSH([C++])
++
+ AC_ARG_WITH([libsquish],
+ 	    [AS_HELP_STRING([--with-squish[[=yes/no]]],
+ 			    [Do you want to use the squish library if possible? (enables HW accelerated DXT compression, default="yes")]) ],
+@@ -346,6 +348,7 @@
+ AS_IF([test "x$with_nvtt" = "xyes"],
+       [DEVIL_CHECK_NVIDIA_TEXTOOLS])
+ 
++AC_LANG_POP([C++])
+ dnl
+ dnl ILUT APIs library checking
+ dnl
