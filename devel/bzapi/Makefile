@@ -2,7 +2,7 @@
 
 PORTNAME=	bzapi
 DISTVERSION=	165:82e75bdd00be
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/pgollucci
 
@@ -25,17 +25,16 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.80011:${PORTSDIR}/www/p5-Catalyst-Runtime 
 		p5-Slurp>=0:${PORTSDIR}/devel/p5-Slurp \
 		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
 		p5-Data-Walk>=0:${PORTSDIR}/devel/p5-Data-Walk \
-		bugzilla>=3.6:${PORTSDIR}/devel/bugzilla
+		bugzilla40>=4.0.0:${PORTSDIR}/devel/bugzilla40
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/script/*.pl	${PREFIX}/bin
-	@(cd ${WRKSRC}/extension/BzAPI; ${COPYTREE_SHARE} . ${PREFIX}/www/bugzilla/extensions/BzAPI)
-	@(cd ${WRKSRC}/lib/Bugzilla; ${COPYTREE_SHARE} . ${SITE_PERL}/Bugzilla)
+	${INSTALL_SCRIPT} ${WRKSRC}/script/*.pl	${STAGEDIR}${PREFIX}/bin
+	@(cd ${WRKSRC}/extension/BzAPI; ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/www/bugzilla/extensions/BzAPI)
+	@(cd ${WRKSRC}/lib/Bugzilla; ${COPYTREE_SHARE} . ${STAGEDIR}${SITE_PERL}/Bugzilla)
 
 .include <bsd.port.mk>

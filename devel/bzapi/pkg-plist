@@ -4,24 +4,24 @@ bin/bugzilla_api_fastcgi.pl
 bin/bugzilla_api_server.pl
 bin/bugzilla_api_test.pl
 %%SITE_PERL%%/Bugzilla/API.pm
-%%SITE_PERL%%/Bugzilla/API/Model/Utils.pm
-%%SITE_PERL%%/Bugzilla/API/Model/Count.pm
-%%SITE_PERL%%/Bugzilla/API/Model/Attachment.pm
-%%SITE_PERL%%/Bugzilla/API/Model/User.pm
-%%SITE_PERL%%/Bugzilla/API/Model/Configuration.pm
-%%SITE_PERL%%/Bugzilla/API/Model/Bug.pm
 %%SITE_PERL%%/Bugzilla/API/Controller/Attachment.pm
-%%SITE_PERL%%/Bugzilla/API/Controller/REST.pm
+%%SITE_PERL%%/Bugzilla/API/Controller/Bug.pm
 %%SITE_PERL%%/Bugzilla/API/Controller/Configuration.pm
+%%SITE_PERL%%/Bugzilla/API/Controller/Count.pm
+%%SITE_PERL%%/Bugzilla/API/Controller/REST.pm
 %%SITE_PERL%%/Bugzilla/API/Controller/Root.pm
 %%SITE_PERL%%/Bugzilla/API/Controller/User.pm
-%%SITE_PERL%%/Bugzilla/API/Controller/Bug.pm
-%%SITE_PERL%%/Bugzilla/API/Controller/Count.pm
 %%SITE_PERL%%/Bugzilla/API/Controller/Utils.pm
+%%SITE_PERL%%/Bugzilla/API/Model/Attachment.pm
+%%SITE_PERL%%/Bugzilla/API/Model/Bug.pm
+%%SITE_PERL%%/Bugzilla/API/Model/Configuration.pm
+%%SITE_PERL%%/Bugzilla/API/Model/Count.pm
+%%SITE_PERL%%/Bugzilla/API/Model/User.pm
+%%SITE_PERL%%/Bugzilla/API/Model/Utils.pm
 %%SITE_PERL%%/Bugzilla/API/Request.pm
+www/bugzilla/extensions/BzAPI/Config.pm
 www/bugzilla/extensions/BzAPI/Extension.pm
 www/bugzilla/extensions/BzAPI/template/en/default/config.json.tmpl
-www/bugzilla/extensions/BzAPI/Config.pm
 @dirrm www/bugzilla/extensions/BzAPI/template/en/default
 @dirrm www/bugzilla/extensions/BzAPI/template/en
 @dirrm www/bugzilla/extensions/BzAPI/template
