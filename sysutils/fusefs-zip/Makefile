@@ -10,33 +10,29 @@ COMMENT=	FUSE filesystem to mount ZIP archives with write support
 
 LICENSE=	LGPL3
 
-LIB_DEPENDS=	zip:${PORTSDIR}/archivers/libzip
+LIB_DEPENDS=	libzip.so:${PORTSDIR}/archivers/libzip
 BUILD_DEPENDS=	libzip>=0.11.1:${PORTSDIR}/archivers/libzip
 
-USE_GMAKE=	yes
-USES=		fuse pkgconfig
+USES=		gmake fuse pkgconfig
 
-PLIST_FILES=	bin/${PORTNAME}
-MAN1=		${PORTNAME}.1
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 PORTDOCS=	README TODO changelog
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-do-build:
-	(cd ${WRKSRC} && ${GMAKE} -C lib && \
-		${GMAKE} CXXFLAGS="-I${LOCALBASE}/include")
+post-patch:
+	@${REINPLACE_CMD} -e 's|make|$${MAKE}|' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
