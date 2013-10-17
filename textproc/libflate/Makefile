@@ -12,6 +12,8 @@ COMMENT=	Template library used to deal with html code in CGI applications
 PLIST_FILES=	lib/${PORTNAME}.a \
 		bin/checktpl
 
+MAKE_ARGS+=	CC=${CC}
+
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
