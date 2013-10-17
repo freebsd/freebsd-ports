@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	packetdrill
-PORTVERSION=	0.0.20130626
+PORTVERSION=	0.0.20130820
 CATEGORIES=	net ipv6
 MASTER_SITES=	LOCAL/hrs
-DISTNAME=	${PORTNAME}-77954df72a78
+DISTNAME=	${PORTNAME}-ea8f2fec724d
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Network stack testing tool
@@ -14,13 +14,13 @@ LICENSE=	GPLv2
 USES=		bison
 MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
+PORTDATA=	packetdrill.el packetdrill.vim
 PORTDOCS=	README
-PORTEXAMPLES=	fr-4pkt-sack-bsd.pkt fr-4pkt-sack-linux.pkt
+PORTEXAMPLES=	tests
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_DEFAULT=DOCS EXAMPLES
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-configure:
@@ -42,13 +42,17 @@ pre-build:
 .endfor
 
 post-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC}/contrib && ${INSTALL_DATA} ${PORTDATA} \
+	    ${STAGEDIR}${DATADIR}
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/examples && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ${PORTEXAMPLES} \
+	    ${STAGEDIR}${EXAMPLESDIR}
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
