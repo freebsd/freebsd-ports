@@ -4,4 +4,4 @@
 WANT_PGSQL_VER=	93
 
 NO_STAGE=	yes
-.include "${.CURDIR}/../postgresql90-pltcl/Makefile"
+.include "${.CURDIR}/../postgresql91-pltcl/Makefile"

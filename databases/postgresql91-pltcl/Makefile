@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	postgresql
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases tcl
-PKGNAMESUFFIX?= ${DISTV:S/.//}-pltcl
+PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
 
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	Module for using Tcl to write SQL functions
