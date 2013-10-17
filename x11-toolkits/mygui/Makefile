@@ -10,11 +10,9 @@ DISTNAME=	MyGUI_${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Fast, simple and flexible GUI system for Ogre engine
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
-BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so:${PORTSDIR}/graphics/ogre3d \
-		${LOCALBASE}/lib/libOIS.so:${PORTSDIR}/devel/ois
-RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so:${PORTSDIR}/graphics/ogre3d \
-		${LOCALBASE}/lib/libOIS.so:${PORTSDIR}/devel/ois
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libOgreMain.so:${PORTSDIR}/graphics/ogre3d \
+		libOIS.so:${PORTSDIR}/devel/ois
 
 USE_ZIP=	yes
 USES=		cmake pkgconfig
@@ -23,7 +21,6 @@ USE_LDCONFIG=	yes
 USE_GCC=	yes
 USE_DOS2UNIX=	*.cpp *.h
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/install/ s|lib/pkgconfig|libdata/pkgconfig|' \
 		${WRKSRC}/CMake/ConfigureBuild.cmake
