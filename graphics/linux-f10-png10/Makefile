@@ -13,6 +13,8 @@ COMMENT=	RPM of the PNG lib (old 1.0 version, Linux Fedora 10)
 
 CONFLICTS=	linux-png10-[0-9]* linux-f8-png10-[0-9]*
 
+DEPRECATED=	Old version of png, use graphics/linux-f10-png instead
+
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 LINUX_NAME=	lib${PORTNAME}
