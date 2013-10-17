@@ -507,7 +507,7 @@ post-install-script:
 	@${FIND} -ds ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR} -type f -print | ${SED} -E -e \
 		's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST}
 	@${FIND} -ds ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR} -type d -print | ${SED} -E -e \
-		's,^${STAGEDIR}${STAGEDIR}${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
+		's,^${STAGEDIR}${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/${GEMS_DIR} 2>/dev/null || true" >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
 	@${ECHO_CMD} "@unexec rmdir %D/${DOC_DIR} 2>/dev/null || true" >> ${TMPPLIST}
