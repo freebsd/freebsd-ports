@@ -28,7 +28,7 @@ IPV6LLPEER_DESC=Support nexthop using IPv6 link-local address
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MIPV6LLPEER)
+.if ${PORT_OPTIONS:MIPV6LLPEER}
 MAKE_ARGS=	-DIPV6_LINKLOCAL_PEER
 .endif
 
