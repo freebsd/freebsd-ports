@@ -231,7 +231,7 @@ build-plist:
 .endfor
 .for command in ${LIT_COMMANDS}
 	${ECHO_CMD} %%LIT%%bin/${command}${LLVM_SUFFIX} >> ${PLIST}
-	${ECHO_CMD} %%LIT%%${LLVM_PREFIX:S|${PREFIX}||}bin/${command} >> ${PLIST}
+	${ECHO_CMD} %%LIT%%${LLVM_PREFIX:S|${PREFIX}/||}/bin/${command} >> ${PLIST}
 .endfor
 	${FIND} ${STAGEDIR}${LLVM_PREFIX} -type f -o -type l | \
 	    ${GREP} -v 'lit$$' | ${GREP} -v 'FileCheck$$' | \

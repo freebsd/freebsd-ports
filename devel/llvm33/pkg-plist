@@ -26,11 +26,11 @@ bin/llvm-tblgen33
 bin/macho-dump33
 bin/opt33
 %%LIT%%bin/lit33
-%%LIT%%/llvm33bin/lit
+%%LIT%%llvm33/bin/lit
 %%LIT%%bin/llvm-lit33
-%%LIT%%/llvm33bin/llvm-lit
+%%LIT%%llvm33/bin/llvm-lit
 %%LIT%%bin/FileCheck33
-%%LIT%%/llvm33bin/FileCheck
+%%LIT%%llvm33/bin/FileCheck
 llvm33/bin/bugpoint
 llvm33/bin/llc
 llvm33/bin/lli
