@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqwebmail
-PORTVERSION=	5.6.1
+PORTVERSION=	5.7.0
 CATEGORIES=	mail www
 MASTER_SITES=	SF/courier/webmail/${PORTVERSION}
 
@@ -75,8 +75,10 @@ PLIST_SUB+=	CGIBINDIR=${CGIBINDIR} \
 MAN1=		maildirmake.1
 MAN8=		deliverquota.8
 
-EXTRA_DOCS=	README README.logindomainlist.html README.pam sqwebmail/ChangeLog \
-		maildir/README.maildirquota.txt maildir/README.sharedfolders.txt
+EXTRA_DOCS=	README README.logindomainlist.html README.pam \
+		libs/sqwebmail/ChangeLog \
+		libs/maildir/README.maildirquota.txt \
+		libs/maildir/README.sharedfolders.txt
 
 INSTALL_TARGET=	install-strip install-configure
 
@@ -170,33 +172,33 @@ CONFIGURE_ARGS+=--with-db=db
 post-patch:
 .if ! ${PORT_OPTIONS:MFAM}
 	@${REINPLACE_CMD} -e 's|$$LIBFAM||g; s|HAVE_FAM|DO_NOT_HAVE_FAM|g' \
-		${WRKSRC}/maildir/configure
+		${WRKSRC}/libs/maildir/configure
 .endif
 	@${REINPLACE_CMD} -e 's|LIBPCRE=-lpcre|LIBPCRE="-L${LOCALBASE}/lib -lpcre"|g' \
-		${WRKSRC}/maildir/configure
+		${WRKSRC}/libs/maildir/configure
 
-	@${REINPLACE_CMD} -e 's|@echo|echo|g'  ${WRKSRC}/maildir/configure
+	@${REINPLACE_CMD} -e 's|@echo|echo|g'  ${WRKSRC}/libs/maildir/configure
 
 	@${REINPLACE_CMD} -e 's|-lpcre|-L${LOCALBASE}/lib &|g' \
-		${WRKSRC}/sqwebmail/Makefile.in
+		${WRKSRC}/libs/sqwebmail/Makefile.in
 
 	@${REINPLACE_CMD} -e 's|\$$(testmaildirfilter_LDADD)|& \$$(LIBPCRE)|g; \
 		s|$$(LINK) $$(maildirkw_LDFLAGS)|$$(CXXLINK) $$(maildirkw_LDFLAGS)|' \
-		${WRKSRC}/maildir/Makefile.in
+		${WRKSRC}/libs/maildir/Makefile.in
 
 	@${REINPLACE_CMD} -e 's|^case x$$lockmethod in|${TEST} \&\& &|g' \
-		${WRKSRC}/liblock/configure
+		${WRKSRC}/libs/liblock/configure
 
 	@${REINPLACE_CMD} -e 's|@LIBS@|@LIBS@ -rpath=:${LOCALBASE}/lib/courier-authlib|' \
-		${WRKSRC}/sqwebmail/Makefile.in
+		${WRKSRC}/libs/sqwebmail/Makefile.in
 
-	@${REINPLACE_CMD} -e 's|mkdir -p|${MKDIR}|g' ${WRKSRC}/pcp/configure
+	@${REINPLACE_CMD} -e 's|mkdir -p|${MKDIR}|g' ${WRKSRC}/libs/pcp/configure
 
 	@${REINPLACE_CMD} -e 's|@LIBTOOL@|${LIBTOOL}| ; \
 		s|$$(SHELL) $$(MKINSTALLDIRS)|$$(MKINSTALLDIRS)| ; \
 		s|$$(libdir)/charset|$$(prefix)/libdata/charset|g ; \
 		s|$$(libdir)/t-charset|$$(prefix)/libdata/t-charset|g' \
-		${WRKSRC}/pcp/intl/Makefile.in
+		${WRKSRC}/libs/pcp/intl/Makefile.in
 
 post-install:
 #	${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
