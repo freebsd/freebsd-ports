@@ -407,6 +407,7 @@ share/xsessions/e16-gnome3-session.desktop
 %%NLS%%share/locale/uk/LC_MESSAGES/e16.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/e16.mo
 %%PORTDOCS%%%%DOCSDIR%%/e16.html
+%%PORTDOCS%%man/man1/e16.1.gz
 @dirrm %%DATADIR%%/themes/winter/tooltips/images
 @dirrm %%DATADIR%%/themes/winter/tooltips
 @dirrm %%DATADIR%%/themes/winter/sound
