@@ -14,11 +14,11 @@ USE_XORG=	x11 ice sm xt
 USES=		bison
 GNU_CONFIGURE=	yes
 
-MAN1=		yabasic.1
 PORTDOCS=	yabasic.htm
-PLIST_FILES=	bin/yabasic
+PLIST_FILES=	bin/yabasic man/man1/yabasic.1.gz
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|= -DUNIX|= @X_CFLAGS@ -DUNIX|g" ${WRKSRC}/Makefile.in
 
@@ -26,9 +26,9 @@ post-build test:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/yabasic.htm ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/yabasic.htm ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
