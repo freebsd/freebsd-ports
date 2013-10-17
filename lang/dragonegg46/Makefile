@@ -2,6 +2,7 @@
 
 PORTNAME=	dragonegg46
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTNAME=	dragonegg-${PORTVERSION}.src
@@ -12,13 +13,15 @@ COMMENT=	GCC plugin to use the LLVM backend
 CONFLICTS=	dragonegg46-devel-3*
 
 BUILD_DEPENDS+=	llvm>=${PORTVERSION}:${PORTSDIR}/devel/llvm
-RUN_DEPENDS+=	${CC}:${PORTSDIR}/lang/gcc \
-		llvm>=${PORTVERSION}:${PORTSDIR}/devel/llvm
+RUN_DEPENDS+=	llvm>=${PORTVERSION}:${PORTSDIR}/devel/llvm
+
+DEPRECATED=	Upgrade to dragonegg46-33 or dragonegg47-33
+EXPIRATION_DATE=	2013-11-01
 
 OPTIONS_DEFINE=	DOCS
 
+USES=		compiler:features gmake
 USE_GCC=	4.6
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
 DRAGONEGG_RELEASE=	${PORTVERSION:C/\.r[0-9]*//}
@@ -31,11 +34,16 @@ MAKE_ARGS=	GCC=${LOCALBASE}/bin/${CC}
 
 PLIST_FILES=		${GCC_LIBDIR}/${DRAGONEGG_SO}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=		README
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_FEATURES:Mlibc++}
+IGNORE= dragonegg can't work if LLVM was built with libc++
 .endif
 
 post-patch:
@@ -45,11 +53,12 @@ post-patch:
 	    ${WRKSRC}/README
 
 do-install:
+	${MKDIR} ${STAGEDIR}${LOCALBASE}/${GCC_LIBDIR}
 	${INSTALL_LIB} ${WRKSRC}/dragonegg.so \
-	    ${LOCALBASE}/${GCC_LIBDIR}/${DRAGONEGG_SO}
+	    ${STAGEDIR}${LOCALBASE}/${GCC_LIBDIR}/${DRAGONEGG_SO}
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
