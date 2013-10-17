@@ -329,12 +329,3 @@
  # Check whether --with-authpgsqlrc was given.
  if test "${with_authpgsqlrc+set}" = set; then :
    withval=$with_authpgsqlrc; authpgsqlrc="$withval"
-@@ -14541,7 +14817,7 @@
- 	LIBS="$saveLIBS"
- fi
- 
--if test "$doauthmysql" != "yes"
-+if test "$doauthsqlite" != "yes"
- then
- 	SQLITE_LIBS=""
- 	SQLITE_CFLAGS=""

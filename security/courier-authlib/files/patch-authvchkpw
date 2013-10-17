@@ -587,18 +587,17 @@
 +	close(DIR);
 +}
 +
---- userdb/Makefile.in.orig	2011-11-13 02:14:49.000000000 +0100
-+++ userdb/Makefile.in	2012-06-24 12:12:52.000000000 +0200
-@@ -49,7 +49,7 @@
- 	$(srcdir)/../missing $(srcdir)/Makefile.am \
- 	$(srcdir)/Makefile.in $(srcdir)/config.h.in \
+--- userdb/Makefile.in.orig	2013-09-13 12:42:56.000000000 +0200
++++ userdb/Makefile.in	2013-10-16 12:27:57.000000000 +0200
+@@ -91,6 +91,7 @@
+ 	$(top_srcdir)/configure $(am__configure_deps) \
+ 	$(srcdir)/config.h.in $(srcdir)/userdb.pl.in \
  	$(srcdir)/makeuserdb.in $(srcdir)/pw2userdb.in \
--	$(srcdir)/userdb.pl.in $(top_srcdir)/configure
-+	$(srcdir)/userdb.pl.in $(srcdir)/vchkpw2userdb.in $(top_srcdir)/configure
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- am__aclocal_m4_deps = $(top_srcdir)/configure.in
- am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
-@@ -58,7 +58,7 @@
++	$(srcdir)/vchkpw2userdb.in \
+ 	$(top_srcdir)/../depcomp ../AUTHORS ../COPYING ../ChangeLog \
+ 	../INSTALL ../NEWS ../README ../config.guess ../config.sub \
+ 	../depcomp ../install-sh ../missing ../ltmain.sh \
+@@ -105,7 +106,7 @@
   configure.lineno config.status.lineno
  mkinstalldirs = $(install_sh) -d
  CONFIG_HEADER = config.h
@@ -607,7 +606,7 @@
  CONFIG_CLEAN_VPATH_FILES =
  LTLIBRARIES = $(noinst_LTLIBRARIES)
  libuserdb_la_LIBADD =
-@@ -255,7 +255,7 @@
+@@ -365,7 +366,7 @@
  		userdb.html.in userdb.8.in \
  		userdbpw.html.in userdbpw.8.in
  
@@ -616,7 +615,7 @@
  noinst_DATA = makeuserdb.html userdb.html userdbpw.html
  userdbpw_SOURCES = userdbpw.c
  userdbpw_LDADD = libuserdb.la @HMACLIB@ @MD5LIB@ @SHA1LIB@ @CRYPTLIBS@
-@@ -326,6 +326,8 @@
+@@ -434,6 +435,8 @@
  	cd $(top_builddir) && $(SHELL) ./config.status $@
  pw2userdb: $(top_builddir)/config.status $(srcdir)/pw2userdb.in
  	cd $(top_builddir) && $(SHELL) ./config.status $@
