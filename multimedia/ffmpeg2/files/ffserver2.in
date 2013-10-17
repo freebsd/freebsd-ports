@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 
-# PROVIDE: ffserver-head
+# PROVIDE: ffserver2
 # REQUIRE: NETWORKING
 # KEYWORD: shutdown
 
