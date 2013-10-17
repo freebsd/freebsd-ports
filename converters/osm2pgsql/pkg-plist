@@ -1,5 +1,0 @@
-bin/nodecachefilereader
-bin/osm2pgsql
-%%DATADIR%%/900913.sql
-%%DATADIR%%/default.style
-@dirrm %%DATADIR%%
