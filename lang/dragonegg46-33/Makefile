@@ -2,7 +2,7 @@
 
 PORTNAME=	dragonegg
 PORTVERSION=	3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 PKGNAMESUFFIX=	${USE_GCC:S/.//g}-${LLVM_SUFFIX}
@@ -14,8 +14,7 @@ COMMENT=	GCC plugin to use the LLVM backend
 CONFLICTS=	dragonegg46-devel-3.3*
 
 BUILD_DEPENDS+=	llvm-config${LLVM_SUFFIX}:${PORTSDIR}/devel/llvm${LLVM_SUFFIX}
-RUN_DEPENDS+=	${CC}:${PORTSDIR}/lang/gcc \
-		llvm-config${LLVM_SUFFIX}:${PORTSDIR}/devel/llvm${LLVM_SUFFIX}
+RUN_DEPENDS+=	llvm-config${LLVM_SUFFIX}:${PORTSDIR}/devel/llvm${LLVM_SUFFIX}
 
 LLVM_SUFFIX=	${PORTVERSION:S/.//g}
 
