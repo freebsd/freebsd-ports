@@ -1,4 +1,5 @@
 include/gc.h
+include/gc/cord.h
 include/gc/gc.h
 include/gc/gc_allocator.h
 include/gc/gc_amiga_redirects.h
@@ -23,40 +24,5 @@ lib/libgc.so.1
 lib/libgccpp.so
 lib/libgccpp.so.1
 libdata/pkgconfig/bdw-gc.pc
-share/doc/gc/README
-share/doc/gc/README.DGUX386
-share/doc/gc/README.Mac
-share/doc/gc/README.MacOSX
-share/doc/gc/README.OS2
-share/doc/gc/README.amiga
-share/doc/gc/README.arm.cross
-share/doc/gc/README.autoconf
-share/doc/gc/README.changes
-share/doc/gc/README.contributors
-share/doc/gc/README.cords
-share/doc/gc/README.darwin
-share/doc/gc/README.dj
-share/doc/gc/README.environment
-share/doc/gc/README.ews4800
-share/doc/gc/README.hp
-share/doc/gc/README.linux
-share/doc/gc/README.macros
-share/doc/gc/README.rs6000
-share/doc/gc/README.sgi
-share/doc/gc/README.solaris2
-share/doc/gc/README.uts
-share/doc/gc/README.win32
-share/doc/gc/README.win64
-share/doc/gc/barrett_diagram
-share/doc/gc/debugging.html
-share/doc/gc/gc.man
-share/doc/gc/gcdescr.html
-share/doc/gc/gcinterface.html
-share/doc/gc/leak.html
-share/doc/gc/overview.html
-share/doc/gc/porting.html
-share/doc/gc/scale.html
-share/doc/gc/simple_example.html
-share/doc/gc/tree.html
-@dirrm share/doc/gc
-@dirrm include/gc
+man/man3/gc.3.gz
+@dirrmtry include/gc

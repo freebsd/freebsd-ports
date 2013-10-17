@@ -1,7 +1,7 @@
---- doc/gc.man.orig	Mon Oct  8 10:23:01 2001
-+++ doc/gc.man	Mon Oct  8 10:28:31 2001
-@@ -9,7 +9,7 @@
- ... malloc(...) ...
+--- doc/gc.man.orig	2012-07-25 14:54:48.000000000 +0300
++++ doc/gc.man	2012-07-25 14:57:40.000000000 +0300
+@@ -11,7 +11,7 @@
+ void * GC_realloc(void *ptr, size_t size);
  .br
  .sp
 -cc ... gc.a
@@ -9,11 +9,10 @@
  .LP
  .SH DESCRIPTION
  .I GC_malloc
-@@ -67,6 +67,48 @@
- This may temporarily write protect pages in the heap.  See the README file for more information on how this interacts with system calls that write to the heap.
+@@ -88,6 +88,48 @@
  .LP
  Other facilities not discussed here include limited facilities to support incremental collection on machines without appropriate VM support, provisions for providing more explicit object layout information to the garbage collector, more direct support for ``weak'' pointers, support for ``abortable'' garbage collections during idle time, etc.
-+.LP
+ .LP
 +.SH "PORT INFORMATION"
 +.LP
 +In this (FreeBSD package) installation,
@@ -55,6 +54,7 @@
 +extension of
 +.I g++.
 +This may or may not make a difference.
- .LP
++.LP
  .SH "SEE ALSO"
  The README and gc.h files in the distribution.  More detailed definitions of the functions exported by the collector are given there.  (The above list is not complete.)
+ .LP
