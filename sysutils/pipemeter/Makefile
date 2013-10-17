@@ -14,12 +14,11 @@ LICENSE=	GPLv2 # (or later)
 
 GNU_CONFIGURE=	yes
 
-MAN1=		pipemeter.1
-PLIST_FILES=	bin/pipemeter
+PLIST_FILES=	bin/pipemeter \
+		man/man1/pipemeter.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pipemeter ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/pipemeter.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/pipemeter ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/pipemeter.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
