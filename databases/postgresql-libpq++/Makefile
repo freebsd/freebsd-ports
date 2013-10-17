@@ -13,6 +13,14 @@ DIST_SUBDIR=	postgresql
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	C++ interface for  PostgreSQL
 
+DEPRECATED=	Not maintained upstreams for 10+ years.
+EXPIRATION_DATE=2013-11-17
+
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} >= 1000024
+BROKEN=		Does not build under FreeBSD 10
+.endif
+
 USE_PGSQL=	YES
 USES=		gmake
 USE_LDCONFIG=	YES
