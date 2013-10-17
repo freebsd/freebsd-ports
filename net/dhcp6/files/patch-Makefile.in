@@ -1,9 +1,10 @@
---- Makefile.in.orig	2013-10-17 05:40:19.000000000 +0900
-+++ Makefile.in	2013-10-17 05:40:57.000000000 +0900
-@@ -103,13 +103,13 @@
+--- Makefile.in.orig	2007-03-21 18:52:58.000000000 +0900
++++ Makefile.in	2013-10-17 12:26:22.000000000 +0900
+@@ -102,14 +102,14 @@
+ 	expand bootp-dhcp-parameters | perl gentab.pl > ianaopts.h
  
  install::
- 	-mkdir -p $(sbindir) $(mandir)/man5 $(mandir)/man8
+-	-mkdir -p $(sbindir) $(mandir)/man5 $(mandir)/man8
 -	$(INSTALL_PROGRAM) -s -o $(user) -g $(group) $(TARGET) $(sbindir)
 -	$(INSTALL_DATA) -o $(user) -g $(group) dhcp6c.8 $(mandir)/man8
 -	$(INSTALL_DATA) -o $(user) -g $(group) dhcp6s.8 $(mandir)/man8
@@ -11,13 +12,14 @@
 -	$(INSTALL_DATA) -o $(user) -g $(group) dhcp6ctl.8 $(mandir)/man8
 -	$(INSTALL_DATA) -o $(user) -g $(group) dhcp6c.conf.5 $(mandir)/man5
 -	$(INSTALL_DATA) -o $(user) -g $(group) dhcp6s.conf.5 $(mandir)/man5
-+	$(INSTALL_PROGRAM) $(TARGET) $(sbindir)
-+	$(INSTALL_DATA) dhcp6c.8 $(mandir)/man8
-+	$(INSTALL_DATA) dhcp6s.8 $(mandir)/man8
-+	$(INSTALL_DATA) dhcp6relay.8 $(mandir)/man8
-+	$(INSTALL_DATA) dhcp6ctl.8 $(mandir)/man8
-+	$(INSTALL_DATA) dhcp6c.conf.5 $(mandir)/man5
-+	$(INSTALL_DATA) dhcp6s.conf.5 $(mandir)/man5
++	-mkdir -p $(DESTDIR)$(sbindir) $(DESTDIR)$(mandir)/man5 $(DESTDIR)$(mandir)/man8
++	$(INSTALL_PROGRAM) $(TARGET) $(DESTDIR)$(sbindir)
++	$(INSTALL_DATA) dhcp6c.8 $(DESTDIR)$(mandir)/man8
++	$(INSTALL_DATA) dhcp6s.8 $(DESTDIR)$(mandir)/man8
++	$(INSTALL_DATA) dhcp6relay.8 $(DESTDIR)$(mandir)/man8
++	$(INSTALL_DATA) dhcp6ctl.8 $(DESTDIR)$(mandir)/man8
++	$(INSTALL_DATA) dhcp6c.conf.5 $(DESTDIR)$(mandir)/man5
++	$(INSTALL_DATA) dhcp6s.conf.5 $(DESTDIR)$(mandir)/man5
  
  includes::
  
