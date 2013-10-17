@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	courier-imap
-PORTVERSION=	4.13
+PORTVERSION=	4.14
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF/courier/imap/${PORTVERSION}
@@ -94,30 +94,34 @@ MAN1=		couriertcpd.1 maildiracl.1 maildirkw.1 \
 
 MAN8=		deliverquota.8 imapd.8 mkimapdcert.8 mkpop3dcert.8
 
-EXTRA_DOCS=	AUTHORS INSTALL NEWS imap/ChangeLog imap/README \
-		imap/README.proxy maildir/README.imapkeywords.html \
-		maildir/README.maildirfilter.html \
-		maildir/README.maildirquota.txt \
-		maildir/README.sharedfolders.txt tcpd/README.couriertls \
+EXTRA_DOCS=	AUTHORS INSTALL NEWS \
+		libs/imap/ChangeLog \
+		libs/imap/README \
+		libs/imap/README.proxy \
+		libs/maildir/README.imapkeywords.html \
+		libs/maildir/README.maildirfilter.html \
+		libs/maildir/README.maildirquota.txt \
+		libs/maildir/README.sharedfolders.txt \
+		libs/tcpd/README.couriertls \
 
 post-patch:
 .if ! ${PORT_OPTIONS:MFAM}
 	@${REINPLACE_CMD} -e 's|$$LIBFAM||g; s|HAVE_FAM|DO_NOT_HAVE_FAM|g' \
-		${WRKSRC}/maildir/configure
+		${WRKSRC}/libs/maildir/configure
 .endif
 	@${REINPLACE_CMD} -e 's|^case x$$lockmethod in|${TEST} \&\& &|g' \
-		${WRKSRC}/liblock/configure
+		${WRKSRC}/libs/liblock/configure
 	@${REINPLACE_CMD} -e 's|%%INSTALL_MAN%%|${INSTALL_MAN}|' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|@LIBS@|@LIBS@ -rpath=:${LOCALBASE}/lib/courier-authlib|' \
-		${WRKSRC}/imap/Makefile.in
+		${WRKSRC}/libs/imap/Makefile.in
 	@${REINPLACE_CMD} -e 's|TLS_PROTOCOL=SSL3|TLS_PROTOCOL=SSL23|g' \
-		${WRKSRC}/imap/pop3d-ssl.dist.in \
-		${WRKSRC}/imap/imapd-ssl.dist.in
+		${WRKSRC}/libs/imap/pop3d-ssl.dist.in \
+		${WRKSRC}/libs/imap/imapd-ssl.dist.in
 
 post-install:
 .for i in imapd pop3d
-	${INSTALL_DATA} ${WRKSRC}/imap/${i}.cnf ${CONFDIR}/${i}.cnf.dist
+	${INSTALL_DATA} ${WRKSRC}/libs/imap/${i}.cnf ${CONFDIR}/${i}.cnf.dist
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
