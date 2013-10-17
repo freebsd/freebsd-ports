@@ -3,7 +3,7 @@
 
 PORTNAME=	wings
 PORTVERSION=	1.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 DIST_SUBDIR=	erlang
@@ -16,28 +16,35 @@ BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang \
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang \
 		${LOCALBASE}/lib/erlang/lib/esdl/include/sdl.hrl:${PORTSDIR}/devel/esdl
 
+CONFLICTS=	${PORTNAME}-devel-[0-9]*
+
 MAKE_ENV=	ESDL_PATH=${LOCALBASE}/lib/erlang/lib/esdl
 PLIST_SUB=	VERSION="${PORTVERSION}"
 MAKE_JOBS_UNSAFE=yes
 
-SUB_FILES=	wings.sh
+SUB_FILES=	${PORTNAME}.sh
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 PORTSCOUT=	limitw:1,even
 
-NO_STAGE=	yes
+DESKTOP_ENTRIES="Wings" \
+		"${COMMENT}" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}.ico" \
+		"${PORTNAME}" \
+		"Graphics;3DGraphics;" \
+		""
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(GCC)|${CC} -I${LOCALBASE}/include -L${LOCALBASE}/lib|g' \
 		${WRKSRC}/plugins_src/accel/Makefile
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/erlang/lib/${DISTNAME}
-.for dir in src ebin fonts plugins textures shaders patches
-	cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${PREFIX}/lib/erlang/lib/${DISTNAME}
-.endfor
-	@${INSTALL_SCRIPT} ${WRKDIR}/wings.sh ${PREFIX}/bin/wings
-	@${LN} -sf ${DISTNAME} ${PREFIX}/lib/erlang/lib/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${DISTNAME}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "src ebin fonts plugins textures shaders patches" \
+		${STAGEDIR}${PREFIX}/lib/erlang/lib/${DISTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}.icon ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.ico
 
 .include <bsd.port.mk>
