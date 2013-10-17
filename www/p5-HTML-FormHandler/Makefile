@@ -3,6 +3,7 @@
 
 PORTNAME=	HTML-FormHandler
 PORTVERSION=	0.40050
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -45,7 +46,5 @@ TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
 
 USES=		perl5
 USE_PERL5=	configure
-
-MAN3=	\
 
 .include <bsd.port.mk>
