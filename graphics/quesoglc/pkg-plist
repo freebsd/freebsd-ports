@@ -4,5 +4,4 @@ lib/libGLC.la
 lib/libGLC.so
 lib/libGLC.so.0
 libdata/pkgconfig/quesoglc.pc
-@dirrmtry libdata/pkgconfig
 @dirrmtry include/GL
