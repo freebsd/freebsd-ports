@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdisk
-PORTVERSION=	0.8.6
+PORTVERSION=	0.8.8
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/gptfdisk/gptfdisk/${PORTVERSION}
 DISTNAME=	gptfdisk-${PORTVERSION}
@@ -22,15 +22,14 @@ FETCH_ARGS=	-Rr
 ONLY_FOR_ARCHS=	i386 amd64
 
 OPTIONS_DEFINE=	CGDISK UTF16
+OPTIONS_SUB=	yes
 CGDISK_DESC=	A curses-based interactive program
 UTF16_DESC=	Support for Unicode partition names
 
 MAKEFILE=	Makefile.freebsd
 
 PROGRAM_LIST=	fixparts gdisk sgdisk
-PLIST_FILES=	${PROGRAM_LIST:C,^,sbin/,}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCGDISK}
@@ -41,11 +40,6 @@ LIB_DEPENDS+=	libncurses.so:${PORTSDIR}/devel/ncurses
 .if ${PORT_OPTIONS:MUTF16}
 LIB_DEPENDS+=	libicuuc.so:${PORTSDIR}/devel/icu
 .endif
-
-MAN8=
-.for i in ${PROGRAM_LIST}
-MAN8+=	${i}.8
-.endfor
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/include/||' ${WRKSRC}/guid.h
@@ -62,13 +56,8 @@ post-patch:
 
 do-install:
 .for i in ${PROGRAM_LIST}
-	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/${i}.8 ${MAN8PREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/${i}.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 .endfor
-
-post-install:
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
 
 .include <bsd.port.mk>
