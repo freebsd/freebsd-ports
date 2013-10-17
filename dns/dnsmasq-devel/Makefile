@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dnsmasq
-DISTVERSION=	2.67rc3
+DISTVERSION=	2.67rc4
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/release-candidates/
 PKGNAMESUFFIX=	-devel
@@ -28,6 +28,9 @@ OPTIONS_EXCLUDE+=	EXAMPLES
 NLS_DESC=	National Language Support (NLS, enables IDN)
 IDN_DESC=	International Domain Names (IDN) WITHOUT NLS
 LUA_DESC=	Support lease-change scripts in LUA
+USES=		shebangfix
+SHEBANG_FILES=	contrib/dynamic-dnsmasq/dynamic-dnsmasq.pl \
+		contrib/dnslist/dnslist.pl
 
 .include <bsd.port.options.mk>
 
