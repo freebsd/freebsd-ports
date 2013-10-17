@@ -8,7 +8,7 @@ MASTER_SITES=	SAVANNAH \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	cs@FreeBSD.org
-COMMENT=	A Scheme module for W3C Cascading Stylesheets recommendation
+COMMENT=	Scheme module for W3C Cascading Stylesheets recommendation
 
 LICENSE=	GPLv3
 
@@ -19,14 +19,11 @@ NO_BUILD=	yes
 FILES=	lexer.scm parser.scm scss.scm properties.scm \
 	interface/sdom.scm common.scm
 
-INFO=	scss
-
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/share/guile/scss
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/guile/scss
 .for f in ${FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/guile/scss
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/share/guile/scss
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/scss.info ${PREFIX}/info
+	@${INSTALL_DATA} ${WRKSRC}/scss.info ${STAGEDIR}${PREFIX}/info
 
 .include <bsd.port.mk>
