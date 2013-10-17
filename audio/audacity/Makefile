@@ -19,15 +19,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
 
 USE_AUTOTOOLS=	aclocal autoconf
 GNU_CONFIGURE=	yes
-NO_STAGE=	yes
 USES=		gmake gettext pkgconfig
 USE_XZ=		yes
 USE_WX=		2.8
 WX_UNICODE=	yes
 WX_COMPS=	wx
 INSTALLS_ICONS=	yes
-MAN1=		audacity.1
-MANCOMPRESSED=	yes
 PORTDOCS=	README.txt
 
 OPTIONS_DEFINE=	DOCS FFMPEG FLAC ID3TAG JACK LADSPA MAD NYQUIST PORTMIXER \
@@ -45,16 +42,10 @@ TAGLIB_DESC=	Use TagLib for metadata support
 TWOLAME_DESC=	Use libtwolame for MP2 export support
 VAMP_DESC=	Vamp plug-in support
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == "i386"
-SSE_CFLAGS=	-mno-sse -mno-sse2
-.endif
-
 ACLOCAL_ARGS+=	-I ${WRKSRC}/m4
 AUTOCONF_ARGS+=	-I ${WRKSRC}/m4
 
-CONFIGURE_ARG+	=--destdir=/
+CONFIGURE_ARG+=	--destdir=/
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CPPFLAGS+=	-I${WRKSRC}/lib-src/portsmf -I${WRKSRC}/lib-src/portaudio-v19/include -I${LOCALBASE}/include ${SSE_CFLAGS} ${PTHREAD_CFLAGS}
 CXXFLAGS+=	-I${WRKSRC}/lib-src/portsmf -I${WRKSRC}/lib-src/portaudio-v19/include -I${LOCALBASE}/include ${SSE_CFLAGS} ${PTHREAD_CFLAGS}
@@ -62,111 +53,56 @@ CFLAGS+=	-I${WRKSRC}/lib-src/portsmf -I${WRKSRC}/lib-src/portaudio-v19/include -
 
 CONFIGURE_ENV+=	WX_CONFIG="${WX_CONFIG}"
 
-CONFIGURE_ARGS+=	--with-lib-preference="local system"
-CONFIGURE_ARGS+=	--with-portaudio
-CONFIGURE_ARGS+=	--enable-unicode
+CONFIGURE_ARGS+=	--with-lib-preference="local system" \
+			--with-portaudio --enable-unicode
 
-.if ${PORT_OPTIONS:MFFMPEG}
-RUN_DEPENDS+=		ffmpeg:${PORTSDIR}/multimedia/ffmpeg
-CONFIGURE_ARGS+=	--with-ffmpeg
-.else
-CONFIGURE_ARGS+=	--without-ffmpeg
-.endif
+FFMPEG_CONFIGURE_WITH=	ffmpeg
+FFMPEG_RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 
-.if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=		libFLAC.so:${PORTSDIR}/audio/flac
-CONFIGURE_ARGS+=	--with-libflac
-.else
-CONFIGURE_ARGS+=	--without-libflac
-.endif
+FLAC_CONFIGURE_WITH=	libflac
+FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
 
-.if ${PORT_OPTIONS:MID3TAG}
-LIB_DEPENDS+=		libid3tag.so:${PORTSDIR}/audio/libid3tag
-CONFIGURE_ARGS+=	--with-libid3tag
-.else
-CONFIGURE_ARGS+=	--without-libid3tag
-.endif
+ID3TAG_CONFIGURE_WITH=	libid3tag
+ID3TAG_LIB_DEPENDS=	libid3tag.so:${PORTSDIR}/audio/libid3tag
 
-.if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=		libjack.so:${PORTSDIR}/audio/jack
-CONFIGURE_ARGS+=	--with-jack
-.else
-CONFIGURE_ARGS+=	--without-jack
-.endif
+JACK_CONFIGURE_WITH=	jack
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 
-.if ${PORT_OPTIONS:MLADSPA}
-RUN_DEPENDS+=		listplugins:${PORTSDIR}/audio/ladspa
-CONFIGURE_ARGS+=	--enable-ladspa
-.else
-CONFIGURE_ARGS+=	--disable-ladspa
-.endif
+LADSPA_CONFIGURE_ENABLE=	ladspa
+LADSPA_RUN_DEPENDS=	listplugins:${PORTSDIR}/audio/ladspa
 
-.if ${PORT_OPTIONS:MMAD}
-LIB_DEPENDS+=		libmad.so:${PORTSDIR}/audio/libmad
-CONFIGURE_ARGS+=	--with-libmad
-.else
-CONFIGURE_ARGS+=	--without-libmad
-.endif
+MAD_CONFIGURE_WITH=	libmad
+MAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
 
-.if ${PORT_OPTIONS:MNYQUIST}
-CONFIGURE_ARGS+=	--enable-nyquist
-.else
-CONFIGURE_ARGS+=	--disable-nyquist
-.endif
+NYQUIST_CONFIGURE_ENABLE=	nyquist
 
-.if ${PORT_OPTIONS:MPORTMIXER}
-CONFIGURE_ARGS+=	--with-portmixer
-.else
-CONFIGURE_ARGS+=	--without-portmixer
-.endif
+PORTMIXER_CONFIGURE_WITH=	portmixer
 
-.if ${PORT_OPTIONS:MSAMPLERATE}
-LIB_DEPENDS+=		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
-CONFIGURE_ARGS+=	--with-libsamplerate
-.else
-USES+=			cmake
-CONFIGURE_ARGS+=	--without-libsamplerate
-.endif
+SAMPLERATE_CONFIGURE_WITH=	libsamplerate
+SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 
-.if ${PORT_OPTIONS:MSBSMS}
-CONFIGURE_ARGS+=	--with-sbsms
-.else
-CONFIGURE_ARGS+=	--without-sbsms
-.endif
+SBSMS_CONFIGURE_WITH=	sbsms
 
-.if ${PORT_OPTIONS:MSSE}
-CONFIGURE_ARGS+=	--with-sse
-.endif
+SSE_CONFIGURE_WITH=	sse
 
-.if ${PORT_OPTIONS:MSOXR}
-CONFIGURE_ARGS+=	--with-libsoxr
-.endif
+SOXR_CONFIGURE_WITH=	libsoxr
+SOXR_BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 
-.if ${PORT_OPTIONS:MTWOLAME}
-LIB_DEPENDS+=		libtwolame.so:${PORTSDIR}/audio/twolame
-CONFIGURE_ARGS+=	--with-libtwolame
-.else
-CONFIGURE_ARGS+=	--without-libtwolame
-.endif
+TWOLAME_CONFIGURE_WITH=	libtwolame
+TWOLAME_LIB_DEPENDS=	libtwolame.so:${PORTSDIR}/audio/twolame
 
-.if ${PORT_OPTIONS:MTAGLIB}
-LIB_DEPENDS+=		libtag.so:${PORTSDIR}/audio/taglib
-CONFIGURE_ARGS+=	--with-taglib
-.else
-CONFIGURE_ARGS+=	--without-taglib
-.endif
+TAGLIB_CONFIGURE_WITH=	taglib
+TAGLIB_LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
 
-.if ${PORT_OPTIONS:MVAMP}
-CONFIGURE_ARGS+=	--with-libvamp
-.else
-CONFIGURE_ARGS+=	--without-libvamp
-.endif
+VAMP_CONFIGURE_WITH=	libvamp
 
-.if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=		libvorbis.so:${PORTSDIR}/audio/libvorbis
-CONFIGURE_ARGS+=	--with-libvorbis
-.else
-CONFIGURE_ARGS+=	--without-libvorbis
+VORBIS_CONFIGURE_WITH=	libvorbis
+VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386" || ${ARCH} == "powerpc"
+SSE_CFLAGS=	-mno-sse -mno-sse2
 .endif
 
 post-patch:
@@ -185,9 +121,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|inline void|static inline void|' ${WRKSRC}/lib-src/libnyquist/nyquist/ffts/src/fftlib.c
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
