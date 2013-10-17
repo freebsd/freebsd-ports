@@ -2,12 +2,9 @@ bin/rawdog
 %%PYTHON_SITELIBDIR%%/rawdoglib/__init__.py
 %%PYTHON_SITELIBDIR%%/rawdoglib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/rawdoglib/__init__.pyo
-%%PYTHON_SITELIBDIR%%/rawdoglib/feedfinder.py
-%%PYTHON_SITELIBDIR%%/rawdoglib/feedfinder.pyc
-%%PYTHON_SITELIBDIR%%/rawdoglib/feedfinder.pyo
-%%PYTHON_SITELIBDIR%%/rawdoglib/feedparser.py
-%%PYTHON_SITELIBDIR%%/rawdoglib/feedparser.pyc
-%%PYTHON_SITELIBDIR%%/rawdoglib/feedparser.pyo
+%%PYTHON_SITELIBDIR%%/rawdoglib/feedscanner.py
+%%PYTHON_SITELIBDIR%%/rawdoglib/feedscanner.pyc
+%%PYTHON_SITELIBDIR%%/rawdoglib/feedscanner.pyo
 %%PYTHON_SITELIBDIR%%/rawdoglib/persister.py
 %%PYTHON_SITELIBDIR%%/rawdoglib/persister.pyc
 %%PYTHON_SITELIBDIR%%/rawdoglib/persister.pyo
@@ -17,15 +14,8 @@ bin/rawdog
 %%PYTHON_SITELIBDIR%%/rawdoglib/rawdog.py
 %%PYTHON_SITELIBDIR%%/rawdoglib/rawdog.pyc
 %%PYTHON_SITELIBDIR%%/rawdoglib/rawdog.pyo
-%%PYTHON_SITELIBDIR%%/rawdoglib/timeoutsocket.py
-%%PYTHON_SITELIBDIR%%/rawdoglib/timeoutsocket.pyc
-%%PYTHON_SITELIBDIR%%/rawdoglib/timeoutsocket.pyo
-%%PYTHON_SITELIBDIR%%/rawdoglib/upgrade_1_2.py
-%%PYTHON_SITELIBDIR%%/rawdoglib/upgrade_1_2.pyc
-%%PYTHON_SITELIBDIR%%/rawdoglib/upgrade_1_2.pyo
+man/man1/rawdog.1.gz
 @dirrm %%PYTHON_SITELIBDIR%%/rawdoglib
-%%EXAMPLESDIR%%/config
-%%EXAMPLESDIR%%/style.css
-@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/config
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/style.css
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
