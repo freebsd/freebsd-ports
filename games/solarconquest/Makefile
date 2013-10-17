@@ -19,7 +19,9 @@ USE_DOS2UNIX=	makefile source/MenuScreen.h source/main.cpp
 
 MAKEFILE=	makefile
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/${PORTNAME}
+PORTDATA=	*
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|images/|${DATADIR}/images/|' \
 		${WRKSRC}/source/main.cpp
@@ -29,11 +31,11 @@ post-patch:
 		${WRKSRC}/source/Common.h
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/solar ${PREFIX}/bin/${PORTNAME}
-	${MKDIR} ${DATADIR}/shapes
-	${INSTALL_DATA} ${WRKSRC}/shapes/* ${DATADIR}/shapes
-	${MKDIR} ${DATADIR}/images/fonts
-	${INSTALL_DATA} ${WRKSRC}/images/*.png ${DATADIR}/images
-	${INSTALL_DATA} ${WRKSRC}/images/fonts/* ${DATADIR}/images/fonts
+	${INSTALL_PROGRAM} ${WRKSRC}/solar ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${DATADIR}/shapes
+	${INSTALL_DATA} ${WRKSRC}/shapes/* ${STAGEDIR}${DATADIR}/shapes
+	${MKDIR} ${STAGEDIR}${DATADIR}/images/fonts
+	${INSTALL_DATA} ${WRKSRC}/images/*.png ${STAGEDIR}${DATADIR}/images
+	${INSTALL_DATA} ${WRKSRC}/images/fonts/* ${STAGEDIR}${DATADIR}/images/fonts
 
 .include <bsd.port.mk>
