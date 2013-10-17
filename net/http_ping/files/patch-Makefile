@@ -1,5 +1,5 @@
---- Makefile.orig	2013-03-03 07:36:07.000000000 +0900
-+++ Makefile	2013-03-03 07:44:01.000000000 +0900
+--- Makefile.orig	2002-01-04 14:50:06.000000000 +0900
++++ Makefile	2013-10-17 12:39:39.000000000 +0900
 @@ -14,13 +14,15 @@
  #SSL_INC =	-I$(SSL_TREE)/include
  #SSL_LIBS =	-L$(SSL_TREE)/lib -lssl -lcrypto
@@ -12,7 +12,7 @@
 +SSL_DEFS=	-DUSE_SSL ${OPENSSL_CFLAGS}
 +SSL_INC=	-I${OPENSSLINC}
 +SSL_LIBS=	-L${OPENSSLLIB} -lssl -lcrypto
-+bINDIR =	${PREFIX}/bin
++BINDIR =	${PREFIX}/bin
 +MANDIR =	${MANPREFIX}/man/man1
 +CC?=		gcc -Wall
 +CFLAGS+=	-g $(SRANDOM_DEFS) $(SSL_DEFS) $(SSL_INC)
@@ -22,12 +22,19 @@
  #LDFLAGS =	-g $(SSL_LIBS) $(SYSV_LIBS)
  
  all:		http_ping
-@@ -32,7 +34,7 @@
+@@ -32,11 +34,10 @@
  	$(CC) $(CFLAGS) -c http_ping.c
  
  
 -install:	all
+-	rm -f $(BINDIR)/http_ping
+-	cp http_ping $(BINDIR)
+-	rm -f $(MANDIR)/http_ping.1
+-	cp http_ping.1 $(MANDIR)
 +install:
- 	rm -f $(BINDIR)/http_ping
- 	cp http_ping $(BINDIR)
- 	rm -f $(MANDIR)/http_ping.1
++	mkdir -p $(DESTDIR)$(BINDIR) $(DESTDIR)$(MANDIR)
++	$(BSD_INSTALL_PROGRAM) http_ping $(DESTDIR)$(BINDIR)
++	$(BSD_INSTALL_MAN) http_ping.1 $(DESTDIR)$(MANDIR)
+ 
+ clean:
+ 	rm -f http_ping *.o core core.* *.core
