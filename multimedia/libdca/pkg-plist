@@ -11,3 +11,7 @@ lib/libdca.so.0
 lib/libdts.a
 libdata/pkgconfig/libdca.pc
 libdata/pkgconfig/libdts.pc
+man/man1/dcadec.1.gz
+man/man1/extract_dca.1.gz
+man/man1/dtsdec.1.gz
+man/man1/extract_dts.1.gz
