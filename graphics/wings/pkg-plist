@@ -1,4 +1,6 @@
+@unexec rm -f %D/lib/erlang/lib/wings
 bin/wings
+@exec ln -sf wings-%%VERSION%% %D/lib/erlang/lib/wings
 lib/erlang/lib/wings-%%VERSION%%/ebin/array.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/e3d__bmp.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/e3d__meshclean.beam
@@ -350,6 +352,7 @@ lib/erlang/lib/wings-%%VERSION%%/src/wings_zh-tw.lang
 lib/erlang/lib/wings-%%VERSION%%/src/wpa.erl
 lib/erlang/lib/wings-%%VERSION%%/textures/brand.png
 lib/erlang/lib/wings-%%VERSION%%/textures/grandcanyon.png
+share/pixmaps/wings.ico
 @dirrm lib/erlang/lib/wings-%%VERSION%%/textures
 @dirrm lib/erlang/lib/wings-%%VERSION%%/src
 @dirrm lib/erlang/lib/wings-%%VERSION%%/shaders
@@ -364,5 +367,3 @@ lib/erlang/lib/wings-%%VERSION%%/textures/grandcanyon.png
 @dirrm lib/erlang/lib/wings-%%VERSION%%/fonts
 @dirrm lib/erlang/lib/wings-%%VERSION%%/ebin
 @dirrm lib/erlang/lib/wings-%%VERSION%%
-@exec ln -sf wings-%%VERSION%% %D/lib/erlang/lib/wings
-@unexec rm -f %D/lib/erlang/lib/wings
