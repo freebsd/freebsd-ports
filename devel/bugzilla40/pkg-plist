@@ -971,6 +971,8 @@
 @dirrmtry %%WWWDIR%%/js/yui
 @dirrmtry %%WWWDIR%%/js
 @dirrm %%WWWDIR%%/images
+@dirrmtry %%WWWDIR%%/graphs
+@dirrmtry %%WWWDIR%%/data
 %%CONTRIB%%@dirrm %%WWWDIR%%/contrib/cmdline
 %%CONTRIB%%@dirrm %%WWWDIR%%/contrib/bugzilla-submit
 @dirrmtry %%WWWDIR%%/contrib
@@ -996,8 +998,6 @@
 @dirrm %%WWWDIR%%/Bugzilla/Auth
 @dirrm %%WWWDIR%%/Bugzilla/Attachment
 @dirrmtry %%WWWDIR%%/Bugzilla
-@dirrmtry %%WWWDIR%%/data
-@dirrmtry %%WWWDIR%%/graphs
 @dirrmtry %%WWWDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/lib/Pod/Simple/HTMLBatch
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/lib/Pod/Simple/HTML
@@ -1030,9 +1030,3 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec mkdir -p %D/%%WWWDIR%%/xt
-@exec mkdir -p %D/%%WWWDIR%%/t
-@exec mkdir -p %D/%%WWWDIR%%/lib
-@exec mkdir -p %D/%%WWWDIR%%/graphs
-@exec mkdir -p %D/%%WWWDIR%%/data
-@exec mkdir -p %D/%%WWWDIR%%/contrib

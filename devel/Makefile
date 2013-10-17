@@ -147,7 +147,7 @@
     SUBDIR += bsdlibdwarf
     SUBDIR += bufferpool
     SUBDIR += bug-buddy
-    SUBDIR += bugzilla
+    SUBDIR += bugzilla40
     SUBDIR += bugzilla42
     SUBDIR += bugzilla44
     SUBDIR += build

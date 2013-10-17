@@ -1,8 +1,10 @@
 # $FreeBSD$
 
 DIST_SUBDIR=	${PORTNAME}
+PKGNAMESUFFIX=	40
 
 CONFLICTS_INSTALL=	\
+		bugzilla4[^0].* \
 		bugzilla-4.[^0].*
 
 PORTSCOUT=	limit:^4\.0\.

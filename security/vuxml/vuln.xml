@@ -51,6 +51,67 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e135f0c9-375f-11e3-80b7-20cf30e32f6d">
+    <topic>bugzilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>bugzilla</name>
+	<name>bugzilla40</name>
+	<name>bugzilla42</name>
+	<name>bugzilla44</name>
+	<range><ge>4.0.0</ge><lt>4.0.11</lt></range>
+	<range><ge>4.2.0</ge><lt>4.2.7</lt></range>
+	<range><ge>4.4</ge><lt>4.4.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>A Bugzilla Security Advisory reports:</h1>
+	<blockquote cite="http://www.bugzilla.org/security/4.0.10/">
+	  <h1>Cross-Site Request Forgery</h1>
+	  <p>When a user submits changes to a bug right after another
+	    user did, a midair collision page is displayed to inform
+	    the user about changes recently made. This page contains
+	    a token which can be used to validate the changes if the
+	    user decides to submit his changes anyway. A regression
+	    in Bugzilla 4.4 caused this token to be recreated if a
+	    crafted URL was given, even when no midair collision page
+	    was going to be displayed, allowing an attacker to bypass
+	    the token check and abuse a user to commit changes on his
+	    behalf.</p>
+	  <h1>Cross-Site Request Forgery</h1>
+	  <p>When an attachment is edited, a token is generated to
+	    validate changes made by the user. Using a crafted URL,
+	    an attacker could force the token to be recreated,
+	    allowing him to bypass the token check and abuse a user
+	  to commit changes on his behalf.</p>
+	  <h1>Cross-Site Scripting</h1>
+	  <p>Some parameters passed to editflagtypes.cgi were not
+	    correctly filtered in the HTML page, which could lead
+	    to XSS.</p>
+	  <h1>Cross-Site Scripting</h1>
+	  <p>Due to an incomplete fix for CVE-2012-4189, some
+	    incorrectly filtered field values in tabular reports
+	    could lead to XSS.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-1733</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=911593</url>
+      <cvename>CVE-2013-1734</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=913904</url>
+      <cvename>CVE-2013-1742</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=924802</url>
+      <cvename>CVE-2013-1743</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=924932</url>
+    </references>
+    <dates>
+      <discovery>2013-10-16</discovery>
+      <entry>2013-10-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8c9b48d1-3715-11e3-a624-00262d8b701d">
     <topic>dropbear -- exposure of sensitive information, DoS</topic>
     <affects>

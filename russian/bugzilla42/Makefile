@@ -10,13 +10,11 @@ DISTNAME=	bugzilla-${PORTVERSION}-ru-20130618
 MAINTAINER=	bugzilla@FreeBSD.org
 COMMENT=	Russian localization for Bugzilla
 
-RUN_DEPENDS=	bugzilla>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla42
+RUN_DEPENDS=	bugzilla42>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla42
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.ru
 
 .include "${.CURDIR}/../../devel/bugzilla42/Makefile.common"
-
-LATEST_LINK=	${PKGNAMEPREFIX}bugzilla42
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}

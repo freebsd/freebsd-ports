@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla
-PORTVERSION=	4.2.6
+PORTVERSION=	4.2.7
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -25,8 +25,6 @@ RUN_DEPENDS=	\
 		p5-TimeDate>=1.19:${PORTSDIR}/devel/p5-TimeDate \
 		p5-URI>=1.37:${PORTSDIR}/net/p5-URI
 
-LATEST_LINK=	bugzilla42
-
 USES=		perl5
 USE_PERL5=	patch run build
 
@@ -46,8 +44,6 @@ EMPTY_DIRS_LIST=data graphs contrib lib t xt
 .if ${PORT_OPTIONS:MMODPERL}
 USE_APACHE_RUN=	22+
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
@@ -184,4 +180,4 @@ do-install:	.SILENT
 		${FIND} . -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${WWWDIR}/contrib/{}" \;
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

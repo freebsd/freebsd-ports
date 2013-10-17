@@ -10,9 +10,7 @@ DISTNAME=	germzilla-${PORTVERSION}-1.utf-8
 MAINTAINER=	bugzilla@FreeBSD.org
 COMMENT=	German localization for Bugzilla
 
-RUN_DEPENDS=	bugzilla>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla
-
-LATEST_LINK=	${PKGNAMEPREFIX}bugzilla
+RUN_DEPENDS=	bugzilla40>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla
 
 NO_WRKSUBDIR=	yes
 

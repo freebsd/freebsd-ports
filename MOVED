@@ -5116,3 +5116,6 @@ audio/akode-plugins-oss||2013-10-17|Removed: Dependency of KDE 3.x
 audio/akode-plugins-pulseaudio||2013-10-17|Removed: Dependency of KDE 3.x
 audio/akode-plugins-resampler||2013-10-17|Removed: Dependency of KDE 3.x
 audio/akode-plugins-xiph||2013-10-17|Removed: Dependency of KDE 3.x
+german/bugzilla|german/bugzilla40|2013-10-17|Reflect PORTNAME
+japanese/bugzilla|japanese/bugzilla40|2013-10-17|Reflect PORTNAME
+russian/bugzilla|russian/bugzilla40|2013-10-17|Reflect PORTNAME
