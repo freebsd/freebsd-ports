@@ -13,10 +13,10 @@ COMMENT=	Cross-platform port of Arx Fatalis
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	IL:${PORTSDIR}/graphics/devil \
-		GLEW:${PORTSDIR}/graphics/glew \
-		freetype:${PORTSDIR}/print/freetype2 \
-		boost_program_options:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libIL.so:${PORTSDIR}/graphics/devil \
+		libGLEW.so:${PORTSDIR}/graphics/glew \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libboost_program_options.so:${PORTSDIR}/devel/boost-libs
 
 USE_XZ=		yes
 USE_OPENAL=	yes
@@ -27,15 +27,11 @@ CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR="man" -DDATA_DIR=arx
 
 SUB_FILES=	pkg-message
 
-MAN1=		arxsavetool.1 arxunpak.1
-MAN6=		arx.6
-
 PORTDOCS=	AUTHORS CHANGELOG README.md
 
-OPTIONS_DEFINE=	CRASHREPORTER 
+OPTIONS_DEFINE=	CRASHREPORTER
 CRASHREPORTER_DESC=	Build crash reporter (requires Qt4)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCRASHREPORTER}
@@ -48,12 +44,9 @@ PLIST_SUB+=	CRASHREPORTER="@comment "
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
-	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
 .include <bsd.port.mk>
