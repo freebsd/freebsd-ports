@@ -10,14 +10,13 @@ MASTER_SITES=	SF/${PORTNAME}/QuesoGLC/${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free implementation of the OpenGL Character Renderer
 
-LIB_DEPENDS=	fribidi:${PORTSDIR}/converters/fribidi \
-		freetype:${PORTSDIR}/print/freetype2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		pathfix
+USES=		pathfix gmake
 USE_GL=		gl glu glut
 USE_LDCONFIG=	yes
 
@@ -28,15 +27,11 @@ CONFIGURE_ARGS=	--without-glew --with-fribidi
 
 PORTDOCS=	README
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
 
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
-	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
