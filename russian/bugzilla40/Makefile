@@ -14,7 +14,7 @@ RUN_DEPENDS=	bugzilla40>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla40
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.ru
 
-.include "${.CURDIR}/../../devel/bugzilla/Makefile.common"
+.include "${.CURDIR}/../../devel/bugzilla40/Makefile.common"
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
