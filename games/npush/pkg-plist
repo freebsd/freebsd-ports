@@ -1,24 +1,4 @@
 bin/npush
 share/applications/npush.desktop
-%%DATADIR%%/levels/Level 01 - Gold and Exit
-%%DATADIR%%/levels/Level 02 - Rocks
-%%DATADIR%%/levels/Level 03 - Dynamite
-%%DATADIR%%/levels/Level 04 - The Show Starts
-%%DATADIR%%/levels/Level 05 - The Triangle
-%%DATADIR%%/levels/Level 06 - Moving along
-%%DATADIR%%/levels/Level 07 - Duality
-%%DATADIR%%/levels/Level 08 - Traps and Treasure
-%%DATADIR%%/levels/Level 09 - Cooperation
-%%DATADIR%%/levels/Level 10 - Golden Age
-%%DATADIR%%/levels/Level 11 - Story of a lifetime
-%%DATADIR%%/levels/Level 12 - In the Mine
-%%DATADIR%%/levels/Level 13 - Warm-up
-%%DATADIR%%/levels/Level 14 - To and fro
-%%DATADIR%%/levels/Level 15 - Little by little
-%%DATADIR%%/levels/Level 16 - The break in
-%%DATADIR%%/levels/Level 17 - The great escape
-%%DATADIR%%/levels/Level 18 - The one road
 share/pixmaps/npush.png
-@dirrm %%DATADIR%%/levels
-@dirrm %%DATADIR%%
 @dirrmtry share/applications
