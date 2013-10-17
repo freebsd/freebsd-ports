@@ -19,12 +19,5 @@ lib/libILU.so.2
 libdata/pkgconfig/IL.pc
 libdata/pkgconfig/ILU.pc
 %%X11%%libdata/pkgconfig/ILUT.pc
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/Libraries.txt
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
 @dirrm include/IL

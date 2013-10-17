@@ -12,23 +12,6 @@ DISTNAME=	DevIL-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A full featured cross-platform image library
 
-OPTIONS_DEFINE=	JPEG JASPER LCMS MNG PNG TIFF X11 SDL NVTT SIMD DOCS
-OPTIONS_DEFAULT=JPEG JASPER LCMS MNG PNG TIFF X11 DOCS
-
-JPEG_DESC=	Enable JPEG support
-JASPER_DESC=	Enable JPEG2000 support
-LCMS_DESC=	Enable LCMS support
-MNG_DESC=	Enable MNG support
-PNG_DESC=	Enable PNG support
-TIFF_DESC=	Enable TIFF support
-X11_DESC=	Enable X11 support
-SDL_DESC=	Enable SDL support
-NVTT_DESC=	Enable NVidia texture tools support
-SIMD_DESC=	Enable SIMD autodetection (AltiVec, SSE3,...)
-
-WRKSRC=		${WRKDIR}/${DISTNAME:L}
-
-USE_GCC=	any
 USES=		pkgconfig
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtool
 ACLOCAL_ARGS=	-I m4 -I ${LOCALBASE}/share/aclocal
@@ -36,53 +19,55 @@ AUTOMAKE_ARGS=	--add-missing --copy --force-missing
 CONFIGURE_ARGS=	--enable-ILU \
 		--disable-allegro --disable-directx8 --disable-directx9
 USE_LDCONFIG=	yes
+USE_GCC=	any
+
+WRKSRC=		${WRKDIR}/${DISTNAME:L}
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	JPEG JASPER LCMS MNG PNG TIFF EXR X11 SDL SQUISH NVTT SIMD DOCS
+OPTIONS_DEFAULT=JPEG JASPER LCMS MNG PNG TIFF EXR X11 SDL SQUISH NVTT DOCS
+OPTIONS_DEFAULT_amd64=SIMD
+
+JPEG_DESC=	Enable JPEG support
+JASPER_DESC=	Enable JPEG2000 support
+LCMS_DESC=	Enable LCMS support
+MNG_DESC=	Enable MNG support
+PNG_DESC=	Enable PNG support
+TIFF_DESC=	Enable TIFF support
+EXR_DESC=	Enable EXR support
+X11_DESC=	Enable X11 support
+SDL_DESC=	Enable SDL support
+SQUISH_DESC=	Enable DXT compression via libsquish
+NVTT_DESC=	Enable NVidia texture tools support
+SIMD_DESC=	Enable SIMD autodetection (AltiVec, SSE3,...)
+
+JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+JPEG_CONFIGURE_ENABLE=	jpeg
+JASPER_LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper
+JASPER_CONFIGURE_ENABLE=jp2
+LCMS_LIB_DEPENDS=	liblcms.so:${PORTSDIR}/graphics/lcms
+LCMS_CONFIGURE_ENABLE=	lcms
+MNG_LIB_DEPENDS=	libmng.so:${PORTSDIR}/graphics/libmng
+MNG_CONFIGURE_ENABLE=	mng
+PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_CONFIGURE_ENABLE=	png
+TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
+TIFF_CONFIGURE_ENABLE=	tiff
+EXR_LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
+EXR_CONFIGURE_ENABLE=	exr
+SQUISH_BUILD_DEPENDS=	${LOCALBASE}/lib/libsquish.a:${PORTSDIR}/graphics/squish
+SQUISH_CONFIGURE_WITH=	libsquish
+NVTT_LIB_DEPENDS=	libnvtt.so:${PORTSDIR}/graphics/nvidia-texture-tools
+NVTT_CONFIGURE_WITH=	nvtt
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
-CONFIGURE_ARGS+=--enable-jpeg
-.else
-CONFIGURE_ARGS+=--disable-jpeg
-.endif
-
-.if ${PORT_OPTIONS:MJASPER}
-LIB_DEPENDS+=	jasper:${PORTSDIR}/graphics/jasper
-CONFIGURE_ARGS+=--enable-jp2
-.else
-CONFIGURE_ARGS+=--disable-jp2
-.endif
-
-.if ${PORT_OPTIONS:MLCMS}
-LIB_DEPENDS+=	lcms:${PORTSDIR}/graphics/lcms
-CONFIGURE_ARGS+=--enable-lcms
-.else
-CONFIGURE_ARGS+=--disable-lcms
-.endif
-
-.if ${PORT_OPTIONS:MMNG}
-LIB_DEPENDS+=	mng:${PORTSDIR}/graphics/libmng
-CONFIGURE_ARGS+=--enable-mng
-.else
-CONFIGURE_ARGS+=--disable-mng
-.endif
-
-.if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
-.else
+.if ! ${PORT_OPTIONS:MPNG}
 CONFIGURE_ENV+=	libpng_app=no
-CONFIGURE_ARGS+=--disable-png
-.endif
-
-.if ${PORT_OPTIONS:MTIFF}
-LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff
-CONFIGURE_ARGS+=--enable-tiff
-.else
-CONFIGURE_ARGS+=--disable-tiff
 .endif
 
 .if ${PORT_OPTIONS:MX11}
@@ -100,13 +85,6 @@ USE_SDL=	sdl
 CONFIGURE_ARGS+=--disable-sdl
 .endif
 
-.if ${PORT_OPTIONS:MNVTT}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libnvtt.so:${PORTSDIR}/graphics/nvidia-texture-tools
-RUN_DEPENDS+=	${LOCALBASE}/lib/libnvtt.so:${PORTSDIR}/graphics/nvidia-texture-tools
-.else
-CONFIGURE_ARGS+=--without-nvtt
-.endif
-
 .if ! ${PORT_OPTIONS:MSIMD}
 CONFIGURE_ARGS+=--disable-altivec --disable-sse --disable-sse2 --disable-sse3
 .endif
@@ -119,12 +97,10 @@ post-patch:
 		${WRKSRC}/src-ILU/ilur/ilur.c
 
 post-install:
-	@${RMDIR} ${DATADIR}/examples
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${RMDIR} ${STAGEDIR}${DATADIR}/examples
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in AUTHORS CREDITS ChangeLog Libraries.txt README TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
