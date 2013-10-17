@@ -1,0 +1,44 @@
+GNUstep/Local/Applications/Graphos.app/Graphos
+GNUstep/Local/Applications/Graphos.app/Resources/GRDocument.gorm/data.classes
+GNUstep/Local/Applications/Graphos.app/Resources/GRDocument.gorm/data.info
+GNUstep/Local/Applications/Graphos.app/Resources/GRDocument.gorm/objects.gorm
+GNUstep/Local/Applications/Graphos.app/Resources/Graphos.desktop
+GNUstep/Local/Applications/Graphos.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/Graphos.app/Resources/LineCap1.tiff
+GNUstep/Local/Applications/Graphos.app/Resources/LineCap2.tiff
+GNUstep/Local/Applications/Graphos.app/Resources/LineCap3.tiff
+GNUstep/Local/Applications/Graphos.app/Resources/LineJoin1.tiff
+GNUstep/Local/Applications/Graphos.app/Resources/LineJoin2.tiff
+GNUstep/Local/Applications/Graphos.app/Resources/LineJoin3.tiff
+GNUstep/Local/Applications/Graphos.app/Resources/MainMenu.gorm/data.classes
+GNUstep/Local/Applications/Graphos.app/Resources/MainMenu.gorm/data.info
+GNUstep/Local/Applications/Graphos.app/Resources/MainMenu.gorm/objects.gorm
+GNUstep/Local/Applications/Graphos.app/Resources/PropertiesEditor.gorm/data.classes
+GNUstep/Local/Applications/Graphos.app/Resources/PropertiesEditor.gorm/data.info
+GNUstep/Local/Applications/Graphos.app/Resources/PropertiesEditor.gorm/objects.gorm
+GNUstep/Local/Applications/Graphos.app/Resources/bezier.tiff
+GNUstep/Local/Applications/Graphos.app/Resources/blackarrow.tiff
+GNUstep/Local/Applications/Graphos.app/Resources/circle.tiff
+GNUstep/Local/Applications/Graphos.app/Resources/graphos_appicon_48.tif
+GNUstep/Local/Applications/Graphos.app/Resources/hand.tiff
+GNUstep/Local/Applications/Graphos.app/Resources/magnify.tiff
+GNUstep/Local/Applications/Graphos.app/Resources/paint.tiff
+GNUstep/Local/Applications/Graphos.app/Resources/pencil.tiff
+GNUstep/Local/Applications/Graphos.app/Resources/rectangle.tiff
+GNUstep/Local/Applications/Graphos.app/Resources/reduce.tiff
+GNUstep/Local/Applications/Graphos.app/Resources/reflect.tiff
+GNUstep/Local/Applications/Graphos.app/Resources/rotate.tiff
+GNUstep/Local/Applications/Graphos.app/Resources/shissors.tiff
+GNUstep/Local/Applications/Graphos.app/Resources/text.tiff
+GNUstep/Local/Applications/Graphos.app/Resources/txtAlignCenter.tiff
+GNUstep/Local/Applications/Graphos.app/Resources/txtAlignLeft.tiff
+GNUstep/Local/Applications/Graphos.app/Resources/txtAlignRight.tiff
+GNUstep/Local/Applications/Graphos.app/Resources/whitearrow.tiff
+GNUstep/Local/Applications/Graphos.app/Resources/x.tiff
+GNUstep/Local/Applications/Graphos.app/stamp.make
+GNUstep/Local/Tools/Graphos
+@dirrmtry GNUstep/Local/Applications/Graphos.app/Resources/PropertiesEditor.gorm
+@dirrmtry GNUstep/Local/Applications/Graphos.app/Resources/MainMenu.gorm
+@dirrmtry GNUstep/Local/Applications/Graphos.app/Resources/GRDocument.gorm
+@dirrmtry GNUstep/Local/Applications/Graphos.app/Resources
+@dirrmtry GNUstep/Local/Applications/Graphos.app
