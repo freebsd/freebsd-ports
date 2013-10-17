@@ -12,7 +12,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A rewritten engine for Flashback
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_SDL=	sdl
 
 ALL_TARGET=	rs
@@ -21,19 +21,19 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	README
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+PLIST_FILES=	bin/remin
+PLIST_DIRSTRY=	%%DATADIR%%/data %%DATADIR%%
+
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|DATA|${DATADIR}/data|' ${WRKSRC}/main.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/rs ${PREFIX}/bin/remin
-	${MKDIR} ${DATADIR}/data
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
-.endif
-	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
+	${INSTALL_PROGRAM} ${WRKSRC}/rs ${STAGEDIR}${PREFIX}/bin/remin
+	${MKDIR} ${STAGEDIR}${DATADIR}/data
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
