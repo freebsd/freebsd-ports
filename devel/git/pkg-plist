@@ -1010,6 +1010,7 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.8.3.3.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.8.3.4.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.8.4.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.8.4.1.txt
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/gitweb.cgi
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.js
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.css
@@ -1122,6 +1123,7 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%share/git-core/contrib/mw-to-git/t/t9362-mw-to-git-utf8.sh
 %%CONTRIB%%share/git-core/contrib/mw-to-git/t/t9363-mw-to-git-export-import.sh
 %%CONTRIB%%share/git-core/contrib/mw-to-git/t/t9364-pull-by-rev.sh
+%%CONTRIB%%share/git-core/contrib/mw-to-git/t/t9365-continuing-queries.sh
 %%CONTRIB%%share/git-core/contrib/mw-to-git/t/test-gitmw-lib.sh
 %%CONTRIB%%share/git-core/contrib/mw-to-git/t/test-gitmw.pl
 %%CONTRIB%%share/git-core/contrib/mw-to-git/t/.gitignore
