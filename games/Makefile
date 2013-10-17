@@ -995,6 +995,7 @@
     SUBDIR += violetland
     SUBDIR += viruskiller
     SUBDIR += vitetris
+    SUBDIR += vodovod
     SUBDIR += volleyball
     SUBDIR += vor
     SUBDIR += vultures-eye
