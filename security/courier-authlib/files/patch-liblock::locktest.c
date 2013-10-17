@@ -1,5 +1,5 @@
---- liblock/locktest.c.orig	Mon Dec  6 14:18:55 1999
-+++ liblock/locktest.c	Sun May 15 08:00:42 2005
+--- libs/liblock/locktest.c.orig	Mon Dec  6 14:18:55 1999
++++ libs/liblock/locktest.c	Sun May 15 08:00:42 2005
 @@ -5,6 +5,7 @@
  
  /* $Id */
