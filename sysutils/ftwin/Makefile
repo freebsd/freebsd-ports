@@ -4,7 +4,8 @@ PORTNAME=	ftwin
 PORTVERSION=	0.8.5
 PORTREVISION=	11
 CATEGORIES=	sysutils
-MASTER_SITES=	http://download.meroware.org/ftwin/
+MASTER_SITES=	http://files.etoilebsd.net/ftwin/ \
+		http://download.meroware.org/ftwin/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Useful tool to find duplicate files
@@ -25,11 +26,8 @@ PLIST_FILES=	bin/ftwin \
 
 PORTDOCS=	AUTHORS EXAMPLES TODO CHANGES KNOWN_BUGS VERSION LICENSE README
 
-.include <bsd.port.options.mk>
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
