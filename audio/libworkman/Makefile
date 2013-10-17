@@ -16,14 +16,13 @@ LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 USES=		imake
-NO_STAGE=	yes
 WRKSRC=		${WRKDIR}/libworkman
 USE_LDCONFIG=	yes
 CFLAGS+=	-fPIC
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|^DESTDIR|XCOMM DESTDIR| ; \
+		's|^DESTDIR=.*|DESTDIR=${STAGEDIR}| ; \
 		 s|=include/workman|=$$(INCROOT)/workman| ; \
 		 s|^LIBDIR|XCOMM LIBDIR|' ${WRKSRC}/Config
 
