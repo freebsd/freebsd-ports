@@ -139,7 +139,11 @@ share/locale/zh_TW/LC_MESSAGES/mkvtoolnix.mo
 %%WXGTK%%%%DOCSDIR%%/guide/nl/mkvmerge-gui.hhk
 %%WXGTK%%%%DOCSDIR%%/guide/nl/mkvmerge-gui.hhp
 %%WXGTK%%%%DOCSDIR%%/guide/nl/mkvmerge-gui.html
+%%WXGTK%%man/ja/man1/mmg.1.gz
 %%WXGTK%%man/man1/mmg.1.gz
+%%WXGTK%%man/nl/man1/mmg.1.gz
+%%WXGTK%%man/uk/man1/mmg.1.gz
+%%WXGTK%%man/zh_CN/man1/mmg.1.gz
 man/ja/man1/mkvextract.1.gz
 man/ja/man1/mkvinfo.1.gz
 man/ja/man1/mkvmerge.1.gz
