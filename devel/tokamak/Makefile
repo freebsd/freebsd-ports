@@ -11,18 +11,20 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	High performance real-time physics library
 
 USE_ZIP=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_DOS2UNIX=	*
 
 MAKEFILE=	tokamak.make
-ALL_TARGET=
+ALL_TARGET=	# empty
 
 WRKSRC=		${WRKDIR}/tokamak_release
 BUILD_WRKSRC=	${WRKSRC}/build/gnu
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
+
 .include <bsd.port.options.mk>
 
 .if !defined(WITH_DEBUG)
@@ -36,14 +38,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/include/tokamak.h
 
 do-install:
-	${MKDIR} ${PREFIX}/include/math/
-	${INSTALL_DATA} ${WRKSRC}/include/tokamak.h ${PREFIX}/include/
-	${INSTALL_DATA} ${WRKSRC}/include/math/*.h ${PREFIX}/include/math/
-	${INSTALL_DATA} ${WRKSRC}/lib/libtokamak_m.a ${PREFIX}/lib/
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/license.txt ${WRKSRC}/readme.txt ${DOCSDIR}
-	cd ${WRKSRC}/documentation && ${COPYTREE_SHARE} . ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/math/
+	${INSTALL_DATA} ${WRKSRC}/include/tokamak.h ${STAGEDIR}${PREFIX}/include/
+	${INSTALL_DATA} ${WRKSRC}/include/math/*.h ${STAGEDIR}${PREFIX}/include/math/
+	${INSTALL_DATA} ${WRKSRC}/lib/libtokamak_m.a ${STAGEDIR}${PREFIX}/lib/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/license.txt ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/documentation && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
