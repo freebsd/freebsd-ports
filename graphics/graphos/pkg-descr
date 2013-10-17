@@ -1,0 +1,10 @@
+Graphos roots are directly set in GDraw, written by Enrico Sersale and released
+in 2000. Version 0.1 of Graphos is a direct descendant of GDraw: the interface
+is almost unchanged, but the application has been refactored, reorganized,
+debugged, rewritten and updated.
+
+The main changes were the transition from post-script to NSBezierPath drawing,
+total rearrangement of the objects into Drawable Objects and their Editors
+organized hierachically and the porting to Macintosh.
+
+WWW: http://gap.nongnu.org/graphos/

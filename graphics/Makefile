@@ -313,6 +313,7 @@
     SUBDIR += grafx2
     SUBDIR += graphite2
     SUBDIR += graphopt
+    SUBDIR += graphos
     SUBDIR += graphviz
     SUBDIR += grx
     SUBDIR += gscan2pdf
