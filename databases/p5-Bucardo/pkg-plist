@@ -1,0 +1,7 @@
+bin/bucardo_ctl
+etc/rc.d/bucardo
+%%PERL5_MAN3%%/Bucardo.3.gz
+%%SITE_PERL%%/Bucardo.pm
+man/man1/bucardo_ctl.1.gz
+share/bucardo/bucardo.schema
+@dirrm share/bucardo
