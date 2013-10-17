@@ -90,6 +90,38 @@ Note:  Please add new entries to the beginning of this file.
     </dates>
   </vuln>
 
+  <vuln vid="8c9b48d1-3715-11e3-a624-00262d8b701d">
+    <topic>dropbear -- exposure of sensitive information, DoS</topic>
+    <affects>
+      <package>
+	<name>dropbear</name>
+	<range><ge>2012.55</ge><lt>2013.59</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Dropbear project reports:</p>
+	<blockquote cite="http://secunia.com/advisories/55173/">
+	  <p>A weakness and a vulnerability have been reported in Dropbear
+	     SSH Server, which can be exploited by malicious people to disclose
+	     certain sensitive information and cause a DoS.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>62958</bid>
+      <bid>62993</bid>
+      <cvename>CVE-2013-4421</cvename>
+      <cvename>CVE-2013-4434</cvename>
+      <url>http://secunia.com/advisories/55173</url>
+    </references>
+    <dates>
+      <discovery>2013-05-08</discovery>
+      <discovery>2013-10-03</discovery>
+      <entry>2012-10-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9003b500-31e3-11e3-b0d0-20cf30e32f6d">
     <topic>mod_fcgid -- possible heap buffer overwrite</topic>
     <affects>
