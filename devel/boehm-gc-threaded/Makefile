@@ -1,70 +1,16 @@
 # Created by: stas
 # $FreeBSD$
 
-PORTNAME=	boehm-gc
-PORTVERSION=	7.1
-PORTREVISION=	1
-CATEGORIES=	devel
-MASTER_SITES=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/
-PKGNAMESUFFIX=	-${GC_VARIANT}
-DISTNAME=	gc-${PORTVERSION:S/.a/alpha/}
+PORTREVISION=	0
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Garbage collection and memory leak detection for C and C++
+COMMENT=	Garbage collection and memory leak detection for C and C++ with threading support
 
-RUN_DEPENDS=	${PREFIX}/include/gc/gc.h:${PORTSDIR}/devel/boehm-gc
+LICENSE=	MIT
 
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--enable-cplusplus --disable-static --enable-threads=posix \
-		--enable-thread-local-alloc
-CONFIGURE_ENV=	CFLAGSS="${CFLAGS} LIBS="${LIBS}
-MAKE_JOBS_UNSAFE=	yes
-INSTLIBS=	cord gc gccpp
+MASTERDIR=	${.CURDIR}/../boehm-gc
+DESCR=		${.CURDIR}/pkg-descr
+
 GC_VARIANT=	threaded
 SOVER=	1
 
-OPTIONS_DEFINE=	PARALLEL_MARK DEBUG
-PARALLEL_MARK_DESC=	Parallel-thread marking (faster for SMP)
-
-PLIST_FILES=	${INSTLIBS:S,^,lib/lib,g:S,$,-${GC_VARIANT}.so.${SOVER},g} \
-		${INSTLIBS:S,^,lib/lib,g:S,$,-${GC_VARIANT}.so,g} \
-		libdata/pkgconfig/bdw-gc-${GC_VARIANT}.pc
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64"
-BROKEN=	Does not compile on ia64
-.endif
-
-.if ${PORT_OPTIONS:MPARALLEL_MARK}
-CONFIGURE_ARGS+=	--enable-parallel-mark
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-gc-debug
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}+fulldebug
-.endif
-
-post-patch:
-	${REINPLACE_CMD} -E -e 's,libgc\.la,libgc-${GC_VARIANT}.la,g' \
-		-e 's,libgccpp\.la,libgccpp-${GC_VARIANT}.la,g' \
-		-e 's,libcord\.la,libcord-${GC_VARIANT}.la,g' \
-		${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e 's,-lgc,-lgc-${GC_VARIANT},' ${WRKSRC}/bdw-gc.pc.in
-
-do-install:
-.for LIB in ${INSTLIBS}
-	${INSTALL_DATA} ${WRKSRC}/.libs/lib${LIB}-${GC_VARIANT}.so.${SOVER} \
-	    ${PREFIX}/lib/lib${LIB}-${GC_VARIANT}.so.${SOVER}
-	@(cd ${PREFIX}/lib && ${LN} -s lib${LIB}-${GC_VARIANT}.so.${SOVER} \
-	    lib${LIB}-${GC_VARIANT}.so)
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/bdw-gc.pc \
-		${PREFIX}/libdata/pkgconfig/bdw-gc-${GC_VARIANT}.pc
-
-test: build
-	cd ${WRKSRC} && ${MAKE} check
-
-.include <bsd.port.post.mk>
+.include "${MASTERDIR}/Makefile"
