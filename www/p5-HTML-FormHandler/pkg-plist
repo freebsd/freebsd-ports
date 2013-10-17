@@ -29,6 +29,7 @@
 %%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/Fieldset.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/Base.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/Bootstrap.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/Bootstrap3.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/TableInline.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/Simple.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Theme/Bootstrap.pm
@@ -319,6 +320,7 @@
 %%PERL5_MAN3%%/HTML::FormHandler::Widget::Theme::BootstrapFormMessages.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::Widget::Wrapper::Base.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::Widget::Wrapper::Bootstrap.3.gz
+%%PERL5_MAN3%%/HTML::FormHandler::Widget::Wrapper::Bootstrap3.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::Widget::Wrapper::Fieldset.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::Widget::Wrapper::None.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::Widget::Wrapper::Simple.3.gz
