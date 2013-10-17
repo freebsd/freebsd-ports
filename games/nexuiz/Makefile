@@ -3,7 +3,7 @@
 
 PORTNAME=	nexuiz
 PORTVERSION=	2.5.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/NexuizRelease/Nexuiz%20${PORTVERSION} \
 		SF/${PORTNAME}/mappack/nexmappack_r2:mappack
@@ -13,8 +13,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Fast-paced, chaotic, and intense multiplayer first person shooter
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 LICENSE=	GPLv2
 
@@ -29,61 +29,68 @@ MAKE_ARGS=	DP_FS_BASEDIR="${DATADIR}" CC="${CC}" \
 		OPTIM_RELEASE="${CFLAGS} -fno-strict-aliasing -funroll-loops" \
 		STRIP="${STRIP_CMD}"
 MAKE_JOBS_UNSAFE=yes
-ALL_TARGET=	#
+ALL_TARGET=	# empty
+
+PORTDATA=	*
 
 OPTIONS_DEFINE=	MAPPACK
-OPTIONS_MULTI=	FLAVOR
-OPTIONS_MULTI_FLAVOR=	CLIENT SDL_CLIENT SERVER
-CLIENT_DESC=	Build GLX client
-SDL_CLIENT_DESC=	Build SDL client
-SERVER_DESC=	Build dedicated server
+OPTIONS_MULTI=	COMPONENTS
+OPTIONS_MULTI_COMPONENTS=CLIENT SDL_CLIENT DEDICATED
+OPTIONS_DEFAULT=MAPPACK CLIENT SDL_CLIENT DEDICATED
+
 MAPPACK_DESC=	Install community map pack
-FLAVOR_DESC=	Executable Selection
+CLIENT_DESC=	Build GLX client
+SDL_CLIENT_DESC=Build SDL client
+DEDICATED_DESC=	Build dedicated server
 
-OPTIONS_DEFAULT=	CLIENT SDL_CLIENT SERVER MAPPAC
+CLIENT_LIB_DEPENDS=	libmodplug.so:${PORTSDIR}/audio/libmodplug \
+			libpng.so:${PORTSDIR}/graphics/png \
+			libtheora.so:${PORTSDIR}/multimedia/libtheora
+SDL_CLIENT_LIB_DEPENDS=	${CLIENT_LIB_DEPENDS}
+MAPPACK_DISTFILES=	nexmappack_r2${EXTRACT_SUFX}:mappack
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMAPPACK}
-DISTFILES+=	nexmappack_r2${EXTRACT_SUFX}:mappack
-PLIST_SUB+=	MAPPACK=""
-.else
-PLIST_SUB+=	MAPPACK="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MCLIENT} || ${PORT_OPTIONS:MSDL_CLIENT}
-LIB_DEPENDS+=	modplug:${PORTSDIR}/audio/libmodplug \
-		png15:${PORTSDIR}/graphics/png \
-		theora:${PORTSDIR}/multimedia/libtheora
-.endif
 
 .if ${PORT_OPTIONS:MCLIENT}
 USE_GL=		glut
 USE_XORG=	x11 xpm xxf86vm xxf86dga xext
 ALL_TARGET+=	cl-release
-PLIST_SUB+=	CLIENT=""
-.else
-PLIST_SUB+=	CLIENT="@comment "
+PLIST_FILES+=	bin/${PORTNAME}-glx
+
+DESKTOP_ENTRIES="Nexuiz" \
+		"${COMMENT}" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}.ico" \
+		"${PORTNAME}-glx" \
+		"Game;Shooter;" \
+		""
 .endif
 
 .if ${PORT_OPTIONS:MSDL_CLIENT}
 USE_SDL=	sdl
 ALL_TARGET+=	sdl-release
-PLIST_SUB+=	SDL_CLIENT=""
-.else
-PLIST_SUB+=	SDL_CLIENT="@comment "
+PLIST_FILES+=	bin/${PORTNAME}-sdl
+
+# override of DESKTOP_ENTRIES for GLX client is intented
+DESKTOP_ENTRIES="Nexuiz" \
+		"${COMMENT}" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}.ico" \
+		"${PORTNAME}-sdl" \
+		"Game;Shooter;" \
+		""
 .endif
 
-.if ${PORT_OPTIONS:MSERVER}
+.if ${PORT_OPTIONS:MCLIENT} || ${PORT_OPTIONS:MSDL_CLIENT}
+PLIST_FILES+=	share/pixmaps/${PORTNAME}.ico
+.endif
+
+.if ${PORT_OPTIONS:MDEDICATED}
 ALL_TARGET+=	sv-release
-PLIST_SUB+=	SERVER=""
-.else
-PLIST_SUB+=	SERVER="@comment "
+PLIST_FILES+=	bin/${PORTNAME}-dedicated
 .endif
 
 post-extract:
-	@${EXTRACT_CMD} ${WRKDIR}/Nexuiz/sources/enginesource20091001.zip \
+	@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+		${WRKDIR}/Nexuiz/sources/enginesource20091001.zip \
 		-d ${WRKDIR}/Nexuiz/sources
 
 post-patch:
@@ -96,20 +103,25 @@ post-patch:
 		${WRKSRC}/image_png.c
 
 do-install:
-	${SH} -c '${FIND} ${WRKSRC} -name "darkplaces-*[^vpj]" | \
-		while read f ; do ${INSTALL_PROGRAM} $${f} \
-			${PREFIX}/bin/${PORTNAME}-$${f##*-} ; done'
-	@${MKDIR} ${DATADIR}/data ${DATADIR}/havoc
-	${INSTALL_DATA} ${WRKDIR}/Nexuiz/data/*.pk3 ${DATADIR}/data
-	${INSTALL_DATA} ${WRKDIR}/Nexuiz/havoc/*.pk3 ${DATADIR}/havoc
-.if ${PORT_OPTIONS:MMAPPACK}
-	${INSTALL_DATA} ${WRKDIR}/data/*.pk3 ${DATADIR}/data
+.if ${PORT_OPTIONS:MCLIENT}
+	${INSTALL_PROGRAM} ${WRKDIR}/Nexuiz/sources/darkplaces/darkplaces-glx ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-glx
 .endif
-.if ${PORT_OPTIONS:MSERVER}
-	cd ${WRKDIR}/Nexuiz && ${COPYTREE_SHARE} server ${DATADIR}
+.if ${PORT_OPTIONS:MSDL_CLIENT}
+	${INSTALL_PROGRAM} ${WRKDIR}/Nexuiz/sources/darkplaces/darkplaces-sdl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-sdl
+.endif
+.if ${PORT_OPTIONS:MCLIENT} || ${PORT_OPTIONS:MSDL_CLIENT}
+	${INSTALL_DATA} ${WRKDIR}/Nexuiz/sources/darkplaces/nexuiz.ico ${STAGEDIR}${PREFIX}/share/pixmaps
+.endif
+.if ${PORT_OPTIONS:MDEDICATED}
+	${INSTALL_PROGRAM} ${WRKDIR}/Nexuiz/sources/darkplaces/darkplaces-dedicated ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-dedicated
+	cd ${WRKDIR}/Nexuiz && ${COPYTREE_SHARE} "server" ${STAGEDIR}${DATADIR}
 # Fixup lost +x permissions on scripts after COPYTREE_SHARE
-	${FIND} ${DATADIR}/server -type f -name *.sh -o -name rcon*.pl | \
+	${FIND} ${STAGEDIR}${DATADIR}/server -type f -name *.sh -o -name rcon*.pl | \
 		${XARGS} ${CHMOD} +x
+.endif
+	cd ${WRKDIR}/Nexuiz && ${COPYTREE_SHARE} "data havoc" ${STAGEDIR}${DATADIR}
+.if ${PORT_OPTIONS:MMAPPACK}
+	${INSTALL_DATA} ${WRKDIR}/data/*.pk3 ${STAGEDIR}${DATADIR}/data
 .endif
 
 .include <bsd.port.mk>
