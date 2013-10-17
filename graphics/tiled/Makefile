@@ -13,14 +13,13 @@ COMMENT=	General purpose tile map editor
 USE_QT4=	corelib gui opengl \
 		linguist_build qmake_build moc_build uic_build rcc_build
 USE_LDCONFIG=	yes
-
-MAN1=		automappingconverter.1 tiled.1 tmxrasterizer.1 tmxviewer.1
+DESTDIRNAME=	INSTALL_ROOT
 
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -35,10 +34,8 @@ do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${QMAKE} ${QMAKEFLAGS} PREFIX="${PREFIX}" tiled.pro
 
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${DOCSDIR}/
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
