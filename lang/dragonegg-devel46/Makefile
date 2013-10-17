@@ -2,6 +2,7 @@
 
 PORTNAME=	dragonegg46
 PORTVERSION=	3.4.r${SVN_REV}
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -15,8 +16,7 @@ CONFLICTS+=	dragonegg46-3*
 
 # XXX: not entierly sure if llvm-devel is a depend
 BUILD_DEPENDS+=	llvm-devel>=${PORTVERSION}:${PORTSDIR}/devel/llvm-devel
-RUN_DEPENDS+=	${CC}:${PORTSDIR}/lang/gcc \
-		llvm-devel>=${PORTVERSION}:${PORTSDIR}/devel/llvm-devel
+RUN_DEPENDS+=	llvm-devel>=${PORTVERSION}:${PORTSDIR}/devel/llvm-devel
 
 OPTIONS_DEFINE=	DOCS
 
