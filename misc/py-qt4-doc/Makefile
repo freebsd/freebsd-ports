@@ -21,13 +21,13 @@ PORTDOCS=	*
 
 do-install:
 	cd ${WRKSRC} &&\
-		${MKDIR} ${DOCSDIR} &&\
+		${MKDIR} ${STAGEDIR}${DOCSDIR} &&\
 		${INSTALL_DATA} GPL_EXCEPTION.TXT\
 				GPL_EXCEPTION_ADDENDUM.TXT NEWS\
 				LICENSE.GPL2 LICENSE.GPL3\
 				OPENSOURCE-NOTICE.TXT README THANKS\
-			${DOCSDIR}
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${DOCSDIR}
+			${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}
 
 .include "../../devel/py-qt4/bsd.pyqt.mk"
 .include <bsd.port.mk>
