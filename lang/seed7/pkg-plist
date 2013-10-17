@@ -5,6 +5,14 @@ lib/seed7/bin/s7_con.a
 lib/seed7/bin/s7_data.a
 lib/seed7/bin/s7_draw.a
 lib/seed7/bin/seed7_05.a
+lib/seed7/lib/arc4.s7i
+lib/seed7/lib/asn1.s7i
+lib/seed7/lib/cipher.s7i
+lib/seed7/lib/gethttps.s7i
+lib/seed7/lib/hmac.s7i
+lib/seed7/lib/pkcs1.s7i
+lib/seed7/lib/tls.s7i
+lib/seed7/lib/x509cert.s7i
 lib/seed7/lib/array.s7i
 lib/seed7/lib/bigfile.s7i
 lib/seed7/lib/bigint.s7i
@@ -129,6 +137,8 @@ lib/seed7/lib/wrinum.s7i
 lib/seed7/lib/xml_ent.s7i
 lib/seed7/lib/xmldom.s7i
 lib/seed7/lib/zip.s7i
+man/man1/s7.1.gz
+man/man1/s7c.1.gz
 @dirrm lib/seed7/lib
 @dirrm lib/seed7/bin
 @dirrm lib/seed7
