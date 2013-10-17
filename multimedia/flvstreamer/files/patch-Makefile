@@ -1,5 +1,5 @@
 --- Makefile.orig	2010-02-15 10:06:20.000000000 +0900
-+++ Makefile	2011-12-14 03:51:16.000000000 +0900
++++ Makefile	2013-10-17 09:16:18.000000000 +0900
 @@ -1,12 +1,12 @@
 -CC=$(CROSS_COMPILE)gcc
 -LD=$(CROSS_COMPILE)ld
@@ -17,3 +17,13 @@
  SLIBS=$(THREADLIB) $(LIBS)
  
  EXT=
+@@ -18,8 +18,7 @@
+ 
+ progs:	flvstreamer streams rtmpsrv rtmpsuck
+ 
+-posix linux unix osx:
+-	@$(MAKE) $(MAKEFLAGS) progs
++posix linux unix osx: progs
+ 
+ mingw:
+ 	@$(MAKE) CROSS_COMPILE=mingw32- LIBS="$(LIBS) -lws2_32 -lwinmm -lgdi32" THREADLIB= EXT=.exe $(MAKEFLAGS) progs
