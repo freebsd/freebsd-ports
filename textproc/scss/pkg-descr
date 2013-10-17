@@ -2,7 +2,7 @@ SCSS is a Scheme module for parsing, querying, and emitting style information
 compatible with the W3C Cascading Stylesheets recommendation. While SCSS does
 not itself provide any rendering functionality, it can provide style
 information to applications and libraries that do. If used with XML documents
-produced by SXML or SDOM, SCSS can accomodate the full range of selector types
+produced by SXML or SDOM, SCSS can accommodate the full range of selector types
 described in the W3C recommendation; it can also match simple selectors against
 strings when structured document information is not available.
 
