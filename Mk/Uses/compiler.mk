@@ -6,7 +6,7 @@
 #
 # Feature:	compiler
 # Usage:	USES=compiler or USES=compiler:ARGS
-# Valid ARGS:	env (default, implicit) c++11-lib c++11-lang c11 features
+# Valid ARGS:	env (default, implicit) c++11-lib c++11-lang c11 openmp features
 #
 # c++11-lang:	The port need a compiler understanding C++11
 # c++11-lib:	The port need a compiler understanding C++11 and with a C++11 ready standard library
@@ -28,7 +28,7 @@ _INCLUDE_USES_COMPILER_MK=	yes
 compiler_ARGS=	env
 .endif
 
-VALID_ARGS=	c++11-lib c++11-lang c11 features env
+VALID_ARGS=	c++11-lib c++11-lang c11 features openmp env
 
 .if ${compiler_ARGS} == c++11-lib
 _COMPILER_ARGS+=	features c++11-lib
