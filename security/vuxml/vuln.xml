@@ -78,7 +78,7 @@ Note:  Please add new entries to the beginning of this file.
     </references>
     <dates>
       <discovery>2013-05-08</discovery>
-      <discovery>2013-10-03</discovery>
+      <!-- discovery>2013-10-03</discovery -->
       <entry>2013-10-17</entry>
     </dates>
   </vuln>
