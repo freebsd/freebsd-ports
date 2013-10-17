@@ -8,8 +8,8 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://cloud.github.com/downloads/simsong/AFFLIBv3/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	cs@FreeBSD.org
-COMMENT=	The Advanced Forensics Format library and utilities
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Advanced Forensics Format library and utilities
 
 LICENSE=	BSD
 
