@@ -1,0 +1,9 @@
+bin/netwalk
+share/icons/hicolor/128x128/apps/netwalk.png
+share/icons/hicolor/32x32/apps/netwalk.png
+share/icons/hicolor/48x48/apps/netwalk.png
+share/icons/hicolor/64x64/apps/netwalk.png
+share/icons/hicolor/96x96/apps/netwalk.png
+%%DATADIR%%/Vera.ttf
+share/pixmaps/netwalk.png
+@dirrm %%DATADIR%%
