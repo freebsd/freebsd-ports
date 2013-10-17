@@ -12,11 +12,11 @@ COMMENT=	Real-time 3D sound generation library
 
 USE_BZIP2=	yes
 USES=		cmake
-NO_STAGE=	yes
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	SSE
+OPTIONS_DEFAULT_amd64=SSE
 
 .include <bsd.port.options.mk>
 
