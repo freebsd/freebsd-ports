@@ -88,7 +88,7 @@ if [ -n "${uwsgi_profiles}" ]; then
 fi
 
 command=%%PREFIX%%/bin/uwsgi
-command_args="--pidfile ${uwsgi_pidfile} -s ${uwsgi_socket} -d ${uwsgi_logfile} --uid ${uwsgi_uid} --gid ${uwsgi_gid} ${uwsgi_flags}"
+command_args="--pidfile ${uwsgi_pidfile} -s ${uwsgi_socket} -d ${uwsgi_logfile} --uid ${uwsgi_uid} --gid ${uwsgi_gid}"
 pidfile=${uwsgi_pidfile}
 stop_postcmd=stop_postcmd
 reload_precmd=reload_precmd
