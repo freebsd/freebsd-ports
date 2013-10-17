@@ -101,7 +101,7 @@ VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386" || ${ARCH} == "powerpc"
+.if ${ARCH} != "amd64"
 SSE_CFLAGS=	-mno-sse -mno-sse2
 .endif
 
