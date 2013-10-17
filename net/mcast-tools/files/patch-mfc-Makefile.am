@@ -1,0 +1,29 @@
+--- mfc/Makefile.am.orig	2005-12-11 14:15:10.000000000 +0900
++++ mfc/Makefile.am	2013-10-17 13:52:36.000000000 +0900
+@@ -9,15 +9,19 @@
+ 
+ # Config file parser (this is necessary because not all yacc generate y.tab.h)
+ cftoken.o: cftoken.c cfparse.h
+-	$(COMPILE) -c -o $@ $<
++	$(COMPILE) -c -o $@ cftoken.c
+ 
+ cfparse.o: cfparse.c
+-	$(COMPILE) -c -o $@ $<
++	$(COMPILE) -c -o $@ $?
+ 
+ cftoken.c: cftoken.l
+-	$(LEX) -ocftoken.c $<
++	$(LEX) -o$@ $?
+ 
+-cfparse.h cfparse.c: cfparse.y
+-	$(YACC) -d $< && \
+-	mv y.tab.c cfparse.c && \
+-	mv y.tab.h cfparse.h
++y.tab.h y.tab.c: cfparse.y
++	$(YACC) -d $?
++
++cfparse.h: y.tab.h
++	mv y.tab.h $@
++
++cfparse.c: y.tab.c
++	mv y.tab.c $@

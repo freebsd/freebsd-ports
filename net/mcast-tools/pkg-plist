@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 etc/pim6sd.conf.sample
 etc/pim6dd.conf.sample
 etc/mfc.conf.sample
@@ -9,3 +10,13 @@ sbin/mfc
 sbin/pim6dd
 sbin/pim6sd
 sbin/pim6stat
+man/man1/mcastread.1.gz
+man/man1/mcastsend.1.gz
+man/man1/pim6stat.1.gz
+man/man1/pmsft.1.gz
+man/man5/pim6dd.conf.5.gz
+man/man5/pim6sd.conf.5.gz
+man/man8/mfc.8.gz
+man/man8/mtrace6.8.gz
+man/man8/pim6dd.8.gz
+man/man8/pim6sd.8.gz
