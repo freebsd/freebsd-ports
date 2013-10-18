@@ -10,25 +10,23 @@ MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	RSS Feed Aggregator that generate static html
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libneo_cs.a:${PORTSDIR}/www/clearsilver
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
-		curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libcurl.so:${PORTSDIR}/ftp/curl
 
 LICENSE=	BSD
 
-MAN1=		cplanet.1
-
 OPTIONS_DEFINE=	EXAMPLES
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}/${MANPREFIX}/man/man1
+
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL} -o root -g wheel -m 644 ${WRKSRC}/samples/cplanet-atom.cs ${EXAMPLESDIR}
-	${INSTALL} -o root -g wheel -m 644 ${WRKSRC}/samples/cplanet-opml.cs ${EXAMPLESDIR}
-	${INSTALL} -o root -g wheel -m 644 ${WRKSRC}/samples/cplanet-rss.cs ${EXAMPLESDIR}
-	${INSTALL} -o root -g wheel -m 644 ${WRKSRC}/samples/cplanet.cs ${EXAMPLESDIR}
-	${INSTALL} -o root -g wheel -m 644 ${WRKSRC}/samples/cplanet.hdf ${EXAMPLESDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/cplanet-atom.cs \
+		${WRKSRC}/samples/cplanet-opml.cs \
+		${WRKSRC}/samples/cplanet-rss.cs \
+		${WRKSRC}/samples/cplanet.cs \
+		${WRKSRC}/samples/cplanet.hdf ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
