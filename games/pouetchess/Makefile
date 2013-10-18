@@ -12,9 +12,11 @@ COMMENT=	Open-source 3D chess game
 
 USE_SDL=	sdl image
 USE_GL=		gl
-USE_GMAKE=	yes
+USES=		gmake
 
 WRKSRC=		${WRKDIR}/pouetChess_0.11
+
+PORTDATA=	*
 
 DESKTOP_ENTRIES="pouetChess" \
 		"Play chess" \
@@ -23,7 +25,6 @@ DESKTOP_ENTRIES="pouetChess" \
 		"Game;BoardGame;" \
 		false
 
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} \( -name "*.cpp" -o -name "*.h" -o -name Makefile \
 		-o -name config.ini \) -exec ${REINPLACE_CMD} -e \
@@ -40,14 +41,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/|' ${WRKSRC}/src/globalInfos.h
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/pouetChess ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/bin/config.ini ${PREFIX}/etc/pouetChess.conf.sample
-	if [ ! -f ${PREFIX}/etc/pouetChess.conf ]; then \
-		${INSTALL_DATA} ${WRKSRC}/bin/config.ini ${PREFIX}/etc/pouetChess.conf; \
-	fi
-.for i in objets3d textures icons
-	${MKDIR} ${DATADIR}/${i}
-	${INSTALL_DATA} ${WRKSRC}/bin/data/${i}/* ${DATADIR}/${i}
-.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/pouetChess ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/bin/config.ini ${STAGEDIR}${PREFIX}/etc/pouetChess.conf.sample
+	cd ${WRKSRC}/bin/data && ${COPYTREE_SHARE} "*" ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
