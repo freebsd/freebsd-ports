@@ -9,16 +9,24 @@ case $2 in
 POST-INSTALL)
   echo "---> Starting post-install script:"
 
+  MYTMP="$(mktemp -d "${TMPDIR-/tmp}/mminstall.XXXXXXXXXX")" || exit 1
+  trap "rm -rf \"$MYTMP\"" EXIT
+
   /bin/chmod g+s "%%MAILMANDIR%%" || exit 1
+
+  echo "---> Running update:"
+
+  LC_ALL=C "%%MAILMANDIR%%/bin/update" || exit 1
 
   echo "---> Checking crontab(5) file for user \"%%USER%%\""
 
   if [ -e /var/cron/allow ]; then
-  echo "%%USER%%" >> /var/cron/allow
+      grep -q "^%%USER%%\$" /var/cron/allow || \
+      printf '%s\n' "%%USER%%" >> /var/cron/allow
   fi
 
-  if /usr/bin/crontab -u "%%USER%%" -l >/tmp/mmctab$$ 2>&1 ; then
-      if test -s /tmp/mmctab$$; then
+  if /usr/bin/crontab -u "%%USER%%" -l >"$MYTMP/crontab" 2>&1 ; then
+      if test -s "$MYTMP/crontab"; then
           echo "---> \"%%USER%%\" already has a crontab.  Not overwriting it"
           echo "---> Please merge any changes from the standard crontab file"
           echo "--->     %%MAILMANDIR%%/cron/crontab.in"
@@ -30,10 +38,10 @@ POST-INSTALL)
       echo "---> Creating crontab(5) file for user \"%%USER%%\""
       /usr/bin/crontab -u "%%USER%%" "%%MAILMANDIR%%/cron/crontab.in" || exit 1
   fi
-  rm -f /tmp/mmctab$$
+  rm -f "$MYTMP/crontab"
 
   echo "---> Checking (and fixing) file and directory permissions"
-  %%MAILMANDIR%%/bin/check_perms -f >/dev/null 2>&1
+  "%%MAILMANDIR%%/bin/check_perms" -f >/dev/null
   ;;
 
 esac

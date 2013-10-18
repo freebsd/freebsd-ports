@@ -1,5 +1,5 @@
-SHA256 (mailman/mailman-2.1.15.tgz) = f355fb3d31772b488449e6f5173dafd31edca93172c307244c791d25d9e2bec8
-SIZE (mailman/mailman-2.1.15.tgz) = 8468107
+SHA256 (mailman/mailman-2.1.16.tgz) = 5d152b069338f5b814222f981c389b050f5c143a11ccf8796cf380e824b64f63
+SIZE (mailman/mailman-2.1.16.tgz) = 9009817
 SHA256 (mailman/indexing-2.1.12-0.1.patch.gz) = c9bb8398695d79bbaa1079063d8327f4b7208a1f3cde7766d2f39390da1d820e
 SIZE (mailman/indexing-2.1.12-0.1.patch.gz) = 8178
 SHA256 (mailman/htdig-2.1.12-0.1.patch.gz) = 4675fafe1ba978ec8ebfeb9306363d3ee0468bdbb32f204267ab54e0f15057d4

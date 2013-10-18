@@ -10,21 +10,21 @@ DEINSTALL)
   echo "---> Starting deinstall script:"
 
   if /usr/bin/crontab -u "%%USER%%" -l | \
-      /usr/bin/diff - %%MAILMANDIR%%/cron/crontab.in >/dev/null 2>&1 ; then
+      /usr/bin/diff - "%%MAILMANDIR%%/cron/crontab.in" >/dev/null 2>&1 ; then
       echo "---> Zeroing crontab for \"%%USER%%\""
       /usr/bin/crontab -u "%%USER%%" /dev/null
       if [ -e /var/cron/allow ]; then
-         grep -v %%USER%% /var/cron/allow > /var/cron/allow.new
-         mv /var/cron/allow.new /var/cron/allow
+         grep -v "^%%USER%%$" /var/cron/allow > /var/cron/allow.new$$
+         mv /var/cron/allow.new$$ /var/cron/allow
       fi
   else
-      echo "---> Crontab for \"%%USER%%\" not removed: please deinstall"
-      echo "---> manually if you no-longer wish to use Mailman. eg:"
-      echo "--->     /usr/bin/crontab -u "%%USER%%" -r"
+      echo "---> Crontab for \"%%USER%%\" modified, not removed: please deinstall"
+      echo "---> it manually if you no longer wish to use Mailman. E.g.:"
+      echo "--->     /usr/bin/crontab -u \"%%USER%%\" -r"
   fi
 
   echo "---> Preserving the \"last_mailman_version\" file"
-  /bin/cp -f %%MAILMANDIR%%/data/last_mailman_version /var/tmp/
+  /bin/mv -f "%%MAILMANDIR%%/data/last_mailman_version" /var/tmp/
 
   # If the errorlog is the only existing logfile, delete it.  (If Mailman's
   # qrunner had not been running, then the process of trying to stop the
@@ -33,20 +33,20 @@ DEINSTALL)
   # errorlog will exist.)
   if [ "`echo %%MAILMANDIR%%/logs/*`" = "%%MAILMANDIR%%/logs/error" ]; then
     echo "---> Deleting errorlog (It is the only existing logfile.)"
-    /bin/rm -f %%MAILMANDIR%%/logs/error
+    /bin/rm -f "%%MAILMANDIR%%/logs/error"
   fi
   ;;
 
 POST-DEINSTALL)
   echo "---> Starting post-deinstall script:"
 
-  if [ -d %%MAILMANDIR%% ]; then
+  rmdir "%%MAILMANDIR%%" >/dev/null 2>&1
+  if [ -d "%%MAILMANDIR%%" ]; then
     echo '---> %%MAILMANDIR%% is not empty - this installation may have active lists!'
     echo "---> Restoring \"last_mailman_version\" file"
-    [ -d %%MAILMANDIR%%/data ] || /bin/mkdir %%MAILMANDIR%%/data
-    /bin/mv -f /var/tmp/last_mailman_version %%MAILMANDIR%%/data/
+    /bin/mkdir -p "%%MAILMANDIR%%/data"
+    /bin/mv -f /var/tmp/last_mailman_version "%%MAILMANDIR%%/data/"
   fi
 
   ;;
-
 esac

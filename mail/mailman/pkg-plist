@@ -15,6 +15,7 @@
 %%IMGDIR%%/mailman.jpg
 %%IMGDIR%%/mm-icon.png
 %%IMGDIR%%/powerlogo.gif
+@group %%MM_GROUPNAME%%
 %%MMDIR%%/Mailman/Archiver/Archiver.py
 %%MMDIR%%/Mailman/Archiver/Archiver.pyc
 %%MMDIR%%/Mailman/Archiver/HyperArch.py
@@ -225,6 +226,8 @@
 %%MMDIR%%/Mailman/Handlers/ToOutgoing.pyc
 %%MMDIR%%/Mailman/Handlers/ToUsenet.py
 %%MMDIR%%/Mailman/Handlers/ToUsenet.pyc
+%%MMDIR%%/Mailman/Handlers/WrapMessage.py
+%%MMDIR%%/Mailman/Handlers/WrapMessage.pyc
 %%MMDIR%%/Mailman/Handlers/__init__.py
 %%MMDIR%%/Mailman/Handlers/__init__.pyc
 %%MMDIR%%/Mailman/ListAdmin.py
@@ -326,11 +329,14 @@
 %%MMDIR%%/bin/clone_member
 %%MMDIR%%/bin/config_list
 %%MMDIR%%/bin/convert.py
+%%NLS%%%%MMDIR%%/bin/convert.pyc
 %%MMDIR%%/bin/discard
 %%MMDIR%%/bin/dumpdb
 %%MMDIR%%/bin/export.py
+%%NLS%%%%MMDIR%%/bin/export.pyc
 %%MMDIR%%/bin/find_member
 %%MMDIR%%/bin/fix_url.py
+%%NLS%%%%MMDIR%%/bin/fix_url.pyc
 %%MMDIR%%/bin/genaliases
 %%MMDIR%%/bin/inject
 %%MMDIR%%/bin/list_admins
@@ -340,6 +346,7 @@
 %%MMDIR%%/bin/mailmanctl
 %%MMDIR%%/bin/mmsitepass
 %%MMDIR%%/bin/msgfmt.py
+%%NLS%%%%MMDIR%%/bin/msgfmt.pyc
 %%MMDIR%%/bin/newlist
 %%MMDIR%%/bin/paths.py
 %%MMDIR%%/bin/paths.pyc
@@ -347,6 +354,7 @@
 %%MMDIR%%/bin/rb-archfix
 %%MMDIR%%/bin/remove_members
 %%MMDIR%%/bin/reset_pw.py
+%%NLS%%%%MMDIR%%/bin/reset_pw.pyc
 %%MMDIR%%/bin/rmlist
 %%MMDIR%%/bin/show_qfiles
 %%MMDIR%%/bin/sync_members
@@ -378,12 +386,10 @@
 %%MMDIR%%/cron/nightly_gzip
 %%SUB_HTDIG%%%%MMDIR%%/cron/nightly_htdig
 %%MMDIR%%/cron/paths.py
-%%MMDIR%%/cron/paths.pyc
 %%SUB_HTDIG%%%%MMDIR%%/cron/remote_nightly_htdig
 %%SUB_HTDIG%%%%MMDIR%%/cron/remote_nightly_htdig.pl
 %%SUB_HTDIG%%%%MMDIR%%/cron/remote_nightly_htdig_noshare
 %%MMDIR%%/cron/senddigests
-%%MMDIR%%/data/last_mailman_version
 %%MMDIR%%/data/sitelist.cfg
 %%MMDIR%%/icons/PythonPowered.png
 %%MMDIR%%/icons/gnu-head-tiny.jpg
@@ -416,6 +422,8 @@
 %%NLS%%%%MMDIR%%/messages/eu/LC_MESSAGES/mailman.mo
 %%NLS%%%%MMDIR%%/messages/eu/LC_MESSAGES/mailman.po
 %%NLS%%%%MMDIR%%/messages/eu/README.eu
+%%NLS%%%%MMDIR%%/messages/fa/LC_MESSAGES/mailman.mo
+%%NLS%%%%MMDIR%%/messages/fa/LC_MESSAGES/mailman.po
 %%NLS%%%%MMDIR%%/messages/fi/LC_MESSAGES/mailman.mo
 %%NLS%%%%MMDIR%%/messages/fi/LC_MESSAGES/mailman.po
 %%NLS%%%%MMDIR%%/messages/fi/README.fi
@@ -489,7 +497,6 @@
 %%MMDIR%%/scripts/mailman
 %%MMDIR%%/scripts/owner
 %%MMDIR%%/scripts/paths.py
-%%MMDIR%%/scripts/paths.pyc
 %%MMDIR%%/scripts/post
 %%MMDIR%%/scripts/request
 %%MMDIR%%/scripts/subscribe
@@ -970,6 +977,42 @@
 %%NLS%%%%MMDIR%%/templates/eu/unsubauth.txt
 %%NLS%%%%MMDIR%%/templates/eu/userpass.txt
 %%NLS%%%%MMDIR%%/templates/eu/verify.txt
+%%NLS%%%%MMDIR%%/templates/fa/adminsubscribeack.txt
+%%NLS%%%%MMDIR%%/templates/fa/adminunsubscribeack.txt
+%%NLS%%%%MMDIR%%/templates/fa/admlogin.html
+%%NLS%%%%MMDIR%%/templates/fa/approve.txt
+%%NLS%%%%MMDIR%%/templates/fa/archidxfoot.html
+%%NLS%%%%MMDIR%%/templates/fa/archidxhead.html
+%%NLS%%%%MMDIR%%/templates/fa/archliststart.html
+%%NLS%%%%MMDIR%%/templates/fa/archtoc.html
+%%NLS%%%%MMDIR%%/templates/fa/archtocentry.html
+%%NLS%%%%MMDIR%%/templates/fa/archtocnombox.html
+%%NLS%%%%MMDIR%%/templates/fa/article.html
+%%NLS%%%%MMDIR%%/templates/fa/bounce.txt
+%%NLS%%%%MMDIR%%/templates/fa/checkdbs.txt
+%%NLS%%%%MMDIR%%/templates/fa/convert.txt
+%%NLS%%%%MMDIR%%/templates/fa/cronpass.txt
+%%NLS%%%%MMDIR%%/templates/fa/disabled.txt
+%%NLS%%%%MMDIR%%/templates/fa/emptyarchive.html
+%%NLS%%%%MMDIR%%/templates/fa/help.txt
+%%NLS%%%%MMDIR%%/templates/fa/invite.txt
+%%NLS%%%%MMDIR%%/templates/fa/listinfo.html
+%%NLS%%%%MMDIR%%/templates/fa/masthead.txt
+%%NLS%%%%MMDIR%%/templates/fa/nomoretoday.txt
+%%NLS%%%%MMDIR%%/templates/fa/options.html
+%%NLS%%%%MMDIR%%/templates/fa/postack.txt
+%%NLS%%%%MMDIR%%/templates/fa/postauth.txt
+%%NLS%%%%MMDIR%%/templates/fa/postheld.txt
+%%NLS%%%%MMDIR%%/templates/fa/private.html
+%%NLS%%%%MMDIR%%/templates/fa/refuse.txt
+%%NLS%%%%MMDIR%%/templates/fa/roster.html
+%%NLS%%%%MMDIR%%/templates/fa/subauth.txt
+%%NLS%%%%MMDIR%%/templates/fa/subscribe.html
+%%NLS%%%%MMDIR%%/templates/fa/subscribeack.txt
+%%NLS%%%%MMDIR%%/templates/fa/unsub.txt
+%%NLS%%%%MMDIR%%/templates/fa/unsubauth.txt
+%%NLS%%%%MMDIR%%/templates/fa/userpass.txt
+%%NLS%%%%MMDIR%%/templates/fa/verify.txt
 %%NLS%%%%MMDIR%%/templates/fi/admindbdetails.html
 %%NLS%%%%MMDIR%%/templates/fi/admindbpreamble.html
 %%NLS%%%%MMDIR%%/templates/fi/admindbsummary.html
@@ -2139,6 +2182,7 @@
 %%MMDIR%%/tests/bounces/qmail_05.txt
 %%MMDIR%%/tests/bounces/qmail_06.txt
 %%MMDIR%%/tests/bounces/qmail_07.txt
+%%MMDIR%%/tests/bounces/qmail_08.txt
 %%MMDIR%%/tests/bounces/sendmail_01.txt
 %%MMDIR%%/tests/bounces/simple_01.txt
 %%MMDIR%%/tests/bounces/simple_02.txt
@@ -2178,6 +2222,7 @@
 %%MMDIR%%/tests/bounces/simple_36.txt
 %%MMDIR%%/tests/bounces/simple_37.txt
 %%MMDIR%%/tests/bounces/simple_38.txt
+%%MMDIR%%/tests/bounces/simple_39.txt
 %%MMDIR%%/tests/bounces/sina_01.txt
 %%MMDIR%%/tests/bounces/smtp32_01.txt
 %%MMDIR%%/tests/bounces/smtp32_02.txt
@@ -2196,6 +2241,7 @@
 %%MMDIR%%/tests/bounces/yahoo_08.txt
 %%MMDIR%%/tests/bounces/yahoo_09.txt
 %%MMDIR%%/tests/bounces/yahoo_10.txt
+%%MMDIR%%/tests/bounces/yahoo_11.txt
 %%MMDIR%%/tests/bounces/yale_01.txt
 %%MMDIR%%/tests/fblast.py
 %%MMDIR%%/tests/msgs/bad_01.txt
@@ -2243,6 +2289,7 @@
 %%NLS%%@dirrm %%MMDIR%%/templates/gl
 %%NLS%%@dirrm %%MMDIR%%/templates/fr
 %%NLS%%@dirrm %%MMDIR%%/templates/fi
+%%NLS%%@dirrm %%MMDIR%%/templates/fa
 %%NLS%%@dirrm %%MMDIR%%/templates/eu
 %%NLS%%@dirrm %%MMDIR%%/templates/et
 %%NLS%%@dirrm %%MMDIR%%/templates/es
@@ -2312,6 +2359,8 @@
 %%NLS%%@dirrm %%MMDIR%%/messages/fr
 %%NLS%%@dirrm %%MMDIR%%/messages/fi/LC_MESSAGES
 %%NLS%%@dirrm %%MMDIR%%/messages/fi
+%%NLS%%@dirrm %%MMDIR%%/messages/fa/LC_MESSAGES
+%%NLS%%@dirrm %%MMDIR%%/messages/fa
 %%NLS%%@dirrm %%MMDIR%%/messages/eu/LC_MESSAGES
 %%NLS%%@dirrm %%MMDIR%%/messages/eu
 %%NLS%%@dirrm %%MMDIR%%/messages/et/LC_MESSAGES
@@ -2334,7 +2383,7 @@
 @dirrm %%MMDIR%%/mail
 @dirrm %%MMDIR%%/icons
 @dirrm %%MMDIR%%/cron
-@dirrm %%MMDIR%%/pythonlib
+@dirrmtry %%MMDIR%%/pythonlib
 @dirrm %%MMDIR%%/cgi-bin
 @dirrm %%MMDIR%%/bin
 @dirrm %%MMDIR%%/Mailman/Queue
@@ -2358,4 +2407,5 @@
 %%SUB_HTDIG%%@dirrmtry %%MMDIR%%/archives/htdig
 @dirrmtry %%MMDIR%%/archives
 @dirrmtry %%MMDIR%%/Mailman
-@dirrmtry %%MMDIR%%/
+@dirrmtry %%MMDIR%%
+@group
