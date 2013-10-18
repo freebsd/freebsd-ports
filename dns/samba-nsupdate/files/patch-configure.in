@@ -1,0 +1,21 @@
+--- configure.in.orig	2013-09-05 05:19:53.000000000 +0000
++++ configure.in	2013-10-18 14:30:21.711727438 +0000
+@@ -1013,7 +1013,8 @@
+ 		    "-lgssapi" \
+ 		    "-lgssapi -lkrb5 -ldes -lcrypt -lasn1 -lroken -lcom_err" \
+ 		    "-lgssapi -lkrb5 -lcrypto -lcrypt -lasn1 -lroken -lcom_err" \
+-		    "-lgss -lkrb5"
++		    "-lgss -lkrb5" \
++		    "-lgssapi_krb5 -lgssapi -lheimntlm -lkrb5 -lhx509 -lcom_err -lcrypto -lasn1 -lroken -lcrypt"
+ 		do
+ 		    # Note that this does not include $saved_libs, because
+ 		    # on FreeBSD machines this configure script has added
+@@ -1027,7 +1028,7 @@
+ 			    LIBS="-L$use_gssapi/lib $TRY_LIBS"
+ 		    fi
+ 		    AC_MSG_CHECKING(linking as $TRY_LIBS)
+-		    AC_TRY_LINK( , [gss_acquire_cred();krb5_init_context()],
++		    AC_TRY_LINK( , [gss_acquire_cred();krb5_init_context();gsskrb5_register_acceptor_identity("krb5");],
+ 				gssapi_linked=yes, gssapi_linked=no)
+ 		    case $gssapi_linked in
+ 		    yes) AC_MSG_RESULT(yes); break ;;
