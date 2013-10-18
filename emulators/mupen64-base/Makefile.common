@@ -9,7 +9,8 @@ EXTRACT_AFTER_ARGS=	${DISTNAME}/Makefile ${DISTNAME}/config.h \
 
 .if defined(HAVE_GTK2)
 .include <${PORTSDIR}/Mk/bsd.gnome.mk>
-USE_GNOME=	pkgconfig gtk20
+USE_GNOME=	gtk20
+USES+=		pkgconfig
 .else
 .include <${PORTSDIR}/Mk/bsd.gnome.mk>
 USE_GNOME=	gtk12
