@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	php55
-PORTVERSION=	5.5.4
+PORTVERSION=	5.5.5
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
@@ -21,7 +21,7 @@ NO_OPTIONS_SORT=yes
 .if !defined(PKGNAMESUFFIX)
 USE_AUTOTOOLS=	autoconf
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 CONFIGURE_ARGS=	\
 		--with-layout=GNU \
@@ -55,9 +55,8 @@ ZTS_DESC=	Force Zend Thread Safety (ZTS) build
 
 CONFLICTS=	php52-5* php53-5* php54-5* php5-5*
 
-MAN1=		php-config.1 phpize.1
+DESTDIRNAME=	INSTALL_ROOT
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PATCH_DIST_STRIP=	-p1
@@ -73,7 +72,6 @@ PATCH_SITES+=	http://choon.net/opensource/php/:mail
 .if ${PORT_OPTIONS:MCLI}
 PHP_SAPI+=	cli
 PLIST_SUB+=	CLI=""
-MAN1+=		php.1
 .else
 PLIST_SUB+=	CLI="@comment "
 CONFIGURE_ARGS+=--disable-cli
@@ -82,7 +80,6 @@ CONFIGURE_ARGS+=--disable-cli
 .if ${PORT_OPTIONS:MCGI}
 PHP_SAPI+=	cgi
 PLIST_SUB+=	CGI=""
-MAN1+=		php-cgi.1
 .else
 PLIST_SUB+=	CGI="@comment "
 CONFIGURE_ARGS+=--disable-cgi
@@ -90,7 +87,6 @@ CONFIGURE_ARGS+=--disable-cgi
 
 .if ${PORT_OPTIONS:MFPM}
 PHP_SAPI+=	fpm
-MAN8+=		php-fpm.8
 USE_RC_SUBR+=	php-fpm
 CONFIGURE_ARGS+=--enable-fpm \
 		--with-fpm-user=${WWWOWN} \
@@ -196,16 +192,8 @@ test: build
 	@(cd ${WRKSRC} && ${MAKE} test)
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/php.ini-development ${PREFIX}/etc
-	@${INSTALL_DATA} ${WRKSRC}/php.ini-production ${PREFIX}/etc
-	@${INSTALL_DATA} ${WRKDIR}/php.conf ${PREFIX}/etc
-	@${TOUCH} ${PREFIX}/include/php/ext/php_config.h
-.if ${PORT_OPTIONS:MFPM}
-	@${CP} -n ${PREFIX}/etc/php-fpm.conf.default ${PREFIX}/etc/php-fpm.conf || ${TRUE}
-.endif
-.if ${PORT_OPTIONS:MAPACHE}
-	@${CAT} ${PKGMESSAGE}
-.endif
+	@${INSTALL_DATA} ${WRKSRC}/php.ini-development ${WRKSRC}/php.ini-production \
+		${WRKDIR}/php.conf ${STAGEDIR}/${PREFIX}/etc
 
 .else
 .include "${MASTERDIR}/Makefile.ext"

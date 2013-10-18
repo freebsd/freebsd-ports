@@ -238,6 +238,11 @@ lib/php/build/shtool
 %%APACHE%%%%APACHEMODDIR%%/%%AP_MODULE%%
 %%APACHE%%@exec %D/sbin/apxs -e -a -n %%AP_NAME%% %f
 %%APACHE%%@unexec %D/sbin/apxs -e -A -n %%AP_NAME%% %f
+%%CGI%%man/man1/php-cgi.1.gz
+man/man1/php-config.1.gz
+%%CLI%%man/man1/php.1.gz
+man/man1/phpize.1.gz
+%%FPM%%man/man8/php-fpm.8.gz
 %%FPM%%share/php/fpm/status.html
 @dirrm include/php/TSRM
 @dirrm include/php/Zend
