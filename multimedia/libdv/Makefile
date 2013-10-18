@@ -23,23 +23,13 @@ CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 USE_LDCONFIG=	yes
 
-PORTDOCS=	AUTHORS COPYING COPYRIGHT ChangeLog NEWS README \
+DOCS=	AUTHORS COPYING COPYRIGHT ChangeLog NEWS README \
 		README.dvconnect README.encoder TODO
 
 OPTIONS_DEFINE=	SDL DOCS
 
-.include <bsd.port.options.mk>
-
-# XXX - work around compiler bug
-# Optimizations -O{1,s,2,3} work
-# However, lack of -O{1,s,2,3} or -O0 BREAK the build
-# Therefore, make sure we have AT LEAST -O and avoid -O0
-CFLAGS:=	-O ${CFLAGS:N-O0}
-
-.if ${PORT_OPTIONS:MSDL}
-USE_SDL=	sdl
-CONFIGURE_ARGS+=	--enable-sdl
-.endif
+SDL_USE=	sdl
+SDL_CONFIGURE_ENABLE=	sdl
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|stdint.h|sys/types.h|' \
@@ -53,15 +43,19 @@ post-patch:
 		${WRKSRC}/encodedv/dvconnect.c
 # XXX - revise at every port update
 # protect popt from prefix changes
-	@${REINPLACE_CMD} -E -e 's|(@REQUIRES_NOPKGCONFIG@)|-L${LOCALBASE}/include \1|' \
+	@${REINPLACE_CMD} -E -e 's|(@REQUIRES_NOPKGCONFIG@)|-L${PREFIX}/include \1|' \
 		${WRKSRC}/libdv.pc.in
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
-.endfor
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libdv.so.4
 
 .include <bsd.port.mk>
+
+# XXX - work around compiler bug
+# Optimizations -O{1,s,2,3} work
+# However, lack of -O{1,s,2,3} or -O0 BREAK the build
+# Therefore, make sure we have AT LEAST -O and avoid -O0
+CFLAGS:=	-O ${CFLAGS:N-O0}
+

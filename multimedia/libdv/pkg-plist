@@ -11,4 +11,14 @@ libdata/pkgconfig/libdv.pc
 man/man1/dubdv.1.gz
 man/man1/dvconnect.1.gz
 man/man1/encodedv.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.dvconnect
+%%PORTDOCS%%%%DOCSDIR%%/README.encoder
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 @dirrm include/libdv
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
