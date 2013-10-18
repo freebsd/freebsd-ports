@@ -1,0 +1,335 @@
+commit 63a75c5131b44d4a1af6771fab119574e06fb8a0
+Author: Simon Edwards <simon@simonzone.com>
+Date:   Sun Sep 8 20:45:57 2013 +0200
+
+    Make it work on the latest SIP and PyQt versions.
+
+commit 7c0648b3931e069892943bc645dc61f246375cdf
+Author: Luca Beltrame <lbeltrame@kde.org>
+Date:   Wed Sep 11 00:02:54 2013 +0200
+
+    More fixes for the build system: this is the "harmless" part of the
+    patch used by Debian (and made by Simon Edwards himself) which adds the
+    "protected is public" hack to allow for proper building with SIP 4.15+.
+    
+    PyKDE4 needs some code adjustments, however: those exist in patch form
+    (see bug) but aren't yet committed. Simon, should I push them already,
+    or should I wait till the issues on ARM are resolved?
+    
+    CCMAIL: simon@simonzone.com
+    CCBUG: 323950
+
+commit 783d073f30e253e8db52d8801c1c829e6f405e60
+Author: Luca Beltrame <lbeltrame@kde.org>
+Date:   Sun Sep 1 17:33:30 2013 +0200
+
+    First step in trying to make PyKDE4 work with newer SIP.
+    Context is http://lists.kde.org/?l=kde-bindings&m=137759567504203&w=2
+    
+    Notice that this change alone will not fix the issues: a newer SIP
+    (unreleased) is needed and more work is needed in the bindings to fix issues
+    
+    CCBUG: 323899
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 09fcc34..cf133d7 100644
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -114,20 +114,20 @@ set(SIP_DISABLE_FEATURES VendorID PyQt_NoPrintRangeBug)
+ if (PYTHON_VERSION_MAJOR GREATER 2)
+     if(PYQT4_VERSION STRGREATER "040904")
+ 	    # Disable for newer PyQt
+-	    set(SIP_EXTRA_OPTIONS -g -x PyKDE_QVector)
++	    set(SIP_EXTRA_OPTIONS -P -g -x PyKDE_QVector)
+     else ()
+ 	    set(SIP_EXTRA_OPTIONS -g)
+     endif()
+ else (PYTHON_VERSION_MAJOR GREATER 2)
+     if(PYQT4_VERSION STRGREATER "040904")
+ 	# Disable for newer PyQt
+-    	set(SIP_EXTRA_OPTIONS -g -x PyKDE_QVector -x Py_v3)
++    	set(SIP_EXTRA_OPTIONS -P -g -x PyKDE_QVector -x Py_v3)
+     else ()
+ 	    set(SIP_EXTRA_OPTIONS -g -x Py_v3)
+     endif()
+ endif ()
+ 
+-add_definitions(-D_REENTRANT -DQT_CORE_LIB -DQT_GUI_LIB -DUSING_SOPRANO_NRLMODEL_UNSTABLE_API)
++add_definitions(-D_REENTRANT -DQT_CORE_LIB -DQT_GUI_LIB -DUSING_SOPRANO_NRLMODEL_UNSTABLE_API -DSIP_PROTECTED_IS_PUBLIC -Dprotected=public)
+ 
+ file(GLOB kdecore_files_sip sip/kdecore/*.sip)
+ set(SIP_EXTRA_FILES_DEPEND ${kdecore_files_sip})
+diff --git a/sip/akonadi/entitytreemodel.sip b/sip/akonadi/entitytreemodel.sip
+index 99cfbb4..a60690c 100644
+--- sip/akonadi/entitytreemodel.sip
++++ sip/akonadi/entitytreemodel.sip
+@@ -122,5 +122,12 @@ public:
+     };
+     bool                    includeUnsubscribed () const;
+     void                    setIncludeUnsubscribed (bool show);
++//force
++private:
++    virtual bool removeColumns(int, int, const QModelIndex&);
++    virtual bool removeRows(int, int, const QModelIndex&);
++    virtual bool insertColumns(int, int, const QModelIndex&);
++    virtual bool insertRows(int, int, const QModelIndex&);
++//end
+ };
+ };
+diff --git a/sip/akonadi/favoritecollectionsmodel.sip b/sip/akonadi/favoritecollectionsmodel.sip
+index 4f27942..0f7efdb 100644
+--- sip/akonadi/favoritecollectionsmodel.sip
++++ sip/akonadi/favoritecollectionsmodel.sip
+@@ -42,5 +42,9 @@ public:
+     virtual bool            dropMimeData (const QMimeData* data, Qt::DropAction action, int row, int column, const QModelIndex& parent);
+     virtual QStringList     mimeTypes () const;
+     virtual Qt::ItemFlags   flags (const QModelIndex& index) const;
++//force
++private:
++    virtual void setSourceModel(QAbstractItemModel *);
++//end
+ };
+ };
+diff --git a/sip/kdeui/highlighter.sip b/sip/kdeui/highlighter.sip
+index 79dbe8e..45f0a4c 100644
+--- sip/kdeui/highlighter.sip
++++ sip/kdeui/highlighter.sip
+@@ -70,6 +70,11 @@ private:
+ public:
+     ~Highlighter ();
+     bool                    checkerEnabledByDefault () const;
++//force
++private:
++        virtual void connectNotify(const char* signal);
++        virtual void disconnectNotify(const char* signal);
++//end
+ };
+ // Highlighter
+ 
+diff --git a/sip/kdeui/kdatetable.sip b/sip/kdeui/kdatetable.sip
+index 9c73e70..32d06ca 100644
+--- sip/kdeui/kdatetable.sip
++++ sip/kdeui/kdatetable.sip
+@@ -61,8 +61,10 @@ class KDateValidator : QValidator
+ 
+ public:
+                             KDateValidator (QWidget* parent /TransferThis/ = 0);
+-    virtual QValidator::State  validate (QString& text, int& e /In/) const;
+-    virtual void            fixup (QString& input) const;
++    virtual QValidator::State validate(QString & /In,Out/, int & /In,Out/) const = 0 /API=QString:2 - /;
++    virtual QValidator::State validate(QString & /Constrained/, int & /In,Out/) const = 0 /API=QString: - 2/;
++    virtual void fixup(QString &input /In,Out/) const /API=QString:2 - /;
++    virtual void fixup(QString & /Constrained/) const /API=QString: - 2/;
+     QValidator::State       date (const QString& text, QDate& date) const;
+ };
+ // KDateValidator
+diff --git a/sip/kdeui/knumvalidator.sip b/sip/kdeui/knumvalidator.sip
+index baa13dc..d842fcc 100644
+--- sip/kdeui/knumvalidator.sip
++++ sip/kdeui/knumvalidator.sip
+@@ -30,8 +30,10 @@ class KIntValidator : QValidator
+ public:
+     explicit                KIntValidator (QWidget* parent /TransferThis/, int base = 10);
+                             KIntValidator (int bottom, int top, QWidget* parent /TransferThis/, int base = 10);
+-    virtual QValidator::State  validate (QString&, int& /In/) const;
+-    virtual void            fixup (QString&) const;
++    virtual QValidator::State validate(QString & /In,Out/, int & /In,Out/) const = 0 /API=QString:2 - /;
++    virtual QValidator::State validate(QString & /Constrained/, int & /In,Out/) const = 0 /API=QString: - 2/;
++    virtual void fixup(QString &input /In,Out/) const /API=QString:2 - /;
++    virtual void fixup(QString & /Constrained/) const /API=QString: - 2/;
+     virtual void            setRange (int bottom, int top);
+     virtual void            setBase (int base);
+     virtual int             bottom () const;
+@@ -53,8 +55,10 @@ public:
+     explicit                KFloatValidator (QWidget* parent /TransferThis/);
+                             KFloatValidator (double bottom, double top, QWidget* parent /TransferThis/);
+                             KFloatValidator (double bottom, double top, bool localeAware, QWidget* parent /TransferThis/);
+-    virtual QValidator::State  validate (QString&, int& /In/) const;
+-    virtual void            fixup (QString&) const;
++    virtual QValidator::State validate(QString & /In,Out/, int & /In,Out/) const = 0 /API=QString:2 - /;
++    virtual QValidator::State validate(QString & /Constrained/, int & /In,Out/) const = 0 /API=QString: - 2/;
++    virtual void fixup(QString &input /In,Out/) const /API=QString:2 - /;
++    virtual void fixup(QString & /Constrained/) const /API=QString: - 2/;
+     virtual void            setRange (double bottom, double top);
+     virtual double          bottom () const;
+     virtual double          top () const;
+@@ -75,7 +79,8 @@ class KDoubleValidator : QDoubleValidator
+ public:
+     explicit                KDoubleValidator (QObject* parent /TransferThis/);
+                             KDoubleValidator (double bottom, double top, int decimals, QObject* parent /TransferThis/);
+-    virtual QValidator::State  validate (QString& input, int& pos /In/) const;
++    virtual QValidator::State validate(QString & /In,Out/, int & /In,Out/) const = 0 /API=QString:2 - /;
++    virtual QValidator::State validate(QString & /Constrained/, int & /In,Out/) const = 0 /API=QString: - 2/;
+     bool                    acceptLocalizedNumbers () const;
+     void                    setAcceptLocalizedNumbers (bool accept);
+     ~KDoubleValidator ();
+diff --git a/sip/kdeui/kpixmapregionselectorwidget.sip b/sip/kdeui/kpixmapregionselectorwidget.sip
+index 44a9b09..4e5b294 100644
+--- sip/kdeui/kpixmapregionselectorwidget.sip
++++ sip/kdeui/kpixmapregionselectorwidget.sip
+@@ -57,6 +57,7 @@ protected:
+ private:
+ //force
+                             KPixmapRegionSelectorWidget (const KPixmapRegionSelectorWidget&);
++    virtual bool eventFilter(QObject*, QEvent*);
+ //end
+ public:
+     ~KPixmapRegionSelectorWidget ();
+diff --git a/sip/kdeui/kpixmapsequenceoverlaypainter.sip b/sip/kdeui/kpixmapsequenceoverlaypainter.sip
+index 60236d0..e438482 100644
+--- sip/kdeui/kpixmapsequenceoverlaypainter.sip
++++ sip/kdeui/kpixmapsequenceoverlaypainter.sip
+@@ -39,4 +39,8 @@ public:
+     void                    setOffset (const QPoint& offset);
+     void                    start ();
+     void                    stop ();
++//force
++private:
++    virtual bool eventFilter(QObject*, QEvent*);
++//end
+ };
+diff --git a/sip/kdeui/krecursivefilterproxymodel.sip b/sip/kdeui/krecursivefilterproxymodel.sip
+index 40acaff..ca131e5 100644
+--- sip/kdeui/krecursivefilterproxymodel.sip
++++ sip/kdeui/krecursivefilterproxymodel.sip
+@@ -31,4 +31,8 @@ protected:
+     virtual bool            acceptRow (int sourceRow, const QModelIndex& sourceParent) const;
+ public:
+     virtual QModelIndexList  match (const QModelIndex& start, int role, const QVariant& value, int hits = 1, Qt::MatchFlags flags = Qt::MatchFlags(Qt::MatchStartsWith|Qt::MatchWrap)) const;
++//force
++private:
++    virtual bool filterAcceptsRow(int, const QModelIndex&) const;
++//end
+ };
+diff --git a/sip/kdeui/kstringvalidator.sip b/sip/kdeui/kstringvalidator.sip
+index 3e8705d..47604e2 100644
+--- sip/kdeui/kstringvalidator.sip
++++ sip/kdeui/kstringvalidator.sip
+@@ -35,8 +35,10 @@ public:
+     bool                    isFixupEnabled () const;
+     void                    setStringList (const QStringList& list);
+     QStringList             stringList () const;
+-    virtual QValidator::State  validate (QString& input, int& pos /Out/) const;
+-    virtual void            fixup (QString& input) const;
++    virtual QValidator::State validate(QString & /In,Out/, int & /In,Out/) const = 0 /API=QString:2 - /;
++    virtual QValidator::State validate(QString & /Constrained/, int & /In,Out/) const = 0 /API=QString: - 2/;
++    virtual void fixup(QString &input /In,Out/) const /API=QString:2 - /;
++    virtual void fixup(QString & /Constrained/) const /API=QString: - 2/;
+     ~KStringListValidator ();
+ };
+ // KStringListValidator
+@@ -51,8 +53,10 @@ class KMimeTypeValidator : QValidator
+ 
+ public:
+     explicit                KMimeTypeValidator (QObject* parent /TransferThis/ = 0);
+-    virtual QValidator::State  validate (QString& input, int& pos /Out/) const;
+-    virtual void            fixup (QString& input) const;
++    virtual QValidator::State validate(QString & /In,Out/, int & /In,Out/) const = 0 /API=QString:2 - /;
++    virtual QValidator::State validate(QString & /Constrained/, int & /In,Out/) const = 0 /API=QString: - 2/;
++    virtual void fixup(QString &input /In,Out/) const /API=QString:2 - /;
++    virtual void fixup(QString & /Constrained/) const /API=QString: - 2/;
+     ~KMimeTypeValidator ();
+ };
+ // KMimeTypeValidator
+diff --git a/sip/kdeui/ktogglefullscreenaction.sip b/sip/kdeui/ktogglefullscreenaction.sip
+index 962363b..71626e5 100644
+--- sip/kdeui/ktogglefullscreenaction.sip
++++ sip/kdeui/ktogglefullscreenaction.sip
+@@ -37,7 +37,10 @@ protected:
+     bool                    eventFilter (QObject* object, QEvent* event);
+ public:
+     ~KToggleFullScreenAction ();
++
++//force
++private:
++    virtual void slotToggled(bool);
++//end
+ };
+ // KToggleFullScreenAction
+-
+-
+diff --git a/sip/kdeui/ktoggletoolbaraction.sip b/sip/kdeui/ktoggletoolbaraction.sip
+index 67efc7a..c52b39b 100644
+--- sip/kdeui/ktoggletoolbaraction.sip
++++ sip/kdeui/ktoggletoolbaraction.sip
+@@ -33,6 +33,10 @@ public:
+     KToolBar*               toolBar ();
+     virtual bool            eventFilter (QObject* watched, QEvent* event);
+     ~KToggleToolBarAction ();
++//force
++private:
++    virtual void slotToggled( bool checked );
++//end
+ };
+ // KToggleToolBarAction
+ 
+diff --git a/sip/kio/kdirmodel.sip b/sip/kio/kdirmodel.sip
+index 25dc775..ed90376 100644
+--- sip/kio/kdirmodel.sip
++++ sip/kio/kdirmodel.sip
+@@ -105,6 +105,13 @@ public:
+     ~KDirModel ();
+     void                    setJobTransfersVisible (bool value);
+     bool                    jobTransfersVisible () const;
++//force
++private:
++    virtual bool removeColumns(int, int, const QModelIndex&);
++    virtual bool removeRows(int, int, const QModelIndex&);
++    virtual bool insertColumns(int, int, const QModelIndex&);
++    virtual bool insertRows(int, int, const QModelIndex&);
++//end
+ };
+ // KDirModel
+ 
+diff --git a/sip/kio/kshellcompletion.sip b/sip/kio/kshellcompletion.sip
+index 6bd865c..4fd9ccb 100644
+--- sip/kio/kshellcompletion.sip
++++ sip/kio/kshellcompletion.sip
+@@ -39,5 +39,3 @@ public:
+     ~KShellCompletion ();
+ };
+ // KShellCompletion
+-
+-
+diff --git a/sip/kio/metainfojob.sip b/sip/kio/metainfojob.sip
+index de1bb23..1596f08 100644
+--- sip/kio/metainfojob.sip
++++ sip/kio/metainfojob.sip
+@@ -51,7 +51,7 @@ protected:
+ private:
+ //force
+                             MetaInfoJob ();
+-
++    virtual void start();
+ //end
+ public:
+     ~MetaInfoJob ();
+diff --git a/sip/plasma/applet.sip b/sip/plasma/applet.sip
+index a5fd606..2e2cadc 100644
+--- sip/plasma/applet.sip
++++ sip/plasma/applet.sip
+@@ -217,6 +217,10 @@ public:
+     void                    showConfigurationInterface (QWidget* widget);
+     bool                    isUserConfiguring () const;
+     explicit                Applet (const KPluginInfo& info, QGraphicsItem* parent = 0, uint appletId = 0);
++//force
++private:
++    virtual void paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*);
++//end
+ };
+ // Applet
+ 
+diff --git a/sip/plasma/glapplet.sip b/sip/plasma/glapplet.sip
+index 2e4fbc0..ab35ccb 100644
+--- sip/plasma/glapplet.sip
++++ sip/plasma/glapplet.sip
+@@ -52,6 +52,10 @@ public:
+     ~GLApplet ();
+     GLuint                  bindTexture (const QImage& image, GLenum target = GL_TEXTURE_2D);
+     void                    deleteTexture (GLuint texture_id);
++
++private:
++    virtual void paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*);
++    virtual void paintInterface(QPainter*, const QStyleOptionGraphicsItem*, const QRect&);
+ //end
+ };
+ // GLApplet
