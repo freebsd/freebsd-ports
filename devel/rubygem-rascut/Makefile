@@ -9,6 +9,9 @@ MASTER_SITES=	RG
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Ruby ActionSCript UTility
 
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2013-10-21
+
 RUN_DEPENDS=	mongrel_rails:${PORTSDIR}/www/rubygem-mongrel \
 		rubygem-json_pure>=0:${PORTSDIR}/devel/rubygem-json_pure \
 		rackup:${PORTSDIR}/www/rubygem-rack \
