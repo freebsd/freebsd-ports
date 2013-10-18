@@ -1,0 +1,46 @@
+$FreeBSD$
+------------------------------------------------------------------------
+r170353 | chandlerc | 2012-12-17 18:48:07 +0000 (Mon, 17 Dec 2012) | 5 lines
+
+Fix another SROA crasher, PR14601.
+
+This was a silly oversight, we weren't pruning allocas which were used
+by variable-length memory intrinsics from the set that could be widened
+and promoted as integers. Fix that.
+------------------------------------------------------------------------
+Index: lib/Transforms/Scalar/SROA.cpp
+===================================================================
+--- lib/Transforms/Scalar/SROA.cpp	(revision 170352)
++++ lib/Transforms/Scalar/SROA.cpp	(revision 170353)
+@@ -2150,7 +2150,7 @@
+           !canConvertValue(TD, ValueTy, AllocaTy))
+         return false;
+     } else if (MemIntrinsic *MI = dyn_cast<MemIntrinsic>(I->U->getUser())) {
+-      if (MI->isVolatile())
++      if (MI->isVolatile() || !isa<Constant>(MI->getLength()))
+         return false;
+       if (MemTransferInst *MTI = dyn_cast<MemTransferInst>(I->U->getUser())) {
+         const AllocaPartitioning::MemTransferOffsets &MTO
+Index: test/Transforms/SROA/basictest.ll
+===================================================================
+--- test/Transforms/SROA/basictest.ll	(revision 170352)
++++ test/Transforms/SROA/basictest.ll	(revision 170353)
+@@ -1208,3 +1208,18 @@
+   ret i32 %y
+ ; CHECK: ret i32
+ }
++
++define i32 @PR14601(i32 %x) {
++; Don't try to form a promotable integer alloca when there is a variable length
++; memory intrinsic.
++; CHECK: @PR14601
++
++entry:
++  %a = alloca i32
++; CHECK: alloca
++
++  %a.i8 = bitcast i32* %a to i8*
++  call void @llvm.memset.p0i8.i32(i8* %a.i8, i8 0, i32 %x, i32 1, i1 false)
++  %v = load i32* %a
++  ret i32 %v
++}

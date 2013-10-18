@@ -1150,6 +1150,7 @@
     SUBDIR += llvm
     SUBDIR += llvm-devel
     SUBDIR += llvm31
+    SUBDIR += llvm32
     SUBDIR += llvm33
     SUBDIR += lmdbg
     SUBDIR += lndir

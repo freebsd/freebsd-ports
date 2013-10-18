@@ -1,0 +1,4 @@
+The goal of the Clang project is to create a new C, C++, Objective C and
+Objective C++ front-end for the LLVM compiler.
+
+WWW: http://clang.llvm.org/
