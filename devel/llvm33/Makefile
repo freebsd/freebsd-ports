@@ -6,7 +6,7 @@ PORTREVISION=	6
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
-PKGNAMESUFFIX=	33
+PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Low Level Virtual Machine
@@ -17,7 +17,6 @@ LLVM_SUFFIX=	${PORTVERSION:S/.//g}
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
-LATEST_LINK=	${PORTNAME}${LLVM_SUFFIX}
 
 USES=		gmake perl5
 GNU_CONFIGURE=	yes
@@ -171,12 +170,13 @@ post-build:
 .endif
 
 post-install:
-	${MV} ${STAGEDIR}${PREFIX}/llvm33/lib/${LIBNAME} \
+	${MV} ${STAGEDIR}${LLVM_PREFIX}/lib/${LIBNAME} \
 	    ${STAGEDIR}${LLVM_PREFIX}/lib/${LIBNAME}.0
 	${LN} -sf ${LIBNAME}.0 ${STAGEDIR}${LLVM_PREFIX}/lib/${LIBNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/llvm-wrapper.sh \
 	    ${STAGEDIR}${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX}
 .for command in ${COMMANDS:C/^/XXXX/1:NXXXX*}
+	test -e ${STAGEDIR}${LLVM_PREFIX}/bin/${command}
 	${LN} -f ${STAGEDIR}${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX} \
 	    ${STAGEDIR}${PREFIX}/bin/${command}${LLVM_SUFFIX}
 .endfor
