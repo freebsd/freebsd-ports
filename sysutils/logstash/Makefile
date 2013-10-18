@@ -12,20 +12,21 @@
 # 
 PORTNAME=	logstash
 PORTVERSION=	1.2.1
-#PORTREVISION=	9
+PORTREVISION=	1
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://logstash.objects.dreamhost.com/release/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-flatjar
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
+PATCH_DEPENDS+=	${DEPEND_JAVA}
 
 MAINTAINER=	daniel@ish.com.au
 COMMENT=	Tool for managing events and logs
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
-
-NO_BUILD=	yes
+JAVA_EXTRACT=	yes
+WRKSRC=	${WRKDIR}/${DISTNAME}
 
 USE_RC_SUBR=	logstash
 USERS=	${PORTNAME}
@@ -54,7 +55,14 @@ RUN_DEPENDS+=	rubygem-ffi-rzmq>=0:${PORTSDIR}/devel/rubygem-ffi-rzmq
 
 do-extract:
 	${INSTALL} -d ${WRKDIR}
-	${CP} ${DISTDIR}/${LOGSTASH_JAR} ${WRKDIR}/
+	${INSTALL} -d ${WRKSRC}
+	(cd ${WRKSRC} && ${JAR} xf ${DISTDIR}/${LOGSTASH_JAR})
+
+post-patch:
+	${JAR} cfe ${WRKDIR}/${LOGSTASH_JAR} logstash.runner -C ${WRKSRC} .
+
+do-build:
+	# NOOP
 
 do-install:
 	${MKDIR} ${LOGSTASH_RUN}
