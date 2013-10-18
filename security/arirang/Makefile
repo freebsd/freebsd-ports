@@ -21,12 +21,11 @@ USE_OPENSSL=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include/ruby-${RUBY_VER} -I${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/arirang ${PREFIX}/sbin
-	${MKDIR} ${PREFIX}/share/arirang
-	${CHMOD} 755 ${PREFIX}/share/arirang
-	${INSTALL_DATA} ${WRKSRC}/scanrule/*.uxe ${PREFIX}/share/arirang
-	${INSTALL_DATA} ${WRKSRC}/script/*.rb ${PREFIX}/share/arirang
+	${INSTALL_PROGRAM} ${WRKSRC}/arirang ${STAGEDIR}${PREFIX}/sbin
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/arirang
+	${CHMOD} 755 ${STAGEDIR}${PREFIX}/share/arirang
+	${INSTALL_DATA} ${WRKSRC}/scanrule/*.uxe ${STAGEDIR}${PREFIX}/share/arirang
+	${INSTALL_DATA} ${WRKSRC}/script/*.rb ${STAGEDIR}${PREFIX}/share/arirang
 
 .include <bsd.port.mk>
