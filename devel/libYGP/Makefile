@@ -11,6 +11,9 @@ DISTNAME=	libYGP-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another General Purpose library
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 		boost_filesystem:${PORTSDIR}/devel/boost-libs
 

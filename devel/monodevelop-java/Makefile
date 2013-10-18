@@ -10,6 +10,9 @@ MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	MonoDevelop Java/IKVM language support
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/libdata/pkgconfig/monodevelop.pc:${PORTSDIR}/devel/monodevelop
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/monodevelop.pc:${PORTSDIR}/devel/monodevelop

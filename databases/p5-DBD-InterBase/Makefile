@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	DBI driver for InterBase RDBMS server
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

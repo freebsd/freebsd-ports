@@ -9,6 +9,9 @@ MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Documentation browser for Mono and Mono libraries
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 LIB_DEPENDS=	gdiplus.0:${PORTSDIR}/x11-toolkits/libgdiplus
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/webkit-sharp-1.0.pc:${PORTSDIR}/www/webkit-sharp
 RUN_DEPENDS:=	${BUILD_DEPENDS}

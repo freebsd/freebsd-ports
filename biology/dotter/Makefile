@@ -14,6 +14,9 @@ EXTRACT_ONLY=	#
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A viewer for multiple sequence alignments
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 BROKEN=		checksum mismatch
 
 USE_LINUX=	yes

@@ -10,6 +10,9 @@ MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	MonoDevelop Python support
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/monodevelop.pc:${PORTSDIR}/devel/monodevelop
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/monodevelop.pc:${PORTSDIR}/devel/monodevelop
 

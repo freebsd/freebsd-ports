@@ -9,6 +9,9 @@ MASTER_SITES=	http://0xcc.net/mobileimap/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IMAP-based webmail system for mobile-phones
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	iconv openssl zlib
 

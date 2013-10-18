@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Perl5 module for file locking (flock,fcntl)
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS+=	POLLUTE=1

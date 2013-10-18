@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFFIX}
 MAINTAINER=	darcsis@gmail.com
 COMMENT=	Pdf2djvu creates DjVu files from PDF files
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 BUILD_DEPENDS=	${LOCALBASE}/include/pstreams/pstream.h:${PORTSDIR}/devel/pstreams
 LIB_DEPENDS=	poppler:${PORTSDIR}/graphics/poppler
 LIB_DEPENDS+=	djvulibre:${PORTSDIR}/graphics/djvulibre

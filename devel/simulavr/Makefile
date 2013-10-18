@@ -13,6 +13,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.6
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	A simulator for AVR microcontrollers
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 BUILD_DEPENDS=	${LOCALBASE}/avr/include/avr/io.h:${PORTSDIR}/devel/avr-libc \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
 		doxygen:${PORTSDIR}/devel/doxygen \

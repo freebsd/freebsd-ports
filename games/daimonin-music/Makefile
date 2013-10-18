@@ -11,6 +11,9 @@ DIST_SUBDIR=	${PORTNAME:S/-music//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music for daimonin client
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 NO_CHECKSUM=	true
 NO_BUILD=	true
 USE_ZIP=	true

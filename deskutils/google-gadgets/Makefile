@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-for-linux-${PORTVERSION}
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Google Desktop Gadgets
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus \
 		${LOCALBASE}/libdata/pkgconfig/libcurl.pc:${PORTSDIR}/ftp/curl \
 		${LOCALBASE}/libdata/pkgconfig/libxml-2.0.pc:${PORTSDIR}/textproc/libxml2 \

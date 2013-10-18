@@ -11,6 +11,9 @@ DISTNAME=	Philio-GoMySQL-${PORTVERSION}-0-g3c1f411
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A MySQL client library written in Go
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 BROKEN=		Does not compile with go1
 
 WRKSRC=		${WRKDIR}/Philio-GoMySQL-f1112aa

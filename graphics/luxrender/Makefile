@@ -13,6 +13,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Physically based and unbiased rendering system
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 LICENSE=	GPLv3
 
 ONLY_FOR_ARCHS=	i386 amd64

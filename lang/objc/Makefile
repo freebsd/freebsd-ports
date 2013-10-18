@@ -10,6 +10,9 @@ DISTFILES=	objc-bootstrap-${BOOTVERSION}.tar.gz objc-${PORTVERSION}.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable Object Compiler
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 BOOTVERSION=	3.2.11
 
 BROKEN=		fails to build
