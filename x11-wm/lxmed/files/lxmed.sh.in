@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+export JAVA_VERSION="%%JAVA_VERSION%%"
+
+cd "%%DATADIR%%" && exec "%%LOCALBASE%%/bin/java" \
+-Djava.ext.dirs="%%DATADIR%%" -jar "%%DATADIR%%/LXMenuEditor.jar" "${@}"
