@@ -55,7 +55,7 @@ PLIST_SUB=	WAD:="@comment "
 
 post-extract:
 .if ${PORT_OPTIONS:MWAD}
-	@${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/heretic_share.wad.gz \
+	@${GZIP_CMD} -dc ${_DISTDIR}/heretic_share.wad.gz \
 		> ${WRKSRC}/heretic_share.wad
 .endif
 	@${FIND} ${WRKSRC} -name .depend -type f -delete
