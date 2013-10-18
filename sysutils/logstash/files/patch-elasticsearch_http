@@ -1,0 +1,15 @@
+https://logstash.jira.com/browse/LOGSTASH-1328
+https://github.com/logstash/logstash/pull/679/files
+
+diff -Nru original/logstash/outputs/elasticsearch_http.rb patched/logstash/outputs/elasticsearch_http.rb
+--- logstash/outputs/elasticsearch_http.rb	2013-07-18 19:04:36.000000000 +0900
++++ logstash/outputs/elasticsearch_http.rb	2013-10-10 12:24:16.000000000 +0900
+@@ -73,7 +73,7 @@
+       header["index"]["_id"] = event.sprintf(@document_id) if !@document_id.nil?
+ 
+       [ header, event ]
+-    end.flatten.collect(&:to_json).map { |e| "#{e}\n" }
++    end.flatten.collect(&:to_json).map { |e| "#{e}\n" }.join
+     post(body)
+   end # def receive_bulk
+ 
