@@ -9,8 +9,20 @@ bin/mogrename
 bin/mogstats
 bin/mogtool
 bin/mogupload
+man/man1/mogadm.1.gz
+man/man1/mogdelete.1.gz
+man/man1/mogfetch.1.gz
+man/man1/mogfiledebug.1.gz
+man/man1/mogfileinfo.1.gz
+man/man1/moglistfids.1.gz
+man/man1/moglistkeys.1.gz
+man/man1/mogrename.1.gz
+man/man1/mogstats.1.gz
+man/man1/mogtool.1.gz
+man/man1/mogupload.1.gz
 %%SITE_PERL%%/MogileFS/Utils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS/Utils/.packlist
+%%PERL5_MAN3%%/MogileFS::Utils.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS/Utils
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS
 @dirrmtry %%SITE_PERL%%/MogileFS

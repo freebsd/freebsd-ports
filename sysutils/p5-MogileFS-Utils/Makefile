@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MogileFS-Utils
-PORTVERSION=	2.27
+PORTVERSION=	2.28
 CATEGORIES=	sysutils net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DORMANDO
@@ -18,20 +18,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		mogadm.1 \
-		mogdelete.1 \
-		mogfetch.1 \
-		mogfiledebug.1 \
-		mogfileinfo.1 \
-		moglistfids.1 \
-		moglistkeys.1 \
-		mogrename.1 \
-		mogstats.1 \
-		mogtool.1 \
-		mogupload.1
-MAN3=		MogileFS::Utils.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/NAME/ s|MogileFS-Utils|MogileFS::Utils|' ${WRKSRC}/Makefile.PL
 
