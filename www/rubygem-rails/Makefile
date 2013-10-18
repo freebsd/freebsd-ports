@@ -41,9 +41,8 @@ USE_RUBY_RDOC=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=  yes
 
-OPTIONS_DEFINE=FCGI MONGREL MONGRELCLUSTER PASSENGER MEMCACHE_CLIENT
+OPTIONS_DEFINE=FCGI PASSENGER MEMCACHE_CLIENT
 FCGI_DESC=	FastCGI backend
-MONGREL_DESC=	Mongrel backend
 MONGRELCLUSTER_DESC=	Mongrel Cluster backend
 PASSENGER_DESC=	Passenger backend
 MEMCACHE_CLIENT_DESC=	MemCache-Client support
@@ -58,14 +57,6 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/fcgi.so:${PORTSDIR}/www/ruby-fcgi
 
 .if ${PORT_OPTIONS:MMEMCACHE_CLIENT}
 RUN_DEPENDS+=	rubygem-memcache-client>=1.2.0:${PORTSDIR}/databases/rubygem-memcache-client
-.endif
-
-.if ${PORT_OPTIONS:MMONGREL}
-RUN_DEPENDS+=	rubygem-mongrel>=1.1.5:${PORTSDIR}/www/rubygem-mongrel
-.endif
-
-.if ${PORT_OPTIONS:MMONGRELCLUSTER}
-RUN_DEPENDS+=	rubygem-mongrel_cluster>=1.0.5:${PORTSDIR}/www/rubygem-mongrel_cluster
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}

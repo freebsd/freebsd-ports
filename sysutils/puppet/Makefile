@@ -40,21 +40,15 @@ MAN8=	extlookup2hiera.8 puppet-agent.8 puppet-apply.8 puppet-ca.8 \
 	puppet-resource_type.8 puppet-secret_agent.8 puppet-status.8 \
 	puppet.8
 
-OPTIONS_DEFINE=		MONGREL
 OPTIONS_DEFAULT=	PACKAGE_ORIGIN
 OPTIONS_SINGLE=         PATCHES
 OPTIONS_SINGLE_PATCHES=	PACKAGE_ORIGIN PACKAGE_ROOT
-MONGREL_DESC=		Run puppet server as a mongrel service
 PACKAGE_ORIGIN_DESC=	Use port origin as package name
 PACKAGE_ROOT_DESC=	Use PACKAGEROOT insted of PACKAGESITE
 PATCHES_DESC=           Optional exclusive patches
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMONGREL}
-RUN_DEPENDS+=	rubygem-mongrel>=0:${PORTSDIR}/www/rubygem-mongrel
-.endif
 
 .if ${PORT_OPTIONS:MPACKAGE_ROOT}
 .if ! ${PORT_OPTIONS:MPACKAGE_ORIGIN}
