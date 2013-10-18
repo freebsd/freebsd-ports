@@ -42,7 +42,15 @@
  using namespace vdrlive;
 --- a/recman.h
 +++ b/recman.h
-@@ -12,7 +12,11 @@ namespace vdrlive {
+@@ -5,6 +5,7 @@
+ #include <map>
+ #include <vector>
+ #include <list>
++#include <string>
+ #include <vdr/recording.h>
+ #include "stdext.h"
+ 
+@@ -12,7 +13,11 @@ namespace vdrlive {
  
  	// Forward declations from epg_events.h
  	class EpgInfo;
@@ -54,7 +62,7 @@
  
  	/**
  	 *  Some forward declarations
-@@ -26,9 +30,15 @@ namespace vdrlive {
+@@ -26,9 +31,15 @@ namespace vdrlive {
  	class DirectoryListPtr;
  	class RecordingsItem;
  
@@ -70,7 +78,7 @@
  	typedef std::multimap< std::string, RecordingsItemPtr > RecordingsMap;
  
  
-@@ -121,10 +131,17 @@ namespace vdrlive {
+@@ -121,10 +132,17 @@ namespace vdrlive {
  
  			static RecordingsManagerPtr EnsureValidData();
  
@@ -88,7 +96,7 @@
  			static int m_recordingsState;
  
  			cThreadLock m_recordingsLock;
-@@ -257,12 +274,20 @@ namespace vdrlive {
+@@ -257,12 +275,20 @@ namespace vdrlive {
  	 *  A smart pointer to a recordings tree. As long as an instance of this
  	 *  exists the recordings are locked in the vdr.
  	 */
@@ -109,7 +117,7 @@
  
  		public:
  			RecordingsTreePtr();
-@@ -286,8 +311,13 @@ namespace vdrlive {
+@@ -286,8 +312,13 @@ namespace vdrlive {
  
  		private:
  			RecordingsList(RecordingsTreePtr recTree);
@@ -123,7 +131,7 @@
  
  		public:
  			typedef std::vector< RecordingsItemPtr > RecVecType;
-@@ -333,12 +363,20 @@ namespace vdrlive {
+@@ -333,12 +364,20 @@ namespace vdrlive {
  	 *  A smart pointer to a recordings list. As long as an instance of this
  	 *  exists the recordings are locked in the vdr.
  	 */
@@ -144,7 +152,7 @@
  
  		public:
  			virtual ~RecordingsListPtr();
-@@ -378,12 +416,20 @@ namespace vdrlive {
+@@ -378,12 +417,20 @@ namespace vdrlive {
  	 *  A smart pointer to a directory list. As long as an instance of this
  	 *  exists the recordings are locked in the vdr.
  	 */
@@ -205,13 +213,21 @@
  class GrabImageTask;
 --- a/tasks.cpp
 +++ a/tasks.cpp
-@@ -14,8 +14,10 @@
+@@ -1,4 +1,5 @@
+ #include <algorithm>
++#include <functional>
+ #include <vdr/channels.h>
+ #include <vdr/i18n.h>
+ #include <vdr/menu.h>
+@@ -14,8 +14,12 @@
  namespace vdrlive {
  
  using namespace std;
 +#if !defined(_LIBCPP_VERSION) && __cplusplus < 201103L
  using namespace std::tr1;
  using namespace std::tr1::placeholders;
++#else
++using namespace std::placeholders;
 +#endif
  
  const char* NowReplaying()
