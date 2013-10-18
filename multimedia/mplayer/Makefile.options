@@ -50,7 +50,7 @@ CFLAGS+=	-O -fomit-frame-pointer
 .endif #DEBUG
 
 #Supported architectures for clang
-.if ${ARCH} == "amd64"
+.if ${ARCH} == "amd64" || ${ARCH} == "i386"
 MPLAYER_CLANG_SUPPORTED_ARCH=	yes
 .endif
 
