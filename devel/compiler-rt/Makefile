@@ -37,7 +37,6 @@ PLIST_FILES=	include/Block.h \
 		include/Block_private.h \
 		lib/libBlocksRuntime.so
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
