@@ -13,6 +13,9 @@ EXTRACT_SUFX=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ReStructuredText Support for Emacs
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 USE_EMACS=	yes
 
 BROKEN=		checksum mismatch

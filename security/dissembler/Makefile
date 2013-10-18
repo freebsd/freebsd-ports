@@ -11,6 +11,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Tool that polymorphs bytecode to a printable ASCII string
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 WRKSRC=	${WRKDIR}/${DISTNAME}
 PLIST_FILES=bin/${PORTNAME}
 PORTDOCS=	${PORTNAME}.txt

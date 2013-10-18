@@ -8,6 +8,9 @@ DISTNAME=	Exquisite
 
 COMMENT=	KDE Exquisite iconset
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 BROKEN=	checksum mismatch
 
 USE_BZIP2=	yes

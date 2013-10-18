@@ -13,6 +13,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Enables 6to4 IPv6 automatic tunnels
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 NO_BUILD=	yes
 
 BROKEN=		does not fetch.

@@ -10,6 +10,9 @@ MASTER_SITES=	SF/synce/SynCE-GNOME/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME system tray app for monitoring connected WinCE based devices
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 LIB_DEPENDS=	rra.0:${PORTSDIR}/palm/synce-librra \
 		gtop-2.0.7:${PORTSDIR}/devel/libgtop \
 		unshield.0:${PORTSDIR}/archivers/unshield \
