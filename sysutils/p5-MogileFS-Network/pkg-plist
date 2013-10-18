@@ -3,6 +3,8 @@
 %%SITE_PERL%%/MogileFS/ReplicationPolicy/HostsPerNetwork.pm
 %%SITE_PERL%%/MogileFS/ReplicationPolicy/MultipleNetworks.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS/Network/.packlist
+%%PERL5_MAN3%%/MogileFS::Network.3.gz
+%%PERL5_MAN3%%/MogileFS::ReplicationPolicy::MultipleNetworks.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS/Network
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS
 @dirrmtry %%SITE_PERL%%/MogileFS/Plugin
