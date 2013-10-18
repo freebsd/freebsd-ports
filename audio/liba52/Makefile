@@ -15,7 +15,6 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_AUTOTOOLS=	libtool
-NO_STAGE=	yes
 USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-oss --enable-shared
@@ -36,8 +35,6 @@ DJBFFT_CONFIGURE_ON=	--enable-djbfft
 CFLAGS+=	-fPIC
 .endif
 
-MAN1=	a52dec.1 extract_a52.1
-
 HEADER_FILES=	liba52/a52_internal.h
 
 post-patch:
@@ -50,12 +47,9 @@ post-patch:
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/liba52.txt ${DOCSDIR}
-.endif
-.for file in ${HEADER_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/include/a52dec
-.endfor
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/liba52.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/liba52/a52_internal.h ${STAGEDIR}${PREFIX}/include/a52dec
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liba52.so.0
 
 .include <bsd.port.post.mk>

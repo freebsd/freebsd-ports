@@ -9,6 +9,8 @@ lib/liba52.so.0
 lib/liba52.so
 lib/liba52.la
 lib/liba52.a
+man/man1/a52dec.1.gz
+man/man1/extract_a52.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/liba52.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/a52dec
