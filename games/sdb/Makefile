@@ -13,9 +13,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Futuristic overhead shooter
 
+USES=		gmake
 USE_SDL=	mixer image sdl
 USE_GL=		gl glu
-USE_GMAKE=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/src
 
@@ -23,9 +23,13 @@ CXXFLAGS+=	`${SDL_CONFIG} --cflags`
 LDFLAGS+=	`${SDL_CONFIG} --libs` -lSDL_image -lSDL_mixer -lGL -lGLU
 MAKE_ARGS=	CPP="${CXX}" CXXFLAGS="${CXXFLAGS}" LIBS="${LDFLAGS}"
 
+PLIST_FILES=	bin/sdb
 PORTDOCS=	*
+PORTDATA=	*
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} != "powerpc" && ${ARCH} != "sparc64"
@@ -49,12 +53,9 @@ post-patch:
 		${WRKSRC}/src/sdb.h ${WRKSRC}/src/game.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/sdb ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "levels models snd sprites" ${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/src/sdb ${STAGEDIR}${PREFIX}/bin
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "levels models snd sprites" ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
