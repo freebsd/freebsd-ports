@@ -131,9 +131,9 @@ GYP_DEFINES+=	gcc_version=${CXX:S/g++//}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gcc
 .else
 .if ${OSVERSION} < 902000
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang:${PORTSDIR}/lang/clang
-CC=		${LOCALBASE}/bin/clang
-CXX=		${LOCALBASE}/bin/clang++
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang32:${PORTSDIR}/lang/clang32
+CC=		${LOCALBASE}/bin/clang32
+CXX=		${LOCALBASE}/bin/clang++32
 .else
 CC=		clang
 CXX=		clang++
