@@ -1,18 +1,18 @@
-JWasm is a MASM v6 compatible assembler. It's a fork of Open Watcom's WASM 
-and released under the Sybase Open Watcom Public License, which allows 
-free commercial and non-commercial use. JWasm is written in C, source code 
+JWasm is a MASM v6 compatible assembler. It's a fork of Open Watcom's WASM
+and released under the Sybase Open Watcom Public License, which allows
+free commercial and non-commercial use. JWasm is written in C, source code
 is open.
 
 JWasm Features:
 
-- JWasm natively supports output formats Intel OMF, MS Coff (32- and 
+- JWasm natively supports output formats Intel OMF, MS Coff (32- and
   64-bit), Elf (32- and 64-bit), Bin and DOS MZ.
-- precompiled JWasm binaries are available for DOS, Windows and Linux. For 
+- precompiled JWasm binaries are available for DOS, Windows and Linux. For
   OS/2 and FreeBSD, makefiles are supplied.
 - Instructions up to SSSE3 are supported.
-- The JWasm source is portable and has successfully been tested with Open 
+- The JWasm source is portable and has successfully been tested with Open
   Watcom, MS VC, GCC and more.
-- As far as programming for Windows is concerned, JWasm can be used with 
+- As far as programming for Windows is concerned, JWasm can be used with
   both Win32Inc and Masm32.
 - C header files can be converted to include files for JWasm with h2incX.
 
