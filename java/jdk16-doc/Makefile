@@ -1,16 +1,16 @@
 # Created by: Greg Lewis <glewis@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	jdk-doc
+PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VER}
 CATEGORIES=	java
 MASTER_SITES=	#
+PKGNAMESUFFIX=	${JDK_CONCAT_VER}-doc
 DISTNAME=	jdk-6u30-apidocs
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java Development Kit ${JDK_MAJOR_VER} Documentation
 
-LATEST_LINK=	jdk${JDK_CONCAT_VER}-doc
 DOCSDIR?=	${PREFIX}/share/doc/jdk${JDK_MAJOR_VER}
 NO_CDROM=	License does not allow distribution with fee.
 RESTRICTED=	This documentation is under license and export control.
