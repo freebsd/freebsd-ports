@@ -43,12 +43,6 @@ WINELIBDIR?=	${PREFIX}/lib
 .if !defined(USE_LDCONFIG32)
 USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine
 .endif
-MAN1=		msiexec.1 notepad.1 regedit.1 regsvr32.1 widl.1 wine.1 \
-		wineboot.1 winebuild.1 winecfg.1 wineconsole.1 winedbg.1 \
-		winedump.1 winefile.1 winegcc.1 winemaker.1 winemine.1 \
-		winepath.1 wineserver.1 wmc.1 wrc.1
-MLINKS=		winegcc.1 winecpp.1 \
-		winegcc.1 wineg++.1
 ONLY_FOR_ARCHS=	i386
 USES=		bison gmake
 USE_BZIP2=	yes
@@ -66,9 +60,8 @@ WINEMAKER_DESC=	Fully support winemaker (requires Perl)
 GECKO_DESC=	Bundle Gecko MSI package for Wine
 MONO_DESC=	Bundle Mono MSI package for Wine
 
-PORTDATA=	fonts/ generic.ppd l_intl.nls wine.inf
+PORTDATA=	fonts/ l_intl.nls wine.inf
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MCUPS}
@@ -139,27 +132,17 @@ pre-build:
 	cd ${WRKSRC} && ${GMAKE} depend
 
 post-install:
-	@${RM} -f ${MAN1PREFIX}/man/de.UTF-8/man1/wine.1 \
-	          ${MAN1PREFIX}/man/de.UTF-8/man1/winemaker.1 \
-	          ${MAN1PREFIX}/man/de.UTF-8/man1/wineserver.1 \
-	          ${MAN1PREFIX}/man/fr.UTF-8/man1/wine.1 \
-	          ${MAN1PREFIX}/man/fr.UTF-8/man1/winemaker.1 \
-	          ${MAN1PREFIX}/man/fr.UTF-8/man1/wineserver.1 \
-	          ${MAN1PREFIX}/man/pl.UTF-8/man1/wine.1
-	@-${RMDIR} -p ${MAN1PREFIX}/man/de.UTF-8/man1 \
-	              ${MAN1PREFIX}/man/fr.UTF-8/man1 \
-	              ${MAN1PREFIX}/man/pl.UTF-8/man1
-	@${MV} -f ${WINELIBDIR}/libwine.so.1.0 ${WINELIBDIR}/libwine.so.1
-	@${LN} -sf libwine.so.1 ${WINELIBDIR}/libwine.so
+	@${MV} -f ${STAGEDIR}${WINELIBDIR}/libwine.so.1.0 \
+	          ${STAGEDIR}${WINELIBDIR}/libwine.so.1
+	@${LN} -sf libwine.so.1 ${STAGEDIR}/${WINELIBDIR}/libwine.so
 .if !defined(NOPORTDOCS)
-	-@${MKDIR} ${DOCSDIR}
+	-@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README ANNOUNCE AUTHORS
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/programs/winedbg/README ${DOCSDIR}/README.winedbg
-	@${INSTALL_DATA} ${WRKSRC}/tools/winedump/README ${DOCSDIR}/README.winedump
+	@${INSTALL_DATA} ${WRKSRC}/programs/winedbg/README ${STAGEDIR}${DOCSDIR}/README.winedbg
+	@${INSTALL_DATA} ${WRKSRC}/tools/winedump/README ${STAGEDIR}${DOCSDIR}/README.winedump
 .endif
-	@${MKDIR} ${DESKTOPDIR}
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
 
