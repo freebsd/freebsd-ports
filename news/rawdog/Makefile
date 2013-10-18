@@ -17,7 +17,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedpars
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-MAN1=		rawdog.1
 
 PORTDOCS=	README
 
