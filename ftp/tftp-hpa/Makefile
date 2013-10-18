@@ -14,19 +14,17 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_RC_SUBR=	tftpd
 
+DESTDIRNAME=	INSTALLROOT
+
 PLIST_FILES=	bin/tftp \
-		libexec/in.tftpd
-.ifndef (NOPORTDOCS)
+		libexec/in.tftpd \
+		man/man1/tftp.1.gz \
+		man/man8/in.tftpd.8.gz \
+		man/man8/tftpd.8.gz
 PORTDOCS=	CHANGES \
 		README \
 		README.security
-.endif
 
-MAN1=		tftp.1
-MAN8=		in.tftpd.8
-MLINKS=		in.tftpd.8 tftpd.8
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,SBINDIR,LIBEXECDIR,; s,sbindir,libexecdir,' \
 	    ${WRKSRC}/MCONFIG.in
@@ -38,9 +36,9 @@ post-patch:
 
 .ifdef PORTDOCS
 post-install:
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docfile in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
