@@ -1,5 +1,7 @@
 bin/inkscape
 bin/inkview
+man/man1/inkscape.1.gz
+man/man1/inkview.1.gz
 share/applications/inkscape.desktop
 share/icons/hicolor/16x16/apps/inkscape.png
 share/icons/hicolor/22x22/apps/inkscape.png
@@ -853,8 +855,6 @@ share/locale/zh_TW/LC_MESSAGES/inkscape.mo
 @dirrm %%DATADIR%%/clipart
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/te_IN/LC_MESSAGES
 @dirrmtry share/locale/te_IN
 @dirrmtry share/locale/sr@latin/LC_MESSAGES

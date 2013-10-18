@@ -1,0 +1,11 @@
+--- configure.orig	2013-10-16 22:37:30.000000000 +0200
++++ configure	2013-10-16 22:37:37.000000000 +0200
+@@ -7498,7 +7498,7 @@
+ 	cc_vers_all=`expr $cc_vers_major '*' 1000000 + $cc_vers_minor '*' 1000 + $cc_vers_patch`
+ 
+ 	if test $cc_vers_major -lt 3; then
+-		as_fn_error $? "gcc >= 3.0 is needed to compile inkscape" "$LINENO" 5
++#		as_fn_error $? "gcc >= 3.0 is needed to compile inkscape" "$LINENO" 5
+ 	fi
+ fi
+ 
