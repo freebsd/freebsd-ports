@@ -22,12 +22,25 @@ PORTDOCS=	COPYING README HISTORY
 WRKSRC=		${WRKDIR}/vdr-plugin-${PLUGIN}
 VDR_PLUGIN_MAKEFILES=	${WRKSRC}/httpd/Makefile ${WRKSRC}/pages/Makefile
 MAKE_ARGS+=	INCLUDES="-I$(LOCALBASE)/include -I${WRKSRC}"
+MAKE_ARGS+=	PREFIX="${PREFIX}"
+USES=		compiler:features
 
 NO_STAGE=	yes
+
 .include	"${.CURDIR}/../../multimedia/vdr/Makefile.plugins"
+
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_FEATURES:Mlibc++}
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-libcxx
+EXTRA_PATCH_STRIP=	-p1
+.endif
 
 post-patch: post-patch-plugin
 	${CP} ${FILESDIR}/gen_version_suffix.h ${WRKSRC}
+
+pre-install:
+	${MKDIR} ${PREFIX}/lib/vdr
 
 post-install: post-install-pluginlocales
 	(cd ${WRKSRC}/${PLUGIN} && \
@@ -38,4 +51,4 @@ post-install: post-install-pluginlocales
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
