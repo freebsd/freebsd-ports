@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+echo ""
+echo -n  "Which Train Game Map would You use?"
+echo ""
+ls %%DATADIR%%/maps
+echo ""
+read MAP
+
+traingame play $MAP

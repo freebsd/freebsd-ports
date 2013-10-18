@@ -1,0 +1,147 @@
+bin/traingame
+bin/traingame-map
+share/icons/hicolor/32x32/apps/traingame.png
+share/icons/hicolor/48x48/apps/traingame.png
+share/icons/hicolor/64x64/apps/traingame.png
+share/icons/hicolor/72x72/apps/traingame.png
+share/icons/hicolor/96x96/apps/traingame.png
+share/pixmaps/traingame.png
+%%DATADIR%%/buildings/coal_mine/coal_mine.mtl
+%%DATADIR%%/buildings/coal_mine/coal_mine.obj
+%%DATADIR%%/buildings/coal_mine/coal_mine.wings
+%%DATADIR%%/buildings/coal_mine/coal_mine.xml
+%%DATADIR%%/buildings/house2/house2.mtl
+%%DATADIR%%/buildings/house2/house2.obj
+%%DATADIR%%/buildings/house2/house2.wings
+%%DATADIR%%/buildings/house2/house2.xml
+%%DATADIR%%/buildings/platform_end/platform_end.mtl
+%%DATADIR%%/buildings/platform_end/platform_end.obj
+%%DATADIR%%/buildings/platform_end/platform_end.wings
+%%DATADIR%%/buildings/platform_end/platform_end.xml
+%%DATADIR%%/buildings/platform_middle/platform_middle.mtl
+%%DATADIR%%/buildings/platform_middle/platform_middle.obj
+%%DATADIR%%/buildings/platform_middle/platform_middle.wings
+%%DATADIR%%/buildings/platform_middle/platform_middle.xml
+%%DATADIR%%/buildings/power_plant/power_plant.mtl
+%%DATADIR%%/buildings/power_plant/power_plant.obj
+%%DATADIR%%/buildings/power_plant/power_plant.wings
+%%DATADIR%%/buildings/power_plant/power_plant.xml
+%%DATADIR%%/buildings/white_house/cube2_auv.png
+%%DATADIR%%/buildings/white_house/house.mtl
+%%DATADIR%%/buildings/white_house/house.obj
+%%DATADIR%%/buildings/white_house/house.wings
+%%DATADIR%%/buildings/white_house/white_house.xml
+%%DATADIR%%/engines/base.wings
+%%DATADIR%%/engines/red/red.xml
+%%DATADIR%%/engines/red/train.mtl
+%%DATADIR%%/engines/red/train.obj
+%%DATADIR%%/engines/red/train.wings
+%%DATADIR%%/engines/saddle/saddle.mtl
+%%DATADIR%%/engines/saddle/saddle.obj
+%%DATADIR%%/engines/saddle/saddle.wings
+%%DATADIR%%/engines/saddle/saddle.xml
+%%DATADIR%%/engines/tank/tank.mtl
+%%DATADIR%%/engines/tank/tank.obj
+%%DATADIR%%/engines/tank/tank.wings
+%%DATADIR%%/engines/tank/tank.xml
+%%DATADIR%%/fonts/DejaVuSans.ttf
+%%DATADIR%%/fonts/DejaVuSansMono.ttf
+%%DATADIR%%/fonts/Vera.ttf
+%%DATADIR%%/images/buildings_icon.png
+%%DATADIR%%/images/button_active.png
+%%DATADIR%%/images/button_base.png
+%%DATADIR%%/images/delete_icon.png
+%%DATADIR%%/images/icons/next.png
+%%DATADIR%%/images/icons/prev.png
+%%DATADIR%%/images/icons/rotate.png
+%%DATADIR%%/images/icons/save.png
+%%DATADIR%%/images/icons/smooth.png
+%%DATADIR%%/images/icons/tree.png
+%%DATADIR%%/images/level_icon.png
+%%DATADIR%%/images/lower_icon.png
+%%DATADIR%%/images/raise_icon.png
+%%DATADIR%%/images/smoke_particle.png
+%%DATADIR%%/images/start_icon.png
+%%DATADIR%%/images/start_icon2.png
+%%DATADIR%%/images/station_icon.png
+%%DATADIR%%/images/track_icon.png
+%%DATADIR%%/layouts/demo.xml
+%%DATADIR%%/layouts/editor.xml
+%%DATADIR%%/layouts/game.xml
+%%DATADIR%%/maps/coal_mine/coal_mine.bin
+%%DATADIR%%/maps/coal_mine/coal_mine.xml
+%%DATADIR%%/maps/demo/demo.bin
+%%DATADIR%%/maps/demo/demo.xml
+%%DATADIR%%/maps/figure8/figure8.bin
+%%DATADIR%%/maps/figure8/figure8.xml
+%%DATADIR%%/maps/gen_track/gen_track.bin
+%%DATADIR%%/maps/gen_track/gen_track.xml
+%%DATADIR%%/maps/goods_demo/goods_demo.bin
+%%DATADIR%%/maps/goods_demo/goods_demo.xml
+%%DATADIR%%/maps/long_map/long_map.bin
+%%DATADIR%%/maps/long_map/long_map.xml
+%%DATADIR%%/maps/points/points.bin
+%%DATADIR%%/maps/points/points.xml
+%%DATADIR%%/maps/power_plant/power_plant.bin
+%%DATADIR%%/maps/power_plant/power_plant.xml
+%%DATADIR%%/maps/sbends/sbends.bin
+%%DATADIR%%/maps/sbends/sbends.xml
+%%DATADIR%%/maps/uphill/uphill.bin
+%%DATADIR%%/maps/uphill/uphill.xml
+%%DATADIR%%/maps/villages/villages.bin
+%%DATADIR%%/maps/villages/villages.xml
+%%DATADIR%%/schemas/building.xsd
+%%DATADIR%%/schemas/config.xsd
+%%DATADIR%%/schemas/engine.xsd
+%%DATADIR%%/schemas/layout.xsd
+%%DATADIR%%/schemas/map.xsd
+%%DATADIR%%/schemas/tree.xsd
+%%DATADIR%%/schemas/waggon.xsd
+%%DATADIR%%/traingame
+%%DATADIR%%/trees/apple/apple.mtl
+%%DATADIR%%/trees/apple/apple.obj
+%%DATADIR%%/trees/apple/apple.wings
+%%DATADIR%%/trees/apple/apple.xml
+%%DATADIR%%/trees/pine/pine.mtl
+%%DATADIR%%/trees/pine/pine.obj
+%%DATADIR%%/trees/pine/pine.wings
+%%DATADIR%%/trees/pine/pine.xml
+%%DATADIR%%/waggons/coal_truck/coal_truck.mtl
+%%DATADIR%%/waggons/coal_truck/coal_truck.obj
+%%DATADIR%%/waggons/coal_truck/coal_truck.wings
+%%DATADIR%%/waggons/coal_truck/coal_truck.xml
+%%DATADIR%%/waggons/waggon_base.wings
+@dirrm %%DATADIR%%/waggons/coal_truck
+@dirrm %%DATADIR%%/waggons
+@dirrm %%DATADIR%%/trees/pine
+@dirrm %%DATADIR%%/trees/apple
+@dirrm %%DATADIR%%/trees
+@dirrm %%DATADIR%%/schemas
+@dirrm %%DATADIR%%/maps/villages
+@dirrm %%DATADIR%%/maps/uphill
+@dirrm %%DATADIR%%/maps/sbends
+@dirrm %%DATADIR%%/maps/power_plant
+@dirrm %%DATADIR%%/maps/points
+@dirrm %%DATADIR%%/maps/long_map
+@dirrm %%DATADIR%%/maps/goods_demo
+@dirrm %%DATADIR%%/maps/gen_track
+@dirrm %%DATADIR%%/maps/figure8
+@dirrm %%DATADIR%%/maps/demo
+@dirrm %%DATADIR%%/maps/coal_mine
+@dirrm %%DATADIR%%/maps
+@dirrm %%DATADIR%%/layouts
+@dirrm %%DATADIR%%/images/icons
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%/engines/tank
+@dirrm %%DATADIR%%/engines/saddle
+@dirrm %%DATADIR%%/engines/red
+@dirrm %%DATADIR%%/engines
+@dirrm %%DATADIR%%/buildings/white_house
+@dirrm %%DATADIR%%/buildings/power_plant
+@dirrm %%DATADIR%%/buildings/platform_middle
+@dirrm %%DATADIR%%/buildings/platform_end
+@dirrm %%DATADIR%%/buildings/house2
+@dirrm %%DATADIR%%/buildings/coal_mine
+@dirrm %%DATADIR%%/buildings
+@dirrm %%DATADIR%%
