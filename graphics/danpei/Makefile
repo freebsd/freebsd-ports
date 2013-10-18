@@ -7,7 +7,7 @@ PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	bu7cher@yandex.ru
+MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	Image Viewer for X Window System with thumbnail preview feature
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png

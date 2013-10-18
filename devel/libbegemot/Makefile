@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://people.freebsd.org/~harti/libbegemot/
 DISTNAME=	libbegemot-${PORTVERSION}
 
-MAINTAINER=	bu7cher@yandex.ru
+MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	A function library for begemot tools
 
 GNU_CONFIGURE=	yes
