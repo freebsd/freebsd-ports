@@ -31,4 +31,9 @@ bin/pssh-askpass
 %%PYTHON_SITELIBDIR%%/psshlib/version.py
 %%PYTHON_SITELIBDIR%%/psshlib/version.pyc
 %%PYTHON_SITELIBDIR%%/psshlib/version.pyo
+man/man1/pnuke.1.gz
+man/man1/prsync.1.gz
+man/man1/pscp.1.gz
+man/man1/pslurp.1.gz
+man/man1/pssh.1.gz
 @dirrm %%PYTHON_SITELIBDIR%%/psshlib
