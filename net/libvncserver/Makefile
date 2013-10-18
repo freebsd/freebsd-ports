@@ -41,7 +41,7 @@ GCRYPT_CONFIGURE_OFF=	--without-gcrypt
 IPV6_CONFIGURE_ON=	--with-ipv6
 IPV6_CONFIGURE_OFF=	--without-ipv6
 
-OPENSSL_USE=	OPENSSL
+OPENSSL_USE=	OPENSSL=yes
 
 post-patch:
 	@${REINPLACE_CMD} -e \
