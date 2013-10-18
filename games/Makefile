@@ -944,6 +944,7 @@
     SUBDIR += trackballs
     SUBDIR += tractorgen
     SUBDIR += traindirector
+    SUBDIR += traingame
     SUBDIR += tremulous
     SUBDIR += trigger
     SUBDIR += trimines

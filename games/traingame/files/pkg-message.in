@@ -1,0 +1,18 @@
+===============================================================================
+
+Train Game has been installed.
+
+Now you can play the game by running:
+
+     %%PREFIX%%/bin/traingame-map
+
+or manually with
+
+     %%PREFIX%%/bin/traingame play <map_name_here>
+
+
+To use the editor, run:
+
+     %%PREFIX%%/bin/traingame edit <map_name_here>
+
+===============================================================================
