@@ -1,2 +1,4 @@
-SHA256 (weechat-0.4.1.tar.gz) = 3c110a1397ab1f1e2a7cf80b8900e2c02ea01f80e4b09ef7954706916e05563f
-SIZE (weechat-0.4.1.tar.gz) = 2567828
+SHA256 (weechat-0.4.2.tar.gz) = 3bb9964ef776183adab9513b7e3662170039aaccab21eb71cfbeac494694d70f
+SIZE (weechat-0.4.2.tar.gz) = 2729241
+SHA256 (weechat-0.4.2-manpages.tar.gz) = 1a52d8585e8ffabee048e4f1a0fd122d324ab1bae3d90d1ddf113828e815c7df
+SIZE (weechat-0.4.2-manpages.tar.gz) = 6511
