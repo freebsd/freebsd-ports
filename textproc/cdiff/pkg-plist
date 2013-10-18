@@ -1,0 +1,4 @@
+bin/cdiff
+%%PYTHON_SITELIBDIR%%/cdiff.py
+%%PYTHON_SITELIBDIR%%/cdiff.pyc
+%%PYTHON_SITELIBDIR%%/cdiff.pyo

@@ -1,4 +1,5 @@
-cdiff is a readability enhancer for context diffs
-and unified diffs on color terminals.
+Term based tool to view colored, incremental diff in a Git/Mercurial/Svn
+workspace or from stdin, with side by side and auto pager support. Requires
+python (>= 2.5.0) and less.
 
-It uses less(1) as a backend.
+WWW: https://github.com/ymattw/cdiff
