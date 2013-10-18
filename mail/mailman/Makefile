@@ -3,6 +3,7 @@
 
 PORTNAME=	mailman
 DISTVERSION=	2.1.16
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
@@ -142,7 +143,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#%%LOCALBASE%%#${LOCALBASE}#g' \
 	  ${WRKSRC}/Mailman/Defaults.py.in
 	@${REINPLACE_CMD} -e 's/^0,5,10/#&/' ${WRKSRC}/cron/crontab.in.in
-	@${REINPLACE_CMD} -e '/PYTHON.*compileall/d' ${WRKSRC}/Makefile.in
 .if empty(PORT_OPTIONS:MNLS)
 	@${REINPLACE_CMD} -e 's/messages//' ${WRKSRC}/Makefile.in
 .endif
@@ -163,12 +163,11 @@ post-install:
 .endfor
 .endif
 	${STRIP_CMD} ${STAGEDIR}${MAILMANDIR}/mail/mailman
-# Recompile Python scripts to get the real paths in,
-# rather than the staged paths:
-.for dir in bin Mailman
+# Compile additional Python scripts:
+.for dir in bin
 	(cd ${STAGEDIR}${MAILMANDIR} \
 	    && ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
-	    -d ${MAILMANDIR} -f -q ${dir})
+	    -d ${MAILMANDIR}/${dir} ${dir})
 .endfor
 	@${RM} -f ${STAGEDIR}${MAILMANDIR}/pythonlib/*.egg-info
 	@${RM} -f ${STAGEDIR}${MAILMANDIR}/Mailman/mm_cfg.pyc
