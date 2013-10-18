@@ -3,7 +3,7 @@
 
 PORTNAME=	tvheadend
 PORTVERSION=	3.4.0.20130726.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://people.freebsd.org/~decke/distfiles/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} dvb-scan-tables-20130714.tar.gz
@@ -28,7 +28,6 @@ USES=		pkgconfig gmake
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
-MAN1=		${PORTNAME}.1
 USE_RC_SUBR=	${PORTNAME}
 
 TVHUSER?=	webcamd
@@ -47,7 +46,6 @@ CONFIGURE_ARGS+=--disable-dvbscan --disable-zlib
 CFLAGS+=	-I${LOCALBASE}/include -Wno-conversion -Wno-int-to-pointer-cast
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo -lssl -lz
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900000
@@ -64,23 +62,15 @@ CFLAGS+=	-Wno-microsoft \
 		-Wno-tautological-constant-out-of-range-compare
 .endif
 
-.if ${PORT_OPTIONS:MAVAHI}
-LIB_DEPENDS+=	libavahi-client.so:${PORTSDIR}/net/avahi-app
-.endif
+AVAHI_LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
 
-.if ${PORT_OPTIONS:MDVBCSA}
-LIB_DEPENDS+=	libdvbcsa.so:${PORTSDIR}/multimedia/libdvbcsa
-CONFIGURE_ARGS+=	--enable-dvbcsa
-.else
-CONFIGURE_ARGS+=	--disable-dvbcsa
-.endif
+DVBCSA_LIB_DEPENDS=	libdvbcsa.so:${PORTSDIR}/multimedia/libdvbcsa
+DVBCSA_CONFIGURE_ON=	--enable-dvbcsa
+DVBCSA_CONFIGURE_OFF=	--disable-dvbcsa
 
-.if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	libavcodec1.so:${PORTSDIR}/multimedia/ffmpeg1
-CONFIGURE_ARGS+=	--enable-libav
-.else
-CONFIGURE_ARGS+=	--disable-libav
-.endif
+FFMPEG_LIB_DEPENDS=	libavcodec1.so:${PORTSDIR}/multimedia/ffmpeg1
+FFMPEG_CONFIGURE_ON=	--enable-libav
+FFMPEG_CONFIGURE_OFF=	--disable-libav
 
 post-patch:
 	@${REINPLACE_CMD} 's|-g||' \
@@ -99,8 +89,7 @@ post-patch:
 		${WRKSRC}/src/muxes.c
 
 post-install:
-	${MKDIR} ${DATADIR}/dvb
-	${CP} -a ${WRKDIR}/dvb-scan-tables/ ${DATADIR}/dvb
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${DATADIR}/dvb
+	${CP} -a ${WRKDIR}/dvb-scan-tables/ ${STAGEDIR}${DATADIR}/dvb
 
 .include <bsd.port.post.mk>
