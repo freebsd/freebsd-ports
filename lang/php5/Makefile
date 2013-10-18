@@ -101,7 +101,6 @@ IGNORE=		cannot be built with multiple SAPI (apache and embedded)
 .endif
 
 .if ${PORT_OPTIONS:MAPACHE}
-BROKEN=		doesn't install in STAGEDIR: working on a fix
 PHP_SAPI+=	mod
 USE_APACHE=	22+
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
