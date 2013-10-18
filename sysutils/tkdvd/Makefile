@@ -26,10 +26,9 @@ DESKTOP_ENTRIES="TkDVD" \
 		"Burn CD/DVD" \
 		"tkdvd" \
 		"tkdvd" \
-		"" \
+		"AudioVideo;DiscBurning;" \
 		true
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -43,13 +42,11 @@ do-build:
 	cd ${WRKSRC} && ${TCLSH} install.tcl
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/tkdvd-install.sh ${PREFIX}/bin/tkdvd
+	${INSTALL_SCRIPT} ${WRKSRC}/tkdvd-install.sh ${STAGEDIR}${PREFIX}/bin/tkdvd
 	${INSTALL_DATA} ${WRKSRC}/icons/tkdvd-2-48.png \
-		${PREFIX}/share/pixmaps/tkdvd.png
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+		${STAGEDIR}${PREFIX}/share/pixmaps/tkdvd.png
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/FAQ ${WRKSRC}/doc/c* \
-		${DOCSDIR}
-.endif
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
