@@ -4,6 +4,7 @@
 %%SITE_PERL%%/MogileFS/ClientHTTPFile.pm
 %%SITE_PERL%%/MogileFS/NewHTTPFile.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS/Client/.packlist
+%%PERL5_MAN3%%/MogileFS::Client.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS/Client
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS
 @dirrmtry %%SITE_PERL%%/MogileFS
