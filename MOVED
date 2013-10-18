@@ -4975,7 +4975,7 @@ devel/ppl||2013-10-02|expired: fails to build
 devel/py-importlib||2013-10-02|expired: Python 2.6 port will reach it's EoL upstream soon
 graphics/gkrellkam|graphics/gkrellkam2|2013-10-02|Outdated, consider using a newer version
 mail/gkrellmmailwatch|mail/gkrellmmailwatch2|2013-10-02|Outdated, consider using a newer version
-databases/memcached|databases/memcached12|2013-10-02|Unsupported upstream, consider using a newer version
+databases/memcached12|databases/memcached|2013-10-02|Unsupported upstream, consider using a newer version
 www/py-beautifulsoup30||2013-10-03|Outdated, consider using a newer version
 comms/umcs784||2013-10-03|Outdated, included in base system as umcs(4)
 graphics/libwpg01|graphics/libwpg|2013-10-04|Outdated, consider using a new version
