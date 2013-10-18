@@ -4,8 +4,10 @@ if [ -z "$XDG_CONFIG_HOME" ]; then
 	XDG_CONFIG_HOME=$HOME/.config
 fi
 
-mkdir -p $XDG_CONFIG_HOME/apricots
-cd $XDG_CONFIG_HOME/apricots
+DOTDIR="$XDG_CONFIG_HOME/apricots"
+
+mkdir -p "$DOTDIR"
+cd "$DOTDIR" || exit 1
 
 if [ ! -f apricots.cfg ]; then
 	cp %%DATADIR%%/apricots.cfg .
