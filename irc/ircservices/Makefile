@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.ircservices.za.net/download/ \
 		http://banana.irc.gr/ircservices/ \
 		ftp://ftp.freenet.de/pub/ftp.ircservices.za.net/pub/ircservices/
 
-MAINTAINER=	bu7cher@yandex.ru
+MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	A system of IRC services for IRC networks
 
 USES=		gmake perl5

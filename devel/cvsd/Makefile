@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://arthurdejong.org/cvsd/ \
 		http://wiftp.com/
 
-MAINTAINER=	bu7cher@yandex.ru
+MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	CVS pserver daemon
 
 EXTRA_PATCHES=	${FILESDIR}/extra-cvsd-buildroot.in

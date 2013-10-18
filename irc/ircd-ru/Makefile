@@ -8,7 +8,7 @@ CATEGORIES=	irc russian
 MASTER_SITES=	http://link.wenet.su/
 DISTNAME=	ircd-RU-${PORTVERSION}-03-rc-20090810
 
-MAINTAINER=	bu7cher@yandex.ru
+MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	An irc daemon with translation schemes and other useful features
 
 USE_BZIP2=	yes
