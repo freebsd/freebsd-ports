@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	API to the C++ port of the Lucene search engine
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 LIB_DEPENDS=	clucene-core:${PORTSDIR}/textproc/clucene
 
 BROKEN=		incompatible with CLucene 2.3

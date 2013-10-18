@@ -10,6 +10,9 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 COMMENT=	KDE Marbles Translucent iconset
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 BROKEN=		Does not fetch
 
 NO_STAGE=	yes

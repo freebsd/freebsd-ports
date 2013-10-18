@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.fluxbox.org/download/
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Desktop pager for the Fluxbox window manager
 
+DEPRECATED=	BRoken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 

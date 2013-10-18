@@ -10,6 +10,9 @@ DISTFILES=	${ZPACKPREFIX}${PORTNAME}?old_path=%2F\&format=zip
 MAINTAINER=	zenoss@experts-exchange.com
 COMMENT=	Provides performance monitoring of the Apache HTTP Server
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 PLIST_FILES=	zenoss/ZenPack/${ZPACK}
 PLIST_DIRS=	zenoss/ZenPack
 USES=		zenoss

@@ -9,6 +9,9 @@ DISTNAME=	steelicons-default-${PORTVERSION}
 
 COMMENT=	KDE iconset comprised of Steel/Silver icons with shadows
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 BROKEN=	does not fetch
 
 WRKSRC=		"${WRKDIR}/Steel"

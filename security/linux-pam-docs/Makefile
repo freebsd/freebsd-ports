@@ -11,6 +11,9 @@ DISTNAME=	Linux-PAM-${PORTVERSION}-docs
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux-PAM offline documentation
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 BROKEN=		distfile mismatch
 
 WRKSRC=		${WRKDIR}/Linux-PAM-${PORTVERSION}

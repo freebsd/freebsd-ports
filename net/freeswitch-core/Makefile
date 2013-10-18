@@ -30,6 +30,9 @@ EXTRACT_ONLY=	${BASE_PORTNAME}-${PORTVERSION}.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeSwitch SoftSwitch Port
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 BROKEN=		Does not build
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
