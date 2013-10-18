@@ -6,10 +6,13 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
 
-MAINTAINER=	brooks@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PVM for Python
 
 BUILD_DEPENDS=	pvm:${PORTSDIR}/net/pvm
+
+DEPRECATED=	Dead upstream and suspected that there are no users of port
+EXPIRATION_DATE=	2014-01-01
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
@@ -22,24 +25,16 @@ EXAMPLEFILES=	master_test.py \
 		slave_test.py
 PLIST_FILES+=	${EXAMPLEFILES:S|^|%%EXAMPLESDIR%%/|}
 PLIST_DIRS+=	%%EXAMPLESDIR%%
-.if !defined(NOPORTDOCS)
 PORTDOCS=	ChangeLog \
 		README
-.endif
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
-BROKEN=		pvm port needs to provide shared libraries
-.endif
 
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${EXAMPLEFILES:S|^|${WRKSRC}/|} ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${EXAMPLEFILES:S|^|${WRKSRC}/|} \
+	     ${STAGEDIR}${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
