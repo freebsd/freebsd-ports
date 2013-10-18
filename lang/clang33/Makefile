@@ -5,7 +5,7 @@ DISTVERSION=	3.3
 PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
-PKGNAMESUFFIX=	33
+PKGNAMESUFFIX=	${LLVM_SUFFIX}
 DISTNAME=	${CLANG_NAME}
 DISTFILES=	${CLANG_SOURCE} \
 		${LLVM_SOURCE}
@@ -29,7 +29,6 @@ LLVM_SUFFIX=	${PORTVERSION:S/.//g}
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
-LATEST_LINK=	${PORTNAME}${LLVM_SUFFIX}
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_PREFIX=	${LLVM_PREFIX}
@@ -98,7 +97,8 @@ pre-build:
 	${LN} -sf ${LLVM_PREFIX}/include/llvm/IR/Intrinsics.gen \
 	    ${WRKSRC}/include/llvm/IR/
 	${MKDIR} ${WRKSRC}/${RELTYPE}/lib
-	${LN} -sf ${LLVM_PREFIX}/lib/libLLVM-3.3.so ${WRKSRC}/${RELTYPE}/lib/
+	${LN} -sf ${LLVM_PREFIX}/lib/libLLVM-${PORTVERSION}.so \
+	    ${WRKSRC}/${RELTYPE}/lib/
 	${LN} -sf ${LLVM_PREFIX}/lib/libLLVMTableGen.a ${WRKSRC}/${RELTYPE}/lib/
 	${LN} -sf ${LLVM_PREFIX}/lib/libLLVMSupport.a ${WRKSRC}/${RELTYPE}/lib/
 	cd ${WRKSRC}/utils/unittest && ${GMAKE}
@@ -114,6 +114,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/llvm-wrapper.sh \
 	     ${STAGEDIR}${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX}
 .for command in ${COMMANDS:C/^/XXXX/1:NXXXX*}
+	test -e ${STAGEDIR}${LLVM_PREFIX}/bin/${command}
 	${LN} -f ${STAGEDIR}${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX} \
 	    ${STAGEDIR}${PREFIX}/bin/${command}${LLVM_SUFFIX}
 .endfor
@@ -134,18 +135,19 @@ build-plist:
 .for command in ${COMMANDS}
 	${ECHO_CMD} bin/${command}${LLVM_SUFFIX} >> ${PLIST}
 .endfor
-	(ls ${PLIST_FILE_LIST:S|^|${LLVM_PREFIX}/|}; \
-	    ${FIND} ${PLIST_DIR_LIST:S|^|${LLVM_PREFIX}/|} -type f) | \
-	    ${SED} -e 's|${PREFIX}/||' | ${SORT} >> ${PLIST}
+	(ls ${PLIST_FILE_LIST:S|^|${STAGEDIR}${LLVM_PREFIX}/|}; \
+	    ${FIND} ${PLIST_DIR_LIST:S|^|${STAGEDIR}${LLVM_PREFIX}/|} -type f) \
+	    | ${SED} -e 's|${STAGEDIR}${PREFIX}/||' | ${SORT} >> ${PLIST}
 	echo man/man1/clang${LLVM_SUFFIX}.1.gz >> ${PLIST}
-	${FIND} ${DOCSDIR} -type f | \
-	    ${SED} -e 's|${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | \
+	${FIND} ${STAGEDIR}${DOCSDIR} -type f | \
+	    ${SED} -e 's|${STAGEDIR}${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | \
 	    ${SORT} >> ${PLIST}
-	${FIND} ${PLIST_DIR_LIST:S|^|${LLVM_PREFIX}/|} -type d | \
-	    ${SED} -e 's|${PREFIX}/||' | \
-	    ${SORT} -r | ${SED} -e 's|^|@dirrm |' >> ${PLIST}
-	${FIND} ${DOCSDIR} -type d | ${SORT} -r | \
-	    ${SED} -e 's|${DOCSDIR}|%%PORTDOCS%%@dirrm %%DOCSDIR%%|' >> ${PLIST}
+	${FIND} ${PLIST_DIR_LIST:S|^|${STAGEDIR}${LLVM_PREFIX}/|} -type d | \
+	    ${SED} -e 's|${STAGEDIR}${PREFIX}/|@dirrm |' | \
+	    ${SORT} -r >> ${PLIST}
+	${FIND} ${STAGEDIR}${DOCSDIR} -type d | ${SORT} -r | \
+	    ${SED} -e 's|${STAGEDIR}${DOCSDIR}|%%PORTDOCS%%@dirrm %%DOCSDIR%%|' \
+	    >> ${PLIST}
 
 .if make(svn-patch)
 .if !defined(PATCH_REV)
