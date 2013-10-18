@@ -1,4 +1,5 @@
 bin/tvheadend
+man/man1/tvheadend.1.gz
 %%DATADIR%%/data/conf/charset
 %%DATADIR%%/data/conf/epggrab/opentv/dict/skyeng
 %%DATADIR%%/data/conf/epggrab/opentv/dict/skyit
