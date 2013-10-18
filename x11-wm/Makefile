@@ -109,6 +109,7 @@
     SUBDIR += libdockapp
     SUBDIR += libwraster
     SUBDIR += lwm
+    SUBDIR += lxmed
     SUBDIR += lxsession
     SUBDIR += matwm2
     SUBDIR += mcwm
