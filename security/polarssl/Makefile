@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	polarssl
-PORTVERSION=	1.2.9
+PORTVERSION=	1.2.10
 DISTVERSIONSUFFIX=	-gpl
 CATEGORIES=	security devel
 MASTER_SITES=	http://polarssl.org/download/
@@ -22,6 +22,11 @@ USES=	gmake
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+# PolarSSL 1.3 branch introduces API changes that would best be served at this
+# time by a new/seperate polarssl13 port. Therefore, limit Portscout to the
+# 1.2 branch for this port.
+PORTSCOUT=	limit:^1\.2\.
 
 DOCFILES=	ChangeLog README
 BINFILES=	aescrypt2 benchmark dh_client dh_genprime dh_server hello \
