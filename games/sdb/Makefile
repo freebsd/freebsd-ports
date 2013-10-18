@@ -3,7 +3,7 @@
 
 PORTNAME=	sdb
 PORTVERSION=	1.0.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	http://stage.gamecreation.org/shotgund/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -12,6 +12,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Futuristic overhead shooter
+
+LICENSE=	GPLv2
 
 USES=		gmake
 USE_SDL=	mixer image sdl
@@ -26,6 +28,13 @@ MAKE_ARGS=	CPP="${CXX}" CXXFLAGS="${CXXFLAGS}" LIBS="${LDFLAGS}"
 PLIST_FILES=	bin/sdb
 PORTDOCS=	*
 PORTDATA=	*
+
+DESKTOP_ENTRIES="Shotgun Debugger" \
+		"${COMMENT}" \
+		"" \
+		"${PORTNAME}" \
+		"Game;ActionGame;" \
+		""
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_DEFAULT=DOCS
