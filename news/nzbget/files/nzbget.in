@@ -1,5 +1,7 @@
 #!/bin/sh
 #
+# $FreeBSD$
+#
 # PROVIDE: nzbget
 # KEYWORD: shutdown
 #
@@ -11,15 +13,15 @@
 
 . /etc/rc.subr
 
-name="nzbget"
+name=nzbget
 rcvar=nzbget_enable
 
 load_rc_config ${name}
 
-: ${nzbget_enable:="NO"}
+: ${nzbget_enable:=NO}
 
 start_cmd="${name}_start"
-status_cmd="${name}_status"
+status_cmd="${command} status"
 stop_cmd="${name}_stop"
 command=%%PREFIX%%/sbin/nzbgetd
 
@@ -36,11 +38,6 @@ nzbget_stop()
 {
 	echo "Stopping ${name}."
 	${command} stop
-}
-
-nzbget_status()
-{
-	${command} status
 }
 
 run_rc_command "$1"

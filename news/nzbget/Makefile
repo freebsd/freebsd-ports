@@ -3,6 +3,7 @@
 
 PORTNAME=	nzbget
 PORTVERSION=	11.0
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 
@@ -23,30 +24,38 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	${PTHREAD_LIBS}
 CFLAGS+=	${PTHREAD_CFLAGS}
 
-OPTIONS_DEFINE=	PAR
+OPTIONS_DEFINE=	7Z PAR PYTHON RAR
 OPTIONS_SINGLE=	TLSLIB
 OPTIONS_SINGLE_TLSLIB=	GNUTLS OPENSSL
-OPTIONS_DEFAULT=	PAR GNUTLS
+OPTIONS_DEFAULT=	GNUTLS PAR PYTHON RAR
+7Z_DESC=	Support extraction of 7z archives
 PAR_DESC=	Support verifying/repairing with par2 files
+PYTHON_DESC=	Support for python post-processing scripts
+RAR_DESC=	Support extraction of rar archives
+
+7Z_RUN_DEPENDS=		7z:${PORTSDIR}/archivers/p7zip
 
 PAR_CONFIGURE_ON=	--enable-parcheck --disable-libpar2-bugfixes-check
 PAR_CONFIGURE_OFF=	--disable-parcheck
 PAR_LIB_DEPENDS=	libpar2.so:${PORTSDIR}/archivers/libpar2
 
+PYTHON_USE=	PYTHON=yes
+
+RAR_RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar
+
 OPENSSL_CONFIGURE_ON=	--with-tlslib=OpenSSL \
 			--with-openssl-includes=${OPENSSLINC} \
 			--with-openssl-libraries=${OPENSSLLIB}
+OPENSSL_USE=	OPENSSL=yes
 
 GNUTLS_CONFIGURE_ON=	--with-tlslib=GnuTLS
 GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 			libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
-CONFIGURE_ARGS+=	--enable-sigchld-handler
-
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MOPENSSL}
- USE_OPENSSL=	yes
+.if (${ARCH} == "i386")
+CONFIGURE_ARGS+=       --disable-sigchld-handler
 .endif
 
 post-configure:
