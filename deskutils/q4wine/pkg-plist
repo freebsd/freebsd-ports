@@ -2,23 +2,46 @@ bin/q4wine
 bin/q4wine-cli
 bin/q4wine-helper
 lib/q4wine/libq4wine-core.so
+man/man1/q4wine-cli.1.gz
+man/man1/q4wine-helper.1.gz
+man/man1/q4wine.1.gz
 share/applications/q4wine.desktop
-share/pixmaps/q4wine.png
-%%DATADIR%%/i18n/cs_cz.qm
-%%DATADIR%%/i18n/en_us.qm
-%%DATADIR%%/i18n/es_es.qm
-%%DATADIR%%/i18n/it_it.qm
-%%DATADIR%%/i18n/pt_br.qm
-%%DATADIR%%/i18n/ru_ru.qm
-%%DATADIR%%/i18n/uk_ua.qm
+share/icons/hicolor/128x128/apps/q4wine.png
+share/icons/hicolor/16x16/apps/q4wine.png
+share/icons/hicolor/192x192/apps/q4wine.png
+share/icons/hicolor/22x22/apps/q4wine.png
+share/icons/hicolor/256x256/apps/q4wine.png
+share/icons/hicolor/32x32/apps/q4wine.png
+share/icons/hicolor/48x48/apps/q4wine.png
+share/icons/hicolor/64x64/apps/q4wine.png
+share/icons/hicolor/96x96/apps/q4wine.png
+share/icons/hicolor/scalable/apps/q4wine.svg
+%%NLS%%%%DATADIR%%/i18n/q4wine_af_za.qm
+%%NLS%%%%DATADIR%%/i18n/q4wine_cs_cz.qm
+%%NLS%%%%DATADIR%%/i18n/q4wine_de_de.qm
+%%NLS%%%%DATADIR%%/i18n/q4wine_en_us.qm
+%%NLS%%%%DATADIR%%/i18n/q4wine_es_es.qm
+%%NLS%%%%DATADIR%%/i18n/q4wine_fa_ir.qm
+%%NLS%%%%DATADIR%%/i18n/q4wine_he_il.qm
+%%NLS%%%%DATADIR%%/i18n/q4wine_it_it.qm
+%%NLS%%%%DATADIR%%/i18n/q4wine_pl_pl.qm
+%%NLS%%%%DATADIR%%/i18n/q4wine_pt_br.qm
+%%NLS%%%%DATADIR%%/i18n/q4wine_ru_ru.qm
+%%NLS%%%%DATADIR%%/i18n/q4wine_uk_ua.qm
+%%DATADIR%%/icons/control.png
 %%DATADIR%%/icons/eject.png
 %%DATADIR%%/icons/exec_wine.png
 %%DATADIR%%/icons/explorer.png
+%%DATADIR%%/icons/iexplore.png
 %%DATADIR%%/icons/notepad.png
+%%DATADIR%%/icons/oleview.png
 %%DATADIR%%/icons/regedit.png
+%%DATADIR%%/icons/taskmgr.png
 %%DATADIR%%/icons/uninstaller.png
 %%DATADIR%%/icons/winecfg.png
 %%DATADIR%%/icons/wineconsole.png
+%%DATADIR%%/icons/winemine.png
+%%DATADIR%%/icons/wordpad.png
 %%DATADIR%%/scripts/mount_image.sh
 %%DATADIR%%/scripts/umount.sh
 %%DATADIR%%/theme/nuvola/data/configure.png
@@ -43,7 +66,7 @@ share/pixmaps/q4wine.png
 @dirrm %%DATADIR%%/theme
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/i18n
+%%NLS%%@dirrm %%DATADIR%%/i18n
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrm lib/q4wine

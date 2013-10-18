@@ -1,8 +1,15 @@
 ################################################################################
 
-This programm will attempt to obtain some system information by accessing files
-in procfs. You must mount procfs filesystem for this to work correctly. This can
-be accomplished by adding the following line to your /etc/fstab file:
+FreeBSD/amd64 users:
+You need to manually install Wine 32bit binary from:
+http://www.mediafire.com/wine_fbsd64
+
+For more info about running wine on FreeBSD please see:
+http://wiki.freebsd.org/Wine
+
+This program will attempt to obtain some system information by accessing files
+in procfs. You must mount procfs filesystem for this to work correctly.
+This can be accomplished by adding the following line to your /etc/fstab file:
 
 # Device                Mountpoint      FStype  Options         Dump    Pass#
 proc                    /proc           procfs  rw              0       0
@@ -11,7 +18,7 @@ and then, as root, executing the command:
 
 mount /proc
 
-Also you need passwordless sudo for mdconfig, mount_cd9660, umount commands for 
+Also you need passwordless sudo for mdconfig, mount_cd9660, umount commands for
 work with ISO images
 
 ################################################################################
