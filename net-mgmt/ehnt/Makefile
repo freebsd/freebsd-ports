@@ -11,14 +11,12 @@ MAINTAINER=	marck@FreeBSD.org
 COMMENT=	A simple Cisco NetFlow data collector
 
 PLIST_FILES=	bin/ehnt etc/rc.d/ehntserv.sh.sample \
+		man/man1/ehnt.1.gz man/man8/ehntserv.8.gz \
 		sbin/ehntserv share/ehnt/asnc.txt
 PLIST_DIRS+=	share/ehnt
 
 PORTDOCS=	README
 STPREFIX=	${STAGEDIR}${PREFIX}
-
-MAN1=		ehnt.1
-MAN8=		ehntserv.8
 
 post-extract:
 	${TOUCH} ${WRKSRC}/asnc.txt
