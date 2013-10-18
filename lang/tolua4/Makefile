@@ -7,6 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.tecgraf.puc-rio.br/pub/users/celes/tolua/ \
 		http://www.tecgraf.puc-rio.br/~celes/tolua/
+PKGNAMESUFFIX=	${LUA_VER_STR}
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Tool for easy access of C/C++ code from Lua
@@ -14,8 +15,6 @@ COMMENT=	Tool for easy access of C/C++ code from Lua
 USES=		gmake
 USE_LUA=	4.0
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
-LATEST_LINK=	${PORTNAME}${LUA_VER_STR}
 
 NO_STAGE=	yes
 post-patch:
