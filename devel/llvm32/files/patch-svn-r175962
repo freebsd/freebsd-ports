@@ -1,0 +1,49 @@
+$FreeBSD$
+------------------------------------------------------------------------
+r175962 | d0k | 2013-02-23 10:40:58 +0000 (Sat, 23 Feb 2013) | 3 lines
+
+X86: Disable cmov-memory patterns on subtargets without cmov.
+
+Fixes PR15115.
+------------------------------------------------------------------------
+Index: test/CodeGen/X86/no-cmov.ll
+===================================================================
+--- test/CodeGen/X86/no-cmov.ll	(revision 0)
++++ test/CodeGen/X86/no-cmov.ll	(revision 175962)
+@@ -0,0 +1,11 @@
++; RUN: llc -march=x86 -mcpu=i486 < %s | FileCheck %s
++
++define i32 @test1(i32 %g, i32* %j) {
++  %tobool = icmp eq i32 %g, 0
++  %cmp = load i32* %j, align 4
++  %retval.0 = select i1 %tobool, i32 1, i32 %cmp
++  ret i32 %retval.0
++
++; CHECK: test1:
++; CHECK-NOT: cmov
++}
+Index: lib/Target/X86/X86InstrCompiler.td
+===================================================================
+--- lib/Target/X86/X86InstrCompiler.td	(revision 175961)
++++ lib/Target/X86/X86InstrCompiler.td	(revision 175962)
+@@ -1081,12 +1081,14 @@
+ // inverted.
+ multiclass CMOVmr<PatLeaf InvertedCond, Instruction Inst16, Instruction Inst32,
+                   Instruction Inst64> {
+-  def : Pat<(X86cmov (loadi16 addr:$src1), GR16:$src2, InvertedCond, EFLAGS),
+-            (Inst16 GR16:$src2, addr:$src1)>;
+-  def : Pat<(X86cmov (loadi32 addr:$src1), GR32:$src2, InvertedCond, EFLAGS),
+-            (Inst32 GR32:$src2, addr:$src1)>;
+-  def : Pat<(X86cmov (loadi64 addr:$src1), GR64:$src2, InvertedCond, EFLAGS),
+-            (Inst64 GR64:$src2, addr:$src1)>;
++  let Predicates = [HasCMov] in {
++    def : Pat<(X86cmov (loadi16 addr:$src1), GR16:$src2, InvertedCond, EFLAGS),
++              (Inst16 GR16:$src2, addr:$src1)>;
++    def : Pat<(X86cmov (loadi32 addr:$src1), GR32:$src2, InvertedCond, EFLAGS),
++              (Inst32 GR32:$src2, addr:$src1)>;
++    def : Pat<(X86cmov (loadi64 addr:$src1), GR64:$src2, InvertedCond, EFLAGS),
++              (Inst64 GR64:$src2, addr:$src1)>;
++  }
+ }
+ 
+ defm : CMOVmr<X86_COND_B , CMOVAE16rm, CMOVAE32rm, CMOVAE64rm>;

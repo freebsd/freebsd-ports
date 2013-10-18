@@ -34,6 +34,7 @@
     SUBDIR += clang
     SUBDIR += clang-devel
     SUBDIR += clang31
+    SUBDIR += clang32
     SUBDIR += clang33
     SUBDIR += clay
     SUBDIR += clisp

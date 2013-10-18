@@ -1,0 +1,66 @@
+$FreeBSD$
+------------------------------------------------------------------------
+r175919 | d0k | 2013-02-22 20:55:17 +0000 (Fri, 22 Feb 2013) | 4 lines
+
+Driver: Pass down the -march setting down to -cc1as on x86 too.
+
+The assembler historically didn't make use of any target features, but this has
+changed when support for old CPUs that don't support long nops was added.
+------------------------------------------------------------------------
+Index: test/Driver/target-as.s
+===================================================================
+--- tools/clang/test/Driver/target-as.s	(revision 0)
++++ tools/clang/test/Driver/target-as.s	(revision 175919)
+@@ -0,0 +1,8 @@
++// REQUIRES: clang-driver
++
++// Make sure the -march is passed down to cc1as.
++// RUN: %clang -target i386-unknown-freebsd -### -c -integrated-as %s \
++// RUN: -march=geode 2>&1 | FileCheck -check-prefix=TARGET %s
++//
++// TARGET: "-cc1as"
++// TARGET: "-target-cpu" "geode"
+Index: lib/Driver/Tools.cpp
+===================================================================
+--- tools/clang/lib/Driver/Tools.cpp	(revision 175918)
++++ tools/clang/lib/Driver/Tools.cpp	(revision 175919)
+@@ -3325,6 +3325,15 @@
+     addFPMathArgs(D, A, Args, CmdArgs, getARMTargetCPU(Args, Triple));
+ }
+ 
++void ClangAs::AddX86TargetArgs(const ArgList &Args,
++                               ArgStringList &CmdArgs) const {
++  // Set the CPU based on -march=.
++  if (const char *CPUName = getX86TargetCPU(Args, getToolChain().getTriple())) {
++    CmdArgs.push_back("-target-cpu");
++    CmdArgs.push_back(CPUName);
++  }
++}
++
+ /// Add options related to the Objective-C runtime/ABI.
+ ///
+ /// Returns true if the runtime is non-fragile.
+@@ -3500,6 +3509,11 @@
+   case llvm::Triple::thumb:
+     AddARMTargetArgs(Args, CmdArgs);
+     break;
++
++  case llvm::Triple::x86:
++  case llvm::Triple::x86_64:
++    AddX86TargetArgs(Args, CmdArgs);
++    break;
+   }
+ 
+   // Ignore explicit -force_cpusubtype_ALL option.
+Index: lib/Driver/Tools.h
+===================================================================
+--- tools/clang/lib/Driver/Tools.h	(revision 175918)
++++ tools/clang/lib/Driver/Tools.h	(revision 175919)
+@@ -77,6 +77,7 @@
+   /// \brief Clang integrated assembler tool.
+   class LLVM_LIBRARY_VISIBILITY ClangAs : public Tool {
+     void AddARMTargetArgs(const ArgList &Args, ArgStringList &CmdArgs) const;
++    void AddX86TargetArgs(const ArgList &Args, ArgStringList &CmdArgs) const;
+   public:
+     ClangAs(const ToolChain &TC) : Tool("clang::as",
+                                         "clang integrated assembler", TC) {}
