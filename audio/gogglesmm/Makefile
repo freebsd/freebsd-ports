@@ -3,7 +3,7 @@
 
 PORTNAME=	gogglesmm
 PORTVERSION=	0.12.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
@@ -31,43 +31,38 @@ OPTIONS_SUB=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--mandir=${PREFIX}/man --prefix=${PREFIX}
 
-USES=		pkgconfig gmake
-NO_STAGE=	yes
+USES=		pkgconfig gmake desktop-file-utils
 USE_XZ=		yes
+MAKE_ARGS=	CXX="${CXX}" LINK="${CXX}"
 INSTALLS_ICONS=	yes
-MAN1=		gogglesmm.1
 
 PORTDOCS=	README AUTHORS
 
-FOX16_LIB_DEPENDS=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16
-FOX17_LIB_DEPENDS=	FOX-1.7:${PORTSDIR}/x11-toolkits/fox17
+FOX16_LIB_DEPENDS=	libFOX-1.6.so:${PORTSDIR}/x11-toolkits/fox16
+FOX17_LIB_DEPENDS=	libFOX-1.7.so:${PORTSDIR}/x11-toolkits/fox17
 
-GCRYPT_LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
+GCRYPT_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 GCRYPT_CONFIGURE_ON=	--with-md5=gcrypt
 GCRYPT_CONFIGURE_OFF=	--with-md5=internal
 
-DBUS_LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus
+DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 DBUS_CONFIGURE_OFF=	--with-dbus
 
-CURL_LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 CURL_CONFIGURE_OFF=	--without-curl
 
 NLS_USES=		gettext
+NLS_LDFLAGS=		-lintl
 NLS_CONFIGURE_OFF=	--disable-nls
 
 NEWREMOTE_CONFIGURE_OFF=	--without-new-remote
 
-.include <bsd.port.options.mk>
-
 pre-install:
-	@${MKDIR} ${PREFIX}/share/applications
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-. for FILE in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-. endfor
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
