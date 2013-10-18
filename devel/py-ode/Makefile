@@ -27,7 +27,6 @@ OPTIONS_DEFINE=	TRIMESH
 OPTIONS_DEFAULT=TRIMESH
 TRIMESH_DESC=	Trimesh support (sync with OPCODE opt of devel/ode)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
