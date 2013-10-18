@@ -1,4 +1,5 @@
-lib/perl5/5.14/man/auto/RT/Extension/MandatoryOnTransition/.packlist
+man/auto/RT/Extension/MandatoryOnTransition/.packlist.gz
+man/man3/RT::Extension::MandatoryOnTransition.3.gz
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Ticket/Create.html/BeforeCreate
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Ticket/Elements/EditCustomFields/MassageCustomFields
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Ticket/Update.html/AfterWorked
@@ -26,7 +27,7 @@ share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/lib/RT/Extension/M
 @dirrm share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks
 @dirrm share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html
 @dirrm share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition
-@dirrm lib/perl5/5.14/man/auto/RT/Extension/MandatoryOnTransition
-@dirrm lib/perl5/5.14/man/auto/RT/Extension
-@dirrm lib/perl5/5.14/man/auto/RT
-@dirrm lib/perl5/5.14/man/auto
+@dirrmtry man/auto/RT/Extension/MandatoryOnTransition
+@dirrmtry man/auto/RT/Extension
+@dirrmtry man/auto/RT
+@dirrmtry man/auto
