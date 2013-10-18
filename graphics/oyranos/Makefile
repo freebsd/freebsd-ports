@@ -11,18 +11,18 @@ COMMENT=	Colour Management System (CMS)
 BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 RUN_DEPENDS=	${LOCALBASE}/share/color/icc/OpenICC/sRGB.icc:${PORTSDIR}/graphics/icc-profiles-openicc \
 		${LOCALBASE}/share/color/icc/basICColor/ISOcoated_v2_300_bas.ICC:${PORTSDIR}/graphics/icc-profiles-basiccolor
-LIB_DEPENDS=	raw:${PORTSDIR}/graphics/libraw \
-		xml2:${PORTSDIR}/textproc/libxml2 \
-		exiv2:${PORTSDIR}/graphics/exiv2 \
-		png15:${PORTSDIR}/graphics/png \
-		cairo:${PORTSDIR}/graphics/cairo \
-		yajl:${PORTSDIR}/devel/yajl \
-		fltk:${PORTSDIR}/x11-toolkits/fltk \
-		cups:${PORTSDIR}/print/cups-client \
-		xdot:${PORTSDIR}/graphics/graphviz \
-		lcms:${PORTSDIR}/graphics/lcms \
-		lcms2:${PORTSDIR}/graphics/lcms2 \
-		Xcm:${PORTSDIR}/x11/libXcm
+LIB_DEPENDS=	libraw.so:${PORTSDIR}/graphics/libraw \
+		libxml2.so:${PORTSDIR}/textproc/libxml2 \
+		libexiv2.so:${PORTSDIR}/graphics/exiv2 \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libcairo.so:${PORTSDIR}/graphics/cairo \
+		libyajl.so:${PORTSDIR}/devel/yajl \
+		libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
+		libcups.so:${PORTSDIR}/print/cups-client \
+		libxdot.so:${PORTSDIR}/graphics/graphviz \
+		liblcms.so:${PORTSDIR}/graphics/lcms \
+		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
+		libXcm.so:${PORTSDIR}/x11/libXcm
 
 USES=		cmake gettext iconv pkgconfig
 USE_BZIP2=	yes
@@ -33,13 +33,8 @@ USE_QT4=	gui moc_build qmake_build rcc_build uic_build
 USE_XORG=	xfixes xinerama xrandr xxf86vm
 CMAKE_ARGS+=	-DXDG_CONFIG_DIR=${PREFIX}/etc/xdg
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
+MAKE_JOBS_UNSAFE=yes
 
-MAN1=		oyranos-config-fltk.1 oyranos-monitor-daemon.1 oyranos-monitor.1 \
-		oyranos-policy.1 oyranos-profile-graph.1 oyranos-profile-install.1 \
-		oyranos-profile.1 oyranos-profiles.1 oyranos-xforms-modules.1 qcmsevents.1
-MAN3=		oyranos-config.3 oyranos.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(/usr/bin/clang) && ${OSVERSION} > 901502
