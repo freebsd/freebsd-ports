@@ -18,7 +18,7 @@ TDATA=		${WRKDIR}/tomatoes-${PORTVERSION}
 USE_BZIP2=	yes
 USE_SDL=	mixer image
 USE_GL=		gl
-USE_GMAKE=	yes
+USES=		gmake
 MAKEFILE=	makefile
 MAKE_ARGS=	CC="${CXX}" \
 		MPKDIR="${DATADIR}/" \
@@ -28,40 +28,26 @@ MAKE_ARGS=	CC="${CXX}" \
 		CFLAGS="${CXXFLAGS} ${SDL_CFLAGS}" \
 		LDFLAGS="${SDL_LDFLAGS}"
 
-PLIST_FILES=	bin/tomatoes \
-		%%DATADIR%%/config.cfg \
-		%%DATADIR%%/music/IHaveNoTomatoes.it \
-		%%DATADIR%%/tomatoes.mpk \
-		%%DATADIR%%/icon.png
-PLIST_DIRS=	%%DATADIR%%/music \
-		%%DATADIR%%
+PLIST_FILES=	bin/${PORTNAME}
+PORTDATA=	*
 
 SDL_CFLAGS=	`${SDL_CONFIG} --cflags` -I${LOCALBASE}/include
 SDL_LDFLAGS=	`${SDL_CONFIG} --libs` -lSDL_image -lSDL_mixer \
 		-L${LOCALBASE}/lib -lGL -lGLU
 
-DESKTOP_ENTRIES=	"Tomatoes" \
-			"I Have No Tomatoes" \
-			"${DATADIR}/icon.png" \
-			"tomatoes" \
-			"Game;ArcadeGame;" \
-			false
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-post-patch:
-.for file in include/font.h
-	cd ${WRKSRC} && ${CP} ${file} ${file}.bak \
-		&& ${TR} -d '\r' < ${file}.bak > ${file}
-.endfor
+DESKTOP_ENTRIES="Tomatoes" \
+		"${COMMENT}" \
+		"${DATADIR}/icon.png" \
+		"${PORTNAME}" \
+		"Game;ArcadeGame;" \
+		false
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${DATADIR}/music
-	${INSTALL_DATA} ${TDATA}/config.cfg ${DATADIR}
-	${INSTALL_DATA} ${TDATA}/tomatoes.mpk ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/icon.png ${DATADIR}
-	${INSTALL_DATA} ${TDATA}/music/IHaveNoTomatoes.it ${DATADIR}/music
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}/music
+	${INSTALL_DATA} ${TDATA}/config.cfg ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${TDATA}/tomatoes.mpk ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/icon.png ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${TDATA}/music/IHaveNoTomatoes.it ${STAGEDIR}${DATADIR}/music
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
