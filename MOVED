@@ -5119,3 +5119,4 @@ audio/akode-plugins-xiph||2013-10-17|Removed: Dependency of KDE 3.x
 german/bugzilla|german/bugzilla40|2013-10-17|Reflect PORTNAME
 japanese/bugzilla|japanese/bugzilla40|2013-10-17|Reflect PORTNAME
 russian/bugzilla|russian/bugzilla40|2013-10-17|Reflect PORTNAME
+x11/silo||2013-10-18|Has expired: Upstream has disappeared
