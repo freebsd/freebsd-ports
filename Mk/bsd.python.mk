@@ -528,7 +528,9 @@ add-plist-pymod:
 		${SED} '/^\.$$/d' > ${WRKDIR}/.localmtree
 	@${ECHO_CMD} "${_RELSITELIBDIR}" >> ${WRKDIR}/.localmtree
 	@${ECHO_CMD} "${_RELLIBDIR}" >> ${WRKDIR}/.localmtree
-	@${SED} 's|^${PREFIX}/||' ${_PYTHONPKGLIST} | ${SORT} >> ${TMPPLIST}
+	@${SED} -e 's|^${PREFIX}/||' \
+		-e 's|^\(man/man[0-9]\)/\(.*\.[0-9]\)$|\1/\2${MANEXT}|' \
+		${_PYTHONPKGLIST} | ${SORT} >> ${TMPPLIST}
 	@${SED} -e 's|^${PREFIX}/\(.*\)/\(.*\)|\1|' ${_PYTHONPKGLIST} | \
 		${AWK} '{ num = split($$0, a, "/"); res=""; \
 					for(i = 1; i <= num; ++i) { \
