@@ -1,7 +1,0 @@
-bin/zatacka
-%%DATADIR%%/README
-%%DATADIR%%/barrier.jpg
-%%DATADIR%%/font.ttf
-%%DATADIR%%/main_screen.jpg
-%%DATADIR%%/map1.jpg
-@dirrm %%DATADIR%%

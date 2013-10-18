@@ -11,13 +11,14 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Nibbles-like multiplayer game
 
-USE_SDL=	sdl ttf image
-USE_GMAKE=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include"
+USES=		gmake
+USE_SDL=	sdl ttf image
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+CPPFLAGS+=	-I${LOCALBASE}/include
+
+PLIST_FILES=	bin/${PORTNAME}
+PORTDATA=	*
 
 DESKTOP_ENTRIES="Zatacka" \
 		"Nibbles-like multiplayer game" \
@@ -26,7 +27,6 @@ DESKTOP_ENTRIES="Zatacka" \
 		"Game;ArcadeGame;" \
 		false
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|__linux__|__FreeBSD__|; s|\[30\]|[PATH_MAX]|' \
 		${WRKSRC}/src/main.cpp
