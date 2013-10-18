@@ -65,10 +65,10 @@ do-build:
 	# NOOP
 
 do-install:
-	${MKDIR} ${LOGSTASH_RUN}
-	${MKDIR} ${ETCDIR}
-	${MKDIR} ${LOGSTASH_HOME}
-	${MKDIR} ${LOGSTASH_DATA_DIR}
+	${INSTALL} -d ${LOGSTASH_RUN}
+	${INSTALL} -d ${ETCDIR}
+	${INSTALL} -d ${LOGSTASH_HOME}
+	${INSTALL} -d ${LOGSTASH_DATA_DIR}
 	${INSTALL_DATA} ${WRKDIR}/${LOGSTASH_JAR} ${LOGSTASH_HOME}/${LOGSTASH_JAR}
 	${INSTALL_DATA} ${FILESDIR}/logstash.conf.sample ${ETCDIR}
 	@if [ ! -f ${ETCDIR}/logstash.conf ]; then \
