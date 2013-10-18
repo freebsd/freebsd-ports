@@ -59,6 +59,9 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/a
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
 		xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
+BROKEN=		no longer builds, use multimedia/xbmc and multimedia/xbmc-addon-pvr
+DEPRECATED=	multimedia/xbmc and multimedia/xbmc-addon-pvr are newer
+EXPIRATION_DATE=	2013-12-31
 GITHASH=	9023e39
 WRKSRC=		${WRKDIR}/opdenkamp-${PORTNAME}-${GITHASH}
 FETCH_ARGS=	-Fpr
