@@ -3,6 +3,9 @@ bin/xsw2jpeg
 bin/xsw2pdf
 bin/xsw2png
 bin/xswconv
+man/man1/xsw.1.gz
+man/man1/xsw2pdf.1.gz
+man/man1/xswconv.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
@@ -25,6 +28,6 @@ bin/xswconv
 %%DATADIR%%/tutorial/tutorial.xsw
 %%DATADIR%%/tutorial/tutorial.xsw.in
 %%DATADIR%%/tutorial/tux.png
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrm %%DATADIR%%/tutorial
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

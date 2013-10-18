@@ -8,7 +8,9 @@ CATEGORIES=	misc
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	bapt@FreeBSD.org
-COMMENT=	A tool for creating presentations
+COMMENT=	Tool for creating presentations
+
+OPTIONS_DEFINE=	DOCS
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
@@ -19,18 +21,6 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.if !defined(NO_INSTALL_MANPAGES)
-MAN1=		xsw.1 \
-		xsw2pdf.1 \
-		xswconv.1
-
-MANCOMPRESSED=	no
-.endif
-
-.if defined(.PARSEDIR)
-USE_GMAKE=	yes
-.endif
-
 DOCS=		AUTHORS \
 		COPYING \
 		NEWS \
@@ -40,25 +30,12 @@ DOCS=		AUTHORS \
 		TODO \
 		doc/xsw.vim
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+post-patch:
+	@${REINPLACE_CMD} -e "s,./install-fonts ,./install-fonts \$$(DESTDIR)," \
+		${WRKSRC}/data/Makefile.in
 
-do-install:
-	(cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} \
-		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install)
-	(cd ${WRKSRC}/data && ${SETENV} ${MAKE_ENV} \
-		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install)
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
-.endfor
-.endif
-
-.if !defined(NO_INSTALL_MANPAGES)
-.for manpage in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/man/man1/${manpage} ${MAN1PREFIX}/man/man1
-.endfor
-.endif
+post-install:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
