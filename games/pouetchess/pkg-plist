@@ -2,35 +2,3 @@ bin/pouetChess
 @unexec if cmp -s %D/etc/pouetChess.conf %D/etc/pouetChess.conf.sample; then rm -f %D/etc/pouetChess.conf; fi
 etc/pouetChess.conf.sample
 @exec if [ ! -f %D/etc/pouetChess.conf ]; then cp -p %D/etc/pouetChess.conf.sample %D/etc/pouetChess.conf; fi
-%%DATADIR%%/icons/pouetChess.bmp
-%%DATADIR%%/icons/pouetChess.png
-%%DATADIR%%/objets3d/cavalier.lwo
-%%DATADIR%%/objets3d/dame.lwo
-%%DATADIR%%/objets3d/fleche.lwo
-%%DATADIR%%/objets3d/fou.lwo
-%%DATADIR%%/objets3d/pion.lwo
-%%DATADIR%%/objets3d/plateau.lwo
-%%DATADIR%%/objets3d/roi.lwo
-%%DATADIR%%/objets3d/table.lwo
-%%DATADIR%%/objets3d/tour.lwo
-%%DATADIR%%/textures/1.png
-%%DATADIR%%/textures/2.png
-%%DATADIR%%/textures/blender.png
-%%DATADIR%%/textures/camera.png
-%%DATADIR%%/textures/credits.png
-%%DATADIR%%/textures/damier.jpg
-%%DATADIR%%/textures/exit.png
-%%DATADIR%%/textures/font.png
-%%DATADIR%%/textures/force.png
-%%DATADIR%%/textures/gimp.png
-%%DATADIR%%/textures/kate.png
-%%DATADIR%%/textures/murs.jpg
-%%DATADIR%%/textures/porte.jpg
-%%DATADIR%%/textures/quitter.png
-%%DATADIR%%/textures/sol.jpg
-%%DATADIR%%/textures/titre.png
-%%DATADIR%%/textures/tux.png
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/objets3d
-@dirrm %%DATADIR%%/textures
-@dirrm %%DATADIR%%
