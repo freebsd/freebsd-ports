@@ -1,0 +1,55 @@
+--- configure.orig	2009-02-11 02:43:40.000000000 +0100
++++ configure	2013-10-18 16:28:11.000000000 +0200
+@@ -15904,6 +15904,7 @@
+ 
+ 
+ case "$CXX" in
++	clang*) ;;
+ 		cl*|CL*)
+ 		CXXFLAGS="-nologo -W1 -EHsc -DWIN32"
+ 		if test x"$enable_shared" = "xyes"; then
+@@ -19744,7 +19745,7 @@
+ 
+ OPT_CFLAGS=""
+ case "$CXX" in
+-   g++*)
++   nomatch)
+ 		TRY_CFLAGS="$OPT_CFLAGS -g"
+ 		{ $as_echo "$as_me:$LINENO: checking if $CXX supports $TRY_CFLAGS $CXXFLAGS flags" >&5
+ $as_echo_n "checking if $CXX supports $TRY_CFLAGS $CXXFLAGS flags... " >&6; }
+@@ -20147,7 +20148,7 @@
+ 	{ $as_echo "$as_me:$LINENO: result: yes" >&5
+ $as_echo "yes" >&6; }
+ 	case "$CXX" in
+-	    g++*)
++	    g++*|c++*|clang*)
+ 			CXXFLAGS=`echo $CXXFLAGS | sed 's/-O[0-9]*//g'`
+ 			OPT_CFLAGS=""
+ 			TRY_CFLAGS="-O0"
+@@ -20237,7 +20238,7 @@
+ $as_echo "no" >&6; }
+ 	OPT_CFLAGS=""
+ 	case "$CXX" in
+-    g++*|icc)
++    nomatch)
+ 		TRY_CFLAGS="-O3"
+ 		{ $as_echo "$as_me:$LINENO: checking if $CXX supports $TRY_CFLAGS $CXXFLAGS flags" >&5
+ $as_echo_n "checking if $CXX supports $TRY_CFLAGS $CXXFLAGS flags... " >&6; }
+@@ -20416,7 +20417,7 @@
+ 
+     #Try more optimising flags if supported
+ 	case "$CXX" in
+-	    g++*)
++	    nomatch)
+ 									TRY_CFLAGS="$OPT_CFLAGS -fexpensive-optimizations"
+ 			{ $as_echo "$as_me:$LINENO: checking if $CXX supports $TRY_CFLAGS $CXXFLAGS flags" >&5
+ $as_echo_n "checking if $CXX supports $TRY_CFLAGS $CXXFLAGS flags... " >&6; }
+@@ -20941,7 +20942,7 @@
+ 
+ if test x"${enable_mmx}" = x"yes" ; then
+ 	case "$CXX" in
+-	    g++*)
++	    g++*|c++*|clang*)
+ 			ac_ext=cpp
+ ac_cpp='$CXXCPP $CPPFLAGS'
+ ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext >&5'
