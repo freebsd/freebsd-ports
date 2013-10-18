@@ -10,6 +10,9 @@ MASTER_SITES=	http://launchpadlibrarian.net/68237064/
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	An IDE for the Vala programming language
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 LIB_DEPENDS=	gdl-1:${PORTSDIR}/x11-toolkits/gdl
 BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 RUN_DEPENDS:=	${BUILD_DEPENDS}

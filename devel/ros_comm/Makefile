@@ -10,6 +10,9 @@ DIST_SUBDIR=	ros
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Robot Operating System - communication-related utilities
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 #LICENSE=       BSD LGPL #which?
 
 BROKEN=		does not build

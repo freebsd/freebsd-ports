@@ -11,6 +11,9 @@ MASTER_SITES=	http://launchpadlibrarian.net/49101349/ \
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A database optimized for Cloud and Net applications
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 USE_GCC=	4.2+
 USES=		gmake perl5
 USE_PYTHON=	yes

@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Perl module to access a DBZ database
 
+DEPRECATED=	BRoken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS=	DEFINE="-I${FILESDIR}" POLLUTE=1

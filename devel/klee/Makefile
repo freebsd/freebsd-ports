@@ -8,6 +8,9 @@ MASTER_SITES=	http://cdn.bitbucket.org/arrowdodger/klee/downloads/
 MAINTAINER=	6yearold@gmail.com
 COMMENT=	Symbolic virtual machine for LLVM bitcode
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-11-18
+
 BUILD_DEPENDS=	llvm-ar:${PORTSDIR}/devel/llvm \
 		ccc-analyzer:${PORTSDIR}/lang/clang \
 		${LOCALBASE}/lib/libstp.a:${PORTSDIR}/math/stp
