@@ -27,9 +27,7 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
