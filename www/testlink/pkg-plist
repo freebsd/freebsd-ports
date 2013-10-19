@@ -204,6 +204,9 @@
 %%WWWDIR%%/gui/templates/results/uncoveredTestCases.tpl
 %%WWWDIR%%/gui/templates/show_message.tpl
 %%WWWDIR%%/gui/templates/staticPage.tpl
+%%WWWDIR%%/gui/templates/testcases/attributes.inc.tpl
+%%WWWDIR%%/gui/templates/testcases/attributesLinear.inc.tpl
+%%WWWDIR%%/gui/templates/testcases/attributesLinearForViewer.inc.tpl
 %%WWWDIR%%/gui/templates/testcases/containerDelete.tpl
 %%WWWDIR%%/gui/templates/testcases/containerDeleteTC.tpl
 %%WWWDIR%%/gui/templates/testcases/containerEdit.tpl
@@ -243,6 +246,7 @@
 %%WWWDIR%%/gui/templates/usermanagement/userInfo.tpl
 %%WWWDIR%%/gui/templates/usermanagement/usersAssign.tpl
 %%WWWDIR%%/gui/templates/usermanagement/usersEdit.tpl
+%%WWWDIR%%/gui/templates/usermanagement/usersExport.tpl
 %%WWWDIR%%/gui/templates/usermanagement/usersView.tpl
 %%WWWDIR%%/gui/templates/workAreaSimple.tpl
 %%WWWDIR%%/gui/themes/default/css/custom.css.example
@@ -335,6 +339,7 @@
 %%WWWDIR%%/gui/themes/default/images/jos_box_grey_tl.png
 %%WWWDIR%%/gui/themes/default/images/jos_box_grey_tr.png
 %%WWWDIR%%/gui/themes/default/images/lightbulb.png
+%%WWWDIR%%/gui/themes/default/images/lightbulb_off.png
 %%WWWDIR%%/gui/themes/default/images/lightbulb_on.gif
 %%WWWDIR%%/gui/themes/default/images/lightning.png
 %%WWWDIR%%/gui/themes/default/images/link_error.png
@@ -447,6 +452,12 @@
 %%WWWDIR%%/install/sql/alter_tables/1.9.6/mysql/DB.1.6/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.6/postgres/DB.1.6/step1/db_schema_update.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.6/postgres/DB.1.6/stepZ/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.8/mssql/DB.1.9.8/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.8/mssql/DB.1.9.8/stepZ/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.8/mysql/DB.1.9.8/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.8/mysql/DB.1.9.8/stepZ/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.8/postgres/DB.1.9.8/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.8/postgres/DB.1.9.8/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9/mssql/DB.1.3/step1/db_schema_update.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9/mssql/DB.1.3/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9/mysql/DB.1.3/step1/db_schema_update.sql
@@ -529,6 +540,8 @@
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestSuitesForTestPlan.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestSuitesForTestSuite.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTotalsForPlan.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetUserByID.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetUserByLogin.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientRemovePlatformFromTestPlan.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientReportTCResult.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientReportTCResultOVERWRITE.php
@@ -537,6 +550,7 @@
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientSetTestCaseExecutionType.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientSetupTicket-5451.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientTestSuiteTestCaseStepsManagement.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientUpdateTestCase.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientUpdateTestCaseCustomFieldDesignValue.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientUploadTestCaseAttachment.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/css/style.css
@@ -667,6 +681,7 @@
 %%WWWDIR%%/lib/inventory/setInventory.php
 %%WWWDIR%%/lib/issuetrackerintegration/bugzilladbInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/bugzillaxmlrpcInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jiraOnDemandCfg.xml
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine-issue01.xml
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine-issue02.xml
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.bugzilladb.php
@@ -811,6 +826,7 @@
 %%WWWDIR%%/lib/usermanagement/userInfo.php
 %%WWWDIR%%/lib/usermanagement/usersAssign.php
 %%WWWDIR%%/lib/usermanagement/usersEdit.php
+%%WWWDIR%%/lib/usermanagement/usersExport.php
 %%WWWDIR%%/lib/usermanagement/usersView.php
 %%WWWDIR%%/linkto.php
 %%WWWDIR%%/lnl.php
@@ -4183,6 +4199,150 @@
 %%WWWDIR%%/third_party/smarty/libs/plugins/outputfilter.trimwhitespace.php
 %%WWWDIR%%/third_party/smarty/libs/plugins/shared.escape_special_chars.php
 %%WWWDIR%%/third_party/smarty/libs/plugins/shared.make_timestamp.php
+%%WWWDIR%%/third_party/smarty3/COPYING.lib
+%%WWWDIR%%/third_party/smarty3/README
+%%WWWDIR%%/third_party/smarty3/SMARTY2_BC_NOTES
+%%WWWDIR%%/third_party/smarty3/SMARTY_2_BC_NOTES.txt
+%%WWWDIR%%/third_party/smarty3/SMARTY_3.0_BC_NOTES.txt
+%%WWWDIR%%/third_party/smarty3/SMARTY_3.1_NOTES.txt
+%%WWWDIR%%/third_party/smarty3/change_log.txt
+%%WWWDIR%%/third_party/smarty3/demo/configs/test.conf
+%%WWWDIR%%/third_party/smarty3/demo/index.php
+%%WWWDIR%%/third_party/smarty3/demo/index_php_template.php
+%%WWWDIR%%/third_party/smarty3/demo/plugins/cacheresource.apc.php
+%%WWWDIR%%/third_party/smarty3/demo/plugins/cacheresource.memcache.php
+%%WWWDIR%%/third_party/smarty3/demo/plugins/cacheresource.mysql.php
+%%WWWDIR%%/third_party/smarty3/demo/plugins/resource.extendsall.php
+%%WWWDIR%%/third_party/smarty3/demo/plugins/resource.mysql.php
+%%WWWDIR%%/third_party/smarty3/demo/plugins/resource.mysqls.php
+%%WWWDIR%%/third_party/smarty3/demo/templates/footer.tpl
+%%WWWDIR%%/third_party/smarty3/demo/templates/header.tpl
+%%WWWDIR%%/third_party/smarty3/demo/templates/index.tpl
+%%WWWDIR%%/third_party/smarty3/demo/templates/index_view.php
+%%WWWDIR%%/third_party/smarty3/libs/Smarty.class.php
+%%WWWDIR%%/third_party/smarty3/libs/SmartyBC.class.php
+%%WWWDIR%%/third_party/smarty3/libs/debug.tpl
+%%WWWDIR%%/third_party/smarty3/libs/plugins/block.php.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/block.textformat.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/function.counter.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/function.cycle.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/function.fetch.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/function.html_checkboxes.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/function.html_image.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/function.html_options.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/function.html_radios.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/function.html_select_date.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/function.html_select_time.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/function.html_table.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/function.mailto.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/function.math.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/modifier.capitalize.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/modifier.date_format.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/modifier.debug_print_var.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/modifier.escape.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/modifier.regex_replace.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/modifier.replace.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/modifier.spacify.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/modifier.truncate.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/modifiercompiler.cat.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/modifiercompiler.count_characters.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/modifiercompiler.count_paragraphs.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/modifiercompiler.count_sentences.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/modifiercompiler.count_words.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/modifiercompiler.default.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/modifiercompiler.escape.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/modifiercompiler.from_charset.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/modifiercompiler.indent.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/modifiercompiler.lower.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/modifiercompiler.noprint.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/modifiercompiler.string_format.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/modifiercompiler.strip.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/modifiercompiler.strip_tags.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/modifiercompiler.to_charset.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/modifiercompiler.unescape.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/modifiercompiler.upper.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/modifiercompiler.wordwrap.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/outputfilter.trimwhitespace.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/shared.escape_special_chars.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/shared.literal_compiler_param.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/shared.make_timestamp.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/shared.mb_str_replace.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/shared.mb_unicode.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/shared.mb_wordwrap.php
+%%WWWDIR%%/third_party/smarty3/libs/plugins/variablefilter.htmlspecialchars.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_cacheresource.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_cacheresource_custom.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_cacheresource_keyvaluestore.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_config_source.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_cacheresource_file.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_append.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_assign.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_block.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_break.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_call.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_capture.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_config_load.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_continue.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_debug.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_eval.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_extends.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_for.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_foreach.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_function.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_if.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_include.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_include_php.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_insert.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_ldelim.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_nocache.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_private_block_plugin.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_private_function_plugin.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_private_modifier.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_private_object_block_function.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_private_object_function.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_private_print_expression.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_private_registered_block.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_private_registered_function.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_private_special_variable.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_rdelim.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_section.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_setfilter.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compile_while.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_compilebase.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_config.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_config_file_compiler.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_configfilelexer.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_configfileparser.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_data.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_debug.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_filter.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_filter_handler.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_function_call_handler.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_get_include_path.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_nocache_insert.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_parsetree.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_register.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_resource_eval.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_resource_extends.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_resource_file.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_resource_php.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_resource_registered.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_resource_stream.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_resource_string.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_smartytemplatecompiler.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_template.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_templatebase.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_templatecompilerbase.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_templatelexer.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_templateparser.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_utility.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_wrapper.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_internal_write_file.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_resource.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_resource_custom.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_resource_recompiled.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_resource_uncompiled.php
+%%WWWDIR%%/third_party/smarty3/libs/sysplugins/smarty_security.php
 %%WWWDIR%%/third_party/tinymce/changelog
 %%WWWDIR%%/third_party/tinymce/examples/example_advanced.css
 %%WWWDIR%%/third_party/tinymce/examples/example_advanced.htm
@@ -4637,6 +4797,8 @@
 %%WWWDIR%%/third_party/tinymce/readme
 %%WWWDIR%%/third_party/user_contribution/cfields_for_computing_time.sql
 %%WWWDIR%%/third_party/user_contribution/convert_csv_to_testlink.rb
+%%WWWDIR%%/third_party/user_contribution/copy_values_cfields_for_computing_time_MYSQL.sql
+%%WWWDIR%%/third_party/user_contribution/copy_values_cfields_for_computing_time_POSTGRES.sql
 %%WWWDIR%%/third_party/user_contribution/fakeRemoteExecServer/README.TXT
 %%WWWDIR%%/third_party/user_contribution/fakeRemoteExecServer/all_testsuites_remote_fake_exec.xml
 %%WWWDIR%%/third_party/user_contribution/fakeRemoteExecServer/client4fakeXMLRPCTestRunner.php
@@ -4802,6 +4964,14 @@
 @dirrm %%WWWDIR%%/third_party/tinymce/examples/templates
 @dirrm %%WWWDIR%%/third_party/tinymce/examples
 @dirrm %%WWWDIR%%/third_party/tinymce
+@dirrm %%WWWDIR%%/third_party/smarty3/libs/sysplugins
+@dirrm %%WWWDIR%%/third_party/smarty3/libs/plugins
+@dirrm %%WWWDIR%%/third_party/smarty3/libs
+@dirrm %%WWWDIR%%/third_party/smarty3/demo/templates
+@dirrm %%WWWDIR%%/third_party/smarty3/demo/plugins
+@dirrm %%WWWDIR%%/third_party/smarty3/demo/configs
+@dirrm %%WWWDIR%%/third_party/smarty3/demo
+@dirrm %%WWWDIR%%/third_party/smarty3
 @dirrm %%WWWDIR%%/third_party/smarty/libs/plugins
 @dirrm %%WWWDIR%%/third_party/smarty/libs/internals
 @dirrm %%WWWDIR%%/third_party/smarty/libs
@@ -5420,6 +5590,19 @@
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9/mssql/DB.1.3/step1
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9/mssql/DB.1.3
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9/mssql
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.8/postgres/DB.1.9.8/stepZ
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.8/postgres/DB.1.9.8/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.8/postgres/DB.1.9.8
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.8/postgres
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.8/mysql/DB.1.9.8/stepZ
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.8/mysql/DB.1.9.8/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.8/mysql/DB.1.9.8
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.8/mysql
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.8/mssql/DB.1.9.8/stepZ
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.8/mssql/DB.1.9.8/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.8/mssql/DB.1.9.8
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.8/mssql
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.8
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.6/postgres/DB.1.6/stepZ
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.6/postgres/DB.1.6/step1
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.6/postgres/DB.1.6
