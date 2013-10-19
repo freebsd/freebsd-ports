@@ -10,8 +10,6 @@ MASTER_SITE_SUBDIR=	utils/shell
 MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	Enhanced color version of standard calendar utility
 
-USE_GCC=	any
-
 WRKSRC=		${WRKDIR}/cal-3.5/source
 MAKEFILE=	makefile.unx
 ALL_TARGET=	cal
