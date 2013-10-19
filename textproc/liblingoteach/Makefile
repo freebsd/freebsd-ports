@@ -1,38 +1,35 @@
-# Created by: Marcus von Appen
 # $FreeBSD$
 
 PORTNAME=	liblingoteach
 PORTVERSION=	0.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	SF/lingoteach/OldFiles
 
-MAINTAINER=	mva@FreeBSD.org
-COMMENT=	A library for parsing lesson files based on the LingoTeach DTD
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Library for parsing lesson files based on the LingoTeach DTD
 
 USE_AUTOTOOLS=	libtool
 USES=		gmake pathfix pkgconfig
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-
-.if defined(WITH_COMP)
-CONFIGURE_ARGS+=	--with-compression
-.endif
-
-.if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--enable-debug
-.endif
-
 NO_STAGE=	yes
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "liblingoteach can be used with the following switches:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "		WITH_COMP=yes	Enables zlib compression of"
-	@${ECHO_MSG} "				the lesson files"
-	@${ECHO_MSG} "		WITH_DEBUG=yes  Enables additional debugging"
-	@${ECHO_MSG} "				information and output"
-	@${ECHO_MSG} ""
+
+OPTIONS_DEFINE=	DOCS ZLIB DEBUG
+OPTIONS_DEFAULT=	ZLIB
+
+DEBUG_DESC=	Additional debugging information and output
+
+ZLIB_CONFIGURE_WITH=	compression
+DEBUG_CONFIGURE_ENABLE=	debug
+
+.include <bsd.port.options.mk>
+
+.if !${PORT_OPTIONS:MDOCS}
+post-patch:
+	@${REINPLACE_CMD} 's|SUBDIRS = src test doc|SUBDIRS = src test|' \
+		${WRKSRC}/Makefile.in
+.endif
 
 .include <bsd.port.mk>
