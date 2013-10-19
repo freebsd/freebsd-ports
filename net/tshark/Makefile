@@ -9,5 +9,4 @@ MASTERDIR=	${.CURDIR}/../wireshark
 
 WITHOUT_X11=	yes
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
