@@ -364,26 +364,6 @@ diff -u -r1.176 tc_command.sh
  
  addPortToBuild () {
  
-? .fslckout
-? .fslckout-mjFA3F63973
-Index: lib/tc_command.sh
-===================================================================
-RCS file: /space/cvs/marcuscom-cvs/portstools/tinderbox/lib/tc_command.sh,v
-retrieving revision 1.177
-diff -u -r1.177 tc_command.sh
---- lib/tc_command.sh	8 Oct 2013 16:06:48 -0000	1.177
-+++ lib/tc_command.sh	13 Oct 2013 12:54:19 -0000
-@@ -1418,6 +1418,10 @@
-     # Finalize environment
-     cp /etc/resolv.conf ${BUILD_DIR}/etc || touch ${BUILD_DIR}/etc/resolv.conf
- 
-+    # This works around the SRCBASE issue... this needs fixing properly
-+    mkdir -p ${BUILD_DIR}/${SRCBASE%/*}
-+    ln -s ${BUILD_DIR}/usr/src ${BUILD_DIR}/${SRCBASE}
-+
-     return 0
- }
- 
 Index: lib/tinderlib.sh
 ===================================================================
 RCS file: /space/cvs/marcuscom-cvs/portstools/tinderbox/lib/tinderlib.sh,v
@@ -403,3 +383,13 @@ diff -u -r1.85 tinderlib.sh
  
      # Set ARCH (needed for cross-building)
      export ARCH=$(${tc} getJailArch -j ${jail})
+--- lib/tc_command.wrong	2013-10-19 21:15:58.461836978 +0100
++++ lib/tc_command.sh	2013-10-19 21:16:32.105859389 +0100
+@@ -1967,7 +1967,6 @@
+ 	(
+ 	    export PORTBUILD_ARGS="$(echo ${pbargs})"
+ 	    buildenvNoHost ${build}
+-	    buildenv ${jail} ${portstree} ${build}
+ 	    HOST_WORKDIR=$(${tc} configGet | \
+ 		awk -F= '/^HOST_WORKDIR/ {print $2}')
+ 	    env PORTSDIR=/a/ports \
