@@ -1,6 +1,0 @@
-#!/bin/sh
-# $FreeBSD$
-
-if [ "${2}" = "POST-INSTALL" ]; then
-	ln -sf ${PKG_PREFIX}/bin/weechat ${PKG_PREFIX}/bin/weechat-curses
-fi
