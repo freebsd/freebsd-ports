@@ -9,9 +9,9 @@ MASTER_SITES=	SF/${PORTNAME}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Flipping squares will never be the same
 
-LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
-		vorbis:${PORTSDIR}/audio/libvorbis \
-		GLEW:${PORTSDIR}/graphics/glew
+LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libGLEW.so:${PORTSDIR}/graphics/glew
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
@@ -21,16 +21,17 @@ USE_GL=		gl glu
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+PLIST_FILES=	bin/${PORTNAME} \
+		share/applications/${PORTNAME}.desktop \
+		share/pixmaps/${PORTNAME}.png
+PLIST_DIRSTRY=	share/applications
 PORTDOCS=	*
+PORTDATA=	*
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/src/*.c
-.if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e '/install-data-am:/ s|install-dist_docDATA||' \
-		${WRKSRC}/Makefile.in
-.endif
 
 .include <bsd.port.mk>
