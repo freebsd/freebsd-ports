@@ -568,7 +568,6 @@
     SUBDIR += qmail-spamcontrol
     SUBDIR += qmail-tls
     SUBDIR += qmailadmin
-    SUBDIR += qmailadmin-devel
     SUBDIR += qmailanalog
     SUBDIR += qmailmrtg7
     SUBDIR += qmhandle
