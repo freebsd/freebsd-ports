@@ -30,10 +30,9 @@ USE_GL=		yes
 
 WRKSRC=		${WRKDIR}/MemonixSourceCode
 
-PLIST_FILES=	bin/Memonix %%DATADIR%%/gamedata.vfs
-PLIST_DIRS=	%%DATADIR%%
+PLIST_FILES=	bin/Memonix
+PORTDATA=	*
 
-NO_STAGE=	yes
 post-extract:
 	@${TAR} -C ${WRKDIR} -xzf ${DISTDIR}/memx16.tar.gz
 
@@ -42,8 +41,8 @@ post-patch:
 		 ${WRKSRC}/src/Main.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/Memonix ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/Memonix/gamedata.vfs ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/Memonix ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/Memonix/gamedata.vfs ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
