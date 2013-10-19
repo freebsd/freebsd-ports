@@ -28,7 +28,7 @@ bin/scanimage
 @unexec if cmp -s %D/etc/sane.d/epson2.conf %D/etc/sane.d/dist/epson2.conf; then rm -f %D/etc/sane.d/epson2.conf; fi
 @unexec if cmp -s %D/etc/sane.d/fujitsu.conf %D/etc/sane.d/dist/fujitsu.conf; then rm -f %D/etc/sane.d/fujitsu.conf; fi
 @unexec if cmp -s %D/etc/sane.d/genesys.conf %D/etc/sane.d/dist/genesys.conf; then rm -f %D/etc/sane.d/genesys.conf; fi
-%%GPHOTO2%%@unexec if cmp -s %D/etc/sane.d/gphoto2.conf %D/etc/sane.d/dist/gphoto2.conf; then rm -f %D/etc/sane.d/gphoto2.conf; fi
+%%GPHOTO%%@unexec if cmp -s %D/etc/sane.d/gphoto2.conf %D/etc/sane.d/dist/gphoto2.conf; then rm -f %D/etc/sane.d/gphoto2.conf; fi
 @unexec if cmp -s %D/etc/sane.d/gt68xx.conf %D/etc/sane.d/dist/gt68xx.conf; then rm -f %D/etc/sane.d/gt68xx.conf; fi
 @unexec if cmp -s %D/etc/sane.d/hp.conf %D/etc/sane.d/dist/hp.conf; then rm -f %D/etc/sane.d/hp.conf; fi
 @unexec if cmp -s %D/etc/sane.d/hp3900.conf %D/etc/sane.d/dist/hp3900.conf; then rm -f %D/etc/sane.d/hp3900.conf; fi
@@ -78,81 +78,155 @@ bin/scanimage
 @unexec if cmp -s %D/etc/sane.d/umax_pp.conf %D/etc/sane.d/dist/umax_pp.conf; then rm -f %D/etc/sane.d/umax_pp.conf; fi
 @unexec if cmp -s %D/etc/sane.d/xerox_mfp.conf %D/etc/sane.d/dist/xerox_mfp.conf; then rm -f %D/etc/sane.d/xerox_mfp.conf; fi
 etc/sane.d/dist/abaton.conf
+@exec if test ! -e %D/etc/sane.d/abaton.conf; then cp %D/etc/sane.d/dist/abaton.conf %D/etc/sane.d/abaton.conf; fi
 etc/sane.d/dist/agfafocus.conf
+@exec if test ! -e %D/etc/sane.d/agfafocus.conf; then cp %D/etc/sane.d/dist/agfafocus.conf %D/etc/sane.d/agfafocus.conf; fi
 etc/sane.d/dist/apple.conf
+@exec if test ! -e %D/etc/sane.d/apple.conf; then cp %D/etc/sane.d/dist/apple.conf %D/etc/sane.d/apple.conf; fi
 etc/sane.d/dist/artec.conf
+@exec if test ! -e %D/etc/sane.d/artec.conf; then cp %D/etc/sane.d/dist/artec.conf %D/etc/sane.d/artec.conf; fi
 etc/sane.d/dist/artec_eplus48u.conf
+@exec if test ! -e %D/etc/sane.d/artec_eplus48u.conf; then cp %D/etc/sane.d/dist/artec_eplus48u.conf %D/etc/sane.d/artec_eplus48u.conf; fi
 etc/sane.d/dist/avision.conf
+@exec if test ! -e %D/etc/sane.d/avision.conf; then cp %D/etc/sane.d/dist/avision.conf %D/etc/sane.d/avision.conf; fi
 etc/sane.d/dist/bh.conf
+@exec if test ! -e %D/etc/sane.d/bh.conf; then cp %D/etc/sane.d/dist/bh.conf %D/etc/sane.d/bh.conf; fi
 etc/sane.d/dist/canon.conf
+@exec if test ! -e %D/etc/sane.d/canon.conf; then cp %D/etc/sane.d/dist/canon.conf %D/etc/sane.d/canon.conf; fi
 etc/sane.d/dist/canon630u.conf
+@exec if test ! -e %D/etc/sane.d/canon630u.conf; then cp %D/etc/sane.d/dist/canon630u.conf %D/etc/sane.d/canon630u.conf; fi
 etc/sane.d/dist/canon_dr.conf
+@exec if test ! -e %D/etc/sane.d/canon_dr.conf; then cp %D/etc/sane.d/dist/canon_dr.conf %D/etc/sane.d/canon_dr.conf; fi
 %%IEEE1284%%etc/sane.d/dist/canon_pp.conf
+%%IEEE1284%%@exec if test ! -e %D/etc/sane.d/canon_pp.conf; then cp %D/etc/sane.d/dist/canon_pp.conf %D/etc/sane.d/canon_pp.conf; fi
 etc/sane.d/dist/cardscan.conf
+@exec if test ! -e %D/etc/sane.d/cardscan.conf; then cp %D/etc/sane.d/dist/cardscan.conf %D/etc/sane.d/cardscan.conf; fi
 etc/sane.d/dist/coolscan.conf
+@exec if test ! -e %D/etc/sane.d/coolscan.conf; then cp %D/etc/sane.d/dist/coolscan.conf %D/etc/sane.d/coolscan.conf; fi
 etc/sane.d/dist/coolscan2.conf
+@exec if test ! -e %D/etc/sane.d/coolscan2.conf; then cp %D/etc/sane.d/dist/coolscan2.conf %D/etc/sane.d/coolscan2.conf; fi
 etc/sane.d/dist/coolscan3.conf
+@exec if test ! -e %D/etc/sane.d/coolscan3.conf; then cp %D/etc/sane.d/dist/coolscan3.conf %D/etc/sane.d/coolscan3.conf; fi
 etc/sane.d/dist/dc210.conf
+@exec if test ! -e %D/etc/sane.d/dc210.conf; then cp %D/etc/sane.d/dist/dc210.conf %D/etc/sane.d/dc210.conf; fi
 etc/sane.d/dist/dc240.conf
+@exec if test ! -e %D/etc/sane.d/dc240.conf; then cp %D/etc/sane.d/dist/dc240.conf %D/etc/sane.d/dc240.conf; fi
 etc/sane.d/dist/dc25.conf
+@exec if test ! -e %D/etc/sane.d/dc25.conf; then cp %D/etc/sane.d/dist/dc25.conf %D/etc/sane.d/dc25.conf; fi
 etc/sane.d/dist/dell1600n_net.conf
+@exec if test ! -e %D/etc/sane.d/dell1600n_net.conf; then cp %D/etc/sane.d/dist/dell1600n_net.conf %D/etc/sane.d/dell1600n_net.conf; fi
 etc/sane.d/dist/dll.conf
 @exec if test ! -e %D/etc/sane.d/dll.conf; then cp %D/etc/sane.d/dist/dll.conf %D/etc/sane.d/dll.conf; fi
 etc/sane.d/dist/dmc.conf
+@exec if test ! -e %D/etc/sane.d/dmc.conf; then cp %D/etc/sane.d/dist/dmc.conf %D/etc/sane.d/dmc.conf; fi
 etc/sane.d/dist/epjitsu.conf
+@exec if test ! -e %D/etc/sane.d/epjitsu.conf; then cp %D/etc/sane.d/dist/epjitsu.conf %D/etc/sane.d/epjitsu.conf; fi
 etc/sane.d/dist/epson.conf
+@exec if test ! -e %D/etc/sane.d/epson.conf; then cp %D/etc/sane.d/dist/epson.conf %D/etc/sane.d/epson.conf; fi
 etc/sane.d/dist/epson2.conf
+@exec if test ! -e %D/etc/sane.d/epson2.conf; then cp %D/etc/sane.d/dist/epson2.conf %D/etc/sane.d/epson2.conf; fi
 etc/sane.d/dist/fujitsu.conf
+@exec if test ! -e %D/etc/sane.d/fujitsu.conf; then cp %D/etc/sane.d/dist/fujitsu.conf %D/etc/sane.d/fujitsu.conf; fi
 etc/sane.d/dist/genesys.conf
-%%GPHOTO2%%etc/sane.d/dist/gphoto2.conf
+@exec if test ! -e %D/etc/sane.d/genesys.conf; then cp %D/etc/sane.d/dist/genesys.conf %D/etc/sane.d/genesys.conf; fi
+%%GPHOTO%%etc/sane.d/dist/gphoto2.conf
+%%GPHOTO%%@exec if test ! -e %D/etc/sane.d/gphoto2.conf; then cp %D/etc/sane.d/dist/gphoto2.conf %D/etc/sane.d/gphoto2.conf; fi
 etc/sane.d/dist/gt68xx.conf
+@exec if test ! -e %D/etc/sane.d/gt68xx.conf; then cp %D/etc/sane.d/dist/gt68xx.conf %D/etc/sane.d/gt68xx.conf; fi
 etc/sane.d/dist/hp.conf
+@exec if test ! -e %D/etc/sane.d/hp.conf; then cp %D/etc/sane.d/dist/hp.conf %D/etc/sane.d/hp.conf; fi
 etc/sane.d/dist/hp3900.conf
+@exec if test ! -e %D/etc/sane.d/hp3900.conf; then cp %D/etc/sane.d/dist/hp3900.conf %D/etc/sane.d/hp3900.conf; fi
 etc/sane.d/dist/hp4200.conf
+@exec if test ! -e %D/etc/sane.d/hp4200.conf; then cp %D/etc/sane.d/dist/hp4200.conf %D/etc/sane.d/hp4200.conf; fi
 etc/sane.d/dist/hp5400.conf
+@exec if test ! -e %D/etc/sane.d/hp5400.conf; then cp %D/etc/sane.d/dist/hp5400.conf %D/etc/sane.d/hp5400.conf; fi
 %%IEEE1284%%etc/sane.d/dist/hpsj5s.conf
+%%IEEE1284%%@exec if test ! -e %D/etc/sane.d/hpsj5s.conf; then cp %D/etc/sane.d/dist/hpsj5s.conf %D/etc/sane.d/hpsj5s.conf; fi
 etc/sane.d/dist/hs2p.conf
+@exec if test ! -e %D/etc/sane.d/hs2p.conf; then cp %D/etc/sane.d/dist/hs2p.conf %D/etc/sane.d/hs2p.conf; fi
 etc/sane.d/dist/ibm.conf
+@exec if test ! -e %D/etc/sane.d/ibm.conf; then cp %D/etc/sane.d/dist/ibm.conf %D/etc/sane.d/ibm.conf; fi
 etc/sane.d/dist/kodak.conf
+@exec if test ! -e %D/etc/sane.d/kodak.conf; then cp %D/etc/sane.d/dist/kodak.conf %D/etc/sane.d/kodak.conf; fi
 etc/sane.d/dist/kodakaio.conf
+@exec if test ! -e %D/etc/sane.d/kodakaio.conf; then cp %D/etc/sane.d/dist/kodakaio.conf %D/etc/sane.d/kodakaio.conf; fi
 etc/sane.d/dist/leo.conf
+@exec if test ! -e %D/etc/sane.d/leo.conf; then cp %D/etc/sane.d/dist/leo.conf %D/etc/sane.d/leo.conf; fi
 etc/sane.d/dist/lexmark.conf
+@exec if test ! -e %D/etc/sane.d/lexmark.conf; then cp %D/etc/sane.d/dist/lexmark.conf %D/etc/sane.d/lexmark.conf; fi
 etc/sane.d/dist/ma1509.conf
+@exec if test ! -e %D/etc/sane.d/ma1509.conf; then cp %D/etc/sane.d/dist/ma1509.conf %D/etc/sane.d/ma1509.conf; fi
 etc/sane.d/dist/magicolor.conf
+@exec if test ! -e %D/etc/sane.d/magicolor.conf; then cp %D/etc/sane.d/dist/magicolor.conf %D/etc/sane.d/magicolor.conf; fi
 etc/sane.d/dist/matsushita.conf
+@exec if test ! -e %D/etc/sane.d/matsushita.conf; then cp %D/etc/sane.d/dist/matsushita.conf %D/etc/sane.d/matsushita.conf; fi
 etc/sane.d/dist/microtek.conf
+@exec if test ! -e %D/etc/sane.d/microtek.conf; then cp %D/etc/sane.d/dist/microtek.conf %D/etc/sane.d/microtek.conf; fi
 etc/sane.d/dist/microtek2.conf
+@exec if test ! -e %D/etc/sane.d/microtek2.conf; then cp %D/etc/sane.d/dist/microtek2.conf %D/etc/sane.d/microtek2.conf; fi
 etc/sane.d/dist/mustek.conf
+@exec if test ! -e %D/etc/sane.d/mustek.conf; then cp %D/etc/sane.d/dist/mustek.conf %D/etc/sane.d/mustek.conf; fi
 %%IEEE1284%%etc/sane.d/dist/mustek_pp.conf
+%%IEEE1284%%@exec if test ! -e %D/etc/sane.d/mustek_pp.conf; then cp %D/etc/sane.d/dist/mustek_pp.conf %D/etc/sane.d/mustek_pp.conf; fi
 etc/sane.d/dist/mustek_usb.conf
+@exec if test ! -e %D/etc/sane.d/mustek_usb.conf; then cp %D/etc/sane.d/dist/mustek_usb.conf %D/etc/sane.d/mustek_usb.conf; fi
 etc/sane.d/dist/nec.conf
+@exec if test ! -e %D/etc/sane.d/nec.conf; then cp %D/etc/sane.d/dist/nec.conf %D/etc/sane.d/nec.conf; fi
 etc/sane.d/dist/net.conf
+@exec if test ! -e %D/etc/sane.d/net.conf; then cp %D/etc/sane.d/dist/net.conf %D/etc/sane.d/net.conf; fi
 etc/sane.d/dist/p5.conf
+@exec if test ! -e %D/etc/sane.d/p5.conf; then cp %D/etc/sane.d/dist/p5.conf %D/etc/sane.d/p5.conf; fi
 etc/sane.d/dist/pie.conf
+@exec if test ! -e %D/etc/sane.d/pie.conf; then cp %D/etc/sane.d/dist/pie.conf %D/etc/sane.d/pie.conf; fi
 etc/sane.d/dist/pixma.conf
+@exec if test ! -e %D/etc/sane.d/pixma.conf; then cp %D/etc/sane.d/dist/pixma.conf %D/etc/sane.d/pixma.conf; fi
 etc/sane.d/dist/plustek.conf
+@exec if test ! -e %D/etc/sane.d/plustek.conf; then cp %D/etc/sane.d/dist/plustek.conf %D/etc/sane.d/plustek.conf; fi
 etc/sane.d/dist/plustek_pp.conf
+@exec if test ! -e %D/etc/sane.d/plustek_pp.conf; then cp %D/etc/sane.d/dist/plustek_pp.conf %D/etc/sane.d/plustek_pp.conf; fi
 etc/sane.d/dist/ricoh.conf
+@exec if test ! -e %D/etc/sane.d/ricoh.conf; then cp %D/etc/sane.d/dist/ricoh.conf %D/etc/sane.d/ricoh.conf; fi
 etc/sane.d/dist/rts8891.conf
+@exec if test ! -e %D/etc/sane.d/rts8891.conf; then cp %D/etc/sane.d/dist/rts8891.conf %D/etc/sane.d/rts8891.conf; fi
 etc/sane.d/dist/s9036.conf
+@exec if test ! -e %D/etc/sane.d/s9036.conf; then cp %D/etc/sane.d/dist/s9036.conf %D/etc/sane.d/s9036.conf; fi
 etc/sane.d/dist/saned.conf
+@exec if test ! -e %D/etc/sane.d/saned.conf; then cp %D/etc/sane.d/dist/saned.conf %D/etc/sane.d/saned.conf; fi
 etc/sane.d/dist/sceptre.conf
+@exec if test ! -e %D/etc/sane.d/sceptre.conf; then cp %D/etc/sane.d/dist/sceptre.conf %D/etc/sane.d/sceptre.conf; fi
 etc/sane.d/dist/sharp.conf
+@exec if test ! -e %D/etc/sane.d/sharp.conf; then cp %D/etc/sane.d/dist/sharp.conf %D/etc/sane.d/sharp.conf; fi
 etc/sane.d/dist/sm3840.conf
+@exec if test ! -e %D/etc/sane.d/sm3840.conf; then cp %D/etc/sane.d/dist/sm3840.conf %D/etc/sane.d/sm3840.conf; fi
 etc/sane.d/dist/snapscan.conf
+@exec if test ! -e %D/etc/sane.d/snapscan.conf; then cp %D/etc/sane.d/dist/snapscan.conf %D/etc/sane.d/snapscan.conf; fi
 etc/sane.d/dist/sp15c.conf
+@exec if test ! -e %D/etc/sane.d/sp15c.conf; then cp %D/etc/sane.d/dist/sp15c.conf %D/etc/sane.d/sp15c.conf; fi
 etc/sane.d/dist/st400.conf
+@exec if test ! -e %D/etc/sane.d/st400.conf; then cp %D/etc/sane.d/dist/st400.conf %D/etc/sane.d/st400.conf; fi
 etc/sane.d/dist/stv680.conf
+@exec if test ! -e %D/etc/sane.d/stv680.conf; then cp %D/etc/sane.d/dist/stv680.conf %D/etc/sane.d/stv680.conf; fi
 etc/sane.d/dist/tamarack.conf
+@exec if test ! -e %D/etc/sane.d/tamarack.conf; then cp %D/etc/sane.d/dist/tamarack.conf %D/etc/sane.d/tamarack.conf; fi
 etc/sane.d/dist/teco1.conf
+@exec if test ! -e %D/etc/sane.d/teco1.conf; then cp %D/etc/sane.d/dist/teco1.conf %D/etc/sane.d/teco1.conf; fi
 etc/sane.d/dist/teco2.conf
+@exec if test ! -e %D/etc/sane.d/teco2.conf; then cp %D/etc/sane.d/dist/teco2.conf %D/etc/sane.d/teco2.conf; fi
 etc/sane.d/dist/teco3.conf
+@exec if test ! -e %D/etc/sane.d/teco3.conf; then cp %D/etc/sane.d/dist/teco3.conf %D/etc/sane.d/teco3.conf; fi
 etc/sane.d/dist/test.conf
+@exec if test ! -e %D/etc/sane.d/test.conf; then cp %D/etc/sane.d/dist/test.conf %D/etc/sane.d/test.conf; fi
 etc/sane.d/dist/u12.conf
+@exec if test ! -e %D/etc/sane.d/u12.conf; then cp %D/etc/sane.d/dist/u12.conf %D/etc/sane.d/u12.conf; fi
 etc/sane.d/dist/umax.conf
+@exec if test ! -e %D/etc/sane.d/umax.conf; then cp %D/etc/sane.d/dist/umax.conf %D/etc/sane.d/umax.conf; fi
 etc/sane.d/dist/umax1220u.conf
+@exec if test ! -e %D/etc/sane.d/umax1220u.conf; then cp %D/etc/sane.d/dist/umax1220u.conf %D/etc/sane.d/umax1220u.conf; fi
 etc/sane.d/dist/umax_pp.conf
+@exec if test ! -e %D/etc/sane.d/umax_pp.conf; then cp %D/etc/sane.d/dist/umax_pp.conf %D/etc/sane.d/umax_pp.conf; fi
 etc/sane.d/dist/xerox_mfp.conf
+@exec if test ! -e %D/etc/sane.d/xerox_mfp.conf; then cp %D/etc/sane.d/dist/xerox_mfp.conf %D/etc/sane.d/xerox_mfp.conf; fi
 include/sane/sane.h
 include/sane/saneopts.h
 lib/libsane.la
@@ -239,9 +313,9 @@ lib/sane/libsane-fujitsu.so.1
 lib/sane/libsane-genesys.la
 lib/sane/libsane-genesys.so
 lib/sane/libsane-genesys.so.1
-%%GPHOTO2%%lib/sane/libsane-gphoto2.la
-%%GPHOTO2%%lib/sane/libsane-gphoto2.so
-%%GPHOTO2%%lib/sane/libsane-gphoto2.so.1
+%%GPHOTO%%lib/sane/libsane-gphoto2.la
+%%GPHOTO%%lib/sane/libsane-gphoto2.so
+%%GPHOTO%%lib/sane/libsane-gphoto2.so.1
 lib/sane/libsane-gt68xx.la
 lib/sane/libsane-gt68xx.so
 lib/sane/libsane-gt68xx.so.1
@@ -411,89 +485,98 @@ lib/sane/libsane-xerox_mfp.la
 lib/sane/libsane-xerox_mfp.so
 lib/sane/libsane-xerox_mfp.so.1
 libdata/pkgconfig/sane-backends.pc
+man/man1/gamma4scanimage.1.gz
+man/man1/sane-config.1.gz
+man/man1/sane-find-scanner.1.gz
+man/man1/scanimage.1.gz
+man/man5/sane-abaton.5.gz
+man/man5/sane-agfafocus.5.gz
+man/man5/sane-apple.5.gz
+man/man5/sane-artec.5.gz
+man/man5/sane-artec_eplus48u.5.gz
+man/man5/sane-as6e.5.gz
+man/man5/sane-avision.5.gz
+man/man5/sane-bh.5.gz
+man/man5/sane-canon.5.gz
+man/man5/sane-canon630u.5.gz
+man/man5/sane-canon_dr.5.gz
+%%CUPS%%man/man5/sane-canon_pp.5.gz
+man/man5/sane-cardscan.5.gz
+man/man5/sane-coolscan.5.gz
+man/man5/sane-coolscan2.5.gz
+man/man5/sane-coolscan3.5.gz
+man/man5/sane-dc210.5.gz
+man/man5/sane-dc240.5.gz
+man/man5/sane-dc25.5.gz
+man/man5/sane-dll.5.gz
+man/man5/sane-dmc.5.gz
+man/man5/sane-epjitsu.5.gz
+man/man5/sane-epson.5.gz
+man/man5/sane-epson2.5.gz
+man/man5/sane-fujitsu.5.gz
+man/man5/sane-genesys.5.gz
+%%GPHOTO%%man/man5/sane-gphoto2.5.gz
+man/man5/sane-gt68xx.5.gz
+man/man5/sane-hp.5.gz
+man/man5/sane-hp3500.5.gz
+man/man5/sane-hp3900.5.gz
+man/man5/sane-hp4200.5.gz
+man/man5/sane-hp5400.5.gz
+man/man5/sane-hp5590.5.gz
+man/man5/sane-hpljm1005.5.gz
+%%CUPS%%man/man5/sane-hpsj5s.5.gz
+man/man5/sane-hs2p.5.gz
+man/man5/sane-ibm.5.gz
+man/man5/sane-kodak.5.gz
+man/man5/sane-kodakaio.5.gz
+man/man5/sane-kvs1025.5.gz
+man/man5/sane-kvs20xx.5.gz
+man/man5/sane-kvs40xx.5.gz
+man/man5/sane-leo.5.gz
+man/man5/sane-lexmark.5.gz
+man/man5/sane-ma1509.5.gz
+man/man5/sane-magicolor.5.gz
+man/man5/sane-matsushita.5.gz
+man/man5/sane-microtek.5.gz
+man/man5/sane-microtek2.5.gz
+man/man5/sane-mustek.5.gz
+%%CUPS%%man/man5/sane-mustek_pp.5.gz
+man/man5/sane-mustek_usb.5.gz
+man/man5/sane-mustek_usb2.5.gz
+man/man5/sane-nec.5.gz
+man/man5/sane-net.5.gz
+man/man5/sane-niash.5.gz
+man/man5/sane-p5.5.gz
+man/man5/sane-pie.5.gz
+man/man5/sane-pixma.5.gz
+man/man5/sane-plustek.5.gz
+man/man5/sane-plustek_pp.5.gz
+man/man5/sane-ricoh.5.gz
+man/man5/sane-rts8891.5.gz
+man/man5/sane-s9036.5.gz
+man/man5/sane-sceptre.5.gz
+man/man5/sane-scsi.5.gz
+man/man5/sane-sharp.5.gz
+man/man5/sane-sm3600.5.gz
+man/man5/sane-sm3840.5.gz
+man/man5/sane-snapscan.5.gz
+man/man5/sane-sp15c.5.gz
+man/man5/sane-st400.5.gz
+man/man5/sane-stv680.5.gz
+man/man5/sane-tamarack.5.gz
+man/man5/sane-teco1.5.gz
+man/man5/sane-teco2.5.gz
+man/man5/sane-teco3.5.gz
+man/man5/sane-test.5.gz
+man/man5/sane-u12.5.gz
+man/man5/sane-umax.5.gz
+man/man5/sane-umax1220u.5.gz
+man/man5/sane-umax_pp.5.gz
+man/man5/sane-usb.5.gz
+man/man5/sane-xerox_mfp.5.gz
+man/man7/sane.7.gz
+man/man8/saned.8.gz
 sbin/saned
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/PROBLEMS
-%%PORTDOCS%%%%DOCSDIR%%/PROJECTS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.aix
-%%PORTDOCS%%%%DOCSDIR%%/README.beos
-%%PORTDOCS%%%%DOCSDIR%%/README.darwin
-%%PORTDOCS%%%%DOCSDIR%%/README.djpeg
-%%PORTDOCS%%%%DOCSDIR%%/README.freebsd
-%%PORTDOCS%%%%DOCSDIR%%/README.hp-ux
-%%PORTDOCS%%%%DOCSDIR%%/README.linux
-%%PORTDOCS%%%%DOCSDIR%%/README.netbsd
-%%PORTDOCS%%%%DOCSDIR%%/README.openbsd
-%%PORTDOCS%%%%DOCSDIR%%/README.os2
-%%PORTDOCS%%%%DOCSDIR%%/README.solaris
-%%PORTDOCS%%%%DOCSDIR%%/README.unixware2
-%%PORTDOCS%%%%DOCSDIR%%/README.unixware7
-%%PORTDOCS%%%%DOCSDIR%%/README.windows
-%%PORTDOCS%%%%DOCSDIR%%/README.zeta
-%%PORTDOCS%%%%DOCSDIR%%/backend-writing.txt
-%%PORTDOCS%%%%DOCSDIR%%/canon/canon.changes
-%%PORTDOCS%%%%DOCSDIR%%/canon/canon.install2700F.txt
-%%PORTDOCS%%%%DOCSDIR%%/gt68xx/gt68xx.CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/gt68xx/gt68xx.TODO
-%%PORTDOCS%%%%DOCSDIR%%/leo/leo.txt
-%%PORTDOCS%%%%DOCSDIR%%/matsushita/matsushita.txt
-%%PORTDOCS%%%%DOCSDIR%%/mustek/mustek.CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/mustek_usb/mustek_usb.CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/mustek_usb/mustek_usb.TODO
-%%PORTDOCS%%%%DOCSDIR%%/mustek_usb2/mustek_usb2.CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/mustek_usb2/mustek_usb2.TODO
-%%PORTDOCS%%%%DOCSDIR%%/niash/niash.TODO
-%%PORTDOCS%%%%DOCSDIR%%/plustek/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/plustek/MakeModule.sh
-%%PORTDOCS%%%%DOCSDIR%%/plustek/Makefile.kernel24
-%%PORTDOCS%%%%DOCSDIR%%/plustek/Makefile.kernel26
-%%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-PARPORT-TODO.txt
-%%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-PARPORT.changes
-%%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-PARPORT.txt
-%%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-USB-TODO.txt
-%%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-USB.changes
-%%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-USB.txt
-%%PORTDOCS%%%%DOCSDIR%%/sane-backends-external.html
-%%PORTDOCS%%%%DOCSDIR%%/sane-backends.html
-%%PORTDOCS%%%%DOCSDIR%%/sane-mfgs-external.html
-%%PORTDOCS%%%%DOCSDIR%%/sane-mfgs.html
-%%PORTDOCS%%%%DOCSDIR%%/sceptre/s1200.txt
-%%PORTDOCS%%%%DOCSDIR%%/teco/teco1.txt
-%%PORTDOCS%%%%DOCSDIR%%/teco/teco2.txt
-%%PORTDOCS%%%%DOCSDIR%%/teco/teco3.txt
-%%PORTDOCS%%%%DOCSDIR%%/u12/U12.changes
-%%PORTDOCS%%%%DOCSDIR%%/u12/U12.todo
-%%PORTDOCS%%%%DOCSDIR%%/umax/negative-types.txt
-%%PORTDOCS%%%%DOCSDIR%%/umax/sane-logo.jpg
-%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-advanced-options-doc.html
-%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-advanced.jpg
-%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-astra-doc.html
-%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-config-doc.html
-%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-doc.html
-%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-histogram.jpg
-%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-mirage-doc.html
-%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-not-listed-doc.html
-%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-others-doc.html
-%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-parport-doc.html
-%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-powerlook-doc.html
-%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-scanner-clones-doc.html
-%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-speed-doc.html
-%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-standard-options-doc.html
-%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-standard.jpg
-%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-text.jpg
-%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-text2.jpg
-%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-text4.jpg
-%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-uc-doc.html
-%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-vista-doc.html
-%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax.jpg
-%%PORTDOCS%%%%DOCSDIR%%/umax/umax.BUGS
-%%PORTDOCS%%%%DOCSDIR%%/umax/umax.CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/umax/umax.FAQ
-%%PORTDOCS%%%%DOCSDIR%%/umax/umax.TODO
 %%NLS%%share/locale/bg/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/da/LC_MESSAGES/sane-backends.mo
@@ -524,20 +607,6 @@ sbin/saned
 @dirrmtry share/sane/epjitsu
 @dirrmtry share/sane/artec_eplus48u
 @dirrmtry share/sane
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/umax
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/u12
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/teco
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/sceptre
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/plustek
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/niash
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/mustek_usb2
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/mustek_usb
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/mustek
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/matsushita
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/leo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/gt68xx
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/canon
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/sane
 @dirrm include/sane
 @dirrmtry etc/sane.d/dll.d
