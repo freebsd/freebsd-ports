@@ -140,7 +140,7 @@ AUTHOR: gahr@FreeBSD.org
 20130918:
 AUTHOR: bapt@FreeBSD.org
 
-  The perl framework is not included inconditionnaly and the old framework
+  The perl framework is not included unconditionally and the old framework
   is not recognized anymore, the following MACROS has been removed:
 
   * PERL_CONFIGURE
