@@ -27,33 +27,19 @@ DATADIR=	${PREFIX}/share/mpeg2
 
 CFLAGS+=	-DVERIFY -DVERBOSE -DTRACE
 
-PORTDOCS=	mpeg2enc.doc
-PLIST_FILES=	bin/mpeg2decode bin/mpeg2encode \
-		%%DATADIR%%/MPEG-1.par %%DATADIR%%/NTSC.par \
-		%%DATADIR%%/PAL.par %%DATADIR%%/inter.mat \
-		%%DATADIR%%/intra.mat
-PLIST_DIRS=	%%DATADIR%%
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MX11}
-USE_XORG=	xext
-MAKE_ARGS+=	USE_DISP="-DDISPLAY" \
+X11_USE=	XORG=xext
+X11_MAKE_ARGS=	USE_DISP="-DDISPLAY" \
 		USE_SHMEM="-DSH_MEM" \
 		LIBS="$$(pkg-config --libs xext) -lX11" \
 		INCLUDEDIR="$$(pkg-config --cflags xext)"
-.endif
 
 do-install:
 .for i in dec enc
-	${INSTALL_PROGRAM} ${WRKSRC}/src/mpeg2${i}/mpeg2${i}ode ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/mpeg2${i}/mpeg2${i}ode ${STAGEDIR}${PREFIX}/bin
 .endfor
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/par/* ${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/mpeg2enc.doc ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/par/* ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/mpeg2enc.doc ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
