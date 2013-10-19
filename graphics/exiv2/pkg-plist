@@ -40,6 +40,7 @@ lib/libexiv2.la
 lib/libexiv2.so
 lib/libexiv2.so.12
 libdata/pkgconfig/exiv2.pc
+man/man1/exiv2.1.gz
 share/locale/de/LC_MESSAGES/exiv2.mo
 share/locale/es/LC_MESSAGES/exiv2.mo
 share/locale/fi/LC_MESSAGES/exiv2.mo
