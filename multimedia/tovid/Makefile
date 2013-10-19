@@ -14,6 +14,9 @@ PATCH_DIST_STRIP=-p1
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A collection of video disc authoring tools
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2013-11-19
+
 BUILD_DEPENDS=	txt2tags:${PORTSDIR}/textproc/txt2tags
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		mencoder:${PORTSDIR}/multimedia/mencoder \
