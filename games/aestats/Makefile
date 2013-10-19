@@ -5,8 +5,7 @@ PORTNAME=	aestats
 PORTVERSION=	5.39
 CATEGORIES=	games
 MASTER_SITES=	ftp://download:download@download.hugelaser.com/aeons.poweredbylasers.com/${PORTNAME}/ \
-		http://freebsd.nsu.ru/distfiles/ ${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	danfe
+		http://freebsd.nsu.ru/distfiles/ LOCAL/danfe
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -33,20 +32,22 @@ post-extract: .SILENT
 # us Linux .o files instead.  With some hacking, we can build native FreeBSD
 # executables from those .o files.  Pretty neat, huh?  :-)
 #
-NO_STAGE=	yes
 pre-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -c fbsd_stub.c
 	${OBJCOPY} --redefine-sym stdout=__stdoutp ${WRKSRC}/aespages.o
 	${OBJCOPY} --redefine-sym stdout=__stdoutp ${WRKSRC}/paessubs.o
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/AEstats ${WRKSRC}/preAEs ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/AEstats ${WRKSRC}/preAEs \
+		${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${LINUXBINDIR}/AEsscore.cfg \
-		${LINUXBINDIR}/AEstats.cfg ${LINUXBINDIR}/banlist.txt ${DATADIR}
-	${INSTALL_DATA} ${LINUXBINDIR}/alias-example.txt ${DATADIR}/alias.txt
-	${INSTALL_DATA} ${WRKSRC}/../AEstats.txt ${DATADIR}
+		${LINUXBINDIR}/AEstats.cfg ${LINUXBINDIR}/banlist.txt \
+			${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${LINUXBINDIR}/alias-example.txt \
+		${STAGEDIR}${DATADIR}/alias.txt
+	${INSTALL_DATA} ${WRKSRC}/../AEstats.txt ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/.. && ${FIND} logs stats unrealmod | \
-		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
+		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
