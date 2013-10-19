@@ -38,7 +38,6 @@ MBSTRING_DESC=	Support multi-byte character sets
 POSTGRES_DESC=	PostgreSQL database support
 ZIP_DESC=	Install PHP zip extension
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -86,31 +85,27 @@ EG_DATA=	www/egdata
 EG_DATADIR=	${PREFIX}/${EG_DATA}
 
 pre-install:
-	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s#${WRKSRC}#${EG_DIR}#g" >${PLIST}
+	@${ECHO_CMD} '@owner ${WWWOWN}' > ${PLIST}
+	@${ECHO_CMD} '@group ${WWWGRP}' >> ${PLIST}
+	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s#${WRKSRC}#${EG_DIR}#g" >> ${PLIST}
 	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s#${WRKSRC}#@dirrm ${EG_DIR}#g" >> ${PLIST}
 	@${ECHO} @dirrm ${EG_DATA}/files >> ${PLIST}
 	@${ECHO} @dirrm ${EG_DATA}/backup >> ${PLIST}
 	@${ECHO} @dirrm ${EG_DATA} >> ${PLIST}
+	@${ECHO_CMD} '@group' >> ${PLIST}
+	@${ECHO_CMD} '@owner' >> ${PLIST}
 
 do-install:
-	${MKDIR} ${EG_WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${EG_WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${EG_WWWDIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${EG_WWWDIR}' \
-		>> ${TMPPLIST}
-	${CHMOD} -R 755 ${EG_WWWDIR}
-	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${EG_WWWDIR}' >> ${TMPPLIST}
-
-	${MKDIR} ${EG_DATADIR}
-	${MKDIR} ${EG_DATADIR}/files
-	${MKDIR} ${EG_DATADIR}/backup
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${EG_DATADIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${EG_DATADIR}' \
-		>> ${TMPPLIST}
-	${CHMOD} -R 755 ${EG_DATADIR}
-	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${EG_DATADIR}' >> ${TMPPLIST}
-
-post-install:
-	${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${EG_WWWDIR}
+	@${MKDIR} ${STAGEDIR}${EG_DATADIR}
+	@${MKDIR} ${STAGEDIR}${EG_DATADIR}/files
+	@${MKDIR} ${STAGEDIR}${EG_DATADIR}/backup
+	@${ECHO_CMD} '@owner ${WWWOWN}' >> ${PLIST}
+	@${ECHO_CMD} '@group ${WWWGRP}' >> ${PLIST}
+	@${ECHO_CMD} '@mode 755' >> ${PLIST}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${EG_WWWDIR}
+	@${ECHO_CMD} '@mode' >> ${PLIST}
+	@${ECHO_CMD} '@group' >> ${PLIST}
+	@${ECHO_CMD} '@owner' >> ${PLIST}
 
 .include <bsd.port.mk>
