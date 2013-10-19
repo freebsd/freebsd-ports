@@ -11,13 +11,14 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Convert DVD subtitles into text format (subrip srt) or VobSub format
 
-LIB_DEPENDS=	netpbm:${PORTSDIR}/graphics/netpbm \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libnetpbm.so:${PORTSDIR}/graphics/netpbm \
+		libpng15.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	gocr:${PORTSDIR}/graphics/gocr \
 		xv:${PORTSDIR}/graphics/xv \
 		transcode:${PORTSDIR}/multimedia/transcode
 
-USE_GMAKE=	yes
+USES=		gmake
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DOC_FILES=	\
@@ -40,7 +41,6 @@ PROGRAM_FILES=	\
 SCRIPT_FILES=	\
 		pgm2txt
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|^(CC[[:space:]]*=).*$$|\1${CC}|' \
@@ -56,49 +56,12 @@ post-patch:
 		-e 's|(gocr[[:space:]]+)|${LOCALBASE}/bin/\1|' \
 		${WRKSRC}/pgm2txt
 
-.include <bsd.port.pre.mk>
-
-##
-# PLIST
-##
-.ifndef(NOPORTDOCS)
-. for file in ${DOC_FILES}
-PORTDOCS+=	${file}
-. endfor
-.endif
-#
-PLIST_DIRS+=	%%EXAMPLESDIR%%
-.for file in ${EXAMPLES_FILES}
-PLIST_FILES+=	%%EXAMPLESDIR%%/${file}
-.endfor
-#
-.for file in ${PROGRAM_FILES}
-PLIST_FILES+=	bin/${file}
-.endfor
-#
-.for file in ${SCRIPT_FILES}
-PLIST_FILES+=	bin/${file}
-.endfor
-
-##
-# install
-##
 do-install:
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-. for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-. endfor
-.endif
-	@${MKDIR} ${EXAMPLESDIR}
-.for file in ${EXAMPLES_FILES}
-	@${INSTALL_SCRIPT} ${WRKSRC}/${file} ${EXAMPLESDIR}
-.endfor
-.for file in ${PROGRAM_FILES}
-	@${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
-.endfor
-.for file in ${SCRIPT_FILES}
-	@${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PREFIX}/bin
-.endfor
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}; ${INSTALL_DATA} ${DOC_FILES} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}; ${INSTALL_SCRIPT} ${EXAMPLES_FILES} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}; ${INSTALL_PROGRAM} ${PROGRAM_FILES} ${STAGEDIR}${PREFIX}/bin
+	cd ${WRKSRC}; ${INSTALL_SCRIPT} ${SCRIPT_FILES} ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
