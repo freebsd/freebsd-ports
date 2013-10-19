@@ -3,7 +3,7 @@
 
 PORTNAME=	sane-backends
 PORTVERSION=	1.0.23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/3752/:3752 \
 		http://alioth.debian.org/frs/download.php/3753/:3753 \
@@ -20,25 +20,25 @@ COMMENT=	API for access to scanners, digitals camera, frame grabbers etc
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
+		libv4l1.so:${PORTSDIR}/multimedia/libv4l
 
-OPTIONS_DEFINE=	USB GPHOTO2 SNMP AVAHI IEEE1284 IPV6 DOCS
+OPTIONS_DEFINE=	AVAHI CUPS DOCS GPHOTO IEEE1284 IPV6 NLS SNMP USB
 OPTIONS_DEFAULT=	USB
+OPTIONS_SUB=	yes
 
 USB_DESC=	USB support
-GPHOTO2_DESC=	gPhoto2 support
 IEEE1284_DESC=	libieee1284 support
 
-USES=	pathfix pkgconfig
-USE_GMAKE=	yes
+USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-docdir=${WRKDIR}/tmproot \
+CONFIGURE_ARGS=	--with-docdir=${DOCSDIR} \
 		--disable-latex \
 		--disable-locking \
 		--enable-pthread
 USE_LDCONFIG=	yes
 
+PORTDOCS=	*
 USE_RC_SUBR=	saned
 SUB_FILES+=	pkg-message
 
@@ -48,59 +48,34 @@ GROUPS=	saned
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
-.include "Makefile.man"
+AVAHI_CONFIGURE_ENABLE=	avahi
+AVAHI_LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
+
+CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+
+GPHOTO_CONFIGURE_OFF=	--with-gphoto2=no
+GPHOTO_LIB_DEPENDS=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
+
+IEEE1284_LIB_DEPENDS=	libieee1284.so:${PORTSDIR}/sysutils/libieee1284
+
+IPV6_CONFIGURE_OFF=	--disable-ipv6
+
+NLS_CONFIGURE_OFF=	--disable-translations
+NLS_USES=		gettext
+
+SNMP_CONFIGURE_OFF=	--without-snmp
+SNMP_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+
+USB_CONFIGURE_OFF=	--disable-libusb
+
 .include <bsd.port.options.mk>
 
-.if ! ${PORT_OPTIONS:MUSB}
-CONFIGURE_ARGS+=	--disable-libusb
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=	gettext
-PLIST_SUB+=		NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-translations
-PLIST_SUB+=		NLS="@comment "
-.endif
-
-.if empty(PORT_OPTIONS:MIPV6)
-CONFIGURE_ARGS+=	--disable-ipv6
-.endif
-
-.if ${PORT_OPTIONS:MGPHOTO2}
-LIB_DEPENDS+=		gphoto2:${PORTSDIR}/graphics/libgphoto2
-MAN5+=			sane-gphoto2.5
-PLIST_SUB+=		GPHOTO2=""
-.else
-CONFIGURE_ARGS+=	--with-gphoto2=no
-PLIST_SUB+=		GPHOTO2="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSNMP}
-LIB_DEPENDS+=		netsnmp:${PORTSDIR}/net-mgmt/net-snmp
-.else
-CONFIGURE_ARGS+=	--without-snmp
-.endif
-
-.if ${PORT_OPTIONS:MAVAHI}
-LIB_DEPENDS+=		avahi-client:${PORTSDIR}/net/avahi-app
-CONFIGURE_ARGS+=	--enable-avahi
-.endif
-
-.if ${PORT_OPTIONS:MIEEE1284}
-LIB_DEPENDS+=		ieee1284:${PORTSDIR}/sysutils/libieee1284
-PLIST_SUB+=		IEEE1284=""
-MAN5+=			sane-canon_pp.5 sane-hpsj5s.5 sane-mustek_pp.5
-.else
-CONFIGURE_ENV+=		sane_cv_use_libieee1284=no
-PLIST_SUB+=		IEEE1284="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MCUPS}
-LIB_DEPENDS+=		cups:${PORTSDIR}/print/cups-client
-.else
+.if ! ${PORT_OPTIONS:MCUPS}
 CONFIGURE_ENV+=		ac_cv_header_cups_cups_h=no
+.endif
+
+.if ! ${PORT_OPTIONS:MIEEE1284}
+CONFIGURE_ENV+=		sane_cv_use_libieee1284=no
 .endif
 
 post-extract:
@@ -119,10 +94,6 @@ post-patch:
 		${WRKSRC}/tools/sane-config.in
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKDIR}/tmproot && ${COPYTREE_SHARE} . ${DOCSDIR})
-.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
