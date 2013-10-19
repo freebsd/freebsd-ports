@@ -11,8 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Command Line Tool to make a copy from a Video DVD
 
-LIB_DEPENDS=	dvdnav.4:${PORTSDIR}/multimedia/libdvdnav \
-		dvdread.4:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS=	libdvdnav.so:${PORTSDIR}/multimedia/libdvdnav \
+		libdvdread.so:${PORTSDIR}/multimedia/libdvdread
 RUN_DEPENDS=	buffer:${PORTSDIR}/misc/buffer \
 		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
@@ -41,14 +41,10 @@ LXDVDRIPSRC=	cputest.c \
 CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -ldvdread -lm
 
-PORTDOCS=	Changelog.de Changelog.en Changelog.fr \
+DOCS=	Changelog.de Changelog.en Changelog.fr \
 		README.de  README.en README.fr \
 		README.dvdwizard.DE README.dvdwizard.EN README.dvdwizard.FR \
 		TODO freebsd.doc
-MAN1=		lxdvdrip.1
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -E \
@@ -73,34 +69,24 @@ post-patch:
 
 do-install:
 .for f in lxdvdrip lxac3scan
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/lxdvdrip.1 ${PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/doc-pak/lxdvdrip.conf.EN ${PREFIX}/etc/lxdvdrip.conf.sample
-.if !exists(${PREFIX}/etc/lxdvdrip.conf)
-	${INSTALL_DATA} ${WRKSRC}/doc-pak/lxdvdrip.conf.EN ${PREFIX}/etc/lxdvdrip.conf
-.endif
+	${INSTALL_MAN} ${WRKSRC}/lxdvdrip.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/doc-pak/lxdvdrip.conf.EN ${STAGEDIR}${PREFIX}/etc/lxdvdrip.conf.sample
 # binaries
-	${INSTALL_PROGRAM} ${WRKSRC}/vamps/vamps_${PORTNAME} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/vamps/play_cell_${PORTNAME} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/dvdbackup/dvdbackup_${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/vamps/vamps_${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/vamps/play_cell_${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/dvdbackup/dvdbackup_${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 # examples
-	@${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in lxdvdrip.conf.DE lxdvdrip.conf.EN lxdvdrip.conf.FR
-	${INSTALL_DATA} ${WRKSRC}/doc-pak/${f} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc-pak/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 # data
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.wav ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.wav ${STAGEDIR}${DATADIR}
 # docs
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc-pak/${f} ${DOCSDIR}
-.endfor
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc-pak ; ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
