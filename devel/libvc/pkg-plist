@@ -1,0 +1,12 @@
+include/vc.h
+lib/libvc.a
+lib/libvc.so
+lib/libvc.so.0
+man/man3/vc.3.gz
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/rfc2426.txt
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

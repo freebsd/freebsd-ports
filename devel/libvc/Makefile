@@ -16,21 +16,13 @@ USES=		bison
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-MAN3=		vc.3
-PLIST_FILES=	lib/libvc.a \
-		lib/libvc.so \
-		lib/libvc.so.0 \
-		include/vc.h
-PORTDOCS=	*
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for DOC in AUTHORS ChangeLog NEWS README THANKS doc/rfc2426.txt
-	${INSTALL_DATA} ${WRKSRC}/${DOC} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${DOC} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 	@${RM} -f ${PREFIX}/lib/libvc.la
