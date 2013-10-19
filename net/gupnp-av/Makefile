@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gupnp-av
-PORTVERSION=	0.12.2
+PORTVERSION=	0.12.3
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -24,7 +24,6 @@ USE_LDCONFIG=	yes
 USE_XZ=		yes
 USES=		gmake pathfix pkgconfig
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wno-unused-parameters||' ${WRKSRC}/tests/Makefile.in
 
