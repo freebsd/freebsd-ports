@@ -2,13 +2,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Round/.packlist
 %%SITE_PERL%%/Math/Round.pm
 %%PERL5_MAN3%%/Math::Round.3.gz
-@dirrmtry %%PERL5_MAN3%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Round
 @dirrm %%SITE_PERL%%/auto/Math/Round
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
 @dirrmtry %%SITE_PERL%%/auto/Math
-@dirrmtry %%SITE_PERL%%/auto
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
 @dirrmtry %%SITE_PERL%%/Math
-@dirrmtry %%SITE_PERL%%
