@@ -1,15 +1,17 @@
-*** makefile.unx.orig	Tue Mar  5 06:36:27 1996
---- makefile.unx	Mon May 12 15:23:42 1997
-***************
-*** 10,15 ****
---- 10,19 ----
-  CC=gcc
-  CFLAGS=-O -Wall -DUNIX -DUSE_REMINDER
-  
-+ .ifdef PREFIX
-+ CFLAGS+=-DPREFIX="\"${PREFIX}\""
-+ .endif
-+ 
-  BINDIR=/usr/bin
-  MANDIR=/usr/man
-  
+--- source/makefile.unx.orig	1996-03-05 06:36:27.000000000 +0900
++++ source/makefile.unx	2013-10-19 20:15:02.149614385 +0900
+@@ -7,9 +7,13 @@
+ # To use, enter "make -f makefile.unx"
+ 
+ RM=rm -f
+-CC=gcc
++CC=cc
+ CFLAGS=-O -Wall -DUNIX -DUSE_REMINDER
+ 
++.ifdef PREFIX
++CFLAGS+=-DPREFIX="\"${PREFIX}\""
++.endif
++
+ BINDIR=/usr/bin
+ MANDIR=/usr/man
+ 
