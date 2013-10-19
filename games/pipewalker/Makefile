@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pipewalker
-PORTVERSION=	0.8.3
-PORTREVISION=	1
+PORTVERSION=	0.9.1
 CATEGORIES=	games
 MASTER_SITES=	SF
 EXTRACT_SUFX=	-src.tar.gz
@@ -18,10 +17,15 @@ USE_GL=		gl glu
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+PLIST_FILES=	bin/${PORTNAME} \
+		share/applications/${PORTNAME}.desktop \
+		share/pixmaps/${PORTNAME}.xpm
+PLIST_DIRSTRY=	share/applications
 PORTDOCS=	*
+PORTDATA=	*
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
 
 post-patch:
 	@${CHMOD} a+x ${WRKSRC}/install-sh
@@ -29,9 +33,5 @@ post-patch:
 		${WRKSRC}/data/Makefile.in ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e '/^install-data-am/ s|install-pkgmenudataDATA||' \
 		${WRKSRC}/extra/Makefile.in
-.if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e '/^install-data-am/ s|install-pkgdocdataDATA||' \
-		${WRKSRC}/Makefile.in
-.endif
 
 .include <bsd.port.mk>
