@@ -6,9 +6,8 @@ PORTVERSION=	0.1.3
 PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.users.waitrose.com/~thunor/pipepanic/dload/ \
-		${MASTER_SITE_LOCAL} \
+		LOCAL/ehaupt \
 		http://mirror.amdmi3.ru/distfiles/
-MASTER_SITE_SUBDIR=	ehaupt
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -16,12 +15,12 @@ COMMENT=	A pipe connecting game using libSDL
 
 USE_SDL=	sdl
 
-PORTDOCS=	README
-DATAFILES=	ascii15.bmp ascii30.bmp digits24.bmp \
-		digits48.bmp tiles24.bmp tiles48.bmp
+PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	*
+PORTDATA=	*
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -29,14 +28,10 @@ post-patch:
 			${WRKSRC}/main.h
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-.for f in ${DATAFILES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
-.endfor
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.bmp ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

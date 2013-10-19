@@ -1,8 +1,0 @@
-bin/pipepanic
-%%DATADIR%%/ascii15.bmp
-%%DATADIR%%/ascii30.bmp
-%%DATADIR%%/digits24.bmp
-%%DATADIR%%/digits48.bmp
-%%DATADIR%%/tiles24.bmp
-%%DATADIR%%/tiles48.bmp
-@dirrm %%DATADIR%%
