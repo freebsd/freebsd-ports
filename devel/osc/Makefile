@@ -21,9 +21,6 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGVERSION=${PORTVERSION:C/^([0-9]+\.[0-9]+)\.[0-9]+/\1/}
 
-MAN1=		osc.1
-MANCOMPRESSED=	yes
-
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	CA_BUNDLE DOCS
@@ -46,10 +43,8 @@ post-patch:
 
 post-install:
 	${LN} -s osc-wrapper.py ${STAGEDIR}${PREFIX}/bin/osc
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS README NEWS TODO \
 		${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
