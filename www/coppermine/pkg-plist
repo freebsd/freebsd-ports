@@ -2174,8 +2174,6 @@
 %%WWWDIR%%/viewlog.php
 %%WWWDIR%%/xp_publish.php
 %%WWWDIR%%/zipdownload.php
-@group
-@owner
 @dirrm %%WWWDIR%%/themes/water_drop/images
 @dirrm %%WWWDIR%%/themes/water_drop
 @dirrm %%WWWDIR%%/themes/sample/images
@@ -2255,4 +2253,6 @@
 @dirrm %%WWWDIR%%/albums/edit
 @dirrm %%WWWDIR%%/albums
 @dirrmtry %%WWWDIR%%
+@group
+@owner
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
