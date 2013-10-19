@@ -11,24 +11,15 @@ COMMENT=	Check bank codes of German banks
 
 LICENSE=	GPLv2
 
-USES=	pathfix
+USES=		pathfix
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
-MAN1=		ktoblzcheck.1
-
 OPTIONS_DEFINE=	PYTHON
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	yes
-PLIST_SUB+=	PYTHON=""
-.else
-CONFIGURE_ARGS+=--disable-python
-PLIST_SUB+=	PYTHON="@comment "
-.endif
+PYTHON_USE=			PYTHON=yes
+PYTHON_CONFIGURE_ENABLE=	python
 
 post-patch:
 	@${REINPLACE_CMD} -e "s/-lstdc++//g" ${WRKSRC}/src/lib/Makefile.in
