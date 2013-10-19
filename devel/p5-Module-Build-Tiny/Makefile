@@ -19,11 +19,8 @@ BUILD_DEPENDS=	p5-ExtUtils-Config>=0.003:${PORTSDIR}/devel/p5-ExtUtils-Config \
 		p5-Test-Harness>=3.29:${PORTSDIR}/devel/p5-Test-Harness
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-NO_STAGE=	yes
 USE_PERL5=	modbuildtiny
 USES=		perl5
-
-MAN3=		Module::Build::Tiny.3
 
 .include <bsd.port.pre.mk>
 
