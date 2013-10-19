@@ -14,6 +14,8 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USES=	gmake
 
+MAKE_ARGS= CC="${CC}" CFLAGS="${CFLAGS}" LD="${CC}" LDFLAGS="${LDFLAGS}"
+
 MAN1=	file65.1 ldo65.1 printcbm.1 reloc65.1 uncpk.1 xa.1
 MLINKS=	xa.1 xa65.1
 
@@ -28,10 +30,6 @@ PLIST_FILES=	bin/xa65 \
 		bin/uncpk
 
 NO_STAGE=	yes
-post-patch-script:
-.for i in CC LDFLAGS CFLAGS
-	@${REINPLACE_CMD} 's|${i} = |${i} ?= |g' ${WRKSRC}/Makefile
-.endfor
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xa ${PREFIX}/bin/xa65
