@@ -35,7 +35,7 @@ do-build:
 	-I${LOCALBASE}/include -DILTDIR=\"${DATADIR}\" -c ${WRKSRC}/${file} -o ${WRKSRC}/${file:S/.c/.o/}
 .endfor
 	${CC} ${CFLAGS} -L/lib -L/usr/lib -L${TCL_LIBDIR} -L${TK_LIBDIR} -L${LOCALBASE}/lib \
-	-lm -ltcl${TCL_VER:S/.//} -ltk${TK_VER:S/.//} ${WRKSRC}/*.o ${WRKSRC}/tcpdump/*.o -o ${WRKSRC}/tcpillust -lpcap
+	-lm -ltcl${TCL_VER:S/.//} -ltk${TK_VER:S/.//} ${WRKSRC}/*.o ${WRKSRC}/tcpdump/*.o -o ${WRKSRC}/tcpillust -lpcap -lX11
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcpillust ${PREFIX}/bin
