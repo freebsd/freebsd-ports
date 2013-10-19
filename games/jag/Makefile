@@ -19,10 +19,14 @@ USE_SDL=	sdl mixer
 USE_DOS2UNIX=	Game.pro
 USE_XORG=	x11
 
+MAKE_ARGS+=	INSTALL_ROOT="${STAGEDIR}"
+
 USE_QT4=	qmake_build uic_build moc_build rcc_build \
 		corelib svg xml opengl network
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/${PORTNAME}
+PORTDATA=	*
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/games/jag|${DATADIR}|' \
 		${WRKSRC}/main.cpp ${WRKSRC}/Game.pro
@@ -33,7 +37,6 @@ do-configure:
 		${QMAKE} ${QMAKEFLAGS} Game.pro
 
 post-install:
-	${MKDIR} ${DATADIR}
-	cd ${WRKDIR}/${DISTNAME:C/src/data/} && ${COPYTREE_SHARE} data ${DATADIR}/
+	cd ${WRKDIR}/${DISTNAME:C/src/data/} && ${COPYTREE_SHARE} data ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
