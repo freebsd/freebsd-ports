@@ -18,4 +18,11 @@ lib/libvcdinfo.la
 lib/libvcdinfo.so
 lib/libvcdinfo.so.2
 libdata/pkgconfig/libvcdinfo.pc
+man/man1/cdxa2mpeg.1.gz
+man/man1/vcd-info.1.gz
+man/man1/vcdimager.1.gz
+man/man1/vcdxbuild.1.gz
+man/man1/vcdxgen.1.gz
+man/man1/vcdxminfo.1.gz
+man/man1/vcdxrip.1.gz
 @dirrm include/libvcd
