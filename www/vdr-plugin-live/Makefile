@@ -39,7 +39,7 @@ EXTRA_PATCH_STRIP=	-p1
 post-patch: post-patch-plugin
 	${CP} ${FILESDIR}/gen_version_suffix.h ${WRKSRC}
 
-pre-install:
+pre-su-install:
 	${MKDIR} ${PREFIX}/lib/vdr
 
 post-install: post-install-pluginlocales
