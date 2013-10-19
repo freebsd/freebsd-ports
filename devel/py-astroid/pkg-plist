@@ -10,6 +10,9 @@
 %%PYTHON_SITELIBDIR%%/astroid/bases.py
 %%PYTHON_SITELIBDIR%%/astroid/bases.pyc
 %%PYTHON_SITELIBDIR%%/astroid/bases.pyo
+%%PYTHON_SITELIBDIR%%/astroid/brain/py2gi.py
+%%PYTHON_SITELIBDIR%%/astroid/brain/py2gi.pyc
+%%PYTHON_SITELIBDIR%%/astroid/brain/py2gi.pyo
 %%PYTHON_SITELIBDIR%%/astroid/brain/py2qt4.py
 %%PYTHON_SITELIBDIR%%/astroid/brain/py2qt4.pyc
 %%PYTHON_SITELIBDIR%%/astroid/brain/py2qt4.pyo
