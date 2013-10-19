@@ -51,6 +51,47 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="043d3a78-f245-4938-9bc7-3d0d35dd94bf">
+    <topic>wordpress -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>zh-wordpress-zh_CN</name>
+	<name>zh-wordpress-zh_TW</name>
+	<name>de-wordpress</name>
+	<name>ja-wordpress</name>
+	<name>ru-wordpress</name>
+	<name>wordpress</name>
+	<range><lt>3.6.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The wordpress development team reports:</p>
+	<blockquote cite="http://wordpress.org/news/2013/09/wordpress-3-6-1/">
+	  <ul>
+	    <li>Block unsafe PHP unserialization that could occur in limited
+		situations and setups, which can lead to remote code
+		execution.</li>
+	    <li>Prevent a user with an Author role, using a specially crafted
+		request, from being able to create a post "written by" another
+		user.</li>
+	    <li>Fix insufficient input validation that could result in
+		redirecting or leading a user to another website.</li>
+	  </ul>
+	<p>Additionally, we've adjusted security restrictions around file
+	   uploads to mitigate the potential for cross-site scripting.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<url>http://wordpress.org/news/2013/09/wordpress-3-6-1/</url>
+    </references>
+    <dates>
+      <discovery>2013-09-11</discovery>
+      <entry>2013-10-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="206f9826-a06d-4927-9a85-771c37010b32">
     <topic>node.js -- DoS Vulnerability</topic>
     <affects>
