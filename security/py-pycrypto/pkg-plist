@@ -293,6 +293,9 @@
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Random/__init__.py
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Random/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Random/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Random/test__UserFriendlyRNG.py
+%%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Random/test__UserFriendlyRNG.pyc
+%%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Random/test__UserFriendlyRNG.pyo
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Random/test_random.py
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Random/test_random.pyc
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Random/test_random.pyo

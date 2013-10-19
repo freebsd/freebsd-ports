@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pycrypto
-PORTVERSION=	2.6
-PORTREVISION=	1
+PORTVERSION=	2.6.1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP \
 		https://ftp.dlitz.net/pub/dlitz/crypto/pycrypto/
