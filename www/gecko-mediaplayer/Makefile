@@ -26,7 +26,7 @@ USES=		pkgconfig
 USE_GNOME=	glib20
 USE_GECKO=	libxul
 USE_WEBPLUGINS=	native
-USE_GCC=	4.6+
+USE_GCC=	yes
 
 WEBPLUGINS_FILES=	${PORTNAME}.so
 .for p in dvx rm qt wmp
