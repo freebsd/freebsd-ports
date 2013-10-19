@@ -16,6 +16,23 @@
 %%SITE_PERL%%/SRU/Utils/XML.pm
 %%SITE_PERL%%/SRU/Utils/XMLTest.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SRU/.packlist
+%%PERL5_MAN3%%/Catalyst::Controller::SRU.3.gz
+%%PERL5_MAN3%%/SRU.3.gz
+%%PERL5_MAN3%%/SRU::Request.3.gz
+%%PERL5_MAN3%%/SRU::Request::Explain.3.gz
+%%PERL5_MAN3%%/SRU::Request::Scan.3.gz
+%%PERL5_MAN3%%/SRU::Request::SearchRetrieve.3.gz
+%%PERL5_MAN3%%/SRU::Response.3.gz
+%%PERL5_MAN3%%/SRU::Response::Diagnostic.3.gz
+%%PERL5_MAN3%%/SRU::Response::Explain.3.gz
+%%PERL5_MAN3%%/SRU::Response::Record.3.gz
+%%PERL5_MAN3%%/SRU::Response::Scan.3.gz
+%%PERL5_MAN3%%/SRU::Response::SearchRetrieve.3.gz
+%%PERL5_MAN3%%/SRU::Response::Term.3.gz
+%%PERL5_MAN3%%/SRU::Server.3.gz
+%%PERL5_MAN3%%/SRU::Utils.3.gz
+%%PERL5_MAN3%%/SRU::Utils::XML.3.gz
+%%PERL5_MAN3%%/SRU::Utils::XMLTest.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SRU
 @dirrm %%SITE_PERL%%/SRU/Utils
 @dirrm %%SITE_PERL%%/SRU/Response
