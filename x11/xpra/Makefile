@@ -19,7 +19,7 @@ RUN_DEPENDS=	cython:${PORTSDIR}/lang/cython \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
 		py*-notify>=0:${PORTSDIR}/devel/py-notify \
 		Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 
 MANCOMPRESSED=	no
 MAN1=		xpra.1 xpra_launcher.1 parti.1

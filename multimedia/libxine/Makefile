@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xine
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.4
 PORTREVISION=	4
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib/${PORTVERSION}
@@ -12,29 +12,29 @@ DISTNAME=	${PORTNAME}-lib-${PORTVERSION}
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Libraries for xine multimedia player
 
-LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
-		a52:${PORTSDIR}/audio/liba52 \
-		vorbis:${PORTSDIR}/audio/libvorbis \
-		speex:${PORTSDIR}/audio/speex \
-		mng:${PORTSDIR}/graphics/libmng \
-		png15:${PORTSDIR}/graphics/png \
-		dvdread:${PORTSDIR}/multimedia/libdvdread \
-		freetype:${PORTSDIR}/print/freetype2 \
-		fame-0:${PORTSDIR}/multimedia/libfame \
-		cdio:${PORTSDIR}/sysutils/libcdio \
-		modplug:${PORTSDIR}/audio/libmodplug \
-		vcdinfo:${PORTSDIR}/multimedia/vcdimager \
-		theora:${PORTSDIR}/multimedia/libtheora \
-		mad:${PORTSDIR}/audio/libmad \
-		dca:${PORTSDIR}/multimedia/libdca \
-		avcodec:${PORTSDIR}/multimedia/ffmpeg \
-		faad:${PORTSDIR}/audio/faad \
-		vdpau:${PORTSDIR}/multimedia/libvdpau
+LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
+		liba52.so:${PORTSDIR}/audio/liba52 \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libspeex.so:${PORTSDIR}/audio/speex \
+		libmng.so:${PORTSDIR}/graphics/libmng \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libdvdread.so:${PORTSDIR}/multimedia/libdvdread \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libfame.so:${PORTSDIR}/multimedia/libfame \
+		libcdio.so:${PORTSDIR}/sysutils/libcdio \
+		libmodplug.so:${PORTSDIR}/audio/libmodplug \
+		libvcdinfo.so:${PORTSDIR}/multimedia/vcdimager \
+		libtheora.so:${PORTSDIR}/multimedia/libtheora \
+		libmad.so:${PORTSDIR}/audio/libmad \
+		libdca.so:${PORTSDIR}/multimedia/libdca \
+		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
+		libfaad.so:${PORTSDIR}/audio/faad \
+		libvdpau.so:${PORTSDIR}/multimedia/libvdpau
 
 BUILD_DEPENDS+=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
 
 .if !defined(PACKAGE_BUILDING)
-LIB_DEPENDS+=	dvdcss.${DVDCSS_LIBVERSION}:${PORTSDIR}/multimedia/libdvdcss
+LIB_DEPENDS+=	libdvdcss.so.${DVDCSS_LIBVERSION}:${PORTSDIR}/multimedia/libdvdcss
 .endif
 
 USES=		gmake iconv pathfix perl5 pkgconfig
@@ -68,11 +68,8 @@ CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 \
 OPTIONS_DEFINE=	CACA ESOUND JACK GNOMEVFS2 PULSEAUDIO XVMC SMB AALIB \
 		IMAGEMAGICK GTK2 WAVPACK VAAPI LIBBLURAY
 
-MAN1=	xine-config.1 xine-list-1.2.1
-MAN5=	xine.5
-
-DOCSDIR=	${PREFIX}/share/doc/xine-lib
-PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/2.2"
+DOCSDIR=	${STAGEDIR}${PREFIX}/share/doc/xine-lib
+PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/2.3"
 
 # DVDCSS version hardcoded in src/input/input_dvd.c misc/cdda_server.c
 # and src/input/libdvdnav/dvd_input.c (dlopen'ed)
@@ -80,7 +77,6 @@ DVDCSS_LIBVERSION=	3
 
 PATCH_DIST_ARGS=	-d ${WRKSRC} -p1 --forward --quiet
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"
@@ -96,7 +92,7 @@ CONFIGURE_ARGS+=	--disable-nls
 .endif
 
 .if ${PORT_OPTIONS:MCACA}
-LIB_DEPENDS+=	caca:${PORTSDIR}/graphics/libcaca
+LIB_DEPENDS+=	libcaca.so:${PORTSDIR}/graphics/libcaca
 PLIST_SUB+=	WITH_CACA=""
 .else
 PLIST_SUB+=	WITH_CACA="@comment "
@@ -112,7 +108,7 @@ CONFIGURE_ARGS+=	--without-esound
 .endif
 
 .if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
 PLIST_SUB+=	WITH_JACK=""
 .else
 PLIST_SUB+=	WITH_JACK="@comment "
@@ -128,7 +124,7 @@ CONFIGURE_ARGS+=	--disable-gnomevfs
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 PLIST_SUB+=	WITH_PULSEAUDIO=""
 .else
 PLIST_SUB+=	WITH_PULSEAUDIO="@comment "
@@ -138,10 +134,10 @@ CONFIGURE_ARGS+=	--without-pulseaudio
 .if ${PORT_OPTIONS:MXVMC}
 .if defined(WITH_NVIDIA304_GL) || exists(${LOCALBASE}/lib/libXvMCNVIDIA.so.1)
 CONFIGURE_ARGS+=	--with-xvmc-lib=XvMCNVIDIA
-LIB_DEPENDS+=	XvMCNVIDIA:${PORTSDIR}/x11/nvidia-driver-304
+LIB_DEPENDS+=	libXvMCNVIDIA.so:${PORTSDIR}/x11/nvidia-driver-304
 .else
 CONFIGURE_ARGS+=	--with-xvmc-lib=XvMCW
-LIB_DEPENDS+=	XvMC:${PORTSDIR}/x11/libXvMC
+LIB_DEPENDS+=	libXvMC.so:${PORTSDIR}/x11/libXvMC
 .endif
 PLIST_SUB+=	WITH_XVMC=""
 .else
@@ -150,7 +146,7 @@ PLIST_SUB+=	WITH_XVMC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSMB}
-LIB_DEPENDS+=	smbclient:${PORTSDIR}/net/samba-libsmbclient
+LIB_DEPENDS+=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
 PLIST_SUB+=	WITH_SMB=""
 CONFIGURE_ARGS+=	--enable-samba
 .else
@@ -159,7 +155,7 @@ CONFIGURE_ARGS+=	--disable-samba
 .endif
 
 .if ${PORT_OPTIONS:MAALIB}
-LIB_DEPENDS+=	aa:${PORTSDIR}/graphics/aalib
+LIB_DEPENDS+=	libaa.so:${PORTSDIR}/graphics/aalib
 PLIST_SUB+=	WITH_AALIB=""
 .else
 PLIST_SUB+=	WITH_AALIB="@comment "
@@ -167,7 +163,7 @@ CONFIGURE_ARGS+=	--disable-aalib --disable-aalibtest
 .endif
 
 .if ${PORT_OPTIONS:MMAGICK}
-LIB_DEPENDS+=	MagickWand:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	libMagickWand.so:${PORTSDIR}/graphics/ImageMagick
 PLIST_SUB+=	WITH_IMAGEMAGICK=""
 .else
 PLIST_SUB+=	WITH_IMAGEMAGICK="@comment "
@@ -183,7 +179,7 @@ CONFIGURE_ARGS+=	--disable-gdkpixbuf
 .endif
 
 .if ${PORT_OPTIONS:MWAVPACK}
-LIB_DEPENDS+=	wavpack:${PORTSDIR}/audio/wavpack
+LIB_DEPENDS+=	libwavpack.so:${PORTSDIR}/audio/wavpack
 PLIST_SUB+=	WITH_WAVPACK=""
 CONFIGURE_ARGS+=	--with-wavpack
 .else
@@ -192,12 +188,12 @@ CONFIGURE_ARGS+=	--without-wavpack
 .endif
 
 .if ${PORT_OPTIONS:MVAAPI}
-LIB_DEPENDS+=	va:${PORTSDIR}/multimedia/libva
+LIB_DEPENDS+=	libva.so:${PORTSDIR}/multimedia/libva
 .endif
 
 .if ${PORT_OPTIONS:MLIBBLURAY}
 CONFIGURE_OPTS+=	--enable-bluray
-LIB_DEPENDS+=	bluray:${PORTSDIR}/multimedia/libbluray
+LIB_DEPENDS+=	libbluray.so:${PORTSDIR}/multimedia/libbluray
 PLIST_SUB+=	LIBBLURAY=""
 .else
 CONFIGURE_OPTS+=	--disable-bluray
@@ -219,7 +215,7 @@ CONFIGURE_ARGS+=	--disable-vidix
 
 post-patch:
 .if ${PORT_OPTIONS:MVAAPI}
-	@${PATCH} ${PATCH_DIST_ARGS} <${FILESDIR}/ffmpeg-vaapi_xine-lib-1.2.2-defaultoff.diff
+	#@${PATCH} ${PATCH_DIST_ARGS} <${FILESDIR}/ffmpeg-vaapi_xine-lib-1.2.2-defaultoff.diff
 .endif
 .for f in libtool ltmain.sh
 	@${REINPLACE_CMD} -e \

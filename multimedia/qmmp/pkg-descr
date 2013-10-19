@@ -2,9 +2,9 @@ This program is an audio-player, written with help of Qt library.
 Supported formats:
 	MPEG1 layer 2/3, Ogg Vorbis, Native FLAC, Ogg FLAC, Musepack, WavePack,
 	tracker modules (mod, s3m, it, xm, etc.), ADTS AAC, CD Audio, MIDI,
-	WMA-Monkey's Audio (and other formats provided by FFmpeg library), PCM
-	Wave (and other formats provided by libsndfile library), and Chiptune
-	formats (AY, GBS, GYM, HES, KSS, NSF, NSFE, SAP, SPC, VGM, VGZ, VTX)
+	Opus tags, WMA-Monkey's Audio (and other formats via FFmpeg),
+	PCM Wave (and other formats via libsndfile), and Chiptune formats
+	(AY, GBS, GYM, HES, KSS, NSF, NSFE, SAP, SPC, VGM, VGZ, VTX)
 DSP effects:
 	Bauer Stereophonic-to-Binaural effect, sample rate conversion,
 	LADSPA effects, extra stereo effect, and crossfade effect

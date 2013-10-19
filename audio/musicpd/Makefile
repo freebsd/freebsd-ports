@@ -148,9 +148,9 @@ LIB_DEPENDS+=	zzip.13:${PORTSDIR}/devel/zziplib \
 .endif
 
 .if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		avformat:${PORTSDIR}/multimedia/ffmpeg \
-		avutil.1:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
+		libavformat.so:${PORTSDIR}/multimedia/ffmpeg \
+		libavutil.so:${PORTSDIR}/multimedia/ffmpeg
 .else
 CONFIGURE_ARGS+=--disable-ffmpeg
 .endif

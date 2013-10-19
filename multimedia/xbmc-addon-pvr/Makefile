@@ -3,6 +3,7 @@
 
 PORTNAME=	xbmc-pvr-addons
 PORTVERSION=	12.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://people.freebsd.org/~decke/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-Frodo

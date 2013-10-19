@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sox
-PORTVERSION=	14.3.2
-PORTREVISION=	6
+PORTVERSION=	14.4.1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -15,15 +14,10 @@ LICENSE_COMB=	dual
 
 CONFLICTS=	play-[0-9]*
 
-MAN1=		sox.1 soxi.1
-MAN3=		libsox.3
-MAN7=		soxformat.7
-MLINKS=		sox.1 play.1 sox.1 rec.1 sox.1 soxeffect.7
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
-NO_STAGE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libltdl
+USE_AUTOTOOLS=	aclocal autoconf automake libltdl
 
 OPTIONS_DEFINE=	ALSA AO AMRNB AMRWB FFMPEG FLAC GSM ID3TAG LADSPA LAME \
 		MAD PNG SNDFILE VORBIS WAVPACK
@@ -76,7 +70,7 @@ CONFIGURE_ARGS+=	--without-amrwb
 
 .if ${PORT_OPTIONS:MFFMPEG}
 CONFIGURE_ARGS+=	--with-ffmpeg
-LIB_DEPENDS+=		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 .else
 CONFIGURE_ARGS+=	--without-ffmpeg
 .endif
@@ -155,5 +149,10 @@ LIB_DEPENDS+=		wavpack.2:${PORTSDIR}/audio/wavpack
 .else
 CONFIGURE_ARGS+=	--without-wavpack
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/ CODEC_ID/ AV_CODEC_ID/g' \
+		-e 's/ CodecID/ AVCodecID/g' \
+		${WRKSRC}/src/ffmpeg.c
 
 .include <bsd.port.mk>

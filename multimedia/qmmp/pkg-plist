@@ -17,7 +17,6 @@ include/qmmp/output.h
 include/qmmp/outputfactory.h
 include/qmmp/qmmp.h
 include/qmmp/qmmpsettings.h
-include/qmmp/recycler.h
 include/qmmp/soundcore.h
 include/qmmp/statehandler.h
 include/qmmp/tagmodel.h
@@ -34,6 +33,7 @@ include/qmmpui/general.h
 include/qmmpui/generalfactory.h
 include/qmmpui/mediaplayer.h
 include/qmmpui/metadataformatter.h
+include/qmmpui/playlistdownloader.h
 include/qmmpui/playlistformat.h
 include/qmmpui/playlistitem.h
 include/qmmpui/playlistmanager.h
@@ -62,6 +62,7 @@ lib/qmmp/CommandLineOptions/libstatusoption.so
 %%MPLAYER%%lib/qmmp/Engines/libmplayer.so
 %%QMMP_DIALOG%%lib/qmmp/FileDialogs/libqmmpfiledialog.so
 %%CONVERTER%%lib/qmmp/General/libconverter.so
+%%COPYPASTE%%lib/qmmp/General/libcopypaste.so
 %%COVER%%lib/qmmp/General/libcovermanager.so
 %%FILEOPS%%lib/qmmp/General/libfileops.so
 %%HAL%%lib/qmmp/General/libhal.so
@@ -73,16 +74,20 @@ lib/qmmp/CommandLineOptions/libstatusoption.so
 %%SCROBBLER%%lib/qmmp/General/libscrobbler.so
 %%STATICON%%lib/qmmp/General/libstatusicon.so
 %%SB%%lib/qmmp/General/libstreambrowser.so
+%%TRACKCHANGE%%lib/qmmp/General/libtrackchange.so
 %%UDISKS%%lib/qmmp/General/libudisks.so
+%%UDISKS2%%lib/qmmp/General/libudisks2.so
 %%FAAD%%lib/qmmp/Input/libaac.so
 %%CDIO%%lib/qmmp/Input/libcdaudio.so
 %%CUE%%lib/qmmp/Input/libcue.so
 %%FFMPEG%%lib/qmmp/Input/libffmpeg.so
+%%FFMPEG_LEGACY%%lib/qmmp/Input/libffmpeg_legacy.so
 %%FLAC%%lib/qmmp/Input/libflac.so
 %%MAD%%lib/qmmp/Input/libmad.so
 %%MODPLUG%%lib/qmmp/Input/libmodplug.so
 %%GME%%lib/qmmp/Input/libgme.so
 %%MUSEPACK%%lib/qmmp/Input/libmpc.so
+%%OPUS%%lib/qmmp/Input/libopus.so
 %%SNDFILE%%lib/qmmp/Input/libsndfile.so
 %%VORBIS%%lib/qmmp/Input/libvorbis.so
 %%WAVPACK%%lib/qmmp/Input/libwavpack.so
@@ -93,9 +98,9 @@ lib/qmmp/CommandLineOptions/libstatusoption.so
 %%OSS%%lib/qmmp/Output/liboss.so
 %%OSS4%%lib/qmmp/Output/liboss4.so
 %%PULSE_AUDIO%%lib/qmmp/Output/libpulseaudio.so
-lib/qmmp/PlaylistFormats/libm3uplaylistformat.so
-lib/qmmp/PlaylistFormats/libplsplaylistformat.so
-lib/qmmp/PlaylistFormats/libxspfplaylistformat.so
+lib/qmmp/PlayListFormats/libm3uplaylistformat.so
+lib/qmmp/PlayListFormats/libplsplaylistformat.so
+lib/qmmp/PlayListFormats/libxspfplaylistformat.so
 %%CURL%%lib/qmmp/Transports/libhttp.so
 %%MMS%%lib/qmmp/Transports/libmms.so
 %%SKINNEDUI%%lib/qmmp/Ui/libskinned.so
@@ -134,7 +139,7 @@ share/icons/hicolor/scalable/apps/qmmp-simple.svgz
 @dirrmtry lib/qmmp/General
 @dirrmtry lib/qmmp/Input
 @dirrmtry lib/qmmp/Output
-@dirrmtry lib/qmmp/PlaylistFormats
+@dirrmtry lib/qmmp/PlayListFormats
 @dirrmtry lib/qmmp/Transports
 @dirrmtry lib/qmmp/Ui
 @dirrmtry lib/qmmp/Visual

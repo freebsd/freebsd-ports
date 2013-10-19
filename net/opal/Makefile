@@ -287,6 +287,12 @@ CONFIGURE_ARGS+=	--disable-debug
 CONFIGURE_ARGS+=	--disable-gsmamr \
 			--disable-ruby
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/CODEC_ID/AV_CODEC_ID/g' \
+		-e 's/CodecID/AVCodecID/g' \
+		${WRKSRC}/plugins/video/H.263-1998/h263-1998.* \
+		${WRKSRC}/plugins/video/common/dyna.*
+
 post-install:
 	${LN} -sf libopal.so.${PORTVERSION} ${PREFIX}/lib/libopal.so.${PVERSION_MAJOR}
 	${LN} -sf libopal.so.${PORTVERSION} ${PREFIX}/lib/libopal.so.${PVERSION_MINOR}
