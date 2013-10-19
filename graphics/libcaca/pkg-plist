@@ -30,6 +30,13 @@ libdata/pkgconfig/caca++.pc
 libdata/pkgconfig/caca.pc
 libdata/pkgconfig/cucul++.pc
 libdata/pkgconfig/cucul.pc
+man/man1/caca-config.1.gz
+man/man1/cacademo.1.gz
+man/man1/cacafire.1.gz
+man/man1/cacaplay.1.gz
+man/man1/cacaserver.1.gz
+man/man1/cacaview.1.gz
+man/man1/img2txt.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.GPL
