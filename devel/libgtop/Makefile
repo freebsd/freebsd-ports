@@ -18,7 +18,7 @@ USES=		gettext gmake pathfix pkgconfig perl5
 USE_GNOME=	gnomeprefix glib20 ltverhack intlhack
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_NET_IF_VAR_H
+CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_NET_IF_VAR_H -D_WANT_IFADDR
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-introspection
 
