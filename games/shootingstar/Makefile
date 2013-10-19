@@ -12,7 +12,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	SDL/OpenGL top-down shooter
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_GL=		gl
 USE_SDL=	sdl mixer image
 
@@ -20,5 +20,7 @@ CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/${PORTNAME}
+PORTDATA=	*
+
 .include <bsd.port.mk>
