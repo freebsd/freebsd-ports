@@ -1,0 +1,5 @@
+bin/obapps
+%%PYTHON_SITELIBDIR%%/obaxutils.py
+%%PYTHON_SITELIBDIR%%/obaxutils.pyc
+%%PYTHON_SITELIBDIR%%/obaxutils.pyo
+share/pixmaps/obapps.png

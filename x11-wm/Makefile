@@ -117,6 +117,7 @@
     SUBDIR += musca
     SUBDIR += mutter
     SUBDIR += nickleby
+    SUBDIR += obapps
     SUBDIR += obconf
     SUBDIR += obkey
     SUBDIR += obmenu
