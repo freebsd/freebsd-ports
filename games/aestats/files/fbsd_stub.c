@@ -1,6 +1,7 @@
 #include <sys/param.h>
 #include <sys/stat.h>
 #include <runetype.h>
+#include <stdlib.h>
 
 long int
 __strtol_internal(__const char *__restrict __nptr, char **__restrict __endptr,
