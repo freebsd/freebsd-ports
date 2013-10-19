@@ -5,28 +5,28 @@ lib/liblingoteach.la
 lib/liblingoteach.so
 lib/liblingoteach.so.3
 libdata/pkgconfig/liblingoteach.pc
-share/doc/liblingoteach/html/a00010.html
-share/doc/liblingoteach/html/a00011.html
-share/doc/liblingoteach/html/a00012.html
-share/doc/liblingoteach/html/a00013.html
-share/doc/liblingoteach/html/a00014.html
-share/doc/liblingoteach/html/a00015.html
-share/doc/liblingoteach/html/a00016.html
-share/doc/liblingoteach/html/a00017.html
-share/doc/liblingoteach/html/a00018.html
-share/doc/liblingoteach/html/annotated.html
-share/doc/liblingoteach/html/classes.html
-share/doc/liblingoteach/html/doxygen.css
-share/doc/liblingoteach/html/doxygen.png
-share/doc/liblingoteach/html/files.html
-share/doc/liblingoteach/html/functions.html
-share/doc/liblingoteach/html/functions_vars.html
-share/doc/liblingoteach/html/globals.html
-share/doc/liblingoteach/html/globals_enum.html
-share/doc/liblingoteach/html/globals_eval.html
-share/doc/liblingoteach/html/globals_func.html
-share/doc/liblingoteach/html/globals_type.html
-share/doc/liblingoteach/html/index.html
-@dirrm share/doc/liblingoteach/html
-@dirrm share/doc/liblingoteach
+%%PORTDOCS%%%%DOCSDIR%%/html/a00010.html
+%%PORTDOCS%%%%DOCSDIR%%/html/a00011.html
+%%PORTDOCS%%%%DOCSDIR%%/html/a00012.html
+%%PORTDOCS%%%%DOCSDIR%%/html/a00013.html
+%%PORTDOCS%%%%DOCSDIR%%/html/a00014.html
+%%PORTDOCS%%%%DOCSDIR%%/html/a00015.html
+%%PORTDOCS%%%%DOCSDIR%%/html/a00016.html
+%%PORTDOCS%%%%DOCSDIR%%/html/a00017.html
+%%PORTDOCS%%%%DOCSDIR%%/html/a00018.html
+%%PORTDOCS%%%%DOCSDIR%%/html/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/html/classes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/html/files.html
+%%PORTDOCS%%%%DOCSDIR%%/html/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/html/functions_vars.html
+%%PORTDOCS%%%%DOCSDIR%%/html/globals.html
+%%PORTDOCS%%%%DOCSDIR%%/html/globals_enum.html
+%%PORTDOCS%%%%DOCSDIR%%/html/globals_eval.html
+%%PORTDOCS%%%%DOCSDIR%%/html/globals_func.html
+%%PORTDOCS%%%%DOCSDIR%%/html/globals_type.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/lingoteach
