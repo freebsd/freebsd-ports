@@ -3,7 +3,7 @@
 
 PORTNAME=	widentd
 PORTVERSION=	1.03
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.webweaving.org/widentd/
 EXTRACT_SUFX=	.tgz
