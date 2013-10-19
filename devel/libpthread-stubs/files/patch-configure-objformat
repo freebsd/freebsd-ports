@@ -13,7 +13,7 @@
 -    esac
 -  fi
 +  case $host_os in
-+   freebsd[123]*) objformat=aout ;;
++   freebsd[123].*) objformat=aout ;;
 +   *) objformat=elf ;;
 +  esac
    version_type=freebsd-$objformat
