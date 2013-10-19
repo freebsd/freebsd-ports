@@ -13,10 +13,12 @@ COMMENT=	Push blocks on to the playing field, match block colors to remove them
 
 USE_SDL=	sdl mixer image
 
+PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	*
+PORTDATA=	*
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
 
 post-patch:
 .for dir in gfx levels snd
@@ -28,15 +30,9 @@ do-build:
 		`${SDL_CONFIG} --libs --cflags` -lSDL_image -lSDL_mixer
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-.for dir in gfx levels snd
-	${MKDIR} ${DATADIR}/${dir}
-	${INSTALL_DATA} ${WRKSRC}/${dir}/* ${DATADIR}/${dir}
-.endfor
-
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "gfx levels snd" ${STAGEDIR}${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
