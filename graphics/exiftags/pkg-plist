@@ -1,0 +1,9 @@
+bin/exifcom
+bin/exiftags
+bin/exiftime
+man/man1/exifcom.1.gz
+man/man1/exiftags.1.gz
+man/man1/exiftime.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
