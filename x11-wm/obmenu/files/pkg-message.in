@@ -1,0 +1,19 @@
+===============================================================================
+
+Obmenu has been installed.
+
+If you don't have ~/.config/openbox/menu.xml
+
+the Obmenu config can be copied, please type as user:
+
+    su user
+
+    cp %%LOCALBASE%%/etc/xdg/openbox/menu.xml ~/.config/openbox/menu.xml
+
+    chmod 644 ~/.config/openbox/menu.xml
+
+    exit
+
+Have fun!
+
+===============================================================================
