@@ -12,6 +12,19 @@ bin/metafy
 %%SITE_PERL%%/Test/MetaSyntactic.pm
 %%SITE_PERL%%/eta.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme/MetaSyntactic/.packlist
+%%PERL5_MAN3%%/Acme::MetaSyntactic.3.gz
+%%PERL5_MAN3%%/Acme::MetaSyntactic::Alias.3.gz
+%%PERL5_MAN3%%/Acme::MetaSyntactic::List.3.gz
+%%PERL5_MAN3%%/Acme::MetaSyntactic::Locale.3.gz
+%%PERL5_MAN3%%/Acme::MetaSyntactic::MultiList.3.gz
+%%PERL5_MAN3%%/Acme::MetaSyntactic::RemoteList.3.gz
+%%PERL5_MAN3%%/Acme::MetaSyntactic::any.3.gz
+%%PERL5_MAN3%%/Acme::MetaSyntactic::contributors.3.gz
+%%PERL5_MAN3%%/Acme::MetaSyntactic::foo.3.gz
+%%PERL5_MAN3%%/Test::MetaSyntactic.3.gz
+%%PERL5_MAN3%%/eta.3.gz
+man/man1/meta.1.gz
+man/man1/metafy.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme/MetaSyntactic
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme
 @dirrmtry %%SITE_PERL%%/Test
