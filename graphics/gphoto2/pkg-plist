@@ -1,4 +1,5 @@
 bin/gphoto2
+man/man1/gphoto2.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%DOCSDIR%%/test-hook.sh
 %%NLS%%share/locale/az/LC_MESSAGES/gphoto2.mo
