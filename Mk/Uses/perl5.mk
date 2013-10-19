@@ -170,22 +170,27 @@ CONFIGURE_SCRIPT?=	Build.PL
 .if ${PORTNAME} != Module-Build
 BUILD_DEPENDS+=		${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build
 .endif
+CONFIGURE_ARGS+=--create_packlist 0
 .endif
 .if ${_USE_PERL5:Mmodbuildtiny}
 .if ${PORTNAME} != Module-Build-Tiny
 BUILD_DEPENDS+=		${SITE_PERL}/Module/Build/Tiny.pm:${PORTSDIR}/devel/p5-Module-Build-Tiny
 .endif
+CONFIGURE_ARGS+=--create_packlist 1
 .endif
 ALL_TARGET?=
 PL_BUILD?=		Build
 CONFIGURE_ARGS+= \
-		create_packlist=0 \
-		install_path=lib="${PREFIX}/${SITE_PERL_REL}" \
-		install_path=arch="${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}" \
-		install_path=script="${PREFIX}/bin" \
-		install_path=bin="${PREFIX}/bin" \
-		install_path=libdoc="${MAN3PREFIX}/man/man3" \
-		install_path=bindoc="${MAN1PREFIX}/man/man1"
+		--install_path lib="${PREFIX}/${SITE_PERL_REL}" \
+		--install_path arch="${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}" \
+		--install_path script="${PREFIX}/bin" \
+		--install_path bin="${PREFIX}/bin" \
+		--install_path libdoc="${MAN3PREFIX}/man/man3" \
+		--install_path bindoc="${MAN1PREFIX}/man/man1"
+.if !defined(NO_STAGE)
+CONFIGURE_ARGS+=--destdir ${STAGEDIR}
+DESTDIRNAME=	--destdir
+.endif
 .elif ${_USE_PERL5:Mconfigure}
 CONFIGURE_ARGS+=	INSTALLDIRS="site"
 .endif # modbuild
@@ -243,14 +248,20 @@ do-configure:
 .if ${_USE_PERL5:Mmodbuild*}
 .if !target(do-build)
 do-build:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} ${PL_BUILD} ${MAKE_ARGS} ${ALL_TARGET})
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} ${PL_BUILD} ${ALL_TARGET} ${MAKE_ARGS})
 .endif # !target(do-build)
 
 .if !${USES:Mgmake}
 .if !target(do-install)
 do-install:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} ${PL_BUILD} ${MAKE_ARGS} ${INSTALL_TARGET})
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} ${PL_BUILD} ${INSTALL_TARGET} ${MAKE_ARGS})
 .endif # !target(do-install)
 .endif # ! USES=gmake
 .endif # modbuild
+
+post-stage::
+# TODO: change to ${_USE_PERL5:Mconfigure} when M::B creates .packlist
+.if ${USE_PERL5:Mconfigure} || ${USE_PERL5:Mmodbuildtiny}
+	@${FIND} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto -name .packlist -exec ${SED} -i '' 's|^${STAGEDIR}||' '{}' \;
+.endif
 .endif # defined(_POSTMKINCLUDED)
