@@ -49,23 +49,15 @@ DICT_RUBY_CONFIGURE_ENABLE=	dict-ruby
 EST_DESC=		Enable Hyper Estraier dictionary module
 EST_CONFIGURE_WITH=	est
 MYSQL_DESC=		Enable MySQL dictionary module
+MYSQL_USE=		MYSQL=yes
 MYSQL_CONFIGURE_WITH=	mysql
 PYTHON_DESC=		Enable Python module
+PYTHON_USE=		PYTHON=yes GNOME=pygtk2
 PYTHON_CONFIGURE_OFF=	--with-python=no
 UNIHAN_DESC=		Enable Unihan database dictionary module
 UNIHAN_CONFIGURE_ENABLE=	unihan
 
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-.endif
-
-.if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	yes
-.include "${PORTSDIR}/Mk/bsd.python.mk"
-USE_GNOME+=	pygtk2
-.endif
 
 .if ${PORT_OPTIONS:MUNIHAN}
 .if ${OSVERSION} >= 700042
