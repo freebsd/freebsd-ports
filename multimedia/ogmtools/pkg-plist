@@ -4,3 +4,9 @@ bin/ogmdemux
 bin/ogminfo
 bin/ogmmerge
 bin/ogmsplit
+man/man1/ogmcat.1.gz
+man/man1/ogmdemux.1.gz
+man/man1/ogminfo.1.gz
+man/man1/ogmmerge.1.gz
+man/man1/ogmsplit.1.gz
+%%DVDREAD%%man/man1/dvdxchap.1.gz

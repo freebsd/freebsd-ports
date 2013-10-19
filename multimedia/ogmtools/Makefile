@@ -10,20 +10,24 @@ MASTER_SITES=	http://www.bunkus.org/videotools/ogmtools/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Tools to extract from/get info about/create OGG media streams
 
-LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogg-prefix=${LOCALBASE} \
   		--with-vorbis-prefix=${LOCALBASE}
 
-MAN1=		ogmcat.1 ogmdemux.1 ogminfo.1 ogmmerge.1 ogmsplit.1
-
 OPTIONS_DEFINE=	DVDREAD
 OPTIONS_DEFAULT=	DVDREAD
 DVDREAD_DESC=	DVD title chapter extraction via libdvdread
 
-NO_STAGE=	yes
+DVDREAD_LIB_DEPENDS=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread
+DVDREAD_CONFIGURE_ON=	--with-dvdread \
+			--with-dvdread-includes=${LOCALBASE} \
+			--with-dvdread-libs=${LOCALBASE}
+DVDREAD_CONFIGURE_OFF=	--without-dvdread
+OPTIONS_SUB=	yes
+
 post-patch:
 # disable GNU auto* tools
 	@${FIND} ${WRKSRC} -type f -name "Makefile.in" | ${XARGS} \
@@ -45,21 +49,5 @@ post-configure:
 		-n 10 ${REINPLACE_CMD} -E -e \
 		's!malloc.h!stdlib.h!; \
 		s|stdint.h|inttypes.h|'
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDVDREAD}
-LIB_DEPENDS+=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
-
-CONFIGURE_ARGS+=	--with-dvdread \
-			--with-dvdread-includes=${LOCALBASE} \
-			--with-dvdread-libs=${LOCALBASE}
-PLIST_SUB+=	DVDREAD=""
-
-MAN1+=	dvdxchap.1
-.else
-CONFIGURE_ARGS+=	--without-dvdread
-PLIST_SUB+=	DVDREAD="@comment "
-.endif
 
 .include <bsd.port.mk>
