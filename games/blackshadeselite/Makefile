@@ -11,10 +11,10 @@ MASTER_SITES=	http://download.gna.org/blackshadeselite/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Psychic Bodyguard FPS - protect the VIP
 
-LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 
+USES=		gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_SDL=	sdl
 USE_GL=		yes
 USE_OPENAL=	al alut
@@ -23,10 +23,12 @@ MAKE_ARGS=	CC=${CC} CXX=${CXX}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+PLIST_FILES=	bin/blackshades
 PORTDOCS=	Readme Readme.elite
+PORTDATA=	*
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
 
 post-extract:
 	@${FIND} ${WRKSRC}/Data -name '._*' -delete
@@ -35,15 +37,11 @@ post-patch:
 	@${REINPLACE_CMD} -e '/InitGL/ s|.*|chdir("${DATADIR}"); &|' ${WRKSRC}/Source/Main.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/objs/blackshades ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} Data ${DATADIR}/
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/objs/blackshades ${STAGEDIR}${PREFIX}/bin/
+	cd ${WRKSRC} && ${COPYTREE_SHARE} Data ${STAGEDIR}${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
 .include <bsd.port.mk>
