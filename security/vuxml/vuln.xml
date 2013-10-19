@@ -84,7 +84,12 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-	<url>http://wordpress.org/news/2013/09/wordpress-3-6-1/</url>
+      <cvename>CVE-2013-4338</cvename>
+      <cvename>CVE-2013-4339</cvename>
+      <cvename>CVE-2013-4340</cvename>
+      <cvename>CVE-2013-5738</cvename>
+      <cvename>CVE-2013-5739</cvename>
+      <url>http://wordpress.org/news/2013/09/wordpress-3-6-1/</url>
     </references>
     <dates>
       <discovery>2013-09-11</discovery>
