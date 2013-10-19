@@ -1,5 +1,9 @@
 bin/libgtop_daemon2
+@group kmem
+@mode 2555
 bin/libgtop_server2
+@mode
+@group
 include/libgtop-2.0/glibtop.h
 include/libgtop-2.0/glibtop/close.h
 include/libgtop-2.0/glibtop/command.h

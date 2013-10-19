@@ -26,13 +26,10 @@ INFO=		libgtop2
 
 PKGMESSAGE=	${FILESDIR}/pkg-message
 
-NO_STAGE=	yes
 post-configure:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
 
 post-install:
-	@${CHGRP} kmem ${PREFIX}/bin/libgtop_server2
-	@${CHMOD} 2555 ${PREFIX}/bin/libgtop_server2
-	@${CAT} ${PKGMESSAGE}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgtop-2.0.so.7
 
 .include <bsd.port.mk>
