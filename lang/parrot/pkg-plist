@@ -419,8 +419,6 @@ lib/parrot/%%PARROT_VER%%/library/TAP/Harness.pir
 lib/parrot/%%PARROT_VER%%/library/TAP/Parser.pbc
 lib/parrot/%%PARROT_VER%%/library/TAP/Parser.pir
 lib/parrot/%%PARROT_VER%%/library/TGE.pbc
-lib/parrot/%%PARROT_VER%%/library/Tcl/Glob.pbc
-lib/parrot/%%PARROT_VER%%/library/Tcl/Glob.pir
 lib/parrot/%%PARROT_VER%%/library/TclLibrary.pbc
 lib/parrot/%%PARROT_VER%%/library/TclLibrary.pir
 lib/parrot/%%PARROT_VER%%/library/Test/Builder.pbc
@@ -568,7 +566,6 @@ lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Pmc2c/Parser.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Pmc2c/Pmc2cMain.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Pmc2c/UtilFunctions.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Pmc2c/VTable.pm
-lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Revision.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/SHA1.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/SearchOps.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Test.pm
@@ -727,7 +724,6 @@ src/parrot/%%PARROT_VER%%/vtable.tbl
 @dirrm lib/parrot/%%PARROT_VER%%/library/URI
 @dirrm lib/parrot/%%PARROT_VER%%/library/Test/Builder
 @dirrm lib/parrot/%%PARROT_VER%%/library/Test
-@dirrm lib/parrot/%%PARROT_VER%%/library/Tcl
 @dirrm lib/parrot/%%PARROT_VER%%/library/TAP
 @dirrm lib/parrot/%%PARROT_VER%%/library/String
 @dirrm lib/parrot/%%PARROT_VER%%/library/Stream

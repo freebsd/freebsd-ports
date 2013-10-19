@@ -14,8 +14,8 @@ LICENSE=	ART20
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		${LOCALBASE}/bin/gm4:${PORTSDIR}/devel/m4 \
 		${LOCALBASE}/bin/pcre-config:${PORTSDIR}/devel/pcre
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
-		icudata:${PORTSDIR}/devel/icu
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
+		libicudata.so:${PORTSDIR}/devel/icu
 
 CONFLICTS=	rakudo-[0-9]*
 
