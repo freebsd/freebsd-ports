@@ -118,6 +118,7 @@
     SUBDIR += crp
     SUBDIR += css-mode.el
     SUBDIR += cssed
+    SUBDIR += csso
     SUBDIR += csstidy
     SUBDIR += ctemplate
     SUBDIR += cutycapt
