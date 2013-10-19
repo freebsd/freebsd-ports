@@ -16,6 +16,11 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer image ttf
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+PLIST_FILES=	bin/${PORTNAME}
+PORTDATA=	*
+
 DESKTOP_ENTRIES="Brikx" \
 		"Puzzle game" \
 		"${DATADIR}/tilesets/stone/49.png" \
@@ -23,15 +28,11 @@ DESKTOP_ENTRIES="Brikx" \
 		"Game;LogicGame;" \
 		false
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/DIR_DATA/ s|data/|${DATADIR}/|' \
 		${WRKSRC}/src/brikx.h
 
 post-install:
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC}/src/data && ${COPYTREE_SHARE} "*" ${DATADIR}/
+	cd ${WRKSRC}/src/data && ${COPYTREE_SHARE} "*" ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
