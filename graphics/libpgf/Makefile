@@ -21,7 +21,6 @@ ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 pre-configure:
 	@cd ${WRKSRC}; ${TOUCH} NEWS AUTHORS
 
