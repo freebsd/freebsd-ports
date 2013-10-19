@@ -17,7 +17,6 @@ USE_QT4=	qmake_build corelib gui opengl moc_build rcc_build xml script
 WRKSRC=		${WRKDIR}/structure-synth
 USE_DOS2UNIX=	*.cpp *.h
 
-NO_STAGE=	yes
 post-extract:
 	@${MV} "${WRKDIR}/Structure Synth Source Code" ${WRKSRC}
 	@${RM} -rf ${WRKSRC}/Examples/DontDeploy
@@ -34,13 +33,12 @@ do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/structure-synth ${PREFIX}/bin/
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "Examples Misc" ${DATADIR}/
-	${MKDIR} ${PREFIX}/share/applications
+	${INSTALL_PROGRAM} ${WRKSRC}/structure-synth ${STAGEDIR}${PREFIX}/bin/
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "Examples Misc" ${STAGEDIR}${DATADIR}/
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/structure-synth.desktop \
-		${PREFIX}/share/applications/
+		${STAGEDIR}${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/images/fileicons/StructureSynth-256.png \
-		${PREFIX}/share/pixmaps/structure-synth.png
+		${STAGEDIR}${PREFIX}/share/pixmaps/structure-synth.png
 
 .include <bsd.port.mk>
