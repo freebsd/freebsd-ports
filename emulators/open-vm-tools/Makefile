@@ -3,7 +3,7 @@
 
 PORTNAME=		open-vm-tools
 PORTVERSION=		${BUILD_VER}
-PORTREVISION=		3
+PORTREVISION=		4
 PORTEPOCH=		1
 CATEGORIES=		emulators kld
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/stable-8.6.x
@@ -21,6 +21,7 @@ BUILD_VER=		425873
 WRKSRC=			${WRKDIR}/open-vm-tools-${RELEASE_VER}-${BUILD_VER}
 GNU_CONFIGURE=		yes
 USES=			pkgconfig
+USE_GNOME=		glib20
 USE_LDCONFIG=		yes
 CPPFLAGS+=		-Wno-deprecated-declarations
 
@@ -28,26 +29,24 @@ SSP_UNSAFE=		kernel module does not support ssp
 
 CONFIGURE_ARGS+=	--without-procps --sysconfdir=${LOCALBASE}/etc
 .if defined(WITHOUT_X11)
-LIB_DEPENDS+=		glib-2.0:${PORTSDIR}/devel/glib20
 CONFIGURE_ARGS+=	--without-x --without-gtk2 --without-gtkmm
 PLIST_SUB+=		X11="@comment "
 CONFLICTS=		open-vm-tools-[0-9]*
 .else
 .if !defined(WITHOUT_LIBNOTIFY)
-LIB_DEPENDS+=		notify.4:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=		libnotify.so:${PORTSDIR}/devel/libnotify
 .endif
 .if defined(WITH_UNITY)
 CONFIGURE_ENV+=		CUSTOM_URIPARSER_CPPFLAGS="-I${LOCALBASE}/include/uriparser"
-LIB_DEPENDS+=		uriparser.1:${PORTSDIR}/net/uriparser
+LIB_DEPENDS+=		liburiparser.so:${PORTSDIR}/net/uriparser
 .else
 CONFIGURE_ARGS+=	--disable-unity
 .endif
-LIB_DEPENDS+=		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24
 CONFIGURE_ARGS+=	--with-x
 LDFLAGS+=		-L${LOCALBASE}/lib
 USE_XORG=		x11 ice sm xext xineramaproto xinerama xrandr xrender \
 			xtst
-USE_GNOME=		gtk20 glib20
+USE_GNOME+=		gtk20 gtkmm24
 PLIST_SUB+=		X11=""
 CONFLICTS=		open-vm-tools-nox11-[0-9]*
 .endif
@@ -65,13 +64,13 @@ SUB_FILES=		pkg-message
 .if defined(WITHOUT_DNET)
 CONFIGURE_ARGS+=	--without-dnet
 .else
-LIB_DEPENDS+=		dnet:${PORTSDIR}/net/libdnet
+LIB_DEPENDS+=		libdnet.so:${PORTSDIR}/net/libdnet
 .endif
 
 .if defined(WITHOUT_ICU)
 CONFIGURE_ARGS+=	--without-icu
 .else
-LIB_DEPENDS+=		icuuc:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=		libicuuc.so:${PORTSDIR}/devel/icu
 .endif
 
 USE_RC_SUBR=		vmware-guestd vmware-kmod
