@@ -30,4 +30,14 @@ lib/libfame.la
 lib/libfame.so
 lib/libfame-0.9.so
 lib/libfame-0.9.so.1
+man/man3/fame_close.3.gz
+man/man3/fame_encode_frame.3.gz
+man/man3/fame_encode_slice.3.gz
+man/man3/fame_end_frame.3.gz
+man/man3/fame_get_object.3.gz
+man/man3/fame_init.3.gz
+man/man3/fame_open.3.gz
+man/man3/fame_register.3.gz
+man/man3/fame_start_frame.3.gz
+man/man3/fame_unregister.3.gz
 share/aclocal/libfame.m4
