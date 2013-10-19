@@ -10,7 +10,5 @@ include/linux/dvb/net.h
 include/linux/dvb/osd.h
 include/linux/dvb/version.h
 include/linux/dvb/video.h
-%%DOCSDIR%%/COPYING
-@dirrm %%DOCSDIR%%
-@dirrmtry include/linux/dvb
-@dirrmtry include/linux
+@dirrm include/linux/dvb
+@dirrm include/linux
