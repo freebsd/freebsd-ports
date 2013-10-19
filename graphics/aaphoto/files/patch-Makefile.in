@@ -6,7 +6,7 @@
  top_srcdir = @top_srcdir@
 -AM_CFLAGS = -Wall -O2 -D__OPENMP__ -fopenmp
 -AM_LDFLAGS = -ljasper -ljpeg -lpng -lm -lgomp
-+AM_CFLAGS = -Wall -O2
++AM_CFLAGS = -Wall
 +AM_LDFLAGS = -ljasper -ljpeg -lpng -lm
  aaphoto_SOURCES = aaphoto.c
  INCLUDES = 
