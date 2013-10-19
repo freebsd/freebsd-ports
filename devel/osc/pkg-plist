@@ -70,5 +70,6 @@ bin/osc_hotshot.py
 %%PYTHON_SITELIBDIR%%/osc/util/safewriter.py
 %%PYTHON_SITELIBDIR%%/osc/util/safewriter.pyc
 %%PYTHON_SITELIBDIR%%/osc/util/safewriter.pyo
+man/man1/osc.1.gz
 @dirrm %%PYTHON_SITELIBDIR%%/osc/util
 @dirrm %%PYTHON_SITELIBDIR%%/osc
