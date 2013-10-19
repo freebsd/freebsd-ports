@@ -11,8 +11,8 @@ MASTER_SITES=	http://cloud.github.com/downloads/AMDmi3/glosm/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	3D OpenGL renderer for OpenStreetMap
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		expat:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
+		libexpat.so:${PORTSDIR}/textproc/expat2
 
 USE_BZIP2=	yes
 USES=		cmake
@@ -21,18 +21,16 @@ USE_SDL=	sdl
 
 PORTDOCS=	README ChangeLog
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
 
 regression-test:
 	cd ${BUILD_WRKSRC} && ctest
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
 
 .include <bsd.port.mk>
