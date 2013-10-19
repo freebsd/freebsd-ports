@@ -1,14 +1,17 @@
-@comment $FreeBSD$
 bin/play
 bin/rec
 bin/sox
 bin/soxi
 include/sox.h
-include/soxstdint.h
 lib/libsox.a
 lib/libsox.la
 lib/libsox.so
-lib/libsox.so.1
-@exec mkdir -p %D/lib/sox
-@dirrm lib/sox
+lib/libsox.so.2
+man/man1/play.1.gz
+man/man1/rec.1.gz
+man/man1/sox.1.gz
+man/man1/soxi.1.gz
+man/man3/libsox.3.gz
+man/man7/soxeffect.7.gz
+man/man7/soxformat.7.gz
 libdata/pkgconfig/sox.pc

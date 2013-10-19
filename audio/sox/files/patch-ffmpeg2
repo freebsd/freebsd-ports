@@ -1,0 +1,16 @@
+Index: src/ffmpeg.c
+===================================================================
+--- src/ffmpeg.c.orig
++++ src/ffmpeg.c
+@@ -57,6 +57,11 @@
+ #define PKT_FLAG_KEY AV_PKT_FLAG_KEY
+ #endif
+ 
++#ifndef AVCODEC_MAX_AUDIO_FRAME_SIZE
++#define AVCODEC_MAX_AUDIO_FRAME_SIZE (192000 * 4)
++#endif
++
++
+ /* Private data for ffmpeg files */
+ typedef struct {
+   int audio_index;

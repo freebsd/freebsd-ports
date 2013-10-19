@@ -1,11 +1,8 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
+# Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ffmpeg
-PORTVERSION=	0.7.15
-PORTREVISION=	2
-PORTEPOCH=	1
-PORTREVISION=	2
+PORTVERSION=	2.0.1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
 
@@ -14,66 +11,207 @@ COMMENT=	Realtime audio/video encoder/converter and streaming server
 
 LICENSE=		GPLv2 LGPL21
 LICENSE_COMB=		multi
-LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING.GPLv2
-LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPLv2.1
 
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils \
-		${LOCALBASE}/bin/texi2html:${PORTSDIR}/textproc/texi2html
-
-CONFLICTS=	libav-[0-9]*
-PORTSCOUT=	limit:^0\..*
+		texi2html:${PORTSDIR}/textproc/texi2html
 
 HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	config.err
-USES=		gmake perl5 pkgconfig
+USES=		gmake pkgconfig perl5
+USE_PERL5=	build
 USE_BZIP2=	yes
 WANT_SDL=	yes
-USE_PERL5=	build
 
-OPTIONS_DEFINE=	AACPLUS ALSA AMR_NB AMR_WB CELT DEBUG DIRAC FAAC \
-		FFSERVER FREETYPE FREI0R GSM LAME OPENCV OPENJPEG \
-		OPTIMIZED_CFLAGS RTMP SCHROEDINGER SDL SPEEX THEORA VAAPI \
-		VDPAU VO_AACENC VO_AMRWBENC VORBIS VPX X11GRAB X264 XVID
+OPTIONS_DEFINE=	AACPLUS ALSA AMR_NB AMR_WB ASS CDIO CELT DEBUG FAAC \
+		FDK_AAC FFSERVER FONTCONFIG FREETYPE FREI0R GNUTLS GSM ICONV \
+		LAME LIBBLURAY LIBV4L MODPLUG OPENAL OPENCV OPENJPEG OPENSSL \
+		OPTIMIZED_CFLAGS OPUS PULSEAUDIO RTMP SCHROEDINGER SDL SPEEX \
+		THEORA VAAPI VDPAU VO_AACENC VO_AMRWBENC VORBIS VPX \
+		X11GRAB X264 XVID
 
-OPTIONS_DEFAULT=	FFSERVER FREETYPE FREI0R OPENCV SCHROEDINGER THEORA \
-			VORBIS VPX X264 XVID
+OPTIONS_DEFAULT=	FFSERVER FONTCONFIG FREETYPE FREI0R GNUTLS ICONV \
+			OPENCV SCHROEDINGER THEORA VORBIS VPX X264 XVID
 
+ASS_DESC=	Subtitles rendering via libass
+CDIO_DESC=	Audio CD grabbing with libcdio
+FDK_AAC_DESC=	AAC audio encoding via Fraunhofer FDK
 FFSERVER_DESC=	Build and install ffserver
+LIBV4L_DESC=	Video for Linux support
+OPUS_DESC=	Opus decoding with libopus
 X11GRAB_DESC=	Enable x11 grabbing
 
-COMPAT_HEADERS=libavcodec/avcodec.h \
-	libavcodec/opt.h \
-	libavcodec/vdpau.h \
-	libavcodec/xvmc.h \
-	libavdevice/avdevice.h \
-	libavfilter/avfilter.h \
-	libavformat/avformat.h \
-	libavformat/avio.h \
-	libavutil/adler32.h \
-	libavutil/avstring.h \
-	libavutil/avutil.h \
-	libavutil/base64.h \
-	libavutil/common.h \
-	libavutil/crc.h \
-	libavutil/fifo.h \
-	libavutil/intfloat_readwrite.h \
-	libavutil/log.h \
-	libavutil/lzo.h \
-	libavutil/mathematics.h \
-	libavutil/md5.h \
-	libavutil/mem.h \
-	libavutil/pixfmt.h \
-	libavutil/rational.h \
-	libavutil/sha1.h \
-	libpostproc/postprocess.h \
-	libswscale/swscale.h
+# aacplus
+AACPLUS_LIB_DEPENDS=	libaacplus.so:${PORTSDIR}/audio/libaacplus
+AACPLUS_CONFIGURE_ENABLE=	libaacplus
+
+# alsa
+ALSA_CONFIGURE_OFF=	--disable-indev=alsa \
+			--disable-outdev=alsa
+ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+
+# Opencore AMR NB
+AMR_NB_LIB_DEPENDS=	libopencore-amrnb.so:${PORTSDIR}/audio/opencore-amr
+AMR_NB_CONFIGURE_ENABLE=	libopencore-amrnb
+
+# Opencore AMR WB
+AMR_WB_LIB_DEPENDS=	libopencore-amrwb.so:${PORTSDIR}/audio/opencore-amr
+AMR_WB_CONFIGURE_ENABLE=	libopencore-amrwb
+
+# ass
+ASS_LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass
+ASS_CONFIGURE_ENABLE=	libass
+
+# cdio
+CDIO_LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio
+CDIO_CONFIGURE_ENABLE=	libcdio
+
+# celt
+CELT_LIB_DEPENDS=	libcelt0.so:${PORTSDIR}/audio/celt
+CELT_CONFIGURE_ENABLE=	libcelt
+
+# faac
+FAAC_LIB_DEPENDS=	libfaac.so:${PORTSDIR}/audio/faac
+FAAC_CONFIGURE_ENABLE=	libfaac
+
+# fdk_aac
+FDK_AAC_LIB_DEPENDS=	libfdk-aac.so:${PORTSDIR}/audio/fdk-aac
+FDK_AAC_CONFIGURE_ENABLE=	libfdk-aac
+
+# ffserver
+FFSERVER_CONFIGURE_ENABLE=	ffserver
+
+# fontconfig
+FONTCONFIG_LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+FONTCONFIG_CONFIGURE_ENABLE=	fontconfig
+
+# freetype
+FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+FREETYPE_CONFIGURE_ENABLE=	libfreetype
+
+# frei0r
+FREI0R_BUILD_DEPENDS=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
+FREI0R_CONFIGURE_ENABLE=	frei0r
+
+# gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_CONFIGURE_ENABLE=	gnutls
+
+# gsm
+GSM_LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm
+GSM_CONFIGURE_ENABLE=	libgsm
+
+# iconv
+ICONV_USES=	iconv
+ICONV_CONFIGURE_ENABLE=	iconv
+
+# lame
+LAME_LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame
+LAME_CONFIGURE_ENABLE=	libmp3lame
+
+# libbluray
+LIBBLURAY_LIB_DEPENDS=	libbluray.so:${PORTSDIR}/multimedia/libbluray
+LIBBLURAY_CONFIGURE_ENABLE=	libbluray
+
+# libv4l
+LIBV4L_LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
+LIBV4L_CONFIGURE_ENABLE=	libv4l2
+
+# modplug
+MODPLUG_LIB_DEPENDS=	libmodplug.so:${PORTSDIR}/audio/libmodplug
+MODPLUG_CONFIGURE_ENABLE=	libmodplug
+
+# OpenAL
+OPENAL_LIB_DEPENDS=	libopenal.so:${PORTSDIR}/audio/openal-soft
+OPENAL_CONFIGURE_ENABLE=	openal
+
+# opencv
+OPENCV_LIB_DEPENDS=	libopencv_imgproc.so:${PORTSDIR}/graphics/opencv-core
+OPENCV_CONFIGURE_ENABLE=	libopencv
+
+# openjpeg
+OPENJPEG_LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg
+OPENJPEG_CONFIGURE_ENABLE=	libopenjpeg
+
+# opus
+OPUS_LIB_DEPENDS=	libopus.so:${PORTSDIR}/audio/opus
+OPUS_CONFIGURE_ENABLE=	libopus
+
+# pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CONFIGURE_ENABLE=	libpulse
+
+# rtmp
+RTMP_LIB_DEPENDS=	librtmp.so:${PORTSDIR}/multimedia/rtmpdump
+RTMP_CONFIGURE_ENABLE=	librtmp
+
+# schroedinger
+SCHROEDINGER_LIB_DEPENDS=	libschroedinger-1.0.so:${PORTSDIR}/multimedia/schroedinger
+SCHROEDINGER_CONFIGURE_ENABLE=	libschroedinger
+
+# speex
+SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
+SPEEX_CONFIGURE_ENABLE=	libspeex
+
+# theora
+THEORA_LIB_DEPENDS=	libtheora.so:${PORTSDIR}/multimedia/libtheora
+THEORA_CONFIGURE_ENABLE=	libtheora
+
+# vaapi
+VAAPI_LIB_DEPENDS=	libva.so:${PORTSDIR}/multimedia/libva
+VAAPI_CONFIGURE_ENABLE=	vaapi
+
+# vdpau
+VDPAU_BUILD_DEPENDS=	${LOCALBASE}/include/vdpau/vdpau.h:${PORTSDIR}/multimedia/libvdpau
+VDPAU_CONFIGURE_ENABLE=	vdpau
+
+# vo-aacenc
+VO_AACENC_LIB_DEPENDS=	libvo-aacenc.so:${PORTSDIR}/audio/vo-aacenc
+VO_AACENC_CONFIGURE_ENABLE=	libvo-aacenc
+
+# vo-amrwbenc
+VO_AMRWBENC_LIB_DEPENDS=	libvo-amrwbenc.so:${PORTSDIR}/audio/vo-amrwbenc
+VO_AMRWBENC_CONFIGURE_ENABLE=	libvo-amrwbenc
+
+# vorbis
+VORBIS_LIB_DEPENDS=	libvorbisenc.so:${PORTSDIR}/audio/libvorbis
+VORBIS_CONFIGURE_ENABLE=	libvorbis
+
+# vp8
+VPX_LIB_DEPENDS=	libvpx.so:${PORTSDIR}/multimedia/libvpx
+VPX_CONFIGURE_ENABLE=	libvpx
+
+# x264
+X264_LIB_DEPENDS=	libx264.so:${PORTSDIR}/multimedia/x264
+X264_CONFIGURE_ENABLE=	libx264
+
+# xvid
+XVID_LIB_DEPENDS=	libxvidcore.so:${PORTSDIR}/multimedia/xvid
+XVID_CONFIGURE_ENABLE=	libxvid
+
+FFPROGS=	ffmpeg ffprobe
+INSTALL_TARGET=	install-progs install-data install-libs install-headers
+#FFMPEG_SUFFIX=	2
+#PLIST_SUB+=	SUFF="${FFMPEG_SUFFIX}"
+
+#USE_LDCONFIG=	${PREFIX}/lib/ffmpeg${FFMPEG_SUFFIX}
+DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 
 .include <bsd.port.options.mk>
 
-# rtmp
-.if ${PORT_OPTIONS:MRTMP}
+# ssl
+.if ${PORT_OPTIONS:MOPENSSL} && empty(PORT_OPTIONS:MGNUTLS)
 USE_OPENSSL=	yes
+FFMPEG_NONFREE=	yes
+.endif
+
+.if ${PORT_OPTIONS:MAACPLUS} || ${PORT_OPTIONS:MFAAC} || ${PORT_OPTIONS:MFDK_AAC}
+FFMPEG_NONFREE=	yes
+.endif
+
+.if ${PORT_OPTIONS:MAMR_NB} || ${PORT_OPTIONS:MAMR_WB} || \
+${PORT_OPTIONS:MVO_AACENC} || ${PORT_OPTIONS:MVO_AMRWBENC}
+FFMPEG_LICENSE_GPL3=	yes
 .endif
 
 # x11grab
@@ -84,29 +222,32 @@ CONFIGURE_ARGS+=	--enable-x11grab
 
 .include <bsd.port.pre.mk>
 
+DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 
 CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--mandir="${PREFIX}/man" \
+		--datadir="${DATADIR}" \
 		--enable-shared \
 		--enable-gpl \
 		--enable-postproc \
 		--enable-avfilter \
+		--enable-avresample \
 		--enable-pthreads \
 		--enable-memalign-hack \
-		--enable-runtime-cpudetect \
+		--disable-libstagefright-h264 \
+		--disable-libutvideo \
+		--disable-libsoxr \
 		--cc="${CC}" \
 		--extra-cflags="${FFMPEG_CFLAGS} -I${LOCALBASE}/include" \
 		--extra-ldflags="-L${LOCALBASE}/lib ${FFMPEG_LDFLAGS}" \
 		--extra-libs="${PTHREAD_LIBS}"
-SHLIB_VER=	1
-PLIST_SUB=	SHLIB_VER=${SHLIB_VER}
-USE_LDCONFIG=	yes
 
-DOC_FILES=	CREDITS INSTALL LICENSE MAINTAINERS README RELEASE
+DOC_FILES=	Changelog CREDITS INSTALL LICENSE MAINTAINERS README
 # under doc subdirectory
-DOC_DOCFILES=	APIchanges RELEASE_NOTES TODO *.txt *.html
+DOC_DOCFILES=	APIchanges RELEASE_NOTES *.txt *.html
 PORTDOCS=	*
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -134,7 +275,7 @@ _NO_BUILTIN_VECTOR=	yes
 
 # builtin vector, requires mmx and sse
 .if !defined(_NO_BUILTIN_VECTOR) && defined(_BUILTIN_VECTOR)
-CFLAGS+=	-msse
+FFMPEG_CFLAGS+=		-msse
 .endif
 
 # optimizations
@@ -142,232 +283,33 @@ CFLAGS+=	-msse
 CFLAGS+=	-O3 -ffast-math -fno-finite-math-only -fomit-frame-pointer
 .endif
 
-#aacplus
-.if ${PORT_OPTIONS:MAACPLUS}
-FFMPEG_NONFREE=	yes
-LIB_DEPENDS+=	aacplus.2:${PORTSDIR}/audio/libaacplus
-CONFIGURE_ARGS+=	--enable-libaacplus
-.else
-CONFIGURE_ARGS+=	--disable-libaacplus
-.endif
-
-#alsa
-.if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
-.else
-CONFIGURE_ARGS+=	--disable-indev=alsa \
-			--disable-outdev=alsa
-.endif
-
-# Opencore AMR NB
-.if ${PORT_OPTIONS:MAMR_NB}
-FFMPEG_LICENSE_GPL3=	yes
-LIB_DEPENDS+=	opencore-amrnb.0:${PORTSDIR}/audio/opencore-amr
-CONFIGURE_ARGS+=	--enable-libopencore-amrnb
-.else
-CONFIGURE_ARGS+=	--disable-libopencore-amrnb
-.endif
-
-# Opencore AMR WB
-.if ${PORT_OPTIONS:MAMR_WB}
-FFMPEG_LICENSE_GPL3=	yes
-LIB_DEPENDS+=	opencore-amrwb.0:${PORTSDIR}/audio/opencore-amr
-CONFIGURE_ARGS+=	--enable-libopencore-amrwb
-.else
-CONFIGURE_ARGS+=	--disable-libopencore-amrwb
-.endif
-
-# celt
-.if ${PORT_OPTIONS:MCELT}
-LIB_DEPENDS+=	celt0.2:${PORTSDIR}/audio/celt
-CONFIGURE_ARGS+=	--enable-libcelt
-.else
-CONFIGURE_ARGS+=	--disable-libcelt
-.endif
-
-# dirac
-.if ${PORT_OPTIONS:MDIRAC}
-LIB_DEPENDS+=	dirac_encoder.1:${PORTSDIR}/multimedia/dirac
-CONFIGURE_ARGS+=	--enable-libdirac
-.else
-CONFIGURE_ARGS+=	--disable-libdirac
-.endif
-
-# faac
-.if ${PORT_OPTIONS:MFAAC}
-FFMPEG_NONFREE=	yes
-LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
-CONFIGURE_ARGS+=	--enable-libfaac
-.else
-CONFIGURE_ARGS+=	--disable-libfaac
-.endif
-
 # ffserver
 .if ${PORT_OPTIONS:MFFSERVER}
 PLIST_SUB+=	FFSERVER=""
-.else
-PLIST_SUB+=	FFSERVER="@comment "
-CONFIGURE_ARGS+=	--disable-ffserver
-.endif
-
-# freetype
-.if ${PORT_OPTIONS:MFREETYPE}
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
-CONFIGURE_ARGS+=	--enable-libfreetype
-.else
-CONFIGURE_ARGS+=	--disable-libfreetype
-.endif
-
-# frei0r
-.if ${PORT_OPTIONS:MFREI0R}
-BUILD_DEPENDS+=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
-CONFIGURE_ARGS+=	--enable-frei0r
-.else
-CONFIGURE_ARGS+=	--disable-frei0r
-.endif
-
-# gsm
-.if ${PORT_OPTIONS:MGSM}
-LIB_DEPENDS+=	gsm.1:${PORTSDIR}/audio/gsm
-CONFIGURE_ARGS+=	--enable-libgsm
-.else
-CONFIGURE_ARGS+=	--disable-libgsm
-.endif
-
-# mp3
-.if ${PORT_OPTIONS:MLAME}
-LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
-CONFIGURE_ARGS+=	--enable-libmp3lame
-.else
-CONFIGURE_ARGS+=	--disable-libmp3lame
-.endif
-
-# opencv
-.if ${PORT_OPTIONS:MOPENCV}
-LIB_DEPENDS+=	opencv_imgproc.2:${PORTSDIR}/graphics/opencv-core
-CONFIGURE_ARGS+=	--enable-libopencv
-.else
-CONFIGURE_ARGS+=	--disable-libopencv
-.endif
-
-# openjpeg
-.if ${PORT_OPTIONS:MOPENJPEG}
-LIB_DEPENDS+=	openjpeg.2:${PORTSDIR}/graphics/openjpeg
-CONFIGURE_ARGS+=	--enable-libopenjpeg
-.else
-CONFIGURE_ARGS+=	--disable-libopenjpeg
-.endif
-
-# rtmp
-.if ${PORT_OPTIONS:MRTMP}
-LIB_DEPENDS+=	rtmp.0:${PORTSDIR}/multimedia/rtmpdump
-CONFIGURE_ARGS+=	--enable-librtmp
-. if ${OPENSSLBASE} != "/usr"
-FFMPEG_CFLAGS+=		-I${OPENSSLINC}
-FFMPEG_LDFLAGS+=	-L${OPENSSLLIB}
+PLIST_FILES+=	man/man1/ffserver.1.gz
+FFPROGS+=	ffserver
+. if ${PORT_OPTIONS:MDOCS}
+DOC_DOCFILES+=	ffserver.html
 . endif
 .else
-CONFIGURE_ARGS+=	--disable-librtmp
-.endif
-
-# schroedinger
-.if ${PORT_OPTIONS:MSCHROEDINGER}
-LIB_DEPENDS+=	schroedinger-1.0.11:${PORTSDIR}/multimedia/schroedinger
-CONFIGURE_ARGS+=	--enable-libschroedinger
-.else
-CONFIGURE_ARGS+=	--disable-libschroedinger
+PLIST_SUB+=	FFSERVER="@comment "
 .endif
 
 # sdl
 .if ${PORT_OPTIONS:MSDL}
 USE_SDL+=	sdl
 PLIST_FILES+=	bin/ffplay man/man1/ffplay.1.gz
+FFPROGS+=	ffplay
+.if ${PORT_OPTIONS:MDOCS}
+DOC_DOCFILES+=	ffplay.html
+.endif
 .else
 CONFIGURE_ARGS+=	--disable-ffplay
 .endif
 
-# speex
-.if ${PORT_OPTIONS:MSPEEX}
-LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
-CONFIGURE_ARGS+=	--enable-libspeex
-.else
-CONFIGURE_ARGS+=	--disable-libspeex
-.endif
-
-# theora
-.if ${PORT_OPTIONS:MTHEORA}
-LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
-CONFIGURE_ARGS+=	--enable-libtheora
-.else
-CONFIGURE_ARGS+=	--disable-libtheora
-.endif
-
-# vaapi
-.if ${PORT_OPTIONS:MVAAPI}
-FFMPEG_LICENSE_GPL3=	yes
-LIB_DEPENDS+=	va.1:${PORTSDIR}/multimedia/libva
-CONFIGURE_ARGS+=	--enable-vaapi
-.else
-CONFIGURE_ARGS+=	--disable-vaapi
-.endif
-
-# vdpau
-.if ${PORT_OPTIONS:MVDPAU}
-BUILD_DEPENDS+=	${LOCALBASE}/include/vdpau/vdpau.h:${PORTSDIR}/multimedia/libvdpau
-CONFIGURE_ARGS+=	--enable-vdpau
-.else
-CONFIGURE_ARGS+=	--disable-vdpau
-.endif
-
-# vo-aacenc
-.if ${PORT_OPTIONS:MVO_AACENC}
-FFMPEG_LICENSE_GPL3=	yes
-LIB_DEPENDS+=	vo-aacenc.0:${PORTSDIR}/audio/vo-aacenc
-CONFIGURE_ARGS+=	--enable-libvo-aacenc
-.else
-CONFIGURE_ARGS+=	--disable-libvo-aacenc
-.endif
-
-# vo-amrwbenc
-.if ${PORT_OPTIONS:MVO_AMRWBENC}
-FFMPEG_LICENSE_GPL3=	yes
-LIB_DEPENDS+=	vo-amrwbenc.0:${PORTSDIR}/audio/vo-amrwbenc
-CONFIGURE_ARGS+=	--enable-libvo-amrwbenc
-.else
-CONFIGURE_ARGS+=	--disable-libvo-amrwbenc
-.endif
-
 # vorbis
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbisenc.2:${PORTSDIR}/audio/libvorbis
-CONFIGURE_ARGS+=	--enable-libvorbis
 FFMPEG_CFLAGS+=		-I${LOCALBASE}/include/vorbis
-.else
-CONFIGURE_ARGS+=	--disable-libvorbis
-.endif
-
-# vp8
-.if ${PORT_OPTIONS:MVPX}
-LIB_DEPENDS+=	vpx.1:${PORTSDIR}/multimedia/libvpx
-CONFIGURE_ARGS+=	--enable-libvpx
-.else
-CONFIGURE_ARGS+=	--disable-libvpx
-.endif
-
-# x264
-.if ${PORT_OPTIONS:MX264}
-LIB_DEPENDS+=	x264:${PORTSDIR}/multimedia/x264
-CONFIGURE_ARGS+=	--enable-libx264
-.else
-CONFIGURE_ARGS+=	--disable-libx264
-.endif
-
-# xvid
-.if ${PORT_OPTIONS:MXVID}
-LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
-CONFIGURE_ARGS+=	--enable-libxvid
-.else
-CONFIGURE_ARGS+=	--disable-libxvid
 .endif
 
 # License knobs
@@ -377,16 +319,16 @@ CONFIGURE_ARGS+=	--enable-nonfree
 .endif
 
 .if defined(FFMPEG_LICENSE_GPL3)
-LICENSE+=		GPLv3 LGPL3
+CONFIGURE_ARGS+=	--enable-version3
+LICENSE=		GPLv3 LGPL3
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING.GPLv3
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LGPLv3
-CONFIGURE_ARGS+=	--enable-version3
 .endif
 
 post-patch:
 # {C,LD}FLAGS safeness
 	@${REINPLACE_CMD} -e 's|$$(LIBDIR)/pkgconfig|$$(DESTDIR)$$(prefix)/libdata/pkgconfig|' \
-		${WRKSRC}/subdir.mak
+		${WRKSRC}/library.mak
 	@${REINPLACE_CMD} -e 's|/etc/ffserver.conf|${PREFIX}/etc/ffserver.conf|' \
 		${WRKSRC}/ffserver.c
 	@${REINPLACE_CMD} -E \
@@ -395,12 +337,12 @@ post-patch:
 		s|-pthread|${PTHREAD_LIBS}|g; \
 		s|gsm/gsm.h|gsm.h|g" \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e 's|-ldl||; s|$$(LIBMAJOR)|${SHLIB_VER}|g;' \
+	@${REINPLACE_CMD} -e 's|-ldl||' \
 		-e 's|opencv opencv/cxcore.h|opencv-core opencv2/core/core_c.h|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL5}|g' \
 		${WRKSRC}/doc/texi2pod.pl
-.if ${PORT_OPTIONS:MDSL}
+.if ${PORT_OPTIONS:MSDL}
 	@${REINPLACE_CMD} -E \
 		-e 's|sdl-config|${SDL_CONFIG}|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
@@ -417,8 +359,13 @@ post-configure:
 .endif
 
 post-install:
+.for PROG in ${FFPROGS}
+	@${MKDIR} ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/${PROG}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/${PROG}.1
+.endfor
 .if ${PORT_OPTIONS:MFFSERVER}
-	${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf ${STAGEDIR}${PREFIX}/etc/ffserver.conf-dist
+	${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf \
+		${STAGEDIR}${PREFIX}/etc/ffserver.conf-dist
 .endif
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in ${DOC_FILES}
@@ -427,12 +374,5 @@ post-install:
 .for FILE in ${DOC_DOCFILES}
 	${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${MKDIR} ${STAGEDIR}${PREFIX}/include/ffmpeg
-.for FILE in ${COMPAT_HEADERS}
-	${LN} -sf ../${FILE} ${STAGEDIR}${PREFIX}/include/ffmpeg/${FILE:C,^[^/]+/([^/]+).*,\1,}
-.endfor
-	@${MKDIR} ${STAGEDIR}${PREFIX}/include/postproc
-	${LN} -sf ../libpostproc/postprocess.h \
-		 ${STAGEDIR}${PREFIX}/include/postproc/postprocess.h
 
 .include <bsd.port.post.mk>

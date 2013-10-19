@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bino
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.4.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.savannah.nongnu.org/releases/bino/ http://levsha.me/ports/distfiles/
 
@@ -13,20 +12,19 @@ COMMENT=	3D video player with multi-display support
 LICENSE=	GPLv3
 
 FETCH_ARGS=	-Fpr
-USES=		pkgconfig
+USES=		gmake pkgconfig
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 USE_QT4=	moc_build opengl rcc_build
 
 # no port fow equalizer now, lirc detecting not working
 CONFIGURE_ARGS+=	--without-equalizer --without-liblircclient --docdir=${DOCSDIR}
 
-LIB_DEPENDS+=	ass.5:${PORTSDIR}/multimedia/libass \
-		avformat.1:${PORTSDIR}/multimedia/ffmpeg \
-		GLEW.1:${PORTSDIR}/graphics/glew \
-		openal.1:${PORTSDIR}/audio/openal-soft
+LIB_DEPENDS+=	libass.so:${PORTSDIR}/multimedia/libass \
+		libavformat.so:${PORTSDIR}/multimedia/ffmpeg \
+		libGLEW.so:${PORTSDIR}/graphics/glew \
+		libopenal.so:${PORTSDIR}/audio/openal-soft
 
 MAN1=	bino.1
 INFO=	bino

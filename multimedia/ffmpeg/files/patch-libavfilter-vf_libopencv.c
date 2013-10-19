@@ -1,5 +1,5 @@
---- libavfilter/vf_libopencv.c.orig	2011-06-27 21:27:01.521012341 +0200
-+++ libavfilter/vf_libopencv.c	2011-06-27 21:27:16.839540294 +0200
+--- libavfilter/vf_libopencv.c.orig	2012-08-05 14:09:37.882506740 +0200
++++ libavfilter/vf_libopencv.c	2012-08-05 14:10:24.508510133 +0200
 @@ -25,8 +25,7 @@
  
  /* #define DEBUG */
