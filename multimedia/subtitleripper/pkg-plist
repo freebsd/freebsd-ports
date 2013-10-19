@@ -1,0 +1,17 @@
+bin/pgm2txt
+bin/srttool
+bin/subtitle2pgm
+bin/subtitle2vobsub
+bin/vobsub2pgm
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.gocr
+%%PORTDOCS%%%%DOCSDIR%%/README.srttool
+%%PORTDOCS%%%%DOCSDIR%%/README.subtitle2pgm
+%%PORTDOCS%%%%DOCSDIR%%/README.vobsub
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gocrfilter_en.sed
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gocrfilter_fr.sed
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gocrfilter_nl.sed
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gocrfilter_none.sed
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
