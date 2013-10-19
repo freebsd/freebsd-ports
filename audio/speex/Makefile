@@ -3,7 +3,7 @@
 
 PORTNAME=	speex
 DISTVERSION=	1.2rc1
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.us.xiph.org/releases/speex/
@@ -36,5 +36,9 @@ post-patch:
 		${WRKSRC}/*/*.h
 	@${REINPLACE_CMD} -e 's| in -lgnugetopt||g ; \
 		 s|LIBS="-lgnugetopt|LIBS="|g' ${WRKSRC}/configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libspeex.so.1
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libspeexdsp.so.1
 
 .include <bsd.port.post.mk>
