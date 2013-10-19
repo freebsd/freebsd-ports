@@ -66,7 +66,7 @@ stripped() {
 	for f in `find ${STAGEDIR} -type f`; do
 		output=`/usr/bin/file ${f}`
 		case "${output}" in
-		*:*\ ELF\ *,\ not\ stripped*) warn "${f} is not stripped";;
+		*:*\ ELF\ *,\ not\ stripped*) warn "${f} is not stripped consider using \${STRIP_CMD}";;
 		esac
 	done
 }
