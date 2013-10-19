@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmatroska
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://dl.matroska.org/downloads/libmatroska/ \
 		http://www.bunkus.org/videotools/mkvtoolnix/sources/
@@ -12,20 +12,18 @@ COMMENT=	Extensible Multimedia Container Format
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	libebml>=1.3.0:${PORTSDIR}/textproc/libebml
-LIB_DEPENDS=	ebml.4:${PORTSDIR}/textproc/libebml
+LIB_DEPENDS=	libebml.so:${PORTSDIR}/textproc/libebml
 
+USES=	gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_DOS2UNIX=	make/linux/Makefile
 BUILD_WRKSRC=	${WRKSRC}/make/linux
 INSTALL_WRKSRC=	${WRKSRC}/make/linux
 USE_LDCONFIG=	yes
 
 # Installs dir with proper permissions
-INSTALL_DATA_DIR=	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755
+INSTALL_DATA_DIR=	${INSTALL} -d -m 755
 
-NO_STAGE=	yes
 post-patch:
 # XXX - revise at every port update
 # the tests are botched. do not run them
@@ -42,7 +40,8 @@ do-configure:
 			s|^(LIBEBML_LIB_DIR)[[:space:]]*=.*|\1=${LOCALBASE}/lib|; \
 			s|^(INSTALL)[[:space:]]*=.*$$|\1=|; \
 			s|^(INSTALL_DIR_OPTS)[[:space:]]*=.*$$|\1=${INSTALL_DATA_DIR}|; \
-			s,^(INSTALL_OPTS_LIB|INSTALL_OPTS)[[:space:]]*=.*$$,\1=${INSTALL_DATA},; \
+			s,^(INSTALL_OPTS)[[:space:]]*=.*$$,\1=${INSTALL_DATA},; \
+			s,^(INSTALL_OPTS_LIB)[[:space:]]*=.*$$,\1=${INSTALL_LIB},; \
 			/install:/s|install_staticlib||;/all:/s|staticlib||; \
 			s,(-lebml)$$,-L${LOCALBASE}/lib \1,' \
 		${WRKSRC}/make/linux/Makefile
