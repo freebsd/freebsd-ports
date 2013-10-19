@@ -21,21 +21,19 @@ MAKE_ENV=	DATADIR="${DATADIR}"
 BUILD_WRKSRC=	${WRKSRC}/src-stormbaancoureur
 INSTALL_WRKSRC=	${WRKSRC}/src-stormbaancoureur
 
-PORTDOCS=	README
+PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	*
+PORTDATA=	*
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|__DATADIR|"${DATADIR}"|' \
 		${WRKSRC}/src-stormbaancoureur/main.cxx
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/${f} ${DOCSDIR}
-.endfor
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

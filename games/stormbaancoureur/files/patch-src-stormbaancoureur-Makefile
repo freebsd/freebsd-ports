@@ -1,5 +1,5 @@
---- src-stormbaancoureur/Makefile.orig	2008-04-20 19:57:43.000000000 +0400
-+++ src-stormbaancoureur/Makefile	2008-06-02 16:17:12.000000000 +0400
+--- src-stormbaancoureur/Makefile.orig	2008-06-11 18:12:01.000000000 +0400
++++ src-stormbaancoureur/Makefile	2013-09-30 06:14:07.576519380 +0400
 @@ -5,23 +5,20 @@
  GLPREFIX=/usr
  PLIBPREFIX=/usr
@@ -53,7 +53,7 @@
  	rm -f *.o stormbaancoureur
  
 -GAMEDIR=$(DESTDIR)/usr/share/games/stormbaancoureur
-+GAMEDIR=$(PREFIX)/share/stormbaancoureur
++GAMEDIR=$(DESTDIR)$(PREFIX)/share/stormbaancoureur
  install: stormbaancoureur
  	# Directories
 -	mkdir -p $(DESTDIR)/usr/games/
@@ -63,7 +63,7 @@
  	mkdir -p $(GAMEDIR)/models/
  	# Binary
 -	install stormbaancoureur $(DESTDIR)/usr/games/stormbaancoureur
-+	install stormbaancoureur $(PREFIX)/bin/stormbaancoureur
++	install stormbaancoureur $(DESTDIR)$(PREFIX)/bin/stormbaancoureur
  	# Images
  	install -m 644 images/info_carpet_smooth.rgb $(GAMEDIR)/images/info_carpet_smooth.rgb
  	install -m 644 images/info_door_smooth.rgb $(GAMEDIR)/images/info_door_smooth.rgb
