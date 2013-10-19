@@ -1,4 +1,2 @@
-SHA256 (worker-2.19.4.tar.bz2) = 0f4b4f7d8a7610f1be4181cc01eeb338ba9c368bcd03871a18d1350d12dc182e
-SIZE (worker-2.19.4.tar.bz2) = 1184410
-SHA256 (worker-2.19.4.tar.bz2.asc) = 1dbc73940c1837ec6c1b252224707506bf21b0768a185e11970809a2106cdd10
-SIZE (worker-2.19.4.tar.bz2.asc) = 197
+SHA256 (worker-3.1.0.tar.bz2) = 54e54b4bb98df84e262e7e9b5429748e34de1fcf3f0d9c393310bfb083519c61
+SIZE (worker-3.1.0.tar.bz2) = 1233164
