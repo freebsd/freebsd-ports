@@ -25,8 +25,6 @@ RUN_DEPENDS=	\
 NO_STAGE=	yes
 USES=		qmail:vars gmake
 
-CONFLICTS=	qmailadmin-devel-1.*
-
 PATCH_SITES+=	http://qmail.jms1.net/vpopmail/:onchange \
   		LOCAL/bdrewery/${PORTNAME}/:onchange
 PATCHFILES+=	qmailadmin-1.2.12-onchange.3.patch:onchange
