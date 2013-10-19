@@ -12,7 +12,7 @@ COMMENT=	Multiplayer 3D economy/trade-based RTS
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_SDL=	sdl pango
@@ -27,8 +27,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	plutocracy_
 
 PORTDOCS=	AUTHORS README
+PORTDATA=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -38,13 +38,11 @@ post-patch:
 		${WRKSRC}/setup.py
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/pluto.py ${DATADIR}/
-	${INSTALL_SCRIPT} ${WRKDIR}/plutocracy_ ${PREFIX}/bin/${PORTNAME}
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/pluto.py ${STAGEDIR}${DATADIR}/
+	${INSTALL_SCRIPT} ${WRKDIR}/plutocracy_ ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
