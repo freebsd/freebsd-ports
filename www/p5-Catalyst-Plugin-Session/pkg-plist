@@ -5,11 +5,17 @@
 %%SITE_PERL%%/Catalyst/Plugin/Session/Test/Store.pm
 %%SITE_PERL%%/Catalyst/Plugin/Session/Tutorial.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Session/.packlist
+%%PERL5_MAN3%%/Catalyst::Plugin::Session.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::Session::State.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::Session::Store.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::Session::Store::Dummy.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::Session::Test::Store.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::Session::Tutorial.3.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Session
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Session/Test
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Session/Store
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Session
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/Catalyst
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Session
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
