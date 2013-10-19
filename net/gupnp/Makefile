@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gupnp
-PORTVERSION=	0.20.6
+PORTVERSION=	0.20.7
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -23,10 +23,9 @@ USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_XZ=		yes
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix pkgconfig shebangfix
 
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/python|${PYTHON_CMD}|' ${WRKSRC}/tools/gupnp-binding-tool
+SHEBANG_FILES=	tools/gupnp-binding-tool
+python_CMD=	${PYTHON_CMD}
 
 .include <bsd.port.mk>
