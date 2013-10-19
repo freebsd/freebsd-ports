@@ -13,8 +13,9 @@ COMMENT=		PlayStation Portable development toolchain ${PORTNAME}
 
 BUILD_DEPENDS=		${LOCALBASE}/psp/sdk/lib/libpspsdk.a:${PORTSDIR}/devel/psptoolchain-pspsdk-stage2
 
+USES=			gmake
 USE_BZIP2=		yes
-USE_GMAKE=		yes
+USE_CSTD=		gnu89
 
 HAS_CONFIGURE=		yes
 CONFIGURE_ARGS=		--prefix=${PREFIX} \
