@@ -2,8 +2,8 @@
 #
 # $FreeBSD$
 
-SCOREDIR="/var/games"
-SCOREBASE="/var/games/powermanga.hi"
+SCOREDIR="/var/games/powermanga"
+SCOREBASE="${SCOREDIR}/powermanga.hi"
 
 [ "$2" != "POST-INSTALL" ] && exit 0
 
