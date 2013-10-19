@@ -25,7 +25,6 @@ USE_PYTHON=	yes
 USE_XZ=		yes
 USES=		gmake pathfix pkgconfig
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/ --define-variable=/d' ${WRKSRC}/configure
 
