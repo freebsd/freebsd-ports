@@ -1,0 +1,12 @@
+bin/csso
+%%DATADIR%%/USAGE
+%%DATADIR%%/bin/csso
+%%DATADIR%%/lib/compressor.js
+%%DATADIR%%/lib/csso.js
+%%DATADIR%%/lib/cssoapi.js
+%%DATADIR%%/lib/gonzales.cssp.node.js
+%%DATADIR%%/lib/translator.js
+%%DATADIR%%/lib/util.js
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/bin
+@dirrm %%DATADIR%%
