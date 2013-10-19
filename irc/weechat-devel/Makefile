@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	weechat
-PORTVERSION=	20130921
+PORTVERSION=	20131015
 CATEGORIES=	irc
 MASTER_SITES=	http://perturb.me.uk/distfiles/ \
 		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	jase
+MASTER_SITE_SUBDIR=	jase/weechat-devel
 PKGNAMESUFFIX=	-devel
 DISTNAME=	weechat-devel-${GITREV}
 
@@ -14,6 +14,8 @@ COMMENT=	A lightweight and user friendly ncurses based IRC client
 
 LICENSE=	GPLv3
 
+UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
+
 CONFLICTS=	weechat-0.3*
 
 USE_LDCONFIG=	yes
@@ -21,10 +23,10 @@ USES=		cmake iconv
 CMAKE_ARGS+=	-DENABLE_GUILE=no
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl \
-		gcrypt:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
-GITDESC=	v0.4.2-rc2-1-g0249666
+GITDESC=	v0.4.2-16-g88058bb
 GITREV!=	echo "${GITDESC}" | sed -E 's/^.*-g(.{7})$$/\1/'
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GITREV}
 
@@ -33,8 +35,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${GITREV}
 # Release.
 
 OPTIONS_DEFINE=	RUBY PYTHON PERL TCL LUA CHARSET BACKTRACE DEBUG ASPELL \
-		GNUTLS NLS DOCUMENTATION COLOR256 ICON
-OPTIONS_DEFAULT=CHARSET BACKTRACE DEBUG
+		GNUTLS NLS DOCUMENTATION COLOR256 ICON MANPAGES
+OPTIONS_DEFAULT=CHARSET BACKTRACE DEBUG MANPAGES
 
 BACKTRACE_DESC=	Provide crash backtraces
 CHARSET_DESC=	Charset conversion support
@@ -47,7 +49,6 @@ TCL_DESC=	Tcl scripting support
 COLOR256_DESC=	Use ncurses port for 256 color support
 ICON_DESC=	Desktop icon
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCHARSET}
@@ -140,6 +141,28 @@ CMAKE_ARGS+=	-DENABLE_DOC=no
 PLIST_SUB+=	DOCUMENTATION="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MMANPAGES}
+.if defined(MAINTAINER_MODE)
+BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
+		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
+.if empty(PORT_OPTIONS:MDOCUMENTATION)
+BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc \
+		source-highlight>=3.1.5:${PORTSDIR}/textproc/source-highlight
+.endif
+CMAKE_ARGS+=	-DENABLE_MAN=yes -DMANDIR=${MANPREFIX}/man
+.else
+MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:man/}
+MASTER_SITE_SUBDIR+=	jase/weechat-devel/:man
+DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
+		weechat-devel-20131015-manpages.tar.gz:man
+CMAKE_ARGS+=	-DENABLE_MAN=no
+.endif
+PLIST_SUB+=	MANPAGES=""
+.else
+CMAKE_ARGS+=	-DENABLE_MAN=no
+PLIST_SUB+=	MANPAGES="@comment"
+.endif
+
 .if ${PORT_OPTIONS:MBACKTRACE}
 LIB_DEPENDS+=	execinfo:${PORTSDIR}/devel/libexecinfo
 .endif
@@ -156,20 +179,6 @@ PLIST_SUB+=	ICON=""
 .else
 PLIST_SUB+=	ICON="@comment "
 .endif
-
-.if defined(MAINTAINER_MODE)
-BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
-		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
-.if empty(PORT_OPTIONS:MDOCUMENTATION)
-BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc \
-		source-highlight>=3.1.5:${PORTSDIR}/textproc/source-highlight
-.endif
-CMAKE_ARGS+=	-DENABLE_MAN=yes
-.else
-CMAKE_ARGS+=	-DENABLE_MAN=no
-.endif
-
-MAN1=	weechat.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${LIBDIR}/../pkgconfig|$${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|' ${WRKSRC}/CMakeLists.txt
@@ -196,13 +205,14 @@ pre-configure:
 	@sleep 5
 .endif
 
-post-build:
-.if defined(MAINTAINER_MODE)
-	${CP} ${WRKSRC}/doc/en/weechat.1 ${FILESDIR}/weechat.1.new
-.endif
-
 post-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	${INSTALL_MAN} ${FILESDIR}/weechat.1.in ${MAN1PREFIX}/man/man1/weechat.1
+.if ${PORT_OPTIONS:MMANPAGES} && !defined(MAINTAINER_MODE)
+	${INSTALL_MAN} ${WRKDIR}/manpages/weechat.1 ${STAGEDIR}${PREFIX}/man/man1
+.for f in de fr it ja
+	@${MKDIR} ${STAGEDIR}${PREFIX}/man/${f}/man1
+	${INSTALL_MAN} ${WRKDIR}/manpages/${f}/weechat.1 ${STAGEDIR}${PREFIX}/man/${f}/man1
+.endfor
+.endif
+	${LN} -sf ${PREFIX}/bin/weechat ${STAGEDIR}${PREFIX}/bin/weechat-curses
 
 .include <bsd.port.mk>

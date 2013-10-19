@@ -10,6 +10,11 @@ lib/weechat/plugins/rmodifier.so
 lib/weechat/plugins/script.so
 lib/weechat/plugins/xfer.so
 libdata/pkgconfig/weechat.pc
+%%MANPAGES%%man/man1/weechat.1.gz
+%%MANPAGES%%man/de/man1/weechat.1.gz
+%%MANPAGES%%man/fr/man1/weechat.1.gz
+%%MANPAGES%%man/it/man1/weechat.1.gz
+%%MANPAGES%%man/ja/man1/weechat.1.gz
 %%ASPELL%%lib/weechat/plugins/aspell.so
 %%CHARSET%%lib/weechat/plugins/charset.so
 %%LUA%%lib/weechat/plugins/lua.so
@@ -67,6 +72,12 @@ libdata/pkgconfig/weechat.pc
 %%NLS%%share/locale/tr/LC_MESSAGES/weechat.mo
 @dirrmtry lib/weechat/plugins
 @dirrmtry lib/weechat
+%%MANPAGES%%@dirrmtry man/it/man1
+%%MANPAGES%%@dirrmtry man/it
+%%MANPAGES%%@dirrmtry man/fr/man1
+%%MANPAGES%%@dirrmtry man/fr
+%%MANPAGES%%@dirrmtry man/de/man1
+%%MANPAGES%%@dirrmtry man/de
 %%DOCUMENTATION%%@dirrmtry share/doc/weechat
 %%ICON%%@dirrmtry share/icons/hicolor/32x32/apps
 %%ICON%%@dirrmtry share/icons/hicolor/32x32
