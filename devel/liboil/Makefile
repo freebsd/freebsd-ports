@@ -13,7 +13,7 @@ COMMENT=	Library of optimized inner loops
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pathfix pkgconfig
+USES=		pkgconfig
 USE_GNOME=	ltverhack
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
@@ -21,19 +21,8 @@ CONFIGURE_ARGS=	--disable-gtk-doc \
 		--disable-glib
 CFLAGS:=	${CFLAGS:N-O*} -O2
 
-_COMPILER_VERSION!=	${CC} --version
-.if ${_COMPILER_VERSION:Mclang}
-CFLAGS+=	-fheinous-gnu-extensions
-.endif
-
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|\\$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|<stdint\.h|<inttypes.h|g' \
-		${WRKSRC}/liboil/liboiltypes.h \
-		${WRKSRC}/liboil/liboilprofile.h \
-		${WRKSRC}/liboil/liboil.h
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
