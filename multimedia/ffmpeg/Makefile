@@ -6,7 +6,7 @@ PORTVERSION=	2.0.1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
 
-MAINTAINER=	wg@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Realtime audio/video encoder/converter and streaming server
 
 LICENSE=		GPLv2 LGPL21
