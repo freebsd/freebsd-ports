@@ -13,7 +13,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Clone of the strategy board game 'Blokus'
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_GL=		gl
 USE_WX=		2.6+
 
@@ -26,7 +26,6 @@ WRKSRC=		${WRKDIR}/blokish
 
 PLIST_FILES=	bin/blokish
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|' \
 		${WRKSRC}/makefile.in ${WRKSRC}/configure
