@@ -5122,3 +5122,4 @@ russian/bugzilla|russian/bugzilla40|2013-10-17|Reflect PORTNAME
 x11/silo||2013-10-18|Has expired: Upstream has disappeared
 devel/pear-PHPUnit|devel/pear-PHPUnit3|2013-10-18|Removed, EOLed upstream
 devel/pear-PHPUnit2|devel/pear-PHPUnit3|2013-10-18|Removed, EOLed upstream
+multimedia/ffmpeg2|multimedia/ffmpeg|2013-10-19|Use multimedia/ffmpeg instead
