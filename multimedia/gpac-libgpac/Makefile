@@ -3,7 +3,7 @@
 
 PORTNAME=	gpac
 PORTVERSION=	0.4.5
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/GPAC/GPAC%20${PORTVERSION}
@@ -14,7 +14,7 @@ COMMENT=	Gpac MPEG-4 Systems library and headers
 
 WRKSRC=		${WRKDIR}/gpac
 ALL_TARGET=	lib
-USE_GMAKE=	yes
+USES=		gmake
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -38,57 +38,30 @@ CONFIGURE_ARGS=	--cc="${CC}" --X11-path="${LOCALBASE}" \
 
 CONFIGURE_ENV+=	LIBVER="${LIBVER}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=	yes
-.else
-CONFIGURE_ARGS+=	--disable-ssl
-.endif
-
-.if ${PORT_OPTIONS:MOPENGL}
-USE_GL=		gl glu
-.else
-CONFIGURE_ARGS+=	--disable-opengl
-.endif
-
-.if ${PORT_OPTIONS:MXVIDEO}
-LIB_DEPENDS+=	Xv.1:${PORTSDIR}/x11/libXv
-.else
-CONFIGURE_ARGS+=	--disable-x11-xv --disable-x11-shm
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if empty(PORT_OPTIONS:MIPV6)
-CONFIGURE_ARGS+=	--disable-ipv6
-.endif
-
-.if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
-CONFIGURE_ARGS+=	--use-jpeg=local
-.else
-CONFIGURE_ARGS+=	--use-jpeg=no
-.endif
-
-.if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
-CONFIGURE_ARGS+=	--use-png=local
-CFLAGS+=	-I${LOCALBASE}/include/libpng15
-.else
-CONFIGURE_ARGS+=	--use-png=no
-.endif
+SSL_USE=	OPENSSL=yes
+SSL_CONFIGURE_ENABLE=	ssl
+OPENGL_USE=	GL=gl GL=glu
+OPENGL_CONFIGURE_ENABLE=	opengl
+XVIDEO_LIB_DEPENDS=	libXv.so:${PORTSDIR}/x11/libXv
+XVIDEO_CONFIGURE_OFF=	--disable-x11-xv --disable-x11-shm
+IPV6_CONFIGURE_ENABLE=	ipv6
+JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+JPEG_CONFIGURE_ON=	--use-jpeg=local
+JPEG_CONFIGURE_OFF=	--use-jpeg=no
+PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+PNG_CONFIGURE_ON=	--use-png=local
+PNG_CONFIGURE_OFF=	--use-png=no
+PNG_CFLAGS=		-I${LOCALBASE}/include/libpng15
 
 post-patch:
 	${CHMOD} +x ${WRKSRC}/configure
 
 do-install:
-	${MKDIR} ${PREFIX}/include/gpac
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/gpac
 	cd ${WRKSRC}/include/gpac && ${FIND} . | \
-		${CPIO} -vpdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include/gpac
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/libgpac.so.${LIBVER} ${PREFIX}/lib
-	${LN} -sf libgpac.so.${LIBVER} ${PREFIX}/lib/libgpac.so
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/libgpac_static.a ${PREFIX}/lib
+		${CPIO} -vpdm -L -R ${LIBOWN}:${LIBGRP} ${STAGEDIR}${PREFIX}/include/gpac
+	${INSTALL_LIB} ${INSTALL_WRKSRC}/libgpac.so.${LIBVER} ${STAGEDIR}${PREFIX}/lib
+	${LN} -sf libgpac.so.${LIBVER} ${STAGEDIR}${PREFIX}/lib/libgpac.so
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/libgpac_static.a ${STAGEDIR}${PREFIX}/lib
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
