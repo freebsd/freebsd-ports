@@ -11,7 +11,7 @@ MASTER_SITES=	http://tamentis.com/projects/rezerwar/files/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Puzzle game involving organizing blocks with pipes
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_SDL=	sdl mixer
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	Unix
@@ -19,15 +19,14 @@ CONFIGURE_ENV=	TARGET_BIN=${PREFIX}/bin \
 		TARGET_DOC=${DOCSDIR} \
 		TARGET_DATA=${DATADIR}
 
+PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	*
+PORTDATA=	*
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/configure
-.if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e '/TARGET_DOC/ d' ${WRKSRC}/mkfiles/Makefile.main
-.endif
 
 .include <bsd.port.mk>
