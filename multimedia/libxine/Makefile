@@ -68,7 +68,7 @@ CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 \
 OPTIONS_DEFINE=	CACA ESOUND JACK GNOMEVFS2 PULSEAUDIO XVMC SMB AALIB \
 		IMAGEMAGICK GTK2 WAVPACK VAAPI LIBBLURAY
 
-DOCSDIR=	${STAGEDIR}${PREFIX}/share/doc/xine-lib
+DOCSDIR=	${PREFIX}/share/doc/xine-lib
 PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/2.3"
 
 # DVDCSS version hardcoded in src/input/input_dvd.c misc/cdda_server.c
