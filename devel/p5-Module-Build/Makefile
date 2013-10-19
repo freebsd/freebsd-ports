@@ -23,33 +23,8 @@ PORTSCOUT=	skipv:0.31011,0.31012
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		inc::latest.3 \
-		Module::Build.3 \
-  		Module::Build::Bundling.3 \
-		Module::Build::API.3 \
-		Module::Build::Authoring.3 \
-		Module::Build::Base.3 \
-		Module::Build::Compat.3 \
-		Module::Build::ConfigData.3 \
-		Module::Build::Cookbook.3 \
-		Module::Build::ModuleInfo.3 \
-		Module::Build::Notes.3 \
-		Module::Build::PPMMaker.3 \
-		Module::Build::Platform::Default.3 \
-		Module::Build::Platform::MacOS.3 \
-		Module::Build::Platform::Unix.3 \
-		Module::Build::Platform::VMS.3 \
-		Module::Build::Platform::VOS.3 \
-		Module::Build::Platform::Windows.3 \
-		Module::Build::Platform::aix.3 \
-		Module::Build::Platform::cygwin.3 \
-		Module::Build::Platform::darwin.3 \
-		Module::Build::Platform::os2.3 \
-		Module::Build::Version.3 \
-		Module::Build::YAML.3
 PORTDOCS=	Changes INSTALL README
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400
@@ -74,8 +49,8 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 

@@ -26,6 +26,30 @@
 %%SITE_PERL%%/Module/Build/YAML.pm
 %%SITE_PERL%%/inc/latest.pm
 %%SITE_PERL%%/inc/latest/private.pm
+%%PERL5_MAN3%%/Module::Build.3.gz
+%%PERL5_MAN3%%/Module::Build::API.3.gz
+%%PERL5_MAN3%%/Module::Build::Authoring.3.gz
+%%PERL5_MAN3%%/Module::Build::Base.3.gz
+%%PERL5_MAN3%%/Module::Build::Bundling.3.gz
+%%PERL5_MAN3%%/Module::Build::Compat.3.gz
+%%PERL5_MAN3%%/Module::Build::ConfigData.3.gz
+%%PERL5_MAN3%%/Module::Build::Cookbook.3.gz
+%%PERL5_MAN3%%/Module::Build::ModuleInfo.3.gz
+%%PERL5_MAN3%%/Module::Build::Notes.3.gz
+%%PERL5_MAN3%%/Module::Build::PPMMaker.3.gz
+%%PERL5_MAN3%%/Module::Build::Platform::Default.3.gz
+%%PERL5_MAN3%%/Module::Build::Platform::MacOS.3.gz
+%%PERL5_MAN3%%/Module::Build::Platform::Unix.3.gz
+%%PERL5_MAN3%%/Module::Build::Platform::VMS.3.gz
+%%PERL5_MAN3%%/Module::Build::Platform::VOS.3.gz
+%%PERL5_MAN3%%/Module::Build::Platform::Windows.3.gz
+%%PERL5_MAN3%%/Module::Build::Platform::aix.3.gz
+%%PERL5_MAN3%%/Module::Build::Platform::cygwin.3.gz
+%%PERL5_MAN3%%/Module::Build::Platform::darwin.3.gz
+%%PERL5_MAN3%%/Module::Build::Platform::os2.3.gz
+%%PERL5_MAN3%%/Module::Build::Version.3.gz
+%%PERL5_MAN3%%/Module::Build::YAML.3.gz
+%%PERL5_MAN3%%/inc::latest.3.gz
 @dirrm %%SITE_PERL%%/inc/latest
 @dirrm %%SITE_PERL%%/inc
 @dirrm %%SITE_PERL%%/Module/Build/Platform
