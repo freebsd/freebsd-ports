@@ -3,7 +3,7 @@
 
 PORTNAME=	heartbeat
 PORTVERSION=	2.1.4
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	sysutils
 #MASTER_SITES=	http://hg.linux-ha.org/lha-2.1/archive/STABLE-2.1.4.tar.bz2
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -13,6 +13,8 @@ DIST_SUBDIR=	heartbeat
 
 MAINTAINER=	ports@encarnate.com
 COMMENT=	Subsystem for High-Availability Clustering
+
+BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
 LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
 		net:${PORTSDIR}/net/libnet \
