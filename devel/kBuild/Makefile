@@ -3,11 +3,12 @@
 
 PORTNAME=	kBuild
 DISTVERSION=	${KBUILD_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netlabs.org/pub/kbuild/ \
 		http://tmp.chruetertee.ch/ \
 		http://disasterarea.chruetertee.ch/
-DISTNAME=	${PORTNAME}-${DISTVERSION}r2662-src
+DISTNAME=	${PORTNAME}-${DISTVERSION}r2695-src
 
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	Makefile framework
