@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libburn
-PORTVERSION=	1.2.4
+PORTVERSION=	1.3.2
 CATEGORIES=	devel
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 

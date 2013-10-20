@@ -1,6 +1,7 @@
 bin/osirrox
 bin/xorrecord
 bin/xorriso
+bin/xorriso-tcltk
 bin/xorrisofs
 include/libisoburn/libisoburn.h
 include/libisoburn/xorriso.h
