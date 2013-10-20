@@ -1,0 +1,6 @@
+debugger is a fast implementation of the standard Ruby debugger debug.rb. It
+is implemented by utilizing a new Ruby C API hook. The core component
+provides support that front-ends can build on. It provides breakpoint
+handling, bindings for stack frames among other things.
+
+WWW: http://github.com/cldwalker/debugger
