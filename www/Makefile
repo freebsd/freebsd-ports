@@ -1734,6 +1734,7 @@
     SUBDIR += rubygem-anemone
     SUBDIR += rubygem-async_sinatra
     SUBDIR += rubygem-bluecloth
+    SUBDIR += rubygem-carrierwave
     SUBDIR += rubygem-cgi_multipart_eof_fix
     SUBDIR += rubygem-chef-server-api
     SUBDIR += rubygem-chef-server-webui
