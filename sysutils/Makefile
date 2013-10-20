@@ -553,6 +553,7 @@
     SUBDIR += nepomuk-widgets
     SUBDIR += netident
     SUBDIR += news
+    SUBDIR += nfsping
     SUBDIR += nitrogen
     SUBDIR += no-login
     SUBDIR += npadmin

@@ -1,0 +1,6 @@
+bin/nfsping
+%%SMOKEPING%%smokeping/lib/Smokeping/probes/NFSping.pm
+%%SMOKEPING%%@dirrmtry smokeping/lib/Smokeping/probes
+%%SMOKEPING%%@dirrmtry smokeping/lib/Smokeping
+%%SMOKEPING%%@dirrmtry smokeping/lib
+%%SMOKEPING%%@dirrmtry smokeping
