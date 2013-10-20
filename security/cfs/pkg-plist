@@ -8,6 +8,14 @@ sbin/cfsd
 sbin/cname
 share/doc/cfs/README.install
 share/doc/cfs/notes.ms
+man/man1/cattach.1.gz
+man/man1/cdetach.1.gz
+man/man1/cmkdir.1.gz
+man/man1/cpasswd.1.gz
+man/man1/cfssh.1.gz
+man/man8/ccat.8.gz
+man/man8/cfsd.8.gz
+man/man8/cname.8.gz
 @exec install -d -o root -g wheel -m 0 %%CFSD_BOOTSTRAP%% 2>/dev/null || true
 @unexec rmdir %%CFSD_BOOTSTRAP%% 2>/dev/null || true
 @dirrm share/doc/cfs
