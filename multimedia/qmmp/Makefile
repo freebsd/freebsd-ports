@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qmmp
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://qmmp.ylsoftware.com/files/ \
 		${MASTER_SITE_GOOGLE_CODE}
@@ -17,6 +17,7 @@ USE_QT4=	corelib gui network xml \
 		qmake_build rcc_build uic_build moc_build linguist_build
 USE_LDCONFIG=	yes
 
+OPTIONS_SINGLE=	MPLAYER
 OPTIONS_SINGLE_MPLAYER=	MPLAYER1 MPLAYER2
 OPTIONS_DEFINE=	ALSA ANALYZER APIDOC BS2B CDIO CONVERTER COPYPASTE \
 		COVER CROSSFADE CUE CURL DIR_ASSOC DOCS ENCA FAAD \
@@ -66,7 +67,6 @@ QMMP_DIALOG_DESC=	An original dialog
 MPLAYER1_DESC=	mplayer-1.1.x (multimedia/mplayer)
 MPLAYER2_DESC=	mplayer-2.0.x (multimedia/mplayer2)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPIDOC}
@@ -152,6 +152,8 @@ PLUGIN_OPTIONS_CMAKE+=	-DUSE_GME:BOOL=TRUE
 PLIST_SUB+=	GME="@comment "
 PLUGIN_OPTIONS_CMAKE+=	-DUSE_GME:BOOL=FALSE
 .endif
+
+PLUGIN_OPTIONS_CMAKE+=	-DUSE_FFMPEG_LEGACY:BOOL=FALSE
 
 .if ${PORT_OPTIONS:MFFMPEG}
 LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
@@ -541,20 +543,22 @@ post-build:
 .endif
 
 post-install:
-	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_MAN} ${PORTDOCS} ${STAGEDIR}/${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}; \
+	cd ${WRKSRC} && ${INSTALL_MAN} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+.endif
 .if ${PORT_OPTIONS:MAPIDOC}
-	@${MKDIR} ${STAGEDIR}/${DOCSDIR}/html/search ; \
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html/search ; \
 	cd ${WRKSRC}/doc/html && \
-		${INSTALL_MAN} *.html *.png *.css ${STAGEDIR}/${DOCSDIR}/html ; \
+		${INSTALL_MAN} *.html *.png *.css ${STAGEDIR}${DOCSDIR}/html ; \
 	cd ${WRKSRC}/doc/html/search && \
-		${INSTALL_MAN} *.html *.png *.css *.js ${STAGEDIR}/${DOCSDIR}/html/search ; \
+		${INSTALL_MAN} *.html *.png *.css *.js ${STAGEDIR}${DOCSDIR}/html/search ; \
 	${RM} -f ${WRKDIR}/PLIST.doc ; \
-	${FIND} ${STAGEDIR}/${DOCSDIR}/html -type f | \
-		${SED} 's|${STAGEDIR}/${PREFIX}/||' \
+	${FIND} ${STAGEDIR}${DOCSDIR}/html -type f | \
+		${SED} 's|${STAGEDIR}${PREFIX}/||' \
 		>> ${WRKDIR}/PLIST.doc ; \
-	${FIND} ${STAGEDIR}/${DOCSDIR}/html -type d | \
-		${SED} 's|${STAGEDIR}/${PREFIX}/|@dirrm |' \
+	${FIND} ${STAGEDIR}${DOCSDIR}/html -type d | \
+		${SED} 's|${STAGEDIR}${PREFIX}/|@dirrm |' \
 		| ${SORT} -r >> ${WRKDIR}/PLIST.doc ; \
 	cd ${WRKDIR} ; ${SED} -i -e '/PLIST.doc/ r PLIST.doc' ${TMPPLIST}
 .endif

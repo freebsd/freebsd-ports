@@ -81,7 +81,6 @@ lib/qmmp/CommandLineOptions/libstatusoption.so
 %%CDIO%%lib/qmmp/Input/libcdaudio.so
 %%CUE%%lib/qmmp/Input/libcue.so
 %%FFMPEG%%lib/qmmp/Input/libffmpeg.so
-%%FFMPEG_LEGACY%%lib/qmmp/Input/libffmpeg_legacy.so
 %%FLAC%%lib/qmmp/Input/libflac.so
 %%MAD%%lib/qmmp/Input/libmad.so
 %%MODPLUG%%lib/qmmp/Input/libmodplug.so
