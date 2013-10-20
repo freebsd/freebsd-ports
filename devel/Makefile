@@ -4234,6 +4234,7 @@
     SUBDIR += rubygem-sysinfo
     SUBDIR += rubygem-systemu
     SUBDIR += rubygem-templater
+    SUBDIR += rubygem-temple
     SUBDIR += rubygem-term-ansicolor
     SUBDIR += rubygem-test
     SUBDIR += rubygem-test-unit
