@@ -12,24 +12,18 @@ COMMENT=	EBML (Extensible Binary Meta Language), sort of binary version of XML
 
 LICENSE=	LGPL21
 
+USES=		gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 BUILD_WRKSRC=	${WRKSRC}/make/linux
 INSTALL_WRKSRC=	${WRKSRC}/make/linux
 USE_LDCONFIG=	yes
 
-# Installs dir with proper permissions
-INSTALL_DATA_DIR=	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755
-
-NO_STAGE=	yes
-do-configure:
-	@${REINPLACE_CMD} -E \
-		-e 's|^(prefix)[[:space:]]*=.*$$|\1=${PREFIX}|; \
-			s,^(CXX|LD)[[:space:]]*=.*$$,\1=${CXX},; \
-			s|^(CXXFLAGS)[[:space:]]*=(.*)$$|\1+=\2|; \
-			s|^(INSTALL)[[:space:]]*=.*$$|\1=|; \
-			s|^(INSTALL_DIR_OPTS)[[:space:]]*=.*$$|\1=${INSTALL_DATA_DIR}|; \
-			s,^(INSTALL_OPTS_LIB|INSTALL_OPTS)[[:space:]]*=.*$$,\1=${INSTALL_DATA},' \
-		${WRKSRC}/make/linux/Makefile
+MAKE_ARGS=	INSTALL_DIR_OPTS="${INSTALL} -d -m 755" \
+		INSTALL_OPTS="${INSTALL_DATA}" \
+		INSTALL_OPTS_LIB="${INSTALL_LIB}" \
+		INSTALL="" \
+		prefix=${STAGEDIR}${PREFIX} \
+		CXX="${CXX}" \
+		CXXFLAGS="${CXXFLAGS}"
 
 .include <bsd.port.mk>
