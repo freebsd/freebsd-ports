@@ -15,21 +15,18 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libcfu.a:${PORTSDIR}/devel/libcfu
 USE_BZIP2=	yes
 
 USE_RC_SUBR=	${PORTNAME:S/-/_/}
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 PORTEXAMPLES=	*
-MAN1=		${PORTNAME}.1
-MANCOMPRESSED=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1.gz ${MAN1PREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1.gz ${STAGEDIR}${MAN1PREFIX}/man/man1/
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	for f in ${WRKSRC}/examples/*; do	\
-	    ${INSTALL_DATA} $$f ${EXAMPLESDIR};	\
+	    ${INSTALL_DATA} $$f ${STAGEDIR}${EXAMPLESDIR};	\
 	done
 .endif
 
