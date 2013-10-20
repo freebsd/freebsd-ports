@@ -93,7 +93,18 @@ sharedmimeinfo() {
 	return 0
 }
 
-checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo"
+suidfiles() {
+	filelist=`find ${STAGEDIR} -type f \
+		\( -perm -u+x -or -perm -g+x -or -perm -o+x \) \
+		\( -perm -u+s -or -perm -g+s \)`
+	if [ -n "${filelist}" ]; then
+		warn "setuid files in the stage directory (are these necessary?):"
+		ls -liTd ${filelist}
+	fi
+	return 0
+}
+
+checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo suidfiles"
 
 ret=0
 cd ${STAGEDIR}
