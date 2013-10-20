@@ -1,3 +1,6 @@
+@group www
+@owner www
+@mode 644
 %%WWWDIR%%/COPYING
 %%WWWDIR%%/README
 %%WWWDIR%%/RELEASE NOTES
@@ -245,6 +248,8 @@
 %%WWWDIR%%/xml_cell.php
 %%WWWDIR%%/xml_evidence.php
 %%WWWDIR%%/xml_hypothesis.php
+@mode
+@mode 755
 @dirrm %%WWWDIR%%/parts
 @dirrm %%WWWDIR%%/js/src
 @dirrm %%WWWDIR%%/js/overlib/Mini
@@ -266,5 +271,8 @@
 @dirrm %%WWWDIR%%/auth
 @dirrm %%WWWDIR%%/ajax
 @dirrm %%WWWDIR%%
+@mode
+@owner
+@group
 @exec mkdir -p %D/%%WWWDIR%%/imports
 @exec mkdir -p %D/%%WWWDIR%%/images/user
