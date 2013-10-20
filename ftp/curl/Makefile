@@ -3,7 +3,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	7.32.0
-CATEGORIES=	ftp ipv6 www
+CATEGORIES=	ftp www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		LOCAL/sunpoet
 EXTRACT_SUFX=	.tar.lzma
@@ -27,7 +27,7 @@ SPNEGO_DESC=	SPNEGO (RFC 4178) support
 THREADED_RESOLVER_DESC=	Threaded DNS resolver
 TLS_SRP_DESC=	TLS-SRP (Secure Remote Password) support
 
-CONFIGURE_ARGS+=--disable-threaded-resolver --disable-werror \
+CONFIGURE_ARGS+=--disable-werror \
 		--enable-imap --enable-pop3 --enable-rtsp --enable-smtp \
 		--without-axtls
 CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
@@ -48,6 +48,71 @@ DOCS=		BINDINGS BUGS CONTRIBUTE DISTRO-DILEMMA FAQ FEATURES HISTORY \
 
 SLAVEDIRS=	ftp/curl-hiphop
 
+CA_BUNDLE_CONFIGURE_OFF=--without-ca-bundle
+CA_BUNDLE_CONFIGURE_ON=	--with-ca-bundle=${LOCALBASE}/share/certs/ca-root-nss.crt
+CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+CARES_CONFIGURE_OFF=	--disable-ares
+CARES_CONFIGURE_ON=	--enable-ares=${LOCALBASE}
+CARES_LIB_DEPENDS=	libcares.so:${PORTSDIR}/dns/c-ares
+COOKIES_CONFIGURE_OFF=	--disable-cookies
+COOKIES_CONFIGURE_ON=	--enable-cookies
+CURL_DEBUG_CONFIGURE_OFF=	--disable-curldebug
+CURL_DEBUG_CONFIGURE_ON=--enable-curldebug
+CYASSL_CONFIGURE_OFF=	--without-cyassl
+CYASSL_CONFIGURE_ON=	--with-cyassl=${LOCALBASE}
+CYASSL_LIB_DEPENDS=	libcyassl.so:${PORTSDIR}/security/yassl
+DEBUG_CONFIGURE_OFF=	--disable-debug
+DEBUG_CONFIGURE_ON=	--enable-debug
+GNUTLS_CONFIGURE_OFF=	--without-gnutls
+GNUTLS_CONFIGURE_ON=	--with-gnutls=${LOCALBASE}
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GSSAPI_CONFIGURE_OFF=	--without-gssapi
+GSSAPI_CONFIGURE_ON=	--with-gssapi \
+			--with-gssapi-includes=${INCLUDEDIR} \
+			--with-gssapi-libs=${LIBDIR}
+IDN_CONFIGURE_OFF=	--without-libidn
+IDN_CONFIGURE_ON=	--with-libidn=${LOCALBASE}
+IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
+IPV6_CATEGORIES=	ipv6
+IPV6_CONFIGURE_OFF=	--disable-ipv6
+IPV6_CONFIGURE_ON=	--enable-ipv6
+LDAP_CONFIGURE_OFF=	--disable-ldap
+LDAP_CONFIGURE_ON=	--enable-ldap
+LDAP_CPPFLAGS=		-I${LOCALBASE}/include
+LDAP_LDFLAGS=		-L${LOCALBASE}/lib
+LDAP_USE=		OPENLDAP=yes
+LDAPS_CONFIGURE_OFF=	--disable-ldaps
+LDAPS_CONFIGURE_ON=	--enable-ldaps
+LIBSSH2_CONFIGURE_OFF=	--without-libssh2
+LIBSSH2_CONFIGURE_ON=	--with-libssh2=${LOCALBASE}
+LIBSSH2_LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2
+NSS_CONFIGURE_OFF=	--without-nss
+NSS_CONFIGURE_ON=	--with-nss=${LOCALBASE}
+NSS_LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss
+NTLM_CONFIGURE_OFF=	--disable-ntlm
+NTLM_CONFIGURE_ON=	--enable-ntlm
+OPENSSL_CONFIGURE_OFF=	--without-ssl
+OPENSSL_CONFIGURE_ON=	--with-ssl=${OPENSSLBASE}
+OPENSSL_CPPFLAGS=	-I${OPENSSLINC}
+OPENSSL_LDFLAGS=	-L${OPENSSLLIB}
+OPENSSL_USE=		OPENSSL=yes
+POLARSSL_CONFIGURE_OFF=	--without-polarssl
+POLARSSL_CONFIGURE_ON=	--with-polarssl=${LOCALBASE}
+POLARSSL_LIB_DEPENDS=	libpolarssl.so:${PORTSDIR}/security/polarssl
+PROXY_CONFIGURE_OFF=	--disable-proxy
+PROXY_CONFIGURE_ON=	--enable-proxy
+RTMP_CONFIGURE_OFF=	--without-librtmp
+RTMP_CONFIGURE_ON=	--with-librtmp=${LOCALBASE}
+RTMP_LIB_DEPENDS=	librtmp.so:${PORTSDIR}/multimedia/rtmpdump
+SPNEGO_CONFIGURE_OFF=	--without-spnego
+SPNEGO_CONFIGURE_ON=	--with-spnego=${LOCALBASE}/lib
+SPNEGO_CPPFLAGS=	-I${LOCALBASE}/include/fbopenssl
+SPNEGO_LIB_DEPENDS=	libfbopenssl.so:${PORTSDIR}/security/fbopenssl
+THREADED_RESOLVER_CONFIGURE_OFF=--disable-threaded-resolver
+THREADED_RESOLVER_CONFIGURE_ON=	--enable-threaded-resolver
+TLS_SRP_CONFIGURE_OFF=	--disable-tls-srp
+TLS_SRP_CONFIGURE_ON=	--enable-tls-srp
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCA_BUNDLE} && !${PORT_OPTIONS:MOPENSSL}
@@ -62,7 +127,7 @@ IGNORE=		only supports TLS-SRP with either OpenSSL or GnuTLS
 IGNORE=		only supports LDAPS with LDAP
 .endif
 
-.if ${PORT_OPTIONS:MLDAPS} && !${PORT_OPTIONS:MSSL}
+.if ${PORT_OPTIONS:MLDAPS} && !${PORT_OPTIONS:MCYASSL} && !${PORT_OPTIONS:MGNUTLS} && !${PORT_OPTIONS:MNSS} && !${PORT_OPTIONS:MOPENSSL} && !${PORT_OPTIONS:MPOLARSSL}
 IGNORE=		only supports LDAPS with SSL
 .endif
 
@@ -72,157 +137,6 @@ IGNORE=		only supports LIBSSH2 with OpenSSL
 
 .if ${PORT_OPTIONS:MNTLM} && !${PORT_OPTIONS:MCYASSL} && !${PORT_OPTIONS:MGNUTLS} && !${PORT_OPTIONS:MNSS} && !${PORT_OPTIONS:MOPENSSL} && !${PORT_OPTIONS:MPOLARSSL}
 IGNORE=		only supports NTLM with SSL
-.endif
-
-.if ${PORT_OPTIONS:MCA_BUNDLE}
-RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
-CONFIGURE_ARGS+=--with-ca-bundle=${LOCALBASE}/share/certs/ca-root-nss.crt
-.else
-CONFIGURE_ARGS+=--without-ca-bundle
-.endif
-
-.if ${PORT_OPTIONS:MCARES}
-LIB_DEPENDS+=	cares:${PORTSDIR}/dns/c-ares
-CONFIGURE_ARGS+=--enable-ares=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--disable-ares
-.endif
-
-.if ${PORT_OPTIONS:MCOOKIES}
-CONFIGURE_ARGS+=--enable-cookies
-.else
-CONFIGURE_ARGS+=--disable-cookies
-.endif
-
-.if ${PORT_OPTIONS:MCURL_DEBUG}
-CONFIGURE_ARGS+=--enable-curldebug
-.else
-CONFIGURE_ARGS+=--disable-curldebug
-.endif
-
-.if ${PORT_OPTIONS:MCYASSL}
-LIB_DEPENDS+=	cyassl:${PORTSDIR}/security/yassl
-CONFIGURE_ARGS+=--with-cyassl=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--without-cyassl
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=--enable-debug
-.else
-CONFIGURE_ARGS+=--disable-debug
-.endif
-
-.if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
-CONFIGURE_ARGS+=--with-gnutls=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--without-gnutls
-.endif
-
-.if ${PORT_OPTIONS:MGSSAPI}
-CONFIGURE_ARGS+=--with-gssapi \
-		--with-gssapi-includes=${INCLUDEDIR} \
-		--with-gssapi-libs=${LIBDIR}
-.else
-CONFIGURE_ARGS+=--without-gssapi
-.endif
-
-.if ${PORT_OPTIONS:MIDN}
-LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
-CONFIGURE_ARGS+=--with-libidn=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--without-libidn
-.endif
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=--enable-ipv6
-.else
-CONFIGURE_ARGS+=--disable-ipv6
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-CONFIGURE_ARGS+=--enable-ldap
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-USE_OPENLDAP=	yes
-.else
-CONFIGURE_ARGS+=--disable-ldap
-.endif
-
-.if ${PORT_OPTIONS:MLDAPS}
-CONFIGURE_ARGS+=--enable-ldaps
-.else
-CONFIGURE_ARGS+=--disable-ldaps
-.endif
-
-.if ${PORT_OPTIONS:MLIBSSH2}
-LIB_DEPENDS+=	ssh2:${PORTSDIR}/security/libssh2
-CONFIGURE_ARGS+=--with-libssh2=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--without-libssh2
-.endif
-
-.if ${PORT_OPTIONS:MNSS}
-LIB_DEPENDS+=	nss3:${PORTSDIR}/security/nss
-CONFIGURE_ARGS+=--with-nss=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--without-nss
-.endif
-
-.if ${PORT_OPTIONS:MNTLM}
-CONFIGURE_ARGS+=--enable-ntlm
-.else
-CONFIGURE_ARGS+=--disable-ntlm
-.endif
-
-.if ${PORT_OPTIONS:MOPENSSL}
-CONFIGURE_ARGS+=--with-ssl=${OPENSSLBASE}
-CPPFLAGS+=	-I${OPENSSLINC}
-LDFLAGS+=	-L${OPENSSLLIB}
-USE_OPENSSL=	yes
-.else
-CONFIGURE_ARGS+=--without-ssl
-.endif
-
-.if ${PORT_OPTIONS:MPOLARSSL}
-LIB_DEPENDS+=	polarssl:${PORTSDIR}/security/polarssl
-CONFIGURE_ARGS+=--with-polarssl=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--without-polarssl
-.endif
-
-.if ${PORT_OPTIONS:MPROXY}
-CONFIGURE_ARGS+=--enable-proxy
-.else
-CONFIGURE_ARGS+=--disable-proxy
-.endif
-
-.if ${PORT_OPTIONS:MRTMP}
-LIB_DEPENDS+=	rtmp:${PORTSDIR}/multimedia/rtmpdump
-CONFIGURE_ARGS+=--with-librtmp=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--without-librtmp
-.endif
-
-.if ${PORT_OPTIONS:MSPNEGO}
-LIB_DEPENDS+=	fbopenssl:${PORTSDIR}/security/fbopenssl
-CPPFLAGS+=	-I${LOCALBASE}/include/fbopenssl
-CONFIGURE_ARGS+=--with-spnego=${LOCALBASE}/lib
-.else
-CONFIGURE_ARGS+=--without-spnego
-.endif
-
-.if ${PORT_OPTIONS:MTHREADED_RESOLVER}
-CONFIGURE_ARGS+=--enable-threaded-resolver
-.else
-CONFIGURE_ARGS+=--disable-threaded-resolver
-.endif
-
-.if ${PORT_OPTIONS:MTLS_SRP}
-CONFIGURE_ARGS+=--enable-tls-srp
-.else
-CONFIGURE_ARGS+=--disable-tls-srp
 .endif
 
 post-patch:
