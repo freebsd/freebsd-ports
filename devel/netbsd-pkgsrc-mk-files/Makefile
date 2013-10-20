@@ -11,6 +11,9 @@ MASTER_SITES=	http://www.mova.org/~cheusov/pub/netbsd-tools/pkgsrc-mk-files/ \
 MAINTAINER=	to.my.trociny@gmail.com
 COMMENT=	Collection of mk-files from pkgsrc project
 
+DEPRECATED=	Imported for devel/mk-configure but no longer required
+EXPIRATION_DATE=	2013-11-20
+
 RUN_DEPENDS=	bmake:${PORTSDIR}/devel/bmake
 
 USE_BZIP2=	YES
