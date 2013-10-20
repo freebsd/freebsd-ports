@@ -1,0 +1,4 @@
+Upload files in your Ruby applications, map them to a range of ORMs, store them
+on different backends.
+
+WWW: https://github.com/carrierwaveuploader/carrierwave
