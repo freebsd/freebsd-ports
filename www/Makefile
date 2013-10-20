@@ -1792,6 +1792,7 @@
     SUBDIR += rubygem-passenger
     SUBDIR += rubygem-rabbirack
     SUBDIR += rubygem-rack
+    SUBDIR += rubygem-rack-accept
     SUBDIR += rubygem-rack-cache
     SUBDIR += rubygem-rack-contrib
     SUBDIR += rubygem-rack-mount
