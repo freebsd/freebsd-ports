@@ -83,6 +83,10 @@ OPERA_ARCH=	${ARCH:S,i386,intel,}
 IGNORE=		only for FreeBSD 7.x and higher
 .endif
 
+.if ${OSVERSION} >= 1000054
+RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x
+.endif
+
 post-extract:
 	@${MV} ${WRKSRC}/share/man ${WRKSRC}/man
 
