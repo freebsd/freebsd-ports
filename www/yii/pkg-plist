@@ -1,5 +1,8 @@
-@comment $FreeBSD$
 bin/yiic
+@group www
+@owner www
+@mode 644
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/assets/.gitignore
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/css/bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/css/form.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/css/ie.css
@@ -35,6 +38,7 @@ bin/yiic
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/models/Post.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/models/Tag.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/models/User.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/runtime/.gitignore
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/tests/WebTestCase.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/tests/bootstrap.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/blog/protected/tests/fixtures/tbl_comment.php
@@ -123,6 +127,7 @@ bin/yiic
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/.htaccess
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/ar/yii.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/bg/yii.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/ca/yii.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/config.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/cs/yii.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/de/yii.php
@@ -152,6 +157,7 @@ bin/yiic
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/.htaccess
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/ar/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/bg/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/ca/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/de/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/de_de/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/el/index.php
@@ -173,112 +179,6 @@ bin/yiic
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/zh/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/zh_cn/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/zh_tw/index.php
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/zh_tw
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/zh_cn
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/zh
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/uk
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/sv
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/sk
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/ru
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/ro
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/pt_br
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/pt
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/pl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/no
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/ja
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/it
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/he
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/fr
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/es
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/el
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/de_de
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/de
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/bg
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/ar
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/zh_tw
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/zh_cn
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/vi
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/uk
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/ta_in
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/sv
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/sk
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/ru
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/ro
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/pt_br
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/pt
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/pl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/no
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/nl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/ja
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/it
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/id
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/hu
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/he
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/fr
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/es
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/el
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/de_de
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/de
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/cs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/bg
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/ar
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/css
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/protected/views/site
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/protected/views
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/protected/models
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/protected/data
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/protected/controllers
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/protected/config
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/protected/components
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/protected
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/flex/html-template/history
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/flex/html-template
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/flex/bin/history
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/flex/bin
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/flex/.settings
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook/flex
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/phonebook
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/helloworld/protected/controllers
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/helloworld/protected
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/helloworld
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/hangman/protected/views/layouts
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/hangman/protected/views/game
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/hangman/protected/views
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/hangman/protected/runtime
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/hangman/protected/controllers
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/hangman/protected/config
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/hangman/protected
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/hangman/assets
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/hangman
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/themes/classic/views
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/themes/classic
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/themes
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/views/site/pages
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/views/site
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/views/post
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/views/layouts
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/views/comment
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/views
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/tests/unit
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/tests/functional
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/tests/fixtures
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/tests
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/runtime
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/models
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/data
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/controllers
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/config
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/components/views
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected/components
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/protected
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/css
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog/assets
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/blog
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%DATADIR%%/framework/.htaccess
 %%DATADIR%%/framework/YiiBase.php
 %%DATADIR%%/framework/base/CApplication.php
@@ -304,6 +204,7 @@ bin/yiic
 %%DATADIR%%/framework/caching/CEAcceleratorCache.php
 %%DATADIR%%/framework/caching/CFileCache.php
 %%DATADIR%%/framework/caching/CMemCache.php
+%%DATADIR%%/framework/caching/CRedisCache.php
 %%DATADIR%%/framework/caching/CWinCache.php
 %%DATADIR%%/framework/caching/CXCache.php
 %%DATADIR%%/framework/caching/CZendDataCache.php
@@ -324,6 +225,7 @@ bin/yiic
 %%DATADIR%%/framework/cli/commands/shell/HelpCommand.php
 %%DATADIR%%/framework/cli/commands/shell/ModelCommand.php
 %%DATADIR%%/framework/cli/commands/shell/ModuleCommand.php
+%%DATADIR%%/framework/cli/runtime/.gitignore
 %%DATADIR%%/framework/cli/views/shell/controller/controller.php
 %%DATADIR%%/framework/cli/views/shell/controller/view.php
 %%DATADIR%%/framework/cli/views/shell/crud/_form.php
@@ -341,9 +243,14 @@ bin/yiic
 %%DATADIR%%/framework/cli/views/shell/model/fixture.php
 %%DATADIR%%/framework/cli/views/shell/model/model.php
 %%DATADIR%%/framework/cli/views/shell/model/test.php
+%%DATADIR%%/framework/cli/views/shell/module/components/.gitignore
 %%DATADIR%%/framework/cli/views/shell/module/controllers/DefaultController.php
+%%DATADIR%%/framework/cli/views/shell/module/messages/.gitignore
+%%DATADIR%%/framework/cli/views/shell/module/models/.gitignore
 %%DATADIR%%/framework/cli/views/shell/module/module.php
 %%DATADIR%%/framework/cli/views/shell/module/views/default/index.php
+%%DATADIR%%/framework/cli/views/shell/module/views/layouts/.gitignore
+%%DATADIR%%/framework/cli/views/webapp/assets/.gitignore
 %%DATADIR%%/framework/cli/views/webapp/assets/git-gitignore
 %%DATADIR%%/framework/cli/views/webapp/assets/hg-hgkeep
 %%DATADIR%%/framework/cli/views/webapp/css/bg.gif
@@ -353,11 +260,13 @@ bin/yiic
 %%DATADIR%%/framework/cli/views/webapp/css/print.css
 %%DATADIR%%/framework/cli/views/webapp/css/screen.css
 %%DATADIR%%/framework/cli/views/webapp/hg-hgignore
+%%DATADIR%%/framework/cli/views/webapp/images/.gitignore
 %%DATADIR%%/framework/cli/views/webapp/images/git-gitkeep
 %%DATADIR%%/framework/cli/views/webapp/images/hg-hgkeep
 %%DATADIR%%/framework/cli/views/webapp/index-test.php
 %%DATADIR%%/framework/cli/views/webapp/index.php
 %%DATADIR%%/framework/cli/views/webapp/protected/.htaccess
+%%DATADIR%%/framework/cli/views/webapp/protected/commands/shell/.gitignore
 %%DATADIR%%/framework/cli/views/webapp/protected/commands/shell/git-gitkeep
 %%DATADIR%%/framework/cli/views/webapp/protected/commands/shell/hg-hgkeep
 %%DATADIR%%/framework/cli/views/webapp/protected/components/Controller.php
@@ -369,26 +278,36 @@ bin/yiic
 %%DATADIR%%/framework/cli/views/webapp/protected/data/schema.mysql.sql
 %%DATADIR%%/framework/cli/views/webapp/protected/data/schema.sqlite.sql
 %%DATADIR%%/framework/cli/views/webapp/protected/data/testdrive.db
+%%DATADIR%%/framework/cli/views/webapp/protected/extensions/.gitignore
 %%DATADIR%%/framework/cli/views/webapp/protected/extensions/git-gitkeep
 %%DATADIR%%/framework/cli/views/webapp/protected/extensions/hg-hgkeep
+%%DATADIR%%/framework/cli/views/webapp/protected/messages/.gitignore
 %%DATADIR%%/framework/cli/views/webapp/protected/messages/git-gitkeep
 %%DATADIR%%/framework/cli/views/webapp/protected/messages/hg-hgkeep
+%%DATADIR%%/framework/cli/views/webapp/protected/migrations/.gitignore
 %%DATADIR%%/framework/cli/views/webapp/protected/migrations/git-gitkeep
 %%DATADIR%%/framework/cli/views/webapp/protected/migrations/hg-hgkeep
 %%DATADIR%%/framework/cli/views/webapp/protected/models/ContactForm.php
 %%DATADIR%%/framework/cli/views/webapp/protected/models/LoginForm.php
+%%DATADIR%%/framework/cli/views/webapp/protected/runtime/.gitignore
 %%DATADIR%%/framework/cli/views/webapp/protected/runtime/git-gitignore
 %%DATADIR%%/framework/cli/views/webapp/protected/runtime/hg-hgkeep
 %%DATADIR%%/framework/cli/views/webapp/protected/tests/WebTestCase.php
 %%DATADIR%%/framework/cli/views/webapp/protected/tests/bootstrap.php
+%%DATADIR%%/framework/cli/views/webapp/protected/tests/fixtures/.gitignore
 %%DATADIR%%/framework/cli/views/webapp/protected/tests/fixtures/git-gitkeep
 %%DATADIR%%/framework/cli/views/webapp/protected/tests/fixtures/hg-hgkeep
 %%DATADIR%%/framework/cli/views/webapp/protected/tests/functional/SiteTest.php
 %%DATADIR%%/framework/cli/views/webapp/protected/tests/phpunit.xml
+%%DATADIR%%/framework/cli/views/webapp/protected/tests/report/.gitignore
 %%DATADIR%%/framework/cli/views/webapp/protected/tests/report/git-gitignore
 %%DATADIR%%/framework/cli/views/webapp/protected/tests/report/hg-hgkeep
+%%DATADIR%%/framework/cli/views/webapp/protected/tests/unit/.gitignore
 %%DATADIR%%/framework/cli/views/webapp/protected/tests/unit/git-gitkeep
 %%DATADIR%%/framework/cli/views/webapp/protected/tests/unit/hg-hgkeep
+%%DATADIR%%/framework/cli/views/webapp/protected/vendor/.gitignore
+%%DATADIR%%/framework/cli/views/webapp/protected/vendor/git-gitkeep
+%%DATADIR%%/framework/cli/views/webapp/protected/vendor/hg-hgkeep
 %%DATADIR%%/framework/cli/views/webapp/protected/views/layouts/column1.php
 %%DATADIR%%/framework/cli/views/webapp/protected/views/layouts/column2.php
 %%DATADIR%%/framework/cli/views/webapp/protected/views/layouts/main.php
@@ -401,15 +320,17 @@ bin/yiic
 %%DATADIR%%/framework/cli/views/webapp/protected/yiic.bat
 %%DATADIR%%/framework/cli/views/webapp/protected/yiic.php
 %%DATADIR%%/framework/cli/views/webapp/themes/classic/views/.htaccess
+%%DATADIR%%/framework/cli/views/webapp/themes/classic/views/layouts/.gitignore
 %%DATADIR%%/framework/cli/views/webapp/themes/classic/views/layouts/git-gitkeep
 %%DATADIR%%/framework/cli/views/webapp/themes/classic/views/layouts/hg-hgkeep
+%%DATADIR%%/framework/cli/views/webapp/themes/classic/views/site/.gitignore
 %%DATADIR%%/framework/cli/views/webapp/themes/classic/views/site/git-gitkeep
 %%DATADIR%%/framework/cli/views/webapp/themes/classic/views/site/hg-hgkeep
+%%DATADIR%%/framework/cli/views/webapp/themes/classic/views/system/.gitignore
 %%DATADIR%%/framework/cli/views/webapp/themes/classic/views/system/git-gitkeep
 %%DATADIR%%/framework/cli/views/webapp/themes/classic/views/system/hg-hgkeep
 %%DATADIR%%/framework/collections/CAttributeCollection.php
 %%DATADIR%%/framework/collections/CConfiguration.php
-%%DATADIR%%/framework/collections/CTypedMap.php
 %%DATADIR%%/framework/collections/CList.php
 %%DATADIR%%/framework/collections/CListIterator.php
 %%DATADIR%%/framework/collections/CMap.php
@@ -419,6 +340,7 @@ bin/yiic
 %%DATADIR%%/framework/collections/CStack.php
 %%DATADIR%%/framework/collections/CStackIterator.php
 %%DATADIR%%/framework/collections/CTypedList.php
+%%DATADIR%%/framework/collections/CTypedMap.php
 %%DATADIR%%/framework/console/CConsoleApplication.php
 %%DATADIR%%/framework/console/CConsoleCommand.php
 %%DATADIR%%/framework/console/CConsoleCommandBehavior.php
@@ -455,6 +377,7 @@ bin/yiic
 %%DATADIR%%/framework/db/schema/oci/COciSchema.php
 %%DATADIR%%/framework/db/schema/oci/COciTableSchema.php
 %%DATADIR%%/framework/db/schema/pgsql/CPgsqlColumnSchema.php
+%%DATADIR%%/framework/db/schema/pgsql/CPgsqlCommandBuilder.php
 %%DATADIR%%/framework/db/schema/pgsql/CPgsqlSchema.php
 %%DATADIR%%/framework/db/schema/pgsql/CPgsqlTableSchema.php
 %%DATADIR%%/framework/db/schema/sqlite/CSqliteColumnSchema.php
@@ -492,8 +415,8 @@ bin/yiic
 %%DATADIR%%/framework/gii/assets/js/fancybox/fancybox.png
 %%DATADIR%%/framework/gii/assets/js/fancybox/jquery.fancybox-1.3.1.css
 %%DATADIR%%/framework/gii/assets/js/fancybox/jquery.fancybox-1.3.1.pack.js
-%%DATADIR%%/framework/gii/assets/js/jquery.tooltip-1.2.6.min.js
 %%DATADIR%%/framework/gii/assets/js/main.js
+%%DATADIR%%/framework/gii/assets/js/tooltip.js
 %%DATADIR%%/framework/gii/components/Pear/Text/Diff.php
 %%DATADIR%%/framework/gii/components/Pear/Text/Diff/Engine/native.php
 %%DATADIR%%/framework/gii/components/Pear/Text/Diff/Engine/shell.php
@@ -537,9 +460,13 @@ bin/yiic
 %%DATADIR%%/framework/gii/generators/model/views/index.php
 %%DATADIR%%/framework/gii/generators/module/ModuleCode.php
 %%DATADIR%%/framework/gii/generators/module/ModuleGenerator.php
+%%DATADIR%%/framework/gii/generators/module/templates/default/components/.gitignore
 %%DATADIR%%/framework/gii/generators/module/templates/default/controllers/DefaultController.php
+%%DATADIR%%/framework/gii/generators/module/templates/default/messages/.gitignore
+%%DATADIR%%/framework/gii/generators/module/templates/default/models/.gitignore
 %%DATADIR%%/framework/gii/generators/module/templates/default/module.php
 %%DATADIR%%/framework/gii/generators/module/templates/default/views/default/index.php
+%%DATADIR%%/framework/gii/generators/module/templates/default/views/layouts/.gitignore
 %%DATADIR%%/framework/gii/generators/module/views/index.php
 %%DATADIR%%/framework/gii/models/LoginForm.php
 %%DATADIR%%/framework/gii/views/common/code.php
@@ -1236,6 +1163,8 @@ bin/yiic
 %%DATADIR%%/framework/messages/bg/yii.php
 %%DATADIR%%/framework/messages/bg/zii.php
 %%DATADIR%%/framework/messages/bs/yii.php
+%%DATADIR%%/framework/messages/ca/yii.php
+%%DATADIR%%/framework/messages/ca/zii.php
 %%DATADIR%%/framework/messages/config.php
 %%DATADIR%%/framework/messages/cs/yii.php
 %%DATADIR%%/framework/messages/cs/zii.php
@@ -1261,8 +1190,8 @@ bin/yiic
 %%DATADIR%%/framework/messages/it/zii.php
 %%DATADIR%%/framework/messages/ja/yii.php
 %%DATADIR%%/framework/messages/ja/zii.php
-%%DATADIR%%/framework/messages/kk/zii.php
 %%DATADIR%%/framework/messages/kk/yii.php
+%%DATADIR%%/framework/messages/kk/zii.php
 %%DATADIR%%/framework/messages/ko_kr/yii.php
 %%DATADIR%%/framework/messages/ko_kr/zii.php
 %%DATADIR%%/framework/messages/lt/yii.php
@@ -1310,7 +1239,9 @@ bin/yiic
 %%DATADIR%%/framework/utils/CDateTimeParser.php
 %%DATADIR%%/framework/utils/CFileHelper.php
 %%DATADIR%%/framework/utils/CFormatter.php
+%%DATADIR%%/framework/utils/CLocalizedFormatter.php
 %%DATADIR%%/framework/utils/CMarkdownParser.php
+%%DATADIR%%/framework/utils/CPasswordHelper.php
 %%DATADIR%%/framework/utils/CPropertyValue.php
 %%DATADIR%%/framework/utils/CTimestamp.php
 %%DATADIR%%/framework/utils/CVarDumper.php
@@ -1336,6 +1267,10 @@ bin/yiic
 %%DATADIR%%/framework/validators/CUnsafeValidator.php
 %%DATADIR%%/framework/validators/CUrlValidator.php
 %%DATADIR%%/framework/validators/CValidator.php
+%%DATADIR%%/framework/vendors/Net_IDNA2/LICENSE.txt
+%%DATADIR%%/framework/vendors/Net_IDNA2/Net/IDNA2.php
+%%DATADIR%%/framework/vendors/Net_IDNA2/Net/IDNA2/Exception.php
+%%DATADIR%%/framework/vendors/Net_IDNA2/Net/IDNA2/Exception/Nameprep.php
 %%DATADIR%%/framework/vendors/README.html
 %%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter.php
 %%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/ABAP.php
@@ -1391,6 +1326,8 @@ bin/yiic
 %%DATADIR%%/framework/vendors/adodb/LICENSE.txt
 %%DATADIR%%/framework/vendors/bbq/LICENSE.txt
 %%DATADIR%%/framework/vendors/cldr/LICENSE.txt
+%%DATADIR%%/framework/vendors/console-normalizer/README.md
+%%DATADIR%%/framework/vendors/console-normalizer/normalizeconsole.min.js
 %%DATADIR%%/framework/vendors/gettext/LICENSE.txt
 %%DATADIR%%/framework/vendors/history/license.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/HTMLPurifier.standalone.php
@@ -1430,7 +1367,6 @@ bin/yiic
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.RemoveNbsp.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveSpansWithoutAttributes.txt
-%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.EnableIDNA.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowImportant.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowTricky.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowedFonts.txt
@@ -1448,6 +1384,8 @@ bin/yiic
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.ColorKeywords.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.ConvertDocumentToFragment.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.DirectLexLineNumberSyncInterval.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.DisableExcludes.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.EnableIDNA.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.Encoding.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidChildren.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidTags.txt
@@ -1489,6 +1427,7 @@ bin/yiic
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.SafeEmbed.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.SafeIframe.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.SafeObject.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.SafeScripting.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Strict.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TargetBlank.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TidyAdd.txt
@@ -1535,8 +1474,6 @@ bin/yiic
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Printer/ConfigForm.js
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Printer/ConfigForm.php
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Printer/HTMLDefinition.php
-%%DATADIR%%/framework/vendors/idna_convert/LICENCE
-%%DATADIR%%/framework/vendors/idna_convert/idna_convert.class.php
 %%DATADIR%%/framework/vendors/jquery/LICENSE.txt
 %%DATADIR%%/framework/vendors/jquery/autocomplete/LICENSE.txt
 %%DATADIR%%/framework/vendors/jquery/maskedinput/LICENSE.txt
@@ -1547,19 +1484,19 @@ bin/yiic
 %%DATADIR%%/framework/vendors/markdown/markdown.php
 %%DATADIR%%/framework/vendors/punycode/LICENSE-GPL.txt
 %%DATADIR%%/framework/vendors/punycode/LICENSE-MIT.txt
-%%DATADIR%%/framework/views/ar/profile-summary-firebug.php
-%%DATADIR%%/framework/views/ar/error503.php
-%%DATADIR%%/framework/views/ar/profile-callstack-firebug.php
-%%DATADIR%%/framework/views/ar/error403.php
-%%DATADIR%%/framework/views/ar/error404.php
-%%DATADIR%%/framework/views/ar/log-firebug.php
-%%DATADIR%%/framework/views/ar/profile-callstack.php
-%%DATADIR%%/framework/views/ar/exception.php
-%%DATADIR%%/framework/views/ar/log.php
 %%DATADIR%%/framework/views/ar/error.php
 %%DATADIR%%/framework/views/ar/error400.php
-%%DATADIR%%/framework/views/ar/profile-summary.php
+%%DATADIR%%/framework/views/ar/error403.php
+%%DATADIR%%/framework/views/ar/error404.php
 %%DATADIR%%/framework/views/ar/error500.php
+%%DATADIR%%/framework/views/ar/error503.php
+%%DATADIR%%/framework/views/ar/exception.php
+%%DATADIR%%/framework/views/ar/log-firebug.php
+%%DATADIR%%/framework/views/ar/log.php
+%%DATADIR%%/framework/views/ar/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/ar/profile-callstack.php
+%%DATADIR%%/framework/views/ar/profile-summary-firebug.php
+%%DATADIR%%/framework/views/ar/profile-summary.php
 %%DATADIR%%/framework/views/bg/error.php
 %%DATADIR%%/framework/views/bg/error400.php
 %%DATADIR%%/framework/views/bg/error403.php
@@ -1572,6 +1509,18 @@ bin/yiic
 %%DATADIR%%/framework/views/bg/profile-callstack.php
 %%DATADIR%%/framework/views/bg/profile-summary-firebug.php
 %%DATADIR%%/framework/views/bg/profile-summary.php
+%%DATADIR%%/framework/views/ca/error.php
+%%DATADIR%%/framework/views/ca/error400.php
+%%DATADIR%%/framework/views/ca/error403.php
+%%DATADIR%%/framework/views/ca/error404.php
+%%DATADIR%%/framework/views/ca/error500.php
+%%DATADIR%%/framework/views/ca/error503.php
+%%DATADIR%%/framework/views/ca/log-firebug.php
+%%DATADIR%%/framework/views/ca/log.php
+%%DATADIR%%/framework/views/ca/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/ca/profile-callstack.php
+%%DATADIR%%/framework/views/ca/profile-summary-firebug.php
+%%DATADIR%%/framework/views/ca/profile-summary.php
 %%DATADIR%%/framework/views/de/error.php
 %%DATADIR%%/framework/views/de/error400.php
 %%DATADIR%%/framework/views/de/error403.php
@@ -1615,6 +1564,19 @@ bin/yiic
 %%DATADIR%%/framework/views/es/profile-summary-firebug.php
 %%DATADIR%%/framework/views/es/profile-summary.php
 %%DATADIR%%/framework/views/exception.php
+%%DATADIR%%/framework/views/fi/error.php
+%%DATADIR%%/framework/views/fi/error400.php
+%%DATADIR%%/framework/views/fi/error403.php
+%%DATADIR%%/framework/views/fi/error404.php
+%%DATADIR%%/framework/views/fi/error500.php
+%%DATADIR%%/framework/views/fi/error503.php
+%%DATADIR%%/framework/views/fi/exception.php
+%%DATADIR%%/framework/views/fi/log-firebug.php
+%%DATADIR%%/framework/views/fi/log.php
+%%DATADIR%%/framework/views/fi/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/fi/profile-callstack.php
+%%DATADIR%%/framework/views/fi/profile-summary-firebug.php
+%%DATADIR%%/framework/views/fi/profile-summary.php
 %%DATADIR%%/framework/views/fr/error.php
 %%DATADIR%%/framework/views/fr/error400.php
 %%DATADIR%%/framework/views/fr/error403.php
@@ -1681,25 +1643,26 @@ bin/yiic
 %%DATADIR%%/framework/views/ja/error404.php
 %%DATADIR%%/framework/views/ja/error500.php
 %%DATADIR%%/framework/views/ja/error503.php
+%%DATADIR%%/framework/views/ja/exception.php
 %%DATADIR%%/framework/views/ja/log-firebug.php
 %%DATADIR%%/framework/views/ja/log.php
 %%DATADIR%%/framework/views/ja/profile-callstack-firebug.php
 %%DATADIR%%/framework/views/ja/profile-callstack.php
 %%DATADIR%%/framework/views/ja/profile-summary-firebug.php
 %%DATADIR%%/framework/views/ja/profile-summary.php
-%%DATADIR%%/framework/views/ko/exception.php
-%%DATADIR%%/framework/views/ko/log.php
-%%DATADIR%%/framework/views/ko/log-firebug.php
-%%DATADIR%%/framework/views/ko/error500.php
 %%DATADIR%%/framework/views/ko/error.php
 %%DATADIR%%/framework/views/ko/error400.php
-%%DATADIR%%/framework/views/ko/profile-summary-firebug.php
-%%DATADIR%%/framework/views/ko/error404.php
-%%DATADIR%%/framework/views/ko/profile-callstack-firebug.php
 %%DATADIR%%/framework/views/ko/error403.php
-%%DATADIR%%/framework/views/ko/profile-summary.php
-%%DATADIR%%/framework/views/ko/profile-callstack.php
+%%DATADIR%%/framework/views/ko/error404.php
+%%DATADIR%%/framework/views/ko/error500.php
 %%DATADIR%%/framework/views/ko/error503.php
+%%DATADIR%%/framework/views/ko/exception.php
+%%DATADIR%%/framework/views/ko/log-firebug.php
+%%DATADIR%%/framework/views/ko/log.php
+%%DATADIR%%/framework/views/ko/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/ko/profile-callstack.php
+%%DATADIR%%/framework/views/ko/profile-summary-firebug.php
+%%DATADIR%%/framework/views/ko/profile-summary.php
 %%DATADIR%%/framework/views/log-firebug.php
 %%DATADIR%%/framework/views/log.php
 %%DATADIR%%/framework/views/lt/error.php
@@ -1779,18 +1742,18 @@ bin/yiic
 %%DATADIR%%/framework/views/pt/profile-callstack.php
 %%DATADIR%%/framework/views/pt/profile-summary-firebug.php
 %%DATADIR%%/framework/views/pt/profile-summary.php
-%%DATADIR%%/framework/views/pt_br/error500.php
+%%DATADIR%%/framework/views/pt_br/error.php
 %%DATADIR%%/framework/views/pt_br/error400.php
+%%DATADIR%%/framework/views/pt_br/error403.php
+%%DATADIR%%/framework/views/pt_br/error404.php
+%%DATADIR%%/framework/views/pt_br/error500.php
+%%DATADIR%%/framework/views/pt_br/error503.php
+%%DATADIR%%/framework/views/pt_br/log-firebug.php
+%%DATADIR%%/framework/views/pt_br/log.php
+%%DATADIR%%/framework/views/pt_br/profile-callstack-firebug.php
 %%DATADIR%%/framework/views/pt_br/profile-callstack.php
 %%DATADIR%%/framework/views/pt_br/profile-summary-firebug.php
-%%DATADIR%%/framework/views/pt_br/log-firebug.php
 %%DATADIR%%/framework/views/pt_br/profile-summary.php
-%%DATADIR%%/framework/views/pt_br/profile-callstack-firebug.php
-%%DATADIR%%/framework/views/pt_br/error404.php
-%%DATADIR%%/framework/views/pt_br/error403.php
-%%DATADIR%%/framework/views/pt_br/error.php
-%%DATADIR%%/framework/views/pt_br/error503.php
-%%DATADIR%%/framework/views/pt_br/log.php
 %%DATADIR%%/framework/views/ro/error.php
 %%DATADIR%%/framework/views/ro/error400.php
 %%DATADIR%%/framework/views/ro/error403.php
@@ -1889,9 +1852,8 @@ bin/yiic
 %%DATADIR%%/framework/views/zh_tw/profile-callstack.php
 %%DATADIR%%/framework/views/zh_tw/profile-summary-firebug.php
 %%DATADIR%%/framework/views/zh_tw/profile-summary.php
-%%DATADIR%%/framework/web/CSqlDataProvider.php
-%%DATADIR%%/framework/web/CArrayDataProvider.php
 %%DATADIR%%/framework/web/CActiveDataProvider.php
+%%DATADIR%%/framework/web/CArrayDataProvider.php
 %%DATADIR%%/framework/web/CAssetManager.php
 %%DATADIR%%/framework/web/CBaseController.php
 %%DATADIR%%/framework/web/CCacheHttpSession.php
@@ -1909,6 +1871,7 @@ bin/yiic
 %%DATADIR%%/framework/web/COutputEvent.php
 %%DATADIR%%/framework/web/CPagination.php
 %%DATADIR%%/framework/web/CSort.php
+%%DATADIR%%/framework/web/CSqlDataProvider.php
 %%DATADIR%%/framework/web/CTheme.php
 %%DATADIR%%/framework/web/CThemeManager.php
 %%DATADIR%%/framework/web/CUploadedFile.php
@@ -1928,11 +1891,11 @@ bin/yiic
 %%DATADIR%%/framework/web/auth/CPhpAuthManager.php
 %%DATADIR%%/framework/web/auth/CUserIdentity.php
 %%DATADIR%%/framework/web/auth/CWebUser.php
-%%DATADIR%%/framework/web/auth/schema-sqlite.sql
 %%DATADIR%%/framework/web/auth/schema-mssql.sql
 %%DATADIR%%/framework/web/auth/schema-mysql.sql
-%%DATADIR%%/framework/web/auth/schema-pgsql.sql
 %%DATADIR%%/framework/web/auth/schema-oci.sql
+%%DATADIR%%/framework/web/auth/schema-pgsql.sql
+%%DATADIR%%/framework/web/auth/schema-sqlite.sql
 %%DATADIR%%/framework/web/filters/CFilter.php
 %%DATADIR%%/framework/web/filters/CFilterChain.php
 %%DATADIR%%/framework/web/filters/CHttpCacheFilter.php
@@ -2050,7 +2013,8 @@ bin/yiic
 %%DATADIR%%/framework/web/widgets/CWidget.php
 %%DATADIR%%/framework/web/widgets/captcha/CCaptcha.php
 %%DATADIR%%/framework/web/widgets/captcha/CCaptchaAction.php
-%%DATADIR%%/framework/web/widgets/captcha/Duality.ttf
+%%DATADIR%%/framework/web/widgets/captcha/SpicyRice.md
+%%DATADIR%%/framework/web/widgets/captcha/SpicyRice.ttf
 %%DATADIR%%/framework/web/widgets/pagers/CBasePager.php
 %%DATADIR%%/framework/web/widgets/pagers/CLinkPager.php
 %%DATADIR%%/framework/web/widgets/pagers/CListPager.php
@@ -2107,252 +2071,373 @@ bin/yiic
 %%DATADIR%%/framework/zii/widgets/jui/CJuiSortable.php
 %%DATADIR%%/framework/zii/widgets/jui/CJuiTabs.php
 %%DATADIR%%/framework/zii/widgets/jui/CJuiWidget.php
-@dirrm %%DATADIR%%/framework/zii/widgets/jui
-@dirrm %%DATADIR%%/framework/zii/widgets/grid
-@dirrm %%DATADIR%%/framework/zii/widgets/assets/listview
-@dirrm %%DATADIR%%/framework/zii/widgets/assets/gridview
-@dirrm %%DATADIR%%/framework/zii/widgets/assets/detailview
-@dirrm %%DATADIR%%/framework/zii/widgets/assets
-@dirrm %%DATADIR%%/framework/zii/widgets
-@dirrm %%DATADIR%%/framework/zii/behaviors
-@dirrm %%DATADIR%%/framework/zii
-@dirrm %%DATADIR%%/framework/web/widgets/views
-@dirrm %%DATADIR%%/framework/web/widgets/pagers
-@dirrm %%DATADIR%%/framework/web/widgets/captcha
-@dirrm %%DATADIR%%/framework/web/widgets
-@dirrm %%DATADIR%%/framework/web/services
-@dirrm %%DATADIR%%/framework/web/renderers
-@dirrm %%DATADIR%%/framework/web/js/source/yiitab
-@dirrm %%DATADIR%%/framework/web/js/source/treeview/images
-@dirrm %%DATADIR%%/framework/web/js/source/treeview
-@dirrm %%DATADIR%%/framework/web/js/source/rating
-@dirrm %%DATADIR%%/framework/web/js/source/jui/js
-@dirrm %%DATADIR%%/framework/web/js/source/jui/css/base/images
-@dirrm %%DATADIR%%/framework/web/js/source/jui/css/base
-@dirrm %%DATADIR%%/framework/web/js/source/jui/css
-@dirrm %%DATADIR%%/framework/web/js/source/jui
-@dirrm %%DATADIR%%/framework/web/js/source/autocomplete
-@dirrm %%DATADIR%%/framework/web/js/source
-@dirrm %%DATADIR%%/framework/web/js
-@dirrm %%DATADIR%%/framework/web/helpers
-@dirrm %%DATADIR%%/framework/web/form
-@dirrm %%DATADIR%%/framework/web/filters
-@dirrm %%DATADIR%%/framework/web/auth
-@dirrm %%DATADIR%%/framework/web/actions
-@dirrm %%DATADIR%%/framework/web
-@dirrm %%DATADIR%%/framework/views/zh_tw
-@dirrm %%DATADIR%%/framework/views/zh_cn
-@dirrm %%DATADIR%%/framework/views/vi
-@dirrm %%DATADIR%%/framework/views/uk
-@dirrm %%DATADIR%%/framework/views/sv
-@dirrm %%DATADIR%%/framework/views/sk
-@dirrm %%DATADIR%%/framework/views/ru
-@dirrm %%DATADIR%%/framework/views/ro
-@dirrm %%DATADIR%%/framework/views/pt_br
-@dirrm %%DATADIR%%/framework/views/pt
-@dirrm %%DATADIR%%/framework/views/pl
-@dirrm %%DATADIR%%/framework/views/no
-@dirrm %%DATADIR%%/framework/views/nl
-@dirrm %%DATADIR%%/framework/views/lv
-@dirrm %%DATADIR%%/framework/views/lt
-@dirrm %%DATADIR%%/framework/views/ko
-@dirrm %%DATADIR%%/framework/views/ja
-@dirrm %%DATADIR%%/framework/views/it
-@dirrm %%DATADIR%%/framework/views/id
-@dirrm %%DATADIR%%/framework/views/hr
-@dirrm %%DATADIR%%/framework/views/he
-@dirrm %%DATADIR%%/framework/views/fr
-@dirrm %%DATADIR%%/framework/views/es
-@dirrm %%DATADIR%%/framework/views/el
-@dirrm %%DATADIR%%/framework/views/de
-@dirrm %%DATADIR%%/framework/views/bg
-@dirrm %%DATADIR%%/framework/views/ar
-@dirrm %%DATADIR%%/framework/views
-@dirrm %%DATADIR%%/framework/vendors/punycode
-@dirrm %%DATADIR%%/framework/vendors/markdown
-@dirrm %%DATADIR%%/framework/vendors/json
-@dirrm %%DATADIR%%/framework/vendors/jqueryui
-@dirrm %%DATADIR%%/framework/vendors/jquery/treeview
-@dirrm %%DATADIR%%/framework/vendors/jquery/maskedinput
-@dirrm %%DATADIR%%/framework/vendors/jquery/autocomplete
-@dirrm %%DATADIR%%/framework/vendors/jquery
-@dirrm %%DATADIR%%/framework/vendors/idna_convert
-@dirrm %%DATADIR%%/framework/vendors/history
-@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Printer
-@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Lexer
-@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Language/messages
-@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Language/classes
-@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Language
-@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Filter
-@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/EntityLookup
-@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema
-@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Interchange
-@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Builder
-@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema
-@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier
-@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone
-@dirrm %%DATADIR%%/framework/vendors/htmlpurifier
-@dirrm %%DATADIR%%/framework/vendors/gettext
-@dirrm %%DATADIR%%/framework/vendors/cldr
-@dirrm %%DATADIR%%/framework/vendors/bbq
-@dirrm %%DATADIR%%/framework/vendors/adodb
-@dirrm %%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/Renderer
-@dirrm %%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter
-@dirrm %%DATADIR%%/framework/vendors/TextHighlighter/Text
-@dirrm %%DATADIR%%/framework/vendors/TextHighlighter
-@dirrm %%DATADIR%%/framework/vendors
-@dirrm %%DATADIR%%/framework/validators
-@dirrm %%DATADIR%%/framework/utils
-@dirrm %%DATADIR%%/framework/test
-@dirrm %%DATADIR%%/framework/messages/zh_tw
-@dirrm %%DATADIR%%/framework/messages/zh_cn
-@dirrm %%DATADIR%%/framework/messages/vi
-@dirrm %%DATADIR%%/framework/messages/uk
-@dirrm %%DATADIR%%/framework/messages/tr
-@dirrm %%DATADIR%%/framework/messages/th
-@dirrm %%DATADIR%%/framework/messages/ta_in
-@dirrm %%DATADIR%%/framework/messages/sv
-@dirrm %%DATADIR%%/framework/messages/sr_yu
-@dirrm %%DATADIR%%/framework/messages/sr_sr
-@dirrm %%DATADIR%%/framework/messages/sk
-@dirrm %%DATADIR%%/framework/messages/ru
-@dirrm %%DATADIR%%/framework/messages/ro
-@dirrm %%DATADIR%%/framework/messages/pt_br
-@dirrm %%DATADIR%%/framework/messages/pt
-@dirrm %%DATADIR%%/framework/messages/pl
-@dirrm %%DATADIR%%/framework/messages/no
-@dirrm %%DATADIR%%/framework/messages/nl
-@dirrm %%DATADIR%%/framework/messages/lv
-@dirrm %%DATADIR%%/framework/messages/lt
-@dirrm %%DATADIR%%/framework/messages/ko_kr
-@dirrm %%DATADIR%%/framework/messages/kk
-@dirrm %%DATADIR%%/framework/messages/ja
-@dirrm %%DATADIR%%/framework/messages/it
-@dirrm %%DATADIR%%/framework/messages/id
-@dirrm %%DATADIR%%/framework/messages/hu
-@dirrm %%DATADIR%%/framework/messages/he
-@dirrm %%DATADIR%%/framework/messages/fr
-@dirrm %%DATADIR%%/framework/messages/fi
-@dirrm %%DATADIR%%/framework/messages/fa_ir
-@dirrm %%DATADIR%%/framework/messages/es
-@dirrm %%DATADIR%%/framework/messages/el
-@dirrm %%DATADIR%%/framework/messages/de
-@dirrm %%DATADIR%%/framework/messages/cs
-@dirrm %%DATADIR%%/framework/messages/bs
-@dirrm %%DATADIR%%/framework/messages/bg
-@dirrm %%DATADIR%%/framework/messages/ar
-@dirrm %%DATADIR%%/framework/messages
-@dirrm %%DATADIR%%/framework/logging
-@dirrm %%DATADIR%%/framework/i18n/gettext
-@dirrm %%DATADIR%%/framework/i18n/data
-@dirrm %%DATADIR%%/framework/i18n
-@dirrm %%DATADIR%%/framework/gii/views/layouts
-@dirrm %%DATADIR%%/framework/gii/views/default
-@dirrm %%DATADIR%%/framework/gii/views/common
-@dirrm %%DATADIR%%/framework/gii/views
-@dirrm %%DATADIR%%/framework/gii/models
-@dirrm %%DATADIR%%/framework/gii/generators/module/views
-@dirrm %%DATADIR%%/framework/gii/generators/module/templates/default/views/layouts
-@dirrm %%DATADIR%%/framework/gii/generators/module/templates/default/views/default
-@dirrm %%DATADIR%%/framework/gii/generators/module/templates/default/views
-@dirrm %%DATADIR%%/framework/gii/generators/module/templates/default/models
-@dirrm %%DATADIR%%/framework/gii/generators/module/templates/default/messages
-@dirrm %%DATADIR%%/framework/gii/generators/module/templates/default/controllers
-@dirrm %%DATADIR%%/framework/gii/generators/module/templates/default/components
-@dirrm %%DATADIR%%/framework/gii/generators/module/templates/default
-@dirrm %%DATADIR%%/framework/gii/generators/module/templates
-@dirrm %%DATADIR%%/framework/gii/generators/module
-@dirrm %%DATADIR%%/framework/gii/generators/model/views
-@dirrm %%DATADIR%%/framework/gii/generators/model/templates/default
-@dirrm %%DATADIR%%/framework/gii/generators/model/templates
-@dirrm %%DATADIR%%/framework/gii/generators/model
-@dirrm %%DATADIR%%/framework/gii/generators/form/views
-@dirrm %%DATADIR%%/framework/gii/generators/form/templates/default
-@dirrm %%DATADIR%%/framework/gii/generators/form/templates
-@dirrm %%DATADIR%%/framework/gii/generators/form
-@dirrm %%DATADIR%%/framework/gii/generators/crud/views
-@dirrm %%DATADIR%%/framework/gii/generators/crud/templates/default
-@dirrm %%DATADIR%%/framework/gii/generators/crud/templates
-@dirrm %%DATADIR%%/framework/gii/generators/crud
-@dirrm %%DATADIR%%/framework/gii/generators/controller/views
-@dirrm %%DATADIR%%/framework/gii/generators/controller/templates/default
-@dirrm %%DATADIR%%/framework/gii/generators/controller/templates
-@dirrm %%DATADIR%%/framework/gii/generators/controller
-@dirrm %%DATADIR%%/framework/gii/generators
-@dirrm %%DATADIR%%/framework/gii/controllers
-@dirrm %%DATADIR%%/framework/gii/components/Pear/Text/Diff/Renderer
-@dirrm %%DATADIR%%/framework/gii/components/Pear/Text/Diff/Engine
-@dirrm %%DATADIR%%/framework/gii/components/Pear/Text/Diff
-@dirrm %%DATADIR%%/framework/gii/components/Pear/Text
-@dirrm %%DATADIR%%/framework/gii/components/Pear
-@dirrm %%DATADIR%%/framework/gii/components
-@dirrm %%DATADIR%%/framework/gii/assets/js/fancybox
-@dirrm %%DATADIR%%/framework/gii/assets/js
-@dirrm %%DATADIR%%/framework/gii/assets/images
-@dirrm %%DATADIR%%/framework/gii/assets/css
-@dirrm %%DATADIR%%/framework/gii/assets
-@dirrm %%DATADIR%%/framework/gii
-@dirrm %%DATADIR%%/framework/db/schema/sqlite
-@dirrm %%DATADIR%%/framework/db/schema/pgsql
-@dirrm %%DATADIR%%/framework/db/schema/oci
-@dirrm %%DATADIR%%/framework/db/schema/mysql
-@dirrm %%DATADIR%%/framework/db/schema/mssql
-@dirrm %%DATADIR%%/framework/db/schema
-@dirrm %%DATADIR%%/framework/db/ar
-@dirrm %%DATADIR%%/framework/db
-@dirrm %%DATADIR%%/framework/console
-@dirrm %%DATADIR%%/framework/collections
-@dirrm %%DATADIR%%/framework/cli/views/webapp/themes/classic/views/system
-@dirrm %%DATADIR%%/framework/cli/views/webapp/themes/classic/views/site
-@dirrm %%DATADIR%%/framework/cli/views/webapp/themes/classic/views/layouts
-@dirrm %%DATADIR%%/framework/cli/views/webapp/themes/classic/views
-@dirrm %%DATADIR%%/framework/cli/views/webapp/themes/classic
-@dirrm %%DATADIR%%/framework/cli/views/webapp/themes
-@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/views/site/pages
-@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/views/site
-@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/views/layouts
-@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/views
-@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/tests/unit
-@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/tests/report
-@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/tests/functional
-@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/tests/fixtures
-@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/tests
-@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/runtime
-@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/models
-@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/migrations
-@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/messages
-@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/extensions
-@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/data
-@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/controllers
-@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/config
-@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/components
-@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/commands/shell
-@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/commands
-@dirrm %%DATADIR%%/framework/cli/views/webapp/protected
-@dirrm %%DATADIR%%/framework/cli/views/webapp/images
-@dirrm %%DATADIR%%/framework/cli/views/webapp/css
-@dirrm %%DATADIR%%/framework/cli/views/webapp/assets
-@dirrm %%DATADIR%%/framework/cli/views/webapp
-@dirrm %%DATADIR%%/framework/cli/views/shell/module/views/layouts
-@dirrm %%DATADIR%%/framework/cli/views/shell/module/views/default
-@dirrm %%DATADIR%%/framework/cli/views/shell/module/views
-@dirrm %%DATADIR%%/framework/cli/views/shell/module/models
-@dirrm %%DATADIR%%/framework/cli/views/shell/module/messages
-@dirrm %%DATADIR%%/framework/cli/views/shell/module/controllers
-@dirrm %%DATADIR%%/framework/cli/views/shell/module/components
-@dirrm %%DATADIR%%/framework/cli/views/shell/module
-@dirrm %%DATADIR%%/framework/cli/views/shell/model
-@dirrm %%DATADIR%%/framework/cli/views/shell/form
-@dirrm %%DATADIR%%/framework/cli/views/shell/crud
-@dirrm %%DATADIR%%/framework/cli/views/shell/controller
-@dirrm %%DATADIR%%/framework/cli/views/shell
-@dirrm %%DATADIR%%/framework/cli/views
-@dirrm %%DATADIR%%/framework/cli/runtime
-@dirrm %%DATADIR%%/framework/cli/commands/shell
-@dirrm %%DATADIR%%/framework/cli/commands
-@dirrm %%DATADIR%%/framework/cli
-@dirrm %%DATADIR%%/framework/caching/dependencies
-@dirrm %%DATADIR%%/framework/caching
-@dirrm %%DATADIR%%/framework/base
-@dirrm %%DATADIR%%/framework
-@dirrm %%DATADIR%%
+@mode
+@mode 755
+@dirrmtry %%DATADIR%%/framework/zii/widgets/jui
+@dirrmtry %%DATADIR%%/framework/zii/widgets/grid
+@dirrmtry %%DATADIR%%/framework/zii/widgets/assets/listview
+@dirrmtry %%DATADIR%%/framework/zii/widgets/assets/gridview
+@dirrmtry %%DATADIR%%/framework/zii/widgets/assets/detailview
+@dirrmtry %%DATADIR%%/framework/zii/widgets/assets
+@dirrmtry %%DATADIR%%/framework/zii/widgets
+@dirrmtry %%DATADIR%%/framework/zii/behaviors
+@dirrmtry %%DATADIR%%/framework/zii
+@dirrmtry %%DATADIR%%/framework/web/widgets/views
+@dirrmtry %%DATADIR%%/framework/web/widgets/pagers
+@dirrmtry %%DATADIR%%/framework/web/widgets/captcha
+@dirrmtry %%DATADIR%%/framework/web/widgets
+@dirrmtry %%DATADIR%%/framework/web/services
+@dirrmtry %%DATADIR%%/framework/web/renderers
+@dirrmtry %%DATADIR%%/framework/web/js/source/yiitab
+@dirrmtry %%DATADIR%%/framework/web/js/source/treeview/images
+@dirrmtry %%DATADIR%%/framework/web/js/source/treeview
+@dirrmtry %%DATADIR%%/framework/web/js/source/rating
+@dirrmtry %%DATADIR%%/framework/web/js/source/jui/js
+@dirrmtry %%DATADIR%%/framework/web/js/source/jui/css/base/images
+@dirrmtry %%DATADIR%%/framework/web/js/source/jui/css/base
+@dirrmtry %%DATADIR%%/framework/web/js/source/jui/css
+@dirrmtry %%DATADIR%%/framework/web/js/source/jui
+@dirrmtry %%DATADIR%%/framework/web/js/source/autocomplete
+@dirrmtry %%DATADIR%%/framework/web/js/source
+@dirrmtry %%DATADIR%%/framework/web/js
+@dirrmtry %%DATADIR%%/framework/web/helpers
+@dirrmtry %%DATADIR%%/framework/web/form
+@dirrmtry %%DATADIR%%/framework/web/filters
+@dirrmtry %%DATADIR%%/framework/web/auth
+@dirrmtry %%DATADIR%%/framework/web/actions
+@dirrmtry %%DATADIR%%/framework/web
+@dirrmtry %%DATADIR%%/framework/views/zh_tw
+@dirrmtry %%DATADIR%%/framework/views/zh_cn
+@dirrmtry %%DATADIR%%/framework/views/vi
+@dirrmtry %%DATADIR%%/framework/views/uk
+@dirrmtry %%DATADIR%%/framework/views/sv
+@dirrmtry %%DATADIR%%/framework/views/sk
+@dirrmtry %%DATADIR%%/framework/views/ru
+@dirrmtry %%DATADIR%%/framework/views/ro
+@dirrmtry %%DATADIR%%/framework/views/pt_br
+@dirrmtry %%DATADIR%%/framework/views/pt
+@dirrmtry %%DATADIR%%/framework/views/pl
+@dirrmtry %%DATADIR%%/framework/views/no
+@dirrmtry %%DATADIR%%/framework/views/nl
+@dirrmtry %%DATADIR%%/framework/views/lv
+@dirrmtry %%DATADIR%%/framework/views/lt
+@dirrmtry %%DATADIR%%/framework/views/ko
+@dirrmtry %%DATADIR%%/framework/views/ja
+@dirrmtry %%DATADIR%%/framework/views/it
+@dirrmtry %%DATADIR%%/framework/views/id
+@dirrmtry %%DATADIR%%/framework/views/hr
+@dirrmtry %%DATADIR%%/framework/views/he
+@dirrmtry %%DATADIR%%/framework/views/fr
+@dirrmtry %%DATADIR%%/framework/views/fi
+@dirrmtry %%DATADIR%%/framework/views/es
+@dirrmtry %%DATADIR%%/framework/views/el
+@dirrmtry %%DATADIR%%/framework/views/de
+@dirrmtry %%DATADIR%%/framework/views/ca
+@dirrmtry %%DATADIR%%/framework/views/bg
+@dirrmtry %%DATADIR%%/framework/views/ar
+@dirrmtry %%DATADIR%%/framework/views
+@dirrmtry %%DATADIR%%/framework/vendors/punycode
+@dirrmtry %%DATADIR%%/framework/vendors/markdown
+@dirrmtry %%DATADIR%%/framework/vendors/json
+@dirrmtry %%DATADIR%%/framework/vendors/jqueryui
+@dirrmtry %%DATADIR%%/framework/vendors/jquery/treeview
+@dirrmtry %%DATADIR%%/framework/vendors/jquery/maskedinput
+@dirrmtry %%DATADIR%%/framework/vendors/jquery/autocomplete
+@dirrmtry %%DATADIR%%/framework/vendors/jquery
+@dirrmtry %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Printer
+@dirrmtry %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Lexer
+@dirrmtry %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Language/messages
+@dirrmtry %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Language/classes
+@dirrmtry %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Language
+@dirrmtry %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Filter
+@dirrmtry %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/EntityLookup
+@dirrmtry %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema
+@dirrmtry %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Interchange
+@dirrmtry %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Builder
+@dirrmtry %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema
+@dirrmtry %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier
+@dirrmtry %%DATADIR%%/framework/vendors/htmlpurifier/standalone
+@dirrmtry %%DATADIR%%/framework/vendors/htmlpurifier
+@dirrmtry %%DATADIR%%/framework/vendors/history
+@dirrmtry %%DATADIR%%/framework/vendors/gettext
+@dirrmtry %%DATADIR%%/framework/vendors/console-normalizer
+@dirrmtry %%DATADIR%%/framework/vendors/cldr
+@dirrmtry %%DATADIR%%/framework/vendors/bbq
+@dirrmtry %%DATADIR%%/framework/vendors/adodb
+@dirrmtry %%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/Renderer
+@dirrmtry %%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter
+@dirrmtry %%DATADIR%%/framework/vendors/TextHighlighter/Text
+@dirrmtry %%DATADIR%%/framework/vendors/TextHighlighter
+@dirrmtry %%DATADIR%%/framework/vendors/Net_IDNA2/Net/IDNA2/Exception
+@dirrmtry %%DATADIR%%/framework/vendors/Net_IDNA2/Net/IDNA2
+@dirrmtry %%DATADIR%%/framework/vendors/Net_IDNA2/Net
+@dirrmtry %%DATADIR%%/framework/vendors/Net_IDNA2
+@dirrmtry %%DATADIR%%/framework/vendors
+@dirrmtry %%DATADIR%%/framework/validators
+@dirrmtry %%DATADIR%%/framework/utils
+@dirrmtry %%DATADIR%%/framework/test
+@dirrmtry %%DATADIR%%/framework/messages/zh_tw
+@dirrmtry %%DATADIR%%/framework/messages/zh_cn
+@dirrmtry %%DATADIR%%/framework/messages/vi
+@dirrmtry %%DATADIR%%/framework/messages/uk
+@dirrmtry %%DATADIR%%/framework/messages/tr
+@dirrmtry %%DATADIR%%/framework/messages/th
+@dirrmtry %%DATADIR%%/framework/messages/ta_in
+@dirrmtry %%DATADIR%%/framework/messages/sv
+@dirrmtry %%DATADIR%%/framework/messages/sr_yu
+@dirrmtry %%DATADIR%%/framework/messages/sr_sr
+@dirrmtry %%DATADIR%%/framework/messages/sk
+@dirrmtry %%DATADIR%%/framework/messages/ru
+@dirrmtry %%DATADIR%%/framework/messages/ro
+@dirrmtry %%DATADIR%%/framework/messages/pt_br
+@dirrmtry %%DATADIR%%/framework/messages/pt
+@dirrmtry %%DATADIR%%/framework/messages/pl
+@dirrmtry %%DATADIR%%/framework/messages/no
+@dirrmtry %%DATADIR%%/framework/messages/nl
+@dirrmtry %%DATADIR%%/framework/messages/lv
+@dirrmtry %%DATADIR%%/framework/messages/lt
+@dirrmtry %%DATADIR%%/framework/messages/ko_kr
+@dirrmtry %%DATADIR%%/framework/messages/kk
+@dirrmtry %%DATADIR%%/framework/messages/ja
+@dirrmtry %%DATADIR%%/framework/messages/it
+@dirrmtry %%DATADIR%%/framework/messages/id
+@dirrmtry %%DATADIR%%/framework/messages/hu
+@dirrmtry %%DATADIR%%/framework/messages/he
+@dirrmtry %%DATADIR%%/framework/messages/fr
+@dirrmtry %%DATADIR%%/framework/messages/fi
+@dirrmtry %%DATADIR%%/framework/messages/fa_ir
+@dirrmtry %%DATADIR%%/framework/messages/es
+@dirrmtry %%DATADIR%%/framework/messages/el
+@dirrmtry %%DATADIR%%/framework/messages/de
+@dirrmtry %%DATADIR%%/framework/messages/cs
+@dirrmtry %%DATADIR%%/framework/messages/ca
+@dirrmtry %%DATADIR%%/framework/messages/bs
+@dirrmtry %%DATADIR%%/framework/messages/bg
+@dirrmtry %%DATADIR%%/framework/messages/ar
+@dirrmtry %%DATADIR%%/framework/messages
+@dirrmtry %%DATADIR%%/framework/logging
+@dirrmtry %%DATADIR%%/framework/i18n/gettext
+@dirrmtry %%DATADIR%%/framework/i18n/data
+@dirrmtry %%DATADIR%%/framework/i18n
+@dirrmtry %%DATADIR%%/framework/gii/views/layouts
+@dirrmtry %%DATADIR%%/framework/gii/views/default
+@dirrmtry %%DATADIR%%/framework/gii/views/common
+@dirrmtry %%DATADIR%%/framework/gii/views
+@dirrmtry %%DATADIR%%/framework/gii/models
+@dirrmtry %%DATADIR%%/framework/gii/generators/module/views
+@dirrmtry %%DATADIR%%/framework/gii/generators/module/templates/default/views/layouts
+@dirrmtry %%DATADIR%%/framework/gii/generators/module/templates/default/views/default
+@dirrmtry %%DATADIR%%/framework/gii/generators/module/templates/default/views
+@dirrmtry %%DATADIR%%/framework/gii/generators/module/templates/default/models
+@dirrmtry %%DATADIR%%/framework/gii/generators/module/templates/default/messages
+@dirrmtry %%DATADIR%%/framework/gii/generators/module/templates/default/controllers
+@dirrmtry %%DATADIR%%/framework/gii/generators/module/templates/default/components
+@dirrmtry %%DATADIR%%/framework/gii/generators/module/templates/default
+@dirrmtry %%DATADIR%%/framework/gii/generators/module/templates
+@dirrmtry %%DATADIR%%/framework/gii/generators/module
+@dirrmtry %%DATADIR%%/framework/gii/generators/model/views
+@dirrmtry %%DATADIR%%/framework/gii/generators/model/templates/default
+@dirrmtry %%DATADIR%%/framework/gii/generators/model/templates
+@dirrmtry %%DATADIR%%/framework/gii/generators/model
+@dirrmtry %%DATADIR%%/framework/gii/generators/form/views
+@dirrmtry %%DATADIR%%/framework/gii/generators/form/templates/default
+@dirrmtry %%DATADIR%%/framework/gii/generators/form/templates
+@dirrmtry %%DATADIR%%/framework/gii/generators/form
+@dirrmtry %%DATADIR%%/framework/gii/generators/crud/views
+@dirrmtry %%DATADIR%%/framework/gii/generators/crud/templates/default
+@dirrmtry %%DATADIR%%/framework/gii/generators/crud/templates
+@dirrmtry %%DATADIR%%/framework/gii/generators/crud
+@dirrmtry %%DATADIR%%/framework/gii/generators/controller/views
+@dirrmtry %%DATADIR%%/framework/gii/generators/controller/templates/default
+@dirrmtry %%DATADIR%%/framework/gii/generators/controller/templates
+@dirrmtry %%DATADIR%%/framework/gii/generators/controller
+@dirrmtry %%DATADIR%%/framework/gii/generators
+@dirrmtry %%DATADIR%%/framework/gii/controllers
+@dirrmtry %%DATADIR%%/framework/gii/components/Pear/Text/Diff/Renderer
+@dirrmtry %%DATADIR%%/framework/gii/components/Pear/Text/Diff/Engine
+@dirrmtry %%DATADIR%%/framework/gii/components/Pear/Text/Diff
+@dirrmtry %%DATADIR%%/framework/gii/components/Pear/Text
+@dirrmtry %%DATADIR%%/framework/gii/components/Pear
+@dirrmtry %%DATADIR%%/framework/gii/components
+@dirrmtry %%DATADIR%%/framework/gii/assets/js/fancybox
+@dirrmtry %%DATADIR%%/framework/gii/assets/js
+@dirrmtry %%DATADIR%%/framework/gii/assets/images
+@dirrmtry %%DATADIR%%/framework/gii/assets/css
+@dirrmtry %%DATADIR%%/framework/gii/assets
+@dirrmtry %%DATADIR%%/framework/gii
+@dirrmtry %%DATADIR%%/framework/db/schema/sqlite
+@dirrmtry %%DATADIR%%/framework/db/schema/pgsql
+@dirrmtry %%DATADIR%%/framework/db/schema/oci
+@dirrmtry %%DATADIR%%/framework/db/schema/mysql
+@dirrmtry %%DATADIR%%/framework/db/schema/mssql
+@dirrmtry %%DATADIR%%/framework/db/schema
+@dirrmtry %%DATADIR%%/framework/db/ar
+@dirrmtry %%DATADIR%%/framework/db
+@dirrmtry %%DATADIR%%/framework/console
+@dirrmtry %%DATADIR%%/framework/collections
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/themes/classic/views/system
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/themes/classic/views/site
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/themes/classic/views/layouts
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/themes/classic/views
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/themes/classic
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/themes
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/protected/views/site/pages
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/protected/views/site
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/protected/views/layouts
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/protected/views
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/protected/vendor
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/protected/tests/unit
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/protected/tests/report
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/protected/tests/functional
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/protected/tests/fixtures
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/protected/tests
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/protected/runtime
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/protected/models
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/protected/migrations
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/protected/messages
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/protected/extensions
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/protected/data
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/protected/controllers
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/protected/config
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/protected/components
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/protected/commands/shell
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/protected/commands
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/protected
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/images
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/css
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp/assets
+@dirrmtry %%DATADIR%%/framework/cli/views/webapp
+@dirrmtry %%DATADIR%%/framework/cli/views/shell/module/views/layouts
+@dirrmtry %%DATADIR%%/framework/cli/views/shell/module/views/default
+@dirrmtry %%DATADIR%%/framework/cli/views/shell/module/views
+@dirrmtry %%DATADIR%%/framework/cli/views/shell/module/models
+@dirrmtry %%DATADIR%%/framework/cli/views/shell/module/messages
+@dirrmtry %%DATADIR%%/framework/cli/views/shell/module/controllers
+@dirrmtry %%DATADIR%%/framework/cli/views/shell/module/components
+@dirrmtry %%DATADIR%%/framework/cli/views/shell/module
+@dirrmtry %%DATADIR%%/framework/cli/views/shell/model
+@dirrmtry %%DATADIR%%/framework/cli/views/shell/form
+@dirrmtry %%DATADIR%%/framework/cli/views/shell/crud
+@dirrmtry %%DATADIR%%/framework/cli/views/shell/controller
+@dirrmtry %%DATADIR%%/framework/cli/views/shell
+@dirrmtry %%DATADIR%%/framework/cli/views
+@dirrmtry %%DATADIR%%/framework/cli/runtime
+@dirrmtry %%DATADIR%%/framework/cli/commands/shell
+@dirrmtry %%DATADIR%%/framework/cli/commands
+@dirrmtry %%DATADIR%%/framework/cli
+@dirrmtry %%DATADIR%%/framework/caching/dependencies
+@dirrmtry %%DATADIR%%/framework/caching
+@dirrmtry %%DATADIR%%/framework/base
+@dirrmtry %%DATADIR%%/framework
+@dirrmtry %%DATADIR%%
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/views/zh_tw
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/views/zh_cn
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/views/zh
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/views/uk
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/views/sv
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/views/sk
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/views/ru
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/views/ro
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/views/pt_br
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/views/pt
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/views/pl
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/views/no
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/views/ja
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/views/it
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/views/he
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/views/fr
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/views/es
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/views/el
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/views/de_de
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/views/de
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/views/ca
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/views/bg
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/views/ar
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/views
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/zh_tw
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/zh_cn
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/vi
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/uk
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/ta_in
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/sv
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/sk
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/ru
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/ro
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/pt_br
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/pt
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/pl
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/no
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/nl
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/ja
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/it
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/id
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/hu
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/he
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/fr
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/es
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/el
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/de_de
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/de
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/cs
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/ca
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/bg
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages/ar
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/messages
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements/css
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/requirements
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/phonebook/protected/views/site
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/phonebook/protected/views
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/phonebook/protected/models
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/phonebook/protected/data
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/phonebook/protected/controllers
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/phonebook/protected/config
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/phonebook/protected/components
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/phonebook/protected
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/phonebook/flex/html-template/history
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/phonebook/flex/html-template
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/phonebook/flex/bin/history
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/phonebook/flex/bin
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/phonebook/flex/.settings
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/phonebook/flex
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/phonebook
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/helloworld/protected/controllers
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/helloworld/protected
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/helloworld
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/hangman/protected/views/layouts
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/hangman/protected/views/game
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/hangman/protected/views
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/hangman/protected/runtime
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/hangman/protected/controllers
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/hangman/protected/config
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/hangman/protected
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/hangman/assets
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/hangman
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/blog/themes/classic/views
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/blog/themes/classic
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/blog/themes
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/blog/protected/views/site/pages
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/blog/protected/views/site
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/blog/protected/views/post
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/blog/protected/views/layouts
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/blog/protected/views/comment
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/blog/protected/views
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/blog/protected/tests/unit
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/blog/protected/tests/functional
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/blog/protected/tests/fixtures
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/blog/protected/tests
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/blog/protected/runtime
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/blog/protected/models
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/blog/protected/data
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/blog/protected/controllers
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/blog/protected/config
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/blog/protected/components/views
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/blog/protected/components
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/blog/protected
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/blog/css
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/blog/assets
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos/blog
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/demos
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+@mode
+@owner
+@group
