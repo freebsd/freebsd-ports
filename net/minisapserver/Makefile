@@ -11,28 +11,21 @@ COMMENT=	SAP and SLP announcement for the VLC Media Player
 
 LICENSE=	GPLv2
 
-USE_XZ=	yes
-USES=	iconv
+USE_XZ=		yes
+USES=		iconv
 GNU_CONFIGURE=	yes
-MAN1=		sapserver.1
-PLIST_FILES=	bin/sapserver etc/sap.cfg-dist
+PLIST_FILES=	bin/sapserver etc/sap.cfg-dist man/man1/sapserver.1.gz
 USE_RC_SUBR=	sapserver
 SUB_FILES=	pkg-message
+
 OPTIONS_DEFINE=	SLP
 SLP_DESC=	"Enable SLP support via openslp"
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSLP}
-LIB_DEPENDS+=	slp.1:${PORTSDIR}/net/openslp
-CONFIGURE_ARGS+=--enable-slp
-.else
-CONFIGURE_ARGS+=--disable-slp
-.endif
+SLP_LIB_DEPENDS=	libslp.so:${PORTSDIR}/net/openslp
+SLP_CONFIGURE_ENABLE=	slp
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(prefix)/share/man|${MANPREFIX}/man|; \
@@ -45,8 +38,5 @@ post-patch:
 		${WRKSRC}/sapserver.h
 	@${REINPLACE_CMD} -e 's|a6->sin_len|a6->sin6_len|g' ${WRKSRC}/broadcast.cpp
 	@${CP} -f ${WRKSRC}/sap.cfg ${WRKSRC}/sap.cfg-dist
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
