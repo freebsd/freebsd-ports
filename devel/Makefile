@@ -4102,6 +4102,7 @@
     SUBDIR += rubygem-gobject-introspection
     SUBDIR += rubygem-graf
     SUBDIR += rubygem-grape
+    SUBDIR += rubygem-grape-entity
     SUBDIR += rubygem-grit
     SUBDIR += rubygem-hashery
     SUBDIR += rubygem-hashie
