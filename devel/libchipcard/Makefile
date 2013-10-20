@@ -12,16 +12,12 @@ COMMENT=	Library for easy access to chipcards
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	pcsclite:${PORTSDIR}/devel/pcsc-lite \
-		gwenhywfar:${PORTSDIR}/devel/gwenhywfar
+LIB_DEPENDS=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite \
+		libgwenhywfar.so:${PORTSDIR}/devel/gwenhywfar
 
+USES=		gmake
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
 USE_OPENSSL=	yes
-
-OPTIONS_DEFINE=	DOXYGEN MEMDEBUG
-
-MEMDEBUG_DESC=	Enable memory debugger statistic
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	aq_distrib_name="FreeBSD"
@@ -36,18 +32,16 @@ USE_LDCONFIG=	yes
 
 GWEN_SHLIB_VER=	60
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=			DOXYGEN MEMDEBUG
+
+DOXYGEN_BUILD_DEPENDS=		doxygen:${PORTSDIR}/devel/doxygen \
+				dot:${PORTSDIR}/graphics/graphviz
+DOXYGEN_CONFIGURE_ENABLE=	full-doc
+
+MEMDEBUG_DESC=			Enable memory debugger statistic
+MEMDEBUG_CONFIGURE_ENABLE=	memtrace
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOXYGEN}
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
-		dot:${PORTSDIR}/graphics/graphviz
-CONFIGURE_ARGS+=--enable-full-doc
-.endif
-
-.if ${PORT_OPTIONS:MMEMDEBUG}
-CONFIGURE_ARGS+=--enable-memtrace
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|aq_endian\" ==|aq_endian\" =|g' \
@@ -62,13 +56,13 @@ post-build:
 
 post-install:
 .if ${PORT_OPTIONS:MDOXYGEN}
-	${MKDIR} ${DOCSDIR}/apidoc
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/apidoc
 	cd ${WRKSRC}/apidoc && \
-		${COPYTREE_SHARE} \* ${DOCSDIR}/apidoc
-	@${FIND} -P ${DOCSDIR} -type f 2>/dev/null | \
-		${SED} -ne 's,^${PREFIX}/,,p' >> ${TMPPLIST}
-	@${FIND} -P -d ${DOCSDIR} -type d 2>/dev/null | \
-		${SED} -ne 's,^${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
+		${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}/apidoc
+	@${FIND} -P ${STAGEDIR}${DOCSDIR} -type f 2>/dev/null | \
+		${SED} -ne 's|^${STAGEDIR}${PREFIX}/||p' >> ${TMPPLIST}
+	@${FIND} -P -d ${STAGEDIR}${DOCSDIR} -type d 2>/dev/null | \
+		${SED} -ne 's|^${STAGEDIR}${PREFIX}/|@dirrm |p' >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>
