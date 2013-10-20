@@ -12,8 +12,6 @@ RUN_DEPENDS=	rubygem-activesupport>=3.2.0:${PORTSDIR}/devel/rubygem-activesuppor
 		rubygem-activemodel>=3.2.0:${PORTSDIR}/databases/rubygem-activemodel \
 		rubygem-json>=1.7:${PORTSDIR}/devel/rubygem-json
 
-GEM_ENV=	LC_CTYPE=UTF-8
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
