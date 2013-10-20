@@ -155,6 +155,7 @@
     SUBDIR += rubygem-earthquake
     SUBDIR += rubygem-hipchat
     SUBDIR += rubygem-termtter
+    SUBDIR += rubygem-tinder
     SUBDIR += sendxmpp
     SUBDIR += skype
     SUBDIR += skype-devel
