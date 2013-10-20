@@ -10,10 +10,14 @@ MASTER_SITES=	http://namazu.org/~tsuchiya/elisp/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Functions to refer Manuals on Emacsen with describe-* like interface
 
+BROKEN=		Requires make.info from gmake which has been gone since 2004
+DEPRECATED=	Misbuilding since 2004, not maintained since 2008
+EXPIRATION_DATE=	2013-11-20
+
 MI_INDEX+=	mi-emacs.idx
 MI_WITH_ELISP?=	yes
 MI_ELISP_LANG?=	en
-MI_WITH_MAKE?=	yes
+MI_WITH_MAKE?=	no
 
 .if (${MI_WITH_ELISP} == "yes")
 MI_INDEX+=	mi-elisp.idx
@@ -23,6 +27,7 @@ PLIST_SUB+=	MI_WITH_ELISP="@comment "
 .endif
 
 .if (${MI_WITH_MAKE} == "yes")
+# OPTION BROKEN, make.info no longer listed in gmake pkg-plist
 BUILD_DEPENDS+= ${LOCALBASE}/info/make.info:${PORTSDIR}/devel/gmake
 RUN_DEPENDS+=	${LOCALBASE}/info/make.info:${PORTSDIR}/devel/gmake
 MI_INDEX+=	mi-make.idx
