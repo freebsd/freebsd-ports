@@ -17,7 +17,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/DruidPageEdge.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/DruidPageStandard.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Entry.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/enums.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/FileEntry.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/FontPicker.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/HRef.pod
@@ -50,6 +49,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Util.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Window.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/WindowIcon.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/enums.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/index.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/main.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2/.packlist
@@ -102,8 +102,8 @@
 %%PERL5_MAN3%%/Gnome2::enums.3.gz
 %%PERL5_MAN3%%/Gnome2::index.3.gz
 %%PERL5_MAN3%%/Gnome2::main.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Bonobo
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Config
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Install
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Install
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Config
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Bonobo
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2
