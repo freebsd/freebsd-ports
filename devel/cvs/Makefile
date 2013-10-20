@@ -27,7 +27,6 @@ BROKEN=	does not link
 .endif
 
 pre-install:
-	${MKDIR} ${STAGEDIR}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/contrib
 
 .include <bsd.port.post.mk>
