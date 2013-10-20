@@ -22,7 +22,4 @@ RUN_DEPENDS=	p5-Dancer>=1.1750:${PORTSDIR}/www/p5-Dancer \
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Dancer::Plugin::Redis.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
