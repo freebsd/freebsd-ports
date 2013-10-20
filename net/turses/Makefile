@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	turses
-PORTVERSION=	0.2.15
+PORTVERSION=	0.2.18
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 
@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}oauth2>0:${PORTSDIR}/net/py-oauth2 \
 		${PYTHON_PKGNAMEPREFIX}urwid>0:${PORTSDIR}/devel/py-urwid \
-		${PYTHON_PKGNAMEPREFIX}tweepy>=2.0:${PORTSDIR}/net/py-tweepy
+		${PYTHON_PKGNAMEPREFIX}tweepy>=2.1:${PORTSDIR}/net/py-tweepy
 
 TEST_DEPENDS:=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose \
