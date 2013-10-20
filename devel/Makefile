@@ -4051,6 +4051,7 @@
     SUBDIR += rubygem-cool.io
     SUBDIR += rubygem-crack
     SUBDIR += rubygem-cri
+    SUBDIR += rubygem-cucumber
     SUBDIR += rubygem-daemon_controller
     SUBDIR += rubygem-daemons
     SUBDIR += rubygem-debugger
