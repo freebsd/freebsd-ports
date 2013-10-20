@@ -3,6 +3,7 @@
 
 PORTNAME=	fwknop
 PORTVERSION=	2.5.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.cipherdyne.org/fwknop/download/
 

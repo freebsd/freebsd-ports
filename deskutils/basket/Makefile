@@ -3,6 +3,7 @@
 
 PORTNAME=	basket
 PORTVERSION=	1.81
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://basket.kde.org/downloads/
 
@@ -11,7 +12,7 @@ COMMENT=	Desktop organization tool
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme
+LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
 
 USE_BZIP2=	yes
 USE_XORG=	xft xpm
