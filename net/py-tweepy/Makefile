@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	tweepy
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	clsung@FreeBSD.org
-COMMENT=	A library for accessing the Twitter.com API
+COMMENT=	Twitter API library for Python!
 
 LICENSE=	MIT
 
-USE_PYTHON=		yes
+USE_PYTHON=		-2.7
 USE_PYDISTUTILS=	easy_install
 
 NO_STAGE=	yes
