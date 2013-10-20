@@ -1739,6 +1739,7 @@
     SUBDIR += rubygem-cgi_multipart_eof_fix
     SUBDIR += rubygem-chef-server-api
     SUBDIR += rubygem-chef-server-webui
+    SUBDIR += rubygem-chosen-rails
     SUBDIR += rubygem-cookiejar
     SUBDIR += rubygem-cuba
     SUBDIR += rubygem-davclient
