@@ -1,6 +1,9 @@
 bin/lyx
 bin/lyxclient
 bin/tex2lyx
+man/man1/lyx.1.gz
+man/man1/lyxclient.1.gz
+man/man1/tex2lyx.1.gz
 %%NLS%%share/locale/ar/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/lyx.mo
@@ -1829,10 +1832,10 @@ share/icons/hicolor/48x48/apps/lyx.png
 @dirrm %%DATADIR%%/bind/de
 @dirrm %%DATADIR%%/bind
 @dirrm %%DATADIR%%
+%%NLS%%@dirrmtry share/locale/ia/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ia
 @dirrmtry share/icons/hicolor/48x48/apps
 @dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrmtry share/applications
-%%NLS%%@dirrmtry share/locale/ia/LC_MESSAGES/
-%%NLS%%@dirrmtry share/locale/ia
