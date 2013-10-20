@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# KEYWORD: firstboot
+# PROVIDE: firstboot_freebsd_update
+# REQUIRE: syslogd NETWORKING
+# BEFORE: LOGIN
+
+. /etc/rc.subr
+
+name="firstboot_freebsd_update"
+rcvar=firstboot_freebsd_update_enable
+start_cmd="firstboot_freebsd_update_run | logger -s -t 'freebsd-update'"
+stop_cmd=":"
+
+firstboot_freebsd_update_run()
+{
+
+	freebsd-update fetch
+	if [ -e /var/db/freebsd-update/`echo / | sha256`-install ]; then
+		freebsd-update install
+		echo "Requesting reboot after installing updates."
+		touch ${firstboot_sentinel}-reboot
+	fi
+}
+
+load_rc_config $name
+run_rc_command "$1"
+

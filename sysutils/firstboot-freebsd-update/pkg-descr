@@ -1,0 +1,6 @@
+Run 'freebsd-update fetch' when the system first boots; and if updates are
+downloaded, install them and request a reboot.
+
+Obviously, this port is not useful after a system is already running; it is
+intended to be included as part of the installation or disk image building
+process.
