@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	Mo
-PORTVERSION=	0.35
+PORTVERSION=	0.36
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:INGY
+MASTER_SITE_SUBDIR=	CPAN:CARLOS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -15,8 +15,10 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 TEST_DEPENDS=	p5-Class-XSAccessor>=0:${PORTSDIR}/devel/p5-Class-XSAccessor \
+		p5-IO-All>=0:${PORTSDIR}/devel/p5-IO-All \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
-		p5-Mouse>=0:${PORTSDIR}/devel/p5-Mouse
+		p5-Mouse>=0:${PORTSDIR}/devel/p5-Mouse \
+		p5-PPI>=0:${PORTSDIR}/textproc/p5-PPI
 
 USE_PERL5=	configure
 USES=		perl5

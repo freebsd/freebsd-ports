@@ -4,10 +4,8 @@ bin/mo-inline
 %%SITE_PERL%%/Mo/Design.pod
 %%SITE_PERL%%/Mo/Features.pod
 %%SITE_PERL%%/Mo/Golf.pm
-%%SITE_PERL%%/Mo/Golf.pod
 %%SITE_PERL%%/Mo/Hacking.pod
 %%SITE_PERL%%/Mo/Inline.pm
-%%SITE_PERL%%/Mo/Inline.pod
 %%SITE_PERL%%/Mo/Moose.pm
 %%SITE_PERL%%/Mo/Moose.pod
 %%SITE_PERL%%/Mo/Mouse.pm
