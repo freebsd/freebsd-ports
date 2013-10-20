@@ -4061,6 +4061,7 @@
     SUBDIR += rubygem-dep_selector
     SUBDIR += rubygem-deprecated
     SUBDIR += rubygem-deprecated2
+    SUBDIR += rubygem-descendants_tracker
     SUBDIR += rubygem-devise
     SUBDIR += rubygem-directory_watcher
     SUBDIR += rubygem-ditz
