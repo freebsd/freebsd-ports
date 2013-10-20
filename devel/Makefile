@@ -4069,6 +4069,7 @@
     SUBDIR += rubygem-echoe
     SUBDIR += rubygem-edavis10-object_daddy
     SUBDIR += rubygem-elif
+    SUBDIR += rubygem-enumerize
     SUBDIR += rubygem-errand
     SUBDIR += rubygem-eventmachine
     SUBDIR += rubygem-excon
