@@ -242,6 +242,7 @@
     SUBDIR += filetype
     SUBDIR += filewatcherd
     SUBDIR += finfo
+    SUBDIR += firstboot-freebsd-update
     SUBDIR += flasher
     SUBDIR += flashrom
     SUBDIR += flexbackup
