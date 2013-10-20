@@ -46,7 +46,8 @@ wm_RUN_DEPENDS=			xfce4-wm>=4.10.1:${PORTSDIR}/x11-wm/xfce4-wm
 xfconf_BUILD_DEPENDS=		xfce4-conf>=4.10.0:${PORTSDIR}/x11/xfce4-conf
 xfconf_RUN_DEPENDS=		xfce4-conf>=4.10.0:${PORTSDIR}/x11/xfce4-conf
 
-xfdev_RUN_DEPENDS=		xfce4-dev-tools:${PORTSDIR}/devel/xfce4-dev-tools
+xfdev_BUILD_DEPENDS=		xdt-csource:${PORTSDIR}/devel/xfce4-dev-tools
+xfdev_RUN_DEPENDS=		xdt-csource:${PORTSDIR}/devel/xfce4-dev-tools
 
 .endif
 
