@@ -15,17 +15,19 @@ LICENSE=	BSD
 USE_RUBY=	yes
 GNU_CONFIGURE=	yes
 
-MAN1=		newfile.1
 PORTDOCS=	newfile.html
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
+post-configure:
+	${REINPLACE_CMD} '282s,$$(pkgdatadir)/newfile.rb,$$(DESTDIR)$$(pkgdatadir)/newfile.rb,' ${WRKSRC}/src/Makefile
+	${REINPLACE_CMD} '287s,$$(bindir)/newfile,$$(DESTDIR)$$(bindir)/newfile,' ${WRKSRC}/src/Makefile
+
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/newfile.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/newfile.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
