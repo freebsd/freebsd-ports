@@ -16,70 +16,45 @@ COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs \
-		mythes-1.2.0:${PORTSDIR}/textproc/mythes
+LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs \
+		libmythes-1.2.so:${PORTSDIR}/textproc/mythes
 
 CONFLICTS=	lyx-1.[0-9]*
 MAJOR_VERSION=	2.0
 MINOR_VERSION=	6
 
-USES=		gmake iconv pkgconfig perl5
-USE_XZ=		yes
-USE_QT4=	corelib gui moc_build uic_build rcc_build
-USE_GNOME=	desktopfileutils
+USES=		desktop-file-utils gmake iconv pkgconfig perl5
 USE_PYTHON=	-2.7
+USE_QT4=	corelib gui moc_build uic_build rcc_build
+USE_XZ=		yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
 CONFIGURE_ARGS=	--without-included-boost \
 		--without-included-mythes \
 		${ICONV_CONFIGURE_ARG} \
 		--with-extra-prefix=${LOCALBASE}
 
-MAN1=		lyx.1 lyxclient.1 tex2lyx.1
-
 OPTIONS_DEFINE=		ASPELL ENCHANT HUNSPELL NLS
 OPTIONS_DEFAULT=	HUNSPELL NLS
+OPTIONS_SUB=		yes
 ENCHANT_DESC=		Spell checking using Enchant
 
-NO_STAGE=	yes
+ASPELL_CONFIGURE_OFF=	--without-aspell
+ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
+ENCHANT_CONFIGURE_OFF=	--without-enchant
+ENCHANT_LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
+HUNSPELL_CONFIGURE_OFF=	--without-hunspell
+HUNSPELL_LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
+NLS_CONFIGURE_OFF=	--disable-nls
+NLS_USES=		gettext
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MASPELL}
-LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
-.else
-CONFIGURE_ARGS+=	--without-aspell
-.endif
-
-.if ${PORT_OPTIONS:MENCHANT}
-LIB_DEPENDS+=	enchant.1:${PORTSDIR}/textproc/enchant
-.else
-CONFIGURE_ARGS+=	--without-enchant
-.endif
-
-.if ${PORT_OPTIONS:MHUNSPELL}
-LIB_DEPENDS+=	hunspell-1.3.0:${PORTSDIR}/textproc/hunspell
-.else
-CONFIGURE_ARGS+=	--without-hunspell
-.endif
-
-.if empty(PORT_OPTIONS:MNLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.endif
 
 post-install:
 # Manually install the 48x48 icon and .desktop file.
 # Will not be needed in the 2.1 series, see LyX tickets 2820 and 7919.
-	${MKDIR} ${PREFIX}/share/icons/hicolor/48x48/apps
-	${MKDIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/lib/images/lyx.png ${PREFIX}/share/icons/hicolor/48x48/apps
-	${INSTALL_DATA} ${FILESDIR}/lyx.desktop ${PREFIX}/share/applications
-	${LOCALBASE}/bin/update-desktop-database --quiet
-
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/lib/images/lyx.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps
+	${INSTALL_DATA} ${FILESDIR}/lyx.desktop ${STAGEDIR}${PREFIX}/share/applications
 
 .include <bsd.port.mk>

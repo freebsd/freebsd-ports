@@ -1,0 +1,50 @@
+The first change is required to use the C++ tr1 headers only with libstdc++, as
+they are not in C++11.
+
+The second change is required to build with libc++, and is commit
+ca7214b410d80c2108dfb43b89cf3c8fc5073882 upstream:
+
+commit ca7214b410d80c2108dfb43b89cf3c8fc5073882
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Thu Oct 17 23:39:36 2013 +0300
+
+    Remove FreeBSD checks when defining USE_WCHAR_T.
+
+    The problems the comments in the build systems refer to seem to have been
+    fixed for years. [1] says the checks in libstdc++ have been improved, and
+    all supported FreeBSD versions enable wchar_t support unconditionally in
+    libstdc++. Additionally, this needlessly impacts FreeBSD when libc++ is used
+    instead of libstdc++.
+
+    [1] http://gcc.gnu.org/onlinedocs/libstdc++/faq.html#faq.freebsd_wchar
+--- config.h.in.orig	2013-10-20 20:37:35.000000000 +0300
++++ config.h.in	2013-10-20 20:38:41.000000000 +0300
+@@ -633,7 +633,8 @@
+ 
+ // TR1 regex not supported in GCC <= 4.5
+ #ifndef LYX_USE_TR1
+-#  if __GNUC__ == 4 
++#  include <ciso646>
++#  if __GNUC__ == 4 && !defined(_LIBCPP_VERSION)
+ #    define LYX_USE_TR1
+ #  endif
+ #endif
+@@ -645,17 +646,7 @@
+ #  define BOOST_POSIX_PATH 1
+ #endif
+ 
+-/*
+- * the FreeBSD libc uses UCS4, but libstdc++ has no proper wchar_t
+- * support compiled in:
+- * http://gcc.gnu.org/onlinedocs/libstdc++/faq/index.html#3_9
+- * And we are not interested at all what libc
+- * does: What we need is a 32bit wide wchar_t, and a libstdc++ that
+- * has the needed wchar_t support and uses UCS4. Whether it
+- * implements this with the help of libc, or whether it has own code
+- * does not matter for us, because we do not use libc directly (Georg)
+-*/
+-#if defined(HAVE_WCHAR_T) && SIZEOF_WCHAR_T == 4 && !defined(__FreeBSD__) && !defined(__FreeBSD_kernel__)
++#if defined(HAVE_WCHAR_T) && SIZEOF_WCHAR_T == 4
+ #  define USE_WCHAR_T
+ #endif
+ 
