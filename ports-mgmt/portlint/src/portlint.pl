@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.285 2013/10/12 16:41:24 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.293 2013/10/20 00:49:57 marcus Exp $
 #
 
 use strict;
@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 14;
-my $micro = 5;
+my $micro = 6;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -197,17 +197,16 @@ my @varlist =  qw(
 	PKGDIR COMMENT DESCR PLIST PKGCATEGORY PKGINSTALL PKGDEINSTALL
 	PKGREQ PKGMESSAGE DISTINFO_FILE .CURDIR USE_LDCONFIG USE_AUTOTOOLS
 	USE_GNOME INDEXFILE PKGORIGIN CONFLICTS PKG_VERSION PKGINSTALLVER
-	PLIST_FILES OPTIONS OPTIONS_DEFINE OPTIONS_RADIO OPTIONS_SINGLE
-	OPTIONS_MULTI OPTIONS_GROUP INSTALLS_OMF USE_RC_SUBR USES
-	DIST_SUBDIR ALLFILES IGNOREFILES CHECKSUM_ALGORITHMS INSTALLS_ICONS
-	GNU_CONFIGURE CONFIGURE_ARGS MASTER_SITE_SUBDIR LICENSE LICENSE_COMB
+	PLIST_FILES PLIST_DIRS PORTDOCS PORTEXAMPLES OPTIONS_DEFINE
+	OPTIONS_RADIO OPTIONS_SINGLE OPTIONS_MULTI OPTIONS_GROUP OPTIONS_SUB
+	INSTALLS_OMF USE_RC_SUBR USES DIST_SUBDIR ALLFILES IGNOREFILES
+	CHECKSUM_ALGORITHMS INSTALLS_ICONS GNU_CONFIGURE CONFIGURE_ARGS
+	MASTER_SITE_SUBDIR LICENSE LICENSE_COMB NO_STAGE
 );
-
-my $cmd = join(' -V ', "make $makeenv MASTER_SITE_BACKUP=''", @varlist);
 
 my %makevar;
 my $i = 0;
-for (split(/\n/, `$cmd`)) {
+for (split(/\n/, get_makevar(@varlist))) {
 	print "OK: makevar: $varlist[$i] = $_\n" if ($verbose);
 	$makevar{$varlist[$i]} = $_;
 	$i++;
@@ -223,6 +222,9 @@ my %plistman = ();
 my %manlangs = ();
 
 my %predefined = ();
+
+my @popt = ();
+
 # historical, no longer in FreeBSD's bsd.sites.mk
 foreach my $i (split(/\n/, <<EOF)) {
 GNU 		ftp://prep.ai.mit.edu/pub/gnu/%SUBDIR%/
@@ -249,7 +251,7 @@ open(MK, $sites_mk) || die "$sites_mk: $!";
 my @site_groups = grep($_ = /^MASTER_SITE_(\w+)/ && $1, <MK>);
 close(MK);
 
-$cmd = join(' -V MASTER_SITE_', "make $makeenv ", @site_groups);
+my $cmd = join(' -V MASTER_SITE_', "make $makeenv ", @site_groups);
 
 $i = 0;
 
@@ -381,7 +383,7 @@ if ($committer) {
 			$File::Find::prune = 1;
 		} elsif (-f) {
 			my $fullpath = $makevar{'.CURDIR'}.'/'.$fullname;
-			my $result = `svn status $fullpath`;
+			my $result = `svn -q status $fullpath`;
 
 			chomp $result;
 			if (substr($result, 0, 1) eq '?') {
@@ -622,6 +624,19 @@ sub checkplist {
 		# make it easier to handle.
 		$_ =~ s/\s+$//;
 		$_ =~ s/\n$//;
+
+		# store possible OPTIONS knobs for OPTIONS_SUB
+		if ($makevar{OPTIONS_SUB}) {
+			if ($_ =~ /^\%\%([^%]+)\%\%/) {
+				if ($1 =~ /PORTDOCS/) {
+					push @popt, "DOCS";
+				} elsif ($1 =~ /PORTEXAMPLES/) {
+					push @popt, "EXAMPLES";
+				} else {
+					push @popt, $1;
+				}
+			}
+		}
 
 		if ($_ =~ /\.DS_Store/) {
 			&perror("WARN", $file, $., ".DS_Store meta data files must not ".
@@ -1094,15 +1109,13 @@ sub check_depends_syntax {
 				if ($verbose);
 			next;
 		}
-		print "OK: checking ports listed in $j.\n"
-			if ($verbose);
+		print "OK: checking ports listed in $j.\n" if ($verbose);
 		foreach my $k (split(/\s+/, $i)) {
 			if ($k =~ /^#/) {
 				last;
 			}
 			if ($k =~ /^\$\{(\w+)\}$/) {
-					$k = `make -V $1`;
-					chomp $k;
+				$k = get_makvar($1);
 			}
 			my @l = split(':', $k);
 
@@ -1158,7 +1171,7 @@ sub check_depends_syntax {
 					"USES[+]=gettext.");
 			}
 
-			# check USE_GMAKE
+			# check USES=gmake
 			if ($m{'dep'} =~ /^(gmake|\${GMAKE})$/) {
 				&perror("WARN", $file, -1, "dependency to $1 ".
 					"listed in $j. consider using ".
@@ -1260,8 +1273,7 @@ sub checkmakefile {
 	my $use_ant = 0;
 	my($realwrksrc, $wrksrc, $nowrksubdir) = ('', '', '');
 	my(@mman, @pman);
-	my(@mopt, @oopt);
-	my(@nmopt, @noopt, @aoopt);
+	my(@aopt, @mopt, @opt);
 	my($pkg_version, $versiondir, $versionfile) = ('', '', '');
 	my $useindex = 0;
 	my %deprecated = ();
@@ -1270,8 +1282,7 @@ sub checkmakefile {
 	my $pre_mk_line = 0;
 	my $options_mk_line = 0;
 	my $docsused = 0;
-	my $nlsused = 0;
-	my $newoptused = 0;
+	my $optused = 0;
 	my $desktop_entries = '';
 
 	open(IN, "< $file") || return 0;
@@ -1359,7 +1370,7 @@ sub checkmakefile {
 		#&perror("FATAL", $file, 3, "do not add extra ".
 		#		"empty comments after header.");
 		}
-	# special case for $rcsidsrt\n$MCom: portlint/portlint.pl,v 1.285 2013/10/12 16:41:24 marcus Exp $
+	# special case for $rcsidsrt\nMCom:
 	} elsif ($lines[1] =~ /^# \$$rcsidstr[:\$]/ and $lines[2] =~ /^#\s+\$MCom[:\$]/ and $lines[3] =~ /^$/) {
 		# DO NOTHING
 	} elsif ($lines[1] !~ /^# \$$rcsidstr[:\$]/ or $lines[2] !~ /^$/) {
@@ -1450,7 +1461,6 @@ sub checkmakefile {
 	# whole file: USE_* and others variables used too late
 	#
 	my @options_early = qw(
-		OPTIONS
 		OPTIONS_DEFAULT
 		OPTIONS_DEFINE
 		OPTIONS_EXCLUDE
@@ -1515,76 +1525,103 @@ sub checkmakefile {
 	}
 
 	pos($whole) = 0;
-	if ($whole =~ /\nOPTIONS_DEFINE[+?]?=/) {
-		$newoptused++;
-	}
-	@oopt = ($makevar{OPTIONS} =~ /(\w+)\s+\".*?\"\s+\w+/sg);
-	@noopt = split(/\s+/, $makevar{OPTIONS_DEFINE});
-	if (scalar(@oopt) && $newoptused) {
-		&perror("FATAL", $file, -1, "Both old and new OPTIONS are found. ".
-			"Remove one or another.");
-	}
-	if (scalar(@oopt)) {
-		&perror("WARN", $file, -1, "Use of OPTIONS is obsolete. Use the ".
-			"new options framework.");
-	}
 	foreach my $i ("OPTIONS_RADIO","OPTIONS_SINGLE",
 		"OPTIONS_MULTI","OPTIONS_GROUP") {
-		@aoopt = split(/\s+/, $makevar{$i});
-		if (scalar(@aoopt)) {
-			foreach my $j (@aoopt) {
-				my $ocmd = "make -V $makeenv ${i}_${j}";
-				my @ocount;
-				for (split(/\n/, qx($ocmd))) {
-					$makevar{"${i}_${j}"} = $_;
-					@ocount = split(/\s+/, $makevar{"${i}_${j}"});
-				}
+		foreach my $j (split(/\s+/, $makevar{$i})) {
+			if ($j) {
+				my @ocount = split(/\s+/, get_makevar("${i}_${j}"));
 				if (!scalar(@ocount)) {
-					&perror("FATAL", $file, -1, "Description for ${i}_${j} does not exist");
+					&perror("FATAL", $file, -1,
+						"Description for ${i}_${j} does not exist");
+				} else {
+					push @aopt, @ocount;
 				}
 			}
 		}
 	}
 
+	@opt = split(/\s+/, $makevar{OPTIONS_DEFINE});
 	pos($whole) = 0;
-	while ($whole =~ /\(?\s*WITH(?:OUT)?_(\w+)\s*\)?/mg) {
+	while ($whole =~ /PORT_OPTIONS:M(\w+)/mg) {
 		push @mopt, $1;
 		my $lineno = &linenumber($`) + 1;
 		&perror("FATAL", $file, $lineno, "option WITH(OUT)_$1 is used before ".
 			"including bsd.port.pre.mk or bsd.port.options.mk.")
-		if (scalar(@oopt) && $lineno < $pre_mk_line &&
-			$lineno < $options_mk_line);
+			if ($optused && $lineno < $pre_mk_line &&
+				$lineno < $options_mk_line);
 	}
-	foreach my $i (@oopt) {
-		if (!grep(/^$i$/, @mopt)) {
-			&perror("WARN", $file, -1, "$i is listed in OPTIONS, ".
-				"but neither WITH_$i nor WITHOUT_$i appears.");
+	my @options_helpers = qw(
+		__DUMMY__
+		_ALL_TARGET
+		_BUILD_DEPENDS
+		_EXTRACT_DEPENDS
+		_FETCH_DEPENDS
+		_LIB_DEPENDS
+		_PKG_DEPENDS
+		_RUN_DEPENDS
+		_CATEGORIES
+		_CFLAGS
+		_CMAKE_OFF
+		_CMAKE_ON
+		_CONFIGURE_ENABLE
+		_CONFIGURE_ENV
+		_CONFIGURE_OFF
+		_CONFIGURE_ON
+		_CONFIGURE_WITH
+		_CPPFLAGS
+		_CXXFLAGS
+		_DISTFILES
+		_INSTALL_TARGET
+		_LDFLAGS
+		_MAKE_ARGS
+		_MAKE_ENV
+		_EXTRA_PATCHES
+		_PATCHFILES
+		_PATCH_DEPENDS
+		_PATCH_SITES
+		_PLIST_DIRS
+		_PLIST_DIRSTRY
+		_PLIST_FILES
+		_USE
+		_USES
+	);
+
+	my $m = join("|", @options_helpers);
+
+	if ($makevar{OPTIONS_SUB}) {
+		if ($makevar{PLIST_FILES}) {
+			foreach my $i (split(/\s+/, $makevar{PLIST_FILES})) {
+				push @popt, $1 if $i =~ /^\%\%([^%]+)\%\%/;
+			}
 		}
+		if ($makevar{PLIST_DIRS}) {
+			foreach my $i (split(/\s+/, $makevar{PLIST_DIRS})) {
+				push @popt, $1 if $i =~ /^\%\%([^%]+)\%\%/;
+			}
+		}
+		# special cases for PORTDOCS/PORTEXAMPLES
+		push @popt, "DOCS" if $makevar{PORTDOCS};
+		push @popt, "EXAMPLES" if $makevar{PORTEXAMPLES};
+
+		# uniq(@popt)
+		my %seen = ();
+		@popt = grep { !$seen{$_}++ } @popt;
 	}
-	if ($newoptused) {
-		pos($whole) = 0;
-		while ($whole =~ /PORT_OPTIONS:M(\w+)/mg) {
-			push @nmopt, $1;
-			my $lineno = &linenumber($`) + 1;
-			&perror("FATAL", $file, $lineno, "option $1 is used before ".
-				"including bsd.port.pre.mk or bsd.port.options.mk.")
-				if ($newoptused && $lineno < $pre_mk_line &&
-					$lineno < $options_mk_line);
-		}
-		foreach my $i (@noopt) {
-			if (!grep(/^$i$/, @nmopt)) {
-				&perror("WARN", $file, -1, "$i is listed in OPTIONS_DEFINE, ".
-					"but no PORT_OPTIONS:M$i appears.");
+	foreach my $i ((@opt, @aopt)) {
+		if (!grep(/^$i$/, (@mopt, @popt))) {
+			if ($whole !~ /\n${i}($m)(.)?=[^\n]+/) {
+				&perror("WARN", $file, -1, "$i is listed in ".
+						"OPTIONS_DEFINE, but no PORT_OPTIONS:M$i appears.");
 			}
 		}
 	}
+
 	foreach my $i (@mopt) {
-		next if ($i eq 'NLS'); # skip WITHOUT_NLS
-		if (!grep(/^$i$/, @oopt)) {
-			# XXX: disable temporarily.
-			# OPTIONS is still "in flux"
-			#&perror("WARN: $file: WITH_$i or WITHOUT_$i appears, ".
-			#	"consider using OPTIONS macro.");
+		if (!grep(/^$i$/, @opt, @aopt)) {
+			# skip global options
+			next if ($i eq 'DOCS' or $i eq 'NLS' or $i eq 'EXAMPLES' or $i eq 'IPV6');
+			&perror("WARN", $file, -1, "$i is appears in PORT_OPTIONS:M, ".
+				"but not listed in OPTIONS_DEFINE.");
 		}
 	}
 
@@ -1596,7 +1633,6 @@ sub checkmakefile {
 	if ($desktop_entries =~ /\${TRUE}/ or $desktop_entries =~ /\${FALSE}/) {
 		&perror("FATAL", $file, -1, "Use true/false instead of \${TRUE}/\${FALSE} in DESKTOP_ENTRIES.");
 	}
-
 
 	#
 	# whole file: USE_* as a user-settable option
@@ -1689,16 +1725,16 @@ sub checkmakefile {
 	}
 
 	#
-	# whole file: MAKE_JOBS_[UN]SAFE
+	# whole file: MAKE_JOBS_UNSAFE
 	#
-	print "OK: checking for MAKE_JOBS_SAFE in combination with NO_BUILD.\n" if ($verbose);
-	if ($whole =~ /\n(MAKE_JOBS_(UN)?SAFE).?=/) {
+	print "OK: checking for MAKE_JOBS_UNSAFE in combination with NO_BUILD.\n" if ($verbose);
+	if ($whole =~ /\nMAKE_JOBS_UNSAFE.?=/) {
 		my $matched = $1;
 		if ($whole =~ /\nNO_BUILD.?=/) {
 			my $lineno = &linenumber($`);
-		    	&perror("WARN", $file, $lineno, "$matched should not ".
+			&perror("WARN", $file, $lineno, "MAKE_JOBS_UNSAFE should not ".
 				"be used in combination with NO_BUILD.  You ".
-				"should remove $matched from your Makefile.");
+				"should remove MAKE_JOBS_UNSAFE from your Makefile.");
 	    	}
 	}
 
@@ -1763,7 +1799,6 @@ sub checkmakefile {
 		&perror("FATAL", $file, -1, "Both NOPORTDOCS and PORT_OPTIONS:MDOCS are found. ".
 			"Remove one or another.");
 	}
-
 	print "OK: checking for use of NOPORTDOCS.\n" if ($verbose);
 	if ($whole =~ /NOPORTDOCS/) {
 		my $lineno = &linenumber($`);
@@ -2888,6 +2923,8 @@ MAINTAINER COMMENT
 			LICENSE LICENSE_COMB LICENSE_GROUPS LICENSE_NAME
 			LICENSE_TEXT LICENSE_FILE LICENSE_PERMS
 		));
+	} else {
+		&perror("WARN", $file, -1, "Consider defining LICENSE.");
 	}
 
 	#
@@ -3010,6 +3047,11 @@ TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
 		&perror("FATAL", $file, -1, "\"$1\" was obsoleted. remove this.");
 	}
 
+	# check NO_STAGE
+	if ($makevar{NO_STAGE}) {
+		&perror("WARN", $file, -1, "Consider adding STAGE support.");
+	}
+
 	# check MAN[1-9LN]
 	print "OK: checking MAN[0-9LN].\n" if ($verbose);
 	foreach my $i (keys %plistmanall) {
@@ -3022,9 +3064,20 @@ TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
 			"when PERL_CONFIGURE is set.  You do not need to specify it.");
 	}
 	foreach my $i (split(//, $manchapters)) {
-		if ($tmp =~ /^MAN\U$i\E=\s*([^\n]*)\n/) {
+		if ($tmp =~ /\nMAN\U$i\E[+?]=\s*([^\n]*)\n/ &&
+			(!$makevar{NO_STAGE} || $makevar{NO_STAGE} eq '')) {
+			&perror("FATAL", $file, -1, "when STAGE support is enabled ".
+				"you must add your man pages directly to the plist ".
+				"with a .gz extension.");
+		} elsif ($tmp =~ /\nMAN\U$i\E[+?]=\s*([^\n]*)\n/) {
 			print "OK: Makefile MAN\U$i\E=$1\n" if ($verbose);
 		}
+	}
+	if ($tmp =~ /\nMANCOMPRESSED=\s*/ &&
+		(!$makevar{NO_STAGE} || $makevar{NO_STAGE} eq '')) {
+		&perror("WARN", $file, -1, "when STAGE support is enable, the ".
+			"MANCOMPRESSED macro is not supported.  The compress-man ".
+			"target is able to only compress when it is needed.");
 	}
 	foreach my $i (split(//, $manchapters)) {
 		next if ($i eq '');
@@ -3059,7 +3112,8 @@ TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
 				}
 			}
 		} else {
-			if ($plistmanall{$i}) {
+			if ($plistmanall{$i} && $makevar{NO_STAGE} &&
+				$makevar{NO_STAGE} ne '') {
 				if ($manstrict) {
 					&perror("FATAL", $file, -1, "manpage for chapter ".
 						"$i must be listed in ".
@@ -3380,20 +3434,19 @@ EOF
 }
 
 sub get_makevar {
-		my($mvar) = @_;
-		my($cmd, $result);
+	my($cmd, $result);
 
-		$cmd = join(' -V ', "make $makeenv MASTER_SITE_BACKUP=''", $mvar);
-		$result = `$cmd`;
+	$cmd = join(' -V ', "make $makeenv MASTER_SITE_BACKUP=''", @_);
+	$result = `$cmd`;
+	chomp $result;
 
-		return chomp $result;
+	return $result;
 }
 
 sub get_makevar_raw {
-	my ($mvar) = @_;
 	my($cmd, $result);
 
-	$cmd = join(' -XV ', "make $makeenv MASTER_SITE_BACKUP=''", $mvar);
+	$cmd = join(' -XV ', "make $makeenv MASTER_SITE_BACKUP=''", @_);
 	$result = `$cmd`;
 	chomp $result;
 
