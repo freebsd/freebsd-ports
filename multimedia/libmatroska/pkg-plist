@@ -27,6 +27,7 @@ include/matroska/KaxTypes.h
 include/matroska/KaxVersion.h
 include/matroska/c/libmatroska.h
 include/matroska/c/libmatroska_t.h
+lib/libmatroska.a
 lib/libmatroska.so
 lib/libmatroska.so.6
 @dirrm include/matroska/c
