@@ -1,0 +1,4 @@
+An XML interface which glues rubygem-debugger to IDEs
+like Eclipse (RDT) and NetBeans. Compatible with ruby-debug-ide.
+
+WWW: https://github.com/astashov/debugger-xml

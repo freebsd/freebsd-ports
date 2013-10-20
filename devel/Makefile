@@ -4055,6 +4055,7 @@
     SUBDIR += rubygem-daemons
     SUBDIR += rubygem-debugger
     SUBDIR += rubygem-debugger-linecache
+    SUBDIR += rubygem-debugger-xml
     SUBDIR += rubygem-deeptest
     SUBDIR += rubygem-delayed_job
     SUBDIR += rubygem-dep_selector
