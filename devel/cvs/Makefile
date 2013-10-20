@@ -10,20 +10,16 @@ COMMENT=	Version control system
 
 LICENSE=	GPLv2
 
-WRKSRC=	${WRKDIR}/call/cvs-build
+WRKSRC=		${WRKDIR}/call/cvs-build
+USE_XZ=		yes
+INFO=		cvs cvsclient
 
-USE_XZ=	yes
+# bsd.stage.makes sets the wrong value for DESTDIR
+DESTDIRNAME=	NADA
+MAKE_ARGS=	DESTDIR=${STAGEDIR}${PREFIX}
 
-MAN1=	cvs.1
-MAN8=	cvsbug.8
+NEED_ROOT=	yes
 
-MANCOMPRESSED=	yes
-
-INFO=	cvs cvsclient
-
-MAKE_ENV+=	DESTDIR=${PREFIX}
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900000
@@ -31,6 +27,7 @@ BROKEN=	does not link
 .endif
 
 pre-install:
-	${MKDIR} ${EXAMPLESDIR}/contrib
+	${MKDIR} ${STAGEDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/contrib
 
 .include <bsd.port.post.mk>
