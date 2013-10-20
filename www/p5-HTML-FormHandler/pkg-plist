@@ -336,6 +336,8 @@
 @dirrmtry %%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/form
 @dirrmtry %%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/foo
 @dirrmtry %%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/field
+@dirrmtry %%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates
+@dirrmtry %%SITE_PERL%%/auto/share/dist/HTML-FormHandler
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Widget/Theme
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Widget/Form/Role
