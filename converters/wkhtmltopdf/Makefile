@@ -3,7 +3,7 @@
 
 PORTNAME=	wkhtmltopdf
 DISTVERSION=	0.11.0_rc1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	converters
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}:wkhtmltopdf \
 		${MASTER_SITE_LOCAL}
@@ -25,6 +25,7 @@ USE_XORG=		x11 xext xrender
 USE_PERL5=		build
 USE_LDCONFIG=		yes
 HAS_CONFIGURE=		yes
+USE_GCC=		yes
 
 OPTIONS_DEFINE=	BUNDLED_LIBS
 BUNDLED_LIBS_DESC=	Use Qt-bundled jpeg, mng, png and tiff
@@ -76,6 +77,8 @@ post-patch:
 		-e 's|/usr/X11R6/include|${LOCALBASE}/include/X11|g' \
 		-e 's|/usr/X11R6/lib|${LOCALBASE}/lib|g' \
 		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
+	@${REINPLACE_CMD} -e "s|gcc|${CC}|g" -e "s|g++|${CXX}|g" \
+		${WRKSRC}/mkspecs/common/g++-base.conf
 
 post-build:
 	@cd ${WRKSRC} && \
