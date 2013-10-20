@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpa
-PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTVERSION=	0.9.4
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gpa
@@ -13,38 +12,30 @@ COMMENT=	GTK2+ frontend for the GNU Privacy Guard
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	assuan:${PORTSDIR}/security/libassuan \
-		gpgme:${PORTSDIR}/security/gpgme
+LIB_DEPENDS=	libassuan.so:${PORTSDIR}/security/libassuan \
+		libgpgme.so:${PORTSDIR}/security/gpgme
 BUILD_DEPENDS=	gpgv2:${PORTSDIR}/security/gnupg
 RUN_DEPENDS=	gpgv2:${PORTSDIR}/security/gnupg
 
-USES=		pkgconfig
+USES=		gmake pkgconfig
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	GPGKEYS_LDAP="${LOCALBASE}/libexec/gpg2keys_ldap" \
-		GPG="${LOCALBASE}/bin/gpgv2"
+		GPG="${LOCALBASE}/bin/gpg2"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		gpa.1
-
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
+
 .include <bsd.port.options.mk>
 
 .if !exists(${LOCALBASE}/bin/gpgsm)
 IGNORE=		requires gpgsm. (Re)Install security/gnupg with the GPGSM option ON, then rebuild security/gpgme if installed
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
 .endif
 
 .include <bsd.port.mk>

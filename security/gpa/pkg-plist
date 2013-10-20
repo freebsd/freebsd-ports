@@ -1,4 +1,5 @@
 bin/gpa
+man/man1/gpa.1.gz
 share/applications/gpa.desktop
 share/gpa/gpa-logo.ppm
 share/gpa/gpa.png
