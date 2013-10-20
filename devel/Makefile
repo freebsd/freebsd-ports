@@ -4214,6 +4214,7 @@
     SUBDIR += rubygem-shoulda-context
     SUBDIR += rubygem-shoulda-matchers
     SUBDIR += rubygem-simple_form
+    SUBDIR += rubygem-slim
     SUBDIR += rubygem-slop
     SUBDIR += rubygem-soap4r
     SUBDIR += rubygem-sprockets
