@@ -148,6 +148,8 @@ PLIST_SUB+=	WITH_XVMC="@comment "
 .if ${PORT_OPTIONS:MSMB}
 LIB_DEPENDS+=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
 PLIST_SUB+=	WITH_SMB=""
+CONFIGURE_ENV+=	LIBSMBCLIENT_LIBS="-L${LOCALBASE}/lib -lsmbclient" \
+		LIBSMBCLIENT_CFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS+=	--enable-samba
 .else
 PLIST_SUB+=	WITH_SMB="@comment "
