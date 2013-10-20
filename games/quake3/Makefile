@@ -3,13 +3,11 @@
 
 PORTNAME=	quake3
 PORTVERSION=	1.32c
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://www.proarena.com/p/ftpx/x8524/quake_3_arena/ \
-		http://www.planetgargoyle.com/ \
-		http://www.teamdarkside.net/ \
-		http://0day.icculus.org/mirrors/quake3/ \
-		http://www.olpainless.net/files/ \
+MASTER_SITES=	ftp://mancubus.net/pub/idgames/idstuff/source/ \
+		http://ftp.mancubus.net/pub/idgames/idstuff/source/ \
+		http://www.gamers.org/pub/idgames/idstuff/source/ \
 		${MASTER_SITE_IDSOFTWARE:S|$|source/|}
 DISTNAME=	${PORTNAME}-${REALVERSION}-source
 
@@ -42,7 +40,6 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 REALVERSION=	1.32b
 VM_ARCHS=	i386 powerpc
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
@@ -111,12 +108,12 @@ post-patch:
 
 do-install:
 .for bin in ${Q3BIN}
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/${bin} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/${bin} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .if ${PORT_OPTIONS:MGAMELIBS} || !defined(HAVE_VM_COMPILED)
 .for dir in baseq3 missionpack
-	${MKDIR} ${LIBDIR}/${dir}
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/${dir}/*.so ${LIBDIR}/${dir}
+	${MKDIR} ${STAGEDIR}${LIBDIR}/${dir}
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/${dir}/*.so ${STAGEDIR}${LIBDIR}/${dir}
 .endfor
 .endif
 
