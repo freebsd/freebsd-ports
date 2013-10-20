@@ -3,11 +3,20 @@ bin/fribidi.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Bidi/Array.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Bidi/Array/Byte.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Bidi/Array/Long.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Bidi/Constants.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Bidi/Paragraph.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Bidi/private.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Bidi/private/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Bidi/private/private.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Bidi/private/private.so
+%%PERL5_MAN3%%/Text::Bidi.3.gz
+%%PERL5_MAN3%%/Text::Bidi::Array.3.gz
+%%PERL5_MAN3%%/Text::Bidi::Array::Byte.3.gz
+%%PERL5_MAN3%%/Text::Bidi::Array::Long.3.gz
+%%PERL5_MAN3%%/Text::Bidi::Constants.3.gz
+%%PERL5_MAN3%%/Text::Bidi::Paragraph.3.gz
+%%PERL5_MAN3%%/Text::Bidi::private.3.gz
+man/man1/fribidi.pl.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Bidi/private
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Bidi
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
