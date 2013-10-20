@@ -1,7 +1,10 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/Whois/.packlist
 %%SITE_PERL%%/POE/Component/Client/Whois.pm
 %%SITE_PERL%%/POE/Component/Client/Whois/IPBlks.pm
 %%SITE_PERL%%/POE/Component/Client/Whois/TLDList.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/Whois/.packlist
+%%PERL5_MAN3%%/POE::Component::Client::Whois.3.gz
+%%PERL5_MAN3%%/POE::Component::Client::Whois::IPBlks.3.gz
+%%PERL5_MAN3%%/POE::Component::Client::Whois::TLDList.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/Whois
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
