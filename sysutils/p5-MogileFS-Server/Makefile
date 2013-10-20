@@ -23,45 +23,13 @@ BUILD_DEPENDS=	p5-Danga-Socket>=1.56:${PORTSDIR}/devel/p5-Danga-Socket \
 		p5-Sys-Syslog>=0:${PORTSDIR}/sysutils/p5-Sys-Syslog
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-OPTIONS_DEFINE=	DOCS
-
 USES=		perl5
 USE_PERL5=	configure
 REINPLACE_ARGS=	-i ''
 USE_RC_SUBR=	mogilefsd mogstored
 
-MAN1=		mogautomount.1 \
-		mogilefsd.1 \
-		mogstored.1
-MAN3=		MogileFS::Checksum.3 \
-		MogileFS::Class.3 \
-		MogileFS::DevFID.3 \
-		MogileFS::Device.3 \
-		MogileFS::Domain.3 \
-		MogileFS::FID.3 \
-		MogileFS::Factory.3 \
-		MogileFS::Host.3 \
-		MogileFS::IOStatWatcher.3 \
-		MogileFS::Overview.3 \
-		MogileFS::ReplicationPolicy.3 \
-		MogileFS::ReplicationPolicy::MultipleDevices.3 \
-		MogileFS::ReplicationPolicy::MultipleHosts.3 \
-		MogileFS::ReplicationPolicy::Union.3 \
-		MogileFS::Server.3 \
-		MogileFS::Store.3 \
-		MogileFS::Store::MySQL.3 \
-		MogileFS::Store::Postgres.3 \
-		MogileFS::Store::SQLite.3 \
-		MogileFS::Worker::Query.3 \
-		MogileFS::Worker::Replicate.3
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}/
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
