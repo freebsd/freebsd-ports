@@ -3,6 +3,7 @@
 
 PORTNAME=	greybird
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	x11-themes xfce
 MASTER_SITES=	GH GHC
 PKGNAMESUFFIX=	-theme
@@ -35,7 +36,7 @@ post-extract:
 
 post-patch:
 # Remove .orig file
-	@${RM} ${WRKSRC}/gtk-3.0/*.orig
+	@${RM} ${WRKSRC}/gtk-?.0/*.orig
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/themes/Greybird

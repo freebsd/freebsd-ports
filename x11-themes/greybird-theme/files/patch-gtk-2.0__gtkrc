@@ -1,0 +1,11 @@
+--- ./gtk-2.0/gtkrc.orig	2013-09-17 08:27:47.000000000 +0000
++++ ./gtk-2.0/gtkrc	2013-10-20 20:26:45.000000000 +0000
+@@ -593,7 +593,7 @@
+ style "xfwm-tabwin"
+ {
+ 	Xfwm4TabwinWidget::border-width = 1
+-	Xfwm4TabwinWidget::icon-size = 64
++	#Xfwm4TabwinWidget::icon-size = 64
+ 
+ 	bg[NORMAL]	= shade (0.35, @bg_color_dark)
+ 	bg[SELECTED]	= shade (0.65, @bg_color_dark)
