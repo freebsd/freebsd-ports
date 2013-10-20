@@ -1,2 +1,4 @@
 sbin/cronolog
 sbin/cronosplit
+man/man1/cronolog.1m.gz
+man/man1/cronosplit.1m.gz
