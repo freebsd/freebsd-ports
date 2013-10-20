@@ -1,5 +1,5 @@
---- code/unix/Makefile.orig	Sun Jun  4 18:13:21 2006
-+++ code/unix/Makefile	Sun Jun  4 18:14:42 2006
+--- code/unix/Makefile.orig	2013-10-18 02:01:30.000000000 +0300
++++ code/unix/Makefile	2013-10-18 02:07:18.000000000 +0300
 @@ -34,7 +34,7 @@
  
  # Build name
@@ -29,12 +29,18 @@
  # bk010215 - TODO - add all defaults / kill Ryan
  
  
-@@ -136,7 +136,7 @@
+@@ -131,12 +131,12 @@
+ #  DEBUG_CFLAGS=$(BASE_CFLAGS) -g  -Wall -O
+   ifeq ($(ARCH),axp)
+     CC=pgcc
+-    RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O6 -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations
++    RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O2 -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations
+   else
      ifeq ($(ARCH),ppc)
        NEWPGCC=/loki/global/ppc/bin/gcc
        CC=$(NEWPGCC)
 -      RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O6 -fomit-frame-pointer -pipe -ffast-math -malign-loops=2 -malign-jumps=2 -malign-functions=2 -fno-strict-aliasing -fstrength-reduce
-+      RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O6 -fomit-frame-pointer -pipe -ffast-math -falign-loops=2 -falign-jumps=2 -falign-functions=2 -fno-strict-aliasing -fstrength-reduce
++      RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O2 -fomit-frame-pointer -pipe -ffast-math -falign-loops=2 -falign-jumps=2 -falign-functions=2 -fno-strict-aliasing -fstrength-reduce
      else
        #NEWPGCC=/usr/local/gcc-2.95.2/bin/gcc # bk001205
        #NEWPGCC=/loki/global/x86/bin/gcc
@@ -43,10 +49,10 @@
  # NOTE: the -fomit-frame-pointer option leads to an unstable binary on my test box if it was built on the main box
  #   but building on the Mdk 7.2 baseline seems to work
 -      RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O6 -mcpu=pentiumpro -march=pentium -fomit-frame-pointer -pipe -ffast-math -malign-loops=2 -malign-jumps=2 -malign-functions=2 -fno-strict-aliasing -fstrength-reduce
-+      RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O6 -fomit-frame-pointer -pipe -ffast-math -falign-loops=2 -falign-jumps=2 -falign-functions=2 -fno-strict-aliasing -fstrength-reduce
++      RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O2 -fomit-frame-pointer -pipe -ffast-math -falign-loops=2 -falign-jumps=2 -falign-functions=2 -fno-strict-aliasing -fstrength-reduce
  # TTimo: use this for building on P3 gcc 2.95.3 libc2.2 for all targets (experimental! -fomit-fram-pointer removed)
 -#      RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O6 -mcpu=pentiumpro -march=pentium -pipe -ffast-math -malign-loops=2 -malign-jumps=2 -malign-functions=2 -fno-strict-aliasing -fstrength-reduce
-+#      RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O6 -pipe -ffast-math -falign-loops=2 -falign-jumps=2 -falign-functions=2 -fno-strict-aliasing -fstrength-reduce
++#      RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O2 -pipe -ffast-math -falign-loops=2 -falign-jumps=2 -falign-functions=2 -fno-strict-aliasing -fstrength-reduce
      endif
    endif
  
@@ -89,9 +95,9 @@
 -GL_CFLAGS = -I$(MESADIR)/include -I/usr/X11R6/include
 +ifdef OPTIMIZED_CFLAGS
 +  ifeq ($(ARCH),i386)
-+RELEASE_CFLAGS+=-O6 -fomit-frame-pointer -pipe -ffast-math -falign-loops=2 -falign-jumps=2 -falign-functions=2 -fno-strict-aliasing -fstrength-reduce
++RELEASE_CFLAGS+=-O2 -fomit-frame-pointer -pipe -ffast-math -falign-loops=2 -falign-jumps=2 -falign-functions=2 -fno-strict-aliasing -fstrength-reduce
 +  else
-+RELEASE_CFLAGS+=-O6 -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations
++RELEASE_CFLAGS+=-O2 -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations
 +  endif
 +endif
  
@@ -230,10 +236,7 @@
  		$(B)/client/linux_glimp.o \
  		$(B)/client/linux_snd.o \
 +		$(B)/client/linux_signals.o \
- 		$(B)/client/snd_mixa.o \
--		$(B)/client/matha.o   \
--		$(B)/client/ftol.o \
--		$(B)/client/snapvector.o
++		$(B)/client/snd_mixa.o \
 +		$(B)/client/matha.o
 +
 +	Q3POBJ_SMP=\
@@ -242,7 +245,10 @@
 +		$(B)/client/linux_glimp_smp.o \
 +		$(B)/client/linux_snd.o \
 +		$(B)/client/linux_signals.o \
-+		$(B)/client/snd_mixa.o \
+ 		$(B)/client/snd_mixa.o \
+-		$(B)/client/matha.o   \
+-		$(B)/client/ftol.o \
+-		$(B)/client/snapvector.o
 +		$(B)/client/matha.o
 +
 +    ifeq ($(ARCH),i386)
