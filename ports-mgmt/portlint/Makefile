@@ -10,6 +10,8 @@ DISTFILES=	# none
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Verifier for FreeBSD port directory
 
+LICENSE=	BSD
+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/src
 USES=		perl5
@@ -20,22 +22,14 @@ SRC=		${.CURDIR}/src
 PLIST_FILES=	bin/portlint \
 		man/man1/portlint.1.gz
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-PLIST_FILES+=	%%EXAMPLESDIR%%/portlintgrep
-PLIST_DIRS=	%%EXAMPLESDIR%%
-.endif
-
-do-fetch:
-	@${DO_NADA}
+PORTEXAMPLES=	portlintgrep
 
 pre-patch:
 	@${CP} -R ${SRC} ${WRKDIR}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/portlint.pl
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' \
+		${WRKSRC}/portlint.pl \
 		${WRKSRC}/portlintgrep.pl
 
 do-install:
@@ -43,11 +37,8 @@ do-install:
 	    ${STAGEDIR}${PREFIX}/bin/portlint
 	${INSTALL_MAN} ${WRKSRC}/portlint.1 \
 	    ${STAGEDIR}${MAN1PREFIX}/man/man1
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${INSTALL} -o ${SHAREOWN} -g ${SHAREGRP} -m ${BINMODE} -d \
-	    ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/portlintgrep.pl \
 	    ${STAGEDIR}${EXAMPLESDIR}/portlintgrep
-.endif
 
 .include <bsd.port.mk>
