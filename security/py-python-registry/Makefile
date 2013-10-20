@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	python-registry
-PORTVERSION=	0.2.7
+PORTVERSION=	1.0.0
 CATEGORIES=	security devel python
 MASTER_SITES=	GH \
 		LOCAL/antoine
@@ -16,31 +16,32 @@ LICENSE=	AL2
 USE_GITHUB=	yes
 GH_ACCOUNT=	williballenthin
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	ca12109
+GH_COMMIT=	1d16db8
 
-USE_PYTHON=	-2.7
+USES=		shebangfix
+SHEBANG_FILES=	samples/*.py
+python_OLD_CMD=	.*
+python_CMD=	${PYTHON_CMD}
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYTHON_PY3K_PLIST_HACK=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-post-patch:
-	${REINPLACE_CMD} 's|0.2.6|${PORTVERSION}|' ${WRKSRC}/Registry/__init__.py
-	${REINPLACE_CMD} '1s|.*|#!${PYTHON_CMD}|' ${WRKSRC}/samples/*.py
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${WRKSRC}/documentation/* ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGELOG.TXT ${WRKSRC}/CONTRIBUTORS.TXT ${WRKSRC}/README.txt \
+		${WRKSRC}/documentation/* ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/samples/*.py ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/samples/*.py ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
