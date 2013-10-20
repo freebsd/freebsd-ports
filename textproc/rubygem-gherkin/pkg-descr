@@ -1,0 +1,3 @@
+A fast Gherkin lexer/parser based on the Ragel State Machine Compiler.
+
+WWW: http://github.com/cucumber/gherkin
