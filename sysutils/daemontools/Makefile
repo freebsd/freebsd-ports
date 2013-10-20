@@ -6,7 +6,8 @@ PORTVERSION=	0.76
 PORTREVISION=	16
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cr.yp.to/daemontools/ \
-		http://mirror.shatow.net/freebsd/${PORTNAME}/
+		http://mirror.shatow.net/freebsd/${PORTNAME}/:DEFAULT,1 \
+		LOCAL/bdrewery/${PORTNAME}/:DEFAULT,1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	bdrewery@FreeBSD.org
@@ -20,6 +21,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 CONFLICTS=	freedt-[0-9]* serialmail-[0-9]*
 
 OPTIONS_DEFINE=	MAN SIGQ12 TESTS
+OPTIONS_SUB=	yes
 MAN_DESC=	Install Gerrit Pape's manual pages
 S_EARLY_DESC=	Start early, before the normal daemons
 S_NORMAL_DESC=	Start normally in the usual boot sequence
@@ -30,8 +32,6 @@ OPTIONS_SINGLE=	SEQ
 OPTIONS_SINGLE_SEQ=	S_EARLY S_NORMAL
 
 OPTIONS_DEFAULT=	MAN S_NORMAL TESTS
-
-NO_STAGE=	yes
 
 .include <bsd.port.options.mk>
 
@@ -49,23 +49,15 @@ SUB_LIST+=	SVSCAN_REQUIRE=${SVSCAN_REQUIRE} SVSCAN_BEFORE=${SVSCAN_BEFORE}
 
 .if ${PORT_OPTIONS:MMAN}
 MANDATE=	-20010714
-MASTER_SITES+=	http://smarden.org/pape/djb/manpages/:1 \
-  		http://mirror.shatow.net/freebsd/${PORTNAME}/:1
+MASTER_SITES+=	http://smarden.org/pape/djb/manpages/:1
 DISTFILES+=	${DISTNAME}-man${MANDATE}.tar.gz:1
-
-MAN8=		envdir.8 envuidgid.8 fghack.8 multilog.8 pgrphack.8 \
-		readproctitle.8 setlock.8 setuidgid.8 softlimit.8 \
-		supervise.8 svc.8 svok.8 svscan.8 svscanboot.8 svstat.8 \
-		tai64n.8 tai64nlocal.8
-MANCOMPRESSED=	no
 .endif
 
 .if ${PORT_OPTIONS:MSIGQ12}
 #PATCH_SITES+=	http://thedjbway.org/patches/:sigq12
-PATCH_SITES+=	${MASTER_SITE_LOCAL:S/%SUBDIR%\//jgh\/sysutils\/daemontools\/:sigq12/} \
-		http://people.FreeBSD.org/~jgh/ports/sysutils/daemontools/:sigq12
-PATCHFILES+=	daemontools-0.76.sigq12.patch:sigq12
-PATCH_DIST_STRIP=	-p2
+PATCH_SITES+=		${MASTER_SITE_LOCAL:S/$/:sigq12/}
+PATCH_SITE_SUBDIR+=	bdrewery/${PORTNAME}/:sigq12
+PATCHFILES+=		daemontools-0.76.sigq12.patch:-p2:sigq12
 .endif
 
 USE_RC_SUBR=	svscan
@@ -86,15 +78,16 @@ post-patch:
 do-install:
 	(while read cmd; do \
 		if ${FILE} ${WRKSRC}/$$cmd | ${GREP} -q "shell script"; then \
-			${INSTALL_SCRIPT} ${WRKSRC}/$$cmd ${PREFIX}/bin; \
+			${INSTALL_SCRIPT} ${WRKSRC}/$$cmd \
+			    ${STAGEDIR}${PREFIX}/bin; \
 		else \
-			${INSTALL_PROGRAM} ${WRKSRC}/$$cmd ${PREFIX}/bin; \
+			${INSTALL_PROGRAM} ${WRKSRC}/$$cmd \
+			    ${STAGEDIR}${PREFIX}/bin; \
 		fi \
 	done) < ${WRKSRC}/../package/commands
-
-post-install:
 .if ${PORT_OPTIONS:MMAN}
-	${INSTALL_MAN} ${WRKDIR}/daemontools-man/*.8 ${MAN8PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKDIR}/daemontools-man/*.8 \
+	    ${STAGEDIR}${MAN8PREFIX}/man/man8/
 .endif
 
 .include <bsd.port.mk>
