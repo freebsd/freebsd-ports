@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpgme
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gpgme
@@ -14,55 +14,50 @@ COMMENT=	Library to make access to GnuPG easier
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	assuan.0:${PORTSDIR}/security/libassuan \
-		gpg-error.0:${PORTSDIR}/security/libgpg-error
-
-OPTIONS_DEFINE=		DOCS UISERVER
-OPTIONS_SINGLE=		GNUPG
-OPTIONS_SINGLE_GNUPG=	GNUPG1 GNUPG2
-OPTIONS_DEFAULT=	GNUPG2
-
-GNUPG1_DESC=		Build gpgme library for GnuPG 1.x
-GNUPG2_DESC=		Build gpgme library for GnuPG 2.x
-UISERVER_DESC=		GnuPG UI server support
+LIB_DEPENDS=	libassuan.so:${PORTSDIR}/security/libassuan \
+		libgpg-error.so:${PORTSDIR}/security/libgpg-error
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
+USE_GNOME=	ltverhack
+USES=		gmake
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/gpgme \
 		--with-g13=no
 
 INFO=		gpgme
-PORTDOCS=	AUTHORS ChangeLog COPYING COPYING.LESSER INSTALL \
-		NEWS README THANKS TODO
+PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README THANKS TODO
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=		DOCS UISERVER
+OPTIONS_SINGLE=		GNUPG
+OPTIONS_SINGLE_GNUPG=	GNUPG1 GNUPG2
+OPTIONS_DEFAULT=	GNUPG2 UISERVER
+
+GNUPG1_DESC=		Build gpgme library for GnuPG 1.x
+GNUPG1_BUILD_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1
+GNUPG1_RUN_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1
+GNUPG1_CONFIGURE_ON=	--with-gpg=${LOCALBASE}/bin/gpg \
+			--with-gpgconf=no \
+			--with-gpgsm=no
+
+GNUPG2_DESC=		Build gpgme library for GnuPG 2.x
+GNUPG2_BUILD_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg
+GNUPG2_RUN_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg
+GNUPG2_CONFIGURE_ON=	--with-gpg=${LOCALBASE}/bin/gpg2 \
+			--with-gpgconf=${LOCALBASE}/bin/gpgconf
+
+UISERVER_DESC=			GnuPG UI server support
+UISERVER_CONFIGURE_ENABLE=	fd-passing
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MGNUPG1}
-BUILD_DEPENDS+=	gpgv:${PORTSDIR}/security/gnupg1
-RUN_DEPENDS+=	gpgv:${PORTSDIR}/security/gnupg1
-CONFIGURE_ARGS+=--with-gpg=${LOCALBASE}/bin/gpg \
-		--with-gpgsm=no \
-		--with-gpgconf=no
-.endif
-
 .if ${PORT_OPTIONS:MGNUPG2}
-BUILD_DEPENDS+=	gpg2:${PORTSDIR}/security/gnupg
-RUN_DEPENDS+=	gpg2:${PORTSDIR}/security/gnupg
-CONFIGURE_ARGS+=--with-gpg=${LOCALBASE}/bin/gpg2 \
-		--with-gpgconf=${LOCALBASE}/bin/gpgconf
 .if exists(${LOCALBASE}/bin/gpgsm)
 CONFIGURE_ARGS+=--with-gpgsm=${LOCALBASE}/bin/gpgsm
 .else
 CONFIGURE_ARGS+=--with-gpgsm=no
 .endif
-.endif
-
-.if ${PORT_OPTIONS:MUISERVER}
-CONFIGURE_ARGS+=--enable-fd-passing
 .endif
 
 verify: checksum
@@ -78,9 +73,7 @@ post-patch:
 					${WRKSRC}/lang/cl/Makefile.in
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

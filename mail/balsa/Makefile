@@ -4,7 +4,7 @@
 
 PORTNAME=	balsa
 PORTVERSION=	2.4.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://pawsa.fedorapeople.org/balsa/
 DISTNAME=	balsa-${PORTVERSION}

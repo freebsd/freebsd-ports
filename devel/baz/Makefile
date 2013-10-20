@@ -3,7 +3,7 @@
 
 PORTNAME=	baz
 PORTVERSION=	1.4.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	devel
 MASTER_SITES=	http://bazaar-vcs.org/releases/src/obsolete/
 DISTNAME=	bazaar_${PORTVERSION}
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	gpatch:${PORTSDIR}/devel/patch \
 		gtar:${PORTSDIR}/archivers/gtar
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	neon.27:${PORTSDIR}/www/neon29 \
-		gpgme.19:${PORTSDIR}/security/gpgme
+		libgpgme.so:${PORTSDIR}/security/gpgme
 
 CONFLICTS=	gd-2.*
 

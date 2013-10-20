@@ -3,7 +3,7 @@
 
 PORTNAME=	elmo
 PORTVERSION=	1.3.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	-devel
@@ -40,7 +40,7 @@ PLIST_SUB+=	NLS="@comment "
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libgpgme.so) || defined(WITH_GPGME)
-LIB_DEPENDS+=	gpgme.19:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=	libgpgme.so:${PORTSDIR}/security/gpgme
 .else
 pre-everything::
 	@${ECHO_CMD}

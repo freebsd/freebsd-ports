@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20131020:
+  AFFECTS: users of security/gpgme
+  AUTHOR: jhale@FreeBSD.org
+
+  The library version of security/gpgme has changed, and PORTREVISION has
+  been bumped in all dependent ports.  If you have external software that
+  depends on gpgme, this software needs to be recompiled.
+  To recompile all software dependent on gpgme, run:
+
+  # portmaster -r gpgme
+  or
+  # portupgrade -rf gpgme
+
 20131008:
   AFFECT: all users
   AUTHOR: bapt@FreeBSD.org

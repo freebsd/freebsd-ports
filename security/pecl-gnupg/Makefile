@@ -3,6 +3,7 @@
 
 PORTNAME=	gnupg
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -12,7 +13,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PECL wrapper around the gpgme library
 
-LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme
+LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
 
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-gnupg=${LOCALBASE}/include/gpgme
