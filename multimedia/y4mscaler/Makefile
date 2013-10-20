@@ -12,18 +12,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Y4mscaler scales, crops, and shifts Y'CbCr video
 
-LIB_DEPENDS=	lavjpeg-2.0.0:${PORTSDIR}/multimedia/mjpegtools
+LIB_DEPENDS=	liblavjpeg-2.0.so:${PORTSDIR}/multimedia/mjpegtools
 
-USE_GMAKE=	yes
+USES=		gmake
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-PORTDOCS=	COPYING ChangeLog INSTALL README TODO
-MAN1=		y4mscaler.1
-PLIST_FILES=	bin/y4mscaler
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+DOCS=		COPYING ChangeLog INSTALL README TODO
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
@@ -34,13 +28,9 @@ post-patch:
 		${WRKSRC}/Makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/y4mscaler ${PREFIX}/bin/y4mscaler
-	@${INSTALL_MAN} ${WRKSRC}/y4mscaler.1 ${MANPREFIX}/man/man1/
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for docfile in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/y4mscaler ${STAGEDIR}${PREFIX}/bin/y4mscaler
+	${INSTALL_MAN} ${WRKSRC}/y4mscaler.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
