@@ -19,9 +19,7 @@ USE_QT4=	moc_build rcc_build uic_build qmake_build \
 		corelib gui network opengl script
 INSTALLS_ICONS=	yes
 
-MAN1=		${PORTNAME}.1
 PORTDOCS=	AUTHORS ChangeLog README
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=		MORE_STARS MULTIMEDIA DOCS
 OPTIONS_DEFAULT=	MULTIMEDIA
@@ -59,11 +57,9 @@ post-patch: .SILENT
 post-install:
 .if ${PORT_OPTIONS:MMORE_STARS}
 	${INSTALL_DATA} ${DISTDIR}/stars_[45678]_[12]v0_0.cat \
-		${DATADIR}/stars/default
+		${STAGEDIR}${DATADIR}/stars/default
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
