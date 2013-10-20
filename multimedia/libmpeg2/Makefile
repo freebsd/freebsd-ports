@@ -3,7 +3,7 @@
 
 PORTNAME=	libmpeg2
 PORTVERSION=	0.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://libmpeg2.sourceforge.net/files/
 
@@ -24,7 +24,7 @@ OPTIONS_DEFINE=	DOCS SDL X11
 SDL_USE=	SDL=yes
 SDL_CONFIGURE_ENABLE=	sdl
 X11_USE=	XORG=sm XORG=xv
-X11_CONFIGUURE_WITH=	x
+X11_CONFIGURE_WITH=	x
 
 .include <bsd.port.options.mk>
 
