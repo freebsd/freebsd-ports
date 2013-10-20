@@ -1,0 +1,4 @@
+Format dates and times based on human-friendly examples, not arcane strftime
+directives.
+
+WWW: https://github.com/jeremyw/stamp
