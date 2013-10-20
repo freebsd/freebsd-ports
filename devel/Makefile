@@ -4053,6 +4053,7 @@
     SUBDIR += rubygem-cri
     SUBDIR += rubygem-daemon_controller
     SUBDIR += rubygem-daemons
+    SUBDIR += rubygem-debugger-linecache
     SUBDIR += rubygem-deeptest
     SUBDIR += rubygem-delayed_job
     SUBDIR += rubygem-dep_selector
