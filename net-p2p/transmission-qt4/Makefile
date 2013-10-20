@@ -17,7 +17,7 @@ SLAVEPORT=	qt4
 QT_NONSTANDARD=	yes
 USE_QT4=	moc_build qmake_build rcc_build uic_build gui dbus network
 USE_GNOME=	desktopfileutils
-QMAKE_LFLAGS=	-lcrypto -L${LOCALBASE}/lib ${ICONV_LIB}
+QMAKEFLAGS=	QMAKE_LFLAGS="-lcrypto -L${LOCALBASE}/lib ${ICONV_LIB}"
 
 EXTRA_CONF_ARGS=--disable-cli \
 		--disable-daemon \
