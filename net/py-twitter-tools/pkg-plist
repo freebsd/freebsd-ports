@@ -40,6 +40,9 @@ bin/twitter-archiver
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twitter/oauth.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twitter/oauth.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twitter/oauth.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twitter/oauth2.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twitter/oauth2.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twitter/oauth2.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twitter/oauth_dance.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twitter/oauth_dance.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twitter/oauth_dance.pyo
@@ -49,6 +52,9 @@ bin/twitter-archiver
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twitter/stream_example.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twitter/stream_example.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twitter/stream_example.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twitter/timezones.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twitter/timezones.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twitter/timezones.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twitter/twitter_globals.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twitter/twitter_globals.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twitter/twitter_globals.pyo
