@@ -1742,6 +1742,7 @@
     SUBDIR += rubygem-chosen-rails
     SUBDIR += rubygem-cookiejar
     SUBDIR += rubygem-cuba
+    SUBDIR += rubygem-d3_rails
     SUBDIR += rubygem-davclient
     SUBDIR += rubygem-domainatrix
     SUBDIR += rubygem-em-http-request
