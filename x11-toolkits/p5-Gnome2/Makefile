@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	Gnome2
-PORTVERSION=	1.043
+PORTVERSION=	1.044
 CATEGORIES=	x11-toolkits gnome perl5
 MASTER_SITES=	SF/gtk2-perl/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Allows a perl developer to use the Gnome libraries
+
+LICENSE=	LGPL21
 
 BUILD_DEPENDS=	p5-ExtUtils-Depends>=0:${PORTSDIR}/devel/p5-ExtUtils-Depends \
 		p5-ExtUtils-PkgConfig>=0:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
@@ -25,8 +27,5 @@ MAKE_JOBS_UNSAFE=	yes
 USES=		perl5
 USE_GNOME=	libbonoboui libgnome libgnomeui
 USE_PERL5=	configure
-
-post-patch:
-	@${REINPLACE_CMD} -e '185d' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
