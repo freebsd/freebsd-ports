@@ -4086,6 +4086,7 @@
     SUBDIR += rubygem-file-tail
     SUBDIR += rubygem-filemagic
     SUBDIR += rubygem-fog
+    SUBDIR += rubygem-foreman
     SUBDIR += rubygem-formatador
     SUBDIR += rubygem-gdata
     SUBDIR += rubygem-gem_plugin
