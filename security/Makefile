@@ -870,6 +870,7 @@
     SUBDIR += rubygem-rc4
     SUBDIR += rubygem-roauth
     SUBDIR += rubygem-ruby-hmac
+    SUBDIR += rubygem-six
     SUBDIR += rubygem-twitter_oauth
     SUBDIR += safesh
     SUBDIR += saint
