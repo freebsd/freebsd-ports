@@ -11,6 +11,9 @@ DISTNAME=	goRua-${PORTVERSION}
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Gtk+ on Ruby User Agent for 2ch BBS
 
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2013-10-21
+
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk \
 		${LOCALBASE}/lib/X11/fonts/local/mona6x12a.pcf.gz:${PORTSDIR}/japanese/monafonts
 
