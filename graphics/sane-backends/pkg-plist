@@ -500,7 +500,7 @@ man/man5/sane-bh.5.gz
 man/man5/sane-canon.5.gz
 man/man5/sane-canon630u.5.gz
 man/man5/sane-canon_dr.5.gz
-%%CUPS%%man/man5/sane-canon_pp.5.gz
+%%IEEE1284%%man/man5/sane-canon_pp.5.gz
 man/man5/sane-cardscan.5.gz
 man/man5/sane-coolscan.5.gz
 man/man5/sane-coolscan2.5.gz
@@ -524,7 +524,7 @@ man/man5/sane-hp4200.5.gz
 man/man5/sane-hp5400.5.gz
 man/man5/sane-hp5590.5.gz
 man/man5/sane-hpljm1005.5.gz
-%%CUPS%%man/man5/sane-hpsj5s.5.gz
+%%IEEE1284%%man/man5/sane-hpsj5s.5.gz
 man/man5/sane-hs2p.5.gz
 man/man5/sane-ibm.5.gz
 man/man5/sane-kodak.5.gz
@@ -540,7 +540,7 @@ man/man5/sane-matsushita.5.gz
 man/man5/sane-microtek.5.gz
 man/man5/sane-microtek2.5.gz
 man/man5/sane-mustek.5.gz
-%%CUPS%%man/man5/sane-mustek_pp.5.gz
+%%IEEE1284%%man/man5/sane-mustek_pp.5.gz
 man/man5/sane-mustek_usb.5.gz
 man/man5/sane-mustek_usb2.5.gz
 man/man5/sane-nec.5.gz
