@@ -1,0 +1,4 @@
+Linecache is a module for reading and caching lines. This may be useful for
+example in a debugger where the same lines are shown many times. 
+
+WWW: https://github.com/cldwalker/debugger-linecache
