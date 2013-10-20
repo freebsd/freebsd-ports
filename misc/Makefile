@@ -400,6 +400,7 @@
     SUBDIR += rtfm
     SUBDIR += ruby-progressbar
     SUBDIR += ruby-vpim
+    SUBDIR += rubygem-dotenv
     SUBDIR += rubygem-mime-types
     SUBDIR += rubygem-rabbit
     SUBDIR += rubygem-vpim
