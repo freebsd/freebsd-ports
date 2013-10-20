@@ -1,5 +1,6 @@
 include/vc.h
 lib/libvc.a
+lib/libvc.la
 lib/libvc.so
 lib/libvc.so.0
 man/man3/vc.3.gz

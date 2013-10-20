@@ -3,7 +3,7 @@
 
 PORTNAME=	libvc
 PORTVERSION=	003
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF/rolo/${PORTNAME}/${PORTVERSION}
 
@@ -25,6 +25,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${DOC} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-	@${RM} -f ${PREFIX}/lib/libvc.la
 
 .include <bsd.port.mk>
