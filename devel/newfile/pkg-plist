@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/newfile
+man/man1/newfile.1.gz
 %%DATADIR%%/fileproc.rb
 %%DATADIR%%/licenses/Artistic@Artistic
 %%DATADIR%%/licenses/Artistic@README
