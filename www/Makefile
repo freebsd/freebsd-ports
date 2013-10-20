@@ -1826,6 +1826,7 @@
     SUBDIR += rubygem-tinymce-rails
     SUBDIR += rubygem-typhoeus
     SUBDIR += rubygem-uglifier
+    SUBDIR += rubygem-underscore-rails
     SUBDIR += rubygem-unicorn
     SUBDIR += rubygem-url-mount
     SUBDIR += rubygem-url_escape
