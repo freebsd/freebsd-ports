@@ -1040,6 +1040,7 @@
     SUBDIR += rubygem-network_interface
     SUBDIR += rubygem-oauth
     SUBDIR += rubygem-oauth2
+    SUBDIR += rubygem-omniauth-oauth
     SUBDIR += rubygem-open-uri-cached
     SUBDIR += rubygem-openid
     SUBDIR += rubygem-packetfu
