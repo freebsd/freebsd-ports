@@ -9,6 +9,9 @@ MASTER_SITES=	RG
 MAINTAINER=	gogo@cs.uni-sb.de
 COMMENT=	Fast implementation of the standard Ruby debugger
 
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2013-10-21
+
 RUN_DEPENDS=	rubygem-linecache>=0.3:${PORTSDIR}/devel/rubygem-linecache
 
 USE_RUBY=	yes
