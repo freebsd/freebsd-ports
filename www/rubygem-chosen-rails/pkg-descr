@@ -1,0 +1,4 @@
+Chosen is a javascript library of select box enhancer for jQuery and Protoype.
+This gem integrates Chosen with Rails asset pipeline for easy of use.
+
+WWW: https://github.com/tsechingho/chosen-rails
