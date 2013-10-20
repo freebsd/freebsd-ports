@@ -1,4 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Human/.packlist
+%%PERL5_MAN3%%/Time::Human.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Human
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time
 %%SITE_PERL%%/Time/Human.pm
