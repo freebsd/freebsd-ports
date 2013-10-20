@@ -22,18 +22,12 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	TEAMARENA
 OPTIONS_DEFAULT=	TEAMARENA
+OPTIONS_SUB=	yes
 
 TEAMARENA_DESC=		Install Quake III Team Arena data files
 
-NO_STAGE=	yes
 .include "Makefile.include"	# must be included before bsd.port.options.mk
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MTEAMARENA}
-PLIST_SUB+=	TEAMARENA=""
-.else
-PLIST_SUB+=	TEAMARENA="@comment "
-.endif
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
@@ -42,17 +36,12 @@ do-extract:
 		${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | ${TAR} xzf -
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	${CP} -a ${WRKSRC}/baseq3 ${DATADIR}
-	@${MKDIR} ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/quake3.xpm ${PREFIX}/share/pixmaps
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${CP} -a ${WRKSRC}/baseq3 ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/quake3.xpm ${STAGEDIR}${PREFIX}/share/pixmaps
 .if ${PORT_OPTIONS:MTEAMARENA}
-	${CP} -a ${WRKSRC}/missionpack ${DATADIR}
+	${CP} -a ${WRKSRC}/missionpack ${STAGEDIR}${DATADIR}
 .endif
-
-post-install:
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
 
 .include <bsd.port.mk>
