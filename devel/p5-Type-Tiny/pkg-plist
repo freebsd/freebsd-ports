@@ -1,5 +1,9 @@
 %%SITE_PERL%%/Devel/TypeTiny/Perl56Compat.pm
 %%SITE_PERL%%/Devel/TypeTiny/Perl58Compat.pm
+%%SITE_PERL%%/Error/TypeTiny.pm
+%%SITE_PERL%%/Error/TypeTiny/Assertion.pm
+%%SITE_PERL%%/Error/TypeTiny/Compilation.pm
+%%SITE_PERL%%/Error/TypeTiny/WrongNumberOfParameters.pm
 %%SITE_PERL%%/Eval/TypeTiny.pm
 %%SITE_PERL%%/Exporter/TypeTiny.pm
 %%SITE_PERL%%/Reply/Plugin/TypeTiny.pm
@@ -7,10 +11,6 @@
 %%SITE_PERL%%/Type/Coercion.pm
 %%SITE_PERL%%/Type/Coercion/FromMoose.pm
 %%SITE_PERL%%/Type/Coercion/Union.pm
-%%SITE_PERL%%/Type/Exception.pm
-%%SITE_PERL%%/Type/Exception/Assertion.pm
-%%SITE_PERL%%/Type/Exception/Compilation.pm
-%%SITE_PERL%%/Type/Exception/WrongNumberOfParameters.pm
 %%SITE_PERL%%/Type/Library.pm
 %%SITE_PERL%%/Type/Params.pm
 %%SITE_PERL%%/Type/Parser.pm
@@ -36,17 +36,16 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Type/Tiny/.packlist
 %%PERL5_MAN3%%/Devel::TypeTiny::Perl56Compat.3.gz
 %%PERL5_MAN3%%/Devel::TypeTiny::Perl58Compat.3.gz
+%%PERL5_MAN3%%/Error::TypeTiny.3.gz
+%%PERL5_MAN3%%/Error::TypeTiny::Assertion.3.gz
+%%PERL5_MAN3%%/Error::TypeTiny::Compilation.3.gz
+%%PERL5_MAN3%%/Error::TypeTiny::WrongNumberOfParameters.3.gz
 %%PERL5_MAN3%%/Eval::TypeTiny.3.gz
-%%PERL5_MAN3%%/Exporter::TypeTiny.3.gz
 %%PERL5_MAN3%%/Reply::Plugin::TypeTiny.3.gz
 %%PERL5_MAN3%%/Test::TypeTiny.3.gz
 %%PERL5_MAN3%%/Type::Coercion.3.gz
 %%PERL5_MAN3%%/Type::Coercion::FromMoose.3.gz
 %%PERL5_MAN3%%/Type::Coercion::Union.3.gz
-%%PERL5_MAN3%%/Type::Exception.3.gz
-%%PERL5_MAN3%%/Type::Exception::Assertion.3.gz
-%%PERL5_MAN3%%/Type::Exception::Compilation.3.gz
-%%PERL5_MAN3%%/Type::Exception::WrongNumberOfParameters.3.gz
 %%PERL5_MAN3%%/Type::Library.3.gz
 %%PERL5_MAN3%%/Type::Params.3.gz
 %%PERL5_MAN3%%/Type::Parser.3.gz
@@ -74,7 +73,6 @@
 @dirrmtry %%SITE_PERL%%/Types
 @dirrmtry %%SITE_PERL%%/Type/Tiny/Manual
 @dirrmtry %%SITE_PERL%%/Type/Tiny
-@dirrmtry %%SITE_PERL%%/Type/Exception
 @dirrmtry %%SITE_PERL%%/Type/Coercion
 @dirrmtry %%SITE_PERL%%/Type
 @dirrmtry %%SITE_PERL%%/Test
@@ -82,5 +80,7 @@
 @dirrmtry %%SITE_PERL%%/Reply
 @dirrmtry %%SITE_PERL%%/Exporter
 @dirrmtry %%SITE_PERL%%/Eval
-@dirrm %%SITE_PERL%%/Devel/TypeTiny
+@dirrmtry %%SITE_PERL%%/Error/TypeTiny
+@dirrmtry %%SITE_PERL%%/Error
+@dirrmtry %%SITE_PERL%%/Devel/TypeTiny
 @dirrmtry %%SITE_PERL%%/Devel
