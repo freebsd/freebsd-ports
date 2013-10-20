@@ -2,16 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	yii
-PORTVERSION=	1.1.13
-DISTVERSIONSUFFIX=	.e9e4a0
+PORTVERSION=	1.1.14
+DISTVERSIONSUFFIX=	.f0fee9
 CATEGORIES=	www
-MASTER_SITES=	GOOGLE_CODE \
-		SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A high-performance component-based PHP framework
+COMMENT=	High-performance component-based PHP framework
 
 LICENSE=	BSD
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	yiisoft
+GH_PROJECT=	${PORTNAME}
+GH_COMMIT=	f0fee9
+
+WRKSRC=	${WRKDIR}/${GH_ACCOUNT}-${PORTNAME}-72100b6
 
 NO_BUILD=	yes
 USE_PHP=	pcre spl
@@ -27,7 +32,8 @@ PORTDOCS=	CHANGELOG LICENSE README UPGRADE
 
 INSTALL_DIRS=	framework
 
-NO_STAGE=	yes
+PGSQL_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_pgsql.so:${PORTSDIR}/databases/php5-pdo_pgsql
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MREQPHP}
@@ -38,10 +44,6 @@ USE_PHP+=	apc dom gd mcrypt memcache pdo soap
 USE_PHP+=	pdo_mysql
 .endif
 
-.if ${PORT_OPTIONS:MPGSQL}
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_pgsql.so:${PORTSDIR}/databases/php5-pdo_pgsql
-.endif
-
 .if ${PORT_OPTIONS:MSQLITE}
 USE_PHP+=	pdo_sqlite
 .endif
@@ -50,35 +52,10 @@ post-patch:
 	@${SED} -i "" -e "s,dirname(__FILE__),'${DATADIR}/framework'," ${WRKSRC}/framework/yiic
 
 do-install:
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "${INSTALL_DIRS}" ${DATADIR})
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${DATADIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
-		${DATADIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
-	@${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
-	@${ECHO_CMD} '@exec ${FIND} ${DATADIR} -type f -print0 | \
-		${XARGS} -0 ${CHMOD} 644' >> ${TMPPLIST}
-	@${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-	@${ECHO_CMD} '@exec ${FIND} ${DATADIR} -type d -print0 | \
-		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
-	@${INSTALL_SCRIPT} ${WRKSRC}/framework/yiic ${PREFIX}/bin
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "demos requirements" ${EXAMPLESDIR})
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${EXAMPLESDIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
-		${EXAMPLESDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
-	@${FIND} ${EXAMPLESDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
-	@${ECHO_CMD} '@exec ${FIND} ${EXAMPLESDIR} -type f -print0 | \
-		${XARGS} -0 ${CHMOD} 644' >> ${TMPPLIST}
-	@${FIND} ${EXAMPLESDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-	@${ECHO_CMD} '@exec ${FIND} ${EXAMPLESDIR} -type d -print0 | \
-		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
-.endif
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "${INSTALL_DIRS}" ${STAGEDIR}${DATADIR})
+	@${INSTALL_SCRIPT} ${WRKSRC}/framework/yiic ${STAGEDIR}${PREFIX}/bin
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "demos requirements" ${STAGEDIR}${EXAMPLESDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
