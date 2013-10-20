@@ -15,9 +15,7 @@ LICENSE=	GPLv2
 CONFLICTS_INSTALL=      cronolog-devel-[0-9]*
 
 INFO=		cronolog
-MAN1=		cronolog.1m cronosplit.1m
 
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	SETUID_PATCH
