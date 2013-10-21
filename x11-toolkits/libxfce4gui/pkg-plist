@@ -43,13 +43,13 @@ include/xfce4/libxfcegui4/xfce_scaled_image.h
 include/xfce4/libxfcegui4/xfce_systemtray.h
 include/xfce4/libxfcegui4/xfce_togglebutton.h
 include/xfce4/libxfcegui4/xinerama.h
-lib/libglade/2.0/libxfce4.a
-lib/libglade/2.0/libxfce4.la
-lib/libglade/2.0/libxfce4.so
 lib/libxfcegui4.a
 lib/libxfcegui4.la
 lib/libxfcegui4.so
 lib/libxfcegui4.so.7
+lib/libglade/2.0/libxfce4.a
+lib/libglade/2.0/libxfce4.la
+lib/libglade/2.0/libxfce4.so
 libdata/pkgconfig/libxfcegui4-1.0.pc
 %%APIDOCS%%share/gtk-doc/html/libxfcegui4/XfceAboutDialog.html
 %%APIDOCS%%share/gtk-doc/html/libxfcegui4/XfceAppMenuItem.html
@@ -176,6 +176,8 @@ share/icons/hicolor/scalable/apps/xfce-filemanager.svg
 %%NLS%%@dirrmtry share/locale/ast
 %%APIDOCS%%@dirrmtry share/gtk-doc/html/libxfcegui4
 %%APIDOCS%%@dirrmtry share/gtk-doc/html
-%%APIDOCS%%@dirrmtry share/gtk-doc 
+%%APIDOCS%%@dirrmtry share/gtk-doc
+@dirrmtry lib/libglade/2.0
+@dirrmtry lib/libglade
 @dirrmtry include/xfce4/libxfcegui4
 @dirrmtry include/xfce4
