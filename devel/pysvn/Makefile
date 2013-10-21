@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pysvn
-PORTVERSION=	1.7.6
+PORTVERSION=	1.7.8
 CATEGORIES=	devel
 MASTER_SITES=	http://pysvn.barrys-emacs.org/source_kits/
 
@@ -30,6 +30,10 @@ PLIST_DIRS=	%%PYTHON_SITELIBDIR%%/${PORTNAME}
 WRKSRC=		${WRKDIR}/${DISTNAME}/Source
 
 NO_STAGE=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e "s,gcc,${CC},g" -e "s,g++,${CXX},g" ${WRKSRC}/setup_configure.py
+
 do-build:
 	@cd ${WRKSRC} && ${MAKE}
 
