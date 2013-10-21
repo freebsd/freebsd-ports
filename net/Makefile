@@ -1041,6 +1041,7 @@
     SUBDIR += rubygem-oauth
     SUBDIR += rubygem-oauth2
     SUBDIR += rubygem-omniauth-github
+    SUBDIR += rubygem-omniauth-google-oauth2
     SUBDIR += rubygem-omniauth-oauth
     SUBDIR += rubygem-omniauth-oauth2
     SUBDIR += rubygem-open-uri-cached
