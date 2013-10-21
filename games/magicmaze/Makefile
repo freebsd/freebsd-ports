@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-${DISTVERSION:S/./_/g}
 MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Simple and low-tech monster-bashing maze game
 
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2013-10-22
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	ruby18-sdl>=1.3:${PORTSDIR}/devel/ruby-sdl
