@@ -12,17 +12,15 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
 USES=		gmake
-NO_STAGE=	yes
 USE_LDCONFIG=	yes
 
-MAKE_ARGS=	CC="${CC}"
 PORTDATA=	re.mk
 
 do-install:
-	${MKDIR} ${PREFIX}/include/${PORTNAME} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/include && \
-	    ${COPYTREE_SHARE} \*.h ${PREFIX}/include/${PORTNAME})
-	${INSTALL_DATA} ${WRKSRC}/mk/${PORTNAME}.mk ${DATADIR}
-	${INSTALL_LIB} ${WRKSRC}/lib${PORTNAME}.[sa]* ${PREFIX}/lib
+	    ${COPYTREE_SHARE} \*.h ${STAGEDIR}${PREFIX}/include/${PORTNAME})
+	${INSTALL_DATA} ${WRKSRC}/mk/${PORTNAME}.mk ${STAGEDIR}${DATADIR}
+	${INSTALL_LIB} ${WRKSRC}/lib${PORTNAME}.[sa]* ${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>
