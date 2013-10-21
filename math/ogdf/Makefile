@@ -34,7 +34,7 @@ USE_COIN=	false
 .endif
 
 .if ${PORT_OPTIONS:MABACUS}
-USE_GCC=	4.4+
+USE_GCC=	yes
 LIB_DEPENDS+=	libabacus-osi.so:${PORTSDIR}/math/abacus
 USE_ABACUS=	true
 USE_COIN=	true
