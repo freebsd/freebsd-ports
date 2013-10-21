@@ -1,4 +1,6 @@
 bin/florence
+man/man1/florence.1.gz
+man/man1/florence_applet.1.gz
 share/applications/florence.desktop
 %%DATADIR%%/florence.conf
 %%DATADIR%%/florence.css
