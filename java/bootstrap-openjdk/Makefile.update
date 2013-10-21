@@ -32,6 +32,7 @@ PORTREVISION!=	${GET_REVISION} 2>/dev/null || ${TRUE}
 DISTDIR?=	${.CURDIR}
 DISTFILE=	${JDK_PORT}-${ARCH}-r${PORTREVISION}.tar.xz
 DISTINFO_FILE=	${.CURDIR}/distinfo.${ARCH}
+EXTRA_PATCHES=	${.CURDIR}/files/bootstrap.patch
 MAKEFILE=	${.CURDIR}/Makefile
 PLIST?=		${.CURDIR}/pkg-plist
 PLIST_SUB=	ARCH="${ARCH}" JDK_ROOT="."
@@ -60,7 +61,9 @@ all:
 	@${ECHO} "=============================================================="
 	@${ECHO} ""
 .if !defined(NO_BUILD)
-	@${SETENV} -i PATH=${PATH} ${MAKE} -C "${JDK_PORTDIR}" BATCH=yes
+	@${SETENV} -i PATH=${PATH} __MAKE_CONF=/dev/null \
+	    ${MAKE} -C "${JDK_PORTDIR}" BATCH=yes EXTRA_PATCHES="${EXTRA_PATCHES}" \
+	    PORT_DBDIR=/var/empty WITHOUT_ICEDTEA=yes
 .endif
 	@cd "${JDK_IMAGEDIR}" && \
 	${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PLIST} | \
