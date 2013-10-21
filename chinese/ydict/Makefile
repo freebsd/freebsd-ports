@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	ydict
-PORTVERSION=	1.2.6
+PORTVERSION=	1.3.1
 CATEGORIES=	chinese
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Command line tool of Yahoo! Dict
