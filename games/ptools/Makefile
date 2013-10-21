@@ -6,6 +6,7 @@ PORTVERSION=	1.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.koth.org/pmars/:koth \
 		http://www.infionline.net/~wtnewton/corewar/:corestep
+PKGNAMESUFFIX=	-game
 DISTFILES=	${PORTNAME}${PORTVERSION:S/.//}.zip:koth \
 		pmars08s.zip:koth \
 		p3-2.pl:koth \
@@ -24,7 +25,7 @@ NO_WRKSUBDIR=	yes
 
 MAN6=		ptools-mopt.6 ptools-mts.6
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
 post-build:
 	(${ECHO_CMD} "#!${PERL}"; ${CAT} ${DISTDIR}/p3-2.pl) \
 		> ${WRKSRC}/p3-2.pl
@@ -32,16 +33,16 @@ post-build:
 
 do-install:
 .for f in corestep mopt mts pname
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin/${PORTNAME}-${f}
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-${f}
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/p3-2.pl ${PREFIX}/bin/${PORTNAME}-p3-2
+	${INSTALL_SCRIPT} ${WRKSRC}/p3-2.pl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-p3-2
 .for f in mopt.6 mts.6
-	${INSTALL_MAN} ${WRKSRC}/${f} ${MAN6PREFIX}/man/man6/${PORTNAME}-${f}
+	${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${MAN6PREFIX}/man/man6/${PORTNAME}-${f}
 .endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 . for f in mopt.doc mts.doc pname.doc readme.ptools
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 . endfor
 .endif
 
