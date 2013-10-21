@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	php_doc
-PORTVERSION?=	20100701
-PORTREVISION?=	2
+PORTVERSION?=	20131017
 CATEGORIES?=	lang
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTNAME=	php_manual_${PHP_LANG}-${PORTVERSION}
@@ -16,13 +15,12 @@ NO_WRKSUBDIR=	YES
 SLAVEDIRS=	french/php_doc \
 		german/php_doc \
 		japanese/php_doc \
-		korean/php_doc \
 		polish/php_doc
 
+USE_PHPIZE=	yes
 PHP_LANG?=	en
-PHP_LANGS?=	${PHP_WRKDIR} ${PHP_WRKSRC}
+PHP_LANGS?=	${PHP_HTML_CHUNKED} ${PHP_HTML_NORMAL}
 PHP_HTML_CHUNKED=	br de en fr ja pl ro tr
-PHP_HTML_NORMAL=	bg kr
 PHPDOCDIR=	${PREFIX}/share/doc/php-${PHP_LANG}/
 PLIST=		${WRKDIR}/pkg-plist
 
@@ -46,9 +44,9 @@ NO_STAGE=	yes
 pre-fetch:
 	@${ECHO}
 	@${ECHO} "You may set PHP_LANG to"
-	@${ECHO} "	bg (bulgarian), br (brazillian), de (german),"
+	@${ECHO} "	br (brazillian), de (german),"
 	@${ECHO} "	en (english), fr (french), ja (japanese),"
-	@${ECHO} "	kr (korean), pl (polish), ro (romian),"
+	@${ECHO} "	pl (polish), ro (romian),"
 	@${ECHO} "	tr (turkey)"
 	@${ECHO} "to get a different language than the default one (english)."
 	@${ECHO}
@@ -84,8 +82,9 @@ makesum:
 
 fetchdist:
 .for l in ${PHP_LANGS:S/br/pt_BR/}
-#	wget -c ftp://ftp.planetmirror.com/pub/php/distributions/manual/php_manual_${l}.tar.gz
-	wget -c  ftp://pt.php.net/pub/php/distributions/manual/php_manual_${l}.tar.gz
+	fetch -mv http://au2.php.net/distributions/manual/php_manual_${l}.tar.gz
+.endfor
+.for l in ${PHP_LANGS:S/br/pt_BR/}
 	if [ "${l}" = "pt_BR" ]; then \
 		${MV} php_manual_${l}.tar.gz ${DISTDIR}/php_manual_br-${PORTVERSION}.tar.gz; \
 	else \
