@@ -3,7 +3,7 @@
 
 PORTNAME?=	opencv
 PORTVERSION=	2.3.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}library/${PORTNAME}-unix/${PORTVERSION}
 DISTNAME=	OpenCV-${DISTVERSION}a
@@ -28,7 +28,7 @@ NOT_FOR_ARCHS_REASON_sparc64=	does not compile on sparc64
 DATADIR=	${PREFIX}/share/OpenCV
 PLIST_SUB+=	VERSION=${DISTVERSION}
 
-_COMPVERSION!= ${CC} --version
+_COMPVERSION!=	${CC} --version
 .if ${_COMPVERSION:Mclang}
 USE_CXXSTD=	gnu++11
 CXXFLAGS+=	-Wno-error -Wno-c++11-narrowing
@@ -36,19 +36,76 @@ CXXFLAGS+=	-Wno-error -Wno-c++11-narrowing
 
 .if !defined(_BUILDING_OPENCV_CORE) && !defined(_BUILDING_OPENCV_PYTHON)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-opencv
-LIB_DEPENDS+=	opencv_core.2:${PORTSDIR}/graphics/opencv-core
+LIB_DEPENDS+=	libopencv_core.so.2:${PORTSDIR}/graphics/opencv-core
 LDFLAGS+=	-L${LOCALBASE}/lib -lopencv_core
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	EIGEN2 FFMPEG GSTREAMER GTK JASPER JPEG OPENEXR PNG \
-		QT4 TBB TIFF V4L XINE EXAMPLES
-EIGEN2_DESC=	Eigen 2 support
-GTK_DESC=	GTK+ support
-OPENEXR_DESC=	OpenEXR support
-TBB_DESC=	TBB support
+OPTIONS_DEFINE=		EIGEN2 FFMPEG GSTREAMER GTK2 JASPER JPEG OPENEXR PNG \
+			QT4 TBB TIFF V4L XINE EXAMPLES
+OPTIONS_DEFAULT=	EIGEN3 JASPER JPEG PNG TIFF V4L
 
-OPTIONS_DEFAULT=	EIGEN2 JASPER JPEG PNG TIFF V4L
+EIGEN3_DESC=		Eigen 3 support
+EIGEN3_BUILD_DEPENDS=	${LOCALBASE}/include/eigen3/Eigen/Eigen:${PORTSDIR}/math/eigen3
+EIGEN3_CMAKE_ON=	-DWITH_EIGEN:BOOL=On
+EIGEN3_CMAKE_OFF=	-DDWITH_EIGEN:BOOL=Off
+
+FFMPEG_LIB_DEPENDS=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0
+FFMPEG_CMAKE_ON=	-DWITH_FFMPEG:BOOL=On
+FFMPEG_CMAKE_OFF=	-DWITH_FFMPEG:BOOL=Off
+FFMPEG_CXXFLAGS=	-I${LOCALBASE}/include/ffmpeg0
+
+GSTREAMER_USE=		GSTREAMER=yes
+GSTREAMER_CMAKE_ON=	-DWITH_GSTREAMER:BOOL=On
+GSTREAMER_CMAKE_OFF=	-DWITH_GSTREAMER:BOOL=Off
+
+GTK2_USE=		GNOME=gtk20
+GTK2_CMAKE_ON=		-DWITH_GTK:BOOL=On
+GTK2_CMAKE_OFF=		-DWITH_GTK:BOOL=Off
+
+JASPER_LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper
+JASPER_CMAKE_ON=	-DWITH_JASPER:BOOL=On
+JASPER_CMAKE_OFF=	-DWITH_JASPER:BOOL=Off
+
+JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+JPEG_CMAKE_ON=		-DWITH_JPEG:BOOL=On
+JPEG_CMAKE_OFF=		-DWITH_JPEG:BOOL=Off
+
+OPENEXR_DESC=		OpenEXR support
+OPENEXR_LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
+OPENEXR_CMAKE_ON=	-DWITH_OPENEXR:BOOL=On
+OPENEXR_CMAKE_OFF=	-DWITH_OPENEXR:BOOL=Off
+
+PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+PNG_CMAKE_ON=		-DWITH_PNG:BOOL=On
+PNG_CMAKE_OFF=		-DWITH_PNG:BOOL=Off
+
+QT4_USE=		QT4=opengl moc_build qmake_build rcc_build uic_build qtestlib
+QT4_CMAKE_ON=		-DWITH_QT:BOOL=On -DWITH_QT_OPENGL:BOOL=On
+QT4_CMAKE_OFF=		-DWITH_QT:BOOL=Off
+
+TBB_DESC=		TBB support
+TBB_LIB_DEPENDS=	libtbb.so:${PORTSDIR}/devel/tbb
+TBB_CMAKE_ON=		-DWITH_TBB:BOOL=On \
+			-DTBBLIB_FOUND:BOOL=1 -DTBB_FOUND:BOOL=On \
+			-DTBB_INCLUDE_DIRS:STRING="${LOCALBASE}/include" \
+			-DTBB_LIBRARY_DIRS:STRING="${LOCALBASE}/lib" \
+			-DTBB_LIBRARIES:STRING="tbb"
+TBB_CMAKE_OFF=		-DWITH_TBB:BOOL=Off
+
+TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
+TIFF_CMAKE_ON=		-DWITH_TIFF:BOOL=On
+TIFF_CMAKE_OFF=		-DWITH_TIFF:BOOL=Off
+
+V4L_LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
+V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+V4L_CMAKE_ON=		-DWITH_V4L:BOOL=On \
+			-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
+V4L_CMAKE_OFF=		-DWITH_V4L:BOOL=Off
+
+XINE_LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine
+XINE_CMAKE_ON=		-DWITH_XINE:BOOL=On
+XINE_CMAKE_OFF=		-DWITH_XINE:BOOL=Off
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
@@ -56,103 +113,6 @@ NO_STAGE=	yes
 .if ${PORT_OPTIONS:MEXAMPLES}
 CMAKE_ARGS+=	-DBUILD_EXAMPLES:BOOL=On -DINSTALL_C_EXAMPLES:BOOL=On
 PORTEXAMPLES+=	c cpp gpu
-.endif
-
-.if ${PORT_OPTIONS:MEIGEN2}
-BUILD_DEPENDS+=	${LOCALBASE}/include/eigen2/Eigen/Eigen:${PORTSDIR}/math/eigen2
-CMAKE_ARGS+=	-DWITH_EIGEN2:BOOL=On
-.else
-CMAKE_ARGS+=	-DDWITH_EIGEN2:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
-CMAKE_ARGS+=	-DWITH_FFMPEG:BOOL=On
-.else
-CMAKE_ARGS+=	-DWITH_FFMPEG:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MGSTREAMER}
-USE_GSTREAMER=	yes
-CMAKE_ARGS+=	-DWITH_GSTREAMER:BOOL=On
-.else
-CMAKE_ARGS+=	-DWITH_GSTREAMER:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MGTK}
-USE_GNOME=	gtk20
-CMAKE_ARGS+=	-DWITH_GTK:BOOL=On
-.else
-CMAKE_ARGS+=	-DWITH_GTK:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MJASPER}
-LIB_DEPENDS+=	jasper.4:${PORTSDIR}/graphics/jasper
-CMAKE_ARGS+=	-DWITH_JASPER:BOOL=On
-.else
-CMAKE_ARGS+=	-DWITH_JASPER:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
-CMAKE_ARGS+=	-DWITH_JPEG:BOOL=On
-.else
-CMAKE_ARGS+=	-DWITH_JPEG:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MOPENEXR}
-LIB_DEPENDS+=	IlmImf:${PORTSDIR}/graphics/OpenEXR
-CMAKE_ARGS+=	-DWITH_OPENEXR:BOOL=On
-.else
-CMAKE_ARGS+=	-DWITH_OPENEXR:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
-CMAKE_ARGS+=	-DWITH_PNG:BOOL=On
-.else
-CMAKE_ARGS+=	-DWITH_PNG:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MQT4}
-USE_QT4+=	opengl moc_build qmake_build rcc_build uic_build qtestlib
-CMAKE_ARGS+=	-DWITH_QT:BOOL=On -DWITH_QT_OPENGL:BOOL=On
-.else
-CMAKE_ARGS+=	-DWITH_QT:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MTBB}
-LIB_DEPENDS+=	tbb.4:${PORTSDIR}/devel/tbb
-CMAKE_ARGS+=	-DWITH_TBB:BOOL=On \
-		-DTBBLIB_FOUND:BOOL=1 -DTBB_FOUND:BOOL=On \
-		-DTBB_INCLUDE_DIRS:STRING="${LOCALBASE}/include" \
-		-DTBB_LIBRARY_DIRS:STRING="${LOCALBASE}/lib" \
-		-DTBB_LIBRARIES:STRING="tbb"
-.else
-CMAKE_ARGS+=	-DWITH_TBB:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MTIFF}
-LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
-CMAKE_ARGS+=	-DWITH_TIFF:BOOL=On
-.else
-CMAKE_ARGS+=	-DWITH_TIFF:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MV4L}
-LIB_DEPENDS+=	v4l2.0:${PORTSDIR}/multimedia/libv4l
-BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
-CMAKE_ARGS+=	-DWITH_V4L:BOOL=On \
-		-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
-.else
-CMAKE_ARGS+=	-DWITH_V4L:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MXINE}
-LIB_DEPENDS+=	xine.2:${PORTSDIR}/multimedia/libxine
-CMAKE_ARGS+=	-DWITH_XINE:BOOL=On
-.else
-CMAKE_ARGS+=	-DWITH_XINE:BOOL=Off
 .endif
 
 .else # defined(_BUILDING_OPENCV_CORE) || defined(_BUILDING_OPENCV_PYTHON)
@@ -171,7 +131,7 @@ PLIST=		${PKGDIR}/pkg-plist.python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	# no suffix
 
-LIB_DEPENDS+=	opencv_legacy.2:${PORTSDIR}/graphics/opencv
+LIB_DEPENDS+=	libopencv_legacy.so.2:${PORTSDIR}/graphics/opencv
 CMAKE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 INSTALL_WRKSRC=	${WRKSRC}/modules/python
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-opencv-python
@@ -202,9 +162,9 @@ CMAKE_ARGS+=	-DBUILD_EXAMPLES:BOOL=Off \
 .endif # defined(_BUILDING_OPENCV_CORE) || defined(_BUILDING_OPENCV_PYTHON)
 
 .if defined(_BUILDING_OPENCV_PYTHON)
-CMAGE_ARGS+=	-DBUILD_NEW_PYTHON_SUPPORT:BOOL=On
+CMAKE_ARGS+=	-DBUILD_NEW_PYTHON_SUPPORT:BOOL=On
 .else
-CMAGE_ARGS+=	-DBUILD_NEW_PYTHON_SUPPORT:BOOL=Off
+CMAKE_ARGS+=	-DBUILD_NEW_PYTHON_SUPPORT:BOOL=Off
 .endif
 
 .include <bsd.port.pre.mk>
@@ -219,7 +179,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|${PORTNAME}/samples|examples/${PORTNAME}|g' \
 		${WRKSRC}/samples/*/CMakeLists.txt \
 		${WRKSRC}/samples/*/*/CMakeLists.txt
-	@${FIND} ${WRKSRC} -name '*.orig' -exec rm {} \;
+	@${FIND} ${WRKSRC} -name '*.orig' -exec ${RM} {} \;
+	@${REINPLACE_CMD} \
+		-e 's,libavcodec ,libavcodec0 ,g' \
+		-e 's,libavformat ,libavformat0 ,g' \
+		-e 's,libswscale ,libswscale0 ,g' \
+		-e 's,libavutil ,libavutil0 ,g' \
+		${WRKSRC}/CMakeLists.txt
 
 .if defined(_BUILDING_OPENCV_CORE) && !defined(_BUILDING_OPENCV_PYTHON)
 	@${REINPLACE_CMD} -e '/add_subdirectory(data)/ d' \
