@@ -1,0 +1,73 @@
+bin/aria2c
+man/man1/aria2c.1.gz
+man/pt/man1/aria2c.1.gz
+man/ru/man1/aria2c.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.html
+%%PORTDOCS%%%%DOCSDIR%%/README.rst
+%%PORTDOCS%%%%DOCSDIR%%/bash_completion/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/bash_completion/aria2c
+%%PORTDOCS%%%%DOCSDIR%%/xmlrpc/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/xmlrpc/aria2mon
+%%PORTDOCS%%%%DOCSDIR%%/xmlrpc/aria2rpc
+%%NLS%%share/locale/ar/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/bn/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/da/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/de/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/el/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/en@boldquot/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/en@quot/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/es/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/fa/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/fil/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/he/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/id/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/it/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/oc/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/th/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/zh_HK/LC_MESSAGES/aria2.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/aria2.mo
+%%NLS%%@dirrmtry share/locale/zh_HK/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_HK
+%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/oc
+%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/kk
+%%NLS%%@dirrmtry share/locale/fil/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fil
+%%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en@quot
+%%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en@boldquot
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/xmlrpc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/bash_completion
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry man/ru/man1
+@dirrmtry man/ru
+@dirrmtry man/pt/man1
+@dirrmtry man/pt
