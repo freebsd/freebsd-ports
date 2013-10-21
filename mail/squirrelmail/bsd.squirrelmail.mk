@@ -9,6 +9,7 @@
 # Philippe Audeoud <jadawin@FreeBSD.org>
 # Some enhancements by
 # Ion-Mihai "IOnut" Tetcu <itetcu@FreeBSD.org>
+# Adam Weinberger <adamw@FreeBSD.org>
 #
 # This code is still a work in progress, and will likely need further
 # tweaking. Feedback is always welcome.
@@ -29,9 +30,6 @@ NO_BUILD=		yes
 NO_WRKSUBDIR=	yes
 USE_PHP?=		yes
 WANT_PHP_WEB=	yes
-
-IGNORE_WITH_PHP=5 # known incompatibilities with php-5.4, use 5.3 for now
-DEFAULT_PHP_VER=53
 
 SQUIRREL_PLUGIN_NAME?=   ${PORTNAME}
 PLIST_SUB+=     SQUIRREL_PLUGIN_NAME=${SQUIRREL_PLUGIN_NAME}
