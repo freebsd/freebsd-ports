@@ -3,6 +3,7 @@
 
 PORTNAME=	bird6
 PORTVERSION=	1.3.11
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/ \
 		http://bird.mpls.in/distfiles/bird/
@@ -13,8 +14,7 @@ COMMENT=	Dynamic IP routing daemon (IPv6 version)
 
 LICENSE=	GPLv2
 
-USES=		bison
-USE_GMAKE=	yes
+USES=		bison gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ipv6 --localstatedir=/var
 USE_CSTD=	gnu89

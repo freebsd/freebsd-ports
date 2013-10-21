@@ -2793,3 +2793,19 @@ index ac6f7a8..4d4dba5 100644
 -- 
 1.7.3.2
 
+--- configure.orig	2012-08-07 13:28:04.000000000 +0400
++++ configure	2012-08-15 15:54:05.000000000 +0400
+@@ -2355,11 +2355,11 @@
+ if test "$enable_ipv6" = yes ; then
+ 	ip=ipv6
+ 	SUFFIX=6
+-	all_protocols=bgp,ospf,pipe,radv,rip,static
++	all_protocols=bgp,ospf,pipe,radv,rip,static,agg
+ else
+ 	ip=ipv4
+ 	SUFFIX=""
+-	all_protocols=bgp,ospf,pipe,rip,static
++	all_protocols=bgp,ospf,pipe,rip,static,agg
+ fi
+ 
+ if test "$given_suffix" = yes ; then

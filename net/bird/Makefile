@@ -3,7 +3,7 @@
 
 PORTNAME=	bird
 PORTVERSION=	1.3.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/ \
 		http://bird.mpls.in/distfiles/bird/
@@ -13,8 +13,7 @@ COMMENT=	Dynamic IP routing daemon (IPv4 version)
 
 LICENSE=	GPLv2
 
-USES=		bison
-USE_GMAKE=	yes
+USES=		bison gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
 USE_CSTD=	gnu89
