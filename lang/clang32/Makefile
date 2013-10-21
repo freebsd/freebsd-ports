@@ -2,6 +2,7 @@
 
 PORTNAME=	clang
 DISTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
@@ -108,16 +109,19 @@ post-build:
 .endif
 
 post-install:
-	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/clang ${STAGEDIR}${LLVM_PREFIX}/bin/clang-cpp
+	${STRIP_CMD} ${STAGEDIR}${LLVM_PREFIX}/lib/libclang.so
+	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/clang \
+	    ${STAGEDIR}${LLVM_PREFIX}/bin/clang-cpp
 	${INSTALL_SCRIPT} ${WRKDIR}/llvm-wrapper.sh \
-	     ${STAGEDIR}${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX}
+	    ${STAGEDIR}${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX}
 .for command in ${COMMANDS:C/^/XXXX/1:NXXXX*}
 	test -e ${STAGEDIR}${LLVM_PREFIX}/bin/${command}
 	${LN} -f ${STAGEDIR}${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX} \
 	    ${STAGEDIR}${PREFIX}/bin/${command}${LLVM_SUFFIX}
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
-	cd ${WRKSRC}/tools/clang/docs/tools && ${GMAKE} DESTDIR=${STAGEDIR}/ install-html install-ps
+	cd ${WRKSRC}/tools/clang/docs/tools && \
+	    ${GMAKE} DESTDIR=${STAGEDIR}/ install-html install-ps
 .endif
 	${INSTALL_MAN} ${WRKSRC}/tools/clang/docs/tools/clang.1 \
 	    ${STAGEDIR}${MANPREFIX}/man/man1/clang${LLVM_SUFFIX}.1
