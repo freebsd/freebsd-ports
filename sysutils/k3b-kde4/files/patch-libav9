@@ -1,0 +1,22 @@
+Index: k3b-2.0.2/plugins/decoder/ffmpeg/k3bffmpegwrapper.cpp
+===================================================================
+--- plugins/decoder/ffmpeg/k3bffmpegwrapper.cpp.orig	2013-04-22 17:46:13.523959500 +0200
++++ plugins/decoder/ffmpeg/k3bffmpegwrapper.cpp	2013-04-22 18:40:49.890007513 +0200
+@@ -95,7 +95,7 @@ bool K3bFFMpegFile::open()
+     }
+ 
+     // analyze the streams
+-    ::av_find_stream_info( d->formatContext );
++    ::avformat_find_stream_info( d->formatContext, 0 );
+ 
+     // we only handle files containing one audio stream
+     if( d->formatContext->nb_streams != 1 ) {
+@@ -129,7 +129,7 @@ bool K3bFFMpegFile::open()
+ 
+     // open the codec on our context
+     kDebug() << "(K3bFFMpegFile) found codec for " << m_filename;
+-    if( ::avcodec_open( codecContext, d->codec ) < 0 ) {
++    if( ::avcodec_open2( codecContext, d->codec, 0 ) < 0 ) {
+         kDebug() << "(K3bFFMpegDecoderFactory) could not open codec.";
+         return false;
+     }

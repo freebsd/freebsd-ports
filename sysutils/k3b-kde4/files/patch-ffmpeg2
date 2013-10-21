@@ -1,0 +1,19 @@
+https://bugs.gentoo.org/show_bug.cgi?id=476494
+
+A better patch using avcodec_decode_audio4 will be needed but for now this
+fixes the problem.
+
+Index: k3b-2.0.2/plugins/decoder/ffmpeg/k3bffmpegwrapper.cpp
+===================================================================
+--- plugins/decoder/ffmpeg/k3bffmpegwrapper.cpp.orig
++++ plugins/decoder/ffmpeg/k3bffmpegwrapper.cpp
+@@ -37,6 +37,9 @@ extern "C" {
+ 
+ #include <klocale.h>
+ 
++#ifndef AVCODEC_MAX_AUDIO_FRAME_SIZE
++#define AVCODEC_MAX_AUDIO_FRAME_SIZE (192000 * 4)
++#endif
+ 
+ #if LIBAVFORMAT_BUILD < 4629
+ #define FFMPEG_BUILD_PRE_4629
