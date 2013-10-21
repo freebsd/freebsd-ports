@@ -1,3 +1,6 @@
-A very basic interpretation of the game 'Euchre.'
+Euchre is a card game played with the 9s, 10s, Jacks, Queens, Kings,
+and Aces of all 4 suits.  Each player is dealt 5 cards, leaving 4
+cards in the deck.  The top card of the remaining 4 is then turned
+over and this is the trump candidate.
 
 WWW: http://sourceforge.net/projects/euchre/
