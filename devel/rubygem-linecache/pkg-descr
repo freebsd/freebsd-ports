@@ -1,5 +1,0 @@
-LineCache - caches (Ruby source) files as might be
-used in a debugger or a tool that works with sets
-of Ruby source files.
-
-WWW: http://rubyforge.org/projects/rocky-hacks/linecache

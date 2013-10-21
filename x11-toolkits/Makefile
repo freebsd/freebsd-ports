@@ -224,7 +224,6 @@
     SUBDIR += ruby-fox16
     SUBDIR += ruby-goocanvas
     SUBDIR += ruby-gstreamer
-    SUBDIR += ruby-gtk
     SUBDIR += ruby-gtk2
     SUBDIR += ruby-gtksourceview2
     SUBDIR += ruby-pango

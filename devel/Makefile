@@ -4127,7 +4127,6 @@
     SUBDIR += rubygem-jquery-ui-themes
     SUBDIR += rubygem-kgio
     SUBDIR += rubygem-launchy
-    SUBDIR += rubygem-linecache
     SUBDIR += rubygem-listen
     SUBDIR += rubygem-little_plugger
     SUBDIR += rubygem-locale
@@ -4183,7 +4182,6 @@
     SUBDIR += rubygem-rake
     SUBDIR += rubygem-rake-compiler
     SUBDIR += rubygem-rapt
-    SUBDIR += rubygem-rascut
     SUBDIR += rubygem-rash
     SUBDIR += rubygem-rb-inotify
     SUBDIR += rubygem-rb-kqueue
@@ -4204,9 +4202,6 @@
     SUBDIR += rubygem-rspec-spies
     SUBDIR += rubygem-rubigen
     SUBDIR += rubygem-ruby-bugzilla
-    SUBDIR += rubygem-ruby-debug
-    SUBDIR += rubygem-ruby-debug-base
-    SUBDIR += rubygem-ruby-debug-ide
     SUBDIR += rubygem-ruby-ole
     SUBDIR += rubygem-ruby-prof
     SUBDIR += rubygem-ruby-sdl-ffi

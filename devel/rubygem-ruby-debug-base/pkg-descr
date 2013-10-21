@@ -1,4 +1,0 @@
-Faster implementation of the standard debug.rb using
-a native extension with a new hook Ruby C API.
-
-WWW: http://rubyforge.org/projects/ruby-debug/
