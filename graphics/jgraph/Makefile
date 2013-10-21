@@ -8,7 +8,7 @@ MASTER_SITES=	http://web.eecs.utk.edu/~plank/plank/jgraph/
 DISTFILES=	${PORTNAME}.shar.Z
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A program that generates postscript graphs
+COMMENT=	Generates postscript graphs
 
 NO_LATEST_LINK=	yes
 EXTRACT_CMD=	uncompress

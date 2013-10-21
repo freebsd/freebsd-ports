@@ -6,10 +6,11 @@ PORTVERSION=	5.13.0.4
 CATEGORIES=	java graphics
 MASTER_SITES=	http://www.jgraph.com/downloads/jgraph/archive/ \
 		http://www.bayofrum.net/dist/jgraph/
+PKGNAMESUFFIX=	-java
 EXTRACT_SUFX=	.jar
 
 MAINTAINER=	crees@FreeBSD.org
-COMMENT=	The Java Graph Diagram Component
+COMMENT=	Java Graph Diagram Component
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
