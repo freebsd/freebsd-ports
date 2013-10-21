@@ -6,6 +6,7 @@ PORTVERSION=	3.5.8
 CATEGORIES=	www
 MASTER_SITES=	http://cloud.github.com/downloads/${PORTNAME}/${PORTNAME}/ \
 		LOCAL/sunpoet
+PKGNAMESUFFIX=	3
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -20,15 +21,14 @@ NO_LATEST_LINK=	yes
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 post-extract:
 	@${TOUCH} \
 	  	${WRKSRC}/jscripts/tiny_mce/plugins/spellchecker/classes/utils/.keepme \
 		${WRKSRC}/jscripts/tiny_mce/plugins/spellchecker/includes/.keepme
 
 do-install:
-	cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${WWWDIR}/
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/
+	cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/
 
 # maintainer section:
 
