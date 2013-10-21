@@ -1,3 +1,5 @@
+@owner www
+@group www
 %%WWWDIR%%/LICENSE.TXT
 %%WWWDIR%%/changelog.txt
 %%WWWDIR%%/js/tinymce/langs/readme.md
