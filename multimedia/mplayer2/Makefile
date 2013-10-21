@@ -2,6 +2,7 @@
 
 PORTNAME=	mplayer2
 PORTVERSION=	${MPLAYER2_PORT_VERSION}
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	LOCAL/gblach/
 
@@ -13,10 +14,10 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2 \
 		dvdread:${PORTSDIR}/multimedia/libdvdread
-BUILD_DEPENDS=	ffmpeg1:${PORTSDIR}/multimedia/ffmpeg1 \
+BUILD_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
 		python3:${PORTSDIR}/lang/python3 \
 		rst2man:${PORTSDIR}/textproc/py-docutils
-RUN_DEPENDS=	ffmpeg1:${PORTSDIR}/multimedia/ffmpeg1
+RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 
 USE_XZ=		yes
 USES=		gmake iconv ncurses pkgconfig
@@ -25,10 +26,8 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		TMPDIR="${WRKSRC}"
 CONFIGURE_ARGS=	--cc=${CC} \
-		--extra-cflags='-I${LOCALBASE}/include/ffmpeg1 \
-		-I${LOCALBASE}/include/portaudio2' \
-		--extra-ldflags='-L${LOCALBASE}/lib/ffmpeg1 -lavresample1 \
-		-L${LOCALBASE}/lib/portaudio2' \
+		--extra-cflags='-I${LOCALBASE}/include/portaudio2' \
+		--extra-ldflags='-lavresample -L${LOCALBASE}/lib/portaudio2' \
 		--mandir=${PREFIX}/man \
 		--enable-libavresample \
 		--disable-alsa \
@@ -286,12 +285,6 @@ post-patch:
 		'/CFLAGS.*-D_LARGEFILE64_SOURCE/ s/-D_LARGEFILE64_SOURCE/-D_FILE_OFFSET_BITS=64/' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
-	@${REINPLACE_CMD} \
-		-e 's/libavutil/libavutil1/' \
-		-e 's/libavcodec/libavcodec1/' \
-		-e 's/libavformat/libavformat1/' \
-		-e 's/libswscale/libswscale1/' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} \
 		-e 's|/dev/acd0|${WITH_CDROM_DEVICE}|' \
 		-e 's|/usr/local|${LOCALBASE}|' \
