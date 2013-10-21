@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jwasm
-PORTVERSION=	210
+PORTVERSION=	211
 CATEGORIES=	devel
 MASTER_SITES=	http://www.japheth.de/Download/JWasm/
 DISTNAME=	JWasm${PORTVERSION}s
@@ -23,8 +23,6 @@ MAKEFILE=	GccUnix.mak
 
 PORTDOCS=	*
 PLIST_FILES=	bin/jwasm
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e \
