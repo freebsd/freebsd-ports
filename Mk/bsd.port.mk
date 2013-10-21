@@ -4569,7 +4569,7 @@ reinstall:
 
 .if !target(restage)
 restage:
-	@${RM} -rf ${STAGEDESTDIR} ${STAGE_COOKIE} ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
+	@${RM} -rf ${STAGEDIR} ${STAGE_COOKIE} ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
 	@cd ${.CURDIR} && ${MAKE} stage
 .endif
 
