@@ -2,22 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	founts
-PORTVERSION=	12
-PORTREVISION=	1
+PORTVERSION=	13
 CATEGORIES=	graphics games
-MASTER_SITES=	http://www.linuxmotors.com/founts/downloads/ \
-		SF/nemysisfreebsdp/:icons
-DISTFILES=	${PORTNAME}-${DISTVERSION}.tgz \
-		${PORTNAME}.png:icons
-EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}.tgz
+MASTER_SITES=	http://www.linuxmotors.com/founts/downloads/
+DISTFILES=	${PORTNAME}-${DISTVERSION}.tgz
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Demo/program inspired by Erics cascade
 
 LICENSE=	GPLv2
 
 USE_SDL=	sdl
-CFLAGS=		-Wno-return-type
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png
@@ -29,20 +24,21 @@ OPTIONS_DEFINE=	DOCS
 DESKTOP_ENTRIES="Founts" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Graphics;Game;" false
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|' \
+		${WRKSRC}/Makefile
 
 do-build:
 	cd ${WRKSRC} && ${CC} -o ${PORTNAME} ${CFLAGS} \
 		-lm `${SDL_CONFIG} --cflags --libs` founts.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}.png ${PREFIX}/share/pixmaps
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
 
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
