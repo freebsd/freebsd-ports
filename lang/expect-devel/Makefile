@@ -7,12 +7,12 @@ PORTREVISION=	1
 CATEGORIES=	lang tcl tk
 MASTER_SITES=	SF/wintcltk/Sources/Package%20Sources
 DISTNAME=	expect-cvs-20091231
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sophisticated scripter based on tcl/tk
 
 CONFLICTS=	expect-5.43* weather-[0-9]*
-LATEST_LINK=	expect-devel
 
 USE_AUTOTOOLS=	autoconf
 
