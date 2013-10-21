@@ -27,4 +27,12 @@ else
   cp ${PREFIX}/share/pbi-manager/.pbiwrapper-i386 /usr/pbi/.pbiwrapper-i386
 fi
 
+# If on FreeBSD > 10, install the PBI mounting files
+if [ -e "${PREFIX}/share/pbi-manager/.pbime" ] ; then
+   install -o root -g wheel -m 4751 ${PREFIX}/share/pbi-manager/.pbime /usr/pbi/.pbime
+   install -o root -g wheel -m 755 ${PREFIX}/share/pbi-manager/.pbimount /usr/pbi/.pbimount
+   install -o root -g wheel -m 755 ${PREFIX}/share/pbi-manager/.ldconfig /usr/pbi/.ldconfig
+   install -o root -g wheel -m 755 ${PREFIX}/share/pbi-manager/.mount_nullfs /usr/pbi/.mount_nullfs
+fi
+
 exit 0
