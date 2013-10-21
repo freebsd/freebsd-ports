@@ -21,6 +21,9 @@ BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 
 CONFLICTS=	llvm-devel-[23]* llvm31-3*
 
+DEPRECATED=	Migrate to devel/llvm32 or newer
+EXPIRATION_DATE=	2013-11-04
+
 GNU_CONFIGURE=	yes
 USES=		gmake perl5
 USE_LDCONFIG=	yes
