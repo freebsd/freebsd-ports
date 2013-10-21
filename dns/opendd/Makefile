@@ -23,7 +23,6 @@ PLIST_FILES=	sbin/${PORTNAME} \
 		"%%ETCDIR%%/${PORTNAME}.pem" \
 		"@dirrmtry %%ETCDIR%%"
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRCNG}
@@ -61,7 +60,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.default
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.pem ${STAGEDIR}${ETCDIR}
-	${CHMOD} 600 ${STAGEDIR}${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.default
+	${CHMOD} 600 ${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.default
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
