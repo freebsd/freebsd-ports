@@ -24,8 +24,6 @@ OPTIONS_DEFINE=	DOCS
 DESKTOP_ENTRIES="Founts" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Graphics;Game;" false
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|' \
 		${WRKSRC}/Makefile
