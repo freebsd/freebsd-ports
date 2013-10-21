@@ -3,6 +3,7 @@
 
 PORTNAME=	POE-Session-Irssi
 PORTVERSION=	0.50
+PORTREVISION=	1
 CATEGORIES=	irc perl5 devel
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MARTIJN
@@ -22,17 +23,15 @@ RUN_DEPENDS=	p5-POE>=1.003:${PORTSDIR}/devel/p5-POE \
 		irssi:${PORTSDIR}/irc/irssi
 
 PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"
+CONFIGURE_ARGS+=	INSTALLDIRS=site
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		POE::Session::Irssi.3
-
-NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/samples/* ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/samples/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
