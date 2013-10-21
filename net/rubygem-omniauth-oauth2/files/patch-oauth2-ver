@@ -1,0 +1,31 @@
+--- omniauth-oauth2-1.1.1.gemspec.orig	2013-10-20 23:55:59.202502414 +0000
++++ omniauth-oauth2-1.1.1.gemspec	2013-10-20 23:56:22.411500458 +0000
+@@ -34,7 +34,7 @@
+     requirements:
+     - - ~>
+       - !ruby/object:Gem::Version
+-        version: 0.8.0
++        version: 0.9.0
+   type: :runtime
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement
+@@ -42,7 +42,7 @@
+     requirements:
+     - - ~>
+       - !ruby/object:Gem::Version
+-        version: 0.8.0
++        version: 0.9.0
+ - !ruby/object:Gem::Dependency
+   name: rspec
+   requirement: !ruby/object:Gem::Requirement
+--- omniauth-oauth2.gemspec.orig	2013-10-20 23:56:06.122501604 +0000
++++ omniauth-oauth2.gemspec	2013-10-20 23:56:27.040820651 +0000
+@@ -3,7 +3,7 @@
+ 
+ Gem::Specification.new do |gem|
+   gem.add_dependency 'omniauth', '~> 1.0'
+-  gem.add_dependency 'oauth2', '~> 0.8.0'
++  gem.add_dependency 'oauth2', '~> 0.9.0'
+ 
+   gem.add_development_dependency 'rspec', '~> 2.7'
+   gem.add_development_dependency 'rack-test'
