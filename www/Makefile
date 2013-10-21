@@ -1783,6 +1783,7 @@
     SUBDIR += rubygem-merb-haml
     SUBDIR += rubygem-merb-helpers
     SUBDIR += rubygem-merb-param-protection
+    SUBDIR += rubygem-modernizr
     SUBDIR += rubygem-mongrel
     SUBDIR += rubygem-mongrel_cluster
     SUBDIR += rubygem-multipart-post
