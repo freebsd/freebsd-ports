@@ -10,7 +10,8 @@ MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/compression/ CENKES
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Efficient file compressor
 
-NO_STAGE=	yes
+LICENSE=	LGPL21
+
 USE_BZIP2=	yes
 USES=		gettext
 USE_LDCONFIG=	yes
@@ -27,13 +28,13 @@ post-patch:
 		-e '/^PREFIX=/d;/^LDFLAGS/s|=|+=|' ${WRKSRC}/Makefile ${WRKSRC}/po/Makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	@${LN} -sf ${PORTNAME} ${PREFIX}/bin/grunzip
-	@${LN} -sf ${PORTNAME} ${PREFIX}/bin/grzcat
-	@${INSTALL_SCRIPT} ${WRAPPERS:S|^|${WRKSRC}/scripts/|} ${PREFIX}/bin/
-	@${INSTALL_PROGRAM} ${WRKSRC}/lib${PORTNAME}.so ${PREFIX}/lib/
-	@${LN} -sf lib${PORTNAME}.so ${PREFIX}/lib/lib${PORTNAME}.so.0
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.h ${PREFIX}/include/
-	@cd ${WRKSRC}/po; ${SETENV} ${MAKE_ENV} ${MAKE} install
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${LN} -sf ${PORTNAME} ${STAGEDIR}${PREFIX}/bin/grunzip
+	${LN} -sf ${PORTNAME} ${STAGEDIR}${PREFIX}/bin/grzcat
+	${INSTALL_SCRIPT} ${WRAPPERS:S|^|${WRKSRC}/scripts/|} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/lib${PORTNAME}.so ${STAGEDIR}${PREFIX}/lib/
+	${LN} -sf lib${PORTNAME}.so ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.0
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.h ${STAGEDIR}${PREFIX}/include/
+	cd ${WRKSRC}/po; ${SETENV} ${MAKE_ENV} ${MAKE} PREFIX="${STAGEDIR}${PREFIX}" install
 
 .include <bsd.port.mk>
