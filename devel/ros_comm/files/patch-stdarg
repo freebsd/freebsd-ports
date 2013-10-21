@@ -1,0 +1,9 @@
+--- tools/rosconsole/include/ros/console.h	2011-09-02 13:55:20.000000000 -0400
++++ tools/rosconsole/include/ros/console.h	2013-10-21 14:24:56.000000000 -0400
+@@ -37,4 +37,6 @@
+ #include <ros/time.h>
+ 
++#include <stdarg.h>
++
+ // TODO: this header is no longer needed to be included here, but removing it will break various code that incorrectly does not itself include log4cxx/logger.h
+ // We should vet all the code using log4cxx directly and make sure the includes/link flags are used in those packages, and then we can remove this include
