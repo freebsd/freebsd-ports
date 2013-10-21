@@ -3,7 +3,7 @@
 
 PORTNAME=	opal
 PORTVERSION=	3.10.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -158,8 +158,13 @@ PLIST_SUB+=	X264="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0
 CONFIGURE_ARGS+=	--enable-libavcodec
+CONFIGURE_ENV+=		LIBAVCODEC_LIBS="-lavcodec0" \
+			LIBAVCODEC_CFLAGS="-I${LOCALBASE}/include/ffmpeg0" \
+			LIBAVUTIL_LIBS="-lavutil0" \
+			LIBAVUTIL_CFLAGS="-I${LOCALBASE}/include/ffmpeg0"
+CFLAGS+=		-I${LOCALBASE}/include/ffmpeg0
 PLIST_SUB+=	FFMPEG=""
 WITH_VIDEO=	yes
 .else
@@ -286,12 +291,6 @@ CONFIGURE_ARGS+=	--disable-debug
 # configure flags not used
 CONFIGURE_ARGS+=	--disable-gsmamr \
 			--disable-ruby
-
-post-patch:
-	@${REINPLACE_CMD} -e 's/CODEC_ID/AV_CODEC_ID/g' \
-		-e 's/CodecID/AVCodecID/g' \
-		${WRKSRC}/plugins/video/H.263-1998/h263-1998.* \
-		${WRKSRC}/plugins/video/common/dyna.*
 
 post-install:
 	${LN} -sf libopal.so.${PORTVERSION} ${PREFIX}/lib/libopal.so.${PVERSION_MAJOR}
