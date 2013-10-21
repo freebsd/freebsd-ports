@@ -13,12 +13,13 @@ COMMENT=	A simple web-based presentation front-end for RRDtool
 
 RUN_DEPENDS+=	rrdtool>=0:${PORTSDIR}/databases/rrdtool
 
-OPTIONS_DEFINE=	ZOOM_PATCH
+OPTIONS_DEFINE=	ZOOM_PATCH DOCS
 ZOOM_PATCH_DESC=	Zoom support using jQuery via external patch
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
 NO_BUILD=	yes
+SHEBANG_FILES=	drraw.cgi
 
 PORTDOCS=	CHANGES INSTALL LICENSE README.EVENTS
 
@@ -29,7 +30,6 @@ TMPDIR?=	/var/db/${PORTNAME}/tmp
 
 PLIST_SUB+=	CONFDIR=${CONFDIR}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MZOOM_PATCH}
@@ -48,27 +48,16 @@ post-patch:
 		${WRKSRC}/drraw.conf-dist
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/drraw.conf-dist ${PREFIX}/${CONFDIR}
+	${INSTALL_DATA} ${WRKSRC}/drraw.conf-dist ${STAGEDIR}${PREFIX}/${CONFDIR}
 
-	${MKDIR} ${WWWDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/drraw.cgi ${WWWDIR}
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/drraw.cgi ${STAGEDIR}${WWWDIR}
 
-	${MKDIR} ${WWWDIR}/icons
-.for theFile in bomb.gif folder.gif folder.open.gif generic.gif link.gif text.gif unknown.gif
-	${INSTALL_DATA} ${WRKSRC}/icons/${theFile} ${WWWDIR}/icons
-.endfor
-
+	${MKDIR} ${STAGEDIR}${WWWDIR}/icons
+	cd ${WRKSRC}/icons/${theFile} && ${INSTALL_DATA} bomb.gif folder.gif folder.open.gif generic.gif link.gif text.gif unknown.gif ${STAGEDIR}${WWWDIR}/icons
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-. for theFile in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${theFile} ${DOCSDIR}
-. endfor
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
-
-post-install:
-	@if [ ! -f ${PREFIX}/etc/drraw.conf ];\
-	then \
-		${CP} -p ${PREFIX}/etc/drraw.conf-dist ${PREFIX}/etc/drraw.conf; \
-	fi
 
 .include <bsd.port.mk>
