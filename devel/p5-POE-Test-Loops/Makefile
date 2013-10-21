@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	POE-Test-Loops
-PORTVERSION=	1.353
+PORTVERSION=	1.354
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RCAPUTO
@@ -17,8 +17,12 @@ LICENSE_COMB=	dual
 USES=	perl5
 USE_PERL5=	configure
 
-MAN1=		poe-gen-tests.1
-MAN3=		POE::Test::Loops.3
+.include <bsd.port.pre.mk>
 
-NO_STAGE=	yes
-.include <bsd.port.mk>
+.if ${PERL_LEVEL} < 501400
+BUILD_DEPENDS+=	p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS+=	p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple
+TEST_DEPENDS+=	p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
