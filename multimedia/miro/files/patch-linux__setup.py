@@ -101,22 +101,12 @@
              if self.root:
                  dest = change_root(self.root, dest)
              self.mkpath(os.path.dirname(dest))
-@@ -434,12 +435,15 @@
-     def build_segmenter(self):
-         segmenter_src = os.path.join(platform_dir, 'miro-segmenter.c')
+@@ -434,7 +435,8 @@
          cc = ccompiler.new_compiler()
--        cc.add_library('avutil')
--        cc.add_library('avformat')
--        cc.add_library('avcodec')
-+        cc.add_library('avutil1')
-+        cc.add_library('avformat1')
-+        cc.add_library('avcodec1')
          # Fedora places ffmpeg include into this directory rather than
          # root /usr/include.
 -        cc.add_include_dir('/usr/include/ffmpeg')
-+        cc.add_include_dir('/usr/local/include/ffmpeg1')
 +        cc.add_include_dir('/usr/local/include')
-+        cc.add_library_dir('/usr/local/lib/ffmpeg1')
 +        cc.add_library_dir('/usr/local/lib')
          output_dir = os.path.join(self.build_base, 'miro-segmenter')
          segmenter_objs = cc.compile([segmenter_src],
