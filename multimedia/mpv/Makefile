@@ -3,6 +3,7 @@
 
 PORTNAME=	mpv
 PORTVERSION=	20130711
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	LOCAL/gblach/
 
@@ -13,9 +14,9 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	ass:${PORTSDIR}/multimedia/libass \
 		dvdread:${PORTSDIR}/multimedia/libdvdread
-BUILD_DEPENDS=	ffmpeg1:${PORTSDIR}/multimedia/ffmpeg1 \
+BUILD_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
 		rst2man:${PORTSDIR}/textproc/py-docutils
-RUN_DEPENDS=	ffmpeg1:${PORTSDIR}/multimedia/ffmpeg1
+RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 
 USE_XZ=		yes
 USES=		gmake iconv pkgconfig
@@ -25,10 +26,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--mandir=${PREFIX}/man \
 		--cc=${CC} \
 		--extra-cflags=' \
-		-I${LOCALBASE}/include/ffmpeg1 \
 		-I${LOCALBASE}/include' \
 		--extra-ldflags=' \
-		-L${LOCALBASE}/lib/ffmpeg1 \
 		-L${LOCALBASE}/lib' \
 		--disable-mng \
 		--disable-mpg123 \
@@ -153,16 +152,6 @@ post-patch:
 		'/CFLAGS.*-D_LARGEFILE64_SOURCE/ s/-D_LARGEFILE64_SOURCE/-D_FILE_OFFSET_BITS=64/' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
-	@${REINPLACE_CMD} \
-		-e 's/libavutil/libavutil1/' \
-		-e 's/libavcodec/libavcodec1/' \
-		-e 's/libavdevice/libavdevice1/' \
-		-e 's/libavformat/libavformat1/' \
-		-e 's/libavresample/libavresample1/' \
-		-e 's/libpostproc/libpostproc1/' \
-		-e 's/libswscale/libswscale1/' \
-		-e 's/libswresample/libswresample1/' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} \
 		-e 's|/dev/acd0|/dev/cd0|' \
 		-e 's|-lncurses|/usr/lib/libncurses.so|' \
