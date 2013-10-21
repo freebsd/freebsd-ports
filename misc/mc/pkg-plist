@@ -77,6 +77,15 @@ libexec/mc/mc-wrapper.csh
 libexec/mc/mc-wrapper.sh
 libexec/mc/mc.csh
 libexec/mc/mc.sh
+man/es/man1/mc.1.gz
+man/hu/man1/mc.1.gz
+man/it/man1/mc.1.gz
+man/man1/mc.1.gz
+man/man1/mcedit.1.gz
+man/man1/mcview.1.gz
+man/pl/man1/mc.1.gz
+man/ru/man1/mc.1.gz
+man/sr/man1/mc.1.gz
 %%NLS%%share/locale/az/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/be/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/mc.mo
@@ -92,7 +101,6 @@ libexec/mc/mc.sh
 %%NLS%%share/locale/eu/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/mc.mo
-%%NLS%%share/locale/fi_FI/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/mc.mo
@@ -100,9 +108,9 @@ libexec/mc/mc.sh
 %%NLS%%share/locale/ia/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/id/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/it/LC_MESSAGES/mc.mo
-%%NLS%%share/locale/it_IT/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/mc.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/mc.mo
@@ -119,6 +127,7 @@ libexec/mc/mc.sh
 %%NLS%%share/locale/sr/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/sv_SE/LC_MESSAGES/mc.mo
+%%NLS%%share/locale/szl/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/mc.mo
@@ -126,30 +135,179 @@ libexec/mc/mc.sh
 %%NLS%%share/locale/wa/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/mc.mo
+%%DATADIR%%/examples/macros.d/macro.0.sh
+%%DATADIR%%/examples/macros.d/macro.1.sh
+%%DATADIR%%/examples/macros.d/macro.3.sh
+%%DATADIR%%/examples/macros.d/macro.4.sh
+%%DATADIR%%/examples/macros.d/macro.5.sh
+%%DATADIR%%/examples/macros.d/macro.6.sh
+%%DATADIR%%/examples/macros.d/macro.7.sh
+%%DATADIR%%/help/mc.hlp
+%%NLS%%%%DATADIR%%/help/mc.hlp.es
+%%NLS%%%%DATADIR%%/help/mc.hlp.hu
+%%NLS%%%%DATADIR%%/help/mc.hlp.it
+%%NLS%%%%DATADIR%%/help/mc.hlp.pl
+%%NLS%%%%DATADIR%%/help/mc.hlp.ru
+%%NLS%%%%DATADIR%%/help/mc.hlp.sr
+%%DATADIR%%/hints/mc.hint
+%%NLS%%%%DATADIR%%/hints/mc.hint.az
+%%NLS%%%%DATADIR%%/hints/mc.hint.be
+%%NLS%%%%DATADIR%%/hints/mc.hint.bg
+%%NLS%%%%DATADIR%%/hints/mc.hint.ca
+%%NLS%%%%DATADIR%%/hints/mc.hint.cs
+%%NLS%%%%DATADIR%%/hints/mc.hint.da
+%%NLS%%%%DATADIR%%/hints/mc.hint.de
+%%NLS%%%%DATADIR%%/hints/mc.hint.de_CH
+%%NLS%%%%DATADIR%%/hints/mc.hint.el
+%%NLS%%%%DATADIR%%/hints/mc.hint.eo
+%%NLS%%%%DATADIR%%/hints/mc.hint.es
+%%NLS%%%%DATADIR%%/hints/mc.hint.et
+%%NLS%%%%DATADIR%%/hints/mc.hint.eu
+%%NLS%%%%DATADIR%%/hints/mc.hint.fa
+%%NLS%%%%DATADIR%%/hints/mc.hint.fi
+%%NLS%%%%DATADIR%%/hints/mc.hint.fr
+%%NLS%%%%DATADIR%%/hints/mc.hint.gl
+%%NLS%%%%DATADIR%%/hints/mc.hint.hr
+%%NLS%%%%DATADIR%%/hints/mc.hint.hu
+%%NLS%%%%DATADIR%%/hints/mc.hint.ia
+%%NLS%%%%DATADIR%%/hints/mc.hint.id
+%%NLS%%%%DATADIR%%/hints/mc.hint.it
+%%NLS%%%%DATADIR%%/hints/mc.hint.ja
+%%NLS%%%%DATADIR%%/hints/mc.hint.ka
+%%NLS%%%%DATADIR%%/hints/mc.hint.kk
+%%NLS%%%%DATADIR%%/hints/mc.hint.ko
+%%NLS%%%%DATADIR%%/hints/mc.hint.lt
+%%NLS%%%%DATADIR%%/hints/mc.hint.nl
+%%NLS%%%%DATADIR%%/hints/mc.hint.pl
+%%NLS%%%%DATADIR%%/hints/mc.hint.pt
+%%NLS%%%%DATADIR%%/hints/mc.hint.pt_BR
+%%NLS%%%%DATADIR%%/hints/mc.hint.ro
+%%NLS%%%%DATADIR%%/hints/mc.hint.ru
+%%NLS%%%%DATADIR%%/hints/mc.hint.sk
+%%NLS%%%%DATADIR%%/hints/mc.hint.sl
+%%NLS%%%%DATADIR%%/hints/mc.hint.sr
+%%NLS%%%%DATADIR%%/hints/mc.hint.sv
+%%NLS%%%%DATADIR%%/hints/mc.hint.sv_SE
+%%NLS%%%%DATADIR%%/hints/mc.hint.szl
+%%NLS%%%%DATADIR%%/hints/mc.hint.tr
+%%NLS%%%%DATADIR%%/hints/mc.hint.uk
+%%NLS%%%%DATADIR%%/hints/mc.hint.zh
+%%NLS%%%%DATADIR%%/hints/mc.hint.zh_CN
+%%ICONV%%%%DATADIR%%/mc.charsets
+%%DATADIR%%/mc.lib
+%%DATADIR%%/skins/dark.ini
+%%DATADIR%%/skins/darkfar.ini
+%%DATADIR%%/skins/default.ini
+%%DATADIR%%/skins/double-lines.ini
+%%DATADIR%%/skins/featured.ini
+%%DATADIR%%/skins/gotar.ini
+%%DATADIR%%/skins/mc46.ini
+%%DATADIR%%/skins/modarcon16-defbg.ini
+%%DATADIR%%/skins/modarcon16.ini
+%%DATADIR%%/skins/modarcon16root-defbg.ini
+%%DATADIR%%/skins/modarcon16root.ini
+%%DATADIR%%/skins/modarin256-defbg.ini
+%%DATADIR%%/skins/modarin256.ini
+%%DATADIR%%/skins/modarin256root-defbg.ini
+%%DATADIR%%/skins/modarin256root.ini
+%%DATADIR%%/skins/nicedark.ini
+%%DATADIR%%/skins/sand256.ini
+%%DATADIR%%/skins/xoria256.ini
+%%EDITOR%%%%DATADIR%%/syntax/PKGBUILD.syntax
+%%EDITOR%%%%DATADIR%%/syntax/Syntax
+%%EDITOR%%%%DATADIR%%/syntax/ada95.syntax
+%%EDITOR%%%%DATADIR%%/syntax/as.syntax
+%%EDITOR%%%%DATADIR%%/syntax/aspx.syntax
+%%EDITOR%%%%DATADIR%%/syntax/assembler.syntax
+%%EDITOR%%%%DATADIR%%/syntax/awk.syntax
+%%EDITOR%%%%DATADIR%%/syntax/c.syntax
+%%EDITOR%%%%DATADIR%%/syntax/cabal.syntax
+%%EDITOR%%%%DATADIR%%/syntax/changelog.syntax
+%%EDITOR%%%%DATADIR%%/syntax/cmake.syntax
+%%EDITOR%%%%DATADIR%%/syntax/cs.syntax
+%%EDITOR%%%%DATADIR%%/syntax/css.syntax
+%%EDITOR%%%%DATADIR%%/syntax/cxx.syntax
+%%EDITOR%%%%DATADIR%%/syntax/cython.syntax
+%%EDITOR%%%%DATADIR%%/syntax/d.syntax
+%%EDITOR%%%%DATADIR%%/syntax/debian-changelog.syntax
+%%EDITOR%%%%DATADIR%%/syntax/debian-control.syntax
+%%EDITOR%%%%DATADIR%%/syntax/debian-description.syntax
+%%EDITOR%%%%DATADIR%%/syntax/debian-sources-list.syntax
+%%EDITOR%%%%DATADIR%%/syntax/diff.syntax
+%%EDITOR%%%%DATADIR%%/syntax/dlink.syntax
+%%EDITOR%%%%DATADIR%%/syntax/dos.syntax
+%%EDITOR%%%%DATADIR%%/syntax/ebuild.syntax
+%%EDITOR%%%%DATADIR%%/syntax/eiffel.syntax
+%%EDITOR%%%%DATADIR%%/syntax/erlang.syntax
+%%EDITOR%%%%DATADIR%%/syntax/f90.syntax
+%%EDITOR%%%%DATADIR%%/syntax/filehighlight.syntax
+%%EDITOR%%%%DATADIR%%/syntax/fortran.syntax
+%%EDITOR%%%%DATADIR%%/syntax/haskell.syntax
+%%EDITOR%%%%DATADIR%%/syntax/html.syntax
+%%EDITOR%%%%DATADIR%%/syntax/idl.syntax
+%%EDITOR%%%%DATADIR%%/syntax/ini.syntax
+%%EDITOR%%%%DATADIR%%/syntax/j.syntax
+%%EDITOR%%%%DATADIR%%/syntax/jal.syntax
+%%EDITOR%%%%DATADIR%%/syntax/java.syntax
+%%EDITOR%%%%DATADIR%%/syntax/js.syntax
+%%EDITOR%%%%DATADIR%%/syntax/latex.syntax
+%%EDITOR%%%%DATADIR%%/syntax/lisp.syntax
+%%EDITOR%%%%DATADIR%%/syntax/lkr.syntax
+%%EDITOR%%%%DATADIR%%/syntax/lsm.syntax
+%%EDITOR%%%%DATADIR%%/syntax/lua.syntax
+%%EDITOR%%%%DATADIR%%/syntax/m4.syntax
+%%EDITOR%%%%DATADIR%%/syntax/mail.syntax
+%%EDITOR%%%%DATADIR%%/syntax/makefile.syntax
+%%EDITOR%%%%DATADIR%%/syntax/ml.syntax
+%%EDITOR%%%%DATADIR%%/syntax/named.syntax
+%%EDITOR%%%%DATADIR%%/syntax/nemerle.syntax
+%%EDITOR%%%%DATADIR%%/syntax/nroff.syntax
+%%EDITOR%%%%DATADIR%%/syntax/octave.syntax
+%%EDITOR%%%%DATADIR%%/syntax/pascal.syntax
+%%EDITOR%%%%DATADIR%%/syntax/perl.syntax
+%%EDITOR%%%%DATADIR%%/syntax/php.syntax
+%%EDITOR%%%%DATADIR%%/syntax/po.syntax
+%%EDITOR%%%%DATADIR%%/syntax/povray.syntax
+%%EDITOR%%%%DATADIR%%/syntax/procmail.syntax
+%%EDITOR%%%%DATADIR%%/syntax/properties.syntax
+%%EDITOR%%%%DATADIR%%/syntax/python.syntax
+%%EDITOR%%%%DATADIR%%/syntax/ruby.syntax
+%%EDITOR%%%%DATADIR%%/syntax/sh.syntax
+%%EDITOR%%%%DATADIR%%/syntax/slang.syntax
+%%EDITOR%%%%DATADIR%%/syntax/smalltalk.syntax
+%%EDITOR%%%%DATADIR%%/syntax/spec.syntax
+%%EDITOR%%%%DATADIR%%/syntax/sql.syntax
+%%EDITOR%%%%DATADIR%%/syntax/strace.syntax
+%%EDITOR%%%%DATADIR%%/syntax/swig.syntax
+%%EDITOR%%%%DATADIR%%/syntax/syntax.syntax
+%%EDITOR%%%%DATADIR%%/syntax/tcl.syntax
+%%EDITOR%%%%DATADIR%%/syntax/texinfo.syntax
+%%EDITOR%%%%DATADIR%%/syntax/tt.syntax
+%%EDITOR%%%%DATADIR%%/syntax/unknown.syntax
+%%EDITOR%%%%DATADIR%%/syntax/verilog.syntax
+%%EDITOR%%%%DATADIR%%/syntax/vhdl.syntax
+%%EDITOR%%%%DATADIR%%/syntax/xml.syntax
+%%EDITOR%%%%DATADIR%%/syntax/yum-repo.syntax
+%%EDITOR%%%%DATADIR%%/syntax/yxx.syntax
+%%EDITOR%%@dirrm %%DATADIR%%/syntax
+@dirrm %%DATADIR%%/skins
+@dirrm %%DATADIR%%/hints
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%/examples/macros.d
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%
+%%NLS%%@dirrmtry share/locale/szl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/szl
 %%NLS%%@dirrmtry share/locale/sv_SE/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sv_SE
-%%NLS%%@dirrmtry share/locale/it_IT/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/it_IT
+%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/kk
 %%NLS%%@dirrmtry share/locale/ia/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ia
-%%NLS%%@dirrmtry share/locale/fi_FI/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fi_FI
 %%NLS%%@dirrmtry share/locale/de_CH/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/de_CH
 @dirrm libexec/mc/fish
 @dirrm libexec/mc/extfs.d
 @dirrm libexec/mc/ext.d
 @dirrm libexec/mc
-@dirrm etc/mc
-@dirrmtry man/sr/man1
-@dirrmtry man/sr
-@dirrmtry man/ru/man1
-@dirrmtry man/ru
-@dirrmtry man/pl/man1
-@dirrmtry man/pl
-@dirrmtry man/it/man1
-@dirrmtry man/it
-@dirrmtry man/hu/man1
-@dirrmtry man/hu
-@dirrmtry man/es/man1
-@dirrmtry man/es
+@dirrmtry etc/mc
