@@ -1,9 +1,0 @@
-SETI - Search for Extra-Terrestrial Intelligence -- Enhanced version
-
-Use your unused CPU cycles to aid in computations analyzing radio
-telescope information for possible signs of extra-terrestrial intelligence.
-
-The port automatically optimizes for the host CPU using the CPUTYPE
-variable in /etc/make.conf
-
-WWW: http://setiathome.berkeley.edu/
