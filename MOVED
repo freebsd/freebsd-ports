@@ -5124,3 +5124,4 @@ devel/pear-PHPUnit|devel/pear-PHPUnit3|2013-10-18|Removed, EOLed upstream
 devel/pear-PHPUnit2|devel/pear-PHPUnit3|2013-10-18|Removed, EOLed upstream
 multimedia/ffmpeg2|multimedia/ffmpeg|2013-10-19|Use multimedia/ffmpeg instead
 mail/qmailadmin-devel|mail/qmailadmin|2013-10-19|Use mail/qmailadmin instead
+korean/php_doc||2013-10-19|Manual in this language was removed

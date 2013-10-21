@@ -37,7 +37,6 @@
     SUBDIR += nanumfonts-otf
     SUBDIR += nanumfonts-ttf
     SUBDIR += nhpf
-    SUBDIR += php_doc
     SUBDIR += qt4-codecs-kr
     SUBDIR += scim-hangul
     SUBDIR += scim-tables
