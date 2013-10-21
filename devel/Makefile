@@ -4189,6 +4189,7 @@
     SUBDIR += rubygem-rb-kqueue
     SUBDIR += rubygem-rcov
     SUBDIR += rubygem-rdoc
+    SUBDIR += rubygem-redis-store
     SUBDIR += rubygem-redmine_plugin_support
     SUBDIR += rubygem-ref
     SUBDIR += rubygem-require_all
