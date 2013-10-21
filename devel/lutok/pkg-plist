@@ -9,9 +9,9 @@ include/lutok/test_utils.hpp
 lib/liblutok.a
 lib/liblutok.la
 lib/liblutok.so
-lib/liblutok.so.1
+lib/liblutok.so.2
 libdata/pkgconfig/lutok.pc
-@exec mkdir -p %D/tests/lutok
-@dirrm tests/lutok
-@dirrmtry tests
+%%TESTS%%@exec mkdir -p %D/tests/lutok
+%%TESTS%%@dirrm tests/lutok
+%%TESTS%%@dirrmtry tests
 @dirrm include/lutok
