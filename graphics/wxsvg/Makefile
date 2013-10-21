@@ -3,6 +3,7 @@
 
 PORTNAME=	wxsvg
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -11,7 +12,7 @@ COMMENT=	C++ library to create, manipulate, and render SVG files
 
 LICENSE=	LGPL21 # (or later)
 
-LIB_DEPENDS=	libavcodec1.so:${PORTSDIR}/multimedia/ffmpeg1 \
+LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libexpat.so:${PORTSDIR}/textproc/expat2
 
 USE_BZIP2=	yes
@@ -23,10 +24,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBAV_CFLAGS="${LIBAV_CFLAGS}" LIBAV_LIBS="${LIBAV_LIBS}"
 MAKE_ENV=	AM_CPPFLAGS="${LIBAV_CFLAGS}"
 USE_LDCONFIG=	yes
-
-LIBAV_PC=	libavcodec1 libavformat1 libavutil1 libswscale1
-LIBAV_CFLAGS=	$$(pkg-config --cflags ${LIBAV_PC})
-LIBAV_LIBS=	$$(pkg-config --libs ${LIBAV_PC})
 
 post-extract:
 .for i in configure install-sh
