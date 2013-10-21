@@ -29,6 +29,36 @@
 %%SITE_PERL%%/Software/License/Zlib.pm
 %%SITE_PERL%%/Software/LicenseUtils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Software/License/.packlist
+%%PERL5_MAN3%%/Software::License.3.gz
+%%PERL5_MAN3%%/Software::License::AGPL_3.3.gz
+%%PERL5_MAN3%%/Software::License::Apache_1_1.3.gz
+%%PERL5_MAN3%%/Software::License::Apache_2_0.3.gz
+%%PERL5_MAN3%%/Software::License::Artistic_1_0.3.gz
+%%PERL5_MAN3%%/Software::License::Artistic_2_0.3.gz
+%%PERL5_MAN3%%/Software::License::BSD.3.gz
+%%PERL5_MAN3%%/Software::License::CC0_1_0.3.gz
+%%PERL5_MAN3%%/Software::License::Custom.3.gz
+%%PERL5_MAN3%%/Software::License::FreeBSD.3.gz
+%%PERL5_MAN3%%/Software::License::GFDL_1_2.3.gz
+%%PERL5_MAN3%%/Software::License::GFDL_1_3.3.gz
+%%PERL5_MAN3%%/Software::License::GPL_1.3.gz
+%%PERL5_MAN3%%/Software::License::GPL_2.3.gz
+%%PERL5_MAN3%%/Software::License::GPL_3.3.gz
+%%PERL5_MAN3%%/Software::License::LGPL_2_1.3.gz
+%%PERL5_MAN3%%/Software::License::LGPL_3_0.3.gz
+%%PERL5_MAN3%%/Software::License::MIT.3.gz
+%%PERL5_MAN3%%/Software::License::Mozilla_1_0.3.gz
+%%PERL5_MAN3%%/Software::License::Mozilla_1_1.3.gz
+%%PERL5_MAN3%%/Software::License::Mozilla_2_0.3.gz
+%%PERL5_MAN3%%/Software::License::None.3.gz
+%%PERL5_MAN3%%/Software::License::OpenSSL.3.gz
+%%PERL5_MAN3%%/Software::License::Perl_5.3.gz
+%%PERL5_MAN3%%/Software::License::PostgreSQL.3.gz
+%%PERL5_MAN3%%/Software::License::QPL_1_0.3.gz
+%%PERL5_MAN3%%/Software::License::SSLeay.3.gz
+%%PERL5_MAN3%%/Software::License::Sun.3.gz
+%%PERL5_MAN3%%/Software::License::Zlib.3.gz
+%%PERL5_MAN3%%/Software::LicenseUtils.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Software/License
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Software
 @dirrmtry %%SITE_PERL%%/Software/License
