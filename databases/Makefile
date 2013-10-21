@@ -876,6 +876,7 @@
     SUBDIR += rubygem-redis
     SUBDIR += rubygem-redis-namespace
     SUBDIR += rubygem-rubyrep
+    SUBDIR += rubygem-seed-fu
     SUBDIR += rubygem-sqlite3
     SUBDIR += rubygem-sqlite3-ruby
     SUBDIR += rubygem-tarantool
