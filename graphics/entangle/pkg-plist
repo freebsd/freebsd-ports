@@ -1,5 +1,6 @@
 bin/entangle
 lib/girepository-1.0/Entangle-0.1.typelib
+man/man1/entangle.1.gz
 %%NLS%%share/locale/ar/LC_MESSAGES/entangle.mo
 %%NLS%%share/locale/as/LC_MESSAGES/entangle.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/entangle.mo
@@ -152,7 +153,6 @@ share/gtk-doc/html/Entangle/up.png
 %%NLS%%@dirrmtry share/locale/bo/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/bo
 @dirrm share/gtk-doc/html/Entangle
-@dirrm share/entangle/plugins
 @dirrm share/entangle/icons/hicolor/64x64/actions
 @dirrm share/entangle/icons/hicolor/64x64
 @dirrm share/entangle/icons/hicolor/48x48/actions
@@ -169,5 +169,3 @@ share/gtk-doc/html/Entangle/up.png
 @dirrm share/entangle/icons
 @dirrm share/entangle
 @dirrmtry share/applications
-@dirrm lib/entangle/plugins
-@dirrm lib/entangle
