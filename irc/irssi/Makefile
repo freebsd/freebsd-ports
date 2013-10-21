@@ -16,6 +16,7 @@ CONFLICTS=	irssi-devel-[0-9]* zh-irssi-[0-9]*
 USES=		pkgconfig ncurses gmake
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-ncurses=${NCURSESBASE}
 
 OPTIONS_DEFINE=	PERL PROXY SOCKS IPV6 BOT DOCS
 SOCKS_DESC=	Socks proxy support
