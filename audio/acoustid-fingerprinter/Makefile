@@ -2,7 +2,7 @@
 
 PORTNAME=	acoustid-fingerprinter
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://bitbucket.org/acoustid/${PORTNAME}/downloads/ \
 		http://cloud.github.com/downloads/lalinsky/${PORTNAME}/
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libchromaprint.so:${PORTSDIR}/audio/chromaprint \
 		libtag.so:${PORTSDIR}/audio/taglib \
-		libavcodec${FFMPEG_SUFFIX}.so:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFFIX}
+		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 
 USES=		cmake
 USE_QT4=	gui network \
@@ -22,12 +22,12 @@ USE_QT4=	gui network \
 INSTALLS_ICONS=	yes
 
 FETCH_ARGS=	-Fpr
-CMAKE_ARGS=	-DFFMPEG_SUFFIX:STRING=${FFMPEG_SUFFIX}
-FFMPEG_SUFFIX?=	1
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		 ${WRKSRC}/cmake/modules/*.cmake
+	@${REINPLACE_CMD} -e 's,CodecID,AVCodecID,g' \
+		${WRKSRC}/ffmpeg/audioconvert.h
 
 post-install:
 .for i in 16 24 32 48 128 256
