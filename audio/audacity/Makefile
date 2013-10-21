@@ -46,10 +46,6 @@ ACLOCAL_ARGS+=	-I ${WRKSRC}/m4
 AUTOCONF_ARGS+=	-I ${WRKSRC}/m4
 
 CONFIGURE_ARG+=	--destdir=/
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-CPPFLAGS+=	-I${WRKSRC}/lib-src/portsmf -I${WRKSRC}/lib-src/portaudio-v19/include -I${LOCALBASE}/include ${SSE_CFLAGS} ${PTHREAD_CFLAGS}
-CXXFLAGS+=	-I${WRKSRC}/lib-src/portsmf -I${WRKSRC}/lib-src/portaudio-v19/include -I${LOCALBASE}/include ${SSE_CFLAGS} ${PTHREAD_CFLAGS}
-CFLAGS+=	-I${WRKSRC}/lib-src/portsmf -I${WRKSRC}/lib-src/portaudio-v19/include -I${LOCALBASE}/include ${SSE_CFLAGS} ${PTHREAD_CFLAGS}
 
 CONFIGURE_ENV+=	WX_CONFIG="${WX_CONFIG}"
 
@@ -57,7 +53,11 @@ CONFIGURE_ARGS+=	--with-lib-preference="local system" \
 			--with-portaudio --enable-unicode
 
 FFMPEG_CONFIGURE_WITH=	ffmpeg
-FFMPEG_RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG_RUN_DEPENDS=	ffmpeg0:${PORTSDIR}/multimedia/ffmpeg0
+FFMPEG_BUILD_DEPENDS=	ffmpeg0>=0:${PORTSDIR}/multimedia/ffmpeg0
+FFMPEG_CFLAGS=		-I${LOCALBASE}/include/ffmpeg0
+FFMPEG_CPPFLAGS=	-I${LOCALBASE}/include/ffmpeg0
+FFMPEG_CXXFLAGS=	-I${LOCALBASE}/include/ffmpeg0
 
 FLAC_CONFIGURE_WITH=	libflac
 FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
@@ -101,6 +101,11 @@ VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 .include <bsd.port.pre.mk>
 
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${WRKSRC}/lib-src/portsmf -I${WRKSRC}/lib-src/portaudio-v19/include -I${LOCALBASE}/include ${SSE_CFLAGS} ${PTHREAD_CFLAGS}
+CXXFLAGS+=	-I${WRKSRC}/lib-src/portsmf -I${WRKSRC}/lib-src/portaudio-v19/include -I${LOCALBASE}/include ${SSE_CFLAGS} ${PTHREAD_CFLAGS}
+CFLAGS+=	-I${WRKSRC}/lib-src/portsmf -I${WRKSRC}/lib-src/portaudio-v19/include -I${LOCALBASE}/include ${SSE_CFLAGS} ${PTHREAD_CFLAGS}
+
 .if ${ARCH} != "amd64"
 SSE_CFLAGS=	-mno-sse -mno-sse2
 .endif
@@ -119,6 +124,11 @@ post-patch:
 .endif
 
 	@${REINPLACE_CMD} -e 's|inline void|static inline void|' ${WRKSRC}/lib-src/libnyquist/nyquist/ffts/src/fftlib.c
+	@${REINPLACE_CMD} \
+		-e 's|libavcodec |libavcodec0 |g' \
+		-e 's|libavformat |libavformat0 |g' \
+		-e 's|libavutil,|libavutil0,|g' \
+		${WRKSRC}/m4/audacity_checklib_ffmpeg.m4
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
