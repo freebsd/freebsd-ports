@@ -85,7 +85,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb ${STAGEDIR}${PREFIX}/bin/gdb${VER}
 	${INSTALL_MAN} ${WRKSRC}/gdb/gdb.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/gdb${VER}.1
 .if ${PORT_OPTIONS:MTUI}
-	${LN} -sf ${STAGEDIR}${PREFIX}/bin/gdb${VER} ${STAGEDIR}${PREFIX}/bin/gdbtui${VER}
+	${LN} -sf ${PREFIX}/bin/gdb${VER} ${STAGEDIR}${PREFIX}/bin/gdbtui${VER}
 .endif
 .if ${PORT_OPTIONS:MGDB_LINK}
 	${LN} -sf gdb${VER} ${STAGEDIR}${PREFIX}/bin/gdb
