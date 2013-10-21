@@ -51,7 +51,7 @@
  
  # Flags to enable fast image display, using the XSHM library (when using X11).
  # !!! Seems to randomly crash when used on MacOSX and 64bits systems, so use it only when necessary !!!
-@@ -185,13 +185,13 @@
+@@ -185,8 +185,8 @@
  
  # Flags to enable native support for EXR image files, using the OpenEXR library.
  # ( http://www.openexr.com/ )
@@ -61,13 +61,6 @@
  
  # Flags to enable native support for various video files, using the FFMPEG library.
  # ( http://www.ffmpeg.org/ )
--CIMG_FFMPEG_CFLAGS = -Dcimg_use_ffmpeg -D__STDC_CONSTANT_MACROS -I/usr/include/libavcodec -I/usr/include/libavformat -I/usr/include/libswscale -I/usr/include/ffmpeg
--CIMG_FFMPEG_LDFLAGS = -lavcodec -lavformat -lswscale
-+CIMG_FFMPEG_CFLAGS = -Dcimg_use_ffmpeg -D__STDC_CONSTANT_MACROS -I/$(LOCALBASE)/include/ffmpeg1/libavcodec -I/$(LOCALBASE)/include/ffmpeg1/libavformat -I/$(LOCALBASE)/include/ffmpeg1/libswscale -I/$(LOCALBASE)/include/ffmpeg1
-+CIMG_FFMPEG_LDFLAGS = -L$(LOCALBASE)/lib/ffmpeg1 -lavcodec1 -lavformat1 -lswscale1
- 
- # Flags to enable native support for compressed .cimgz files, using the Zlib library.
- # ( http://www.zlib.net/ )
 @@ -200,8 +200,8 @@
  
  # Flags to enable native support of most classical image file formats, using the Magick++ library.
