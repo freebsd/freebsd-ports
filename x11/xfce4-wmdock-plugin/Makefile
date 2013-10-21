@@ -2,22 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-wmdock-plugin
-PORTVERSION=	0.3.4
-PORTREVISION=	3
+PORTVERSION=	0.6.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://www.ibh.de/~ellguth/develop/
+DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	WMdock plugin for Xfce
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		gettext pkgconfig
+USES=		gettext pkgconfig gmake
 INSTALLS_ICONS=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gtk20 intltool intlhack libwnck
-USE_XFCE=	configenv libgui panel
+USE_XFCE=	configenv libgui libutil panel
 INSTALLS_ICONS=	yes
+USE_XORG=	x11
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
