@@ -10,13 +10,7 @@ share/applications/asteroid.desktop
 %%DATADIR%%/sfx/spawn_powerup.wav
 %%DATADIR%%/sfx/spawn_shot.wav
 share/icons/hicolor/scalable/apps/asteroid.svg
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
 @dirrm %%DATADIR%%/sfx
 @dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-@exec %%LOCALBASE%%/bin/update-desktop-database -q || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database -q || /usr/bin/true
