@@ -337,6 +337,9 @@ QMAKESPEC?=	${QT_PREFIX}/share/qt4/mkspecs/freebsd-${QMAKE_COMPILER}
 .else
 # If something went wrong, default to the base configuration.
 QMAKESPEC?=	${QT_PREFIX}/share/qt4/mkspecs/freebsd-${QMAKE_BASE_COMPILER}
+QMAKE_ARGS+=	QMAKE_CC="${CC}" QMAKE_CXX="${CXX}" \
+		QMAKE_LINK="${CXX}" QMAKE_LINK_SHLIB="${CXX}" \
+		QMAKE_LINK_C="${CC}" QMAKE_LINK_C_SHLIB="${CC}"
 .endif
 
 .for component in ${_USE_QT4_ALL}
