@@ -30,15 +30,12 @@ CONFIGURE_ARGS=	--disable-silent-rules
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		${PORTNAME}.1
-
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/checking for GUDEV/,+93d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,_udev,,' \
