@@ -3,7 +3,7 @@
 
 PORTNAME=	corsixth
 PORTVERSION=	0.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	corsix-th
@@ -29,7 +29,7 @@ MOVIES_DESC=	Play in-game movies
 
 MOVIES_CMAKE_ON=	-DWITH_MOVIES=ON
 MOVIES_CMAKE_OFF=	-DWITH_MOVIES=OFF
-MOVIES_LIB_DEPENDS=	libswresample1.so:${PORTSDIR}/multimedia/ffmpeg1
+MOVIES_LIB_DEPENDS=	libswresample.so:${PORTSDIR}/multimedia/ffmpeg
 
 .include <bsd.port.options.mk>
 
