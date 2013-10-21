@@ -17,7 +17,7 @@ done
 SERVIIO_CLASS_PATH="$SERVIIO_CLASS_PATH:%%ETCDIR%%"
 
 # Setup Serviio specific properties
-JAVA_OPTS="-Djava.net.preferIPv4Stack=true -Djava.awt.headless=true -Dderby.system.home=/var/db/serviio -Dserviio.home=$HOME -Dffmpeg.location=%%LOCALBASE%%/bin/ffmpeg1"
+JAVA_OPTS="-Djava.net.preferIPv4Stack=true -Djava.awt.headless=true -Dderby.system.home=/var/db/serviio -Dserviio.home=$HOME -Dffmpeg.location=%%LOCALBASE%%/bin/ffmpeg"
 JAVA_OPTS="${JAVA_OPTS} -Djcs.auxiliary.DC.attributes.DiskPath=/var/db/serviio"
 
 
