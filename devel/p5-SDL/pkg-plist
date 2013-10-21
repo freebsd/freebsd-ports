@@ -35,6 +35,33 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Video.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL_perl.pm
+%%PERL5_MAN3%%/SDL.3.gz
+%%PERL5_MAN3%%/SDL::App.3.gz
+%%PERL5_MAN3%%/SDL::Cdrom.3.gz
+%%PERL5_MAN3%%/SDL::Color.3.gz
+%%PERL5_MAN3%%/SDL::Cursor.3.gz
+%%PERL5_MAN3%%/SDL::Event.3.gz
+%%PERL5_MAN3%%/SDL::Font.3.gz
+%%PERL5_MAN3%%/SDL::Game::Rect.3.gz
+%%PERL5_MAN3%%/SDL::MPEG.3.gz
+%%PERL5_MAN3%%/SDL::Mixer.3.gz
+%%PERL5_MAN3%%/SDL::Music.3.gz
+%%PERL5_MAN3%%/SDL::OpenGL.3.gz
+%%PERL5_MAN3%%/SDL::Palette.3.gz
+%%PERL5_MAN3%%/SDL::Rect.3.gz
+%%PERL5_MAN3%%/SDL::SFont.3.gz
+%%PERL5_MAN3%%/SDL::Sound.3.gz
+%%PERL5_MAN3%%/SDL::Surface.3.gz
+%%PERL5_MAN3%%/SDL::TTFont.3.gz
+%%PERL5_MAN3%%/SDL::Timer.3.gz
+%%PERL5_MAN3%%/SDL::Tool::Font.3.gz
+%%PERL5_MAN3%%/SDL::Tool::Graphic.3.gz
+%%PERL5_MAN3%%/SDL::Tutorial.3.gz
+%%PERL5_MAN3%%/SDL::Tutorial::Animation.3.gz
+%%PERL5_MAN3%%/SDL::Tutorial::Drawing.3.gz
+%%PERL5_MAN3%%/SDL::Tutorial::Images.3.gz
+%%PERL5_MAN3%%/SDL::Tutorial::LunarLander.3.gz
+%%PERL5_MAN3%%/SDL::Video.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/OpenGL
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/SFont
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL
