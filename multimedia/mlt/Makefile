@@ -2,7 +2,7 @@
 
 PORTNAME=	mlt
 PORTVERSION=	0.9.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -66,7 +66,7 @@ PLIST_SUB+=	DV="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFFMPEG} || ${PORT_OPTIONS:MVDPAU}
-FFMPEG_SUFX=	1
+FFMPEG_SUFX=
 LIB_DEPENDS+=	avformat${FFMPEG_SUFX}:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFX}
 CONFIGURE_ARGS+=--enable-avformat --avformat-swscale \
 		--avformat-suffix="${FFMPEG_SUFX}"
