@@ -1,0 +1,32 @@
+bin/tint2
+man/man1/tint2.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/icon_and_text_1.tint2rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/icon_and_text_2.tint2rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/icon_and_text_3.tint2rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/icon_and_text_4.tint2rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/icon_only_1.tint2rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/icon_only_2.tint2rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/icon_only_3.tint2rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/icon_only_4.tint2rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/icon_only_6.tint2rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/icon_only_7.tint2rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/text_only_1.tint2rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/text_only_2.tint2rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/text_only_3.tint2rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/text_only_4.tint2rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/text_only_5.tint2rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/text_only_6.tint2rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tint2rc
+%%DATADIR%%/default_icon.png
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+@dirrmtry %%DATADIR%%
+%%PYCONF%%bin/tint2conf
+%%PYCONF%%bin/tintwizard.py
+%%PYCONF%%share/applications/tint2conf.desktop
+%%PYCONF%%share/pixmaps/tint2conf.png
+%%PYCONF%%share/pixmaps/tint2conf.svg
+%%PYCONF%%@dirrmtry share/applications
