@@ -10,7 +10,7 @@ COMMENT=	AcoustID audio fingerprinting library
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	avcodec${FFMPEG_SUFFIX}:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFFIX}
+LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 
 USES=		cmake:outsource
 USE_LDCONFIG=	yes
@@ -18,8 +18,6 @@ USE_LDCONFIG=	yes
 FETCH_ARGS=	-Fpr
 CMAKE_ARGS=	-DBUILD_EXAMPLES:BOOL=ON \
 		-DWITH_AVFFT:BOOL=ON \
-		-DFFMPEG_SUFFIX:STRING=${FFMPEG_SUFFIX}
-FFMPEG_SUFFIX?=	1
 
 post-patch:
 	${REINPLACE_CMD} -e '/pkgconfig/s|$${LIB_INSTALL_DIR}|libdata|' \
