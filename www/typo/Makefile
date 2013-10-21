@@ -11,6 +11,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jw@innerewut.de
 COMMENT=	An absolutely minimal weblogging engine powered by rails
 
+DEPRECATED=     Does not work with Ruby 1.9
+EXPIRATION_DATE=        2013-10-22
+
 RUN_DEPENDS=	rails:${PORTSDIR}/www/rubygem-rails \
 		redcloth:${PORTSDIR}/www/rubygem-redcloth \
 		rails-app-installer-setup:${PORTSDIR}/www/rubygem-rails-app-installer
