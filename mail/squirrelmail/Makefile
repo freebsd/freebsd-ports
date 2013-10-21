@@ -3,6 +3,7 @@
 
 PORTNAME=	squirrelmail
 PORTVERSION=	20131020
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	adamw
@@ -101,8 +102,9 @@ do-install:
 .for DIR in attach class config data functions help images include locale plugins po src themes
 	cd ${WRKSRC} && ${FIND} ${DIR} | ${CPIO} -pdmu --quiet ${STAGEDIR}${SQUIRRELDIR}
 .endfor
-	${CHOWN} -R ${SMUSER}:${SMGROUP} ${STAGEDIR}${SQUIRRELDIR}/data
-	${CHMOD} 733 ${STAGEDIR}${SQUIRRELDIR}/attach
+	${CHOWN} ${SMUSER}:${SMGROUP} ${STAGEDIR}${SQUIRRELDIR}/data ${STAGEDIR}${SQUIRRELDIR}/attach
+	${CHMOD} 730 ${STAGEDIR}${SQUIRRELDIR}/attach
+	${CHMOD} 750 ${STAGEDIR}${SQUIRRELDIR}/data
 
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${FIND} . | ${CPIO} -pdmu --quiet ${STAGEDIR}${DOCSDIR}
