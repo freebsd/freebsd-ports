@@ -149,6 +149,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g ;\
 			      s|%%CXX%%|${CXX}|g ; \
 			      s|%%CXXFLAGS%%|${CXXFLAGS}|g'  ${WRKSRC}/make/ivcommondefs
+	@${REINPLACE_CMD} -e 's|%%ICONV_LIB%%|${ICONV_LIB}|' \
+	    ${WRKSRC}/lib/GNUmakefile
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
