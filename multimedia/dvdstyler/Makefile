@@ -20,9 +20,9 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		mplex:${PORTSDIR}/multimedia/mjpegtools \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
 		docbook-sk>=4.1.2:${PORTSDIR}/textproc/docbook-sk \
-		xmlto:${PORTSDIR}/textproc/xmlto 
-LIB_DEPENDS=	exif:${PORTSDIR}/graphics/libexif \
-		avcodec1:${PORTSDIR}/multimedia/ffmpeg1
+		xmlto:${PORTSDIR}/textproc/xmlto
+LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
+		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		wxsvg>=1.1.14:${PORTSDIR}/graphics/wxsvg \
 		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
@@ -33,27 +33,15 @@ RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 OPTIONS_DEFINE=	GNOME DOCS
 
 USE_BZIP2=	yes
-USES=		gettext pkgconfig
+USES=		desktop-file-utils gettext gmake pkgconfig
 USE_WX=		2.8
 WX_COMPS=	wx svg
 WX_CONF_ARGS=	absolute
-USE_GNOME=	desktopfileutils
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBAV_CFLAGS="${LIBAV_CFLAGS}" LIBAV_LIBS="${LIBAV_LIBS}" \
-		ac_cv_path_FFMPEG_PATH="${LOCALBASE}/bin/ffmpeg1"
-MAKE_ENV=	AM_CPPFLAGS="${LIBAV_CFLAGS}"
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		dvdstyler.1
-
-LIBAV_PC=	libavcodec1 libavformat1 libavutil1 libswscale1
-LIBAV_CFLAGS=	$$(pkg-config --cflags ${LIBAV_PC})
-LIBAV_LIBS=	$$(pkg-config --libs ${LIBAV_PC})
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNOME}
@@ -91,14 +79,15 @@ post-patch:
 		${WRKSRC}/src/BurnDlg.cpp
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|g' \
 		${WRKSRC}/src/Config.h
+	@${REINPLACE_CMD} -e 's|CodecID|AVCodecID|g' \
+		${WRKSRC}/src/mediaenc_ffmpeg.cpp
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in AUTHORS ChangeLog INSTALL README
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
 .endfor
 .endif
-	@-update-desktop-database
 
 .include <bsd.port.mk>

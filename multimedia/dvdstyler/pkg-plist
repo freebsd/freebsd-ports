@@ -158,6 +158,7 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/templates/Travel/travel.png
 %%DATADIR%%/templates/Travel/travelWS.dvdt
 %%DATADIR%%/templates/Travel/travelWS.png
+man/man1/dvdstyler.1.gz
 share/locale/ar/LC_MESSAGES/dvdstyler.mo
 share/locale/ca/LC_MESSAGES/dvdstyler.mo
 share/locale/cs/LC_MESSAGES/dvdstyler.mo
@@ -211,5 +212,3 @@ share/pixmaps/dvdstyler.png
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
