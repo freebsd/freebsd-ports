@@ -3,6 +3,7 @@
 
 PORTNAME=	audacious-plugins
 PORTVERSION=	3.4.1
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
@@ -169,7 +170,7 @@ PLIST_SUB+=	FLACPLUGIN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFFAUDIO}
-LIB_DEPENDS+=	avcodec-devel:${PORTSDIR}/multimedia/ffmpeg-devel
+LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ARGS+=--enable-ffaudio
 PLIST_SUB+=	FFAUDIOPLUGIN=""
 .else
@@ -373,14 +374,6 @@ pre-everything::
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Make sure you select the PARANOIA option when installing libcdio!"
 	@${ECHO_CMD} ""
-.endif
-
-post-patch:
-.if ${PORT_OPTIONS:MFFAUDIO}
-	@${REINPLACE_CMD} -e 's|libavcodec |libavcodec-devel | ; \
-		s|libavformat |libavformat-devel | ; \
-		s|libavutil |libavutil-devel |' \
-	${WRKSRC}/configure ${WRKSRC}/configure.ac
 .endif
 
 pre-configure:
