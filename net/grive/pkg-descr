@@ -1,4 +1,4 @@
 Grive is an independent implementation of Google Drive client. It uses
-the Google Document List API to talk to the servers in Google.
+the Google Document List API to talk to Google's servers.
 
 WWW: http://www.lbreda.com/grive/
