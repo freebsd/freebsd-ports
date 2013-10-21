@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcbsd-utils
-PORTVERSION=	1381240866
+PORTVERSION=	1382384181
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
@@ -14,7 +14,6 @@ RUN_DEPENDS=	pkg-static:${PORTSDIR}/ports-mgmt/pkg \
 		svn:${PORTSDIR}/devel/subversion \
 		mksquashfs:${PORTSDIR}/sysutils/squashfs-tools \
 		debootstrap:${PORTSDIR}/sysutils/debootstrap \
-		aria2c:${PORTSDIR}/www/aria2 \
 		sipcalc:${PORTSDIR}/net-mgmt/sipcalc \
 		eject:${PORTSDIR}/sysutils/eject \
 		unzip:${PORTSDIR}/archivers/unzip \
@@ -31,6 +30,14 @@ USE_PYTHON=	yes
 
 .if ${OSVERSION} < 900030
 IGNORE=		requires FreeBSD 9.0 or later
+.endif
+
+.if ${OSVERSION} > 1000000
+PLIST_FILES+=	share/pbi-manager/.pbime \
+		share/pbi-manager/.pbimount \
+		share/pbi-manager/.ldconfig \
+		share/pbi-manager/.mount_nullfs \
+		etc/man.d/pbi.conf
 .endif
 
 do-install:

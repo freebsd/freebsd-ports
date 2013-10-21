@@ -22,6 +22,7 @@ bin/pc-xdgutil
 bin/pc-firstgui
 bin/pc-runxgui
 bin/pc-checkxdisplay
+bin/pc-installdialog
 bin/enable_user_pefs
 sbin/pc-sysinstall
 share/lpreserver/backend/zfsmon.sh
@@ -83,6 +84,7 @@ share/pc-sysinstall/backend-query/xkeyboard-variants.sh
 share/pc-sysinstall/backend-query/setup-ssh-keys.sh
 share/pc-sysinstall/backend-query/xkeyboard-layouts.sh
 share/pc-sysinstall/backend-query/enable-net.sh
+share/pc-sysinstall/backend-query/detect-country.sh
 share/pc-sysinstall/backend-query/detect-laptop.sh
 share/pc-sysinstall/backend-query/list-packages.sh
 share/pc-sysinstall/backend-query/disk-info.sh
