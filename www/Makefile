@@ -1808,6 +1808,7 @@
     SUBDIR += rubygem-railties
     SUBDIR += rubygem-raindrops
     SUBDIR += rubygem-ramaze
+    SUBDIR += rubygem-raphael-rails
     SUBDIR += rubygem-redcloth
     SUBDIR += rubygem-redmine_acts_as_taggable_on
     SUBDIR += rubygem-rest-client
