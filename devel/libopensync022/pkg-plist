@@ -62,16 +62,11 @@ lib/opensync/formats/xml-vnote.la
 lib/opensync/formats/xml-vnote.so
 lib/opensync/formats/xmldoc.la
 lib/opensync/formats/xmldoc.so
-%%PYTHON_SITELIBDIR%%/_opensync.la
-%%PYTHON_SITELIBDIR%%/_opensync.so
-%%PYTHON_SITELIBDIR%%/opensync.py
-%%PYTHON_SITELIBDIR%%/opensync.pyc
-%%PYTHON_SITELIBDIR%%/opensync.pyo
 libdata/pkgconfig/opensync-1.0.pc
 libdata/pkgconfig/osengine-1.0.pc
 libexec/osplugin
-@dirrm lib/opensync/formats
-@dirrm lib/opensync
-@dirrm include/opensync-1.0/osengine
-@dirrm include/opensync-1.0/opensync
-@dirrm include/opensync-1.0
+@dirrmtry lib/opensync/formats
+@dirrmtry lib/opensync
+@dirrmtry include/opensync-1.0/osengine
+@dirrmtry include/opensync-1.0/opensync
+@dirrmtry include/opensync-1.0
