@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Smtp
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.5
 CATEGORIES=	mail www pear
 PKGNAMEPREFIX=	pear-
 
