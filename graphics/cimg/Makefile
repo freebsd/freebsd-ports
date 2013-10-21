@@ -3,7 +3,7 @@
 
 PORTNAME=	cimg
 PORTVERSION=	1.5.6
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/${PORTNAME}		\
@@ -34,7 +34,7 @@ CPPFLAGS+=	${CFLAGS} ${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 
 .if !defined(NOPORTDOCS)
-USE_GMAKE=	yes
+USES=		gmake
 REINPLACE_ARGS=	-i ""
 LIB_DEPENDS+=	board.0:${PORTSDIR}/graphics/libboard
 
@@ -61,7 +61,7 @@ WITHOUT_LAPACK=	yes
 RUN_DEPENDS+=	medcon:${PORTSDIR}/graphics/xmedcon
 . endif
 . if !defined(WITHOUT_FFMPEG)
-LIB_DEPENDS+=	avformat1:${PORTSDIR}/multimedia/ffmpeg1
+LIB_DEPENDS+=	avformat:${PORTSDIR}/multimedia/ffmpeg
 . endif
 
 DOCBASE=	README.txt
