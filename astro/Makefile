@@ -8,7 +8,6 @@
     SUBDIR += accrete
     SUBDIR += astrometry
     SUBDIR += boinc-astropulse
-    SUBDIR += boinc-setiathome-enhanced
     SUBDIR += boinc-setiathome-v7
     SUBDIR += celestia
     SUBDIR += celestia-gnome

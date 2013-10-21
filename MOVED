@@ -5135,3 +5135,4 @@ devel/rubygem-ruby-debug-ide||2013-10-21|Has expired: Does not work with Ruby 1.
 devel/rubygem-ruby-debug||2013-10-21|Has expired: Does not work with Ruby 1.9
 japanese/gorua||2013-10-21|Has expired: Does not work with Ruby 1.9
 x11-toolkits/ruby-gtk||2013-10-21|Has expired: Does not work with Ruby 1.9
+astro/boinc-setiathome-enhanced|astro/boinc-setiathome-v7|2013-10-21|Removed: Project is switching, use astro/boinc-setiathome-v7 instead; broken on 10.0
