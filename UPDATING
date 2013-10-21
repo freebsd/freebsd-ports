@@ -6,6 +6,25 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20131020:
+  AFFECTS: users of mail/squirrelmail
+  AUTHOR: adamw@adamw.org
+
+  The default location for user data files and attachments has changed.
+  This will only affect new installations, and upgrading SquirrelMail
+  WILL NOT break your current installation.
+
+  To make use of the new locations, do the following:
+
+  # cp -rp /var/spool/squirrelmail/pref/* /usr/local/www/squirrelmail/data
+  # cp -rp /var/spool/squirrelmail/attach/* /usr/local/www/squirrelmail/attach
+
+  and then run /usr/local/www/squirrelmail/configure and tell SM about
+  it ("Data Directory" and "Attachment Directory" under "General Options").
+
+  This version of SquirrelMail is a SNAPSHOT that brings in PHP 5.4 and 5.5
+  compatibility.
+  
+20131020:
   AFFECTS: users of security/gpgme
   AUTHOR: jhale@FreeBSD.org
 
