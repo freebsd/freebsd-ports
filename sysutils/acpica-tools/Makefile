@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	acpica
-PORTVERSION=	20130823
+PORTVERSION=	20130927
 CATEGORIES=	sysutils devel
 MASTER_SITES=	https://acpica.org/sites/acpica/files/ \
 		LOCAL
@@ -18,12 +18,16 @@ MAKE_ARGS=	HOST=_FreeBSD INSTALLFLAGS="${INSTALL_PROGRAM:S/^${INSTALL}//}"
 USES=		gmake
 WRKSRC_SUBDIR=	generate/unix
 LFLAGS=		-i -s
-YFLAGS=		-v -d
-.if !empty(YACC:M*bison*)
-YFLAGS+=	-y
-.endif
 
-NO_STAGE=	yes
+# XXX 20130927 broke support for yacc.
+USES+=		bison
+YACC=		bison
+YFLAGS=		-y
+
+# XXX 20130927 did not include Makefile.config.
+post-extract:
+	@${CP} -f ${FILESDIR}/Makefile.config ${WRKSRC}
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CC[[:blank:]]*=.*|CC = ${CC}|' \
 	    -e 's|^INSTALL[[:blank:]]*=.*|INSTALL = ${INSTALL}|g' \
