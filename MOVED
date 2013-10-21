@@ -5128,3 +5128,10 @@ korean/php_doc||2013-10-19|Manual in this language was removed
 graphics/linux-panorama-tools||2013-10-21|Depends on EOLed linux-f10-png10
 graphics/linux-f10-png10||2013-10-21|Removed, EOLed upstream
 net/p5-SOAP-Lite-060|net/p5-SOAP-Lite|2013-10-21|Obsoleted
+devel/rubygem-ruby-debug-base||2013-10-21|Has expired: Does not work with Ruby 1.9
+devel/rubygem-linecache||2013-10-21|Has expired: Does not work with Ruby 1.9
+devel/rubygem-rascut||2013-10-21|Has expired: Does not work with Ruby 1.9
+devel/rubygem-ruby-debug-ide||2013-10-21|Has expired: Does not work with Ruby 1.9
+devel/rubygem-ruby-debug||2013-10-21|Has expired: Does not work with Ruby 1.9
+japanese/gorua||2013-10-21|Has expired: Does not work with Ruby 1.9
+x11-toolkits/ruby-gtk||2013-10-21|Has expired: Does not work with Ruby 1.9
