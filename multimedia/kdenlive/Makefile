@@ -2,7 +2,7 @@
 
 PORTNAME=	kdenlive
 PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src/
@@ -25,7 +25,7 @@ USE_BZIP2=	yes
 CMAKE_ARGS=	-DFFMPEG_SUFFIX:STRING="${FFMPEG_SUFX}"
 
 # Keep in sync with multimedia/mlt, possibly.
-FFMPEG_SUFX=	1
+FFMPEG_SUFX=
 
 MAN1=		kdenlive.1 kdenlive_render.1
 
