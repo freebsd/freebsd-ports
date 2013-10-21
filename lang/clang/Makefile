@@ -16,6 +16,9 @@ COMMENT=	C, Objective-C, and C++ compiler
 
 CONFLICTS=	clang-devel-[23]*
 
+DEPRECATED=	Migrate to devel/clang32 or newer 
+EXPIRATION_DATE=	2013-11-04
+
 CLANG_NAME=	clang-${PORTVERSION}.src
 CLANG_SOURCE=	${CLANG_NAME}${EXTRACT_SUFX}
 LLVM_NAME=	llvm-${PORTVERSION}.src
