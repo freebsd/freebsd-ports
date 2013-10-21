@@ -2,25 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	xalan-c
-PORTVERSION=	1.10.0
-PORTREVISION=	1
+PORTVERSION=	1.11
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_APACHE_XML:S/$/:msax,docs/}
-MASTER_SITE_SUBDIR=	${PORTNAME}/source/:msax ${PORTNAME}/docs/:docs
-DISTNAME=	Xalan-C_${PORTVERSION:S/./_/g}-src:msax
-DISTFILES+=	Xalan-C_${PORTVERSION:S/./_/g}-src${EXTRACT_SUFX}:msax
+MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:msax,docs/}
+MASTER_SITE_SUBDIR=	xalan/${PORTNAME}/sources/:msax xalan/${PORTNAME}/docs/:docs
+DISTNAME=	xalan_c-${PORTVERSION}-src:msax
+DISTFILES+=	xalan_c-${PORTVERSION}-src${EXTRACT_SUFX}:msax
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XSLT processor from the Apache XML Project
 
-OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES TRANSCODER_ICU
-OPTIONS_SINGLE=		LSYS
-OPTIONS_SINGLE_LSYS=	INMEMLOC ICULOC NLSLOC
-OPTIONS_DEFAULT=	INMEMLOC
-INMEMLOC_DESC=		Use inmem locale system
-ICULOC_DESC=		Use ICU locale system
-NLSLOC_DESC=		Use nls locale system
-TRANSCODER_ICU_DESC=	Use ICU transcoder (if used in xerces-c2)
+OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
@@ -32,23 +24,24 @@ PKGNAMESUFFIX+=		-debug
 .endif
 .if ${PORT_OPTIONS:MDOCS}
 DISTFILES+=	${DOCS_TARBALL}:docs
-EXTRACT_ONLY=	Xalan-C_${PORTVERSION:S/./_/g}-src${EXTRACT_SUFX}
-DOCS_TARBALL=	Xalan-C_${PORTVERSION:S/./_/g}-docs${EXTRACT_SUFX}
+EXTRACT_ONLY=	xalan_c-${PORTVERSION}-src${EXTRACT_SUFX}
+DOCS_TARBALL=	xalan_c-${PORTVERSION}-docs-html-nograf${EXTRACT_SUFX}
 .endif
 
-# we need the _extracted_ xerces-c2 port sources to build this one
+# we need the _extracted_ xerces-c3 port sources to build this one
 # (installed version of port is enough)
-XERCESC_LIB_VER?=	27
-LIB_DEPENDS+=	xerces-c.${XERCESC_LIB_VER}:${PORTSDIR}/textproc/xerces-c2
+XERCESC_LIB_VER?=	3
+LIB_DEPENDS+=	xerces-c.${XERCESC_LIB_VER}:${PORTSDIR}/textproc/xerces-c3
 XERCESCROOT?=	${LOCALBASE}
 
 USE_LDCONFIG=	yes
 
-WRKSRC=			${WRKDIR}/xml-xalan/c
+WRKSRC=			${WRKDIR}/xalan-c-${PORTVERSION}/c
 
 USE_GMAKE=		yes
 MAKE_ENV+=		XALANCROOT=${WRKSRC}
 MAKE_ENV+=		XERCESCROOT=${XERCESCROOT}
+MAKE_JOBS_UNSAFE=
 
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	runConfigure
@@ -59,40 +52,7 @@ CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 CONFIGURE_ARGS+=	-p freebsd -c ${CC} -x ${CXX} -l ${PTHREAD_LIBS} \
 				-z ${EXTRA_CFLAGS} -I${LOCALBASE}/include -C --prefix=${PREFIX}
 
-.if ${PORT_OPTIONS:MICULOC}
-CONFIGURE_ARGS+=	-m icu
-PLIST_SUB+=		LOCALSYS_INMEMLOC=""
-PLIST_SUB+=		LOCALSYS_NLSLOC="@comment "
-PORT_OPTIONS+=		TRANSCODER_ICU
-.endif
-
-.if ${PORT_OPTIONS:MNLSLOC}
-CONFIGURE_ARGS+=	-m nls
-PLIST_SUB+=		LOCALSYS_INMEMLOC="@comment "
-PLIST_SUB+=		LOCALSYS_NLSLOC=""
-.endif
-
-.if ${PORT_OPTIONS:MINMEMLOC}
 CONFIGURE_ARGS+=	-m inmem
-PLIST_SUB+=		LOCALSYS_INMEMLOC=""
-PLIST_SUB+=		LOCALSYS_NLSLOC="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MTRANSCODER_ICU}
-PKGNAMESUFFIX+=		-icu
-LIB_DEPENDS+=		icuuc:${PORTSDIR}/devel/icu
-ICUROOT?=		${LOCALBASE}
-CONFIGURE_ENV+=		XALAN_USE_ICU=1
-CONFIGURE_ENV+=		ICUROOT=${ICUROOT}
-CONFIGURE_ARGS+=	-t icu
-MAKE_ENV+=		XALAN_USE_ICU=1
-MAKE_ENV+=		ICUROOT=${ICUROOT}
-PLIST_SUB+=		ICUDEP=""
-.else
-USES+=			iconv
-LDFLAGS+=		-L${LOCALBASE}/lib ${ICONV_LIB}
-PLIST_SUB+=		ICUDEP="@comment "
-.endif
 
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	-d
@@ -108,8 +68,8 @@ SAMPLES_CONFIG_ARGS+=	-b 64
 .endif
 
 XALANC_LIB_VERSION=	${PORTVERSION:S/.//:R}
-XALANC_LIB=		libxalan-c.so.${PORTVERSION:S/.//}
-XALANMSG_LIB=		libxalanMsg.so.${PORTVERSION:S/.//}
+XALANC_LIB=		libxalan-c.so.${PORTVERSION:S/.//}.0
+XALANMSG_LIB=		libxalanMsg.so.${PORTVERSION:S/.//}.0
 PLIST_SUB+=		XALANC_LIB=${XALANC_LIB} \
 				XALANMSG_LIB=${XALANMSG_LIB} \
 				XALANC_LIB_VERSION=${XALANC_LIB_VERSION}
@@ -155,8 +115,9 @@ post-install:
 	cd ${DOCSDIR} && \
 		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${_DISTDIR}/${DOCS_TARBALL} ${EXTRACT_AFTER_ARGS} && \
-	${MV} ${DOCSDIR}/Xalan-C_${PORTVERSION:S/./_/g}-docs/* ${DOCSDIR} && \
-	${RMDIR} ${DOCSDIR}/Xalan-C_${PORTVERSION:S/./_/g}-docs
+	${MV} ${DOCSDIR}/docs/xalan-c/* ${DOCSDIR} && \
+	${RMDIR} ${DOCSDIR}/docs/xalan-c && \
+	${RMDIR} ${DOCSDIR}/docs
 .endif
 
 post-clean:

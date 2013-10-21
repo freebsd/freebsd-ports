@@ -89,7 +89,7 @@
 	${MKDIR} ${EXAMPLESDIR}/UseStylesheetParam
 	${INSTALL_DATA} \
 		${WRKSRC}/samples/UseStylesheetParam/foo.xml \
-		${WRKSRC}/samples/UseStylesheetParam/foo.xsl \
+		${WRKSRC}/samples/UseStylesheetParam/foo.xslt \
 		${WRKSRC}/samples/UseStylesheetParam/UseStylesheetParam.cpp \
 		${EXAMPLESDIR}/UseStylesheetParam/
 	${MKDIR} ${EXAMPLESDIR}/XalanTransform
