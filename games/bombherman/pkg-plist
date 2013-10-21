@@ -61,18 +61,6 @@ share/icons/hicolor/72x72/apps/bomb-her-man.png
 share/icons/hicolor/96x96/apps/bomb-her-man.png
 %%NLS%%share/locale/fr/LC_MESSAGES/bomb-her-man.mo
 share/pixmaps/bomb-her-man.png
-@dirrmtry share/icons/hicolor/96x96/apps
-@dirrmtry share/icons/hicolor/96x96
-@dirrmtry share/icons/hicolor/72x72/apps
-@dirrmtry share/icons/hicolor/72x72
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
 @dirrm %%DATADIR%%/graphics/scores/2
 @dirrm %%DATADIR%%/graphics/scores/1
 @dirrm %%DATADIR%%/graphics/scores
