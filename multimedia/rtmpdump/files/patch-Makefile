@@ -1,7 +1,7 @@
---- Makefile.orig	2010-07-01 04:58:35.000000000 +0900
-+++ Makefile	2010-08-01 01:26:30.000000000 +0900
+--- Makefile.orig	2013-10-07 03:52:05.000000000 +0900
++++ Makefile	2013-10-20 14:37:46.000000000 +0900
 @@ -1,9 +1,9 @@
- VERSION=v2.3
+ VERSION=v2.4
  
 -prefix=/usr/local
 +prefix=${PREFIX}
@@ -13,7 +13,7 @@
  
  SYS=posix
  #SYS=mingw
-@@ -20,8 +20,9 @@
+@@ -21,8 +21,9 @@
  
  DEF=-DRTMPDUMP_VERSION=\"$(VERSION)\" $(CRYPTO_DEF) $(XDEF)
  OPT=-O2
@@ -25,9 +25,9 @@
  
  bindir=$(prefix)/bin
  sbindir=$(prefix)/sbin
-@@ -37,7 +38,7 @@
- 
+@@ -41,7 +42,7 @@
  THREADLIB_posix=-lpthread
+ THREADLIB_darwin=-lpthread
  THREADLIB_mingw=
 -THREADLIB=$(THREADLIB_$(SYS))
 +THREADLIB?=$(THREADLIB_$(SYS))
