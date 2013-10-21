@@ -7,27 +7,26 @@ PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	WebTV player based on GTK2+ and LibVLC
 
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
-LIB_DEPENDS=	vlc:${PORTSDIR}/multimedia/vlc \
-		dbus-glib:${PORTSDIR}/devel/dbus-glib \
-		sqlite3:${PORTSDIR}/databases/sqlite3 \
-		curl:${PORTSDIR}/ftp/curl \
-		notify:${PORTSDIR}/devel/libnotify \
-		pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		pcre:${PORTSDIR}/devel/pcre \
-		cairo:${PORTSDIR}/graphics/cairo \
-		png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2 \
-		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libvlc.so:${PORTSDIR}/multimedia/vlc \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
+		libcurl.so:${PORTSDIR}/ftp/curl \
+		libnotify.so:${PORTSDIR}/devel/libnotify \
+		libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
 USES=		gmake iconv pathfix pkgconfig
-USE_GNOME=	glib20 gtk20
+USE_GNOME=	glib20 gtk20 cairo
 USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext xfixes \
 		xi xinerama xrandr xrender
 GNU_CONFIGURE=	yes
@@ -40,25 +39,19 @@ PORTDOCS=	AUTHORS ChangeLog README
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
+NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${pkgdatadir}/doc|$${PREFIX}/share/doc/${PORTNAME}|' \
 		-e 's|install-data-am: install-freetuxtvdocDATA|install-data-am: |' \
 		${WRKSRC}/Makefile.in
 
-.if ! ${PORT_OPTIONS:MNLS}
-CONFIGURE_ARGS+=	--disable-nls
-.endif
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
-	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${PREFIX}/share/pixmaps
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
 .include <bsd.port.mk>
