@@ -2,17 +2,17 @@
 
 PORTNAME=	libstreamanalyzer
 PORTVERSION=	${STRIGI_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	${STRIGI_MASTER_SITES}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Strigi desktop search: streamanalyzer library
 
-LIB_DEPENDS=	avcodec${FFMPEG_SUFFIX}:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFFIX} \
-		clucene-core:${PORTSDIR}/textproc/clucene \
-		exiv2:${PORTSDIR}/graphics/exiv2 \
-		streams:${PORTSDIR}/deskutils/libstreams
+LIB_DEPENDS=	libavcodec${FFMPEG_SUFFIX}.so:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFFIX} \
+		libclucene-core.so:${PORTSDIR}/textproc/clucene \
+		libexiv2.so:${PORTSDIR}/graphics/exiv2 \
+		libstreams.so:${PORTSDIR}/deskutils/libstreams
 
 USES=		pkgconfig iconv
 USE_GNOME=	libxml2
@@ -20,7 +20,7 @@ USE_LDCONFIG=	yes
 
 # supported versions: ffmpeg, ffmpeg1, ffmpeg-devel
 # corresponding FFMPEG_SUFFIX: '', '1', '-devel'
-FFMPEG_SUFFIX?=	1
+FFMPEG_SUFFIX?=
 CMAKE_ARGS+=	-DFFMPEG_SUFFIX:STRING="${FFMPEG_SUFFIX}"
 
 .if !empty(FFMPEG_SUFFIX)
