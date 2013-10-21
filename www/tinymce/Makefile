@@ -13,7 +13,7 @@ COMMENT=	Open source JavaScript HTML WYSIWYG editor for web sites
 
 LICENSE=	LGPL21
 
-CONFLICTS_INSTALL=	tinymce-[0-35-9]*
+CONFLICTS_INSTALL=	tinymce-[0-35-9]* tinymce3-[0-9]*
 
 NO_BUILD=	yes
 USE_ZIP=	yes
