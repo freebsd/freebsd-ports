@@ -11,14 +11,6 @@ include/xalanc/Harness/XalanDiagnosticMemoryManager.hpp
 include/xalanc/Harness/XalanFileUtility.hpp
 include/xalanc/Harness/XalanHarnessDefinitions.hpp
 include/xalanc/Harness/XalanXMLFileReporter.hpp
-%%ICUDEP%%include/xalanc/ICUBridge/ICUBridge.hpp
-%%ICUDEP%%include/xalanc/ICUBridge/ICUBridgeCleanup.hpp
-%%ICUDEP%%include/xalanc/ICUBridge/ICUBridgeCollationCompareFunctor.hpp
-%%ICUDEP%%include/xalanc/ICUBridge/ICUBridgeCollationCompareFunctorImpl.hpp
-%%ICUDEP%%include/xalanc/ICUBridge/ICUBridgeDefinitions.hpp
-%%ICUDEP%%include/xalanc/ICUBridge/ICUFormatNumberFunctor.hpp
-%%ICUDEP%%include/xalanc/ICUBridge/ICUXalanNumberFormatFactory.hpp
-%%ICUDEP%%include/xalanc/ICUBridge/ICUXalanNumberFormatProxy.hpp
 include/xalanc/Include/AIXDefinitions.hpp
 include/xalanc/Include/GCCDefinitions.hpp
 include/xalanc/Include/HPUXDefinitions.hpp
@@ -35,8 +27,6 @@ include/xalanc/Include/XalanDeque.hpp
 include/xalanc/Include/XalanList.hpp
 include/xalanc/Include/XalanMap.hpp
 include/xalanc/Include/XalanMemMgrAutoPtr.hpp
-include/xalanc/Include/XalanMemMgrHelper.hpp
-include/xalanc/Include/XalanMemMngArrayAllocate.hpp
 include/xalanc/Include/XalanMemoryManagement.hpp
 include/xalanc/Include/XalanObjectCache.hpp
 include/xalanc/Include/XalanObjectStackCache.hpp
@@ -63,7 +53,7 @@ include/xalanc/PlatformSupport/PlatformSupportDefinitions.hpp
 include/xalanc/PlatformSupport/PlatformSupportInit.hpp
 include/xalanc/PlatformSupport/PrefixResolver.hpp
 include/xalanc/PlatformSupport/PrintWriter.hpp
-include/xalanc/PlatformSupport/Resettable.hpp
+include/xalanc/PlatformSupport/ProblemListenerBase.hpp
 include/xalanc/PlatformSupport/ReusableArenaAllocator.hpp
 include/xalanc/PlatformSupport/ReusableArenaBlock.hpp
 include/xalanc/PlatformSupport/StdBinInputStream.hpp
@@ -104,7 +94,6 @@ include/xalanc/PlatformSupport/XalanTranscodingServices.hpp
 include/xalanc/PlatformSupport/XalanUTF16Transcoder.hpp
 include/xalanc/PlatformSupport/XalanUnicode.hpp
 include/xalanc/PlatformSupport/XalanXMLChar.hpp
-include/xalanc/XMLSupport/FormatterToDOM.hpp
 include/xalanc/XMLSupport/FormatterToHTML.hpp
 include/xalanc/XMLSupport/FormatterToNull.hpp
 include/xalanc/XMLSupport/FormatterToText.hpp
@@ -150,7 +139,6 @@ include/xalanc/XPath/XNodeSetBase.hpp
 include/xalanc/XPath/XNodeSetNodeProxy.hpp
 include/xalanc/XPath/XNodeSetNodeProxyAllocator.hpp
 include/xalanc/XPath/XNodeSetResultTreeFragProxy.hpp
-include/xalanc/XPath/XNull.hpp
 include/xalanc/XPath/XNumber.hpp
 include/xalanc/XPath/XNumberAllocator.hpp
 include/xalanc/XPath/XNumberBase.hpp
@@ -180,7 +168,6 @@ include/xalanc/XPath/XPathInit.hpp
 include/xalanc/XPath/XPathParserException.hpp
 include/xalanc/XPath/XPathProcessor.hpp
 include/xalanc/XPath/XPathProcessorImpl.hpp
-include/xalanc/XPath/XSpan.hpp
 include/xalanc/XPath/XString.hpp
 include/xalanc/XPath/XStringAdapter.hpp
 include/xalanc/XPath/XStringAdapterAllocator.hpp
@@ -306,6 +293,7 @@ include/xalanc/XSLT/XalanElemVariableAllocator.hpp
 include/xalanc/XSLT/XalanMatchPatternData.hpp
 include/xalanc/XSLT/XalanMatchPatternDataAllocator.hpp
 include/xalanc/XSLT/XalanNumberingResourceBundle.hpp
+include/xalanc/XSLT/XalanParamHolder.hpp
 include/xalanc/XSLT/XalanSourceTreeDocumentAllocator.hpp
 include/xalanc/XSLT/XalanSourceTreeDocumentFragmentAllocator.hpp
 include/xalanc/XSLT/XalanSpaceNodeTester.hpp
@@ -457,7 +445,6 @@ include/xalanc/XercesParserLiaison/XercesWrapperToXalanNodeMap.hpp
 include/xalanc/XercesParserLiaison/XercesWrapperTypes.hpp
 @dirrm include/xalanc/DOMSupport
 @dirrm include/xalanc/Harness
-%%ICUDEP%%@dirrm include/xalanc/ICUBridge
 @dirrm include/xalanc/Include
 @dirrm include/xalanc/PlatformSupport
 @comment @dirrm include/xalanc/TestXPath
@@ -476,15 +463,11 @@ include/xalanc/XercesParserLiaison/XercesWrapperTypes.hpp
 @dirrm include/xalanc/XercesParserLiaison
 @dirrm include/xalanc
 bin/Xalan
-%%LOCALSYS_NLSLOC%%lib/nls/msg/en_US/XalanMsg_en_US.cat
-%%LOCALSYS_NLSLOC%%@dirrm lib/nls/msg/en_US
-%%LOCALSYS_NLSLOC%%@dirrm lib/nls/msg
-%%LOCALSYS_NLSLOC%%@dirrm lib/nls
-%%LOCALSYS_INMEMLOC%%lib/%%XALANMSG_LIB%%
-%%LOCALSYS_INMEMLOC%%@exec ln -fs %%XALANMSG_LIB%% %D/lib/libxalanMsg.so
-%%LOCALSYS_INMEMLOC%%@exec ln -fs %%XALANMSG_LIB%% %D/lib/libxalanMsg.so.%%XALANC_LIB_VERSION%%
-%%LOCALSYS_INMEMLOC%%@unexec if test -L %D/lib/libxalanMsg.so; then rm -f %D/lib/libxalanMsg.so; fi
-%%LOCALSYS_INMEMLOC%%@unexec if test -L %D/lib/libxalanMsg.so.%%XALANC_LIB_VERSION%%; then rm -f %D/lib/libxalanMsg.so.%%XALANC_LIB_VERSION%%; fi
+lib/%%XALANMSG_LIB%%
+@exec ln -fs %%XALANMSG_LIB%% %D/lib/libxalanMsg.so
+@exec ln -fs %%XALANMSG_LIB%% %D/lib/libxalanMsg.so.%%XALANC_LIB_VERSION%%
+@unexec if test -L %D/lib/libxalanMsg.so; then rm -f %D/lib/libxalanMsg.so; fi
+@unexec if test -L %D/lib/libxalanMsg.so.%%XALANC_LIB_VERSION%%; then rm -f %D/lib/libxalanMsg.so.%%XALANC_LIB_VERSION%%; fi
 lib/%%XALANC_LIB%%
 @exec ln -fs %%XALANC_LIB%% %D/lib/libxalan-c.so
 @exec ln -fs %%XALANC_LIB%% %D/lib/libxalan-c.so.%%XALANC_LIB_VERSION%%
@@ -527,7 +510,7 @@ lib/%%XALANC_LIB%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/XPathWrapper/XPathWrapper.hpp
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/XPathWrapper
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/UseStylesheetParam/foo.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/UseStylesheetParam/foo.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/UseStylesheetParam/foo.xslt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/UseStylesheetParam/UseStylesheetParam.cpp
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/UseStylesheetParam
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/TransformToXercesDOM/birds.xml
