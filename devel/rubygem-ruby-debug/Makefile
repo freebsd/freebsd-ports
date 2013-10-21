@@ -9,6 +9,9 @@ MASTER_SITES=	RG
 MAINTAINER=	gogo@cs.uni-sb.de
 COMMENT=	A generic command line interface for ruby-debug
 
+DEPRECATED=	Does not work with Ruby 1.9
+EXPIRATION_DATE=	2013-10-21
+
 RUN_DEPENDS=	rubygem-ruby-debug-base>=0.10.4.0:${PORTSDIR}/devel/rubygem-ruby-debug-base \
 		rubygem-columnize>=0.1:${PORTSDIR}/devel/rubygem-columnize
 
