@@ -9,10 +9,7 @@ MASTER_SITES=	http://www.bsdmon.com/download/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A small DynDNS client
-
-DEPRECATED=	Broken for more than 6 month
-EXPIRATION_DATE=	2013-11-18
+COMMENT=	DynDNS client
 
 OPTIONS_DEFINE=	OPENSSL RCNG DOCS
 OPTIONS_DEFAULT=	OPENSSL RCNG
@@ -40,8 +37,6 @@ LDFLAGS+=	-L${OPENSSLLIB}
 MAKE_ENV+=	"USE_SOCKET_SSL=yes"
 .endif
 
-BROKEN=	segfaults upon use
-
 pre-patch:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKDIR}/${PORTNAME}.${PORTVERSION}
 
@@ -62,18 +57,15 @@ post-patch:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
-	@${MKDIR} ${ETCDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${ETCDIR}/${PORTNAME}.conf.default
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.pem ${ETCDIR}
-.if !exists(${ETCDIR}/${PORTNAME}.conf)
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${ETCDIR}
-.endif
-	@${CHMOD} 600 ${ETCDIR}/*.conf
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.default
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.pem ${STAGEDIR}${ETCDIR}
+	${CHMOD} 600 ${STAGEDIR}${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.default
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} -p ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} -p ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
