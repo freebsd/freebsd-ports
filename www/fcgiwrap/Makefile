@@ -11,7 +11,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libfcgi.so:${PORTSDIR}/www/fcgi
 
-USES=		gmake
+USES=		gmake pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gnosek
