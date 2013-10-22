@@ -3,20 +3,21 @@
 
 PORTNAME=	dv2sub
 PORTVERSION=	0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
 MAINTAINER=	oz@nixil.net
 COMMENT=	Extracts info or subtitles from DV stream
 
-LIB_DEPENDS=	dv.4:${PORTSDIR}/multimedia/libdv
+LIB_DEPENDS=	libdv.so:${PORTSDIR}/multimedia/libdv
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
 
-PLIST_FILES=	bin/dv2sub
-MAN1=		dv2sub.1
+PLIST_FILES=	bin/dv2sub man/man1/dv2sub.1.gz
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} -e 's/void foo(void)//' ${WRKSRC}/configure
+
 .include <bsd.port.mk>
