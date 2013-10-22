@@ -40,8 +40,8 @@ ALL_TARGET=	all doc-html doc-pdf
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
-	@${INSTALL_DATA} ${INSTALL_WRKSRC}/doc/latex/ownCloudClientManual.pdf ${STAGEDIR}${DOCSDIR}
-	@cd ${INSTALL_WRKSRC}/doc/html/unthemed ; ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/html
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/doc/latex/ownCloudClientManual.pdf ${STAGEDIR}${DOCSDIR}
+	cd ${INSTALL_WRKSRC}/doc/html/unthemed ; ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/html
 .endif
 
 .include <bsd.port.mk>

@@ -31,6 +31,6 @@ post-patch:
 		${WRKSRC}/bucardo_ctl ${WRKSRC}/scripts/bucardo_ctl.rc
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/bucardo_ctl.rc ${STAGEDIR}${PREFIX}/etc/rc.d/bucardo
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/bucardo_ctl.rc ${STAGEDIR}${PREFIX}/etc/rc.d/bucardo
 
 .include <bsd.port.mk>
