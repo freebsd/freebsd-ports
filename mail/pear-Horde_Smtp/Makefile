@@ -2,6 +2,7 @@
 
 PORTNAME=	Horde_Smtp
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	mail www pear
 PKGNAMEPREFIX=	pear-
 
@@ -10,6 +11,7 @@ COMMENT=	Horde SMTP Client
 
 USE_HORDE_RUN=	Horde_Exception \
 		Horde_Mail \
+		Horde_Socket_Client \
 		Horde_Support
 
 NO_STAGE=	yes
