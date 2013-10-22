@@ -13,9 +13,8 @@ COMMENT=	DNS notify sender written in C
 PLIST_FILES=	bin/zonenotify
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
+	@${REINPLACE_CMD} -e 's|/usr/local|${STAGEDIR}${PREFIX}|' \
 		${WRKSRC}/Makefile
 
 do-build:
