@@ -16,7 +16,7 @@ USE_RC_SUBR=	firstboot_freebsd_update
 
 .include <bsd.port.pre.mk>
 
-.if ( ${OSVERSION} < 1100001 )
+.if ${OSVERSION} < 902504 || ( ${OSVERSION} >= 1000000 && ${OSVERSION} < 1000501 ) || ( ${OSVERSION} >= 1100000 && ${OSVERSION} < 1100001 )
 IGNORE=	first boot rc.d scripts not supported on this version of FreeBSD
 .endif
 
