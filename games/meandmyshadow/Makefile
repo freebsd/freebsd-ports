@@ -3,7 +3,7 @@
 
 PORTNAME=	meandmyshadow
 PORTVERSION=	0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -18,7 +18,8 @@ USE_SDL=	sdl ttf image mixer image gfx
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		share/pixmaps/${PORTNAME}.png
 PORTDOCS=	*
 PORTDATA=	*
 
@@ -30,8 +31,7 @@ DESKTOP_ENTRIES="Me and My Shadow" \
 		false
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
+OPTIONS_DEFAULT=DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
@@ -41,11 +41,9 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps/
 	${INSTALL_DATA} ${WRKSRC}/icons/64x64/meandmyshadow.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in AUTHORS ChangeLog docs/*
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
 
 .include <bsd.port.mk>
