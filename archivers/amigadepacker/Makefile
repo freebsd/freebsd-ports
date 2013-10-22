@@ -16,7 +16,7 @@ HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_CSTD=	gnu89
 
-CONFIGURE_ARGS+=	--prefix=${STAGEDIR}${PREFIX}
+CONFIGURE_ARGS+=	--prefix=${PREFIX}
 ALL_TARGET=	${PORTNAME}
 
 PLIST_FILES=	bin/amigadepacker man/man1/amigadepacker.1.gz
