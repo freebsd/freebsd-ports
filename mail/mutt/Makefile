@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mutt
-PORTVERSION=	1.5.21
-PORTREVISION=	5
+PORTVERSION=	1.5.22
+PORTREVISION=	0
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/devel/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/devel/ \
@@ -161,10 +161,10 @@ RUN_DEPENDS+=	urlview:${PORTSDIR}/textproc/urlview
 # Handle ncurses/ncurses-port/slang
 .if ${PORT_OPTIONS:MSLANG}
 CONFIGURE_ARGS+=	--with-slang=${LOCALBASE}
-LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
+LIB_DEPENDS+=	libslang.so:${PORTSDIR}/devel/libslang2
 .endif
 
-.if ${PORT_OPTIONS:NCURSES}
+.if ${PORT_OPTIONS:MNCURSES}
 USES=		ncurses
 .endif
 
@@ -181,7 +181,7 @@ CONFIGURE_ARGS+=	--disable-nls
 .endif
 
 .if ${PORT_OPTIONS:MSASL}
-LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 .endif
 
@@ -245,14 +245,14 @@ CONFIGURE_ARGS+=	--disable-iconv
 .endif
 
 .if ${PORT_OPTIONS:MIDN}
-LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
+LIB_DEPENDS+=	libidn.so:${PORTSDIR}/dns/libidn
 CONFIGURE_ARGS+=	--with-idn
 .else
 CONFIGURE_ARGS+=	--without-idn
 .endif
 
 .if ${PORT_OPTIONS:MGPGME}
-LIB_DEPENDS+=	gpgme:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=	libgpgme.so:${PORTSDIR}/security/gpgme
 CONFIGURE_ARGS+=	--enable-gpgme
 .else
 CONFIGURE_ARGS+=	--disable-gpgme
@@ -261,14 +261,14 @@ LDFLAGS=
 
 .if ${PORT_OPTIONS:MGSSAPI}
 .if exists(${LOCALBASE}/bin/krb5-config)
-LIB_DEPENDS+=		gssapi_krb5.2:${PORTSDIR}/security/krb5
+LIB_DEPENDS+=		libgssapi_krb5.so:${PORTSDIR}/security/krb5
 CONFIGURE_ARGS+=	--with-gss=${LOCALBASE}
 .elif exists(${KRB5_HOME}/bin/krb5-config)
-LIB_DEPENDS+=		gssapi_krb5:${PORTSDIR}/security/krb5
+LIB_DEPENDS+=		libgssapi_krb5.so:${PORTSDIR}/security/krb5
 CONFIGURE_ARGS+=	--with-gss=${KRB5_HOME}
 LDFLAGS+=		-L${KRB5_HOME}/lib -rpath=${KRB5_HOME}/lib
 .elif exists(${HEIMDAL_HOME}/bin/krb5-config)
-LIB_DEPENDS+=		gssapi_krb5:${PORTSDIR}/security/krb5
+LIB_DEPENDS+=		libgssapi_krb5.so:${PORTSDIR}/security/krb5
 CONFIGURE_ARGS+=	--with-gss=${HEIMDAL_HOME}
 LDFLAGS+=		-L${HEIMDAL_HOME}/lib -rpath=${HEIMDAL_HOME}/lib
 .elif (defined(MAKE_KERBEROS5)) || exists(/usr/lib/libkrb5.a)
@@ -306,6 +306,7 @@ pre-patch::
 
 .if ${PORT_OPTIONS:MNNTP}
 DISTFILES+=	patch-${VVV_PATCH_VERSION}.vvv.nntp.gz:vvv
+DISTFILES+=	patch-${VVV_PATCH_VERSION}.vvv.nntp_ru.gz:vvv
 CONFIGURE_ARGS+=	--enable-nntp
 XML_NEEDED=	yes
 CATEGORIES+=	news
@@ -354,7 +355,7 @@ post-patch::
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
-MAN1=		mutt.1 mutt_dotlock.1 flea.1 muttbug.1 smime_keys.1
+MAN1=		mutt.1 mutt_dotlock.1 flea.1 muttbug.1 pgpewrap.1 pgpring.1 smime_keys.1
 MAN5=		muttrc.5
 .if ${PORT_OPTIONS:MMAILBOX_MANPAGES}
 MAN5+=		mbox.5 mmdf.5
@@ -394,7 +395,7 @@ SCRIPTS_ENV+=	QUOTE_PATCH="yes"
 .if ${PORT_OPTIONS:MIMAP_HEADER_CACHE} || ${PORT_OPTIONS:MMAILDIR_HEADER_CACHE}
 .if ${PORT_OPTIONS:MTOKYOCABINET}
 CONFIGURE_ARGS+=	--enable-hcache --without-gdbm --without-bdb --with-tokyocabinet
-LIB_DEPENDS+=		tokyocabinet.9:${PORTSDIR}/databases/tokyocabinet
+LIB_DEPENDS+=		libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet
 .else
 USE_BDB=		42+
 CONFIGURE_ARGS+=	--enable-hcache --without-gdbm --with-bdb
