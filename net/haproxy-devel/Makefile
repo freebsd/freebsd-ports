@@ -17,7 +17,6 @@ USES=		gmake
 CONFLICTS=	haproxy-[1234567890]\*
 USE_RC_SUBR=	haproxy
 SUB_FILES=	pkg-message
-MAN1=		haproxy.1
 
 OPTIONS_DEFINE=		PCRE OPENSSL
 OPTIONS_SINGLE=		PCRE
@@ -26,7 +25,6 @@ DPCRE_DESC=		Link dynamically
 SPCRE_DESC=		Link statically
 OPTIONS_DEFAULT=	PCRE DPCRE OPENSSL
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS USE_GETADDRINFO=1 \
@@ -47,18 +45,11 @@ MAKE_ARGS+=	USE_OPENSSL=1
 .endif
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/haproxy ${PREFIX}/sbin/
-	@${INSTALL_MAN} ${WRKSRC}/doc/haproxy.1 ${MAN1PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/haproxy ${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_MAN} ${WRKSRC}/doc/haproxy.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
