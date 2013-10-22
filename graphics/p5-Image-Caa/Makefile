@@ -20,7 +20,7 @@ MAN3=		Image::Caa.3
 
 NO_STAGE=	yes
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/demos/* ${EXAMPLESDIR}
 
 .include <bsd.port.mk>

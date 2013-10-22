@@ -29,14 +29,14 @@ PORTEXAMPLES=	check_installed script-covered
 NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/
+	@${MKDIR} ${DOCSDIR}/
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}/
-	${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 .if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}/
+	@${MKDIR} ${EXAMPLESDIR}/
 	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/examples/|} ${EXAMPLESDIR}/
-	${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
+	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif
 
 .include <bsd.port.mk>

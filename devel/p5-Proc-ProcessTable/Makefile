@@ -21,12 +21,10 @@ MAN3=		Proc::ProcessTable::Process.3 \
 PORTDOCS=	README README.freebsd-kvm README.freebsd-procfs
 
 NO_STAGE=	yes
-post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

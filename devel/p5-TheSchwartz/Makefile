@@ -26,7 +26,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/extras/check_schwartz ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/extras/thetop ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}/
 .endif
 

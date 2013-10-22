@@ -68,7 +68,7 @@ post-patch:
 
 .ifndef NOPORTDOCS
 post-install:
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
 .endif
 

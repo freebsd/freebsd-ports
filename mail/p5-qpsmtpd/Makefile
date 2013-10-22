@@ -60,14 +60,14 @@ pre-configure:
 post-install:
 	@${MKDIR} ${DATADIR}/
 	@${MKDIR} ${DATADIR}/plugins
-	@(cd ${WRKSRC}/plugins/ && ${COPYTREE_SHARE} \* ${DATADIR}/plugins/)
+	cd ${WRKSRC}/plugins/ && ${COPYTREE_SHARE} \* ${DATADIR}/plugins/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/README* ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README* ${DOCSDIR}/
 .endif
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}/
-	@(cd ${WRKSRC}/config.sample/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/)
+	cd ${WRKSRC}/config.sample/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>

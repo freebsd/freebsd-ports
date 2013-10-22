@@ -38,8 +38,6 @@ pre-configure:
 
 post-install:
 	@${MKDIR} ${DATADIR}
-.for FILE in ${RADDBFILES}
-	@${INSTALL_DATA} ${WRKSRC}/raddb/${FILE} ${DATADIR}/${FILE}
-.endfor
+	cd ${WRKSRC}/raddb/ && ${INSTALL_DATA} ${RADDBFILES} ${DATADIR}
 
 .include <bsd.port.mk>

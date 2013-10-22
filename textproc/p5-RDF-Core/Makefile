@@ -40,7 +40,7 @@ post-install:
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
 .for DOCDIR in ${DOCSUBDIR}
 	@${MKDIR} ${DOCSDIR}/${DOCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${DOCDIR}/*.html	${DOCSDIR}/${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${DOCDIR}/*.html	${DOCSDIR}/${DOCDIR}
 .endfor
 .endif
 

@@ -47,17 +47,6 @@ bin/statistic.pl
 %%SITE_PERL%%/Text/NSP/Measures/4D/MI.pm
 %%SITE_PERL%%/Text/NSP/Measures/4D/MI/ll.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/NSP/.packlist
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/FAQ.pod
-%%PORTDOCS%%%%DOCSDIR%%/NSP-Class-diagram.pdf
-%%PORTDOCS%%%%DOCSDIR%%/NSP-Class-diagram.png
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.pod
-%%PORTDOCS%%%%DOCSDIR%%/TODO.pod
-%%PORTDOCS%%%%DOCSDIR%%/USAGE.pod
-%%PORTDOCS%%%%DOCSDIR%%/cicling2003.pdf
-%%PORTDOCS%%%%DOCSDIR%%/cicling2003.ps
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/NSP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
 @dirrm %%SITE_PERL%%/Text/NSP/Measures/4D/MI

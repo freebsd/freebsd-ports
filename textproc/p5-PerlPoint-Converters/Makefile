@@ -37,7 +37,7 @@ post-build:
 
 post-install:
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/doc; ${FIND} . | ${CPIO} -padm ${DOCSDIR}
+	cd ${WRKSRC}/doc; ${FIND} . | ${CPIO} -padm ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

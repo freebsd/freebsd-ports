@@ -26,7 +26,7 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}
 .if !defined(NOPORTEXAMPLES)
 NO_STAGE=	yes
 post-install:
-	${MKDIR} ${EXAMPLESDIR}/
+	@${MKDIR} ${EXAMPLESDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} LICENSE test* ${EXAMPLESDIR}/
 .endif
 
