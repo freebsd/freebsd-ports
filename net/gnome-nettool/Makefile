@@ -28,7 +28,6 @@ CFLAGS+=	-DHAVE_SOCKADDR_SA_LEN
 
 NO_STAGE=	yes
 post-install:
-	${MKDIR} ${PREFIX}/share/pixmaps
 	${LN} -sf ${PREFIX}/share/gnome-nettool/pixmaps/gnome-nettool.png \
 		${PREFIX}/share/pixmaps/gnome-nettool.png
 

@@ -168,7 +168,6 @@ post-install:
 	${MKDIR} ${PREFIX}/share/boinc
 .endif
 .if ${PORT_OPTIONS:MMANAGER}
-	${MKDIR} ${PREFIX}/share/pixmaps
 . for name in 16 32 48
 	${INSTALL_DATA} ${WRKSRC}/clientgui/res/boincmgr.${name}x${name}.png \
 	    ${PREFIX}/share/pixmaps

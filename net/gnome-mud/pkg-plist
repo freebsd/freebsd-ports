@@ -39,5 +39,4 @@ share/locale/tr/LC_MESSAGES/gnome-mud.mo
 share/locale/uk/LC_MESSAGES/gnome-mud.mo
 share/locale/vi/LC_MESSAGES/gnome-mud.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-mud.mo
-@dirrmtry share/applications
 @dirrm %%DATADIR%%

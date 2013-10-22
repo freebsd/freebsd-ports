@@ -116,7 +116,6 @@ share/xfce4/doc/fr/xfprint.html
 @dirrmtry include/xfce4
 @dirrmtry lib/xfce4/xfprint-plugins
 @dirrmtry lib/xfce4
-@dirrmtry share/applications
 @dirrm share/gtk-doc/html/libxfprint
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc

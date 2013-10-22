@@ -300,7 +300,6 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/utils.rb
 %%RUBY_SITELIBDIR%%/mikutter/plugin/WHATSTHIS
 share/applications/mikutter.desktop
-@dirrmtry share/applications
 @dirrmtry %%RUBY_SITELIBDIR%%/mikutter/plugin
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/sounds/sources/retweeted_data/e00/d00
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/sounds/sources/retweeted_data/e00

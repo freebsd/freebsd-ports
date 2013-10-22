@@ -357,7 +357,6 @@ share/icons/hicolor/scalable/apps/neubot.svg
 @dirrm %%DATADIR%%/bittorrent
 @dirrm %%DATADIR%%/api
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor

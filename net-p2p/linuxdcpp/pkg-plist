@@ -1,6 +1,5 @@
 bin/linuxdcpp
 share/applications/linuxdcpp.desktop
-@dirrmtry share/applications
 %%DATADIR%%/glade/downloadqueue.glade
 %%DATADIR%%/glade/favoritehubs.glade
 %%DATADIR%%/glade/favoriteusers.glade

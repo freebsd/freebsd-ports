@@ -75,4 +75,3 @@ share/pixmaps/gnome-cups-manager/printer-tray-stopped.png
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
-@dirrmtry share/applications

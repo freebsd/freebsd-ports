@@ -79,7 +79,6 @@ post-install:
 .if defined(LINPHONE_GUI)
 	@${LN} -sf linphone-3 ${PREFIX}/bin/linphone
 	${INSTALL_MAN} ${WRKSRC}/share/C/linphone.1 ${MANPREFIX}/man/man1
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/share/linphone.desktop \
 		${PREFIX}/share/applications
 .else

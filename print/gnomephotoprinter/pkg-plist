@@ -10,4 +10,3 @@ share/icons/hicolor/48x48/apps/gnome-photo-printer.png
 share/icons/hicolor/scalable/apps/gnome-photo-printer.svg
 share/locale/de/LC_MESSAGES/gnome-photo-printer.mo
 @dirrm share/gnome-photo-printer
-@dirrmtry share/applications

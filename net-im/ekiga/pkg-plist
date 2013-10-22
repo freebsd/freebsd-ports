@@ -815,7 +815,6 @@ share/sounds/ekiga/voicemail.wav
 %%GNOMEHELP%%@dirrm share/gnome/help/ekiga/C/figures
 %%GNOMEHELP%%@dirrm share/gnome/help/ekiga/C
 %%GNOMEHELP%%@dirrm share/gnome/help/ekiga
-@dirrmtry share/applications
 %%PLUGINS%%@dirrm lib/ekiga/%%VERSION%%/plugins
 @dirrm lib/ekiga/%%VERSION%%
 @dirrm lib/ekiga

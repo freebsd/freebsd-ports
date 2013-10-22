@@ -8,6 +8,5 @@ bin/unison
 %%PORTDOCS%%%%DOCSDIR%%/unison-%%PORTVERSION%%-manual.pdf
 %%PORTDOCS%%%%DOCSDIR%%/unison-%%PORTVERSION%%-manual.ps
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%TEXT%%@dirrmtry share/applications
 %%TEXT%%@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || :
 %%TEXT%%@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || :

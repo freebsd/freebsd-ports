@@ -11,4 +11,3 @@ share/applications/bssh.desktop
 share/applications/bvnc.desktop
 %%DATADIR%%/interfaces/avahi-discover.ui
 @dirrm %%DATADIR%%/interfaces
-@dirrmtry share/applications

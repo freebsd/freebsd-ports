@@ -1595,7 +1595,6 @@ share/ppd/HP/hp-psc_950xi-hpijs.ppd.gz
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/styles
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrmtry libexec/cups/filter
 @dirrmtry libexec/cups/backend
 @dirrmtry libexec/cups

@@ -154,4 +154,3 @@ share/locale/zh_TW/LC_MESSAGES/liferea.mo
 @dirrm share/liferea
 @dirrmtry man/pl/man1
 @dirrmtry man/pl
-@dirrmtry share/applications

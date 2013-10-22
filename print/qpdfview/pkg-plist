@@ -38,5 +38,4 @@ share/applications/qpdfview.desktop
 %%DATADIR%%/qpdfview_uk.qm
 %%DATADIR%%/qpdfview_zh_CN.qm
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrmtry lib/qpdfview

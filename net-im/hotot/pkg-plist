@@ -313,4 +313,3 @@ share/locale/zh_TW/LC_MESSAGES/hotot.mo
 @dirrm share/hotot/_locales/bg
 @dirrm share/hotot/_locales
 @dirrm share/hotot
-@dirrmtry share/applications

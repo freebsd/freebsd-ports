@@ -747,4 +747,3 @@ share/pixmaps/pidgin/tray/hicolor/index.theme
 @dirrm share/pixmaps/pidgin/tray
 @dirrm share/pixmaps/pidgin
 @dirrmtry lib/pidgin
-@dirrmtry share/applications

@@ -321,7 +321,6 @@ share/vinagre-1/plugins/vnc/vnc.ui
 @dirrm share/gnome/help/vinagre/C
 @dirrm share/gnome/help/vinagre
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm lib/vinagre-1/plugins
 @dirrm lib/vinagre-1/plugin-loaders
 @dirrm lib/vinagre-1

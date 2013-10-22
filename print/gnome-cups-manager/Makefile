@@ -44,7 +44,6 @@ post-patch:
 		${WRKSRC}/libgnomecups/gnome-cups-ui-driver.c
 
 post-install:
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/gnome-cups-manager.desktop \
 		${PREFIX}/share/applications
 

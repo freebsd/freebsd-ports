@@ -1470,4 +1470,3 @@ share/icons/hicolor/scalable/apps/gajim.svg
 @dirrm %%DATADIR%%/data/activities
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

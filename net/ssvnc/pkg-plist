@@ -19,4 +19,3 @@ share/applications/ssvnc.desktop
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry lib/ssvnc/util
 @dirrmtry lib/ssvnc
-@dirrmtry share/applications

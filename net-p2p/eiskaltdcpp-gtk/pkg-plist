@@ -137,4 +137,3 @@ share/locale/uk/LC_MESSAGES/eiskaltdcpp-gtk.mo
 @dirrm share/eiskaltdcpp/gtk/themes
 @dirrm share/eiskaltdcpp/gtk/ui
 @dirrm share/eiskaltdcpp/gtk
-@dirrmtry share/applications

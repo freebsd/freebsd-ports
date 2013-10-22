@@ -12,7 +12,6 @@ bin/x11vnc
 %%DATADIR%%/classes/VncViewer.jar
 %%DATADIR%%/classes/index.vnc
 share/applications/x11vnc.desktop
-@dirrmtry share/applications
 @dirrm %%DATADIR%%/classes/ssl
 @dirrm %%DATADIR%%/classes
 @dirrm %%DATADIR%%

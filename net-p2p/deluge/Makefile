@@ -83,29 +83,19 @@ post-patch:
 
 post-install:
 # do these by hand, else they wind up in the wrong place
-	if [ ! -d ${PREFIX}/share/icons/hicolor/scalable/apps ]; then \
 	${MKDIR} ${PREFIX}/share/icons/hicolor/scalable/apps ; \
-	fi
 	${INSTALL_DATA} ${WRKSRC}/deluge/data/icons/scalable/apps/deluge.svg \
 		${PREFIX}/share/icons/hicolor/scalable/apps
 .for size in 16 22 24 32 36 48 64 72 96 128 192 256
-	if [ ! -d ${PREFIX}/share/icons/hicolor/${size}x${size}/apps ]; then \
-		${MKDIR} ${PREFIX}/share/icons/hicolor/${size}x${size}/apps ; \
-	fi
+	${MKDIR} ${PREFIX}/share/icons/hicolor/${size}x${size}/apps ; \
 	${INSTALL_DATA} ${WRKSRC}/deluge/data/icons/hicolor/${size}x${size}/apps/deluge.png \
 		${PREFIX}/share/icons/hicolor/${size}x${size}/apps
 .endfor
-	if [ ! -d ${PREFIX}/share/pixmaps ]; then \
-	${MKDIR} ${PREFIX}/share/pixmaps ; \
-	fi
 .for file in png xpm
 	${INSTALL_DATA} ${WRKSRC}/deluge/data/pixmaps/deluge.${file} \
 		${PREFIX}/share/pixmaps
 .endfor
 .if ${PORT_OPTIONS:MGTK2}
-	if [ ! -d ${PREFIX}/share/applications ]; then \
-		${MKDIR} ${PREFIX}/share/applications ; \
-	fi
 	${INSTALL_DATA} ${WRKSRC}/deluge/data/share/applications/deluge.desktop \
 		${PREFIX}/share/applications
 .endif

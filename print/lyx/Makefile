@@ -53,7 +53,6 @@ post-install:
 # Manually install the 48x48 icon and .desktop file.
 # Will not be needed in the 2.1 series, see LyX tickets 2820 and 7919.
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/lib/images/lyx.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps
 	${INSTALL_DATA} ${FILESDIR}/lyx.desktop ${STAGEDIR}${PREFIX}/share/applications
 

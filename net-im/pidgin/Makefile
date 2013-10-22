@@ -38,7 +38,6 @@ post-build:
 	    	Makefile ${MAKE_ARGS} pidgin.desktop
 
 post-install:
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/pidgin.desktop \
 	    	${PREFIX}/share/applications/pidgin.desktop
 	${INSTALL_MAN} ${WRKSRC}/doc/pidgin.1 ${MAN1PREFIX}/man/man1

@@ -1302,7 +1302,6 @@ share/pixmaps/deluge.xpm
 @dirrmtry share/icons/hicolor/128x128
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/gray/window
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/gray/tree
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/gray/toolbar

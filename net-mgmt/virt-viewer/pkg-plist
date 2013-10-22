@@ -76,10 +76,8 @@ share/mime/packages/virt-viewer-mime.xml
 %%DATADIR%%/ui/virt-viewer.xml
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
-@dirrm share/applications
 %%NLS%%@dirrm share/locale/bo/LC_MESSAGES
 %%NLS%%@dirrm share/locale/ks/LC_MESSAGES
 %%NLS%%@dirrm share/locale/ks
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
-@dirrmtry share

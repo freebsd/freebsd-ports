@@ -8,4 +8,3 @@ share/pixmaps/gribouy/gribouy-logo.jpg
 @dirrm share/pixmaps/gribouy
 @dirrm share/gribouy/glade
 @dirrm share/gribouy
-@dirrmtry share/applications

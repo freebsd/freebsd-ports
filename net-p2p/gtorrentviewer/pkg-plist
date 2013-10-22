@@ -22,4 +22,3 @@ share/pixmaps/gtorrentviewer.xpm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/GTorrentViewer/pixmaps
 @dirrm share/GTorrentViewer
-@dirrmtry share/applications

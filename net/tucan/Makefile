@@ -31,10 +31,6 @@ pre-install:
 	${RM} ${WRKSRC}/core/*.orig
 
 do-install:
-	${MKDIR} ${PREFIX}/bin/
-	${MKDIR} ${PREFIX}/share/pixmaps/
-	${MKDIR} ${PREFIX}/man/man1/
-	${MKDIR} ${PREFIX}/share/applications/
 	${MKDIR} ${DATADIR}
 	${MKDIR} ${DATADIR}/core
 	${MKDIR} ${DATADIR}/default_plugins

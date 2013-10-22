@@ -94,7 +94,6 @@ share/telepathy/clients/Vino.client
 @dirrm %%DATADIR%%
 @dirrmtry share/telepathy/clients
 @dirrmtry share/telepathy
-@dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES

@@ -23,6 +23,5 @@ share/applications/jpilot.desktop
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/jpilot.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/jpilot.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/jpilot.mo
-@dirrmtry share/applications
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw

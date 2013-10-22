@@ -104,7 +104,6 @@ post-install:
 	@${MKDIR} ${DESKTOPDIR}
 	(cd ${WRKDIR}/usr/share/applications \
 		&& ${INSTALL_DATA} tribler.desktop ${DESKTOPDIR})
-	@${MKDIR} ${PREFIX}/share/pixmaps
 	(cd ${WRKDIR}/usr/share/pixmaps \
 		&& ${INSTALL_DATA} tribler.xpm ${PREFIX}/share/pixmaps)
 .if ${PORT_OPTIONS:MDOCS}
