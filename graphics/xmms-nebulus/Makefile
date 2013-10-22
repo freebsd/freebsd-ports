@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://nebulus.tuxfamily.org/
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS visualization plugin that uses SDL and OpenGL
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms

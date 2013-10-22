@@ -6,7 +6,7 @@ PORTVERSION=	0.9.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.tnsp.org/xs-files/
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS input plugin to play SID files
 
 LIB_DEPENDS=	sidplay.1:${PORTSDIR}/audio/libsidplay

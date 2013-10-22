@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/paranormal/old-paranormal-xmms/${PORTVERSION}
 DISTNAME=	paranormal-${PORTVERSION:S/.p/pre/}
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adaptation of the "OpenGL Spectrum Analyzer" from XMMS
 
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
