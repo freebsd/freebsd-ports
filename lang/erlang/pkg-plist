@@ -12,12 +12,6 @@ bin/typer
 @comment Insert PLIST here
 @comment -=[ begin PLIST.lib-erlang ]=-
 @comment -=[ end PLIST.lib-erlang ]=-
-@dirrm lib/%%ERLANG_LIB%%/man/man6
-@dirrm lib/%%ERLANG_LIB%%/man/man4
-@dirrm lib/%%ERLANG_LIB%%/man/man3
-@dirrm lib/%%ERLANG_LIB%%/man/man1
-@dirrm lib/%%ERLANG_LIB%%/man
-@dirrmtry lib/%%ERLANG_LIB%%/lib
 @dirrmtry lib/%%ERLANG_LIB%%
 %%PORTDOCS%%%%DOCSDIR%%/armstrong_thesis_2003.pdf
 %%PORTDOCS%%%%DOCSDIR%%/bjarnelic.pdf

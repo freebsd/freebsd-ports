@@ -3,7 +3,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	15.b.03.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
@@ -52,11 +52,13 @@ OPTIONS_DEFAULT=SMP OPENSSL THREADS SCTP KQUEUE
 ERL_RELEASE=	R${PORTVERSION:S/.//g:U:S/1$/-1/}
 
 USES=		gmake perl5
-USE_CSTD=	gnu89
 USE_RC_SUBR=	epmd
 GNU_CONFIGURE=	yes
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
+EI_VSN=		3.7.9
+TOOLS_VSN=	2.6.8
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -176,78 +178,41 @@ MAKE_ARGS+=	ARCH=x86
 # Erlang man pages are more of internal documentation using the man format than
 # actual system man pages. (erl.1 and epmd.1 perhaps being the exception).
 
-NO_MANCOMPRESS=	yes
-
-MAN1PREFIX=	${PREFIX}/lib/${ERLANG_LIB}
-MAN3PREFIX=	${PREFIX}/lib/${ERLANG_LIB}
-MAN4PREFIX=	${PREFIX}/lib/${ERLANG_LIB}
-MAN6PREFIX=	${PREFIX}/lib/${ERLANG_LIB}
-
 # Install documentation. (HTML docs need to be in same dir as the
 # rest, not in share/doc/erlang as it should, because of relative
 # links in the documentation.
+
 post-install:
-	@${LN} -sf ${PREFIX}/lib/${ERLANG_LIB}/lib/erl_interface-*/bin/erl_call ${PREFIX}/bin/erl_call
+	@${LN} -sf ../lib/${ERLANG_LIB}/lib/erl_interface-${EI_VSN}/bin/erl_call ${STAGEDIR}${PREFIX}/bin/erl_call
 	@for SECTION in 1 3 4 6; do \
 		${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_MAN} \
-			-C ${PREFIX}/lib/${ERLANG_LIB} \
+			-C ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB} \
 			"man/man$${SECTION}/*.$${SECTION}" || ${TRUE}; \
 	done
-	@${RM} -rf ${PREFIX}/lib/${ERLANG_LIB}/man/cat?
+	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/man/cat?
+
 .if ${PORT_OPTIONS:MDOCS}
 	@${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_DOCS} \
-		-C ${PREFIX}/lib/${ERLANG_LIB}
+		-C ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}
 	@${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
-		${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-*/doc/
-
-	@${MKDIR} ${DOCSDIR}
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-*/doc/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in ${DOC_DISTFILES}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/$$(expr ${FILE} : '\([^:]*\)') ${DOCSDIR}
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/$$(expr ${FILE} : '\([^:]*\)') ${STAGEDIR}/${DOCSDIR}
 .endfor
 .endif
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/${ERLANG_LIB}
-	@${CHMOD} -R o+rX-w,g+rX-w ${PREFIX}/lib/${ERLANG_LIB}
 
-# All non-library files.
-
-	@cd ${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* -type d -empty \
-		| ${GREP} -v "^lib/${ERLANG_LIB}/lib" \
+	@cd ${STAGEDIR}${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* -type d -empty \
 		| ${SORT} \
 		| ${SED} -e 's#^#@exec ${MKDIR} %D/#g' \
 		> ${ERLANG_PLIST}
 
-	@cd ${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* -type f -o -type l \
-		| ${GREP} -v "^lib/${ERLANG_LIB}/man" \
-		| ${GREP} -v "^lib/${ERLANG_LIB}/lib" \
+	@cd ${STAGEDIR}${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* -type f -o -type l \
 		| ${SORT} \
 		>> ${ERLANG_PLIST}
 
-# Stock OTP libraries.
-
-	@for LIBRARY in ${OTP_LIBS}; do \
-		cd ${PREFIX}; ${TEST} -d lib/${ERLANG_LIB}/lib/$${LIBRARY} \
-			&& ${FIND} lib/${ERLANG_LIB}/lib/$${LIBRARY} -type f -o -type l; \
-	done | ${SORT} >> ${ERLANG_PLIST}
-
-# Stock OTP library directories.
-
-	@for LIBRARY in ${OTP_LIBS}; do \
-		cd ${PREFIX}; ${TEST} -d lib/${ERLANG_LIB}/lib/$${LIBRARY} \
-			&& ${FIND} lib/${ERLANG_LIB}/lib/$${LIBRARY} -type d -empty \
-			| ${SED} -e 's#^#@exec ${MKDIR} %D/#g'; \
-	done | ${SORT} >> ${ERLANG_PLIST}
-
-	@for LIBRARY in ${OTP_LIBS}; do \
-		cd ${PREFIX}; ${TEST} -d lib/${ERLANG_LIB}/lib/$${LIBRARY} \
-			&& ${FIND} lib/${ERLANG_LIB}/lib/$${LIBRARY} -type d \
-			| ${SED} -e 's/^/@dirrm /g'; \
-	done | ${SORT} -r >> ${ERLANG_PLIST}
-
-# Other directories.
-
-	@cd ${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* -type d | ${SORT} -r \
-		| ${GREP} -v "^lib/${ERLANG_LIB}/man" \
-		| ${GREP} -v "^lib/${ERLANG_LIB}/lib" \
+	@cd ${STAGEDIR}${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* -type d \
+		| ${SORT} -r \
 		| ${SED} -e 's/^/@dirrm /g' \
 		>> ${ERLANG_PLIST}
 
@@ -257,18 +222,5 @@ post-install:
 	@${ECHO_CMD} "r ${ERLANG_PLIST}"	>> ${WRKDIR}/ex.script
 	@${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
 	@cd ${WRKDIR}; ex < ex.script
-	@${CAT} ${PKGMESSAGE}
-
-buildplt:
-	@${ECHO_CMD} =====================================================
-	@${ECHO_CMD} WARNING: building a full PLT may literally take hours
-	@${ECHO_CMD}
-	@${ECHO_CMD} You may wish to settle for the standard PLT built by
-	@${ECHO_CMD} dialyzer on the first run.
-	@${ECHO_CMD} =====================================================
-	@cd ${PREFIX}/lib/${ERLANG_LIB}/lib; ${PREFIX}/bin/dialyzer --verbose --build_plt --output_plt ${HOME}/.dialyzer_plt -c $$(find ${OTP_LIBS} -name ebin -maxdepth 1) || true
-
-.include "Makefile.lib"
-.include "Makefile.man"
 
 .include <bsd.port.mk>
