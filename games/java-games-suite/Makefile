@@ -21,7 +21,6 @@ PLIST_FILES=	bin/java-games-suite \
 SUB_FILES=	${PORTNAME}.sh
 GAMES=	MM reversi Mine Tetris RT Number
 
-NO_STAGE=	yes
 post-extract-script:
 .for game in ${GAMES}
 	@${ECHO_CMD} "Main-Class: ${game}" > ${WRKSRC}/${game}/MANIFEST.MF
@@ -40,9 +39,10 @@ post-build-script:
 .endfor
 
 do-install:
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 .for game in ${GAMES}
-	${INSTALL_DATA} ${WRKSRC}/${game}/${game}.jar ${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/${game}/${game}.jar ${STAGEDIR}${JAVAJARDIR}
 .endfor
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
