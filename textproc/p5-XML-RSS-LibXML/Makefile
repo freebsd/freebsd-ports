@@ -33,7 +33,7 @@ MAN3=		XML::RSS::LibXML.3 \
 NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}/
+	@${MKDIR} ${EXAMPLESDIR}/
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/benchmark.pl ${EXAMPLESDIR}/
 .endif
 

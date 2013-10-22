@@ -38,10 +38,10 @@ PORTDOCS=	# suck all DOCSDIR
 
 post-install:
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/doc; ${FIND} . | ${CPIO} -padm ${DOCSDIR}
-	@cd ${WRKSRC}; ${FIND} utilities | ${CPIO} -padm ${DOCSDIR}
+	cd ${WRKSRC}/doc; ${FIND} . | ${CPIO} -padm ${DOCSDIR}
+	cd ${WRKSRC}; ${FIND} utilities | ${CPIO} -padm ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}/demo; ${FIND} . | ${CPIO} -padm ${EXAMPLESDIR}
+	cd ${WRKSRC}/demo; ${FIND} . | ${CPIO} -padm ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

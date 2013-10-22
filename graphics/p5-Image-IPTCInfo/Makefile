@@ -22,7 +22,7 @@ post-patch:
 
 .if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/demo_images/* ${EXAMPLESDIR}
 .endif
 

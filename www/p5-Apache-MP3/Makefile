@@ -30,8 +30,8 @@ MAN3=		Apache::MP3.3 \
 
 NO_STAGE=	yes
 post-install:
-	${MKDIR} ${DATADIR}
+	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/apache_mp3/* ${DATADIR}
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -103,15 +103,15 @@ DOC_FILES=	../Manual.pod \
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@ ${MKDIR} ${DOCSDIR}/
+	@${MKDIR} ${DOCSDIR}/
 .for FILE in ${DOC_FILES}
-	@ ${INSTALL_DATA} ${WRKSRC}/lib/Maypole/Manual/${FILE} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/lib/Maypole/Manual/${FILE} ${DOCSDIR}/
 .endfor
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@ ${MKDIR} ${EXAMPLESDIR}/
-	@ ${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}/
+	@${MKDIR} ${EXAMPLESDIR}/
+	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}/
 .endif
-	@ ${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

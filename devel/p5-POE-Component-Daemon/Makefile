@@ -26,7 +26,7 @@ PORTDOCS=	*
 NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
-	@for i in ${WRKSRC}/eg/*forking; do \
+	for i in ${WRKSRC}/eg/*forking; do \
 		${PERL} -pi -e '$$_ = undef if m{use FindBin}o;' \
 			-e 's{.FindBin::Dir(.+)$$}{/tmp$$1\nwarn "Logging to \$$logfile\\n";}o' $${i}; \
 		${INSTALL_SCRIPT} $${i} ${EXAMPLESDIR}; \
@@ -34,7 +34,7 @@ post-install:
 
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@for i in ${WRKSRC}/eg/*.png ${WRKSRC}/eg/*.dot; do \
+	for i in ${WRKSRC}/eg/*.png ${WRKSRC}/eg/*.dot; do \
 		${INSTALL_DATA} $${i} ${DOCSDIR}; \
 	done
 .endif

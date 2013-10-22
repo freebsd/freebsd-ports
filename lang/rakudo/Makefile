@@ -81,7 +81,7 @@ do-install:
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/perl6.1 ${MAN1PREFIX}/man/man1/perl6.1
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/
+	@${MKDIR} ${DOCSDIR}/
 	cd ${WRKSRC}/docs/ && ${INSTALL_DATA} ${EXTRA_DOCS} ${DOCSDIR}/
 .endif
 

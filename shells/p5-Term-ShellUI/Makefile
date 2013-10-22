@@ -23,8 +23,8 @@ MAN3=		Term::ShellUI.3 \
 NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}/
-	${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
+	@${MKDIR} ${EXAMPLESDIR}/
+	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	cd ${WRKSRC}/examples/ && ${INSTALL_SCRIPT} \
 		fileman-example synopsis synopsis-big tui-sample ${EXAMPLESDIR}/
 .endif

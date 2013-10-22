@@ -17,7 +17,7 @@ MAN3=		XML::TreePP.3
 
 NO_STAGE=	yes
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/example/envxml.cgi ${EXAMPLESDIR}
 
 .include <bsd.port.mk>

@@ -26,10 +26,7 @@ PORTEXAMPLES=	*
 NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}/
-.for i in app benchmark devel
-	${MKDIR} ${EXAMPLESDIR}/${i}
-.endfor
+	@${MKDIR} ${EXAMPLESDIR}/
 	${CP} -R ${WRKSRC}/samples/* ${EXAMPLESDIR}/
 .endif
 

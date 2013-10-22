@@ -61,7 +61,7 @@ MAN3=		SVN::CHANGES.3 \
 NO_STAGE=	yes
 post-install:
 	@${MKDIR} -p ${WWWDIR}
-	@${CP} -r ${WRKSRC}/SVN-Web.psgi ${WRKSRC}/template ${WRKSRC}/css ${WWWDIR}
+	${CP} -R ${WRKSRC}/SVN-Web.psgi ${WRKSRC}/template ${WRKSRC}/css ${WWWDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/svnweb-install ${PREFIX}/bin
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}

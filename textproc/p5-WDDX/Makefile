@@ -23,7 +23,7 @@ MAN3=		WDDX.3
 NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Changes ${DOCSDIR}
 .endif
 

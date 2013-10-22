@@ -56,16 +56,14 @@ MAN3=	Text::NSP.3 \
 	Text::NSP::Measures::4D::MI.3 \
 	Text::NSP::Measures::4D::MI::ll.3
 
-DOCS=	CHANGES README doc/FAQ.pod doc/NSP-Class-diagram.pdf \
+PORTDOCS=	CHANGES README doc/FAQ.pod doc/NSP-Class-diagram.pdf \
 	doc/NSP-Class-diagram.png doc/README.pod doc/TODO.pod \
 	doc/USAGE.pod doc/cicling2003.pdf doc/cicling2003.ps \
 
 .ifndef (NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
-.for FILE in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-.endfor
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 	@${ECHO_MSG} "===>   Installing documentation in ${DOCSDIR}"
 .endif
 
