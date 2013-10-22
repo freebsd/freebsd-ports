@@ -7,7 +7,7 @@
 +all:	$(EXE)
  $(EXE): $(SRC)
 -	gcc -lusb -g -o $@ $^
-+	gcc -lusb -g -o $@ $(SRC)
++	cc -lusb -g -o $@ $(SRC)
  
  clean: 
  	rm $(EXE)
