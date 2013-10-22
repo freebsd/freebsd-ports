@@ -796,6 +796,7 @@
     SUBDIR += pear-Horde_Ldap
     SUBDIR += pear-Horde_Rpc
     SUBDIR += pear-Horde_Scribe
+    SUBDIR += pear-Horde_Socket_Client
     SUBDIR += pear-Horde_Url
     SUBDIR += pear-Net_CDDB
     SUBDIR += pear-Net_CheckIP
