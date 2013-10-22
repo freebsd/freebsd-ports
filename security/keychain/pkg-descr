@@ -5,5 +5,4 @@ system rather than per login session.
 Please study the documentation on the keychain website carefully since
 incorrect usage of this script may have certain security implications.
 
-Author: Daniel Robbins <drobbins@funtoo.org>
-WWW: http://www.funtoo.org/wiki/Keychain
+WWW: http://www.funtoo.org/index.php?title=Keychain

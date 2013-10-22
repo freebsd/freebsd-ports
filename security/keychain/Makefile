@@ -18,13 +18,11 @@ OPTIONS_DEFINE=	DOCS
 FETCH_ARGS?=	-Fpr
 USE_BZIP2=	yes
 
-MAN1=		keychain.1
-
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/keychain.1.gz
 
 PORTDOCS=	ChangeLog README.rst
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${LOCALBASE}/bin/ssh-agent) && !exists(/usr/bin/ssh-agent)
@@ -32,12 +30,12 @@ RUN_DEPENDS+=	ssh-agent:${PORTSDIR}/security/openssh-portable
 .endif
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/keychain.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
