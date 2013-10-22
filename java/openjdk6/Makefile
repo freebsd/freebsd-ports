@@ -189,6 +189,7 @@ ICONV_LIBS=
 ICONV_INCLUDE=	-I${LOCALBASE}/include
 ICONV_LIBS=	-L${LOCALBASE}/lib ${ICONV_LIB}
 .endif
+ZLIB_LIBS?=	-lz
 
 .if ${COMPILER_TYPE} == "clang"
 MAKE_ENV+=	COMPILER_WARNINGS_FATAL=false
@@ -224,12 +225,20 @@ post-extract:
 	    -e s/Linux/FreeBSD/g {} \;
 
 post-patch:
-	@${REINPLACE_CMD} \
-	    -e "s|%%ICONV_INC%%|${ICONV_INCLUDE}|" \
+	@${REINPLACE_CMD} -e "s|%%CXX_LIBS%%|${CXX_LIBS}|" \
+	    ${WRKSRC}/corba/make/common/Defs-bsd.gmk \
+	    ${WRKSRC}/jdk/make/common/Defs-bsd.gmk
+	@${REINPLACE_CMD} -e "s|%%ICONV_INC%%|${ICONV_INCLUDE}|" \
 	    -e "s|%%ICONV_LIB%%|${ICONV_LIBS}|" \
 	    ${WRKSRC}/Makefile ${WRKSRC}/jdk/make/java/instrument/Makefile \
 	    ${WRKSRC}/jdk/make/java/npt/Makefile \
 	    ${WRKSRC}/jdk/make/sun/splashscreen/Makefile
+	@${REINPLACE_CMD} -e "s|%%ZLIB_LIBS%%|${ZLIB_LIBS}|" \
+	    ${WRKSRC}/jdk/make/com/sun/java/pack/Makefile \
+	    ${WRKSRC}/jdk/make/common/Program.gmk \
+	    ${WRKSRC}/jdk/make/java/jli/Makefile \
+	    ${WRKSRC}/jdk/make/java/zip/Makefile \
+	    ${WRKSRC}/jdk/make/tools/freetypecheck/Makefile
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|" \
 	    ${WRKSRC}/hotspot/src/os/bsd/vm/os_bsd.cpp \
 	    ${WRKSRC}/jdk/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java

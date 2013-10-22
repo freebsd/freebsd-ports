@@ -128,7 +128,7 @@
  override LIBCXX                  = -Wl,-Bstatic -lstdc++ -lgcc -Wl,-Bdynamic
  else
 -override LIBCXX                  = -lstdc++
-+override LIBCXX                  =
++override LIBCXX                  = %%CXX_LIBS%%
  endif
  override LIBPOSIX4               =
  override LIBSOCKET               =
@@ -1161,7 +1161,7 @@
    OTHER_CXXFLAGS += $(ZINCLUDE)
    LDDFLAGS += $(ZIPOBJS)
 + else
-+  LDDFLAGS += -lz
++  LDDFLAGS += %%ZLIB_LIBS%%
 +  OTHER_CXXFLAGS += -DSYSTEM_ZLIB
 + endif
  else
@@ -1400,7 +1400,7 @@
  override LIBCXX                  = -Wl,-Bstatic -lstdc++ -lgcc -Wl,-Bdynamic
  else
 -override LIBCXX                  = -lstdc++
-+override LIBCXX                  =
++override LIBCXX                  = %%CXX_LIBS%%
  endif
  override LIBPOSIX4               =
  override LIBSOCKET               =
@@ -1515,7 +1515,7 @@
 +    LDFLAGS += -Wl,--export-dynamic
 +  endif
 +  ifeq ($(SYSTEM_ZLIB),true)
-+      OTHER_LDLIBS += -lz
++      OTHER_LDLIBS += %%ZLIB_LIBS%%
 +  endif
 +endif
  ifneq (,$(findstring $(PLATFORM), linux solaris))	# UNIX systems
@@ -2116,7 +2116,7 @@
 +ifneq ($(SYSTEM_ZLIB),true)
 +  OTHER_INCLUDES += -I$(ZIP_SRC)
 +else
-+  LDLIBS += -lz
++  LDLIBS += %%ZLIB_LIBS%%
 +endif
  
  #
@@ -2385,7 +2385,7 @@
  # Link to JVM library for JVM_Zip* functions
  #
 +ifeq ($(SYSTEM_ZLIB),true)
-+OTHER_LDLIBS = -lz
++OTHER_LDLIBS = %%ZLIB_LIBS%%
 +else
  OTHER_LDLIBS = $(JVMLIB)
 +endif
@@ -2869,7 +2869,7 @@
 -      FT_OPTIONS += -Wl,-rpath -Wl,$(FT_LIB) -lfreetype
 +  else 
 +    ifeq ($(PLATFORM), bsd)
-+      FT_OPTIONS += -lfreetype -lz
++      FT_OPTIONS += -lfreetype %%ZLIB_LIBS%%
 +    else # linux
 +        FT_OPTIONS += -Wl,-rpath -Wl,$(FREETYPE_LIB_PATH) -lfreetype
 +    endif
