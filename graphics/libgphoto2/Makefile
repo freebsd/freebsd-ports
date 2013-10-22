@@ -12,8 +12,8 @@ COMMENT=	Universal digital camera control library
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	exif:${PORTSDIR}/graphics/libexif \
-		jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 USES=		gmake pkgconfig
 USE_BZIP2=	yes
@@ -26,9 +26,6 @@ CONFIGURE_ENV=	LTDLINCL="-I${LOCALBASE}/include" \
 
 PLIST_SUB=	VERSION="${PORTVERSION}" VERSION_PORT=0.8.0
 
-MAN3=		libgphoto2.3 libgphoto2_port.3
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 1000040

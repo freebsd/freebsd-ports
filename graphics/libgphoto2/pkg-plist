@@ -237,6 +237,8 @@ lib/libgphoto2_port.so
 lib/libgphoto2_port.so.0
 libdata/pkgconfig/libgphoto2.pc
 libdata/pkgconfig/libgphoto2_port.pc
+man/man3/libgphoto2.3.gz
+man/man3/libgphoto2_port.3.gz
 share/doc/libgphoto2/ABOUT-NLS
 share/doc/libgphoto2/AUTHORS
 share/doc/libgphoto2/ChangeLog
