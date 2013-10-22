@@ -303,7 +303,6 @@
     SUBDIR += ruby-programmingruby
     SUBDIR += ruby-reference
     SUBDIR += ruby-usersguide
-    SUBDIR += ruby18
     SUBDIR += ruby19
     SUBDIR += ruby20
     SUBDIR += runawk

@@ -1784,8 +1784,6 @@
     SUBDIR += rubygem-merb-helpers
     SUBDIR += rubygem-merb-param-protection
     SUBDIR += rubygem-modernizr
-    SUBDIR += rubygem-mongrel
-    SUBDIR += rubygem-mongrel_cluster
     SUBDIR += rubygem-multipart-post
     SUBDIR += rubygem-nanoc
     SUBDIR += rubygem-net-http-digest_auth
@@ -1804,7 +1802,6 @@
     SUBDIR += rubygem-rack-ssl
     SUBDIR += rubygem-rack-test
     SUBDIR += rubygem-rails
-    SUBDIR += rubygem-rails-app-installer
     SUBDIR += rubygem-railties
     SUBDIR += rubygem-raindrops
     SUBDIR += rubygem-ramaze
@@ -2036,7 +2033,6 @@
     SUBDIR += twiki-WysiwygPlugin
     SUBDIR += twill
     SUBDIR += twms
-    SUBDIR += typo
     SUBDIR += typo3
     SUBDIR += typo345
     SUBDIR += typo347

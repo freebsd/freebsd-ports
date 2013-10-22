@@ -1,6 +1,0 @@
-The Rails Application Installer makes it easy to provide 'there is no step 3'
-end-user installs for Rails applications. It can create .gems from your
-application that can then be installed via 'gem install my_app; my_app install
-/some/path'.
-
-WWW: http://scottstuff.net

@@ -1,4 +1,0 @@
-Mongrel plugin that provides commands and Capistrano tasks for managing
-multiple Mongrel processes.
-
-WWW: http://rubyforge.org/projects/railsmachine/
