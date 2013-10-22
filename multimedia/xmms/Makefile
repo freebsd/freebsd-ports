@@ -13,7 +13,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER?=	c.petrik.sosa@gmail.com
 COMMENT?=	X Multimedia System -- An audio player with Winamp GUI
 
-CONFLICTS?=	ru-xmms-[0-9]* zh-xmms[0-9]*
+LICENSE=	GPLv2
+
+CONFLICTS?=	ru-xmms-[0-9]* zh-xmms-[0-9]*
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils pathfix gmake iconv
 USE_BZIP2=	yes
