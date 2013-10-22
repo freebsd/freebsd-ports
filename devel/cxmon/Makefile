@@ -11,8 +11,7 @@ COMMENT=	Interactive file manipulation tool and disassembler
 
 GNU_CONFIGURE=	yes
 
-MAN1=		cxmon.1
-PLIST_FILES=	bin/cxmon
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
