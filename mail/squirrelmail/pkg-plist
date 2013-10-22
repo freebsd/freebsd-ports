@@ -463,7 +463,6 @@ etc/periodic/daily/111.clean-squirrelmail
 @dirrm %%SQUIRRELDIR%%/themes/css
 @dirrm %%SQUIRRELDIR%%/themes
 @dirrm %%SQUIRRELDIR%%/src
-@dirrmtry %%SQUIRRELDIR%%/pref
 @dirrm %%SQUIRRELDIR%%/po
 @dirrm %%SQUIRRELDIR%%/plugins/translate
 @dirrm %%SQUIRRELDIR%%/plugins/test
