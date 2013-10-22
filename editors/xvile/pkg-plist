@@ -260,5 +260,4 @@ share/pixmaps/vile.xpm
 @dirrm %%DATADIR%%/macros
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm lib/vile

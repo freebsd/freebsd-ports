@@ -27,4 +27,3 @@ share/locale/fr/LC_MESSAGES/xdx.mo
 share/locale/nl/LC_MESSAGES/xdx.mo
 share/locale/pl/LC_MESSAGES/xdx.mo
 share/locale/pt/LC_MESSAGES/xdx.mo
-@dirrmtry share/applications

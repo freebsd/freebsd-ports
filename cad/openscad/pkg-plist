@@ -81,4 +81,3 @@ share/pixmaps/openscad.png
 @dirrm %%DATADIR%%/libraries
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

@@ -308,7 +308,6 @@ share/mimelnk/application/x-qet-element.desktop
 @dirrmtry share/mime
 @dirrmtry share/mimelnk/application
 @dirrmtry share/mimelnk
-@dirrmtry share/applications
 @dirrmtry share/icons/hicolor/16x16/apps
 @dirrmtry share/icons/hicolor/16x16/mimetypes
 @dirrmtry share/icons/hicolor/16x16

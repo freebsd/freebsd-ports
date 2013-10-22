@@ -122,4 +122,3 @@ share/icons/srecite.png
 @dirrm share/srecite/icon
 @dirrm share/srecite/wordbooks
 @dirrm share/srecite
-@dirrmtry share/applications

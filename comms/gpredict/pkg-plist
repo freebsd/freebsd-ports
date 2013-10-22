@@ -154,4 +154,3 @@ share/pixmaps/gpredict/maps/nasa-topo_800.png
 @dirrm %%DATADIR%%/data/satdata
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

@@ -63,4 +63,3 @@ share/locale/sr/LC_MESSAGES/mlview.mo
 share/locale/sr@Latn/LC_MESSAGES/mlview.mo
 share/locale/sv/LC_MESSAGES/mlview.mo
 @dirrm share/mlview
-@dirrmtry share/applications

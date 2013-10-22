@@ -379,5 +379,7 @@ bin/phoronix-test-suite
 @dirrm %%DATADIR%%/pts-core
 @dirrm %%DATADIR%%
 %%BASH_COMPLETIONS%%@dirrmtry etc/bash_completion.d
-%%X11%%@dirrmtry share/applications
 %%X11%%@dirrmtry share/icons/hicolor/64x64/apps
+%%X11%%@dirrmtry share/icons/hicolor/64x64
+%%X11%%@dirrmtry share/icons/hicolor
+%%X11%%@dirrmtry share/icons

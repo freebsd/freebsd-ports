@@ -142,4 +142,3 @@ share/pixmaps/librecad.png
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

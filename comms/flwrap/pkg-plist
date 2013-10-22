@@ -3,4 +3,3 @@ share/applications/flwrap.desktop
 share/pixmaps/flwrap.xpm
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications

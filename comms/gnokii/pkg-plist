@@ -59,4 +59,3 @@ share/locale/sv/LC_MESSAGES/gnokii.mo
 %%SMSD%%@dirrm lib/smsd
 %%SMSD%%@dirrm share/smsd
 %%X11%%share/applications/xgnokii.desktop
-%%X11%%@dirrmtry share/applications

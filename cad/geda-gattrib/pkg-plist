@@ -14,7 +14,6 @@ share/icons/hicolor/scalable/apps/geda-gattrib.svg
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrmtry %%DATADIR%%
-@dirrmtry share/applications
 %%NLS%%@dirrmtry lib/locale/nl_NL/LC_MESSAGES
 %%NLS%%@dirrmtry lib/locale/nl_NL
 %%NLS%%@dirrmtry lib/locale/es_ES/LC_MESSAGES

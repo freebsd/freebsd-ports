@@ -15,4 +15,3 @@ share/pixmaps/leocad.png
 @dirrmtry share/mime/application
 @dirrmtry share/mime
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

@@ -45,4 +45,3 @@ share/icons/hicolor/scalable/apps/leafpad.svg
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/leafpad.mo
 share/pixmaps/leafpad.png
 share/pixmaps/leafpad.xpm
-@dirrmtry share/applications

@@ -2399,7 +2399,6 @@ share/mime/packages/libgeda.xml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/RF_Amp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm include/libgeda
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

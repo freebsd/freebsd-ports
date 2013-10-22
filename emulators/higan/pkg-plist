@@ -23,4 +23,3 @@ share/pixmaps/higan.png
 @dirrm %%DATADIR%%/Game Boy Advance.sys
 @dirrm %%DATADIR%%/Famicom.sys
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

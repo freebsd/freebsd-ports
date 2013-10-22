@@ -89,7 +89,6 @@ share/icons/gtkwave_savefiles_256x256x32.png
 @dirrmtry share/mime/application
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
-@dirrmtry share/applications
 @dirrmtry share/icons/gnome/16x16/mimetypes
 @dirrmtry share/icons/gnome/16x16
 @dirrmtry share/icons/gnome/32x32/mimetypes

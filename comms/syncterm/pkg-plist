@@ -5,4 +5,3 @@ share/applications/syncterm.desktop
 @dirrmtry share/icons/hicolor/64x64
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry share/applications

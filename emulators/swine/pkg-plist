@@ -79,5 +79,4 @@ share/pixmaps/swine.png
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm lib/swine

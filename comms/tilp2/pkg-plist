@@ -129,4 +129,3 @@ share/mime/packages/tilp.xml
 @dirrm %%DATADIR%%
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
-@dirrmtry share/applications

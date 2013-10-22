@@ -9,7 +9,6 @@ share/repsnapper/repsnapper.ui
 share/repsnapper/repsnapper.svg
 share/icons/hicolor/scalable/apps/repsnapper.svg
 @dirrmtry etc/xdg/repsnapper
-@dirrmtry share/applications
 @dirrmtry share/locale/de_DE/LC_MESSAGES
 @dirrmtry share/locale/de_DE
 @dirrm share/repsnapper

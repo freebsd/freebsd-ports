@@ -624,7 +624,6 @@ share/omf/gedit/gedit-zh_TW.omf
 @dirrm share/gedit-2/icons
 @dirrm share/gedit-2
 @dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrmtry libexec/gedit-2
 %%PYTHON%%@dirrm lib/gedit-2/plugins/snippets
 %%PYTHON%%@dirrm lib/gedit-2/plugins/quickopen

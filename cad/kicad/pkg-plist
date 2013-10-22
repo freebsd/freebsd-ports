@@ -405,6 +405,5 @@ share/mimelnk/application/x-kicad-schematic.desktop
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/adc-dac
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/74xx
 @dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm lib/kicad/plugins
 @dirrm lib/kicad

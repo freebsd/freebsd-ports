@@ -5040,4 +5040,3 @@ share/applications/komodo-ide-6.desktop
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/bin
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

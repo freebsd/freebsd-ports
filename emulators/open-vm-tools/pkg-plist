@@ -74,7 +74,6 @@ share/vmware-tools/scripts/vmware/network
 @dirrmtry share/vmware-tools/scripts
 @dirrmtry share/vmware-tools
 @dirrmtry libdata/pkgconfig
-%%X11%%@dirrmtry share/applications
 @dirrm lib/open-vm-tools/plugins/common
 @dirrm lib/open-vm-tools/plugins/vmsvc
 %%X11%%@dirrm lib/open-vm-tools/plugins/vmusr

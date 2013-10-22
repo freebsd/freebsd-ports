@@ -1133,6 +1133,5 @@ share/pixmaps/ugene.xpm
 @dirrm %%DATADIR%%/back_translation/Bacteria
 @dirrm %%DATADIR%%/back_translation
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm lib/ugene/plugins
 @dirrm lib/ugene

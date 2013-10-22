@@ -3967,7 +3967,6 @@ share/pixmaps/scribes.png
 @dirrm share/gnome/help/scribes/C/figures
 @dirrm share/gnome/help/scribes/C
 @dirrm share/gnome/help/scribes
-@dirrmtry share/applications
 @dirrm lib/scribes/LanguagePlugins/zencoding/filters
 @dirrm lib/scribes/LanguagePlugins/zencoding/GUI
 @dirrm lib/scribes/LanguagePlugins/zencoding

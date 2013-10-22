@@ -306,4 +306,3 @@ share/pixmaps/conglomerate/conglomerate-logo.png
 @dirrm %%DATADIR%%/dispspecs
 @dirrm %%DATADIR%%/css
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

@@ -10,4 +10,3 @@ share/locale/sv/LC_MESSAGES/gperiodic.mo
 share/locale/tr/LC_MESSAGES/gperiodic.mo
 share/pixmaps/gperiodic.png
 share/pixmaps/gperiodic-crystal.png
-@dirrmtry share/applications

@@ -31,4 +31,3 @@ share/pixmaps/raine.png
 @dirrmtry %%DATADIR%%/artwork
 @dirrm %%DATADIR%%/languages
 @dirrmtry %%DATADIR%%
-@dirrmtry share/applications

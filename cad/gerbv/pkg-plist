@@ -118,7 +118,6 @@ share/icons/hicolor/scalable/apps/gerbv.svg
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/eagle
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/PNG-print
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm include/gerbv-%%VERSION%%
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

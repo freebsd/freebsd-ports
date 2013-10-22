@@ -7,4 +7,3 @@ share/pixmaps/xcpc.xpm
 %%DATADIR%%/roms/cpc664.rom
 @dirrm %%DATADIR%%/roms
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

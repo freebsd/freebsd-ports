@@ -38,7 +38,6 @@ share/icons/hicolor/scalable/mimetypes/emacs-document.svg
 @dirrmtry share/icons/hicolor/128x128
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry share/applications
 @unexec if [ ! -s /var/games/emacs/snake-scores ]; then rm -f /var/games/emacs/snake-scores; fi
 @unexec if [ ! -s /var/games/emacs/tetris-scores ]; then rm -f /var/games/emacs/tetris-scores; fi
 @unexec rmdir /var/games/emacs 2>/dev/null || true

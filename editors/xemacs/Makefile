@@ -165,7 +165,7 @@ post-install:
 .endfor
 .if !defined(WITHOUT_X11) && ${HAVE_GNOME:Mgnomehier}!=""
 	${INSTALL_DATA} ${WRKDIR}/xemacs.desktop \
-		${LOCALBASE}/share/applications
+		${PREFIX}/share/applications
 .endif
 # For some reason install no longer makes ${PREFIX}/lib/xemacs/site-lisp.
 # Do what PLIST does for pkg_add.

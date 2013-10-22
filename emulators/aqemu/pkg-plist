@@ -67,4 +67,3 @@ share/pixmaps/aqemu_64x64.png
 @dirrm share/aqemu/os_templates
 @dirrm share/aqemu/os_icons
 @dirrm share/aqemu
-@dirrmtry share/applications

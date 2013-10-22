@@ -32,7 +32,6 @@ share/pcsxr/pcsxr.png
 @dirrm share/pcsxr
 share/pixmaps/pcsxr-icon.png
 share/applications/pcsxr.desktop
-@dirrmtry share/applications
 lib/pcsxr/cfgBladeSio1
 lib/pcsxr/cfgDFXVideo
 lib/pcsxr/cfgpeopsxgl

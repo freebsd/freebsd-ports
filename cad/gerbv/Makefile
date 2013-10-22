@@ -31,7 +31,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|desktop||g' ${WRKSRC}/Makefile.in
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/desktop/gerbv.desktop \
 		${PREFIX}/share/applications
 	@${MKDIR} ${PREFIX}/share/icons/hicolor/scalable/apps

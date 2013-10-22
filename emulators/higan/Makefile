@@ -139,7 +139,6 @@ do-install:
 	${LN} -sf ${PREFIX}/lib/libananke.so.1 ${PREFIX}/lib/libananke.so
 	${INSTALL_PROGRAM} ${WRKSRC}/higan/out/higan ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/higan/data/higan.png ${PREFIX}/share/pixmaps/
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/higan/data/higan.desktop ${PREFIX}/share/applications/
 	${MKDIR} ${DATADIR}/Video\ Shaders
 	(cd ${WRKSRC}/higan/profile && ${COPYTREE_SHARE} \* ${DATADIR}/)

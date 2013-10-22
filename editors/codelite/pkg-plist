@@ -279,4 +279,3 @@ share/applications/codelite.desktop
 @dirrm %%DATADIR%%/gdb_printers
 @dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

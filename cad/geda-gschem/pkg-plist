@@ -83,4 +83,3 @@ share/locale/ru/LC_MESSAGES/geda-gschem.mo
 @dirrmtry %%DATADIR%%/scheme
 @dirrmtry %%DATADIR%%/bitmap
 @dirrmtry %%DATADIR%%
-@dirrmtry share/applications
