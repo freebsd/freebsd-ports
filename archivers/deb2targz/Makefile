@@ -10,12 +10,11 @@ DISTFILES=	# none
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line utility for converting a Debian .deb file to a .tar.gz
 
-NO_STAGE=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/deb2targz
 
 do-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${FILESDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
