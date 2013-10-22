@@ -22,10 +22,8 @@ ALL_TARGET=	bulk_mailer
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bulk_mailer ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/bulk_mailer.1 ${STAGEDIR}${PREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/bulk_mailer.README ${STAGEDIR}${DOCSDIR}/README
 	${INSTALL_DATA} ${WRKSRC}/bulk_mailer.ps ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
