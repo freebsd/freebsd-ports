@@ -46,4 +46,3 @@ share/pixmaps/picpuz.png
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%/images
 @dirrm %%DOCSDIR%%
-@dirrmtry share/applications

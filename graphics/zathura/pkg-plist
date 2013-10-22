@@ -22,7 +22,6 @@ share/applications/zathura.desktop
 %%NLS%%share/locale/tr/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/uk_UA/LC_MESSAGES/zathura.mo
 @dirrm include/zathura
-@dirrmtry share/applications
 @dirrmtry share/locale/es_CL/LC_MESSAGES
 @dirrmtry share/locale/es_CL
 @dirrmtry share/locale/ta_IN/LC_MESSAGES

@@ -89,7 +89,6 @@ bin/gftp-text
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/gftp.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gftp.mo
 %%NOX11:%%@dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/oc/LC_MESSAGES

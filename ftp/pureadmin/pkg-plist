@@ -28,4 +28,3 @@ share/pixmaps/pureadmin.png
 %%DATADIR%%/usericon.png
 %%DATADIR%%/usermanager.glade
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

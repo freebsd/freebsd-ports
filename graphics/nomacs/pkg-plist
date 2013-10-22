@@ -19,4 +19,3 @@ share/applications/nomacs.desktop
 share/pixmaps/nomacs.png
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

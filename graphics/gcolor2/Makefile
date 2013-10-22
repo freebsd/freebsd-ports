@@ -20,7 +20,6 @@ SUB_FILES=	gcolor2.desktop
 
 NO_STAGE=	yes
 post-install:
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKDIR}/gcolor2.desktop ${PREFIX}/share/applications
 
 .include <bsd.port.mk>

@@ -247,7 +247,6 @@ share/locale/zh_TW/LC_MESSAGES/gnash.mo
 @dirrm %%DOCSDIR%%/images
 @dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm lib/gnash
 %%CYGNAL%%@dirrmtry lib/cygnal/plugins
 %%CYGNAL%%@dirrmtry lib/cygnal

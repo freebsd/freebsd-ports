@@ -73,4 +73,3 @@ share/pixmaps/gtkam-camera.png
 %%GNOME:%%@dirrm share/gnome/help/gtkam/C
 %%GNOME:%%@dirrm share/gnome/help/gtkam
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications

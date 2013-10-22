@@ -481,7 +481,6 @@ share/omf/evince/evince-zh_CN.omf
 @dirrm share/doc/libevview
 @dirrm share/doc/libevdocument
 @dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm lib/evince/3/backends
 @dirrm lib/evince/3
 @dirrm lib/evince

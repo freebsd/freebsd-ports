@@ -1845,7 +1845,6 @@ share/mime-info/dia.mime
 @dirrm share/dia/shapes/Assorted
 @dirrm share/dia/shapes
 @dirrm share/dia
-@dirrmtry share/applications
 @dirrmtry man/fr/man1
 @dirrmtry man/fr
 @dirrm lib/dia

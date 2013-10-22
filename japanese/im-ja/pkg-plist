@@ -46,4 +46,3 @@ share/locale/ja/LC_MESSAGES/im-ja.mo
 @dirrm libexec/im-ja
 @exec if [ -f %D/bin/gtk-query-immodules-2.0 ]; then %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules; fi
 @unexec if [ -f %D/bin/gtk-query-immodules-2.0 ]; then %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules; fi
-@dirrmtry share/applications

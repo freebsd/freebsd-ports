@@ -36,7 +36,6 @@ post-patch:
 post-install:
 	${MKDIR} ${PREFIX}/share/gnome/apps/Graphics
 	${INSTALL_DATA} ${WRKSRC}/gqview.desktop ${PREFIX}/share/gnome/apps/Graphics
-	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/gqview.png ${PREFIX}/share/pixmaps
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

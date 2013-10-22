@@ -147,4 +147,3 @@ share/applications/nathive.desktop
 @dirrm %%DATADIR%%/cfg/console
 @dirrm %%DATADIR%%/cfg
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

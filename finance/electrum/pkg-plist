@@ -139,7 +139,6 @@ share/locale/zh/LC_MESSAGES/electrum.mo
 @dirrm share/electrum/dark
 @dirrm share/electrum/cleanlook
 @dirrm share/electrum
-@dirrmtry share/applications
 @dirrmtry share/app-install/icons
 @dirrmtry share/app-install
 @dirrm %%PYTHON_SITELIBDIR%%/electrum_plugins

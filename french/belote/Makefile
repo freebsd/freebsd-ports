@@ -37,7 +37,6 @@ do-install:
 .for f in belote.jar data.bin
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
 .endfor
-	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/rsc/vp.gif ${PREFIX}/share/pixmaps/belote.gif
 
 .include <bsd.port.mk>

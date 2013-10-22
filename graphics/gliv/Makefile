@@ -30,7 +30,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 NO_STAGE=	yes
 post-install:
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/gliv.desktop \
 		${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/gliv.png \

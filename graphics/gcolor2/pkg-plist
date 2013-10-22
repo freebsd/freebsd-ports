@@ -3,4 +3,3 @@ share/applications/gcolor2.desktop
 share/pixmaps/gcolor2/about_icon.png
 share/pixmaps/gcolor2/icon.png
 @dirrm share/pixmaps/gcolor2
-@dirrmtry share/applications

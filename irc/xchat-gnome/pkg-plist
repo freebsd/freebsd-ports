@@ -185,4 +185,3 @@ share/omf/xchat-gnome/xchat-gnome-th.omf
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/jbo/LC_MESSAGES
 @dirrmtry share/locale/jbo
-@dirrmtry share/applications

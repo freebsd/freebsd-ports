@@ -15,5 +15,4 @@ share/pixmaps/converseen.png
 @dirrmtry share/kde4/services/ServiceMenus
 @dirrmtry share/kde4/services
 @dirrmtry share/kde4
-@dirrmtry share/applications
 @dirrm %%DATADIR%%

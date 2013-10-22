@@ -14,7 +14,6 @@ share/mime/application/x-fyre-animation.xml
 share/mime/packages/fyre.xml
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

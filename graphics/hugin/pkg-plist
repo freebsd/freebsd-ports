@@ -647,7 +647,6 @@ share/mime/packages/hugin.xml
 share/pixmaps/hugin.png
 share/pixmaps/ptbatcher.png
 @dirrm lib/hugin
-@dirrmtry share/applications
 @dirrmtry share/icons/gnome/48x48/mimetypes
 @dirrmtry share/icons/gnome/48x48
 @dirrmtry share/icons/gnome

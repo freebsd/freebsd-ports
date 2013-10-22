@@ -33,7 +33,6 @@ post-patch:
 		${WRKSRC}/src/ebview.c
 
 post-install:
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/ebview.xpm ${PREFIX}/share/pixmaps/
 	${INSTALL_DATA} ${WRKDIR}/${SUB_FILES} ${PREFIX}/share/applications/
 .if !defined(NOPORTDOCS)

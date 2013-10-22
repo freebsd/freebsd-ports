@@ -1098,4 +1098,3 @@ share/locale/zh_TW/LC_MESSAGES/gnucash.mo
 @dirrm lib/gnucash
 @dirrm include/gnucash
 @dirrm etc/gnucash
-@dirrmtry share/applications

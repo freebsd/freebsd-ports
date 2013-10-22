@@ -274,7 +274,6 @@ share/applications/piqsl.desktop
 @dirrm include/aqsis/ri
 @dirrm include/aqsis
 @dirrm etc/aqsis
-@dirrmtry share/applications
 @dirrmtry share/icons/hicolor/192x192/mimetypes
 @dirrmtry share/icons/hicolor/192x192
 @dirrmtry share/icons/hicolor

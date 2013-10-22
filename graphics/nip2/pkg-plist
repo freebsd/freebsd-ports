@@ -337,7 +337,6 @@ share/nip2/data/examples/2_point_mosaic/full_image.jpg
 @dirrm %%DOCSDIR%%
 share/mime/packages/nip2.xml
 share/applications/nip2.desktop
-@dirrmtry share/applications
 @exec update-mime-database %D/share/mime || :
 @exec update-desktop-database %D/share/applications || :
 @unexec update-mime-database %D/share/mime || :

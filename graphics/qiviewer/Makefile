@@ -23,8 +23,7 @@ PLIST_FILES=	bin/qiviewer \
 		share/qiviewer/locale/es_AR.qm \
 		share/qiviewer/locale/es_ES.qm
 PLIST_DIRS=	share/qiviewer/locale \
-		share/qiviewer \
-		share/applications
+		share/qiviewer
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 

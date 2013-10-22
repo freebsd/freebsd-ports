@@ -100,4 +100,3 @@ share/pixmaps/scythia.xpm
 @dirrm share/icons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications

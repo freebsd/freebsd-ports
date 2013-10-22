@@ -878,7 +878,6 @@ share/locale/zh_TW/LC_MESSAGES/mypaint.mo
 @dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry share/applications
 @dirrm lib/mypaint
 @dirrm include/libmypaint/glib
 @dirrm include/libmypaint

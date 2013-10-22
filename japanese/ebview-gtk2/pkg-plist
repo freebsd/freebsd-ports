@@ -21,5 +21,4 @@ share/pixmaps/ebview.xpm
 @dirrm %%DATADIR%%/help/en
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

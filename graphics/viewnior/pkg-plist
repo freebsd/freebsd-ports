@@ -54,6 +54,5 @@ share/icons/hicolor/scalable/apps/viewnior.svg
 @dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry share/applications
 %%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/oc

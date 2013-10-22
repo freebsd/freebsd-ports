@@ -64,4 +64,3 @@ share/pixmaps/gpicview.png
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

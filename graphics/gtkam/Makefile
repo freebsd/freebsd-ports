@@ -64,7 +64,6 @@ post-patch:
 		 s|$$(libdir)/gimp/|$$(libexecdir)/gimp/|g'
 
 post-install:
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/gtkam.desktop \
 		${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/gtkam.png \

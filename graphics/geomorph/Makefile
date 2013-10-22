@@ -52,7 +52,6 @@ post-patch:
 	@${RM} ${WRKSRC}/install*~
 
 post-install:
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/geomorph.desktop ${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/GeoMorph.xpm ${PREFIX}/share/pixmaps/geomorph.xpm
 

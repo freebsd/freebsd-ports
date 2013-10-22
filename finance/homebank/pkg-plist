@@ -302,4 +302,3 @@ share/mime/packages/homebank.xml
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%/datas
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

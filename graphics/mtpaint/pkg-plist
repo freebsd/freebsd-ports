@@ -20,4 +20,3 @@ share/applications/mtpaint.desktop
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/mtpaint.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/mtpaint.mo
 share/pixmaps/mtpaint.png
-@dirrmtry share/applications

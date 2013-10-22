@@ -25,4 +25,3 @@ share/pixmaps/mirage.png
 @dirrm %%DATADIR%%
 @dirrmtry share/locale/ua/LC_MESSAGES
 @dirrmtry share/locale/ua
-@dirrmtry share/applications
