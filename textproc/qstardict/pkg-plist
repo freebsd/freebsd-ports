@@ -23,6 +23,5 @@ share/pixmaps/qstardict.png
 %%NLS%%@dirrm %%DATADIR%%/translations
 %%NLS%%@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm lib/qstardict/plugins
 @dirrm lib/qstardict

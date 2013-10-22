@@ -4,4 +4,3 @@ share/gdmap/pixmaps/gdmap_icon.png
 share/pixmaps/gdmap_icon.png
 @dirrm share/gdmap/pixmaps
 @dirrm share/gdmap
-@dirrmtry share/applications

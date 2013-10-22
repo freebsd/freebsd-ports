@@ -49,4 +49,3 @@ share/gnome/help/eiciel/C/figures/user.png
 @dirrm share/gnome/help/eiciel
 @dirrm %%DATADIR%%/img
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

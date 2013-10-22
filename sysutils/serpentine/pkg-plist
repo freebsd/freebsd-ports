@@ -80,7 +80,6 @@ bin/serpentine
 share/applications/serpentine.desktop
 %%DATADIR%%/serpentine.glade
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/serpentine/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/serpentine
 @dirrmtry %%PYTHON_SITELIBDIR%%

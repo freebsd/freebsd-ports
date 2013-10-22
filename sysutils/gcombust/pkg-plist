@@ -19,5 +19,4 @@ share/locale/ru/LC_MESSAGES/gcombust.mo
 share/locale/sk/LC_MESSAGES/gcombust.mo
 share/locale/sv/LC_MESSAGES/gcombust.mo
 share/pixmaps/gcombust.xpm
-@dirrmtry share/applications
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

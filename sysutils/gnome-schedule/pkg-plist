@@ -202,4 +202,3 @@ share/pixmaps/gnome-schedule/template.svg
 @dirrm share/gnome/help/gnome-schedule/C
 @dirrm share/gnome/help/gnome-schedule
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

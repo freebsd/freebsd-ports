@@ -6,4 +6,3 @@ share/locale/fr/LC_MESSAGES/cog.mo
 @dirrm share/cog/%%VERSION%%/glade
 @dirrm share/cog/%%VERSION%%
 @dirrm share/cog
-@dirrmtry share/applications

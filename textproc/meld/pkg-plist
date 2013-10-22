@@ -269,7 +269,6 @@ share/omf/meld/meld-fr.omf
 @dirrm share/gnome/help/meld/es
 @dirrm share/gnome/help/meld/C
 @dirrm share/gnome/help/meld
-@dirrmtry share/applications
 @dirrmtry share/appdata
 @dirrm lib/meld/meld/vc
 @dirrm lib/meld/meld/util

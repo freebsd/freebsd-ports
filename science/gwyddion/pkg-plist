@@ -803,7 +803,6 @@ share/thumbnailers/gwyddion.thumbnailer
 @dirrm %%DATADIR%%/gradients
 @dirrm %%DATADIR%%/glmaterials
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm libexec/gwyddion/plugins/process
 @dirrm libexec/gwyddion/plugins/file
 @dirrm libexec/gwyddion/plugins

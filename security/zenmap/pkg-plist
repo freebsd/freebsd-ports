@@ -396,7 +396,6 @@ share/applications/zenmap.desktop
 @dirrm %%DATADIR%%/docs
 @dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/zenmapGUI/higwidgets
 @dirrm %%PYTHON_SITELIBDIR%%/zenmapGUI
 @dirrm %%PYTHON_SITELIBDIR%%/zenmapCore

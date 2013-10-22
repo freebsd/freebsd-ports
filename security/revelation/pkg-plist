@@ -104,7 +104,6 @@ share/mime/packages/revelation.xml
 %%DATADIR%%/ui/toolbar.xml
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/revelation/datahandler
 @dirrm %%PYTHON_SITELIBDIR%%/revelation/bundle
 @dirrm %%PYTHON_SITELIBDIR%%/revelation

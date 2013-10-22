@@ -11,4 +11,3 @@ share/mime/packages/gcdmaster.xml
 @dirrm %%DATADIR%%
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@dirrmtry share/applications

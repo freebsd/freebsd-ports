@@ -56,5 +56,4 @@ share/pixmaps/pyrenamer.png
 @dirrm %%DATADIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/pyrenamer

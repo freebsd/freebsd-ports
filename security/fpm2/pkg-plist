@@ -12,4 +12,3 @@ share/applications/fpm2.desktop
 %%NLS%%share/locale/ru/LC_MESSAGES/fpm2.mo
 share/pixmaps/fpm2/logo.png
 @dirrm share/pixmaps/fpm2
-@dirrmtry share/applications

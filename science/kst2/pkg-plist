@@ -87,6 +87,5 @@ share/mimelnk/application/x-kst2.desktop
 @dirrmtry share/icons/hicolor/128x128
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry share/applications
 @dirrm lib/kst2/plugins
 @dirrm lib/kst2

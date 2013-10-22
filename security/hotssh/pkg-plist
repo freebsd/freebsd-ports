@@ -59,7 +59,6 @@ share/locale/sl/LC_MESSAGES/hotssh.mo
 share/locale/sv/LC_MESSAGES/hotssh.mo
 share/locale/zh_CN/LC_MESSAGES/hotssh.mo
 @dirrm share/doc/hotssh-0.2.7
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/hotssh/hotvte
 @dirrm %%PYTHON_SITELIBDIR%%/hotssh/hotlib_ui
 @dirrm %%PYTHON_SITELIBDIR%%/hotssh/hotlib

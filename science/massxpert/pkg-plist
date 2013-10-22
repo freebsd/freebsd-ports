@@ -216,7 +216,6 @@ share/applications/massxpert.desktop
 @dirrmtry %%DATADIR%%/pol-chem-defs
 @dirrmtry %%DATADIR%%/locales
 @dirrmtry %%DATADIR%%/dictionaries
-@dirrmtry share/applications
 @dirrmtry %%DATADIR%%
 @dirrm %%DOCSDIR%%
 @dirrm lib/massxpert/plugins

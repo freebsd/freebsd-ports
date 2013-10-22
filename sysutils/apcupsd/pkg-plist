@@ -29,5 +29,4 @@ sbin/smtp
 %%GAPCMON%%share/pixmaps/onbatt.png
 %%GAPCMON%%share/pixmaps/online.png
 %%GAPCMON%%share/pixmaps/unplugged.png
-%%GAPCMON%%@dirrmtry share/applications
 @dirrmtry %%ETCDIR%%

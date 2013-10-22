@@ -2,5 +2,4 @@ bin/artha
 share/applications/artha.desktop
 share/pixmaps/artha.png
 %%DATADIR%%/gui.glade
-@dirrmtry share/applications
 @dirrm %%DATADIR%%

@@ -15,4 +15,3 @@ share/pixmaps/gpass-icon.png
 @dirrm %%DATADIR%%
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@dirrmtry share/applications

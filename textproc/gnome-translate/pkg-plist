@@ -30,4 +30,3 @@ share/locale/fr/LC_MESSAGES/gnome-translate.mo
 @dirrm share/gnome/help/gnome-translate/C
 @dirrm share/gnome/help/gnome-translate
 @dirrm share/omf/gnome-translate
-@dirrmtry share/applications

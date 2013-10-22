@@ -92,4 +92,3 @@ share/locale/zh_TW/LC_MESSAGES/stardict.mo
 %%GNOME%%@dirrm share/gnome/help/stardict/C/figures
 %%GNOME%%@dirrm share/gnome/help/stardict/C
 %%GNOME%%@dirrm share/gnome/help/stardict
-@dirrmtry share/applications

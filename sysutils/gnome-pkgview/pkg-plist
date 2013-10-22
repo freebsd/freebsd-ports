@@ -55,4 +55,3 @@ share/pixmaps/gnome-pkgview/whitebox.png
 @dirrm share/pixmaps/gnome-pkgview
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
-@dirrmtry share/applications

@@ -10,4 +10,3 @@ share/applications/yapet.desktop
 @dirrmtry share/locale/de/LC_MESSAGES
 @dirrmtry share/locale/de
 %%NOPORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications

@@ -3,7 +3,6 @@ bin/gnomint-cli
 bin/gnomint-upgrade-db
 share/pixmaps/gnomint.png
 share/applications/gnomint.desktop
-@dirrmtry share/applications
 %%DATADIR%%/addca.png
 %%DATADIR%%/addcsr.png
 %%DATADIR%%/ca-stamp-16.png

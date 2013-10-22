@@ -140,7 +140,6 @@ share/locale/zh_TW/LC_MESSAGES/pessulus.mo
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/Pessulus
-@dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/uz@cyrillic/LC_MESSAGES

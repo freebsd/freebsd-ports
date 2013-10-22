@@ -26,4 +26,3 @@ share/pixmaps/linsmith/smith4.png
 share/pixmaps/linsmith/smithent.png
 @dirrm share/pixmaps/linsmith
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

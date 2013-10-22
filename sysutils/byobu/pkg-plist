@@ -71,7 +71,6 @@ lib/byobu/users
 lib/byobu/whoami
 lib/byobu/wifi_quality
 share/applications/byobu.desktop
-@dirrmtry share/applications
 @dirrm lib/byobu
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/windows

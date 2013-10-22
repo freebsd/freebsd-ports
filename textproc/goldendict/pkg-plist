@@ -14,4 +14,3 @@ share/pixmaps/goldendict.png
 %%DATADIR%%/locale/zh_CN.qm
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

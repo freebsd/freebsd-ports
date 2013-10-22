@@ -24,4 +24,3 @@ share/pixmaps/sagasu.png
 @dirrm share/gnome/help/sagasu/C
 @dirrm share/gnome/help/sagasu
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications

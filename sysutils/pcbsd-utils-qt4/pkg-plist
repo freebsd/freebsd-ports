@@ -2773,7 +2773,6 @@ include/pcbsd-ui.h
 @dirrmtry share/warden
 @dirrmtry share/pcbsd/scripts
 @dirrmtry share/pcbsd
-@dirrmtry share/applications
 @dirrmtry share/desktop-directories
 @dirrmtry etc/xdg/menus
 @dirrmtry etc/xdg/applications-merged

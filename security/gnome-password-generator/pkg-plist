@@ -1,4 +1,3 @@
 bin/gnome-password-generator
 share/pixmaps/gnome-password-generator.png
 share/applications/gnome-password-generator.desktop
-@dirrmtry share/applications

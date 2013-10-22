@@ -1,4 +1,3 @@
 bin/fldiff
 share/applications/fldiff.desktop
 share/pixmaps/fldiff.png
-@dirrmtry share/applications

@@ -352,4 +352,3 @@ share/fwbuilder-%%BUILD_VERSION%%/fwbuilder.dtd
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets
 @dirrm share/fwbuilder-%%BUILD_VERSION%%
-@dirrmtry share/applications
