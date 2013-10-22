@@ -66,8 +66,8 @@ post-build:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/last.fm.sh ${PREFIX}/bin/last.fm
-	${MKDIR} ${PREFIX}/share/applications ${PREFIX}/share/services
 	${INSTALL_DATA} ${FILESDIR}/last.fm.desktop ${PREFIX}/share/applications
+	${MKDIR} ${PREFIX}/share/services
 	${INSTALL_DATA} ${FILESDIR}/lastfm.protocol ${PREFIX}/share/services
 	${MKDIR} ${DATADIR}
 	${CP} -Rp ${WRKSRC}/bin/* ${DATADIR}/

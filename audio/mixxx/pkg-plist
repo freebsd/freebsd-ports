@@ -9953,7 +9953,6 @@ share/pixmaps/mixxx-icon.png
 @dirrm %%DATADIR%%/controllers
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm lib/mixxx/plugins/vamp
 %%FAAD%%@dirrmtry lib/mixxx/plugins/soundsource
 @dirrm lib/mixxx/plugins

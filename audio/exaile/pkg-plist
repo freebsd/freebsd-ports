@@ -1189,7 +1189,6 @@ share/pixmaps/exaile.png
 @dirrm %%DATADIR%%
 @dirrm etc/xdg/exaile
 @dirrmtry etc/xdg
-@dirrmtry share/applications
 @dirrm lib/exaile/xlgui/widgets
 @dirrm lib/exaile/xlgui/preferences
 @dirrm lib/exaile/xlgui/panel

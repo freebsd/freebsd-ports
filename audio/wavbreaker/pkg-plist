@@ -12,4 +12,3 @@ share/icons/hicolor/scalable/apps/wavbreaker.svg
 %%NLS%%share/locale/fr/LC_MESSAGES/wavbreaker.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/wavbreaker.mo
 share/pixmaps/wavbreaker.png
-@dirrmtry share/applications

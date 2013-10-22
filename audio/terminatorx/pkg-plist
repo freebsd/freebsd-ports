@@ -11,4 +11,3 @@ share/pixmaps/terminatorX-mime.png
 @dirrm share/gnome/help/terminatorX/C/figures
 @dirrm share/gnome/help/terminatorX/C
 @dirrm share/gnome/help/terminatorX
-@dirrmtry share/applications

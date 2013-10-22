@@ -132,7 +132,6 @@ share/icons/hicolor/scalable/apps/linnya.svg
 @dirrmtry share/icons/hicolor/256x256
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry share/applications
 @dirrm include/linnya/uix
 @dirrm include/linnya/cox
 @dirrm include/linnya

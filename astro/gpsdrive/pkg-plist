@@ -63,7 +63,6 @@ share/pixmaps/gpsicon.png
 %%NLS%%share/locale/tr/LC_MESSAGES/gpsdrive.mo
 %%NLS%%@dirrmtry share/locale/gr/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/gr
-@dirrmtry share/applications
 @dirrmtry man/es/man1
 @dirrmtry man/es
 @dirrmtry man/de/man1

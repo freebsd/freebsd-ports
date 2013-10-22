@@ -22,4 +22,3 @@ share/icons/hicolor/64x64/apps/qmpdclient.png
 share/icons/hicolor/scalable/apps/qmpdclient.svg
 @dirrmtry share/QMPDClient/translations
 @dirrmtry share/QMPDClient
-@dirrmtry share/applications

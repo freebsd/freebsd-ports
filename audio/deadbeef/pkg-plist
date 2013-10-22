@@ -273,4 +273,3 @@ share/icons/hicolor/scalable/apps/deadbeef.svg
 %%CONVERTER%%@dirrm lib/deadbeef/convpresets
 @dirrm lib/deadbeef
 @dirrm include/deadbeef
-@dirrmtry share/applications

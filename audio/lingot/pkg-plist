@@ -31,7 +31,6 @@ share/pixmaps/lingot/lingot-icon.svg
 @dirrm share/lingot/glade
 @dirrm share/lingot
 @dirrm share/doc/lingot
-@dirrmtry share/applications
 @dirrm lib/locale/zh_CN/LC_MESSAGES
 @dirrm lib/locale/zh_CN
 @dirrm lib/locale/sv/LC_MESSAGES

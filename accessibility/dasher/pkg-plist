@@ -462,7 +462,6 @@ share/omf/dasher/dasher-sv.omf
 @dirrm share/gnome/help/dasher/C
 @dirrm share/gnome/help/dasher
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/uz@cyrillic/LC_MESSAGES

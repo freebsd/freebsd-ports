@@ -60,7 +60,6 @@ post-patch:
 		${WRKSRC}/nightfall.desktop
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/nightfall.desktop \
 		${PREFIX}/share/applications
 

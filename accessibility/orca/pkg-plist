@@ -676,7 +676,6 @@ share/locale/zh_TW/LC_MESSAGES/orca.mo
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge
 @dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko
 @dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/CALLY

@@ -30,5 +30,4 @@ share/applications/jack_mixer.desktop
 @dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/applications
 @dirrm %%DATADIR%%

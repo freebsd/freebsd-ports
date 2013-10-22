@@ -38,7 +38,6 @@ share/applications/asunder.desktop
 %%NLS%%share/locale/ur_PK/LC_MESSAGES/asunder.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/asunder.mo
 share/pixmaps/asunder.png
-@dirrmtry share/applications
 %%NLS%%@dirrmtry share/locale/bs_BA/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/bs_BA
 %%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES

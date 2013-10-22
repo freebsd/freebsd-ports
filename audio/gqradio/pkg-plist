@@ -96,4 +96,3 @@ share/locale/fr/LC_MESSAGES/gqradio.mo
 @dirrm share/gqradio/skins/skyblue
 @dirrm share/gqradio/skins
 @dirrm share/gqradio
-@dirrmtry share/applications

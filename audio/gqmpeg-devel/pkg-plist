@@ -76,7 +76,6 @@ share/locale/fr/LC_MESSAGES/gqmpeg.mo
 share/locale/ja/LC_MESSAGES/gqmpeg.mo
 share/locale/pt_BR/LC_MESSAGES/gqmpeg.mo
 share/locale/zh_TW/LC_MESSAGES/gqmpeg.mo
-@dirrmtry share/applications
 @dirrm share/gqmpeg/skins/mrclean
 @dirrm share/gqmpeg/skins
 @dirrm share/gqmpeg

@@ -1,4 +1,3 @@
 bin/gbemol
 share/pixmaps/gbemol.png
 share/applications/gbemol.desktop
-@dirrmtry share/applications

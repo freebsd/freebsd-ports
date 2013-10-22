@@ -22,7 +22,6 @@ lib/ladspa/jamincont_1912.la
 share/applications/jamin.desktop
 share/mime/packages/jamin.xml
 share/icons/jamin.svg
-@dirrmtry share/applications
 @dirrmtry %%DATADIR%%/pixmaps
 @dirrmtry %%DATADIR%%/examples
 @dirrmtry %%DATADIR%%

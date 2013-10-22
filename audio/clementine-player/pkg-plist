@@ -7,7 +7,6 @@ share/kde4/services/clementine-feed.protocol
 share/kde4/services/clementine-itms.protocol
 share/kde4/services/clementine-itpc.protocol
 share/kde4/services/clementine-zune.protocol
-@dirrmtry share/applications
 @dirrmtry share/icons/hicolor/64x64/apps
 @dirrmtry share/icons/hicolor/64x64
 @dirrmtry share/icons/hicolor/scalable/apps

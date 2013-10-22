@@ -38,4 +38,3 @@ share/locale/zh_CN/LC_MESSAGES/paprefs.mo
 @dirrm %%DATADIR%%
 @dirrmtry share/locale/de/LC_MESSAGES
 @dirrmtry share/locale/de
-@dirrmtry share/applications

@@ -26,9 +26,6 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-pre-su-install:
-	@${MKDIR} ${PREFIX}/share/applications
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' \
 		${WRKSRC}/Makefile.in ${WRKSRC}/src/Makefile.in

@@ -1201,4 +1201,3 @@ share/pixmaps/stellarium.xpm
 @dirrmtry share/locale/aa
 @dirrmtry share/icons/hicolor/512x512/apps
 @dirrmtry share/icons/hicolor/512x512
-@dirrmtry share/applications

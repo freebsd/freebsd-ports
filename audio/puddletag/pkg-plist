@@ -205,4 +205,3 @@ share/pixmaps/puddletag.png
 @dirrm %%PYTHON_SITELIBDIR%%/puddlestuff/libraries
 @dirrm %%PYTHON_SITELIBDIR%%/puddlestuff/audioinfo
 @dirrm %%PYTHON_SITELIBDIR%%/puddlestuff
-@dirrmtry share/applications

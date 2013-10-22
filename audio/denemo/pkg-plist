@@ -2431,5 +2431,4 @@ share/pixmaps/denemo.png
 @dirrm %%DATADIR%%/actions/bitmaps
 @dirrm %%DATADIR%%/actions
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm %%ETCDIR%%

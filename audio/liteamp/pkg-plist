@@ -21,5 +21,4 @@ share/locale/ko/LC_MESSAGES/liteamp.mo
 share/pixmaps/liteamp.png
 @dirrm %%DATADIR%%/pixmaps
 @dirrmtry share/liteamp
-@dirrmtry share/applications
 @dirrmtry share/application-registry

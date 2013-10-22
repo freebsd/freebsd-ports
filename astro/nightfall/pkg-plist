@@ -104,4 +104,3 @@ share/locale/it/LC_MESSAGES/nightfall.mo
 %%GNOMEUI%%@dirrm share/gnome/help/nightfall/de
 %%GNOMEUI%%@dirrm share/gnome/help/nightfall/C
 %%GNOMEUI%%@dirrm share/gnome/help/nightfall
-@dirrmtry share/applications

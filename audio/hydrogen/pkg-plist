@@ -576,4 +576,3 @@ share/pixmaps/h2-icon.svg
 @dirrm %%DATADIR%%/data/demo_songs
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

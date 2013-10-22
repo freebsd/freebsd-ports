@@ -32,4 +32,3 @@ share/pixmaps/sweep.svg
 @dirrm %%DATADIR%%
 @dirrm lib/sweep
 @dirrm include/sweep
-@dirrmtry share/applications

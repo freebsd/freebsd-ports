@@ -6,4 +6,3 @@ lib/libventrilo3.so
 lib/libventrilo3.so.0
 share/applications/mangler.desktop
 share/pixmaps/mangler_logo.svg
-@dirrm share/applications

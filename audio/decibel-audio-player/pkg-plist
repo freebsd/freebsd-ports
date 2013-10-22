@@ -140,4 +140,3 @@ share/pixmaps/decibel-audio-player.png
 @dirrm %%DATADIR%%/res
 @dirrm %%DATADIR%%/pix
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

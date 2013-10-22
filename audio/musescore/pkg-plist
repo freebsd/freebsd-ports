@@ -203,4 +203,3 @@ share/pixmaps/mscore.xpm
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%/demos
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

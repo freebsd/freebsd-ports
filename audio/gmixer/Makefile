@@ -20,7 +20,6 @@ PLIST_FILES=	bin/gmixer share/pixmaps/gmixer.xpm
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gmixer ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/icons/gmixer.xpm ${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>

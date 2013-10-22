@@ -82,6 +82,5 @@ share/omf/goobox/goobox-sv.omf
 @dirrm share/gnome/help/goobox/ca
 @dirrm share/gnome/help/goobox/C
 @dirrm share/gnome/help/goobox
-@dirrmtry share/applications
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

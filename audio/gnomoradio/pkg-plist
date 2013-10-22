@@ -47,4 +47,3 @@ share/pixmaps/gnomoradio/gnomoradio-heart.png
 @dirrm include/rainbow
 @dirrm include/roboradio
 @dirrm share/pixmaps/gnomoradio
-@dirrmtry share/applications

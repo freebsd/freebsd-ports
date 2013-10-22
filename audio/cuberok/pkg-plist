@@ -10,4 +10,3 @@ share/pixmaps/cuberok.xpm
 @dirrm share/cuberok/locale
 @dirrm share/cuberok
 @dirrm lib/cuberok
-@dirrmtry share/applications

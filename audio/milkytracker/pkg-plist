@@ -2,4 +2,3 @@ bin/milkytracker
 share/pixmaps/milkytracker.ico
 share/pixmaps/milkytracker.png
 share/applications/milkytracker.desktop
-@dirrmtry share/applications
