@@ -159,4 +159,3 @@ share/pixmaps/trophy.png
 @dirrm %%DATADIR%%/cars/flash2
 @dirrm %%DATADIR%%/cars
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

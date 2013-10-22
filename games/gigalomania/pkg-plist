@@ -112,4 +112,3 @@ share/pixmaps/gigalomania64.png
 @dirrm %%DATADIR%%/islands
 @dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

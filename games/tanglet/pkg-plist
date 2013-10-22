@@ -67,4 +67,3 @@ share/pixmaps/tanglet.xpm
 @dirrm %%DATADIR%%/data/cs
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

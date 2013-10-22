@@ -20,5 +20,4 @@ share/locale/fr/LC_MESSAGES/gno3dtet.mo
 @dirrm share/omf/gno3dtet
 @dirrm share/gnome/help/gno3dtet/C
 @dirrm share/gnome/help/gno3dtet
-@dirrmtry share/applications
 @dirrmtry share/games

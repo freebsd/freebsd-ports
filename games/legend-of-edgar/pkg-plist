@@ -42,4 +42,3 @@ share/pixmaps/edgar.png
 %%NLS%%@dirrmtry share/locale/en_US/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/en_US
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

@@ -154,7 +154,6 @@ share/mime/packages/xboard.xml
 @dirrm %%DATADIR%%/themes/xiangqi
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrmtry share/games
 @dirrmtry share/icons/hicolor/48x48/apps
 @dirrmtry share/icons/hicolor/48x48

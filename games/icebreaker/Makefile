@@ -20,7 +20,6 @@ USE_GMAKE=	yes
 PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png \
 		share/applications/${PORTNAME}.desktop
-PLIST_DIRSTRY=	share/applications
 
 PORTDATA=	*
 PORTDOCS=	ChangeLog README README.SDL README.ifyoumakechanges README.themes TODO
@@ -55,7 +54,6 @@ post-build:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png ${PREFIX}/share/pixmaps
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${PREFIX}/share/applications
 
 .if ${PORT_OPTIONS:MDOCS}

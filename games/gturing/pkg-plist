@@ -45,4 +45,3 @@ share/locale/zh_TW/LC_MESSAGES/gturing-2.0.mo
 @dirrm share/gnome/help/gturing/C/figures
 @dirrm share/gnome/help/gturing/C
 @dirrm share/gnome/help/gturing
-@dirrmtry share/applications

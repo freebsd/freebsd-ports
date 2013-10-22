@@ -157,4 +157,3 @@ share/pixmaps/bombz.png
 @dirrm %%DATADIR%%/levels
 @dirrm %%DATADIR%%/bombz
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

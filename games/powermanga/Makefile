@@ -47,7 +47,6 @@ run-autotools:
 	cd ${WRKSRC} && ${SH} ./bootstrap
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/powermanga.desktop ${STAGEDIR}${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/powermanga.xpm ${STAGEDIR}${PREFIX}/share/pixmaps/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -219,7 +219,6 @@ share/pixmaps/glchess.svg
 @dirrm %%DATADIR%%
 %%NLS%%@dirrmtry share/locale/mg/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/mg/
-@dirrmtry share/applications
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/ui
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/scene/opengl

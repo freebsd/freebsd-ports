@@ -24,7 +24,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/${PORTNAME}.desktop \
 		share/pixmaps/${PORTNAME}.png
-PLIST_DIRSTRY=	share/applications
 PORTDOCS=	*
 PORTDATA=	*
 

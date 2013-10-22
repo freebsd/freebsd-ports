@@ -14,4 +14,3 @@ share/applications/lianliankan.desktop
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/llk_linux.mo
 share/pixmaps/llk_linux.png
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

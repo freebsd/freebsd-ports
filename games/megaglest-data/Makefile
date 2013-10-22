@@ -30,7 +30,6 @@ pre-install:
 .endfor
 	@${ECHO_CMD} "share/applications/megaglest.desktop" >> ${PLIST}
 	@${ECHO_CMD} "share/icons/megaglest.png" >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry share/applications" >> ${PLIST}
 	@${ECHO_CMD} "@dirrmtry share/icons" >> ${PLIST}
 	@${ECHO_CMD} "@dirrm %%DATADIR%%" >> ${PLIST}
 
@@ -50,7 +49,6 @@ do-install:
 	(cd ${WRKSRC}/docs/glest_factions && ${COPYTREE_SHARE} "*" ${DOCSDIR}/glest_factions)
 .endif
 	@${MKDIR} ${DATADIR}
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/megaglest.desktop ${PREFIX}/share/applications/
 	${MKDIR} ${PREFIX}/share/icons
 	${INSTALL_DATA} ${WRKSRC}/megaglest.png ${PREFIX}/share/icons/

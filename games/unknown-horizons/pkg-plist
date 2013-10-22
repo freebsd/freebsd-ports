@@ -2743,7 +2743,6 @@ share/pixmaps/unknown-horizons.xpm
 @dirrmtry share/locale/zu
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/horizons/world/units/collectors
 @dirrm %%PYTHON_SITELIBDIR%%/horizons/world/units
 @dirrm %%PYTHON_SITELIBDIR%%/horizons/world/production

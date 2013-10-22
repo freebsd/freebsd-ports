@@ -124,6 +124,5 @@ share/icons/hicolor/scalable/apps/stepmania-ssc.svg
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Devdocs/negbpmtut
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Devdocs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm lib/stepmania/Packages
 @dirrmtry lib/stepmania

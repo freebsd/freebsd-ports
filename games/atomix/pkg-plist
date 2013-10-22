@@ -130,4 +130,3 @@ share/locale/zh_TW/LC_MESSAGES/atomix.mo
 @dirrm share/atomix
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
-@dirrmtry share/applications

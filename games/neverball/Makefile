@@ -53,7 +53,6 @@ do-install:
 	@${MKDIR} ${DATADIR}/data
 	@(cd ${WRKSRC}/data ; ${COPYTREE_SHARE} . ${DATADIR}/data/)
 	@(cd ${WRKSRC}/dist ; ${INSTALL_MAN} ${MAN6} ${MAN6PREFIX}/man/man6/)
-	@${MKDIR} ${PREFIX}/share/applications
 .for f in neverball neverputt
 	@${INSTALL_DATA} ${WRKSRC}/dist/${f}.desktop \
 		${PREFIX}/share/applications/

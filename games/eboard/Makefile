@@ -85,7 +85,6 @@ post-install:
 	@cd ${WRKDIR}/eboard-extras-${extra} && EBOARDCONFIG=${PREFIX}/bin/eboard-config ./${CONFIGURE_SCRIPT} --prefix=${PREFIX}
 	@cd ${WRKDIR}/eboard-extras-${extra} && ${SETENV} ${MAKE_ENV} ${MAKE} install
 .endfor
-	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/icon-eboard.xpm ${PREFIX}/share/pixmaps/eboard.xpm
 	@${CAT} ${PKGMESSAGE}
 

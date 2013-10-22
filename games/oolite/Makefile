@@ -52,7 +52,6 @@ do-install:
 	${MKDIR} ${GNUSTEP_PREFIX}/Local/Applications
 	${CP} -R ${WRKSRC}/oolite.app ${GNUSTEP_PREFIX}/Local/Applications
 	${STRIP_CMD} ${GNUSTEP_PREFIX}/Local/Applications/oolite.app/oolite
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/installers/FreeDesktop/oolite.desktop ${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/installers/FreeDesktop/oolite-icon.png ${PREFIX}/share/pixmaps/
 

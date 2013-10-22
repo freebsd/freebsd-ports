@@ -11,4 +11,3 @@ share/locale/fr/LC_MESSAGES/gtktetcolor.mo
 share/locale/ru/LC_MESSAGES/gtktetcolor.mo
 @dirrm share/sounds/gtktetcolor
 @dirrmtry share/games
-@dirrmtry share/applications

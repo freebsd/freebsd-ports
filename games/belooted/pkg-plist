@@ -44,4 +44,3 @@ share/pixmaps/belooted/icon-none.xpm
 share/pixmaps/belooted.png
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@dirrmtry share/applications

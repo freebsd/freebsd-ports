@@ -60,7 +60,6 @@ post-install:
 	${CHGRP} games ${PREFIX}/bin/kobodl
 	${CHMOD} g+s ${PREFIX}/bin/kobodl
 	${INSTALL} -d -o root -g games -m 775 ${SCOREDIR}
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/icons/Ubuntu/kobodeluxe.desktop \
 		${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/icons/Ubuntu/kobo-icon.xpm \

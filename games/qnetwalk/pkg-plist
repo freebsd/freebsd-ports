@@ -58,4 +58,3 @@ share/pixmaps/qnetwalk.png
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/pics
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

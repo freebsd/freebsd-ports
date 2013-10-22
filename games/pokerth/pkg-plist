@@ -482,4 +482,3 @@ share/pixmaps/pokerth.png
 @dirrm %%DATADIR%%/data/fonts
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

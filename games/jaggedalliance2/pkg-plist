@@ -5,4 +5,3 @@ share/pixmaps/jagged2.ico
 @dirrmtry %%DATADIR%%/Data/TILECACHE
 @dirrmtry %%DATADIR%%/Data
 @dirrmtry %%DATADIR%%
-@dirrmtry share/applications

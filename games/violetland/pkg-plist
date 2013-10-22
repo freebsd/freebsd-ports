@@ -420,4 +420,3 @@ share/applications/violetland.desktop
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

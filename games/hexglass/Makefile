@@ -21,7 +21,6 @@ DESKTOP_ENTRIES=	"HexGlass" "${COMMENT}" \
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/resources/logo512x512.xpm \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.xpm
 

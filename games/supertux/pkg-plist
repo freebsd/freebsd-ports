@@ -794,4 +794,3 @@ share/pixmaps/supertux.png
 @dirrm %%DATADIR%%/images/background
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

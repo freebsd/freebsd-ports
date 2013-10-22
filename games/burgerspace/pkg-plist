@@ -18,4 +18,3 @@ share/pixmaps/burgerspace.png
 %%DATADIR%%/sounds/treat-disappears.wav
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

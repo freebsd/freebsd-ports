@@ -322,4 +322,3 @@ share/pixmaps/netrek-client-cow/ss/scrshot9.png
 @dirrm share/pixmaps/netrek-client-cow/Rom
 @dirrm share/pixmaps/netrek-client-cow/ss
 @dirrm share/pixmaps/netrek-client-cow
-@dirrmtry share/applications

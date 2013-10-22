@@ -60,7 +60,6 @@ do-install:
 		${INSTALL_DATA} game01.pk4 pak*.pk4 ${DATADIR}/d3xp
 	${CP} -r ${WRKSRC}/pb ${DATADIR}
 .endif
-	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/doom3.png ${PREFIX}/share/pixmaps
 .for f in doom3 doom3-ded
 	${INSTALL_PROGRAM} ${WRKDIR}/${f} ${PREFIX}/bin/${PKGNAMEPREFIX}${f}

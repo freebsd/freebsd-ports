@@ -49,4 +49,3 @@ share/applications/crimson.desktop
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%/levels
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

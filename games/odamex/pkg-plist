@@ -21,4 +21,3 @@ share/pixmaps/icon_odasrv_96.png
 %%PORTDOCS%%%%DOCSDIR%%/README
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications

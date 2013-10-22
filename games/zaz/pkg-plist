@@ -9,4 +9,3 @@ share/applications/zaz.desktop
 %%NLS%%share/locale/ru/LC_MESSAGES/zaz.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/zaz.mo
 share/pixmaps/zaz.xpm
-@dirrmtry share/applications

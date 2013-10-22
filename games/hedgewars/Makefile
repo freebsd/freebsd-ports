@@ -28,7 +28,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME:C/-[0-9]$//}
 PLIST_FILES=	bin/hedgewars bin/hwengine \
 		share/applications/hedgewars.desktop \
 		share/pixmaps/hedgewars.png
-PLIST_DIRSTRY=	share/applications
 PORTDATA=	*
 
 OPTIONS_DEFINE=	VIDEOREC SERVER
@@ -66,7 +65,6 @@ post-patch:
 .endif
 
 post-install:
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/share/hedgewars/Data/misc/hedgewars.desktop \
 		${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/misc/hedgewars.png \

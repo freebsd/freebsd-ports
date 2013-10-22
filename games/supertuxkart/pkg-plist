@@ -2,4 +2,3 @@ bin/supertuxkart
 share/applications/supertuxkart.desktop
 share/pixmaps/supertuxkart_32.xpm
 share/pixmaps/supertuxkart_64.xpm
-@dirrmtry share/applications

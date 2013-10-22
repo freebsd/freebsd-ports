@@ -24,4 +24,3 @@ share/applications/viruskiller.desktop
 @dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry share/applications

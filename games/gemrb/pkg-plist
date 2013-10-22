@@ -2569,7 +2569,6 @@ share/applications/gemrb.desktop
 @dirrm %%DATADIR%%/GUIScripts/bg1
 @dirrm %%DATADIR%%/GUIScripts
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor

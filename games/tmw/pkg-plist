@@ -88,4 +88,3 @@ share/pixmaps/mana.png
 @dirrm %%DATADIR%%/data/graphics
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

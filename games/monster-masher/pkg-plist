@@ -153,4 +153,3 @@ share/locale/zh_TW/LC_MESSAGES/monster-masher.mo
 @dirrm share/monster-masher/pixmaps
 @dirrm share/monster-masher/sounds
 @dirrm share/monster-masher
-@dirrmtry share/applications

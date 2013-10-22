@@ -1574,7 +1574,6 @@ share/pixmaps/wesnoth_editor-icon.png
 @dirrmtry man/zh_CN
 @dirrmtry man/zh_TW/man6
 @dirrmtry man/zh_TW
-@dirrmtry share/applications
 %%NLS%%@dirrmtry share/locale/ang/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ang
 %%NLS%%@dirrmtry share/locale/ang@latin/LC_MESSAGES

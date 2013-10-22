@@ -28,7 +28,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/levels
 	${INSTALL_DATA} ${WRKSRC}/levels/* ${STAGEDIR}${DATADIR}/levels
 	${INSTALL_DATA} ${WRKSRC}/npush.png ${STAGEDIR}${PREFIX}/share/pixmaps/
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/npush.desktop ${STAGEDIR}${PREFIX}/share/applications/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/index.html ${WRKSRC}/readme.txt \

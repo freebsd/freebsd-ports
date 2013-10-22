@@ -26,4 +26,3 @@ share/pixmaps/toppler.xpm
 %%DATADIR%%/toppler.ogg
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications

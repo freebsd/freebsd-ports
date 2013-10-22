@@ -211,4 +211,3 @@ share/locale/sv/LC_MESSAGES/pioneers.mo
 @dirrm share/gnome/help/pioneers
 @dirrm share/omf/pioneers
 @dirrm share/pixmaps/pioneers
-@dirrmtry share/applications

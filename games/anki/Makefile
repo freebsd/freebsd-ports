@@ -50,7 +50,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/mime/packages/
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.xml \
 		${STAGEDIR}${PREFIX}/share/mime/packages/
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps/
 .for p in *.png *.xpm
 	${INSTALL_DATA} ${WRKSRC}/${p} \
 		${STAGEDIR}${PREFIX}/share/pixmaps/

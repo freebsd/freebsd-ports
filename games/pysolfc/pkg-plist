@@ -2931,7 +2931,6 @@ share/icons/pysol01.png
 share/icons/pysol02.png
 %%NLS%%@dirrmtry share/locale/ru_RU/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ru_RU
-@dirrmtry share/applications
 @dirrmtry share/icons
 @dirrm %%DATADIR%%/tiles/save-aspect
 @dirrm %%DATADIR%%/tiles/stretch

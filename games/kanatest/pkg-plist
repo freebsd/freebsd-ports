@@ -17,7 +17,6 @@ share/locale/ru/LC_MESSAGES/kanatest.mo
 share/pixmaps/kanatest.png
 @exec %%LOCALBASE%%/bin/update-desktop-database %D/share/applications 2>/dev/null || true
 @unexec %%LOCALBASE%%/bin/update-desktop-database %D/share/applications 2>/dev/null || true
-@dirrmtry share/applications
 @dirrmtry share/icons/hicolor/16x16/apps
 @dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor/22x22/apps

@@ -13,4 +13,3 @@ share/icons/hicolor/scalable/apps/asteroid.svg
 @dirrm %%DATADIR%%/sfx
 @dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

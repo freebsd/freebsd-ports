@@ -299,7 +299,6 @@ bin/lbreakout2server
 %%DATADIR%%/sounds/wontgiveup.wav
 share/applications/lbreakout2.desktop
 share/icons/lbreakout48.gif
-@dirrmtry share/applications
 @dirrmtry share/icons
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/levels

@@ -42,9 +42,6 @@ post-patch:
 		-e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
 		${WRKSRC}/src/MOGL/MOGL_Image.cpp
 
-pre-install:
-	${MKDIR} ${PREFIX}/share/applications
-
 post-install:
 	@-update-desktop-database
 

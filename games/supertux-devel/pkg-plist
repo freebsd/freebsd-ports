@@ -2286,4 +2286,3 @@ share/pixmaps/supertux2.xpm
 @dirrm share/games/supertux2
 @dirrmtry share/games
 @dirrm share/doc/supertux2
-@dirrmtry share/applications
