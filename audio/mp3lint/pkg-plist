@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/mp3lint
 bin/mp3lintsum
 bin/mp3lintskip
@@ -19,6 +18,13 @@ etc/mp3lintrc
 %%SITE_PERL%%/MP3/Archive/Lint/Tools/Ogg.pm
 %%SITE_PERL%%/MP3/Archive/Lint/Tools/Wav.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/mp3lint/.packlist
+%%PERL5_MAN3%%/mp3lint-tools.3.gz
+man/man1/mp3lint.1.gz
+man/man1/mp3lintskip.1.gz
+man/man1/mp3lintsum.1.gz
+man/man5/mp3lintrc.5.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/mp3lint
 @dirrmtry %%SITE_PERL%%/MP3/Archive/Lint/Tools
 @dirrmtry %%SITE_PERL%%/MP3/Archive/Lint
+@dirrmtry %%SITE_PERL%%/MP3/Archive
+@dirrmtry %%SITE_PERL%%/MP3
