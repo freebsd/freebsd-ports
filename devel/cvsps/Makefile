@@ -12,23 +12,17 @@ COMMENT=	Create patchset information from CVS
 
 CONFLICTS=	cvsps-devel-[0-9]*
 
-MAN1=		cvsps.1
-PLIST_FILES=	bin/cvsps
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/${PORTNAME}.1.gz
+PORTDOCS=	*
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	README
-.endif
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cvsps ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/cvsps.1 ${MANPREFIX}/man/man1
-
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
