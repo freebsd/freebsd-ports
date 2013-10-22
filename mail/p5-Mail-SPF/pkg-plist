@@ -25,6 +25,31 @@ bin/spfquery.pl
 %%SITE_PERL%%/Mail/SPF/v1/Record.pm
 %%SITE_PERL%%/Mail/SPF/v2/Record.pm
 sbin/spfd.pl
+%%PERL5_MAN3%%/Mail::SPF.3.gz
+%%PERL5_MAN3%%/Mail::SPF::Base.3.gz
+%%PERL5_MAN3%%/Mail::SPF::MacroString.3.gz
+%%PERL5_MAN3%%/Mail::SPF::Mech.3.gz
+%%PERL5_MAN3%%/Mail::SPF::Mech::A.3.gz
+%%PERL5_MAN3%%/Mail::SPF::Mech::All.3.gz
+%%PERL5_MAN3%%/Mail::SPF::Mech::Exists.3.gz
+%%PERL5_MAN3%%/Mail::SPF::Mech::IP4.3.gz
+%%PERL5_MAN3%%/Mail::SPF::Mech::IP6.3.gz
+%%PERL5_MAN3%%/Mail::SPF::Mech::Include.3.gz
+%%PERL5_MAN3%%/Mail::SPF::Mech::MX.3.gz
+%%PERL5_MAN3%%/Mail::SPF::Mech::PTR.3.gz
+%%PERL5_MAN3%%/Mail::SPF::Mod.3.gz
+%%PERL5_MAN3%%/Mail::SPF::Mod::Exp.3.gz
+%%PERL5_MAN3%%/Mail::SPF::Mod::Redirect.3.gz
+%%PERL5_MAN3%%/Mail::SPF::Record.3.gz
+%%PERL5_MAN3%%/Mail::SPF::Request.3.gz
+%%PERL5_MAN3%%/Mail::SPF::Result.3.gz
+%%PERL5_MAN3%%/Mail::SPF::SenderIPAddrMech.3.gz
+%%PERL5_MAN3%%/Mail::SPF::Server.3.gz
+%%PERL5_MAN3%%/Mail::SPF::Term.3.gz
+%%PERL5_MAN3%%/Mail::SPF::Util.3.gz
+%%PERL5_MAN3%%/Mail::SPF::v1::Record.3.gz
+%%PERL5_MAN3%%/Mail::SPF::v2::Record.3.gz
+man/man1/spfquery.pl.1.gz
 @dirrmtry %%SITE_PERL%%/Mail/SPF/v2
 @dirrmtry %%SITE_PERL%%/Mail/SPF/v1
 @dirrmtry %%SITE_PERL%%/Mail/SPF/Mod
