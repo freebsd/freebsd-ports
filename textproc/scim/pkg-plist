@@ -166,6 +166,5 @@ share/locale/zh_TW/LC_MESSAGES/scim.mo
 @dirrmtry lib/scim-1.0/1.4.0/SetupUI
 @dirrmtry lib/scim-1.0/1.4.0
 @dirrmtry lib/scim-1.0
-@dirrmtry share/applications
 @exec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
 @unexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules

@@ -36,5 +36,4 @@ share/locale/ru/LC_MESSAGES/PolicyKit-gnome.mo
 share/locale/sk/LC_MESSAGES/PolicyKit-gnome.mo
 share/locale/sv/LC_MESSAGES/PolicyKit-gnome.mo
 share/locale/zh_CN/LC_MESSAGES/PolicyKit-gnome.mo
-@dirrmtry share/applications
 @dirrm include/PolicyKit/polkit-gnome

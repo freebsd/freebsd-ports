@@ -31,7 +31,6 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/openvpn-admin ${PREFIX}/sbin
-	${MKDIR} ${PREFIX}/share/applications || ${TRUE}
 	${INSTALL_DATA} ${WRKSRC}/openvpn-admin.desktop ${PREFIX}/share/applications/
 	${MKDIR} ${PREFIX}/lib/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/src/openvpn-admin.exe ${PREFIX}/lib/${PORTNAME}

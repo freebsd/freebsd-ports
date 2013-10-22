@@ -40,4 +40,3 @@ share/pixmaps/gsmartcontrol.xpm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib/cron-based_noadmin
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications

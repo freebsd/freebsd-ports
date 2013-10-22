@@ -403,7 +403,6 @@ share/locale/ko/LC_MESSAGES/uim.mo
 @dirrm include/uim
 @dirrm lib/uim/plugin
 @dirrm lib/uim
-@dirrmtry share/applications
 %%PORTDOCS%%@dirrm %%DOCSDIR_JA%%
 @dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/helperdata

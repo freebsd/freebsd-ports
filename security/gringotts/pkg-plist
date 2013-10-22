@@ -15,4 +15,3 @@ share/locale/ru/LC_MESSAGES/gringotts.mo
 share/pixmaps/gringotts.xpm
 share/pixmaps/gringotts-32.xpm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications

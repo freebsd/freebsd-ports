@@ -1,6 +1,5 @@
 bin/downtime
 share/applications/downtime.desktop
 share/mime/packages/downtime.xml
-@dirrmtry share/applications
 @dirrmtry share/mime/packages
 @dirrmtry share/mime

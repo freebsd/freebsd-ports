@@ -564,7 +564,6 @@ share/omf/users-admin/users-admin-zh_CN.omf
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm etc/gnome-system-tools
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK

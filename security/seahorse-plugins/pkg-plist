@@ -214,7 +214,6 @@ share/pixmaps/seahorse-plugins/scalable/seahorse-sign.svg
 @dirrm share/gnome/help/seahorse-applet/es
 @dirrm share/gnome/help/seahorse-applet/C
 @dirrm share/gnome/help/seahorse-applet
-@dirrmtry share/applications
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

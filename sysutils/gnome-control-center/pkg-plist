@@ -315,7 +315,6 @@ share/polkit-1/actions/org.gnome.randr.policy
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/default-apps
 @dirrmtry share/desktop-directories
-@dirrmtry share/applications
 @dirrm lib/window-manager-settings
 @dirrm include/gnome-window-settings-2.0
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

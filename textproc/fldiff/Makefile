@@ -36,9 +36,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fldiff ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/fldiff.man ${MAN1PREFIX}/man/man1/fldiff.1
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/fldiff.desktop ${PREFIX}/share/applications
-	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/fldiff.png ${PREFIX}/share/pixmaps
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}

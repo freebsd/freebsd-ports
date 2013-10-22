@@ -310,7 +310,6 @@ share/locale/ru/LC_MESSAGES/gchemutils-%%VER%%.mo
 share/locale/zh_CN/LC_MESSAGES/gchemutils-%%VER%%.mo
 share/locale/zh_TW/LC_MESSAGES/gchemutils-%%VER%%.mo
 share/mime/packages/gchemutils.xml
-@dirrmtry share/applications
 @dirrm share/gchemutils/%%VER%%/ui/table
 @dirrm share/gchemutils/%%VER%%/ui/paint/plugins/text
 @dirrm share/gchemutils/%%VER%%/ui/paint/plugins/templates

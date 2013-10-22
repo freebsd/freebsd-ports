@@ -30,7 +30,6 @@ post-patch:
 		'/^install-exec-am:/s|install-exec-local||' ${WRKSRC}/src/Makefile.in
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${PREFIX}/share/applications
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

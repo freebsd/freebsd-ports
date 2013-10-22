@@ -165,4 +165,3 @@ share/omf/gnomebaker/gnomebaker-C.omf
 @dirrm share/gnome/help/gnomebaker
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@dirrmtry share/applications

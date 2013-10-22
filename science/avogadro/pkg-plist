@@ -1193,7 +1193,6 @@ share/qt4/mkspecs/features/avogadro.prf
 @dirrm %%DATADIR%%/builder/amino
 @dirrm %%DATADIR%%/builder
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm lib/avogadro/1_1/tools
 @dirrm lib/avogadro/1_1/extensions
 @dirrm lib/avogadro/1_1/engines

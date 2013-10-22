@@ -69,4 +69,3 @@ share/pixmaps/clamtk-loader.gif
 @dirrmtry share/locale/el_GR
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/ClamTk
-@dirrmtry share/applications

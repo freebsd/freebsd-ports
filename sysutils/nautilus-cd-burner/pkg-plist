@@ -110,7 +110,6 @@ share/locale/zh_TW/LC_MESSAGES/nautilus-cd-burner.mo
 %%DATADIR%%/cdspin8.png
 %%DATADIR%%/nautilus-cd-burner.glade
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm include/libnautilus-burn
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

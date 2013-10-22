@@ -148,4 +148,3 @@ share/pixmaps/xvidcap.png
 @dirrm share/gnome/help/xvidcap/C/figures
 @dirrm share/gnome/help/xvidcap/C
 @dirrm share/gnome/help/xvidcap
-@dirrmtry share/applications

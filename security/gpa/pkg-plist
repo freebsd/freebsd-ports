@@ -18,4 +18,3 @@ share/gpa/gpa.png
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gpa.mo
 share/pixmaps/gpa.png
 @dirrm share/gpa
-@dirrmtry share/applications

@@ -141,4 +141,3 @@ share/pixmaps/luckybackup.xpm
 @dirrm share/doc/luckybackup/manual
 @dirrm share/doc/luckybackup/license
 @dirrm share/doc/luckybackup
-@dirrmtry share/applications

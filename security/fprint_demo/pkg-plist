@@ -1,6 +1,5 @@
 bin/fprint_demo
 share/applications/fprint_demo.desktop
-@dirrmtry share/applications
 share/icons/hicolor/128x128/apps/fprint_demo.png
 @dirrmtry share/icons/hicolor/128x128/apps
 @dirrmtry share/icons/hicolor/128x128

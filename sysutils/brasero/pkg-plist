@@ -506,7 +506,6 @@ share/omf/brasero/brasero-zh_TW.omf
 @dirrm %%DATADIR%%
 @dirrm share/doc/libbrasero-media
 @dirrm share/doc/libbrasero-burn
-@dirrmtry share/applications
 @dirrm lib/brasero/plugins
 @dirrm lib/brasero
 @dirrm include/brasero

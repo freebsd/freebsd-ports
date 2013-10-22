@@ -82,4 +82,3 @@ share/applications/gcipher.desktop
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications

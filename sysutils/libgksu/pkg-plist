@@ -13,4 +13,3 @@ share/pixmaps/gksu.png
 @dirrm share/libgksu
 @dirrm lib/libgksu
 @dirrm include/libgksu
-@dirrmtry share/applications

@@ -192,4 +192,3 @@ share/locale/sv/LC_MESSAGES/graveman.mo
 @dirrm share/graveman/themes/plainset
 @dirrm share/graveman/themes
 @dirrm share/graveman
-@dirrmtry share/applications

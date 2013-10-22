@@ -57,6 +57,5 @@ share/pixmaps/qpxtool.png
 %%DATADIR%%/locale/qpxtool.ru_RU.qm
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm lib/qpxtool
 @dirrm include/qpxtool

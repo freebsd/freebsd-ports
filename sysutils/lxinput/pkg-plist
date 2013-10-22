@@ -77,4 +77,3 @@ share/applications/lxinput.desktop
 %%NLS%%@dirrmtry share/locale/frp
 %%NLS%%@dirrmtry share/locale/es_VE/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/es_VE
-@dirrmtry share/applications
