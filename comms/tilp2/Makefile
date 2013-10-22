@@ -2,6 +2,7 @@
 
 PORTNAME=	tilp2
 PORTVERSION=	1.17
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	SF/tilp/tilp2-linux/${DISTNAME}
 
@@ -10,35 +11,25 @@ COMMENT=	TI Linking Program
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	ticables2:${PORTSDIR}/comms/libticables2	\
-		tifiles2:${PORTSDIR}/devel/libtifiles2		\
-		ticalcs2:${PORTSDIR}/comms/libticalcs2		\
-		ticonv:${PORTSDIR}/converters/libticonv
+LIB_DEPENDS=	libticables2.so:${PORTSDIR}/comms/libticables2	\
+		libtifiles2.so:${PORTSDIR}/devel/libtifiles2	\
+		libticalcs2.so:${PORTSDIR}/comms/libticalcs2	\
+		libticonv.so:${PORTSDIR}/converters/libticonv
 
-USES=		pkgconfig
+USES=		desktop-file-utils gmake pkgconfig shared-mime-info
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gtk20
 
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-kde
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-MAN1=		tilp.1
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^     USE_NLS=yes$$,,' ${WRKSRC}/configure

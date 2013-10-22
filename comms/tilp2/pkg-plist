@@ -1,4 +1,5 @@
 bin/tilp
+man/man1/tilp.1.gz
 share/applications/tilp.desktop
 %%NLS%%share/locale/fr/LC_MESSAGES/tilp2.mo
 share/mime/packages/tilp.xml
