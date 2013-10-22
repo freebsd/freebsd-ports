@@ -17,14 +17,13 @@ USE_BZIP2=	yes
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
-MAN1=		uni2ascii.1 ascii2uni.1
-PLIST_FILES=	bin/uni2ascii bin/ascii2uni
+PLIST_FILES=	bin/uni2ascii bin/ascii2uni man/man1/uni2ascii.1.gz \
+		man/man1/ascii2uni.1.gz
 
-NO_STAGE=	yes
 do-install:
 .for f in ${PORTNAME} ascii2uni
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${f}.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${f}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .endfor
 
 .include <bsd.port.mk>

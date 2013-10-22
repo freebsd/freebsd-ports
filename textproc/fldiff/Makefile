@@ -20,12 +20,10 @@ GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAN1=		fldiff.1
 PORTDOCS=	index.html fldiff.jpg
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -34,13 +32,13 @@ post-patch:
 		${WRKSRC}/fldiff.desktop
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/fldiff ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/fldiff.man ${MAN1PREFIX}/man/man1/fldiff.1
-	${INSTALL_DATA} ${WRKSRC}/fldiff.desktop ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/fldiff.png ${PREFIX}/share/pixmaps
+	${INSTALL_PROGRAM} ${WRKSRC}/fldiff ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/fldiff.man ${STAGEDIR}${MAN1PREFIX}/man/man1/fldiff.1
+	${INSTALL_DATA} ${WRKSRC}/fldiff.desktop ${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/fldiff.png ${STAGEDIR}${PREFIX}/share/pixmaps
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

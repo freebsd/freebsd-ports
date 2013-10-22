@@ -16,18 +16,15 @@ NO_BUILD=	yes
 
 SHEBANG_FILES=	colordiff.pl
 
-MAN1=		colordiff.1
-
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' ${WRKSRC}/${MAN1}
+	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' ${WRKSRC}/${PORTNAME}.1
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/colordiffrc ${PREFIX}/etc/colordiffrc.default
-.if !exists(${PREFIX}/etc/colordiffrc)
-	${INSTALL_DATA} ${WRKSRC}/colordiffrc ${PREFIX}/etc
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/colordiffrc ${STAGEDIR}${PREFIX}/etc/colordiffrc.default
+.if !exists(${STAGEDIR}${PREFIX}/etc/colordiffrc)
+	${INSTALL_DATA} ${WRKSRC}/colordiffrc ${STAGEDIR}${PREFIX}/etc
 .endif
 
 .include <bsd.port.mk>
