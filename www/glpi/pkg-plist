@@ -1,3 +1,6 @@
+@group www
+@owner www
+www/glpi/AUTHORS.txt
 www/glpi/CHANGELOG.txt
 www/glpi/COPYING.txt
 www/glpi/LISEZMOI.txt
@@ -7,8 +10,8 @@ www/glpi/ajax/comments.php
 www/glpi/ajax/common.tabs.php
 www/glpi/ajax/dropdownAllItems.php
 www/glpi/ajax/dropdownConnect.php
-www/glpi/ajax/dropdownConnectPort.php
-www/glpi/ajax/dropdownConnectPortDeviceType.php
+www/glpi/ajax/dropdownConnectNetworkPort.php
+www/glpi/ajax/dropdownConnectNetworkPortDeviceType.php
 www/glpi/ajax/dropdownDelegationUsers.php
 www/glpi/ajax/dropdownFieldsBlacklist.php
 www/glpi/ajax/dropdownFindNum.php
@@ -18,7 +21,6 @@ www/glpi/ajax/dropdownMassiveAction.php
 www/glpi/ajax/dropdownMassiveActionAddActor.php
 www/glpi/ajax/dropdownMassiveActionAuthMethods.php
 www/glpi/ajax/dropdownMassiveActionField.php
-www/glpi/ajax/dropdownMassiveActionPorts.php
 www/glpi/ajax/dropdownNetpoint.php
 www/glpi/ajax/dropdownNotificationEvent.php
 www/glpi/ajax/dropdownNotificationTemplate.php
@@ -26,6 +28,7 @@ www/glpi/ajax/dropdownRubDocument.php
 www/glpi/ajax/dropdownRules.php
 www/glpi/ajax/dropdownSelectSoftware.php
 www/glpi/ajax/dropdownSelectSoftwareLicense.php
+www/glpi/ajax/dropdownShowIPNetwork.php
 www/glpi/ajax/dropdownSoftwareLicense.php
 www/glpi/ajax/dropdownTicketCategories.php
 www/glpi/ajax/dropdownTrackingDeviceType.php
@@ -39,11 +42,13 @@ www/glpi/ajax/genericdate.php
 www/glpi/ajax/index.php
 www/glpi/ajax/inputtext.php
 www/glpi/ajax/ldapdaterestriction.php
+www/glpi/ajax/massiveaction.php
 www/glpi/ajax/planning.php
 www/glpi/ajax/planningcheck.php
 www/glpi/ajax/planningend.php
 www/glpi/ajax/priority.php
 www/glpi/ajax/private_public.php
+www/glpi/ajax/resaperiod.php
 www/glpi/ajax/ruleaction.php
 www/glpi/ajax/ruleactionvalue.php
 www/glpi/ajax/rulecriteria.php
@@ -83,9 +88,11 @@ www/glpi/files/_graphs/remove.txt
 www/glpi/files/_lock/remove.txt
 www/glpi/files/_log/remove.txt
 www/glpi/files/_plugins/remove.txt
+www/glpi/files/_rss/remove.txt
 www/glpi/files/_sessions/remove.txt
 www/glpi/files/_tmp/remove.txt
 www/glpi/files/_uploads/remove.txt
+www/glpi/front/allassets.php
 www/glpi/front/auth.others.php
 www/glpi/front/auth.settings.php
 www/glpi/front/authldap.form.php
@@ -95,6 +102,8 @@ www/glpi/front/authmail.php
 www/glpi/front/autoupdatesystem.form.php
 www/glpi/front/autoupdatesystem.php
 www/glpi/front/backup.php
+www/glpi/front/blacklist.form.php
+www/glpi/front/blacklist.php
 www/glpi/front/bookmark.php
 www/glpi/front/budget.form.php
 www/glpi/front/budget.php
@@ -105,6 +114,7 @@ www/glpi/front/calendarsegment.form.php
 www/glpi/front/cartridge.form.php
 www/glpi/front/cartridgeitem.form.php
 www/glpi/front/cartridgeitem.php
+www/glpi/front/cartridgeitem_printermodel.form.php
 www/glpi/front/cartridgeitemtype.form.php
 www/glpi/front/cartridgeitemtype.php
 www/glpi/front/central.php
@@ -117,7 +127,7 @@ www/glpi/front/changetask.form.php
 www/glpi/front/commonitiltask.form.php
 www/glpi/front/computer.form.php
 www/glpi/front/computer.php
-www/glpi/front/computer_device.form.php
+www/glpi/front/computer_item.form.php
 www/glpi/front/computer_softwarelicense.form.php
 www/glpi/front/computer_softwareversion.form.php
 www/glpi/front/computerdisk.form.php
@@ -134,10 +144,14 @@ www/glpi/front/consumableitemtype.form.php
 www/glpi/front/consumableitemtype.php
 www/glpi/front/contact.form.php
 www/glpi/front/contact.php
+www/glpi/front/contact_supplier.form.php
 www/glpi/front/contacttype.form.php
 www/glpi/front/contacttype.php
 www/glpi/front/contract.form.php
 www/glpi/front/contract.php
+www/glpi/front/contract_item.form.php
+www/glpi/front/contract_supplier.form.php
+www/glpi/front/contractcost.form.php
 www/glpi/front/contracttype.form.php
 www/glpi/front/contracttype.php
 www/glpi/front/control.php
@@ -174,10 +188,12 @@ www/glpi/front/deviceprocessor.php
 www/glpi/front/devicesoundcard.form.php
 www/glpi/front/devicesoundcard.php
 www/glpi/front/dictionnary.php
+www/glpi/front/display.options.php
 www/glpi/front/displaypreference.form.php
 www/glpi/front/document.form.php
 www/glpi/front/document.php
 www/glpi/front/document.send.php
+www/glpi/front/document_item.form.php
 www/glpi/front/documentcategory.form.php
 www/glpi/front/documentcategory.php
 www/glpi/front/documenttype.form.php
@@ -190,8 +206,6 @@ www/glpi/front/dropdown.common.php
 www/glpi/front/dropdown.php
 www/glpi/front/entity.form.php
 www/glpi/front/entity.php
-www/glpi/front/entitydata.form.php
-www/glpi/front/entitynotification.form.php
 www/glpi/front/event.php
 www/glpi/front/fieldblacklist.form.php
 www/glpi/front/fieldblacklist.php
@@ -200,9 +214,12 @@ www/glpi/front/fieldunicity.php
 www/glpi/front/filesystem.form.php
 www/glpi/front/filesystem.php
 www/glpi/front/find_num.php
+www/glpi/front/fqdn.form.php
+www/glpi/front/fqdn.php
 www/glpi/front/graph.send.php
 www/glpi/front/group.form.php
 www/glpi/front/group.php
+www/glpi/front/group_user.form.php
 www/glpi/front/helpdesk.faq.php
 www/glpi/front/helpdesk.html
 www/glpi/front/helpdesk.php
@@ -213,6 +230,10 @@ www/glpi/front/index.php
 www/glpi/front/infocom.form.php
 www/glpi/front/interfacetype.form.php
 www/glpi/front/interfacetype.php
+www/glpi/front/ipnetwork.form.php
+www/glpi/front/ipnetwork.php
+www/glpi/front/ipnetwork_vlan.form.php
+www/glpi/front/item_devices.form.php
 www/glpi/front/item_problem.form.php
 www/glpi/front/itilcategory.form.php
 www/glpi/front/itilcategory.php
@@ -230,12 +251,14 @@ www/glpi/front/link.send.php
 www/glpi/front/link_itemtype.form.php
 www/glpi/front/location.form.php
 www/glpi/front/location.php
+www/glpi/front/lock.form.php
 www/glpi/front/lostpassword.php
 www/glpi/front/mailcollector.form.php
 www/glpi/front/mailcollector.php
 www/glpi/front/manufacturer.form.php
 www/glpi/front/manufacturer.php
 www/glpi/front/massiveaction.php
+www/glpi/front/migration_cleaner.php
 www/glpi/front/monitor.form.php
 www/glpi/front/monitor.php
 www/glpi/front/monitormodel.form.php
@@ -246,6 +269,7 @@ www/glpi/front/netpoint.form.php
 www/glpi/front/netpoint.php
 www/glpi/front/network.form.php
 www/glpi/front/network.php
+www/glpi/front/networkalias.form.php
 www/glpi/front/networkequipment.form.php
 www/glpi/front/networkequipment.php
 www/glpi/front/networkequipmentfirmware.form.php
@@ -256,7 +280,12 @@ www/glpi/front/networkequipmenttype.form.php
 www/glpi/front/networkequipmenttype.php
 www/glpi/front/networkinterface.form.php
 www/glpi/front/networkinterface.php
+www/glpi/front/networkname.form.php
+www/glpi/front/networkname.php
 www/glpi/front/networkport.form.php
+www/glpi/front/networkport_vlan.form.php
+www/glpi/front/networkportmigration.form.php
+www/glpi/front/networkportmigration.php
 www/glpi/front/notification.form.php
 www/glpi/front/notification.php
 www/glpi/front/notification.tags.php
@@ -266,14 +295,6 @@ www/glpi/front/notificationtemplate.form.php
 www/glpi/front/notificationtemplate.php
 www/glpi/front/notificationtemplatetranslation.form.php
 www/glpi/front/notimportedemail.php
-www/glpi/front/ocslink.form.php
-www/glpi/front/ocsng.clean.php
-www/glpi/front/ocsng.import.php
-www/glpi/front/ocsng.link.php
-www/glpi/front/ocsng.php
-www/glpi/front/ocsng.sync.php
-www/glpi/front/ocsserver.form.php
-www/glpi/front/ocsserver.php
 www/glpi/front/operatingsystem.form.php
 www/glpi/front/operatingsystem.php
 www/glpi/front/operatingsystemservicepack.form.php
@@ -295,6 +316,7 @@ www/glpi/front/phonepowersupply.php
 www/glpi/front/phonetype.form.php
 www/glpi/front/phonetype.php
 www/glpi/front/planning.php
+www/glpi/front/plugin.form.php
 www/glpi/front/plugin.php
 www/glpi/front/pluginimage.send.php
 www/glpi/front/popup.php
@@ -308,6 +330,7 @@ www/glpi/front/printertype.php
 www/glpi/front/problem.form.php
 www/glpi/front/problem.php
 www/glpi/front/problem_ticket.form.php
+www/glpi/front/problem_user.form.php
 www/glpi/front/problemtask.form.php
 www/glpi/front/profile.form.php
 www/glpi/front/profile.php
@@ -325,6 +348,7 @@ www/glpi/front/report.netpoint.list.php
 www/glpi/front/report.networking.php
 www/glpi/front/report.php
 www/glpi/front/report.reservation.php
+www/glpi/front/report.state.php
 www/glpi/front/report.switch.list.php
 www/glpi/front/report.year.list.php
 www/glpi/front/report.year.php
@@ -334,6 +358,8 @@ www/glpi/front/reservation.form.php
 www/glpi/front/reservation.php
 www/glpi/front/reservationitem.form.php
 www/glpi/front/reservationitem.php
+www/glpi/front/rssfeed.form.php
+www/glpi/front/rssfeed.php
 www/glpi/front/rule.cache.php
 www/glpi/front/rule.common.form.php
 www/glpi/front/rule.common.php
@@ -378,10 +404,10 @@ www/glpi/front/ruledictionnarysoftware.form.php
 www/glpi/front/ruledictionnarysoftware.php
 www/glpi/front/ruleimportcomputer.form.php
 www/glpi/front/ruleimportcomputer.php
+www/glpi/front/ruleimportentity.form.php
+www/glpi/front/ruleimportentity.php
 www/glpi/front/rulemailcollector.form.php
 www/glpi/front/rulemailcollector.php
-www/glpi/front/ruleocs.form.php
-www/glpi/front/ruleocs.php
 www/glpi/front/ruleright.form.php
 www/glpi/front/ruleright.php
 www/glpi/front/rulerightparameter.form.php
@@ -410,6 +436,8 @@ www/glpi/front/solutiontemplate.form.php
 www/glpi/front/solutiontemplate.php
 www/glpi/front/solutiontype.form.php
 www/glpi/front/solutiontype.php
+www/glpi/front/ssovariable.form.php
+www/glpi/front/ssovariable.php
 www/glpi/front/stat.global.php
 www/glpi/front/stat.graph.php
 www/glpi/front/stat.item.php
@@ -418,7 +446,6 @@ www/glpi/front/stat.php
 www/glpi/front/stat.tracking.php
 www/glpi/front/state.form.php
 www/glpi/front/state.php
-www/glpi/front/states.php
 www/glpi/front/supplier.form.php
 www/glpi/front/supplier.php
 www/glpi/front/suppliertype.form.php
@@ -427,7 +454,9 @@ www/glpi/front/taskcategory.form.php
 www/glpi/front/taskcategory.php
 www/glpi/front/ticket.form.php
 www/glpi/front/ticket.php
+www/glpi/front/ticket_ticket.form.php
 www/glpi/front/ticket_user.form.php
+www/glpi/front/ticketcost.form.php
 www/glpi/front/ticketfollowup.form.php
 www/glpi/front/ticketrecurrent.form.php
 www/glpi/front/ticketrecurrent.php
@@ -457,6 +486,8 @@ www/glpi/front/virtualmachinetype.form.php
 www/glpi/front/virtualmachinetype.php
 www/glpi/front/vlan.form.php
 www/glpi/front/vlan.php
+www/glpi/front/wifinetwork.form.php
+www/glpi/front/wifinetwork.php
 www/glpi/inc/ajax.class.php
 www/glpi/inc/alert.class.php
 www/glpi/inc/auth.class.php
@@ -465,6 +496,7 @@ www/glpi/inc/authldapreplicate.class.php
 www/glpi/inc/authmail.class.php
 www/glpi/inc/autoload.function.php
 www/glpi/inc/autoupdatesystem.class.php
+www/glpi/inc/blacklist.class.php
 www/glpi/inc/bookmark.class.php
 www/glpi/inc/bookmark_user.class.php
 www/glpi/inc/budget.class.php
@@ -473,27 +505,30 @@ www/glpi/inc/calendar_holiday.class.php
 www/glpi/inc/calendarsegment.class.php
 www/glpi/inc/cartridge.class.php
 www/glpi/inc/cartridgeitem.class.php
+www/glpi/inc/cartridgeitem_printermodel.class.php
 www/glpi/inc/cartridgeitemtype.class.php
 www/glpi/inc/central.class.php
 www/glpi/inc/change.class.php
 www/glpi/inc/change_group.class.php
 www/glpi/inc/change_item.class.php
 www/glpi/inc/change_problem.class.php
+www/glpi/inc/change_supplier.class.php
 www/glpi/inc/change_ticket.class.php
 www/glpi/inc/change_user.class.php
 www/glpi/inc/changetask.class.php
 www/glpi/inc/commondbchild.class.php
+www/glpi/inc/commondbconnexity.class.php
 www/glpi/inc/commondbrelation.class.php
 www/glpi/inc/commondbtm.class.php
 www/glpi/inc/commondevice.class.php
 www/glpi/inc/commondropdown.class.php
 www/glpi/inc/commonglpi.class.php
+www/glpi/inc/commonimplicittreedropdown.class.php
 www/glpi/inc/commonitilactor.class.php
 www/glpi/inc/commonitilobject.class.php
 www/glpi/inc/commonitiltask.class.php
 www/glpi/inc/commontreedropdown.class.php
 www/glpi/inc/computer.class.php
-www/glpi/inc/computer_device.class.php
 www/glpi/inc/computer_item.class.php
 www/glpi/inc/computer_softwarelicense.class.php
 www/glpi/inc/computer_softwareversion.class.php
@@ -511,6 +546,7 @@ www/glpi/inc/contacttype.class.php
 www/glpi/inc/contract.class.php
 www/glpi/inc/contract_item.class.php
 www/glpi/inc/contract_supplier.class.php
+www/glpi/inc/contractcost.class.php
 www/glpi/inc/contracttype.class.php
 www/glpi/inc/crontask.class.php
 www/glpi/inc/crontasklog.class.php
@@ -541,26 +577,57 @@ www/glpi/inc/dropdown.class.php
 www/glpi/inc/entity.class.php
 www/glpi/inc/entity_knowbaseitem.class.php
 www/glpi/inc/entity_reminder.class.php
-www/glpi/inc/entitydata.class.php
+www/glpi/inc/entity_rssfeed.class.php
 www/glpi/inc/event.class.php
 www/glpi/inc/fieldblacklist.class.php
 www/glpi/inc/fieldunicity.class.php
 www/glpi/inc/filesystem.class.php
+www/glpi/inc/fqdn.class.php
+www/glpi/inc/fqdnlabel.class.php
 www/glpi/inc/graphpalette.class.php
 www/glpi/inc/group.class.php
 www/glpi/inc/group_knowbaseitem.class.php
 www/glpi/inc/group_problem.class.php
 www/glpi/inc/group_reminder.class.php
+www/glpi/inc/group_rssfeed.class.php
 www/glpi/inc/group_ticket.class.php
 www/glpi/inc/group_user.class.php
 www/glpi/inc/holiday.class.php
 www/glpi/inc/html.class.php
+www/glpi/inc/htmltablebase.class.php
+www/glpi/inc/htmltablecell.class.php
+www/glpi/inc/htmltableentity.class.php
+www/glpi/inc/htmltablegroup.class.php
+www/glpi/inc/htmltableheader.class.php
+www/glpi/inc/htmltablemain.class.php
+www/glpi/inc/htmltablerow.class.php
+www/glpi/inc/htmltablesubheader.class.php
+www/glpi/inc/htmltablesuperheader.class.php
 www/glpi/inc/includes.php
 www/glpi/inc/index.php
 www/glpi/inc/infocom.class.php
 www/glpi/inc/interfacetype.class.php
+www/glpi/inc/ipaddress.class.php
+www/glpi/inc/ipaddress_ipnetwork.class.php
+www/glpi/inc/ipnetmask.class.php
+www/glpi/inc/ipnetwork.class.php
+www/glpi/inc/ipnetwork_vlan.class.php
+www/glpi/inc/item_devicecase.class.php
+www/glpi/inc/item_devicecontrol.class.php
+www/glpi/inc/item_devicedrive.class.php
+www/glpi/inc/item_devicegraphiccard.class.php
+www/glpi/inc/item_deviceharddrive.class.php
+www/glpi/inc/item_devicememory.class.php
+www/glpi/inc/item_devicemotherboard.class.php
+www/glpi/inc/item_devicenetworkcard.class.php
+www/glpi/inc/item_devicepci.class.php
+www/glpi/inc/item_devicepowersupply.class.php
+www/glpi/inc/item_deviceprocessor.class.php
+www/glpi/inc/item_devices.class.php
+www/glpi/inc/item_devicesoundcard.class.php
 www/glpi/inc/item_problem.class.php
 www/glpi/inc/itilcategory.class.php
+www/glpi/inc/knowbase.class.php
 www/glpi/inc/knowbaseitem.class.php
 www/glpi/inc/knowbaseitem_profile.class.php
 www/glpi/inc/knowbaseitem_user.class.php
@@ -568,6 +635,7 @@ www/glpi/inc/knowbaseitemcategory.class.php
 www/glpi/inc/link.class.php
 www/glpi/inc/link_itemtype.class.php
 www/glpi/inc/location.class.php
+www/glpi/inc/lock.class.php
 www/glpi/inc/log.class.php
 www/glpi/inc/mailcollector.class.php
 www/glpi/inc/manufacturer.class.php
@@ -577,28 +645,39 @@ www/glpi/inc/monitormodel.class.php
 www/glpi/inc/monitortype.class.php
 www/glpi/inc/netpoint.class.php
 www/glpi/inc/network.class.php
+www/glpi/inc/networkalias.class.php
 www/glpi/inc/networkequipment.class.php
 www/glpi/inc/networkequipmentfirmware.class.php
 www/glpi/inc/networkequipmentmodel.class.php
 www/glpi/inc/networkequipmenttype.class.php
 www/glpi/inc/networkinterface.class.php
+www/glpi/inc/networkname.class.php
 www/glpi/inc/networkport.class.php
 www/glpi/inc/networkport_networkport.class.php
 www/glpi/inc/networkport_vlan.class.php
+www/glpi/inc/networkportaggregate.class.php
+www/glpi/inc/networkportalias.class.php
+www/glpi/inc/networkportdialup.class.php
+www/glpi/inc/networkportethernet.class.php
+www/glpi/inc/networkportinstantiation.class.php
+www/glpi/inc/networkportlocal.class.php
+www/glpi/inc/networkportmigration.class.php
+www/glpi/inc/networkportwifi.class.php
 www/glpi/inc/notification.class.php
 www/glpi/inc/notificationevent.class.php
 www/glpi/inc/notificationinterface.class.php
 www/glpi/inc/notificationmail.class.php
 www/glpi/inc/notificationmailsetting.class.php
 www/glpi/inc/notificationtarget.class.php
-www/glpi/inc/notificationtargetcartridge.class.php
+www/glpi/inc/notificationtargetcartridgeitem.class.php
 www/glpi/inc/notificationtargetcommonitilobject.class.php
-www/glpi/inc/notificationtargetconsumable.class.php
+www/glpi/inc/notificationtargetconsumableitem.class.php
 www/glpi/inc/notificationtargetcontract.class.php
 www/glpi/inc/notificationtargetcrontask.class.php
 www/glpi/inc/notificationtargetdbconnection.class.php
 www/glpi/inc/notificationtargetfieldunicity.class.php
 www/glpi/inc/notificationtargetinfocom.class.php
+www/glpi/inc/notificationtargetplanningrecall.class.php
 www/glpi/inc/notificationtargetproblem.class.php
 www/glpi/inc/notificationtargetreservation.class.php
 www/glpi/inc/notificationtargetsoftwarelicense.class.php
@@ -607,9 +686,6 @@ www/glpi/inc/notificationtargetuser.class.php
 www/glpi/inc/notificationtemplate.class.php
 www/glpi/inc/notificationtemplatetranslation.class.php
 www/glpi/inc/notimportedemail.class.php
-www/glpi/inc/ocsadmininfoslink.class.php
-www/glpi/inc/ocslink.class.php
-www/glpi/inc/ocsserver.class.php
 www/glpi/inc/operatingsystem.class.php
 www/glpi/inc/operatingsystemservicepack.class.php
 www/glpi/inc/operatingsystemversion.class.php
@@ -621,19 +697,21 @@ www/glpi/inc/phonemodel.class.php
 www/glpi/inc/phonepowersupply.class.php
 www/glpi/inc/phonetype.class.php
 www/glpi/inc/planning.class.php
+www/glpi/inc/planningrecall.class.php
 www/glpi/inc/plugin.class.php
 www/glpi/inc/preference.class.php
 www/glpi/inc/printer.class.php
 www/glpi/inc/printermodel.class.php
 www/glpi/inc/printertype.class.php
 www/glpi/inc/problem.class.php
+www/glpi/inc/problem_supplier.class.php
 www/glpi/inc/problem_ticket.class.php
 www/glpi/inc/problem_user.class.php
 www/glpi/inc/problemtask.class.php
 www/glpi/inc/profile.class.php
 www/glpi/inc/profile_reminder.class.php
+www/glpi/inc/profile_rssfeed.class.php
 www/glpi/inc/profile_user.class.php
-www/glpi/inc/registrykey.class.php
 www/glpi/inc/relation.constant.php
 www/glpi/inc/reminder.class.php
 www/glpi/inc/reminder_user.class.php
@@ -641,6 +719,8 @@ www/glpi/inc/report.class.php
 www/glpi/inc/requesttype.class.php
 www/glpi/inc/reservation.class.php
 www/glpi/inc/reservationitem.class.php
+www/glpi/inc/rssfeed.class.php
+www/glpi/inc/rssfeed_user.class.php
 www/glpi/inc/rule.class.php
 www/glpi/inc/ruleaction.class.php
 www/glpi/inc/rulecached.class.php
@@ -687,10 +767,10 @@ www/glpi/inc/ruledictionnarysoftware.class.php
 www/glpi/inc/ruledictionnarysoftwarecollection.class.php
 www/glpi/inc/ruleimportcomputer.class.php
 www/glpi/inc/ruleimportcomputercollection.class.php
+www/glpi/inc/ruleimportentity.class.php
+www/glpi/inc/ruleimportentitycollection.class.php
 www/glpi/inc/rulemailcollector.class.php
 www/glpi/inc/rulemailcollectorcollection.class.php
-www/glpi/inc/ruleocs.class.php
-www/glpi/inc/ruleocscollection.class.php
 www/glpi/inc/ruleright.class.php
 www/glpi/inc/rulerightcollection.class.php
 www/glpi/inc/rulerightparameter.class.php
@@ -705,6 +785,7 @@ www/glpi/inc/sla.class.php
 www/glpi/inc/slalevel.class.php
 www/glpi/inc/slalevel_ticket.class.php
 www/glpi/inc/slalevelaction.class.php
+www/glpi/inc/slalevelcriteria.class.php
 www/glpi/inc/software.class.php
 www/glpi/inc/softwarecategory.class.php
 www/glpi/inc/softwarelicense.class.php
@@ -712,14 +793,17 @@ www/glpi/inc/softwarelicensetype.class.php
 www/glpi/inc/softwareversion.class.php
 www/glpi/inc/solutiontemplate.class.php
 www/glpi/inc/solutiontype.class.php
+www/glpi/inc/ssovariable.class.php
 www/glpi/inc/stat.class.php
 www/glpi/inc/state.class.php
 www/glpi/inc/supplier.class.php
+www/glpi/inc/supplier_ticket.class.php
 www/glpi/inc/suppliertype.class.php
 www/glpi/inc/taskcategory.class.php
 www/glpi/inc/ticket.class.php
 www/glpi/inc/ticket_ticket.class.php
 www/glpi/inc/ticket_user.class.php
+www/glpi/inc/ticketcost.class.php
 www/glpi/inc/ticketfollowup.class.php
 www/glpi/inc/ticketrecurrent.class.php
 www/glpi/inc/ticketsatisfaction.class.php
@@ -740,12 +824,14 @@ www/glpi/inc/virtualmachinestate.class.php
 www/glpi/inc/virtualmachinesystem.class.php
 www/glpi/inc/virtualmachinetype.class.php
 www/glpi/inc/vlan.class.php
+www/glpi/inc/wifinetwork.class.php
+www/glpi/inc/xhprof.class.php
 www/glpi/inc/xml.class.php
 www/glpi/index.php
 www/glpi/install/index.php
 www/glpi/install/install.php
 www/glpi/install/mysql/.htaccess
-www/glpi/install/mysql/glpi-0.83.1-empty.sql
+www/glpi/install/mysql/glpi-0.84.1-empty.sql
 www/glpi/install/update.php
 www/glpi/install/update_031_04.php
 www/glpi/install/update_042_05.php
@@ -771,9 +857,220 @@ www/glpi/install/update_0801_0803.php
 www/glpi/install/update_0803_083.php
 www/glpi/install/update_080_0801.php
 www/glpi/install/update_0831_0833.php
+www/glpi/install/update_0831_084.php
 www/glpi/install/update_083_0831.php
+www/glpi/install/update_084_0841.php
 www/glpi/install/update_content.php
 www/glpi/install/update_to_031.php
+www/glpi/lib/Zend/Cache/Exception/BadMethodCallException.php
+www/glpi/lib/Zend/Cache/Exception/ExceptionInterface.php
+www/glpi/lib/Zend/Cache/Exception/ExtensionNotLoadedException.php
+www/glpi/lib/Zend/Cache/Exception/InvalidArgumentException.php
+www/glpi/lib/Zend/Cache/Exception/LogicException.php
+www/glpi/lib/Zend/Cache/Exception/MissingDependencyException.php
+www/glpi/lib/Zend/Cache/Exception/MissingKeyException.php
+www/glpi/lib/Zend/Cache/Exception/OutOfSpaceException.php
+www/glpi/lib/Zend/Cache/Exception/RuntimeException.php
+www/glpi/lib/Zend/Cache/Exception/UnexpectedValueException.php
+www/glpi/lib/Zend/Cache/Exception/UnsupportedMethodCallException.php
+www/glpi/lib/Zend/Cache/Pattern/AbstractPattern.php
+www/glpi/lib/Zend/Cache/Pattern/CallbackCache.php
+www/glpi/lib/Zend/Cache/Pattern/CaptureCache.php
+www/glpi/lib/Zend/Cache/Pattern/ClassCache.php
+www/glpi/lib/Zend/Cache/Pattern/ObjectCache.php
+www/glpi/lib/Zend/Cache/Pattern/OutputCache.php
+www/glpi/lib/Zend/Cache/Pattern/PatternInterface.php
+www/glpi/lib/Zend/Cache/Pattern/PatternOptions.php
+www/glpi/lib/Zend/Cache/PatternFactory.php
+www/glpi/lib/Zend/Cache/PatternPluginManager.php
+www/glpi/lib/Zend/Cache/Storage/Adapter/AbstractAdapter.php
+www/glpi/lib/Zend/Cache/Storage/Adapter/AbstractZendServer.php
+www/glpi/lib/Zend/Cache/Storage/Adapter/AdapterOptions.php
+www/glpi/lib/Zend/Cache/Storage/Adapter/Apc.php
+www/glpi/lib/Zend/Cache/Storage/Adapter/ApcIterator.php
+www/glpi/lib/Zend/Cache/Storage/Adapter/ApcOptions.php
+www/glpi/lib/Zend/Cache/Storage/Adapter/Dba.php
+www/glpi/lib/Zend/Cache/Storage/Adapter/DbaIterator.php
+www/glpi/lib/Zend/Cache/Storage/Adapter/DbaOptions.php
+www/glpi/lib/Zend/Cache/Storage/Adapter/Filesystem.php
+www/glpi/lib/Zend/Cache/Storage/Adapter/FilesystemIterator.php
+www/glpi/lib/Zend/Cache/Storage/Adapter/FilesystemOptions.php
+www/glpi/lib/Zend/Cache/Storage/Adapter/KeyListIterator.php
+www/glpi/lib/Zend/Cache/Storage/Adapter/Memcached.php
+www/glpi/lib/Zend/Cache/Storage/Adapter/MemcachedOptions.php
+www/glpi/lib/Zend/Cache/Storage/Adapter/Memory.php
+www/glpi/lib/Zend/Cache/Storage/Adapter/MemoryOptions.php
+www/glpi/lib/Zend/Cache/Storage/Adapter/WinCache.php
+www/glpi/lib/Zend/Cache/Storage/Adapter/WinCacheOptions.php
+www/glpi/lib/Zend/Cache/Storage/Adapter/ZendServerDisk.php
+www/glpi/lib/Zend/Cache/Storage/Adapter/ZendServerShm.php
+www/glpi/lib/Zend/Cache/Storage/AdapterPluginManager.php
+www/glpi/lib/Zend/Cache/Storage/AvailableSpaceCapableInterface.php
+www/glpi/lib/Zend/Cache/Storage/Capabilities.php
+www/glpi/lib/Zend/Cache/Storage/ClearByNamespaceInterface.php
+www/glpi/lib/Zend/Cache/Storage/ClearByPrefixInterface.php
+www/glpi/lib/Zend/Cache/Storage/ClearExpiredInterface.php
+www/glpi/lib/Zend/Cache/Storage/Event.php
+www/glpi/lib/Zend/Cache/Storage/ExceptionEvent.php
+www/glpi/lib/Zend/Cache/Storage/FlushableInterface.php
+www/glpi/lib/Zend/Cache/Storage/IterableInterface.php
+www/glpi/lib/Zend/Cache/Storage/IteratorInterface.php
+www/glpi/lib/Zend/Cache/Storage/OptimizableInterface.php
+www/glpi/lib/Zend/Cache/Storage/Plugin/AbstractPlugin.php
+www/glpi/lib/Zend/Cache/Storage/Plugin/ClearExpiredByFactor.php
+www/glpi/lib/Zend/Cache/Storage/Plugin/ExceptionHandler.php
+www/glpi/lib/Zend/Cache/Storage/Plugin/IgnoreUserAbort.php
+www/glpi/lib/Zend/Cache/Storage/Plugin/OptimizeByFactor.php
+www/glpi/lib/Zend/Cache/Storage/Plugin/PluginInterface.php
+www/glpi/lib/Zend/Cache/Storage/Plugin/PluginOptions.php
+www/glpi/lib/Zend/Cache/Storage/Plugin/Serializer.php
+www/glpi/lib/Zend/Cache/Storage/PluginManager.php
+www/glpi/lib/Zend/Cache/Storage/PostEvent.php
+www/glpi/lib/Zend/Cache/Storage/StorageInterface.php
+www/glpi/lib/Zend/Cache/Storage/TaggableInterface.php
+www/glpi/lib/Zend/Cache/Storage/TotalSpaceCapableInterface.php
+www/glpi/lib/Zend/Cache/StorageFactory.php
+www/glpi/lib/Zend/Cache/composer.json
+www/glpi/lib/Zend/EventManager/Event.php
+www/glpi/lib/Zend/EventManager/EventInterface.php
+www/glpi/lib/Zend/EventManager/EventManager.php
+www/glpi/lib/Zend/EventManager/EventManagerAwareInterface.php
+www/glpi/lib/Zend/EventManager/EventManagerInterface.php
+www/glpi/lib/Zend/EventManager/EventsCapableInterface.php
+www/glpi/lib/Zend/EventManager/Exception/DomainException.php
+www/glpi/lib/Zend/EventManager/Exception/ExceptionInterface.php
+www/glpi/lib/Zend/EventManager/Exception/InvalidArgumentException.php
+www/glpi/lib/Zend/EventManager/Exception/InvalidCallbackException.php
+www/glpi/lib/Zend/EventManager/Filter/FilterInterface.php
+www/glpi/lib/Zend/EventManager/Filter/FilterIterator.php
+www/glpi/lib/Zend/EventManager/FilterChain.php
+www/glpi/lib/Zend/EventManager/GlobalEventManager.php
+www/glpi/lib/Zend/EventManager/ListenerAggregateInterface.php
+www/glpi/lib/Zend/EventManager/ProvidesEvents.php
+www/glpi/lib/Zend/EventManager/ResponseCollection.php
+www/glpi/lib/Zend/EventManager/SharedEventManager.php
+www/glpi/lib/Zend/EventManager/SharedEventManagerAwareInterface.php
+www/glpi/lib/Zend/EventManager/SharedEventManagerInterface.php
+www/glpi/lib/Zend/EventManager/StaticEventManager.php
+www/glpi/lib/Zend/EventManager/composer.json
+www/glpi/lib/Zend/I18n/Exception/ExceptionInterface.php
+www/glpi/lib/Zend/I18n/Exception/InvalidArgumentException.php
+www/glpi/lib/Zend/I18n/Exception/OutOfBoundsException.php
+www/glpi/lib/Zend/I18n/Exception/ParseException.php
+www/glpi/lib/Zend/I18n/Exception/RangeException.php
+www/glpi/lib/Zend/I18n/Exception/RuntimeException.php
+www/glpi/lib/Zend/I18n/Filter/AbstractLocale.php
+www/glpi/lib/Zend/I18n/Filter/Alnum.php
+www/glpi/lib/Zend/I18n/Filter/Alpha.php
+www/glpi/lib/Zend/I18n/Filter/NumberFormat.php
+www/glpi/lib/Zend/I18n/Translator/Loader/FileLoaderInterface.php
+www/glpi/lib/Zend/I18n/Translator/Loader/Gettext.php
+www/glpi/lib/Zend/I18n/Translator/Loader/PhpArray.php
+www/glpi/lib/Zend/I18n/Translator/Loader/RemoteLoaderInterface.php
+www/glpi/lib/Zend/I18n/Translator/LoaderPluginManager.php
+www/glpi/lib/Zend/I18n/Translator/Plural/Parser.php
+www/glpi/lib/Zend/I18n/Translator/Plural/Rule.php
+www/glpi/lib/Zend/I18n/Translator/Plural/Symbol.php
+www/glpi/lib/Zend/I18n/Translator/TextDomain.php
+www/glpi/lib/Zend/I18n/Translator/Translator.php
+www/glpi/lib/Zend/I18n/Translator/TranslatorAwareInterface.php
+www/glpi/lib/Zend/I18n/Translator/TranslatorServiceFactory.php
+www/glpi/lib/Zend/I18n/Validator/Alnum.php
+www/glpi/lib/Zend/I18n/Validator/Alpha.php
+www/glpi/lib/Zend/I18n/Validator/Float.php
+www/glpi/lib/Zend/I18n/Validator/Int.php
+www/glpi/lib/Zend/I18n/Validator/PostCode.php
+www/glpi/lib/Zend/I18n/View/Helper/AbstractTranslatorHelper.php
+www/glpi/lib/Zend/I18n/View/Helper/CurrencyFormat.php
+www/glpi/lib/Zend/I18n/View/Helper/DateFormat.php
+www/glpi/lib/Zend/I18n/View/Helper/NumberFormat.php
+www/glpi/lib/Zend/I18n/View/Helper/Translate.php
+www/glpi/lib/Zend/I18n/View/Helper/TranslatePlural.php
+www/glpi/lib/Zend/I18n/View/HelperConfig.php
+www/glpi/lib/Zend/I18n/composer.json
+www/glpi/lib/Zend/LICENSE.txt
+www/glpi/lib/Zend/Loader/AutoloaderFactory.php
+www/glpi/lib/Zend/Loader/ClassMapAutoloader.php
+www/glpi/lib/Zend/Loader/Exception/BadMethodCallException.php
+www/glpi/lib/Zend/Loader/Exception/DomainException.php
+www/glpi/lib/Zend/Loader/Exception/ExceptionInterface.php
+www/glpi/lib/Zend/Loader/Exception/InvalidArgumentException.php
+www/glpi/lib/Zend/Loader/Exception/InvalidPathException.php
+www/glpi/lib/Zend/Loader/Exception/MissingResourceNamespaceException.php
+www/glpi/lib/Zend/Loader/Exception/PluginLoaderException.php
+www/glpi/lib/Zend/Loader/Exception/RuntimeException.php
+www/glpi/lib/Zend/Loader/Exception/SecurityException.php
+www/glpi/lib/Zend/Loader/ModuleAutoloader.php
+www/glpi/lib/Zend/Loader/PluginClassLoader.php
+www/glpi/lib/Zend/Loader/PluginClassLocator.php
+www/glpi/lib/Zend/Loader/ShortNameLocator.php
+www/glpi/lib/Zend/Loader/SplAutoloader.php
+www/glpi/lib/Zend/Loader/StandardAutoloader.php
+www/glpi/lib/Zend/Loader/composer.json
+www/glpi/lib/Zend/README.md
+www/glpi/lib/Zend/ServiceManager/AbstractFactoryInterface.php
+www/glpi/lib/Zend/ServiceManager/AbstractPluginManager.php
+www/glpi/lib/Zend/ServiceManager/Config.php
+www/glpi/lib/Zend/ServiceManager/ConfigInterface.php
+www/glpi/lib/Zend/ServiceManager/Di/DiAbstractServiceFactory.php
+www/glpi/lib/Zend/ServiceManager/Di/DiInstanceManagerProxy.php
+www/glpi/lib/Zend/ServiceManager/Di/DiServiceFactory.php
+www/glpi/lib/Zend/ServiceManager/Di/DiServiceInitializer.php
+www/glpi/lib/Zend/ServiceManager/Exception/CircularDependencyFoundException.php
+www/glpi/lib/Zend/ServiceManager/Exception/ExceptionInterface.php
+www/glpi/lib/Zend/ServiceManager/Exception/InvalidArgumentException.php
+www/glpi/lib/Zend/ServiceManager/Exception/InvalidServiceNameException.php
+www/glpi/lib/Zend/ServiceManager/Exception/RuntimeException.php
+www/glpi/lib/Zend/ServiceManager/Exception/ServiceNotCreatedException.php
+www/glpi/lib/Zend/ServiceManager/Exception/ServiceNotFoundException.php
+www/glpi/lib/Zend/ServiceManager/FactoryInterface.php
+www/glpi/lib/Zend/ServiceManager/InitializerInterface.php
+www/glpi/lib/Zend/ServiceManager/ServiceLocatorAwareInterface.php
+www/glpi/lib/Zend/ServiceManager/ServiceLocatorInterface.php
+www/glpi/lib/Zend/ServiceManager/ServiceManager.php
+www/glpi/lib/Zend/ServiceManager/ServiceManagerAwareInterface.php
+www/glpi/lib/Zend/ServiceManager/composer.json
+www/glpi/lib/Zend/Stdlib/AbstractOptions.php
+www/glpi/lib/Zend/Stdlib/ArraySerializableInterface.php
+www/glpi/lib/Zend/Stdlib/ArrayStack.php
+www/glpi/lib/Zend/Stdlib/ArrayUtils.php
+www/glpi/lib/Zend/Stdlib/CallbackHandler.php
+www/glpi/lib/Zend/Stdlib/DispatchableInterface.php
+www/glpi/lib/Zend/Stdlib/ErrorHandler.php
+www/glpi/lib/Zend/Stdlib/Exception/BadMethodCallException.php
+www/glpi/lib/Zend/Stdlib/Exception/DomainException.php
+www/glpi/lib/Zend/Stdlib/Exception/ExceptionInterface.php
+www/glpi/lib/Zend/Stdlib/Exception/InvalidArgumentException.php
+www/glpi/lib/Zend/Stdlib/Exception/InvalidCallbackException.php
+www/glpi/lib/Zend/Stdlib/Exception/LogicException.php
+www/glpi/lib/Zend/Stdlib/Glob.php
+www/glpi/lib/Zend/Stdlib/Hydrator/AbstractHydrator.php
+www/glpi/lib/Zend/Stdlib/Hydrator/ArraySerializable.php
+www/glpi/lib/Zend/Stdlib/Hydrator/ClassMethods.php
+www/glpi/lib/Zend/Stdlib/Hydrator/HydratorInterface.php
+www/glpi/lib/Zend/Stdlib/Hydrator/ObjectProperty.php
+www/glpi/lib/Zend/Stdlib/Hydrator/Reflection.php
+www/glpi/lib/Zend/Stdlib/Hydrator/Strategy/DefaultStrategy.php
+www/glpi/lib/Zend/Stdlib/Hydrator/Strategy/StrategyInterface.php
+www/glpi/lib/Zend/Stdlib/Hydrator/StrategyEnabledInterface.php
+www/glpi/lib/Zend/Stdlib/Message.php
+www/glpi/lib/Zend/Stdlib/MessageInterface.php
+www/glpi/lib/Zend/Stdlib/ParameterObjectInterface.php
+www/glpi/lib/Zend/Stdlib/Parameters.php
+www/glpi/lib/Zend/Stdlib/ParametersInterface.php
+www/glpi/lib/Zend/Stdlib/PriorityQueue.php
+www/glpi/lib/Zend/Stdlib/Request.php
+www/glpi/lib/Zend/Stdlib/RequestInterface.php
+www/glpi/lib/Zend/Stdlib/Response.php
+www/glpi/lib/Zend/Stdlib/ResponseInterface.php
+www/glpi/lib/Zend/Stdlib/SplPriorityQueue.php
+www/glpi/lib/Zend/Stdlib/SplQueue.php
+www/glpi/lib/Zend/Stdlib/SplStack.php
+www/glpi/lib/Zend/Stdlib/composer.json
+www/glpi/lib/Zend/Version/Version.php
+www/glpi/lib/Zend/Version/composer.json
+www/glpi/lib/Zend/autoload_classmap.php
+www/glpi/lib/Zend/classmap_generator.php
 www/glpi/lib/cache_lite/LICENSE
 www/glpi/lib/cache_lite/Lite.php
 www/glpi/lib/cache_lite/Lite/File.php
@@ -1396,13 +1693,13 @@ www/glpi/lib/phpcas/CAS/Request/RequestInterface.php
 www/glpi/lib/phpcas/LICENSE
 www/glpi/lib/phpcas/NOTICE
 www/glpi/lib/phpcas/README.md
-www/glpi/lib/phpmailer/ChangeLog.txt
 www/glpi/lib/phpmailer/LICENSE
 www/glpi/lib/phpmailer/README
-www/glpi/lib/phpmailer/aboutus.html
+www/glpi/lib/phpmailer/changelog.txt
 www/glpi/lib/phpmailer/class.phpmailer.php
 www/glpi/lib/phpmailer/class.pop3.php
 www/glpi/lib/phpmailer/class.smtp.php
+www/glpi/lib/phpmailer/extras/htmlfilter.php
 www/glpi/lib/phpmailer/language/phpmailer.lang-ar.php
 www/glpi/lib/phpmailer/language/phpmailer.lang-br.php
 www/glpi/lib/phpmailer/language/phpmailer.lang-ca.php
@@ -1410,7 +1707,6 @@ www/glpi/lib/phpmailer/language/phpmailer.lang-ch.php
 www/glpi/lib/phpmailer/language/phpmailer.lang-cz.php
 www/glpi/lib/phpmailer/language/phpmailer.lang-de.php
 www/glpi/lib/phpmailer/language/phpmailer.lang-dk.php
-www/glpi/lib/phpmailer/language/phpmailer.lang-en.php
 www/glpi/lib/phpmailer/language/phpmailer.lang-es.php
 www/glpi/lib/phpmailer/language/phpmailer.lang-et.php
 www/glpi/lib/phpmailer/language/phpmailer.lang-fi.php
@@ -1428,6 +1724,42 @@ www/glpi/lib/phpmailer/language/phpmailer.lang-se.php
 www/glpi/lib/phpmailer/language/phpmailer.lang-tr.php
 www/glpi/lib/phpmailer/language/phpmailer.lang-zh.php
 www/glpi/lib/phpmailer/language/phpmailer.lang-zh_cn.php
+www/glpi/lib/simplepie/LICENSE.txt
+www/glpi/lib/simplepie/README.markdown
+www/glpi/lib/simplepie/SimplePie.php
+www/glpi/lib/simplepie/SimplePie/Author.php
+www/glpi/lib/simplepie/SimplePie/Cache.php
+www/glpi/lib/simplepie/SimplePie/Cache/Base.php
+www/glpi/lib/simplepie/SimplePie/Cache/DB.php
+www/glpi/lib/simplepie/SimplePie/Cache/File.php
+www/glpi/lib/simplepie/SimplePie/Cache/Memcache.php
+www/glpi/lib/simplepie/SimplePie/Cache/MySQL.php
+www/glpi/lib/simplepie/SimplePie/Caption.php
+www/glpi/lib/simplepie/SimplePie/Category.php
+www/glpi/lib/simplepie/SimplePie/Content/Type/Sniffer.php
+www/glpi/lib/simplepie/SimplePie/Copyright.php
+www/glpi/lib/simplepie/SimplePie/Core.php
+www/glpi/lib/simplepie/SimplePie/Credit.php
+www/glpi/lib/simplepie/SimplePie/Decode/HTML/Entities.php
+www/glpi/lib/simplepie/SimplePie/Enclosure.php
+www/glpi/lib/simplepie/SimplePie/Exception.php
+www/glpi/lib/simplepie/SimplePie/File.php
+www/glpi/lib/simplepie/SimplePie/HTTP/Parser.php
+www/glpi/lib/simplepie/SimplePie/IRI.php
+www/glpi/lib/simplepie/SimplePie/Item.php
+www/glpi/lib/simplepie/SimplePie/Locator.php
+www/glpi/lib/simplepie/SimplePie/Misc.php
+www/glpi/lib/simplepie/SimplePie/Net/IPv6.php
+www/glpi/lib/simplepie/SimplePie/Parse/Date.php
+www/glpi/lib/simplepie/SimplePie/Parser.php
+www/glpi/lib/simplepie/SimplePie/Rating.php
+www/glpi/lib/simplepie/SimplePie/Registry.php
+www/glpi/lib/simplepie/SimplePie/Restriction.php
+www/glpi/lib/simplepie/SimplePie/Sanitize.php
+www/glpi/lib/simplepie/SimplePie/Source.php
+www/glpi/lib/simplepie/SimplePie/XML/Declaration/Parser.php
+www/glpi/lib/simplepie/SimplePie/gzdecode.php
+www/glpi/lib/simplepie/autoloader.php
 www/glpi/lib/tiny_mce/langs/ar.js
 www/glpi/lib/tiny_mce/langs/az.js
 www/glpi/lib/tiny_mce/langs/be.js
@@ -1928,46 +2260,103 @@ www/glpi/lib/tiny_mce/utils/mctabs.js
 www/glpi/lib/tiny_mce/utils/validate.js
 www/glpi/lib/vcardclass/classes-vcard.php
 www/glpi/locales/.htaccess
-www/glpi/locales/bg_BG.php
-www/glpi/locales/ca_CA.php
-www/glpi/locales/cs_CZ.php
-www/glpi/locales/de_DE.php
-www/glpi/locales/dk_DK.php
-www/glpi/locales/ee_ET.php
-www/glpi/locales/el_EL.php
-www/glpi/locales/en_GB.php
-www/glpi/locales/en_US.php
-www/glpi/locales/es_AR.php
-www/glpi/locales/es_CO.php
-www/glpi/locales/es_ES.php
-www/glpi/locales/es_MX.php
-www/glpi/locales/es_VE.php
-www/glpi/locales/eu_ES.php
-www/glpi/locales/fa_IR.php
-www/glpi/locales/fr_FR.php
-www/glpi/locales/gl_ES.php
-www/glpi/locales/he_HE.php
-www/glpi/locales/hr_HR.php
-www/glpi/locales/hu_HU.php
-www/glpi/locales/it_IT.php
-www/glpi/locales/ja_JP.php
-www/glpi/locales/lt_LT.php
-www/glpi/locales/lv_LV.php
-www/glpi/locales/nl_NL.php
-www/glpi/locales/no_NB.php
-www/glpi/locales/no_NN.php
-www/glpi/locales/pl_PL.php
-www/glpi/locales/pt_BR.php
-www/glpi/locales/pt_PT.php
-www/glpi/locales/ro_RO.php
-www/glpi/locales/ru_RU.php
-www/glpi/locales/sk_SK.php
-www/glpi/locales/sl_SI.php
-www/glpi/locales/sv_SE.php
-www/glpi/locales/tr_TR.php
-www/glpi/locales/ua_UA.php
-www/glpi/locales/zh_CN.php
-www/glpi/locales/zh_TW.php
+www/glpi/locales/ar_SA.mo
+www/glpi/locales/ar_SA.po
+www/glpi/locales/bg_BG.mo
+www/glpi/locales/bg_BG.po
+www/glpi/locales/ca_ES.mo
+www/glpi/locales/ca_ES.po
+www/glpi/locales/cs_CZ.mo
+www/glpi/locales/cs_CZ.po
+www/glpi/locales/da_DK.mo
+www/glpi/locales/da_DK.po
+www/glpi/locales/de_DE.mo
+www/glpi/locales/de_DE.po
+www/glpi/locales/el_GR.mo
+www/glpi/locales/el_GR.po
+www/glpi/locales/en_GB.mo
+www/glpi/locales/en_GB.po
+www/glpi/locales/en_US.mo
+www/glpi/locales/en_US.po
+www/glpi/locales/es_AR.mo
+www/glpi/locales/es_AR.po
+www/glpi/locales/es_CO.mo
+www/glpi/locales/es_CO.po
+www/glpi/locales/es_ES.mo
+www/glpi/locales/es_ES.po
+www/glpi/locales/es_MX.mo
+www/glpi/locales/es_MX.po
+www/glpi/locales/es_VE.mo
+www/glpi/locales/es_VE.po
+www/glpi/locales/et_EE.mo
+www/glpi/locales/et_EE.po
+www/glpi/locales/eu_ES.mo
+www/glpi/locales/eu_ES.po
+www/glpi/locales/fa_IR.mo
+www/glpi/locales/fa_IR.po
+www/glpi/locales/fi_FI.mo
+www/glpi/locales/fi_FI.po
+www/glpi/locales/fr_FR.mo
+www/glpi/locales/fr_FR.po
+www/glpi/locales/gl_ES.mo
+www/glpi/locales/gl_ES.po
+www/glpi/locales/glpi.pot
+www/glpi/locales/he_IL.mo
+www/glpi/locales/he_IL.po
+www/glpi/locales/hr_HR.mo
+www/glpi/locales/hr_HR.po
+www/glpi/locales/hu_HU.mo
+www/glpi/locales/hu_HU.po
+www/glpi/locales/id_ID.mo
+www/glpi/locales/id_ID.po
+www/glpi/locales/it_IT.mo
+www/glpi/locales/it_IT.po
+www/glpi/locales/ja_JP.mo
+www/glpi/locales/ja_JP.po
+www/glpi/locales/ko_KR.mo
+www/glpi/locales/ko_KR.po
+www/glpi/locales/lt_LT.mo
+www/glpi/locales/lt_LT.po
+www/glpi/locales/lv_LV.mo
+www/glpi/locales/lv_LV.po
+www/glpi/locales/nb_NO.mo
+www/glpi/locales/nb_NO.po
+www/glpi/locales/nl_NL.mo
+www/glpi/locales/nl_NL.po
+www/glpi/locales/nn_NO.mo
+www/glpi/locales/nn_NO.po
+www/glpi/locales/pl_PL.mo
+www/glpi/locales/pl_PL.po
+www/glpi/locales/pt_BR.mo
+www/glpi/locales/pt_BR.po
+www/glpi/locales/pt_PT.mo
+www/glpi/locales/pt_PT.po
+www/glpi/locales/ro_RO.mo
+www/glpi/locales/ro_RO.po
+www/glpi/locales/ru_RU.mo
+www/glpi/locales/ru_RU.po
+www/glpi/locales/sk_SK.mo
+www/glpi/locales/sk_SK.po
+www/glpi/locales/sl_SI.mo
+www/glpi/locales/sl_SI.po
+www/glpi/locales/sr_RS.mo
+www/glpi/locales/sr_RS.po
+www/glpi/locales/sv_SE.mo
+www/glpi/locales/sv_SE.po
+www/glpi/locales/th_TH.mo
+www/glpi/locales/th_TH.po
+www/glpi/locales/tr_TR.mo
+www/glpi/locales/tr_TR.po
+www/glpi/locales/uk_UA.mo
+www/glpi/locales/uk_UA.po
+www/glpi/locales/vi_VN.mo
+www/glpi/locales/vi_VN.po
+www/glpi/locales/zh_CN.mo
+www/glpi/locales/zh_CN.po
+www/glpi/locales/zh_HK.mo
+www/glpi/locales/zh_HK.po
+www/glpi/locales/zh_TW.mo
+www/glpi/locales/zh_TW.po
 www/glpi/login.php
 www/glpi/logout.php
 www/glpi/pics/PICS-AUTHORS.txt
@@ -1977,10 +2366,14 @@ www/glpi/pics/add.png
 www/glpi/pics/add_dropdown.png
 www/glpi/pics/addresa.png
 www/glpi/pics/aide.png
+www/glpi/pics/approbation.png
+www/glpi/pics/arrow-left-top.png
 www/glpi/pics/arrow-left.png
+www/glpi/pics/arrow-right-top.png
+www/glpi/pics/arrow-right.png
 www/glpi/pics/assign.png
-www/glpi/pics/bas_install.png
 www/glpi/pics/bookmark.png
+www/glpi/pics/bookmark_grey.png
 www/glpi/pics/bookmark_record.png
 www/glpi/pics/calendar.png
 www/glpi/pics/closed.png
@@ -1993,6 +2386,7 @@ www/glpi/pics/dollar.png
 www/glpi/pics/dollaradd.png
 www/glpi/pics/edit.png
 www/glpi/pics/entity_all.png
+www/glpi/pics/evaluation.png
 www/glpi/pics/expand.gif
 www/glpi/pics/extjs/panel/corners-sprite.gif
 www/glpi/pics/extjs/panel/left-right.gif
@@ -2040,7 +2434,6 @@ www/glpi/pics/fd_footer.png
 www/glpi/pics/fd_hoverlink.png
 www/glpi/pics/fd_logo.png
 www/glpi/pics/fd_nav1.png
-www/glpi/pics/fd_nav2.png
 www/glpi/pics/fd_nav3.png
 www/glpi/pics/fd_ssmenu.png
 www/glpi/pics/first.png
@@ -2057,7 +2450,6 @@ www/glpi/pics/fond_onglet.png
 www/glpi/pics/fond_th.png
 www/glpi/pics/greenbutton.png
 www/glpi/pics/groupes.png
-www/glpi/pics/haut_install.png
 www/glpi/pics/icones/ai-dist.png
 www/glpi/pics/icones/aiff-dist.png
 www/glpi/pics/icones/asf-dist.png
@@ -2133,7 +2525,7 @@ www/glpi/pics/left_off.png
 www/glpi/pics/leftsearch.png
 www/glpi/pics/loader.png
 www/glpi/pics/lock.png
-www/glpi/pics/login_glpi.png
+www/glpi/pics/login_logo_glpi.png
 www/glpi/pics/logo-glpi-login.png
 www/glpi/pics/logoOcs.png
 www/glpi/pics/menu_add.png
@@ -2148,7 +2540,6 @@ www/glpi/pics/menu_show.png
 www/glpi/pics/menu_showall.png
 www/glpi/pics/meta_moins.png
 www/glpi/pics/meta_plus.png
-www/glpi/pics/milieu_install.png
 www/glpi/pics/moins.png
 www/glpi/pics/moyenne.png
 www/glpi/pics/new.png
@@ -2168,6 +2559,7 @@ www/glpi/pics/puce-down2.png
 www/glpi/pics/puce-up.png
 www/glpi/pics/puce-up2.png
 www/glpi/pics/puce.gif
+www/glpi/pics/qualification.png
 www/glpi/pics/r.gif
 www/glpi/pics/rapports.png
 www/glpi/pics/rdv.png
@@ -2184,13 +2576,16 @@ www/glpi/pics/right.png
 www/glpi/pics/right_off.png
 www/glpi/pics/rightsearch.png
 www/glpi/pics/sauvegardes.png
+www/glpi/pics/search.png
 www/glpi/pics/showdeleted.png
 www/glpi/pics/showdeleted_no.png
 www/glpi/pics/showselect.png
 www/glpi/pics/solved.png
 www/glpi/pics/stats_item.png
+www/glpi/pics/sub_dropdown.png
 www/glpi/pics/supplier.png
 www/glpi/pics/tb.gif
+www/glpi/pics/test.png
 www/glpi/pics/treeroot.png
 www/glpi/pics/users.png
 www/glpi/pics/wait.png
@@ -2215,8 +2610,8 @@ www/glpi/status.php
 @dirrm www/glpi/pics/extjs/qtip
 @dirrm www/glpi/pics/extjs/panel
 @dirrm www/glpi/pics/extjs
-@dirrm www/glpi/pics
-@dirrm www/glpi/locales
+@dirrmtry www/glpi/pics
+@dirrmtry www/glpi/locales
 @dirrm www/glpi/lib/vcardclass
 @dirrm www/glpi/lib/tiny_mce/utils
 @dirrm www/glpi/lib/tiny_mce/themes/simple/skins/o2k7/img
@@ -2249,8 +2644,21 @@ www/glpi/status.php
 @dirrm www/glpi/lib/tiny_mce/plugins
 @dirrm www/glpi/lib/tiny_mce/langs
 @dirrm www/glpi/lib/tiny_mce
-@dirrm www/glpi/lib/phpmailer/language
-@dirrm www/glpi/lib/phpmailer
+@dirrm www/glpi/lib/simplepie/SimplePie/XML/Declaration
+@dirrm www/glpi/lib/simplepie/SimplePie/XML
+@dirrm www/glpi/lib/simplepie/SimplePie/Parse
+@dirrm www/glpi/lib/simplepie/SimplePie/Net
+@dirrm www/glpi/lib/simplepie/SimplePie/HTTP
+@dirrm www/glpi/lib/simplepie/SimplePie/Decode/HTML
+@dirrm www/glpi/lib/simplepie/SimplePie/Decode
+@dirrm www/glpi/lib/simplepie/SimplePie/Content/Type
+@dirrm www/glpi/lib/simplepie/SimplePie/Content
+@dirrm www/glpi/lib/simplepie/SimplePie/Cache
+@dirrm www/glpi/lib/simplepie/SimplePie
+@dirrm www/glpi/lib/simplepie
+@dirrmtry www/glpi/lib/phpmailer/language
+@dirrm www/glpi/lib/phpmailer/extras
+@dirrmtry www/glpi/lib/phpmailer
 @dirrm www/glpi/lib/phpcas/CAS/Request
 @dirrm www/glpi/lib/phpcas/CAS/ProxyChain
 @dirrm www/glpi/lib/phpcas/CAS/ProxiedService/Http
@@ -2326,14 +2734,44 @@ www/glpi/status.php
 @dirrm www/glpi/lib/cache_lite/docs
 @dirrm www/glpi/lib/cache_lite/Lite
 @dirrm www/glpi/lib/cache_lite
-@dirrm www/glpi/lib
-@dirrm www/glpi/install/mysql
-@dirrm www/glpi/install
-@dirrm www/glpi/inc
-@dirrm www/glpi/front
+@dirrm www/glpi/lib/Zend/Version
+@dirrm www/glpi/lib/Zend/Stdlib/Hydrator/Strategy
+@dirrm www/glpi/lib/Zend/Stdlib/Hydrator
+@dirrm www/glpi/lib/Zend/Stdlib/Exception
+@dirrm www/glpi/lib/Zend/Stdlib
+@dirrm www/glpi/lib/Zend/ServiceManager/Exception
+@dirrm www/glpi/lib/Zend/ServiceManager/Di
+@dirrm www/glpi/lib/Zend/ServiceManager
+@dirrm www/glpi/lib/Zend/Loader/Exception
+@dirrm www/glpi/lib/Zend/Loader
+@dirrm www/glpi/lib/Zend/I18n/View/Helper
+@dirrm www/glpi/lib/Zend/I18n/View
+@dirrm www/glpi/lib/Zend/I18n/Validator
+@dirrm www/glpi/lib/Zend/I18n/Translator/Plural
+@dirrm www/glpi/lib/Zend/I18n/Translator/Loader
+@dirrm www/glpi/lib/Zend/I18n/Translator
+@dirrm www/glpi/lib/Zend/I18n/Filter
+@dirrm www/glpi/lib/Zend/I18n/Exception
+@dirrm www/glpi/lib/Zend/I18n
+@dirrm www/glpi/lib/Zend/EventManager/Filter
+@dirrm www/glpi/lib/Zend/EventManager/Exception
+@dirrm www/glpi/lib/Zend/EventManager
+@dirrm www/glpi/lib/Zend/Cache/Storage/Plugin
+@dirrm www/glpi/lib/Zend/Cache/Storage/Adapter
+@dirrm www/glpi/lib/Zend/Cache/Storage
+@dirrm www/glpi/lib/Zend/Cache/Pattern
+@dirrm www/glpi/lib/Zend/Cache/Exception
+@dirrm www/glpi/lib/Zend/Cache
+@dirrm www/glpi/lib/Zend
+@dirrmtry www/glpi/lib
+@dirrmtry www/glpi/install/mysql
+@dirrmtry www/glpi/install
+@dirrmtry www/glpi/inc
+@dirrmtry www/glpi/front
 @dirrm www/glpi/files/_uploads
 @dirrm www/glpi/files/_tmp
 @dirrmtry www/glpi/files/_sessions
+@dirrmtry www/glpi/files/_rss
 @dirrmtry www/glpi/files/_plugins
 @dirrmtry www/glpi/files/_log
 @dirrm www/glpi/files/_lock
@@ -2344,5 +2782,7 @@ www/glpi/status.php
 @dirrmtry www/glpi/files
 @dirrm www/glpi/css
 @dirrmtry www/glpi/config
-@dirrm www/glpi/ajax
+@dirrmtry www/glpi/ajax
 @dirrmtry www/glpi
+@owner
+@group
