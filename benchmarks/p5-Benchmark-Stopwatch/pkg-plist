@@ -1,6 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Benchmark/Stopwatch/.packlist
+%%PERL5_MAN3%%/Benchmark::Stopwatch.3.gz
 %%SITE_PERL%%/Benchmark/Stopwatch.pm
 %%SITE_PERL%%/Benchmark/example.pl
-@dirrmtry %%SITE_PERL%%/Benchmark
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Benchmark/Stopwatch/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Benchmark/Stopwatch
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Benchmark
+@dirrmtry %%SITE_PERL%%/Benchmark
