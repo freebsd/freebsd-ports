@@ -34,11 +34,10 @@ lib/libcgwrap.a
 lib/libcgwrap.la
 lib/libcgwrap.so
 lib/libcgwrap.so.1
-share/cego/cgbackup
-share/cego/cgrecover
-share/cego/cgmkdb
-share/cego/startdb
-share/cego/stopdb
-@dirrm include/cego
-@dirrm share/cego
-@dirrmtry %%USER%%
+%%DATADIR%%/cgbackup
+%%DATADIR%%/cgmkdb
+%%DATADIR%%/cgrecover
+%%DATADIR%%/startdb
+%%DATADIR%%/stopdb
+@dirrmtry %%DATADIR%%
+@dirrmtry include/cego
