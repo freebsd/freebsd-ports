@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmlrpc-c
-PORTVERSION=	1.33.2
-PORTREVISION=	1
+PORTVERSION=	1.36.0
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/garga/xmlrpc-c
 PKGNAMESUFFIX=	-devel
@@ -28,7 +27,6 @@ MAKEFILE=	GNUmakefile
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if empty(PORT_OPTIONS:MDEBUG)
