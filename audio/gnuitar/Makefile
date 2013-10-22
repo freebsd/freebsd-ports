@@ -47,7 +47,6 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/gnuitar ${PREFIX}/bin
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/pixmaps
 	@${INSTALL_DATA} ${WRKSRC}/src/gnuitar.xpm ${PREFIX}/share/pixmaps
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}

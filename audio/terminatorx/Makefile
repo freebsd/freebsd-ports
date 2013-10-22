@@ -98,7 +98,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/gnome-support/${f} \
 		${PREFIX}/share/mime-info
 .endfor
-	@${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/gnome-support/terminatorX.desktop \
 		${PREFIX}/share/applications
 	@${MKDIR} ${PREFIX}/share/gnome/help/terminatorX/C

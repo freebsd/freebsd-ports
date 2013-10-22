@@ -46,6 +46,5 @@ share/locale/pl/LC_MESSAGES/mpdBrowser.mo
 share/pixmaps/mpdBrowser_empty.png
 share/pixmaps/mpdBrowser.png
 share/pixmaps/mpdBrowser_case.png
-@dirrmtry share/applications
 @dirrm share/mpdbrowser
 @dirrm %%PYTHON_SITELIBDIR%%/mpdBrowser

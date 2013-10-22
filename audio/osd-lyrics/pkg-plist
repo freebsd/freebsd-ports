@@ -27,4 +27,3 @@ share/locale/zh_TW/LC_MESSAGES/osdlyrics.mo
 %%DATADIR%%/icons/osdlyrics.png
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

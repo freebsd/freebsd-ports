@@ -12,4 +12,3 @@ share/applications/wxGuitar.desktop
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

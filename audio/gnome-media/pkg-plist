@@ -408,7 +408,6 @@ share/sounds/gnome/default/alerts/sonar.ogg
 %%PULSE%%@dirrm %%DATADIR%%/icons/hicolor
 %%PULSE%%@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm include/gnome-media/profiles
 @dirrm include/gnome-media
 @dirrmtry share/locale/zh_HK/LC_MESSAGES

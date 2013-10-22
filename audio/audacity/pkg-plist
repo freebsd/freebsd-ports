@@ -157,4 +157,3 @@ share/pixmaps/gnome-mime-application-x-audacity-project.xpm
 @dirrmtry %%DATADIR%%/nyquist/rawwaves
 @dirrmtry %%DATADIR%%/nyquist
 @dirrmtry %%DATADIR%%
-@dirrmtry share/applications

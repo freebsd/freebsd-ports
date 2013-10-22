@@ -35,7 +35,6 @@ share/pixmaps/foxtrotgps-wp.png
 share/pixmaps/foxtrotgps.png
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrmtry lib/locale/sk/LC_MESSAGES
 @dirrmtry lib/locale/sk
 @dirrmtry lib/locale/ru/LC_MESSAGES

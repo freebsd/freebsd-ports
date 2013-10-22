@@ -146,4 +146,3 @@ share/pixmaps/roadnav.png
 @dirrm %%DATADIR%%/skins/Default-Day
 @dirrm %%DATADIR%%/skins
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

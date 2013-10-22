@@ -308,7 +308,6 @@ share/pixmaps/jokosher.png
 @dirrm %%PYTHON_SITELIBDIR%%/Jokosher/elements
 @dirrm %%PYTHON_SITELIBDIR%%/Jokosher/ui
 @dirrm %%PYTHON_SITELIBDIR%%/Jokosher
-@dirrmtry share/applications
 @dirrm %%DATADIR%%/Instruments/images
 @dirrm %%DATADIR%%/Instruments
 @dirrm %%DATADIR%%/extensions

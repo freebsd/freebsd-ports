@@ -112,4 +112,3 @@ share/pixmaps/mp3splt-gtk_ico.svg
 %%NLS%%@dirrmtry share/locale/ru_RU
 @dirrmtry share/gnome/help
 @dirrmtry share/gnome
-@dirrmtry share/applications

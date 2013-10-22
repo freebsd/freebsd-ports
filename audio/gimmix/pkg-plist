@@ -13,7 +13,6 @@ share/pixmaps/gimmix.png
 share/pixmaps/gimmix_logo_small.png
 share/pixmaps/gimmix_playlist.png
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/zh_TW
 @dirrmtry share/locale/tr/LC_MESSAGES

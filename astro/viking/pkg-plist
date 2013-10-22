@@ -62,4 +62,3 @@ share/pixmaps/viking.png
 @dirrm share/gnome/help/viking/C/figures
 @dirrm share/gnome/help/viking/C
 @dirrm share/gnome/help/viking
-@dirrmtry share/applications

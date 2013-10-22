@@ -106,4 +106,3 @@ share/streamtuner/ui/tune-in.png
 @dirrm lib/streamtuner/plugins
 @dirrm lib/streamtuner
 @dirrm include/streamtuner
-@dirrmtry share/applications

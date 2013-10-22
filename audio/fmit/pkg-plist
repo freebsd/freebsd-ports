@@ -9,4 +9,3 @@ share/icons/hicolor/scalable/apps/fmit.svg
 @dirrmtry share/icons
 @dirrm %%DATADIR%%/tr
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

@@ -73,4 +73,3 @@ share/pixmaps/griptray.png
 @dirrmtry share/locale/pl_PL
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
-@dirrmtry share/applications

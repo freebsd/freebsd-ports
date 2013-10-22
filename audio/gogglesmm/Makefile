@@ -57,9 +57,6 @@ NLS_CONFIGURE_OFF=	--disable-nls
 
 NEWREMOTE_CONFIGURE_OFF=	--without-new-remote
 
-pre-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
-
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}

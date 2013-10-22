@@ -2980,4 +2980,3 @@ share/pixmaps/solfege.svg
 @dirrm %%DATADIR%%/exercises/standard
 @dirrm %%DATADIR%%/exercises
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

@@ -283,4 +283,3 @@ share/pixmaps/mapcatcher.png
 @dirrm %%PYTHON_SITELIBDIR%%/gmapcatcher/gpxpy
 @dirrm %%PYTHON_SITELIBDIR%%/gmapcatcher/gps
 @dirrm %%PYTHON_SITELIBDIR%%/gmapcatcher
-@dirrmtry share/applications

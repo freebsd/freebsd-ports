@@ -404,7 +404,6 @@ share/locale/sv/LC_MESSAGES/picard.mo
 @dirrmtry share/icons/hicolor/128x128
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/picard/util
 @dirrm %%PYTHON_SITELIBDIR%%/picard/ui/options
 @dirrm %%PYTHON_SITELIBDIR%%/picard/ui

@@ -1,4 +1,3 @@
 bin/pavumeter
 share/applications/pavumeter.desktop
 share/applications/pavumeter-record.desktop
-@dirrmtry share/applications

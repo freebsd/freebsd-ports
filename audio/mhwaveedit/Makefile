@@ -35,8 +35,6 @@ PLIST_FILES=	bin/mhwaveedit \
 		share/applications/mhwaveedit.desktop \
 		share/pixmaps/mhwaveedit.xpm
 
-PLIST_DIRS=	share/applications
-
 MAN1=		mhwaveedit.1
 
 OPTIONS_DEFINE=	DOUBLE_SAMPLES SNDFILE SAMPLERATE OSS \

@@ -1981,7 +1981,6 @@ share/mime/application/x-lmms-project.xml
 share/mime/packages/lmms.xml
 share/pixmaps/lmms.png
 @dirrmtry share/menu
-@dirrmtry share/applications
 @dirrm lib/lmms/
 @dirrm include/lmms/
 @dirrm %%DATADIR%%/themes/default

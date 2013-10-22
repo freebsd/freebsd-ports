@@ -59,4 +59,3 @@ share/applications/pykaraoke_mini.desktop
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

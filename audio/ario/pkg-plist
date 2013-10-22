@@ -150,6 +150,5 @@ share/locale/en_AU/LC_MESSAGES/ario.mo
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/art
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm lib/ario/plugins
 @dirrm lib/ario

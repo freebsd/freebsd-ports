@@ -298,7 +298,6 @@ share/pixmaps/beast.png
 @dirrm %%DATADIR%%/v%%VERSION%%/docs
 @dirrm %%DATADIR%%/v%%VERSION%%
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm lib/bse/v%%VERSION%%/plugins
 @dirrm lib/bse/v%%VERSION%%/drivers
 @dirrm lib/bse/v%%VERSION%%

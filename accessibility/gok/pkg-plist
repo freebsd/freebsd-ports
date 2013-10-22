@@ -1045,7 +1045,6 @@ share/sounds/freedesktop/stereo/goksound2.wav
 @dirrm %%DOCSDIR%%
 @dirrm share/gnome/help/gok/C
 @dirrm share/gnome/help/gok
-@dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES

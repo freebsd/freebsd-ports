@@ -9,6 +9,5 @@ lib/xarchive/wrappers/tar-wrap.sh
 lib/xarchive/wrappers/zip-wrap.sh
 share/applications/xarchive.desktop
 share/pixmaps/xarchive.xpm
-@dirrmtry share/applications
 @dirrm lib/xarchive/wrappers
 @dirrm lib/xarchive

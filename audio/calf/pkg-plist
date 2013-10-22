@@ -297,7 +297,6 @@ share/icons/hicolor/scalable/apps/calf_plugin.svg
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 %%LV2%%@dirrm lib/lv2/calf.lv2
 %%LV2%%@dirrmtry lib/lv2
 @dirrm lib/calf

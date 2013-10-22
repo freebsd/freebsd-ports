@@ -41,7 +41,6 @@ share/doc/pavucontrol/style.css
 %%DATADIR%%/pavucontrol.glade
 @dirrm %%DATADIR%%
 @dirrm share/doc/pavucontrol
-@dirrmtry share/applications
 @dirrm lib/locale/zh_CN/LC_MESSAGES
 @dirrm lib/locale/zh_CN
 @dirrm lib/locale/uk/LC_MESSAGES

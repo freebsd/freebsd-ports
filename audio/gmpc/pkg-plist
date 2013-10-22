@@ -860,5 +860,4 @@ share/locale/zh_TW/LC_MESSAGES/gmpc.mo
 @dirrm %%DATADIR%%/icons/Humanity
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm include/gmpc

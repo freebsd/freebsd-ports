@@ -72,4 +72,3 @@ share/locale/zh_CN/LC_MESSAGES/muine.mo
 @dirrm share/doc/muine
 @dirrmtry lib/muine/plugins
 @dirrmtry lib/muine
-@dirrmtry share/applications

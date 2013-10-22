@@ -113,7 +113,6 @@ bin/last.fm
 share/applications/last.fm.desktop
 share/services/lastfm.protocol
 @dirrmtry share/services
-@dirrmtry share/applications
 @dirrm %%DATADIR%%/services
 @dirrm %%DATADIR%%/data/icons
 @dirrm %%DATADIR%%/data/buttons

@@ -129,7 +129,6 @@ share/pixmaps/sonata_play.png
 share/pixmaps/sonatacd.png
 share/pixmaps/sonatacd_large.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrmtry share/locale/el_GR/LC_MESSAGES
 @dirrmtry share/locale/el_GR
 @dirrm %%PYTHON_SITELIBDIR%%/sonata/plugins

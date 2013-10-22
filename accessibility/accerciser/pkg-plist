@@ -371,7 +371,6 @@ share/omf/accerciser/accerciser-zh_CN.omf
 @dirrm share/gnome/help/accerciser/C/figures
 @dirrm share/gnome/help/accerciser/C
 @dirrm share/gnome/help/accerciser
-@dirrmtry share/applications
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/plugindata/validate
 @dirrm %%DATADIR%%/plugindata

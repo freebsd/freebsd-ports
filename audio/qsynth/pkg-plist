@@ -7,4 +7,3 @@ share/icons/hicolor/32x32/apps/qsynth.png
 %%DATADIR%%/qsynth_fr.qm
 %%DATADIR%%/qsynth_ru.qm
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
