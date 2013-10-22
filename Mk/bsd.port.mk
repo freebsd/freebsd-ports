@@ -6664,7 +6664,6 @@ install-desktop-entries:
 		fi; \
 		shift 6; \
 	done; \
-	${ECHO_CMD} "@unexec rmdir ${DESKTOPDIR} 2>/dev/null || true" >> ${TMPPLIST}; \
 	if [ -z "${_DESKTOPDIR_REL}" ]; then \
 		${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}; \
 	fi
