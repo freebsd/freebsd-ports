@@ -9,7 +9,7 @@ CATEGORIES=	textproc
 MAINTAINER=	gslin@gslin.org
 COMMENT=	A code-searching tool similar to ack but faster
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ggreer
@@ -21,15 +21,12 @@ AUTOMAKE_ARGS+=	--add-missing
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	LZMA_LIBS=-llzma
 .if exists(/usr/include/lzma.h)
-CONFIGURE_ARGS+= LZMA_CFLAGS=-I/usr/include
+CONFIGURE_ARGS+=	LZMA_CFLAGS=-I/usr/include
 .else
-LIB_DEPENDS+=	lzma:${PORTSDIR}/archivers/xz
-CONFIGURE_ARGS+= LZMA_CFLAGS=-I${LOCALBASE}/include
+LIB_DEPENDS+=	liblzma.so:${PORTSDIR}/archivers/xz
+CONFIGURE_ARGS+=	LZMA_CFLAGS=-I${LOCALBASE}/include
 .endif
 USE_AUTOTOOLS=	aclocal autoconf autoheader automake
 USES=		pkgconfig
 
-MAN1=		ag.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
