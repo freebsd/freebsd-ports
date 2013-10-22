@@ -2,6 +2,7 @@
 
 PORTNAME=	libticables2
 PORTVERSION=	1.3.4
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.17
 
@@ -11,27 +12,22 @@ COMMENT=	TI calculator link cables library
 LICENSE=	GPLv2
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-USES=		pathfix pkgconfig
+USES=		gmake pathfix pkgconfig
 
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBUSB_CFLAGS=" " LIBUSB_LIBS="-lusb"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's/Requires/&.private/' ${WRKSRC}/ticables2.pc.in
 
 .include <bsd.port.mk>
