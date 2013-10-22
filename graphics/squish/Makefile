@@ -10,19 +10,19 @@ MAINTAINER=	me@rdb.name
 COMMENT=	Open source DXT compression library
 
 LICENSE=	MIT
-USE_GMAKE=	YES
+
+USES=		gmake
+MAKE_ENV=	INSTALL_DIR=${STAGEDIR}${PREFIX}
 PLIST_FILES=	include/squish.h \
 		lib/libsquish.a
+CXXFLAGS+=	-fPIC
 
 OPTIONS_RADIO=	RG1
 OPTIONS_RADIO_RG1=	ALTIVEC SSE
 ALTIVEC_DESC=	Use Altivec instructions
 RG1_DESC=	Optimizations Selection
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-CXXFLAGS+=	-fPIC
 
 .if ${PORT_OPTIONS:MALTIVEC}
 CXXFLAGS+=	-DSQUISH_USE_ALTIVEC=1 -maltivec
