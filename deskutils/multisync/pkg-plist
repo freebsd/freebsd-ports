@@ -9,4 +9,3 @@ share/multisync/pixmaps/resync_small.png
 @dirrm share/multisync/pixmaps
 @dirrm share/multisync
 @dirrm include/multisync
-@dirrmtry share/applications

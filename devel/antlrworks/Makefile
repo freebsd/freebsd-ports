@@ -42,7 +42,6 @@ do-install:
 	@${ECHO_MSG} -n ">> Installing antlrworks script as ${PREFIX}/bin/antlrworks..."
 	@${INSTALL_SCRIPT} ${WRKDIR}/antlrworks.sh ${PREFIX}/bin/antlrworks
 	@${ECHO_MSG} " [ DONE ]"
-	@${MKDIR} ${PREFIX}/share/pixmaps
 	@${INSTALL_DATA} ${WRKDIR}/icons/app_64x64.png ${PREFIX}/share/pixmaps/antlrworks.png
 
 .include <bsd.port.mk>

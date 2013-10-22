@@ -95,7 +95,6 @@ share/pixmaps/launchy_icon.png
 @dirrm share/launchy/skins/Black_Glass
 @dirrm share/launchy/skins
 @dirrm share/launchy
-@dirrmtry share/applications
 @dirrm lib/launchy/plugins/icons
 @dirrm lib/launchy/plugins
 @dirrm lib/launchy

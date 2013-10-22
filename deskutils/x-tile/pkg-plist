@@ -43,4 +43,3 @@ share/pixmaps/x-tile.svg
 @dirrm %%DATADIR%%
 %%NLS%%@dirrmtry share/locale/es_AR/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/es_AR
-@dirrmtry share/applications

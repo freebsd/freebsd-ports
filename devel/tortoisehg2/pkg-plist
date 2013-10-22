@@ -613,7 +613,6 @@ share/pixmaps/tortoisehg/icons/thg_logo_92x50.png
 @dirrm share/pixmaps/tortoisehg/icons/svg
 @dirrm share/pixmaps/tortoisehg/icons
 @dirrm share/pixmaps/tortoisehg
-@dirrmtry share/applications
 @dirrm %%DATADIR%%
 %%NLS%%@dirrmtry share/locale/jv/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/jv

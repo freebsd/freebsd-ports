@@ -115,7 +115,6 @@ share/locale/zh_TW/LC_MESSAGES/alacarte.mo
 @dirrmtry share/icons/hicolor/256x256
 @dirrm share/alacarte
 @dirrm %%PYTHON_SITELIBDIR%%/Alacarte
-@dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/uz@cyrillic/LC_MESSAGES

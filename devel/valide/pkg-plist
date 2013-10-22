@@ -151,7 +151,6 @@ share/vala/vapi/waf.vapi
 @dirrm share/pixmaps/valide
 @dirrmtry share/locale/vec/LC_MESSAGES
 @dirrmtry share/locale/vec
-@dirrm share/applications
 @dirrm lib/valide/plugins/waf
 @dirrm lib/valide/plugins/todo
 @dirrm lib/valide/plugins/symbol

@@ -120,5 +120,4 @@ share/owncloud/i18n/mirall_zh_TW.qm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrmtry etc/ownCloud

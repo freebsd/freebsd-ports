@@ -51,7 +51,6 @@ share/applications/gxneur.desktop
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 share/icons/hicolor/16x16/apps/gxneur.png
 share/icons/hicolor/16x16/apps/gxneur-am.png
 share/icons/hicolor/16x16/apps/gxneur-bg.png

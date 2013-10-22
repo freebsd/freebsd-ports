@@ -115,7 +115,6 @@ share/pixmaps/rubrica2/scalable/query.svg
 %%NLS%%@dirrmtry share/locale/pt-pt
 %%NLS%%@dirrmtry share/locale/en_US/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/en_US
-@dirrmtry share/applications
 @dirrm lib/libral/plugins
 @dirrm lib/libral
 @dirrm include/libral-1.0/libral

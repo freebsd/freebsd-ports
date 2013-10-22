@@ -184,7 +184,6 @@ bin/dreampie
 share/applications/dreampie.desktop
 share/pixmaps/dreampie.png
 share/pixmaps/dreampie.svg
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/dreampielib/subprocess
 @dirrm %%PYTHON_SITELIBDIR%%/dreampielib/gui
 @dirrm %%PYTHON_SITELIBDIR%%/dreampielib/data/subp-py3/dreampielib/subprocess

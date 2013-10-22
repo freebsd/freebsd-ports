@@ -84,6 +84,5 @@ share/icons/hicolor/scalable/apps/gitg.svg
 @dirrm %%DATADIR%%/language-specs
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm include/libgitg-1.0/libgitg
 @dirrm include/libgitg-1.0

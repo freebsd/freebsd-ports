@@ -41,4 +41,3 @@ share/pixmaps/flamerobin.png
 @dirrm %%DATADIR%%/docs
 @dirrm %%DATADIR%%/conf-defs
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

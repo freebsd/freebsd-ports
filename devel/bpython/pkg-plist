@@ -112,7 +112,6 @@ share/applications/bpython.desktop
 %%NLS%%@dirrmtry share/locale/nl_NL
 %%NLS%%@dirrmtry share/locale/it_IT/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/it_IT
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/translations
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython/test
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bpython

@@ -318,4 +318,3 @@ bin/rednotebook
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/gui
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/util
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook
-@dirrmtry share/applications

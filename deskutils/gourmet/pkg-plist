@@ -768,7 +768,6 @@ share/locale/zh_TW/LC_MESSAGES/gourmet.mo
 @dirrm %%DATADIR%%/icons/48x48
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet/plugins/web_plugin/gourmetweb/recview
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet/plugins/web_plugin/gourmetweb
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet/plugins/web_plugin

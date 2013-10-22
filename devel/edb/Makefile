@@ -46,11 +46,8 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/edb.desktop ${PREFIX}/share/applications
-	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/src/images/edb48-logo.png ${PREFIX}/share/pixmaps/edb.png
-	${MKDIR} ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/edb.1 ${MANPREFIX}/man/man1/edb.1
 	${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}
 

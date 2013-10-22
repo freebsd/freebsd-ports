@@ -1012,7 +1012,6 @@ share/icons/hicolor/96x96/apps/gaphor.png
 @dirrmtry share/icons/hicolor/24x24
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaphor/ui/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaphor/ui/pixmaps
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaphor/ui

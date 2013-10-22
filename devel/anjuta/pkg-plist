@@ -1479,7 +1479,6 @@ share/pixmaps/anjuta/vcs-updated.png
 @dirrm include/libanjuta-1.0/libanjuta/interfaces
 @dirrm include/libanjuta-1.0/libanjuta
 @dirrm include/libanjuta-1.0
-@dirrmtry share/applications
 @dirrmtry share/icons/gnome/scalable/mimetypes
 @dirrmtry share/icons/gnome/scalable
 @dirrmtry share/locale/zh_HK/LC_MESSAGES

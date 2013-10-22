@@ -30,7 +30,6 @@ do-configure:
 		< ${FILESDIR}/config > ${WRKSRC}/eric4config.freebsd
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKDIR}/eric4.desktop ${STAGEDIR}${PREFIX}/share/applications/
 	${LN} -sf ${DATADIR}/icons/default/eric.png ${STAGEDIR}${PREFIX}/share/pixmaps/
 	@${MKDIR} ${STAGEDIR}${DATADIR}/i18n

@@ -245,7 +245,6 @@ share/omf/glom/glom-sv.omf
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
-@dirrmtry share/applications
 @dirrm include/glom-1.12/libglom/document/bakery/view
 @dirrm include/glom-1.12/libglom/document/bakery
 @dirrm include/glom-1.12/libglom/document

@@ -277,7 +277,6 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm lib/geany
 @dirrm include/geany/tagmanager
 @dirrm include/geany/scintilla

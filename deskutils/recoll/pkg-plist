@@ -107,4 +107,3 @@ bin/recollindex
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%
-%%QT%%@dirrmtry share/applications

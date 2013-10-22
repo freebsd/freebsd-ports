@@ -28,7 +28,6 @@ share/icons/hicolor/scalable/apps/vboxgtk.svg
 @dirrm %%PYTHON_SITELIBDIR%%/vboxgtk
 @dirrm %%DATADIR%%/xml
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrmtry share/icons/hicolor/16x16/apps
 @dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor/22x22/apps

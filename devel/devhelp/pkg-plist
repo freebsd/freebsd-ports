@@ -114,7 +114,6 @@ share/locale/zh_TW/LC_MESSAGES/devhelp.mo
 @dirrm share/devhelp
 @dirrm include/devhelp-2.0/devhelp
 @dirrm include/devhelp-2.0
-@dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/ug/LC_MESSAGES

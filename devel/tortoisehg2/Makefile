@@ -60,7 +60,6 @@ post-patch:
 
 post-install:
 	${MKDIR} ${PREFIX}/share/tortoisehg
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/contrib/mergetools.rc ${PREFIX}/share/tortoisehg/
 	${INSTALL_DATA} ${WRKSRC}/contrib/tortoisehg.desktop ${PREFIX}/share/applications/
 

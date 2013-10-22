@@ -67,4 +67,3 @@ share/mime/packages/guikachu.mime.xml
 @dirrm share/gnome/help/guikachu
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@dirrmtry share/applications

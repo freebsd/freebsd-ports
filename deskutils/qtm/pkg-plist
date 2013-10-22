@@ -6,4 +6,3 @@ share/applications/qtm.desktop
 share/icons/qtm-logo1.png
 @dirrmtry share/icons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications

@@ -202,7 +202,6 @@ share/pixmaps/wammu.ico
 share/pixmaps/wammu.png
 share/pixmaps/wammu.svg
 share/pixmaps/wammu.xpm
-@dirrmtry share/applications
 @dirrmtry man/pt_BR/man1
 @dirrmtry man/pt_BR
 @dirrm share/Wammu/images/misc

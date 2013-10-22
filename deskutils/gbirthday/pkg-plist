@@ -33,7 +33,6 @@ share/applications/gbirthday.desktop
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/pixmaps/gbirthday.png
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/gbirthday/pics
 @dirrm %%PYTHON_SITELIBDIR%%/gbirthday/databases
 @dirrm %%PYTHON_SITELIBDIR%%/gbirthday

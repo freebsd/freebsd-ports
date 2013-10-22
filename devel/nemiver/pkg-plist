@@ -342,7 +342,6 @@ share/omf/nemiver/nemiver-zh_CN.omf
 @dirrm share/gnome/help/nemiver/C/figures
 @dirrm share/gnome/help/nemiver/C
 @dirrm share/gnome/help/nemiver
-@dirrmtry share/applications
 @dirrm lib/nemiver/plugins/dbgperspective/ui
 @dirrm lib/nemiver/plugins/dbgperspective/sqlscripts
 @dirrm lib/nemiver/plugins/dbgperspective/menus

@@ -233,7 +233,6 @@ share/pixmaps/griffith.xpm
 @dirrm %%DATADIR%%/export_templates/csv
 @dirrm %%DATADIR%%/export_templates
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrmtry man/pt/man1
 @dirrmtry man/pt
 @dirrmtry man/pl/man1

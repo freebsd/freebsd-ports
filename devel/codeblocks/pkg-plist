@@ -1735,7 +1735,6 @@ share/pixmaps/codeblocks.png
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/SpellChecker
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm lib/codeblocks/wxContribItems
 @dirrm lib/codeblocks/plugins
 @dirrm lib/codeblocks

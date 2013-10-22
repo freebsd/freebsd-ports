@@ -232,7 +232,6 @@ share/omf/gucharmap/gucharmap-zh_TW.omf
 @dirrm share/gnome/help/gucharmap/C/figures
 @dirrm share/gnome/help/gucharmap/C
 @dirrm share/gnome/help/gucharmap
-@dirrmtry share/applications
 @dirrm include/gucharmap-2.0/gucharmap
 @dirrm include/gucharmap-2.0
 @dirrmtry share/locale/zh_HK/LC_MESSAGES

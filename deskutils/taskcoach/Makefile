@@ -26,10 +26,8 @@ post-patch:
 		${WRKSRC}/build.in/fedora/taskcoach.desktop
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/taskcoach.py ${PREFIX}/bin/taskcoach
-	@${MKDIR} ${PREFIX}/share/applications/
 	@${INSTALL_DATA} ${WRKSRC}/build.in/fedora/taskcoach.desktop \
 		${PREFIX}/share/applications/
-	@${MKDIR} ${PREFIX}/share/pixmaps
 	@${INSTALL_DATA} ${WRKSRC}/icons.in/taskcoach.png \
 		${PREFIX}/share/pixmaps
 

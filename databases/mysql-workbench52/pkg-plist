@@ -1239,7 +1239,6 @@ share/mysql-workbench/workbench.rc
 @dirrm share/mysql-workbench/db_mysql_catalog_reporting
 @dirrm share/mysql-workbench/data
 @dirrm share/mysql-workbench
-@dirrmtry share/applications
 @dirrm lib/mysql-workbench/plugins
 @dirrm lib/mysql-workbench/modules
 @dirrm lib/mysql-workbench
