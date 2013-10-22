@@ -177,7 +177,5 @@ share/icons/hicolor/scalable/apps/xfce-filemanager.svg
 %%APIDOCS%%@dirrmtry share/gtk-doc/html/libxfcegui4
 %%APIDOCS%%@dirrmtry share/gtk-doc/html
 %%APIDOCS%%@dirrmtry share/gtk-doc
-@dirrmtry lib/libglade/2.0
-@dirrmtry lib/libglade
 @dirrmtry include/xfce4/libxfcegui4
 @dirrmtry include/xfce4
