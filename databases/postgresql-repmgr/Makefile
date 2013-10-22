@@ -10,27 +10,26 @@ DISTNAME=	repmgr-${PORTVERSION}
 MAINTAINER=	alp@sfedu.ru
 COMMENT=	PostgreSQL replication manager
 
-BUILD_DEPENDS=	postgresql-server>=9.0:${PORTSDIR}/databases/postgresql90-server
-RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		rsync:${PORTSDIR}/net/rsync
+LICENSE=	GPLv3
 
-USE_GMAKE=	yes
+RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
+
+USES=	gmake
+USE_PGSQL=	yes
+WANT_PGSQL_VER=	90+
 MAKE_ENV=	USE_PGXS=1
+
+OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	README.*
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/repmgr ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/repmgrd ${PREFIX}/sbin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.rst    ${DOCSDIR}
-.endif
-.if !defined(NOPORTDATA)
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/repmgr.conf   ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/repmgr.sql    ${DATADIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/repmgr ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/repmgrd ${STAGEDIR}${PREFIX}/sbin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.rst ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/repmgr.conf ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/repmgr.sql ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
