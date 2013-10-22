@@ -22,7 +22,6 @@ LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
 
 USE_SDL=	sdl mixer
 USE_GL=		gl glu
-WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
