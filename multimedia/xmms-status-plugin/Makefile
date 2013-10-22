@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.hellion.org.uk/source/
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS control applet for GNOME 2 panel / KDE tray
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

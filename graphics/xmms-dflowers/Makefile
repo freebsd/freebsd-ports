@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	alepulver
 PKGNAMEPREFIX=	xmms-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/^/v/}
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dual Flowers visualization plugin for XMMS
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
