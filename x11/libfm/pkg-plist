@@ -154,7 +154,6 @@ share/mime/packages/libfm.xml
 %%NLS%%@dirrmtry share/locale/lg
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm include/libfm-1.0
 @dirrmtry etc/xdg/libfm
 @dirrmtry etc/xdg

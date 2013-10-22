@@ -13,4 +13,3 @@ share/pixmaps/qtfm.png
 %%DATADIR%%/qtfm_zh.qm
 %%DATADIR%%/qtfm_zh_TW.qm
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

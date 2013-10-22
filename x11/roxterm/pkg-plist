@@ -33,4 +33,3 @@ share/locale/uk/LC_MESSAGES/roxterm.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/lib
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications

@@ -164,11 +164,9 @@ post-build:
 
 port-pre-install:
 	${ECHO_CMD} share/applications/${MOZILLA}.desktop >> ${PLIST}
-	${ECHO_CMD} "@dirrmtry share/applications" >> ${PLISTD}
 	${ECHO_CMD} 'share/pixmaps/${MOZILLA}.png' >> ${PLIST}
 
 post-install:
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKDIR}/${MOZILLA}.desktop ${PREFIX}/share/applications/
 	${LN} -sf ${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default48.png \
 		${PREFIX}/share/pixmaps/${MOZILLA}.png

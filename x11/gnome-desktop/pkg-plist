@@ -357,7 +357,6 @@ share/pixmaps/vnterm.xpm
 @dirrm share/gnome/help/fdl/ca
 @dirrm share/gnome/help/fdl/ar
 @dirrm share/gnome-about/headers
-@dirrmtry share/applications
 @dirrm include/gnome-desktop-2.0/libgnomeui
 @dirrm include/gnome-desktop-2.0/libgnome
 @dirrm include/gnome-desktop-2.0

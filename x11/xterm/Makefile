@@ -93,7 +93,6 @@ post-install:
 .for f in koi8rxterm resize uxterm xterm
 	@${CHMOD} ${BINMODE} ${PREFIX}/bin/${f}
 .endfor
-	@${MKDIR} ${PREFIX}/share/applications/
 	@${INSTALL_DATA} ${WRKSRC}/xterm.desktop ${PREFIX}/share/applications/
 .if ${PORT_OPTIONS:MGNOME}
 	@-update-desktop-database

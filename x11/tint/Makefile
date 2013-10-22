@@ -63,7 +63,6 @@ do-install:
 .if ${PORT_OPTIONS:MPYCONF}
 	${INSTALL_PROGRAM} ${PYCONF_SRC}/tint2conf ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${PYCONF_SRC}/tintwizard.py ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${PYCONF_SRC}/tint2conf.desktop ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${PYCONF_SRC}/tint2conf.png ${STAGEDIR}${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${PYCONF_SRC}/tint2conf.svg ${STAGEDIR}${PREFIX}/share/pixmaps

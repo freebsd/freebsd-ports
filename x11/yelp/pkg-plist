@@ -138,7 +138,6 @@ share/locale/zu/LC_MESSAGES/yelp.mo
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
 @dirrmtry share/locale/zh_HK/LC_MESSAGES

@@ -549,7 +549,6 @@ share/omf/fish/fish-zh_CN.omf
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/applets
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrmtry lib/gnome-panel/modules
 @dirrmtry lib/gnome-panel
 @dirrm include/gnome-panel-3.0/libpanel-applet

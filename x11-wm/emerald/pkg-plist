@@ -95,7 +95,6 @@ share/pixmaps/emerald-theme-manager-icon.png
 @dirrmtry share/locale/es_AR
 @dirrmtry %%DATADIR%%/theme
 @dirrmtry %%DATADIR%%
-@dirrmtry share/applications
 @dirrmtry lib/emerald/engines
 @dirrmtry lib/emerald
 @dirrmtry include/emerald

@@ -50,6 +50,5 @@ share/doc/xnc/index.html
 @dirrmtry share/gnome
 @dirrmtry share/applnk/System
 @dirrmtry share/applnk
-@dirrmtry share/applications
 @dirrm share/doc/xnc
 @dirrm lib/xnc

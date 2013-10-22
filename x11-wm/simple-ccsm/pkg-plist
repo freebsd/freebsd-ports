@@ -54,7 +54,6 @@ share/locale/zh_TW/LC_MESSAGES/simple-ccsm.mo
 @dirrmtry share/simple-ccsm/profiles
 @dirrmtry share/simple-ccsm/images
 @dirrmtry share/simple-ccsm
-@dirrmtry share/applications
 @dirrmtry share/locale/ml_IN/LC_MESSAGES
 @dirrmtry share/locale/ml_IN
 @dirrmtry share/locale/nb_NO/LC_MESSAGES

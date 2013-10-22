@@ -192,4 +192,3 @@ share/xsessions/openbox-kde.desktop
 @dirrmtry share/gnome-session/sessions
 @dirrmtry share/gnome-session
 @dirrmtry share/xsessions
-@dirrmtry share/applications

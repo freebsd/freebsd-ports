@@ -78,7 +78,6 @@ libexec/fvwm-insitu/2.5.20/FvwmWindowMenu
 share/applications/fvwmi.desktop
 share/applications/mini-fvwmi.desktop
 share/applications/opale.desktop
-@dirrmtry share/applications
 %%DOCSDIR%%/docs/building.html
 %%DOCSDIR%%/docs/metisse-architecture.png
 %%DOCSDIR%%/docs/running.html

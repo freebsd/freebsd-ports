@@ -470,7 +470,6 @@ share/mime/packages/opera-extension.xml
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm lib/opera/pluginwrapper
 @dirrm lib/opera/plugins
 @dirrm lib/opera/gstreamer/plugins

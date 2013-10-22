@@ -437,6 +437,5 @@ share/xscreensaver/config/zoom.xml
 @dirrm share/xscreensaver/glade
 @dirrm share/xscreensaver
 @dirrm bin/xscreensaver-hacks
-@dirrmtry share/applications
 @cwd %%LOCALBASE%%
 lib/X11/app-defaults/XScreenSaver

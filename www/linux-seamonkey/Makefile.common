@@ -116,7 +116,6 @@ create-plist: build
 		-depth 1 -type l -delete ${_Q}' >> ${PLIST}
 	cd ${WRKSRC} && ${FIND} -sd . -type d | \
 		${SED} -e "s#^\.#@dirrm lib/%%APP_NAME%%#" >> ${PLIST}
-	${ECHO_CMD} @dirrmtry share/applications >> ${PLIST}
 
 snatch-desktop:
 	${SED} -E -e 's/${PORTNAME}/${APP_NAME}/' \

@@ -4143,7 +4143,6 @@ share/xsessions/sawfish.desktop
 @dirrmtry share/icons/hicolor/32x32
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry share/applications
 @dirrm lib/sawfish/sawfish/wm/util
 @dirrm lib/sawfish/sawfish/wm
 @dirrm lib/sawfish/sawfish

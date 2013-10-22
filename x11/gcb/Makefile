@@ -27,10 +27,8 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png ${PREFIX}/share/icons
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop \
 		${PREFIX}/share/applications
-	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png ${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>

@@ -59,7 +59,6 @@ do-install:
 		ROX-Session.xml RunROX SetupPanel Styles browser images \
 		*.py *.pyc *.pyo ${DATADIR}
 .if ${PORT_OPTIONS:MGDM}
-	@${MKDIR} ${PREFIX}/share/applications
 	@${INSTALL_DATA} ${WRKDIR}/rox.desktop ${PREFIX}/share/applications
 .endif
 .if ${PORT_OPTIONS:MDOCS}

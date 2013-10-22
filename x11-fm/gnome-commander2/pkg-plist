@@ -242,7 +242,6 @@ share/pixmaps/gnome-commander/toggle_horizontal.xpm
 share/pixmaps/gnome-commander/toggle_vertical.xpm
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
-@dirrmtry share/applications
 @dirrm share/pixmaps/gnome-commander/mime-icons
 @dirrm share/pixmaps/gnome-commander/file-type-icons
 @dirrm share/pixmaps/gnome-commander/device-icons

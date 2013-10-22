@@ -55,6 +55,5 @@ share/pixmaps/alarm-clock.png
 %%DOCSDIR%%/INSTALL
 @dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 %%NLS%%@dirrmtry share/locale/la/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/la

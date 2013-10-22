@@ -400,7 +400,6 @@ share/omf/epiphany/epiphany-uk.omf
 @dirrm %%DATADIR%%/art
 @dirrmtry %%DATADIR%%
 @dirrmtry %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm include/epiphany/%%EPHY_VERSION%%/epiphany
 @dirrm include/epiphany/%%EPHY_VERSION%%
 @dirrm include/epiphany

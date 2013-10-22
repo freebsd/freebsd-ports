@@ -426,7 +426,6 @@ share/icons/hicolor/24x24/apps/hotwire.png
 @dirrmtry share/icons/hicolor/24x24
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry share/applications
 @dirrm share/hotwire/images
 @dirrm share/hotwire
 @dirrm %%PYTHON_SITELIBDIR%%/hotwire_ui/renderers

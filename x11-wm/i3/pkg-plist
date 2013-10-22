@@ -28,6 +28,5 @@ man/man1/i3bar.1.gz
 share/applications/i3.desktop
 share/xsessions/i3.desktop
 @dirrmtry share/xsessions
-@dirrmtry share/applications
 @dirrm include/i3
 @dirrm %%ETCDIR%%

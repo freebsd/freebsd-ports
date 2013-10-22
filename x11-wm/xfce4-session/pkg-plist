@@ -131,7 +131,6 @@ share/themes/Default/balou/themerc
 %%NLS%%@dirrmtry share/locale/bn_IN
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
-@dirrmtry share/applications
 @dirrmtry share/xsessions
 @dirrm lib/xfce4/session/splash-engines
 @dirrm lib/xfce4/session

@@ -51,4 +51,3 @@ share/pixmaps/arora.xpm
 @dirrmtry share/icons
 %%NLS%%@dirrm share/arora/locale
 %%NLS%%@dirrm share/arora
-@dirrmtry share/applications

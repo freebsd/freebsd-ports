@@ -444,7 +444,6 @@ share/mime/packages/linux-opera-next-widget.xml
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm lib/linux-opera-next/plugins
 @dirrm lib/linux-opera-next/gstreamer/plugins
 @dirrm lib/linux-opera-next/gstreamer

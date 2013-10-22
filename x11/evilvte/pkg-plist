@@ -15,7 +15,6 @@ share/icons/hicolor/72x72/apps/evilvte.png
 share/icons/hicolor/96x96/apps/evilvte.png
 share/icons/hicolor/scalable/apps/evilvte.svg
 share/gnome-control-center/default-apps/evilvte.xml
-@dirrmtry share/applications
 @dirrmtry share/pixmaps
 @dirrmtry share/icons/hicolor/20x20/apps
 @dirrmtry share/icons/hicolor/20x20

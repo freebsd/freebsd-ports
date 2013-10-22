@@ -17,6 +17,5 @@ share/pixmaps/xterm-color_32x32.xpm
 share/pixmaps/xterm-color_48x48.xpm
 share/pixmaps/xterm_32x32.xpm
 share/pixmaps/xterm_48x48.xpm
-@dirrmtry share/applications
 %%GNOME%%@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 %%GNOME%%@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

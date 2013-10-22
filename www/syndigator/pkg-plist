@@ -88,4 +88,3 @@ share/pixmaps/syndigator/trayicon.gif
 @dirrmtry %%SITE_PERL%%
 @dirrmtry lib/perl5/site_perl
 @dirrmtry lib/perl5
-@dirrmtry share/applications

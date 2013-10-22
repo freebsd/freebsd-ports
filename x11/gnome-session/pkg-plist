@@ -116,7 +116,6 @@ share/locale/zu/LC_MESSAGES/gnome-session-2.0.mo
 share/xsessions/gnome.desktop
 @dirrmtry share/xsessions
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
 @dirrmtry share/locale/zh_HK/LC_MESSAGES

@@ -229,4 +229,3 @@ share/qxkb/theme/default/up.png
 @dirrm share/qxkb/theme
 @dirrm share/qxkb/i18n
 @dirrm share/qxkb
-@dirrmtry share/applications

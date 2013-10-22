@@ -933,7 +933,6 @@ share/rfm/modules/mime-module.xml
 @dirrm share/icons/Rodent/48x48/apps
 @dirrm share/icons/Rodent/48x48
 @dirrm share/icons/Rodent
-@dirrmtry share/applications
 @dirrmtry share/icons
 @dirrmtry share/pixmaps
 @dirrm lib/rfm/plugins

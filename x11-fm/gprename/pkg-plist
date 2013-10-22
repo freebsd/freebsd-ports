@@ -21,4 +21,3 @@ share/pixmaps/gprename/gprename_debian_menu_icon.xpm
 share/pixmaps/gprename/gprename_nautilus-action.png
 @dirrm share/pixmaps/gprename
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications

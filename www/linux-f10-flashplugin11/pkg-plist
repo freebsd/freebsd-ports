@@ -18,7 +18,6 @@ share/icons/hicolor/48x48/apps/flash-player-properties.png
 @dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry share/applications
 @cwd /compat/linux
 usr/lib/libflashsupport.so
 @cwd

@@ -217,4 +217,3 @@ share/applications/chromium-browser.desktop
 @dirrm %%DATADIR%%/resources/extension
 @dirrm %%DATADIR%%/resources
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

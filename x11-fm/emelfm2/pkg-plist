@@ -103,6 +103,5 @@ share/pixmaps/emelfm2/user_commands_48.png
 share/pixmaps/emelfm2/view_48.png
 @dirrm share/pixmaps/emelfm2
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm lib/emelfm2/plugins
 @dirrm lib/emelfm2
