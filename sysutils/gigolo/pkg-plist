@@ -1,4 +1,5 @@
 bin/gigolo
+man/man1/gigolo.1.gz
 share/applications/gigolo.desktop
 %%NLS%%share/locale/ast/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/gigolo.mo
