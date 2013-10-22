@@ -96,7 +96,6 @@ post-patch:
 
 post-install:
 	@# localized desktop entry file is not included remmina 1.0.0, install manually
-	${MKDIR} ${PREFIX}/share/applications/
 	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop ${PREFIX}/share/applications/
 	${CP} -a ${DATADIR}/icons/ ${PREFIX}/share/icons
 	@${CAT} ${PKGMESSAGE}

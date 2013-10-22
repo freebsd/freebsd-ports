@@ -246,5 +246,4 @@ share/pixmaps/tucan.png
 @dirrm share/tucan/default_plugins
 @dirrm share/tucan/core
 @dirrm share/tucan
-@dirrmtry share/applications
 @dirrmtry share/pixmaps

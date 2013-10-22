@@ -140,7 +140,6 @@ share/pixmaps/valknut.png
 @dirrm %%DATADIR%%/icons/appl
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrmtry share/icons/hicolor/64x64/apps
 @dirrmtry share/icons/hicolor/64x64
 @dirrmtry share/icons/hicolor/48x48/apps

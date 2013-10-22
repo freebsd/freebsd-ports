@@ -2465,7 +2465,6 @@ lib/amsn/utils/tclISF/pkgIndex.tcl
 lib/amsn/utils/asyncresolver/libasyncresolver.so
 lib/amsn/utils/asyncresolver/asyncresolver.tcl
 lib/amsn/utils/asyncresolver/pkgIndex.tcl
-@dirrm share/applications
 @dirrm lib/amsn/utils/asyncresolver
 @dirrm lib/amsn/utils/tclISF
 @dirrm lib/amsn/utils/tcl_siren

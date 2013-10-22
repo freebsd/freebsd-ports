@@ -11,4 +11,3 @@ share/icons/qnapi.png
 @dirrmtry share/apps/konqueror/servicemenus
 @dirrmtry share/apps/konqueror
 @dirrmtry share/apps
-@dirrmtry share/applications

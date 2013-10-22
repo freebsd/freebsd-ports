@@ -68,4 +68,3 @@ share/pixmaps/tsclient/tsclient.png
 @dirrmtry share/locale/nl_NL
 @dirrmtry share/locale/gr/LC_MESSAGES
 @dirrmtry share/locale/gr
-@dirrmtry share/applications

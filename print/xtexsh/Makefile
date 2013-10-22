@@ -34,7 +34,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/xtexsh ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xtexsh.1.gz ${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/xtexshrc ${PREFIX}/etc
-	@${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/xtexsh.desktop ${PREFIX}/share/applications
 	@${MKDIR} ${PREFIX}/share/icons/locolor/16x16/apps
 	${INSTALL_DATA} ${WRKSRC}/xtexsh-mini.png \
@@ -42,7 +41,6 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/icons/locolor/32x32/apps
 	${INSTALL_DATA} ${WRKSRC}/xtexsh.png \
 		${PREFIX}/share/icons/locolor/32x32/apps/xtexsh.png
-	@${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/xtexsh.png ${PREFIX}/share/pixmaps
 
 .if !defined(NOPORTDOCS)

@@ -44,4 +44,3 @@ share/pixmaps/etherape.png
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
 @dirrm etc/etherape
-@dirrmtry share/applications

@@ -13,4 +13,3 @@ share/pixmaps/xtexsh.png
 @dirrmtry share/icons/locolor
 @dirrmtry share/icons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications

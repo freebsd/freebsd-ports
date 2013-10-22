@@ -1097,7 +1097,6 @@ share/locale/zh_TW/cups_zh_TW.po
 @dirrmtry share/icons/hicolor/128x128
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry share/applications
 @dirrm %%DOCSDIR%%/ru
 @dirrm %%DOCSDIR%%/pl
 @dirrm %%DOCSDIR%%/ja

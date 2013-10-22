@@ -16,5 +16,4 @@ share/pixmaps/qutim.xpm
 @dirrmtry share/icons
 @dirrmtry share/cmake/Modules
 @dirrmtry share/cmake
-@dirrmtry share/applications
 @dirrm include/qutim

@@ -3438,7 +3438,6 @@ share/pixmaps/scribus.png
 @dirrm %%DOCSDIR%%/de/images
 @dirrm %%DOCSDIR%%/de
 @dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm man/pl/man1
 @dirrm man/pl
 @dirrm man/de/man1

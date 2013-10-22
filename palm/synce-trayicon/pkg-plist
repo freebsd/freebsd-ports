@@ -14,5 +14,4 @@ share/synce/synce_trayicon_properties.glade
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry lib/synce-trayicon/modules
 @dirrmtry lib/synce-trayicon
-@dirrmtry share/applications
 @dirrmtry share/synce

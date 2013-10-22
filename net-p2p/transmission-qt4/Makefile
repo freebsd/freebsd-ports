@@ -43,10 +43,8 @@ post-install: general-install
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/qt/README.txt ${DOCSDIR}/README-qt4
 .endif
-	@${MKDIR} ${PREFIX}/share/applications
 	@${INSTALL_DATA} ${WRKSRC}/qt/transmission-qt.desktop \
 		${PREFIX}/share/applications/
-	@${MKDIR} ${PREFIX}/share/pixmaps
 	@${INSTALL_DATA} ${WRKSRC}/qt/icons/transmission.png \
 		${PREFIX}/share/pixmaps/transmission-qt.png
 	@-update-desktop-database

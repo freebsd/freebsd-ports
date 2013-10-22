@@ -30,4 +30,3 @@ share/locale/fr/LC_MESSAGES/grdesktop.mo
 @dirrm share/omf/grdesktop
 @dirrm share/gnome/help/grdesktop/C
 @dirrm share/gnome/help/grdesktop
-@dirrmtry share/applications

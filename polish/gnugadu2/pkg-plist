@@ -335,4 +335,3 @@ share/locale/pl/LC_MESSAGES/gg2.mo
 @dirrm share/gg2/pixmaps
 @dirrm share/gg2
 @dirrm lib/gg2
-@dirrmtry share/applications

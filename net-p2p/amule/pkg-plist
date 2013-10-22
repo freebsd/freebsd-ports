@@ -167,7 +167,6 @@
 %%WEBSERVER%%@dirrm %%DATADIR%%/webserver/default
 %%WEBSERVER%%@dirrm %%DATADIR%%/webserver
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 %%CAS%%@dirrmtry share/cas
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast

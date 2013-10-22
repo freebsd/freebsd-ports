@@ -33,7 +33,6 @@ share/twitux/spell_dlg.xml
 @dirrmtry share/icons
 @dirrmtry share/gnome/help
 @dirrmtry share/gnome
-@dirrmtry share/applications
 @dirrmtry lib/locale/sv/LC_MESSAGES
 @dirrmtry lib/locale/pt/LC_MESSAGES
 @dirrmtry lib/locale/ja/LC_MESSAGES

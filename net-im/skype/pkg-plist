@@ -134,4 +134,3 @@ share/applications/skype.desktop
 @dirrm %%SKYPEDIR%%/icons
 @dirrm %%SKYPEDIR%%/avatars
 @dirrm %%SKYPEDIR%%
-@dirrmtry share/applications

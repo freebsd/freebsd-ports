@@ -152,7 +152,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' ${WRKSRC}/src/plugins/GUI/gtkimhtml.c
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/gg2.desktop ${PREFIX}/share/applications/
 
 # vim: set ts=8 sw=8:

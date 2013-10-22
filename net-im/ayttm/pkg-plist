@@ -114,7 +114,6 @@ share/pixmaps/group.png
 share/pixmaps/smileys.png
 @dirrmtry share/applnk/Internet
 @dirrmtry share/applnk
-@dirrmtry share/applications
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/smileys/Giles Smileys
 @dirrm %%DATADIR%%/smileys/Console Smileys

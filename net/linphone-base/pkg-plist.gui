@@ -34,4 +34,3 @@ share/pixmaps/linphone/sip-otp.png
 share/pixmaps/linphone/sip-wfa.png
 @dirrm share/pixmaps/linphone
 @dirrmtry %%DATADIR%%
-@dirrmtry share/applications

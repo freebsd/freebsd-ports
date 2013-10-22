@@ -83,5 +83,4 @@ share/icons/hicolor/16x16/actions/remmina-pin-down.png
 @dirrmtry %%DATADIR%%/icons/hicolor
 @dirrmtry %%DATADIR%%/icons
 @dirrmtry %%DATADIR%%
-@dirrmtry share/applications
 @dirrmtry include/remmina

@@ -1436,7 +1436,6 @@ share/pixmaps/vacuum.png
 @dirrm %%DATADIR%%/resources/adiummessagestyles
 @dirrm %%DATADIR%%/resources
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm lib/vacuum/plugins
 @dirrm lib/vacuum
 @dirrm include/vacuum/utils

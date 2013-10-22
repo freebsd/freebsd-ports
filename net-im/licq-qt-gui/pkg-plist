@@ -784,4 +784,3 @@ share/licq/qt4-gui/skins/thomas/thomas.skin
 @dirrm share/licq/qt4-gui/dock
 @dirrm share/licq/qt4-gui
 %%WITH_KDE%%@dirrm share/applications/kde4
-@dirrmtry share/applications

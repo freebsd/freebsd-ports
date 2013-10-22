@@ -298,5 +298,4 @@ share/icons/hicolor/scalable/apps/gnunet-fs-gtk.svg
 @dirrm share/gnunet-gtk/flags
 @dirrm share/gnunet-gtk/config.d
 @dirrm share/gnunet-gtk
-@dirrmtry share/applications
 @dirrm include/gnunet-gtk

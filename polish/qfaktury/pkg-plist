@@ -34,4 +34,3 @@ share/qfaktury/templates/style.css
 @dirrm share/qfaktury/templates
 @dirrm share/qfaktury/icons
 @dirrm share/qfaktury
-@dirrmtry share/applications

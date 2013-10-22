@@ -25,4 +25,3 @@ share/icons/hicolor/64x64/apps/x2goclient.png
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications

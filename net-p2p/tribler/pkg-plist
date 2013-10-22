@@ -1756,7 +1756,6 @@ share/applications/tribler.desktop
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
 share/pixmaps/tribler.xpm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/tribler/Tribler/dispersy/tool
 @dirrm %%PYTHON_SITELIBDIR%%/tribler/Tribler/dispersy
 @dirrm %%PYTHON_SITELIBDIR%%/tribler/Tribler/community/template

@@ -14,5 +14,4 @@ share/gtknetcat/wizard.glade
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gtknetcat.mo
 share/pixmaps/gtknetcat.png
 @dirrm share/gtknetcat
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/gtknetcat

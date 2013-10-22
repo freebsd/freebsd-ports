@@ -409,4 +409,3 @@ share/applications/mcabber.desktop
 @dirrm %%DATADIR%%/help/uk
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

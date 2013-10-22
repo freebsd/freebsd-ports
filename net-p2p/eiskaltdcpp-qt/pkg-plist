@@ -270,4 +270,3 @@ share/eiskaltdcpp/qt/ts/uk.qm
 @dirrm share/eiskaltdcpp/qt/ts
 @dirrm share/eiskaltdcpp/qt/resources
 @dirrm share/eiskaltdcpp/qt
-@dirrmtry share/applications

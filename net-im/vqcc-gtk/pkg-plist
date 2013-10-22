@@ -3,4 +3,3 @@ share/applications/vqcc-gtk.desktop
 share/pixmaps/vqcc-gtk.png
 share/locale/lt/LC_MESSAGES/vqcc-gtk.mo
 share/locale/ru/LC_MESSAGES/vqcc-gtk.mo
-@dirrmtry share/applications

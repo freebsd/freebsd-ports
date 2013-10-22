@@ -501,5 +501,4 @@ share/omf/gnome-packagekit/gnome-packagekit-zh_CN.omf
 @dirrm share/gnome-packagekit/icons/hicolor
 @dirrm share/gnome-packagekit/icons
 @dirrm share/gnome-packagekit
-@dirrmtry share/applications
 @dirrmtry %%PYTHON_SITELIBDIR%%/packagekit
