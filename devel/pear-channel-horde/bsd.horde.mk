@@ -84,6 +84,7 @@ horde-Horde_Scheduler-DEPEND=	${PEARDIR}/Horde/Scheduler.php:${PORTSDIR}/devel/p
 horde-Horde_Scribe-DEPEND=	${PEARDIR}/Horde/Scribe.php:${PORTSDIR}/net/pear-Horde_Scribe
 horde-Horde_Share-DEPEND=	${PEARDIR}/Horde/Share/Base.php:${PORTSDIR}/security/pear-Horde_Share
 horde-Horde_Smtp-DEPEND=	${PEARDIR}/Horde/Smtp.php:${PORTSDIR}/mail/pear-Horde_Smtp
+horde-Horde_Socket_Client-DEPEND=	${PEARDIR}/Horde/Socket/Client.php:${PORTSDIR}/net/pear-Horde_Socket_Client
 horde-Horde_SpellChecker-DEPEND=	${PEARDIR}/Horde/SpellChecker.php:${PORTSDIR}/textproc/pear-Horde_SpellChecker
 horde-Horde_Stream-DEPEND=	${PEARDIR}/Horde/Stream.php:${PORTSDIR}/devel/pear-Horde_Stream
 horde-Horde_Stream_Filter-DEPEND=	${PEARDIR}/Horde/Stream/Filter/Crc32.php:${PORTSDIR}/devel/pear-Horde_Stream_Filter
