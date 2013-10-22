@@ -20,7 +20,6 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	lib/pidgin/hotkeys.so \
 		lib/pidgin/hotkeys.la
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,X11/keysym.h,X11/X.h,' ${WRKSRC}/src/hotkeys.c
 
