@@ -66,6 +66,7 @@ horde-Horde_Mail-DEPEND=	${PEARDIR}/Horde/Mail/Transport.php:${PORTSDIR}/mail/pe
 horde-Horde_Memcache-DEPEND=	${PEARDIR}/Horde/Memcache.php:${PORTSDIR}/databases/pear-Horde_Memcache
 horde-Horde_Mime-DEPEND=	${PEARDIR}/Horde/Mime.php:${PORTSDIR}/mail/pear-Horde_Mime
 horde-Horde_Mime_Viewer-DEPEND=	${PEARDIR}/Horde/Mime/Viewer.php:${PORTSDIR}/mail/pear-Horde_Mime_Viewer
+horde-Horde_Mongo-DEPEND=	${PEARDIR}/Horde/Mongo/Client.php:${PORTSDIR}/databases/pear-Horde_Mongo
 horde-Horde_Nls-DEPEND=		${PEARDIR}/Horde/Nls.php:${PORTSDIR}/devel/pear-Horde_Nls
 horde-Horde_Notification-DEPEND=	${PEARDIR}/Horde/Notification.php:${PORTSDIR}/devel/pear-Horde_Notification
 horde-Horde_Oauth-DEPEND=	${PEARDIR}/Horde/Oauth/Consumer.php:${PORTSDIR}/security/pear-Horde_Oauth
