@@ -172,4 +172,3 @@ share/pixmaps/poedit.png
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/af_ZA/LC_MESSAGES
 @dirrmtry share/locale/af_ZA
-@dirrmtry share/applications

@@ -129,7 +129,6 @@ post-install:
 .endfor
 	@${MV} ${WRKSRC}/documentation/tech ${DOCSDIR}
 .endif
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/fceux.desktop \
 		${PREFIX}/share/applications/fceux.desktop
 	@${INSTALL_DATA} ${WRKSRC}/fceux.png \

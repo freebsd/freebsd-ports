@@ -35,4 +35,3 @@ lib/gummi/latex_dvi.sh
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
 @dirrm lib/gummi
-@dirrm share/applications

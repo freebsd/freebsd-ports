@@ -23,4 +23,3 @@ share/applications/efax-gtk.desktop
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/efax-gtk.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/efax-gtk.mo
 share/pixmaps/efax-gtk.png
-@dirrmtry share/applications

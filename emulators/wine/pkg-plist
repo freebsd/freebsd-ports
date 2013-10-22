@@ -1841,7 +1841,6 @@ share/applications/wine.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README.winedbg
 %%PORTDOCS%%%%DOCSDIR%%/README.winedump
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm lib/wine/fakedlls
 @dirrm lib/wine
 @dirrm include/wine/windows/ddk

@@ -52,10 +52,8 @@ post-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unix/librecad ${STAGEDIR}${PREFIX}/bin
 	cd ${WRKSRC}/unix/resources && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/desktop/librecad.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/res/main/librecad.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps
 

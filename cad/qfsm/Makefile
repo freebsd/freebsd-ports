@@ -38,7 +38,6 @@ post-patch:
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} qfsm ${PREFIX}/bin)
-	@${MKDIR} ${PREFIX}/share/applications
 	(cd ${WRKSRC}/desktop && ${INSTALL_DATA} qfsm.desktop \
 		${PREFIX}/share/applications)
 .for i in 32x32 48x48 64x64

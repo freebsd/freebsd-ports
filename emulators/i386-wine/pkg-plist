@@ -1985,7 +1985,6 @@ share/wine/wine.inf
 @dirrm share/wine/fonts
 @dirrm share/wine
 @dirrm share/doc/wine
-@dirrmtry share/applications
 @dirrm lib32/wine/fakedlls
 @dirrm lib32/wine
 @dirrm lib32/.libGL/dri

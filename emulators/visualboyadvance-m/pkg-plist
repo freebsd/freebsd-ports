@@ -34,4 +34,3 @@ etc/vbam.cfg-example
 %%GVBAM%%@dirrm share/icons/hicolor/16x16
 %%GVBAM%%@dirrm share/icons/hicolor
 %%GVBAM%%@dirrm share/icons
-%%GVBAM%%@dirrm share/applications

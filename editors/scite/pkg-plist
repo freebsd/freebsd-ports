@@ -78,4 +78,3 @@ share/pixmaps/Sci48M.png
 %%DATADIR%%/vhdl.properties
 %%DATADIR%%/yaml.properties
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

@@ -75,4 +75,3 @@ share/applications/texmakerx.desktop
 %%DATADIR%%/en_US.aff
 %%DATADIR%%/en_US.dic
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

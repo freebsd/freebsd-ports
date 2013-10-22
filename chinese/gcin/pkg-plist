@@ -147,7 +147,6 @@ share/icons/gcin.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/icons/gcin
 @dirrmtry share/icons
-@dirrmtry share/applications
 @dirrmtry %%DATADIR%%/table
 @dirrmtry %%DATADIR%%/script
 @dirrmtry %%DATADIR%%

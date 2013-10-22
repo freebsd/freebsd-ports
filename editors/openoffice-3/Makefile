@@ -311,7 +311,6 @@ post-install:
 	@${LN} -sf ${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg \
 			${DESKTOPDIR}/${EXECBASE}
 	@${ECHO_CMD} "share/applications/${EXECBASE}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
 	@${PREFIX}/bin/update-desktop-database 2>/dev/null || ${TRUE}
 	@${ECHO_CMD} "@exec ${PREFIX}/bin/update-desktop-database 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
 	@for dir in `ls ${ICONS}/hicolor | ${GREP} -v CVS`; do \

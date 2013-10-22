@@ -61,6 +61,5 @@ share/pixmaps/hatari-icon.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/fr
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrmtry man/fr/man1
 @dirrmtry man/fr

@@ -3,5 +3,4 @@ share/applications/hamfax.desktop
 %%DATADIR%%/hamfax.html
 %%DATADIR%%/hamfax_de.qm
 %%DATADIR%%/hamfax_fr.qm
-@dirrmtry share/applications
 @dirrm %%DATADIR%%

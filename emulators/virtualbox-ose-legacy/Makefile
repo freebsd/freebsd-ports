@@ -304,9 +304,7 @@ post-install:
 	@${FIND} ${PREFIX}/lib/virtualbox -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 
 .if ${PORT_OPTIONS:MQT4}
-	${MKDIR} ${PREFIX}/share/pixmaps/
 	${INSTALL_DATA} ${WRKSRC}/src/VBox/Frontends/VirtualBox/images/OSE/VirtualBox_48px.png ${PREFIX}/share/pixmaps/VBox.png
-	${MKDIR} ${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/src/VBox/Installer/freebsd/virtualbox.desktop ${PREFIX}/share/applications/virtualbox.desktop
 .endif
 	@${CAT} ${PKGMESSAGE}

@@ -32,10 +32,8 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gperiodic ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/gperiodic.desktop \
 		${PREFIX}/share/applications
-	@${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/gperiodic.png \
 		${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/gperiodic-crystal.png \

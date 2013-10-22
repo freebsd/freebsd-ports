@@ -1235,4 +1235,3 @@ lib/xemacs-%%XEMACS_VER%%/lisp/x-win-xfree86.elc
 @dirrmtry lib/xemacs/site-lisp
 @dirrmtry lib/xemacs/site-modules
 @dirrmtry lib/xemacs
-%%DESKTOP%%@dirrmtry share/applications

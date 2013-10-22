@@ -5,4 +5,3 @@ bin/gpsk31
 share/applications/gpsk31.desktop
 share/pixmaps/gpsk31.png
 @dirrm share/gpsk31
-@dirrm share/applications

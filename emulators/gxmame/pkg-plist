@@ -35,4 +35,3 @@ share/doc/gxmame/html/includes/gxmame.css
 @dirrm share/doc/gxmame/html/includes
 @dirrm share/doc/gxmame/html
 @dirrm share/doc/gxmame
-@dirrmtry share/applications

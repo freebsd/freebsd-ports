@@ -160,8 +160,7 @@ PLIST_FILE_LIST=	bin/freeroute.jnlp \
 
 PLIST_DIR_LIST=		lib/kicad
 
-PLIST_SHAREDDIR_LIST=	share/applications \
-			share/mimelnk/application \
+PLIST_SHAREDDIR_LIST=	share/mimelnk/application \
 			share/mimelnk
 
 build-plist:

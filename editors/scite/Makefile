@@ -41,8 +41,6 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/../bin/SciTE ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/../doc/scite.1 ${MANPREFIX}/man/man1
-	@${MKDIR} ${PREFIX}/share/applications
-	@${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/SciTE.desktop ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/Sci48M.png ${PREFIX}/share/pixmaps
 	@${MKDIR} ${DATADIR}

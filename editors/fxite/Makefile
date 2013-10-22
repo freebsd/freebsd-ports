@@ -55,6 +55,5 @@ FOX_LIBS+=	`pkgconf fox17 --libs`
 PLIST_FILES=	bin/fxite \
 		share/pixmaps/fxite.xpm \
 		share/applications/fxite.desktop
-PLIST_DIRSTRY=	share/applications
 
 .include <bsd.port.mk>

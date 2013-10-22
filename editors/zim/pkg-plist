@@ -460,7 +460,6 @@ share/pixmaps/zim.png
 @dirrm share/icons/ubuntu-mono-dark/apps/22
 @dirrm share/icons/ubuntu-mono-dark/apps
 @dirrm share/icons/ubuntu-mono-dark
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/zim/stores
 @dirrm %%PYTHON_SITELIBDIR%%/zim/plugins/versioncontrol
 @dirrm %%PYTHON_SITELIBDIR%%/zim/plugins/linkmap

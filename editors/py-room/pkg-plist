@@ -75,7 +75,6 @@ share/locale/tr/LC_MESSAGES/pyroom.mo
 share/locale/zh_CN/LC_MESSAGES/pyroom.mo
 share/locale/ku/LC_MESSAGES/pyroom.mo
 share/locale/sco/LC_MESSAGES/pyroom.mo
-@dirrmtry share/applications
 @dirrmtry share/locale/sco/LC_MESSAGES
 @dirrmtry share/locale/sco
 @dirrmtry share/locale/ku/LC_MESSAGES

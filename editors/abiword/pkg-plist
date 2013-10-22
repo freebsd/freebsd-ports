@@ -401,7 +401,6 @@ share/abiword-%%ABIVERSION%%/xsltml/tokens.xsl
 share/applications/abiword.desktop
 share/icons/abiword_48.png
 share/mime-info/abiword.keys
-@dirrmtry share/applications
 @dirrm share/abiword-%%ABIVERSION%%/xsltml
 @dirrm share/abiword-%%ABIVERSION%%/ui
 @dirrm share/abiword-%%ABIVERSION%%/templates

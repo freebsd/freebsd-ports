@@ -676,4 +676,3 @@ share/pixmaps/rwdict.png
 @dirrm %%DATADIR%%/books/fkbdc
 @dirrm %%DATADIR%%/books
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

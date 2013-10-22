@@ -617,7 +617,6 @@ include/virtualbox/xpcom/xpcom-config.h
 @dirrm %%DATADIR%%/samples
 @dirrm %%DATADIR%%/idl
 @dirrm %%DATADIR%%
-%%QT4%%@dirrmtry share/applications
 @dirrm lib/virtualbox/components
 %%GUESTADDITIONS%%@dirrm lib/virtualbox/additions
 @dirrm lib/virtualbox

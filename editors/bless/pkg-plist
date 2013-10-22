@@ -74,5 +74,4 @@ share/pixmaps/bless-48x48.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/user/figures
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/user
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm lib/bless

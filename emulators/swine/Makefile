@@ -51,7 +51,6 @@ do-install:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "translations images" ${DATADIR})
 
 	${LN} -sf ${DATADIR}/images/swine32.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/resources/*.desktop ${PREFIX}/share/applications/
 
 .if ${PORT_OPTIONS:MDOCS}

@@ -51,4 +51,3 @@ share/pixmaps/mined.xpm
 @dirrm %%DATADIR%%/conf_user
 @dirrm %%DATADIR%%/bin
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

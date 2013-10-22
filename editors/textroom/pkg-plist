@@ -10,5 +10,4 @@ share/sounds/keyany.wav
 share/sounds/keyenter.wav
 @dirrmtry share/sounds
 @dirrmtry share/hunspell
-@dirrmtry share/applications
 @dirrm share/textroom

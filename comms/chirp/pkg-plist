@@ -282,5 +282,4 @@ share/pixmaps/chirp.png
 @dirrm share/chirp/images
 @dirrm share/chirp/stock_configs
 @dirrm share/chirp
-@dirrmtry share/applications
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

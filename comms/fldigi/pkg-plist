@@ -14,4 +14,3 @@ share/pixmaps/fldigi.xpm
 %%PORTDOCS%%%%DOCSDIR%%/guide.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/fldigi
-@dirrmtry share/applications

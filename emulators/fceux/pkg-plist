@@ -106,4 +106,3 @@ share/pixmaps/fceux.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tech/cpu
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tech
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications

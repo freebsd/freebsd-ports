@@ -356,7 +356,6 @@ share/locale/ja/LC_MESSAGES/fcitx.mo
 share/locale/zh_CN/LC_MESSAGES/fcitx.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx.mo
 share/mime/packages/x-fskin.xml
-@dirrmtry share/applications
 @dirrmtry share/icons/gnome/scalable/status
 @dirrmtry share/icons/gnome/scalable
 @dirrmtry share/icons/gnome

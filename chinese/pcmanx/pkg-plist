@@ -14,4 +14,3 @@ share/pixmaps/pcmanx.svg
 @dirrmtry %%DATADIR%%/nancy_bot
 @dirrmtry %%DATADIR%%/script
 @dirrmtry %%DATADIR%%
-@dirrmtry share/applications

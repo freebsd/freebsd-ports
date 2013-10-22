@@ -22,7 +22,6 @@ MAKE_ARGS+=	HAVE_GTK=no
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/amttool \
 		share/applications/gamt.desktop
-PLIST_DIRSTRY=	share/applications
 MAN1=		gamt.1 ${PORTNAME}.1 amttool.1
 MAN7=		amt-howto.7
 MANCOMPRESSED=	no

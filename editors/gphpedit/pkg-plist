@@ -3,4 +3,3 @@ share/applications/gphpedit.desktop
 share/gphpedit/php-gphpedit.api
 share/pixmaps/gphpedit.png
 @dirrm share/gphpedit
-@dirrmtry share/applications
