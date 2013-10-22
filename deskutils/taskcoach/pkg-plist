@@ -1438,7 +1438,6 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/font.pyo
 share/applications/taskcoach.desktop
 share/pixmaps/taskcoach.png
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/tools

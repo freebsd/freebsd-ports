@@ -208,7 +208,6 @@ share/pixmaps/glabels/glabels-splash.png
 @dirrm %%DATADIR%%/dtd
 @dirrm %%DATADIR%%
 @dirrm share/doc/libglabels
-@dirrmtry share/applications
 @dirrm include/libglabels
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

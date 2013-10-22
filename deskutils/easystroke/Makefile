@@ -44,17 +44,12 @@ pre-build:
 .endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-	@${MKDIR} ${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${PREFIX}/share/applications/
-	@${MKDIR} ${PREFIX}/share/pixmaps/
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.svg ${PREFIX}/share/pixmaps/
-	@${MKDIR} ${PREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
 
 .if ${PORT_OPTIONS:MNLS}
-	@${MKDIR} ${PREFIX}/share/locale/
 	(cd ${WRKSRC}/po/ && \
 		${COPYTREE_SHARE} \* ${PREFIX}/share/locale/ "-name *.mo")
 .endif

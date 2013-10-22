@@ -171,4 +171,3 @@ share/zlibrary/unicode.xml.gz
 @dirrm share/zlibrary/encodings
 @dirrm share/zlibrary/resources
 @dirrm share/zlibrary
-@dirrmtry share/applications

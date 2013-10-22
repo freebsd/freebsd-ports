@@ -72,7 +72,6 @@ share/locale/vi/LC_MESSAGES/giggle.mo
 share/locale/zh_CN/LC_MESSAGES/giggle.mo
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm lib/giggle/plugins/%%GIGGLE_VER%%
 @dirrm lib/giggle/plugins
 @dirrm lib/giggle

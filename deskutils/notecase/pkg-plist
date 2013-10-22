@@ -40,4 +40,3 @@ share/mime/packages/notecase.xml
 share/pixmaps/notecase.xpm
 @dirrmtry share/locale/fr_CA/LC_MESSAGES
 @dirrmtry share/locale/fr_CA
-@dirrmtry share/applications

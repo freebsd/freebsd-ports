@@ -345,7 +345,6 @@ share/locale/zh_CN/LC_MESSAGES/gazpacho.mo
 @dirrmtry %%DATADIR%%/catalogs
 @dirrmtry %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/gazpacho/widgets/base/menueditor
 @dirrm %%PYTHON_SITELIBDIR%%/gazpacho/widgets/base
 @dirrmtry %%PYTHON_SITELIBDIR%%/gazpacho/widgets

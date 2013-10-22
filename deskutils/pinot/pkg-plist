@@ -159,7 +159,6 @@ share/locale/zh_TW/LC_MESSAGES/pinot.mo
 @dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry share/applications
 @dirrm lib/pinot/filters
 @dirrm lib/pinot/backends
 @dirrm lib/pinot

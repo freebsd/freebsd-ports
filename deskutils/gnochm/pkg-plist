@@ -37,4 +37,3 @@ share/mime/packages/gnochm.xml
 @dirrm share/gnochm
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@dirrmtry share/applications

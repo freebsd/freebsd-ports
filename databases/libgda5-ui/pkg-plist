@@ -519,6 +519,5 @@ share/pixmaps/gda-browser-%%VERSION%%.png
 @dirrm share/libgda-%%VERSION%%/language-specs
 @dirrm share/libgda-%%VERSION%%/demo
 @dirrm share/doc/gda-browser
-@dirrmtry share/applications
 @dirrm lib/libgda-%%VERSION%%/plugins
 @dirrm include/libgda-%%VERSION%%/libgda-ui

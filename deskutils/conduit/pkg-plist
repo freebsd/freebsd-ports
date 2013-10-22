@@ -514,7 +514,6 @@ share/omf/conduit/conduit-zh_CN.omf
 @dirrm share/gnome/help/conduit/C
 @dirrm share/gnome/help/conduit
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/conduit/utils
 @dirrm %%PYTHON_SITELIBDIR%%/conduit/platform
 @dirrm %%PYTHON_SITELIBDIR%%/conduit/hildonui

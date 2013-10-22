@@ -47,4 +47,3 @@ share/ddd-%%VERSION%%/vsllib/vsllib.vsl
 @dirrm share/ddd-%%VERSION%%/themes
 @dirrm share/ddd-%%VERSION%%/ddd
 @dirrm share/ddd-%%VERSION%%
-@dirrmtry share/applications

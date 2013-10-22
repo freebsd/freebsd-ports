@@ -169,5 +169,4 @@ share/xml/qof/qsf/qsf-object.xsd.xml
 @dirrm share/gnome/help/gnotime/C/figures
 @dirrm share/gnome/help/gnotime/C
 @dirrm share/gnome/help/gnotime
-@dirrmtry share/applications
 @dirrm include/qof

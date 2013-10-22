@@ -18,4 +18,3 @@ share/pixmaps/easystroke.svg
 %%NLS%%share/locale/cs/LC_MESSAGES/easystroke.mo
 share/applications/easystroke.desktop
 bin/easystroke
-@dirrmtry share/applications

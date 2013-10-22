@@ -18,7 +18,6 @@ USE_QT4=	webkit qmake_build moc_build rcc_build uic_build
 
 NO_STAGE=	yes
 post-install:
-	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/packages/kchmviewer.png ${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>

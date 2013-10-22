@@ -17,4 +17,3 @@ share/pixmaps/splashsetter/splash/splashsetter_splash.png
 @dirrm share/pixmaps/splashsetter/splash
 @dirrm share/pixmaps/splashsetter
 @dirrm libexec/splashsetter
-@dirrmtry share/applications

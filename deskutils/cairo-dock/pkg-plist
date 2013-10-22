@@ -342,7 +342,6 @@ share/pixmaps/cairo-dock.svg
 @dirrm %%DATADIR%%/gauges
 @dirrm %%DATADIR%%/explosion
 @dirrm %%DATADIR%%
-@dirrm share/applications
 @dirrm share/cairo-dock/plug-ins/Help
 @dirrm share/cairo-dock/plug-ins
 @dirrm share/cairo-dock

@@ -30,4 +30,3 @@ share/icons/hicolor/scalable/apps/xpad.svg
 %%NLS%%share/locale/vi/LC_MESSAGES/xpad.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xpad.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xpad.mo
-@dirrmtry share/applications

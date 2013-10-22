@@ -88,4 +88,3 @@ share/pixmaps/gnome-blog.png
 @dirrm %%PYTHON_SITELIBDIR%%/gnomeblog
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
-@dirrmtry share/applications

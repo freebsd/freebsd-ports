@@ -746,7 +746,6 @@ share/pixmaps/gdesklets.png
 @dirrm %%DATADIR%%/Sensors
 @dirrm %%DATADIR%%/Displays
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm lib/gdesklets/utils
 @dirrm lib/gdesklets/shell/plugins/gDeskletsClient
 @dirrm lib/gdesklets/shell/plugins/ViewSwitch

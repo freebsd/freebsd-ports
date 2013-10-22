@@ -4,4 +4,3 @@ share/mime/packages/cmakecache.xml
 share/pixmaps/CMakeSetup32.png
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
-@dirrmtry share/applications

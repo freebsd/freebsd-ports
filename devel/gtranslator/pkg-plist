@@ -101,4 +101,3 @@ share/pixmaps/gtranslator/untranslated_small.png
 @dirrm share/gnome/help/gtranslator/C/figures
 @dirrm share/gnome/help/gtranslator/C
 @dirrm share/gnome/help/gtranslator
-@dirrmtry share/applications

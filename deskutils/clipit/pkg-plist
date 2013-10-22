@@ -20,7 +20,6 @@ share/icons/hicolor/scalable/apps/clipit-trayicon.svg
 %%NLS%%share/locale/sv/LC_MESSAGES/clipit.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/clipit.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/clipit.mo
-@dirrmtry share/applications
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor

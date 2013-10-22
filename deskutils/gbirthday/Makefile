@@ -78,7 +78,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}/*.py ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}/databases/*.py ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/databases
 	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}/pics/*.png ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/pics
-	@${MKDIR} ${PREFIX}/share/applications
 .if ${PORT_OPTIONS:MNLS}
 	@(for lang in ${LANGUAGES} ; do \
 		${MKDIR} ${PREFIX}/share/locale/$$lang/LC_MESSAGES ; \

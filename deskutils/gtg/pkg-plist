@@ -636,7 +636,6 @@ share/locale/zh_TW/LC_MESSAGES/gtg.mo
 @dirrm %%DATADIR%%/icons/hicolor
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/tools
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/urgency_color
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/tomboy

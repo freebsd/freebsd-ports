@@ -206,7 +206,6 @@ share/icons/hicolor/scalable/emblems/emblem-bzr-removed.svg
 @dirrmtry share/icons
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/viz
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/preferences

@@ -19,5 +19,4 @@ libexec/edb/libStringSearcher.so
 libexec/edb/libSymbolViewer.so
 share/applications/edb.desktop
 share/pixmaps/edb.png
-@dirrmtry share/applications
 @dirrm libexec/edb

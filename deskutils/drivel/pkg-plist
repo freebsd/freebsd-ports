@@ -109,4 +109,3 @@ share/pixmaps/drivel-48.png
 @dirrmtry share/gnome/help/drivel
 @dirrmtry %%DATADIR%%/glade
 @dirrmtry %%DATADIR%%
-@dirrmtry share/applications

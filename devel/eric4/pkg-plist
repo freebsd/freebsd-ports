@@ -3133,7 +3133,6 @@ share/qt4/qsci/api/ruby/eric4.api
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/Source
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/Help
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrmtry lib/python2.7/site-packages/eric4plugins
 @dirrmtry lib/python2.7/site-packages
 @dirrmtry lib/python2.7

@@ -68,5 +68,4 @@ share/icons/hicolor/scalable/apps/q4wine.svg
 @dirrm %%DATADIR%%/icons
 %%NLS%%@dirrm %%DATADIR%%/i18n
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm lib/q4wine

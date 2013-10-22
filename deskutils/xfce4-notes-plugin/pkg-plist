@@ -82,6 +82,5 @@ share/xfce4/panel-plugins/xfce4-notes-plugin-47.desktop
 @dirrmtry share/locale/kk
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
-@dirrmtry share/applications
 @dirrmtry lib/xfce4/panel-plugins
 @dirrmtry lib/xfce4

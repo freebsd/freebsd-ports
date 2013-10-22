@@ -1065,7 +1065,6 @@ share/locale/zh_TW/LC_MESSAGES/libgda-%%VERSION%%.mo
 %%UI%%@dirrm share/gnome/help/gda-browser
 %%UI%%@dirrm share/doc/gda-browser
 @dirrm share/doc/libgda-%%VERSION%%
-%%UI%%@dirrmtry share/applications
 @dirrm lib/libgda-%%VERSION%%/providers
 %%UI%%@dirrm lib/libgda-%%VERSION%%/plugins
 @dirrm lib/libgda-%%VERSION%%

@@ -1937,7 +1937,6 @@ share/zsh/site-functions/_calibre
 @dirrm %%DATADIR%%/content_server
 @dirrm %%DATADIR%%/catalog
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrmtry %%PYTHON_SITELIBDIR%%
 @dirrm lib/calibre/templite
 @dirrm lib/calibre/routes

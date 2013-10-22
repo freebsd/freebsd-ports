@@ -33,4 +33,3 @@ share/pixmaps/send.xpm
 share/pixmaps/warning.xpm
 %%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/de_DE
-@dirrmtry share/applications

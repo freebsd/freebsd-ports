@@ -64,6 +64,5 @@ share/themes/ZOMG-PONIES!/xfce-notify-4.0/gtkrc
 %%NLS%%@dirrmtry share/locale/kk
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
-@dirrmtry share/applications
 @dirrm lib/xfce4/notifyd
 @dirrmtry lib/xfce4
