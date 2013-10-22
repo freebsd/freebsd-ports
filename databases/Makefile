@@ -517,6 +517,7 @@
     SUBDIR += pear-Horde_HashTable
     SUBDIR += pear-Horde_Imsp
     SUBDIR += pear-Horde_Memcache
+    SUBDIR += pear-Horde_Mongo
     SUBDIR += pear-MDB
     SUBDIR += pear-MDB2
     SUBDIR += pear-MDB2_Driver_mysql
