@@ -4001,7 +4001,6 @@
     SUBDIR += ruby-rbprof
     SUBDIR += ruby-robjectteam
     SUBDIR += ruby-rreadline
-    SUBDIR += ruby-sdl
     SUBDIR += ruby-setup.rb
     SUBDIR += ruby-statgrab
     SUBDIR += ruby-subversion

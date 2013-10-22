@@ -1,9 +1,0 @@
-Mongrel is a fast HTTP library and server for Ruby that is intended for
-hosting Ruby web applications of any kind using plain HTTP rather than
-FastCGI or SCGI.
-
-It is framework agnostic and already supports Ruby On Rails, Og+Nitro,
-and Camping frameworks.  It also supports a complete plugin system
-based on RubyGems called GemPlugins.
-
-WWW: http://mongrel.rubyforge.org/

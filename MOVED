@@ -5137,3 +5137,10 @@ japanese/gorua||2013-10-21|Has expired: Does not work with Ruby 1.9
 x11-toolkits/ruby-gtk||2013-10-21|Has expired: Does not work with Ruby 1.9
 astro/boinc-setiathome-enhanced|astro/boinc-setiathome-v7|2013-10-21|Removed: Project is switching, use astro/boinc-setiathome-v7 instead; broken on 10.0
 multimedia/ffmpeg-devel|multimedia/ffmpeg|2013-10-21|Use multimedia/ffmpeg instead
+devel/ruby-sdl||2013-10-22|Has expired: Does not work with Ruby 1.9
+games/magicmaze||2013-10-22|Has expired: Does not work with Ruby 1.9
+lang/ruby18|lang/ruby19|2013-10-22|Has expired: Please use lang/ruby19
+www/rubygem-mongrel_cluster||2013-10-22|Has expired: Does not work with Ruby 1.9
+www/rubygem-mongrel||2013-10-22|Removed
+www/rubygem-rails-app-installer||2013-10-22|Has expired: Does not work with Ruby 1.9
+www/typo||2013-10-22|Has expired: Does not work with Ruby 1.9
