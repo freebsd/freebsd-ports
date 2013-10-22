@@ -3,7 +3,7 @@
 
 PORTNAME=	xmms
 PORTVERSION=	1.2.11
-PORTREVISION=	18
+PORTREVISION?=	19	# Also chinese/xmms and russian/xmms
 CATEGORIES+=	multimedia audio ipv6
 MASTER_SITES=	http://www.xmms.org/files/1.2.x/ \
 		http://legacy.xmms2.org/ \
@@ -13,45 +13,56 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER?=	c.petrik.sosa@gmail.com
 COMMENT?=	X Multimedia System -- An audio player with Winamp GUI
 
+CONFLICTS?=	ru-xmms-[0-9]* zh-xmms[0-9]*
+GNU_CONFIGURE=	yes
+USES=		desktop-file-utils pathfix gmake iconv
 USE_BZIP2=	yes
-USE_GL=		gl
-USE_GNOME=	desktopfileutils gtk12
-USE_GMAKE=	yes
-USES=		pathfix gettext iconv
+USE_GNOME=	gtk12
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	automake autoconf libtool
-AUTOTOOLSFILES=	aclocal.m4
-AUTOMAKE_ARGS=	--add-missing
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
-		INPUT_PLUGINS="${INPUT_PLUGINS}" \
+USE_XORG=	sm x11 xxf86vm
+
+CONFIGURE_ARGS=	xmms_cv_newpcm_driver=yes --disable-static
+CONFIGURE_ENV=	INPUT_PLUGINS="${INPUT_PLUGINS}" \
 		OUTPUT_PLUGINS="${OUTPUT_PLUGINS}" \
 		VISUALIZATION_PLUGINS="${VISUALIZATION_PLUGINS}"
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ARGS=	--enable-static=no
-MAN1=		wmxmms.1 xmms.1
-SUB_FILES=	pkg-message xmms.desktop
-
-CONFLICTS=	ru-xmms-[0-9]*
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 INPUT_PLUGINS=	cdaudio mpg123 tonegen wav
 OUTPUT_PLUGINS=	OSS disk_writer
 VISUALIZATION_PLUGINS=	blur_scope sanalyzer
 
-OPTIONS_DEFINE=	IPV6 MIKMOD SIMD SPEC VFILEINFO VORBIS RUSXMMS_PATCHES
-OPTIONS_DEFAULT=	IPV6 MIKMOD SIMD VORBIS
-OPTIONS_EXCLUDE_amd64=	SIMD
-SPEC_DESC=	Visualization opengl_spectrum
-VFILEINFO_DESC=	Enable Extended Vorbis Fileinfo
-RUSXMMS_PATCHES_DESC=	Custom IDv3 patches
+OPTIONS_DEFINE=	IPV6 MIKMOD NLS SIMD SPEC VFILEINFO VORBIS RUSXMMS_PATCHES
+OPTIONS_DEFAULT=MIKMOD SIMD VORBIS
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+IPV6_CONFIGURE_ENABLE=	ipv6
 
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-ipv6
-.else
-CONFIGURE_ARGS+=	--disable-ipv6
+MIKMOD_CONFIGURE_ENABLE=mikmod
+MIKMOD_LIB_DEPENDS=	libmikmod.so:${PORTSDIR}/audio/libmikmod
+
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext
+
+SIMD_CONFIGURE_ENABLE=	simd
+
+SPEC_DESC=		Visualization opengl_spectrum
+SPEC_CONFIGURE_ENABLE=	opengl
+SPEC_USE=		GL=gl
+
+VFILEINFO_DESC=		Enable Extended Vorbis Fileinfo
+VFILEINFO_CPPFLAGS=	-DALL_VORBIS_TAGS
+
+VORBIS_CONFIGURE_ENABLE=vorbis
+VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+
+RUSXMMS_PATCHES_DESC=	Patches to handle broken non-Unicode ID3 tags
+
+.if !defined(WITH_DEBUG)
+INSTALL_TARGET=	install-strip
 .endif
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRUSXMMS_PATCHES}
 ENC_PATCHLEVEL=	41
@@ -59,31 +70,28 @@ DISTFILES+=	RusXMMS2-csa${ENC_PATCHLEVEL}${EXTRACT_SUFX}:enc
 MASTER_SITES+=	SF/rusxmms/rusxmms2/csa41%20%28${PORTVERSION}%29:enc
 MASTER_SITE_SUBDIR+=	rusxmms/:enc
 
-LIB_DEPENDS+=	rcc:${PORTSDIR}/devel/librcc
-LIB_DEPENDS+=	rcd:${PORTSDIR}/devel/librcd
-.endif
+LIB_DEPENDS+=	librcc.so:${PORTSDIR}/devel/librcc \
+		librcd.so:${PORTSDIR}/devel/librcd
 
-.if ${PORT_OPTIONS:MVFILEINFO}
-CFLAGS+=	-DALL_VORBIS_TAGS
+USE_AUTOTOOLS=	aclocal autoheader libtoolize autoconf automake
+LIBTOOLIZE_ARGS=--install --force
+AUTOMAKE_ARGS=	--add-missing --force-missing
+USE_OPENSSL=	yes
 .endif
 
 .if ${PORT_OPTIONS:MMIKMOD}
-LIB_DEPENDS+=	mikmod:${PORTSDIR}/audio/libmikmod
 INPUT_PLUGINS+=	mikmod
-PLIST_SUB+=	MIKMODPLUGIN:=""
-.else
-CONFIGURE_ARGS+=	--disable-mikmod
-PLIST_SUB+=	MIKMODPLUGIN:="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
 INPUT_PLUGINS+=	vorbis
-PLIST_SUB+=	VORBISPLUGIN:=""
-.else
-CONFIGURE_ARGS+=	--disable-vorbis
-PLIST_SUB+=	VORBISPLUGIN:="@comment "
 .endif
+
+.if ${PORT_OPTIONS:MSPEC}
+VISUALIZATION_PLUGINS+=	opengl_spectrum
+.endif
+
+.include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mesound}!=""
 USE_GNOME+=	esound
@@ -94,33 +102,7 @@ CONFIGURE_ARGS+=	--disable-esd
 PLIST_SUB+=	ESDPLUGIN:="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MSIMD}
-CONFIGURE_ARGS+=	--enable-simd
-.else
-.if ${ARCH} == "i386"
-BROKEN=	must use option SIMD on ${ARCH} see pr ports/63456
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MSPEC}
-PLIST_SUB+=	SPEC=""
-VISUALIZATION_PLUGINS+=	opengl_spectrum
-.else
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-Visualization_Makefile.am
-PLIST_SUB+=	SPEC="@comment "
-.endif
-
-post-extract:
-.if ! ${PORT_OPTIONS:MSIMD}
-	(cd ${WRKSRC}/Input/mpg123 && ${MV} decode_i586.s decode_i586.S && \
-	  cd ${WRKSRC}/Visualization/blur_scope && ${MV} blur_8.s blur_8.S);
-	${REINPLACE_CMD} -e 's:\.s :.S :g' -e 's:\.s$$:.S:g' \
-	  -e 's:^\.s\.:.S.:g' ${WRKSRC}/Input/mpg123/Makefile.in
-	${REINPLACE_CMD} -e 's:\.s :.S :g' -e 's:\.s$$:.S:g' \
-	  -e 's:^\.s\.:.S.:g' ${WRKSRC}/Visualization/blur_scope/Makefile.in
-.endif
-
-pre-extract:
+pre-everything::
 .if ${HAVE_GNOME:Mesound}!=""
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You can disable support for esound by defining"
@@ -128,18 +110,13 @@ pre-extract:
 	@${ECHO_MSG} ""
 .endif
 
-.if ! ${PORT_OPTIONS:MRUSXMMS_PATCHES}
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You can enable support for ID3v2 tags and CP1251"
-	@${ECHO_MSG} "encoding by setting the RUSXMMS_PATCHES option."
-	@${ECHO_MSG} ""
-.endif
-
 post-patch:
 .if ${PORT_OPTIONS:MRUSXMMS_PATCHES}
-.  for src in source/rcc.c source/rcc.h source/rcc_langs.h
-	@${INSTALL_DATA} ${WRKDIR}/RusXMMS2/${src} ${WRKSRC}/libxmms
-.  endfor
+	@${REINPLACE_CMD} -e 's/AM_PATH_ALSA.*/have_alsa=no/' \
+		${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e '/libtool/,$$d' \
+		${WRKSRC}/acinclude.m4 ${WRKSRC}/libxmms/acinclude.m4
+	@${CP} ${WRKDIR}/RusXMMS2/source/* ${WRKSRC}/libxmms/
 	@${CAT} ${WRKDIR}/RusXMMS2/3rdparty/mpg123/*.patch | ${PATCH} -s -p1 -d ${WRKSRC}
 .  for diff in xmms-ds-rusxmms.patch xmms-ds-rusxmms-charset.patch \
        xmms-ds-playlist.patch xmms-ds-shade.patch xmms-ds-textbox.patch
@@ -150,21 +127,23 @@ post-patch:
        xmms-ds-vorbis-editor-keys.patch
 	@${PATCH} -s -p1 -d ${WRKSRC} < ${WRKDIR}/RusXMMS2/patches/plugins/${diff}
 .  endfor
-.endif
 # If there is no esound installed, the autotools won't find a required macro
 .if ${HAVE_GNOME:Mesound}==""
-	${REINPLACE_CMD} -e '/AM_PATH_ESD/,/have_esd=no/d' ${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e '/AM_PATH_ESD/,/have_esd=no/d' \
+		${WRKSRC}/configure.in
 .endif
-
-post-configure:
-	@${FIND} ${WRKSRC} -name Makefile | \
-		${XARGS} ${REINPLACE_CMD} -e 's|MKDIR_P|mkdir_p|g'
+.endif
+	@${REINPLACE_CMD} -e 's/alsa_found=yes/alsa_found=no/' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,@mkdir_p@,${MKDIR},' \
+		${WRKSRC}/po/Makefile.in.in
+	@${FIND} ${WRKSRC} -name '*.s' | ${XARGS} ${REINPLACE_CMD} \
+		-e 's,/.*,,' -e 's/fist /fists /' -e 's/fistp /fistps /' \
+		-e '$$s/$$/\${.newline} .section ".note.GNU-stack","",@progbits/'
 
 post-install:
-	@${INSTALL} -d ${PREFIX}/share/xmms/Skins
-	@${INSTALL} -d ${PREFIX}/share/applications
-	@${INSTALL_DATA} ${WRKDIR}/xmms.desktop ${PREFIX}/share/applications/
-	-update-desktop-database
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/xmms/Skins
+	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${FILESDIR}/xmms.desktop ${STAGEDIR}${DESKTOPDIR}
 
 .include <bsd.port.post.mk>

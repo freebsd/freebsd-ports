@@ -1,6 +1,0 @@
---- Visualization/Makefile.am.orig	2001-01-19 07:37:43.000000000 -0900
-+++ Visualization/Makefile.am	2008-09-28 14:03:48.000000000 -0800
-@@ -1,2 +1,2 @@
--ALL_PLUGINS = blur_scope sanalyzer opengl_spectrum
-+ALL_PLUGINS = blur_scope sanalyzer
- SUBDIRS = @VISUALIZATION_PLUGINS@
