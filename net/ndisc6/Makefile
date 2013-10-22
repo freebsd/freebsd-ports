@@ -14,10 +14,15 @@ COMMENT=	IPv6 network diagnostic tools
 LICENSE=	GPLv2
 
 USE_BZIP2=	yes
+USE_GCC=	any
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-suid-install
 
-NO_STAGE=	yes
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
+
+OPTIONS_DEFINE=	DOCS NLS
+
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} >= 803000
@@ -26,27 +31,21 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-rdnssd-rdnssd.h
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
+LDFLAGS+=	-lintl
+PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
-
-MAN1=		addr2name.1 dnssort.1 tcpspray.1
-MAN8=		ndisc6.8 rdisc6.8 rdnssd.8 rltraceroute6.8
-MLINKS=		rltraceroute6.8 tcptraceroute6.8 \
-		rltraceroute6.8 tracert6.8 \
-		addr2name.1 name2addr.1 \
-		tcpspray.1 tcpspray6.1
 
 USE_RC_SUBR=	rdnssd
 
 PORTDOCS=	AUTHORS NEWS README
 
 post-install:
-.if	${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
