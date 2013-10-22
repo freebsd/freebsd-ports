@@ -2,114 +2,94 @@
 # $FreeBSD$
 
 PORTNAME=	ettercap
-PORTVERSION=	0.7.4.1
-PORTREVISION=	3
+PORTVERSION=	0.8.0
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt security
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}-Lazarus \
-		${MASTER_SITE_PACKETSTORM:S:%SUBDIR%:sniffers/ettercap:}
+MASTER_SITES=	GH \
+		GHC
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Network sniffer/interceptor/injector/logger for switched LANs
 
-LIB_DEPENDS=	net:${PORTSDIR}/net/libnet
+LICENSE=	GPLv2
 
-# GTK -> GTK2, ICONV -> UTF8
-OPTIONS_DEFINE=	DOCS GTK2 PCRE PLUGINS SSL UTF8
-OPTIONS_DEFAULT=GTK2 PCRE PLUGINS SSL UTF8
+LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+
+OPTIONS_DEFINE=	DESKTOP DOCS GTK2 IPV6 NCURSES PCRE PLUGINS SSL UTF8
+OPTIONS_DEFAULT=GTK2 NCURSES PCRE PLUGINS SSL UTF8
+OPTIONS_SUB=	yes
+DESKTOP_DESC=	Install ettercap.desktop
+NCURSES_DESC=	Ncurses interface
 PCRE_DESC=	Use PCRE in filters
 SSL_DESC=	SSH1 and SSL decryption support
 
-CFLAGS+=	${PTHREAD_CFLAGS}
-CONFIGURE_ENV=	LIBS="${LDFLAGS}"
-CONFIGURE_ARGS=	--enable-plugins
-CPPFLAGS+=	-I${LOCALBASE}/include
-GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
+CMAKE_ARGS=	-DBUNDLED_LIBS=OFF \
+		-DHAVE_LIBNET=${LOCALBASE}/lib/libnet11 \
+		-DHAVE_PCAP=${LIBDIR} \
+		-DHAVE_RESOLV=${LIBDIR} \
+		-DLIBNET_INCLUDE_DIR=${LOCALBASE}/include/libnet11 \
+		-DLIBNET_LIB_DIR=${LOCALBASE}/lib/libnet11 \
+		-DLIBNET_LIBRARY=${LOCALBASE}/lib/libnet11 \
+		-DMAN_INSTALLDIR=${PREFIX}/man
+CMAKE_VERBOSE=	yes
+LDFLAGS+=	-L${LIBDIR} -L${LOCALBASE}/lib -L${LOCALBASE}/lib/libnet11 ${ICONV_LIB} -lnet -lpcap
 MAKE_JOBS_UNSAFE=	yes
-USE_AUTOTOOLS=	libltdl libtool
-USES=		bison pkgconfig
-WANT_GNOME=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+USES=		bison cmake:outsource iconv pkgconfig
 
 DOCS=		AUTHORS CHANGELOG README README.BINARIES README.BUGS \
 		README.GIT README.PLATFORMS THANKS TODO TODO.TESTING \
 		doc/capture doc/decoders doc/dissectors doc/threads
-MAN5=		etter.conf.5
-MAN8=		ettercap.8 ettercap_curses.8 etterfilter.8 etterlog.8
 
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
+GH_ACCOUNT=	Ettercap
+GH_PROJECT=	${PORTNAME}
+GH_TAGNAME=	v${PORTVERSION}
+GH_COMMIT=	99e062a
+USE_GITHUB=	yes
 
-NO_STAGE=	yes
+DESKTOP_CMAKE_OFF=	-DINSTALL_DESKTOP=OFF
+DESKTOP_CMAKE_ON=	-DINSTALL_DESKTOP=ON
+DESKTOP_USES=		desktop-file-utils
+NCURSES_CMAKE_OFF=	-DENABLE_CURSES=OFF
+NCURSES_CMAKE_ON=	-DENABLE_CURSES=ON
+NCURSES_USE=		NCURSES=yes
+GTK2_CMAKE_OFF=		-DENABLE_GTK=OFF
+GTK2_CMAKE_ON=		-DENABLE_GTK=ON
+GTK2_PKGNAMESUFFIX=	-gtk2
+GTK2_USE=		GNOME=gtk20
+IPV6_CMAKE_OFF=		-DENABLE_IPV6=OFF
+IPV6_CMAKE_ON=		-DENABLE_IPV6=ON
+PCRE_CMAKE_OFF=		-DHAVE_PCRE=OFF
+PCRE_CMAKE_ON=		-DHAVE_PCRE=ON
+PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PLUGINS_BUILD_DEPENDS=	curl>=7.26.0:${PORTSDIR}/ftp/curl
+PLUGINS_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+PLUGINS_CMAKE_OFF=	-DENABLE_PLUGINS=OFF
+PLUGINS_CMAKE_ON=	-DENABLE_PLUGINS=ON
+SSL_CMAKE_OFF=		-DENABLE_SSL=OFF
+SSL_CMAKE_ON=		-DENABLE_SSL=ON
+SSL_USE=		OPENSSL=yes
+UTF8_CMAKE_OFF=		-DHAVE_UTF8=OFF
+UTF8_CMAKE_ON=		-DHAVE_UTF8=ON \
+			-DHAVE_ICONV=${ICONV_PREFIX}
+UTF8_USES=		iconv
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MGTK2}
-PKGNAMESUFFIX?=	-gtk2
-CONFIGURE_ARGS+=--enable-gtk
-USE_GNOME=	atk glib20 gtk20 pango
-.else
-CONFIGURE_ARGS+=--disable-gtk
-.endif
-
-.if ${PORT_OPTIONS:MUTF8}
-CONFIGURE_ARGS+=--with-iconv=${ICONV_PREFIX}
-USES+=		iconv
-.endif
-
-.if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
-CONFIGURE_ARGS+=--with-libpcre=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--without-libpcre
-.endif
-
 .if ${PORT_OPTIONS:MPLUGINS}
-CONFIGURE_ARGS+=--enable-plugins
+USE_LDCONFIG=	${PREFIX}/lib/ettercap
 DOCS+=		doc/plugins
-MAN8+=		ettercap_plugins.8
-PLIST_SUB+=	PLUGINS=""
 .else
-CONFIGURE_ARGS+=--disable-plugins
-PLIST_SUB+=	PLUGINS="@comment "
+USE_LDCONFIG=	yes
 .endif
-
-.if ${PORT_OPTIONS:MSSL}
-CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
-USE_OPENSSL=	yes
-.else
-CONFIGURE_ARGS+=--without-openssl
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-BROKEN=		does not compile on FreeBSD 7.X
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -E \
-		-e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
-		-e 's|test -f /usr/include/libnet\.h|${TRUE}|' \
-		-e 's|(LNETINC=).*|\1"`${LIBNET_CONFIG} --cflags`"|' \
-		-e 's|(LNETLIB=).*|\1"`${LIBNET_CONFIG} --libs`"|' \
-		-e '/ICONVLIB/s|-liconv|${ICONV_LIB}|' \
-			${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -E \
-		-e 's|(^pkgdatadir.+=).+|\1 ${DATADIR}|' \
-		-e '/^install-exec-am:/ s|: .*$$|:|'\
-	       		${WRKSRC}/share/Makefile.in
-# Fix objformat
-	@${REINPLACE_CMD} -E -e 's|(^.*=).*/usr/bin/objformat.*|\1"elf"|' \
-		${WRKSRC}/aclocal.m4 ${WRKSRC}/configure
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/share/etter.conf ${PREFIX}/etc/etter.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/share/etter.conf ${STAGEDIR}${PREFIX}/etc/etter.conf.sample
 .if !exists(${PREFIX}/etc/etter.conf)
-	${INSTALL_DATA} ${WRKSRC}/share/etter.conf ${PREFIX}/etc/etter.conf
+	${INSTALL_DATA} ${WRKSRC}/share/etter.conf ${STAGEDIR}${PREFIX}/etc/etter.conf
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

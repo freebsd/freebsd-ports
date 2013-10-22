@@ -1,0 +1,122 @@
+From 33ac95f78e4f6f067e6bc33b8883b3b7daa896f3 Mon Sep 17 00:00:00 2001
+From: "Emilio A. Escobar" <eescobar@gmail.com>
+Date: Wed, 11 Sep 2013 16:53:57 -0400
+Subject: [PATCH] Fix for issue #344, now safe_free_mem() will be available for
+ all OS'es
+
+---
+ include/ec.h       |  3 +++
+ src/CMakeLists.txt |  1 +
+ src/ec_mem.c       | 47 +++++++++++++++++++++++++++++++++++++++++++++++
+ src/os/ec_linux.c  | 10 ----------
+ 4 files changed, 51 insertions(+), 10 deletions(-)
+ create mode 100644 src/ec_mem.c
+
+diff --git a/include/ec.h b/include/ec.h
+index 069e3f1..270860a 100644
+--- include/ec.h.orig
++++ include/ec.h
+@@ -172,6 +172,9 @@
+ /* exported by ec_main */
+ EC_API_EXTERN void clean_exit(int errcode);
+ 
++/* exported by ec_mem */
++EC_API_EXTERN void safe_free_mem(char **param, int *param_length, char *command);
++
+ 
+ #endif   /*  EC_H */
+ 
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 22d021d..4754073 100644
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -1,4 +1,5 @@
+ set(EC_SRC
++	ec_mem.c
+         ec_capture.c
+         ec_checksum.c
+         ec_conf.c
+diff --git a/src/ec_mem.c b/src/ec_mem.c
+new file mode 100644
+index 0000000..b1d8d34
+--- /dev/null
++++ src/ec_mem.c
+@@ -0,0 +1,47 @@
++/*
++    ettercap -- global variables handling module
++
++    Copyright (C) ALoR & NaGA
++
++    This program is free software; you can redistribute it and/or modify
++    it under the terms of the GNU General Public License as published by
++    the Free Software Foundation; either version 2 of the License, or
++    (at your option) any later version.
++
++    This program is distributed in the hope that it will be useful,
++    but WITHOUT ANY WARRANTY; without even the implied warranty of
++    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++    GNU General Public License for more details.
++
++    You should have received a copy of the GNU General Public License
++    along with this program; if not, write to the Free Software
++    Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
++
++*/
++
++#include <ec.h>
++
++void safe_free_mem(char **param, int *param_length, char *command);
++
++
++void safe_free_mem(char **param, int *param_length, char *command)
++{
++   int k;
++
++   SAFE_FREE(command);
++        for(k= 0; k < (*param_length); ++k)
++                SAFE_FREE(param[k]);
++        SAFE_FREE(param);
++}
++
++
++
++
++
++
++
++
++/* EOF */
++
++// vim:ts=3:expandtab
++
+diff --git a/src/os/ec_linux.c b/src/os/ec_linux.c
+index e27cd2b..32a7b13 100644
+--- src/os/ec_linux.c.orig
++++ src/os/ec_linux.c
+@@ -31,7 +31,6 @@
+ static void restore_ip_forward(void);
+ u_int16 get_iface_mtu(const char *iface);
+ void disable_interface_offload(void);
+-void safe_free_mem(char **param, int *param_length, char *command);
+ 
+ /*******************************************/
+ 
+@@ -133,15 +132,6 @@ u_int16 get_iface_mtu(const char *iface)
+    return mtu;
+ }
+ 
+-void safe_free_mem(char **param, int *param_length, char *command)
+-{
+-   int k;
+-
+-   SAFE_FREE(command);
+-	for(k= 0; k < (*param_length); ++k)
+-		SAFE_FREE(param[k]);
+-	SAFE_FREE(param);
+-}
+ 
+ /*
+  * disable segmentation offload on interface
+-- 
+1.8.4
+
