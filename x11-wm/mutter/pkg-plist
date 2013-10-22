@@ -133,7 +133,6 @@ share/locale/zh_TW/LC_MESSAGES/mutter.mo
 @dirrm lib/mutter
 @dirrm include/mutter/mutter-private
 @dirrm include/mutter
-@dirrmtry share/applications
 @dirrmtry share/gir-1.0
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK

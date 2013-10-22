@@ -27,7 +27,6 @@ do-install:
 	(cd ${WRKSRC}/wbarbacks/ && ${COPYTREE_SHARE} \* ${DATADIR}/wbarbacks/)
 	${INSTALL_DATA} ${WRKSRC}/messages.pot ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/wbarconf.png ${PREFIX}/share/pixmaps
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/wbarconf.desktop ${PREFIX}/share/applications
 	(cd ${WRKSRC}/locale/ && ${COPYTREE_SHARE} \* ${PREFIX}/share/locale/)
 .if !defined(NOPORTDOCS)

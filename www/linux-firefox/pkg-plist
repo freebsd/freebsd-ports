@@ -91,4 +91,3 @@ lib/%%APP_NAME%%/webapprt/webapprt.ini
 @dirrm lib/%%APP_NAME%%/icons
 @dirrm lib/%%APP_NAME%%/webapprt
 @dirrm lib/%%APP_NAME%%
-@dirrmtry share/applications

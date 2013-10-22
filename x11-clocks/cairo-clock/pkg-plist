@@ -253,7 +253,6 @@ bin/cairo-clock
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 share/applications/cairo-clock.desktop
 share/pixmaps/cairo-clock.png
-@dirrmtry share/applications
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry %%DATADIR%%/themes/zen
 @dirrmtry %%DATADIR%%/themes/tango

@@ -140,4 +140,3 @@ lib/%%APP_NAME%%/updater.ini
 @dirrm lib/%%APP_NAME%%/plugins
 @dirrm lib/%%APP_NAME%%/searchplugins
 @dirrm lib/%%APP_NAME%%
-@dirrmtry share/applications

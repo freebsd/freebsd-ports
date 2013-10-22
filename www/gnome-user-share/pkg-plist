@@ -183,7 +183,6 @@ share/omf/gnome-user-share/gnome-user-share-zh_CN.omf
 @dirrm share/gnome/help/gnome-user-share/C
 @dirrm share/gnome/help/gnome-user-share
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/ug/LC_MESSAGES

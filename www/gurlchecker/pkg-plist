@@ -48,4 +48,3 @@ share/pixmaps/gurlchecker.png
 @dirrm share/gurlchecker/ui
 @dirrm share/gurlchecker/stylesheets
 @dirrm share/gurlchecker
-@dirrmtry share/applications

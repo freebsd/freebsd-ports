@@ -254,6 +254,5 @@ lib/libhttrack.so.2
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/div
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrmtry share/applications
 %%PORTDATA%%@dirrm lib/httrack
 @dirrm include/httrack

@@ -188,6 +188,5 @@ share/locale/zh_TW/LC_MESSAGES/avant-window-navigator.mo
 @dirrm %%DATADIR%%/applets
 @dirrm %%DATADIR%%/active
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/awn
 @dirrm include/libawn

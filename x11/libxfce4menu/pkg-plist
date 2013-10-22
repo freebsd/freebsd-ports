@@ -116,7 +116,6 @@ share/icons/hicolor/48x48/apps/xfce4-logo.png
 %%APIDOCS%%@dirrm share/gtk-doc/html/libxfce4ui
 %%APIDOCS%%@dirrmtry share/gtk-doc/html
 %%APIDOCS%%@dirrmtry share/gtk-doc
-@dirrmtry share/applications
 @dirrm include/xfce4/libxfce4ui-1/libxfce4ui
 @dirrm include/xfce4/libxfce4ui-1
 @dirrm include/xfce4/libxfce4kbd-private-2/libxfce4kbd-private

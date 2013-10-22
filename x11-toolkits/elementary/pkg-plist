@@ -437,5 +437,4 @@ share/icons/elementary.png
 %%NLS%%@dirrmtry share/locale/yi
 %%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/zh_CN
-@dirrmtry share/applications
 @dirrmtry share/icons

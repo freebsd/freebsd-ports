@@ -123,7 +123,6 @@ CONFIGURE_ARGS+=	--with-tab-radius=${TAB_RADIUS:M[0-9]*}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/mrxvt ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/pixmaps
 	@for pixmap in ${WRKSRC}/share/pixmaps/* ; \
 	do ${INSTALL_DATA} $$pixmap ${PREFIX}/share/pixmaps/ ; \
 	done

@@ -1551,7 +1551,6 @@ share/xsessions/ede.desktop
 @dirrm share/doc/ede-2.0.0/manual
 @dirrm share/doc/ede-2.0.0
 @dirrmtry share/desktop-directories
-@dirrmtry share/applications
 @dirrmtry etc/xdg/menus
 @dirrm etc/xdg/ede
 @dirrmtry etc/xdg

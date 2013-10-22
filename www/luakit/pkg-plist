@@ -58,6 +58,5 @@ share/pixmaps/luakit.png
 @dirrm share/luakit/lib
 @dirrm share/luakit
 @dirrm share/doc/luakit
-@dirrmtry share/applications
 @dirrmtry etc/xdg/luakit
 @dirrmtry etc/xdg

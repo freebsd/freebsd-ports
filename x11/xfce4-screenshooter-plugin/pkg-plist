@@ -155,7 +155,6 @@ share/xfce4/panel/plugins/screenshooter.desktop
 @dirrm %%DOCSDIR%%/ast/images
 @dirrm %%DOCSDIR%%/ast
 @dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrmtry lib/xfce4/panel/plugins
 @dirrmtry lib/xfce4/panel
 @dirrmtry lib/xfce4

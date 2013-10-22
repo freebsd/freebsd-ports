@@ -2838,4 +2838,3 @@ share/applications/xfp.desktop
 @dirrmtry share/locale/es_CO
 @dirrmtry share/locale/es_AR/LC_MESSAGES
 @dirrmtry share/locale/es_AR
-@dirrmtry share/applications

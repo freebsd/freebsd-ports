@@ -88,7 +88,6 @@ share/applications/worker.desktop
 %%DATADIR%%/scripts/displaywrapper_worker
 %%DATADIR%%/scripts/xeditor
 %%DATADIR%%/scripts/xliwrapper_worker
-@dirrmtry share/applications
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/catalogs
 @dirrm %%DATADIR%%

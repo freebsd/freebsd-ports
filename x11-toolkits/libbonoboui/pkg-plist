@@ -142,7 +142,6 @@ share/locale/zu/LC_MESSAGES/libbonoboui-2.0.mo
 @dirrm lib/bonobo-2.0
 @dirrm include/libbonoboui-2.0/bonobo
 @dirrm include/libbonoboui-2.0
-@dirrmtry share/applications
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
 @dirrmtry share/locale/zh_HK/LC_MESSAGES

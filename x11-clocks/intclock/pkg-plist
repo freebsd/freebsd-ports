@@ -25,4 +25,3 @@ share/applications/intclock.desktop
 @dirrm %%SITE_PERL%%/Intclock
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Intclock
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

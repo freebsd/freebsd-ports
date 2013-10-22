@@ -57,7 +57,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rssowl ${PREFIX}/bin
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/rssowl.jar ${DATADIR}
-	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/img/32x32.png ${PREFIX}/share/pixmaps/rssowl.png
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

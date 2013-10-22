@@ -22,10 +22,8 @@ USE_GNOME=	gtk20
 NO_STAGE=	yes
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/files/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/pixmaps || ${TRUE}
 	@${INSTALL_DATA} ${WRKSRC}/files/${PORTNAME}.png \
 		${PREFIX}/share/pixmaps
-	${MKDIR} ${PREFIX}/share/applications || ${TRUE}
 	@${INSTALL_DATA} ${WRKSRC}/files/${PORTNAME}.desktop \
 		${PREFIX}/share/applications
 

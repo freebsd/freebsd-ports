@@ -235,7 +235,6 @@ share/themes/Simple/metacity-1/minimize.png
 @dirrm share/gnome/help/creating-metacity-themes
 @dirrm include/metacity-1/metacity-private
 @dirrm include/metacity-1
-@dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/yo/LC_MESSAGES

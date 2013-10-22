@@ -232,7 +232,6 @@ share/pixmaps/nautilus/thumbnail_frame.png
 @dirrmtry %%DATADIR%%/icons/hicolor
 @dirrmtry %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @exec /bin/mkdir -p %D/lib/nautilus/extensions-2.0
 @dirrmtry lib/nautilus/extensions-2.0
 @dirrmtry lib/nautilus

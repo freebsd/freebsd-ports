@@ -422,5 +422,4 @@ share/xml/bluefish/catalog.xml
 @dirrm %%DATADIR%%/bflib
 @dirrm %%DATADIR%%/bflang
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm lib/bluefish

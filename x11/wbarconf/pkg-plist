@@ -21,4 +21,3 @@ share/pixmaps/wbarconf.png
 %%DATADIR%%/wbarbacks/wbarback9.png
 @dirrm %%DATADIR%%/wbarbacks
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

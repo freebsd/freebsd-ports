@@ -57,5 +57,4 @@ share/applications/lxappearance.desktop
 %%NLS%%@dirrmtry share/locale/lg
 %%NLS%%@dirrmtry share/locale/fo/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fo
-@dirrmtry share/applications
 @dirrm include/lxappearance

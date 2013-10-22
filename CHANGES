@@ -10,6 +10,12 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20131021:
+AUTHOR: amdmi3@FreeBSD.org
+
+  share/applications directory was added to the mtree, meaning that
+  you no longer need to create or remove it in your ports.
+
 20131008:
 AUTHOR: bapt@FreeBSD.org
 

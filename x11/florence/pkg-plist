@@ -181,4 +181,3 @@ share/pixmaps/florence.svg
 @dirrm %%DATADIR%%/relaxng
 @dirrm %%DATADIR%%/layouts
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

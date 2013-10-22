@@ -195,7 +195,6 @@ share/locale/zh_HK/LC_MESSAGES/ccsm.mo
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
 @dirrmtry %%PYTHON_SITELIBDIR%%/ccm
-@dirrmtry share/applications
 @dirrmtry share/locale/md/LC_MESSAGES
 @dirrmtry share/locale/md
 @dirrmtry share/locale/ml_IN/LC_MESSAGES

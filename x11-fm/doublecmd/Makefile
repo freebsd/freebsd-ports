@@ -294,9 +294,6 @@ pre-install:
 	@${ECHO_CMD} "@dirrm %%DATADIR%%/sdk" >> ${PLIST}
 	@${ECHO_CMD} "@dirrm %%DATADIR%%" >> ${PLIST}
 
-	@${ECHO_CMD} "@dirrmtry share/pixmaps" >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry share/applications" >> ${PLIST}
-
 do-install:
 	@${MKDIR} ${DATADIR}/plugins
 	@${MKDIR} ${DATADIR}/plugins/wcx
@@ -380,7 +377,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DATADIR}
 .endfor
 
-	@${MKDIR} ${PREFIX}/share/pixmaps
 .for FILE in doublecmd.png install/linux/doublecmd.xpm
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/share/pixmaps/
 .endfor

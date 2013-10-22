@@ -7,4 +7,3 @@ libexec/gtstarter/gtstarter
 libdata/bonobo/servers/GTStarterApplet.server
 share/applications/gtstarter.desktop
 @dirrm libexec/gtstarter
-@dirrmtry share/applications

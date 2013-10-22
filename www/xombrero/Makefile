@@ -65,7 +65,6 @@ do-install:
 .for i in hsts-preload style.css tld-rules
 	${INSTALL_DATA}  ${WRKSRC}/${i} ${DATADIR}
 .endfor
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA}  ${WRKSRC}/xombrero.desktop ${PREFIX}/share/applications
 .if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}

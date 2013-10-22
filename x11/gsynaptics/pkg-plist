@@ -20,4 +20,3 @@ share/pixmaps/touchpad.png
 @dirrm %%DATADIR%%
 @dirrm share/gnome/help/gsynaptics/C
 @dirrm share/gnome/help/gsynaptics
-@dirrmtry share/applications

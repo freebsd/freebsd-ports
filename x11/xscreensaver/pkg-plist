@@ -504,7 +504,6 @@ share/pixmaps/xscreensaver.xpm
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/zh_TW
 @dirrmtry share/locale
-@dirrmtry share/applications
 @dirrmtry %%DATADIR%%/config
 @dirrm %%DATADIR%%/glade
 @dirrmtry %%DATADIR%%

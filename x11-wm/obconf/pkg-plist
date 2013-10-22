@@ -43,6 +43,5 @@ share/mime/packages/obconf.xml
 %%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sr@latin
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrmtry share/mimelnk/application
 @dirrmtry share/mimelnk

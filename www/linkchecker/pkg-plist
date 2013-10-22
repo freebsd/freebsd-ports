@@ -413,7 +413,6 @@ share/icons/hicolor/64x64/apps/linkchecker.png
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrmtry share/applications
 @dirrmtry man/de/man1
 @dirrmtry man/de
 @dirrmtry man/de/man5

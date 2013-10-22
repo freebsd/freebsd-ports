@@ -688,7 +688,6 @@ share/xsessions/enlightenment.desktop
 %%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/zh_TW
 @dirrmtry share/xsessions
-@dirrmtry share/applications
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/data/themes
 @dirrm %%DATADIR%%/data/input_methods

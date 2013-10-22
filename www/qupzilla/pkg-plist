@@ -275,4 +275,3 @@ share/qupzilla/themes/windows/windows.css
 @dirrmtry share/icons
 @dirrmtry share/bash-completion/completions
 @dirrmtry share/bash-completion
-@dirrmtry share/applications
