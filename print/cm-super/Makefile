@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
 .endif
 
 USE_ZIP=	yes
-USE_TEX=	base texmf
+USE_TEX=	base texmf tetex
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .if !defined(WITHOUT_X11)
