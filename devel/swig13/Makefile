@@ -12,10 +12,7 @@ COMMENT=	Simplified Wrapper and Interface Generator
 
 USE_AUTOTOOLS=	autoconf:env libtool
 
-MAN1=		ccache-swig.1
-
 VER=		${PORTVERSION:R}
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 # Supported languages: allegrocl c# clisp chicken guile java lua ocaml Octave
 #                      perl php pike python R ruby tcl
@@ -23,12 +20,19 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 WRKSRC=		${WRKDIR}/${DISTNAME}
 CFLAGS+=	-fPIC -DPIC
 ALL_TARGET=	swig
-PLIST_SUB+=	VER="${VER}"
+
+PLIST_FILES=	bin/${PORTNAME} \
+		bin/${PORTNAME}${VER} \
+		bin/ccache-${PORTNAME} \
+		man/man1/ccache-${PORTNAME}.1.gz
+PORTDOCS=	*
+PORTEXAMPLES=	*
+PORTDATA=	*
 
 OPTIONS_DEFINE=	LUA DOCS EXAMPLES
+OPTIONS_DEFAULT=DOCS EXAMPLES
 LUA_DESC=	Enable Lua support
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MLUA}
@@ -58,37 +62,8 @@ post-configure:
 	${REINPLACE_CMD} -e 's#null#&|| true#' ${WRKSRC}/Makefile
 
 post-install:
-	${LN} -f ${PREFIX}/bin/swig ${PREFIX}/bin/swig${VER}
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}/${PORTVERSION}
-	cd ${WRKSRC}/Examples && ${FIND} . -type d \
-		-exec ${INSTALL} -d ${EXAMPLESDIR}/${PORTVERSION}/{} \;
-	cd ${WRKSRC}/Examples && ${FIND} . -type f \
-		-exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/${PORTVERSION}/{} \;
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/${PORTVERSION}
-	cd ${WRKSRC}/Doc && ${FIND} . -type d \
-		-exec ${INSTALL} -d ${DOCSDIR}/${PORTVERSION}/{} \;
-	cd ${WRKSRC}/Doc && ${FIND} . -type f \
-		-exec ${INSTALL_DATA} {} ${DOCSDIR}/${PORTVERSION}/{} \;
-.endif
-
-.if defined(MAINTAINER_MODE)
-TMP_PREFIX=	/tmp/${PKGNAME}
-gen-pkg-plist:
-	${RM} -rf ${PLIST} ${TMP_PREFIX}
-	${MAKE} PLIST=pkg-plist PKG_DBDIR=${TMP_PREFIX}/pkgdb PREFIX=${TMP_PREFIX}/local clean all install
-	${PORTSDIR}/Tools/scripts/plist \
-	  -d -m ${PORTSDIR}/Templates/BSD.local.dist ${TMP_PREFIX}/local | ${SED} '\
-	    s,${DATADIR_REL},%%DATADIR%%,; \
-	    s,${DOCSDIR_REL},%%DOCSDIR%%,; \
-	    s,${EXAMPLESDIR_REL},%%EXAMPLESDIR%%,; \
-	    /%%DOCSDIR%%/s,^,%%PORTDOCS%%,; \
-	    /%%EXAMPLESDIR%%/s,^,%%PORTEXAMPLES%%,; \
-	    s,${PORTVERSION},%%PORTVERSION%%,; \
-	    s,${VER},%%VER%%, \
-	  ' > ${PLIST}
-.endif
+	${LN} -f ${STAGEDIR}${PREFIX}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}${VER}
+	cd ${WRKSRC}/Examples && ${COPYTREE_SHARE} '*' ${STAGEDIR}${EXAMPLESDIR}/${PORTVERSION}
+	cd ${WRKSRC}/Doc && ${COPYTREE_SHARE} '*' ${STAGEDIR}${DOCSDIR}/${PORTVERSION}
 
 .include <bsd.port.post.mk>
