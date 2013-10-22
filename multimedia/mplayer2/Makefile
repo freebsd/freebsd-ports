@@ -11,9 +11,9 @@ COMMENT=	Advanced general-purpose video player
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2 \
-		dvdread:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libdvdread.so:${PORTSDIR}/multimedia/libdvdread
 BUILD_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
 		python3:${PORTSDIR}/lang/python3 \
 		rst2man:${PORTSDIR}/textproc/py-docutils
@@ -39,8 +39,8 @@ CONFIGURE_ARGS=	--cc=${CC} \
 		--disable-xvid \
 		--disable-mpg123 \
 		--disable-musepack
-MAKE_ARGS+=	BINDIR=${PREFIX}/bin \
-		CONFDIR=${PREFIX}/etc/mplayer
+MAKE_ARGS+=	BINDIR=${STAGEDIR}${PREFIX}/bin \
+		CONFDIR=${STAGEDIR}${PREFIX}/etc/mplayer
 
 MPLAYER2_SNAPSHOT_DATE=	2013-04-28
 MPLAYER2_PORT_VERSION=	2.0.${MPLAYER2_SNAPSHOT_DATE:S/-//g}
@@ -67,14 +67,10 @@ LIRC_DESC=	Enable lirc support
 LIBCDIO_DESC=	Enable libcdio support
 V4L_DESC=	Enable Video4Linux TV support
 
-MAN1=		mplayer.1
-MANCOMPRESSED=	no
-
 SUB_FILES=	pkg-message
 
 CONFLICTS=	mplayer-1.*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64"
@@ -109,67 +105,67 @@ CONFIGURE_ARGS+=	--disable-inet6
 .endif
 
 .if ${PORT_OPTIONS:MGIF}
-LIB_DEPENDS+=		gif:${PORTSDIR}/graphics/giflib
+LIB_DEPENDS+=		libgif.so:${PORTSDIR}/graphics/giflib
 .else
 CONFIGURE_ARGS+=	--disable-gif
 .endif
 
 .if ${PORT_OPTIONS:MMAD}
-LIB_DEPENDS+=		mad:${PORTSDIR}/audio/libmad
+LIB_DEPENDS+=		libmad.so:${PORTSDIR}/audio/libmad
 .else
 CONFIGURE_ARGS+=	--disable-mad
 .endif
 
 .if ${PORT_OPTIONS:MDV}
-LIB_DEPENDS+=		dv:${PORTSDIR}/multimedia/libdv
+LIB_DEPENDS+=		libdv.so:${PORTSDIR}/multimedia/libdv
 .else
 CONFIGURE_ARGS+=	--disable-libdv
 .endif
 
 .if ${PORT_OPTIONS:MTHEORA}
-LIB_DEPENDS+=		theora:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS+=		libtheora.so:${PORTSDIR}/multimedia/libtheora
 .else
 CONFIGURE_ARGS+=	--disable-theora
 .endif
 
 .if ${PORT_OPTIONS:MSPEEX}
-LIB_DEPENDS+=		speex:${PORTSDIR}/audio/speex
+LIB_DEPENDS+=		libspeex.so:${PORTSDIR}/audio/speex
 .else
 CONFIGURE_ARGS+=	--disable-speex
 .endif
 
 .if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=		jack:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=		libjack.so:${PORTSDIR}/audio/jack
 .else
 CONFIGURE_ARGS+=	--disable-jack
 .endif
 
 .if ${PORT_OPTIONS:MPULSE}
-LIB_DEPENDS+=		pulse:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=		libpulse.so:${PORTSDIR}/audio/pulseaudio
 .else
 CONFIGURE_ARGS+=	--disable-pulse
 .endif
 
 .if ${PORT_OPTIONS:MPORTAUDIO}
-LIB_DEPENDS+=		portaudio.2:${PORTSDIR}/audio/portaudio2
+LIB_DEPENDS+=		libportaudio.so.2:${PORTSDIR}/audio/portaudio2
 .else
 CONFIGURE_ARGS+=	--disable-portaudio
 .endif
 
 .if ${PORT_OPTIONS:MLIBBLURAY}
-LIB_DEPENDS+=		bluray:${PORTSDIR}/multimedia/libbluray
+LIB_DEPENDS+=		libbluray.so:${PORTSDIR}/multimedia/libbluray
 .else
 CONFIGURE_ARGS+=	--disable-bluray
 .endif
 
 .if ${PORT_OPTIONS:MSMB}
-LIB_DEPENDS+=		smbclient:${PORTSDIR}/net/samba-libsmbclient
+LIB_DEPENDS+=		libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
 .else
 CONFIGURE_ARGS+=	--disable-smb
 .endif
 
 .if ${PORT_OPTIONS:MLIBCDIO}
-LIB_DEPENDS+=		cdio:${PORTSDIR}/sysutils/libcdio
+LIB_DEPENDS+=		libcdio.so:${PORTSDIR}/sysutils/libcdio
 .else
 CONFIGURE_ARGS+=	--disable-libcdio
 .endif
@@ -200,7 +196,7 @@ CONFIGURE_ARGS+=	--disable-real
 
 .if ${PORT_OPTIONS:MV4L}
 BUILD_DEPENDS+=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS+=		v4l2:${PORTSDIR}/multimedia/libv4l
+LIB_DEPENDS+=		libv4l2.so:${PORTSDIR}/multimedia/libv4l
 CONFIGURE_ARGS+=	--enable-tv-v4l2
 EXTRA_LIBS+=		-lv4l2
 .else
@@ -212,7 +208,7 @@ CONFIGURE_ARGS+=	--extra-libs="${EXTRA_LIBS}"
 .endif
 
 .if ${PORT_OPTIONS:MASS}
-LIB_DEPENDS+=		ass:${PORTSDIR}/multimedia/libass
+LIB_DEPENDS+=		libass.so:${PORTSDIR}/multimedia/libass
 .else
 CONFIGURE_ARGS+=	--disable-libass --disable-enca
 .endif
@@ -221,7 +217,7 @@ CONFIGURE_ARGS+=	--disable-libass --disable-enca
 USE_XORG=		x11 xv xxf86vm
 .if ${PORT_OPTIONS:MOPENGL}
 USE_XORG+=		glproto
-LIB_DEPENDS+=		GL:${PORTSDIR}/graphics/libGL
+LIB_DEPENDS+=		libGL.so:${PORTSDIR}/graphics/libGL
 .else
 CONFIGURE_ARGS+=	--disable-gl
 .endif
@@ -235,7 +231,7 @@ CONFIGURE_ARGS+=	--disable-x11
 .endif
 
 .if ${PORT_OPTIONS:MVDPAU}
-LIB_DEPENDS+=		vdpau:${PORTSDIR}/multimedia/libvdpau
+LIB_DEPENDS+=		libvdpau.so:${PORTSDIR}/multimedia/libvdpau
 .else
 CONFIGURE_ARGS+=	--disable-vdpau
 .endif
@@ -249,13 +245,13 @@ CONFIGURE_ARGS+=	--disable-rtc
 .endif
 
 .if ${PORT_OPTIONS:MLIBCACA}
-LIB_DEPENDS+=		caca:${PORTSDIR}/graphics/libcaca
+LIB_DEPENDS+=		libcaca.so:${PORTSDIR}/graphics/libcaca
 .else
 CONFIGURE_ARGS+=	--disable-caca
 .endif
 
 .if ${PORT_OPTIONS:MLIRC}
-LIB_DEPENDS+=		lirc_client:${PORTSDIR}/comms/lirc
+LIB_DEPENDS+=		liblirc_client.so:${PORTSDIR}/comms/lirc
 .else
 CONFIGURE_ARGS+=	--disable-lirc
 .endif
@@ -310,10 +306,11 @@ post-patch:
 .endif
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/etc/example.conf ${PREFIX}/etc/mplayer/mplayer.conf.sample
+	@${INSTALL_DATA} ${WRKSRC}/etc/example.conf \
+		${STAGEDIR}${PREFIX}/etc/mplayer/mplayer.conf.sample
 .for conf in codecs input
-	@${INSTALL_DATA} ${WRKSRC}/etc/${conf}.conf ${PREFIX}/etc/mplayer/${conf}.conf.sample
+	@${INSTALL_DATA} ${WRKSRC}/etc/${conf}.conf \
+		${STAGEDIR}${PREFIX}/etc/mplayer/${conf}.conf.sample
 .endfor
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
