@@ -4,7 +4,8 @@
 PORTNAME=		cdif
 PORTVERSION=		1.19
 CATEGORIES=		textproc
-MASTER_SITES=		http://www.srekcah.org/~utashiro/perl/scripts/cdif/
+MASTER_SITES=		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	sanpei
 EXTRACT_SUFX=		# empty
 
 MAINTAINER=		sanpei@FreeBSD.org
