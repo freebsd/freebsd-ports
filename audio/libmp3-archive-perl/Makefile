@@ -10,14 +10,12 @@ MASTER_SITES=	http://erislabs.net/ianb/projects/${PORTNAME}/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl module to manipulate filenames containing music metadata
 
+LICENSE=	GPLv2
+
 USE_PERL5=	configure
-NO_STAGE=	yes
 USES=		perl5
 
-MAN3=		MP3::Archive::Config.3 MP3::Archive::Format.3 MP3::Archive.3
-
 post-patch:
-	@${REINPLACE_CMD} -e '/^DESTINSTALLSYSCONFDIR/ s|DESTDIR|PREFIX|' \
-		${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e '/^INSTALLSYSCONFDIR/ s|/etc|${PREFIX}&|' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

@@ -1,9 +1,11 @@
-@comment $FreeBSD$
 etc/mp3archiverc
 %%SITE_PERL%%/MP3/Archive.pm
 %%SITE_PERL%%/MP3/Archive/Config.pm
 %%SITE_PERL%%/MP3/Archive/Format.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Archive/.packlist
+%%PERL5_MAN3%%/MP3::Archive.3.gz
+%%PERL5_MAN3%%/MP3::Archive::Config.3.gz
+%%PERL5_MAN3%%/MP3::Archive::Format.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Archive
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3
 @dirrmtry %%SITE_PERL%%/MP3/Archive
