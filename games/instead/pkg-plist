@@ -97,7 +97,6 @@ share/applications/instead.desktop
 share/pixmaps/sdl_instead.ico
 share/pixmaps/sdl_instead.png
 share/pixmaps/sdl_instead_1.png
-@dirrmtry share/applications
 @dirrm %%DATADIR%%/themes/wide
 @dirrm %%DATADIR%%/themes/original
 @dirrm %%DATADIR%%/themes/fantasy

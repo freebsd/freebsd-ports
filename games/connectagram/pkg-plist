@@ -33,4 +33,3 @@ share/pixmaps/connectagram.xpm
 @dirrm %%DATADIR%%/data/en
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

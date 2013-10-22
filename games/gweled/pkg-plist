@@ -25,4 +25,3 @@ share/sounds/gweled/swap.wav
 @dirrm share/pixmaps/gweled
 @dirrm share/gweled
 @dirrmtry share/games
-@dirrmtry share/applications

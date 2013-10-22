@@ -15,4 +15,3 @@ share/pixmaps/afternoonstalker.png
 %%DATADIR%%/sounds/spider-killed.wav
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

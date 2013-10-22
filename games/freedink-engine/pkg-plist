@@ -72,4 +72,3 @@ share/locale/zh_TW/LC_MESSAGES/freedink-gnulib.mo
 @dirrm share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry %%DATADIR%%
-@dirrmtry share/applications

@@ -81,7 +81,6 @@ man/man6/amoebax.6.gz
 %%DATADIR%%/sfx/youwin.wav
 share/applications/amoebax.desktop
 share/pixmaps/amoebax.svg
-@dirrmtry share/applications
 @dirrm %%DATADIR%%/sfx
 @dirrm %%DATADIR%%/music
 @dirrm %%DATADIR%%/graphics

@@ -28,7 +28,6 @@ MAN6=		openyahtzee.6
 PLIST_FILES=	bin/openyahtzee \
 		share/applications/openyahtzee.desktop \
 		share/pixmaps/openyahtzee.png
-PLIST_DIRSTRY=	share/applications
 
 NO_STAGE=	yes
 .include <bsd.port.mk>

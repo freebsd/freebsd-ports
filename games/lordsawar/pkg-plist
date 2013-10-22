@@ -292,4 +292,3 @@ share/locale/nl/LC_MESSAGES/lordsawar.mo
 @dirrm share/gnome/help/lordsawar/C/figures
 @dirrm share/gnome/help/lordsawar/C
 @dirrm share/gnome/help/lordsawar
-@dirrmtry share/applications

@@ -236,7 +236,6 @@ share/pixmaps/lgeneral48.png
 @dirrm %%DATADIR%%/ai_modules
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @exec mkdir -p %D/share/lgeneral/gfx/terrain/pg
 @exec mkdir -p %D/share/lgeneral/maps/pg
 @exec mkdir -p %D/share/lgeneral/scenarios/pg

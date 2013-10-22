@@ -32,7 +32,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "pics sounds translations" ${DATADIR})
 	@${LN} -sf ${DATADIR}/pics/computer2.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
-	@${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/menu/qnetwalk.desktop ${PREFIX}/share/applications
 
 	${INSTALL_MAN} ${MAN6:S|^|${WRKSRC}/|} ${MAN6PREFIX}/man/man6

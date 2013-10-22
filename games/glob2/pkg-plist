@@ -1764,4 +1764,3 @@ share/icons/hicolor/48x48/apps/glob2-icon-48x48.png
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/campaigns
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

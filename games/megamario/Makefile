@@ -45,7 +45,6 @@ post-patch:
 post-install:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "help mp3music screens" ${DATADIR})
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png ${PREFIX}/share/pixmaps/
-	@${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${PREFIX}/share/applications/
 
 .if ${PORT_OPTIONS:MDOCS}

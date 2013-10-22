@@ -198,4 +198,3 @@ share/pixmaps/spring.png
 @dirrm %%DATADIR%%
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
-@dirrmtry share/applications

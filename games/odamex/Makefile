@@ -62,7 +62,6 @@ do-install:
 .if ${PORT_OPTIONS:MLAUNCHER}
 	${INSTALL_DATA} ${WRKSRC}/media/icon_odalaunch_*.png ${PREFIX}/share/pixmaps
 .endif
-	${MKDIR} ${PREFIX}/share/applications
 .for f in odamex odasrv
 	${INSTALL_DATA} ${WRKSRC}/installer/arch/${f}.desktop ${PREFIX}/share/applications
 .endfor

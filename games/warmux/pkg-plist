@@ -1726,4 +1726,3 @@ share/pixmaps/warmux_128x128.png
 %%NLS%%@dirrmtry share/locale/ja_JP
 %%NLS%%@dirrmtry share/locale/cpf/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/cpf
-@dirrmtry share/applications

@@ -22,9 +22,7 @@ PLIST_FILES=	bin/colorcode \
 		share/pixmaps/colorcode.png
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/colorcode ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
 	${INSTALL_DATA}	${WRKSRC}/img/cc64.png	${STAGEDIR}${PREFIX}/share/pixmaps/colorcode.png
 
 .include <bsd.port.mk>

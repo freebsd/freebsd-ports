@@ -39,4 +39,3 @@ share/pixmaps/hexalate.xpm
 @dirrmtry share/icons
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

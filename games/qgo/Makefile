@@ -17,7 +17,6 @@ USES=		desktop-file-utils qmake
 USE_QT4=	gui network qtestlib moc_build qmake_build rcc_build uic_build
 
 PLIST_FILES=	bin/qgo share/applications/qgo.desktop share/pixmaps/qgo.png
-PLIST_DIRSTRY=	share/applications
 
 post-patch:
 	@${REINPLACE_CMD} -e \

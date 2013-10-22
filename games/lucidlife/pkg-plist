@@ -357,7 +357,6 @@ share/pixmaps/lucidlife.png
 %%DOCSDIR%%/select.png
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/window.gif
-@dirrmtry share/applications
 @dirrm %%DATADIR%%/patterns/lpa/synthesis
 @dirrm %%DATADIR%%/patterns/lpa/spaceships
 @dirrm %%DATADIR%%/patterns/lpa/space_fillers

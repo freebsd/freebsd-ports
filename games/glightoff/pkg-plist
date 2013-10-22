@@ -7,4 +7,3 @@ share/pixmaps/glightoff.png
 share/pixmaps/glightoff/bulb_off.svg
 share/pixmaps/glightoff/bulb_on.svg
 @dirrm share/pixmaps/glightoff
-@dirrmtry share/applications

@@ -27,4 +27,3 @@ share/locale/zh_CN/LC_MESSAGES/mnemosyne.mo
 share/locale/zh_HK/LC_MESSAGES/mnemosyne.mo
 share/locale/zh_TW/LC_MESSAGES/mnemosyne.mo
 @dirrmtry share/icons
-@dirrmtry share/applications

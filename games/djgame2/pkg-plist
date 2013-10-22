@@ -420,4 +420,3 @@ share/applications/djgame2.desktop
 @dirrm %%DATADIR%%/images/avatars
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

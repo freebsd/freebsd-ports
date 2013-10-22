@@ -38,7 +38,6 @@ do-install:
 .for dir in gfx islands sound
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${DATADIR}
 .endfor
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}_fullscreen.desktop \

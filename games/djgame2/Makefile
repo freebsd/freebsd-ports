@@ -46,7 +46,6 @@ do-install:
 	${MKDIR} ${DATADIR}
 	(cd ${WRKSRC}/Hall/build; ${TAR} -cf - *) | \
 		${TAR}  -xf - -C ${DATADIR}
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKDIR}/djgame2.desktop ${PREFIX}/share/applications
 	${INSTALL_SCRIPT} ${WRKDIR}/startdjg ${PREFIX}/bin
 

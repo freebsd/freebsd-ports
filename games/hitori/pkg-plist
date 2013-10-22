@@ -154,4 +154,3 @@ share/pixmaps/hitori.png
 @dirrm share/help/C/hitori
 @dirrmtry share/help/C
 @dirrmtry share/help
-@dirrmtry share/applications

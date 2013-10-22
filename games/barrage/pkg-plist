@@ -37,4 +37,3 @@ share/icons/hicolor/48x48/apps/barrage.png
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

@@ -7,4 +7,3 @@ man/man1/arxunpak.1.gz
 man/man6/arx.6.gz
 share/applications/arx-libertatis.desktop
 share/pixmaps/arx-libertatis.png
-@dirrmtry share/applications

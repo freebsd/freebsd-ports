@@ -51,4 +51,3 @@ share/locale/zh_TW/LC_MESSAGES/gtetrinet.mo
 @dirrm share/gtetrinet/themes
 @dirrm share/gtetrinet
 @dirrm share/pixmaps/gtetrinet
-@dirrmtry share/applications

@@ -38,7 +38,6 @@ do-extract:
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${CP} -a ${WRKSRC}/baseq3 ${STAGEDIR}${DATADIR}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/quake3.xpm ${STAGEDIR}${PREFIX}/share/pixmaps
 .if ${PORT_OPTIONS:MTEAMARENA}
 	${CP} -a ${WRKSRC}/missionpack ${STAGEDIR}${DATADIR}

@@ -741,7 +741,6 @@ share/pixmaps/anki.png
 share/pixmaps/anki.xpm
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
-@dirrmtry share/applications
 @dirrm %%DATADIR%%/tools
 @dirrm %%DATADIR%%/tests/support
 @dirrm %%DATADIR%%/tests

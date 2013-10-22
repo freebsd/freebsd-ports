@@ -62,4 +62,3 @@ games/liquidwar
 @dirrm %%DOCSDIR%%/html
 @dirrm %%DOCSDIR%%
 @dirrmtry share/games
-@dirrmtry share/applications

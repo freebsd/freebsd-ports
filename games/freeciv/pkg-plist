@@ -3319,5 +3319,4 @@ share/icons/hicolor/64x64/apps/freeciv-server.png
 @dirrmtry share/icons
 %%NLS%%@dirrm share/locale/gd/LC_MESSAGES
 %%NLS%%@dirrm share/locale/gd
-@dirrmtry share/applications
 @dirrmtry etc/freeciv

@@ -242,4 +242,3 @@ share/pixmaps/epiar.png
 @dirrm %%DATADIR%%/Resources/Animations
 @dirrm %%DATADIR%%/Resources
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

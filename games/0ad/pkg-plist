@@ -14,4 +14,3 @@ share/pixmaps/0ad.png
 @exec mkdir -p %D/%%DATADIR%%/mods/_test.minimal/art/meshes
 @exec mkdir -p %D/%%DATADIR%%/mods/_test.minimal/art/actors
 @dirrm lib/0ad
-@dirrmtry share/applications

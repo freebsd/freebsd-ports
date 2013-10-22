@@ -33,7 +33,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "cache maps pics powerups scripts sound units wads" ${STAGEDIR}${DATADIR})
 	${INSTALL_MAN} ${WRKSRC}/docs/netpanzer.6 ${STAGEDIR}${MANPREFIX}/man/man6
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/netpanzer.desktop ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/netpanzer.png ${WRKSRC}/netpanzer.xpm ${STAGEDIR}${PREFIX}/share/pixmaps
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

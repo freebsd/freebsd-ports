@@ -315,7 +315,6 @@ share/pixmaps/ppracer.png
 %%DATADIR%%/translations/ru_RU.nut
 %%DATADIR%%/translations/sv_SE.nut
 %%DATADIR%%/translations/uk_UA.nut
-@dirrmtry share/applications
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%/themes/terrains/snow
 @dirrm %%DATADIR%%/themes/terrains/sand

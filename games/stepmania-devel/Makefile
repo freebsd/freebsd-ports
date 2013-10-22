@@ -70,7 +70,6 @@ post-build:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/stepmania.sh ${PREFIX}/bin/stepmania
-	@${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/stepmania.desktop ${PREFIX}/share/applications
 	@${MKDIR} ${PREFIX}/share/icons/hicolor/scalable/apps
 	cd ${WRKSRC}/icons/hicolor/scalable/apps && ${INSTALL_DATA} \

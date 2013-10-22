@@ -59,4 +59,3 @@ share/pixmaps/pink-pony.png
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/GLSL
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

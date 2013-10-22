@@ -673,7 +673,6 @@ bin/boswars
 %%DATADIR%%/units/weakhotspot/hotspot.png
 %%DATADIR%%/units/weakhotspot/hotspot_i.png
 %%DATADIR%%/units/weakhotspot/unit-weakhotspot.lua
-@dirrmtry share/applications
 @dirrm %%DATADIR%%/units/weakhotspot
 @dirrm %%DATADIR%%/units/vehiclefactory
 @dirrm %%DATADIR%%/units/vault

@@ -463,4 +463,3 @@ share/pixmaps/megamario.png
 @dirrm %%DATADIR%%/gfx/background
 @dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

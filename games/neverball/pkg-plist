@@ -1447,4 +1447,3 @@ share/pixmaps/neverputt.png
 @dirrm %%DATADIR%%/data/back
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

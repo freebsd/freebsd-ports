@@ -15,7 +15,6 @@ share/locale/it/LC_MESSAGES/dfarc.mo
 share/locale/mk/LC_MESSAGES/dfarc.mo
 share/locale/nl/LC_MESSAGES/dfarc.mo
 share/locale/vi/LC_MESSAGES/dfarc.mo
-@dirrmtry share/applications
 @dirrmtry share/mime/packages
 @dirrmtry share/mime@dirrmtry share/pixmaps
 @dirrmtry share/icons/hicolor/32x32/mimetypes

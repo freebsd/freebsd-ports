@@ -138,7 +138,6 @@ do-install:
 .endif
 	@${MKDIR} ${DATADIR}/base
 	${INSTALL_DATA} ${WRKSRC}/base/* ${DATADIR}/base
-	@${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/tremulous.xpm ${PREFIX}/share/pixmaps
 
 post-install:

@@ -39,7 +39,6 @@ PORTDOCS=	AUTHORS ChangeLog README
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/
 

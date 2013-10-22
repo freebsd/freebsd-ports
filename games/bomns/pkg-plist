@@ -38,4 +38,3 @@ share/icons/hicolor/64x64/apps/bomns.png
 @dirrm %%DATADIR%%/levels
 @dirrm %%DATADIR%%/graphics
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

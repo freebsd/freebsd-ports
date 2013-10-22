@@ -43,7 +43,6 @@ do-install:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "gfx music sfx stage" ${DATADIR})
 	${INSTALL_PROGRAM} ${WRKSRC}/battle ${DATADIR}/${PORTNAME}
 	${LN} -sf ${DATADIR}/gfx/SB.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
-	@${MKDIR} ${PREFIX}/share/applications/
 #	${INSTALL_DATA} ${WRKSRC}/linux/*.desktop ${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/linux/*.desktop ${DESKTOPDIR}
 

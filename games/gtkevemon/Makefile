@@ -28,9 +28,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/gtkevemon ${PREFIX}/bin/gtkevemon
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/icon/gtkevemon.desktop ${PREFIX}/share/applications/gtkevemon.desktop
-	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/icon/gtkevemon.png ${PREFIX}/share/pixmaps/gtkevemon.png
 
 .include <bsd.port.post.mk>

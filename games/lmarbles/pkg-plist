@@ -79,4 +79,3 @@ share/pixmaps/lmarbles48.png
 %%ETCDIR%%/lmarbles.prfs.sample
 @exec if [ ! -f %D/%%ETCDIR%%/lmarbles.prfs ] ; then cp -p %D/%F %B/lmarbles.prfs ; fi
 @dirrmtry %%ETCDIR%%
-@dirrmtry share/applications

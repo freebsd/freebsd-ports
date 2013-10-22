@@ -1676,4 +1676,3 @@ share/pixmaps/lincity-ng.png
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
-@dirrmtry share/applications

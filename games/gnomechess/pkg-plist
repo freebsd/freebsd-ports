@@ -386,5 +386,4 @@ share/icons/hicolor/scalable/apps/gnome-chess.svg
 @dirrmtry %%DATADIR%%
 @dirrmtry share/glib-2.0/schemas
 @dirrmtry share/glib-2.0
-@dirrmtry share/applications
 @dirrmtry share/appdata

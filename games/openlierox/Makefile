@@ -41,7 +41,6 @@ PORTDATA=	*
 PLIST_FILES=	bin/openlierox \
 		share/applications/openlierox-openlierox.desktop \
 		share/pixmaps/OpenLieroX.svg
-PLIST_DIRSTRY=	share/applications
 
 OPTIONS_DEFINE=	DEDICATED_ONLY DOCS
 DEDICATED_ONLY_DESC=Build dedicated server only
@@ -66,7 +65,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/openlierox ${PREFIX}/bin/
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/share/openlierox-openlierox.desktop \
 		${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/share/OpenLieroX.svg \

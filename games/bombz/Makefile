@@ -51,7 +51,6 @@ do-install:
 .endfor
 
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

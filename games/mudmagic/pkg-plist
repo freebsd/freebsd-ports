@@ -113,6 +113,5 @@ share/pixmaps/mudmagic.png
 @dirrm %%DATADIR%%/doc/grafix
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm lib/mudmagic/libs
 @dirrm lib/mudmagic

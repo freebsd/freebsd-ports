@@ -10514,7 +10514,6 @@ share/pixmaps/gcompris.png
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
-@dirrmtry share/applications
 @dirrm %%DATADIR%%/python/gcompris/utils
 @dirrm %%DATADIR%%/python/gcompris/timer
 @dirrm %%DATADIR%%/python/gcompris/sound

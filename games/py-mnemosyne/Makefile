@@ -23,7 +23,6 @@ PYDISTUTILS_PKGNAME=	Mnemosyne
 NO_STAGE=	yes
 post-install:
 	@cd ${WRKSRC}/mo && ${COPYTREE_SHARE} . ${PREFIX}/share/locale
-	@${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${PREFIX}/share/applications
 	@${MKDIR} ${PREFIX}/share/icons
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/${PORTNAME}.png ${PREFIX}/share/icons

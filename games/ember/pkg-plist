@@ -2746,7 +2746,6 @@ share/ember/media/user/README
 @dirrm share/ember/media
 @dirrm share/ember
 @dirrm etc/ember
-@dirrmtry share/applications
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/icons/worldforge
 @dirrmtry share/icons

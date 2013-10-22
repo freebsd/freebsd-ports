@@ -19,4 +19,3 @@ share/pixmaps/crossfire-client.png
 @dirrm %%DATADIR%%/glade-gtk2
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

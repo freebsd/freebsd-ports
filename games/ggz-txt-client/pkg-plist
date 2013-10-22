@@ -6,5 +6,4 @@ share/ggz/tttxt.dsc
 @exec ggz-config -D --install --modfile=%D/share/ggz/tttxt.dsc --force
 %%NLS%%share/locale/de/LC_MESSAGES/ggz-txt.mo
 @dirrmtry share/ggz
-@dirrmtry share/applications
 @dirrmtry lib/ggz

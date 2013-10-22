@@ -5,6 +5,5 @@ etc/opencity/config/opencity.xml
 man/man6/opencity.6.gz
 share/applications/opencity.desktop
 share/pixmaps/opencity.png
-@dirrmtry share/applications
 @dirrm etc/opencity/config
 @dirrm etc/opencity

@@ -4,4 +4,3 @@ bin/powermanga
 man/man6/powermanga.6.gz
 share/applications/powermanga.desktop
 share/pixmaps/powermanga.xpm
-@dirrmtry share/applications

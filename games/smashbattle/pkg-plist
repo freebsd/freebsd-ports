@@ -96,4 +96,3 @@ share/pixmaps/smashbattle.png
 @dirrm %%DATADIR%%/music
 @dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

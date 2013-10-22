@@ -36,4 +36,3 @@ share/pixmaps/ltris48.gif
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

@@ -47,7 +47,6 @@ do-install:
 		"GLSL levels* models music textures fonts pony.options" ${DATADIR}/
 	${INSTALL_SCRIPT} ${WRKDIR}/pink-pony.sh ${PREFIX}/bin/pink-pony
 	${INSTALL_DATA} ${WRKSRC}/install/pink-pony.png ${PREFIX}/share/pixmaps/
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/install/pink-pony.desktop ${PREFIX}/share/applications/
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}

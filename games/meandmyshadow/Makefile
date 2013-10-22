@@ -38,7 +38,6 @@ post-patch:
 		${WRKSRC}/cmake/Modules/FindSDL_gfx.cmake
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps/
 	${INSTALL_DATA} ${WRKSRC}/icons/64x64/meandmyshadow.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

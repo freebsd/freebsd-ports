@@ -188,4 +188,3 @@ share/locale/zh_TW/LC_MESSAGES/monkey-bubble.mo
 @dirrm share/gnome/help/monkey-bubble/fr
 @dirrm share/gnome/help/monkey-bubble/C
 @dirrm share/gnome/help/monkey-bubble
-@dirrmtry share/applications

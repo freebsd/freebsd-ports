@@ -47,7 +47,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${f} ${PREFIX}/bin
 .endfor
 	${CP} -a ${WRKSRC}/main ${WRKSRC}/pb ${DATADIR}
-	@${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/Wolf[MS]P.xpm ${PREFIX}/share/pixmaps
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}

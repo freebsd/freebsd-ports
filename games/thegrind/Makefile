@@ -30,7 +30,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png \
 		%%DATADIR%%/${PORTNAME}.zip
 PLIST_DIRS=	%%DATADIR%%
-PLIST_DIRSTRY=	share/applications
 
 PORTDOCS=	ChangeLog
 

@@ -26,4 +26,3 @@ share/pixmaps/scummvm.xpm
 @dirrmtry share/man/man6
 @dirrmtry share/man
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry share/applications

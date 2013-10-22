@@ -264,7 +264,6 @@ GNUstep/Local/Applications/oolite.app/Resources/oolite-icon.icns
 GNUstep/Local/Applications/oolite.app/oolite
 share/applications/oolite.desktop
 share/pixmaps/oolite-icon.png
-@dirrmtry share/applications
 @dirrm GNUstep/Local/Applications/oolite.app/Resources/Textures
 @dirrm GNUstep/Local/Applications/oolite.app/Resources/Sounds
 @dirrm GNUstep/Local/Applications/oolite.app/Resources/Shaders

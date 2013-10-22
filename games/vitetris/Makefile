@@ -20,8 +20,7 @@ PLIST_FILES=	bin/vitetris \
 		share/allegro/README \
 		share/pixmaps/vitetris.xpm \
 		share/applications/vitetris.desktop
-PLIST_DIRS=	share/allegro \
-		share/applications
+PLIST_DIRS=	share/allegro
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,docdir,datadir,g' \

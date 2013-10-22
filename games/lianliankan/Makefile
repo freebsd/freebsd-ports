@@ -43,7 +43,6 @@ post-patch:
 .endif
 
 post-install:
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${FILESDIR}/lianliankan.desktop ${PREFIX}/share/applications
 
 .include <bsd.port.mk>
