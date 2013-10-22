@@ -23,5 +23,4 @@ PLIST_FILES=	usr/bin/glewinfo usr/bin/visualinfo \
 DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	LICENSE.txt
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
