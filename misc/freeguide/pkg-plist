@@ -143,7 +143,6 @@ share/pixmaps/freeguide/logo-48x48.png
 share/pixmaps/freeguide/logo-32x32.png
 share/pixmaps/freeguide.png
 share/applications/freeguide.desktop
-@dirrmtry share/applications
 @dirrm share/pixmaps/freeguide
 @dirrm %%JAVAJARDIR%%/freeguide/
 @dirrm %%DOCSDIR%%/DownloadAndInstall

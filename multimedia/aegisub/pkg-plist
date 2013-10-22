@@ -80,7 +80,6 @@ share/locale/zh_TW/LC_MESSAGES/aegisub21.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/aegisub/demos
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/aegisub
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm %%DATADIR%%/%%VERSION%%/automation/include/Aegisub
 @dirrm %%DATADIR%%/%%VERSION%%/automation/include
 @dirrm %%DATADIR%%/%%VERSION%%/automation/autoload

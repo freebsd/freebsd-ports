@@ -67,6 +67,5 @@ share/xfmedia/doc/xfce.css
 @dirrm include/xfmedia
 @dirrm lib/xfmedia/plugins
 @dirrm lib/xfmedia
-@dirrmtry share/applications
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz

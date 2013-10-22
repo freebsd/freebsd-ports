@@ -1,7 +1,6 @@
 @comment $FreeBSD$
 bin/bino
 share/applications/bino.desktop
-@dirrmtry share/applications
 %%DOCSDIR%%/bino.html
 %%DOCSDIR%%/multi-display-vrlab.jpg
 %%DOCSDIR%%/multi-display-rotated.jpg

@@ -155,7 +155,6 @@ share/icons/hicolor/64x64/apps/qtoctave.png
 @dirrm %%DOCSDIR%%/utils
 @dirrm %%DOCSDIR%%/qtoctave_doc
 @dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @exec mkdir -p %D/%%DATADIR%%/menus/Help
 @exec mkdir -p %D/%%DATADIR%%/menus/Matrix
 @exec mkdir -p %D/%%DATADIR%%/menus/Statistics

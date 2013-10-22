@@ -100,5 +100,4 @@ share/applications/devede.desktop
 @dirrm %%DATADIR%%/interface
 @dirrm %%DATADIR%%/backgrounds
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm lib/devede

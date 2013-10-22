@@ -307,7 +307,6 @@ share/locale/zh_CN/LC_MESSAGES/gpodder.mo
 @dirrm %%DATADIR%%/extensions
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%
-%%GTK%%@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/gpodder/webui
 @dirrm %%PYTHON_SITELIBDIR%%/gpodder/test
 @dirrm %%PYTHON_SITELIBDIR%%/gpodder/plugins

@@ -252,5 +252,4 @@ share/pixmaps/proofgeneral.png
 @dirrm %%EMACS_SITE_LISPDIR%%/ProofGeneral/ccc
 @dirrm %%EMACS_SITE_LISPDIR%%/ProofGeneral/acl2
 @dirrm %%EMACS_SITE_LISPDIR%%/ProofGeneral
-@dirrmtry share/applications
 @dirrmtry share/pixmaps

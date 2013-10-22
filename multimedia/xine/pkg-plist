@@ -147,7 +147,6 @@ share/pixmaps/xine.xpm
 @dirrmtry share/icons
 %%PORTDOCS%%@dirrmtry share/doc/xitk
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrmtry man/pl/man1
 @dirrmtry man/pl
 @dirrmtry man/fr/man1

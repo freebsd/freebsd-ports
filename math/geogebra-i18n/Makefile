@@ -42,7 +42,6 @@ do-install:
 	${FIND} . ${FIND_JARS} | ${XARGS} -0 -J % ${INSTALL_DATA} % ${DATADIR} && \
 	${COPYTREE_SHARE} icons ${PREFIX}/share && \
 	${MKDIR} ${PREFIX}/share/mime/packages && \
-	${MKDIR} ${PREFIX}/share/applications && \
 	${INSTALL_DATA} ${WRKSRC}/geogebra.xml ${PREFIX}/share/mime/packages && \
 	${INSTALL_DATA} ${WRKSRC}/geogebra.desktop ${DESKTOPDIR}
 

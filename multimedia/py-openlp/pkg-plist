@@ -959,7 +959,6 @@ share/openlp/i18n/zh_CN.qm
 @dirrmtry share/icons/hicolor/128x128
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%//resources/pyinstaller
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%//resources/images
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%//resources/i18n/qm

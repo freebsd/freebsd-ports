@@ -1828,7 +1828,6 @@
 @dirrmtry share/apps/cmake
 @dirrmtry share/apps
 @dirrmtry share/applications/kde4
-@dirrmtry share/applications
 @dirrmtry lib/strigi
 @dirrmtry lib/kde4/plugins/styles
 @dirrmtry lib/kde4/plugins/grantlee/0.3

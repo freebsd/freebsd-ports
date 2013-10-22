@@ -52,7 +52,6 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/davmail.sh ${PREFIX}/bin/davmail
 	@${INSTALL_DATA} ${FILESDIR}/davmail.properties.sample \
 		${PREFIX}/etc
-	@${MKDIR} ${PREFIX}/share/applications
 	@${INSTALL_DATA} ${WRKSRC}/dist/davmail.desktop ${PREFIX}/share/applications/
 
 post-install:

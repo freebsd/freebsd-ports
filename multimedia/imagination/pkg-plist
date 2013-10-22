@@ -197,7 +197,6 @@ share/icons/hicolor/icon-theme.cache
 %%DATADIR%%/pixmaps/imagination-text.png
 @dirrmtry %%DATADIR%%/pixmaps
 @dirrmtry %%DATADIR%%
-@dirrmtry share/applications
 %%NLS%%@dirrm lib/locale/zh_TW/LC_MESSAGES
 %%NLS%%@dirrm lib/locale/zh_TW
 %%NLS%%@dirrm lib/locale/zh_CN/LC_MESSAGES

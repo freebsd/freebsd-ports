@@ -7,4 +7,3 @@ share/applications/gonvert.desktop
 share/pixmaps/gonvert.png
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

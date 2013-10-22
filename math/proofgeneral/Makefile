@@ -68,9 +68,6 @@ pre-build:
 	@${RM} ${WRKSRC}/.byte-compile || ${TRUE}
 #.endif
 
-pre-install:
-	@${MKDIR} ${PREFIX}/share/applications
-
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

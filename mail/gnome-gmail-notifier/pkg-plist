@@ -17,6 +17,5 @@ share/gnome-control-center/default-apps/gnome-gmail-notifier.xml
 share/locale/es/LC_MESSAGES/gnome-gmail-notifier.mo
 share/pixmaps/gnome-gmail-notifier.svg
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrmtry share/gnome-control-center/default-apps
 @dirrmtry share/gnome-control-center

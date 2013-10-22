@@ -143,7 +143,6 @@ share/icons/hicolor/64x64/apps/tovid_icon_64.png
 share/icons/hicolor/scalable/apps/cd.svg
 share/icons/hicolor/scalable/apps/disc.svg
 share/icons/hicolor/scalable/apps/tovid.svg
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/libtovid/transcode
 @dirrm %%PYTHON_SITELIBDIR%%/libtovid/template
 @dirrm %%PYTHON_SITELIBDIR%%/libtovid/render

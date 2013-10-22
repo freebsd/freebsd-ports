@@ -539,7 +539,6 @@ share/vala/vapi/totem.vapi
 @dirrm share/gnome/help/totem/C
 @dirrm share/gnome/help/totem
 @dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm libexec/totem
 @dirrm lib/totem/plugins/youtube
 @dirrm lib/totem/plugins/totem

@@ -89,4 +89,3 @@ share/applications/davmail.desktop
 @dirrm %%JAVASHAREDIR%%/davmail/web/WEB-INF
 @dirrm %%JAVASHAREDIR%%/davmail/web
 @dirrm %%JAVASHAREDIR%%/davmail
-@dirrmtry share/applications

@@ -28,7 +28,6 @@ share/xsessions/LXDE.desktop
 @dirrm share/lxde/openbox
 @dirrm share/lxde/images
 @dirrm share/lxde
-@dirrmtry share/applications
 @dirrmtry etc/xdg/pcmanfm/LXDE
 @dirrmtry etc/xdg/pcmanfm
 @dirrmtry etc/xdg/lxsession/LXDE

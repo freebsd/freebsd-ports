@@ -58,4 +58,3 @@ share/icons/hicolor/scalable/apps/smplayer.svg
 @dirrmtry %%DATADIR%%
 @dirrmtry share/icons/hicolor/512x512/apps
 @dirrmtry share/icons/hicolor/512x512
-@dirrmtry share/applications

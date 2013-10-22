@@ -43,8 +43,6 @@ NO_BUILD=	yes
 
 NO_STAGE=	yes
 do-install:
-		@${MKDIR} ${PREFIX}/share/applications
-		@${MKDIR} ${PREFIX}/share/pixmaps
 		@${MKDIR} ${PREFIX}/share/mime/packages
 		@${FIND} ${WRKSRC}/ -name '*.orig' -delete
 		${PERL} ${WRKSRC}/install --prefix ${PREFIX} --noclean

@@ -595,4 +595,3 @@ libdata/pkgconfig/gretl.pc
 @dirrm lib/gretl-gtk2/data
 @dirrm lib/gretl-gtk2
 @dirrm include/gretl
-@dirrmtry share/applications

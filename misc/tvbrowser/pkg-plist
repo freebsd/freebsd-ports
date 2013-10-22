@@ -85,4 +85,3 @@ share/applications/tvbrowser.desktop
 @dirrmtry %%DATADIR%%/icons
 @dirrmtry %%DATADIR%%/hyphen
 @dirrmtry %%DATADIR%%
-@dirrmtry share/applications

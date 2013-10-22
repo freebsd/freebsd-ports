@@ -394,7 +394,6 @@ share/pitivi/pixmaps/trimbar-normal.png
 @dirrmtry share/locale/ca
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
-@dirrmtry share/applications
 @dirrm lib/pitivi/python/pitivi/ui
 @dirrm lib/pitivi/python/pitivi/timeline
 @dirrm lib/pitivi/python/pitivi/log

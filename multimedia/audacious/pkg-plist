@@ -120,7 +120,6 @@ share/icons/hicolor/scalable/apps/audacious.svg
 %%NLS%%@dirrmtry share/locale/ast
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm include/libaudgui
 @dirrm include/libaudcore
 @dirrm include/audacious

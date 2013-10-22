@@ -135,5 +135,4 @@ share/pixmaps/arista.svg
 @dirrmtry %%DATADIR%%
 @dirrmtry %%PYTHON_SITELIBDIR%%/arista/inputs
 @dirrmtry %%PYTHON_SITELIBDIR%%/arista
-@dirrmtry share/applications
 @dirrmtry share/doc/arista

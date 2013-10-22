@@ -68,14 +68,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/photofilmstrip/* ${PFSDIR}/doc
 	@${FIND} ${PFSDIR} -type d | ${XARGS} ${CHMOD} a+rx
 	@${FIND} ${PFSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
-	@${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/build/${PORTNAME}.desktop ${PREFIX}/share/applications
 .for lang in cs de en fr it ko nl pt tr
 	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
 		${PREFIX}/share/locale/${lang}/LC_MESSAGES/PhotoFilmStrip.mo
 .endfor
-	@${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/build/${PORTNAME}.xpm ${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>

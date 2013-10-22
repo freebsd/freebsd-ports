@@ -438,6 +438,5 @@ share/pixmaps/freetuxtv.png
 @dirrm %%DATADIR%%/images/channels
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrmtry include/libvlc-gtk
 @dirrmtry include/libdbevolution

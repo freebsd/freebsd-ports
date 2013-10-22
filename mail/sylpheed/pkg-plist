@@ -167,6 +167,5 @@ share/pixmaps/sylpheed.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/faq/de
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/faq
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm include/sylpheed/sylph
 @dirrm include/sylpheed

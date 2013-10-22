@@ -342,7 +342,6 @@ share/omf/cheese/cheese-zh_CN.omf
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/effects
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm libexec/cheese
 @dirrm include/cheese
 @dirrmtry share/locale/zh_HK/LC_MESSAGES

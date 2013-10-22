@@ -141,10 +141,8 @@ port-pre-install:
 pre-install:
 	@${ECHO_CMD} 'share/applications/${PORTNAME}.desktop' >> ${PLIST}
 	@${ECHO_CMD} 'share/pixmaps/${PORTNAME_ICON}' >> ${PLIST}
-	@${ECHO_CMD} '@dirrmtry share/applications' >> ${PLIST}
 
 post-install:
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKDIR}/${MOZILLA_EXEC_NAME}.desktop ${PREFIX}/share/applications
 	${LN} -sf ${PORTNAME_ICON_SRC} ${PREFIX}/share/pixmaps/${PORTNAME_ICON}
 .if ${PORT_OPTIONS:MLIGHTNING}

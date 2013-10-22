@@ -381,7 +381,6 @@ share/locale/de/LC_MESSAGES/gmerlin.mo
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm lib/gmerlin/plugins
 @dirrm lib/gmerlin
 @dirrm include/gmerlin/x11

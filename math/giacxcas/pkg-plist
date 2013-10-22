@@ -112,6 +112,5 @@ share/pixmaps/xcas.xpm
 @dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry share/applications
 @dirrmtry share/application-registry
 @dirrm include/giac

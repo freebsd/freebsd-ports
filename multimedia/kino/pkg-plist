@@ -488,4 +488,3 @@ share/mime/packages/kino.xml
 @dirrm share/kino/scripts/publish
 @dirrm share/kino/scripts
 @dirrm share/kino
-@dirrmtry share/applications

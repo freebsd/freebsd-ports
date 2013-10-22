@@ -6,4 +6,3 @@ share/pixmaps/cdcollect.png
 share/applications/cdcollect.desktop
 @dirrm lib/cdcollect
 @dirrmtry share/pixmaps
-@dirrmtry share/applications

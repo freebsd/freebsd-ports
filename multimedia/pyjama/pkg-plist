@@ -262,4 +262,3 @@ share/pixmaps/pyjama.xpm
 @dirrm %%PYTHON_SITELIBDIR%%/pyjama/themes/Clearlooks-DarkLime
 @dirrm %%PYTHON_SITELIBDIR%%/pyjama/themes/
 @dirrm %%PYTHON_SITELIBDIR%%/pyjama
-@dirrmtry share/applications

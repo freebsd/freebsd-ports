@@ -278,4 +278,3 @@ share/pixmaps/terraform/zoom.xpm
 @dirrm share/gnome/help/terraform/C
 @dirrm share/gnome/help/terraform
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications

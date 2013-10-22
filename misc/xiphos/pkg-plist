@@ -229,5 +229,4 @@ share/omf/xiphos/xiphos-fr.omf
 @dirrm share/gnome/help/xiphos/C/figures
 @dirrm share/gnome/help/xiphos/C
 @dirrm share/gnome/help/xiphos
-@dirrmtry share/applications
 @dirrm %%DOCSDIR%%

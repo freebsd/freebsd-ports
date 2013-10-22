@@ -88,7 +88,6 @@ share/applications/xmms.desktop
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xmms.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xmms.mo
 %%DATADIR%%/wmxmms.xpm
-@dirrmtry share/applications
 @dirrmtry %%DATADIR%%/Skins
 @dirrm %%DATADIR%%
 @dirrmtry lib/xmms/Visualization

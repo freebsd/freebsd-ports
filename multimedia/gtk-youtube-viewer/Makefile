@@ -107,7 +107,6 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MGTK2}
-	@${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/share/gtk-youtube-viewer.desktop ${PREFIX}/share/applications
 	@${MKDIR} ${DATADIR}/icons
 	${INSTALL_DATA} ${WRKSRC}/share/gtk-youtube-viewer.glade ${DATADIR}

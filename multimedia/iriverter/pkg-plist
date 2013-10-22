@@ -40,4 +40,3 @@ share/pixmaps/iriverter.png
 @dirrm %%DATADIR%%/doc/html
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

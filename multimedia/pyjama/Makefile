@@ -54,7 +54,6 @@ do-install:
 
 	${LN} -fs ${INSTDIR}/pyjama.py ${PREFIX}/bin/pyjama
 	${CHMOD} a+x ${INSTDIR}/pyjama.py
-	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/src/pyjama.desktop ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/src/images/pyjama.xpm ${PREFIX}/share/pixmaps
 
