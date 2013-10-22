@@ -20,39 +20,21 @@ NO_BUILD=	YES
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 DATAFILES=	batch-convert.jar characters data filepaths.ini lib \
 		logging.properties outputsheets pcgen.jar plugins preview system
-PLIST_FILES+=	bin/pcgen
 
 SUB_FILES=	pcgen.sh
 
-CONFLICTS=	pcgen-5*
-
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
-.endif
 
-NO_STAGE=	yes
 do-install:
-	@${ECHO_MSG} -n ">> Installing in ${DATADIR}..."
-	@cd ${WRKSRC} && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${DATADIR}/{} ";"
-	@cd ${WRKSRC} && ${FIND} ${DATAFILES} -type f -exec ${INSTALL_DATA} "{}" ${DATADIR}/"{}" ";"
-	@${ECHO_MSG} " [ DONE ]"
-	@${ECHO_MSG} -n ">> Installing launcher script as ${PREFIX}/bin/pcgen..."
-	@${INSTALL_SCRIPT} ${WRKDIR}/pcgen.sh ${PREFIX}/bin/pcgen
-	@${ECHO_MSG} " [ DONE ]"
+	cd ${WRKSRC} && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${STAGEDIR}${DATADIR}/{} ";"
+	cd ${WRKSRC} && ${FIND} ${DATAFILES} -type f -exec ${INSTALL_DATA} "{}" ${STAGEDIR}${DATADIR}/"{}" ";"
+	${INSTALL_SCRIPT} ${WRKDIR}/pcgen.sh ${STAGEDIR}${PREFIX}/bin/pcgen
 .if ${PORT_OPTIONS:MDOCS}
-	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
-	@cd "${WRKSRC}/docs" && ${COPYTREE_SHARE} . "${DOCSDIR}"
-	@${INSTALL_DATA} "${WRKSRC}"/*.html "${DOCSDIR}"
-	@${ECHO_MSG} " [ DONE ]"
+	cd "${WRKSRC}/docs" && ${COPYTREE_SHARE} . "${STAGEDIR}${DOCSDIR}"
+	${INSTALL_DATA} "${WRKSRC}"/*.html "${STAGEDIR}${DOCSDIR}"
 .endif
 
-post-install:
-	@${FIND} -s ${DATAFILES:S,^,${WRKSRC}/,} -not -type d 2>/dev/null | \
-		${SED} -ne 's,^${WRKSRC},${DATADIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
-	@${FIND} -s -d ${DATAFILES:S,^,${WRKSRC}/,} -type d 2>/dev/null | \
-		${SED} -ne 's,^${WRKSRC},@dirrm ${DATADIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
-	@${ECHO_CMD} '@dirrm ${DATADIR:S,^${PREFIX}/,,}' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
