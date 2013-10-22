@@ -12,14 +12,16 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An OpenGL jigsaw puzzle game
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
+USES=		gmake
 USE_SDL=	sdl mixer
 USE_GL=		gl
-USE_GMAKE=	yes
 MAKE_ARGS=	CXX=${CXX}
 
+PLIST_FILES=	bin/${PORTNAME}
+PORTDATA=	*
 PORTDOCS=	*
 
 DESKTOP_ENTRIES="Jigzo" \
@@ -29,7 +31,9 @@ DESKTOP_ENTRIES="Jigzo" \
 		"Game;LogicGame;KidsGame;" \
 		false
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
+
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -42,15 +46,10 @@ post-patch:
 	@${FIND} ${WRKSRC} -name .thumbnails | ${XARGS} ${RM} -rf
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "font image puzzles sound" \
-		${DATADIR}/
-
-.if ${PORT_OPTIONS:MDOCS}
-post-install:
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+		${STAGEDIR}${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
