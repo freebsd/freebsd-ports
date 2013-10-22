@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/cddbtofilename
 bin/filenametoid3
 bin/freedbtofilename
@@ -8,4 +7,13 @@ bin/mp3id
 bin/pmv
 bin/update-music-symlinks
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/mp3-archive-tools/.packlist
+man/man1/cddbtofilename.1.gz
+man/man1/filenametoid3.1.gz
+man/man1/freedbtofilename.1.gz
+man/man1/id3tofilename.1.gz
+man/man1/movemusic.1.gz
+man/man1/mp3-archive-tools.1.gz
+man/man1/mp3id.1.gz
+man/man1/pmv.1.gz
+man/man1/update-music-symlinks.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/mp3-archive-tools
