@@ -17,7 +17,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
 		${LOCALBASE}/include/libiberty/libiberty.h:${PORTSDIR}/devel/gnulibiberty
 LIB_DEPENDS=	explain:${PORTSDIR}/devel/libexplain
 
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 
 MAKE_JOBS_UNSAFE=	yes
@@ -25,8 +24,7 @@ MAKE_JOBS_UNSAFE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		tardy.1
-PLIST_FILES=	bin/tardy
+PLIST_FILES=	bin/tardy man/man1/tardy.1.gz
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -44,7 +42,8 @@ post-patch:
 .endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/man1/${MAN1} ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/man1/${PORTNAME}.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.post.mk>

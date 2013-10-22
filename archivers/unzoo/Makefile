@@ -17,9 +17,7 @@ COMMENT=	ZOO archive extractor
 
 EXTRA_DEFINES=	-DSYS_IS_UNIX -DSYS_HAS_MKDIR
 
-NO_STAGE=	yes
-MAN1=		unzoo.1
-PLIST_FILES=	bin/unzoo
+PLIST_FILES=	bin/unzoo man/man1/unzoo.1.gz
 
 CFLAGS+=	-trigraphs
 
@@ -32,7 +30,8 @@ do-build:
 		${WRKSRC}/${PORTNAME}.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/debian/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/debian/${PORTNAME}.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
