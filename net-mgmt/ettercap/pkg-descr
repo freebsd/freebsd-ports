@@ -1,7 +1,6 @@
-Ettercap is a suite for man in the middle attacks on LANs. It features
-sniffing of live connections, content filtering on the fly and many other
-interesting tricks.
-It supports active and passive dissection of many protocols (even ciphered
-ones) and includes many features for network and host analysis.
+Ettercap is a suite for man in the middle attacks on LANs. It features sniffing
+of live connections, content filtering on the fly and many other interesting
+tricks. It supports active and passive dissection of many protocols (even
+ciphered ones) and includes many features for network and host analysis.
 
-WWW: http://ettercap.sourceforge.net/
+WWW: http://ettercap.github.io/ettercap/
