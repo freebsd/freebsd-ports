@@ -1,15 +1,15 @@
 --- install.sh.orig	2007-04-22 13:43:17.000000000 +0200
-+++ install.sh	2008-05-18 00:16:05.000000000 +0200
++++ install.sh	2013-10-16 12:22:40.725619989 +0200
 @@ -3,7 +3,7 @@
  
  BINDIR=$1
  if [ -z "$BINDIR" ]; then
 -  BINDIR=/usr/local/bin
-+  BINDIR=%%PREFIX%%/bin
++  BINDIR=%%STAGEDIR%%%%PREFIX%%/bin
  fi
  
  makepath()
-@@ -84,14 +84,8 @@
+@@ -84,38 +84,6 @@
  delete $BINDIR/getsms
  delete $BINDIR/putsms
  
@@ -19,16 +19,16 @@
 -copy scripts/sms2unicode $BINDIR/sms2unicode
 -copy scripts/unicode2sms $BINDIR/unicode2sms
 -
- echo "Installing config file"
+-echo "Installing config file"
 -copy examples/smsd.conf.easy /etc/smsd.conf
-+copy examples/smsd.conf.easy %%PREFIX%%/etc/smsd.conf
- 
- echo "Creating minimum spool directories"
- makedir /var/spool
-@@ -100,22 +94,6 @@
- makedir /var/spool/sms/outgoing
- makedir /var/spool/sms/checked
- 
+-
+-echo "Creating minimum spool directories"
+-makedir /var/spool
+-makedir /var/spool/sms
+-makedir /var/spool/sms/incoming
+-makedir /var/spool/sms/outgoing
+-makedir /var/spool/sms/checked
+-
 -echo "Installing start-script"
 -SMS3SCRIPT=scripts/sms3
 -if [ -d /etc/init.d ]; then
@@ -48,4 +48,4 @@
 -  echo "You have installed executables to $BINDIR,"
 -  echo "you should manually edit $SMS3SCRIPT script."
 -fi
-+echo 'Please dont forget to edit %%PREFIX%%/etc/smsd.conf.'
++echo 'Please dont forget to edit %%STAGEDIR%%%%PREFIX%%/etc/smsd.conf.'

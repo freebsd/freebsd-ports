@@ -3,11 +3,12 @@
 
 PORTNAME=	smstools
 PORTVERSION=	3.1.15
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://smstools3.kekekasvi.com/packages/
 DISTNAME=	smstools3-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	SMS Gateway software for GSM modems and mobile phones
 
 LICENSE=	GPLv2
@@ -21,7 +22,11 @@ STATS_DESC=	Build status and statistics support
 
 WRKSRC=		${WRKDIR}/smstools3
 
-USE_GMAKE=	yes
+USES=		gmake shebangfix
+SHEBANG_FILES=	scripts/hex2dec scripts/hex2bin
+SHEBANG_LANG=	awk
+awk_OLD_CMD=	/bin/gawk
+awk_CMD=	${LOCALBASE}/bin/awk
 USE_RC_SUBR=	smsd
 SPOOLDIR?=	/var/spool/sms
 LOGDIR?=	/var/log/smsd
@@ -32,15 +37,15 @@ SUB_LIST+=	SPOOLDIR="${SPOOLDIR}" LOGDIR="${LOGDIR}" PIDDIR="${PIDDIR}" \
 		SMSD_USER="${SMSD_USER}" SMSD_GROUP="${SMSD_GROUP}"
 PLIST_SUB+=	SPOOLDIR="${SPOOLDIR}" LOGDIR="${LOGDIR}" PIDDIR="${PIDDIR}" \
 		SMSD_USER="${SMSD_USER}" SMSD_GROUP="${SMSD_GROUP}"
+SUB_FILES=	pkg-install pkg-deinstall
 
 PORTDOCS=	*
 PORTEXAMPLES=	.procmailrc .qmailrc *
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSTATS}
-LIB_DEPENDS+=	mm:${PORTSDIR}/devel/mm
+LIB_DEPENDS+=	libmm.so:${PORTSDIR}/devel/mm
 CFLAGS+=	-I${LOCALBASE}/include
 .else
 CFLAGS+=	-DNOSTATS
@@ -48,8 +53,9 @@ CFLAGS+=	-DNOSTATS
 SMSTOOLS_DEFAULT_COMPORT?=	/dev/cuau0
 
 post-patch:
-	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile \
-		${WRKSRC}/install.sh ${WRKSRC}/src/smsd_cfg.h
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+			-e 's|%%STAGEDIR%%|${STAGEDIR}|g' \
+		${WRKSRC}/Makefile ${WRKSRC}/install.sh ${WRKSRC}/src/smsd_cfg.h
 	@${REINPLACE_CMD} 's|/dev/ttyS0|${SMSTOOLS_DEFAULT_COMPORT}|g' \
 		${WRKSRC}/examples/smsd.conf.easy \
 		${WRKSRC}/examples/smsd.conf.full \
@@ -58,28 +64,26 @@ post-patch:
 		${WRKSRC}/scripts/*
 
 post-install:
-	@${MKDIR} ${DATADIR}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/smsd
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@for file in `${FIND} ${WRKSRC}/scripts -type f ! -name 'README' ! -name '*.bak'`; do \
-		${INSTALL_SCRIPT} $$file ${DATADIR}/; \
+		${INSTALL_SCRIPT} $$file ${STAGEDIR}${DATADIR}/; \
 	done
 .for FILE in sendsms sms2html sms2unicode unicode2sms
-	@${LN} -sf ${DATADIR}/${FILE} ${PREFIX}/bin/${FILE}
+	@${LN} -sf ${DATADIR}/${FILE} ${STAGEDIR}${PREFIX}/bin/${FILE}
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/examples/smsd.conf.easy ${PREFIX}/etc/smsd.conf.sample
-	@if [ ! -f ${PREFIX}/etc/smsd.conf ]; then \
-		${CP} ${PREFIX}/etc/smsd.conf.sample ${PREFIX}/etc/smsd.conf; \
-	fi
-	@${MKDIR} ${SPOOLDIR} ${LOGDIR} ${PIDDIR}
-	@${CHOWN} -R ${SMSD_USER}:${SMSD_GROUP} ${SPOOLDIR} ${LOGDIR} ${PIDDIR}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}/slideshow
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/doc/slideshow/* ${DOCSDIR}/slideshow
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/smsd.conf.easy ${STAGEDIR}${PREFIX}/etc/smsd.conf.sample
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/slideshow
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/doc/slideshow/* ${STAGEDIR}${DOCSDIR}/slideshow
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@for file in `${FIND} ${WRKSRC}/examples -type f ! -name 'README'`; do \
-		${INSTALL_SCRIPT} $$file ${EXAMPLESDIR}/; \
+		${INSTALL_SCRIPT} $$file ${STAGEDIR}${EXAMPLESDIR}/; \
 	done
-.endif
-.include <bsd.port.post.mk>
+	@${MKDIR} ${STAGEDIR}${SPOOLDIR}/incoming ${STAGEDIR}${SPOOLDIR}/outgoing \
+		${STAGEDIR}${SPOOLDIR}/checked ${STAGEDIR}${LOGDIR} \
+		${STAGEDIR}${PIDDIR}
+	@${CHOWN} -R ${SMSD_USER}:${SMSD_GROUP} ${STAGEDIR}${SPOOLDIR} \
+		${STAGEDIR}${LOGDIR} ${STAGEDIR}${PIDDIR}
+
+.include <bsd.port.mk>

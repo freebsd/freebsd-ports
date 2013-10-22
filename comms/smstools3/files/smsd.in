@@ -12,17 +12,17 @@
 #
 . /etc/rc.subr
 
-name="smsd"
+name=smsd
 rcvar=smsd_enable
 
 load_rc_config ${name}
-: ${smsd_enable="NO"}
-: ${smsd_pidfile="%%PIDDIR%%/smsd.pid"}
-: ${smsd_infofile="%%PIDDIR%%/smsd.working"}
-: ${smsd_logfile="%%LOGDIR%%/smsd.log"}
-: ${smsd_config="%%PREFIX%%/etc/smsd.conf"}
-: ${smsd_user="uucp"}
-: ${smsd_group="dialer"}
+: ${smsd_enable:=NO}
+: ${smsd_pidfile:="%%PIDDIR%%/smsd.pid"}
+: ${smsd_infofile:="%%PIDDIR%%/smsd.working"}
+: ${smsd_logfile:="%%LOGDIR%%/smsd.log"}
+: ${smsd_config:="%%PREFIX%%/etc/smsd.conf"}
+: ${smsd_user:=uucp}
+: ${smsd_group:=dialer}
 
 pidfile=${smsd_pidfile}
 command="%%PREFIX%%/bin/smsd"
