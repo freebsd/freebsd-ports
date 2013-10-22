@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 bin/docbook-to-man
 bin/oinstant
+man/man1/oinstant.1.gz
 share/sgml/otranspec/docbook-to-man.ts
 share/sgml/otranspec/roff.cmap
 share/sgml/otranspec/roff.sdata
