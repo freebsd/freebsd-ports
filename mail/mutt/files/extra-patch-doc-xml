@@ -4,8 +4,8 @@
  
  all: makedoc-all
  
--makedoc-all: mutt.1 smime_keys.1 muttrc.man
-+makedoc-all: mutt.1 smime_keys.1 muttrc.man manual.html stamp-doc-chunked manual.txt
+-makedoc-all: mutt.1 smime_keys.1 muttrc.man pgpewrap.1 pgpring.1
++makedoc-all: mutt.1 smime_keys.1 muttrc.man pgpewrap.1 pgpring.1 manual.html stamp-doc-chunked manual.txt
  
  install-data-local: makedoc-all instdoc
  	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1

@@ -1,15 +1,15 @@
---- doc/Makefile.am.orig	2010-09-17 16:04:58.000000000 +0200
-+++ doc/Makefile.am	2010-09-17 16:09:09.000000000 +0200
-@@ -47,7 +47,7 @@
+--- doc/Makefile.am.orig	2013-10-18 06:48:24.000000000 +0200
++++ doc/Makefile.am	2013-10-18 12:30:09.000000000 +0200
+@@ -48,7 +48,7 @@
  
  all: makedoc-all
  
--makedoc-all: mutt.1 smime_keys.1 muttrc.man manual.html stamp-doc-rc stamp-doc-chunked manual.txt
-+makedoc-all: mutt.1 smime_keys.1 muttrc.man
+-makedoc-all: mutt.1 smime_keys.1 muttrc.man manual.html stamp-doc-rc stamp-doc-chunked manual.txt pgpewrap.1 pgpring.1
++makedoc-all: mutt.1 smime_keys.1 muttrc.man pgpewrap.1 pgpring.1
  
  install-data-local: makedoc-all instdoc
  	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
-@@ -70,9 +70,6 @@
+@@ -73,9 +73,6 @@
  		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
  	done
  	-$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir)
@@ -19,7 +19,7 @@
  	$(INSTALL) -m 644 Muttrc $(DESTDIR)$(sysconfdir)/Muttrc.dist
  	-if [ -f $(DESTDIR)$(pkgdatadir)/Muttrc ] ; then \
  		mv $(DESTDIR)$(pkgdatadir)/Muttrc* $(DESTDIR)$(sysconfdir) ; \
-@@ -103,9 +100,7 @@
+@@ -106,9 +103,7 @@
  
  check:
  manual.txt: manual.html
