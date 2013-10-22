@@ -19,29 +19,25 @@ RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
 # but returns success right away.
 # Using gmake bypasses this problem for unknown reasons. Please leave it in,
 # until the problem is analyzed and fixed - and please comment the fix here.
-USE_GMAKE=	yes
+USES=		gmake
 
-MAN1=		growisofs.1
 BIN_FILES=	growisofs dvd+rw-format dvd+rw-booktype dvd+rw-mediainfo dvd-ram-control
-PLIST_FILES=	${BIN_FILES:S|^|bin/|}
+PLIST_FILES=	${BIN_FILES:S|^|bin/|} \
+		man/man1/growisofs.1.gz
 PORTDOCS=	index.html
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-O2//' ${WRKSRC}/Makefile.m4
 
 do-install:
 .for i in ${BIN_FILES}
-	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/growisofs.1 ${MANPREFIX}/man/man1/
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/index.html ${DOCSDIR}
-.endif
+	${INSTALL_MAN} ${WRKSRC}/growisofs.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/index.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
