@@ -1,17 +1,13 @@
 # Created by: oleg dashevskii <be9-ml@be9.ru>
 # $FreeBSD$
 
-PORTNAME=	xmms
 CATEGORIES=	russian
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RusXMMS - X Multimedia System with Russian encoding patch
 
+CONFLICTS=	xmms-[0-9]* zh-xmms-[0-9]*
 MASTERDIR=	${.CURDIR}/../../multimedia/xmms
+OPTIONS_SLAVE=	RUSXMMS_PATCHES
 
-CONFLICTS=	xmms-[0-9]*
-
-WITH_RUSXMMS_PATCHES=	yes
-
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
