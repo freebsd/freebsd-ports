@@ -3,16 +3,12 @@
 
 PORTNAME=	erlang
 PORTVERSION=	15.b.03.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
-		http://www.csd.uu.se/ftp/mirror/erlang/download/:erlangorg \
-		http://www.erlang.se/doc/:erlangse			\
-		http://www.erlang.se/publications/:publications		\
-		http://www.sics.se/~joe/thesis/:joe			\
-		${MASTER_SITE_LOCAL:S/$/:local/:S,%SUBDIR%/,olgeni/,}
-PKGNAMESUFFIX=	-runtime
+		http://www.csd.uu.se/ftp/mirror/erlang/download/:erlangorg
+PKGNAMESUFFIX=	-runtime15
 DISTNAME=	otp_src_${ERL_RELEASE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:erlangorg	\
 		${ERLANG_MAN}:erlangorg
@@ -24,14 +20,12 @@ PATCH_SITES=	http://www.erlang.org/download
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A functional programming language from Ericsson
 
-LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}${PORTVERSION:C/\..*//}
-
 WRKSRC=		${WRKDIR}/otp_src_R15B03
 
 ERLANG_LIB=	${PORTNAME}${PORTVERSION:C/\..*//}
 
 SUB_FILES=	pkg-message
-SUB_LIST=	TOOLS_VSN=${TOOLS_VSN} ERLANG_LIB=${ERLANG_LIB}
+SUB_LIST=	ERLANG_LIB=${ERLANG_LIB}
 PLIST_SUB=	ERLANG_LIB=${ERLANG_LIB}
 
 MAKE_JOBS_UNSAFE=yes
@@ -54,10 +48,9 @@ OPTIONS_DEFAULT=SMP OPENSSL THREADS SCTP KQUEUE
 ERL_RELEASE=	R${PORTVERSION:S/.//g:U:S/1$/-1/}
 
 USES=		gmake perl5
-USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -170,72 +163,36 @@ MAKE_ARGS+=	ARCH=x86
 # Erlang man pages are more of internal documentation using the man format than
 # actual system man pages. (erl.1 and epmd.1 perhaps being the exception).
 
-NO_MANCOMPRESS=	yes
-
-MAN1PREFIX=	${PREFIX}/lib/${ERLANG_LIB}
-MAN3PREFIX=	${PREFIX}/lib/${ERLANG_LIB}
-MAN4PREFIX=	${PREFIX}/lib/${ERLANG_LIB}
-MAN6PREFIX=	${PREFIX}/lib/${ERLANG_LIB}
-
 # Install documentation. (HTML docs need to be in same dir as the
 # rest, not in share/doc/erlang as it should, because of relative
 # links in the documentation.
+
 post-install:
 	@for SECTION in 1 3 4 6; do \
 		${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_MAN} \
-			-C ${PREFIX}/lib/${ERLANG_LIB} \
+			-C ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB} \
 			"man/man$${SECTION}/*.$${SECTION}" || ${TRUE}; \
 	done
-	@${RM} -rf ${PREFIX}/lib/${ERLANG_LIB}/man/cat?
+	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/man/cat?
+
 .if ${PORT_OPTIONS:MDOCS}
 	@${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_DOCS} \
-		-C ${PREFIX}/lib/${ERLANG_LIB}
+		-C ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}
 	@${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
-		${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-*/doc/
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-*/doc/
 .endif
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/${ERLANG_LIB}
-	@${CHMOD} -R o+rX-w,g+rX-w ${PREFIX}/lib/${ERLANG_LIB}
 
-# All non-library files.
-
-	@cd ${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* -type d -empty \
-		| ${GREP} -v "^lib/${ERLANG_LIB}/lib" \
+	@cd ${STAGEDIR}${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* -type d -empty \
 		| ${SORT} \
 		| ${SED} -e 's#^#@exec ${MKDIR} %D/#g' \
 		> ${ERLANG_PLIST}
 
-	@cd ${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* -type f -o -type l \
-		| ${GREP} -v "^lib/${ERLANG_LIB}/man" \
-		| ${GREP} -v "^lib/${ERLANG_LIB}/lib" \
+	@cd ${STAGEDIR}${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* -type f -o -type l \
 		| ${SORT} \
 		>> ${ERLANG_PLIST}
 
-# Stock OTP libraries.
-
-	@for LIBRARY in ${OTP_LIBS}; do \
-		cd ${PREFIX}; ${TEST} -d lib/${ERLANG_LIB}/lib/$${LIBRARY} \
-			&& ${FIND} lib/${ERLANG_LIB}/lib/$${LIBRARY} -type f -o -type l; \
-	done | ${SORT} >> ${ERLANG_PLIST}
-
-# Stock OTP library directories.
-
-	@for LIBRARY in ${OTP_LIBS}; do \
-		cd ${PREFIX}; ${TEST} -d lib/${ERLANG_LIB}/lib/$${LIBRARY} \
-			&& ${FIND} lib/${ERLANG_LIB}/lib/$${LIBRARY} -type d -empty \
-			| ${SED} -e 's#^#@exec ${MKDIR} %D/#g'; \
-	done | ${SORT} >> ${ERLANG_PLIST}
-
-	@for LIBRARY in ${OTP_LIBS}; do \
-		cd ${PREFIX}; ${TEST} -d lib/${ERLANG_LIB}/lib/$${LIBRARY} \
-			&& ${FIND} lib/${ERLANG_LIB}/lib/$${LIBRARY} -type d \
-			| ${SED} -e 's/^/@dirrm /g'; \
-	done | ${SORT} -r >> ${ERLANG_PLIST}
-
-# Other directories.
-
-	@cd ${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* -type d | ${SORT} -r \
-		| ${GREP} -v "^lib/${ERLANG_LIB}/man" \
-		| ${GREP} -v "^lib/${ERLANG_LIB}/lib" \
+	@cd ${STAGEDIR}${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* -type d \
+		| ${SORT} -r \
 		| ${SED} -e 's/^/@dirrm /g' \
 		>> ${ERLANG_PLIST}
 
@@ -245,9 +202,5 @@ post-install:
 	@${ECHO_CMD} "r ${ERLANG_PLIST}"	>> ${WRKDIR}/ex.script
 	@${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
 	@cd ${WRKDIR}; ex < ex.script
-	@${CAT} ${PKGMESSAGE}
-
-.include "Makefile.lib"
-.include "Makefile.man"
 
 .include <bsd.port.mk>
