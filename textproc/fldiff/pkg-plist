@@ -1,3 +1,4 @@
 bin/fldiff
+man/man1/fldiff.1.gz
 share/applications/fldiff.desktop
 share/pixmaps/fldiff.png

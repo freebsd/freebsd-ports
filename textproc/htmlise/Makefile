@@ -15,7 +15,6 @@ TABSIZE?=	8
 SRC=		htmlise tables markup inline
 PLIST_FILES=	bin/htmlise
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(TABSIZE\ \)[0-9]*|\1${TABSIZE}|' \
 		${WRKSRC}/${PORTNAME}.h
@@ -27,6 +26,6 @@ do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/${PORTNAME} ${SRC:C/(.*)/${WRKSRC}\/\1.o/}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
