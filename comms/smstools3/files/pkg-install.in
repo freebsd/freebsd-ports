@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+if [ "x$2" = "xPOST-INSTALL" ]; then
+	mkdir -p %%SPOOLDIR%%/incoming %%SPOOLDIR%%/outgoing \
+		%%SPOOLDIR%%/checked %%LOGDIR%% %%PIDDIR%%
+	chown -R %%SMSD_USER%%:%%SMSD_GROUP%% %%SPOOLDIR%% \
+		%%LOGDIR%% %%PIDDIR%%
+fi

@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+if [ "x$2" = "xPOST-DEINSTALL" ]; then
+	rmdir %%SPOOLDIR%%/incoming %%SPOOLDIR%%/outgoing \
+	%%SPOOLDIR%%/checked %%SPOOLDIR%% %%LOGDIR%% %%PIDDIR%% \
+	2>/dev/null || true
+	echo
+	echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
+	echo "If you are permanently removing smstools, you should also:" | /usr/bin/fmt
+	echo "'rm -rf %%SPOOLDIR%%'"
+	echo "'rm -rf %%LOGDIR%%'"
+	echo "'rm -rf %%PIDDIR%%'"
+	echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
+fi

@@ -5,14 +5,14 @@
  # If you change destination of executables, remember to change
  # startup script (init.d/sms3) too.
 -BINDIR=/usr/local/bin
-+BINDIR=%%PREFIX%%/bin
++BINDIR=%%STAGEDIR%%%%PREFIX%%/bin
  
  VERSION=$(shell grep package_version src/version.h | cut -f2)
  
 -compile: 
 -	cd src && $(MAKE) -$(MAKEFLAGS) 
 +all: 
-+	cd src && $(MAKE) $(MAKEFLAGS)
++	cd src && $(MAKE)
  
 -install: compile
 -	./install.sh $(BINDIR)
@@ -25,7 +25,7 @@
  
  clean:
 -	cd src && $(MAKE) -$(MAKEFLAGS) clean
-+	cd src && $(MAKE) $(MAKEFLAGS) clean
++	cd src && $(MAKE) clean
  
 -package: compile clean
 -	./package.sh
