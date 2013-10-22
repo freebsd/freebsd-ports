@@ -24,8 +24,6 @@ BUILD_WRKSRC=	${WRKSRC}/src
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	libenet
 
-MANUAL_PACKAGE_BUILD=	distfile exceeds pointyhat file size limits
-
 PORTDATA=	data packages
 PORTDOCS=	*
 
