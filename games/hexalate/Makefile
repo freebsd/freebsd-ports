@@ -13,15 +13,13 @@ COMMENT=	A color matching game
 
 USE_BZIP2=	yes
 USE_QT4=	corelib gui moc_build qmake_build rcc_build
-WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
-QMAKEFLAGS+=	PREFIX=${PREFIX}
+DESTDIRNAME=	INSTALL_ROOT
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS} ${PORTNAME}.pro
+		${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX} ${PORTNAME}.pro
 
 .include <bsd.port.mk>
