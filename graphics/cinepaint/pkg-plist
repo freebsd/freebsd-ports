@@ -639,7 +639,6 @@ share/pixmaps/cinepaint.png
 @dirrm %%DATADIR%%/%%VER%%/brushes
 @dirrm %%DATADIR%%/%%VER%%
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm lib/cinepaint/%%VER%%/plug-ins
 @dirrm lib/cinepaint/%%VER%%/extra
 @dirrm lib/cinepaint/%%VER%%

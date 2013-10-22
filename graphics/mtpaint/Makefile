@@ -65,7 +65,6 @@ do-install:
 		${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 \
 		${MANPREFIX}/man/man1
-	@${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}.desktop \
 		${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}.png \

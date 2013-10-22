@@ -32,7 +32,6 @@ share/applications/epdfview.desktop
 %%DATADIR%%/pixmaps/stock_zoom-page-width.png
 %%DATADIR%%/ui/epdfview-ui-print.xml
 %%DATADIR%%/ui/epdfview-ui.xml
-@dirrmtry share/applications
 @dirrmtry %%DATADIR%%/pixmaps
 @dirrmtry %%DATADIR%%/ui
 @dirrmtry %%DATADIR%%

@@ -550,7 +550,6 @@ share/applications/filezilla.desktop
 @dirrmtry share/icons/hicolor/16x16/apps
 @dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor
-@dirrmtry share/applications
 @dirrm %%DATADIR%%/resources/tango/48x48
 @dirrm %%DATADIR%%/resources/tango/32x32
 @dirrm %%DATADIR%%/resources/tango/16x16

@@ -1,4 +1,3 @@
 bin/jd
 share/applications/jd.desktop
 share/pixmaps/jd.png
-@dirrmtry share/applications

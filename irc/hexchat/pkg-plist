@@ -73,6 +73,5 @@ share/pixmaps/hexchat.png
 %%NLS%%@dirrmtry share/locale/rw
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
-@dirrmtry share/applications
 @dirrm lib/hexchat/plugins
 @dirrm lib/hexchat

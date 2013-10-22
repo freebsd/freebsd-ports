@@ -3,4 +3,3 @@ bin/kasumi
 %%NLS%%share/locale/it/LC_MESSAGES/kasumi.mo
 share/applications/kasumi.desktop
 share/pixmaps/kasumi.png
-@dirrmtry share/applications

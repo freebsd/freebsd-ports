@@ -13,4 +13,3 @@
 %%MONO_OR_CLIENT%%@dirrm share/apps/quassel/scripts
 %%MONO_OR_CLIENT%%@dirrm share/apps/quassel
 %%MONO_OR_CLIENT%%@dirrmtry share/apps
-%%MONO_OR_CLIENT%%@dirrmtry share/applications

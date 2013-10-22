@@ -792,4 +792,3 @@ share/applications/kana-no-quiz.desktop
 @dirrm %%DATADIR%%/sound/kana_male
 @dirrm %%DATADIR%%/sound
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

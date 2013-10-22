@@ -406,7 +406,6 @@ share/omf/eog/eog-zh_TW.omf
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm lib/eog/plugins
 @dirrm lib/eog
 @dirrm include/eog-2.20/eog

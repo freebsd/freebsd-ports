@@ -56,7 +56,6 @@ share/pixmaps/gscan2pdf.svg
 @dirrm %%SITE_PERL%%/Gscan2pdf/Scanner
 @dirrm %%SITE_PERL%%/Gscan2pdf/Frontend
 @dirrm %%SITE_PERL%%/Gscan2pdf
-@dirrmtry share/applications
 @dirrmtry share/locale/ab/LC_MESSAGES
 @dirrmtry share/locale/ab
 @dirrmtry %%DATADIR%%

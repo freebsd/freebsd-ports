@@ -18,8 +18,7 @@ USES=		desktop-file-utils gmake pkgconfig
 
 PLIST_FILES=	lib/zathura/pdf.so \
 		share/applications/zathura-pdf-poppler.desktop
-PLIST_DIRSTRY=	lib/zathura \
-		share/applications
+PLIST_DIRSTRY=	lib/zathura
 
 NO_STAGE=	yes
 .include <bsd.port.mk>

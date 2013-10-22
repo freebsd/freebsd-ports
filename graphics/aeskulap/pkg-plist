@@ -44,4 +44,3 @@ share/applications/aeskulap.desktop
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
 @dirrm lib/aeskulap
-@dirrmtry share/applications

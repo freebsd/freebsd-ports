@@ -655,7 +655,6 @@ bin/skencil
 share/applications/skencil.desktop
 share/pixmaps/skencil.png
 share/pixmaps/skencil.xpm
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/skencil/Sketch/UI
 @dirrm %%PYTHON_SITELIBDIR%%/skencil/Sketch/Scripting
 @dirrm %%PYTHON_SITELIBDIR%%/skencil/Sketch/Modules

@@ -854,7 +854,6 @@ share/locale/zh_TW/LC_MESSAGES/inkscape.mo
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%/clipart
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrmtry share/locale/te_IN/LC_MESSAGES
 @dirrmtry share/locale/te_IN
 @dirrmtry share/locale/sr@latin/LC_MESSAGES

@@ -60,4 +60,3 @@ share/pixmaps/structure-synth.png
 @dirrm %%DATADIR%%/Examples/Tutorials
 @dirrm %%DATADIR%%/Examples
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

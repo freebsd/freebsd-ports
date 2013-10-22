@@ -82,4 +82,3 @@ share/icons/grafx2.xpm
 @dirrm share/grafx2/scripts
 @dirrm share/grafx2/fonts
 @dirrm share/grafx2
-@dirrm share/applications

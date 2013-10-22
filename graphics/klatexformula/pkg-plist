@@ -11,4 +11,3 @@ share/icons/hicolor/64x64/apps/klatexformula.png
 share/klatexformula/rccresources/klfbaseplugins.rcc
 @dirrm share/klatexformula/rccresources
 @dirrm share/klatexformula
-@dirrmtry share/applications

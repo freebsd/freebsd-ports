@@ -1026,7 +1026,6 @@ share/locale/zh_TW/LC_MESSAGES/gthumb.mo
 @dirrm share/gthumb/albumthemes/Classic
 @dirrm share/gthumb/albumthemes
 @dirrm share/gthumb
-@dirrmtry share/applications
 @dirrm lib/gthumb/extensions
 @dirrm lib/gthumb
 @dirrm include/gthumb-%%GTHUMB_VER%%/gthumb

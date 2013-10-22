@@ -118,7 +118,6 @@ post-build:
 post-install:
 	${MKDIR} ${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.desktop ${DESKTOPDIR}
-	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/javaws.png \
 	    ${PREFIX}/share/pixmaps/itweb-javaws.png
 

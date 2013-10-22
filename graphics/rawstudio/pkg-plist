@@ -508,7 +508,6 @@ share/rawspeed/cameras.xml
 @dirrm share/rawspeed
 @dirrm share/pixmaps/rawstudio
 @dirrmtry share/icons
-@dirrmtry share/applications
 @dirrm include/rawstudio-2.0
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

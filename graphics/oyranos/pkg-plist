@@ -546,7 +546,6 @@ share/pixmaps/qcmsevents.svg
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrmtry share/color/settings
 @dirrmtry share/color
-@dirrmtry share/applications
 @dirrmtry lib/pkgconfig
 @dirrmtry lib/oyranos/cmake
 @dirrmtry lib/oyranos

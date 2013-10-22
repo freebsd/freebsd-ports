@@ -168,4 +168,3 @@ share/gtk-doc/html/Entangle/up.png
 @dirrm share/entangle/icons/hicolor
 @dirrm share/entangle/icons
 @dirrm share/entangle
-@dirrmtry share/applications

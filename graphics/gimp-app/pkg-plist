@@ -2290,7 +2290,6 @@ share/locale/zh_TW/LC_MESSAGES/gimp20.mo
 @dirrm share/doc/gimp/libgimpbase
 @dirrm share/doc/gimp/libgimp
 @dirrm share/doc/gimp
-@dirrmtry share/applications
 @dirrm libexec/gimp/2.2/plug-ins
 @dirrm libexec/gimp/2.2/modules
 @dirrm libexec/gimp/2.2/interpreters

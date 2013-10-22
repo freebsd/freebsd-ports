@@ -42,4 +42,3 @@ share/sane/xsane/xsane-startimage.pnm
 share/sane/xsane/xsane-style.rc
 @dirrm share/sane/xsane
 @dirrmtry share/sane
-@dirrmtry share/applications

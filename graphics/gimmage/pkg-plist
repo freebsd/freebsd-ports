@@ -9,4 +9,3 @@ share/locale/fr/LC_MESSAGES/gimmage.mo
 share/pixmaps/gimmage.png
 @dirrm share/gimmage/pixmaps
 @dirrm share/gimmage
-@dirrmtry share/applications

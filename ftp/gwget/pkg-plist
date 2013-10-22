@@ -59,7 +59,6 @@ share/pixmaps/gwget.png
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 %%EPIPHANY%%@dirrmtry lib/epiphany/%%EPHY_VERSION%%/extensions
 %%EPIPHANY%%@dirrmtry lib/epiphany/%%EPHY_VERSION%%
 %%EPIPHANY%%@dirrmtry lib/epiphany

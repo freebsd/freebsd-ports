@@ -143,4 +143,3 @@ share/mime/packages/truevision.xml
 @dirrm share/gnome/help/truevision
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@dirrmtry share/applications

@@ -2304,7 +2304,6 @@ share/pixmaps/kvirc.png
 %%QT%%@dirrmtry share/icons/hicolor
 %%QT%%@dirrmtry share/icons
 %%KDE%%@dirrm share/apps/kvirc
-%%QT%%@dirrmtry share/applications
 @dirrmtry man/uk/man1
 @dirrmtry man/uk
 @dirrmtry man/pt/man1

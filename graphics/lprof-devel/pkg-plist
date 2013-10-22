@@ -103,4 +103,3 @@ share/pixmaps/lprof.png
 @dirrm %%DATADIR%%/data/help
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

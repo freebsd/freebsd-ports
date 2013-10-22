@@ -289,7 +289,6 @@ share/pixmaps/synfigstudio/decr_resolution_icon.png
 share/pixmaps/synfigstudio/render_options_icon.png
 share/pixmaps/synfigstudio/preview_options_icon.png
 @dirrm share/pixmaps/synfigstudio
-@dirrmtry share/applications
 @dirrm include/synfigapp-0.0/synfigapp
 @dirrm include/synfigapp-0.0
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

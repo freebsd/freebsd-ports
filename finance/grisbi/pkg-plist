@@ -327,7 +327,6 @@ share/mime-info/grisbi.mime
 @dirrm %%DATADIR%%/categories/C
 @dirrm %%DATADIR%%/categories
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/fr
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/de

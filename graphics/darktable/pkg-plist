@@ -219,7 +219,6 @@ share/locale/ru/LC_MESSAGES/darktable.mo
 share/locale/sq/LC_MESSAGES/darktable.mo
 share/locale/sv/LC_MESSAGES/darktable.mo
 share/locale/uk/LC_MESSAGES/darktable.mo
-@dirrmtry share/applications
 @dirrm lib/darktable/views
 @dirrm lib/darktable/plugins/lighttable
 @dirrm lib/darktable/plugins/imageio/storage

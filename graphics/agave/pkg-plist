@@ -37,4 +37,3 @@ share/locale/zh_TW/LC_MESSAGES/agave.mo
 @dirrm share/agave/pixmaps
 @dirrm share/agave/palettes
 @dirrm share/agave
-@dirrmtry share/applications

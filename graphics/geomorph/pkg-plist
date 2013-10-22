@@ -59,4 +59,3 @@ share/pixmaps/geomorph.xpm
 @dirrm %%DATADIR%%/%%PORTVERSION%%/scenes
 @dirrm %%DATADIR%%/%%PORTVERSION%%
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

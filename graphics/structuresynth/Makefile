@@ -35,7 +35,6 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/structure-synth ${STAGEDIR}${PREFIX}/bin/
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "Examples Misc" ${STAGEDIR}${DATADIR}/
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/structure-synth.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/images/fileicons/StructureSynth-256.png \

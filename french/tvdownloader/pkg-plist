@@ -206,4 +206,3 @@ share/pixmaps/tvdownloader.png
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/search
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications

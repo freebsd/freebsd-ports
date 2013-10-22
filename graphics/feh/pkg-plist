@@ -16,7 +16,6 @@ share/applications/feh.desktop
 %%DATADIR%%/images/menubg_brushed.png
 %%DATADIR%%/images/menubg_default.png
 %%DATADIR%%/images/menubg_sky.png
-@dirrmtry share/applications
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%

@@ -135,7 +135,6 @@ share/locale/zh_TW/LC_MESSAGES/comix.mo
 @dirrm %%DATADIR%%/images/16x16
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 %%THUMBNAILS:%%@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 %%THUMBNAILS:%%@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

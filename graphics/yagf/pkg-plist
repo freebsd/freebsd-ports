@@ -13,7 +13,6 @@ share/yagf/translations/yagf_uk.qm
 @dirrm share/yagf/translations
 @dirrm share/yagf
 @comment those are shared directories
-@dirrmtry share/applications
 @dirrmtry share/icons/hicolor/96x96/apps
 @dirrmtry share/icons/hicolor/96x96
 @dirrmtry share/icons/hicolor

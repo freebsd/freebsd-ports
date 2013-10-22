@@ -649,7 +649,6 @@ share/mime/packages/hugin.xml
 @dirrmtry share/locale/cs_CZ/LC_MESSAGES
 @dirrmtry share/locale/cs_CZ
 @dirrm lib/hugin
-@dirrmtry share/applications
 @dirrmtry share/icons/gnome/48x48/mimetypes
 @dirrmtry share/icons/gnome/48x48
 @dirrmtry share/icons/gnome
