@@ -19,20 +19,18 @@ USE_XORG=	ice sm x11 xext xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dummy-driver
 
-MAN1=		wmnd.1
 PORTEXAMPLES=	wmndrc
-PLIST_FILES=	bin/wmnd
+PLIST_FILES=	bin/wmnd \
+		man/man1/wmnd.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/wmnd ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/wmnd.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/src/wmnd ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/wmnd.1 ${STAGEDIR}${MANPREFIX}/man/man1
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/wmndrc ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/wmndrc ${STAGEDIR}${EXAMPLESDIR}
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
