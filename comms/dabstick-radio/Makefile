@@ -3,7 +3,7 @@
 
 PORTNAME=	dabstick-radio
 PORTVERSION=	0.96
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms audio hamradio
 MASTER_SITES=	http://www.sdr-j.tk/
 EXTRACT_SUFX=	.tgz
@@ -17,16 +17,13 @@ LIB_DEPENDS+=	rtlsdr:${PORTSDIR}/comms/rtl-sdr \
 		qwt:${PORTSDIR}/x11-toolkits/qwt5 \
 		portaudio.2:${PORTSDIR}/audio/portaudio2 \
 		sndfile:${PORTSDIR}/audio/libsndfile \
-		avcodec${FFMPEG_SUFFIX}:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFFIX} \
+		avcodec:${PORTSDIR}/multimedia/ffmpeg \
 		fftw3:${PORTSDIR}/math/fftw3 \
 		faad:${PORTSDIR}/audio/faad
 
 USE_QT4=	gui qt3support qmake_build moc_build rcc_build uic_build
 
-FFMPEG_SUFFIX=	1
-
 QMAKE_DABSTICK=	${QMAKE} -unix PREFIX=${PREFIX} -o
-MAKE_ENV+=	FFMPEG_SUFFIX=${FFMPEG_SUFFIX}
 
 PORTDOCS=	*
 PLIST_FILES+=	bin/dabreceiver bin/fmreceiver bin/spectrum-viewer
