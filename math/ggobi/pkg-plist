@@ -132,6 +132,5 @@ etc/xdg/ggobi/ggobirc.sample
 %%DOCSDIR%%/XML.pdf
 %%DOCSDIR%%/manual.pdf
 @dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrmtry etc/xdg/ggobi
 @dirrmtry etc/xdg

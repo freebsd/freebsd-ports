@@ -13,5 +13,4 @@ share/applications/www.octave.org-octave.desktop
 %%PORTDOCS%%%%DOCSDIR%%/octave.ps
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @comment Insert PLIST here
-@dirrmtry share/applications
 @dirrm lib/octave

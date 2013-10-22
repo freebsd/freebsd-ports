@@ -65,5 +65,4 @@ share/pixmaps/gnome-osd.png
 @dirrm %%DATADIR%%
 @dirrmtry share/dbus-1/services
 @dirrmtry share/dbus-1
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/gnomeosd

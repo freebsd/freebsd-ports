@@ -3,7 +3,6 @@ share/applications/lybniz.desktop
 share/gnome/help/lybniz/C/lybniz.xml
 share/gnome/help/lybniz/C/figures/lybniz_colour_graph_small.png
 share/pixmaps/lybniz.png
-@dirrmtry share/applications
 @dirrm share/gnome/help/lybniz/C/figures
 @dirrm share/gnome/help/lybniz/C
 @dirrm share/gnome/help/lybniz

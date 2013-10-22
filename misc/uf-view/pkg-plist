@@ -36,4 +36,3 @@ share/locale/wa/LC_MESSAGES/uf-view.mo
 share/locale/zh_CN/LC_MESSAGES/uf-view.mo
 @dirrm share/pixmaps/uf-view
 @dirrm share/uf-view
-@dirrmtry share/applications

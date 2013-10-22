@@ -376,7 +376,6 @@ share/locale/fi/LC_MESSAGES/quodlibet.mo
 %%PYTHON_SITELIBDIR%%/quodlibet/debug/enc.pyo
 %%PYTHON_SITELIBDIR%%/quodlibet/debug/debugwindow.pyo
 %%PYTHON_SITELIBDIR%%/quodlibet/debug/__init__.pyo
-@dirrmtry share/applications
 @dirrmtry share/locale/gl_ES/LC_MESSAGES
 @dirrmtry share/locale/gl_ES
 @dirrm %%PYTHON_SITELIBDIR%%/quodlibet/browsers

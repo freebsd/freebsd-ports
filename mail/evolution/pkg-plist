@@ -2432,7 +2432,6 @@ share/omf/evolution/evolution-zh_CN.omf
 @dirrm %%DATADIR%%/%%VERSION%%
 @dirrm %%DATADIR%%
 @dirrm share/doc/eshell
-@dirrmtry share/applications
 @dirrm libexec/evolution/%%VERSION%%
 @dirrm libexec/evolution
 @dirrm lib/evolution/%%VERSION%%/plugins

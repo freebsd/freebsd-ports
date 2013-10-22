@@ -18,7 +18,6 @@ JAVA_VERSION=	1.6+
 SUB_FILES=	tvbrowser
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/applications/
 	@${REINPLACE_CMD} -e "s/${PORTNAME}\.sh/${PORTNAME}/" \
 		${WRKSRC}/${PORTNAME}.desktop
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop \

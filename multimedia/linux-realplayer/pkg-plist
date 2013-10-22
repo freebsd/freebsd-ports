@@ -232,7 +232,6 @@ lib/linux-mozilla/plugins/nphelix.xpt
 %%ICONS%%share/icons/hicolor/48x48/mimetypes/mime-video-rv_48x48.png
 %%ICONS%%share/icons/hicolor/48x48/mimetypes/mime-video-swf_48x48.png
 %%GNOME%%@dirrmtry share/application-registry
-%%GNOME%%@dirrmtry share/applications
 %%GNOME%%@dirrmtry share/mime-info
 %%GNOME%%@dirrmtry share/pixmaps
 %%ICONS%%@dirrmtry share/icons/hicolor/48x48/apps

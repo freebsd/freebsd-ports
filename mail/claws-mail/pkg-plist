@@ -332,7 +332,6 @@ share/icons/hicolor/64x64/apps/claws-mail.png
 %%MANUAL%%@dirrm %%DOCSDIR%%/manual
 @dirrmtry %%DOCSDIR%%
 @dirrmtry %%DATADIR%%
-@dirrmtry share/applications
 @dirrmtry lib/claws-mail/plugins
 @dirrmtry lib/claws-mail
 @dirrm include/claws-mail/plugins/vcalendar

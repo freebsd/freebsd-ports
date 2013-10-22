@@ -1341,7 +1341,6 @@ share/pixmaps/gcstar.png
 @dirrm %%DATADIR%%/genres
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm lib/gcstar/GCPlugins/GCstar
 @dirrm lib/gcstar/GCPlugins/GCmusics
 @dirrm lib/gcstar/GCPlugins/GCgames

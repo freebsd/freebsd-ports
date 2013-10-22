@@ -768,7 +768,6 @@ pre-install:
 	${TOUCH} -f ${PLIST}
 	${ECHO_CMD} "share/pixmaps/vlc.png" >> ${PLIST}
 	${ECHO_CMD} "share/applications/vlc.desktop" >> ${PLIST}
-	${ECHO_CMD} "@dirrmtry share/applications" >> ${PLIST}
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET} prefix=${FAKEDIR}
 	${RM} -f ${FAKEDIR}/share/locale/locale.alias

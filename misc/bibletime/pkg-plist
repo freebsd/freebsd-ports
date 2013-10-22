@@ -847,4 +847,3 @@ share/icons/bibletime.svg
 @dirrm %%DATADIR%%/docs
 @dirrm %%DATADIR%%/display-templates
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

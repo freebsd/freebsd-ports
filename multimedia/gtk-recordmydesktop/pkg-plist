@@ -50,6 +50,5 @@ share/locale/sv/LC_MESSAGES/gtk-recordMyDesktop.mo
 share/locale/tr/LC_MESSAGES/gtk-recordMyDesktop.mo
 share/pixmaps/gtk-recordmydesktop.png
 @dirrm %%PYTHON_SITELIBDIR%%/recordMyDesktop
-@dirrmtry share/applications
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

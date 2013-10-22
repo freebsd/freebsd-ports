@@ -52,4 +52,3 @@ share/pixmaps/galculator.xpm
 @dirrmtry share/locale/kk_KZ
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

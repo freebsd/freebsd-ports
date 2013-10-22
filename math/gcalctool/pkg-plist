@@ -734,7 +734,6 @@ share/locale/zh_TW/LC_MESSAGES/gcalctool.mo
 @dirrm share/gnome/help/gcalctool/C
 @dirrm share/gnome/help/gcalctool
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES

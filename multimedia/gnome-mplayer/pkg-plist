@@ -53,6 +53,5 @@ share/icons/hicolor/scalable/apps/gnome-mplayer.svg
 %%PLUGIN%%lib/nautilus/extensions-2.0/libgnome-mplayer-properties-page.so
 @dirrmtry share/gnome-control-center/default-apps
 @dirrmtry share/gnome-control-center
-@dirrmtry share/applications
 @dirrmtry share/locale/fo/LC_MESSAGES
 @dirrmtry share/locale/fo

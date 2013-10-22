@@ -33,7 +33,6 @@ regression-test: build
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mathomatic ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/mathomatic.1 ${PREFIX}/man/man1
-	${MKDIR} ${PREFIX}/share/applications ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/icons/mathomatic.desktop \
 		${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/icons/mathomatic.png ${PREFIX}/share/pixmaps

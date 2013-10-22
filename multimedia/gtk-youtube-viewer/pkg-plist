@@ -18,6 +18,5 @@
 %%GTK2%%share/pixmaps/gtk-youtube-viewer.png
 %%GTK2%%@dirrm %%DATADIR%%/icons
 %%GTK2%%@dirrm %%DATADIR%%
-%%GTK2%%@dirrmtry share/applications
 %%GTK2%%@dirrm %%SITE_PERL%%/mach/auto/WWW/YoutubeViewer
 @dirrm %%SITE_PERL%%/WWW/YoutubeViewer

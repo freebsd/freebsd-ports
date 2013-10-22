@@ -34,13 +34,11 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gonvert ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/gonvert.desktop ${PREFIX}/share/applications
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/gonvert.glade ${DATADIR}
 	@${MKDIR} ${DATADIR}/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/*.png ${DATADIR}/pixmaps
-	@${MKDIR} ${PREFIX}/share/pixmaps
 	${LN} -sf ${DATADIR}/pixmaps/gonvert.png ${PREFIX}/share/pixmaps
 
 .if ${PORT_OPTIONS:MNLS}

@@ -39,4 +39,3 @@ share/pixmaps/gnubiff.png
 %%NLS%%@dirrmtry share/locale/fr_CA/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fr_CA
 @dirrm share/gnubiff
-@dirrmtry share/applications

@@ -494,7 +494,6 @@ bin/2ManDVD
 %%DATADIR%%/fake.pl
 share/applications/2ManDVD.desktop
 share/pixmaps/mandvdico.png
-@dirrmtry share/applications
 @dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Vacances/States
 @dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Vacances/Paris
 @dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Vacances/Neige

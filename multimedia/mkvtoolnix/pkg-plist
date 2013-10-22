@@ -182,4 +182,3 @@ man/zh_CN/man1/mkvpropedit.1.gz
 %%WXGTK%%@dirrm %%DOCSDIR%%/guide/nl
 %%WXGTK%%@dirrm %%DOCSDIR%%/guide
 %%WXGTK%%@dirrm %%DOCSDIR%%
-%%WXGTK%%@dirrmtry share/applications

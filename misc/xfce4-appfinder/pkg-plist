@@ -89,4 +89,3 @@ share/applications/xfce4-run.desktop
 %%NLS%%@dirrmtry share/locale/bn_IN
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
-@dirrmtry share/applications

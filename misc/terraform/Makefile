@@ -38,10 +38,8 @@ pre-configure:
 	@${LN} -sf ${AUTOMAKE_DIR}/depcomp ${WRKSRC}
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/desktop-links/Terraform.desktop \
 		${PREFIX}/share/applications
-	@${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/desktop-links/terraform.png \
 		${PREFIX}/share/pixmaps
 .if ${PORT_OPTIONS:MDOCS}

@@ -1,4 +1,3 @@
 bin/openmovieeditor
 share/applications/openmovieeditor.desktop
 share/pixmaps/openmovieeditor.xpm
-@dirrmtry share/applications

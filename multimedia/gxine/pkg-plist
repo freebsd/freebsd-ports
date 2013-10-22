@@ -52,7 +52,6 @@ share/locale/zh_CN/LC_MESSAGES/gxine.theme.mo
 share/pixmaps/gxine.png
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrmtry man/es/man1
 @dirrmtry man/es
 @dirrmtry man/de/man1

@@ -63,4 +63,3 @@ share/locale/sv/LC_MESSAGES/qalculate-gtk.mo
 @dirrm share/gnome/help/qalculate-gtk/C/figures
 @dirrm share/gnome/help/qalculate-gtk/C
 @dirrm share/gnome/help/qalculate-gtk
-@dirrmtry share/applications

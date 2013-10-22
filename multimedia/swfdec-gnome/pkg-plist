@@ -77,7 +77,6 @@ share/locale/zh_HK/LC_MESSAGES/swfdec-gnome.mo
 share/locale/zh_TW/LC_MESSAGES/swfdec-gnome.mo
 %%DATADIR%%/swfdec-player.ui
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zh_HK/LC_MESSAGES

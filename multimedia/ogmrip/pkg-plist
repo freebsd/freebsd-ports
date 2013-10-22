@@ -188,7 +188,6 @@ share/locale/sk/LC_MESSAGES/ogmrip.mo
 %%GTK2_SUPPORT%%share/pixmaps/ogmrip.png
 %%GTK2_SUPPORT%%@dirrm %%DATADIR%%/profiles
 %%GTK2_SUPPORT%%@dirrm %%DATADIR%%
-%%GTK2_SUPPORT%%@dirrmtry share/applications
 @dirrm lib/ogmrip/video-plugins
 @dirrm lib/ogmrip/subp-plugins
 %%GTK2_SUPPORT%%@dirrm lib/ogmrip/options-plugins

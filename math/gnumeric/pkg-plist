@@ -1027,7 +1027,6 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm include/libspreadsheet-%%SHORT_VER%%/spreadsheet/tools
 @dirrm include/libspreadsheet-%%SHORT_VER%%/spreadsheet
 @dirrm include/libspreadsheet-%%SHORT_VER%%
-@dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES

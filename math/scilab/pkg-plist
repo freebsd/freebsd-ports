@@ -165,4 +165,3 @@ share/applications/scilab.desktop
 %%NLS%%@dirrmtry share/locale/uk_UA
 %%NLS%%@dirrmtry share/locale/zh_CN
 %%NLS%%@dirrmtry share/locale/zh_TW
-@dirrmtry share/applications

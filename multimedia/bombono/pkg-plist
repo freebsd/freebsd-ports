@@ -321,4 +321,3 @@ share/pixmaps/bombono-dvd.png
 @dirrm %%DATADIR%%/resources/bmd-icons
 @dirrm %%DATADIR%%/resources
 @dirrm %%DATADIR%%
-@dirrmtry share/applications

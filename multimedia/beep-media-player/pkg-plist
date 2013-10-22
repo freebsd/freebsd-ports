@@ -99,7 +99,6 @@ share/pixmaps/bmp.png
 @exec mkdir -p %D/share/beep/Skins
 @dirrm share/beep/Skins
 @dirrm share/beep
-@dirrmtry share/applications
 @dirrm lib/bmp/Visualization
 @dirrm lib/bmp/Output
 @dirrm lib/bmp/Input
