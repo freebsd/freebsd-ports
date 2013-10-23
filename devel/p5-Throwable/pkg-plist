@@ -1,7 +1,10 @@
 %%SITE_PERL%%/StackTrace/Auto.pm
-%%SITE_PERL%%/Throwable/Error.pm
 %%SITE_PERL%%/Throwable.pm
+%%SITE_PERL%%/Throwable/Error.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Throwable/.packlist
+%%PERL5_MAN3%%/StackTrace::Auto.3.gz
+%%PERL5_MAN3%%/Throwable.3.gz
+%%PERL5_MAN3%%/Throwable::Error.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Throwable
 @dirrmtry %%SITE_PERL%%/Throwable
 @dirrmtry %%SITE_PERL%%/StackTrace
