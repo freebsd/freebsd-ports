@@ -12,28 +12,25 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	The virtual filesystem for Thunar
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		freetype:${PORTSDIR}/print/freetype2 \
-		gamin-1:${PORTSDIR}/devel/gamin
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libgamin-1.so:${PORTSDIR}/devel/gamin
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USE_GNOME=	glib20 gtk20 intltool intlhack
+USE_GNOME=	glib20 gtk20 gdkpixbuf2 intltool intlhack
 USE_XFCE=	configenv libutil libexo
 USE_XORG=	x11
-USES=		gmake pathfix perl5 pkgconfig
+USES=		gmake pathfix perl5 pkgconfig desktop-file-utils
 
 CONFIGURE_ARGS=	--disable-debug
 
-OPTIONS_DEFINE=	NLS HAL DBUS STARTUP GCONF APIDOCS
-OPTIONS_DEFAULT=	NLS HAL DBUS STARTUP APIDOCS
+OPTIONS_DEFINE=	NLS HAL DBUS STARTUP GCONF DOCS
+OPTIONS_DEFAULT=	NLS HAL DBUS STARTUP
+STARTUP_DESC=	Startup notification
 
-APIDOCS_DESC=	Install api documentation
-STARTUP_DESC=	Enable startup notification support
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -46,21 +43,21 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MHAL}
-LIB_DEPENDS+=	hal:${PORTSDIR}/sysutils/hal
+LIB_DEPENDS+=	libhal.so:${PORTSDIR}/sysutils/hal
 CONFIGURE_ARGS+=--with-volume-manager=hal
 .else
 CONFIGURE_ARGS+=--with-volume-manager=freebsd
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 CONFIGURE_ARGS+=--enable-dbus
 .else
 CONFIGURE_ARGS+=--disable-dbus
 .endif
 
 .if ${PORT_OPTIONS:MSTARTUP}
-LIB_DEPENDS+=	startup-notification-1:${PORTSDIR}/x11/startup-notification
+LIB_DEPENDS+=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
 CONFIGURE_ARGS+=--enable-startup-notification
 .else
 CONFIGURE_ARGS+=--disable-startup-notification
@@ -74,7 +71,7 @@ CONFIGURE_ARGS+=--enable-gnome-thumbnailers
 CONFIGURE_ARGS+=--disable-gnome-thumbnailers
 .endif
 
-.if ${PORT_OPTIONS:MAPIDOCS}
+.if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=--with-html-dir=${PREFIX}/share/gtk-doc/html
 PLIST_SUB+=	APIDOCS=""
 .else
