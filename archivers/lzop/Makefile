@@ -10,19 +10,12 @@ MASTER_SITES=	http://www.lzop.org/download/ \
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Fast file compressor similar to gzip, using the LZO library
 
-# prefer lzo2 if it is already installed or if no lzo is installed.
-.if exists(${LOCALBASE}/lib/liblzo2.so.2) || !exists(${LOCALBASE}/lib/liblzo.so.1)
-LIB_DEPENDS=	lzo2.2:${PORTSDIR}/archivers/lzo2
-.else
-LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
-.endif
+LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
 
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		lzop.1
-PLIST_FILES=	bin/lzop
+PLIST_FILES=	bin/lzop man/man1/lzop.1.gz
 
 .include <bsd.port.mk>
