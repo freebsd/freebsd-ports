@@ -12,18 +12,16 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Really small HTTP/HTTPS proxy
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-PLIST_FILES=	libexec/micro_proxy
-MAN8=		micro_proxy.8
+PLIST_FILES=	libexec/micro_proxy man/man8/micro_proxy.8.gz
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} -c ${WRKSRC}/${PORTNAME}.c -o ${WRKSRC}/${PORTNAME}.o
 	${CC} ${CFLAGS} ${WRKSRC}/${PORTNAME}.o -o ${WRKSRC}/${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/libexec
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${MANPREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/libexec
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
