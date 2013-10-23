@@ -52,8 +52,8 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 1000043
-IGNORE=		converters/libiconv should not be used with OSVERSION > 1000043. \
+.if exists(/usr/include/iconv.h)
+IGNORE=		converters/libiconv should not be used with iconv from base. \
 Please fix the port which tries to use it
 .endif
 
