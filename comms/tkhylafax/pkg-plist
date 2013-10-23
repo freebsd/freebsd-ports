@@ -18,4 +18,5 @@ lib/tkhylafax-3.2/tclIndex
 lib/tkhylafax-3.2/tkhylafax.xbm
 lib/tkhylafax-3.2/dn.xbm
 lib/tkhylafax-3.2/up.xbm
+man/man1/tkhylafax.1.gz
 @dirrm lib/tkhylafax-3.2
