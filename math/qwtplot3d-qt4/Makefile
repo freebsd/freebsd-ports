@@ -22,9 +22,8 @@ WRKSRC=	${WRKDIR}/${PORTNAME}
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/qwtplot3d-qt4
 	${INSTALL_DATA} ${WRKSRC}/include/*.h ${STAGEDIR}${PREFIX}/include/qwtplot3d-qt4
-	${MKDIR} ${PREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/lib/libqwtplot3d-qt4.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib
-	${LN} -fs ${PREFIX}/lib/libqwtplot3d-qt4.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libqwtplot3d-qt4.so.0
-	${LN} -fs ${PREFIX}/lib/libqwtplot3d-qt4.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libqwtplot3d-qt4.so
+	${LN} -fs libqwtplot3d-qt4.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libqwtplot3d-qt4.so.0
+	${LN} -fs libqwtplot3d-qt4.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libqwtplot3d-qt4.so
 
 .include <bsd.port.mk>
