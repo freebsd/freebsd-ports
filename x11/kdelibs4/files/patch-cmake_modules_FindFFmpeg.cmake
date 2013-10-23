@@ -1,5 +1,5 @@
---- ./cmake/modules/FindFFmpeg.cmake.orig	2013-03-01 06:26:13.331789000 +0000
-+++ ./cmake/modules/FindFFmpeg.cmake	2013-03-06 22:29:44.367663443 +0000
+--- ./cmake/modules/FindFFmpeg.cmake.orig	2013-06-28 17:03:40.713321000 +0000
++++ ./cmake/modules/FindFFmpeg.cmake	2013-10-23 13:30:59.895502135 +0000
 @@ -71,13 +71,15 @@
        ${PC_LIB${_component}_INCLUDEDIR}
        ${PC_LIB${_component}_INCLUDE_DIRS}
@@ -18,15 +18,9 @@
    )
  
    set(${_component}_DEFINITIONS  ${PC_${_component}_CFLAGS_OTHER} CACHE STRING "The ${_component} CFLAGS.")
-@@ -97,13 +99,18 @@
- # Check for cached results. If there are skip the costly part.
+@@ -98,12 +100,12 @@
  if (NOT FFMPEG_LIBRARIES)
  
-+  # Look for ffmpeg1 by default. Use empty suffix for ffmpeg-0.7
-+  if (NOT DEFINED FFMPEG_SUFFIX)
-+    set(FFMPEG_SUFFIX 1)
-+  endif ()
-+
    # Check for all possible component.
 -  find_component(AVCODEC  libavcodec  avcodec  libavcodec/avcodec.h)
 -  find_component(AVFORMAT libavformat avformat libavformat/avformat.h)
