@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}_src_${PORTVERSION}.txz \
 		${PORTNAME}_data_sounds_${SOUNDS_VER}.tar.bz2 \
 		${PORTNAME}_data_terrain_${TERRAIN_VER}.tar.bz2
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Action flight simulation computer program using OSG
 
 LICENSE=	GPLv2
@@ -20,8 +20,8 @@ LIB_DEPENDS=	osg:${PORTSDIR}/graphics/osg
 
 USE_BZIP2=	yes
 USE_XZ=		yes
-USE_GL=		gl
 USES=		cmake
+USE_GL=		gl
 USE_LUA=	5.1
 LUA_COMPS=	lua:build
 
@@ -32,31 +32,26 @@ TERRAIN_VER=	20080206
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS_DEFINE=	SDL PLIB GUI
-OPTIONS_DEFAULT=	SDL GUI
+OPTIONS_DEFINE=	GUI PLIB SDL
+OPTIONS_DEFAULT=	GUI SDL
 
-SDL_DESC=	SDL support for input and sound
 PLIB_DESC=	Enable sound support through plib
 GUI_DESC=	Enable FLTK GUI
+
+OPTIONS_SUB=	yes
+
+GUI_LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+PLIB_BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 
 PORTDOCS=	*
 
 DESKTOP_ENTRIES=	"Palomino" "${COMMENT}" "${PORTNAME}" \
 			"${PORTNAME}" "Game;ArcadeGame;" false
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSDL}
 USE_SDL+=	sdl mixer
-.endif
-
-.if ${PORT_OPTIONS:MPLIB}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
-.endif
-
-.if ${PORT_OPTIONS:MGUI}
-LIB_DEPENDS+=	fltk:${PORTSDIR}/x11-toolkits/fltk
 .endif
 
 post-patch:
@@ -91,13 +86,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|doc/html/|${DOCSDIR}/|' ${WRKSRC}/src/gui/gui.cc
 
 post-install:
-	@${MKDIR} ${DATADIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "data scripts" ${DATADIR})
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "data scripts" ${STAGEDIR}${DATADIR})
 # docs are used from within the game, so this is unconditional
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} . ${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 	${LN} -sf ${DOCSDIR}/images/palominoLogo.png \
-		${PREFIX}/share/pixmaps/${PORTNAME}.png
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 .include <bsd.port.mk>

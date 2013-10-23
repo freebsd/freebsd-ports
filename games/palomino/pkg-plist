@@ -1,5 +1,4 @@
 bin/palomino
-share/pixmaps/palomino.png
 %%DATADIR%%/data/fonts/README.txt
 %%DATADIR%%/data/fonts/arial.ttf
 %%DATADIR%%/data/fonts/masque.ttf
@@ -440,6 +439,7 @@ share/pixmaps/palomino.png
 %%DATADIR%%/scripts/timer.lua
 %%DATADIR%%/scripts/views.lua
 %%DATADIR%%/scripts/weapons.lua
+share/pixmaps/palomino.png
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/data/textures
 @dirrm %%DATADIR%%/data/terrain
