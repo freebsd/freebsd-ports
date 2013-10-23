@@ -17,7 +17,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		%%JAVAJARDIR%%/${PORTNAME}.jar
 SUB_FILES=	${PORTNAME}.sh
 
-NO_STAGE=	yes
 post-extract-script:
 	@${ECHO_CMD} "Main-Class: ${PORTNAME}" > ${WRKDIR}/src/MANIFEST.MF
 
@@ -30,7 +29,7 @@ post-build-script:
 		${JAR} -cfm ${PORTNAME}.jar MANIFEST.MF au ${PORTNAME}.class
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_DATA} ${WRKDIR}/src/${PORTNAME}.jar ${JAVAJARDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_DATA} ${WRKDIR}/src/${PORTNAME}.jar ${STAGEDIR}${JAVAJARDIR}
 
 .include <bsd.port.mk>
