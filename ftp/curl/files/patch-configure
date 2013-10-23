@@ -6,9 +6,9 @@ Forwarded: not-needed
 Author: Peter Pentchev <roam@FreeBSD.org>
 Last-Update: 2010-12-19
 
---- configure.orig	2013-08-05 19:28:53.000000000 +0800
-+++ configure	2013-10-16 00:49:08.164433303 +0800
-@@ -3554,9 +3554,10 @@
+--- configure.orig	2013-10-13 04:24:48.000000000 +0800
++++ configure	2013-10-16 01:59:07.369433723 +0800
+@@ -3550,9 +3550,10 @@
        -I*)
          xc_bad_var_ldflags=yes
          ;;
@@ -22,7 +22,7 @@ Last-Update: 2010-12-19
      esac
    done
    if test $xc_bad_var_ldflags = yes; then
-@@ -3626,9 +3627,10 @@
+@@ -3622,9 +3623,10 @@
    xc_bad_var_cflags=no
    for xc_word in $CFLAGS; do
      case "$xc_word" in
@@ -36,7 +36,7 @@ Last-Update: 2010-12-19
        -U*)
          xc_bad_var_cflags=yes
          ;;
-@@ -16922,6 +16924,8 @@
+@@ -16892,6 +16894,8 @@
      tmp_CFLAGS="$CFLAGS"
      tmp_CPPFLAGS="$CPPFLAGS"
  
@@ -45,7 +45,7 @@ Last-Update: 2010-12-19
      ac_var_stripped=""
    for word1 in $tmp_CFLAGS; do
      ac_var_strip_word="no"
-@@ -16952,6 +16956,7 @@
+@@ -16922,6 +16926,7 @@
    done
      tmp_CPPFLAGS="$ac_var_stripped"
    squeeze tmp_CPPFLAGS
@@ -53,7 +53,7 @@ Last-Update: 2010-12-19
  
      #
      if test "$want_debug" = "yes"; then
-@@ -17169,6 +17174,8 @@
+@@ -17139,6 +17144,8 @@
      #
      if test "$honor_optimize_option" = "yes"; then
  
@@ -62,7 +62,7 @@ Last-Update: 2010-12-19
      ac_var_stripped=""
    for word1 in $tmp_CFLAGS; do
      ac_var_strip_word="no"
-@@ -17199,6 +17206,7 @@
+@@ -17169,6 +17176,7 @@
    done
      tmp_CPPFLAGS="$ac_var_stripped"
    squeeze tmp_CPPFLAGS
@@ -70,7 +70,7 @@ Last-Update: 2010-12-19
  
        if test "$want_optimize" = "yes"; then
          { $as_echo "$as_me:${as_lineno-$LINENO}: checking if compiler accepts optimizer enabling options" >&5
-@@ -21624,7 +21632,8 @@
+@@ -21336,7 +21344,8 @@
          PKGTEST="no"
      PREFIX_OPENSSL=$OPT_SSL
  
@@ -80,7 +80,7 @@ Last-Update: 2010-12-19
      { $as_echo "$as_me:${as_lineno-$LINENO}: PKG_CONFIG_LIBDIR will be set to \"$OPENSSL_PCDIR\"" >&5
  $as_echo "$as_me: PKG_CONFIG_LIBDIR will be set to \"$OPENSSL_PCDIR\"" >&6;}
      if test -f "$OPENSSL_PCDIR/openssl.pc"; then
-@@ -24972,29 +24981,30 @@
+@@ -24685,29 +24694,30 @@
      ;;
    off)
          LIB_RTMP="-lrtmp"
@@ -120,7 +120,7 @@ Last-Update: 2010-12-19
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -39194,9 +39204,10 @@
+@@ -39180,9 +39190,10 @@
        -I*)
          xc_bad_var_ldflags=yes
          ;;
@@ -134,7 +134,7 @@ Last-Update: 2010-12-19
      esac
    done
    if test $xc_bad_var_ldflags = yes; then
-@@ -39266,9 +39277,10 @@
+@@ -39252,9 +39263,10 @@
    xc_bad_var_cflags=no
    for xc_word in $CFLAGS; do
      case "$xc_word" in
