@@ -3,12 +3,11 @@
 
 PKGNAMESUFFIX=	-milter
 
-WITH_MILTER=	yes
+OPTIONS_SET+=	MILTER
 
 MASTERDIR=	${.CURDIR}/../clamav
-LATEST_LINK=	clamav-milter
+PKGNAMESUFFIX=	-milter
 
 CONFLICTS=	clamav-[0-9]* clamav-devel-[0-9]*
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
