@@ -9,7 +9,7 @@ CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	SF/beepmp/bmp/${PORTVERSION}
 DISTNAME=	bmp-${PORTVERSION}
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 multimedia player
 
 LIB_DEPENDS=	id3-3.8:${PORTSDIR}/audio/id3lib

@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.generalconcepts.com/resources/software/
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Better mail notification server
 
 RUN_DEPENDS=	xmsg:${PORTSDIR}/x11/xmsg

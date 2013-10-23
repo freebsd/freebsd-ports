@@ -8,7 +8,7 @@ CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CUPS backend for printing to Windows servers
 
 RUN_DEPENDS=	smbspool:${PORTSDIR}/net/${SAMBA_PORT} \

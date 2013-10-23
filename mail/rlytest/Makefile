@@ -7,7 +7,7 @@ CATEGORIES=	mail security
 MASTER_SITES=	http://www.unicom.com/files/
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Test remote system for unsecured mail relay
 
 EXTRACT_CMD=	${GZIP_CMD}

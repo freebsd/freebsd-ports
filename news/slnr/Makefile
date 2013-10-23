@@ -6,7 +6,7 @@ PORTVERSION=	2.3.0
 CATEGORIES=	news
 MASTER_SITES=	# disappeared
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simplistic reader for SOUP (HDPF) mail and news packets
 
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip

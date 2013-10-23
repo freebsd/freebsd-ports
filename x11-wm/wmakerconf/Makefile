@@ -1,6 +1,7 @@
 # Created by: Dominik Rothert <dr@domix.de>
 # $FreeBSD$
 #    $MCom: ports/x11-wm/wmakerconf/Makefile,v 1.2 2006/10/05 07:31:44 mezz Exp $
+
 PORTNAME=	wmakerconf
 PORTVERSION=	2.12
 PORTREVISION=	7
@@ -8,7 +9,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configuration tool for Window Maker
 
 LICENSE=	GPLv2

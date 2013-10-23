@@ -2,14 +2,15 @@
 
 CATEGORIES=	print
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 
 MASTERDIR?=	${.CURDIR}/../cups-base
  
 CUPS_CLIENT=	yes
 
-.if exists(${.CURDIR}/Makefile.local)
 NO_STAGE=	yes
+
+.if exists(${.CURDIR}/Makefile.local)
 .include "${.CURDIR}/Makefile.local"
 .endif
 

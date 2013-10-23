@@ -6,7 +6,7 @@ PORTVERSION=	1.0.2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/newmail/
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for checking for new mail in multiple mail boxes
 
 WRKSRC=		${WRKDIR}/newmail

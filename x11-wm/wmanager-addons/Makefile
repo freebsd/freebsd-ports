@@ -6,7 +6,7 @@ PORTVERSION=	0.02
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://devel.ringlet.net/x11/wmanager-addons/
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Helper scripts and documentation for the X11 window manager selector
 
 USES=		perl5

@@ -8,7 +8,7 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.tux.org/pub/tux/benchmarks/System/unixbench/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The BYTE magazine's Public Domain benchmark for UNIX
 
 SUB_FILES=	unixbench

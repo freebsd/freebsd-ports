@@ -6,7 +6,7 @@ PORTVERSION=	1.7.3
 CATEGORIES=	devel lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Infrastructure for C Program Analysis and Transformation
 
 LICENSE=	BSD
