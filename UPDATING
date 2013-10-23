@@ -14,6 +14,31 @@ you update your ports collection, before attempting any port upgrades.
 
   # pkg set -o lang/perl5.14:lang/perl5.16
 
+  If you're not using binary packages and want to (and should) switch, if
+  you're using perl-5.14, for instance :
+
+  Portupgrade users:
+    0) Fix pkgdb.db (for safety):
+	pkgdb -Ff
+
+    1) Reinstall new version of Perl (5.16):
+	portupgrade -o lang/perl5.16 -f perl-5.14.\*
+
+    2) Reinstall everything that depends on Perl:
+	portupgrade -fr perl
+
+  Portmaster users:
+	portmaster -o lang/perl5.16 lang/perl5.14
+
+	Conservative:
+	portmaster p5-
+
+	Comprehensive (but perhaps overkill):
+	portmaster -r perl-
+
+  Note: If the "perl-" glob matches more than one port you will need to specify
+        the name of the Perl directory in /var/db/pkg explicitly.
+
 20131020:
   AFFECTS: users of mail/squirrelmail
   AUTHOR: adamw@adamw.org
