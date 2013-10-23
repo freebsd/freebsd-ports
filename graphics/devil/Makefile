@@ -4,7 +4,7 @@
 PORTNAME=	devil
 PORTVERSION=	1.7.8
 PORTEPOCH=	1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	SF/openil/DevIL/${PORTVERSION}
 DISTNAME=	DevIL-${PORTVERSION}
@@ -17,7 +17,8 @@ USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtool
 ACLOCAL_ARGS=	-I m4 -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing --copy --force-missing
 CONFIGURE_ARGS=	--enable-ILU \
-		--disable-allegro --disable-directx8 --disable-directx9
+		--disable-allegro --disable-directx8 --disable-directx9 \
+		--without-libsquish
 USE_LDCONFIG=	yes
 USE_GCC=	any
 
@@ -28,8 +29,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	JPEG JASPER LCMS MNG PNG TIFF EXR X11 SDL SQUISH NVTT SIMD DOCS
-OPTIONS_DEFAULT=JPEG JASPER LCMS MNG PNG TIFF EXR X11 SDL SQUISH NVTT DOCS
+OPTIONS_DEFINE=	JPEG JASPER LCMS MNG PNG TIFF EXR X11 SDL NVTT SIMD DOCS
+OPTIONS_DEFAULT=JPEG JASPER LCMS MNG PNG TIFF EXR X11 SDL NVTT DOCS
 OPTIONS_DEFAULT_amd64=SIMD
 
 JPEG_DESC=	Enable JPEG support
@@ -59,8 +60,8 @@ TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
 TIFF_CONFIGURE_ENABLE=	tiff
 EXR_LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
 EXR_CONFIGURE_ENABLE=	exr
-SQUISH_BUILD_DEPENDS=	${LOCALBASE}/lib/libsquish.a:${PORTSDIR}/graphics/squish
-SQUISH_CONFIGURE_WITH=	libsquish
+#SQUISH_BUILD_DEPENDS=	${LOCALBASE}/lib/libsquish.a:${PORTSDIR}/graphics/squish
+#SQUISH_CONFIGURE_WITH=	libsquish
 NVTT_LIB_DEPENDS=	libnvtt.so:${PORTSDIR}/graphics/nvidia-texture-tools
 NVTT_CONFIGURE_WITH=	nvtt
 
