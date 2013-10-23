@@ -31,7 +31,7 @@ PORTDOCS=	NEWS README csprotocol.txt tech_report.tex
 # define options
 OPTIONS_DEFINE=		POPT_PORT ZLIB_BASE SSH ICONV
 OPTIONS_RADIO=		PTS
-OPTIONS_RADIO_PTS=	TIMELIMIT RENAMED FLAGS ATIMES ACL
+OPTIONS_RADIO_PTS=	TIMELIMIT RENAMED FLAGS RENFL ATIMES ACL
 
 # options provided upstream
 POPT_PORT_DESC=	Use popt from devel/popt instead of bundled one
@@ -45,6 +45,10 @@ RENAMED_DESC=	Add support for renamed file detection
 FLAGS_DESC=	File system flags support patch, adds --fileflags
 ATIMES_DESC=	Preserve access times, adds --atimes
 ACL_DESC=	Add backward-compatibility for the --acls option
+
+# The following unsupported patch has been provided by:
+# Dmitry Morozovsky <marck@rinet.ru>
+RENFL_DESC=	Renamed and flags options combined
 
 # define default options
 OPTIONS_DEFAULT=SSH ZLIB_BASE
@@ -65,7 +69,7 @@ PATCH_STRIP=	-p1
 EXTRA_PATCHES+=	${WRKSRC}/patches/atimes.diff
 .endif
 
-.if ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MFLAGS} || ${PORT_OPTIONS:MACL} || make(makesum) || ${PORT_OPTIONS:MTIMELIMIT} || ${PORT_OPTIONS:MATIMES} || ${PORT_OPTIONS:MRENAMED}
+.if ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MFLAGS} || ${PORT_OPTIONS:MACL} || make(makesum) || ${PORT_OPTIONS:MTIMELIMIT} || ${PORT_OPTIONS:MATIMES} || ${PORT_OPTIONS:MRENAMED} || ${PORT_OPTIONS:MRENFL} 
 DISTFILES+=	${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
 CFLAGS+=	-I${LOCALBASE}/include
 .endif
@@ -90,6 +94,15 @@ EXTRA_PATCHES+=	${WRKSRC}/patches/fileflags.diff \
 .if ${PORT_OPTIONS:MRENAMED}
 PATCH_STRIP=	-p1
 EXTRA_PATCHES+=	${WRKSRC}/patches/detect-renamed.diff
+.endif
+
+.if ${PORT_OPTIONS:MRENFL}
+PATCH_STRIP=	-p1
+EXTRA_PATCHES+=	\
+		${FILESDIR}/extrapatch-renamed-flags.diff \
+		${WRKSRC}/patches/fileflags.diff \
+		${FILESDIR}/extrapatch-main.c \
+		${WRKSRC}/patches/detect-renamed.diff
 .endif
 
 .if ${PORT_OPTIONS:MACL}
