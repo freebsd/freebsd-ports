@@ -3,6 +3,7 @@
 
 PORTNAME=	alsa-plugins
 PORTVERSION=	1.0.27
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ALSA/plugins \
 		GENTOO/distfiles
