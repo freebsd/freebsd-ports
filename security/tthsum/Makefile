@@ -15,15 +15,13 @@ LICENSE=	GPLv3
 CONFLICTS=	microdc2-[0-9]*
 
 USES=		gmake
-MANCOMPRESSED=	yes
 
-MAN1=		tthsum.1
-PLIST_FILES=	bin/tthsum
+PLIST_FILES=	bin/tthsum man/man1/tthsum.1.gz
 
+MAKE_ENV+=	STAGEDIR=${STAGEDIR}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} test runtest
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

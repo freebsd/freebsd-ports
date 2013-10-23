@@ -18,22 +18,21 @@ PORTDOCS=	README pkzip.ps.gz
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:
 .for f in pkcrack zipdecrypt
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 # these file names are too generic
 .for f in extract findkey makekey
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin/pk${f}
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin/pk${f}
 .endfor
 
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

@@ -12,10 +12,8 @@ COMMENT=	Small script which copies your ssh public-key to a remote host
 
 NO_BUILD=	yes
 
-MAN1=		ssh-copy-id.1
-PLIST_FILES=	bin/ssh-copy-id
+PLIST_FILES=	bin/ssh-copy-id man/man1/ssh-copy-id.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 1000024
@@ -28,7 +26,7 @@ pre-patch:
 .endfor
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKDIR}/${MAN1} ${MANPREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKDIR}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.post.mk>
