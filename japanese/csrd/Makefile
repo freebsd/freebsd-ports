@@ -32,8 +32,6 @@ PORTDOCS=	README csrd.doc
 
 SUB_FILES=	pkg-message
 
-.include <bsd.port.options.mk>
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/csrd ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${DATADIR}
