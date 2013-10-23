@@ -6,7 +6,6 @@ DISTVERSION=	71.86.15
 PORTREVISION=	3
 
 MASTERDIR=	${.CURDIR}/../nvidia-driver
-NO_LATEST_LINK=	yes
+PKGNAMESUFFIX=	-71
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
