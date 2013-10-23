@@ -1,4 +1,5 @@
 bin/newsstar
+man/man1/newsstar.1.gz
 libexec/newsstar/newsstar.bin
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
@@ -29,6 +30,11 @@ libexec/newsstar/newsstar.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsrc.sample
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/newsstar
-@dirrm etc/newsstar
 @dirrm libexec/newsstar
+@dirrmtry lib/newsstar
+@unexec if [ -d /var/spool/newsstar ] ; then echo "==================================================" ; echo "If you are deinstalling newsstar for good" ; echo "remove the spool: type: rm -rf /var/spool/newsstar"; echo "==================================================" ; fi
+@dirrmtry %%ETCDIR%%
+@cwd /
+@dirrmtry /var/spool/newsstar/lib
+@dirrmtry /var/spool/newsstar/incoming
+@dirrmtry /var/spool/newsstar

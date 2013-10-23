@@ -11,7 +11,7 @@ COMMENT=	Transfer news between a local NNTP server (INN, sn, s-news)
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
 BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto \
 		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 
@@ -22,6 +22,7 @@ OPTIONS_DEFINE=		SSL
 OPTIONS_DEFAULT=	SSL
 
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
+		--disable-chown \
 		--with-conf-dir=${PREFIX}/etc/newsstar \
 		--with-rc-dir=/var/spool/newsstar/lib \
 		--with-incoming-dir=/var/spool/newsstar/incoming
@@ -29,7 +30,6 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${ICONV_LIB}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MDOCS}
@@ -69,29 +69,26 @@ DOCS=		AUTHORS INSTALL NEWS README TODO docs/QuickStart docs/manual.txt \
 EX_CONFIGS=	cf.server.sample curses.cf.sample filter.pl.sample main.cf.sample \
 		master.ignore.sample master.score.sample newsrc.sample
 
-pre-install:
-	${MKDIR} ${PREFIX}/lib/${PORTNAME}
-
-post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-.for i in ${EX_CONFIGS}
-	${INSTALL_DATA} ${WRKSRC}/sample_config/${i} ${EXAMPLESDIR}
-.endfor
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
-.else
-	${MAKE} -C ${WRKSRC}/src install
-	${MAKE} -C ${WRKSRC}/docs install-man
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/sgml/docbook/dtd/xml|${LOCALBASE}/share/xml/docbook|' ${WRKSRC}/docs/manual.xml
 	@${REINPLACE_CMD} -e 's|/usr/share/sgml/docbook/dtd/xml|${LOCALBASE}/share/xml/docbook|' ${WRKSRC}/docs/news.xml
 	@${REINPLACE_CMD} -e 's|install-data-local: install-docs|install-data-local:|' ${WRKSRC}/Makefile.in
+
+post-install:
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+.for i in ${EX_CONFIGS}
+	${INSTALL_DATA} ${WRKSRC}/sample_config/${i} ${STAGEDIR}${EXAMPLESDIR}
+.endfor
+.endif
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
+.endfor
+.else
+	${MAKE} -C ${WRKSRC}/src install DESTDIR=${STAGEDIR}
+	${MAKE} -C ${WRKSRC}/docs install-man DESTDIR=${STAGEDIR}
+.endif
 
 .include <bsd.port.post.mk>
