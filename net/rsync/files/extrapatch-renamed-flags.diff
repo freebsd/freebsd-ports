@@ -1,0 +1,105 @@
+# $FreeBSD$
+
+--- a/patches/detect-renamed.diff	2013-09-29 07:02:08.000000000 +0400
++++ b/patches/detect-renamed.diff	2013-10-23 14:56:21.073464928 +0400
+@@ -42,15 +42,15 @@
+ diff --git a/compat.c b/compat.c
+ --- a/compat.c
+ +++ b/compat.c
+-@@ -43,6 +43,7 @@ extern int checksum_seed;
++@@ -39,6 +39,7 @@
++ extern int fuzzy_basis;
++ extern int read_batch;
++ extern int delay_updates;
+++extern int detect_renamed;
++ extern int checksum_seed;
+  extern int basis_dir_cnt;
+  extern int prune_empty_dirs;
+- extern int protocol_version;
+-+extern int detect_renamed;
+- extern int protect_args;
+- extern int preserve_uid;
+- extern int preserve_gid;
+-@@ -123,6 +124,7 @@ void set_allow_inc_recurse(void)
++@@ -125,6 +126,7 @@
+  		allow_inc_recurse = 0;
+  	else if (!am_sender
+  	 && (delete_before || delete_after
+@@ -61,15 +61,15 @@
+ diff --git a/delete.c b/delete.c
+ --- a/delete.c
+ +++ b/delete.c
+-@@ -25,6 +25,7 @@
++@@ -23,6 +23,7 @@
++ #include "rsync.h"
++ 
+  extern int am_root;
+++extern int detect_renamed;
+  extern int make_backups;
+  extern int max_delete;
+-+extern int detect_renamed;
+- extern char *backup_dir;
+- extern char *backup_suffix;
+- extern int backup_suffix_len;
+-@@ -44,6 +45,8 @@ static inline int is_backup_file(char *fn)
++ extern int force_change;
++@@ -45,6 +46,8 @@
+   * its contents, otherwise just checks for content.  Returns DR_SUCCESS or
+   * DR_NOT_EMPTY.  Note that fname must point to a MAXPATHLEN buffer!  (The
+   * buffer is used for recursion, but returned unchanged.)
+@@ -78,7 +78,7 @@
+   */
+  static enum delret delete_dir_contents(char *fname, uint16 flags)
+  {
+-@@ -63,7 +66,9 @@ static enum delret delete_dir_contents(char *fname, uint16 flags)
++@@ -64,7 +67,9 @@
+  	save_filters = push_local_filters(fname, dlen);
+  
+  	non_perishable_cnt = 0;
+@@ -88,7 +88,7 @@
+  	ret = non_perishable_cnt ? DR_NOT_EMPTY : DR_SUCCESS;
+  
+  	if (!dirlist->used)
+-@@ -103,7 +108,8 @@ static enum delret delete_dir_contents(char *fname, uint16 flags)
++@@ -108,7 +113,8 @@
+  		if (S_ISDIR(fp->mode)) {
+  			if (delete_dir_contents(fname, flags | DEL_RECURSE) != DR_SUCCESS)
+  				ret = DR_NOT_EMPTY;
+@@ -98,7 +98,7 @@
+  		if (delete_item(fname, fp->mode, flags) != DR_SUCCESS)
+  			ret = DR_NOT_EMPTY;
+  	}
+-@@ -126,6 +132,8 @@ static enum delret delete_dir_contents(char *fname, uint16 flags)
++@@ -131,6 +137,8 @@
+   *
+   * Note that fbuf must point to a MAXPATHLEN buffer if the mode indicates it's
+   * a directory! (The buffer is used for recursion, but returned unchanged.)
+@@ -775,7 +775,7 @@
+ diff -up a/proto.h b/proto.h
+ --- a/proto.h
+ +++ b/proto.h
+-@@ -101,6 +101,7 @@ int f_name_has_prefix(const struct file_
++@@ -101,6 +101,7 @@
+  char *f_name_buf(void);
+  char *f_name(const struct file_struct *f, char *fbuf);
+  struct file_list *get_dirlist(char *dirname, int dlen, int flags);
+@@ -783,16 +783,16 @@
+  int unchanged_attrs(const char *fname, struct file_struct *file, stat_x *sxp);
+  void itemize(const char *fnamecmp, struct file_struct *file, int ndx, int statret,
+  	     stat_x *sxp, int32 iflags, uchar fnamecmp_type,
+-@@ -353,7 +354,7 @@ void set_blocking(int fd);
++@@ -356,7 +357,7 @@
+  int fd_pair(int fd[2]);
+  void print_child_argv(const char *prefix, char **cmd);
+- int set_modtime(const char *fname, time_t modtime, uint32 mod_nsec, mode_t mode);
++ int set_modtime(const char *fname, time_t modtime, uint32 mod_nsec, mode_t mode, uint32 fileflags);
+ -int make_path(char *fname, int flags);
+ +int make_path(char *fname, mode_t mode, int flags);
+  int full_write(int desc, const char *ptr, size_t len);
+  int copy_file(const char *source, const char *dest, int ofd, mode_t mode);
+  int robust_unlink(const char *fname);
+-@@ -373,6 +374,8 @@ char *sanitize_path(char *dest, const ch
++@@ -376,6 +377,8 @@
+  		    int flags);
+  int change_dir(const char *dir, int set_path_only);
+  char *normalize_path(char *path, BOOL force_newbuf, unsigned int *len_ptr);
