@@ -20,7 +20,7 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/xclip bin/xclip-copyfile bin/xclip-cutfile bin/xclip-pastefile man/man1/xclip.1.gz man/man1/xclip-copyfile.1.gz
 
 pre-configure:
-	@cd ${WRKSRC}; ./bootstrap
+	cd ${WRKSRC}; ./bootstrap
 
 post-patch:
 	${REINPLACE_CMD} 's,mktemp,mktemp -t xclip,' \

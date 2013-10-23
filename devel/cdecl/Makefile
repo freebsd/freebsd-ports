@@ -24,7 +24,7 @@ CONFLICTS=	cutils-[0-9]*
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/testset* ${STAGEDIR}${DOCSDIR}
 .endif
 
