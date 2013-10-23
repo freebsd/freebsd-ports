@@ -17,7 +17,7 @@ _l=		${lang:C/=.*//g}
 ${_l:U}_DEFAULT=	${lang:C/.*=//g}
 .endfor
 
-PERL5_DEFAULT?=		5.14
+PERL5_DEFAULT?=		5.16
 RUBY_DEFAULT?=		1.9
 TCLTK_DEFAULT?=		8.6
 PYTHON_DEFAULT?=	2.7

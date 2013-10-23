@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20131023:
+  AFFECTS: users of lang/perl5.12 lang/perl5.14
+  AUTHOR: mat@FreeBSD.org
+
+  The default perl has been switched to lang/perl5.16. If you're using binary
+  packages, you need to do :
+
+  # pkg set -o lang/perl5.14:lang/perl5.16
+
 20131020:
   AFFECTS: users of mail/squirrelmail
   AUTHOR: adamw@adamw.org
