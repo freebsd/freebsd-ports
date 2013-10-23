@@ -3,11 +3,14 @@
 
 PORTNAME=	xmlto
 PORTVERSION=	0.0.25
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://fedorahosted.org/releases/x/m/xmlto/
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Front-end to an XSL toolchain
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${BASH_CMD}:${PORTSDIR}/shells/bash \
 		${GETOPT_CMD}:${PORTSDIR}/misc/getopt \
@@ -18,8 +21,6 @@ BUILD_DEPENDS=	${BASH_CMD}:${PORTSDIR}/shells/bash \
 		w3m:${PORTSDIR}/www/w3m \
 		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=		DBLATEX FOP PASSIVETEX
 DBLATEX_DESC=		Add dependency on Dblatex
@@ -36,10 +37,10 @@ GETOPT_CMD=	${LOCALBASE}/bin/getopt
 XSL_DIR=	${LOCALBASE}/share/xsl/docbook
 PDFXMLTEX_CMD=	${LOCALBASE}/bin/pdftex
 
-PORTDOCS=	AUTHORS COPYING ChangeLog NEWS THANKS
-# these two documentation files do not convey information useful for
-# the FreeBSD port at this time:
-# PORTDOCS+=	FAQ README
+PORTDOCS=	AUTHORS ChangeLog NEWS THANKS
+# these documentation files do not convey information useful for
+# the FreeBSD port at this time, or are provided by the ports framework:
+# PORTDOCS+=	COPYING FAQ README
 
 .include <bsd.port.pre.mk>
 
