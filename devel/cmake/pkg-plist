@@ -2,6 +2,16 @@ bin/ccmake
 bin/cmake
 bin/cpack
 bin/ctest
+man/man1/ccmake.1.gz
+man/man1/cmake.1.gz
+man/man1/cmakecommands.1.gz
+man/man1/cmakecompat.1.gz
+man/man1/cmakemodules.1.gz
+man/man1/cmakepolicies.1.gz
+man/man1/cmakeprops.1.gz
+man/man1/cmakevars.1.gz
+man/man1/cpack.1.gz
+man/man1/ctest.1.gz
 share/aclocal/cmake.m4
 %%DATADIR%%/completions/cmake
 %%DATADIR%%/completions/cpack
