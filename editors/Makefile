@@ -56,6 +56,7 @@
     SUBDIR += e3
     SUBDIR += e93
     SUBDIR += edith
+    SUBDIR += editorconfig-core-c
     SUBDIR += elvis
     SUBDIR += emacs
     SUBDIR += emacs-devel
