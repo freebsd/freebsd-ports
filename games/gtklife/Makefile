@@ -3,23 +3,21 @@
 
 PORTNAME=	gtklife
 PORTVERSION=	5.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://ironphoenix.org/tril/gtklife/
 
 MAINTAINER=	eadler@FreeBSD.org
-COMMENT=	GTK+ implementation of Conway's Game of Life
+COMMENT=	GTK+ implementation of Conways Game of Life
 
 LICENSE=	GPLv2
 
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
-USES=	gmake
+USES=		gmake
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}" docdir="${DOCSDIR}"
 
-PLIST=		${WRKDIR}/pkg-plist
-PLIST_FILES=	bin/gtklife
-PLIST_DIRS=	%%DATADIR%%
+PORTDATA=	*
 PORTDOCS=	*
 
 DATA_SUBDIRS=	graphics patterns
@@ -48,20 +46,6 @@ STARTUP_NOTIFY=	false
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG}|' ${WRKSRC}/Makefile
-
-pre-install:
-	@cd ${WRKSRC} && >${PLIST} && \
-	${FIND} ${DATA_SUBDIRS} ! -type d | ${SORT} \
-		| ${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
-	${FIND} ${DATA_SUBDIRS} -type d ! -empty | ${SORT} -r \
-		| ${SED} -e 's|^|@dirrm %%DATADIR%%/|' >> ${PLIST}
-.for s in ${ICON_SIZES}
-	@${ECHO_CMD} "share/icons/hicolor/${s}/apps/gtklife.png" >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry share/icons/hicolor/${s}/apps" >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry share/icons/hicolor/${s}" >> ${PLIST}
-.endfor
-	@${ECHO_CMD} "@dirrmtry share/icons/hicolor" >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry share/icons" >> ${PLIST}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gtklife ${STAGEDIR}${PREFIX}/bin
