@@ -4141,6 +4141,7 @@
     SUBDIR += rubygem-metaid
     SUBDIR += rubygem-method_source
     SUBDIR += rubygem-minitest
+    SUBDIR += rubygem-minitest4
     SUBDIR += rubygem-mirror
     SUBDIR += rubygem-mixlib-authentication
     SUBDIR += rubygem-mixlib-cli
