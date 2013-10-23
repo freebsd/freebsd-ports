@@ -1,0 +1,9 @@
+**********************************************************************
+If DOCS option is enabled then you can get more information from the
+following document (EUC-JP is used as file charset):
+
+%%DOCSDIR%%/csrd.doc
+
+[Example of %%PREFIX%%/etc/csrd.rc]
+-d /cdrom/data -f %%DATADIR%%/csrd.fmt -g %%DATADIR%%/csrd.gai
+**********************************************************************

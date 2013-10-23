@@ -3,21 +3,47 @@
 
 PORTNAME=	csrd
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/csrd/
 
-MAINTAINER=	ports@FreeBSD.org
+PATCH_SITES=	http://green.ribbon.to/~ikazuhiro/dic/files/
+PATCHFILES=	csrd.c.diff.gz
+
+MAINTAINER=	yasu@utahime.org
 COMMENT=	Utility for Shogakukan Random House English-Japanese Dictionary
 
+LICENSE=	PUBLIC_DOMAIN
+LICENSE_NAME=	Public Domain
+LICENSE_FILE=	${WRKSRC}/csrd.doc
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 MAKEFILE=	makefile.unx
+MAKE_ARGS=	CC="${CC}"
 ALL_TARGET=	csrd
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
+PLIST_DIRS=	%%DATADIR%%
+PLIST_FILES=	bin/csrd %%DATADIR%%/csrd.fmt %%DATADIR%%/csrd.gai \
+		%%DATADIR%%/quiet.fmt %%DATADIR%%/quiet.gai
+
+PORTDOCS=	README csrd.doc
+
+SUB_FILES=	pkg-message
+
+.include <bsd.port.options.mk>
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/csrd ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/csrd.fmt ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/csrd.gai ${PREFIX}/lib
-	${MKDIR} ${PREFIX}/share/doc/${PKGNAME}
-	${INSTALL_DATA} ${WRKSRC}/csrd.doc ${PREFIX}/share/doc/${PKGNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/csrd ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/csrd.fmt ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/csrd.gai ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/quiet.fmt ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/quiet.gai ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>

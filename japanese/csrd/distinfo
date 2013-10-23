@@ -1,2 +1,4 @@
 SHA256 (csrd-1.0.tar.gz) = 499c4f41e5f70e54e384972ba811ed9065402f440afb8328600dd1dd7335369a
 SIZE (csrd-1.0.tar.gz) = 44955
+SHA256 (csrd.c.diff.gz) = a3dfd3d6ad97ce3a2e5539d04c404f39ab9f5ecd275382e4e1fe92754a665250
+SIZE (csrd.c.diff.gz) = 277
