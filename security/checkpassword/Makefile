@@ -16,11 +16,9 @@ OPTIONS_DEFINE=	DOCS
 ALL_TARGET=	it
 INSTALL_TARGET=	setup
 
-
 PLIST_FILES=	bin/checkpassword
 PORTDOCS=	CHANGES FILES README SYSDEPS TARGETS TODO VERSION
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -29,13 +27,13 @@ post-patch:
 do-configure:
 	@${ECHO_CMD} '${CC} ${CFLAGS} -s -lcrypt' > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} '${CC} ${CFLAGS} -s -lcrypt' > ${WRKSRC}/conf-ld
-	@${ECHO_CMD} ${PREFIX} >${WRKSRC}/conf-home
+	@${ECHO_CMD} ${STAGEDIR}${PREFIX} >${WRKSRC}/conf-home
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
