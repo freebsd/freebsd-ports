@@ -1,3 +1,4 @@
+man/man1/xmp.1.gz
 @unexec if cmp -s %D/%%ETCDIR%%/xmp.conf %D/%%ETCDIR%%/xmp.conf.sample; then rm -f %D/%%ETCDIR%%/xmp.conf; fi
 %%ETCDIR%%/xmp.conf.sample
 @exec [ -f %B/xmp.conf ] || cp %B/%f %B/xmp.conf
