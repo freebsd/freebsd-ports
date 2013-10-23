@@ -1,8 +1,8 @@
- Created by: Roman Bogorodskiy <novel@FreeBSD.org>
+# Created by: William Grzybowski <wg@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gnutls
-PORTVERSION=	3.1.9.1
+PORTVERSION=	3.1.14
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.gnutls.org/gcrypt/gnutls/v3.1/
 PKGNAMESUFFIX=	${GNUTLS_SUFFIX}
@@ -12,10 +12,10 @@ COMMENT=	GNU Transport Layer Security library
 
 LIB_DEPENDS=	libgpg-error.so:${PORTSDIR}/security/libgpg-error \
 		libnettle.so:${PORTSDIR}/security/nettle \
-		libp11-kit.so:${PORTSDIR}/security/p11-kit
+		libp11-kit.so:${PORTSDIR}/security/p11-kit \
+		libidn.so:${PORTSDIR}/dns/libidn
 
 GNUTLS_SUFFIX=3
-WRKSRC=		${WRKDIR}/${PORTNAME}-3.1.9
 
 USES=		gmake iconv pkgconfig
 USE_AUTOTOOLS=	libtool
