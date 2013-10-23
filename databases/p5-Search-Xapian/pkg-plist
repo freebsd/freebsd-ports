@@ -50,6 +50,45 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Xapian/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Xapian/Xapian.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Xapian/Xapian.so
+%%PERL5_MAN3%%/Search::Xapian.3.gz
+%%PERL5_MAN3%%/Search::Xapian::AssertionError.3.gz
+%%PERL5_MAN3%%/Search::Xapian::BM25Weight.3.gz
+%%PERL5_MAN3%%/Search::Xapian::BoolWeight.3.gz
+%%PERL5_MAN3%%/Search::Xapian::Database.3.gz
+%%PERL5_MAN3%%/Search::Xapian::DatabaseCorruptError.3.gz
+%%PERL5_MAN3%%/Search::Xapian::DatabaseCreateError.3.gz
+%%PERL5_MAN3%%/Search::Xapian::DatabaseError.3.gz
+%%PERL5_MAN3%%/Search::Xapian::DatabaseLockError.3.gz
+%%PERL5_MAN3%%/Search::Xapian::DatabaseModifiedError.3.gz
+%%PERL5_MAN3%%/Search::Xapian::DatabaseOpeningError.3.gz
+%%PERL5_MAN3%%/Search::Xapian::DatabaseVersionError.3.gz
+%%PERL5_MAN3%%/Search::Xapian::DocNotFoundError.3.gz
+%%PERL5_MAN3%%/Search::Xapian::Document.3.gz
+%%PERL5_MAN3%%/Search::Xapian::Enquire.3.gz
+%%PERL5_MAN3%%/Search::Xapian::Error.3.gz
+%%PERL5_MAN3%%/Search::Xapian::FeatureUnavailableError.3.gz
+%%PERL5_MAN3%%/Search::Xapian::InternalError.3.gz
+%%PERL5_MAN3%%/Search::Xapian::InvalidArgumentError.3.gz
+%%PERL5_MAN3%%/Search::Xapian::InvalidOperationError.3.gz
+%%PERL5_MAN3%%/Search::Xapian::LogicError.3.gz
+%%PERL5_MAN3%%/Search::Xapian::MultiValueSorter.3.gz
+%%PERL5_MAN3%%/Search::Xapian::NetworkError.3.gz
+%%PERL5_MAN3%%/Search::Xapian::NetworkTimeoutError.3.gz
+%%PERL5_MAN3%%/Search::Xapian::PositionIterator.3.gz
+%%PERL5_MAN3%%/Search::Xapian::PostingIterator.3.gz
+%%PERL5_MAN3%%/Search::Xapian::QueryParser.3.gz
+%%PERL5_MAN3%%/Search::Xapian::QueryParserError.3.gz
+%%PERL5_MAN3%%/Search::Xapian::RangeError.3.gz
+%%PERL5_MAN3%%/Search::Xapian::RuntimeError.3.gz
+%%PERL5_MAN3%%/Search::Xapian::SerialisationError.3.gz
+%%PERL5_MAN3%%/Search::Xapian::Stem.3.gz
+%%PERL5_MAN3%%/Search::Xapian::TermGenerator.3.gz
+%%PERL5_MAN3%%/Search::Xapian::TermIterator.3.gz
+%%PERL5_MAN3%%/Search::Xapian::TradWeight.3.gz
+%%PERL5_MAN3%%/Search::Xapian::UnimplementedError.3.gz
+%%PERL5_MAN3%%/Search::Xapian::ValueIterator.3.gz
+%%PERL5_MAN3%%/Search::Xapian::Weight.3.gz
+%%PERL5_MAN3%%/Search::Xapian::WritableDatabase.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Xapian
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/MSet
