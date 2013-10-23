@@ -12,8 +12,8 @@ COMMENT=	CGI search application built on Xapian
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
-		xapian:${PORTSDIR}/databases/xapian-core
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libxapian.so:${PORTSDIR}/databases/xapian-core
 
 OPTIONS_DEFINE=	DOCS EXAMPLES ICONV
 OPTIONS_DEFAULT=ICONV
@@ -27,25 +27,21 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
-USES=		perl5
+USES=		perl5 shebangfix
 
-MAN1=		omindex.1 scriptindex.1
 MORE_PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 PORTDOCS=	cgiparams.html index.html omegascript.html overview.html \
 		quickstart.html scriptindex.html termprefixes.html \
 		${MORE_PORTDOCS}
 PORTEXAMPLES=	omega.conf
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+SHEBANG_FILES=	dbi2omega htdig2omega mbox2omega
 
-.if ${PORT_OPTIONS:MICONV}
-USES+=		iconv
-LDFLAGS+=	${ICONV_LIB}
-CONFIGURE_ARGS+=--with-iconv
-.else
-CONFIGURE_ARGS+=--without-iconv
-.endif
+ICONV_CONFIGURE_WITH=	iconv
+ICONV_LDFLAGS=		${ICONV_LIB}
+ICONV_USES=		iconv
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -58,12 +54,12 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${MORE_PORTDOCS} ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${MORE_PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}/
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>
