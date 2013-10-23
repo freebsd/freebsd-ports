@@ -1,5 +1,5 @@
---- ./xmlto.in.orig	2012-02-09 02:08:09.000000000 +0100
-+++ ./xmlto.in	2012-02-09 02:08:09.000000000 +0100
+--- ./xmlto.in.orig	2011-11-29 12:49:57.000000000 +0100
++++ ./xmlto.in	2013-10-07 23:52:57.000000000 +0200
 @@ -262,7 +262,7 @@
  
  # Process any options
@@ -9,3 +9,10 @@
  	-n xmlto -- x:m:o:p:v "$@")
  [ $? != 0 ] && { usage; exit 1; }
  eval set -- "$ARGS"
+@@ -611,4 +611,6 @@
+   # Extremely verbose
+   BASH="${BASH} -x"
+ fi
++make_temp -d temphome HOME || exit 1
++export HOME
+ ${BASH} "$FORMAT" post-process || exit 1
