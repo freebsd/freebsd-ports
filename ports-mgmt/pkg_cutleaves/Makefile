@@ -15,16 +15,13 @@ USES=		perl5
 
 WRKSRC=		${WRKDIR}
 
-MAN1=		pkg_cutleaves.1
-
-PLIST_FILES=	sbin/pkg_cutleaves
+PLIST_FILES=	sbin/pkg_cutleaves man/man1/pkg_cutleaves.1.gz
 
 .if defined(WITH_PKGNG)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-pkg_cutleaves \
 		${FILESDIR}/extra-patch-pkg_cutleaves.1
 .endif
 
-NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${FILESDIR}/pkg_cutleaves ${FILESDIR}/pkg_cutleaves.1 ${WRKSRC}
@@ -51,7 +48,7 @@ post-patch:
 .endif
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/pkg_cutleaves ${PREFIX}/sbin/pkg_cutleaves
-	${INSTALL_MAN} ${WRKSRC}/pkg_cutleaves.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/pkg_cutleaves ${STAGEDIR}${PREFIX}/sbin/pkg_cutleaves
+	${INSTALL_MAN} ${WRKSRC}/pkg_cutleaves.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
