@@ -1,0 +1,13 @@
+bin/gtklife
+share/icons/hicolor/16x16/apps/gtklife.png
+share/icons/hicolor/32x32/apps/gtklife.png
+share/icons/hicolor/48x48/apps/gtklife.png
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
