@@ -19,14 +19,12 @@ USES=		gmake
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		dvdbackup.1
 PORTDOCS=	NEWS README
 
 DEFAULT_DVD_DEVICE?=	/dev/cd0
 
 OPTIONS_DEFINE=	DOCS NLS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

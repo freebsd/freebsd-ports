@@ -12,8 +12,7 @@ COMMENT=	Command-line utility for wiping unallocated space on a filesystem
 
 LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt
 
-MAN1=		zeroer.1
-PLIST_FILES=	bin/zeroer
+PLIST_FILES=	bin/zeroer man/man1/zeroer.1.gz
 PORTDOCS=	README
 
 CFLAGS+=	-I${LOCALBASE}/include
@@ -21,7 +20,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lpopt
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-build:
@@ -29,12 +27,12 @@ do-build:
 		-o ${WRKSRC}/${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

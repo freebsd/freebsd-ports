@@ -1,4 +1,5 @@
 bin/dvdbackup
+man/man1/dvdbackup.1.gz
 %%NLS%%share/locale/da/LC_MESSAGES/dvdbackup.mo
 %%NLS%%share/locale/de/LC_MESSAGES/dvdbackup.mo
 %%NLS%%share/locale/en@boldquot/LC_MESSAGES/dvdbackup.mo
