@@ -8,6 +8,10 @@ lib/X11/app-defaults/UXTerm
 lib/X11/app-defaults/UXTerm-color
 lib/X11/app-defaults/XTerm
 lib/X11/app-defaults/XTerm-color
+man/man1/resize.1.gz
+man/man1/koi8rxterm.1.gz
+man/man1/uxterm.1.gz
+man/man1/xterm.1.gz
 share/applications/xterm.desktop
 share/pixmaps/filled-xterm_32x32.xpm
 share/pixmaps/filled-xterm_48x48.xpm
