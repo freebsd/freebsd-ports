@@ -19,8 +19,7 @@ SHEBANG_FILES=	${PORTNAME}.pl
 
 PLIST_FILES=	bin/plutil.pl
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

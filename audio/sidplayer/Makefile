@@ -15,7 +15,6 @@ COMMENT=	C64 SID tune player
 LICENSE=	GPLv2
 
 USE_SDL=	yes
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 
 SDLINCLUDEDIR=	SDL
@@ -29,10 +28,10 @@ post-patch:
 		${WRKSRC}/src/main_sdl.cpp
 
 do-install:
-	${INSTALL} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${CP} ${WRKSRC}/PSID\ Demo/* ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/PSID\ Demo/* ${STAGEDIR}${DOCSDIR}
 .endif
 
 post-install:

@@ -14,7 +14,6 @@ COMMENT=	Command-line player for .spc and .zst files
 
 ONLY_FOR_ARCHS=	i386	# contains x86 asm code
 USE_LDCONFIG=	yes
-NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GCC=	any
 
@@ -28,8 +27,8 @@ OPTIONS_DEFINE=	DOCS
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

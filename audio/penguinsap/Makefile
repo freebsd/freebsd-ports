@@ -10,7 +10,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line Atari(TM) .sap player
 
 USE_DOS2UNIX=	yes
-NO_STAGE=	yes
 
 SOURCES=	sapPokey pokey1 sapCpu sapEngine main pokey0
 
@@ -45,7 +44,7 @@ do-build:
 		-o ${WRKSRC}/sap
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sap ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/sap ${STAGEDIR}${PREFIX}/bin
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

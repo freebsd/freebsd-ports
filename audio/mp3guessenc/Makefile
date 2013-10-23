@@ -9,8 +9,6 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:C/\.0$//}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utility for guessing which encoder was used to encode an mp3 file
 
-NO_STAGE=	yes
-
 PLIST_FILES=	bin/mp3guessenc
 SRC=		decode.c mp3guessenc.c bit_utils.c tags.c
 
@@ -22,6 +20,6 @@ do-build:
 		-o ${WRKSRC}/${PORTNAME} ${LDFLAGS}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

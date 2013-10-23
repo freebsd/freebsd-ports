@@ -17,7 +17,6 @@ LICENSE=	GPLv2
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_SDL=	yes
-NO_STAGE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
@@ -29,7 +28,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 PORTSCOUT=	skipv:20100202,20101127,20101128,20110101,20120105
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/schismtracker ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/schismtracker ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 

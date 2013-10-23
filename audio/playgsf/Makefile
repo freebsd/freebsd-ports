@@ -14,7 +14,6 @@ COMMENT=	Command-line player for gsf audio files
 LIB_DEPENDS=	ao:${PORTSDIR}/audio/libao
 
 USES=		gmake
-NO_STAGE=	yes
 USE_DOS2UNIX=	yes
 GNU_CONFIGURE=	yes
 
@@ -49,7 +48,7 @@ post-configure:
 	@(cd ${WRKSRC}/libresample-0.1.3; ./configure ${CONFIGURE_ENV})
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 post-install:
 	${CAT} ${PKGMESSAGE}

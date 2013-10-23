@@ -12,7 +12,6 @@ COMMENT=	Translator that converts MP4-SA files into efficient C programs
 LICENSE=	BSD
 
 USES=		bison
-NO_STAGE=	yes
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	${PORTNAME}
@@ -25,6 +24,6 @@ post-patch:
 	@${REINPLACE_CMD} -E '/^(OPT|CC|DBUG)/d' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
