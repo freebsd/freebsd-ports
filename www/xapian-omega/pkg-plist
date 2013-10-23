@@ -3,6 +3,8 @@ bin/htdig2omega
 bin/mbox2omega
 bin/omindex
 bin/scriptindex
+man/man1/omindex.1.gz
+man/man1/scriptindex.1.gz
 share/omega/htdig2omega.script
 share/omega/mbox2omega.script
 %%WWWDIR%%/cgi-bin/omega
