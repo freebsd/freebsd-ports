@@ -1,0 +1,7 @@
+To enable %%PORTNAME%% as elasticsearch plugin, run:
+
+    %%PREFIX%%/bin/elasticsearch-plugin -url file:%%DATADIR%% -install reindex
+
+To disable (i.e. after upgrading):
+
+    %%PREFIX%%/bin/elasticsearch-plugin remove reindex
