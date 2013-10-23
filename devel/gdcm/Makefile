@@ -35,7 +35,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MVTK}
-LIB_DEPENDS+=	vtkHybrid.5:${PORTSDIR}/math/vtk5
+LIB_DEPENDS+=	libvtkHybrid.so.5:${PORTSDIR}/math/vtk5
 CMAKE_ARGS+=	-DGDCM_USE_VTK:BOOL=YES
 PLIST_SUB+=	VTK=""
 .else
@@ -44,7 +44,7 @@ PLIST_SUB+=	VTK="@comment "
 
 GDCM_MAJOR=	2
 GDCM_MINOR=	2
-GDCM_PATCH=	5
+GDCM_PATCH=	6
 
 PLIST_SUB+=	GDCM_MAJOR="${GDCM_MAJOR}" \
 		GDCM_MINOR="${GDCM_MINOR}" \
