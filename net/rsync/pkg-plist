@@ -1,5 +1,7 @@
 @comment $FreeBSD$
 bin/rsync
+man/man1/rsync.1.gz
+man/man5/rsyncd.conf.5.gz
 @unexec if cmp -s %D/etc/rsyncd.conf.sample %D/etc/rsyncd.conf; then rm -f %D/etc/rsyncd.conf; fi
 etc/rsyncd.conf.sample
 @exec [ -f %B/rsyncd.conf ] || cp %B/%f %B/rsyncd.conf

@@ -28,9 +28,6 @@ CONFIGURE_ARGS=	--disable-debug --enable-ipv6 \
 
 PORTDOCS=	NEWS README csprotocol.txt tech_report.tex
 
-MAN1=		rsync.1
-MAN5=		rsyncd.conf.5
-
 # define options
 OPTIONS_DEFINE=		POPT_PORT ZLIB_BASE SSH ICONV
 OPTIONS_RADIO=		PTS
@@ -52,7 +49,6 @@ ACL_DESC=	Add backward-compatibility for the --acls option
 # define default options
 OPTIONS_DEFAULT=SSH ZLIB_BASE
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MZLIB_BASE}
@@ -128,14 +124,11 @@ pre-configure:
 		${WRKSRC}/rsync.h ${WRKSRC}/zlib/zutil.h
 
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/rsync
-	@${INSTALL_DATA} ${FILESDIR}/rsyncd.conf.sample ${PREFIX}/etc/
-	@[ -f ${PREFIX}/etc/rsyncd.conf ] || \
-		${CP} ${PREFIX}/etc/rsyncd.conf.sample \
-		${PREFIX}/etc/rsyncd.conf
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rsync
+	@${INSTALL_DATA} ${FILESDIR}/rsyncd.conf.sample ${STAGEDIR}${PREFIX}/etc/
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 .endif
 
 test: build
