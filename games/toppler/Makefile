@@ -3,43 +3,23 @@
 
 PORTNAME=	toppler
 PORTVERSION=	1.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Climb a tower and avoid monsters
 
-USE_SDL=	mixer sdl
-USES=		gettext
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share
+LICENSE=	GPLv2
 
-MAN6=		${PORTNAME}.6
+USE_SDL=	mixer sdl
+USES=		gettext gmake
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--localstatedir=/var/games
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	DOCS
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|DATA install-dist_pkgdocDATA|DATA|g' ${WRKSRC}/Makefile.in
-
-post-install:
-	@${CHMOD} 2755 ${PREFIX}/bin/${PORTNAME}
-	@${CHOWN} root:games ${PREFIX}/bin/${PORTNAME}
-	@${CHMOD} 0664 ${DATADIR}/${PORTNAME}.hsc
-	@${CHOWN} root:games ${DATADIR}/${PORTNAME}.hsc
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS ChangeLog NEWS README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
 
 .include <bsd.port.mk>
