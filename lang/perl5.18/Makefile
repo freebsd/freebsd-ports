@@ -94,7 +94,7 @@ PKGNAMESUFFIX=	${PERL_VERSION:C/\.[0-9]+\.[0-9]+$//}
 # make PKGNAME unique among other lang/perl5.x
 PKGNAMESUFFIX=	${PERL_VER}
 # always add default perl5 pkgname to conflicts
-CONFLICTS+=	perl5-*
+CONFLICTS_INSTALL+=	perl5-*
 .endif
 
 .if defined(PERL_VENDOR_PREFIX)
