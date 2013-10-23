@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	screenFetch
-PORTVERSION=	3.1.0
+PORTVERSION=	3.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/jgh/sysutils/${PORTNAME:L}/ \
 		GH
@@ -20,22 +20,22 @@ OPTIONS_DEFINE=	DOCS
 NO_BUILD=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	KittyKatt
-GH_TAGNAME=	56f2151
+GH_TAGNAME=	be0e27d
 GH_COMMIT=	${GH_TAGNAME}
 
-PLIST_FILES=	bin/screenFetch
+PLIST_FILES=	bin/screenFetch bin/screenfetch
 PORTDOCS=	CHANGELOG README.mkdn TODO
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME:L}-dev ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME:L}-dev ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${LN} -fs ${PORTNAME} ${STAGEDIR}${PREFIX}/bin/screenfetch
 
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
