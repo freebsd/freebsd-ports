@@ -1868,6 +1868,7 @@
     SUBDIR += snarf
     SUBDIR += snownews
     SUBDIR += spawn-fcgi
+    SUBDIR += spdylay
     SUBDIR += speedtest-mini
     SUBDIR += spreadlogd
     SUBDIR += sqstat
