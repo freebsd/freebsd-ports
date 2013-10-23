@@ -3,6 +3,7 @@
 
 PORTNAME=	lzo2
 PORTVERSION=	2.06
+PORTREVISION=	1
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/ \
 		LOCAL/mandree
@@ -13,7 +14,6 @@ COMMENT=	Portable speedy, lossless data compression library
 
 LICENSE=	GPLv2
 
-NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --docdir=${DOCSDIR}
@@ -33,17 +33,18 @@ post-build:
 .endif
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblzo2.so.2
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${REINPLACE_CMD} -e 's,doc/,,' NEWS README
 .for i in AUTHORS BUGS COPYING NEWS README THANKS
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
-	${INSTALL_DATA}	${WRKSRC}/doc/* ${DOCSDIR}/
+	${INSTALL_DATA}	${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}/
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA}	${WRKSRC}/examples/[a-z]*.[ch] ${EXAMPLESDIR}/
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA}	${WRKSRC}/examples/[a-z]*.[ch] ${STAGEDIR}${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>
