@@ -61,6 +61,7 @@ lib/libkst2math.so.%%SHLIB_VER%%
 lib/libkst2widgets.so
 lib/libkst2widgets.so.2
 lib/libkst2widgets.so.%%SHLIB_VER%%
+man/man1/kst2.1.gz
 share/applications/kst2.desktop
 share/icons/hicolor/128x128/apps/application-x-kst.png
 share/icons/hicolor/128x128/apps/kst.png

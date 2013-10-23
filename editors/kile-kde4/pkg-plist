@@ -1605,7 +1605,6 @@ share/locale/x-test/LC_MESSAGES/kile.mo
 share/locale/zh_CN/LC_MESSAGES/kile.mo
 share/locale/zh_TW/LC_MESSAGES/kile.mo
 share/mime/packages/kile.xml
-share/mime/text/x-kilepr.xml
 @dirrmtry share/locale/x-test/LC_MESSAGES
 @dirrmtry share/locale/x-test
 @dirrm share/doc/kile

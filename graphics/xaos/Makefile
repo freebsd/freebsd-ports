@@ -10,11 +10,11 @@ MASTER_SITES=	SF/${PORTNAME}/XaoS/${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Real-time fractal browser
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
+USES=		gmake
 USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 
 OPTIONS_DEFINE=	GTK2 PTHREAD NLS
 GTK2_DESC=	GTK+ User Interface (experimental)
@@ -26,14 +26,12 @@ CONFIGURE_ARGS=	--with-aa-driver=no --with-dga-driver=no \
 		--with-ggi-driver=no --with-svga-driver=no \
 		--with-sffe=no
 
-MAN6=		xaos.6
 INFO=		xaos
 
 PLIST_SUB+=	XAOSDIR="share/XaoS"
 
 DESKTOP_ENTRIES=	"XaoS" "${COMMENT}" "" "xaos" "" false
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPTHREAD}

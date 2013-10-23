@@ -11,15 +11,13 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	OpenGL based space-ship "shoot-em-up" game
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
+USES=		gmake
 USE_SDL=	sdl mixer
 USE_GL=		glut
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME}
-
-MAN6=		glaxium.6
 
 USE_DOS2UNIX=	variables.cpp scene.cpp
 
@@ -30,7 +28,6 @@ DESKTOP_ENTRIES=	"Glaxium" \
 			"Game;ArcadeGame;" \
 			false
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g; \
 		 s|/games/glaxium|/glaxium|g' ${WRKSRC}/configure
@@ -40,5 +37,8 @@ post-patch:
 		${WRKSRC}/scratcher.hpp
 	@${REINPLACE_CMD} -e 's|TankFire::TankFire|TankFire|g' \
 		${WRKSRC}/tank.hpp
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

@@ -14,5 +14,4 @@ PORT_OPTIONS+=	NCURSES
 
 MASTERDIR=	${.CURDIR}/../pinentry
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

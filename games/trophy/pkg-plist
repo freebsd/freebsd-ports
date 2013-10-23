@@ -1,4 +1,5 @@
 bin/trophy
+man/man6/trophy.6.gz
 share/applications/trophy.desktop
 share/pixmaps/trophy.png
 %%DATADIR%%/cars/dust.tga

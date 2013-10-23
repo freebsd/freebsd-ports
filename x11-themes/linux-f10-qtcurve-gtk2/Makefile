@@ -16,5 +16,4 @@ USE_LINUX_APPS=	gtk2
 LINUX_DIST_VER=	10
 RPMVERSION=	1.fc10
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

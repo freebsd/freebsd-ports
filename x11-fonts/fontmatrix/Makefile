@@ -8,25 +8,17 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.fontmatrix.net/archives/
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	A graphical font manager
+COMMENT=	Graphical font manager
 
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
+USES=		cmake
 USE_QT4=	gui svg network moc_build uic_build rcc_build qmake_build linguist_build
 INSTALLS_ICONS=	yes
 
-USES=		cmake
-
 OPTIONS_DEFINE=	FONTFORGE
-OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
-FONTFORGE_DESC=	With FontForge editor
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MFONTFORGE}
-RUN_DEPENDS+=	${LOCALBASE}/bin/fontforge:${PORTSDIR}/print/fontforge
-.endif
+FONTFORGE_DESC=	Install FontForge editor
+FONTFORGE_RUN_DEPENDS=	${LOCALBASE}/bin/fontforge:${PORTSDIR}/print/fontforge
 
 post-patch:
 	cd ${WRKSRC}/src && \

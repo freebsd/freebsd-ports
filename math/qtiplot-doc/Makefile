@@ -19,14 +19,13 @@ USE_BZIP2=	yes
 DATADIR=	${PREFIX}/share/qtiplot/manual
 WRKSRC=		${WRKDIR}/${DISTNAME}/manual
 
-NO_STAGE=	yes
 post-patch:
 	cd ${WRKSRC} && ${REINPLACE_CMD} -e "s:/usr/local:${LOCALBASE}:g" \
 		docbook-en/index.docbook qtiplot.dsl qtiplot_html.xsl Makefile
 
 do-install:
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 	${RM} -rf ${WRKSRC}/html/pics-it
-	cd ${WRKSRC}/html && ${COPYTREE_SHARE} \* ${DATADIR}
+	cd ${WRKSRC}/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

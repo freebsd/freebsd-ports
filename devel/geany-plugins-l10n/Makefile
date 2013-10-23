@@ -9,6 +9,5 @@ COMMENT=	Localization messages for Geany plugins
 
 USES=		pathfix
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../geany-plugins/files/Makefile.common"
 .include <bsd.port.mk>

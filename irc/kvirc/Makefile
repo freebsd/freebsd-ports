@@ -32,9 +32,6 @@ CMAKE_ARGS=	-DWANT_ESD=no -DWANT_DOXYGEN=no \
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
-MAN1=		kvirc.1
-MANLANG=	"" de fr it pt uk
-
 OPTIONS_DEFINE=	AUDIOFILE GSM PERL PYTHON DEBUG
 
 AUDIOFILE_DESC=	Support for various audio formats
@@ -50,7 +47,6 @@ WEBKIT_DESC=	Build with QtWebkit support
 
 PLIST_SUB+=	VER="${PORTVERSION:R}"
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(PKGNAMESUFFIX)
@@ -77,13 +73,13 @@ CMAKE_ARGS+=	-DWITH_DEBUG=yes -DVERBOSE=yes
 
 #audio support
 .if ${PORT_OPTIONS:MAUDIOFILE}
-LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
+LIB_DEPENDS+=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
 .else
 CMAKE_ARGS+=	-DWITHOUT_AUDIOFILE=yes
 .endif
 
 .if ${PORT_OPTIONS:MGSM}
-LIB_DEPENDS+=	gsm.1:${PORTSDIR}/audio/gsm
+LIB_DEPENDS+=	libgsm.so:${PORTSDIR}/audio/gsm
 .else
 CMAKE_ARGS+=	-DWANT_GSM=no
 .endif

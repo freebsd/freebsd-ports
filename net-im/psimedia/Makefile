@@ -9,7 +9,7 @@ MASTER_SITES=	http://delta.affinix.com/download/psimedia/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Voice and video API for Psi-like IM clients
 
-LIB_DEPENDS=	oil-0.3:${PORTSDIR}/devel/liboil
+LIB_DEPENDS=	liboil-0.3.so:${PORTSDIR}/devel/liboil
 
 USES=		pkgconfig
 USE_BZIP2=	yes
@@ -21,6 +21,7 @@ QT_NONSTANDARD=	yes
 CONFIGURE_ARGS=	--qtdir=${LOCALBASE} \
 		--verbose
 MAKE_JOBS_UNSAFE=	yes
+DESTDIRNAME=	INSTALL_ROOT
 
 PSI_PLUGIN_DIR=	lib/psi/plugins
 
@@ -32,7 +33,6 @@ CONFIGURE_ARGS+=	--debug
 PLIST_SUB+=	DEBUG=""
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
 		${WRKSRC}/gstprovider/rwcontrol.h \
@@ -41,12 +41,12 @@ post-patch:
 		${WRKSRC}/gstprovider/gstcustomelements/gstcustomelements.h	
 
 do-install:
-	${MKDIR} ${PREFIX}/${PSI_PLUGIN_DIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${PSI_PLUGIN_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/gstprovider/libgstprovider.so \
-		${PREFIX}/${PSI_PLUGIN_DIR}
+		${STAGEDIR}${PREFIX}/${PSI_PLUGIN_DIR}
 .if defined(WITH_DEBUG)
 	${INSTALL_DATA} ${WRKSRC}/gstprovider/libgstprovider.so.debug \
-		${PREFIX}/${PSI_PLUGIN_DIR}
+		${STAGEDIR}${PREFIX}/${PSI_PLUGIN_DIR}
 .endif
 
 .include <bsd.port.mk>

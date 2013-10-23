@@ -17,5 +17,4 @@ USE_WX=		2.8+
 DESKTOP_ENTRIES=	"Golly" "${COMMENT}" "${PREFIX}/share/pixmaps/golly.xpm" \
 			"${PREFIX}/bin/golly" "Education;" "true"
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

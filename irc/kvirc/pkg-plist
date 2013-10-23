@@ -74,6 +74,12 @@ lib/kvirc/%%VER%%/modules/libkviwindow.so
 lib/libkvilib.so
 lib/libkvilib.so.4
 lib/libkvilib.so.4.2.0
+man/man1/kvirc.1.gz
+man/de/man1/kvirc.1.gz
+man/fr/man1/kvirc.1.gz
+man/it/man1/kvirc.1.gz
+man/pt/man1/kvirc.1.gz
+man/uk/man1/kvirc.1.gz
 share/applications/kvirc.desktop
 %%KDE%%share/apps/kvirc/kvirc.notifyrc
 share/icons/hicolor/128x128/apps/kvirc.png

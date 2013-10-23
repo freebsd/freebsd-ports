@@ -21,6 +21,4 @@ OPTIONS_DEFINE=	OKULAR
 OKULAR_DESC=	Use Okular for viewing
 OKULAR_USE=	KDE4=okular_run
 
-NO_STAGE=	yes
-
 .include <bsd.port.mk>

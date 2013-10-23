@@ -19,7 +19,6 @@ CMAKE_SOURCE_PATH=	${WRKSRC}/kdeplasma
 
 QSTARDICT_PLUGIN_PATH=	${LOCALBASE}/lib/qstardict/plugins
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/lib/qstardict/plugins|${QSTARDICT_PLUGIN_PATH}|g' \
 		${WRKSRC}/kdeplasma/dataengine/config.h.cmake

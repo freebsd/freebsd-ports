@@ -27,7 +27,6 @@ OPTIONS_DEFAULT=	HELP
 HELP_DESC=	Build help files (requires scilab with gui support)
 SIVP_DESC=	Enable Image and Video support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSIVP}
@@ -61,15 +60,15 @@ do-build:
 		${SETENV} ${MAKE_ENV} ${SCILAB_CMD} ${SCILAB_ARGS} -f builder.sce
 
 do-install:
-	${MKDIR} ${TOOLBOXDIR}/sci_gateway/c
-	${INSTALL_DATA} ${WRKSRC}/loader.sce ${TOOLBOXDIR}
+	${MKDIR} ${STAGEDIR}${TOOLBOXDIR}/sci_gateway/c
+	${INSTALL_DATA} ${WRKSRC}/loader.sce ${STAGEDIR}${TOOLBOXDIR}
 	${INSTALL_DATA} ${WRKSRC}/sci_gateway/loader_gateway.sce \
-		${TOOLBOXDIR}/sci_gateway
+		${STAGEDIR}${TOOLBOXDIR}/sci_gateway
 	cd ${WRKSRC}/sci_gateway/c && \
-	${INSTALL_DATA} loader.sce ${TOOLBOXDIR}/sci_gateway/c && \
-	${INSTALL_PROGRAM} libswt_c.so ${TOOLBOXDIR}/sci_gateway/c
+	${INSTALL_DATA} loader.sce ${STAGEDIR}${TOOLBOXDIR}/sci_gateway/c && \
+	${INSTALL_PROGRAM} libswt_c.so ${STAGEDIR}${TOOLBOXDIR}/sci_gateway/c
 .for d in ${TOOLBOX_SUBDIRS}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${TOOLBOXDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${TOOLBOXDIR}
 .endfor
 
 .include <bsd.port.mk>

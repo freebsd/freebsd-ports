@@ -7,12 +7,12 @@ CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.org/downloads/${DISTVERSION:C,^1,4,:C,-.*,,}/
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	Torrent library split from KTorrent
+COMMENT=	Torrent library from KTorrent project
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/concept_check.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt \
-		gmp:${PORTSDIR}/math/gmp \
-		qca:${PORTSDIR}/devel/qca
+LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+		libgmp.so:${PORTSDIR}/math/gmp \
+		libqca.so:${PORTSDIR}/devel/qca
 
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4
@@ -24,5 +24,4 @@ SHLIB_VER=	5.0.1
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER} \
 		SHLIB_SHVER=${SHLIB_VER:R:R}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

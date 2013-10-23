@@ -12,5 +12,4 @@ COMMENT=	Python bindings for BioLCCC
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

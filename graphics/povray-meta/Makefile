@@ -26,7 +26,7 @@ OPTIONS_SINGLE=	DEFAULT
 OPTIONS_DEFAULT=	POVRAY${DEFAULT_VER} DEFAULT${DEFAULT_VER}
 
 .for ver in ${POV_VERSIONS_ALL}
-POVRAY${ver}_BIN=	${LOCALBASE}/bin/povray${ver}
+POVRAY${ver}_BIN=	povray${ver}
 POVRAY${ver}_PORT=	graphics/povray${ver}
 
 OPTIONS_MULTI_POVRAY+=	POVRAY${ver}
@@ -36,7 +36,6 @@ POVRAY${ver}_DESC=	Install graphics/povray${ver}
 DEFAULT${ver}_DESC=	Create link bin/povray -> bin/povray${ver}
 .endfor
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .for ver in ${POV_VERSIONS_ALL}
@@ -45,11 +44,11 @@ PORT_OPTIONS+=	POVRAY${ver}
 POV_VERSION=	${ver}
 . endif
 . if ${PORT_OPTIONS:MPOVRAY${ver}}
-RUN_DEPENDS+=	${POVRAY${ver}_BIN}:${PORTSDIR}/${POVRAY${ver}_PORT}
+RUN_DEPENDS+=	${LOCALBASE}/bin/${POVRAY${ver}_BIN}:${PORTSDIR}/${POVRAY${ver}_PORT}
 . endif
 .endfor
 
 do-install:
-	${LN} -s ${POVRAY${POV_VERSION}_BIN} ${PREFIX}/bin/povray
+	${LN} -s ${POVRAY${POV_VERSION}_BIN} ${STAGEDIR}${PREFIX}/bin/povray
 
 .include <bsd.port.mk>

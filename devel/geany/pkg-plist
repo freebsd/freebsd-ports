@@ -45,6 +45,7 @@ lib/geany/saveactions.so
 lib/geany/splitwindow.la
 lib/geany/splitwindow.so
 libdata/pkgconfig/geany.pc
+man/man1/geany.1.gz
 share/applications/geany.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING

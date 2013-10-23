@@ -11,9 +11,9 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	BitTorrent client for KDE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/bind.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
-		gmp:${PORTSDIR}/math/gmp \
-		ktorrent.5:${PORTSDIR}/net-p2p/libktorrent
+LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
+		libgmp.so:${PORTSDIR}/math/gmp \
+		libktorrent.so:${PORTSDIR}/net-p2p/libktorrent
 
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4 pimlibs workspace
@@ -30,7 +30,6 @@ PLIST_SUB+=	SHLIB_VER=${SHLIB_VER} \
 
 CMAKE_ARGS+=	-DENABLE_KIO_MAGNET=1
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,ktorrent,$${LIBKTORRENT_LIBRARIES},' \
 		${WRKSRC}/plugins/ipfilter/tests/CMakeLists.txt

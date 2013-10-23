@@ -16,6 +16,7 @@ lib/libctpl.la
 lib/libctpl.so
 lib/libctpl.so.4
 libdata/pkgconfig/ctpl.pc
+man/man1/ctpl.1.gz
 share/gtk-doc/html/ctpl/annotation-glossary.html
 share/gtk-doc/html/ctpl/api-index-deprecated.html
 share/gtk-doc/html/ctpl/api-index-full.html

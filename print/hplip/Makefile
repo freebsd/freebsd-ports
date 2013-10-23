@@ -9,11 +9,11 @@ MASTER_SITES=	SF
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Drivers and utilities for HP Printers and All-in-One devices
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		cupsdriver.1:${PORTSDIR}/print/cups-base \
-		cups.2:${PORTSDIR}/print/cups-client \
-		cupsimage.2:${PORTSDIR}/print/cups-image \
-		dbus-1.3:${PORTSDIR}/devel/dbus
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libcupsdriver.so:${PORTSDIR}/print/cups-base \
+		libcups.so:${PORTSDIR}/print/cups-client \
+		libcupsimage.so:${PORTSDIR}/print/cups-image \
+		libdbus-1.so:${PORTSDIR}/devel/dbus
 RUN_DEPENDS=	espgs:${PORTSDIR}/print/cups-pstoraster \
 		foomatic-rip:${PORTSDIR}/print/foomatic-filters \
 		${PYTHON_SITELIBDIR}/dbus/_dbus.py:${PORTSDIR}/devel/py-dbus \
@@ -81,7 +81,6 @@ SNMP_DESC=	Network/JetDirect support
 SCAN_DESC=	Scanning support
 XSANE_DESC=	Install XSane for scanning (requires SCAN)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USB_INCLUDE=	/usr/include
@@ -109,7 +108,7 @@ PLIST_SUB+=	FAX="@comment "
 
 .if ${PORT_OPTIONS:MSNMP}
 USE_OPENSSL=	yes
-LIB_DEPENDS+=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--enable-network-build
 . if ${ARCH} == i386
 # http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/144833
@@ -123,7 +122,7 @@ CONFIGURE_ARGS+=	--disable-network-build
 . if ${PORT_OPTIONS:MXSANE}
 RUN_DEPENDS+=	xsane:${PORTSDIR}/graphics/xsane
 . endif
-LIB_DEPENDS+=	sane.1:${PORTSDIR}/graphics/sane-backends
+LIB_DEPENDS+=	libsane.so:${PORTSDIR}/graphics/sane-backends
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging
 CONFIGURE_ARGS+=	--enable-scan-build
 PLIST_SUB+=	SCAN=""
@@ -177,14 +176,10 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MQT}
-	${INSTALL_DATA} ${WRKSRC}/hplip-systray.desktop ${PREFIX}/etc/xdg/autostart/hplip-systray.desktop
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/xdg/autostart
+	${INSTALL_DATA} ${WRKSRC}/hplip-systray.desktop ${STAGEDIR}${PREFIX}/etc/xdg/autostart/hplip-systray.desktop
 .endif
-	${MKDIR} ${PREFIX}/etc/hp
-	${INSTALL_DATA} ${WRKSRC}/hplip.conf ${PREFIX}/etc/hp/hplip.conf.sample
-	if [ ! -f ${PREFIX}/etc/hp/hplip.conf ]; then \
-		${INSTALL_DATA} ${PREFIX}/etc/hp/hplip.conf.sample \
-			${PREFIX}/etc/hp/hplip.conf; \
-	fi
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/hp
+	${INSTALL_DATA} ${WRKSRC}/hplip.conf ${STAGEDIR}${PREFIX}/etc/hp/hplip.conf.sample
 
 .include <bsd.port.mk>

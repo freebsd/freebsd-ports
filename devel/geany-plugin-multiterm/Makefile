@@ -10,6 +10,5 @@ COMMENT=	Geany plugin: ${${GEANY_PLUGIN}_DESC}
 BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 USE_GNOME=	vte
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../geany-plugins/files/Makefile.common"
 .include <bsd.port.mk>

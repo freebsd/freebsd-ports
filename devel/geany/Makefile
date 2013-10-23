@@ -14,9 +14,8 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gtk20
-USES=		pathfix pkgconfig
+USES=		gmake pathfix pkgconfig
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -24,9 +23,6 @@ OPTIONS_DEFINE=	VTE NLS DOCS
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 VTE_DESC=	Embedded virtual terminal
 
-MAN1=		geany.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

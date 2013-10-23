@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 OPTIONS_DEFINE=	BONOBO
 BONOBO_DESC=	Better support for Bonobo (GNOME) framework
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBONOBO}

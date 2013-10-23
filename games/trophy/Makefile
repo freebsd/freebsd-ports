@@ -12,7 +12,7 @@ COMMENT=	Single player racing game
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	clanCore:${PORTSDIR}/devel/clanlib1
+LIB_DEPENDS=	libclanCore.so:${PORTSDIR}/devel/clanlib1
 
 USES=		pkgconfig
 
@@ -21,13 +21,10 @@ CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 
-MAN6=	trophy.6
-
 PORTDOCS=	AUTHORS COPYING ChangeLog README TODO
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-configure:
@@ -36,8 +33,8 @@ pre-configure:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR} && \
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR} && \
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

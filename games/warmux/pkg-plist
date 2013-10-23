@@ -2,6 +2,7 @@ bin/warmux
 %%SERVER%%bin/warmux-index-server
 bin/warmux-list-games
 %%SERVER%%bin/warmux-server
+man/man6/warmux.6.gz
 share/applications/warmux.desktop
 %%NLS%%share/locale/bg/LC_MESSAGES/warmux.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/warmux.mo
