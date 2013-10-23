@@ -3,7 +3,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -183,7 +183,7 @@ post-patch:
 		> ${WRKDIR}/perl-man.conf
 	${CP} ${WRKDIR}/use.perl ${PKGINSTALL}
 	${CP} ${WRKDIR}/use.perl ${PKGDEINSTALL}
-	${SED} -i '' -e 's|%%PERL_PKGNAME%%|${PKGNAME}|g; s|%%PERL_VER%%|%{PERL_VER}|g;' \
+	${SED} -i '' -e 's|%%PERL_PKGNAME%%|${PKGNAME}|g; s|%%PERL_VER%%|${PERL_VER}|g;' \
 		-e 's!%%BSDPAN_VERSION%%!${BSDPAN_VERSION}!g;' \
 		${BSDPAN_WRKSRC}/ExtUtils/*.pm
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
