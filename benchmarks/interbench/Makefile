@@ -22,9 +22,6 @@ PORTDOCS=	readme readme.interactivity
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-patch:
 # Do not confuse the reader that this program is Linux-specific
 	@${REINPLACE_CMD} -e '/kernel/!s,Linux,Unix-like systems, ; \
@@ -36,11 +33,9 @@ pre-build:
 	${MAKE} -C ${BUILD_WRKSRC} clean
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN8} ${MANPREFIX}/man/man8
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${MAN8} ${STAGEDIR}${MANPREFIX}/man/man8
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
