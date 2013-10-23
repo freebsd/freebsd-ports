@@ -116,7 +116,6 @@ share/ocio/setup_ocio.sh
 %%PORTDOCS%%%%DOCSDIR%%/userguide/tool_overview.html
 @dirrm include/OpenColorIO
 @dirrm include/PyOpenColorIO
-@dirrmtry libdata/pkgconfig
 @dirrm share/ocio
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/userguide
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/developers/bindings
@@ -132,3 +131,5 @@ share/ocio/setup_ocio.sh
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/_images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%
