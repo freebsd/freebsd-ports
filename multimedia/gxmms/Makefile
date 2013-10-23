@@ -7,7 +7,7 @@ CATEGORIES=	multimedia gnome
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple GNOME panel applet for controlling XMMS
 
 USE_GNOME=	gnomehack gnomepanel gnomeprefix intlhack libgnomeui

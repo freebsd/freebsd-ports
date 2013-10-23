@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.fusionpbx.com/downloads/ \
 		${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP5 Graphical User Interface for FreeSwitch
 
 LICENSE=	MPL

@@ -8,7 +8,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 window manager selector
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk

@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	ftp
 MASTER_SITES=	SF/purify/Default/${PORTVERSION}
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Management utility for the PureFTPd
 
 USES=		pkgconfig gettext

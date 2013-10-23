@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.c
 EXTRACT_ONLY=
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lists/Extracts files from a "*.tgz" or "*.gz" archive
 
 NO_STAGE=	yes

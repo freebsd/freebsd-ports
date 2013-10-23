@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	benchmarks databases
 MASTER_SITES=	SF
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular, cross-platform, and multi-threaded benchmark tool
 
 LICENSE=	GPLv2
