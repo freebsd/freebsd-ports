@@ -19,19 +19,9 @@ SSE2_DESC=	Use SSE2 for floating point
 PORTSCOUT=	limitw:1,even
 
 GNU_CONFIGURE=	yes
+MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 USE_LDCONFIG=	yes
 
-MAN1=		xapian-check.1 \
-		xapian-chert-update.1 \
-		xapian-compact.1 \
-		xapian-config.1 \
-		xapian-inspect.1 \
-		xapian-progsrv.1 \
-		xapian-replicate.1 \
-		xapian-replicate-server.1 \
-		xapian-tcpsrv.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !${PORT_OPTIONS:MSSE2}
@@ -45,7 +35,7 @@ post-patch:
 
 post-install:
 .for file in copydatabase delve quest
-	${INSTALL_PROGRAM} ${WRKSRC}/examples/.libs/${file} ${PREFIX}/bin/xapian-${file}
+	${INSTALL_PROGRAM} ${WRKSRC}/examples/.libs/${file} ${STAGEDIR}${PREFIX}/bin/xapian-${file}
 .endfor
 
 .include <bsd.port.mk>

@@ -414,6 +414,15 @@ share/aclocal/xapian.m4
 %%PORTDOCS%%%%DOCSDIR%%/termgenerator.html
 %%PORTDOCS%%%%DOCSDIR%%/tests.html
 %%PORTDOCS%%%%DOCSDIR%%/valueranges.html
+man/man1/xapian-check.1.gz
+man/man1/xapian-chert-update.1.gz
+man/man1/xapian-compact.1.gz
+man/man1/xapian-config.1.gz
+man/man1/xapian-inspect.1.gz
+man/man1/xapian-progsrv.1.gz
+man/man1/xapian-replicate.1.gz
+man/man1/xapian-replicate-server.1.gz
+man/man1/xapian-tcpsrv.1.gz
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/apidoc/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/apidoc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
