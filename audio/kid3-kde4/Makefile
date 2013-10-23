@@ -12,7 +12,6 @@ COMMENT=	MP3/Ogg/FLAC tag editor for KDE
 LICENSE=	GPLv2
 
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
-NO_STAGE=	yes
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 USES=		cmake gettext
 
