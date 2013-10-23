@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/Tiki_11.x_Vega/${PORTVERSION}/
 DISTNAME=	tiki-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Powerful PHP based Wiki/CMS/Groupware
 
 LICENSE=	LGPL20
