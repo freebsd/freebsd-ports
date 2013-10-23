@@ -1,0 +1,3 @@
+@comment $FreeBSD$
+%%DATADIR%%/%%PORTNAME%%-%%PORTVERSION%%.zip
+@dirrmtry %%DATADIR%%
