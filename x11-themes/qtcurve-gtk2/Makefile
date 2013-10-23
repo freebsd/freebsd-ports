@@ -16,20 +16,4 @@ USE_BZIP2=	yes
 USES=		cmake pkgconfig
 USE_GNOME=	gtk20
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800067
-.if ${ARCH} == "amd64"
-CFLAGS+=	-fPIC
-.endif
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-style-qt_settings.c
-.endif
-
-post-extract:
-.if ${OSVERSION} < 800067
-	${CP} ${FILESDIR}/getline.h ${WRKSRC}/style
-	${CP} ${FILESDIR}/getline.c ${WRKSRC}/style
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
