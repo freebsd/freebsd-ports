@@ -44,8 +44,6 @@ WITH_OPENSSL_PORT=	yes
 .if ${PORT_OPTIONS:MSHRPX}
 LIB_DEPENDS+=	libevent_openssl.so:${PORTSDIR}/devel/libevent2
 CONFIGURE_ARGS+=--enable-examples
-CONFIGURE_ENV+=	LIBEVENT_OPENSSL_CFLAGS="-I${LOCALBASE}" \
-		LIBEVENT_OPENSSL_LIBS="-L${LOCALBASE}/lib/event2 -levent_openssl"
 .endif
 
 post-build:
