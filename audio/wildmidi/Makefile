@@ -1,4 +1,3 @@
-# Created by: SimaMoto,RyoTa <liangtai.s4@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	wildmidi
@@ -7,8 +6,8 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
-MAINTAINER=	liangtai.s4@gmail.com
-COMMENT=	A simple software midi player and a core softsynth library
+MAINTAINER=	liangtai.s16@gmail.com
+COMMENT=	Simple software midi player and core softsynth library
 
 # player: GPLv3, library: LGPL3
 LICENSE=	GPLv3 LGPL3
@@ -16,31 +15,25 @@ LICENSE_COMB=	multi
 
 MAKE_JOBS_UNSAFE=	yes
 
-UDES=		gmake
-NO_STAGE=	yes
+USES=		compiler gmake
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-MAN1=		wildmidi.1
-MAN3=		WildMidi_GetString.3 WildMidi_Init.3 WildMidi_MasterVolume.3 \
-		WildMidi_Open.3 WildMidi_OpenBuffer.3 WildMidi_GetOutput.3 \
-		WildMidi_SetOption.3 WildMidi_GetInfo.3 WildMidi_FastSeek.3 \
-		WildMidi_Close.3 WildMidi_Shutdown.3
-MAN5=		wildmidi.cfg.5
-PLIST_FILES=	bin/wildmidi include/wildmidi_lib.h \
-		lib/libWildMidi.la lib/libWildMidi.so.2 lib/libWildMidi.so
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang
+CONFIGURE_ARGS+=	--disable-optimize
+.endif
 
 post-patch:
-		${REINPLACE_CMD} 's@/etc/@${DATADIR}/@' \
+		@${REINPLACE_CMD} -e 's@/etc/@${DATADIR}/@' \
 			${WRKSRC}/docs/wildmidi.1 \
 			${WRKSRC}/docs/wildmidi.cfg.5
-		${REINPLACE_CMD} -e 's@/usr/local/share/wildmidi/@${DATADIR}/@' \
+		@${REINPLACE_CMD} -e 's@/usr/local/share/wildmidi/@${DATADIR}/@' \
 			-e 's@default_timifityconf@default_wildmidiconf@' \
-			-e 's@-fexpensive-optimizations@@g' \
-			-e 's@-finline-limit=32000@@g' \
-			-e 's@-frename-registers@@g' \
+			-e 's@$${\(.*\)-unset} = unset@x"$${\1}" = x@' \
 			${WRKSRC}/configure
-		${REINPLACE_CMD} -e '/WM_MixerOptions/s/ \&\& / \& /' \
+		@${REINPLACE_CMD} -e '/WM_MixerOptions/s/ \&\& / \& /' \
 			${WRKSRC}/src/wildmidi_lib.c
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
