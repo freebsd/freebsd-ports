@@ -40,7 +40,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '/build\/man\/bpython/d; /data\/bpython.desktop/d' ${WRKSRC}/${PYSETUP}
 
 post-install:
-	${MKDIR} ${DESKTOPDIR}/
 	${INSTALL_MAN} ${WRKSRC}/build/man/bpython.1 ${MANPREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/build/man/bpython-config.5 ${MANPREFIX}/man/man5/
 	${INSTALL_DATA} ${WRKSRC}/data/bpython.desktop ${DESKTOPDIR}/
