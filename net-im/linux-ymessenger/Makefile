@@ -10,7 +10,7 @@ DISTNAME=	rh9.${PORTNAME}-${PORTVERSION:C/\.([^\.]+)$/-\1/}.i386
 DISTFILES=	${DISTNAME}.rpm ymessenger.bin
 EXTRACT_ONLY=	${DISTNAME}.rpm
 
-MAINTAINER=	sethk@meowfishies.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An RPM of Yahoo! Messenger instant messaging client
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
@@ -26,7 +26,6 @@ ONLY_FOR_ARCHS=	i386 amd64
 SHARE_FILES=	yahoo_gnome.png yahoo_kde.xpm ymessenger.desktop\
 		ymessenger.kdelnk
 
-NO_STAGE=	yes
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
@@ -44,17 +43,17 @@ post-patch:
 	    ${WRKDIR}/linux-ymessenger.sh
 
 do-install:
-	@${MKDIR} ${PREFIX}/libexec/linux-ymessenger
-	@set -x; for share in ${SHARE_FILES}; do\
-	    ${INSTALL_DATA} ${WRKDIR}/opt/ymessenger/bin/$$share\
-	    ${PREFIX}/libexec/linux-ymessenger;\
-	done
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/linux-ymessenger
+.for f in ${SHARE_FILES}
+	${INSTALL_DATA} ${WRKDIR}/opt/ymessenger/bin/${f}\
+	    ${STAGEDIR}${PREFIX}/libexec/linux-ymessenger
+.endfor
 	${INSTALL_PROGRAM} ${WRKDIR}/opt/ymessenger/bin/ymessenger.bin\
-	    ${PREFIX}/libexec/linux-ymessenger
+	    ${STAGEDIR}${PREFIX}/libexec/linux-ymessenger
 	${INSTALL_SCRIPT} ${WRKDIR}/linux-ymessenger.sh\
-	    ${PREFIX}/bin/linux-ymessenger
-	@${MKDIR} ${PREFIX}/lib/linux-ymessenger
+	    ${STAGEDIR}${PREFIX}/bin/linux-ymessenger
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/linux-ymessenger
 	${INSTALL_DATA} ${WRKDIR}/opt/ymessenger/lib/libgtkhtml.so.0\
-	    ${PREFIX}/lib/linux-ymessenger
+	    ${STAGEDIR}${PREFIX}/lib/linux-ymessenger
 
 .include <bsd.port.mk>
