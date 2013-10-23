@@ -15,19 +15,17 @@ USE_RC_SUBR=	minissdpd
 
 CFLAGS+=	-D_GNU_SOURCE
 
-MAN8=		minissdpd.8
-PLIST_FILES=	sbin/minissdpd
+PLIST_FILES=	sbin/minissdpd man/man8/minissdpd.8.gz
 
-NO_STAGE=	yes
 post-extract:
-	@${MV} ${WRKSRC}/${PORTNAME}.1 ${WRKSRC}/${MAN8}
+	@${MV} ${WRKSRC}/${PORTNAME}.1 ${WRKSRC}/${PORTNAME}.8
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^\(\.TH.*\)1|\18|' ${WRKSRC}/${MAN8}
+	@${REINPLACE_CMD} -e 's|^\(\.TH.*\)1|\18|' ${WRKSRC}/${PORTNAME}.8
 	@${REINPLACE_CMD} -E '/^(CC|CFLAGS)/d' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/${MAN8} ${MANPREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>

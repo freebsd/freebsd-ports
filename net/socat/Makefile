@@ -20,13 +20,11 @@ USE_OPENSSL=	yes
 
 PORTSCOUT=	skipv:2.0.0-b2
 
-MAN1=		socat.1
-PLIST_FILES=	bin/filan bin/procan bin/socat
+PLIST_FILES=	bin/filan bin/procan bin/socat man/man1/socat.1.gz
 PORTDOCS=	EXAMPLES README SECURITY FAQ
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(WITH_OPENSSL_PORT)
@@ -42,12 +40,12 @@ CFLAGS+=	-Wno-unused-comparison
 
 do-install:
 .for f in filan procan socat
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .if ${ARCH} == "arm"
