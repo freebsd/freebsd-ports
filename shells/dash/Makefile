@@ -16,7 +16,7 @@ USES=		gmake
 PLIST_FILES=	bin/dash man/man1/dash.1.gz
 
 post-patch:
-	@${REINPLACE_CMD} -e '/COMMON_CFLAGS =/ s|$$| ${CFLAGS}|' \
+	${REINPLACE_CMD} -e '/COMMON_CFLAGS =/ s|$$| ${CFLAGS}|' \
 		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
