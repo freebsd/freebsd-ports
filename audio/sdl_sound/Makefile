@@ -13,7 +13,6 @@ MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A SDL audio library and player for some popular sound file formats
 
 USE_AUTOTOOLS=	libtool
-NO_STAGE=	yes
 USE_LDCONFIG=	yes
 USE_SDL=	sdl
 CPPFLAGS+=	-I${LOCALBASE}/include

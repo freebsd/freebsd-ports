@@ -18,5 +18,4 @@ MAN3=		Uniq.3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

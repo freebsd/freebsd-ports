@@ -22,5 +22,4 @@ USE_PERL5=	configure
 MAN3=		WWW::Scripter::Location.3 WWW::Scripter.3 \
 		WWW::Scripter::History.3 WWW::Scripter::WindowGroup.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

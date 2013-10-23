@@ -17,5 +17,4 @@ MANCOMPRESSED=	no
 MAN1=		bestfit.1
 PLIST_FILES=	bin/bestfit
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

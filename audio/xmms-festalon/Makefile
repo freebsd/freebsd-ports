@@ -11,7 +11,6 @@ BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USE_GNOME=	glib12
-NO_STAGE=	yes
 CONFIGURE_ARGS+=	--enable-interface=interface
 
 DESCR=		${.CURDIR}/pkg-descr

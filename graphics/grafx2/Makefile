@@ -24,7 +24,6 @@ OPTIONS_DEFINE=	TTF LUA
 TTF_DESC=	True Type font support
 OPTIONS_DEFAULT=TTF
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTTF}

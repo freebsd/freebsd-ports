@@ -16,5 +16,4 @@ GNU_CONFIGURE=	yes
 MAN1=		drgbuilder.1 drg2sbg.1
 PLIST_FILES=	bin/drg2sbg bin/drgbuilder
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

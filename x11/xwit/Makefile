@@ -20,5 +20,4 @@ PLIST_FILES=	bin/xwit
 
 EXTRA_PATCHES=	${WRKDIR}/${PORTNAME}-patchset-${PORTVERSION}/patch-*
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
