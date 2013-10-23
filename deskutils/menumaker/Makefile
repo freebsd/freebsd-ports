@@ -15,5 +15,4 @@ GNU_CONFIGURE=	yes
 
 INFO=		mmaker
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
