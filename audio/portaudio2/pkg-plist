@@ -40,6 +40,7 @@
 %%PATEST%%bin/patest_two_rates-2
 %%PATEST%%bin/patest_underflow-2
 %%PATEST%%bin/patest_wire-2
+%%JACK%%include/portaudio2/pa_jack.h
 include/portaudio2/portaudio.h
 lib/portaudio2/libportaudio.a
 lib/portaudio2/libportaudio.la
