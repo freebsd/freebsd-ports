@@ -1,0 +1,13 @@
+--- mgmt/utils/Makefile.am.orig	2013-08-30 06:02:17.979883250 +0800
++++ mgmt/utils/Makefile.am	2013-08-30 06:02:36.918052210 +0800
+@@ -40,8 +40,8 @@
+ 
+ libutils_lm_a_CPPFLAGS = $(ink_with_modules_local) $(AM_CPPFLAGS)
+ libutils_lm_a_SOURCES = \
+-  $(top_srcdir)/lib/ts/MatcherUtils.cc \
+-  $(top_srcdir)/proxy/DiagsConfig.cc \
++  ../../lib/ts/MatcherUtils.cc \
++  ../../proxy/DiagsConfig.cc \
+   EnvBlock.cc \
+   EnvBlock.h \
+   ExpandingArray.cc \

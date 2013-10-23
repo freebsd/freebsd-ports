@@ -1,13 +1,30 @@
---- configure.ac.orig	2012-03-17 18:02:10.000000000 -0700
-+++ configure.ac	2012-05-03 16:16:05.000000000 -0700
-@@ -458,2 +458,6 @@
+--- configure.ac.orig	2013-07-03 04:17:28.000000000 +0800
++++ configure.ac	2013-08-30 05:23:44.089882723 +0800
+@@ -40,7 +40,7 @@
+ AC_CONFIG_AUX_DIR([build/aux])
+ AC_CONFIG_SRCDIR([proxy/Main.cc])
+ AC_CONFIG_MACRO_DIR([build])
+-AM_INIT_AUTOMAKE([-Wall -Werror foreign no-installinfo no-installman 1.9.2])
++AM_INIT_AUTOMAKE([-Wall -Werror foreign no-installinfo no-installman 1.9.2 subdir-objects])
+ AM_CONFIG_HEADER([lib/ts/ink_autoconf.h])
+ 
+ # Configure with --disable-silent-rules to get verbose output. For more info, see
+@@ -497,6 +497,10 @@
+       [AM_PROG_AR])
+ 
  
 +# required by automake-1.12
 +m4_pattern_allow([AM_PROG_AR])
 +AM_PROG_AR
 +
  AC_PROG_CPP
-@@ -467,3 +471,2 @@
+ AC_PROG_CXXCPP
+ AM_PROG_AS
+@@ -506,7 +510,6 @@
+ AC_PROG_LIBTOOL
+ AC_CHECK_PROG(RM, rm, rm)
  AC_CHECK_PROG(ASCPP, cpp, cpp)
 -AC_CHECK_TOOL(AR, ar, ar)
  AC_ISC_POSIX
+ AS_IF([test "x$enable_wccp" = "xyes"],
+   [

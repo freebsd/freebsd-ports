@@ -52,6 +52,7 @@ libexec/trafficserver/regex_remap.la
 libexec/trafficserver/regex_remap.so
 libexec/trafficserver/stats_over_http.la
 libexec/trafficserver/stats_over_http.so
+man/man1/traffic_shell.1.gz
 %%ETCDIR%%/ae_ua.config.default
 %%ETCDIR%%/body_factory/default/.body_factory_info
 %%ETCDIR%%/body_factory/default/README
