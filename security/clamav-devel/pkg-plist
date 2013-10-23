@@ -21,17 +21,24 @@ lib/libclamav.so.7
 %%UNRAR%%lib/libclamunrar_iface.so
 %%UNRAR%%lib/libclamunrar_iface.so.7
 libdata/pkgconfig/libclamav.pc
-@unexec if cmp -s %D/etc/clamd.conf %D/etc/clamd.conf.default; then rm -f %D/etc/clamd.conf; fi
-etc/clamd.conf.default
+man/man1/clambc.1.gz
+man/man1/clamconf.1.gz
+man/man1/clamdscan.1.gz
+man/man1/clamdtop.1.gz
+man/man1/clamscan.1.gz
+man/man1/freshclam.1.gz
+man/man1/sigtool.1.gz
+man/man5/clamav-milter.conf.5.gz
+man/man5/clamd.conf.5.gz
+man/man5/freshclam.conf.5.gz
+man/man8/clamav-milter.8.gz
+man/man8/clamd.8.gz
+@unexec if cmp -s %D/etc/clamd.conf %D/etc/clamd.conf.sample; then rm -f %D/etc/clamd.conf; fi
+etc/clamd.conf.sample
 @exec [ -f %B/clamd.conf ] || cp %B/%f %B/clamd.conf
-@unexec if cmp -s %D/etc/freshclam.conf %D/etc/freshclam.conf.default; then rm -f %D/etc/freshclam.conf; fi
-etc/freshclam.conf.default
-%%MILTER%%@unexec if cmp -s %D/etc/clamav-milter.conf %D/etc/clamav-milter.conf.default; then rm -f %D/etc/clamav-milter.conf; fi
-%%MILTER%%etc/clamav-milter.conf.default
+@unexec if cmp -s %D/etc/freshclam.conf %D/etc/freshclam.conf.sample; then rm -f %D/etc/freshclam.conf; fi
+etc/freshclam.conf.sample
 @exec [ -f %B/freshclam.conf ] || cp %B/%f %B/freshclam.conf
-@unexec [ -s %%DBDIR%%/daily.cvd ] || rm -f %%DBDIR%%/daily.cvd || true
-@unexec [ -s %%DBDIR%%/main.cvd ] || rm -f %%DBDIR%%/main.cvd || true
-@cwd /
-@dirrmtry %%DBDIR%%
-@dirrmtry %%LOGDIR%%
-@dirrmtry %%RUNDIR%%
+%%MILTER%%@unexec if cmp -s %D/etc/clamav-milter.conf %D/etc/clamav-milter.conf.sample; then rm -f %D/etc/clamav-milter.conf; fi
+%%MILTER%%etc/clamav-milter.conf.sample
+%%MILTER%%@exec [ -f %B/clamav-milter.conf ] || cp %B/%f %B/clamav-milter.conf
