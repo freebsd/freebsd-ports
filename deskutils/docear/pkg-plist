@@ -3,8 +3,6 @@ bin/docear
 share/applications/docear.desktop
 share/docear/docear-icon48x48.png
 @dirrm share/docear
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || :
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 share/java/docear/core/org.freeplane.core/lib/commons-io-2.4.jar
 share/java/docear/core/org.freeplane.core/lib/commons-lang-2.0.jar
 share/java/docear/core/org.freeplane.core/lib/flamingo-6.3-javadoc.jar
@@ -104,7 +102,6 @@ share/java/docear/docear.sh
 share/java/docear/docearConsole.exe
 share/java/docear/framework.jar
 share/java/docear/freeplanelauncher.jar
-share/java/docear/gitinfo.txt
 share/java/docear/init.xargs
 share/java/docear/license.txt
 share/java/docear/plugins/org.docear.plugin.bibtex/lib/JabRef-2.7.1.jar
@@ -195,7 +192,6 @@ share/java/docear/plugins/org.freeplane.plugin.svg/META-INF/MANIFEST.MF
 share/java/docear/plugins/org.freeplane.plugin.workspace/lib/plugin.jar
 share/java/docear/plugins/org.freeplane.plugin.workspace/META-INF/MANIFEST.MF
 share/java/docear/props.xargs
-share/java/docear/resources/gitinfo.properties
 share/java/docear/resources/ortho/dictionary_de.ortho
 share/java/docear/resources/ortho/dictionary_en.ortho
 share/java/docear/resources/ortho/dictionary_fr.ortho
@@ -225,7 +221,8 @@ share/java/docear/scripts/apiGenerator.groovy
 share/java/docear/scripts/freeplane.dsld
 share/java/docear/scripts/installScriptAddOn.groovy
 share/mime/packages/docear.xml
-share/mime/text/x-docear.xml
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || :
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @dirrm share/java/docear/scripts
 @dirrm share/java/docear/resources/xslt
 @dirrm share/java/docear/resources/templates
@@ -281,5 +278,3 @@ share/mime/text/x-docear.xml
 @dirrm share/java/docear/core/org.freeplane.core
 @dirrm share/java/docear/core
 @dirrm share/java/docear
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || :
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

@@ -2,34 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	docear
-PORTVERSION=	1.0.0.r4
+PORTVERSION=	1.0.0
+_suffix=	_stable
 CATEGORIES=	deskutils java
-MASTER_SITES=	http://downloads.docear.org/${PORTVERSION:S/.r/_rc/}/ \
+MASTER_SITES=	http://downloads.docear.org/${PORTVERSION}${_suffix}/ \
+		SF/docear/1.x/${PORTVERSION}${_suffix} \
 		LOCAL/mandree/${DIST_SUBDIR}/
-#		SF/docear/1.x/${PORTVERSION:S/.b/_beta/}
 DISTNAME=	docear_linux
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}${_suffix}
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Mind Mapping tool with Reference, Library, and PDF Management
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
-RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
-
+USES=		desktop-file-utils shared-mime-info
 USE_JAVA=	yes
-USE_GNOME=	desktopfileutils
 JAVA_VENDOR=	openjdk
 JAVA_VERSION=	1.6
 NO_BUILD=	yes
 JDATADIR=	${JAVASHAREDIR}/${PORTNAME}
 icon=		${DATADIR}/${PORTNAME}-icon48x48.png
 
-WRKSRC=		${WRKDIR}/docear-1.0.0.15_rc_build213
+WRKSRC=		${WRKDIR}/docear-1.0.0.15_stable_build214
 SUB_FILES=	docear.desktop
 
-NO_STAGE=	yes
 post-patch:
 		${REINPLACE_CMD} -e 's/readlink -mn/readlink -n/g' \
 		    -e 's,#!/bin/bash,#!/bin/sh,' \
@@ -42,22 +39,18 @@ do-install:
 # We can't install into $DOCSDIR or support disabling a DOCS option
 # since the documentation is an integral part of the installation,
 # such as online help via the program menus.
-		${MKDIR} ${JDATADIR}
-		(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${JDATADIR})
+		${MKDIR} ${STAGEDIR}${JDATADIR}
+		(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${JDATADIR})
 		${PRINTF} '#!/bin/sh\nset -eu\nexport JAVA_HOME="%s"\ncd "%s"\nexec "%s" "$$@"\n' \
 		    '${JAVA_HOME}' '${JDATADIR}' '${JDATADIR}/docear.sh' \
-		    >${PREFIX}/bin/${PORTNAME}
-		${CHMOD} a=rx ${JDATADIR}/docear.sh \
-		    ${PREFIX}/bin/${PORTNAME}
-		${MKDIR} ${DATADIR}
-		${INSTALL_DATA} ${FILESDIR}/docear48.png "${icon}"
-		${MKDIR} ${DESKTOPDIR}
-		${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.desktop ${DESKTOPDIR}
-		${MKDIR} ${PREFIX}/share/mime/packages
-		${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.xml ${PREFIX}/share/mime/packages/
-
-post-install:
-	        -update-desktop-database > /dev/null
-	        -update-mime-database ${PREFIX}/share/mime > /dev/null
+		    >${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+		${CHMOD} a=rx ${STAGEDIR}${JDATADIR}/docear.sh \
+		    ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+		${MKDIR} ${STAGEDIR}${DATADIR}
+		${INSTALL_DATA} ${FILESDIR}/docear48.png "${STAGEDIR}${icon}"
+		${MKDIR} ${STAGEDIR}${DESKTOPDIR}
+		${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
+		${MKDIR} ${STAGEDIR}${PREFIX}/share/mime/packages
+		${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.xml ${STAGEDIR}${PREFIX}/share/mime/packages/
 
 .include <bsd.port.mk>
