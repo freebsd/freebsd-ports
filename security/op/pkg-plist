@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 man/man1/op.1.gz
 @unexec if cmp -s %D/etc/op.conf %D/etc/op.conf.sample; then rm -f %D/etc/op.conf; fi
 etc/op.conf.sample
