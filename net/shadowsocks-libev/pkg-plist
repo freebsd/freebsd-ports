@@ -1,0 +1,3 @@
+bin/ss-local
+bin/ss-server
+man/man8/shadowsocks.8.gz

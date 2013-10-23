@@ -1094,6 +1094,7 @@
     SUBDIR += service-discovery-applet
     SUBDIR += serviio
     SUBDIR += sflowtool
+    SUBDIR += shadowsocks-libev
     SUBDIR += shaperprobe
     SUBDIR += sharity-light
     SUBDIR += shelldap
