@@ -3,12 +3,12 @@
 
 PORTNAME=	htmltolatex
 PORTVERSION=	1
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	textproc
 MASTER_SITES=	http://people.FreeBSD.org/~foxfair/distfiles/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fbsd-ports@opsec.eu
 COMMENT=	HTML to LaTeX to PDF Converter
 
 LIB_DEPENDS=	GraphicsMagick++:${PORTSDIR}/graphics/GraphicsMagick
@@ -21,7 +21,6 @@ MAKE_ARGS=	CXX="${CXX}" \
 		CXXFLAGS="${CXXFLAGS} -DUNIX \
 		    `GraphicsMagick++-config --cppflags`"
 
-NO_STAGE=	yes
 post-configure:
 	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g'	\
 	    -e 's,-lMagick,-lGraphicsMagick,g'	\
@@ -37,8 +36,8 @@ post-build test:
 	fi
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/h2l ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/nmr.tex ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/h2l ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/nmr.tex ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

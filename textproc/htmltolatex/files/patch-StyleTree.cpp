@@ -12,7 +12,7 @@ $FreeBSD$
 +
  #include "StyleTree.h"
  #include <stdexcept>
-+#include <ostream.h>
++#include <ostream>
  
  void StyleTag::set_from_unparsed_string(const string &s)
  {
