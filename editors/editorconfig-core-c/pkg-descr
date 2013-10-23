@@ -1,0 +1,8 @@
+EditorConfig helps developers define and maintain consistent coding
+styles between different editors and IDEs.
+
+This package provides the core library and editorconfig(1) executable
+both written in C for use by text editor plugins supporting
+EditorConfig parsing.
+
+WWW: http://editorconfig.org/
