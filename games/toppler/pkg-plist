@@ -1,8 +1,8 @@
 bin/toppler
+man/man6/toppler.6.gz
 share/applications/toppler.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 share/locale/cs/LC_MESSAGES/toppler.mo
 share/locale/de/LC_MESSAGES/toppler.mo
@@ -22,7 +22,11 @@ share/pixmaps/toppler.xpm
 %%DATADIR%%/m2.ttm
 %%DATADIR%%/pasi2.ttm
 %%DATADIR%%/toppler.dat
-%%DATADIR%%/toppler.hsc
 %%DATADIR%%/toppler.ogg
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec mkdir -p /var/games/toppler
+@exec chgrp games /var/games/toppler
+@unexec if [ ! -s /var/games/toppler/toppler.hsc ] ; then rm -f /var/games/toppler/toppler.hsc; rmdir /var/games/toppler ; fi
+@exec touch /var/games/toppler/toppler.hsc
+@exec chmod 664 /var/games/toppler/toppler.hsc
