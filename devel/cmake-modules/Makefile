@@ -3,18 +3,16 @@
 
 PORTREVISION=	1
 PKGNAMESUFFIX=	-modules
-LATEST_LINK=	cmake-modules
 
 COMMENT=	Modules and Templates for CMake
 
 CMAKE_MODULES=	yes
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/Modules
-	${MKDIR} ${DATADIR}/Templates
-	cd ${WRKSRC}/Modules && ${COPYTREE_SHARE} \* ${DATADIR}/Modules
-	cd ${WRKSRC}/Templates && ${COPYTREE_SHARE} \* ${DATADIR}/Templates
+	${MKDIR} ${STAGEDIR}${DATADIR}/Modules
+	${MKDIR} ${STAGEDIR}${DATADIR}/Templates
+	cd ${WRKSRC}/Modules && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/Modules
+	cd ${WRKSRC}/Templates && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/Templates
 
 NO_BUILD=	yes
 
