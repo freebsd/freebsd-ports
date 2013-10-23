@@ -1,11 +1,11 @@
---- Makefile.orig	Sat Mar 14 11:57:48 1998
-+++ Makefile	Mon Apr 21 02:56:19 2003
+--- Makefile.orig	1998-03-14 20:57:48.000000000 +0100
++++ Makefile	2013-10-23 15:12:54.000000000 +0200
 @@ -5,7 +5,7 @@
  
  ### EDIT THE NEXT LINES ONLY ###
  
 -PREFIX = /usr/local
-+#PREFIX = ${PREFIX}
++#PREFIX = /usr/local
  
  # The directory where the tkhylafax library will be installed
  TCLLIB_DEST = $(PREFIX)/lib/tkhylafax-3.2
@@ -14,11 +14,11 @@
  
  # The full path to tclsh
 -TCLSH = /usr/bin/tclsh
-+TCLSH = tclsh8.4
++#TCLSH = /usr/bin/tclsh
  
  # The full path to wish.
 -WISH = /usr/bin/wish
-+WISH = wish8.4
++#WISH = /usr/bin/wish
  
  # The full path to your postscript viewer
 -GHOSTVIEW = /usr/X11/bin/gv
@@ -26,7 +26,7 @@
  
  ### DON'T EDIT ANYTHING BELOW THIS LINE ###
  
-@@ -52,7 +52,6 @@
+@@ -52,11 +52,10 @@
  
  all:
  	$(MAKE) build
@@ -34,7 +34,12 @@
  
  build: Makefile
  	@echo "Patching tkhylafax..."
-@@ -66,24 +65,24 @@
+-	sed -e 's|XXX_TKHYLAFAX_XXX|$(TCLLIB_DEST)|g' \
++	sed -e 's|XXX_TKHYLAFAX_XXX|$(TCLLIB_DEST:S/${STAGEDIR}//)|g' \
+  	    -e 's|XXX_WISH_XXX|$(WISH)|g' \
+ 	    -e 's|XXX_GHOSTVIEW_XXX|$(GHOSTVIEW)|g' \
+ 	    tkhylafax.unpatched > $(TCLPRG_FILE)
+@@ -66,27 +65,28 @@
  
  $(TCLLIB_DEST):
  	if [ ! -d $(TCLLIB_DEST) ]; then mkdir -p $(TCLLIB_DEST); fi
@@ -63,3 +68,7 @@
  	@echo "Done" 
  
  install.man:
++	if [ ! -d $(TCLMAN_DEST) ]; then mkdir -p $(TCLMAN_DEST); fi
+ 	cp $(TCLMAN_FILE).man $(TCLMAN_DEST)/$(TCLMAN_FILE).1
+ 
+ clean:

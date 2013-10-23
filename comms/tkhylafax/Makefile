@@ -15,10 +15,9 @@ RUN_DEPENDS=	sendfax:${PORTSDIR}/comms/hylafax \
 		gv:${PORTSDIR}/print/gv
 
 USE_GHOSTSCRIPT_RUN=	yes
-USE_TK_RUN=	84
+USES+=		tk:run
 
 WRKSRC=		${WRKDIR}/tkhylafax
-MAN1=		tkhylafax.1
+MAKE_ARGS=	STAGEDIR=${STAGEDIR} PREFIX=${STAGEDIR}${PREFIX} TCLSH=${TCLSH} WISH=${WISH}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
