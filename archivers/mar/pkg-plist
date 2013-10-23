@@ -1,4 +1,5 @@
 bin/mar
+man/man1/mar.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/annotated.html
 %%PORTDOCS%%%%DOCSDIR%%/files.html
 %%PORTDOCS%%%%DOCSDIR%%/functions.html
