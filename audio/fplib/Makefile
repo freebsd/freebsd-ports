@@ -2,36 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	fplib
-PORTVERSION=	20120911
-PORTREVISION=	1
+PORTVERSION=	20121001
 CATEGORIES=	audio
 MASTER_SITES=	LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Last.fm fingerprint library
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		fftw3:${PORTSDIR}/math/fftw3 \
-		fftw3f:${PORTSDIR}/math/fftw3-float \
-		mad:${PORTSDIR}/audio/libmad \
-		samplerate:${PORTSDIR}/audio/libsamplerate \
-		tag:${PORTSDIR}/audio/taglib
+LICENSE=	LGPL3
+
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
+		libmad.so:${PORTSDIR}/audio/libmad \
+		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
+		libtag.so:${PORTSDIR}/audio/taglib
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-REINPLACE_ARGS=	-i ''
-USES=		cmake
-NO_STAGE=	yes
+#REINPLACE_ARGS=	-i ''
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 USE_XZ=		yes
+USES=		cmake
 
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|\(ADD_DEFINITIONS\)(.*)|\1(${CFLAGS} ${CPPFLAGS})|' \
 		-e 's|\(LINK_DIRECTORIES\)(\(.*\))|\1(\2 ${LOCALBASE}/lib)|' \
 			${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} \
-		-e '85 s|size|&()|' \
-			${WRKSRC}/include/fplib/FloatingAverage.h
 
 .include <bsd.port.mk>
