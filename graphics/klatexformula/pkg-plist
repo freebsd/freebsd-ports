@@ -1,13 +1,52 @@
 bin/klatexformula
 bin/klatexformula_cmdl
-include/klfbackend.h
-include/klfblockprocess.h
+include/klfapp/klfconfig.h
+include/klfapp/klfdbus.h
+include/klfapp/klflatexedit.h
+include/klfapp/klflatexsymbols.h
+include/klfapp/klflib.h
+include/klfapp/klflibbrowser.h
+include/klfapp/klflibdbengine.h
+include/klfapp/klflibentryeditor.h
+include/klfapp/klfliblegacyengine.h
+include/klfapp/klflibview.h
+include/klfapp/klfmain.h
+include/klfapp/klfmainwin.h
+include/klfapp/klfmime.h
+include/klfapp/klfpluginiface.h
+include/klfapp/klfsettings.h
+include/klfapp/klfstylemanager.h
+include/klfbackend/klfbackend.h
+include/klfbackend/klfblockprocess.h
+include/klfbackend/klfdebug.h
+include/klfbackend/klfdefs.h
+include/klftools/klfcolorchooser.h
+include/klftools/klfdisplaylabel.h
+include/klftools/klffactory.h
+include/klftools/klfguiutil.h
+include/klftools/klfiteratorsearchable.h
+include/klftools/klfpathchooser.h
+include/klftools/klfpixmapbutton.h
+include/klftools/klfpobj.h
+include/klftools/klfsearchbar.h
+include/klftools/klfstyle.h
+include/klftools/klfunitinput.h
+include/klftools/klfutil.h
+include/klftools/qtcolortriangle.h
+lib/libklfapp.a
 lib/libklfbackend.a
+lib/libklftools.a
 share/applications/klatexformula.desktop
-share/icons/hicolor/128x128/apps/klatexformula.png
-share/icons/hicolor/16x16/apps/klatexformula.png
-share/icons/hicolor/32x32/apps/klatexformula.png
-share/icons/hicolor/64x64/apps/klatexformula.png
-share/klatexformula/rccresources/klfbaseplugins.rcc
+share/klatexformula/rccresources/klfbaseplugins-%%VERSION%%.rcc
+share/mime/packages/klatexformula-mime.xml
+share/pixmaps/klatexformula-128.png
+share/pixmaps/klatexformula-16.png
+share/pixmaps/klatexformula-32.png
+share/pixmaps/klatexformula-64.png
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
 @dirrm share/klatexformula/rccresources
 @dirrm share/klatexformula
+@dirrm include/klftools
+@dirrm include/klfbackend
+@dirrm include/klfapp
