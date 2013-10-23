@@ -35,5 +35,4 @@ MAN3=		JE::Object.3 JE::_FieldHash.3 JE::String.3 \
 # Wrong versioning upstream
 PORTSCOUT=	skipv:0.54
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

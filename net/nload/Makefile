@@ -18,7 +18,6 @@ MANCOMPRESSED=	yes
 MAN1=		nload.1
 PLIST_FILES=	bin/nload
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|\(/etc/nload\.conf\)|${PREFIX}\1|" \
 		${WRKSRC}/docs/nload.1.in ${WRKSRC}/src/main.cpp

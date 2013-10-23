@@ -21,5 +21,4 @@ USES=		gettext gmake pkgconfig
 USE_GNOME=	gtk20
 USE_LDCONFIG=	${PREFIX}/lib/pidgin
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -41,5 +41,4 @@ MAN3=		App::Asciio::setup::import_export::perl.3 \
 		App::Asciio::setup::hooks::canonize_connections.3 \
 		App::Asciio::Undo.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

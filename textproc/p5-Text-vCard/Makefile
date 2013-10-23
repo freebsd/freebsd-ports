@@ -20,5 +20,4 @@ USE_PERL5=	configure
 MAN3=			Text::vCard::Node.3 Text::vCard.3 \
 			Text::vCard::Addressbook.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -19,7 +19,6 @@ USE_AUTOTOOLS=	libtool
 USES=		bison gettext gmake
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "Makefile.man"
 

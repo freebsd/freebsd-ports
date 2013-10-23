@@ -24,5 +24,4 @@ USE_PERL5=	configure
 
 MAN3=		Google::Search.3 Google::Search::Result.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

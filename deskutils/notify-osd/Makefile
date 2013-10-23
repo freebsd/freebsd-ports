@@ -24,5 +24,4 @@ USES=		gmake pkgconfig
 USE_GNOME=	libwnck gconf2
 USE_GCC=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

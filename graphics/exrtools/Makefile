@@ -31,7 +31,6 @@ MAN1=		exrblur.1 exrchr.1 exricamtm.1 exrnlm.1 exrnormalize.1 \
 		exrpptm.1 exrstats.1 exrtools.1 exrtopng.1 jpegtoexr.1 \
 		pngtoexr.1 ppmtoexr.1
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|<values\.h>|<float.h>|' \
 		${WRKSRC}/src/exrnormalize.c \

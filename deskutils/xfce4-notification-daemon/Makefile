@@ -41,7 +41,6 @@ CLOSE_DESC=	Show the close button in the default theme
 
 OPTIONS_DEFAULT=CLOSE NLS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

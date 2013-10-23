@@ -16,7 +16,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
-NO_STAGE=	yes
 
 MAN3=		GPS::Serial.3 \
 		GPS::NMEA.3 \
