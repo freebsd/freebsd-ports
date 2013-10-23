@@ -38,6 +38,7 @@ info/gnutls3/gnutls.info-1
 info/gnutls3/gnutls.info-2
 info/gnutls3/gnutls.info-3
 info/gnutls3/gnutls.info-4
+info/gnutls3/gnutls.info-5
 info/gnutls3/pkcs11-vision.png
 lib/gnutls3/libgnutls-openssl.a
 lib/gnutls3/libgnutls-openssl.la
@@ -119,7 +120,9 @@ man/man3/gnutls_certificate_set_x509_crl3.3.gz
 man/man3/gnutls_certificate_set_x509_crl_file3.3.gz
 man/man3/gnutls_certificate_set_x509_crl_mem3.3.gz
 man/man3/gnutls_certificate_set_x509_key3.3.gz
+man/man3/gnutls_certificate_set_x509_key_file23.3.gz
 man/man3/gnutls_certificate_set_x509_key_file3.3.gz
+man/man3/gnutls_certificate_set_x509_key_mem23.3.gz
 man/man3/gnutls_certificate_set_x509_key_mem3.3.gz
 man/man3/gnutls_certificate_set_x509_simple_pkcs12_file3.3.gz
 man/man3/gnutls_certificate_set_x509_simple_pkcs12_mem3.3.gz
@@ -481,6 +484,8 @@ man/man3/gnutls_privkey_init3.3.gz
 man/man3/gnutls_privkey_set_pin_function3.3.gz
 man/man3/gnutls_privkey_sign_data3.3.gz
 man/man3/gnutls_privkey_sign_hash3.3.gz
+man/man3/gnutls_privkey_sign_raw_data3.3.gz
+man/man3/gnutls_privkey_status3.3.gz
 man/man3/gnutls_protocol_get_id3.3.gz
 man/man3/gnutls_protocol_get_name3.3.gz
 man/man3/gnutls_protocol_get_version3.3.gz
@@ -578,6 +583,7 @@ man/man3/gnutls_session_enable_compatibility_mode3.3.gz
 man/man3/gnutls_session_force_valid3.3.gz
 man/man3/gnutls_session_get_data23.3.gz
 man/man3/gnutls_session_get_data3.3.gz
+man/man3/gnutls_session_get_desc3.3.gz
 man/man3/gnutls_session_get_id23.3.gz
 man/man3/gnutls_session_get_id3.3.gz
 man/man3/gnutls_session_get_ptr3.3.gz
@@ -593,6 +599,7 @@ man/man3/gnutls_session_ticket_key_generate3.3.gz
 man/man3/gnutls_set_default_export_priority3.3.gz
 man/man3/gnutls_set_default_priority3.3.gz
 man/man3/gnutls_sign_algorithm_get3.3.gz
+man/man3/gnutls_sign_algorithm_get_client3.3.gz
 man/man3/gnutls_sign_algorithm_get_requested3.3.gz
 man/man3/gnutls_sign_callback_get3.3.gz
 man/man3/gnutls_sign_callback_set3.3.gz
@@ -668,6 +675,7 @@ man/man3/gnutls_x509_crl_get_dn_oid3.3.gz
 man/man3/gnutls_x509_crl_get_extension_data3.3.gz
 man/man3/gnutls_x509_crl_get_extension_info3.3.gz
 man/man3/gnutls_x509_crl_get_extension_oid3.3.gz
+man/man3/gnutls_x509_crl_get_issuer_dn23.3.gz
 man/man3/gnutls_x509_crl_get_issuer_dn3.3.gz
 man/man3/gnutls_x509_crl_get_issuer_dn_by_oid3.3.gz
 man/man3/gnutls_x509_crl_get_next_update3.3.gz
@@ -701,6 +709,7 @@ man/man3/gnutls_x509_crq_get_attribute_data3.3.gz
 man/man3/gnutls_x509_crq_get_attribute_info3.3.gz
 man/man3/gnutls_x509_crq_get_basic_constraints3.3.gz
 man/man3/gnutls_x509_crq_get_challenge_password3.3.gz
+man/man3/gnutls_x509_crq_get_dn23.3.gz
 man/man3/gnutls_x509_crq_get_dn3.3.gz
 man/man3/gnutls_x509_crq_get_dn_by_oid3.3.gz
 man/man3/gnutls_x509_crq_get_dn_oid3.3.gz
@@ -750,6 +759,7 @@ man/man3/gnutls_x509_crt_get_authority_key_id3.3.gz
 man/man3/gnutls_x509_crt_get_basic_constraints3.3.gz
 man/man3/gnutls_x509_crt_get_ca_status3.3.gz
 man/man3/gnutls_x509_crt_get_crl_dist_points3.3.gz
+man/man3/gnutls_x509_crt_get_dn23.3.gz
 man/man3/gnutls_x509_crt_get_dn3.3.gz
 man/man3/gnutls_x509_crt_get_dn_by_oid3.3.gz
 man/man3/gnutls_x509_crt_get_dn_oid3.3.gz
@@ -763,6 +773,7 @@ man/man3/gnutls_x509_crt_get_issuer3.3.gz
 man/man3/gnutls_x509_crt_get_issuer_alt_name23.3.gz
 man/man3/gnutls_x509_crt_get_issuer_alt_name3.3.gz
 man/man3/gnutls_x509_crt_get_issuer_alt_othername_oid3.3.gz
+man/man3/gnutls_x509_crt_get_issuer_dn23.3.gz
 man/man3/gnutls_x509_crt_get_issuer_dn3.3.gz
 man/man3/gnutls_x509_crt_get_issuer_dn_by_oid3.3.gz
 man/man3/gnutls_x509_crt_get_issuer_dn_oid3.3.gz
@@ -883,12 +894,11 @@ man/man3/gnutls_x509_trust_list_add_trust_mem3.3.gz
 man/man3/gnutls_x509_trust_list_deinit3.3.gz
 man/man3/gnutls_x509_trust_list_get_issuer3.3.gz
 man/man3/gnutls_x509_trust_list_init3.3.gz
+man/man3/gnutls_x509_trust_list_remove_cas3.3.gz
+man/man3/gnutls_x509_trust_list_remove_trust_file3.3.gz
+man/man3/gnutls_x509_trust_list_remove_trust_mem3.3.gz
 man/man3/gnutls_x509_trust_list_verify_crt3.3.gz
 man/man3/gnutls_x509_trust_list_verify_named_crt3.3.gz
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-alert.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-cert-select-pkcs11.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-cert-select.c
@@ -919,7 +929,6 @@ man/man3/gnutls_x509_trust_list_verify_named_crt3.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/udp.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/verify.c
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrmtry lib/gnutls3
 @dirrmtry info/gnutls3
 @dirrmtry include/gnutls3/gnutls
