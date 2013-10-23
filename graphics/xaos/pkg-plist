@@ -1,4 +1,5 @@
 bin/xaos
+man/man6/xaos.6.gz
 %%XAOSDIR%%/catalogs/README
 %%XAOSDIR%%/catalogs/cesky.cat
 %%XAOSDIR%%/catalogs/deutsch.cat

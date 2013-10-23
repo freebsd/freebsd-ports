@@ -11,8 +11,9 @@ COMMENT=	Geany plugins (meta port)
 
 .MAKE.FreeBSD_UL=	yes
 NO_BUILD=	yes
+NO_INSTALL=	yes
+NO_MTREE=	yes
 
-NO_STAGE=	yes
 .include "${.CURDIR}/files/bsd.geany-plugins.mk"
 
 OPTIONS_DEFINE=		NLS
@@ -36,8 +37,5 @@ NLS_DEP=		geany-plugins-l10n>=0:${PORTSDIR}/devel/geany-plugins-l10n
 RUN_DEPENDS+=	${${opt}_DEP}
 . endif
 .endfor
-
-do-install:
-	${DO_NADA}
 
 .include <bsd.port.mk>

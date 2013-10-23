@@ -11,8 +11,8 @@ DISTNAME=	${PORTNAME}engine${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Quake engine modification
 
+USES=		gmake
 USE_ZIP=	yes
-USE_GMAKE=	yes
 USE_XORG=	xxf86dga xpm
 USE_DOS2UNIX=	darkplaces.txt
 MAKE_ENV=	DP_FS_BASEDIR="${Q1DIR}"
@@ -34,7 +34,6 @@ PLIST_FILES=	%%DATADIR%%/dummy
 PLIST_DIRS=	%%DATADIR%%
 PORTDOCS=	darkplaces.txt
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
 .include <bsd.port.options.mk>
@@ -76,20 +75,16 @@ post-extract:
 		-d ${WRKDIR}
 
 do-install:
-.for f in ${EXE_TARGETS}
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
-.endfor
-	@${MKDIR} ${DATADIR}
-	@${TOUCH} ${DATADIR}/dummy
+	${INSTALL_PROGRAM} ${EXE_TARGETS:S,^,${WRKSRC}/,} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${TOUCH} ${STAGEDIR}${DATADIR}/dummy
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/darkplaces.txt ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/darkplaces.txt ${STAGEDIR}${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
+BROKEN_ia64=	does not compile: unrecognized command line option "-msse2"
+BROKEN_powerpc=	${BROKEN_ia64}
+BROKEN_sparc64=	${BROKEN_ia64}
 
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64: unrecognized command line option "-msse2"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

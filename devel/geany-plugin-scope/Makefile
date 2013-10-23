@@ -9,6 +9,5 @@ COMMENT=	Geany plugin: ${${GEANY_PLUGIN}_DESC}
 
 USE_GNOME=	vte
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../geany-plugins/files/Makefile.common"
 .include <bsd.port.mk>

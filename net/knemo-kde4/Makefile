@@ -16,6 +16,4 @@ USE_KDE4=	kdeprefix kdelibs workspace automoc4
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
-
 .include <bsd.port.mk>

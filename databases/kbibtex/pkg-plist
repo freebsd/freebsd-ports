@@ -4,6 +4,7 @@ lib/libkbibtexgui.so
 lib/libkbibtexio.so
 lib/libkbibtexproc.so
 lib/libkbibtexws.so
+man/man1/kbibtex.1.gz
 share/applications/kde4/kbibtex.desktop
 share/apps/kbibtex/abstractonly.xsl
 share/apps/kbibtex/arxiv2bibtex.xsl
@@ -23,8 +24,6 @@ share/icons/hicolor/32x32/apps/kbibtex.png
 share/icons/hicolor/48x48/apps/kbibtex.png
 share/icons/hicolor/64x64/apps/kbibtex.png
 share/kde4/services/kbibtexpart.desktop
-share/mime/application/x-endnote-refer.xml
-share/mime/application/x-research-info-systems.xml
 share/mime/packages/bibliography.xml
 @dirrm share/apps/kbibtexpart
 @dirrm share/apps/kbibtex

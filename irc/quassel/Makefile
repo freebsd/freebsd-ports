@@ -7,9 +7,9 @@ CATEGORIES=	irc
 MASTER_SITES=	http://www.quassel-irc.org/pub/
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	Qt4 based distributed IRC client
+COMMENT=	Qt 4 based distributed IRC client
 
-LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 USE_BZIP2=	yes
 USES=		cmake:outsource
@@ -31,7 +31,6 @@ CMAKE_ARGS+=	-DWANT_MONO=${QUASSEL_MONO} \
 		-DWANT_QTCLIENT=${QUASSEL_CLIENT} \
 		-DWITH_LIBINDICATE=OFF
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -47,7 +46,7 @@ PLIST=		${PKGDIR}/pkg-plist.kde
 CMAKE_ARGS+=	-DWITH_KDE=OFF
 . endif
 USE_QT4+=	dbus gui phonon webkit xml xmlpatterns
-LIB_DEPENDS+=	dbusmenu-qt:${PORTSDIR}/devel/libdbusmenu-qt
+LIB_DEPENDS+=	libdbusmenu-qt.so:${PORTSDIR}/devel/libdbusmenu-qt
 PLIST_SUB+=	MONO_OR_CLIENT=""
 .else
 PLIST_SUB+=	MONO_OR_CLIENT="@comment "
@@ -62,7 +61,7 @@ PLIST_SUB+=	MONO="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCORE}
-LIB_DEPENDS+=	qca.2:${PORTSDIR}/devel/qca
+LIB_DEPENDS+=	libqca.so:${PORTSDIR}/devel/qca
 USE_QT4+=	sql-sqlite3_run
 QUASSEL_CORE=	ON
 PLIST_SUB+=	CORE=""
@@ -92,9 +91,9 @@ pre-configure:
 	${REINPLACE_CMD} -e 's,knotifyconfig,$${KDE4_KNOTIFYCONFIG_LIBRARY},' \
 		${WRKSRC}/CMakeLists.txt
 
-post-install:
-.if ${PORT_OPTIONS:MCORE}
-	@${CAT} ${PKGMESSAGE}
+.if ${PORT_OPTIONS:MKDE}
+pre-su-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/rc.d
 .endif
 
 .include <bsd.port.mk>

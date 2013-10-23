@@ -14,5 +14,4 @@ PORT_OPTIONS+=	GTK
 
 MASTERDIR=	${.CURDIR}/../pinentry
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -11,11 +11,11 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Scilab Image and Video Processing Toolbox
 
 BUILD_DEPENDS=	${SCILAB_CMD}:${PORTSDIR}/math/scilab
-LIB_DEPENDS=	opencv_legacy.2:${PORTSDIR}/graphics/opencv
+LIB_DEPENDS=	libopencv_legacy.so:${PORTSDIR}/graphics/opencv
 RUN_DEPENDS=	${SCILAB_CMD}:${PORTSDIR}/math/scilab
 
 USES=		pkgconfig
-USE_XZ=	yes
+USE_XZ=		yes
 
 SCILAB_CMD=	${LOCALBASE}/bin/scilab
 CONTRIBDIR?=	share/scilab/contrib
@@ -28,7 +28,6 @@ OPTIONS_DEFINE=	HELP
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 HELP_DESC=	Build help files (requires scilab with gui support)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !${PORT_OPTIONS:MHELP}
@@ -36,7 +35,7 @@ SCILAB_ARGS=	-nogui
 PLIST_SUB+=	HELP="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-etc__SIVP.start
 .else
-USE_DISPLAY=	yes
+USES+=		display:build
 MAKE_ENV=	LC_ALL="C"
 PLIST_SUB+=	HELP=""
 TOOLBOX_SUBDIRS+=	jar
@@ -55,37 +54,21 @@ post-patch:
 
 pre-build:
 	${FIND} -d ${WRKSRC} \( -name '*.orig' -or -name '*.bak' \) -delete
-.if ${PORT_OPTIONS:MHELP} && !defined(DISPLAY)
-	@if [ -f ${WRKDIR}/.Xvfb.pid ]; then \
-		${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill || ${TRUE} ; \
-		${RM} -f ${WRKDIR}/.Xvfb.pid ; \
-	fi
-	${LOCALBASE}/bin/Xvfb :1001 -screen 0 800x600x24 -fp ${LOCALBASE}/lib/X11/fonts/misc > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
-	@sleep 5
-.endif
 
 do-build:
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${SCILAB_CMD} ${SCILAB_ARGS} -f builder.sce
 
-post-build:
-.if ${PORT_OPTIONS:MHELP} && !defined(DISPLAY)
-	@if [ -f ${WRKDIR}/.Xvfb.pid ]; then \
-		${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill || ${TRUE} ; \
-		${RM} -f ${WRKDIR}/.Xvfb.pid ; \
-	fi
-.endif
-
 do-install:
-	${MKDIR} ${TOOLBOXDIR}/sci_gateway/cpp
-	${INSTALL_DATA} ${WRKSRC}/loader.sce ${TOOLBOXDIR}
+	${MKDIR} ${STAGEDIR}${TOOLBOXDIR}/sci_gateway/cpp
+	${INSTALL_DATA} ${WRKSRC}/loader.sce ${STAGEDIR}${TOOLBOXDIR}
 	${INSTALL_DATA} ${WRKSRC}/sci_gateway/loader_gateway.sce \
-		${TOOLBOXDIR}/sci_gateway
+		${STAGEDIR}${TOOLBOXDIR}/sci_gateway
 	cd ${WRKSRC}/sci_gateway/cpp && \
-	${INSTALL_DATA} loader.sce ${TOOLBOXDIR}/sci_gateway/cpp && \
-	${INSTALL_PROGRAM} libgw_sivp.so ${TOOLBOXDIR}/sci_gateway/cpp
+	${INSTALL_DATA} loader.sce ${STAGEDIR}${TOOLBOXDIR}/sci_gateway/cpp && \
+	${INSTALL_PROGRAM} libgw_sivp.so ${STAGEDIR}${TOOLBOXDIR}/sci_gateway/cpp
 .for d in ${TOOLBOX_SUBDIRS}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${TOOLBOXDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${TOOLBOXDIR}
 .endfor
 
 .include <bsd.port.mk>

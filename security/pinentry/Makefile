@@ -11,8 +11,8 @@ MASTER_SITE_SUBDIR=	pinentry
 MAINTAINER=	makc@FreeBSD.org
 COMMENT?=	Collection of simple PIN or passphrase entry dialogs
 
-LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt \
-		ksba.19:${PORTSDIR}/security/libksba
+LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+		libksba.so:${PORTSDIR}/security/libksba
 
 CONFLICTS_INSTALL?=	pinentry-[a-z]*
 
@@ -38,7 +38,6 @@ QT4_DESC=	Qt 4 frontend
 PKGNAMESUFFIX=	${PINENTRY_SLAVE}
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MQT4}

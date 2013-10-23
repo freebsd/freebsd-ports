@@ -8,13 +8,11 @@ MASTER_SITES=	SAVANNAH/linphone/plugins/sources/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Mediastreamer plugin for the iLBC audio codec
 
-LIB_DEPENDS=	ortp.8:${PORTSDIR}/net/linphone-base \
-		mediastreamer.0:${PORTSDIR}/net/linphone-base \
-		ilbc.0:${PORTSDIR}/net/ilbc
+LIB_DEPENDS=	libortp.so:${PORTSDIR}/net/linphone-base \
+		libmediastreamer.so:${PORTSDIR}/net/linphone-base \
+		libilbc.so:${PORTSDIR}/net/ilbc
 
-NO_STAGE=	yes
 USES=		pkgconfig
-
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	ILBC_CFLAGS=-I${LOCALBASE}/include/ilbc \

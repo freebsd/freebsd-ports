@@ -14,9 +14,7 @@ USE_BZIP2=	yes
 USES=		cmake
 USE_KDE4=	kdelibs kdeprefix automoc4
 USE_QT4=	qmake_build moc_build uic_build rcc_build
-MAKE_JOS_SAFE=	yes
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
 		${WRKSRC}/src/ftpserver/*.h

@@ -10,9 +10,9 @@ DISTNAME=	${PORTNAME}-linux-x86-${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Convert latex equations to HTML, MathML, PNG
 
+USES=		gmake
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=	yes
-USE_GMAKE=	yes
 BUILD_WRKSRC=	${WRKSRC}/src
 
 PLIST_FILES=	bin/texvc
@@ -21,7 +21,6 @@ OPTIONS_DEFINE=	RASTER
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 RASTER_DESC=	rasterization support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRASTER}
@@ -31,6 +30,6 @@ RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/texvc ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/texvc ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

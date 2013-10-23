@@ -16,5 +16,4 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:${PORTSDIR}/devel/py-lxml \
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

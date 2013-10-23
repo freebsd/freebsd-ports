@@ -18,7 +18,6 @@ USES=		cmake:outsource
 USE_KDE4=	kdeprefix kdelibs automoc4
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} 's,FREETYPE_INCLUDE_DIR,FREETYPE_INCLUDE_DIR_freetype2,' \
 		${WRKSRC}/src/CMakeLists.txt

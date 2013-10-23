@@ -1,4 +1,5 @@
 bin/aqemu
+man/man1/aqemu.1.gz
 share/applications/aqemu.desktop
 share/aqemu/German.qm
 share/aqemu/Russian.qm
