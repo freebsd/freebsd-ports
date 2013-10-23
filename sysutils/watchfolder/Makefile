@@ -17,7 +17,6 @@ USE_RC_SUBR=	watchd
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -27,13 +26,15 @@ post-patch:
 		${WRKSRC}/README ${WRKSRC}/watchd.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/watchd ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/watchd.conf ${PREFIX}/etc/watchd.conf.sample
+	${INSTALL_PROGRAM} ${WRKSRC}/watchd ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/watchd.conf ${STAGEDIR}${PREFIX}/etc/watchd.conf.sample
 	[ -f ${PREFIX}/etc/watchd.conf ] || \
-		${INSTALL_DATA} ${WRKSRC}/watchd.conf ${PREFIX}/etc
+		${INSTALL_DATA} ${WRKSRC}/watchd.conf ${STAGEDIR}${PREFIX}/etc
+
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/doc/watchfolder.pdf ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/doc/watchfolder.pdf \
+		${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

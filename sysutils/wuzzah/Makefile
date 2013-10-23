@@ -14,10 +14,8 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 USES=		gmake
 
-PLIST_FILES=	bin/wuzzah
-MAN1=		wuzzah.1
+PLIST_FILES=	bin/wuzzah man/man1/wuzzah.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -29,7 +27,8 @@ post-patch:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.post.mk>

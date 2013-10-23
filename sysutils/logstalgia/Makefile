@@ -23,9 +23,4 @@ USE_SDL=	sdl image
 
 CFLAGS+=	-L/usr/local/lib -I/usr/local/include
 
-MANCOMPRESSED=	yes
-
-MAN1=		logstalgia.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

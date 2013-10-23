@@ -20,13 +20,11 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-mmap
 MAKE_JOBS_UNSAFE=	yes
 
-PLIST_FILES=	bin/most
+PLIST_FILES=	bin/most man/man1/most.1.gz
 PORTDOCS=	README changes.txt lesskeys.rc most-fun.txt most.doc most.rc
-MAN1=		most.1
 
 PORTSCOUT=	skipv:5.0.0a
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|' \
 		${WRKSRC}/src/jdmacros.h

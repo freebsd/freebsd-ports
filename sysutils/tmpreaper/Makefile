@@ -14,19 +14,17 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 USES=		gmake
 
-PLIST_FILES=	sbin/tmpreaper
+PLIST_FILES=	sbin/tmpreaper man/man8/tmpreaper.8.gz
 PORTDOCS=	README
-MAN8=		tmpreaper.8
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
