@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	trafficserver
-PORTVERSION=	3.2.4
+PORTVERSION=	3.2.5
 CATEGORIES=	www
 MASTER_SITES=	APACHE/${PORTNAME}
 
@@ -11,40 +11,27 @@ COMMENT=	A fast, scalable and extensible HTTP proxy server
 
 LICENSE=	AL2
 
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
-		expat:${PORTSDIR}/textproc/expat2 \
-		pcre:${PORTSDIR}/devel/pcre
-
-MAN1=		traffic_shell.1
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libpcre.so:${PORTSDIR}/devel/pcre
 
 USE_AUTOTOOLS=	autoconf automake libtool
 USE_BZIP2=	yes
-USES=		iconv
+USES=		pkgconfig
 USE_OPENSSL=	yes
 USE_SQLITE=	yes
 USE_TCL=	yes
 USE_RC_SUBR=	${PORTNAME}
 USE_LDCONFIG=	yes
+USE_GCC=	any
+ONLY_FOR_ARCHS=	i386 amd64
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-expat=${LOCALBASE} \
-		--with-pcre=${LOCALBASE}
+		--with-pcre=${LOCALBASE} \
+		--with-openssl=${OPENSSLBASE}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-BUILD_DEPENDS=	xz>0:${PORTSDIR}/archivers/xz
-RUN_DEPENDS=	xz>0:${PORTSDIR}/archivers/xz
-.endif
-
-.if ${OSVERSION} < 800000 && ${ARCH} == "amd64"
-BROKEN=		does not compile on 7.X/amd64
-.endif
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,|| mv,|| cp -p,' ${WRKSRC}/proxy/config/Makefile.am
