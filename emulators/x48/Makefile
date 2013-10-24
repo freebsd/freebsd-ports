@@ -32,9 +32,6 @@ PORTDOCS=	ChangeLog README
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-extract: .SILENT
 # Extract official HP ROM images for GX/SX
 	${CP} ${_DISTDIR}/gxrom-r.bz2 ${WRKSRC} && ${BZIP2_CMD} \
@@ -54,13 +51,11 @@ post-patch:
 
 do-install:
 .for p in x48 dump2rom checkrom mkcard
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${p} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${p} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/??rom-? ${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S+^+${WRKSRC}/+} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/??rom-? ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S+^+${WRKSRC}/+} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
