@@ -1,4 +1,5 @@
 bin/lynx
+man/man1/lynx.1.gz
 @unexec if [ -f %D/etc/lynx.cfg ] && cmp -s %D/etc/lynx.cfg %D/etc/lynx.cfg.default; then rm -f %D/etc/lynx.cfg; fi
 etc/lynx.cfg.default
 @exec if [ ! -f %D/etc/lynx.cfg ] ; then cp -p %D/%F %B/lynx.cfg; fi

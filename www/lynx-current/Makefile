@@ -2,24 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	lynx
-PORTVERSION=	2.8.8d15
+PORTVERSION=	2.8.8d16
+PKGNAMESUFFIX=	-current
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/
 DISTNAME=	${PORTNAME}${PORTVERSION:C/d.*//}dev.${PORTVERSION:C/.*d//}
 
 MAINTAINER=	johans@FreeBSD.org
-COMMENT=	A non-graphical, text-based World-Wide Web client
+COMMENT=	Non-graphical, text-based World-Wide Web client
 
-LIB_DEPENDS=	idn:${PORTSDIR}/dns/libidn
+LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 CONFLICTS_INSTALL=	lynx-2.8.[0-7].* ja-lynx-[0-9]*
 
-WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S/./-/g:C/d.*//}
+WRKSRC=		${WRKDIR}/${DISTNAME:S/./-/g:C/d.*//}
 USE_BZIP2=	yes
-USES=		iconv
+USES=		iconv shebangfix
 USE_OPENSSL=	yes
-NO_LATEST_LINK=	yes
+SHEBANG_FILES=	samples/mailto-form.pl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --with-bzlib \
@@ -35,17 +36,22 @@ CONFIGURE_ARGS=	--with-zlib --libdir="${L_LIB}" \
 
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 MAKE_FLAGS=	helpdir=${L_HELP} docdir=${L_DOC} -f
 MAKEFILE=	makefile
 INSTALL_TARGET=	install-full
-MAN1=		lynx.1
 
 L_LIB=		${PREFIX}/etc
 L_DOC=		${PREFIX}/share/doc/lynx
 L_HELP=		${PREFIX}/share/lynx_help
+DOCSDIR=	${L_DOC}
+
+post-install:
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}/${L_DOC}
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}/${L_HELP}
+	${CHOWN} ${SHAREOWN}:${SHAREGRP} \
+		${STAGEDIR}/${L_LIB}/lynx.cfg* ${STAGEDIR}/${L_LIB}/lynx.lss*
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
@@ -55,10 +61,5 @@ CONFIGURE_ARGS+=	--enable-nls
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-post-install:
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${L_DOC}
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${L_HELP}
-	${CHOWN} ${SHAREOWN}:${SHAREGRP} ${L_LIB}/lynx.cfg* ${L_LIB}/lynx.lss*
 
 .include <bsd.port.mk>
