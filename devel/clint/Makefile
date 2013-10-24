@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Static source code checker for C++
 
 LICENSE=	GPLv2
@@ -24,6 +24,7 @@ USE_CXXSTD=	gnu++98
 USES=		gmake
 INFO=		clint
 MAKE_JOBS_UNSAFE=	yes
+BROKEN=		fails to find python.h
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
