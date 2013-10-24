@@ -5,36 +5,33 @@ PORTNAME=	aop
 PORTVERSION=	0.6
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://raffi.at/code/aop/ \
-		SF/nemysisfreebsdp/:icons
+MASTER_SITES=	SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}.png:icons
+		${PORTNAME}.png
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Ncurses based arcade game with only 64 lines of code
 
 LICENSE=	GPLv2
+
+RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm
 
 ALL_TARGET=	#empty
 
 PORTDOCS=	README
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+DESKTOP_ENTRIES+="Ambassador of Pain" "${COMMENT}" ${PORTNAME} \
+		"xterm -e ${PORTNAME}" "Game;LogicGame;" false
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
+	@${REINPLACE_CMD} -e 's|/usr/local|${STAGEDIR}${PREFIX}|g' \
 		${WRKSRC}/Makefile
 
-.include <bsd.port.options.mk>
-
 post-install:
-	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
