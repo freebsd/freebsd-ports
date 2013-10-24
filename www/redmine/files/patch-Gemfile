@@ -1,5 +1,5 @@
 --- Gemfile.orig	2013-07-14 16:51:09.000000000 +0000
-+++ Gemfile	2013-07-21 12:56:04.025404096 +0000
++++ Gemfile	2013-10-24 01:36:14.746224376 +0000
 @@ -1,11 +1,11 @@
  source 'https://rubygems.org'
  
@@ -7,7 +7,8 @@
 -gem "jquery-rails", "~> 2.0.2"
 +gem "jquery-rails", "~> 3.0"
  gem "i18n", "~> 0.6.0"
- gem "coderay", "~> 1.0.9"
+-gem "coderay", "~> 1.0.9"
++gem "coderay", "~> 1.1.0"
  gem "fastercsv", "~> 1.5.0", :platforms => [:mri_18, :mingw_18, :jruby]
 -gem "builder", "3.0.0"
 +gem "builder", "~> 3.0.0"
