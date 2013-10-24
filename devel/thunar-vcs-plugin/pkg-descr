@@ -1,5 +1,5 @@
 The Thunar VCS Plugin adds Subversion and Git actions to the context menu of
-thunar.
+Thunar.
 
 The current features are:
 Most of the svn action: add, blame, checkout, cleanup, commit, copy, delete,
