@@ -173,6 +173,7 @@
     SUBDIR += exmpp
     SUBDIR += expat2
     SUBDIR += exslt
+    SUBDIR += extract_url
     SUBDIR += ezxml
     SUBDIR += fa-aspell
     SUBDIR += fcitx-m17n

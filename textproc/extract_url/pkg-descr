@@ -1,0 +1,20 @@
+This is a Perl script that extracts URLs from correctly-encoded MIME
+email messages or plain text. This can be used either as a
+pre-parser for urlview, or to replace urlview entirely.
+
+This is designed primarily for use with the mutt emailer. The idea
+is that if you want to access a URL in an email, you pipe the email
+to a URL extractor (like this one) which then lets you select a URL
+to view in some third program (such as Firefox). An alternative
+design is to access URLs from within mutt's pager by defining macros
+and tagging the URLs in the display to indicate which macro to use.
+A script you can use to do that is tagurl.pl.
+
+Main features:
+    - Configurable
+    - Handles URLs that have been broken over several lines in
+      format=flowed delsp=yes email messages
+    - Handles quoted-printable email messages
+    - Sanitizes URLs so that they can't break out of the command shell
+
+WWW: http://www.memoryhole.net/~kyle/extract_url/

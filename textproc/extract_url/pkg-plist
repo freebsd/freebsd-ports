@@ -1,0 +1,5 @@
+bin/extract_url
+@unexec if cmp -s %D/etc/extract_urlview %D/etc/extract_urlview.sample ; then rm -f %D/etc/extract_urlview ; fi
+etc/extract_urlview.sample
+@exec if [ -f %D/etc/extract_urlview ] ; then cp -p %D/%F %B/extract_urlview ; fi
+man/man1/extract_url.1.gz
