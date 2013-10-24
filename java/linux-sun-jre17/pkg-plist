@@ -35,6 +35,7 @@
 %%T%%/lib/currency.data
 %%T%%/lib/deploy.jar
 %%T%%/lib/deploy/MixedCodeMainDialog.ui
+%%T%%/lib/deploy/MixedCodeMainDialogJs.ui
 %%T%%/lib/deploy/cautionshield.icns
 %%T%%/lib/deploy/ffjcext.zip
 %%T%%/lib/deploy/java-icon.ico
