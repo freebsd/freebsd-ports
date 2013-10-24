@@ -1728,6 +1728,7 @@
     SUBDIR += ruby-google
     SUBDIR += ruby-wgettsv
     SUBDIR += rubygem-actionpack
+    SUBDIR += rubygem-actionpack4
     SUBDIR += rubygem-activeresource
     SUBDIR += rubygem-acts-as-taggable-on
     SUBDIR += rubygem-addressable
