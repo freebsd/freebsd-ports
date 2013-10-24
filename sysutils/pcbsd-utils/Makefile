@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcbsd-utils
-PORTVERSION=	1382384181
+PORTVERSION=	1382605460
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
@@ -37,7 +37,9 @@ PLIST_FILES+=	share/pbi-manager/.pbime \
 		share/pbi-manager/.pbimount \
 		share/pbi-manager/.ldconfig \
 		share/pbi-manager/.mount_nullfs \
-		etc/man.d/pbi.conf
+		etc/man.d/pbi.conf \
+		sbin/app \
+		sbin/pbi
 .endif
 
 do-install:
