@@ -1580,8 +1580,11 @@
 %%WWWDIR%%/test/fixtures/files/iso8859-1.txt
 %%WWWDIR%%/test/fixtures/custom_fields_trackers.yml
 %%WWWDIR%%/test/fixtures/changes.yml
-%%WWWDIR%%/test/fixtures/diffs/issue-13644-2.diff
 %%WWWDIR%%/test/fixtures/diffs/issue-13644-1.diff
+%%WWWDIR%%/test/fixtures/diffs/issue-13644-2.diff
+%%WWWDIR%%/test/fixtures/diffs/issue-13644-3.diff
+%%WWWDIR%%/test/fixtures/diffs/issue-13644-4.diff
+%%WWWDIR%%/test/fixtures/diffs/issue-13644-5.diff
 %%WWWDIR%%/test/fixtures/diffs/issue-12641-ja.diff
 %%WWWDIR%%/test/fixtures/diffs/issue-12641-ru.diff
 %%WWWDIR%%/test/fixtures/diffs/partials.diff
