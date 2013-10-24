@@ -50,7 +50,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-Xext-xace.c \
 		${FILESDIR}/extra-os-utils.c \
 		${FILESDIR}/extra-dix_events.c \
 		${FILESDIR}/extra-Xserver-hw-xfree86-common-xf86Config.c \
-		${FILESDPR}/extra-old-dix_dixfonts.c
+		${FILESDIR}/extra-old-dix_dixfonts.c
 .endif
 
 USE_BZIP2=	yes
