@@ -24,4 +24,6 @@ MAKE_ARGS=	INS_BASE=${PREFIX} DEFMANBASE=. CC=${CC} CCOM=${CC}
 RULEUSED=	"`${WRKSRC}/conf/oarch.sh`"
 PLIST_SUB=	RULESUSED="${RULEUSED}"
 
+BROKEN_i386=	fails to find correct configuration file
+
 .include <bsd.port.mk>
