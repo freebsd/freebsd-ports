@@ -64,6 +64,8 @@ RUN_DEPENDS+=	xpdf:${PORTSDIR}/graphics/xpdf
 .endif
 
 .if defined(BOOTSTRAP)
+BOOST_RELEASE=	     1.54.0
+BOOST_VERS=         ${BOOST_RELEASE:S|.|_|g}
 BZR_SRC_REV!=        bzr revno lp:kicad
 BZR_LIB_REV!=        bzr revno lp:~kicad-lib-committers/kicad/library
 BZR_DOC_REV!=        bzr revno lp:~kicad-developers/kicad/doc
@@ -85,6 +87,13 @@ BZR_DOC_REV!=        bzr revno lp:~kicad-developers/kicad/doc
 FETCH_DEPENDS+= svn:${PORTSDIR}/devel/subversion
 FETCH_DEPENDS+= bzr:${PORTSDIR}/devel/bzr
 
+showversions:
+	@${ECHO} "BOOST_RELEASE: ${BOOST_RELEASE}"
+	@${ECHO} "BOOST_VERS: ${BOOST_VERS}"
+	@${ECHO} "BZR_SRC_REV: ${BZR_SRC_REV}"
+	@${ECHO} "BZR_LIB_REV: ${BZR_LIB_REV}"
+	@${ECHO} "BZR_DOC_REV: ${BZR_DOC_REV}"
+
 do-fetch:
 	${MKDIR} ${WRKDIR}
 	${ECHO} ${WRKSRC}
@@ -93,9 +102,13 @@ do-fetch:
 	bzr export -r ${BZR_DOC_REV} ${WRKDIR}/kicad-doc lp:~kicad-developers/kicad/doc
 	svn export \
 		http://svn.openmoko.org/trunk/gta02-core/kicad-patches ${WRKDIR}/kicad-patches
+	fetch -o ${WRKDIR}/${DISTNAME}/boost_${BOOST_VERS}.tar.bz2 \
+		http://downloads.sourceforge.net/project/boost/boost/${BOOST_RELEASE}/boost_${BOOST_VERS}.tar.bz2
 	cd ${WRKDIR}; tar cvfy ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.bz2 \
 		${DISTNAME} kicad-library kicad-doc kicad-patches
-	echo "BZR_SRC_REV=  ${BZR_SRC_REV}" > ${MASTERDIR}/Makefile.bzr_rev
+	echo "BOOST_RELEASE=  ${BOOST_RELEASE}" > ${MASTERDIR}/Makefile.bzr_rev
+	echo "BOOST_VERS=  ${BOOST_VERS}"   >> ${MASTERDIR}/Makefile.bzr_rev
+	echo "BZR_SRC_REV=  ${BZR_SRC_REV}" >> ${MASTERDIR}/Makefile.bzr_rev
 	echo "BZR_LIB_REV=  ${BZR_LIB_REV}" >> ${MASTERDIR}/Makefile.bzr_rev
 	echo "BZR_DOC_REV=  ${BZR_DOC_REV}" >> ${MASTERDIR}/Makefile.bzr_rev
 .endif
