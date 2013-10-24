@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shadowsocks-libev
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.0
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/${GH_TAGNAME}.tar.gz?dummy=/
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 # fetch from github repo
 USE_GITHUB=	yes
 GH_ACCOUNT=	madeye
-GH_TAGNAME=	v1.3.2
+GH_TAGNAME=	v1.4.0
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 GNU_CONFIGURE=	yes
