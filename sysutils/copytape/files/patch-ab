@@ -1,0 +1,11 @@
+--- copytape.c.orig    2013-10-16 06:54:00.000000000 -0400
++++ copytape.c 2013-10-16 06:54:13.000000000 -0400
+@@ -29,6 +29,8 @@
+
+
+ #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ #include <sys/types.h>
+ #include <sys/ioctl.h>
+ #include <sys/mtio.h>
