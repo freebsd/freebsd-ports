@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/rdesktop
+man/man1/rdesktop.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/ipv6.txt
