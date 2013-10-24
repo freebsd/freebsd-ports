@@ -9,7 +9,15 @@
  }
  
  # ----------------------------------------------------------------------
-@@ -139,6 +139,12 @@
+@@ -106,6 +106,7 @@
+ vars.AddVariables(
+ 	BoolVariable('debug', 'Compile the program with debug information', 0),
+ 	BoolVariable('release', 'Compile the program with optimizations', 0),
++	BoolVariable('libnotify', 'Enable notifications through libnotify', 1),
+ 	BoolVariable('profile', 'Compile the program with profiling information', 0),
+ 	PathVariable('PREFIX', 'Compile the program with PREFIX as the root for installation', '/usr/local', PathVariable.PathIsDir),
+ 	('FAKE_ROOT', 'Make scons install the program under a fake root', '')
+@@ -139,6 +140,12 @@
  if os.environ.has_key('CFLAGS'):
  	env['CFLAGS'] = os.environ['CFLAGS'].split()
  
@@ -22,3 +30,26 @@
  env['CPPDEFINES'] = [] # Initialize as a list so Append doesn't concat strings
  
  env.SConsignFile('build/sconf/.sconsign')
+@@ -263,14 +270,15 @@
+ 		conf.env.Append(CPPDEFINES = 'HAVE_IFADDRS_H')
+ 
+ 	# TODO: Implement a plugin system so libnotify doesn't have compile-time dependencies
+-	if not conf.CheckPKG('libnotify >= 0.4.1'):
+-		print '\tlibnotify >= 0.4.1 not found, disabling notifications.'
+-		print '\tNote: You might have the lib but not the headers'
+-	else:
+-		conf.env.Append(CPPDEFINES = 'HAVE_LIBNOTIFY')
+-		conf.env.ParseConfig('pkg-config --libs libnotify')
+-		if conf.CheckPKG('libnotify >= 0.7'):
+-			conf.env.Append(CPPDEFINES = 'HAVE_LIBNOTIFY_0_7')
++	if conf.env.get('libnotify'):
++		if not conf.CheckPKG('libnotify >= 0.4.1'):
++			print '\tlibnotify >= 0.4.1 not found, disabling notifications.'
++			print '\tNote: You might have the lib but not the headers'
++		else:
++			conf.env.Append(CPPDEFINES = 'HAVE_LIBNOTIFY')
++			conf.env.ParseConfig('pkg-config --libs libnotify')
++			if conf.CheckPKG('libnotify >= 0.7'):
++				conf.env.Append(CPPDEFINES = 'HAVE_LIBNOTIFY_0_7')
+ 
+ 	conf.CheckBZRRevision()
