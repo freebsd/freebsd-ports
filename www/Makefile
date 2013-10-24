@@ -1809,6 +1809,7 @@
     SUBDIR += rubygem-ramaze
     SUBDIR += rubygem-raphael-rails
     SUBDIR += rubygem-redcloth
+    SUBDIR += rubygem-redis-rack
     SUBDIR += rubygem-redmine_acts_as_taggable_on
     SUBDIR += rubygem-rest-client
     SUBDIR += rubygem-rfacebook
