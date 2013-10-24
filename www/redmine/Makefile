@@ -18,7 +18,8 @@ RUN_DEPENDS=	rubygem-rubytree>=0:${PORTSDIR}/devel/rubygem-rubytree \
 		rubygem-rack-openid>=0:${PORTSDIR}/www/rubygem-rack-openid \
 		rubygem-coderay>=1.0.9:${PORTSDIR}/textproc/rubygem-coderay \
 		rubygem-fastercsv>=1.5.0:${PORTSDIR}/devel/rubygem-fastercsv \
-		rubygem-builder>=3.0.0:${PORTSDIR}/devel/rubygem-builder
+		rubygem-builder>=3.0.0:${PORTSDIR}/devel/rubygem-builder \
+		rubygem-net-ldap>=0.3.1:${PORTSDIR}/net/rubygem-net-ldap
 
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	iconv
@@ -26,7 +27,7 @@ USE_RAKE=	yes
 NO_BUILD=	yes
 SUB_LIST+=	RUBY_NAME=${RUBY_NAME}
 
-OPTIONS_DEFINE=	MYSQL MYSQL2 POSTGRESQL RMAGIC WWWSERVER LDAP
+OPTIONS_DEFINE=	MYSQL MYSQL2 POSTGRESQL RMAGIC WWWSERVER
 OPTIONS_DEFAULT=MYSQL2 RMAGIC WWWSERVER THIN
 OPTIONS_SINGLE=	WWWSERVER
 OPTIONS_SINGLE_WWWSERVER=	THIN PASSENGER
@@ -72,10 +73,6 @@ RUN_DEPENDS+=	passenger-config:${PORTSDIR}/www/rubygem-passenger
 .endif
 .endif
 
-.if ${PORT_OPTIONS:MLDAP}
-RUN_DEPENDS+=	rubygem-net-ldap>=0.3.1:${PORTSDIR}/net/rubygem-net-ldap
-.endif
-
 post-extract:
 	${MV} ${WRKSRC}/config/settings.yml ${WRKSRC}/config/settings.yml-dist
 
@@ -84,11 +81,15 @@ pre-install:
 
 do-install:
 	${MKDIR} ${WWWDIR}
+	${MKDIR} ${WWWDIR}/tmp/pids
 	cd ${WRKSRC} && \
 	${COPYTREE_SHARE} "*" ${WWWDIR} "! ( -name *\.orig -o -name *\.bak )"
 	${FIND} ${WRKSRC}/script -type f -print | ${XARGS} ${CHMOD} 755
 
 post-install:
+	${TOUCH} ${WWWDIR}/Gemfile.lock
+	${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/Gemfile.lock
+	
 	if ! [ -r ${WWWDIR}/config/settings.yml ]; then			\
 		${INSTALL_DATA} ${WWWDIR}/config/settings.yml-dist	\
 			${WWWDIR}/config/settings.yml;			\
