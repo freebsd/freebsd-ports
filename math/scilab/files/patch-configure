@@ -1,5 +1,23 @@
 --- ./configure.orig	2011-07-20 08:15:42.000000000 +0000
 +++ ./configure	2013-10-23 11:59:48.722499060 +0000
+@@ -12226,14 +12226,15 @@
+ 
+ public class conftest {
+     public static void main(String[] argv) {
+-        String minVersion="1.8.4";
++        int minVersion=10804;
+                             int[] vers = new int[3];
+                 try { H5.H5get_libversion(vers); }
+                 catch (Throwable ex) {System.exit(-1);}
+                 String ver = vers[0] + "."+ vers[1] +"."+vers[2];
++                int Version = 10000*vers[0] + 100*vers[1] + vers[2];
+ 
+                             System.out.println(ver);
+-                                  if (minVersion.compareTo(ver) > 0) {
++                                  if (minVersion > Version) {
+                                    System.exit(-1);
+                                 }
+ 
 @@ -12281,14 +12281,15 @@
  
  public class conftest {
