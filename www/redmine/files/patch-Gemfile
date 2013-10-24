@@ -1,5 +1,5 @@
---- Gemfile.orig	2013-07-14 16:51:09.000000000 +0000
-+++ Gemfile	2013-10-24 01:36:14.746224376 +0000
+--- Gemfile.orig	2013-09-14 10:48:49.000000000 +0400
++++ Gemfile	2013-10-03 15:49:30.683217929 +0400
 @@ -1,11 +1,11 @@
  source 'https://rubygems.org'
  
@@ -19,13 +19,17 @@
  
  # Optional gem for OpenID authentication
  group :openid do
--  gem "ruby-openid", "~> 2.1.4", :require => "openid"
-+  gem "ruby-openid", "~> 2.1", :require => "openid"
+-  gem "ruby-openid", "~> 2.2.3", :require => "openid"
++  gem "ruby-openid", "~> 2.2", :require => "openid"
    gem "rack-openid"
  end
  
-@@ -49,7 +49,7 @@
-         gem "mysql2", "~> 0.3.11", :platforms => [:mri, :mingw]
+@@ -46,10 +46,10 @@
+     adapters.each do |adapter|
+       case adapter
+       when 'mysql2'
+-        gem "mysql2", "~> 0.3.11", :platforms => [:mri, :mingw]
++        gem "mysql2", "~> 0.3", :platforms => [:mri, :mingw]
          gem "activerecord-jdbcmysql-adapter", :platforms => :jruby
        when 'mysql'
 -        gem "mysql", "~> 2.8.1", :platforms => [:mri, :mingw]
