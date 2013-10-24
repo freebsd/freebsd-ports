@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nspr
-DISTVERSION=	4.10
+DISTVERSION=	4.10.1
 CATEGORIES=	devel
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/v${PORTVERSION}/src
 
@@ -11,8 +11,8 @@ COMMENT=	A platform-neutral API for system level and libc like functions
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/nspr/build
 
+USES=		gmake
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=../configure
 CONFIGURE_ARGS=	--srcdir=${WRKSRC:H}
@@ -21,7 +21,6 @@ MAKE_ENV=	DIST=${WRKSRC}/dist
 
 LIBS=		libnspr4.so.1 libplc4.so.1 libplds4.so.1
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "arm"
@@ -33,24 +32,24 @@ CONFIGURE_ARGS+=--disable-debug
 .endif
 
 do-install:
-	${MKDIR} ${PREFIX}/include/nspr
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/nspr
 	${TAR} -C ${WRKSRC}/dist/include --dereference -cf - . | \
-	    	${TAR} -C ${PREFIX}/include -xof -
-	${FIND} ${PREFIX}/include/nspr -type d | \
+	    	${TAR} -C ${STAGEDIR}${PREFIX}/include -xof -
+	${FIND} ${STAGEDIR}${PREFIX}/include/nspr -type d | \
 	    	${XARGS} ${CHMOD} 0755
-	${FIND} ${PREFIX}/include/nspr -type f | \
+	${FIND} ${STAGEDIR}${PREFIX}/include/nspr -type f | \
 	    	${XARGS} ${CHMOD} ${SHAREMODE}
 	${TAR} -C ${WRKSRC}/dist/lib --dereference -cf - . | \
-	    	${TAR} -C ${PREFIX}/lib -xof -
-	${INSTALL_SCRIPT} ${WRKSRC}/config/nspr-config ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/libdata/pkgconfig
-	${INSTALL_DATA} ${WRKSRC}/config/nspr.pc ${PREFIX}/libdata/pkgconfig
+	    	${TAR} -C ${STAGEDIR}${PREFIX}/lib -xof -
+	${INSTALL_SCRIPT} ${WRKSRC}/config/nspr-config ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	${INSTALL_DATA} ${WRKSRC}/config/nspr.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 .for lib in ${LIBS}
 .if defined(STRIP) && ${STRIP} != ""
-	${STRIP_CMD} ${PREFIX}/lib/${lib}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${lib}
 .endif
-	${CHMOD} ${BINMODE} ${PREFIX}/lib/${lib}
-	${LN} -sf ${lib} ${PREFIX}/lib/${lib:R}
+	${CHMOD} ${BINMODE} ${STAGEDIR}${PREFIX}/lib/${lib}
+	${LN} -sf ${lib} ${STAGEDIR}${PREFIX}/lib/${lib:R}
 .endfor
 
 prtests:
