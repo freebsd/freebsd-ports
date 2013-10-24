@@ -1,0 +1,21 @@
+===============================================================================
+
+Airstrike has been installed.
+
+All options are given only in the config file.
+
+Please copy airstrikerc to your home directory and adjust it
+
+    su user
+
+    cp %%DATADIR%%/airstrikerc ~/.airstrikerc
+
+You could manually change Permissions with:
+
+    /bin/chmod 644 ~/.airstrikerc
+
+    exit
+
+Have fun!
+
+===============================================================================
