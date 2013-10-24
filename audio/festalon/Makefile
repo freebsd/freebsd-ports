@@ -29,6 +29,10 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} >= 1000000
+BROKEN=		does not build on FreeBSD 10.x and later
+.endif
+
 .if ${PKGNAMEPREFIX} == ""
 
 USE_SDL=	yes
