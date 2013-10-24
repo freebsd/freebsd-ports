@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.8.0:${PORTSDIR}/science/py-scipy
 LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
 		boost_graph:${PORTSDIR}/devel/boost-libs \
-		CGAL.5:${PORTSDIR}/math/cgal
+		CGAL.10:${PORTSDIR}/math/cgal
 
 USE_BZIP2=	yes
 USE_GCC=	yes
@@ -28,6 +28,8 @@ CONFIGURE_ENV=	PYTHON_VERSION=${PYTHON_VER}
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
+
+BROKEN=                fails to build
 
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not compile on powerpc: exhausts virtual memory
