@@ -1334,6 +1334,7 @@
     SUBDIR += rubygem-sass
     SUBDIR += rubygem-sass-rails
     SUBDIR += rubygem-sax-machine
+    SUBDIR += rubygem-simplecov-html
     SUBDIR += rubygem-spreadsheet
     SUBDIR += rubygem-stamp
     SUBDIR += rubygem-syntax
