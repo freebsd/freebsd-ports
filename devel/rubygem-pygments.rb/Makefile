@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pygments.rb
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -18,4 +18,5 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>
