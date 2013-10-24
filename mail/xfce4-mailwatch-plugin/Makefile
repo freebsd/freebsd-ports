@@ -2,34 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-mailwatch-plugin
-PORTVERSION=	1.1.0
-PORTREVISION=	18
+PORTVERSION=	1.2.0
 CATEGORIES=	mail xfce
-MASTER_SITES=	http://spuriousinterrupt.org/files/mailwatch/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	A mailwatch plugin for Xfce
+COMMENT=	Mail notification applet for the Xfce panel
 
-LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls \
-		gcrypt:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 USE_BZIP2=	yes
 INSTALLS_ICONS=	yes
-USES=		gettext pathfix gmake pkgconfig
+USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20 intltool intlhack
-USE_XFCE=	configenv libgui libutil panel
-USE_XORG=	x11 xt xaw
+USE_GNOME=	glib20 gtk20 intltool intlhack
+USE_XFCE=	configenv libexo libmenu libutil panel
+USE_XORG=	x11
 
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e 's|--libs "libxfce4panel-1.0"|& "libxfcegui4-1.0"|g; \
-		s|--cflags "libxfce4panel-1.0"|& "libxfcegui4-1.0"|g' \
-		${WRKSRC}/configure
-post-configure:
-	@${REINPLACE_CMD} -e 's|-lgnutls|-lgnutls -lgcrypt|g' \
-		${WRKSRC}/panel-plugin/Makefile
+CONFIGURE_ARGS=--enable-ipv6
 
 .include <bsd.port.mk>

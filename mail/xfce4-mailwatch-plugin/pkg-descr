@@ -1,4 +1,5 @@
-Mailwatch is a plugin for the Xfce 4 panel.
+Xfce4 Mailwatch Plugin is a multi-protocol, multi-mailbox mail watcher for 
+the Xfce4 panel.
 
 Features
 
@@ -13,4 +14,4 @@ Features
     *   Ability to run program on new messages or button click
     *   Informative logger to help track down mail connection problems
 
-WWW:	http://spuriousinterrupt.org/projects/mailwatch
+WWW: http://goodies.xfce.org/projects/panel-plugins/xfce4-mailwatch-plugin
