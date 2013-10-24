@@ -22,29 +22,24 @@ PORTDOCS=	CHANGES README TODO
 SUB_FILES=	pkg-message
 USE_CSTD=	gnu89
 MAKE_JOBS_UNSAFE=	yes
+NEED_ROOT=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/wmcube ${PREFIX}/bin
-	@${CHMOD} g+s ${PREFIX}/bin/wmcube
-	@${CHOWN} root:kmem ${PREFIX}/bin/wmcube
-
-post-install:
+	${INSTALL_PROGRAM} -m 2755 -o root -g kmem ${WRKSRC}/wmcube ${STAGEDIR}${PREFIX}/bin
 .for file in *.wmc
-	@${ECHO} "===>   Installing extra 3d objects in ${PREFIX}/share/${PORTNAME}"
-	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 555 ${DATADIR}
-	@${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/3dObjects/${file} ${DATADIR}
+	@${ECHO} "===>   Installing extra 3d objects in ${STAGEDIR}${PREFIX}/share/${PORTNAME}"
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/3dObjects/${file} ${STAGEDIR}${DATADIR}
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
-	@${ECHO} "===>   Installing README in ${PREFIX}/share/doc/${PORTNAME}"
+	@${ECHO} "===>   Installing README in ${STAGEDIR}${PREFIX}/share/doc/${PORTNAME}"
 	@${ECHO} "===>   Please Read pkg-descr and README for usage information"
-	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 555 ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 . for f in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/../${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../${f} ${STAGEDIR}${DOCSDIR}
 . endfor
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
