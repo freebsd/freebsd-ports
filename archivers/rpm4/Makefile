@@ -6,19 +6,19 @@ PORTVERSION=	4.11.1
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm.org/releases/rpm-${PORTVERSION:R}.x/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-${PORTVERSION:E}.x/
+PKGNAMESUFFIX=	4
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	The RPM Package Manager
 
-LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt \
-		nss3:${PORTSDIR}/security/nss
+LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
+		libnss3.so:${PORTSDIR}/security/nss
 BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 
 OPTIONS_DEFINE=	PYTHON
 OPTIONS_DEFAULT=PYTHON
 
-NO_STAGE=	yes
-USES=		gmake
+USES=		gmake shebangfix
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_LUA=	5.1+
@@ -28,6 +28,13 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 LATEST_LINK=	rpm4
 CONFLICTS_INSTALL=	rpm-[35].*
+SHEBANG_FILES=	scripts/brp-python-bytecompile scripts/check-prereqs \
+		scripts/check-rpaths-worker scripts/pythondeps.sh \
+		scripts/mono-find-requires scripts/mono-find-provides \
+		scripts/pkgconfigdeps.sh scripts/fontconfig.prov \
+		scripts/rpmdb_loadcvt \
+		scripts/perl.prov scripts/perl.req scripts/perldeps.pl \
+		scripts/osgideps.pl scripts/tcl.req
 
 CPPFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/nspr -I${LOCALBASE}/include/nss/nss \
@@ -42,6 +49,8 @@ CONFIGURE_ARGS+=--with-external-db \
 		--without-javaglue \
 		LUA_CFLAGS=-I${LUA_INCDIR} \
 		LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER} -lm"
+
+PORTDOCS=	*
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
 .include <bsd.port.options.mk>
@@ -52,6 +61,7 @@ USE_PYTHON=	2.6+
 PLIST_SUB+=	PYTHON=""
 CPPFLAGS+=	-I${PYTHON_INCLUDEDIR}
 LDFLAGS+=	-L${PYTHON_LIBDIR}
+SHEBANG_FILES+=	python/rpm/transaction.py
 .else
 CONFIGURE_ARGS+=--disable-python
 PLIST_SUB+=	PYTHON="@comment "
@@ -65,30 +75,7 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-MANLANG=	"" ja fr pl ru ko sk
-MAN1_EN=	gendiff.1
-MAN8_EN=	rpm.8 rpm2cpio.8 rpmbuild.8 rpmdeps.8 rpmgraph.8 \
-		rpmdb.8 rpmkeys.8 rpmsign.8 rpmspec.8
-MAN8_JA=	rpm.8 rpm2cpio.8 rpmbuild.8 rpmgraph.8
-MAN8_FR=	rpm.8
-MAN8_PL=	rpm.8 rpm2cpio.8 rpmbuild.8 rpmdeps.8 rpmgraph.8
-MAN8_RU=	rpm.8 rpm2cpio.8
-MAN8_KO=	rpm.8 rpm2cpio.8
-MAN8_SK=	rpm.8
-
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
-.endif
-
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800502
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-rpmio_rpmsq.c
-.endif
-
-.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-LIB_DEPENDS+=	lzma:${PORTSDIR}/archivers/xz
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e '/^pkgconfigdir/s:/:data/:' \
@@ -99,14 +86,17 @@ post-patch:
 		${WRKSRC}/system.h
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	# Install documentation
-	${MKDIR} ${DOCSDIR}/librpm/html
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/librpm/html
 	cd ${WRKSRC}/doc/librpm/html && ${FIND} . \
 		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} \
-			${DOCSDIR}/librpm/html/
+			${STAGEDIR}${DOCSDIR}/librpm/html/
 .endif
-	# Run package installation script
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librpm*.so.* \
+		${STAGEDIR}${PREFIX}/lib/rpm-plugins/*.so
+.if ${PORT_OPTIONS:MPYTHON}
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/rpm/*.so
+.endif
 
 .include <bsd.port.post.mk>
