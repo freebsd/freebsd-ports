@@ -12,8 +12,7 @@ COMMENT=	Monitoring daemon for mfi RAID controllers
 USE_RC_SUBR=	mfid
 PLIST_FILES+=	sbin/mfid
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mfid ${PREFIX}/sbin/mfid
+	${INSTALL_PROGRAM} ${WRKSRC}/mfid ${STAGEDIR}${PREFIX}/sbin/mfid
 
 .include <bsd.port.mk>
