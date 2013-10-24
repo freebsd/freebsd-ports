@@ -51,6 +51,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9a57c607-3cab-11e3-b4d9-bcaec565249c">
+    <topic>xorg-server -- use after free</topic>
+    <affects>
+      <package>
+	<name>xorg-server</name>
+	<range><ge>1.7.0</ge><lt>1.7.7_11</lt></range>
+	<range><ge>1.12.0</ge><lt>1.12.4_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Alan Coopersmith reports:</p>
+	<blockquote cite="http://lists.x.org/archives/xorg-announce/2013-October/002332.html">
+	  <p>Pedro Ribeiro (pedrib at gmail.com) reported an issue to the X.Org
+	     security team in which an authenticated X client can cause an X
+	     server to use memory after it was freed, potentially leading to
+	     crash and/or memory corruption.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4396</cvename>
+      <url>http://lists.x.org/archives/xorg-announce/2013-October/002332.html</url>
+    </references>
+    <dates>
+      <discovery>2013-10-08</discovery>
+      <entry>2013-10-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c0f122e2-3897-11e3-a084-3c970e169bc2">
     <topic>pycrypto -- PRNG reseed race condition</topic>
     <affects>
