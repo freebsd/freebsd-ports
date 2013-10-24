@@ -950,6 +950,7 @@
 %%T%%/jre/lib/currency.data
 %%T%%/jre/lib/deploy.jar
 %%T%%/jre/lib/deploy/MixedCodeMainDialog.ui
+%%T%%/jre/lib/deploy/MixedCodeMainDialogJs.ui
 %%T%%/jre/lib/deploy/cautionshield.icns
 %%T%%/jre/lib/deploy/ffjcext.zip
 %%T%%/jre/lib/deploy/java-icon.ico
@@ -1638,6 +1639,7 @@
 %%T%%/lib/ant-javafx.jar
 %%T%%/lib/ct.sym
 %%T%%/lib/dt.jar
+%%T%%/lib/i386/jli/libjli.so
 %%T%%/lib/ir.idl
 %%T%%/lib/javafx-doclet.jar
 %%T%%/lib/javafx-mx.jar
@@ -3067,6 +3069,8 @@
 @dirrm %%T%%/lib/missioncontrol/configuration/org.eclipse.equinox.simpleconfigurator
 @dirrm %%T%%/lib/missioncontrol/configuration
 @dirrm %%T%%/lib/missioncontrol
+@dirrm %%T%%/lib/i386/jli
+@dirrm %%T%%/lib/i386
 @dirrm %%T%%/lib
 @dirrm %%T%%/jre/plugin/i386/ns7
 @dirrm %%T%%/jre/plugin/i386
