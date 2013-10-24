@@ -3,21 +3,21 @@
 PORTNAME=	relayd
 PORTVERSION=	5.3.20131024
 CATEGORIES=	net
-MASTER_SITES=	https://github.com/mmatuska/${PORTNAME}/archive/
-
-FETCH_ARGS=	-pRr
-MASTER_SITE_SUBDIR=	mm
+MASTER_SITES=	GH
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	OpenBSD relay daemon
 
 LICENSE=	BSD
 
+GH_ACCOUNT=	mmatuska
+GH_COMMIT=	d6a05fb
 MANCOMPRESSED=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${PORTVERSION}/src/usr.sbin
+WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}/src/usr.sbin
 MAN5=		relayd.conf.5
 MAN8=		relayctl.8 relayd.8
+USE_GITHUB=	yes
 USE_RC_SUBR=	relayd
 
 CFLAGS+=	-I${PREFIX}/include -Wall
