@@ -868,6 +868,7 @@
     SUBDIR += rubygem-nmap-parser
     SUBDIR += rubygem-omniauth
     SUBDIR += rubygem-origami
+    SUBDIR += rubygem-pyu-ruby-sasl
     SUBDIR += rubygem-razorback-scriptNugget
     SUBDIR += rubygem-rc4
     SUBDIR += rubygem-roauth
