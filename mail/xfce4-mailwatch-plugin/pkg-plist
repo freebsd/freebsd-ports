@@ -1,54 +1,64 @@
-libexec/xfce4/panel-plugins/xfce4-mailwatch-plugin
+lib/xfce4/panel/plugins/libmailwatch.la
+lib/xfce4/panel/plugins/libmailwatch.so
 share/icons/hicolor/48x48/apps/xfce-newmail.png
 share/icons/hicolor/48x48/apps/xfce-nomail.png
 share/icons/hicolor/scalable/apps/xfce-newmail.svg
 share/icons/hicolor/scalable/apps/xfce-nomail.svg
 share/locale/ar/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/ast/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/bg/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/da/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/de/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/el/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/en_AU/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/en_GB/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/es/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/eu/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/fi/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/fr/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/gl/LC_MESSAGES/xfce4-mailwatch-plugin.mo
-share/locale/gu/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/he/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/hr/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/hu/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/id/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/is/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-mailwatch-plugin.mo
-share/locale/nb_NO/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/ko/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/lt/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/lv/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/nb/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/nl/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/pl/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/pt/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-mailwatch-plugin.mo
-share/locale/pt_PT/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/ru/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/sk/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/sq/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/sr/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/sv/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/tr/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/ug/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/uk/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/ur/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/ur_PK/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/vi/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-mailwatch-plugin.mo
-share/xfce4/doc/C/images/mailwatch-gmail-settings.png
-share/xfce4/doc/C/images/mailwatch-imap-advanced.png
-share/xfce4/doc/C/images/mailwatch-imap-new-folders.png
-share/xfce4/doc/C/images/mailwatch-imap-settings.png
-share/xfce4/doc/C/images/mailwatch-log-window.png
-share/xfce4/doc/C/images/mailwatch-mailbox-type.png
-share/xfce4/doc/C/images/mailwatch-maildir-settings.png
-share/xfce4/doc/C/images/mailwatch-mbox-settings.png
-share/xfce4/doc/C/images/mailwatch-mh-settings.png
-share/xfce4/doc/C/images/mailwatch-panel-indicator.png
-share/xfce4/doc/C/images/mailwatch-pop3-advanced.png
-share/xfce4/doc/C/images/mailwatch-pop3-settings.png
-share/xfce4/doc/C/images/mailwatch-properties.png
-share/xfce4/doc/C/xfce4-mailwatch-plugin.html
-share/xfce4/panel-plugins/mailwatch.desktop
-@dirrmtry share/xfce4/panel-plugins
-@dirrmtry share/xfce4/doc/C/images
-@dirrmtry share/xfce4/doc/C
-@dirrmtry share/xfce4/doc
+share/xfce4/panel/plugins/mailwatch.desktop
+@dirrmtry share/xfce4/panel/plugins
+@dirrmtry share/xfce4/panel
 @dirrmtry share/xfce4
-@dirrmtry share/locale/nb_NO/LC_MESSAGES
-@dirrmtry share/locale/nb_NO
-@dirrmtry libexec/xfce4/panel-plugins
-@dirrmtry libexec/xfce4
+@dirrmtry share/locale/ur_PK/LC_MESSAGES
+@dirrmtry share/locale/ur_PK
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry lib/xfce4/panel/plugins
+@dirrmtry lib/xfce4/panel
+@dirrmtry lib/xfce4
