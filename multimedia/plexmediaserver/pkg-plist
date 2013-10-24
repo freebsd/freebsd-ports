@@ -1430,10 +1430,6 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.kelbytv/URL/Kelby TV/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.khanacademy/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.khanacademy/URL/KhanAcademy/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.kontraband/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.kontraband/URL/Kontraband/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.lifetime/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.lifetime/URL/Lifetime/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.liveleak/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.liveleak/URL/LiveLeak/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.locotv/ServiceInfo.plist
@@ -2027,6 +2023,7 @@
 %%DATADIR%%/Resources/Profiles/Roku.xml
 %%DATADIR%%/Resources/Profiles/Safari.xml
 %%DATADIR%%/Resources/Profiles/Samsung SmartTV.xml
+%%DATADIR%%/Resources/Profiles/Samsung.xml
 %%DATADIR%%/Resources/Profiles/Sony Blu-ray.xml
 %%DATADIR%%/Resources/Profiles/Sony Bravia 2010.xml
 %%DATADIR%%/Resources/Profiles/Sony Bravia 2011.xml
@@ -3352,12 +3349,6 @@
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.liveleak/URL/LiveLeak
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.liveleak/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.liveleak
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.lifetime/URL/Lifetime
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.lifetime/URL
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.lifetime
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.kontraband/URL/Kontraband
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.kontraband/URL
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.kontraband
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.khanacademy/URL/KhanAcademy
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.khanacademy/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.khanacademy
