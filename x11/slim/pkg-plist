@@ -11,4 +11,4 @@ etc/slim.conf.sample
 @exec if [ ! -f %D/etc/slim.conf ]; then cp -p %D/%F %B/slim.conf; fi
 %%PAM%%@unexec if cmp -s %D/etc/pam.d/slim.default %D/etc/pam.d/slim; then rm -f %D/etc/pam.d/slim; fi
 %%PAM%%etc/pam.d/slim.default
-%%PAM%%@exec if [ ! -f %D/etc/pam.d/slim ]; then cp -p %D/%F %B/pam.d/slim; fi
+%%PAM%%@exec if [ ! -f %D/etc/pam.d/slim ]; then cp -p %D/%F %B/slim; fi
