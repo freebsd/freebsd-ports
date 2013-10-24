@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unidecode
-PORTVERSION=	0.04.13
+PORTVERSION=	0.04.14
 CATEGORIES=	converters python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,11 +13,11 @@ COMMENT=	ASCII transliterations of Unicode text
 
 LICENSE=	GPLv2
 
-USE_PYTHON=	yes
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_PKGNAME=	Unidecode
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} >= 320
