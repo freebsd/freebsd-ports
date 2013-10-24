@@ -8,8 +8,6 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Redis Store for Rack
 
-GEM_ENV=	LC_CTYPE=UTF-8
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
@@ -18,4 +16,5 @@ RUN_DEPENDS=	rubygem-rack15>=1.5:${PORTSDIR}/www/rubygem-rack15 \
 		rubygem-redis-store>=1.1.0:${PORTSDIR}/devel/rubygem-redis-store
 
 NO_STAGE=	yes
+
 .include <bsd.port.mk>
