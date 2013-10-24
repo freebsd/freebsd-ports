@@ -1,0 +1,3 @@
+A jQuery plugin for drop-in fix binded events problem caused by Turbolinks
+
+WWW: https://github.com/kossnocorp/jquery.turbolinks

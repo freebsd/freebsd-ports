@@ -1771,6 +1771,7 @@
     SUBDIR += rubygem-jekyll
     SUBDIR += rubygem-journey
     SUBDIR += rubygem-jquery-rails
+    SUBDIR += rubygem-jquery-turbolinks
     SUBDIR += rubygem-jquery-ui-rails
     SUBDIR += rubygem-jruby-rack
     SUBDIR += rubygem-jwt
