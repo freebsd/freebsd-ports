@@ -19,7 +19,7 @@ IGNORE=		port only installs documentation
 
 WRKSRC=		${WRKDIR}/docs
 JDK_VERSION=	7
-JDK_UPDATE_VER=	40
+JDK_UPDATE_VER=	45
 DOWNLOAD_URL=	http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 NO_BUILD=	yes
