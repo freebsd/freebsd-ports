@@ -288,6 +288,7 @@
     SUBDIR += rrdbot
     SUBDIR += rubygem-blimpy
     SUBDIR += rubygem-nagiosplugin
+    SUBDIR += rubygem-sensu-plugin
     SUBDIR += rubygem-snmp
     SUBDIR += rubygem-visage-app
     SUBDIR += satellite
