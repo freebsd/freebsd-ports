@@ -10,16 +10,15 @@ MASTER_SITE_SUBDIR=	src/thunar-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	sergey.dyatko@gmail.com
-COMMENT=	Subversion plugin for Thunar
+COMMENT=	Version Control System plugin for Thunar
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 glib20 intltool intlhack
 USE_XFCE=	configenv libexo libutil thunar
 INSTALLS_ICONS=	yes
-USES=		pkgconfig pathfix
+USES=		pkgconfig gmake
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -27,7 +26,6 @@ OPTIONS_DEFINE=	NLS GIT SVN
 OPTIONS_DEFAULT=	SVN
 GIT_DESC=	Git support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -49,7 +47,7 @@ PLIST_SUB+=	GIT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSVN}
-LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion
+LIB_DEPENDS+=	libsvn_client-1.so:${PORTSDIR}/devel/subversion
 CONFIGURE_ARGS+=--enable-subversion
 PLIST_SUB+=	SVN=""
 .else

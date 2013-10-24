@@ -32,5 +32,3 @@ share/icons/hicolor/48x48/apps/subversion.png
 %%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ur
 @dirrmtry lib/thunarx-2
-@exec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || /usr/bin/true
