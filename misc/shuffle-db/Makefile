@@ -16,8 +16,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/rebuild_db
 PLIST_FILES=	bin/rebuild_db.py
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/rebuild_db.py ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/rebuild_db.py ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

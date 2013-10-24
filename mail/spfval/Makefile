@@ -15,8 +15,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/spfval
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/spfval ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/spfval ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
