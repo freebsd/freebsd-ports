@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vdpauinfo
-PORTVERSION=	0.0.6
+PORTVERSION=	0.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://people.freedesktop.org/~aplattner/vdpau/
 
