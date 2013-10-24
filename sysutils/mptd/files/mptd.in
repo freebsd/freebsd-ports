@@ -19,9 +19,9 @@ stop_cmd="killall -9 mptd > /dev/null 2>&1"
 
 mptd_start()
 {
-	if [ -x "%%PREFIX%%/bin/mptd" -a -e "/dev/mpt0" ]; then
+	if [ -x "%%PREFIX%%/sbin/mptd" -a -e "/dev/mpt0" ]; then
 	        echo "Starting mptd."
-		%%PREFIX%%/bin/mptd ${raid_alert_mailto}
+		%%PREFIX%%/sbin/mptd ${raid_alert_mailto}
 	fi
 }
 
