@@ -3,6 +3,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	4.11.1
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm.org/releases/rpm-${PORTVERSION:R}.x/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-${PORTVERSION:E}.x/
@@ -26,7 +27,6 @@ USE_BDB=	46+
 INVALID_BDB_VER=51
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-LATEST_LINK=	rpm4
 CONFLICTS_INSTALL=	rpm-[35].*
 SHEBANG_FILES=	scripts/brp-python-bytecompile scripts/check-prereqs \
 		scripts/check-rpaths-worker scripts/pythondeps.sh \
@@ -49,8 +49,6 @@ CONFIGURE_ARGS+=--with-external-db \
 		--without-javaglue \
 		LUA_CFLAGS=-I${LUA_INCDIR} \
 		LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER} -lm"
-
-PORTDOCS=	*
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
 .include <bsd.port.options.mk>
