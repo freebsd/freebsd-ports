@@ -15,12 +15,11 @@ ALL_TARGET=	build
 
 PLIST_FILES=	bin/cyrus2courier
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} '/^CFLAGS*/d; /^LDFLAGS*/d; /^CC*/d' \
 		${WRKSRC}/src/Makefile.FreeBSD
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

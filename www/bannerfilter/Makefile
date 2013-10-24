@@ -25,7 +25,6 @@ CONFIG_FILES=	bannerfilter.conf banners.data banners.local.data \
 
 SHEBANG_FILES=	redirector.pl
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^;\ \(DATA\ =\ \).*|\1${PREFIX}/etc/${PORTNAME}/|' \
@@ -35,18 +34,18 @@ post-patch:
 		${WRKSRC}/update.sh
 
 do-install:
-	${MKDIR} ${PREFIX}/libexec/${PORTNAME}
-	${INSTALL_SCRIPT} ${WRKSRC}/redirector.pl ${PREFIX}/libexec/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/redirector.pl ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKSRC}/update.sh \
-		${PREFIX}/bin/update-bannerfilter-rules
-	${MKDIR} ${PREFIX}/etc/${PORTNAME}
+		${STAGEDIR}${PREFIX}/bin/update-bannerfilter-rules
+	${MKDIR} ${STAGEDIR}${ETCDIR}
 .for f in ${CONFIG_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/etc/${PORTNAME}/${f}.default
-.if !exists(${PREFIX}/etc/${PORTNAME}/${f})
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/etc/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${ETCDIR}/${f}.default
+.if !exists(${STAGEDIR}${ETCDIR}/${f})
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${ETCDIR}
 .endif
 .endfor
-	${CP} -R ${WRKSRC}/www ${PREFIX}/${WWW_ROOT}/${PORTNAME}
+	${CP} -R ${WRKSRC}/www ${STAGEDIR}${PREFIX}/${WWW_ROOT}/${PORTNAME}
 
 post-install:
 	@${ECHO_MSG} ""

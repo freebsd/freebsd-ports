@@ -20,7 +20,6 @@ DEFINES=	-D_REENTRANT
 
 PLIST_FILES=	bin/bmp2html
 
-NO_STAGE=	yes
 post-patch:
 	@${RM} ${WRKSRC}/${PORTNAME}
 
@@ -31,6 +30,6 @@ do-build:
 		-o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.o
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
