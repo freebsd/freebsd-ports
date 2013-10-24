@@ -2,6 +2,7 @@
 
 PORTNAME=	ca_root_nss
 PORTVERSION=	${VERSION_NSS}
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/nss/releases/${DISTNAME:U:C/[-.]/_/g}_RTM/src
 DISTNAME=	nss-${VERSION_NSS}${NSS_SUFFIX}
@@ -55,8 +56,11 @@ do-build:	apply-slist
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${CERTDIR}
 	${INSTALL_DATA} ${WRKDIR}/ca-root-nss.crt ${STAGEDIR}${PREFIX}/${CERTDIR}
+
+post-install:
 .if ${PORT_OPTIONS:METCSYMLINK}
-	${LN} -sf ${STAGEDIR}${PREFIX}/${CERTDIR}/ca-root-nss.crt /etc/ssl/cert.pem
+	${MKDIR} ${STAGEDIR}/etc/ssl
+	${LN} -sf ${PREFIX}/${CERTDIR}/ca-root-nss.crt ${STAGEDIR}/etc/ssl/cert.pem
 .endif
 
 .include <bsd.port.mk>
