@@ -1,0 +1,3 @@
+pygments.rb exposes the pygments syntax highlighter to Ruby
+
+WWW: http://github.com/gitlabhq/pygments.rb
