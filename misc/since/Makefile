@@ -10,14 +10,15 @@ MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	View the end of a file like tail(1), but save state between sessions
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GMAKE=	yes
+USES=		gmake
 
 ALL_TARGET=	${PORTNAME}
 
-MAN1=		since.1
-PLIST_FILES=	bin/since
+PLIST_FILES=	bin/since man/man1/since.1.gz
 
-NO_STAGE=	yes
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/since ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/since.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+
 .include <bsd.port.mk>
