@@ -1505,6 +1505,9 @@ man/man1/gather_profile_stats.1.gz
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/custom_user.py
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/custom_user.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/custom_user.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/templates/context_processors/auth_attrs_access.html
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/templates/context_processors/auth_attrs_messages.html
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/templates/context_processors/auth_attrs_no_access.html
@@ -1531,9 +1534,6 @@ man/man1/gather_profile_stats.1.gz
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/test_context_processors.py
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/test_context_processors.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/test_context_processors.pyo
-%%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/test_custom_user.py
-%%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/test_custom_user.pyc
-%%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/test_custom_user.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/test_decorators.py
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/test_decorators.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/test_decorators.pyo
@@ -2337,6 +2337,9 @@ man/man1/gather_profile_stats.1.gz
 %%PYTHON_SITELIBDIR%%/django/contrib/formtools/tests/forms.py
 %%PYTHON_SITELIBDIR%%/django/contrib/formtools/tests/forms.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/formtools/tests/forms.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/formtools/tests/models.py
+%%PYTHON_SITELIBDIR%%/django/contrib/formtools/tests/models.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/formtools/tests/models.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/formtools/tests/templates/404.html
 %%PYTHON_SITELIBDIR%%/django/contrib/formtools/tests/templates/base.html
 %%PYTHON_SITELIBDIR%%/django/contrib/formtools/tests/templates/forms/wizard.html
@@ -4362,6 +4365,9 @@ man/man1/gather_profile_stats.1.gz
 %%PYTHON_SITELIBDIR%%/django/core/management/commands/sqlsequencereset.py
 %%PYTHON_SITELIBDIR%%/django/core/management/commands/sqlsequencereset.pyc
 %%PYTHON_SITELIBDIR%%/django/core/management/commands/sqlsequencereset.pyo
+%%PYTHON_SITELIBDIR%%/django/core/management/commands/squashmigrations.py
+%%PYTHON_SITELIBDIR%%/django/core/management/commands/squashmigrations.pyc
+%%PYTHON_SITELIBDIR%%/django/core/management/commands/squashmigrations.pyo
 %%PYTHON_SITELIBDIR%%/django/core/management/commands/startapp.py
 %%PYTHON_SITELIBDIR%%/django/core/management/commands/startapp.pyc
 %%PYTHON_SITELIBDIR%%/django/core/management/commands/startapp.pyo
@@ -4584,6 +4590,9 @@ man/man1/gather_profile_stats.1.gz
 %%PYTHON_SITELIBDIR%%/django/db/migrations/operations/special.py
 %%PYTHON_SITELIBDIR%%/django/db/migrations/operations/special.pyc
 %%PYTHON_SITELIBDIR%%/django/db/migrations/operations/special.pyo
+%%PYTHON_SITELIBDIR%%/django/db/migrations/optimizer.py
+%%PYTHON_SITELIBDIR%%/django/db/migrations/optimizer.pyc
+%%PYTHON_SITELIBDIR%%/django/db/migrations/optimizer.pyo
 %%PYTHON_SITELIBDIR%%/django/db/migrations/recorder.py
 %%PYTHON_SITELIBDIR%%/django/db/migrations/recorder.pyc
 %%PYTHON_SITELIBDIR%%/django/db/migrations/recorder.pyo
@@ -4911,6 +4920,9 @@ man/man1/gather_profile_stats.1.gz
 %%PYTHON_SITELIBDIR%%/django/utils/datetime_safe.py
 %%PYTHON_SITELIBDIR%%/django/utils/datetime_safe.pyc
 %%PYTHON_SITELIBDIR%%/django/utils/datetime_safe.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/deconstruct.py
+%%PYTHON_SITELIBDIR%%/django/utils/deconstruct.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/deconstruct.pyo
 %%PYTHON_SITELIBDIR%%/django/utils/decorators.py
 %%PYTHON_SITELIBDIR%%/django/utils/decorators.pyc
 %%PYTHON_SITELIBDIR%%/django/utils/decorators.pyo
