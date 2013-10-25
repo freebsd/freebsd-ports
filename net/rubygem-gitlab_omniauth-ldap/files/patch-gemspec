@@ -1,0 +1,11 @@
+--- gitlab_omniauth-ldap-1.0.3.gemspec.orig	2013-10-25 02:24:55.456068284 +0000
++++ gitlab_omniauth-ldap-1.0.3.gemspec	2013-10-25 02:25:06.863067558 +0000
+@@ -58,7 +58,7 @@
+     requirements:
+     - - ~>
+       - !ruby/object:Gem::Version
+-        version: 0.1.1
++        version: 0.4.0
+   type: :runtime
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement
