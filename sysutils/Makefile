@@ -350,6 +350,7 @@
     SUBDIR += graveman
     SUBDIR += grok
     SUBDIR += grub2
+    SUBDIR += grub2-efi
     SUBDIR += gsmartcontrol
     SUBDIR += gstopd
     SUBDIR += gstreamer-plugins-cdio
