@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- build/make/Makefile.orig
++++ build/make/Makefile
+@@ -230,8 +230,8 @@
+ define install_map_template
+ $(DIST_DIR)/$(1): $(2)
+ 	$(if $(quiet),@echo "    [INSTALL] $$@")
+-	$(qexec)mkdir -p $$(dir $$@)
+-	$(qexec)cp -p $$< $$@
++	$(qexec)install -d %%DESTDIR%%$$(dir $$@)
++	$(qexec)install -p $$< %%DESTDIR%%$$(dir $$@)
+ endef
+ 
+ define archive_template
