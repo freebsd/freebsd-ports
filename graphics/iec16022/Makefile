@@ -20,8 +20,6 @@ USES=		pkgconfig
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
-MAN1=		iec16022.1
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/iec16022.c \
 		${WRKSRC}/iec16022ecc200.c ${WRKSRC}/reedsol.c ${WRKSRC}/image.c

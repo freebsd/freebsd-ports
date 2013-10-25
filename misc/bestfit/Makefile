@@ -12,9 +12,7 @@ COMMENT=	Optimally choose files to be put on a CD (or other media)
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-MANCOMPRESSED=	no
 
-MAN1=		bestfit.1
-PLIST_FILES=	bin/bestfit
+PLIST_FILES=	bin/bestfit man/man1/bestfit.1.gz
 
 .include <bsd.port.mk>

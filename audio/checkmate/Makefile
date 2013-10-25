@@ -14,8 +14,6 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 
-MAN1=		mpck.1
-MLINKS=		mpck.1 checkmate.1
-PLIST_FILES=	bin/mpck
+PLIST_FILES=	bin/mpck man/man1/mpck.1.gz
 
 .include <bsd.port.mk>

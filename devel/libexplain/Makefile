@@ -19,12 +19,9 @@ USE_AUTOTOOLS=	libtool
 USES=		bison gettext gmake
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-.include "Makefile.man"
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|sed -e|gsed -e|g' -e 's|\ sed\ | gsed |g' \
 		-e '/@sleep 1/d' \
 			${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -23,3 +23,5 @@ lib/libtalkfilters.la
 lib/libtalkfilters.so
 lib/libtalkfilters.so.1
 libdata/pkgconfig/talkfilters.pc
+man/man1/talkfilters.1.gz
+man/man1/wrap.1.gz

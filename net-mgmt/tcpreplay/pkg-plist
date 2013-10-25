@@ -1,0 +1,10 @@
+bin/tcpbridge
+bin/tcpprep
+bin/tcpreplay
+bin/tcpreplay-edit
+bin/tcprewrite
+man/man1/tcpbridge.1.gz
+man/man1/tcpprep.1.gz
+man/man1/tcpreplay-edit.1.gz
+man/man1/tcpreplay.1.gz
+man/man1/tcprewrite.1.gz

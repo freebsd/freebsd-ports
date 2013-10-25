@@ -13,10 +13,8 @@ COMMENT=	Console application which monitors network traffic in real time
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-MANCOMPRESSED=	yes
 
-MAN1=		nload.1
-PLIST_FILES=	bin/nload
+PLIST_FILES=	bin/nload man/man1/nload.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|\(/etc/nload\.conf\)|${PREFIX}\1|" \
