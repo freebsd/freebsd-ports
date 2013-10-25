@@ -20,14 +20,10 @@ RUN_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:${PORTSDIR}/math/glm
 
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig compiler:c++11-lang
-MANCOMPRESSED=	yes
 
 CONFIGURE_ARGS+=--with-boost-system=boost_system \
 		--with-boost-filesystem=boost_filesystem
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		gource.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
