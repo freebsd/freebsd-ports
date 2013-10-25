@@ -14,7 +14,6 @@ COMMENT=	Star field demo
 PLIST_FILES=	bin/stars
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_XORG=	x11
-NO_STAGE=	yes
 
 do-build:
 	@${CC} -I${PREFIX}/include ${CFLAGS} -c ${WRKSRC}/xwin.c -o ${WRKSRC}/xwin.o
@@ -22,6 +21,6 @@ do-build:
 	@${CC} ${WRKSRC}/main.o ${WRKSRC}/xwin.o -L${PREFIX}/lib -lX11 -lm -o ${WRKSRC}/stars
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/stars ${PREFIX}/bin/stars
+	${INSTALL_PROGRAM} ${WRKSRC}/stars ${STAGEDIR}${PREFIX}/bin/stars
 
 .include <bsd.port.mk>

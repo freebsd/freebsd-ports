@@ -1,5 +1,6 @@
 bin/emx
 bin/sunclock
+man/man1/sunclock.1.gz
 %%DATADIR%%/Sunclockrc
 %%DATADIR%%/earthmaps/vmf/countries.vmf.gz
 %%DATADIR%%/earthmaps/vmf/landwater.vmf.gz

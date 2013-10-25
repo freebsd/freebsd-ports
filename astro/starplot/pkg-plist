@@ -1,55 +1,58 @@
 bin/starconvert
 bin/starpkg
 bin/starplot
+man/man1/starconvert.1.gz
+man/man1/starpkg.1.gz
+man/man1/starplot.1.gz
 share/applications/starplot.desktop
-%%DOCSDIR%%/html/ch0.html
-%%DOCSDIR%%/html/ch1.html
-%%DOCSDIR%%/html/ch2.html
-%%DOCSDIR%%/html/ch3.html
-%%DOCSDIR%%/html/ch4.html
-%%DOCSDIR%%/html/ch5.html
-%%DOCSDIR%%/html/images/bayerdes.png
-%%DOCSDIR%%/html/images/button-brighter.png
-%%DOCSDIR%%/html/images/button-ccw.png
-%%DOCSDIR%%/html/images/button-cw.png
-%%DOCSDIR%%/html/images/button-dimmer.png
-%%DOCSDIR%%/html/images/button-down.png
-%%DOCSDIR%%/html/images/button-earthview.png
-%%DOCSDIR%%/html/images/button-open.png
-%%DOCSDIR%%/html/images/button-up.png
-%%DOCSDIR%%/html/images/button-zoomin.png
-%%DOCSDIR%%/html/images/button-zoomout.png
-%%DOCSDIR%%/html/images/coords.png
-%%DOCSDIR%%/html/images/dialog-define-chart.png
-%%DOCSDIR%%/html/images/dialog-file-open.png
-%%DOCSDIR%%/html/images/dialog-search.png
-%%DOCSDIR%%/html/images/filebar.png
-%%DOCSDIR%%/html/images/gcoords.png
-%%DOCSDIR%%/html/images/hrdiagram.png
-%%DOCSDIR%%/html/images/legend.png
-%%DOCSDIR%%/html/images/menu-chart.png
-%%DOCSDIR%%/html/images/menu-file.png
-%%DOCSDIR%%/html/images/star-parts.png
-%%DOCSDIR%%/html/images/star-popup.png
-%%DOCSDIR%%/html/images/starplot-png.png
-%%DOCSDIR%%/html/images/status.png
-%%DOCSDIR%%/html/images/tour-40ly-reddwarfs.png
-%%DOCSDIR%%/html/images/tour-40ly.png
-%%DOCSDIR%%/html/images/tour-arcturus.png
-%%DOCSDIR%%/html/images/tour-first.png
-%%DOCSDIR%%/html/images/tour-galplane.png
-%%DOCSDIR%%/html/images/tour-hr-diagram.png
-%%DOCSDIR%%/html/images/tour-hyades.png
-%%DOCSDIR%%/html/images/tour-legend-sun.png
-%%DOCSDIR%%/html/images/tour-scocen.png
-%%DOCSDIR%%/html/images/tour-sunlike-info.png
-%%DOCSDIR%%/html/images/tour-sunlike.png
-%%DOCSDIR%%/html/images/ui-parts.png
-%%DOCSDIR%%/html/index.html
-%%DOCSDIR%%/html/parfiles/galplane.par
-%%DOCSDIR%%/html/parfiles/hyades.par
-%%DOCSDIR%%/html/parfiles/scocen.par
-%%DOCSDIR%%/html/starplot.css
+%%PORTDOCS%%%%DOCSDIR%%/html/ch0.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch3.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch4.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch5.html
+%%PORTDOCS%%%%DOCSDIR%%/html/images/bayerdes.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/button-brighter.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/button-ccw.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/button-cw.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/button-dimmer.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/button-down.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/button-earthview.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/button-open.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/button-up.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/button-zoomin.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/button-zoomout.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/coords.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/dialog-define-chart.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/dialog-file-open.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/dialog-search.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/filebar.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/gcoords.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/hrdiagram.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/legend.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/menu-chart.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/menu-file.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/star-parts.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/star-popup.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/starplot-png.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/status.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tour-40ly-reddwarfs.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tour-40ly.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tour-arcturus.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tour-first.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tour-galplane.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tour-hr-diagram.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tour-hyades.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tour-legend-sun.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tour-scocen.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tour-sunlike-info.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tour-sunlike.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/ui-parts.png
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/parfiles/galplane.par
+%%PORTDOCS%%%%DOCSDIR%%/html/parfiles/hyades.par
+%%PORTDOCS%%%%DOCSDIR%%/html/parfiles/scocen.par
+%%PORTDOCS%%%%DOCSDIR%%/html/starplot.css
 %%EXAMPLESDIR%%/example.spec
 share/locale/en@boldquot/LC_MESSAGES/starplot.mo
 share/locale/en@quot/LC_MESSAGES/starplot.mo
@@ -59,10 +62,10 @@ share/pixmaps/starplot32x32.xpm
 %%DATADIR%%/test.stars
 @dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%
-@dirrm %%DOCSDIR%%/html/parfiles
-@dirrm %%DOCSDIR%%/html/images
-@dirrm %%DOCSDIR%%/html
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/parfiles
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/locale/en@boldquot/LC_MESSAGES
 @dirrmtry share/locale/en@boldquot
 @dirrmtry share/locale/en@quot/LC_MESSAGES
