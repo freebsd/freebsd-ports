@@ -13,22 +13,20 @@ MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		http://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.ayamura.org/pub/nessus/nessus-${PORTVERSION}/src/
+DIST_SUBDIR=	nessus
 
 MAINTAINER=	udo.schweigert@siemens.com
 COMMENT=	Libraries for Nessus, the security scanner
 
 LICENSE=	LGPL20
 
-DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-libraries
-
 USES=		bison
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--enable-cipher
 .if defined(WITH_NESSUS_BPF_SHARE)
 CONFIGURE_ARGS+=	--enable-bpf-sharing
 .endif
-
 USE_LDCONFIG=	YES
 
 .if ! defined(NESSUS_CLIENT_ONLY)
