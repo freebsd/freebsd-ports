@@ -14,25 +14,24 @@ USES=		gmake
 CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include
 
-PLIST_FILES=	bin/metacam
+PLIST_FILES=	bin/metacam man/man1/metacam.1.gz
 PORTDOCS=	README.canon README.casio
-MAN1=		metacam.1
 
 ALL_TARGET=	${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
 
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

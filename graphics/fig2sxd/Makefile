@@ -14,17 +14,15 @@ USES=		gmake
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAN1=		fig2sxd.1
-PLIST_FILES=	bin/fig2sxd
+PLIST_FILES=	bin/fig2sxd man/man1/fig2sxd.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^CXX/d; s|^\(all:\).*|\1 $$(TARGET1) fig2sxd.1|' \
 			${WRKSRC}/${MAKEFILE}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
