@@ -8,13 +8,10 @@ bin/gdcminfo
 bin/gdcmraw
 bin/gdcmscanner
 bin/gdcmscu
-bin/gdcmstream
 bin/gdcmtar
 %%VTK%%bin/gdcmviewer
 %%VTK%%bin/gdcm2pnm
 %%VTK%%bin/gdcm2vtk
-include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmFileChangeTransferSyntax.h
-include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmFileStreamer.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmAAbortPDU.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmAAssociateACPDU.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmAAssociateRJPDU.h
@@ -44,6 +41,8 @@ include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmByteSwap.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmByteSwap.txx
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmByteSwapFilter.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmByteValue.h
+include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmCAPICryptoFactory.h
+include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmCAPICryptographicMessageSyntax.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmCEchoMessages.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmCFindMessages.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmCMoveMessages.h
@@ -64,6 +63,7 @@ include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmCompositeMessageFactory.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmCompositeNetworkFunctions.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmConfigure.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmConstCharWrapper.h
+include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmCryptoFactory.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmCryptographicMessageSyntax.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmCurve.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmDICOMDIR.h
@@ -102,10 +102,13 @@ include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmExplicitImplicitDataElement.txx
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmFiducials.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmFile.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmFileAnonymizer.h
+include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmFileChangeTransferSyntax.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmFileDerivation.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmFileExplicitFilter.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmFileMetaInformation.h
+include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmFileNameEvent.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmFileSet.h
+include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmFileStreamer.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmFilename.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmFilenameGenerator.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmFindPatientRootQuery.h
@@ -147,6 +150,7 @@ include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmJPEG2000Codec.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmJPEG8Codec.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmJPEGCodec.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmJPEGLSCodec.h
+include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmJSON.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmKAKADUCodec.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmLO.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmLegacyMacro.h
@@ -167,6 +171,10 @@ include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmNestedModuleEntries.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmNetworkEvents.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmNetworkStateID.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmObject.h
+include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmOpenSSLCryptoFactory.h
+include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmOpenSSLCryptographicMessageSyntax.h
+include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmOpenSSLP7CryptoFactory.h
+include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmOpenSSLP7CryptographicMessageSyntax.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmOrientation.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmOverlay.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmPDBElement.h
@@ -250,6 +258,7 @@ include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmTable.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmTableEntry.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmTableReader.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmTag.h
+include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmTagKeywords.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmTagPath.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmTagToType.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmTagToVR.h
@@ -280,6 +289,7 @@ include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmUNExplicitDataElement.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmUNExplicitDataElement.txx
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmUNExplicitImplicitDataElement.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmUNExplicitImplicitDataElement.txx
+include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmUUIDGenerator.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmUnpacker12Bits.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmUsage.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmUserInformation.h
@@ -298,6 +308,7 @@ include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmWaveform.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmWin32.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmWriter.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmXMLDictReader.h
+include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmXMLPrinter.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmXMLPrivateDictReader.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcm_j2k.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcm_jp2.h
@@ -424,7 +435,6 @@ lib/libgdcmuuid.so.%%GDCM_MAJOR%%.%%GDCM_MINOR%%.%%GDCM_PATCH%%
 %%VTK%%lib/libvtkgdcm.so.%%GDCM_MAJOR%%
 %%VTK%%lib/libvtkgdcm.so.%%GDCM_MAJOR%%.%%GDCM_MINOR%%.%%GDCM_PATCH%%
 %%DATADIR%%/XML/CSAHeader.xml
-%%DATADIR%%/XML/DICOMV3.xml
 %%DATADIR%%/XML/Part3.xml
 %%DATADIR%%/XML/Part4.xml
 %%DATADIR%%/XML/Part6.xml
