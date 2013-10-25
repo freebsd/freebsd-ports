@@ -11,6 +11,8 @@ MASTER_SITE_SUBDIR=	mnag/${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sender Policy Framework (SPF) library and client
 
+MAKE_JOBS_UNSAFE=yes
+
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
