@@ -71,7 +71,7 @@ do_fetch () {
 }
 
 check_dns () {
-    if [ `dig bsdstats.org txt | grep TXT | grep UP | wc -l` = 0 ] 
+    if [ `%%DIG%% bsdstats.org txt | grep TXT | grep UP | wc -l` = 0 ] 
     then
       echo "DNS not reachable, Network Down?"
       exit
