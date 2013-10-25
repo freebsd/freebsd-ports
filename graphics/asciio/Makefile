@@ -36,9 +36,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		App::Asciio::setup::import_export::perl.3 \
-		App::Asciio.3 \
-		App::Asciio::setup::hooks::canonize_connections.3 \
-		App::Asciio::Undo.3
-
 .include <bsd.port.mk>

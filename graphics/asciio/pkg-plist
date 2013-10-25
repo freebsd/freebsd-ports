@@ -42,6 +42,10 @@ bin/asciio
 %%SITE_PERL%%/App/Asciio/stripes/single_stripe.pm
 %%SITE_PERL%%/App/Asciio/stripes/stripes.pm
 %%SITE_PERL%%/App/Asciio/stripes/wirl_arrow.pm
+%%PERL5_MAN3%%/App::Asciio::setup::import_export::perl.3.gz
+%%PERL5_MAN3%%/App::Asciio.3.gz
+%%PERL5_MAN3%%/App::Asciio::setup::hooks::canonize_connections.3.gz
+%%PERL5_MAN3%%/App::Asciio::Undo.3.gz
 @dirrm %%SITE_PERL%%/App/Asciio/stripes
 @dirrm %%SITE_PERL%%/App/Asciio/setup/stencils
 @dirrm %%SITE_PERL%%/App/Asciio/setup/import_export
