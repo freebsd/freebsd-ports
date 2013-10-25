@@ -1760,6 +1760,7 @@
     SUBDIR += rubygem-feed-normalizer
     SUBDIR += rubygem-feedzirra
     SUBDIR += rubygem-geminabox
+    SUBDIR += rubygem-gitlab-gollum-lib
     SUBDIR += rubygem-gitlab-grack
     SUBDIR += rubygem-gon
     SUBDIR += rubygem-haml
