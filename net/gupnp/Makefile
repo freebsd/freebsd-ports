@@ -19,6 +19,7 @@ LIB_DEPENDS=	libgssdp-1.0.so:${PORTSDIR}/net/gssdp \
 CONFIGURE_ARGS=	--enable-introspection=yes
 CONFIGURE_ENV=	VAPIGEN=""
 GNU_CONFIGURE=	yes
+MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
