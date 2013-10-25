@@ -16,7 +16,6 @@ LIB_DEPENDS=	nova:${PORTSDIR}/astro/libnova
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USES=		gmake
 

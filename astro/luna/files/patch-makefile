@@ -1,5 +1,5 @@
---- makefile.orig	Sun May 24 03:57:22 1992
-+++ makefile	Mon Feb 21 02:45:58 2000
+--- makefile.orig	2013-10-25 16:28:17.000000000 +0800
++++ makefile	2013-10-25 16:28:43.000000000 +0800
 @@ -2,23 +2,24 @@
  # 	Makefile for luna using BSD cc
  # 
@@ -38,7 +38,7 @@
  
  # The program name
  PROG = luna$(EXE)
-@@ -26,7 +27,8 @@
+@@ -26,7 +27,8 @@ PROG = luna$(EXE)
  # All modules
  SRCS = famplan.c luna.c pyramid.c
  OBJS = famplan$(O) luna$(O) pyramid$(O)
@@ -48,12 +48,12 @@
  HDRS = luna.h
  HDRSPR = pyramid.h
  HDRSIP = iprintf/iansilib.h iprintf/iprint.h
-@@ -35,13 +37,18 @@
+@@ -35,13 +37,18 @@ HDRSIP = iprintf/iansilib.h iprintf/ipri
  #
  all : $(PROG)
  
 +install:
-+	${BSD_INSTALL_PROGRAM} $(PROG) ${PREFIX}/bin
++	${BSD_INSTALL_PROGRAM} $(PROG) ${DESTDIR}${PREFIX}/bin
 +clean:
 +	rm -fr $(OBJS) $(OBJSIP) $(PROG)
 +
@@ -71,7 +71,7 @@
  
  $(OBJS) : $(HDRS)
  
-@@ -50,13 +57,13 @@
+@@ -50,13 +57,13 @@ luna$(O) pyramid$(O) : $(HDRSPR)
  $(OBJS) : $(MAKEFILE)
  
  # UNIX

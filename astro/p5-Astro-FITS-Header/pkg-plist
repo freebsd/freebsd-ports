@@ -1,3 +1,9 @@
+%%PERL5_MAN3%%/Astro::FITS::Header.3.gz
+%%PERL5_MAN3%%/Astro::FITS::Header::AST.3.gz
+%%PERL5_MAN3%%/Astro::FITS::Header::CFITSIO.3.gz
+%%PERL5_MAN3%%/Astro::FITS::Header::GSD.3.gz
+%%PERL5_MAN3%%/Astro::FITS::Header::Item.3.gz
+%%PERL5_MAN3%%/Astro::FITS::Header::NDF.3.gz
 %%SITE_PERL%%/Astro/FITS/Header.pm
 %%SITE_PERL%%/Astro/FITS/Header/AST.pm
 %%SITE_PERL%%/Astro/FITS/Header/CFITSIO.pm

@@ -12,10 +12,8 @@ COMMENT=	Generates images of the Earth centered at a particular location
 
 LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
 
-MAN1=		rmap.1
 GNU_CONFIGURE=	yes
 USES=		gmake
-NO_STAGE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"

@@ -17,8 +17,5 @@ RUN_DEPENDS=	p5-Geo-Gpx>=0.25:${PORTSDIR}/graphics/p5-Geo-Gpx \
 
 USES=		perl5
 USE_PERL5=	configure
-NO_STAGE=	yes
-
-MAN3=	GPS::Babel.3
 
 .include <bsd.port.mk>

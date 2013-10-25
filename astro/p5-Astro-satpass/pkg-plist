@@ -1,4 +1,14 @@
 bin/satpass
+%%PERL5_MAN3%%/Astro::Coord::ECI.3.gz
+%%PERL5_MAN3%%/Astro::Coord::ECI::Mixin.3.gz
+%%PERL5_MAN3%%/Astro::Coord::ECI::Moon.3.gz
+%%PERL5_MAN3%%/Astro::Coord::ECI::OVERVIEW.3.gz
+%%PERL5_MAN3%%/Astro::Coord::ECI::Star.3.gz
+%%PERL5_MAN3%%/Astro::Coord::ECI::Sun.3.gz
+%%PERL5_MAN3%%/Astro::Coord::ECI::TLE.3.gz
+%%PERL5_MAN3%%/Astro::Coord::ECI::TLE::Iridium.3.gz
+%%PERL5_MAN3%%/Astro::Coord::ECI::TLE::Set.3.gz
+%%PERL5_MAN3%%/Astro::Coord::ECI::Utils.3.gz
 %%SITE_PERL%%/Astro/Coord/ECI.pm
 %%SITE_PERL%%/Astro/Coord/ECI/Mixin.pm
 %%SITE_PERL%%/Astro/Coord/ECI/Moon.pm
@@ -10,6 +20,7 @@ bin/satpass
 %%SITE_PERL%%/Astro/Coord/ECI/TLE/Set.pm
 %%SITE_PERL%%/Astro/Coord/ECI/Utils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/Coord/ECI/.packlist
+man/man1/satpass.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/Coord/ECI
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/Coord
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro

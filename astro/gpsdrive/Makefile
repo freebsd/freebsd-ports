@@ -15,7 +15,6 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
-NO_STAGE=	yes
 USES=		gmake perl5 pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gtk20
@@ -26,7 +25,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-garmin
 MAKE_JOBS_UNSAFE=	yes
 
-MAN1=		gpsdrive.1
 MANLANG=	"" de es
 
 OPTIONS_DEFINE=	NLS
@@ -45,10 +43,5 @@ post-patch:
 	@${REINPLACE_CMD} 's|SUBDIRS = src po man|SUBDIRS = src man|' \
 		${WRKSRC}/Makefile.in
 .endif
-
-post-install:
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
 
 .include <bsd.port.mk>

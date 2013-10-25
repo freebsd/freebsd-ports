@@ -10,7 +10,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Binary representation of the Sky2000 star catalog
 
 GNU_CONFIGURE=	yes
-NO_STAGE=	yes
 
 DATADIR=	${PREFIX}/share/nova
 
