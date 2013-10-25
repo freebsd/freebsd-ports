@@ -1770,6 +1770,7 @@
     SUBDIR += rubygem-innate
     SUBDIR += rubygem-jekyll
     SUBDIR += rubygem-journey
+    SUBDIR += rubygem-jquery-atwho-rails
     SUBDIR += rubygem-jquery-rails
     SUBDIR += rubygem-jquery-turbolinks
     SUBDIR += rubygem-jquery-ui-rails
