@@ -1,6 +1,5 @@
 # $FreeBSD$
 
-NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.common"
 
 PORTREVISION=	0
@@ -158,20 +157,6 @@ CONFIGURE_ARGS+=	--disable-epm \
 			--without-fonts \
 			--without-myspell-dicts \
 			--without-system-mozilla
-
-MAN1=	libreoffice.1 \
-	lobase.1 \
-	localc.1 \
-	lodraw.1 \
-	loffice.1 \
-	lofromtemplate.1 \
-	loimpress.1 \
-	lomath.1 \
-	loweb.1 \
-	lowriter.1 \
-	unopkg.1
-
-MANCOMPRESSED=	yes
 
 OPTIONS_DEFINE=	CUPS DEBUG GNOME GTK2 GTK3 JAVA KDE4 MMEDIA PGSQL SDK \
 		SYSTRAY TEST WEBDAV
@@ -377,41 +362,43 @@ pre-configure:
 post-configure:
 	@${TOUCH} ${WRKSRC}/src.downloaded
 
+do-build:
+	@cd ${WRKSRC} && ${SETENV} DESTDIR="" ${MAKE_ENV} ${GMAKE}
+
 do-install:
 	@cd ${WRKSRC} && ${SETENV} DESTDIR="${LODESTDIR}" \
 	    ${GMAKE} distro-pack-install
 
-post-install:
 	@${RM} -f ${PLISTF} ${PLISTD}
 	# It seems that the empty directories are necessary for libreoffice keep them for now
-	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -d lib/libreoffice -type d \
+	@cd ${LODESTDIR}${PREFIX} && ${FIND} -d lib/libreoffice -type d \
 	    -empty -exec ${ECHO_CMD} "@exec ${MKDIR} %D/{}" \; >> ${PLISTD}
 
-	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -H -s bin lib \
+	@cd ${LODESTDIR}${PREFIX} && ${FIND} -H -s bin lib \
 	    \( -type f -o -type l \) -print >> ${PLISTF}
-	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -d lib/libreoffice -type d \
+	@cd ${LODESTDIR}${PREFIX} && ${FIND} -d lib/libreoffice -type d \
 	    -exec ${ECHO_CMD} "@dirrm {}" \; >> ${PLISTD}
 
 	@${ECHO_CMD} etc/bash_completion.d/libreoffice.sh >> ${PLISTF}
 	@${ECHO_CMD} "@dirrmtry etc/bash_completion.d" >> ${PLISTD}
 
 .for subdir in applications icons mime mimelnk
-	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -H -s share/${subdir} \
+	@cd ${LODESTDIR}${PREFIX} && ${FIND} -H -s share/${subdir} \
 	    \( -type f -o -type l \) -print >> ${PLISTF}
-	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -d share/${subdir} -type d \
+	@cd ${LODESTDIR}${PREFIX} && ${FIND} -d share/${subdir} -type d \
 	    -exec ${ECHO_CMD} "@dirrmtry {}" \; >> ${PLISTD}
 .endfor
 # do not add the subdir itself as dirrmtry
 .for subdir in application-registry mime-info
-	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -H -s share/${subdir} \
+	@cd ${LODESTDIR}${PREFIX} && ${FIND} -H -s share/${subdir} \
 	    \( -type f -o -type l \) -print >> ${PLISTF}
 .endfor
 
 .if ${PORT_OPTIONS:MSDK}
 .for subdir in include share share/doc share/idl
-	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -H -s ${subdir}/libreoffice \
+	@cd ${LODESTDIR}${PREFIX} && ${FIND} -H -s ${subdir}/libreoffice \
 	    \( -type f -o -type l \) -print >> ${PLISTF}
-	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -d ${subdir}/libreoffice \
+	@cd ${LODESTDIR}${PREFIX} && ${FIND} -d ${subdir}/libreoffice \
 	    -type d -exec echo "@dirrm {}" \; >> ${PLISTD}
 .endfor
 	@${ECHO_CMD} "@dirrmtry share/idl" >> ${PLISTD}
@@ -423,9 +410,9 @@ post-install:
 	@${GREP} '^@dirrmtry ' ${PLISTD} | ${SORT} -ru | \
 	    ${SED} -e '${PLIST_REINPLACE_DIRRMTRY}' >> ${TMPPLIST}
 
-	@cd ${LODESTDIR}/${PREFIX} ; ${PAX} -rw . ${PREFIX}
-	@${MKDIR} ${PREFIX}/etc/bash_completion.d
+	@cd ${LODESTDIR}${PREFIX} ; ${PAX} -rw . ${STAGEDIR}${PREFIX}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	@${INSTALL_SCRIPT} ${LODESTDIR}/etc/bash_completion.d/libreoffice.sh \
-	    ${PREFIX}/etc/bash_completion.d
+	    ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 
 .include <bsd.port.post.mk>

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libreoffice
-PORTVERSION=	4.0.5
+PORTVERSION=	4.0.6
 RCVER=		2
 #PRERELEASE=	yes
 LOVERSION=	${PORTVERSION}.${RCVER}
@@ -75,15 +75,16 @@ post-extract:
 	done ; \
 
 do-install:
-	@rm -f ${PLISTD} ${PLISTF}
+	@${RM} -f ${PLISTD} ${PLISTF}
 	cd ${WRKSRC}/opt/${PORTNAME}${PORTVERSION:R} ; ${FIND} * -type d -exec ${ECHO_CMD} "@unexec ${RMDIR} %D/lib/${PORTNAME}/{} || ${TRUE}" \; >> ${PLISTD}
 	cd ${WRKSRC}/opt/${PORTNAME}${PORTVERSION:R} ; ${FIND} * \( -type f -o -type l \) -exec ${ECHO_CMD} "lib/${PORTNAME}/{} " \; >> ${PLISTF}
 
 	${SORT} ${PLISTF} >> ${TMPPLIST}
 	${SORT} -r ${PLISTD} >> ${TMPPLIST}
 
-	${MKDIR} ${PREFIX}/lib/${PORTNAME}
-	cd ${WRKSRC}/opt/${PORTNAME}${PORTVERSION:R} ; ${PAX} -rw . ${PREFIX}/lib/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
+	cd ${WRKSRC}/opt/${PORTNAME}${PORTVERSION:R} ; \
+	    ${PAX} -rw . ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 .else
 MASTER_SITES+=	http://dev-www.libreoffice.org/src/:src \
 		http://dev-www.libreoffice.org/extern/:ext

@@ -1,6 +1,5 @@
 # $FreeBSD$
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../libreoffice/Makefile.common"
 UNIQUENAME=   ${PORTNAME}${PKGNAMESUFFIX}
 PKGNAMESUFFIX=	-i18n
