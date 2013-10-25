@@ -2,7 +2,7 @@
 
 PORTNAME=	sdl2_mixer
 PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_mixer/release/
 DISTNAME=	SDL2_mixer-${PORTVERSION}
@@ -13,7 +13,6 @@ COMMENT=	A sample multi-channel audio mixer library
 LICENSE=	ZLIB
 
 USES=		gmake pathfix pkgconfig
-NO_STAGE=	yes
 USE_SDL=	sdl2
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -37,14 +36,18 @@ MIKMOD_CONFIGURE_ENABLE=	music-mod-mikmod
 MODPLUG_LIB_DEPENDS=		libmodplug.so:${PORTSDIR}/audio/libmodplug
 MODPLUG_CONFIGURE_ENABLE=	music-mod-modplug
 
-FLAC_LIB_DEPENDS=		FLAC:${PORTSDIR}/audio/flac
+FLAC_LIB_DEPENDS=		libFLAC.so:${PORTSDIR}/audio/flac
 FLAC_CONFIGURE_ENABLE=		music-flac
 
-FLUIDSYNTH_LIB_DEPENDS=		fluidsynth:${PORTSDIR}/audio/fluidsynth
+FLUIDSYNTH_LIB_DEPENDS=		libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
 FLUIDSYNTH_CONFIGURE_ON=	--enable-music-midi --enable-music-midi-fluidsynth
 FLUIDSYNTH_CONFIGURE_OFF=	--disable-music-midi --disable-music-midi-fluidsynth
 
-VORBIS_LIB_DEPENDS=		vorbis:${PORTSDIR}/audio/libvorbis
+VORBIS_LIB_DEPENDS=		libvorbis.so:${PORTSDIR}/audio/libvorbis
 VORBIS_CONFIGURE_ENABLE=	music-ogg
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$(prefix)/libdata/pkgconfig|$(DESTDIR)$(prefix)/libdata/pkgconfig|' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

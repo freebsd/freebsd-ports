@@ -20,6 +20,7 @@ include/SDL2/SDL_cpuinfo.h
 include/SDL2/SDL_endian.h
 include/SDL2/SDL_error.h
 include/SDL2/SDL_events.h
+include/SDL2/SDL_filesystem.h
 include/SDL2/SDL_gamecontroller.h
 include/SDL2/SDL_gesture.h
 include/SDL2/SDL_haptic.h
@@ -75,8 +76,8 @@ share/aclocal/sdl2.m4
 lib/libSDL2.a
 lib/libSDL2.so
 lib/libSDL2-2.0.so
-lib/libSDL2-2.0.so.0
-lib/libSDL2-2.0.so.0.0.0
+lib/libSDL2-2.0.so.1
+lib/libSDL2-2.0.so.1.0.1
 lib/libSDL2main.a
 libdata/pkgconfig/sdl2.pc
 @dirrm include/SDL2
