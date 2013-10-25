@@ -4094,6 +4094,7 @@
     SUBDIR += rubygem-gdata
     SUBDIR += rubygem-gem_plugin
     SUBDIR += rubygem-gemcutter
+    SUBDIR += rubygem-generator_spec
     SUBDIR += rubygem-georuby
     SUBDIR += rubygem-getopt
     SUBDIR += rubygem-gettext
