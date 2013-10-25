@@ -1,21 +1,34 @@
 --- configure.orig	2012-06-06 02:58:38.000000000 +0200
-+++ configure	2012-06-10 21:25:57.000000000 +0200
-@@ -831,6 +831,7 @@
++++ configure	2013-10-23 14:29:24.000000000 +0200
+@@ -831,7 +831,8 @@
  # NB: use ANSI C prototype to weed out non-ANSI compilers.
  #
  cat>dummy.c<<EOF
+-main(int argc, char* argv) { exit(0); }
 +#include <stdlib.h>
- main(int argc, char* argv) { exit(0); }
++int main(int argc, char** argv) { exit(0); }
  EOF
  
-@@ -982,6 +983,7 @@
+ checkCompiler()
+@@ -982,7 +983,8 @@
  # Make dependency information.
  #
  cat>dummy.c<<EOF
+-main(int argc, char* argv) { exit(0); }
 +#include <stdlib.h>
- main(int argc, char* argv) { exit(0); }
++int main(int argc, char** argv) { exit(0); }
  EOF
  capture cat dummy.c
+ if capture "$CCOMPILER -c -M $MKDEPCOPTS dummy.c | grep '^dummy.o[ 	]*:[ 	]*dummy.c'"; then
+@@ -1629,7 +1631,7 @@
+ {
+     return(0);
+ }
+-main()
++int main()
+ {
+     struct pam_conv conv = { pamconv };
+ }
 @@ -1664,10 +1666,10 @@
  LIBJBIG=""
  if [ "$DISABLE_JBIG" != "yes" ]; then
@@ -117,14 +130,44 @@
  extern char* malloc();
  static void
  boom(const char* msg)
-@@ -2537,6 +2572,7 @@
+@@ -2448,7 +2483,7 @@
+ 	echo "$i"
+     done
+     cat<<EOF
+-main()
++int main()
+ {
+     struct $decl x;
+     x.ut_exit.e_exit = 0;
+@@ -2465,7 +2500,7 @@
+ {
+     (echo '#include <time.h>'
+     cat<<EOF
+-main()
++int main()
+ {
+     struct tm x;
+     char* cp;
+@@ -2484,7 +2519,7 @@
+ {
+     cat>t.c<<EOF
+ #include <sys/ioctl.h>
+-main()
++int main()
+ {
+     ioctl(0, TXADDCD, "rts");
+     ioctl(0, TXDELCD, "rts");
+@@ -2537,8 +2572,9 @@
      tiff_bytecount_t=""
      cat>t.c<<EOF
  #include <stdio.h>
 +#include <stdlib.h>
  #include "tiffio.h"
- main()
+-main()
++int main()
  {
+     printf( "header_ver=%d lib_ver=%s", TIFFLIB_VERSION, TIFFGetVersion() );
+     exit(0);
 @@ -2568,7 +2604,7 @@
  				tiff_bytecount_t="uint64"
  				echo '#define TIFFHeader	TIFFHeaderClassic'
@@ -143,11 +186,14 @@
  for i in $FUNCS; do
      CheckForFunc $i || {
  	Note "... emulate $i"
-@@ -3313,6 +3349,7 @@
+@@ -3313,8 +3349,9 @@
  # Verify library is compatible.
  #
  cat>t.c<<EOF
 +#include <stdlib.h>
  #include "zlib.h"
- main()
+-main()
++int main()
  {
+     if (strcmp(ZLIB_VERSION, "0.95") < 0) {     /* include file version */
+         printf("old include files: version %u\n", ZLIB_VERSION);
