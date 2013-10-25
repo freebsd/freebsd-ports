@@ -16,16 +16,15 @@ LICENSE=	GPLv2
 
 LDFLAGS+=	-lncurses
 
-MAN1=		gnu-watch.1
-PLIST_FILES=	bin/${UNIQUENAME}
+PLIST_FILES=	bin/${UNIQUENAME} man/man1/gnu-watch.1.gz
 
-NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} ${LDFLAGS} ${WRKSRC}/${PORTNAME}.c \
 		-o ${WRKSRC}/${UNIQUENAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${UNIQUENAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/watch.1 ${MANPREFIX}/man/man1/${UNIQUENAME}.1
+	${INSTALL_PROGRAM} ${WRKSRC}/${UNIQUENAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/watch.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1/${UNIQUENAME}.1
 
 .include <bsd.port.mk>
