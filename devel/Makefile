@@ -4103,6 +4103,7 @@
     SUBDIR += rubygem-gio2
     SUBDIR += rubygem-git
     SUBDIR += rubygem-github_api
+    SUBDIR += rubygem-gitlab-pygments.rb
     SUBDIR += rubygem-gitlab_meta
     SUBDIR += rubygem-glib2
     SUBDIR += rubygem-gobject-introspection
