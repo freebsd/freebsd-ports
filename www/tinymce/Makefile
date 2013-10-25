@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinymce
-PORTVERSION=	4.0.8
+PORTVERSION=	4.0.9
 CATEGORIES=	www
 MASTER_SITES=	http://download.moxiecode.com/${PORTNAME}/ \
 		LOCAL/sunpoet
@@ -30,9 +30,11 @@ MS_PLIST=	${WRKDIR}/.ms-pkg-plist
 
 genplist: do-clean extract
 	cd ${WRKSRC}/ && \
-		${FIND} -s * -type d -empty | ${XARGS} > ${MS_EMPTYDIRS} && \
+		${FIND} -s * -type d -empty | ${XARGS} >> ${MS_EMPTYDIRS} && \
 		${SED} 's|[^ ]*|&/.keepme|g' ${MS_EMPTYDIRS} | ${XARGS} -J % ${TOUCH} % && \
-		${FIND} -s * -type f | ${SED} 's|^|%%WWWDIR%%/|' > ${MS_PLIST} && \
+		${ECHO} "@owner www" > ${MS_PLIST} && \
+		${ECHO} "@group www" >> ${MS_PLIST} && \
+		${FIND} -s * -type f | ${SED} 's|^|%%WWWDIR%%/|' >> ${MS_PLIST} && \
 		${FIND} -s * -type d | ${TAIL} -r | ${SED} 's|^|@dirrm %%WWWDIR%%/|' >> ${MS_PLIST} && \
 		${ECHO} '@dirrmtry %%WWWDIR%%' >> ${MS_PLIST}
 #.for dir in ${MS_DIRRMTRY}
