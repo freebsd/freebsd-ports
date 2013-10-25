@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	dnsmasq
-DISTVERSION=	2.66
+DISTVERSION=	2.67
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
-		${MASTER_SITE_LOCAL}/
-MASTER_SITE_SUBDIR=	mandree
+		LOCAL/mandree/
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Lightweight DNS forwarder, DHCP, and TFTP server
@@ -25,10 +24,14 @@ CFLAGS+=	-Wall -Wno-unused-value
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}" COPTS="${CFLAGS}" LIBS="${LDFLAGS}" RPM_OPT_FLAGS="${CPPFLAGS}"
 
 OPTIONS_DEFINE=		IPV6 DBUS NLS IDN LUA
+OPTIONS_DEFAULT=	IPV6 NLS
 OPTIONS_EXCLUDE+=	EXAMPLES
 NLS_DESC=	National Language Support (NLS, enables IDN)
 IDN_DESC=	International Domain Names (IDN) WITHOUT NLS
 LUA_DESC=	Support lease-change scripts in LUA
+USES=		shebangfix
+SHEBANG_FILES=	contrib/dynamic-dnsmasq/dynamic-dnsmasq.pl \
+		contrib/dnslist/dnslist.pl
 
 .include <bsd.port.options.mk>
 
