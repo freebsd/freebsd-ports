@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspec-mocks
-PORTVERSION=	2.14.3
+PORTVERSION=	2.14.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,5 +14,4 @@ USE_RAKE=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
