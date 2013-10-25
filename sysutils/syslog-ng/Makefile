@@ -77,7 +77,7 @@ CONFIGURE_ARGS+=	--disable-tcp-wrapper
 .endif
 
 .if ${PORT_OPTIONS:MSPOOF}
-BUILD_DEPENDS=		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
+BUILD_DEPENDS+=		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet11-config
 CONFIGURE_ARGS+=	--enable-spoof-source --with-libnet=${LOCALBASE}/bin
 CFLAGS+=		`${LIBNET_CONFIG} --cflags` -I${LOCALBASE}/include
