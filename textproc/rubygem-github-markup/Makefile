@@ -12,6 +12,8 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+PLIST_FILES+=	bin/github-markup
+
 NO_STAGE=	yes
 
 .include <bsd.port.mk>
