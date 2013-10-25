@@ -4,7 +4,7 @@
 PORTNAME=	con
 PORTVERSION=	1.7.8
 CATEGORIES=	net enlightenment
-MASTER_SITES=	http://download.enlightenment.fr/releases/ \
+MASTER_SITES=	http://download.enlightenment.org/releases/ \
 		LOCAL/gblach/e17/
 PKGNAMEPREFIX=	ecore-
 DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}

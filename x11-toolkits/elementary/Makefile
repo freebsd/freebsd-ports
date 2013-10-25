@@ -4,7 +4,7 @@
 PORTNAME=	elementary
 PORTVERSION=	1.7.8
 CATEGORIES=	x11-toolkits enlightenment
-MASTER_SITES=	http://download.enlightenment.fr/releases/ \
+MASTER_SITES=	http://download.enlightenment.org/releases/ \
 		LOCAL/gblach/e17/
 
 MAINTAINER=	gblach@FreeBSD.org

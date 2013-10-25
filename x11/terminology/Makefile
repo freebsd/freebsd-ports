@@ -4,7 +4,7 @@
 PORTNAME=	terminology
 PORTVERSION=	0.3.0
 CATEGORIES=	x11 enlightenment
-MASTER_SITES=	http://download.enlightenment.fr/releases/ \
+MASTER_SITES=	http://download.enlightenment.org/releases/ \
 		LOCAL/gblach/e17/
 
 MAINTAINER=	gblach@FreeBSD.org
