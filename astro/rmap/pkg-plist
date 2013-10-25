@@ -1,4 +1,5 @@
 bin/rmap
-share/rmap/rmap.colors
-share/rmap/earth.rez
-@dirrm share/rmap
+man/man1/rmap.1.gz
+%%DATADIR%%/earth.rez
+%%DATADIR%%/rmap.colors
+@dirrm %%DATADIR%%

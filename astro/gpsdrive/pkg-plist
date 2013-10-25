@@ -20,8 +20,10 @@ lib/libnautic.a
 lib/libnautic.la
 lib/libnautic.so
 lib/libnautic.so.2
+man/de/man1/gpsdrive.1.gz
+man/es/man1/gpsdrive.1.gz
+man/man1/gpsdrive.1.gz
 share/applications/gpsdrive.desktop
-share/pixmaps/gpsicon.png
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/CREDITS
 %%DATADIR%%/FAQ.gpsdrive
@@ -61,10 +63,7 @@ share/pixmaps/gpsicon.png
 %%NLS%%share/locale/sk/LC_MESSAGES/gpsdrive.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gpsdrive.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/gpsdrive.mo
+share/pixmaps/gpsicon.png
 %%NLS%%@dirrmtry share/locale/gr/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/gr
-@dirrmtry man/es/man1
-@dirrmtry man/es
-@dirrmtry man/de/man1
-@dirrmtry man/de
 @dirrm %%DATADIR%%

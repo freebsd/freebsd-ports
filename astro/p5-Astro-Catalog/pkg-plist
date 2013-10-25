@@ -1,5 +1,43 @@
 etc/skycat.cfg.sample
 etc/sss.cfg.sample
+%%PERL5_MAN3%%/Astro::Catalog.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::IO::ASCII.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::IO::ASSM.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::IO::Astrom.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::IO::Binary.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::IO::Cluster.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::IO::FINDOFF.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::IO::FITSTable.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::IO::GaiaPick.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::IO::JCMT.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::IO::LCOGTFITSTable.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::IO::Northstar.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::IO::RITMatch.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::IO::SExtractor.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::IO::STL.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::IO::Simple.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::IO::TST.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::IO::UKIRTBS.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::IO::VOTable.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::IO::XY.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::Item.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::Item::Morphology.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::Query.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::Query::2MASS.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::Query::CMC.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::Query::GSC.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::Query::MPC.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::Query::SIMBAD.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::Query::Sesame.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::Query::SkyCat.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::Query::SuperCOSMOS.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::Query::USNOA2.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::Query::Vizier.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::Star.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::Star::Morphology.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::Transport::REST.3.gz
+%%PERL5_MAN3%%/Astro::Catalog::Transport::WebService.3.gz
+%%PERL5_MAN3%%/Tk::AstroCatalog.3.gz
 %%SITE_PERL%%/Astro/Catalog.pm
 %%SITE_PERL%%/Astro/Catalog/IO/ASCII.pm
 %%SITE_PERL%%/Astro/Catalog/IO/ASSM.pm
@@ -38,7 +76,6 @@ etc/sss.cfg.sample
 %%SITE_PERL%%/Astro/Catalog/Transport/REST.pm
 %%SITE_PERL%%/Astro/Catalog/Transport/WebService.pm
 %%SITE_PERL%%/Tk/AstroCatalog.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro
 @dirrmtry %%SITE_PERL%%/Tk
 @dirrm %%SITE_PERL%%/Astro/Catalog/Transport
 @dirrm %%SITE_PERL%%/Astro/Catalog/Star

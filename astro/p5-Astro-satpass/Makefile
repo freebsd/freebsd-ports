@@ -29,19 +29,6 @@ USGS_DESC=		Add support for Geo::WebService::Elevation::USGS
 CONFIGURE_ARGS=	-y
 USES=		perl5
 USE_PERL5=	configure
-NO_STAGE=	yes
-
-MAN1=		satpass.1
-MAN3=		Astro::Coord::ECI.3 \
-		Astro::Coord::ECI::Mixin.3 \
-		Astro::Coord::ECI::Moon.3 \
-		Astro::Coord::ECI::OVERVIEW.3 \
-		Astro::Coord::ECI::Star.3 \
-		Astro::Coord::ECI::Sun.3 \
-		Astro::Coord::ECI::TLE.3 \
-		Astro::Coord::ECI::TLE::Iridium.3 \
-		Astro::Coord::ECI::TLE::Set.3 \
-		Astro::Coord::ECI::Utils.3
 
 .include <bsd.port.options.mk>
 

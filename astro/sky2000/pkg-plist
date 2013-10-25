@@ -1,3 +1,4 @@
+%%DATADIR%%/catalogs/sky2000.ncd
 %%DATADIR%%/catalogs/sky2000/sky2000-m10.noc
 %%DATADIR%%/catalogs/sky2000/sky2000-m11.noc
 %%DATADIR%%/catalogs/sky2000/sky2000-m12.noc
@@ -13,7 +14,6 @@
 %%DATADIR%%/catalogs/sky2000/sky2000-m7.noc
 %%DATADIR%%/catalogs/sky2000/sky2000-m8.noc
 %%DATADIR%%/catalogs/sky2000/sky2000-m9.noc
-%%DATADIR%%/catalogs/sky2000.ncd
 @dirrm %%DATADIR%%/catalogs/sky2000
 @dirrm %%DATADIR%%/catalogs
 @dirrmtry %%DATADIR%%

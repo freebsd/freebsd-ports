@@ -10,7 +10,6 @@ DISTNAME=	luna19s
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display the moon's phase
 
-NO_STAGE=	yes
 USE_DOS2UNIX=	yes
 USE_LHA=	yes
 NO_WRKSUBDIR=	yes

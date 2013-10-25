@@ -1,0 +1,17 @@
+--- data/Makefile.in.orig	2013-10-25 14:33:23.000000000 +0800
++++ data/Makefile.in	2013-10-25 14:36:57.000000000 +0800
+@@ -226,11 +226,11 @@ uninstall-am: uninstall-info-am
+ 
+ install-data-local:
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) @NOVA_CATALOG_DIR@; 
+-	$(INSTALL_DATA) sky2000.ncd $(NOVA_CATALOG_DIR)../sky2000.ncd 
++	$(mkinstalldirs) $(DESTDIR)@NOVA_CATALOG_DIR@; 
++	$(INSTALL_DATA) sky2000.ncd $(DESTDIR)$(NOVA_CATALOG_DIR)../sky2000.ncd 
+ 	  for catalog in *.noc ; do \
+ 	    if test -f $$catalog; then \
+-	      $(INSTALL_DATA) $$catalog $(NOVA_CATALOG_DIR); \
++	      $(INSTALL_DATA) $$catalog $(DESTDIR)$(NOVA_CATALOG_DIR); \
+ 	    fi \
+ 	  done 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.

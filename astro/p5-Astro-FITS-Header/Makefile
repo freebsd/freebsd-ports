@@ -14,13 +14,5 @@ LICENSE=	GPLv3
 
 USES=		perl5
 USE_PERL5=	modbuild
-NO_STAGE=	yes
-
-MAN3=	Astro::FITS::Header.3 \
-	Astro::FITS::Header::AST.3 \
-	Astro::FITS::Header::CFITSIO.3 \
-	Astro::FITS::Header::GSD.3 \
-	Astro::FITS::Header::Item.3 \
-	Astro::FITS::Header::NDF.3
 
 .include <bsd.port.mk>
