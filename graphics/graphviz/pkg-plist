@@ -39,7 +39,7 @@ bin/sfdp
 bin/tred
 bin/twopi
 bin/unflatten
-%%WITH_PANGOCAIRO%%bin/vimdot
+%%WITH_PANGOCAIRO%%%%WITH_XPM%%bin/vimdot
 include/graphviz/agxbuf.h
 include/graphviz/arith.h
 include/graphviz/ast_common.h
@@ -138,10 +138,10 @@ lib/graphviz/libgvplugin_neato_layout.a
 %%WITH_POPPLER%%lib/graphviz/libgvplugin_poppler.la
 %%WITH_POPPLER%%lib/graphviz/libgvplugin_poppler.so
 %%WITH_POPPLER%%lib/graphviz/libgvplugin_poppler.so.6
-%%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_xlib.a
-%%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_xlib.la
-%%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_xlib.so
-%%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_xlib.so.6
+%%WITH_PANGOCAIRO%%%%WITH_XPM%%lib/graphviz/libgvplugin_xlib.a
+%%WITH_PANGOCAIRO%%%%WITH_XPM%%lib/graphviz/libgvplugin_xlib.la
+%%WITH_PANGOCAIRO%%%%WITH_XPM%%lib/graphviz/libgvplugin_xlib.so
+%%WITH_PANGOCAIRO%%%%WITH_XPM%%lib/graphviz/libgvplugin_xlib.so.6
 lib/graphviz/libgvpr.a
 lib/graphviz/libgvpr.la
 lib/graphviz/libgvpr.so
