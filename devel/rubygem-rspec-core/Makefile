@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspec-core
-PORTVERSION=	2.14.5
+PORTVERSION=	2.14.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,5 +16,4 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/autospec bin/rspec
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
