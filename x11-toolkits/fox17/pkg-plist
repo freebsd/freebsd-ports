@@ -106,6 +106,7 @@ include/fox-%%MAJORVER%%/FXDelegator.h
 include/fox-%%MAJORVER%%/FXDial.h
 include/fox-%%MAJORVER%%/FXDialogBox.h
 include/fox-%%MAJORVER%%/FXDict.h
+include/fox-%%MAJORVER%%/FXDictionary.h
 include/fox-%%MAJORVER%%/FXDir.h
 include/fox-%%MAJORVER%%/FXDirBox.h
 include/fox-%%MAJORVER%%/FXDirDialog.h
@@ -177,6 +178,7 @@ include/fox-%%MAJORVER%%/FXJP2Icon.h
 include/fox-%%MAJORVER%%/FXJP2Image.h
 include/fox-%%MAJORVER%%/FXJPGIcon.h
 include/fox-%%MAJORVER%%/FXJPGImage.h
+include/fox-%%MAJORVER%%/FXJSON.h
 include/fox-%%MAJORVER%%/FXKOI8RCodec.h
 include/fox-%%MAJORVER%%/FXKnob.h
 include/fox-%%MAJORVER%%/FXLFQueue.h
