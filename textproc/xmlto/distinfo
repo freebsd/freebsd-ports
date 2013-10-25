@@ -1,2 +1,4 @@
-SHA256 (xmlto-0.0.25.tar.bz2) = 361cb70d5d0b4b753db00b67ed8bc1d53d0bc96c407d0310aefe854470b7e536
-SIZE (xmlto-0.0.25.tar.bz2) = 116496
+SHA256 (xmlto/xmlto-0.0.25.tar.bz2) = 361cb70d5d0b4b753db00b67ed8bc1d53d0bc96c407d0310aefe854470b7e536
+SIZE (xmlto/xmlto-0.0.25.tar.bz2) = 116496
+SHA256 (xmlto/xhtml2fo.xsl) = 51984c86eda98fc70c2c0fa887626f44311634c5e3d1053cd2ada8cd2543ebd6
+SIZE (xmlto/xhtml2fo.xsl) = 63786
