@@ -1055,6 +1055,7 @@
     SUBDIR += rubygem-rightgogrid
     SUBDIR += rubygem-righthttpconnection
     SUBDIR += rubygem-rightslicehost
+    SUBDIR += rubygem-rubyntlm
     SUBDIR += rubygem-rubytter
     SUBDIR += rubygem-rudy
     SUBDIR += rubygem-rye
