@@ -1,0 +1,11 @@
+--- gitlab_git-2.3.1.gemspec.orig	2013-10-25 03:12:52.869870855 +0000
++++ gitlab_git-2.3.1.gemspec	2013-10-25 03:15:02.203861402 +0000
+@@ -16,7 +16,7 @@
+     requirements:
+     - - ~>
+       - !ruby/object:Gem::Version
+-        version: 2.3.4
++        version: 2.9.4
+   type: :runtime
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement
