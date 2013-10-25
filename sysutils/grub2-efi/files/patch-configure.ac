@@ -1,0 +1,35 @@
+--- configure.ac.orig
++++ configure.ac
+@@ -1044,19 +1044,19 @@ fi
+ 
+ if test x"$libzfs_excuse" = x ; then
+   # Only check for system headers if libzfs support has not been disabled.
+-  AC_CHECK_HEADERS(libzfs.h libnvpair.h)
++  AC_CHECK_HEADERS(libzfs.h libnvpair.h, [], [], [typedef int boolean_t;])
+ fi
+ 
+ if test x"$libzfs_excuse" = x ; then
+   AC_CHECK_LIB([zfs], [libzfs_init],
+                [],
+-               [libzfs_excuse="need zfs library"])
++               [libzfs_excuse="need zfs library"], [-lavl -lnvpair -luutil -lm])
+ fi
+ 
+ if test x"$libzfs_excuse" = x ; then
+   AC_CHECK_LIB([nvpair], [nvlist_print],
+                [],
+-               [libzfs_excuse="need nvpair library"])
++               [libzfs_excuse="need nvpair library"], [-lavl -lnvpair -luutil -lm])
+ fi
+ 
+ if test x"$enable_libzfs" = xyes && test x"$libzfs_excuse" != x ; then
+@@ -1069,6 +1069,9 @@ if test x"$libzfs_excuse" = x ; then
+   AC_DEFINE([HAVE_LIBZFS], [1],
+             [Define to 1 if you have the ZFS library.])
+   LIBNVPAIR="-lnvpair"
++  if test x$host_kernel = xkfreebsd; then
++    LIBNVPAIR="$LIBNVPAIR -lavl -luutil -lm"
++  fi
+   AC_DEFINE([HAVE_LIBNVPAIR], [1],
+             [Define to 1 if you have the NVPAIR library.])
+ fi

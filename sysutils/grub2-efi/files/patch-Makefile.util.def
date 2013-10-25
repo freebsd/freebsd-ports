@@ -1,0 +1,11 @@
+--- Makefile.util.def.orig
++++ Makefile.util.def
+@@ -266,7 +266,7 @@ program = {
+   ldadd = libgrubgcry.a;
+   ldadd = libgrubkern.a;
+   ldadd = grub-core/gnulib/libgnu.a;
+-  ldadd = '$(LIBINTL) $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) -lfuse';
++  ldadd = '$(LIBINTL) $(LIBDEVMAPPER) $(LIBZFS) $(LIBNVPAIR) $(LIBGEOM) -lfuse';
+   condition = COND_GRUB_MOUNT;
+ };
+ 
