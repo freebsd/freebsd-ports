@@ -18,20 +18,6 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		JE::Object.3 JE::_FieldHash.3 JE::String.3 \
-		JE::Object::Boolean.3 JE::Object::Number.3 \
-		JE::Parser.3 JE::LValue.3 JE::Object::Date.3 \
-		JE::Code.3 JE::Object::Error.3 JavaScript::Engine.3 \
-		JE::Object::Error::URIError.3 JE::Number.3 \
-		JE::Object::Error::RangeError.3 JE::Boolean.3 \
-		JE::Object::Error::TypeError.3 \
-		JE::Object::Error::SyntaxError.3 JE::Null.3 \
-		JE::Object::Math.3 JE::Scope.3 JE::Undefined.3 \
-		JE::Object::Error::ReferenceError.3 \
-		JE::Object::RegExp.3 JE::Object::String.3 JE::Object::Proxy.3 \
-		JE::Types.3 JE::Object::Array.3 JE::Object::Function.3 JE.3 \
-		JE::Destroyer.3
-
 # Wrong versioning upstream
 PORTSCOUT=	skipv:0.54
 

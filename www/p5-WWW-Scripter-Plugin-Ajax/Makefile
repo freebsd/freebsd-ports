@@ -17,6 +17,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		WWW::Scripter::Plugin::Ajax.3
-
 .include <bsd.port.mk>

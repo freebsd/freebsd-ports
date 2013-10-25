@@ -4,6 +4,10 @@
 %%SITE_PERL%%/WWW/Scripter.pm
 %%SITE_PERL%%/WWW/Scripter.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scripter/.packlist
+%%PERL5_MAN3%%/WWW::Scripter::Location.3.gz
+%%PERL5_MAN3%%/WWW::Scripter.3.gz
+%%PERL5_MAN3%%/WWW::Scripter::History.3.gz
+%%PERL5_MAN3%%/WWW::Scripter::WindowGroup.3.gz
 @dirrmtry %%SITE_PERL%%/WWW/Scripter
 @dirrmtry %%SITE_PERL%%/WWW
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scripter

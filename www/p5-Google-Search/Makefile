@@ -22,6 +22,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Google::Search.3 Google::Search::Result.3
-
 .include <bsd.port.mk>

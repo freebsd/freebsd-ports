@@ -1,6 +1,8 @@
 %%SITE_PERL%%/Package/Generator.pm
 %%SITE_PERL%%/Package/Reaper.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package/Generator/.packlist
+%%PERL5_MAN3%%/Package::Reaper.3.gz
+%%PERL5_MAN3%%/Package::Generator.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package/Generator
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package
 @dirrmtry %%SITE_PERL%%/Package

@@ -18,6 +18,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Data::TreeDumper::Renderer::GTK.3
-
 .include <bsd.port.mk>

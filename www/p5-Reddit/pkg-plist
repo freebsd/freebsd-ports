@@ -2,6 +2,7 @@
 %%SITE_PERL%%/Reddit/Type/User.pm
 %%SITE_PERL%%/Reddit/Type/Subreddit.pm
 %%SITE_PERL%%/mach/auto/Reddit/.packlist
+%%PERL5_MAN3%%/Reddit.3.gz
 @dirrm %%SITE_PERL%%/mach/auto/Reddit
 @dirrm %%SITE_PERL%%/Reddit/Type
 @dirrm %%SITE_PERL%%/Reddit

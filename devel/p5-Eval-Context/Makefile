@@ -31,6 +31,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Eval::Context.3
-
 .include <bsd.port.mk>
