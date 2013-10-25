@@ -1,0 +1,12 @@
+Index: bin/varnishadm/varnishadm.c
+===================================================================
+--- bin/varnishadm/varnishadm.c	(revision 70bce6bfbd1d86d7a43e26a22812670e9bdc4a8f)
++++ bin/varnishadm/varnishadm.c	(revision 683cc929be04d8693e005eb298bc0c9d5eb13f7d)
+@@ -231,4 +231,7 @@
+ 	while (1) {
+ 		i = poll(fds, 2, -1);
++		if (i == -1 && errno == EINTR) {
++			continue;
++		}
+ 		assert(i > 0);
+ 		if (fds[0].revents & POLLIN) {
