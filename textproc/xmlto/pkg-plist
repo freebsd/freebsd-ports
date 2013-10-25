@@ -36,6 +36,7 @@ man/man1/xmlto.1.gz
 %%DATADIR%%/format/xhtml1/ps
 %%DATADIR%%/format/xhtml1/svg
 %%DATADIR%%/format/xhtml1/txt
+%%DATADIR%%/xhtml2fo.xsl
 %%DATADIR%%/xmlto.mak
 @dirrm %%DATADIR%%/format/xhtml1
 @dirrm %%DATADIR%%/format/fo

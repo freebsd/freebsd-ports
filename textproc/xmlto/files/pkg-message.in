@@ -1,0 +1,9 @@
+For benefits of conversions away from XHTML1 through XSL-FO,
+a stylesheet xhtml2fo.xsl has been installed
+into %%DATADIR%%. Example use:
+
+  xmlto pdf -x %%DATADIR%%/xhtml2fo.xsl myXHTML1file.xml
+
+More style sheets for XHTML1 conversions can be found at
+<http://www.antennahouse.com/XSLsample/XSLsample.htm>
+under "Stylesheet for XHTML to XSL-FO transformation"
