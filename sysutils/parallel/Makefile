@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	parallel
-PORTVERSION=	20130922
+PORTVERSION=	20131022
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
@@ -17,23 +17,22 @@ CONFLICTS=	moreutils-parallel-[0-9]*
 
 CONFIGURE_ARGS=	--docdir="${DOCSDIR}"
 GNU_CONFIGURE=	yes
-NO_STAGE=	yes
+#NO_STAGE=	yes
 USE_BZIP2=	yes
 USES=		perl5
 
-MAN1=		niceload.1 parallel.1 parallel_tutorial.1 sem.1 sql.1
-PLIST_FILES=	bin/niceload bin/parallel bin/sem bin/sql
+PLIST_FILES=	bin/niceload bin/parallel bin/sem bin/sql \
+		man/man1/niceload.1.gz man/man1/parallel.1.gz \
+		man/man1/parallel_tutorial.1.gz man/man1/sem.1.gz man/man1/sql.1.gz
 PORTDOCS=	niceload.html niceload.pdf niceload.texi \
 		parallel.html parallel.pdf parallel.texi \
 		parallel_tutorial.html parallel_tutorial.pdf parallel_tutorial.texi \
 		sem.html sem.pdf sem.texi \
 		sql.html sql.pdf sql.texi
 
-.include <bsd.port.options.mk>
+DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/pod2texi:${PORTSDIR}/print/texinfo
 
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	${LOCALBASE}/bin/pod2texi:${PORTSDIR}/print/texinfo
-.endif
+.include <bsd.port.options.mk>
 
 post-patch:
 .if empty(PORT_OPTIONS:MDOCS)
