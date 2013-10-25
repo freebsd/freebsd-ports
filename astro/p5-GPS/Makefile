@@ -17,10 +17,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		GPS::Serial.3 \
-		GPS::NMEA.3 \
-		GPS::NMEA::Handler.3 \
-		GPS::Garmin.3 \
-		GPS::Garmin::Handler.3
-
 .include <bsd.port.mk>

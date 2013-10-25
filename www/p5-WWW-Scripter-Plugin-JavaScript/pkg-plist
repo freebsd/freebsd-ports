@@ -1,6 +1,8 @@
 %%SITE_PERL%%/WWW/Scripter/Plugin/JavaScript.pm
 %%SITE_PERL%%/WWW/Scripter/Plugin/JavaScript/JE.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scripter/Plugin/JavaScript/.packlist
+%%PERL5_MAN3%%/WWW::Scripter::Plugin::JavaScript.3.gz
+%%PERL5_MAN3%%/WWW::Scripter::Plugin::JavaScript::JE.3.gz
 @dirrm %%SITE_PERL%%/WWW/Scripter/Plugin/JavaScript
 @dirrmtry %%SITE_PERL%%/WWW/Scripter/Plugin
 @dirrmtry %%SITE_PERL%%/WWW/Scripter

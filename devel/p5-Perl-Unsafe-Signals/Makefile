@@ -13,6 +13,4 @@ COMMENT=	Allow unsafe handling of signals in selected blocks
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Perl::Unsafe::Signals.3
-
 .include <bsd.port.mk>

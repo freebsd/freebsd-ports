@@ -2,6 +2,7 @@
 %%SITE_PERL%%/Data/TreeDumper/Renderer/gtk_test.pl
 %%SITE_PERL%%/auto/Data/TreeDumper/Renderer/GTK/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/TreeDumper/Renderer/GTK/.packlist
+%%PERL5_MAN3%%/Data::TreeDumper::Renderer::GTK.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/TreeDumper/Renderer/GTK
 @dirrm %%SITE_PERL%%/auto/Data/TreeDumper/Renderer/GTK
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/TreeDumper/Renderer

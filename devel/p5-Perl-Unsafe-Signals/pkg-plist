@@ -2,6 +2,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/Unsafe/Signals/Signals.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/Unsafe/Signals/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/Perl/Unsafe/Signals.pm
+%%PERL5_MAN3%%/Perl::Unsafe::Signals.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/Unsafe/Signals
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/Unsafe
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl

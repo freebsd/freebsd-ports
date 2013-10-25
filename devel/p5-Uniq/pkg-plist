@@ -1,3 +1,4 @@
 %%SITE_PERL%%/Uniq.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Uniq/.packlist
+%%PERL5_MAN3%%/Uniq.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Uniq

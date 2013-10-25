@@ -6,6 +6,11 @@
 %%SITE_PERL%%/GPS/NMEA/Handler.pm
 %%SITE_PERL%%/GPS/Serial.pm
 %%SITE_PERL%%/mach/auto/GPS/Garmin/.packlist
+%%PERL5_MAN3%%/GPS::Serial.3.gz
+%%PERL5_MAN3%%/GPS::NMEA.3.gz
+%%PERL5_MAN3%%/GPS::NMEA::Handler.3.gz
+%%PERL5_MAN3%%/GPS::Garmin.3.gz
+%%PERL5_MAN3%%/GPS::Garmin::Handler.3.gz
 @dirrm %%SITE_PERL%%/mach/auto/GPS/Garmin
 @dirrmtry %%SITE_PERL%%/mach/auto/GPS
 @dirrm %%SITE_PERL%%/GPS/NMEA

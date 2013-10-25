@@ -19,7 +19,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		WWW::Scripter::Location.3 WWW::Scripter.3 \
-		WWW::Scripter::History.3 WWW::Scripter::WindowGroup.3
-
 .include <bsd.port.mk>

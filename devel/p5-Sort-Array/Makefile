@@ -13,6 +13,4 @@ COMMENT=	Powerful array sorting Perl interface
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Sort::Array.3
-
 .include <bsd.port.mk>
