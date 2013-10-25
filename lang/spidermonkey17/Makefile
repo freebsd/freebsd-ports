@@ -39,7 +39,7 @@ JSH=		jsapi.h jsarena.h jsarray.h jsatom.h jsautocfg.h jsbool.h \
 
 PLIST_FILES=	bin/js lib/libjs.so lib/libjs.so.1 ${JSH:S,^,include/,}
 WRKSRC=		${WRKDIR}/${SRC_DIR}
-EXTRACT_AFTER_ARGS= --exclude js/jsd
+EXTRACT_AFTER_ARGS=	--exclude js/jsd
 
 OPTIONS_DEFINE=	UTF8
 
@@ -52,7 +52,7 @@ CFLAGS+=	-DJS_C_STRINGS_ARE_UTF8
 
 do-configure:
 	${CP} ${WRKSRC}/config/Linux_All.mk \
-		${WRKSRC}/config/${OPSYS}`${UNAME} -r`.mk && \
+		${WRKSRC}/config/${OPSYS}`${UNAME} -r`.mk
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${OPSYS}`${UNAME} -r`_DBG.OBJ/js \
