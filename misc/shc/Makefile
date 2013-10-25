@@ -11,10 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Generic script compiler
 
-MAN1=		shc.1
-PLIST_FILES=	bin/shc
+PLIST_FILES=	bin/shc man/man1/shc.1.gz
 
-NO_STAGE=	yes
 post-extract:
 	@${RM} ${WRKSRC}/shc
 
@@ -22,7 +20,7 @@ do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/shc ${WRKSRC}/${PORTNAME}-${PORTVERSION}.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/shc ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/shc.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/shc ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/shc.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>

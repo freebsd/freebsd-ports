@@ -14,7 +14,7 @@ COMMENT=	Command to print the date in Discordian date format
 
 LICENSE=	GPLv2
 
-PLIST_FILES=	bin/ddate
+PLIST_FILES=	bin/ddate man/man1/ddate.1.gz
 
 GNU_CONFIGURE=	yes
 USE_XZ=		yes
@@ -28,8 +28,6 @@ CONFIGURE_ARGS=	--disable-libuuid --disable-libblkid --disable-libmount \
 		--disable-rename --disable-login --disable-sulogin \
 		--disable-su --disable-schedutils --disable-wall
 
-MAN1=		ddate.1
-
 OPTIONS_DEFINE=	USFORMAT PRAISEBOB KILLBOB
 
 USFORMAT_DESC=	US time format
@@ -38,7 +36,6 @@ KILLBOB_DESC=	Countdown to X-Day
 
 OPTIONS_DEFAULT=KILLBOB
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUSFORMAT}
@@ -58,7 +55,9 @@ do-build:
 		-o ${WRKSRC}/misc-utils/${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/misc-utils/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/misc-utils/ddate.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/misc-utils/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/misc-utils/ddate.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
