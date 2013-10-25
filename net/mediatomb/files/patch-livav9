@@ -12,6 +12,15 @@ diff -burN mediatomb-0.12.1.old//src/metadata/ffmpeg_handler.cc mediatomb-0.12.1
  		if (tag && tag->value && tag->value[0])
  		{
  			log_debug("Added metadata %s: %s\n", m->avname, tag->value);
+@@ -281,7 +281,7 @@
+     int x = 0;
+     int y = 0;
+
+-	AVFormatContext *pFormatCtx;
++	AVFormatContext *pFormatCtx = 0;
+ 	
+ 	// Suppress all log messages
+ 	av_log_set_callback(FfmpegNoOutputStub);
 @@ -290,14 +290,14 @@
      av_register_all();
  
