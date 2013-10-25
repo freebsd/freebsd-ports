@@ -13,6 +13,7 @@ COMMENT=	Commodore Amiga emulator
 LICENSE=	GPLv2
 
 CONFLICTS=	e-uae-[0-9]*
+MAKE_JOBS_UNSAFE=yes
 
 USE_BZIP2=	yes
 USES=		gmake pkgconfig
