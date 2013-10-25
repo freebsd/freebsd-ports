@@ -579,6 +579,20 @@
   HOSTCXX = $(CXX)
   HOSTCC  = $(CC)
  endif
+--- hotspot/src/cpu/x86/vm/globals_x86.hpp
++++ hotspot/src/cpu/x86/vm/globals_x86.hpp
+@@ -70,11 +70,7 @@
+ define_pd_global(bool, RewriteBytecodes,     true);
+ define_pd_global(bool, RewriteFrequentPairs, true);
+ 
+-#ifdef _ALLBSD_SOURCE
+-define_pd_global(bool, UseMembar,            true);
+-#else
+ define_pd_global(bool, UseMembar,            false);
+-#endif
+ 
+ // GC Ergo Flags
+ define_pd_global(intx, CMSYoungGenPerWorker, 64*M);  // default max size of CMS young gen, per GC worker thread
 --- hotspot/src/os/bsd/vm/osThread_bsd.cpp
 +++ hotspot/src/os/bsd/vm/osThread_bsd.cpp
 @@ -49,7 +49,7 @@
@@ -806,7 +820,36 @@
  #ifdef __APPLE__
    osthread->set_thread_id(::mach_thread_self());
  #else
-@@ -2366,7 +2437,23 @@
+@@ -1817,8 +1888,10 @@
+ }
+ 
+ intx os::current_thread_id() {
+-#ifdef __APPLE__
++#if defined(__APPLE__)
+   return (intx)::mach_thread_self();
++#elif defined(__FreeBSD__)
++  return (intx)os::Bsd::gettid();
+ #else
+   return (intx)::pthread_self();
+ #endif
+@@ -2341,14 +2414,14 @@
+ }
+ 
+ void os::print_os_info_brief(outputStream* st) {
+-  st->print("Bsd");
++  st->print("BSD");
+ 
+   os::Posix::print_uname_info(st);
+ }
+ 
+ void os::print_os_info(outputStream* st) {
+   st->print("OS:");
+-  st->print("Bsd");
++  st->print("BSD");
+ 
+   os::Posix::print_uname_info(st);
+ 
+@@ -2366,7 +2439,23 @@
    st->print("Memory:");
    st->print(" %dk page", os::vm_page_size()>>10);
  
@@ -831,7 +874,7 @@
    // values in struct sysinfo are "unsigned long"
    struct sysinfo si;
    sysinfo(&si);
-@@ -2376,17 +2463,22 @@
+@@ -2376,17 +2465,22 @@
              os::physical_memory() >> 10);
    st->print("(" UINT64_FORMAT "k free)",
              os::available_memory() >> 10);
@@ -856,7 +899,7 @@
    st->cr();
  }
  
-@@ -2533,10 +2625,17 @@
+@@ -2533,10 +2627,17 @@
          jrelib_p = buf + len;
  
          // Add the appropriate library subdir
@@ -874,7 +917,21 @@
  
          // Add the appropriate client or server subdir
          len = strlen(buf);
-@@ -3654,8 +3753,8 @@
+@@ -2997,9 +3098,10 @@
+     flags |= MAP_FIXED;
+   }
+ 
+-  // Map uncommitted pages PROT_READ and PROT_WRITE, change access
+-  // to PROT_EXEC if executable when we commit the page.
+-  addr = (char*)::mmap(requested_addr, bytes, PROT_READ|PROT_WRITE,
++  // Map reserved/uncommitted pages PROT_NONE so we fail early if we
++  // touch an uncommitted page. Otherwise, the read/write might
++  // succeed if we have enough swap space to back the physical page.
++  addr = (char*)::mmap(requested_addr, bytes, PROT_NONE,
+                        flags, -1, 0);
+ 
+   if (addr != MAP_FAILED) {
+@@ -3654,8 +3756,8 @@
    return OS_OK;
  #else
    int ret = setpriority(PRIO_PROCESS, thread->osthread()->thread_id(), newpri);
@@ -884,7 +941,7 @@
  }
  
  OSReturn os::get_native_priority(const Thread* const thread, int *priority_ptr) {
-@@ -4634,6 +4733,20 @@
+@@ -4634,6 +4736,20 @@
  
  int os::active_processor_count() {
  #ifdef _ALLBSD_SOURCE
@@ -924,6 +981,15 @@
    static void hotspot_sigmask(Thread* thread);
  
  #ifndef _ALLBSD_SOURCE
+@@ -202,7 +204,7 @@
+   static void fast_thread_clock_init(void);
+ #endif
+ 
+-  static bool supports_monotonic_clock() {
++  static inline bool supports_monotonic_clock() {
+     return _clock_gettime != NULL;
+   }
+ 
 --- hotspot/src/os/bsd/vm/vmError_bsd.cpp
 +++ hotspot/src/os/bsd/vm/vmError_bsd.cpp
 @@ -34,6 +34,12 @@
@@ -1106,6 +1172,16 @@
      const char *substr = "-Dsun.java.launcher.pid=";
      char *pid_prop_str = (char *)JLI_MemAlloc(strlen(substr) + MAX_PID_STR_SZ + 1);
      sprintf(pid_prop_str, "%s%d", substr, getpid());
+--- hotspot/src/os_cpu/bsd_x86/vm/globals_bsd_x86.hpp
++++ hotspot/src/os_cpu/bsd_x86/vm/globals_bsd_x86.hpp
+@@ -42,7 +42,6 @@
+ #endif // AMD64
+ 
+ define_pd_global(intx, CompilerThreadStackSize,  0);
+-define_pd_global(intx, SurvivorRatio,            8);
+ 
+ define_pd_global(uintx, JVMInvokeMethodSlack,    8192);
+ 
 --- hotspot/src/os_cpu/bsd_x86/vm/vmStructs_bsd_x86.hpp
 +++ hotspot/src/os_cpu/bsd_x86/vm/vmStructs_bsd_x86.hpp
 @@ -29,8 +29,10 @@
@@ -1120,15 +1196,39 @@
  #else
  #define OS_THREAD_ID_TYPE pthread_t
  #endif
-@@ -52,7 +54,7 @@
+@@ -46,17 +48,31 @@
+   last_entry()
+ 
+ 
++#ifdef __FreeBSD__
+ #define VM_TYPES_OS_CPU(declare_type, declare_toplevel_type, declare_oop_type, declare_integer_type, declare_unsigned_integer_type, declare_c1_toplevel_type, declare_c2_type, declare_c2_toplevel_type, last_entry) \
+                                                                           \
+   /**********************/                                                \
    /* Posix Thread IDs   */                                                \
    /**********************/                                                \
                                                                            \
 -  declare_unsigned_integer_type(thread_t)                                 \
-+  declare_unsigned_integer_type(OS_THREAD_ID_TYPE)                        \
++  declare_integer_type(pid_t)                                             \
    declare_unsigned_integer_type(pthread_t)                                \
                                                                            \
    /* This must be the last entry, and must be present */                  \
+   last_entry()
++#else
++#define VM_TYPES_OS_CPU(declare_type, declare_toplevel_type, declare_oop_type, declare_integer_type, declare_unsigned_integer_type, declare_c1_toplevel_type, declare_c2_type, declare_c2_toplevel_type, last_entry) \
++                                                                          \
++  /**********************/                                                \
++  /* Posix Thread IDs   */                                                \
++  /**********************/                                                \
++                                                                          \
++  declare_unsigned_integer_type(OS_THREAD_ID_TYPE)                        \
++  declare_unsigned_integer_type(pthread_t)                                \
++                                                                          \
++  /* This must be the last entry, and must be present */                  \
++  last_entry()
++#endif
+ 
+ #define VM_INT_CONSTANTS_OS_CPU(declare_constant, declare_preprocessor_constant, declare_c1_constant, declare_c2_constant, declare_c2_preprocessor_constant, last_entry) \
+                                                                         \
 --- hotspot/src/share/vm/utilities/macros.hpp
 +++ hotspot/src/share/vm/utilities/macros.hpp
 @@ -177,6 +177,14 @@
