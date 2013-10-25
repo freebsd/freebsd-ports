@@ -24,7 +24,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 # TODO: make this a group for PDF output?
 OPTIONS_DEFINE=		DBLATEX FOP PASSIVETEX
-DBLATEX_DESC=		- BROKEN - Add dependency on Dblatex
+DBLATEX_DESC=		Add dependency on Dblatex
 FOP_DESC=		Add dependency on FOP (needs Java)
 PASSIVETEX_DESC=	- BROKEN - Add dependency on PassiveTeX
 
@@ -59,7 +59,6 @@ CONFIGURE_ARGS+=	--with-backend=fop
 RUN_DEPENDS+=	${LOCALBASE}/bin/dblatex:${PORTSDIR}/textproc/dblatex
 .if ! ${PORT_OPTIONS:MFOP}
 CONFIGURE_ARGS+=	--with-backend=dblatex
-BROKEN=		the dblatex option is currently broken
 .endif
 .endif
 
