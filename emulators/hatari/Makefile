@@ -4,17 +4,16 @@
 PORTNAME=	hatari
 PORTVERSION=	1.7.0
 CATEGORIES=	emulators
-MASTER_SITES=	http://download.tuxfamily.org/hatari/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION}
+MASTER_SITES=	http://download.tuxfamily.org/hatari/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Atari ST emulator
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2
 
-BUILD_DEPENDS=	portaudio>=19:${PORTSDIR}/audio/portaudio2
+BUILD_DEPENDS=	portaudio2>=0:${PORTSDIR}/audio/portaudio2
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	portaudio>=19:${PORTSDIR}/audio/portaudio2
+RUN_DEPENDS=	portaudio2>=0:${PORTSDIR}/audio/portaudio2
 
 OPTIONS_DEFINE=	DOCS
 
@@ -28,18 +27,11 @@ CMAKE_ARGS=	-DPORTAUDIO_INCLUDE_DIR:STRING="${PA2_INCLUDE_DIR}" \
 		-DETCDIR:STRING="${PREFIX}/etc" \
 		-DMANDIR:STRING="man/man1"
 
-MANCOMPRESSED=	yes
-MANLANG=	"" fr
-MAN1=		${PORTNAME}.1
-MAN1_EN=	atari-hd-image.1 gst2ascii.1 hatari_profile.1 hatariui.1 \
-		hconsole.1 hmsa.1 zip2st.1
-
 CFLAGS+=	-I${LOCALBASE}/include/portaudio2
 PA2_INCLUDE_DIR=-I${LOCALBASE}/include/portaudio2
 PA2_LIBRARY=	${LOCALBASE}/lib/portaudio2/libportaudio.so
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+PORTDOCS=	*
 
 post-patch:
 .for file in doc/hatari.1 doc/fr/hatari.1 tools/hconsole/hconsole.1
@@ -58,18 +50,17 @@ post-build:
 
 post-install:
 	(cd ${WRKSRC}/doc && ${INSTALL_MAN} ${PORTNAME}.1.gz \
-		${MANPREFIX}/man/man1)
-	@${MKDIR} ${MANPREFIX}/man/fr/man1
+		${STAGEDIR}${MANPREFIX}/man/man1)
+	@${MKDIR} ${STAGEDIR}${MANPREFIX}/man/fr/man1
 	(cd ${WRKSRC}/doc/fr && ${INSTALL_MAN} ${PORTNAME}.1.gz \
-		${MANPREFIX}/man/fr/man1)
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} readme.txt ${DOCSDIR})
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} *.html [a-z]*.txt ${DOCSDIR})
-	@${MKDIR} ${DOCSDIR}/fr
-	(cd ${WRKSRC}/doc/fr && ${INSTALL_DATA} *.txt ${DOCSDIR}/fr)
-	@${MKDIR} ${DOCSDIR}/images
-	(cd ${WRKSRC}/doc/images && ${INSTALL_DATA} *.png ${DOCSDIR}/images)
-.endif
+		${STAGEDIR}${MANPREFIX}/man/fr/man1)
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} readme.txt ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} *.html [a-z]*.txt ${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/fr
+	(cd ${WRKSRC}/doc/fr && ${INSTALL_DATA} *.txt ${STAGEDIR}${DOCSDIR}/fr)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/images
+	(cd ${WRKSRC}/doc/images && ${INSTALL_DATA} *.png ${STAGEDIR}${DOCSDIR}/images)
 
 .include <bsd.port.mk>
