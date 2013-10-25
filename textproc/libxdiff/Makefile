@@ -18,8 +18,17 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static
 
-MAN3=		xdiff.3
-PLIST_FILES=	include/xdiff.h lib/libxdiff.a lib/libxdiff.so \
-		lib/libxdiff.so.0 lib/libxdiff.la
-NO_STAGE=	yes
+LIBFILES=	libxdiff.a libxdiff.la libxdiff.so libxdiff.so.0
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/xdiff/xdiff.h ${STAGEDIR}${PREFIX}/include
+.for libs in ${LIBFILES}
+	${INSTALL_DATA} ${WRKSRC}/xdiff/.libs/${libs} ${STAGEDIR}${PREFIX}/lib/
+.endfor
+	${INSTALL_MAN} ${WRKSRC}/man/xdiff.3 ${STAGEDIR}${MAN1PREFIX}/man/man3
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libxdiff.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libxdiff.so.0
+
 .include <bsd.port.mk>
