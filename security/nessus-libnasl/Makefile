@@ -15,9 +15,9 @@ DISTNAME=	libnasl-${PORTVERSION}
 MAINTAINER=	udo.schweigert@siemens.com
 COMMENT=	Nessus Attack Scripting Language
 
-BROKEN=		Does not build
+LICENSE=	GPLv2
 
-LIB_DEPENDS=	nessus.4:${PORTSDIR}/security/nessus-libraries
+LIB_DEPENDS=	libnessus.so:${PORTSDIR}/security/nessus-libraries
 
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/libnasl
@@ -29,5 +29,4 @@ USE_LDCONFIG=	YES
 
 MAN1=		nasl.1 nasl-config.1
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

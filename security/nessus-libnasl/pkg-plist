@@ -5,6 +5,8 @@ lib/libnasl.a
 lib/libnasl.la
 lib/libnasl.so
 lib/libnasl.so.4
+man/man1/nasl.1.gz
+man/man1/nasl-config.1.gz
 var/nessus/nessus_org.pem
 @dirrmtry var/nessus
 @dirrmtry var

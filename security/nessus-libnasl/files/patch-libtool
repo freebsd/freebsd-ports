@@ -1,6 +1,6 @@
 --- nasl/Makefile.orig	2005-02-10 17:03:51.000000000 +0100
 +++ nasl/Makefile	2012-01-29 10:29:13.000000000 +0100
-@@ -88,7 +88,8 @@
+@@ -88,10 +88,11 @@
  	nasl_server.c \
  	nasl_debug.c
  
@@ -9,7 +9,11 @@
 +LINK = $(LIBTOOL) --mode link $(CC) $(CFLAGS) $(NESSUS_INCLUDE)
  all : cflags libnasl.la nasl
  
- .c.o:
+-.c.o:
++.c.o: cflags
+ 	$(COMPILE) -c $<
+ cflags : 
+ 	@echo "echo \"$(NESSUS_CFLAGS) $(include) $(DEFS) \"" > cflags
 @@ -101,7 +102,7 @@
  	$(CC) $(CFLAGS)  $(NESSUS_INCLUDE) $(include) -o nasl -DVERSION=\"$(VERSION)\" nasl.c $(OBJS) $(NESSUS_LIBS) 
  
