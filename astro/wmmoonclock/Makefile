@@ -14,13 +14,11 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 
 USE_XORG=	xpm
 USES=		gmake
-NO_STAGE=	yes
 
-MAN1=		wmmoonclock.1
-PLIST_FILES=	bin/wmmoonclock
+PLIST_FILES=	bin/wmmoonclock man/man1/wmmoonclock.1.gz
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wmMoonClock ${PREFIX}/bin/wmmoonclock
-	${INSTALL_MAN} ${WRKSRC}/wmMoonClock.1 ${PREFIX}/man/man1/wmmoonclock.1
+	${INSTALL_PROGRAM} ${WRKSRC}/wmMoonClock ${STAGEDIR}${PREFIX}/bin/wmmoonclock
+	${INSTALL_MAN} ${WRKSRC}/wmMoonClock.1 ${STAGEDIR}${PREFIX}/man/man1/wmmoonclock.1
 
 .include <bsd.port.mk>

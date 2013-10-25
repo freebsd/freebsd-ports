@@ -9,9 +9,6 @@ MASTER_SITES=	http://www.icehouse.net/kew/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sunrise and sunset time calculator
 
-MAN1=		sscalc.1
-NO_STAGE=	yes
-
 .include <bsd.port.options.mk>
 
 pre-fetch:
@@ -22,12 +19,12 @@ pre-fetch:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/sscalc ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/sscalc.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/sscalc ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/sscalc.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/cities.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/cities.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

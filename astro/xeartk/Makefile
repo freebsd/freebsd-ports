@@ -12,7 +12,6 @@ COMMENT=	Small demo for tkgeomap
 
 LIB_DEPENDS=	libtkgeomap.so:${PORTSDIR}/astro/tkgeomap
 
-NO_STAGE=	yes
 USES+=		tk:run
 NO_BUILD=	yes
 DATA_FILES=	README cities land.xdr rivers.xdr water.xdr
@@ -24,8 +23,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's| 0\([0-9]\)| \1|g' ${WRKSRC}/data/cities
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/src/XEartk.tcl ${PREFIX}/bin/${PORTNAME}
-	@${INSTALL} -d ${DATADIR}
-	@${INSTALL_DATA} ${DATA_FILES:S,^,${WRKSRC}/data/,} ${DATADIR}/
+	@${INSTALL_SCRIPT} ${WRKSRC}/src/XEartk.tcl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${INSTALL} -d ${STAGEDIR}${DATADIR}
+	@${INSTALL_DATA} ${DATA_FILES:S,^,${WRKSRC}/data/,} ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>

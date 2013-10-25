@@ -11,11 +11,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set the root window to the moon in its current phase
 
-NO_STAGE=	yes
 USES=		imake
 USE_XORG=	x11 xext
 
-MAN1=		xphoon.1
-PLIST_FILES=	bin/xphoon
+PLIST_FILES=	bin/xphoon man/man1/xphoon.1.gz
 
 .include <bsd.port.mk>
