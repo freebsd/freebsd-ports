@@ -43,12 +43,7 @@ PLIST_FILES+=	etc/bash_completion.d/youtube-dl.sh
 .endif
 
 .if ${PORT_OPTIONS:MFFMPEG}
-# allow either multimedia/ffmpeg or multimedia/ffmpeg-devel
-. if exists(${LOCALBASE}/include/libavcodec/vda.h)
-RUN_DEPENDS+=	ffprobe:${PORTSDIR}/multimedia/ffmpeg-devel
-. else
 RUN_DEPENDS+=	ffprobe:${PORTSDIR}/multimedia/ffmpeg
-. endif
 .endif
 
 post-extract:
