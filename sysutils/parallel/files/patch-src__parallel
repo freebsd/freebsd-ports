@@ -1,28 +1,35 @@
---- ./src/parallel.orig	2013-04-21 21:50:21.000000000 -0500
-+++ ./src/parallel	2013-04-21 21:56:46.000000000 -0500
-@@ -5072,21 +5072,14 @@
+--- ./src/parallel.orig	2013-10-21 15:31:40.000000000 -0500
++++ ./src/parallel	2013-10-23 15:11:54.000000000 -0500
+@@ -5538,29 +5538,13 @@
      # Returns:
      #   number of chars on the longest command line allowed
      if(not $Limits::Command::line_max_len) {
-+	$Limits::Command::line_max_len = `getconf ARG_MAX` - 1024;
- 	if($opt::max_chars) {
--	    if(is_acceptable_command_line_length($opt::max_chars)) {
--		$Limits::Command::line_max_len = $opt::max_chars;
--	    } else {
--		# -s is too long: Find the correct
--		$Limits::Command::line_max_len = binary_find_max_length(0,$opt::max_chars);
--	    }
--	    if($opt::max_chars <= $Limits::Command::line_max_len) {
--		$Limits::Command::line_max_len = $opt::max_chars;
--	    } else {
-+	    if($opt::max_chars > $Limits::Command::line_max_len) {
- 		::warning("Value for -s option ",
- 			  "should be < $Limits::Command::line_max_len.\n");
-+	    } else {
-+		$Limits::Command::line_max_len = $opt::max_chars;
- 	    }
+-	# Disk cache of max command line length 
+-	my $len_cache = $ENV{'HOME'} . "/.parallel/tmp/linelen-" . ::hostname();
+-	my $cached_limit;
+-	if(-e $len_cache) {
+-	    open(my $fh, "<", $len_cache) || ::die_bug("Cannot read $len_cache");
+-	    $cached_limit = <$fh>;
+-	    close $fh;
 -	} else {
--	    $Limits::Command::line_max_len = real_max_length();
+-	    $cached_limit = real_max_length();
+-	    # If $HOME is write protected: Do not fail
+-	    mkdir($ENV{'HOME'} . "/.parallel");
+-	    mkdir($ENV{'HOME'} . "/.parallel/tmp");
+-	    open(my $fh, ">", $len_cache);
+-	    print $fh $cached_limit;
+-	    close $fh;
+-	}
+-	$Limits::Command::line_max_len = $cached_limit;
++        $Limits::Command::line_max_len = `getconf ARG_MAX` - 1024;
+ 	if($opt::max_chars) {
+-	    if($opt::max_chars <= $cached_limit) {
++	    if($opt::max_chars <= $Limits::Command::line_max_len) {
+ 		$Limits::Command::line_max_len = $opt::max_chars;
+ 	    } else {
+ 		::warning("Value for -s option ",
+-			  "should be < $cached_limit.\n");
++			  "should be < $Limits::Command::line_max_len.\n");
+ 	    }
  	}
      }
-     return $Limits::Command::line_max_len;
