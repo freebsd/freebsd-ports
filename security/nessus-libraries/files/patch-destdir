@@ -1,0 +1,15 @@
+--- nessus-config.pre.in.orig	2013-10-24 18:49:26.000000000 +0200
++++ nessus-config.pre.in	2013-10-24 18:49:47.000000000 +0200
+@@ -48,10 +48,10 @@
+ 		;;
+ 	--libs)
+ 	
+-		echo $Xn "-L$DESTDIR$LIBDIR -lnessus -lhosts_gatherer @pcap_flag@ $CIPHER $EXTRA $Xc"
++		echo $Xn "-L$LIBDIR -lnessus -lhosts_gatherer @pcap_flag@ $CIPHER $EXTRA $Xc"
+ 		;;
+ 	--cflags)
+-		echo $Xn "$DEFS -I$DESTDIR$INCLUDEDIR/nessus $CIPHER_CFLAGS $SSL_CFLAGS $Xc"
++		echo $Xn "$DEFS -I$INCLUDEDIR/nessus $CIPHER_CFLAGS $SSL_CFLAGS $Xc"
+ 		;;
+ 	--egd)
+ 		echo $Xn "$EGDPATH" $Xc
