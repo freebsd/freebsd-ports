@@ -239,7 +239,7 @@ share/subtitleeditor/plugins-description/subtitleformats/sbv.se-plugin
 share/subtitleeditor/plugins-description/subtitleformats/sprucestl.se-plugin
 share/subtitleeditor/plugins-share/advancedsubstationalpha/dialog-advancedsubstationalpha-preferences.ui
 share/subtitleeditor/plugins-share/substationalpha/dialog-substationalpha-preferences.ui
-@dirrmtry %%DESKTOPDIR%%
+man/man1/subtitleeditor.1.gz
 @dirrm share/subtitleeditor/ui
 @dirrm share/subtitleeditor/plugins-share/substationalpha
 @dirrm share/subtitleeditor/plugins-share/advancedsubstationalpha

@@ -23,6 +23,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-.include "${MASTERDIR}/Makefile.man"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
