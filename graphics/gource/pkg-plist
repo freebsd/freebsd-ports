@@ -1,5 +1,5 @@
-man/man1/gource.1.gz
 bin/gource
+man/man1/gource.1.gz
 %%DATADIR%%/beam.png
 %%DATADIR%%/bloom.tga
 %%DATADIR%%/bloom_alpha.tga
