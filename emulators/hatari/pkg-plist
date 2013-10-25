@@ -5,36 +5,16 @@ bin/hatari_profile.py
 bin/hatariui
 bin/hmsa
 bin/zip2st
+man/fr/man1/hatari.1.gz
+man/man1/atari-hd-image.1.gz
+man/man1/gst2ascii.1.gz
+man/man1/hatari.1.gz
+man/man1/hatari_profile.1.gz
+man/man1/hatariui.1.gz
+man/man1/hconsole.1.gz
+man/man1/hmsa.1.gz
+man/man1/zip2st.1.gz
 share/applications/hatariui.desktop
-%%PORTDOCS%%%%DOCSDIR%%/authors.txt
-%%PORTDOCS%%%%DOCSDIR%%/changelog.txt
-%%PORTDOCS%%%%DOCSDIR%%/coding.txt
-%%PORTDOCS%%%%DOCSDIR%%/compatibility.html
-%%PORTDOCS%%%%DOCSDIR%%/emutos.txt
-%%PORTDOCS%%%%DOCSDIR%%/fr/clavier-exemple.txt
-%%PORTDOCS%%%%DOCSDIR%%/images/callgraph.png
-%%PORTDOCS%%%%DOCSDIR%%/images/devices.png
-%%PORTDOCS%%%%DOCSDIR%%/images/fileselector.png
-%%PORTDOCS%%%%DOCSDIR%%/images/floppydisks.png
-%%PORTDOCS%%%%DOCSDIR%%/images/harddisks.png
-%%PORTDOCS%%%%DOCSDIR%%/images/joystick.png
-%%PORTDOCS%%%%DOCSDIR%%/images/kcachegrind.png
-%%PORTDOCS%%%%DOCSDIR%%/images/keyboard.png
-%%PORTDOCS%%%%DOCSDIR%%/images/main.png
-%%PORTDOCS%%%%DOCSDIR%%/images/memory.png
-%%PORTDOCS%%%%DOCSDIR%%/images/monitor.png
-%%PORTDOCS%%%%DOCSDIR%%/images/newfloppy.png
-%%PORTDOCS%%%%DOCSDIR%%/images/screen.png
-%%PORTDOCS%%%%DOCSDIR%%/images/sound.png
-%%PORTDOCS%%%%DOCSDIR%%/images/system.png
-%%PORTDOCS%%%%DOCSDIR%%/images/tos.png
-%%PORTDOCS%%%%DOCSDIR%%/keymap-sample.txt
-%%PORTDOCS%%%%DOCSDIR%%/manual.html
-%%PORTDOCS%%%%DOCSDIR%%/memory-usage.txt
-%%PORTDOCS%%%%DOCSDIR%%/midi-linux.txt
-%%PORTDOCS%%%%DOCSDIR%%/readme.txt
-%%PORTDOCS%%%%DOCSDIR%%/release-notes.txt
-%%PORTDOCS%%%%DOCSDIR%%/todo.txt
 %%DATADIR%%/hatari-icon.bmp
 %%DATADIR%%/hatariui/README
 %%DATADIR%%/hatariui/TODO
@@ -58,8 +38,3 @@ share/pixmaps/hatari-icon.png
 @dirrm %%DATADIR%%/hconsole
 @dirrm %%DATADIR%%/hatariui
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/fr
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry man/fr/man1
-@dirrmtry man/fr
