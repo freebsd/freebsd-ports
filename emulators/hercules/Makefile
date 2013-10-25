@@ -2,25 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	hercules
-PORTVERSION=	3.08
+PORTVERSION=	3.09
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.hercules-390.eu/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System/370, ESA/390, and z/Architecture Emulator
 
-OPTIONS_DEFINE=	DEBUG NLS PTHREADS
-OPTIONS_DEFAULT=	NLS PTHREADS
+OPTIONS_DEFINE=	DEBUG PTHREADS OPTIMIZATIONS DOCS
+OPTIONS_DEFAULT=	PTHREADS
 PTHREADS_DESC=	Build with pthreads instead of fthreads
+OPTIMIZATIONS_DESC=	Enable optimizations
 
 USE_AUTOTOOLS=	libtool libltdl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+CFLAGS+=	-I/usr/local/include
+LDFLAGS+=	-L/usr/local/lib
+
 PORTDOCS=	*
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+DEBUG_CFLAGS=	-g
+PTHREADS_CONFIGURE_ON=	--disable-fthreads
+OPTIMIZATIONS_CONFIGURE_ON=	--enable-optimization="yes"
+OPTIMIZATIONS_CONFIGURE_OFF=	--enable-optimization="no"
 
 post-extract:
 	@${RM} ${WRKSRC}/ltdl.*
@@ -28,39 +34,8 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's@-lpthread@${PTHREAD_LIBS}@g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's@SOL_TCP@IPPROTO_TCP@g' ${WRKSRC}/hscutl.c
-.if empty(PORT_OPTIONS:MDOCS)
-	@${REINPLACE_CMD} -e 's,^SUBDIRS = decNumber m4 po util html man . crypto,SUBDIRS = decNumber m4 po util man . crypto,g' ${WRKSRC}/Makefile.in
-.else
 	@${REINPLACE_CMD} -e 's,^datadir = @datadir@,datadir = ${PREFIX}/share/doc/,' ${WRKSRC}/html/Makefile.in
-.endif
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		'/^libherc_la_LIBADD/s|=|= -lltdl |g'
-
-MAN1=			cckddiag.1 dasdseq.1
-MAN4=			cckd.4
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.if ${PORT_OPTIONS:MDEBUG}
-CFLAGS+=	-g
-.endif
-
-.if ${PORT_OPTIONS:MPTHREADS}
-CONFIGURE_ARGS+=	--disable-fthreads
-.endif
-
-.if empty(PORT_OPTIONS:MNLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		GETTEXT="@comment "
-.else
-CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE}
-USES+=		gettext
-PLIST_SUB+=		GETTEXT=""
-.endif
-
-.if defined(CFLAGS)
-CONFIGURE_ARGS+=	--enable-optimization="no"
-.endif
 
 .include <bsd.port.mk>

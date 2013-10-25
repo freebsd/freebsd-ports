@@ -72,7 +72,10 @@ lib/hercules/hdteq.la
 lib/hercules/hdteq.so
 lib/hercules/hdtqeth.la
 lib/hercules/hdtqeth.so
-@dirrm lib/hercules
+man/man1/cckddiag.1.gz
+man/man1/dasdseq.1.gz
+man/man1/hercules.1.gz
+man/man4/cckd.4.gz
 %%DATADIR%%/TMOUNT.txt
 %%DATADIR%%/awssl-v19g
 %%DATADIR%%/awswrite.jcl
@@ -81,6 +84,5 @@ lib/hercules/hdtqeth.so
 %%DATADIR%%/rawstape.jcl
 %%DATADIR%%/tapeconv.jcl
 %%DATADIR%%/zzsacard.bin
-@dirrm share/hercules
-%%GETTEXT%%share/locale/de/LC_MESSAGES/hercules.mo
-%%GETTEXT%%share/locale/nl/LC_MESSAGES/hercules.mo
+@dirrm %%DATADIR%%
+@dirrm lib/hercules
