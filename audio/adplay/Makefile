@@ -17,7 +17,6 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	adplug:${PORTSDIR}/audio/libadplug
 
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 WANT_SDL=	yes
 
@@ -29,8 +28,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS+=	--sharedstatedir=${DATADIR}
 
-MAN1=		adplay.1
-PLIST_FILES=	bin/adplay %%DATADIR%%/adplug.db
+PLIST_FILES=	bin/adplay %%DATADIR%%/adplug.db man/man1/adplay.1.gz
 PLIST_DIRS=	%%DATADIR%%
 
 OPTIONS_DEFINE=	SDL
@@ -49,9 +47,9 @@ post-patch:
 	@${RM} ${WRKSRC}/src/getopt.h
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/adplay ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/adplay.1 ${MANPREFIX}/man/man1
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/${DBVERSION}/${DBFILE} ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/adplay ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/adplay.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/${DBVERSION}/${DBFILE} ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
