@@ -13,8 +13,6 @@ COMMENT=	Tool startup utility for X11
 
 USES=		imake
 USE_XORG=	x11 xext
-MAN1=		xtoolwait.1
-PLIST_FILES=	bin/xtoolwait
+PLIST_FILES=	bin/xtoolwait man/man1/xtoolwait.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
