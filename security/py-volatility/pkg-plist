@@ -34,7 +34,11 @@ bin/vol.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/contrib/plugins/verinfo.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tools/linux/Makefile
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tools/linux/module.c
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tools/linux/pmem.c
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tools/linux/pmem/Makefile
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tools/linux/pmem/pmem.c
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tools/mac/convert.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tools/mac/convert.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tools/mac/convert.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tools/vtype_diff.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tools/vtype_diff.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tools/vtype_diff.pyo
@@ -80,27 +84,42 @@ bin/vol.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/amd64.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/amd64.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/amd64.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/arm.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/arm.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/arm.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/crash.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/crash.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/crash.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/hibernate.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/hibernate.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/hibernate.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/hpak.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/hpak.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/hpak.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/ieee1394.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/ieee1394.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/ieee1394.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/intel.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/intel.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/intel.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/legacyintel.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/legacyintel.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/legacyintel.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/lime.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/lime.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/lime.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/macho.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/macho.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/macho.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/paged.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/paged.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/paged.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/standard.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/standard.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/standard.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/vboxelf.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/vboxelf.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/vboxelf.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/vmware.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/vmware.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces/vmware.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/bioskbd.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/bioskbd.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/bioskbd.pyo
@@ -119,6 +138,12 @@ bin/vol.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/dlldump.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/dlldump.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/dlldump.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/dumpcerts.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/dumpcerts.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/dumpcerts.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/dumpfiles.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/dumpfiles.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/dumpfiles.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/envars.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/envars.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/envars.pyo
@@ -215,6 +240,12 @@ bin/vol.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/hibinfo.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/hibinfo.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/hibinfo.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/hpakinfo.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/hpakinfo.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/hpakinfo.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/iehistory.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/iehistory.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/iehistory.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/imagecopy.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/imagecopy.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/imagecopy.pyo
@@ -233,6 +264,9 @@ bin/vol.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/arp.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/arp.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/arp.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/banner.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/banner.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/banner.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/bash.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/bash.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/bash.pyo
@@ -242,6 +276,9 @@ bin/vol.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/check_creds.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/check_creds.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/check_creds.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/check_evt_arm.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/check_evt_arm.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/check_evt_arm.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/check_fops.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/check_fops.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/check_fops.pyo
@@ -254,6 +291,9 @@ bin/vol.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/check_syscall.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/check_syscall.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/check_syscall.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/check_syscall_arm.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/check_syscall_arm.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/check_syscall_arm.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/common.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/common.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/common.pyo
@@ -281,6 +321,15 @@ bin/vol.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/iomem.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/iomem.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/iomem.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/keyboard_notifier.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/keyboard_notifier.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/keyboard_notifier.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/linux_volshell.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/linux_volshell.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/linux_volshell.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/linux_yarascan.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/linux_yarascan.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/linux_yarascan.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/lsmod.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/lsmod.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/lsmod.pyo
@@ -332,9 +381,117 @@ bin/vol.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/tmpfs.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/tmpfs.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/tmpfs.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/tty_check.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/tty_check.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/tty_check.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/vma_cache.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/vma_cache.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux/vma_cache.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/arp.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/arp.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/arp.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/check_syscall_table.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/check_syscall_table.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/check_syscall_table.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/check_sysctl.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/check_sysctl.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/check_sysctl.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/check_trap_table.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/check_trap_table.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/check_trap_table.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/common.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/common.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/common.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/dead_procs.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/dead_procs.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/dead_procs.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/dmesg.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/dmesg.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/dmesg.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/dump_map.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/dump_map.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/dump_map.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/find_aslr_shift.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/find_aslr_shift.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/find_aslr_shift.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/ifconfig.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/ifconfig.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/ifconfig.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/ip_filters.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/ip_filters.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/ip_filters.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/list_zones.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/list_zones.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/list_zones.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/lsmod.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/lsmod.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/lsmod.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/lsof.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/lsof.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/lsof.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/mac_volshell.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/mac_volshell.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/mac_volshell.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/mac_yarascan.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/mac_yarascan.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/mac_yarascan.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/machine_info.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/machine_info.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/machine_info.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/mount.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/mount.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/mount.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/netstat.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/netstat.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/netstat.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/notifiers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/notifiers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/notifiers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/pgrp_hash_table.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/pgrp_hash_table.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/pgrp_hash_table.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/pid_hash_table.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/pid_hash_table.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/pid_hash_table.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/print_boot_cmdline.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/print_boot_cmdline.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/print_boot_cmdline.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/proc_maps.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/proc_maps.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/proc_maps.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/psaux.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/psaux.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/psaux.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/pslist.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/pslist.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/pslist.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/pstasks.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/pstasks.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/pstasks.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/pstree.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/pstree.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/pstree.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/psxview.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/psxview.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/psxview.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/route.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/route.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/route.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/session_hash_table.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/session_hash_table.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/session_hash_table.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/trustedbsd.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/trustedbsd.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/trustedbsd.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/version.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/version.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac/version.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/machoinfo.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/machoinfo.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/machoinfo.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/malware/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/malware/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/malware/__init__.pyo
@@ -371,6 +528,12 @@ bin/vol.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/malware/timers.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/malware/timers.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/malware/timers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mbrparser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mbrparser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mbrparser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mftparser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mftparser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mftparser.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/moddump.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/moddump.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/moddump.pyo
@@ -392,12 +555,21 @@ bin/vol.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/overlays/linux/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/overlays/linux/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/overlays/linux/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/overlays/linux/elf.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/overlays/linux/elf.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/overlays/linux/elf.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/overlays/linux/linux.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/overlays/linux/linux.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/overlays/linux/linux.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/overlays/linux/linux64.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/overlays/linux/linux64.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/overlays/linux/linux64.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/overlays/mac/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/overlays/mac/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/overlays/mac/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/overlays/mac/mac.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/overlays/mac/mac.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/overlays/mac/mac.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/overlays/native_types.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/overlays/native_types.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/overlays/native_types.pyo
@@ -527,6 +699,9 @@ bin/vol.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/patcher.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/patcher.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/patcher.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/privileges.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/privileges.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/privileges.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/procdump.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/procdump.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/procdump.pyo
@@ -554,6 +729,9 @@ bin/vol.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/registry/registryapi.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/registry/registryapi.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/registry/registryapi.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/registry/shellbags.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/registry/shellbags.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/registry/shellbags.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/registry/shimcache.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/registry/shimcache.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/registry/shimcache.pyo
@@ -572,12 +750,21 @@ bin/vol.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/taskmods.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/taskmods.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/taskmods.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/timeliner.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/timeliner.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/timeliner.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/userassist.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/userassist.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/userassist.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/vadinfo.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/vadinfo.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/vadinfo.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/vboxinfo.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/vboxinfo.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/vboxinfo.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/vmwareinfo.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/vmwareinfo.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/vmwareinfo.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/volshell.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/volshell.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/volshell.pyo
@@ -632,15 +819,19 @@ bin/vol.py
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/win32
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/registry
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/overlays/windows
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/overlays/mac
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/overlays/linux
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/overlays
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/malware
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/mac
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/linux
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/gui/vtypes
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/gui
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins/addrspaces
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/volatility
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tools/mac
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tools/linux/pmem
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tools/linux
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tools
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/contrib/plugins/aspaces
