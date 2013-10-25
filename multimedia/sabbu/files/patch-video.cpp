@@ -6,8 +6,10 @@
  
 +extern "C" {
  #ifndef _WINDOWS
- #include <ffmpeg/avformat.h>
- #include <ffmpeg/avcodec.h>
+-#include <ffmpeg/avformat.h>
+-#include <ffmpeg/avcodec.h>
++#include <libavformat/avformat.h>
++#include <libavcodec/avcodec.h>
 +#include <libswscale/swscale.h>
  #else
  void (*av_register_all)(void) = NULL;
