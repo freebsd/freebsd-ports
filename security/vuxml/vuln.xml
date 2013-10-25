@@ -51,6 +51,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9065b930-3d8b-11e3-bd1a-e840f2096bd0">
+    <topic>gnutls -- denial of service</topic>
+    <affects>
+      <package>
+	<name>gnutls3</name>
+	<range><lt>3.1.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Salvatore Bonaccorso reports:</p>
+	<blockquote cite="http://www.gnutls.org/security.html#GNUTLS-SA-2013-3">
+	  <p>This vulnerability affects the DANE library of gnutls 3.1.x and
+	     gnutls 3.2.x. A server that returns more 4 DANE entries could
+	     corrupt the memory of a requesting client.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4466</cvename>
+      <url>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4466</url>
+    </references>
+    <dates>
+      <discovery>2013-10-25</discovery>
+      <entry>2013-10-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9a57c607-3cab-11e3-b4d9-bcaec565249c">
     <topic>xorg-server -- use after free</topic>
     <affects>
