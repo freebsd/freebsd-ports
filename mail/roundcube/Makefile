@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	roundcube
-DISTVERSION=	0.9.4
+DISTVERSION=	0.9.5
 PORTEPOCH=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	SF/${PORTNAME}mail/${PORTNAME}mail/${DISTVERSION:U}
@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 
 NO_BUILD=	yes
 
-RCUBECOMP=	.htaccess SQL config index.php installer logs plugins program robots.txt skins temp
+RCUBECOMP=	SQL config index.php installer logs plugins program robots.txt skins temp
 PORTDOCS=	CHANGELOG INSTALL README.md UPGRADING
 
 WANT_PHP_WEB=	yes
