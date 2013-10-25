@@ -1,0 +1,13 @@
+php-memoize is a PHP extension which transparently caches PHP functions, much
+like Perl's Memoize module.
+
+It comes with the following storage modules which can be enabled at compile
+time:
+
+- memory: Simple per-request module with no dependencies.
+          Since this is a per-request cache, neither TTLs specified in the
+          `memoize()` call or `memoize.default_ttl` are used.
+- memcached: Uses libmemcached or the memcached PHP extension
+- apc: Uses the APC PHP extension
+
+WWW: https://github.com/arraypad/php-memoize
