@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 
-MAN1=		drgbuilder.1 drg2sbg.1
-PLIST_FILES=	bin/drg2sbg bin/drgbuilder
+PLIST_FILES=	bin/drg2sbg bin/drgbuilder man/man1/drg2sbg.1.gz \
+		man/man1/drgbuilder.1.gz
 
 .include <bsd.port.mk>

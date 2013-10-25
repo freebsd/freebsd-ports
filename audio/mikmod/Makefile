@@ -18,8 +18,7 @@ LIB_DEPENDS=	mikmod:${PORTSDIR}/audio/libmikmod
 USES=		gmake
 GNU_CONFIGURE=	yes
 
-MAN1=		mikmod.1
-PLIST_FILES=	bin/mikmod
+PLIST_FILES=	bin/mikmod man/man1/mikmod.1.gz
 
 PORTSCOUT=	skipv:3.3.0
 

@@ -15,9 +15,13 @@ COMMENT=	X interface tool
 USES=		imake
 USE_XORG=	x11 xext
 
-MAN1=		xwit.1
-PLIST_FILES=	bin/xwit
+PLIST_FILES=	bin/xwit man/man1/xwit.1.gz
 
 EXTRA_PATCHES=	${WRKDIR}/${PORTNAME}-patchset-${PORTVERSION}/patch-*
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}._man \
+		${STAGEDIR}${MANPREFIX}/man/man1/${PORTNAME}.1
 
 .include <bsd.port.mk>
