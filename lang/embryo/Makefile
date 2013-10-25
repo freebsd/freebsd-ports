@@ -5,7 +5,7 @@ PORTNAME=	embryo
 PORTVERSION=	1.7.8
 PORTEPOCH=	2
 CATEGORIES=	lang enlightenment
-MASTER_SITES=	http://download.enlightenment.fr/releases/ \
+MASTER_SITES=	http://download.enlightenment.org/releases/ \
 		LOCAL/gblach/e17/
 
 MAINTAINER=	gblach@FreeBSD.org

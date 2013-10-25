@@ -5,7 +5,7 @@ PORTNAME=	e_dbus
 PORTVERSION=	1.7.8
 PORTEPOCH=	1
 CATEGORIES=	devel enlightenment
-MASTER_SITES=	http://download.enlightenment.fr/releases/ \
+MASTER_SITES=	http://download.enlightenment.org/releases/ \
 		LOCAL/gblach/e17/
 
 MAINTAINER=	gblach@FreeBSD.org
