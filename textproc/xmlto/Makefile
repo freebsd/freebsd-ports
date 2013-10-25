@@ -22,10 +22,11 @@ BUILD_DEPENDS=	${BASH_CMD}:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+# TODO: make this a group for PDF output?
 OPTIONS_DEFINE=		DBLATEX FOP PASSIVETEX
-DBLATEX_DESC=		Add dependency on Dblatex
+DBLATEX_DESC=		- BROKEN - Add dependency on Dblatex
 FOP_DESC=		Add dependency on FOP (needs Java)
-PASSIVETEX_DESC=	Add dependency on PassiveTeX
+PASSIVETEX_DESC=	- BROKEN - Add dependency on PassiveTeX
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -46,6 +47,7 @@ PORTDOCS=	AUTHORS ChangeLog NEWS THANKS
 
 .if ${PORT_OPTIONS:MPASSIVETEX}
 BUILD_DEPENDS+=	${LOCALBASE}/share/texmf-local/tex/passivetex/fotex.sty:${PORTSDIR}/print/passivetex
+BROKEN=		the passivetex option is currently broken
 .endif
 
 .if ${PORT_OPTIONS:MFOP}
@@ -57,6 +59,7 @@ CONFIGURE_ARGS+=	--with-backend=fop
 RUN_DEPENDS+=	${LOCALBASE}/bin/dblatex:${PORTSDIR}/textproc/dblatex
 .if ! ${PORT_OPTIONS:MFOP}
 CONFIGURE_ARGS+=	--with-backend=dblatex
+BROKEN=		the dblatex option is currently broken
 .endif
 .endif
 
