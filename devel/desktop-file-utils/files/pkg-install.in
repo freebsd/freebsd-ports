@@ -8,10 +8,6 @@ if [ "$2" != "POST-INSTALL" ]; then
     exit 0
 fi
 
-for pmdir in %%PORT_MIMEDIRS%%; do
-    mkdir -p ${pmdir}
-done
-
 ${PKG_PREFIX}/bin/update-desktop-database -q
 
 exit 0

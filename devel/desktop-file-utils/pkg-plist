@@ -2,4 +2,8 @@ bin/desktop-file-edit
 bin/desktop-file-install
 bin/desktop-file-validate
 bin/update-desktop-database
+man/man1/desktop-file-edit.1.gz
+man/man1/desktop-file-install.1.gz
+man/man1/desktop-file-validate.1.gz
+man/man1/update-desktop-database.1.gz
 share/emacs/site-lisp/desktop-entry-mode.el
