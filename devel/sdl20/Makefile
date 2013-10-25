@@ -1,14 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	sdl2
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
 DISTNAME=	SDL2-${PORTVERSION}
 
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Cross-platform multimedia development API
+
+LICENSE=	ZLIB
 
 USES=		pathfix cmake:outsource iconv
 USE_LDCONFIG=	yes
@@ -52,7 +53,6 @@ SDL_VIDEO_DESC=		Eanble the SDL Video subsystem
 VIDEO_OPENGL_DESC=	OpenGL rendering support
 VIDEO_X11_DESC=		X11 rendering support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MALSA}
@@ -60,7 +60,7 @@ NO_STAGE=	yes
 IGNORE=	option ALSA requires SDL_AUDIO
 .endif
 CMAKE_ARGS+=	-DALSA:BOOL=ON -DALSA_SHARED:BOOL=ON
-LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
 .else
 CMAKE_ARGS+=	-DALSA:BOOL=OFF
 .endif
@@ -100,7 +100,7 @@ CMAKE_ARGS+=	-DMMX:BOOL=OFF -D3DNOW:BOOL=OFF
 IGNORE=	option NAS requires SDL_AUDIO
 .endif
 CMAKE_ARGS+=	-DNAS:BOOL=ON
-LIB_DEPENDS+=	audio:${PORTSDIR}/audio/nas
+LIB_DEPENDS+=	libaudio.so:${PORTSDIR}/audio/nas
 .else
 CMAKE_ARGS+=	-DNAS:BOOL=OFF
 .endif
