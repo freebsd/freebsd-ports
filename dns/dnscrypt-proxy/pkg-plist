@@ -1,3 +1,5 @@
 @stopdaemon dnscrypt-proxy
+man/man8/dnscrypt-proxy.8.gz
+man/man8/hostip.8.gz
 sbin/dnscrypt-proxy
 bin/hostip
