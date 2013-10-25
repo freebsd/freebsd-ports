@@ -71,6 +71,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2013-4466</cvename>
+      <url>http://www.gnutls.org/security.html#GNUTLS-SA-2013-3</url>
     </references>
     <dates>
       <discovery>2013-10-25</discovery>
