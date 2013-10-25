@@ -14,8 +14,4 @@ for mdir in %%MIMEDIRS%%; do
     fi
 done
 
-for pmdir in $(echo %%RMDIRS%% | sort -r); do
-    rmdir ${pmdir} 2>/dev/null
-done
-
 exit 0
