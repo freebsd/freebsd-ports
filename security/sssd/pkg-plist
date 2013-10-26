@@ -1,16 +1,3 @@
-share/locale/zh_TW/LC_MESSAGES/sssd.mo
-share/locale/uk/LC_MESSAGES/sssd.mo
-share/locale/sv/LC_MESSAGES/sssd.mo
-share/locale/ru/LC_MESSAGES/sssd.mo
-share/locale/pt/LC_MESSAGES/sssd.mo
-share/locale/pl/LC_MESSAGES/sssd.mo
-share/locale/nl/LC_MESSAGES/sssd.mo
-share/locale/ja/LC_MESSAGES/sssd.mo
-share/locale/it/LC_MESSAGES/sssd.mo
-share/locale/id/LC_MESSAGES/sssd.mo
-share/locale/fr/LC_MESSAGES/sssd.mo
-share/locale/es/LC_MESSAGES/sssd.mo
-share/locale/de/LC_MESSAGES/sssd.mo
 sbin/sssd
 sbin/sss_usermod
 sbin/sss_userdel
@@ -20,10 +7,84 @@ sbin/sss_groupshow
 sbin/sss_groupmod
 sbin/sss_groupdel
 sbin/sss_groupadd
+sbin/sss_debuglevel
 sbin/sss_cache
+sbin/sss_seed
+bin/sss_ssh_authorizedkeys
+bin/sss_ssh_knownhostsproxy
+man/ja/man1/sss_ssh_authorizedkeys.1.gz
+man/ja/man1/sss_ssh_knownhostsproxy.1.gz
+man/ja/man5/sssd-ipa.5.gz
+man/ja/man5/sssd-ldap.5.gz
+man/ja/man5/sssd-simple.5.gz
+man/ja/man5/sssd.conf.5.gz
+man/ja/man8/pam_sss.8.gz
+man/ja/man8/sss_cache.8.gz
+man/ja/man8/sss_debuglevel.8.gz
+man/ja/man8/sss_groupadd.8.gz
+man/ja/man8/sss_groupdel.8.gz
+man/ja/man8/sss_groupmod.8.gz
+man/ja/man8/sss_groupshow.8.gz
+man/ja/man8/sss_obfuscate.8.gz
+man/ja/man8/sss_useradd.8.gz
+man/ja/man8/sss_userdel.8.gz
+man/ja/man8/sss_usermod.8.gz
+man/ja/man8/sssd.8.gz
+man/ja/man8/sssd_krb5_locator_plugin.8.gz
+man/man1/sss_ssh_authorizedkeys.1.gz
+man/man1/sss_ssh_knownhostsproxy.1.gz
+man/man5/sssd-ad.5.gz
+man/man5/sssd-ipa.5.gz
+man/man5/sssd-krb5.5.gz
+man/man5/sssd-ldap.5.gz
+man/man5/sssd-simple.5.gz
+man/man5/sssd-sudo.5.gz
+man/man5/sssd.conf.5.gz
+man/man8/pam_sss.8.gz
+man/man8/sss_cache.8.gz
+man/man8/sss_debuglevel.8.gz
+man/man8/sss_groupadd.8.gz
+man/man8/sss_groupdel.8.gz
+man/man8/sss_groupmod.8.gz
+man/man8/sss_groupshow.8.gz
+man/man8/sss_obfuscate.8.gz
+man/man8/sss_seed.8.gz
+man/man8/sss_useradd.8.gz
+man/man8/sss_userdel.8.gz
+man/man8/sss_usermod.8.gz
+man/man8/sssd.8.gz
+man/man8/sssd_krb5_locator_plugin.8.gz
+man/nl/man8/sss_groupmod.8.gz
+man/pt/man8/sss_groupdel.8.gz
+man/pt/man8/sss_groupmod.8.gz
+man/uk/man1/sss_ssh_authorizedkeys.1.gz
+man/uk/man1/sss_ssh_knownhostsproxy.1.gz
+man/uk/man5/sssd-ad.5.gz
+man/uk/man5/sssd-ipa.5.gz
+man/uk/man5/sssd-krb5.5.gz
+man/uk/man5/sssd-ldap.5.gz
+man/uk/man5/sssd-simple.5.gz
+man/uk/man5/sssd-sudo.5.gz
+man/uk/man5/sssd.conf.5.gz
+man/uk/man8/pam_sss.8.gz
+man/uk/man8/sss_cache.8.gz
+man/uk/man8/sss_debuglevel.8.gz
+man/uk/man8/sss_groupadd.8.gz
+man/uk/man8/sss_groupdel.8.gz
+man/uk/man8/sss_groupmod.8.gz
+man/uk/man8/sss_groupshow.8.gz
+man/uk/man8/sss_obfuscate.8.gz
+man/uk/man8/sss_seed.8.gz
+man/uk/man8/sss_useradd.8.gz
+man/uk/man8/sss_userdel.8.gz
+man/uk/man8/sss_usermod.8.gz
+man/uk/man8/sssd.8.gz
+man/uk/man8/sssd_krb5_locator_plugin.8.gz
 libexec/sssd/sssd_pam
 libexec/sssd/sssd_nss
 libexec/sssd/sssd_be
+libexec/sssd/sssd_sudo
+libexec/sssd/sssd_ssh
 libexec/sssd/proxy_child
 libexec/sssd/ldap_child
 libexec/sssd/krb5_child
@@ -48,48 +109,65 @@ lib/nss_sss.la
 lib/libipa_hbac.so.0
 lib/libipa_hbac.so
 lib/libipa_hbac.la
-lib/ldb/memberof.so
-%%PYTHON_SITELIBDIR%%/sssd_upgrade_config.pyc
-%%PYTHON_SITELIBDIR%%/sssd_upgrade_config.py
+lib/libsss_idmap.so.0
+lib/libsss_idmap.so
+lib/libsss_idmap.la
+libdata/pkgconfig/sss_idmap.pc
+lib/libsss_sudo.so
+lib/libsss_sudo.la
+lib/sssd/libsss_ad.so
+lib/sssd/libsss_ad.la
+lib/krb5/plugins/libkrb5/sssd_krb5_locator_plugin.so
+lib/krb5/plugins/libkrb5/sssd_krb5_locator_plugin.la
+lib/shared-modules/ldb/memberof.so
+lib/shared-modules/ldb/memberof.la
 %%PYTHON_SITELIBDIR%%/pysss.so
 %%PYTHON_SITELIBDIR%%/pysss.la
+%%PYTHON_SITELIBDIR%%/pysss_murmur.so
+%%PYTHON_SITELIBDIR%%/pysss_murmur.la
 %%PYTHON_SITELIBDIR%%/pyhbac.so
 %%PYTHON_SITELIBDIR%%/pyhbac.la
-%%PYTHON_SITELIBDIR%%/ipachangeconf.pyc
-%%PYTHON_SITELIBDIR%%/ipachangeconf.py
-%%PYTHON_SITELIBDIR%%/SSSDConfig.pyc
-%%PYTHON_SITELIBDIR%%/SSSDConfig.py
-%%PYTHON_SITELIBDIR%%/SSSDConfig-1-py%%PYTHON_VER%%.egg-info
+%%PYTHON_SITELIBDIR%%/SSSDConfig/__init__.pyc
+%%PYTHON_SITELIBDIR%%/SSSDConfig/__init__.py
+%%PYTHON_SITELIBDIR%%/SSSDConfig/ipachangeconf.pyc
+%%PYTHON_SITELIBDIR%%/SSSDConfig/ipachangeconf.py
+%%PYTHON_SITELIBDIR%%/SSSDConfig/sssd_upgrade_config.pyc
+%%PYTHON_SITELIBDIR%%/SSSDConfig/sssd_upgrade_config.py
+%%PYTHON_SITELIBDIR%%/SSSDConfig-1.9.5-py%%PYTHON_VER%%.egg-info
 include/ipa_hbac.h
-etc/sssd/sssd.api.d/sssd-simple.conf
-etc/sssd/sssd.api.d/sssd-proxy.conf
-etc/sssd/sssd.api.d/sssd-local.conf
-etc/sssd/sssd.api.d/sssd-ldap.conf
-etc/sssd/sssd.api.d/sssd-krb5.conf
-etc/sssd/sssd.api.d/sssd-ipa.conf
-etc/sssd/sssd.api.conf
-etc/sssd/sssd.conf.sample
-@dirrmtry lib/ldb
-@dirrmtry etc/sssd/sssd.api.d
-@dirrmtry etc/sssd
-@dirrm share/sssd/introspect
-@dirrm share/sssd
-@dirrm libexec/sssd
+include/sss_sudo.h
+include/sss_idmap.h
+@dirrmtry lib/shared-modules/ldb
+@dirrmtry lib/shared-modules
+@dirrm %%PYTHON_SITELIBDIR%%/SSSDConfig
+@dirrm lib/sssd/modules
 @dirrm lib/sssd
 @dirrmtry man/uk/man8
 @dirrmtry man/uk/man5
+@dirrmtry man/uk/man1
 @dirrmtry man/uk
+@dirrmtry man/pt/man8
+@dirrmtry man/pt/man5
+@dirrmtry man/pt/man1
+@dirrmtry man/pt
 @dirrmtry man/nl/man8
 @dirrmtry man/nl/man5
+@dirrmtry man/nl/man1
 @dirrmtry man/nl
-@dirrmtry man/es/man8
-@dirrmtry man/es/man5
-@dirrmtry man/es
-@dirrmtry man/cs/man8
-@dirrmtry man/cs/man5
-@dirrmtry man/cs
+@dirrmtry etc/sssd
+@dirrmtry share/sssd/sssd/sssd.api.d
+@dirrmtry share/sssd/sssd
+@dirrmtry share/sssd
+@dirrm libexec/sssd
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/libsss_sudo_doc
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/idmap_doc
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/hbac_doc
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/doc
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @unexec if cmp -s %D/etc/sssd/sssd.conf.sample %D/etc/sssd/sssd.conf; then rm -f %D/etc/sssd/sssd.conf; fi
+etc/sssd/sssd.conf.sample
 @exec if [ ! -f %D/etc/sssd/sssd.conf ]; then cp -p %D/%F %B/sssd.conf; fi
 @unexec if [ -d %%ETCDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf %%ETCDIR%%`` to remove any configuration files."; fi
 @unexec if [ -d /var/db/sss ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf /var/db/sss`` to remove any additional files."; fi
+@unexec if [ -d /var/db/sss_mc ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf /var/db/sss_mc`` to remove any additional files."; fi
 @unexec if [ -d /var/run/sss ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf /var/run/sss`` to remove any additional files."; fi

@@ -1,5 +1,16 @@
---- ./src/providers/ldap/ldap_auth.c.orig	2011-08-29 11:39:05.000000000 -0400
-+++ ./src/providers/ldap/ldap_auth.c	2011-10-13 12:15:03.000000000 -0400
+From ad4b85556ddea5d5d2d6bcc5f00a8492b0b15c46 Mon Sep 17 00:00:00 2001
+From: Lukas Slebodnik <lukas.slebodnik@intrak.sk>
+Date: Sat, 4 May 2013 16:08:11 +0200
+Subject: [PATCH 09/34] patch-src__providers__ldap__ldap_auth.c
+
+---
+ src/providers/ldap/ldap_auth.c | 60 ++++++++++++++++++++++++++----------------
+ 1 file changed, 37 insertions(+), 23 deletions(-)
+
+diff --git src/providers/ldap/ldap_auth.c src/providers/ldap/ldap_auth.c
+index b0dd30c..6b1ad83 100644
+--- src/providers/ldap/ldap_auth.c
++++ src/providers/ldap/ldap_auth.c
 @@ -37,7 +37,6 @@
  #include <sys/time.h>
  #include <strings.h>
@@ -8,15 +19,7 @@
  #include <security/pam_modules.h>
  
  #include "util/util.h"
-@@ -46,6 +45,7 @@
- #include "providers/ldap/ldap_common.h"
- #include "providers/ldap/sdap_async.h"
- 
-+
- /* MIT Kerberos has the same hardcoded warning interval of 7 days. Due to the
-  * fact that using the expiration time of a Kerberos password with LDAP
-  * authentication is presumably a rare case a separate config option is not
-@@ -59,6 +59,22 @@
+@@ -56,6 +55,22 @@ enum pwexpire {
      PWEXPIRE_SHADOW
  };
  
@@ -39,7 +42,7 @@
  static errno_t add_expired_warning(struct pam_data *pd, long exp_time)
  {
      int ret;
-@@ -111,17 +127,16 @@
+@@ -110,17 +125,16 @@ static errno_t check_pwexpire_kerberos(const char *expire_date, time_t now,
          return EINVAL;
      }
  
@@ -61,7 +64,7 @@
  
      if (difftime(now, expire_time) > 0.0) {
          DEBUG(4, ("Kerberos password expired.\n"));
-@@ -742,7 +757,7 @@
+@@ -762,7 +776,7 @@ void sdap_pam_chpass_handler(struct be_req *breq)
  
      DEBUG(2, ("starting password change request for user [%s].\n", pd->user));
  
@@ -70,7 +73,7 @@
  
      if (pd->cmd != SSS_PAM_CHAUTHTOK && pd->cmd != SSS_PAM_CHAUTHTOK_PRELIM) {
          DEBUG(2, ("chpass target was called by wrong pam command.\n"));
-@@ -799,7 +814,7 @@
+@@ -821,7 +835,7 @@ static void sdap_auth4chpass_done(struct tevent_req *req)
                      &pw_expire_type, &pw_expire_data);
      talloc_zfree(req);
      if (ret) {
@@ -79,7 +82,7 @@
          goto done;
      }
  
-@@ -819,7 +834,7 @@
+@@ -841,7 +855,7 @@ static void sdap_auth4chpass_done(struct tevent_req *req)
                                              &result);
                  if (ret != EOK) {
                      DEBUG(1, ("check_pwexpire_shadow failed.\n"));
@@ -88,8 +91,8 @@
                      goto done;
                  }
                  break;
-@@ -828,14 +843,14 @@
-                                               &result);
+@@ -850,14 +864,14 @@ static void sdap_auth4chpass_done(struct tevent_req *req)
+                                               state->breq->domain->pwd_expiration_warning);
                  if (ret != EOK) {
                      DEBUG(1, ("check_pwexpire_kerberos failed.\n"));
 -                    state->pd->pam_status = PAM_SYSTEM_ERR;
@@ -105,7 +108,7 @@
                      goto done;
                  }
                  break;
-@@ -844,7 +859,7 @@
+@@ -866,7 +880,7 @@ static void sdap_auth4chpass_done(struct tevent_req *req)
                  break;
              default:
                  DEBUG(1, ("Unknow pasword expiration type.\n"));
@@ -114,7 +117,7 @@
                      goto done;
          }
      }
-@@ -884,7 +899,7 @@
+@@ -906,7 +920,7 @@ static void sdap_auth4chpass_done(struct tevent_req *req)
          dp_err = DP_ERR_OFFLINE;
          break;
      default:
@@ -123,16 +126,34 @@
      }
  
  done:
-@@ -905,7 +920,7 @@
+@@ -929,7 +943,7 @@ static void sdap_pam_chpass_done(struct tevent_req *req)
      ret = sdap_exop_modify_passwd_recv(req, state, &result, &user_error_message);
      talloc_zfree(req);
-     if (ret) {
+     if (ret && ret != EIO) {
 -        state->pd->pam_status = PAM_SYSTEM_ERR;
 +        state->pd->pam_status = PAM_SERVICE_ERR;
          goto done;
      }
  
-@@ -964,7 +979,7 @@
+@@ -970,7 +984,7 @@ static void sdap_pam_chpass_done(struct tevent_req *req)
+                                               state->dn,
+                                               lastchanged_name);
+         if (subreq == NULL) {
+-            state->pd->pam_status = PAM_SYSTEM_ERR;
++            state->pd->pam_status = PAM_SERVICE_ERR;
+             goto done;
+         }
+ 
+@@ -991,7 +1005,7 @@ static void sdap_lastchange_done(struct tevent_req *req)
+ 
+     ret = sdap_modify_shadow_lastchange_recv(req);
+     if (ret != EOK) {
+-        state->pd->pam_status = PAM_SYSTEM_ERR;
++        state->pd->pam_status = PAM_SERVICE_ERR;
+         goto done;
+     }
+ 
+@@ -1032,7 +1046,7 @@ void sdap_pam_auth_handler(struct be_req *breq)
          goto done;
      }
  
@@ -141,7 +162,7 @@
  
      switch (pd->cmd) {
      case SSS_PAM_AUTHENTICATE:
-@@ -1021,7 +1036,7 @@
+@@ -1090,7 +1104,7 @@ static void sdap_pam_auth_done(struct tevent_req *req)
                      &pw_expire_type, &pw_expire_data);
      talloc_zfree(req);
      if (ret != EOK) {
@@ -150,7 +171,7 @@
          dp_err = DP_ERR_FATAL;
          goto done;
      }
-@@ -1033,7 +1048,7 @@
+@@ -1102,7 +1116,7 @@ static void sdap_pam_auth_done(struct tevent_req *req)
                                              state->pd, &result);
                  if (ret != EOK) {
                      DEBUG(1, ("check_pwexpire_shadow failed.\n"));
@@ -159,8 +180,8 @@
                      goto done;
                  }
                  break;
-@@ -1042,7 +1057,7 @@
-                                               state->pd, &result);
+@@ -1112,7 +1126,7 @@ static void sdap_pam_auth_done(struct tevent_req *req)
+                                               be_ctx->domain->pwd_expiration_warning);
                  if (ret != EOK) {
                      DEBUG(1, ("check_pwexpire_kerberos failed.\n"));
 -                    state->pd->pam_status = PAM_SYSTEM_ERR;
@@ -168,8 +189,8 @@
                      goto done;
                  }
                  break;
-@@ -1050,7 +1065,7 @@
-                 ret = check_pwexpire_ldap(state->pd, pw_expire_data, &result);
+@@ -1121,7 +1135,7 @@ static void sdap_pam_auth_done(struct tevent_req *req)
+                                           be_ctx->domain->pwd_expiration_warning);
                  if (ret != EOK) {
                      DEBUG(1, ("check_pwexpire_ldap failed.\n"));
 -                    state->pd->pam_status = PAM_SYSTEM_ERR;
@@ -177,7 +198,7 @@
                      goto done;
                  }
                  break;
-@@ -1058,7 +1073,7 @@
+@@ -1129,7 +1143,7 @@ static void sdap_pam_auth_done(struct tevent_req *req)
                  break;
              default:
                  DEBUG(1, ("Unknow pasword expiration type.\n"));
@@ -186,7 +207,7 @@
                      goto done;
          }
      }
-@@ -1080,7 +1095,7 @@
+@@ -1151,7 +1165,7 @@ static void sdap_pam_auth_done(struct tevent_req *req)
          state->pd->pam_status = PAM_NEW_AUTHTOK_REQD;
          break;
      default:
@@ -195,3 +216,6 @@
          dp_err = DP_ERR_FATAL;
      }
  
+-- 
+1.8.0
+

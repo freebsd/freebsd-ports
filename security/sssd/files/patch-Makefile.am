@@ -1,22 +1,43 @@
---- ./Makefile.am.orig	2011-08-29 11:39:05.000000000 -0400
-+++ ./Makefile.am	2011-10-13 12:13:42.000000000 -0400
-@@ -33,7 +33,7 @@
- systemdunitdir = @systemdunitdir@
- logpath = @logpath@
- pubconfpath = @pubconfpath@
--pkgconfigdir = $(libdir)/pkgconfig
-+pkgconfigdir = $(prefix)/libdata/pkgconfig
+From 2f2d2045b64edf63bbfb845095dbfaf754dc5ad3 Mon Sep 17 00:00:00 2001
+From: Lukas Slebodnik <lukas.slebodnik@intrak.sk>
+Date: Sat, 4 May 2013 16:08:11 +0200
+Subject: [PATCH 01/34] patch-Makefile.am
+
+---
+ Makefile.am | 15 ++++++++-------
+ 1 file changed, 8 insertions(+), 7 deletions(-)
+
+diff --git Makefile.am Makefile.am
+index f0ee88b..10e1e73 100644
+--- Makefile.am
++++ Makefile.am
+@@ -649,7 +649,6 @@ sssd_be_SOURCES = \
+     src/providers/data_provider_callbacks.c \
+     $(SSSD_FAILOVER_OBJ)
+ sssd_be_LDADD = \
+-    -ldl \
+     $(SSSD_LIBS) \
+     $(CARES_LIBS) \
+     libsss_util.la
+@@ -772,7 +771,7 @@ sss_sudo_cli_SOURCES = \
+     src/sss_client/sudo/sss_sudo_response.c \
+     src/sss_client/sudo_testcli/sudo_testcli.c
+ sss_sudo_cli_CFLAGS = $(AM_CFLAGS)
+-sss_sudo_cli_LDFLAGS = $(CLIENT_LIBS)
++sss_sudo_cli_LDFLAGS = $(CLIENT_LIBS) -lintl
+ endif
  
- AM_CFLAGS =
- if WANT_AUX_INFO
-@@ -753,21 +753,22 @@
+ if BUILD_SSH
+@@ -1159,7 +1158,7 @@ noinst_PROGRAMS += autofs_test_client
+ endif
  
- noinst_PROGRAMS = pam_test_client
  pam_test_client_SOURCES = src/sss_client/pam_test_client.c
 -pam_test_client_LDFLAGS = -lpam -lpam_misc
 +pam_test_client_LDFLAGS = -lpam
  
- ####################
+ if BUILD_AUTOFS
+ autofs_test_client_SOURCES = src/sss_client/autofs/autofs_test_client.c \
+@@ -1173,9 +1172,10 @@ endif
  # Client Libraries #
  ####################
  
@@ -29,33 +50,32 @@
      src/sss_client/nss_passwd.c \
      src/sss_client/nss_group.c \
      src/sss_client/nss_netgroup.c \
-     src/sss_client/sss_cli.h \
-     src/sss_client/nss_compat.h
+@@ -1187,7 +1187,7 @@ libnss_sss_la_SOURCES = \
+     src/sss_client/nss_mc_passwd.c \
+     src/sss_client/nss_mc_group.c \
+     src/sss_client/nss_mc.h
 -libnss_sss_la_LDFLAGS = \
 +nss_sss_la_LDFLAGS = \
+     $(CLIENT_LIBS) \
      -module \
      -version-info 2:0:0 \
-     -Wl,--version-script,$(srcdir)/src/sss_client/sss_nss.exports
-@@ -780,6 +781,7 @@
-     src/sss_client/sss_pam_macros.h
+@@ -1203,6 +1203,7 @@ pam_sss_la_SOURCES = \
  
  pam_sss_la_LDFLAGS = \
+     $(CLIENT_LIBS) \
 +    -lintl \
      -lpam \
      -module \
      -avoid-version \
-@@ -1122,10 +1124,10 @@
+@@ -1727,7 +1728,7 @@ else
  	mkdir -p $(DESTDIR)$(initdir)
  endif
  
 -install-data-hook:
--	rm $(DESTDIR)/$(nsslibdir)/libnss_sss.so.2 \
--       $(DESTDIR)/$(nsslibdir)/libnss_sss.so
--	mv $(DESTDIR)/$(nsslibdir)/libnss_sss.so.2.0.0 $(DESTDIR)/$(nsslibdir)/libnss_sss.so.2
-+notnotnotnotnotnotnotnotnotnotnotnotnotnotnotnotnotinstall-data-hook:
-+	rm $(DESTDIR)/$(nsslibdir)/nss_sss.so.2 \
-+       $(DESTDIR)/$(nsslibdir)/nss_sss.so
-+	mv $(DESTDIR)/$(nsslibdir)/nss_sss.so.2.0.0 $(DESTDIR)/$(nsslibdir)/nss_sss.so.2
- 
- uninstall-hook:
- 	if [ -f $(abs_builddir)/src/config/.files ]; then \
++nopenopeinstall-data-hook:
+ 	rm $(DESTDIR)/$(nsslibdir)/libnss_sss.so.2 \
+        $(DESTDIR)/$(nsslibdir)/libnss_sss.so
+ 	mv $(DESTDIR)/$(nsslibdir)/libnss_sss.so.2.0.0 $(DESTDIR)/$(nsslibdir)/libnss_sss.so.2
+-- 
+1.8.0
+

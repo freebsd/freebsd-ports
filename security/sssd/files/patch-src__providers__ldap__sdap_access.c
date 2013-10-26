@@ -1,5 +1,16 @@
---- ./src/providers/ldap/sdap_access.c.orig	2011-08-29 11:39:05.000000000 -0400
-+++ ./src/providers/ldap/sdap_access.c	2011-10-13 12:15:03.000000000 -0400
+From cebca2806d06fce5a5c610a39044a5a4039f71ef Mon Sep 17 00:00:00 2001
+From: Lukas Slebodnik <lukas.slebodnik@intrak.sk>
+Date: Sat, 4 May 2013 16:08:11 +0200
+Subject: [PATCH 12/34] patch-src__providers__ldap__sdap_access.c
+
+---
+ src/providers/ldap/sdap_access.c | 43 +++++++++++++++++++---------------------
+ 1 file changed, 20 insertions(+), 23 deletions(-)
+
+diff --git src/providers/ldap/sdap_access.c src/providers/ldap/sdap_access.c
+index b198e04..37eae45 100644
+--- src/providers/ldap/sdap_access.c
++++ src/providers/ldap/sdap_access.c
 @@ -22,9 +22,7 @@
      along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -10,7 +21,7 @@
  #include <sys/param.h>
  #include <security/pam_modules.h>
  #include <talloc.h>
-@@ -119,7 +117,7 @@
+@@ -109,7 +107,7 @@ void sdap_pam_access_handler(struct be_req *breq)
                             pd);
      if (req == NULL) {
          DEBUG(1, ("Unable to start sdap_access request\n"));
@@ -19,16 +30,16 @@
          return;
      }
  
-@@ -157,7 +155,7 @@
+@@ -149,7 +147,7 @@ sdap_access_send(TALLOC_CTX *mem_ctx,
  
-     state->be_ctx = be_ctx;
+     state->be_req = be_req;
      state->pd = pd;
 -    state->pam_status = PAM_SYSTEM_ERR;
 +    state->pam_status = PAM_SERVICE_ERR;
      state->ev = ev;
      state->access_ctx = access_ctx;
      state->current_rule = 0;
-@@ -502,18 +500,17 @@
+@@ -502,18 +500,17 @@ static bool nds_check_expired(const char *exp_time_str)
          return true;
      }
  
@@ -51,7 +62,7 @@
  
      if (difftime(now, expire_time) > 0.0) {
          DEBUG(4, ("NDS account expired.\n"));
-@@ -663,7 +660,7 @@
+@@ -662,7 +659,7 @@ static struct tevent_req *sdap_account_expired_send(TALLOC_CTX *mem_ctx,
          return NULL;
      }
  
@@ -60,7 +71,7 @@
  
      expire = dp_opt_get_cstring(access_ctx->id_ctx->opts->basic,
                                  SDAP_ACCOUNT_EXPIRE_POLICY);
-@@ -747,7 +744,7 @@
+@@ -746,7 +743,7 @@ static void sdap_account_expired_done(struct tevent_req *subreq)
      talloc_zfree(subreq);
      if (ret != EOK) {
          DEBUG(1, ("Error retrieving access check result.\n"));
@@ -69,17 +80,17 @@
          tevent_req_error(req, ret);
          return;
      }
-@@ -807,7 +804,7 @@
+@@ -806,7 +803,7 @@ static struct tevent_req *sdap_access_filter_send(TALLOC_CTX *mem_ctx,
      state->filter = NULL;
-     state->be_ctx = be_ctx;
+     state->be_req = be_req;
      state->username = username;
 -    state->pam_status = PAM_SYSTEM_ERR;
 +    state->pam_status = PAM_SERVICE_ERR;
      state->sdap_ctx = access_ctx->id_ctx;
      state->ev = ev;
      state->access_ctx = access_ctx;
-@@ -953,7 +950,7 @@
-                                                   SDAP_SEARCH_TIMEOUT));
+@@ -953,7 +950,7 @@ static void sdap_access_filter_connect_done(struct tevent_req *subreq)
+                                    false);
      if (subreq == NULL) {
          DEBUG(1, ("Could not start LDAP communication\n"));
 -        state->pam_status = PAM_SYSTEM_ERR;
@@ -87,7 +98,7 @@
          tevent_req_error(req, EIO);
          return;
      }
-@@ -984,13 +981,13 @@
+@@ -984,13 +981,13 @@ static void sdap_access_filter_get_access_done(struct tevent_req *subreq)
              if (ret == EOK) {
                  return;
              }
@@ -103,7 +114,7 @@
          }
  
          goto done;
-@@ -1009,7 +1006,7 @@
+@@ -1009,7 +1006,7 @@ static void sdap_access_filter_get_access_done(struct tevent_req *subreq)
      else if (results == NULL) {
          DEBUG(1, ("num_results > 0, but results is NULL\n"));
          ret = EIO;
@@ -112,7 +123,7 @@
          goto done;
      }
      else if (num_results > 1) {
-@@ -1018,7 +1015,7 @@
+@@ -1018,7 +1015,7 @@ static void sdap_access_filter_get_access_done(struct tevent_req *subreq)
           */
          DEBUG(1, ("Received multiple replies\n"));
          ret = EIO;
@@ -121,7 +132,7 @@
          goto done;
      }
      else { /* Ok, we got a single reply */
-@@ -1106,7 +1103,7 @@
+@@ -1104,7 +1101,7 @@ static void sdap_access_filter_done(struct tevent_req *subreq)
      talloc_zfree(subreq);
      if (ret != EOK) {
          DEBUG(1, ("Error retrieving access check result.\n"));
@@ -130,7 +141,7 @@
          tevent_req_error(req, ret);
          return;
      }
-@@ -1247,7 +1244,7 @@
+@@ -1244,7 +1241,7 @@ static void sdap_access_service_done(struct tevent_req *subreq)
      talloc_zfree(subreq);
      if (ret != EOK) {
          DEBUG(1, ("Error retrieving access check result.\n"));
@@ -139,7 +150,7 @@
          tevent_req_error(req, ret);
          return;
      }
-@@ -1274,7 +1271,7 @@
+@@ -1269,7 +1266,7 @@ static struct tevent_req *sdap_access_host_send(
      struct ldb_message_element *el;
      unsigned int i;
      char *host;
@@ -148,7 +159,7 @@
  
      req = tevent_req_create(mem_ctx, &state, struct sdap_access_host_ctx);
      if (!req) {
-@@ -1370,7 +1367,7 @@
+@@ -1365,7 +1362,7 @@ static void sdap_access_host_done(struct tevent_req *subreq)
      talloc_zfree(subreq);
      if (ret != EOK) {
          DEBUG(1, ("Error retrieving access check result.\n"));
@@ -157,7 +168,7 @@
          tevent_req_error(req, ret);
          return;
      }
-@@ -1395,7 +1392,7 @@
+@@ -1391,7 +1388,7 @@ sdap_access_recv(struct tevent_req *req, int *pam_status)
  static void sdap_access_done(struct tevent_req *req)
  {
      errno_t ret;
@@ -166,7 +177,7 @@
      struct be_req *breq =
              tevent_req_callback_data(req, struct be_req);
  
-@@ -1403,7 +1400,7 @@
+@@ -1399,7 +1396,7 @@ static void sdap_access_done(struct tevent_req *req)
      talloc_zfree(req);
      if (ret != EOK) {
          DEBUG(1, ("Error retrieving access check result.\n"));
@@ -175,3 +186,6 @@
      }
  
      sdap_access_reply(breq, pam_status);
+-- 
+1.8.0
+
