@@ -1,5 +1,5 @@
 --- mDNSPosix/Makefile.orig	2011-11-03 08:23:39.000000000 +0800
-+++ mDNSPosix/Makefile	2013-08-16 22:56:35.265791824 +0800
++++ mDNSPosix/Makefile	2013-10-13 02:29:12.791431406 +0800
 @@ -54,7 +54,7 @@
  SHAREDDIR ?= ../mDNSShared
  JDK = /usr/jdk
@@ -40,6 +40,94 @@
  	@$(MAKE) -C ../Clients
  
  # nss_mdns target builds the Name Service Switch module
+@@ -276,43 +276,43 @@
+ #############################################################################
+ 
+ # The Install targets place built stuff in their proper places
+-InstalledDaemon: $(INSTBASE)/sbin/mdnsd
++InstalledDaemon: $(DESTDIR)$(INSTBASE)/sbin/mdnsd
+ 	@echo $+ " installed"
+ 
+-InstalledLib: $(INSTBASE)/lib/libdns_sd.$(LDSUFFIX).$(LIBVERS) $(INSTBASE)/include/dns_sd.h
++InstalledLib: $(DESTDIR)$(INSTBASE)/lib/libdns_sd.$(LDSUFFIX).$(LIBVERS) $(DESTDIR)$(INSTBASE)/include/dns_sd.h
+ 	@echo $+ " installed"
+ 
+-InstalledStartup: $(STARTUPSCRIPTDIR)/$(STARTUPSCRIPTNAME)
++InstalledStartup: $(DESTDIR)$(STARTUPSCRIPTDIR)/$(STARTUPSCRIPTNAME)
+ 	@echo $+ " installed"
+ 
+-InstalledManPages: $(MANPATH)/man8/mdnsd.8
++InstalledManPages: $(DESTDIR)$(MANPATH)/man8/mdnsd.8
+ 	@echo $+ " installed"
+ 
+-InstalledClients: $(INSTBASE)/bin/dns-sd
++InstalledClients: $(DESTDIR)$(INSTBASE)/bin/dns-sd
+ 	@echo $+ " installed"
+ 
+-InstalledNSS: $(NSSINSTPATH)/$(NSSLINKNAME) /etc/nss_mdns.conf $(MANPATH)/man5/nss_mdns.conf.5 $(MANPATH)/man8/libnss_mdns.8
++InstalledNSS: $(DESTDIR)$(NSSINSTPATH)/$(NSSLINKNAME) /etc/nss_mdns.conf $(DESTDIR)$(MANPATH)/man5/nss_mdns.conf.5 $(DESTDIR)$(MANPATH)/man8/libnss_mdns.8
+ 	@echo $+ " installed"
+ 
+ # Note: If daemon already installed, we make sure it's stopped before overwriting it
+-$(INSTBASE)/sbin/mdnsd: $(BUILDDIR)/mdnsd
++$(DESTDIR)$(INSTBASE)/sbin/mdnsd: $(BUILDDIR)/mdnsd
+ 	@if test -x $@; then $(STARTUPSCRIPTDIR)/$(STARTUPSCRIPTNAME) stop; fi
+ 	$(CP) $< $@
+ 
+-$(INSTBASE)/lib/libdns_sd.$(LDSUFFIX).$(LIBVERS): $(BUILDDIR)/libdns_sd.$(LDSUFFIX)
++$(DESTDIR)$(INSTBASE)/lib/libdns_sd.$(LDSUFFIX).$(LIBVERS): $(BUILDDIR)/libdns_sd.$(LDSUFFIX)
+ 	$(CP) $< $@
+-	$(LN) $@ $(INSTBASE)/lib/libdns_sd.$(LDSUFFIX)
++	$(LN) libdns_sd.$(LDSUFFIX).$(LIBVERS) $(DESTDIR)$(INSTBASE)/lib/libdns_sd.$(LDSUFFIX)
+ ifdef LDCONFIG
+     # -m means 'merge into existing database', -R means 'rescan directories'
+ 	$(LDCONFIG) -mR
+ endif
+ 
+-$(INSTBASE)/include/dns_sd.h: $(SHAREDDIR)/dns_sd.h
++$(DESTDIR)$(INSTBASE)/include/dns_sd.h: $(SHAREDDIR)/dns_sd.h
+ 	$(CP) $< $@
+ 
+ # We make this target dependent on $(INSTBASE)/sbin/mdnsd because we need to ensure
+ # that the daemon is installed *before* we try to execute the command to start it.
+-$(STARTUPSCRIPTDIR)/$(STARTUPSCRIPTNAME): mdnsd.sh $(STARTUPSCRIPTDIR) $(INSTBASE)/sbin/mdnsd
++$(STARTUPSCRIPTDIR)/$(STARTUPSCRIPTNAME): mdnsd.sh $(STARTUPSCRIPTDIR) $(DESTDIR)$(INSTBASE)/sbin/mdnsd
+ 	$(CP) $< $@
+ 	chmod ugo+x $@
+ 	$@ start
+@@ -329,26 +329,26 @@
+ endif
+ endif
+ 
+-$(MANPATH)/man5/%.5: %.5
++$(DESTDIR)$(MANPATH)/man5/%.5: %.5
+ 	cp $< $@
+ 	chmod 444 $@
+ 
+-$(MANPATH)/man8/%.8: %.8
++$(DESTDIR)$(MANPATH)/man8/%.8: %.8
+ 	cp $< $@
+ 	chmod 444 $@
+ 
+-$(MANPATH)/man8/mdnsd.8: $(SHAREDDIR)/mDNSResponder.8
++$(DESTDIR)$(MANPATH)/man8/mdnsd.8: $(SHAREDDIR)/mDNSResponder.8
+ 	cp $< $@
+ 	chmod 444 $@
+ 
+-$(INSTBASE)/bin/dns-sd: ../Clients/build/dns-sd
++$(DESTDIR)$(INSTBASE)/bin/dns-sd: ../Clients/build/dns-sd
+ 	$(CP) $< $@
+ 
+-$(NSSINSTPATH)/$(NSSLINKNAME): $(NSSINSTPATH)/$(NSSLIBFILE)
++$(DESTDIR)$(NSSINSTPATH)/$(NSSLINKNAME): $(NSSINSTPATH)/$(NSSLIBFILE)
+ 	$(LN) $< $@
+ 	ldconfig
+ 
+-$(NSSINSTPATH)/$(NSSLIBFILE): $(BUILDDIR)/$(NSSLIBFILE)
++$(DESTDIR)$(NSSINSTPATH)/$(NSSLIBFILE): $(BUILDDIR)/$(NSSLIBFILE)
+ 	$(CP) $< $@
+ 	chmod 444 $@
+ 
 @@ -490,6 +490,8 @@
  $(BUILDDIR)/dnsextd:                 $(DNSEXTDOBJ) $(OBJDIR)/dnsextd.c.threadsafe.o
  	$(CC) $+ -o $@ $(LINKOPTS) $(LINKOPTS_PTHREAD)
