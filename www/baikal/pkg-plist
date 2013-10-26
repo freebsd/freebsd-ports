@@ -301,8 +301,9 @@
 %%WWWDIR%%/Core/Resources/Web/TwitterBootstrap
 %%WWWDIR%%/Specific/.htaccess
 @rmtry %%WWWDIR%%/Specific/ENABLE_INSTALL
-@unexec if test -f %%CALDB%% && cmp -s %%CALDB%%-dist %%CALDB%%; then /bin/rm -f %%CALDB%%; fi
+@unexec if cmp -s %D/Specific/db/db.sqlite-dist %D/Specific/db/db.sqlite; then rm -f %D/Specific/db/db.sqlite; fi
 %%WWWDIR%%/Specific/db/db.sqlite-dist
+@exec if [ ! -f %D/Specific/db/db.sqlite ]; then cp -p %D/%F %B/Specific/db/db.sqlite; fi
 %%WWWDIR%%/html/.htaccess
 %%WWWDIR%%/html/admin/index.php
 %%WWWDIR%%/html/admin/install/index.php
@@ -995,3 +996,10 @@
 @dirrm %%WWWDIR%%/Core/Frameworks
 @dirrm %%WWWDIR%%/Core
 @dirrmtry %%WWWDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/TROUBLESHOOTING.md
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/baikal.apache2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/baikal.nginx
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
