@@ -11,12 +11,6 @@ listed above (Markdown only creates HTML). Additionally, it builds in
 'smart' typography for various languages (proper left- and right-sided
 quotes, for example).
 
-MultiMarkdown was originally a fork of the Markdown Perl code, but as of
-version 3.0 has been rewritten as a fork of peg-markdown by John
-MacFarlane, written in C. It can be compiled for any major operating
-system, and as a native binary runs much faster than the Perl version it
-replaces.
-
 
 NOTE: To use the mmd2pdf script, you must install print/latexmk.
 

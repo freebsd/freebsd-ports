@@ -1,9 +1,67 @@
-bin/mmd
-bin/mmd2all
-bin/mmd2odf
-bin/mmd2opml
-bin/mmd2pdf
-bin/mmd2tex
 bin/multimarkdown
-%%PORTDOCS%%%%DOCSDIR%%/README.markdown
+%%HELPERS%%bin/mmd
+%%HELPERS%%bin/mmd2all
+%%HELPERS%%bin/mmd2odf
+%%HELPERS%%bin/mmd2opml
+%%HELPERS%%bin/mmd2pdf
+%%HELPERS%%bin/mmd2tex
+
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%EXTRAS%%%%DOCSDIR%%/README-extras.md
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+
+%%EXTRAS%%bin/mmd-xslt
+%%EXTRAS%%bin/mmd2LaTeX.pl
+%%EXTRAS%%bin/mmd2ODF.pl
+%%EXTRAS%%bin/mmd2OPML.pl
+%%EXTRAS%%bin/mmd2RTF.pl
+%%EXTRAS%%bin/mmd2XHTML.pl
+%%EXTRAS%%bin/mmd2tex-xslt
+%%EXTRAS%%bin/opml2html
+%%EXTRAS%%bin/opml2mmd
+%%EXTRAS%%bin/opml2tex
+%%EXTRAS%%bin/prep_tufte.sh
+%%EXTRAS%%%%DATADIR%%/utilities/mmd_merge.pl
+%%EXTRAS%%%%DATADIR%%/utilities/table_cleanup.pl
+%%EXTRAS%%%%DATADIR%%/XSLT/beamer.xslt
+%%EXTRAS%%%%DATADIR%%/XSLT/clean-text.xslt
+%%EXTRAS%%%%DATADIR%%/XSLT/memoir.xslt
+%%EXTRAS%%%%DATADIR%%/XSLT/opml2mmd.xslt
+%%EXTRAS%%%%DATADIR%%/XSLT/xhtml-toc-h2.xslt
+%%EXTRAS%%%%DATADIR%%/XSLT/xhtml2latex.xslt
+%%EXTRAS%%@dirrmtry %%DATADIR%%/XSLT
+%%EXTRAS%%@dirrmtry %%DATADIR%%/utilities
+%%EXTRAS%%@dirrmtry %%DATADIR%%
+
+%%CHEAT_SHEET%%%%DOCSDIR%%/cheat-sheet/LICENCE
+%%CHEAT_SHEET%%%%DOCSDIR%%/cheat-sheet/MMD-Guide.html
+%%CHEAT_SHEET%%%%DOCSDIR%%/cheat-sheet/README.md
+%%CHEAT_SHEET%%%%DOCSDIR%%/cheat-sheet/ca/index.html
+%%CHEAT_SHEET%%%%DOCSDIR%%/cheat-sheet/de/index.html
+%%CHEAT_SHEET%%%%DOCSDIR%%/cheat-sheet/en/index.html
+%%CHEAT_SHEET%%%%DOCSDIR%%/cheat-sheet/es/index.html
+%%CHEAT_SHEET%%%%DOCSDIR%%/cheat-sheet/fr/index.html
+%%CHEAT_SHEET%%%%DOCSDIR%%/cheat-sheet/images/arrow_down.gif
+%%CHEAT_SHEET%%%%DOCSDIR%%/cheat-sheet/images/arrow_right.gif
+%%CHEAT_SHEET%%%%DOCSDIR%%/cheat-sheet/index.html
+%%CHEAT_SHEET%%%%DOCSDIR%%/cheat-sheet/it/index.html
+%%CHEAT_SHEET%%%%DOCSDIR%%/cheat-sheet/javascripts/guide.js
+%%CHEAT_SHEET%%%%DOCSDIR%%/cheat-sheet/javascripts/jquery-1.4.2.min.js
+%%CHEAT_SHEET%%%%DOCSDIR%%/cheat-sheet/markdown-reference.css
+%%CHEAT_SHEET%%%%DOCSDIR%%/cheat-sheet/mmd.png
+%%CHEAT_SHEET%%%%DOCSDIR%%/cheat-sheet/ru/index.html
+%%CHEAT_SHEET%%%%DOCSDIR%%/cheat-sheet/sv/index.html
+%%CHEAT_SHEET%%%%DOCSDIR%%/cheat-sheet/tr/index.html
+%%CHEAT_SHEET%%@dirrmtry %%DOCSDIR%%/cheat-sheet/tr
+%%CHEAT_SHEET%%@dirrmtry %%DOCSDIR%%/cheat-sheet/sv
+%%CHEAT_SHEET%%@dirrmtry %%DOCSDIR%%/cheat-sheet/ru
+%%CHEAT_SHEET%%@dirrmtry %%DOCSDIR%%/cheat-sheet/javascripts
+%%CHEAT_SHEET%%@dirrmtry %%DOCSDIR%%/cheat-sheet/it
+%%CHEAT_SHEET%%@dirrmtry %%DOCSDIR%%/cheat-sheet/images
+%%CHEAT_SHEET%%@dirrmtry %%DOCSDIR%%/cheat-sheet/fr
+%%CHEAT_SHEET%%@dirrmtry %%DOCSDIR%%/cheat-sheet/es
+%%CHEAT_SHEET%%@dirrmtry %%DOCSDIR%%/cheat-sheet/en
+%%CHEAT_SHEET%%@dirrmtry %%DOCSDIR%%/cheat-sheet/de
+%%CHEAT_SHEET%%@dirrmtry %%DOCSDIR%%/cheat-sheet/ca
+%%CHEAT_SHEET%%@dirrmtry %%DOCSDIR%%/cheat-sheet
+%%CHEAT_SHEET%%@dirrmtry %%DOCSDIR%%
