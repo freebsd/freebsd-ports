@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	swift
-PORTVERSION=	1.9.0
+PORTVERSION=	1.9.1
 CATEGORIES=	databases python
-MASTER_SITES=	http://launchpadlibrarian.net/143982818/
+MASTER_SITES=	http://launchpadlibrarian.net/147458777/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gslin@gslin.org
@@ -13,7 +13,6 @@ COMMENT=	Highly available, distributed, eventually consistent object/blob store
 LICENSE=	AL2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PasteDeploy>0:${PORTSDIR}/www/py-pastedeploy \
-		${PYTHON_PKGNAMEPREFIX}d2to1>=0.2.10:${PORTSDIR}/devel/py-d2to1 \
 		${PYTHON_PKGNAMEPREFIX}dnspython>=1.10.0:${PORTSDIR}/dns/py-dnspython \
 		${PYTHON_PKGNAMEPREFIX}eventlet>=0.9.8:${PORTSDIR}/net/py-eventlet \
 		${PYTHON_PKGNAMEPREFIX}netifaces>=0:${PORTSDIR}/net/py-netifaces \
