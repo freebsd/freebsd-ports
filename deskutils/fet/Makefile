@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fet
-PORTVERSION=	5.19.3
+PORTVERSION=	5.20.1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://lalescu.ro/liviu/fet/download/ \
 		http://lalescu.ro/liviu/fet/download/old/ \
@@ -20,8 +20,6 @@ USE_QT4=	gui network xml \
 		moc_build qmake_build rcc_build uic_build
 HAS_CONFIGURE=	yes
 
-MAN1=		fet.1
-
 PORTEXAMPLES=	*
 
 DESKTOP_ENTRIES="FET" \
@@ -31,14 +29,10 @@ DESKTOP_ENTRIES="FET" \
 		"Education;Qt;" \
 		true
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	EXAMPLES NLS
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MNLS}
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
+.include <bsd.port.options.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/share/fet|${DATADIR}|g' \
@@ -49,16 +43,16 @@ do-configure:
 		${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/fet ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/fet-cl ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/fet.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/fet ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/fet-cl ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/fet.1 ${STAGEDIR}${MANPREFIX}/man/man1
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \. ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \. ${STAGEDIR}${EXAMPLESDIR}
 .endif
 .if ${PORT_OPTIONS:MNLS}
-	${MKDIR} ${DATADIR}/translations
-	cd ${WRKSRC}/translations && ${INSTALL_DATA} *.qm ${DATADIR}/translations
+	${MKDIR} ${STAGEDIR}${DATADIR}/translations
+	cd ${WRKSRC}/translations && ${INSTALL_DATA} *.qm ${STAGEDIR}${DATADIR}/translations
 .endif
 
 .include <bsd.port.mk>

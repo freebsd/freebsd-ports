@@ -1,5 +1,6 @@
 bin/fet
 bin/fet-cl
+man/man1/fet.1.gz
 %%NLS%%%%DATADIR%%/translations/fet_ar.qm
 %%NLS%%%%DATADIR%%/translations/fet_ca.qm
 %%NLS%%%%DATADIR%%/translations/fet_da.qm
