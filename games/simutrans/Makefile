@@ -33,7 +33,7 @@ MAKE_ARGS=	BACKEND=mixer_sdl \
 		FLAGS="-DUSE_C -DREVISION=${SIMUTRANS_REVISION}" \
 		VERBOSE=1
 NO_WRKSUBDIR=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_SDL=	sdl mixer
 USE_ZIP=	yes
 
@@ -41,7 +41,6 @@ DESKTOP_ENTRIES=Simutrans "" "" simutrans "Game;Simulation;" "false"
 PLIST_FILES=	bin/simutrans bin/simutrans-bin
 PORTDATA=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPAK64}
@@ -58,18 +57,18 @@ post-patch:
 
 do-install:
 	cd ${WRKSRC}/simutrans && ${COPYTREE_SHARE} \
-		"config font music script skin text" ${DATADIR}
+		"config font music script skin text" ${STAGEDIR}${DATADIR}
 .if ${PORT_OPTIONS:MPAK64}
-	cd ${WRKSRC}/simutrans && ${COPYTREE_SHARE} pak ${DATADIR}
+	cd ${WRKSRC}/simutrans && ${COPYTREE_SHARE} pak ${STAGEDIR}${DATADIR}
 .endif
 .if ${PORT_OPTIONS:MPAK128}
-	cd ${WRKSRC}/simutrans && ${COPYTREE_SHARE} pak128 ${DATADIR}
+	cd ${WRKSRC}/simutrans && ${COPYTREE_SHARE} pak128 ${STAGEDIR}${DATADIR}
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	${INSTALL_DATA} ${WRKSRC}/simutrans/readme.txt ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/simutrans/readme.txt ${STAGEDIR}${DATADIR}
 .endif
 	${INSTALL_PROGRAM} ${WRKSRC}/build/default/sim \
-		${PREFIX}/bin/simutrans-bin
-	${INSTALL_SCRIPT} ${FILESDIR}/simutrans ${PREFIX}/bin/simutrans
+		${STAGEDIR}${PREFIX}/bin/simutrans-bin
+	${INSTALL_SCRIPT} ${FILESDIR}/simutrans ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
