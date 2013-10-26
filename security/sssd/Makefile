@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=   https://fedorahosted.org/released/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
 
-MAINTAINER=	aweits@rit.edu
+MAINTAINER=	lukas.slebodnik@intrak.sk
 COMMENT=	System Security Services Daemon
 
 LICENSE=	GPLv3
