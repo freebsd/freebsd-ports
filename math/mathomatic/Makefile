@@ -18,33 +18,34 @@ USE_BZIP2=	yes
 MAKEFILE=	makefile
 
 PORTDOCS=	*
-MAN1=		mathomatic.1
+PLIST_FILES=	bin/mathomatic man/man1/mathomatic.1.gz \
+		share/pixmaps/mathomatic.png \
+		share/applications/mathomatic.desktop
 
 MAKE_ARGS=	READLINE=1
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mathomatic ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/mathomatic.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/mathomatic ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/icons/mathomatic.desktop \
-		${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/icons/mathomatic.png ${PREFIX}/share/pixmaps
+		${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/icons/mathomatic.png ${STAGEDIR}${PREFIX}/share/pixmaps
 .if ${PORT_OPTIONS:MDOCS}
 .for d in m4 tests
-	${MKDIR} ${DOCSDIR}/${d}
-	${INSTALL_DATA} ${WRKSRC}/${d}/* ${DOCSDIR}/${d}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/${d}
+	${INSTALL_DATA} ${WRKSRC}/${d}/* ${STAGEDIR}${DOCSDIR}/${d}
 .endfor
-	${MKDIR} ${DOCSDIR}/html
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}/html
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}/html
 .for f in AUTHORS README.txt changes.txt
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
 .endif
 

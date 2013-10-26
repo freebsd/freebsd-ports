@@ -12,27 +12,24 @@ COMMENT=	File recovery tool which recovers deleted files from a block device
 
 LICENSE=	GPLv2
 
-USES=		perl5
+USES=		perl5 shebangfix
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_PERL5=	run
 
-MAN1=		dupemap.1 magicrescue.1 magicsort.1
+SHEBANG_FILES=	magicsort
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+MAKE_ENV+=	STAGEDIR=${STAGEDIR}
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|^#!/usr/bin/env.*|#!${PERL}|' \
-		${WRKSRC}/magicsort
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in NEWS README
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

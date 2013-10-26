@@ -1,0 +1,32 @@
+--- ./Makefile.in.orig	2008-06-26 22:24:06.000000000 +0200
++++ ./Makefile.in	2013-10-26 09:06:55.772677532 +0200
+@@ -57,20 +57,20 @@
+ maintainer-clean: distclean docs-clean
+ 
+ install: all
+-	[ -d $(PREFIX) ]
++	[ -d $(STAGEDIR)$(PREFIX) ]
+ 	
+-	mkdir -p $(PREFIX)/share/magicrescue/tools \
+-	    $(PREFIX)/share/magicrescue/recipes \
+-	    $(PREFIX)/man/man1 \
+-	    $(PREFIX)/bin
++	mkdir -p $(STAGEDIR)$(PREFIX)/share/magicrescue/tools \
++	    $(STAGEDIR)$(PREFIX)/share/magicrescue/recipes \
++	    $(STAGEDIR)$(PREFIX)/man/man1 \
++	    $(STAGEDIR)$(PREFIX)/bin
+ 	
+-	cp magicrescue$(EXE) dupemap$(EXE) magicsort $(PREFIX)/bin/
+-	cp recipes/* $(PREFIX)/share/magicrescue/recipes/
+-	cp $(DOCS) $(PREFIX)/man/man1
++	cp magicrescue$(EXE) dupemap$(EXE) magicsort $(STAGEDIR)$(PREFIX)/bin/
++	cp recipes/* $(STAGEDIR)$(PREFIX)/share/magicrescue/recipes/
++	cp $(DOCS) $(STAGEDIR)$(MANPREFIX)/man/man1
+ 	
+ 	for f in tools/*; do \
+ 	  if [ -x "$$f" ]; then \
+-	    cp -f "$$f" $(PREFIX)/share/magicrescue/tools/; \
++	    cp -f "$$f" $(STAGEDIR)$(PREFIX)/share/magicrescue/tools/; \
+ 	  fi; \
+ 	done
+ 

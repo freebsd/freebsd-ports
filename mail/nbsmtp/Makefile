@@ -16,10 +16,11 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--enable-ssl --enable-ipv6
 
-MAN5=		nbsmtprc.5
-MAN8=		nbsmtp.8
+PLIST_FILES=	bin/nbsmtp man/man5/nbsmtprc.5.gz man/man8/nbsmtp.8.gz
 
-PLIST_FILES=	bin/nbsmtp
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/nbsmtprc.5 ${STAGEDIR}${MANPREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/nbsmtp.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

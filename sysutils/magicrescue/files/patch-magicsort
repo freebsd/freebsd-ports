@@ -1,5 +1,5 @@
---- magicsort.orig     Mon Jul 18 11:55:35 2005
-+++ magicsort  Mon Jul 18 12:03:01 2005
+--- ./magicsort.orig	2013-10-26 09:06:33.969663571 +0200
++++ ./magicsort	2013-10-26 09:06:33.972663781 +0200
 @@ -13,7 +13,7 @@
  while (defined(my $file = readdir DH)) {
      next unless -f $file;
@@ -10,7 +10,7 @@
      close FILE;
  
 @@ -25,7 +25,7 @@
-       next;
+ 	next;
      }
      my $dir = substr($idstring, length($file) + 2);
 -    mkdir $dir;

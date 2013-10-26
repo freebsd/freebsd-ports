@@ -7,4 +7,8 @@ lib/libhello.a
 lib/libhello.la
 lib/libhello.so
 lib/libhello.so.0
+man/man1/htntlm.1.gz
+man/man1/htproxy.1.gz
+man/man1/htremote.1.gz
+man/man1/httest.1.gz
 @dirrm include/htt

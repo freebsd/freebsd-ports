@@ -12,12 +12,8 @@ COMMENT=	Lightweight curses-based IRC client
 
 LICENSE=	GPLv2
 
-MAN1=		netwalker.1
-
 LDFLAGS+=	-lncurses ${PTHREAD_LIBS}
-CFLAGS?=	-O2 -Wall
 
-NO_STAGE=	yes
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" \
 	${WRKSRC}/config.h > ${WRKSRC}/config.h.freebsd
@@ -30,9 +26,9 @@ do-build:
 	${CXX} ${LDFLAGS} -L${WRKSRC}/ ${WRKSRC}/*.o -o ${WRKSRC}/netwalker
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/netwalker ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/netwalker.1 ${MANPREFIX}/man/man1
-	@${MKDIR} ${DATADIR}
-	${CP} ${WRKSRC}/help/* ${PREFIX}/share/netwalker-ircc
+	${INSTALL_PROGRAM} ${WRKSRC}/netwalker ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/netwalker.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/help/* ${STAGEDIR}${PREFIX}/share/netwalker-ircc
 
 .include <bsd.port.mk>

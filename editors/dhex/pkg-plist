@@ -1,0 +1,5 @@
+bin/dhex
+man/man1/dhex.1.gz
+man/man5/dhex_markers.5.gz
+man/man5/dhex_searchlog.5.gz
+man/man5/dhexrc.5.gz
