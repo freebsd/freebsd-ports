@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Tool for managing a fleet of machines in the cloud
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-fog>=0:${PORTSDIR}/devel/rubygem-fog \
 		rubygem-minitar>=0:${PORTSDIR}/archivers/rubygem-minitar \
 		rubygem-thor>=0:${PORTSDIR}/devel/rubygem-thor
@@ -19,5 +21,4 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/blimpy
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
