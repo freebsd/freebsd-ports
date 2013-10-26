@@ -1,0 +1,11 @@
+--- modules/misc/Makefile.in.orig	2013-10-22 11:39:59.422985616 -0200
++++ modules/misc/Makefile.in	2013-10-22 11:40:23.945984594 -0200
+@@ -1463,7 +1463,7 @@
+ @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libfingerprinter_plugin_la_CPPFLAGS) $(CPPFLAGS) $(libfingerprinter_plugin_la_CFLAGS) $(CFLAGS) -c -o libfingerprinter_plugin_la-json.lo `test -f 'webservices/json.c' || echo '$(srcdir)/'`webservices/json.c
+ 
+ libgnutls_plugin_la-gnutls.lo: gnutls.c
+-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgnutls_plugin_la_CFLAGS) $(CFLAGS) -MT libgnutls_plugin_la-gnutls.lo -MD -MP -MF $(DEPDIR)/libgnutls_plugin_la-gnutls.Tpo -c -o libgnutls_plugin_la-gnutls.lo `test -f 'gnutls.c' || echo '$(srcdir)/'`gnutls.c
++@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(libgnutls_plugin_la_CFLAGS) $(CPPFLAGS) $(CFLAGS) -MT libgnutls_plugin_la-gnutls.lo -MD -MP -MF $(DEPDIR)/libgnutls_plugin_la-gnutls.Tpo -c -o libgnutls_plugin_la-gnutls.lo `test -f 'gnutls.c' || echo '$(srcdir)/'`gnutls.c
+ @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libgnutls_plugin_la-gnutls.Tpo $(DEPDIR)/libgnutls_plugin_la-gnutls.Plo
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gnutls.c' object='libgnutls_plugin_la-gnutls.lo' libtool=yes @AMDEPBACKSLASH@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
