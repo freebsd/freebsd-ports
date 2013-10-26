@@ -31,3 +31,8 @@
 %%SQUIRRELDIR%%/functions/decode/x_mac_thai.php
 %%SQUIRRELDIR%%/functions/decode/x_mac_turkish.php
 %%SQUIRRELDIR%%/functions/decode/x_mac_ukrainian.php
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.decode
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.decode
+%%PORTDOCS%%%%DOCSDIR%%/README.decode
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes.decode
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
