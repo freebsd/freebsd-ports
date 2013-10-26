@@ -2,29 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=		squirrelmail-translations
-PORTVERSION=	1.4.18	# Translations updated less often than SM
+PORTVERSION=	20131026
 CATEGORIES=		mail www
-MASTER_SITES=	SF/squirrelmail/locales/${PORTVERSION}-${PORTDATE}
-DISTNAME=		all_locales-${PORTVERSION}-${PORTDATE}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	adamw/squirrelmail
+DISTNAME=		squirrelmail-${PORTVERSION}_0200-SVN.locales
 DIST_SUBDIR=	squirrelmail
 
 MAINTAINER=		adamw@FreeBSD.org
 COMMENT=		NLS translations for Squirrelmail (mail/squirrelmail)
 
-RUN_DEPENDS=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
+LICENSE=		GPLv2
 
-PORTDATE=		20090526
+RUN_DEPENDS=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
 
 USE_BZIP2=		yes
 
-WRKSRC=			${WRKDIR}
-NO_BUILD=		yes
+WRKSRC=			${WRKDIR}/squirrelmail.locales
 
-# if you were using WITHOUT_WWWDIR, use SQUIRRELDIR=${PREFIX}/${PORTNAME}
+# if you were using WITHOUT_WWWDIR, use SQUIRRELDIR=${PREFIX}/squirrelmail
 SQUIRRELDIR?=	${PREFIX}/www/squirrelmail
 PLIST_SUB=		SQUIRRELDIR="${SQUIRRELDIR:S,^${PREFIX}/,,}"
 
-post-patch:
+do-build:
 # The en_US help files are included with the main tarball
 	@${RM} -r ${WRKSRC}/help/en_US
 
