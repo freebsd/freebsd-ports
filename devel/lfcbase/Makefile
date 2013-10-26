@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lfcbase
-PORTVERSION=	1.5.7
+PORTVERSION=	1.5.8
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lemke-it.com/
 
@@ -15,7 +15,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf:env
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|-O3||g' ${WRKSRC}/src/Makefile.in
 
