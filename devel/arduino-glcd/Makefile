@@ -3,6 +3,7 @@
 
 PORTNAME=	arduino-glcd
 PORTVERSION=	3.20111205
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://glcd-arduino.googlecode.com/files/
 DISTNAME=	glcd-20111205

@@ -3,6 +3,7 @@
 
 PORTNAME=	scientific
 PORTVERSION=	2.8
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://sourcesup.cru.fr/frs/download.php/2309/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

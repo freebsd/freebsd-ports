@@ -3,7 +3,7 @@
 
 PORTNAME=	pvm
 PORTVERSION=	3.4.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net parallel
 MASTER_SITES=	NL ftp://ftp.chg.ru/pub/prog/parallel/pvm3/
 MASTER_SITE_SUBDIR=	pvm3

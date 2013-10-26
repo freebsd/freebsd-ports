@@ -3,6 +3,7 @@
 
 PORTNAME=	cblas
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	NL/blas/blast-forum/ LOCAL/bf
 DISTFILES=	cblas.tgz

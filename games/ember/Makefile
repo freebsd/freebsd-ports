@@ -3,7 +3,7 @@
 
 PORTNAME=	ember
 PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/worldforge/Ember%20%28OGRE%20client%29/${PORTVERSION} \
 		http://amber.worldforge.org/ember/releases/stable/

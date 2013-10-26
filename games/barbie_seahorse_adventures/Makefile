@@ -3,7 +3,7 @@
 
 PORTNAME=	barbie_seahorse_adventures
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games python
 MASTER_SITES=	http://www.imitationpickles.org/barbie/files/ \
 		SF/nemysisfreebsdp/:icons

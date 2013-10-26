@@ -3,7 +3,7 @@
 
 PORTNAME=	haskell-src-exts
 PORTVERSION=	1.13.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

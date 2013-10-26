@@ -3,6 +3,7 @@
 
 PORTNAME=	libmetalink
 PORTVERSION=	0.0.3
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://launchpad.net/libmetalink/trunk/${PORTVERSION}/+download/
 

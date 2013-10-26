@@ -3,7 +3,7 @@
 
 PORTNAME=	castpodder
 PORTVERSION=	5.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://nivi.interfree.it/distfiles/${PORTNAME}/
 DISTNAME=	CastPodder-${PORTVERSION}

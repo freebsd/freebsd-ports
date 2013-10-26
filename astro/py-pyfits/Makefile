@@ -3,6 +3,7 @@
 
 PORTNAME=	pyfits
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	astro python
 MASTER_SITES=	http://www.stsci.edu/resources/software_hardware/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

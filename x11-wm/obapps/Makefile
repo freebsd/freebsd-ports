@@ -3,6 +3,7 @@
 
 PORTNAME=	obapps
 PORTVERSION=	0.1.7
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/${PORTNAME}/ \
 		SF/nemysisfreebsdp/:icons

@@ -1,7 +1,7 @@
 # Created by: Michael Johnson <ahze@ahze.net>
 # $FreeBSD$
 
-PORTREVISION=	2
+PORTREVISION=	3
 
 COMMENT=	Fast C routines (Single Percision)
 

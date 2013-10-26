@@ -3,6 +3,7 @@
 
 PORTNAME=	slatec
 PORTVERSION=	4.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	NL:slatec,blas
 MASTER_SITE_SUBDIR=	slatec/:slatec blas/:blas

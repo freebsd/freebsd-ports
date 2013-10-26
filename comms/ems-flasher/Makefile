@@ -3,6 +3,7 @@
 
 PORTNAME=	ems-flasher
 PORTVERSION=	0.03
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://lacklustre.net/redmine/attachments/download/10/ \
 	http://update.cooltrainer.org/freebsd-ports/comms/ems-flasher/

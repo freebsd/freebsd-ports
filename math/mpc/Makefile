@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	mpc
-PORTVERSION=	0.9
+PORTVERSION=	1.0.1
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.multiprecision.org/mpc/download/
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Library of complex numbers with arbitrarily high precision
 
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
-		mpfr:${PORTSDIR}/math/mpfr
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
+		libmpfr.so:${PORTSDIR}/math/mpfr
 
 PORTSCOUT=	site:http://www.multiprecision.org/index.php?prog=mpc&page=download
 
@@ -21,12 +21,11 @@ USE_LDCONFIG=	yes
 
 INFO=		mpc
 PLIST_FILES=	include/mpc.h \
-		lib/libmpc.a lib/libmpc.la lib/libmpc.so lib/libmpc.so.2
+		lib/libmpc.a lib/libmpc.la lib/libmpc.so lib/libmpc.so.3
 
 LATEST_LINK=	math_mpc
 
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

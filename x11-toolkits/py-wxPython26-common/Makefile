@@ -1,7 +1,7 @@
 # Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	6
+PORTREVISION=	7
 
 WITH_COMMON_ONLY=	yes
 

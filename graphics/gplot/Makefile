@@ -3,7 +3,7 @@
 
 PORTNAME=	gplot
 PORTVERSION=	4.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.psc.edu/pub/gplot/
 DISTNAME=	${PORTNAME}

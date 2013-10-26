@@ -3,7 +3,7 @@
 
 PORTNAME=	bihar
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	NL
 DISTFILES=	dbihar.f dbipl.f  dbiplr.f dbisld.f dbislf.f dbmult.f dbplrm.f	\

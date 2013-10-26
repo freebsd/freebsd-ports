@@ -2,7 +2,7 @@
 
 PORTNAME=	syb-with-class-instances-text
 PORTVERSION=	0.0.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -3,7 +3,7 @@
 
 PORTNAME=	v_sim
 PORTVERSION=	3.6.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://www-drfmc.cea.fr/sp2m/L_Sim/V_Sim/download/
 

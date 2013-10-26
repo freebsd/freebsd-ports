@@ -3,6 +3,7 @@
 
 PORTNAME=	libxs
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.crossroads.io/
 

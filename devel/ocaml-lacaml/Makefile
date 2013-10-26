@@ -3,6 +3,7 @@
 
 PORTNAME=	lacaml
 PORTVERSION=	7.0.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/mmottl/lacaml/downloads/
 PKGNAMEPREFIX=	ocaml-

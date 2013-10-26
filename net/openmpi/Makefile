@@ -6,6 +6,7 @@ NO_STAGE=	yes
 
 PORTNAME=	openmpi
 DISTVERSION=	1.6.5
+PORTREVISION=	1
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.6/downloads/
 

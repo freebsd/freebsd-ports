@@ -3,6 +3,7 @@
 
 PORTNAME=	mbdyn
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www.aero.polimi.it/~masarati/Download/mbdyn/
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	pure-stldict
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	lichray@gmail.com

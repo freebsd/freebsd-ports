@@ -3,7 +3,7 @@
 
 PORTNAME=	sdpa
 PORTVERSION=	7.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://sdpa.indsys.chuo-u.ac.jp/sdpa/files/
 DISTNAME=	${PORTNAME}.${PORTVERSION}.src-${SRCDATE}

@@ -3,6 +3,7 @@
 
 PORTNAME=	ess
 DISTVERSION=	13.09
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://ess.r-project.org/downloads/ess/
 EXTRACT_SUFX=	.tgz

@@ -3,6 +3,7 @@
 
 PORTNAME=	pdfkit
 PORTVERSION=	0.5.4
+PORTREVISION=	1
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 

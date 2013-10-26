@@ -3,6 +3,7 @@
 
 PORTNAME=	levmar
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://users.ics.forth.gr/~lourakis/levmar/
 EXTRACT_SUFX=	.tgz
