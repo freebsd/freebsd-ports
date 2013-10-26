@@ -33,7 +33,6 @@ CISCOVERSION_DESC=	Mask linux presentation string
 
 OPTIONS_DEFAULT=DECRYPT
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDECRYPT}
@@ -60,21 +59,23 @@ post-patch:
 		${WRKSRC}/${MAN8}.template
 
 do-install:
-	${INSTALL_PROGRAM} -m 751 ${WRKSRC}/vpnc ${PREFIX}/sbin/vpnc
+	${INSTALL_PROGRAM} -m 751 ${WRKSRC}/vpnc ${STAGEDIR}${PREFIX}/sbin/vpnc
 .if ${PORT_OPTIONS:MDECRYPT}
-	${INSTALL_PROGRAM} ${WRKSRC}/cisco-decrypt ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/cisco-decrypt ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${STAGEDIR}${MANPREFIX}/man/man1
 .endif
-	${INSTALL_SCRIPT} -m 751 ${WRKSRC}/vpnc-disconnect ${PREFIX}/sbin/vpnc-disconnect
-	${INSTALL_DATA} -m 600 ${WRKSRC}/vpnc.conf ${PREFIX}/etc/vpnc.conf.sample
-.if !exists(${PREFIX}/etc/vpnc.conf)
-	${INSTALL_DATA} -m 600 ${WRKSRC}/vpnc.conf ${PREFIX}/etc
+	${INSTALL_SCRIPT} -m 751 ${WRKSRC}/vpnc-disconnect \
+		${STAGEDIR}${PREFIX}/sbin/vpnc-disconnect
+	${INSTALL_DATA} -m 600 ${WRKSRC}/vpnc.conf \
+		${STAGEDIR}${PREFIX}/etc/vpnc.conf.sample
+.if !exists(${STAGEDIR}${PREFIX}/etc/vpnc.conf)
+	${INSTALL_DATA} -m 600 ${WRKSRC}/vpnc.conf ${STAGEDIR}${PREFIX}/etc
 .endif
-	${INSTALL_MAN} ${WRKSRC}/${MAN8} ${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/${MAN8} ${STAGEDIR}${MANPREFIX}/man/man8
 
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

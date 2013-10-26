@@ -1,6 +1,9 @@
 bin/dupemap
 bin/magicrescue
 bin/magicsort
+man/man1/dupemap.1.gz
+man/man1/magicrescue.1.gz
+man/man1/magicsort.1.gz
 %%DATADIR%%/recipes/avi
 %%DATADIR%%/recipes/elf
 %%DATADIR%%/recipes/gimp-xcf

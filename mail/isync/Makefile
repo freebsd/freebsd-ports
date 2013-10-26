@@ -15,16 +15,15 @@ GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_BDB=	42+
 
-MAN1=		isync.1 mbsync.1 mdconvert.1
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
-PLIST_FILES=	bin/get-cert bin/isync bin/mbsync bin/mdconvert
+PLIST_FILES=	bin/get-cert bin/isync bin/mbsync bin/mdconvert \
+		man/man1/isync.1.gz man/man1/mbsync.1.gz man/man1/mdconvert.1.gz
 
 CPPFLAGS+=	-I${BDB_INCLUDE_DIR} -I${OPENSSLINC}
 LDFLAGS+=	-L${BDB_LIB_DIR} -L${OPENSSLLIB} -lssl -lcrypto
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -32,9 +31,9 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

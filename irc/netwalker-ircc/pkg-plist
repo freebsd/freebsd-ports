@@ -1,4 +1,5 @@
 bin/netwalker
+man/man1/netwalker.1.gz
 %%DATADIR%%/help_connect.asc
 %%DATADIR%%/help_ctcp.asc
 %%DATADIR%%/help_disconnect.asc
