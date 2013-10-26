@@ -19,7 +19,7 @@ NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${PERL5})
-PERLTHREADS!=	${PERL5} -V:usethreads | ${AWK} '/define/ { print "define"; exit }'
+PERLTHREADS!=	${PERL5} -V:usethreads | ${AWK} '/define/ { print "define"; exit } END { exit 1 }' || ${ECHO_CMD}
 .if ${PERLTHREADS} != "define"
 IGNORE=	requires perl to be built with -DWITH_THREADS
 .endif
