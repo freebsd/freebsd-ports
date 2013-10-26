@@ -81,7 +81,7 @@ include/pqxx/util
 include/pqxx/util.hxx
 include/pqxx/version
 include/pqxx/version.hxx
-lib/libpqxx-%%PORTVERSION%%.so
+lib/libpqxx-3.1.so
 lib/libpqxx.a
 lib/libpqxx.la
 lib/libpqxx.so

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libpqxx
-PORTVERSION=	3.1
+PORTVERSION=	3.1.1
 CATEGORIES=	databases
 MASTER_SITES=	http://pqxx.org/download/software/${PORTNAME}/
 PKGNAMEPREFIX=	postgresql-
@@ -20,10 +20,11 @@ USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
+USE_PYTHON_BUILD=	yes
+USES=shebangfix
+SHEBANG_FILES=	tools/splitconfig
 
-CONFIGURE_ARGS=	--with-postgres=${LOCALBASE} \
-		--enable-shared \
-		--with-postgres-include=${LOCALBASE}/include/postgresql
+CONFIGURE_ARGS=	--enable-shared
 
 NO_STAGE=	yes
 .include <bsd.port.mk>
