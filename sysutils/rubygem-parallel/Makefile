@@ -11,7 +11,6 @@ COMMENT=	Run any kind of code in parallel processes
 
 LICENSE=	MIT
 
-NO_STAGE=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

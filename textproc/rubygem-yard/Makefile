@@ -11,7 +11,6 @@ COMMENT=	Documentation generation tool for Ruby
 
 LICENSE=	MIT
 
-NO_STAGE=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
