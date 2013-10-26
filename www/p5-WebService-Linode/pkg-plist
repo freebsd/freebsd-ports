@@ -2,6 +2,9 @@
 %%SITE_PERL%%/WebService/Linode/Base.pm
 %%SITE_PERL%%/WebService/Linode/DNS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Linode/.packlist
+%%PERL5_MAN3%%/WebService::Linode.3.gz
+%%PERL5_MAN3%%/WebService::Linode::Base.3.gz
+%%PERL5_MAN3%%/WebService::Linode::DNS.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Linode
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService
 @dirrmtry %%SITE_PERL%%/WebService/Linode
