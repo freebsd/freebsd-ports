@@ -3,6 +3,7 @@
 
 PORTNAME=	ExtUtils-MakeMaker
 PORTVERSION=	6.80
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -41,5 +42,6 @@ post-patch:
 	@${RM} -fr ${WRKSRC}/bundled/
 	@[ -e ${LOCALBASE}/lib/perl5/${PERL_VER}/mach/CORE/cc_runtime.h ] || \
 		${SED} -i '' -e '/cc_runtime.h/d' ${WRKSRC}/lib/ExtUtils/MM_Unix.pm
+	@${RM} ${WRKSRC}/lib/ExtUtils/MM_Unix.pm.orig
 
 .include <bsd.port.post.mk>
