@@ -58,6 +58,8 @@ bin/morbo
 %%SITE_PERL%%/Mojo/Upload.pm
 %%SITE_PERL%%/Mojo/UserAgent.pm
 %%SITE_PERL%%/Mojo/UserAgent/CookieJar.pm
+%%SITE_PERL%%/Mojo/UserAgent/Proxy.pm
+%%SITE_PERL%%/Mojo/UserAgent/Server.pm
 %%SITE_PERL%%/Mojo/UserAgent/Transactor.pm
 %%SITE_PERL%%/Mojo/Util.pm
 %%SITE_PERL%%/Mojo/entities.txt
@@ -218,6 +220,8 @@ bin/morbo
 %%PERL5_MAN3%%/Mojo::Upload.3.gz
 %%PERL5_MAN3%%/Mojo::UserAgent.3.gz
 %%PERL5_MAN3%%/Mojo::UserAgent::CookieJar.3.gz
+%%PERL5_MAN3%%/Mojo::UserAgent::Proxy.3.gz
+%%PERL5_MAN3%%/Mojo::UserAgent::Server.3.gz
 %%PERL5_MAN3%%/Mojo::UserAgent::Transactor.3.gz
 %%PERL5_MAN3%%/Mojo::Util.3.gz
 %%PERL5_MAN3%%/Mojolicious.3.gz
