@@ -1,0 +1,4 @@
+A tiny munin-node implementation for FreeBSD written in pure bourne shell
+providing basic plugin support
+
+WWW: http://erdgeist.org/arts/software/minimunin/

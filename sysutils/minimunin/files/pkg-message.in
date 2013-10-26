@@ -1,0 +1,23 @@
+*****************************************************************
+To activate minimunin, add the line
+
+    munin stream tcp nowait nobody /usr/libexec/tcpd %%PREFIX%%/bin/minimunin
+
+to your /etc/inetd.conf. Alternatively, if you plan to run plugins that require
+root permissions (e.g. for changing to a different user via the plugin config),
+add
+
+    munin stream tcp nowait root   /usr/libexec/tcpd %%PREFIX%%/bin/minimunin
+
+to your /etc/inetd.conf. In both cases you need to enable inetd by setting
+
+    inetd_enable="YES"
+
+in your /etc/rc.conf and restart inetd with the
+
+    service inetd start
+
+command. You may also want to restrict access to your munin node via the
+/etc/hosts.allow and /etc/hosts.deny configuration files.
+
+*****************************************************************
