@@ -7,7 +7,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://download.opalang.org/tar-gz/
 DISTNAME=	${PORTNAME}_v${GITVER}
 
-MAINTAINER=	mezz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source, simple, and unified platform for writing web apps
 
 BUILD_DEPENDS=	${OCAMLFIND_DEPEND} \
