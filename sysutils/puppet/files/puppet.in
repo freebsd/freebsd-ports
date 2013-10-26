@@ -24,7 +24,7 @@ load_rc_config "$name"
 
 command="%%PREFIX%%/bin/puppet"
 command_args="agent ${puppet_flags} --rundir=${puppet_rundir}"
-command_interpreter=%%RUBY%%
+command_interpreter=%%PREFIX%%/bin/ruby
 unset puppet_flags
 
 pidfile="${puppet_rundir}/agent.pid"

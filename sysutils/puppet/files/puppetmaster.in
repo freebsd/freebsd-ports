@@ -22,7 +22,7 @@ load_rc_config "${name}"
 : ${puppetmaster_rundir="/var/run/puppet"}
 : ${puppetmaster_flags="--rundir=${puppetmaster_rundir}"}
 
-command_interpreter="%%PREFIX%%/bin/ruby18"
+command_interpreter=%%PREFIX%%/bin/ruby
 command="%%PREFIX%%/bin/puppet"
 command_args="master ${puppetmaster_flags}"
 unset puppetmaster_flags

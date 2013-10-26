@@ -14,7 +14,7 @@ bin/puppet
 @dirrmtry etc/puppet
 @unexec rmdir /var/puppet 2>/dev/null || true
 @exec /bin/mkdir -p /var/puppet
-@exec /bin/mkdir -p etc/puppet/modules
+@exec /bin/mkdir -p %D/etc/puppet/modules
 @exec /usr/sbin/chown -Rh puppet:puppet /var/puppet
 @dirrm %%RUBY_SITELIBDIR%%/hiera/backend
 @dirrm %%RUBY_SITELIBDIR%%/hiera
