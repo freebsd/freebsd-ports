@@ -14,7 +14,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-guard>=2.1.1:${PORTSDIR}/sysutils/rubygem-guard \
 		rubygem-rspec>=2.14:${PORTSDIR}/devel/rubygem-rspec
 
-NO_STAGE=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
