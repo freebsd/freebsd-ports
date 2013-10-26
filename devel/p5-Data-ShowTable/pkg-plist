@@ -1,6 +1,10 @@
 bin/showtable
 %%SITE_PERL%%/Data/ShowTable.pm
+%%SITE_PERL%%/Data/testfile.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ShowTable/.packlist
+%%PERL5_MAN3%%/Data::ShowTable.3.gz
+%%PERL5_MAN3%%/Data::testfile.3.gz
+man/man1/showtable.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ShowTable
-@dirrmtry %%SITE_PERL%%/Data
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+@dirrmtry %%SITE_PERL%%/Data
