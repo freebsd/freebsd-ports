@@ -3,7 +3,7 @@
 
 PORTNAME=	stringsearch
 PORTVERSION=	0.3.6.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

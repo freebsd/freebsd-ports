@@ -2,6 +2,7 @@
 
 PORTNAME=	shakespeare-css
 PORTVERSION=	1.0.5.1
+PORTREVISION=	1
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

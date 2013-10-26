@@ -2,6 +2,7 @@
 
 PORTNAME=	lens
 PORTVERSION=	3.9.0.2
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

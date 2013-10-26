@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-benchmark
 PORTVERSION=	1.1.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	benchmarks math
 
 MAINTAINER=	stephen@FreeBSD.org

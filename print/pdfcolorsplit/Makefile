@@ -3,7 +3,7 @@
 
 PORTNAME=	pdfcolorsplit
 PORTVERSION=	2011.08.26
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print python
 MASTER_SITES=	http://files.bsdroot.lv/my/FreeBSD/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

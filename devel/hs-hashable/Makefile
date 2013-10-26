@@ -2,6 +2,7 @@
 
 PORTNAME=	hashable
 PORTVERSION=	1.1.2.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel haskell
 

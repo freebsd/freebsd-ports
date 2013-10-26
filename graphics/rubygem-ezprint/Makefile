@@ -3,6 +3,7 @@
 
 PORTNAME=	ezprint
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 

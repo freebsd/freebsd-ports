@@ -3,7 +3,7 @@
 
 PORTNAME=	scalapack
 PORTVERSION=	1.8.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/scalapack/
 DISTFILES=	scalapack-${PORTVERSION}.tgz manpages.tgz

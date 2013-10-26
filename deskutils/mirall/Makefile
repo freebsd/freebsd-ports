@@ -3,7 +3,7 @@
 
 PORTNAME=	mirall
 PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://download.owncloud.com/download/
 

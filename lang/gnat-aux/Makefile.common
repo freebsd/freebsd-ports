@@ -1,8 +1,8 @@
 # $FreeBSD$
 
-LIB_DEPENDS=		gmp.10:${PORTSDIR}/math/gmp
-LIB_DEPENDS+=		mpfr.4:${PORTSDIR}/math/mpfr
-LIB_DEPENDS+=		mpc.2:${PORTSDIR}/math/mpc
+LIB_DEPENDS=		libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS+=		libmpfr.so:${PORTSDIR}/math/mpfr
+LIB_DEPENDS+=		libmpc.so:${PORTSDIR}/math/mpc
 
 ONLY_FOR_ARCHS= 	i386 amd64
 

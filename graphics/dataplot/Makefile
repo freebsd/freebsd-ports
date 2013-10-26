@@ -3,7 +3,7 @@
 
 PORTNAME=	dataplot
 PORTVERSION=	20090821
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.nist.gov/pub/dataplot/unix/:source \
 		LOCAL/beech:source \

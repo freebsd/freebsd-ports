@@ -3,6 +3,7 @@
 
 PORTNAME=	gnat-aux
 PORTVERSION=	${SNAPSHOT}
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/:boot \
 		${MASTER_SITE_GCC}

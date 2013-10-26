@@ -2,7 +2,7 @@
 
 PORTNAME=	monad-par-extras
 PORTVERSION=	0.3.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

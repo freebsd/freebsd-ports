@@ -3,6 +3,7 @@
 
 PORTNAME=	pnetcdf
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	science parallel
 MASTER_SITES=	http://ftp.mcs.anl.gov/pub/parallel-netcdf/ \
 		LOCAL/sunpoet

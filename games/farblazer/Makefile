@@ -3,7 +3,7 @@
 
 PORTNAME=	farblazer
 PORTVERSION=	0.7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://www.pygame.org/gamelets/games/
 

@@ -2,7 +2,7 @@
 
 PORTNAME=	gtkglext
 PORTVERSION=	0.12.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -3,7 +3,7 @@
 
 PORTNAME=	flounder
 PORTVERSION=	0.40
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	science
 MASTER_SITES=	http://www.enel.ucalgary.ca/People/vigmond/flounder/
 EXTRACT_SUFX=	.tgz

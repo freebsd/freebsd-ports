@@ -3,6 +3,7 @@
 
 PORTNAME=	ros-common_msgs
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/common_msgs/common_msgs-${PORTVERSION}/	
 DISTNAME=	common_msgs-${PORTVERSION}

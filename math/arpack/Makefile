@@ -3,7 +3,7 @@
 
 PORTNAME=	arpack
 PORTVERSION=	96
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	math
 MASTER_SITES=	http://www.caam.rice.edu/software/ARPACK/SRC/
 DISTFILES=	${PORTNAME}${PORTVERSION}.tar.gz patch.tar.gz

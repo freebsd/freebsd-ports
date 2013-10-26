@@ -2,6 +2,7 @@
 
 PORTNAME=	oyranos
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Oyranos/Oyranos%20${PORTVERSION:C|(.*)\.[0-9]*$|\1|}
 

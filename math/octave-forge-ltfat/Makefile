@@ -3,6 +3,7 @@
 
 PORTNAME=	octave-forge-ltfat
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

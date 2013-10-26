@@ -2,7 +2,7 @@
 
 PORTNAME=	dragonegg46
 PORTVERSION=	3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTNAME=	dragonegg-${PORTVERSION}.src

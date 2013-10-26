@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-audio
 PORTVERSION=	1.1.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

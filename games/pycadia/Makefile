@@ -3,7 +3,7 @@
 
 PORTNAME=	pycadia
 PORTVERSION=	0.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games python
 MASTER_SITES=	${MASTER_SITE_GENTOO:S/%SUBDIR%/distfiles/} \
 		SF/nemysisfreebsdp/

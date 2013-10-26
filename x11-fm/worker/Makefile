@@ -3,6 +3,7 @@
 
 PORTNAME=	worker
 PORTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.boomerangsworld.de/cms/worker/downloads/
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}

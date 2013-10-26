@@ -3,7 +3,7 @@
 
 PORTNAME=	dabstick-radio
 PORTVERSION=	0.96
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms audio hamradio
 MASTER_SITES=	http://www.sdr-j.tk/
 EXTRACT_SUFX=	.tgz

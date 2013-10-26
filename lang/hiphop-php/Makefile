@@ -3,7 +3,7 @@
 
 PORTNAME=	hiphop-php
 PORTVERSION=	2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang devel www
 MASTER_SITES=	https://github.com/facebook/hiphop-php/archive/:main \
 		http://unicode.org/Public/UNIDATA/:unidata \

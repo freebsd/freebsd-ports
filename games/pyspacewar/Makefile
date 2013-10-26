@@ -3,6 +3,7 @@
 
 PORTNAME=	pyspacewar
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	http://mg.pov.lt/${PORTNAME}/\
 		LOCAL/beech

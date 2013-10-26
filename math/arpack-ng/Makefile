@@ -3,6 +3,7 @@
 
 PORTNAME=	arpack-ng
 PORTVERSION=	3.1.3
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://forge.scilab.org/index.php/p/arpack-ng/downloads/get/ \
 		LOCAL/bf

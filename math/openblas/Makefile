@@ -3,6 +3,7 @@
 
 PORTNAME=	openblas
 PORTVERSION=	0.2.8
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://codeload.github.com/${GH_ACCOUNT}/${GH_PROJECT}/legacy.tar.gz/${GH_TAGNAME}?dummy=/:${PORTNAME} \
 		NL:lapack_tmg

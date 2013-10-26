@@ -3,7 +3,7 @@
 
 PORTNAME=	iso2mkv
 DISTVERSION=	2007-04-25
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://5ko.free.fr/dl/
 

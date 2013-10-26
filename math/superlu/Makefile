@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	superlu
-PORTREVISION=	4
+PORTREVISION=	5
 DISTVERSION=	${P_VERSION}.20060201
 CATEGORIES=	math
 MASTER_SITES=	http://crd.lbl.gov/~xiaoye/SuperLU/ \

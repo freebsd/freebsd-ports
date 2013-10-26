@@ -2,7 +2,7 @@
 
 PORTNAME=	language-c
 PORTVERSION=	0.3.2.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

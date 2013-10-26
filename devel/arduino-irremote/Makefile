@@ -3,6 +3,7 @@
 
 PORTNAME=	arduino-irremote
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://files.arcfn.com/files/
 DISTNAME=	IRremote

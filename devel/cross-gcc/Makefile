@@ -2,7 +2,7 @@
 
 PORTNAME?=	gcc
 PORTVERSION=	4.5.4
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GCC:S,$,:gcc,} \
 		${MASTER_SITE_SOURCEWARE:S,$,:newlib,}
@@ -16,11 +16,11 @@ PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/SOURCES/4.11/
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	kientzle@FreeBSD.org
-COMMENT=	GNU gcc for cross-target development
+COMMENT=	GCC for cross-target development
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
-		mpfr.4:${PORTSDIR}/math/mpfr \
-		mpc.2:${PORTSDIR}/math/mpc
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
+		libmpfr.so:${PORTSDIR}/math/mpfr \
+		libmpc.so:${PORTSDIR}/math/mpc
 
 # If using this as a master port, override BUILD_DEPENDS and
 # RUN_DEPENDS with the appropriate specific binutils port.

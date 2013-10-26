@@ -3,7 +3,7 @@
 
 PORTNAME=	uniplate
 PORTVERSION=	1.6.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

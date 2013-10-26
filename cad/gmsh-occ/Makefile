@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmsh
+PORTREVISION=	1
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-occ
 

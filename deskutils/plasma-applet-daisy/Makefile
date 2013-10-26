@@ -2,6 +2,7 @@
 
 PORTNAME=	daisy
 PORTVERSION=	0.0.4.26
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://cdlszm.org/downloads/
 PKGNAMEPREFIX=	plasma-applet-

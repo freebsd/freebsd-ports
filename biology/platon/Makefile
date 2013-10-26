@@ -3,7 +3,7 @@
 
 PORTNAME=	platon
 PORTVERSION=	2007.01.09
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	biology
 MASTER_SITES=	http://www.cryst.chem.uu.nl/spek/xraysoft/unix/
 DISTNAME=	platon

@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-tcl-octave
 PORTVERSION=	0.1.8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

@@ -3,6 +3,7 @@
 
 PORTNAME=		gcc
 PORTVERSION=		4.6.2
+PORTREVISION=	1
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	releases/${DISTNAME}/
@@ -16,9 +17,9 @@ ONLY_FOR_ARCHS=		amd64 i386
 
 PSP_GCC_STAGE_PREFIX=	psp/stage1
 
-LIB_DEPENDS=		gmp.10:${PORTSDIR}/math/gmp \
-			mpfr.4:${PORTSDIR}/math/mpfr \
-			mpc.2:${PORTSDIR}/math/mpc
+LIB_DEPENDS=		libgmp.so:${PORTSDIR}/math/gmp \
+			libmpfr.so:${PORTSDIR}/math/mpfr \
+			libmpc.so:${PORTSDIR}/math/mpc
 
 BUILD_DEPENDS+=		psp-addr2line:${PORTSDIR}/devel/psptoolchain-binutils \
 			psp-ar:${PORTSDIR}/devel/psptoolchain-binutils \

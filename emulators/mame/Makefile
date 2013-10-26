@@ -3,6 +3,7 @@
 
 PORTNAME=	mame
 PORTVERSION=	0.149${PATCHSUFFIX}
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}.mirror/${PORTNAME:U}%20${PORTVERSION} \
 		http://mame.mirrors.zippykid.com/releases/ \

@@ -3,6 +3,7 @@
 
 PORTNAME=	veusz
 PORTVERSION=	1.17.1
+PORTREVISION=	1
 CATEGORIES=	science kde
 MASTER_SITES=	http://download.gna.org/veusz/
 

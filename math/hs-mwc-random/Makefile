@@ -3,7 +3,7 @@
 
 PORTNAME=	mwc-random
 PORTVERSION=	0.12.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
