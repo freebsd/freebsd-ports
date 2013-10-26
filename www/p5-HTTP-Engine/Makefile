@@ -29,22 +29,4 @@ TEST_DEPENDS=	\
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		HTTP::Engine.3 \
-		HTTP::Engine::Cookbook.3 \
-		HTTP::Engine::Interface::CGI.3 \
-		HTTP::Engine::Interface::FCGI.3 \
-		HTTP::Engine::Interface::ModPerl.3 \
-		HTTP::Engine::Interface::POE.3 \
-		HTTP::Engine::Interface::PSGI.3 \
-		HTTP::Engine::Interface::ServerSimple.3 \
-		HTTP::Engine::Interface::Standalone.3 \
-		HTTP::Engine::Interface::Test.3 \
-		HTTP::Engine::MinimalCGI.3 \
-		HTTP::Engine::Request.3 \
-		HTTP::Engine::Request::Upload.3 \
-		HTTP::Engine::Response.3 \
-		HTTP::Engine::Role::Interface.3 \
-		HTTP::Engine::Test::Request.3 \
-		HTTP::Engine::Types::Core.3
-
 .include <bsd.port.mk>
