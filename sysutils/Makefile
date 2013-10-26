@@ -512,6 +512,7 @@
     SUBDIR += metalog
     SUBDIR += mfid
     SUBDIR += mgeupsd
+    SUBDIR += minimunin
     SUBDIR += minirsyslogd
     SUBDIR += mixer
     SUBDIR += mkfile
