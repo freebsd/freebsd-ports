@@ -2,16 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	squirrelmail
-PORTVERSION=	20131020
-PORTREVISION=	2
+PORTVERSION=	20131026
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	adamw
+MASTER_SITE_SUBDIR=	adamw/squirrelmail
 DISTNAME=	${PORTNAME}-${PORTVERSION}_0200-SVN.stable
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	A webmail system which accesses mail over IMAP
+
+LICENSE=	GPLv2
 
 # This snapshot tarball contains php 5.4 and 5.5 compatibility
 # patches, but the only guaranteed compatibility is with php 5.3.
@@ -28,7 +29,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}.stable/${PORTNAME}
 OPTIONS_DEFINE=	DATABASE LDAP
 DATABASE_DESC=	PEAR database support (must also install a driver)
 
-# if you were using WITHOUT_WWWDIR, use SQUIRRELDIR=${PREFIX}/${PORTNAME}
+# if you were using WITHOUT_WWWDIR, use SQUIRRELDIR=${PREFIX}/squirrelmail
 SQUIRRELDIR?=	${WWWDIR}
 
 SMUSER?=	${WWWOWN}
@@ -40,7 +41,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION} \
 			SQUIRRELDIR="${SQUIRRELDIR:S,^${PREFIX}/,,}" \
 
 SUB_FILES=	pkg-message
-SUB_LIST=	SQUIRRELDIR=${SQUIRRELDIR} SMUSER=${SMUSER} SMGROUP=${SMGROUP} 
+SUB_LIST=	SQUIRRELDIR=${SQUIRRELDIR} SMUSER=${SMUSER} SMGROUP=${SMGROUP}
 
 CONFLICTS=	squirreloutlook-[0-9]*
 
@@ -93,19 +94,19 @@ pre-install:
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${FILESDIR}/111.clean-squirrelmail ${STAGEDIR}${PREFIX}/etc/periodic/daily
-	${MKDIR} ${STAGEDIR}${SQUIRRELDIR}
+	@${MKDIR} ${STAGEDIR}${SQUIRRELDIR}
 	${INSTALL_DATA} ${WRKSRC}/index.php ${STAGEDIR}${SQUIRRELDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/configure ${STAGEDIR}${SQUIRRELDIR}
-.for DIR in attach class config data functions help images include locale plugins po src themes
-	cd ${WRKSRC} && ${FIND} ${DIR} | ${CPIO} -pdmu --quiet ${STAGEDIR}${SQUIRRELDIR}
-.endfor
+	cd ${WRKSRC} && \
+		${FIND} attach class config data functions help images include locale plugins po src themes \
+		| ${CPIO} -pdmu --quiet ${STAGEDIR}${SQUIRRELDIR}
 	${CHOWN} ${SMUSER}:${SMGROUP} ${STAGEDIR}${SQUIRRELDIR}/data ${STAGEDIR}${SQUIRRELDIR}/attach
 	${CHMOD} 730 ${STAGEDIR}${SQUIRRELDIR}/attach
 	${CHMOD} 750 ${STAGEDIR}${SQUIRRELDIR}/data
 
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${FIND} . | ${CPIO} -pdmu --quiet ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
