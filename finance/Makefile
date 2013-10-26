@@ -93,6 +93,7 @@
     SUBDIR += pear_Payment_DTA
     SUBDIR += php-tclink
     SUBDIR += prestashop
+    SUBDIR += py-stripe
     SUBDIR += py-vatnumber
     SUBDIR += qhacc
     SUBDIR += quantlib
