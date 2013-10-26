@@ -3,29 +3,26 @@
 
 PORTNAME=	mixxx
 PORTVERSION=	1.11.0
-PORTREVISION=	1
 DISTVERSIONSUFFIX=	-src
+PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	http://downloads.mixxx.org/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://downloads.mixxx.org/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DJ mixing application
 
 LICENSE=	GPLv2 # (or later)
 
-BUILD_DEPENDS=	portaudio>=19:${PORTSDIR}/audio/portaudio2
-LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
-		id3tag:${PORTSDIR}/audio/libid3tag \
-		mad:${PORTSDIR}/audio/libmad \
-		sndfile:${PORTSDIR}/audio/libsndfile \
-		vorbis:${PORTSDIR}/audio/libvorbis \
-		tag:${PORTSDIR}/audio/taglib \
-		protobuf:${PORTSDIR}/devel/protobuf
-RUN_DEPENDS=	portaudio>=19:${PORTSDIR}/audio/portaudio2
-
-OPTIONS_DEFINE=	FAAD LAME SHOUTCAST TCMALLOC WAVPACK DOCS
-TCMALLOC_DESC=	Use Google's TCMalloc
+BUILD_DEPENDS=	portaudio2>=0:${PORTSDIR}/audio/portaudio2 \
+		bzr>=0:${PORTSDIR}/devel/bzr
+LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
+		libid3tag.so:${PORTSDIR}/audio/libid3tag \
+		libmad.so:${PORTSDIR}/audio/libmad \
+		libsndfile.so:${PORTSDIR}/audio/libsndfile \
+		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
+		libtag.so:${PORTSDIR}/audio/taglib \
+		libprotobuf.so:${PORTSDIR}/devel/protobuf
+RUN_DEPENDS=	portaudio2>=0:${PORTSDIR}/audio/portaudio2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -36,45 +33,44 @@ USE_GL=		glu
 USE_SCONS=	yes
 SCONS_BUILDENV=	${SCONS_ENV}
 SCONS_ARGS=	qtdir="${QT_PREFIX}" optimize=0
+USE_LDCONFIG=	yes
+
+PORTDOCS=	*
+
+DOCSRCDIR1=	${WRKSRC}
+DOC_FILES1=	Mixxx-Manual.pdf README README.macro
+
+DOCSRCDIR2=	${WRKSRC}/doc/HID
+DOCSDIR2=	${DOCSDIR}/doc/HID
+DOC_FILES2=	*.odt *.pdf
+
+OPTIONS_DEFINE=	DOCS FAAD LAME SHOUTCAST TCMALLOC WAVPACK
+OPTIONS_DEFAULT=	FAAD SHOUTCAST TCMALLOC WAVPACK
+
+OPTIONS_SUB=	yes
+
+TCMALLOC_DESC=	Use Google's TCMalloc
+
+FAAD_LIB_DEPENDS=	libfaad.so:${PORTSDIR}/audio/faad \
+			libmp4v2.so:${PORTSDIR}/multimedia/mp4v2
+FAAD_SCONS_ARGS_ON=	faad=1
+FAAD_SCONS_ARGS_OFF=	faad=0
+
+LAME_RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame
+
+SHOUTCAST_LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout
+SHOUTCAST_SCONS_ARGS_ON=	shoutcast=1
+SHOUTCAST_SCONS_ARGS_OFF=	shoutcast=0
+
+TCMALLOC_LIB_DEPENDS=	libtcmalloc.so
+TCMALLOC_SCONS_ARGS_ON=	perftools=
+TCMALLOC_SCONS_ARGS_OFF=	perftools=0
+
+WAVPACK_LIB_DEPENDS=	libwavpack.so:${PORTSDIR}/audio/wavpack
+WAVPACK_SCONS_ARGS_ON=	wv=1
+WAVPACK_SCONS_ARGS_OFF=	wv=0
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MFAAD}
-LIB_DEPENDS+=	faad:${PORTSDIR}/audio/faad \
-		mp4v2:${PORTSDIR}/multimedia/mp4v2
-SCONS_ARGS+=	faad=1
-PLIST_SUB+=	FAAD=""
-.else
-SCONS_ARGS+=	faad=0
-PLIST_SUB+=	FAAD="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MLAME}
-RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
-.endif
-
-.if ${PORT_OPTIONS:MSHOUTCAST}
-LIB_DEPENDS+=	shout:${PORTSDIR}/audio/libshout2
-SCONS_ARGS+=	shoutcast=1
-.else
-SCONS_ARGS+=	shoutcast=0
-.endif
-
-.if ${PORT_OPTIONS:MTCMALLOC}
-LIB_DEPENDS+=	tcmalloc:${PORTSDIR}/devel/google-perftools
-SCONS_ARGS+=	perftools=1
-.else
-SCONS_ARGS+=	perftools=0
-.endif
-
-.if ${PORT_OPTIONS:MWAVPACK}
-LIB_DEPENDS+=	wavpack:${PORTSDIR}/audio/wavpack
-SCONS_ARGS+=	wv=1
-PLIST_SUB+=	WAVPACK=""
-.else
-SCONS_ARGS+=	wv=0
-PLIST_SUB+=	WAVPACK="@comment "
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g ; \
@@ -91,11 +87,12 @@ post-patch:
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/mixxx
+
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-.for f in Mixxx-Manual.pdf README
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR2}
+	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${DOCSDIR2}
 .endif
 
 .include <bsd.port.mk>
