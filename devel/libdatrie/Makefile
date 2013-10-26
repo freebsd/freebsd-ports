@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libdatrie
-PORTVERSION=	0.2.6
+PORTVERSION=	0.2.7.1
 CATEGORIES=	devel
 MASTER_SITES=	http://linux.thai.net/pub/thailinux/software/libthai/
 
@@ -19,8 +19,6 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
-MAN1=		trietool-0.2.1
 PORTDOCS=	README.migration
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
