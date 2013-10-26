@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.293 2013/10/20 00:49:57 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.297 2013/10/26 14:41:47 marcus Exp $
 #
 
 use strict;
@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 14;
-my $micro = 6;
+my $micro = 7;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -351,7 +351,7 @@ if ($committer) {
 				    "If it still needs to be there, put a dummy comment ".
 					"to state that the file is intentionally left empty.");
 		} elsif (-d && scalar(my @x = <$_/{*,.?*}>) <= 1) {
-			&perror("FATAL", $fullname, -1, "empty directory should be removed.");
+			&perror("FATAL", $fullname, -1, "empty directory should be removed.") unless ($fullname =~ /^\.svn/);
 		} elsif (/^\./) {
 			&perror("WARN", $fullname, -1, "dotfiles are not preferred. ".
 					"If this file is a dotfile to be installed as an example, ".
@@ -777,7 +777,7 @@ sub checkplist {
 
 		if ($_ =~ m|\.mo$| && $makevar{USES} !~ /\bgettext\b/) {
 			&perror("WARN", $file, $., "installing gettext translation files, ".
-				"please define USES[+]=gettext  as appropriate");
+				"please define USES[+]=gettext as appropriate");
 		}
 
 		if ($_ =~ m|\.core$| && $_ !~ /^\@/) {
@@ -1115,7 +1115,7 @@ sub check_depends_syntax {
 				last;
 			}
 			if ($k =~ /^\$\{(\w+)\}$/) {
-				$k = get_makvar($1);
+				$k = get_makevar($1);
 			}
 			my @l = split(':', $k);
 
@@ -1619,7 +1619,7 @@ sub checkmakefile {
 	foreach my $i (@mopt) {
 		if (!grep(/^$i$/, @opt, @aopt)) {
 			# skip global options
-			next if ($i eq 'DOCS' or $i eq 'NLS' or $i eq 'EXAMPLES' or $i eq 'IPV6');
+			next if ($i eq 'DOCS' or $i eq 'NLS' or $i eq 'EXAMPLES' or $i eq 'IPV6' or $i eq 'X11');
 			&perror("WARN", $file, -1, "$i is appears in PORT_OPTIONS:M, ".
 				"but not listed in OPTIONS_DEFINE.");
 		}
