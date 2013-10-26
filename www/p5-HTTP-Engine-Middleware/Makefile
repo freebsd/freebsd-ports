@@ -22,22 +22,4 @@ RUN_DEPENDS=	\
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	HTTP::Engine::Middleware.3 \
-	HTTP::Engine::Middleware::AccessLog.3 \
-	HTTP::Engine::Middleware::DebugRequest.3 \
-	HTTP::Engine::Middleware::DebugScreen.3 \
-	HTTP::Engine::Middleware::DoCoMoGUID.3 \
-	HTTP::Engine::Middleware::Encode.3 \
-	HTTP::Engine::Middleware::FillInForm.3 \
-	HTTP::Engine::Middleware::HTTPSession.3 \
-	HTTP::Engine::Middleware::MethodOverride.3 \
-	HTTP::Engine::Middleware::MobileAttribute.3 \
-	HTTP::Engine::Middleware::ModuleReload.3 \
-	HTTP::Engine::Middleware::Profile.3 \
-	HTTP::Engine::Middleware::ReverseProxy.3 \
-	HTTP::Engine::Middleware::Static.3 \
-	HTTP::Engine::Middleware::Status.3 \
-	HTTP::Engine::Middleware::Status::Memory.3 \
-	HTTP::Engine::Middleware::UploadTemp.3
-
 .include <bsd.port.mk>

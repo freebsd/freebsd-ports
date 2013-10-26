@@ -21,6 +21,23 @@
 %%SITE_PERL%%/HTTP/Engine/Middleware/Status/Base.pm
 %%SITE_PERL%%/HTTP/Engine/Middleware/Status/Memory.pm
 %%SITE_PERL%%/HTTP/Engine/Middleware/UploadTemp.pm
+%%PERL5_MAN3%%/HTTP::Engine::Middleware.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Middleware::AccessLog.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Middleware::DebugRequest.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Middleware::DebugScreen.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Middleware::DoCoMoGUID.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Middleware::Encode.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Middleware::FillInForm.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Middleware::HTTPSession.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Middleware::MethodOverride.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Middleware::MobileAttribute.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Middleware::ModuleReload.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Middleware::Profile.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Middleware::ReverseProxy.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Middleware::Static.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Middleware::Status.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Middleware::Status::Memory.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Middleware::UploadTemp.3.gz
 @dirrm %%SITE_PERL%%/HTTP/Engine/Middleware/Status
 @dirrm %%SITE_PERL%%/HTTP/Engine/Middleware/Role
 @dirrm %%SITE_PERL%%/HTTP/Engine/Middleware/Profile

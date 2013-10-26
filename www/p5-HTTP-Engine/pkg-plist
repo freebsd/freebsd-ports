@@ -34,6 +34,23 @@
 %%SITE_PERL%%/HTTP/Engine/Role/ResponseWriter/WriteSTDOUT.pm
 %%SITE_PERL%%/HTTP/Engine/Test/Request.pm
 %%SITE_PERL%%/HTTP/Engine/Types/Core.pm
+%%PERL5_MAN3%%/HTTP::Engine.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Cookbook.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Interface::CGI.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Interface::FCGI.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Interface::ModPerl.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Interface::POE.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Interface::PSGI.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Interface::ServerSimple.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Interface::Standalone.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Interface::Test.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::MinimalCGI.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Request.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Request::Upload.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Response.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Role::Interface.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Test::Request.3.gz
+%%PERL5_MAN3%%/HTTP::Engine::Types::Core.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Engine
 @dirrm %%SITE_PERL%%/HTTP/Engine/Types
 @dirrm %%SITE_PERL%%/HTTP/Engine/Test

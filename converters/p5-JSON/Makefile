@@ -13,10 +13,4 @@ CONFLICTS=	p5-JSON-1.*
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		JSON.3 \
-		JSON::backportPP.3 \
-		JSON::backportPP::Boolean.3 \
-		JSON::backportPP::Compat5005.3 \
-		JSON::backportPP::Compat5006.3
-
 .include <bsd.port.mk>
