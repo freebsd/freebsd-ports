@@ -5,6 +5,5 @@ bin/mmd2opml
 bin/mmd2pdf
 bin/mmd2tex
 bin/multimarkdown
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README.markdown
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%

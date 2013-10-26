@@ -3,7 +3,7 @@
 
 PORTNAME=	multimarkdown
 PORTVERSION=	3.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 DISTNAME=	peg-${PORTNAME}-${PORTVERSION}
 CATEGORIES=	textproc
 MASTER_SITES=	http://github.com/fletcher/peg-${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
@@ -19,8 +19,6 @@ FETCH_ARGS=	-Fpr
 
 USE_GMAKE=	yes
 ALL_TARGET=	ALL
-#MAKE_JOBS_UNSAFE=	yes
-
 
 post-patch:
 	@${REINPLACE_CMD} -E "/CFLAGS/s/-arch [[:alnum:]]+//; /CFLAGS/s/\?=/\+=/; \
@@ -32,7 +30,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${STAGEDIR}${PREFIX}/bin
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.markdown ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
