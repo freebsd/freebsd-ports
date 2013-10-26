@@ -138,6 +138,7 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/images/senti.png
 %%SQUIRRELDIR%%/images/sm_logo.png
 %%SQUIRRELDIR%%/images/sort_none.png
+%%SQUIRRELDIR%%/images/spacer.png
 %%SQUIRRELDIR%%/images/up_pointer.png
 %%SQUIRRELDIR%%/include/.htaccess
 %%SQUIRRELDIR%%/include/index.php
