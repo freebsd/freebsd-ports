@@ -2,12 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	amqp
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Low-level AMQP client for Python (fork of amqplib)
+
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}unittest2>=0.4.0:${PORTSDIR}/devel/py-unittest2 \
+		${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose \
+		${PYTHON_PKGNAMEPREFIX}coverage>0:${PORTSDIR}/devel/py-coverage \
+		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
 
 LICENSE=	LGPL21
 
@@ -18,8 +23,11 @@ PYDISTUTILS_AUTOPLIST=	yes
 
 GH_ACCOUNT=	celery
 GH_PROJECT=	py-${PORTNAME}
-GH_COMMIT=	e422bc0
+GH_COMMIT=	c92b683
 GH_TAGNAME=	v${PORTVERSION}
+
+regression-test: build
+	@cd ${WRKSRC}/funtests && ${SETENV} PYTHONPATH=../ ${PYTHON_CMD} run_all.py
 
 NO_STAGE=	yes
 .include <bsd.port.mk>
