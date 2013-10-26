@@ -3,7 +3,7 @@
 #
 
 PORTNAME=	stripe
-PORTVERSION=	1.9.5
+PORTVERSION=	1.9.8
 CATEGORIES=	finance python
 MASTER_SITES=	https://code.stripe.com/stripe/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
