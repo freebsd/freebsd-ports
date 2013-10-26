@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	guard
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-formatador>=0.2.4:${PORTSDIR}/devel/rubygem-formatador \
 		rubygem-pry>=0.9.12:${PORTSDIR}/devel/rubygem-pry \
 		rubygem-thor>=0.18.1:${PORTSDIR}/devel/rubygem-thor
 
-NO_STAGE=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
