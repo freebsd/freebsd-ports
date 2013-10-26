@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Useful task libraries and methods for Capistrano
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-capistrano>=1.0.0:${PORTSDIR}/sysutils/rubygem-capistrano
 
 USE_RUBY=	yes
@@ -16,5 +18,4 @@ USE_RAKE=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
