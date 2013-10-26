@@ -10,4 +10,5 @@ lib/libffmpegthumbnailer.la
 lib/libffmpegthumbnailer.so
 lib/libffmpegthumbnailer.so.4
 libdata/pkgconfig/libffmpegthumbnailer.pc
+man/man1/ffmpegthumbnailer.1.gz
 @dirrm include/libffmpegthumbnailer
