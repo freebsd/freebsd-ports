@@ -23,5 +23,12 @@ lib/libotr.la
 lib/libotr.so
 lib/libotr.so.4
 libdata/pkgconfig/libotr.pc
+man/man1/otr_mackey.1.gz
+man/man1/otr_modify.1.gz
+man/man1/otr_parse.1.gz
+man/man1/otr_readforge.1.gz
+man/man1/otr_remac.1.gz
+man/man1/otr_sesskeys.1.gz
+man/man1/otr_toolkit.1.gz
 share/aclocal/libotr.m4
 @dirrm include/libotr
