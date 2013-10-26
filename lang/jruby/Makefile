@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jruby
-PORTVERSION=	1.7.4
+PORTVERSION=	1.7.6
 CATEGORIES=	lang ruby java
 MASTER_SITES=	http://jruby.org.s3.amazonaws.com/downloads/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
@@ -71,7 +71,7 @@ do-install:
 	@${LN} -sf ${JRUBY_HOME}/bin/jirb ${PREFIX}/bin/jirb
 	@${ECHO_MSG} " [ DONE ]"
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing Documents files..."
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC}/ \
@@ -79,7 +79,7 @@ do-install:
 	@(cd ${WRKSRC}/docs \
 	  && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@(cd ${WRKSRC}/samples \
 	  && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
