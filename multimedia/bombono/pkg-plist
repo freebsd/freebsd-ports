@@ -1,5 +1,7 @@
 bin/bombono-dvd
 bin/mpeg2demux
+man/man1/bombono-dvd.1.gz
+man/man1/mpeg2demux.1.gz
 share/applications/bombono-dvd.desktop
 %%DATADIR%%/resources/about-back.png
 %%DATADIR%%/resources/about-front.png
