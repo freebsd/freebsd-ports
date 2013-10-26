@@ -83,6 +83,8 @@ PORTEXAMPLES=	*
 #
 .if ${PORT_OPTIONS:MKQUEUE}
 CONFIGURE_ARGS+=--with-ioloop=kqueue
+.else
+CONFIGURE_ARGS+=--with-ioloop=poll
 .endif
 
 ## SSL support
