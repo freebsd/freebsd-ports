@@ -1,0 +1,42 @@
+--- include/pqxx/largeobject.hxx	(revision 1706)
++++ include/pqxx/largeobject.hxx	(revision 1833)
+@@ -397,5 +397,5 @@
+ 			size_type BufSize=512) :			//[t48]
+     m_BufSize(BufSize),
+-    m_Obj(T, O),
++    m_Obj(T, O, mode),
+     m_G(0),
+     m_P(0)
+@@ -407,5 +407,5 @@
+ 			size_type BufSize=512) :			//[t48]
+     m_BufSize(BufSize),
+-    m_Obj(T, O),
++    m_Obj(T, O, mode),
+     m_G(0),
+     m_P(0)
+--- ChangeLog	(revision 1825)
++++ ChangeLog	(revision 1833)
+@@ -1,2 +1,7 @@
++2012-08-03  Jeroen T. Vermeulen <jtv@xs4all.nl>
++ include/pqxx/largeobject.hxx:
++ - Backported fix for #252: clang++ 3.2 compile error.  Thanks Amy Troschinetz.
++ src/strconv.cxx:
++ - Backported fix for #253: clang++ 3.2 compile error.  Thanks Amy Troschinetz.
+ 2012-03-25  Jeroen T. Vermeulen <jtv@xs4all.nl>
+  test/test002.cxx, test/test007.cxx, test/test011.cxx, test/test012.cxx,
+--- src/strconv.cxx	(revision 1724)
++++ src/strconv.cxx	(revision 1833)
+@@ -7,5 +7,5 @@
+  *      implementation of string conversions
+  *
+- * Copyright (c) 2008, Jeroen T. Vermeulen <jtv@xs4all.nl>
++ * Copyright (c) 2008-2012, Jeroen T. Vermeulen <jtv@xs4all.nl>
+  *
+  * See COPYING for copyright license.  If you did not receive a file called
+@@ -193,5 +193,5 @@
+       S.imbue(locale("C"));
+ #endif
+-      ok = (S >> result);
++      ok = static_cast<bool>(S >> result);
+     }
+     break;
