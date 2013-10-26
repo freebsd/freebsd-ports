@@ -1,4 +1,5 @@
 bin/redshift
+man/man1/redshift.1.gz
 share/icons/hicolor/scalable/apps/redshift.svg
 share/icons/hicolor/scalable/apps/redshift-status-off.svg
 share/icons/hicolor/scalable/apps/redshift-status-on.svg

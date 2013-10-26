@@ -10,14 +10,11 @@ MASTER_SITES=	http://launchpad.net/redshift/trunk/${PORTVERSION}/+download/
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Adjusts the color temperature of your screen
 
-NO_STAGE=	yes
 FETCH_ARGS=	"-pRr"
 USES=		gmake pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-MAN1=		redshift.1
-MANCOMPRESSED=	no
 
 CONFIGURE_ARGS+=	--disable-wingdi
 
