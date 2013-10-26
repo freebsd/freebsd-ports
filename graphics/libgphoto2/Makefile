@@ -3,7 +3,7 @@
 
 PORTNAME=	libgphoto2
 PORTVERSION=	2.4.14
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/libgphoto/${PORTVERSION}
 
@@ -23,17 +23,14 @@ LIBTOOLFILES=	configure libgphoto2_port/configure
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	LTDLINCL="-I${LOCALBASE}/include" \
 		LIBLTDL="-L${LOCALBASE}/lib -lltdl"
+CFLAGS+=	-DENODATA=9999	# Safe because it's never used
 
 PLIST_SUB=	VERSION="${PORTVERSION}" VERSION_PORT=0.8.0
 
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 1000040
-CONFIGURE_ENV+=	LIBUSB_CFLAGS="-I/usr/include" \
-		LIBUSB_LIBS="-lusb"
-.else
-# Safe because it's never used
-CFLAGS+=	-DENODATA=0
+CONFIGURE_ENV+=	LIBUSB1_CFLAGS=" " LIBUSB1_LIBS="-lusb"
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
@@ -66,8 +63,6 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|@HAVE_DOXYGEN_TRUE@|#| ; s|@HAVE_DOXYGEN_FALSE@||' \
 			${WRKSRC}/doc/Makefile.in
-	@${REINPLACE_CMD} -e '/Requires/d' \
-		${WRKSRC}/libgphoto2_port/libgphoto2_port.pc.in
 	@${REINPLACE_CMD} 's|with_hal=yes|with_hal=no|' \
 		${WRKSRC}/libgphoto2_port/configure
 
