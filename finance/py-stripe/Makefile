@@ -14,7 +14,7 @@ COMMENT=	Python bindings for the Stripe.com payment system
 LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0.8.8:${PORTSDIR}/www/py-requests
-TEST_DEPENDS:=	${RUN_DEPENDS
+TEST_DEPENDS:=	${RUN_DEPENDS}
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
