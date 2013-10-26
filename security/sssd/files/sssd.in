@@ -21,7 +21,7 @@ name="sssd"
 rcvar=sssd_enable
 
 command="%%PREFIX%%/sbin/$name"
-sssd_flags="-D"
+sssd_flags="-f -D"
 pidfile="/var/run/$name.pid"
 required_files="%%PREFIX%%/etc/$name/$name.conf"
 

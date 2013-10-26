@@ -1,6 +1,17 @@
---- ./src/sss_client/nss_group.c.orig	2011-08-29 11:39:05.000000000 -0400
-+++ ./src/sss_client/nss_group.c	2011-10-13 12:15:03.000000000 -0400
-@@ -248,6 +248,77 @@
+From 36ea9e6d18578237b9e7ffef382788736eab49f5 Mon Sep 17 00:00:00 2001
+From: Lukas Slebodnik <lukas.slebodnik@intrak.sk>
+Date: Sat, 4 May 2013 16:08:11 +0200
+Subject: [PATCH 19/34] patch-src__sss_client__nss_group.c
+
+---
+ src/sss_client/nss_group.c | 71 ++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 71 insertions(+)
+
+diff --git src/sss_client/nss_group.c src/sss_client/nss_group.c
+index e6ea54b..88cd1ab 100644
+--- src/sss_client/nss_group.c
++++ src/sss_client/nss_group.c
+@@ -343,6 +343,77 @@ out:
  }
  
  
@@ -78,3 +89,6 @@
  enum nss_status _nss_sss_getgrnam_r(const char *name, struct group *result,
                                      char *buffer, size_t buflen, int *errnop)
  {
+-- 
+1.8.0
+

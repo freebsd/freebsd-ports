@@ -1,6 +1,17 @@
---- ./src/providers/ldap/ldap_child.c.orig	2011-08-29 11:39:05.000000000 -0400
-+++ ./src/providers/ldap/ldap_child.c	2011-10-13 12:15:03.000000000 -0400
-@@ -165,7 +165,7 @@
+From 144bf96dbd929248159bf932c1d3b5bccf451bee Mon Sep 17 00:00:00 2001
+From: Lukas Slebodnik <lukas.slebodnik@intrak.sk>
+Date: Sat, 4 May 2013 16:08:11 +0200
+Subject: [PATCH 10/34] patch-src__providers__ldap__ldap_child.c
+
+---
+ src/providers/ldap/ldap_child.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git src/providers/ldap/ldap_child.c src/providers/ldap/ldap_child.c
+index f35d946..9a45cf5 100644
+--- src/providers/ldap/ldap_child.c
++++ src/providers/ldap/ldap_child.c
+@@ -206,7 +206,7 @@ static krb5_error_code ldap_child_get_tgt_sync(TALLOC_CTX *memctx,
          }
  
          realm_name = talloc_strdup(memctx, default_realm);
@@ -9,35 +20,6 @@
          if (!realm_name) {
              krberr = KRB5KRB_ERR_GENERIC;
              goto done;
-@@ -279,20 +279,20 @@
-         goto done;
-     }
- 
--    krberr = krb5_get_time_offsets(context, &kdc_time_offset, &kdc_time_offset_usec);
--    if (krberr) {
--        DEBUG(2, ("Failed to get KDC time offset: %s\n",
--                  sss_krb5_get_error_message(context, krberr)));
--        kdc_time_offset = 0;
--    } else {
--        if (kdc_time_offset_usec > 0) {
--            kdc_time_offset++;
--        }
--    }
-+    //    krberr = krb5_get_time_offsets(context, &kdc_time_offset, &kdc_time_offset_usec);
-+    //    if (krberr) {
-+    //        DEBUG(2, ("Failed to get KDC time offset: %s\n",
-+    //                  sss_krb5_get_error_message(context, krberr)));
-+    //        kdc_time_offset = 0;
-+    //    } else {
-+    //        if (kdc_time_offset_usec > 0) {
-+    //            kdc_time_offset++;
-+    //        }
-+    //    }
- 
-     krberr = 0;
-     *ccname_out = ccname;
--    *expire_time_out = my_creds.times.endtime - kdc_time_offset;
-+    *expire_time_out = my_creds.times.endtime;
- 
- done:
-     if (keytab) krb5_kt_close(context, keytab);
+-- 
+1.8.0
+
