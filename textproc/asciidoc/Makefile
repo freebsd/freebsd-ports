@@ -62,7 +62,7 @@ pre-install:
 
 post-install:
 .for conf_file in ${CONF_FILES}
-	@if [ ! -f ${STAGEDIR}${ETCDIR}/${conf_file} ]; then \
+	@if [ ! -f ${ETCDIR}/${conf_file} ]; then \
 		${CP} -p ${STAGEDIR}${ETCDIR}/${conf_file}.sample ${STAGEDIR}${ETCDIR}/${conf_file} ; \
 	fi
 .endfor
