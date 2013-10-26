@@ -120,6 +120,10 @@ DEV_WARNING+=	"MAN${a} macros are deprecated when using stage directory"
 DEV_WARNING+=	"MLINKS macros are deprecated when using stage directory"
 .endif
 
+.if defined(PYDISTUTILS_AUTOPLIST) && defined(PYTHON_PY3K_PLIST_HACK)
+DEV_WARNING+=	"PYDISTUTILS_AUTOPLIST features Python 3.x support, PYTHON_PY3K_PLIST_HACK is not required"
+.endif
+
 .if defined(_PREMKINCLUDED)
 DEV_ERROR+=	"you cannot include bsd.port[.pre].mk twice"
 .endif
