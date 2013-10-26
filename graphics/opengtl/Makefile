@@ -2,6 +2,7 @@
 
 PORTNAME=	opengtl
 PORTVERSION=	0.9.18
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://download.${PORTNAME}.org/
 DISTNAME=	OpenGTL-${PORTVERSION}
@@ -11,27 +12,21 @@ COMMENT=	Graphics Transformation Languages
 
 LICENSE=	LGPL20
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
-BUILD_DEPENDS=	${LOCALBASE}/lib/libLLVM-3.2.so:${PORTSDIR}/devel/llvm
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libLLVM-3.2.so:${PORTSDIR}/devel/llvm32
 
-USE_BZIP2=	yes
 USES=		cmake perl5
+USE_BZIP2=	yes
 USE_LDCONFIG=	yes
+CMAKE_ARGS=	-DLLVM_CONFIG_EXECUTABLE=${LOCALBASE}/bin/llvm-config32
+
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	SHIVA
 OPTIONS_DEFAULT=SHIVA
 
 SHIVA_DESC=	Install filters and generators
-
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSHIVA}
-RUN_DEPENDS+=	${LOCALBASE}/share/OpenGTL/shiva/kernels/oilify.shiva:${PORTSDIR}/graphics/shiva-collections
-.endif
+SHIVA_RUN_DEPENDS=${LOCALBASE}/share/OpenGTL/shiva/kernels/oilify.shiva:${PORTSDIR}/graphics/shiva-collections
 
 post-patch:
 	# Disable latex doc, it's not ready yet.
