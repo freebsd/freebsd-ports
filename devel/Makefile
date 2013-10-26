@@ -3555,6 +3555,7 @@
     SUBDIR += py-gitdb
     SUBDIR += py-gitosis
     SUBDIR += py-gitpython
+    SUBDIR += py-glob2
     SUBDIR += py-gobject
     SUBDIR += py-gobject3
     SUBDIR += py-grab
