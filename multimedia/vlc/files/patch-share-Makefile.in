@@ -1,6 +1,6 @@
 --- share/Makefile.in.orig
 +++ share/Makefile.in
-@@ -1734,19 +1734,19 @@ uninstall-am: uninstall-appdataDATA unin
+@@ -1734,15 +1734,15 @@ uninstall-am: uninstall-appdataDATA unin
  
  
  vlc.desktop: vlc.desktop.in $(top_builddir)/config.status
@@ -8,11 +8,6 @@
 +	$(AM_V_GEN)sed -e 's,\@bindir\@,$(bindir),g' < vlc.desktop.in > tmp-$@
  	$(AM_V_at)$(DESKTOP_FILE_VALIDATE) tmp-$@
  	$(AM_V_at)mv -f tmp-$@ $@
- 
- osdmenu/default.cfg: osdmenu/default.cfg.in $(top_builddir)/config.status
- 	$(AM_V_GEN)mkdir -p osdmenu; \
--	  	   sed -e 's,\@vlcdatadir\@,$(vlcdatadir),g' < "$<" > $@
-+	  	   sed -e 's,\@vlcdatadir\@,$(vlcdatadir),g' < osdmenu/default.cfg.in > $@
  
  skins2/default.vlt: $(skins2_default_vlt_FILES)
  	mkdir -p skins2
