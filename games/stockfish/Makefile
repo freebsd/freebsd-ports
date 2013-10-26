@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	stockfish
-PORTVERSION=	3
+PORTVERSION=	4
 CATEGORIES=	games
-MASTER_SITES=	http://cl.ly/2n1O3h2d3u2W/download/:src \
+MASTER_SITES=	https://s3.amazonaws.com/stockfish/:src \
 		http://www.execve.net/sf/:src \
 		http://cl.ly/3x333m0G173F/download/:book \
 		http://www.execve.net/sf/:book
-DISTNAME=	stockfish-${PORTVERSION:S/.//g}-linux
-DISTFILES=	stockfish-${PORTVERSION:S/.//g}-linux.zip:src \
+DISTNAME=	stockfish-${PORTVERSION:S/.//g}-win
+DISTFILES=	stockfish-${PORTVERSION:S/.//g}-win.zip:src \
 		stockfish-231-book.zip:book
 
 MAINTAINER=	execve@gmail.com
@@ -22,7 +22,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USES=		gmake
 MYARCH=		${ARCH}
 BOOKDIR=	.
-PORTDOCS=	Readme.txt polyglot.ini
+PORTDOCS=	Readme.md polyglot.ini
 PORTDATA=	Book.bin
 FETCH_ARGS=	-Fpr
 
@@ -39,7 +39,6 @@ OPTIONS_DEFINE=	DOCS POPCNT_ENABLED PROFILE_BUILD
 POPCNT_ENABLED_DESC=	Use the POPCNT instruction
 PROFILE_BUILD_DESC=	Make a Profile build
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPROFILE_BUILD}
@@ -78,17 +77,14 @@ post-patch:
 	@${REINPLACE_CMD} -e "s/^PREFIX =/PREFIX ?=/" ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/stockfish ${PREFIX}/bin/stockfish
+	${INSTALL_PROGRAM} ${WRKSRC}/stockfish ${STAGEDIR}${PREFIX}/bin/stockfish
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/Readme.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/polyglot.ini ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/Readme.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/polyglot.ini ${STAGEDIR}${DOCSDIR}
 .if !defined(NOPORTDATA)
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/${BOOKDIR}/${PORTDATA} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/${BOOKDIR}/${PORTDATA} ${STAGEDIR}${DATADIR}/
 .endif
 
 .include <bsd.port.post.mk>
