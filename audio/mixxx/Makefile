@@ -62,8 +62,8 @@ SHOUTCAST_LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout
 SHOUTCAST_SCONS_ARGS_ON=	shoutcast=1
 SHOUTCAST_SCONS_ARGS_OFF=	shoutcast=0
 
-TCMALLOC_LIB_DEPENDS=	libtcmalloc.so
-TCMALLOC_SCONS_ARGS_ON=	perftools=
+TCMALLOC_LIB_DEPENDS=	libtcmalloc.so:${PORTSDIR}/devel/google-perftools
+TCMALLOC_SCONS_ARGS_ON=	perftools=1
 TCMALLOC_SCONS_ARGS_OFF=	perftools=0
 
 WAVPACK_LIB_DEPENDS=	libwavpack.so:${PORTSDIR}/audio/wavpack
