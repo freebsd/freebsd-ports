@@ -26,7 +26,7 @@ USES=		gettext
 WRKSRC=		${WRKDIR}/${PORTNAME}.stable/${PORTNAME}
 
 OPTIONS_DEFINE=	DATABASE LDAP
-DATABASE_DESC=	PEAR database support (must also intall a driver)
+DATABASE_DESC=	PEAR database support (must also install a driver)
 
 # if you were using WITHOUT_WWWDIR, use SQUIRRELDIR=${PREFIX}/${PORTNAME}
 SQUIRRELDIR?=	${WWWDIR}
