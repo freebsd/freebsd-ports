@@ -131,15 +131,15 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #					  default: setup.py
 #
 # PYDISTUTILS_AUTOPLIST
-#					- Generate the packaging list for distutils based ports
-#					  (including easy_install) automatically.
+#					- Automatically generates the packaging list for ports that use
+#                                         distutils or setuptools (easy_install) when defined. Implies
+#                                         PYTHON_PY3K_PLIST_HACK below.
 #
 # PYTHON_PY3K_PLIST_HACK
-#					- Automatically replaces .pyc and .pyo package list entries
-#					  with the relevant __pycache__ entries for Python 3.x.
-#					  This should only be used for ports, which do not use one
-#					  of Python's default package installation mechanisms and
-#					  which are guaranteed to work with any python version.
+#					- Automatically creates Python 3.x compatible __pycache__ entries
+#                                         when defined. Use this for ports that do *not* use standard
+#                                         Python packaging mechanisms such as distutils or setuptools, and
+#                                         are guaranteed to work with *both* Python 2.x and 3.x.
 #
 # PYDISTUTILS_PKGNAME
 #					- Internal name in the distutils for egg-info.
