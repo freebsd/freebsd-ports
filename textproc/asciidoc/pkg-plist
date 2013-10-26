@@ -4,7 +4,7 @@ bin/asciidoc
 bin/asciidoc.py
 @unexec if cmp -s %D/%%ETCDIR%%/asciidoc.conf.sample %D/%%ETCDIR%%/asciidoc.conf; then rm -f %D/%%ETCDIR%%/asciidoc.conf; fi
 %%ETCDIR%%/asciidoc.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/asciidoc.conf ] ; then cp -p %D/%F %B/asciidoc.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/asciidoc.conf ]; then cp -p %D/%F %B/asciidoc.conf; fi
 %%ETCDIR%%/dblatex/asciidoc-dblatex.sty
 %%ETCDIR%%/dblatex/asciidoc-dblatex.xsl
 %%ETCDIR%%/docbook-xsl/chunked.xsl
@@ -17,35 +17,35 @@ bin/asciidoc.py
 %%ETCDIR%%/docbook-xsl/xhtml.xsl
 @unexec if cmp -s %D/%%ETCDIR%%/docbook45.conf.sample %D/%%ETCDIR%%/docbook45.conf; then rm -f %D/%%ETCDIR%%/docbook45.conf; fi
 %%ETCDIR%%/docbook45.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/docbook45.conf ] ; then cp -p %D/%F %B/docbook45.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/docbook45.conf ]; then cp -p %D/%F %B/docbook45.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/filters/code/code-filter.conf.sample %D/%%ETCDIR%%/filters/code/code-filter.conf; then rm -f %D/%%ETCDIR%%/filters/code/code-filter.conf; fi
 %%ETCDIR%%/filters/code/code-filter.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/filters/code/code-filter.conf ] ; then cp -p %D/%F %B/code-filter.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/filters/code/code-filter.conf ]; then cp -p %D/%F %B/code-filter.conf; fi
 %%ETCDIR%%/filters/code/code-filter.py
 @unexec if cmp -s %D/%%ETCDIR%%/filters/graphviz/graphviz-filter.conf.sample %D/%%ETCDIR%%/filters/graphviz/graphviz-filter.conf; then rm -f %D/%%ETCDIR%%/filters/graphviz/graphviz-filter.conf; fi
 %%ETCDIR%%/filters/graphviz/graphviz-filter.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/filters/graphviz/graphviz-filter.conf ] ; then cp -p %D/%F %B/graphviz-filter.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/filters/graphviz/graphviz-filter.conf ]; then cp -p %D/%F %B/graphviz-filter.conf; fi
 %%ETCDIR%%/filters/graphviz/graphviz2png.py
 @unexec if cmp -s %D/%%ETCDIR%%/filters/latex/latex-filter.conf.sample %D/%%ETCDIR%%/filters/latex/latex-filter.conf; then rm -f %D/%%ETCDIR%%/filters/latex/latex-filter.conf; fi
 %%ETCDIR%%/filters/latex/latex-filter.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/filters/latex/latex-filter.conf ] ; then cp -p %D/%F %B/latex-filter.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/filters/latex/latex-filter.conf ]; then cp -p %D/%F %B/latex-filter.conf; fi
 %%ETCDIR%%/filters/latex/latex2png.py
 @unexec if cmp -s %D/%%ETCDIR%%/filters/music/music-filter.conf.sample %D/%%ETCDIR%%/filters/music/music-filter.conf; then rm -f %D/%%ETCDIR%%/filters/music/music-filter.conf; fi
 %%ETCDIR%%/filters/music/music-filter.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/filters/music/music-filter.conf ] ; then cp -p %D/%F %B/music-filter.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/filters/music/music-filter.conf ]; then cp -p %D/%F %B/music-filter.conf; fi
 %%ETCDIR%%/filters/music/music2png.py
 @unexec if cmp -s %D/%%ETCDIR%%/filters/source/source-highlight-filter.conf.sample %D/%%ETCDIR%%/filters/source/source-highlight-filter.conf; then rm -f %D/%%ETCDIR%%/filters/source/source-highlight-filter.conf; fi
 %%ETCDIR%%/filters/source/source-highlight-filter.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/filters/source/source-highlight-filter.conf ] ; then cp -p %D/%F %B/source-highlight-filter.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/filters/source/source-highlight-filter.conf ]; then cp -p %D/%F %B/source-highlight-filter.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/help.conf.sample %D/%%ETCDIR%%/help.conf; then rm -f %D/%%ETCDIR%%/help.conf; fi
 %%ETCDIR%%/help.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/help.conf ] ; then cp -p %D/%F %B/help.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/help.conf ]; then cp -p %D/%F %B/help.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/html4.conf.sample %D/%%ETCDIR%%/html4.conf; then rm -f %D/%%ETCDIR%%/html4.conf; fi
 %%ETCDIR%%/html4.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/html4.conf ] ; then cp -p %D/%F %B/html4.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/html4.conf ]; then cp -p %D/%F %B/html4.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/html5.conf.sample %D/%%ETCDIR%%/html5.conf; then rm -f %D/%%ETCDIR%%/html5.conf; fi
 %%ETCDIR%%/html5.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/html5.conf ] ; then cp -p %D/%F %B/html5.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/html5.conf ]; then cp -p %D/%F %B/html5.conf; fi
 %%ETCDIR%%/images/icons/README
 %%ETCDIR%%/images/icons/callouts/1.png
 %%ETCDIR%%/images/icons/callouts/10.png
@@ -79,43 +79,43 @@ bin/asciidoc.py
 %%ETCDIR%%/javascripts/toc.js
 @unexec if cmp -s %D/%%ETCDIR%%/lang-de.conf.sample %D/%%ETCDIR%%/lang-de.conf; then rm -f %D/%%ETCDIR%%/lang-de.conf; fi
 %%ETCDIR%%/lang-de.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/lang-de.conf ] ; then cp -p %D/%F %B/lang-de.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/lang-de.conf ]; then cp -p %D/%F %B/lang-de.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/lang-el.conf.sample %D/%%ETCDIR%%/lang-el.conf; then rm -f %D/%%ETCDIR%%/lang-el.conf; fi
 %%ETCDIR%%/lang-el.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/lang-el.conf ] ; then cp -p %D/%F %B/lang-el.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/lang-el.conf ]; then cp -p %D/%F %B/lang-el.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/lang-en.conf.sample %D/%%ETCDIR%%/lang-en.conf; then rm -f %D/%%ETCDIR%%/lang-en.conf; fi
 %%ETCDIR%%/lang-en.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/lang-en.conf ] ; then cp -p %D/%F %B/lang-en.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/lang-en.conf ]; then cp -p %D/%F %B/lang-en.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/lang-es.conf.sample %D/%%ETCDIR%%/lang-es.conf; then rm -f %D/%%ETCDIR%%/lang-es.conf; fi
 %%ETCDIR%%/lang-es.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/lang-es.conf ] ; then cp -p %D/%F %B/lang-es.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/lang-es.conf ]; then cp -p %D/%F %B/lang-es.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/lang-fr.conf.sample %D/%%ETCDIR%%/lang-fr.conf; then rm -f %D/%%ETCDIR%%/lang-fr.conf; fi
 %%ETCDIR%%/lang-fr.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/lang-fr.conf ] ; then cp -p %D/%F %B/lang-fr.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/lang-fr.conf ]; then cp -p %D/%F %B/lang-fr.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/lang-hu.conf.sample %D/%%ETCDIR%%/lang-hu.conf; then rm -f %D/%%ETCDIR%%/lang-hu.conf; fi
 %%ETCDIR%%/lang-hu.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/lang-hu.conf ] ; then cp -p %D/%F %B/lang-hu.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/lang-hu.conf ]; then cp -p %D/%F %B/lang-hu.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/lang-it.conf.sample %D/%%ETCDIR%%/lang-it.conf; then rm -f %D/%%ETCDIR%%/lang-it.conf; fi
 %%ETCDIR%%/lang-it.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/lang-it.conf ] ; then cp -p %D/%F %B/lang-it.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/lang-it.conf ]; then cp -p %D/%F %B/lang-it.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/lang-nl.conf.sample %D/%%ETCDIR%%/lang-nl.conf; then rm -f %D/%%ETCDIR%%/lang-nl.conf; fi
 %%ETCDIR%%/lang-nl.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/lang-nl.conf ] ; then cp -p %D/%F %B/lang-nl.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/lang-nl.conf ]; then cp -p %D/%F %B/lang-nl.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/lang-pt-BR.conf.sample %D/%%ETCDIR%%/lang-pt-BR.conf; then rm -f %D/%%ETCDIR%%/lang-pt-BR.conf; fi
 %%ETCDIR%%/lang-pt-BR.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/lang-pt-BR.conf ] ; then cp -p %D/%F %B/lang-pt-BR.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/lang-pt-BR.conf ]; then cp -p %D/%F %B/lang-pt-BR.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/lang-ru.conf.sample %D/%%ETCDIR%%/lang-ru.conf; then rm -f %D/%%ETCDIR%%/lang-ru.conf; fi
 %%ETCDIR%%/lang-ru.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/lang-ru.conf ] ; then cp -p %D/%F %B/lang-ru.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/lang-ru.conf ]; then cp -p %D/%F %B/lang-ru.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/lang-uk.conf.sample %D/%%ETCDIR%%/lang-uk.conf; then rm -f %D/%%ETCDIR%%/lang-uk.conf; fi
 %%ETCDIR%%/lang-uk.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/lang-uk.conf ] ; then cp -p %D/%F %B/lang-uk.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/lang-uk.conf ]; then cp -p %D/%F %B/lang-uk.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/latex.conf.sample %D/%%ETCDIR%%/latex.conf; then rm -f %D/%%ETCDIR%%/latex.conf; fi
 %%ETCDIR%%/latex.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/latex.conf ] ; then cp -p %D/%F %B/latex.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/latex.conf ]; then cp -p %D/%F %B/latex.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/slidy.conf.sample %D/%%ETCDIR%%/slidy.conf; then rm -f %D/%%ETCDIR%%/slidy.conf; fi
 %%ETCDIR%%/slidy.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/slidy.conf ] ; then cp -p %D/%F %B/slidy.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/slidy.conf ]; then cp -p %D/%F %B/slidy.conf; fi
 %%ETCDIR%%/stylesheets/asciidoc.css
 %%ETCDIR%%/stylesheets/docbook-xsl.css
 %%ETCDIR%%/stylesheets/pygments.css
@@ -124,18 +124,18 @@ bin/asciidoc.py
 %%ETCDIR%%/stylesheets/xhtml11-quirks.css
 @unexec if cmp -s %D/%%ETCDIR%%/text.conf.sample %D/%%ETCDIR%%/text.conf; then rm -f %D/%%ETCDIR%%/text.conf; fi
 %%ETCDIR%%/text.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/text.conf ] ; then cp -p %D/%F %B/text.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/text.conf ]; then cp -p %D/%F %B/text.conf; fi
 %%ETCDIR%%/themes/flask/flask.css
 %%ETCDIR%%/themes/volnitsky/volnitsky.css
 @unexec if cmp -s %D/%%ETCDIR%%/wordpress.conf.sample %D/%%ETCDIR%%/wordpress.conf; then rm -f %D/%%ETCDIR%%/wordpress.conf; fi
 %%ETCDIR%%/wordpress.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/wordpress.conf ] ; then cp -p %D/%F %B/wordpress.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/wordpress.conf ]; then cp -p %D/%F %B/wordpress.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/xhtml11.conf.sample %D/%%ETCDIR%%/xhtml11.conf; then rm -f %D/%%ETCDIR%%/xhtml11.conf; fi
 %%ETCDIR%%/xhtml11.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/xhtml11.conf ] ; then cp -p %D/%F %B/xhtml11.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/xhtml11.conf ]; then cp -p %D/%F %B/xhtml11.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/xhtml11-quirks.conf.sample %D/%%ETCDIR%%/xhtml11-quirks.conf; then rm -f %D/%%ETCDIR%%/xhtml11-quirks.conf; fi
 %%ETCDIR%%/xhtml11-quirks.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/xhtml11-quirks.conf ] ; then cp -p %D/%F %B/xhtml11-quirks.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/xhtml11-quirks.conf ]; then cp -p %D/%F %B/xhtml11-quirks.conf; fi
 man/man1/a2x.1.gz
 man/man1/asciidoc.1.gz
 %%VIM%%%%VIM_DATADIR%%share/vim/ftdetect/asciidoc_filetype.vim

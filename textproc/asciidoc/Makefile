@@ -49,7 +49,7 @@ PLIST_SUB+=	VIM_DATADIR=""
 
 post-patch:
 .for conf_file in ${CONF_FILES}
-	@cd ${WRKSRC} && ${MV} ${conf_file} ${conf_file}.sample
+	@cd ${WRKSRC}/ && ${MV} ${conf_file} ${conf_file}.sample
 .endfor
 .if ${PORT_OPTIONS:MVIM}
 	@${REINPLACE_CMD} -e '/^vimdir = /d' ${WRKSRC}/Makefile.in
@@ -63,7 +63,7 @@ pre-install:
 post-install:
 .for conf_file in ${CONF_FILES}
 	@if [ ! -f ${ETCDIR}/${conf_file} ]; then \
-		${CP} -p ${STAGEDIR}${ETCDIR}/${conf_file}.sample ${STAGEDIR}${ETCDIR}/${conf_file} ; \
+		${CP} -p ${STAGEDIR}${ETCDIR}/${conf_file}.sample ${STAGEDIR}${ETCDIR}/${conf_file}; \
 	fi
 .endfor
 
