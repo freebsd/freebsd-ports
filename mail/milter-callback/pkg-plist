@@ -1,3 +1,4 @@
 libexec/milter-callback
 etc/mail/milter-callback.conf.sample
+man/man8/milter-callback.8.gz
 @dirrmtry etc/mail

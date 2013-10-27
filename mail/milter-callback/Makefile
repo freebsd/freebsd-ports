@@ -18,7 +18,6 @@ USE_RC_SUBR=	milter-callback
 USE_GCC=	any
 
 SUB_FILES=	pkg-message
-MAN8=		milter-callback.8
 
 SRC_FILES=	cache.c commonprocs.c cpit.c dealwithmxes.c detectlamespf.c \
 		makedecision.c mcspf.c milter-callback.c pgupdate.c \
@@ -28,7 +27,6 @@ CFLAGS+=	-DFREEBSD -DHAVE_NS_TYPE -DWITH_SPF -I${LOCALBASE}/include \
 		-I${WRKSRC} -std=gnu99
 LDFLAGS+=	-lmilter -lthr -L${LOCALBASE}/lib -lspf2
 
-NO_STAGE=	yes
 do-build:
 .for f in ${SRC_FILES}
 	${CC} ${CFLAGS} -c ${WRKSRC}/${f} -o ${WRKSRC}/${f:C/\.c/.o/}
@@ -45,12 +43,12 @@ post-patch:
 		${WRKSRC}/${PORTNAME}.conf
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/libexec
-	${INSTALL_MAN} ${WRKSRC}/${MAN8} ${MANPREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/libexec
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
-	${MKDIR} ${PREFIX}/etc/mail
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/mail
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf \
-		${PREFIX}/etc/mail/${PORTNAME}.conf.sample
+		${STAGEDIR}${PREFIX}/etc/mail/${PORTNAME}.conf.sample
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
