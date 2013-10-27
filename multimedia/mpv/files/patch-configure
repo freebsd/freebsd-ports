@@ -1,0 +1,34 @@
+--- configure.bak	2013-10-26 11:34:43.000000000 +0200
++++ configure	2013-10-26 11:43:57.000000000 +0200
+@@ -1459,7 +1459,7 @@
+ echocheck "terminfo"
+ if test "$_terminfo" = auto ; then
+   _terminfo=no
+-  for _ld_tmp in "-lncurses" "-lncursesw"; do
++  for _ld_tmp in "/usr/lib/libncurses.so" "-lncursesw"; do
+     statement_check term.h 'setupterm(0, 1, 0)' $_ld_tmp &&
+       libs_mplayer="$libs_mplayer $_ld_tmp" && _terminfo=yes && break
+   done
+@@ -1480,7 +1480,7 @@
+ echocheck "termcap"
+ if test "$_termcap" = auto ; then
+   _termcap=no
+-  for _ld_tmp in "-lncurses" "-ltinfo" "-ltermcap"; do
++  for _ld_tmp in "/usr/lib/libncurses.so" "-ltinfo" "-ltermcap"; do
+     statement_check term.h 'tgetent(0, 0)' $_ld_tmp &&
+       libs_mplayer="$libs_mplayer $_ld_tmp" && _termcap=yes && break
+   done
+@@ -3100,11 +3100,11 @@
+ if test "$lua" = auto ; then
+ 
+ lua=no
+-test_lua 51 "lua >= 5.1.0 lua < 5.2.0"
++test_lua 51 "lua-5.1 >= 5.1.0 lua-5.1 < 5.2.0"
+ test_lua 51deb "lua5.1 >= 5.1.0" # debian
+ test_lua luajit "luajit >= 2.0.0"
+ # assume all our dependencies (libquvi in particular) link with 5.1
+-test_lua 52 "lua >= 5.2.0"
++test_lua 52 "lua-5.2 >= 5.2.0"
+ test_lua 52deb "lua5.2 >= 5.2.0" # debian
+ 
+ fi
