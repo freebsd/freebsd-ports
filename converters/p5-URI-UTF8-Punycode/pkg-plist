@@ -2,6 +2,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/UTF8/Punycode/Punycode.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/UTF8/Punycode/Punycode.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/UTF8/Punycode/.packlist
+%%PERL5_MAN3%%/URI::UTF8::Punycode.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/UTF8/Punycode
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/UTF8
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI
