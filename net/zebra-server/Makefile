@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zebra-server
-PORTVERSION=	2.0.45
+PORTVERSION=	2.0.55
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/zebra/
 DISTNAME=	idzebra-${PORTVERSION}
@@ -10,8 +10,8 @@ DISTNAME=	idzebra-${PORTVERSION}
 MAINTAINER=	ben@gibbed.org
 COMMENT=	Z39.50/SR server software
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		yaz.4:${PORTSDIR}/net/yaz
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libyaz.so:${PORTSDIR}/net/yaz
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-yaz=${LOCALBASE}/bin \
@@ -22,11 +22,4 @@ USES=		iconv
 USE_LDCONFIG=	yes
 USE_TCL=	yes
 
-MAN1=		idzebra-config-2.0.1 zebraidx-2.0.1
-MAN8=		zebrasrv-2.0.8
-MLINKS=		idzebra-config-2.0.1 idzebra-config.1 \
-		zebraidx-2.0.1 zebraidx.1 \
-		zebrasrv-2.0.8 zebrasrv.8
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

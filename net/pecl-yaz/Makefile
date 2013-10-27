@@ -3,7 +3,7 @@
 
 PORTNAME=	yaz
 PORTVERSION=	1.0.14
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -13,7 +13,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PECL extension that implements a Z39.50 client
 
-LIB_DEPENDS=	yaz.4:${PORTSDIR}/net/yaz
+LIB_DEPENDS=	yaz:${PORTSDIR}/net/yaz
 
 USE_PHP=	yes
 USE_PHPEXT=	yes

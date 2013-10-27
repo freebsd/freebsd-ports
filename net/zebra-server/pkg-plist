@@ -1,3 +1,4 @@
+bin/idzebra-abs2dom
 bin/idzebra-config-2.0
 bin/zebraidx
 bin/zebraidx-2.0
@@ -43,6 +44,13 @@ lib/libidzebra-2.0.a
 lib/libidzebra-2.0.la
 lib/libidzebra-2.0.so
 lib/libidzebra-2.0.so.0
+man/man1/idzebra-abs2dom.1.gz
+man/man1/idzebra-config-2.0.1.gz
+man/man1/idzebra-config.1.gz
+man/man1/zebraidx-2.0.1.gz
+man/man1/zebraidx.1.gz
+man/man8/zebrasrv-2.0.8.gz
+man/man8/zebrasrv.8.gz
 share/aclocal/idzebra-2.0.m4
 share/doc/idzebra-2.0/administration-extended-services.html
 share/doc/idzebra-2.0/administration-ranking.html
@@ -67,6 +75,7 @@ share/doc/idzebra-2.0/grs-extended-marc-indexing.html
 share/doc/idzebra-2.0/grs-internal-representation.html
 share/doc/idzebra-2.0/grs.html
 share/doc/idzebra-2.0/icuchain-files.html
+share/doc/idzebra-2.0/idzebra-abs2dom.html
 share/doc/idzebra-2.0/idzebra-config.html
 share/doc/idzebra-2.0/index.html
 share/doc/idzebra-2.0/indexdata.html
@@ -152,6 +161,7 @@ share/idzebra-2.0-examples/gils/records/esdd0076.grs
 share/idzebra-2.0-examples/gils/records/esdd0077.grs
 share/idzebra-2.0-examples/gils/records/esdd0078.grs
 share/idzebra-2.0-examples/gils/records/esdd0079.grs
+share/idzebra-2.0-examples/gils/records/esdd0080.grs
 share/idzebra-2.0-examples/gils/zebra.cfg
 share/idzebra-2.0-examples/marc21/sample-marc
 share/idzebra-2.0-examples/marc21/zebra.cfg
