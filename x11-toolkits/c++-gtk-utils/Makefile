@@ -14,7 +14,7 @@ COMMENT=	Lightweight library for programming GTK+ programs
 LICENSE=	LGPL21
 
 GNU_CONFIGURE=	yes
-USE_GCC=	4.6+
+USE_GCC=	yes
 USES=		pathfix pkgconfig
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
