@@ -4,29 +4,39 @@
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Version control system
 
-CONFLICTS_INSTALL=	subversion-1.[6|8].[0-9]*
+CONFLICTS_INSTALL=	subversion-1.[^7].[0-9]* \
+			subversion1[^7]-1.[^7].[0-9]*
 
 USE_RC_SUBR=	svnserve
 
-MAN1=		svn.1 svnadmin.1 svnlook.1 svndumpfilter.1 svnrdump.1 \
-		svnsync.1 svnversion.1
-MAN5=		svnserve.conf.5
-MAN8=		svnserve.8
-
 TXT_DOCS=	BUGS CHANGES COMMITTERS INSTALL README
 
-OPTIONS_DEFINE=	P4_STYLE_MARKERS ENHANCED_KEYWORD FREEBSD_TEMPLATE \
-		MOD_DAV_SVN MOD_DONTDOTHAT SVNAUTHZ_VALIDATE \
-		NEON SERF \
-		SASL BDB \
-		MAINTAINER_DEBUG \
-		SVNSERVE_WRAPPER SVNMUCC \
-		STATIC \
-		GNOME_KEYRING KDE_KWALLET \
-		BOOK TEST
+OPTIONS_DEFINE=	\
+		BDB		\
+		BOOK		\
+		DOCS		\
+		ENHANCED_KEYWORD\
+		FREEBSD_TEMPLATE\
+		GNOME_KEYRING	\
+		KDE_KWALLET	\
+		MAINTAINER_DEBUG\
+		MOD_DAV_SVN	\
+		NLS		\
+		NEON		\
+		P4_STYLE_MARKERS\
+		SASL		\
+		SERF		\
+		STATIC		\
+		SVNSERVE_WRAPPER\
+		TEST		\
+		TOOLS
 
-OPTIONS_DEFAULT=P4_STYLE_MARKERS ENHANCED_KEYWORD FREEBSD_TEMPLATE NEON
+OPTIONS_DEFAULT=P4_STYLE_MARKERS \
+		ENHANCED_KEYWORD \
+		FREEBSD_TEMPLATE \
+		NEON
 
+BDB_DESC=		Berkeley DB (deprected in 1.8.x)
 BOOK_DESC=		Install the Subversion Book
 ENHANCED_KEYWORD_DESC=	Enhanced svn:keyword support
 FREEBSD_TEMPLATE_DESC=	FreeBSD Project log template
@@ -34,17 +44,20 @@ GNOME_KEYRING_DESC=	Build with GNOME Keyring auth support
 KDE_KWALLET_DESC=	Build with KDE KWallet auth support
 MAINTAINER_DEBUG_DESC=	Build debug version
 MOD_DAV_SVN_DESC=	mod_dav_svn module for Apache 2.X
-MOD_DONTDOTHAT_DESC=	mod_dontdothat for Apache 2.X
-NEON_DESC=		WebDAV/Delta-V repo access module (neon)
+NEON_DESC=		WebDAV/Delta-V (HTTP/HTTPS) repo access module
 P4_STYLE_MARKERS_DESC=	Perforce-style conflict markers
-SERF_DESC=		WebDAV/Delta-V repo access module (serf)
+SERF_DESC=		WebDAV/Delta-V (HTTP/HTTPS) repo access module
 STATIC_DESC=		Build static version (no shared libs)
-SVNAUTHZ_VALIDATE_DESC=	install svnauthz-validate
-SVNMUCC_DESC=		Install Multiple URL Command Client
 SVNSERVE_WRAPPER_DESC=	Enable svnserve wrapper (umask setter)
 TEST_DESC=		Run subversion test suite
+TOOLS_DESC=		Install several tools (svnauthz-validate and mod_dontdothat are among them)
 
-NO_STAGE=	yes
+# Patches required for use with the FreeBSD Project repository only
+P4_STYLE_MARKERS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-3way-conflict-markers
+FREEBSD_TEMPLATE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-fbsd-template
+SVNSERVE_WRAPPER_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-svnserve-wrapper
+ENHANCED_KEYWORD_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-enhanced-keyword
+
 .include "Makefile.common"
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -52,10 +65,55 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 SVNREPOS?=	/home/svn/repos
 SVNFSTYPE?=	fsfs
 
-SUB_FILES=	pkg-install \
-		pkg-deinstall
+SUB_FILES=	pkg-install
 
 BOOK_VERSION=	4515
+
+.if !${PORT_OPTIONS:MMAINTAINER_DEBUG}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.in
+.endif
+
+.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MBOOK}
+BOOK_HTML=	svn-book-html-r${BOOK_VERSION}.tar.bz2
+BOOK_PDF=	svn-book-r${BOOK_VERSION}.pdf
+DISTFILES+=	${BOOK_HTML}:book ${BOOK_PDF}:book
+.endif
+
+.if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
+SUB_LIST+=	SVNSERVE_BIN_EXT=".bin"
+.else
+SUB_LIST+=	SVNSERVE_BIN_EXT=""
+.endif
+
+.if ${PORT_OPTIONS:MMOD_DAV_SVN}
+SUB_LIST+=	MOD_DAV_SVN_INSTALL="YES"
+PLIST_SUB+=	SED=${SED}
+SVNGROUP?=	www
+SVNUSER?=	www
+.else
+SUB_LIST+=	MOD_DAV_SVN_INSTALL="NO"
+SVNGROUP?=	svn
+SVNUSER?=	svn
+.endif
+
+.if ${PORT_OPTIONS:MTEST}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
+.endif
+
+.if ${PORT_OPTIONS:MSTATIC}
+.  if ${PORT_OPTIONS:MNLS}
+USES+=			gettext:build
+.  endif
+.  if ${PORT_OPTIONS:MBDB}
+BDB_BUILD_DEPENDS=	yes
+.  endif
+OLD_LIB_DEPENDS:=	${LIB_DEPENDS:S!^!${LOCALBASE}/lib/!:C!(\.so|\.[0-9]+)?:!.a:!}
+BUILD_DEPENDS+=		${OLD_LIB_DEPENDS}
+LIB_DEPENDS=
+PLIST_SUB+=		DYNAMIC_ENABLED="@comment "
+.else
+PLIST_SUB+=		DYNAMIC_ENABLED=""
+.endif
 
 .if make(repository)
 WITH_REPOSITORY_CREATION=	yes
@@ -63,73 +121,6 @@ WITH_REPOSITORY_CREATION=	yes
 
 .if defined(WITH_REPOSITORY_CREATION)
 MKREPOS_TARGET=	_mkrepos
-.endif
-
-# Patches required for use with the FreeBSD Project repository only
-.if ${PORT_OPTIONS:MP4_STYLE_MARKERS}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-3way-conflict-markers
-.endif
-.if ${PORT_OPTIONS:MENHANCED_KEYWORD}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-enhanced-keyword
-.endif
-.if ${PORT_OPTIONS:MFREEBSD_TEMPLATE}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-fbsd-template
-.endif
-
-.if empty(PORT_OPTIONS:MMAINTAINER_DEBUG)
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.in
-.endif
-
-.if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
-PLIST_SUB+=	SVNSERVE_WRAPPER=""
-SUB_LIST+=	SVNSERVE_BIN_EXT=".bin"
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-svnserve-wrapper
-.else
-PLIST_SUB+=	SVNSERVE_WRAPPER="@comment "
-SUB_LIST+=	SVNSERVE_BIN_EXT=""
-.endif
-
-.if ${PORT_OPTIONS:MSVNMUCC}
-PLIST_SUB+=	SVNMUCC=""
-.else
-PLIST_SUB+=	SVNMUCC="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MBOOK}
-BOOK_HTML=	svn-book-html-r${BOOK_VERSION}.tar.bz2
-BOOK_PDF=	svn-book-r${BOOK_VERSION}.pdf
-DISTFILES+=	${BOOK_HTML}:book ${BOOK_PDF}:book
-PLIST_SUB+=	BOOK=""
-.else
-PLIST_SUB+=	BOOK="@comment "
-.endif
-
-# testsuite will fail until PR156076 is committed
-.if ${PORT_OPTIONS:MTEST}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
-.endif
-
-#.if ${PORT_OPTIONS:MASVN}
-#RUN_DEPENDS+=	${LOCALBASE}/bin/gfind:${PORTSDIR}/misc/findutils
-#PLIST_SUB+=	ASVN=""
-#.else
-PLIST_SUB+=	ASVN="@comment "
-#.endif
-
-SCRIPTS=
-
-SCRIPTS_DATA=
-
-.if ${PORT_OPTIONS:MSTATIC}
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext:build
-.endif
-.if ${PORT_OPTIONS:MBDB}
-BDB_BUILD_DEPENDS=	yes
-.endif
-OLD_LIB_DEPENDS:=	${LIB_DEPENDS:S!^!${LOCALBASE}/lib/!:C!(\.so|\.[0-9]+)?:!.a:!}
-BUILD_DEPENDS+=		${OLD_LIB_DEPENDS}
-LIB_DEPENDS=
 .endif
 
 pre-everything::
@@ -151,38 +142,29 @@ pre-everything::
 	@${ECHO_MSG} "  subdirectories of your repository"
 	@${ECHO_MSG} "* the above subdirectories are writable by this group"
 .endif
+
 	@${ECHO_MSG} ""
-.if !defined(NOPORTDOCS) && ${PORT_OPTIONS:MBOOK}
-	@${ECHO_MSG} "Subversion Book will be installed."
-	@${ECHO_MSG} ""
-.endif
 .if ${PORT_OPTIONS:MSTATIC}
-.if ${PORT_OPTIONS:MMOD_DAV_SVN}
+.  if ${PORT_OPTIONS:MMOD_DAV_SVN}
 	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	@${ECHO_MSG} "!!! mod_dav_svn and static build are not compatible !!!"
 	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	@${FALSE}
-.endif
-.if ${PORT_OPTIONS:MSVNAUTHZ_VALIDATE}
-	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${ECHO_MSG} "!!! svnauthz_validate and static build are not compatible !!!"
-	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${FALSE}
-.endif
-.if ${PORT_OPTIONS:MGNOME_KEYRING}
+.  endif
+.  if ${PORT_OPTIONS:MGNOME_KEYRING}
 	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	@${ECHO_MSG} "!!! Gnome Keyring and static build are not compatible !!!"
 	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	@${FALSE}
-.endif
-.if ${PORT_OPTIONS:MKDE_WALLET}
+.  endif
+.  if ${PORT_OPTIONS:MKDE_WALLET}
 	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	@${ECHO_MSG} "!!! KDE Wallet and static build are not compatible !!!"
 	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	@${FALSE}
-.endif
+.  endif
 	@${ECHO_MSG} "Static binaries will be built."
-.endif
+.endif # STATIC
 	@${ECHO_MSG} "Many useful scripts will be installed into ${DATADIR}"
 
 pre-configure:
@@ -190,8 +172,8 @@ pre-configure:
 	@BDB_VERSION=`${APR_APU_DIR}/${APU_CONFIG} --db-version`; \
 	if [ "$${BDB_VERSION}" != "4" -a "$${BDB_VERSION}" != "5" ] ; then \
 		${ECHO_MSG} "" ; \
-		${ECHO_MSG} 'You should build `'"${APR_PORT}' with Berkeley DB (4 or 5) support to use subversion with it." ; \
-		${ECHO_MSG} 'Please rebuild `'"${APR_PORT}' with option "'`'"${OPT_NAME}' and try again." ; \
+		${ECHO_MSG} 'You should build `'"devel/apr1' with Berkeley DB (4 or 5) support to use subversion with it." ; \
+		${ECHO_MSG} 'Please rebuild `'"devel/apr1' with option "'`'"${OPT_NAME}' and try again." ; \
 		${ECHO_MSG} "" ; \
 		${ECHO_MSG} "Or you can disable Berkeley DB support. Only 'fs' repository backend will be available." ; \
 		${ECHO_MSG} "" ; \
@@ -199,7 +181,7 @@ pre-configure:
 	fi
 .endif
 .if ${PORT_OPTIONS:MSTATIC}
-	@if grep -q icui18n ${LOCALBASE}/lib/libsqlite3.la ; then \
+	@if ${GREP} -q icui18n ${LOCALBASE}/lib/libsqlite3.la ; then \
 		${ECHO_MSG} "" ; \
 		${ECHO_MSG} "You can not build static subversion if your SQLite3 is built with ICU enabled."; \
 		${ECHO_MSG} "Please, reinstall 'devel/sqlite3' port with disabled ICU support."; \
@@ -208,61 +190,43 @@ pre-configure:
 	fi
 .endif
 
+post-configure:
+# ugly hack: save tools directory so we don't have to cleanup before installing
+	@${CP} -R ${WRKSRC}/tools ${WRKSRC}/tools.examples
+	@${CHMOD} -R a-st,o+rX ${WRKSRC}/tools.examples
+
 # takes a long time, and will fail but gives maintainer a good oversight
 .if ${PORT_OPTIONS:MTEST}
-TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 test: build
 	-@make check -C ${WRKSRC}
 .endif
 
-pre-install:
-.if ${PORT_OPTIONS:MMOD_DAV_SVN}
-# activate dav_module now in pkg-install to prevent double activation.
-# workaround for apxs bug: https://issues.apache.org/bugzilla/show_bug.cgi?id=47397
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+post-build:
+.if ${PORT_OPTIONS:MTOOLS}
+	@${MAKE} -C ${WRKSRC} tools ${MAKE_ARGS}
 .endif
 
 post-install:	${MKREPOS_TARGET}
-.if ${PORT_OPTIONS:MMOD_DAV_SVN}
-	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dav_svn ${PREFIX}/${APACHEMODDIR}/mod_dav_svn.so
-	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n authz_svn ${PREFIX}/${APACHEMODDIR}/mod_authz_svn.so
-. if ${PORT_OPTIONS:MMOD_DONTDOTHAT}
-	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dontdothat ${PREFIX}/${APACHEMODDIR}/mod_dontdothat.so
-. endif
+.if ${PORT_OPTIONS:MTOOLS}
+	@${MAKE} -C ${WRKSRC} install-tools ${MAKE_ARGS}
 .endif
-.if ${PORT_OPTIONS:MSVNAUTHZ_VALIDATE}
-	${LIBTOOL} --mode=install ${INSTALL} ${COPY} ${_BINOWNGRP} -m ${BINMODE} ${WRKSRC}/tools/server-side/svnauthz-validate ${PREFIX}/bin
-.endif
-	@${MKDIR} ${DATADIR}
-	cd ${WRKSRC}/tools ; \
-	  ${TAR} --exclude '*.in' --exclude '.libs' --exclude '*.o' --exclude '*.lo' --exclude '*.la' --exclude='*.slo' -cf - * | ${TAR} -C ${DATADIR} -xf -
-# ugly hack to remove libtool scripts ...
-	@${GREP} -R ${WRKSRC} ${DATADIR} | ${CUT} -d\: -f 1 | ${XARGS} ${RM} -f
-	@${CHMOD} -R a-st,o+rX ${DATADIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	for f in ${TXT_DOCS}; do \
-	  ${INSTALL_MAN} ${WRKSRC}/$$f ${DOCSDIR}; \
-	done
-. if ${PORT_OPTIONS:MBOOK}
-	${TAR} -xof ${DISTDIR}/${DIST_SUBDIR}/${BOOK_HTML} -C ${DOCSDIR}
-	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/${BOOK_PDF} ${DOCSDIR}/svn-book.pdf
-. endif
-.endif
-.if ${PORT_OPTIONS:MASVN}
-	${INSTALL_SCRIPT} ${WRKSRC}/contrib/client-side/asvn ${PREFIX}/bin
-.endif
-.if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
-	@${INSTALL_SCRIPT} ${FILESDIR}/svnserve.wrapper ${PREFIX}/bin/svnserve
-.endif
-.if ${PORT_OPTIONS:MSVNMUCC}
-. if ${PORT_OPTIONS:MSTATIC}
-	@${INSTALL} ${WRKSRC}/tools/client-side/svnmucc/svnmucc ${PREFIX}/bin
-. else
-	@${INSTALL} ${WRKSRC}/tools/client-side/svnmucc/.libs/svnmucc ${PREFIX}/bin
-. endif
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@(cd ${WRKSRC}/tools.examples && ${TAR} --exclude '*.in' -cf - * | ${TAR} -C ${STAGEDIR}${DATADIR} -xof - )
+
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${TXT_DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+.  if ${PORT_OPTIONS:MBOOK}
+	${TAR} -xof ${DISTDIR}/${DIST_SUBDIR}/${BOOK_HTML} -C ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/${BOOK_PDF} ${STAGEDIR}${DOCSDIR}/svn-book.pdf
+.  endif
 .endif
 
+.if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
+	@${INSTALL_SCRIPT} ${FILESDIR}/svnserve.wrapper ${STAGEDIR}${PREFIX}/bin/svnserve
+.endif
+
+# ===============================================================================
 repository:	_mkrepos
 
 _SVNGRPFILES=	db locks locks/db.lock locks/db-logs.lock
