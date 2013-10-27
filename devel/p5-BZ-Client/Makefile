@@ -21,9 +21,4 @@ TEST_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		BZ::Client.3 BZ::Client::API.3 BZ::Client::Bug.3 \
-		BZ::Client::Bugzilla.3 BZ::Client::Exception.3 \
-		BZ::Client::Product.3 BZ::Client::Test.3 BZ::Client::XMLRPC.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

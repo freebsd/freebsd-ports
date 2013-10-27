@@ -21,11 +21,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		B::Hooks::EndOfScope.3 \
-		B::Hooks::EndOfScope::PP.3 \
-		B::Hooks::EndOfScope::PP::FieldHash.3 \
-		B::Hooks::EndOfScope::PP::HintHash.3 \
-		B::Hooks::EndOfScope::XS.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

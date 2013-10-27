@@ -14,7 +14,4 @@ COMMENT=	Container for the AutoXS header files
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		AutoXS::Header.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

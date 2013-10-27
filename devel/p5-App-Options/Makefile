@@ -13,7 +13,4 @@ COMMENT=	Combine command line options, environment vars, and option file values
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		App::Options.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,8 +1,10 @@
 bin/svn-bisect
+%%PERL5_MAN3%%/App::SVN::Bisect.3.gz
 %%SITE_PERL%%/App/SVN/Bisect.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/SVN/Bisect/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/SVN/Bisect
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/SVN
+man/man1/svn-bisect.1.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/SVN/Bisect
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/SVN
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
-@dirrmtry %%SITE_PERL%%/App/SVN
+@dirrm %%SITE_PERL%%/App/SVN
 @dirrmtry %%SITE_PERL%%/App

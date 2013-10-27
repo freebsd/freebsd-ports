@@ -1,3 +1,8 @@
+%%PERL5_MAN3%%/B::Hooks::EndOfScope.3.gz
+%%PERL5_MAN3%%/B::Hooks::EndOfScope::PP.3.gz
+%%PERL5_MAN3%%/B::Hooks::EndOfScope::PP::FieldHash.3.gz
+%%PERL5_MAN3%%/B::Hooks::EndOfScope::PP::HintHash.3.gz
+%%PERL5_MAN3%%/B::Hooks::EndOfScope::XS.3.gz
 %%SITE_PERL%%/B/Hooks/EndOfScope.pm
 %%SITE_PERL%%/B/Hooks/EndOfScope/PP.pm
 %%SITE_PERL%%/B/Hooks/EndOfScope/PP/FieldHash.pm

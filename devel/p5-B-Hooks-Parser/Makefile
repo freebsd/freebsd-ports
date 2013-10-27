@@ -19,7 +19,4 @@ TEST_DEPENDS=	p5-B-Hooks-EndOfScope>=0.05:${PORTSDIR}/devel/p5-B-Hooks-EndOfScop
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		B::Hooks::Parser.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

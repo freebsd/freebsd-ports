@@ -1,13 +1,14 @@
+%%PERL5_MAN3%%/B::Hooks::Parser.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/Parser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/Parser/Install/Files.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/Parser/Install/hook_parser.h
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/Parser/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/Parser/Parser.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/Parser/Parser.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/Parser
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/Parser
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/Parser/Install
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/Parser
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/Parser/Install
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/Parser
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B

@@ -1,6 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/GitHub/.packlist
-%%SITE_PERL%%/App/GitHub.pm
 bin/github.pl
-@dirrmtry %%SITE_PERL%%/App
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/GitHub
+%%PERL5_MAN3%%/App::GitHub.3.gz
+%%SITE_PERL%%/App/GitHub.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/GitHub/.packlist
+man/man1/github.pl.1.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/GitHub
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
+@dirrmtry %%SITE_PERL%%/App

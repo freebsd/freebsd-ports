@@ -1,13 +1,15 @@
+%%PERL5_MAN3%%/B::Utils.3.gz
+%%PERL5_MAN3%%/B::Utils::OP.3.gz
+%%SITE_PERL%%/%%PERL_ARCH%%/B/Utils.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/B/Utils/Install/BUtils.h
 %%SITE_PERL%%/%%PERL_ARCH%%/B/Utils/Install/Files.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/B/Utils/Install/typemap
-%%SITE_PERL%%/%%PERL_ARCH%%/B/Utils/Install/BUtils.h
 %%SITE_PERL%%/%%PERL_ARCH%%/B/Utils/OP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/B/Utils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Utils/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Utils/Utils.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Utils/Utils.bs
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Utils
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Utils/Utils.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Utils
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B/Utils/Install
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B/Utils
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/B/Utils/Install
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/B/Utils
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B

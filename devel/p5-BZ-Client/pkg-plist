@@ -1,4 +1,11 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/BZ/Client/.packlist
+%%PERL5_MAN3%%/BZ::Client.3.gz
+%%PERL5_MAN3%%/BZ::Client::API.3.gz
+%%PERL5_MAN3%%/BZ::Client::Bug.3.gz
+%%PERL5_MAN3%%/BZ::Client::Bugzilla.3.gz
+%%PERL5_MAN3%%/BZ::Client::Exception.3.gz
+%%PERL5_MAN3%%/BZ::Client::Product.3.gz
+%%PERL5_MAN3%%/BZ::Client::Test.3.gz
+%%PERL5_MAN3%%/BZ::Client::XMLRPC.3.gz
 %%SITE_PERL%%/BZ/Client.pm
 %%SITE_PERL%%/BZ/Client/API.pm
 %%SITE_PERL%%/BZ/Client/Bug.pm
@@ -13,8 +20,9 @@
 %%SITE_PERL%%/BZ/Client/XMLRPC/Response.pm
 %%SITE_PERL%%/BZ/Client/XMLRPC/Struct.pm
 %%SITE_PERL%%/BZ/Client/XMLRPC/Value.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BZ/Client/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/BZ/Client
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BZ
 @dirrm %%SITE_PERL%%/BZ/Client/XMLRPC
 @dirrm %%SITE_PERL%%/BZ/Client
-@dirrm %%SITE_PERL%%/BZ
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/BZ/Client
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/BZ
+@dirrmtry %%SITE_PERL%%/BZ

@@ -23,19 +23,4 @@ TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		App::Cmd.3 \
-		App::Cmd::ArgProcessor.3 \
-		App::Cmd::Command.3 \
-		App::Cmd::Command::commands.3 \
-		App::Cmd::Command::help.3 \
-		App::Cmd::Plugin.3 \
-		App::Cmd::Setup.3 \
-		App::Cmd::Simple.3 \
-		App::Cmd::Subdispatch.3 \
-		App::Cmd::Subdispatch::DashedStyle.3 \
-		App::Cmd::Tester.3 \
-		App::Cmd::Tester::CaptureExternal.3 \
-		App::Cmd::Tutorial.3 \
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

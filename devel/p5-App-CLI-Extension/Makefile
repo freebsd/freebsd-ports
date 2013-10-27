@@ -22,15 +22,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		App::CLI::Extension.3 \
-		App::CLI::Extension::Component::Config.3 \
-		App::CLI::Extension::Component::ErrorHandler.3 \
-		App::CLI::Extension::Component::InstallCallback.3 \
-		App::CLI::Extension::Component::OriginalArgv.3 \
-		App::CLI::Extension::Component::RunCommand.3 \
-		App::CLI::Extension::Component::Stash.3 \
-		App::CLI::Extension::Exception.3 \
-		App::CLI::README.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

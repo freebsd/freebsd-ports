@@ -1,105 +1,129 @@
 bin/darcs-sd
 bin/git-sd
 bin/sd
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/SD/.packlist
+%%PERL5_MAN3%%/App::SD.3.gz
+%%PERL5_MAN3%%/App::SD::CLI::Command.3.gz
+%%PERL5_MAN3%%/App::SD::CLI::Model::Ticket.3.gz
+%%PERL5_MAN3%%/App::SD::ForeignReplica.3.gz
+%%PERL5_MAN3%%/App::SD::ForeignReplica::PullEncoder.3.gz
+%%PERL5_MAN3%%/App::SD::Model::Ticket.3.gz
+%%PERL5_MAN3%%/App::SD::Replica::debbugs.3.gz
+%%PERL5_MAN3%%/App::SD::Replica::debbugs::PullEncoder.3.gz
+%%PERL5_MAN3%%/App::SD::Replica::debbugs::PushEncoder.3.gz
+%%PERL5_MAN3%%/App::SD::Replica::gcode::PullEncoder.3.gz
+%%PERL5_MAN3%%/App::SD::Replica::github.3.gz
+%%PERL5_MAN3%%/App::SD::Replica::github::PullEncoder.3.gz
+%%PERL5_MAN3%%/App::SD::Replica::hm.3.gz
+%%PERL5_MAN3%%/App::SD::Replica::lighthouse::PullEncoder.3.gz
+%%PERL5_MAN3%%/App::SD::Replica::rt.3.gz
+%%PERL5_MAN3%%/App::SD::Replica::rt::PullEncoder.3.gz
+%%PERL5_MAN3%%/App::SD::Replica::trac.3.gz
+%%PERL5_MAN3%%/App::SD::Replica::trac::PullEncoder.3.gz
+%%PERL5_MAN3%%/App::SD::Server.3.gz
+%%PERL5_MAN3%%/App::SD::Test.3.gz
+%%PERL5_MAN3%%/App::SD::Util.3.gz
 %%SITE_PERL%%/App/SD.pm
-%%SITE_PERL%%/App/SD/ForeignReplica.pm
-%%SITE_PERL%%/App/SD/Model/Comment.pm
-%%SITE_PERL%%/App/SD/Model/Ticket.pm
-%%SITE_PERL%%/App/SD/Model/Attachment.pm
+%%SITE_PERL%%/App/SD/CLI.pm
 %%SITE_PERL%%/App/SD/CLI/Command.pm
-%%SITE_PERL%%/App/SD/CLI/Model/Ticket.pm
-%%SITE_PERL%%/App/SD/CLI/Model/TicketComment.pm
-%%SITE_PERL%%/App/SD/CLI/Model/Attachment.pm
-%%SITE_PERL%%/App/SD/CLI/Dispatcher.pm
-%%SITE_PERL%%/App/SD/CLI/NewReplicaCommand.pm
-%%SITE_PERL%%/App/SD/CLI/Command/Clone.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Attachment/Content.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Attachment/Create.pm
 %%SITE_PERL%%/App/SD/CLI/Command/Browser.pm
-%%SITE_PERL%%/App/SD/CLI/Command/Publish.pm
-%%SITE_PERL%%/App/SD/CLI/Command/Shell.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Clone.pm
 %%SITE_PERL%%/App/SD/CLI/Command/Help.pm
-%%SITE_PERL%%/App/SD/CLI/Command/Log.pm
-%%SITE_PERL%%/App/SD/CLI/Command/Help/Authors.pm
-%%SITE_PERL%%/App/SD/CLI/Command/Help/Commands.pm
-%%SITE_PERL%%/App/SD/CLI/Command/Help/Settings.pm
-%%SITE_PERL%%/App/SD/CLI/Command/Help/Search.pm
-%%SITE_PERL%%/App/SD/CLI/Command/Help/Tickets.pm
-%%SITE_PERL%%/App/SD/CLI/Command/Help/Sync.pm
-%%SITE_PERL%%/App/SD/CLI/Command/Help/Intro.pm
-%%SITE_PERL%%/App/SD/CLI/Command/Help/Copying.pm
-%%SITE_PERL%%/App/SD/CLI/Command/Help/History.pm
 %%SITE_PERL%%/App/SD/CLI/Command/Help/About.pm
-%%SITE_PERL%%/App/SD/CLI/Command/Help/Environment.pm
 %%SITE_PERL%%/App/SD/CLI/Command/Help/Aliases.pm
 %%SITE_PERL%%/App/SD/CLI/Command/Help/Attachments.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Help/Authors.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Help/Commands.pm
 %%SITE_PERL%%/App/SD/CLI/Command/Help/Comments.pm
 %%SITE_PERL%%/App/SD/CLI/Command/Help/Config.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Help/Copying.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Help/Environment.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Help/History.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Help/Intro.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Help/Search.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Help/Settings.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Help/Sync.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Help/Tickets.pm
 %%SITE_PERL%%/App/SD/CLI/Command/Help/ticket_summary_format.pm
-%%SITE_PERL%%/App/SD/CLI/Command/Attachment/Create.pm
-%%SITE_PERL%%/App/SD/CLI/Command/Attachment/Content.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Init.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Log.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Publish.pm
 %%SITE_PERL%%/App/SD/CLI/Command/Server.pm
-%%SITE_PERL%%/App/SD/CLI/Command/Ticket/Comment.pm
-%%SITE_PERL%%/App/SD/CLI/Command/Ticket/Update.pm
-%%SITE_PERL%%/App/SD/CLI/Command/Ticket/Basics.pm
-%%SITE_PERL%%/App/SD/CLI/Command/Ticket/Create.pm
-%%SITE_PERL%%/App/SD/CLI/Command/Ticket/Comments.pm
-%%SITE_PERL%%/App/SD/CLI/Command/Ticket/Search.pm
-%%SITE_PERL%%/App/SD/CLI/Command/Ticket/Show.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Shell.pm
 %%SITE_PERL%%/App/SD/CLI/Command/Ticket/Attachment/Create.pm
 %%SITE_PERL%%/App/SD/CLI/Command/Ticket/Attachment/Search.pm
-%%SITE_PERL%%/App/SD/CLI/Command/Ticket/Details.pm
-%%SITE_PERL%%/App/SD/CLI/Command/Ticket/Review.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Ticket/Basics.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Ticket/Comment.pm
 %%SITE_PERL%%/App/SD/CLI/Command/Ticket/Comment/Create.pm
 %%SITE_PERL%%/App/SD/CLI/Command/Ticket/Comment/Update.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Ticket/Comments.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Ticket/Create.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Ticket/Details.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Ticket/Review.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Ticket/Search.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Ticket/Show.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Ticket/Update.pm
 %%SITE_PERL%%/App/SD/CLI/Command/Version.pm
-%%SITE_PERL%%/App/SD/CLI/Command/Init.pm
-%%SITE_PERL%%/App/SD/Util.pm
-%%SITE_PERL%%/App/SD/Record.pm
-%%SITE_PERL%%/App/SD/Server.pm
-%%SITE_PERL%%/App/SD/Config.pm
-%%SITE_PERL%%/App/SD/ForeignReplica/PullEncoder.pm
-%%SITE_PERL%%/App/SD/ForeignReplica/PushEncoder.pm
-%%SITE_PERL%%/App/SD/CLI.pm
-%%SITE_PERL%%/App/SD/Server/Dispatcher.pm
-%%SITE_PERL%%/App/SD/Server/View.pm
-%%SITE_PERL%%/App/SD/Test.pm
-%%SITE_PERL%%/App/SD/Replica/lighthouse.pm
-%%SITE_PERL%%/App/SD/Replica/gcode/PullEncoder.pm
-%%SITE_PERL%%/App/SD/Replica/gcode/PushEncoder.pm
-%%SITE_PERL%%/App/SD/Replica/github/PullEncoder.pm
-%%SITE_PERL%%/App/SD/Replica/github/PushEncoder.pm
-%%SITE_PERL%%/App/SD/Replica/trac.pm
-%%SITE_PERL%%/App/SD/Replica/debbugs/PushEncoder.pm
-%%SITE_PERL%%/App/SD/Replica/debbugs/PullEncoder.pm
-%%SITE_PERL%%/App/SD/Replica/trac/PullEncoder.pm
-%%SITE_PERL%%/App/SD/Replica/trac/PushEncoder.pm
-%%SITE_PERL%%/App/SD/Replica/gcode.pm
-%%SITE_PERL%%/App/SD/Replica/rt.pm
-%%SITE_PERL%%/App/SD/Replica/hm/PushEncoder.pm
-%%SITE_PERL%%/App/SD/Replica/hm/PullEncoder.pm
-%%SITE_PERL%%/App/SD/Replica/redmine/PullEncoder.pm
-%%SITE_PERL%%/App/SD/Replica/redmine/PushEncoder.pm
-%%SITE_PERL%%/App/SD/Replica/redmine.pm
-%%SITE_PERL%%/App/SD/Replica/hm.pm
-%%SITE_PERL%%/App/SD/Replica/github.pm
-%%SITE_PERL%%/App/SD/Replica/lighthouse/PushEncoder.pm
-%%SITE_PERL%%/App/SD/Replica/lighthouse/PullEncoder.pm
-%%SITE_PERL%%/App/SD/Replica/debbugs.pm
-%%SITE_PERL%%/App/SD/Replica/rt/PullEncoder.pm
-%%SITE_PERL%%/App/SD/Replica/rt/PushEncoder.pm
+%%SITE_PERL%%/App/SD/CLI/Dispatcher.pm
+%%SITE_PERL%%/App/SD/CLI/Model/Attachment.pm
+%%SITE_PERL%%/App/SD/CLI/Model/Ticket.pm
+%%SITE_PERL%%/App/SD/CLI/Model/TicketComment.pm
+%%SITE_PERL%%/App/SD/CLI/NewReplicaCommand.pm
 %%SITE_PERL%%/App/SD/Collection/Attachment.pm
 %%SITE_PERL%%/App/SD/Collection/Comment.pm
 %%SITE_PERL%%/App/SD/Collection/Ticket.pm
+%%SITE_PERL%%/App/SD/Config.pm
+%%SITE_PERL%%/App/SD/ForeignReplica.pm
+%%SITE_PERL%%/App/SD/ForeignReplica/PullEncoder.pm
+%%SITE_PERL%%/App/SD/ForeignReplica/PushEncoder.pm
+%%SITE_PERL%%/App/SD/Model/Attachment.pm
+%%SITE_PERL%%/App/SD/Model/Comment.pm
+%%SITE_PERL%%/App/SD/Model/Ticket.pm
+%%SITE_PERL%%/App/SD/Record.pm
+%%SITE_PERL%%/App/SD/Replica/debbugs.pm
+%%SITE_PERL%%/App/SD/Replica/debbugs/PullEncoder.pm
+%%SITE_PERL%%/App/SD/Replica/debbugs/PushEncoder.pm
+%%SITE_PERL%%/App/SD/Replica/gcode.pm
+%%SITE_PERL%%/App/SD/Replica/gcode/PullEncoder.pm
+%%SITE_PERL%%/App/SD/Replica/gcode/PushEncoder.pm
+%%SITE_PERL%%/App/SD/Replica/github.pm
+%%SITE_PERL%%/App/SD/Replica/github/PullEncoder.pm
+%%SITE_PERL%%/App/SD/Replica/github/PushEncoder.pm
+%%SITE_PERL%%/App/SD/Replica/hm.pm
+%%SITE_PERL%%/App/SD/Replica/hm/PullEncoder.pm
+%%SITE_PERL%%/App/SD/Replica/hm/PushEncoder.pm
+%%SITE_PERL%%/App/SD/Replica/lighthouse.pm
+%%SITE_PERL%%/App/SD/Replica/lighthouse/PullEncoder.pm
+%%SITE_PERL%%/App/SD/Replica/lighthouse/PushEncoder.pm
+%%SITE_PERL%%/App/SD/Replica/redmine.pm
+%%SITE_PERL%%/App/SD/Replica/redmine/PullEncoder.pm
+%%SITE_PERL%%/App/SD/Replica/redmine/PushEncoder.pm
+%%SITE_PERL%%/App/SD/Replica/rt.pm
+%%SITE_PERL%%/App/SD/Replica/rt/PullEncoder.pm
+%%SITE_PERL%%/App/SD/Replica/rt/PushEncoder.pm
+%%SITE_PERL%%/App/SD/Replica/trac.pm
+%%SITE_PERL%%/App/SD/Replica/trac/PullEncoder.pm
+%%SITE_PERL%%/App/SD/Replica/trac/PushEncoder.pm
+%%SITE_PERL%%/App/SD/Server.pm
+%%SITE_PERL%%/App/SD/Server/Dispatcher.pm
+%%SITE_PERL%%/App/SD/Server/View.pm
+%%SITE_PERL%%/App/SD/Test.pm
+%%SITE_PERL%%/App/SD/Util.pm
+%%SITE_PERL%%/auto/share/dist/App-SD/web/static/css/main.css
 %%SITE_PERL%%/auto/share/dist/App-SD/web/static/images/gradient.png
 %%SITE_PERL%%/auto/share/dist/App-SD/web/static/images/sd.png
-%%SITE_PERL%%/auto/share/dist/App-SD/web/static/css/main.css
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/SD/.packlist
+man/man1/sd.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/SD
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
 @dirrm %%SITE_PERL%%/auto/share/dist/App-SD/web/static/images
 @dirrm %%SITE_PERL%%/auto/share/dist/App-SD/web/static/css
 @dirrm %%SITE_PERL%%/auto/share/dist/App-SD/web/static
 @dirrm %%SITE_PERL%%/auto/share/dist/App-SD/web
 @dirrm %%SITE_PERL%%/auto/share/dist/App-SD
+@dirrmtry %%SITE_PERL%%/auto/share/dist
+@dirrmtry %%SITE_PERL%%/auto/share
 @dirrm %%SITE_PERL%%/App/SD/Server
 @dirrm %%SITE_PERL%%/App/SD/Replica/trac
 @dirrm %%SITE_PERL%%/App/SD/Replica/rt
@@ -122,4 +146,4 @@ bin/sd
 @dirrm %%SITE_PERL%%/App/SD/CLI/Command
 @dirrm %%SITE_PERL%%/App/SD/CLI
 @dirrm %%SITE_PERL%%/App/SD
-@dirrm %%SITE_PERL%%/App
+@dirrmtry %%SITE_PERL%%/App
