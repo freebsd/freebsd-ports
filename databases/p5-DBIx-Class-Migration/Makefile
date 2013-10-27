@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	DBIx-Class-Migration
-PORTVERSION=	0.039
+PORTVERSION=	0.043
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -38,73 +38,7 @@ TEST_DEPENDS=	\
 USES=	perl5
 USE_PERL5=	configure
 
-MAN1=	dbic-migration.1
-MAN3=	Catalyst::TraitFor::Model::DBIC::Schema::FromMigration.3 \
-	Catalyst::TraitFor::Model::DBIC::Schema::FromMigration::_MigrationHelper.3 \
-	DBIx::Class::Migration.3 \
-	DBIx::Class::Migration::FAQ.3 \
-	DBIx::Class::Migration::Features.3 \
-	DBIx::Class::Migration::MySQLSandbox.3 \
-	DBIx::Class::Migration::Population.3 \
-	DBIx::Class::Migration::PostgresqlSandbox.3 \
-	DBIx::Class::Migration::RunScript.3 \
-	DBIx::Class::Migration::RunScript::Trait::Dump.3 \
-	DBIx::Class::Migration::RunScript::Trait::Populate.3 \
-	DBIx::Class::Migration::RunScript::Trait::SchemaLoader.3 \
-	DBIx::Class::Migration::RunScript::Trait::TargetPath.3 \
-	DBIx::Class::Migration::Sandbox.3 \
-	DBIx::Class::Migration::SchemaLoader.3 \
-	DBIx::Class::Migration::Script.3 \
-	DBIx::Class::Migration::Script::Help.3 \
-	DBIx::Class::Migration::Script::Help::databases.3 \
-	DBIx::Class::Migration::Script::Help::dbi_connect_attrs.3 \
-	DBIx::Class::Migration::Script::Help::dbic_connect_attrs.3 \
-	DBIx::Class::Migration::Script::Help::dbic_fixture_class.3 \
-	DBIx::Class::Migration::Script::Help::dbic_fixtures_extra_args.3 \
-	DBIx::Class::Migration::Script::Help::delete_named_sets.3 \
-	DBIx::Class::Migration::Script::Help::delete_table_rows.3 \
-	DBIx::Class::Migration::Script::Help::diagram.3 \
-	DBIx::Class::Migration::Script::Help::downgrade.3 \
-	DBIx::Class::Migration::Script::Help::drop_tables.3 \
-	DBIx::Class::Migration::Script::Help::dsn.3 \
-	DBIx::Class::Migration::Script::Help::dump_all_sets.3 \
-	DBIx::Class::Migration::Script::Help::dump_named_sets.3 \
-	DBIx::Class::Migration::Script::Help::extra_schemaloader_args.3 \
-	DBIx::Class::Migration::Script::Help::fixture_sets.3 \
-	DBIx::Class::Migration::Script::Help::force_overwrite.3 \
-	DBIx::Class::Migration::Script::Help::help.3 \
-	DBIx::Class::Migration::Script::Help::includes.3 \
-	DBIx::Class::Migration::Script::Help::install.3 \
-	DBIx::Class::Migration::Script::Help::install_if_needed.3 \
-	DBIx::Class::Migration::Script::Help::install_version_storage.3 \
-	DBIx::Class::Migration::Script::Help::make_schema.3 \
-	DBIx::Class::Migration::Script::Help::password.3 \
-	DBIx::Class::Migration::Script::Help::populate.3 \
-	DBIx::Class::Migration::Script::Help::prepare.3 \
-	DBIx::Class::Migration::Script::Help::sandbox_class.3 \
-	DBIx::Class::Migration::Script::Help::schema_class.3 \
-	DBIx::Class::Migration::Script::Help::status.3 \
-	DBIx::Class::Migration::Script::Help::target_dir.3 \
-	DBIx::Class::Migration::Script::Help::to_version.3 \
-	DBIx::Class::Migration::Script::Help::upgrade.3 \
-	DBIx::Class::Migration::Script::Help::username.3 \
-	DBIx::Class::Migration::Script::Help::version.3 \
-	DBIx::Class::Migration::ShareDirBuilder.3 \
-	DBIx::Class::Migration::SqliteSandbox.3 \
-	DBIx::Class::Migration::TargetDirSandboxBuilder.3 \
-	DBIx::Class::Migration::TempDirBuilder.3 \
-	DBIx::Class::Migration::TempDirSandboxBuilder.3 \
-	DBIx::Class::Migration::Tutorial.3 \
-	DBIx::Class::Migration::Tutorial::AddMySQL.3 \
-	DBIx::Class::Migration::Tutorial::Catalyst.3 \
-	DBIx::Class::Migration::Tutorial::Conclusion.3 \
-	DBIx::Class::Migration::Tutorial::FirstMigration.3 \
-	DBIx::Class::Migration::Tutorial::SecondMigration.3 \
-	DBIx::Class::Migration::Tutorial::Setup.3 \
-	DBIx::Class::Migration::Tutorial::Testing.3 \
-	DBIx::Class::Migration::Tutorial::ThirdMigration.3 \
-	DBIx::Class::Migration::Types.3 \
-	Test::DBIx::Class::FixtureCommand::Population.3
+post-patch:
+	${FIND} ${WRKSRC} -name .DS_Store -delete
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
