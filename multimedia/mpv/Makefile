@@ -3,6 +3,7 @@
 
 PORTNAME=	mpv
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 
@@ -166,9 +167,6 @@ post-patch:
 		'/CFLAGS.*-D_LARGEFILE64_SOURCE/ s/-D_LARGEFILE64_SOURCE/-D_FILE_OFFSET_BITS=64/' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
-	@${REINPLACE_CMD} \
-		-e 's|-lncurses|/usr/lib/libncurses.so|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${FIND} ${WRKSRC}/DOCS/man -name '*.rst' | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|/usr/local|${PREFIX}|g'
 
