@@ -1,11 +1,11 @@
---- Makefile.orig	Mon Jan 22 13:33:24 2007
-+++ Makefile	Mon Jan 22 13:33:51 2007
-@@ -38,7 +38,7 @@
+--- Makefile.orig	2013-03-29 20:06:56.000000000 +0100
++++ Makefile	2013-10-18 13:32:23.570564959 +0200
+@@ -39,7 +39,7 @@
  
- VERS = 0.5.2
+ VERS := $(shell awk -F' ' '/^\#define *PSTREAMS_VERSION/{ print $$NF }' pstream.h)
  
 -all: docs $(GENERATED_FILES)
 +all: install
  
- test: test_pstreams test_minimum
- 	@./test_minimum >/dev/null 2>&1 || echo "TEST EXITED WITH STATUS $$?"
+ check: test_pstreams test_minimum | pstreams.wout
+ 	@for test in $^ ; do echo $$test ; ./$$test >/dev/null 2>&1 || echo "$$test EXITED WITH STATUS $$?" ; done
