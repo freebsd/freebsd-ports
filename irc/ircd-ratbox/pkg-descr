@@ -16,4 +16,4 @@ Changes Include:
   o New ssld and bandb processes for SSL connections and ban checking;
     these allow ratbox-3 to make better use of multi-processor systems.
 
-WWW: http://www.ircd-ratbox.org/
+WWW: http://www.ratbox.org/
