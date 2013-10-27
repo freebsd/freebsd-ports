@@ -720,10 +720,10 @@ post-install:
 	@${FIND} ${STAGEDIR} -type d | ${SED} -e "s,${STAGEDIR},,g" \
 		| while read line; do \
 		${GREP} -qw "^$${line}$$" ${WRKDIR}/.mtree || { \
-			[ -n "$${line}" ] && ${ECHO_CMD} "@dirrmtry $${line}"; \
+			[ -n "$${line}" ] && ${ECHO_CMD} "@unexec rmdir "%D/$${line}" >/dev/null 2>&1 || :"; \
 		}; \
 		done | ${SORT} -r | ${SED} \
-		-e "s,${PREFIX}/,,g" | ${GREP} -v "^@dirrmtry share/licenses" >> ${TMPPLIST} || ${TRUE}
+		-e "s,${PREFIX}/,,g" | ${GREP} -v "^@unexec rmdir %D/share/licenses" >> ${TMPPLIST} || ${TRUE}
 
 
 .include <bsd.port.post.mk>
