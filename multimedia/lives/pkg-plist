@@ -109,6 +109,8 @@ lib/lives/plugins/effects/realtime/weed/haar_analyser.la
 lib/lives/plugins/effects/realtime/weed/haar_analyser.so
 lib/lives/plugins/effects/realtime/weed/haip.la
 lib/lives/plugins/effects/realtime/weed/haip.so
+lib/lives/plugins/effects/realtime/weed/kaleidoscope.la
+lib/lives/plugins/effects/realtime/weed/kaleidoscope.so
 lib/lives/plugins/effects/realtime/weed/ladspa.la
 lib/lives/plugins/effects/realtime/weed/ladspa.so
 lib/lives/plugins/effects/realtime/weed/layout_blends.la
@@ -442,7 +444,6 @@ share/pixmaps/lives.xpm
 @dirrm lib/lives/plugins/encoders
 @dirrm lib/lives/plugins/effects/rendered
 @dirrm lib/lives/plugins/effects/realtime/weed/libvisual
-@dirrm lib/lives/plugins/effects/realtime/weed/icons
 %%FREI0R%%@dirrm lib/lives/plugins/effects/realtime/weed/frei0r
 @dirrm lib/lives/plugins/effects/realtime/weed/data/fourKlives/songs
 @dirrm lib/lives/plugins/effects/realtime/weed/data/fourKlives
