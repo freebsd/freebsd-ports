@@ -21,7 +21,7 @@ USES=		pkgconfig
 USE_GHOSTSCRIPT_RUN=yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-USE_GCC=	4.6+
+USE_GCC=	yes
 
 CONFLICTS=	efax-[0-9]*
 
