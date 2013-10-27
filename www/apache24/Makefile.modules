@@ -71,8 +71,6 @@ CONFIGURE_ARGS+=	--enable-mpms-shared=all
 PLIST_SUB+=		MPM_SHARED="@comment "
 .endif
 
-# XXX LATEST_LINK overwrites OPTIONSFILE ...
-# maybe use NO_LATEST_LINK in future
 .if ${PORT_OPTIONS:MMPM_PREFORK}
 CONFIGURE_ARGS+=	--with-mpm=prefork
 .elif ${PORT_OPTIONS:MMPM_WORKER}
@@ -148,34 +146,10 @@ IGNORE=	AUTH_BASIC need at least one AUTHZ provider
 .  endif
 .endif
 
-.if ${PORT_OPTIONS:MSSL}
-CFLAGS+=	-I${OPENSSLINC}
-LDFLAGS+=	-L${OPENSSLLIB}
-CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
-.endif
-
-.if ${PORT_OPTIONS:MSOCACHE_DC}
-CONFIGURE_ARGS+=	--with-distcache=${LOCALBASE}
-.endif
-
-.if ${PORT_OPTIONS:MLUA}
-CONFIGURE_ARGS+=	--with-lua=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--without-lua
-.endif
-
 .if ${PORT_OPTIONS:MXML2ENC} || ${PORT_OPTIONS:MPROXY_HTML}
 CONFIGURE_ARGS+=	--with-libxml2=${LOCALBASE}/include/libxml2
 .else
 CONFIGURE_ARGS+=	--without-libxml2
-.endif
-
-.if ${PORT_OPTIONS:MAUTHNZ_LDAP}
-CONFIGURE_ARGS+=	--enable-authnz-ldap
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-CONFIGURE_ARGS+=	--enable-ldap=shared
 .endif
 
 .if defined(APR_HAS_THREADS)
@@ -185,13 +159,6 @@ LDFLAGS+=	${PTHREAD_LIBS}
 .  if exists(${APR_CONFIG}) && ${PORT_OPTIONS:MMEM_CACHE}
 IGNORE=	MEM_CACHE requires APR threads. Please rebuild APR with THREAD support
 .  endif
-.endif
-
-# http://httpd.apache.org/docs/2.4/bind.html
-.if ${PORT_OPTIONS:MIPV4_MAPPED}
-CONFIGURE_ARGS+=	--enable-v4-mapped
-.else
-CONFIGURE_ARGS+=	--disable-v4-mapped
 .endif
 
 .endif	# _PREMKINCLUDED

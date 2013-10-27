@@ -1,6 +1,6 @@
 --- ./Makefile.in.orig	2012-12-17 12:50:41.000000000 +0100
-+++ ./Makefile.in	2013-03-24 16:01:58.000000000 +0100
-@@ -32,9 +32,10 @@
++++ ./Makefile.in	2013-10-27 15:15:14.000000000 +0100
+@@ -32,12 +32,10 @@
  install-conf:
  	@echo Installing configuration files
  	@$(MKINSTALLDIRS) $(DESTDIR)$(sysconfdir) $(DESTDIR)$(sysconfdir)/extra
@@ -8,11 +8,14 @@
 +	@$(MKINSTALLDIRS) $(DESTDIR)$(EXAMPLESDIR) $(DESTDIR)$(EXAMPLESDIR)/extra
  	@cd $(top_srcdir)/docs/conf; \
  	for i in mime.types magic; do \
+-	    if test ! -f $(DESTDIR)$(sysconfdir)/$$i; then \
+-	        $(INSTALL_DATA) $$i $(DESTDIR)$(sysconfdir); \
+-	    fi; \
 +	    $(INSTALL_DATA) $$i $(DESTDIR)$(EXAMPLESDIR); \
- 	    if test ! -f $(DESTDIR)$(sysconfdir)/$$i; then \
- 	        $(INSTALL_DATA) $$i $(DESTDIR)$(sysconfdir); \
- 	    fi; \
-@@ -78,14 +79,14 @@
+ 	done; \
+ 	for j in $(top_srcdir)/docs/conf $(top_builddir)/docs/conf ; do \
+ 	    cd $$j ; \
+@@ -78,15 +76,12 @@
  	    				-e 's#@@SSLPort@@#$(SSLPORT)#g' \
  	    				< $$i; \
  	    		fi \
@@ -24,13 +27,13 @@
  	    	if [ "$$i" = "httpd.conf" ]; then \
  	    		file=`echo $$i|sed s/.*.conf/$(PROGRAM_NAME).conf/`; \
  	    	fi; \
- 	    	if test ! -f $(DESTDIR)$(sysconfdir)/$$file; then \
+-	    	if test ! -f $(DESTDIR)$(sysconfdir)/$$file; then \
 -	    		$(INSTALL_DATA) $(DESTDIR)$(sysconfdir)/original/$$i $(DESTDIR)$(sysconfdir)/$$file; \
-+	    		$(INSTALL_DATA) $(DESTDIR)$(EXAMPLESDIR)/$$i $(DESTDIR)$(sysconfdir)/$$file; \
- 	    	fi; \
+-	    	fi; \
  	    	fi; \
  	    done ; \
-@@ -137,48 +138,26 @@
+ 	done ; \
+@@ -137,48 +132,25 @@
  	doxygen $(top_srcdir)/docs/doxygen.conf
  
  install-htdocs:
@@ -48,8 +51,7 @@
 -	    fi; \
 -	fi
 +	    $(MKINSTALLDIRS) $(DESTDIR)$(EXAMPLESDIR) ; \
-+		test -d $(htdocs-srcdir) && (cd $(htdocs-srcdir) && cp -rp index.html $(DESTDIR)$(EXAMPLESDIR)) && \
-+		( [ ! -f $(DESTDIR)$(htdocsdir)/index.html ] && cp -p $(DESTDIR)$(EXAMPLESDIR)/index.html $(DESTDIR)$(htdocsdir)/index.html) || true
++		test -d $(htdocs-srcdir) && (cd $(htdocs-srcdir) && cp -rp index.html $(DESTDIR)$(EXAMPLESDIR)) || true
  
  install-error:
 -	-@if [ -d $(DESTDIR)$(errordir) ]; then \
@@ -89,25 +91,27 @@
  
  install-other:
  	@test -d $(DESTDIR)$(logfiledir) || $(MKINSTALLDIRS) $(DESTDIR)$(logfiledir)
-@@ -229,14 +208,15 @@
+@@ -224,19 +196,17 @@
+ 	done
+ 
+ install-man:
+-	@echo Installing man pages and online manual
++	@echo Installing man pages
+ 	@test -d $(DESTDIR)$(mandir)      || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)
  	@test -d $(DESTDIR)$(mandir)/man1 || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)/man1
  	@test -d $(DESTDIR)$(mandir)/man8 || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)/man8
- 	@test -d $(DESTDIR)$(manualdir)   || $(MKINSTALLDIRS) $(DESTDIR)$(manualdir)
--	@cp -p $(top_srcdir)/docs/man/*.1 $(DESTDIR)$(mandir)/man1
--	@cp -p $(top_srcdir)/docs/man/*.8 $(DESTDIR)$(mandir)/man8
+-	@test -d $(DESTDIR)$(manualdir)   || $(MKINSTALLDIRS) $(DESTDIR)$(manualdir)
+ 	@cp -p $(top_srcdir)/docs/man/*.1 $(DESTDIR)$(mandir)/man1
+ 	@cp -p $(top_srcdir)/docs/man/*.8 $(DESTDIR)$(mandir)/man8
 -	@if test "x$(RSYNC)" != "x" && test -x $(RSYNC) ; then \
 -	  $(RSYNC) --exclude .svn -rlpt --numeric-ids $(top_srcdir)/docs/manual/ $(DESTDIR)$(manualdir)/; \
 -	else \
 -	  cd $(top_srcdir)/docs/manual && cp -rp * $(DESTDIR)$(manualdir); \
 -	  cd $(DESTDIR)$(manualdir) && find . -name ".svn" -type d -print | xargs rm -rf 2>/dev/null || true; \
 -	fi
-+	for i in ab.1 apxs.1 dbmmanage.1 htdbm.1 htdigest.1 htpasswd.1 httxt2dbm.1 logresolve.1 ; do \
-+	 ${INSTALL_MAN} $(top_srcdir)/docs/man/$$i $(DESTDIR)$(mandir)/man1; \
-+	done
-+	for i in apachectl.8 fcgistarter.8 htcacheclean.8 httpd.8 rotatelogs.8 suexec.8 ; do \
-+	 ${INSTALL_MAN} $(top_srcdir)/docs/man/$$i $(DESTDIR)$(mandir)/man8; \
-+	done
 +.if !defined(NOPORTDOCS)
++	@echo Installing online manual
++	@test -d $(DESTDIR)$(manualdir)   || $(MKINSTALLDIRS) $(DESTDIR)$(manualdir)
 +	  cd $(top_srcdir)/docs/manual && cp -rp * $(DESTDIR)$(manualdir);
 +.endif
  
