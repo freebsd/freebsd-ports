@@ -11,12 +11,9 @@ DIST_SUBDIR=	apache22
 MAINTAINER?=	apache@FreeBSD.org
 COMMENT?=	Version 2.2.x of Apache web server with ${WITH_MPM} MPM.
 
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
-		apr-1:${PORTSDIR}/devel/apr1 \
-		pcre:${PORTSDIR}/devel/pcre
-
-
-LATEST_LINK?=	apache22
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libapr-1.so:${PORTSDIR}/devel/apr1 \
+		libpcre.so:${PORTSDIR}/devel/pcre
 
 CONFLICTS_INSTALL=	caudium14-1.* \
 		apache-*-2.2.* apache22-*-2.2.* \
@@ -25,9 +22,12 @@ CONFLICTS_INSTALL=	caudium14-1.* \
 USE_APACHE=	common22
 USE_BZIP2=	yes
 USES=		iconv perl5
+USE_PERL5=	run
 USE_AUTOTOOLS=	autoconf libtool
 USE_RC_SUBR=	apache22 htcacheclean
 LIBTOOLFILES=	configure.in
+
+PORTDOCS=	*
 
 USERS=		www
 GROUPS=		www
@@ -41,11 +41,32 @@ APACHEDIR=	${MASTERDIR}
 
 WITH_MPM?=		prefork # or worker, event, itk, peruser
 WITH_HTTP_PORT?=	80
+WITH_SSL_PORT?=		443
 
-NO_STAGE=	yes
 .include "${APACHEDIR}/Makefile.options"
+
+AUTHNZ_LDAP_CONFIGURE_ON=	--enable-authnz-ldap
+
+# http://httpd.apache.org/docs/2.2/bind.html
+IPV4_MAPPED_CONFIGURE_OFF=	--disable-v4-mapped
+IPV4_MAPPED_CONFIGURE_ON=	--enable-v4-mapped
+
+LDAP_CONFIGURE_ON=		--enable-ldap=shared
+SSL_CFLAGS=			-I${OPENSSLINC}
+SSL_CONFIGURE_ON=		--with-ssl=${OPENSSLBASE}
+SSL_LDFLAGS=			-L${OPENSSLLIB}
+SSL_USE=			OPENSSL=yes
+
+SUEXEC_RSRCLIMIT_EXTRA_PATCHES=	${FILESDIR}/extra-patch-suexec_rsrclimit
+SUEXEC_USERDIR_EXTRA_PATCHES=	${FILESDIR}/extra-patch-suexec_userdir
+
 .include <bsd.port.options.mk>
-.include "${APACHEDIR}/Makefile.doc"
+
+ETC_SUBDIRS=		Includes envvars.d extra
+
+.if ! ${PORT_OPTIONS:MDOCS}
+MAKE_ENV+=	NOPORTDOCS=yes
+.endif
 
 APR_CONFIG?=		${LOCALBASE}/bin/apr-1-config
 APU_CONFIG?=		${LOCALBASE}/bin/apu-1-config
@@ -57,13 +78,13 @@ APU_DBD_SQLITE3?=	${LOCALBASE}/lib/apr-util-1/apr_dbd_sqlite3.so
 # APU module used by AUTHNZ_LDAP LDAP
 APU_LDAP?=		${LOCALBASE}/lib/apr-util-1/apr_ldap.so
 # APU module used by SESSION_CRYPTO
-APU_CRYPTO_SSL?=	${LOCALBASE}/lib/apr-util-1/apr_crypto_openssl.so
+APU_CRYPTO_OPENSSL?=	${LOCALBASE}/lib/apr-util-1/apr_crypto_openssl.so
 APU_CRYPTO_NSS?=	${LOCALBASE}/lib/apr-util-1/apr_crypto_nss.so
 
-CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
+CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--enable-layout=FreeBSD \
-		--with-perl=${PERL5} \
 		--with-port=${WITH_HTTP_PORT} \
+		--with-sslport=${WITH_SSL_PORT} \
 		--with-expat=${LOCALBASE} \
 		--with-iconv=${ICONV_PREFIX} \
 		--enable-http \
@@ -75,33 +96,22 @@ CONFIGURE_ENV=	\
 		CONFIG_SHELL="${SH}" \
 		LOCALBASE="${LOCALBASE}"
 
-PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
-
 MAKE_ENV+=	EXPR_COMPAT=yes \
-		INSTALL_MAN="${INSTALL_MAN}"
+		INSTALL_MAN="${INSTALL_MAN}" \
+		EXAMPLESDIR=${EXAMPLESDIR}
 
 #=====================================================
 # CONFIGURE_ARGS will be handled in Makefile.modules,
 # here we do only OPTIONS fixups
 
-.if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=	yes
-.endif
-
-.if ${PORT_OPTIONS:MSUEXEC_RSRCLIMIT}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-suexec_rsrclimit
-.  if empty(PORT_OPTIONS:MSUEXEC)
+.if ${PORT_OPTIONS:MSUEXEC_RSRCLIMIT} && !${PORT_OPTIONS:MSUEXEC}
 IGNORE=		suEXEC resource limit patch requires mod_suexec.\
 		Please (re)run 'make config' and choose SUEXEC option also
-.  endif
 .endif
 
-.if ${PORT_OPTIONS:MSUEXEC_USERDIR}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-suexec_userdir
-.  if empty(PORT_OPTIONS:MSUEXEC)
+.if ${PORT_OPTIONS:MSUEXEC_USERDIR} && !${PORT_OPTIONS:MSUEXEC}
 IGNORE=		suEXEC UserDir patch requires mod_suexec.\
 		Please (re)run 'make config' and choose SUEXEC option also
-.  endif
 .endif
 
 .include <bsd.port.pre.mk>
@@ -115,12 +125,23 @@ pre-configure::
 show-options:
 	@${SED} -ne 's/^##//p' ${APACHEDIR}/Makefile.doc
 
+post-extract:
+# remove possible leftover .svn directories in the sources
+	@${FIND} ${WRKSRC} -type d -name .svn -print | ${XARGS} ${RM} -rf
+# limit grep results ...
+	@${FIND} ${WRKSRC} -type f \( -name 'NWGNU*' -o -name '*.ds?' -o -name '*.dep' -o -name '*.mak' -o -name '*.win' \) -delete
+
 post-patch:
+	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' ${WRKSRC}/server/core.c
+# IPv4_mapping fix: https://issues.apache.org/bugzilla/show_bug.cgi?id=53824
 	@${REINPLACE_CMD} -e 's|freebsd5|freebsd|' \
+		-e 's|^perlbin=.*|perlbin=${PERL}|' \
 		${WRKSRC}/configure.in ${WRKSRC}/configure
 	@${RM} -f ${WRKSRC}/docs/docroot/*.bak
-	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' ${WRKSRC}/server/core.c
 	@${INSTALL_DATA} ${WRKSRC}/NOTICE ${WRKSRC}/docs/manual
+# we use devel/apr and devel/pcre
+	@${RM} -rf ${WRKSRC}/srclib
+	@${REINPLACE_CMD} -e 's/srclib//' ${WRKSRC}/Makefile.in
 
 post-configure:
 	@FTPUSERS=`${EGREP} -v '^#' /etc/ftpusers| ${TR} -s "\n" " "` ;\
@@ -129,20 +150,12 @@ post-configure:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/support/envvars-std
 
 post-install:
-	@${MKDIR} ${ETCDIR}/envvars.d
-	@${MKDIR} ${ETCDIR}/Includes
-	@${INSTALL_DATA} ${FILESDIR}/no-accf.conf ${ETCDIR}/Includes/
+	@${MKDIR} ${ETC_SUBDIRS:S|^|${STAGEDIR}${ETCDIR}/|}
+	@${INSTALL_DATA} ${FILESDIR}/no-accf.conf ${STAGEDIR}${ETCDIR}/Includes/
 
 .if ${PORT_OPTIONS:MLOG_FORENSIC}
-	@${INSTALL_SCRIPT} ${WRKSRC}/support/check_forensic ${PREFIX}/sbin
+	@${INSTALL_SCRIPT} ${WRKSRC}/support/check_forensic ${STAGEDIR}${PREFIX}/sbin
 .endif
-
-.if ${PORT_OPTIONS:MDOCS}
-.  for dir in style/lang style/xsl/util style/xsl
-	@[ -d ${DOCSDIR}/${dir}/ ] && ${TOUCH} ${DOCSDIR}/${dir}/.keepme
-.  endfor
-.endif
-	@${CAT} ${PKGMESSAGE}
 
 # maintainer only, check for new modules
 modlist: extract
@@ -150,7 +163,7 @@ modlist: extract
 		{printf "%%%%%s%%%%libexec/apache22/%s.so\n", \
 		toupper($$8), $$8}' ${WRKSRC}/configure \
 		| ${TR} -d '"' \
-		| ${GREP} -E -v 'MOD_(ECHO|EXAMPLE|HTTP|IDENT|ISAPI|SO)' \
-		| ${SORT} -u
+		| ${SORT} -u \
+		| ${GREP} -E -v '^%%MOD_(ECHO|EXAMPLE|HTTP|IDENT|ISAPI|SO)%%'
 
 .include <bsd.port.post.mk>

@@ -64,14 +64,4 @@
 ##  on the Apache website: http://httpd.apache.org/docs/2.2/bind.html
 ##  To find out which binding was used to build httpd use the command
 ##   $> httpd -V
-
-MAKE_ENV+=	EXAMPLESDIR=${EXAMPLESDIR}
-
-.if empty(PORT_OPTIONS:MDOCS)
-MAKE_ENV+=	NOPORTDOCS=yes
-.endif
-
-MAN1=		dbmmanage.1 htdbm.1 htdigest.1 htpasswd.1 httxt2dbm.1
-MAN8=		ab.8 apxs.8 apachectl.8 htcacheclean.8 httpd.8 logresolve.8 rotatelogs.8 suexec.8
-
-PORTDOCS=	* #don't blame me ;-)
+##

@@ -66,7 +66,6 @@ IGNORE=	Unknown MPM: ${WITH_MPM}
 
 .if ${WITH_MPM} != "prefork"
 PKGNAMESUFFIX=		-${WITH_MPM}-mpm
-LATEST_LINK=		apache22-${WITH_MPM}-mpm
 .endif
 
 .if ${WITH_MPM} == "worker" || ${WITH_MPM} == "event"
@@ -100,20 +99,6 @@ WITH_EXCEPTION_HOOK=	yes
 CONFIGURE_ARGS+=	--enable-exception-hook
 .endif
 
-.if ${PORT_OPTIONS:MSSL}
-CFLAGS+=	-I${OPENSSLINC}
-LDFLAGS+=	-L${OPENSSLLIB}
-CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
-.endif
-
-.if ${PORT_OPTIONS:MAUTHNZ_LDAP}
-CONFIGURE_ARGS+=	--enable-authnz-ldap
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-CONFIGURE_ARGS+=	--enable-ldap=shared
-.endif
-
 .if ${PORT_OPTIONS:MAUTH_BASIC} || ${PORT_OPTIONS:MAUTH_DIGEST}
 .  if !${APACHE_MODULES:MAUTHN*}
 IGNORE=	AUTH_BASIC and AUTH_DIGEST need at last one AUTHN provider	
@@ -132,13 +117,6 @@ LDFLAGS+=	-pthread
 .  if exists(${APR_CONFIG}) && ${PORT_OPTIONS:MMEM_CACHE}
 IGNORE=	MEM_CACHE requires APR threads. Please rebuild APR with THREAD support
 .  endif
-.endif
-
-# http://httpd.apache.org/docs/2.2/bind.html
-.if ${PORT_OPTIONS:MIPV4_MAPPED}
-CONFIGURE_ARGS+=	--enable-v4-mapped
-.else
-CONFIGURE_ARGS+=	--disable-v4-mapped
 .endif
 
 CONFIGURE_ARGS+=	--with-mpm=${WITH_MPM}

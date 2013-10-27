@@ -2,5 +2,5 @@ To run apache www server from startup, add apache22_enable="YES"
 in your /etc/rc.conf. Extra options can be found in startup script.
 
 Your hostname must be resolvable using at least 1 mechanism in
-/etc/nsswitch typically DNS or /etc/hosts or apache might
+/etc/nsswitch.conf typically DNS or /etc/hosts or apache might
 have issues starting depending on the modules you are using.
