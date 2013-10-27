@@ -391,10 +391,14 @@ USE_${_u:U}+=	${option:C/.*=//g}
 .      endfor
 .    endif
 .    if defined(${opt}_CONFIGURE_ENABLE)
-CONFIGURE_ARGS+=	--enable-${${opt}_CONFIGURE_ENABLE}
+.      for iopt in ${${opt}_CONFIGURE_ENABLE}
+CONFIGURE_ARGS+=	--enable-${iopt}
+.      endfor
 .    endif
 .    if defined(${opt}_CONFIGURE_WITH)
-CONFIGURE_ARGS+=	--with-${${opt}_CONFIGURE_WITH}
+.      for iopt in ${${opt}_CONFIGURE_WITH}
+CONFIGURE_ARGS+=	--with-${iopt}
+.      endfor
 .    endif
 .    if defined(${opt}_CONFIGURE_ON)
 CONFIGURE_ARGS+=	${${opt}_CONFIGURE_ON}
@@ -416,10 +420,14 @@ ${deptype}_DEPENDS+=	${${opt}_${deptype}_DEPENDS}
 .    endfor
 .  else
 .    if defined(${opt}_CONFIGURE_ENABLE)
-CONFIGURE_ARGS+=	--disable-${${opt}_CONFIGURE_ENABLE}
+.      for iopt in ${${opt}_CONFIGURE_ENABLE}
+CONFIGURE_ARGS+=	--disable-${iopt}
+.      endfor
 .    endif
 .    if defined(${opt}_CONFIGURE_WITH)
-CONFIGURE_ARGS+=	--without-${${opt}_CONFIGURE_WITH}
+.      for iopt in ${${opt}_CONFIGURE_WITH}
+CONFIGURE_ARGS+=	--without-${iopt}
+.      endfor
 .    endif
 .    if defined(${opt}_CONFIGURE_OFF)
 CONFIGURE_ARGS+=	${${opt}_CONFIGURE_OFF}
