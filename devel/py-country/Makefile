@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	country
-PORTVERSION=	0.16
+PORTVERSION=	1.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 MASTER_SITE_SUBDIR=source/p/pycountry
@@ -16,13 +16,8 @@ USE_ZIP=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	pycountry
+PYTHON_PY3K_PLIST_HACK=	yes
 
 NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
-post-install:
-.if ${PYTHON_REL} >= 320
-.include "${PORTSDIR}/devel/py-virtualenv/files/py3k-fix-pkg-plist.inc"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
