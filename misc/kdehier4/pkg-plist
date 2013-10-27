@@ -136,6 +136,7 @@
 %%MTREE%%@exec mkdir -p %%KDE4_PREFIX%%/sbin
 %%MTREE%%@exec mkdir -p %%KDE4_PREFIX%%/share
 %%MTREE%%@exec mkdir -p %%KDE4_PREFIX%%/share/aclocal
+%%MTREE%%@exec mkdir -p %%KDE4_PREFIX%%/share/applications
 %%MTREE%%@exec mkdir -p %%KDE4_PREFIX%%/share/dict
 %%MTREE%%@exec mkdir -p %%KDE4_PREFIX%%/share/doc
 %%MTREE%%@exec mkdir -p %%KDE4_PREFIX%%/share/doc/ja
@@ -495,7 +496,6 @@
 @exec mkdir -p %%KDE4_PREFIX%%/lib/kde4/plugins/grantlee/0.3
 @exec mkdir -p %%KDE4_PREFIX%%/lib/kde4/plugins/styles
 @exec mkdir -p %%KDE4_PREFIX%%/lib/strigi
-@exec mkdir -p %%KDE4_PREFIX%%/share/applications
 @exec mkdir -p %%KDE4_PREFIX%%/share/applications/kde4
 @exec mkdir -p %%KDE4_PREFIX%%/share/apps
 @exec mkdir -p %%KDE4_PREFIX%%/share/apps/cmake
@@ -2187,6 +2187,7 @@
 %%MTREE%%@dirrm share/doc/ja
 %%MTREE%%@dirrm share/doc
 %%MTREE%%@dirrm share/dict
+%%MTREE%%@dirrm share/applications
 %%MTREE%%@dirrm share/aclocal
 %%MTREE%%@dirrm share
 %%MTREE%%@dirrm sbin
