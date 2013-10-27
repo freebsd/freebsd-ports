@@ -14,7 +14,4 @@ COMMENT=	A perl module that performs aliasing services
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Alias.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

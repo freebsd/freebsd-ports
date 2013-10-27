@@ -15,11 +15,7 @@ BUILD_DEPENDS=	p5-Set-Object>0:${PORTSDIR}/devel/p5-Set-Object \
 		p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	Algorithm::Dependency::Objects.3 \
-	Algorithm::Dependency::Objects::Ordered.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

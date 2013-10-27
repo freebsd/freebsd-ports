@@ -1,13 +1,18 @@
+%%PERL5_MAN3%%/Algorithm::FloodControl.3.gz
+%%PERL5_MAN3%%/Algorithm::FloodControl::Backend.3.gz
+%%PERL5_MAN3%%/Algorithm::FloodControl::Backend::Cache::FastMmap.3.gz
+%%PERL5_MAN3%%/Algorithm::FloodControl::Backend::Cache::Memcached.3.gz
+%%PERL5_MAN3%%/Algorithm::FloodControl::Backend::Cache::Memcached::Fast.3.gz
 %%SITE_PERL%%/Algorithm/FloodControl.pm
 %%SITE_PERL%%/Algorithm/FloodControl/Backend.pm
 %%SITE_PERL%%/Algorithm/FloodControl/Backend/Cache/FastMmap.pm
 %%SITE_PERL%%/Algorithm/FloodControl/Backend/Cache/Memcached.pm
 %%SITE_PERL%%/Algorithm/FloodControl/Backend/Cache/Memcached/Fast.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/FloodControl/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/FloodControl
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/FloodControl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
-@dirrmtry %%SITE_PERL%%/Algorithm/FloodControl/Backend/Cache/Memcached
-@dirrmtry %%SITE_PERL%%/Algorithm/FloodControl/Backend/Cache
-@dirrmtry %%SITE_PERL%%/Algorithm/FloodControl/Backend
-@dirrmtry %%SITE_PERL%%/Algorithm/FloodControl
+@dirrm %%SITE_PERL%%/Algorithm/FloodControl/Backend/Cache/Memcached
+@dirrm %%SITE_PERL%%/Algorithm/FloodControl/Backend/Cache
+@dirrm %%SITE_PERL%%/Algorithm/FloodControl/Backend
+@dirrm %%SITE_PERL%%/Algorithm/FloodControl
 @dirrmtry %%SITE_PERL%%/Algorithm

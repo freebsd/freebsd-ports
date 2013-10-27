@@ -13,7 +13,4 @@ COMMENT=	Perl class performing Bayesian prediction of categories
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Algorithm::NaiveBayes.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

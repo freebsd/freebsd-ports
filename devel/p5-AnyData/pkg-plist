@@ -1,3 +1,16 @@
+%%PERL5_MAN3%%/AnyData.3.gz
+%%PERL5_MAN3%%/AnyData::Format::CSV.3.gz
+%%PERL5_MAN3%%/AnyData::Format::Fixed.3.gz
+%%PERL5_MAN3%%/AnyData::Format::HTMLtable.3.gz
+%%PERL5_MAN3%%/AnyData::Format::Ini.3.gz
+%%PERL5_MAN3%%/AnyData::Format::Mp3.3.gz
+%%PERL5_MAN3%%/AnyData::Format::Paragraph.3.gz
+%%PERL5_MAN3%%/AnyData::Format::Passwd.3.gz
+%%PERL5_MAN3%%/AnyData::Format::Pipe.3.gz
+%%PERL5_MAN3%%/AnyData::Format::Tab.3.gz
+%%PERL5_MAN3%%/AnyData::Format::Weblog.3.gz
+%%PERL5_MAN3%%/AnyData::Format::XML.3.gz
+%%PERL5_MAN3%%/AnyData::Storage::File.3.gz
 %%SITE_PERL%%/AnyData.pm
 %%SITE_PERL%%/AnyData/Format/Base.pm
 %%SITE_PERL%%/AnyData/Format/CSV.pm
@@ -19,8 +32,8 @@
 %%SITE_PERL%%/AnyData/Storage/PassThru.pm
 %%SITE_PERL%%/AnyData/Storage/RAM.pm
 %%SITE_PERL%%/AnyData/Storage/TiedHash.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyData/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyData
 @dirrm %%SITE_PERL%%/AnyData/Storage
 @dirrm %%SITE_PERL%%/AnyData/Format
 @dirrm %%SITE_PERL%%/AnyData
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyData/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyData
