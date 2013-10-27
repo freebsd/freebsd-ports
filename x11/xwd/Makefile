@@ -12,9 +12,6 @@ LICENSE=	MIT
 XORG_CAT=	app
 USE_XORG=	x11 xkbfile
 
-PLIST_FILES=	bin/xwd
+PLIST_FILES=	bin/xwd man/man1/xwd.1.gz
 
-MAN1=		xwd.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
