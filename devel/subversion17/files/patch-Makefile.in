@@ -1,0 +1,15 @@
+========================================================================
+This patch is required to build SVN Apache modules with staging support
+========================================================================
+--- ./Makefile.in.orig	2013-10-21 19:51:16.000000000 +0200
++++ ./Makefile.in	2013-10-21 19:51:31.000000000 +0200
+@@ -209,7 +209,8 @@
+ LINK_CXX_LIB = $(LINK_CXX) $(LT_SO_VERSION)
+ 
+ # special link rule for mod_dav_svn
+-LINK_APACHE_MOD = $(LIBTOOL) $(LTFLAGS) --mode=link $(CC) $(LT_LDFLAGS) $(CFLAGS) $(LDFLAGS) -rpath $(APACHE_LIBEXECDIR) -avoid-version -module $(APACHE_LDFLAGS)
++LINK_APACHE_MOD = $(LIBTOOL) $(LTFLAGS) --mode=link $(CC) $(LT_LDFLAGS) $(CFLAGS) $(LDFLAGS) -rpath $(APACHE_LIBEXECDIR) -avoid-version -module $(APACHE_LDFLAGS) -inst-prefix-dir ${DESTDIR}
++
+ 
+ # Special LDFLAGS for some libraries
+ libsvn_auth_gnome_keyring_LDFLAGS = @libsvn_auth_gnome_keyring_LDFLAGS@

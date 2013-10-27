@@ -11,6 +11,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main
 DIST_SUBDIR=	subversion17
 MASTER_SITE_SUBDIR=	subversion/:main \
 			lev/:book
+# setting PKGSUFFIX not possible wo. having a Mk/Uses file and fixing a bunch of ports
+#PKGNAMESUFFIX=	17
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
@@ -18,149 +20,88 @@ USE_KDE4=	# Used below if KWallet support is enabled
 
 LICENSE=	AL2
 
-CONFLICTS_INSTALL+=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-1.[6|8].[0-9]*
-LATEST_LINK=		${PKGNAMEPREFIX}${PORTNAME}17${PKGNAMESUFFIX}
+CONFLICTS_INSTALL+=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-1.[^7].[0-9]*
 
-LIB_DEPENDS+=		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
+LIB_DEPENDS+=		libapr-1.so:${PORTSDIR}/devel/apr1 \
+			libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
 			libexpat.so:${PORTSDIR}/textproc/expat2
 
-CONFIGURE_ARGS+=	--with-ssl \
-			--without-swig \
+CONFIGURE_ARGS+=	--without-swig \
+			--with-ssl \
 			--with-sqlite=${LOCALBASE} \
-			--with-expat=/usr/local/include:/usr/local/lib:expat
+			--with-expat=${LOCALBASE}/include:${LOCALBASE}/lib:expat
 
 .if defined(SVN_BUILD_BINDINGS)
-CONFLICTS_BUILD+=	${PORTNAME}-1.[6|8].[0-9]*
+CONFLICTS_BUILD+=	${PORTNAME}-1.[^7].[0-9]*
 LIB_DEPENDS+=		libsvn_client-1.so:${PORTSDIR}/devel/subversion17
 OPTIONSFILE=		${PORT_DBDIR}/${PORTNAME}/options
 OPTIONS=		# Dirty hack: if OPTIONS is not defined, OPTIONSFILE will not be included
 .endif
 
+# ===============================================================
+OPTIONS_SUB=			yes
+
+BDB_CONFIGURE_OFF=		--without-berkeley-db
+BDB_USE=			BDB=42+
+
+GNOME_KEYRING_CONFIGURE_OFF=	--without-gnome-keyring
+GNOME_KEYRING_CONFIGURE_ON=	--with-gnome-keyring
+GNOME_KEYRING_LIB_DEPENDS=	libgcr.so:${PORTSDIR}/security/gnome-keyring
+
+KDE_KWALLET_CONFIGURE_OFF=	--without-kwallet
+KDE_KWALLET_CONFIGURE_ON=	--with-kwallet=${KDE4_PREFIX}
+KDE_KWALLET_USE=		KDE4=kdelibs runtime
+
+MAINTAINER_DEBUG_CFLAGS=	-g
+MAINTAINER_DEBUG_CONFIGURE_ON=	--enable-maintainer-mode --enable-debug
+
+MOD_DAV_SVN_CONFIGURE_OFF=	--with-apxs=no
+MOD_DAV_SVN_CONFIGURE_ON=	--with-apxs=${APXS}
+MOD_DAV_SVN_USE=		APACHE=22+
+
+NEON_CONFIGURE_OFF=		--without-neon
+NEON_CONFIGURE_ON=		--with-neon=${LOCALBASE}
+NEON_LIB_DEPENDS=		libneon.so:${PORTSDIR}/www/neon29
+
+NLS_CONFIGURE_OFF=		--disable-nls
+NLS_USES=			gettext
+
+SASL_CONFIGURE_OFF=		--without-sasl
+SASL_CONFIGURE_ON=		--with-sasl=${LOCALBASE}
+SASL_LIB_DEPENDS=		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+
+SERF_CONFIGURE_OFF=		--without-serf
+SERF_CONFIGURE_ON=		--with-serf=${LOCALBASE}
+SERF_LIB_DEPENDS=		libserf-1.so:${PORTSDIR}/www/serf
+
+STATIC_CONFIGURE_ON=		--enable-all-static
+
+# ===============================================================
 .include <bsd.port.options.mk>
 
-# Default is "on"
-.if ${PORT_OPTIONS:MNEON}
-LIB_DEPENDS+=	libneon.so:${PORTSDIR}/www/neon29
-PLIST_SUB+=	NEON=""
-.else
-CONFIGURE_ARGS+=--without-neon
-PLIST_SUB+=	NEON="@comment "
+.if ${PORT_OPTIONS:MBOOK} && !${PORT_OPTIONS:MDOCS}
+IGNORE=	SVN book requires OPTION DOCS set to ON
 .endif
 
-.if ${PORT_OPTIONS:MSASL}
-LIB_DEPENDS+=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
-CONFIGURE_ARGS+=--with-sasl=${LOCALBASE}
-PLIST_SUB+=	SASL=""
-.else
-CONFIGURE_ARGS+=--without-sasl
-PLIST_SUB+=	SASL="@comment "
+.if ${PORT_OPTIONS:MMOD_DONTDOTHAT} && !${PORT_OPTIONS:MMOD_DAV_SVN}
+IGNORE=	to build mod_dontdothat OPTION mod_dav_svn is required
 .endif
 
-# Default is "on"
-.if ${PORT_OPTIONS:MBDB}
-USE_BDB=	42+
-PLIST_SUB+=	BDB=""
-.else
-CONFIGURE_ARGS+=--without-berkeley-db
-PLIST_SUB+=	BDB="@comment "
+.if ${PORT_OPTIONS:MKDE_KWALLET} && !${PORT_OPTIONS:MNLS}
+IGNORE= KWallet requires OPTION NLS set to ON
 .endif
 
-.if ${PORT_OPTIONS:MMOD_DONTDOTHAT} && empty(PORT_OPTIONS:MMOD_DAV_SVN)
-IGNORE=	to build mod_dontdothat option mod_dav_svn is required
-.endif
+APR_CONFIG=	${LOCALBASE}/bin/apr-1-config
+APU_CONFIG=	${LOCALBASE}/bin/apu-1-config
 
-.if ${PORT_OPTIONS:MMOD_DAV_SVN}
-USE_APACHE=   22+
-CONFIGURE_ARGS+=--with-apxs=${APXS}
-PLIST_SUB+=	MOD_DAV_SVN=""
-SUB_LIST+=	MOD_DAV_SVN_INSTALL="YES"
-SVNGROUP?=	www
-SVNUSER?=	www
-. if ${PORT_OPTIONS:MMOD_DONTDOTHAT}
-PLIST_SUB+=	MOD_DONTDOTHAT=""
-. else
-PLIST_SUB+=	MOD_DONTDOTHAT="@comment "
-. endif
-.else
-CONFIGURE_ARGS+=--with-apxs=no
-PLIST_SUB+=	MOD_DAV_SVN="@comment "
-PLIST_SUB+=	MOD_DONTDOTHAT="@comment "
-SUB_LIST+=	MOD_DAV_SVN_INSTALL="NO"
-SVNGROUP?=	svn
-SVNUSER?=	svn
-.endif
-
-LIB_DEPENDS+=	libapr-1.so:${PORTSDIR}/devel/apr1
-APR_CONFIG=   ${LOCALBASE}/bin/apr-1-config
-APU_CONFIG=   ${LOCALBASE}/bin/apu-1-config
-
-CONFIGURE_ARGS+=  --with-apr=${APR_CONFIG} --with-apr-util=${APU_CONFIG}
-
-.if ${PORT_OPTIONS:MSVNAUTHZ_VALIDATE}
-APR_INCLUDE_DIR!=	${APR_CONFIG} --includedir
-PLIST_SUB+=     SVNAUTHZ_VALIDATE=""
-.else
-PLIST_SUB+=     SVNAUTHZ_VALIDATE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSERF}
-LIB_DEPENDS+=	libserf-1.so:${PORTSDIR}/www/serf
-CONFIGURE_ARGS+=--with-serf=${LOCALBASE}
-PLIST_SUB+=	SERF=""
-.else
-CONFIGURE_ARGS+=--without-serf
-PLIST_SUB+=	SERF="@comment "
-.endif
-
-.if defined(SVN_BUILD_BINDINGS)
-LIB_DEPENDS+=	libsvn_client-1.so:${PORTSDIR}/devel/subversion17
-.endif
-
-# KWallet requires NLS to be enabled.
-.if ${PORT_OPTIONS:MNLS} || ${PORT_OPTIONS:MKDE_KWALLET}
-USES+=	gettext
-PLIST_SUB+=	WITHOUT_GETTEXT=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	WITHOUT_GETTEXT="@comment "
-.endif
+CONFIGURE_ARGS+=--with-apr=${APR_CONFIG} --with-apr-util=${APU_CONFIG}
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fpic -DPIC
 .endif
 
-.if ${PORT_OPTIONS:MMAINTAINER_DEBUG}
-CONFIGURE_ARGS+=--enable-maintainer-mode --enable-debug
-CFLAGS+=	-g
-.endif
-
 .if ${PORT_OPTIONS:MFREEBSD_TEMPLATE} && defined(ORGANIZATION)
-CFLAGS+= -DHAS_ORGANIZATION_NAME
-.endif
-
-.if ${PORT_OPTIONS:MSTATIC}
-CONFIGURE_ARGS+=--enable-all-static
-PLIST_SUB+=	DYNAMIC_ENABLED="@comment "
-.else
-PLIST_SUB+=	DYNAMIC_ENABLED=""
-.endif
-
-.if ${PORT_OPTIONS:MGNOME_KEYRING}
-LIB_DEPENDS+=	libgcr.so:${PORTSDIR}/security/gnome-keyring
-CONFIGURE_ARGS+=--with-gnome-keyring
-PLIST_SUB+=	GNOME_KEYRING=""
-.else
-CONFIGURE_ARGS+=--without-gnome-keyring
-PLIST_SUB+=	GNOME_KEYRING="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MKDE_KWALLET}
-USE_KDE4=	kdelibs runtime
-CONFIGURE_ARGS+=--with-kwallet=${KDE4_PREFIX}
-PLIST_SUB+=	KDE_KWALLET=""
-.else
-CONFIGURE_ARGS+=--without-kwallet
-PLIST_SUB+=	KDE_KWALLET="@comment "
+CFLAGS+=	-DHAS_ORGANIZATION_NAME
 .endif
 
 .include <bsd.port.pre.mk>
