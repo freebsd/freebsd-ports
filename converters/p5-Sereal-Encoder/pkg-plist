@@ -3,6 +3,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sereal/Encoder/Encoder.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Sereal/Encoder.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Sereal/Encoder/Constants.pm
+%%PERL5_MAN3%%/Sereal::Encoder.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Sereal/Encoder
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sereal
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sereal/Encoder
