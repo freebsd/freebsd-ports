@@ -1,4 +1,11 @@
 etc/rc.d/tinderbox
+man/man1/tc-configCcache.1.gz
+man/man1/tc-configDistfile.1.gz
+man/man1/tc-configGet.1.gz
+man/man1/tc-configJail.1.gz
+man/man1/tc-configTinderd.1.gz
+man/man1/tc-init.1.gz
+tinderbox/scripts/.version
 tinderbox/scripts/README
 tinderbox/scripts/contrib/hooks/compress_wrkdir/README.txt
 tinderbox/scripts/contrib/hooks/compress_wrkdir/compress_wrkdir.sh
@@ -9,8 +16,8 @@ tinderbox/scripts/contrib/hooks/kse-fix/kse-fix.sh
 tinderbox/scripts/contrib/hooks/kse-fix/libmap.conf
 tinderbox/scripts/contrib/hooks/make-jobs-safe/README.txt
 tinderbox/scripts/contrib/hooks/make-jobs-safe/make-jobs-safe.sh
-tinderbox/scripts/contrib/hooks/mass-build-pgsql/mass-build-pgsql.sh
 tinderbox/scripts/contrib/hooks/mass-build-pgsql/README.txt
+tinderbox/scripts/contrib/hooks/mass-build-pgsql/mass-build-pgsql.sh
 tinderbox/scripts/ds.ph.dist
 tinderbox/scripts/etc/env/.keep_me
 tinderbox/scripts/etc/rc.d/tinderd
@@ -61,10 +68,10 @@ tinderbox/scripts/upgrade/builds.map
 tinderbox/scripts/upgrade/config.map
 tinderbox/scripts/upgrade/hooks.map
 tinderbox/scripts/upgrade/jails.map
-tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.3_to_4.0.0.sql
 tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.3_to_4.0.0.sql
-tinderbox/scripts/upgrade/user_permissions.map
+tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.3_to_4.0.0.sql
 tinderbox/scripts/upgrade/order.lst
+tinderbox/scripts/upgrade/user_permissions.map
 %%WEBUI%%tinderbox/scripts/webui/core/Build.php
 %%WEBUI%%tinderbox/scripts/webui/core/BuildGroups.php
 %%WEBUI%%tinderbox/scripts/webui/core/BuildPortsQueue.php
@@ -158,7 +165,7 @@ tinderbox/scripts/upgrade/order.lst
 @dirrm tinderbox/scripts/contrib/hooks/kse-fix
 @dirrm tinderbox/scripts/contrib/hooks/create-pkgng-repo
 @dirrm tinderbox/scripts/contrib/hooks/compress_wrkdir
-@dirrm tinderbox/scripts/contrib/hooks
-@dirrm tinderbox/scripts/contrib
-@dirrm tinderbox/scripts
+@dirrmtry tinderbox/scripts/contrib/hooks
+@dirrmtry tinderbox/scripts/contrib
+@dirrmtry tinderbox/scripts
 @dirrmtry tinderbox
