@@ -13,8 +13,6 @@ DISTFILES=		estic-1.60-sources.zip estic-1.61-patch-from-1.60.zip
 MAINTAINER=		dinoex@FreeBSD.org
 COMMENT=		Controller for ISDN TK-Anlage (PBX) made by Istec
 
-NO_STAGE=	yes
-
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 
@@ -32,11 +30,11 @@ PLIST_SUB+=	WITH_X=""
 AUTHOR=		"Ullrich von Bassewitz" <uz@ibb.schwaben.com>
 
 # Personal Preferences, Where to install.
-PBX_VAR=${PREFIX}/var/log/pbx
-PBX_ETC=${PREFIX}/etc/pbx
-PBX_MAN=${MANPREFIX}/man/man1
-PBX_BIN=${PREFIX}/bin
-PBX_DOC=${DOCSDIR}
+PBX_VAR=${STAGEDIR}${PREFIX}/var/log/pbx
+PBX_ETC=${STAGEDIR}${PREFIX}/etc/pbx
+PBX_MAN=${STAGEDIR}${MANPREFIX}/man/man1
+PBX_BIN=${STAGEDIR}${PREFIX}/bin
+PBX_DOC=${STAGEDIR}${DOCSDIR}
 ESTIC=${WRKSRC}/estic
 AREACODE_DATAFILE=${PREFIX}/etc/pbx/areacodes
 
@@ -70,10 +68,10 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@# estic doc says estic.res must be in bin path or current directory
 	@${MKDIR} ${PBX_DOC}
-	${INSTALL_MAN} ${ESTIC}/estic.doc ${PBX_DOC}
+	${INSTALL_MAN} ${ESTIC}/estic.doc ${PBX_DOC}/
 	@# estic.doc is not nroff format, & is in German, volunteers to create
 	@# _and maintain_ nroff formatted English should contact ${AUTHOR}
-	${INSTALL_MAN} ${FILESDIR}/README ${PBX_DOC}
+	${INSTALL_MAN} ${FILESDIR}/README ${PBX_DOC}/
 .endif
 	@# ${FILESDIR}/README is not in nroff, but is a temporary document.
 	@${MKDIR} ${PBX_ETC} ${PBX_VAR}

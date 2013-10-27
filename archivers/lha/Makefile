@@ -11,11 +11,14 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Archive files using LZSS and Huffman compression (.lzh files)
 
-CONFLICTS=	lha-ac-1*
-NO_STAGE=	yes
-
-MAN1=		lha.1
 MANLANG=	ja
+MAN1=		lha.1
 PLIST_FILES=	bin/lha
+PLIST_FILES+=	${__MANPAGES}
+
+do-install:
+	-${MKDIR} ${STAGEDIR}${PREFIX}/man/ja/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/src/lha ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/man/lha.n ${STAGEDIR}${PREFIX}/man/ja/man1/lha.1
 
 .include <bsd.port.mk>

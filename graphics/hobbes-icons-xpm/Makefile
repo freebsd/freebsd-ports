@@ -11,26 +11,25 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Collection of over 3000 icons in XPM3 format
 
-NO_STAGE=	yes
 NO_BUILD=	yes
+NEED_ROOT=	yes
 
-# Where it will be installed (change pkg/PLIST if you change this)
-LIBDIR=		${PREFIX}/include/X11/pixmaps
+LIBDIR=		${STAGEDIR}${PREFIX}/include/X11/pixmaps
 
 .include <bsd.port.options.mk>
 
 do-install:
 	${MKDIR} ${LIBDIR}
-	${CP} -R ${WRKSRC}/* ${LIBDIR}
+	${CP} -R ${WRKSRC}/* ${LIBDIR}/
 	${CHOWN} -R ${BINOWN}:${BINGRP} ${LIBDIR}
 	-${RM} ${LIBDIR}/README
 	-${RM} ${LIBDIR}/readem.shar
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
-	${INSTALL_SCRIPT} ${WRKSRC}/*.shar ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/*.shar ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>

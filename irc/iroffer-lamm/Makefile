@@ -14,28 +14,29 @@ COMMENT=	An IRC "bot" that makes sharing files via DCC extremely easy
 LICENSE=	GPLv2
 
 CONFLICTS=	iroffer-1.* iroffer-dinoex-3.*
-NO_STAGE=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e 's|cctype="gcc"|cctype="${CC}"|' \
 		${WRKSRC}/Configure
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/convertxdccfile ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/iroffer ${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/WHATSNEW ${DOCSDIR}/
+	${INSTALL_PROGRAM} ${WRKSRC}/convertxdccfile ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/iroffer ${STAGEDIR}${PREFIX}/bin/
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/WHATSNEW ${STAGEDIR}${DOCSDIR}/
 .endif
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/dynip.sh ${EXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKSRC}/iroffer.cron ${EXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKSRC}/sample.config ${EXAMPLESDIR}/
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/dynip.sh ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/iroffer.cron ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/sample.config ${STAGEDIR}${EXAMPLESDIR}/
 .endif
 	@${CAT} ${PKGMESSAGE}
 

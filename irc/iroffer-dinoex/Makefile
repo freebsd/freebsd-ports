@@ -14,15 +14,15 @@ COMMENT=	An IRC "bot" that makes sharing files via DCC extremely easy
 LICENSE=	GPLv2
 
 CONFLICTS=	iroffer-1* iroffer-lamm-1.*
-NO_STAGE=	yes
 
+USES=		manpages:install
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
-MAN1=		iroffer.1
-MAN7=		xdcc.7
 CONFIGURE_ARGS=	CC="${CC}" LDFLAGS="${LDFLAGS}" LOCALBASE="${LOCALBASE}"
 ALL_TARGET=	all-lang doc
 USE_RC_SUBR=	iroffer-dinoex
+MAN1=		iroffer.1
+MAN7=		xdcc.7
 
 IROFFER_DOCS=	README README.modDinoex LIESMICH.modDinoex \
 		LICENSE THANKS TODO \
@@ -61,32 +61,31 @@ CONFIGURE_ARGS+=	-upnp
 .endif
 .if ${PORT_OPTIONS:MRUBY}
 USE_RUBY=	yes
+USE_LIBRUBY=	yes
 CONFIGURE_ARGS+=	-ruby
 .include "${PORTSDIR}/Mk/bsd.ruby.mk"
 .endif
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/iroffer ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/iroffer-de ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/iroffer-it ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/iroffer-fr ${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+do-install:	install-all-manpages
+	${INSTALL_PROGRAM} ${WRKSRC}/iroffer ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/iroffer-de ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/iroffer-it ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/iroffer-fr ${STAGEDIR}${PREFIX}/bin/
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${IROFFER_DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
 .endif
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}/htdocs
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/htdocs
 .for i in ${IROFFER_HTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/htdocs/${i} ${EXAMPLESDIR}/htdocs/
+	${INSTALL_DATA} ${WRKSRC}/htdocs/${i} ${STAGEDIR}${EXAMPLESDIR}/htdocs/
 .endfor
 .for i in ${IROFFER_EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${EXAMPLESDIR}/
 .endfor
 .endif
-	${INSTALL_MAN} ${WRKSRC}/iroffer.1 ${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/xdcc.7 ${PREFIX}/man/man7/
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

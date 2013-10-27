@@ -10,8 +10,6 @@ DISTNAME=	rays-filter-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A configurable filter for Sendmail Milter
 
-NO_STAGE=	yes
-
 CTARGETS+=	rays-filter
 CFLAGS+=	-Wall ${PTHREAD_CFLAGS:S=""==}
 LIBS+=		${PTHREAD_LIBS}
@@ -46,20 +44,20 @@ do-build:	${CTARGETS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rays-filter \
-		${PREFIX}/libexec/rays-filter
+		${STAGEDIR}${PREFIX}/libexec/rays-filter
 	${INSTALL_SCRIPT} ${WRKSRC}/mail-filter \
-		${PREFIX}/etc/rc.d/raysfilter.sh.sample
+		${STAGEDIR}${PREFIX}/etc/rc.d/raysfilter.sh.sample
 .for i in ${BINFILES}
-	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin/
 .endfor
-	${MKDIR} ${PREFIX}/etc/mail-filter
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/mail-filter
 .for i in ${ETCFILES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/etc/mail-filter/${i}-dist
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/etc/mail-filter/${i}-dist
 .endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${DOCSFILES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
 .endif
 

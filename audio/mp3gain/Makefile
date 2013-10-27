@@ -12,7 +12,7 @@ COMMENT=	A tool to normalize the gain of MP3 files
 
 LICENSE=	LGPL21
 
-NO_STAGE=	yes
+NEED_ROOT=	yes
 
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
