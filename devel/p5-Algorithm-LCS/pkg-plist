@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Algorithm::LCS.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Algorithm/LCS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/LCS/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/LCS/LCS.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/LCS/LCS.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/LCS
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/LCS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Algorithm

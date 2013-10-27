@@ -24,26 +24,4 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS+=</dev/null
 
-MAN1=	aiprolog.1
-MAN3=	AI::Prolog.3 \
-	AI::Prolog::Article.3 \
-	AI::Prolog::Builtins.3 \
-	AI::Prolog::ChoicePoint.3 \
-	AI::Prolog::Cookbook.3 \
-	AI::Prolog::Engine.3 \
-	AI::Prolog::Engine::Primitives.3 \
-	AI::Prolog::Introduction.3 \
-	AI::Prolog::KnowledgeBase.3 \
-	AI::Prolog::Parser.3 \
-	AI::Prolog::Parser::PreProcessor.3 \
-	AI::Prolog::Parser::PreProcessor::Math.3 \
-	AI::Prolog::Term.3 \
-	AI::Prolog::Term::Cut.3 \
-	AI::Prolog::Term::Number.3 \
-	AI::Prolog::TermList.3 \
-	AI::Prolog::TermList::Clause.3 \
-	AI::Prolog::TermList::Primitive.3 \
-	AI::Prolog::TermList::Step.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

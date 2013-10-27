@@ -16,8 +16,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Agent.3 Agent::Transport::TCP.3 \
-		Agent::Transport.3 Agent::Message.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

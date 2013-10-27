@@ -1,23 +1,46 @@
 bin/aiprolog
-%%SITE_PERL%%/AI/Prolog/Introduction.pod
+%%PERL5_MAN3%%/AI::Prolog.3.gz
+%%PERL5_MAN3%%/AI::Prolog::Article.3.gz
+%%PERL5_MAN3%%/AI::Prolog::Builtins.3.gz
+%%PERL5_MAN3%%/AI::Prolog::ChoicePoint.3.gz
+%%PERL5_MAN3%%/AI::Prolog::Cookbook.3.gz
+%%PERL5_MAN3%%/AI::Prolog::Engine.3.gz
+%%PERL5_MAN3%%/AI::Prolog::Engine::Primitives.3.gz
+%%PERL5_MAN3%%/AI::Prolog::Introduction.3.gz
+%%PERL5_MAN3%%/AI::Prolog::KnowledgeBase.3.gz
+%%PERL5_MAN3%%/AI::Prolog::Parser.3.gz
+%%PERL5_MAN3%%/AI::Prolog::Parser::PreProcessor.3.gz
+%%PERL5_MAN3%%/AI::Prolog::Parser::PreProcessor::Math.3.gz
+%%PERL5_MAN3%%/AI::Prolog::Term.3.gz
+%%PERL5_MAN3%%/AI::Prolog::Term::Cut.3.gz
+%%PERL5_MAN3%%/AI::Prolog::Term::Number.3.gz
+%%PERL5_MAN3%%/AI::Prolog::TermList.3.gz
+%%PERL5_MAN3%%/AI::Prolog::TermList::Clause.3.gz
+%%PERL5_MAN3%%/AI::Prolog::TermList::Primitive.3.gz
+%%PERL5_MAN3%%/AI::Prolog::TermList::Step.3.gz
+%%SITE_PERL%%/AI/Prolog.pm
 %%SITE_PERL%%/AI/Prolog/Article.pod
-%%SITE_PERL%%/AI/Prolog/TermList.pm
-%%SITE_PERL%%/AI/Prolog/Parser.pm
 %%SITE_PERL%%/AI/Prolog/Builtins.pod
 %%SITE_PERL%%/AI/Prolog/ChoicePoint.pm
 %%SITE_PERL%%/AI/Prolog/Cookbook.pod
-%%SITE_PERL%%/AI/Prolog/Term.pm
 %%SITE_PERL%%/AI/Prolog/Engine.pm
+%%SITE_PERL%%/AI/Prolog/Engine/Primitives.pm
+%%SITE_PERL%%/AI/Prolog/Introduction.pod
 %%SITE_PERL%%/AI/Prolog/KnowledgeBase.pm
+%%SITE_PERL%%/AI/Prolog/Parser.pm
 %%SITE_PERL%%/AI/Prolog/Parser/PreProcessor.pm
 %%SITE_PERL%%/AI/Prolog/Parser/PreProcessor/Math.pm
-%%SITE_PERL%%/AI/Prolog/TermList/Primitive.pm
-%%SITE_PERL%%/AI/Prolog/TermList/Clause.pm
-%%SITE_PERL%%/AI/Prolog/TermList/Step.pm
-%%SITE_PERL%%/AI/Prolog/Engine/Primitives.pm
+%%SITE_PERL%%/AI/Prolog/Term.pm
 %%SITE_PERL%%/AI/Prolog/Term/Cut.pm
 %%SITE_PERL%%/AI/Prolog/Term/Number.pm
-%%SITE_PERL%%/AI/Prolog.pm
+%%SITE_PERL%%/AI/Prolog/TermList.pm
+%%SITE_PERL%%/AI/Prolog/TermList/Clause.pm
+%%SITE_PERL%%/AI/Prolog/TermList/Primitive.pm
+%%SITE_PERL%%/AI/Prolog/TermList/Step.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/Prolog/.packlist
+man/man1/aiprolog.1.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/Prolog
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI
 @dirrm %%SITE_PERL%%/AI/Prolog/TermList
 @dirrm %%SITE_PERL%%/AI/Prolog/Term
 @dirrm %%SITE_PERL%%/AI/Prolog/Parser/PreProcessor
@@ -25,6 +48,3 @@ bin/aiprolog
 @dirrm %%SITE_PERL%%/AI/Prolog/Engine
 @dirrm %%SITE_PERL%%/AI/Prolog
 @dirrmtry %%SITE_PERL%%/AI
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/Prolog/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/Prolog
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI
