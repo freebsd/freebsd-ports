@@ -3,7 +3,7 @@
 
 PORTNAME=	lastfm
 PORTVERSION=	2.1.30
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://cdn.last.fm/client/Linux/
 PKGNAMESUFFIX=	-desktop
@@ -14,9 +14,9 @@ COMMENT=	Official Last.fm desktop application suite
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	lastfm:${PORTSDIR}/audio/liblastfm \
-		avcodec1:${PORTSDIR}/multimedia/ffmpeg1 \
-		gpod:${PORTSDIR}/audio/libgpod
+LIB_DEPENDS=	liblastfm.so:${PORTSDIR}/audio/liblastfm \
+		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
+		libgpod.so:${PORTSDIR}/audio/libgpod
 
 USES=		pkgconfig
 NO_STAGE=	yes
