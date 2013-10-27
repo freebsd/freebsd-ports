@@ -22,19 +22,19 @@ OPTIONS_MULTI_DB=	PGSQL MYSQL SQLITE
 OPTIONS_RADIO=		WEB
 OPTIONS_RADIO_WEB=	APACHE HIAWATHA LIGHTTPD NGINX
 
-OPTIONS_DEFINE=		CHECK_FOR_ROOT EMAILS LSOF LOG_COMPRESS PARALLEL \
-			TMPFS
+OPTIONS_DEFINE=		CHECK_ROOT EMAILS LSOF LOG_COMPRESS \
+			PARALLEL TMPFS
 
-CHECK_FOR_ROOT_DESC=	Check if ./tc is run by uid 0
+CHECK_ROOT_DESC=	Check if ./tc is run by uid 0
 EMAILS_DESC=		Support for build failure/completion emails
 LSOF_DESC=		For killMountProcesses() when using nullfs
-LOG_COMPRESS_DESC=	Support bzip'ing the logs
+LOG_COMPRESS_DESC=	Support bzip log compression
 PARALLEL_DESC=		Apply PARALLEL extra patch
 TMPFS_DESC=		Apply TMPFS extra patch
 HIAWATHA_DESC=		Hiawatha server
 NGINX_DESC=		Nginx server
 
-OPTIONS_DEFAULT=	MYSQL APACHE CHECK_FOR_ROOT EMAILS LSOF \
+OPTIONS_DEFAULT=	MYSQL APACHE CHECK_ROOT EMAILS LSOF \
 			LOG_COMPRESS PARALLEL
 
 NO_BUILD=	yes
@@ -44,10 +44,6 @@ SUB_FILES=	pkg-message
 #SNAP=		.r3-20120404
 #SNAP=		-20110101 # 22:28:07 UTC
 
-MAN1=		tc-configCcache.1 tc-configDistfile.1 tc-configGet.1 \
-		tc-configJail.1 tc-configTinderd.1 tc-init.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPACHE} || ${PORT_OPTIONS:MHIAWATHA} || ${PORT_OPTIONS:MLIGHTTPD} || ${PORT_OPTIONS:MNGINX}
@@ -115,30 +111,18 @@ EXTRA_PATCHES+=		${FILESDIR}/extra-tmpfs.patch
 EXTRA_PATCHES+=		${FILESDIR}/extra-parallel.patch
 .endif
 
-.if ! defined(WEBUI)
-post-extract:
-	@${RM} -R ${WRKSRC}/webui
-.endif
-
 post-patch:
-.if ! ${PORT_OPTIONS:MCHECK_FOR_ROOT}
+.if ! ${PORT_OPTIONS:MCHECK_ROOT}
 	${REINPLACE_CMD} -e 's/^if \[ `id -u` != 0 \]; then/if false; then/' \
 		${WRKSRC}/tc
 .endif
-	@cd ${WRKSRC} && ${FIND} -E . -regex '.*(orig|bak)' -exec ${RM} {} \;
 
 do-install:
-	@${MKDIR} ${PREFIX}/tinderbox/scripts
-	@${ECHO_CMD} "Installing man pages ..."
-	cd ${WRKSRC}/man/man1 && ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1 && \
-		cd ${WRKSRC} && ${RM} -r ${WRKSRC}/man
-	@${ECHO_CMD} "Installing rc script ..."
-	${INSTALL_SCRIPT} ${WRKSRC}/etc/rc.d/tinderd ${PREFIX}/etc/rc.d/${PORTNAME}
-	@${ECHO_CMD} "Installing tinderbox ..."
-	${CP} -R ${WRKSRC}/* ${PREFIX}/tinderbox/scripts
-	@${ECHO_CMD} "All Done"
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/tinderbox/scripts
+	${TAR} -C ${WRKSRC} --exclude man --exclude '*.orig' --exclude '*.bak' -cf - . \
+		| tar -xf - --unlink -C ${STAGEDIR}${PREFIX}/tinderbox/scripts
+	${TAR} -C ${WRKSRC}/man/man1 --exclude '*.orig' --exclude '*.bak' -cf - . \
+		| tar -xf - --unlink -C ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/etc/rc.d/tinderd ${STAGEDIR}${PREFIX}/etc/rc.d/${PORTNAME}
 
 .include <bsd.port.mk>
