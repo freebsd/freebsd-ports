@@ -10,6 +10,7 @@
 %%SITE_PERL%%/DBIx/Class/DeploymentHandler/HandlesVersionStorage.pm
 %%SITE_PERL%%/DBIx/Class/DeploymentHandler/HandlesVersioning.pm
 %%SITE_PERL%%/DBIx/Class/DeploymentHandler/LogImporter.pm
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/LogRouter.pm
 %%SITE_PERL%%/DBIx/Class/DeploymentHandler/Logger.pm
 %%SITE_PERL%%/DBIx/Class/DeploymentHandler/Manual/CatalystIntro.pod
 %%SITE_PERL%%/DBIx/Class/DeploymentHandler/Manual/Intro.pod
@@ -27,6 +28,35 @@
 %%SITE_PERL%%/DBIx/Class/DeploymentHandler/VersionStorage/Standard/VersionResultSet.pm
 %%SITE_PERL%%/DBIx/Class/DeploymentHandler/WithApplicatorDumple.pm
 %%SITE_PERL%%/DBIx/Class/DeploymentHandler/WithReasonableDefaults.pm
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::Cookbook::CustomResultSource.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::Dad.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::DeployMethod::SQL::Translator.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::DeployMethod::SQL::Translator::Deprecated.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::DeployMethod::SQL::Translator::ScriptHelpers.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::Deprecated.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::HandlesDeploy.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::HandlesVersionStorage.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::HandlesVersioning.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::LogImporter.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::Logger.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::LogRouter.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::Manual::CatalystIntro.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::Manual::Intro.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::Types.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::VersionHandler::DatabaseToSchemaVersions.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::VersionHandler::ExplicitVersions.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::VersionHandler::Monotonic.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::VersionStorage::Deprecated.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::VersionStorage::Deprecated::Component.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::VersionStorage::Deprecated::VersionResult.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::VersionStorage::Deprecated::VersionResultSet.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::VersionStorage::Standard.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::VersionStorage::Standard::Component.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::VersionStorage::Standard::VersionResult.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::VersionStorage::Standard::VersionResultSet.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::WithApplicatorDumple.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DeploymentHandler::WithReasonableDefaults.3.gz
 @dirrm %%SITE_PERL%%/DBIx/Class/DeploymentHandler/VersionStorage/Standard
 @dirrm %%SITE_PERL%%/DBIx/Class/DeploymentHandler/VersionStorage/Deprecated
 @dirrm %%SITE_PERL%%/DBIx/Class/DeploymentHandler/VersionStorage
