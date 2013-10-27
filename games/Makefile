@@ -42,6 +42,7 @@
     SUBDIR += aop
     SUBDIR += apoolGL
     SUBDIR += apricots
+    SUBDIR += arkanoidsb
     SUBDIR += armagetron
     SUBDIR += arx-libertatis
     SUBDIR += asc
