@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Term-ReadKey
-PORTVERSION=	2.30
+PORTVERSION=	2.31
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,4 @@ COMMENT=	A perl5 module for simple terminal control
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Term::ReadKey.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
