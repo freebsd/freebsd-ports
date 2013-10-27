@@ -51,6 +51,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cd082cc6-1548-4b8d-a3aa-a007be611a29">
+    <topic>WordPress -- Cross-site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>de-wordpress</name>
+	<name>ja-wordpress</name>
+	<name>ru-wordpress</name>
+	<name>wordpress</name>
+	<name>zh-wordpress-zh_CN</name>
+	<name>zh-wordpress-zh_TW</name>
+	<range><lt>3.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>iBliss Security Advisory:</p>
+	<blockquote cite="http://archives.neohapsis.com/archives/bugtraq/2013-09/0055.html">
+	  <p>The walkthrouth web page does not validate the step parameter leading to 
+	     a Cross-site scripting flaw. An no authenticated user is required to 
+	     exploit these security flaws.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-5711</cvename>
+      <url>http://wordpress.org/plugins/design-approval-system/other_notes/</url>
+    </references>
+    <dates>
+      <discovery>2013-09-09</discovery>
+      <entry>2013-10-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9065b930-3d8b-11e3-bd1a-e840f2096bd0">
     <topic>gnutls -- denial of service</topic>
     <affects>
