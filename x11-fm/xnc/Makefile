@@ -8,7 +8,7 @@ CATEGORIES=	x11-fm
 MASTER_SITES=	# http://www.xnc.dubna.su/src-5/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File manager for X11 similar to Norton Commander
 
 LICENSE=	GPLv2
