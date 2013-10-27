@@ -33,7 +33,7 @@ Gnome_Pre_Include=			bsd.gnome.mk
 
 # Ports can use this as follows:
 #
-# USE_GNOME=	gnomeprint bonobo
+# USE_GNOME=	glib20 introspection:build
 #
 # .include <bsd.port.mk>
 #
@@ -73,9 +73,9 @@ _USE_GNOME_ALL= esound intlhack intltool introspection ltasneededhack lthack \
 		gnomeprefix
 
 # GNOME 1 components
-_USE_GNOME_ALL+= bonobo gconf gdkpixbuf glib12 \
-		gnomecanvas gnomedb gnomelibs gnomeprint gtk12 \
-		libgda libghttp libglade libxml imlib oaf orbit
+_USE_GNOME_ALL+= gdkpixbuf glib12 \
+		gnomelibs gtk12 \
+		libxml imlib orbit
 
 # GNOME 2 components
 _USE_GNOME_ALL+= atk atspi cairo desktopfileutils eel2 evolutiondataserver gal2 \
@@ -96,7 +96,7 @@ _USE_GNOME_ALL+= dconf gtk30 gtksourceview3 libgda5 libgda5-ui pygobject3
 # C++ bindings
 _USE_GNOME_ALL+=atkmm cairomm gconfmm gconfmm26 glibmm gtkmm20 gtkmm24 \
 		gtkmm30 gtksourceviewmm3 libgdamm libgdamm5 \
-		libgtksourceviewmm libxml++ libxml++26 libsigc++12 libsigc++20 \
+		libgtksourceviewmm libxml++26 libsigc++12 libsigc++20 \
 		pangomm
 
 GNOME_MAKEFILEIN?=	Makefile.in
@@ -139,10 +139,6 @@ gnomeprefix_USE_GNOME_IMPL=gnomehier
 atkmm_DETECT=		${LOCALBASE}/libdata/pkgconfig/atkmm-1.6.pc
 atkmm_LIB_DEPENDS=	atkmm-1.6:${PORTSDIR}/accessibility/atkmm
 atkmm_USE_GNOME_IMPL=	glibmm atk
-
-libxml++_DETECT=		${LOCALBASE}/libdata/pkgconfig/libxml++-1.0.pc
-libxml++_LIB_DEPENDS=		xml++-1.0:${PORTSDIR}/textproc/libxml++
-libxml++_USE_GNOME_IMPL=	libxml2
 
 libxml++26_DETECT=		${LOCALBASE}/libdata/pkgconfig/libxml++-2.6.pc
 libxml++26_LIB_DEPENDS=		xml++-2.6:${PORTSDIR}/textproc/libxml++26
@@ -211,9 +207,6 @@ esound_CONFIGURE_ENV=	ESD_CONFIG="${ESD_CONFIG}"
 esound_MAKE_ENV=	ESD_CONFIG="${ESD_CONFIG}"
 esound_DETECT=		${ESD_CONFIG}
 
-libghttp_LIB_DEPENDS=	ghttp.1:${PORTSDIR}/www/libghttp
-libghttp_DETECT=	${LOCALBASE}/etc/ghttpConf.sh
-
 GLIB_CONFIG?=		${LOCALBASE}/bin/glib12-config
 glib12_LIB_DEPENDS=	glib-12.3:${PORTSDIR}/devel/glib12
 glib12_CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}"
@@ -262,57 +255,10 @@ gnomelibs_MAKE_ENV=	GNOME_CONFIG="${GNOME_CONFIG}"
 gnomelibs_DETECT=	${GNOME_CONFIG}
 gnomelibs_USE_GNOME_IMPL=esound gtk12 imlib libxml orbit
 
-gnomecanvas_LIB_DEPENDS=gnomecanvaspixbuf.1:${PORTSDIR}/graphics/gnomecanvas
-gnomecanvas_DETECT=	${LOCALBASE}/etc/gnomecanvaspixbufConf.sh
-gnomecanvas_USE_GNOME_IMPL=gnomelibs gdkpixbuf
-
-OAF_CONFIG?=		${LOCALBASE}/bin/oaf-config
-oaf_LIB_DEPENDS=	oaf.0:${PORTSDIR}/devel/oaf
-oaf_CONFIGURE_ENV=	OAF_CONFIG="${OAF_CONFIG}"
-oaf_MAKE_ENV=		OAF_CONFIG="${OAF_CONFIG}"
-oaf_DETECT=		${OAF_CONFIG}
-oaf_USE_GNOME_IMPL=	glib12 orbit libxml
-
 gnomemimedata_DETECT=	${LOCALBASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc
 gnomemimedata_BUILD_DEPENDS=${gnomemimedata_DETECT}:${PORTSDIR}/misc/gnome-mime-data
 gnomemimedata_RUN_DEPENDS=${gnomemimedata_DETECT}:${PORTSDIR}/misc/gnome-mime-data
 gnomemimedata_USE_GNOME_IMPL=gnomehier
-
-GCONF_CONFIG?=		${LOCALBASE}/bin/gconf-config
-gconf_LIB_DEPENDS=	gconf-1.1:${PORTSDIR}/devel/gconf
-gconf_CONFIGURE_ENV=	GCONF_CONFIG="${GCONF_CONFIG}"
-gconf_MAKE_ENV=		GCONF_CONFIG="${GCONF_CONFIG}"
-gconf_DETECT=		${GCONF_CONFIG}
-gconf_USE_GNOME_IMPL=	oaf
-
-gnomeprint_LIB_DEPENDS=	gnomeprint.16:${PORTSDIR}/print/gnome-print
-gnomeprint_DETECT=	${LOCALBASE}/etc/printConf.sh
-gnomeprint_USE_GNOME_IMPL=gnomelibs gnomecanvas
-
-bonobo_LIB_DEPENDS=	bonobo.2:${PORTSDIR}/devel/bonobo
-bonobo_DETECT=		${LOCALBASE}/etc/bonoboConf.sh
-bonobo_USE_GNOME_IMPL=	oaf gnomeprint
-
-GDA_CONFIG?=		${LOCALBASE}/bin/gda-config
-libgda_LIB_DEPENDS=	gda-client.0:${PORTSDIR}/databases/libgda
-libgda_CONFIGURE_ENV=	GDA_CONFIG="${GDA_CONFIG}"
-libgda_MAKE_ENV=	GDA_CONFIG="${GDA_CONFIG}"
-libgda_DETECT=		${GDA_CONFIG}
-libgda_USE_GNOME_IMPL=	gconf bonobo
-
-GNOMEDB_CONFIG?=	${LOCALBASE}/bin/gnomedb-config
-gnomedb_LIB_DEPENDS=	gnomedb.0:${PORTSDIR}/databases/gnome-db
-gnomedb_CONFIGURE_ENV=	GNOMEDB_CONFIG="${GNOMEDB_CONFIG}"
-gnomedb_MAKE_ENV=	GNOMEDB_CONFIG="${GNOMEDB_CONFIG}"
-gnomedb_DETECT=		${GNOMEDB_CONFIG}
-gnomedb_USE_GNOME_IMPL=	libgda
-
-LIBGLADE_CONFIG?=	${LOCALBASE}/bin/libglade-config
-libglade_LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade
-libglade_CONFIGURE_ENV=	LIBGLADE_CONFIG="${LIBGLADE_CONFIG}"
-libglade_MAKE_ENV=	LIBGLADE_CONFIG="${LIBGLADE_CONFIG}"
-libglade_DETECT=	${LIBGLADE_CONFIG}
-libglade_USE_GNOME_IMPL=gnomedb
 
 glib20_LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20 \
 			pcre:${PORTSDIR}/devel/pcre
