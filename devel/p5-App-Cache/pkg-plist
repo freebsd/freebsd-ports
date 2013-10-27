@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Cache/.packlist
+%%PERL5_MAN3%%/App::Cache.3.gz
 %%SITE_PERL%%/App/Cache.pm
-@dirrmtry %%SITE_PERL%%/App
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Cache
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Cache/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Cache
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
+@dirrmtry %%SITE_PERL%%/App

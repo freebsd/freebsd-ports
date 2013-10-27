@@ -12,7 +12,5 @@ COMMENT=	Perl Compiler backend to diagram OP trees
 
 USES=		perl5
 USE_PERL5=	configure
-MAN3=		B::Graph.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

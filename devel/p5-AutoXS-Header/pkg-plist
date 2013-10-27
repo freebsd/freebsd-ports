@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/AutoXS/Header/.packlist
+%%PERL5_MAN3%%/AutoXS::Header.3.gz
 %%SITE_PERL%%/AutoXS/Header.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AutoXS/Header
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/AutoXS/Header/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AutoXS/Header
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AutoXS
 @dirrmtry %%SITE_PERL%%/AutoXS

@@ -1,6 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/App-Options/.packlist
-%%SITE_PERL%%/App/Options.pm
 bin/prefix
 bin/prefixadmin
+%%PERL5_MAN3%%/App::Options.3.gz
+%%SITE_PERL%%/App/Options.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/App-Options/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App-Options
 @dirrmtry %%SITE_PERL%%/App
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App-Options

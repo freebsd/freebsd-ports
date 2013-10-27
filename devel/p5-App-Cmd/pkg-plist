@@ -1,3 +1,16 @@
+%%PERL5_MAN3%%/App::Cmd.3.gz
+%%PERL5_MAN3%%/App::Cmd::ArgProcessor.3.gz
+%%PERL5_MAN3%%/App::Cmd::Command.3.gz
+%%PERL5_MAN3%%/App::Cmd::Command::commands.3.gz
+%%PERL5_MAN3%%/App::Cmd::Command::help.3.gz
+%%PERL5_MAN3%%/App::Cmd::Plugin.3.gz
+%%PERL5_MAN3%%/App::Cmd::Setup.3.gz
+%%PERL5_MAN3%%/App::Cmd::Simple.3.gz
+%%PERL5_MAN3%%/App::Cmd::Subdispatch.3.gz
+%%PERL5_MAN3%%/App::Cmd::Subdispatch::DashedStyle.3.gz
+%%PERL5_MAN3%%/App::Cmd::Tester.3.gz
+%%PERL5_MAN3%%/App::Cmd::Tester::CaptureExternal.3.gz
+%%PERL5_MAN3%%/App::Cmd::Tutorial.3.gz
 %%SITE_PERL%%/App/Cmd.pm
 %%SITE_PERL%%/App/Cmd/ArgProcessor.pm
 %%SITE_PERL%%/App/Cmd/Command.pm
