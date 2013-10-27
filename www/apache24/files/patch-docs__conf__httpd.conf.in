@@ -1,5 +1,5 @@
 --- ./docs/conf/httpd.conf.in.orig	2012-11-08 04:05:38.000000000 +0100
-+++ ./docs/conf/httpd.conf.in	2013-03-22 18:55:53.000000000 +0100
++++ ./docs/conf/httpd.conf.in	2013-10-26 19:29:20.000000000 +0200
 @@ -74,8 +74,8 @@
  # It is usually good practice to create a dedicated user and group for
  # running httpd, as with most system services.
@@ -36,14 +36,9 @@
  </IfModule>
  
  <IfModule alias_module>
-@@ -406,7 +406,9 @@
- SSLRandomSeed startup builtin
- SSLRandomSeed connect builtin
- </IfModule>
--#
-+
+@@ -418,3 +418,5 @@
+ #RequestHeader unset DNT env=bad_DNT
+ #</IfModule>
+ 
 +Include @rel_sysconfdir@/Includes/*.conf
 +
- # uncomment out the below to deal with user agents that deliberately
- # violate open standards by misusing DNT (DNT *must* be a specific
- # end-user choice)

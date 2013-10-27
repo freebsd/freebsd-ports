@@ -1,8 +1,10 @@
 @comment $FreeBSD$
-@comment keep the next three lines on top
-@exec mkdir -p %D/%%ETCDIR%%/envvars.d 2> /dev/null || true
-@exec mkdir -p %D/%%ETCDIR%%/extra 2> /dev/null || true
-@exec mkdir -p %D/%%ETCDIR%%/Includes 2> /dev/null || true
+bin/ab
+bin/htdbm
+bin/htdigest
+bin/htpasswd
+bin/httxt2dbm
+bin/logresolve
 %%ETCDIR%%/Includes/no-accf.conf
 include/apache24/ap_compat.h
 include/apache24/ap_config.h
@@ -188,17 +190,25 @@ libexec/apache24/mod_unixd.so
 %%MOD_VHOST_ALIAS%%libexec/apache24/mod_vhost_alias.so
 %%MOD_WATCHDOG%%libexec/apache24/mod_watchdog.so
 %%MOD_XML2ENC%%libexec/apache24/mod_xml2enc.so
-bin/ab
-sbin/apxs
-sbin/dbmmanage
-bin/htdbm
-bin/htdigest
-bin/htpasswd
-bin/httxt2dbm
-bin/logresolve
+man/man1/ab.1.gz
+man/man1/apxs.1.gz
+man/man1/dbmmanage.1.gz
+man/man1/htdbm.1.gz
+man/man1/htdigest.1.gz
+man/man1/htpasswd.1.gz
+man/man1/httxt2dbm.1.gz
+man/man1/logresolve.1.gz
+man/man8/apachectl.8.gz
+man/man8/fcgistarter.8.gz
+man/man8/htcacheclean.8.gz
+man/man8/httpd.8.gz
+man/man8/rotatelogs.8.gz
+man/man8/suexec.8.gz
 sbin/apachectl
-sbin/checkgid
+sbin/apxs
 %%FORENSIC%%sbin/check_forensic
+sbin/checkgid
+sbin/dbmmanage
 sbin/envvars
 sbin/fcgistarter
 sbin/htcacheclean
@@ -265,9 +275,9 @@ sbin/split-logfile
 %%EXAMPLESDIR%%/mime.types
 @exec [ -f %D/%%ETCDIR%%/mime.types ] || cp %D/%%EXAMPLESDIR%%/mime.types %D/%%ETCDIR%%/mime.types
 %%WWWDIR%%/cgi-bin/printenv
-%%WWWDIR%%/cgi-bin/test-cgi
-%%WWWDIR%%/cgi-bin/printenv.wsf
 %%WWWDIR%%/cgi-bin/printenv.vbs
+%%WWWDIR%%/cgi-bin/printenv.wsf
+%%WWWDIR%%/cgi-bin/test-cgi
 %%WWWDIR%%/error/HTTP_BAD_GATEWAY.html.var
 %%WWWDIR%%/error/HTTP_BAD_REQUEST.html.var
 %%WWWDIR%%/error/HTTP_FORBIDDEN.html.var
@@ -548,4 +558,3 @@ sbin/split-logfile
 @dirrmtry %%ETCDIR%%/envvars.d
 @dirrmtry %%ETCDIR%%/Includes
 @dirrmtry %%ETCDIR%%
-@exec mkdir -p %D/%%DOCSDIR%%

@@ -10,24 +10,19 @@ DIST_SUBDIR=	apache24
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Version 2.4.x of Apache web server
 
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
-		apr-1:${PORTSDIR}/devel/apr1 \
-		pcre:${PORTSDIR}/devel/pcre
-
-
-LATEST_LINK?=	apache24
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libapr-1.so:${PORTSDIR}/devel/apr1 \
+		libpcre.so:${PORTSDIR}/devel/pcre
 
 CONFLICTS_INSTALL=	caudium14-1.* \
 		apache-*-2.2.* apache22-*
 
 USE_APACHE=	common24
 USES=		iconv perl5
+USE_PERL5=	run
 USE_AUTOTOOLS=	autoconf libtool
 USE_RC_SUBR=	apache24 htcacheclean
 LIBTOOLFILES=	configure.in
-
-MAN1=		ab.1 apxs.1 dbmmanage.1 htdbm.1 htdigest.1 htpasswd.1 httxt2dbm.1 logresolve.1
-MAN8=		apachectl.8 fcgistarter.8 htcacheclean.8 httpd.8 rotatelogs.8 suexec.8
 
 PORTDOCS=	*
 
@@ -44,10 +39,32 @@ APACHEDIR=	${MASTERDIR}
 WITH_HTTP_PORT?=	80
 WITH_SSL_PORT?=		443
 
-NO_STAGE=	yes
 .include "${APACHEDIR}/Makefile.options"
 .include "${APACHEDIR}/Makefile.options.desc"
+
+AUTHNZ_LDAP_CONFIGURE_ON=	--enable-authnz-ldap
+
+# http://httpd.apache.org/docs/2.4/bind.html
+IPV4_MAPPED_CONFIGURE_OFF=	--disable-v4-mapped
+IPV4_MAPPED_CONFIGURE_ON=	--enable-v4-mapped
+
+LDAP_CONFIGURE_ON=		--enable-ldap=shared
+
+LUAJIT_LIB_DEPENDS=		luajit:${PORTSDIR}/lang/luajit
+LUA_CONFIGURE_OFF=		--without-lua
+LUA_CONFIGURE_ON=		--with-lua=${LOCALBASE}
+
+SOCACHE_DC_CONFIGURE_ON=	--with-distcache=${LOCALBASE}
+SOCACHE_DC_LIB_DEPENDS=		distcache:${PORTSDIR}/security/distcache
+
+SSL_CFLAGS=			-I${OPENSSLINC}
+SSL_CONFIGURE_ON=		--with-ssl=${OPENSSLBASE}
+SSL_LDFLAGS=			-L${OPENSSLLIB}
+SSL_USE=			OPENSSL=yes
+
 .include <bsd.port.options.mk>
+
+ETC_SUBDIRS=		Includes envvars.d extra
 
 .if ! ${PORT_OPTIONS:MDOCS}
 MAKE_ENV+=	NOPORTDOCS=yes
@@ -68,9 +85,8 @@ APU_CRYPTO_NSS?=	${LOCALBASE}/lib/apr-util-1/apr_crypto_nss.so
 
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 
-CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
+CONFIGURE_ARGS+=--prefix=${PREFIX_RELDEST} \
 		--enable-layout=FreeBSD \
-		--with-perl=${PERL5} \
 		--with-port=${WITH_HTTP_PORT} \
 		--with-sslport=${WITH_SSL_PORT} \
 		--with-expat=${LOCALBASE} \
@@ -92,21 +108,9 @@ MAKE_ENV+=	EXPR_COMPAT=yes \
 # CONFIGURE_ARGS will be handled in Makefile.modules,
 # here we do only OPTIONS fixups
 
-.if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=	yes
-.endif
-
-.if ${PORT_OPTIONS:MSOCACHE_DC}
-LIB_DEPENDS+=	distcache:${PORTSDIR}/security/distcache
-.endif
-
 .if ${PORT_OPTIONS:MLUA}
 USE_LUA=	5.1+
 LUA_COMPS=	lua
-.endif
-
-.if ${PORT_OPTIONS:MLUAJIT}
-LIB_DEPENDS+=   luajit:${PORTSDIR}/lang/luajit
 .endif
 
 .if ${PORT_OPTIONS:MPROXY_HTML} || ${PORT_OPTIONS:MXML2ENC}
@@ -124,11 +128,15 @@ pre-configure::
 post-extract:
 # remove possible leftover .svn directories in the sources
 	@${FIND} ${WRKSRC} -type d -name .svn -print | ${XARGS} ${RM} -rf
+# limit grep results ...
+	@${FIND} ${WRKSRC} -type f \( -name 'NWGNU*' -o -name '*.ds?' -o -name '*.dep' -o -name '*.mak' -o -name '*.win' \) -delete
 
 post-patch:
 	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' ${WRKSRC}/server/core.c
 # IPv4_mapping fix: https://issues.apache.org/bugzilla/show_bug.cgi?id=53824
-	@${REINPLACE_CMD} -e 's|freebsd5|freebsd|' ${WRKSRC}/configure.in ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|freebsd5|freebsd|' \
+		-e 's|^perlbin=.*|perlbin=${PERL}|' \
+		${WRKSRC}/configure.in ${WRKSRC}/configure
 	@${RM} -f ${WRKSRC}/docs/docroot/*.bak
 	@${INSTALL_DATA} ${WRKSRC}/NOTICE ${WRKSRC}/docs/manual
 
@@ -139,29 +147,20 @@ post-configure:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/support/envvars-std
 
 post-install:
-	@${MKDIR} ${ETCDIR}/envvars.d
-	@${MKDIR} ${ETCDIR}/Includes
-	@${INSTALL_DATA} ${FILESDIR}/no-accf.conf ${ETCDIR}/Includes/
+	@${MKDIR} ${ETC_SUBDIRS:S|^|${STAGEDIR}${ETCDIR}/|}
+	@${INSTALL_DATA} ${FILESDIR}/no-accf.conf ${STAGEDIR}${ETCDIR}/Includes/
 
 .if ${PORT_OPTIONS:MLOG_FORENSIC}
-	@${INSTALL_SCRIPT} ${WRKSRC}/support/check_forensic ${PREFIX}/sbin
+	@${INSTALL_SCRIPT} ${WRKSRC}/support/check_forensic ${STAGEDIR}${PREFIX}/sbin
 .endif
-
-.if ${PORT_OPTIONS:MDOCS}
-.  for dir in style/lang style/xsl/util style/xsl
-	@[ -d ${DOCSDIR}/${dir}/ ] && ${TOUCH} ${DOCSDIR}/${dir}/.keepme
-.  endfor
-.endif
-	@${CAT} ${PKGMESSAGE}
 
 # maintainer only, check for new modules
 modlist: extract
-	@${FIND} ${WRKSRC} \( -name '*.ds?' -o -name 'NWGNU*' -o -name '*.win' -o -name '*.spec' \) -delete
 	@${AWK} '/: checking whether to enable mod_/ \
 		{printf "%%%%%s%%%%libexec/apache24/%s.so\n", \
 		toupper($$8), $$8}' ${WRKSRC}/configure \
 		| ${TR} -d '"' \
 		| ${SORT} -u \
-		| ${GREP} -E -v 'MOD_(HTTP|ISAPI|LOG_CONFIG|PRIVILEGES|SO|UNIXD)%%'
+		| ${GREP} -E -v '^%%MOD_(HTTP|ISAPI|LOG_CONFIG|PRIVILEGES|SO|UNIXD)%%'
 
 .include <bsd.port.post.mk>
