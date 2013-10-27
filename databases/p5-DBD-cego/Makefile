@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DBD-cego
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.7
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://www.lemke-it.com/
 PKGNAMEPREFIX=	p5-
@@ -14,20 +14,17 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	p5-DBI>=1.628:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	p5-DBI>=1.628:${PORTSDIR}/databases/p5-DBI
-LIB_DEPENDS=	cego.1:${PORTSDIR}/databases/cego
+LIB_DEPENDS=	libcego.so:${PORTSDIR}/databases/cego
 
 .if defined(.PARSEDIR)
-USE_GMAKE=	yes
+USES=		gmake
 .endif
 
-USES=		perl5
+USES+=		perl5
 USE_PERL5=	configure
 CC:=		${CXX}
 
-MAN3=		DBD::Cego.3
-
-NO_STAGE=	yes
 post-configure:
-	@${REINPLACE_CMD} -e 's|fno-strict-aliasing|fno-strict-aliasing -fpermissive|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|fno-strict-aliasing|& -fpermissive|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
