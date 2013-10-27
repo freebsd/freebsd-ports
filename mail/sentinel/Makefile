@@ -12,7 +12,7 @@ COMMENT=	A sendmail milter API implementation
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
-NO_STAGE=	yes
+NEED_ROOT=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -32,15 +32,15 @@ do-build:
 		-lmilter -lpcre -lpcreposix ${PTHREAD_LIBS}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sentinel ${PREFIX}/sbin
-	@${MKDIR} /var/spool/sentinel
-	${CHOWN} smmsp:smmsp /var/spool/sentinel
-	${INSTALL_DATA} ${FILESDIR}/000.sentinel.sh ${PREFIX}/etc/rc.d/sentinel.sh-dist
-	${INSTALL_DATA} ${WRKSRC}/sentinel.cf.SAMPLE ${PREFIX}/etc/sentinel.cf.dist
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.FreeBSD ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/sentinel ${STAGEDIR}${PREFIX}/sbin/
+	@${MKDIR} ${STAGEDIR}/var/spool/sentinel
+	${CHOWN} smmsp:smmsp ${STAGEDIR}/var/spool/sentinel
+	${INSTALL_DATA} ${FILESDIR}/000.sentinel.sh ${STAGEDIR}${PREFIX}/etc/rc.d/sentinel.sh-dist
+	${INSTALL_DATA} ${WRKSRC}/sentinel.cf.SAMPLE ${STAGEDIR}${PREFIX}/etc/sentinel.cf.dist
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.FreeBSD ${STAGEDIR}${DOCSDIR}
 .endif
 
 post-install:

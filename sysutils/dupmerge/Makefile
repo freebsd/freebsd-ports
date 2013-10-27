@@ -9,8 +9,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Searches for files with equal content
 
-NO_STAGE=	yes
-
 USE_ZIP=	yes
 MAKE_FLAGS=
 MAKEFILE=
@@ -19,11 +17,13 @@ ALL_TARGET=	dupmerge
 PLIST_FILES=	bin/dupmerge
 PORTDOCS=	readme.txt
 
+.include <bsd.port.options.mk>
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dupmerge ${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}/
+	${INSTALL_PROGRAM} ${WRKSRC}/dupmerge ${STAGEDIR}${PREFIX}/bin/
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>

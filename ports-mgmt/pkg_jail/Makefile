@@ -9,19 +9,22 @@ DISTFILES=	# empty
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Manage your own package jail
 
-NO_STAGE=	yes
 NO_BUILD=	yes
 
+USES=		manpages:install
+MANSRC=		${FILESDIR}
 PLIST_FILES=	bin/pkg_jail bin/pkg_update
 PORTDOCS=	README
 MAN1=		pkg_jail.1 pkg_update.1
 
-do-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/pkg_jail ${FILESDIR}/pkg_update ${PREFIX}/bin/
-	${INSTALL_MAN} ${FILESDIR}/pkg_jail.1 ${FILESDIR}/pkg_update.1 ${PREFIX}/man/man1/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${FILESDIR}/README ${DOCSDIR}/
+.include <bsd.port.options.mk>
+
+do-install:	install-all-manpages
+	${INSTALL_SCRIPT} ${FILESDIR}/pkg_jail ${FILESDIR}/pkg_update \
+		${STAGEDIR}${PREFIX}/bin/
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/README ${STAGEDIR}${DOCSDIR}/
 .endif
 
 install-ports:

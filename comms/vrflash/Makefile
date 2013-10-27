@@ -11,18 +11,18 @@ COMMENT=	Flash kernels and romdisks to the Agenda VR3
 
 LICENSE=	GPLv2
 
-NO_STAGE=	yes
-
 GNU_CONFIGURE=	yes
 DOCS=		agenda-flashing-overview.txt troubleshooting.txt \
 		pmon-protect-unprotect.txt usage.txt
 
+.include <bsd.port.options.mk>
+
 do-install:
-	${INSTALL_PROGRAM} -m 755 ${WRKSRC}/vrflash ${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/vrflash ${STAGEDIR}${PREFIX}/bin/
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
 .endif
 

@@ -17,8 +17,6 @@ LIB_DEPENDS=	gnutls-openssl:${PORTSDIR}/security/gnutls
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
-NO_STAGE=	yes
-
 USE_RC_SUBR=	sixxs-aiccu
 USE_GMAKE=	yes
 
@@ -28,6 +26,9 @@ MAKE_ARGS+=	CC="${CC}" LDFLAGS="${LDFLAGS}"
 WRKSRC=		${WRKDIR}/aiccu
 BUILD_WRKSRC=	${WRKDIR}/aiccu/unix-console
 PORTDOCS=	README
+
+OPTIONS_DEFINE=	LOG_DAEMON
+LOG_DAEMON_DESC=	log to LOG_DAEMON instead to LOG_LOCAL7
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -39,9 +40,9 @@ post-patch:
 		-e 's:ipv6_interface sixxs:ipv6_interface gif0:' \
 		${WRKSRC}/doc/aiccu.conf
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_LOG_DAEMON)
+.if ${PORT_OPTIONS:MLOG_DAEMON}
 do-configure:
 	@${REINPLACE_CMD} \
 		-e 's:LOG_LOCAL7:LOG_DAEMON:' \
@@ -49,14 +50,11 @@ do-configure:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/unix-console/aiccu ${PREFIX}/sbin/sixxs-aiccu
-.ifndef(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/README ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/unix-console/aiccu ${STAGEDIR}${PREFIX}/sbin/sixxs-aiccu
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/README ${STAGEDIR}${DOCSDIR}/
 .endif
-	${INSTALL_DATA} ${WRKSRC}/doc/aiccu.conf ${PREFIX}/etc/aiccu.conf.sample
-.if !exists(${PREFIX}/etc/aiccu.conf)
-	${INSTALL_DATA} -m 0644 ${WRKSRC}/doc/aiccu.conf ${PREFIX}/etc/aiccu.conf
-.endif
+	${INSTALL_DATA} ${WRKSRC}/doc/aiccu.conf ${STAGEDIR}${PREFIX}/etc/aiccu.conf.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

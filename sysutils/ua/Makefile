@@ -10,18 +10,19 @@ COMMENT=	Finds sets of identical files
 
 LICENSE=	GPLv2
 
-NO_STAGE=	yes
-
+USES=		manpages
 GNU_CONFIGURE=	yes
 
-MAN1=	kua.1 ua.1
 PLIST_FILES=	bin/kua bin/ua
 PORTDOCS=	README
+MAN1=		kua.1 ua.1
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>

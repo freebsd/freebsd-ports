@@ -12,8 +12,8 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Extracts attached files out of a MIME encoded email package
 
 MAKE_JOBS_UNSAFE=	yes
-NO_STAGE=	yes
 
+USES=		manpages:install
 PLIST_FILES=	bin/ripmime
 MAN1=		ripmime.1
 
@@ -23,9 +23,8 @@ pre-build:
 		${WRKSRC}/Makefile ${WRKSRC}/ripOLE/Makefile \
 		${WRKSRC}/tnef/Makefile
 
-do_install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ripmime ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/ripmime.1 ${MANPREFIX}/man/man1/
+do-install:	install-all-manpages
+	${INSTALL_PROGRAM} ${WRKSRC}/ripmime ${STAGEDIR}${PREFIX}/bin/
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

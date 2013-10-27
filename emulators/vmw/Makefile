@@ -9,14 +9,15 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	VM Back Command Line Tools for VMware
 
 ONLY_FOR_ARCHS=	i386
-NO_STAGE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 USES=		iconv
 
 SBINS=		vmw vmshrink vmftp
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	README-eucj.TXT README-sjis.TXT README.TXT
 .for i in ${SBINS}
 PORTDOCS+=	${i}-eucj.txt ${i}-sjis.txt ${i}.txt
@@ -28,11 +29,11 @@ PLIST_FILES+=	sbin/${i}
 
 do-install:
 .for i in ${SBINS}
-	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/sbin/
+	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/sbin/
 .endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/.. && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC}/.. && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>

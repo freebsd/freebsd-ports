@@ -14,23 +14,24 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Approximate grep (fast approximate pattern-matching tool)
 
 NO_CDROM=	no redistribution for profit
-NO_STAGE=	yes
 
+USES=		manpages:install
 ALL_TARGET=
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
-MAN1=		agrep.1
 PLIST_FILES=	bin/agrep
 PORTDOCS=	COPYRIGHT agrep.algorithms agrep.ps.1.Z agrep.ps.2.Z
+MAN1=		agrep.1
+
+.include <bsd.port.options.mk>
 
 post-extract:
 	${CP} ${DISTDIR}/agrep.ps.1.Z ${DISTDIR}/agrep.ps.2.Z ${WRKSRC}/
 
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/agrep ${PREFIX}/bin/
-	@${INSTALL_MAN} ${WRKSRC}/agrep.1 ${PREFIX}/man/man1/
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+do-install:	install-all-manpages
+	@${INSTALL_PROGRAM} ${WRKSRC}/agrep ${STAGEDIR}${PREFIX}/bin/
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>

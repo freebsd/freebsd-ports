@@ -15,27 +15,17 @@ COMMENT=	A proxy authentication module against an SMB server
 RUN_DEPENDS=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/${SAMBA_PORT}
 .endif
 
-NO_STAGE=	yes
-
 ALL_TARGET=	smb_auth
 SAMBA_PORT?=	net/samba36
 
-do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/smb_auth ${PREFIX}/bin
-		${INSTALL_SCRIPT} ${WRKSRC}/smb_auth.sh ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-		${MKDIR} ${DOCSDIR}
-		${INSTALL_DATA} ${FILESDIR}/README ${DOCSDIR}/
-.endif
+.include <bsd.port.options.mk>
 
-post-install:
-		@${ECHO_MSG}
-		@${ECHO_MSG} ' +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
-		@${ECHO_MSG} '  Refer to ${PREFIX}/share/doc/smb_auth/README on how to configure smb_auth.'
-		@${ECHO_MSG}
-		@${ECHO_MSG} '  NOTE: For smb_auth to work properly you must set debug level>0 in your'
-		@${ECHO_MSG} '        smb.conf file.'
-		@${ECHO_MSG} ' +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
-		@${ECHO_MSG}
+do-install:
+		${INSTALL_PROGRAM} ${WRKSRC}/smb_auth ${STAGEDIR}${PREFIX}/bin/
+		${INSTALL_SCRIPT} ${WRKSRC}/smb_auth.sh ${STAGEDIR}${PREFIX}/bin/
+.if ${PORT_OPTIONS:MDOCS}
+		${MKDIR} ${STAGEDIR}${DOCSDIR}
+		${INSTALL_DATA} ${FILESDIR}/README ${STAGEDIR}${DOCSDIR}/
+.endif
 
 .include <bsd.port.mk>

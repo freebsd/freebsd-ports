@@ -46,6 +46,6 @@ do-build:	${CTARGETS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vbsfilter-${PORTVERSION} \
-		${PREFIX}/libexec/vbsfilter
+		${STAGEDIR}${PREFIX}/libexec/vbsfilter
 
 .include <bsd.port.post.mk>

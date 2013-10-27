@@ -1,0 +1,8 @@
+=========================================================================
+
+Refer to ${PREFIX}/share/doc/smb_auth/README on how to configure smb_auth.
+
+NOTE: For smb_auth to work properly
+you must set debug level>0 in your smb.conf file.
+
+=========================================================================

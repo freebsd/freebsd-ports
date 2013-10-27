@@ -13,9 +13,8 @@ COMMENT=	External MIME packer/unpacker
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
-
-MAN1=		mpack.1 munpack.1
+USES=		manpages
 PLIST_FILES=	bin/mpack bin/munpack
+MAN1=		mpack.1 munpack.1
 
 .include <bsd.port.mk>
