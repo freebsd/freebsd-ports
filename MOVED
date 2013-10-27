@@ -5145,3 +5145,4 @@ www/rubygem-mongrel||2013-10-22|Removed
 www/rubygem-rails-app-installer||2013-10-22|Has expired: Does not work with Ruby 1.9
 www/typo||2013-10-22|Has expired: Does not work with Ruby 1.9
 graphics/ruby-opengl||2013-10-25|Has expired: Does not work with Ruby 1.9
+multimedia/ffmpeg1|multimedia/ffmpeg|2013-10-27|Use multimedia/ffmpeg instead
