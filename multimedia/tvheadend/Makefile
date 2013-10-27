@@ -68,7 +68,7 @@ DVBCSA_LIB_DEPENDS=	libdvbcsa.so:${PORTSDIR}/multimedia/libdvbcsa
 DVBCSA_CONFIGURE_ON=	--enable-dvbcsa
 DVBCSA_CONFIGURE_OFF=	--disable-dvbcsa
 
-FFMPEG_LIB_DEPENDS=	libavcodec1.so:${PORTSDIR}/multimedia/ffmpeg1
+FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 FFMPEG_CONFIGURE_ON=	--enable-libav
 FFMPEG_CONFIGURE_OFF=	--disable-libav
 
