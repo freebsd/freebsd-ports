@@ -105,11 +105,11 @@ INDEX_SHELL=		/bin/sh
 INDEX_PORTS=.
 .endif
 
-#.if exists(/usr/libexec/make_index)
-#MAKE_INDEX=	/usr/libexec/make_index /dev/stdin
-#.else
+.if exists(/usr/libexec/make_index)
+MAKE_INDEX=	/usr/libexec/make_index /dev/stdin
+.else
 MAKE_INDEX=	perl ${.CURDIR}/Tools/make_index
-#.endif
+.endif
 
 ${INDEXDIR}/${INDEXFILE}:
 	@${INDEX_ECHO_1ST} "Generating ${INDEXFILE} - please wait.."; \
@@ -144,7 +144,8 @@ ${INDEXDIR}/${INDEXFILE}:
 	cat $${tmpdir}/${INDEXFILE}.desc.* | (cd ${.CURDIR} ; ${MAKE_INDEX}) | \
 		sed -e 's/  */ /g' -e 's/|  */|/g' -e 's/  *|/|/g' -e 's./..g' | \
 		sort -t '|' +1 -2 | \
-		sed -e 's../.g' > ${INDEXDIR}/${INDEXFILE}.tmp; \
+		sed -Ee 's../.g' -e ':a' -e 's|/[^/]+/\.\.||; ta' \
+		-e 's|${.CURDIR}|/usr/ports|g' > ${INDEXDIR}/${INDEXFILE}.tmp; \
 	if [ "${INDEX_PRISTINE}" != "" ]; then \
 		sed -e "s,$${LOCALBASE},/usr/local," ${INDEXDIR}/${INDEXFILE}.tmp > ${INDEXDIR}/${INDEXFILE}; \
 	else \
