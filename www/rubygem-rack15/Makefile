@@ -21,7 +21,9 @@ PKGNAMESUFFIX=	15
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-PLIST_FILES=	bin/rackup
 
-NO_STAGE=	yes
+# avoid duplicate file from www/rubygem-rack port
+post-install:
+	@${RM} ${STAGEDIR}${PREFIX}/bin/rackup
+
 .include <bsd.port.mk>
