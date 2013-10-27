@@ -1,4 +1,5 @@
 bin/xvidtune
 share/X11/app-defaults/Xvidtune
+man/man1/xvidtune.1.gz
 @dirrmtry share/X11/app-defaults
 @dirrmtry share/X11
