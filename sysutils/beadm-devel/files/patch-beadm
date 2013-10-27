@@ -1,0 +1,19 @@
+--- ./beadm.orig	2013-10-27 09:02:48.041131265 -0500
++++ ./beadm	2013-10-27 09:03:20.579130647 -0500
+@@ -715,7 +715,6 @@
+       echo "ERROR: Cannot mount '${2}' at '${TARGET}' mountpoint"
+       exit 1
+     fi
+-    PREFIX=$( echo ${POOL}/${BEDS}/${2}/ | sed 's/\//\\/g' )
+     zfs list -H -o name,mountpoint -r ${POOL}/${BEDS}/${2} \
+       | grep -v -E "[[:space:]](legacy|none)$" \
+       | sort -n \
+@@ -732,7 +731,7 @@
+                   continue
+                   ;;
+                 (*)
+-                  MOUNTPOINT="/$( echo "${FS}" | sed s/"${PREFIX}"//g )"
++                  MOUNTPOINT="/$( echo "${FS}" | sed s^"${POOL}/${BEDS}/${2}/"^^g )"
+                   ;;
+               esac
+             fi
