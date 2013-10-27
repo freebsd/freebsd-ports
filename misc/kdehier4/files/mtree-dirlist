@@ -134,6 +134,7 @@ share/polkit-1
 @comment-dir share/polkit-1/actions
 @comment ---------------------------------------------------------------------
 share/aclocal
+share/applications
 share/dict
 share/doc
 share/doc/ja
