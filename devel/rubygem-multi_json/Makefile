@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	multi_json
-PORTVERSION=	1.7.7
+PORTVERSION=	1.8.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library provide swappable JSON backends
+
+LICENSE=	MIT
 
 OPTIONS_DEFINE=	JSON JSON_PURE YAJL_RUBY
 JSON_DESC=	JSON implementation as a Ruby extension in C
@@ -19,7 +21,6 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJSON}
