@@ -13,7 +13,7 @@ include/gnutls3/gnutls/compat.h
 include/gnutls3/gnutls/crypto.h
 include/gnutls3/gnutls/dtls.h
 include/gnutls3/gnutls/gnutls.h
-include/gnutls3/gnutls/gnutlsxx.h
+%%CXX%%include/gnutls3/gnutls/gnutlsxx.h
 include/gnutls3/gnutls/ocsp.h
 include/gnutls3/gnutls/openpgp.h
 include/gnutls3/gnutls/openssl.h
