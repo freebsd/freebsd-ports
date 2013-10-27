@@ -11,13 +11,14 @@ EXTRACT_ONLY=
 MAINTAINER=	wulf@mail.mipt.ru
 COMMENT=	Convert Cyrus folders to Dovecot
 
-PLIST_FILES=	bin/${PORTNAME}
-MAN1=		${PORTNAME}.1
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
 USES=		perl5
 NO_WRKSUBDIR=	yes
 
-NO_STAGE=	yes
 post-extract:
 	@${CP} -v ${DISTDIR}/${DISTNAME} ${WRKSRC}
 
@@ -30,7 +31,9 @@ do-build:
 		${WRKSRC}/${DISTNAME} ${WRKSRC}/${PORTNAME}.1
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${PREFIX}/man/man1/${PORTNAME}.1
+	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
+		${STAGEDIR}${PREFIX}/man/man1/${PORTNAME}.1
 
 .include <bsd.port.mk>
