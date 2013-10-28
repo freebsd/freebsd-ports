@@ -1,5 +1,3 @@
-bin/xsubpp
-man/man1/xsubpp.1.gz
 %%PERL5_MAN3%%/ExtUtils::ParseXS.3.gz
 %%PERL5_MAN3%%/ExtUtils::ParseXS::Constants.3.gz
 %%PERL5_MAN3%%/ExtUtils::ParseXS::Eval.3.gz
