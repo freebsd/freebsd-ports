@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PadWalker
-PORTVERSION=	1.96
+PORTVERSION=	1.98
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ROBIN
@@ -17,7 +17,4 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		PadWalker.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
