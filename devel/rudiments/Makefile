@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	rudiments
-PORTVERSION=	0.41
+PORTVERSION=	0.43
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.50
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ class library for daemons, clients, servers, and more
@@ -13,7 +13,8 @@ LICENSE=	LGPL20
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		pkgconfig
+USES=		pkgconfig shebangfix
+SHEBANG_FILES=	doc/programming/insert.pl
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-ssl-includes=-I${OPENSSLINC} \
@@ -21,24 +22,13 @@ CONFIGURE_ARGS=	--with-ssl-includes=-I${OPENSSLINC} \
 		--disable-pcre
 USE_LDCONFIG=	yes
 
-MAN1=		rudiments-config.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		'/cd doc;/s|^|#| ; \
-		 /pkgconfig/s|$$(libdir)/|$$(prefix)/libdata/|' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e \
-		's|^#!/usr/bin/perl|#!${PERL}|' ${WRKSRC}/doc/programming/insert.pl
-	@${REINPLACE_CMD} -e \
-		's| -release $$(RUDIMENTS_VERSION)||' ${WRKSRC}/src/Makefile.in
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
-		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
-.endif
+		'/pkgconfig/s|$$(libdir)/|$$(prefix)/libdata/|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's| -release $$(RUDIMENTS_VERSION)||' \
+		-e 's|-rpath $$(libdir)|-rpath ${PREFIX}/lib|' \
+		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

@@ -1,15 +1,15 @@
---- config.mk.in.orig	Sun Mar 27 09:48:06 2005
-+++ config.mk.in	Mon May  9 01:51:07 2005
-@@ -16,7 +16,7 @@
+--- config.mk.in.orig	2013-09-22 03:52:29.000000000 +0200
++++ config.mk.in	2013-10-28 18:58:41.039873864 +0100
+@@ -9,7 +9,7 @@
  exec_prefix= @exec_prefix@
  includedir = @includedir@
  libdir = @libdir@
 -javadir = ${exec_prefix}/java
 +javadir = ${exec_prefix}/share/java/classes
- libexecdir = @libexecdir@
+ libexecdir = @libexecdir@/sqlrelay
  bindir = @bindir@
  localstatedir = @localstatedir@
-@@ -88,7 +88,7 @@
+@@ -89,7 +89,7 @@
  # rudiments library
  RUDIMENTSPATH = @RUDIMENTSPATH@
  RUDIMENTSINCLUDES = @RUDIMENTSINCLUDES@
@@ -17,4 +17,4 @@
 +RUDIMENTSLIBS = @RUDIMENTSLIBS@ -lssl -lcrypto
  RUDIMENTSLIBSPATH = @RUDIMENTSLIBSPATH@ 
  
- # perl
+ #iconv
