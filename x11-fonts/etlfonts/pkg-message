@@ -1,0 +1,2 @@
+Remember to add a FontPath entry to /etc/XF86Config to use non-cjk font:
+FontPath    "/usr/X11R6/lib/X11/fonts/non-cjk/"
