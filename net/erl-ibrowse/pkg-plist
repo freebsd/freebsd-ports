@@ -1,0 +1,21 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ibrowse_sup.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ibrowse_lib.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ibrowse_lb.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ibrowse_http_client.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ibrowse_app.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ibrowse.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/ibrowse.conf
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/ibrowse.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ibrowse_sup.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ibrowse_lib.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ibrowse_lb.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ibrowse_http_client.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ibrowse_app.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ibrowse.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ibrowse.app
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%
