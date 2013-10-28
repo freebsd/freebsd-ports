@@ -8,7 +8,7 @@ CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	gd@rambler-co.ru
+MAINTAINER=	gd.workbox@gmail.com
 COMMENT=	Python extension that wraps hiredis
 
 LICENSE=	BSD
