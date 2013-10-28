@@ -1,0 +1,257 @@
+changeset:   12:7caa40bb8a47
+user:        carandraug
+date:        Tue Oct 09 21:26:03 2012 +0000
+files:       DESCRIPTION src/AVHandler.cc src/AVHandler.h src/aviinfo.cc src/oct-avifile.cc
+description:
+video: fixes for new versions of ffmpeg and do not reject videos with odd dimension sizes (patch by Donjan Rodic <drodic@student.ethz.ch>
+
+
+diff -r a17550ef53d5 -r 7caa40bb8a47 DESCRIPTION
+--- DESCRIPTION	Tue Jan 10 14:06:05 2012 +0000
++++ DESCRIPTION	Tue Oct 09 21:26:03 2012 +0000
+@@ -7,6 +7,6 @@
+ Description: Implements addframe, avifile, aviinfo, and aviread, using ffmpeg. (and approximately conforms to Matlab interface)
+ Depends: octave (>= 2.9.12)
+ Autoload: yes
+-SystemRequirements: ffmpeg
++SystemRequirements: >=ffmpeg-0.7
+ License: BSD
+ Url: http://octave.sf.net
+diff -r a17550ef53d5 -r 7caa40bb8a47 src/AVHandler.cc
+--- src/AVHandler.cc	Tue Jan 10 14:06:05 2012 +0000
++++ src/AVHandler.cc	Tue Oct 09 21:26:03 2012 +0000
+@@ -42,8 +42,6 @@
+ #endif
+ 
+ std::ostream *AVHandler::out = &std::cout;
+-/** head of registered output format linked list */
+-static AVOutputFormat *first_oformat = NULL;
+ 
+ AVHandler::~AVHandler(void) {
+     if (frame) {
+@@ -66,7 +64,7 @@
+ 	if (av_output->pb->buf_ptr) {
+ 	    while (write_frame() > 0) {}
+ 	    av_write_trailer(av_output);
+-	    if (url_fclose( av_output->pb ) < 0)
++	    if (avio_close( av_output->pb ) < 0)
+ 		(*out) << "AVHandler: cannot close output file" << std::endl;
+ 	}
+ 	av_free(av_output);
+@@ -80,7 +78,7 @@
+     }
+ 
+     if (av_input) {
+-	av_close_input_file(av_input);
++	avformat_close_input(&av_input);
+     } else {
+ 	// close output stream
+ 	if (vstream) av_freep(&vstream);    
+@@ -96,8 +94,8 @@
+ AVHandler::setup_write() {
+     av_register_all();
+ 
+-    AVOutputFormat *avifmt;   
+-    for (avifmt = first_oformat; avifmt != NULL; avifmt = avifmt->next) {
++    AVOutputFormat *avifmt = NULL;   
++    while (NULL != (avifmt = av_oformat_next(avifmt))) {
+ 	if (std::string(avifmt->name) == "avi") {
+ 	    break;
+ 	}
+@@ -123,17 +121,18 @@
+     }
+     
+     /* av_set_parameters is mandatory */
++    // FIXME: deprecated, but there's no replacement yet
+     if (av_set_parameters(av_output, NULL) < 0) {
+ 	(*out) << "AVHandler: Error setting output format parameters" << std::endl;
+ 	return -1;
+     }
+ 
+     snprintf(av_output->filename, sizeof(av_output->filename), "%s", filename.c_str());
+-//    snprintf(av_output->title, sizeof(av_output->title), "%s", title.c_str());
+-//    snprintf(av_output->author, sizeof(av_output->author), "%s", author.c_str());
+-//    snprintf(av_output->comment, sizeof(av_output->comment), "%s", comment.c_str());
++// FIXME:    snprintf(av_output->title, sizeof(av_output->title), "%s", title.c_str());
++// FIXME:    snprintf(av_output->author, sizeof(av_output->author), "%s", author.c_str());
++// FIXME:    snprintf(av_output->comment, sizeof(av_output->comment), "%s", comment.c_str());
+     
+-    if (url_fopen(&av_output->pb, filename.c_str(), URL_WRONLY) < 0) {
++    if (avio_open(&av_output->pb, filename.c_str(), URL_WRONLY) < 0) {
+ 	(*out) << "AVHandler: Could not open \"" << filename << "\" for output" << std::endl;
+ 	return -1;
+     }
+@@ -143,8 +142,8 @@
+     frame = create_frame(vstream->codec->pix_fmt);
+     rgbframe = create_frame(PIX_FMT_RGB24);
+     if (!frame || !rgbframe) return -1;
+-    
+-    av_write_header(av_output);
++
++    avformat_write_header(av_output, NULL);
+     
+     return 0;
+ }
+@@ -153,12 +152,12 @@
+ AVHandler::setup_read() {
+     av_register_all();
+ 
+-    if (av_open_input_file(&av_input, filename.c_str(), NULL, 0, NULL) != 0) {
++    if (avformat_open_input(&av_input, filename.c_str(), NULL, NULL) != 0) {
+ 	(*out) << "AVHandler: Could not open \"" << filename << "\" for reading" << std::endl;
+ 	return -1;
+     }
+ 
+-    if (av_find_stream_info(av_input) < 0) {
++    if (avformat_find_stream_info(av_input, NULL) < 0) {
+ 	(*out) << "AVHandler: No stream information available" << std::endl;
+ 	return -1;
+     }
+@@ -194,7 +193,7 @@
+     if (codec->capabilities & CODEC_CAP_TRUNCATED)
+ 	vstream->codec->flags |= CODEC_FLAG_TRUNCATED;
+ 
+-    if (avcodec_open(vstream->codec, codec) < 0) {
++    if (avcodec_open2(vstream->codec, codec, NULL) < 0) {
+ 	(*out) << "AVHandler: Cannot open codec " << codec_name << std::endl;
+ 	vstream->codec->codec = NULL;
+ 	return -1;
+@@ -206,9 +205,9 @@
+     width = vstream->codec->width;
+     height = vstream->codec->height;
+ 
+-//    title = av_input->title;
+-//    author = av_input->author;
+-//    comment = av_input->comment;
++// FIXME:    title = av_input->title;
++// FIXME:    author = av_input->author;
++// FIXME:    comment = av_input->comment;
+ 
+     rgbframe = create_frame(PIX_FMT_RGB24);
+     if (!rgbframe) return -1;
+@@ -326,7 +325,7 @@
+ 		return -1;
+ 	    }
+ 
+-	    if (url_feof(av_input->pb)) {
++	    if (av_input->pb->eof_reached) {
+ 		(*out) << "AVHandler: EOF reached" << std::endl;
+ 	    }
+ 	}
+@@ -348,6 +347,8 @@
+ 	    current_timestamp = (uint64_t)(vstream->cur_dts * AV_TIME_BASE * (long double)stream_time_base);
+ 	}
+     }
++// http://ffmpeg.org/pipermail/ffmpeg-cvslog/2011-April/035933.html
++// FIXME maybe use: cc->skip_frame;
+ //    cc->hurry_up = 0;
+ 
+     SwsContext *sc = sws_getContext(cc->width, cc->height, cc->pix_fmt, 
+@@ -367,9 +368,9 @@
+     (*out) << "Supported file formats:" << std::endl;
+     av_register_all();
+ 
+-    AVOutputFormat *ofmt;
+-    for (ofmt = first_oformat; ofmt != NULL; ofmt = ofmt->next) {
+-	(*out) << ofmt->name << " ";
++    AVOutputFormat *ofmt = NULL;
++    while (NULL != (ofmt = av_oformat_next(ofmt))) {
++    	(*out) << ofmt->name << " ";
+     }
+     (*out) << std::endl << std::endl;
+ }
+@@ -392,8 +393,9 @@
+ int
+ AVHandler::add_video_stream() {
+     AVCodecContext *cc;
+-    
+-    vstream = av_new_stream(av_output, 0);
++
++    // FIXME: vstream = avformat_new_stream(av_output, av_find_default_stream_index(av_output));
++    vstream = avformat_new_stream(av_output, NULL);
+     if (!vstream) {
+ 	(*out) << "AVHandler: error opening video output stream" << std::endl;
+ 	return -1;
+@@ -402,7 +404,7 @@
+     cc = vstream->codec;
+ 
+     cc->codec_type = AVMEDIA_TYPE_VIDEO;
+-    
++
+     cc->bit_rate = bitrate;
+     cc->width = width;
+     cc->height = height;
+@@ -432,7 +434,7 @@
+ 	return -1;
+     }
+ 
+-    if (avcodec_open(cc, codec) < 0) {
++    if (avcodec_open2(cc, codec, NULL) < 0) {
+ 	(*out) << "AVHandler: cannot open codec" << std::endl;
+ 	cc->codec = NULL;
+ 	return -1;
+diff -r a17550ef53d5 -r 7caa40bb8a47 src/AVHandler.h
+--- src/AVHandler.h	Tue Jan 10 14:06:05 2012 +0000
++++ src/AVHandler.h	Tue Oct 09 21:26:03 2012 +0000
+@@ -27,8 +27,11 @@
+ 
+ #define VIDEO_OUTBUF_SIZE 200000
+ 
++// FIXME: should define -D__STDC_CONSTANT_MACROS instead of the following
+ #define INT64_C
++#define UINT64_C
+ #define __STDC_CONSTANT_MACROS
++
+ #include <errno.h>
+ extern "C" {
+ #if defined (HAVE_FFMPEG_AVFORMAT_H)
+@@ -165,7 +168,7 @@
+ 
+   unsigned int get_total_frames() const {
+     if (vstream) {
+-      return (unsigned int)((double)framerate * vstream->duration / AV_TIME_BASE);
++      return (unsigned int) vstream->nb_frames;
+     } else {
+       return 0;
+     }
+@@ -173,7 +176,7 @@
+ 
+   unsigned int get_filesize() const {
+     if (av_input) {
+-      return av_input->file_size;
++      return avio_size(av_input->pb);
+     } else {
+       return 0;
+     }
+diff -r a17550ef53d5 -r 7caa40bb8a47 src/aviinfo.cc
+--- src/aviinfo.cc	Tue Jan 10 14:06:05 2012 +0000
++++ src/aviinfo.cc	Tue Oct 09 21:26:03 2012 +0000
+@@ -66,6 +66,7 @@
+     av.set_log(&octave_stdout);
+ 
+     if (av.setup_read() != 0) {
++	error("aviread: AVHandler setup failed");
+ 	return retval;
+     }
+ 
+diff -r a17550ef53d5 -r 7caa40bb8a47 src/oct-avifile.cc
+--- src/oct-avifile.cc	Tue Jan 10 14:06:05 2012 +0000
++++ src/oct-avifile.cc	Tue Oct 09 21:26:03 2012 +0000
+@@ -56,10 +56,12 @@
+ void
+ Avifile::addframe(const NDArray &f) {
+     if (frames == 0) {
+-	if ( (f.columns() % 2 != 0) || (f.rows() % 2 != 0) ) {
+-	    error("avifile: matrix dimensions must be multiple of two");
+-	    return;
+-	}
++//	FIXME: this suppresses warnings from ffmpeg, but completely prevents
++//	       working with many videos.
++//	if ( (f.columns() % 2 != 0) || (f.rows() % 2 != 0) ) {
++//	    error("avifile: matrix dimensions must be multiple of two");
++//	    return;
++//	}
+ 
+ 	if ( (f.columns() == 0) || (f.rows() == 0) ) {
+ 	    error("avifile: matrix must have non-zero dimensions");
+
