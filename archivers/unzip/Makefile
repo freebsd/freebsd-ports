@@ -20,7 +20,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICTS?=	unzip-iconv-[0-9]* zh-unzip-[0-9]* ko-unzip-[0-9]* ru-unzip-[0-9]*
 
-NO_STAGE=	yes
 MAKEFILE=	unix/Makefile
 MAKE_ARGS=	LF2="${STRIP}"
 .if defined(INSTALL_AS_INFOUNZIP)
@@ -67,6 +66,10 @@ ALL_TARGET=	freebsd
 ALL_TARGET=	bsd
 .endif
 
+.for m in ${MAN1}
+PLIST_FILES+=	man/man1/${m}.gz
+.endfor
+
 .if !defined(INSTALL_AS_INFOUNZIP)
 pre-fetch:
 	@${ECHO} ""
@@ -84,20 +87,20 @@ pre-build:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/unzip ${PREFIX}/bin/${UNZIP_NAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/unzip ${STAGEDIR}${PREFIX}/bin/${UNZIP_NAME}
 .for file in funzip unzipsfx
-	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${LN} -sf ${UNZIP_NAME} ${PREFIX}/bin/zipinfo
-	${INSTALL_SCRIPT} ${WRKSRC}/unix/zipgrep ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/unzip.1 ${MAN1PREFIX}/man/man1/${UNZIP_NAME}.1
+	${LN} -sf ${UNZIP_NAME} ${STAGEDIR}${PREFIX}/bin/zipinfo
+	${INSTALL_SCRIPT} ${WRKSRC}/unix/zipgrep ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/unzip.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/${UNZIP_NAME}.1
 .for f in ${MAN1:Nunzip.1:Ninfo-unzip.1}
-	${INSTALL_MAN} ${WRKSRC}/man/${f} ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/${f} ${STAGEDIR}${MAN1PREFIX}/man/man1
 .endfor
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
