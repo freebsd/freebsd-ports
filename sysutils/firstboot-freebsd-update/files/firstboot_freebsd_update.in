@@ -5,7 +5,14 @@
 # REQUIRE: syslogd NETWORKING
 # BEFORE: LOGIN
 
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf (in the disk
+# image, since this only runs on the first boot) to enable this:
+#
+# firstboot_freebsd_update_enable="YES"
+
 . /etc/rc.subr
+
+: ${firstboot_freebsd_update_enable:="NO"}
 
 name="firstboot_freebsd_update"
 rcvar=firstboot_freebsd_update_enable
