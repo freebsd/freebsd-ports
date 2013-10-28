@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	SQL-Abstract-Plugin-InsertMulti
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,9 +15,6 @@ RUN_DEPENDS=	\
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 
-MAN3=	SQL::Abstract::Plugin::InsertMulti.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
