@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ "$2" = POSTINSTALL ]; then
+if [ "$2" = "POST-INSTALL" ]; then
 	echo "updating /etc/services"
 	(grep -q '^munin ' /etc/services || \
 	echo "munin           4949/tcp   #munin node"; ) \

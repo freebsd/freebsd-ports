@@ -3,6 +3,7 @@
 
 PORTNAME=	minimunin
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://erdgeist.org/arts/software/minimunin/
 
