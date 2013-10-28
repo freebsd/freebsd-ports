@@ -1,7 +1,9 @@
+%%PERL5_MAN3%%/Class::Accessor::Chained.3.gz
+%%PERL5_MAN3%%/Class::Accessor::Chained::Fast.3.gz
 %%SITE_PERL%%/Class/Accessor/Chained.pm
 %%SITE_PERL%%/Class/Accessor/Chained/Fast.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/Chained/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/Chained
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/Chained
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
 @dirrm %%SITE_PERL%%/Class/Accessor/Chained

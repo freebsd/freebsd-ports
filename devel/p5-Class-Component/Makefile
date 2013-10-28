@@ -20,10 +20,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Class::Component::Component::Plaggerize.3 \
-	Class::Component.3 \
-	Class::Component::Plugin.3 \
-	Class::Component::Component::Moosenize.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Const::Fast.3.gz
 %%SITE_PERL%%/Const/Fast.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Const/Fast/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Const/Fast
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Const/Fast
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Const
 @dirrmtry %%SITE_PERL%%/Const

@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Cache::FastMmap.3.gz
+%%SITE_PERL%%/%%PERL_ARCH%%/Cache/FastMmap.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/FastMmap/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/FastMmap/FastMmap.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/FastMmap/FastMmap.so
-%%SITE_PERL%%/%%PERL_ARCH%%/Cache/FastMmap.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/FastMmap
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Cache
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Cache

@@ -26,44 +26,6 @@ MAKE_JOBS_UNSAFE=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		CPANPLUS.3 \
-		CPANPLUS::Backend.3 \
-		CPANPLUS::Backend::RV.3 \
-		CPANPLUS::Config.3 \
-		CPANPLUS::Config::HomeEnv.3 \
-		CPANPLUS::Configure.3 \
-		CPANPLUS::Dist.3 \
-		CPANPLUS::Dist::Autobundle.3 \
-		CPANPLUS::Dist::Base.3 \
-		CPANPLUS::Dist::MM.3 \
-		CPANPLUS::Dist::Sample.3 \
-		CPANPLUS::Error.3 \
-		CPANPLUS::FAQ.3 \
-		CPANPLUS::Hacking.3 \
-		CPANPLUS::Internals.3 \
-		CPANPLUS::Internals::Extract.3 \
-		CPANPLUS::Internals::Fetch.3 \
-		CPANPLUS::Internals::Report.3 \
-		CPANPLUS::Internals::Search.3 \
-		CPANPLUS::Internals::Source.3 \
-		CPANPLUS::Internals::Source::Memory.3 \
-		CPANPLUS::Internals::Source::SQLite.3 \
-		CPANPLUS::Internals::Utils.3 \
-		CPANPLUS::Module.3 \
-		CPANPLUS::Module::Author.3 \
-		CPANPLUS::Module::Author::Fake.3 \
-		CPANPLUS::Module::Checksums.3 \
-		CPANPLUS::Module::Fake.3 \
-		CPANPLUS::Selfupdate.3 \
-		CPANPLUS::Shell.3 \
-		CPANPLUS::Shell::Classic.3 \
-		CPANPLUS::Shell::Default.3 \
-		CPANPLUS::Shell::Default::Plugins::CustomSource.3 \
-		CPANPLUS::Shell::Default::Plugins::HOWTO.3 \
-		CPANPLUS::Shell::Default::Plugins::Remote.3 \
-		CPANPLUS::Shell::Default::Plugins::Source.3
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTEST_REPORTER}

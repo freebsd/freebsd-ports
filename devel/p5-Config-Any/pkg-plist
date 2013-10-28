@@ -1,3 +1,11 @@
+%%PERL5_MAN3%%/Config::Any.3.gz
+%%PERL5_MAN3%%/Config::Any::Base.3.gz
+%%PERL5_MAN3%%/Config::Any::General.3.gz
+%%PERL5_MAN3%%/Config::Any::INI.3.gz
+%%PERL5_MAN3%%/Config::Any::JSON.3.gz
+%%PERL5_MAN3%%/Config::Any::Perl.3.gz
+%%PERL5_MAN3%%/Config::Any::XML.3.gz
+%%PERL5_MAN3%%/Config::Any::YAML.3.gz
 %%SITE_PERL%%/Config/Any.pm
 %%SITE_PERL%%/Config/Any/Base.pm
 %%SITE_PERL%%/Config/Any/General.pm
@@ -7,7 +15,7 @@
 %%SITE_PERL%%/Config/Any/XML.pm
 %%SITE_PERL%%/Config/Any/YAML.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Any/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Any
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Any
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
-@dirrmtry %%SITE_PERL%%/Config/Any
+@dirrm %%SITE_PERL%%/Config/Any
 @dirrmtry %%SITE_PERL%%/Config

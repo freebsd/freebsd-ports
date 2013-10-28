@@ -1,19 +1,30 @@
+%%PERL5_MAN3%%/Config::MVP.3.gz
+%%PERL5_MAN3%%/Config::MVP::Assembler.3.gz
+%%PERL5_MAN3%%/Config::MVP::Assembler::WithBundles.3.gz
+%%PERL5_MAN3%%/Config::MVP::Error.3.gz
+%%PERL5_MAN3%%/Config::MVP::Reader.3.gz
+%%PERL5_MAN3%%/Config::MVP::Reader::Findable.3.gz
+%%PERL5_MAN3%%/Config::MVP::Reader::Findable::ByExtension.3.gz
+%%PERL5_MAN3%%/Config::MVP::Reader::Finder.3.gz
+%%PERL5_MAN3%%/Config::MVP::Reader::Hash.3.gz
+%%PERL5_MAN3%%/Config::MVP::Section.3.gz
+%%PERL5_MAN3%%/Config::MVP::Sequence.3.gz
 %%SITE_PERL%%/Config/MVP.pm
 %%SITE_PERL%%/Config/MVP/Assembler.pm
 %%SITE_PERL%%/Config/MVP/Assembler/WithBundles.pm
 %%SITE_PERL%%/Config/MVP/Error.pm
-%%SITE_PERL%%/Config/MVP/Reader/Findable/ByExtension.pm
 %%SITE_PERL%%/Config/MVP/Reader.pm
 %%SITE_PERL%%/Config/MVP/Reader/Findable.pm
+%%SITE_PERL%%/Config/MVP/Reader/Findable/ByExtension.pm
 %%SITE_PERL%%/Config/MVP/Reader/Finder.pm
 %%SITE_PERL%%/Config/MVP/Reader/Hash.pm
 %%SITE_PERL%%/Config/MVP/Section.pm
 %%SITE_PERL%%/Config/MVP/Sequence.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/MVP/.packlist
-@dirrmtry %%SITE_PERL%%/Config/MVP/Reader/Findable
-@dirrmtry %%SITE_PERL%%/Config/MVP/Reader
-@dirrmtry %%SITE_PERL%%/Config/MVP/Assembler
-@dirrmtry %%SITE_PERL%%/Config/MVP
-@dirrmtry %%SITE_PERL%%/Config
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/MVP
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/MVP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
+@dirrm %%SITE_PERL%%/Config/MVP/Reader/Findable
+@dirrm %%SITE_PERL%%/Config/MVP/Reader
+@dirrm %%SITE_PERL%%/Config/MVP/Assembler
+@dirrm %%SITE_PERL%%/Config/MVP
+@dirrmtry %%SITE_PERL%%/Config

@@ -1,9 +1,12 @@
+%%PERL5_MAN3%%/CPAN::YACSmoke.3.gz
+%%PERL5_MAN3%%/CPAN::YACSmoke::Plugin::Recent.3.gz
+%%PERL5_MAN3%%/CPAN::YACSmoke::Plugin::SmokeDB.3.gz
 %%SITE_PERL%%/CPAN/YACSmoke.pm
 %%SITE_PERL%%/CPAN/YACSmoke/Plugin/Recent.pm
 %%SITE_PERL%%/CPAN/YACSmoke/Plugin/SmokeDB.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/YACSmoke/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/YACSmoke
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN
 @dirrm %%SITE_PERL%%/CPAN/YACSmoke/Plugin
 @dirrm %%SITE_PERL%%/CPAN/YACSmoke
 @dirrmtry %%SITE_PERL%%/CPAN
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/YACSmoke
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN

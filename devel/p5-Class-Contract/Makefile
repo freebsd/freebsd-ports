@@ -15,18 +15,14 @@ USE_PERL5=	configure
 USE_DOS2UNIX=	yes
 PLIST_SUB+=	EXAMPLESDIR="share/examples/${PORTNAME}"
 
-MAN3=		Class::Contract.3 Class::Contract::Production.3
-
-NO_STAGE=	yes
 pre-configure:
 	${MKDIR} ${WRKSRC}/examples
 	${MV} ${WRKSRC}/demo.pl ${WRKSRC}/examples
 
 post-install:
 .ifndef(NOPORTDOCS)
-	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

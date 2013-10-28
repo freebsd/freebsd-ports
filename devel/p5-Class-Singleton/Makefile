@@ -13,7 +13,4 @@ COMMENT=	Perl module that describes a singular object class
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Class::Singleton.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

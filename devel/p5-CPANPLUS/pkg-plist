@@ -1,3 +1,39 @@
+%%PERL5_MAN3%%/CPANPLUS.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Backend.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Backend::RV.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Config.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Config::HomeEnv.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Configure.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Dist.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Dist::Autobundle.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Dist::Base.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Dist::MM.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Dist::Sample.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Error.3.gz
+%%PERL5_MAN3%%/CPANPLUS::FAQ.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Hacking.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Internals.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Internals::Extract.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Internals::Fetch.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Internals::Report.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Internals::Search.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Internals::Source.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Internals::Source::Memory.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Internals::Source::SQLite.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Internals::Utils.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Module.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Module::Author.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Module::Author::Fake.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Module::Checksums.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Module::Fake.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Selfupdate.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Shell.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Shell::Classic.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Shell::Default.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Shell::Default::Plugins::CustomSource.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Shell::Default::Plugins::HOWTO.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Shell::Default::Plugins::Remote.3.gz
+%%PERL5_MAN3%%/CPANPLUS::Shell::Default::Plugins::Source.3.gz
 %%SITE_PERL%%/CPANPLUS.pm
 %%SITE_PERL%%/CPANPLUS/Backend.pm
 %%SITE_PERL%%/CPANPLUS/Backend/RV.pm
@@ -41,7 +77,7 @@
 %%SITE_PERL%%/CPANPLUS/Shell/Default/Plugins/Remote.pm
 %%SITE_PERL%%/CPANPLUS/Shell/Default/Plugins/Source.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPANPLUS/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPANPLUS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPANPLUS
 @dirrm %%SITE_PERL%%/CPANPLUS/Shell/Default/Plugins
 @dirrm %%SITE_PERL%%/CPANPLUS/Shell/Default
 @dirrm %%SITE_PERL%%/CPANPLUS/Shell
@@ -56,4 +92,4 @@
 @dirrm %%SITE_PERL%%/CPANPLUS/Configure
 @dirrm %%SITE_PERL%%/CPANPLUS/Config
 @dirrm %%SITE_PERL%%/CPANPLUS/Backend
-@dirrm %%SITE_PERL%%/CPANPLUS
+@dirrmtry %%SITE_PERL%%/CPANPLUS

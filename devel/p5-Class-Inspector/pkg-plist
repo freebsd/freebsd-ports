@@ -1,7 +1,9 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Inspector/.packlist
+%%PERL5_MAN3%%/Class::Inspector.3.gz
+%%PERL5_MAN3%%/Class::Inspector::Functions.3.gz
 %%SITE_PERL%%/Class/Inspector.pm
 %%SITE_PERL%%/Class/Inspector/Functions.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Inspector
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Inspector/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Inspector
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
 @dirrmtry %%SITE_PERL%%/Class/Inspector
 @dirrmtry %%SITE_PERL%%/Class
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class

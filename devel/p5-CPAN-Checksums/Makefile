@@ -19,7 +19,4 @@ TEST_DEPENDS=	p5-Compress-Bzip2>=0:${PORTSDIR}/archivers/p5-Compress-Bzip2
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		CPAN::Checksums.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

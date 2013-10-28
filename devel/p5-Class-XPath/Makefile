@@ -13,7 +13,4 @@ COMMENT=	Base class to add xpath matching to object trees
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Class::XPath.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

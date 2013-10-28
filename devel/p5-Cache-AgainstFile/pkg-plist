@@ -1,11 +1,17 @@
+%%PERL5_MAN3%%/Cache::AgainstFile.3.gz
+%%PERL5_MAN3%%/Cache::AgainstFile::Base.3.gz
+%%PERL5_MAN3%%/Cache::AgainstFile::CacheModule.3.gz
+%%PERL5_MAN3%%/Cache::AgainstFile::Memory.3.gz
+%%PERL5_MAN3%%/Cache::AgainstFile::Null.3.gz
+%%PERL5_MAN3%%/Cache::AgainstFile::Storable.3.gz
 %%SITE_PERL%%/Cache/AgainstFile.pm
-%%SITE_PERL%%/Cache/AgainstFile/Memory.pm
-%%SITE_PERL%%/Cache/AgainstFile/Storable.pm
-%%SITE_PERL%%/Cache/AgainstFile/CacheModule.pm
 %%SITE_PERL%%/Cache/AgainstFile/Base.pm
+%%SITE_PERL%%/Cache/AgainstFile/CacheModule.pm
+%%SITE_PERL%%/Cache/AgainstFile/Memory.pm
 %%SITE_PERL%%/Cache/AgainstFile/Null.pm
+%%SITE_PERL%%/Cache/AgainstFile/Storable.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/AgainstFile/.packlist
-@dirrm %%SITE_PERL%%/Cache/AgainstFile
-@dirrmtry %%SITE_PERL%%/Cache
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/AgainstFile
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache
+@dirrm %%SITE_PERL%%/Cache/AgainstFile
+@dirrmtry %%SITE_PERL%%/Cache

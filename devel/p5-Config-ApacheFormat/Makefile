@@ -15,7 +15,5 @@ BUILD_DEPENDS=	p5-Class-MethodMaker>=0:${PORTSDIR}/devel/p5-Class-MethodMaker \
 
 USES=		perl5
 USE_PERL5=	configure
-MAN3=		Config::ApacheFormat.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

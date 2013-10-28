@@ -13,7 +13,4 @@ COMMENT=	Perl5 module to simplify creating class hierarchies
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Class::Generate.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

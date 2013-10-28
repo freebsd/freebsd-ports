@@ -13,8 +13,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/STL/Containers/.packlist
 %%SITE_PERL%%/stl.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/STL/Containers
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/STL
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/STL
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class/STL/ClassMembers
-@dirrmtry %%SITE_PERL%%/Class/STL
+@dirrm %%SITE_PERL%%/Class/STL/ClassMembers
+@dirrm %%SITE_PERL%%/Class/STL
 @dirrmtry %%SITE_PERL%%/Class

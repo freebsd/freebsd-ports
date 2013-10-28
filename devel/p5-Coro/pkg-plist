@@ -1,14 +1,26 @@
-%%PORTDOCS%%%%DOCSDIR%%/cede-vs-schedule
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/attributes
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dns
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/event
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lwp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/myhttpd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/prodcons1
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/prodcons2
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/prodcons3
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/readline
+%%PERL5_MAN3%%/Coro.3.gz
+%%PERL5_MAN3%%/Coro::AIO.3.gz
+%%PERL5_MAN3%%/Coro::AnyEvent.3.gz
+%%PERL5_MAN3%%/Coro::BDB.3.gz
+%%PERL5_MAN3%%/Coro::Channel.3.gz
+%%PERL5_MAN3%%/Coro::Debug.3.gz
+%%PERL5_MAN3%%/Coro::EV.3.gz
+%%PERL5_MAN3%%/Coro::Event.3.gz
+%%PERL5_MAN3%%/Coro::Handle.3.gz
+%%PERL5_MAN3%%/Coro::Intro.3.gz
+%%PERL5_MAN3%%/Coro::LWP.3.gz
+%%PERL5_MAN3%%/Coro::MakeMaker.3.gz
+%%PERL5_MAN3%%/Coro::RWLock.3.gz
+%%PERL5_MAN3%%/Coro::Select.3.gz
+%%PERL5_MAN3%%/Coro::Semaphore.3.gz
+%%PERL5_MAN3%%/Coro::SemaphoreSet.3.gz
+%%PERL5_MAN3%%/Coro::Signal.3.gz
+%%PERL5_MAN3%%/Coro::Socket.3.gz
+%%PERL5_MAN3%%/Coro::Specific.3.gz
+%%PERL5_MAN3%%/Coro::State.3.gz
+%%PERL5_MAN3%%/Coro::Storable.3.gz
+%%PERL5_MAN3%%/Coro::Timer.3.gz
+%%PERL5_MAN3%%/Coro::Util.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/AIO.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/AnyEvent.pm
@@ -42,6 +54,17 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/Event/Event.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/State/State.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/State/State.so
+%%PORTDOCS%%%%DOCSDIR%%/cede-vs-schedule
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/attributes
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dns
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/event
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lwp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/myhttpd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/prodcons1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/prodcons2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/prodcons3
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/readline
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/State

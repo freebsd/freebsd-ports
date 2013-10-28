@@ -1,7 +1,9 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Contextual/Return/.packlist
+%%PERL5_MAN3%%/Contextual::Return.3.gz
+%%PERL5_MAN3%%/Contextual::Return::Failure.3.gz
 %%SITE_PERL%%/Contextual/Return.pm
 %%SITE_PERL%%/Contextual/Return/Failure.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Contextual/Return
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Contextual/Return/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Contextual/Return
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Contextual
-@dirrmtry %%SITE_PERL%%/Contextual/Return
+@dirrm %%SITE_PERL%%/Contextual/Return
 @dirrmtry %%SITE_PERL%%/Contextual

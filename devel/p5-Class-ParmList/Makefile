@@ -13,7 +13,4 @@ COMMENT=	Module for processing named parameter lists for method calls
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Class::ParmList.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

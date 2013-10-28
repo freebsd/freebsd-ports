@@ -13,7 +13,4 @@ COMMENT=	A lightweight cache with timed expiration
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Cache::Simple::TimedExpiry.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

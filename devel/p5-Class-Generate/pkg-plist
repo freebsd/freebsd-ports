@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Class::Generate.3.gz
 %%SITE_PERL%%/Class/Generate.pm
 %%SITE_PERL%%/Class/Generate.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Generate/.packlist
-@dirrm %%SITE_PERL%%/Class
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Generate
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrmtry %%SITE_PERL%%/Class

@@ -1,20 +1,33 @@
+%%PERL5_MAN3%%/Curses::Widgets.3.gz
+%%PERL5_MAN3%%/Curses::Widgets::ButtonSet.3.gz
+%%PERL5_MAN3%%/Curses::Widgets::Calendar.3.gz
+%%PERL5_MAN3%%/Curses::Widgets::ComboBox.3.gz
+%%PERL5_MAN3%%/Curses::Widgets::Label.3.gz
+%%PERL5_MAN3%%/Curses::Widgets::ListBox.3.gz
+%%PERL5_MAN3%%/Curses::Widgets::ListBox::MultiColumn.3.gz
+%%PERL5_MAN3%%/Curses::Widgets::Menu.3.gz
+%%PERL5_MAN3%%/Curses::Widgets::ProgressBar.3.gz
+%%PERL5_MAN3%%/Curses::Widgets::TextField.3.gz
+%%PERL5_MAN3%%/Curses::Widgets::TextMemo.3.gz
+%%PERL5_MAN3%%/Curses::Widgets::Tutorial.3.gz
+%%PERL5_MAN3%%/Curses::Widgets::Tutorial::Creation.3.gz
 %%SITE_PERL%%/Curses/Widgets.pm
 %%SITE_PERL%%/Curses/Widgets/ButtonSet.pm
 %%SITE_PERL%%/Curses/Widgets/Calendar.pm
 %%SITE_PERL%%/Curses/Widgets/ComboBox.pm
 %%SITE_PERL%%/Curses/Widgets/Label.pm
-%%SITE_PERL%%/Curses/Widgets/ListBox/MultiColumn.pm
 %%SITE_PERL%%/Curses/Widgets/ListBox.pm
+%%SITE_PERL%%/Curses/Widgets/ListBox/MultiColumn.pm
 %%SITE_PERL%%/Curses/Widgets/Menu.pm
 %%SITE_PERL%%/Curses/Widgets/ProgressBar.pm
 %%SITE_PERL%%/Curses/Widgets/TextField.pm
 %%SITE_PERL%%/Curses/Widgets/TextMemo.pm
-%%SITE_PERL%%/Curses/Widgets/Tutorial/Creation.pod
 %%SITE_PERL%%/Curses/Widgets/Tutorial.pod
-@dirrm %%SITE_PERL%%/Curses/Widgets/ListBox
-@dirrm %%SITE_PERL%%/Curses/Widgets/Tutorial
-@dirrm %%SITE_PERL%%/Curses/Widgets
+%%SITE_PERL%%/Curses/Widgets/Tutorial/Creation.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Curses/Widgets/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Curses/Widgets
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Curses
+@dirrm %%SITE_PERL%%/Curses/Widgets/Tutorial
+@dirrm %%SITE_PERL%%/Curses/Widgets/ListBox
+@dirrm %%SITE_PERL%%/Curses/Widgets
 @dirrmtry %%SITE_PERL%%/Curses

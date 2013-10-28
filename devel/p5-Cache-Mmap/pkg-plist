@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Mmap/Mmap.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Mmap/Mmap.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Mmap/.packlist
+%%PERL5_MAN3%%/Cache::Mmap.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Cache/Mmap.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Mmap/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Mmap/Mmap.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Mmap/Mmap.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Mmap
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Cache

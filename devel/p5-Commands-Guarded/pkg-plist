@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Commands::Guarded.3.gz
 %%SITE_PERL%%/Commands/Guarded.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Commands/Guarded/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Commands/Guarded
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Commands/Guarded
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Commands
 @dirrmtry %%SITE_PERL%%/Commands

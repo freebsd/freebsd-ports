@@ -17,7 +17,4 @@ RUN_DEPENDS=	p5-prefork>=0:${PORTSDIR}/devel/p5-prefork
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Class::Autouse.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

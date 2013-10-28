@@ -25,39 +25,14 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Coro.3 \
-		Coro::AIO.3 \
-		Coro::AnyEvent.3 \
-		Coro::BDB.3 \
-		Coro::Channel.3 \
-		Coro::Debug.3 \
-		Coro::EV.3 \
-		Coro::Event.3 \
-		Coro::Handle.3 \
-		Coro::Intro.3 \
-		Coro::LWP.3 \
-		Coro::MakeMaker.3 \
-		Coro::RWLock.3 \
-		Coro::Select.3 \
-		Coro::Semaphore.3 \
-		Coro::SemaphoreSet.3 \
-		Coro::Signal.3 \
-		Coro::Socket.3 \
-		Coro::Specific.3 \
-		Coro::State.3 \
-		Coro::Storable.3 \
-		Coro::Timer.3 \
-		Coro::Util.3
-
-NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/doc/cede-vs-schedule ${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/cede-vs-schedule ${STAGEDIR}${DOCSDIR}/
 .endif
 .if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}/
-	${INSTALL_SCRIPT} ${WRKSRC}/eg/* ${EXAMPLESDIR}/
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/eg/* ${STAGEDIR}${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>

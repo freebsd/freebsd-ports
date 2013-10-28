@@ -20,21 +20,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Class::Workflow.3 Class::Workflow::Context.3 \
-		Class::Workflow::Cookbook.3 Class::Workflow::Instance.3 \
-		Class::Workflow::Instance::Simple.3 Class::Workflow::State.3 \
-		Class::Workflow::State::AcceptHooks.3 \
-		Class::Workflow::State::AutoApply.3 \
-		Class::Workflow::State::Simple.3 \
-		Class::Workflow::State::TransitionHash.3 \
-		Class::Workflow::State::TransitionSet.3 \
-		Class::Workflow::Transition.3 \
-		Class::Workflow::Transition::Deterministic.3 \
-		Class::Workflow::Transition::Simple.3 \
-		Class::Workflow::Transition::Strict.3 \
-		Class::Workflow::Transition::Validate.3 \
-		Class::Workflow::Transition::Validate::Simple.3 \
-		Class::Workflow::Util::Delta.3 Class::Workflow::YAML.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

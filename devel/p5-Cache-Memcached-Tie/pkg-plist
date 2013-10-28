@@ -1,13 +1,8 @@
+%%PERL5_MAN3%%/Cache::Memcached::Tie.3.gz
 %%SITE_PERL%%/Cache/Memcached/Tie.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Memcached/Tie/.packlist
-@dirrmtry %%SITE_PERL%%/auto/Cache/Memcached/Tie
-@dirrmtry %%SITE_PERL%%/auto/Cache/Memcached
-@dirrmtry %%SITE_PERL%%/auto/Cache
-@dirrmtry %%SITE_PERL%%/Cache/Memcached
-@dirrmtry %%SITE_PERL%%/Cache
-@dirrmtry %%SITE_PERL%%
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Memcached/Tie
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Memcached/Tie
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Memcached
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
-@dirrmtry blib/script
+@dirrmtry %%SITE_PERL%%/Cache/Memcached
+@dirrmtry %%SITE_PERL%%/Cache

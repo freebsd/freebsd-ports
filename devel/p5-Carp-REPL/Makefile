@@ -28,7 +28,4 @@ TEST_DEPENDS=	p5-Test-Expect>=0:${PORTSDIR}/devel/p5-Test-Expect
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Carp::REPL.3 Devel::REPL::Plugin::Carp::REPL.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
