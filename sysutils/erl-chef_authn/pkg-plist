@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_time_utils.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_keyring.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_authn.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_time_utils.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_keyring.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_authn.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_authn.app
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%
