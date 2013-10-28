@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20131028:
+  AFFECTS: users of comms/dcf77pi
+  AUTHOR: rene@FreeBSD.org
+
+  As of version 1.0.5 the configuration file was renamed from
+  hardware.txt to config.txt and the format has been made more flexible.
+
+  If you have customized any parameters, be sure to copy them to
+  config.txt after which hardware.txt can be removed.
+
+20131028:
   AFFECTS: users of multimedia/ffmpeg1 and multimedia/ffmpeg-devel
   AUTHOR: wg@FreeBSD.org
 
