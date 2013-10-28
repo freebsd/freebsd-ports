@@ -1,7 +1,13 @@
 %%SITE_PERL%%/Perl/Critic/Deprecated.pm
+%%SITE_PERL%%/Perl/Critic/Policy/Miscellanea/RequireRcsKeywords.pm
 %%SITE_PERL%%/Perl/Critic/Policy/NamingConventions/ProhibitMixedCaseSubs.pm
 %%SITE_PERL%%/Perl/Critic/Policy/NamingConventions/ProhibitMixedCaseVars.pm
 %%SITE_PERL%%/Perl/Critic/Utils/PPIRegexp.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/Critic/Deprecated/.packlist
+%%PERL5_MAN3%%/Perl::Critic::Deprecated.3.gz
+%%PERL5_MAN3%%/Perl::Critic::Policy::Miscellanea::RequireRcsKeywords.3.gz
+%%PERL5_MAN3%%/Perl::Critic::Policy::NamingConventions::ProhibitMixedCaseSubs.3.gz
+%%PERL5_MAN3%%/Perl::Critic::Policy::NamingConventions::ProhibitMixedCaseVars.3.gz
+%%PERL5_MAN3%%/Perl::Critic::Utils::PPIRegexp.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/Critic/Deprecated
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/Critic
