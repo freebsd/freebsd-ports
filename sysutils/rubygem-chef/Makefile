@@ -3,6 +3,7 @@
 
 PORTNAME=	chef
 PORTVERSION=	11.6.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -33,6 +34,7 @@ PLIST_FILES=	bin/chef-client \
 		bin/shef \
 		bin/knife \
 		bin/chef-apply \
+		bin/chef-service-manager \
 		bin/chef-shell
 
 MAN1=		knife.1 knife-bootstrap.1 knife-client.1 knife-configure.1 knife-cookbook.1 \
