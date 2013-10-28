@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/envy.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/envy.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/envy.app
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%
