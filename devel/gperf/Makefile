@@ -12,8 +12,8 @@ COMMENT=	Generates perfect hash functions for sets of keywords
 LICENSE=	GPLv2
 
 CONFLICTS=	ace+tao-[0-9]*
-NO_STAGE=	yes
 
+USES=		manpages
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}

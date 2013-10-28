@@ -10,8 +10,6 @@ COMMENT=	A free, open source Project Manager
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
-NO_STAGE=	yes
-
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
@@ -23,8 +21,8 @@ SUB_FILES=	openproj.sh
 
 do-install:
 	cd ${WRKSRC} \
-	  && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${DATADIR}/{} \; \
-	  && ${FIND} ${DATAFILES} -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
-	${INSTALL_SCRIPT} ${WRKDIR}/openproj.sh ${PREFIX}/bin/openproj
+	  && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${STAGEDIR}${DATADIR}/{} \; \
+	  && ${FIND} ${DATAFILES} -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DATADIR}/{} \;
+	${INSTALL_SCRIPT} ${WRKDIR}/openproj.sh ${STAGEDIR}${PREFIX}/bin/openproj
 
 .include <bsd.port.mk>
