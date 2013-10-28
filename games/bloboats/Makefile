@@ -15,7 +15,6 @@ USES=		gmake
 USE_SDL=	mixer image net sdl
 USE_GL=		yes
 
-MAKE_ENV+=	DATADIR="${DATADIR}"
+MAKE_ENV+=	DATADIR="${DATADIR}" STAGEDIR=${STAGEDIR}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
