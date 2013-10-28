@@ -31,7 +31,7 @@ USE_GL=	gl glew glu
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(h|c|cpp)
 
-USE_GCC=	4.6+
+USE_GCC=	yes
 
 USES=		cmake pkgconfig iconv
 CMAKE_BUILD_TYPE=	Release
