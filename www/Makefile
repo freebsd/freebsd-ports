@@ -1662,6 +1662,7 @@
     SUBDIR += py-surl
     SUBDIR += py-textile
     SUBDIR += py-tgwebservices
+    SUBDIR += py-tmdb3
     SUBDIR += py-tornado
     SUBDIR += py-turbogears
     SUBDIR += py-turbogears2
