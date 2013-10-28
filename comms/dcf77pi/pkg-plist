@@ -1,8 +1,8 @@
 bin/dcf77pi
 bin/readpin
 %%PORTDOCS%%%%DOCSDIR%%/README.md
-@unexec if cmp -s %D/etc/dcf77pi/hardware.txt.sample %D/etc/dcf77pi/hardware.txt ; then rm -f %D/etc/dcf77pi/hardware.txt ; fi
-etc/dcf77pi/hardware.txt.sample
-@exec if [ ! -f %D/etc/dcf77pi/hardware.txt ] ; then cp -p %D/%F %B/hardware.txt ; fi
+@unexec if cmp -s %D/etc/dcf77pi/config.txt.sample %D/etc/dcf77pi/config.txt ; then rm -f %D/etc/dcf77pi/config.txt ; fi
+etc/dcf77pi/config.txt.sample
+@exec if [ ! -f %D/etc/dcf77pi/config.txt ] ; then cp -p %D/%F %B/config.txt ; fi
 @dirrmtry %%ETCDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
