@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wiimms
-DISTVERSION=	2.10a
+DISTVERSION=	2.23a
 CATEGORIES=	sysutils
 MASTER_SITES=	http://gugus69.free.fr/wiimms/ \
 		LOCAL/martymac
@@ -17,10 +17,8 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 WRKSRC=	${WRKDIR}/wiimms-iso-tools
-USE_GMAKE=	yes
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+USES+=		gmake
+USE_GCC=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|g' \
@@ -38,13 +36,13 @@ do-configure:
 	@cd ${WRKSRC} && ./setup.sh
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/wit ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/wwt ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/wdf ${PREFIX}/bin
-	@${LN} -sf wdf ${PREFIX}/bin/wdf-cat
-	@${LN} -sf wdf ${PREFIX}/bin/wdf-dump
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/share/* ${DATADIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/load-titles.sh ${DATADIR}
+	@${INSTALL_PROGRAM} ${WRKSRC}/wit ${STAGEDIR}${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/wwt ${STAGEDIR}${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/wdf ${STAGEDIR}${PREFIX}/bin
+	@${LN} -sf wdf ${STAGEDIR}${PREFIX}/bin/wdf-cat
+	@${LN} -sf wdf ${STAGEDIR}${PREFIX}/bin/wdf-dump
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/share/* ${STAGEDIR}${DATADIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/load-titles.sh ${STAGEDIR}${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
