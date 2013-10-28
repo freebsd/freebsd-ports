@@ -1,0 +1,18 @@
+===============================================================================
+
+Globulation 2 has been installed.
+
+You can try to launch it typing
+
+    glob2
+
+Anyway, it will not always work, so it is suggested that you type
+
+    glob2 --help
+
+and read about command lines arguments.
+
+Try to use -G option if you have problems with dri and glx (OpenGL),
+or -m if you have problems with sound, or -C to disable custom cursor.
+
+===============================================================================

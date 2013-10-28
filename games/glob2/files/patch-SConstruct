@@ -1,5 +1,5 @@
---- SConstruct.orig	2009-08-30 19:23:30.000000000 +0000
-+++ SConstruct	2013-01-28 16:42:04.024490217 +0000
+--- ./SConstruct.orig	2009-08-30 21:23:30.000000000 +0200
++++ ./SConstruct	2013-10-28 02:21:28.000000000 +0100
 @@ -14,6 +14,7 @@
  
  def establish_options(env):
@@ -8,6 +8,21 @@
      opts.Add("CXXFLAGS", "Manually add to the CXXFLAGS", "-g")
      opts.Add("LINKFLAGS", "Manually add to the LINKFLAGS", "-g")
      if isDarwinPlatform:
+@@ -22,10 +23,10 @@
+ 	    opts.Add("INSTALLDIR", "Installation Directory", "/usr/local/share")
+     opts.Add("BINDIR", "Binary Installation Directory", "/usr/local/bin")
+     opts.Add("DATADIR", "Directory where data will be put, set to the same as INSTALLDIR", "/usr/local/share")
+-    opts.Add(BoolOption("release", "Build for release", 0))
+-    opts.Add(BoolOption("profile", "Build with profiling on", 0))
+-    opts.Add(BoolOption("mingw", "Build with mingw enabled if not auto-detected", 0))
+-    opts.Add(BoolOption("server", "Build only the YOG server, excluding the game and any GUI/sound components", 0))
++    opts.Add(BoolVariable("release", "Build for release", 0))
++    opts.Add(BoolVariable("profile", "Build with profiling on", 0))
++    opts.Add(BoolVariable("mingw", "Build with mingw enabled if not auto-detected", 0))
++    opts.Add(BoolVariable("server", "Build only the YOG server, excluding the game and any GUI/sound components", 0))
+     opts.Add("font", "Build the game using an alternative font placed in the data/font folder", "sans.ttf")
+     Help(opts.GenerateHelpText(env))
+     opts.Update(env)
 @@ -111,14 +112,17 @@
              missing.append("zlib")
  

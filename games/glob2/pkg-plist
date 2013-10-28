@@ -1737,23 +1737,13 @@ share/applications/glob2.desktop
 %%DATADIR%%/scripts/tutorial_part2.sgsl
 %%DATADIR%%/scripts/tutorial_part3.sgsl
 %%DATADIR%%/scripts/tutorial_part4.sgsl
-share/icons/hicolor/128x128/apps/glob2-icon-128x128.png
-share/icons/hicolor/16x16/apps/glob2-icon-16x16.png
-share/icons/hicolor/24x24/apps/glob2-icon-24x24.png
-share/icons/hicolor/32x32/apps/glob2-icon-32x32.png
-share/icons/hicolor/48x48/apps/glob2-icon-48x48.png
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
+share/icons/hicolor/128x128/apps/glob2.png
+share/icons/hicolor/16x16/apps/glob2.png
+share/icons/hicolor/24x24/apps/glob2.png
+share/icons/hicolor/32x32/apps/glob2.png
+share/icons/hicolor/48x48/apps/glob2.png
+share/icons/hicolor/64x64/apps/glob2.png
+share/pixmaps/glob2.png
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/maps
 @dirrm %%DATADIR%%/data/zik
