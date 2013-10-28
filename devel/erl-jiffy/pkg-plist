@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/jiffy_utf8.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/jiffy.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/jiffy.so
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/jiffy_utf8.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/jiffy.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/jiffy.app
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%
