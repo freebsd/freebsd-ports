@@ -1,4 +1,5 @@
 %%WWWDIR%%/Gemfile
+%%WWWDIR%%/Gemfile.lock
 %%WWWDIR%%/README.rdoc
 %%WWWDIR%%/Rakefile
 %%WWWDIR%%/app/helpers/issue_statuses_helper.rb
@@ -1781,6 +1782,7 @@
 @dirrmtry %%WWWDIR%%/tmp/sockets
 @dirrmtry %%WWWDIR%%/tmp/sessions
 @dirrmtry %%WWWDIR%%/tmp/pdf
+@dirrmtry %%WWWDIR%%/tmp/pids
 @dirrmtry %%WWWDIR%%/tmp/cache
 @dirrmtry %%WWWDIR%%/tmp
 @dirrmtry %%WWWDIR%%/test/unit/lib/redmine/wiki_formatting
