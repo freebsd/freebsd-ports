@@ -1,11 +1,13 @@
 # $FreeBSD$
 
 PORTNAME?=	percona
-PORTVERSION=	5.5.33.31.1
-DISTNAME=	Percona-Server-5.5.33-rel31.1
+DISTVERSION=	5.5.34-32.0
+DISTNAME=	Percona-Server-5.5.34-rel32.0
 PORTREVISION?=	0
 CATEGORIES=	databases ipv6
-MASTER_SITES=	http://www.percona.com/downloads/Percona-Server-5.5/${DISTNAME:S/rel//}/source/
+# rel link http://www.percona.com/downloads/Percona-Server-5.5/LATEST/release-5.5.34-32.0/591/source/Percona-Server-5.5.34-rel32.0.tar.gz
+#          http://www.percona.com/downloads/Percona-Server-5.5/LATEST/release-5.5.34.32.0/591/source/Percona-Server-5.5.34-rel32.0.tar.gz
+MASTER_SITES=	http://www.percona.com/downloads/Percona-Server-5.5/LATEST/release-${DISTVERSION:S/rel//}/591/source/
 MASTER_SITE_SUBDIR=	MySQL-5.5
 PKGNAMESUFFIX?=	55-server
 
@@ -47,7 +49,6 @@ SHEBANG_FILES=	scripts/*.pl* scripts/*.sh
 .error You have `USE_MYSQL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSSL}
@@ -71,25 +72,21 @@ GROUPS=		mysql
 
 INFO=		mysql
 
-MAN1=		my_print_defaults.1 myisam_ftdump.1 myisamchk.1 myisamlog.1 myisampack.1 \
+MANPAGES=	my_print_defaults.1 myisam_ftdump.1 myisamchk.1 myisamlog.1 myisampack.1 \
 		mysql.server.1 mysql_convert_table_format.1 mysql_fix_extensions.1 \
 		mysql_install_db.1 mysql_plugin.1 mysql_secure_installation.1 mysql_setpermission.1 \
 		mysql_tzinfo_to_sql.1 mysql_upgrade.1 mysql_zap.1 mysqlbug.1 \
 		mysqld_multi.1 mysqld_safe.1 mysqldumpslow.1 mysqlhotcopy.1 mysqlman.1 \
 		mysqltest.1 perror.1 replace.1 resolve_stack_dump.1 resolveip.1
 
-MAN8=		mysqld.8
-
 CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON"
 
 post-install:
-.if !defined(PACKAGE_BUILDING)
-	@${CAT} ${PKGMESSAGE}
-.endif
+	@${MKDIR} ${STAGEDIR}/var/db/mysql
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} 's/*.1/${MAN1}/' ${WRKSRC}/man/CMakeLists.txt
+	@${REINPLACE_CMD} 's/*.1/${MANPAGES}/' ${WRKSRC}/man/CMakeLists.txt
 
 .include <bsd.port.pre.mk>
 
