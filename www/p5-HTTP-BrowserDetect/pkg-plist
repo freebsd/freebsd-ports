@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/BrowserDetect/.packlist
 %%SITE_PERL%%/HTTP/BrowserDetect.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/BrowserDetect/.packlist
+%%PERL5_MAN3%%/HTTP::BrowserDetect.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/BrowserDetect
-@dirrmtry %%SITE_PERL%%/HTTP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
+@dirrmtry %%SITE_PERL%%/HTTP
