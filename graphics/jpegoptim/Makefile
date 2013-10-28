@@ -18,10 +18,10 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libjpeg=${LOCALBASE}
 
-MAN1=		jpegoptim.1
-PLIST_FILES=	bin/jpegoptim
+PLIST_FILES=	bin/jpegoptim man/man1/jpegoptim.1.gz
 
-NO_STAGE=	yes
+MAKE_ENV+=	INSTALL_ROOT=${STAGEDIR}
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^bindir =.*$$|bindir = @bindir@|g ; \
