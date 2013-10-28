@@ -370,12 +370,6 @@ CONFIGURE_ARGS+=--without-x --disable-glx --disable-xcb --disable-xvideo
 
 .include <bsd.port.pre.mk>
 
-# OS specific hacks
-.if (${OSVERSION} < 800040)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules__misc__inhibit__xdg.c \
-		${FILESDIR}/extra-patch-modules__misc__inhibit__xscreensaver.c
-.endif
-
 # base clang in 9.0 builds a corrupted lib/vlc/plugins/gui/libqt4_plugin.so
 .if (${CC:T:Mclang} == "clang") && \
 	(${OSVERSION} >= 900014) && (${OSVERSION} < 900506)
