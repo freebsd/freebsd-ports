@@ -1,4 +1,22 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Workflow/.packlist
+%%PERL5_MAN3%%/Class::Workflow.3.gz
+%%PERL5_MAN3%%/Class::Workflow::Context.3.gz
+%%PERL5_MAN3%%/Class::Workflow::Cookbook.3.gz
+%%PERL5_MAN3%%/Class::Workflow::Instance.3.gz
+%%PERL5_MAN3%%/Class::Workflow::Instance::Simple.3.gz
+%%PERL5_MAN3%%/Class::Workflow::State.3.gz
+%%PERL5_MAN3%%/Class::Workflow::State::AcceptHooks.3.gz
+%%PERL5_MAN3%%/Class::Workflow::State::AutoApply.3.gz
+%%PERL5_MAN3%%/Class::Workflow::State::Simple.3.gz
+%%PERL5_MAN3%%/Class::Workflow::State::TransitionHash.3.gz
+%%PERL5_MAN3%%/Class::Workflow::State::TransitionSet.3.gz
+%%PERL5_MAN3%%/Class::Workflow::Transition.3.gz
+%%PERL5_MAN3%%/Class::Workflow::Transition::Deterministic.3.gz
+%%PERL5_MAN3%%/Class::Workflow::Transition::Simple.3.gz
+%%PERL5_MAN3%%/Class::Workflow::Transition::Strict.3.gz
+%%PERL5_MAN3%%/Class::Workflow::Transition::Validate.3.gz
+%%PERL5_MAN3%%/Class::Workflow::Transition::Validate::Simple.3.gz
+%%PERL5_MAN3%%/Class::Workflow::Util::Delta.3.gz
+%%PERL5_MAN3%%/Class::Workflow::YAML.3.gz
 %%SITE_PERL%%/Class/Workflow.pm
 %%SITE_PERL%%/Class/Workflow.pmc
 %%SITE_PERL%%/Class/Workflow/Context.pm
@@ -20,12 +38,13 @@
 %%SITE_PERL%%/Class/Workflow/Util/Delta.pm
 %%SITE_PERL%%/Class/Workflow/YAML.pm
 %%SITE_PERL%%/Class/Workflow/YAML.pmc
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Workflow/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Workflow
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrm %%SITE_PERL%%/Class/Workflow/Util
 @dirrm %%SITE_PERL%%/Class/Workflow/Transition/Validate
 @dirrm %%SITE_PERL%%/Class/Workflow/Transition
 @dirrm %%SITE_PERL%%/Class/Workflow/State
 @dirrm %%SITE_PERL%%/Class/Workflow/Instance
-@dirrm %%SITE_PERL%%/Class/Workflow/Util
 @dirrm %%SITE_PERL%%/Class/Workflow
 @dirrmtry %%SITE_PERL%%/Class
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Workflow
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class

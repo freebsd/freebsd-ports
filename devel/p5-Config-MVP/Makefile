@@ -30,19 +30,6 @@ TEST_DEPENDS=	p5-Capture-Tiny>=0:${PORTSDIR}/devel/p5-Capture-Tiny \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Config::MVP.3 \
-		Config::MVP::Assembler.3 \
-		Config::MVP::Assembler::WithBundles.3 \
-		Config::MVP::Error.3 \
-		Config::MVP::Reader.3 \
-		Config::MVP::Reader::Findable.3 \
-		Config::MVP::Reader::Findable::ByExtension.3  \
-		Config::MVP::Reader::Finder.3 \
-		Config::MVP::Reader::Hash.3 \
-		Config::MVP::Section.3 \
-		Config::MVP::Sequence.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

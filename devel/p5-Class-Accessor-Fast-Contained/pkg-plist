@@ -1,9 +1,10 @@
+%%PERL5_MAN3%%/Class::Accessor::Fast::Contained.3.gz
 %%SITE_PERL%%/Class/Accessor/Fast/Contained.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/Fast/Contained/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/Fast/Contained
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/Fast/Contained
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/Fast
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor
-@dirrmtry %%SITE_PERL%%/Class/Accessor/Fast
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrmtry %%SITE_PERL%%/Class/Accessor/Fast
 @dirrmtry %%SITE_PERL%%/Class/Accessor
 @dirrmtry %%SITE_PERL%%/Class

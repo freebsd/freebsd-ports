@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/StrongSingleton/.packlist
+%%PERL5_MAN3%%/Class::StrongSingleton.3.gz
 %%SITE_PERL%%/Class/StrongSingleton.pm
-@dirrmtry %%SITE_PERL%%/Class
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/StrongSingleton/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/StrongSingleton
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrmtry %%SITE_PERL%%/Class

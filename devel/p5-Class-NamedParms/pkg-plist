@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Class::NamedParms.3.gz
 %%SITE_PERL%%/Class/NamedParms.pm
 %%SITE_PERL%%/Class/NamedParms.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/NamedParms/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/NamedParms
-@dirrmtry %%SITE_PERL%%/Class
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrmtry %%SITE_PERL%%/Class

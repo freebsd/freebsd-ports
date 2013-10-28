@@ -15,10 +15,7 @@ BUILD_DEPENDS=	p5-Class-MethodMaker>=0:${PORTSDIR}/devel/p5-Class-MethodMaker \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	Code::Perl.3 Code::Perl::Expr.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

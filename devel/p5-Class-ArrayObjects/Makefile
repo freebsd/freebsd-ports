@@ -13,7 +13,4 @@ COMMENT=	Utility class for array based objects
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Class::ArrayObjects.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

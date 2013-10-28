@@ -16,11 +16,4 @@ RUN_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=	Config::Setting.3 \
-	Config::Setting::Chunk.3 \
-	Config::Setting::FileProvider.3 \
-	Config::Setting::IniParser.3 \
-	Config::Setting::XMLParser.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

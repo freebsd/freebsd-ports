@@ -1,9 +1,10 @@
+%%PERL5_MAN3%%/Class::C3::XS.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/C3/XS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/C3/XS/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/C3/XS/XS.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/C3/XS/XS.bs
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/C3
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/C3/XS
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/C3/XS/XS.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/C3/XS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/C3
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/C3
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class

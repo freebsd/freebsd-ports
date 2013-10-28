@@ -1,9 +1,12 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/XSAccessor/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/XSAccessor/XSAccessor.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/XSAccessor/XSAccessor.bs
+%%PERL5_MAN3%%/Class::XSAccessor.3.gz
+%%PERL5_MAN3%%/Class::XSAccessor::Array.3.gz
+%%PERL5_MAN3%%/Class::XSAccessor::Heavy.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/XSAccessor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/XSAccessor/Array.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/XSAccessor/Heavy.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/XSAccessor/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/XSAccessor/XSAccessor.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/XSAccessor/XSAccessor.so
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/XSAccessor
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/XSAccessor

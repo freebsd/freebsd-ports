@@ -1,5 +1,5 @@
+%%SITE_PERL%%/ConfigReader.pod
 %%SITE_PERL%%/ConfigReader/DirectiveStyle.pm
 %%SITE_PERL%%/ConfigReader/Spec.pm
 %%SITE_PERL%%/ConfigReader/Values.pm
-%%SITE_PERL%%/ConfigReader.pod
 @dirrm %%SITE_PERL%%/ConfigReader

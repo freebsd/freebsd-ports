@@ -19,7 +19,4 @@ TEST_DEPENDS=	p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Class::Accessor::Fast::Contained.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

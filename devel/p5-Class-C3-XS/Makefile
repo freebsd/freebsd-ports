@@ -13,7 +13,4 @@ COMMENT=	XS speedups for Class::C3
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Class::C3::XS.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

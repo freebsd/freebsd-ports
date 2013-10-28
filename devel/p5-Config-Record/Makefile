@@ -18,7 +18,4 @@ TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Config::Record.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

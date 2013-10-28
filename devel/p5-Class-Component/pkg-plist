@@ -1,24 +1,30 @@
+%%PERL5_MAN3%%/Class::Component.3.gz
+%%PERL5_MAN3%%/Class::Component::Component::Moosenize.3.gz
+%%PERL5_MAN3%%/Class::Component::Component::Plaggerize.3.gz
+%%PERL5_MAN3%%/Class::Component::Plugin.3.gz
+%%SITE_PERL%%/Class/Component.pm
+%%SITE_PERL%%/Class/Component/Attribute.pm
 %%SITE_PERL%%/Class/Component/Attribute/Hook.pm
 %%SITE_PERL%%/Class/Component/Attribute/Method.pm
-%%SITE_PERL%%/Class/Component/Component/Autocall/SingletonMethod.pm
-%%SITE_PERL%%/Class/Component/Component/Autocall/InjectMethod.pm
+%%SITE_PERL%%/Class/Component/Component/Autocall.pm
 %%SITE_PERL%%/Class/Component/Component/Autocall/Autoload.pm
-%%SITE_PERL%%/Class/Component/Component/Moosenize.pm
-%%SITE_PERL%%/Class/Component/Component/Plaggerize/Log.pm
-%%SITE_PERL%%/Class/Component/Component/Plaggerize/PluginLoader.pm
-%%SITE_PERL%%/Class/Component/Component/Plaggerize/ConfigLoader.pm
+%%SITE_PERL%%/Class/Component/Component/Autocall/InjectMethod.pm
+%%SITE_PERL%%/Class/Component/Component/Autocall/SingletonMethod.pm
 %%SITE_PERL%%/Class/Component/Component/AutoloadPlugin.pm
 %%SITE_PERL%%/Class/Component/Component/DisableDynamicPlugin.pm
+%%SITE_PERL%%/Class/Component/Component/Moosenize.pm
 %%SITE_PERL%%/Class/Component/Component/Plaggerize.pm
+%%SITE_PERL%%/Class/Component/Component/Plaggerize/ConfigLoader.pm
+%%SITE_PERL%%/Class/Component/Component/Plaggerize/Log.pm
+%%SITE_PERL%%/Class/Component/Component/Plaggerize/PluginLoader.pm
 %%SITE_PERL%%/Class/Component/Component/SingletonMethod.pm
-%%SITE_PERL%%/Class/Component/Component/Autocall.pm
-%%SITE_PERL%%/Class/Component/Attribute.pm
 %%SITE_PERL%%/Class/Component/Plugin.pm
-%%SITE_PERL%%/Class/Component.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Component/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Component
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
 @dirrmtry %%SITE_PERL%%/Class/Component/Component/Plaggerize
 @dirrmtry %%SITE_PERL%%/Class/Component/Component/Autocall
 @dirrmtry %%SITE_PERL%%/Class/Component/Component
 @dirrmtry %%SITE_PERL%%/Class/Component/Attribute
 @dirrmtry %%SITE_PERL%%/Class/Component
+@dirrmtry %%SITE_PERL%%/Class

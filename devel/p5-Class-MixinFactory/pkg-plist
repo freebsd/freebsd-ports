@@ -1,3 +1,10 @@
+%%PERL5_MAN3%%/Class::MixinFactory.3.gz
+%%PERL5_MAN3%%/Class::MixinFactory::Changes.3.gz
+%%PERL5_MAN3%%/Class::MixinFactory::Factory.3.gz
+%%PERL5_MAN3%%/Class::MixinFactory::HasAFactory.3.gz
+%%PERL5_MAN3%%/Class::MixinFactory::InsideOutAttr.3.gz
+%%PERL5_MAN3%%/Class::MixinFactory::NEXT.3.gz
+%%PERL5_MAN3%%/Class::MixinFactory::ReadMe.3.gz
 %%SITE_PERL%%/Class/MixinFactory.pm
 %%SITE_PERL%%/Class/MixinFactory/Changes.pod
 %%SITE_PERL%%/Class/MixinFactory/Factory.pm

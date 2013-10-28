@@ -1,5 +1,7 @@
-%%SITE_PERL%%/Class/C3/next.pm
+%%PERL5_MAN3%%/Class::C3.3.gz
+%%PERL5_MAN3%%/Class::C3::next.3.gz
 %%SITE_PERL%%/Class/C3.pm
+%%SITE_PERL%%/Class/C3/next.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/C3/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/C3
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class

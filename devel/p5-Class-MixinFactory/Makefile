@@ -10,16 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Class Factory with Selection of Mixins
 
-MAN3=	Class::MixinFactory.3 \
-	Class::MixinFactory::Changes.3 \
-	Class::MixinFactory::Factory.3 \
-	Class::MixinFactory::HasAFactory.3 \
-	Class::MixinFactory::InsideOutAttr.3 \
-	Class::MixinFactory::NEXT.3 \
-	Class::MixinFactory::ReadMe.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

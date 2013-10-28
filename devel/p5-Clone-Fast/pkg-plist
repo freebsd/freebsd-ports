@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Clone::Fast.3.gz
+%%SITE_PERL%%/%%PERL_ARCH%%/Clone/Fast.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Clone/Fast/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Clone/Fast/Fast.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Clone/Fast/Fast.so
-%%SITE_PERL%%/%%PERL_ARCH%%/Clone/Fast.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Clone/Fast
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Clone/Fast
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Clone
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Clone

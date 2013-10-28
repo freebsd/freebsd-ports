@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Data/Inheritable/.packlist
+%%PERL5_MAN3%%/Class::Data::Inheritable.3.gz
 %%SITE_PERL%%/Class/Data/Inheritable.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Data/Inheritable
-@dirrmtry %%SITE_PERL%%/Class/Data
-@dirrmtry %%SITE_PERL%%/Class
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Data/Inheritable/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Data/Inheritable
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Data
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrmtry %%SITE_PERL%%/Class/Data
+@dirrmtry %%SITE_PERL%%/Class

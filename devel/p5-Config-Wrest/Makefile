@@ -21,8 +21,4 @@ TEST_DEPENDS=	p5-Test-Assertions>0:${PORTSDIR}/devel/p5-Test-Assertions
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Config::Wrest.3 \
-	Data::Serializer::Config::Wrest.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

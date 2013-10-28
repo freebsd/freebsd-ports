@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Carp::Clan.3.gz
 %%SITE_PERL%%/Carp/Clan.pm
 %%SITE_PERL%%/Carp/Clan.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/Clan/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/Clan
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/Clan
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp
 @dirrmtry %%SITE_PERL%%/Carp

@@ -1,6 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Loader/.packlist
+%%PERL5_MAN3%%/Class::Loader.3.gz
 %%SITE_PERL%%/Class/Loader.pm
 %%SITE_PERL%%/Class/LoaderTest.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Loader/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Loader
-@dirrmtry %%SITE_PERL%%/Class
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrmtry %%SITE_PERL%%/Class

@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/ConfigReader/Simple/.packlist
+%%PERL5_MAN3%%/ConfigReader::Simple.3.gz
 %%SITE_PERL%%/ConfigReader/Simple.pm
-@dirrmtry %%SITE_PERL%%/ConfigReader
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/ConfigReader/Simple/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ConfigReader/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ConfigReader
+@dirrmtry %%SITE_PERL%%/ConfigReader

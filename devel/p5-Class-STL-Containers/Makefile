@@ -13,5 +13,4 @@ COMMENT=	Perl extension for STL-like object management
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

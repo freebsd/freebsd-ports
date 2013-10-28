@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Simple/TimedExpiry/.packlist
+%%PERL5_MAN3%%/Cache::Simple::TimedExpiry.3.gz
 %%SITE_PERL%%/Cache/Simple/TimedExpiry.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Simple/TimedExpiry/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Simple/TimedExpiry
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache

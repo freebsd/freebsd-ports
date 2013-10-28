@@ -1,7 +1,10 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/.packlist
+%%PERL5_MAN3%%/Class::Accessor.3.gz
+%%PERL5_MAN3%%/Class::Accessor::Fast.3.gz
+%%PERL5_MAN3%%/Class::Accessor::Faster.3.gz
 %%SITE_PERL%%/Class/Accessor.pm
 %%SITE_PERL%%/Class/Accessor/Fast.pm
 %%SITE_PERL%%/Class/Accessor/Faster.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
 @dirrmtry %%SITE_PERL%%/Class/Accessor

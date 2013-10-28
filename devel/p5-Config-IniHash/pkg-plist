@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/IniHash/.packlist
+%%PERL5_MAN3%%/Config::IniHash.3.gz
 %%SITE_PERL%%/Config/IniHash.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/IniHash
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/IniHash/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/IniHash
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
 @dirrmtry %%SITE_PERL%%/Config

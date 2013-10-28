@@ -19,14 +19,4 @@ RUN_DEPENDS=	p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		CommitBit.3 \
-		CommitBit::Action::ConfirmEmail.3 \
-		CommitBit::Action::Login.3 \
-		CommitBit::Action::Logout.3 \
-		CommitBit::Model::User.3 \
-		CommitBit::Notification::ConfirmAddress.3 \
-		CommitBit::Notification::InviteToProject.3 \
-		CommitBit::Test.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

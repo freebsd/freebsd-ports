@@ -23,9 +23,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		CPAN::YACSmoke.3 \
-		CPAN::YACSmoke::Plugin::SmokeDB.3 \
-		CPAN::YACSmoke::Plugin::Recent.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

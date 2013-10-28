@@ -1,3 +1,11 @@
+%%PERL5_MAN3%%/Class::MethodMaker.3.gz
+%%PERL5_MAN3%%/Class::MethodMaker::Constants.3.gz
+%%PERL5_MAN3%%/Class::MethodMaker::Engine.3.gz
+%%PERL5_MAN3%%/Class::MethodMaker::OptExt.3.gz
+%%PERL5_MAN3%%/Class::MethodMaker::V1Compat.3.gz
+%%PERL5_MAN3%%/Class::MethodMaker::array.3.gz
+%%PERL5_MAN3%%/Class::MethodMaker::hash.3.gz
+%%PERL5_MAN3%%/Class::MethodMaker::scalar.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MethodMaker.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MethodMaker/Constants.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MethodMaker/Engine.pm
@@ -881,8 +889,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/scalar/scal01f5.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/scalar/scal01f8.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/scalar/scal01f9.al
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/hash
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/scalar
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/hash
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/array
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/Engine
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker

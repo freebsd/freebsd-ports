@@ -1,19 +1,27 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CommitBit/.packlist
+%%PERL5_MAN3%%/CommitBit.3.gz
+%%PERL5_MAN3%%/CommitBit::Action::ConfirmEmail.3.gz
+%%PERL5_MAN3%%/CommitBit::Action::Login.3.gz
+%%PERL5_MAN3%%/CommitBit::Action::Logout.3.gz
+%%PERL5_MAN3%%/CommitBit::Model::User.3.gz
+%%PERL5_MAN3%%/CommitBit::Notification::ConfirmAddress.3.gz
+%%PERL5_MAN3%%/CommitBit::Notification::InviteToProject.3.gz
+%%PERL5_MAN3%%/CommitBit::Test.3.gz
 %%SITE_PERL%%/CommitBit.pm
-%%SITE_PERL%%/CommitBit/Test.pm
-%%SITE_PERL%%/CommitBit/CurrentUser.pm
-%%SITE_PERL%%/CommitBit/Record.pm
-%%SITE_PERL%%/CommitBit/Dispatcher.pm
 %%SITE_PERL%%/CommitBit/Action/ConfirmEmail.pm
+%%SITE_PERL%%/CommitBit/Action/CreateProjectMember.pm
 %%SITE_PERL%%/CommitBit/Action/Login.pm
 %%SITE_PERL%%/CommitBit/Action/Logout.pm
-%%SITE_PERL%%/CommitBit/Action/CreateProjectMember.pm
+%%SITE_PERL%%/CommitBit/CurrentUser.pm
+%%SITE_PERL%%/CommitBit/Dispatcher.pm
+%%SITE_PERL%%/CommitBit/Model/Project.pm
+%%SITE_PERL%%/CommitBit/Model/ProjectMember.pm
 %%SITE_PERL%%/CommitBit/Model/Repository.pm
 %%SITE_PERL%%/CommitBit/Model/User.pm
-%%SITE_PERL%%/CommitBit/Model/ProjectMember.pm
-%%SITE_PERL%%/CommitBit/Model/Project.pm
-%%SITE_PERL%%/CommitBit/Notification/InviteToProject.pm
 %%SITE_PERL%%/CommitBit/Notification/ConfirmAddress.pm
+%%SITE_PERL%%/CommitBit/Notification/InviteToProject.pm
+%%SITE_PERL%%/CommitBit/Record.pm
+%%SITE_PERL%%/CommitBit/Test.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CommitBit/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CommitBit
 @dirrmtry %%SITE_PERL%%/CommitBit/Notification
 @dirrmtry %%SITE_PERL%%/CommitBit/Model

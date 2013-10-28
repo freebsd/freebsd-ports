@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Context/Preserve/.packlist
+%%PERL5_MAN3%%/Context::Preserve.3.gz
 %%SITE_PERL%%/Context/Preserve.pm
-@dirrmtry %%SITE_PERL%%/Context
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Context/Preserve/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Context/Preserve
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Context
+@dirrmtry %%SITE_PERL%%/Context
