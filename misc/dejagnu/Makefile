@@ -14,12 +14,9 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	expect:${PORTSDIR}/lang/expect
 RUN_DEPENDS=	expect:${PORTSDIR}/lang/expect
 
-USE_TCL=	yes
-USE_GMAKE=	yes
+USES+=		gmake tcl
 GNU_CONFIGURE=	yes
 
-MAN1=		runtest.1
 INFO=		${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

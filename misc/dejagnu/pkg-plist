@@ -1,5 +1,6 @@
 bin/runtest
 include/dejagnu.h
+man/man1/runtest.1.gz
 %%DATADIR%%/baseboards/README
 %%DATADIR%%/baseboards/am33_2.0-libremote.exp
 %%DATADIR%%/baseboards/arc-sim.exp
