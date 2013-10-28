@@ -19,16 +19,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lXt -lXaw -lX11 -lXmu
 PLIST_FILES=	bin/${PORTNAME} man/man1/xsel.1.gz
 PORTDOCS=	${PORTNAME}.html
 
-.include <bsd.port.options.mk>
-
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} xsel.c -o xsel ${LDFLAGS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man ${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}.1
-.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL} -d ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
-.endif
 
+.include <bsd.port.mk>
