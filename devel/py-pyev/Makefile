@@ -8,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 MASTER_SITE_SUBDIR=	source/p/pyev
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	gd@rambler-co.ru
+MAINTAINER=	gd.workbox@gmail.com
 COMMENT=	Python libev interface
 
 LICENSE=	GPLv3
