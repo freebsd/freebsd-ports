@@ -24,3 +24,4 @@ bin/spammer
 bin/studly
 bin/uniencode
 bin/upside-down
+man/man1/filters.1.gz
