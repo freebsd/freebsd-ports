@@ -4,3 +4,9 @@ bin/pmcheck
 bin/pmnewsgroups
 bin/pmdaemon
 bin/pmcancel
+man/man1/pmapp.1.gz
+man/man1/pmcancel.1.gz
+man/man1/pmcanon.1.gz
+man/man1/pmcheck.1.gz
+man/man1/pmdaemon.1.gz
+man/man1/pmnewsgroups.1.gz

@@ -15,14 +15,11 @@ LICENSE=	GPLv2
 
 CONFLICTS=	iroffer-1* iroffer-lamm-1.*
 
-USES=		manpages:install
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	CC="${CC}" LDFLAGS="${LDFLAGS}" LOCALBASE="${LOCALBASE}"
 ALL_TARGET=	all-lang doc
 USE_RC_SUBR=	iroffer-dinoex
-MAN1=		iroffer.1
-MAN7=		xdcc.7
 
 IROFFER_DOCS=	README README.modDinoex LIESMICH.modDinoex \
 		LICENSE THANKS TODO \
@@ -66,11 +63,13 @@ CONFIGURE_ARGS+=	-ruby
 .include "${PORTSDIR}/Mk/bsd.ruby.mk"
 .endif
 
-do-install:	install-all-manpages
+do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iroffer ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/iroffer-de ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/iroffer-it ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/iroffer-fr ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/iroffer.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/xdcc.7 ${STAGEDIR}${MANPREFIX}/man/man7/
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${IROFFER_DOCS}

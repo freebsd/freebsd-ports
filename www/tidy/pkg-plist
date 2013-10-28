@@ -1,4 +1,5 @@
 bin/tidy4
+man/man1/tidy4.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/Overview.html
 %%PORTDOCS%%%%DOCSDIR%%/grid.gif
 %%PORTDOCS%%%%DOCSDIR%%/release-notes.html

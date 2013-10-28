@@ -12,17 +12,13 @@ COMMENT=	Generates perfect hash functions for sets of keywords
 LICENSE=	GPLv2
 
 CONFLICTS=	ace+tao-[0-9]*
-
-USES=		manpages
-GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
-CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
-
-MAN1=		gperf.1
-INFO=		gperf
-
 # avoid GPL3
 PORTSCOUT=	skipv:3.0.4
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
+INFO=		gperf
 
 regression-test: test
 

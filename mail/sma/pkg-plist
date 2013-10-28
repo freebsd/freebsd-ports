@@ -1,4 +1,5 @@
 bin/sma
+man/man8/sma.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY
