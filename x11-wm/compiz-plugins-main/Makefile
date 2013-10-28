@@ -3,7 +3,7 @@
 
 PORTNAME=	compiz-plugins-main
 PORTVERSION=	0.8.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 USE_GL=		yes
 USE_BZIP2=	yes
 USES=		gettext gmake pathfix pkgconfig
+USE_CSTD=	gnu89
 USE_GNOME=	intltool
 USE_XORG=	glproto
 USE_LDCONFIG=	yes
