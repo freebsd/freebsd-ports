@@ -2334,12 +2334,12 @@ SCRIPTS_ENV+=	${INSTALL_MACROS}
 .if ${UID} == 0
 COPYTREE_BIN=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
 					2>&1) && \
-					${CHOWN} -R ${BINOWN}:${BINGRP} $$1 && \
+					${CHOWN} -Rh ${BINOWN}:${BINGRP} $$1 && \
 					${FIND} -d $$0 $$2 -type d -exec chmod 755 $$1/{} \; && \
 					${FIND} -d $$0 $$2 -type f -exec chmod ${BINMODE} $$1/{} \;' --
 COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
 					2>&1) && \
-					${CHOWN} -R ${SHAREOWN}:${SHAREGRP} $$1 && \
+					${CHOWN} -Rh ${SHAREOWN}:${SHAREGRP} $$1 && \
 					${FIND} -d $$0 $$2 -type d -exec chmod 755 $$1/{} \; && \
 					${FIND} -d $$0 $$2 -type f -exec chmod ${SHAREMODE} $$1/{} \;' --
 .else
