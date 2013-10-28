@@ -1,0 +1,31 @@
+--- Makefile.orig	2013-07-12 20:59:10.000000000 +0200
++++ Makefile	2013-09-12 21:36:58.340976359 +0200
+@@ -27,7 +27,7 @@
+ #-------------------------------------------------------------------------------
+ # global settings
+ 
+-#SHELL			= /bin/bash
++#SHELL			= /usr/local/bin/bash
+ SHELL			= /usr/bin/env bash
+ 
+ AUTHOR			= Dirk Clemens
+@@ -99,8 +99,8 @@
+ # compiler settings
+ 
+ PRE		?= 
+-CC		= $(PRE)gcc
+-CPP		= $(PRE)g++
++#CC		= $(PRE)cc
++#CPP		= $(PRE)cpp
+ STRIP		= $(PRE)strip
+ 
+ #-------------------------------------------------------------------------------
+@@ -248,7 +248,7 @@
+ 
+ #-------------------------------------------------------------------------------
+ 
+-SHARE_PATH	= $(INSTALL_PATH)/share/wit
++SHARE_PATH	= $(INSTALL_PATH)/share/wiimms
+ INSTALL_SCRIPTS	= install.sh load-titles.sh
+ RM_FILES	+= $(INSTALL_SCRIPTS)
+ SCRIPTS		= ./scripts

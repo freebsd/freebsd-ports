@@ -1,5 +1,5 @@
---- setup.sh.orig	2011-07-08 20:21:46.000000000 +0200
-+++ setup.sh	2011-08-04 01:55:05.000000000 +0200
+--- setup.sh.orig	2013-02-09 21:55:43.000000000 +0100
++++ setup.sh	2013-09-12 21:34:08.051742488 +0200
 @@ -19,8 +19,9 @@
  tim=($(date '+%s %Y-%m-%d %T'))
  
@@ -27,5 +27,12 @@
 +# FreeBSD didn't support Pre-alloc
 +defines="$defines -DNO_PREALLOC"
  
- [[ $STATIC = 1 ]] || STATIC=0
+ [[ -r /usr/include/linux/fiemap.h ]] \
+ 	&& grep -qw fiemap_extent /usr/include/linux/fiemap.h \
+@@ -110,6 +115,6 @@
  
+ 	---EOT---
+ 
+-gcc $xflags system.c -o system.tmp && ./system.tmp >>Makefile.setup
++${CC} $xflags system.c -o system.tmp && ./system.tmp >>Makefile.setup
+ rm -f system.tmp
