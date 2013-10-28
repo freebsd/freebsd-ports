@@ -1,0 +1,6 @@
+The ej module makes it easier to work with Erlang terms representing JSON in
+the format returned by jiffy, mochijson2, or ejson. You can use ej:get/2 to
+walk an object and return a particular value, ej:set/3 to update a value within
+an object, or ej:delete/2 to remove a value from an object.
+
+WWW: https://github.com/seth/ej

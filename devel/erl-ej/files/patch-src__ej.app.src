@@ -1,0 +1,11 @@
+--- ./src/ej.app.src.orig	2013-10-28 18:28:00.000000000 +0900
++++ ./src/ej.app.src	2013-10-28 18:28:16.000000000 +0900
+@@ -1,7 +1,7 @@
+ {application, ej,
+  [
+   {description, "An Erlang JSON Helper Library"},
+-  {vsn, git},
++  {vsn, "${VERSION}"},
+   {registered, []},
+   {applications, [
+                   kernel,

@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ej.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/ej.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ej.app
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ej.beam
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%
