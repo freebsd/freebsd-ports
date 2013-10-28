@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_certgen.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_certgen.app
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_certgen.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/chef_certgen.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/chef_certgen.so
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%
