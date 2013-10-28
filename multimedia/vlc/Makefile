@@ -3,6 +3,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	2.1.0
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -21,18 +22,18 @@ BUILD_DEPENDS=	ffmpeg>=2.0:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS=	ffmpeg>=2.0:${PORTSDIR}/multimedia/ffmpeg
 
 OPTIONS_DEFINE=	A52 AALIB ASS AVAHI CACA DBUS DIRAC DOCS DTS DVDREAD \
-		DVDNAV FAAD FLAC FLUID FRIBIDI GLX GNOMEVFS GNUTLS GOOM \
+		DVDNAV FAAD FLAC FLUID FRIBIDI GNOMEVFS GNUTLS GOOM \
 		HTTPD JACK LIBSSH2 LIRC LIVEMEDIA LUA MAD MATROSKA MODPLUG \
 		MPEG2 MTP MUSEPACK NCURSES NLS NOTIFY OPTIMIZED_CFLAGS OGG \
 		OPUS PNG PULSEAUDIO QT4 REALAUDIO RUNROOT \
 		SAMBA SCHROED SDL SHOUTCAST SKINS STREAM SPEEX SQLITE SVG \
 		TAGLIB THEORA TWOLAME UPNP V4L VAAPI VCD VORBIS \
-		X11 X264 XCB XOSD XVIDEO ZVBI SERVER_ONLY DEBUG \
+		X11 X264 XOSD ZVBI SERVER_ONLY DEBUG \
 		GME NO_DVD LIBBLURAY SAMPLERATE SIDPLAY
-OPTIONS_DEFAULT=A52 AVAHI DBUS DTS DVDREAD DVDNAV FAAD FLAC GLX GNUTLS \
+OPTIONS_DEFAULT=A52 AVAHI DBUS DTS DVDREAD DVDNAV FAAD FLAC GNUTLS \
 		HTTPD LUA MAD MATROSKA MPEG2 OGG OPUS PNG QT4 REALAUDIO \
 		SDL SKINS STREAM SPEEX TAGLIB THEORA TWOLAME V4L \
-		VCD VORBIS X11 X264 XCB XVIDEO SAMPLERATE
+		VCD VORBIS X11 X264 SAMPLERATE
 ASS_DESC=	ASS/SSA subtitle rendering
 DTS_DESC=	DTS DVD audio decoder
 DVDREAD_DESC=	DVD Playback support
@@ -54,11 +55,194 @@ STREAM_DESC=	stream output
 TAGLIB_DESC=	ID3 tag and Ogg comment support
 V4L_DESC=	Video4Linux video capture compatibility
 VCD_DESC=	Video CD support
-XCB_DESC=	Use X C Bindings for X11 output
 XOSD_DESC=	X11 On Screen Display support
 ZVBI_DESC=	VBI decoding support
 SERVER_ONLY_DESC=	Only build server parts
 NO_DVD_DESC=	disable DVD specific features
+
+QT4_CONFIGURE_ENABLE=	qt
+
+A52_CONFIGURE_ENABLE=	a52
+A52_LIB_DEPENDS=	liba52.so:${PORTSDIR}/audio/liba52
+
+AALIB_LIB_DEPENDS=	libaa.so:${PORTSDIR}/graphics/aalib
+AALIB_CONFIGURE_ENABLE=	aa
+
+ASS_LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass
+ASS_CONFIGURE_ENABLE=	libass
+
+AVAHI_LIB_DEPENDS=	libavahi-common.so:${PORTSDIR}/net/avahi-app
+AVAHI_CONFIGURE_ENABLE=	bonjour
+
+CACA_LIB_DEPENDS=	libcaca.so:${PORTSDIR}/graphics/libcaca
+CACA_CONFIGURE_ENABLE=	caca
+
+DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+DBUS_CONFIGURE_ENABLE=	dbus
+
+DEBUG_CONFIGURE_ENABLE=	debug
+
+DIRAC_LIB_DEPENDS=	libdirac_decoder.so:${PORTSDIR}/multimedia/dirac
+DIRAC_CONFIGURE_ENABLE=	dirac
+DIRAC_CPPFLAGS=		-I${LOCALBASE}/include/dirac
+
+DTS_LIB_DEPENDS=	libdca.so:${PORTSDIR}/multimedia/libdca
+DTS_CONFIGURE_ARGS=	dca
+
+DVDREAD_LIB_DEPENDS=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread
+DVDREAD_CONFIGURE_ENABLE=	dvdread
+
+DVDNAV_LIB_DEPENDS=	libdvdnav.so:${PORTSDIR}/multimedia/libdvdnav
+DVDNAV_CONFIGURE_ENABLE=	dvdnav
+
+FAAD_LIB_DEPENDS=	libfaad.so:${PORTSDIR}/audio/faad
+FAAD_CONFIGURE_ENABLE=	faad
+
+FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
+FLAC_CONFIGURE_ENABLE=	flac
+
+FLUID_LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
+FLUID_CONFIGURE_ENABLE=	fluidsynth
+
+FRIBIDI_LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi
+FRIBIDI_CONFIGURE_ENABLE=	fribidi
+
+GME_LIB_DEPENDS=	libgme.so:${PORTSDIR}/audio/libgme
+GME_CONFIGURE_ENABLE=	gme
+
+GNOMEVFS_USE=	GNOME=gnomevfs2
+GNOMEVFS_CONFIGURE_ENABLE=	gnomevfs
+
+GNUTLS_LIB_DEPENDS=	libgnutls.so.28:${PORTSDIR}/security/gnutls3
+GNUTLS_CONFIGURE_ENABLE=	gnutls
+
+GOOM_LIB_DEPENDS=	libgoom2.so:${PORTSDIR}/graphics/goom
+GOOM_CONFIGURE_ENABLE=	goom
+
+HTTPD_CONFIGURE_ENABLE=	httpd
+
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_CONFIGURE_ENABLE=	jack
+
+LIBBLURAY_LIB_DEPENDS=	libbluray.so:${PORTSDIR}/multimedia/libbluray
+LIBBLURAY_CONFIGURE_ENABLE=	bluray
+
+LIBSSH2_LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2
+LIBSSH2_CONFIGURE_ENABLE=	sftp
+
+LIRC_LIB_DEPENDS=	liblirc_client.so:${PORTSDIR}/comms/lirc
+LIRC_CONFIGURE_ENABLE=	lirc
+
+LIVEMEDIA_BUILD_DEPENDS=	${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
+LIVEMEDIA_CONFIGURE_ENABLE=	live555
+LIVEMEDIA_CPPFLAGS=	-I${LOCALBASE}/live/liveMedia/include \
+		-I${LOCALBASE}/live/BasicUsageEnvironment/include \
+		-I${LOCALBASE}/live/UsageEnvironment/include \
+		-I${LOCALBASE}/live/groupsock/include
+LIVEMEDIA_LDFLAGS=	-L${LOCALBASE}/live/groupsock \
+		-L${LOCALBASE}/live/liveMedia \
+		-L${LOCALBASE}/live/UsageEnvironment \
+		-L${LOCALBASE}/live/BasicUsageEnvironment
+
+MAD_LIB_DEPENDS=	libid3tag.so:${PORTSDIR}/audio/libid3tag \
+			libmad.so:${PORTSDIR}/audio/libmad
+NAD_CONFIGURE_ENABLE=	mad
+MAD_CONFIGURE_ON=	--with-mad=${LOCALBASE}
+
+MATROSKA_LIB_DEPENDS=	libmatroska.so:${PORTSDIR}/multimedia/libmatroska
+MATROSKA_CONFIGURE_ENABLE=	mkv
+
+MODPLUG_LIB_DEPENDS=	libmodplug.so:${PORTSDIR}/audio/libmodplug
+MODPLUG_CONFIGURE_ENABLE=	mod
+
+MPEG2_LIB_DEPENDS=	libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2
+MPEG2_CONFIGURE_ENABLE=	libmpeg2
+
+MTP_LIB_DEPENDS=	libmtp.so:${PORTSDIR}/audio/libmtp
+MTP_CONFIGURE_ENABLE=	mtp
+
+MUSEPACK_LIB_DEPENDS=	libmpcdec.so:${PORTSDIR}/audio/musepack
+MUSEPACK_CONFIGURE_ENABLE=	mpc
+
+NCURSES_CONFIGURE_ENV=	NCURSES_CFLAGS="-I/usr/include" NCURSES_LIBS="-lncursesw"
+NCURSES_CONFIGURE_ENABLE=	ncurses
+
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
+
+NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+NOTIFY_CONFIGURE_ENABLE=	notify
+
+OPTIMIZED_CFLAGS_CFLAGS=	-O3 -ffast-math -fomit-frame-pointer
+OPTIMIZED_CFLAGS_CONFIGURE_ENABLE=	optimizations
+
+OPUS_LIB_DEPENDS=	libopus.so:${PORTSDIR}/audio/opus
+OPUS_CONFIGURE_ENABLE=	opus
+
+PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+PNG_CONFIGURE_ENABLE=	png
+
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CONFIGURE_ENABLE=	pulse
+
+REALAUDIO_CONFIGURE_ENABLE=	real realrtsp
+
+RUNROOT_CONFIGURE_ENABLE=	run-as-root
+
+SAMPLERATE_LIB_DEPENDS=		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
+SAMPLERATE_CONFIGURE_ENABLE=	samplerate
+
+SAMBA_LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
+SAMBA_CONFIGURE_ENABLE=	smb
+
+SCHROED_LIB_DEPENDS=	libschroedinger-1.0.so:${PORTSDIR}/multimedia/schroedinger
+SCHROED_CONFIGURE_ENABLE=	schroedinger
+
+SIDPLAY_LIB_DEPENDS=	libsidplay2.so:${PORTSDIR}/audio/libsidplay2
+SIDPLAY_LDFLAGS=	-L${LOCALBASE}/lib/sidplay/builders
+SIDPLAY_CONFIGURE_ENABLE=	sid
+
+SHOUTCAST_LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout2
+SHOUTCAST_CONFIGURE_ENABLE=	shout
+
+STREAM_CONFIGURE_ENABLE=	sout
+
+SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
+SPEEX_CONFIGURE_ENABLE=	speex
+SPEEX_CPPFLAGS=		-I${LOCALBASE}/include/speex
+
+SQLITE_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+SQLITE_CONFIGURE_ENABLE=	sqlite
+
+TAGLIB_LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
+TAGLIB_CONFIGURE_ENABLE=taglib
+
+THEORA_LIB_DEPENDS=	libtheora.so:${PORTSDIR}/multimedia/libtheora
+THEORA_CONFIGURE_ENABLE=theora
+
+TWOLAME_LIB_DEPENDS=		libtwolame.so:${PORTSDIR}/audio/twolame
+TWOLAME_CONFIGURE_ENABLE=	twolame
+
+UPNP_LIB_DEPENDS=	libupnp.so:${PORTSDIR}/devel/upnp
+UPNP_CONFIGURE_ENABLE=	upnp
+
+VAAPI_LIB_DEPENDS=	libva.so:${PORTSDIR}/multimedia/libva
+VAAPI_CONFIGURE_ENABLE=	libva
+
+VCD_LIB_DEPENDS=	libcddb.so:${PORTSDIR}/audio/libcddb
+VCD_CONFIGURE_ENABLE=	vcd libcddb
+
+VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_CONFIGURE_ENABLE=vorbis
+
+X264_LIB_DEPENDS=	libx264.so:${PORTSDIR}/multimedia/x264
+X264_CONFIGURE_ENABLE=	x264
+
+XOSD_LIB_DEPENDS=	libxosd.so:${PORTSDIR}/misc/xosd
+XOSD_CONFIGURE_ENABLE=	xosd
+
+ZVBI_LIB_DEPENDS=	libzvbi.so:${PORTSDIR}/devel/libzvbi
+ZVBI_CONFIGURE_ENABLE=	zvbi
 
 USE_XZ=		yes
 USES=		desktop-file-utils iconv perl5 gmake pkgconfig
@@ -72,8 +256,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${WRKSRC}/include
 CONFIGURE_ENV=	LIBS="-lc"
-LDFLAGS+=	-L${STAGEDIR}${PREFIX}/lib \
-		${PTHREAD_LIBS} -lc
+LDFLAGS+=	${PTHREAD_LIBS} -lc
 
 CONFIGURE_ARGS+=	--enable-vlc \
 			--enable-avcodec \
@@ -109,227 +292,20 @@ PORT_OPTIONS:=	${PORT_OPTIONS:NDVDNAV}
 # Use this to disable all UI and output modules
 .if ${PORT_OPTIONS:MSERVER_ONLY}
 PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
-PORT_OPTIONS:=	${PORT_OPTIONS:NGLX}
 PORT_OPTIONS:=	${PORT_OPTIONS:NLUA}
 PORT_OPTIONS:=	${PORT_OPTIONS:NQT4}
 PORT_OPTIONS:=	${PORT_OPTIONS:NSKINS}
-PORT_OPTIONS:=	${PORT_OPTIONS:NXCB}
-PORT_OPTIONS:=	${PORT_OPTIONS:NXVIDEO}
 .if empty(PORT_OPTIONS:MRUNROOT)
 PORT_OPTIONS+=	RUNROOT
 PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 .endif
 .endif
 
-# This was the pre-1.1.0 DEBUG option. It differs in function than bsd.port.mk's
-# knob and is not needed by most users. Put here for those who need/want it.
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=--enable-debug
-.else
-CONFIGURE_ARGS+=--disable-debug
-.endif
-
 # End Macro section
+#
 
-# Qt bits must be included before bsd.port.pre.mk
 .if ${PORT_OPTIONS:MQT4}
-CONFIGURE_ARGS+=--enable-qt4
 USE_QT4=	gui corelib moc_build rcc_build uic_build
-.else
-CONFIGURE_ARGS+=--disable-qt4
-.endif
-
-# OPTIONS
-# Keep these organized!
-
-.if ${PORT_OPTIONS:MA52}
-CONFIGURE_ARGS+=--enable-a52
-LIB_DEPENDS+=	liba52.so:${PORTSDIR}/audio/liba52
-.else
-CONFIGURE_ARGS+=--disable-a52
-.endif
-
-.if ${PORT_OPTIONS:MAALIB}
-LIB_DEPENDS+=	libaa.so:${PORTSDIR}/graphics/aalib
-CONFIGURE_ARGS+=--enable-aa
-.else
-CONFIGURE_ARGS+=--disable-aa
-.endif
-
-.if ${PORT_OPTIONS:MASS}
-LIB_DEPENDS+=	libass.so:${PORTSDIR}/multimedia/libass
-CONFIGURE_ARGS+=--enable-libass
-.else
-CONFIGURE_ARGS+=--disable-libass
-.endif
-
-.if ${PORT_OPTIONS:MAVAHI}
-LIB_DEPENDS+=	libavahi-common.so:${PORTSDIR}/net/avahi-app
-CONFIGURE_ARGS+=--enable-bonjour
-.else
-CONFIGURE_ARGS+=--disable-bonjour
-.endif
-
-.if ${PORT_OPTIONS:MCACA}
-.if ${PORT_OPTIONS:MAALIB}
-LIB_DEPENDS+=	libcaca.so:${PORTSDIR}/graphics/libcaca
-CONFIGURE_ARGS+=--enable-caca
-.else
-IGNORE=	CACA option requires AALIB option
-.endif
-.else
-CONFIGURE_ARGS+=--disable-caca
-.endif
-
-.if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	libdbus-1.so:${PORTSDIR}/devel/dbus
-CONFIGURE_ARGS+=--enable-dbus
-.else
-CONFIGURE_ARGS+=--disable-dbus
-.endif
-
-.if ${PORT_OPTIONS:MDIRAC}
-LIB_DEPENDS+=	libdirac_decoder.so:${PORTSDIR}/multimedia/dirac
-CONFIGURE_ARGS+=--enable-dirac
-CPPFLAGS+=	-I${LOCALBASE}/include/dirac
-.else
-CONFIGURE_ARGS+=--disable-dirac
-.endif
-
-.if ${PORT_OPTIONS:MDTS}
-LIB_DEPENDS+=	libdca.so:${PORTSDIR}/multimedia/libdca
-CONFIGURE_ARGS+=--enable-dca
-.else
-CONFIGURE_ARGS+=--disable-dca
-.endif
-
-.if ${PORT_OPTIONS:MDVDREAD}
-LIB_DEPENDS+=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread
-CONFIGURE_ARGS+=--enable-dvdread
-.else
-CONFIGURE_ARGS+=--disable-dvdread
-.endif
-
-.if ${PORT_OPTIONS:MDVDNAV}
-LIB_DEPENDS+=	libdvdnav.so:${PORTSDIR}/multimedia/libdvdnav
-CONFIGURE_ARGS+=--enable-dvdnav
-.else
-CONFIGURE_ARGS+=--disable-dvdnav
-.endif
-
-.if ${PORT_OPTIONS:MFAAD}
-LIB_DEPENDS+=	libfaad.so:${PORTSDIR}/audio/faad
-CONFIGURE_ARGS+=--enable-faad
-.else
-CONFIGURE_ARGS+=--disable-faad
-.endif
-
-.if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac
-CONFIGURE_ARGS+=--enable-flac
-.else
-CONFIGURE_ARGS+=--disable-flac
-.endif
-
-.if ${PORT_OPTIONS:MFLUID}
-LIB_DEPENDS+=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
-CONFIGURE_ARGS+=--enable-fluidsynth
-.else
-CONFIGURE_ARGS+=--disable-fluidsynth
-.endif
-
-.if ${PORT_OPTIONS:MFRIBIDI}
-LIB_DEPENDS+=	libfribidi.so:${PORTSDIR}/converters/fribidi
-CONFIGURE_ARGS+=--enable-fribidi
-.else
-CONFIGURE_ARGS+=--disable-fribidi
-.endif
-
-.if ${PORT_OPTIONS:MGLX}
-.if ${PORT_OPTIONS:MXCB}
-CONFIGURE_ARGS+=--enable-glx
-.else
-IGNORE=	GLX option requires XCB option
-.endif
-.else
-CONFIGURE_ARGS+=--disable-glx
-.endif
-
-.if ${PORT_OPTIONS:MGME}
-LIB_DEPENDS+=	libgme.so:${PORTSDIR}/audio/libgme
-CONFIGURE_ARGS+=--enable-gme
-.else
-CONFIGURE_ARGS+=--disable-gme
-.endif
-
-.if ${PORT_OPTIONS:MGNOMEVFS}
-USE_GNOME+=	gnomevfs2
-CONFIGURE_ARGS+=--enable-gnomevfs
-.else
-CONFIGURE_ARGS+=--disable-gnomevfs
-.endif
-
-.if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	libgnutls.so.28:${PORTSDIR}/security/gnutls3
-CONFIGURE_ARGS+=--enable-gnutls
-.else
-CONFIGURE_ARGS+=--disable-gnutls
-.endif
-
-.if ${PORT_OPTIONS:MGOOM}
-LIB_DEPENDS+=	libgoom2.so:${PORTSDIR}/graphics/goom
-CONFIGURE_ARGS+=--enable-goom
-.else
-CONFIGURE_ARGS+=--disable-goom
-.endif
-
-.if ${PORT_OPTIONS:MHTTPD}
-CONFIGURE_ARGS+=--enable-httpd
-.else
-CONFIGURE_ARGS+=--disable-httpd
-.endif
-
-.if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
-CONFIGURE_ARGS+=--enable-jack
-.else
-CONFIGURE_ARGS+=--disable-jack
-.endif
-
-.if ${PORT_OPTIONS:MLIBBLURAY}
-LIB_DEPENDS+=	libbluray.so:${PORTSDIR}/multimedia/libbluray
-CONFIGURE_ARGS+=--enable-bluray
-.else
-CONFIGURE_ARGS+=--disable-bluray
-.endif
-
-.if ${PORT_OPTIONS:MLIBSSH2}
-LIB_DEPENDS+=	libssh2.so:${PORTSDIR}/security/libssh2
-CONFIGURE_ARGS+=--enable-sftp
-.else
-CONFIGURE_ARGS+=--disable-sftp
-.endif
-
-.if ${PORT_OPTIONS:MLIRC}
-CONFIGURE_ARGS+=--enable-lirc
-LIB_DEPENDS+=	liblirc_client.so:${PORTSDIR}/comms/lirc
-.else
-CONFIGURE_ARGS+=--disable-lirc
-.endif
-
-.if ${PORT_OPTIONS:MLIVEMEDIA}
-BUILD_DEPENDS+=	${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
-CONFIGURE_ARGS+=--enable-live555
-CPPFLAGS+=	-I${LOCALBASE}/live/liveMedia/include \
-		-I${LOCALBASE}/live/BasicUsageEnvironment/include \
-		-I${LOCALBASE}/live/UsageEnvironment/include \
-		-I${LOCALBASE}/live/groupsock/include
-LDFLAGS+=	-L${LOCALBASE}/live/groupsock \
-		-L${LOCALBASE}/live/liveMedia \
-		-L${LOCALBASE}/live/UsageEnvironment \
-		-L${LOCALBASE}/live/BasicUsageEnvironment
-.else
-CONFIGURE_ARGS+=--disable-live555
 .endif
 
 # This may become mandantory in the future
@@ -342,74 +318,6 @@ CONFIGURE_ARGS+=--enable-lua LUAC=luac-${WANT_LUA_VER}
 CONFIGURE_ARGS+=--disable-lua
 .endif
 
-.if ${PORT_OPTIONS:MMAD}
-LIB_DEPENDS+=	libid3tag.so:${PORTSDIR}/audio/libid3tag \
-		libmad.so:${PORTSDIR}/audio/libmad
-CONFIGURE_ARGS+=--enable-mad --with-mad=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--disable-mad
-.endif
-
-.if ${PORT_OPTIONS:MMATROSKA}
-LIB_DEPENDS+=	libmatroska.so:${PORTSDIR}/multimedia/libmatroska
-CONFIGURE_ARGS+=--enable-mkv
-.else
-CONFIGURE_ARGS+=--disable-mkv
-.endif
-
-.if ${PORT_OPTIONS:MMODPLUG}
-LIB_DEPENDS+=	libmodplug.so:${PORTSDIR}/audio/libmodplug
-CONFIGURE_ARGS+=--enable-mod
-.else
-CONFIGURE_ARGS+=--disable-mod
-.endif
-
-.if ${PORT_OPTIONS:MMPEG2}
-LIB_DEPENDS+=	libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2
-CONFIGURE_ARGS+=--enable-libmpeg2
-.else
-CONFIGURE_ARGS+=--disable-libmpeg2
-.endif
-
-.if ${PORT_OPTIONS:MMTP}
-LIB_DEPENDS+=	libmtp.so:${PORTSDIR}/audio/libmtp
-CONFIGURE_ARGS+=--enable-mtp
-.else
-CONFIGURE_ARGS+=--disable-mtp
-.endif
-
-.if ${PORT_OPTIONS:MMUSEPACK}
-LIB_DEPENDS+=	libmpcdec.so:${PORTSDIR}/audio/musepack
-CONFIGURE_ARGS+=--enable-mpc
-.else
-CONFIGURE_ARGS+=--disable-mpc
-.endif
-
-.if ${PORT_OPTIONS:MNCURSES}
-CONFIGURE_ENV+=	NCURSES_CFLAGS="-I/usr/include" NCURSES_LIBS="-lncursesw"
-CONFIGURE_ARGS+=--enable-ncurses
-.else
-CONFIGURE_ARGS+=--disable-ncurses
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-.else
-CONFIGURE_ARGS+=--disable-nls
-.endif
-
-.if ${PORT_OPTIONS:MNOTIFY}
-CONFIGURE_ARGS+=--enable-notify
-LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
-.else
-CONFIGURE_ARGS+=--disable-notify
-.endif
-
-.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-CFLAGS+=-O3 -ffast-math -fomit-frame-pointer
-CONFIGURE_ARGS+=--enable-optimizations
-.endif
-
 .if ${PORT_OPTIONS:MOGG}
 LIB_DEPENDS+=	libogg.so:${PORTSDIR}/audio/libogg \
 		libkate.so:${PORTSDIR}/multimedia/libkate
@@ -419,82 +327,12 @@ PORT_OPTIONS:=	${PORT_OPTIONS:NVORBIS}
 CONFIGURE_ARGS+=--disable-ogg --disable-kate
 .endif
 
-.if ${PORT_OPTIONS:MOPUS}
-LIB_DEPENDS+=	libopus.so:${PORTSDIR}/audio/opus
-CONFIGURE_ARGS+=--enable-opus
-.else
-CONFIGURE_ARGS+=--disable-opus
-.endif
-
-.if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
-CONFIGURE_ARGS+=--enable-png
-.else
-CONFIGURE_ARGS+=--disable-png
-.endif
-
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
-CONFIGURE_ARGS+=--enable-pulse
-.else
-CONFIGURE_ARGS+=--enable-pulse=no
-.endif
-
-# WITHOUT_QT4
-# Before .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MREALAUDIO}
-CONFIGURE_ARGS+=--enable-real --enable-realrtsp
-.else
-CONFIGURE_ARGS+=--disable-real --disable-realrtsp
-.endif
-
-.if ${PORT_OPTIONS:MRUNROOT}
-CONFIGURE_ARGS+=--enable-run-as-root
-.endif
-
-.if ${PORT_OPTIONS:MSAMPLERATE}
-LIB_DEPENDS+=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
-CONFIGURE_ARGS+=--enable-samplerate
-.else
-CONFIGURE_ARGS+=--disable-samplerate
-.endif
-
-.if ${PORT_OPTIONS:MSAMBA}
-LIB_DEPENDS+=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
-CONFIGURE_ARGS+=--enable-smb
-.else
-CONFIGURE_ARGS+=--disable-smb
-.endif
-
-.if ${PORT_OPTIONS:MSCHROED}
-LIB_DEPENDS+=	libschroedinger-1.so:${PORTSDIR}/multimedia/schroedinger
-CONFIGURE_ARGS+=--enable-schroedinger
-.else
-CONFIGURE_ARGS+=--disable-schroedinger
-.endif
-
-.if ${PORT_OPTIONS:MSIDPLAY}
-LIB_DEPENDS+=	libsidplay2.so:${PORTSDIR}/audio/libsidplay2
-LDFLAGS+=	-L${LOCALBASE}/lib/sidplay/builders
-CONFIGURE_ARGS+=--enable-sid
-.else
-CONFIGURE_ARGS+=--disable-sid
-.endif
-
-.if ${PORT_OPTIONS:MSDL} && ${PORT_OPTIONS:MXCB}
+.if ${PORT_OPTIONS:MSDL} && ${PORT_OPTIONS:MX11}
 WANT_SDL=	yes
 USE_SDL=	image
 CONFIGURE_ARGS+=--enable-sdl --enable-sdl-image
 .else
 CONFIGURE_ARGS+=--disable-sdl --disable-sdl-image
-.endif
-
-.if ${PORT_OPTIONS:MSHOUTCAST}
-LIB_DEPENDS+=	libshout.so:${PORTSDIR}/audio/libshout2
-CONFIGURE_ARGS+=--enable-shout
-.else
-CONFIGURE_ARGS+=--disable-shout
 .endif
 
 .if ${PORT_OPTIONS:MSKINS}
@@ -508,60 +346,11 @@ IGNORE=	SKINS option requires QT4 option
 CONFIGURE_ARGS+=--disable-skins2 --disable-libtar
 .endif
 
-.if ${PORT_OPTIONS:MSTREAM}
-CONFIGURE_ARGS+=--enable-sout
-.else
-CONFIGURE_ARGS+=--disable-sout
-.endif
-
-.if ${PORT_OPTIONS:MSPEEX}
-LIB_DEPENDS+=	libspeex.so:${PORTSDIR}/audio/speex
-CONFIGURE_ARGS+=--enable-speex
-CPPFLAGS+=-I${LOCALBASE}/include/speex
-.else
-CONFIGURE_ARGS+=--disable-speex
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
-CONFIGURE_ARGS+=--enable-sqlite
-.else
-CONFIGURE_ARGS+=--disable-sqlite
-.endif
-
-.if ${PORT_OPTIONS:MSVG} && ${PORT_OPTIONS:MXCB}
+.if ${PORT_OPTIONS:MSVG} && ${PORT_OPTIONS:MX11}
 USE_GNOME+=	librsvg2
 CONFIGURE_ARGS+=--enable-svg
 .else
 CONFIGURE_ARGS+=--disable-svg
-.endif
-
-.if ${PORT_OPTIONS:MTAGLIB}
-LIB_DEPENDS+=	libtag.so:${PORTSDIR}/audio/taglib
-CONFIGURE_ARGS+=--enable-taglib
-.else
-CONFIGURE_ARGS+=--disable-taglib
-.endif
-
-.if ${PORT_OPTIONS:MTHEORA}
-LIB_DEPENDS+=	libtheora.so:${PORTSDIR}/multimedia/libtheora
-CONFIGURE_ARGS+=--enable-theora
-.else
-CONFIGURE_ARGS+=--disable-theora
-.endif
-
-.if ${PORT_OPTIONS:MTWOLAME}
-LIB_DEPENDS+=		libtwolame.so:${PORTSDIR}/audio/twolame
-CONFIGURE_ARGS+=	--enable-twolame
-.else
-CONFIGURE_ARGS+=	--disable-twolame
-.endif
-
-.if ${PORT_OPTIONS:MUPNP}
-LIB_DEPENDS+=	libupnp.so:${PORTSDIR}/devel/upnp
-CONFIGURE_ARGS+=--enable-upnp
-.else
-CONFIGURE_ARGS+=--disable-upnp
 .endif
 
 .if ${PORT_OPTIONS:MV4L} || ${PORT_OPTIONS:MDVB}
@@ -571,79 +360,17 @@ CONFIGURE_ARGS+=--enable-v4l2
 CONFIGURE_ARGS+=--disable-v4l2
 .endif
 
-.if ${PORT_OPTIONS:MVAAPI}
-LIB_DEPENDS+=	libva.so:${PORTSDIR}/multimedia/libva
-CONFIGURE_ARGS+=--enable-libva
-.else
-CONFIGURE_ARGS+=--disable-libva
-.endif
-
-.if ${PORT_OPTIONS:MVCD}
-LIB_DEPENDS+=	libcddb.so:${PORTSDIR}/audio/libcddb
-CONFIGURE_ARGS+=--enable-vcd --enable-libcddb
-.else
-CONFIGURE_ARGS+=--disable-vcd --disable-libcddb
-.endif
-
-.if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
-CONFIGURE_ARGS+=--enable-vorbis
-.else
-CONFIGURE_ARGS+=--disable-vorbis
-.endif
-
 .if ${PORT_OPTIONS:MX11}
-CONFIGURE_ARGS+=--with-x
-.else
-CONFIGURE_ARGS+=--without-x
-.endif
-
-.if ${PORT_OPTIONS:MX264}
-CONFIGURE_ARGS+=--enable-x264
-LIB_DEPENDS+=	libx264.so:${PORTSDIR}/multimedia/x264
-.else
-CONFIGURE_ARGS+=--disable-x264
-.endif
-
-.if ${PORT_OPTIONS:MXCB}
-USE_XORG=	xcb xpm
+USE_XORG=xcb xpm
 LIB_DEPENDS+=	libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms
-CONFIGURE_ARGS+=--enable-xcb --with-x
+CONFIGURE_ARGS+=--with-x --enable-glx --enable-xcb --enable-xvideo
 .else
-CONFIGURE_ARGS+=--disable-xcb --without-x
-.endif
-
-.if ${PORT_OPTIONS:MXOSD}
-LIB_DEPENDS+=	libxosd.so:${PORTSDIR}/misc/xosd
-CONFIGURE_ARGS+=--enable-xosd
-.else
-CONFIGURE_ARGS+=--disable-xosd
-.endif
-
-.if ${PORT_OPTIONS:MXVIDEO}
-.if ${PORT_OPTIONS:MXCB}
-CONFIGURE_ARGS+=--enable-xvideo
-.else
-IGNORE=	XVIDEO option requires XCB option
-.endif
-.else
-CONFIGURE_ARGS+=--disable-xvideo
-.endif
-
-.if ${PORT_OPTIONS:MZVBI}
-LIB_DEPENDS+=	libzvbi.so:${PORTSDIR}/devel/libzvbi
-CONFIGURE_ARGS+=--enable-zvbi
-.else
-CONFIGURE_ARGS+=--disable-zvbi
+CONFIGURE_ARGS+=--without-x --disable-glx --disable-xcb --disable-xvideo
 .endif
 
 .include <bsd.port.pre.mk>
 
 # OS specific hacks
-.if (${OSVERSION} < 800000)
-BROKEN=		doesn't build on such an old FreeBSD version
-.endif
-
 .if (${OSVERSION} < 800040)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules__misc__inhibit__xdg.c \
 		${FILESDIR}/extra-patch-modules__misc__inhibit__xscreensaver.c
