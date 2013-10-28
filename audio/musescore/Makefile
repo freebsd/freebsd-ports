@@ -3,8 +3,9 @@
 
 PORTNAME=	musescore
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	SF/mscore/mscore/MuseScore-${PORTVERSION}
+MASTER_SITES=	SF/mscore/mscore/MuseScore-${PORTVERSION}/
 DISTNAME=	mscore-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,14 +14,10 @@ COMMENT=	Free music composition & notation software
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	qtscriptgenerator>0:${PORTSDIR}/devel/qtscriptgenerator
-LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 RUN_DEPENDS=	qtscriptgenerator>0:${PORTSDIR}/devel/qtscriptgenerator
 
-OPTIONS_DEFINE=	JACK PORTAUDIO
-OPTIONS_DEFAULT=PORTAUDIO
-
 USE_BZIP2=	yes
-NO_STAGE=	yes
 USES=		cmake:outsource
 USE_QT4=	corelib designer gui network script scripttools svg webkit xml \
 		linguist_build moc_build qmake_build rcc_build uic_build
@@ -31,22 +28,21 @@ MAKE_JOBS_UNSAFE=	yes
 
 DATADIR=	${PREFIX}/share/mscore-${PORTVERSION}
 
-.include <bsd.port.options.mk>
+PORTDOCS=	ChangeLog NEWS README README.scripts
 
-.if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
-CMAKE_ARGS+=	-DBUILD_JACK:BOOL=ON
-.else
-CMAKE_ARGS+=	-DBUILD_JACK:BOOL=OFF
-.endif
+OPTIONS_DEFINE=	DOCS JACK PORTAUDIO
+OPTIONS_DEFAULT=PORTAUDIO
 
-.if ${PORT_OPTIONS:MPORTAUDIO}
-BUILD_DEPENDS+=	portaudio>=19:${PORTSDIR}/audio/portaudio2
-RUN_DEPENDS+=	portaudio>=19:${PORTSDIR}/audio/portaudio2
-CMAKE_ARGS+=	-DBUILD_PORTAUDIO:BOOL=ON
-.else
-CMAKE_ARGS+=	-DBUILD_PORTAUDIO:BOOL=OFF
-.endif
+OPTIONS_SUB=	yes
+
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_CMAKE_ON=		-DBUILD_JACK:BOOL=ON
+JACK_CMAKE_OFF=		-DBUILD_JACK:BOOL=OFF
+
+PORTAUDIO_BUILD_DEPENDS=portaudio2>=0:${PORTSDIR}/audio/portaudio2
+PORTAUDIO_RUN_DEPENDS=	portaudio2>=0:${PORTSDIR}/audio/portaudio2
+PORTAUDIO_CMAKE_ON=	-DBUILD_PORTAUDIO:BOOL=ON
+PORTAUDIO_CMAKE_OFF=	-DBUILD_PORTAUDIO:BOOL=OFF
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "CMakeLists.txt" -print0 | ${XARGS} -0 \
@@ -57,5 +53,9 @@ post-patch:
 .for file in mscore.cpp updatechecker.h webpage.cpp
 	@${ECHO_CMD} >> ${WRKSRC}/mscore/mscore/${file}
 .endfor
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/mscore/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

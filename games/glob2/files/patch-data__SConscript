@@ -1,0 +1,9 @@
+--- ./data/SConscript.orig	2009-06-14 12:11:30.000000000 +0200
++++ ./data/SConscript	2013-10-28 01:26:26.000000000 +0100
+@@ -19,6 +19,5 @@
+ SConscript("fonts/SConscript")
+ SConscript("gfx/SConscript")
+ SConscript("gui/SConscript")
+-SConscript("icons/SConscript")
+ SConscript("zik/SConscript")
+     

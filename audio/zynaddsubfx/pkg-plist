@@ -451,52 +451,6 @@ bin/zynaddsubfx
 %%DATADIR%%/banks/SynthPiano/0069-Synth Piano 3 det.xiz
 %%DATADIR%%/banks/SynthPiano/0070-Synth Piano 4.xiz
 %%DATADIR%%/banks/SynthPiano/0071-Synth Piano 5.xiz
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS.txt
-%%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
-%%PORTDOCS%%%%DOCSDIR%%/HISTORY.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/0km.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Arpeggio 1.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Arpeggio 2.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Arpeggio 3.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Arpeggio 4.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Arpeggio 5.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Arpeggio 6.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Arpeggio Dist 1.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Arpeggio Dist 2.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Arpeggio Flange 1.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Arpeggio Flange 2.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Choir Reeds.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Choir Strings SynthBrass.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Dist Guitar Strings 1.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Dist Guitar Strings 2.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Drop.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Fantasy 1.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Fantasy 2.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Glass Choir.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/HighPass Saw Strings.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Ice Rhodes Strings.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/JI12.xsz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Legatto 1.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Legatto 2.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Legatto Strings.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Octave Strings.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Organ Choir Strings.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Saw.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Space 1.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Space 2.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Split_keyboard.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/String Reverb.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Strings Reeds 1.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Strings Reeds 2.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Struck String Big Reverb 1.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Struck String Big Reverb 2.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Supersaw.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Synth Bells Choir Reverb.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Synth Piano Reverb.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Synth.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bent_synth.xmz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/photons.xmz
 @dirrm %%DATADIR%%/banks/SynthPiano
 @dirrm %%DATADIR%%/banks/Synth
 @dirrm %%DATADIR%%/banks/Strings
@@ -519,5 +473,3 @@ bin/zynaddsubfx
 @dirrm %%DATADIR%%/banks/Arpeggios
 @dirrm %%DATADIR%%/banks
 @dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

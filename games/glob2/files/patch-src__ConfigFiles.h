@@ -1,5 +1,5 @@
---- src/ConfigFiles.h.orig	Sat Sep  9 16:07:13 2006
-+++ src/ConfigFiles.h	Sun Apr  8 18:55:00 2007
+--- ./src/ConfigFiles.h.orig	2009-06-14 12:11:34.000000000 +0200
++++ ./src/ConfigFiles.h	2013-10-28 01:26:26.000000000 +0100
 @@ -178,7 +178,11 @@
  		else
  		{
