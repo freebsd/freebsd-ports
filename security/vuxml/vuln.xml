@@ -51,6 +51,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4e23644c-cb93-4f83-9e20-5bc07ad9b39f">
+    <topic>mod_pagespeed -- critical cross-site scripting (XSS) vulnerability</topic>
+    <affects>
+      <package>
+	<name>mod_pagespeed</name>
+	<range><lt>1.2.24.2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>mod_pagespeed developers report:</p>
+	<blockquote cite="https://groups.google.com/forum/#!msg/mod-pagespeed-announce/oo015UHRxMc/JcAuf1hE8L8J">
+	  <p>Various versions of mod_pagespeed are subject to critical
+	     cross-site scripting (XSS) vulnerability, CVE-2013-6111. This
+	     permits a hostile third party to execute JavaScript in users'
+	     browsers in context of the domain running mod_pagespeed, which
+	     could permit theft of users' cookies or data on the site.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-6111</cvename>
+    </references>
+    <dates>
+      <discovery>2013-10-04</discovery>
+      <entry>2013-10-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cd082cc6-1548-4b8d-a3aa-a007be611a29">
     <cancelled/>
   </vuln>
