@@ -3,7 +3,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -28,7 +28,7 @@ OPTIONS_DEFINE=	A52 AALIB ASS AVAHI CACA DBUS DIRAC DOCS DTS DVDREAD \
 		OPUS PNG PULSEAUDIO QT4 REALAUDIO RUNROOT \
 		SAMBA SCHROED SDL SHOUTCAST SKINS STREAM SPEEX SQLITE SVG \
 		TAGLIB THEORA TWOLAME UPNP V4L VAAPI VCD VORBIS \
-		X11 X264 XOSD ZVBI SERVER_ONLY DEBUG \
+		X11 X264 ZVBI SERVER_ONLY DEBUG \
 		GME NO_DVD LIBBLURAY SAMPLERATE SIDPLAY
 OPTIONS_DEFAULT=A52 AVAHI DBUS DTS DVDREAD DVDNAV FAAD FLAC GNUTLS \
 		HTTPD LUA MAD MATROSKA MPEG2 OGG OPUS PNG QT4 REALAUDIO \
@@ -55,7 +55,6 @@ STREAM_DESC=	stream output
 TAGLIB_DESC=	ID3 tag and Ogg comment support
 V4L_DESC=	Video4Linux video capture compatibility
 VCD_DESC=	Video CD support
-XOSD_DESC=	X11 On Screen Display support
 ZVBI_DESC=	VBI decoding support
 SERVER_ONLY_DESC=	Only build server parts
 NO_DVD_DESC=	disable DVD specific features
@@ -185,7 +184,7 @@ PNG_CONFIGURE_ENABLE=	png
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 
-REALAUDIO_CONFIGURE_ENABLE=	real realrtsp
+REALAUDIO_CONFIGURE_ENABLE=	realrtsp
 
 RUNROOT_CONFIGURE_ENABLE=	run-as-root
 
@@ -193,7 +192,10 @@ SAMPLERATE_LIB_DEPENDS=		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 SAMPLERATE_CONFIGURE_ENABLE=	samplerate
 
 SAMBA_LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
-SAMBA_CONFIGURE_ENABLE=	smb
+SAMBA_CONFIGURE_ENABLE=	smbclient
+# There is no libsmbclient.pc
+SAMBA_CONFIGURE_ENV=	SMBCLIENT_CFLAGS="-I${LOCALBASE}/include" \
+			SMBCLIENT_LIBS="-lsmbclient"
 
 SCHROED_LIB_DEPENDS=	libschroedinger-1.0.so:${PORTSDIR}/multimedia/schroedinger
 SCHROED_CONFIGURE_ENABLE=	schroedinger
@@ -238,9 +240,6 @@ VORBIS_CONFIGURE_ENABLE=vorbis
 X264_LIB_DEPENDS=	libx264.so:${PORTSDIR}/multimedia/x264
 X264_CONFIGURE_ENABLE=	x264
 
-XOSD_LIB_DEPENDS=	libxosd.so:${PORTSDIR}/misc/xosd
-XOSD_CONFIGURE_ENABLE=	xosd
-
 ZVBI_LIB_DEPENDS=	libzvbi.so:${PORTSDIR}/devel/libzvbi
 ZVBI_CONFIGURE_ENABLE=	zvbi
 
@@ -268,8 +267,6 @@ CONFIGURE_ARGS+=	--enable-vlc \
 			--disable-alsa \
 			--disable-dc1394 \
 			--disable-directfb \
-			--disable-dv \
-			--disable-loader \
 			--disable-projectm \
 			--disable-telx \
 			--disable-tremor \
