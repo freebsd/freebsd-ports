@@ -26,7 +26,7 @@ LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 		libnss3.so:${PORTSDIR}/security/nss \
 		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2 \
 		libkrb5.so:${PORTSDIR}/security/krb5 \
-		libldap.so:${PORTSDIR}/net/openldap24-sasl-client \
+		libldap.so:${PORTSDIR}/net/openldap24-client \
 		libinotify.so:${PORTSDIR}/devel/libinotify
 BUILD_DEPENDS=	xmlcatalog:${PORTSDIR}/textproc/libxml2 \
 		docbook-xsl>=1:${PORTSDIR}/textproc/docbook-xsl \
