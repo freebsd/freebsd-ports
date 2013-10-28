@@ -7,7 +7,7 @@ CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	SF/enlightenment/${PORTNAME}/Snapshots/
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A very artistic X window manager
+COMMENT=	Enlightenment DR16 window manager
 
 OPTIONS_DEFINE=	DOCS NLS SOUND
 SOUND_DESC=	Sound support via pulseaudio/libsndfile
