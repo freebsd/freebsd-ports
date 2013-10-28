@@ -36,13 +36,13 @@ do-configure:
 	@cd ${WRKSRC} && ./setup.sh
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/wit ${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/wwt ${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/wdf ${STAGEDIR}${PREFIX}/bin
-	@${LN} -sf wdf ${STAGEDIR}${PREFIX}/bin/wdf-cat
-	@${LN} -sf wdf ${STAGEDIR}${PREFIX}/bin/wdf-dump
+	${INSTALL_PROGRAM} ${WRKSRC}/wit ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/wwt ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/wdf ${STAGEDIR}${PREFIX}/bin
+	${LN} -sf wdf ${STAGEDIR}${PREFIX}/bin/wdf-cat
+	${LN} -sf wdf ${STAGEDIR}${PREFIX}/bin/wdf-dump
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/share/* ${STAGEDIR}${DATADIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/load-titles.sh ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/share/* ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/load-titles.sh ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
