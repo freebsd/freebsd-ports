@@ -5,6 +5,27 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20131028:
+  AFFECTS: users of multimedia/ffmpeg1 and multimedia/ffmpeg-devel
+  AUTHOR: wg@FreeBSD.org
+
+  The port ffmpeg was updated, ffmpeg1 and ffmpeg-devel were removed in
+  favor of ffmpeg.
+
+  # portmaster -o multimedia/ffmpeg multimedia/ffmpeg1
+    or
+  # portupgrade -fo multimedia/ffmpeg multimedia/ffmpeg1
+    or
+  # pkg set -o multimedia/ffmpeg1:multimedia/ffmpeg
+
+  and
+
+  # portmaster -o multimedia/ffmpeg multimedia/ffmpeg-devel
+    or
+  # portupgrade -fo multimedia/ffmpeg multimedia/ffmpeg-devel
+    or
+  # pkg set -o multimedia/ffmpeg-devel:multimedia/ffmpeg
+
 20131023:
   AFFECTS: users of lang/perl5.12 lang/perl5.14
   AUTHOR: mat@FreeBSD.org
