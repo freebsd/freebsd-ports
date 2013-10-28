@@ -12,9 +12,5 @@ XORG_CAT=	app
 USE_XORG=	xmuu xproto x11 xext xfontcache
 CONFIGURE_ARGS=	--without-xf86misc
 
-PLIST_FILES=	bin/xset
-
-MAN1=		xset.1
-
-NO_STAGE=	yes
+PLIST_FILES=	bin/xset man/man1/xset.1.gz
 .include <bsd.port.mk>
