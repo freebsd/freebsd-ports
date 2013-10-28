@@ -1,11 +1,11 @@
-lib/perl5/5.14/man/man3/MooseX::MultiInitArg.3.gz
-lib/perl5/5.14/man/man3/MooseX::MultiInitArg::Attribute.3.gz
-lib/perl5/5.14/man/man3/MooseX::MultiInitArg::Trait.3.gz
-lib/perl5/site_perl/5.14/MooseX/MultiInitArg.pm
-lib/perl5/site_perl/5.14/MooseX/MultiInitArg/Attribute.pm
-lib/perl5/site_perl/5.14/MooseX/MultiInitArg/Trait.pm
-lib/perl5/site_perl/5.14/mach/auto/MooseX/MultiInitArg/.packlist
-@dirrmtry lib/perl5/site_perl/5.14/mach/auto/MooseX/MultiInitArg
-@dirrmtry lib/perl5/site_perl/5.14/mach/auto/MooseX
-@dirrmtry lib/perl5/site_perl/5.14/MooseX/MultiInitArg
-@dirrmtry lib/perl5/site_perl/5.14/MooseX
+%%PERL5_MAN3%%/MooseX::MultiInitArg.3.gz
+%%PERL5_MAN3%%/MooseX::MultiInitArg::Attribute.3.gz
+%%PERL5_MAN3%%/MooseX::MultiInitArg::Trait.3.gz
+%%SITE_PERL%%/MooseX/MultiInitArg.pm
+%%SITE_PERL%%/MooseX/MultiInitArg/Attribute.pm
+%%SITE_PERL%%/MooseX/MultiInitArg/Trait.pm
+%%SITE_PERL%%/mach/auto/MooseX/MultiInitArg/.packlist
+@dirrmtry %%SITE_PERL%%/mach/auto/MooseX/MultiInitArg
+@dirrmtry %%SITE_PERL%%/mach/auto/MooseX
+@dirrmtry %%SITE_PERL%%/MooseX/MultiInitArg
+@dirrmtry %%SITE_PERL%%/MooseX
