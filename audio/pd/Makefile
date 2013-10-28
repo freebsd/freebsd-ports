@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	pd
-DISTVERSION=	0.44-3
+DISTVERSION=	0.45-3
 DISTVERSIONSUFFIX=	.src
 CATEGORIES=	audio
-#MASTER_SITES=	SF/pure-data/pure-data/${PORTVERSION}
-MASTER_SITES=	http://www-crca.ucsd.edu/~msp/Software/
+MASTER_SITES=	http://msp.ucsd.edu/Software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIDI-capable real-time audio processor/synthesizer
@@ -22,54 +21,40 @@ OPTIONS_DEFAULT=FFTW
 WRKSRC=		${WRKDIR}/${DISTNAME:S,${DISTVERSIONSUFFIX},,}
 
 USES=		gettext gmake pkgconfig tk:wrapper
-NO_STAGE=	yes
 USE_AUTOTOOLS=	aclocal libtoolize autoconf automake
 ACLOCAL_ARGS=	-I m4/generated -I m4
 LIBTOOLIZE_ARGS=--install --force
 AUTOMAKE_ARGS=	--add-missing --copy --force-missing
+CONFIGURE_ENV=	ac_cv_lib_pthread_pthread_create=no
 
-MAN1=		pd.1 pdreceive.1 pdsend.1
-PORTDOCS=	*
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+DESKTOP_ENTRIES=	"Pd" "${COMMENT}" \
+			"${LOCALBASE}/lib/pd/tcl/pd.ico" "pd" "" false
 
-.include <bsd.port.options.mk>
+ALSA_CONFIGURE_ENABLE=	alsa
+ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
 
-.if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
-CONFIGURE_ARGS+=	--enable-alsa
-.else
-CONFIGURE_ARGS+=	--disable-alsa
-.endif
+FFTW_CONFIGURE_ENABLE=	fftw
+FFTW_BUILD_DEPENDS=	fftw3>0:${PORTSDIR}/math/fftw3
+FFTW_LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float
 
-.if ${PORT_OPTIONS:MFFTW}
-BUILD_DEPENDS+=	fftw3>0:${PORTSDIR}/math/fftw3
-LIB_DEPENDS+=	libfftw3f.so:${PORTSDIR}/math/fftw3-float
-CONFIGURE_ARGS+=	--enable-fftw
-.else
-CONFIGURE_ARGS+=	--disable-fftw
-.endif
-
-.if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
-CONFIGURE_ARGS+=	--enable-jack
-.else
-CONFIGURE_ARGS+=	--disable-jack
-.endif
+JACK_CONFIGURE_ENABLE=	jack
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 
 post-patch:
 	@${FIND} ${PATCH_WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|__FreeBSD_kernel__|__FreeBSD__|g ; \
+		 s|__x86_64__|__amd64__|g ; \
 		 s|<alloca\.h>|<stdlib.h>|g'
 	@${REINPLACE_CMD} -e \
-		's|kFreeBSD)|kFreeBSD\|*freebsd*)| ; \
+		's|\*kfreebsd\*gnu\*)|*freebsd*)| ; \
 		 s|portaudio=yes|portaudio=no| ; \
-		 s|-O6|| ; \
+		 s|-O3|| ; \
 		 s|fftw,|fftw3f,| ; \
 		 s|fftw_one,|fftwf_execute,| ; \
-		 s|fftw"|fftw3f"| ; \
-		 s|-lpthread ||' ${WRKSRC}/configure.ac
+		 s|fftw"|fftw3f"|' ${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e \
 		'/^pkgconfigdir/s|=.*|= $$(prefix)/libdata/pkgconfig| ; \
 		 /^libpddir/s|=.*|= $$(pkglibdir)| ; \
@@ -87,6 +72,8 @@ post-patch:
 		's|-O2 |$$(CFLAGS) | ; \
 		 s|-g ||g ; \
 		 s|-lc ||g' ${WRKSRC}/extra/expr~/makefile
+	@${REINPLACE_CMD} -e \
+		'/libpthread/s|_ERROR|_WARN|' ${WRKSRC}/portaudio/configure.in
 
 pre-configure:
 	@(cd ${WRKSRC}/portaudio \
@@ -96,21 +83,19 @@ pre-configure:
 
 do-install:
 .for i in src man tcl po extra
-	@(cd ${WRKSRC}/${i} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
-		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
+	@(cd ${WRKSRC}/${i} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
+		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .endfor
-	(cd ${WRKSRC} && ${INSTALL_DATA} pd.pc ${PREFIX}/libdata/pkgconfig)
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} pd.pc \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(${TAR} -C ${WRKSRC}/doc --exclude "*.bak" --exclude "*.orig" \
-		-cf - . | ${TAR} -C ${DOCSDIR} --unlink -xf -)
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-	@${FIND} ${DOCSDIR} -type d -exec ${CHMOD} 755 {} \;
-	@${FIND} ${DOCSDIR} -type f -exec ${CHMOD} ${SHAREMODE} {} \;
+		-cf - . | ${TAR} -C ${STAGEDIR}${DOCSDIR} --unlink -xf -)
+	@${FIND} ${STAGEDIR}${DOCSDIR} -type d | ${XARGS} ${CHMOD} 755
+	@${FIND} ${STAGEDIR}${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 .for i in LICENSE.txt README.txt
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
 .endfor
-	@${LN} -sf ${DOCSDIR} ${PREFIX}/lib/pd/doc
-.endif
+	@${LN} -sf ${DOCSDIR} ${STAGEDIR}${PREFIX}/lib/pd/doc
 
 .include <bsd.port.mk>
