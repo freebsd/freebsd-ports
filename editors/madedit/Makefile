@@ -7,8 +7,10 @@ PORTREVISION=	8
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}/MadEdit/MadEdit-${PORTVERSION}
 
-MAINTAINER=	delphij@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open-source and cross-platform text/hex editor
+
+LICENSE=	GPLv2
 
 USES=		gettext pkgconfig
 USE_WX=		2.6+
