@@ -9,7 +9,7 @@ MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		SF/pureftpd/Pure-FTPd/${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Small, easy to set up, fast, and very secure FTP server
+COMMENT=	Small, easy to set up, fast, and secure FTP server
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PAM_DIR=${PAM_DIR} PAM_TARGET=${PAM_TARGET}
