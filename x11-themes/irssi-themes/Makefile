@@ -16,18 +16,16 @@ RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
 
 NO_BUILD=	yes
 
-PLIST=		${WRKDIR}/pkg-plist
-
 THEMESDIR_REL=	share/irssi/themes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${MASTERDIR}/Makefile.inc"
 
-pre-install:
 .for f in ${DISTFILES}
-	@${ECHO_CMD} "${THEMESDIR_REL}/${f}" >> ${PLIST}
+PLIST_FILES+=	${THEMESDIR_REL}/${f}
 .endfor
+
+PLIST_DIRSTRY=	share/irssi/themes share/irssi
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
@@ -36,8 +34,9 @@ do-extract:
 .endfor
 
 do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/${THEMESDIR_REL}
 .for f in ${DISTFILES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${THEMESDIR_REL}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/${THEMESDIR_REL}
 .endfor
 
 .include <bsd.port.post.mk>
