@@ -51,6 +51,10 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cd082cc6-1548-4b8d-a3aa-a007be611a29">
+    <cancelled/>
+  </vuln>
+
   <vuln vid="9065b930-3d8b-11e3-bd1a-e840f2096bd0">
     <topic>gnutls -- denial of service</topic>
     <affects>
