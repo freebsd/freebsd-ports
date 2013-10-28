@@ -3,12 +3,12 @@
 
 PORTNAME=	chef
 PORTVERSION=	11.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
 MAINTAINER=	renchap@cocoa-x.com
-COMMENT=	A systems integration framework. Client part
+COMMENT=	Systems integration framework. Client part
 
 RUN_DEPENDS=	rubygem-erubis>=0:${PORTSDIR}/www/rubygem-erubis \
 		rubygem-highline>=1.6.9:${PORTSDIR}/devel/rubygem-highline \
@@ -29,31 +29,13 @@ USE_RUBYGEMS=		yes
 USE_RUBY_FEATURES=	iconv
 RUBYGEM_AUTOPLIST=	yes
 
-PLIST_FILES=	bin/chef-client \
-		bin/chef-solo \
-		bin/shef \
-		bin/knife \
-		bin/chef-apply \
-		bin/chef-service-manager \
-		bin/chef-shell
-
-MAN1=		knife.1 knife-bootstrap.1 knife-client.1 knife-configure.1 knife-cookbook.1 \
-		knife-cookbook-site.1 knife-data-bag.1 knife-environment.1 knife-exec.1 \
-		knife-index.1 knife-node.1 knife-role.1 knife-search.1 knife-ssh.1 knife-status.1 \
-		knife-tag.1
-MAN8=		chef-client.8 chef-solo.8
-
 SUB_LIST=	RUBY=${RUBY}
 USE_RC_SUBR=	chef_client
 
 NO_STAGE=	yes
 post-install:
-.if !defined(NO_INSTALL_MANPAGES)
 .for n in 1 8
-.for f in ${MAN${n}}
-	${INSTALL_DATA} ${PREFIX}/${GEM_LIB_DIR}/distro/common/man/man${n}/${f} ${PREFIX}/man/man${n}
+	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/distro/common/man/man${n}/* ${STAGEDIR}${PREFIX}/man/man${n}/
 .endfor
-.endfor
-.endif
 
 .include <bsd.port.mk>
