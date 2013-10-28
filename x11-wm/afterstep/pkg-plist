@@ -55,6 +55,13 @@ lib/X11/afterstep/sounds/meepmeep.au
 lib/X11/afterstep/sounds/small-step.au
 lib/X11/afterstep/sounds/train.au
 lib/X11/afterstep/system.steprc
+man/man1/afterstep.1.gz
+man/man1/Animate.1.gz
+man/man1/Audio.1.gz
+man/man1/Auto.1.gz
+man/man1/Banner.1.gz
+man/man1/Pager.1.gz
+man/man1/Wharf.1.gz
 @dirrm lib/X11/afterstep/backgrounds
 @dirrm lib/X11/afterstep/doc
 @dirrm lib/X11/afterstep/sounds

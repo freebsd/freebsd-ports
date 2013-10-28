@@ -12,12 +12,11 @@ COMMENT=	A file corruption detection and repair program
 
 LICENSE=	GPLv2
 
-USES=		manpages:install
 ALL_TARGET=	zidrav
-PLIST_FILES=	bin/zidrav
-MAN1=		zidrav.1
+PLIST_FILES=	bin/zidrav man/man1/zidrav.1.gz
 
-do-install:	install-all-manpages
+do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/zidrav ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/zidrav.1 ${STAGEDIR}${MANPREFIX}/man/man1/
 
 .include <bsd.port.mk>

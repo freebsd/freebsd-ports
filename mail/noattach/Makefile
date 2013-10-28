@@ -9,13 +9,11 @@ MASTER_SITES=	ftp://ftp.rhnet.is/pub/noattach/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An attachment filter for Sendmail Milter
 
-USES=		manpages:install
 GNU_CONFIGURE=	yes
-USE_RC_SUBR=    noattach
+USE_RC_SUBR=	noattach
 CFLAGS+=	${PTHREAD_CFLAGS:S=""==}
 DOCSFILES=	AUTHORS THANKS INSTALL NEWS README TODO ChangeLog
 SAMPLEFILES=	README noattach.patterns noattach.patterns.johncon
-MAN8=		noattach.8
 
 .include <bsd.port.pre.mk>
 
@@ -30,8 +28,9 @@ pre-configure:
 	${REINPLACE_CMD} -e 's=-pthread=${PTHREAD_LIBS}=' \
 		${WRKSRC}/configure
 
-do-install:	install-all-manpages
+do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/noattach ${STAGEDIR}${PREFIX}/libexec/noattach
+	${INSTALL_MAN} ${WRKSRC}/noattach.8 ${STAGEDIR}${MANPREFIX}/man/man8/
 	${INSTALL_DATA} ${WRKSRC}/examples/noattach.patterns \
 		 ${STAGEDIR}${PREFIX}/etc/noattach.patterns-dist
 .if ${PORT_OPTIONS:MDOCS}

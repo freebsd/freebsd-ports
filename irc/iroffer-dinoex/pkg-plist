@@ -2,6 +2,8 @@ bin/iroffer
 bin/iroffer-de
 bin/iroffer-fr
 bin/iroffer-it
+man/man1/iroffer.1.gz
+man/man7/xdcc.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL-linux-de.html
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL-linux-de.txt
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL-linux-en.html

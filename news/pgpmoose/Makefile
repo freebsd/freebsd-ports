@@ -14,7 +14,6 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	PGP Moose - signatures for moderated newsgroups
 
-USES=		manpages:install
 NO_WRKSUBDIR=	yes
 BIN1=		pmapp pmcanon pmcheck pmnewsgroups \
 		pmdaemon pmcancel
@@ -27,9 +26,12 @@ post-patch:
 	${REINPLACE_CMD} -e "s=/usr/local/news=${NEWSCTL}=" \
 		${WRKSRC}/pmapp
 
-do-install:	install-all-manpages
+do-install:
 .for i in ${BIN1}
-	@${INSTALL_SCRIPT} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin/
+.endfor
+.for i in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${MANPREFIX}/man/man1/
 .endfor
 
 .include <bsd.port.mk>

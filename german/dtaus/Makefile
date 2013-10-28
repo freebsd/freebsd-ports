@@ -10,13 +10,10 @@ COMMENT=	Belegloser DatenTraegerAUStausch
 
 LICENSE=	GPLv2
 
-USES=		manpages:install
 ALL_TARGET=	dtaus
-PLIST_FILES=	bin/dtaus
+PLIST_FILES=	bin/dtaus man/man1/dtaus.1.gz man/man5/dtaus.5.gz
 PORTDOCS=	ChangeLog README TODO dtaus.txt
 PORTEXAMPLES=	dtaus.cls sample.ctl
-MAN1=		dtaus.1
-MAN5=		dtaus.5
 
 .include <bsd.port.options.mk>
 
@@ -24,8 +21,10 @@ do-configure:
 	 ${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' \
 		${WRKSRC}/bigint.c ${WRKSRC}/dtaus.c
 
-do-install:	install-all-manpages
+do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dtaus ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/dtaus.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/dtaus.5 ${STAGEDIR}${MANPREFIX}/man/man5/
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}

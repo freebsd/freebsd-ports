@@ -10,17 +10,19 @@ COMMENT=	Finds sets of identical files
 
 LICENSE=	GPLv2
 
-USES=		manpages
 GNU_CONFIGURE=	yes
-
-PLIST_FILES=	bin/kua bin/ua
+PLIST_FILES=	bin/kua bin/ua \
+		man/man1/kua.1.gz man/man1/ua.1.gz
 PORTDOCS=	README
 MAN1=		kua.1 ua.1
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
+.for i in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${MANPREFIX}/man/man1/
+.endfor
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 .endif

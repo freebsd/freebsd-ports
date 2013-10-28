@@ -8,7 +8,7 @@ CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dinoex
 DISTNAME=	AfterStep-${PORTVERSION}
-PKGNAMESUFFIX=	1
+PKGNAMESUFFIX=	1${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Window manager originally based on the Bowman NeXTstep clone
@@ -19,13 +19,12 @@ CONFLICTS?=	afterstep-2*
 PORTSCOUT=	limit:^1\.[0-9.]*$$
 NO_LATEST_LINK=	yes
 
-USES=		imake manpages
+USES=		imake
 USE_XORG=	xpm xext x11
 USE_CSTD=	gnu89
 INSTALL_TARGET=	install install.man
 MANCOMPRESSED=	yes
 CFLAGS+=	-Wno-return-type
-MAN1=		afterstep.1 Animate.1 Audio.1 Auto.1 Banner.1 Pager.1 Wharf.1
 
 SRCDIRS=	afterstep \
 		modules/Animate modules/Audio modules/Auto \

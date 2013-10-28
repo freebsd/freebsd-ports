@@ -9,4 +9,5 @@ lib/pgpin/language.txt-dist
 @unexec if cmp -s %D/lib/pgpin/config.txt %D/lib/pgpin/config.txt-dist; then rm -f %D/lib/pgpin/config.txt; fi
 lib/pgpin/config.txt-dist
 @exec [ ! -f %B/config.txt ] && cp %B/%f %B/config.txt
+man/man1/pgpin.1.gz
 @dirrm lib/pgpin

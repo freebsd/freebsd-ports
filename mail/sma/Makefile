@@ -10,11 +10,9 @@ MASTER_SITE_SUBDIR=	dinoex
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Program that analyses Sendmail log entries
 
-USES=		manpages:install
 ALL_TARGET=	sma
 SAMPLEFILES=	sma.conf
 DOCSFILES=	BUGS COPYRIGHT HISTORY README TODO
-MAN8=		sma.8
 
 .include <bsd.port.options.mk>
 
@@ -23,8 +21,9 @@ do-configure:
 		-e "s,CFLAGS	= -Wall -O,CFLAGS+=	," \
 		${WRKSRC}/Makefile
 
-do-install:	install-all-manpages
+do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sma ${STAGEDIR}${PREFIX}/bin/sma
+	${INSTALL_MAN} ${WRKSRC}/sma.8 ${STAGEDIR}${MANPREFIX}/man/man8/
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${DOCSFILES}

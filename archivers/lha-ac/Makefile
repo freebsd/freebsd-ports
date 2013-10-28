@@ -15,7 +15,6 @@ COMMENT=	Archive files using LZSS and Huffman compression (.lzh files)
 
 RESTRICTED=	no permission to redistribute
 
-#USES=		manpages
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/lha-ac
 MANLANG=	ja

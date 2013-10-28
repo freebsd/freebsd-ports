@@ -13,13 +13,11 @@ COMMENT=	PGP International version - Public-Key encryption for the masses
 
 ONLY_FOR_ARCHS=	i386 alpha amd64 sparc64
 
-USES=		manpages
 WRKSRC=		${WRKDIR}/src
 MAKEFILE=	makefile
 ALL_TARGET=	freebsd-${ARCH:S/x86_64/amd64/}
 MAKE_ENV=	OS_CFLAGS="${CFLAGS}"
 PGPLIB=		${STAGEDIR}${PREFIX}/share/pgp
-MAN1=		pgp.1 pgp2.1
 
 post-extract:
 	cd ${WRKDIR}; ${TAR} -xf pgp263ii.tar; \
@@ -35,6 +33,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/../config.txt ${PGPLIB}/config.txt-dist
 
 post-install:
-	@${INSTALL_MAN} ${STAGEDIR}${PREFIX}/man/man1/pgp.1 ${STAGEDIR}${PREFIX}/man/man1/pgp2.1
+	${INSTALL_MAN} ${STAGEDIR}${PREFIX}/man/man1/pgp.1 ${STAGEDIR}${PREFIX}/man/man1/pgp2.1
 
 .include <bsd.port.mk>

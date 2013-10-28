@@ -15,10 +15,8 @@ COMMENT=	Fixes and tidies up HTML files
 LICENSE=	BSD
 LICENSE_FILE=	${FILESDIR}/COPYRIGHT
 
-USES=		manpages
 ALL_TARGET=	tidy
 DOCFILES=	Overview.html tidy.gif release-notes.html grid.gif
-MAN1=		tidy4.1
 
 .include <bsd.port.options.mk>
 
