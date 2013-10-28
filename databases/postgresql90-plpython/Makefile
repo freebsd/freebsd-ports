@@ -14,15 +14,13 @@ MASTERDIR=	${.CURDIR}/../postgresql${WANT_PGSQL_VER}-server
 WANT_PGSQL_VER?=	90
 
 USE_PYTHON?=	yes
-PYTHON_MAJOR_VER=	${PYTHON_VER:R}
 CONFIGURE_ARGS=	--with-python
-PLIST_SUB=	PYTHON_MAJOR_VER=${PYTHON_MAJOR_VER}
 COMPONENT=	-plpython
 
-.if ${PYTHON_MAJOR_VER} == 3
-PLIST_SUB+=	PYTHON3=""
+.if defined(PYTHON_VER) && ${PYTHON_VER:R} == 3
+PLIST_SUB+=	PYTHON2="@comment " PYTHON3=""
 .else
-PLIST_SUB+=	PYTHON3="@comment "
+PLIST_SUB+=	PYTHON2="" PYTHON3="@comment "
 .endif
 
 BUILD_DIRS=	src/backend src/pl/plpython
