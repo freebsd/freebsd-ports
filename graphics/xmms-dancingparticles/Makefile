@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Makes particles dance with very pretty neon colors
+COMMENT=	Makes particles dance with pretty neon colors
 
 LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
 		xmms.4:${PORTSDIR}/multimedia/xmms
