@@ -1330,6 +1330,7 @@
     SUBDIR += rubygem-rdtool
     SUBDIR += rubygem-redcarpet
     SUBDIR += rubygem-ri_cal
+    SUBDIR += rubygem-rich
     SUBDIR += rubygem-rttool
     SUBDIR += rubygem-sanitize
     SUBDIR += rubygem-sass
