@@ -67,7 +67,7 @@ USE_PYTHON=	yes
 USE_QT4=	# empty but required
 USE_XORG=	xaw xrandr
 USE_XZ=		yes
-USES=		bison gmake perl5 pkgconfig
+USES=		bison compiler:c++11-lang gmake perl5 pkgconfig
 WANT_GNOME=	yes
 
 DISTFILES+=	${PORTNAME}-${LOVERSION}${EXTRACT_SUFX}
@@ -320,27 +320,12 @@ CONFIGURE_ARGS+=	--disable-neon
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_GCC)
-USE_GCC=	yes
-CONFIGURE_ENV+=	CXXCPP="${CPP}"
-.else
-.if exists(/usr/bin/clang) && ${OSVERSION} > 901502
-CC=		/usr/bin/clang
-CPP=		/usr/bin/clang-cpp
-CXX=		/usr/bin/clang++
-CONFIGURE_ENV+=	CXXCPP="${CPP}"
-.if ${OSVERSION} > 100054
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libc++
-.endif
-.else
-# XXX Clang PR13308 (http://llvm.org/bugs/show_bug.cgi?id=13308)
-BUILD_DEPENDS+=	clang>=3.2_4:${PORTSDIR}/lang/clang
+.if ${CXX:M${LOCALBASE}/bin/clang++}
 USE_BINUTILS=	yes
-CC=		${LOCALBASE}/bin/clang
-CPP=		${CC} -E
-CXX=		${LOCALBASE}/bin/clang++
-CONFIGURE_ENV+=	CXXCPP="${CXX} -E"
 .endif
+
+.if ${COMPILER_FEATURES:Mlibc++}
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libc++
 .endif
 
 .if ${OSVERSION} < 900506
@@ -374,7 +359,7 @@ do-install:
 	@cd ${LODESTDIR}${PREFIX} && ${FIND} -d lib/libreoffice -type d \
 	    -empty -exec ${ECHO_CMD} "@exec ${MKDIR} %D/{}" \; >> ${PLISTD}
 
-	@cd ${LODESTDIR}${PREFIX} && ${FIND} -H -s bin lib \
+	@cd ${LODESTDIR}${PREFIX} && ${FIND} -H -s bin lib man \
 	    \( -type f -o -type l \) -print >> ${PLISTF}
 	@cd ${LODESTDIR}${PREFIX} && ${FIND} -d lib/libreoffice -type d \
 	    -exec ${ECHO_CMD} "@dirrm {}" \; >> ${PLISTD}
