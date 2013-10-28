@@ -1,10 +1,11 @@
---- Gemfile.orig	2013-09-14 10:48:49.000000000 +0400
-+++ Gemfile	2013-10-03 15:49:30.683217929 +0400
+--- Gemfile.orig	2013-09-14 06:48:49.000000000 +0000
++++ Gemfile	2013-10-28 18:11:49.154289224 +0000
 @@ -1,11 +1,11 @@
  source 'https://rubygems.org'
  
- gem "rails", "3.2.13"
+-gem "rails", "3.2.13"
 -gem "jquery-rails", "~> 2.0.2"
++gem "rails", "3.2.15"
 +gem "jquery-rails", "~> 3.0"
  gem "i18n", "~> 0.6.0"
 -gem "coderay", "~> 1.0.9"
