@@ -16,11 +16,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_GNOME=	gtk12
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-
-PLIST_FILES=	lib/xmms/Effect/libnormvol.so
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|tests||g' ${WRKSRC}/Makefile.in
@@ -28,6 +25,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/src/.libs/libnormvol.so ${PREFIX}/lib/xmms/Effect
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/Effect
+	${INSTALL_DATA} ${WRKSRC}/src/.libs/libnormvol.so \
+		${STAGEDIR}${PREFIX}/lib/xmms/Effect
 
 .include <bsd.port.mk>
