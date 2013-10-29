@@ -12,7 +12,7 @@ DISTFILES=	minecraft_server.jar \
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=	#empty
 
-MAINTAINER=	freebsd@rakor-net.de
+MAINTAINER=	janik@hikarihq.com
 COMMENT=	Server for the block building game
 
 RUN_DEPENDS=	tmux:${PORTSDIR}/sysutils/tmux
