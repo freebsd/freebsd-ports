@@ -17,7 +17,4 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS+=-n
 
-MAN3=		Heap::Simple::XS.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

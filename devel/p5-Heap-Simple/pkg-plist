@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Heap::Simple.3.gz
 %%SITE_PERL%%/Heap/Simple.pm
 %%SITE_PERL%%/Heap/Simple/Package.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Heap/Simple/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Heap/Simple
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Heap/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Heap
-@dirrmtry %%SITE_PERL%%/Heap/Simple
+@dirrm %%SITE_PERL%%/Heap/Simple
 @dirrmtry %%SITE_PERL%%/Heap

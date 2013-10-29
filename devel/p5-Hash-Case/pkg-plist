@@ -1,5 +1,7 @@
-@comment $FreeBSD$
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Case/.packlist
+%%PERL5_MAN3%%/Hash::Case.3.gz
+%%PERL5_MAN3%%/Hash::Case::Lower.3.gz
+%%PERL5_MAN3%%/Hash::Case::Preserve.3.gz
+%%PERL5_MAN3%%/Hash::Case::Upper.3.gz
 %%SITE_PERL%%/Hash/Case.pm
 %%SITE_PERL%%/Hash/Case.pod
 %%SITE_PERL%%/Hash/Case/Lower.pm
@@ -8,7 +10,8 @@
 %%SITE_PERL%%/Hash/Case/Preserve.pod
 %%SITE_PERL%%/Hash/Case/Upper.pm
 %%SITE_PERL%%/Hash/Case/Upper.pod
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Case
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Case/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Case
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash
-@dirrmtry %%SITE_PERL%%/Hash/Case
+@dirrm %%SITE_PERL%%/Hash/Case
 @dirrmtry %%SITE_PERL%%/Hash

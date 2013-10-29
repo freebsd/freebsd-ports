@@ -13,10 +13,4 @@ COMMENT=	Fast and easy to use classic heaps
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Heap::Simple.3
-
-NO_STAGE=	yes
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.mk>

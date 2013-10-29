@@ -1,7 +1,9 @@
+%%PERL5_MAN3%%/Hash::Util::FieldHash::Compat.3.gz
+%%PERL5_MAN3%%/Hash::Util::FieldHash::Compat::Heavy.3.gz
 %%SITE_PERL%%/Hash/Util/FieldHash/Compat.pm
 %%SITE_PERL%%/Hash/Util/FieldHash/Compat/Heavy.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Util/FieldHash/Compat/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Util/FieldHash/Compat
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Util/FieldHash/Compat
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Util/FieldHash
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Util
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash
