@@ -349,7 +349,7 @@ CONFIGURE_ARGS+=--with-snmp=${LOCALBASE} \
 
 CONFIGURE_ENV+=	ac_cv_buggy_snprint_value="no"
 
-LIB_DEPENDS+=   libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 USE_OPENSSL=	yes
 .endif
