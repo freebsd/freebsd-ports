@@ -17,7 +17,4 @@ RUN_DEPENDS=	p5-Log-Agent>=0.105:${PORTSDIR}/devel/p5-Log-Agent
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Getargs::Long.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

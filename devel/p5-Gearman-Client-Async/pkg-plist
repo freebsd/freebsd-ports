@@ -1,7 +1,10 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman/Client/Async/.packlist
+%%PERL5_MAN3%%/Gearman::Client::Async.3.gz
 %%SITE_PERL%%/Gearman/Client/Async.pm
 %%SITE_PERL%%/Gearman/Client/Async/Connection.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman/Client/Async
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman/Client/Async/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman/Client/Async
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman/Client
-@dirrmtry %%SITE_PERL%%/Gearman/Client/Async
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman
+@dirrm %%SITE_PERL%%/Gearman/Client/Async
 @dirrmtry %%SITE_PERL%%/Gearman/Client
+@dirrmtry %%SITE_PERL%%/Gearman

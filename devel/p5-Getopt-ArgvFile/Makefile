@@ -13,7 +13,4 @@ COMMENT=	Perl module for processing argument vectors
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Getopt::ArgvFile.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

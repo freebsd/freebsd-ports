@@ -1,3 +1,47 @@
+%%PERL5_MAN3%%/Google::Checkout::Command::AddMerchantOrderNumber.3.gz
+%%PERL5_MAN3%%/Google::Checkout::Command::AddTrackingData.3.gz
+%%PERL5_MAN3%%/Google::Checkout::Command::ArchiveOrder.3.gz
+%%PERL5_MAN3%%/Google::Checkout::Command::AuthorizeOrder.3.gz
+%%PERL5_MAN3%%/Google::Checkout::Command::CancelOrder.3.gz
+%%PERL5_MAN3%%/Google::Checkout::Command::ChargeOrder.3.gz
+%%PERL5_MAN3%%/Google::Checkout::Command::DeliverOrder.3.gz
+%%PERL5_MAN3%%/Google::Checkout::Command::GCOCommand.3.gz
+%%PERL5_MAN3%%/Google::Checkout::Command::ProcessOrder.3.gz
+%%PERL5_MAN3%%/Google::Checkout::Command::RefundOrder.3.gz
+%%PERL5_MAN3%%/Google::Checkout::Command::SendBuyerMessage.3.gz
+%%PERL5_MAN3%%/Google::Checkout::Command::UnarchiveOrder.3.gz
+%%PERL5_MAN3%%/Google::Checkout::General::AddressFilters.3.gz
+%%PERL5_MAN3%%/Google::Checkout::General::ConfigReader.3.gz
+%%PERL5_MAN3%%/Google::Checkout::General::DigitalContent.3.gz
+%%PERL5_MAN3%%/Google::Checkout::General::Error.3.gz
+%%PERL5_MAN3%%/Google::Checkout::General::FlatRateShipping.3.gz
+%%PERL5_MAN3%%/Google::Checkout::General::GCO.3.gz
+%%PERL5_MAN3%%/Google::Checkout::General::GiftCertificate.3.gz
+%%PERL5_MAN3%%/Google::Checkout::General::MerchantCalculatedShipping.3.gz
+%%PERL5_MAN3%%/Google::Checkout::General::MerchantCalculationCallback.3.gz
+%%PERL5_MAN3%%/Google::Checkout::General::MerchantCalculationResult.3.gz
+%%PERL5_MAN3%%/Google::Checkout::General::MerchantCalculationResults.3.gz
+%%PERL5_MAN3%%/Google::Checkout::General::MerchantCalculations.3.gz
+%%PERL5_MAN3%%/Google::Checkout::General::MerchantCheckoutFlow.3.gz
+%%PERL5_MAN3%%/Google::Checkout::General::MerchantItem.3.gz
+%%PERL5_MAN3%%/Google::Checkout::General::ParameterizedUrl.3.gz
+%%PERL5_MAN3%%/Google::Checkout::General::ParameterizedUrls.3.gz
+%%PERL5_MAN3%%/Google::Checkout::General::Pickup.3.gz
+%%PERL5_MAN3%%/Google::Checkout::General::Shipping.3.gz
+%%PERL5_MAN3%%/Google::Checkout::General::ShippingRestrictions.3.gz
+%%PERL5_MAN3%%/Google::Checkout::General::ShoppingCart.3.gz
+%%PERL5_MAN3%%/Google::Checkout::General::TaxRule.3.gz
+%%PERL5_MAN3%%/Google::Checkout::General::TaxTable.3.gz
+%%PERL5_MAN3%%/Google::Checkout::General::TaxTableAreas.3.gz
+%%PERL5_MAN3%%/Google::Checkout::General::Util.3.gz
+%%PERL5_MAN3%%/Google::Checkout::Notification::ChargeAmount.3.gz
+%%PERL5_MAN3%%/Google::Checkout::Notification::ChargebackAmount.3.gz
+%%PERL5_MAN3%%/Google::Checkout::Notification::Factory.3.gz
+%%PERL5_MAN3%%/Google::Checkout::Notification::GCONotification.3.gz
+%%PERL5_MAN3%%/Google::Checkout::Notification::NewOrder.3.gz
+%%PERL5_MAN3%%/Google::Checkout::Notification::OrderStateChange.3.gz
+%%PERL5_MAN3%%/Google::Checkout::Notification::RefundAmount.3.gz
+%%PERL5_MAN3%%/Google::Checkout::Notification::RiskInformation.3.gz
 %%SITE_PERL%%/Google/Checkout/Command/AddMerchantOrderNumber.pm
 %%SITE_PERL%%/Google/Checkout/Command/AddTrackingData.pm
 %%SITE_PERL%%/Google/Checkout/Command/ArchiveOrder.pm
@@ -48,10 +92,10 @@
 %%SITE_PERL%%/Google/Checkout/XML/NotificationResponseXmlWriter.pm
 %%SITE_PERL%%/Google/Checkout/XML/Writer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google-Checkout/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google-Checkout
-@dirrmtry %%SITE_PERL%%/Google/Checkout/XML
-@dirrmtry %%SITE_PERL%%/Google/Checkout/Notification
-@dirrmtry %%SITE_PERL%%/Google/Checkout/General
-@dirrmtry %%SITE_PERL%%/Google/Checkout/Command
-@dirrmtry %%SITE_PERL%%/Google/Checkout
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google-Checkout
+@dirrm %%SITE_PERL%%/Google/Checkout/XML
+@dirrm %%SITE_PERL%%/Google/Checkout/Notification
+@dirrm %%SITE_PERL%%/Google/Checkout/General
+@dirrm %%SITE_PERL%%/Google/Checkout/Command
+@dirrm %%SITE_PERL%%/Google/Checkout
 @dirrmtry %%SITE_PERL%%/Google
