@@ -17,5 +17,7 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+PKGNAMESUFFIX=	067
+
 NO_STAGE=	yes
 .include <bsd.port.mk>
