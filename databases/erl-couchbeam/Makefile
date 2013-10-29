@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	couchbeam
-PORTVERSION=	0.8.1
+PORTVERSION=	0.6.0
 PKGNAMEPREFIX=	erl-
 #PORTREVISION=	0
 CATEGORIES=	databases
@@ -24,10 +24,10 @@ RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang \
 	erl-mochiweb>=0:${PORTSDIR}/www/erl-mochiweb
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	benoitc
+GH_ACCOUNT=	opscode
 GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	76bf8c6
+GH_TAGNAME=	old_api
+GH_COMMIT=	c7881f6
 
 USE_GMAKE=	yes
 ALL_TARGET=		compile
