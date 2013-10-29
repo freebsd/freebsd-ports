@@ -32,6 +32,8 @@ bin/yara-editor
 %%PYTHON_SITELIBDIR%%/yaraeditor/ui/yaraeditor_rc.py
 %%PYTHON_SITELIBDIR%%/yaraeditor/ui/yaraeditor_rc.pyc
 %%PYTHON_SITELIBDIR%%/yaraeditor/ui/yaraeditor_rc.pyo
+man/fr/man8/yara-editor.8.gz
+man/man8/yara-editor.8.gz
 @dirrmtry man/fr/man8
 @dirrmtry man/fr
 @dirrmtry %%PYTHON_SITELIBDIR%%/yaraeditor/ui

@@ -25,10 +25,6 @@ OPTIONS_DEFINE=	DOCS
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 PORTDOCS=	README
 
-MANLANG=	"" fr
-MAN8=		yara-editor.8
-
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/config_dir/d' \
 		-e '/en\/man8/d' \
@@ -38,8 +34,8 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
