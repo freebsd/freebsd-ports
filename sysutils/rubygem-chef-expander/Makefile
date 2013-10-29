@@ -2,20 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	chef-expander
-PORTVERSION=	10.24.0
+PORTVERSION=	10.28.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A systems integration framework. Expander
 
-BROKEN=		fails to install
-
-RUN_DEPENDS=	rubygem-amqp=0.6.7:${PORTSDIR}/net/rubygem-amqp067 \
-		rubygem-bunny>=0.6.0:${PORTSDIR}/net/rubygem-bunny \
+RUN_DEPENDS=	rubygem-amqp067=0.6.7:${PORTSDIR}/net/rubygem-amqp067 \
+		rubygem-bunny060>=0.6.0:${PORTSDIR}/net/rubygem-bunny060 \
 		rubygem-em-http-request>=1.0.3:${PORTSDIR}/www/rubygem-em-http-request \
 		rubygem-eventmachine>=1.0.0:${PORTSDIR}/devel/rubygem-eventmachine \
-		rubygem-fast_xs>=0.7.3:${PORTSDIR}/textproc/rubygem-fast_xs \
+		rubygem-fast_xs073>=0.7.3:${PORTSDIR}/textproc/rubygem-fast_xs073 \
 		rubygem-highline>=1.6.1:${PORTSDIR}/devel/rubygem-highline \
 		rubygem-mixlib-log>=1.2.0:${PORTSDIR}/devel/rubygem-mixlib-log \
 		rubygem-uuidtools>=2.1.1:${PORTSDIR}/devel/rubygem-uuidtools \
