@@ -7,6 +7,7 @@ share/locale/bg/LC_MESSAGES/ganyremote.mo
 share/locale/cs_CZ/LC_MESSAGES/ganyremote.mo
 share/locale/de_AT/LC_MESSAGES/ganyremote.mo
 share/locale/de_DE/LC_MESSAGES/ganyremote.mo
+share/locale/el_GR/LC_MESSAGES/ganyremote.mo
 share/locale/es_ES/LC_MESSAGES/ganyremote.mo
 share/locale/fi_FI/LC_MESSAGES/ganyremote.mo
 share/locale/fr_FR/LC_MESSAGES/ganyremote.mo
@@ -38,6 +39,8 @@ share/pixmaps/ganyremote_off.png
 @dirrmtry share/locale/hu_HU
 @dirrmtry share/locale/fi_FI/LC_MESSAGES
 @dirrmtry share/locale/fi_FI
+@dirrmtry share/locale/el_GR/LC_MESSAGES
+@dirrmtry share/locale/el_GR
 @dirrmtry share/locale/de_DE/LC_MESSAGES
 @dirrmtry share/locale/de_DE
 @dirrmtry share/locale/cs_CZ/LC_MESSAGES
