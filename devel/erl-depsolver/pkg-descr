@@ -1,0 +1,8 @@
+Depsolver is a dependency solver package for erlang. You supply it with a list
+of versioned objects that are in the world and then you can solve for different
+version constraints.
+
+If no solution can be found, detailed back tracking information is returned
+that can be used to detect what exact dependencies are causing the problem.
+
+WWW: https://github.com/opscode/depsolver
