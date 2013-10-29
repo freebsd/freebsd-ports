@@ -1,0 +1,11 @@
+--- ./src/stats_hero.app.src.orig	2013-10-29 16:11:25.000000000 +0900
++++ ./src/stats_hero.app.src	2013-10-29 16:11:34.000000000 +0900
+@@ -18,7 +18,7 @@
+ {application, stats_hero,
+  [
+   {description, "Metrics and logging helper app for Opscode Erlang projects"},
+-  {vsn, git},
++  {vsn, "${VERSION}"},
+   {registered, [stats_hero_monitor, stats_hero_worker_sup]},
+   {applications, [
+ 		  kernel,
