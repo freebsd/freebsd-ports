@@ -1,0 +1,4 @@
+couchbeam is a simple erlang CouchDB framework. couchbeam provides you a full
+featured and easy client to access and manage multiple couchdb Nodes.
+
+WWW: https://github.com/benoitc/couchbeam
