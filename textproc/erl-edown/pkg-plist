@@ -1,0 +1,16 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/edown.app
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/edown_lib.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/edown_doclet.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/edown_layout.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/edown_xmerl.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/edown_doclet.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/edown_layout.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/edown_lib.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/edown_xmerl.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/bin/MARKEDOC-README.md
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/bin/markedoc.sed
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/bin
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%
