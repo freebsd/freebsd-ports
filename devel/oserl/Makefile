@@ -25,37 +25,24 @@ USE_DOS2UNIX=	Makefile
 USES=		gmake iconv
 ALL_TARGET=	compile doc
 
-MAN1=		oserl.1
-MAN3=		gen_esme.3 gen_esme_session.3 gen_mc.3 gen_mc_session.3 \
-		smpp_base.3 smpp_base_syntax.3 smpp_disk_log_hlr.3 smpp_error.3 \
-		smpp_log_mgr.3 smpp_operation.3 smpp_param_syntax.3 \
-		smpp_pdu_syntax.3 smpp_ref_num.3 smpp_req_tab.3 smpp_sm.3 \
-		smpp_tty_log_hlr.3
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-extract:
 # Trick rebar into locating the oserl include files (see also patch-rebar.config)
 	@${LN} -s ${WRKSRC} ${WRKDIR}/${PORTNAME}
 	@${REINPLACE_CMD} -e "s@&lt;@<@g" -e "s@&gt;@>@g" ${WRKSRC}/doc/*.ndoc
 
 do-install:
-.for manpage in ${MAN1} ${MAN3}
-	@${ICONV_CMD} -f UTF-8 -t ISO-8859-1 ${WRKSRC}/doc/man/${manpage} > ${WRKSRC}/doc/man/${manpage}.iconv
-.endfor
-.for manpage in ${MAN1}
-	@${INSTALL_MAN} ${WRKSRC}/doc/man/${manpage}.iconv ${MAN1PREFIX}/man/man1/${manpage}
-.endfor
-.for manpage in ${MAN3}
-	@${INSTALL_MAN} ${WRKSRC}/doc/man/${manpage}.iconv ${MAN3PREFIX}/man/man3/${manpage}
-.endfor
-	@${MKDIR} ${PREFIX}/lib/erlang/lib/oserl-${PORTVERSION}
-	@${MKDIR} ${PREFIX}/lib/erlang/lib/oserl-${PORTVERSION}/ebin
-	@${MKDIR} ${PREFIX}/lib/erlang/lib/oserl-${PORTVERSION}/include
-	@${MKDIR} ${PREFIX}/lib/erlang/lib/oserl-${PORTVERSION}/src
-	@${INSTALL_DATA} ${WRKSRC}/ebin/* ${PREFIX}/lib/erlang/lib/oserl-${PORTVERSION}/ebin
-	@${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/lib/erlang/lib/oserl-${PORTVERSION}/include
-	@${INSTALL_DATA} ${WRKSRC}/src/* ${PREFIX}/lib/erlang/lib/oserl-${PORTVERSION}/src
+	@for manpage in ${WRKSRC}/doc/man/*; do \
+		${MV} $${manpage} $${manpage}.src; \
+		${ICONV_CMD} -f UTF-8 -t ISO-8859-1 $${manpage}.src > $${manpage}; \
+	done
+	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/man/*.3 ${STAGEDIR}${MAN1PREFIX}/man/man3
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/oserl-${PORTVERSION}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/oserl-${PORTVERSION}/ebin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/oserl-${PORTVERSION}/include
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/oserl-${PORTVERSION}/src
+	${INSTALL_DATA} ${WRKSRC}/ebin/* ${STAGEDIR}${PREFIX}/lib/erlang/lib/oserl-${PORTVERSION}/ebin
+	${INSTALL_DATA} ${WRKSRC}/include/* ${STAGEDIR}${PREFIX}/lib/erlang/lib/oserl-${PORTVERSION}/include
+	${INSTALL_DATA} ${WRKSRC}/src/* ${STAGEDIR}${PREFIX}/lib/erlang/lib/oserl-${PORTVERSION}/src
 
 .include <bsd.port.mk>
