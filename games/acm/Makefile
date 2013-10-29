@@ -5,27 +5,29 @@ PORTNAME=	acm
 PORTVERSION=	5.0
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://www.websimulations.com/download/
+MASTER_SITES=	# none
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A flight simulator for X11
+COMMENT=	Arial combat simulator for X11
 
 LICENSE=	GPLv2
+
+OPTIONS_DEFINE=	SOUND
 
 USES=		perl5
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_lib_Xm_XmCreateBulletinBoard=no \
+		ac_cv_lib_gdbm_dbm_fetch=no
 USE_PERL5=	build
+MAKE_ARGS+=	prefix=${STAGEDIR}${PREFIX}/ OBVDIR=${STAGEDIR}${DATADIR}/
 
-MAN6=		acm.6
+SOUND_LIB_DEPENDS=	libaudio.so:${PORTSDIR}/audio/nas
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-# Include sound support (Use network audio server (nas))
-.if defined(WITH_SOUND) || (exists(${PREFIX}/lib/libaudio.a) \
-	&& !defined(WITHOUT_SOUND))
-LIB_DEPENDS+=	audio.2:${PORTSDIR}/audio/nas
+.if empty(PORT_OPTIONS:MSOUND)
+CONFIGURE_ENV+=	ac_cv_lib_audio_AuCloseServer=no
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
