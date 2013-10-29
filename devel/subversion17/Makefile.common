@@ -11,16 +11,18 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main
 DIST_SUBDIR=	subversion17
 MASTER_SITE_SUBDIR=	subversion/:main \
 			lev/:book
-# setting PKGSUFFIX not possible wo. having a Mk/Uses file and fixing a bunch of ports
-#PKGNAMESUFFIX=	17
+PKGNAMESUFFIX=	17
+
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_KDE4=	# Used below if KWallet support is enabled
+USES+=		pkgconfig
 
 LICENSE=	AL2
 
 CONFLICTS_INSTALL+=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-1.[^7].[0-9]*
+LATEST_LINK=		${PKGNAMEPREFIX}${PORTNAME}17${PKGNAMESUFFIX}
 
 LIB_DEPENDS+=		libapr-1.so:${PORTSDIR}/devel/apr1 \
 			libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
