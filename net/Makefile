@@ -1026,6 +1026,7 @@
     SUBDIR += rubygem-amqp067
     SUBDIR += rubygem-aws-s3
     SUBDIR += rubygem-bunny
+    SUBDIR += rubygem-bunny060
     SUBDIR += rubygem-connection_pool
     SUBDIR += rubygem-domain_name
     SUBDIR += rubygem-dropbox-sdk
