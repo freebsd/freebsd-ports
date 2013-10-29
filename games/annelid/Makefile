@@ -14,8 +14,8 @@ COMMENT=	Remake of the ubiquitous "Snake" and "Worm" games
 
 RESTRICTED=	No redistribution allowed
 
+USES=	gmake
 USE_ZIP=	yes
-USE_GMAKE=	yes
 USE_SDL=	sdl
 USE_GL=		gl
 NO_WRKSUBDIR=	yes
@@ -30,7 +30,6 @@ DATAFILES=	annelid.dat apple.tga apple.wav backd.tga backn.tga font.dat \
 		score.wav segment.tga shrink.wav slow.wav speed.wav title.tga \
 		vortex.wav
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -50,16 +49,11 @@ post-patch:
 .endif
 
 do-install:
-# Script.
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-sh ${PREFIX}/bin/${PORTNAME}
-
-# Program.
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/libexec
-
-# Data.
-	${MKDIR} ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/libexec
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for f in ${DATAFILES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
 .endfor
 
 .include <bsd.port.mk>
