@@ -230,8 +230,8 @@ lib/inspircd/modules/m_xline_db.so
 @dirrmtry etc/inspircd/examples
 @dirrmtry etc/inspircd
 @dirrm lib/inspircd/modules
-@dirrm lib/inspircd/logs
-@dirrm lib/inspircd/data
+@dirrmtry lib/inspircd/logs
+@dirrmtry lib/inspircd/data
 @dirrm lib/inspircd
 @unexec if cmp -s %D/%%ETCDIR%%/examples/censor.conf.example %D/%%ETCDIR%%/censor.conf; then rm -f %D/%%ETCDIR%%/censor.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/examples/filter.conf.example %D/%%ETCDIR%%/filter.conf; then rm -f %D/%%ETCDIR%%/filter.conf; fi

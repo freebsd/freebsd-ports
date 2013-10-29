@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	inspircd
-PORTVERSION=	2.0.12
+PORTVERSION=	2.0.14
 CATEGORIES=	irc
 
 MAINTAINER=	feld@FreeBSD.org
@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	inspircd
 GH_PROJECT=	${GH_ACCOUNT}
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	9b96fee
+GH_COMMIT=	5661a9e
 
 USE_RC_SUBR=	${PORTNAME}
 MAKEFILE=	BSDmakefile
@@ -58,7 +58,6 @@ SQLITE_DESC=	Build m_sqlite3 module
 PCRE_DESC=	Build m_regex_pcre module
 POSIX_DESC=	Build m_regex_posix module
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLDAPAUTH}
@@ -144,7 +143,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|DATA_PATH "/inspircd.pid"|"/var/run/inspircd/inspircd.pid"|' ${WRKSRC}/src/inspircd.cpp
 
 post-install:
-	@${STRIP_CMD} ${PREFIX}/lib/${PORTNAME}/modules/*.so
-	@${STRIP_CMD} ${PREFIX}/bin/${PORTNAME}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
