@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/bear.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/bear.app
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/bear.erl
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%
