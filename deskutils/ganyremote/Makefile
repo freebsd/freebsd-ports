@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ganyremote
-PORTVERSION=	6.2
+PORTVERSION=	6.3.1
 CATEGORIES=	deskutils comms gnome
 MASTER_SITES=	SF/anyremote/${PORTNAME}/${PORTVERSION}
 
@@ -23,23 +23,13 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/local|${LOCALBASE}| ; \
 		 /usepybluez = /s|True|False| ; \
 		 /initVerify()$$/d' ${WRKSRC}/${PORTNAME}
 	@${REINPLACE_CMD} -e \
-		'/$$(datadir)\/doc/s|^|#|' ${WRKSRC}/Makefile.in
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for i in AUTHORS ChangeLog README
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
-.endfor
-.endif
+		'/DESTDIR/s|cp -r|cp -R| ; \
+		 /DESTDIR/s|COPYING||' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
