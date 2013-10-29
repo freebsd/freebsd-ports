@@ -1,0 +1,57 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/folsom_vm_metrics.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/folsom_utils.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/folsom_sup.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/folsom_sample_uniform.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/folsom_sample_slide_uniform.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/folsom_sample_slide_sup.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/folsom_sample_slide_server.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/folsom_sample_slide.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/folsom_sample_none.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/folsom_sample_exdec.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/folsom_sample.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/folsom_metrics_spiral.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/folsom_metrics_meter_reader.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/folsom_metrics_meter.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/folsom_metrics_history.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/folsom_metrics_histogram_ets.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/folsom_metrics_histogram.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/folsom_metrics_gauge.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/folsom_metrics_duration.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/folsom_metrics_counter.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/folsom_metrics.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/folsom_meter_timer_server.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/folsom_ewma.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/folsom_ets.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/folsom.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/folsom.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/folsom_vm_metrics.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/folsom_utils.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/folsom_sup.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/folsom_sample_uniform.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/folsom_sample_slide_uniform.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/folsom_sample_slide_sup.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/folsom_sample_slide_server.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/folsom_sample_slide.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/folsom_sample_none.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/folsom_sample_exdec.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/folsom_sample.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/folsom_metrics_spiral.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/folsom_metrics_meter_reader.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/folsom_metrics_meter.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/folsom_metrics_history.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/folsom_metrics_histogram_ets.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/folsom_metrics_histogram.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/folsom_metrics_gauge.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/folsom_metrics_duration.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/folsom_metrics_counter.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/folsom_metrics.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/folsom_meter_timer_server.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/folsom_ewma.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/folsom_ets.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/folsom.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/folsom.app
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%

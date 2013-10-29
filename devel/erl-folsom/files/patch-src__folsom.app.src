@@ -1,0 +1,11 @@
+--- ./src/folsom.app.src.orig	2013-10-29 11:17:40.000000000 +0900
++++ ./src/folsom.app.src	2013-10-29 11:17:51.000000000 +0900
+@@ -2,7 +2,7 @@
+ {application, folsom,
+  [
+   {description, ""},
+-  {vsn, git},
++  {vsn, "${VERSION}"},
+   {registered, [folsom_meter_timer_server,
+                 folsom_metrics_histogram_ets,
+                 folsom_sup]},
