@@ -1,0 +1,14 @@
+--- Makefile.orig	2010-07-16 09:22:13.000000000 +0300
++++ Makefile	2013-10-17 18:24:00.000000000 +0300
+@@ -1,11 +1,8 @@
+-CC=gcc
+-CFLAGS=-g -pedantic -Wall -O2 -shared -fpic -I /usr/include/lua5.1 -I /usr/include/mysql -I /usr/include/postgresql/ -I /opt/ibm/db2exc/V9.5/include/ -I /usr/lib/oracle/xe/app/oracle/product/10.2.0/client/rdbms/public/ -I .
+ AR=ar rcu
+ RANLIB=ranlib
+ RM=rm -rf
+ MKDIR=mkdir -p
+ 
+-COMMON_LDFLAGS=
+ MYSQL_LDFLAGS=$(COMMON_LDFLAGS) -lmysqlclient
+ PSQL_LDFLAGS=$(COMMON_LDFLAGS) -lpq 
+ SQLITE3_LDFLAGS=$(COMMON_LDFLAGS) -lsqlite3 
