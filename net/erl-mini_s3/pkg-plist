@@ -1,0 +1,13 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ms3_xml.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ms3_http.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/mini_s3.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ms3_xml.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ms3_http.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mini_s3.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mini_s3.app
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%
