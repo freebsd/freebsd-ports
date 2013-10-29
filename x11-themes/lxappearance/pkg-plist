@@ -13,6 +13,7 @@ share/applications/lxappearance.desktop
 %%NLS%%share/locale/en_GB/LC_MESSAGES/lxappearance.mo
 %%NLS%%share/locale/es/LC_MESSAGES/lxappearance.mo
 %%NLS%%share/locale/et/LC_MESSAGES/lxappearance.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/lxappearance.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/lxappearance.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/lxappearance.mo
 %%NLS%%share/locale/fo/LC_MESSAGES/lxappearance.mo
