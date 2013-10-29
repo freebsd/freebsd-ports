@@ -12,7 +12,7 @@ COMMENT=	Systems integration framework. Client part
 
 RUN_DEPENDS=	rubygem-erubis>=0:${PORTSDIR}/www/rubygem-erubis \
 		rubygem-highline>=1.6.9:${PORTSDIR}/devel/rubygem-highline \
-		rubygem-json>=1.4.4:${PORTSDIR}/devel/rubygem-json146 \
+		rubygem-json146>=1.4.4:${PORTSDIR}/devel/rubygem-json146 \
 		rubygem-mixlib-authentication>=1.3.0:${PORTSDIR}/devel/rubygem-mixlib-authentication \
 		rubygem-mixlib-cli>=1.3.0:${PORTSDIR}/devel/rubygem-mixlib-cli \
 		rubygem-mixlib-config>=1.1.2:${PORTSDIR}/devel/rubygem-mixlib-config \
