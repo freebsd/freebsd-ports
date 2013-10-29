@@ -16,7 +16,7 @@ RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
-USES=		gmake
+USE_GMAKE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	eproxus
 GH_PROJECT=	meck
