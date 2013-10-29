@@ -1147,6 +1147,7 @@
     SUBDIR += py-MarkupSafe
     SUBDIR += py-Tempita
     SUBDIR += py-asv
+    SUBDIR += py-charade
     SUBDIR += py-chardet
     SUBDIR += py-creole
     SUBDIR += py-docutils
