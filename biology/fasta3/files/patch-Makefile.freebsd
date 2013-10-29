@@ -13,7 +13,7 @@
  
  BIN = ../bin
 -XDIR =		/usr/local/bin
-+XDIR =		${LOCALBASE}/bin
++XDIR?=		${LOCALBASE}/bin
  
  LIB_M+=		-lm
  
