@@ -26,6 +26,13 @@ lib/libracoon.a
 lib/libracoon.la
 lib/libracoon.so
 lib/libracoon.so.0
+man/man3/ipsec_set_policy.3.gz
+man/man3/ipsec_strerror.3.gz
+man/man5/racoon.conf.5.gz
+man/man8/plainrsa-gen.8.gz
+man/man8/racoon.8.gz
+man/man8/racoonctl.8.gz
+man/man8/setkey.8.gz
 %%EXAMPLESDIR%%/psk.txt
 %%EXAMPLESDIR%%/psk.txt.sample
 %%EXAMPLESDIR%%/racoon.conf

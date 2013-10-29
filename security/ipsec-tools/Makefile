@@ -7,7 +7,7 @@
 #       - $LOCALBASE/sbin/setkey Vs /usr/sbin/setkey
 
 PORTNAME=	ipsec-tools
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF
@@ -20,6 +20,7 @@ CONFLICTS=	racoon-[0-9]*
 USE_RC_SUBR=	racoon
 USE_OPENSSL=	yes
 USE_BZIP2=	yes
+USE_GCC=	any
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
@@ -50,13 +51,8 @@ PAM_DESC=	PAM authentication (Xauth server)
 RADIUS_DESC=	Radius authentication (Xauth server)
 LDAP_DESC=	LDAP authentication (Xauth server)
 
-MAN3=		ipsec_set_policy.3 ipsec_strerror.3
-MAN5=		racoon.conf.5
-MAN8=		racoon.8 racoonctl.8 setkey.8 plainrsa-gen.8
-
 PORTDOCS=	*
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900007
@@ -161,31 +157,16 @@ CONFIGURE_ARGS+=	--enable-idea
 CONFIGURE_ARGS+=	--disable-idea
 .endif
 
-.if ${OSVERSION} < 800000
-.if ${PORT_OPTIONS:MNATT}
-pre-configure:
-	@${ECHO_MSG} "===> -------------------------------------------------------------------------"
-	@${ECHO_MSG} "===> ATTENTION: You need a kernel patch to enable NAT-Traversal functionality!"
-	@${ECHO_MSG} "===> latest known patch for FreeBSD 7 is available here:"
-	@${ECHO_MSG} "===>     http://people.freebsd.org/~bz/20110123-01-stable7-natt.diff"
-	@${ECHO_MSG} "===> You might possibly have to do some steps manually if it fails to apply."
-	@${ECHO_MSG} "===> -------------------------------------------------------------------------"
-	@sleep 3
-.endif
-.endif
-
 post-install:
-	@${MKDIR} ${PREFIX}/etc/racoon
+	@${MKDIR} ${STAGEDIR}/${PREFIX}/etc/racoon
 	@if [ -z `/sbin/sysctl -a | ${GREP} -q ipsec && ${ECHO_CMD} ipsec` ]; then \
 	    ${ECHO_MSG} "WARNING: IPsec feature is disabled on this host"; \
 	    ${ECHO_MSG} "         You must build the kernel if you want to run racoon on the host"; \
 	fi ;
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
 	@${RM} -f ${WRKSRC}/src/racoon/samples/*.in
-	@${CP} -r ${WRKSRC}/src/racoon/samples/* ${EXAMPLESDIR}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/src/racoon/doc/* ${DOCSDIR}
-.endif
+	@${CP} -r ${WRKSRC}/src/racoon/samples/* ${STAGEDIR}/${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/racoon/doc/* ${STAGEDIR}/${DOCSDIR}
 
 .include <bsd.port.post.mk>
