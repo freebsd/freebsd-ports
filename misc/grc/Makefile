@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grc
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	misc
 MASTER_SITES=	http://kassiopeia.juls.savba.sk/~garabik/software/grc/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -10,19 +10,19 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic Colouriser
 
+LICENSE=	GPLv2
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 
+USES=		shebangfix
+SHEBANG_FILES=	grc grcat
 USE_PYTHON_RUN=	yes
 
-MAN1=	grc.1 grcat.1
-
-NO_STAGE=	yes
 post-patch:
 .for i in grc grcat
 	@${REINPLACE_CMD} -e \
-		's|/usr/bin/python|${SETENV} python|g ; \
-		 s|"/etc/grc|"${PREFIX}/etc/grc|g ; \
+		's|"/etc/grc|"${PREFIX}/etc/grc|g ; \
 		 s|/usr/local/share/grc|${DATADIR}|g ; \
 		 s|, "/usr/share/grc/"||g' ${WRKSRC}/${i}
 	@${REINPLACE_CMD} -e \
@@ -33,11 +33,11 @@ post-patch:
 
 do-install:
 .for i in grc grcat
-	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${i}.1 ${MAN1PREFIX}/man/man1
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} ${i} ${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_MAN} ${i}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1)
 .endfor
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/conf.* ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/grc.conf ${PREFIX}/etc
+	(cd ${WRKSRC} && ${INSTALL_DATA} grc.conf ${STAGEDIR}${PREFIX}/etc)
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} conf.* ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>
