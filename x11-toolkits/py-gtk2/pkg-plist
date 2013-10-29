@@ -698,7 +698,6 @@ libdata/pkgconfig/pygtk-2.0.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pygtk-demo/demos/treemodel.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pygtk-demo/demos/ui_manager.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pygtk-demo/pygtk-demo
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pygtk-demo/pygtk-demo.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pygtk-demo/pygtk-demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/dnd.py
