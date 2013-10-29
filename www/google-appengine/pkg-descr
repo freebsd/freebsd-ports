@@ -2,13 +2,14 @@ Google App Engine software development kit (SDK).
 
 Google App Engine enables you to build web applications
 on the same scalable systems that power Google applications.
-Google App Engine applications are implemented using the Python
-programming language. The runtime environment includes the full
-Python language and most of the Python standard library.
+Google App Engine applications are implemented using the PHP
+or the Python programming language. The runtime environment
+includes the full Python language and most of the Python
+standard library.
 
-App Engine applications are easy to build, easy to maintain, and
-easy to scale as your traffic and data storage needs grow.
-With App Engine, there are no servers to maintain: you just upload
-your application, and it's ready to serve your users.
+App Engine applications are easy to build, easy to maintain,
+and easy to scale as your traffic and data storage needs grow.
+With App Engine, there are no servers to maintain: you just
+upload your application, and it's ready to serve your users.
 
 WWW: http://code.google.com/appengine/
