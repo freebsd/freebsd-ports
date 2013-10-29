@@ -18,6 +18,21 @@ bin/synos
 @exec if [ ! -f %D/etc/avenger/unknown ] ; then cp -p %D/%F %B/unknown; fi
 libexec/avenger
 libexec/avenger.local
+man/man1/aliascheck.1.gz
+man/man1/avenger.1.gz
+man/man1/dbutil.1.gz
+man/man1/deliver.1.gz
+man/man1/dotlock.1.gz
+man/man1/edinplace.1.gz
+man/man1/escape.1.gz
+man/man1/macutil.1.gz
+man/man1/mailexec.1.gz
+man/man1/match.1.gz
+man/man1/smtpdcheck.1.gz
+man/man1/synos.1.gz
+man/man5/asmtpd.conf.5.gz
+man/man8/asmtpd.8.gz
+man/man8/avenger.local.8.gz
 sbin/asmtpd
 %%DATADIR%%/avsendmail.m4
 %%DATADIR%%/smtp-filter.pf
