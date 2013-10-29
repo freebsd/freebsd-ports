@@ -22,22 +22,16 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
 PORTDOCS=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-build:
 	@${MKDIR} ${WRKSRC}/obj
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/formido ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-.if !defined(NOPORTDATA)
-	cd ${WRKSRC}/data && ${COPYTREE_SHARE} '*' ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/formido.cfg ${DATADIR}
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	cd ${WRKSRC}/data && ${COPYTREE_SHARE} '*' ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.cfg ${STAGEDIR}${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
