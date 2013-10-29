@@ -3,7 +3,7 @@
 
 PORTNAME=	dhcpcd
 PORTVERSION=	5.5.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://roy.marples.name/downloads/dhcpcd/ \
 		LOCAL/delphij
