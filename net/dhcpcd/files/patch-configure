@@ -1,0 +1,30 @@
+--- ./configure.orig	2012-03-28 03:26:20.000000000 -0700
++++ ./configure	2013-10-28 22:31:50.000000000 -0700
+@@ -53,7 +53,7 @@
+ 	--includedir) eval INCLUDEDIR="$INCLUDEDIR${INCLUDEDIR:+ }$var";;
+ 	--datadir|--infodir) ;; # ignore autotools
+ 	--disable-maintainer-mode|--disable-dependency-tracking) ;;
+-	--help) echo "See the README file for available options"; exit 0;;
++	--help|--version) echo "See the README file for available options"; exit 0;;
+ 	*) echo "$0: WARNING: unknown option $opt" >&2;;
+ 	esac
+ done
+@@ -101,7 +101,8 @@
+ CONFIG_MK=config.mk
+ 
+ if [ -z "$BUILD" ]; then
+-	BUILD=`uname -m`-`uname -s | tr '[:upper:]' '[:lower:]'`
++	# autoconf target triplet: cpu-vendor-os (where os = system or kernel-system)
++	BUILD=`uname -m`-unknown-`uname -s | tr '[:upper:]' '[:lower:]'`
+ fi
+ if [ -z "$HOST" ]; then
+ 	[ -z "$TARGET" ] && TARGET=$BUILD
+@@ -124,6 +125,8 @@
+ 	# Derive OS from cpu-manufacturer-os-kernel
+ 	CPU=${TARGET%%-*}
+ 	REST=${TARGET#*-}
++	VENDOR=${REST%%-*}
++	REST=${REST#*-}
+ 	if [ "$CPU" != "$REST" ]; then
+ 		MANU=${REST%%-*}
+ 		REST=${REST#*-}
