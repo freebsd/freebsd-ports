@@ -14,19 +14,18 @@ LICENSE=	GPLv2
 PLIST_FILES=	bin/mac-robber
 PORTDOCS=	CHANGES README
 
-NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC}; ${CC} ${CFLAGS} -o mac-robber mac-robber.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mac-robber ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/mac-robber ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
