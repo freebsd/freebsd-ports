@@ -17,16 +17,15 @@ USE_XORG=	xmu xt xext x11 xi
 USE_GL=		glut
 ALL_TARGET=	KnightCap
 
+OPTIONS_DEFINE=	DOCS
+
 DOCSDIR=	${PREFIX}/share/doc/KnightCap
 PORTDOCS=	README
 PLIST_FILES=	bin/KnightCap
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/KnightCap ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/KnightCap ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
