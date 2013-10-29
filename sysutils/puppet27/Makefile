@@ -3,6 +3,7 @@
 
 PORTNAME=	puppet
 PORTVERSION=	2.7.23
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
@@ -25,6 +26,8 @@ GROUPS=		puppet
 SUB_FILES+=	pkg-message
 
 PORTSCOUT=	limit:^2\.7\.
+
+PKGNAMESUFFIX=	27
 
 MANCOMPRESSED=	yes
 MAN5=	puppet.conf.5
