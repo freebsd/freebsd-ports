@@ -1,11 +1,11 @@
 bin/antipolix-client
 bin/antipolix-server
-%%PORTDOCS%%share/doc/antipolix/ANTIPOLIX_RULES
-%%PORTDOCS%%share/doc/antipolix/CLIENT_USE
-%%PORTDOCS%%share/doc/antipolix/COPYRIGHT
-%%PORTDOCS%%share/doc/antipolix/SERVER_USE
-share/examples/antipolix/dot.motd.sample
-share/examples/antipolix/dot.players.sample
-share/examples/antipolix/dot.server_defaults.sample
-%%PORTDOCS%%@dirrm share/doc/antipolix
-@dirrm share/examples/antipolix
+%%PORTDOCS%%%%DOCSDIR%%/ANTIPOLIX_RULES
+%%PORTDOCS%%%%DOCSDIR%%/CLIENT_USE
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/SERVER_USE
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot.motd.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot.players.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot.server_defaults.sample
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
