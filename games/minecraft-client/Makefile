@@ -13,7 +13,7 @@ DISTFILES=	minecraft.jar:minecraft \
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=
 
-MAINTAINER=	freebsd@rakor-net.de
+MAINTAINER=	janik@hikarihq.com
 COMMENT=	Client for the block building game
 
 OPTIONS_DEFINE=		NATIVE_LIBS
