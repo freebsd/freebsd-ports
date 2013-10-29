@@ -1,0 +1,22 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_db.app
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_db_darklaunch.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_otto.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_sql.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_cache.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_db.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_cache.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_db.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_db_darklaunch.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_otto.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_sql.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/README.md
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/pgsql_schema.sql
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/pgsql_statements.config
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/chef_otto.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/chef_db.hrl
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%
