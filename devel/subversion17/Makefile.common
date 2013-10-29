@@ -11,7 +11,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main
 DIST_SUBDIR=	subversion17
 MASTER_SITE_SUBDIR=	subversion/:main \
 			lev/:book
-PKGNAMESUFFIX=	17
+#·setting·PKGSUFFIX·not·possible·wo.·having·a·Mk/Uses·file·and·fixing·a·bunch·of·ports
+#PKGNAMESUFFIX=	17
 
 
 USE_BZIP2=	yes
