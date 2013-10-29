@@ -9,13 +9,15 @@ DISTNAME=	onig-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A BSDL Regular Expressions library compatible with POSIX/GNU/Perl
+COMMENT=	BSDL Regular Expressions library compatible with POSIX/GNU/Perl
 
 NO_LATEST_LINK=	yes
 CONFLICTS=	oniguruma-2.*
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 DOCS=		HISTORY README doc/*
+
+PKGNAMESUFFIX=	4
 
 NO_STAGE=	yes
 post-patch:
