@@ -18,20 +18,21 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 PYC=		PYTHON="${PYTHON_CMD}" ${SH} ${SCRIPTDIR}/py-compile
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|; s|%%PYTHON%%|${PYTHON_CMD}|' \
 		${WRKSRC}/4stattack
 
 do-install:
-	${MKDIR} ${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/4stattack \
-		${PREFIX}/bin
+		${STAGEDIR}${PREFIX}/bin
 
-	${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} \
 		${WRKSRC}/4stattack.py \
 		${WRKSRC}/animator.py \
@@ -58,42 +59,42 @@ do-install:
 		${WRKSRC}/themeresizer.py \
 		${WRKSRC}/themeresizer.sh \
 		${WRKSRC}/version \
-		${DATADIR}
+		${STAGEDIR}${DATADIR}
 	${PYC} --basedir ${DATADIR} \
-		${DATADIR}/4stattack.py \
-		${DATADIR}/animator.py \
-		${DATADIR}/board.py \
-		${DATADIR}/chat.py \
-		${DATADIR}/creditsscreen.py \
-		${DATADIR}/endgamedialog.py \
-		${DATADIR}/endscreen.py \
-		${DATADIR}/game.py \
-		${DATADIR}/gamelog.py \
-		${DATADIR}/gamescreen.py \
-		${DATADIR}/inisettings.py \
-		${DATADIR}/multiplayerscreen.py \
-		${DATADIR}/quit.py \
-		${DATADIR}/rules.py \
-		${DATADIR}/scoremap.py \
-		${DATADIR}/setini.py \
-		${DATADIR}/settingsscreen.py \
-		${DATADIR}/startscreen.py \
-		${DATADIR}/testgui.py \
-		${DATADIR}/testini.py \
-		${DATADIR}/themeresizer.py
+		${STAGEDIR}${DATADIR}/4stattack.py \
+		${STAGEDIR}${DATADIR}/animator.py \
+		${STAGEDIR}${DATADIR}/board.py \
+		${STAGEDIR}${DATADIR}/chat.py \
+		${STAGEDIR}${DATADIR}/creditsscreen.py \
+		${STAGEDIR}${DATADIR}/endgamedialog.py \
+		${STAGEDIR}${DATADIR}/endscreen.py \
+		${STAGEDIR}${DATADIR}/game.py \
+		${STAGEDIR}${DATADIR}/gamelog.py \
+		${STAGEDIR}${DATADIR}/gamescreen.py \
+		${STAGEDIR}${DATADIR}/inisettings.py \
+		${STAGEDIR}${DATADIR}/multiplayerscreen.py \
+		${STAGEDIR}${DATADIR}/quit.py \
+		${STAGEDIR}${DATADIR}/rules.py \
+		${STAGEDIR}${DATADIR}/scoremap.py \
+		${STAGEDIR}${DATADIR}/setini.py \
+		${STAGEDIR}${DATADIR}/settingsscreen.py \
+		${STAGEDIR}${DATADIR}/startscreen.py \
+		${STAGEDIR}${DATADIR}/testgui.py \
+		${STAGEDIR}${DATADIR}/testini.py \
+		${STAGEDIR}${DATADIR}/themeresizer.py
 
-	${MKDIR} ${DATADIR}/data/music
+	@${MKDIR} ${STAGEDIR}${DATADIR}/data/music
 	${INSTALL_DATA} \
 		${WRKSRC}/data/music/4stattack.ogg \
-		${DATADIR}/data/music
+		${STAGEDIR}${DATADIR}/data/music
 
-	${MKDIR} ${DATADIR}/data/themes/clean
+	@${MKDIR} ${STAGEDIR}${DATADIR}/data/themes/clean
 	${INSTALL_DATA} \
 		${WRKSRC}/data/themes/clean/audio.ini \
 		${WRKSRC}/data/themes/clean/graphics.ini \
-		${DATADIR}/data/themes/clean
+		${STAGEDIR}${DATADIR}/data/themes/clean
 
-	${MKDIR} ${DATADIR}/data/themes/clean/1024x768
+	@${MKDIR} ${STAGEDIR}${DATADIR}/data/themes/clean/1024x768
 	${INSTALL_DATA} \
 		${WRKSRC}/data/themes/clean/1024x768/awaitingconnection.png \
 		${WRKSRC}/data/themes/clean/1024x768/back.png \
@@ -147,9 +148,9 @@ do-install:
 		${WRKSRC}/data/themes/clean/1024x768/wannaquit.png \
 		${WRKSRC}/data/themes/clean/1024x768/won_1.png \
 		${WRKSRC}/data/themes/clean/1024x768/won_2.png \
-		${DATADIR}/data/themes/clean/1024x768
+		${STAGEDIR}${DATADIR}/data/themes/clean/1024x768
 
-	${MKDIR} ${DATADIR}/gui
+	@${MKDIR} ${STAGEDIR}${DATADIR}/gui
 	${INSTALL_DATA} \
 		${WRKSRC}/gui/__init__.py \
 		${WRKSRC}/gui/button.py \
@@ -164,23 +165,23 @@ do-install:
 		${WRKSRC}/gui/progress.py \
 		${WRKSRC}/gui/widget.py \
 		${WRKSRC}/gui/widget_manager.py \
-		${DATADIR}/gui
+		${STAGEDIR}${DATADIR}/gui
 	${PYC} --basedir ${DATADIR}/gui \
-		${DATADIR}/gui/__init__.py \
-		${DATADIR}/gui/button.py \
-		${DATADIR}/gui/canvas.py \
-		${DATADIR}/gui/checkbox.py \
-		${DATADIR}/gui/dialog.py \
-		${DATADIR}/gui/editfield.py \
-		${DATADIR}/gui/fader.py \
-		${DATADIR}/gui/image.py \
-		${DATADIR}/gui/label.py \
-		${DATADIR}/gui/messagebox.py \
-		${DATADIR}/gui/progress.py \
-		${DATADIR}/gui/widget.py \
-		${DATADIR}/gui/widget_manager.py
+		${STAGEDIR}${DATADIR}/gui/__init__.py \
+		${STAGEDIR}${DATADIR}/gui/button.py \
+		${STAGEDIR}${DATADIR}/gui/canvas.py \
+		${STAGEDIR}${DATADIR}/gui/checkbox.py \
+		${STAGEDIR}${DATADIR}/gui/dialog.py \
+		${STAGEDIR}${DATADIR}/gui/editfield.py \
+		${STAGEDIR}${DATADIR}/gui/fader.py \
+		${STAGEDIR}${DATADIR}/gui/image.py \
+		${STAGEDIR}${DATADIR}/gui/label.py \
+		${STAGEDIR}${DATADIR}/gui/messagebox.py \
+		${STAGEDIR}${DATADIR}/gui/progress.py \
+		${STAGEDIR}${DATADIR}/gui/widget.py \
+		${STAGEDIR}${DATADIR}/gui/widget_manager.py
 
-	${MKDIR} ${DATADIR}/gui/dialogs
+	@${MKDIR} ${STAGEDIR}${DATADIR}/gui/dialogs
 	${INSTALL_DATA} \
 		${WRKSRC}/gui/dialogs/dialog \
 		${WRKSRC}/gui/dialogs/end_game.py \
@@ -195,22 +196,22 @@ do-install:
 		${WRKSRC}/gui/dialogs/setup_players.py \
 		${WRKSRC}/gui/dialogs/start_game.py \
 		${WRKSRC}/gui/dialogs/wait_client.py \
-		${DATADIR}/gui/dialogs
+		${STAGEDIR}${DATADIR}/gui/dialogs
 	${PYC} --basedir ${DATADIR}/gui/dialogs \
-		${DATADIR}/gui/dialogs/end_game.py \
-		${DATADIR}/gui/dialogs/info_map.py \
-		${DATADIR}/gui/dialogs/info_scenario.py \
-		${DATADIR}/gui/dialogs/info_units.py \
-		${DATADIR}/gui/dialogs/main_dialog.py \
-		${DATADIR}/gui/dialogs/new_game.py \
-		${DATADIR}/gui/dialogs/select_scenario.py \
-		${DATADIR}/gui/dialogs/setup_client.py \
-		${DATADIR}/gui/dialogs/setup_network.py \
-		${DATADIR}/gui/dialogs/setup_players.py \
-		${DATADIR}/gui/dialogs/start_game.py \
-		${DATADIR}/gui/dialogs/wait_client.py
+		${STAGEDIR}${DATADIR}/gui/dialogs/end_game.py \
+		${STAGEDIR}${DATADIR}/gui/dialogs/info_map.py \
+		${STAGEDIR}${DATADIR}/gui/dialogs/info_scenario.py \
+		${STAGEDIR}${DATADIR}/gui/dialogs/info_units.py \
+		${STAGEDIR}${DATADIR}/gui/dialogs/main_dialog.py \
+		${STAGEDIR}${DATADIR}/gui/dialogs/new_game.py \
+		${STAGEDIR}${DATADIR}/gui/dialogs/select_scenario.py \
+		${STAGEDIR}${DATADIR}/gui/dialogs/setup_client.py \
+		${STAGEDIR}${DATADIR}/gui/dialogs/setup_network.py \
+		${STAGEDIR}${DATADIR}/gui/dialogs/setup_players.py \
+		${STAGEDIR}${DATADIR}/gui/dialogs/start_game.py \
+		${STAGEDIR}${DATADIR}/gui/dialogs/wait_client.py
 
-	${MKDIR} ${DATADIR}/players
+	@${MKDIR} ${STAGEDIR}${DATADIR}/players
 	${INSTALL_DATA} \
 		${WRKSRC}/players/__init__.py \
 		${WRKSRC}/players/agressive.py \
@@ -226,29 +227,27 @@ do-install:
 		${WRKSRC}/players/strategic.py \
 		${WRKSRC}/players/treeai.py \
 		${WRKSRC}/players/weighted.py \
-		${DATADIR}/players
+		${STAGEDIR}${DATADIR}/players
 	${PYC} --basedir ${DATADIR}/players \
-		${DATADIR}/players/__init__.py \
-		${DATADIR}/players/agressive.py \
-		${DATADIR}/players/connectscore.py \
-		${DATADIR}/players/human.py \
-		${DATADIR}/players/minmax.py \
-		${DATADIR}/players/multiplayer.py \
-		${DATADIR}/players/multiplayer_receiver.py \
-		${DATADIR}/players/multiplayer_sender.py \
-		${DATADIR}/players/neuralai.py \
-		${DATADIR}/players/player.py \
-		${DATADIR}/players/randomai.py \
-		${DATADIR}/players/strategic.py \
-		${DATADIR}/players/treeai.py \
-		${DATADIR}/players/weighted.py
+		${STAGEDIR}${DATADIR}/players/__init__.py \
+		${STAGEDIR}${DATADIR}/players/agressive.py \
+		${STAGEDIR}${DATADIR}/players/connectscore.py \
+		${STAGEDIR}${DATADIR}/players/human.py \
+		${STAGEDIR}${DATADIR}/players/minmax.py \
+		${STAGEDIR}${DATADIR}/players/multiplayer.py \
+		${STAGEDIR}${DATADIR}/players/multiplayer_receiver.py \
+		${STAGEDIR}${DATADIR}/players/multiplayer_sender.py \
+		${STAGEDIR}${DATADIR}/players/neuralai.py \
+		${STAGEDIR}${DATADIR}/players/player.py \
+		${STAGEDIR}${DATADIR}/players/randomai.py \
+		${STAGEDIR}${DATADIR}/players/strategic.py \
+		${STAGEDIR}${DATADIR}/players/treeai.py \
+		${STAGEDIR}${DATADIR}/players/weighted.py
 
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} \
 		${WRKSRC}/changelog.txt \
 		${WRKSRC}/credits.txt \
-		${DOCSDIR}
-.endif
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
