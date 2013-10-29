@@ -15,10 +15,7 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most
 
-MAN3=	Hash::Merge::Simple.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
