@@ -185,6 +185,7 @@
     SUBDIR += liquibase
     SUBDIR += lmdb
     SUBDIR += lsdb
+    SUBDIR += luadbi
     SUBDIR += luasql-mysql
     SUBDIR += luasql-postgres
     SUBDIR += luasql-sqlite3
