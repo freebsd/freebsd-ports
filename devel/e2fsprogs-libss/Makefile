@@ -15,17 +15,14 @@ OPTIONS_EXCLUDE=	DOCS EXAMPLES IPV6 NLS
 CONFIGURE_ARGS=	--enable-elf-shlibs
 MASTERDIR=	${.CURDIR}/../../sysutils/e2fsprogs
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 ALL_TARGET=	subs
 INSTALL_WRKSRC=	${WRKSRC}/lib/ss
 FILESDIR=	${.CURDIR}/files
 
-MAN1=	mk_cmds.1
-
 PKGDIR=		${.CURDIR}
 
-NO_STAGE=	yes
 pre-build:
 	@(cd ${WRKSRC}/lib/ss && compile_et ss_err.et && \
 	${REINPLACE_CMD} -f ${FILESDIR}/fix-ss_err.h.sed ss_err.h)

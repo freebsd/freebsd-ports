@@ -6,6 +6,7 @@ lib/libss.so
 lib/libss.a
 lib/libss.so.2
 libdata/pkgconfig/ss.pc
+man/man1/mk_cmds.1.gz
 share/ss/ct_c.awk
 share/ss/ct_c.sed
 @dirrm include/ss
