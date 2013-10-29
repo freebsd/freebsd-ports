@@ -5,6 +5,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/sqerl_pgsql_client.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/sqerl_client.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/sqerl_adhoc.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/sqerl.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/sqerl.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/sqerl_transformers.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/sqerl_pgsql_errors.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/sqerl_pgsql_client.beam
