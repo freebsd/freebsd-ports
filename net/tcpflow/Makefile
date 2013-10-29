@@ -18,14 +18,11 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		tcpflow.1
-PLIST_FILES=	bin/tcpflow
+PLIST_FILES=	bin/tcpflow man/man1/tcpflow.1.gz
+PORTDOCS=	AUTHORS ChangeLog NEWS README
 
 OPTIONS_DEFINE=	DOCS
 
-PORTDOCS=	AUTHORS ChangeLog NEWS README
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == i386 && ! ${CFLAGS:M-march=*}
@@ -35,8 +32,8 @@ CFLAGS+=	-march=i586
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
