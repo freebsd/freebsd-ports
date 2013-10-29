@@ -2,4 +2,4 @@ This is a Java port of GNU getopt, a class for parsing command line arguments
 passed to programs. It is based on the C getopt() functions in glibc 2.0.6 and
 should parse options in a 100% compatible manner.
 
-WWW: http://www.urbanophile.com/~arenn/hacking/download.html#getopt
+WWW: http://www.urbanophile.com/arenn/hacking/download.html#getopt
