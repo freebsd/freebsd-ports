@@ -10,21 +10,14 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	DOS-XTREE(tm) look-a-like file manager
 
 ALL_TARGET=	ytree
-MAN1=		ytree.1
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ytree ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/ytree.conf ${PREFIX}/etc/ytree.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/ytree.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/ytree
+	${INSTALL_PROGRAM} ${WRKSRC}/ytree ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/ytree.conf ${STAGEDIR}${PREFIX}/etc/ytree.conf.sample
+	${INSTALL_MAN} ${WRKSRC}/ytree.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/ytree
 .for file in CHANGES README THANKS
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/ytree
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/share/doc/ytree
 .endfor
-	@if [ ! -f ${PREFIX}/etc/ytree.conf ]; then \
-		${CP} -p ${PREFIX}/etc/ytree.conf.sample ${PREFIX}/etc/ytree.conf; \
-	fi
-.endif
 
 .include <bsd.port.mk>
