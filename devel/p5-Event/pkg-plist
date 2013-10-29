@@ -1,4 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/.packlist
+%%PERL5_MAN3%%/Event.3.gz
+%%PERL5_MAN3%%/Event::MakeMaker.3.gz
+%%PERL5_MAN3%%/Event::generic.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Event.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Event.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Event/EventAPI.h
@@ -14,6 +16,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Event/type.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Event/typemap
 %%SITE_PERL%%/%%PERL_ARCH%%/Event/var.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/Event.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/Event.so
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event

@@ -17,9 +17,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	extract configure
 
-MAN3=		ExtUtils::AutoInstall.3
-
-NO_STAGE=	yes
 post-extract:
 	@${PERL} -i.bak -ne 'print unless m,^features, .. m,^\);,' ${WRKSRC}/Makefile.PL
 

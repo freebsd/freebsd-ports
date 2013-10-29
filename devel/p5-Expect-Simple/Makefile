@@ -13,10 +13,7 @@ COMMENT=	Wrapper around the Expect module
 BUILD_DEPENDS=	p5-Expect>=0:${PORTSDIR}/lang/p5-Expect
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=		Expect::Simple.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
