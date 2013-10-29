@@ -13,13 +13,12 @@ COMMENT=	Alien Blaster
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
+USES=	gmake
 USE_SDL=	mixer sdl
 REINPLACE_ARGS=	-i ''
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 post-patch:
 # Fix make command
 	@${REINPLACE_CMD} -e 's|make|${GMAKE}|g' ${WRKSRC}/${MAKEFILE}
@@ -42,12 +41,12 @@ post-patch:
 
 do-install:
 # Executable
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 # Data
-	${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for d in cfg images sound
-	${CP} -R ${WRKSRC}/${d} ${DATADIR}
+	${CP} -R ${WRKSRC}/${d} ${STAGEDIR}${DATADIR}
 .endfor
 
 .include <bsd.port.mk>
