@@ -26,10 +26,12 @@ BROKEN=		Does not compile with GCC 4.2
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
-CONFIGURE_ARGS+=	--enable-html-doc --with-html-dir=${DOCSDIR}
+CONFIGURE_ARGS+=--enable-html-doc --with-html-dir=${DOCSDIR}
 PORTDOCS=	*
+USES+=		perl5                                                                                                                                                                   
+USE_PERL5=	build 
 .else
-CONFIGURE_ARGS+=	--disable-html-doc
+CONFIGURE_ARGS+=--disable-html-doc
 .endif
 
 .if ${PORT_OPTIONS:MTESTS}
