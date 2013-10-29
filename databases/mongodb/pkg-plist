@@ -389,7 +389,6 @@ include/mongo/util/version.h
 include/mongo/util/winutil.h
 lib/libmongoclient.a
 lib/libmongoclient.so
-lib/libmongoclient.so.0
 @dirrm include/mongo/base
 @dirrm include/mongo/bson/util
 @dirrm include/mongo/bson
