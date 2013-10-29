@@ -4,11 +4,12 @@
 
 PORTNAME=	gtk
 PORTVERSION=	2.24.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/pygtk/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	2
 DISTNAME=	pygtk-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -18,14 +19,12 @@ COMMENT=	Set of Python bindings for GTK+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo
 
-LATEST_LINK=	py-gtk2
 USE_BZIP2=	yes
 USES=		pathfix gettext gmake pkgconfig
 USE_GNOME=	libglade2 pygobject
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-lintl" \
-		PYTHON="${PYTHON_VERSION}"
+CONFIGURE_ENV=	PYTHON="${PYTHON_VERSION}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-docs
@@ -37,9 +36,8 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-gtk
 CONFLICTS=	py*-gtk-0*
 
 OPTIONS_DEFINE=	NUMPY
-NUMPY_DESC=	Numpy support (pulls in gcc44)
+NUMPY_DESC=	Numpy support (pulls in lang/gcc)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNUMPY}
@@ -64,16 +62,16 @@ CONFIGURE_ARGS+=	--disable-thread
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	${TAR} -C ${EG_SRC_DIR} -cf - . | ${TAR} -C ${EXAMPLESDIR} -xf -
-	${CHOWN} -R ${BINOWN}:${BINGRP} ${EXAMPLESDIR}
-	${FIND} ${EXAMPLESDIR} -type d -print | ${XARGS} ${CHMOD} 0555
-	${FIND} ${EXAMPLESDIR} -type f -print | ${XARGS} ${CHMOD} 0444
+	@${RM} ${WRKSRC}/examples/pygtk-demo/pygtk-demo.in
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${EG_SRC_DIR} && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/MAPPING ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/THREADS ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/MAPPING ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/THREADS ${STAGEDIR}${DOCSDIR}
 .endif
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/gtk-2.0/gtk/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/gtk-2.0/*.so
 
 .include <bsd.port.mk>
