@@ -14,14 +14,15 @@ COMMENT=	3-Dimensional Chess for X Window System
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USES=		perl5
 USE_PERL5=	build
 USE_XORG=	x11 xaw xext xmu xpm xt
 WRKSRC=		${WRKDIR}/3Dc/src
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 .for file in init.c main.c piece.c stack.c xif.c
 	@${REINPLACE_CMD} -i '' -e 's|malloc.h|stdlib.h|' \
@@ -29,12 +30,10 @@ post-patch:
 .endfor
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/3Dc ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/3Dc
+	${INSTALL_PROGRAM} ${WRKSRC}/3Dc ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/3Dc
 .for file in 3Dc-rules.html ACKNOWLEDGEMENTS GPL README TODO
-	@ ${INSTALL_DATA} ${WRKSRC}/../${file} ${PREFIX}/share/doc/3Dc
+	${INSTALL_DATA} ${WRKSRC}/../${file} ${STAGEDIR}${PREFIX}/share/doc/3Dc
 .endfor
-.endif
 
 .include <bsd.port.mk>
