@@ -28,8 +28,7 @@ CXXFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/libavformat \
 		-I${LOCALBASE}/include/libswscale
 
-#NO_STAGE=	yes
-#MAN1=		dvbcut.1
+BROKEN=		Does not compile due to FFMPEG update - will be fixed soon
 
 pre-patch:
 		cd ${WRKSRC} && ${BZCAT} ${FILESDIR}/use-qt4.diff.bz2 | ${PATCH} -p2
