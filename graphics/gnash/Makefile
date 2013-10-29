@@ -3,7 +3,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	0.8.10
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	GNU/${PORTNAME}/${PORTVERSION}/
 
@@ -59,16 +59,16 @@ OPTIONS_SINGLE=	MEDIA GUI RENDERER
 OPTIONS_SINGLE_MEDIA=	FFMPEG FFMPEG2 GSTREAMER
 OPTIONS_SINGLE_GUI=	GTK2 KDE4
 OPTIONS_SINGLE_RENDERER=AGG OPENGL CAIRO
-OPTIONS_DEFAULT=GTK2 PLUGIN AGG FFMPEG2 VAAPI
+OPTIONS_DEFAULT=GTK2 PLUGIN AGG FFMPEG VAAPI
 
 NO_OPTIONS_SORT=yes
 PLUGIN_DESC=	browser plugin
 CYGNAL_DESC=	Cygnal media server
 AGG_DESC=	AGG renderer
-OPENGL_DESC=	OpenGL renderer (broken)
+OPENGL_DESC=	OpenGL renderer
 CAIRO_DESC=	Cairo renderer (experimental)
 FFMPEG_DESC=	ffmpeg0 media handler
-FFMPEG2_DESC=	ffmpeg2 media handler
+FFMPEG2_DESC=	ffmpeg2 media handler (broken)
 GSTREAMER_DESC=	GStreamer media handler
 VAAPI_DESC=	VAAPI support (requires FFMPEG)
 
@@ -202,8 +202,8 @@ PLIST_SUB+=		VAAPI="@comment "
 .if ${PORT_OPTIONS:MFFMPEG2} && empty(PORT_OPTIONS:MFFMPEG) && empty(PORT_OPTIONS:MGSTREAMER)
 LIB_DEPENDS+=		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ARGS+=	--enable-media=ffmpeg \
-			--with-ffmpeg-incl=${LOCALBASE}/include \
-			--with-ffmpeg-lib=${LOCALBASE}/lib/ffmpeg
+			--with-ffmpeg-incl=${LOCALBASE}/include/libavcodec \
+			--with-ffmpeg-lib=${LOCALBASE}/lib
 USE_SDL+=		sdl
 MAKE_ARGS+=		INCLUDES="-I${LOCALBASE}/include/ffmpeg"
 .elif ${PORT_OPTIONS:MFFMPEG} && empty(PORT_OPTIONS:MFFMPEG2) && empty(PORT_OPTIONS:MGSTREAMER)
