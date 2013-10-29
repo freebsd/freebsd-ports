@@ -26,8 +26,6 @@ USE_QT4=	qmake_build rcc_build moc_build uic_build \
 		linguist_build corelib gui sql network
 ONLY_FOR_ARCHS=	i386 amd64
 
-#SUB_FILES=	pkg-message
-
 PORTDOCS=	AUTHORS ChangeLog README TODO
 
 OPTIONS_DEFINE=	DOCS NLS DBUS
@@ -51,6 +49,8 @@ USE_QT4+=	dbus
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|/share/man|/man|' \
+		${WRKSRC}/src/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|^Categories=.*|Categories=Qt;System;Emulator;Utility;Game;|' \
 		${WRKSRC}/${PORTNAME}.desktop
 
