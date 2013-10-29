@@ -17,9 +17,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/tcpxd ${PREFIX}/sbin
-	@${INSTALL_DATA} ${WRKSRC}/tcpxd.conf ${PREFIX}/etc/tcpxd.conf.dist
+	${INSTALL_PROGRAM} ${WRKSRC}/tcpxd ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/tcpxd.conf ${STAGEDIR}${PREFIX}/etc/tcpxd.conf.dist
 
 .include <bsd.port.mk>
