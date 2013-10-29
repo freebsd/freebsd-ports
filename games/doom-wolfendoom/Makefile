@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.ijs.si/~lesi/distfiles/doom/
 PKGNAMEPREFIX=	${DMPKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wolfenstein 3D levels ported to Doom II
 
 USE_BZIP2=	yes
