@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION}
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplayer-capable and modified version of ID's classic DOOM game
 
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
