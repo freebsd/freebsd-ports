@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	WWW-SourceForge
-PORTVERSION=	0.090
+PORTVERSION=	0.70
+PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:GUGOD
+MASTER_SITE_SUBDIR=	CPAN:RBOW
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Retrieve information from SourceForge site
@@ -20,7 +20,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	WWW::SourceForge.3 WWW::SourceForge::Project.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

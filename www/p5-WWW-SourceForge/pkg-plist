@@ -1,6 +1,9 @@
+%%SITE_PERL%%/WWW/README.pod
 %%SITE_PERL%%/WWW/SourceForge.pm
+%%SITE_PERL%%/WWW/SourceForge/API.pm
 %%SITE_PERL%%/WWW/SourceForge/Project.pm
 %%SITE_PERL%%/WWW/SourceForge/User.pm
+%%SITE_PERL%%/WWW/SourceForge/Wiki.pm
 @dirrm %%SITE_PERL%%/WWW/SourceForge
 @dirrmtry %%SITE_PERL%%/WWW
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/SourceForge/.packlist
