@@ -27,7 +27,7 @@ RUN_DEPENDS=	bug-buddy:${PORTSDIR}/devel/bug-buddy
 
 USE_BZIP2=	yes
 USES=		gmake pkgconfig
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_GNOME=	gnomehack libgnomeprintui gnomepanel gnomedesktop \
 		gtksourceview libwnck nautilus2 pygnome2 metacity \
 		evolutiondataserver

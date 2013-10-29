@@ -22,7 +22,7 @@ USE_XORG=	xpm
 USES=		bison pathfix gettext pkgconfig gmake
 USE_GNOME=	gnomeprefix intlhack gnomedocutils gconf2 pygtk2 \
 		ltverhack referencehack
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool

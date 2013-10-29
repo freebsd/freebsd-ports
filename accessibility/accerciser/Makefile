@@ -12,10 +12,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Interactive Python accessibility explorer for GNOME
 
-NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	pygnomedesktop atspi intlhack
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USES=		display:configure gettext gmake pkgconfig
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
@@ -24,6 +23,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	accerciser.schemas
-MAN1=		accerciser.1
 
 .include <bsd.port.mk>

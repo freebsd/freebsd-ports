@@ -41,7 +41,7 @@ NO_STAGE=	yes
 
 .if ${PORT_OPTIONS:MPYTHON}
 
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 PLIST_SUB+=	PYTHON=""
 .else
 PLIST_SUB+=	PYTHON="@comment "
