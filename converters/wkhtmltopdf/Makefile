@@ -25,7 +25,6 @@ USE_XORG=		x11 xext xrender
 USE_PERL5=		build
 USE_LDCONFIG=		yes
 HAS_CONFIGURE=		yes
-USE_GCC=		yes
 
 OPTIONS_DEFINE=	BUNDLED_LIBS
 BUNDLED_LIBS_DESC=	Use Qt-bundled jpeg, mng, png and tiff
@@ -52,6 +51,10 @@ MAKE_ARGS+=	INSTALL_ROOT="${PREFIX}"
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 1000000
+USE_GCC=	yes
+.endif
 
 .if ${OSVERSION} < 800000
 BROKEN=		fails to extract on FreeBSD 7.X
