@@ -1,6 +1,15 @@
---- Dealer.cpp.orig	Tue Aug 19 12:01:24 2003
-+++ Dealer.cpp	Tue Aug 19 12:02:07 2003
-@@ -141,7 +141,8 @@
+--- ./Dealer.cpp.orig	2013-10-29 15:12:13.000000000 -0200
++++ ./Dealer.cpp	2013-10-29 15:12:13.000000000 -0200
+@@ -28,6 +28,8 @@
+ #include "Dealer.h"
+ #include "Player.h"
+ 
++using namespace std;
++
+ Dealer::Dealer( Seat * dealerSeat ) : _seat(dealerSeat), _current(0)
+ {
+    _minjackPot = 2000000;
+@@ -141,7 +143,8 @@
  
  void Dealer::NewGame()
  {

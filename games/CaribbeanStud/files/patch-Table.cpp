@@ -1,5 +1,5 @@
---- Table.cpp.orig	Tue Aug 19 12:13:59 2003
-+++ Table.cpp	Tue Aug 19 12:20:07 2003
+--- ./Table.cpp.orig	2013-10-29 15:12:13.000000000 -0200
++++ ./Table.cpp	2013-10-29 15:12:13.000000000 -0200
 @@ -306,7 +306,7 @@
  	XtSetArg(al[ac], XmNbottomAttachment, XmATTACH_POSITION); ac++;
  	XtSetArg(al[ac], XmNbottomPosition, 30); ac++;

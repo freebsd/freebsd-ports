@@ -1,5 +1,5 @@
---- Deck.cpp.orig	Tue Aug 19 12:02:29 2003
-+++ Deck.cpp	Tue Aug 19 12:05:01 2003
+--- ./Deck.cpp.orig	2013-10-29 15:12:13.000000000 -0200
++++ ./Deck.cpp	2013-10-29 15:12:13.000000000 -0200
 @@ -38,7 +38,8 @@
  			_globalCards[j] = Card(j);
  		_globalInit = 1;
