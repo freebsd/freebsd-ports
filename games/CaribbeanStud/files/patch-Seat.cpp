@@ -1,5 +1,5 @@
---- Seat.cpp.orig	Fri Jan 31 23:47:58 1997
-+++ Seat.cpp	Tue Aug 19 12:13:30 2003
+--- ./Seat.cpp.orig	2013-10-29 15:12:13.000000000 -0200
++++ ./Seat.cpp	2013-10-29 15:12:13.000000000 -0200
 @@ -151,10 +151,10 @@
  	   gcv.font = XLoadFont(_dpy, "10x20"); 
  		gcflags = GCForeground | GCBackground | GCGraphicsExposures;

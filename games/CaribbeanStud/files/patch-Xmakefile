@@ -1,5 +1,5 @@
---- Xmakefile.orig	Fri Jan 31 23:47:59 1997
-+++ Xmakefile	Tue Aug 19 11:56:52 2003
+--- ./Xmakefile.orig	2013-10-29 15:12:13.000000000 -0200
++++ ./Xmakefile	2013-10-29 15:12:13.000000000 -0200
 @@ -77,17 +77,27 @@
  #UILFLAGS=-I/usr/include/uil -I/usr/include/Motif1.2/uil
  ###

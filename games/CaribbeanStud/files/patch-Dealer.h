@@ -1,5 +1,5 @@
---- Dealer.h.orig	Tue Aug 19 11:59:05 2003
-+++ Dealer.h	Tue Aug 19 12:00:14 2003
+--- ./Dealer.h.orig	2013-10-29 15:12:13.000000000 -0200
++++ ./Dealer.h	2013-10-29 15:12:13.000000000 -0200
 @@ -92,7 +92,8 @@
  
  inline void Dealer::Add    (Player* newPlayer)
