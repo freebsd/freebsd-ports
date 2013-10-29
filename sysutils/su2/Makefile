@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils security
 MASTER_SITES=	ftp://ftp.ccs.neu.edu/pub/sysadmin/
 
-MAINTAINER=	gd@rambler-co.ru
+MAINTAINER=	gd.workbox@gmail.com
 COMMENT=	Enhanced su, allows users to su with own password + more
 
 PATCH_DEPENDS=	rcsdiff:${PORTSDIR}/devel/rcs
