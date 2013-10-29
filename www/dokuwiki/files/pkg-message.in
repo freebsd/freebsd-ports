@@ -4,7 +4,7 @@
     [1;32m#
     # Directives to allow use of dokuwiki
     #
-    Alias /%%PORTNAME%% "%%PREFIX%%/%%DOKUWIKI_DIR%%/"[m
+    Alias /%%PORTNAME%% "%%WWWDIR%%/"[m
 
 2) Open the following page in your browser and follow the instructions:
     [1;36mhttp://www.your.host/dokuwiki/install.php[m

@@ -20,25 +20,12 @@ USE_PHP=	gd mbstring openssl pcre session xml zlib
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 
-DOKUWIKI_DIR?=	www/${PORTNAME}
-WRKSRC=		${WRKDIR}/${DIST_VER}
-PLIST_SUB=	DOKUWIKI_DIR=${DOKUWIKI_DIR}
-TEMP_PLIST=	${WRKDIR}/temp-pkg-plist
 SUB_FILES=	pkg-message
-SUB_LIST+=	PORTNAME=${PORTNAME} DOKUWIKI_DIR=${DOKUWIKI_DIR}
+SUB_LIST+=	PORTNAME=${PORTNAME}
+SHAREOWN=	${WWWOWN}
+SHAREGRP=	${WWWGRP}
 
 REINPLACE_ARGS=	-i ''
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-# This target is only meant to be used by the port maintainer.
-x-generate-plist:
-	@cd ${WRKSRC} && ${FIND} -s . -type f | \
-		${SED} -e 's|^./||;s|^|%%DOKUWIKI_DIR%%/|' > ${TEMP_PLIST} \
-		&& ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm %%DOKUWIKI_DIR%%/|' >> ${TEMP_PLIST} \
-		&& ${ECHO_CMD} "@dirrmtry %%DOKUWIKI_DIR%%" >> ${TEMP_PLIST}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|' ${WRKSRC}/bin/*.php
@@ -46,12 +33,6 @@ post-patch:
 	@${RM} ${WRKSRC}/data/deleted.files
 
 do-install:
-# Data files
-	-${MKDIR} ${PREFIX}/${DOKUWIKI_DIR}
-	@${CP} -R ${WRKSRC}/ ${PREFIX}/${DOKUWIKI_DIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${DOKUWIKI_DIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
