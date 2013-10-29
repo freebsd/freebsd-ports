@@ -1,3 +1,6 @@
+%%PERL5_MAN3%%/Gravatar::URL.3.gz
+%%PERL5_MAN3%%/Libravatar::URL.3.gz
+%%PERL5_MAN3%%/Unicornify::URL.3.gz
 %%SITE_PERL%%/Gravatar/URL.pm
 %%SITE_PERL%%/Libravatar/URL.pm
 %%SITE_PERL%%/Unicornify/URL.pm

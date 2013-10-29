@@ -1,7 +1,9 @@
+%%PERL5_MAN3%%/Getopt::Compact.3.gz
+%%PERL5_MAN3%%/Getopt::Compact::PodMunger.3.gz
 %%SITE_PERL%%/Getopt/Compact.pm
 %%SITE_PERL%%/Getopt/Compact/PodMunger.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Compact/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Compact
-@dirrm %%SITE_PERL%%/Getopt/Compact
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Compact
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt
+@dirrmtry %%SITE_PERL%%/Getopt/Compact
 @dirrmtry %%SITE_PERL%%/Getopt

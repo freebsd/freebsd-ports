@@ -26,12 +26,4 @@ TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Git::Wrapper.3 \
-		Git::Wrapper::Exception.3 \
-		Git::Wrapper::File::RawModification.3 \
-		Git::Wrapper::Log.3 \
-		Git::Wrapper::Status.3 \
-		Git::Wrapper::Statuses.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

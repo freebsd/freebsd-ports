@@ -1,6 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/PurePerl/.packlist
+%%PERL5_MAN3%%/Git::PurePerl.3.gz
 %%SITE_PERL%%/Git/PurePerl.pm
 %%SITE_PERL%%/Git/PurePerl/Actor.pm
+%%SITE_PERL%%/Git/PurePerl/Config.pm
 %%SITE_PERL%%/Git/PurePerl/DirectoryEntry.pm
 %%SITE_PERL%%/Git/PurePerl/Loose.pm
 %%SITE_PERL%%/Git/PurePerl/NewDirectoryEntry.pm
@@ -21,10 +22,10 @@
 %%SITE_PERL%%/Git/PurePerl/PackIndex/Version1.pm
 %%SITE_PERL%%/Git/PurePerl/PackIndex/Version2.pm
 %%SITE_PERL%%/Git/PurePerl/Protocol.pm
-%%SITE_PERL%%/Git/PurePerl/Protocol/Git.pm
 %%SITE_PERL%%/Git/PurePerl/Protocol/File.pm
+%%SITE_PERL%%/Git/PurePerl/Protocol/Git.pm
 %%SITE_PERL%%/Git/PurePerl/Protocol/SSH.pm
-%%SITE_PERL%%/Git/PurePerl/Config.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/PurePerl/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/PurePerl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git
 @dirrm %%SITE_PERL%%/Git/PurePerl/Protocol

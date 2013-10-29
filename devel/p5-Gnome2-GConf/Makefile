@@ -21,16 +21,4 @@ USE_PERL5=	configure
 USE_GNOME=	gconf2
 MAKE_JOBS_UNSAFE=	yes
 
-MAN3=		Gnome2::GConf.3 \
-		Gnome2::GConf::ChangeSet.3 \
-		Gnome2::GConf::Client.3 \
-		Gnome2::GConf::Engine.3 \
-		Gnome2::GConf::Entry.3 \
-		Gnome2::GConf::Schema.3 \
-		Gnome2::GConf::Value.3 \
-		Gnome2::GConf::index.3 \
-		Gnome2::GConf::main.3 \
-		Gnome2::GConf::version.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -23,14 +23,4 @@ TEST_DEPENDS=	p5-Test-Pod>=1.41:${PORTSDIR}/devel/p5-Test-Pod \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Git::Repository.3 \
-		Git::Repository::Command.3 \
-		Git::Repository::Log.3 \
-		Git::Repository::Log::Iterator.3 \
-		Git::Repository::Plugin.3 \
-		Git::Repository::Plugin::Log.3 \
-		Git::Repository::Tutorial.3 \
-		Test::Git.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

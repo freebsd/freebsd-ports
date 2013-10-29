@@ -1,12 +1,18 @@
+%%PERL5_MAN3%%/Git::Wrapper.3.gz
+%%PERL5_MAN3%%/Git::Wrapper::Exception.3.gz
+%%PERL5_MAN3%%/Git::Wrapper::File::RawModification.3.gz
+%%PERL5_MAN3%%/Git::Wrapper::Log.3.gz
+%%PERL5_MAN3%%/Git::Wrapper::Status.3.gz
+%%PERL5_MAN3%%/Git::Wrapper::Statuses.3.gz
 %%SITE_PERL%%/Git/Wrapper.pm
-%%SITE_PERL%%/Git/Wrapper/File/RawModification.pm
 %%SITE_PERL%%/Git/Wrapper/Exception.pm
+%%SITE_PERL%%/Git/Wrapper/File/RawModification.pm
 %%SITE_PERL%%/Git/Wrapper/Log.pm
 %%SITE_PERL%%/Git/Wrapper/Status.pm
 %%SITE_PERL%%/Git/Wrapper/Statuses.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/Wrapper/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/Wrapper
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/Wrapper
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git
-@dirrmtry %%SITE_PERL%%/Git/Wrapper/File
-@dirrmtry %%SITE_PERL%%/Git/Wrapper
+@dirrm %%SITE_PERL%%/Git/Wrapper/File
+@dirrm %%SITE_PERL%%/Git/Wrapper
 @dirrmtry %%SITE_PERL%%/Git
