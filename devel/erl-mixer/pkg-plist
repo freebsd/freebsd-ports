@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/mixer.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/mixer.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mixer.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mixer.app
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%
