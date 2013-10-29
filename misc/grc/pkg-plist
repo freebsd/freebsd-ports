@@ -1,17 +1,26 @@
 bin/grc
 bin/grcat
 etc/grc.conf
+man/man1/grc.1.gz
+man/man1/grcat.1.gz
 %%DATADIR%%/conf.configure
 %%DATADIR%%/conf.cvs
 %%DATADIR%%/conf.diff
+%%DATADIR%%/conf.dig
 %%DATADIR%%/conf.esperanto
 %%DATADIR%%/conf.gcc
+%%DATADIR%%/conf.ifconfig
 %%DATADIR%%/conf.irclog
 %%DATADIR%%/conf.ldap
+%%DATADIR%%/conf.ls
 %%DATADIR%%/conf.log
+%%DATADIR%%/conf.mount
+%%DATADIR%%/conf.mount2
+%%DATADIR%%/conf.mtr
 %%DATADIR%%/conf.netstat
 %%DATADIR%%/conf.ping
 %%DATADIR%%/conf.proftpd
+%%DATADIR%%/conf.ps
 %%DATADIR%%/conf.traceroute
 %%DATADIR%%/conf.wdiff
 @dirrm %%DATADIR%%
