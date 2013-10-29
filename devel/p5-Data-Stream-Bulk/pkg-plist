@@ -1,3 +1,16 @@
+%%PERL5_MAN3%%/Data::Stream::Bulk.3.gz
+%%PERL5_MAN3%%/Data::Stream::Bulk::Array.3.gz
+%%PERL5_MAN3%%/Data::Stream::Bulk::Callback.3.gz
+%%PERL5_MAN3%%/Data::Stream::Bulk::Cat.3.gz
+%%PERL5_MAN3%%/Data::Stream::Bulk::Chunked.3.gz
+%%PERL5_MAN3%%/Data::Stream::Bulk::DBI.3.gz
+%%PERL5_MAN3%%/Data::Stream::Bulk::DBIC.3.gz
+%%PERL5_MAN3%%/Data::Stream::Bulk::DoneFlag.3.gz
+%%PERL5_MAN3%%/Data::Stream::Bulk::FileHandle.3.gz
+%%PERL5_MAN3%%/Data::Stream::Bulk::Filter.3.gz
+%%PERL5_MAN3%%/Data::Stream::Bulk::Nil.3.gz
+%%PERL5_MAN3%%/Data::Stream::Bulk::Path::Class.3.gz
+%%PERL5_MAN3%%/Data::Stream::Bulk::Util.3.gz
 %%SITE_PERL%%/Data/Stream/Bulk.pm
 %%SITE_PERL%%/Data/Stream/Bulk/Array.pm
 %%SITE_PERL%%/Data/Stream/Bulk/Callback.pm
@@ -12,10 +25,10 @@
 %%SITE_PERL%%/Data/Stream/Bulk/Path/Class.pm
 %%SITE_PERL%%/Data/Stream/Bulk/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Stream/Bulk/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Stream/Bulk
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Stream/Bulk
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Stream
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrmtry %%SITE_PERL%%/Data/Stream/Bulk/Path
-@dirrmtry %%SITE_PERL%%/Data/Stream/Bulk
+@dirrm %%SITE_PERL%%/Data/Stream/Bulk/Path
+@dirrm %%SITE_PERL%%/Data/Stream/Bulk
 @dirrmtry %%SITE_PERL%%/Data/Stream
 @dirrmtry %%SITE_PERL%%/Data

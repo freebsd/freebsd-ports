@@ -16,7 +16,4 @@ LICENSES=	ART10 GPLv1
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Devel::Size.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

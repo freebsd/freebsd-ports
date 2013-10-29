@@ -13,7 +13,4 @@ COMMENT=	Fiddle around with pointers
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Devel::Pointer.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

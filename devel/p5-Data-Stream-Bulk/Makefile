@@ -24,19 +24,4 @@ TEST_DEPENDS=	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Data::Stream::Bulk.3 \
-		Data::Stream::Bulk::Array.3 \
-		Data::Stream::Bulk::Callback.3 \
-		Data::Stream::Bulk::Cat.3 \
-		Data::Stream::Bulk::Chunked.3 \
-		Data::Stream::Bulk::DBI.3 \
-		Data::Stream::Bulk::DBIC.3 \
-		Data::Stream::Bulk::DoneFlag.3 \
-		Data::Stream::Bulk::FileHandle.3 \
-		Data::Stream::Bulk::Filter.3 \
-		Data::Stream::Bulk::Nil.3 \
-		Data::Stream::Bulk::Path::Class.3 \
-		Data::Stream::Bulk::Util.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

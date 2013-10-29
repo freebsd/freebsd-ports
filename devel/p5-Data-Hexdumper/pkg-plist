@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Data::Hexdumper.3.gz
 %%SITE_PERL%%/Data/Hexdumper.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Hexdumper/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Hexdumper
-@dirrmtry %%SITE_PERL%%/Data
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+@dirrmtry %%SITE_PERL%%/Data

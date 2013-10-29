@@ -1,3 +1,8 @@
+%%PERL5_MAN3%%/Date::Pcalc.3.gz
+%%PERL5_MAN3%%/Date::Pcalc::Object.3.gz
+%%PERL5_MAN3%%/Date::Pcalendar.3.gz
+%%PERL5_MAN3%%/Date::Pcalendar::Profiles.3.gz
+%%PERL5_MAN3%%/Date::Pcalendar::Year.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Date/Pcalc.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Date/Pcalc.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Date/Pcalc/Object.pm
@@ -11,8 +16,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Pcalc/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Pcalc/Pcalc.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Pcalc/Pcalc.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Pcalc
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Pcalc
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Date/Pcalendar
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Date/Pcalc
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Date/Pcalendar
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Date/Pcalc
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Date

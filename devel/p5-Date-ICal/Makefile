@@ -16,7 +16,4 @@ RUN_DEPENDS=	p5-Date-Leapyear>=1.03:${PORTSDIR}/devel/p5-Date-Leapyear
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Date::ICal.3 Date::ICal::Duration.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

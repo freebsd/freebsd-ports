@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Devel::Caller.3.gz
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Caller.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Caller/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Caller/Caller.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Caller/Caller.so
-%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Caller.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Caller
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Caller
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel

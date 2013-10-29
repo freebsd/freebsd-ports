@@ -21,29 +21,4 @@ TEST_DEPENDS=	p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Data::Rx.3 \
-		Data::Rx::CommonType.3 \
-		Data::Rx::CommonType::EasyNew.3 \
-		Data::Rx::CoreType.3 \
-		Data::Rx::CoreType::all.3 \
-		Data::Rx::CoreType::any.3 \
-		Data::Rx::CoreType::arr.3 \
-		Data::Rx::CoreType::bool.3 \
-		Data::Rx::CoreType::def.3 \
-		Data::Rx::CoreType::fail.3 \
-		Data::Rx::CoreType::int.3 \
-		Data::Rx::CoreType::map.3 \
-		Data::Rx::CoreType::nil.3 \
-		Data::Rx::CoreType::num.3 \
-		Data::Rx::CoreType::one.3 \
-		Data::Rx::CoreType::rec.3 \
-		Data::Rx::CoreType::seq.3 \
-		Data::Rx::CoreType::str.3 \
-		Data::Rx::Failure.3 \
-		Data::Rx::FailureSet.3 \
-		Data::Rx::TypeBundle.3 \
-		Data::Rx::TypeBundle::Core.3 \
-		Data::Rx::Util.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

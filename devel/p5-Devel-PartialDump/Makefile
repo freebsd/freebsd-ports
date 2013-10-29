@@ -23,7 +23,4 @@ TEST_DEPENDS=	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Devel::PartialDump.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

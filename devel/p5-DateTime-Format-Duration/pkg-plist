@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/DateTime::Format::Duration.3.gz
 %%SITE_PERL%%/DateTime/Format/Duration.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/Duration/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/Duration

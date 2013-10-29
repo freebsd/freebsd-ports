@@ -16,7 +16,4 @@ RUN_DEPENDS=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Devel::ptkdb.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

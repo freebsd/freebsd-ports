@@ -23,9 +23,6 @@ GD_DESC=	Support for rand_image()
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Data::Random.3 Data::Random::WordList.3
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDATE_CALC}

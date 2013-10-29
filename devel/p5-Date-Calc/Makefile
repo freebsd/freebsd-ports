@@ -17,8 +17,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Date::Calc.3 Date::Calc::PP.3 Date::Calc::Object.3 Date::Calendar.3 \
-		Date::Calendar::Profiles.3 Date::Calendar::Year.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

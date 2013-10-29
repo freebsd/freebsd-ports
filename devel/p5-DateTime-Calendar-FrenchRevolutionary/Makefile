@@ -20,8 +20,4 @@ RUN_DEPENDS=	p5-DateTime>=0.14:${PORTSDIR}/devel/p5-DateTime \
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		DateTime::Calendar::FrenchRevolutionary.3 \
-		DateTime::Calendar::FrenchRevolutionary::Locale::en.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

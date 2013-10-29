@@ -1,7 +1,9 @@
+%%PERL5_MAN3%%/Data::DumpXML.3.gz
+%%PERL5_MAN3%%/Data::DumpXML::Parser.3.gz
 %%SITE_PERL%%/Data/DumpXML.pm
 %%SITE_PERL%%/Data/DumpXML/Parser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/DumpXML/.packlist
-@dirrmtry %%SITE_PERL%%/Data/DumpXML
-@dirrmtry %%SITE_PERL%%/Data
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/DumpXML
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/DumpXML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+@dirrm %%SITE_PERL%%/Data/DumpXML
+@dirrmtry %%SITE_PERL%%/Data

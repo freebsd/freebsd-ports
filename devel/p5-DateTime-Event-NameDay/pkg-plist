@@ -1,8 +1,9 @@
+%%PERL5_MAN3%%/DateTime::Event::NameDay.3.gz
 %%SITE_PERL%%/DateTime/Event/NameDay.pm
-%%SITE_PERL%%/DateTime/Event/NameDay/sweden.pm
-%%SITE_PERL%%/DateTime/Event/NameDay/slovakia.pm
 %%SITE_PERL%%/DateTime/Event/NameDay/france.pm
 %%SITE_PERL%%/DateTime/Event/NameDay/greece.pm
+%%SITE_PERL%%/DateTime/Event/NameDay/slovakia.pm
+%%SITE_PERL%%/DateTime/Event/NameDay/sweden.pm
 @dirrm %%SITE_PERL%%/DateTime/Event/NameDay
 @dirrmtry %%SITE_PERL%%/DateTime/Event
 @dirrmtry %%SITE_PERL%%/DateTime

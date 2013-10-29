@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Devel::Trace.3.gz
 %%SITE_PERL%%/Devel/Trace.pm
 %%SITE_PERL%%/Devel/demo.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Trace/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Trace
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Trace
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
 @dirrmtry %%SITE_PERL%%/Devel

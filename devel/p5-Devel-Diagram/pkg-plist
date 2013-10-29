@@ -1,13 +1,9 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Diagram/.packlist
+%%PERL5_MAN3%%/Devel::Diagram.3.gz
+%%PERL5_MAN3%%/Devel::Diagram::Render::UXF20.3.gz
 %%SITE_PERL%%/Devel/Diagram.pm
 %%SITE_PERL%%/Devel/Diagram/Render/UXF20.pm
 %%SITE_PERL%%/Devel/Diagram/xsl/uxf20toHtml.xsl
-@dirrm %%SITE_PERL%%/Devel/Diagram/Render
-@dirrm %%SITE_PERL%%/Devel/Diagram/xsl
-@dirrm %%SITE_PERL%%/Devel/Diagram
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Diagram
-@dirrmtry %%SITE_PERL%%/Devel
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Diagram/.packlist
 %%PORTDOCS%%%%EXAMPLESDIR%%/ClassDiagram.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/cd-CGI.html
 %%PORTDOCS%%%%EXAMPLESDIR%%/cd-CPAN.html
@@ -16,3 +12,9 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/cd-IO.html
 %%PORTDOCS%%%%EXAMPLESDIR%%/cd-LWP.html
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Diagram
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
+@dirrm %%SITE_PERL%%/Devel/Diagram/xsl
+@dirrm %%SITE_PERL%%/Devel/Diagram/Render
+@dirrm %%SITE_PERL%%/Devel/Diagram
+@dirrmtry %%SITE_PERL%%/Devel

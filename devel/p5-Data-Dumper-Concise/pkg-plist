@@ -1,11 +1,14 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dumper/Concise/.packlist
+%%PERL5_MAN3%%/Data::Dumper::Concise.3.gz
+%%PERL5_MAN3%%/Data::Dumper::Concise::Sugar.3.gz
+%%PERL5_MAN3%%/Devel::Dwarn.3.gz
 %%SITE_PERL%%/Data/Dumper/Concise.pm
 %%SITE_PERL%%/Data/Dumper/Concise/Sugar.pm
 %%SITE_PERL%%/Devel/Dwarn.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dumper/Concise
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dumper/Concise/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dumper/Concise
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dumper
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrmtry %%SITE_PERL%%/Data/Dumper/Concise
+@dirrmtry %%SITE_PERL%%/Devel
+@dirrm %%SITE_PERL%%/Data/Dumper/Concise
 @dirrmtry %%SITE_PERL%%/Data/Dumper
 @dirrmtry %%SITE_PERL%%/Data
-@dirrmtry %%SITE_PERL%%/Devel

@@ -15,17 +15,13 @@ LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
-NO_STAGE=	yes
-
-MAN3=		Devel::PPPort.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README HACKERS TODO
 
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -14,7 +14,4 @@ COMMENT=	Perl6 Capture objects
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Data::Capture.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -17,7 +17,4 @@ RUN_DEPENDS=	p5-DateTime-TimeZone>=0:${PORTSDIR}/devel/p5-DateTime-TimeZone \
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		DateTime::TimeZone::Alias.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

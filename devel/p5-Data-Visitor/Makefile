@@ -25,8 +25,4 @@ TEST_DEPENDS=	p5-Data-Alias>=0:${PORTSDIR}/devel/p5-Data-Alias \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Data::Visitor.3 \
-	Data::Visitor::Callback.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

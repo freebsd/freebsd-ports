@@ -1,3 +1,7 @@
+%%PERL5_MAN3%%/DateTime.3.gz
+%%PERL5_MAN3%%/DateTime::Duration.3.gz
+%%PERL5_MAN3%%/DateTime::Infinite.3.gz
+%%PERL5_MAN3%%/DateTime::LeapSecond.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTime.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTime/Duration.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTime/Helpers.pm

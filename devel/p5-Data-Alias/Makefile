@@ -13,10 +13,7 @@ COMMENT=	Comprehensive set of aliasing operations
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-NO_STAGE=	yes
 USES=		perl5
 USE_PERL5=	configure
-
-MAN3=		Data::Alias.3
 
 .include <bsd.port.mk>

@@ -1,3 +1,16 @@
+%%PERL5_MAN3%%/Declare::Constraints::Simple.3.gz
+%%PERL5_MAN3%%/Declare::Constraints::Simple::Library.3.gz
+%%PERL5_MAN3%%/Declare::Constraints::Simple::Library::Array.3.gz
+%%PERL5_MAN3%%/Declare::Constraints::Simple::Library::Base.3.gz
+%%PERL5_MAN3%%/Declare::Constraints::Simple::Library::Exportable.3.gz
+%%PERL5_MAN3%%/Declare::Constraints::Simple::Library::General.3.gz
+%%PERL5_MAN3%%/Declare::Constraints::Simple::Library::Hash.3.gz
+%%PERL5_MAN3%%/Declare::Constraints::Simple::Library::Numerical.3.gz
+%%PERL5_MAN3%%/Declare::Constraints::Simple::Library::OO.3.gz
+%%PERL5_MAN3%%/Declare::Constraints::Simple::Library::Operators.3.gz
+%%PERL5_MAN3%%/Declare::Constraints::Simple::Library::Referencial.3.gz
+%%PERL5_MAN3%%/Declare::Constraints::Simple::Library::Scalar.3.gz
+%%PERL5_MAN3%%/Declare::Constraints::Simple::Result.3.gz
 %%SITE_PERL%%/Declare/Constraints/Simple.pm
 %%SITE_PERL%%/Declare/Constraints/Simple/Library.pm
 %%SITE_PERL%%/Declare/Constraints/Simple/Library/Array.pm
@@ -12,10 +25,10 @@
 %%SITE_PERL%%/Declare/Constraints/Simple/Library/Scalar.pm
 %%SITE_PERL%%/Declare/Constraints/Simple/Result.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Declare/Constraints/Simple/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Declare/Constraints/Simple
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Declare/Constraints
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Declare/Constraints/Simple
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Declare/Constraints
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Declare
-@dirrmtry %%SITE_PERL%%/Declare/Constraints/Simple/Library
-@dirrmtry %%SITE_PERL%%/Declare/Constraints/Simple
-@dirrmtry %%SITE_PERL%%/Declare/Constraints
+@dirrm %%SITE_PERL%%/Declare/Constraints/Simple/Library
+@dirrm %%SITE_PERL%%/Declare/Constraints/Simple
+@dirrm %%SITE_PERL%%/Declare/Constraints
 @dirrmtry %%SITE_PERL%%/Declare

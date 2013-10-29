@@ -22,19 +22,4 @@ RUN_DEPENDS=	p5-Class-Inspector>=1.24:${PORTSDIR}/devel/p5-Class-Inspector \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Declare::Constraints::Simple::Library::Scalar.3 \
-	Declare::Constraints::Simple::Library::Operators.3 \
-	Declare::Constraints::Simple::Library::Array.3 \
-	Declare::Constraints::Simple::Library.3 \
-	Declare::Constraints::Simple::Library::Exportable.3 \
-	Declare::Constraints::Simple::Library::Referencial.3 \
-	Declare::Constraints::Simple::Result.3 \
-	Declare::Constraints::Simple.3 \
-	Declare::Constraints::Simple::Library::OO.3 \
-	Declare::Constraints::Simple::Library::Numerical.3 \
-	Declare::Constraints::Simple::Library::Hash.3 \
-	Declare::Constraints::Simple::Library::Base.3 \
-	Declare::Constraints::Simple::Library::General.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Symdump/.packlist
+%%PERL5_MAN3%%/Devel::Symdump.3.gz
 %%SITE_PERL%%/Devel/Symdump.pm
 %%SITE_PERL%%/Devel/Symdump/Export.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Symdump
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Symdump/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Symdump
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
 @dirrmtry %%SITE_PERL%%/Devel/Symdump
 @dirrmtry %%SITE_PERL%%/Devel

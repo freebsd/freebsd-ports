@@ -27,8 +27,4 @@ TEST_DEPENDS=	p5-YAML>0:${PORTSDIR}/textproc/p5-YAML \
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN1=		ebug.1 ebug_client.1 ebug_server.1
-MAN3=		Devel::ebug.3 Devel::ebug::Console.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

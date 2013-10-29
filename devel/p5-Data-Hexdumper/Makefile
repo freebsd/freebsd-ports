@@ -14,7 +14,4 @@ COMMENT=	Module for displaying binary data in a readable format
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Data::Hexdumper.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

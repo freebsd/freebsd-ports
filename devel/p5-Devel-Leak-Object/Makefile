@@ -13,7 +13,4 @@ COMMENT=	Detect leaks of objects
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Devel::Leak::Object.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

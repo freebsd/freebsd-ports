@@ -18,7 +18,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		DateTime::Format::Mail.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

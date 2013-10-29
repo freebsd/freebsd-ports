@@ -1,6 +1,46 @@
 bin/cover
 bin/cpancover
 bin/gcov2perl
+%%PERL5_MAN3%%/Devel::Cover.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Annotation::Git.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Annotation::Random.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Annotation::Svk.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Branch.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Condition.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Condition_and_2.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Condition_and_3.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Condition_or_2.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Condition_or_3.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Condition_xor_4.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Criterion.3.gz
+%%PERL5_MAN3%%/Devel::Cover::DB.3.gz
+%%PERL5_MAN3%%/Devel::Cover::DB::Digests.3.gz
+%%PERL5_MAN3%%/Devel::Cover::DB::File.3.gz
+%%PERL5_MAN3%%/Devel::Cover::DB::IO.3.gz
+%%PERL5_MAN3%%/Devel::Cover::DB::IO::JSON.3.gz
+%%PERL5_MAN3%%/Devel::Cover::DB::IO::Storable.3.gz
+%%PERL5_MAN3%%/Devel::Cover::DB::Structure.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Dumper.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Html_Common.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Op.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Pod.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Report::Compilation.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Report::Html.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Report::Html_basic.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Report::Html_minimal.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Report::Html_subtle.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Report::Sort.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Report::Text.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Report::Text2.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Report::Vim.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Statement.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Subroutine.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Test.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Time.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Truth_Table.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Tutorial.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Util.3.gz
+%%PERL5_MAN3%%/Devel::Cover::Web.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Annotation/Git.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Annotation/Random.pm
@@ -45,6 +85,9 @@ bin/gcov2perl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Cover/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Cover/Cover.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Cover/Cover.so
+man/man1/cover.1.gz
+man/man1/cpancover.1.gz
+man/man1/gcov2perl.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Cover
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report

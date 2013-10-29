@@ -2,6 +2,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dumper/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dumper/Dumper.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dumper/Dumper.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dumper
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dumper
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Data

@@ -14,7 +14,4 @@ COMMENT=	Perl5 module to convert dates between any two calendar formats
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Date::Convert.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

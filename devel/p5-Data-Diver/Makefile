@@ -14,7 +14,4 @@ COMMENT=	Simple, ad-hoc access to elements of deeply nested structures
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Data::Diver.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

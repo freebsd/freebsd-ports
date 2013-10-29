@@ -18,9 +18,5 @@ RUN_DEPENDS=	p5-String-Escape>=0:${PORTSDIR}/textproc/p5-String-Escape \
 
 USES=		perl5
 USE_PERL5=	configure
-MAN3=		Devel::Backtrace.3 \
-		Devel::Backtrace::Point.3 \
-		Devel::DollarAt.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
