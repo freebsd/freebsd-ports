@@ -1,0 +1,11 @@
+--- ./src/chef_objects.app.src.orig	2013-10-29 12:52:44.000000000 +0900
++++ ./src/chef_objects.app.src	2013-10-29 12:52:55.000000000 +0900
+@@ -18,7 +18,7 @@
+ {application, chef_objects,
+  [
+   {description, "Chef object types and support modules"},
+-  {vsn, git},
++  {vsn, "${VERSION}"},
+   {registered, []},
+   {applications, [
+                   kernel,
