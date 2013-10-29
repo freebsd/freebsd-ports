@@ -3,6 +3,7 @@
 
 PORTNAME=	mod_spdy
 PORTVERSION=	0.9.3.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.club.kyutech.ac.jp/~masaki/ports/:mod_spdy \
 		${MASTER_SITE_APACHE_HTTPD}:apache22 \
@@ -56,11 +57,14 @@ MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
 
 .if ${PORT_OPTIONS:MCLANG}
-.if ${OSVERSION} < 900033
-BUILD_DEPENDS+=	clang:${PORTSDIR}/lang/clang
-.endif
+.if ${OSVERSION} < 900033 || !exists(/usr/bin/clang)
+BUILD_DEPENDS+=	clang33:${PORTSDIR}/lang/clang33
+CC=	clang33
+CXX=	clang++33
+.else
 CC=	clang
 CXX=	clang++
+.endif
 GYP_DEFINES+=	clang=1
 .else
 USE_GCC?=	yes
