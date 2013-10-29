@@ -9,19 +9,19 @@ MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Probes JPEG or TIFF images and reports contents and structure
 
-MAN1=		exifgrep.1 exifprobe.1
-PLIST_FILES=	bin/exifgrep bin/exifprobe
+PLIST_FILES=	bin/exifgrep \
+		bin/exifprobe \
+		man/man1/exifgrep.1.gz \
+		man/man1/exifprobe.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|cc|${CC}|; s|-DC|${CFLAGS} -DC|' \
 		${WRKSRC}/${MAKEFILE}
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/exifgrep ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/exifprobe ${PREFIX}/bin
-.for i in ${MAN1}
-	@${INSTALL_MAN} ${WRKSRC}/${i} ${MAN1PREFIX}/man/man1
-.endfor
+	${INSTALL_SCRIPT} ${WRKSRC}/exifgrep ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/exifprobe ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/exifgrep.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/exifprobe.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
 
 .include <bsd.port.mk>
