@@ -1,7 +1,9 @@
+%%PERL5_MAN3%%/File::Type.3.gz
+%%PERL5_MAN3%%/File::Type::Builder.3.gz
 %%SITE_PERL%%/File/Type.pm
 %%SITE_PERL%%/File/Type/Builder.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Type/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Type
-@dirrm %%SITE_PERL%%/File/Type
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
+@dirrm %%SITE_PERL%%/File/Type
 @dirrmtry %%SITE_PERL%%/File

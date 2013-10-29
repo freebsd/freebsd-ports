@@ -14,7 +14,4 @@ COMMENT=	Module for converting Perl structures to strings and back
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		FreezeThaw.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

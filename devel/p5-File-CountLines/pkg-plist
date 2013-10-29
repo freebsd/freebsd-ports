@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/File::CountLines.3.gz
 %%SITE_PERL%%/File/CountLines.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/CountLines/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/CountLines
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/CountLines
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
 @dirrmtry %%SITE_PERL%%/File

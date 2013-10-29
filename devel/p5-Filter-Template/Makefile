@@ -13,10 +13,7 @@ COMMENT=	Source filter for inline code templates (macros)
 BUILD_DEPENDS=	p5-Filter>=0:${PORTSDIR}/devel/p5-Filter
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	Filter::Template.3 Filter::Template::UseBytes.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

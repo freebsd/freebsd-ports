@@ -23,7 +23,4 @@ TEST_DEPENDS=	p5-Test-Class>=0.03:${PORTSDIR}/devel/p5-Test-Class \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		File::Random.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

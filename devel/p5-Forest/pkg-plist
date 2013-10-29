@@ -1,15 +1,35 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Forest/.packlist
+%%PERL5_MAN3%%/Forest.3.gz
+%%PERL5_MAN3%%/Forest::Tree.3.gz
+%%PERL5_MAN3%%/Forest::Tree::Builder.3.gz
+%%PERL5_MAN3%%/Forest::Tree::Builder::Callback.3.gz
+%%PERL5_MAN3%%/Forest::Tree::Builder::SimpleTextFile.3.gz
+%%PERL5_MAN3%%/Forest::Tree::Constructor.3.gz
+%%PERL5_MAN3%%/Forest::Tree::Indexer.3.gz
+%%PERL5_MAN3%%/Forest::Tree::Indexer::SimpleUIDIndexer.3.gz
+%%PERL5_MAN3%%/Forest::Tree::Loader.3.gz
+%%PERL5_MAN3%%/Forest::Tree::Loader::SimpleUIDLoader.3.gz
+%%PERL5_MAN3%%/Forest::Tree::Pure.3.gz
+%%PERL5_MAN3%%/Forest::Tree::Reader.3.gz
+%%PERL5_MAN3%%/Forest::Tree::Reader::SimpleTextFile.3.gz
+%%PERL5_MAN3%%/Forest::Tree::Roles::HasNodeFormatter.3.gz
+%%PERL5_MAN3%%/Forest::Tree::Roles::JSONable.3.gz
+%%PERL5_MAN3%%/Forest::Tree::Roles::LoadWithMetaData.3.gz
+%%PERL5_MAN3%%/Forest::Tree::Roles::MetaData.3.gz
+%%PERL5_MAN3%%/Forest::Tree::Writer.3.gz
+%%PERL5_MAN3%%/Forest::Tree::Writer::ASCIIWithBranches.3.gz
+%%PERL5_MAN3%%/Forest::Tree::Writer::SimpleASCII.3.gz
+%%PERL5_MAN3%%/Forest::Tree::Writer::SimpleHTML.3.gz
 %%SITE_PERL%%/Forest.pm
 %%SITE_PERL%%/Forest/Tree.pm
+%%SITE_PERL%%/Forest/Tree/Builder.pm
 %%SITE_PERL%%/Forest/Tree/Builder/Callback.pm
 %%SITE_PERL%%/Forest/Tree/Builder/SimpleTextFile.pm
-%%SITE_PERL%%/Forest/Tree/Builder.pm
-%%SITE_PERL%%/Forest/Tree/Pure.pm
 %%SITE_PERL%%/Forest/Tree/Constructor.pm
 %%SITE_PERL%%/Forest/Tree/Indexer.pm
 %%SITE_PERL%%/Forest/Tree/Indexer/SimpleUIDIndexer.pm
 %%SITE_PERL%%/Forest/Tree/Loader.pm
 %%SITE_PERL%%/Forest/Tree/Loader/SimpleUIDLoader.pm
+%%SITE_PERL%%/Forest/Tree/Pure.pm
 %%SITE_PERL%%/Forest/Tree/Reader.pm
 %%SITE_PERL%%/Forest/Tree/Reader/SimpleTextFile.pm
 %%SITE_PERL%%/Forest/Tree/Roles/HasNodeFormatter.pm
@@ -20,12 +40,13 @@
 %%SITE_PERL%%/Forest/Tree/Writer/ASCIIWithBranches.pm
 %%SITE_PERL%%/Forest/Tree/Writer/SimpleASCII.pm
 %%SITE_PERL%%/Forest/Tree/Writer/SimpleHTML.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Forest
-@dirrmtry %%SITE_PERL%%/Forest/Tree/Builder
-@dirrmtry %%SITE_PERL%%/Forest/Tree/Indexer
-@dirrmtry %%SITE_PERL%%/Forest/Tree/Loader
-@dirrmtry %%SITE_PERL%%/Forest/Tree/Reader
-@dirrmtry %%SITE_PERL%%/Forest/Tree/Roles
-@dirrmtry %%SITE_PERL%%/Forest/Tree/Writer
-@dirrmtry %%SITE_PERL%%/Forest/Tree
-@dirrmtry %%SITE_PERL%%/Forest
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Forest/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Forest
+@dirrm %%SITE_PERL%%/Forest/Tree/Writer
+@dirrm %%SITE_PERL%%/Forest/Tree/Roles
+@dirrm %%SITE_PERL%%/Forest/Tree/Reader
+@dirrm %%SITE_PERL%%/Forest/Tree/Loader
+@dirrm %%SITE_PERL%%/Forest/Tree/Indexer
+@dirrm %%SITE_PERL%%/Forest/Tree/Builder
+@dirrm %%SITE_PERL%%/Forest/Tree
+@dirrm %%SITE_PERL%%/Forest

@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/File::Find::Rule::VCS.3.gz
 %%SITE_PERL%%/File/Find/Rule/VCS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Find/Rule/VCS/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Find/Rule/VCS
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Find/Rule/VCS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Find/Rule
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Find
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File

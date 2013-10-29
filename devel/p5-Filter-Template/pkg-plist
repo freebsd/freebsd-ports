@@ -1,3 +1,5 @@
+%%PERL5_MAN3%%/Filter::Template.3.gz
+%%PERL5_MAN3%%/Filter::Template::UseBytes.3.gz
 %%SITE_PERL%%/Filter/Template.pm
 %%SITE_PERL%%/Filter/Template/UseBytes.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Template/.packlist

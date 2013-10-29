@@ -1,11 +1,15 @@
 bin/findrule
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Find/Rule/.packlist
+%%PERL5_MAN3%%/File::Find::Rule.3.gz
+%%PERL5_MAN3%%/File::Find::Rule::Extending.3.gz
+%%PERL5_MAN3%%/File::Find::Rule::Procedural.3.gz
 %%SITE_PERL%%/File/Find/Rule.pm
 %%SITE_PERL%%/File/Find/Rule/Extending.pod
 %%SITE_PERL%%/File/Find/Rule/Procedural.pod
-@dirrmtry %%SITE_PERL%%/File/Find/Rule
-@dirrmtry %%SITE_PERL%%/File/Find
-@dirrmtry %%SITE_PERL%%/File
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Find/Rule
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Find/Rule/.packlist
+man/man1/findrule.1.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Find/Rule
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Find
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
+@dirrm %%SITE_PERL%%/File/Find/Rule
+@dirrmtry %%SITE_PERL%%/File/Find
+@dirrmtry %%SITE_PERL%%/File
