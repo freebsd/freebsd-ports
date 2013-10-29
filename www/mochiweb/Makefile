@@ -25,26 +25,19 @@ GH_TAGNAME=	v${PORTVERSION}
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 do-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@for FILE in CHANGES.md README; do \
-		${INSTALL_DATA} ${WRKSRC}/$${FILE} ${DOCSDIR}; \
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	for FILE in CHANGES.md README; do \
+		${INSTALL_DATA} ${WRKSRC}/$${FILE} ${STAGEDIR}${DOCSDIR}; \
 	done
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
-.endif
-	@${MKDIR} ${PREFIX}/lib/erlang/lib/mochiweb-${PORTVERSION}
-	@${MKDIR} ${PREFIX}/lib/erlang/lib/mochiweb-${PORTVERSION}/ebin
-	@${MKDIR} ${PREFIX}/lib/erlang/lib/mochiweb-${PORTVERSION}/include
-	@${MKDIR} ${PREFIX}/lib/erlang/lib/mochiweb-${PORTVERSION}/src
-	@${INSTALL_DATA} ${WRKSRC}/ebin/* ${PREFIX}/lib/erlang/lib/mochiweb-${PORTVERSION}/ebin
-	@${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/lib/erlang/lib/mochiweb-${PORTVERSION}/include
-	@${INSTALL_DATA} ${WRKSRC}/src/* ${PREFIX}/lib/erlang/lib/mochiweb-${PORTVERSION}/src
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/mochiweb-${PORTVERSION}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/mochiweb-${PORTVERSION}/ebin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/mochiweb-${PORTVERSION}/include
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/mochiweb-${PORTVERSION}/src
+	${INSTALL_DATA} ${WRKSRC}/ebin/* ${STAGEDIR}${PREFIX}/lib/erlang/lib/mochiweb-${PORTVERSION}/ebin
+	${INSTALL_DATA} ${WRKSRC}/include/* ${STAGEDIR}${PREFIX}/lib/erlang/lib/mochiweb-${PORTVERSION}/include
+	${INSTALL_DATA} ${WRKSRC}/src/* ${STAGEDIR}${PREFIX}/lib/erlang/lib/mochiweb-${PORTVERSION}/src
 
 .include <bsd.port.mk>
