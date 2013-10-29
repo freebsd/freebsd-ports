@@ -1,0 +1,6 @@
+The rebar vsn plugin has a new feature where it can calculate a good version
+for an Erlang app based solely on the *.app.src file. You no longer need to
+place semver in your version field unless you simply want to continue the old
+behaviour. The old behaviour is still fully supported.
+
+WWW: https://github.com/erlware/rebar_vsn_plugin
