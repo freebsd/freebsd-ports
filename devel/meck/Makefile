@@ -25,18 +25,15 @@ GH_TAGNAME=	${PORTVERSION}
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README.md ${DOCSDIR}
-.endif
-	@${MKDIR} ${PREFIX}/lib/erlang/lib/meck-${PORTVERSION}
-	@${MKDIR} ${PREFIX}/lib/erlang/lib/meck-${PORTVERSION}/ebin
-	@${MKDIR} ${PREFIX}/lib/erlang/lib/meck-${PORTVERSION}/src
-	@${INSTALL_DATA} ${WRKSRC}/ebin/* ${PREFIX}/lib/erlang/lib/meck-${PORTVERSION}/ebin
-	@${INSTALL_DATA} ${WRKSRC}/src/* ${PREFIX}/lib/erlang/lib/meck-${PORTVERSION}/src
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/meck-${PORTVERSION}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/meck-${PORTVERSION}/ebin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/meck-${PORTVERSION}/src
+	${INSTALL_DATA} ${WRKSRC}/ebin/* ${STAGEDIR}${PREFIX}/lib/erlang/lib/meck-${PORTVERSION}/ebin
+	${INSTALL_DATA} ${WRKSRC}/src/* ${STAGEDIR}${PREFIX}/lib/erlang/lib/meck-${PORTVERSION}/src
 
 .include <bsd.port.mk>
