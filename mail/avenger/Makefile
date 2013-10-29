@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	avenger
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailavenger.org/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Anti-spam SMTP server
 
+USE_BDB=	42+
+USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USE_BDB=	43
 
 USERS=		${PORTNAME}
 GROUPS=		${USERS}
@@ -18,44 +19,35 @@ GROUPS=		${USERS}
 PORTDOCS=	INSTALL INSTALL.html README NEWS
 SUB_FILES=	pkg-message
 
-MAN1=		aliascheck.1 avenger.1 dbutil.1 deliver.1 dotlock.1 \
-		edinplace.1 escape.1 macutil.1 mailexec.1 match.1 \
-		smtpdcheck.1 synos.1
-MAN5=		asmtpd.conf.5
-MAN8=		asmtpd.8 avenger.local.8
-
 CONFIGURE_ENV=	WFLAGS='-Wall'
-CONFIGURE_ARGS=	--with-db=${LOCALBASE} --with-etcdir=${ETCDIR}
+CONFIGURE_ARGS=	--enable-ssl=${OPENSSLBASE} \
+		--with-db=${LOCALBASE} \
+		--with-etcdir=${ETCDIR}
 
-OPTIONS_DEFINE=	SASL
+OPTIONS_DEFINE=	SASL DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+SASL_CONFIGURE_ON=	--enable-sasl
+SASL_LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 
-.if ${PORT_OPTIONS:MSASL}
-LIB_DEPENDS+=		sasl2:${PORTSDIR}/security/cyrus-sasl2
-CONFIGURE_ARGS+=	--enable-sasl
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/for vers in/s|5.*;|${BDB_LIB_NAME:S,db-,,};|' \
+		${WRKSRC}/configure
 
 post-install:
-	${MKDIR} ${ETCDIR}
-.for file in asmtpd.conf unknown
-	${INSTALL_DATA} ${WRKSRC}/etc/${file} ${ETCDIR}/${file}.sample
-	@if [ ! -f ${ETCDIR}/${file} ]; then \
-		${CP} -p ${ETCDIR}/${file}.sample ${ETCDIR}/${file} ; \
-	fi
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/etc/pf.os ${PREFIX}/share
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/etc/smtp-filter.pf ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/etc/avsendmail.m4 ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/etc/asmtpd.conf \
+		${STAGEDIR}${ETCDIR}/asmtpd.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/etc/unknown \
+		${STAGEDIR}${ETCDIR}/unknown.sample
+	${INSTALL_DATA} ${WRKSRC}/etc/pf.os ${STAGEDIR}${PREFIX}/share
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/etc/smtp-filter.pf ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/etc/avsendmail.m4 ${STAGEDIR}${DATADIR}
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 	@${CAT} ${PKGMESSAGE}
 
