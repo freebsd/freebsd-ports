@@ -11,6 +11,8 @@ COMMENT=	Version 2 of this library intended to aid working with deprecated code
 
 LATEST_LINK=	deprecated2
 
+PKGNAMESUFFIX=	2
+
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
 RUBYGEM_AUTOPLIST=	yes

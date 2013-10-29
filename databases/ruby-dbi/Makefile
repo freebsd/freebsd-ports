@@ -14,7 +14,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	DBI-for-Ruby - a common interface for SQL-based databases
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/aspectr.rb:${PORTSDIR}/devel/ruby-aspectr \
-    		rubygem-deprecated>=2.0.0:${PORTSDIR}/devel/rubygem-deprecated2
+    		rubygem-deprecated2>=2.0.0:${PORTSDIR}/devel/rubygem-deprecated2
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
