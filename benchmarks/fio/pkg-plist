@@ -1,5 +1,7 @@
 bin/fio
 bin/fio_generate_plots
+man/man1/fio.1.gz
+man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/1mbs_clients.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/aio-read.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cpuio.fio
@@ -13,6 +15,7 @@ bin/fio_generate_plots
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fusion-aw-sync.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/iometer-file-access-server.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/netio.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/netio_multicast.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/null.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/numa.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rdmaio-client.fio
