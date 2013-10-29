@@ -13,17 +13,20 @@ COMMENT=	GNU readline for TCL
 USES+=		tcl
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-MANN=		tclreadline.n
 
 PLIST_SUB+=	VERSION="${PORTVERSION}"
 
 CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
 		--with-tcl-includes=${TCL_INCLUDEDIR}
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} \
 	    -e '/^#define MALLOC/d; /^#define FREE/d; s|MALLOC|malloc|g; s|FREE|free|g' \
 	    ${WRKSRC}/tclreadline.c
+	${REINPLACE_CMD} -e 's|/usr/locanl|/usr/local|' ${WRKSRC}/tclreadlineSetup.tcl.in
+	${REINPLACE_CMD} -e 's|/usr/local/bin/tclsh|${TCLSH}|g' \
+	    ${WRKSRC}/tclreadlineSetup.tcl.in \
+	    ${WRKSRC}/tclreadlineInit.tcl.in \
+	    ${WRKSRC}/pkgIndex.tcl.in
 
 .include <bsd.port.mk>

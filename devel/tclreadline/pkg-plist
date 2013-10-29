@@ -7,4 +7,5 @@ lib/tclreadline%%VERSION%%/pkgIndex.tcl
 lib/tclreadline%%VERSION%%/tclreadlineCompleter.tcl
 lib/tclreadline%%VERSION%%/tclreadlineInit.tcl
 lib/tclreadline%%VERSION%%/tclreadlineSetup.tcl
+man/mann/tclreadline.n.gz
 @dirrm lib/tclreadline%%VERSION%%
