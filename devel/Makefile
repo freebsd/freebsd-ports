@@ -4284,7 +4284,6 @@
     SUBDIR += rubygem-webby
     SUBDIR += rubygem-xpath
     SUBDIR += rubygem-yajl-ruby
-    SUBDIR += rubygem-yajl-ruby077
     SUBDIR += rubygem-yui-compressor
     SUBDIR += rubygem-zentest
     SUBDIR += rudeconfig
