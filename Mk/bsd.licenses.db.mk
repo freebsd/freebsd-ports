@@ -38,7 +38,8 @@ Licenses_db_Include_MAINTAINER=         portmgr@FreeBSD.org
 
 _LICENSE_LIST= 	AGPLv3 AL2 ART10 ARTPERL10 ART20 BSD BSL CDDL EPL GFDL GPLv1 GPLv2 \
 		GPLv3 ISCL LGPL20 LGPL21 LGPL3 LPPL10 LPPL11 LPPL12 LPPL13 LPPL13a \
-		LPPL13b LPPL13c MIT MPL OWL PHP202 PHP30 PHP301 PSFL ZLIB ZPL21
+		LPPL13b LPPL13c MIT MPL OFL10 OFL11 OWL PHP202 PHP30 PHP301 PSFL   \
+		ZLIB ZPL21
 
 # List of groups (only names must be present)
 
@@ -49,6 +50,8 @@ _LICENSE_NAME_GPL=	GPL Compatible
 _LICENSE_NAME_OSI=	OSI Approved
 
 _LICENSE_NAME_COPYFREE= Comply with Copyfree Standard Definition.
+
+_LICENSE_NAME_FONTS=	Font licenses
 
 # Default permissions for licenses here, if not defined
 
@@ -150,6 +153,12 @@ _LICENSE_GROUPS_MIT=	FSF GPL OSI COPYFREE
 
 _LICENSE_NAME_MPL=	Mozilla Public License
 _LICENSE_GROUPS_MPL=	FSF OSI
+
+_LICENSE_NAME_OFL10=	SIL Open Font License version 1.0 (http://scripts.sil.org/OFL)
+_LICENSE_GROUPS_OFL10=	FONTS
+
+_LICENSE_NAME_OFL11=	SIL Open Font License version 1.1 (http://scripts.sil.org/OFL)
+_LICENSE_GROUPS_OFL11=	FONTS
 
 _LICENSE_NAME_OWL=	Open Works License (owl.apotheon.org)
 _LICENSE_GROUPS_OWL=	COPYFREE
