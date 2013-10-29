@@ -1,5 +1,5 @@
 --- librtmp/Makefile.orig	2013-10-07 03:52:05.000000000 +0900
-+++ librtmp/Makefile	2013-10-17 10:05:14.000000000 +0900
++++ librtmp/Makefile	2013-10-30 05:16:36.000000000 +0900
 @@ -1,19 +1,21 @@
  VERSION=v2.4
  
@@ -43,16 +43,18 @@
  LIB_POLARSSL=-lpolarssl $(LIBZ)
  PRIVATE_LIBS=$(LIBS_$(SYS))
  CRYPTO_LIB=$(LIB_$(CRYPTO)) $(PRIVATE_LIBS)
-@@ -74,7 +76,8 @@
+@@ -74,8 +76,9 @@
  
  DEF=-DRTMPDUMP_VERSION=\"$(VERSION)\" $(CRYPTO_DEF) $(XDEF)
  OPT=-O2
 -CFLAGS=-Wall $(XCFLAGS) $(INC) $(DEF) $(OPT) $(SO_DEF)
+-LDFLAGS=$(XLDFLAGS)
 +#CFLAGS=-Wall $(XCFLAGS) $(INC) $(DEF) $(OPT) $(SO_DEF)
-+CFLAGS=$(DEF) $(OPT) $(SO_DEF)
- LDFLAGS=$(XLDFLAGS)
++CFLAGS+=$(DEF) $(SO_DEF)
++#LDFLAGS=$(XLDFLAGS)
  
  
+ OBJS=rtmp.o log.o amf.o hashswf.o parseurl.o
 @@ -102,16 +105,18 @@
  	sed -e "s;@prefix@;$(prefix);" -e "s;@libdir@;$(libdir);" \
  		-e "s;@VERSION@;$(VERSION);" \
