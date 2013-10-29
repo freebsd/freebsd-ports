@@ -1,6 +1,8 @@
 bin/envpath
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Env/Path/.packlist
+%%PERL5_MAN3%%/Env::Path.3.gz
 %%SITE_PERL%%/Env/Path.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Env/Path
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Env/Path/.packlist
+man/man1/envpath.1.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Env/Path
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Env
 @dirrmtry %%SITE_PERL%%/Env

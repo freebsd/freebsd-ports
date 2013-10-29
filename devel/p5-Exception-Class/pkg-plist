@@ -1,7 +1,9 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Exception/Class/.packlist
+%%PERL5_MAN3%%/Exception::Class.3.gz
+%%PERL5_MAN3%%/Exception::Class::Base.3.gz
 %%SITE_PERL%%/Exception/Class.pm
 %%SITE_PERL%%/Exception/Class/Base.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Exception/Class
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Exception/Class/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Exception/Class
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Exception
-@dirrmtry %%SITE_PERL%%/Exception/Class
+@dirrm %%SITE_PERL%%/Exception/Class
 @dirrmtry %%SITE_PERL%%/Exception

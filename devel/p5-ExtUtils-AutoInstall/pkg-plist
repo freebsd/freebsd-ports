@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/AutoInstall/.packlist
+%%PERL5_MAN3%%/ExtUtils::AutoInstall.3.gz
 %%SITE_PERL%%/ExtUtils/AutoInstall.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/AutoInstall/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/AutoInstall
-@dirrmtry %%SITE_PERL%%/ExtUtils
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils
+@dirrmtry %%SITE_PERL%%/ExtUtils

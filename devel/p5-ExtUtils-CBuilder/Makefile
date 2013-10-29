@@ -15,17 +15,13 @@ COMMENT=	Compile and link C code for Perl modules
 
 USES=		perl5
 USE_PERL5=	configure
-NO_STAGE=	yes
-
-MAN3=		ExtUtils::CBuilder.3 ExtUtils::CBuilder::Platform::Windows.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes
 
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.pre.mk>

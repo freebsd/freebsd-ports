@@ -1,20 +1,22 @@
+%%PERL5_MAN3%%/ExtUtils::CBuilder.3.gz
+%%PERL5_MAN3%%/ExtUtils::CBuilder::Platform::Windows.3.gz
 %%SITE_PERL%%/ExtUtils/CBuilder.pm
 %%SITE_PERL%%/ExtUtils/CBuilder/Base.pm
 %%SITE_PERL%%/ExtUtils/CBuilder/Platform/Unix.pm
 %%SITE_PERL%%/ExtUtils/CBuilder/Platform/VMS.pm
 %%SITE_PERL%%/ExtUtils/CBuilder/Platform/Windows.pm
+%%SITE_PERL%%/ExtUtils/CBuilder/Platform/Windows/BCC.pm
+%%SITE_PERL%%/ExtUtils/CBuilder/Platform/Windows/GCC.pm
+%%SITE_PERL%%/ExtUtils/CBuilder/Platform/Windows/MSVC.pm
 %%SITE_PERL%%/ExtUtils/CBuilder/Platform/aix.pm
 %%SITE_PERL%%/ExtUtils/CBuilder/Platform/cygwin.pm
 %%SITE_PERL%%/ExtUtils/CBuilder/Platform/darwin.pm
 %%SITE_PERL%%/ExtUtils/CBuilder/Platform/dec_osf.pm
 %%SITE_PERL%%/ExtUtils/CBuilder/Platform/os2.pm
-%%SITE_PERL%%/ExtUtils/CBuilder/Platform/Windows/BCC.pm
-%%SITE_PERL%%/ExtUtils/CBuilder/Platform/Windows/GCC.pm
-%%SITE_PERL%%/ExtUtils/CBuilder/Platform/Windows/MSVC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/CBuilder/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/CBuilder
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/CBuilder
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils
-@dirrmtry %%SITE_PERL%%/ExtUtils/CBuilder/Platform/Windows
-@dirrmtry %%SITE_PERL%%/ExtUtils/CBuilder/Platform
-@dirrmtry %%SITE_PERL%%/ExtUtils/CBuilder
+@dirrm %%SITE_PERL%%/ExtUtils/CBuilder/Platform/Windows
+@dirrm %%SITE_PERL%%/ExtUtils/CBuilder/Platform
+@dirrm %%SITE_PERL%%/ExtUtils/CBuilder
 @dirrmtry %%SITE_PERL%%/ExtUtils

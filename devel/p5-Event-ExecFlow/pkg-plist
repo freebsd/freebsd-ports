@@ -1,19 +1,28 @@
 bin/execflow
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/ExecFlow/.packlist
+%%PERL5_MAN3%%/Event::ExecFlow.3.gz
+%%PERL5_MAN3%%/Event::ExecFlow::Callbacks.3.gz
+%%PERL5_MAN3%%/Event::ExecFlow::Frontend.3.gz
+%%PERL5_MAN3%%/Event::ExecFlow::Job.3.gz
+%%PERL5_MAN3%%/Event::ExecFlow::Job::Code.3.gz
+%%PERL5_MAN3%%/Event::ExecFlow::Job::Command.3.gz
+%%PERL5_MAN3%%/Event::ExecFlow::Job::Group.3.gz
+%%PERL5_MAN3%%/Event::ExecFlow::Scheduler.3.gz
+%%PERL5_MAN3%%/Event::ExecFlow::Scheduler::SimpleMax.3.gz
 %%SITE_PERL%%/Event/ExecFlow.pm
-%%SITE_PERL%%/Event/ExecFlow/Frontend.pm
-%%SITE_PERL%%/Event/ExecFlow/Scheduler.pm
-%%SITE_PERL%%/Event/ExecFlow/Job.pm
 %%SITE_PERL%%/Event/ExecFlow/Callbacks.pm
-%%SITE_PERL%%/Event/ExecFlow/Job/Code.pm
-%%SITE_PERL%%/Event/ExecFlow/Job/Group.pm
-%%SITE_PERL%%/Event/ExecFlow/Job/Command.pm
-%%SITE_PERL%%/Event/ExecFlow/Scheduler/SimpleMax.pm
+%%SITE_PERL%%/Event/ExecFlow/Frontend.pm
 %%SITE_PERL%%/Event/ExecFlow/Frontend/Term.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/ExecFlow
+%%SITE_PERL%%/Event/ExecFlow/Job.pm
+%%SITE_PERL%%/Event/ExecFlow/Job/Code.pm
+%%SITE_PERL%%/Event/ExecFlow/Job/Command.pm
+%%SITE_PERL%%/Event/ExecFlow/Job/Group.pm
+%%SITE_PERL%%/Event/ExecFlow/Scheduler.pm
+%%SITE_PERL%%/Event/ExecFlow/Scheduler/SimpleMax.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/ExecFlow/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/ExecFlow
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event
-@dirrmtry %%SITE_PERL%%/Event/ExecFlow/Scheduler
-@dirrmtry %%SITE_PERL%%/Event/ExecFlow/Job
-@dirrmtry %%SITE_PERL%%/Event/ExecFlow/Frontend
-@dirrmtry %%SITE_PERL%%/Event/ExecFlow
+@dirrm %%SITE_PERL%%/Event/ExecFlow/Scheduler
+@dirrm %%SITE_PERL%%/Event/ExecFlow/Job
+@dirrm %%SITE_PERL%%/Event/ExecFlow/Frontend
+@dirrm %%SITE_PERL%%/Event/ExecFlow
 @dirrmtry %%SITE_PERL%%/Event

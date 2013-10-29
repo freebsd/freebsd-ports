@@ -15,17 +15,14 @@ OPTIONS_DEFINE=	DOCS
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Event.3 Event::MakeMaker.3 Event::generic.3
 PORTDOCS=	ANNOUNCE ChangeLog INSTALL MANIFEST README TODO Tutorial.pdf
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
-	@${MKDIR} ${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>

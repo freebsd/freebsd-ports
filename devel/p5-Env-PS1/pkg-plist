@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/Env::PS1.3.gz
 %%SITE_PERL%%/Env/PS1.pm
 %%SITE_PERL%%/auto/Env/PS1/C.al
 %%SITE_PERL%%/auto/Env/PS1/D.al
@@ -11,5 +12,5 @@
 %%SITE_PERL%%/auto/Env/PS1/autosplit.ix
 %%SITE_PERL%%/auto/Env/PS1/dollar.al
 @dirrm %%SITE_PERL%%/auto/Env/PS1
-@dirrmtry %%SITE_PERL%%/Env
 @dirrmtry %%SITE_PERL%%/auto/Env
+@dirrmtry %%SITE_PERL%%/Env

@@ -17,12 +17,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Event::ExecFlow::Job::Code.3 Event::ExecFlow::Frontend.3 \
-		Event::ExecFlow::Job::Group.3 \
-		Event::ExecFlow::Scheduler::SimpleMax.3 \
-		Event::ExecFlow::Scheduler.3 Event::ExecFlow::Job.3 \
-		Event::ExecFlow::Callbacks.3 Event::ExecFlow::Job::Command.3 \
-		Event::ExecFlow.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

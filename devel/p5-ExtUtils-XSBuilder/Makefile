@@ -17,10 +17,4 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		ExtUtils::XSBuilder.3 ExtUtils::XSBuilder::C::grammar.3 \
-		ExtUtils::XSBuilder::PODTemplate.3 \
-		ExtUtils::XSBuilder::ParseSource.3 \
-		ExtUtils::XSBuilder::WrapXS.3 ExtUtils::xsbuilder.osc2002.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
