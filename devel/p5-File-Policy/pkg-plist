@@ -1,9 +1,11 @@
+%%PERL5_MAN3%%/File::Policy.3.gz
+%%PERL5_MAN3%%/File::Policy::Default.3.gz
+%%PERL5_MAN3%%/File::Slurp::WithinPolicy.3.gz
 %%SITE_PERL%%/File/Policy.pm
 %%SITE_PERL%%/File/Policy/Default.pm
 %%SITE_PERL%%/File/Slurp/WithinPolicy.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Policy/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Policy
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File/Slurp
-@dirrmtry %%SITE_PERL%%/File/Policy
+@dirrm %%SITE_PERL%%/File/Policy
 @dirrmtry %%SITE_PERL%%/File

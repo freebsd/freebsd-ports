@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/NCopy/.packlist
+%%PERL5_MAN3%%/File::NCopy.3.gz
 %%SITE_PERL%%/File/NCopy.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/NCopy/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/NCopy
-@dirrmtry %%SITE_PERL%%/File
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
+@dirrmtry %%SITE_PERL%%/File

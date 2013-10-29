@@ -13,7 +13,4 @@ COMMENT=	Perl extension for recursively copying files and directories
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		File::Copy::Recursive.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,3 +1,13 @@
+%%PERL5_MAN3%%/File::HomeDir.3.gz
+%%PERL5_MAN3%%/File::HomeDir::Darwin.3.gz
+%%PERL5_MAN3%%/File::HomeDir::Darwin::Carbon.3.gz
+%%PERL5_MAN3%%/File::HomeDir::Darwin::Cocoa.3.gz
+%%PERL5_MAN3%%/File::HomeDir::Driver.3.gz
+%%PERL5_MAN3%%/File::HomeDir::FreeDesktop.3.gz
+%%PERL5_MAN3%%/File::HomeDir::MacOS9.3.gz
+%%PERL5_MAN3%%/File::HomeDir::Test.3.gz
+%%PERL5_MAN3%%/File::HomeDir::Unix.3.gz
+%%PERL5_MAN3%%/File::HomeDir::Windows.3.gz
 %%SITE_PERL%%/File/HomeDir.pm
 %%SITE_PERL%%/File/HomeDir/Darwin.pm
 %%SITE_PERL%%/File/HomeDir/Darwin/Carbon.pm
@@ -9,8 +19,8 @@
 %%SITE_PERL%%/File/HomeDir/Unix.pm
 %%SITE_PERL%%/File/HomeDir/Windows.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/HomeDir/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/HomeDir
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/HomeDir
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/File/HomeDir/Darwin
-@dirrmtry %%SITE_PERL%%/File/HomeDir
+@dirrm %%SITE_PERL%%/File/HomeDir/Darwin
+@dirrm %%SITE_PERL%%/File/HomeDir
 @dirrmtry %%SITE_PERL%%/File

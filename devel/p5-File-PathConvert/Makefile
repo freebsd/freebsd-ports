@@ -15,7 +15,4 @@ PORTSCOUT=	skipv:0.85
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	File::PathConvert.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

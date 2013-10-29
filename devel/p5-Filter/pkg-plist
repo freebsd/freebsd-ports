@@ -1,3 +1,11 @@
+%%PERL5_MAN3%%/Filter::Util::Call.3.gz
+%%PERL5_MAN3%%/Filter::Util::Exec.3.gz
+%%PERL5_MAN3%%/Filter::Util::perlfilter.3.gz
+%%PERL5_MAN3%%/Filter::cpp.3.gz
+%%PERL5_MAN3%%/Filter::decrypt.3.gz
+%%PERL5_MAN3%%/Filter::exec.3.gz
+%%PERL5_MAN3%%/Filter::sh.3.gz
+%%PERL5_MAN3%%/Filter::tee.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Filter/Util/Call.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Filter/Util/Exec.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Filter/Util/filter-util.pl
@@ -21,6 +29,6 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Util/Exec
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Util/Call
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Util
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Filter/Util
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Filter

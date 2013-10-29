@@ -12,9 +12,7 @@ COMMENT=	Regular expression delimited records from streams
 
 RUN_DEPENDS=	p5-YAPE-Regex>=4.00:${PORTSDIR}/textproc/p5-YAPE-Regex
 
-MAN3=		File::Stream.3
 USES=		perl5
 USE_PERL5=	modbuild
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

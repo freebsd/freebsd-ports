@@ -18,14 +18,4 @@ USES=		perl5
 USE_PERL5=	configure
 MAKE_JOBS_UNSAFE=	yes
 
-MAN3=		Filter::Util::Call.3 \
-		Filter::Util::Exec.3 \
-		Filter::Util::perlfilter.3 \
-		Filter::cpp.3 \
-		Filter::decrypt.3 \
-		Filter::exec.3 \
-		Filter::sh.3 \
-		Filter::tee.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -18,7 +18,4 @@ RUN_DEPENDS=	p5-File-Find-Rule>=0.20:${PORTSDIR}/devel/p5-File-Find-Rule \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		File::Find::Rule::VCS.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

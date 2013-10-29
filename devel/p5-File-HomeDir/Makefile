@@ -19,16 +19,4 @@ RUN_DEPENDS=	p5-File-Which>=0.05:${PORTSDIR}/sysutils/p5-File-Which
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		File::HomeDir.3 \
-		File::HomeDir::Darwin.3 \
-		File::HomeDir::Darwin::Carbon.3 \
-		File::HomeDir::Darwin::Cocoa.3 \
-		File::HomeDir::Driver.3 \
-		File::HomeDir::FreeDesktop.3 \
-		File::HomeDir::MacOS9.3 \
-		File::HomeDir::Test.3 \
-		File::HomeDir::Unix.3 \
-		File::HomeDir::Windows.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
