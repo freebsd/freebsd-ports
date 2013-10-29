@@ -1,0 +1,9 @@
+A 'dogpile' lock, typically used as a component of a larger caching solution.
+
+Allows a single thread to generate an expensive resource while other threads
+use the "old" value, until the "new" value is ready.
+
+Dogpile is basically the locking code extracted from the Beaker package,
+for simple and generic usage.
+
+WWW: https://bitbucket.org/zzzeek/dogpile.core
