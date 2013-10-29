@@ -904,6 +904,7 @@
     SUBDIR += py-eventlet
     SUBDIR += py-gntp
     SUBDIR += py-google
+    SUBDIR += py-gspreadsheet
     SUBDIR += py-impacket
     SUBDIR += py-iplib
     SUBDIR += py-kombu
