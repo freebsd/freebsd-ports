@@ -1177,6 +1177,7 @@
     SUBDIR += py-pss
     SUBDIR += py-pyctpp2
     SUBDIR += py-pygments
+    SUBDIR += py-pysrt
     SUBDIR += py-pystache
     SUBDIR += py-pyx12
     SUBDIR += py-qt4-xml
