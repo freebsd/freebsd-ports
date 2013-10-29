@@ -1,3 +1,26 @@
+%%PERL5_MAN3%%/Data::Rx.3.gz
+%%PERL5_MAN3%%/Data::Rx::CommonType.3.gz
+%%PERL5_MAN3%%/Data::Rx::CommonType::EasyNew.3.gz
+%%PERL5_MAN3%%/Data::Rx::CoreType.3.gz
+%%PERL5_MAN3%%/Data::Rx::CoreType::all.3.gz
+%%PERL5_MAN3%%/Data::Rx::CoreType::any.3.gz
+%%PERL5_MAN3%%/Data::Rx::CoreType::arr.3.gz
+%%PERL5_MAN3%%/Data::Rx::CoreType::bool.3.gz
+%%PERL5_MAN3%%/Data::Rx::CoreType::def.3.gz
+%%PERL5_MAN3%%/Data::Rx::CoreType::fail.3.gz
+%%PERL5_MAN3%%/Data::Rx::CoreType::int.3.gz
+%%PERL5_MAN3%%/Data::Rx::CoreType::map.3.gz
+%%PERL5_MAN3%%/Data::Rx::CoreType::nil.3.gz
+%%PERL5_MAN3%%/Data::Rx::CoreType::num.3.gz
+%%PERL5_MAN3%%/Data::Rx::CoreType::one.3.gz
+%%PERL5_MAN3%%/Data::Rx::CoreType::rec.3.gz
+%%PERL5_MAN3%%/Data::Rx::CoreType::seq.3.gz
+%%PERL5_MAN3%%/Data::Rx::CoreType::str.3.gz
+%%PERL5_MAN3%%/Data::Rx::Failure.3.gz
+%%PERL5_MAN3%%/Data::Rx::FailureSet.3.gz
+%%PERL5_MAN3%%/Data::Rx::TypeBundle.3.gz
+%%PERL5_MAN3%%/Data::Rx::TypeBundle::Core.3.gz
+%%PERL5_MAN3%%/Data::Rx::Util.3.gz
 %%SITE_PERL%%/Data/Rx.pm
 %%SITE_PERL%%/Data/Rx/CommonType.pm
 %%SITE_PERL%%/Data/Rx/CommonType/EasyNew.pm
@@ -25,7 +48,7 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Rx
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
 @dirrm %%SITE_PERL%%/Data/Rx/TypeBundle
-@dirrm %%SITE_PERL%%/Data/Rx/CommonType
 @dirrm %%SITE_PERL%%/Data/Rx/CoreType
+@dirrm %%SITE_PERL%%/Data/Rx/CommonType
 @dirrm %%SITE_PERL%%/Data/Rx
 @dirrmtry %%SITE_PERL%%/Data

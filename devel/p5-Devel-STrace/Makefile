@@ -17,9 +17,6 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Devel::STrace.3 Devel::STrace::Monitor.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's!\.pl!!g' ${WRKSRC}/Makefile.PL
 

@@ -18,11 +18,4 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS=	</dev/null
 
-MAN3=		Date::Pcalc.3 \
-		Date::Pcalc::Object.3 \
-		Date::Pcalendar.3 \
-		Date::Pcalendar::Profiles.3 \
-		Date::Pcalendar::Year.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

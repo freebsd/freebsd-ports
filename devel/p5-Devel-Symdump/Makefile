@@ -14,7 +14,4 @@ COMMENT=	Perl5 module that dumps symbol names or the symbol table
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Devel::Symdump.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

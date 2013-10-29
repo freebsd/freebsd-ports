@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Devel::SmallProf.3.gz
 %%SITE_PERL%%/Devel/SmallProf.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/SmallProf/.packlist
-@dirrmtry %%SITE_PERL%%/Devel
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/SmallProf
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
+@dirrmtry %%SITE_PERL%%/Devel

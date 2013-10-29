@@ -21,9 +21,6 @@ RUN_DEPENDS=	p5-Sub-Exporter>=0.979:${PORTSDIR}/devel/p5-Sub-Exporter \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Data::Section.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

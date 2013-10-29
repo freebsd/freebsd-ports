@@ -13,7 +13,4 @@ COMMENT=	Utility for looking for perl objects that are not reclaimed
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Devel::Leak.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

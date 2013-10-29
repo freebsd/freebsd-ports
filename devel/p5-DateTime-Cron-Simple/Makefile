@@ -13,7 +13,4 @@ COMMENT=	Parse a cron entry and check against current time
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		DateTime::Cron::Simple.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

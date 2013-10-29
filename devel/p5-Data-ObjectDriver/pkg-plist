@@ -1,4 +1,20 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ObjectDriver/.packlist
+%%PERL5_MAN3%%/Data::ObjectDriver.3.gz
+%%PERL5_MAN3%%/Data::ObjectDriver::BaseObject.3.gz
+%%PERL5_MAN3%%/Data::ObjectDriver::Driver::BaseCache.3.gz
+%%PERL5_MAN3%%/Data::ObjectDriver::Driver::Cache::Apache.3.gz
+%%PERL5_MAN3%%/Data::ObjectDriver::Driver::Cache::Memcached.3.gz
+%%PERL5_MAN3%%/Data::ObjectDriver::Driver::DBD.3.gz
+%%PERL5_MAN3%%/Data::ObjectDriver::Driver::DBD::Oracle.3.gz
+%%PERL5_MAN3%%/Data::ObjectDriver::Driver::DBD::SQLite.3.gz
+%%PERL5_MAN3%%/Data::ObjectDriver::Driver::MultiPartition.3.gz
+%%PERL5_MAN3%%/Data::ObjectDriver::Driver::Multiplexer.3.gz
+%%PERL5_MAN3%%/Data::ObjectDriver::Driver::Partition.3.gz
+%%PERL5_MAN3%%/Data::ObjectDriver::Driver::SimplePartition.3.gz
+%%PERL5_MAN3%%/Data::ObjectDriver::Errors.3.gz
+%%PERL5_MAN3%%/Data::ObjectDriver::Profiler.3.gz
+%%PERL5_MAN3%%/Data::ObjectDriver::ResultSet.3.gz
+%%PERL5_MAN3%%/Data::ObjectDriver::SQL.3.gz
+%%PERL5_MAN3%%/Data::ObjectDriver::SQL::Oracle.3.gz
 %%SITE_PERL%%/Data/ObjectDriver.pm
 %%SITE_PERL%%/Data/ObjectDriver/BaseObject.pm
 %%SITE_PERL%%/Data/ObjectDriver/BaseView.pm
@@ -24,11 +40,12 @@
 %%SITE_PERL%%/Data/ObjectDriver/ResultSet.pm
 %%SITE_PERL%%/Data/ObjectDriver/SQL.pm
 %%SITE_PERL%%/Data/ObjectDriver/SQL/Oracle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ObjectDriver/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ObjectDriver
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
 @dirrmtry %%SITE_PERL%%/Data/ObjectDriver/SQL
 @dirrmtry %%SITE_PERL%%/Data/ObjectDriver/Driver/DBD
 @dirrmtry %%SITE_PERL%%/Data/ObjectDriver/Driver/Cache
 @dirrmtry %%SITE_PERL%%/Data/ObjectDriver/Driver
 @dirrmtry %%SITE_PERL%%/Data/ObjectDriver
 @dirrmtry %%SITE_PERL%%/Data
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ObjectDriver
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data

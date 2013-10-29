@@ -1,15 +1,27 @@
-%%SITE_PERL%%/DateTime/Format/Epoch/Lilian.pm
-%%SITE_PERL%%/DateTime/Format/Epoch/TAI64.pm
-%%SITE_PERL%%/DateTime/Format/Epoch/RJD.pm
-%%SITE_PERL%%/DateTime/Format/Epoch/JD.pm
-%%SITE_PERL%%/DateTime/Format/Epoch/MJD.pm
-%%SITE_PERL%%/DateTime/Format/Epoch/ActiveDirectory.pm
-%%SITE_PERL%%/DateTime/Format/Epoch/RataDie.pm
-%%SITE_PERL%%/DateTime/Format/Epoch/TJD.pm
-%%SITE_PERL%%/DateTime/Format/Epoch/MacOS.pm
-%%SITE_PERL%%/DateTime/Format/Epoch/Unix.pm
-%%SITE_PERL%%/DateTime/Format/Epoch/DotNet.pm
+%%PERL5_MAN3%%/DateTime::Format::Epoch.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Epoch::ActiveDirectory.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Epoch::DotNet.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Epoch::JD.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Epoch::Lilian.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Epoch::MJD.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Epoch::MacOS.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Epoch::RJD.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Epoch::RataDie.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Epoch::TAI64.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Epoch::TJD.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Epoch::Unix.3.gz
 %%SITE_PERL%%/DateTime/Format/Epoch.pm
-@dirrmtry %%SITE_PERL%%/DateTime/Format/Epoch
+%%SITE_PERL%%/DateTime/Format/Epoch/ActiveDirectory.pm
+%%SITE_PERL%%/DateTime/Format/Epoch/DotNet.pm
+%%SITE_PERL%%/DateTime/Format/Epoch/JD.pm
+%%SITE_PERL%%/DateTime/Format/Epoch/Lilian.pm
+%%SITE_PERL%%/DateTime/Format/Epoch/MJD.pm
+%%SITE_PERL%%/DateTime/Format/Epoch/MacOS.pm
+%%SITE_PERL%%/DateTime/Format/Epoch/RJD.pm
+%%SITE_PERL%%/DateTime/Format/Epoch/RataDie.pm
+%%SITE_PERL%%/DateTime/Format/Epoch/TAI64.pm
+%%SITE_PERL%%/DateTime/Format/Epoch/TJD.pm
+%%SITE_PERL%%/DateTime/Format/Epoch/Unix.pm
+@dirrm %%SITE_PERL%%/DateTime/Format/Epoch
 @dirrmtry %%SITE_PERL%%/DateTime/Format
 @dirrmtry %%SITE_PERL%%/DateTime

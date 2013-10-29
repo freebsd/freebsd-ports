@@ -14,7 +14,4 @@ COMMENT=	Make available a magic caller which can ignore namespaces
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Devel::Caller::IgnoreNamespaces.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

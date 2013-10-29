@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/Data::Walk.3.gz
+%%SITE_PERL%%/Data/Walk.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Walk/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Walk
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+@dirrmtry %%SITE_PERL%%/Data

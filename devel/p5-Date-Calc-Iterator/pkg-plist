@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Calc/Iterator/.packlist
+%%PERL5_MAN3%%/Date::Calc::Iterator.3.gz
 %%SITE_PERL%%/Date/Calc/Iterator.pm
-@dirrmtry %%SITE_PERL%%/Date/Calc
-@dirrmtry %%SITE_PERL%%/Date
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Calc/Iterator/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Calc/Iterator
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Calc
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date
+@dirrmtry %%SITE_PERL%%/Date/Calc
+@dirrmtry %%SITE_PERL%%/Date

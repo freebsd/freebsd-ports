@@ -1,8 +1,11 @@
 bin/project_bin
 bin/project_dir
-lib/project_dir.mk
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dir/Project/.packlist
+%%PERL5_MAN3%%/Dir::Project.3.gz
 %%SITE_PERL%%/Dir/Project.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dir/Project
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dir/Project/.packlist
+lib/project_dir.mk
+man/man1/project_bin.1.gz
+man/man1/project_dir.1.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dir/Project
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dir
 @dirrmtry %%SITE_PERL%%/Dir

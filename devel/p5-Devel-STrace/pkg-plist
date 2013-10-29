@@ -1,10 +1,12 @@
 bin/plstrace
+%%PERL5_MAN3%%/Devel::STrace.3.gz
+%%PERL5_MAN3%%/Devel::STrace::Monitor.3.gz
 %%SITE_PERL%%/Devel/STrace.pm
 %%SITE_PERL%%/Devel/STrace.pod
 %%SITE_PERL%%/Devel/STrace/Monitor.pm
 %%SITE_PERL%%/Devel/STrace/Monitor.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/STrace/.packlist
-@dirrm %%SITE_PERL%%/Devel/STrace
-@dirrmtry %%SITE_PERL%%/Devel
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/STrace
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
+@dirrm %%SITE_PERL%%/Devel/STrace
+@dirrmtry %%SITE_PERL%%/Devel

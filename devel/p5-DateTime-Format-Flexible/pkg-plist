@@ -1,13 +1,18 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/Flexible/.packlist
+%%PERL5_MAN3%%/DateTime::Format::Flexible.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Flexible::lang.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Flexible::lang::de.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Flexible::lang::en.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Flexible::lang::es.3.gz
 %%SITE_PERL%%/DateTime/Format/Flexible.pm
 %%SITE_PERL%%/DateTime/Format/Flexible/lang.pm
 %%SITE_PERL%%/DateTime/Format/Flexible/lang/de.pm
 %%SITE_PERL%%/DateTime/Format/Flexible/lang/en.pm
 %%SITE_PERL%%/DateTime/Format/Flexible/lang/es.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/Flexible
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/Flexible/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/Flexible
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime
-@dirrmtry %%SITE_PERL%%/DateTime/Format/Flexible/lang
-@dirrmtry %%SITE_PERL%%/DateTime/Format/Flexible
+@dirrm %%SITE_PERL%%/DateTime/Format/Flexible/lang
+@dirrm %%SITE_PERL%%/DateTime/Format/Flexible
 @dirrmtry %%SITE_PERL%%/DateTime/Format
 @dirrmtry %%SITE_PERL%%/DateTime

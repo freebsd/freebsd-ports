@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/Danga::Socket.3.gz
 %%SITE_PERL%%/Danga/Socket.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Danga/Socket/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Danga/Socket

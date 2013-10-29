@@ -15,7 +15,4 @@ USES=		perl5
 USE_PERL5=	modbuild
 USE_GNOME=	glib12
 
-MAN3=		Devel::LeakTrace.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

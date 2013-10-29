@@ -16,7 +16,4 @@ RUN_DEPENDS=	p5-Date-Simple>=0.03:${PORTSDIR}/devel/p5-Date-Simple
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Date::Range.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

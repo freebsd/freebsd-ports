@@ -16,7 +16,4 @@ RUN_DEPENDS=	p5-IO-KQueue>=0:${PORTSDIR}/devel/p5-IO-KQueue \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Danga::Socket.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

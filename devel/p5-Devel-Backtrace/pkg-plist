@@ -1,13 +1,11 @@
+%%PERL5_MAN3%%/Devel::Backtrace.3.gz
+%%PERL5_MAN3%%/Devel::Backtrace::Point.3.gz
+%%PERL5_MAN3%%/Devel::DollarAt.3.gz
+%%SITE_PERL%%/Devel/Backtrace.pm
 %%SITE_PERL%%/Devel/Backtrace/Point.pm
 %%SITE_PERL%%/Devel/DollarAt.pm
-%%SITE_PERL%%/Devel/Backtrace.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Backtrace/.packlist
-@dirrmtry %%SITE_PERL%%/auto/Devel/Backtrace
-@dirrmtry %%SITE_PERL%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/Devel/Backtrace
-@dirrmtry %%SITE_PERL%%/Devel
-@dirrmtry %%SITE_PERL%%
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Backtrace
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Backtrace
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
-@dirrmtry blib/script
+@dirrm %%SITE_PERL%%/Devel/Backtrace
+@dirrmtry %%SITE_PERL%%/Devel

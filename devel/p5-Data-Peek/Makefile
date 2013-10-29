@@ -16,7 +16,4 @@ TEST_DEPENDS=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Data::Peek.3 Data::DP.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

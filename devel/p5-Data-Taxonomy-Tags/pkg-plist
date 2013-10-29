@@ -1,5 +1,7 @@
+%%PERL5_MAN3%%/Data::Taxonomy::Tags.3.gz
+%%PERL5_MAN3%%/Data::Taxonomy::Tags::Tag.3.gz
 %%SITE_PERL%%/Data/Taxonomy/Tags.pm
 %%SITE_PERL%%/Data/Taxonomy/Tags/Tag.pm
 @dirrm %%SITE_PERL%%/Data/Taxonomy/Tags
-@dirrmtry %%SITE_PERL%%/Data/Taxonomy
+@dirrm %%SITE_PERL%%/Data/Taxonomy
 @dirrmtry %%SITE_PERL%%/Data

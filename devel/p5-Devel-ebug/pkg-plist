@@ -1,3 +1,9 @@
+bin/ebug
+bin/ebug_backend_perl
+bin/ebug_client
+bin/ebug_server
+%%PERL5_MAN3%%/Devel::ebug.3.gz
+%%PERL5_MAN3%%/Devel::ebug::Console.3.gz
 %%SITE_PERL%%/Devel/ebug.pm
 %%SITE_PERL%%/Devel/ebug/Backend.pm
 %%SITE_PERL%%/Devel/ebug/Backend/Plugin/ActionPoints.pm
@@ -21,12 +27,11 @@
 %%SITE_PERL%%/Devel/ebug/Plugin/Pad.pm
 %%SITE_PERL%%/Devel/ebug/Plugin/Run.pm
 %%SITE_PERL%%/Devel/ebug/Plugin/StackTrace.pm
-bin/ebug
-bin/ebug_backend_perl
-bin/ebug_client
-bin/ebug_server
-@dirrmtry %%SITE_PERL%%/Devel/ebug/Plugin
-@dirrmtry %%SITE_PERL%%/Devel/ebug/Backend/Plugin
-@dirrmtry %%SITE_PERL%%/Devel/ebug/Backend
-@dirrmtry %%SITE_PERL%%/Devel/ebug
+man/man1/ebug.1.gz
+man/man1/ebug_client.1.gz
+man/man1/ebug_server.1.gz
+@dirrm %%SITE_PERL%%/Devel/ebug/Plugin
+@dirrm %%SITE_PERL%%/Devel/ebug/Backend/Plugin
+@dirrm %%SITE_PERL%%/Devel/ebug/Backend
+@dirrm %%SITE_PERL%%/Devel/ebug
 @dirrmtry %%SITE_PERL%%/Devel

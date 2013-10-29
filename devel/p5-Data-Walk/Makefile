@@ -16,13 +16,4 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Data::Walk.3
-
-PLIST_FILES=	%%SITE_PERL%%/Data/Walk.pm \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Walk/.packlist
-PLIST_DIRS=	%%SITE_PERL%%/Data \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Walk \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/DateTime::Format::Roman.3.gz
 %%SITE_PERL%%/DateTime/Format/Roman.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/Roman/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/Roman

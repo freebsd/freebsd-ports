@@ -1,12 +1,14 @@
+%%PERL5_MAN3%%/DDS.3.gz
+%%PERL5_MAN3%%/Data::Dump::Streamer.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/DDS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Data/Dump/Streamer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Data/Dump/Streamer/_/Printers.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dump/Streamer/Streamer.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dump/Streamer/Streamer.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dump/Streamer
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dump/Streamer
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dump
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Data/Dump/Streamer/_
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Data/Dump/Streamer
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Data/Dump/Streamer/_
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Data/Dump/Streamer
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Data/Dump
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Data
