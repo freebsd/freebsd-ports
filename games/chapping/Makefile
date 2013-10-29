@@ -13,15 +13,17 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Turn based board football game
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_SDL=	sdl image gfx ttf
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 ALL_TARGET=	linux
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/${PORTNAME}
+PORTDATA=	*
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|make|${GMAKE}|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|make|$${MAKE}|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e '/^CXX=/ d; s|^SDL=.*|SDL=${SDL_CONFIG}|; \
 		/\.o:/ d; /^CXXFLAGS=/ s|=-g -Wall -O2|+=|' \
 		${WRKSRC}/library/Makefile ${WRKSRC}/game/Makefile
@@ -29,8 +31,7 @@ post-patch:
 		${WRKSRC}/game/*.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/chapping ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "menuimg themes" ${DATADIR}/
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "menuimg themes" ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
