@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ORBit.so:${PORTSDIR}/devel/py-orbit
 
 LATEST_LINK=	py-gnome2
 USE_BZIP2=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_LDCONFIG=	yes
 USES=		gettext gmake pkgconfig
 USE_GNOME=	gnomehack libgnomeui pygtk2

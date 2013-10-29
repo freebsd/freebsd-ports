@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_dbus_bindings.so:${PORTSDIR}/devel/py-dbus \
 NO_STAGE=	yes
 USE_BZIP2=	yes
 USES=		gmake gettext pkgconfig
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_GNOME=	gnomeprefix gnomehack libgnomeui gnomespeech pygnome2 \
 		pygnomedesktop
 INSTALLS_ICONS=	yes

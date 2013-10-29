@@ -23,7 +23,7 @@ USE_XZ=		yes
 USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	gnomehier intlhack pygobject3
 GNU_CONFIGURE=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

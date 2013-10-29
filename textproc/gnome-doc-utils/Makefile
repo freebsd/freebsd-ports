@@ -22,7 +22,7 @@ USE_XZ=		yes
 MAKE_JOBS_UNSAFE=yes
 USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	gnomehier libxslt intlhack
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-omf-dir=${PREFIX}/share/omf

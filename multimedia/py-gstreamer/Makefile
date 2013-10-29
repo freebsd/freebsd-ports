@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
 
 USES=		pkgconfig
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pygobject gnomehack

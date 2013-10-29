@@ -21,7 +21,7 @@ LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 
 USE_XZ=		yes
-USE_PYTHON_BUILD=	yes
+USE_PYTHON_BUILD=	-2.7
 USE_GSTREAMER=	yes
 USE_XORG=	xt
 USES=		bison gmake pkgconfig gettext perl5

@@ -56,6 +56,7 @@ bin/accerciser
 %%PYTHON_SITELIBDIR%%/accerciser/ui_manager.py
 %%PYTHON_SITELIBDIR%%/accerciser/ui_manager.pyc
 %%PYTHON_SITELIBDIR%%/accerciser/ui_manager.pyo
+man/man1/accerciser.1.gz
 %%DATADIR%%/pixmaps/hicolor/22x22/acceleratorlabel.png
 %%DATADIR%%/pixmaps/hicolor/22x22/alert.png
 %%DATADIR%%/pixmaps/hicolor/22x22/animation.png

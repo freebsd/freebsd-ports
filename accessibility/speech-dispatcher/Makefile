@@ -104,7 +104,7 @@ CONFIGURE_ARGS+=--without-pulse
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	2.5+
+USE_PYTHON=	-2.7
 CONFIGURE_ARGS+=--enable-python
 PLIST_SUB+=	PYTHON=""
 .else
