@@ -2,56 +2,56 @@ bin/cheech
 bin/cheechbot
 bin/cheechd
 bin/cheechwebd
-share/cheech/cheechweb/15D93A1FDFF22779A23A08278F59A953.cache.html
-share/cheech/cheechweb/15D93A1FDFF22779A23A08278F59A953.cache.xml
-share/cheech/cheechweb/1E757BA6FE1CD6DCCF0EF6EE1F1916BE.cache.html
-share/cheech/cheechweb/1E757BA6FE1CD6DCCF0EF6EE1F1916BE.cache.xml
-share/cheech/cheechweb/2DA9E259B1E54AEBAB6942D8775C1A1D.cache.html
-share/cheech/cheechweb/2DA9E259B1E54AEBAB6942D8775C1A1D.cache.xml
-share/cheech/cheechweb/93B61057D4F4E4E4CFEEDA7767D9C7D2.cache.html
-share/cheech/cheechweb/93B61057D4F4E4E4CFEEDA7767D9C7D2.cache.xml
-share/cheech/cheechweb/EED299CE3177E3D3B98087A75E716F40.cache.html
-share/cheech/cheechweb/EED299CE3177E3D3B98087A75E716F40.cache.xml
-share/cheech/cheechweb/cheech.css
-share/cheech/cheechweb/cheechweb.html
-share/cheech/cheechweb/chinesecheckers.html
-share/cheech/cheechweb/com.benjie.cheech.nocache.html
-share/cheech/cheechweb/gwt.js
-share/cheech/cheechweb/history.html
-share/cheech/cheechweb/images/cheech.png
-share/cheech/cheechweb/images/hole-hi.png
-share/cheech/cheechweb/images/hole.png
-share/cheech/cheechweb/images/peg-black-hi.png
-share/cheech/cheechweb/images/peg-black.png
-share/cheech/cheechweb/images/peg-blue-hi.png
-share/cheech/cheechweb/images/peg-blue.png
-share/cheech/cheechweb/images/peg-green-hi.png
-share/cheech/cheechweb/images/peg-green.png
-share/cheech/cheechweb/images/peg-orange-hi.png
-share/cheech/cheechweb/images/peg-orange.png
-share/cheech/cheechweb/images/peg-purple-hi.png
-share/cheech/cheechweb/images/peg-purple.png
-share/cheech/cheechweb/images/peg-red-hi.png
-share/cheech/cheechweb/images/peg-red.png
-share/cheech/cheechweb/images/peg-white-hi.png
-share/cheech/cheechweb/images/peg-white.png
-share/cheech/cheechweb/images/peg-yellow-hi.png
-share/cheech/cheechweb/images/peg-yellow.png
-share/cheech/cheechweb/index.html
-%%PORTDOCS%%share/doc/cheech/AUTHORS
-%%PORTDOCS%%share/doc/cheech/COPYING
-%%PORTDOCS%%share/doc/cheech/ChangeLog
-%%PORTDOCS%%share/doc/cheech/INSTALL
-%%PORTDOCS%%share/doc/cheech/NEWS
-%%PORTDOCS%%share/doc/cheech/README
-%%PORTDOCS%%share/doc/cheech/TODO
+%%DATADIR%%/cheechweb/15D93A1FDFF22779A23A08278F59A953.cache.html
+%%DATADIR%%/cheechweb/15D93A1FDFF22779A23A08278F59A953.cache.xml
+%%DATADIR%%/cheechweb/1E757BA6FE1CD6DCCF0EF6EE1F1916BE.cache.html
+%%DATADIR%%/cheechweb/1E757BA6FE1CD6DCCF0EF6EE1F1916BE.cache.xml
+%%DATADIR%%/cheechweb/2DA9E259B1E54AEBAB6942D8775C1A1D.cache.html
+%%DATADIR%%/cheechweb/2DA9E259B1E54AEBAB6942D8775C1A1D.cache.xml
+%%DATADIR%%/cheechweb/93B61057D4F4E4E4CFEEDA7767D9C7D2.cache.html
+%%DATADIR%%/cheechweb/93B61057D4F4E4E4CFEEDA7767D9C7D2.cache.xml
+%%DATADIR%%/cheechweb/EED299CE3177E3D3B98087A75E716F40.cache.html
+%%DATADIR%%/cheechweb/EED299CE3177E3D3B98087A75E716F40.cache.xml
+%%DATADIR%%/cheechweb/cheech.css
+%%DATADIR%%/cheechweb/cheechweb.html
+%%DATADIR%%/cheechweb/chinesecheckers.html
+%%DATADIR%%/cheechweb/com.benjie.cheech.nocache.html
+%%DATADIR%%/cheechweb/gwt.js
+%%DATADIR%%/cheechweb/history.html
+%%DATADIR%%/cheechweb/images/cheech.png
+%%DATADIR%%/cheechweb/images/hole-hi.png
+%%DATADIR%%/cheechweb/images/hole.png
+%%DATADIR%%/cheechweb/images/peg-black-hi.png
+%%DATADIR%%/cheechweb/images/peg-black.png
+%%DATADIR%%/cheechweb/images/peg-blue-hi.png
+%%DATADIR%%/cheechweb/images/peg-blue.png
+%%DATADIR%%/cheechweb/images/peg-green-hi.png
+%%DATADIR%%/cheechweb/images/peg-green.png
+%%DATADIR%%/cheechweb/images/peg-orange-hi.png
+%%DATADIR%%/cheechweb/images/peg-orange.png
+%%DATADIR%%/cheechweb/images/peg-purple-hi.png
+%%DATADIR%%/cheechweb/images/peg-purple.png
+%%DATADIR%%/cheechweb/images/peg-red-hi.png
+%%DATADIR%%/cheechweb/images/peg-red.png
+%%DATADIR%%/cheechweb/images/peg-white-hi.png
+%%DATADIR%%/cheechweb/images/peg-white.png
+%%DATADIR%%/cheechweb/images/peg-yellow-hi.png
+%%DATADIR%%/cheechweb/images/peg-yellow.png
+%%DATADIR%%/cheechweb/index.html
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 share/pixmaps/cheech.png
 share/pixmaps/cheech/cheech.png
 share/pixmaps/cheech/highlight.png
 share/pixmaps/cheech/pegs.png
 share/pixmaps/cheech/smiley.png
-@dirrm share/pixmaps/cheech
-%%PORTDOCS%%@dirrm share/doc/cheech
-@dirrm share/cheech/cheechweb/images
-@dirrm share/cheech/cheechweb
-@dirrm share/cheech
+@dirrmtry share/pixmaps/cheech
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry %%DATADIR%%/cheechweb/images
+@dirrmtry %%DATADIR%%/cheechweb
+@dirrmtry %%DATADIR%%
