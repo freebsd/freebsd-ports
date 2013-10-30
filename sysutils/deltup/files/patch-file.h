@@ -14,7 +14,7 @@
  
  class GZ_IFStream : public IStream {
 -  void *file;
-+  gzFile_s *file;
++  gzFile file;
  public:
    GZ_IFStream(string fname);
    virtual ~GZ_IFStream();
@@ -23,7 +23,7 @@
  
  class GZ_OFStream : public OStream {
 -  void *file;
-+  gzFile_s *file;
++  gzFile file;
  public:
    GZ_OFStream(string fname);
    virtual ~GZ_OFStream();
