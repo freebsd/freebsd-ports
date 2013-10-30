@@ -1,14 +1,13 @@
---- Makefile.orig	2011-04-18 23:24:17.000000000 +0200
-+++ Makefile	2011-05-05 15:51:44.356358227 +0200
-@@ -170,19 +170,19 @@
- 
- else
- 
--BSUBDIRS = codepage com32 lzo core memdisk mbr memdump gpxe sample \
--	   diag libinstaller dos win32 win64 dosutil txt
-+#BSUBDIRS = codepage com32 lzo core memdisk mbr memdump gpxe sample \
-+#	   diag libinstaller dos win32 win64 dosutil txt
- 
+--- Makefile.orig	2013-07-25 18:28:59.000000000 +0900
++++ Makefile	2013-09-05 16:39:52.000000000 +0900
+@@ -53,18 +53,18 @@
+ # Note: libinstaller is both a BSUBDIR and an ISUBDIR.  It contains
+ # files that depend only on the B phase, but may have to be regenerated
+ # for "make installer".
+-BSUBDIRS = codepage com32 lzo core memdisk modules mbr memdump gpxe sample \
+-	   diag libinstaller dos win32 win64 dosutil
++#BSUBDIRS = codepage com32 lzo core memdisk modules mbr memdump gpxe sample \
++#	   diag libinstaller dos win32 win64 dosutil
  ITARGET  =
  IOBJECTS = $(ITARGET) \
  	utils/gethostip utils/isohybrid utils/mkdiskimage \
