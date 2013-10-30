@@ -14,5 +14,4 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES+=	bin/httpclient
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
