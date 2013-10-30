@@ -1,12 +1,12 @@
-Gwyddion is a modular SPM (Scanning Probe Microsopy) data visualization and
-analysis tool written with Gtk+.
+Gwyddion is a modular SPM (Scanning Probe Microsopy) data visualization
+and analysis tool written with Gtk+.
 
 It can be used for all most frequently used data processing operations
-including: leveling, false color plotting, shading, filtering, denoising, data
-editing, integral transforms, grain analysis, profile extraction, fractal
-analysis, and many more.  The program is primarily focused on SPM data analysis
-(e.g. data obtained from AFM, STM, NSOM, and similar microscopes).  However, it
-can also be used for analysis of SEM (Scanning Electron Microscopy) data or any
-other 2D data.
+including: leveling, false color plotting, shading, filtering,
+denoising, data editing, integral transforms, grain analysis, profile
+extraction, fractal analysis, and many more. The program is primarily
+focused on SPM data analysis (e.g. data obtained from AFM, STM, NSOM,
+and similar microscopes). However, it can also be used for analysis of
+SEM (Scanning Electron Microscopy) data or any other 2D data.
 
 WWW: http://gwyddion.net/

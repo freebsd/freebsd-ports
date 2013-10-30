@@ -15,6 +15,7 @@ include/gwyddion/app/gwymoduleutils.h
 include/gwyddion/app/gwyplaintool.h
 include/gwyddion/app/gwytool.h
 include/gwyddion/app/menu.h
+include/gwyddion/app/meta.h
 include/gwyddion/app/resource-editor.h
 include/gwyddion/app/settings.h
 include/gwyddion/app/undo.h
@@ -105,6 +106,7 @@ include/gwyddion/libgwymodule/gwymodule-graph.h
 include/gwyddion/libgwymodule/gwymodule-layer.h
 include/gwyddion/libgwymodule/gwymodule-process.h
 include/gwyddion/libgwymodule/gwymodule-tool.h
+include/gwyddion/libgwymodule/gwymodule-volume.h
 include/gwyddion/libgwymodule/gwymodule.h
 include/gwyddion/libgwymodule/gwymodulebrowser.h
 include/gwyddion/libgwymodule/gwymoduleenums.h
@@ -283,6 +285,8 @@ lib/gwyddion/modules/file/rhk-spm32.la
 lib/gwyddion/modules/file/rhk-spm32.so
 lib/gwyddion/modules/file/robotics.la
 lib/gwyddion/modules/file/robotics.so
+lib/gwyddion/modules/file/s94file.la
+lib/gwyddion/modules/file/s94file.so
 lib/gwyddion/modules/file/sdfile.la
 lib/gwyddion/modules/file/sdfile.so
 lib/gwyddion/modules/file/seiko.la
@@ -311,6 +315,8 @@ lib/gwyddion/modules/file/stpfile.la
 lib/gwyddion/modules/file/stpfile.so
 lib/gwyddion/modules/file/surffile.la
 lib/gwyddion/modules/file/surffile.so
+lib/gwyddion/modules/file/tescan.la
+lib/gwyddion/modules/file/tescan.so
 lib/gwyddion/modules/file/tiaser.la
 lib/gwyddion/modules/file/tiaser.so
 lib/gwyddion/modules/file/unisoku.la
@@ -329,6 +335,8 @@ lib/gwyddion/modules/file/wsxmfile.la
 lib/gwyddion/modules/file/wsxmfile.so
 lib/gwyddion/modules/file/zeiss.la
 lib/gwyddion/modules/file/zeiss.so
+lib/gwyddion/modules/file/zemax.la
+lib/gwyddion/modules/file/zemax.so
 lib/gwyddion/modules/graph/graph_cd.la
 lib/gwyddion/modules/graph/graph_cd.so
 lib/gwyddion/modules/graph/graph_cut.la
@@ -371,8 +379,6 @@ lib/gwyddion/modules/process/averaging.la
 lib/gwyddion/modules/process/averaging.so
 lib/gwyddion/modules/process/basicops.la
 lib/gwyddion/modules/process/basicops.so
-lib/gwyddion/modules/process/brickshow.la
-lib/gwyddion/modules/process/brickshow.so
 lib/gwyddion/modules/process/calcoefs_load.la
 lib/gwyddion/modules/process/calcoefs_load.so
 lib/gwyddion/modules/process/calcoefs_new.la
@@ -511,9 +517,12 @@ lib/gwyddion/modules/process/tipops.la
 lib/gwyddion/modules/process/tipops.so
 lib/gwyddion/modules/process/unrotate.la
 lib/gwyddion/modules/process/unrotate.so
+lib/gwyddion/modules/process/volumize.la
+lib/gwyddion/modules/process/volumize.so
+lib/gwyddion/modules/process/volumize_layers.la
+lib/gwyddion/modules/process/volumize_layers.so
 lib/gwyddion/modules/process/xydenoise.la
 lib/gwyddion/modules/process/xydenoise.so
-%%RUBY%%lib/gwyddion/ruby/gwyddion/dump.rb
 lib/gwyddion/modules/tool/crop.la
 lib/gwyddion/modules/tool/crop.so
 lib/gwyddion/modules/tool/distance.la
@@ -552,6 +561,14 @@ lib/gwyddion/modules/tool/spotremove.la
 lib/gwyddion/modules/tool/spotremove.so
 lib/gwyddion/modules/tool/stats.la
 lib/gwyddion/modules/tool/stats.so
+lib/gwyddion/modules/volume/volume_calibrate.la
+lib/gwyddion/modules/volume/volume_calibrate.so
+lib/gwyddion/modules/volume/volume_extract.la
+lib/gwyddion/modules/volume/volume_extract.so
+lib/gwyddion/modules/volume/volume_fdfit.la
+lib/gwyddion/modules/volume/volume_fdfit.so
+lib/gwyddion/modules/volume/volume_invert.la
+lib/gwyddion/modules/volume/volume_invert.so
 %%PERL%%lib/gwyddion/perl/Gwyddion/dump.pm
 %%PYTHON%%lib/gwyddion/python/Gwyddion/__init__.py
 %%PYTHON%%lib/gwyddion/python/Gwyddion/__init__.pyc
@@ -559,35 +576,39 @@ lib/gwyddion/modules/tool/stats.so
 %%PYTHON%%lib/gwyddion/python/Gwyddion/dump.py
 %%PYTHON%%lib/gwyddion/python/Gwyddion/dump.pyc
 %%PYTHON%%lib/gwyddion/python/Gwyddion/dump.pyo
+%%RUBY%%lib/gwyddion/ruby/gwyddion/dump.rb
 lib/libgwyapp2.la
 lib/libgwyapp2.so
-lib/libgwyapp2.so.7
+lib/libgwyapp2.so.9
 lib/libgwyddion2.la
 lib/libgwyddion2.so
 lib/libgwyddion2.so.10
 lib/libgwydgets2.la
 lib/libgwydgets2.so
-lib/libgwydgets2.so.12
+lib/libgwydgets2.so.13
 lib/libgwydraw2.la
 lib/libgwydraw2.so
-lib/libgwydraw2.so.1
+lib/libgwydraw2.so.2
 lib/libgwymodule2.la
 lib/libgwymodule2.so
-lib/libgwymodule2.so.5
+lib/libgwymodule2.so.6
 lib/libgwyprocess2.la
 lib/libgwyprocess2.so
-lib/libgwyprocess2.so.16
+lib/libgwyprocess2.so.17
 libdata/pkgconfig/gwyddion.pc
 libexec/gwyddion/plugins/file/dump
+%%RUBY%%libexec/gwyddion/plugins/process/invert_narray.rb
 %%PERL%%libexec/gwyddion/plugins/process/invert_perl.pl
 %%PERL%%libexec/gwyddion/plugins/process/invert_perl.pl.rgi
 %%PYTHON%%libexec/gwyddion/plugins/process/invert_python.py
 %%PYTHON%%libexec/gwyddion/plugins/process/invert_python.py.rgi
-%%RUBY%%libexec/gwyddion/plugins/process/invert_narray.rb
 %%RUBY%%libexec/gwyddion/plugins/process/invert_ruby.rb
 %%RUBY%%libexec/gwyddion/plugins/process/invert_ruby.rb.rgi
 libexec/gwyddion/plugins/process/yellow.sh
 libexec/gwyddion/plugins/process/yellow.sh.rgi
+man/man1/gwyddion.1.gz
+man/man1/gwyddion-thumbnailer.1.gz
+%%PERL%%man/man3/Gwyddion::dump.3pm.gz
 share/applications/gwyddion.desktop
 %%DATADIR%%/glmaterials/Alien-Alloy
 %%DATADIR%%/glmaterials/Black-Plastic
@@ -813,6 +834,7 @@ share/thumbnailers/gwyddion.thumbnailer
 %%PYTHON%%@dirrm lib/gwyddion/python
 %%PERL%%@dirrm lib/gwyddion/perl/Gwyddion
 %%PERL%%@dirrm lib/gwyddion/perl
+@dirrm lib/gwyddion/modules/volume
 @dirrm lib/gwyddion/modules/tool
 @dirrm lib/gwyddion/modules/process
 @dirrm lib/gwyddion/modules/layer
