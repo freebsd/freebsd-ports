@@ -1,15 +1,24 @@
-%%SITE_PERL%%/Class/props.pm
+%%PERL5_MAN3%%/Class::Error.3.gz
+%%PERL5_MAN3%%/Class::Util.3.gz
+%%PERL5_MAN3%%/Class::constr.3.gz
+%%PERL5_MAN3%%/Class::groups.3.gz
+%%PERL5_MAN3%%/Class::props.3.gz
+%%PERL5_MAN3%%/Object::groups.3.gz
+%%PERL5_MAN3%%/Object::props.3.gz
+%%PERL5_MAN3%%/Package::groups.3.gz
+%%PERL5_MAN3%%/Package::props.3.gz
+%%SITE_PERL%%/Class/Error.pm
+%%SITE_PERL%%/Class/Util.pm
 %%SITE_PERL%%/Class/constr.pm
 %%SITE_PERL%%/Class/groups.pm
-%%SITE_PERL%%/Class/Util.pm
-%%SITE_PERL%%/Class/Error.pm
+%%SITE_PERL%%/Class/props.pm
 %%SITE_PERL%%/Object/groups.pm
 %%SITE_PERL%%/Object/props.pm
 %%SITE_PERL%%/Package/groups.pm
 %%SITE_PERL%%/Package/props.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/props/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/props
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry %%SITE_PERL%%/Class
-@dirrmtry %%SITE_PERL%%/Object
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
 @dirrmtry %%SITE_PERL%%/Package
+@dirrmtry %%SITE_PERL%%/Object
+@dirrmtry %%SITE_PERL%%/Class

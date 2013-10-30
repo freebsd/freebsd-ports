@@ -17,10 +17,7 @@ RUN_DEPENDS=	p5-Sub-Install>=0:${PORTSDIR}/devel/p5-Sub-Install \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-MAN3=	Object::Enum.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

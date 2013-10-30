@@ -17,9 +17,4 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Object::Simple.3 \
-		Object::Simple::Accessor.3 \
-		Object::Simple::Guide.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

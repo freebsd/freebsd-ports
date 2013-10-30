@@ -19,7 +19,4 @@ RUN_DEPENDS=	p5-Params-Check>=0.34:${PORTSDIR}/devel/p5-Params-Check
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Object::Accessor.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
