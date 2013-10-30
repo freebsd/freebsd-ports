@@ -16,5 +16,4 @@ USE_RUBYGEMS=		yes
 GEM_NAME=		rubygems-test-${PORTVERSION}
 RUBYGEM_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
