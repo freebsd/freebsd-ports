@@ -25,6 +25,8 @@ SUB_LIST=	PROGRAM_DIR="${PREFIX}/lib/${PORTNAME}"
 
 WRKSRC=		${WRKDIR}/Gondola-${PORTVERSION}
 
+PORTDATA=	*
+
 DESKTOP_ENTRIES="Gondola" \
 		"Create and optimize a distribution network of gondolas" \
 		"" \
@@ -32,7 +34,6 @@ DESKTOP_ENTRIES="Gondola" \
 		"Game;StrategyGame;" \
 		false
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/|g' ${WRKSRC}/gamelib/*.py
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' \
@@ -40,11 +41,9 @@ post-patch:
 	@${RM} -f ${WRKSRC}/gamelib/*.{bak,orig}
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/${PORTNAME}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "snowui gamelib simplejson run_game.py" \
-		${PREFIX}/lib/${PORTNAME}
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC}/data && ${COPYTREE_SHARE} '*' ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME}/
+	cd ${WRKSRC}/data && ${COPYTREE_SHARE} '*' ${STAGEDIR}${DATADIR}/
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
