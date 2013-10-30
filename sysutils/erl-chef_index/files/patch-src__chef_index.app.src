@@ -1,0 +1,11 @@
+--- ./src/chef_index.app.src.orig	2013-10-30 12:57:34.000000000 +0900
++++ ./src/chef_index.app.src	2013-10-30 12:57:56.000000000 +0900
+@@ -18,7 +18,7 @@
+ {application, chef_index,
+  [
+   {description, "Chef search index tools"},
+-  {vsn, git},
++  {vsn, "%%PORTVERSION%%"},
+   {registered, []},
+   {applications, [
+                   kernel,
