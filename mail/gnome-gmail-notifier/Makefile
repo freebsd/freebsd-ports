@@ -15,10 +15,10 @@ LIB_DEPENDS=	notify.4:${PORTSDIR}/devel/libnotify \
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USES=		gettext gmake
+USES=		gettext gmake pkgconfig
 USE_GNOME=	glib20 gtk20 gconf2 libxml2 librsvg2
 USE_GSTREAMER=	good
-LDFLAGS+=	-lintl
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 NO_STAGE=	yes
 post-patch:
