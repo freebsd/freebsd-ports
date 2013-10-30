@@ -19,11 +19,6 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		JSON::RPC::Dispatcher.3 \
-		JSON::RPC::Dispatcher::App.3 \
-		JSON::RPC::Dispatcher::Procedure.3
-
-NO_STAGE=	yes
 post-patch:
 	${RM} ${WRKSRC}/lib/JSON/RPC/Dispatcher.pm.orig
 
