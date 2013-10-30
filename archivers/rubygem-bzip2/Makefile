@@ -10,7 +10,6 @@ DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby C bindings to libbzip2
 
-NO_STAGE=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 GEM_NAME=	${PORTNAME}-ruby-${PORTVERSION}
