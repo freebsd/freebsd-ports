@@ -14,6 +14,7 @@ LICENSE=	BSD
 
 USE_BZIP2=	YES
 USE_RC_SUBR=	bozohttpd
+NEED_ROOT=	yes
 
 #options handling
 OPTIONS_DEFINE=		HTPASSWD SSL CGI
