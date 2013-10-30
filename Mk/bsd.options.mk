@@ -53,7 +53,7 @@
 # "make config".
 #
 # OPTIONS_SET				- List of options to enable for all ports.
-# OPTIONS_UNSET				- List of options to disable for all ports. 
+# OPTIONS_UNSET				- List of options to disable for all ports.
 # ${OPTIONS_NAME}_SET		- List of options to enable for a specific port.
 # ${OPTIONS_NAME}_UNSET		- List of options to disable for a specific port.
 #
@@ -87,7 +87,7 @@
 # ${opt}_CONFIGURE_WITH		Will add to CONFIGURE_ARGS:
 #							Option enabled  --with-${content}
 #							Option disabled --without-${content}
-#			
+#
 # ${opt}_CMAKE_ON			When option is enabled, it will add its content to
 #							the CMAKE_ARGS.
 # ${opt}_CMAKE_OFF			When option is disabled, it will add its content to
@@ -236,18 +236,14 @@ NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .  if exists(${OPTIONSFILE}) && !make(rmconfig)
 .  include "${OPTIONSFILE}"
 .  endif
-.  if exists(${OPTIONSFILE}.local)
-.  include "${OPTIONSFILE}.local"
-.  endif
+.  sinclude "${OPTIONSFILE}.local"
 # XXX to remove once UNIQUENAME is removed
 
 ## options files (from dialog)
 .  if exists(${OPTIONS_FILE}) && !make(rmconfig)
 .  include "${OPTIONS_FILE}"
 .  endif
-.  if exists(${OPTIONS_FILE}.local)
-.  include "${OPTIONS_FILE}.local"
-.  endif
+.  sinclude "${OPTIONS_FILE}.local"
 
 ### convert WITH and WITHOUT found in make.conf or reloaded from old optionsfile
 .for opt in ${ALL_OPTIONS}
@@ -406,9 +402,9 @@ CONFIGURE_ARGS+=	${${opt}_CONFIGURE_ON}
 .    if defined(${opt}_CMAKE_ON)
 CMAKE_ARGS+=	${${opt}_CMAKE_ON}
 .    endif
-.    for flags in CFLAGS CPPFLAGS CXXFLAGS LDFLAGS CONFIGURE_ENV MAKE_ARGS MAKE_ENV \
-                  ALL_TARGET INSTALL_TARGET USES DISTFILES PLIST_FILES PLIST_DIRS PLIST_DIRSTRY \
-                  EXTRA_PATCHES PATCHFILES PATCH_SITES CATEGORIES
+.    for flags in CFLAGS CPPFLAGS CXXFLAGS LDFLAGS CONFIGURE_ENV MAKE_ARGS \
+         MAKE_ENV ALL_TARGET INSTALL_TARGET USES DISTFILES PLIST_FILES \
+         PLIST_DIRS PLIST_DIRSTRY EXTRA_PATCHES PATCHFILES PATCH_SITES CATEGORIES
 .      if defined(${opt}_${flags})
 ${flags}+=	${${opt}_${flags}}
 .      endif
@@ -437,6 +433,5 @@ CMAKE_ARGS+=	${${opt}_CMAKE_OFF}
 .    endif
 .  endif
 .endfor
-
 
 .endif
