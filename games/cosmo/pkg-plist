@@ -1,5 +1,13 @@
+@group games
+@mode 2555
 bin/cosmo
-lib/X11/cosmo/cosmorc
+@mode
+@mode 664
 lib/X11/cosmo/best.dat
+@mode
+@group
+lib/X11/cosmo/cosmorc
 lib/X11/cosmo/moon.tif.gz
+@mode 711
 @dirrm lib/X11/cosmo
+@mode
