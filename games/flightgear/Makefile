@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flightgear
-PORTVERSION=	2.10.0
+PORTVERSION=	2.12.0
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
 MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Source/ \
@@ -16,10 +16,11 @@ COMMENT=	The FlightGear flight simulator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		boost_thread:${PORTSDIR}/devel/boost-libs \
-		fltk:${PORTSDIR}/x11-toolkits/fltk \
-		osg:${PORTSDIR}/graphics/osg
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
+		libosg.so:${PORTSDIR}/graphics/osg
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/lib/libSimGearCore.a:${PORTSDIR}/devel/simgear
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
@@ -32,16 +33,13 @@ USE_GL=		gl glu glut
 USE_OPENAL=	al alut
 USES=		cmake
 CMAKE_ARGS+=	-DJPEG_FACTORY:BOOL=ON \
+		-DENABLE_JS_SERVER:BOOL=ON \
 		-DFG_DATA_DIR:PATH=${LOCALBASE}/share/${PORTNAME} \
 		-DCMAKE_INSTALL_MANDIR:PATH=${MANPREFIX}/man
 
-MAN1=	js_demo.1 fgjs.1 gl-info.1 fgfs.1 fgpanel.1 terrasync.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/utils/js_server/js_server ${PREFIX}/bin
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/utils/js_server/js_server ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
