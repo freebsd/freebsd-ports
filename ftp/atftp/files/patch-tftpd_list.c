@@ -1,5 +1,5 @@
---- tftpd_list.c.orig	2010-10-11 12:44:39.000000000 +0800
-+++ tftpd_list.c	2010-10-11 12:44:34.000000000 +0800
+--- tftpd_list.c.orig	2004-02-27 10:05:26.000000000 +0800
++++ tftpd_list.c	2013-10-30 13:25:57.000000000 +0800
 @@ -137,23 +137,17 @@
                                               struct thread_data *data,
                                               struct client_info *client)
@@ -40,3 +40,12 @@
                      {
                           *thread = current;                         
                           /* insert the new client at the end. If the client is already
+@@ -202,7 +196,7 @@
+      return 0;
+ }
+ 
+-inline void tftpd_clientlist_ready(struct thread_data *thread)
++void tftpd_clientlist_ready(struct thread_data *thread)
+ {
+      pthread_mutex_lock(&thread->client_mutex);
+      thread->client_ready = 1;

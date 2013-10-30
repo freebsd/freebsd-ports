@@ -16,11 +16,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.dfsg
 USE_RC_SUBR=	atftpd
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/atftp \
-		sbin/atftpd
+PLIST_FILES=	bin/atftp sbin/atftpd man/man1/atftp.1.gz man/man8/atftpd.8.gz
 
-MAN1=		atftp.1
-MAN8=		atftpd.8
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
