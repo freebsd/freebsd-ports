@@ -3,8 +3,23 @@ $FreeBSD$
 
 --- Makefile.orig
 +++ Makefile
-@@ -23,6 +23,10 @@
+@@ -19,30 +19,34 @@
+ #   % make COPTS="-DDO_HTPASSWD"
+ 
+ COPTS+=	-DDO_HTPASSWD
+-PROG=	httpd
+-MAN=	httpd.8
+-BUILDSYMLINKS+=bozohttpd.8 httpd.8
++PROG=	bozohttpd
++MAN=	bozohttpd.8
++#BUILDSYMLINKS+=bozohttpd.8
+ SRCS=	bozohttpd.c ssl-bozo.c auth-bozo.c cgi-bozo.c daemon-bozo.c \
+ 	tilde-luzah-bozo.c dir-index-bozo.c content-bozo.c
  SRCS+=	main.c
+ 
+-LDADD=	-lcrypt
++LDADD=	-lcrypt -lcrypto -lssl
+ DPADD=	${LIBCRYPT}
  
  WARNS?=	4
 +NO_WERROR=1
@@ -12,5 +27,30 @@ $FreeBSD$
 +BINDIR=$(PREFIX)/libexec
 +MANDIR=$(PREFIX)/man/man
  
- check:
- 	cd $(.CURDIR)/testsuite && $(MAKE) check
+-.include <bsd.own.mk>
+-
+-.if ${MKCRYPTO} != "no"
+-
+-LDADD+=	-lssl -lcrypto
+-DPADD+=	${LIBSSL} ${LIBCRYPTO}
+-
+-.else
+-
+-COPTS+=	-DNO_SSL_SUPPORT
+-
+-.endif
++#.include <bsd.own.mk>
++#
++#.if ${PORT_OPTIONS:MSSL}
++#
++#LDADD+=	-lssl -lcrypto
++#DPADD+=	${LIBSSL} ${LIBCRYPTO}
++#
++#.else
++#
++#COPTS+=	-DNO_SSL_SUPPORT
++#
++#.endif
+ 
+ #
+ # Build release things.
