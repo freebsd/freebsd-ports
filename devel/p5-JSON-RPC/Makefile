@@ -23,21 +23,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		JSON::RPC.3 \
-		JSON::RPC::Constants.3 \
-		JSON::RPC::Dispatch.3 \
-		JSON::RPC::Legacy.3 \
-		JSON::RPC::Legacy::Client.3 \
-		JSON::RPC::Legacy::Procedure.3 \
-		JSON::RPC::Legacy::Server.3 \
-		JSON::RPC::Legacy::Server::Apache2.3 \
-		JSON::RPC::Legacy::Server::CGI.3 \
-		JSON::RPC::Legacy::Server::Daemon.3 \
-		JSON::RPC::Parser.3 \
-		JSON::RPC::Procedure.3 \
-		JSON::RPC::Test.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

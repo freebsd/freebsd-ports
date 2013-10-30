@@ -1,3 +1,16 @@
+%%PERL5_MAN3%%/JSON::RPC.3.gz
+%%PERL5_MAN3%%/JSON::RPC::Constants.3.gz
+%%PERL5_MAN3%%/JSON::RPC::Dispatch.3.gz
+%%PERL5_MAN3%%/JSON::RPC::Legacy.3.gz
+%%PERL5_MAN3%%/JSON::RPC::Legacy::Client.3.gz
+%%PERL5_MAN3%%/JSON::RPC::Legacy::Procedure.3.gz
+%%PERL5_MAN3%%/JSON::RPC::Legacy::Server.3.gz
+%%PERL5_MAN3%%/JSON::RPC::Legacy::Server::Apache2.3.gz
+%%PERL5_MAN3%%/JSON::RPC::Legacy::Server::CGI.3.gz
+%%PERL5_MAN3%%/JSON::RPC::Legacy::Server::Daemon.3.gz
+%%PERL5_MAN3%%/JSON::RPC::Parser.3.gz
+%%PERL5_MAN3%%/JSON::RPC::Procedure.3.gz
+%%PERL5_MAN3%%/JSON::RPC::Test.3.gz
 %%SITE_PERL%%/JSON/RPC.pm
 %%SITE_PERL%%/JSON/RPC/Constants.pm
 %%SITE_PERL%%/JSON/RPC/Dispatch.pm
@@ -12,9 +25,9 @@
 %%SITE_PERL%%/JSON/RPC/Procedure.pm
 %%SITE_PERL%%/JSON/RPC/Test.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/RPC/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/RPC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/RPC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON
 @dirrm %%SITE_PERL%%/JSON/RPC/Legacy/Server
 @dirrm %%SITE_PERL%%/JSON/RPC/Legacy
-@dirrm %%SITE_PERL%%/JSON/RPC
+@dirrmtry %%SITE_PERL%%/JSON/RPC
 @dirrmtry %%SITE_PERL%%/JSON
