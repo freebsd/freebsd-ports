@@ -1,0 +1,14 @@
+--- ./CMakeLists.txt.orig	2013-10-29 18:29:33.000000000 +0000
++++ ./CMakeLists.txt	2013-10-29 23:51:59.000000000 +0000
+@@ -11,6 +11,11 @@
+ 
+ include(GNUInstallDirs)
+ 
++if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
++    unset(CMAKE_INSTALL_MANDIR)
++    set(CMAKE_INSTALL_MANDIR ${CMAKE_INSTALL_PREFIX}/man)
++endif()
++
+ add_subdirectory(src)
+ add_subdirectory(po)
+ add_subdirectory(icons)

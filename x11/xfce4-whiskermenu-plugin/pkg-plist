@@ -1,5 +1,6 @@
 bin/xfce4-popup-whiskermenu
 lib/xfce4/panel/plugins/libwhiskermenu.so
+man/man1/xfce4-popup-whiskermenu.1.gz
 share/icons/hicolor/128x128/apps/xfce4-whiskermenu.png
 share/icons/hicolor/16x16/apps/xfce4-whiskermenu.png
 share/icons/hicolor/22x22/apps/xfce4-whiskermenu.png
@@ -12,13 +13,17 @@ share/icons/hicolor/scalable/apps/xfce4-whiskermenu.svg
 share/locale/ar/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/bg/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
+share/locale/cs/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/da/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/de/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/el/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/en_GB/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/es/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
+share/locale/et/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
+share/locale/fi/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/fr/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/he/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
+share/locale/hr/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/hu/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/id/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
@@ -33,13 +38,20 @@ share/locale/pt_BR/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/ro/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/ru/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/sk/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
+share/locale/sr@latin/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/tr/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
+share/locale/uk/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
+share/locale/uz/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/vi/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/xfce4/panel/plugins/whiskermenu.desktop
 @dirrmtry share/xfce4/panel/plugins
 @dirrmtry share/xfce4/panel
 @dirrmtry share/xfce4
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry lib/xfce4/panel/plugins
 @dirrmtry lib/xfce4/panel
 @dirrmtry lib/xfce4
