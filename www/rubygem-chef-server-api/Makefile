@@ -25,5 +25,4 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/chef-server
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

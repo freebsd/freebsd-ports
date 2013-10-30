@@ -27,5 +27,4 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/chef-server-webui
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
