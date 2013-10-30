@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/opscoderl_wm.app
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/oc_wm_request_writer.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/oc_wm_request.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/oc_wm_request_logger.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/oc_wm_request.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/oc_wm_request_logger.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/oc_wm_request_writer.erl
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%
