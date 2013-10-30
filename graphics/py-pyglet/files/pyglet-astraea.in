@@ -1,7 +1,0 @@
-#!/bin/sh
-#
-# # $FreeBSD$
-#
-
-cd "%%EXAMPLESDIR%%/astraea"
-exec /usr/bin/env python ./astraea.py "${@}"

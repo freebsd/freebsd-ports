@@ -1,7 +1,0 @@
-#!/bin/sh
-#
-# # $FreeBSD$
-#
-
-cd "%%EXAMPLESDIR%%/noisy"
-exec /usr/bin/env python ./noisy.py "${@}"
