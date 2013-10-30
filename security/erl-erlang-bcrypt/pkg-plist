@@ -1,0 +1,24 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/bcrypt_sup.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/bcrypt_port_sup.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/bcrypt_port.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/bcrypt_pool.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/bcrypt_nif_worker.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/bcrypt_nif.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/bcrypt_app.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/bcrypt.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/bcrypt_nif.so
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/bcrypt
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/bcrypt_sup.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/bcrypt_port_sup.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/bcrypt_port.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/bcrypt_pool.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/bcrypt_nif_worker.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/bcrypt_nif.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/bcrypt_app.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/bcrypt.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/bcrypt.app
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%
