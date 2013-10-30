@@ -78,6 +78,17 @@ RELTYPE=		Release
 BROKEN=		Does not compile on sparc64
 .endif
 
+.if ${PORT_OPTIONS:MASSERTS}
+pre-fetch:
+	@if [ "`llvm-config${LLVM_SUFFIX} --build-mode`" != ${RELTYPE} ]; then \
+		${ECHO_MSG}	;\
+		${ECHO_MSG} ASSERTS option enabled, but devel/llvm${LLVM_SUFFIX} was compiled without ASSERTS. ;\
+		${ECHO_MSG} Correct options mismatch to proceed. ;\
+		${ECHO_MSG}	;\
+		false	;\
+	fi
+.endif
+
 post-extract:
 	${RM} -f ${BUILD_WRKSRC}
 	${MV} ${WRKDIR}/${CLANG_NAME} ${BUILD_WRKSRC}
