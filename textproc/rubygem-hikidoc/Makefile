@@ -16,5 +16,4 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/hikidoc
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
