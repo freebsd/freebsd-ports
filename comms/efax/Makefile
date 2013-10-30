@@ -12,7 +12,7 @@ COMMENT=	Fax send/receive program
 
 RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage
 
-USE_GMAKE=	YES
+USES=		gmake
 MAN1=		fax.1 \
 		efax.1 \
 		efix.1
@@ -23,8 +23,6 @@ MAKE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_DATA="${INSTALL_DATA}"
 
 CONFLICTS=	efax-gtk-*
-
-OPTIONS_DEFINE=	DOCS
 
 NO_STAGE=	yes
 post-build:
