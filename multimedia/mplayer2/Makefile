@@ -27,7 +27,8 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		TMPDIR="${WRKSRC}"
 CONFIGURE_ARGS=	--cc=${CC} \
 		--extra-cflags='-I${LOCALBASE}/include/portaudio2' \
-		--extra-ldflags='-lavresample -L${LOCALBASE}/lib/portaudio2' \
+		--extra-libs='-lavresample' \
+		--extra-ldflags='-L${LOCALBASE}/lib/portaudio2' \
 		--mandir=${PREFIX}/man \
 		--enable-libavresample \
 		--disable-alsa \
