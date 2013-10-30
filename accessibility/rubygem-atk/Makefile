@@ -10,7 +10,6 @@ COMMENT=	Ruby binding for ATK
 
 RUN_DEPENDS=	rubygem-glib2>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-glib2
 
-NO_STAGE=	yes
 USE_GNOME=	atk
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

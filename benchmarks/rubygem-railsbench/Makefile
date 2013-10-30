@@ -20,7 +20,6 @@ OPTIONS_DEFINE=	GRUFF
 GRUFF_DESC=	Plotting of perf data support using gruff
 OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGRUFF}

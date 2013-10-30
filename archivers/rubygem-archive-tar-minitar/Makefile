@@ -9,7 +9,6 @@ DISTNAME=	archive-tar-minitar-${PORTVERSION}
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	library and command-line utility for tar archives
 
-NO_STAGE=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

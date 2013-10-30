@@ -11,7 +11,6 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby library to access to information on ogg files
 
 USE_RUBY=	yes
-NO_STAGE=	yes
 USE_RUBYGEMS=	yes
 GEM_NAME=	${DISTNAME}
 RUBYGEM_AUTOPLIST=	yes
