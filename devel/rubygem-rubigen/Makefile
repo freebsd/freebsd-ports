@@ -19,5 +19,4 @@ PLIST_FILES=	bin/install_rubigen_scripts	\
 		bin/rubigen			\
 		bin/ruby_app
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
