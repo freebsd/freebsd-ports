@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gwyddion
-PORTVERSION=	2.31
+PORTVERSION=	2.33
 CATEGORIES=	science graphics
 MASTER_SITES=	SF
 
@@ -11,19 +11,20 @@ COMMENT=	Gtk2 based SPM data visualization and analysis tool
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
-		fftw3:${PORTSDIR}/math/fftw3 \
-		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
+		libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
 
 OPTIONS_DEFINE=	PERL PYTHON RUBY UNIQUE
 OPTIONS_DEFAULT=PERL PYTHON UNIQUE
+OPTIONS_SUB=	yes
 UNIQUE_DESC=	Remote controle backend support
 
 USE_XZ=		yes
-USES=		desktop-file-utils gettext pathfix shared-mime-info pkgconfig
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
+		shared-mime-info
 USE_GNOME=	gconf2 gtk20 libxml2
 USE_GL=		glu
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules --disable-gtk-doc \
 		--disable-pygwy --without-gtksourceview \
@@ -36,40 +37,21 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	gwyddion-thumbnailer.schemas
 
-MAN1=		gwyddion.1 gwyddion-thumbnailer.1
+PERL_CONFIGURE_OFF=	--without-perl
+PERL_USES=		perl5
+PYTHON_CONFIGURE_OFF=	--without-python
+RUBY_CONFIGURE_OFF=	--without-ruby
+UNIQUE_CONFIGURE_OFF=	--without-unique
+UNIQUE_LIB_DEPENDS=	libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPERL}
-USES+=		perl5
-MAN3+=		Gwyddion::dump.3pm
-PLIST_SUB+=	PERL=""
-.else
-CONFIGURE_ARGS+=--without-perl
-PLIST_SUB+=	PERL="@comment "
-.endif
 
 .if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	yes
-PLIST_SUB+=	PYTHON=""
-.else
-CONFIGURE_ARGS+=--without-python
-PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MRUBY}
 USE_RUBY=	yes
-PLIST_SUB+=	RUBY=""
-.else
-CONFIGURE_ARGS+=--without-ruby
-PLIST_SUB+=	RUBY="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MUNIQUE}
-LIB_DEPENDS+=	unique-1.0:${PORTSDIR}/x11-toolkits/unique
-.else
-CONFIGURE_ARGS+=--without-unique
 .endif
 
 post-patch:
