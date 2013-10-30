@@ -12,13 +12,15 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Navigate a mech through a 3D world and fire at enemies
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_OPENAL=	al alut
 USE_GL=		gl glu
 USE_SDL=	sdl
-USE_GCC=	4.2+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+PLIST_FILES=	bin/${PORTNAME}
+PORTDATA=	*
 
 DESKTOP_ENTRIES="LinWarrior 3D" \
 		"Mech Simulation Game" \
@@ -27,7 +29,6 @@ DESKTOP_ENTRIES="LinWarrior 3D" \
 		"Game;ActionGame;Simulation;" \
 		false
 
-NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} -type d -exec chmod a+rx {} \;
 	@${FIND} ${WRKSRC} -type f -exec chmod a+r {} \;
@@ -38,8 +39,7 @@ post-patch:
 		${REINPLACE_CMD} -e 's|data/|${DATADIR}/|'
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dist/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC}/data && ${COPYTREE_SHARE} '*' ${DATADIR}/
+	${INSTALL_PROGRAM} ${WRKSRC}/dist/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	cd ${WRKSRC}/data && ${COPYTREE_SHARE} '*' ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
