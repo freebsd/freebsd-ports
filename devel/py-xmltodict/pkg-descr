@@ -1,5 +1,4 @@
 xmltodict is a Python module that makes working with XML feel like you are
 working with JSON.
 
-
-WWW: https://pypi.python.org/pypi/xmltodict
+WWW: https://github.com/martinblech/xmltodict
