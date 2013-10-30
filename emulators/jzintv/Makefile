@@ -3,6 +3,7 @@
 
 PORTNAME=	jzintv
 PORTVERSION=	1.0b4
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://spatula-city.org/~im14u2c/intv/dl/
 DISTFILES=	${PORTNAME}-1.0-beta4-src${EXTRACT_SUFX} \
@@ -15,7 +16,7 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/jzintv-1.0-beta4
 BUILD_WRKSRC=	${WRKSRC}/src
-USE_GMAKE=	yes
+USES=	gmake
 USE_XORG=	x11 xau xdmcp
 USE_SDL=	sdl
 USE_ZIP=	yes
@@ -31,7 +32,6 @@ TOOLS=	as1600 bin2rom cgc_update crc32 dasm0256 dasm1600 dasm1600o dis1600 \
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MTOOLS}
@@ -49,21 +49,21 @@ pre-build:
 	${MKDIR} ${WRKSRC}/rom
 
 do-install:
-	${MKDIR} ${DATADIR}/rom
-	${INSTALL_DATA} ${WRKSRC}/rom/*.rom ${DATADIR}/rom/
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/jzintv ${PREFIX}/bin/jzintv
+	${MKDIR} ${STAGEDIR}${DATADIR}/rom
+	${INSTALL_DATA} ${WRKSRC}/rom/*.rom ${STAGEDIR}${DATADIR}/rom/
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/jzintv ${STAGEDIR}${PREFIX}/bin/jzintv
 .if ${PORT_OPTIONS:MTOOLS}
 .for tool in ${TOOLS}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${tool} ${PREFIX}/bin/jzintv-${tool}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${tool} ${STAGEDIR}${PREFIX}/bin/jzintv-${tool}
 .endfor
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/doc
-	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${DOCSDIR}/doc)
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/doc
+	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}/doc)
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
 .endif
 	@${CAT} ${PKGMESSAGE}
 
