@@ -18,5 +18,4 @@ RUBYGEM_AUTOPLIST=	yes
 
 CONFIGURE_ARGS+=	--with-opt-dir=${LOCALBASE}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
