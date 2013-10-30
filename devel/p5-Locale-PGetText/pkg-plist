@@ -1,7 +1,10 @@
-bin/XText
 bin/MsgFormat
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/PGetText/.packlist
+bin/XText
+%%PERL5_MAN3%%/Locale::PGetText.3.gz
 %%SITE_PERL%%/Locale/PGetText.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/PGetText/.packlist
+man/man1/MsgFormat.1.gz
+man/man1/XText.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/PGetText
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale
 @dirrmtry %%SITE_PERL%%/Locale

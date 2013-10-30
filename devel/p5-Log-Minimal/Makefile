@@ -16,12 +16,6 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	modbuild
 
-PLIST_FILES=	%%SITE_PERL%%/Log/Minimal.pm
-PLIST_DIRSTRY=	%%SITE_PERL%%/Log
-
-MAN3=		Log::Minimal.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

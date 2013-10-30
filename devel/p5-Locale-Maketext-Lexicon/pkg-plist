@@ -1,4 +1,21 @@
 bin/xgettext.pl
+%%PERL5_MAN3%%/Locale::Maketext::Extract.3.gz
+%%PERL5_MAN3%%/Locale::Maketext::Extract::Plugin::Base.3.gz
+%%PERL5_MAN3%%/Locale::Maketext::Extract::Plugin::FormFu.3.gz
+%%PERL5_MAN3%%/Locale::Maketext::Extract::Plugin::Generic.3.gz
+%%PERL5_MAN3%%/Locale::Maketext::Extract::Plugin::Haml.3.gz
+%%PERL5_MAN3%%/Locale::Maketext::Extract::Plugin::Mason.3.gz
+%%PERL5_MAN3%%/Locale::Maketext::Extract::Plugin::PPI.3.gz
+%%PERL5_MAN3%%/Locale::Maketext::Extract::Plugin::Perl.3.gz
+%%PERL5_MAN3%%/Locale::Maketext::Extract::Plugin::TT2.3.gz
+%%PERL5_MAN3%%/Locale::Maketext::Extract::Plugin::TextTemplate.3.gz
+%%PERL5_MAN3%%/Locale::Maketext::Extract::Plugin::YAML.3.gz
+%%PERL5_MAN3%%/Locale::Maketext::Extract::Run.3.gz
+%%PERL5_MAN3%%/Locale::Maketext::Lexicon.3.gz
+%%PERL5_MAN3%%/Locale::Maketext::Lexicon::Auto.3.gz
+%%PERL5_MAN3%%/Locale::Maketext::Lexicon::Gettext.3.gz
+%%PERL5_MAN3%%/Locale::Maketext::Lexicon::Msgcat.3.gz
+%%PERL5_MAN3%%/Locale::Maketext::Lexicon::Tie.3.gz
 %%SITE_PERL%%/Locale/Maketext/Extract.pm
 %%SITE_PERL%%/Locale/Maketext/Extract/Plugin/Base.pm
 %%SITE_PERL%%/Locale/Maketext/Extract/Plugin/FormFu.pm
@@ -17,6 +34,7 @@ bin/xgettext.pl
 %%SITE_PERL%%/Locale/Maketext/Lexicon/Msgcat.pm
 %%SITE_PERL%%/Locale/Maketext/Lexicon/Tie.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Maketext/Lexicon/.packlist
+man/man1/xgettext.pl.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Maketext/Lexicon
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Maketext
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale

@@ -25,7 +25,4 @@ TEST_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Log::Any::App.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

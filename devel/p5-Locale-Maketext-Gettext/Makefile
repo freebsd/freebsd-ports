@@ -13,19 +13,13 @@ COMMENT=	Joins gettext and Maketext frameworks
 
 USES=		perl5
 USE_PERL5=	configure
-NO_STAGE=	yes
-
-MAN1=		maketext.1
-MAN3=		Locale::Maketext::Gettext.3 \
-		Locale::Maketext::Gettext::Functions.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	BUGS Changes README THANKS
 
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -1,3 +1,20 @@
+%%PERL5_MAN3%%/Log::Dispatch.3.gz
+%%PERL5_MAN3%%/Log::Dispatch::ApacheLog.3.gz
+%%PERL5_MAN3%%/Log::Dispatch::Base.3.gz
+%%PERL5_MAN3%%/Log::Dispatch::Code.3.gz
+%%PERL5_MAN3%%/Log::Dispatch::Conflicts.3.gz
+%%PERL5_MAN3%%/Log::Dispatch::Email.3.gz
+%%PERL5_MAN3%%/Log::Dispatch::Email::MIMELite.3.gz
+%%PERL5_MAN3%%/Log::Dispatch::Email::MailSend.3.gz
+%%PERL5_MAN3%%/Log::Dispatch::Email::MailSender.3.gz
+%%PERL5_MAN3%%/Log::Dispatch::Email::MailSendmail.3.gz
+%%PERL5_MAN3%%/Log::Dispatch::File.3.gz
+%%PERL5_MAN3%%/Log::Dispatch::File::Locked.3.gz
+%%PERL5_MAN3%%/Log::Dispatch::Handle.3.gz
+%%PERL5_MAN3%%/Log::Dispatch::Null.3.gz
+%%PERL5_MAN3%%/Log::Dispatch::Output.3.gz
+%%PERL5_MAN3%%/Log::Dispatch::Screen.3.gz
+%%PERL5_MAN3%%/Log::Dispatch::Syslog.3.gz
 %%SITE_PERL%%/Log/Dispatch.pm
 %%SITE_PERL%%/Log/Dispatch/ApacheLog.pm
 %%SITE_PERL%%/Log/Dispatch/Base.pm
@@ -17,8 +34,8 @@
 %%SITE_PERL%%/Log/Dispatch/Syslog.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Dispatch/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Dispatch
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log
 @dirrm %%SITE_PERL%%/Log/Dispatch/File
 @dirrm %%SITE_PERL%%/Log/Dispatch/Email
 @dirrm %%SITE_PERL%%/Log/Dispatch
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log
 @dirrmtry %%SITE_PERL%%/Log

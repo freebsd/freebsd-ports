@@ -28,26 +28,8 @@ MAILSENDMAIL_DESC=	Mail::Sendmail support
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Log::Dispatch.3 \
-		Log::Dispatch::ApacheLog.3 \
-		Log::Dispatch::Base.3 \
-		Log::Dispatch::Code.3 \
-		Log::Dispatch::Conflicts.3 \
-		Log::Dispatch::Email.3 \
-		Log::Dispatch::Email::MIMELite.3 \
-		Log::Dispatch::Email::MailSend.3 \
-		Log::Dispatch::Email::MailSender.3 \
-		Log::Dispatch::Email::MailSendmail.3 \
-		Log::Dispatch::File.3 \
-		Log::Dispatch::File::Locked.3 \
-		Log::Dispatch::Handle.3 \
-		Log::Dispatch::Null.3 \
-		Log::Dispatch::Output.3 \
-		Log::Dispatch::Screen.3 \
-		Log::Dispatch::Syslog.3
 PORTDOCS=	Changes README
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPACHELOG}
@@ -73,9 +55,8 @@ RUN_DEPENDS+=	p5-Mail-Sendmail>=0:${PORTSDIR}/mail/p5-Mail-Sendmail
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>

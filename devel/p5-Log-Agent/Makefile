@@ -15,30 +15,4 @@ LICENSE=	ART20
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Log::Agent.3 \
-		Log::Agent::Channel.3 \
-		Log::Agent::Channel::File.3 \
-		Log::Agent::Channel::Handle.3 \
-		Log::Agent::Channel::Syslog.3 \
-		Log::Agent::Driver.3 \
-		Log::Agent::Driver::Datum.3 \
-		Log::Agent::Driver::Default.3 \
-		Log::Agent::Driver::File.3 \
-		Log::Agent::Driver::Fork.3 \
-		Log::Agent::Driver::Mail.3 \
-		Log::Agent::Driver::Silent.3 \
-		Log::Agent::Driver::Syslog.3 \
-		Log::Agent::File::Native.3 \
-		Log::Agent::Message.3 \
-		Log::Agent::Priorities.3 \
-		Log::Agent::Stamping.3 \
-		Log::Agent::Tag.3 \
-		Log::Agent::Tag::Callback.3 \
-		Log::Agent::Tag::Caller.3 \
-		Log::Agent::Tag::Priority.3 \
-		Log::Agent::Tag::String.3 \
-		Log::Agent::Tag_List.3 \
-		Log::changes.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

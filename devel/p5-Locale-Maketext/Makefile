@@ -19,11 +19,4 @@ TEST_DEPENDS=	p5-Test-Pod>=1.14:${PORTSDIR}/devel/p5-Test-Pod
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Locale::Maketext.3 \
-		Locale::Maketext::Cookbook.3 \
-		Locale::Maketext::Guts.3 \
-		Locale::Maketext::GutsLoader.3 \
-		Locale::Maketext::TPJ13.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

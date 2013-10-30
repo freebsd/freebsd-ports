@@ -1,4 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Agent/Logger/.packlist
+%%PERL5_MAN3%%/Log::Agent::Logger.3.gz
 %%SITE_PERL%%/Log/Agent/Logger.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Agent/Logger/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Agent/Logger
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Agent
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log
+@dirrmtry %%SITE_PERL%%/Log/Agent
+@dirrmtry %%SITE_PERL%%/Log

@@ -14,10 +14,4 @@ COMMENT=	Compile .po files to .mo files
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Locale::Msgfmt::Utils.3 \
-		Locale::Msgfmt::mo.3 \
-		Locale::Msgfmt::po.3 \
-		Locale::Msgfmt.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
