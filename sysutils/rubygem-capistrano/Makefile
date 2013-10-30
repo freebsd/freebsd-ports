@@ -21,7 +21,6 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/cap bin/capify
 
-NO_STAGE=	yes
 post-install:
 	@${ECHO_MSG} "======================================================================"
 	@${ECHO_MSG}
