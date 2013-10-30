@@ -157,6 +157,7 @@
     SUBDIR += py-obspy
     SUBDIR += py-paida
     SUBDIR += py-pupynere
+    SUBDIR += py-pydap
     SUBDIR += py-pydicom
     SUBDIR += py-scikit-learn
     SUBDIR += py-scimath
