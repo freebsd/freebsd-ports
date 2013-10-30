@@ -5,6 +5,7 @@ PORTNAME=	sqerl
 PORTVERSION=	0.0.1
 #PORTREVISION=	0
 CATEGORIES=	databases
+PKGNAMEPREFIX=	erl-
 
 MAINTAINER=	tomoyukis@reallyenglish.com
 COMMENT=	Database layer originally written for chef
