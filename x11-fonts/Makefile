@@ -92,6 +92,7 @@
     SUBDIR += gnu-unifont-ttf
     SUBDIR += gohufont
     SUBDIR += hanazono-fonts-ttf
+    SUBDIR += inconsolata-lgc-ttf
     SUBDIR += inconsolata-ttf
     SUBDIR += indic-ttf
     SUBDIR += intlfonts
