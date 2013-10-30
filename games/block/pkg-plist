@@ -1,9 +1,11 @@
 bin/block
 bin/bed
-share/block/1.block
-share/block/2.block
-share/block/3.block
-share/block/4.block
-share/block/5.block
-share/block/6.block
-@dirrm share/block
+man/man6/bed.6.gz
+man/man6/block.6.gz
+%%DATADIR%%/1.block
+%%DATADIR%%/2.block
+%%DATADIR%%/3.block
+%%DATADIR%%/4.block
+%%DATADIR%%/5.block
+%%DATADIR%%/6.block
+@dirrm %%DATADIR%%
