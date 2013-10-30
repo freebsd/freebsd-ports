@@ -1,4 +1,5 @@
 bin/crack-attack
+man/man6/crack-attack.6.gz
 %%DATADIR%%/clock_0.tga
 %%DATADIR%%/clock_1.tga
 %%DATADIR%%/clock_2.tga

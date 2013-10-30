@@ -18,9 +18,6 @@ USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-MAN6=		crack-attack.6
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|#ifndef max|#if 0|' ${WRKSRC}/src/Game.h
 
