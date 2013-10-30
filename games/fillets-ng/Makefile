@@ -15,21 +15,20 @@ COMMENT=	A wonderful puzzle game
 
 USE_SDL=	sdl mixer image ttf
 USE_LUA=	5.1
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LUA_INCDIR}
 LDFLAGS+=	-L${LUA_LIBDIR}
 CONFIGURE_ARGS=	--datadir="${DATADIR}" --with-lua="${LOCALBASE}"
+
+PLIST_FILES=	bin/fillets man/man6/fillets.6.gz
+
 PORTDOCS=	*
 PORTDATA=	*
-
-PLIST_FILES=	bin/fillets
 
 DATAVERSION=	1.0.0
 
 ONLY_FOR_ARCHS=	i386 amd64
-
-MAN6=		fillets.6
 
 DESKTOP_ENTRIES="Fish Fillets - Next Generation" \
 		"A wonderful puzzle game" \
@@ -38,13 +37,13 @@ DESKTOP_ENTRIES="Fish Fillets - Next Generation" \
 		"Game;LogicGame;" \
 		false
 
-OPTIONS_DEFINE=	FRIBIDI
+OPTIONS_DEFINE=	DOCS FRIBIDI
+OPTIONS_DEFAULT=DOCS FRIBIDI
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MFRIBIDI}
-LIB_DEPENDS+=	fribidi:${PORTSDIR}/converters/fribidi
+LIB_DEPENDS+=	libfribidi.so:${PORTSDIR}/converters/fribidi
 .endif
 
 post-patch:
@@ -59,15 +58,9 @@ post-patch:
 .endif
 
 post-install:
-.if !defined(NOPORTDATA)
-	${MKDIR} ${DATADIR}
 	cd ${WRKDIR}/${PORTNAME}-data-${DATAVERSION} && \
-		${COPYTREE_SHARE} "font	images music script sound" ${DATADIR}
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	@cd ${WRKDIR}/${PORTNAME}-data-${DATAVERSION}/doc; \
-		${COPYTREE_SHARE} "*" ${DOCSDIR}
-.endif
+		${COPYTREE_SHARE} "font	images music script sound" ${STAGEDIR}${DATADIR}/
+	cd ${WRKDIR}/${PORTNAME}-data-${DATAVERSION}/doc && \
+		${COPYTREE_SHARE} "*" ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.post.mk>
