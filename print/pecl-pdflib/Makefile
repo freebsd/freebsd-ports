@@ -21,5 +21,4 @@ PHP_MODNAME=	pdf
 
 CONFIGURE_ARGS=	--with-pdflib=${LOCALBASE}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

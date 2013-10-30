@@ -7,5 +7,4 @@ MASTERDIR=	${.CURDIR}/../../lang/php5
 
 PKGNAMESUFFIX=	-xmlwriter
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

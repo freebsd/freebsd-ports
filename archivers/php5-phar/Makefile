@@ -3,7 +3,6 @@
 
 CATEGORIES=	archivers
 
-NO_STAGE=	yes
 MASTERDIR=	${.CURDIR}/../../lang/php5
 
 PKGNAMESUFFIX=	-phar
