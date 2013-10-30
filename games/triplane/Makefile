@@ -3,6 +3,7 @@
 
 PORTNAME=	triplane
 PORTVERSION=	1.08.r20130224
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		SF/${PORTNAME}
@@ -20,11 +21,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 CFLAGS+=	-DTRIPLANE_DATA=\\\"${DATADIR}\\\"
 MAKE_ENV=	DATADIR="${DATADIR}"
 
-MAN6=		triplane.6
-
 # ALL_TARGET="depend all" would not work in -jX case due to races
-NO_STAGE=	yes
 pre-build:
-	${GMAKE} -C ${BUILD_WRKSRC} depend
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_WRKSRC} ${MAKE_ARGS} depend
 
 .include <bsd.port.mk>

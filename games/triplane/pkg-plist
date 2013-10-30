@@ -1,3 +1,4 @@
 bin/triplane
+man/man6/triplane.6.gz
 %%DATADIR%%/fokker.dks
 @dirrm %%DATADIR%%
