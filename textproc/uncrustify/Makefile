@@ -10,20 +10,17 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Highly configurable source code beautifier
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 CONFIGURE_ARGS=	--disable-silent-rules
 
-MAN1=		uncrustify.1
-
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+PORTDATA=	*
 PORTDOCS=	*
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
 
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/documentation && ${COPYTREE_SHARE} '*' ${DOCSDIR}
-.endif
+	cd ${WRKSRC}/documentation && ${COPYTREE_SHARE} '*' ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
