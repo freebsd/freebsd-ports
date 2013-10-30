@@ -15,8 +15,6 @@ LICENSE=	BSD
 USE_ZIP=		yes
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/ujson.so
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
