@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flightgear-data
-PORTVERSION=	2.10.0
+PORTVERSION=	2.12.0
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
 MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Shared/ \
@@ -11,6 +11,7 @@ MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Shared/ \
 		ftp://ftp.de.flightgear.org/pub/fgfs/Shared/ \
 		ftp://flightgear.wo0t.de/flightgear-ftp/ftp/Shared/
 DISTNAME=	FlightGear-data-${PORTVERSION}
+EXTRACT_SUFX=	.tar.bz
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	FlightGear scenery, textures, and aircraft models
@@ -19,15 +20,14 @@ LICENSE=	GPLv2
 
 NO_BUILD=	yes
 USE_BZIP2=	yes
-WRKSRC=		${WRKDIR}/data
+WRKSRC=		${WRKDIR}/fgdata
 DATADIR=	${PREFIX}/share/flightgear
 
 PLIST=		${WRKDIR}/pkg-plist
 PLIST_DIRS=	%%DATADIR%%
 
-MANUAL_PACKAGE_BUILD=	very large distfile (>400 MB)
+MANUAL_PACKAGE_BUILD=	very large distfile (>900 MB)
 
-NO_STAGE=	yes
 post-patch:
 	@${RM} -f ${WRKSRC}/COPYING
 
@@ -42,7 +42,7 @@ pre-install:
 		| ${SED} -e 's|^|@dirrm %%DATADIR%%/|' >> ${PLIST}
 
 do-install:
-	${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} \* ${DATADIR})
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>

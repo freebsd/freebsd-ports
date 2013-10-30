@@ -1,12 +1,8 @@
-SimGear is a set of open-source libraries designed to be used as
-building blocks for quickly assembling 3d simulations, games, and
-visualization applications.
+SimGear is a set of open-source libraries designed to be used as building
+blocks for quickly assembling 3d simulations, games, and visualization
+applications.
 
-SimGear is a relatively new project, and while quite a bit of code has
-been written in conjunction with the FlightGear project, the final
-interface and arrangements are still evolving.
+SimGear is developed by the FlightGear project and also provides the base for
+the FlightGear Flight Simulator.
 
-The term "Simulation Kernel" is a bit presumptuous for us at this
-point, but this is the direction we are heading with SimGear.
-
-WWW: http://www.simgear.org/
+WWW: http://www.flightgear.org/
