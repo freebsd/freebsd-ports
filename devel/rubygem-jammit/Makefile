@@ -18,5 +18,4 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/jammit
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

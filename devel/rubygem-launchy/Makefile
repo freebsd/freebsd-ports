@@ -17,5 +17,4 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/launchy
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

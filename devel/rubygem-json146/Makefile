@@ -20,5 +20,4 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/edit_json.rb bin/prettify_json.rb
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
