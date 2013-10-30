@@ -2,7 +2,7 @@
 
 PORTNAME=	sdl2_mixer
 PORTVERSION=	2.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_mixer/release/
 DISTNAME=	SDL2_mixer-${PORTVERSION}
@@ -47,7 +47,7 @@ VORBIS_LIB_DEPENDS=		libvorbis.so:${PORTSDIR}/audio/libvorbis
 VORBIS_CONFIGURE_ENABLE=	music-ogg
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$(prefix)/libdata/pkgconfig|$(DESTDIR)$(prefix)/libdata/pkgconfig|' \
+	@${REINPLACE_CMD} -e 's|\($$(prefix)/libdata/pkgconfig\)|$$(DESTDIR)\1|' \
 		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
