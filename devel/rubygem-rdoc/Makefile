@@ -18,7 +18,6 @@ RUBYGEM_AUTOPLIST=	yes
 
 GEM_ENV+=	RUBYLIB=${PREFIX}/${GEM_LIB_DIR}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-install:
