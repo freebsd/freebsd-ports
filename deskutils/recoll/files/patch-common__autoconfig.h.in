@@ -1,0 +1,9 @@
+--- ./common/autoconfig.h.in.orig	2013-09-30 18:45:05.000000000 +0200
++++ ./common/autoconfig.h.in	2013-10-29 15:57:51.000000000 +0100
+@@ -111,3 +111,6 @@
+ 
+ #undef _FILE_OFFSET_BITS
+ #undef _LARGE_FILES
++
++#undef HAVE_TR1_UNORDERED
++#undef HAVE_CXX0X_UNORDERED

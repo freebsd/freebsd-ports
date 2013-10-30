@@ -2,72 +2,61 @@
 # $FreeBSD$
 
 PORTNAME=	recoll
-PORTVERSION=	1.18.2
+PORTVERSION=	1.19.7
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/${PORTNAME}/
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Personal full text search package, based on Xapian
 
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	xapian-core>=0:${PORTSDIR}/databases/xapian-core
 
-USES=		iconv gmake
+USES=		gmake iconv
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-pic
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		recollindex.1
-MAN5=		recoll.conf.5
-
-OPTIONS_DEFINE=	QT4 ASPELL PYTHON X11MON
+OPTIONS_DEFINE=	ASPELL PYTHON QT4  X11MON
 X11MON_DESC=	X11 session monitoring support
-OPTIONS_DEFAULT=QT4 ASPELL PYTHON X11MON
+OPTIONS_DEFAULT=ASPELL PYTHON QT4 X11MON
 
-# Wrong versioning upstream
-PORTSCOUT=	skipv:1.19
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
+ASPELL_LIB_DEPENDS=		libaspell.so:${PORTSDIR}/textproc/aspell
+ASPELL_CONFIGURE_WITH=		aspell
+
+PYTHON_CONFIGURE_ENABLE=	python-module
+
+QT4_CONFIGURE_ENABLE=		qtgui
+
+X11MON_CONFIGURE_ENABLE=	x11mon
+
 .include <bsd.port.options.mk>
+
+PLIST_SUB+=	MAJORVER=${PORTVERSION}
+
+.if ${PORT_OPTIONS:MPYTHON}
+USE_PYTHON=	yes
+INSTALLS_EGGINFO=	yes
+PYDISTUTILS_EGGINFO=	Recoll-1.0-py${PYTHON_VER}.egg-info
+.endif
 
 .if ${PORT_OPTIONS:MQT4}
 USE_QT4=	moc_build qmake_build rcc_build uic_build iconengines imageformats \
 		corelib gui xml webkit
 QT_NONSTANDARD=	yes
 CONFIGURE_ENV+=	QTDIR="${QT_PREFIX}" QMAKE="${QMAKE}"
-CONFIGURE_ARGS+=--enable-qtgui
 INSTALLS_ICONS=	yes
-PLIST_SUB+=	QT=""
-MAN1+=		recollq.1 recoll.1
-.else
-CONFIGURE_ARGS+=--disable-qtgui
-PLIST_SUB+=	QT="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MASPELL}
-LIB_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
-.else
-CONFIGURE_ARGS+=--without-aspell
-.endif
-
-.if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	yes
-INSTALLS_EGGINFO=	yes
-PYDISTUTILS_EGGINFO=	Recoll-1.0-py${PYTHON_VER}.egg-info
-PLIST_SUB+=	PYTHON=""
-.else
-CONFIGURE_ARGS+=--disable-python-module
-PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MX11MON}
 USE_XORG+=	ice sm x11
 USE_FAM=	yes
 CONFIGURE_ARGS+=--with-fam
-.else
-CONFIGURE_ARGS+=--disable-x11mon
 .endif
 
 post-patch:
@@ -85,7 +74,7 @@ post-patch:
 post-configure:
 .if ${PORT_OPTIONS:MQT4}
 	@cd ${WRKSRC}/qtgui && ${SETENV} ${CONFIGURE_ENV} \
-	${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX}
+		${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX}
 .endif
 
 .include <bsd.port.mk>

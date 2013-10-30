@@ -1,0 +1,8 @@
+--- ./mk/FreeBSD.orig	2013-09-30 18:45:06.000000000 +0200
++++ ./mk/FreeBSD	2013-10-29 15:57:51.000000000 +0100
+@@ -2,4 +2,4 @@
+ include $(depth)/mk/localdefs
+ 
+ ALL_CXXFLAGS = $(CXXFLAGS) $(COMMONCXXFLAGS) $(LOCALCXXFLAGS) -pthread 
+-LIBSYS = -lz
++LIBSYS = -pthread -lz

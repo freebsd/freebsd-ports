@@ -1,0 +1,11 @@
+--- ./lib/mkMake.orig	2013-09-30 18:45:06.000000000 +0200
++++ ./lib/mkMake	2013-10-29 15:57:51.000000000 +0100
+@@ -142,7 +142,7 @@
+ # no effort whatsoever to maintain any kind of ABI compat in this lib. Only
+ # programs or modules from the same Recoll release can be compatible.
+ \$(LIBRECOLL): \$(DEPS) \$(OBJS)
+-	g++ -shared -Wl,--no-undefined -Wl,--warn-unresolved-symbols \
++	\$(CXX) -shared -Wl,--no-undefined -Wl,--warn-unresolved-symbols \
+           -Wl,-soname=\$(LIBRECOLL) -o \$(LIBRECOLL) \$(OBJS) \
+            \$(LIBXAPIAN) \$(LIBICONV) \$(X_LIBX11) \$(LIBSYS)
+ 	rm -f librecoll.so
