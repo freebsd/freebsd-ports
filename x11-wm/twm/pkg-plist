@@ -1,4 +1,5 @@
 bin/twm
+man/man1/twm.1.gz
 share/X11/twm/system.twmrc
 @dirrm share/X11/twm
 @dirrmtry share/X11
