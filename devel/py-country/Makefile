@@ -20,4 +20,7 @@ PYTHON_PY3K_PLIST_HACK=	yes
 
 NO_STAGE=	yes
 
+post-patch:
+	${RM} ${WRKSRC}/src/pycountry/locales/tr/LC_MESSAGES/iso639.po.orig
+
 .include <bsd.port.mk>
