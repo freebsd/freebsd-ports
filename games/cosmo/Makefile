@@ -26,12 +26,12 @@ USES=		imake:notall
 USE_XORG=	x11 xext
 NO_INSTALL_MANPAGES=	yes
 
-NO_STAGE=	yes
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/cosmorc ${PREFIX}/lib/X11/cosmo
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/cosmo
+	${INSTALL_PROGRAM} ${WRKSRC}/cosmo ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/cosmorc ${STAGEDIR}${PREFIX}/lib/X11/cosmo
+	${ECHO} > ${STAGEDIR}${PREFIX}/lib/X11/cosmo/best.dat
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/moon.tif.gz \
-		${PREFIX}/lib/X11/cosmo
-	${CHOWN} root:games ${PREFIX}/bin/cosmo
-	${CHMOD} g+s ${PREFIX}/bin/cosmo
+		${STAGEDIR}${PREFIX}/lib/X11/cosmo
 
 .include <bsd.port.mk>
