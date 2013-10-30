@@ -54,10 +54,15 @@ DISTFILES+=	X430src-1.tgz:x \
 		X430src-2.tgz:x \
 		X430src-3.tgz:x
 
+.if ${OSVERSION} > 1000000
+USE_GCC=	4.6+
+MAKE_ENV=	IMAKECPP="${CPP}"
+MAKE_ARGS=	AR='ar rc'
+.endif
+
 RUN_DEPENDS+=	xauth:${PORTSDIR}/x11/xauth \
 		${PREFIX}/lib/X11/fonts/misc/6x13-ISO8859-1.pcf.gz:${PORTSDIR}/x11-fonts/xorg-fonts-miscbitmaps \
 		${LOCALBASE}/lib/X11/fonts/misc/fonts.alias:${PORTSDIR}/x11-fonts/font-alias
-
 
 EXTRA_PATCHES+=	${WRKSRC}/xc.patch \
 		${PATCHDIR}/vnc.def-patch \
@@ -93,7 +98,11 @@ post-build:
 .if ! ${PORT_OPTIONS:MSERVER}
 	@${ECHO_MSG} "Skipping build of VNC server."
 .else
+.if ${OSVERSION} > 1000000
+	cd ${WRKSRC}/xc && ${MAKE_ENV} make CC=${CC} CXX=${CXX} ${MAKE_ARGS} World
+.else
 	cd ${WRKSRC}/xc && make CC=${CC} CXX=${CXX} World
+.endif
 .endif
 
 pre-install:
