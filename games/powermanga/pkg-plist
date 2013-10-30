@@ -1,5 +1,7 @@
 @group games
+@mode 2555
 bin/powermanga
+@mode
 @group
 man/man6/powermanga.6.gz
 share/applications/powermanga.desktop
