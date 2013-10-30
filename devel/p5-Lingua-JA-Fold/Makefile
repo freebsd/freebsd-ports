@@ -15,7 +15,4 @@ COMMENT=	Lingua::JA::Fold - fold a Japanese text
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Lingua::JA::Fold.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

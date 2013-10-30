@@ -13,7 +13,4 @@ COMMENT=	Locale::Maketext::Fuzzy - Maketext from already interpolated strings
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Locale::Maketext::Fuzzy.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

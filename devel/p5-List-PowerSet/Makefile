@@ -13,7 +13,4 @@ COMMENT=	Perl module that allows you to generate the power set of a list
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		List::PowerSet.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

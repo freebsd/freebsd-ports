@@ -1,3 +1,7 @@
+%%PERL5_MAN3%%/Log::Message.3.gz
+%%PERL5_MAN3%%/Log::Message::Config.3.gz
+%%PERL5_MAN3%%/Log::Message::Handlers.3.gz
+%%PERL5_MAN3%%/Log::Message::Item.3.gz
 %%SITE_PERL%%/Log/Message.pm
 %%SITE_PERL%%/Log/Message/Config.pm
 %%SITE_PERL%%/Log/Message/Handlers.pm

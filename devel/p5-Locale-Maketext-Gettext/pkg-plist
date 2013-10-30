@@ -1,7 +1,10 @@
 bin/maketext
+%%PERL5_MAN3%%/Locale::Maketext::Gettext.3.gz
+%%PERL5_MAN3%%/Locale::Maketext::Gettext::Functions.3.gz
 %%SITE_PERL%%/Locale/Maketext/Gettext.pm
 %%SITE_PERL%%/Locale/Maketext/Gettext/Functions.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale-Maketext-Gettext/.packlist
+man/man1/maketext.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale-Maketext-Gettext
 @dirrm %%SITE_PERL%%/Locale/Maketext/Gettext
 @dirrmtry %%SITE_PERL%%/Locale/Maketext

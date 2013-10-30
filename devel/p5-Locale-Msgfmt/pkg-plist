@@ -1,12 +1,16 @@
-%%SITE_PERL%%/Locale/Msgfmt/po.pm
+%%PERL5_MAN3%%/Locale::Msgfmt.3.gz
+%%PERL5_MAN3%%/Locale::Msgfmt::Utils.3.gz
+%%PERL5_MAN3%%/Locale::Msgfmt::mo.3.gz
+%%PERL5_MAN3%%/Locale::Msgfmt::po.3.gz
+%%SITE_PERL%%/Locale/Msgfmt.pm
 %%SITE_PERL%%/Locale/Msgfmt/Utils.pm
 %%SITE_PERL%%/Locale/Msgfmt/mo.pm
-%%SITE_PERL%%/Locale/Msgfmt.pm
+%%SITE_PERL%%/Locale/Msgfmt/po.pm
 %%SITE_PERL%%/Module/Install/Msgfmt.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Msgfmt/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Msgfmt
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Msgfmt
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale
-@dirrmtry %%SITE_PERL%%/Locale/Msgfmt
-@dirrmtry %%SITE_PERL%%/Locale
 @dirrmtry %%SITE_PERL%%/Module/Install
 @dirrmtry %%SITE_PERL%%/Module
+@dirrm %%SITE_PERL%%/Locale/Msgfmt
+@dirrmtry %%SITE_PERL%%/Locale

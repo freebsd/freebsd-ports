@@ -13,7 +13,4 @@ COMMENT=	Allow you to process all possible permutations of a list
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		List::Permutor.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

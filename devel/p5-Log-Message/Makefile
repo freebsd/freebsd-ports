@@ -16,13 +16,7 @@ BUILD_DEPENDS=	p5-Params-Check>=0:${PORTSDIR}/devel/p5-Params-Check \
 		p5-Locale-Maketext-Simple>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	Log::Message.3 \
-	Log::Message::Config.3 \
-	Log::Message::Handlers.3 \
-	Log::Message::Item.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

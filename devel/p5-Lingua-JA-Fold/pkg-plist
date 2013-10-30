@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Lingua::JA::Fold.3.gz
 %%SITE_PERL%%/Lingua/JA/Fold.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/JA/Fold/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/JA/Fold
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/JA
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/JA/Fold
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/JA
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
-@dirrmtry %%SITE_PERL%%/Lingua/JA
+@dirrm %%SITE_PERL%%/Lingua/JA
 @dirrmtry %%SITE_PERL%%/Lingua

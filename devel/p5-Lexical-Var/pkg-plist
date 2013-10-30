@@ -1,3 +1,5 @@
+%%PERL5_MAN3%%/Lexical::Sub.3.gz
+%%PERL5_MAN3%%/Lexical::Var.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Lexical/Sub.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Lexical/Var.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lexical/Var/.packlist

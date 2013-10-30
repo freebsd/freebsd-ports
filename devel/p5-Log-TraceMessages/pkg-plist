@@ -1,8 +1,9 @@
+%%PERL5_MAN3%%/Log::TraceMessages.3.gz
 %%SITE_PERL%%/Log/TraceMessages.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/TraceMessages/.packlist
 %%SITE_PERL%%/auto/Log/TraceMessages/autosplit.ix
-@dirrm %%SITE_PERL%%/auto/Log/TraceMessages
-@dirrmtry %%SITE_PERL%%/auto/Log
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/TraceMessages/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/TraceMessages
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log
+@dirrm %%SITE_PERL%%/auto/Log/TraceMessages
+@dirrmtry %%SITE_PERL%%/auto/Log
 @dirrmtry %%SITE_PERL%%/Log

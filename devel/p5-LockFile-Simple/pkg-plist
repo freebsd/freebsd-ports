@@ -1,9 +1,10 @@
+%%PERL5_MAN3%%/LockFile::Simple.3.gz
 %%SITE_PERL%%/LockFile/Lock.pm
 %%SITE_PERL%%/LockFile/Lock/Simple.pm
 %%SITE_PERL%%/LockFile/Manager.pm
 %%SITE_PERL%%/LockFile/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/LockFile/Simple/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LockFile/Simple
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LockFile
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LockFile
 @dirrm %%SITE_PERL%%/LockFile/Lock
-@dirrm %%SITE_PERL%%/LockFile
+@dirrmtry %%SITE_PERL%%/LockFile

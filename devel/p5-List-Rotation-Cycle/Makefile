@@ -12,10 +12,7 @@ COMMENT=	Cycle through a list of values
 
 PORTSCOUT=	limitw:1,even
 
-MAN3=		List::Rotation::Cycle.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

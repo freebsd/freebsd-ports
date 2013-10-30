@@ -18,9 +18,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Log::Dispatch::Config.3 \
-		Log::Dispatch::Configurator.3 \
-		Log::Dispatch::Configurator::AppConfig.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

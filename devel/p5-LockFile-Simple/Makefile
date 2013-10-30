@@ -14,7 +14,4 @@ COMMENT=	Perl module implementing simple file locking
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		LockFile::Simple.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

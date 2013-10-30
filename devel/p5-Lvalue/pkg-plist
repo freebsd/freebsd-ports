@@ -1,5 +1,4 @@
-@comment $FreeBSD$
+%%PERL5_MAN3%%/Lvalue.3.gz
 %%SITE_PERL%%/Lvalue.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lvalue/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lvalue/Path
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lvalue

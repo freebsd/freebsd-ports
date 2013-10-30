@@ -19,9 +19,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Lvalue.3
-
-NO_STAGE=	yes
 post-patch::
 	@${REINPLACE_CMD} -e 's|qw(can isa DOES VERSION)|(qw(can isa DOES VERSION))|g' \
 		${WRKSRC}/lib/Lvalue.pm
