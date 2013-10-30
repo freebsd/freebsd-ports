@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/gen_server2.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/priority_queue.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/gen_server2.app
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%
