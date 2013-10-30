@@ -7,5 +7,4 @@ MASTERDIR=	${.CURDIR}/../../lang/php5
 
 PKGNAMESUFFIX=	-pdo_pgsql
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

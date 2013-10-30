@@ -25,13 +25,8 @@ PORTDOCS=	*
 
 IGNORE_WITH_PHP=	55
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
