@@ -81,7 +81,7 @@ create-manifest:
 .endfor
 .undef opt
 	@${ECHO_CMD} "}" >> ${MANIFESTF}
-	@[ -f ${PKGINSTALL} ] && ${CAT} ${PKGINSTALL} ${METADIR}/+INSTALL; \
+	@[ -f ${PKGINSTALL} ] && ${CP} ${PKGINSTALL} ${METADIR}/+INSTALL; \
 	${RM} -f ${METADIR}/+PRE_INSTALL ; \
 	for a in ${PKGPREINSTALL}; do \
 		[ -f $$a ] && ${CAT} $$a >> ${METADIR}/+PRE_INSTALL ; \
