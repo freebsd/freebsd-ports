@@ -15,16 +15,15 @@ USE_GL=		glut
 USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
 
-MAN1=		3ddesk.1 3ddeskd.1
 PORTDOCS=	README README.windowmanagers
 PLIST_FILES=	bin/3ddesk bin/3ddeskd etc/3ddesktop.conf \
-		%%DATADIR%%/digits.bmp
+		%%DATADIR%%/digits.bmp \
+		man/man1/3ddesk.1.gz man/man1/3ddeskd.1.gz
 PLIST_DIRS=	%%DATADIR%%
 
-CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT  -pthread
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -36,11 +35,9 @@ post-patch:
 		 s|@AUTOMAKE@|${TRUE}|g'
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README README.windowmanagers
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
