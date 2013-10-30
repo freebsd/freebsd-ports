@@ -1,0 +1,4 @@
+This package is a pure-python client library for Tarantool Database.
+
+WWW: https://github.com/mailru/tarantool-python
+WWW: https://pypi.python.org/pypi/tarantool
