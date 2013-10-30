@@ -1,5 +1,5 @@
 --- src/pycountry/locales/tr/LC_MESSAGES/iso639.po.orig	2013-10-04 21:55:28.000000000 +0400
-+++ src/pycountry/locales/tr/LC_MESSAGES/iso639.po	2013-10-30 16:29:29.000000000 +0400
++++ src/pycountry/locales/tr/LC_MESSAGES/iso639.po	2013-10-30 19:19:54.000000000 +0400
 @@ -324,7 +324,7 @@
  
  #. name for cat, ca
@@ -27,3 +27,11 @@
  
  #. name for srd, sc
  #, fuzzy
+@@ -1993,7 +1993,6 @@
+ msgstr "Uygurca"
+ 
+ #. name for ukr, uk
+-#, fuzzy
+ msgid "Ukrainian"
+ msgstr "Ukraynaca"
+ 
