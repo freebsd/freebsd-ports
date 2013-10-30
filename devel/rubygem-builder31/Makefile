@@ -15,6 +15,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 PKGNAMESUFFIX=	31
 
-NO_STAGE=	yes
 
 .include <bsd.port.mk>

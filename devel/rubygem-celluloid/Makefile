@@ -13,7 +13,6 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-timers>=1.1.0:${PORTSDIR}/devel/rubygem-timers
 
-NO_STAGE=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

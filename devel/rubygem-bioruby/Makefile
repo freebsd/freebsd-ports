@@ -21,5 +21,4 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 GEM_NAME=	${DISTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
