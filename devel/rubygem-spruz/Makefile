@@ -15,5 +15,4 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/enum
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
