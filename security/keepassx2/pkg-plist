@@ -1,0 +1,162 @@
+bin/keepassx
+lib/keepassx/libkeepassx-autotype-x11.so
+%%DATADIR%%/icons/database/C00_Password.png
+%%DATADIR%%/icons/database/C01_Package_Network.png
+%%DATADIR%%/icons/database/C02_MessageBox_Warning.png
+%%DATADIR%%/icons/database/C03_Server.png
+%%DATADIR%%/icons/database/C04_Klipper.png
+%%DATADIR%%/icons/database/C05_Edu_Languages.png
+%%DATADIR%%/icons/database/C06_KCMDF.png
+%%DATADIR%%/icons/database/C07_Kate.png
+%%DATADIR%%/icons/database/C08_Socket.png
+%%DATADIR%%/icons/database/C09_Identity.png
+%%DATADIR%%/icons/database/C10_Kontact.png
+%%DATADIR%%/icons/database/C11_Camera.png
+%%DATADIR%%/icons/database/C12_IRKickFlash.png
+%%DATADIR%%/icons/database/C13_KGPG_Key3.png
+%%DATADIR%%/icons/database/C14_Laptop_Power.png
+%%DATADIR%%/icons/database/C15_Scanner.png
+%%DATADIR%%/icons/database/C16_Mozilla_Firebird.png
+%%DATADIR%%/icons/database/C17_CDROM_Unmount.png
+%%DATADIR%%/icons/database/C18_Display.png
+%%DATADIR%%/icons/database/C19_Mail_Generic.png
+%%DATADIR%%/icons/database/C20_Misc.png
+%%DATADIR%%/icons/database/C21_KOrganizer.png
+%%DATADIR%%/icons/database/C22_ASCII.png
+%%DATADIR%%/icons/database/C23_Icons.png
+%%DATADIR%%/icons/database/C24_Connect_Established.png
+%%DATADIR%%/icons/database/C25_Folder_Mail.png
+%%DATADIR%%/icons/database/C26_FileSave.png
+%%DATADIR%%/icons/database/C27_NFS_Unmount.png
+%%DATADIR%%/icons/database/C28_QuickTime.png
+%%DATADIR%%/icons/database/C29_KGPG_Term.png
+%%DATADIR%%/icons/database/C30_Konsole.png
+%%DATADIR%%/icons/database/C31_FilePrint.png
+%%DATADIR%%/icons/database/C32_FSView.png
+%%DATADIR%%/icons/database/C33_Run.png
+%%DATADIR%%/icons/database/C34_Configure.png
+%%DATADIR%%/icons/database/C35_KRFB.png
+%%DATADIR%%/icons/database/C36_Ark.png
+%%DATADIR%%/icons/database/C37_KPercentage.png
+%%DATADIR%%/icons/database/C38_Samba_Unmount.png
+%%DATADIR%%/icons/database/C39_History.png
+%%DATADIR%%/icons/database/C40_Mail_Find.png
+%%DATADIR%%/icons/database/C41_VectorGfx.png
+%%DATADIR%%/icons/database/C42_KCMMemory.png
+%%DATADIR%%/icons/database/C43_EditTrash.png
+%%DATADIR%%/icons/database/C44_KNotes.png
+%%DATADIR%%/icons/database/C45_Cancel.png
+%%DATADIR%%/icons/database/C46_Help.png
+%%DATADIR%%/icons/database/C47_KPackage.png
+%%DATADIR%%/icons/database/C48_Folder.png
+%%DATADIR%%/icons/database/C49_Folder_Blue_Open.png
+%%DATADIR%%/icons/database/C50_Folder_Tar.png
+%%DATADIR%%/icons/database/C51_Decrypted.png
+%%DATADIR%%/icons/database/C52_Encrypted.png
+%%DATADIR%%/icons/database/C53_Apply.png
+%%DATADIR%%/icons/database/C54_Signature.png
+%%DATADIR%%/icons/database/C55_Thumbnail.png
+%%DATADIR%%/icons/database/C56_KAddressBook.png
+%%DATADIR%%/icons/database/C57_View_Text.png
+%%DATADIR%%/icons/database/C58_KGPG.png
+%%DATADIR%%/icons/database/C59_Package_Development.png
+%%DATADIR%%/icons/database/C60_KFM_Home.png
+%%DATADIR%%/icons/database/C61_Services.png
+%%DATADIR%%/icons/database/C62_Tux.png
+%%DATADIR%%/icons/database/C63_Feather.png
+%%DATADIR%%/icons/database/C64_Apple.png
+%%DATADIR%%/icons/database/C65_W.png
+%%DATADIR%%/icons/database/C66_Money.png
+%%DATADIR%%/icons/database/C67_Certificate.png
+%%DATADIR%%/icons/database/C68_BlackBerry.png
+%%DATADIR%%/icons/application/128x128/apps/keepassx.png
+%%DATADIR%%/icons/application/16x16/actions/application-exit.png
+%%DATADIR%%/icons/application/16x16/actions/auto-type.png
+%%DATADIR%%/icons/application/16x16/actions/configure.png
+%%DATADIR%%/icons/application/16x16/actions/database-change-key.png
+%%DATADIR%%/icons/application/16x16/actions/document-close.png
+%%DATADIR%%/icons/application/16x16/actions/document-edit.png
+%%DATADIR%%/icons/application/16x16/actions/document-encrypt.png
+%%DATADIR%%/icons/application/16x16/actions/document-new.png
+%%DATADIR%%/icons/application/16x16/actions/document-open.png
+%%DATADIR%%/icons/application/16x16/actions/document-save-as.png
+%%DATADIR%%/icons/application/16x16/actions/document-save.png
+%%DATADIR%%/icons/application/16x16/actions/edit-clear-locationbar-ltr.png
+%%DATADIR%%/icons/application/16x16/actions/edit-clear-locationbar-rtl.png
+%%DATADIR%%/icons/application/16x16/actions/entry-clone.png
+%%DATADIR%%/icons/application/16x16/actions/entry-delete.png
+%%DATADIR%%/icons/application/16x16/actions/entry-edit.png
+%%DATADIR%%/icons/application/16x16/actions/entry-new.png
+%%DATADIR%%/icons/application/16x16/actions/group-delete.png
+%%DATADIR%%/icons/application/16x16/actions/group-edit.png
+%%DATADIR%%/icons/application/16x16/actions/group-new.png
+%%DATADIR%%/icons/application/16x16/actions/help-about.png
+%%DATADIR%%/icons/application/16x16/actions/password-generate.png
+%%DATADIR%%/icons/application/16x16/actions/system-search.png
+%%DATADIR%%/icons/application/16x16/apps/keepassx.png
+%%DATADIR%%/icons/application/22x22/actions/dialog-close.png
+%%DATADIR%%/icons/application/22x22/actions/dialog-ok.png
+%%DATADIR%%/icons/application/22x22/actions/entry-delete.png
+%%DATADIR%%/icons/application/22x22/actions/entry-edit.png
+%%DATADIR%%/icons/application/22x22/actions/entry-new.png
+%%DATADIR%%/icons/application/22x22/actions/system-search.png
+%%DATADIR%%/icons/application/22x22/status/dialog-error.png
+%%DATADIR%%/icons/application/22x22/status/dialog-information.png
+%%DATADIR%%/icons/application/22x22/status/dialog-warning.png
+%%DATADIR%%/icons/application/24x24/apps/keepassx.png
+%%DATADIR%%/icons/application/256x256/apps/keepassx.png
+%%DATADIR%%/icons/application/32x32/apps/keepassx.png
+%%DATADIR%%/icons/application/48x48/apps/keepassx.png
+%%DATADIR%%/icons/application/64x64/apps/keepassx.png
+%%DATADIR%%/icons/application/scalable/apps/keepassx.svgz
+share/icons/hicolor/128x128/apps/keepassx.png
+share/icons/hicolor/16x16/apps/keepassx.png
+share/icons/hicolor/24x24/apps/keepassx.png
+share/icons/hicolor/256x256/apps/keepassx.png
+share/icons/hicolor/32x32/apps/keepassx.png
+share/icons/hicolor/48x48/apps/keepassx.png
+share/icons/hicolor/64x64/apps/keepassx.png
+share/icons/hicolor/scalable/apps/keepassx.svgz
+@dirrm lib/keepassx
+@dirrm %%DATADIR%%/icons/application/128x128/apps
+@dirrm %%DATADIR%%/icons/application/128x128
+@dirrm %%DATADIR%%/icons/application/16x16/actions
+@dirrm %%DATADIR%%/icons/application/16x16/apps
+@dirrm %%DATADIR%%/icons/application/16x16
+@dirrm %%DATADIR%%/icons/application/22x22/actions
+@dirrm %%DATADIR%%/icons/application/22x22/status
+@dirrm %%DATADIR%%/icons/application/22x22
+@dirrm %%DATADIR%%/icons/application/24x24/apps
+@dirrm %%DATADIR%%/icons/application/24x24
+@dirrm %%DATADIR%%/icons/application/256x256/apps
+@dirrm %%DATADIR%%/icons/application/256x256
+@dirrm %%DATADIR%%/icons/application/32x32/apps
+@dirrm %%DATADIR%%/icons/application/32x32
+@dirrm %%DATADIR%%/icons/application/48x48/apps
+@dirrm %%DATADIR%%/icons/application/48x48
+@dirrm %%DATADIR%%/icons/application/64x64/apps
+@dirrm %%DATADIR%%/icons/application/64x64
+@dirrm %%DATADIR%%/icons/application/scalable/apps
+@dirrm %%DATADIR%%/icons/application/scalable
+@dirrm %%DATADIR%%/icons/application
+@dirrm %%DATADIR%%/icons/database
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
+@dirrmtry share/icons/hicolor/16x16/actions
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/22x22/actions
+@dirrmtry share/icons/hicolor/22x22/status
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
