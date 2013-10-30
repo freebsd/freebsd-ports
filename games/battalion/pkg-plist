@@ -1,4 +1,5 @@
 bin/battalion
+man/man6/battalion.6.gz
 %%DATADIR%%/battalion.sho
 %%DATADIR%%/DATA/road.data
 %%DATADIR%%/DATA/tank.data
