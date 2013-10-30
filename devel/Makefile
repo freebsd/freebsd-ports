@@ -402,6 +402,18 @@
     SUBDIR += epydoc
     SUBDIR += eric4
     SUBDIR += eris
+    SUBDIR += erl-bear
+    SUBDIR += erl-depsolver
+    SUBDIR += erl-ej
+    SUBDIR += erl-envy
+    SUBDIR += erl-erlware_commons
+    SUBDIR += erl-folsom
+    SUBDIR += erl-gen_server2-mdaguete
+    SUBDIR += erl-jiffy
+    SUBDIR += erl-mixer
+    SUBDIR += erl-opscoderl_folsom
+    SUBDIR += erl-pooler
+    SUBDIR += erl-rebar_vsn_plugin
     SUBDIR += esdl
     SUBDIR += esvn
     SUBDIR += etl
@@ -1198,6 +1210,7 @@
     SUBDIR += maven3
     SUBDIR += mcpp
     SUBDIR += mdds
+    SUBDIR += meck
     SUBDIR += memcheck
     SUBDIR += menhir
     SUBDIR += mercator

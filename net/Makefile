@@ -129,6 +129,9 @@
     SUBDIR += empty
     SUBDIR += enet
     SUBDIR += entitymib
+    SUBDIR += erl-erlang-oauth
+    SUBDIR += erl-ibrowse
+    SUBDIR += erl-mini_s3
     SUBDIR += erlang_xmlrpc
     SUBDIR += erlyvideo
     SUBDIR += etherboot

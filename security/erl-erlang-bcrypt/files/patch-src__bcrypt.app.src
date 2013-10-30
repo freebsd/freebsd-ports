@@ -1,0 +1,11 @@
+--- ./src/bcrypt.app.src.orig	2013-10-30 10:31:53.000000000 +0900
++++ ./src/bcrypt.app.src	2013-10-30 10:32:09.000000000 +0900
+@@ -1,7 +1,7 @@
+ %% -*- mode: erlang;erlang-indent-level: 2;indent-tabs-mode: nil -*-
+ {application, bcrypt,
+  [{description, "An Erlang wrapper (NIF or port program) for the OpenBSD password scheme, bcrypt."},
+-  {vsn, git},
++  {vsn, "${VERSION}"},
+   {registered, [bcrypt_sup, bcrypt_nif_worker, bcrypt_port_sup, bcrypt_pool]},
+   {mod, {bcrypt_app, []}},
+   {applications, [kernel, stdlib, crypto]},

@@ -1,0 +1,11 @@
+--- ./src/chef_authn.app.src.orig	2013-10-18 02:38:11.000000000 +0900
++++ ./src/chef_authn.app.src	2013-10-28 13:03:49.000000000 +0900
+@@ -18,7 +18,7 @@
+ {application, chef_authn,
+  [
+   {description, "Erlang API request authentication signing and verification for Chef"},
+-  {vsn, git},
++  {vsn, "${VERSION}"},
+   {registered, []},
+   {applications, [kernel,
+                   stdlib,

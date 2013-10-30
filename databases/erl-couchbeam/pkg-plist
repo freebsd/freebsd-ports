@@ -1,0 +1,31 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/gen_changes.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/couchbeam_view.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/couchbeam_util.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/couchbeam_sup.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/couchbeam_mime.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/couchbeam_httpc.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/couchbeam_doc.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/couchbeam_deps.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/couchbeam_changes.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/couchbeam_attachments.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/couchbeam_app.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/couchbeam.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/couchbeam.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/gen_changes.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/couchbeam_view.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/couchbeam_util.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/couchbeam_sup.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/couchbeam_mime.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/couchbeam_httpc.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/couchbeam_doc.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/couchbeam_deps.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/couchbeam_changes.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/couchbeam_attachments.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/couchbeam_app.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/couchbeam.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/couchbeam.app
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%

@@ -1,0 +1,6 @@
+An RabbitMQ client library for erlang which aims at being easy to use for
+simple publisher and subscriber applications.
+
+a fork by seth
+
+WWW: https://github.com/seth/gen_bunny

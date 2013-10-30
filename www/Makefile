@@ -194,6 +194,7 @@
     SUBDIR += ephemera
     SUBDIR += epiphany
     SUBDIR += epiphany-extensions
+    SUBDIR += erl-opscoderl_wm
     SUBDIR += erwn
     SUBDIR += eventum
     SUBDIR += evolution-webcal
@@ -452,6 +453,7 @@
     SUBDIR += mkapachepw
     SUBDIR += mknmz-wwwoffle
     SUBDIR += mnogosearch
+    SUBDIR += mochiweb-basho
     SUBDIR += mod_amazon_proxy
     SUBDIR += mod_antiloris
     SUBDIR += mod_asn
@@ -2037,6 +2039,7 @@
     SUBDIR += webkit-sharp
     SUBDIR += weblint
     SUBDIR += weblint++
+    SUBDIR += webmachine
     SUBDIR += webobjects
     SUBDIR += webpy
     SUBDIR += webreport

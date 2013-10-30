@@ -217,6 +217,13 @@
     SUBDIR += enteruser
     SUBDIR += env4801
     SUBDIR += epylog
+    SUBDIR += erl-chef_authn
+    SUBDIR += erl-chef_certgen
+    SUBDIR += erl-chef_db
+    SUBDIR += erl-chef_index
+    SUBDIR += erl-chef_objects
+    SUBDIR += erl-chef_wm
+    SUBDIR += erl-stats_hero
     SUBDIR += eroaster
     SUBDIR += etcmerge
     SUBDIR += etcupdate

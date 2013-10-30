@@ -1,0 +1,22 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/depsolver.app
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/depsolver_sup.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/depsolver_app.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/depsolver.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/depsolver_worker.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/depsolver_worker_sup.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/depsolver_event_logger.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/depsolver_culprit.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/depsolver.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/depsolver_app.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/depsolver_culprit.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/depsolver_event_logger.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/depsolver_sup.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/depsolver_worker.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/depsolver_worker_sup.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/log_test.rb
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/results.txt
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%

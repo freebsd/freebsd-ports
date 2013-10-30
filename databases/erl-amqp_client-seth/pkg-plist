@@ -1,0 +1,17 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/amqp_channel.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/amqp_channel_sup.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/amqp_channel_sup_sup.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/amqp_channel_util.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/amqp_connection.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/amqp_connection_sup.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/amqp_connection_type_sup.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/amqp_direct_connection.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/amqp_main_reader.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/amqp_network_connection.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/amqp_rpc_client.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/amqp_rpc_server.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/amqp_client.hrl
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%

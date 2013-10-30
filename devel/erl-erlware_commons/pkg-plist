@@ -1,0 +1,34 @@
+@comment $FreeBSD$
+
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ec_talk.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ec_semver_parser.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ec_semver.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ec_rbdict.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ec_plists.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ec_orddict.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ec_lists.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ec_gb_trees.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ec_file.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ec_dictionary.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ec_dict.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ec_date.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ec_compile.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ec_assoc_list.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/erlware_commons.app
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ec_talk.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ec_semver_parser.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ec_semver.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ec_rbdict.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ec_plists.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ec_orddict.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ec_lists.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ec_gb_trees.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ec_file.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ec_dictionary.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ec_dict.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ec_date.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ec_compile.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ec_assoc_list.beam
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%

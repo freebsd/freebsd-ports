@@ -1,0 +1,10 @@
+--- ./src/jiffy.app.src.orig	2013-10-29 08:29:18.000000000 +0900
++++ ./src/jiffy.app.src	2013-10-29 08:29:29.000000000 +0900
+@@ -1,6 +1,6 @@
+ {application, jiffy, [
+     {description, "JSON Decoder/Encoder."},
+-    {vsn, git},
++    {vsn, "${VERSION}"},
+     {registered, []},
+     {applications, [kernel]}
+ ]}.

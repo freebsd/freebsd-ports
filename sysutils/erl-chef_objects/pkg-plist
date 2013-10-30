@@ -1,0 +1,62 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_user.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_sandbox.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_s3_ops.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_s3.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_role.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_regex.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_parallel.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_object_base.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_object.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_node.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_metrics.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_json_validator.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_json.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_environment.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_depsolver_worker.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_depsolver.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_deep_merge.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_db_compression.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_data_bag_item.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_data_bag.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_cookbook_version.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_config.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_client.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_cert_http.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/depselector_rb/depselector.rb
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/depselector_rb/Gemfile.lock
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/depselector_rb/Gemfile
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/chef_types.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/chef_regex.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/chef_osc_defaults.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_user.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_sandbox.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_s3_ops.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_s3.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_role.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_regex.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_parallel.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_objects.app
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_object_base.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_object.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_node.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_metrics.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_json_validator.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_json.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_environment.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_depsolver_worker.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_depsolver.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_deep_merge.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_db_compression.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_data_bag_item.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_data_bag.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_cookbook_version.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_config.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_client.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_cert_http.beam
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/depselector_rb
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%

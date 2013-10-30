@@ -1,0 +1,11 @@
+--- ./src/envy.app.src.orig	2013-10-28 12:04:55.000000000 +0900
++++ ./src/envy.app.src	2013-10-28 12:05:03.000000000 +0900
+@@ -1,7 +1,7 @@
+ {application, envy,
+  [
+   {description, "A application:get_env helper system"},
+-  {vsn, git},
++  {vsn, "${VERSION}"},
+   {registered, []},
+   {applications, [
+                   kernel,

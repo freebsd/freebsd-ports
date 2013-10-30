@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rebar_vsn_plugin.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/rebar_vsn_plugin.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/rebar_vsn_plugin.app
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%

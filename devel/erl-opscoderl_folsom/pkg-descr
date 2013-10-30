@@ -1,0 +1,7 @@
+Opscode helpers for instrumenting Erlang apps with folsom metrics. Here you
+will find the module oc_folsom that will help you standardize folsom metric
+labels and a convenience function for instrumenting a bit of code such that you
+capture the run time in a histogram and fire a meter metric all in one call
+(oc_folsom:time/2).
+
+WWW: https://github.com/opscode/opscoderl_folsom

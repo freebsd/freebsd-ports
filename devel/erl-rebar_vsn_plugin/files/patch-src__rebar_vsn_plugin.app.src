@@ -1,0 +1,11 @@
+--- ./src/rebar_vsn_plugin.app.src.orig	2013-10-29 09:27:48.000000000 +0900
++++ ./src/rebar_vsn_plugin.app.src	2013-10-29 09:27:58.000000000 +0900
+@@ -20,7 +20,7 @@
+ 
+ {application, rebar_vsn_plugin,
+  [{description, "Correct version manipulation for rebar"},
+-  {vsn, git},
++  {vsn, "${VERSION}"},
+   {modules, []},
+   {registered, []},
+   {applications, [kernel, stdlib]}]}.

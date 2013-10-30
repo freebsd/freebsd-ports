@@ -1,0 +1,4 @@
+An enhancement for application:get_env to provide data validation and sensible
+error messages.
+
+WWW: https://github.com/manderson26/envy

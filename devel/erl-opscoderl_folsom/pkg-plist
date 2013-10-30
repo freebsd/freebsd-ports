@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/oc_folsom.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/opscoderl_folsom.app
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/oc_folsom.beam
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%

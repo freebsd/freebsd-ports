@@ -1,0 +1,27 @@
+%%LIB32DIR%%/erlang/lib/meck-%%VERSION%%/ebin/meck.app
+%%LIB32DIR%%/erlang/lib/meck-%%VERSION%%/ebin/meck.beam
+%%LIB32DIR%%/erlang/lib/meck-%%VERSION%%/ebin/meck_args_matcher.beam
+%%LIB32DIR%%/erlang/lib/meck-%%VERSION%%/ebin/meck_code.beam
+%%LIB32DIR%%/erlang/lib/meck-%%VERSION%%/ebin/meck_code_gen.beam
+%%LIB32DIR%%/erlang/lib/meck-%%VERSION%%/ebin/meck_cover.beam
+%%LIB32DIR%%/erlang/lib/meck-%%VERSION%%/ebin/meck_expect.beam
+%%LIB32DIR%%/erlang/lib/meck-%%VERSION%%/ebin/meck_history.beam
+%%LIB32DIR%%/erlang/lib/meck-%%VERSION%%/ebin/meck_matcher.beam
+%%LIB32DIR%%/erlang/lib/meck-%%VERSION%%/ebin/meck_proc.beam
+%%LIB32DIR%%/erlang/lib/meck-%%VERSION%%/ebin/meck_ret_spec.beam
+%%LIB32DIR%%/erlang/lib/meck-%%VERSION%%/ebin/meck_util.beam
+%%LIB32DIR%%/erlang/lib/meck-%%VERSION%%/src/meck.app.src
+%%LIB32DIR%%/erlang/lib/meck-%%VERSION%%/src/meck.erl
+%%LIB32DIR%%/erlang/lib/meck-%%VERSION%%/src/meck_args_matcher.erl
+%%LIB32DIR%%/erlang/lib/meck-%%VERSION%%/src/meck_code.erl
+%%LIB32DIR%%/erlang/lib/meck-%%VERSION%%/src/meck_code_gen.erl
+%%LIB32DIR%%/erlang/lib/meck-%%VERSION%%/src/meck_cover.erl
+%%LIB32DIR%%/erlang/lib/meck-%%VERSION%%/src/meck_expect.erl
+%%LIB32DIR%%/erlang/lib/meck-%%VERSION%%/src/meck_history.erl
+%%LIB32DIR%%/erlang/lib/meck-%%VERSION%%/src/meck_matcher.erl
+%%LIB32DIR%%/erlang/lib/meck-%%VERSION%%/src/meck_proc.erl
+%%LIB32DIR%%/erlang/lib/meck-%%VERSION%%/src/meck_ret_spec.erl
+%%LIB32DIR%%/erlang/lib/meck-%%VERSION%%/src/meck_util.erl
+@dirrm %%LIB32DIR%%/erlang/lib/meck-%%VERSION%%/src
+@dirrm %%LIB32DIR%%/erlang/lib/meck-%%VERSION%%/ebin
+@dirrm %%LIB32DIR%%/erlang/lib/meck-%%VERSION%%

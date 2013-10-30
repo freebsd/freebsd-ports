@@ -1,0 +1,24 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_index.app
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_index_queue.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_index_sup.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_lucene.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/chef_solr.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/lucene.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/lucene_sexp.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/lucene_txfm.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/chef_index.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/chef_solr.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lucene.peg
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_index_queue.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_index_sup.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_lucene.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/chef_solr.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/lucene.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/lucene_sexp.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/lucene_txfm.erl
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%

@@ -1,0 +1,11 @@
+--- ./src/chef_db.app.src.orig	2013-10-18 02:39:37.000000000 +0900
++++ ./src/chef_db.app.src	2013-10-29 18:06:35.000000000 +0900
+@@ -19,7 +19,7 @@
+ {application, chef_db,
+  [
+   {description, "Database abstraction layer for Chef server"},
+-  {vsn, git},
++  {vsn, "${VERSION}"},
+   {registered, []},
+   {applications, [
+                   kernel,

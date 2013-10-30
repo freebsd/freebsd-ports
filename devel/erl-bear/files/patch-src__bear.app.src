@@ -1,0 +1,11 @@
+--- ./src/bear.app.src.orig	2013-10-29 10:30:23.000000000 +0900
++++ ./src/bear.app.src	2013-10-29 10:30:37.000000000 +0900
+@@ -1,7 +1,7 @@
+ {application, bear,
+  [
+   {description, ""},
+-  {vsn, git},
++  {vsn, "${VERSION}"},
+   {registered, []},
+   {applications, []},
+   {env, []}

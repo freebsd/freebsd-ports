@@ -1,0 +1,28 @@
+foo.erl:
+
+    -module(foo).
+
+    -export([doit/0, doit/1, doit/2]).
+
+    doit() ->
+        doit.
+
+    doit(A) ->
+        [doit, A].
+
+    doit(A, B) ->
+        [doit, A, B].
+
+Module bar.erl which 'mixes in' foo:
+
+    -module(bar).
+    -include_lib("mixer/include/mixer.hrl").
+    -mixin([foo]).
+
+or only specific functions from foo:
+
+    -module(bar).
+    -include_lib("mixer/include/mixer.hrl").
+    -mixin([{foo, [doit/0, doit/2]}]).
+
+WWW: https://github.com/opscode/mixer

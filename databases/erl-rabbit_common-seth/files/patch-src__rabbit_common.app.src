@@ -1,0 +1,10 @@
+--- ./src/rabbit_common.app.src.orig	2013-10-30 14:07:39.000000000 +0900
++++ ./src/rabbit_common.app.src	2013-10-30 14:07:52.000000000 +0900
+@@ -1,6 +1,6 @@
+ {application, rabbit_common,
+  [{description, "RabbitMQ Common Libraries"},
+-  {vsn, "0.0.0"},
++  {vsn, "%%PORTVERSION%%"},
+   {modules, [
+              rabbit_writer,
+              rabbit_reader,

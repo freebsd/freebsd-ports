@@ -1,0 +1,21 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/stats_hero.app
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/stats_hero_worker_sup.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/stats_hero_sup.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/stats_hero_sender_sup.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/stats_hero_sender.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/stats_hero_monitor.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/stats_hero_app.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/stats_hero.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/stats_hero.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/stats_hero_app.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/stats_hero_monitor.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/stats_hero_sender.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/stats_hero_sender_sup.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/stats_hero_sup.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/stats_hero_worker_sup.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/stats_hero.hrl
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%

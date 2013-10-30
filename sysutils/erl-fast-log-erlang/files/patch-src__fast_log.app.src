@@ -1,0 +1,11 @@
+--- ./src/fast_log.app.src.orig	2013-10-30 11:14:41.000000000 +0900
++++ ./src/fast_log.app.src	2013-10-30 11:14:51.000000000 +0900
+@@ -18,7 +18,7 @@
+ {application, fast_log,
+  [
+   {description, "Simple, fast application logging"},
+-  {vsn, git},
++  {vsn, "%%PORTVERSION%%"},
+   {registered, []},
+   {applications, [
+                   kernel,

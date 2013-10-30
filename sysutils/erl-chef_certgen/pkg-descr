@@ -1,0 +1,4 @@
+Chef Certificate Generator is an Erlang NIF that exposes some of the OpenSSL
+functionality missing from the builtin Erlang crypto application.
+
+WWW: https://github.com/opscode/chef_certgen

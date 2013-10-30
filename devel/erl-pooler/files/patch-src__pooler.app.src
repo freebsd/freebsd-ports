@@ -1,0 +1,11 @@
+--- ./src/pooler.app.src.orig	2013-09-19 18:13:07.000000000 +0900
++++ ./src/pooler.app.src	2013-09-19 18:13:30.000000000 +0900
+@@ -1,7 +1,7 @@
+ {application, pooler,
+  [
+   {description, ""},
+-  {vsn, git},
++  {vsn, "${VERSION}"},
+   {registered, []},
+   {applications, [
+                   kernel,

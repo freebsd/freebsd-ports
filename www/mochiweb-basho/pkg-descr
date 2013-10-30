@@ -1,0 +1,5 @@
+MochiWeb is an Erlang library for building lightweight HTTP servers.
+
+This is the Basho fork of MochiWeb.
+
+WWW: https://github.com/mochi/mochiweb
