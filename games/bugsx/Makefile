@@ -13,14 +13,14 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Breed bugs using genetic algorithms
 
+LICENSE=	GPLv1
+
 USES=		imake
 USE_XORG=	x11 xext
 WRKSRC=		${WRKDIR}/bugsx
-MAN1=		bugsx.1
-PLIST_FILES=	bin/bugsx
+PLIST_FILES=	bin/bugsx man/man1/bugsx.1.gz
 
-NO_STAGE=	yes
 post-install:
-	${STRIP_CMD} ${PREFIX}/bin/bugsx
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bugsx
 
 .include <bsd.port.mk>
