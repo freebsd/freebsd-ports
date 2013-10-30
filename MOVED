@@ -4960,13 +4960,13 @@ sysutils/warden||2013-09-26|Obsolete: Use sysutils/pcbsd-utils instead
 ports-mgmt/pbi-manager||2013-09-26|Obsolete: Use sysutils/pcbsd-utils instead
 net/pcbsd-netmanager||2013-09-26|Obsolete: Use sysutils/pcbsd-utils-qt4 instead
 archivers/ruby-bz2||2013-10-01|Has expired: Does not work with Ruby 1.9
-sysutils/puppet26|sysutils/puppet27|2013-10-01|Has expired: End of Life from april 2013. Upgrade to 2.7 or 3.x.
-www/varnish2|www/varnish|2013-10-01|Has expired: No update since january 2011. Upgrade to Varnish 3.
+sysutils/puppet26|sysutils/puppet27|2013-10-01|Has expired: End of Life from april 2013. Upgrade to 2.7 or 3.x
+www/varnish2|www/varnish|2013-10-01|Has expired: No update since january 2011. Upgrade to Varnish 3
 databases/dbh10|databases/dbh|2013-10-02|Outdated, not depend on, consider using databases/dbh
 audio/tracker||2013-10-02|No public distfiles available anymore
 chinese/joe2|chinese/joe|2013-10-02|Consider using chinese/joe
 sysutils/rdiff-backup10|sysutils/rdiff-backup|2013-10-02|Outdated, consider using a newer version
-java/jboss2|java/jboss72|2013-10-02|EOL upstream, consider using a newer version.
+java/jboss2|java/jboss72|2013-10-02|EOL upstream, consider using a newer version
 ftp/ncftp2|ftp/ncftp3|2013-10-02|Outdated, consider using a newer version
 irc/keitairc|irc/keitairc2|2013-10-02|Outdated, consider using a newer version
 java/netbeans55|java/netbeans|2013-10-02|Outdated, consider using a newer version
