@@ -4,7 +4,7 @@ etc/ownCloud/sync-exclude.lst.sample
 @exec if [ ! -f %D/etc/ownCloud/sync-exclude.lst ] ; then cp -p %D/%F %B/sync-exclude.lst; fi
 lib/libowncloudsync.so
 lib/libowncloudsync.so.0
-lib/libowncloudsync.so.1.4.1
+lib/libowncloudsync.so.1.4.2
 share/applications/owncloud.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/.buildinfo
 %%PORTDOCS%%%%DOCSDIR%%/html/_images/icon.png
