@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 bin/guake
 bin/guake-prefs
+%%MANPAGES%%man/man1/guake.1.gz
 %%NLS%%share/locale/de/LC_MESSAGES/guake.mo
 %%NLS%%share/locale/el/LC_MESSAGES/guake.mo
 %%NLS%%share/locale/es/LC_MESSAGES/guake.mo
@@ -60,5 +61,3 @@ share/pixmaps/guake/guake.png
 @dirrm share/pixmaps/guake
 @dirrm %%PYTHON_SITELIBDIR%%/guake
 @dirrm %%DATADIR%%
-@exec %%LOCALBASE%%/bin/update-desktop-database || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database || /usr/bin/true
