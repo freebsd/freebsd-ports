@@ -11,13 +11,14 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplayer Chinese Checkers game
 
-LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		gnet-2.0.0:${PORTSDIR}/net/gnet2
+LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
+		libgnet-2.0.so:${PORTSDIR}/net/gnet2
 
-USES=		pkgconfig
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake:env
+
+OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES=	"cheech" \
 			"${COMMENT}" \
@@ -26,11 +27,8 @@ DESKTOP_ENTRIES=	"cheech" \
 			"Game;BoardGame;" \
 			"false"
 
-.if !defined(NOPORTDOCS)
 INSTALL_TARGET=	install install-cheechdocDATA
-.endif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|doc/cheech|share/doc/cheech|g" \
 		-e "s|: install-cheechdocDATA|:|g" \
