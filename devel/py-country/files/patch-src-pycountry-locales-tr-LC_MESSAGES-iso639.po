@@ -1,0 +1,29 @@
+--- src/pycountry/locales/tr/LC_MESSAGES/iso639.po.orig	2013-10-04 21:55:28.000000000 +0400
++++ src/pycountry/locales/tr/LC_MESSAGES/iso639.po	2013-10-30 16:29:29.000000000 +0400
+@@ -324,7 +324,7 @@
+ 
+ #. name for cat, ca
+ msgid "Catalan; Valencian"
+-msgstr ""
++msgstr "Katalanca; Valensiyaca"
+ 
+ #. name for cau
+ #, fuzzy
+@@ -517,7 +517,7 @@
+ 
+ #. name for nld, nl
+ msgid "Dutch; Flemish"
+-msgstr ""
++msgstr "Hollandaca; Flamanca"
+ 
+ #. name for dyu
+ msgid "Dyula"
+@@ -1776,7 +1776,7 @@
+ 
+ #. name for spa, es
+ msgid "Spanish; Castilian"
+-msgstr ""
++msgstr "İspanyolca; Kastilyaca"
+ 
+ #. name for srd, sc
+ #, fuzzy
