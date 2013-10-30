@@ -13,7 +13,7 @@ COMMENT=	Yet Another Pager Software: send messages to pager (SMS, TAP, ...)
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	true
+USES=		gmake
 
 MAN1=		yaps.1
 PLIST_FILES=	bin/yaps etc/yaps.rc.sample

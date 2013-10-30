@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-0.22.8.kst7
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple ifcico like Fidonet technology mailer
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 CONTRIBS=	bfha/README bfha/bfha.pl bflan callout.sh outman timesync.tcl \
