@@ -1,0 +1,15 @@
+--- CMakeLists.txt.orig	2013-10-29 23:22:19.870422125 +0000
++++ CMakeLists.txt	2013-10-29 23:22:29.394420605 +0000
+@@ -175,9 +175,9 @@
+ 
+   int main() { return 0; }" ZLIB_SUPPORTS_GZIP)
+ 
+-if(NOT ZLIB_SUPPORTS_GZIP)
+-  message(FATAL_ERROR "zlib 1.2.x or higher is required to use the gzip format")
+-endif()
++#if(NOT ZLIB_SUPPORTS_GZIP)
++#  message(FATAL_ERROR "zlib 1.2.x or higher is required to use the gzip format")
++#endif()
+ 
+ if(UNIX)
+   check_cxx_source_compiles("#include <sys/prctl.h>
