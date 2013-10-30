@@ -1,6 +1,6 @@
---- ./startup.cc.orig	2012-09-30 23:25:33.000000000 +0200
-+++ ./startup.cc	2012-10-27 20:49:08.848667287 +0200
-@@ -234,8 +234,10 @@
+--- ./startup.cc.orig	2013-09-30 20:32:00.000000000 +0200
++++ ./startup.cc	2013-10-11 22:07:08.183889437 +0200
+@@ -240,8 +240,10 @@
      you.wizard = true;
  #endif
      // Save-less games are pointless except for tests.

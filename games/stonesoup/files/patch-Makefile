@@ -1,6 +1,6 @@
---- ./Makefile.orig	2012-09-30 23:25:31.000000000 +0200
-+++ ./Makefile	2012-10-27 20:49:08.837330946 +0200
-@@ -66,7 +66,7 @@
+--- ./Makefile.orig	2013-09-30 20:32:00.000000000 +0200
++++ ./Makefile	2013-10-11 22:07:08.167887693 +0200
+@@ -69,7 +69,7 @@
  #    ask for a package with convenience libraries instead -- we'll try to provide
  #    them somewhere in the near future.
  
@@ -9,25 +9,16 @@
  
  # Disable GNU Make implicit rules and variables. Leaving them enabled will slow
  # down MinGW and Cygwin builds by a very VERY noticeable degree. Besides, we have
-@@ -112,7 +112,7 @@
+@@ -101,7 +101,7 @@
+ #
  
- else
- 
--CFOPTIMIZE := -O2
-+CFOPTIMIZE :=
- 
- endif # USE_ICC
- 
-@@ -120,7 +120,7 @@
- CFOPTIMIZE += -flto=jobserver -fwhole-program
- endif
  
 -CFOTHERS := -pipe $(EXTERNAL_FLAGS)
 +CFOTHERS := $(CFLAGS)
  CFWARN := -Wall -Wformat-security
  CFWARN_L := -Wundef
  
-@@ -133,8 +133,6 @@
+@@ -118,8 +118,6 @@
  #
  AR = ar
  RANLIB = ranlib
@@ -36,47 +27,44 @@
  RM = rm -f
  COPY = cp
  COPY_R = cp -r
-@@ -530,30 +528,19 @@
- ifndef BUILD_LUA
-   ifdef NO_PKGCONFIG
-     BUILD_LUA = yes
--  endif
--endif
--ifndef BUILD_LUA
--  ifneq ($(shell $(PKGCONFIG) lua5.1 --exists || echo no),)
--    ifneq ($(shell $(PKGCONFIG) lua --exists || echo no),)
-+  else
-+    LUA_PACKAGE := $(shell for lua in lua51 lua5.1 lua-5.1 lua; do \
-+      $(PKGCONFIG) $$lua --exists && test `$(PKGCONFIG) $$lua --modversion | head -c 3` = 5.1 && \
-+        echo $$lua && break;\
-+    done)
-+    ifeq (,$(LUA_PACKAGE))
-       BUILD_LUA = yes
-     else
--      ifeq ($(shell $(PKGCONFIG) lua --modversion | head -c 3),5.1)
--        LUA_PACKAGE = lua
--      else
--        BUILD_LUA = yes
--      endif
-+      INCLUDES_L += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --cflags-only-I)
-+      CFLAGS_L  += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --cflags-only-other)
-+      LIBS += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --libs)
-     endif
--  else
--    LUA_PACKAGE = lua5.1
--  endif
--endif
--ifndef BUILD_LUA
--  ifndef LUA_PACKAGE
--    LUA_PACKAGE = lua5.1
+@@ -529,9 +527,9 @@
+   ifneq (,$(shell $(GXX) --version|grep 'g++.*4\.2\.'))
+     # OS X uses a buggy ancient version of gcc without fixes from even
+     # subsequent point releases of 4.2.
+-    CFOPTIMIZE := -O0
++    CFOPTIMIZE :=
+   else
+-    CFOPTIMIZE := -O2
++    CFOPTIMIZE :=
    endif
--  INCLUDES_L += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --cflags-only-I)
--  CFLAGS_L  += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --cflags-only-other)
--  LIBS += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --libs)
  endif
  
- ifndef BUILD_SQLITE
-@@ -707,7 +694,7 @@
+@@ -585,7 +583,7 @@
+       BUILD_LUA = yes
+     endif
+   else
+-    ifneq ($(shell $(PKGCONFIG) lua5.1 --exists || echo no),)
++    ifneq ($(shell $(PKGCONFIG) lua-5.1 --exists || echo no),)
+       ifneq ($(shell $(PKGCONFIG) lua --exists || echo no),)
+         BUILD_LUA = yes
+       else
+@@ -596,13 +594,13 @@
+         endif
+       endif
+     else
+-      LUA_PACKAGE = lua5.1
++      LUA_PACKAGE = lua-5.1
+     endif
+   endif
+ endif
+ ifndef BUILD_LUA
+   ifndef LUA_PACKAGE
+-    LUA_PACKAGE = lua5.1
++    LUA_PACKAGE = lua-5.1
+   endif
+   INCLUDES_L += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --cflags-only-I)
+   CFLAGS_L  += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --cflags-only-other)
+@@ -754,7 +752,7 @@
  DEFINES += -DWIZARD
  endif
  ifdef NO_OPTIMIZE
@@ -85,42 +73,26 @@
  endif
  
  ifdef PCH
-@@ -831,10 +818,12 @@
+@@ -878,7 +876,7 @@
      INSTALL_FONTS += $(PROPORTIONAL_FONT)
    endif
  else
--  SYS_PROPORTIONAL_FONT = $(shell find /usr/share/fonts -iname $(OUR_PROPORTIONAL_FONT)|head -n 1)
--  ifeq (,$(SYS_PROPORTIONAL_FONT))
--    SYS_PROPORTIONAL_FONT = $(shell find /usr/local/share/fonts -iname $(OUR_PROPORTIONAL_FONT)|head -n 1)
--  endif
-+  SYS_PROPORTIONAL_FONT = $(shell name=$(OUR_PROPORTIONAL_FONT);\
-+    {\
-+      fc-list | sed 's/: .*//' | grep -Fi "/$$name";\
-+      for dir in /usr/share/fonts /usr/local/share/fonts /usr/*/lib/X11/fonts;\
-+      do [ -d $$dir ] && echo $$dir; done;\
-+    } 2>/dev/null | xargs -I% find % -type f -iname $$name -print | head -n1)
-   ifneq (,$(SYS_PROPORTIONAL_FONT))
-     ifeq (,$(COPY_FONTS))
-       DEFINES += -DPROPORTIONAL_FONT=\"$(SYS_PROPORTIONAL_FONT)\"
-@@ -854,10 +843,12 @@
+-  SYS_PROPORTIONAL_FONT = $(shell dir=/usr/share/fonts; [ -d $$dir ] && find $$dir -iname $(OUR_PROPORTIONAL_FONT)|head -n 1)
++  SYS_PROPORTIONAL_FONT = $(shell dir=%%LOCALBASE%%/lib/X11/fonts; [ -d $$dir ] && find $$dir -iname $(OUR_PROPORTIONAL_FONT)|head -n 1)
+   ifeq (,$(SYS_PROPORTIONAL_FONT))
+     SYS_PROPORTIONAL_FONT = $(shell dir=/usr/local/share/fonts ; [ -d $$dir ] && find $$dir -iname $(OUR_PROPORTIONAL_FONT)|head -n 1)
+   endif
+@@ -901,7 +899,7 @@
      INSTALL_FONTS += $(MONOSPACED_FONT)
    endif
  else
--  SYS_MONOSPACED_FONT = $(shell find /usr/share/fonts -iname $(OUR_MONOSPACED_FONT)|head -n 1)
--  ifeq (,$(SYS_MONOSPACED_FONT))
--    SYS_MONOSPACED_FONT = $(shell find /usr/local/share/fonts -iname $(OUR_MONOSPACED_FONT)|head -n 1)
--  endif
-+  SYS_MONOSPACED_FONT = $(shell name=$(OUR_MONOSPACED_FONT);\
-+    {\
-+      fc-list | sed 's/: .*//' | grep -Fi "/$$name";\
-+      for dir in /usr/share/fonts /usr/local/share/fonts /usr/*/lib/X11/fonts;\
-+      do [ -d $$dir ] && echo $$dir; done;\
-+    } 2>/dev/null | xargs -I% find % -type f -iname $$name -print | head -n1)
-   ifneq (,$(SYS_MONOSPACED_FONT))
-     ifeq (,$(COPY_FONTS))
-       DEFINES += -DMONOSPACED_FONT=\"$(SYS_MONOSPACED_FONT)\"
-@@ -1036,7 +1027,7 @@
-                    cmd-name.h $(INI_OBJECTS)
+-  SYS_MONOSPACED_FONT = $(shell dir=/usr/share/fonts; [ -d $$dir ] && find $$dir -iname $(OUR_MONOSPACED_FONT)|head -n 1)
++  SYS_MONOSPACED_FONT = $(shell dir=%%LOCALBASE%%/lib/X11/fonts; [ -d $$dir ] && find $$dir -iname $(OUR_MONOSPACED_FONT)|head -n 1)
+   ifeq (,$(SYS_MONOSPACED_FONT))
+     SYS_MONOSPACED_FONT = $(shell dir=/usr/local/share/fonts; [ -d $$dir ] && find $$dir -iname $(OUR_MONOSPACED_FONT)|head -n 1)
+   endif
+@@ -1091,7 +1089,7 @@
+                    cmd-name.h
  
  SRC_PKG_BASE  := stone_soup
 -SRC_VERSION   := $(shell git describe --tags $(MERGE_BASE) 2>/dev/null || cat util/release_ver)
@@ -128,11 +100,3 @@
  MAJOR_VERSION = $(shell echo "$(SRC_VERSION)"|sed -r 's/-.*//;s/^([^.]+\.[^.]+).*/\1/')
  
  export SRC_VERSION
-@@ -1049,6 +1040,7 @@
- greet:
- 	@if [ ! -e $(GAME) ]; then\
- 		printf "  * If you experience any problems building Crawl, please take a second look\\n"\
-+		;printf\
- 		"  * at INSTALL.txt: the solution to your problem just might be in there!\\n";\
- 	fi
- 

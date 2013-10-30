@@ -1,0 +1,12 @@
+--- ./dat/des/branches/dis.des.orig	2013-10-11 22:08:34.949889217 +0200
++++ ./dat/des/branches/dis.des	2013-10-11 22:13:33.637913849 +0200
+@@ -209,8 +209,7 @@
+ KMONS:   F = executioner
+ KMONS:   ! = iron devil / skeletal warrior / hell knight / place:Zot:1 skeleton w:15
+ KMONS:   ? = patrolling iron imp
+-: dgn.delayed_decay(_G, '%', 'human corpse / human skeleton, \
+-:                             human corpse / human skeleton')
++: dgn.delayed_decay(_G, '%', 'human corpse / human skeleton, human corpse / human skeleton')
+ : else
+ KMONS:   01 = ghost moth
+ KMONS:   23 = golden dragon

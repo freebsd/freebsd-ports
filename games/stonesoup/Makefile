@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stonesoup
-PORTVERSION=	0.11.1
+PORTVERSION=	0.13.0
 CATEGORIES=	games
 MASTER_SITES=	SF/crawl-ref/Stone%20Soup/${PORTVERSION}
 DISTNAME=	stone_soup-${PORTVERSION}-nodeps
@@ -13,12 +13,13 @@ COMMENT=	Dungeon Crawl Stone Soup - a fun, free rogue-like game
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/stone_soup-${PORTVERSION}/licence.txt
 
+NEED_ROOT=	yes
+
 USE_SQLITE=	yes
 USE_XZ=		yes
 USES=		bison gmake perl5 pkgconfig
 USE_LUA=	5.1
 USE_PERL5=	build
-
 
 SAVEDIR=	\~/.stonesoup
 WRKSRC=		${WRKDIR}/stone_soup-${PORTVERSION}/source/
@@ -35,21 +36,15 @@ LUA_BINDINGS_DESC=	Bindings for LUA user scripts
 MAKE_ARGS=	prefix=${PREFIX} \
 		DATADIR=${DATADIR} \
 		SAVEDIR=${SAVEDIR} \
+		DESTDIR=${STAGEDIR} \
 		INSTALL_UGRP=root:games \
 		NO_AUTO_OPT=YesPlease \
 		NO_OPTIMIZE=YesPlease \
-		LUA_INCLUDE_DIR=${LOCALBASE}/include/lua51 \
-		LUA_LIB=-llua-5.1 \
 		SQLITE_INCLUDE_DIR=${LOCALBASE}/include \
 		SQLITE_LIB=-lsqlite3 \
-		LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/lua51"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ${CC:T:M*clang*}
-MAKE_ARGS+=	NO_INLINE_DEPGEN=1
-.endif
 
 .if defined(VERBOSE)
 MAKE_ARGS+=	V=yes
@@ -84,7 +79,14 @@ RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox
 MAKE_ARGS+=	NO_LUA_BINDINGS=yes
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1000500
+CFLAGS+=	-std=c++0x
+.endif
+
 post-patch:
+	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/Makefile
 .if ${PORT_OPTIONS:MSOUND}
 	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," ${WRKSRC}/AppHdr.h
 	@${REINPLACE_CMD} -e "s,%%SOUND%%,," ${WRKSRC}/AppHdr.h
@@ -92,14 +94,15 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,%%SOUND%%,// ," ${WRKSRC}/AppHdr.h
 .endif
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/README.FreeBSD ${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${DATADIR}/settings/init.txt ${EXAMPLESDIR}/sample.crawlrc
-.endif
+pre-install:
+	@${FIND} ${WRKSRC}/dat -type f -name '*.orig' | \
+		${XARGS} ${RM}
 
-.include <bsd.port.mk>
+post-install:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/README.FreeBSD ${STAGEDIR}${DOCSDIR}
+
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${STAGEDIR}${DATADIR}/settings/init.txt ${STAGEDIR}${EXAMPLESDIR}/sample.crawlrc
+
+.include <bsd.port.post.mk>

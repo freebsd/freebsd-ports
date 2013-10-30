@@ -1,5 +1,5 @@
---- ./rltiles/Makefile.orig	2012-09-30 23:25:31.000000000 +0200
-+++ ./rltiles/Makefile	2012-10-27 20:49:55.957667879 +0200
+--- ./rltiles/Makefile.orig	2013-09-30 20:32:00.000000000 +0200
++++ ./rltiles/Makefile	2013-10-11 22:07:08.176890218 +0200
 @@ -1,7 +1,7 @@
  uname_S := $(shell uname -s)
  
@@ -16,9 +16,9 @@
 -CFLAGS := -O2 -g -Wall -Wextra -Wno-parentheses -Wno-unused-parameter
 +L_CFLAGS := $(CFLAGS)
  
- ifdef TILES
-   ifndef CONTRIB_SDL
-@@ -29,24 +29,24 @@
+ ifdef ANDROID
+   CXXFLAGS :=
+@@ -35,24 +35,24 @@
      PNG_LIB := ../contrib/install/$(ARCH)/lib/libpng.a ../contrib/install/$(ARCH)/lib/libz.a
    endif
  
@@ -50,7 +50,7 @@
  endif
  
  # Attempt to use a full compiler name, to make
-@@ -58,7 +58,7 @@
+@@ -64,7 +64,7 @@
  ifeq ($(shell which $(LMACH)gcc > /dev/null 2> /dev/null && echo "Yes"),)
  LMACH :=
  endif
@@ -59,7 +59,7 @@
  
  DELETE = rm -f
  
-@@ -98,7 +98,7 @@
+@@ -109,7 +109,7 @@
  	$(QUIET_GEN)$(TILEGEN) -c $<
  
  # CFLAGS difference check
@@ -68,16 +68,12 @@
  
  .cflags: .force-cflags
  	@FLAGS='$(TRACK_CFLAGS)'; \
-@@ -127,9 +127,13 @@
+@@ -138,9 +138,9 @@
  distclean: clean
  
  %.o: %.cc .cflags
--	$(QUIET_HOSTCXX)$(HOSTCXX) $(CFLAGS) -Wp,-MMD,$*.d,-MT,$@ -c $< -o $@
-+ifdef NO_INLINE_DEPGEN
-+	$(QUIET_HOSTCXX)$(HOSTCXX) $(L_CFLAGS) -Wp,-MT,$@ -c $< -o $@
-+else
-+	$(QUIET_HOSTCXX)$(HOSTCXX) $(L_CFLAGS) -Wp,-MMD,$*.d,-MT,$@ -c $< -o $@
-+endif
+-	$(QUIET_HOSTCXX)$(HOSTCXX) $(CFLAGS) -MMD -c $< -o $@
++	$(QUIET_HOSTCXX)$(HOSTCXX) $(L_CFLAGS) -MMD -c $< -o $@
  
  $(TILEGEN): $(OBJECTS)
 -	$(QUIET_HOSTLINK)$(HOSTCXX) $(OBJECTS) -o $@ $(LDFLAGS)
