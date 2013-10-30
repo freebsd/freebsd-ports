@@ -11,14 +11,13 @@ MASTER_SITES=	http://offload2.icculus.org:9090/~jcspray/GNUDoku/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A free program for creating and solving Su Doku puzzles
 
-LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24
+LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 
 USES=		gmake pkgconfig
 MAKE_ENV=	CXXLAGS="${CXXFLAGS}"
+MAKE_ARGS=	PREFIX="${STAGEDIR}${PREFIX}"
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e 's|PREFIX=|PREFIX?=|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|CXXFLAGS=|CXXFLAGS+=|' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
