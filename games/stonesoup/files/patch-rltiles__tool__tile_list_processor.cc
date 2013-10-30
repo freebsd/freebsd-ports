@@ -1,11 +1,11 @@
---- ./rltiles/tool/tile_list_processor.cc.orig	2012-09-30 23:25:33.000000000 +0200
-+++ ./rltiles/tool/tile_list_processor.cc	2012-10-27 20:49:08.847233795 +0200
-@@ -51,7 +51,7 @@
+--- ./rltiles/tool/tile_list_processor.cc.orig	2013-09-30 20:32:00.000000000 +0200
++++ ./rltiles/tool/tile_list_processor.cc	2013-10-11 22:07:08.181888672 +0200
+@@ -52,7 +52,7 @@
          ""
      };
  
 -    if (m_sdir != "" || background && m_back_sdir != "")
 +    if (m_sdir != "" || (background && m_back_sdir != ""))
      {
-         std::vector<const char *> dirs;
+         vector<const char *> dirs;
          if (m_sdir != "")

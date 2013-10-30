@@ -1,8 +1,8 @@
---- ./files.cc.orig	2012-09-30 23:25:31.000000000 +0200
-+++ ./files.cc	2012-10-27 20:49:08.839666272 +0200
-@@ -618,8 +618,10 @@
+--- ./files.cc.orig	2013-09-30 20:32:00.000000000 +0200
++++ ./files.cc	2013-10-11 22:07:08.172887580 +0200
+@@ -626,8 +626,10 @@
  {
-     std::vector<player_save_info> chars;
+     vector<player_save_info> chars;
  
 +#ifdef WIZARD
      if (Options.no_save)
@@ -10,10 +10,10 @@
 +#endif
  
  #ifndef DISABLE_SAVEGAME_LISTS
-     std::string searchpath = _get_savefile_directory();
-@@ -1741,8 +1743,10 @@
+     string searchpath = _get_savefile_directory();
+@@ -1792,8 +1794,10 @@
  // returns false if a new game should start instead
- static bool _restore_game(const std::string& filename)
+ static bool _restore_game(const string& filename)
  {
 +#ifdef WIZARD
      if (Options.no_save)
