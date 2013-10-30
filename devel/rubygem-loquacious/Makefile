@@ -15,5 +15,4 @@ RUBYGEM_AUTOPLIST=	yes
 
 RUN_DEPENDS=	rubygem-rspec>=2.7.0:${PORTSDIR}/devel/rubygem-rspec
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
