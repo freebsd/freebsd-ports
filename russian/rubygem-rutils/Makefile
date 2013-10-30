@@ -15,5 +15,4 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/gilensize bin/rutilize
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
