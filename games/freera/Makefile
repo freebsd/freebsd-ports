@@ -20,7 +20,9 @@ WRKSRC=		${WRKDIR}/freera++
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/${PORTNMAE}
+PORTDATA=	*
+
 post-patch:
 	@${MV} ${WRKSRC}/SConstruct ${WRKSRC}/SConstruct.orig
 	@${CP} ${FILESDIR}/SConstruct ${WRKSRC}/
@@ -31,12 +33,7 @@ post-patch:
 	@${RM} -rf ${WRKSRC}/data/settings/ra/.svn ${WRKSRC}/data/settings/td/.svn
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/freera ${PREFIX}/bin/
-	cd ${WRKSRC}/data && \
-		${FIND} . -type d -exec ${MKDIR} "${DATADIR}/{}" \; ;\
-		${FIND} . -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
-
-post-install:
-	${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/freera ${STAGEDIR}${PREFIX}/bin/
+	cd ${WRKSRC}/data && ${COPYTREE_SHARE} '*' ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
