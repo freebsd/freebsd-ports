@@ -22,5 +22,4 @@ USE_GNOME=	gtk20
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lm
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
