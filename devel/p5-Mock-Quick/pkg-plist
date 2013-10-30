@@ -1,3 +1,10 @@
+%%PERL5_MAN3%%/Mock::Quick.3.gz
+%%PERL5_MAN3%%/Mock::Quick::Class.3.gz
+%%PERL5_MAN3%%/Mock::Quick::Method.3.gz
+%%PERL5_MAN3%%/Mock::Quick::Object.3.gz
+%%PERL5_MAN3%%/Mock::Quick::Object::Control.3.gz
+%%PERL5_MAN3%%/Mock::Quick::Util.3.gz
+%%PERL5_MAN3%%/Object::Quick.3.gz
 %%SITE_PERL%%/Mock/Quick.pm
 %%SITE_PERL%%/Mock/Quick/Class.pm
 %%SITE_PERL%%/Mock/Quick/Method.pm

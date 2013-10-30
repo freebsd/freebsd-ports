@@ -26,12 +26,6 @@ TEST_DEPENDS=	p5-Test-Fatal>=0.003:${PORTSDIR}/devel/p5-Test-Fatal
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Moo.3 \
-		Moo::Role.3 \
-		Sub::Defer.3 \
-		Sub::Quote.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

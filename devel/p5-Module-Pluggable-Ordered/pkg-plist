@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Module::Pluggable::Ordered.3.gz
 %%SITE_PERL%%/Module/Pluggable/Ordered.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Pluggable/Ordered/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Pluggable/Ordered
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Pluggable/Ordered
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Pluggable
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
 @dirrmtry %%SITE_PERL%%/Module/Pluggable

@@ -14,11 +14,7 @@ COMMENT=	Name your accessors foo() and set_foo()
 BUILD_DEPENDS=	p5-Moose>=0.94:${PORTSDIR}/devel/p5-Moose
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=		MooseX::SemiAffordanceAccessor.3 \
-		MooseX::SemiAffordanceAccessor::Role::Attribute.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

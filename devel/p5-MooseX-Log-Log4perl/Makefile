@@ -19,10 +19,6 @@ TEST_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		MooseX::Log::Log4perl.3 \
-		MooseX::Log::Log4perl::Easy.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e '/auto_install;/d' \
 		${WRKSRC}/Makefile.PL

@@ -22,8 +22,4 @@ TEST_DEPENDS=	p5-Test-Pod>=1.14:${PORTSDIR}/devel/p5-Test-Pod \
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Module::Build::Convert.3
-MAN1=		make2build.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

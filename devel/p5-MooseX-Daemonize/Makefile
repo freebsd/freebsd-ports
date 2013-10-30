@@ -24,12 +24,4 @@ DEPRECATED=	Deprecated by upstream, use devel/p5-Daemon-Control instead
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	MooseX::Daemonize.3 \
-	MooseX::Daemonize::Core.3 \
-	MooseX::Daemonize::Pid.3 \
-	MooseX::Daemonize::Pid::File.3 \
-	MooseX::Daemonize::WithPidFile.3 \
-	Test::MooseX::Daemonize.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

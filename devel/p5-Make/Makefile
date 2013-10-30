@@ -13,10 +13,6 @@ COMMENT=	Perl module implementing 'make' and script
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		perlmake.1
-MAN3=		Make.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|pmake|perlmake|' \
 		${WRKSRC}/Makefile.PL

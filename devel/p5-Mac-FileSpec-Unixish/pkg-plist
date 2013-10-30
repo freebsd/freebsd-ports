@@ -1,8 +1,9 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mac/FileSpec/Unixish/.packlist
+%%PERL5_MAN3%%/Mac::FileSpec::Unixish.3.gz
 %%SITE_PERL%%/Mac/FileSpec/Unixish.pm
 %%SITE_PERL%%/Mac/FileSpec/unixish_guts_test.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mac/FileSpec/Unixish/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mac/FileSpec/Unixish
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mac/FileSpec
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mac/FileSpec
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mac
-@dirrmtry %%SITE_PERL%%/Mac/FileSpec
+@dirrm %%SITE_PERL%%/Mac/FileSpec
 @dirrmtry %%SITE_PERL%%/Mac

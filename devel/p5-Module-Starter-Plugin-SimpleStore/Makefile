@@ -15,9 +15,4 @@ BUILD_DEPENDS=	p5-Module-Starter>=1.32:${PORTSDIR}/devel/p5-Module-Starter
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Module::Starter::Plugin::InlineStore.3 \
-	Module::Starter::Plugin::DirStore.3 \
-	Module::Starter::Plugin::ModuleStore.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

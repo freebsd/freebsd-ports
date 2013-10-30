@@ -26,15 +26,6 @@ TEST_DEPENDS=	p5-DateTime>=0.28:${PORTSDIR}/devel/p5-DateTime \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		MooseX::Meta::TypeCoercion::Structured.3 \
-		MooseX::Meta::TypeCoercion::Structured::Optional.3 \
-		MooseX::Meta::TypeConstraint::Structured.3 \
-		MooseX::Meta::TypeConstraint::Structured::Optional.3 \
-		MooseX::Types::Structured.3 \
-		MooseX::Types::Structured::MessageStack.3 \
-		MooseX::Types::Structured::OverflowHandler.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/auto_install/d' ${WRKSRC}/Makefile.PL
 

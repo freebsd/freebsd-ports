@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Module::Math::Depends.3.gz
 %%SITE_PERL%%/Module/Math/Depends.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Math/Depends/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Math/Depends
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Math
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Math/Depends
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Math
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
-@dirrmtry %%SITE_PERL%%/Module/Math
+@dirrm %%SITE_PERL%%/Module/Math
 @dirrmtry %%SITE_PERL%%/Module

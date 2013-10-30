@@ -1,4 +1,9 @@
 bin/tt_pm_to_blib
+%%PERL5_MAN3%%/Module::Install::Template.3.gz
 %%SITE_PERL%%/Module/Install/Template.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Install/Template/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Install/Template
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Install
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
+@dirrmtry %%SITE_PERL%%/Module/Install
+@dirrmtry %%SITE_PERL%%/Module

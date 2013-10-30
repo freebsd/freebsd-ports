@@ -1,3 +1,9 @@
+%%PERL5_MAN3%%/MetaCPAN::API.3.gz
+%%PERL5_MAN3%%/MetaCPAN::API::Author.3.gz
+%%PERL5_MAN3%%/MetaCPAN::API::Module.3.gz
+%%PERL5_MAN3%%/MetaCPAN::API::POD.3.gz
+%%PERL5_MAN3%%/MetaCPAN::API::Release.3.gz
+%%PERL5_MAN3%%/MetaCPAN::API::Source.3.gz
 %%SITE_PERL%%/MetaCPAN/API.pm
 %%SITE_PERL%%/MetaCPAN/API/Author.pm
 %%SITE_PERL%%/MetaCPAN/API/Module.pm

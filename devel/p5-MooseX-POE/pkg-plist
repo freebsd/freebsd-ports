@@ -1,4 +1,14 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/POE/.packlist
+%%PERL5_MAN3%%/MooseX::POE.3.gz
+%%PERL5_MAN3%%/MooseX::POE::Aliased.3.gz
+%%PERL5_MAN3%%/MooseX::POE::Meta::Method::State.3.gz
+%%PERL5_MAN3%%/MooseX::POE::Meta::Role.3.gz
+%%PERL5_MAN3%%/MooseX::POE::Meta::Trait.3.gz
+%%PERL5_MAN3%%/MooseX::POE::Meta::Trait::Class.3.gz
+%%PERL5_MAN3%%/MooseX::POE::Meta::Trait::Instance.3.gz
+%%PERL5_MAN3%%/MooseX::POE::Meta::Trait::Object.3.gz
+%%PERL5_MAN3%%/MooseX::POE::Meta::Trait::SweetArgs.3.gz
+%%PERL5_MAN3%%/MooseX::POE::Role.3.gz
+%%PERL5_MAN3%%/MooseX::POE::SweetArgs.3.gz
 %%SITE_PERL%%/MooseX/POE.pm
 %%SITE_PERL%%/MooseX/POE/Aliased.pm
 %%SITE_PERL%%/MooseX/POE/Meta/Method/State.pm
@@ -10,10 +20,11 @@
 %%SITE_PERL%%/MooseX/POE/Meta/Trait/SweetArgs.pm
 %%SITE_PERL%%/MooseX/POE/Role.pm
 %%SITE_PERL%%/MooseX/POE/SweetArgs.pm
-@dirrmtry %%SITE_PERL%%/MooseX/POE/Meta/Trait
-@dirrmtry %%SITE_PERL%%/MooseX/POE/Meta/Method
-@dirrmtry %%SITE_PERL%%/MooseX/POE/Meta
-@dirrmtry %%SITE_PERL%%/MooseX/POE
-@dirrmtry %%SITE_PERL%%/MooseX
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/POE
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/POE/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/POE
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
+@dirrm %%SITE_PERL%%/MooseX/POE/Meta/Trait
+@dirrm %%SITE_PERL%%/MooseX/POE/Meta/Method
+@dirrm %%SITE_PERL%%/MooseX/POE/Meta
+@dirrm %%SITE_PERL%%/MooseX/POE
+@dirrmtry %%SITE_PERL%%/MooseX

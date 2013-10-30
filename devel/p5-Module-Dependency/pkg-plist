@@ -1,12 +1,20 @@
-bin/pmd_indexer.plx
-bin/pmd_grapher.plx
 bin/pmd_dump.pl
-%%SITE_PERL%%/Module/pmd_dump.pl
+bin/pmd_grapher.plx
+bin/pmd_indexer.plx
+%%PERL5_MAN3%%/Module::Dependency.3.gz
+%%PERL5_MAN3%%/Module::Dependency::Grapher.3.gz
+%%PERL5_MAN3%%/Module::Dependency::Indexer.3.gz
+%%PERL5_MAN3%%/Module::Dependency::Info.3.gz
+%%PERL5_MAN3%%/Module::pmd_dump.3.gz
 %%SITE_PERL%%/Module/Dependency.pod
-%%SITE_PERL%%/Module/Dependency/Info.pm
 %%SITE_PERL%%/Module/Dependency/Grapher.pm
 %%SITE_PERL%%/Module/Dependency/Indexer.pm
+%%SITE_PERL%%/Module/Dependency/Info.pm
+%%SITE_PERL%%/Module/pmd_dump.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Dependency/.packlist
+man/man1/pmd_dump.pl.1.gz
+man/man1/pmd_grapher.plx.1.gz
+man/man1/pmd_indexer.plx.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Dependency
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
 @dirrm %%SITE_PERL%%/Module/Dependency

@@ -22,15 +22,6 @@ TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		MooseX::Role::Parameterized.3 \
-		MooseX::Role::Parameterized::Extending.3 \
-		MooseX::Role::Parameterized::Meta::Role::Parameterizable.3 \
-		MooseX::Role::Parameterized::Meta::Role::Parameterized.3 \
-		MooseX::Role::Parameterized::Meta::Trait::Parameterized.3 \
-		MooseX::Role::Parameterized::Parameters.3 \
-		MooseX::Role::Parameterized::Tutorial.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

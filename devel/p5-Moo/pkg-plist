@@ -1,4 +1,8 @@
 bin/moo-outdated
+%%PERL5_MAN3%%/Moo.3.gz
+%%PERL5_MAN3%%/Moo::Role.3.gz
+%%PERL5_MAN3%%/Sub::Defer.3.gz
+%%PERL5_MAN3%%/Sub::Quote.3.gz
 %%SITE_PERL%%/Method/Generate/Accessor.pm
 %%SITE_PERL%%/Method/Generate/BuildAll.pm
 %%SITE_PERL%%/Method/Generate/Constructor.pm
@@ -15,9 +19,9 @@ bin/moo-outdated
 %%SITE_PERL%%/Moo/sification.pm
 %%SITE_PERL%%/Sub/Defer.pm
 %%SITE_PERL%%/Sub/Quote.pm
-%%SITE_PERL%%/oo.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moo/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moo
+%%SITE_PERL%%/oo.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moo
 @dirrmtry %%SITE_PERL%%/Sub
 @dirrm %%SITE_PERL%%/Moo/HandleMoose
 @dirrm %%SITE_PERL%%/Moo

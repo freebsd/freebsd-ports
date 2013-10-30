@@ -24,18 +24,11 @@ TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		MetaCPAN::API.3 MetaCPAN::API::Author.3 \
-		MetaCPAN::API::Module.3 \
-		MetaCPAN::API::POD.3 \
-		MetaCPAN::API::Release.3 \
-		MetaCPAN::API::Source.3
-
 .if defined(MAINTAINER_MODE)
 regression-test: build
 	cd ${WRKSRC} && ${PERL5} ${PL_BUILD} test
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

@@ -1,9 +1,13 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose/Policy/.packlist
+%%PERL5_MAN3%%/Moose::Policy.3.gz
+%%PERL5_MAN3%%/Moose::Policy::FollowPBP.3.gz
+%%PERL5_MAN3%%/Moose::Policy::JavaAccessors.3.gz
+%%PERL5_MAN3%%/Moose::Policy::SingleInheritence.3.gz
 %%SITE_PERL%%/Moose/Policy.pm
 %%SITE_PERL%%/Moose/Policy/FollowPBP.pm
 %%SITE_PERL%%/Moose/Policy/JavaAccessors.pm
 %%SITE_PERL%%/Moose/Policy/SingleInheritence.pm
-@dirrm %%SITE_PERL%%/Moose/Policy
-@dirrmtry %%SITE_PERL%%/Moose
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose/Policy/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose/Policy
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose
+@dirrm %%SITE_PERL%%/Moose/Policy
+@dirrmtry %%SITE_PERL%%/Moose

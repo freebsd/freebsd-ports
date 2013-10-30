@@ -29,8 +29,4 @@ TEST_DEPENDS=	p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		MooseX::App::Cmd.3 \
-		MooseX::App::Cmd::Command.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Traits/.packlist
+%%PERL5_MAN3%%/MooseX::Traits.3.gz
 %%SITE_PERL%%/MooseX/Traits.pm
 %%SITE_PERL%%/MooseX/Traits/Util.pm
-@dirrm %%SITE_PERL%%/MooseX/Traits
-@dirrmtry %%SITE_PERL%%/MooseX
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Traits
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Traits/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Traits
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
+@dirrmtry %%SITE_PERL%%/MooseX/Traits
+@dirrmtry %%SITE_PERL%%/MooseX

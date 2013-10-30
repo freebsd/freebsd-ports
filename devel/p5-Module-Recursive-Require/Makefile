@@ -15,7 +15,5 @@ RUN_DEPENDS=	p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require
 
 USES=		perl5
 USE_PERL5=	configure
-MAN3=	Module::Recursive::Require.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

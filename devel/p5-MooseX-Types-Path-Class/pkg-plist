@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/MooseX::Types::Path::Class.3.gz
 %%SITE_PERL%%/MooseX/Types/Path/Class.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/Path/Class/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/Path/Class
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/Path/Class
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/Path
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX

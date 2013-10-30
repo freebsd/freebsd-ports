@@ -13,7 +13,4 @@ COMMENT=	Report versions of all modules in memory
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Module::Versions::Report.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

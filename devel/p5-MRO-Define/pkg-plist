@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/MRO::Define.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/MRO/Define.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MRO/Define/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MRO/Define/Define.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MRO/Define/Define.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MRO/Define/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MRO/Define
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MRO/Define
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MRO
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/MRO
