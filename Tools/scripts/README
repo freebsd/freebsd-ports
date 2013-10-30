@@ -32,7 +32,6 @@ gnomedepends - Analyse pkg/PLIST and give an advice as to which GNOME ports
                should be listes in {RUN,LIB}_DEPENDS for this port
 mark_safe.pl - utility to set subsets of ports to MAKE_JOBS_(UN)SAFE=yes
 neededlibs.sh - Extract direct library dependencies from binaries.
-p5-deps.pl - Check unneeded p5-* dependencies which is in perl5.8 port.
 plist - automate (mostly, at least) pkg-plist generation
 portsearch - A utility for searching the ports tree. It allows more detailed
              search criteria than ``make search key=<string>'' and accepts
