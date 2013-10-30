@@ -1,6 +1,16 @@
---- src/Makefile.in.orig	2010-12-13 17:49:10.000000000 +0100
-+++ src/Makefile.in	2010-12-28 10:10:42.000000000 +0100
-@@ -44,6 +44,7 @@
+--- src/Makefile.in.orig	2013-10-28 15:08:32.000000000 +0100
++++ src/Makefile.in	2013-10-30 22:19:17.000000000 +0100
+@@ -14,7 +14,8 @@
+ CXX = @CXX@
+ PERL = @PERL@
+ INSTALL = @INSTALL@
+-INSTALL_PROGRAM = @INSTALL@ -m 755
++INSTALL_PROGRAM = @INSTALL@ -s -m 755
++INSTALL_SCRIPT = @INSTALL@ -m 755
+ INSTALL_DATA = @INSTALL@ -m 644
+ CXXFLAGS = @CXXFLAGS@
+ CPPFLAGS = @CPPFLAGS@
+@@ -46,6 +47,7 @@
  
  RXVT_BINNAME=$(DESTDIR)$(bindir)/$(RXVTNAME)$(EXEEXT)
  RXVTC_BINNAME=$(DESTDIR)$(bindir)/$(RXVTNAME)c$(EXEEXT)
@@ -8,11 +18,11 @@
  RXVTD_BINNAME=$(DESTDIR)$(bindir)/$(RXVTNAME)d$(EXEEXT)
  
  #
-@@ -107,6 +108,7 @@
+@@ -128,6 +130,7 @@
  	$(INSTALL) -d $(DESTDIR)$(bindir)
  	$(INSTALL_PROGRAM) rxvt  $(RXVT_BINNAME)
  	$(INSTALL_PROGRAM) rxvtc $(RXVTC_BINNAME)
-+	$(INSTALL_PROGRAM) urxvtcd $(RXVTCD_BINNAME)
++	$(INSTALL_SCRIPT) urxvtcd $(RXVTCD_BINNAME)
  	$(INSTALL_PROGRAM) rxvtd $(RXVTD_BINNAME)
  
  install: install-bin install-perl
