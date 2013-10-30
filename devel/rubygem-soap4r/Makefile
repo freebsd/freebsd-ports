@@ -15,5 +15,4 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=    bin/wsdl2ruby.rb bin/xsd2ruby.rb
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
