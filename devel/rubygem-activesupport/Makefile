@@ -20,5 +20,4 @@ USE_RUBY_FEATURES=	iconv
 
 NOPORTDOCS=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
