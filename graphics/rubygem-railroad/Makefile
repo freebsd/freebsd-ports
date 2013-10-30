@@ -15,5 +15,4 @@ RUBYGEM_AUTOPLIST=	YES
 
 PLIST_FILES=	bin/railroad
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

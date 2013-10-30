@@ -14,6 +14,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES+=	bin/dotenv
 
-NO_STAGE=	yes
 
 .include <bsd.port.mk>
