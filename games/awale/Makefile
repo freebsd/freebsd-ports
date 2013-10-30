@@ -11,46 +11,37 @@ COMMENT=	African board game
 
 OPTIONS_DEFINE=	GUI DOCS
 OPTIONS_DEFAULT=	GUI
+OPTIONS_SUB=	yes
 GUI_DESC=	Installs Tcl/Tk GUI
 
-MAN6=		${PORTNAME}.6
+GUI_RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGUI}
-USE_TK_WRAPPER=	yes
-MAN6+=		x${PORTNAME}.6
-PLIST_SUB+=	GUI=""
-.else
-PLIST_SUB+=	GUI="@comment "
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/bin\/bash/d' ${WRKSRC}/src/xawale.tcl
 	@${ECHO_CMD} "#!/bin/sh" > ${WRKSRC}/src/x${PORTNAME}
 	@${ECHO_CMD} "${DATADIR}/xawale.tcl" >> ${WRKSRC}/src/x${PORTNAME}
+	@${REINPLACE_CMD} -e 's|wish|wish8.4|' ${WRKSRC}/src/xawale.tcl
 
 do-build:
 	(cd ${WRKSRC}/src && ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.6 ${MAN6PREFIX}/man/man6
-	@${MKDIR} ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.6 ${STAGEDIR}${MAN6PREFIX}/man/man6
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for f in README *.bmp *.gif *.ico *.png
-	${INSTALL_DATA} ${WRKSRC}/src/${f} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/src/${f} ${STAGEDIR}${DATADIR}
 .endfor
 .if ${PORT_OPTIONS:MGUI}
-	${INSTALL_SCRIPT} ${WRKSRC}/src/x${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/x${PORTNAME}.6 ${MAN6PREFIX}/man/man6
-	${INSTALL_SCRIPT} ${WRKSRC}/src/xawale.tcl ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/src/x${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/x${PORTNAME}.6 ${STAGEDIR}${MAN6PREFIX}/man/man6
+	${INSTALL_SCRIPT} ${WRKSRC}/src/xawale.tcl ${STAGEDIR}${DATADIR}
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in AUTHORS ChangeLog NEWS README THANKS
-	cd ${WRKSRC} && ${INSTALL_DATA} ${f} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

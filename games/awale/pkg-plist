@@ -1,4 +1,6 @@
 bin/awale
+man/man6/awale.6.gz
+%%GUI%%man/man6/xawale.6.gz
 %%GUI%%bin/xawale
 %%DATADIR%%/AwaleBanner.bmp
 %%DATADIR%%/README
