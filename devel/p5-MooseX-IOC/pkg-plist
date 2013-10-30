@@ -1,8 +1,10 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/IOC/.packlist
+%%PERL5_MAN3%%/MooseX::IOC.3.gz
+%%PERL5_MAN3%%/MooseX::IOC::Meta::Attribute.3.gz
 %%SITE_PERL%%/MooseX/IOC.pm
 %%SITE_PERL%%/MooseX/IOC/Meta/Attribute.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/IOC/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/IOC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
 @dirrm %%SITE_PERL%%/MooseX/IOC/Meta
 @dirrm %%SITE_PERL%%/MooseX/IOC
 @dirrmtry %%SITE_PERL%%/MooseX
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/IOC
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX

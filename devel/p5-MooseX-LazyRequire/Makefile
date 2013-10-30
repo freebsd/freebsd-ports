@@ -22,8 +22,4 @@ TEST_DEPENDS=	p5-Test-CheckDeps>=0.002:${PORTSDIR}/devel/p5-Test-CheckDeps \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		MooseX::LazyRequire.3 \
-		MooseX::LazyRequire::Meta::Attribute::Trait::LazyRequire.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

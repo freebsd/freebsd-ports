@@ -1,3 +1,10 @@
+%%PERL5_MAN3%%/MooseX::Meta::TypeCoercion::Structured.3.gz
+%%PERL5_MAN3%%/MooseX::Meta::TypeCoercion::Structured::Optional.3.gz
+%%PERL5_MAN3%%/MooseX::Meta::TypeConstraint::Structured.3.gz
+%%PERL5_MAN3%%/MooseX::Meta::TypeConstraint::Structured::Optional.3.gz
+%%PERL5_MAN3%%/MooseX::Types::Structured.3.gz
+%%PERL5_MAN3%%/MooseX::Types::Structured::MessageStack.3.gz
+%%PERL5_MAN3%%/MooseX::Types::Structured::OverflowHandler.3.gz
 %%SITE_PERL%%/MooseX/Meta/TypeCoercion/Structured.pm
 %%SITE_PERL%%/MooseX/Meta/TypeCoercion/Structured/Optional.pm
 %%SITE_PERL%%/MooseX/Meta/TypeConstraint/Structured.pm
@@ -6,14 +13,14 @@
 %%SITE_PERL%%/MooseX/Types/Structured/MessageStack.pm
 %%SITE_PERL%%/MooseX/Types/Structured/OverflowHandler.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/Structured/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/Structured
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/Structured
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrmtry %%SITE_PERL%%/MooseX/Types/Structured
+@dirrm %%SITE_PERL%%/MooseX/Types/Structured
 @dirrmtry %%SITE_PERL%%/MooseX/Types
-@dirrmtry %%SITE_PERL%%/MooseX/Meta/TypeConstraint/Structured
+@dirrm %%SITE_PERL%%/MooseX/Meta/TypeConstraint/Structured
 @dirrmtry %%SITE_PERL%%/MooseX/Meta/TypeConstraint
-@dirrmtry %%SITE_PERL%%/MooseX/Meta/TypeCoercion/Structured
+@dirrm %%SITE_PERL%%/MooseX/Meta/TypeCoercion/Structured
 @dirrmtry %%SITE_PERL%%/MooseX/Meta/TypeCoercion
 @dirrmtry %%SITE_PERL%%/MooseX/Meta
 @dirrmtry %%SITE_PERL%%/MooseX

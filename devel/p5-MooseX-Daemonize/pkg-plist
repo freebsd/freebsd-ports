@@ -1,3 +1,9 @@
+%%PERL5_MAN3%%/MooseX::Daemonize.3.gz
+%%PERL5_MAN3%%/MooseX::Daemonize::Core.3.gz
+%%PERL5_MAN3%%/MooseX::Daemonize::Pid.3.gz
+%%PERL5_MAN3%%/MooseX::Daemonize::Pid::File.3.gz
+%%PERL5_MAN3%%/MooseX::Daemonize::WithPidFile.3.gz
+%%PERL5_MAN3%%/Test::MooseX::Daemonize.3.gz
 %%SITE_PERL%%/MooseX/Daemonize.pm
 %%SITE_PERL%%/MooseX/Daemonize/Core.pm
 %%SITE_PERL%%/MooseX/Daemonize/Pid.pm
@@ -5,10 +11,10 @@
 %%SITE_PERL%%/MooseX/Daemonize/WithPidFile.pm
 %%SITE_PERL%%/Test/MooseX/Daemonize.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Daemonize/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Daemonize
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Daemonize
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrmtry %%SITE_PERL%%/MooseX/Daemonize/Pid
-@dirrmtry %%SITE_PERL%%/MooseX/Daemonize
-@dirrmtry %%SITE_PERL%%/MooseX
 @dirrmtry %%SITE_PERL%%/Test/MooseX
 @dirrmtry %%SITE_PERL%%/Test
+@dirrm %%SITE_PERL%%/MooseX/Daemonize/Pid
+@dirrm %%SITE_PERL%%/MooseX/Daemonize
+@dirrmtry %%SITE_PERL%%/MooseX

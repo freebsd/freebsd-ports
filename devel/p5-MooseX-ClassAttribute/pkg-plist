@@ -1,21 +1,31 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/ClassAttribute/.packlist
+%%PERL5_MAN3%%/MooseX::ClassAttribute.3.gz
+%%PERL5_MAN3%%/MooseX::ClassAttribute::Meta::Role::Attribute.3.gz
+%%PERL5_MAN3%%/MooseX::ClassAttribute::Trait::Application.3.gz
+%%PERL5_MAN3%%/MooseX::ClassAttribute::Trait::Application::ToClass.3.gz
+%%PERL5_MAN3%%/MooseX::ClassAttribute::Trait::Application::ToRole.3.gz
+%%PERL5_MAN3%%/MooseX::ClassAttribute::Trait::Attribute.3.gz
+%%PERL5_MAN3%%/MooseX::ClassAttribute::Trait::Class.3.gz
+%%PERL5_MAN3%%/MooseX::ClassAttribute::Trait::Mixin::HasClassAttributes.3.gz
+%%PERL5_MAN3%%/MooseX::ClassAttribute::Trait::Role.3.gz
+%%PERL5_MAN3%%/MooseX::ClassAttribute::Trait::Role::Composite.3.gz
 %%SITE_PERL%%/MooseX/ClassAttribute.pm
 %%SITE_PERL%%/MooseX/ClassAttribute/Meta/Role/Attribute.pm
+%%SITE_PERL%%/MooseX/ClassAttribute/Trait/Application.pm
 %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Application/ToClass.pm
 %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Application/ToRole.pm
-%%SITE_PERL%%/MooseX/ClassAttribute/Trait/Mixin/HasClassAttributes.pm
 %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Attribute.pm
+%%SITE_PERL%%/MooseX/ClassAttribute/Trait/Class.pm
+%%SITE_PERL%%/MooseX/ClassAttribute/Trait/Mixin/HasClassAttributes.pm
 %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Role.pm
 %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Role/Composite.pm
-%%SITE_PERL%%/MooseX/ClassAttribute/Trait/Class.pm
-%%SITE_PERL%%/MooseX/ClassAttribute/Trait/Application.pm
-@dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Mixin
-@dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Role
-@dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Application
-@dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Trait
-@dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Meta/Role
-@dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Meta
-@dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute
-@dirrmtry %%SITE_PERL%%/MooseX
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/ClassAttribute/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/ClassAttribute
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
+@dirrm %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Role
+@dirrm %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Mixin
+@dirrm %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Application
+@dirrm %%SITE_PERL%%/MooseX/ClassAttribute/Trait
+@dirrm %%SITE_PERL%%/MooseX/ClassAttribute/Meta/Role
+@dirrm %%SITE_PERL%%/MooseX/ClassAttribute/Meta
+@dirrm %%SITE_PERL%%/MooseX/ClassAttribute
+@dirrmtry %%SITE_PERL%%/MooseX

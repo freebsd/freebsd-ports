@@ -1,4 +1,6 @@
+%%PERL5_MAN3%%/Module::ExtractUse.3.gz
+%%PERL5_MAN3%%/Module::ExtractUse::Grammar.3.gz
 %%SITE_PERL%%/Module/ExtractUse.pm
 %%SITE_PERL%%/Module/ExtractUse/Grammar.pm
-@dirrmtry %%SITE_PERL%%/Module/ExtractUse
+@dirrm %%SITE_PERL%%/Module/ExtractUse
 @dirrmtry %%SITE_PERL%%/Module

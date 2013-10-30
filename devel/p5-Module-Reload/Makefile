@@ -13,7 +13,4 @@ COMMENT=	Reload perl library files when updated on disk
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Module::Reload.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -21,18 +21,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		MooseX::Role::WithOverloading.3 \
-		MooseX::Role::WithOverloading::Meta::Role.3 \
-		MooseX::Role::WithOverloading::Meta::Role::Application.3 \
-		MooseX::Role::WithOverloading::Meta::Role::Application::Composite.3 \
-		MooseX::Role::WithOverloading::Meta::Role::Application::Composite::ToClass.3 \
-		MooseX::Role::WithOverloading::Meta::Role::Application::Composite::ToInstance.3 \
-		MooseX::Role::WithOverloading::Meta::Role::Application::Composite::ToRole.3 \
-		MooseX::Role::WithOverloading::Meta::Role::Application::FixOverloadedRefs.3 \
-		MooseX::Role::WithOverloading::Meta::Role::Application::ToClass.3 \
-		MooseX::Role::WithOverloading::Meta::Role::Application::ToInstance.3 \
-		MooseX::Role::WithOverloading::Meta::Role::Application::ToRole.3 \
-		MooseX::Role::WithOverloading::Meta::Role::Composite.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

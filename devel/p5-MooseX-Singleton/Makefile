@@ -22,11 +22,4 @@ TEST_DEPENDS=	p5-MooseX-StrictConstructor>=0:${PORTSDIR}/devel/p5-MooseX-StrictC
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		MooseX::Singleton.3 \
-		MooseX::Singleton::Role::Meta::Class.3 \
-		MooseX::Singleton::Role::Meta::Instance.3 \
-		MooseX::Singleton::Role::Meta::Method::Constructor.3 \
-		MooseX::Singleton::Role::Object.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

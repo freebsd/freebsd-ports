@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Find/.packlist
+%%PERL5_MAN3%%/Module::Find.3.gz
 %%SITE_PERL%%/Module/Find.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Find/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Find
-@dirrmtry %%SITE_PERL%%/Module
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
+@dirrmtry %%SITE_PERL%%/Module

@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/MooseX::Lists.3.gz
 %%SITE_PERL%%/MooseX/Lists.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Lists/.packlist
-@dirrmtry %%SITE_PERL%%/MooseX
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Lists
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Lists
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
+@dirrmtry %%SITE_PERL%%/MooseX

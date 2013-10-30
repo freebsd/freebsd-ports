@@ -1,9 +1,11 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/App/Cmd/.packlist
+%%PERL5_MAN3%%/MooseX::App::Cmd.3.gz
+%%PERL5_MAN3%%/MooseX::App::Cmd::Command.3.gz
 %%SITE_PERL%%/MooseX/App/Cmd.pm
 %%SITE_PERL%%/MooseX/App/Cmd/Command.pm
-@dirrmtry %%SITE_PERL%%/MooseX/App/Cmd
-@dirrmtry %%SITE_PERL%%/MooseX/App
-@dirrmtry %%SITE_PERL%%/MooseX
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/App/Cmd
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/App/Cmd/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/App/Cmd
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/App
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
+@dirrm %%SITE_PERL%%/MooseX/App/Cmd
+@dirrmtry %%SITE_PERL%%/MooseX/App
+@dirrmtry %%SITE_PERL%%/MooseX

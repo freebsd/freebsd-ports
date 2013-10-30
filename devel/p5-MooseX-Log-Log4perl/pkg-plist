@@ -1,9 +1,11 @@
+%%PERL5_MAN3%%/MooseX::Log::Log4perl.3.gz
+%%PERL5_MAN3%%/MooseX::Log::Log4perl::Easy.3.gz
 %%SITE_PERL%%/MooseX/Log/Log4perl.pm
 %%SITE_PERL%%/MooseX/Log/Log4perl/Easy.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Log/Log4perl/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Log/Log4perl
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Log
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Log/Log4perl
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Log
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrmtry %%SITE_PERL%%/MooseX/Log/Log4perl
-@dirrmtry %%SITE_PERL%%/MooseX/Log
+@dirrm %%SITE_PERL%%/MooseX/Log/Log4perl
+@dirrm %%SITE_PERL%%/MooseX/Log
 @dirrmtry %%SITE_PERL%%/MooseX

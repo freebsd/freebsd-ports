@@ -1,3 +1,8 @@
+%%PERL5_MAN3%%/MooseX::Singleton.3.gz
+%%PERL5_MAN3%%/MooseX::Singleton::Role::Meta::Class.3.gz
+%%PERL5_MAN3%%/MooseX::Singleton::Role::Meta::Instance.3.gz
+%%PERL5_MAN3%%/MooseX::Singleton::Role::Meta::Method::Constructor.3.gz
+%%PERL5_MAN3%%/MooseX::Singleton::Role::Object.3.gz
 %%SITE_PERL%%/MooseX/Singleton.pm
 %%SITE_PERL%%/MooseX/Singleton/Role/Meta/Class.pm
 %%SITE_PERL%%/MooseX/Singleton/Role/Meta/Instance.pm

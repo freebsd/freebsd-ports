@@ -1,12 +1,16 @@
+%%PERL5_MAN3%%/MooseX::Has::Options.3.gz
+%%PERL5_MAN3%%/MooseX::Has::Options::Handler::Accessors.3.gz
+%%PERL5_MAN3%%/MooseX::Has::Options::Handler::NativeTypes.3.gz
+%%PERL5_MAN3%%/MooseX::Has::Options::Handler::NoInit.3.gz
 %%SITE_PERL%%/MooseX/Has/Options.pm
 %%SITE_PERL%%/MooseX/Has/Options/Handler/Accessors.pm
 %%SITE_PERL%%/MooseX/Has/Options/Handler/NativeTypes.pm
 %%SITE_PERL%%/MooseX/Has/Options/Handler/NoInit.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Has/Options/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Has/Options
-@dirrmtry %%SITE_PERL%%/MooseX/Has/Options/Handler
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Has
-@dirrmtry %%SITE_PERL%%/MooseX/Has/Options
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Has/Options
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Has
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrmtry %%SITE_PERL%%/MooseX/Has
+@dirrm %%SITE_PERL%%/MooseX/Has/Options/Handler
+@dirrm %%SITE_PERL%%/MooseX/Has/Options
+@dirrm %%SITE_PERL%%/MooseX/Has
 @dirrmtry %%SITE_PERL%%/MooseX

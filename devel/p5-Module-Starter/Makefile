@@ -18,13 +18,4 @@ PORTSCOUT=	skipv:1.470
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		module-starter.1
-MAN3=		Module::Starter.3 \
-		Module::Starter::App.3 \
-		Module::Starter::BuilderSet.3 \
-		Module::Starter::Plugin.3 \
-		Module::Starter::Plugin::Template.3 \
-		Module::Starter::Simple.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

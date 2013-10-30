@@ -23,10 +23,4 @@ TEST_DEPENDS=	p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	MooseX::Has::Options.3 \
-	MooseX::Has::Options::Handler::Accessors.3 \
-	MooseX::Has::Options::Handler::NativeTypes.3 \
-	MooseX::Has::Options::Handler::NoInit.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

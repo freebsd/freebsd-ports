@@ -20,7 +20,4 @@ RUN_DEPENDS=	p5-IOC>=0:${PORTSDIR}/devel/p5-IOC \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		MooseX::IOC.3 MooseX::IOC::Meta::Attribute.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -32,28 +32,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Warn>=0.11:${PORTSDIR}/devel/p5-Test-Warn
 
-NO_STAGE=	yes
 USES=		perl5
 USE_PERL5=	modbuild
-
-MAN1=		cpants_lint.pl.1
-MAN3=		Module::CPANTS::Analyse.3 \
-		Module::CPANTS::Kwalitee.3 \
-		Module::CPANTS::Kwalitee::BrokenInstaller.3 \
-		Module::CPANTS::Kwalitee::CpantsErrors.3 \
-		Module::CPANTS::Kwalitee::Distname.3 \
-		Module::CPANTS::Kwalitee::Distros.3 \
-		Module::CPANTS::Kwalitee::Files.3 \
-		Module::CPANTS::Kwalitee::FindModules.3 \
-		Module::CPANTS::Kwalitee::License.3 \
-		Module::CPANTS::Kwalitee::Manifest.3 \
-		Module::CPANTS::Kwalitee::MetaYML.3 \
-		Module::CPANTS::Kwalitee::NeedsCompiler.3 \
-		Module::CPANTS::Kwalitee::Pod.3 \
-		Module::CPANTS::Kwalitee::Prereq.3 \
-		Module::CPANTS::Kwalitee::Repackageable.3 \
-		Module::CPANTS::Kwalitee::Signature.3 \
-		Module::CPANTS::Kwalitee::Uses.3 \
-		Module::CPANTS::Kwalitee::Version.3
 
 .include <bsd.port.mk>

@@ -26,16 +26,4 @@ TEST_DEPENDS=	p5-MooseX-AttributeHelpers>=0:${PORTSDIR}/devel/p5-MooseX-Attribut
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		MooseX::ClassAttribute.3 \
-		MooseX::ClassAttribute::Meta::Role::Attribute.3 \
-		MooseX::ClassAttribute::Trait::Application.3 \
-		MooseX::ClassAttribute::Trait::Application::ToClass.3 \
-		MooseX::ClassAttribute::Trait::Application::ToRole.3 \
-		MooseX::ClassAttribute::Trait::Attribute.3 \
-		MooseX::ClassAttribute::Trait::Class.3 \
-		MooseX::ClassAttribute::Trait::Mixin::HasClassAttributes.3 \
-		MooseX::ClassAttribute::Trait::Role.3 \
-		MooseX::ClassAttribute::Trait::Role::Composite.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

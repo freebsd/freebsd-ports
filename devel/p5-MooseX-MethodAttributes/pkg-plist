@@ -1,6 +1,19 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/MethodAttributes/.packlist
+%%PERL5_MAN3%%/MooseX::MethodAttributes.3.gz
+%%PERL5_MAN3%%/MooseX::MethodAttributes::Inheritable.3.gz
+%%PERL5_MAN3%%/MooseX::MethodAttributes::Role.3.gz
+%%PERL5_MAN3%%/MooseX::MethodAttributes::Role::AttrContainer.3.gz
+%%PERL5_MAN3%%/MooseX::MethodAttributes::Role::AttrContainer::Inheritable.3.gz
+%%PERL5_MAN3%%/MooseX::MethodAttributes::Role::Meta::Class.3.gz
+%%PERL5_MAN3%%/MooseX::MethodAttributes::Role::Meta::Map.3.gz
+%%PERL5_MAN3%%/MooseX::MethodAttributes::Role::Meta::Method.3.gz
+%%PERL5_MAN3%%/MooseX::MethodAttributes::Role::Meta::Method::MaybeWrapped.3.gz
+%%PERL5_MAN3%%/MooseX::MethodAttributes::Role::Meta::Method::Wrapped.3.gz
+%%PERL5_MAN3%%/MooseX::MethodAttributes::Role::Meta::Role.3.gz
+%%PERL5_MAN3%%/MooseX::MethodAttributes::Role::Meta::Role::Application.3.gz
+%%PERL5_MAN3%%/MooseX::MethodAttributes::Role::Meta::Role::Application::Summation.3.gz
 %%SITE_PERL%%/MooseX/MethodAttributes.pm
 %%SITE_PERL%%/MooseX/MethodAttributes/Inheritable.pm
+%%SITE_PERL%%/MooseX/MethodAttributes/Role.pm
 %%SITE_PERL%%/MooseX/MethodAttributes/Role/AttrContainer.pm
 %%SITE_PERL%%/MooseX/MethodAttributes/Role/AttrContainer/Inheritable.pm
 %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Class.pm
@@ -8,10 +21,12 @@
 %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Method.pm
 %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Method/MaybeWrapped.pm
 %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Method/Wrapped.pm
-%%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Role/Application/Summation.pm
-%%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Role/Application.pm
 %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Role.pm
-%%SITE_PERL%%/MooseX/MethodAttributes/Role.pm
+%%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Role/Application.pm
+%%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Role/Application/Summation.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/MethodAttributes/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/MethodAttributes
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
 @dirrm %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Role/Application
 @dirrm %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Role
 @dirrm %%SITE_PERL%%/MooseX/MethodAttributes/Role/Meta/Method
@@ -20,5 +35,3 @@
 @dirrm %%SITE_PERL%%/MooseX/MethodAttributes/Role
 @dirrm %%SITE_PERL%%/MooseX/MethodAttributes
 @dirrmtry %%SITE_PERL%%/MooseX
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/MethodAttributes
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX

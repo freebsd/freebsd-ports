@@ -22,9 +22,6 @@ TEST_DEPENDS=	p5-UNIVERSAL-require>=0.11:${PORTSDIR}/devel/p5-UNIVERSAL-require 
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Module::ExtractUse.3 Module::ExtractUse::Grammar.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

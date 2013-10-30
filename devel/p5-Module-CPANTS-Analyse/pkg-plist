@@ -1,4 +1,22 @@
 bin/cpants_lint.pl
+%%PERL5_MAN3%%/Module::CPANTS::Analyse.3.gz
+%%PERL5_MAN3%%/Module::CPANTS::Kwalitee.3.gz
+%%PERL5_MAN3%%/Module::CPANTS::Kwalitee::BrokenInstaller.3.gz
+%%PERL5_MAN3%%/Module::CPANTS::Kwalitee::CpantsErrors.3.gz
+%%PERL5_MAN3%%/Module::CPANTS::Kwalitee::Distname.3.gz
+%%PERL5_MAN3%%/Module::CPANTS::Kwalitee::Distros.3.gz
+%%PERL5_MAN3%%/Module::CPANTS::Kwalitee::Files.3.gz
+%%PERL5_MAN3%%/Module::CPANTS::Kwalitee::FindModules.3.gz
+%%PERL5_MAN3%%/Module::CPANTS::Kwalitee::License.3.gz
+%%PERL5_MAN3%%/Module::CPANTS::Kwalitee::Manifest.3.gz
+%%PERL5_MAN3%%/Module::CPANTS::Kwalitee::MetaYML.3.gz
+%%PERL5_MAN3%%/Module::CPANTS::Kwalitee::NeedsCompiler.3.gz
+%%PERL5_MAN3%%/Module::CPANTS::Kwalitee::Pod.3.gz
+%%PERL5_MAN3%%/Module::CPANTS::Kwalitee::Prereq.3.gz
+%%PERL5_MAN3%%/Module::CPANTS::Kwalitee::Repackageable.3.gz
+%%PERL5_MAN3%%/Module::CPANTS::Kwalitee::Signature.3.gz
+%%PERL5_MAN3%%/Module::CPANTS::Kwalitee::Uses.3.gz
+%%PERL5_MAN3%%/Module::CPANTS::Kwalitee::Version.3.gz
 %%SITE_PERL%%/Module/CPANTS/Analyse.pm
 %%SITE_PERL%%/Module/CPANTS/Kwalitee.pm
 %%SITE_PERL%%/Module/CPANTS/Kwalitee/BrokenInstaller.pm
@@ -17,6 +35,7 @@ bin/cpants_lint.pl
 %%SITE_PERL%%/Module/CPANTS/Kwalitee/Signature.pm
 %%SITE_PERL%%/Module/CPANTS/Kwalitee/Uses.pm
 %%SITE_PERL%%/Module/CPANTS/Kwalitee/Version.pm
-@dirrmtry %%SITE_PERL%%/Module/CPANTS/Kwalitee
+man/man1/cpants_lint.pl.1.gz
+@dirrm %%SITE_PERL%%/Module/CPANTS/Kwalitee
 @dirrmtry %%SITE_PERL%%/Module/CPANTS
 @dirrmtry %%SITE_PERL%%/Module

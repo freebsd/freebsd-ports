@@ -1,10 +1,12 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/LazyRequire/.packlist
-%%SITE_PERL%%/MooseX/LazyRequire/Meta/Attribute/Trait/LazyRequire.pm
+%%PERL5_MAN3%%/MooseX::LazyRequire.3.gz
+%%PERL5_MAN3%%/MooseX::LazyRequire::Meta::Attribute::Trait::LazyRequire.3.gz
 %%SITE_PERL%%/MooseX/LazyRequire.pm
+%%SITE_PERL%%/MooseX/LazyRequire/Meta/Attribute/Trait/LazyRequire.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/LazyRequire/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/LazyRequire
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
 @dirrm %%SITE_PERL%%/MooseX/LazyRequire/Meta/Attribute/Trait
 @dirrm %%SITE_PERL%%/MooseX/LazyRequire/Meta/Attribute
 @dirrm %%SITE_PERL%%/MooseX/LazyRequire/Meta
 @dirrm %%SITE_PERL%%/MooseX/LazyRequire
 @dirrmtry %%SITE_PERL%%/MooseX
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/LazyRequire
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX

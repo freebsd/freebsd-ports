@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Params/Validate/.packlist
+%%PERL5_MAN3%%/MooseX::Params::Validate.3.gz
 %%SITE_PERL%%/MooseX/Params/Validate.pm
-@dirrmtry %%SITE_PERL%%/MooseX/Params
-@dirrmtry %%SITE_PERL%%/MooseX
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Params/Validate/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Params/Validate
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Params
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
+@dirrmtry %%SITE_PERL%%/MooseX/Params
+@dirrmtry %%SITE_PERL%%/MooseX

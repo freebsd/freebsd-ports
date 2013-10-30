@@ -22,12 +22,4 @@ TEST_DEPENDS=	p5-Fennec-Lite>=0.004:${PORTSDIR}/devel/p5-Fennec-Lite \
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Mock::Quick.3 Object::Quick.3 \
-		Mock::Quick::Class.3 \
-		Mock::Quick::Method.3 \
-		Mock::Quick::Object.3 \
-		Mock::Quick::Object::Control.3 \
-		Mock::Quick::Util.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

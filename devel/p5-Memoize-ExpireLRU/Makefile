@@ -14,7 +14,4 @@ COMMENT=	Expiry plug-in for Memoize that adds LRU cache expiration
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Memoize::ExpireLRU.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/MooseX::Role::Loggable.3.gz
 %%SITE_PERL%%/MooseX/Role/Loggable.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Role/Loggable/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Role/Loggable
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Role/Loggable
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Role
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
 @dirrmtry %%SITE_PERL%%/MooseX/Role

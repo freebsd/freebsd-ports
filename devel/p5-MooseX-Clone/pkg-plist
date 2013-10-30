@@ -1,3 +1,8 @@
+%%PERL5_MAN3%%/MooseX::Clone.3.gz
+%%PERL5_MAN3%%/MooseX::Clone::Meta::Attribute::Trait::Clone.3.gz
+%%PERL5_MAN3%%/MooseX::Clone::Meta::Attribute::Trait::Copy.3.gz
+%%PERL5_MAN3%%/MooseX::Clone::Meta::Attribute::Trait::NoClone.3.gz
+%%PERL5_MAN3%%/MooseX::Clone::Meta::Attribute::Trait::StorableClone.3.gz
 %%SITE_PERL%%/MooseX/Clone.pm
 %%SITE_PERL%%/MooseX/Clone/Meta/Attribute/Trait/Clone.pm
 %%SITE_PERL%%/MooseX/Clone/Meta/Attribute/Trait/Clone/Base.pm
@@ -6,11 +11,11 @@
 %%SITE_PERL%%/MooseX/Clone/Meta/Attribute/Trait/NoClone.pm
 %%SITE_PERL%%/MooseX/Clone/Meta/Attribute/Trait/StorableClone.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Clone/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Clone
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Clone
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrmtry %%SITE_PERL%%/MooseX/Clone/Meta/Attribute/Trait/Clone
-@dirrmtry %%SITE_PERL%%/MooseX/Clone/Meta/Attribute/Trait
-@dirrmtry %%SITE_PERL%%/MooseX/Clone/Meta/Attribute
-@dirrmtry %%SITE_PERL%%/MooseX/Clone/Meta
-@dirrmtry %%SITE_PERL%%/MooseX/Clone
+@dirrm %%SITE_PERL%%/MooseX/Clone/Meta/Attribute/Trait/Clone
+@dirrm %%SITE_PERL%%/MooseX/Clone/Meta/Attribute/Trait
+@dirrm %%SITE_PERL%%/MooseX/Clone/Meta/Attribute
+@dirrm %%SITE_PERL%%/MooseX/Clone/Meta
+@dirrm %%SITE_PERL%%/MooseX/Clone
 @dirrmtry %%SITE_PERL%%/MooseX
