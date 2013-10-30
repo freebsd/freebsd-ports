@@ -54,7 +54,7 @@ DISTFILES+=	X430src-1.tgz:x \
 		X430src-2.tgz:x \
 		X430src-3.tgz:x
 
-.if ${OSVERSION} > 1000000
+.if ${OSVERSION} > 1000054
 USE_GCC=	4.6+
 MAKE_ENV=	IMAKECPP="${CPP}"
 MAKE_ARGS=	AR='ar rc'
@@ -98,7 +98,7 @@ post-build:
 .if ! ${PORT_OPTIONS:MSERVER}
 	@${ECHO_MSG} "Skipping build of VNC server."
 .else
-.if ${OSVERSION} > 1000000
+.if ${OSVERSION} > 1000054
 	cd ${WRKSRC}/xc && ${MAKE_ENV} make CC=${CC} CXX=${CXX} ${MAKE_ARGS} World
 .else
 	cd ${WRKSRC}/xc && make CC=${CC} CXX=${CXX} World
