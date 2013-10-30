@@ -1,0 +1,11 @@
+--- library/Makefile.in.orig	2013-10-30 13:44:51.000000000 +0100
++++ library/Makefile.in	2013-10-30 13:45:04.000000000 +0100
+@@ -60,7 +60,7 @@
+ 	for i in $(miscFiles) ; do \
+ 	    $(INSTALL_DATA) $(srcdir)/$$i $(INSTALL_ROOT)$(scriptdir) ; \
+ 	done 
+-	$(INSTALL_DATA) pkgIndex.tcl $(scriptdir)
++	$(INSTALL_DATA) pkgIndex.tcl $(INSTALL_ROOT)$(scriptdir)
+ 
+ mkdirs:
+ 	@for i in $(instdirs) ; do \

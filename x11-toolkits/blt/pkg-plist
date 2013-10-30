@@ -10,9 +10,6 @@ include/bltList.h
 include/bltPool.h
 include/bltTree.h
 include/bltVector.h
-lib/blt2.4/NEWS
-lib/blt2.4/PROBLEMS
-lib/blt2.4/README
 lib/blt2.4/bltCanvEps.pro
 lib/blt2.4/bltGraph.pro
 lib/blt2.4/dd_protocols/dd-color.tcl
