@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rxvt-unicode
-PORTVERSION=	9.18
+PORTVERSION=	9.19
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	tic:${PORTSDIR}/devel/ncurses	\
 RUN_DEPENDS=	${LOCALBASE}/bin/fc-cache:${PORTSDIR}/x11-fonts/fontconfig	\
 		${LOCALBASE}/share/misc/terminfo.db:${PORTSDIR}/devel/ncurses
 
-USES=			pkgconfig
+USES=			pkgconfig shebangfix
 USE_XORG=		xpm xft xrender
 GNU_CONFIGURE=		yes
 CPPFLAGS+=		-I${LOCALBASE}/include
@@ -30,6 +30,10 @@ OPTIONS_DEFINE=	PERL XIM UNICODE3 ISO14755 COMBINING RXVT_SCROLLBAR	\
 		NEXT_SCROLLBAR XTERM_SCROLLBAR BACKSPACE_KEY DELETE_KEY	\
 		MOUSEWHEEL SMART_RESIZE IMLOCALE_FIX GDK_PIXBUF		\
 		NOTIFY 256_COLOR
+
+SHEBANG_FILES=	${WRKSRC}/src/perl/*
+perl_OLD_CMD=	perl
+perl_CMD=	${SETENV} perl
 
 PERL_DESC=		Embedded Perl interpreter
 XIM_DESC=		Support for XIM (X Input Method) protocol
@@ -52,13 +56,9 @@ OPTIONS_DEFAULT=PERL XIM UNICODE3 ISO14755 COMBINING RXVT_SCROLLBAR	\
 		NEXT_SCROLLBAR XTERM_SCROLLBAR BACKSPACE_KEY DELETE_KEY	\
 		MOUSEWHEEL SMART_RESIZE IMLOCALE_FIX GDK_PIXBUF
 
-MAN1=		urxvt.1 urxvtc.1 urxvtcd.1 urxvtd.1
-MAN7=		urxvt.7
-
 PORTDOCS1=	Changes README.FAQ README.configure
 PORTDOCS=	README.xvt ${PORTDOCS1}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIMLOCALE_FIX}
@@ -74,16 +74,6 @@ USE_PERL5=		build
 PLIST_SUB=		PERL="@comment "
 .else
 USES+=			perl5
-MAN1+=			urxvt-background.1 urxvt-bell-command.1 urxvt-block-graphics-to-ascii.1 \
-			urxvt-clipboard-osc.1 urxvt-confirm-paste.1 urxvt-digital-clock.1	\
-			urxvt-example-refresh-hooks.1 urxvt-extensions.1 urxvt-keysym-list.1	\
-			urxvt-kuake.1 urxvt-macosx-clipboard-native.1 urxvt-macosx-clipboard.1	\
-			urxvt-matcher.1 urxvt-option-popup.1 urxvt-overlay-osc.1		\
-			urxvt-readline.1 urxvt-remote-clipboard.1 urxvt-searchable-scrollback.1	\
-			urxvt-selection-autotransform.1 urxvt-selection-pastebin.1		\
-			urxvt-selection-popup.1 urxvt-selection.1 urxvt-tabbed.1		\
-			urxvt-xim-onthespot.1
-MAN3=			urxvtperl.3
 PLIST_SUB=		PERL=""
 .endif
 
@@ -209,14 +199,19 @@ post-patch:
 pre-configure:
 	${RM} ${WRKSRC}/src/perl/kuake.orig
 
+post-build:
+.if ${PORT_OPTIONS:MDOCS}
+	${CP} ${PORTDOCS1:S|^|${WRKSRC}/|} ${WRKSRC}/doc
+.endif
+
 post-install:
-	${CHMOD} 4711 ${PREFIX}/bin/urxvt ${PREFIX}/bin/urxvtd
+	${CHMOD} 4711 ${STAGEDIR}${PREFIX}/bin/urxvt	\
+		${STAGEDIR}${PREFIX}/bin/urxvtd
 	${INSTALL_DATA} ${WRKSRC}/doc/etc/rxvt-unicode.terminfo	\
-		${LOCALBASE}/share/misc/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	@${CP} ${PORTDOCS1:S|^|${WRKSRC}/|} ${WRKSRC}/doc
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${DOCSDIR}
+		${STAGEDIR}${PREFIX}/share/misc/
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 

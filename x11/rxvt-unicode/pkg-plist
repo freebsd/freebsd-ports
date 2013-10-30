@@ -27,9 +27,38 @@ bin/urxvtd
 %%PERL%%lib/urxvt/perl/urxvt-popup
 %%PERL%%lib/urxvt/perl/xim-onthespot
 %%PERL%%lib/urxvt/urxvt.pm
+%%PERL%%man/man1/urxvt-background.1.gz
+%%PERL%%man/man1/urxvt-bell-command.1.gz
+%%PERL%%man/man1/urxvt-block-graphics-to-ascii.1.gz
+%%PERL%%man/man1/urxvt-clipboard-osc.1.gz
+%%PERL%%man/man1/urxvt-confirm-paste.1.gz
+%%PERL%%man/man1/urxvt-digital-clock.1.gz
+%%PERL%%man/man1/urxvt-example-refresh-hooks.1.gz
+%%PERL%%man/man1/urxvt-extensions.1.gz
+%%PERL%%man/man1/urxvt-keysym-list.1.gz
+%%PERL%%man/man1/urxvt-kuake.1.gz
+%%PERL%%man/man1/urxvt-macosx-clipboard-native.1.gz
+%%PERL%%man/man1/urxvt-macosx-clipboard.1.gz
+%%PERL%%man/man1/urxvt-matcher.1.gz
+%%PERL%%man/man1/urxvt-option-popup.1.gz
+%%PERL%%man/man1/urxvt-overlay-osc.1.gz
+%%PERL%%man/man1/urxvt-readline.1.gz
+%%PERL%%man/man1/urxvt-remote-clipboard.1.gz
+%%PERL%%man/man1/urxvt-searchable-scrollback.1.gz
+%%PERL%%man/man1/urxvt-selection-autotransform.1.gz
+%%PERL%%man/man1/urxvt-selection-pastebin.1.gz
+%%PERL%%man/man1/urxvt-selection-popup.1.gz
+%%PERL%%man/man1/urxvt-selection.1.gz
+%%PERL%%man/man1/urxvt-tabbed.1.gz
+%%PERL%%man/man1/urxvt-xim-onthespot.1.gz
+man/man1/urxvt.1.gz
+man/man1/urxvtc.1.gz
+man/man1/urxvtcd.1.gz
+man/man1/urxvtd.1.gz
+%%PERL%%man/man3/urxvtperl.3.gz
+man/man7/urxvt.7.gz
+share/misc/rxvt-unicode.terminfo
 %%PERL%%@dirrm lib/urxvt/perl
 %%PERL%%@dirrm lib/urxvt
-@cwd %%LOCALBASE%%
-share/misc/rxvt-unicode.terminfo
-@exec tic %%LOCALBASE%%/share/misc/rxvt-unicode.terminfo
 @comment No unexec tic available
+@exec tic %D/share/misc/rxvt-unicode.terminfo
