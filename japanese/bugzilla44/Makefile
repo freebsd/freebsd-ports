@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla
-PORTVERSION=	4.4
+PORTVERSION=	4.4.1
 CATEGORIES=	japanese
 MASTER_SITES=	http://bug-ja.org/releases/4.4/ \
 		LOCAL
