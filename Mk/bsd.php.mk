@@ -173,26 +173,28 @@ PHP_MODNAME?=	${PORTNAME}
 PHP_HEADER_DIRS?=	""
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}
 	@${INSTALL_DATA} ${WRKSRC}/modules/${PHP_MODNAME}.so \
-		${PREFIX}/lib/php/${PHP_EXT_DIR}
+		${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}
 .	for header in . ${PHP_HEADER_DIRS}
-		@${MKDIR} ${PREFIX}/include/php/ext/${PHP_MODNAME}/${header}
+		@${MKDIR} ${STAGEDIR}${PREFIX}/include/php/ext/${PHP_MODNAME}/${header}
 		@${INSTALL_DATA} ${WRKSRC}/${header}/*.h \
-			${PREFIX}/include/php/ext/${PHP_MODNAME}/${header}
+			${STAGEDIR}${PREFIX}/include/php/ext/${PHP_MODNAME}/${header}
 .	endfor
-	@${RM} -f ${PREFIX}/include/php/ext/${PHP_MODNAME}/config.h
+	@${RM} -f ${STAGEDIR}${PREFIX}/include/php/ext/${PHP_MODNAME}/config.h
 	@${GREP} "#define \(COMPILE\|HAVE\|USE\)_" ${WRKSRC}/config.h \
-		> ${PREFIX}/include/php/ext/${PHP_MODNAME}/config.h
+		> ${STAGEDIR}${PREFIX}/include/php/ext/${PHP_MODNAME}/config.h
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/php
+.if defined(NO_STAGE)
 	@${ECHO_CMD} \#include \"ext/${PHP_MODNAME}/config.h\" \
 		>> ${PREFIX}/include/php/ext/php_config.h
-	@${MKDIR} ${PREFIX}/etc/php
 .if defined(USE_ZENDEXT)
 	@${ECHO_CMD} zend_extension=${PREFIX}/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so \
 		>> ${PREFIX}/etc/php/extensions.ini
 .else
 	@${ECHO_CMD} extension=${PHP_MODNAME}.so \
 		>> ${PREFIX}/etc/php/extensions.ini
+.endif
 .endif
 
 add-plist-info: add-plist-phpext
@@ -201,10 +203,10 @@ add-plist-phpext:
 		>> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/lib/php/${PHP_EXT_DIR} 2> /dev/null || true" \
 		>> ${TMPPLIST}
-	@${FIND} -P ${PREFIX}/include/php/ext/${PHP_MODNAME} ! -type d 2>/dev/null | \
-		${SED} -ne 's,^${PREFIX}/,,p' >> ${TMPPLIST}
-	@${FIND} -P -d ${PREFIX}/include/php/ext/${PHP_MODNAME} -type d 2>/dev/null | \
-		${SED} -ne 's,^${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
+	@${FIND} -P ${STAGEDIR}${PREFIX}/include/php/ext/${PHP_MODNAME} ! -type d 2>/dev/null | \
+		${SED} -ne 's,^${STAGEDIR}${PREFIX}/,,p' >> ${TMPPLIST}
+	@${FIND} -P -d ${STAGEDIR}${PREFIX}/include/php/ext/${PHP_MODNAME} -type d 2>/dev/null | \
+		${SED} -ne 's,^${STAGEDIR}${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec echo \#include \\\"ext/${PHP_MODNAME}/config.h\\\" >> %D/include/php/ext/php_config.h" \
 		>> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec cp %D/include/php/ext/php_config.h %D/include/php/ext/php_config.h.orig" \
@@ -238,7 +240,7 @@ add-plist-phpext:
 	@${ECHO_CMD} "@unexec rmdir %D/etc/php 2> /dev/null || true" \
 		>> ${TMPPLIST}
 
-security-check: php-ini
+package-message: php-ini
 
 php-ini:
 	@${ECHO_CMD} "****************************************************************************"
