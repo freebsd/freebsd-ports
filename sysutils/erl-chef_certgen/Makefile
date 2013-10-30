@@ -1,11 +1,12 @@
 # Created by: Tomoyuki Sakurai <tomoyukis@reallyenglish.com>
 # $FreeBSD$
 
-PORTNAME=	erl-chef_certgen
+PORTNAME=	chef_certgen
 PORTVERSION=	0.0.1
 #PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	GH
+PKGNAMEPREFIX=	erl-
 
 MAINTAINER=	tomoyukis@reallyenglish.com
 COMMENT=	Erlang NIF that exposes some of the OpenSSL functionality

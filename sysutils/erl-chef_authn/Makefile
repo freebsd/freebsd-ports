@@ -1,11 +1,12 @@
 # Created by: Tomoyuki Sakurai <tomoyukis@reallyenglish.com>
 # $FreeBSD$
 
-PORTNAME=	erl-chef_authn
+PORTNAME=	chef_authn
 PORTVERSION=	0.0.1
 #PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	GH
+PKGNAMEPREFIX=	erl-
 
 MAINTAINER=	tomoyukis@reallyenglish.com
 COMMENT=	Authentication layer for chef
