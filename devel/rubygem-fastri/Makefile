@@ -15,5 +15,4 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/fastri-server bin/fri bin/qri bin/ri-emacs
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
