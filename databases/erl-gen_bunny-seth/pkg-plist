@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/bunny_util.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/bunnyc.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/gen_bunny.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/gen_bunny_app.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/gen_bunny_mon.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/gen_bunny_sup.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/test_gb.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/gen_bunny.hrl
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%
