@@ -1,0 +1,17 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/fast_log_writer.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/fast_log_util.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/fast_log_sup.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/fast_log_app.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/fast_log.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/fast_log.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/fast_log_writer.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/fast_log_util.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/fast_log_sup.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/fast_log_app.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/fast_log.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/fast_log.app
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%
