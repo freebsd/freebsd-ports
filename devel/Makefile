@@ -3514,6 +3514,7 @@
     SUBDIR += py-distribute
     SUBDIR += py-distutils-extra
     SUBDIR += py-docopt
+    SUBDIR += py-dogpile.cache
     SUBDIR += py-dogpile.core
     SUBDIR += py-durus
     SUBDIR += py-dynrules
