@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Feb 23 09:33:44 2007
-+++ Makefile	Fri Feb 23 09:34:09 2007
+--- Makefile.orig	2007-02-23 07:45:16.000000000 +0000
++++ Makefile	2013-10-30 08:31:39.773863242 +0000
 @@ -24,7 +24,7 @@
  JAVAC_CLASSPATH	=	$(JAVA_HOME)/jre/lib/ext/comm.jar
  JAVAH		=	$(JAVA_HOME)/bin/javah
@@ -9,3 +9,21 @@
  MACHINE_ARCH	?=	i386
  
  .SUFFIXES:	.java .class
+@@ -96,7 +96,7 @@
+ 			src/$(JAVA_PKG_DIR)/javax_comm_ParallelPort.h \
+ 			src/$(JAVA_PKG_DIR)/javax_comm_ParallelPortEvent.h
+ 	if [ ! -d lib ]; then mkdir lib; fi
+-	gcc $(CFLAGS) -o lib/libParallel.so src/$(JAVA_PKG_DIR)/libParallel.c 
++	$(CC) $(CFLAGS) -o lib/libParallel.so src/$(JAVA_PKG_DIR)/libParallel.c 
+ #
+ # Serial driver JNI part
+ #
+@@ -105,7 +105,7 @@
+ 			src/$(JAVA_PKG_DIR)/javax_comm_SerialPort.h \
+ 			src/$(JAVA_PKG_DIR)/javax_comm_SerialPortEvent.h
+ 	if [ ! -d lib ]; then mkdir lib; fi
+-	gcc $(CFLAGS) -o lib/libSerial.so src/$(JAVA_PKG_DIR)/libSerial.c 
++	$(CC) $(CFLAGS) -o lib/libSerial.so src/$(JAVA_PKG_DIR)/libSerial.c 
+ 
+ .java.class:
+ 	$(JAVAC) -classpath src:$(JAVAC_CLASSPATH) $*.java
