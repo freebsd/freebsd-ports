@@ -16,7 +16,6 @@ RUBYGEM_AUTOPLIST=	yes
 USE_RAKE=	yes
 PLIST_FILES=	bin/rd2 bin/rdswap.rb
 
-NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
