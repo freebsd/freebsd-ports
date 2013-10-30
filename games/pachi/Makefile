@@ -24,7 +24,6 @@ WRKSRC=		${WRKDIR}/Pachi
 SCOREDIR=	/var/games/pachi
 SCOREFILE=	${SCOREDIR}/scores.dat
 
-PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
 
 DESKTOP_ENTRIES="Pachi el marciano" \
@@ -43,9 +42,5 @@ post-patch:
 		${WRKSRC}/docs/Makefile.in
 	@${REINPLACE_CMD} -e 's|install-scoreDATA\ install-data-local||' \
 		${WRKSRC}/data/Makefile.in
-
-post-install:
-	${CHGRP} games ${STAGEDIR}${PREFIX}/bin/pachi
-	${CHMOD} g+s ${STAGEDIR}${PREFIX}/bin/pachi
 
 .include <bsd.port.mk>
