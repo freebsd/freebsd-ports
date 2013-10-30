@@ -14,21 +14,19 @@ COMMENT=	Small text based maze game
 WRKSRC=		${WRKDIR}/blocks
 MAKEFILE=	makefile
 ALL_TARGET=	block bed
-MAN6=		block.6 bed.6
 
-NO_STAGE=	yes
 post-extract:
 	@${RM} -f ${WRKSRC}/block
 	@${RM} -f ${WRKSRC}/bed
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/block ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bed ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/block.6 ${PREFIX}/man/man6
-	${INSTALL_MAN} ${WRKSRC}/bed.6 ${PREFIX}/man/man6
-	@${MKDIR} ${PREFIX}/share/block
+	${INSTALL_PROGRAM} ${WRKSRC}/block ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bed ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/block.6 ${STAGEDIR}${MAN6PREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/bed.6 ${STAGEDIR}${MAN6PREFIX}/man/man6
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for file in 1 2 3 4 5 6
-	${INSTALL_DATA} ${WRKSRC}/${file}.block ${PREFIX}/share/block/${file}.block
+	${INSTALL_DATA} ${WRKSRC}/${file}.block ${STAGEDIR}${DATADIR}/${file}.block
 .endfor
 
 .include <bsd.port.mk>
