@@ -20,16 +20,14 @@ SERVICE_DIR?=	/var/service
 SUB_LIST=	SERVICE_DIR="${SERVICE_DIR}"
 PORTDOCS=	*
 
-MAN8=		chpst.8 runit-init.8 runit.8 runsv.8 runsvchdir.8 \
-		runsvdir.8 sv.8 svlogd.8 utmpset.8
 DOCS=		package/CHANGES package/README \
 		package/THANKS doc/*.html
 CONFIG=		etc/freebsd/1 etc/2 etc/freebsd/3 etc/freebsd/ctrlaltdel \
 	 	etc/freebsd/getty-ttyv4/run etc/freebsd/getty-ttyv4/finish
 
-NO_STAGE=	yes
 do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
+	${ECHO_CMD} "${CC}" > ${WRKSRC}/src/conf-ld
 
 do-build:
 	cd ${WRKSRC} && package/compile && package/check
@@ -42,25 +40,15 @@ do-build:
 .endfor
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/command/* ${PREFIX}/sbin
-.for man in ${MAN8}
-	@${INSTALL_MAN} ${WRKSRC}/man/${man} ${MAN8PREFIX}/man/man8
-.endfor
-	@${MKDIR} ${ETCDIR}/getty-ttyv4
-	@${INSTALL_SCRIPT} ${WRKDIR}/etc/[123c]* ${ETCDIR}
+	@${INSTALL_PROGRAM} ${WRKSRC}/command/* ${STAGEDIR}${PREFIX}/sbin
+	@${INSTALL_MAN} ${WRKSRC}/man/* ${STAGEDIR}${PREFIX}/man/man8/
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/getty-ttyv4
+	@${INSTALL_SCRIPT} ${WRKDIR}/etc/[123c]* ${STAGEDIR}${ETCDIR}
 	@${INSTALL_SCRIPT} ${WRKDIR}/etc/getty-ttyv4/* \
-		${ETCDIR}/getty-ttyv4
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+		${STAGEDIR}${ETCDIR}/getty-ttyv4
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .   for doc in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .   endfor
-.endif
-
-post-install:
-	@for file in ${ETCDIR}/*.sample ${ETCDIR}/getty-ttyv4/*.sample ; \
-	    do [ ! -f ${ETCDIR}/$${file%.sample} ] \
-		&& ${CP} -p $${file} $${file%.sample} ; \
-	    done
 
 .include <bsd.port.mk>

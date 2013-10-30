@@ -14,13 +14,17 @@
 
 . /etc/rc.subr
 
-name="runsvdir"
+name=runsvdir
 rcvar=runsvdir_enable
 
-command="%%PREFIX%%/sbin/runsvdir"
+load_rc_config runsvdir
 
+: ${runsvdir_enable:=NO}
+: ${runsvdir_path=%%SERVICE_DIR%%}
+
+command="%%PREFIX%%/sbin/runsvdir"
 start_cmd=runsvdir_start
-stop_postcmd=runsvdir_post_stop
+stop_postcmd="%%PREFIX%%/sbin/sv exit ${runsvdir_path}/*"
 
 runsvdir_start()
 {
@@ -31,14 +35,4 @@ runsvdir_start()
 	${command} ${runsvdir_path}
 }
 
-runsvdir_post_stop()
-{
-	%%PREFIX%%/sbin/sv exit ${runsvdir_path}/* 
-}
-
-# read configuration and set defaults
-load_rc_config "$name"
-: ${runsvdir_enable="NO"}
-: ${runsvdir_path="%%SERVICE_DIR%%"}
-
-run_rc_command "$1"
+run_rc_command $1
