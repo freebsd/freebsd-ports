@@ -23,5 +23,4 @@ PLIST_FILES=	bin/autotest \
 		bin/unit_diff \
 		bin/zentest
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
