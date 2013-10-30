@@ -1,0 +1,6 @@
+man/man5/metalog.conf.5.gz
+man/man8/metalog.8.gz
+sbin/metalog
+@unexec if cmp -s %D/etc/metalog.conf %D/etc/metalog.conf.sample ; then rm -f %D/etc/metalog.conf ; fi
+etc/metalog.conf.sample
+@exec if [ ! -f %D/etc/metalog.conf ]; then cp -p %D/%F %B/metalog.conf; fi
