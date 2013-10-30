@@ -9,22 +9,21 @@ MASTER_SITES=	http://games.moria.org.uk/doom/bsp/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Node builder for Doom
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
-MAN6=		bsp.6
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2 -fomit-frame-pointer|${CFLAGS} &|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bsp ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/bsp.6 ${MANPREFIX}/man/man6
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/bsp ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/bsp.6 ${STAGEDIR}${MANPREFIX}/man/man6
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
