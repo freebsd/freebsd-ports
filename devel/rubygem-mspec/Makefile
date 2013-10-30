@@ -15,5 +15,4 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/mspec bin/mkspec bin/mspec-ci bin/mspec-run bin/mspec-tag
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
