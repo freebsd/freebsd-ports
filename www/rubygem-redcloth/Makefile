@@ -16,5 +16,4 @@ GEM_NAME=	${DISTNAME}
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/redcloth
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

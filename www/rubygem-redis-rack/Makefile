@@ -15,6 +15,5 @@ RUBYGEM_AUTOPLIST=	yes
 RUN_DEPENDS=	rubygem-rack15>=1.5:${PORTSDIR}/www/rubygem-rack15 \
 		rubygem-redis-store>=1.1.0:${PORTSDIR}/devel/rubygem-redis-store
 
-NO_STAGE=	yes
 
 .include <bsd.port.mk>
