@@ -11,12 +11,11 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-64bit
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Enigma is a reimplementation of Oxyd, a puzzle game
 
-LIB_DEPENDS=	xerces-c:${PORTSDIR}/textproc/xerces-c2 \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libxerces-c.so:${PORTSDIR}/textproc/xerces-c2 \
+		libpng.so:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	${LOCALBASE}/lib/libenet.a:${PORTSDIR}/net/enet
 
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake
 USE_LUA=	5.1
 LUA_COMPS=	lua toluaxx
 USE_SDL=	image mixer sdl ttf
@@ -28,22 +27,17 @@ LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAN6=		enigma.6
-
 SUB_FILES=	pkg-message
 
 PORTDOCS=	*
+PORTDATA=	*
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_DEFAULT=DOCS NLS
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MNLS}
-PLIST_SUB+=	NLS=""
-USES+=		gettext
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=nls
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/lib-src/lua \
@@ -52,13 +46,5 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e '/Exec=/s,enigma,${PREFIX}/bin/enigma,g' \
 		${WRKSRC}/etc/enigma.desktop
-.if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -E -e '/install-data-am/ s,install-(doc|index)DATA,,g' \
-		${WRKSRC}/Makefile.in ${WRKSRC}/doc/Makefile.in
-	@${REINPLACE_CMD} -e '/^SUBDIRS/ s|=.*|=|' ${WRKSRC}/doc/Makefile.in
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
