@@ -1,7 +1,7 @@
 ====
 Note that we now install a few more files in %%PREFIX%%/share/mercurial:
 - shell completion scripts (bash, tcsh and zsh)
-- CGI scripts for web access to repositories
-  see http://mercurial.selenic.com/wiki/CGIinstall
+- CGI / WSGI scripts for web access to repositories
+  see http://mercurial.selenic.com/wiki/PublishingRepositories
 - various documentation files
 ====
