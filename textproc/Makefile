@@ -160,6 +160,7 @@
     SUBDIR += enchant
     SUBDIR += eo-aspell
     SUBDIR += eqe
+    SUBDIR += erl-edown
     SUBDIR += eruby
     SUBDIR += es-aspell
     SUBDIR += es-hunspell

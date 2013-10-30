@@ -64,6 +64,11 @@
     SUBDIR += embedded_innodb
     SUBDIR += emma
     SUBDIR += epgsql
+    SUBDIR += erl-amqp_client-seth
+    SUBDIR += erl-couchbeam
+    SUBDIR += erl-gen_bunny-seth
+    SUBDIR += erl-rabbit_common-seth
+    SUBDIR += erl-sqerl
     SUBDIR += erlang-mysql
     SUBDIR += evolution-data-server
     SUBDIR += exist
