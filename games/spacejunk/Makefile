@@ -21,16 +21,20 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 SUB_FILES=	spacejunk
 
+PLIST_FILES=	bin/${PORTNAME} libexec/${PORTNAME}
 PORTDOCS=	*
+PORTDATA=	*
 
-DESKTOP_ENTRIES=	"Spacejunk" \
-			"Collect garbage by navigating through the gravitational fields of planets and stars" \
-			"" \
-			"spacejunk" \
-			"Game;ArcadeGame;" \
-			false
+DESKTOP_ENTRIES="Spacejunk" \
+		"Collect garbage by navigating through the gravitational fields of planets and stars" \
+		"${DATADIR}/data/art/spacejunk_icon.png" \
+		"spacejunk" \
+		"Game;ArcadeGame;" \
+		false
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64"
@@ -43,13 +47,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/&|' ${WRKSRC}/src/*.c*
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/spacejunk ${PREFIX}/libexec/
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} 'data config.txt' ${DATADIR}/
-	${INSTALL_SCRIPT} ${WRKDIR}/spacejunk ${PREFIX}/bin/
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} '*' ${DOCSDIR}/
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/src/spacejunk ${STAGEDIR}${PREFIX}/libexec/
+	cd ${WRKSRC} && ${COPYTREE_SHARE} 'data config.txt' ${STAGEDIR}${DATADIR}/
+	${INSTALL_SCRIPT} ${WRKDIR}/spacejunk ${STAGEDIR}${PREFIX}/bin/
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} '*' ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
