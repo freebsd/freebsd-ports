@@ -1,10 +1,20 @@
-%%QT%%bin/recoll
+%%QT4%%bin/recoll
 bin/recollindex
-%%QT%%bin/recollq
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/recoll.so
-%%QT%%share/applications/recoll-searchgui.desktop
-%%QT%%share/icons/hicolor/48x48/apps/recoll.png
-%%QT%%share/pixmaps/recoll.png
+%%QT4%%bin/recollq
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/recoll/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/recoll/__init__.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/recoll/rclconfig.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/recoll/rclconfig.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/recoll/rclextract.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/recoll/recoll.so
+lib/recoll/librecoll.so.%%MAJORVER%%
+%%QT4%%man/man1/recoll.1.gz
+man/man1/recollindex.1.gz
+%%QT4%%man/man1/recollq.1.gz
+man/man5/recoll.conf.5.gz
+%%QT4%%share/applications/recoll-searchgui.desktop
+%%QT4%%share/icons/hicolor/48x48/apps/recoll.png
+%%QT4%%share/pixmaps/recoll.png
 %%DATADIR%%/doc/docbook.css
 %%DATADIR%%/doc/usermanual.html
 %%DATADIR%%/examples/fields
@@ -20,6 +30,7 @@ bin/recollindex
 %%DATADIR%%/filters/rclaptosidman
 %%DATADIR%%/filters/rclaudio
 %%DATADIR%%/filters/rclchm
+%%DATADIR%%/filters/rclconfig.py
 %%DATADIR%%/filters/rcldia
 %%DATADIR%%/filters/rcldjvu
 %%DATADIR%%/filters/rcldoc
@@ -70,6 +81,7 @@ bin/recollindex
 %%DATADIR%%/images/bookchap.png
 %%DATADIR%%/images/document.png
 %%DATADIR%%/images/drawing.png
+%%DATADIR%%/images/emblem-symbolic-link.png
 %%DATADIR%%/images/folder.png
 %%DATADIR%%/images/html.png
 %%DATADIR%%/images/image.png
@@ -107,3 +119,5 @@ bin/recollindex
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%
+@dirrm lib/recoll
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/recoll
