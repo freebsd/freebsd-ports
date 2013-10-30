@@ -13,6 +13,8 @@ DISTNAME=	Columns-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nice little implementation of columns game for X Window System
 
+LICENSE=	GPLv2
+
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 
@@ -21,13 +23,11 @@ PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+post-configure:
+	@${REINPLACE_CMD} -e '/chmod 0666/d' ${WRKSRC}/Makefile
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
