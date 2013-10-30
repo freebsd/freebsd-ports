@@ -17,7 +17,6 @@ USE_RUBYGEMS=	yes
 USE_GL=		glut
 RUBYGEM_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .if ${RUBY_VER} == 1.8
 IGNORE=	Does not work with Ruby 1.8
