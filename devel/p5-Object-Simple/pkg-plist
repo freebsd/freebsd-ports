@@ -1,8 +1,11 @@
+%%PERL5_MAN3%%/Object::Simple.3.gz
+%%PERL5_MAN3%%/Object::Simple::Accessor.3.gz
+%%PERL5_MAN3%%/Object::Simple::Guide.3.gz
 %%SITE_PERL%%/Object/Simple.pm
 %%SITE_PERL%%/Object/Simple/Accessor.pm
 %%SITE_PERL%%/Object/Simple/Guide.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/Simple/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/Simple
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object
-@dirrmtry %%SITE_PERL%%/Object/Simple
+@dirrm %%SITE_PERL%%/Object/Simple
 @dirrmtry %%SITE_PERL%%/Object

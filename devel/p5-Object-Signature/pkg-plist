@@ -1,7 +1,9 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/Signature/.packlist
+%%PERL5_MAN3%%/Object::Signature.3.gz
+%%PERL5_MAN3%%/Object::Signature::File.3.gz
 %%SITE_PERL%%/Object/Signature.pm
 %%SITE_PERL%%/Object/Signature/File.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/Signature
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/Signature/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/Signature
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object
-@dirrmtry %%SITE_PERL%%/Object/Signature
+@dirrm %%SITE_PERL%%/Object/Signature
 @dirrmtry %%SITE_PERL%%/Object

@@ -1,6 +1,6 @@
+%%PERL5_MAN3%%/OLE::Storage_Lite.3.gz
 %%SITE_PERL%%/OLE/Storage_Lite.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/OLE/Storage_Lite/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OLE/Storage_Lite
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OLE
 @dirrmtry %%SITE_PERL%%/OLE
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OLE
