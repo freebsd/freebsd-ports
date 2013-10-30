@@ -9,18 +9,20 @@ MASTER_SITES=	SF \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A puzzle solver
+COMMENT=	Puzzle solver
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		xmlwrapp:${PORTSDIR}/textproc/xmlwrapp \
-		fltk:${PORTSDIR}/x11-toolkits/fltk \
-		boost_thread:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libxmlwrapp.so:${PORTSDIR}/textproc/xmlwrapp \
+		libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
+		libboost_thread.so:${PORTSDIR}/devel/boost-libs
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USE_XORG=	x11 xt xext xmu xi
 USE_GL=		glu
-USE_GMAKE=	yes
+USES=		gmake
 USE_GCC=	4.2+
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	`fltk-config --cxxflags`
@@ -30,22 +32,15 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/burrTxt bin/burrTxt2 bin/burrGui
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/burrTxt ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/burrTxt2 ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/gui/burrGui ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/burrTxt ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/burrTxt2 ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/gui/burrGui ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in burricons.ico AUTHORS ChangeLog NEWS README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/examples; ${COPYTREE_SHARE} . ${EXAMPLESDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples; ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
