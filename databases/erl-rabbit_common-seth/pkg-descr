@@ -1,0 +1,6 @@
+This is a stripped down distribution of the rabbitmq-server code required by
+the rabbitmq-erlang-client for use as a rebar dep.
+
+a fork by seth
+
+WWW: https://github.com/seth/rabbit_common

@@ -1,0 +1,25 @@
+@comment $FreeBSD$
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rabbit_basic.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rabbit_binary_generator.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rabbit_binary_parser.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rabbit_channel.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rabbit_exchange_type.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rabbit_framing_amqp_0_8.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rabbit_framing_amqp_0_9_1.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rabbit_framing_channel.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rabbit_heartbeat.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rabbit_log.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rabbit_misc.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rabbit_net.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rabbit_reader.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rabbit_writer.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/supervisor2.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/rabbit.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/rabbit_backing_queue_spec.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/rabbit_exchange_type_spec.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/rabbit_framing.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/rabbit_msg_store.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/rabbit_msg_store_index.hrl
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include
+@dirrmtry lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%
