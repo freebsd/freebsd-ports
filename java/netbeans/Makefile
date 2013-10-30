@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	netbeans
-PORTVERSION=	7.3
+PORTVERSION=	7.4
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.netbeans.org/netbeans/${PORTVERSION}/final/zip/ \
     		http://dlc.sun.com.edgesuite.net/netbeans/${PORTVERSION}/final/zip/
-DISTNAME=	netbeans-${PORTVERSION}-201302132200
+DISTNAME=	netbeans-${PORTVERSION}-201310111528
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A full-featured integrated environment for Java
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.7+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/netbeans
@@ -28,21 +28,19 @@ DESKTOP_ENTRIES="NetBeans" \
 		"Development;" \
 		${FALSE}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i "" -e '57s|#||;57s|/path/to/jdk|${JAVA_HOME}|' \
 	    ${WRKSRC}/etc/netbeans.conf
-	@${REINPLACE_CMD} -i "" -e 's|%%GCONFTOOL2%%|${LOCALBASE}/bin/gconftool-2|g; \
-	    s|%%GREP%%|${GREP}|g;s|%%SED%%|${SED}|g;s|%%AWK%%|${AWK}|g' \
+	@${REINPLACE_CMD} -i "" -e 's|%%GREP%%|${GREP}|g' \
 	    ${WRKSRC}/platform/lib/nbexec
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
 do-install:
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${DATADIR})
-	@${CHMOD} ${BINMODE} ${DATADIR}/bin/netbeans
-	@${LN} -sf ${DATADIR}/bin/netbeans ${PREFIX}/bin/${PORTNAME}-${PORTVERSION}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}
+	${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/bin/netbeans
+	${LN} -sf ${DATADIR}/bin/netbeans ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-${PORTVERSION}
 
 post-install:
-	@${CHMOD} ${BINMODE} ${DATADIR}/java/maven/bin/mvn
+	@${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/java/maven/bin/mvn
 
 .include <bsd.port.mk>
