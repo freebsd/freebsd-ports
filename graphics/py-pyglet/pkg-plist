@@ -1,5 +1,3 @@
-%%DEMOS%%bin/pyglet-astraea
-%%DEMOS%%bin/pyglet-noisy
 %%PYTHON_SITELIBDIR%%/pyglet/__init__.py
 %%PYTHON_SITELIBDIR%%/pyglet/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pyglet/__init__.pyo
@@ -297,8 +295,6 @@
 %%PYTHON_SITELIBDIR%%/pyglet/window/xlib/xsync.py
 %%PYTHON_SITELIBDIR%%/pyglet/window/xlib/xsync.pyc
 %%PYTHON_SITELIBDIR%%/pyglet/window/xlib/xsync.pyo
-%%DEMOS%%share/pixmaps/pyglet-astraea.png
-%%DEMOS%%share/pixmaps/pyglet-noisy.png
 @dirrm %%PYTHON_SITELIBDIR%%/pyglet/window/xlib
 @dirrm %%PYTHON_SITELIBDIR%%/pyglet/window/win32
 @dirrm %%PYTHON_SITELIBDIR%%/pyglet/window/carbon
