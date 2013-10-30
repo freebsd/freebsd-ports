@@ -20,7 +20,7 @@ BUILD_DEPENDS=	rebar>=0:${PORTSDIR}/devel/rebar \
 	erl-chef_authn>=0:${PORTSDIR}/sysutils/erl-chef_authn \
 	erl-erlware_commons>=0:${PORTSDIR}/devel/erl-erlware_commons \
 	erl-opscoderl_folsom>=0:${PORTSDIR}/devel/erl-opscoderl_folsom \
-	pooler>=0:${PORTSDIR}/devel/pooler \
+	erl-pooler>=0:${PORTSDIR}/devel/erl-pooler \
 	erl-mixer>=0:${PORTSDIR}/devel/erl-mixer \
 	erl-envy>=0:${PORTSDIR}/devel/erl-envy
 
@@ -33,7 +33,7 @@ RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang \
 	erl-chef_authn>=0:${PORTSDIR}/sysutils/erl-chef_authn \
 	erl-erlware_commons>=0:${PORTSDIR}/devel/erl-erlware_commons \
 	erl-opscoderl_folsom>=0:${PORTSDIR}/devel/erl-opscoderl_folsom \
-	pooler>=0:${PORTSDIR}/devel/pooler \
+	erl-pooler>=0:${PORTSDIR}/devel/erl-pooler \
 	erl-mixer>=0:${PORTSDIR}/devel/erl-mixer \
 	erl-envy>=0:${PORTSDIR}/devel/erl-envy
 

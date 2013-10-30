@@ -5,6 +5,7 @@ PORTNAME=	pooler
 PORTVERSION=	1.0.0
 #PORTREVISION=	0
 CATEGORIES=	devel
+PKGNAMEPREFIX=	erl-
 
 MAINTAINER=	tomoyukis@reallyenglish.com
 COMMENT=	OTP Process Pool Application

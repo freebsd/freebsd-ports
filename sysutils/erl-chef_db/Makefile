@@ -15,7 +15,7 @@ BUILD_DEPENDS=	rebar>=0:${PORTSDIR}/devel/rebar \
 	erl-chef_objects>=0:${PORTSDIR}/sysutils/erl-chef_objects \
 	erl-couchbeam>=0:${PORTSDIR}/databases/erl-couchbeam \
 	meck>=0:${PORTSDIR}/devel/meck \
-	sqerl>=0:${PORTSDIR}/databases/sqerl \
+	erl-sqerl>=0:${PORTSDIR}/databases/erl-sqerl \
 	erl-stats_hero>=0:${PORTSDIR}/sysutils/erl-stats_hero \
 	erl-ej>=0:${PORTSDIR}/devel/erl-ej \
 	erl-depsolver>=0:${PORTSDIR}/devel/erl-depsolver \
