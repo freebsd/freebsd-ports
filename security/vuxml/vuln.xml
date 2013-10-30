@@ -51,6 +51,89 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="81f866ad-41a4-11e3-a4af-0025905a4771">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>24.1.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>25.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.22</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>24.1.0</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.22</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>25.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p> MFSA 2013-93 Miscellaneous memory safety hazards (rv:25.0 /
+	    rv:24.1 / rv:17.0.10)</p>
+	  <p> MFSA 2013-94 Spoofing addressbar though SELECT element</p>
+	  <p> MFSA 2013-95 Access violation with XSLT and uninitialized data</p>
+	  <p> MFSA 2013-96 Improperly initialized memory and overflows in some
+	    JavaScript functions</p>
+	  <p> MFSA 2013-97 Writing to cycle collected object during image
+	    decoding</p>
+	  <p> MFSA 2013-98 Use-after-free when updating offline cache</p>
+	  <p> MFSA 2013-99 Security bypass of PDF.js checks using iframes</p>
+	  <p> MFSA 2013-100 Miscellaneous use-after-free issues found through
+	    ASAN fuzzing</p>
+	  <p> MFSA 2013-101 Memory corruption in workers</p>
+	  <p> MFSA 2013-102 Use-after-free in HTML document templates</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2013-1739</cvename>
+	<cvename>CVE-2013-5590</cvename>
+	<cvename>CVE-2013-5591</cvename>
+	<cvename>CVE-2013-5592</cvename>
+	<cvename>CVE-2013-5593</cvename>
+	<cvename>CVE-2013-5595</cvename>
+	<cvename>CVE-2013-5596</cvename>
+	<cvename>CVE-2013-5597</cvename>
+	<cvename>CVE-2013-5598</cvename>
+	<cvename>CVE-2013-5599</cvename>
+	<cvename>CVE-2013-5600</cvename>
+	<cvename>CVE-2013-5601</cvename>
+	<cvename>CVE-2013-5602</cvename>
+	<cvename>CVE-2013-5603</cvename>
+	<cvename>CVE-2013-5604</cvename>
+	<url>https://www.mozilla.org/security/announce/2013/mfsa2013-93.html</url>
+	<url>https://www.mozilla.org/security/announce/2013/mfsa2013-94.html</url>
+	<url>https://www.mozilla.org/security/announce/2013/mfsa2013-95.html</url>
+	<url>https://www.mozilla.org/security/announce/2013/mfsa2013-96.html</url>
+	<url>https://www.mozilla.org/security/announce/2013/mfsa2013-97.html</url>
+	<url>https://www.mozilla.org/security/announce/2013/mfsa2013-98.html</url>
+	<url>https://www.mozilla.org/security/announce/2013/mfsa2013-99.html</url>
+	<url>https://www.mozilla.org/security/announce/2013/mfsa2013-100.html</url>
+	<url>https://www.mozilla.org/security/announce/2013/mfsa2013-101.html</url>
+	<url>https://www.mozilla.org/security/announce/2013/mfsa2013-102.html</url>
+	<url>http://www.mozilla.org/security/known-vulnerabilities/</url>
+    </references>
+    <dates>
+      <discovery>2013-10-29</discovery>
+      <entry>2013-10-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4e23644c-cb93-4f83-9e20-5bc07ad9b39f">
     <topic>mod_pagespeed -- critical cross-site scripting (XSS) vulnerability</topic>
     <affects>
