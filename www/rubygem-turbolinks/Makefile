@@ -14,6 +14,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 RUN_DEPENDS=	rubygem-coffee-rails>=0:${PORTSDIR}/devel/rubygem-coffee-rails
 
-NO_STAGE=	yes
 
 .include <bsd.port.mk>
