@@ -1,0 +1,12 @@
+--- Makefile.in.orig	2013-10-30 13:46:13.000000000 +0100
++++ Makefile.in	2013-10-30 13:46:28.000000000 +0100
+@@ -47,9 +47,6 @@
+ 	(cd library; $(MAKE) install)
+ 	(cd man; $(MAKE) install)
+ 	(cd demos; $(MAKE) install)
+-	$(INSTALL_DATA) $(srcdir)/README $(INSTALL_DIR)$(scriptdir)
+-	$(INSTALL_DATA) $(srcdir)/PROBLEMS $(INSTALL_DIR)$(scriptdir)
+-	$(INSTALL_DATA) $(srcdir)/NEWS $(INSTALL_DIR)$(scriptdir)
+ 
+ mkdirs:
+ 	@for i in $(instdirs) ; do \
