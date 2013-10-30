@@ -11,11 +11,11 @@ MASTER_SITES=	http://liquidrescale.wdfiles.com/local--files/en:download-page-sou
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Liquid rescale GIMP plug-in
 
-LIB_DEPENDS=	gimp-2.0:${PORTSDIR}/graphics/gimp-app \
-		lqr-1:${PORTSDIR}/graphics/liblqr-1
+LIB_DEPENDS=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app \
+		liblqr-1.so:${PORTSDIR}/graphics/liblqr-1
 
-GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
 USES=		gettext gmake pkgconfig
 USE_GNOME=	gtk20
 
@@ -25,7 +25,6 @@ PLIST_SUB=	PLUGIN_DIR=${PLUGIN_DIR}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^bindir = .*|bindir = ${PREFIX}/${PLUGIN_DIR}|g' ${WRKSRC}/src/Makefile.in
 
