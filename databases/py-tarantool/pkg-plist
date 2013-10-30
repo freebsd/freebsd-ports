@@ -1,0 +1,27 @@
+%%PYTHON_SITELIBDIR%%/tarantool/__init__.py
+%%PYTHON_SITELIBDIR%%/tarantool/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tarantool/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tarantool/connection.py
+%%PYTHON_SITELIBDIR%%/tarantool/connection.pyc
+%%PYTHON_SITELIBDIR%%/tarantool/connection.pyo
+%%PYTHON_SITELIBDIR%%/tarantool/const.py
+%%PYTHON_SITELIBDIR%%/tarantool/const.pyc
+%%PYTHON_SITELIBDIR%%/tarantool/const.pyo
+%%PYTHON_SITELIBDIR%%/tarantool/error.py
+%%PYTHON_SITELIBDIR%%/tarantool/error.pyc
+%%PYTHON_SITELIBDIR%%/tarantool/error.pyo
+%%PYTHON_SITELIBDIR%%/tarantool/request.py
+%%PYTHON_SITELIBDIR%%/tarantool/request.pyc
+%%PYTHON_SITELIBDIR%%/tarantool/request.pyo
+%%PYTHON_SITELIBDIR%%/tarantool/response.py
+%%PYTHON_SITELIBDIR%%/tarantool/response.pyc
+%%PYTHON_SITELIBDIR%%/tarantool/response.pyo
+%%PYTHON_SITELIBDIR%%/tarantool/schema.py
+%%PYTHON_SITELIBDIR%%/tarantool/schema.pyc
+%%PYTHON_SITELIBDIR%%/tarantool/schema.pyo
+%%PYTHON_SITELIBDIR%%/tarantool/space.py
+%%PYTHON_SITELIBDIR%%/tarantool/space.pyc
+%%PYTHON_SITELIBDIR%%/tarantool/space.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/tarantool
+@dirrmtry %%PYTHON_LIBDIR%%/site-packages
+@dirrmtry %%PYTHON_LIBDIR%%

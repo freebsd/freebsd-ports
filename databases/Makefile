@@ -785,6 +785,7 @@
     SUBDIR += py-swift
     SUBDIR += py-swiftclient
     SUBDIR += py-sybase
+    SUBDIR += py-tarantool
     SUBDIR += py-umemcache
     SUBDIR += py-whisper
     SUBDIR += pydbdesigner
