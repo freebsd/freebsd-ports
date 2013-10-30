@@ -17,7 +17,4 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS=	</dev/null
 
-MAN3=		Inline::ASM.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

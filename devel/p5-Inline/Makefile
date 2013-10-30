@@ -21,16 +21,6 @@ TEST_DEPENDS=	p5-Inline-Files>=0:${PORTSDIR}/devel/p5-Inline-Files
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Inline.3 \
-		Inline-API.3 \
-		Inline-FAQ.3 \
-		Inline-Support.3 \
-		Inline::C.3 \
-		Inline::C-Cookbook.3 \
-		Inline::C::ParseRecDescent.3 \
-		Inline::C::ParseRegExp.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} >= 501400

@@ -1,4 +1,25 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IOC/.packlist
+%%PERL5_MAN3%%/IOC.3.gz
+%%PERL5_MAN3%%/IOC::Config::XML.3.gz
+%%PERL5_MAN3%%/IOC::Config::XML::SAX::Handler.3.gz
+%%PERL5_MAN3%%/IOC::Container.3.gz
+%%PERL5_MAN3%%/IOC::Container::MethodResolution.3.gz
+%%PERL5_MAN3%%/IOC::Exceptions.3.gz
+%%PERL5_MAN3%%/IOC::Interfaces.3.gz
+%%PERL5_MAN3%%/IOC::Proxy.3.gz
+%%PERL5_MAN3%%/IOC::Proxy::Interfaces.3.gz
+%%PERL5_MAN3%%/IOC::Registry.3.gz
+%%PERL5_MAN3%%/IOC::Service.3.gz
+%%PERL5_MAN3%%/IOC::Service::ConstructorInjection.3.gz
+%%PERL5_MAN3%%/IOC::Service::Literal.3.gz
+%%PERL5_MAN3%%/IOC::Service::Parameterized.3.gz
+%%PERL5_MAN3%%/IOC::Service::Prototype.3.gz
+%%PERL5_MAN3%%/IOC::Service::Prototype::ConstructorInjection.3.gz
+%%PERL5_MAN3%%/IOC::Service::Prototype::SetterInjection.3.gz
+%%PERL5_MAN3%%/IOC::Service::SetterInjection.3.gz
+%%PERL5_MAN3%%/IOC::Visitor::SearchForContainer.3.gz
+%%PERL5_MAN3%%/IOC::Visitor::SearchForService.3.gz
+%%PERL5_MAN3%%/IOC::Visitor::ServiceLocator.3.gz
+%%PERL5_MAN3%%/Test::IOC.3.gz
 %%SITE_PERL%%/IOC.pm
 %%SITE_PERL%%/IOC/Config/XML.pm
 %%SITE_PERL%%/IOC/Config/XML/SAX/Handler.pm
@@ -21,6 +42,9 @@
 %%SITE_PERL%%/IOC/Visitor/SearchForService.pm
 %%SITE_PERL%%/IOC/Visitor/ServiceLocator.pm
 %%SITE_PERL%%/Test/IOC.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IOC/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IOC
+@dirrmtry %%SITE_PERL%%/Test
 @dirrm %%SITE_PERL%%/IOC/Visitor
 @dirrm %%SITE_PERL%%/IOC/Service/Prototype
 @dirrm %%SITE_PERL%%/IOC/Service
@@ -30,6 +54,3 @@
 @dirrm %%SITE_PERL%%/IOC/Config/XML
 @dirrm %%SITE_PERL%%/IOC/Config
 @dirrm %%SITE_PERL%%/IOC
-@dirrmtry %%SITE_PERL%%/Test
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IOC
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IOC

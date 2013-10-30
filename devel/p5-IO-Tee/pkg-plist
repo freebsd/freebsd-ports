@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/IO::Tee.3.gz
 %%SITE_PERL%%/IO/Tee.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Tee/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Tee
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Tee
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
 @dirrmtry %%SITE_PERL%%/IO

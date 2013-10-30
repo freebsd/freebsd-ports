@@ -14,7 +14,4 @@ COMMENT=	Multiplex output to multiple output handles
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		IO::Tee.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

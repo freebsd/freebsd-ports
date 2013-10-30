@@ -24,8 +24,4 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS=	J2SDK=${JAVA_HOME} </dev/null
 
-MAN3=		Inline::Java.3 \
-		Inline::Java::Callback.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

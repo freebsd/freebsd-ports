@@ -3,4 +3,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ioctl/Ioctl.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ioctl/Ioctl.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ioctl/autosplit.ix
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ioctl
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ioctl

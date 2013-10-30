@@ -15,7 +15,4 @@ LIB_DEPENDS=	mm.14:${PORTSDIR}/devel/mm
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		IPC::MM.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

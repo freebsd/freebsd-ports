@@ -12,10 +12,6 @@ COMMENT=	Line-buffered select interface
 
 USES=		perl5
 USE_PERL5=	configure
-
-MAN3=		IO::BufferedSelect.3
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

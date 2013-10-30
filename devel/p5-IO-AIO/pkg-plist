@@ -1,8 +1,9 @@
 bin/treescan
+%%PERL5_MAN3%%/IO::AIO.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/IO/AIO.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/AIO/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/AIO/AIO.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/AIO/AIO.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/AIO
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/AIO
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IO

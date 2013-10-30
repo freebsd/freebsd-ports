@@ -1,6 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/Filters/.packlist
+%%PERL5_MAN3%%/Inline::Filters.3.gz
 %%SITE_PERL%%/Inline/Filters.pm
 %%SITE_PERL%%/Inline/Filters.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/Filters/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/Filters
-@dirrmtry %%SITE_PERL%%/Inline
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline
+@dirrmtry %%SITE_PERL%%/Inline

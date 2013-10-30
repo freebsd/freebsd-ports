@@ -1,3 +1,11 @@
+%%PERL5_MAN3%%/IO::AtomicFile.3.gz
+%%PERL5_MAN3%%/IO::InnerFile.3.gz
+%%PERL5_MAN3%%/IO::Lines.3.gz
+%%PERL5_MAN3%%/IO::Scalar.3.gz
+%%PERL5_MAN3%%/IO::ScalarArray.3.gz
+%%PERL5_MAN3%%/IO::Stringy.3.gz
+%%PERL5_MAN3%%/IO::Wrap.3.gz
+%%PERL5_MAN3%%/IO::WrapTie.3.gz
 %%SITE_PERL%%/IO/AtomicFile.pm
 %%SITE_PERL%%/IO/InnerFile.pm
 %%SITE_PERL%%/IO/Lines.pm
@@ -7,6 +15,6 @@
 %%SITE_PERL%%/IO/Wrap.pm
 %%SITE_PERL%%/IO/WrapTie.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Stringy/.packlist
-@dirrmtry %%SITE_PERL%%/IO
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Stringy
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
+@dirrmtry %%SITE_PERL%%/IO

@@ -18,7 +18,4 @@ RUN_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		IO::YAML.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

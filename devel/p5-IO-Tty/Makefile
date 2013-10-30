@@ -13,9 +13,4 @@ COMMENT=	Flexible I/O Perl5 module that allows manipulation of pseudo-TTYs
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		IO::Pty.3 \
-		IO::Tty.3 \
-		IO::Tty::Constant.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

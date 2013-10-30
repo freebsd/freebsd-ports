@@ -1,10 +1,10 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Mmap/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Mmap/Mmap.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Mmap/Mmap.so
 %%SITE_PERL%%/%%PERL_ARCH%%/IPC/Mmap.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/IPC/Mmap/POSIX.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/IPC/Mmap/Win32.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Mmap
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Mmap/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Mmap/Mmap.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Mmap/Mmap.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Mmap
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IPC/Mmap
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/IPC/Mmap
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IPC

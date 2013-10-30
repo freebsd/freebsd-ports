@@ -21,9 +21,6 @@ TEST_DEPENDS=	p5-Scalar-List-Utils>=1.29:${PORTSDIR}/lang/p5-Scalar-List-Utils
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		IO::Pipely.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

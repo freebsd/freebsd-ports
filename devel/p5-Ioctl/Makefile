@@ -14,5 +14,4 @@ COMMENT=	Perl module that provides a way to get the value of C ioctl constants
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

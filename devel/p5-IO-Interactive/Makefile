@@ -18,9 +18,6 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		IO::Interactive.3
-
 PORTSCOUT=	skipv:0.01
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,3 +1,6 @@
+%%PERL5_MAN3%%/Inline::CPP.3.gz
+%%PERL5_MAN3%%/Inline::CPP::Config.3.gz
+%%PERL5_MAN3%%/Inline::CPP::grammar.3.gz
 %%SITE_PERL%%/Inline/CPP.pm
 %%SITE_PERL%%/Inline/CPP.pod
 %%SITE_PERL%%/Inline/CPP/Config.pm

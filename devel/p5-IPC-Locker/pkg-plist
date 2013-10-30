@@ -1,16 +1,26 @@
-bin/lockersh
-bin/pidwatch
 bin/lockerd
+bin/lockersh
 bin/pidstat
 bin/pidstatd
+bin/pidwatch
 bin/uriexec
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Locker/.packlist
-%%SITE_PERL%%/IPC/Locker/Server.pm
+%%PERL5_MAN3%%/IPC::Locker.3.gz
+%%PERL5_MAN3%%/IPC::Locker::Server.3.gz
+%%PERL5_MAN3%%/IPC::PidStat.3.gz
+%%PERL5_MAN3%%/IPC::PidStat::PidServer.3.gz
 %%SITE_PERL%%/IPC/Locker.pm
+%%SITE_PERL%%/IPC/Locker/Server.pm
 %%SITE_PERL%%/IPC/PidStat.pm
 %%SITE_PERL%%/IPC/PidStat/PidServer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Locker/.packlist
+man/man1/lockerd.1.gz
+man/man1/lockersh.1.gz
+man/man1/pidstat.1.gz
+man/man1/pidstatd.1.gz
+man/man1/pidwatch.1.gz
+man/man1/uriexec.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Locker
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC
-@dirrm %%SITE_PERL%%/IPC/Locker
 @dirrm %%SITE_PERL%%/IPC/PidStat
+@dirrm %%SITE_PERL%%/IPC/Locker
 @dirrmtry %%SITE_PERL%%/IPC

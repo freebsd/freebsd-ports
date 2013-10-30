@@ -1,6 +1,14 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/IO.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/IO.so
+%%PERL5_MAN3%%/IO.3.gz
+%%PERL5_MAN3%%/IO::Dir.3.gz
+%%PERL5_MAN3%%/IO::File.3.gz
+%%PERL5_MAN3%%/IO::Handle.3.gz
+%%PERL5_MAN3%%/IO::Pipe.3.gz
+%%PERL5_MAN3%%/IO::Poll.3.gz
+%%PERL5_MAN3%%/IO::Seekable.3.gz
+%%PERL5_MAN3%%/IO::Select.3.gz
+%%PERL5_MAN3%%/IO::Socket.3.gz
+%%PERL5_MAN3%%/IO::Socket::INET.3.gz
+%%PERL5_MAN3%%/IO::Socket::UNIX.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/IO.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/IO/Dir.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/IO/File.pm
@@ -12,6 +20,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/IO/Socket.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/IO/Socket/INET.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/IO/Socket/UNIX.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/IO.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/IO.so
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IO/Socket
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IO
