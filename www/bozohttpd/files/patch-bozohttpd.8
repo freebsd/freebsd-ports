@@ -3,23 +3,23 @@ $FreeBSD$
 
 --- bozohttpd.8.orig
 +++ bozohttpd.8
-@@ -284,8 +284,8 @@
+@@ -316,8 +316,8 @@
  .Xr inetd.conf 5
  entry would be:
  .Bd -literal
--http stream tcp  nowait:600 httpd /usr/pkg/libexec/bozohttpd bozohttpd /var/www
--http stream tcp6 nowait:600 httpd /usr/pkg/libexec/bozohttpd bozohttpd /var/www
-+http stream tcp  nowait:600 httpd @@PREFIX@@/libexec/bozohttpd bozohttpd /var/www
-+http stream tcp6 nowait:600 httpd @@PREFIX@@/libexec/bozohttpd bozohttpd /var/www
+-http stream tcp  nowait:600 _httpd /usr/libexec/httpd httpd /var/www
+-http stream tcp6 nowait:600 _httpd /usr/libexec/httpd httpd /var/www
++http stream tcp  nowait:600 _httpd @@PREFIX@@/libexec/httpd httpd /var/www
++http stream tcp6 nowait:600 _httpd @@PREFIX@@/libexec/httpd httpd /var/www
  .Ed
  .Pp
  This would serve web pages from
-@@ -308,7 +308,7 @@
+@@ -447,7 +447,7 @@
  .Xr inetd.conf 5
  entry like:
  .Bd -literal
--http stream tcp  nowait:600 httpd /usr/pkg/libexec/bozohttpd bozohttpd -v /var/vroot /var/www
-+http stream tcp  nowait:600 httpd @@PREFIX@@/libexec/bozohttpd bozohttpd -v /var/vroot /var/www
+-http stream tcp  nowait:600 _httpd /usr/libexec/httpd httpd -v /var/vroot /var/www
++http stream tcp  nowait:600 _httpd @@PREFIX@@/libexec/httpd httpd -v /var/vroot /var/www
  .Ed
  .Pp
  and inside

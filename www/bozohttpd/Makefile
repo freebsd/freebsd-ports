@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bozohttpd
-PORTVERSION=	20100920
+PORTVERSION=	20130711
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.eterna.com.au/bozohttpd/ \
 		${MASTER_SITE_NETBSD}
@@ -23,7 +23,6 @@ HTPASSWD_DESC=		Enable htpassword support
 SSL_DESC=		Enable SSL support
 CGI_DESC=		Enable CGI support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHTPASSWD}
@@ -48,10 +47,8 @@ MAKE_ARGS+=	'COPTS+=	-UNO_CGIBIN_SUPPORT'
 MAKE_ARGS+=	'COPTS+=	-DNO_CGIBIN_SUPPORT'
 .endif
 
-MAN8=		bozohttpd.8
-MANCOMPRESSED=	maybe
-PLIST_FILES=	libexec/bozohttpd
-
+PLIST_FILES=	libexec/bozohttpd \
+		man/man8/bozohttpd.8.gz
 post-patch:
 	@${REINPLACE_CMD} -e 's|@@PREFIX@@|${PREFIX}|g' ${WRKSRC}/bozohttpd.8
 
