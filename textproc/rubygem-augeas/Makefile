@@ -18,5 +18,4 @@ USE_GNOME=	libxml2
 RUBYGEM_AUTOPLIST=	yes
 CONFIGURE_ARGS+=	--with-opt-include="${LOCALBASE}/include/libxml2"
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

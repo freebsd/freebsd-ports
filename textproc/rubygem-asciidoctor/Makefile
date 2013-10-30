@@ -14,6 +14,5 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES+=	bin/asciidoctor bin/asciidoctor-safe
 
-NO_STAGE=	yes
 
 .include <bsd.port.mk>
