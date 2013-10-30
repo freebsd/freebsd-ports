@@ -176,9 +176,9 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         is given by the maintainer via the port or by the
 #                         user via defined variable try to find the highest
 #                         stable installed version.
-#                         Available values: yes 17+ 24+ 17 24+
+#                         Available values: yes 24+ 25+ 24 25+
 #                         NOTE:
-#                         default value 17 is used in case of USE_FIREFOX=yes
+#                         default value 24 is used in case of USE_FIREFOX=yes
 #
 # USE_FIREFOX_BUILD       Add buildtime dependency on Firefox.
 #                         Available values: see USE_FIREFOX
@@ -187,9 +187,9 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         version is given by the maintainer via the port
 #                         or by the user via defined variable try to find
 #                         the highest stable installed version.
-#                         Available values: yes 21+ 21
+#                         Available values: yes 22+ 22
 #                         NOTE:
-#                         default value 21 is used in case of USE_SEAMONKEY=yes
+#                         default value 22 is used in case of USE_SEAMONKEY=yes
 #
 # USE_SEAMONKEY_BUILD     Add buildtime dependency on SeaMonkey.
 #                         Available values: see USE_SEAMONKEY
@@ -217,13 +217,13 @@ USE_FIREFOX:=				${USE_FIREFOX_BUILD}
 _FIREFOX_BUILD_DEPENDS=		yes
 .endif
 
-_FIREFOX_DEFAULT_VERSION=	17
-_FIREFOX_VERSIONS=			17 24
-_FIREFOX_RANGE_VERSIONS=	17+ 24+
+_FIREFOX_DEFAULT_VERSION=	24
+_FIREFOX_VERSIONS=			24 25
+_FIREFOX_RANGE_VERSIONS=	24+ 25+
 
-# For specifying [17, ..]+
-_FIREFOX_24P=	24 ${_FIREFOX_17P}
-_FIREFOX_17P=	17
+# For specifying [24, ..]+
+_FIREFOX_25P=	25 ${_FIREFOX_24P}
+_FIREFOX_24P=	24
 
 # Set the default Firefox version and check if USE_FIREFOX=yes was given
 .if ${USE_FIREFOX} == "yes"
@@ -268,8 +268,8 @@ IGNORE=			cannot install: unknown Firefox version: firefox-${USE_FIREFOX:C/([0-9
 .endif
 
 # Dependence lines for different Firefox versions
-17_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox-esr
-24_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
+24_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox-esr
+25_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
 
 # Add dependencies
 .if defined(USE_FIREFOX)
@@ -291,12 +291,12 @@ USE_SEAMONKEY:=				${USE_SEAMONKEY_BUILD}
 _SEAMONKEY_BUILD_DEPENDS=	yes
 .endif
 
-_SEAMONKEY_DEFAULT_VERSION=	21
-_SEAMONKEY_VERSIONS=		21
-_SEAMONKEY_RANGE_VERSIONS=	21+
+_SEAMONKEY_DEFAULT_VERSION=	22
+_SEAMONKEY_VERSIONS=		22
+_SEAMONKEY_RANGE_VERSIONS=	22+
 
-# For specifying [21, ..]+
-_SEAMONKEY_21P=	21
+# For specifying [22, ..]+
+_SEAMONKEY_22P=	22
 
 # Set the default SeaMonkey version and check if USE_SEAMONKEY=yes was given
 .if ${USE_SEAMONKEY} == "yes"
@@ -338,7 +338,7 @@ IGNORE=			cannot install: unknown SeaMonkey version: seamonkey-2.${USE_SEAMONKEY
 .endif
 
 # Dependence lines for different SeaMonkey versions
-21_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
+22_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
 
 # Add dependencies
 .if defined(USE_SEAMONKEY)
@@ -507,6 +507,8 @@ USE_PERL5=	build
 USE_XORG=	printproto sm xt xi xext x11 xinerama \
 		ice xproto
 
+NO_STAGE=	yes
+
 MOZILLA_SUFX?=	none
 MOZSRC?=	${WRKSRC}
 WRKSRC?=	${WRKDIR}/mozilla
@@ -540,27 +542,24 @@ MOZ_OPTIONS+=	--prefix="${FAKEDIR}"
 CPPFLAGS+=		-isystem${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib -Wl,-z,origin -Wl,-rpath,\\\$$\$$ORIGIN
 
-.if ${MOZILLA_VER:R:R} >= 19 || ${MOZILLA:Mseamonkey*}
 # prefer base clang, for lang/clang{,-devel} see ports/177224
-. if ${CC} == "cc" && (exists(/usr/bin/clang) && ${OSVERSION} >= 900014)
+.if ${CC} == "cc" && (exists(/usr/bin/clang) && ${OSVERSION} >= 900014)
 CC=				/usr/bin/clang
-. endif
-. if ${CXX} == "c++" && (exists(/usr/bin/clang++) && ${OSVERSION} >= 900014)
+.endif
+.if ${CXX} == "c++" && (exists(/usr/bin/clang++) && ${OSVERSION} >= 900014)
 CXX=			/usr/bin/clang++
-. endif
-. if ${CPP} == "cpp" && (exists(/usr/bin/clang-cpp) && ${OSVERSION} >= 900045)
+.endif
+.if ${CPP} == "cpp" && (exists(/usr/bin/clang-cpp) && ${OSVERSION} >= 900045)
 CPP=			/usr/bin/clang-cpp
-. endif
-. if ${CC} != "cc" && ${CPP} == "cpp"
+.endif
+.if ${CC} != "cc" && ${CPP} == "cpp"
 CPP=			${CC} -E
-. endif
+.endif
 # fallback to gcc otherwise
-. if ${CC} == "cc" || ${CXX} == "c++"
+.if ${CC} == "cc" || ${CXX} == "c++"
 USE_GCC?=		yes
-. endif
 .endif
 
-.if ${MOZILLA_VER:R:R} >= 19 || ${MOZILLA:Mseamonkey*} || exists(${.CURDIR}/files/patch-bug788955)
 .if ${OSVERSION} > 1000011
 # use jemalloc 3.0.0 API in libc
 MOZ_EXPORT+=	MOZ_JEMALLOC=1 MOZ_JEMALLOC3=1
@@ -568,15 +567,9 @@ MOZ_EXPORT+=	MOZ_JEMALLOC=1 MOZ_JEMALLOC3=1
 MOZ_OPTIONS+=	--enable-jemalloc
 MOZ_EXPORT+=	MOZ_JEMALLOC=1 MOZ_JEMALLOC3=1
 .endif
-.endif
-
-.if ${OSVERSION} >= 900000 && ${OSVERSION} < 900045
-MOZ_EXPORT+=	ac_cv_thread_keyword=no \
-				je_cv_tls_model=no
-.endif
 
 # Standard depends
-_ALL_DEPENDS=	cairo event ffi hunspell jpeg nspr nss png sqlite vpx zip
+_ALL_DEPENDS=	cairo event ffi hunspell icu jpeg nspr nss png sqlite vpx zip
 
 cairo_LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo
 cairo_MOZ_OPTIONS=	--enable-system-cairo --enable-system-pixman
@@ -592,10 +585,6 @@ ffi_EXTRACT_AFTER_ARGS=	--exclude mozilla*/js/src/ctypes/libffi
 
 hunspell_LIB_DEPENDS=	hunspell-1.3:${PORTSDIR}/textproc/hunspell
 hunspell_MOZ_OPTIONS=	--enable-system-hunspell
-
-.if ${MOZILLA_VER:R:R} >= 23 || ${MOZILLA:Mseamonkey*}
-_ALL_DEPENDS+=	icu
-.endif
 
 icu_LIB_DEPENDS=		icui18n:${PORTSDIR}/devel/icu
 icu_MOZ_OPTIONS=		--with-system-icu --with-intl-api --enable-intl-api
@@ -621,9 +610,7 @@ png_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libpng
 
 sqlite_LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
 sqlite_MOZ_OPTIONS=	--enable-system-sqlite
-.if ${MOZILLA_VER:R:R} >= 20 || ${MOZILLA:Mseamonkey*}
 sqlite_EXTRACT_AFTER_ARGS=	--exclude mozilla*/db/sqlite3
-.endif
 
 vpx_LIB_DEPENDS=	vpx:${PORTSDIR}/multimedia/libvpx
 vpx_MOZ_OPTIONS=	--with-system-libvpx
@@ -691,9 +678,8 @@ MOZ_TOOLKIT=	cairo-gtk3
 USE_MOZILLA+=	-cairo # ports/169343
 USE_DISPLAY=yes # install
 USE_GNOME+=	pango
-USE_QT4+=	moc_build gui network opengl
-MOZ_OPTIONS+=	--with-qtdir= # pkg-config
-MOZ_EXPORT+=	HOST_MOC="${MOC}" HOST_RCC="${FALSE}"
+USE_QT4+=	qmake_build moc_build rcc_build gui network opengl
+MOZ_EXPORT+=	HOST_QMAKE="${QMAKE}" HOST_MOC="${MOC}" HOST_RCC="${RCC}"
 .elif ${MOZ_TOOLKIT:Mcairo-gtk3}
 USE_GNOME+=	gtk30
 .else # gtk2, cairo-gtk2
@@ -766,19 +752,12 @@ USE_DISPLAY=yes
 .undef GNU_CONFIGURE
 MAKEFILE=	${WRKSRC}/client.mk
 ALL_TARGET=	profiledbuild
-. if ${MOZILLA_VER:R:R} < 22 && ! ${MOZILLA:Mseamonkey*}
-MOZ_MK_OPTIONS+=PROFILE_GEN_SCRIPT="${PYTHON_CMD} \
-		@MOZ_OBJDIR@/_profile/pgo/profileserver.py"
-. endif
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
 LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
 RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
 MOZ_OPTIONS+=	--enable-alsa
-. if exists(${FILESDIR}/extra-bug780531)
-EXTRA_PATCHES+=	${FILESDIR}/extra-bug780531
-. endif
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
@@ -839,7 +818,7 @@ MOZCONFIG_SED?= ${SED} ${MOZ_SED_ARGS}
 
 .if ${ARCH} == amd64
 CONFIGURE_TARGET=x86_64-unknown-${OPSYS:L}${OSREL}
-. if ${USE_MOZILLA:M-nss} && (${MOZILLA_VER:R:R} >= 20 || ${MOZILLA:Mseamonkey*} )
+. if ${USE_MOZILLA:M-nss}
 USE_BINUTILS=	# intel-gcm.s
 CFLAGS+=	-B${LOCALBASE}/bin
 LDFLAGS+=	-B${LOCALBASE}/bin
@@ -981,10 +960,6 @@ gecko-post-patch:
 		-e 's|mozilla/plugins|browser_plugins|g' \
 		${MOZSRC}/xpcom/io/nsAppFileLocationProvider.cpp \
 		${MOZSRC}/toolkit/xre/nsXREDirProvider.cpp
-.if !empty(CXX:M*clang*) && ${OSVERSION} < 900506
-	@${GREP} -Flr -- '-mss' ${WRKSRC} | ${XARGS} \
-		${REINPLACE_CMD} -e 's/-mss/-mmmx &/'
-.endif
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${MOZSRC}/extensions/spellcheck/hunspell/src/mozHunspell.cpp
 

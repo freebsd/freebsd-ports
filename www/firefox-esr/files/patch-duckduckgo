@@ -1,0 +1,47 @@
+diff -r f2fa4ae74ee1 browser/locales/en-US/chrome/browser-region/region.properties
+--- browser/locales/en-US/chrome/browser-region/region.properties	Mon Oct 24 22:54:18 2011 +0300
++++ browser/locales/en-US/chrome/browser-region/region.properties	Tue Oct 25 21:13:40 2011 -0400
+@@ -9,6 +9,7 @@
+ browser.search.order.1=Google
+ browser.search.order.2=Yahoo
+ browser.search.order.3=Bing
++browser.search.order.4=DuckDuckGo
+ 
+ # This is the default set of web based feed handlers shown in the reader
+ # selection UI
+--- /dev/null	2013-02-09 00:33:00.000000000 +0100
++++ browser/locales/en-US/searchplugins/duckduckgo.xml	2013-02-09 00:40:19.000000000 +0100
+@@ -0,0 +1,11 @@
++<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/">
++<ShortName>DuckDuckGo</ShortName>
++<Description>We believe in better search and not tracking.</Description>
++<InputEncoding>UTF-8</InputEncoding>
++<Image height="16" width="16" type="image/x-icon">data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAANcNAADXDQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJyDsJmlk8pf6+v3s/v7+++zr/fcnIOyzJyDsgCcg7CYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAnIOwBJyDscCcg7PZttJ7/7Pfs//////++xO7/S5GA/ycg7P8nIOz2JyDscCcg7AEAAAAAAAAAAAAAAAAnIOwBJyDstScg7P8nIOz/Y8p5/2fHZf9Yv0z/YcF2/1rBUv8nIOz/JyDs/ycg7P8nIOy1JyDsAQAAAAAAAAAAJyDscCcg7P8nIOz/JyDs/4jQoP/p9+n//////05X3v9LkYD/JyDs/ycg7P8nIOz/JyDs/ycg7HAAAAAAJyDsJicg7PYnIOz/JyDs/zUu7f/+/v////////////89N+7/JyDs/yUo7f8nIOz/JyDs/ycg7P8nIOz2JyDsJicg7IAnIOz/JyDs/ycg7P9hXPH////////////t/P//GIr2/wfD+/8Gyfz/DKv5/yM57/8nIOz/JyDs/ycg7H8nIOyzJyDs/ycg7P8nIOz/jov1////////////Otz9/w3G/P8cWfH/JSvt/ycg7P8nIOz/JyDs/ycg7P8nIOyzJyDs5icg7P8nIOz/JyDs/7u5+f///////////27l/v8E0v3/BNL9/wTQ/f8Oofn/IT7v/ycg7P8nIOz/JyDs5icg7OYnIOz/JyDs/ycg7P/p6P3/uWsC////////////5fr//6Po/f8Thfb/DKv5/w6f+f8nIOz/JyDs/ycg7OYnIOyzJyDs/ycg7P8nIOz/9/b+/////////////////7lrAv/V1Pv/JyDs/ycg7P8nIOz/JyDs/ycg7P8nIOyzJyDsgCcg7P8nIOz/JyDs/8/N+///////////////////////iIX1/ycg7P8nIOz/JyDs/ycg7P8nIOz/JyDsfycg7CYnIOz2JyDs/ycg7P9FP+7/q6n4/+7u/f/n5v3/fXn0/yoj7P8nIOz/JyDs/ycg7P8nIOz/JyDs9icg7CYAAAAAJyDscCcg7P8nIOz/wsD6/+no/f/Y1/z/eHTz/ycg7P8nIOz/JyDs/ycg7P8nIOz/JyDs/ycg7HAAAAAAAAAAACcg7AEnIOy1JyDs/ycg7P8nIOz/JyDs/ycg7P8nIOz/JyDs/ycg7P8nIOz/JyDs/ycg7LUnIOwBAAAAAAAAAAAAAAAAJyDsAScg7HAnIOz2JyDs/ycg7P8nIOz/JyDs/ycg7P8nIOz/JyDs9icg7HAnIOwBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJyDsJicg7IAnIOyzJyDs5icg7OYnIOyzJyDsgCcg7CYAAAAAAAAAAAAAAAAAAAAA+B8AAPAPAADAAwAAwAMAAIABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAABAACAAQAAwAMAAMADAADwDwAA+B8AAA==</Image>
++<Url type="text/html" method="GET" template="https://duckduckgo.com/">
++<Param name="q" value="{searchTerms}"/>
++<Param name="t" value="freebsd"/>
++</Url>
++<SearchForm>https://duckduckgo.com/</SearchForm>
++</SearchPlugin>
+diff -r f2fa4ae74ee1 browser/locales/en-US/searchplugins/list.txt
+--- browser/locales/en-US/searchplugins/list.txt	Mon Oct 24 22:54:18 2011 +0300
++++ browser/locales/en-US/searchplugins/list.txt	Tue Oct 25 21:13:40 2011 -0400
+@@ -1,7 +1,8 @@
+ amazondotcom
+ bing
++duckduckgo
+ eBay
+ google
+ twitter
+ wikipedia
+ yahoo
+--- browser/app/profile/firefox.js.orig	2013-02-09 12:26:02.000000000 +0100
++++ browser/app/profile/firefox.js	2013-02-09 12:26:19.000000000 +0100
+@@ -341,6 +341,7 @@
+ pref("browser.search.order.1",                "chrome://browser-region/locale/region.properties");
+ pref("browser.search.order.2",                "chrome://browser-region/locale/region.properties");
+ pref("browser.search.order.3",                "chrome://browser-region/locale/region.properties");
++pref("browser.search.order.4",                "chrome://browser-region/locale/region.properties");
+ 
+ // search bar results always open in a new tab
+ pref("browser.search.openintab", false);

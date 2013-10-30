@@ -2,7 +2,7 @@
 
 THUNDERBIRD_I18N_ALL_=	ar br ca cs da de en-GB en-US es-AR es-ES et eu fi fr \
 			fy-NL ga-IE gd gl he hu is it ja ko lt nb-NO nl nn-NO \
-			pl pt-BR pt-PT rm ru si sk sl sq sv-SE ta-LK tr uk zh-TW
+			pl pt-BR pt-PT rm ru si sk sl sq sv-SE ta-LK tr uk zh-CN zh-TW
 
 .if defined(THUNDERBIRD_I18N_ALL) || defined(PACKAGE_BUILDING) || target(package)
 THUNDERBIRD_I18N=   ${THUNDERBIRD_I18N_ALL_}
@@ -132,6 +132,9 @@ THUNDERBIRD_I18N+=  tr
 .endif
 .if ${PORT_OPTIONS:MLANG_UK}
 THUNDERBIRD_I18N+=  uk
+.endif
+.if ${PORT_OPTIONS:MLANG_CN}
+THUNDERBIRD_I18N+=  zh-CN
 .endif
 .if ${PORT_OPTIONS:MLANG_TW}
 THUNDERBIRD_I18N+=  zh-TW

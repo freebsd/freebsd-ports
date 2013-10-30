@@ -1,20 +1,5 @@
 --- ipc/chromium/Makefile.in~
 +++ ipc/chromium/Makefile.in
-@@ -43,6 +43,14 @@ include $(DEPTH)/config/autoconf.mk
- 
- OS_CXXFLAGS := $(filter-out -fshort-wchar,$(OS_CXXFLAGS))
- 
-+# workaround IPC hang with libevent2
-+ifndef MOZ_DEBUG
-+ifneq (,$(filter 4.2.%, $(CXX_VERSION)))
-+MOZ_OPTIMIZE_FLAGS = -O1
-+OS_CXXFLAGS += $(MOZ_OPTIMIZE_FLAGS)
-+endif
-+endif
-+
- LIBRARY_NAME = chromium_s
- FORCE_STATIC_LIB = 1
- LIBXUL_LIBRARY = 1
 @@ -55,9 +60,7 @@ vpath %.c \
    $(srcdir)/src/third_party/libevent \
    $(NULL)
