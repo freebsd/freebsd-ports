@@ -8,4 +8,4 @@ runit is daemontools replacement:
 
 It can optionally replace init(8) as process 1.
 
-WWW:	http://smarden.org/runit/
+WWW: http://smarden.org/runit/

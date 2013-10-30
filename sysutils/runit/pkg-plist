@@ -13,10 +13,19 @@
 @exec [ ! -f %D/%%ETCDIR%%/ctrlaltdel ] && cp -p %D/%F %B/ctrlaltdel
 @unexec cmp -s %D/%%ETCDIR%%/getty-ttyv4/run %D/%%ETCDIR%%/getty-ttyv4/run.sample && rm -f %D/%%ETCDIR%%/getty-ttyv4/run
 %%ETCDIR%%/getty-ttyv4/run.sample
-@exec [ ! -f %D/%%ETCDIR%%/getty-ttyv4/run ] && cp -p %D/%F %B/getty-ttyv4/run
+@exec [ ! -f %D/%%ETCDIR%%/getty-ttyv4/run ] && cp -p %D/%F %B/run
 @unexec cmp -s %D/%%ETCDIR%%/getty-ttyv4/finish %D/%%ETCDIR%%/getty-ttyv4/finish.sample && rm -f %D/%%ETCDIR%%/getty-ttyv4/finish
 %%ETCDIR%%/getty-ttyv4/finish.sample
-@exec [ ! -f %D/%%ETCDIR%%/getty-ttyv4/finish ] && cp -p %D/%F %B/getty-ttyv4/finish
+@exec [ ! -f %D/%%ETCDIR%%/getty-ttyv4/finish ] && cp -p %D/%F %B/finish
+man/man8/chpst.8.gz
+man/man8/runit-init.8.gz
+man/man8/runit.8.gz
+man/man8/runsv.8.gz
+man/man8/runsvchdir.8.gz
+man/man8/runsvdir.8.gz
+man/man8/sv.8.gz
+man/man8/svlogd.8.gz
+man/man8/utmpset.8.gz
 sbin/chpst
 sbin/runit
 sbin/runit-init
