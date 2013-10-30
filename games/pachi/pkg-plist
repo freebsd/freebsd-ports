@@ -1,0 +1,5 @@
+@group games
+@mode 2555
+bin/pachi
+@mode
+@group
