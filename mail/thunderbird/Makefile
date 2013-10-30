@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird
-DISTVERSION=	24.0.1
-PORTREVISION=	1
+DISTVERSION=	24.1.0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source
+MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
+		https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source/
 DISTFILES=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
 
@@ -14,7 +14,7 @@ COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
 
 BUILD_DEPENDS=	nspr>=4.10:${PORTSDIR}/devel/nspr \
 		nss>=3.15:${PORTSDIR}/security/nss \
-		sqlite3>=3.7.16.1:${PORTSDIR}/databases/sqlite3 \
+		sqlite3>=3.7.17:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo \
 		v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat \
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	nspr>=4.10:${PORTSDIR}/devel/nspr \
 LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 
 EM_VERSION=	1.6
-L_VERSION=	2.6b3
+L_VERSION=	2.6.2
 
 SSP_UNSAFE=	yes
 USE_AUTOTOOLS=	autoconf213:env
@@ -64,8 +64,7 @@ MAKEFILE=	${WRKSRC}/client.mk
 NO_STAGE=	yes
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
-# OSS is gone after bug 852401
-OPTIONS_SINGLE_AUDIO:=${OPTIONS_SINGLE_AUDIO:S/OSS//}
+OPTIONS_DEFAULT:=${OPTIONS_DEFAULT:S/GSTREAMER//}
 
 .include <bsd.port.pre.mk>
 
@@ -73,6 +72,11 @@ WRKSRC=		${WRKDIR}/comm-esr24
 MOZSRC:=	${WRKSRC}/mozilla
 
 XPI_LIBDIR=	${PREFIX}/lib/xpi
+
+# libprldap60.so: Undefined symbol "PR_GetCurrentThread"
+.if ${ARCH} == i386
+USE_GCC?=	yes
+.endif
 
 .if ${PORT_OPTIONS:MENIGMAIL}
 MASTER_SITES+=	https://www.enigmail.net/download/source/:enigmail
@@ -132,7 +136,7 @@ pre-configure:
 post-build:
 	cd ${WRKSRC}/mailnews/extensions/enigmail && \
 		./makemake -r -o ${MOZ_OBJDIR}
-	${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} all xpi \
+	${SETENV} ${MAKE_ENV} ${GMAKE} -j${MAKE_JOBS_NUMBER} all xpi \
 		-C ${MOZ_OBJDIR}/mailnews/extensions/enigmail
 .endif
 

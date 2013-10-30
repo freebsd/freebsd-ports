@@ -79,14 +79,9 @@ diff --git a/configure.in b/configure.in
                            Location of Java binaries (java, javac, jar)],
      JAVA_BIN_PATH=$withval)
 diff --git a/js/src/Makefile.in b/js/src/Makefile.in
---- mozilla/js/src/Makefile.in
-+++ mozilla/js/src/Makefile.in
-@@ -232,48 +232,54 @@ endif
- 
- #############################################
- # BEGIN ECMAScript Internationalization API
- #
- 
+--- mozilla/js/src/Makefile.in.orig	2013-10-22 08:19:02.000000000 +0200
++++ mozilla/js/src/Makefile.in	2013-10-29 10:11:58.272605098 +0100
+@@ -237,10 +237,14 @@
  # ICU headers need to be available whether we build with the complete
  # Internationalization API or not - ICU stubs rely on them.
  
@@ -101,47 +96,23 @@ diff --git a/js/src/Makefile.in b/js/src/Makefile.in
  
  ifdef ENABLE_INTL_API
  
- ifeq ($(OS_ARCH),WINNT)
-   # Parallel gmake is buggy on Windows
-   ICU_GMAKE_OPTIONS="-j1"
-   # Library names: On Windows, ICU uses modified library names for static
-   # and debug libraries.
-   ifdef MOZ_DEBUG
-     ICU_LIB_SUFFIX=d
-   endif
-   ICU_LIB_RENAME = $(foreach libname,$(ICU_LIB_NAMES),\
-                      cp -p intl/icu/lib/s$(libname)$(ICU_LIB_SUFFIX).lib intl/icu/lib/$(libname).lib;)
+@@ -260,6 +264,7 @@
+ ICU_MAKE = $(MAKE)
  endif
  
 +ifndef MOZ_NATIVE_ICU
  # - Build ICU as part of the "export" target, so things get built
  #   in the right order.
  # - ICU requires GNU make according to its readme.html. pymake can't be used
- #   because it doesn't support order only dependencies.
- # - Force ICU to use the standard suffix for object files because expandlibs
- #   will discard all files with a non-standard suffix (bug 857450).
- # - Options for genrb: -k strict parsing; -R omit collation tailoring rules.
- export::
- 	$(GMAKE) $(ICU_GMAKE_OPTIONS) -C intl/icu STATIC_O=$(OBJ_SUFFIX) GENRBOPTS='-k -R'
- 	$(ICU_LIB_RENAME)
- 
- distclean clean::
+@@ -276,6 +281,7 @@
  	$(call SUBMAKE,$@,intl/icu)
-+endif
  
  endif
++endif
  
  #
  # END ECMAScript Internationalization API
- #############################################
- 
- 
-@@ -398,17 +404,21 @@ CFLAGS += $(MOZ_ZLIB_CFLAGS)
- EXTRA_LIBS += $(MOZ_ZLIB_LIBS)
- # Enable zlib usage if zlib has been located. When building the browser on
- # Windows, MOZ_ZLIB_LIBS is empty because zlib is part of libmozglue. We thus
- # also enable zlib if mozglue is present.
- ifneq (,$(MOZ_ZLIB_LIBS)$(MOZ_GLUE_LDFLAGS))
+@@ -413,7 +419,11 @@
  DEFINES += -DUSE_ZLIB
  endif
  
@@ -154,11 +125,6 @@ diff --git a/js/src/Makefile.in b/js/src/Makefile.in
  
  # Prevent floating point errors caused by VC++ optimizations
  ifdef _MSC_VER
- # XXX We should add this to CXXFLAGS, too?
- CFLAGS += -fp:precise
- 
- ifeq ($(CPU_ARCH),x86)
- # Workaround compiler bug on PGO (Bug 721284)
 diff --git a/js/src/config/Makefile.in b/js/src/config/Makefile.in
 --- mozilla/js/src/config/Makefile.in
 +++ mozilla/js/src/config/Makefile.in

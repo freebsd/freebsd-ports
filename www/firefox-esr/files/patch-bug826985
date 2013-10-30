@@ -1,0 +1,164 @@
+commit 8024d93
+Author: Henrik Gulbrandsen <henrik@gulbra.net>
+Date:   Fri Jan 4 13:49:22 2013 +0100
+
+    Bug 826985 - Support more video formats for WebRTC via libv4l2 on Linux.
+---
+ configure.in                                            |  7 +++++++
+ media/webrtc/signaling/test/Makefile.in                 |  1 +
+ .../modules/video_capture/linux/device_info_linux.cc    | 17 +++++++++++++++++
+ .../modules/video_capture/linux/video_capture_linux.cc  | 16 +++++++++++++++-
+ .../webrtc/modules/video_capture/video_capture.gypi     | 11 +++++++++++
+ toolkit/library/Makefile.in                             |  1 +
+ 6 files changed, 52 insertions(+), 1 deletion(-)
+
+diff --git configure.in configure.in
+index 55e4cd1..76567b3 100644
+--- configure.in
++++ configure.in
+@@ -5309,6 +5309,9 @@ if test -n "$MOZ_WEBRTC"; then
+     MOZ_VP8_ENCODER=1
+     MOZ_VP8_ERROR_CONCEALMENT=1
+ 
++    dnl with libv4l2 we can support more cameras
++    PKG_CHECK_MODULES(MOZ_LIBV4L2, libv4l2)
++
+ dnl enable once Signaling lands
+     MOZ_WEBRTC_SIGNALING=1
+     AC_DEFINE(MOZ_WEBRTC_SIGNALING)
+@@ -8981,6 +8984,10 @@ elif test "${OS_TARGET}" = "Android"; then
+    fi
+ fi
+ 
++if test -n "$MOZ_LIBV4L2_LIBS"; then
++   EXTRA_GYP_DEFINES="$EXTRA_GYP_DEFINES -D use_libv4l2=1"
++fi
++
+ if test -n "$MOZ_WEBRTC"; then
+    AC_MSG_RESULT("generating WebRTC Makefiles...")
+ 
+diff --git media/webrtc/signaling/test/Makefile.in media/webrtc/signaling/test/Makefile.in
+index b483cd1..f1dd1f0 100644
+--- media/webrtc/signaling/test/Makefile.in
++++ media/webrtc/signaling/test/Makefile.in
+@@ -17,6 +17,7 @@ LIBS = \
+   $(NSPR_LIBS) \
+   $(NSS_LIBS) \
+   $(REALTIME_LIBS) \
++  $(MOZ_LIBV4L2_LIBS) \
+   $(DEPTH)/xpcom/glue/$(LIB_PREFIX)xpcomglue_s.$(LIB_SUFFIX) \
+   $(DEPTH)/media/mtransport/standalone/$(LIB_PREFIX)mtransport_s.$(LIB_SUFFIX) \
+   $(DEPTH)/media/webrtc/signalingtest/signaling_ecc/$(LIB_PREFIX)ecc.$(LIB_SUFFIX) \
+diff --git media/webrtc/trunk/webrtc/modules/video_capture/linux/device_info_linux.cc media/webrtc/trunk/webrtc/modules/video_capture/linux/device_info_linux.cc
+index 239a292..bab496c 100644
+--- media/webrtc/trunk/webrtc/modules/video_capture/linux/device_info_linux.cc
++++ media/webrtc/trunk/webrtc/modules/video_capture/linux/device_info_linux.cc
+@@ -26,11 +26,23 @@
+ #else
+ #include <linux/videodev2.h>
+ #endif
++#ifdef HAVE_LIBV4L2
++#include <libv4l2.h>
++#endif
+ 
+ #include "ref_count.h"
+ #include "trace.h"
+ 
+ 
++#ifdef HAVE_LIBV4L2
++#define open	v4l2_open
++#define close	v4l2_close
++#define dup	v4l2_dup
++#define ioctl	v4l2_ioctl
++#define mmap	v4l2_mmap
++#define munmap	v4l2_munmap
++#endif
++
+ namespace webrtc
+ {
+ namespace videocapturemodule
+@@ -130,6 +142,11 @@ WebRtc_Word32 DeviceInfoLinux::GetDeviceName(
+     memset(deviceNameUTF8, 0, deviceNameLength);
+     memcpy(cameraName, cap.card, sizeof(cap.card));
+ 
++    if (cameraName[0] == '\0')
++    {
++        sprintf(cameraName, "Camera at /dev/video%d", deviceNumber);
++    }
++
+     if (deviceNameLength >= strlen(cameraName))
+     {
+         memcpy(deviceNameUTF8, cameraName, strlen(cameraName));
+diff --git media/webrtc/trunk/webrtc/modules/video_capture/linux/video_capture_linux.cc media/webrtc/trunk/webrtc/modules/video_capture/linux/video_capture_linux.cc
+index 12df1b3..e9863ba 100644
+--- media/webrtc/trunk/webrtc/modules/video_capture/linux/video_capture_linux.cc
++++ media/webrtc/trunk/webrtc/modules/video_capture/linux/video_capture_linux.cc
+@@ -25,6 +25,9 @@
+ #else
+ #include <linux/videodev2.h>
+ #endif
++#ifdef HAVE_LIBV4L2
++#include <libv4l2.h>
++#endif
+ 
+ #include <new>
+ 
+@@ -26,6 +31,15 @@
+ #include "critical_section_wrapper.h"
+ #include "video_capture_linux.h"
+ 
++#ifdef HAVE_LIBV4L2
++#define open	v4l2_open
++#define close	v4l2_close
++#define dup	v4l2_dup
++#define ioctl	v4l2_ioctl
++#define mmap	v4l2_mmap
++#define munmap	v4l2_munmap
++#endif
++
+ namespace webrtc
+ {
+ namespace videocapturemodule
+diff --git media/webrtc/trunk/webrtc/modules/video_capture/video_capture.gypi media/webrtc/trunk/webrtc/modules/video_capture/video_capture.gypi
+index d46b5aa..e452223 100644
+--- media/webrtc/trunk/webrtc/modules/video_capture/video_capture.gypi
++++ media/webrtc/trunk/webrtc/modules/video_capture/video_capture.gypi
+@@ -7,6 +7,9 @@
+ # be found in the AUTHORS file in the root of the source tree.
+ 
+ {
++  'variables': {
++     'use_libv4l2%': 0,
++  },
+   'targets': [
+     {
+       'target_name': 'video_capture_module',
+@@ -49,6 +52,16 @@
+         }, {  # include_internal_video_capture == 1
+           'conditions': [
+             ['include_v4l2_video_capture==1', {
++              'conditions': [
++                ['use_libv4l2==1', {
++                  'defines': [
++                    'HAVE_LIBV4L2',
++                  ],
++                  'libraries': [
++                    '-lv4l2',
++                  ],
++                }],
++              ],
+               'include_dirs': [
+                 'linux',
+               ],
+diff --git toolkit/library/Makefile.in toolkit/library/Makefile.in
+index 9c16ffa..1db3794 100644
+--- toolkit/library/Makefile.in
++++ toolkit/library/Makefile.in
+@@ -405,6 +405,7 @@ endif
+ EXTRA_DSO_LDOPTS += $(call EXPAND_LIBNAME_PATH,gkmedias,$(DIST)/lib)
+ 
+ ifdef MOZ_WEBRTC
++EXTRA_DSO_LDOPTS += $(MOZ_LIBV4L2_LIBS)
+ ifdef MOZ_PEERCONNECTION
+ COMPONENT_LIBS += peerconnection
+ endif

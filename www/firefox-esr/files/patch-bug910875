@@ -1,0 +1,102 @@
+diff --git media/webrtc/trunk/webrtc/modules/audio_device/audio_device_impl.cc media/webrtc/trunk/webrtc/modules/audio_device/audio_device_impl.cc
+index f231b1e..6087696 100644
+--- media/webrtc/trunk/webrtc/modules/audio_device/audio_device_impl.cc
++++ media/webrtc/trunk/webrtc/modules/audio_device/audio_device_impl.cc
+@@ -16,7 +16,9 @@
+ #include <assert.h>
+ #include <string.h>
+ 
+-#if defined(_WIN32)
++#if defined(WEBRTC_DUMMY_AUDIO_BUILD)
++// do not include platform specific headers
++#elif defined(_WIN32)
+     #include "audio_device_utility_win.h"
+     #include "audio_device_wave_win.h"
+  #if defined(WEBRTC_WINDOWS_CORE_AUDIO_BUILD)
+@@ -32,14 +34,8 @@
+     #include <stdlib.h>
+     #include "audio_device_utility_android.h"
+     #include "audio_device_jni_android.h"
+-#elif defined(WEBRTC_LINUX)
++#elif defined(WEBRTC_LINUX) || defined(WEBRTC_BSD)
+     #include "audio_device_utility_linux.h"
+- #if defined(LINUX_ALSA)
+-    #include "audio_device_alsa_linux.h"
+- #endif
+- #if defined(LINUX_PULSE)
+-    #include "audio_device_pulse_linux.h"
+- #endif
+ #elif defined(WEBRTC_IOS)
+     #include "audio_device_utility_ios.h"
+     #include "audio_device_ios.h"
+@@ -47,6 +43,12 @@
+     #include "audio_device_utility_mac.h"
+     #include "audio_device_mac.h"
+ #endif
++#if defined(LINUX_ALSA)
++    #include "audio_device_alsa_linux.h"
++#endif
++#if defined(LINUX_PULSE)
++    #include "audio_device_pulse_linux.h"
++#endif
+ #include "audio_device_dummy.h"
+ #include "audio_device_utility_dummy.h"
+ #include "critical_section_wrapper.h"
+@@ -161,7 +163,7 @@ WebRtc_Word32 AudioDeviceModuleImpl::Che
+ #elif defined(WEBRTC_ANDROID)
+     platform = kPlatformAndroid;
+     WEBRTC_TRACE(kTraceInfo, kTraceAudioDevice, _id, "current platform is ANDROID");
+-#elif defined(WEBRTC_LINUX)
++#elif defined(WEBRTC_LINUX) || defined(WEBRTC_BSD)
+     platform = kPlatformLinux;
+     WEBRTC_TRACE(kTraceInfo, kTraceAudioDevice, _id, "current platform is LINUX");
+ #elif defined(WEBRTC_IOS)
+@@ -309,7 +311,7 @@ int32_t AudioDeviceModuleImpl::CreatePlatformSpecificObjects()
+ 
+     // Create the *Linux* implementation of the Audio Device
+     //
+-#elif defined(WEBRTC_LINUX)
++#elif defined(WEBRTC_LINUX) || defined(WEBRTC_BSD)
+     if ((audioLayer == kLinuxPulseAudio) || (audioLayer == kPlatformDefaultAudio))
+     {
+ #if defined(LINUX_PULSE)
+@@ -355,7 +357,7 @@ int32_t AudioDeviceModuleImpl::CreatePlatformSpecificObjects()
+         //
+         ptrAudioDeviceUtility = new AudioDeviceUtilityLinux(Id());
+     }
+-#endif  // #if defined(WEBRTC_LINUX)
++#endif  // #if defined(WEBRTC_LINUX) || defined(WEBRTC_BSD)
+ 
+     // Create the *iPhone* implementation of the Audio Device
+     //
+diff --git media/webrtc/trunk/webrtc/modules/audio_device/test/audio_device_test_api.cc media/webrtc/trunk/webrtc/modules/audio_device/test/audio_device_test_api.cc
+index defd7f8..906c4a2 100644
+--- media/webrtc/trunk/webrtc/modules/audio_device/test/audio_device_test_api.cc
++++ media/webrtc/trunk/webrtc/modules/audio_device/test/audio_device_test_api.cc
+@@ -197,7 +197,7 @@ class AudioDeviceAPITest: public testing::Test {
+     // Create default implementation instance
+     EXPECT_TRUE((audio_device_ = AudioDeviceModuleImpl::Create(
+                 kId, AudioDeviceModule::kPlatformDefaultAudio)) != NULL);
+-#elif defined(WEBRTC_LINUX)
++#elif defined(WEBRTC_LINUX) || defined(WEBRTC_BSD)
+     EXPECT_TRUE((audio_device_ = AudioDeviceModuleImpl::Create(
+                 kId, AudioDeviceModule::kWindowsWaveAudio)) == NULL);
+     EXPECT_TRUE((audio_device_ = AudioDeviceModuleImpl::Create(
+@@ -1690,7 +1690,7 @@ TEST_F(AudioDeviceAPITest, CPULoad) {
+ 
+ // TODO(kjellander): Fix flakiness causing failures on Windows.
+ // TODO(phoglund):  Fix flakiness causing failures on Linux.
+-#if !defined(_WIN32) && !defined(WEBRTC_LINUX)
++#if !defined(_WIN32) && !defined(WEBRTC_LINUX) && !defined(WEBRTC_BSD)
+ TEST_F(AudioDeviceAPITest, StartAndStopRawOutputFileRecording) {
+   // NOTE: this API is better tested in a functional test
+   CheckInitialPlayoutStates();
+@@ -1759,7 +1759,7 @@ TEST_F(AudioDeviceAPITest, StartAndStopRawInputFileRecording) {
+   // - size of raw_input_not_recording.pcm shall be 0
+   // - size of raw_input_not_recording.pcm shall be > 0
+ }
+-#endif  // !WIN32 && !WEBRTC_LINUX
++#endif  // !WIN32 && !WEBRTC_LINUX && !defined(WEBRTC_BSD)
+ 
+ TEST_F(AudioDeviceAPITest, RecordingSampleRate) {
+   uint32_t sampleRate(0);

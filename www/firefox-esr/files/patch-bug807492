@@ -1,7 +1,7 @@
 JJdiff --git configure.in configure.in
 index c167461..8346c11 100644
---- mozilla/configure.in
-+++ mozilla/configure.in
+--- configure.in
++++ configure.in
 @@ -5246,17 +5246,17 @@ if test "$NS_PRINTING"; then
      AC_DEFINE(NS_PRINT_PREVIEW)
  fi
@@ -23,8 +23,8 @@ index c167461..8346c11 100644
  fi
 diff --git media/mtransport/objs.mk media/mtransport/objs.mk
 index f1fc85f..141e8ca 100644
---- mozilla/media/mtransport/objs.mk
-+++ mozilla/media/mtransport/objs.mk
+--- media/mtransport/objs.mk
++++ media/mtransport/objs.mk
 @@ -18,22 +18,26 @@ LOCAL_INCLUDES += \
   -I$(topsrcdir)/media/mtransport/third_party/nrappkit/src/util/libekr \
   -I$(topsrcdir)/media/mtransport/third_party/nrappkit/src/log \
@@ -55,8 +55,8 @@ index f1fc85f..141e8ca 100644
  DEFINES += -DLINUX
 diff --git media/mtransport/test/Makefile.in media/mtransport/test/Makefile.in
 index c1d5bf4..2ecf2c7 100644
---- mozilla/media/mtransport/test/Makefile.in
-+++ mozilla/media/mtransport/test/Makefile.in
+--- media/mtransport/test/Makefile.in
++++ media/mtransport/test/Makefile.in
 @@ -73,22 +73,24 @@ DEFINES += -D__Userspace_os_FreeBSD=1
  else
  #default_fallback; probably doesn't work
@@ -85,8 +85,8 @@ index c1d5bf4..2ecf2c7 100644
  
 diff --git media/mtransport/third_party/nICEr/nicer.gyp media/mtransport/third_party/nICEr/nicer.gyp
 index 0e1f8b4..9a4b995 100644
---- mozilla/media/mtransport/third_party/nICEr/nicer.gyp
-+++ mozilla/media/mtransport/third_party/nICEr/nicer.gyp
+--- media/mtransport/third_party/nICEr/nicer.gyp
++++ media/mtransport/third_party/nICEr/nicer.gyp
 @@ -126,26 +126,36 @@
  	      'R_DEFINED_UINT2=uint16_t',
  	      'R_DEFINED_INT4=int32_t',
@@ -128,8 +128,8 @@ index 0e1f8b4..9a4b995 100644
                       'TIME_WITH_SYS_TIME_H=1',
 diff --git media/mtransport/third_party/nICEr/src/stun/addrs.c media/mtransport/third_party/nICEr/src/stun/addrs.c
 index b0b66b2..04fea94 100644
---- mozilla/media/mtransport/third_party/nICEr/src/stun/addrs.c
-+++ mozilla/media/mtransport/third_party/nICEr/src/stun/addrs.c
+--- media/mtransport/third_party/nICEr/src/stun/addrs.c
++++ media/mtransport/third_party/nICEr/src/stun/addrs.c
 @@ -50,17 +50,19 @@ static char *RCSSTRING __UNUSED__="$Id: addrs.c,v 1.2 2008/04/28 18:21:30 ekr Ex
  #else
  #include <syslog.h>
@@ -190,8 +190,8 @@ index b0b66b2..04fea94 100644
  #endif
 diff --git media/mtransport/third_party/nICEr/src/stun/stun.h media/mtransport/third_party/nICEr/src/stun/stun.h
 index a3c51f9..eb65ac8 100644
---- mozilla/media/mtransport/third_party/nICEr/src/stun/stun.h
-+++ mozilla/media/mtransport/third_party/nICEr/src/stun/stun.h
+--- media/mtransport/third_party/nICEr/src/stun/stun.h
++++ media/mtransport/third_party/nICEr/src/stun/stun.h
 @@ -36,21 +36,25 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  
  #ifdef WIN32
@@ -220,8 +220,8 @@ index a3c51f9..eb65ac8 100644
  #include <time.h>
 diff --git media/mtransport/third_party/nICEr/src/util/mbslen.c media/mtransport/third_party/nICEr/src/util/mbslen.c
 index cc260b7..66af2d7 100644
---- mozilla/media/mtransport/third_party/nICEr/src/util/mbslen.c
-+++ mozilla/media/mtransport/third_party/nICEr/src/util/mbslen.c
+--- media/mtransport/third_party/nICEr/src/util/mbslen.c
++++ media/mtransport/third_party/nICEr/src/util/mbslen.c
 @@ -38,50 +38,58 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  
  #include <errno.h>
@@ -322,8 +322,8 @@ index cc260b7..66af2d7 100644
  
 diff --git media/mtransport/third_party/nrappkit/nrappkit.gyp media/mtransport/third_party/nrappkit/nrappkit.gyp
 index 3cc8e1c..74016c6 100644
---- mozilla/media/mtransport/third_party/nrappkit/nrappkit.gyp
-+++ mozilla/media/mtransport/third_party/nrappkit/nrappkit.gyp
+--- media/mtransport/third_party/nrappkit/nrappkit.gyp
++++ media/mtransport/third_party/nrappkit/nrappkit.gyp
 @@ -142,26 +142,35 @@
  	      'R_DEFINED_UINT2=uint16_t',
  	      'R_DEFINED_INT4=int32_t',
@@ -364,8 +364,8 @@ index 3cc8e1c..74016c6 100644
                       'TIME_WITH_SYS_TIME_H=1',
 diff --git media/mtransport/third_party/nrappkit/src/log/r_log.c media/mtransport/third_party/nrappkit/src/log/r_log.c
 index efb7ef2..aebf578 100644
---- mozilla/media/mtransport/third_party/nrappkit/src/log/r_log.c
-+++ mozilla/media/mtransport/third_party/nrappkit/src/log/r_log.c
+--- media/mtransport/third_party/nrappkit/src/log/r_log.c
++++ media/mtransport/third_party/nrappkit/src/log/r_log.c
 @@ -43,16 +43,17 @@ static char *RCSSTRING __UNUSED__ ="$Id: r_log.c,v 1.10 2008/11/25 22:25:18 adam
  #ifdef LINUX
  #define _BSD_SOURCE
@@ -386,8 +386,8 @@ index efb7ef2..aebf578 100644
  
 diff --git media/mtransport/third_party/nrappkit/src/port/generic/include/sys/queue.h media/mtransport/third_party/nrappkit/src/port/generic/include/sys/queue.h
 index bcb1ec0..bb73591 100644
---- mozilla/media/mtransport/third_party/nrappkit/src/port/generic/include/sys/queue.h
-+++ mozilla/media/mtransport/third_party/nrappkit/src/port/generic/include/sys/queue.h
+--- media/mtransport/third_party/nrappkit/src/port/generic/include/sys/queue.h
++++ media/mtransport/third_party/nrappkit/src/port/generic/include/sys/queue.h
 @@ -33,7 +33,7 @@
  #ifndef _SYS_QUEUE_H_
  #define	_SYS_QUEUE_H_
@@ -399,8 +399,8 @@ index bcb1ec0..bb73591 100644
  #endif
 diff --git media/mtransport/third_party/nrappkit/src/util/util.c media/mtransport/third_party/nrappkit/src/util/util.c
 index a7d4ff1..ff11a60 100644
---- mozilla/media/mtransport/third_party/nrappkit/src/util/util.c
-+++ mozilla/media/mtransport/third_party/nrappkit/src/util/util.c
+--- media/mtransport/third_party/nrappkit/src/util/util.c
++++ media/mtransport/third_party/nrappkit/src/util/util.c
 @@ -40,16 +40,17 @@
  static char *RCSSTRING __UNUSED__ ="$Id: util.c,v 1.5 2007/11/21 00:09:13 adamcain Exp $";
  
@@ -421,12 +421,12 @@ index a7d4ff1..ff11a60 100644
  #include "registry.h"
 diff --git media/webrtc/signaling/signaling.gyp media/webrtc/signaling/signaling.gyp
 index 2a91e3d..31de641 100644
---- mozilla/media/webrtc/signaling/signaling.gyp
-+++ mozilla/media/webrtc/signaling/signaling.gyp
-@@ -223,16 +223,29 @@
-             'GIPS_VER=3480',
+--- media/webrtc/signaling/signaling.gyp
++++ media/webrtc/signaling/signaling.gyp
+@@ -212,16 +212,29 @@
              'SIPCC_BUILD',
-             'HAVE_WINSOCK2_H'
+             'HAVE_WINSOCK2_H',
+             'CPR_STDINT_INCLUDE=\\"mozilla/StandardInteger.h\\"'
            ],
  
            'cflags_mozilla': [
@@ -500,8 +500,8 @@ index 2a91e3d..31de641 100644
  
 diff --git media/webrtc/signaling/src/sipcc/cpr/darwin/cpr_darwin_ipc.c media/webrtc/signaling/src/sipcc/cpr/darwin/cpr_darwin_ipc.c
 index a7c47e1..4f191de 100644
---- mozilla/media/webrtc/signaling/src/sipcc/cpr/darwin/cpr_darwin_ipc.c
-+++ mozilla/media/webrtc/signaling/src/sipcc/cpr/darwin/cpr_darwin_ipc.c
+--- media/webrtc/signaling/src/sipcc/cpr/darwin/cpr_darwin_ipc.c
++++ media/webrtc/signaling/src/sipcc/cpr/darwin/cpr_darwin_ipc.c
 @@ -317,21 +317,25 @@ cprGetMessage (cprMsgQueue_t msgQueue, boolean waitForever, void **ppUserData)
  {
      static const char fname[] = "cprGetMessage";
@@ -530,8 +530,8 @@ index a7c47e1..4f191de 100644
      if (msgq == NULL) {
 diff --git media/webrtc/signaling/test/Makefile.in media/webrtc/signaling/test/Makefile.in
 index a30e330..cfbd8a3 100644
---- mozilla/media/webrtc/signaling/test/Makefile.in
-+++ mozilla/media/webrtc/signaling/test/Makefile.in
+--- media/webrtc/signaling/test/Makefile.in
++++ media/webrtc/signaling/test/Makefile.in
 @@ -81,17 +81,17 @@ endif
  ifeq (qt,$(MOZ_WIDGET_TOOLKIT))
  LIBS += \
@@ -553,8 +553,8 @@ index a30e330..cfbd8a3 100644
    -framework AudioToolbox \
 diff --git media/webrtc/trunk/tools/gyp/pylib/gyp/generator/mozmake.py media/webrtc/trunk/tools/gyp/pylib/gyp/generator/mozmake.py
 index 338d0b7..2241d41 100644
---- mozilla/media/webrtc/trunk/tools/gyp/pylib/gyp/generator/mozmake.py
-+++ mozilla/media/webrtc/trunk/tools/gyp/pylib/gyp/generator/mozmake.py
+--- media/webrtc/trunk/tools/gyp/pylib/gyp/generator/mozmake.py
++++ media/webrtc/trunk/tools/gyp/pylib/gyp/generator/mozmake.py
 @@ -1,16 +1,17 @@
  # Copyright (c) 2012 Mozilla Foundation. All rights reserved.
  # Use of this source code is governed by a BSD-style license that can be

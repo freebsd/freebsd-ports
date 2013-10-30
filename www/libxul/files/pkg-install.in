@@ -1,5 +1,9 @@
 #!/bin/sh
-# Created by: Thierry Thomas (<thierry@pompo.net>)
+#
+#    $MCom: ports/www/mozilla/pkg-install.in,v 1.26 2008/08/04 16:58:03 mezz Exp $
+#
+# Date created:			Mon Nov 29, 2003
+# Whom:				Thierry Thomas (<thierry@pompo.net>)
 # Fix the chrome registry.
 
 umask 022

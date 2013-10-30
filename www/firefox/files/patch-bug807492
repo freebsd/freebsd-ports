@@ -423,10 +423,10 @@ diff --git media/webrtc/signaling/signaling.gyp media/webrtc/signaling/signaling
 index 2a91e3d..31de641 100644
 --- media/webrtc/signaling/signaling.gyp
 +++ media/webrtc/signaling/signaling.gyp
-@@ -212,16 +212,29 @@
+@@ -223,16 +223,29 @@
+             'GIPS_VER=3480',
              'SIPCC_BUILD',
-             'HAVE_WINSOCK2_H',
-             'CPR_STDINT_INCLUDE=\\"mozilla/StandardInteger.h\\"'
+             'HAVE_WINSOCK2_H'
            ],
  
            'cflags_mozilla': [

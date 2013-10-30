@@ -1,0 +1,36 @@
+diff --git config/stl-headers config/stl-headers
+index c057d8e..dc7f6f0 100644
+--- mozilla/config/stl-headers
++++ mozilla/config/stl-headers
+@@ -21,6 +21,7 @@ algorithm
+ atomic
+ deque
+ ios
++iosfwd
+ iostream
+ iterator
+ limits
+diff --git config/system-headers config/system-headers
+index d31c94e..570c82a 100644
+--- mozilla/config/system-headers
++++ mozilla/config/system-headers
+@@ -469,6 +469,7 @@ IOKit/IOMessage.h
+ IOKit/pwr_mgt/IOPMLib.h
+ iomanip
+ ios
++iosfwd
+ iostream
+ iostream.h
+ iterator
+diff --git js/src/config/system-headers js/src/config/system-headers
+index d31c94e..570c82a 100644
+--- mozilla/js/src/config/system-headers
++++ mozilla/js/src/config/system-headers
+@@ -469,6 +469,7 @@ IOKit/IOMessage.h
+ IOKit/pwr_mgt/IOPMLib.h
+ iomanip
+ ios
++iosfwd
+ iostream
+ iostream.h
+ iterator

@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	libxul
-DISTVERSION=	24.0
+DISTVERSION=	24.1.0
 CATEGORIES?=	www devel
-MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source
+MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source \
+		https://ftp.mozilla.org/pub/mozilla.org/firefox/candidates/${DISTVERSION}esr-candidates/build1/source/
 DISTNAME=	firefox-${DISTVERSION}esr.source
 
 MAINTAINER?=	gecko@FreeBSD.org
@@ -12,7 +13,7 @@ COMMENT?=	Mozilla runtime package that can be used to bootstrap XUL+XPCOM apps
 
 BUILD_DEPENDS=	nspr>=4.10:${PORTSDIR}/devel/nspr \
 		nss>=3.15:${PORTSDIR}/security/nss \
-		sqlite3>=3.7.16.1:${PORTSDIR}/databases/sqlite3 \
+		sqlite3>=3.7.17:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo \
 		v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat \
@@ -48,14 +49,7 @@ PLIST_DIRSTRY=	share/idl
 MOZ_PKGCONFIG_FILES=	libxul-embedding libxul mozilla-js \
 			mozilla-plugin
 
-OPTIONS_DEFAULT=GSTREAMER
-
-NO_STAGE=	yes
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
-
-# OSS is gone after bug 852401
-OPTIONS_SINGLE_AUDIO:=${OPTIONS_SINGLE_AUDIO:S/OSS//}
-
 .include <bsd.port.pre.mk>
 
 .if ${USE_MOZILLA:M-nss}

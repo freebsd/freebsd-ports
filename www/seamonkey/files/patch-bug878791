@@ -1,5 +1,5 @@
---- mozilla/toolkit/components/osfile/osfile_unix_allthreads.jsm.orig	2013-05-11 21:19:53.000000000 +0200
-+++ mozilla/toolkit/components/osfile/osfile_unix_allthreads.jsm	2013-06-02 17:15:05.000000000 +0200
+--- mozilla/toolkit/components/osfile/modules/osfile_unix_allthreads.jsm.orig	2013-05-11 21:19:53.000000000 +0200
++++ mozilla/toolkit/components/osfile/modules/osfile_unix_allthreads.jsm	2013-06-02 17:15:05.000000000 +0200
 @@ -40,7 +40,7 @@ if (typeof Components != "undefined") {
    // Open libc
    let libc;
