@@ -19,5 +19,4 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/r2r_show
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
