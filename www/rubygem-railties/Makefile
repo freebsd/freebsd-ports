@@ -20,5 +20,4 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/rails
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
