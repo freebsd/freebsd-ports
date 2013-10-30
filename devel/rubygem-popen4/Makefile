@@ -18,5 +18,4 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 GEM_NAME=	POpen4-${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

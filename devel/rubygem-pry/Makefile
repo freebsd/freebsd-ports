@@ -20,7 +20,6 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/pry
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "19,26 s|~>|'>='|" ${WRKSRC}/${GEM_NAME}.gemspec
 	@${REINPLACE_CMD} -e '/coderay/ s|~>|>=|' ${WRKSRC}/${PORTNAME}.gemspec
