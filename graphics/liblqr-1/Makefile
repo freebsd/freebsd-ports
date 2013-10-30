@@ -23,9 +23,9 @@ USE_CSTD=	gnu89
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	EXAMPLES HTMLDOCS
+OPTIONS_DEFAULT=EXAMPLES
 HTMLDOCS_DESC=	Build and install HTML documentation
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}
@@ -57,16 +57,10 @@ post-build:
 
 post-install:
 .if ${PORT_OPTIONS:MHTMLDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/html/* ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/html/* ${STAGEDIR}${DOCSDIR}
 .endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
-
-.if !exists(${LOCALBASE}/lib/libpngwriter.a)
-	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
-.endif
-.endif
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
