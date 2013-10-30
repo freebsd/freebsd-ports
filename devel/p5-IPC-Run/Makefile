@@ -19,13 +19,4 @@ RUN_DEPENDS=	p5-IO-Tty>=1.08:${PORTSDIR}/devel/p5-IO-Tty
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		IPC::Run.3 \
-		IPC::Run::Debug.3 \
-		IPC::Run::IO.3 \
-		IPC::Run::Timer.3 \
-		IPC::Run::Win32Helper.3 \
-		IPC::Run::Win32IO.3 \
-		IPC::Run::Win32Pump.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

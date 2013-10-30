@@ -13,7 +13,4 @@ COMMENT=	Simple interface to access shared memory
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		IPC::ShareLite.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

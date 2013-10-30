@@ -1,10 +1,13 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Tty/Tty.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Tty/Tty.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Tty/.packlist
+%%PERL5_MAN3%%/IO::Pty.3.gz
+%%PERL5_MAN3%%/IO::Tty.3.gz
+%%PERL5_MAN3%%/IO::Tty::Constant.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/IO/Pty.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/IO/Tty.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/IO/Tty/Constant.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Tty/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Tty/Tty.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Tty/Tty.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Tty
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IO/Tty
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IO
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/IO/Tty
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IO

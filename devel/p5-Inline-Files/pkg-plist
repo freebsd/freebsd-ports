@@ -1,6 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/Files/.packlist
+%%PERL5_MAN3%%/Inline::Files.3.gz
+%%PERL5_MAN3%%/Inline::Files::Virtual.3.gz
 %%SITE_PERL%%/Inline/Files.pm
 %%SITE_PERL%%/Inline/Files/Virtual.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/Files/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/Files
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline
 @dirrm %%SITE_PERL%%/Inline/Files

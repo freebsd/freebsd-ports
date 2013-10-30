@@ -22,7 +22,4 @@ TEST_DEPENDS=	p5-Test-Warn>=0.24:${PORTSDIR}/devel/p5-Test-Warn
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		InlineX::CPP2XS.3 InlineX::CPP2XS-Cookbook.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

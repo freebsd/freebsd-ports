@@ -1,3 +1,9 @@
+%%PERL5_MAN3%%/IPC::Run3.3.gz
+%%PERL5_MAN3%%/IPC::Run3::ProfArrayBuffer.3.gz
+%%PERL5_MAN3%%/IPC::Run3::ProfLogReader.3.gz
+%%PERL5_MAN3%%/IPC::Run3::ProfLogger.3.gz
+%%PERL5_MAN3%%/IPC::Run3::ProfPP.3.gz
+%%PERL5_MAN3%%/IPC::Run3::ProfReporter.3.gz
 %%SITE_PERL%%/IPC/Run3.pm
 %%SITE_PERL%%/IPC/Run3/ProfArrayBuffer.pm
 %%SITE_PERL%%/IPC/Run3/ProfLogReader.pm
@@ -5,7 +11,7 @@
 %%SITE_PERL%%/IPC/Run3/ProfPP.pm
 %%SITE_PERL%%/IPC/Run3/ProfReporter.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Run3/.packlist
-@dirrm %%SITE_PERL%%/IPC/Run3
-@dirrmtry %%SITE_PERL%%/IPC
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Run3
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC
+@dirrm %%SITE_PERL%%/IPC/Run3
+@dirrmtry %%SITE_PERL%%/IPC

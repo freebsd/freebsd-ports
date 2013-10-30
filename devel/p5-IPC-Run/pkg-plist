@@ -1,3 +1,10 @@
+%%PERL5_MAN3%%/IPC::Run.3.gz
+%%PERL5_MAN3%%/IPC::Run::Debug.3.gz
+%%PERL5_MAN3%%/IPC::Run::IO.3.gz
+%%PERL5_MAN3%%/IPC::Run::Timer.3.gz
+%%PERL5_MAN3%%/IPC::Run::Win32Helper.3.gz
+%%PERL5_MAN3%%/IPC::Run::Win32IO.3.gz
+%%PERL5_MAN3%%/IPC::Run::Win32Pump.3.gz
 %%SITE_PERL%%/IPC/Run.pm
 %%SITE_PERL%%/IPC/Run/Debug.pm
 %%SITE_PERL%%/IPC/Run/IO.pm
@@ -6,7 +13,7 @@
 %%SITE_PERL%%/IPC/Run/Win32IO.pm
 %%SITE_PERL%%/IPC/Run/Win32Pump.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Run/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Run
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Run
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC
-@dirrm %%SITE_PERL%%/IPC/Run
+@dirrmtry %%SITE_PERL%%/IPC/Run
 @dirrmtry %%SITE_PERL%%/IPC

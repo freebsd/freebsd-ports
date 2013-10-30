@@ -1,8 +1,9 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/MM/.packlist
+%%PERL5_MAN3%%/IPC::MM.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/IPC/MM.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/MM/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/MM/MM.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/MM/MM.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/MM/autosplit.ix
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/MM
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IPC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IPC

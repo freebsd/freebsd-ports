@@ -1,3 +1,11 @@
+%%PERL5_MAN3%%/Inline-API.3.gz
+%%PERL5_MAN3%%/Inline-FAQ.3.gz
+%%PERL5_MAN3%%/Inline-Support.3.gz
+%%PERL5_MAN3%%/Inline.3.gz
+%%PERL5_MAN3%%/Inline::C-Cookbook.3.gz
+%%PERL5_MAN3%%/Inline::C.3.gz
+%%PERL5_MAN3%%/Inline::C::ParseRecDescent.3.gz
+%%PERL5_MAN3%%/Inline::C::ParseRegExp.3.gz
 %%SITE_PERL%%/Inline-API.pod
 %%SITE_PERL%%/Inline-FAQ.pod
 %%SITE_PERL%%/Inline-Support.pod
@@ -114,9 +122,9 @@
 %%SITE_PERL%%/auto/Inline/with_configs.al
 %%SITE_PERL%%/auto/Inline/write_inl_file.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline
 @dirrm %%SITE_PERL%%/auto/Inline/denter
+@dirrmtry %%SITE_PERL%%/auto/Inline
 @dirrm %%SITE_PERL%%/Inline/MakeMaker
 @dirrm %%SITE_PERL%%/Inline/C
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline
-@dirrmtry %%SITE_PERL%%/auto/Inline
 @dirrmtry %%SITE_PERL%%/Inline

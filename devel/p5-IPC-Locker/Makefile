@@ -16,10 +16,4 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	lockerd.1 lockersh.1 pidstat.1 pidstatd.1 pidwatch.1 \
-	uriexec.1
-MAN3=	IPC::Locker.3 IPC::Locker::Server.3 \
-	IPC::PidStat.3 IPC::PidStat::PidServer.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

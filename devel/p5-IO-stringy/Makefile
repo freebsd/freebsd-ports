@@ -13,8 +13,4 @@ COMMENT=	Perl5 module for using IO handles with non-file objects
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		IO::AtomicFile.3 IO::InnerFile.3 IO::Lines.3 IO::Scalar.3 \
-		IO::ScalarArray.3 IO::Stringy.3 IO::Wrap.3 IO::WrapTie.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

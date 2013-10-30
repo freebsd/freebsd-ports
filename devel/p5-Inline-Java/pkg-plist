@@ -1,6 +1,5 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/Java/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/Java/JNI/JNI.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/Java/JNI/JNI.so
+%%PERL5_MAN3%%/Inline::Java.3.gz
+%%PERL5_MAN3%%/Inline::Java::Callback.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Inline/Java.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Inline/Java.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Inline/Java/Array.pm
@@ -37,6 +36,12 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Inline/Java/sources/org/perl/inline/java/InlineJavaUserClassLink.java
 %%SITE_PERL%%/%%PERL_ARCH%%/Inline/Java/sources/org/perl/inline/java/InlineJavaUserClassLoader.java
 %%SITE_PERL%%/%%PERL_ARCH%%/Inline/Java/sources/org/perl/inline/java/InlineJavaUtils.java
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/Java/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/Java/JNI/JNI.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/Java/JNI/JNI.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/Java/JNI
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/Java
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Inline/Java/sources/org/perl/inline/java
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Inline/Java/sources/org/perl/inline
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Inline/Java/sources/org/perl
@@ -44,6 +49,3 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Inline/Java/sources
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Inline/Java
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Inline
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/Java/JNI
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/Java
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline
