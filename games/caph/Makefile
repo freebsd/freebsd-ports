@@ -10,10 +10,9 @@ MASTER_SITES=	SF/caphgame/${PORTNAME}/caphgame-${PORTVERSION}/
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Physics-based sandbox game
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
-
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/doc/caph/COPYING
+
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USES=		iconv
 USE_BZIP2=	yes
@@ -22,7 +21,9 @@ USE_GL=		gl
 
 BUILD_WRKSRC=	${WRKSRC}/src
 
-PORTDOCS=	README CHANGELOG
+PLIST_FILES=	bin/${PORTNAME}
+PORTDATA=	*
+PORTDOCS=	*
 
 DESKTOP_ENTRIES="Caph" \
 		"Physics-based sandbox game" \
@@ -31,10 +32,9 @@ DESKTOP_ENTRIES="Caph" \
 		"Game;LogicGame;" \
 		false
 
-OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
-OPTIONS_DEFAULT=OPTIMIZED_CFLAGS
+OPTIONS_DEFINE=	DOCS OPTIMIZED_CFLAGS
+OPTIONS_DEFAULT=DOCS OPTIMIZED_CFLAGS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
@@ -49,12 +49,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|../share/caph|${DATADIR}|' ${BUILD_WRKSRC}/caph.c
 
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC}/share/caph && ${COPYTREE_SHARE} '*' ${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc/caph && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
-.endif
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	cd ${WRKSRC}/share/caph && ${COPYTREE_SHARE} '*' ${STAGEDIR}${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc/caph && ${INSTALL_DATA} README CHANGELOG ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
