@@ -20,8 +20,10 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
+
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
@@ -36,12 +38,8 @@ do-build:
 		-lavcodec0 -lavformat0
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/${LIBNAME} ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/include/avbin.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/${LIBNAME} ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/include/avbin.h ${STAGEDIR}${PREFIX}/include/
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} '*' ${STAGEDIR}${DOCSDIR}/
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} '*' ${DOCSDIR}/
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
