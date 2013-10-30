@@ -16,5 +16,4 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/allison
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

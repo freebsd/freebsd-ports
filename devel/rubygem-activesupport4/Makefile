@@ -25,5 +25,4 @@ PKGNAMESUFFIX=	4
 
 NOPORTDOCS=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
