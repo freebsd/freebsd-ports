@@ -15,13 +15,13 @@ BUILD_DEPENDS=	rebar>=0:${PORTSDIR}/devel/rebar \
 	erl-ibrowse>=0:${PORTSDIR}/net/erl-ibrowse \
 	erl-jiffy>=0:${PORTSDIR}/devel/erl-jiffy \
 	erl-erlang-oauth>=0:${PORTSDIR}/net/erl-erlang-oauth \
-	erl-mochiweb>=0:${PORTSDIR}/www/erl-mochiweb
+	mochiweb-basho>=0:${PORTSDIR}/www/mochiweb-basho
 
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang \
 	erl-ibrowse>=0:${PORTSDIR}/net/erl-ibrowse \
 	erl-jiffy>=0:${PORTSDIR}/devel/erl-jiffy \
 	erl-erlang-oauth>=0:${PORTSDIR}/net/erl-erlang-oauth \
-	erl-mochiweb>=0:${PORTSDIR}/www/erl-mochiweb
+	mochiweb-basho>=0:${PORTSDIR}/www/mochiweb-basho
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	opscode
