@@ -19,8 +19,6 @@ OPTIONS_DEFAULT=DATA
 OPTIONS_SUB=	yes
 CA_BUNDLE_DESC=	Install CA Certificates
 
-SUB_FILES=	pkg-message
-
 CONTRIB_FILES=	bash_completion \
 		casesmash.py \
 		check-code.py \
@@ -61,6 +59,10 @@ CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/secu
 NLS_USES=		gettext
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDATA}
+SUB_FILES=	pkg-message
+.endif
 
 .if !${PORT_OPTIONS:MNLS}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-setup.py
