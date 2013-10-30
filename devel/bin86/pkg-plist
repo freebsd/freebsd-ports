@@ -1,0 +1,11 @@
+bin/as86
+bin/catimage
+bin/ld86
+bin/objchop
+bin/objdump86
+man/man1/as86.1.gz
+man/man1/ld86.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README-0.4
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
