@@ -20,5 +20,4 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES+=	bin/pdf_callbacks bin/pdf_list_callbacks bin/pdf_object bin/pdf_text
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
