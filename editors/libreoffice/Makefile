@@ -159,7 +159,7 @@ CONFIGURE_ARGS+=	--disable-epm \
 			--without-system-mozilla
 
 OPTIONS_DEFINE=	CUPS DEBUG GNOME GTK2 GTK3 JAVA KDE4 MMEDIA PGSQL SDK \
-		SYSTRAY TEST WEBDAV
+		SYSTRAY TEST VERBOSE WEBDAV
 OPTIONS_DEFAULT=CUPS GTK2
 
 JAVA_DESC=	Add java support (XML Filters, macros)
@@ -168,6 +168,7 @@ PGSQL_DESC=	Build with PostgreSQL-SDBC driver
 SDK_DESC=	Build with SDK
 SYSTRAY_DESC=	Enable systemtray quickstarter
 TEST_DESC=	Run all regression tests
+VERBOSE_DESC=	Increase build verbosity
 WEBDAV_DESC=	Enable webdav protocol
 
 .include <bsd.port.options.mk>
@@ -183,10 +184,15 @@ CONFIGURE_ARGS+=	--disable-cups
 IGNORE=			known as broken
 CONFIGURE_ARGS+=	--enable-debug \
 			--enable-dbgutil \
-			--enable-verbose \
 			--enable-crashdump
 .else
 CONFIGURE_ARGS+=	--enable-release-build
+.endif
+
+.if ${PORT_OPTIONS:MDEBUG} || ${PORT_OPTIONS:MVERBOSE}
+CONFIGURE_ARGS+=	--enable-verbose
+.else
+CONFIGURE_ARGS+=	--disable-verbose
 .endif
 
 .if ${PORT_OPTIONS:MGNOME}
@@ -320,8 +326,9 @@ CONFIGURE_ARGS+=	--disable-neon
 
 .include <bsd.port.pre.mk>
 
-.if ${CXX:M${LOCALBASE}/bin/clang++}
+.if ${CXX:M${LOCALBASE}/bin/clang++*}
 USE_BINUTILS=	yes
+LDFLAGS=	-B${LOCALBASE}/bin
 .endif
 
 .if ${COMPILER_FEATURES:Mlibc++}
@@ -334,9 +341,9 @@ CONFIGURE_ARGS+=	--with-linker-hash-style=sysv
 
 ACLOCAL_ARGS=	-I "${WRKSRC}/m4"
 CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAKE_ENV+=	ENVCFLAGS="${CFLAGS}" ENVCXXFLAGS="${CXXFLAGS}"
+MAKE_ENV+=	ENVCFLAGS="${CFLAGS}" ENVCFLAGSCXX="${CXXFLAGS}"
 MAKE_ENV+=	ENVLINKFLAGS="${LDFLAGS}"
 MAKE_ENV+=	LANG=C LC_ALL=C
 MAKE_ENV+=	SED="${LOCALBASE}/bin/gsed" USE_GMAKE=1
