@@ -29,6 +29,7 @@ libexec/mess/unidasm
 %%DATADIR%%/hash/a5200.xml
 %%DATADIR%%/hash/a7800.xml
 %%DATADIR%%/hash/a800.xml
+%%DATADIR%%/hash/a800_flop.xml
 %%DATADIR%%/hash/abc1600.xml
 %%DATADIR%%/hash/abc80.xml
 %%DATADIR%%/hash/abc800.xml
@@ -41,6 +42,7 @@ libexec/mess/unidasm
 %%DATADIR%%/hash/aim65_cart.xml
 %%DATADIR%%/hash/alice32.xml
 %%DATADIR%%/hash/alice90.xml
+%%DATADIR%%/hash/alphatro_flop.xml
 %%DATADIR%%/hash/amiga1000_flop.xml
 %%DATADIR%%/hash/amiga1200_flop.xml
 %%DATADIR%%/hash/amiga3000_flop.xml
@@ -51,6 +53,7 @@ libexec/mess/unidasm
 %%DATADIR%%/hash/amigaaga_flop.xml
 %%DATADIR%%/hash/amigaecs_flop.xml
 %%DATADIR%%/hash/amigaocs_flop.xml
+%%DATADIR%%/hash/ampro.xml
 %%DATADIR%%/hash/apc.xml
 %%DATADIR%%/hash/apfm1000.xml
 %%DATADIR%%/hash/apogee.xml
@@ -69,6 +72,7 @@ libexec/mess/unidasm
 %%DATADIR%%/hash/bbcm_cart.xml
 %%DATADIR%%/hash/bbcm_cass.xml
 %%DATADIR%%/hash/bk0010.xml
+%%DATADIR%%/hash/bml3_flop.xml
 %%DATADIR%%/hash/bw12.xml
 %%DATADIR%%/hash/bw2.xml
 %%DATADIR%%/hash/bx256hp_flop.xml
@@ -91,16 +95,19 @@ libexec/mess/unidasm
 %%DATADIR%%/hash/coleco.xml
 %%DATADIR%%/hash/compis.xml
 %%DATADIR%%/hash/comx35_flop.xml
+%%DATADIR%%/hash/copera.xml
 %%DATADIR%%/hash/cpc_cass.xml
 %%DATADIR%%/hash/cpc_flop.xml
 %%DATADIR%%/hash/crvision.xml
 %%DATADIR%%/hash/dim68k.xml
+%%DATADIR%%/hash/dps1.xml
 %%DATADIR%%/hash/ec1841.xml
 %%DATADIR%%/hash/einstein.xml
 %%DATADIR%%/hash/electron_cart.xml
 %%DATADIR%%/hash/ep64_cart.xml
 %%DATADIR%%/hash/ep64_cass.xml
 %%DATADIR%%/hash/ep64_flop.xml
+%%DATADIR%%/hash/famicom_cass.xml
 %%DATADIR%%/hash/famicom_flop.xml
 %%DATADIR%%/hash/fm77av.xml
 %%DATADIR%%/hash/fm7_cass.xml
@@ -248,6 +255,7 @@ libexec/mess/unidasm
 %%DATADIR%%/hash/snes.xml
 %%DATADIR%%/hash/snes_bspack.xml
 %%DATADIR%%/hash/snes_strom.xml
+%%DATADIR%%/hash/snes_vkun.xml
 %%DATADIR%%/hash/socrates.xml
 %%DATADIR%%/hash/softbox.xml
 %%DATADIR%%/hash/softwarelist.dtd
@@ -296,13 +304,16 @@ libexec/mess/unidasm
 %%DATADIR%%/hash/vic1001_cart.xml
 %%DATADIR%%/hash/vic1001_cass.xml
 %%DATADIR%%/hash/vic1001_flop.xml
+%%DATADIR%%/hash/victor9k_flop.xml
 %%DATADIR%%/hash/vidbrain.xml
 %%DATADIR%%/hash/vii.xml
 %%DATADIR%%/hash/vip.xml
+%%DATADIR%%/hash/visicom.xml
 %%DATADIR%%/hash/vixen.xml
 %%DATADIR%%/hash/vsmile_cart.xml
 %%DATADIR%%/hash/vsmile_cd.xml
 %%DATADIR%%/hash/wangpc.xml
+%%DATADIR%%/hash/wicat.xml
 %%DATADIR%%/hash/wmbullet.xml
 %%DATADIR%%/hash/wscolor.xml
 %%DATADIR%%/hash/wswan.xml

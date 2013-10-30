@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mess
-PORTVERSION=	0.149${PATCHSUFFIX}
-PORTREVISION=	1
+PORTVERSION=	0.150${PATCHSUFFIX}
 CATEGORIES=	emulators
 MASTER_SITES=	SF/mame.mirror/MAME%20${PORTVERSION} \
 		http://mame.mirrors.zippykid.com/releases/ \
@@ -17,34 +16,34 @@ DIST_SUBDIR=	mame
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiple Emulator Super System
 
-LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	liberation-fonts-ttf>=0:${PORTSDIR}/x11-fonts/liberation-fonts-ttf
 
-OPTIONS_DEFINE=	DEBUG DOCS EXAMPLES
+OPTIONS_DEFINE=	SDL2 DEBUG DOCS EXAMPLES
 OPTIONS_RADIO=	BUILTIN_DEBUGGER
 OPTIONS_RADIO_BUILTIN_DEBUGGER=	GTK2 QT4
+SDL2_DESC=	SDL2 libraries support
 BUILTIN_DEBUGGER_DESC=	Builtin debugger support
 
 NO_WRKSUBDIR=	yes
 
 USE_ZIP=	yes
-USES=		pkgconfig shebangfix
+USES=		gmake pkgconfig shebangfix
 SHEBANG_FILES=	src/emu/cpu/m6502/m6502make.py \
 		src/emu/cpu/m6809/m6809make.py \
 		src/emu/cpu/mcs96/mcs96make.py \
 		src/emu/cpu/tms57002/tmsmake.py
-USE_DOS2UNIX=	${SHEBANG_FILES}
+USE_DOS2UNIX=	src/osd/sdl/input.c \
+		src/osd/sdl/testkeys.c
 USE_XORG=	xext xi xinerama xrender
 USE_GL=		gl
-USE_SDL=	sdl ttf
 USE_PYTHON_BUILD=yes
-USE_GMAKE=	yes
-MAKE_ENV=	NOWERROR=1 OPTIMIZE=0 USE_NETWORK=1 \
+MAKE_ENV=	NOWERROR=1 USE_NETWORK=1 \
 		OPT_FLAGS="${CXXFLAGS}" GCC_LDFLAGS="${LDFLAGS}" \
-		TARGET="${PORTNAME}"
+		TARGET="${PORTNAME}" FULLNAME="${PORTNAME}"
 MAKEFILE=	makefile
 
 SUB_FILES=	pkg-message
@@ -58,8 +57,14 @@ UPDATE_PATCHES!=	/usr/bin/jot -s " " \
 		${PATCHLEVEL} 1 ${PATCHLEVEL}
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSDL2}
+USE_SDL=	sdl2 ttf2
+MAKE_ENV+=	SDL_LIBVER="sdl2"
+.else
+USE_SDL=	sdl ttf
+.endif
 
 .if ${PORT_OPTIONS:MDEBUG}
 MAKE_ENV+=	DEBUG=1
@@ -120,11 +125,13 @@ post-patch:
 		 s|^BUILD_JPEGLIB|# BUILD_JPEGLIB| ; \
 		 s| = @gcc| := $$(CC)| ; \
 		 s| = @g++| := $$(CXX)| ; \
-		 s|^FULLNAME =.*|FULLNAME = $$(NAME)| ; \
+		 s|-O$$(OPTIMIZE)|| ; \
 		 /--warn-common/s|= -Wl,|= $$(GCC_LDFLAGS) -Wl,| ; \
 		 /LDFLAGS/s|-s|| ; \
 		 /LIBS/s|-lstdc++|| ; \
 		 /LIBS/s|-lpthread|-pthread|' ${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e \
+		'/realloc/s|^|// |' ${WRKSRC}/src/emu/emualloc.h
 	@${REINPLACE_CMD} -e \
 		'/LIBS/s|-lpthread|-pthread| ; \
 		 /-system/s|/usr/local/|${LOCALBASE}/| ; \
@@ -134,24 +141,22 @@ post-patch:
 		 /X11R6/s|^|#|' ${WRKSRC}/src/osd/sdl/sdl.mak
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/libexec/${PORTNAME}
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} \
+		${STAGEDIR}/${PREFIX}/bin)
+	@${MKDIR} ${STAGEDIR}/${PREFIX}/libexec/${PORTNAME}
 .for F in castool chdman imgtool jedutil ldresample ldverify romcmp \
 	testkeys unidasm
-	${INSTALL_PROGRAM} ${WRKSRC}/${F} ${PREFIX}/libexec/${PORTNAME}
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${F} \
+		${STAGEDIR}/${PREFIX}/libexec/${PORTNAME})
 .endfor
-	@${MKDIR} ${DATADIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} artwork ${DATADIR})
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} hash ${DATADIR})
-	@(cd ${WRKSRC}/src/osd/sdl && ${COPYTREE_SHARE} keymaps ${DATADIR})
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${DOCSDIR})
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${FILESDIR}/mess.ini ${EXAMPLESDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}/${DATADIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} artwork ${STAGEDIR}/${DATADIR})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} hash ${STAGEDIR}/${DATADIR})
+	@(cd ${WRKSRC}/src/osd/sdl && ${COPYTREE_SHARE} keymaps \
+		${STAGEDIR}/${DATADIR})
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}/${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
+	(cd ${FILESDIR} && ${INSTALL_DATA} mess.ini ${STAGEDIR}/${EXAMPLESDIR})
 
 .include <bsd.port.post.mk>
