@@ -334,7 +334,7 @@ gst_resindvd_BUILD_DEPENDS=	libdvdnav>=4.1.2:${PORTSDIR}/multimedia/libdvdnav
 gst_resindvd_RUN_DEPENDS=	libdvdnav>=4.1.2:${PORTSDIR}/multimedia/libdvdnav
 
 # rtmp xxx
-gst_rtmp_LIB_DEPENDS=	librtmp.so.0:${PORTSDIR}/multimedia/rtmpdump
+gst_rtmp_LIB_DEPENDS=	librtmp.so.0:${PORTSDIR}/multimedia/librtmp
 
 # shout2
 # keep the version to tell de difference between libshout and libshout2
