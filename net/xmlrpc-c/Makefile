@@ -28,24 +28,15 @@ MAKE_ARGS=	LIBTOOL="${LIBTOOL}" \
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
+CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_CONFIGURE_ENABLE=	curl-client
+LIBWWW_LIB_DEPENDS=	libwwwcore.so:${PORTSDIR}/www/libwww
+LIBWWW_CONFIGURE_ENABLE=libwww-client
+
 .include <bsd.port.pre.mk>
 
 .if empty(PORT_OPTIONS:MDEBUG)
 CFLAGS+=	-DNDEBUG
-.endif
-
-.if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
-CONFIGURE_ARGS+=	--enable-curl-client
-.else
-CONFIGURE_ARGS+=	--disable-curl-client
-.endif
-
-.if ${PORT_OPTIONS:MLIBWWW}
-LIB_DEPENDS+=	wwwcore:${PORTSDIR}/www/libwww
-CONFIGURE_ARGS+=	--enable-libwww-client
-.else
-CONFIGURE_ARGS+=	--disable-libwww-client
 .endif
 
 post-extract:
