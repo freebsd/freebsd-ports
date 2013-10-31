@@ -7,4 +7,4 @@ the X protocol but which have traditionally been provided by Xlib.
 
 Image module is a port o Xlib's XImage and XShmImage functions.
 
-WWW:	http://xcb.freedesktop.org/
+WWW: http://xcb.freedesktop.org/
