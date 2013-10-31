@@ -163,11 +163,12 @@ sbin/dansguardian
 %%DATADIR%%/scripts/bsd-init
 %%DATADIR%%/scripts/solaris-init
 %%DATADIR%%/scripts/systemv-init
+man/man8/dansguardian.8.gz
 etc/dansguardian/authplugins/ident.conf
 etc/dansguardian/authplugins/ip.conf
 etc/dansguardian/authplugins/proxy-basic.conf
 etc/dansguardian/authplugins/proxy-digest.conf
-%%NTLMCONF%%etc/dansguardian/authplugins/proxy-ntlm.conf
+%%NTLM%%etc/dansguardian/authplugins/proxy-ntlm.conf
 etc/dansguardian/lists/authplugins/ipgroups
 etc/dansguardian/lists/bannedrooms/default
 etc/dansguardian/lists/exceptionextensionlist
@@ -284,10 +285,11 @@ etc/dansguardian/lists/exceptionregexpurllist
 %%SCANNERS%%etc/dansguardian/lists/contentscanners/exceptionvirusurllist
 etc/dansguardian/downloadmanagers/default.conf
 etc/dansguardian/downloadmanagers/fancy.conf
-%%CLAMDCONF%%etc/dansguardian/contentscanners/clamdscan.conf
-%%KAVDCONF%%etc/dansguardian/contentscanners/kavdscan.conf
-%%ICAPCONF%%etc/dansguardian/contentscanners/icapscan.conf
-%%CLISCANCONF%%etc/dansguardian/contentscanners/commandlinescan.conf
+%%CLAMD%%etc/dansguardian/contentscanners/clamdscan.conf
+%%KAV%%etc/dansguardian/contentscanners/kavdscan.conf
+%%ICAP%%etc/dansguardian/contentscanners/icapscan.conf
+%%CLISCAN%%etc/dansguardian/contentscanners/commandlinescan.conf
+%%TRICKLE%%etc/dansguardian/downloadmanagers/trickle.conf
 etc/dansguardian/dansguardian.conf
 etc/dansguardian/dansguardianf1.conf
 @dirrm %%DATADIR%%/scripts
