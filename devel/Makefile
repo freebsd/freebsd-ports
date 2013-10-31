@@ -2551,6 +2551,7 @@
     SUBDIR += p5-Pod-Tests
     SUBDIR += p5-Pragmatic
     SUBDIR += p5-Proc-Background
+    SUBDIR += p5-Proc-BackOff
     SUBDIR += p5-Proc-Daemon
     SUBDIR += p5-Proc-Fork
     SUBDIR += p5-Proc-Guard

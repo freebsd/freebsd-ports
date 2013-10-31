@@ -1,0 +1,13 @@
+%%PERL5_MAN3%%/Proc::BackOff.3.gz
+%%PERL5_MAN3%%/Proc::BackOff::Exponential.3.gz
+%%PERL5_MAN3%%/Proc::BackOff::Linear.3.gz
+%%PERL5_MAN3%%/Proc::BackOff::Random.3.gz
+%%SITE_PERL%%/Proc/BackOff.pm
+%%SITE_PERL%%/Proc/BackOff/Exponential.pm
+%%SITE_PERL%%/Proc/BackOff/Linear.pm
+%%SITE_PERL%%/Proc/BackOff/Random.pm
+%%SITE_PERL%%/mach/auto/Proc/BackOff/.packlist
+@dirrm %%SITE_PERL%%/mach/auto/Proc/BackOff
+@dirrm %%SITE_PERL%%/mach/auto/Proc
+@dirrm %%SITE_PERL%%/Proc/BackOff
+@dirrm %%SITE_PERL%%/Proc
