@@ -20,7 +20,7 @@ LIB_DEPENDS=	mcrypt:${PORTSDIR}/security/libmcrypt
 .if !defined(_BUILDING_NSCA_CLIENT)
 CONFLICTS=	nsca-2.7.* nsca27-*
 .else
-PKGNAMESUFFIX-	-client
+PKGNAMESUFFIX=	-client
 CONFLICTS=	nsca-client-2.7.* nsca27-*
 .endif
 
