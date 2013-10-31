@@ -12,7 +12,7 @@ COMMENT=	Dynamic Tunnel Configuration Protocol client
 
 LICENSE=	BSD
 
+USES=		uidfix
 USE_RC_SUBR=	dtcpclient
-NEED_ROOT=	yes
 
 .include <bsd.port.mk>
