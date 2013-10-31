@@ -1,10 +1,11 @@
+%%PERL5_MAN3%%/POE::Component::Daemon.3.gz
 %%SITE_PERL%%/POE/Component/Daemon.pm
 %%SITE_PERL%%/POE/Component/Daemon/Scoreboard.pm
 %%SITE_PERL%%/POE/Component/Daemon/ScoreboardSemaphore.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Daemon/.packlist
-%%EXAMPLESDIR%%/forking
-%%EXAMPLESDIR%%/preforking
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/forking
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/preforking
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Daemon
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE

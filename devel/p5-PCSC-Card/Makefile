@@ -18,9 +18,6 @@ USES=		perl5 pkgconfig
 USE_PERL5=	configure
 MAKE_ENV=	"LOCALBASE=${LOCALBASE}"
 
-MAN3=		Chipcard::PCSC::Card.3 Chipcard::PCSC.3
-
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s,-I/usr/local/pcsc/include,${LOCALBASE}/include/PCSC," \
 		${WRKSRC}/Makefile.PL

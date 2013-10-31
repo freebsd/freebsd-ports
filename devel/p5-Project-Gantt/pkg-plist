@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/Project::Gantt.3.gz
 %%SITE_PERL%%/Project/Gantt.pm
 %%SITE_PERL%%/Project/Gantt/DateUtils.pm
 %%SITE_PERL%%/Project/Gantt/GanttHeader.pm
@@ -11,7 +12,7 @@
 %%SITE_PERL%%/Project/Gantt/TimeSpan.pm
 %%SITE_PERL%%/Project/Gantt/Vera.ttf
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Project/Gantt/.packlist
-@dirrm %%SITE_PERL%%/Project/Gantt
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Project/Gantt
-@dirrmtry %%SITE_PERL%%/Project
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Project
+@dirrm %%SITE_PERL%%/Project/Gantt
+@dirrmtry %%SITE_PERL%%/Project

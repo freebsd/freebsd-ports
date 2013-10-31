@@ -1,8 +1,12 @@
 bin/package-stash-conflicts
+%%PERL5_MAN3%%/Package::Stash.3.gz
+%%PERL5_MAN3%%/Package::Stash::Conflicts.3.gz
+%%PERL5_MAN3%%/Package::Stash::PP.3.gz
 %%SITE_PERL%%/Package/Stash.pm
 %%SITE_PERL%%/Package/Stash/Conflicts.pm
 %%SITE_PERL%%/Package/Stash/PP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package/Stash/.packlist
+man/man1/package-stash-conflicts.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package/Stash
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package
 @dirrmtry %%SITE_PERL%%/Package/Stash

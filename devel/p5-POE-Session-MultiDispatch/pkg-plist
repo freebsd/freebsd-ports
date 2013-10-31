@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Session/MultiDispatch/.packlist
+%%PERL5_MAN3%%/POE::Session::MultiDispatch.3.gz
 %%SITE_PERL%%/POE/Session/MultiDispatch.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Session/MultiDispatch/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Session/MultiDispatch
-@dirrmtry %%SITE_PERL%%/POE/Session
-@dirrmtry %%SITE_PERL%%/POE
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Session
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
+@dirrmtry %%SITE_PERL%%/POE/Session
+@dirrmtry %%SITE_PERL%%/POE

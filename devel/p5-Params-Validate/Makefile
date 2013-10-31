@@ -21,8 +21,4 @@ TEST_DEPENDS=	p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Attribute::Params::Validate.3 \
-		Params::Validate.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

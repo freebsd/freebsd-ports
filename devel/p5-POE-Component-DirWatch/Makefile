@@ -23,14 +23,6 @@ USES=		perl5
 USE_PERL5=	configure
 INSTALL_TARGET=	pure_install
 
-MAN3=	POE::Component::DirWatch.3 \
-	POE::Component::DirWatch::Modified.3 \
-	POE::Component::DirWatch::New.3 \
-	POE::Component::DirWatch::Role::AIO.3 \
-	POE::Component::DirWatch::Role::Signatures.3 \
-	POE::Component::DirWatch::Unmodified.3
-
-NO_STAGE=	yes
 regression-test:
 	@(cd ${WRKSRC} && ${PERL} ${CONFIGURE_SCRIPT} && ${MAKE} test)
 

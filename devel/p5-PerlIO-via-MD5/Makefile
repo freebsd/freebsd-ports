@@ -13,7 +13,4 @@ COMMENT=	PerlIO layer for creating an MD5 digest of a file
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		PerlIO::via::MD5.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,4 +1,19 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Stage/.packlist
+%%PERL5_MAN3%%/POE::Callback.3.gz
+%%PERL5_MAN3%%/POE::Request.3.gz
+%%PERL5_MAN3%%/POE::Request::Emit.3.gz
+%%PERL5_MAN3%%/POE::Request::Recall.3.gz
+%%PERL5_MAN3%%/POE::Request::Return.3.gz
+%%PERL5_MAN3%%/POE::Request::Upward.3.gz
+%%PERL5_MAN3%%/POE::Stage.3.gz
+%%PERL5_MAN3%%/POE::Stage::App.3.gz
+%%PERL5_MAN3%%/POE::Stage::Echoer.3.gz
+%%PERL5_MAN3%%/POE::Stage::Receiver.3.gz
+%%PERL5_MAN3%%/POE::Stage::Resolver.3.gz
+%%PERL5_MAN3%%/POE::Stage::Ticker.3.gz
+%%PERL5_MAN3%%/POE::Watcher.3.gz
+%%PERL5_MAN3%%/POE::Watcher::Delay.3.gz
+%%PERL5_MAN3%%/POE::Watcher::Input.3.gz
+%%PERL5_MAN3%%/POE::Watcher::Wheel.3.gz
 %%SITE_PERL%%/POE/Callback.pm
 %%SITE_PERL%%/POE/Request.pm
 %%SITE_PERL%%/POE/Request/Emit.pm
@@ -18,10 +33,11 @@
 %%SITE_PERL%%/POE/Watcher/Wheel/ReadWrite.pm
 %%SITE_PERL%%/POE/Watcher/Wheel/Run.pm
 %%SITE_PERL%%/POE/Watcher/Wheel/SocketFactory.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Stage/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Stage
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
 @dirrm %%SITE_PERL%%/POE/Watcher/Wheel
 @dirrm %%SITE_PERL%%/POE/Watcher
 @dirrm %%SITE_PERL%%/POE/Stage
 @dirrm %%SITE_PERL%%/POE/Request
 @dirrmtry %%SITE_PERL%%/POE
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Stage
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE

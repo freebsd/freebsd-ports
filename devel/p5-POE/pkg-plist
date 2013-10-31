@@ -1,4 +1,49 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/.packlist
+%%PERL5_MAN3%%/POE.3.gz
+%%PERL5_MAN3%%/POE::Component.3.gz
+%%PERL5_MAN3%%/POE::Component::Client::TCP.3.gz
+%%PERL5_MAN3%%/POE::Component::Server::TCP.3.gz
+%%PERL5_MAN3%%/POE::Driver.3.gz
+%%PERL5_MAN3%%/POE::Driver::SysRW.3.gz
+%%PERL5_MAN3%%/POE::Filter.3.gz
+%%PERL5_MAN3%%/POE::Filter::Block.3.gz
+%%PERL5_MAN3%%/POE::Filter::Grep.3.gz
+%%PERL5_MAN3%%/POE::Filter::HTTPD.3.gz
+%%PERL5_MAN3%%/POE::Filter::Line.3.gz
+%%PERL5_MAN3%%/POE::Filter::Map.3.gz
+%%PERL5_MAN3%%/POE::Filter::RecordBlock.3.gz
+%%PERL5_MAN3%%/POE::Filter::Reference.3.gz
+%%PERL5_MAN3%%/POE::Filter::Stackable.3.gz
+%%PERL5_MAN3%%/POE::Filter::Stream.3.gz
+%%PERL5_MAN3%%/POE::Kernel.3.gz
+%%PERL5_MAN3%%/POE::Loop.3.gz
+%%PERL5_MAN3%%/POE::Loop::IO_Poll.3.gz
+%%PERL5_MAN3%%/POE::Loop::PerlSignals.3.gz
+%%PERL5_MAN3%%/POE::Loop::Select.3.gz
+%%PERL5_MAN3%%/POE::NFA.3.gz
+%%PERL5_MAN3%%/POE::Pipe.3.gz
+%%PERL5_MAN3%%/POE::Pipe::OneWay.3.gz
+%%PERL5_MAN3%%/POE::Pipe::TwoWay.3.gz
+%%PERL5_MAN3%%/POE::Queue.3.gz
+%%PERL5_MAN3%%/POE::Queue::Array.3.gz
+%%PERL5_MAN3%%/POE::Resource.3.gz
+%%PERL5_MAN3%%/POE::Resource::Aliases.3.gz
+%%PERL5_MAN3%%/POE::Resource::Clock.3.gz
+%%PERL5_MAN3%%/POE::Resource::Events.3.gz
+%%PERL5_MAN3%%/POE::Resource::Extrefs.3.gz
+%%PERL5_MAN3%%/POE::Resource::FileHandles.3.gz
+%%PERL5_MAN3%%/POE::Resource::SIDs.3.gz
+%%PERL5_MAN3%%/POE::Resource::Sessions.3.gz
+%%PERL5_MAN3%%/POE::Resource::Signals.3.gz
+%%PERL5_MAN3%%/POE::Resources.3.gz
+%%PERL5_MAN3%%/POE::Session.3.gz
+%%PERL5_MAN3%%/POE::Wheel.3.gz
+%%PERL5_MAN3%%/POE::Wheel::Curses.3.gz
+%%PERL5_MAN3%%/POE::Wheel::FollowTail.3.gz
+%%PERL5_MAN3%%/POE::Wheel::ListenAccept.3.gz
+%%PERL5_MAN3%%/POE::Wheel::ReadLine.3.gz
+%%PERL5_MAN3%%/POE::Wheel::ReadWrite.3.gz
+%%PERL5_MAN3%%/POE::Wheel::Run.3.gz
+%%PERL5_MAN3%%/POE::Wheel::SocketFactory.3.gz
 %%SITE_PERL%%/POE.pm
 %%SITE_PERL%%/POE/Component.pm
 %%SITE_PERL%%/POE/Component/Client/TCP.pm
@@ -45,18 +90,7 @@
 %%SITE_PERL%%/POE/Wheel/ReadWrite.pm
 %%SITE_PERL%%/POE/Wheel/Run.pm
 %%SITE_PERL%%/POE/Wheel/SocketFactory.pm
-@dirrmtry %%SITE_PERL%%/POE/Component/Client
-@dirrmtry %%SITE_PERL%%/POE/Component/Server
-@dirrmtry %%SITE_PERL%%/POE/Component
-@dirrm %%SITE_PERL%%/POE/Driver
-@dirrmtry %%SITE_PERL%%/POE/Filter
-@dirrmtry %%SITE_PERL%%/POE/Loop
-@dirrm %%SITE_PERL%%/POE/Pipe
-@dirrm %%SITE_PERL%%/POE/Queue
-@dirrm %%SITE_PERL%%/POE/Resource
-@dirrm %%SITE_PERL%%/POE/Wheel
-@dirrmtry %%SITE_PERL%%/POE
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/.packlist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.samples
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/create.perl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fakelogin.perl
@@ -73,4 +107,16 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/thrash.perl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/watermarks.perl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wheels2.perl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
+@dirrm %%SITE_PERL%%/POE/Wheel
+@dirrm %%SITE_PERL%%/POE/Resource
+@dirrm %%SITE_PERL%%/POE/Queue
+@dirrm %%SITE_PERL%%/POE/Pipe
+@dirrm %%SITE_PERL%%/POE/Loop
+@dirrm %%SITE_PERL%%/POE/Filter
+@dirrm %%SITE_PERL%%/POE/Driver
+@dirrm %%SITE_PERL%%/POE/Component/Server
+@dirrm %%SITE_PERL%%/POE/Component/Client
+@dirrm %%SITE_PERL%%/POE/Component
+@dirrm %%SITE_PERL%%/POE

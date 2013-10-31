@@ -13,7 +13,4 @@ COMMENT=	Perl 6 say (print, but no newline needed) function
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Perl6::Say.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

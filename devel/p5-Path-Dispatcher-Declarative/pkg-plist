@@ -1,5 +1,10 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Dispatcher/Declarative/.packlist
-%%SITE_PERL%%/Path/Dispatcher/Declarative/Builder.pm
+%%PERL5_MAN3%%/Path::Dispatcher::Declarative.3.gz
 %%SITE_PERL%%/Path/Dispatcher/Declarative.pm
+%%SITE_PERL%%/Path/Dispatcher/Declarative/Builder.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Dispatcher/Declarative/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Dispatcher/Declarative
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Dispatcher
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path
 @dirrm %%SITE_PERL%%/Path/Dispatcher/Declarative
+@dirrmtry %%SITE_PERL%%/Path/Dispatcher
+@dirrmtry %%SITE_PERL%%/Path

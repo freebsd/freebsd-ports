@@ -16,8 +16,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		poepp.1
-MAN3=		POE::Devel::Profiler.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

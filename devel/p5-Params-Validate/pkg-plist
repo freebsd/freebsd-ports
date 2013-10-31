@@ -1,3 +1,5 @@
+%%PERL5_MAN3%%/Attribute::Params::Validate.3.gz
+%%PERL5_MAN3%%/Params::Validate.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Attribute/Params/Validate.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Params/Validate.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Params/Validate/Constants.pm
@@ -7,7 +9,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Params/ValidateXS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Validate/XS/XS.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Validate/XS/XS.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Validate/XS
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Validate/XS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Validate
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Params/Validate

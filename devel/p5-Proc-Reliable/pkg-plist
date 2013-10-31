@@ -1,9 +1,11 @@
+%%PERL5_MAN3%%/Proc::Reliable.3.gz
+%%PERL5_MAN3%%/Proc::test_intercept.3.gz
+%%SITE_PERL%%/Proc/Reliable.pm
 %%SITE_PERL%%/Proc/test_intercept.pl
 %%SITE_PERL%%/auto/Proc/Reliable/autosplit.ix
-%%SITE_PERL%%/Proc/Reliable.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/Reliable/.packlist
-@dirrmtry %%SITE_PERL%%/auto/Proc/Reliable
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/Reliable
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc
+@dirrm %%SITE_PERL%%/auto/Proc/Reliable
 @dirrmtry %%SITE_PERL%%/auto/Proc
 @dirrmtry %%SITE_PERL%%/Proc
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/Reliable
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc
