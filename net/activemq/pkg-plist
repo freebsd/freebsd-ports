@@ -1,7 +1,38 @@
-@exec /bin/mkdir -p %%PREFIX%%/lib/activemq/webapps/admin/WEB-INF/jsp
-@exec install -d -o %%MQUSER%% -g %%MQGROUP%% %%MQDB%%
-@dirrmtry %%MQDB%%
 @unexec if [ -d %%MQDB%% ]; then echo "You should remove %%MQDB%% if you don't need it any more."; fi
+@dirrmtry %%MQDB%%
+@exec install -d -o %%MQUSER%% -g %%MQGROUP%% %%MQDB%%
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/activemq/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/apollo/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/branding/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/camin/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/dashboard/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/datatable/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/dozer/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/fabric/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/forcegraph/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/git
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/git/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/health/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/infinispan/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/insight/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/jboss/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/jclouds/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/jclouds/js/blobstore
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/jclouds/js/compute
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/jetty/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/jmx/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/jvm/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/karaf/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/log/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/maven/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/openejb/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/osgi/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/perspective/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/source/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/tomcat/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/tree/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/ui/js
+@exec mkdir -p %D/lib/activemq/webapps/hawtio/app/wiki/js
 lib/activemq/bin/activemq
 lib/activemq/bin/activemq-admin
 lib/activemq/bin/activemq.jar
@@ -9,7 +40,8 @@ lib/activemq/bin/diag
 lib/activemq/bin/wrapper.jar
 lib/activemq/conf
 lib/activemq/data
-lib/activemq/example
+lib/activemq/docs
+lib/activemq/examples
 lib/activemq/lib/activemq-broker-%%PORTVERSION%%.jar
 lib/activemq/lib/activemq-client-%%PORTVERSION%%.jar
 lib/activemq/lib/activemq-console-%%PORTVERSION%%.jar
@@ -24,75 +56,64 @@ lib/activemq/lib/camel/activemq-camel-%%PORTVERSION%%.jar
 lib/activemq/lib/camel/camel-core-%%CAMELVERSION%%.jar
 lib/activemq/lib/camel/camel-jms-%%CAMELVERSION%%.jar
 lib/activemq/lib/camel/camel-spring-%%CAMELVERSION%%.jar
-lib/activemq/lib/extra/activemq-leveldb-store-%%PORTVERSION%%.jar
-lib/activemq/lib/extra/commons-beanutils-core-1.8.0.jar
-lib/activemq/lib/extra/commons-configuration-1.6.jar
-lib/activemq/lib/extra/commons-digester-1.8.jar
-lib/activemq/lib/extra/guava-12.0.jar
-lib/activemq/lib/extra/hadoop-core-1.0.0.jar
-lib/activemq/lib/extra/hawtbuf-proto-1.9.jar
-lib/activemq/lib/extra/hawtdispatch-1.12.jar
-lib/activemq/lib/extra/hawtdispatch-scala-1.12.jar
-lib/activemq/lib/extra/hawtdispatch-transport-1.12.jar
-lib/activemq/lib/extra/hawtjni-runtime-1.6.jar
-lib/activemq/lib/extra/jackson-core-asl-1.9.2.jar
-lib/activemq/lib/extra/jackson-mapper-asl-1.9.2.jar
-lib/activemq/lib/extra/jetty-6.1.26.jar
-lib/activemq/lib/extra/jetty-util-6.1.26.jar
-lib/activemq/lib/extra/jsp-2.1-6.1.14.jar
-lib/activemq/lib/extra/jsp-api-2.1-6.1.14.jar
-lib/activemq/lib/extra/jsr305-1.3.9.jar
-lib/activemq/lib/extra/leveldb-%%LVDBVERSION%%.jar
-lib/activemq/lib/extra/leveldb-api-%%LVDBVERSION%%.jar
-lib/activemq/lib/extra/leveldbjni-%%LVDBJNIVERSION%%.jar
-lib/activemq/lib/extra/leveldbjni-linux32-%%LVDBJNIVERSION%%.jar
-lib/activemq/lib/extra/leveldbjni-linux64-%%LVDBJNIVERSION%%.jar
-lib/activemq/lib/extra/leveldbjni-osx-%%LVDBJNIVERSION%%.jar
-lib/activemq/lib/extra/leveldbjni-win32-%%LVDBJNIVERSION%%.jar
-lib/activemq/lib/extra/leveldbjni-win64-%%LVDBJNIVERSION%%.jar
-lib/activemq/lib/extra/mqtt-client-1.4.jar
-lib/activemq/lib/extra/scala-library-2.10.0.jar
-lib/activemq/lib/extra/servlet-api-2.5-20081211.jar
-lib/activemq/lib/extra/servlet-api-2.5-6.1.14.jar
-lib/activemq/lib/extra/snappy-java-1.0.3.jar
+lib/activemq/lib/extra/mqtt-client-1.6.jar
 lib/activemq/lib/geronimo-j2ee-management_1.1_spec-1.0.1.jar
 lib/activemq/lib/geronimo-jms_1.1_spec-1.1.1.jar
 lib/activemq/lib/geronimo-jta_1.0.1B_spec-1.0.1.jar
 lib/activemq/lib/hawtbuf-1.9.jar
-lib/activemq/lib/jcl-over-slf4j-1.6.6.jar
+lib/activemq/lib/insight-log-core-7.2.0.redhat-024.jar
+lib/activemq/lib/insight-log4j-7.2.0.redhat-024-patched.jar
+lib/activemq/lib/jcl-over-slf4j-1.7.5.jar
 lib/activemq/lib/optional/activeio-core-3.1.4.jar
 lib/activemq/lib/optional/activemq-amqp-%%PORTVERSION%%.jar
 lib/activemq/lib/optional/activemq-http-%%PORTVERSION%%.jar
 lib/activemq/lib/optional/activemq-jdbc-store-%%PORTVERSION%%.jar
+lib/activemq/lib/optional/activemq-jms-pool-%%PORTVERSION%%.jar
 lib/activemq/lib/optional/activemq-leveldb-store-%%PORTVERSION%%.jar
 lib/activemq/lib/optional/activemq-log4j-appender-%%PORTVERSION%%.jar
 lib/activemq/lib/optional/activemq-mqtt-%%PORTVERSION%%.jar
+lib/activemq/lib/optional/activemq-partition-%%PORTVERSION%%.jar
 lib/activemq/lib/optional/activemq-pool-%%PORTVERSION%%.jar
-lib/activemq/lib/optional/activemq-spring-%%PORTVERSION%%.jar
+lib/activemq/lib/optional/activemq-runtime-config-%%PORTVERSION%%.jar
 lib/activemq/lib/optional/activemq-stomp-%%PORTVERSION%%.jar
-lib/activemq/lib/optional/activemq-xmpp-%%PORTVERSION%%.jar
 lib/activemq/lib/optional/commons-beanutils-1.8.3.jar
 lib/activemq/lib/optional/commons-codec-1.6.jar
 lib/activemq/lib/optional/commons-collections-3.2.1.jar
 lib/activemq/lib/optional/commons-dbcp-1.4.jar
 lib/activemq/lib/optional/commons-lang-2.6.jar
-lib/activemq/lib/optional/commons-net-3.2.jar
+lib/activemq/lib/optional/commons-net-3.3.jar
 lib/activemq/lib/optional/commons-pool-1.6.jar
 lib/activemq/lib/optional/geronimo-j2ee-connector_1.5_spec-2.0.0.jar
-lib/activemq/lib/optional/httpclient-4.2.3.jar
-lib/activemq/lib/optional/httpcore-4.2.3.jar
-lib/activemq/lib/optional/jasypt-1.9.0.jar
-lib/activemq/lib/optional/jasypt-spring3-1.9.0.jar
-lib/activemq/lib/optional/jettison-1.3.3.jar
+lib/activemq/lib/optional/guava-12.0.jar
+lib/activemq/lib/optional/hawtbuf-proto-1.9.jar
+lib/activemq/lib/optional/hawtdispatch-1.18.jar
+lib/activemq/lib/optional/hawtdispatch-scala-1.18.jar
+lib/activemq/lib/optional/hawtdispatch-transport-1.18.jar
+lib/activemq/lib/optional/hawtjni-runtime-1.8.jar
+lib/activemq/lib/optional/httpclient-4.2.5.jar
+lib/activemq/lib/optional/httpcore-4.2.4.jar
+lib/activemq/lib/optional/jackson-core-asl-1.%%OSREL%%2.jar
+lib/activemq/lib/optional/jackson-mapper-asl-1.%%OSREL%%2.jar
+lib/activemq/lib/optional/jasypt-1.9.1.jar
+lib/activemq/lib/optional/jasypt-spring3-1.9.1.jar
+lib/activemq/lib/optional/jaxb2-basics-runtime-%%LVDBVERSION%%.4.jar
+lib/activemq/lib/optional/jettison-1.3.4.jar
 lib/activemq/lib/optional/jmdns-3.4.1.jar
+lib/activemq/lib/optional/leveldb-%%LVDBVERSION%%.jar
+lib/activemq/lib/optional/leveldb-api-%%LVDBVERSION%%.jar
+lib/activemq/lib/optional/leveldbjni-%%LVDBJNIVERSION%%.jar
 lib/activemq/lib/optional/log4j-1.2.17.jar
 lib/activemq/lib/optional/org.apache.servicemix.bundles.josql-1.5_5.jar
-lib/activemq/lib/optional/proton-0.3.0-fuse-2.jar
-lib/activemq/lib/optional/proton-api-0.3.0-fuse-2.jar
-lib/activemq/lib/optional/proton-jms-0.3.0-fuse-2.jar
-lib/activemq/lib/optional/slf4j-log4j12-1.6.6.jar
+lib/activemq/lib/optional/org.linkedin.util-core-1.4.0.jar
+lib/activemq/lib/optional/org.linkedin.zookeeper-impl-1.4.0.jar
+lib/activemq/lib/optional/proton-api-0.5.jar
+lib/activemq/lib/optional/proton-j-impl-0.5.jar
+lib/activemq/lib/optional/proton-jms-0.5.jar
+lib/activemq/lib/optional/scala-library-2.%%OSREL%%.jar
+lib/activemq/lib/optional/slf4j-log4j12-1.7.5.jar
+lib/activemq/lib/optional/snappy-0.2.jar
+lib/activemq/lib/optional/snappy-java-1.1.0-M4.jar
 lib/activemq/lib/optional/spring-aop-%%SPRINGVERSION%%.RELEASE.jar
-lib/activemq/lib/optional/spring-asm-%%SPRINGVERSION%%.RELEASE.jar
 lib/activemq/lib/optional/spring-beans-%%SPRINGVERSION%%.RELEASE.jar
 lib/activemq/lib/optional/spring-context-%%SPRINGVERSION%%.RELEASE.jar
 lib/activemq/lib/optional/spring-core-%%SPRINGVERSION%%.RELEASE.jar
@@ -100,22 +121,22 @@ lib/activemq/lib/optional/spring-expression-%%SPRINGVERSION%%.RELEASE.jar
 lib/activemq/lib/optional/spring-jms-%%SPRINGVERSION%%.RELEASE.jar
 lib/activemq/lib/optional/spring-oxm-%%SPRINGVERSION%%.RELEASE.jar
 lib/activemq/lib/optional/spring-tx-%%SPRINGVERSION%%.RELEASE.jar
-lib/activemq/lib/optional/stax2-api-3.0.2.jar
 lib/activemq/lib/optional/velocity-1.7.jar
-lib/activemq/lib/optional/woodstox-core-asl-4.1.4.jar
-lib/activemq/lib/optional/xbean-spring-3.12.jar
+lib/activemq/lib/optional/xbean-spring-3.14.jar
 lib/activemq/lib/optional/xpp3-1.1.4c.jar
 lib/activemq/lib/optional/xstream-1.4.4.jar
-lib/activemq/lib/slf4j-api-1.6.6.jar
+lib/activemq/lib/optional/zookeeper-3.4.5.jar
+lib/activemq/lib/slf4j-api-1.7.5.jar
 lib/activemq/lib/web/core-3.1.1.jar
 lib/activemq/lib/web/geronimo-servlet_2.5_spec-1.2.jar
 lib/activemq/lib/web/jdom-1.0.jar
 lib/activemq/lib/web/jetty-all-server-%%JETTYVERSION%%.jar
 lib/activemq/lib/web/jetty-websocket-%%JETTYVERSION%%.jar
-lib/activemq/lib/web/jolokia-core-1.0.6.jar
-lib/activemq/lib/web/json-simple-1.1.jar
+lib/activemq/lib/web/jolokia-core-1.1.4.jar
+lib/activemq/lib/web/json-simple-1.1.1.jar
 lib/activemq/lib/web/jsp-2.1-glassfish-2.1.v20100127.jar
 lib/activemq/lib/web/jsp-api-2.1-glassfish-2.1.v20100127.jar
+lib/activemq/lib/web/pax-url-aether-1.5.2.jar
 lib/activemq/lib/web/rome-1.0.jar
 lib/activemq/lib/web/sitemesh-2.4.2.jar
 lib/activemq/lib/web/spring-web-%%SPRINGVERSION%%.RELEASE.jar
@@ -125,24 +146,67 @@ lib/activemq/webapps-demo/demo/META-INF/NOTICE
 lib/activemq/webapps-demo/demo/WEB-INF/web.xml
 lib/activemq/webapps-demo/demo/chat.css
 lib/activemq/webapps-demo/demo/chat.html
+lib/activemq/webapps-demo/demo/images/activemq-logo.png
+lib/activemq/webapps-demo/demo/images/asf-logo.png
+lib/activemq/webapps-demo/demo/images/big-bullet.png
+lib/activemq/webapps-demo/demo/images/black-footer-bottom.png
+lib/activemq/webapps-demo/demo/images/black-footer-left.png
+lib/activemq/webapps-demo/demo/images/black-footer-right.png
+lib/activemq/webapps-demo/demo/images/bottom-red-bar.png
+lib/activemq/webapps-demo/demo/images/checker-bg.png
+lib/activemq/webapps-demo/demo/images/content-left.png
+lib/activemq/webapps-demo/demo/images/content-right.png
+lib/activemq/webapps-demo/demo/images/feed_atom.png
+lib/activemq/webapps-demo/demo/images/feed_rss.png
+lib/activemq/webapps-demo/demo/images/left-box-bottom.png
+lib/activemq/webapps-demo/demo/images/left-box-right.png
+lib/activemq/webapps-demo/demo/images/left-box-top.png
+lib/activemq/webapps-demo/demo/images/oval-arrow.png
+lib/activemq/webapps-demo/demo/images/right-box-bottom.png
+lib/activemq/webapps-demo/demo/images/right-box-left.png
+lib/activemq/webapps-demo/demo/images/right-box-top.png
+lib/activemq/webapps-demo/demo/images/small-bullet-gray.png
+lib/activemq/webapps-demo/demo/images/small-bullet-red.png
+lib/activemq/webapps-demo/demo/images/spacer.gif
+lib/activemq/webapps-demo/demo/images/top-red-bar.png
+lib/activemq/webapps-demo/demo/images/white-header-left.png
+lib/activemq/webapps-demo/demo/images/white-header-right.png
+lib/activemq/webapps-demo/demo/images/white-header-top.png
 lib/activemq/webapps-demo/demo/index.html
 lib/activemq/webapps-demo/demo/js/amq.js
 lib/activemq/webapps-demo/demo/js/amq_dojo_adapter.js
 lib/activemq/webapps-demo/demo/js/amq_jquery_adapter.js
 lib/activemq/webapps-demo/demo/js/amq_prototype_adapter.js
 lib/activemq/webapps-demo/demo/js/chat.js
+lib/activemq/webapps-demo/demo/js/common.js
+lib/activemq/webapps-demo/demo/js/css.js
 lib/activemq/webapps-demo/demo/js/dojo.js
 lib/activemq/webapps-demo/demo/js/jquery-1.4.2.min.js
+lib/activemq/webapps-demo/demo/js/mochi/MochiKit.js
+lib/activemq/webapps-demo/demo/js/mochi/__package__.js
+lib/activemq/webapps-demo/demo/js/plotkit/Base.js
+lib/activemq/webapps-demo/demo/js/plotkit/Canvas.js
+lib/activemq/webapps-demo/demo/js/plotkit/Layout.js
+lib/activemq/webapps-demo/demo/js/plotkit/SVG.js
+lib/activemq/webapps-demo/demo/js/plotkit/SweetCanvas.js
+lib/activemq/webapps-demo/demo/js/plotkit/SweetSVG.js
+lib/activemq/webapps-demo/demo/js/plotkit/dummy.svg
+lib/activemq/webapps-demo/demo/js/plotkit/iecanvas.htc
+lib/activemq/webapps-demo/demo/js/prettify.js
 lib/activemq/webapps-demo/demo/js/prototype.js
+lib/activemq/webapps-demo/demo/js/standardista-table-sorting.js
+lib/activemq/webapps-demo/demo/mqtt/chat.css
+lib/activemq/webapps-demo/demo/mqtt/chat.js
+lib/activemq/webapps-demo/demo/mqtt/index.html
+lib/activemq/webapps-demo/demo/mqtt/mqttws31.js
 lib/activemq/webapps-demo/demo/portfolio/portfolio.html
 lib/activemq/webapps-demo/demo/portfolio/portfolio.js
-lib/activemq/webapps-demo/demo/sandbox/index.html
-lib/activemq/webapps-demo/demo/sandbox/portfolio.html
-lib/activemq/webapps-demo/demo/sandbox/portfolio.js
-lib/activemq/webapps-demo/demo/sandbox/util.js
-lib/activemq/webapps-demo/demo/sandbox/webmq.js
 lib/activemq/webapps-demo/demo/send.html
 lib/activemq/webapps-demo/demo/style.css
+lib/activemq/webapps-demo/demo/styles/prettify.css
+lib/activemq/webapps-demo/demo/styles/site.css
+lib/activemq/webapps-demo/demo/styles/sorttable.css
+lib/activemq/webapps-demo/demo/styles/type-settings.css
 lib/activemq/webapps-demo/demo/test/amq_test.html
 lib/activemq/webapps-demo/demo/test/assets/README
 lib/activemq/webapps-demo/demo/test/assets/jsunittest.js
@@ -151,6 +215,705 @@ lib/activemq/webapps-demo/demo/websocket/chat.css
 lib/activemq/webapps-demo/demo/websocket/chat.js
 lib/activemq/webapps-demo/demo/websocket/index.html
 lib/activemq/webapps-demo/demo/websocket/stomp.js
+lib/activemq/webapps/admin/403.html
+lib/activemq/webapps/hawtio/favicon.ico
+lib/activemq/webapps/hawtio/index.html
+lib/activemq/webapps/hawtio/test.js
+lib/activemq/webapps/hawtio/test.json
+lib/activemq/webapps/hawtio/META-INF/MANIFEST.MF
+lib/activemq/webapps/hawtio/META-INF/maven/io.hawt/hawtio-web/pom.properties
+lib/activemq/webapps/hawtio/META-INF/maven/io.hawt/hawtio-web/pom.xml
+lib/activemq/webapps/hawtio/WEB-INF/log4j.properties
+lib/activemq/webapps/hawtio/WEB-INF/web.xml
+lib/activemq/webapps/hawtio/WEB-INF/classes/jolokia-access.xml
+lib/activemq/webapps/hawtio/WEB-INF/classes/META-INF/MANIFEST.MF
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/HawtioContextListener.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/jmx/FileDTO.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/jmx/JmxTreeWatcher$1.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/jmx/JmxTreeWatcher$2.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/jmx/JmxTreeWatcher.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/jmx/JmxTreeWatcherMBean.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/jmx/PluginRegistry$1.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/jmx/PluginRegistry$2.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/jmx/PluginRegistry.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/jmx/PluginRegistryMBean.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/jmx/UploadManager.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/jmx/UploadManagerMBean.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/system/AuthInfo.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/system/AuthenticateResult.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/system/Authenticator$1.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/system/Authenticator$2.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/system/Authenticator.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/system/ExtractAuthInfoCallback.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/system/Helpers.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/system/PrivilegedCallback.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/web/AuthenticationFilter$1.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/web/AuthenticationFilter$2.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/web/AuthenticationFilter$3.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/web/AuthenticationFilter.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/web/BrandingServlet.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/web/CORSFilter.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/web/JavaDocServlet.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/web/LoginServlet.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/web/LogoutServlet.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/web/OpenShiftProtocolSocketFactory.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/web/PluginServlet.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/web/ProxyDetails$1.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/web/ProxyDetails.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/web/ProxyServlet.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/web/ServletHelpers.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/web/UploadServlet$1.class
+lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/web/UploadServlet.class
+lib/activemq/webapps/hawtio/WEB-INF/lib/JavaEWAH-0.5.6.jar
+lib/activemq/webapps/hawtio/WEB-INF/lib/commons-fileupload-1.3.jar
+lib/activemq/webapps/hawtio/WEB-INF/lib/commons-httpclient-3.1.jar
+lib/activemq/webapps/hawtio/WEB-INF/lib/commons-io-2.2.jar
+lib/activemq/webapps/hawtio/WEB-INF/lib/commons-logging-1.0.4.jar
+lib/activemq/webapps/hawtio/WEB-INF/lib/gitective-core-0.9.9.jar
+lib/activemq/webapps/hawtio/WEB-INF/lib/hawtio-core-1.2-M23.jar
+lib/activemq/webapps/hawtio/WEB-INF/lib/hawtio-git-1.2-M23.jar
+lib/activemq/webapps/hawtio/WEB-INF/lib/jolokia-core-1.1.4.jar
+lib/activemq/webapps/hawtio/WEB-INF/lib/jsch-0.1.46.jar
+lib/activemq/webapps/hawtio/WEB-INF/lib/json-simple-1.1.jar
+lib/activemq/webapps/hawtio/app/app.js
+lib/activemq/webapps/hawtio/app/activemq/doc/help.md
+lib/activemq/webapps/hawtio/app/activemq/html/browseQueue.html
+lib/activemq/webapps/hawtio/app/activemq/html/createDestination.html
+lib/activemq/webapps/hawtio/app/activemq/html/createQueue.html
+lib/activemq/webapps/hawtio/app/activemq/html/createTopic.html
+lib/activemq/webapps/hawtio/app/activemq/html/deleteQueue.html
+lib/activemq/webapps/hawtio/app/activemq/html/deleteTopic.html
+lib/activemq/webapps/hawtio/app/activemq/html/durableSubscribers.html
+lib/activemq/webapps/hawtio/app/activemq/html/layoutActiveMQTree.html
+lib/activemq/webapps/hawtio/app/activemq/html/subscribers.html
+lib/activemq/webapps/hawtio/app/activemq/img/listener.gif
+lib/activemq/webapps/hawtio/app/activemq/img/message_broker.png
+lib/activemq/webapps/hawtio/app/activemq/img/queue.png
+lib/activemq/webapps/hawtio/app/activemq/img/queue_folder.png
+lib/activemq/webapps/hawtio/app/activemq/img/sender.gif
+lib/activemq/webapps/hawtio/app/activemq/img/topic.png
+lib/activemq/webapps/hawtio/app/activemq/img/topic_folder.png
+lib/activemq/webapps/hawtio/app/apollo/html/configuration.html
+lib/activemq/webapps/hawtio/app/apollo/html/connectors.html
+lib/activemq/webapps/hawtio/app/apollo/html/layout-apollo.html
+lib/activemq/webapps/hawtio/app/apollo/html/operating-environment.html
+lib/activemq/webapps/hawtio/app/apollo/html/queue.html
+lib/activemq/webapps/hawtio/app/apollo/html/queues.html
+lib/activemq/webapps/hawtio/app/apollo/html/store.html
+lib/activemq/webapps/hawtio/app/apollo/html/virtual_host.html
+lib/activemq/webapps/hawtio/app/apollo/html/virtual_hosts.html
+lib/activemq/webapps/hawtio/app/branding/doc/developer.md
+lib/activemq/webapps/hawtio/app/camel/doc/help.md
+lib/activemq/webapps/hawtio/app/camel/html/attributeToolBarContext.html
+lib/activemq/webapps/hawtio/app/camel/html/attributeToolBarRoutes.html
+lib/activemq/webapps/hawtio/app/camel/html/browseEndpoint.html
+lib/activemq/webapps/hawtio/app/camel/html/browseMessages.html
+lib/activemq/webapps/hawtio/app/camel/html/browseRoute.html
+lib/activemq/webapps/hawtio/app/camel/html/createEndpoint.html
+lib/activemq/webapps/hawtio/app/camel/html/createEndpointURL.html
+lib/activemq/webapps/hawtio/app/camel/html/createEndpointWizard.html
+lib/activemq/webapps/hawtio/app/camel/html/debug.html
+lib/activemq/webapps/hawtio/app/camel/html/layoutCamelTree.html
+lib/activemq/webapps/hawtio/app/camel/html/nodePropertiesEdit.html
+lib/activemq/webapps/hawtio/app/camel/html/nodePropertiesView.html
+lib/activemq/webapps/hawtio/app/camel/html/profileRoute.html
+lib/activemq/webapps/hawtio/app/camel/html/properties.html
+lib/activemq/webapps/hawtio/app/camel/html/routes.html
+lib/activemq/webapps/hawtio/app/camel/html/sendMessage.html
+lib/activemq/webapps/hawtio/app/camel/html/source.html
+lib/activemq/webapps/hawtio/app/camel/html/traceRoute.html
+lib/activemq/webapps/hawtio/app/camel/img/aggregate24.png
+lib/activemq/webapps/hawtio/app/camel/img/bean24.png
+lib/activemq/webapps/hawtio/app/camel/img/camel.png
+lib/activemq/webapps/hawtio/app/camel/img/camel_context_icon.png
+lib/activemq/webapps/hawtio/app/camel/img/camel_route.png
+lib/activemq/webapps/hawtio/app/camel/img/camel_route_folder.png
+lib/activemq/webapps/hawtio/app/camel/img/camel_tracing.png
+lib/activemq/webapps/hawtio/app/camel/img/channel24.png
+lib/activemq/webapps/hawtio/app/camel/img/channelAdapter24.png
+lib/activemq/webapps/hawtio/app/camel/img/channelPurger24.png
+lib/activemq/webapps/hawtio/app/camel/img/choice24.png
+lib/activemq/webapps/hawtio/app/camel/img/commandMessage24.png
+lib/activemq/webapps/hawtio/app/camel/img/competingConsumers24.png
+lib/activemq/webapps/hawtio/app/camel/img/contentBasedRouter24.png
+lib/activemq/webapps/hawtio/app/camel/img/contentFilter24.png
+lib/activemq/webapps/hawtio/app/camel/img/controlBus24.png
+lib/activemq/webapps/hawtio/app/camel/img/convertBody24.png
+lib/activemq/webapps/hawtio/app/camel/img/correlationIdentifier24.png
+lib/activemq/webapps/hawtio/app/camel/img/datatypeChannel24.png
+lib/activemq/webapps/hawtio/app/camel/img/deadLetterChannel24.png
+lib/activemq/webapps/hawtio/app/camel/img/detour24.png
+lib/activemq/webapps/hawtio/app/camel/img/distributionAggregate24.png
+lib/activemq/webapps/hawtio/app/camel/img/documentMessage24.png
+lib/activemq/webapps/hawtio/app/camel/img/durableSubscription24.png
+lib/activemq/webapps/hawtio/app/camel/img/dynamicRouter24.png
+lib/activemq/webapps/hawtio/app/camel/img/edit_camel_route.png
+lib/activemq/webapps/hawtio/app/camel/img/encapsulatedSynchronous24.png
+lib/activemq/webapps/hawtio/app/camel/img/endoints.png
+lib/activemq/webapps/hawtio/app/camel/img/endpoint24.png
+lib/activemq/webapps/hawtio/app/camel/img/endpointDrools24.png
+lib/activemq/webapps/hawtio/app/camel/img/endpointFile24.png
+lib/activemq/webapps/hawtio/app/camel/img/endpointFolder24.png
+lib/activemq/webapps/hawtio/app/camel/img/endpointQueue24.png
+lib/activemq/webapps/hawtio/app/camel/img/endpointRepository24.png
+lib/activemq/webapps/hawtio/app/camel/img/endpointTimer24.png
+lib/activemq/webapps/hawtio/app/camel/img/endpoint_folder.png
+lib/activemq/webapps/hawtio/app/camel/img/endpoint_node.png
+lib/activemq/webapps/hawtio/app/camel/img/enrich24.png
+lib/activemq/webapps/hawtio/app/camel/img/envelopeWrapper24.png
+lib/activemq/webapps/hawtio/app/camel/img/eventDrivenConsumer24.png
+lib/activemq/webapps/hawtio/app/camel/img/eventMessage24.png
+lib/activemq/webapps/hawtio/app/camel/img/fileTransfer24.png
+lib/activemq/webapps/hawtio/app/camel/img/filter24.png
+lib/activemq/webapps/hawtio/app/camel/img/flow24.png
+lib/activemq/webapps/hawtio/app/camel/img/generic24.png
+lib/activemq/webapps/hawtio/app/camel/img/guaranteedMessaging24.png
+lib/activemq/webapps/hawtio/app/camel/img/idempotentConsumer24.png
+lib/activemq/webapps/hawtio/app/camel/img/invalidMessageChannel24.png
+lib/activemq/webapps/hawtio/app/camel/img/loadBalance24.png
+lib/activemq/webapps/hawtio/app/camel/img/log24.png
+lib/activemq/webapps/hawtio/app/camel/img/marshal24.png
+lib/activemq/webapps/hawtio/app/camel/img/message24.png
+lib/activemq/webapps/hawtio/app/camel/img/messageBroker24.png
+lib/activemq/webapps/hawtio/app/camel/img/messageBus24.png
+lib/activemq/webapps/hawtio/app/camel/img/messageDispatcher24.png
+lib/activemq/webapps/hawtio/app/camel/img/messageExpiration24.png
+lib/activemq/webapps/hawtio/app/camel/img/messageSelector24.png
+lib/activemq/webapps/hawtio/app/camel/img/messageSequence24.png
+lib/activemq/webapps/hawtio/app/camel/img/messageStore24.png
+lib/activemq/webapps/hawtio/app/camel/img/messaging24.png
+lib/activemq/webapps/hawtio/app/camel/img/messagingAdapter24.png
+lib/activemq/webapps/hawtio/app/camel/img/messagingBridge24.png
+lib/activemq/webapps/hawtio/app/camel/img/messagingGateway24.png
+lib/activemq/webapps/hawtio/app/camel/img/multicast24.png
+lib/activemq/webapps/hawtio/app/camel/img/node24.png
+lib/activemq/webapps/hawtio/app/camel/img/normalizer24.png
+lib/activemq/webapps/hawtio/app/camel/img/pipeline24.png
+lib/activemq/webapps/hawtio/app/camel/img/pointToPoint24.png
+lib/activemq/webapps/hawtio/app/camel/img/pollEnrich24.png
+lib/activemq/webapps/hawtio/app/camel/img/pollingConsumer24.png
+lib/activemq/webapps/hawtio/app/camel/img/process24.png
+lib/activemq/webapps/hawtio/app/camel/img/processManager24.png
+lib/activemq/webapps/hawtio/app/camel/img/processor24.png
+lib/activemq/webapps/hawtio/app/camel/img/recipientList24.png
+lib/activemq/webapps/hawtio/app/camel/img/requestReply24.png
+lib/activemq/webapps/hawtio/app/camel/img/resequence24.png
+lib/activemq/webapps/hawtio/app/camel/img/returnAddress24.png
+lib/activemq/webapps/hawtio/app/camel/img/route24.png
+lib/activemq/webapps/hawtio/app/camel/img/routingSlip24.png
+lib/activemq/webapps/hawtio/app/camel/img/setBody24.png
+lib/activemq/webapps/hawtio/app/camel/img/sharedDatabase24.png
+lib/activemq/webapps/hawtio/app/camel/img/smartProxy24.png
+lib/activemq/webapps/hawtio/app/camel/img/split24.png
+lib/activemq/webapps/hawtio/app/camel/img/storeInLibrary24.png
+lib/activemq/webapps/hawtio/app/camel/img/testMessage24.png
+lib/activemq/webapps/hawtio/app/camel/img/transactionalClient24.png
+lib/activemq/webapps/hawtio/app/camel/img/transform24.png
+lib/activemq/webapps/hawtio/app/camel/img/unmarshal24.png
+lib/activemq/webapps/hawtio/app/camel/img/wireTap24.png
+lib/activemq/webapps/hawtio/app/camel/img/debug/breakpoint-suspended.gif
+lib/activemq/webapps/hawtio/app/camel/img/debug/breakpoint.gif
+lib/activemq/webapps/hawtio/app/camel/img/debug/resume.gif
+lib/activemq/webapps/hawtio/app/camel/img/debug/step.gif
+lib/activemq/webapps/hawtio/app/camel/img/debug/suspend.gif
+lib/activemq/webapps/hawtio/app/camel/img/endpoints/SAP24.png
+lib/activemq/webapps/hawtio/app/camel/img/endpoints/SAPNetweaver24.jpg
+lib/activemq/webapps/hawtio/app/camel/img/endpoints/facebook24.jpg
+lib/activemq/webapps/hawtio/app/camel/img/endpoints/salesForce24.png
+lib/activemq/webapps/hawtio/app/camel/img/endpoints/twitter24.png
+lib/activemq/webapps/hawtio/app/camel/img/endpoints/weather24.jpg
+lib/activemq/webapps/hawtio/app/camel/js/camelModel.js
+lib/activemq/webapps/hawtio/app/camin/html/camin.html
+lib/activemq/webapps/hawtio/app/camin/html/layoutCamin.html
+lib/activemq/webapps/hawtio/app/core/doc/BUILDING.md
+lib/activemq/webapps/hawtio/app/core/doc/CHANGES.md
+lib/activemq/webapps/hawtio/app/core/doc/CONTRIBUTING.md
+lib/activemq/webapps/hawtio/app/core/doc/DEVELOPERS.md
+lib/activemq/webapps/hawtio/app/core/doc/FAQ.md
+lib/activemq/webapps/hawtio/app/core/doc/README.md
+lib/activemq/webapps/hawtio/app/core/doc/developer.md
+lib/activemq/webapps/hawtio/app/core/doc/overview.md
+lib/activemq/webapps/hawtio/app/core/doc/img/help-subtopic-nav.png
+lib/activemq/webapps/hawtio/app/core/doc/img/help-topic-nav.png
+lib/activemq/webapps/hawtio/app/core/doc/img/main-nav.png
+lib/activemq/webapps/hawtio/app/core/html/debug.html
+lib/activemq/webapps/hawtio/app/core/html/help.html
+lib/activemq/webapps/hawtio/app/core/html/layoutFull.html
+lib/activemq/webapps/hawtio/app/core/html/layoutTree.html
+lib/activemq/webapps/hawtio/app/core/html/login.html
+lib/activemq/webapps/hawtio/app/core/html/preferences.html
+lib/activemq/webapps/hawtio/app/core/js/hawtio-plugin-loader.js
+lib/activemq/webapps/hawtio/app/core/js/mvGraphs.js
+lib/activemq/webapps/hawtio/app/dashboard/doc/help.md
+lib/activemq/webapps/hawtio/app/dashboard/html/addToDashboard.html
+lib/activemq/webapps/hawtio/app/dashboard/html/dashboard.html
+lib/activemq/webapps/hawtio/app/dashboard/html/editDashboards.html
+lib/activemq/webapps/hawtio/app/dashboard/html/import.html
+lib/activemq/webapps/hawtio/app/dashboard/html/layoutDashboard.html
+lib/activemq/webapps/hawtio/app/dashboard/html/share.html
+lib/activemq/webapps/hawtio/app/datatable/doc/developer.md
+lib/activemq/webapps/hawtio/app/dozer/doc/help.md
+lib/activemq/webapps/hawtio/app/dozer/img/attribute.gif
+lib/activemq/webapps/hawtio/app/dozer/img/byref.gif
+lib/activemq/webapps/hawtio/app/dozer/img/cc.gif
+lib/activemq/webapps/hawtio/app/dozer/img/class.gif
+lib/activemq/webapps/hawtio/app/dozer/img/dozer.gif
+lib/activemq/webapps/hawtio/app/dozer/img/exclude.gif
+lib/activemq/webapps/hawtio/app/dozer/img/interface.gif
+lib/activemq/webapps/hawtio/app/dozer/img/oneway.gif
+lib/activemq/webapps/hawtio/app/elasticsearch/doc/help.md
+lib/activemq/webapps/hawtio/app/elasticsearch/html/es.html
+lib/activemq/webapps/hawtio/app/elasticsearch/js/data.json
+lib/activemq/webapps/hawtio/app/fabric/doc/developer.md
+lib/activemq/webapps/hawtio/app/fabric/doc/help.md
+lib/activemq/webapps/hawtio/app/fabric/html/activeProfileList.html
+lib/activemq/webapps/hawtio/app/fabric/html/activeProfiles.html
+lib/activemq/webapps/hawtio/app/fabric/html/assignProfiles.html
+lib/activemq/webapps/hawtio/app/fabric/html/brokers.html
+lib/activemq/webapps/hawtio/app/fabric/html/brokersTree.html
+lib/activemq/webapps/hawtio/app/fabric/html/clusters.html
+lib/activemq/webapps/hawtio/app/fabric/html/connectToContainerDialog.html
+lib/activemq/webapps/hawtio/app/fabric/html/container.html
+lib/activemq/webapps/hawtio/app/fabric/html/containerList.html
+lib/activemq/webapps/hawtio/app/fabric/html/containers.html
+lib/activemq/webapps/hawtio/app/fabric/html/createBroker.html
+lib/activemq/webapps/hawtio/app/fabric/html/createContainer.html
+lib/activemq/webapps/hawtio/app/fabric/html/createFabric.html
+lib/activemq/webapps/hawtio/app/fabric/html/editFeatures.html
+lib/activemq/webapps/hawtio/app/fabric/html/fabricView.html
+lib/activemq/webapps/hawtio/app/fabric/html/layoutFabric.html
+lib/activemq/webapps/hawtio/app/fabric/html/map.html
+lib/activemq/webapps/hawtio/app/fabric/html/migrateVersions.html
+lib/activemq/webapps/hawtio/app/fabric/html/patching.html
+lib/activemq/webapps/hawtio/app/fabric/html/pid.html
+lib/activemq/webapps/hawtio/app/fabric/html/profile.html
+lib/activemq/webapps/hawtio/app/fabric/html/profileDetails.html
+lib/activemq/webapps/hawtio/app/fabric/html/profileDetailsDirective.html
+lib/activemq/webapps/hawtio/app/fabric/html/profileSelector.html
+lib/activemq/webapps/hawtio/app/fabric/html/profiles.html
+lib/activemq/webapps/hawtio/app/fabric/html/test.html
+lib/activemq/webapps/hawtio/app/fabric/html/versionSelector.html
+lib/activemq/webapps/hawtio/app/fabric/img/camel.png
+lib/activemq/webapps/hawtio/app/fabric/img/fabric.png
+lib/activemq/webapps/hawtio/app/fabric/img/hawtio.png
+lib/activemq/webapps/hawtio/app/fabric/img/message_broker.png
+lib/activemq/webapps/hawtio/app/forcegraph/README.md
+lib/activemq/webapps/hawtio/app/forcegraph/doc/README.md
+lib/activemq/webapps/hawtio/app/forcegraph/img/dependencies.png
+lib/activemq/webapps/hawtio/app/forms/doc/developer.md
+lib/activemq/webapps/hawtio/app/forms/html/test.html
+lib/activemq/webapps/hawtio/app/forms/html/testTable.html
+lib/activemq/webapps/hawtio/app/forms/js/jsonschema.js
+lib/activemq/webapps/hawtio/app/health/doc/help.md
+lib/activemq/webapps/hawtio/app/health/html/health.html
+lib/activemq/webapps/hawtio/app/infinispan/doc/help.md
+lib/activemq/webapps/hawtio/app/infinispan/html/layoutCacheTree.html
+lib/activemq/webapps/hawtio/app/infinispan/html/query.html
+lib/activemq/webapps/hawtio/app/insight/html/all.html
+lib/activemq/webapps/hawtio/app/insight/html/elasticsearch.html
+lib/activemq/webapps/hawtio/app/insight/html/jvms.html
+lib/activemq/webapps/hawtio/app/insight/html/layoutInsight.html
+lib/activemq/webapps/hawtio/app/jboss/doc/help.md
+lib/activemq/webapps/hawtio/app/jboss/html/applications.html
+lib/activemq/webapps/hawtio/app/jboss/html/connectors.html
+lib/activemq/webapps/hawtio/app/jboss/html/dmr.html
+lib/activemq/webapps/hawtio/app/jboss/html/jbossTabs.html
+lib/activemq/webapps/hawtio/app/jboss/html/layoutJBossTabs.html
+lib/activemq/webapps/hawtio/app/jboss/html/layoutJBossTree.html
+lib/activemq/webapps/hawtio/app/jboss/html/server.html
+lib/activemq/webapps/hawtio/app/jclouds/doc/help.md
+lib/activemq/webapps/hawtio/app/jclouds/html/api-details.html
+lib/activemq/webapps/hawtio/app/jclouds/html/api-list.html
+lib/activemq/webapps/hawtio/app/jclouds/html/api.html
+lib/activemq/webapps/hawtio/app/jclouds/html/layoutJclouds.html
+lib/activemq/webapps/hawtio/app/jclouds/html/provider-details.html
+lib/activemq/webapps/hawtio/app/jclouds/html/provider-list.html
+lib/activemq/webapps/hawtio/app/jclouds/html/provider.html
+lib/activemq/webapps/hawtio/app/jclouds/html/blobstore/blobstore-navigation.html
+lib/activemq/webapps/hawtio/app/jclouds/html/blobstore/blobstore-service-list.html
+lib/activemq/webapps/hawtio/app/jclouds/html/blobstore/blobstore-service.html
+lib/activemq/webapps/hawtio/app/jclouds/html/blobstore/container-details.html
+lib/activemq/webapps/hawtio/app/jclouds/html/blobstore/container-list.html
+lib/activemq/webapps/hawtio/app/jclouds/html/blobstore/container.html
+lib/activemq/webapps/hawtio/app/jclouds/html/blobstore/location-details.html
+lib/activemq/webapps/hawtio/app/jclouds/html/blobstore/location-list.html
+lib/activemq/webapps/hawtio/app/jclouds/html/blobstore/location.html
+lib/activemq/webapps/hawtio/app/jclouds/html/compute/compute-navigation.html
+lib/activemq/webapps/hawtio/app/jclouds/html/compute/compute-service-list.html
+lib/activemq/webapps/hawtio/app/jclouds/html/compute/compute-service.html
+lib/activemq/webapps/hawtio/app/jclouds/html/compute/hardware-details.html
+lib/activemq/webapps/hawtio/app/jclouds/html/compute/hardware-list.html
+lib/activemq/webapps/hawtio/app/jclouds/html/compute/hardware.html
+lib/activemq/webapps/hawtio/app/jclouds/html/compute/image-details.html
+lib/activemq/webapps/hawtio/app/jclouds/html/compute/image-list.html
+lib/activemq/webapps/hawtio/app/jclouds/html/compute/image.html
+lib/activemq/webapps/hawtio/app/jclouds/html/compute/location-details.html
+lib/activemq/webapps/hawtio/app/jclouds/html/compute/location-list.html
+lib/activemq/webapps/hawtio/app/jclouds/html/compute/location.html
+lib/activemq/webapps/hawtio/app/jclouds/html/compute/node-details.html
+lib/activemq/webapps/hawtio/app/jclouds/html/compute/node-list.html
+lib/activemq/webapps/hawtio/app/jclouds/html/compute/node.html
+lib/activemq/webapps/hawtio/app/jetty/doc/help.md
+lib/activemq/webapps/hawtio/app/jetty/html/applications.html
+lib/activemq/webapps/hawtio/app/jetty/html/connectors.html
+lib/activemq/webapps/hawtio/app/jetty/html/jettyTabs.html
+lib/activemq/webapps/hawtio/app/jetty/html/layoutJettyTabs.html
+lib/activemq/webapps/hawtio/app/jetty/html/layoutJettyTree.html
+lib/activemq/webapps/hawtio/app/jetty/html/server.html
+lib/activemq/webapps/hawtio/app/jmx/doc/help.md
+lib/activemq/webapps/hawtio/app/jmx/doc/img/attributes-table.png
+lib/activemq/webapps/hawtio/app/jmx/doc/img/chart.png
+lib/activemq/webapps/hawtio/app/jmx/doc/img/jmx-toolbar.png
+lib/activemq/webapps/hawtio/app/jmx/doc/img/jmx-tree-domains.png
+lib/activemq/webapps/hawtio/app/jmx/doc/img/jmx-tree-expanded.png
+lib/activemq/webapps/hawtio/app/jmx/doc/img/operation-executed.png
+lib/activemq/webapps/hawtio/app/jmx/doc/img/operation-invoke.png
+lib/activemq/webapps/hawtio/app/jmx/doc/img/operations-list.png
+lib/activemq/webapps/hawtio/app/jmx/html/areaChart.html
+lib/activemq/webapps/hawtio/app/jmx/html/attributeToolBar.html
+lib/activemq/webapps/hawtio/app/jmx/html/attributes.html
+lib/activemq/webapps/hawtio/app/jmx/html/attributesOld.html
+lib/activemq/webapps/hawtio/app/jmx/html/chartEdit.html
+lib/activemq/webapps/hawtio/app/jmx/html/charts.html
+lib/activemq/webapps/hawtio/app/jmx/html/donutChart.html
+lib/activemq/webapps/hawtio/app/jmx/html/operations.html
+lib/activemq/webapps/hawtio/app/jmx/html/subLevelTabs.html
+lib/activemq/webapps/hawtio/app/jvm/doc/help.md
+lib/activemq/webapps/hawtio/app/jvm/html/connect.html
+lib/activemq/webapps/hawtio/app/jvm/html/local.html
+lib/activemq/webapps/hawtio/app/karaf/html/feature-details.html
+lib/activemq/webapps/hawtio/app/karaf/html/feature.html
+lib/activemq/webapps/hawtio/app/karaf/html/features.html
+lib/activemq/webapps/hawtio/app/karaf/html/scr-component-details.html
+lib/activemq/webapps/hawtio/app/karaf/html/scr-component.html
+lib/activemq/webapps/hawtio/app/karaf/html/scr-components.html
+lib/activemq/webapps/hawtio/app/karaf/html/server.html
+lib/activemq/webapps/hawtio/app/log/doc/help.md
+lib/activemq/webapps/hawtio/app/log/html/logs.html
+lib/activemq/webapps/hawtio/app/maven/doc/developer.md
+lib/activemq/webapps/hawtio/app/maven/doc/help.md
+lib/activemq/webapps/hawtio/app/maven/html/advancedSearch.html
+lib/activemq/webapps/hawtio/app/maven/html/artifact.html
+lib/activemq/webapps/hawtio/app/maven/html/dependencies.html
+lib/activemq/webapps/hawtio/app/maven/html/layoutMaven.html
+lib/activemq/webapps/hawtio/app/maven/html/pom.html
+lib/activemq/webapps/hawtio/app/maven/html/search.html
+lib/activemq/webapps/hawtio/app/maven/html/searchResults.html
+lib/activemq/webapps/hawtio/app/maven/html/test.html
+lib/activemq/webapps/hawtio/app/maven/html/versions.html
+lib/activemq/webapps/hawtio/app/maven/html/view.html
+lib/activemq/webapps/hawtio/app/openejb/doc/help.md
+lib/activemq/webapps/hawtio/app/openejb/html/layoutOpenEJBTree.html
+lib/activemq/webapps/hawtio/app/osgi/html/bundle-details.html
+lib/activemq/webapps/hawtio/app/osgi/html/bundle-list.html
+lib/activemq/webapps/hawtio/app/osgi/html/bundle.html
+lib/activemq/webapps/hawtio/app/osgi/html/bundles.html
+lib/activemq/webapps/hawtio/app/osgi/html/configurations.html
+lib/activemq/webapps/hawtio/app/osgi/html/framework.html
+lib/activemq/webapps/hawtio/app/osgi/html/layoutOsgi.html
+lib/activemq/webapps/hawtio/app/osgi/html/package-details.html
+lib/activemq/webapps/hawtio/app/osgi/html/package.html
+lib/activemq/webapps/hawtio/app/osgi/html/packages.html
+lib/activemq/webapps/hawtio/app/osgi/html/pid-details.html
+lib/activemq/webapps/hawtio/app/osgi/html/pid.html
+lib/activemq/webapps/hawtio/app/osgi/html/services.html
+lib/activemq/webapps/hawtio/app/osgi/html/svc-dependencies.html
+lib/activemq/webapps/hawtio/app/osgi/img/bundle.png
+lib/activemq/webapps/hawtio/app/osgi/img/service.png
+lib/activemq/webapps/hawtio/app/perspective/doc/developer.md
+lib/activemq/webapps/hawtio/app/perspective/html/defaultPage.html
+lib/activemq/webapps/hawtio/app/source/html/index.html
+lib/activemq/webapps/hawtio/app/source/html/javadoc.html
+lib/activemq/webapps/hawtio/app/source/html/source.html
+lib/activemq/webapps/hawtio/app/tomcat/doc/help.md
+lib/activemq/webapps/hawtio/app/tomcat/html/applications.html
+lib/activemq/webapps/hawtio/app/tomcat/html/connectors.html
+lib/activemq/webapps/hawtio/app/tomcat/html/layoutTomcatTabs.html
+lib/activemq/webapps/hawtio/app/tomcat/html/layoutTomcatTree.html
+lib/activemq/webapps/hawtio/app/tomcat/html/server.html
+lib/activemq/webapps/hawtio/app/tomcat/html/sessions.html
+lib/activemq/webapps/hawtio/app/tomcat/html/tomcatTabs.html
+lib/activemq/webapps/hawtio/app/tree/doc/developer.md
+lib/activemq/webapps/hawtio/app/ui/doc/developer.md
+lib/activemq/webapps/hawtio/app/ui/html/colorPicker.html
+lib/activemq/webapps/hawtio/app/ui/html/confirmDialog.html
+lib/activemq/webapps/hawtio/app/ui/html/editableProperty.html
+lib/activemq/webapps/hawtio/app/ui/html/editor.html
+lib/activemq/webapps/hawtio/app/ui/html/fileUpload.html
+lib/activemq/webapps/hawtio/app/ui/html/slideout.html
+lib/activemq/webapps/hawtio/app/ui/html/tablePager.html
+lib/activemq/webapps/hawtio/app/ui/html/test.html
+lib/activemq/webapps/hawtio/app/wiki/doc/help.md
+lib/activemq/webapps/hawtio/app/wiki/exemplar/ReadMe.md
+lib/activemq/webapps/hawtio/app/wiki/exemplar/camel-blueprint.xml
+lib/activemq/webapps/hawtio/app/wiki/exemplar/camel-spring.xml
+lib/activemq/webapps/hawtio/app/wiki/exemplar/camel.xml
+lib/activemq/webapps/hawtio/app/wiki/exemplar/document.html
+lib/activemq/webapps/hawtio/app/wiki/exemplar/document.xml
+lib/activemq/webapps/hawtio/app/wiki/exemplar/dozerMapping.xml
+lib/activemq/webapps/hawtio/app/wiki/exemplar/properties-file.properties
+lib/activemq/webapps/hawtio/app/wiki/html/camelCanvas.html
+lib/activemq/webapps/hawtio/app/wiki/html/camelDiagram.html
+lib/activemq/webapps/hawtio/app/wiki/html/camelNavBar.html
+lib/activemq/webapps/hawtio/app/wiki/html/camelProperties.html
+lib/activemq/webapps/hawtio/app/wiki/html/camelPropertiesEdit.html
+lib/activemq/webapps/hawtio/app/wiki/html/camelSubLevelTabs.html
+lib/activemq/webapps/hawtio/app/wiki/html/camelView.html
+lib/activemq/webapps/hawtio/app/wiki/html/createPage.html
+lib/activemq/webapps/hawtio/app/wiki/html/dozerMappings.html
+lib/activemq/webapps/hawtio/app/wiki/html/dozerPropertiesEdit.html
+lib/activemq/webapps/hawtio/app/wiki/html/editPage.html
+lib/activemq/webapps/hawtio/app/wiki/html/filelist.html
+lib/activemq/webapps/hawtio/app/wiki/html/formEdit.html
+lib/activemq/webapps/hawtio/app/wiki/html/formTable.html
+lib/activemq/webapps/hawtio/app/wiki/html/formTableDatatable.html
+lib/activemq/webapps/hawtio/app/wiki/html/formView.html
+lib/activemq/webapps/hawtio/app/wiki/html/history.html
+lib/activemq/webapps/hawtio/app/wiki/html/layoutCamel.html
+lib/activemq/webapps/hawtio/app/wiki/html/sourceEdit.html
+lib/activemq/webapps/hawtio/app/wiki/html/sourceView.html
+lib/activemq/webapps/hawtio/app/wiki/html/viewPage.html
+lib/activemq/webapps/hawtio/app/wiki/img/folder.gif
+lib/activemq/webapps/hawtio/css/ColReorder.css
+lib/activemq/webapps/hawtio/css/angular-ui.css
+lib/activemq/webapps/hawtio/css/angular-ui.min.css
+lib/activemq/webapps/hawtio/css/bootstrap-responsive.css
+lib/activemq/webapps/hawtio/css/bootstrap.css
+lib/activemq/webapps/hawtio/css/dangle.css
+lib/activemq/webapps/hawtio/css/datatable.bootstrap.css
+lib/activemq/webapps/hawtio/css/dynatree-icons.css
+lib/activemq/webapps/hawtio/css/font-awesome.css
+lib/activemq/webapps/hawtio/css/jquery.gridster.css
+lib/activemq/webapps/hawtio/css/ng-grid.css
+lib/activemq/webapps/hawtio/css/site-base.css
+lib/activemq/webapps/hawtio/css/site-branding.css
+lib/activemq/webapps/hawtio/css/site-narrow.css
+lib/activemq/webapps/hawtio/css/site-wide.css
+lib/activemq/webapps/hawtio/css/toastr.css
+lib/activemq/webapps/hawtio/css/toastr.min.css
+lib/activemq/webapps/hawtio/css/ui.dynatree.css
+lib/activemq/webapps/hawtio/css/codemirror/codemirror.css
+lib/activemq/webapps/hawtio/css/codemirror/themes/ambiance.css
+lib/activemq/webapps/hawtio/css/codemirror/themes/blackboard.css
+lib/activemq/webapps/hawtio/css/codemirror/themes/cobalt.css
+lib/activemq/webapps/hawtio/css/codemirror/themes/eclipse.css
+lib/activemq/webapps/hawtio/css/codemirror/themes/elegant.css
+lib/activemq/webapps/hawtio/css/codemirror/themes/erlang-dark.css
+lib/activemq/webapps/hawtio/css/codemirror/themes/lesser-dark.css
+lib/activemq/webapps/hawtio/css/codemirror/themes/monokai.css
+lib/activemq/webapps/hawtio/css/codemirror/themes/neat.css
+lib/activemq/webapps/hawtio/css/codemirror/themes/night.css
+lib/activemq/webapps/hawtio/css/codemirror/themes/rubyblue.css
+lib/activemq/webapps/hawtio/css/codemirror/themes/solarized.css
+lib/activemq/webapps/hawtio/css/codemirror/themes/twilight.css
+lib/activemq/webapps/hawtio/css/codemirror/themes/vibrant-ink.css
+lib/activemq/webapps/hawtio/css/codemirror/themes/xq-dark.css
+lib/activemq/webapps/hawtio/font/FontAwesome.otf
+lib/activemq/webapps/hawtio/font/fontawesome-webfont.eot
+lib/activemq/webapps/hawtio/font/fontawesome-webfont.svg
+lib/activemq/webapps/hawtio/font/fontawesome-webfont.ttf
+lib/activemq/webapps/hawtio/font/fontawesome-webfont.woff
+lib/activemq/webapps/hawtio/img/ajax-loader.gif
+lib/activemq/webapps/hawtio/img/fire.jpg
+lib/activemq/webapps/hawtio/img/logo-16px.png
+lib/activemq/webapps/hawtio/img/logo.png
+lib/activemq/webapps/hawtio/img/spacer.gif
+lib/activemq/webapps/hawtio/img/branding/RHJB_Fuse_UXlogotype_0513LL_white.svg
+lib/activemq/webapps/hawtio/img/branding/RH_JBoss_AMQ_logotype_interface_LL_white.svg
+lib/activemq/webapps/hawtio/img/branding/checkbox-background-checked.png
+lib/activemq/webapps/hawtio/img/branding/checkbox-background-hover.png
+lib/activemq/webapps/hawtio/img/branding/checkbox-background.png
+lib/activemq/webapps/hawtio/img/branding/input-background.png
+lib/activemq/webapps/hawtio/img/branding/login-screen-background.jpg
+lib/activemq/webapps/hawtio/img/branding/login-screen-logo.png
+lib/activemq/webapps/hawtio/img/datatable/insert.png
+lib/activemq/webapps/hawtio/img/datatable/sort_asc.png
+lib/activemq/webapps/hawtio/img/datatable/sort_asc_disabled.png
+lib/activemq/webapps/hawtio/img/datatable/sort_both.png
+lib/activemq/webapps/hawtio/img/datatable/sort_desc.png
+lib/activemq/webapps/hawtio/img/datatable/sort_desc_disabled.png
+lib/activemq/webapps/hawtio/img/dots/gray-dot.png
+lib/activemq/webapps/hawtio/img/dots/green-dot.png
+lib/activemq/webapps/hawtio/img/dots/pending.gif
+lib/activemq/webapps/hawtio/img/dots/red-dot.png
+lib/activemq/webapps/hawtio/img/dots/spacer.gif
+lib/activemq/webapps/hawtio/img/dots/yellow-dot.png
+lib/activemq/webapps/hawtio/img/dynatree/icons.gif
+lib/activemq/webapps/hawtio/img/dynatree/loading.gif
+lib/activemq/webapps/hawtio/lib/ColReorder.min.js
+lib/activemq/webapps/hawtio/lib/KeyTable.min.js
+lib/activemq/webapps/hawtio/lib/angular-bootstrap-prettify.min.js
+lib/activemq/webapps/hawtio/lib/angular-bootstrap.min.js
+lib/activemq/webapps/hawtio/lib/angular-cookies.min.js
+lib/activemq/webapps/hawtio/lib/angular-dragdrop.min.js
+lib/activemq/webapps/hawtio/lib/angular-loader.min.js
+lib/activemq/webapps/hawtio/lib/angular-resource.min.js
+lib/activemq/webapps/hawtio/lib/angular-sanitize.min.js
+lib/activemq/webapps/hawtio/lib/angular-ui.js
+lib/activemq/webapps/hawtio/lib/angular.js
+lib/activemq/webapps/hawtio/lib/angular.min.js
+lib/activemq/webapps/hawtio/lib/bootstrap.js
+lib/activemq/webapps/hawtio/lib/bootstrap.min.js
+lib/activemq/webapps/hawtio/lib/cubism.v1.min.js
+lib/activemq/webapps/hawtio/lib/d3.min.js
+lib/activemq/webapps/hawtio/lib/d3.v3.min.js
+lib/activemq/webapps/hawtio/lib/dagre.min.js
+lib/activemq/webapps/hawtio/lib/dangle.min.js
+lib/activemq/webapps/hawtio/lib/dmr.js.nocache.js
+lib/activemq/webapps/hawtio/lib/elastic-angular-client.min.js
+lib/activemq/webapps/hawtio/lib/elastic.min.js
+lib/activemq/webapps/hawtio/lib/html5shiv.js
+lib/activemq/webapps/hawtio/lib/javascript-cubism.js
+lib/activemq/webapps/hawtio/lib/jolokia-cubism-min.js
+lib/activemq/webapps/hawtio/lib/jolokia-min.js
+lib/activemq/webapps/hawtio/lib/jolokia-simple-min.js
+lib/activemq/webapps/hawtio/lib/jquery-1.8.2.min.js
+lib/activemq/webapps/hawtio/lib/jquery-ui.custom.min.js
+lib/activemq/webapps/hawtio/lib/jquery.backstretch.min.js
+lib/activemq/webapps/hawtio/lib/jquery.cookie.js
+lib/activemq/webapps/hawtio/lib/jquery.dataTables.min.js
+lib/activemq/webapps/hawtio/lib/jquery.datatable-bootstrap.js
+lib/activemq/webapps/hawtio/lib/jquery.dynatree.min.js
+lib/activemq/webapps/hawtio/lib/jquery.form.min.js
+lib/activemq/webapps/hawtio/lib/jquery.gridster.min.js
+lib/activemq/webapps/hawtio/lib/jquery.gridster.with-extras.min.js
+lib/activemq/webapps/hawtio/lib/jquery.jsPlumb-1.4.1-all-min.js
+lib/activemq/webapps/hawtio/lib/jquery.xml2json.js
+lib/activemq/webapps/hawtio/lib/json2-min.js
+lib/activemq/webapps/hawtio/lib/jsuri-1.1.1.min.js
+lib/activemq/webapps/hawtio/lib/less-1.3.3.min.js
+lib/activemq/webapps/hawtio/lib/marked.js
+lib/activemq/webapps/hawtio/lib/ng-grid-2.0.7.min.js
+lib/activemq/webapps/hawtio/lib/prefixfree.min.js
+lib/activemq/webapps/hawtio/lib/sugar-1.3.6-custom.min.js
+lib/activemq/webapps/hawtio/lib/toastr.min.js
+lib/activemq/webapps/hawtio/lib/ui-bootstrap-0.3.0.min.js
+lib/activemq/webapps/hawtio/lib/ui-bootstrap-0.4.0.min.js
+lib/activemq/webapps/hawtio/lib/ui-bootstrap-tpls-0.3.0.min.js
+lib/activemq/webapps/hawtio/lib/ui-bootstrap-tpls-0.4.0.min.js
+lib/activemq/webapps/hawtio/lib/codemirror/codemirror.css
+lib/activemq/webapps/hawtio/lib/codemirror/codemirror.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/dialog/dialog.css
+lib/activemq/webapps/hawtio/lib/codemirror/addon/dialog/dialog.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/display/placeholder.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/edit/closebrackets.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/edit/closetag.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/edit/continuecomment.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/edit/continuelist.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/edit/matchbrackets.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/fold/brace-fold.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/fold/collapserange.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/fold/foldcode.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/fold/indent-fold.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/fold/xml-fold.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/format/formatting.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/hint/html-hint.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/hint/javascript-hint.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/hint/pig-hint.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/hint/python-hint.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/hint/show-hint.css
+lib/activemq/webapps/hawtio/lib/codemirror/addon/hint/show-hint.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/hint/simple-hint.css
+lib/activemq/webapps/hawtio/lib/codemirror/addon/hint/simple-hint.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/hint/xml-hint.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/lint/javascript-lint.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/lint/json-lint.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/lint/lint.css
+lib/activemq/webapps/hawtio/lib/codemirror/addon/lint/lint.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/mode/loadmode.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/mode/multiplex.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/mode/overlay.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/runmode/colorize.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/runmode/runmode-standalone.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/runmode/runmode.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/runmode/runmode.node.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/search/match-highlighter.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/search/search.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/search/searchcursor.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/selection/active-line.js
+lib/activemq/webapps/hawtio/lib/codemirror/addon/selection/mark-selection.js
+lib/activemq/webapps/hawtio/lib/codemirror/keymap/emacs.js
+lib/activemq/webapps/hawtio/lib/codemirror/keymap/vim.js
+lib/activemq/webapps/hawtio/lib/codemirror/mode/meta.js
+lib/activemq/webapps/hawtio/lib/codemirror/mode/clike/clike.js
+lib/activemq/webapps/hawtio/lib/codemirror/mode/clike/index.html
+lib/activemq/webapps/hawtio/lib/codemirror/mode/clike/scala.html
+lib/activemq/webapps/hawtio/lib/codemirror/mode/coffeescript/LICENSE
+lib/activemq/webapps/hawtio/lib/codemirror/mode/coffeescript/coffeescript.js
+lib/activemq/webapps/hawtio/lib/codemirror/mode/coffeescript/index.html
+lib/activemq/webapps/hawtio/lib/codemirror/mode/css/css.js
+lib/activemq/webapps/hawtio/lib/codemirror/mode/css/index.html
+lib/activemq/webapps/hawtio/lib/codemirror/mode/css/scss.html
+lib/activemq/webapps/hawtio/lib/codemirror/mode/css/scss_test.js
+lib/activemq/webapps/hawtio/lib/codemirror/mode/css/test.js
+lib/activemq/webapps/hawtio/lib/codemirror/mode/diff/diff.js
+lib/activemq/webapps/hawtio/lib/codemirror/mode/diff/index.html
+lib/activemq/webapps/hawtio/lib/codemirror/mode/htmlembedded/htmlembedded.js
+lib/activemq/webapps/hawtio/lib/codemirror/mode/htmlembedded/index.html
+lib/activemq/webapps/hawtio/lib/codemirror/mode/htmlmixed/htmlmixed.js
+lib/activemq/webapps/hawtio/lib/codemirror/mode/htmlmixed/index.html
+lib/activemq/webapps/hawtio/lib/codemirror/mode/javascript/index.html
+lib/activemq/webapps/hawtio/lib/codemirror/mode/javascript/javascript.js
+lib/activemq/webapps/hawtio/lib/codemirror/mode/javascript/typescript.html
+lib/activemq/webapps/hawtio/lib/codemirror/mode/markdown/index.html
+lib/activemq/webapps/hawtio/lib/codemirror/mode/markdown/markdown.js
+lib/activemq/webapps/hawtio/lib/codemirror/mode/markdown/test.js
+lib/activemq/webapps/hawtio/lib/codemirror/mode/properties/index.html
+lib/activemq/webapps/hawtio/lib/codemirror/mode/properties/properties.js
+lib/activemq/webapps/hawtio/lib/codemirror/mode/sass/index.html
+lib/activemq/webapps/hawtio/lib/codemirror/mode/sass/sass.js
+lib/activemq/webapps/hawtio/lib/codemirror/mode/shell/index.html
+lib/activemq/webapps/hawtio/lib/codemirror/mode/shell/shell.js
+lib/activemq/webapps/hawtio/lib/codemirror/mode/xml/index.html
+lib/activemq/webapps/hawtio/lib/codemirror/mode/xml/xml.js
+lib/activemq/webapps/hawtio/lib/codemirror/mode/yaml/index.html
+lib/activemq/webapps/hawtio/lib/codemirror/mode/yaml/yaml.js
+lib/activemq/webapps/hawtio/lib/codemirror/theme/ambiance-mobile.css
+lib/activemq/webapps/hawtio/lib/codemirror/theme/ambiance.css
+lib/activemq/webapps/hawtio/lib/codemirror/theme/blackboard.css
+lib/activemq/webapps/hawtio/lib/codemirror/theme/cobalt.css
+lib/activemq/webapps/hawtio/lib/codemirror/theme/eclipse.css
+lib/activemq/webapps/hawtio/lib/codemirror/theme/elegant.css
+lib/activemq/webapps/hawtio/lib/codemirror/theme/erlang-dark.css
+lib/activemq/webapps/hawtio/lib/codemirror/theme/lesser-dark.css
+lib/activemq/webapps/hawtio/lib/codemirror/theme/midnight.css
+lib/activemq/webapps/hawtio/lib/codemirror/theme/monokai.css
+lib/activemq/webapps/hawtio/lib/codemirror/theme/neat.css
+lib/activemq/webapps/hawtio/lib/codemirror/theme/night.css
+lib/activemq/webapps/hawtio/lib/codemirror/theme/rubyblue.css
+lib/activemq/webapps/hawtio/lib/codemirror/theme/solarized.css
+lib/activemq/webapps/hawtio/lib/codemirror/theme/twilight.css
+lib/activemq/webapps/hawtio/lib/codemirror/theme/vibrant-ink.css
+lib/activemq/webapps/hawtio/lib/codemirror/theme/xq-dark.css
+lib/activemq/webapps/hawtio/lib/codemirror/theme/xq-light.css
+lib/activemq/webapps/images/activemq-logo.png
+lib/activemq/webapps/images/asf-logo.png
+lib/activemq/webapps/images/big-bullet.png
+lib/activemq/webapps/images/black-footer-bottom.png
+lib/activemq/webapps/images/black-footer-left.png
+lib/activemq/webapps/images/black-footer-right.png
+lib/activemq/webapps/images/bottom-red-bar.png
+lib/activemq/webapps/images/checker-bg.png
+lib/activemq/webapps/images/content-left.png
+lib/activemq/webapps/images/content-right.png
+lib/activemq/webapps/images/feed_atom.png
+lib/activemq/webapps/images/feed_rss.png
+lib/activemq/webapps/images/left-box-bottom.png
+lib/activemq/webapps/images/left-box-right.png
+lib/activemq/webapps/images/left-box-top.png
+lib/activemq/webapps/images/oval-arrow.png
+lib/activemq/webapps/images/right-box-bottom.png
+lib/activemq/webapps/images/right-box-left.png
+lib/activemq/webapps/images/right-box-top.png
+lib/activemq/webapps/images/small-bullet-gray.png
+lib/activemq/webapps/images/small-bullet-red.png
+lib/activemq/webapps/images/spacer.gif
+lib/activemq/webapps/images/top-red-bar.png
+lib/activemq/webapps/images/white-header-left.png
+lib/activemq/webapps/images/white-header-right.png
+lib/activemq/webapps/images/white-header-top.png
+lib/activemq/webapps/styles/prettify.css
+lib/activemq/webapps/styles/sorttable.css
 lib/activemq/webapps/admin/404.html
 lib/activemq/webapps/admin/500.html
 lib/activemq/webapps/admin/META-INF/LICENSE
@@ -277,68 +1040,588 @@ lib/activemq/webapps/fileserver/index.html
 lib/activemq/webapps/index.html
 lib/activemq/webapps/styles/site.css
 lib/activemq/webapps/styles/type-settings.css
-%%EXAMPLESDIR%%/example/build.xml
-%%EXAMPLESDIR%%/example/conf/activemq.xml
-%%EXAMPLESDIR%%/example/conf/log4j.properties
-%%EXAMPLESDIR%%/example/conf/resin-web.xml
-%%EXAMPLESDIR%%/example/conf/web.xml
-%%EXAMPLESDIR%%/example/perfharness/perfharness-activemq.sh
-%%EXAMPLESDIR%%/example/ruby/README.txt
-%%EXAMPLESDIR%%/example/ruby/catstomp.rb
-%%EXAMPLESDIR%%/example/ruby/listener.rb
-%%EXAMPLESDIR%%/example/ruby/publisher.rb
-%%EXAMPLESDIR%%/example/ruby/stompcat.rb
-%%EXAMPLESDIR%%/example/src/CommandLineSupport.java
-%%EXAMPLESDIR%%/example/src/ConsumerTool.java
-%%EXAMPLESDIR%%/example/src/EmbeddedBroker.java
-%%EXAMPLESDIR%%/example/src/Log4jJMSAppenderExample.java
-%%EXAMPLESDIR%%/example/src/ProducerAndConsumerTool.java
-%%EXAMPLESDIR%%/example/src/ProducerTool.java
-%%EXAMPLESDIR%%/example/src/RequesterTool.java
-%%EXAMPLESDIR%%/example/src/StompExample.java
-%%EXAMPLESDIR%%/example/src/TopicListener.java
-%%EXAMPLESDIR%%/example/src/TopicPublisher.java
-%%EXAMPLESDIR%%/example/src/jndi.properties
-%%EXAMPLESDIR%%/example/src/log4j-jms.properties
-%%EXAMPLESDIR%%/example/transactions/README.txt
-%%EXAMPLESDIR%%/example/transactions/build.xml
-%%EXAMPLESDIR%%/example/transactions/src/Retailer.java
-%%EXAMPLESDIR%%/example/transactions/src/Supplier.java
-%%EXAMPLESDIR%%/example/transactions/src/TransactionsDemo.java
-%%EXAMPLESDIR%%/example/transactions/src/Vendor.java
-%%PORTDOCS%%%%DOCSDIR%%/docs/index.html
-%%ETCDIR%%/activemq-command.xml.sample
-%%ETCDIR%%/activemq-demo.xml.sample
-%%ETCDIR%%/activemq-dynamic-network-broker1.xml.sample
-%%ETCDIR%%/activemq-dynamic-network-broker2.xml.sample
-%%ETCDIR%%/activemq-jdbc.xml.sample
-%%ETCDIR%%/activemq-scalability.xml.sample
-%%ETCDIR%%/activemq-security.xml.sample
-%%ETCDIR%%/activemq-specjms.xml.sample
-%%ETCDIR%%/activemq-static-network-broker1.xml.sample
-%%ETCDIR%%/activemq-static-network-broker2.xml.sample
-%%ETCDIR%%/activemq-stomp.xml.sample
-%%ETCDIR%%/activemq-throughput.xml.sample
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE 
+%%PORTDOCS%%%%DOCSDIR%%/NOTICE
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/WebConsole-README.txt
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/user-guide.html
+@owner %%MQUSER%%
+@group %%MQGROUP%%
+@unexec if cmp -s %D/activemq.xml %D/activemq.xml.sample ; then rm -f %D/activemq.xml ; fi
 %%ETCDIR%%/activemq.xml.sample
-%%ETCDIR%%/camel.xml.sample
+@exec if [ ! -f %D/activemq.xml ]; then cp -p %D/%F %B/activemq.xml; fi
+@unexec if cmp -s %D/credentials-enc.properties %D/credentials-enc.properties.sample ; then rm -f %D/credentials-enc.properties ; fi
 %%ETCDIR%%/credentials-enc.properties.sample
+@exec if [ ! -f %D/credentials-enc.properties ]; then cp -p %D/%F %B/credentials-enc.properties; fi
+@unexec if cmp -s %D/credentials.properties %D/credentials.properties.sample ; then rm -f %D/credentials.properties ; fi
 %%ETCDIR%%/credentials.properties.sample
+@exec if [ ! -f %D/credentials.properties ]; then cp -p %D/%F %B/credentials.properties; fi
+@unexec if cmp -s %D/jetty-realm.properties.xml %D/jetty-realm.properties.xml.sample ; then rm -f %D/jetty-realm.properties.xml ; fi
 %%ETCDIR%%/jetty-realm.properties.sample
+@exec if [ ! -f %D/jetty-realm.properties ]; then cp -p %D/%F %B/jetty-realm.properties; fi
+@unexec if cmp -s %D/jetty.xml %D/jetty.xml.sample ; then rm -f %D/jetty.xml ; fi
 %%ETCDIR%%/jetty.xml.sample
+@exec if [ ! -f %D/jetty.xml ]; then cp -p %D/%F %B/jetty.xml; fi
+@unexec if cmp -s %D/jmx.access %D/jmx.access.sample ; then rm -f %D/jmx.access ; fi
 %%ETCDIR%%/jmx.access.sample
+@exec if [ ! -f %D/jmx.access ]; then cp -p %D/%F %B/jmx.access; fi
+@unexec if cmp -s %D/jmx.password %D/jmx.password.sample ; then rm -f %D/jmx.password ; fi
 %%ETCDIR%%/jmx.password.sample
+@exec if [ ! -f %D/jmx.password ]; then cp -p %D/%F %B/jmx.password; fi
+@unexec if cmp -s %D/log4j.properties %D/log4j.properties.sample ; then rm -f %D/log4j.properties ; fi
 %%ETCDIR%%/log4j.properties.sample
+@exec if [ ! -f %D/log4j.properties ]; then cp -p %D/%F %B/log4j.properties; fi
+@unexec if cmp -s %D/logging.properties %D/logging.properties.sample ; then rm -f %D/logging.properties ; fi
 %%ETCDIR%%/logging.properties.sample
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
-@dirrm %%EXAMPLESDIR%%/example/transactions/src
-@dirrm %%EXAMPLESDIR%%/example/transactions
-@dirrm %%EXAMPLESDIR%%/example/src
-@dirrm %%EXAMPLESDIR%%/example/ruby
-@dirrm %%EXAMPLESDIR%%/example/perfharness
-@dirrm %%EXAMPLESDIR%%/example/conf
-@dirrm %%EXAMPLESDIR%%/example
-@dirrm %%EXAMPLESDIR%%
+@exec if [ ! -f %D/logging.properties ]; then cp -p %D/%F %B/logging.properties; fi
+@unexec if cmp -s %D/broker-localhost.cert %D/broker-localhost.cert.sample ; then rm -f %D/broker-localhost.cert ; fi
+%%ETCDIR%%/broker-localhost.cert.sample
+@exec if [ ! -f %D/broker-localhost.cert ]; then cp -p %D/%F %B/broker-localhost.cert; fi
+@unexec if cmp -s %D/broker.ks %D/broker.ks.sample ; then rm -f %D/broker.ks ; fi
+%%ETCDIR%%/broker.ks.sample
+@exec if [ ! -f %D/broker.ks ]; then cp -p %D/%F %B/broker.ks; fi
+@unexec if cmp -s %D/broker.ts %D/broker.ts.sample ; then rm -f %D/broker.ts ; fi
+%%ETCDIR%%/broker.ts.sample
+@exec if [ ! -f %D/broker.ts ]; then cp -p %D/%F %B/broker.ts; fi
+@unexec if cmp -s %D/client.ks %D/client.ks.sample ; then rm -f %D/client.ks ; fi
+%%ETCDIR%%/client.ks.sample
+@exec if [ ! -f %D/client.ks ]; then cp -p %D/%F %B/client.ks; fi
+@unexec if cmp -s %D/client.ts %D/client.ts.sample ; then rm -f %D/client.ts ; fi
+%%ETCDIR%%/client.ts.sample
+@exec if [ ! -f %D/client.ts ]; then cp -p %D/%F %B/client.ts; fi
+@unexec if cmp -s %D/groups.properties %D/groups.properties.sample ; then rm -f %D/groups.properties ; fi
+%%ETCDIR%%/groups.properties.sample
+@exec if [ ! -f %D/groups.properties ]; then cp -p %D/%F %B/groups.properties; fi
+@unexec if cmp -s %D/login.config %D/login.config.sample ; then rm -f %D/login.config ; fi
+%%ETCDIR%%/login.config.sample
+@exec if [ ! -f %D/login.config ]; then cp -p %D/%F %B/login.config; fi
+@unexec if cmp -s %D/users.properties %D/users.properties.sample ; then rm -f %D/users.properties ; fi
+%%ETCDIR%%/users.properties.sample
+@exec if [ ! -f %D/users.properties ]; then cp -p %D/%F %B/users.properties; fi
+@owner
+@group
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/amqp/java/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/amqp/java/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/amqp/java/src/main/java/example/Listener.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/amqp/java/src/main/java/example/Publisher.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/amqp/python/listener.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/amqp/python/publisher.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/activemq-demo.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/activemq-dynamic-network-broker1.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/activemq-dynamic-network-broker2.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/activemq-jdbc-performance.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/activemq-jdbc.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/activemq-leveldb-replicating.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/activemq-scalability.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/activemq-security.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/activemq-specjms.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/activemq-static-network-broker1.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/activemq-static-network-broker2.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/activemq-stomp.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/activemq-throughput.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/activemq.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/camel.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/jetty-demo.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/log4j.properties
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/resin-web.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/web.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mqtt/java/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mqtt/java/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mqtt/java/src/main/java/example/Listener.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mqtt/java/src/main/java/example/Publisher.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mqtt/websocket/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mqtt/websocket/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mqtt/websocket/css/bootstrap.min.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mqtt/websocket/css/bootstrap.min.responsive.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mqtt/websocket/img/glyphicons-halflings-white.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mqtt/websocket/img/glyphicons-halflings.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mqtt/websocket/js/jquery-1.7.2.min.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mqtt/websocket/js/mqttws31.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-composite-destinations/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-composite-destinations/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-composite-destinations/src/main/java/example/composite/dest/Consumer.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-composite-destinations/src/main/java/example/composite/dest/Producer.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-durable-sub/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-durable-sub/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-durable-sub/src/main/java/example/topic/durable/Publisher.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-durable-sub/src/main/java/example/topic/durable/Subscriber.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-exclusive-consumer/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-exclusive-consumer/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-exclusive-consumer/src/main/java/example/queue/exclusive/Consumer.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-exclusive-consumer/src/main/java/example/queue/exclusive/Producer.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-message-browser/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-message-browser/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-message-browser/src/main/java/example/browser/Browser.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-message-browser/src/main/java/example/browser/Producer.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-queue/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-queue/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-queue/src/main/java/example/queue/Consumer.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-queue/src/main/java/example/queue/Producer.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-queue/src/main/resources/log4j.properties
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-queue-selector/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-queue-selector/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-queue-selector/src/main/java/example/queue/selector/Consumer.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-queue-selector/src/main/java/example/queue/selector/Producer.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-temp-destinations/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-temp-destinations/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-temp-destinations/src/main/java/example/tempdest/Consumer.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-temp-destinations/src/main/java/example/tempdest/ProducerRequestReply.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-topic/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-topic/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-topic/src/main/java/example/topic/Publisher.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-topic/src/main/java/example/topic/Subscriber.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-topic/src/main/resources/log4j.properties
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-transaction/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-transaction/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-transaction/src/main/java/example/transaction/Client.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-wildcard-consumer/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-wildcard-consumer/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-wildcard-consumer/src/main/java/example/wildcard/Client.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/cpp/Listener.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/cpp/Publisher.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/cpp/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/csharp/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/csharp/ActiveMQExamples/ActiveMQExamples.sln
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/csharp/ActiveMQExamples/ActiveMQExamples.userprefs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/csharp/ActiveMQExamples/Listener/AssemblyInfo.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/csharp/ActiveMQExamples/Listener/Listener.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/csharp/ActiveMQExamples/Listener/Listener.csproj
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/csharp/ActiveMQExamples/Listener/NMSTracer.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/csharp/ActiveMQExamples/Publisher/AssemblyInfo.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/csharp/ActiveMQExamples/Publisher/NMSTracer.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/csharp/ActiveMQExamples/Publisher/Publisher.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/csharp/ActiveMQExamples/Publisher/Publisher.csproj
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/ecommerce/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/ecommerce/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/ecommerce/src/Retailer.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/ecommerce/src/Supplier.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/ecommerce/src/TransactionsDemo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/ecommerce/src/Vendor.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/exploring-jms/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/exploring-jms/readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/exploring-jms/QueuePTPSamples/QueueMonitor/QueueMonitor.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/exploring-jms/QueuePTPSamples/QueueMonitor/QueueMonitor.properties
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/exploring-jms/QueuePTPSamples/QueueRoundTrip/QueueRoundTrip.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/exploring-jms/QueuePTPSamples/RequestReply/Replier.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/exploring-jms/QueuePTPSamples/RequestReply/Requestor.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/exploring-jms/QueuePTPSamples/SelectorTalk/SelectorTalk.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/exploring-jms/QueuePTPSamples/Talk/Talk.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/exploring-jms/QueuePTPSamples/TransactedTalk/TransactedTalk.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/exploring-jms/TopicPubSubSamples/Chat/Chat.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/exploring-jms/TopicPubSubSamples/DurableChat/DurableChat.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/exploring-jms/TopicPubSubSamples/HierarchicalChat/HierarchicalChat.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/exploring-jms/TopicPubSubSamples/MessageMonitor/MessageMonitor.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/exploring-jms/TopicPubSubSamples/MessageMonitor/MessageMonitor.properties
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/exploring-jms/TopicPubSubSamples/RequestReply/TopicReplier.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/exploring-jms/TopicPubSubSamples/RequestReply/TopicRequestor.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/exploring-jms/TopicPubSubSamples/SelectorChat/SelectorChat.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/exploring-jms/TopicPubSubSamples/TransactedChat/TransactedChat.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/exploring-jms/conf/log4j.properties
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/java/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/java/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/java/src/main/java/example/Listener.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/java/src/main/java/example/Publisher.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/swissarmy/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/swissarmy/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/swissarmy/src/CommandLineSupport.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/swissarmy/src/ConsumerTool.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/swissarmy/src/EmbeddedBroker.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/swissarmy/src/Log4jJMSAppenderExample.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/swissarmy/src/ProducerAndConsumerTool.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/swissarmy/src/ProducerTool.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/swissarmy/src/RequesterTool.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/swissarmy/src/StompExample.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/swissarmy/src/TopicListener.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/swissarmy/src/TopicPublisher.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/swissarmy/src/jndi.properties
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/openwire/swissarmy/src/log4j-jms.properties
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/other/perfharness/perfharness-activemq.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/cpp/Listener.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/cpp/Publisher.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/cpp/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/csharp/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/csharp/ActiveMQExamples/ActiveMQExamples.sln
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/csharp/ActiveMQExamples/ActiveMQExamples.userprefs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/csharp/ActiveMQExamples/Listener/AssemblyInfo.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/csharp/ActiveMQExamples/Listener/Listener.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/csharp/ActiveMQExamples/Listener/Listener.csproj
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/csharp/ActiveMQExamples/Listener/NMSTracer.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/csharp/ActiveMQExamples/Publisher/AssemblyInfo.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/csharp/ActiveMQExamples/Publisher/NMSTracer.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/csharp/ActiveMQExamples/Publisher/Publisher.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/csharp/ActiveMQExamples/Publisher/Publisher.csproj
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/java/pom.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/java/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/java/src/main/java/example/Listener.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/java/src/main/java/example/Publisher.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/perl/listener
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/perl/publisher
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/perl/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/php/listener.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/php/publisher.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/php/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/python/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/python/stompest/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/python/stompest/async/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/python/stompest/async/listener.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/python/stompest/async/publisher.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/python/stompest/sync/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/python/stompest/sync/listener.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/python/stompest/sync/publisher.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/python/stomppy/listener.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/python/stomppy/publisher.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/python/stomppy/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/ruby/catstomp.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/ruby/listener.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/ruby/publisher.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/ruby/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/ruby/stompcat.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/websocket/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/websocket/readme.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/websocket/css/bootstrap.min.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/websocket/css/bootstrap.min.responsive.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/websocket/img/glyphicons-halflings-white.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/websocket/img/glyphicons-halflings.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/websocket/js/jquery-1.7.2.min.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stomp/websocket/js/stomp.js
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stomp/websocket/js
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stomp/websocket/img
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stomp/websocket/css
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stomp/websocket
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stomp/ruby
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stomp/python/stomppy
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stomp/python/stompest/sync
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stomp/python/stompest/async
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stomp/python/stompest
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stomp/python
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stomp/php
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stomp/perl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stomp/java/src/main/java/example
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stomp/java/src/main/java
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stomp/java/src/main
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stomp/java/src
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stomp/java
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stomp/csharp/ActiveMQExamples/Publisher
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stomp/csharp/ActiveMQExamples/Listener
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stomp/csharp/ActiveMQExamples
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stomp/csharp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stomp/cpp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stomp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/other/perfharness
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/other
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/swissarmy/src
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/swissarmy
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/java/src/main/java/example
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/java/src/main/java
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/java/src/main
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/java/src
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/java
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/exploring-jms/conf
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/exploring-jms/TopicPubSubSamples/TransactedChat
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/exploring-jms/TopicPubSubSamples/SelectorChat
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/exploring-jms/TopicPubSubSamples/RequestReply
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/exploring-jms/TopicPubSubSamples/MessageMonitor
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/exploring-jms/TopicPubSubSamples/HierarchicalChat
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/exploring-jms/TopicPubSubSamples/DurableChat
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/exploring-jms/TopicPubSubSamples/Chat
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/exploring-jms/TopicPubSubSamples
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/exploring-jms/QueuePTPSamples/TransactedTalk
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/exploring-jms/QueuePTPSamples/Talk
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/exploring-jms/QueuePTPSamples/SelectorTalk
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/exploring-jms/QueuePTPSamples/RequestReply
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/exploring-jms/QueuePTPSamples/QueueRoundTrip
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/exploring-jms/QueuePTPSamples/QueueMonitor
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/exploring-jms/QueuePTPSamples
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/exploring-jms
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/ecommerce/src
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/ecommerce
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/csharp/ActiveMQExamples/Publisher
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/csharp/ActiveMQExamples/Listener
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/csharp/ActiveMQExamples
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/csharp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/cpp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-wildcard-consumer/src/main/java/example/wildcard
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-wildcard-consumer/src/main/java/example
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-wildcard-consumer/src/main/java
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-wildcard-consumer/src/main
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-wildcard-consumer/src
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-wildcard-consumer
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-transaction/src/main/java/example/transaction
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-transaction/src/main/java/example
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-transaction/src/main/java
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-transaction/src/main
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-transaction/src
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-transaction
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-topic/src/main/resources
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-topic/src/main/java/example/topic
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-topic/src/main/java/example
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-topic/src/main/java
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-topic/src/main
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-topic/src
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-topic
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-temp-destinations/src/main/java/example/tempdest
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-temp-destinations/src/main/java/example
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-temp-destinations/src/main/java
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-temp-destinations/src/main
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-temp-destinations/src
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-temp-destinations
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-queue/src/main/resources
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-queue/src/main/java/example/queue
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-queue/src/main/java/example
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-queue/src/main/java
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-queue/src/main
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-queue/src
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-queue-selector/src/main/java/example/queue/selector
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-queue-selector/src/main/java/example/queue
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-queue-selector/src/main/java/example
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-queue-selector/src/main/java
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-queue-selector/src/main
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-queue-selector/src
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-queue-selector
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-queue
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-message-browser/src/main/java/example/browser
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-message-browser/src/main/java/example
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-message-browser/src/main/java
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-message-browser/src/main
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-message-browser/src
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-message-browser
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-exclusive-consumer/src/main/java/example/queue/exclusive
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-exclusive-consumer/src/main/java/example/queue
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-exclusive-consumer/src/main/java/example
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-exclusive-consumer/src/main/java
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-exclusive-consumer/src/main
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-exclusive-consumer/src
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-exclusive-consumer
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-durable-sub/src/main/java/example/topic/durable
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-durable-sub/src/main/java/example/topic
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-durable-sub/src/main/java/example
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-durable-sub/src/main/java
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-durable-sub/src/main
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-durable-sub/src
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-durable-sub
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-composite-destinations/src/main/java/example/composite/dest
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-composite-destinations/src/main/java/example/composite
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-composite-destinations/src/main/java/example
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-composite-destinations/src/main/java
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-composite-destinations/src/main
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-composite-destinations/src
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios/jms-example-composite-destinations
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire/advanced-scenarios
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/openwire
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mqtt/websocket/js
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mqtt/websocket/img
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mqtt/websocket/css
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mqtt/websocket
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mqtt/java/src/main/java/example
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mqtt/java/src/main/java
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mqtt/java/src/main
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mqtt/java/src
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mqtt/java
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mqtt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/amqp/python
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/amqp/java/src/main/java/example
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/amqp/java/src/main/java
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/amqp/java/src/main
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/amqp/java/src
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/amqp/java
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/amqp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm lib/activemq/webapps/styles
+@dirrm lib/activemq/webapps/images
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/theme
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/mode/yaml
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/mode/xml
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/mode/shell
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/mode/sass
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/mode/properties
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/mode/markdown
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/mode/javascript
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/mode/htmlmixed
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/mode/htmlembedded
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/mode/diff
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/mode/css
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/mode/coffeescript
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/mode/clike
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/mode
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/keymap
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/addon/selection
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/addon/search
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/addon/runmode
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/addon/mode
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/addon/lint
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/addon/hint
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/addon/format
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/addon/fold
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/addon/edit
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/addon/display
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/addon/dialog
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror/addon
+@dirrm lib/activemq/webapps/hawtio/lib/codemirror
+@dirrm lib/activemq/webapps/hawtio/lib
+@dirrm lib/activemq/webapps/hawtio/img/dynatree
+@dirrm lib/activemq/webapps/hawtio/img/dots
+@dirrm lib/activemq/webapps/hawtio/img/datatable
+@dirrm lib/activemq/webapps/hawtio/img/branding
+@dirrm lib/activemq/webapps/hawtio/img
+@dirrm lib/activemq/webapps/hawtio/font
+@dirrm lib/activemq/webapps/hawtio/css/codemirror/themes
+@dirrm lib/activemq/webapps/hawtio/css/codemirror
+@dirrm lib/activemq/webapps/hawtio/css
+@dirrm lib/activemq/webapps/hawtio/app/wiki/js
+@dirrm lib/activemq/webapps/hawtio/app/wiki/img
+@dirrm lib/activemq/webapps/hawtio/app/wiki/html
+@dirrm lib/activemq/webapps/hawtio/app/wiki/exemplar
+@dirrm lib/activemq/webapps/hawtio/app/wiki/doc
+@dirrm lib/activemq/webapps/hawtio/app/wiki
+@dirrm lib/activemq/webapps/hawtio/app/ui/js
+@dirrm lib/activemq/webapps/hawtio/app/ui/html
+@dirrm lib/activemq/webapps/hawtio/app/ui/doc
+@dirrm lib/activemq/webapps/hawtio/app/ui
+@dirrm lib/activemq/webapps/hawtio/app/tree/js
+@dirrm lib/activemq/webapps/hawtio/app/tree/doc
+@dirrm lib/activemq/webapps/hawtio/app/tree
+@dirrm lib/activemq/webapps/hawtio/app/tomcat/js
+@dirrm lib/activemq/webapps/hawtio/app/tomcat/html
+@dirrm lib/activemq/webapps/hawtio/app/tomcat/doc
+@dirrm lib/activemq/webapps/hawtio/app/tomcat
+@dirrm lib/activemq/webapps/hawtio/app/source/js
+@dirrm lib/activemq/webapps/hawtio/app/source/html
+@dirrm lib/activemq/webapps/hawtio/app/source
+@dirrm lib/activemq/webapps/hawtio/app/perspective/js
+@dirrm lib/activemq/webapps/hawtio/app/perspective/html
+@dirrm lib/activemq/webapps/hawtio/app/perspective/doc
+@dirrm lib/activemq/webapps/hawtio/app/perspective
+@dirrm lib/activemq/webapps/hawtio/app/osgi/js
+@dirrm lib/activemq/webapps/hawtio/app/osgi/img
+@dirrm lib/activemq/webapps/hawtio/app/osgi/html
+@dirrm lib/activemq/webapps/hawtio/app/osgi
+@dirrm lib/activemq/webapps/hawtio/app/openejb/js
+@dirrm lib/activemq/webapps/hawtio/app/openejb/html
+@dirrm lib/activemq/webapps/hawtio/app/openejb/doc
+@dirrm lib/activemq/webapps/hawtio/app/openejb
+@dirrm lib/activemq/webapps/hawtio/app/maven/js
+@dirrm lib/activemq/webapps/hawtio/app/maven/html
+@dirrm lib/activemq/webapps/hawtio/app/maven/doc
+@dirrm lib/activemq/webapps/hawtio/app/maven
+@dirrm lib/activemq/webapps/hawtio/app/log/js
+@dirrm lib/activemq/webapps/hawtio/app/log/html
+@dirrm lib/activemq/webapps/hawtio/app/log/doc
+@dirrm lib/activemq/webapps/hawtio/app/log
+@dirrm lib/activemq/webapps/hawtio/app/karaf/js
+@dirrm lib/activemq/webapps/hawtio/app/karaf/html
+@dirrm lib/activemq/webapps/hawtio/app/karaf
+@dirrm lib/activemq/webapps/hawtio/app/jvm/js
+@dirrm lib/activemq/webapps/hawtio/app/jvm/html
+@dirrm lib/activemq/webapps/hawtio/app/jvm/doc
+@dirrm lib/activemq/webapps/hawtio/app/jvm
+@dirrm lib/activemq/webapps/hawtio/app/jmx/js
+@dirrm lib/activemq/webapps/hawtio/app/jmx/html
+@dirrm lib/activemq/webapps/hawtio/app/jmx/doc/img
+@dirrm lib/activemq/webapps/hawtio/app/jmx/doc
+@dirrm lib/activemq/webapps/hawtio/app/jmx
+@dirrm lib/activemq/webapps/hawtio/app/jetty/js
+@dirrm lib/activemq/webapps/hawtio/app/jetty/html
+@dirrm lib/activemq/webapps/hawtio/app/jetty/doc
+@dirrm lib/activemq/webapps/hawtio/app/jetty
+@dirrm lib/activemq/webapps/hawtio/app/jclouds/js/compute
+@dirrm lib/activemq/webapps/hawtio/app/jclouds/js/blobstore
+@dirrm lib/activemq/webapps/hawtio/app/jclouds/js
+@dirrm lib/activemq/webapps/hawtio/app/jclouds/html/compute
+@dirrm lib/activemq/webapps/hawtio/app/jclouds/html/blobstore
+@dirrm lib/activemq/webapps/hawtio/app/jclouds/html
+@dirrm lib/activemq/webapps/hawtio/app/jclouds/doc
+@dirrm lib/activemq/webapps/hawtio/app/jclouds
+@dirrm lib/activemq/webapps/hawtio/app/jboss/js
+@dirrm lib/activemq/webapps/hawtio/app/jboss/html
+@dirrm lib/activemq/webapps/hawtio/app/jboss/doc
+@dirrm lib/activemq/webapps/hawtio/app/jboss
+@dirrm lib/activemq/webapps/hawtio/app/insight/js
+@dirrm lib/activemq/webapps/hawtio/app/insight/html
+@dirrm lib/activemq/webapps/hawtio/app/insight
+@dirrm lib/activemq/webapps/hawtio/app/infinispan/js
+@dirrm lib/activemq/webapps/hawtio/app/infinispan/html
+@dirrm lib/activemq/webapps/hawtio/app/infinispan/doc
+@dirrm lib/activemq/webapps/hawtio/app/infinispan
+@dirrm lib/activemq/webapps/hawtio/app/health/js
+@dirrm lib/activemq/webapps/hawtio/app/health/html
+@dirrm lib/activemq/webapps/hawtio/app/health/doc
+@dirrm lib/activemq/webapps/hawtio/app/health
+@dirrm lib/activemq/webapps/hawtio/app/git/js
+@dirrm lib/activemq/webapps/hawtio/app/git
+@dirrm lib/activemq/webapps/hawtio/app/forms/js
+@dirrm lib/activemq/webapps/hawtio/app/forms/html
+@dirrm lib/activemq/webapps/hawtio/app/forms/doc
+@dirrm lib/activemq/webapps/hawtio/app/forms
+@dirrm lib/activemq/webapps/hawtio/app/forcegraph/js
+@dirrm lib/activemq/webapps/hawtio/app/forcegraph/img
+@dirrm lib/activemq/webapps/hawtio/app/forcegraph/doc
+@dirrm lib/activemq/webapps/hawtio/app/forcegraph
+@dirrm lib/activemq/webapps/hawtio/app/fabric/js
+@dirrm lib/activemq/webapps/hawtio/app/fabric/img
+@dirrm lib/activemq/webapps/hawtio/app/fabric/html
+@dirrm lib/activemq/webapps/hawtio/app/fabric/doc
+@dirrm lib/activemq/webapps/hawtio/app/fabric
+@dirrm lib/activemq/webapps/hawtio/app/elasticsearch/js
+@dirrm lib/activemq/webapps/hawtio/app/elasticsearch/html
+@dirrm lib/activemq/webapps/hawtio/app/elasticsearch/doc
+@dirrm lib/activemq/webapps/hawtio/app/elasticsearch
+@dirrm lib/activemq/webapps/hawtio/app/dozer/js
+@dirrm lib/activemq/webapps/hawtio/app/dozer/img
+@dirrm lib/activemq/webapps/hawtio/app/dozer/doc
+@dirrm lib/activemq/webapps/hawtio/app/dozer
+@dirrm lib/activemq/webapps/hawtio/app/datatable/js
+@dirrm lib/activemq/webapps/hawtio/app/datatable/doc
+@dirrm lib/activemq/webapps/hawtio/app/datatable
+@dirrm lib/activemq/webapps/hawtio/app/dashboard/js
+@dirrm lib/activemq/webapps/hawtio/app/dashboard/html
+@dirrm lib/activemq/webapps/hawtio/app/dashboard/doc
+@dirrm lib/activemq/webapps/hawtio/app/dashboard
+@dirrm lib/activemq/webapps/hawtio/app/core/js
+@dirrm lib/activemq/webapps/hawtio/app/core/html
+@dirrm lib/activemq/webapps/hawtio/app/core/doc/img
+@dirrm lib/activemq/webapps/hawtio/app/core/doc
+@dirrm lib/activemq/webapps/hawtio/app/core
+@dirrm lib/activemq/webapps/hawtio/app/camin/js
+@dirrm lib/activemq/webapps/hawtio/app/camin/html
+@dirrm lib/activemq/webapps/hawtio/app/camin
+@dirrm lib/activemq/webapps/hawtio/app/camel/js
+@dirrm lib/activemq/webapps/hawtio/app/camel/img/endpoints
+@dirrm lib/activemq/webapps/hawtio/app/camel/img/debug
+@dirrm lib/activemq/webapps/hawtio/app/camel/img
+@dirrm lib/activemq/webapps/hawtio/app/camel/html
+@dirrm lib/activemq/webapps/hawtio/app/camel/doc
+@dirrm lib/activemq/webapps/hawtio/app/camel
+@dirrm lib/activemq/webapps/hawtio/app/branding/js
+@dirrm lib/activemq/webapps/hawtio/app/branding/doc
+@dirrm lib/activemq/webapps/hawtio/app/branding
+@dirrm lib/activemq/webapps/hawtio/app/apollo/js
+@dirrm lib/activemq/webapps/hawtio/app/apollo/html
+@dirrm lib/activemq/webapps/hawtio/app/apollo
+@dirrm lib/activemq/webapps/hawtio/app/activemq/js
+@dirrm lib/activemq/webapps/hawtio/app/activemq/img
+@dirrm lib/activemq/webapps/hawtio/app/activemq/html
+@dirrm lib/activemq/webapps/hawtio/app/activemq/doc
+@dirrm lib/activemq/webapps/hawtio/app/activemq
+@dirrm lib/activemq/webapps/hawtio/app
+@dirrm lib/activemq/webapps/hawtio/WEB-INF/lib
+@dirrm lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/web
+@dirrm lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/system
+@dirrm lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt/jmx
+@dirrm lib/activemq/webapps/hawtio/WEB-INF/classes/io/hawt
+@dirrm lib/activemq/webapps/hawtio/WEB-INF/classes/io
+@dirrm lib/activemq/webapps/hawtio/WEB-INF/classes/META-INF
+@dirrm lib/activemq/webapps/hawtio/WEB-INF/classes
+@dirrm lib/activemq/webapps/hawtio/WEB-INF
+@dirrm lib/activemq/webapps/hawtio/META-INF/maven/io.hawt/hawtio-web
+@dirrm lib/activemq/webapps/hawtio/META-INF/maven/io.hawt
+@dirrm lib/activemq/webapps/hawtio/META-INF/maven
+@dirrm lib/activemq/webapps/hawtio/META-INF
+@dirrm lib/activemq/webapps/hawtio
 @dirrm lib/activemq/webapps/fileserver/WEB-INF/classes/org/apache/activemq/util
 @dirrm lib/activemq/webapps/fileserver/WEB-INF/classes/org/apache/activemq
 @dirrm lib/activemq/webapps/fileserver/WEB-INF/classes/org/apache
@@ -361,7 +1644,6 @@ lib/activemq/webapps/styles/type-settings.css
 @dirrm lib/activemq/webapps/admin/WEB-INF/tags/form
 @dirrm lib/activemq/webapps/admin/WEB-INF/tags
 @dirrm lib/activemq/webapps/admin/WEB-INF/jspf
-@dirrm lib/activemq/webapps/admin/WEB-INF/jsp
 @dirrm lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/handler
 @dirrm lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/filter
 @dirrm lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller
@@ -374,17 +1656,21 @@ lib/activemq/webapps/styles/type-settings.css
 @dirrm lib/activemq/webapps/admin/WEB-INF
 @dirrm lib/activemq/webapps/admin/META-INF
 @dirrm lib/activemq/webapps/admin
-@dirrm lib/activemq/webapps
 @dirrm lib/activemq/webapps-demo/demo/websocket
 @dirrm lib/activemq/webapps-demo/demo/test/assets
 @dirrm lib/activemq/webapps-demo/demo/test
-@dirrm lib/activemq/webapps-demo/demo/sandbox
+@dirrm lib/activemq/webapps-demo/demo/styles
 @dirrm lib/activemq/webapps-demo/demo/portfolio
+@dirrm lib/activemq/webapps-demo/demo/mqtt
+@dirrm lib/activemq/webapps-demo/demo/js/plotkit
+@dirrm lib/activemq/webapps-demo/demo/js/mochi
 @dirrm lib/activemq/webapps-demo/demo/js
+@dirrm lib/activemq/webapps-demo/demo/images
 @dirrm lib/activemq/webapps-demo/demo/WEB-INF
 @dirrm lib/activemq/webapps-demo/demo/META-INF
 @dirrm lib/activemq/webapps-demo/demo
 @dirrm lib/activemq/webapps-demo
+@dirrm lib/activemq/webapps
 @dirrm lib/activemq/lib/web
 @dirrm lib/activemq/lib/optional
 @dirrm lib/activemq/lib/extra
