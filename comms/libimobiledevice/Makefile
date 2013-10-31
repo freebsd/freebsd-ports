@@ -22,11 +22,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if ${SLAVE_PORT} == "no"
 
-LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
-		tasn1:${PORTSDIR}/security/libtasn1 \
-		gcrypt:${PORTSDIR}/security/libgcrypt \
-		plist:${PORTSDIR}/devel/libplist \
-		usbmuxd:${PORTSDIR}/comms/usbmuxd
+LIB_DEPENDS=	libplist.so:${PORTSDIR}/devel/libplist \
+		libusbmuxd.so:${PORTSDIR}/comms/usbmuxd
 
 USE_GNOME=	glib20
 CONFIGURE_ARGS+=--without-cython
@@ -35,14 +32,7 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	AUTHORS NEWS README
 
-MAN1=		idevice_id.1 idevicebackup.1 idevicebackup2.1 idevicedate.1 \
-		idevicedebugserverproxy.1 idevicediagnostics.1 \
-		ideviceenterrecovery.1 ideviceimagemounter.1 ideviceinfo.1 \
-		idevicepair.1 ideviceprovision.1 idevicescreenshot.1 \
-		idevicesyslog.1
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's, *@ssl_requires@,,' \
@@ -51,10 +41,8 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .endif # ${SLAVE_PORT} == "no"
 
