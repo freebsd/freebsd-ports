@@ -1,6 +1,30 @@
---- Makefile.in.orig	Wed Apr 20 08:24:33 2005
-+++ Makefile.in	Wed Apr 20 08:26:40 2005
-@@ -40,10 +40,13 @@
+--- Makefile.in.orig	1997-09-26 11:43:03.000000000 -0300
++++ Makefile.in	2013-10-30 11:19:37.000000000 -0200
+@@ -23,28 +23,31 @@
+ 	rm -f *.old *.bak *.core Makefile
+ 
+ # install:: ${BINDIR}/farm
+-install:: ${BINDIR}/rotate
+-install:: ${BINDIR}/ftpmirror
+-install:: ${SYSCONFDIR}/ftpmirror.cf-sample
++install:: ${DESTDIR}${BINDIR}/rotate
++install:: ${DESTDIR}${BINDIR}/ftpmirror
++install:: ${DESTDIR}${SYSCONFDIR}/ftpmirror.cf-sample
+ 
+-${BINDIR}/rotate: rotate
++${DESTDIR}${BINDIR}/rotate: rotate
+ 	${INSTALL_PROGRAM} $? $@
+ 
+-${BINDIR}/farm: farm
++${DESTDIR}${BINDIR}/farm: farm
+ 	${INSTALL_PROGRAM} $? $@
+ 
+-${BINDIR}/ftpmirror: ftpmirror
++${DESTDIR}${BINDIR}/ftpmirror: ftpmirror
+ 	${INSTALL_PROGRAM} $? $@
+ 
+-${SYSCONFDIR}/ftpmirror.cf-sample: ftpmirror.cf-sample
++${DESTDIR}${SYSCONFDIR}/ftpmirror.cf-sample: ftpmirror.cf-sample
  	${INSTALL_DATA} $? $@
  
  # for subdirectories...
@@ -9,9 +33,10 @@
  	@ for d in ${SUBDIR} ; do \
  		( echo "make $@ in $$d..." && cd $$d && make $@ ) ; \
  	done
-+
+ 
 +install:: Fan/Makefile
 +	( echo "make pure_install in Fan..." && cd Fan && make pure_install ) ; \
- 
++
  # Fan subdirectory requres Makefile first.
  Fan/Makefile:: Fan/Makefile.PL
+ 	cd Fan; ${PERL} Makefile.PL
