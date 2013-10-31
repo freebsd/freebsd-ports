@@ -4,7 +4,7 @@
 PORTNAME=	lzip
 PORTVERSION=	1.14
 CATEGORIES=	archivers
-MASTER_SITES=	SAVANNAH/lzip
+MASTER_SITES=	SAVANNAH/lzip LOCAL/marino
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Lossless data compressor based on the LZMA algorithm
@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 
 PLIST_FILES=	bin/lzip
 
-NO_STAGE=		yes
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	CXX="${CXX}" \
 		CXXFLAGS="${CXXFLAGS}" \
