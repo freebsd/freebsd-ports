@@ -12,8 +12,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/as.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/az.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/be.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/bn.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/bg.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/bn.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/ca.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/cs.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Collate/Locale/cy.pl
