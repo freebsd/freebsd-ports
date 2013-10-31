@@ -3,6 +3,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	7.33.0
+PORTREVISION=	1
 CATEGORIES=	ftp www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		LOCAL/sunpoet

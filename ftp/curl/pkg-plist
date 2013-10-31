@@ -259,6 +259,7 @@ man/man3/libcurl.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pop3s.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pop3slist.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/post-callback.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/postinmemory.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/postit2.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/progressfunc.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resolve.c
