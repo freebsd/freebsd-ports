@@ -52,6 +52,10 @@ MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
 
 WRKSRC:=	${WRKDIR}/mozilla-release
 
+.if ${ARCH} == i386 && ${OSVERSION} < 1000000
+USE_GCC?=	yes
+.endif
+
 post-extract:
 	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON}|' -e 's|@MOZILLA@|${MOZILLA}|' \
 		-e 's|@MOZILLA_NAME@|${MOZILLA_NAME}|' \
