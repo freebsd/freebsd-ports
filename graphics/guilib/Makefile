@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.libsdl.org/projects/GUIlib/src/
 DISTNAME=	GUIlib-${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	A very simple GUI framework for use with SDL
+COMMENT=	Simple GUI framework for use with SDL
 
 USE_SDL=	sdl
 USE_GMAKE=	yes

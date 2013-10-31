@@ -7,7 +7,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	LOCAL/culot
 
 MAINTAINER=	culot@FreeBSD.org
-COMMENT=	A very simple personal calendar
+COMMENT=	Simple personal calendar
 
 USES=		perl5
 USE_PERL5=	run

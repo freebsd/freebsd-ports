@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.mathopd.org/dist/
 
 MAINTAINER=	michiel@boland.org
-COMMENT=	A very small, yet very fast HTTP server
+COMMENT=	Small, yet fast HTTP server
 
 CFLAGS+=	-DFREEBSD_SENDFILE
 MAKE_ARGS=	CFLAGS="${CFLAGS}"

@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	Statistics
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
-COMMENT=	A collection of very basic statistics modules
+COMMENT=	Collection of basic statistics modules
 
 BUILD_DEPENDS=	p5-Number-Format>=1.61:${PORTSDIR}/textproc/p5-Number-Format
 RUN_DEPENDS:=	${BUILD_DEPENDS}

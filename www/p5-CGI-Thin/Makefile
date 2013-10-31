@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pphillips@experts-exchange.com
-COMMENT=	A very lightweight Parser for CGI Forms
+COMMENT=	Lightweight Parser for CGI Forms
 
 USES=		perl5
 USE_PERL5=	configure

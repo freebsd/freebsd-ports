@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dhn@FreeBSD.org
-COMMENT=	Simple and very fast XML to hash conversion
+COMMENT=	Simple and fast XML to hash conversion
 
 USES=		perl5
 USE_PERL5=	configure

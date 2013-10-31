@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ken.mcglothlen@gmail.com
-COMMENT=	Template::Simple (a very fast templating module)
+COMMENT=	Fast templating module
 
 LICENSE=	ART20
 

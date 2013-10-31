@@ -7,7 +7,7 @@ CATEGORIES?=	www
 MASTER_SITES?=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
 MAINTAINER?=	mm@FreeBSD.org
-COMMENT?=	A secure, fast, compliant, and very flexible Web Server
+COMMENT?=	Secure, fast, compliant, and flexible Web Server
 
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
 LICENSE=	BSD
