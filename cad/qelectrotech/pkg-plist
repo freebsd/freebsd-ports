@@ -1,36 +1,65 @@
 bin/qelectrotech
+share/applications/qelectrotech.desktop
 %%DOCSDIR%%/CREDIT
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/ELEMENTS.LICENSE
 %%DOCSDIR%%/LICENSE
 %%DOCSDIR%%/README
-share/applications/qelectrotech.desktop
 share/icons/hicolor/128x128/apps/qelectrotech.png
 share/icons/hicolor/128x128/mimetypes/application-x-qet-element.png
 share/icons/hicolor/128x128/mimetypes/application-x-qet-project.png
+share/icons/hicolor/128x128/mimetypes/application-x-qet-titleblock.png
 share/icons/hicolor/16x16/apps/qelectrotech.png
 share/icons/hicolor/16x16/mimetypes/application-x-qet-element.png
 share/icons/hicolor/16x16/mimetypes/application-x-qet-project.png
+share/icons/hicolor/16x16/mimetypes/application-x-qet-titleblock.png
 share/icons/hicolor/22x22/apps/qelectrotech.png
 share/icons/hicolor/22x22/mimetypes/application-x-qet-element.png
 share/icons/hicolor/22x22/mimetypes/application-x-qet-project.png
+share/icons/hicolor/22x22/mimetypes/application-x-qet-titleblock.png
 share/icons/hicolor/256x256/apps/qelectrotech.png
 share/icons/hicolor/256x256/mimetypes/application-x-qet-element.png
 share/icons/hicolor/256x256/mimetypes/application-x-qet-project.png
 share/icons/hicolor/32x32/apps/qelectrotech.png
 share/icons/hicolor/32x32/mimetypes/application-x-qet-element.png
 share/icons/hicolor/32x32/mimetypes/application-x-qet-project.png
+share/icons/hicolor/32x32/mimetypes/application-x-qet-titleblock.png
 share/icons/hicolor/48x48/apps/qelectrotech.png
 share/icons/hicolor/48x48/mimetypes/application-x-qet-element.png
 share/icons/hicolor/48x48/mimetypes/application-x-qet-project.png
+share/icons/hicolor/48x48/mimetypes/application-x-qet-titleblock.png
 share/icons/hicolor/64x64/apps/qelectrotech.png
 share/icons/hicolor/64x64/mimetypes/application-x-qet-element.png
 share/icons/hicolor/64x64/mimetypes/application-x-qet-project.png
+share/icons/hicolor/64x64/mimetypes/application-x-qet-titleblock.png
 share/mime/application/x-qet-element.xml
 share/mime/application/x-qet-project.xml
+share/mime/application/x-qet-titleblock.xml
 share/mime/packages/qelectrotech.xml
-share/mimelnk/application/x-qet-project.desktop
 share/mimelnk/application/x-qet-element.desktop
+share/mimelnk/application/x-qet-project.desktop
+share/mimelnk/application/x-qet-titleblock.desktop
+%%DATADIR%%/elements/appareils_de_mesure/amperemetre-h.elmt
+%%DATADIR%%/elements/appareils_de_mesure/amperemetre-v.elmt
+%%DATADIR%%/elements/appareils_de_mesure/frequencemetre-h.elmt
+%%DATADIR%%/elements/appareils_de_mesure/frequencemetre-v.elmt
+%%DATADIR%%/elements/appareils_de_mesure/galvanometre-h.elmt
+%%DATADIR%%/elements/appareils_de_mesure/galvanometre-v.elmt
+%%DATADIR%%/elements/appareils_de_mesure/ohmmetre-h.elmt
+%%DATADIR%%/elements/appareils_de_mesure/ohmmetre-v.elmt
+%%DATADIR%%/elements/appareils_de_mesure/qet_directory
+%%DATADIR%%/elements/appareils_de_mesure/sondes/electrode.elmt
+%%DATADIR%%/elements/appareils_de_mesure/sondes/qet_directory
+%%DATADIR%%/elements/appareils_de_mesure/sondes/thermocouple.elmt
+%%DATADIR%%/elements/appareils_de_mesure/sondes/tores_de_courant/qet_directory
+%%DATADIR%%/elements/appareils_de_mesure/sondes/tores_de_courant/tore1.elmt
+%%DATADIR%%/elements/appareils_de_mesure/sondes/tores_de_courant/tore2.elmt
+%%DATADIR%%/elements/appareils_de_mesure/sondes/tores_de_courant/tore3.elmt
+%%DATADIR%%/elements/appareils_de_mesure/sondes/tores_de_courant/tore4.elmt
+%%DATADIR%%/elements/appareils_de_mesure/voltmetre-h.elmt
+%%DATADIR%%/elements/appareils_de_mesure/voltmetre-v.elmt
+%%DATADIR%%/elements/appareils_de_mesure/wattmetre-h.elmt
+%%DATADIR%%/elements/appareils_de_mesure/wattmetre-v.elmt
 %%DATADIR%%/elements/automatisme/fonction/entree.elmt
 %%DATADIR%%/elements/automatisme/fonction/et.elmt
 %%DATADIR%%/elements/automatisme/fonction/et3entrees.elmt
@@ -42,59 +71,710 @@ share/mimelnk/application/x-qet-element.desktop
 %%DATADIR%%/elements/automatisme/fonction/qet_directory
 %%DATADIR%%/elements/automatisme/fonction/report_entree.elmt
 %%DATADIR%%/elements/automatisme/fonction/report_sortie.elmt
-%%DATADIR%%/elements/automatisme/fonction/setreset.elmt
+%%DATADIR%%/elements/automatisme/fonction/set_reset.elmt
 %%DATADIR%%/elements/automatisme/fonction/sortie.elmt
 %%DATADIR%%/elements/automatisme/fonction/xnor.elmt
 %%DATADIR%%/elements/automatisme/fonction/xor.elmt
-%%DATADIR%%/elements/automatisme/lader/input/entree.elmt
-%%DATADIR%%/elements/automatisme/lader/input/entree_fn.elmt
-%%DATADIR%%/elements/automatisme/lader/input/entree_fp.elmt
-%%DATADIR%%/elements/automatisme/lader/input/entree_nf.elmt
-%%DATADIR%%/elements/automatisme/lader/input/qet_directory
-%%DATADIR%%/elements/automatisme/lader/output/qet_directory
-%%DATADIR%%/elements/automatisme/lader/output/sortie.elmt
-%%DATADIR%%/elements/automatisme/lader/output/sortie_r.elmt
-%%DATADIR%%/elements/automatisme/lader/output/sortie_s.elmt
-%%DATADIR%%/elements/automatisme/lader/qet_directory
+%%DATADIR%%/elements/automatisme/grafcet/actions/action.elmt
+%%DATADIR%%/elements/automatisme/grafcet/actions/continue.elmt
+%%DATADIR%%/elements/automatisme/grafcet/actions/qet_directory
+%%DATADIR%%/elements/automatisme/grafcet/et.elmt
+%%DATADIR%%/elements/automatisme/grafcet/etape.elmt
+%%DATADIR%%/elements/automatisme/grafcet/etape_initiale.elmt
+%%DATADIR%%/elements/automatisme/grafcet/macro/etape.elmt
+%%DATADIR%%/elements/automatisme/grafcet/macro/etape_entree.elmt
+%%DATADIR%%/elements/automatisme/grafcet/macro/etape_sortie.elmt
+%%DATADIR%%/elements/automatisme/grafcet/macro/qet_directory
+%%DATADIR%%/elements/automatisme/grafcet/qet_directory
+%%DATADIR%%/elements/automatisme/grafcet/saut.elmt
+%%DATADIR%%/elements/automatisme/grafcet/transition.elmt
+%%DATADIR%%/elements/automatisme/knx/actionneurzennio6sx10a.elmt
+%%DATADIR%%/elements/automatisme/knx/qet_directory
+%%DATADIR%%/elements/automatisme/knx/variateur400.elmt
+%%DATADIR%%/elements/automatisme/ladder/input/entree.elmt
+%%DATADIR%%/elements/automatisme/ladder/input/entree_fn.elmt
+%%DATADIR%%/elements/automatisme/ladder/input/entree_fp.elmt
+%%DATADIR%%/elements/automatisme/ladder/input/entree_nf.elmt
+%%DATADIR%%/elements/automatisme/ladder/input/qet_directory
+%%DATADIR%%/elements/automatisme/ladder/output/qet_directory
+%%DATADIR%%/elements/automatisme/ladder/output/sortie.elmt
+%%DATADIR%%/elements/automatisme/ladder/output/sortie_r.elmt
+%%DATADIR%%/elements/automatisme/ladder/output/sortie_s.elmt
+%%DATADIR%%/elements/automatisme/ladder/qet_directory
+%%DATADIR%%/elements/automatisme/organigramme/cercle01.elmt
+%%DATADIR%%/elements/automatisme/organigramme/debfin01.elmt
+%%DATADIR%%/elements/automatisme/organigramme/debfin02.elmt
+%%DATADIR%%/elements/automatisme/organigramme/debfin03.elmt
+%%DATADIR%%/elements/automatisme/organigramme/document01.elmt
+%%DATADIR%%/elements/automatisme/organigramme/document02.elmt
+%%DATADIR%%/elements/automatisme/organigramme/entsor01.elmt
+%%DATADIR%%/elements/automatisme/organigramme/entsor02.elmt
+%%DATADIR%%/elements/automatisme/organigramme/entsor03.elmt
+%%DATADIR%%/elements/automatisme/organigramme/hors_page.elmt
+%%DATADIR%%/elements/automatisme/organigramme/if01.elmt
+%%DATADIR%%/elements/automatisme/organigramme/if02.elmt
+%%DATADIR%%/elements/automatisme/organigramme/ope01.elmt
+%%DATADIR%%/elements/automatisme/organigramme/ope02.elmt
+%%DATADIR%%/elements/automatisme/organigramme/ope03.elmt
+%%DATADIR%%/elements/automatisme/organigramme/preparation01.elmt
+%%DATADIR%%/elements/automatisme/organigramme/qet_directory
+%%DATADIR%%/elements/automatisme/organigramme/souspgm01.elmt
+%%DATADIR%%/elements/automatisme/organigramme/souspgm02.elmt
+%%DATADIR%%/elements/automatisme/organigramme/souspgm03.elmt
+%%DATADIR%%/elements/automatisme/organigramme/sur_page.elmt
+%%DATADIR%%/elements/automatisme/plc/allen_bradley/1762-IT4.elmt
+%%DATADIR%%/elements/automatisme/plc/allen_bradley/1762-L40BXB(R)_pwr_&_comms.elmt
+%%DATADIR%%/elements/automatisme/plc/allen_bradley/1762-L40BXB_OUT_pt1.2.elmt
+%%DATADIR%%/elements/automatisme/plc/allen_bradley/1762-L40BXB_OUT_pt2.2.elmt
+%%DATADIR%%/elements/automatisme/plc/allen_bradley/1762-OB8.elmt
+%%DATADIR%%/elements/automatisme/plc/allen_bradley/qet_directory
+%%DATADIR%%/elements/automatisme/plc/cart_univ_entr.elmt
+%%DATADIR%%/elements/automatisme/plc/cart_univ_sort.elmt
+%%DATADIR%%/elements/automatisme/plc/crouzet/cd12_carte_entres.elmt
+%%DATADIR%%/elements/automatisme/plc/crouzet/cd12_carte_sorties.elmt
+%%DATADIR%%/elements/automatisme/plc/crouzet/cd20_carte_sorties.elmt
+%%DATADIR%%/elements/automatisme/plc/crouzet/cd20_entrees.elmt
+%%DATADIR%%/elements/automatisme/plc/crouzet/cd20_entrees_zoom_1.elmt
+%%DATADIR%%/elements/automatisme/plc/crouzet/cd20_sortie_zoom.elmt
+%%DATADIR%%/elements/automatisme/plc/crouzet/qet_directory
+%%DATADIR%%/elements/automatisme/plc/moeller/easy_410.elmt
+%%DATADIR%%/elements/automatisme/plc/moeller/easy_512.elmt
+%%DATADIR%%/elements/automatisme/plc/moeller/easy_620.elmt
+%%DATADIR%%/elements/automatisme/plc/moeller/easy_719.elmt
+%%DATADIR%%/elements/automatisme/plc/moeller/easy_819.elmt
+%%DATADIR%%/elements/automatisme/plc/moeller/easy_821.elmt
+%%DATADIR%%/elements/automatisme/plc/moeller/moeller_ec4p_222_mrad1.elmt
+%%DATADIR%%/elements/automatisme/plc/moeller/ps4_201.elmt
+%%DATADIR%%/elements/automatisme/plc/moeller/qet_directory
+%%DATADIR%%/elements/automatisme/plc/omron/cj1/qet_directory
+%%DATADIR%%/elements/automatisme/plc/omron/cj1/taille1/omron-cj1g_cpu44h1.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cj1/taille1/omron-cj1m_cpu22.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cj1/taille1/omron-cj1w_ad081_v1.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cj1/taille1/omron-cj1w_b7a22.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cj1/taille1/omron-cj1w_clk23.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cj1/taille1/omron-cj1w_da021.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cj1/taille1/omron-cj1w_etn11.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cj1/taille1/omron-cj1w_id232.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cj1/taille1/omron-cj1w_nc413.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cj1/taille1/omron-cj1w_od204.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cj1/taille1/qet_directory
+%%DATADIR%%/elements/automatisme/plc/omron/cj1/taille2/omron-cj1w_ad081_v1.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cj1/taille2/omron-cj1w_b7a22.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cj1/taille2/omron-cj1w_clk23.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cj1/taille2/omron-cj1w_da021.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cj1/taille2/omron-cj1w_etn11.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cj1/taille2/omron-cj1w_id232.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cj1/taille2/omron-cj1w_nc413.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cj1/taille2/omron-cj1w_od204.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cj1/taille2/qet_directory
+%%DATADIR%%/elements/automatisme/plc/omron/cj2/omron-cj2h_cpu64.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cj2/qet_directory
+%%DATADIR%%/elements/automatisme/plc/omron/cqm1/qet_directory
+%%DATADIR%%/elements/automatisme/plc/omron/cqm1/taille1/omron-cqm1_oc222.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cqm1/taille1/omron-cqm1_od211.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cqm1/taille1/omron-cqm1_pd026_1.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cqm1/taille1/omron-cqm1_tc001.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cqm1/taille1/omron-cqm1h_cpu51_1.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cqm1/taille1/qet_directory
+%%DATADIR%%/elements/automatisme/plc/omron/cqm1/taille2/omron-cqm1_ad041.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cqm1/taille2/omron-cqm1_ia121.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cqm1/taille2/omron-cqm1_pd026.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cqm1/taille2/omron-cqm1h_cpu21.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cqm1/taille2/omron-cqm1h_cpu51.elmt
+%%DATADIR%%/elements/automatisme/plc/omron/cqm1/taille2/qet_directory
+%%DATADIR%%/elements/automatisme/plc/omron/qet_directory
+%%DATADIR%%/elements/automatisme/plc/qet_directory
+%%DATADIR%%/elements/automatisme/plc/schneider/config/qet_directory
+%%DATADIR%%/elements/automatisme/plc/schneider/config/tsx.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/config/tsx_asy800.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/config/tsx_cfy11.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/config/tsx_cfy2x_.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/config/tsx_cty2c.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/config/tsx_cty4a.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/config/tsx_dmy28fkmodel.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/config/tsx_p47454m.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/config/tsx_p57254m.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/config/tsx_pay262_282.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/config/tsx_psy2600.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/config/tsx_rey200.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/config/tsx_rky6.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/config/tsx_rky8.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/config/tsx_say102.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/input/qet_directory
+%%DATADIR%%/elements/automatisme/plc/schneider/input/tsxdey62d2k_b.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/input/tsxdey62d2k_c.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/input/tsxdey64d2k_a.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/input/tsxdey64d2k_d.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/m340/processeur_m340_eth_can.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/m340/processeur_m340_eth_serie.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/m340/processeur_m340_serie_can.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/m340/qet_directory
+%%DATADIR%%/elements/automatisme/plc/schneider/output/qet_directory
+%%DATADIR%%/elements/automatisme/plc/schneider/output/tsxdsy64t2k_a.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/output/tsxdsy64t2k_b.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/output/tsxdsy64t2k_c.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/output/tsxdsy64t2k_d.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/qet_directory
+%%DATADIR%%/elements/automatisme/plc/schneider/telefast/abe7-cpa03-1.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/telefast/abe7-cpa03-2.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/telefast/abe7-h16r11.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/telefast/abe7-r16s210-1.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/telefast/abe7-r16s210-2.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/telefast/qet_directory
+%%DATADIR%%/elements/automatisme/plc/schneider/tsx/qet_directory
+%%DATADIR%%/elements/automatisme/plc/schneider/tsx/tsx17.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/twido/qet_directory
+%%DATADIR%%/elements/automatisme/plc/schneider/twido/twdalm3lt.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/twido/twdam_m3ht_i2ht_o1ht.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/twido/twdlcaa10drf.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/twido/twdlcaa16drf.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/twido/twdlcaa24drf.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/twido/twdlcda10drf.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/twido/twdlcda16drf.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/twido/twdlcda24drf.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/twido/twdlmda20drt-output.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/twido/twdmlda20drt-input.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/twido/twdmlda_20dtk-20duk-input.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/twido/twdmlda_20dtk-output.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/twido/twdmlda_20duk-output.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/twido/twdmlda_40dtk-40duk-cn1-input.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/twido/twdmlda_40dtk-40duk-cn2-input.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/twido/twdmlda_40dtk-cn1-output.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/twido/twdmlda_40dtk-cn2-output.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/twido/twdmlda_40duk-cn1-output.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/twido/twdmlda_40duk-cn2-output.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/zelio/qet_directory
+%%DATADIR%%/elements/automatisme/plc/schneider/zelio/zeliologic_sr2_b121bd.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/zelio/zeliologic_sr2_b201bd.elmt
+%%DATADIR%%/elements/automatisme/plc/schneider/zelio/zeliologic_sr3_b261bd.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/6es5_482-8ma13__p1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/6es5_482-8ma13__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/6es5_482-8ma13__p3.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/6es5_482-8ma13__p4.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/6es5_95/6es5_095-8ma03__p1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/6es5_95/6es5_095-8ma03__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/6es5_95/6es5_095-8ma03__p3.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/6es5_95/6es5_095-8ma03__p4.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/6es5_95/6es5_095-8ma03__p5.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/6es5_95/6es5_095-8ma03__p6.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/6es5_95/6es5_095-8ma03__p7.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/6es5_95/6es5_095-8ma03__p8.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/6es5_95/qet_directory
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/carte_entree/6es5_421-8ma12.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/carte_entree/6es5_431-8ma11.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/carte_entree/6es5_464-8mc11.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/carte_entree/qet_directory
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/carte_sortie/6es5_441-8ma11.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/carte_sortie/6es5_451-8ma11.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/carte_sortie/6es5_482-8ma13__p1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/carte_sortie/6es5_482-8ma13__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/carte_sortie/6es5_482-8ma13__p3.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/carte_sortie/6es5_482-8ma13__p4.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/carte_sortie/qet_directory
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/cpu/6es5_102-8ma02.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/cpu/qet_directory
+%%DATADIR%%/elements/automatisme/plc/siemens/6es5/qet_directory
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-1200/qet_directory
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-1200/s7-1200_cpu-1214c.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-200/211-0aa23-0xb0__1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-200/211-0aa23-0xb0__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-200/211-0aa23-0xb0__p3.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-200/6es7_211-0aa23-0xb0__1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-200/6es7_211-0aa23-0xb0__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-200/6es7_211-0aa23-0xb0__p3.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-200/6es7_214-1ad23-0xb0__p1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-200/6es7_214-1ad23-0xb0__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-200/6es7_214-1ad23-0xb0__p3.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-200/6es7_214-1ad23-0xb0__p4.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-200/6es7_214-1ad23-0xb0__p5.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-200/qet_directory
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-312/6es7_312-5ac02-0ab0__p1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-312/6es7_312-5ac02-0ab0__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-312/6es7_312-5ac02-0ab0__p3.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-312/6es7_312-5be03-0ab0__p1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-312/6es7_312-5be03-0ab0__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-312/6es7_312-5be03-0ab0__p3.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-312/qet_directory
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-313/6es7_313-5bf03-0ab0__p1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-313/6es7_313-5bf03-0ab0__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-313/6es7_313-5bf03-0ab0__p3.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-313/6es7_313-5bf03-0ab0__p4.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-313/6es7_313-5bf03-0ab0__p5.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-313/6es7_313-5bf03-0ab0__p6.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-313/6es7_313-5bf03-0ab0__p7.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-313/6es7_313-5bf03-0ab0__p8.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7-313/qet_directory
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_ana_entree/6es7_331-7kb01-0ab0.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_ana_entree/6es7_331-7kb02-oabo.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_ana_entree/6es7_331-7kf01-0ab0__p1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_ana_entree/6es7_331-7kf01-0ab0__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_ana_entree/6es7_331-7kf02-0ab0__p1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_ana_entree/6es7_331-7kf02-0ab0__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_ana_entree/qet_directory
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_ana_entree_sortie/6es7_334-0ce01-0aa0__p1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_ana_entree_sortie/6es7_334-0ce01-0aa0__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_ana_entree_sortie/qet_directory
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_ana_sortie/6es7-332-5hf00-0ab0-b.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_ana_sortie/6es7332-5hf00-0ab0.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_ana_sortie/6es7_332-5hb01-0ab0.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_ana_sortie/6es7_332-5hd01-0ab0__p1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_ana_sortie/6es7_332-5hd01-0ab0__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_ana_sortie/qet_directory
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_entree/6es7-321-1bl00-0aa0.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_entree/6es7_321-1bh01-0aa0__p1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_entree/6es7_321-1bh01-0aa0__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_entree/6es7_321-1bh02-0aa0__p1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_entree/6es7_321-1bh02-0aa0__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_entree/6es7_321-1bl00-0aa0__p1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_entree/6es7_321-1bl00-0aa0__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_entree/6es7_321-1bl00-0aa0__p3.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_entree/6es7_321-1bl00-0aa0__p4.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_entree/qet_directory
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_sortie/6es7-323-1bl00-0aa0_2-2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_sortie/6es7322-1hh01-0aa0.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_sortie/6es7_321-1bh01-oaao.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_sortie/6es7_321-1bh02-oaao.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_sortie/6es7_322-1bh01-0aa0__p1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_sortie/6es7_322-1bh01-0aa0__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_sortie/6es7_322-1bh01-oaao.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_sortie/6es7_322-1bl00-0aa0__p1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_sortie/6es7_322-1bl00-0aa0__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_sortie/6es7_322-1bl00-0aa0__p3.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_sortie/6es7_322-1bl00-0aa0__p4.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_sortie/6es7_322-1hf01-0aa0__p1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_sortie/6es7_322-1hf01-0aa0__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_sortie/6es7_322-1hh00-0aa0__p1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_sortie/6es7_322-1hh00-0aa0__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_sortie/6es7_322-1hh00-oaao.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_sortie/6es7_331-7kb02-oabo.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_sortie/6es7_332-5hb01-oabo.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_sortie/qet_directory
+%%DATADIR%%/elements/automatisme/plc/siemens/6es7/qet_directory
+%%DATADIR%%/elements/automatisme/plc/siemens/6se7-300/6es7_315-1af03-0ab0.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6se7-300/6es7_315-2af03-0ab0.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6se7-300/6es7_323-1bh01-0aa0__p1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6se7-300/6es7_323-1bh01-0aa0__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6se7-300/6es7_323-1bl00-0aa0__p1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6se7-300/6es7_323-1bl00-0aa0__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6se7-300/6es7_323-1bl00-0aa0__p3.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6se7-300/6es7_323-1bl00-0aa0__p4.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/6se7-300/qet_directory
+%%DATADIR%%/elements/automatisme/plc/siemens/config/6ed1_052-1cc01-0ba6.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/config/6ed1_052-1md00-0ba6.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/config/6ed1_055-4mh00-0ba0.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/config/6es5_095-8ma03.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/config/6es5_431-8ma11__hc.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/config/6es5_441-8ma11__hc.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/config/6es5_482-8ma13.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/config/6es5_931-8md11__hc.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/config/CoupleurSiemens-IM153-1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/config/cpu312.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/config/cpu_312_ifm.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/config/di16_x_dc_24v.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/config/di32_x_dc_24v.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/config/do16_x_dc24v_0.5a.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/config/do32_x_24v_0.5a.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/config/op77b.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/config/ps307_5a.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/config/qet_directory
+%%DATADIR%%/elements/automatisme/plc/siemens/cp_343-2/6gk7342-5da02-0xe0.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/cp_343-2/6gk7343-2ah00-0xa0.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/cp_343-2/qet_directory
+%%DATADIR%%/elements/automatisme/plc/siemens/im360/6es7_360-3aa01-0aa0.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/im360/6es7_361-3ca01-0aa0.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/im360/qet_directory
+%%DATADIR%%/elements/automatisme/plc/siemens/logo/6de1_055-1hb00-0ab0.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/logo/6ed1_052-1cc00-0ba5__p1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/logo/6ed1_052-1cc00-0ba5__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/logo/6ed1_052-1md00-0ba5__p1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/logo/6ed1_052-1md00-0ba5__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/logo/6ed1_053-1hb00-0ba2__p1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/logo/6ed1_053-1hb00-0ba2__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/logo/6ed1_053-1hb00-0ba2__p3.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/logo/6ed1_055-1cb00-0ba0__p1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/logo/6ed1_055-1cb00-0ba0__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/logo/6ed1_055-1mb00-0ba1__p1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/logo/6ed1_055-1mb00-oba1__p2.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/logo/6ed1_055-4mh00-oba0.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/logo/qet_directory
+%%DATADIR%%/elements/automatisme/plc/siemens/logo/siemenslogo230rce.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/qet_directory
+%%DATADIR%%/elements/automatisme/plc/siemens/terminal_operateur/6av3607-1jc20-0ax1.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/terminal_operateur/6av6641-0ca0-0ax0.elmt
+%%DATADIR%%/elements/automatisme/plc/siemens/terminal_operateur/qet_directory
+%%DATADIR%%/elements/automatisme/plc/sofrel/qet_directory
+%%DATADIR%%/elements/automatisme/plc/sofrel/s500/facade_s500.elmt
+%%DATADIR%%/elements/automatisme/plc/sofrel/s500/qet_directory
+%%DATADIR%%/elements/automatisme/plc/sofrel/s500/s500_alimentation.elmt
+%%DATADIR%%/elements/automatisme/plc/sofrel/s500/s500_dlhf.elmt
+%%DATADIR%%/elements/automatisme/plc/sofrel/s500/s500_pstn.elmt
+%%DATADIR%%/elements/automatisme/process/bamo/bamo_relais_niveau_resistif_es_2001.elmt
+%%DATADIR%%/elements/automatisme/process/bamo/bamo_sonde_resitive_es.elmt
+%%DATADIR%%/elements/automatisme/process/bamo/qet_directory
+%%DATADIR%%/elements/automatisme/process/campbell/campbell_batterie.elmt
+%%DATADIR%%/elements/automatisme/process/campbell/campbell_centrale_acquisition.elmt
+%%DATADIR%%/elements/automatisme/process/campbell/campbell_centrale_acquisition_15p.elmt
+%%DATADIR%%/elements/automatisme/process/campbell/campbell_centrale_acquisition_18p_3.elmt
+%%DATADIR%%/elements/automatisme/process/campbell/qet_directory
+%%DATADIR%%/elements/automatisme/process/convertisseurs/convertisseur_mesure_temperature.elmt
+%%DATADIR%%/elements/automatisme/process/convertisseurs/convertisseur_pression_courant.elmt
+%%DATADIR%%/elements/automatisme/process/convertisseurs/qet_directory
+%%DATADIR%%/elements/automatisme/process/cpj.elmt
+%%DATADIR%%/elements/automatisme/process/crouzet/crouzet_80149604.elmt
+%%DATADIR%%/elements/automatisme/process/crouzet/crouzet_regulateurdetemperature_mic48.elmt
+%%DATADIR%%/elements/automatisme/process/crouzet/qet_directory
+%%DATADIR%%/elements/automatisme/process/endress_hauser/afficheur_e_h_ria45.elmt
+%%DATADIR%%/elements/automatisme/process/endress_hauser/afficheur_endress_hauser_omnigrad_vu2563.elmt
+%%DATADIR%%/elements/automatisme/process/endress_hauser/e_h_bitop.elmt
+%%DATADIR%%/elements/automatisme/process/endress_hauser/e_h_debimetre_promag.elmt
+%%DATADIR%%/elements/automatisme/process/endress_hauser/e_h_liquisys_m.elmt
+%%DATADIR%%/elements/automatisme/process/endress_hauser/e_h_sonde_conductivite_cls40.elmt
+%%DATADIR%%/elements/automatisme/process/endress_hauser/e_h_sonde_conductivite_indumax_h.elmt
+%%DATADIR%%/elements/automatisme/process/endress_hauser/e_h_sonde_pression.elmt
+%%DATADIR%%/elements/automatisme/process/endress_hauser/e_h_sonde_temperature.elmt
+%%DATADIR%%/elements/automatisme/process/endress_hauser/qet_directory
+%%DATADIR%%/elements/automatisme/process/endress_hauser/sonde_conductivite.elmt
+%%DATADIR%%/elements/automatisme/process/omron/omron_7h_ec.elmt
+%%DATADIR%%/elements/automatisme/process/omron/qet_directory
+%%DATADIR%%/elements/automatisme/process/qet_directory
+%%DATADIR%%/elements/automatisme/process/reseau_station_chainon.elmt
+%%DATADIR%%/elements/automatisme/process/reseau_station_depart.elmt
+%%DATADIR%%/elements/automatisme/process/reseau_station_fin.elmt
+%%DATADIR%%/elements/automatisme/process/sonde_temperature.elmt
+%%DATADIR%%/elements/automatisme/process/west/qet_directory
+%%DATADIR%%/elements/automatisme/process/west/west_8010.elmt
+%%DATADIR%%/elements/automatisme/process/zoom_1.elmt
+%%DATADIR%%/elements/automatisme/process/zoom_3.elmt
 %%DATADIR%%/elements/automatisme/qet_directory
-%%DATADIR%%/elements/capteurs/appareils_de_mesure/amperemetre-h.elmt
-%%DATADIR%%/elements/capteurs/appareils_de_mesure/amperemetre-v.elmt
-%%DATADIR%%/elements/capteurs/appareils_de_mesure/ohmmetre-h.elmt
-%%DATADIR%%/elements/capteurs/appareils_de_mesure/ohmmetre-v.elmt
-%%DATADIR%%/elements/capteurs/appareils_de_mesure/qet_directory
-%%DATADIR%%/elements/capteurs/appareils_de_mesure/voltmetre-h.elmt
-%%DATADIR%%/elements/capteurs/appareils_de_mesure/voltmetre-v.elmt
-%%DATADIR%%/elements/capteurs/appareils_de_mesure/wattmetre-h.elmt
-%%DATADIR%%/elements/capteurs/appareils_de_mesure/wattmetre-v.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/danfoss/eka.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/danfoss/entrees.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/danfoss/entrees2.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/danfoss/qet_directory
+%%DATADIR%%/elements/automatisme/regulateurs/danfoss/sorties.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/johnson_controls/dx/9100_bornier_do.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/johnson_controls/dx/dx9100_24ac.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/johnson_controls/dx/dx9100_ai.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/johnson_controls/dx/dx9100_ao.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/johnson_controls/dx/dx9100_bornier_ai.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/johnson_controls/dx/dx9100_bornier_ao.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/johnson_controls/dx/dx9100_bornier_bas.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/johnson_controls/dx/dx9100_bornier_di.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/johnson_controls/dx/dx9100_bornier_haut.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/johnson_controls/dx/dx9100_bus.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/johnson_controls/dx/dx9100_com_alim.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/johnson_controls/dx/dx9100_di.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/johnson_controls/dx/dx9100_do.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/johnson_controls/dx/dx_01.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/johnson_controls/dx/modules_extension/qet_directory
+%%DATADIR%%/elements/automatisme/regulateurs/johnson_controls/dx/modules_extension/xpx.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/johnson_controls/dx/modules_extension/xtm_905_5.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/johnson_controls/dx/qet_directory
+%%DATADIR%%/elements/automatisme/regulateurs/johnson_controls/qet_directory
+%%DATADIR%%/elements/automatisme/regulateurs/modules_controle/ec-l2a.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/modules_controle/ecl.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/modules_controle/qet_directory
+%%DATADIR%%/elements/automatisme/regulateurs/pro-face/carte_16_entree_htb.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/pro-face/carte_2_analogique_htb.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/pro-face/exm_ami_2ht.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/pro-face/proface_lt3301l.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/pro-face/qet_directory
+%%DATADIR%%/elements/automatisme/regulateurs/pro-face/tete_htb.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/qet_directory
+%%DATADIR%%/elements/automatisme/regulateurs/satchwell/controlli_w500_tmb.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/satchwell/ecran-satchwell-mn50-lcd.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/satchwell/ecran-satchwell-mn50-touchscreen.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/satchwell/qet_directory
+%%DATADIR%%/elements/automatisme/regulateurs/satchwell/satchwell-mn-550.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/satchwell/satchwell-mn350-page1.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/satchwell/satchwell-mn350-page2.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/satchwell/satchwell-mn450-page1.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/satchwell/satchwell-mn450-page2.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/satchwell/satchwell-mn550-page2.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/satchwell/satchwell-mn550-page3.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/satchwell/satchwell-mn650-page1.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/satchwell/satchwell-mn650-page2.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/satchwell/satchwell-mn650-page3.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/satchwell/satchwell-mn650-page4.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/siemens/qet_directory
+%%DATADIR%%/elements/automatisme/regulateurs/siemens/regul-siemens-rlu232.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/boitier_mural/qet_directory
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/boitier_mural/str_100.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/boitier_mural/str_101.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/boitier_mural/str_102.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/boitier_mural/str_103_104.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/boitier_mural/str_106_107.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/boitier_mural/str_150.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/boitier_mural/str_200.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/boitier_mural/str_202.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/boitier_mural/str_250.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/boitier_mural/str_350.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/ecran/qet_directory
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/ecran/tac-xenta-opterm.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/module_ai/qet_directory
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/module_ai/tac-xenta471.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/module_ao/qet_directory
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/module_ao/tac-xenta491-492.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/module_di/qet_directory
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/module_di/tac-xenta411-412.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/module_repetiteur/qet_directory
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/module_repetiteur/tac-xenta-repeater.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/module_serveur_web/qet_directory
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/module_serveur_web/tac-xenta511.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/module_serveur_web/tac-xenta555.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/module_serveur_web/tac-xenta711-731.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/module_serveur_web/tac-xenta901.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/module_serveur_web/tac-xenta911.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/module_serveur_web/tac-xenta913.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/module_ui_ao/qet_directory
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/module_ui_ao/tac-xenta451-452.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/module_ui_tor/qet_directory
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/module_ui_tor/tac-xenta421-422.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/peripheriques/convertisseur_ar01.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/peripheriques/platine_1r.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/peripheriques/platine_1rs.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/peripheriques/platine_1rsa.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/peripheriques/platine_pd4.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/peripheriques/qet_directory
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/qet_directory
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/regulateurs/qet_directory
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/regulateurs/tac-xenta281.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/regulateurs/tac-xenta282.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/regulateurs/tac-xenta301.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/regulateurs/tac-xenta302.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/regulateurs/tac-xenta401.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/regulateurs/tac-xentalib.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/wit/qet_directory
+%%DATADIR%%/elements/automatisme/regulateurs/wit/wit0.8.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/wit/wit2.2.3.1.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/wit/wit6.2.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/wit/wit6.2ucentrale.elmt
+%%DATADIR%%/elements/automatisme/regulateurs/wit/witwlan.elmt
+%%DATADIR%%/elements/bobines/bobine1.elmt
+%%DATADIR%%/elements/bobines/bobine3.elmt
+%%DATADIR%%/elements/bobines/bobine_ka_a_remanence.elmt
+%%DATADIR%%/elements/bobines/bobine_ka_a_verrouillage_mecanique.elmt
+%%DATADIR%%/elements/bobines/bobine_tempo_repos-travail.elmt
+%%DATADIR%%/elements/bobines/bobine_tempo_repos.elmt
+%%DATADIR%%/elements/bobines/bobine_tempo_travail.elmt
+%%DATADIR%%/elements/bobines/comm_courant_alter.elmt
+%%DATADIR%%/elements/bobines/comm_electronique.elmt
+%%DATADIR%%/elements/bobines/comm_insens_au_courant_alter.elmt
+%%DATADIR%%/elements/bobines/comm_polarise.elmt
+%%DATADIR%%/elements/bobines/comm_rapides.elmt
+%%DATADIR%%/elements/bobines/comm_remanence.elmt
+%%DATADIR%%/elements/bobines/comm_repos_retardee.elmt
+%%DATADIR%%/elements/bobines/comm_repos_travail_retardee.elmt
+%%DATADIR%%/elements/bobines/comm_thermique.elmt
+%%DATADIR%%/elements/bobines/comm_travail_retardee.elmt
+%%DATADIR%%/elements/bobines/comm_verr_mecanique.elmt
+%%DATADIR%%/elements/bobines/contacteur.elmt
+%%DATADIR%%/elements/bobines/contacteur2.elmt
+%%DATADIR%%/elements/bobines/ev.elmt
+%%DATADIR%%/elements/bobines/omron_h3de-m1.elmt
+%%DATADIR%%/elements/bobines/qet_directory
+%%DATADIR%%/elements/bobines/re7.elmt
+%%DATADIR%%/elements/bobines/re8.elmt
+%%DATADIR%%/elements/bobines/relais.elmt
+%%DATADIR%%/elements/bobines/relais_niveau.elmt
+%%DATADIR%%/elements/bobines/relais_polarise_retournant.elmt
+%%DATADIR%%/elements/bobines/relais_statique.elmt
+%%DATADIR%%/elements/bobines/relbistable.elmt
+%%DATADIR%%/elements/bobines/telerupteur.elmt
+%%DATADIR%%/elements/bobines/telerupteur2.elmt
+%%DATADIR%%/elements/bornes/bornes/barette_de_terre.elmt
+%%DATADIR%%/elements/bornes/bornes/barre_interconnexion_tn.elmt
+%%DATADIR%%/elements/bornes/bornes/barrette_connexion_f.elmt
+%%DATADIR%%/elements/bornes/bornes/borne_continuite.elmt
+%%DATADIR%%/elements/bornes/bornes/borne_f.elmt
+%%DATADIR%%/elements/bornes/bornes/borne_finale.elmt
+%%DATADIR%%/elements/bornes/bornes/borne_fusible_cablage.elmt
+%%DATADIR%%/elements/bornes/bornes/bornes_e.elmt
+%%DATADIR%%/elements/bornes/bornes/bornes_es.elmt
+%%DATADIR%%/elements/bornes/bornes/bornes_s.elmt
+%%DATADIR%%/elements/bornes/bornes/connecteur_f.elmt
+%%DATADIR%%/elements/bornes/bornes/connecteur_m.elmt
+%%DATADIR%%/elements/bornes/bornes/connecteur_mf.elmt
+%%DATADIR%%/elements/bornes/bornes/contact_prise_fiche.elmt
+%%DATADIR%%/elements/bornes/bornes/prise_fiche.elmt
+%%DATADIR%%/elements/bornes/bornes/prise_multipolaire.elmt
+%%DATADIR%%/elements/bornes/bornes/prise_multipolaire_2.elmt
+%%DATADIR%%/elements/bornes/bornes/qet_directory
+%%DATADIR%%/elements/bornes/bornes/sec_fus_ferme1.elmt
+%%DATADIR%%/elements/bornes/borniers/borne_bornier.elmt
+%%DATADIR%%/elements/bornes/borniers/borne_bornier_fusible.elmt
+%%DATADIR%%/elements/bornes/borniers/bornier.elmt
+%%DATADIR%%/elements/bornes/borniers/bornier_1.elmt
+%%DATADIR%%/elements/bornes/borniers/qet_directory
+%%DATADIR%%/elements/bornes/borniers/repartiteur.elmt
+%%DATADIR%%/elements/bornes/qet_directory
+%%DATADIR%%/elements/capteurs/capteurs_capacitif/capteur_capacitif_3.elmt
+%%DATADIR%%/elements/capteurs/capteurs_capacitif/capteur_capacitif_4.elmt
+%%DATADIR%%/elements/capteurs/capteurs_capacitif/capteur_capacitif_nc.elmt
+%%DATADIR%%/elements/capteurs/capteurs_capacitif/capteur_capacitif_nc_3p.elmt
+%%DATADIR%%/elements/capteurs/capteurs_capacitif/capteur_capacitif_no.elmt
+%%DATADIR%%/elements/capteurs/capteurs_capacitif/capteur_capacitif_no_3p.elmt
+%%DATADIR%%/elements/capteurs/capteurs_capacitif/qet_directory
+%%DATADIR%%/elements/capteurs/capteurs_debit/capteur_debit.elmt
+%%DATADIR%%/elements/capteurs/capteurs_debit/debit_fluide_nf.elmt
+%%DATADIR%%/elements/capteurs/capteurs_debit/debit_fluide_nf_no.elmt
+%%DATADIR%%/elements/capteurs/capteurs_debit/debit_fluide_no.elmt
+%%DATADIR%%/elements/capteurs/capteurs_debit/debit_gaz_nf.elmt
+%%DATADIR%%/elements/capteurs/capteurs_debit/debit_gaz_nf_no.elmt
+%%DATADIR%%/elements/capteurs/capteurs_debit/debit_gaz_no.elmt
+%%DATADIR%%/elements/capteurs/capteurs_debit/debitmetre.elmt
+%%DATADIR%%/elements/capteurs/capteurs_debit/qet_directory
+%%DATADIR%%/elements/capteurs/capteurs_humidite/humidite_relative_nf.elmt
+%%DATADIR%%/elements/capteurs/capteurs_humidite/humidite_relative_nf_no.elmt
+%%DATADIR%%/elements/capteurs/capteurs_humidite/humidite_relative_no.elmt
+%%DATADIR%%/elements/capteurs/capteurs_humidite/qet_directory
+%%DATADIR%%/elements/capteurs/capteurs_inductif/capteur_ind_nc_2p.elmt
+%%DATADIR%%/elements/capteurs/capteurs_inductif/capteur_ind_nc_3p.elmt
+%%DATADIR%%/elements/capteurs/capteurs_inductif/capteur_ind_no_2p.elmt
+%%DATADIR%%/elements/capteurs/capteurs_inductif/capteur_ind_no_3p.elmt
+%%DATADIR%%/elements/capteurs/capteurs_inductif/capteur_inductif2_3.elmt
+%%DATADIR%%/elements/capteurs/capteurs_inductif/capteur_inductif_2.elmt
+%%DATADIR%%/elements/capteurs/capteurs_inductif/capteur_inductif_3.elmt
+%%DATADIR%%/elements/capteurs/capteurs_inductif/capteur_inductif_4.elmt
+%%DATADIR%%/elements/capteurs/capteurs_inductif/capteur_inductif_nc.elmt
+%%DATADIR%%/elements/capteurs/capteurs_inductif/capteur_inductif_no.elmt
+%%DATADIR%%/elements/capteurs/capteurs_inductif/induc.elmt
+%%DATADIR%%/elements/capteurs/capteurs_inductif/qet_directory
+%%DATADIR%%/elements/capteurs/capteurs_magnetique/capteur_magnetique_1.elmt
+%%DATADIR%%/elements/capteurs/capteurs_magnetique/capteur_magnetique_2.elmt
+%%DATADIR%%/elements/capteurs/capteurs_magnetique/capteur_magnetique_3.elmt
+%%DATADIR%%/elements/capteurs/capteurs_magnetique/capteur_magnetique_nc.elmt
+%%DATADIR%%/elements/capteurs/capteurs_magnetique/capteur_magnetique_no.elmt
+%%DATADIR%%/elements/capteurs/capteurs_magnetique/qet_directory
+%%DATADIR%%/elements/capteurs/capteurs_niveau/niv_liquide_nf.elmt
+%%DATADIR%%/elements/capteurs/capteurs_niveau/niv_liquide_nf_no.elmt
+%%DATADIR%%/elements/capteurs/capteurs_niveau/niv_liquide_no.elmt
+%%DATADIR%%/elements/capteurs/capteurs_niveau/qet_directory
+%%DATADIR%%/elements/capteurs/capteurs_niveau/sonde_niveau.elmt
+%%DATADIR%%/elements/capteurs/capteurs_optique/capteur_opt_nc_3p.elmt
+%%DATADIR%%/elements/capteurs/capteurs_optique/capteur_opt_nc_4p.elmt
+%%DATADIR%%/elements/capteurs/capteurs_optique/capteur_opt_no_2p.elmt
+%%DATADIR%%/elements/capteurs/capteurs_optique/capteur_opt_no_3p.elmt
+%%DATADIR%%/elements/capteurs/capteurs_optique/cellule_photoelectrique_emetteur.elmt
+%%DATADIR%%/elements/capteurs/capteurs_optique/cellule_photoelectrique_recepteur.elmt
+%%DATADIR%%/elements/capteurs/capteurs_optique/qet_directory
+%%DATADIR%%/elements/capteurs/capteurs_pression/capteur_pression.elmt
+%%DATADIR%%/elements/capteurs/capteurs_pression/pressostat.elmt
+%%DATADIR%%/elements/capteurs/capteurs_pression/pressostat2.elmt
+%%DATADIR%%/elements/capteurs/capteurs_pression/pressostat_nc.elmt
+%%DATADIR%%/elements/capteurs/capteurs_pression/pressostat_no.elmt
+%%DATADIR%%/elements/capteurs/capteurs_pression/qet_directory
+%%DATADIR%%/elements/capteurs/capteurs_ultrasons/capteurs_ultrasons.elmt
+%%DATADIR%%/elements/capteurs/capteurs_ultrasons/capteurs_ultrasons_2.elmt
+%%DATADIR%%/elements/capteurs/capteurs_ultrasons/capteurs_ultrasons_3.elmt
+%%DATADIR%%/elements/capteurs/capteurs_ultrasons/capteurs_ultrasons_nc.elmt
+%%DATADIR%%/elements/capteurs/capteurs_ultrasons/capteurs_ultrasons_no.elmt
+%%DATADIR%%/elements/capteurs/capteurs_ultrasons/qet_directory
+%%DATADIR%%/elements/capteurs/divers/bvs_oi-3-001-e.elmt
+%%DATADIR%%/elements/capteurs/divers/captlumiere.elmt
+%%DATADIR%%/elements/capteurs/divers/horloge.elmt
+%%DATADIR%%/elements/capteurs/divers/horloge1.elmt
+%%DATADIR%%/elements/capteurs/divers/horloge_2_sorties.elmt
+%%DATADIR%%/elements/capteurs/divers/moteur_horloge.elmt
+%%DATADIR%%/elements/capteurs/divers/qet_directory
+%%DATADIR%%/elements/capteurs/divers/sonde_temperature.elmt
 %%DATADIR%%/elements/capteurs/qet_directory
-%%DATADIR%%/elements/capteurs/sondes/qet_directory
-%%DATADIR%%/elements/capteurs/sondes/tores_de_courant/qet_directory
-%%DATADIR%%/elements/capteurs/sondes/tores_de_courant/tore1.elmt
-%%DATADIR%%/elements/capteurs/sondes/tores_de_courant/tore2.elmt
-%%DATADIR%%/elements/capteurs/sondes/tores_de_courant/tore3.elmt
-%%DATADIR%%/elements/capteurs/sondes/tores_de_courant/tore4.elmt
-%%DATADIR%%/elements/contacts/bornes/Bornes_e.elmt
-%%DATADIR%%/elements/contacts/bornes/Bornes_es.elmt
-%%DATADIR%%/elements/contacts/bornes/Bornes_s.elmt
-%%DATADIR%%/elements/contacts/bornes/borne_continuite.elmt
-%%DATADIR%%/elements/contacts/bornes/borne_finale.elmt
-%%DATADIR%%/elements/contacts/bornes/connecteur_f.elmt
-%%DATADIR%%/elements/contacts/bornes/connecteur_m.elmt
-%%DATADIR%%/elements/contacts/bornes/connecteur_mf.elmt
-%%DATADIR%%/elements/contacts/bornes/qet_directory
+%%DATADIR%%/elements/contacts/auxiliary_contacts/aux_contact_2no-2nc.elmt
+%%DATADIR%%/elements/contacts/auxiliary_contacts/aux_contact_2no.elmt
+%%DATADIR%%/elements/contacts/auxiliary_contacts/aux_contact_4nc.elmt
+%%DATADIR%%/elements/contacts/auxiliary_contacts/aux_contact_4no.elmt
+%%DATADIR%%/elements/contacts/auxiliary_contacts/aux_contact_no-nc.elmt
+%%DATADIR%%/elements/contacts/auxiliary_contacts/mech_linked.elmt
+%%DATADIR%%/elements/contacts/auxiliary_contacts/mirror_switch_nc.elmt
+%%DATADIR%%/elements/contacts/auxiliary_contacts/qet_directory
 %%DATADIR%%/elements/contacts/etanches/con_simple_etanche.elmt
 %%DATADIR%%/elements/contacts/etanches/con_simple_nf_etanche.elmt
 %%DATADIR%%/elements/contacts/etanches/qet_directory
-%%DATADIR%%/elements/contacts/fin_de_course/findecourse_nf.elmt
-%%DATADIR%%/elements/contacts/fin_de_course/findecourse_no.elmt
+%%DATADIR%%/elements/contacts/fin_de_course/fin_de_course_came_2_nf.elmt
+%%DATADIR%%/elements/contacts/fin_de_course/fin_de_course_came_2_no.elmt
+%%DATADIR%%/elements/contacts/fin_de_course/fin_de_course_came_nf.elmt
+%%DATADIR%%/elements/contacts/fin_de_course/fin_de_course_came_no.elmt
+%%DATADIR%%/elements/contacts/fin_de_course/fin_de_course_nf.elmt
+%%DATADIR%%/elements/contacts/fin_de_course/fin_de_course_no.elmt
 %%DATADIR%%/elements/contacts/fin_de_course/qet_directory
-%%DATADIR%%/elements/contacts/interupteur/inter_2.elmt
-%%DATADIR%%/elements/contacts/interupteur/inter_2n.elmt
-%%DATADIR%%/elements/contacts/interupteur/interupteur.elmt
-%%DATADIR%%/elements/contacts/interupteur/qet_directory
+%%DATADIR%%/elements/contacts/interrupteurs/arret_urgence_verrou.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/bouton_tournant_01.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/bouton_tournant_02.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/bouton_tournant_03.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/bouton_tournant_04.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/bouton_tournant_05.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/bouton_tournant_06.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/bouton_tournant_07.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/bouton_tournant_08.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/bouton_tournant_09.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/bouton_tournant_10.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/bouton_tournant_11.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/bouton_tournant_12.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/bouton_tournant_13.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/bouton_tournant_14.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/bouton_tournant_15.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/bouton_tournant_16.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/bouton_tournant_17.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/bouton_tournant_18.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/bp1-0-2.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/bp1-0-2inv.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/cle_01.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/cle_02.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/cle_03.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/cle_04.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/cle_05.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/cle_06.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/cle_07.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/cle_08.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/cle_09.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/cle_10.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/cle_11.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/cle_12.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/commut_2_position_fixe.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/commutateur_2_positions_a_cle.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/contact_001.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/contact_002.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/contact_008.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/contact_012.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/contact_013.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/contact_014.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/contact_015.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/foot_no_nc.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/inter_2.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/inter_2n.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/interrupteur.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/interruptor_001.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/interruptor_002.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/key_1-0-2.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/key_1-0-2_inv.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/manette_01.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/manette_02.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/manette_03.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/manette_04.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/manette_05.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/manette_06.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/manipulateur_001.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/manipulateur_002.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/manipulateur_003.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/manipulateur_004.elmt
+%%DATADIR%%/elements/contacts/interrupteurs/qet_directory
+%%DATADIR%%/elements/contacts/interrupteurs/tirette.elmt
+%%DATADIR%%/elements/contacts/poussoirs/a-u_001.elmt
+%%DATADIR%%/elements/contacts/poussoirs/a-u_002.elmt
+%%DATADIR%%/elements/contacts/poussoirs/a-u_003.elmt
+%%DATADIR%%/elements/contacts/poussoirs/a-u_004.elmt
+%%DATADIR%%/elements/contacts/poussoirs/a-u_005.elmt
+%%DATADIR%%/elements/contacts/poussoirs/a-u_006.elmt
+%%DATADIR%%/elements/contacts/poussoirs/arret-urgence_no.elmt
+%%DATADIR%%/elements/contacts/poussoirs/arret_urgence_deverrouillage_a_cle.elmt
+%%DATADIR%%/elements/contacts/poussoirs/arret_urgence_tourner_deverouiller.elmt
+%%DATADIR%%/elements/contacts/poussoirs/au.elmt
+%%DATADIR%%/elements/contacts/poussoirs/bouton_poussoir_lumineux.elmt
 %%DATADIR%%/elements/contacts/poussoirs/poussoir.elmt
 %%DATADIR%%/elements/contacts/poussoirs/poussoir_nf.elmt
 %%DATADIR%%/elements/contacts/poussoirs/qet_directory
+%%DATADIR%%/elements/contacts/poussoirs/two-hand_1.elmt
+%%DATADIR%%/elements/contacts/poussoirs/two-hand_2.elmt
+%%DATADIR%%/elements/contacts/poussoirs/voyant_bouton_poussoir_lumineux.elmt
 %%DATADIR%%/elements/contacts/puissance/normalement_fermes/com_puiss_nf1.elmt
 %%DATADIR%%/elements/contacts/puissance/normalement_fermes/com_puiss_nf4.elmt
 %%DATADIR%%/elements/contacts/puissance/normalement_fermes/com_puiss_nf5.elmt
@@ -106,13 +786,44 @@ share/mimelnk/application/x-qet-element.desktop
 %%DATADIR%%/elements/contacts/puissance/normalement_ouverts/com_puiss6.elmt
 %%DATADIR%%/elements/contacts/puissance/normalement_ouverts/qet_directory
 %%DATADIR%%/elements/contacts/puissance/qet_directory
+%%DATADIR%%/elements/contacts/puissance/verrouillage-meca.elmt
 %%DATADIR%%/elements/contacts/qet_directory
+%%DATADIR%%/elements/contacts/relais_thermique/act_termique_nf.elmt
+%%DATADIR%%/elements/contacts/relais_thermique/act_termique_no.elmt
 %%DATADIR%%/elements/contacts/relais_thermique/contact_relais.elmt
 %%DATADIR%%/elements/contacts/relais_thermique/contact_relais_nf.elmt
 %%DATADIR%%/elements/contacts/relais_thermique/qet_directory
+%%DATADIR%%/elements/contacts/simples/act_a_semi_cond_nf.elmt
+%%DATADIR%%/elements/contacts/simples/act_a_semi_cond_no.elmt
+%%DATADIR%%/elements/contacts/simples/act_a_semi_cond_no_nf.elmt
+%%DATADIR%%/elements/contacts/simples/act_comptage_no.elmt
+%%DATADIR%%/elements/contacts/simples/act_electromagnetique_nf.elmt
+%%DATADIR%%/elements/contacts/simples/act_electromagnetique_no.elmt
+%%DATADIR%%/elements/contacts/simples/act_hydr_double_nf.elmt
+%%DATADIR%%/elements/contacts/simples/act_hydr_double_no.elmt
+%%DATADIR%%/elements/contacts/simples/act_hydr_double_no_nf.elmt
+%%DATADIR%%/elements/contacts/simples/act_hydr_simple_nf.elmt
+%%DATADIR%%/elements/contacts/simples/act_hydr_simple_no-2.elmt
+%%DATADIR%%/elements/contacts/simples/act_hydr_simple_no.elmt
+%%DATADIR%%/elements/contacts/simples/act_hydr_simple_no_nf.elmt
+%%DATADIR%%/elements/contacts/simples/comm_par_horl_nf.elmt
+%%DATADIR%%/elements/contacts/simples/comm_par_horl_no.elmt
+%%DATADIR%%/elements/contacts/simples/comm_par_horl_no_nf.elmt
+%%DATADIR%%/elements/contacts/simples/comm_par_mot_nf.elmt
+%%DATADIR%%/elements/contacts/simples/comm_par_mot_no.elmt
+%%DATADIR%%/elements/contacts/simples/comm_par_mot_no_nf.elmt
+%%DATADIR%%/elements/contacts/simples/con_centrifuge_nf.elmt
+%%DATADIR%%/elements/contacts/simples/con_centrifuge_no.elmt
 %%DATADIR%%/elements/contacts/simples/con_simple.elmt
 %%DATADIR%%/elements/contacts/simples/con_simple_nf.elmt
+%%DATADIR%%/elements/contacts/simples/contnonc.elmt
 %%DATADIR%%/elements/contacts/simples/qet_directory
+%%DATADIR%%/elements/contacts/temporises/con_simple_nf_tmp_on_off.elmt
+%%DATADIR%%/elements/contacts/temporises/con_simple_no_tmp_on_off.elmt
+%%DATADIR%%/elements/contacts/temporises/contact_frem_anticipee.elmt
+%%DATADIR%%/elements/contacts/temporises/contact_frem_tardive.elmt
+%%DATADIR%%/elements/contacts/temporises/contact_ouverture_anticipee.elmt
+%%DATADIR%%/elements/contacts/temporises/contact_ouverture_tardive.elmt
 %%DATADIR%%/elements/contacts/temporises/qet_directory
 %%DATADIR%%/elements/contacts/temporises/repos/con_simple_nf_tmp_r.elmt
 %%DATADIR%%/elements/contacts/temporises/repos/con_simple_tmp_r.elmt
@@ -120,16 +831,746 @@ share/mimelnk/application/x-qet-element.desktop
 %%DATADIR%%/elements/contacts/temporises/travail/con_simple_nf_tmp_t.elmt
 %%DATADIR%%/elements/contacts/temporises/travail/con_simple_tmp_t.elmt
 %%DATADIR%%/elements/contacts/temporises/travail/qet_directory
-%%DATADIR%%/elements/convertisseurs/blocs/ac1_ac1.elmt
-%%DATADIR%%/elements/convertisseurs/blocs/ac1_dc.elmt
-%%DATADIR%%/elements/convertisseurs/blocs/dc_ac1.elmt
-%%DATADIR%%/elements/convertisseurs/blocs/dc_dc.elmt
-%%DATADIR%%/elements/convertisseurs/blocs/qet_directory
-%%DATADIR%%/elements/convertisseurs/qet_directory
-%%DATADIR%%/elements/haute_tension/interrupteur_sectionneur_de_terre.elmt
-%%DATADIR%%/elements/haute_tension/qet_directory
-%%DATADIR%%/elements/haute_tension/signal_capacitif.elmt
-%%DATADIR%%/elements/protections/au.elmt
+%%DATADIR%%/elements/domestique/architectural/2_electrical_sockets_11-13-02_en60617.elmt
+%%DATADIR%%/elements/domestique/architectural/3_electrical_sockets_11-13-02_en60617.elmt
+%%DATADIR%%/elements/domestique/architectural/bouton_poussoir.elmt
+%%DATADIR%%/elements/domestique/architectural/bouton_poussoir_lumineux.elmt
+%%DATADIR%%/elements/domestique/architectural/bouton_poussoir_protege.elmt
+%%DATADIR%%/elements/domestique/architectural/coffret_de_repartition1.elmt
+%%DATADIR%%/elements/domestique/architectural/coffret_de_repartition2.elmt
+%%DATADIR%%/elements/domestique/architectural/commutateur_pour_va_et_vient.elmt
+%%DATADIR%%/elements/domestique/architectural/commutateur_unipolaire.elmt
+%%DATADIR%%/elements/domestique/architectural/connecteur.elmt
+%%DATADIR%%/elements/domestique/architectural/covered_isolated_ground_receptacle_11-13-0x_en60617.elmt
+%%DATADIR%%/elements/domestique/architectural/eclairage1.elmt
+%%DATADIR%%/elements/domestique/architectural/eclairage2.elmt
+%%DATADIR%%/elements/domestique/architectural/electrical_socket_11-13-01_en60617.elmt
+%%DATADIR%%/elements/domestique/architectural/gache_electrique.elmt
+%%DATADIR%%/elements/domestique/architectural/horloge_pointage.elmt
+%%DATADIR%%/elements/domestique/architectural/interphone.elmt
+%%DATADIR%%/elements/domestique/architectural/interrupteur.elmt
+%%DATADIR%%/elements/domestique/architectural/interrupteur_a_lampe_temoin.elmt
+%%DATADIR%%/elements/domestique/architectural/interrupteur_a_temps_de_fermeture_limite.elmt
+%%DATADIR%%/elements/domestique/architectural/interrupteur_bipolaire.elmt
+%%DATADIR%%/elements/domestique/architectural/interrupteur_fin_de_course.elmt
+%%DATADIR%%/elements/domestique/architectural/interrupteur_gradateur.elmt
+%%DATADIR%%/elements/domestique/architectural/interrupteur_horaire.elmt
+%%DATADIR%%/elements/domestique/architectural/interrupteur_tripolaire.elmt
+%%DATADIR%%/elements/domestique/architectural/interrupteur_unipolaire.elmt
+%%DATADIR%%/elements/domestique/architectural/interrupteur_unipolaire_a_tirette.elmt
+%%DATADIR%%/elements/domestique/architectural/interrupteur_unipolaire_va_et_vient.elmt
+%%DATADIR%%/elements/domestique/architectural/isolated_ground_receptacle_11-13-04_en60617.elmt
+%%DATADIR%%/elements/domestique/architectural/lampe.elmt
+%%DATADIR%%/elements/domestique/architectural/lampe_a_fluorescence.elmt
+%%DATADIR%%/elements/domestique/architectural/luminaire3.elmt
+%%DATADIR%%/elements/domestique/architectural/luminaire5.elmt
+%%DATADIR%%/elements/domestique/architectural/minuterie.elmt
+%%DATADIR%%/elements/domestique/architectural/moteur.elmt
+%%DATADIR%%/elements/domestique/architectural/moteur_pas_a_pas.elmt
+%%DATADIR%%/elements/domestique/architectural/pc1.elmt
+%%DATADIR%%/elements/domestique/architectural/pc2.elmt
+%%DATADIR%%/elements/domestique/architectural/pc3.elmt
+%%DATADIR%%/elements/domestique/architectural/pc4.elmt
+%%DATADIR%%/elements/domestique/architectural/pc5.elmt
+%%DATADIR%%/elements/domestique/architectural/pc6.elmt
+%%DATADIR%%/elements/domestique/architectural/pc7.elmt
+%%DATADIR%%/elements/domestique/architectural/point_eclairage_1.elmt
+%%DATADIR%%/elements/domestique/architectural/point_eclairage_2.elmt
+%%DATADIR%%/elements/domestique/architectural/projecteur_1.elmt
+%%DATADIR%%/elements/domestique/architectural/projecteur_2.elmt
+%%DATADIR%%/elements/domestique/architectural/projecteur_3.elmt
+%%DATADIR%%/elements/domestique/architectural/protege_par_cle.elmt
+%%DATADIR%%/elements/domestique/architectural/qet_directory
+%%DATADIR%%/elements/domestique/architectural/ventilateur.elmt
+%%DATADIR%%/elements/domestique/compteurs/ampereheuremetre.elmt
+%%DATADIR%%/elements/domestique/compteurs/compteur_220v_monophase.elmt
+%%DATADIR%%/elements/domestique/compteurs/compteur_energie.elmt
+%%DATADIR%%/elements/domestique/compteurs/compteur_energie_active_a_depassement_de_puissance.elmt
+%%DATADIR%%/elements/domestique/compteurs/compteur_horaire.elmt
+%%DATADIR%%/elements/domestique/compteurs/compteur_horaire_08-04-03_en60617.elmt
+%%DATADIR%%/elements/domestique/compteurs/qet_directory
+%%DATADIR%%/elements/domestique/compteurs/varh_08-04-15_en60617.elmt
+%%DATADIR%%/elements/domestique/compteurs/varheuremetre.elmt
+%%DATADIR%%/elements/domestique/compteurs/wattheuremetre.elmt
+%%DATADIR%%/elements/domestique/compteurs/wattheuremetre_08-04-03_en60617.elmt
+%%DATADIR%%/elements/domestique/electromenager/appareil_de_chauffage.elmt
+%%DATADIR%%/elements/domestique/electromenager/appareil_de_chauffage_a_accumulation.elmt
+%%DATADIR%%/elements/domestique/electromenager/appareil_de_cuisson.elmt
+%%DATADIR%%/elements/domestique/electromenager/appareil_electromenager.elmt
+%%DATADIR%%/elements/domestique/electromenager/armoire_seche_linge.elmt
+%%DATADIR%%/elements/domestique/electromenager/chauffe-eau.elmt
+%%DATADIR%%/elements/domestique/electromenager/chauffe_eau.elmt
+%%DATADIR%%/elements/domestique/electromenager/climatiseur.elmt
+%%DATADIR%%/elements/domestique/electromenager/congelateur.elmt
+%%DATADIR%%/elements/domestique/electromenager/convecteur.elmt
+%%DATADIR%%/elements/domestique/electromenager/cuisiniere_electrique.elmt
+%%DATADIR%%/elements/domestique/electromenager/four.elmt
+%%DATADIR%%/elements/domestique/electromenager/four_micro_onde.elmt
+%%DATADIR%%/elements/domestique/electromenager/hotte_aspirante_filtrante.elmt
+%%DATADIR%%/elements/domestique/electromenager/lave_linge.elmt
+%%DATADIR%%/elements/domestique/electromenager/lave_vaiselle.elmt
+%%DATADIR%%/elements/domestique/electromenager/lave_vaisselles.elmt
+%%DATADIR%%/elements/domestique/electromenager/oven.elmt
+%%DATADIR%%/elements/domestique/electromenager/plaque_cuisson.elmt
+%%DATADIR%%/elements/domestique/electromenager/qet_directory
+%%DATADIR%%/elements/domestique/electromenager/radiateur.elmt
+%%DATADIR%%/elements/domestique/electromenager/radiateur_soufflant_seche_cheveux.elmt
+%%DATADIR%%/elements/domestique/electromenager/refrigerateur.elmt
+%%DATADIR%%/elements/domestique/electromenager/refrigerateur_avec_partie_conglateur.elmt
+%%DATADIR%%/elements/domestique/qet_directory
+%%DATADIR%%/elements/energie/froid/capteurs/debitmetre.elmt
+%%DATADIR%%/elements/energie/froid/capteurs/pressostathp.elmt
+%%DATADIR%%/elements/energie/froid/capteurs/qet_directory
+%%DATADIR%%/elements/energie/froid/capteurs/thermostat.elmt
+%%DATADIR%%/elements/energie/froid/clapetsdenonretour/clapetantiretour.elmt
+%%DATADIR%%/elements/energie/froid/clapetsdenonretour/qet_directory
+%%DATADIR%%/elements/energie/froid/compresseursetventilateurs/compresseur-general.elmt
+%%DATADIR%%/elements/energie/froid/compresseursetventilateurs/compresseurpalettes.elmt
+%%DATADIR%%/elements/energie/froid/compresseursetventilateurs/compresseurpiston.elmt
+%%DATADIR%%/elements/energie/froid/compresseursetventilateurs/compresseurrotatif.elmt
+%%DATADIR%%/elements/energie/froid/compresseursetventilateurs/compresseurscroll.elmt
+%%DATADIR%%/elements/energie/froid/compresseursetventilateurs/compresseurturbo.elmt
+%%DATADIR%%/elements/energie/froid/compresseursetventilateurs/compresseurvis.elmt
+%%DATADIR%%/elements/energie/froid/compresseursetventilateurs/qet_directory
+%%DATADIR%%/elements/energie/froid/compresseursetventilateurs/ventilateur-general.elmt
+%%DATADIR%%/elements/energie/froid/compresseursetventilateurs/ventilateuraxial.elmt
+%%DATADIR%%/elements/energie/froid/compresseursetventilateurs/ventilateurcentrifuge.elmt
+%%DATADIR%%/elements/energie/froid/echangeurs/echangeuraair.elmt
+%%DATADIR%%/elements/energie/froid/echangeurs/qet_directory
+%%DATADIR%%/elements/energie/froid/filtres/filtreacartouche.elmt
+%%DATADIR%%/elements/energie/froid/filtres/qet_directory
+%%DATADIR%%/elements/energie/froid/pompes/pompe-general.elmt
+%%DATADIR%%/elements/energie/froid/pompes/pompealternative.elmt
+%%DATADIR%%/elements/energie/froid/pompes/pompecentrifuge.elmt
+%%DATADIR%%/elements/energie/froid/pompes/pompevis.elmt
+%%DATADIR%%/elements/energie/froid/pompes/qet_directory
+%%DATADIR%%/elements/energie/froid/qet_directory
+%%DATADIR%%/elements/energie/froid/recipientsetreservoirs/bouteillegrande.elmt
+%%DATADIR%%/elements/energie/froid/recipientsetreservoirs/bouteillemoyenne.elmt
+%%DATADIR%%/elements/energie/froid/recipientsetreservoirs/bouteillepetite.elmt
+%%DATADIR%%/elements/energie/froid/recipientsetreservoirs/qet_directory
+%%DATADIR%%/elements/energie/froid/robinetsactionneurs/detendeurelectronique.elmt
+%%DATADIR%%/elements/energie/froid/robinetsactionneurs/detendeurthermoexterne.elmt
+%%DATADIR%%/elements/energie/froid/robinetsactionneurs/detendeurthermointerne.elmt
+%%DATADIR%%/elements/energie/froid/robinetsactionneurs/electrovanne.elmt
+%%DATADIR%%/elements/energie/froid/robinetsactionneurs/qet_directory
+%%DATADIR%%/elements/energie/froid/robinetsactionneurs/robinetaflotteur.elmt
+%%DATADIR%%/elements/energie/froid/robinetsactionneurs/vannepressionconstantedroite.elmt
+%%DATADIR%%/elements/energie/froid/robinetsactionneurs/vannepressionconstantegauche.elmt
+%%DATADIR%%/elements/energie/froid/robinetsdesecurite/qet_directory
+%%DATADIR%%/elements/energie/froid/robinetsdesecurite/vannesecurite.elmt
+%%DATADIR%%/elements/energie/froid/robinetsdisolement/qet_directory
+%%DATADIR%%/elements/energie/froid/robinetsdisolement/vanneisolement.elmt
+%%DATADIR%%/elements/energie/froid/robinetsdisolement/vanneisolementboisseau.elmt
+%%DATADIR%%/elements/energie/froid/robinetsdisolement/vanneisolementetservicedroite.elmt
+%%DATADIR%%/elements/energie/froid/robinetsdisolement/vanneisolementetservicegauche.elmt
+%%DATADIR%%/elements/energie/froid/separateurs/qet_directory
+%%DATADIR%%/elements/energie/froid/separateurs/separateur.elmt
+%%DATADIR%%/elements/energie/froid/separateurs/separateurdhuile.elmt
+%%DATADIR%%/elements/energie/froid/tuyauteries/capillaire.elmt
+%%DATADIR%%/elements/energie/froid/tuyauteries/connexion01.elmt
+%%DATADIR%%/elements/energie/froid/tuyauteries/connexion3.elmt
+%%DATADIR%%/elements/energie/froid/tuyauteries/qet_directory
+%%DATADIR%%/elements/energie/froid/tuyauteries/tuyauteriesouple.elmt
+%%DATADIR%%/elements/energie/froid/ventilation/admission_d.air.elmt
+%%DATADIR%%/elements/energie/froid/ventilation/chauffe.elmt
+%%DATADIR%%/elements/energie/froid/ventilation/echappement.elmt
+%%DATADIR%%/elements/energie/froid/ventilation/filtre_d.air.elmt
+%%DATADIR%%/elements/energie/froid/ventilation/malaxage.elmt
+%%DATADIR%%/elements/energie/froid/ventilation/qet_directory
+%%DATADIR%%/elements/energie/froid/ventilation/ventilateur.elmt
+%%DATADIR%%/elements/energie/froid/ventilation/volet_d.air-1.elmt
+%%DATADIR%%/elements/energie/froid/ventilation/volet_d.air-3.elmt
+%%DATADIR%%/elements/energie/qet_directory
+%%DATADIR%%/elements/energie/solaire/ballon_echangeur/ballon_01.elmt
+%%DATADIR%%/elements/energie/solaire/ballon_echangeur/ballon_02.elmt
+%%DATADIR%%/elements/energie/solaire/ballon_echangeur/ballon_combine_01.elmt
+%%DATADIR%%/elements/energie/solaire/ballon_echangeur/ballon_combiner_ecs_01.elmt
+%%DATADIR%%/elements/energie/solaire/ballon_echangeur/ballon_demi_strat.elmt
+%%DATADIR%%/elements/energie/solaire/ballon_echangeur/ballon_ecs_elec.elmt
+%%DATADIR%%/elements/energie/solaire/ballon_echangeur/ballon_ecs_horizon_01.elmt
+%%DATADIR%%/elements/energie/solaire/ballon_echangeur/ballon_stock1000l.elmt
+%%DATADIR%%/elements/energie/solaire/ballon_echangeur/ballon_strat_ecs.elmt
+%%DATADIR%%/elements/energie/solaire/ballon_echangeur/echangeur_plaque.elmt
+%%DATADIR%%/elements/energie/solaire/ballon_echangeur/mur_chauffant_01.elmt
+%%DATADIR%%/elements/energie/solaire/ballon_echangeur/mur_radian.elmt
+%%DATADIR%%/elements/energie/solaire/ballon_echangeur/plancher_chauffant_01.elmt
+%%DATADIR%%/elements/energie/solaire/ballon_echangeur/qet_directory
+%%DATADIR%%/elements/energie/solaire/ballon_echangeur/radiateur_01.elmt
+%%DATADIR%%/elements/energie/solaire/ballon_echangeur/sksw-0.elmt
+%%DATADIR%%/elements/energie/solaire/base_distrib/ballon_chicane-plus.elmt
+%%DATADIR%%/elements/energie/solaire/base_distrib/ballon_combiner_ecs.elmt
+%%DATADIR%%/elements/energie/solaire/base_distrib/ballon_double_enveloppe.elmt
+%%DATADIR%%/elements/energie/solaire/base_distrib/bouteille_echang_plaque.elmt
+%%DATADIR%%/elements/energie/solaire/base_distrib/bouteille_vanne.elmt
+%%DATADIR%%/elements/energie/solaire/base_distrib/chicane.elmt
+%%DATADIR%%/elements/energie/solaire/base_distrib/direct.elmt
+%%DATADIR%%/elements/energie/solaire/base_distrib/direct_chauffage.elmt
+%%DATADIR%%/elements/energie/solaire/base_distrib/direct_ecs.elmt
+%%DATADIR%%/elements/energie/solaire/base_distrib/echangeur.elmt
+%%DATADIR%%/elements/energie/solaire/base_distrib/indirecte.elmt
+%%DATADIR%%/elements/energie/solaire/base_distrib/qet_directory
+%%DATADIR%%/elements/energie/solaire/base_distrib/semi-direct_bis.elmt
+%%DATADIR%%/elements/energie/solaire/eau_sanitaire/circulateur_sanitaire.elmt
+%%DATADIR%%/elements/energie/solaire/eau_sanitaire/cumuls_elec_01.elmt
+%%DATADIR%%/elements/energie/solaire/eau_sanitaire/cumulus_elec_2.elmt
+%%DATADIR%%/elements/energie/solaire/eau_sanitaire/disconnecteur_01d.elmt
+%%DATADIR%%/elements/energie/solaire/eau_sanitaire/disconnecteur_01g.elmt
+%%DATADIR%%/elements/energie/solaire/eau_sanitaire/disconnecteur_sanitaire.elmt
+%%DATADIR%%/elements/energie/solaire/eau_sanitaire/douche.elmt
+%%DATADIR%%/elements/energie/solaire/eau_sanitaire/eau_ville.elmt
+%%DATADIR%%/elements/energie/solaire/eau_sanitaire/ecs_robinet.elmt
+%%DATADIR%%/elements/energie/solaire/eau_sanitaire/electro-vanne3v.elmt
+%%DATADIR%%/elements/energie/solaire/eau_sanitaire/electro_vanne2v_01.elmt
+%%DATADIR%%/elements/energie/solaire/eau_sanitaire/mitigeur_melangeur_01.elmt
+%%DATADIR%%/elements/energie/solaire/eau_sanitaire/mitigeur_melangeur_02.elmt
+%%DATADIR%%/elements/energie/solaire/eau_sanitaire/mitigeur_melangeur_03.elmt
+%%DATADIR%%/elements/energie/solaire/eau_sanitaire/mitigeur_thermostatique.elmt
+%%DATADIR%%/elements/energie/solaire/eau_sanitaire/qet_directory
+%%DATADIR%%/elements/energie/solaire/eau_sanitaire/rechauff_ecs_doublenveloppe.elmt
+%%DATADIR%%/elements/energie/solaire/eau_sanitaire/rechauff_ecs_plaques.elmt
+%%DATADIR%%/elements/energie/solaire/eau_sanitaire/rechauff_ecs_tubulaire.elmt
+%%DATADIR%%/elements/energie/solaire/eau_sanitaire/rechauffeur_ecs.elmt
+%%DATADIR%%/elements/energie/solaire/eau_sanitaire/robinet_melangeur_01.elmt
+%%DATADIR%%/elements/energie/solaire/eau_sanitaire/robinet_puisage_01.elmt
+%%DATADIR%%/elements/energie/solaire/eau_sanitaire/robinet_tournant_boulle_01.elmt
+%%DATADIR%%/elements/energie/solaire/expansion_soupape/bouteille_guy_delsol.elmt
+%%DATADIR%%/elements/energie/solaire/expansion_soupape/event_01.elmt
+%%DATADIR%%/elements/energie/solaire/expansion_soupape/groupe_securite_01d.elmt
+%%DATADIR%%/elements/energie/solaire/expansion_soupape/groupe_securite_01g.elmt
+%%DATADIR%%/elements/energie/solaire/expansion_soupape/manometre_01.elmt
+%%DATADIR%%/elements/energie/solaire/expansion_soupape/purgeur.elmt
+%%DATADIR%%/elements/energie/solaire/expansion_soupape/qet_directory
+%%DATADIR%%/elements/energie/solaire/expansion_soupape/soupape_01d.elmt
+%%DATADIR%%/elements/energie/solaire/expansion_soupape/soupape_01g.elmt
+%%DATADIR%%/elements/energie/solaire/expansion_soupape/termovar.elmt
+%%DATADIR%%/elements/energie/solaire/expansion_soupape/thermometre_rond_01.elmt
+%%DATADIR%%/elements/energie/solaire/expansion_soupape/thermometre_vertical_01.elmt
+%%DATADIR%%/elements/energie/solaire/expansion_soupape/vanne_diferentielle_01d.elmt
+%%DATADIR%%/elements/energie/solaire/expansion_soupape/vanne_diferentielle_03.elmt
+%%DATADIR%%/elements/energie/solaire/expansion_soupape/vanne_diferentielle_1g.elmt
+%%DATADIR%%/elements/energie/solaire/expansion_soupape/vanne_diferentielle_3d.elmt
+%%DATADIR%%/elements/energie/solaire/expansion_soupape/vanne_diferentielle_3g.elmt
+%%DATADIR%%/elements/energie/solaire/expansion_soupape/vanne_recyclage_thermostatique_01g.elmt
+%%DATADIR%%/elements/energie/solaire/expansion_soupape/vase_chauffage_01.elmt
+%%DATADIR%%/elements/energie/solaire/expansion_soupape/vase_chauffage_02.elmt
+%%DATADIR%%/elements/energie/solaire/expansion_soupape/vase_chauffage_03.elmt
+%%DATADIR%%/elements/energie/solaire/expansion_soupape/vase_chauffage_ouvert_01.elmt
+%%DATADIR%%/elements/energie/solaire/expansion_soupape/vase_chauffage_ouvert_02.elmt
+%%DATADIR%%/elements/energie/solaire/expansion_soupape/vidange.elmt
+%%DATADIR%%/elements/energie/solaire/pompe/circulateur_reversible_01.elmt
+%%DATADIR%%/elements/energie/solaire/pompe/circulateur_sanitaire_01.elmt
+%%DATADIR%%/elements/energie/solaire/pompe/circulateur_sanitaire_clapet_01.elmt
+%%DATADIR%%/elements/energie/solaire/pompe/debimetre_helice_01.elmt
+%%DATADIR%%/elements/energie/solaire/pompe/module_hydraulique_01.elmt
+%%DATADIR%%/elements/energie/solaire/pompe/module_hydraulique_02.elmt
+%%DATADIR%%/elements/energie/solaire/pompe/pompe_01.elmt
+%%DATADIR%%/elements/energie/solaire/pompe/pompe_clapet_01.elmt
+%%DATADIR%%/elements/energie/solaire/pompe/qet_directory
+%%DATADIR%%/elements/energie/solaire/productions/cap_thersolaire.elmt
+%%DATADIR%%/elements/energie/solaire/productions/capteur_tubes_01.elmt
+%%DATADIR%%/elements/energie/solaire/productions/chaudiere_bois_01.elmt
+%%DATADIR%%/elements/energie/solaire/productions/poele_01.elmt
+%%DATADIR%%/elements/energie/solaire/productions/qet_directory
+%%DATADIR%%/elements/energie/solaire/qet_directory
+%%DATADIR%%/elements/energie/solaire/raccords_cuivre/coude_90.elmt
+%%DATADIR%%/elements/energie/solaire/raccords_cuivre/coude_90_grandrayon.elmt
+%%DATADIR%%/elements/energie/solaire/raccords_cuivre/cumulus2.elmt
+%%DATADIR%%/elements/energie/solaire/raccords_cuivre/qet_directory
+%%DATADIR%%/elements/energie/solaire/raccords_cuivre/te_droit.elmt
+%%DATADIR%%/elements/energie/solaire/raccords_cuivre/te_oblique.elmt
+%%DATADIR%%/elements/energie/solaire/signaletiques/diametre_01.elmt
+%%DATADIR%%/elements/energie/solaire/signaletiques/entre_ef_ecs.elmt
+%%DATADIR%%/elements/energie/solaire/signaletiques/fleche.elmt
+%%DATADIR%%/elements/energie/solaire/signaletiques/fleche2.elmt
+%%DATADIR%%/elements/energie/solaire/signaletiques/fleche3.elmt
+%%DATADIR%%/elements/energie/solaire/signaletiques/fleche4.elmt
+%%DATADIR%%/elements/energie/solaire/signaletiques/fleche_3voies_01.elmt
+%%DATADIR%%/elements/energie/solaire/signaletiques/fleche_3voies_02.elmt
+%%DATADIR%%/elements/energie/solaire/signaletiques/fleche_3voies_03.elmt
+%%DATADIR%%/elements/energie/solaire/signaletiques/fleche_3voies_04.elmt
+%%DATADIR%%/elements/energie/solaire/signaletiques/fleche_fluide.elmt
+%%DATADIR%%/elements/energie/solaire/signaletiques/flechedroite.elmt
+%%DATADIR%%/elements/energie/solaire/signaletiques/lien_folio_01.elmt
+%%DATADIR%%/elements/energie/solaire/signaletiques/lien_folio_02.elmt
+%%DATADIR%%/elements/energie/solaire/signaletiques/percement.elmt
+%%DATADIR%%/elements/energie/solaire/signaletiques/percement_murale_01.elmt
+%%DATADIR%%/elements/energie/solaire/signaletiques/percement_plancher_01.elmt
+%%DATADIR%%/elements/energie/solaire/signaletiques/qet_directory
+%%DATADIR%%/elements/energie/solaire/signaletiques/sens3voies.elmt
+%%DATADIR%%/elements/energie/solaire/signaletiques/sortie_ecs.elmt
+%%DATADIR%%/elements/energie/solaire/signaletiques/vanne_3v_secteur.elmt
+%%DATADIR%%/elements/energie/solaire/vanne/clap_anti-retour_simple.elmt
+%%DATADIR%%/elements/energie/solaire/vanne/clap_antiretour_bille.elmt
+%%DATADIR%%/elements/energie/solaire/vanne/clapet_01.elmt
+%%DATADIR%%/elements/energie/solaire/vanne/clapet_02.elmt
+%%DATADIR%%/elements/energie/solaire/vanne/clapet_03.elmt
+%%DATADIR%%/elements/energie/solaire/vanne/clapet_pompe.elmt
+%%DATADIR%%/elements/energie/solaire/vanne/filtre_01.elmt
+%%DATADIR%%/elements/energie/solaire/vanne/qet_directory
+%%DATADIR%%/elements/energie/solaire/vanne/soupape-diff.elmt
+%%DATADIR%%/elements/energie/solaire/vanne/soupape_capteur_01.elmt
+%%DATADIR%%/elements/energie/solaire/vanne/soupape_thermique_01.elmt
+%%DATADIR%%/elements/energie/solaire/vanne/te_reglage_couder_01d.elmt
+%%DATADIR%%/elements/energie/solaire/vanne/te_reglage_couder_01g.elmt
+%%DATADIR%%/elements/energie/solaire/vanne/te_reglage_droit_01.elmt
+%%DATADIR%%/elements/energie/solaire/vanne/vanne-arret.elmt
+%%DATADIR%%/elements/energie/solaire/vanne/vanne2.elmt
+%%DATADIR%%/elements/energie/solaire/vanne/vanne2voies_01.elmt
+%%DATADIR%%/elements/energie/solaire/vanne/vanne3.elmt
+%%DATADIR%%/elements/energie/solaire/vanne/vanne3voies_01.elmt
+%%DATADIR%%/elements/energie/solaire/vanne/vanne_01.elmt
+%%DATADIR%%/elements/energie/solaire/vanne/vanne_3v_a_secteur_01.elmt
+%%DATADIR%%/elements/energie/solaire/vanne/vanne_diferentielle.elmt
+%%DATADIR%%/elements/energie/solaire/vanne/vanne_equilibrage_debimetre_01.elmt
+%%DATADIR%%/elements/energie/solaire/vanne/vanne_equilibrage_ta_01.elmt
+%%DATADIR%%/elements/fiches/broche_17.elmt
+%%DATADIR%%/elements/fiches/din/embase_din_2_broches_avec_borne_centrale_plate.elmt
+%%DATADIR%%/elements/fiches/din/embase_din_3_broches_180_degres.elmt
+%%DATADIR%%/elements/fiches/din/embase_din_4_broches.elmt
+%%DATADIR%%/elements/fiches/din/embase_din_5_broches.elmt
+%%DATADIR%%/elements/fiches/din/embase_din_5_broches_180_degres.elmt
+%%DATADIR%%/elements/fiches/din/embase_din_5_broches_270_degres.elmt
+%%DATADIR%%/elements/fiches/din/embase_din_5_broches_360_degres_avec_borne_centrale.elmt
+%%DATADIR%%/elements/fiches/din/embase_din_8_broches.elmt
+%%DATADIR%%/elements/fiches/din/embase_minidin_8_broches.elmt
+%%DATADIR%%/elements/fiches/din/qet_directory
+%%DATADIR%%/elements/fiches/fiche_femelle_codeur_12_points.elmt
+%%DATADIR%%/elements/fiches/qet_directory
+%%DATADIR%%/elements/fiches/sub-d/qet_directory
+%%DATADIR%%/elements/fiches/sub-d/sub-d-hd_15_broches_femelle.elmt
+%%DATADIR%%/elements/fiches/sub-d/sub-d-hd_15_broches_male.elmt
+%%DATADIR%%/elements/fiches/sub-d/sub-d_15_broches_femelle.elmt
+%%DATADIR%%/elements/fiches/sub-d/sub-d_15_broches_male.elmt
+%%DATADIR%%/elements/fiches/sub-d/sub-d_25_broches_femelle.elmt
+%%DATADIR%%/elements/fiches/sub-d/sub-d_25_broches_male.elmt
+%%DATADIR%%/elements/fiches/sub-d/sub-d_9_broches_femelle.elmt
+%%DATADIR%%/elements/fiches/sub-d/sub-d_9_broches_male.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/baches_hydrauliques/bache_a_l_air_libre.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/baches_hydrauliques/bache_pressurisee.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/baches_hydrauliques/qet_directory
+%%DATADIR%%/elements/mecanique/hydraulique/clapets_anti-retour/clapet_simple.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/clapets_anti-retour/qet_directory
+%%DATADIR%%/elements/mecanique/hydraulique/distributeurs/2-2/distributeur_2-2.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/distributeurs/2-2/qet_directory
+%%DATADIR%%/elements/mecanique/hydraulique/distributeurs/3-2/distributeur_3-2.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/distributeurs/3-2/qet_directory
+%%DATADIR%%/elements/mecanique/hydraulique/distributeurs/4-2/distributeur_4-2-centre_ferme.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/distributeurs/4-2/distributeur_4-2-centre_ouvert.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/distributeurs/4-2/distributeur_4-2.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/distributeurs/4-2/qet_directory
+%%DATADIR%%/elements/mecanique/hydraulique/distributeurs/qet_directory
+%%DATADIR%%/elements/mecanique/hydraulique/echangeurs/echangeur_eau-huile.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/echangeurs/qet_directory
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/deux_voies_non_relies/1_voie_fermee.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/deux_voies_non_relies/1_voie_p_vers_a.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/deux_voies_non_relies/qet_directory
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/deux_voies_relies/1_voie_fermee.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/deux_voies_relies/1_voie_p_vers_a.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/deux_voies_relies/qet_directory
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/mode_de_commande/bouton.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/mode_de_commande/bouton_de_presse.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/mode_de_commande/bouton_deux_voies.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/mode_de_commande/bouton_tirage.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/mode_de_commande/commande_electrique_deux.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/mode_de_commande/commande_electrique_droite.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/mode_de_commande/commande_electrique_gauche.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/mode_de_commande/commande_piezoelectrique.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/mode_de_commande/levier.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/mode_de_commande/moteur_electrique.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/mode_de_commande/pedale_1.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/mode_de_commande/pedale_2.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/mode_de_commande/poussoir.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/mode_de_commande/poussoir_reglable.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/mode_de_commande/pression_air.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/mode_de_commande/pression_augmentation.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/mode_de_commande/pression_chute.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/mode_de_commande/qet_directory
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/mode_de_commande/ressort_droite.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/mode_de_commande/ressort_gauche.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/mode_de_commande/rouleau.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/mode_de_commande/rouleau_1.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/mode_de_commande/symb_sv_4-2.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/mode_de_commande/symb_sv_4-3.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/qet_directory
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/quatre_voies_non_relies/2_voies_a-b-t_relies.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/quatre_voies_non_relies/2_voies_b-t_fermes.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/quatre_voies_non_relies/2_voies_croisees.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/quatre_voies_non_relies/2_voies_p-a-b_relies.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/quatre_voies_non_relies/2_voies_p-a-t_relies.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/quatre_voies_non_relies/2_voies_p-a_fermes.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/quatre_voies_non_relies/2_voies_p-b_relies.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/quatre_voies_non_relies/2_voies_p-t_relies.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/quatre_voies_non_relies/2_voies_parallele.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/quatre_voies_non_relies/4-2-centre_ferme.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/quatre_voies_non_relies/4-2-centre_ouvert.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/quatre_voies_non_relies/qet_directory
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/quatre_voies_relies/2_voies_a-b-t_relies.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/quatre_voies_relies/2_voies_b-t_fermes.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/quatre_voies_relies/2_voies_croisees.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/quatre_voies_relies/2_voies_p-a-b_relies.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/quatre_voies_relies/2_voies_p-a-t_relies.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/quatre_voies_relies/2_voies_p-a_fermes.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/quatre_voies_relies/2_voies_p-b_relies.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/quatre_voies_relies/2_voies_p-t_relies.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/quatre_voies_relies/2_voies_parallele.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/quatre_voies_relies/4-2-centre_ferme.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/quatre_voies_relies/4-2-centre_ouvert.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/quatre_voies_relies/qet_directory
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/trois_voies_non_relies/3_orifices_a-t.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/trois_voies_non_relies/3_orifices_p-a.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/trois_voies_non_relies/qet_directory
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/trois_voies_relies/3_orifices_a-t.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/trois_voies_relies/3_orifices_p-a.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/trois_voies_relies/qet_directory
+%%DATADIR%%/elements/mecanique/hydraulique/filtres/filtre.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/filtres/qet_directory
+%%DATADIR%%/elements/mecanique/hydraulique/pompes/moteur_hydr_1.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/pompes/moteur_hydr_2.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/pompes/moteur_hydr_3.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/pompes/pomp_mot_hydr_1.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/pompes/pomp_mot_hydr_2.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/pompes/pomp_mot_hydr_3.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/pompes/pompe_debit_fixe.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/pompes/pompe_debit_variable.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/pompes/pompe_hydr_1.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/pompes/pompe_hydr_2.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/pompes/qet_directory
+%%DATADIR%%/elements/mecanique/hydraulique/pompes/transmission_hydr.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/qet_directory
+%%DATADIR%%/elements/mecanique/hydraulique/vannes/qet_directory
+%%DATADIR%%/elements/mecanique/hydraulique/vannes/vanne_elec_1.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/vannes/vanne_elec_2.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/vannes/vanne_man_1.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/vannes/vanne_man_2.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/vannes/vanne_manuelle.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/vannes/vanne_mot_1.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/vannes/vanne_mot_2.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/vannes/vanne_tri.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/verins/qet_directory
+%%DATADIR%%/elements/mecanique/hydraulique/verins/verin-assymetrique-double-effet-tige-a-gauche.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/verins/verin-asymetrique-doubl-effet.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/verins/verin-simple-effet-rappel-par-ressort.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/verins/verin-symetrique-double-effet.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/verins/verin_hydr_1.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/verins/verin_hydr_2.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/verins/verin_hydr_3.elmt
+%%DATADIR%%/elements/mecanique/hydraulique/verins/verin_hydr_teleskop.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/cables_connecteurs/broche_rotative_1.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/cables_connecteurs/broche_rotative_3.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/cables_connecteurs/cable_elec.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/cables_connecteurs/connection_1.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/cables_connecteurs/connection_2.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/cables_connecteurs/qet_directory
+%%DATADIR%%/elements/mecanique/pneumatique/cables_connecteurs/raccord_rapide.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/cables_connecteurs/raccord_rapide_2.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/cables_connecteurs/raccord_rapide_3.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/cables_connecteurs/raccord_rapide_4.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/cables_connecteurs/reniflard.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/cables_connecteurs/repartiteur.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/cables_connecteurs/soupape_tare.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/cables_connecteurs/souple.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/cables_connecteurs/ventilation_continue.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_electrique/distributeur_5_2_bistable_electrique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_electrique/distributeur_5_2_mono_rappel_pression_electrique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_electrique/distributeur_5_2_mono_rappel_ressort_electrique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_electrique/distributeur_5_3_cf_electrique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_electrique/distributeur_5_3_co_electrique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_electrique/distributeur_5_3_cy_electrique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_electrique/distributeur_double3_2nf_electrique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_electrique/distributeur_double3_2nf_no_electrique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_electrique/distributeur_double3_2no_electrique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_electrique/qet_directory
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_manuel/distributeur_4_2_crante_manuel.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_manuel/distributeur_4_3_cf_crante_manuel.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_manuel/qet_directory
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_manuel/vanne_2_2_manuel.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_manuel/vanne_arret.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_pneumatique/camozzi_104.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_pneumatique/distributeur_2_2_rappel_ressort_pneumatique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_pneumatique/distributeur_5_2_bi-stable_pneumatique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_pneumatique/distributeur_5_2_mono_rappel_pression_pneumatique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_pneumatique/distributeur_5_2_mono_rappel_ressort_pneumatique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_pneumatique/distributeur_5_3_cf_pneumatique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_pneumatique/distributeur_5_3_co_pneumatique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_pneumatique/distributeur_5_3_cy_pneumatique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_pneumatique/distributeur_double3_2nf_no_pneumatique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_pneumatique/distributeur_double3_2nf_pneumatique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_pneumatique/distributeur_double3_2no_pneumatique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/distributeurs_pneumatique/qet_directory
+%%DATADIR%%/elements/mecanique/pneumatique/energie/compresseur.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/energie/entrainement.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/energie/entrainement_electrique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/energie/moteur.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/energie/moteur_1.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/energie/moteur_2.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/energie/moteur_3.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/energie/moteur_4.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/energie/qet_directory
+%%DATADIR%%/elements/mecanique/pneumatique/energie/source_energie_pneumatique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/qet_directory
+%%DATADIR%%/elements/mecanique/pneumatique/reservoir/accumulateur.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/reservoir/qet_directory
+%%DATADIR%%/elements/mecanique/pneumatique/reservoir/reservoir.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/soupapes/diviseur_debit.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/soupapes/microvalve.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/soupapes/qet_directory
+%%DATADIR%%/elements/mecanique/pneumatique/soupapes/reducteur_debit.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/soupapes/reducteur_debit_1.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/soupapes/reducteur_debit_variable.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/soupapes/reg_de_press.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/soupapes/regulateur_debit.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/soupapes/regulateur_pression.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/soupapes/soupape_securite.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/soupapes/soupape_securite_2.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/soupapes/soupape_securite_3.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/soupapes/vanne_arret.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/soupapes/vanne_arret_2.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/assecheur.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/capteur_pression.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/chauffe.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/debitmetre_2.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/debitmetre_3.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/festo_lfr-kg.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/filtre.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/filtre_air_purge_automatique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/filtre_contamination.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/filtre_magnetique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/filtre_purge.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/filtre_regulateur.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/filtre_regulateur_1.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/filtre_regulateur_2.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/filtre_regulateur_lubrificateur.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/indicateur_liquide.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/indicateur_niveau.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/indicateur_pression.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/lubrificateur.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/manometre.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/manometre_1.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/manometre_differentiel.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/manostat.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/mise_en_pression.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/mise_en_pression_progressive_electrique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/modulateur_pression_ep.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/pression_analogique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/qet_directory
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/refroidisseur.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/regulateur_pression.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/regulator_temp.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/repartiteur.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/secheur_membrane.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/separateur_purge_auto.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/sil_pneum.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/tachymetre.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/termometr.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/torque.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/traitement_air/vanne_vidange.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/vannes_control/electrovanne_2_2.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/vannes_control/electrovanne_2_2_1.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/vannes_control/electrovanne_3_2.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/vannes_control/electrovanne_3_3.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/vannes_control/electrovanne_4_2.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/vannes_control/electrovanne_4_2_1.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/vannes_control/electrovanne_4_2_2.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/vannes_control/electrovanne_4_2_3.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/vannes_control/electrovanne_4_2_4.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/vannes_control/electrovanne_5_2.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/vannes_control/electrovanne_5_3.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/vannes_control/qet_directory
+%%DATADIR%%/elements/mecanique/pneumatique/vannes_control/servo-valve_elec.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/vannes_logiques/clapet.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/vannes_logiques/clapet_1.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/vannes_logiques/clapet_2.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/vannes_logiques/clapet_3.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/vannes_logiques/purge_rapide.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/vannes_logiques/qet_directory
+%%DATADIR%%/elements/mecanique/pneumatique/vannes_logiques/selecteur.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/vannes_logiques/soupape_double.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/vannes_logiques/valve_echappement_rapide.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/muscle_pneumatique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/pince_pneumatique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/pince_serrage_parrallele.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/pneuride.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/qet_directory
+%%DATADIR%%/elements/mecanique/pneumatique/verins/table_translation.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/tandem.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/verin_2_tiges.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/verin_cable.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/verin_double_effet.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/verin_double_effet_1.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/verin_double_effet_2.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/verin_double_effet_3.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/verin_double_effet_4.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/verin_double_effet_5.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/verin_double_effet_magnetique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/verin_double_effet_magnetique_1.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/verin_double_effet_magnetique_amorti.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/verin_double_effet_magnetique_bi_tige.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/verin_impact.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/verin_menbrane.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/verin_rotatif.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/verin_sans_tige.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/verin_sans_tige_2.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/verin_sans_tige_magnetique_amorti.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/verin_simple_effet.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/verin_simple_effet_1.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/verin_simple_effet_2.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/verin_simple_effet_magnetique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/verin_soufflet.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/verin_tandem.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/verins/verin_telescopique.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/vide/ejecteur.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/vide/filtre_vide.elmt
+%%DATADIR%%/elements/mecanique/pneumatique/vide/qet_directory
+%%DATADIR%%/elements/mecanique/pneumatique/vide/ventouse.elmt
+%%DATADIR%%/elements/mecanique/qet_directory
+%%DATADIR%%/elements/moteurs/demarreurs_progressifs/aucom/csxi.elmt
+%%DATADIR%%/elements/moteurs/demarreurs_progressifs/aucom/ims2.elmt
+%%DATADIR%%/elements/moteurs/demarreurs_progressifs/aucom/qet_directory
+%%DATADIR%%/elements/moteurs/demarreurs_progressifs/danfoss/mcd_201.elmt
+%%DATADIR%%/elements/moteurs/demarreurs_progressifs/danfoss/mcd_202.elmt
+%%DATADIR%%/elements/moteurs/demarreurs_progressifs/danfoss/mcd_3000.elmt
+%%DATADIR%%/elements/moteurs/demarreurs_progressifs/danfoss/mcd_500.elmt
+%%DATADIR%%/elements/moteurs/demarreurs_progressifs/danfoss/qet_directory
+%%DATADIR%%/elements/moteurs/demarreurs_progressifs/eurotherm/erssw05.elmt
+%%DATADIR%%/elements/moteurs/demarreurs_progressifs/eurotherm/qet_directory
+%%DATADIR%%/elements/moteurs/demarreurs_progressifs/geindustrial/astat-xt.elmt
+%%DATADIR%%/elements/moteurs/demarreurs_progressifs/geindustrial/qet_directory
+%%DATADIR%%/elements/moteurs/demarreurs_progressifs/qet_directory
+%%DATADIR%%/elements/moteurs/demarreurs_progressifs/rockwell/qet_directory
+%%DATADIR%%/elements/moteurs/demarreurs_progressifs/rockwell/smc-3.elmt
+%%DATADIR%%/elements/moteurs/demarreurs_progressifs/schneider/altistart_01n1.elmt
+%%DATADIR%%/elements/moteurs/demarreurs_progressifs/schneider/altistart_01n2.elmt
+%%DATADIR%%/elements/moteurs/demarreurs_progressifs/schneider/altistart_01n2_ly_q.elmt
+%%DATADIR%%/elements/moteurs/demarreurs_progressifs/schneider/altistart_22.elmt
+%%DATADIR%%/elements/moteurs/demarreurs_progressifs/schneider/altistart_46.elmt
+%%DATADIR%%/elements/moteurs/demarreurs_progressifs/schneider/altistart_48.elmt
+%%DATADIR%%/elements/moteurs/demarreurs_progressifs/schneider/qet_directory
+%%DATADIR%%/elements/moteurs/demarreurs_progressifs/siemens/3rw.elmt
+%%DATADIR%%/elements/moteurs/demarreurs_progressifs/siemens/qet_directory
+%%DATADIR%%/elements/moteurs/moteurs/caisson_triphase_etoile.elmt
+%%DATADIR%%/elements/moteurs/moteurs/caisson_triphase_triangle.elmt
+%%DATADIR%%/elements/moteurs/moteurs/frein_electro.elmt
+%%DATADIR%%/elements/moteurs/moteurs/frein_magnetique.elmt
+%%DATADIR%%/elements/moteurs/moteurs/moteur.elmt
+%%DATADIR%%/elements/moteurs/moteurs/moteur_dc.elmt
+%%DATADIR%%/elements/moteurs/moteurs/moteur_mono.elmt
+%%DATADIR%%/elements/moteurs/moteurs/moteur_serie_dc.elmt
+%%DATADIR%%/elements/moteurs/moteurs/moteur_serie_mono.elmt
+%%DATADIR%%/elements/moteurs/moteurs/moteur_serie_tri.elmt
+%%DATADIR%%/elements/moteurs/moteurs/moteur_tri.elmt
+%%DATADIR%%/elements/moteurs/moteurs/moteur_tri_de.elmt
+%%DATADIR%%/elements/moteurs/moteurs/qet_directory
+%%DATADIR%%/elements/moteurs/moteurs/resistance_chauffante.elmt
+%%DATADIR%%/elements/moteurs/moteurs/resistances-chauffantes.elmt
+%%DATADIR%%/elements/moteurs/moteurs/surpresseur_mono.elmt
+%%DATADIR%%/elements/moteurs/moteurs/variateur.elmt
+%%DATADIR%%/elements/moteurs/moteurs/ventilateur_coffret.elmt
+%%DATADIR%%/elements/moteurs/qet_directory
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/abb/acs300.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/abb/acs550.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/abb/qet_directory
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/allen-bradley/powerflex_4.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/allen-bradley/powerflex_40.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/allen-bradley/powerflex_70.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/allen-bradley/powerflex_700.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/allen-bradley/qet_directory
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/fujielectric/fvr-e11s.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/fujielectric/qet_directory
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/leroy_somer/digidrive_se.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/leroy_somer/digidrive_sk.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/leroy_somer/fmv_1108.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/leroy_somer/qet_directory
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/leroy_somer/umv_4301.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/leroy_somer/ve_b.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/line_filter.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/omron/e7.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/omron/f7.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/omron/j1000.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/omron/j7az.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/omron/qet_directory
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/omron/sysdrive_g3mvab040.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/omron/v1000.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/qet_directory
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/schneider/atv312.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/schneider/qet_directory
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/sew/ecran_ihm_tactile_1.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/sew/ecran_ihm_tactile_2.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/sew/mc07_fsc11b.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/sew/mdx_deh11b.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/sew/mdx_der11b.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/sew/movidrive_mdx60b.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/sew/movimot.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/sew/movitrac_31c055.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/sew/movitrac_b.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/sew/qet_directory
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/siemens/micromaster_420.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/siemens/micromaster_440.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/siemens/qet_directory
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/telemecanique/altivar_11.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/telemecanique/atv11_tri.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/telemecanique/atv16_tri.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/telemecanique/atv18_tri.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/telemecanique/atv21_tri.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/telemecanique/atv28_tri.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/telemecanique/atv31_big_tri.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/telemecanique/atv31_tri.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/telemecanique/atv58_tri.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/telemecanique/atv61_tri.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/telemecanique/atv71_tri.elmt
+%%DATADIR%%/elements/moteurs/variateurs_de_frequence/telemecanique/qet_directory
+%%DATADIR%%/elements/nomenclatures/bases/nomenclature/etiquette_triphase.elmt
+%%DATADIR%%/elements/nomenclatures/bases/nomenclature/ligne_tab_nomenclature.elmt
+%%DATADIR%%/elements/nomenclatures/bases/nomenclature/nomenclature_section.elmt
+%%DATADIR%%/elements/nomenclatures/bases/nomenclature/qet_directory
+%%DATADIR%%/elements/nomenclatures/bases/nomenclature/titre_tab_nomenclature-el.elmt
+%%DATADIR%%/elements/nomenclatures/bases/nomenclature/titre_tab_nomenclature.elmt
+%%DATADIR%%/elements/nomenclatures/bases/qet_directory
+%%DATADIR%%/elements/nomenclatures/bases/renvoi/in.elmt
+%%DATADIR%%/elements/nomenclatures/bases/renvoi/next_folio.elmt
+%%DATADIR%%/elements/nomenclatures/bases/renvoi/previous_folio.elmt
+%%DATADIR%%/elements/nomenclatures/bases/renvoi/qet_directory
+%%DATADIR%%/elements/nomenclatures/bases/renvoi/renvoi_in.elmt
+%%DATADIR%%/elements/nomenclatures/qet_directory
+%%DATADIR%%/elements/nomenclatures/references/qet_directory
+%%DATADIR%%/elements/nomenclatures/references/ref_bobine_2_h.elmt
+%%DATADIR%%/elements/nomenclatures/references/ref_bobine_2_v.elmt
+%%DATADIR%%/elements/nomenclatures/references/ref_bobine_h.elmt
+%%DATADIR%%/elements/nomenclatures/references/ref_bobine_v.elmt
+%%DATADIR%%/elements/nomenclatures/references/ref_contact_2_nc_h.elmt
+%%DATADIR%%/elements/nomenclatures/references/ref_contact_2_nc_v.elmt
+%%DATADIR%%/elements/nomenclatures/references/ref_contact_2_no_h.elmt
+%%DATADIR%%/elements/nomenclatures/references/ref_contact_2_no_v.elmt
+%%DATADIR%%/elements/nomenclatures/references/ref_contact_nc_h.elmt
+%%DATADIR%%/elements/nomenclatures/references/ref_contact_nc_v.elmt
+%%DATADIR%%/elements/nomenclatures/references/ref_contact_no_h.elmt
+%%DATADIR%%/elements/nomenclatures/references/ref_contact_no_v.elmt
+%%DATADIR%%/elements/nomenclatures/references/ref_folio_precedent.elmt
+%%DATADIR%%/elements/nomenclatures/references/ref_folio_suivant.elmt
+%%DATADIR%%/elements/nomenclatures/references/ref_voyant_2_h.elmt
+%%DATADIR%%/elements/nomenclatures/references/ref_voyant_2_v.elmt
+%%DATADIR%%/elements/nomenclatures/references/ref_voyant_h.elmt
+%%DATADIR%%/elements/nomenclatures/references/ref_voyant_v.elmt
+%%DATADIR%%/elements/protections/control_relays/murr_fusible_electronique.elmt
+%%DATADIR%%/elements/protections/control_relays/qet_directory
+%%DATADIR%%/elements/protections/control_relays/rm3ua1.elmt
+%%DATADIR%%/elements/protections/control_relays/rm3ua2.elmt
+%%DATADIR%%/elements/protections/depart_moteur/depart_moteur_tesys.elmt
+%%DATADIR%%/elements/protections/depart_moteur/depart_moteur_tesys_1.elmt
+%%DATADIR%%/elements/protections/depart_moteur/qet_directory
+%%DATADIR%%/elements/protections/disjoncteur_magneto_thermique/depart_moteur_tesys_2.elmt
+%%DATADIR%%/elements/protections/disjoncteur_magneto_thermique/dis_mag_term_3f-1.elmt
+%%DATADIR%%/elements/protections/disjoncteur_magneto_thermique/dis_mag_term_3f-2.elmt
+%%DATADIR%%/elements/protections/disjoncteur_magneto_thermique/disjoncteur_magneto-thermique.elmt
+%%DATADIR%%/elements/protections/disjoncteur_magneto_thermique/disjoncteur_magneto-thermique_1.elmt
+%%DATADIR%%/elements/protections/disjoncteur_magneto_thermique/qet_directory
+%%DATADIR%%/elements/protections/disjoncteurs/cb.elmt
+%%DATADIR%%/elements/protections/disjoncteurs/disjonct-m.elmt
+%%DATADIR%%/elements/protections/disjoncteurs/disjonct-m_1fn.elmt
+%%DATADIR%%/elements/protections/disjoncteurs/disjonct-m_2f.elmt
+%%DATADIR%%/elements/protections/disjoncteurs/disjonct-m_3f.elmt
+%%DATADIR%%/elements/protections/disjoncteurs/disjonct-m_3fn.elmt
+%%DATADIR%%/elements/protections/disjoncteurs/disjonct-m_4fn.elmt
 %%DATADIR%%/elements/protections/disjoncteurs/disjoncteur1.elmt
 %%DATADIR%%/elements/protections/disjoncteurs/disjoncteur2.elmt
 %%DATADIR%%/elements/protections/disjoncteurs/disjoncteur3.elmt
@@ -143,13 +1584,19 @@ share/mimelnk/application/x-qet-element.desktop
 %%DATADIR%%/elements/protections/disjoncteurs_differentiels/ddr4.elmt
 %%DATADIR%%/elements/protections/disjoncteurs_differentiels/ddr5.elmt
 %%DATADIR%%/elements/protections/disjoncteurs_differentiels/ddr6.elmt
+%%DATADIR%%/elements/protections/disjoncteurs_differentiels/disjoncteur_differentiel_magnetothermique.elmt
 %%DATADIR%%/elements/protections/disjoncteurs_differentiels/qet_directory
-%%DATADIR%%/elements/protections/int_sect.elmt
 %%DATADIR%%/elements/protections/interrupteurs_differentiels/int_diff1.elmt
 %%DATADIR%%/elements/protections/interrupteurs_differentiels/int_diff2.elmt
 %%DATADIR%%/elements/protections/interrupteurs_differentiels/int_diff3.elmt
 %%DATADIR%%/elements/protections/interrupteurs_differentiels/int_diff4.elmt
+%%DATADIR%%/elements/protections/interrupteurs_differentiels/int_diff_1f-1.elmt
+%%DATADIR%%/elements/protections/interrupteurs_differentiels/int_diff_1f-2.elmt
+%%DATADIR%%/elements/protections/interrupteurs_differentiels/int_diff_3f-1.elmt
+%%DATADIR%%/elements/protections/interrupteurs_differentiels/int_diff_3f-2.elmt
 %%DATADIR%%/elements/protections/interrupteurs_differentiels/qet_directory
+%%DATADIR%%/elements/protections/interrupteurs_differentiels/rcbo.elmt
+%%DATADIR%%/elements/protections/interrupteurs_differentiels/rccb.elmt
 %%DATADIR%%/elements/protections/interrupteurs_sectionneurs/qet_directory
 %%DATADIR%%/elements/protections/interrupteurs_sectionneurs/sectionneur1.elmt
 %%DATADIR%%/elements/protections/interrupteurs_sectionneurs/sectionneur4.elmt
@@ -157,128 +1604,653 @@ share/mimelnk/application/x-qet-element.desktop
 %%DATADIR%%/elements/protections/porte_fusibles/sec_fus1.elmt
 %%DATADIR%%/elements/protections/porte_fusibles/sec_fus4.elmt
 %%DATADIR%%/elements/protections/porte_fusibles/sec_fus5.elmt
+%%DATADIR%%/elements/protections/porte_fusibles/sectionneur_3_fusibles+neutre.elmt
+%%DATADIR%%/elements/protections/porte_fusibles/sectionneur_3_fusibles.elmt
+%%DATADIR%%/elements/protections/protection_surtension/mov.elmt
+%%DATADIR%%/elements/protections/protection_surtension/parafoudre.elmt
+%%DATADIR%%/elements/protections/protection_surtension/qet_directory
+%%DATADIR%%/elements/protections/protection_surtension/tube_a_gaz.elmt
+%%DATADIR%%/elements/protections/protection_surtension/tube_a_gaz_limiteur_de_tension.elmt
 %%DATADIR%%/elements/protections/qet_directory
 %%DATADIR%%/elements/protections/relais_thermiques/qet_directory
+%%DATADIR%%/elements/protections/relais_thermiques/relais_mono.elmt
 %%DATADIR%%/elements/protections/relais_thermiques/relais_therm1.elmt
 %%DATADIR%%/elements/protections/relais_thermiques/relais_therm4.elmt
+%%DATADIR%%/elements/protections/relais_thermiques/relais_therm4_1.elmt
 %%DATADIR%%/elements/protections/sectionneurs/qet_directory
 %%DATADIR%%/elements/protections/sectionneurs/sectionneur1.elmt
 %%DATADIR%%/elements/protections/sectionneurs/sectionneur4.elmt
-%%DATADIR%%/elements/recepteurs/bobines/bobine1.elmt
-%%DATADIR%%/elements/recepteurs/bobines/bobine2.elmt
-%%DATADIR%%/elements/recepteurs/bobines/qet_directory
-%%DATADIR%%/elements/recepteurs/domestiques/convecteur.elmt
-%%DATADIR%%/elements/recepteurs/domestiques/four.elmt
-%%DATADIR%%/elements/recepteurs/domestiques/lave_linge.elmt
-%%DATADIR%%/elements/recepteurs/domestiques/lave_vaiselle.elmt
-%%DATADIR%%/elements/recepteurs/domestiques/plaque_cuisson.elmt
-%%DATADIR%%/elements/recepteurs/domestiques/qet_directory
 %%DATADIR%%/elements/recepteurs/lampes/lampe1.elmt
 %%DATADIR%%/elements/recepteurs/lampes/lampe2.elmt
 %%DATADIR%%/elements/recepteurs/lampes/lampe_clignotante.elmt
 %%DATADIR%%/elements/recepteurs/lampes/qet_directory
-%%DATADIR%%/elements/recepteurs/machines/gene_tri.elmt
-%%DATADIR%%/elements/recepteurs/machines/generatrice.elmt
-%%DATADIR%%/elements/recepteurs/machines/generatrice_dc.elmt
-%%DATADIR%%/elements/recepteurs/machines/moteur.elmt
-%%DATADIR%%/elements/recepteurs/machines/moteur_dc.elmt
-%%DATADIR%%/elements/recepteurs/machines/moteur_mono.elmt
-%%DATADIR%%/elements/recepteurs/machines/moteur_tri.elmt
-%%DATADIR%%/elements/recepteurs/machines/moteur_tri_de.elmt
-%%DATADIR%%/elements/recepteurs/machines/qet_directory
+%%DATADIR%%/elements/recepteurs/lampes/voyant_avec_transfo.elmt
+%%DATADIR%%/elements/recepteurs/lampes/voyant_flash.elmt
+%%DATADIR%%/elements/recepteurs/misc/bloc_3pc_230v16a.elmt
 %%DATADIR%%/elements/recepteurs/misc/inverseur_mono.elmt
+%%DATADIR%%/elements/recepteurs/misc/ordinateur_pc.elmt
 %%DATADIR%%/elements/recepteurs/misc/pc.elmt
+%%DATADIR%%/elements/recepteurs/misc/pc_2p_t.elmt
+%%DATADIR%%/elements/recepteurs/misc/pc_5p.elmt
+%%DATADIR%%/elements/recepteurs/misc/pc_mono.elmt
+%%DATADIR%%/elements/recepteurs/misc/pc_mono_armoire.elmt
+%%DATADIR%%/elements/recepteurs/misc/pc_tetra.elmt
+%%DATADIR%%/elements/recepteurs/misc/pc_tri.elmt
 %%DATADIR%%/elements/recepteurs/misc/qet_directory
 %%DATADIR%%/elements/recepteurs/qet_directory
-%%DATADIR%%/elements/recepteurs/rlc/monofilaires/capacite.elmt
-%%DATADIR%%/elements/recepteurs/rlc/monofilaires/inductance.elmt
-%%DATADIR%%/elements/recepteurs/rlc/monofilaires/qet_directory
-%%DATADIR%%/elements/recepteurs/rlc/monofilaires/resistance.elmt
-%%DATADIR%%/elements/recepteurs/rlc/normaux/capacite.elmt
-%%DATADIR%%/elements/recepteurs/rlc/normaux/inductance.elmt
-%%DATADIR%%/elements/recepteurs/rlc/normaux/qet_directory
-%%DATADIR%%/elements/recepteurs/rlc/normaux/resistance.elmt
-%%DATADIR%%/elements/recepteurs/rlc/parasites/capacite.elmt
-%%DATADIR%%/elements/recepteurs/rlc/parasites/inductance.elmt
-%%DATADIR%%/elements/recepteurs/rlc/parasites/qet_directory
-%%DATADIR%%/elements/recepteurs/rlc/parasites/resistance.elmt
-%%DATADIR%%/elements/recepteurs/rlc/qet_directory
-%%DATADIR%%/elements/recepteurs/securite/cpi.elmt
-%%DATADIR%%/elements/recepteurs/securite/eclateur.elmt
-%%DATADIR%%/elements/recepteurs/securite/fusible.elmt
-%%DATADIR%%/elements/recepteurs/securite/homme.elmt
-%%DATADIR%%/elements/recepteurs/securite/masse.elmt
-%%DATADIR%%/elements/recepteurs/securite/qet_directory
-%%DATADIR%%/elements/recepteurs/securite/terre.elmt
-%%DATADIR%%/elements/recepteurs/sonores/avertisseur.elmt
-%%DATADIR%%/elements/recepteurs/sonores/buzzer.elmt
-%%DATADIR%%/elements/recepteurs/sonores/qet_directory
-%%DATADIR%%/elements/recepteurs/sonores/sirene.elmt
-%%DATADIR%%/elements/recepteurs/sonores/sonnerie.elmt
-%%DATADIR%%/elements/recepteurs/transformateurs/qet_directory
-%%DATADIR%%/elements/recepteurs/transformateurs/transfo_1.elmt
-%%DATADIR%%/elements/recepteurs/transformateurs/transfo_mono.elmt
-%%DATADIR%%/elements/recepteurs/transformateurs/transfo_tri.elmt
-%%DATADIR%%/elements/semiconducteurs/del.elmt
-%%DATADIR%%/elements/semiconducteurs/diode.elmt
+%%DATADIR%%/elements/recepteurs/repartiteurs/ebc015.elmt
+%%DATADIR%%/elements/recepteurs/repartiteurs/ebc019.elmt
+%%DATADIR%%/elements/recepteurs/repartiteurs/ebc023.elmt
+%%DATADIR%%/elements/recepteurs/repartiteurs/ebc024.elmt
+%%DATADIR%%/elements/recepteurs/repartiteurs/qet_directory
+%%DATADIR%%/elements/securite_des_machines/barrage_immateriel/keyence/qet_directory
+%%DATADIR%%/elements/securite_des_machines/barrage_immateriel/keyence/sl-v16h_r.elmt
+%%DATADIR%%/elements/securite_des_machines/barrage_immateriel/keyence/sl-v16h_s.elmt
+%%DATADIR%%/elements/securite_des_machines/barrage_immateriel/qet_directory
+%%DATADIR%%/elements/securite_des_machines/barrage_immateriel/sick/c4000_eco_r.elmt
+%%DATADIR%%/elements/securite_des_machines/barrage_immateriel/sick/c4000_eco_s.elmt
+%%DATADIR%%/elements/securite_des_machines/barrage_immateriel/sick/qet_directory
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/qet_directory
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/msr117t.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/msr121rt.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/msr123rt.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/msr124rt.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/msr126rt.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/msr127rptp.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/msr131rtp.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/msr142rtp.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/msr144rtp.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/msr18t.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/msr30rtrtp.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/msr33rtrtp.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/msr41_micro_400_controller.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/msr5t.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/msr6rt.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/msr8t.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/msr9t.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/qet_directory
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/sortie_temporisee/cu4.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/sortie_temporisee/msr10rd.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/sortie_temporisee/msr1381dp.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/sortie_temporisee/msr138dp.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/sortie_temporisee/msr15d.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/sortie_temporisee/msr178dp.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/sortie_temporisee/msr38ddp.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/sortie_temporisee/qet_directory
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/euchner/qet_directory
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/euchner/tp3-4131a024m.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/leuze/leuze_msi_m.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/leuze/msi-sr2.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/leuze/qet_directory
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/omron/qet_directory
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/omron/sr202am.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/omron/sr204p.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/pilz/pilz.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/pilz/pnoz/pilz_pnoz_m1p_eth.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/pilz/pnoz/pilz_pnozx1.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/pilz/pnoz/pnoz_m1p.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/pilz/pnoz/pnoz_s3.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/pilz/pnoz/pnoz_s4.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/pilz/pnoz/pnoz_s5.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/pilz/pnoz/pnoz_s6.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/pilz/pnoz/pnozx_p2hz_x1_two-hand_monitoring.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/pilz/pnoz/qet_directory
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/pilz/psen/psen_1.1p-10.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/pilz/psen/qet_directory
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/pilz/qet_directory
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/preventa/preventa_2/qet_directory
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/preventa/preventa_2/xps-am.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/preventa/preventa_2/xps-at.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/preventa/preventa_2/xps_ac.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/preventa/preventa_2/xps_af.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/preventa/preventa_2/xps_afl.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/preventa/preventa_2/xps_ak.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/preventa/preventa_2/xps_al.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/preventa/preventa_2/xps_asf.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/preventa/preventa_2/xps_ba.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/preventa/preventa_2/xps_bc.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/preventa/preventa_2/xps_bf.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/preventa/preventa_2/xps_dmb.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/preventa/qet_directory
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/preventa/xps-al.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/preventa/xps-at.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/preventa/xps_ac.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/preventa/xps_af.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/preventa/xps_afl.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/preventa/xps_ak.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/preventa/xps_asf.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/preventa/xps_ba.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/preventa/xps_bc.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/preventa/xps_bf.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/qet_directory
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/sick/flexi_soft_cpu0.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/sick/flexi_soft_cpu1.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/sick/flexi_soft_xtio84002.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/sick/qet_directory
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/sick/ue410-2ro.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/sick/ue410-mu.elmt
+%%DATADIR%%/elements/securite_des_machines/blocs_de_securite/sick/ue410-xu.elmt
+%%DATADIR%%/elements/securite_des_machines/inter_de_pos_de_securite/euchner/qet_directory
+%%DATADIR%%/elements/securite_des_machines/inter_de_pos_de_securite/euchner/tp3-4131a024m.elmt
+%%DATADIR%%/elements/securite_des_machines/inter_de_pos_de_securite/qet_directory
+%%DATADIR%%/elements/securite_des_machines/inter_de_pos_de_securite/schneider_electric/qet_directory
+%%DATADIR%%/elements/securite_des_machines/inter_de_pos_de_securite/schneider_electric/xcs-e7511.elmt
+%%DATADIR%%/elements/securite_des_machines/inter_de_pos_de_securite/schneider_electric/xcs-e8511.elmt
+%%DATADIR%%/elements/securite_des_machines/inter_de_pos_de_securite/sick/i11-s213.elmt
+%%DATADIR%%/elements/securite_des_machines/inter_de_pos_de_securite/sick/qet_directory
+%%DATADIR%%/elements/securite_des_machines/interrupteurs_securite_magnetiques/allen_bradley/qet_directory
+%%DATADIR%%/elements/securite_des_machines/interrupteurs_securite_magnetiques/allen_bradley/sipha_s11s21.elmt
+%%DATADIR%%/elements/securite_des_machines/interrupteurs_securite_magnetiques/allen_bradley/sipha_s12s22.elmt
+%%DATADIR%%/elements/securite_des_machines/interrupteurs_securite_magnetiques/allen_bradley/sipha_s13s23.elmt
+%%DATADIR%%/elements/securite_des_machines/interrupteurs_securite_magnetiques/allen_bradley/sipha_s42.elmt
+%%DATADIR%%/elements/securite_des_machines/interrupteurs_securite_magnetiques/allen_bradley/sipha_s43.elmt
+%%DATADIR%%/elements/securite_des_machines/interrupteurs_securite_magnetiques/bti/amx4.elmt
+%%DATADIR%%/elements/securite_des_machines/interrupteurs_securite_magnetiques/bti/qet_directory
+%%DATADIR%%/elements/securite_des_machines/interrupteurs_securite_magnetiques/qet_directory
+%%DATADIR%%/elements/securite_des_machines/interrupteurs_securite_magnetiques/xcs_dmc5902.elmt
+%%DATADIR%%/elements/securite_des_machines/interrupteurs_securite_magnetiques/xcs_dmc5912.elmt
+%%DATADIR%%/elements/securite_des_machines/interrupteurs_securite_magnetiques/xcs_dmc7902.elmt
+%%DATADIR%%/elements/securite_des_machines/interrupteurs_securite_magnetiques/xcs_dmc7912.elmt
+%%DATADIR%%/elements/securite_des_machines/interrupteurs_securite_magnetiques/xcs_dmc_1.elmt
+%%DATADIR%%/elements/securite_des_machines/interrupteurs_securite_magnetiques/xcs_dmc_2.elmt
+%%DATADIR%%/elements/securite_des_machines/interrupteurs_securite_magnetiques/xcs_dmc_3.elmt
+%%DATADIR%%/elements/securite_des_machines/interrupteurs_securite_magnetiques/xcs_dmc_4.elmt
+%%DATADIR%%/elements/securite_des_machines/qet_directory
+%%DATADIR%%/elements/securite_des_machines/securite/cpi.elmt
+%%DATADIR%%/elements/securite_des_machines/securite/eclateur.elmt
+%%DATADIR%%/elements/securite_des_machines/securite/fusible.elmt
+%%DATADIR%%/elements/securite_des_machines/securite/gyrophare.elmt
+%%DATADIR%%/elements/securite_des_machines/securite/homme.elmt
+%%DATADIR%%/elements/securite_des_machines/securite/masse.elmt
+%%DATADIR%%/elements/securite_des_machines/securite/parafoudre.elmt
+%%DATADIR%%/elements/securite_des_machines/securite/qet_directory
+%%DATADIR%%/elements/securite_des_machines/securite/terre.elmt
+%%DATADIR%%/elements/securite_des_machines/sonores/avertisseur.elmt
+%%DATADIR%%/elements/securite_des_machines/sonores/buzzer.elmt
+%%DATADIR%%/elements/securite_des_machines/sonores/haut_parleur.elmt
+%%DATADIR%%/elements/securite_des_machines/sonores/qet_directory
+%%DATADIR%%/elements/securite_des_machines/sonores/sirene.elmt
+%%DATADIR%%/elements/securite_des_machines/sonores/sonnerie.elmt
+%%DATADIR%%/elements/securite_des_machines/sonores/sonnerie_a_1_coup.elmt
+%%DATADIR%%/elements/semiconducteurs/arduino/arduino_geiger.elmt
+%%DATADIR%%/elements/semiconducteurs/arduino/arduino_uno.elmt
+%%DATADIR%%/elements/semiconducteurs/arduino/cable_ide.elmt
+%%DATADIR%%/elements/semiconducteurs/arduino/gnd.elmt
+%%DATADIR%%/elements/semiconducteurs/arduino/lcd_2x16.elmt
+%%DATADIR%%/elements/semiconducteurs/arduino/lcd_4x16.elmt
+%%DATADIR%%/elements/semiconducteurs/arduino/liaison5v.elmt
+%%DATADIR%%/elements/semiconducteurs/arduino/qet_directory
+%%DATADIR%%/elements/semiconducteurs/arduino/resistance1.elmt
+%%DATADIR%%/elements/semiconducteurs/arduino/resistance2.elmt
+%%DATADIR%%/elements/semiconducteurs/arduino/resistance_variable.elmt
+%%DATADIR%%/elements/semiconducteurs/arduino/tube_geiger_j305b.elmt
+%%DATADIR%%/elements/semiconducteurs/circuit_integre/i16.elmt
+%%DATADIR%%/elements/semiconducteurs/circuit_integre/i20.elmt
+%%DATADIR%%/elements/semiconducteurs/circuit_integre/i20n.elmt
+%%DATADIR%%/elements/semiconducteurs/circuit_integre/ic16n.elmt
+%%DATADIR%%/elements/semiconducteurs/circuit_integre/ic24.elmt
+%%DATADIR%%/elements/semiconducteurs/circuit_integre/ic24n.elmt
+%%DATADIR%%/elements/semiconducteurs/circuit_integre/ic8.elmt
+%%DATADIR%%/elements/semiconducteurs/circuit_integre/ic8n.elmt
+%%DATADIR%%/elements/semiconducteurs/circuit_integre/qet_directory
+%%DATADIR%%/elements/semiconducteurs/condensateurs/condensateur.elmt
+%%DATADIR%%/elements/semiconducteurs/condensateurs/condensateur_electrolytique.elmt
+%%DATADIR%%/elements/semiconducteurs/condensateurs/condensateur_polarise.elmt
+%%DATADIR%%/elements/semiconducteurs/condensateurs/condensateur_reglable.elmt
+%%DATADIR%%/elements/semiconducteurs/condensateurs/qet_directory
+%%DATADIR%%/elements/semiconducteurs/connectors/pin_connector_1.elmt
+%%DATADIR%%/elements/semiconducteurs/connectors/pin_connector_2.elmt
+%%DATADIR%%/elements/semiconducteurs/connectors/pin_connector_4.elmt
+%%DATADIR%%/elements/semiconducteurs/connectors/pin_connector_5.elmt
+%%DATADIR%%/elements/semiconducteurs/connectors/pin_connector_6.elmt
+%%DATADIR%%/elements/semiconducteurs/connectors/qet_directory
+%%DATADIR%%/elements/semiconducteurs/connectors/usb2.elmt
+%%DATADIR%%/elements/semiconducteurs/diac.elmt
+%%DATADIR%%/elements/semiconducteurs/diodes/avalanche_diode_b.elmt
+%%DATADIR%%/elements/semiconducteurs/diodes/avalanche_diode_u.elmt
+%%DATADIR%%/elements/semiconducteurs/diodes/diode_led.elmt
+%%DATADIR%%/elements/semiconducteurs/diodes/diode_thermique.elmt
+%%DATADIR%%/elements/semiconducteurs/diodes/diode_tunnel.elmt
+%%DATADIR%%/elements/semiconducteurs/diodes/diode_unitunnel.elmt
+%%DATADIR%%/elements/semiconducteurs/diodes/photo-diode.elmt
+%%DATADIR%%/elements/semiconducteurs/diodes/pont_de_graetz.elmt
+%%DATADIR%%/elements/semiconducteurs/diodes/qet_directory
+%%DATADIR%%/elements/semiconducteurs/diodes/schottky_diode.elmt
+%%DATADIR%%/elements/semiconducteurs/diodes/shockley_diode.elmt
+%%DATADIR%%/elements/semiconducteurs/diodes/varactor.elmt
+%%DATADIR%%/elements/semiconducteurs/diodes/zener_diode.elmt
 %%DATADIR%%/elements/semiconducteurs/qet_directory
-%%DATADIR%%/elements/semiconducteurs/thyristor.elmt
+%%DATADIR%%/elements/semiconducteurs/resistances/element_chauffant.elmt
+%%DATADIR%%/elements/semiconducteurs/resistances/photo-resistance.elmt
+%%DATADIR%%/elements/semiconducteurs/resistances/qet_directory
+%%DATADIR%%/elements/semiconducteurs/resistances/resistance.elmt
+%%DATADIR%%/elements/semiconducteurs/resistances/resistance_reglable.elmt
+%%DATADIR%%/elements/semiconducteurs/resistances/varistance.elmt
+%%DATADIR%%/elements/semiconducteurs/rlc/monofilaires/capacite.elmt
+%%DATADIR%%/elements/semiconducteurs/rlc/monofilaires/inductance.elmt
+%%DATADIR%%/elements/semiconducteurs/rlc/monofilaires/qet_directory
+%%DATADIR%%/elements/semiconducteurs/rlc/monofilaires/resistance.elmt
+%%DATADIR%%/elements/semiconducteurs/rlc/normaux/capacite.elmt
+%%DATADIR%%/elements/semiconducteurs/rlc/normaux/inductance.elmt
+%%DATADIR%%/elements/semiconducteurs/rlc/normaux/potentiometre.elmt
+%%DATADIR%%/elements/semiconducteurs/rlc/normaux/qet_directory
+%%DATADIR%%/elements/semiconducteurs/rlc/normaux/resistance.elmt
+%%DATADIR%%/elements/semiconducteurs/rlc/normaux/self.elmt
+%%DATADIR%%/elements/semiconducteurs/rlc/normaux/self_avec_entrefer.elmt
+%%DATADIR%%/elements/semiconducteurs/rlc/parasites/capacite.elmt
+%%DATADIR%%/elements/semiconducteurs/rlc/parasites/inductance.elmt
+%%DATADIR%%/elements/semiconducteurs/rlc/parasites/qet_directory
+%%DATADIR%%/elements/semiconducteurs/rlc/parasites/resistance.elmt
+%%DATADIR%%/elements/semiconducteurs/rlc/qet_directory
+%%DATADIR%%/elements/semiconducteurs/thyristors/qet_directory
+%%DATADIR%%/elements/semiconducteurs/thyristors/thyristor.elmt
+%%DATADIR%%/elements/semiconducteurs/thyristors/tyrystor_08.elmt
+%%DATADIR%%/elements/semiconducteurs/thyristors/tyrystor_09.elmt
+%%DATADIR%%/elements/semiconducteurs/thyristors/tyrystor_1.elmt
+%%DATADIR%%/elements/semiconducteurs/thyristors/tyrystor_10.elmt
+%%DATADIR%%/elements/semiconducteurs/thyristors/tyrystor_2.elmt
+%%DATADIR%%/elements/semiconducteurs/thyristors/tyrystor_3.elmt
+%%DATADIR%%/elements/semiconducteurs/thyristors/tyrystor_4.elmt
+%%DATADIR%%/elements/semiconducteurs/thyristors/tyrystor_5.elmt
+%%DATADIR%%/elements/semiconducteurs/thyristors/tyrystor_6.elmt
+%%DATADIR%%/elements/semiconducteurs/thyristors/tyrystor_7.elmt
+%%DATADIR%%/elements/semiconducteurs/transistors/interface_optocoupleur.elmt
+%%DATADIR%%/elements/semiconducteurs/transistors/mosfet_n.elmt
+%%DATADIR%%/elements/semiconducteurs/transistors/mosfet_p.elmt
+%%DATADIR%%/elements/semiconducteurs/transistors/photo-transistor.elmt
+%%DATADIR%%/elements/semiconducteurs/transistors/qet_directory
+%%DATADIR%%/elements/semiconducteurs/transistors/transistor_1.elmt
+%%DATADIR%%/elements/semiconducteurs/transistors/transistor_bipolaire_igbt.elmt
+%%DATADIR%%/elements/semiconducteurs/transistors/transistor_bipolaire_npn.elmt
+%%DATADIR%%/elements/semiconducteurs/transistors/transistor_bipolaire_pnp.elmt
+%%DATADIR%%/elements/semiconducteurs/transistors/transistor_npn.elmt
+%%DATADIR%%/elements/semiconducteurs/triac.elmt
+%%DATADIR%%/elements/sources/convertisseurs/blocs/ac1_ac1.elmt
+%%DATADIR%%/elements/sources/convertisseurs/blocs/ac1_dc.elmt
+%%DATADIR%%/elements/sources/convertisseurs/blocs/ac1_dc1.elmt
+%%DATADIR%%/elements/sources/convertisseurs/blocs/ac2_dc.elmt
+%%DATADIR%%/elements/sources/convertisseurs/blocs/convertisseur_dc_dc.elmt
+%%DATADIR%%/elements/sources/convertisseurs/blocs/convertisseur_tri_ac_dc.elmt
+%%DATADIR%%/elements/sources/convertisseurs/blocs/convertisseur_tri_mono.elmt
+%%DATADIR%%/elements/sources/convertisseurs/blocs/dc_ac1.elmt
+%%DATADIR%%/elements/sources/convertisseurs/blocs/dc_dc.elmt
+%%DATADIR%%/elements/sources/convertisseurs/blocs/qet_directory
+%%DATADIR%%/elements/sources/convertisseurs/blocs/redresseur.elmt
+%%DATADIR%%/elements/sources/convertisseurs/qet_directory
+%%DATADIR%%/elements/sources/gene_tri.elmt
+%%DATADIR%%/elements/sources/generatrice.elmt
+%%DATADIR%%/elements/sources/generatrice_dc.elmt
+%%DATADIR%%/elements/sources/haute_tension/appareil_ferme_cle_prisonniere.elmt
+%%DATADIR%%/elements/sources/haute_tension/appareil_ouvert_cle_prisonniere.elmt
+%%DATADIR%%/elements/sources/haute_tension/cle_absente_pene_rentree_manoeuvre_libre.elmt
+%%DATADIR%%/elements/sources/haute_tension/cle_absente_pene_sorti.elmt
+%%DATADIR%%/elements/sources/haute_tension/cle_libre_pene_rentree_manoeuvre_libre.elmt
+%%DATADIR%%/elements/sources/haute_tension/cle_libre_pene_sorti.elmt
+%%DATADIR%%/elements/sources/haute_tension/cle_prisioniere_pene_rentree_manoeuvre_libre.elmt
+%%DATADIR%%/elements/sources/haute_tension/cle_prisionniere_pene_rentree_manoeuvre_bloquee.elmt
+%%DATADIR%%/elements/sources/haute_tension/contacteur_crm.elmt
+%%DATADIR%%/elements/sources/haute_tension/contacteur_f_crm.elmt
+%%DATADIR%%/elements/sources/haute_tension/disj_debrochable_dm1-w.elmt
+%%DATADIR%%/elements/sources/haute_tension/disj_debrochable_dm1-z.elmt
+%%DATADIR%%/elements/sources/haute_tension/disjoncteur_dm1-a.elmt
+%%DATADIR%%/elements/sources/haute_tension/disjoncteur_dm1-d.elmt
+%%DATADIR%%/elements/sources/haute_tension/disjoncteur_dm1-s.elmt
+%%DATADIR%%/elements/sources/haute_tension/disjoncteur_dm2.elmt
+%%DATADIR%%/elements/sources/haute_tension/eclateur_double.elmt
+%%DATADIR%%/elements/sources/haute_tension/eclateur_simple.elmt
+%%DATADIR%%/elements/sources/haute_tension/element_flexible.elmt
+%%DATADIR%%/elements/sources/haute_tension/interrupteur_im.elmt
+%%DATADIR%%/elements/sources/haute_tension/interrupteur_imb.elmt
+%%DATADIR%%/elements/sources/haute_tension/interrupteur_imc.elmt
+%%DATADIR%%/elements/sources/haute_tension/interrupteur_pm.elmt
+%%DATADIR%%/elements/sources/haute_tension/interrupteur_qm.elmt
+%%DATADIR%%/elements/sources/haute_tension/interrupteur_qmb.elmt
+%%DATADIR%%/elements/sources/haute_tension/interrupteur_qmc.elmt
+%%DATADIR%%/elements/sources/haute_tension/interrupteur_sectionneur_de_terre.elmt
+%%DATADIR%%/elements/sources/haute_tension/ligne_aerienne.elmt
+%%DATADIR%%/elements/sources/haute_tension/ligne_immergee.elmt
+%%DATADIR%%/elements/sources/haute_tension/ligne_souterraine.elmt
+%%DATADIR%%/elements/sources/haute_tension/ligne_triphase.elmt
+%%DATADIR%%/elements/sources/haute_tension/ligne_triphase_2.elmt
+%%DATADIR%%/elements/sources/haute_tension/qet_directory
+%%DATADIR%%/elements/sources/haute_tension/serrure_cle_tjs_libre.elmt
+%%DATADIR%%/elements/sources/haute_tension/serrure_cle_tjs_prisionniere.elmt
+%%DATADIR%%/elements/sources/haute_tension/signal_capacitif.elmt
+%%DATADIR%%/elements/sources/haute_tension/transf_cm.elmt
+%%DATADIR%%/elements/sources/multifilaire/ecran_3p.elmt
 %%DATADIR%%/elements/sources/multifilaire/qet_directory
+%%DATADIR%%/elements/sources/multifilaire/src_1p_pe_n.elmt
+%%DATADIR%%/elements/sources/multifilaire/src_1p_pen.elmt
 %%DATADIR%%/elements/sources/multifilaire/src_1pn.elmt
 %%DATADIR%%/elements/sources/multifilaire/src_3p.elmt
+%%DATADIR%%/elements/sources/multifilaire/src_3p_pe_n.elmt
+%%DATADIR%%/elements/sources/multifilaire/src_3p_pen.elmt
 %%DATADIR%%/elements/sources/multifilaire/src_3pn.elmt
 %%DATADIR%%/elements/sources/multifilaire/src_n.elmt
 %%DATADIR%%/elements/sources/multifilaire/src_p.elmt
+%%DATADIR%%/elements/sources/multifilaire/src_tnc_tns.elmt
+%%DATADIR%%/elements/sources/pile_1_element.elmt
+%%DATADIR%%/elements/sources/pile_1_element_court.elmt
+%%DATADIR%%/elements/sources/pile_2_elements.elmt
 %%DATADIR%%/elements/sources/qet_directory
-%%DATADIR%%/elements/sources/tevenin_norton/courant_n.elmt
-%%DATADIR%%/elements/sources/tevenin_norton/courant_o.elmt
-%%DATADIR%%/elements/sources/tevenin_norton/qet_directory
-%%DATADIR%%/elements/sources/tevenin_norton/tention_n.elmt
-%%DATADIR%%/elements/sources/tevenin_norton/tention_o.elmt
+%%DATADIR%%/elements/sources/thevenin_norton/courant_n.elmt
+%%DATADIR%%/elements/sources/thevenin_norton/courant_o.elmt
+%%DATADIR%%/elements/sources/thevenin_norton/qet_directory
+%%DATADIR%%/elements/sources/thevenin_norton/tention_n.elmt
+%%DATADIR%%/elements/sources/thevenin_norton/tention_o.elmt
+%%DATADIR%%/elements/sources/transformateurs/autotransformateur.elmt
+%%DATADIR%%/elements/sources/transformateurs/autotransformateur_couplage_etoile.elmt
+%%DATADIR%%/elements/sources/transformateurs/autotransformateur_monophase.elmt
+%%DATADIR%%/elements/sources/transformateurs/autotransformateur_triphase.elmt
+%%DATADIR%%/elements/sources/transformateurs/autotransformateur_triphase_neutre.elmt
+%%DATADIR%%/elements/sources/transformateurs/qet_directory
+%%DATADIR%%/elements/sources/transformateurs/transfo_1.elmt
+%%DATADIR%%/elements/sources/transformateurs/transfo_mono.elmt
+%%DATADIR%%/elements/sources/transformateurs/transfo_tri.elmt
+%%DATADIR%%/elements/sources/transformateurs/transformateur_2_secondaires_etoile_etoile_triangle.elmt
+%%DATADIR%%/elements/sources/transformateurs/transformateur_a_couplage_reglable.elmt
+%%DATADIR%%/elements/sources/transformateurs/transformateur_avec_ecran.elmt
+%%DATADIR%%/elements/sources/transformateurs/transformateur_avec_prise_mediane_sur_un_enroulement.elmt
+%%DATADIR%%/elements/sources/transformateurs/transformateur_deux.elmt
+%%DATADIR%%/elements/sources/transformateurs/transformateur_dy.elmt
+%%DATADIR%%/elements/sources/transformateurs/transformateur_dyn.elmt
+%%DATADIR%%/elements/sources/transformateurs/transformateur_etoile_etoile.elmt
+%%DATADIR%%/elements/sources/transformateurs/transformateur_etoile_triangle.elmt
+%%DATADIR%%/elements/sources/transformateurs/transformateur_etoile_triangle_a_prise_manoeuvrable_en_charge.elmt
+%%DATADIR%%/elements/sources/transformateurs/transformateur_triangle_etoile.elmt
+%%DATADIR%%/elements/sources/transformateurs/transformateur_triphase.elmt
+%%DATADIR%%/elements/sources/transformateurs/transformateur_triphase_neutre.elmt
+%%DATADIR%%/elements/sources/transformateurs/transformateur_yd.elmt
+%%DATADIR%%/elements/vignettes/armoire/circ_breaker_x1.elmt
+%%DATADIR%%/elements/vignettes/armoire/circ_breaker_x2.elmt
+%%DATADIR%%/elements/vignettes/armoire/circ_breaker_x3.elmt
+%%DATADIR%%/elements/vignettes/armoire/disjoncteur.elmt
+%%DATADIR%%/elements/vignettes/armoire/filtre_schaff.elmt
+%%DATADIR%%/elements/vignettes/armoire/finder60.elmt
+%%DATADIR%%/elements/vignettes/armoire/goullotte_30.elmt
+%%DATADIR%%/elements/vignettes/armoire/goullotte_301.elmt
+%%DATADIR%%/elements/vignettes/armoire/hiquel/qet_directory
+%%DATADIR%%/elements/vignettes/armoire/hiquel/tm16plus.elmt
+%%DATADIR%%/elements/vignettes/armoire/micro_relay.elmt
+%%DATADIR%%/elements/vignettes/armoire/miniature_relay.elmt
+%%DATADIR%%/elements/vignettes/armoire/omron/qet_directory
+%%DATADIR%%/elements/vignettes/armoire/omron/relais/embase-p2rf-1.elmt
+%%DATADIR%%/elements/vignettes/armoire/omron/relais/embase-p2rf-2.elmt
+%%DATADIR%%/elements/vignettes/armoire/omron/relais/embase_pf.elmt
+%%DATADIR%%/elements/vignettes/armoire/omron/relais/embase_pyf_2.elmt
+%%DATADIR%%/elements/vignettes/armoire/omron/relais/g2rs.elmt
+%%DATADIR%%/elements/vignettes/armoire/omron/relais/mks.elmt
+%%DATADIR%%/elements/vignettes/armoire/omron/relais/my.elmt
+%%DATADIR%%/elements/vignettes/armoire/omron/relais/qet_directory
+%%DATADIR%%/elements/vignettes/armoire/qet_directory
+%%DATADIR%%/elements/vignettes/armoire/shneider_electric/contacteurs/lc1d.elmt
+%%DATADIR%%/elements/vignettes/armoire/shneider_electric/contacteurs/lc1k.elmt
+%%DATADIR%%/elements/vignettes/armoire/shneider_electric/contacteurs/lc2d.elmt
+%%DATADIR%%/elements/vignettes/armoire/shneider_electric/contacteurs/lc2k.elmt
+%%DATADIR%%/elements/vignettes/armoire/shneider_electric/contacteurs/qet_directory
+%%DATADIR%%/elements/vignettes/armoire/shneider_electric/protections/gv2me.elmt
+%%DATADIR%%/elements/vignettes/armoire/shneider_electric/protections/lrd.elmt
+%%DATADIR%%/elements/vignettes/armoire/shneider_electric/protections/qet_directory
+%%DATADIR%%/elements/vignettes/armoire/shneider_electric/qet_directory
+%%DATADIR%%/elements/vignettes/danger_electrique_1.elmt
+%%DATADIR%%/elements/vignettes/danger_electrique_2.elmt
+%%DATADIR%%/elements/vignettes/danger_general_1.elmt
+%%DATADIR%%/elements/vignettes/danger_general_2.elmt
+%%DATADIR%%/elements/vignettes/pupitre/2x2/boutons/arret_durgence.elmt
+%%DATADIR%%/elements/vignettes/pupitre/2x2/boutons/arret_durgence_a_clee.elmt
+%%DATADIR%%/elements/vignettes/pupitre/2x2/boutons/arret_durgence_tourner_deverouiller.elmt
+%%DATADIR%%/elements/vignettes/pupitre/2x2/boutons/bouton_poussoir.elmt
+%%DATADIR%%/elements/vignettes/pupitre/2x2/boutons/bouton_poussoir_fleche.elmt
+%%DATADIR%%/elements/vignettes/pupitre/2x2/boutons/bouton_poussoir_lumineux.elmt
+%%DATADIR%%/elements/vignettes/pupitre/2x2/boutons/bouton_tournant_centre.elmt
+%%DATADIR%%/elements/vignettes/pupitre/2x2/boutons/bouton_tournant_cote.elmt
+%%DATADIR%%/elements/vignettes/pupitre/2x2/boutons/qet_directory
+%%DATADIR%%/elements/vignettes/pupitre/2x2/porte_etiquettes/etiquette_au_en_2x2.elmt
+%%DATADIR%%/elements/vignettes/pupitre/2x2/porte_etiquettes/etiquette_au_fr_2x2.elmt
+%%DATADIR%%/elements/vignettes/pupitre/2x2/porte_etiquettes/etiquette_au_pl_2x2.elmt
+%%DATADIR%%/elements/vignettes/pupitre/2x2/porte_etiquettes/porte_etiquette_descente.elmt
+%%DATADIR%%/elements/vignettes/pupitre/2x2/porte_etiquettes/porte_etiquette_gauche-droite.elmt
+%%DATADIR%%/elements/vignettes/pupitre/2x2/porte_etiquettes/porte_etiquette_montee-descente.elmt
+%%DATADIR%%/elements/vignettes/pupitre/2x2/porte_etiquettes/porte_etiquette_montee.elmt
+%%DATADIR%%/elements/vignettes/pupitre/2x2/porte_etiquettes/porte_etiquette_vide.elmt
+%%DATADIR%%/elements/vignettes/pupitre/2x2/porte_etiquettes/qet_directory
+%%DATADIR%%/elements/vignettes/pupitre/2x2/qet_directory
+%%DATADIR%%/elements/vignettes/pupitre/2x2/voyants/qet_directory
+%%DATADIR%%/elements/vignettes/pupitre/2x2/voyants/voyant.elmt
+%%DATADIR%%/elements/vignettes/pupitre/4x4/boutons/arret_durgence.elmt
+%%DATADIR%%/elements/vignettes/pupitre/4x4/boutons/arret_durgence_a_clee.elmt
+%%DATADIR%%/elements/vignettes/pupitre/4x4/boutons/arret_durgence_tourner_deverouiller.elmt
+%%DATADIR%%/elements/vignettes/pupitre/4x4/boutons/bouton_poussoir.elmt
+%%DATADIR%%/elements/vignettes/pupitre/4x4/boutons/bouton_poussoir_fleche.elmt
+%%DATADIR%%/elements/vignettes/pupitre/4x4/boutons/bouton_poussoir_lumineux.elmt
+%%DATADIR%%/elements/vignettes/pupitre/4x4/boutons/bouton_tournant_centre.elmt
+%%DATADIR%%/elements/vignettes/pupitre/4x4/boutons/bouton_tournant_cote.elmt
+%%DATADIR%%/elements/vignettes/pupitre/4x4/boutons/qet_directory
+%%DATADIR%%/elements/vignettes/pupitre/4x4/porte_etiquettes/etiquette_au_en.elmt
+%%DATADIR%%/elements/vignettes/pupitre/4x4/porte_etiquettes/etiquette_au_fr.elmt
+%%DATADIR%%/elements/vignettes/pupitre/4x4/porte_etiquettes/etiquette_au_pl.elmt
+%%DATADIR%%/elements/vignettes/pupitre/4x4/porte_etiquettes/porte_etiquette_descente.elmt
+%%DATADIR%%/elements/vignettes/pupitre/4x4/porte_etiquettes/porte_etiquette_gauche-droite.elmt
+%%DATADIR%%/elements/vignettes/pupitre/4x4/porte_etiquettes/porte_etiquette_montee-descente.elmt
+%%DATADIR%%/elements/vignettes/pupitre/4x4/porte_etiquettes/porte_etiquette_montee.elmt
+%%DATADIR%%/elements/vignettes/pupitre/4x4/porte_etiquettes/porte_etiquette_vide.elmt
+%%DATADIR%%/elements/vignettes/pupitre/4x4/porte_etiquettes/qet_directory
+%%DATADIR%%/elements/vignettes/pupitre/4x4/qet_directory
+%%DATADIR%%/elements/vignettes/pupitre/4x4/voyants/qet_directory
+%%DATADIR%%/elements/vignettes/pupitre/4x4/voyants/voyant.elmt
+%%DATADIR%%/elements/vignettes/pupitre/qet_directory
+%%DATADIR%%/elements/vignettes/qet_directory
+%%DATADIR%%/elements/vignettes/surface_chaude_1.elmt
+%%DATADIR%%/elements/vignettes/surface_chaude_2.elmt
+%%DATADIR%%/examples/741.qet
+%%DATADIR%%/examples/ArduinoLCD.qet
+%%DATADIR%%/examples/Convoyeur_bouteilles.qet
+%%DATADIR%%/examples/Habitat-Schemas_developpes.qet
+%%DATADIR%%/examples/Habitat-Unifilaire.qet
 %%DATADIR%%/examples/convertisseur.qet
 %%DATADIR%%/examples/domestique.qet
 %%DATADIR%%/examples/double_sens.qet
+%%DATADIR%%/examples/grafcet.qet
+%%DATADIR%%/examples/lmdg.qet
+%%DATADIR%%/examples/m_000.qet
+%%DATADIR%%/examples/tremie_vibrante.qet
 %%DATADIR%%/lang/qet_cs.qm
+%%DATADIR%%/lang/qet_de.qm
+%%DATADIR%%/lang/qet_el.qm
 %%DATADIR%%/lang/qet_en.qm
 %%DATADIR%%/lang/qet_es.qm
 %%DATADIR%%/lang/qet_fr.qm
+%%DATADIR%%/lang/qet_it.qm
+%%DATADIR%%/lang/qet_pl.qm
 %%DATADIR%%/lang/qet_pt.qm
+%%DATADIR%%/lang/qet_ro.qm
 %%DATADIR%%/lang/qet_ru.qm
-%%DATADIR%%/lang/qt_cs.qm
-%%DATADIR%%/lang/qt_es.qm
-%%DATADIR%%/lang/qt_fr.qm
-%%DATADIR%%/lang/qt_pt.qm
-%%DATADIR%%/lang/qt_ru.qm
+%%DATADIR%%/titleblocks/A4_1.titleblock
+%%DATADIR%%/titleblocks/DIN_A4.titleblock
+%%DATADIR%%/titleblocks/default.titleblock
+%%DATADIR%%/titleblocks/double-logo.titleblock
+%%DATADIR%%/titleblocks/single-logo.titleblock
+@dirrmtry man/cs/man1
+@dirrmtry man/cs
+@dirrmtry man/fr.ISO8859-1/man1
+@dirrmtry man/fr.ISO8859-1
+@dirrmtry man/fr.UTF-8/man1
+@dirrmtry man/fr.UTF-8
+@dirrmtry man/pt_PT/man1
+@dirrmtry man/pt_PT
+@dirrm %%DATADIR%%/titleblocks
 @dirrm %%DATADIR%%/lang
 @dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/elements/sources/tevenin_norton
+@dirrm %%DATADIR%%/elements/vignettes/pupitre/4x4/voyants
+@dirrm %%DATADIR%%/elements/vignettes/pupitre/4x4/porte_etiquettes
+@dirrm %%DATADIR%%/elements/vignettes/pupitre/4x4/boutons
+@dirrm %%DATADIR%%/elements/vignettes/pupitre/4x4
+@dirrm %%DATADIR%%/elements/vignettes/pupitre/2x2/voyants
+@dirrm %%DATADIR%%/elements/vignettes/pupitre/2x2/porte_etiquettes
+@dirrm %%DATADIR%%/elements/vignettes/pupitre/2x2/boutons
+@dirrm %%DATADIR%%/elements/vignettes/pupitre/2x2
+@dirrm %%DATADIR%%/elements/vignettes/pupitre
+@dirrm %%DATADIR%%/elements/vignettes/armoire/shneider_electric/protections
+@dirrm %%DATADIR%%/elements/vignettes/armoire/shneider_electric/contacteurs
+@dirrm %%DATADIR%%/elements/vignettes/armoire/shneider_electric
+@dirrm %%DATADIR%%/elements/vignettes/armoire/omron/relais
+@dirrm %%DATADIR%%/elements/vignettes/armoire/omron
+@dirrm %%DATADIR%%/elements/vignettes/armoire/hiquel
+@dirrm %%DATADIR%%/elements/vignettes/armoire
+@dirrm %%DATADIR%%/elements/vignettes
+@dirrm %%DATADIR%%/elements/sources/transformateurs
+@dirrm %%DATADIR%%/elements/sources/thevenin_norton
 @dirrm %%DATADIR%%/elements/sources/multifilaire
+@dirrm %%DATADIR%%/elements/sources/haute_tension
+@dirrm %%DATADIR%%/elements/sources/convertisseurs/blocs
+@dirrm %%DATADIR%%/elements/sources/convertisseurs
 @dirrm %%DATADIR%%/elements/sources
+@dirrm %%DATADIR%%/elements/semiconducteurs/transistors
+@dirrm %%DATADIR%%/elements/semiconducteurs/thyristors
+@dirrm %%DATADIR%%/elements/semiconducteurs/rlc/parasites
+@dirrm %%DATADIR%%/elements/semiconducteurs/rlc/normaux
+@dirrm %%DATADIR%%/elements/semiconducteurs/rlc/monofilaires
+@dirrm %%DATADIR%%/elements/semiconducteurs/rlc
+@dirrm %%DATADIR%%/elements/semiconducteurs/resistances
+@dirrm %%DATADIR%%/elements/semiconducteurs/diodes
+@dirrm %%DATADIR%%/elements/semiconducteurs/connectors
+@dirrm %%DATADIR%%/elements/semiconducteurs/condensateurs
+@dirrm %%DATADIR%%/elements/semiconducteurs/circuit_integre
+@dirrm %%DATADIR%%/elements/semiconducteurs/arduino
 @dirrm %%DATADIR%%/elements/semiconducteurs
-@dirrm %%DATADIR%%/elements/recepteurs/transformateurs
-@dirrm %%DATADIR%%/elements/recepteurs/sonores
-@dirrm %%DATADIR%%/elements/recepteurs/securite
-@dirrm %%DATADIR%%/elements/recepteurs/rlc/parasites
-@dirrm %%DATADIR%%/elements/recepteurs/rlc/normaux
-@dirrm %%DATADIR%%/elements/recepteurs/rlc/monofilaires
-@dirrm %%DATADIR%%/elements/recepteurs/rlc
+@dirrm %%DATADIR%%/elements/securite_des_machines/sonores
+@dirrm %%DATADIR%%/elements/securite_des_machines/securite
+@dirrm %%DATADIR%%/elements/securite_des_machines/interrupteurs_securite_magnetiques/bti
+@dirrm %%DATADIR%%/elements/securite_des_machines/interrupteurs_securite_magnetiques/allen_bradley
+@dirrm %%DATADIR%%/elements/securite_des_machines/interrupteurs_securite_magnetiques
+@dirrm %%DATADIR%%/elements/securite_des_machines/inter_de_pos_de_securite/sick
+@dirrm %%DATADIR%%/elements/securite_des_machines/inter_de_pos_de_securite/schneider_electric
+@dirrm %%DATADIR%%/elements/securite_des_machines/inter_de_pos_de_securite/euchner
+@dirrm %%DATADIR%%/elements/securite_des_machines/inter_de_pos_de_securite
+@dirrm %%DATADIR%%/elements/securite_des_machines/blocs_de_securite/sick
+@dirrm %%DATADIR%%/elements/securite_des_machines/blocs_de_securite/preventa/preventa_2
+@dirrm %%DATADIR%%/elements/securite_des_machines/blocs_de_securite/preventa
+@dirrm %%DATADIR%%/elements/securite_des_machines/blocs_de_securite/pilz/psen
+@dirrm %%DATADIR%%/elements/securite_des_machines/blocs_de_securite/pilz/pnoz
+@dirrm %%DATADIR%%/elements/securite_des_machines/blocs_de_securite/pilz
+@dirrm %%DATADIR%%/elements/securite_des_machines/blocs_de_securite/omron
+@dirrm %%DATADIR%%/elements/securite_des_machines/blocs_de_securite/leuze
+@dirrm %%DATADIR%%/elements/securite_des_machines/blocs_de_securite/euchner
+@dirrm %%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique/sortie_temporisee
+@dirrm %%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley/relais_de_securite_a_fonction_unique
+@dirrm %%DATADIR%%/elements/securite_des_machines/blocs_de_securite/allen_bradley
+@dirrm %%DATADIR%%/elements/securite_des_machines/blocs_de_securite
+@dirrm %%DATADIR%%/elements/securite_des_machines/barrage_immateriel/sick
+@dirrm %%DATADIR%%/elements/securite_des_machines/barrage_immateriel/keyence
+@dirrm %%DATADIR%%/elements/securite_des_machines/barrage_immateriel
+@dirrm %%DATADIR%%/elements/securite_des_machines
+@dirrm %%DATADIR%%/elements/recepteurs/repartiteurs
 @dirrm %%DATADIR%%/elements/recepteurs/misc
-@dirrm %%DATADIR%%/elements/recepteurs/machines
 @dirrm %%DATADIR%%/elements/recepteurs/lampes
-@dirrm %%DATADIR%%/elements/recepteurs/domestiques
-@dirrm %%DATADIR%%/elements/recepteurs/bobines
 @dirrm %%DATADIR%%/elements/recepteurs
 @dirrm %%DATADIR%%/elements/protections/sectionneurs
 @dirrm %%DATADIR%%/elements/protections/relais_thermiques
+@dirrm %%DATADIR%%/elements/protections/protection_surtension
 @dirrm %%DATADIR%%/elements/protections/porte_fusibles
 @dirrm %%DATADIR%%/elements/protections/interrupteurs_sectionneurs
 @dirrm %%DATADIR%%/elements/protections/interrupteurs_differentiels
 @dirrm %%DATADIR%%/elements/protections/disjoncteurs_differentiels
 @dirrm %%DATADIR%%/elements/protections/disjoncteurs
+@dirrm %%DATADIR%%/elements/protections/disjoncteur_magneto_thermique
+@dirrm %%DATADIR%%/elements/protections/depart_moteur
+@dirrm %%DATADIR%%/elements/protections/control_relays
 @dirrm %%DATADIR%%/elements/protections
-@dirrm %%DATADIR%%/elements/haute_tension
-@dirrm %%DATADIR%%/elements/convertisseurs/blocs
-@dirrm %%DATADIR%%/elements/convertisseurs
+@dirrm %%DATADIR%%/elements/nomenclatures/references
+@dirrm %%DATADIR%%/elements/nomenclatures/bases/renvoi
+@dirrm %%DATADIR%%/elements/nomenclatures/bases/nomenclature
+@dirrm %%DATADIR%%/elements/nomenclatures/bases
+@dirrm %%DATADIR%%/elements/nomenclatures
+@dirrm %%DATADIR%%/elements/moteurs/variateurs_de_frequence/telemecanique
+@dirrm %%DATADIR%%/elements/moteurs/variateurs_de_frequence/siemens
+@dirrm %%DATADIR%%/elements/moteurs/variateurs_de_frequence/sew
+@dirrm %%DATADIR%%/elements/moteurs/variateurs_de_frequence/schneider
+@dirrm %%DATADIR%%/elements/moteurs/variateurs_de_frequence/omron
+@dirrm %%DATADIR%%/elements/moteurs/variateurs_de_frequence/leroy_somer
+@dirrm %%DATADIR%%/elements/moteurs/variateurs_de_frequence/fujielectric
+@dirrm %%DATADIR%%/elements/moteurs/variateurs_de_frequence/allen-bradley
+@dirrm %%DATADIR%%/elements/moteurs/variateurs_de_frequence/abb
+@dirrm %%DATADIR%%/elements/moteurs/variateurs_de_frequence
+@dirrm %%DATADIR%%/elements/moteurs/moteurs
+@dirrm %%DATADIR%%/elements/moteurs/demarreurs_progressifs/siemens
+@dirrm %%DATADIR%%/elements/moteurs/demarreurs_progressifs/schneider
+@dirrm %%DATADIR%%/elements/moteurs/demarreurs_progressifs/rockwell
+@dirrm %%DATADIR%%/elements/moteurs/demarreurs_progressifs/geindustrial
+@dirrm %%DATADIR%%/elements/moteurs/demarreurs_progressifs/eurotherm
+@dirrm %%DATADIR%%/elements/moteurs/demarreurs_progressifs/danfoss
+@dirrm %%DATADIR%%/elements/moteurs/demarreurs_progressifs/aucom
+@dirrm %%DATADIR%%/elements/moteurs/demarreurs_progressifs
+@dirrm %%DATADIR%%/elements/moteurs
+@dirrm %%DATADIR%%/elements/mecanique/pneumatique/vide
+@dirrm %%DATADIR%%/elements/mecanique/pneumatique/verins
+@dirrm %%DATADIR%%/elements/mecanique/pneumatique/vannes_logiques
+@dirrm %%DATADIR%%/elements/mecanique/pneumatique/vannes_control
+@dirrm %%DATADIR%%/elements/mecanique/pneumatique/traitement_air
+@dirrm %%DATADIR%%/elements/mecanique/pneumatique/soupapes
+@dirrm %%DATADIR%%/elements/mecanique/pneumatique/reservoir
+@dirrm %%DATADIR%%/elements/mecanique/pneumatique/energie
+@dirrm %%DATADIR%%/elements/mecanique/pneumatique/distributeurs_pneumatique
+@dirrm %%DATADIR%%/elements/mecanique/pneumatique/distributeurs_manuel
+@dirrm %%DATADIR%%/elements/mecanique/pneumatique/distributeurs_electrique
+@dirrm %%DATADIR%%/elements/mecanique/pneumatique/cables_connecteurs
+@dirrm %%DATADIR%%/elements/mecanique/pneumatique
+@dirrm %%DATADIR%%/elements/mecanique/hydraulique/verins
+@dirrm %%DATADIR%%/elements/mecanique/hydraulique/vannes
+@dirrm %%DATADIR%%/elements/mecanique/hydraulique/pompes
+@dirrm %%DATADIR%%/elements/mecanique/hydraulique/filtres
+@dirrm %%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/trois_voies_relies
+@dirrm %%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/trois_voies_non_relies
+@dirrm %%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/quatre_voies_relies
+@dirrm %%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/quatre_voies_non_relies
+@dirrm %%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/mode_de_commande
+@dirrm %%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/deux_voies_relies
+@dirrm %%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs/deux_voies_non_relies
+@dirrm %%DATADIR%%/elements/mecanique/hydraulique/elements_de_distributeurs
+@dirrm %%DATADIR%%/elements/mecanique/hydraulique/echangeurs
+@dirrm %%DATADIR%%/elements/mecanique/hydraulique/distributeurs/4-2
+@dirrm %%DATADIR%%/elements/mecanique/hydraulique/distributeurs/3-2
+@dirrm %%DATADIR%%/elements/mecanique/hydraulique/distributeurs/2-2
+@dirrm %%DATADIR%%/elements/mecanique/hydraulique/distributeurs
+@dirrm %%DATADIR%%/elements/mecanique/hydraulique/clapets_anti-retour
+@dirrm %%DATADIR%%/elements/mecanique/hydraulique/baches_hydrauliques
+@dirrm %%DATADIR%%/elements/mecanique/hydraulique
+@dirrm %%DATADIR%%/elements/mecanique
+@dirrm %%DATADIR%%/elements/fiches/sub-d
+@dirrm %%DATADIR%%/elements/fiches/din
+@dirrm %%DATADIR%%/elements/fiches
+@dirrm %%DATADIR%%/elements/energie/solaire/vanne
+@dirrm %%DATADIR%%/elements/energie/solaire/signaletiques
+@dirrm %%DATADIR%%/elements/energie/solaire/raccords_cuivre
+@dirrm %%DATADIR%%/elements/energie/solaire/productions
+@dirrm %%DATADIR%%/elements/energie/solaire/pompe
+@dirrm %%DATADIR%%/elements/energie/solaire/expansion_soupape
+@dirrm %%DATADIR%%/elements/energie/solaire/eau_sanitaire
+@dirrm %%DATADIR%%/elements/energie/solaire/base_distrib
+@dirrm %%DATADIR%%/elements/energie/solaire/ballon_echangeur
+@dirrm %%DATADIR%%/elements/energie/solaire
+@dirrm %%DATADIR%%/elements/energie/froid/ventilation
+@dirrm %%DATADIR%%/elements/energie/froid/tuyauteries
+@dirrm %%DATADIR%%/elements/energie/froid/separateurs
+@dirrm %%DATADIR%%/elements/energie/froid/robinetsdisolement
+@dirrm %%DATADIR%%/elements/energie/froid/robinetsdesecurite
+@dirrm %%DATADIR%%/elements/energie/froid/robinetsactionneurs
+@dirrm %%DATADIR%%/elements/energie/froid/recipientsetreservoirs
+@dirrm %%DATADIR%%/elements/energie/froid/pompes
+@dirrm %%DATADIR%%/elements/energie/froid/filtres
+@dirrm %%DATADIR%%/elements/energie/froid/echangeurs
+@dirrm %%DATADIR%%/elements/energie/froid/compresseursetventilateurs
+@dirrm %%DATADIR%%/elements/energie/froid/clapetsdenonretour
+@dirrm %%DATADIR%%/elements/energie/froid/capteurs
+@dirrm %%DATADIR%%/elements/energie/froid
+@dirrm %%DATADIR%%/elements/energie
+@dirrm %%DATADIR%%/elements/domestique/electromenager
+@dirrm %%DATADIR%%/elements/domestique/compteurs
+@dirrm %%DATADIR%%/elements/domestique/architectural
+@dirrm %%DATADIR%%/elements/domestique
 @dirrm %%DATADIR%%/elements/contacts/temporises/travail
 @dirrm %%DATADIR%%/elements/contacts/temporises/repos
 @dirrm %%DATADIR%%/elements/contacts/temporises
@@ -288,58 +2260,116 @@ share/mimelnk/application/x-qet-element.desktop
 @dirrm %%DATADIR%%/elements/contacts/puissance/normalement_fermes
 @dirrm %%DATADIR%%/elements/contacts/puissance
 @dirrm %%DATADIR%%/elements/contacts/poussoirs
-@dirrm %%DATADIR%%/elements/contacts/interupteur
+@dirrm %%DATADIR%%/elements/contacts/interrupteurs
 @dirrm %%DATADIR%%/elements/contacts/fin_de_course
 @dirrm %%DATADIR%%/elements/contacts/etanches
-@dirrm %%DATADIR%%/elements/contacts/bornes
+@dirrm %%DATADIR%%/elements/contacts/auxiliary_contacts
 @dirrm %%DATADIR%%/elements/contacts
-@dirrm %%DATADIR%%/elements/capteurs/sondes/tores_de_courant
-@dirrm %%DATADIR%%/elements/capteurs/sondes
-@dirrm %%DATADIR%%/elements/capteurs/appareils_de_mesure
+@dirrm %%DATADIR%%/elements/capteurs/divers
+@dirrm %%DATADIR%%/elements/capteurs/capteurs_ultrasons
+@dirrm %%DATADIR%%/elements/capteurs/capteurs_pression
+@dirrm %%DATADIR%%/elements/capteurs/capteurs_optique
+@dirrm %%DATADIR%%/elements/capteurs/capteurs_niveau
+@dirrm %%DATADIR%%/elements/capteurs/capteurs_magnetique
+@dirrm %%DATADIR%%/elements/capteurs/capteurs_inductif
+@dirrm %%DATADIR%%/elements/capteurs/capteurs_humidite
+@dirrm %%DATADIR%%/elements/capteurs/capteurs_debit
+@dirrm %%DATADIR%%/elements/capteurs/capteurs_capacitif
 @dirrm %%DATADIR%%/elements/capteurs
-@dirrm %%DATADIR%%/elements/automatisme/lader/output
-@dirrm %%DATADIR%%/elements/automatisme/lader/input
-@dirrm %%DATADIR%%/elements/automatisme/lader
+@dirrm %%DATADIR%%/elements/bornes/borniers
+@dirrm %%DATADIR%%/elements/bornes/bornes
+@dirrm %%DATADIR%%/elements/bornes
+@dirrm %%DATADIR%%/elements/bobines
+@dirrm %%DATADIR%%/elements/automatisme/regulateurs/wit
+@dirrm %%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/regulateurs
+@dirrm %%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/peripheriques
+@dirrm %%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/module_ui_tor
+@dirrm %%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/module_ui_ao
+@dirrm %%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/module_serveur_web
+@dirrm %%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/module_repetiteur
+@dirrm %%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/module_di
+@dirrm %%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/module_ao
+@dirrm %%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/module_ai
+@dirrm %%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/ecran
+@dirrm %%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric/boitier_mural
+@dirrm %%DATADIR%%/elements/automatisme/regulateurs/tac_xenta_schneider_electric
+@dirrm %%DATADIR%%/elements/automatisme/regulateurs/siemens
+@dirrm %%DATADIR%%/elements/automatisme/regulateurs/satchwell
+@dirrm %%DATADIR%%/elements/automatisme/regulateurs/pro-face
+@dirrm %%DATADIR%%/elements/automatisme/regulateurs/modules_controle
+@dirrm %%DATADIR%%/elements/automatisme/regulateurs/johnson_controls/dx/modules_extension
+@dirrm %%DATADIR%%/elements/automatisme/regulateurs/johnson_controls/dx
+@dirrm %%DATADIR%%/elements/automatisme/regulateurs/johnson_controls
+@dirrm %%DATADIR%%/elements/automatisme/regulateurs/danfoss
+@dirrm %%DATADIR%%/elements/automatisme/regulateurs
+@dirrm %%DATADIR%%/elements/automatisme/process/west
+@dirrm %%DATADIR%%/elements/automatisme/process/omron
+@dirrm %%DATADIR%%/elements/automatisme/process/endress_hauser
+@dirrm %%DATADIR%%/elements/automatisme/process/crouzet
+@dirrm %%DATADIR%%/elements/automatisme/process/convertisseurs
+@dirrm %%DATADIR%%/elements/automatisme/process/campbell
+@dirrm %%DATADIR%%/elements/automatisme/process/bamo
+@dirrm %%DATADIR%%/elements/automatisme/process
+@dirrm %%DATADIR%%/elements/automatisme/plc/sofrel/s500
+@dirrm %%DATADIR%%/elements/automatisme/plc/sofrel
+@dirrm %%DATADIR%%/elements/automatisme/plc/siemens/terminal_operateur
+@dirrm %%DATADIR%%/elements/automatisme/plc/siemens/logo
+@dirrm %%DATADIR%%/elements/automatisme/plc/siemens/im360
+@dirrm %%DATADIR%%/elements/automatisme/plc/siemens/cp_343-2
+@dirrm %%DATADIR%%/elements/automatisme/plc/siemens/config
+@dirrm %%DATADIR%%/elements/automatisme/plc/siemens/6se7-300
+@dirrm %%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_sortie
+@dirrm %%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_entree
+@dirrm %%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_ana_sortie
+@dirrm %%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_ana_entree_sortie
+@dirrm %%DATADIR%%/elements/automatisme/plc/siemens/6es7/cartes_ana_entree
+@dirrm %%DATADIR%%/elements/automatisme/plc/siemens/6es7-313
+@dirrm %%DATADIR%%/elements/automatisme/plc/siemens/6es7-312
+@dirrm %%DATADIR%%/elements/automatisme/plc/siemens/6es7-200
+@dirrm %%DATADIR%%/elements/automatisme/plc/siemens/6es7-1200
+@dirrm %%DATADIR%%/elements/automatisme/plc/siemens/6es7
+@dirrm %%DATADIR%%/elements/automatisme/plc/siemens/6es5/cpu
+@dirrm %%DATADIR%%/elements/automatisme/plc/siemens/6es5/carte_sortie
+@dirrm %%DATADIR%%/elements/automatisme/plc/siemens/6es5/carte_entree
+@dirrm %%DATADIR%%/elements/automatisme/plc/siemens/6es5/6es5_95
+@dirrm %%DATADIR%%/elements/automatisme/plc/siemens/6es5
+@dirrm %%DATADIR%%/elements/automatisme/plc/siemens
+@dirrm %%DATADIR%%/elements/automatisme/plc/schneider/zelio
+@dirrm %%DATADIR%%/elements/automatisme/plc/schneider/twido
+@dirrm %%DATADIR%%/elements/automatisme/plc/schneider/tsx
+@dirrm %%DATADIR%%/elements/automatisme/plc/schneider/telefast
+@dirrm %%DATADIR%%/elements/automatisme/plc/schneider/output
+@dirrm %%DATADIR%%/elements/automatisme/plc/schneider/m340
+@dirrm %%DATADIR%%/elements/automatisme/plc/schneider/input
+@dirrm %%DATADIR%%/elements/automatisme/plc/schneider/config
+@dirrm %%DATADIR%%/elements/automatisme/plc/schneider
+@dirrm %%DATADIR%%/elements/automatisme/plc/omron/cqm1/taille2
+@dirrm %%DATADIR%%/elements/automatisme/plc/omron/cqm1/taille1
+@dirrm %%DATADIR%%/elements/automatisme/plc/omron/cqm1
+@dirrm %%DATADIR%%/elements/automatisme/plc/omron/cj2
+@dirrm %%DATADIR%%/elements/automatisme/plc/omron/cj1/taille2
+@dirrm %%DATADIR%%/elements/automatisme/plc/omron/cj1/taille1
+@dirrm %%DATADIR%%/elements/automatisme/plc/omron/cj1
+@dirrm %%DATADIR%%/elements/automatisme/plc/omron
+@dirrm %%DATADIR%%/elements/automatisme/plc/moeller
+@dirrm %%DATADIR%%/elements/automatisme/plc/crouzet
+@dirrm %%DATADIR%%/elements/automatisme/plc/allen_bradley
+@dirrm %%DATADIR%%/elements/automatisme/plc
+@dirrm %%DATADIR%%/elements/automatisme/organigramme
+@dirrm %%DATADIR%%/elements/automatisme/ladder/output
+@dirrm %%DATADIR%%/elements/automatisme/ladder/input
+@dirrm %%DATADIR%%/elements/automatisme/ladder
+@dirrm %%DATADIR%%/elements/automatisme/knx
+@dirrm %%DATADIR%%/elements/automatisme/grafcet/macro
+@dirrm %%DATADIR%%/elements/automatisme/grafcet/actions
+@dirrm %%DATADIR%%/elements/automatisme/grafcet
 @dirrm %%DATADIR%%/elements/automatisme/fonction
 @dirrm %%DATADIR%%/elements/automatisme
+@dirrm %%DATADIR%%/elements/appareils_de_mesure/sondes/tores_de_courant
+@dirrm %%DATADIR%%/elements/appareils_de_mesure/sondes
+@dirrm %%DATADIR%%/elements/appareils_de_mesure
 @dirrm %%DATADIR%%/elements
-@dirrmtry share/mime/application
-@dirrmtry share/mime/packages
-@dirrmtry share/mime
+@dirrm %%DATADIR%%
 @dirrmtry share/mimelnk/application
 @dirrmtry share/mimelnk
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16/mimetypes
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/22x22/mimetypes
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/32x32/mimetypes
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128/mimetypes
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor/256x256/apps
-@dirrmtry share/icons/hicolor/256x256/mimetypes
-@dirrmtry share/icons/hicolor/256x256
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48/mimetypes
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/64x64/mimetypes
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrmtry man/fr.ISO8859-1/man1
-@dirrmtry man/fr.ISO8859-1
-@dirrmtry man/fr.UTF-8/man1
-@dirrmtry man/fr.UTF-8
-@dirrmtry man/pt_PT/man1
-@dirrmtry man/pt_PT
-@dirrmtry man/fr/man1
-@dirrmtry man/fr
-@dirrmtry man/es/man1
-@dirrmtry man/es
-@dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
