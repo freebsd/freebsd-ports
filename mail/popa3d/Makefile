@@ -15,7 +15,6 @@ ALL_TARGET=	popa3d
 PLIST=		${WRKDIR}/.PLIST.more
 CFLAGS+=	-DPREFIX=${PREFIX}
 UNIQUENAME=	${.CURDIR:T}
-NEED_ROOT=	yes
 
 OPTIONS_DEFINE=	SMTP_AFTER_POP3 STANDALONE_POP3 SETPROCTITLE
 NO_OPTIONS_SORT=yes
@@ -82,7 +81,7 @@ pre-install:
 .endif
 
 do-install:
-	${INSTALL} ${COPY} -o root -g wheel -m 500 \
+	${INSTALL} ${COPY} -m 500 \
 	    ${WRKSRC}/popa3d ${STAGEDIR}${PREFIX}/libexec/popa3d
 	${INSTALL_MAN} ${WRKSRC}/popa3d.8 ${STAGEDIR}${MANPREFIX}/man/man8/
 .if ${PORT_OPTIONS:MSMTP_AFTER_POP3} && !defined(WITHOUT_POPAUTH_M4)
