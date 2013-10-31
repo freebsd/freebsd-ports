@@ -1,7 +1,3 @@
 include/biosfont.h
 man/man4/biosfont.4.gz
-@cwd %%KMODDIR%%
-biosfont.ko
-@exec kldxref %%KMODDIR%%
-@unexec kldxref %%KMODDIR%%
-@cwd %%PREFIX%%
+/%%KMODDIR%%/biosfont.ko
