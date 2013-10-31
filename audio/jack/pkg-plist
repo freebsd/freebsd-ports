@@ -25,7 +25,7 @@ bin/jack_server_control
 bin/jack_simple_session_client
 bin/jack_showtime
 bin/jack_simple_client
-bin/jack_transport
+%%READLINE%%bin/jack_transport
 bin/jack_transport_client
 bin/jack_unload
 bin/jack_wait
@@ -68,6 +68,8 @@ lib/libjackserver.la
 lib/libjackserver.so
 lib/libjackserver.so.0
 libdata/pkgconfig/jack.pc
+man/man1/jackd.1.gz
+man/man1/jackstart.1.gz
 %%DOCS%%share/jack-audio-connection-kit/reference/html/annotated.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/classes.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/control_8h.html
