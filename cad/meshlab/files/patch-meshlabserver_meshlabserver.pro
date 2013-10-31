@@ -4,7 +4,7 @@
  linux-g++-32:QMAKE_RPATHDIR += ../distrib
  linux-g++-64:  LIBS += -L../distrib -lcommon
  linux-g++-64:QMAKE_RPATHDIR += ../distrib
-+LIBS += -L../common -lcommon -L../external/jhead-2.95 -ljhead
++LIBS += ../common/libcommon.a -L../external/jhead-2.95 -ljhead
 +QMAKE_RPATHDIR += ../distrib
  #CONFIG (release,debug | release) {
  #	win32-msvc2005:release:  LIBS += -L../common/release -lcommon

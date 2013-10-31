@@ -1,8 +1,4 @@
 bin/meshlab
-lib/libcommon.so.1.0.0
-lib/libcommon.so.1.0
-lib/libcommon.so.1
-lib/libcommon.so
 lib/meshlab/meshlab
 lib/meshlab/plugins/libdecorate_background.so
 lib/meshlab/plugins/libdecorate_base.so
@@ -116,7 +112,7 @@ lib/meshlab/shaders/depthmap.vert
 lib/meshlab/shaders/dimple.frag
 lib/meshlab/shaders/dimple.gdp
 lib/meshlab/shaders/dimple.vert
-lib/meshlab/shaders/electronic microscope.gdp
+lib/meshlab/shaders/electronic_microscope.gdp
 lib/meshlab/shaders/envmap.frag
 lib/meshlab/shaders/envmap.gdp
 lib/meshlab/shaders/envmap.vert
@@ -149,7 +145,7 @@ lib/meshlab/shaders/shadersrm/PhongUntextured.rfx
 lib/meshlab/shaders/shadersrm/QualityContour.rfx
 lib/meshlab/shaders/shadersrm/ZBrush.rfx
 lib/meshlab/shaders/shadersrm/cartoon.rfx
-lib/meshlab/shaders/shadersrm/old/Depth of Field.rfx
+lib/meshlab/shaders/shadersrm/old/Depth_of_Field.rfx
 lib/meshlab/shaders/shadersrm/old/GlyphBomb.rfx
 lib/meshlab/shaders/shadersrm/old/ImageBasedLighting.rfx
 lib/meshlab/shaders/shadersrm/old/Plastic.rfx
