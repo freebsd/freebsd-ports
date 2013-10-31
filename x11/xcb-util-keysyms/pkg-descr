@@ -8,4 +8,4 @@ the X protocol but which have traditionally been provided by Xlib.
 Keysyms module is the Starndard X key constants and conversions to/from
 keycodes.
 
-WWW:	http://xcb.freedesktop.org/
+WWW: http://xcb.freedesktop.org/
