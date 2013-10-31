@@ -8,34 +8,25 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/dotProject%20Version%20${PORTVERSION}
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Open Source Project Management tool
 
+LICENSE=	GPLv2
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 USE_PHP=	gd mysql session zlib
 WANT_PHP_WEB=	yes
 USE_APACHE_RUN=	22+
+NEED_ROOT=	yes
 
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	LDAP
 OPTIONS_DEFAULT=LDAP
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_PHP+=	ldap xml
-.endif
-
-post-extract:
-	@${FIND} ${WRKSRC} -type d -name '.svn' | ${XARGS} ${RM} -rf
-	@${FIND} ${WRKSRC} -type f -name '.cvsignore' -delete
+LDAP_USE=	PHP=ldap PHP=xml
 
 do-install:
-	${MKDIR} ${WWWDIR}
-	${CP} -R ${WRKSRC}/* ${WWWDIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	${CP} -R ${WRKSRC}/* ${STAGEDIR}${WWWDIR}
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
