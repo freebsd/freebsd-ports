@@ -1,7 +1,0 @@
-Python MSN-Transport for Jabber.
-
-MSN-t provides basic interoperability between Jabber and MSN. It has to be
-installed on the Jabber server. This version has native jabberd2 support, but
-it also works against jabber 1.4.x.
-
-WWW: http://delx.net.au/projects/pymsnt/

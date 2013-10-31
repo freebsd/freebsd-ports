@@ -3,7 +3,6 @@
 
     COMMENT = Instant messaging
 
-    SUBDIR += amsn
     SUBDIR += ari-yahoo
     SUBDIR += ayttm
     SUBDIR += bsflite
@@ -42,7 +41,6 @@
     SUBDIR += jabber
     SUBDIR += jabber-pyaim
     SUBDIR += jabber-pyicq
-    SUBDIR += jabber-pymsn
     SUBDIR += jabber.el
     SUBDIR += jabberd
     SUBDIR += jarl
@@ -83,7 +81,6 @@
     SUBDIR += meanwhile
     SUBDIR += mercury
     SUBDIR += mikutter
-    SUBDIR += msn-proxy
     SUBDIR += mu-conference
     SUBDIR += naim
     SUBDIR += openfire
@@ -98,13 +95,11 @@
     SUBDIR += p5-Net-Async-XMPP
     SUBDIR += p5-Net-ICQ2000
     SUBDIR += p5-Net-Jabber
-    SUBDIR += p5-Net-MSN
     SUBDIR += p5-Net-NetSend
     SUBDIR += p5-Net-OSCAR
     SUBDIR += p5-Net-Stomp
     SUBDIR += p5-Net-XMPP
     SUBDIR += p5-Net-XMPP2
-    SUBDIR += p5-POE-Component-Client-MSN
     SUBDIR += p5-Protocol-XMPP
     SUBDIR += p5-SOAP-Transport-JABBER
     SUBDIR += papyon
@@ -121,7 +116,6 @@
     SUBDIR += pidgin-latex
     SUBDIR += pidgin-libnotify
     SUBDIR += pidgin-manualsize
-    SUBDIR += pidgin-msn-pecan
     SUBDIR += pidgin-osd
     SUBDIR += pidgin-pidgimpd
     SUBDIR += pidgin-privacy-please
@@ -137,14 +131,12 @@
     SUBDIR += pwytter
     SUBDIR += py-jabber
     SUBDIR += py-jabberbot
-    SUBDIR += py-msnp
     SUBDIR += py-punjab
     SUBDIR += py-pyxmpp
     SUBDIR += py-twistedWords
     SUBDIR += py-xmpppy
     SUBDIR += py-xmpppy-irc
     SUBDIR += py-xmpppy-yahoo
-    SUBDIR += pymsn
     SUBDIR += qq
     SUBDIR += qutim
     SUBDIR += qwit
@@ -178,7 +170,6 @@
     SUBDIR += tkabber-devel
     SUBDIR += tkabber-plugins
     SUBDIR += tkabbur
-    SUBDIR += tmsnc
     SUBDIR += ttytter
     SUBDIR += turpial
     SUBDIR += twirssi
