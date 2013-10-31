@@ -12,7 +12,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Collection of over 3000 icons in XPM3 format
 
 NO_BUILD=	yes
-NEED_ROOT=	yes
 
 LIBDIR=		${STAGEDIR}${PREFIX}/include/X11/pixmaps
 
@@ -21,7 +20,6 @@ LIBDIR=		${STAGEDIR}${PREFIX}/include/X11/pixmaps
 do-install:
 	${MKDIR} ${LIBDIR}
 	${CP} -R ${WRKSRC}/* ${LIBDIR}/
-	${CHOWN} -R ${BINOWN}:${BINGRP} ${LIBDIR}
 	-${RM} ${LIBDIR}/README
 	-${RM} ${LIBDIR}/readem.shar
 
