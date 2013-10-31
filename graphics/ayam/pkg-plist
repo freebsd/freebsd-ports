@@ -9,6 +9,11 @@ lib/ayam/metacomp.tcl
 lib/ayam/metaobj.tcl
 lib/ayam/mfio.tcl
 lib/ayam/mfio.so
+lib/ayam/shaders/DSnoisedsp.slx
+lib/ayam/shaders/MFicydsp.slx
+lib/ayam/shaders/MFicysrf.slx
+lib/ayam/shaders/RCClouds.slx
+lib/ayam/shaders/RSstripessrf.slx
 lib/ayam/tcl/about.tcl
 lib/ayam/tcl/action.tcl
 lib/ayam/tcl/acurve.tcl

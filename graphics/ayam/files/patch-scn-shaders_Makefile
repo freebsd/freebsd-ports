@@ -1,0 +1,18 @@
+--- ../scn/shaders/Makefile.orig	2013-10-31 15:39:27.000000000 +0100
++++ ../scn/shaders/Makefile	2013-10-31 15:39:41.000000000 +0100
+@@ -18,7 +18,7 @@
+ 
+ # AQSIS
+ AQSHADERS := $(SOURCES:%.sl=%.slx)
+-AQSL = aqsl
++AQSL = %%LOCALBASE%%/bin/aqsl
+ AQSLFLAGS =
+ 
+ # 3Delight
+@@ -136,4 +136,4 @@
+ 	rm -f $*.slpp
+ 
+ .sl.sdr:
+-	$(SDRC) $(SDRCFLAGS) $*.sl
+\ No newline at end of file
++	$(SDRC) $(SDRCFLAGS) $*.sl
