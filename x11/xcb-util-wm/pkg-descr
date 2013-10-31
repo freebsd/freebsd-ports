@@ -8,4 +8,4 @@ the X protocol but which have traditionally been provided by Xlib.
 WM module is a Framework for window manager implementation. It brings
 both client and window-manager helpers for ICCCM and EWMH.
 
-WWW:	http://xcb.freedesktop.org/
+WWW: http://xcb.freedesktop.org/
