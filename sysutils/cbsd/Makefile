@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cbsd
-PORTVERSION=	9.2.3
+PORTVERSION=	9.2.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bsdstore.ru/downloads/ \
 		GH
@@ -19,7 +19,7 @@ LIB_DEPENDS=	ssh2:${PORTSDIR}/security/libssh2
 USE_GITHUB=	yes
 GH_ACCOUNT=	olevole
 GH_PROJECT=	cbsd
-GH_COMMIT=	3e85b94
+GH_COMMIT=	9d766d1
 
 SUB_FILES=	pkg-message
 
