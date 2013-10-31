@@ -3,6 +3,7 @@
 
 PORTNAME=	awesome
 PORTVERSION=	3.5.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/
@@ -36,7 +37,7 @@ USE_XZ=		yes
 USES=		cmake iconv pkgconfig
 CMAKE_ARGS+=	-DSYSCONFDIR=${PREFIX}/etc
 USE_EFL=	imlib2
-USE_GNOME=	glib20 pango
+USE_GNOME=	glib20 pango gdkpixbuf2
 USE_LUA=	5.1+
 USE_XORG=	pixman x11 xau xcb xdmcp xext xft xinerama xrandr xrender \
 		xproto
@@ -47,24 +48,15 @@ PORTDOCS=	AUTHORS BUGS LICENSE README
 OPTIONS_DEFINE=	DBUS DOCS
 OPTIONS_DEFAULT=DBUS DOCS
 
+DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+DBUS_CMAKE_ON=		-DWITH_DBUS=YES
+DBUS_CMAKE_OFF=		-DWITH_DBUS=NO
+
 .include <bsd.port.pre.mk>
 
 .if	(exists(${LOCALBASE}/libdata/pkgconfig/cairo.pc) && \
 	!exists(${LOCALBASE}/libdata/pkgconfig/cairo-xcb.pc))
 IGNORE=	cannot find dependency: The cairo exists but not with XCB support. Please reinstall graphics/cairo with XCB support
-.endif
-
-.if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS += libdbus-1.so:${PORTSDIR}/devel/dbus
-CMAKE_ARGS += -DWITH_DBUS=YES
-.else
-CMAKE_ARGS += -DWITH_DBUS=NO
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-CMAKE_ARGS += -DINSTALL_PORTDOCS=YES -DGENERATE_DOC=YES
-.else
-CMAKE_ARGS += -DINSTALL_PORTDOCS=NO -DGENERATE_DOC=NO
 .endif
 
 post-patch:
