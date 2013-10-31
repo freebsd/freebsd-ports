@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	x11/dock
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Window Maker dockapp that displays cpu load and a realtime 3D object
 
+LICENSE=	GPLv2
+
 OPTIONS_DEFINE=	DOCS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/${PORTNAME}
@@ -24,8 +26,6 @@ USE_CSTD=	gnu89
 MAKE_JOBS_UNSAFE=	yes
 NEED_ROOT=	yes
 
-.include <bsd.port.pre.mk>
-
 do-install:
 	${INSTALL_PROGRAM} -m 2755 -o root -g kmem ${WRKSRC}/wmcube ${STAGEDIR}${PREFIX}/bin
 .for file in *.wmc
@@ -33,13 +33,11 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/3dObjects/${file} ${STAGEDIR}${DATADIR}
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO} "===>   Installing README in ${STAGEDIR}${PREFIX}/share/doc/${PORTNAME}"
 	@${ECHO} "===>   Please Read pkg-descr and README for usage information"
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-. for f in ${PORTDOCS}
+.for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/../${f} ${STAGEDIR}${DOCSDIR}
-. endfor
-.endif
+.endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
