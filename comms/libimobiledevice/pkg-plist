@@ -34,4 +34,17 @@ lib/libimobiledevice.la
 lib/libimobiledevice.so
 lib/libimobiledevice.so.4
 libdata/pkgconfig/libimobiledevice-1.0.pc
+man/man1/idevice_id.1.gz
+man/man1/idevicebackup.1.gz
+man/man1/idevicebackup2.1.gz
+man/man1/idevicedate.1.gz
+man/man1/idevicedebugserverproxy.1.gz
+man/man1/idevicediagnostics.1.gz
+man/man1/ideviceenterrecovery.1.gz
+man/man1/ideviceimagemounter.1.gz
+man/man1/ideviceinfo.1.gz
+man/man1/idevicepair.1.gz
+man/man1/ideviceprovision.1.gz
+man/man1/idevicescreenshot.1.gz
+man/man1/idevicesyslog.1.gz
 @dirrm include/libimobiledevice
