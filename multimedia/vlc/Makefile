@@ -146,7 +146,7 @@ LIVEMEDIA_LDFLAGS=	-L${LOCALBASE}/live/groupsock \
 
 MAD_LIB_DEPENDS=	libid3tag.so:${PORTSDIR}/audio/libid3tag \
 			libmad.so:${PORTSDIR}/audio/libmad
-NAD_CONFIGURE_ENABLE=	mad
+MAD_CONFIGURE_ENABLE=	mad
 MAD_CONFIGURE_ON=	--with-mad=${LOCALBASE}
 
 MATROSKA_LIB_DEPENDS=	libmatroska.so:${PORTSDIR}/multimedia/libmatroska
