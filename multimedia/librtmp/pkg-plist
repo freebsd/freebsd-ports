@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+include/librtmp/amf.h
+include/librtmp/http.h
+include/librtmp/log.h
+include/librtmp/rtmp.h
+@dirrm include/librtmp
+lib/librtmp.a
+lib/librtmp.so
+lib/librtmp.so.0
+libdata/pkgconfig/librtmp.pc
+man/man3/librtmp.3.gz

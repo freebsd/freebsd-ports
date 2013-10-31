@@ -143,7 +143,7 @@ PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	libpulse
 
 # rtmp
-RTMP_LIB_DEPENDS=	librtmp.so:${PORTSDIR}/multimedia/rtmpdump
+RTMP_LIB_DEPENDS=	librtmp.so:${PORTSDIR}/multimedia/librtmp
 RTMP_CONFIGURE_ENABLE=	librtmp
 
 # schroedinger
