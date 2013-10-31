@@ -6,6 +6,6 @@
 
  Add the following line to the "Files" section and restart XFree86.
 
- FontPath "${LOCALBASE}/lib/X11/fonts/artwiz-fonts"
+ FontPath "%%LOCALBASE%%/lib/X11/fonts/artwiz-fonts"
 
 ------------------------------------------------------------------
