@@ -19,8 +19,6 @@ INSTALL_TARGET=	setup
 PLIST_FILES=	bin/checkpassword
 PORTDOCS=	CHANGES FILES README SYSDEPS TARGETS TODO VERSION
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e "s,gcc,${CC},g" ${WRKSRC}/find-systype.sh
 
@@ -30,11 +28,9 @@ do-configure:
 	@${ECHO_CMD} ${STAGEDIR}${PREFIX} >${WRKSRC}/conf-home
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
