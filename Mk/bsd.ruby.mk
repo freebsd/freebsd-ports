@@ -15,7 +15,7 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 # [variables that a user may define]
 #
 # RUBY_VER		- (See below)
-# RUBY_DEFAULT_VER	- Set to (e.g.) "1.8" if you want to refer to "ruby18"
+# RUBY_DEFAULT_VER	- Set to (e.g.) "1.9" if you want to refer to "ruby19"
 #			  just as "ruby".
 # RUBY_ARCH		- (See below)
 # RUBY_RD_HTML		- Define if you want HTML files generated from RD files.
@@ -172,36 +172,7 @@ _RUBY_VENDORDIR!=	${_RUBY_CONFIG} 'puts C["vendordir"]'
 RUBY?=			${LOCALBASE}/bin/${RUBY_NAME}
 
 .if defined(RUBY_VER)
-. if ${RUBY_VER} == 1.8
-#
-# Ruby 1.8
-#
-RUBY_RELVERSION=	1.8.7
-RUBY_PORTREVISION=	0
-RUBY_PORTEPOCH=		1
-RUBY_PATCHLEVEL=	371
-
-.  if ${RUBY_PATCHLEVEL} == 0
-RUBY_VERSION?=		${RUBY_RELVERSION}
-RUBY_DISTVERSION?=	${RUBY_RELVERSION}
-.  else
-RUBY_VERSION?=		${RUBY_RELVERSION}.${RUBY_PATCHLEVEL}
-RUBY_DISTVERSION?=	${RUBY_RELVERSION}-p${RUBY_PATCHLEVEL}
-.  endif
-
-# Security patch
-RUBY_PATCHFILES?=	${RUBY_VERSION}-patch1.gz
-
-RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_DISTVERSION}
-
-#
-# PLIST_SUB helpers
-#
-RUBY18=			""
-RUBY19=			"@comment "
-RUBY20=			"@comment "
-
-. elif ${RUBY_VER} == 1.9
+. if ${RUBY_VER} == 1.9
 #
 # Ruby 1.9
 #
@@ -225,7 +196,6 @@ RUBY_CONFIGURE_ARGS+=	--with-rubyhdrdir="${PREFIX}/include/ruby-1.9/" \
 #
 # PLIST_SUB helpers
 #
-RUBY18=			"@comment "
 RUBY19=			""
 RUBY20=			"@comment "
 
@@ -253,7 +223,6 @@ RUBY_CONFIGURE_ARGS+=	--with-rubyhdrdir="${PREFIX}/include/ruby-2.0/" \
 #
 # PLIST_SUB helpers
 #
-RUBY18=			"@comment "
 RUBY19=			"@comment "
 RUBY20=			""
 
@@ -262,7 +231,7 @@ RUBY20=			""
 #
 # Other versions
 #
-IGNORE=	Only ruby 1.8, 1.9 and 2.0 are supported
+IGNORE=	Only ruby 1.9 and 2.0 are supported
 . endif
 .endif # defined(RUBY_VER)
 
@@ -360,7 +329,6 @@ PLIST_SUB+=		${PLIST_RUBY_DIRS:C,DIR="(${LOCALBASE}|${PREFIX})/,DIR=",} \
 			RUBY_SUFFIX="${RUBY_SUFFIX}" \
 			RUBY_NAME="${RUBY_NAME}" \
 			RUBY_DEFAULT_SUFFIX="${RUBY_DEFAULT_SUFFIX}" \
-			RUBY18=${RUBY18} \
 			RUBY19=${RUBY19} \
 			RUBY20=${RUBY20} \
 
@@ -594,7 +562,7 @@ RUN_DEPENDS+=		${DEPEND_RUBY}
 
 _use=	${USE_RUBY_FEATURES:Miconv}
 .if !empty(_use)
-.if (${RUBY_VER} == 1.8) || (${RUBY_VER} == 1.9)
+.if (${RUBY_VER} == 1.9)
 BUILD_DEPENDS+=		${DEPEND_RUBY_ICONV}
 RUN_DEPENDS+=		${DEPEND_RUBY_ICONV}
 .endif
