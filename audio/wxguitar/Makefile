@@ -15,7 +15,6 @@ RUN_DEPENDS=	wavplay:${PORTSDIR}/audio/wavplay
 
 GNU_CONFIGURE=	yes
 USE_WX=		2.8+
-NO_STAGE=	yes
 WX_UNICODE=	yes
 CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG}
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -23,15 +22,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/wxGuitar
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=nls
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/wxguitar|${DATADIR}|' \
