@@ -16,9 +16,9 @@ LICENSE=	BSD
 RUN_DEPENDS=	qpopauth:${PORTSDIR}/mail/qpopper
 .endif
 
+USES=		uidfix
 USE_RC_SUBR=	dtcpc dtcps
 USE_RUBY=	yes
-NEED_ROOT=	yes
 MAKE_ENV+=	RUBY=${RUBY}
 
 SUB_LIST+=	RUBY=${RUBY}
