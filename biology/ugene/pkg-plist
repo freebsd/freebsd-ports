@@ -10,13 +10,28 @@ lib/ugene/libU2Remote.so
 lib/ugene/libU2Test.so
 lib/ugene/libU2View.so
 lib/ugene/libgtest.so
+lib/ugene/libgtest.so.1
+lib/ugene/libgtest.so.1.0
+lib/ugene/libgtest.so.1.0.0
 lib/ugene/libugenedb.so
+lib/ugene/libugenedb.so.1
+lib/ugene/libugenedb.so.1.0
+lib/ugene/libugenedb.so.1.0.0
+lib/ugene/plugins/libbrowser_support.so
+lib/ugene/plugins/liblinkdata_support.so
+lib/ugene/plugins/libvariants.so
+lib/ugene/plugins/linkdata_support.license
+lib/ugene/plugins/linkdata_support.plugin
+lib/ugene/plugins/variants.license
+lib/ugene/plugins/variants.plugin
 lib/ugene/plugins/CoreTests.license
 lib/ugene/plugins/CoreTests.plugin
 lib/ugene/plugins/GUITestBase.license
 lib/ugene/plugins/GUITestBase.plugin
 lib/ugene/plugins/annotator.license
 lib/ugene/plugins/annotator.plugin
+lib/ugene/plugins/browser_support.license
+lib/ugene/plugins/browser_support.plugin
 lib/ugene/plugins/api_tests.license
 lib/ugene/plugins/api_tests.plugin
 lib/ugene/plugins/ball.license
@@ -133,6 +148,7 @@ lib/ugene/ugene
 lib/ugene/ugenecl
 lib/ugene/ugenem
 lib/ugene/ugeneui
+man/man1/ugene.1.gz
 share/applications/ugene.desktop
 share/pixmaps/ugene.png
 share/pixmaps/ugene.xpm
@@ -177,21 +193,20 @@ share/pixmaps/ugene.xpm
 %%DATADIR%%/back_translation/Yeast/Saccharomyces_cerevisiae_(baker's_yeast).cut
 %%DATADIR%%/back_translation/tables.xml
 %%DATADIR%%/biostruct3d_plugin/BioStruct3DLinks.txt
+%%DATADIR%%/cmdline/align-clustalo.uwl
 %%DATADIR%%/cmdline/align-clustalw.uwl
 %%DATADIR%%/cmdline/align-kalign.uwl
 %%DATADIR%%/cmdline/align-mafft.uwl
 %%DATADIR%%/cmdline/align-tcoffee.uwl
 %%DATADIR%%/cmdline/align.uwl
-%%DATADIR%%/cmdline/bowtie-build.uwl
-%%DATADIR%%/cmdline/bowtie.uwl
 %%DATADIR%%/cmdline/convert-msa.uwl
 %%DATADIR%%/cmdline/convert-seq.uwl
 %%DATADIR%%/cmdline/extract-sequence.uwl
 %%DATADIR%%/cmdline/fetch-sequence.uwl
-%%DATADIR%%/cmdline/fetch.uwl
 %%DATADIR%%/cmdline/find-orfs.uwl
 %%DATADIR%%/cmdline/find-repeats.uwl
 %%DATADIR%%/cmdline/find-sw.uwl
+%%DATADIR%%/cmdline/gene-by-gene.uwl
 %%DATADIR%%/cmdline/generate-dna.uwl
 %%DATADIR%%/cmdline/hmm2-build.uwl
 %%DATADIR%%/cmdline/hmm2-search.uwl
@@ -207,8 +222,7 @@ share/pixmaps/ugene.xpm
 %%DATADIR%%/cmdline/revcompl.uwl
 %%DATADIR%%/cmdline/sitecon-build.uwl
 %%DATADIR%%/cmdline/sitecon-search.uwl
-%%DATADIR%%/enzymes/rebase_v003_all.bairoch.gz
-%%DATADIR%%/enzymes/rebase_v003_t2_com.bairoch.gz
+%%DATADIR%%/enzymes/2013_08_01.bairoch.gz
 %%DATADIR%%/license
 %%DATADIR%%/position_weight_matrix/JASPAR/all_jaspar.csv
 %%DATADIR%%/position_weight_matrix/JASPAR/fungi/MA0265.1.pfm
@@ -389,6 +403,131 @@ share/pixmaps/ugene.xpm
 %%DATADIR%%/position_weight_matrix/JASPAR/fungi/MA0440.1.pfm
 %%DATADIR%%/position_weight_matrix/JASPAR/fungi/MA0441.1.pfm
 %%DATADIR%%/position_weight_matrix/JASPAR/fungi/matrix_list.txt
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0010.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0011.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0012.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0013.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0015.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0016.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0022.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0023.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0026.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA00445.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0049.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0085.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0086.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0094.2.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0126.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0165.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0166.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0167.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0168.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0169.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0170.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0171.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0172.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0173.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0174.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0175.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0176.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0177.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0178.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0179.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0180.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0181.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0182.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0183.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0184.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0185.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0186.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0187.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0188.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0189.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0190.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0191.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0192.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0193.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0194.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0195.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0196.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0197.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0198.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0199.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0200.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0201.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0202.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0203.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0204.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0205.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0206.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0207.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0208.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0209.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0210.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0211.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0212.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0213.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0214.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0215.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0216.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0217.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0218.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0219.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0220.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0221.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0222.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0223.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0224.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0225.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0226.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0227.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0228.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0229.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0230.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0231.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0232.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0233.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0234.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0235.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0236.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0237.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0238.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0239.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0240.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0241.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0242.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0243.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0244.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0245.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0246.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0247.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0248.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0249.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0250.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0251.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0252.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0253.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0254.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0255.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0256.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0257.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0443.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0444.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0446.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0447.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0448.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0449.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0450.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0451.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0452.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0453.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0454.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0455.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0456.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0457.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0458.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0459.1.pfm
+%%DATADIR%%/position_weight_matrix/JASPAR/insects/MA0460.1.pfm
 %%DATADIR%%/position_weight_matrix/JASPAR/insects/matrix_list.txt
 %%DATADIR%%/position_weight_matrix/JASPAR/nematodes/MA0260.1.pfm
 %%DATADIR%%/position_weight_matrix/JASPAR/nematodes/MA0261.1.pfm
@@ -834,8 +973,6 @@ share/pixmaps/ugene.xpm
 %%DATADIR%%/query_samples/RepeatsWithORF.uql
 %%DATADIR%%/query_samples/SimpleGene.uql
 %%DATADIR%%/samples/ABIF/A01.abi
-%%DATADIR%%/samples/ACE/BL060C3.ace
-%%DATADIR%%/samples/ACE/K26.ace
 %%DATADIR%%/samples/Assembly/chrM.fa
 %%DATADIR%%/samples/Assembly/chrM.sam
 %%DATADIR%%/samples/Assembly/chrM.sorted.bam
@@ -1058,7 +1195,9 @@ share/pixmaps/ugene.xpm
 %%DATADIR%%/workflow_samples/Conversions/msa2clustal.uwl
 %%DATADIR%%/workflow_samples/Conversions/query2alignment.uwl
 %%DATADIR%%/workflow_samples/Conversions/seq2gen.uwl
+%%DATADIR%%/workflow_samples/Custom elements/script-create-alignment.uwl
 %%DATADIR%%/workflow_samples/Custom elements/script-dump-sequence-info.uwl
+%%DATADIR%%/workflow_samples/Custom elements/script-linkdata-fetch-seq.uwl
 %%DATADIR%%/workflow_samples/Custom elements/script-quality-filter.uwl
 %%DATADIR%%/workflow_samples/Data marking/annotation_marker.uwl
 %%DATADIR%%/workflow_samples/Data marking/length_marker.uwl
@@ -1067,12 +1206,32 @@ share/pixmaps/ugene.xpm
 %%DATADIR%%/workflow_samples/Data merging/tfbs.uwl
 %%DATADIR%%/workflow_samples/HMMER/build-test-HMM.uwl
 %%DATADIR%%/workflow_samples/HMMER/searchHMM.uwl
+%%DATADIR%%/workflow_samples/NGS/call_variants.uwl
+%%DATADIR%%/workflow_samples/NGS/cistrome/chip_seq.uwl
+%%DATADIR%%/workflow_samples/NGS/cistrome/chip_seq_with_control.uwl
+%%DATADIR%%/workflow_samples/NGS/cistrome.uwl
+%%DATADIR%%/workflow_samples/NGS/tuxedo/tuxedo_main.uwl
+%%DATADIR%%/workflow_samples/NGS/tuxedo/tuxedo_main_paired.uwl
+%%DATADIR%%/workflow_samples/NGS/tuxedo/tuxedo_multiple_dataset.uwl
+%%DATADIR%%/workflow_samples/NGS/tuxedo/tuxedo_multiple_dataset_paired.uwl
+%%DATADIR%%/workflow_samples/NGS/tuxedo/tuxedo_single_dataset.uwl
+%%DATADIR%%/workflow_samples/NGS/tuxedo/tuxedo_single_dataset_paired.uwl
+%%DATADIR%%/workflow_samples/NGS/tuxedo.uwl
+%%DATADIR%%/workflow_samples/Scenarios/filter_matched.uwl
+%%DATADIR%%/workflow_samples/Scenarios/find_sequences.uwl
+%%DATADIR%%/workflow_samples/Scenarios/gene_by_gene_report.uwl
+%%DATADIR%%/workflow_samples/Scenarios/merge_sequence_annotation.uwl
 %%DATADIR%%/workflow_samples/Transcriptomics/SearchTFBS.uwl
 %%DATADIR%%/workflow_samples/users/CreateAlignment.usa
 %%DATADIR%%/workflow_samples/users/Dump sequence info.usa
+%%DATADIR%%/workflow_samples/users/LinkData Fetch.usa
 %%DATADIR%%/workflow_samples/users/QualityFilter.usa
 @dirrm %%DATADIR%%/workflow_samples/users
 @dirrm %%DATADIR%%/workflow_samples/Transcriptomics
+@dirrm %%DATADIR%%/workflow_samples/Scenarios
+@dirrm %%DATADIR%%/workflow_samples/NGS/tuxedo
+@dirrm %%DATADIR%%/workflow_samples/NGS/cistrome
+@dirrm %%DATADIR%%/workflow_samples/NGS
 @dirrm %%DATADIR%%/workflow_samples/HMMER
 @dirrm %%DATADIR%%/workflow_samples/Data merging
 @dirrm %%DATADIR%%/workflow_samples/Data marking
@@ -1100,7 +1259,6 @@ share/pixmaps/ugene.xpm
 @dirrm %%DATADIR%%/samples/EMBL
 @dirrm %%DATADIR%%/samples/CLUSTALW
 @dirrm %%DATADIR%%/samples/Assembly
-@dirrm %%DATADIR%%/samples/ACE
 @dirrm %%DATADIR%%/samples/ABIF
 @dirrm %%DATADIR%%/samples
 @dirrm %%DATADIR%%/query_samples

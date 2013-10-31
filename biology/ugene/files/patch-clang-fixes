@@ -1,0 +1,91 @@
+--- src/corelibs/U2Gui/src/util/ProjectTreeController.cpp.orig	2013-10-08 15:07:58.000000000 +0800
++++ src/corelibs/U2Gui/src/util/ProjectTreeController.cpp	2013-10-30 19:47:27.000000000 +0800
+@@ -448,7 +448,7 @@ void ProjectTreeController::sl_onCloseEd
+             QMessageBox::critical(0, "Error", tr("Duplicate object names are not allowed"));
+             return;
+ 
+-        } else if (newName.contains(invalidCharactersRegExp) != NULL) {
++        } else if (newName.contains(invalidCharactersRegExp) != false) {
+             QMessageBox::critical(0, "Error", tr("The name can't contain any of the following characters: %1").arg(invalidCharacters));
+             return;
+         }
+--- src/corelibs/U2Private/src/CrashHandler.cpp.orig	2013-10-08 15:07:59.000000000 +0800
++++ src/corelibs/U2Private/src/CrashHandler.cpp	2013-10-30 19:18:30.000000000 +0800
+@@ -349,7 +349,7 @@ void CrashHandler::setupHandler() {
+ #define SA_FLAGS (SA_ONSTACK | SA_SIGINFO)
+ 
+     stack_t sigstk;
+-    sigstk.ss_sp = malloc(SIGSTKSZ * 2);
++    sigstk.ss_sp = static_cast<char *>(malloc(SIGSTKSZ * 2));
+     sigstk.ss_size = SIGSTKSZ * 2;
+     sigstk.ss_flags = 0;
+     if (sigaltstack(&sigstk,0) < 0) {
+--- src/plugins/biostruct3d_view/src/MolecularSurfaceRenderer.cpp.orig	2013-10-08 15:07:39.000000000 +0800
++++ src/plugins/biostruct3d_view/src/MolecularSurfaceRenderer.cpp	2013-10-30 21:42:54.000000000 +0800
+@@ -80,9 +80,21 @@ void DotsRenderer::drawSurface( Molecula
+     glBegin(GL_POINTS);
+     foreach(const Face& face, surface.getFaces()) {
+         float vct[3][3] = {
+-            {face.v[0].x,face.v[0].y,face.v[0].z},
+-            {face.v[1].x,face.v[1].y,face.v[1].z},
+-            {face.v[2].x,face.v[2].y,face.v[2].z},
++            {
++                static_cast<float>(face.v[0].x),
++                static_cast<float>(face.v[0].y),
++                static_cast<float>(face.v[0].z),
++            },
++            {
++                static_cast<float>(face.v[1].x),
++                static_cast<float>(face.v[1].y),
++                static_cast<float>(face.v[1].z),
++            },
++            {
++                static_cast<float>(face.v[2].x),
++                static_cast<float>(face.v[2].y),
++                static_cast<float>(face.v[2].z),
++            },
+         };
+         glVertex3fv(vct[0]);
+         glVertex3fv(vct[1]);
+--- src/plugins/expert_discovery/src/ExpertDiscoveryTreeWidgetsCtrl.cpp.orig	2013-10-08 15:07:42.000000000 +0800
++++ src/plugins/expert_discovery/src/ExpertDiscoveryTreeWidgetsCtrl.cpp	2013-10-30 22:02:40.000000000 +0800
+@@ -198,7 +198,7 @@ void EDProjectTree::updateSequenceBase(E
+ void EDProjectTree::sl_propChanged(EDProjectItem* item, const EDPIProperty* prop, QString newVal){
+     switch (item->getType()) {
+         case PIT_CS_FOLDER: 
+-            if (prop->getName().compare("Name", Qt::CaseInsensitive) == NULL) {
++            if (prop->getName().compare("Name", Qt::CaseInsensitive) == 0) {
+                 EDPICSDirectory* pPI = dynamic_cast<EDPICSDirectory*>(item);
+                 CSFolder* pFolder = findFolder(pPI);
+                 const CSFolder* pParentFolder = pFolder->getParentFolder();
+--- src/plugins/test_runner/src/TestViewReporter.h.orig	2013-10-08 15:07:45.000000000 +0800
++++ src/plugins/test_runner/src/TestViewReporter.h	2013-10-30 21:50:12.000000000 +0800
+@@ -44,7 +44,7 @@ namespace U2 {
+ 
+  public:
+ 
+-    TestViewReporter(TestViewController* parent,QTreeWidget* tree=NULL,int runTime=NULL);
++    TestViewReporter(TestViewController* parent,QTreeWidget* tree=NULL,int runTime=0);
+     QString getReportText() {return curReportText;}
+     bool saveAs(const QString url,const QString data);
+ 
+@@ -52,7 +52,7 @@ namespace U2 {
+     virtual void setupViewMenu(QMenu* n);
+  
+  private:
+-    const QString prepareHTMLText(QTreeWidget* tree=NULL,int runTime=NULL);
++    const QString prepareHTMLText(QTreeWidget* tree=NULL,int runTime=0);
+      
+     const QString getHTMLNoTests();
+     const QString getHTMLHead();
+--- src/plugins_3rdparty/ball/src/source/COMMON/version.cpp.orig	2013-10-08 15:07:47.000000000 +0800
++++ src/plugins_3rdparty/ball/src/source/COMMON/version.cpp	2013-10-30 21:20:22.000000000 +0800
+@@ -12,7 +12,7 @@ namespace BALL
+ {
+ 	const char* VersionInfo::getVersion() throw()
+ 	{
+-		return BALL_RELEASE_STRING " ("__DATE__", " __TIME__ ")";
++		return BALL_RELEASE_STRING " (" __DATE__ ", " __TIME__ ")";
+ 	}
+ 
+ 	int VersionInfo::getMinorRevision() throw(Exception::InvalidFormat)

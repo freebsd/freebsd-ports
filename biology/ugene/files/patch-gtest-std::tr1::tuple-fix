@@ -1,0 +1,34 @@
+commit 23699acca083589be9dc3b6e8e5c5d09f654648d
+Author: marina.kolpakova <marina.kolpakova@itseez.com>
+Date:   Mon Oct 8 02:37:22 2012 +0400
+
+    fix for bug 2264
+    
+    fix compilation OpenCV with cxx11 under Ubuntu with clang and gcc 4.7
+
+diff --git a/modules/ts/include/opencv2/ts/ts_gtest.h b/modules/ts/include/opencv2/ts/ts_gtest.h
+index f98f71b..42eb608 100644
+--- src/libs_3rdparty/gtest/src/gtest/internal/gtest-port.h.orig
++++ src/libs_3rdparty/gtest/src/gtest/internal/gtest-port.h
+@@ -1654,7 +1654,21 @@ inline bool operator!=(const GTEST_10_TUPLE_(T)& t,
+ #   undef _TR1_FUNCTIONAL  // Allows the user to #include
+                         // <tr1/functional> if he chooses to.
+ #  else
++#  if defined (__cplusplus) && __cplusplus > 199711L
++#   include <tuple>
++namespace std {
++    namespace tr1 {
++        using std::tuple;
++        using std::tuple_element;
++        using std::get;
++        using std::tuple_size;
++        using std::make_tuple;
++    }
++}
++#  else
+ #   include <tr1/tuple>  // NOLINT
++#  endif
++
+ #  endif  // !GTEST_HAS_RTTI && GTEST_GCC_VER_ < 40302
+ 
+ # else
