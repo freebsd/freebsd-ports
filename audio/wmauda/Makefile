@@ -11,6 +11,8 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A port of wmxmms to GTK 2.x and Audacious
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 RUN_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 LIB_DEPENDS=	libmowgli.so:${PORTSDIR}/devel/libmowgli
