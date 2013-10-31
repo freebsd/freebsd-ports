@@ -1,0 +1,29 @@
+======================================================
+Halite Configuration Instructions
+======================================================
+step 1: modify external_auth params in master config
+        repeat username for each user allowed access
+
+external_auth:
+  pam:
+    username:
+      - .*
+      - '@runner'
+      - '@wheel'
+
+step 2: add halite params in master config
+
+halite:
+  level: info
+  server: cherrypy
+  host: 0.0.0.0
+  port: 8080
+  cors: False
+  tls: True
+  certpath: %%PREFIX%%/etc/salt/pki/certs/localhost.crt
+  keypath:  %%PREFIX%%/etc/salt/pki/certs/localhost.key
+  pempath:  %%PREFIX%%/etc/salt/pki/certs/localhost.pem
+
+step 3: restart salt_master daemon
+step 4: point browser to https://saltmaster:8080
+======================================================
