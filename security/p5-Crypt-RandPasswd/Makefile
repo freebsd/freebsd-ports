@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt-RandPasswd
-PORTVERSION=	0.02
-PORTREVISION=	2
+PORTVERSION=	0.04
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,11 +13,7 @@ COMMENT=	An implementation of the Automated Password Generator standard
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Crypt::RandPasswd.3
-
-NO_STAGE=	yes
 post-patch:
-
 	@${RM} ${WRKSRC}/lib/Crypt/RandPasswd.pm.orig
 
 .include <bsd.port.mk>
