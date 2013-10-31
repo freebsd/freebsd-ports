@@ -15,7 +15,4 @@ GNU_CONFIGURE=	yes
 USES=		gmake
 USE_SDL=	mixer sdl ttf
 
-MAN6=		crimson.6
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
