@@ -13,12 +13,4 @@ COMMENT=	Perl interface to Subversion dumps
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		SVN::Dump.3 \
-		SVN::Dump::Headers.3 \
-		SVN::Dump::Property.3 \
-		SVN::Dump::Reader.3 \
-		SVN::Dump::Record.3 \
-		SVN::Dump::Text.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,4 +1,22 @@
 bin/svnweb-install
+%%PERL5_MAN3%%/SVN::CHANGES.3.gz
+%%PERL5_MAN3%%/SVN::CONTRIBUTING.3.gz
+%%PERL5_MAN3%%/SVN::UPDATING.3.gz
+%%PERL5_MAN3%%/SVN::Web.3.gz
+%%PERL5_MAN3%%/SVN::Web::Blame.3.gz
+%%PERL5_MAN3%%/SVN::Web::Browse.3.gz
+%%PERL5_MAN3%%/SVN::Web::Checkout.3.gz
+%%PERL5_MAN3%%/SVN::Web::Diff.3.gz
+%%PERL5_MAN3%%/SVN::Web::DiffParser.3.gz
+%%PERL5_MAN3%%/SVN::Web::I18N.3.gz
+%%PERL5_MAN3%%/SVN::Web::List.3.gz
+%%PERL5_MAN3%%/SVN::Web::Log.3.gz
+%%PERL5_MAN3%%/SVN::Web::RSS.3.gz
+%%PERL5_MAN3%%/SVN::Web::Revision.3.gz
+%%PERL5_MAN3%%/SVN::Web::Test.3.gz
+%%PERL5_MAN3%%/SVN::Web::View.3.gz
+%%PERL5_MAN3%%/SVN::Web::X.3.gz
+%%PERL5_MAN3%%/SVN::Web::action.3.gz
 %%SITE_PERL%%/SVN/CHANGES.pod
 %%SITE_PERL%%/SVN/CONTRIBUTING.pod
 %%SITE_PERL%%/SVN/UPDATING.pod
@@ -22,53 +40,54 @@ bin/svnweb-install
 %%SITE_PERL%%/SVN/Web/X.pm
 %%SITE_PERL%%/SVN/Web/action.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Web/.packlist
-%%WWWDIR%%/css/trac/feed-icon-16x16.png
-%%WWWDIR%%/css/trac/diff.css
-%%WWWDIR%%/css/trac/file.png
-%%WWWDIR%%/css/trac/trac.css
-%%WWWDIR%%/css/trac/folder.png
-%%WWWDIR%%/css/trac/parent.png
-%%WWWDIR%%/css/trac/svnweb.css
-%%WWWDIR%%/css/trac/browser.css
-%%WWWDIR%%/css/trac/filedeny.png
-%%WWWDIR%%/css/trac/changeset.css
-%%WWWDIR%%/css/trac/folderdeny.png
-%%WWWDIR%%/css/trac/text-diff-html.css
-%%WWWDIR%%/css/trac/code.css
+man/man1/svnweb-install.1.gz
+%%WWWDIR%%/SVN-Web.psgi
 %%WWWDIR%%/css/common.css
 %%WWWDIR%%/css/styles-hlb.css
-%%WWWDIR%%/template/trac/_action_menu
-%%WWWDIR%%/template/trac/log
-%%WWWDIR%%/template/trac/rss
-%%WWWDIR%%/template/trac/diff
-%%WWWDIR%%/template/trac/view
-%%WWWDIR%%/template/trac/list
-%%WWWDIR%%/template/trac/blame
-%%WWWDIR%%/template/trac/_diff
-%%WWWDIR%%/template/trac/footer
-%%WWWDIR%%/template/trac/browse
-%%WWWDIR%%/template/trac/header
-%%WWWDIR%%/template/trac/_log_msg
-%%WWWDIR%%/template/trac/revision
-%%WWWDIR%%/template/trac/x
-%%WWWDIR%%/template/plain/revision
-%%WWWDIR%%/template/plain/log
-%%WWWDIR%%/template/plain/diff
-%%WWWDIR%%/template/plain/list
-%%WWWDIR%%/template/plain/view
-%%WWWDIR%%/template/plain/footer
+%%WWWDIR%%/css/trac/browser.css
+%%WWWDIR%%/css/trac/changeset.css
+%%WWWDIR%%/css/trac/code.css
+%%WWWDIR%%/css/trac/diff.css
+%%WWWDIR%%/css/trac/feed-icon-16x16.png
+%%WWWDIR%%/css/trac/file.png
+%%WWWDIR%%/css/trac/filedeny.png
+%%WWWDIR%%/css/trac/folder.png
+%%WWWDIR%%/css/trac/folderdeny.png
+%%WWWDIR%%/css/trac/parent.png
+%%WWWDIR%%/css/trac/svnweb.css
+%%WWWDIR%%/css/trac/text-diff-html.css
+%%WWWDIR%%/css/trac/trac.css
 %%WWWDIR%%/template/plain/browse
+%%WWWDIR%%/template/plain/diff
+%%WWWDIR%%/template/plain/footer
 %%WWWDIR%%/template/plain/header
+%%WWWDIR%%/template/plain/list
+%%WWWDIR%%/template/plain/log
+%%WWWDIR%%/template/plain/revision
+%%WWWDIR%%/template/plain/view
 %%WWWDIR%%/template/plain/x
-%%WWWDIR%%/SVN-Web.psgi
+%%WWWDIR%%/template/trac/_action_menu
+%%WWWDIR%%/template/trac/_diff
+%%WWWDIR%%/template/trac/_log_msg
+%%WWWDIR%%/template/trac/blame
+%%WWWDIR%%/template/trac/browse
+%%WWWDIR%%/template/trac/diff
+%%WWWDIR%%/template/trac/footer
+%%WWWDIR%%/template/trac/header
+%%WWWDIR%%/template/trac/list
+%%WWWDIR%%/template/trac/log
+%%WWWDIR%%/template/trac/revision
+%%WWWDIR%%/template/trac/rss
+%%WWWDIR%%/template/trac/view
+%%WWWDIR%%/template/trac/x
+@dirrm %%WWWDIR%%/template/trac
+@dirrm %%WWWDIR%%/template/plain
+@dirrm %%WWWDIR%%/template
+@dirrm %%WWWDIR%%/css/trac
+@dirrm %%WWWDIR%%/css
+@dirrm %%WWWDIR%%
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Web
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN
 @dirrm %%SITE_PERL%%/SVN/Web/I18N
 @dirrm %%SITE_PERL%%/SVN/Web
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Web
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN
 @dirrmtry %%SITE_PERL%%/SVN
-@dirrmtry %%WWWDIR%%/css/trac
-@dirrmtry %%WWWDIR%%/css
-@dirrmtry %%WWWDIR%%/template/trac
-@dirrmtry %%WWWDIR%%/template/plain
-@dirrmtry %%WWWDIR%%/template
-@dirrmtry %%WWWDIR%%

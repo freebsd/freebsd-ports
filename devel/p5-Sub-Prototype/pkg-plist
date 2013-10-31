@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Sub::Prototype.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Sub/Prototype.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Prototype/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Prototype/Prototype.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Prototype/Prototype.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Prototype/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Prototype
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sub

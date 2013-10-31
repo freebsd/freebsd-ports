@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Sort::Tree.3.gz
 %%SITE_PERL%%/Sort/Tree.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/Tree/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/Tree
-@dirrmtry %%SITE_PERL%%/Sort
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort
+@dirrmtry %%SITE_PERL%%/Sort

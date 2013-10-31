@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Sub::Multi.3.gz
 %%SITE_PERL%%/Sub/Multi.pm
-@dirrmtry %%SITE_PERL%%/Sub
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Multi/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Multi
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub
+@dirrmtry %%SITE_PERL%%/Sub

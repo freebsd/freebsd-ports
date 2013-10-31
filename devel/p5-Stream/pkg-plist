@@ -8,5 +8,5 @@
 %%SITE_PERL%%/Stream/StringInputStream.pm
 %%SITE_PERL%%/Stream/StringOutputStream.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Stream/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Stream
-@dirrm %%SITE_PERL%%/Stream
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Stream
+@dirrmtry %%SITE_PERL%%/Stream

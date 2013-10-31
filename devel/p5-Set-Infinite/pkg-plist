@@ -1,3 +1,6 @@
+%%PERL5_MAN3%%/Set::Infinite.3.gz
+%%PERL5_MAN3%%/Set::Infinite::Arithmetic.3.gz
+%%PERL5_MAN3%%/Set::Infinite::Basic.3.gz
 %%SITE_PERL%%/Set/Infinite.pm
 %%SITE_PERL%%/Set/Infinite/Arithmetic.pm
 %%SITE_PERL%%/Set/Infinite/Basic.pm

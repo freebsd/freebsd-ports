@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/String::Diff.3.gz
 %%SITE_PERL%%/String/Diff.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Diff/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Diff
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Diff
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
 @dirrmtry %%SITE_PERL%%/String

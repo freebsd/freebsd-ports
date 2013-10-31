@@ -1,3 +1,9 @@
+%%PERL5_MAN3%%/Sort::Key.3.gz
+%%PERL5_MAN3%%/Sort::Key::Maker.3.gz
+%%PERL5_MAN3%%/Sort::Key::Multi.3.gz
+%%PERL5_MAN3%%/Sort::Key::Natural.3.gz
+%%PERL5_MAN3%%/Sort::Key::Register.3.gz
+%%PERL5_MAN3%%/Sort::Key::Types.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Sort/Key.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Sort/Key/Maker.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Sort/Key/Multi.pm
@@ -7,7 +13,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/Key/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/Key/Key.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/Key/Key.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/Key
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/Key
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Sort/Key
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sort/Key
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sort

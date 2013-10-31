@@ -13,7 +13,4 @@ COMMENT=	Set a subs prototype
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Sub::Prototype.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

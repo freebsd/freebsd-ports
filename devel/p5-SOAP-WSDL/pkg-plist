@@ -1,9 +1,60 @@
 bin/wsdl2perl.pl
+%%PERL5_MAN3%%/SOAP::WSDL.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Client.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Client::Base.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Definitions.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Deserializer::Hash.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Deserializer::SOM.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Deserializer::XSD.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Expat::Base.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Expat::Message2Hash.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Expat::MessageParser.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Expat::MessageStreamParser.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Expat::WSDLParser.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Factory::Deserializer.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Factory::Generator.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Factory::Serializer.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Factory::Transport.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Generator::Iterator::WSDL11.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Generator::PrefixResolver.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Generator::Template.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Generator::Template::Plugin::XSD.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Generator::Template::XSD.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Generator::Template::XSD::complexType.tt.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Generator::Template::XSD::complexType::POD::attributeSet.tt.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Generator::Template::XSD::element.tt.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Generator::Visitor.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Generator::Visitor::Typemap.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Manual.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Manual::CodeFirst.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Manual::Cookbook.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Manual::Deserializer.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Manual::FAQ.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Manual::Glossary.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Manual::Parser.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Manual::Serializer.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Manual::WS_I.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Manual::XSD.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::SOAP::Typelib::Fault11.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Serializer::XSD.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Server.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Server::CGI.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Server::Mod_Perl2.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Server::Simple.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Transport::HTTP.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Transport::Loopback.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::Transport::Test.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::XSD::Schema::Builtin.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::XSD::Typelib::Builtin.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::XSD::Typelib::Builtin::list.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::XSD::Typelib::ComplexType.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::XSD::Typelib::Element.3.gz
+%%PERL5_MAN3%%/SOAP::WSDL::XSD::Typelib::SimpleType.3.gz
 %%SITE_PERL%%/SOAP/WSDL.pm
 %%SITE_PERL%%/SOAP/WSDL/Base.pm
 %%SITE_PERL%%/SOAP/WSDL/Binding.pm
-%%SITE_PERL%%/SOAP/WSDL/Client/Base.pm
 %%SITE_PERL%%/SOAP/WSDL/Client.pm
+%%SITE_PERL%%/SOAP/WSDL/Client/Base.pm
 %%SITE_PERL%%/SOAP/WSDL/Definitions.pm
 %%SITE_PERL%%/SOAP/WSDL/Deserializer/Hash.pm
 %%SITE_PERL%%/SOAP/WSDL/Deserializer/SOM.pm
@@ -19,7 +70,10 @@ bin/wsdl2perl.pl
 %%SITE_PERL%%/SOAP/WSDL/Factory/Transport.pm
 %%SITE_PERL%%/SOAP/WSDL/Generator/Iterator/WSDL11.pm
 %%SITE_PERL%%/SOAP/WSDL/Generator/PrefixResolver.pm
+%%SITE_PERL%%/SOAP/WSDL/Generator/Template.pm
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/Plugin/XSD.pm
+%%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD.pm
+%%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Interface.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Interface/Body.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Interface/Header.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Interface/Operation.tt
@@ -29,27 +83,27 @@ bin/wsdl2perl.pl
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Interface/POD/Part.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Interface/POD/Type.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Interface/POD/method_info.tt
-%%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Interface.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/POD/annotation.tt
+%%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Server.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Server/POD/Message.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Server/POD/Operation.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Server/POD/OutPart.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Server/POD/method_info.tt
-%%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Server.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Typemap.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/attribute.tt
+%%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/POD/all.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/POD/attributeSet.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/POD/choice.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/POD/complexContent.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/POD/content_model.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/POD/restriction.tt
+%%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/POD/simpleContent.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/POD/simpleContent/extension.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/POD/simpleContent/restriction.tt
-%%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/POD/simpleContent.tt
+%%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/POD/structure.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/POD/structure/restriction.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/POD/structure/simpleContent.tt
-%%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/POD/structure.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/all.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/atomicTypes.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/attributeSet.tt
@@ -57,13 +111,13 @@ bin/wsdl2perl.pl
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/contentModel.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/extension.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/restriction.tt
-%%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/simpleContent/extension.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/simpleContent.tt
+%%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/simpleContent/extension.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/variety.tt
-%%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType.tt
+%%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/element.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/element/POD/contentModel.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/element/POD/structure.tt
-%%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/element.tt
+%%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/simpleType.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/simpleType/POD/contentModel.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/simpleType/POD/list.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/simpleType/POD/restriction.tt
@@ -74,11 +128,9 @@ bin/wsdl2perl.pl
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/simpleType/list.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/simpleType/restriction.tt
 %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/simpleType/union.tt
-%%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/simpleType.tt
-%%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD.pm
-%%SITE_PERL%%/SOAP/WSDL/Generator/Template.pm
-%%SITE_PERL%%/SOAP/WSDL/Generator/Visitor/Typemap.pm
 %%SITE_PERL%%/SOAP/WSDL/Generator/Visitor.pm
+%%SITE_PERL%%/SOAP/WSDL/Generator/Visitor/Typemap.pm
+%%SITE_PERL%%/SOAP/WSDL/Manual.pod
 %%SITE_PERL%%/SOAP/WSDL/Manual/CodeFirst.pod
 %%SITE_PERL%%/SOAP/WSDL/Manual/Cookbook.pod
 %%SITE_PERL%%/SOAP/WSDL/Manual/Deserializer.pod
@@ -88,7 +140,6 @@ bin/wsdl2perl.pl
 %%SITE_PERL%%/SOAP/WSDL/Manual/Serializer.pod
 %%SITE_PERL%%/SOAP/WSDL/Manual/WS_I.pod
 %%SITE_PERL%%/SOAP/WSDL/Manual/XSD.pod
-%%SITE_PERL%%/SOAP/WSDL/Manual.pod
 %%SITE_PERL%%/SOAP/WSDL/Message.pm
 %%SITE_PERL%%/SOAP/WSDL/OpMessage.pm
 %%SITE_PERL%%/SOAP/WSDL/Operation.pm
@@ -103,10 +154,10 @@ bin/wsdl2perl.pl
 %%SITE_PERL%%/SOAP/WSDL/SOAP/Typelib/Fault.pm
 %%SITE_PERL%%/SOAP/WSDL/SOAP/Typelib/Fault11.pm
 %%SITE_PERL%%/SOAP/WSDL/Serializer/XSD.pm
+%%SITE_PERL%%/SOAP/WSDL/Server.pm
 %%SITE_PERL%%/SOAP/WSDL/Server/CGI.pm
 %%SITE_PERL%%/SOAP/WSDL/Server/Mod_Perl2.pm
 %%SITE_PERL%%/SOAP/WSDL/Server/Simple.pm
-%%SITE_PERL%%/SOAP/WSDL/Server.pm
 %%SITE_PERL%%/SOAP/WSDL/Service.pm
 %%SITE_PERL%%/SOAP/WSDL/Transport/HTTP.pm
 %%SITE_PERL%%/SOAP/WSDL/Transport/Loopback.pm
@@ -130,12 +181,13 @@ bin/wsdl2perl.pl
 %%SITE_PERL%%/SOAP/WSDL/XSD/MinInclusive.pm
 %%SITE_PERL%%/SOAP/WSDL/XSD/MinLength.pm
 %%SITE_PERL%%/SOAP/WSDL/XSD/Pattern.pm
-%%SITE_PERL%%/SOAP/WSDL/XSD/Schema/Builtin.pm
 %%SITE_PERL%%/SOAP/WSDL/XSD/Schema.pm
+%%SITE_PERL%%/SOAP/WSDL/XSD/Schema/Builtin.pm
 %%SITE_PERL%%/SOAP/WSDL/XSD/SimpleType.pm
 %%SITE_PERL%%/SOAP/WSDL/XSD/TotalDigits.pm
 %%SITE_PERL%%/SOAP/WSDL/XSD/Typelib/Attribute.pm
 %%SITE_PERL%%/SOAP/WSDL/XSD/Typelib/AttributeSet.pm
+%%SITE_PERL%%/SOAP/WSDL/XSD/Typelib/Builtin.pm
 %%SITE_PERL%%/SOAP/WSDL/XSD/Typelib/Builtin/ENTITY.pm
 %%SITE_PERL%%/SOAP/WSDL/XSD/Typelib/Builtin/ID.pm
 %%SITE_PERL%%/SOAP/WSDL/XSD/Typelib/Builtin/IDREF.pm
@@ -182,44 +234,44 @@ bin/wsdl2perl.pl
 %%SITE_PERL%%/SOAP/WSDL/XSD/Typelib/Builtin/unsignedInt.pm
 %%SITE_PERL%%/SOAP/WSDL/XSD/Typelib/Builtin/unsignedLong.pm
 %%SITE_PERL%%/SOAP/WSDL/XSD/Typelib/Builtin/unsignedShort.pm
-%%SITE_PERL%%/SOAP/WSDL/XSD/Typelib/Builtin.pm
 %%SITE_PERL%%/SOAP/WSDL/XSD/Typelib/ComplexType.pm
 %%SITE_PERL%%/SOAP/WSDL/XSD/Typelib/Element.pm
 %%SITE_PERL%%/SOAP/WSDL/XSD/Typelib/SimpleType.pm
 %%SITE_PERL%%/SOAP/WSDL/XSD/WhiteSpace.pm
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Client
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Deserializer
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Expat
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Factory
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Iterator
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/Plugin
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Interface/POD
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Interface
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/POD
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Server/POD
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Server
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/POD/simpleContent
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/POD/structure
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/POD
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/simpleContent
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/element/POD
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/element
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/simpleType/POD
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/simpleType
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Visitor
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Manual
-@dirrm %%SITE_PERL%%/SOAP/WSDL/SOAP/Typelib
-@dirrm %%SITE_PERL%%/SOAP/WSDL/SOAP
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Serializer
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Server
-@dirrm %%SITE_PERL%%/SOAP/WSDL/Transport
-@dirrm %%SITE_PERL%%/SOAP/WSDL/XSD/Schema
+man/man1/wsdl2perl.pl.1.gz
 @dirrm %%SITE_PERL%%/SOAP/WSDL/XSD/Typelib/Builtin
 @dirrm %%SITE_PERL%%/SOAP/WSDL/XSD/Typelib
+@dirrm %%SITE_PERL%%/SOAP/WSDL/XSD/Schema
 @dirrm %%SITE_PERL%%/SOAP/WSDL/XSD
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Transport
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Server
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Serializer
+@dirrm %%SITE_PERL%%/SOAP/WSDL/SOAP/Typelib
+@dirrm %%SITE_PERL%%/SOAP/WSDL/SOAP
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Manual
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Visitor
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/simpleType/POD
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/simpleType
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/element/POD
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/element
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/simpleContent
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/POD/structure
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/POD/simpleContent
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType/POD
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/complexType
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Server/POD
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Server
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/POD
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Interface/POD
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD/Interface
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/XSD
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template/Plugin
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Template
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator/Iterator
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Generator
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Factory
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Expat
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Deserializer
+@dirrm %%SITE_PERL%%/SOAP/WSDL/Client
 @dirrm %%SITE_PERL%%/SOAP/WSDL
 @dirrmtry %%SITE_PERL%%/SOAP

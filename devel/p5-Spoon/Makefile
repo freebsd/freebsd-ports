@@ -20,34 +20,13 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
-NO_STAGE=	yes
-
-MAN3=		Spoon.3 \
-		Spoon::Base.3 \
-		Spoon::CGI.3 \
-		Spoon::Command.3 \
-		Spoon::ContentObject.3 \
-		Spoon::Cookie.3 \
-		Spoon::DataObject.3 \
-		Spoon::Formatter.3 \
-		Spoon::Hooks.3 \
-		Spoon::Hub.3 \
-		Spoon::Installer.3 \
-		Spoon::MetadataObject.3 \
-		Spoon::Plugin.3 \
-		Spoon::Registry.3 \
-		Spoon::Template.3 \
-		Spoon::Template::TT2.3 \
-		Spoon::Utils.3 \
-		Spoon::Config.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README
 
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

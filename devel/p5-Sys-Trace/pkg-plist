@@ -1,11 +1,16 @@
+%%PERL5_MAN3%%/Sys::Trace.3.gz
+%%PERL5_MAN3%%/Sys::Trace::Impl::Ktrace.3.gz
+%%PERL5_MAN3%%/Sys::Trace::Impl::Strace.3.gz
+%%PERL5_MAN3%%/Sys::Trace::Impl::Truss.3.gz
+%%PERL5_MAN3%%/Sys::Trace::Results.3.gz
+%%SITE_PERL%%/Sys/Trace.pm
 %%SITE_PERL%%/Sys/Trace/Impl/Ktrace.pm
 %%SITE_PERL%%/Sys/Trace/Impl/Strace.pm
 %%SITE_PERL%%/Sys/Trace/Impl/Truss.pm
 %%SITE_PERL%%/Sys/Trace/Results.pm
-%%SITE_PERL%%/Sys/Trace.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Trace/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Trace
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys
 @dirrm %%SITE_PERL%%/Sys/Trace/Impl
 @dirrm %%SITE_PERL%%/Sys/Trace
 @dirrmtry %%SITE_PERL%%/Sys
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Trace
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys

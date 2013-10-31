@@ -38,34 +38,10 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS=	--skip_questions
 
-MAN1=		svnweb-install.1
-MAN3=		SVN::CHANGES.3 \
-		SVN::CONTRIBUTING.3 \
-		SVN::UPDATING.3 \
-		SVN::Web.3 \
-		SVN::Web::Blame.3 \
-		SVN::Web::Browse.3 \
-		SVN::Web::Checkout.3 \
-		SVN::Web::Diff.3 \
-		SVN::Web::DiffParser.3 \
-		SVN::Web::I18N.3 \
-		SVN::Web::List.3 \
-		SVN::Web::Log.3 \
-		SVN::Web::RSS.3 \
-		SVN::Web::Revision.3 \
-		SVN::Web::Test.3 \
-		SVN::Web::View.3 \
-		SVN::Web::X.3 \
-		SVN::Web::action.3
-
-NO_STAGE=	yes
 post-install:
-	@${MKDIR} -p ${WWWDIR}
-	${CP} -R ${WRKSRC}/SVN-Web.psgi ${WRKSRC}/template ${WRKSRC}/css ${WWWDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/svnweb-install ${PREFIX}/bin
-	@${ECHO}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO}
+	@${MKDIR} -p ${STAGEDIR}${WWWDIR}
+	${CP} -R ${WRKSRC}/SVN-Web.psgi ${WRKSRC}/template ${WRKSRC}/css ${STAGEDIR}${WWWDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/svnweb-install ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.pre.mk>
 

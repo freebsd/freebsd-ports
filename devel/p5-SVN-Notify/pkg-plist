@@ -1,11 +1,18 @@
 bin/svnnotify
+%%PERL5_MAN3%%/SVN::Notify.3.gz
+%%PERL5_MAN3%%/SVN::Notify::Alternative.3.gz
+%%PERL5_MAN3%%/SVN::Notify::Filter.3.gz
+%%PERL5_MAN3%%/SVN::Notify::Filter::Trac.3.gz
+%%PERL5_MAN3%%/SVN::Notify::HTML.3.gz
+%%PERL5_MAN3%%/SVN::Notify::HTML::ColorDiff.3.gz
 %%SITE_PERL%%/SVN/Notify.pm
 %%SITE_PERL%%/SVN/Notify/Alternative.pm
 %%SITE_PERL%%/SVN/Notify/Filter.pod
 %%SITE_PERL%%/SVN/Notify/Filter/Trac.pm
 %%SITE_PERL%%/SVN/Notify/HTML.pm
 %%SITE_PERL%%/SVN/Notify/HTML/ColorDiff.pm
-@dirrm %%SITE_PERL%%/SVN/Notify/Filter
+man/man1/svnnotify.1.gz
 @dirrm %%SITE_PERL%%/SVN/Notify/HTML
-@dirrmtry %%SITE_PERL%%/SVN/Notify
+@dirrm %%SITE_PERL%%/SVN/Notify/Filter
+@dirrm %%SITE_PERL%%/SVN/Notify
 @dirrmtry %%SITE_PERL%%/SVN

@@ -16,10 +16,7 @@ USES=		perl5
 USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/${DISTNAME:C/a$//}
 
-MAN3=		Term::ReadLine::Gnu.3
-
 test:	build
 	@(cd ${WRKSRC}; make test)
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

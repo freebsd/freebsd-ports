@@ -13,12 +13,4 @@ COMMENT=	Sorts objects by one or several keys really fast
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Sort::Key.3 \
-		Sort::Key::Maker.3 \
-		Sort::Key::Multi.3 \
-		Sort::Key::Natural.3 \
-		Sort::Key::Register.3 \
-		Sort::Key::Types.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -13,7 +13,4 @@ COMMENT=	Additional utils for Perl symbols manipulation
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Symbol::Util.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

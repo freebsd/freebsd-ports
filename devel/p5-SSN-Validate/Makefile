@@ -15,10 +15,7 @@ COMMENT=	Perl extension to do SSN Validation
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		SSN::Validate.3
-
 test: all
 	cd ${WRKSRC} && ${MAKE} test
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

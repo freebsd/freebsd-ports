@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/String::LRC.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/String/LRC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/String/LRC.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/String/bench.pl
@@ -5,5 +6,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/LRC/LRC.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/LRC/LRC.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/LRC
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/String
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/String
