@@ -23,14 +23,10 @@ PORTEXAMPLES=	wmndrc
 PLIST_FILES=	bin/wmnd \
 		man/man1/wmnd.1.gz
 
-.include <bsd.port.pre.mk>
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/wmnd ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/wmnd.1 ${STAGEDIR}${MANPREFIX}/man/man1
-.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/wmndrc ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
