@@ -1,6 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Export/Attrs/.packlist
+%%PERL5_MAN3%%/Perl6::Export::Attrs.3.gz
 %%SITE_PERL%%/Perl6/Export/Attrs.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Export/Attrs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Export/Attrs/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Export/Attrs
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Export
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6
 @dirrmtry %%SITE_PERL%%/Perl6/Export

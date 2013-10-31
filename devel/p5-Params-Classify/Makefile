@@ -13,7 +13,4 @@ COMMENT=	Argument type classification
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Params::Classify.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

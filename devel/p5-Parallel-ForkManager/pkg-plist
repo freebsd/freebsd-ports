@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/Parallel::ForkManager.3.gz
 %%SITE_PERL%%/Parallel/ForkManager.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel/ForkManager/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel/ForkManager

@@ -29,36 +29,12 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS=	--default
 
-MAN3=		POE.3 POE::Component.3 POE::Component::Client::TCP.3 \
-		POE::Component::Server::TCP.3 POE::Driver.3 \
-		POE::Driver::SysRW.3 POE::Filter.3 \
-		POE::Filter::Block.3 POE::Filter::Grep.3 \
-		POE::Filter::HTTPD.3 POE::Filter::Line.3 \
-		POE::Filter::Map.3 POE::Filter::RecordBlock.3 \
-		POE::Filter::Reference.3 POE::Filter::Stackable.3 \
-		POE::Filter::Stream.3 POE::Kernel.3 POE::Loop.3 \
-		POE::Loop::IO_Poll.3 POE::Loop::PerlSignals.3 \
-		POE::Loop::Select.3 POE::NFA.3 POE::Pipe.3 \
-		POE::Pipe::OneWay.3 POE::Pipe::TwoWay.3 POE::Queue.3 \
-		POE::Queue::Array.3 POE::Resource.3 \
-		POE::Resource::Aliases.3 POE::Resource::Events.3 \
-		POE::Resource::Extrefs.3 POE::Resource::FileHandles.3 \
-		POE::Resource::SIDs.3 POE::Resource::Sessions.3 \
-		POE::Resource::Signals.3 POE::Resource::Clock.3 \
-		POE::Resources.3 POE::Session.3 POE::Wheel.3 \
-		POE::Wheel::Curses.3 POE::Wheel::FollowTail.3 \
-		POE::Wheel::ListenAccept.3 POE::Wheel::ReadLine.3 \
-		POE::Wheel::ReadWrite.3 POE::Wheel::Run.3 \
-		POE::Wheel::SocketFactory.3
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 test: build

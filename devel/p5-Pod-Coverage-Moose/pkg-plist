@@ -1,6 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Coverage/Moose/.packlist
+%%PERL5_MAN3%%/Pod::Coverage::Moose.3.gz
 %%SITE_PERL%%/Pod/Coverage/Moose.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Coverage/Moose
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Coverage/Moose/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Coverage/Moose
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Coverage
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
 @dirrmtry %%SITE_PERL%%/Pod/Coverage

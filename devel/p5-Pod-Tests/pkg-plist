@@ -1,6 +1,8 @@
 bin/pod2test
+%%PERL5_MAN3%%/Pod::Tests.3.gz
 %%SITE_PERL%%/Pod/Tests.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Tests/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Tests
+man/man1/pod2test.1.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Tests
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
 @dirrmtry %%SITE_PERL%%/Pod

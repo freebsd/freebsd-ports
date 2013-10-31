@@ -1,13 +1,15 @@
 bin/poepp
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Devel/Profiler/.packlist
+%%PERL5_MAN3%%/POE::Devel::Profiler.3.gz
 %%SITE_PERL%%/POE/Devel/Profiler.pm
 %%SITE_PERL%%/POE/Devel/Profiler/Parser.pm
 %%SITE_PERL%%/POE/Devel/Profiler/Visualizer/BasicGraphViz.pm
 %%SITE_PERL%%/POE/Devel/Profiler/Visualizer/BasicSummary.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Devel/Profiler/.packlist
+man/man1/poepp.1.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Devel/Profiler
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Devel
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
 @dirrm %%SITE_PERL%%/POE/Devel/Profiler/Visualizer
 @dirrm %%SITE_PERL%%/POE/Devel/Profiler
 @dirrmtry %%SITE_PERL%%/POE/Devel
 @dirrmtry %%SITE_PERL%%/POE
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Devel/Profiler
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Devel
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE

@@ -1,3 +1,7 @@
+%%PERL5_MAN3%%/Path::Class.3.gz
+%%PERL5_MAN3%%/Path::Class::Dir.3.gz
+%%PERL5_MAN3%%/Path::Class::Entity.3.gz
+%%PERL5_MAN3%%/Path::Class::File.3.gz
 %%SITE_PERL%%/Path/Class.pm
 %%SITE_PERL%%/Path/Class/Dir.pm
 %%SITE_PERL%%/Path/Class/Entity.pm

@@ -1,11 +1,13 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chipcard/PCSC/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chipcard/PCSC/PCSC.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chipcard/PCSC/PCSC.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/Chipcard/PCSC/Card.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Chipcard/PCSC/Card.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Chipcard/PCSC.pod
+%%PERL5_MAN3%%/Chipcard::PCSC.3.gz
+%%PERL5_MAN3%%/Chipcard::PCSC::Card.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Chipcard/PCSC.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chipcard/PCSC
+%%SITE_PERL%%/%%PERL_ARCH%%/Chipcard/PCSC.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Chipcard/PCSC/Card.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Chipcard/PCSC/Card.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chipcard/PCSC/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chipcard/PCSC/PCSC.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chipcard/PCSC/PCSC.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chipcard/PCSC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chipcard
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Chipcard/PCSC
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Chipcard/PCSC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Chipcard

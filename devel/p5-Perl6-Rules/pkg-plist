@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Rules/.packlist
+%%PERL5_MAN3%%/Perl6::Rules.3.gz
 %%SITE_PERL%%/Perl6/Rules.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Rules
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Rules/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Rules
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6
 @dirrmtry %%SITE_PERL%%/Perl6

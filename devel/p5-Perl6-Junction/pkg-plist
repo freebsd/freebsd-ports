@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/Perl6::Junction.3.gz
 %%SITE_PERL%%/Perl6/Junction.pm
 %%SITE_PERL%%/Perl6/Junction/All.pm
 %%SITE_PERL%%/Perl6/Junction/Any.pm
@@ -6,6 +7,6 @@
 %%SITE_PERL%%/Perl6/Junction/One.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Junction/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Junction
-@dirrm %%SITE_PERL%%/Perl6/Junction
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6
+@dirrm %%SITE_PERL%%/Perl6/Junction
 @dirrmtry %%SITE_PERL%%/Perl6

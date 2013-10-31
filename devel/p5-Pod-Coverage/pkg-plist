@@ -1,4 +1,8 @@
 bin/pod_cover
+%%PERL5_MAN3%%/Pod::Coverage.3.gz
+%%PERL5_MAN3%%/Pod::Coverage::CountParents.3.gz
+%%PERL5_MAN3%%/Pod::Coverage::ExportOnly.3.gz
+%%PERL5_MAN3%%/Pod::Coverage::Overloader.3.gz
 %%SITE_PERL%%/Pod/Coverage.pm
 %%SITE_PERL%%/Pod/Coverage/CountParents.pm
 %%SITE_PERL%%/Pod/Coverage/ExportOnly.pm

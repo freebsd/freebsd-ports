@@ -1,11 +1,13 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Pluggable/.packlist
+%%PERL5_MAN3%%/POE::Component::Pluggable.3.gz
+%%PERL5_MAN3%%/POE::Component::Pluggable::Constants.3.gz
+%%PERL5_MAN3%%/POE::Component::Pluggable::Pipeline.3.gz
 %%SITE_PERL%%/POE/Component/Pluggable.pm
-%%SITE_PERL%%/POE/Component/Pluggable/Pipeline.pm
 %%SITE_PERL%%/POE/Component/Pluggable/Constants.pm
+%%SITE_PERL%%/POE/Component/Pluggable/Pipeline.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Pluggable/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Pluggable
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
-@dirrmtry %%SITE_PERL%%/POE/Component/Pluggable
+@dirrm %%SITE_PERL%%/POE/Component/Pluggable
 @dirrmtry %%SITE_PERL%%/POE/Component
 @dirrmtry %%SITE_PERL%%/POE

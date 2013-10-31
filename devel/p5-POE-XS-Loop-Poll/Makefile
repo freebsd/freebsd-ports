@@ -18,7 +18,4 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_SCRIPT+=	Makefile.PL --default
 
-MAN3=	POE::XS::Loop::Poll.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

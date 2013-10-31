@@ -17,8 +17,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		POE::Component::Pluggable.3 POE::Component::Pluggable::Pipeline.3 \
-		POE::Component::Pluggable::Constants.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
