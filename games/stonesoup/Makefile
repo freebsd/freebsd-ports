@@ -13,8 +13,6 @@ COMMENT=	Dungeon Crawl Stone Soup - a fun, free rogue-like game
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/stone_soup-${PORTVERSION}/licence.txt
 
-NEED_ROOT=	yes
-
 USE_SQLITE=	yes
 USE_XZ=		yes
 USES=		bison gmake perl5 pkgconfig
