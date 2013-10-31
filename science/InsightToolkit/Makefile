@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	science biology
 MASTER_SITES=	SF/itk/itk/2.8
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Insight Toolkit
 
 OPTIONS_DEFINE=	EXAMPLES TESTING
