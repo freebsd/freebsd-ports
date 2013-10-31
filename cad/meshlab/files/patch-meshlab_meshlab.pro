@@ -4,7 +4,7 @@
  linux-g++-64:LIBS += -L../external/lib/linux-g++-64 -L../distrib -lcommon -lGLU
  linux-g++-64:QMAKE_RPATHDIR += ../distrib
  
-+LIBS += -L../external/jhead-2.95 -L../common -lcommon -lGLU -ljhead
++LIBS += -L../external/jhead-2.95 ../common/libcommon.a -lGLU -ljhead
 +QMAKE_RPATHDIR += ../distrib
 +
  # uncomment in your local copy only in emergency cases.
