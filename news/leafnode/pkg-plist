@@ -31,16 +31,13 @@ sbin/setup-daemontools.sh
 @dirrmtry %%ETCDIR%%
 @comment only remove these when empty:
 @comment we don't want to kill the news spool across updates
-@cwd /
-@unexec rm -f %%SPOOLDIR%%/leaf.node/lock.file
-@dirrmtry %%SPOOLDIR%%/failed.postings
-@dirrmtry %%SPOOLDIR%%/leaf.node
+@unexec rm -f %%SPOOLDIR%%/leaf.node/lock.file 2>/dev/null || :
+@unexec rmdir %%SPOOLDIR%%/failed.postings 2>/dev/null || :
+@unexec rmdir %%SPOOLDIR%%/leaf.node 2>/dev/null || :
 @unexec rmdir %%SPOOLDIR%%/message.id/* 2>/dev/null || :
-@dirrmtry %%SPOOLDIR%%/message.id
-@dirrmtry %%SPOOLDIR%%/interesting.groups
-@dirrmtry %%SPOOLDIR%%/out.going
-@dirrmtry %%SPOOLDIR%%/temp.files
-@dirrmtry %%SPOOLDIR%%
-@cwd %%REALPREFIX%%
-@unexec rmdir %D/var/spool %D/var %D/lib/leafnode 2>/dev/null || :
+@unexec rmdir %%SPOOLDIR%%/message.id 2>/dev/null || :
+@unexec rmdir %%SPOOLDIR%%/interesting.groups 2>/dev/null || :
+@unexec rmdir %%SPOOLDIR%%/out.going 2>/dev/null || :
+@unexec rmdir %%SPOOLDIR%%/temp.files 2>/dev/null || :
+@unexec rmdir %%SPOOLDIR%% 2>/dev/null || :
 @unexec if test -d "%%SPOOLDIR%%" || test -d "%D/etc/leafnode" ; then echo ; echo "==============================================================================" ; echo "If you want to remove leafnode for good, delete spool and configuration:" ; echo "type: rm -rf %D/etc/leafnode %%SPOOLDIR%%" ; echo "==============================================================================" ; fi
