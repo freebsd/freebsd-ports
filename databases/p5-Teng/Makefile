@@ -8,7 +8,7 @@ MASTER_SITE_SUBDIR=	CPAN:NEKOKAK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	Perl extension for very simple DBI wrapper/ORMapper
+COMMENT=	Perl extension for simple DBI wrapper/ORMapper
 
 RUN_DEPENDS=	\
 	p5-Class-Accessor-Lite>=0.05:${PORTSDIR}/devel/p5-Class-Accessor-Lite \

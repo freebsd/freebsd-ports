@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	jigdo-bin-${PORTVERSION}
 
 MAINTAINER=	udo.schweigert@siemens.com
-COMMENT=	A tool designed to ease the distribution of very large files
+COMMENT=	Tool designed to ease the distribution of large files
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 

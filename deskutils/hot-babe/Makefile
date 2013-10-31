@@ -10,7 +10,7 @@ MASTER_SITES=	http://dindinx.net/hotbabe/downloads/ \
 MASTER_SITE_SUBDIR=	novel
 
 MAINTAINER=	novel@FreeBSD.org
-COMMENT=	Small utility which displays the system activity in a very special way
+COMMENT=	Small utility which displays the system activity in a special way
 
 USES=		pkgconfig
 USE_BZIP2=	yes

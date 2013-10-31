@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
-COMMENT=	A very simple standalone HTTP daemon
+COMMENT=	Simple standalone HTTP daemon
 
 USES=		perl5
 USE_PERL5=	configure

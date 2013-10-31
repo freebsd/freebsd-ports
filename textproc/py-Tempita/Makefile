@@ -8,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wenheping@gmail.com
-COMMENT=	A very small text templating language
+COMMENT=	Small text templating language
 
 USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	easy_install

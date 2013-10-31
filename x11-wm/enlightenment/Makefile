@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.enlightenment.org/releases/ \
 		LOCAL/gblach/e17/
 
 MAINTAINER=	gblach@FreeBSD.org
-COMMENT=	A very artistic X window manager
+COMMENT=	Artistic X window manager
 
 LICENSE=	BSD
 

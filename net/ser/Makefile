@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.berlios.de/ser/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 
 MAINTAINER=	sobomax@FreeBSD.org
-COMMENT=	A very fast and configurable SIP proxy
+COMMENT=	Fast and configurable SIP proxy
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

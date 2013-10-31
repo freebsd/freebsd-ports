@@ -9,7 +9,7 @@ MASTER_SITES=	http://openser.org/pub/openser/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-tls_src
 
 MAINTAINER=	jesusr@FreeBSD.org
-COMMENT=	A very fast and configurable SIP proxy with TLS support
+COMMENT=	Fast and configurable SIP proxy with TLS support
 
 LIB_DEPENDS=	radiusclient-ng.2:${PORTSDIR}/net/radiusclient
 

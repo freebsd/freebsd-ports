@@ -12,7 +12,7 @@ EXTRACT_SUFX=	#
 DIST_SUBDIR=	python
 
 MAINTAINER=	lwhsu@FreeBSD.org
-COMMENT=	A very initial effort to Python code metrics
+COMMENT=	Initial effort to Python code metrics
 
 USE_DOS2UNIX=	yes
 USE_PYTHON=	yes

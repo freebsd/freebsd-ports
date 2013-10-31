@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	sbz@FreeBSD.org
-COMMENT=	HexInject is a very versatile packet injector and sniffer
+COMMENT=	HexInject is a versatile packet injector and sniffer
 
 LICENSE=	BSD
 

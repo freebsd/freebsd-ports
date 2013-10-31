@@ -7,7 +7,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	zi@FreeBSD.org
-COMMENT=	A simple but very flexible static site generator
+COMMENT=	Simple but flexible static site generator
 
 RUN_DEPENDS=	rubygem-cri>=2.2:${PORTSDIR}/devel/rubygem-cri
 

@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
 MAINTAINER=	graudeejs@gmail.com
-COMMENT=	Violet is a very easy to learn and use UML editor
+COMMENT=	Violet is a easy to learn and use UML editor
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

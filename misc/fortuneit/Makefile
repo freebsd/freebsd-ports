@@ -8,7 +8,7 @@ MASTER_SITES=	http://utenti.gufi.org/~gmarco/files/distfiles/
 DISTNAME=	fortune-it-${PORTVERSION}
 
 MAINTAINER=	gmarco@gufi.org
-COMMENT=	A very funny fortune file in Italian
+COMMENT=	Funny fortune file in Italian
 
 STRCMD=		/usr/games/strfile
 
