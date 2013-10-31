@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}-${ARCH}-${PORTVERSION}
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A convenience package to install the compat8x libraries
 
+LICENSE=	BSD
+
 USE_XZ=		yes
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64
