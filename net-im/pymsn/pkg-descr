@@ -1,6 +1,0 @@
-pymsn is the library behind the msn connection manager :
-telepathy-butterfly. It is a rewrite of the libivy msn library used in
-the Ivy msn client. pymsn uses the glib mainloop to process the network
-events in an asynchronous manner.
-
-WWW: http://telepathy.freedesktop.org/

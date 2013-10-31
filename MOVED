@@ -5148,3 +5148,12 @@ multimedia/ffmpeg1|multimedia/ffmpeg|2013-10-27|Use multimedia/ffmpeg instead
 devel/rubygem-yajl-ruby077||2013-10-29|Removed
 lang/lua4||2013-10-31|EOLed upstream
 lang/tolua4||2013-10-31|EOLed upstream
+net-im/amsn||2013-10-31|Has expired: Primary MSN Messenger service terminated 30 APR 2013
+net-im/jabber-pymsn||2013-10-31|Has expired: Primary MSN Messenger service terminated 30 APR 2013
+net-im/msn-proxy||2013-10-31|Has expired: Primary MSN Messenger service terminated 30 APR 2013
+net-im/p5-Net-MSN||2013-10-31|Has expired: Primary MSN Messenger service terminated 30 APR 2013
+net-im/p5-POE-Component-Client-MSN||2013-10-31|Has expired: Primary MSN Messenger service terminated 30 APR 2013
+net-im/pidgin-msn-pecan||2013-10-31|Has expired: Primary MSN Messenger service terminated 30 APR 2013
+net-im/py-msnp||2013-10-31|Has expired: Primary MSN Messenger service terminated 30 APR 2013
+net-im/pymsn||2013-10-31|Has expired: Primary MSN Messenger service terminated 30 APR 2013
+net-im/tmsnc||2013-10-31|Has expired: Primary MSN Messenger service terminated 30 APR 2013
