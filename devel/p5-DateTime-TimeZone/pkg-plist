@@ -25,7 +25,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Gaborone.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Harare.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Johannesburg.pm
-%%SITE_PERL%%/DateTime/TimeZone/Africa/Juba.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Kampala.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Khartoum.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Kigali.pm
@@ -54,7 +53,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Windhoek.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Adak.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Anchorage.pm
-%%SITE_PERL%%/DateTime/TimeZone/America/Anguilla.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Antigua.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Araguaina.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Argentina/Buenos_Aires.pm
@@ -69,7 +67,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Argentina/San_Luis.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Argentina/Tucuman.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Argentina/Ushuaia.pm
-%%SITE_PERL%%/DateTime/TimeZone/America/Aruba.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Asuncion.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Atikokan.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Bahia.pm
@@ -98,7 +95,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Dawson_Creek.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Denver.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Detroit.pm
-%%SITE_PERL%%/DateTime/TimeZone/America/Dominica.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Edmonton.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Eirunepe.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/El_Salvador.pm
@@ -107,8 +103,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Godthab.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Goose_Bay.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Grand_Turk.pm
-%%SITE_PERL%%/DateTime/TimeZone/America/Grenada.pm
-%%SITE_PERL%%/DateTime/TimeZone/America/Guadeloupe.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Guatemala.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Guayaquil.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Guyana.pm
@@ -147,7 +141,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Monterrey.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Montevideo.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Montreal.pm
-%%SITE_PERL%%/DateTime/TimeZone/America/Montserrat.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Nassau.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/New_York.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Nipigon.pm
@@ -179,17 +172,12 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Scoresbysund.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Sitka.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/St_Johns.pm
-%%SITE_PERL%%/DateTime/TimeZone/America/St_Kitts.pm
-%%SITE_PERL%%/DateTime/TimeZone/America/St_Lucia.pm
-%%SITE_PERL%%/DateTime/TimeZone/America/St_Thomas.pm
-%%SITE_PERL%%/DateTime/TimeZone/America/St_Vincent.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Swift_Current.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Tegucigalpa.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Thule.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Thunder_Bay.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Tijuana.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Toronto.pm
-%%SITE_PERL%%/DateTime/TimeZone/America/Tortola.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Vancouver.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Whitehorse.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Winnipeg.pm
@@ -200,7 +188,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/Antarctica/DumontDUrville.pm
 %%SITE_PERL%%/DateTime/TimeZone/Antarctica/Macquarie.pm
 %%SITE_PERL%%/DateTime/TimeZone/Antarctica/Mawson.pm
-%%SITE_PERL%%/DateTime/TimeZone/Antarctica/McMurdo.pm
 %%SITE_PERL%%/DateTime/TimeZone/Antarctica/Palmer.pm
 %%SITE_PERL%%/DateTime/TimeZone/Antarctica/Rothera.pm
 %%SITE_PERL%%/DateTime/TimeZone/Antarctica/Syowa.pm
@@ -348,7 +335,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Tallinn.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Tirane.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Uzhgorod.pm
-%%SITE_PERL%%/DateTime/TimeZone/Europe/Vaduz.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Vienna.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Vilnius.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Volgograd.pm
@@ -397,7 +383,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Guadalcanal.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Guam.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Honolulu.pm
-%%SITE_PERL%%/DateTime/TimeZone/Pacific/Johnston.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Kiritimati.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Kosrae.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Kwajalein.pm
