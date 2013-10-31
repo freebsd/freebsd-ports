@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL/moniker/.packlist
+%%PERL5_MAN3%%/UNIVERSAL::moniker.3.gz
 %%SITE_PERL%%/UNIVERSAL/moniker.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL/moniker/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL/moniker
-@dirrmtry %%SITE_PERL%%/UNIVERSAL
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL
+@dirrmtry %%SITE_PERL%%/UNIVERSAL

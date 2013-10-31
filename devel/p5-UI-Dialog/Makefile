@@ -23,24 +23,6 @@ USES=		perl5
 USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAN3=		UI::Dialog.3 \
-		UI::Dialog::Backend.3 \
-		UI::Dialog::Backend::ASCII.3 \
-		UI::Dialog::Backend::CDialog.3 \
-		UI::Dialog::Backend::GDialog.3 \
-		UI::Dialog::Backend::KDialog.3 \
-		UI::Dialog::Backend::Nautilus.3 \
-		UI::Dialog::Backend::Whiptail.3 \
-		UI::Dialog::Backend::XDialog.3 \
-		UI::Dialog::Backend::XOSD.3 \
-		UI::Dialog::Backend::Zenity.3 \
-		UI::Dialog::Console.3 \
-		UI::Dialog::GNOME.3 \
-		UI::Dialog::Gauged.3 \
-		UI::Dialog::KDE.3 \
-		UI::Dialog::Screen::Menu.3
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKDE}
