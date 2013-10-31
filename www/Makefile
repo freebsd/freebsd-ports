@@ -1749,6 +1749,7 @@
     SUBDIR += rubygem-nanoc
     SUBDIR += rubygem-net-http-digest_auth
     SUBDIR += rubygem-net-http-persistent
+    SUBDIR += rubygem-net-http-spy
     SUBDIR += rubygem-nicovideo
     SUBDIR += rubygem-ntlm-http
     SUBDIR += rubygem-octokit
