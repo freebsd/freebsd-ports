@@ -6,10 +6,22 @@ STAGEDIR?=	${WRKDIR}/stage
 DESTDIRNAME?=	DESTDIR
 
 MAKE_ARGS+=	${DESTDIRNAME}=${STAGEDIR}
-QA_ENV+=		STAGEDIR=${STAGEDIR} PREFIX=${PREFIX} \
+QA_ENV+=	STAGEDIR=${STAGEDIR} \
+		PREFIX=${PREFIX} \
 		LOCALBASE=${LOCALBASE} \
 		USESDESKTOPFILEUTILS=${USES:Mdesktop-file-utils} \
-		USESSHAREDMIMEINFO=${USES:Mshared-mime-info}
+		USESSHAREDMIMEINFO=${USES:Mshared-mime-info} \
+		"STRIP=${STRIP}"
+CO_ENV+=	STAGEDIR=${STAGEDIR} \
+		PREFIX=${PREFIX} \
+		LOCALBASE=${LOCALBASE} \
+		WRKDIR=${WRKDIR} \
+		WRKSRC=${WRKSRC} \
+		MTREE_FILE=${MTREE_FILE} \
+		TMPPLIST=${TMPPLIST} \
+		DATADIR=${DATADIR} \
+		DOCSDIR=${DOCSDIR} \
+		EXAMPLESDIR=${EXAMPLESDIR}
 
 .if !target(stage-dir)
 stage-dir:
@@ -28,8 +40,8 @@ stage-dir:
 # Fixes all dead symlinks left by the previous round
 .if !target(compress-man)
 compress-man:
-	@${ECHO_CMD} "====> Compressing man pages" ; \
-	mdirs= ; \
+	@${ECHO_MSG} "====> Compressing man pages (compress-man)"
+	@mdirs= ; \
 	for dir in ${MANDIRS:S/^/${STAGEDIR}/} ; do \
 		[ -d $$dir ] && mdirs="$$mdirs $$dir" ;\
 	done ; \
@@ -76,90 +88,17 @@ add-plist-info:
 
 .if !target(makeplist)
 makeplist: stage
-	@if [ -n "${MTREE_FILE}" ]; then \
-	{ ${ECHO_CMD} "#mtree"; ${CAT} ${MTREE_FILE}; } | ${TAR} tf - | \
-		awk '{ sub(/^\.$$/, "", $$1); \
-		if ($$1 == "") print "${PREFIX}"; else print "${PREFIX}/"$$1; }' ; \
-	fi > ${WRKDIR}/.mtree
-	@a=${PREFIX}; \
-		while :; do \
-			a=$${a%/*} ; \
-			[ -z "$${a}" ] && break ; \
-			${ECHO_CMD} $${a} >> ${WRKDIR}/.mtree ; \
-		done
-	@${FIND} ${STAGEDIR} -type f -o -type l | ${SORT} | ${SED} -e "s,${STAGEDIR},,g" \
-		-e "s,${DOCSDIR},%%PORTDOCS%%%%DOCSDIR%%,g" \
-		-e "s,${EXAMPLESDIR},%%PORTEXAMPLES%%%%EXAMPLESDIR%%,g" \
-		-e "s,${DATADIR},%%DATADIR%%,g" \
-		-e "s,${PREFIX}/,,g" | ${GREP} -v "^share/licenses" || ${TRUE}
-	@${FIND} ${STAGEDIR} -type d | ${SED} -e "s,${STAGEDIR},,g" \
-		| while read line; do \
-		${GREP} -qw "^$${line}$$" ${WRKDIR}/.mtree || { \
-			[ -n "$${line}" ] && ${ECHO_CMD} "@dirrmtry $${line}"; \
-		}; \
-		done | ${SORT} -r | ${SED} \
-		-e "s,\(.*\)${DOCSDIR},%%PORTDOCS%%\1%%DOCSDIR%%,g" \
-		-e "s,\(.*\)${EXAMPLESDIR},%%PORTEXAMPLES%%\1%%EXAMPLESDIR%%,g" \
-		-e "s,${DATADIR},%%DATADIR%%,g" \
-		-e "s,${PREFIX}/,,g" | ${GREP} -v "^@dirrmtry share/licenses" || ${TRUE}
+	@${SETENV} ${CO_ENV} ${SH} ${SCRIPTSDIR}/check-stagedir.sh makeplist
 .endif
 
 .if !target(check-orphans)
 check-orphans: stage
-	@while read line; do \
-		cwd=${PREFIX} ; \
-		case $$line in \
-		@dirrm*) \
-			set -- $$line ; \
-			case $$2 in \
-			/*) ${ECHO_CMD} "dir $$2" ;; \
-			*) ${ECHO_CMD} "dir $$cwd/$$2" ;; \
-			esac ; \
-		;; \
-		@cwd) cwd=${PREFIX} ;; \
-		@cwd*) set -- $$line ; \
-			cwd=$$2 ;; \
-		@*) ;; \
-		/*) ${ECHO_CMD} $$line ;; \
-		*) ${ECHO_CMD} $$cwd/$$line ;; \
-		esac ; \
-	done < ${TMPPLIST} > ${WRKDIR}/.expanded-plist
-	@if [ -n "${MTREE_FILE}" ]; then \
-		{ ${ECHO_CMD} "#mtree"; ${CAT} ${MTREE_FILE}; } | ${TAR} tf - | \
-		awk '{ sub(/^\.$$/, "", $$1); \
-		if ($$1 == "") print "${PREFIX}"; else print "${PREFIX}/"$$1; }' ; \
-	fi > ${WRKDIR}/.mtree
-	@a=${PREFIX}; \
-		while :; do \
-			a=$${a%/*} ; \
-			[ -z "$${a}" ] && break ; \
-			${ECHO_CMD} $${a} >> ${WRKDIR}/.mtree ; \
-		done
-	@${FIND} ${STAGEDIR} -type f -o -type l | ${SORT} | ${SED} -e "s,${STAGEDIR},,g" \
-		| while read line; do \
-			${GREP} -qw "^$${line}$$" ${WRKDIR}/.expanded-plist || { \
-			[ -n "$${line}" ] && ${ECHO_CMD} "$${line}" ; \
-		} ; \
-		done | ${SED} \
-		-e "s,${DOCSDIR},%%PORTDOCS%%%%DOCSDIR%%,g" \
-		-e "s,${EXAMPLESDIR},%%PORTEXAMPLES%%%%EXAMPLESDIR%%,g" \
-		-e "s,${DATADIR},%%DATADIR%%,g" \
-		-e "s,${PREFIX}/,,g" | ${GREP} -v "^share/licenses" || ${TRUE}
-	@${FIND} ${STAGEDIR} -type d | ${SED} -e "s,${STAGEDIR},,g" \
-		| while read line; do \
-		${GREP} -qw "^$${line}$$" ${WRKDIR}/.mtree || \
-		${GREP} -qw "dir\ $${line}$$" ${WRKDIR}/.expanded-plist || { \
-			[ -n "$${line}" ] && ${ECHO_CMD} "@dirrmtry $${line}"; \
-		} ; \
-		done | ${SORT} -r | ${SED} \
-		-e "s,\(.*\)${DOCSDIR},%%PORTDOCS%%\1%%DOCSDIR%%,g" \
-		-e "s,\(.*\)${EXAMPLESDIR},%%PORTEXAMPLES%%\1%%EXAMPLESDIR%%,g" \
-		-e "s,${DATADIR},%%DATADIR%%,g" \
-		-e "s,${PREFIX}/,,g" | ${GREP} -v "^@dirrmtry share/licenses" || ${TRUE}
+	@${ECHO_MSG} "====> Items missing from pkg-plist (check-orphans)"
+	@${SETENV} ${CO_ENV} ${SH} ${SCRIPTSDIR}/check-stagedir.sh orphans
 .endif
 
 .if !target(stage-qa)
 stage-qa:
-	@${ECHO_CMD} "====> Running Q/A tests" ; \
-	${SETENV} ${QA_ENV} ${SH} ${SCRIPTSDIR}/qa.sh
+	@${ECHO_MSG} "====> Running Q/A tests (stage-qa)"
+	@${SETENV} ${QA_ENV} ${SH} ${SCRIPTSDIR}/qa.sh
 .endif
