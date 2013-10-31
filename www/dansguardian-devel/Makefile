@@ -6,19 +6,21 @@ PORTVERSION=	2.12.0.3
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/dansguardian
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A fast, feature-rich web content filter for Squid proxy servers
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USE_RC_SUBR=	dansguardian
-USES=		iconv pkgconfig
+USES=		iconv pkgconfig shebangfix
 USE_BZIP2=	yes
 
 CONFLICTS=	dansguardian-2.10.*
-LATEST_LINK=	dansguardian-devel
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
@@ -27,12 +29,13 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		${ICONV_CONFIGURE_BASE} \
 		--enable-fancydm
 
-MAN8=		dansguardian.8
-
 PORTDOCS=	*
+
+SHEBANG_FILES=	${WRKSRC}/data/dansguardian.pl
 
 OPTIONS_DEFINE=	APACHE TRICKLE CLISCAN CLAMD ICAP KAV NTLM EMAIL DEBUG SSL DOCS
 OPTIONS_DEFAULT=APACHE TRICKLE DOCS
+OPTIONS_SUB=	TRICKLE CLISCAN CLAMD ICAP KAV NTLM EMAIL
 
 APACHE_DESC=	Enable Apache support for access denied page
 TRICKLE_DESC=	Enable the trickle download manager
@@ -47,72 +50,26 @@ CONFDIR=	${PREFIX}/etc/dansguardian
 
 RESTRICTED=	Redistribution and commercial download is restricted.  Check ${DG_URL} for more info
 
-NO_STAGE=	yes
+APACHE_USE=			APACHE_RUN=22+
+TRICKLE_CONFIGURE_ENABLE=	trickledm
+CLISCAN_CONFIGURE_ENABLE=	commandline
+CLAMD_CONFIGURE_ENABLE=		clamd
+CLAMD_RUN_DEPENDS=		${LOCALBASE}/sbin/clamd:${PORTSDIR}/security/clamav
+ICAP_CONFIGURE_ENABLE=		icap
+KAV_CONFIGURE_ENABLE=		kavd
+NTLM_CONFIGURE_ENABLE=		ntlm
+EMAIL_CONFIGURE_ENABLE=		email
+DEBUG_CONFIGURE_WITH=		dgdebug
+SSL_LDFLAGS=			-lssl -lcrypto
+SSL_CFLAGS=			-D__SSLMITM -D__SSLCERT
+
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE_RUN=	22+
-.endif
-
-.if ${PORT_OPTIONS:MTRICKLE}
-CONFIGURE+=		--enable-trickledm
-PLIST_SUB+=		TRICKLECONF=""
-.else
-PLIST_SUB+=		TRICKLECONF="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MCLISCAN}
-CONFIGURE_ARGS+=	--enable-commandline
-PLIST_SUB+=		CLISCANCONF=""
-.else
-PLIST_SUB+=		CLISCANCONF="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MCLAMD}
-CONFIGURE_ARGS+=	--enable-clamd
-RUN_DEPENDS+=		${LOCALBASE}/sbin/clamd:${PORTSDIR}/security/clamav
-PLIST_SUB+=		CLAMDCONF=""
-.else
-PLIST_SUB+=		CLAMDCONF="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MICAP}
-CONFIGURE_ARGS+=	--enable-icap
-PLIST_SUB+=		ICAPCONF=""
-.else
-PLIST_SUB+=		ICAPCONF="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MKAV}
-CONFIGURE_ARGS+=	--enable-kavd
-PLIST_SUB+=		KAVDCONF=""
-.else
-PLIST_SUB+=		KAVDCONF="@comment "
-.endif
 
 .if ${PORT_OPTIONS:MCLAMD} || ${PORT_OPTIONS:MICAP} || \
     ${PORT_OPTIONS:MKAV} || ${PORT_OPTIONS:MCLISCAN}
 PLIST_SUB+=		SCANNERS=""
 .else
 PLIST_SUB+=		SCANNERS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MNTLM}
-CONFIGURE_ARGS+=	--enable-ntlm
-PLIST_SUB+=		NTLMCONF=""
-.else
-PLIST_SUB+=		NTLMCONF="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MEMAIL}
-CONFIGURE_ARGS+=	--enable-email
-PLIST_SUB+=		EMAILCONF=""
-.else
-PLIST_SUB+=		EMAILCONF="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--with-dgdebug
 .endif
 
 post-patch:
@@ -123,12 +80,6 @@ post-patch:
 .if ${PORT_OPTIONS:MSSL}
 	@${REINPLACE_CMD} -e 's|ifdef __SSLCERT|ifdef __SSLCERT_ERROR_AUTH|' \
 		${WRKSRC}/src/Auth.cpp
-LDFLAGS+=	-lssl -lcrypto
-CFLAGS+=	-D__SSLMITM -D__SSLCERT
 .endif
-
-post-install:
-# Display post-install message
-	@${CAT} pkg-message
 
 .include <bsd.port.post.mk>
