@@ -1,0 +1,11 @@
+--- configure.orig	2013-10-30 11:38:52.000000000 -0200
++++ configure	2013-10-30 11:39:25.000000000 -0200
+@@ -975,7 +975,7 @@
+ done
+ 
+       # Check whether --enable-mysql or --disable-mysql was given.
+-if test "${enable_mysql+set}" = set; then
++if test "${enable_mysql}" = "yes"; then
+   enableval="$enable_mysql"
+   
+ 	for ac_hdr in mysql/mysql.h
