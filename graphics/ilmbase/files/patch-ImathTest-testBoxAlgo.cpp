@@ -1,5 +1,5 @@
---- ImathTest/testBoxAlgo.cpp.orig	2012-07-18 01:27:26.000000000 +0200
-+++ ImathTest/testBoxAlgo.cpp	2012-10-04 15:45:00.000000000 +0200
+--- ImathTest/testBoxAlgo.cpp.orig	2013-06-18 21:51:38.000000000 +0200
++++ ImathTest/testBoxAlgo.cpp	2013-10-04 20:10:10.000000000 +0200
 @@ -356,7 +356,7 @@
  	Box3f ()
      };

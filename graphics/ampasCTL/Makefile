@@ -3,6 +3,7 @@
 
 PORTNAME=	ampasCTL
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 
 MAINTAINER=	nemysis@FreeBSD.org

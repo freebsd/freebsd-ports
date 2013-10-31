@@ -1,0 +1,33 @@
+--- IlmImfExamples/Makefile.in.orig	2013-07-12 02:09:22.000000000 +0200
++++ IlmImfExamples/Makefile.in	2013-10-06 22:56:21.000000000 +0200
+@@ -356,18 +356,18 @@
+ 
+ clean-libtool:
+ 	-rm -rf .libs _libs
+-install-examplesDATA: $(examples_DATA)
+-	@$(NORMAL_INSTALL)
+-	test -z "$(examplesdir)" || $(MKDIR_P) "$(DESTDIR)$(examplesdir)"
+-	@list='$(examples_DATA)'; test -n "$(examplesdir)" || list=; \
+-	for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  echo "$$d$$p"; \
+-	done | $(am__base_list) | \
+-	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(examplesdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(examplesdir)" || exit $$?; \
+-	done
++#install-examplesDATA: $(examples_DATA)
++#	@$(NORMAL_INSTALL)
++#	test -z "$(examplesdir)" || $(MKDIR_P) "$(DESTDIR)$(examplesdir)"
++#	@list='$(examples_DATA)'; test -n "$(examplesdir)" || list=; \
++#	for p in $$list; do \
++#	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
++#	  echo "$$d$$p"; \
++#	done | $(am__base_list) | \
++#	while read files; do \
++#	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(examplesdir)'"; \
++#	  $(INSTALL_DATA) $$files "$(DESTDIR)$(examplesdir)" || exit $$?; \
++#	done
+ 
+ uninstall-examplesDATA:
+ 	@$(NORMAL_UNINSTALL)

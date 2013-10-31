@@ -1,8 +1,8 @@
---- configure.orig	2012-07-31 00:11:22.000000000 +0200
-+++ configure	2012-10-04 14:20:16.000000000 +0200
-@@ -15978,25 +15978,25 @@
-   osx_arch=default
- fi;
+--- configure.orig	2013-10-04 18:58:30.000000000 +0200
++++ configure	2013-10-04 19:09:40.000000000 +0200
+@@ -17373,25 +17373,25 @@
+ fi
+ 
  
 -  if test "${osx_arch}" != default ; then
 -          osx_arch_flags="-arch ${osx_arch// / -arch }"
@@ -11,11 +11,11 @@
 -          if test "$enable_dependency_tracking" != no ; then
 -        osx_arch_array=( ${osx_arch} )
 -        if test ${#osx_arch_array[@]} -gt 1 ; then
--          { { echo "$as_me:$LINENO: error: building multiple OS X architectures requires --disable-dependency-tracking.
+-          { { $as_echo "$as_me:$LINENO: error: building multiple OS X architectures requires --disable-dependency-tracking.
 -Please re-run configure with these options:
 -  --enable-osx-arch=\"${osx_arch}\" --disable-dependency-tracking
 -  		  " >&5
--echo "$as_me: error: building multiple OS X architectures requires --disable-dependency-tracking.
+-$as_echo "$as_me: error: building multiple OS X architectures requires --disable-dependency-tracking.
 -Please re-run configure with these options:
 -  --enable-osx-arch=\"${osx_arch}\" --disable-dependency-tracking
 -  		  " >&2;}
@@ -30,11 +30,11 @@
 +#          if test "$enable_dependency_tracking" != no ; then
 +#        osx_arch_array=( ${osx_arch} )
 +#        if test ${#osx_arch_array[@]} -gt 1 ; then
-+#          { { echo "$as_me:$LINENO: error: building multiple OS X architectures requires --disable-dependency-tracking.
++#          { { $as_echo "$as_me:$LINENO: error: building multiple OS X architectures requires --disable-dependency-tracking.
 +#Please re-run configure with these options:
 +#  --enable-osx-arch=\"${osx_arch}\" --disable-dependency-tracking
 +#  		  " >&5
-+#echo "$as_me: error: building multiple OS X architectures requires --disable-dependency-tracking.
++#$as_echo "$as_me: error: building multiple OS X architectures requires --disable-dependency-tracking.
 +#Please re-run configure with these options:
 +#  --enable-osx-arch=\"${osx_arch}\" --disable-dependency-tracking
 +#  		  " >&2;}
@@ -43,5 +43,5 @@
 +#     fi
 +#  fi
  
-     # Check whether --enable-osx-sdk or --disable-osx-sdk was given.
+     # Check whether --enable-osx-sdk was given.
  if test "${enable_osx_sdk+set}" = set; then
