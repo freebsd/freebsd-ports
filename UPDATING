@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20131031:
+  AFFECTS: users of multimedia/rtmpdump
+  AUTHOR: hrs@FreeBSD.org
+
+  The library part of multimedia/rtmpdump is split into multimedia/librtmp.
+  multimedia/rtmpdump now depends on the library port.
+
+  A build error can occur if you built and installed old rtmpdump by
+  using stock OpenSSL, and then install security/openssl and try to build
+  multimedia/rtmpdump without deinstalling the installed one.  Please
+  make sure if the old rtmpdump is removed before building the new version.
+
 20131028:
   AFFECTS: users of comms/dcf77pi
   AUTHOR: rene@FreeBSD.org

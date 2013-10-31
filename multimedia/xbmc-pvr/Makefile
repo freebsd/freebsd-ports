@@ -175,7 +175,7 @@ CONFIGURE_ARGS+=	--disable-pulse
 
 .if ${PORT_OPTIONS:MRTMP}
 CONFIGURE_ARGS+=	--enable-rtmp
-LIB_DEPENDS+=	rtmp:${PORTSDIR}/multimedia/rtmpdump
+LIB_DEPENDS+=	rtmp:${PORTSDIR}/multimedia/librtmp
 .else
 CONFIGURE_ARGS+=	--disable-rtmp
 .endif

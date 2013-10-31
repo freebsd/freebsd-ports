@@ -101,7 +101,7 @@ OPUS_CONFIGURE_ENABLE=		libopus
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	libpulse
 
-RTMP_LIB_DEPENDS=		librtmp.so:${PORTSDIR}/multimedia/rtmpdump
+RTMP_LIB_DEPENDS=		librtmp.so:${PORTSDIR}/multimedia/librtmp
 RTMP_CONFIGURE_ENABLE=		librtmp
 
 SCHROEDINGER_LIB_DEPENDS=	libschroedinger-1.0.so:${PORTSDIR}/multimedia/schroedinger

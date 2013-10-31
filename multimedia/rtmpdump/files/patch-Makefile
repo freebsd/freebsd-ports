@@ -1,5 +1,5 @@
 --- Makefile.orig	2013-10-07 03:52:05.000000000 +0900
-+++ Makefile	2013-10-20 14:37:46.000000000 +0900
++++ Makefile	2013-10-30 15:30:57.000000000 +0900
 @@ -1,9 +1,9 @@
  VERSION=v2.4
  
@@ -25,7 +25,14 @@
  
  bindir=$(prefix)/bin
  sbindir=$(prefix)/sbin
-@@ -41,7 +42,7 @@
+@@ -35,13 +36,13 @@
+ LIBS_posix=
+ LIBS_darwin=
+ LIBS_mingw=-lws2_32 -lwinmm -lgdi32
+-LIB_RTMP=-Llibrtmp -lrtmp
++LIB_RTMP=-lrtmp
+ LIBS=$(LIB_RTMP) $(CRYPTO_LIB) $(LIBS_$(SYS)) $(XLIBS)
+ 
  THREADLIB_posix=-lpthread
  THREADLIB_darwin=-lpthread
  THREADLIB_mingw=
@@ -34,3 +41,26 @@
  SLIBS=$(THREADLIB) $(LIBS)
  
  LIBRTMP=librtmp/librtmp.a
+@@ -54,9 +55,7 @@
+ 
+ PROGS=rtmpdump rtmpgw rtmpsrv rtmpsuck
+ 
+-all:	$(LIBRTMP) $(PROGS)
+-
+-$(PROGS): $(LIBRTMP)
++all:	$(PROGS)
+ 
+ install:	$(PROGS)
+ 	-mkdir -p $(BINDIR) $(SBINDIR) $(MANDIR)/man1 $(MANDIR)/man8
+@@ -64,11 +63,9 @@
+ 	cp rtmpgw$(EXT) rtmpsrv$(EXT) rtmpsuck$(EXT) $(SBINDIR)
+ 	cp rtmpdump.1 $(MANDIR)/man1
+ 	cp rtmpgw.8 $(MANDIR)/man8
+-	@cd librtmp; $(MAKE) install
+ 
+ clean:
+ 	rm -f *.o rtmpdump$(EXT) rtmpgw$(EXT) rtmpsrv$(EXT) rtmpsuck$(EXT)
+-	@cd librtmp; $(MAKE) clean
+ 
+ FORCE:
+ 

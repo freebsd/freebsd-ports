@@ -274,7 +274,7 @@ CONFIGURE_ARGS+=	--disable-libopenjpeg
 
 # rtmp
 .if ${PORT_OPTIONS:MRTMP}
-LIB_DEPENDS+=	librtmp.so:${PORTSDIR}/multimedia/rtmpdump
+LIB_DEPENDS+=	librtmp.so:${PORTSDIR}/multimedia/librtmp
 CONFIGURE_ARGS+=	--enable-librtmp
 . if ${OPENSSLBASE} != "/usr"
 FFMPEG_CFLAGS+=		-I${OPENSSLINC}

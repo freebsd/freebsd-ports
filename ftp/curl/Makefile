@@ -103,7 +103,7 @@ PROXY_CONFIGURE_OFF=	--disable-proxy
 PROXY_CONFIGURE_ON=	--enable-proxy
 RTMP_CONFIGURE_OFF=	--without-librtmp
 RTMP_CONFIGURE_ON=	--with-librtmp=${LOCALBASE}
-RTMP_LIB_DEPENDS=	librtmp.so:${PORTSDIR}/multimedia/rtmpdump
+RTMP_LIB_DEPENDS=	librtmp.so:${PORTSDIR}/multimedia/librtmp
 SPNEGO_CONFIGURE_OFF=	--without-spnego
 SPNEGO_CONFIGURE_ON=	--with-spnego=${LOCALBASE}/lib
 SPNEGO_CPPFLAGS=	-I${LOCALBASE}/include/fbopenssl
