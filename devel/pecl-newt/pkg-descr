@@ -5,4 +5,4 @@ windows, buttons, checkboxes, radiobuttons, labels, editboxes, scrolls,
 textareas, scales, etc. Use of this extension if very similar to the original
 Newt API of C programming language.
 
-WWW:	http://pecl.php.net/package/newt
+WWW: http://pecl.php.net/package/newt
