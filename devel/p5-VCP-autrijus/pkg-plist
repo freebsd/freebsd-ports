@@ -1,9 +1,78 @@
 bin/vcp
+%%PERL5_MAN3%%/RevML::Doctype.3.gz
+%%PERL5_MAN3%%/RevML::Writer.3.gz
+%%PERL5_MAN3%%/VCP.3.gz
+%%PERL5_MAN3%%/VCP::Branches.3.gz
+%%PERL5_MAN3%%/VCP::ConfigFileUtils.3.gz
+%%PERL5_MAN3%%/VCP::DB.3.gz
+%%PERL5_MAN3%%/VCP::DB_File.3.gz
+%%PERL5_MAN3%%/VCP::DB_File::big_records.3.gz
+%%PERL5_MAN3%%/VCP::DB_File::sdbm.3.gz
+%%PERL5_MAN3%%/VCP::Debug.3.gz
+%%PERL5_MAN3%%/VCP::DefaultFilters.3.gz
+%%PERL5_MAN3%%/VCP::Dest.3.gz
+%%PERL5_MAN3%%/VCP::Dest::branch_diagram.3.gz
+%%PERL5_MAN3%%/VCP::Dest::csv.3.gz
+%%PERL5_MAN3%%/VCP::Dest::cvs.3.gz
+%%PERL5_MAN3%%/VCP::Dest::data_dump.3.gz
+%%PERL5_MAN3%%/VCP::Dest::metadb.3.gz
+%%PERL5_MAN3%%/VCP::Dest::null.3.gz
+%%PERL5_MAN3%%/VCP::Dest::p4.3.gz
+%%PERL5_MAN3%%/VCP::Dest::perl_data.3.gz
+%%PERL5_MAN3%%/VCP::Dest::revml.3.gz
+%%PERL5_MAN3%%/VCP::Dest::summary.3.gz
+%%PERL5_MAN3%%/VCP::Dest::texttable.3.gz
+%%PERL5_MAN3%%/VCP::Dest::topo_table.3.gz
+%%PERL5_MAN3%%/VCP::Dest::vss.3.gz
+%%PERL5_MAN3%%/VCP::DiffFormat.3.gz
+%%PERL5_MAN3%%/VCP::Driver.3.gz
+%%PERL5_MAN3%%/VCP::FilesDB.3.gz
+%%PERL5_MAN3%%/VCP::Filter.3.gz
+%%PERL5_MAN3%%/VCP::Filter::addlabels.3.gz
+%%PERL5_MAN3%%/VCP::Filter::changesets.3.gz
+%%PERL5_MAN3%%/VCP::Filter::csv_trace.3.gz
+%%PERL5_MAN3%%/VCP::Filter::dumpdata.3.gz
+%%PERL5_MAN3%%/VCP::Filter::identity.3.gz
+%%PERL5_MAN3%%/VCP::Filter::labelmap.3.gz
+%%PERL5_MAN3%%/VCP::Filter::logmemsize.3.gz
+%%PERL5_MAN3%%/VCP::Filter::map.3.gz
+%%PERL5_MAN3%%/VCP::Filter::sort.3.gz
+%%PERL5_MAN3%%/VCP::Filter::stringedit.3.gz
+%%PERL5_MAN3%%/VCP::HeadRevsDB.3.gz
+%%PERL5_MAN3%%/VCP::License.3.gz
+%%PERL5_MAN3%%/VCP::Logger.3.gz
+%%PERL5_MAN3%%/VCP::MainBranchIdDB.3.gz
+%%PERL5_MAN3%%/VCP::Maintenance.3.gz
+%%PERL5_MAN3%%/VCP::Newlines.3.gz
+%%PERL5_MAN3%%/VCP::Patch.3.gz
+%%PERL5_MAN3%%/VCP::Plugin.3.gz
+%%PERL5_MAN3%%/VCP::PodDESCRIPTIONParser.3.gz
+%%PERL5_MAN3%%/VCP::PodOPTIONSParser.3.gz
+%%PERL5_MAN3%%/VCP::Process.3.gz
+%%PERL5_MAN3%%/VCP::RefCountedFile.3.gz
+%%PERL5_MAN3%%/VCP::Rev.3.gz
+%%PERL5_MAN3%%/VCP::RevMapDB.3.gz
+%%PERL5_MAN3%%/VCP::Revs.3.gz
+%%PERL5_MAN3%%/VCP::Source.3.gz
+%%PERL5_MAN3%%/VCP::Source::cvs.3.gz
+%%PERL5_MAN3%%/VCP::Source::metadb.3.gz
+%%PERL5_MAN3%%/VCP::Source::null.3.gz
+%%PERL5_MAN3%%/VCP::Source::p4.3.gz
+%%PERL5_MAN3%%/VCP::Source::revml.3.gz
+%%PERL5_MAN3%%/VCP::Source::vss.3.gz
+%%PERL5_MAN3%%/VCP::TestUtils.3.gz
+%%PERL5_MAN3%%/VCP::UI.3.gz
+%%PERL5_MAN3%%/VCP::UI::Text.3.gz
+%%PERL5_MAN3%%/VCP::UIMachines.3.gz
+%%PERL5_MAN3%%/VCP::Utils.3.gz
+%%PERL5_MAN3%%/VCP::Utils::cvs.3.gz
+%%PERL5_MAN3%%/VCP::Utils::metadb.3.gz
+%%PERL5_MAN3%%/VCP::Utils::p4.3.gz
+%%PERL5_MAN3%%/VCP::Utils::revml.3.gz
+%%PERL5_MAN3%%/VCP::Utils::vss.3.gz
 %%SITE_PERL%%/RevML/Doctype.pm
 %%SITE_PERL%%/RevML/Doctype/v0_35.pm
-@dirrm %%SITE_PERL%%/RevML/Doctype
 %%SITE_PERL%%/RevML/Writer.pm
-@dirrm %%SITE_PERL%%/RevML
 %%SITE_PERL%%/VCP.pm
 %%SITE_PERL%%/VCP/Branches.pod
 %%SITE_PERL%%/VCP/ConfigFileUtils.pm
@@ -11,7 +80,6 @@ bin/vcp
 %%SITE_PERL%%/VCP/DB_File.pm
 %%SITE_PERL%%/VCP/DB_File/big_records.pm
 %%SITE_PERL%%/VCP/DB_File/sdbm.pm
-@dirrm %%SITE_PERL%%/VCP/DB_File
 %%SITE_PERL%%/VCP/Debug.pm
 %%SITE_PERL%%/VCP/DefaultFilters.pm
 %%SITE_PERL%%/VCP/Dest.pm
@@ -28,7 +96,6 @@ bin/vcp
 %%SITE_PERL%%/VCP/Dest/texttable.pm
 %%SITE_PERL%%/VCP/Dest/topo_table.pm
 %%SITE_PERL%%/VCP/Dest/vss.pm
-@dirrm %%SITE_PERL%%/VCP/Dest
 %%SITE_PERL%%/VCP/DiffFormat.pm
 %%SITE_PERL%%/VCP/Driver.pm
 %%SITE_PERL%%/VCP/FilesDB.pm
@@ -43,7 +110,6 @@ bin/vcp
 %%SITE_PERL%%/VCP/Filter/map.pm
 %%SITE_PERL%%/VCP/Filter/sort.pm
 %%SITE_PERL%%/VCP/Filter/stringedit.pm
-@dirrm %%SITE_PERL%%/VCP/Filter
 %%SITE_PERL%%/VCP/HeadRevsDB.pm
 %%SITE_PERL%%/VCP/Help.pm
 %%SITE_PERL%%/VCP/License.pod
@@ -67,11 +133,9 @@ bin/vcp
 %%SITE_PERL%%/VCP/Source/p4.pm
 %%SITE_PERL%%/VCP/Source/revml.pm
 %%SITE_PERL%%/VCP/Source/vss.pm
-@dirrm %%SITE_PERL%%/VCP/Source
 %%SITE_PERL%%/VCP/TestUtils.pm
 %%SITE_PERL%%/VCP/UI.pm
 %%SITE_PERL%%/VCP/UI/Text.pm
-@dirrm %%SITE_PERL%%/VCP/UI
 %%SITE_PERL%%/VCP/UIMachines.pm
 %%SITE_PERL%%/VCP/Utils.pm
 %%SITE_PERL%%/VCP/Utils/cvs.pm
@@ -79,7 +143,15 @@ bin/vcp
 %%SITE_PERL%%/VCP/Utils/p4.pm
 %%SITE_PERL%%/VCP/Utils/revml.pm
 %%SITE_PERL%%/VCP/Utils/vss.pm
-@dirrm %%SITE_PERL%%/VCP/Utils
-@dirrm %%SITE_PERL%%/VCP
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCP/.packlist
+man/man1/vcp.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCP
+@dirrm %%SITE_PERL%%/VCP/Utils
+@dirrm %%SITE_PERL%%/VCP/UI
+@dirrm %%SITE_PERL%%/VCP/Source
+@dirrm %%SITE_PERL%%/VCP/Filter
+@dirrm %%SITE_PERL%%/VCP/Dest
+@dirrm %%SITE_PERL%%/VCP/DB_File
+@dirrmtry %%SITE_PERL%%/VCP
+@dirrm %%SITE_PERL%%/RevML/Doctype
+@dirrm %%SITE_PERL%%/RevML

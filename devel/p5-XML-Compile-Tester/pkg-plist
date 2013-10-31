@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/Tester/.packlist
+%%PERL5_MAN3%%/XML::Compile::Tester.3.gz
 %%SITE_PERL%%/XML/Compile/Tester.pm
 %%SITE_PERL%%/XML/Compile/Tester.pod
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/Tester
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/Tester/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/Tester
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML/Compile
