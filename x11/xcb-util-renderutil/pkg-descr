@@ -7,4 +7,4 @@ the X protocol but which have traditionally been provided by Xlib.
 
 Renderutil module s Convenience functions for the Render extension.
 
-WWW:	http://xcb.freedesktop.org/
+WWW: http://xcb.freedesktop.org/
