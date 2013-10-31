@@ -10,6 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	An xbiff-like Window Maker dock app
 
+LICENSE=	GPLv2
+
 OPTIONS_DEFINE=	GNUTLS
 
 USE_XORG=	xpm
@@ -40,6 +42,6 @@ CONFIGURE_ARGS+=	--disable-crypto
 post-install:
 	@${ECHO_MSG} "===>   Installing sample.wmbiffrc to ${DATADIR}"
 	@${ECHO_MSG} "===>   Modify it to suit your needs and copy to ~/.wmbiffrc"
-	@${INSTALL_DATA} -m 644 ${WRKSRC}/wmbiff/sample.wmbiffrc ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} -m 644 ${WRKSRC}/wmbiff/sample.wmbiffrc ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.post.mk>
