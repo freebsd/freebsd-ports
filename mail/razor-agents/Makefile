@@ -9,6 +9,8 @@ MASTER_SITES=	SF/razor/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A distributed, collaborative, spam detection and filtering network
 
+LICENSE=	ART10
+
 BUILD_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
