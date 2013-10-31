@@ -1,0 +1,28 @@
+--- src/isomedia/avc_ext.c.orig	2012-03-27 13:48:05.000000000 +0400
++++ src/isomedia/avc_ext.c	2013-03-12 01:00:39.595690860 +0400
+@@ -170,6 +170,7 @@
+ 
+ 
+ #ifndef GPAC_DISABLE_ISOM_WRITE
++GF_EXPORT
+ GF_Err gf_isom_avc_config_new(GF_ISOFile *the_file, u32 trackNumber, GF_AVCConfig *cfg, char *URLname, char *URNname, u32 *outDescriptionIndex)
+ {
+ 	GF_TrackBox *trak;
+--- src/isomedia/isom_write.c.orig	2012-03-29 16:36:23.000000000 +0400
++++ src/isomedia/isom_write.c	2013-03-12 01:00:39.605699394 +0400
+@@ -1140,6 +1140,7 @@
+ 	return Track_SetStreamDescriptor(trak, StreamDescriptionIndex, entry->dataReferenceIndex, esd, NULL);
+ }
+ 
++GF_EXPORT
+ GF_Err gf_isom_set_visual_info(GF_ISOFile *movie, u32 trackNumber, u32 StreamDescriptionIndex, u32 Width, u32 Height)
+ {
+ 	GF_Err e;
+@@ -1187,6 +1188,7 @@
+ 	}
+ }
+ 
++GF_EXPORT
+ GF_Err gf_isom_set_pixel_aspect_ratio(GF_ISOFile *movie, u32 trackNumber, u32 StreamDescriptionIndex, u32 hSpacing, u32 vSpacing)
+ {
+ 	GF_Err e;

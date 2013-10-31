@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpac
-PORTVERSION=	0.4.5
-PORTREVISION=	7
+PORTVERSION=	0.5.0
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/GPAC/GPAC%20${PORTVERSION}
@@ -12,20 +11,20 @@ PKGNAMESUFFIX=	-libgpac
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Gpac MPEG-4 Systems library and headers
 
+LICENSE=	LGPL21
+
 WRKSRC=		${WRKDIR}/gpac
 ALL_TARGET=	lib
+INSTALL_TARGET=	install-lib
 USES=		gmake
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-
-BUILD_WRKSRC=	${WRKSRC}/src
-INSTALL_WRKSRC=	${WRKSRC}/bin/gcc
-LIBVER=	1
+USE_DOS2UNIX=	src/utils/os_config_init.c
 
 OPTIONS_DEFINE=	IPV6 JPEG OPENGL SSL PNG XVIDEO
 OPTIONS_DEFAULT=	IPV6 JPEG SSL PNG
 
-CFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS=	--cc="${CC}" --X11-path="${LOCALBASE}" \
@@ -33,15 +32,13 @@ CONFIGURE_ARGS=	--cc="${CC}" --X11-path="${LOCALBASE}" \
 		--enable-pic \
 		--disable-wx \
 		--use-js=no --use-a52=no --use-faad=no --use-ffmpeg=no \
-		--use-ft=no --use-mad=no --use-ogg=no \
-		--use-openjpeg=no --use-theora=no --usr-vorbis=no
-
-CONFIGURE_ENV+=	LIBVER="${LIBVER}" PTHREAD_LIBS="${PTHREAD_LIBS}"
+		--use-ft=no --use-mad=no --use-ogg=no --use-xvid=no \
+		--use-openjpeg=no --use-theora=no --use-vorbis=no
 
 SSL_USE=	OPENSSL=yes
 SSL_CONFIGURE_ENABLE=	ssl
 OPENGL_USE=	GL=gl GL=glu
-OPENGL_CONFIGURE_ENABLE=	opengl
+OPENGL_CONFIGURE_ENABLE=3d
 XVIDEO_LIB_DEPENDS=	libXv.so:${PORTSDIR}/x11/libXv
 XVIDEO_CONFIGURE_OFF=	--disable-x11-xv --disable-x11-shm
 IPV6_CONFIGURE_ENABLE=	ipv6
@@ -54,14 +51,10 @@ PNG_CONFIGURE_OFF=	--use-png=no
 PNG_CFLAGS=		-I${LOCALBASE}/include/libpng15
 
 post-patch:
-	${CHMOD} +x ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|s/\.\*\\(\[0-9\]\\)\\+\$$/\\1/|s/^[^0-9]*//| ;\
+		/CFLAGS=/s/-O3//' ${WRKSRC}/configure
 
-do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/gpac
-	cd ${WRKSRC}/include/gpac && ${FIND} . | \
-		${CPIO} -vpdm -L -R ${LIBOWN}:${LIBGRP} ${STAGEDIR}${PREFIX}/include/gpac
-	${INSTALL_LIB} ${INSTALL_WRKSRC}/libgpac.so.${LIBVER} ${STAGEDIR}${PREFIX}/lib
-	${LN} -sf libgpac.so.${LIBVER} ${STAGEDIR}${PREFIX}/lib/libgpac.so
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/libgpac_static.a ${STAGEDIR}${PREFIX}/lib
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/gpac.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 
 .include <bsd.port.mk>

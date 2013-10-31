@@ -3,6 +3,7 @@
 
 PORTNAME=	x264
 PORTVERSION=	0.${X264_BUILD}.${X264_REV}
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/ \
 		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
@@ -82,8 +83,7 @@ RESTRICTED_FILES=	${Y4M_VIDEO_DISTFILE}
 .endif
 
 .if ${PORT_OPTIONS:MGPAC}
-BUILD_DEPENDS+=		gpac-libgpac>=0.4.5,1:${PORTSDIR}/multimedia/gpac-libgpac
-LIB_DEPENDS+=		gpac.1:${PORTSDIR}/multimedia/gpac-libgpac
+LIB_DEPENDS+=		libgpac.so:${PORTSDIR}/multimedia/gpac-libgpac
 .else
 CONFIGURE_ARGS+=	--disable-gpac
 .endif
