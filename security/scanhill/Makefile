@@ -19,12 +19,8 @@ PORTDOCS=	README.txt INSTALL.txt mysql.sql
 
 OPTIONS_DEFINE=	MYSQL DOCS
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
-CONFIGURE_ARGS+=	--enable-mysql
-USE_MYSQL=		yes
-.endif
+MYSQL_USE=	MYSQL=yes
+MYSQL_CONFIGURE_ENABLE=	mysql
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-liconv/${ICONV_LIB}/' ${WRKSRC}/configure
@@ -32,14 +28,9 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/scanhill ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/scanhill.conf ${STAGEDIR}${PREFIX}/etc/scanhill.conf-dist
-.if !exists(${PREFIX}/etc/scanhill.conf)
-	${INSTALL_DATA} ${WRKSRC}/scanhill.conf ${STAGEDIR}${PREFIX}/etc/
-.endif
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-. for f in ${PORTDOCS}
+.for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
-. endfor
-.endif
+.endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
