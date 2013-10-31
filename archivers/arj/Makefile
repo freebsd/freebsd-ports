@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2.78_3.10%20build%2022
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Open-source ARJ
 
+LICENSE=	GPLv2
+
 OPTIONS_DEFINE=	DOCS
 
 USES=		gmake
@@ -54,11 +56,9 @@ pre-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} prepare)
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} COPYING debug.txt ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/resource/en && \
 		${INSTALL_DATA} arjl.txt arjs.txt history.txt readme.txt unix.txt ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.post.mk>
