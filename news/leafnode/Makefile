@@ -3,6 +3,7 @@
 
 PORTNAME=	leafnode
 DISTVERSION=	1.11.10
+PORTREVISION=	1
 CATEGORIES=	news ipv6
 MASTER_SITES=	SF \
 		http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/
