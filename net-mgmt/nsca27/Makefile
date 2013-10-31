@@ -18,10 +18,10 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	mcrypt:${PORTSDIR}/security/libmcrypt
 
 .if !defined(_BUILDING_NSCA_CLIENT)
-LATEST_LINK=	nsca27
+PKGNAMESUFFIX=	27
 CONFLICTS=	nsca-2.9.*
 .else
-LATEST_LINK=	nsca27-client
+PKGNAMESUFFIX=	27-client
 CONFLICTS=	nsca-client-2.9.*
 .endif
 
