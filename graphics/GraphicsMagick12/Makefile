@@ -8,11 +8,12 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF \
 		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/1.2/
 PORTSCOUT=	limit:^1\.2\.
+PKGNAMESUFFIX=	12
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Fast image processing tools based on ImageMagick
 
-CONFLICTS=	GraphicsMagick-1.[13].*
+CONFLICTS=	GraphicsMagick-1.[13].* GraphicsMagick13-*
 
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2	\
 		png15:${PORTSDIR}/graphics/png		\
@@ -37,7 +38,6 @@ USE_AUTOTOOLS=	libtool libltdl
 USE_BZIP2=	yes
 USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes
-LATEST_LINK=	GraphicsMagick12
 
 MAN1=	GraphicsMagick++-config.1 \
 	GraphicsMagick-config.1 \
