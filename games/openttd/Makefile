@@ -13,8 +13,8 @@ COMMENT=	Open source clone of Microprose Transport Tycoon Deluxe
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		lzo2:${PORTSDIR}/archivers/lzo2
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		liblzo2.so:${PORTSDIR}/archivers/lzo2
 
 USES=		gmake pkgconfig
 USE_XZ=		yes
@@ -27,7 +27,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CXXFLAGS=	# Set to empty as OpenTTD treats it as an addition to CFLAGS
 
 SUB_FILES=	pkg-message
-MAN6=		${PORTNAME}.6
 
 PORTDOCS=	HOWTO_compile_lang_files.txt admin_network.txt \
 		elrail.svg elrail_tile.png elrail_track.png landscape.html \
@@ -52,8 +51,8 @@ CONFIGURE_ARGS+=	--enable-dedicated
 CFLAGS+=	-I${LOCALBASE}/include
 USE_RC_SUBR=	${PORTNAME}
 .else
-LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 USE_SDL=	sdl
 INSTALLS_ICONS=	yes
 .endif
@@ -64,7 +63,6 @@ RUN_DEPENDS+=	${LOCALBASE}/share/${PORTNAME}/baseset/opengfx/opengfx.obg:${PORTS
 		${LOCALBASE}/share/${PORTNAME}/baseset/opensfx/opensfx.obs:${PORTSDIR}/games/opensfx
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-everything::
@@ -92,37 +90,34 @@ post-patch:
 		's,pkg-config liblzma,pkg-config ${FILESDIR}/liblzma.pc,' \
 			${WRKSRC}/config.lib
 .else
-LIB_DEPENDS+=	lzma:${PORTSDIR}/archivers/xz
+LIB_DEPENDS+=	liblzma.so:${PORTSDIR}/archivers/xz
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}/ai ${DATADIR}/baseset ${DATADIR}/lang \
-		${DATADIR}/scripts
-	${INSTALL_DATA} ${WRKSRC}/bin/ai/*.nut ${DATADIR}/ai
-	${INSTALL_DATA} ${WRKSRC}/bin/baseset/* ${DATADIR}/baseset
-	${INSTALL_DATA} ${WRKSRC}/bin/lang/* ${DATADIR}/lang
-	${INSTALL_DATA} ${WRKSRC}/bin/scripts/* ${DATADIR}/scripts
-	${INSTALL_MAN} ${WRKSRC}/docs/${MAN6} ${MANPREFIX}/man/man6
-	${INSTALL_DATA} ${WRKSRC}/media/openttd.32.xpm ${PREFIX}/share/pixmaps
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}/ai ${STAGEDIR}${DATADIR}/baseset \
+		${STAGEDIR}${DATADIR}/lang ${STAGEDIR}${DATADIR}/scripts
+	${INSTALL_DATA} ${WRKSRC}/bin/ai/*.nut ${STAGEDIR}${DATADIR}/ai
+	${INSTALL_DATA} ${WRKSRC}/bin/baseset/* ${STAGEDIR}${DATADIR}/baseset
+	${INSTALL_DATA} ${WRKSRC}/bin/lang/* ${STAGEDIR}${DATADIR}/lang
+	${INSTALL_DATA} ${WRKSRC}/bin/scripts/* ${STAGEDIR}${DATADIR}/scripts
+	${INSTALL_MAN} ${WRKSRC}/docs/${PORTNAME}.6 \
+		${STAGEDIR}${MANPREFIX}/man/man6
+	${INSTALL_DATA} ${WRKSRC}/media/openttd.32.xpm \
+		${STAGEDIR}${PREFIX}/share/pixmaps
 .if !defined(WITH_DEDICATED_SERVER_ONLY)
 .  for n in 16 32 48 64 128 256
-	@${MKDIR} ${PREFIX}/share/icons/hicolor/${n}x${n}/apps
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${n}x${n}/apps
 	${INSTALL_DATA} ${WRKSRC}/media/openttd.${n}.png \
-		${PREFIX}/share/icons/hicolor/${n}x${n}/apps/openttd.png
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${n}x${n}/apps/openttd.png
 .  endfor
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/docs/,} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/docs/,} ${STAGEDIR}${DOCSDIR}
 
 post-install:
 .if defined(WITH_DEDICATED_SERVER_ONLY)
 	@${REINPLACE_CMD} -e '/icons/d' ${TMPPLIST}
 .endif
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>
