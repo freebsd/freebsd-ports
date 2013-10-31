@@ -2,26 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	mongo
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.4
 CATEGORIES=	databases pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
+DIST_SUBDIR=	PECL
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PECL classes for Mongo Database Driver
 
 LICENSE=	AL2
 
-USE_PHP=	yes
-USE_PHP_BUILD=	spl
+USE_PHP=	spl
+USE_PHP_BUILD=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
-CONFIGURE_ARGS=	--enable-mongo=${LOCALBASE}
+CONFIGURE_ARGS=	--enable-mongo
 SUB_FILES=	pkg-message
-
-NO_STAGE=	yes
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
