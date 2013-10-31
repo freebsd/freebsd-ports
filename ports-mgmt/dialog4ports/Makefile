@@ -16,6 +16,8 @@ MASTER_SITES=	http://m1cro.tk/dialog4ports/ \
 MAINTAINER=	rum1cro@yandex.ru
 COMMENT?=	Console Interface to configure ports
 
+USES=		uidfix
+
 # CCACHE has options, so may need d4p, make d4p not ccache friendly
 # to avoid circular dependency
 NO_CCACHE=	yes
@@ -25,8 +27,6 @@ MAKE_ENV+=	__MAKE_CONF=/dev/null SRCCONF=/dev/null
 .if !defined(D4P_SLAVE)
 PLIST_FILES=	bin/dialog4ports man/man1/${PORTNAME}.1.gz
 .endif
-
-NEED_ROOT=	yes
 
 .include <bsd.port.pre.mk>
 
