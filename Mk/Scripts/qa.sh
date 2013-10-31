@@ -18,7 +18,7 @@ err() {
 shebang() {
 	rc=0
 	for f in `find ${STAGEDIR} -type f`; do
-		interp=$(sed -n -e '1s/^#![[:space:]]*\([^[:space:]]*\).*/\1/p' $f)
+		interp=$(sed -n -e '1s/^#![[:space:]]*\([^[:space:]]*\).*/\1/p;2q' $f)
 		case "$interp" in
 		"") ;;
 		/usr/bin/env) ;;
@@ -62,7 +62,8 @@ paths() {
 
 # For now do not raise an error, just warnings
 stripped() {
-	[ -x /usr/bin/file ] || return
+	[ -x /usr/bin/file ] || return # this is fatal
+	[ -n "${STRIP}" ] || return 0
 	for f in `find ${STAGEDIR} -type f`; do
 		output=`/usr/bin/file ${f}`
 		case "${output}" in
