@@ -9,6 +9,11 @@
 %%SITE_PERL%%/Mail/IMAPClient/Thread.pm
 %%SITE_PERL%%/Mail/IMAPClient/Thread.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/IMAPClient/.packlist
+%%PERL5_MAN3%%/Mail::IMAPClient.3.gz
+%%PERL5_MAN3%%/Mail::IMAPClient::BodyStructure.3.gz
+%%PERL5_MAN3%%/Mail::IMAPClient::BodyStructure::Parse.3.gz
+%%PERL5_MAN3%%/Mail::IMAPClient::MessageSet.3.gz
+%%PERL5_MAN3%%/Mail::IMAPClient::Thread.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/IMAPClient
 @dirrm %%SITE_PERL%%/Mail/IMAPClient/BodyStructure
 @dirrm %%SITE_PERL%%/Mail/IMAPClient

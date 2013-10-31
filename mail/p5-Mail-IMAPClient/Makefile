@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mail-IMAPClient
-PORTVERSION=	3.33
+PORTVERSION=	3.34
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PLOBBES
@@ -20,11 +20,4 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS=	</dev/null
 
-MAN3=	Mail::IMAPClient.3 \
-	Mail::IMAPClient::BodyStructure.3 \
-	Mail::IMAPClient::BodyStructure::Parse.3 \
-	Mail::IMAPClient::MessageSet.3 \
-	Mail::IMAPClient::Thread.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
