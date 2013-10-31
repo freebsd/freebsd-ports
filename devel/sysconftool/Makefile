@@ -9,6 +9,8 @@ MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Helps to install application configuration files
 
+LICENSE=	GPLv3
+
 USES=		perl5
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
