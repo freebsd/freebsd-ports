@@ -1,8 +1,8 @@
---- exrenvmap/main.cpp.orig	2012-07-18 01:27:28.000000000 +0200
-+++ exrenvmap/main.cpp	2012-10-04 10:44:12.000000000 +0200
-@@ -46,6 +46,7 @@
- #include <ImfEnvmap.h>
+--- exrenvmap/main.cpp.orig	2013-06-18 21:51:40.000000000 +0200
++++ exrenvmap/main.cpp	2013-10-05 18:45:26.000000000 +0200
+@@ -47,6 +47,7 @@
  #include <ImfHeader.h>
+ 
  #include <iostream>
 +#include <cstring>
  #include <exception>

@@ -3,7 +3,7 @@
 
 PORTNAME=	openimageio
 PORTVERSION=	1.2.2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz

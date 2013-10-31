@@ -2,46 +2,55 @@
 # $FreeBSD$
 
 PORTNAME=	ilmbase
-PORTVERSION=	1.0.3
+PORTVERSION=	2.0.1
 CATEGORIES=	graphics devel
-MASTER_SITES=	http://cloud.github.com/downloads/openexr/openexr/
+MASTER_SITES=	SAVANNAH/openexr/
+DISTNAME=	ilmbase-${PORTVERSION}
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	ILM Base libraries a.k.a. Half, IlmThread, Imath, and Iex
 
 LICENSE=	BSD
 
-CONFLICTS=	OpenEXR-1.[0-4].*
-
-USES=		pkgconfig
-USE_LDCONFIG=	yes
+USES=		pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
+USE_LDCONFIG=	yes
 
 PORTDOCS=	AUTHORS ChangeLog README
 
-OPTIONS_DEFINE=		THREAD
+BIN=	eLut toFloat
+
+OPTIONS_DEFINE=		DOCS THREAD
 OPTIONS_DEFAULT=	THREAD
 THREAD_DESC=		Enable multithreaded file I/O support
 
-NO_STAGE=	yes
+OPTIONS_SUB=	yes
+
+THREAD_CONFIGURE_ENABLE=	threading
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTHREAD}
-CONFIGURE_ARGS+=--enable-threading
 CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
-.else
-CONFIGURE_ARGS+=--disable-threading
 .endif
+
+PLIST_SUB=	MAJORVER=2_0
 
 regression-test regression test check:	build
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|Iex/libIex.la|Iex/libIex.la $(PTHREAD_LIBS)|' \
+		${WRKSRC}/IlmThread/Makefile.am
+
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+.for e in ${BIN}
+	${INSTALL_PROGRAM} ${WRKSRC}/Half/${e} ${STAGEDIR}${PREFIX}/bin/${e}
+.endfor
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

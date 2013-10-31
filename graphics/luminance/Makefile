@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	luminance-hdr
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSION=	2.3.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/qtpfsgui/luminance/${DISTVERSION}

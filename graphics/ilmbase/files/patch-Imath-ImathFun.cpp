@@ -1,5 +1,5 @@
---- Imath/ImathFun.cpp.orig	2006-12-09 06:59:37.000000000 +0900
-+++ Imath/ImathFun.cpp	2007-10-07 23:23:38.000000000 +0900
+--- Imath/ImathFun.cpp.orig	2013-06-18 21:51:38.000000000 +0200
++++ Imath/ImathFun.cpp	2013-10-04 20:06:42.000000000 +0200
 @@ -33,6 +33,7 @@
  ///////////////////////////////////////////////////////////////////////////
  
@@ -7,7 +7,7 @@
 +#include <inttypes.h>
  #include "ImathFun.h"
  
- namespace Imath {
+ IMATH_INTERNAL_NAMESPACE_SOURCE_ENTER
 @@ -41,14 +42,14 @@
  float
  succf (float f)

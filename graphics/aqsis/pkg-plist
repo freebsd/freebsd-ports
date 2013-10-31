@@ -59,73 +59,6 @@ share/applications/aqsl.desktop
 share/applications/aqsltell.desktop
 share/applications/eqsl.desktop
 share/applications/piqsl.desktop
-%%DATADIR%%/examples/features/archives/bike.rib
-%%DATADIR%%/examples/features/archives/bikeData.rib.gz
-%%DATADIR%%/examples/features/archives/render.sh
-%%DATADIR%%/examples/features/bake/bakesphere.rib
-%%DATADIR%%/examples/features/bake/render.sh
-%%DATADIR%%/examples/features/bake/sphere.rib
-%%DATADIR%%/examples/features/curves/bezier.rib
-%%DATADIR%%/examples/features/curves/render.sh
-%%DATADIR%%/examples/features/layeredshaders/grid.tif
-%%DATADIR%%/examples/features/layeredshaders/layered.rib
-%%DATADIR%%/examples/features/layeredshaders/render.sh
-%%DATADIR%%/examples/features/layeredshaders/texmap.sl
-%%DATADIR%%/examples/features/levelofdetail/detail.rib
-%%DATADIR%%/examples/features/levelofdetail/render.sh
-%%DATADIR%%/examples/features/motionblur/camera.rib
-%%DATADIR%%/examples/features/motionblur/deformation.rib
-%%DATADIR%%/examples/features/motionblur/render_camera.sh
-%%DATADIR%%/examples/features/motionblur/render_deformation.sh
-%%DATADIR%%/examples/features/multipass/aov.rib
-%%DATADIR%%/examples/features/multipass/myval.sl
-%%DATADIR%%/examples/features/multipass/render.sh
-%%DATADIR%%/examples/features/objectinstance/render.sh
-%%DATADIR%%/examples/features/objectinstance/singlepolygon.rib
-%%DATADIR%%/examples/features/occlusion/envlight.sl
-%%DATADIR%%/examples/features/occlusion/occlmap.py
-%%DATADIR%%/examples/features/occlusion/occlmap.rib
-%%DATADIR%%/examples/features/occlusion/render.sh
-%%DATADIR%%/examples/features/occlusion/simple.rib
-%%DATADIR%%/examples/features/occlusion/world.rib
-%%DATADIR%%/examples/features/shadows/autoshadow.rib
-%%DATADIR%%/examples/features/shadows/render_autoshadow.sh
-%%DATADIR%%/examples/features/shadows/render_softshadow.sh
-%%DATADIR%%/examples/features/shadows/softshadow.rib
-%%DATADIR%%/examples/features/solidmodeling/csg.rib
-%%DATADIR%%/examples/features/solidmodeling/render.sh
-%%DATADIR%%/examples/features/subdivision/creases.rib
-%%DATADIR%%/examples/features/subdivision/render.sh
-%%DATADIR%%/examples/features/textures/grid.tif
-%%DATADIR%%/examples/features/textures/render.sh
-%%DATADIR%%/examples/features/textures/sticky.rib
-%%DATADIR%%/examples/point_based_gi/cornellbox/all_passes.rib
-%%DATADIR%%/examples/point_based_gi/cornellbox/ao.sl
-%%DATADIR%%/examples/point_based_gi/cornellbox/bake_pass.rib
-%%DATADIR%%/examples/point_based_gi/cornellbox/bake_points.sl
-%%DATADIR%%/examples/point_based_gi/cornellbox/beauty_pass.rib
-%%DATADIR%%/examples/point_based_gi/cornellbox/beauty_pass_ao.rib
-%%DATADIR%%/examples/point_based_gi/cornellbox/beautycam.rib
-%%DATADIR%%/examples/point_based_gi/cornellbox/geometry.rib
-%%DATADIR%%/examples/point_based_gi/cornellbox/indirect.sl
-%%DATADIR%%/examples/point_based_gi/cornellbox/lights.rib
-%%DATADIR%%/examples/point_based_gi/cornellbox/shadow_pass.rib
-%%DATADIR%%/examples/procedurals/menger/README.txt
-%%DATADIR%%/examples/procedurals/menger/menger.cpp
-%%DATADIR%%/examples/procedurals/menger/menger.rib
-%%DATADIR%%/examples/procedurals/menger/render.sh
-%%DATADIR%%/examples/scenes/fisheye/README.txt
-%%DATADIR%%/examples/scenes/fisheye/envmap.rib
-%%DATADIR%%/examples/scenes/fisheye/fisheye.rib
-%%DATADIR%%/examples/scenes/fisheye/fisheye_projection.sl
-%%DATADIR%%/examples/scenes/fisheye/lights.rib
-%%DATADIR%%/examples/scenes/fisheye/render.sh
-%%DATADIR%%/examples/scenes/fisheye/scene.rib
-%%DATADIR%%/examples/scenes/fisheye/world.rib
-%%DATADIR%%/examples/scenes/microbe/microbe.rib
-%%DATADIR%%/examples/scenes/microbe/render.sh
-%%DATADIR%%/examples/scenes/vase/render.sh
-%%DATADIR%%/examples/scenes/vase/vase.rib
 %%DATADIR%%/plugins/houdini/README.txt
 %%DATADIR%%/plugins/houdini/RIBtargets
 %%DATADIR%%/plugins/houdini/hshaders.otl
@@ -246,37 +179,8 @@ share/applications/piqsl.desktop
 @dirrm %%DATADIR%%/plugins/houdini/scripts
 @dirrm %%DATADIR%%/plugins/houdini
 @dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/examples/scenes/vase
-@dirrm %%DATADIR%%/examples/scenes/microbe
-@dirrm %%DATADIR%%/examples/scenes/fisheye
-@dirrm %%DATADIR%%/examples/scenes
-@dirrm %%DATADIR%%/examples/procedurals/menger
-@dirrm %%DATADIR%%/examples/procedurals
-@dirrm %%DATADIR%%/examples/point_based_gi/cornellbox
-@dirrm %%DATADIR%%/examples/point_based_gi
-@dirrm %%DATADIR%%/examples/features/textures
-@dirrm %%DATADIR%%/examples/features/subdivision
-@dirrm %%DATADIR%%/examples/features/solidmodeling
-@dirrm %%DATADIR%%/examples/features/shadows
-@dirrm %%DATADIR%%/examples/features/occlusion
-@dirrm %%DATADIR%%/examples/features/objectinstance
-@dirrm %%DATADIR%%/examples/features/multipass
-@dirrm %%DATADIR%%/examples/features/motionblur
-@dirrm %%DATADIR%%/examples/features/levelofdetail
-@dirrm %%DATADIR%%/examples/features/layeredshaders
-@dirrm %%DATADIR%%/examples/features/curves
-@dirrm %%DATADIR%%/examples/features/bake
-@dirrm %%DATADIR%%/examples/features/archives
-@dirrm %%DATADIR%%/examples/features
-@dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%
 @dirrm lib/aqsis
 @dirrm include/aqsis/ri
 @dirrm include/aqsis
 @dirrm etc/aqsis
-@dirrmtry share/icons/hicolor/192x192/mimetypes
-@dirrmtry share/icons/hicolor/192x192
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrmtry share/mime/packages
-@dirrmtry share/mime

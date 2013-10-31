@@ -3,7 +3,7 @@
 
 PORTNAME=	nvidia-texture-tools
 DISTVERSION=	2.0.8-1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE \
 		http://mirror.amdmi3.ru/distfiles/

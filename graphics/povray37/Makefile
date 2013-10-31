@@ -2,7 +2,7 @@
 
 PORTNAME=	povray
 DISTVERSION=	3.7.0.RC6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.povray.org/beta/source/
 DIST_SUBDIR=	${UNIQUENAME}
