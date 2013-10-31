@@ -10,6 +10,20 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20131031:
+AUTHOR: rene@FreeBSD.org
+
+Add a new USES for kernel module ports.
+
+USES=kmod takes no arguments and:
+- adds kld to CATEGORIES
+- sets SSP_UNSAFE
+- sets IGNORE if the kernel sources are not found
+- defines KMODDIR to /boot/modules by default, add it to
+  PLIST_SUB and MAKE_ENV, and create it upon installation
+- handles cross-referencing kernel modules upon installation and
+  deinstallation
+
 20131021:
 AUTHOR: amdmi3@FreeBSD.org
 
