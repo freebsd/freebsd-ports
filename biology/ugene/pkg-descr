@@ -1,12 +1,12 @@
-Unipro UGENE is a multiplatform open-source software with the main goal of
+Unipro UGENE is multiplatform, open-source software with the main goal of
 assisting molecular biologists without much expertise in bioinformatics to
-manage, analyze and visualize their data.  UGENE integrates widely used
-bioinformatics tools within a common user interface.
+manage, analyze, and visualize their data.  UGENE integrates widely used
+bioinformatics tools within one common user interface.
 
-The toolkit supports multiple biological data formats and allows the
+UGENE toolkit supports multiple biological data formats and allows the
 retrieval of data from remote data sources.  It provides visualization
 modules for biological objects such as annotated genome sequences, Next
 Generation Sequencing (NGS) assembly data, multiple sequence alignments,
-phylogenetic trees and 3D structures.
+phylogenetic trees, and 3D structures.
 
 WWW: http://ugene.unipro.ru/

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ugene
-DISTVERSION=	1.11.4
+DISTVERSION=	1.12.3
 CATEGORIES=	biology
 MASTER_SITES=	http://ugene.unipro.ru/downloads/
 
@@ -11,41 +11,54 @@ COMMENT=	Free, open-source, cross-platform bioinformatics toolkit
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
+.if !exists(/usr/include/execinfo.h)
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+.endif
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+USES=		qmake
 USE_GL=		glu
 USE_QT4=	gui webkit xml svg linguist_build moc_build qmake_build \
 		qtestlib_build rcc_build uic_build imageformats_run
 USE_XORG=	xtst
-
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
-MAN1=		${PORTNAME}.1
-MANCOMPRESSED=	yes
+QMAKE_ARGS=	INSTALL_PREFIX=${PREFIX} UGENE_INSTALL_DATA=${DATADIR} \
+		INSTALL_MANDIR=${MAN1PREFIX}/man
+ALL_TARGET=	release
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 1000054
+CXXFLAGS+=	-std=c++11
+.endif
+
 .if ${ARCH} == "amd64"
-# need to manually tell the build we are on x64
-CARCH=		CONFIG+=x64
+# XXX: need to manually tell the build we are on x64
+QMAKE_ARGS+=	CONFIG+=x64
 PLIST_SUB=	NOX64="@comment "
 .else
 PLIST_SUB=	NOX64=""
 .endif
 
-# yes, bash is required, stuff will not execute with sh
+.if ${MACHINE_CPU:Msse2}
+QMAKE_ARGS+=	UGENE_SSE2_DETECTED=1
+.endif
+
 post-patch:
+# yes, bash is required, stuff will not execute with sh
 	@${REINPLACE_CMD} -e 's|/bin/bash|/usr/bin/env bash|' \
 		${WRKSRC}/src/gen_bin_script.cmd \
 		${WRKSRC}/installer/_common_data/ugene
+# remove BOM from files and non-latin comments; gcc 4.2 does not like them
+	@${REINPLACE_CMD} -e '1s|^[^/]*|| ; /lose sequence view,/d' \
+		${WRKSRC}/src/plugins/GUITestBase/src/tests/common_scenarios/smith_waterman_dialog/GTTestsSWDialog.cpp \
+		${WRKSRC}/src/plugins/GUITestBase/src/tests/common_scenarios/repeat_finder/GTTestsRepeatFinder.cpp
 
-do-configure:
-	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} \
-		PREFIX=${PREFIX} INSTALL_PREFIX=${PREFIX} \
-		INSTALL_MANDIR=${MAN1PREFIX}/man ${CARCH} \
-		UGENE_INSTALL_DATA=${DATADIR} -r ${PORTNAME}.pro
+post-configure:
+	@${REINPLACE_CMD} -e '/^LFLAGS/s,-pthread,-lexecinfo &,' \
+		${WRKSRC}/src/ugenecl/Makefile.Release \
+		${WRKSRC}/src/ugeneui/Makefile.Release
 
 .include <bsd.port.post.mk>
