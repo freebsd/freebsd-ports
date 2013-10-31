@@ -12,6 +12,7 @@ etc/sarg/images/datetime.png
 etc/sarg/images/graph.png
 etc/sarg/images/sarg-squidguard-block.png
 etc/sarg/images/sarg.png
+man/man1/sarg.1.gz
 %%PHP%%etc/sarg/sarg-php/COPYING
 %%PHP%%etc/sarg/sarg-php/INSTALL
 %%PHP%%etc/sarg/sarg-php/LANGUAGES

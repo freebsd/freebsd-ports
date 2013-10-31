@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS_DEFINE=	GD PHP NLS PCRE LDAP ICONV
 OPTIONS_DEFAULT=GD PHP NLS PCRE LDAP ICONV
+OPTIONS_SUB=	PHP NLS
 
 PHP_DESC=	Install PHP for reporting generating
 
@@ -27,56 +28,20 @@ CONFIGURE_ARGS=	CPPFLAGS=-I${LOCALBASE}/include \
 		--enable-fontdir="${ETCDIR}/fonts" \
 		--enable-imagedir="${ETCDIR}/images"
 
-MAN1=		sarg.1
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-PLIST_SUB+=	NLS=""
-USES+=		gettext
-EXTRA_LDFLAGS=	-lintl
-.else
-PLIST_SUB+=	NLS="@comment "
-CONFIGURE_ARGS+=--disable-nls
-.endif
-
-.if ${PORT_OPTIONS:MGD}
-CONFIGURE_ARGS+=--with-gd
-LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd
-.else
-CONFIGURE_ARGS+=--without-gd
-.endif
-
-.if ${PORT_OPTIONS:MPHP}
-CONFIGURE_ARGS+=--enable-sargphp="${ETCDIR}"
-PLIST_SUB+=	PHP=""
-.else
-CONFIGURE_ARGS+=--disable-sargphp
-PLIST_SUB+=	PHP="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPCRE}
-CONFIGURE_ARGS+=--with-pcre
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
-.else
-CONFIGURE_ARGS+=--without-pcre
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-CONFIGURE_ARGS+=--with-ldap
-USE_OPENLDAP=	yes
-.else
-CONFIGURE_ARGS+=--without-ldap
-.endif
-
-.if ${PORT_OPTIONS:MICONV}
-CONFIGURE_ARGS+=--with-iconv
-USES+=	iconv
-EXTRA_LDFLAGS+=	${ICONV_LIB}
-.else
-CONFIGURE_ARGS+=--without-iconv
-.endif
+NLS_USES=		gettext
+NLS_LDFLAGS=		-lintl
+NLS_CONFIGURE_ENABLE=	nls
+GD_CONFIGURE_WITH=	gd
+GD_LIB_DEPENDS=		libgd.so:${PORTSDIR}/graphics/gd
+PHP_CONFIGURE_ON=	--enable-sargphp="${ETCDIR}"
+PHP_CONFIGURE_OFF=	--disable-sargphp
+PCRE_CONFIGURE_WITH=	pcre
+PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LDAP_USE=		USE_OPENLDAP=yes
+LDAP_CONFIGURE_WITH=	ldap
+ICONV_USES=		iconv
+ICONV_CONFIGURE_WITH=	iconv
+ICONV_LDFLAGS=		${ICONV_LIB}
 
 post-extract:
 	@${FIND} ${WRKSRC} -type d -exec ${CHMOD} 0755 {} \;
@@ -85,10 +50,6 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e '/test .*==/ s/==/=/' \
 		${WRKSRC}/configure.in
-.if ${PORT_OPTIONS:MNLS} || ${PORT_OPTIONS:MICONV}
-	@${REINPLACE_CMD} -e '/^LIBS/ s/$$/ ${EXTRA_LDFLAGS}/' \
-		${WRKSRC}/Makefile.in
-.endif
 
 pre-configure:
 	@(cd ${WRKSRC} && ${AUTORECONF})
