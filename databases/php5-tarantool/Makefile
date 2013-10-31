@@ -1,0 +1,31 @@
+# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	tarantool
+PORTVERSION=	${TR_VER}
+CATEGORIES=	databases
+MASTER_SITES=	GH GHC
+PKGNAMEPREFIX=	php5-
+DISTFILES=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+
+MAINTAINER=	vg@FreeBSD.org
+COMMENT=	PECL PHP driver for Tarantool/Box
+
+USE_GITHUB=	yes
+USE_PHP=	yes
+USE_PHPEXT=	yes
+USE_PHPIZE=	yes
+DEFAULT_PHP_VER=5
+
+PHP_MODNAME=	${PORTNAME}
+GH_PROJECT=	${PORTNAME}-php
+GH_ACCOUNT=	tarantool
+GH_COMMIT=	d88ac7b
+GH_TAGNAME=	${GH_COMMIT}
+TR_VER=		20131031
+
+CONFIGURE_ARGS+=	--with-tarantool
+
+NO_STAGE=	yes
+
+.include <bsd.port.mk>

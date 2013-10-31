@@ -601,6 +601,7 @@
     SUBDIR += php5-redis
     SUBDIR += php5-sqlite3
     SUBDIR += php5-sybase_ct
+    SUBDIR += php5-tarantool
     SUBDIR += php52-dba
     SUBDIR += php52-dbase
     SUBDIR += php52-interbase
