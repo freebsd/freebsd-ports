@@ -1,13 +1,13 @@
 bin/xmmsctrl
-%%EXAMPLESDIR%%/emacs-transcriber
-%%EXAMPLESDIR%%/pause_stop_play.sh
-%%EXAMPLESDIR%%/play_pause.sh
-%%EXAMPLESDIR%%/play_unpause_next.sh
-%%EXAMPLESDIR%%/playlist2html.sh
-%%EXAMPLESDIR%%/twmrc_bindings
-%%EXAMPLESDIR%%/win_playlist.sh
-%%EXAMPLESDIR%%/window_shown.sh
-%%EXAMPLESDIR%%/xmmsnext.sh
-%%EXAMPLESDIR%%/xmmsprev.sh
-%%EXAMPLESDIR%%/xmmsswitch.sh
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/emacs-transcriber
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pause_stop_play.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/play_pause.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/play_unpause_next.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/playlist2html.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/twmrc_bindings
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/win_playlist.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/window_shown.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmmsnext.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmmsprev.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmmsswitch.sh
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

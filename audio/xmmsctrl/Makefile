@@ -18,24 +18,22 @@ BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USES=		gmake
-NO_STAGE=	yes
+USE_CSTD=	gnu89
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 PORTDOCS=	Changelog README
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xmmsctrl ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
-	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/xmmsctrl ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/samples && \
 		${INSTALL_DATA} emacs-transcriber twmrc_bindings \
-			${EXAMPLESDIR} && \
-		${INSTALL_SCRIPT} *.sh ${EXAMPLESDIR}
+			${STAGEDIR}${EXAMPLESDIR} && \
+		${INSTALL_SCRIPT} *.sh ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
