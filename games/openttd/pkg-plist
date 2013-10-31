@@ -1,4 +1,5 @@
 bin/openttd
+man/man6/openttd.6.gz
 share/pixmaps/openttd.32.xpm
 %%DATADIR%%/ai/compat_0.7.nut
 %%DATADIR%%/ai/compat_1.0.nut
