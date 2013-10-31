@@ -15,6 +15,9 @@ RUN_DEPENDS=	liblame.so:${PORTSDIR}/audio/lame \
 		libsox.so:${PORTSDIR}/audio/sox \
 		liboggenc.so:${PORTSDIR}/audio/vorbis-tools
 
+DEPRECATED=	Development has been abandoned upstream
+EXPIRATION_DATE=	2013-11-30
+
 USE_BZIP2=	yes
 NO_STAGE=	yes
 USES=		perl5
