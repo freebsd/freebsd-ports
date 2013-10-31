@@ -19,7 +19,6 @@ USE_AUTOTOOLS=	libtool
 
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|$${libdir}/pkgconfig|$${prefix}/libdata/pkgconfig|' \
