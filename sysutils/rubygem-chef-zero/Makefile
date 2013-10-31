@@ -9,7 +9,7 @@ MASTER_SITES=	RG
 MAINTAINER=	tomoyukis@reallyenglish.com
 COMMENT=	Self-contained Chef server for testing and solo setup purposes
 
-RUN_DEPENDS=	rubygem-puma=1.6:${PORTSDIR}/www/rubygem-puma \
+RUN_DEPENDS=	rubygem-puma>=1.6:${PORTSDIR}/www/rubygem-puma \
 		rubygem-mixlib-log>=1.3:${PORTSDIR}/devel/rubygem-mixlib-log \
 		rubygem-hashie>=2.0:${PORTSDIR}/devel/rubygem-hashie \
 		rubygem-moneta<0.7.0:${PORTSDIR}/devel/rubygem-moneta \
