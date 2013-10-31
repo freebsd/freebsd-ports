@@ -12,9 +12,5 @@ LICENSE=	MIT
 XORG_CAT=	app
 USE_XORG=	xmu x11
 
-PLIST_FILES=	bin/xstdcmap
-
-MAN1=		xstdcmap.1
-
-NO_STAGE=	yes
+PLIST_FILES=	bin/xstdcmap man/man1/xstdcmap.1.gz
 .include <bsd.port.mk>
