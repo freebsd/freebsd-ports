@@ -21,10 +21,10 @@ lib/libpstoedit.so.0
 %%PLOTUTILS%%lib/pstoedit/libp2edrvlplot.la
 %%PLOTUTILS%%lib/pstoedit/libp2edrvlplot.so
 %%PLOTUTILS%%lib/pstoedit/libp2edrvlplot.so.0
-%%IMAGEMAGICK%%lib/pstoedit/libp2edrvmagick++.a
-%%IMAGEMAGICK%%lib/pstoedit/libp2edrvmagick++.la
-%%IMAGEMAGICK%%lib/pstoedit/libp2edrvmagick++.so
-%%IMAGEMAGICK%%lib/pstoedit/libp2edrvmagick++.so.0
+%%MAGICK%%lib/pstoedit/libp2edrvmagick++.a
+%%MAGICK%%lib/pstoedit/libp2edrvmagick++.la
+%%MAGICK%%lib/pstoedit/libp2edrvmagick++.so
+%%MAGICK%%lib/pstoedit/libp2edrvmagick++.so.0
 lib/pstoedit/libp2edrvstd.a
 lib/pstoedit/libp2edrvstd.la
 lib/pstoedit/libp2edrvstd.so
@@ -38,6 +38,7 @@ lib/pstoedit/libp2edrvstd.so.0
 %%EMF%%lib/pstoedit/libp2edrvwmf.so
 %%EMF%%lib/pstoedit/libp2edrvwmf.so.0
 libdata/pkgconfig/pstoedit.pc
+man/man1/pstoedit.1.gz
 share/aclocal/pstoedit.m4
 %%DATADIR%%/drvhpgl.pencolors
 %%DATADIR%%/examplefigmap.fmp
