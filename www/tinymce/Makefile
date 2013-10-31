@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinymce
-PORTVERSION=	4.0.9
+PORTVERSION=	4.0.10
 CATEGORIES=	www
 MASTER_SITES=	http://download.moxiecode.com/${PORTNAME}/ \
 		LOCAL/sunpoet
