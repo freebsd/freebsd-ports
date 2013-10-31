@@ -10,6 +10,8 @@ EXTRACT_ONLY=
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Twitter script to irssi
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	p5-Net-Twitter>=0:${PORTSDIR}/net/p5-Net-Twitter \
 		p5-WWW-Shorten>=0:${PORTSDIR}/www/p5-WWW-Shorten \
 		p5-WWW-Shorten-Bitly>=0:${PORTSDIR}/www/p5-WWW-Shorten-Bitly
