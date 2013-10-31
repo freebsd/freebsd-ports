@@ -76,7 +76,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>thunderbird</name>
-	<range><lt>25.0</lt></range>
+	<range><lt>24.1.0</lt></range>
       </package>
     </affects>
     <description>
@@ -131,6 +131,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2013-10-29</discovery>
       <entry>2013-10-30</entry>
+      <modified>2013-10-31</modified>
     </dates>
   </vuln>
 
