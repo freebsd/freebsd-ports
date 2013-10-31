@@ -155,7 +155,6 @@
     SUBDIR += logo
     SUBDIR += lua
     SUBDIR += lua-mode.el
-    SUBDIR += lua4
     SUBDIR += lua50
     SUBDIR += lua52
     SUBDIR += luajit
@@ -360,7 +359,6 @@
     SUBDIR += tolua
     SUBDIR += tolua++
     SUBDIR += tolua++50
-    SUBDIR += tolua4
     SUBDIR += tolua50
     SUBDIR += treecc
     SUBDIR += tuareg-mode.el
