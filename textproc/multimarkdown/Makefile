@@ -12,7 +12,7 @@ COMMENT=	Extended Markdown processor with more features, written in C
 
 LICENSE=	MIT
 
-EXTRACT_DEPENDS=	git:${PORTSDIR}/devel/git
+FETCH_DEPENDS=	git:${PORTSDIR}/devel/git
 
 WRKSRC=		${WRKDIR}/MultiMarkdown-4
 
@@ -31,12 +31,15 @@ OPTIONS_SUB=	yes
 CONFLICTS_INSTALL=	mtools-*
 .endif
 
-do-extract:
+do-fetch:
 	${MKDIR} ${WRKDIR}
 	cd ${WRKDIR} && git clone https://github.com/fletcher/MultiMarkdown-4.git
 	cd ${WRKSRC} && git checkout ${PORTVERSION}
 	cd ${WRKSRC} && git submodule init
 	cd ${WRKSRC} && git submodule update
+
+do-extract:
+	@${DO_NADA}	#normally do-extract starts with an rm -rf ${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -E "s/^(CFLAGS).+=/\1 \+=/" ${WRKSRC}/Makefile ${WRKSRC}/greg/Makefile
