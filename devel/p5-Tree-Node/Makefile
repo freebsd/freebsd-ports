@@ -14,7 +14,4 @@ COMMENT=	Memory-efficient tree nodes in Perl
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Tree::Node.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

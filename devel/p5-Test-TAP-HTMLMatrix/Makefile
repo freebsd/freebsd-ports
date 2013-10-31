@@ -19,11 +19,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Test::TAP::HTMLMatrix.3 Test::TAP::Model::Colorful.3 \
-		Test::TAP::Model::File::Visual.3 \
-		Test::TAP::Model::Subtest::Visual.3 Test::TAP::Model::Visual.3
-
-NO_STAGE=	yes
 post-patch:
 	${RM} ${WRKSRC}/example.pl
 

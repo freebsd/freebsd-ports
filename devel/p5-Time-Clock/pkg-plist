@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/Time::Clock.3.gz
 %%SITE_PERL%%/Time/Clock.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Clock/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Clock

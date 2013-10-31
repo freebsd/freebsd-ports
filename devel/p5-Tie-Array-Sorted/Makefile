@@ -14,8 +14,4 @@ COMMENT=	Perl array which is kept sorted
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Tie::Array::Sorted.3 \
-		Tie::Array::Sorted::Lazy.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

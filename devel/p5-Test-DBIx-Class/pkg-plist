@@ -1,39 +1,63 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/DBIx/Class/.packlist
-%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/CD/Track.pm
-%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/CD/Artist.pm
-%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Company/Employee.pm
-%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Person/Employee.pm
-%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Person/Artist.pm
-%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Person.pm
-%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Company.pm
-%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Job.pm
-%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Phone.pm
-%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/CD.pm
-%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result.pm
-%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/ResultSet.pm
-%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/DefaultRS.pm
-%%SITE_PERL%%/Test/DBIx/Class/Example/Schema.pm
-%%SITE_PERL%%/Test/DBIx/Class/FixtureCommand/PopulateMore.pm
-%%SITE_PERL%%/Test/DBIx/Class/FixtureCommand/Populate.pm
-%%SITE_PERL%%/Test/DBIx/Class/Role/FixtureCommand.pm
-%%SITE_PERL%%/Test/DBIx/Class/SchemaManager/Trait/Testmysqld.pm
-%%SITE_PERL%%/Test/DBIx/Class/SchemaManager/Trait/SQLite.pm
-%%SITE_PERL%%/Test/DBIx/Class/SchemaManager/Trait/Testpostgresql.pm
-%%SITE_PERL%%/Test/DBIx/Class/SchemaManager.pm
-%%SITE_PERL%%/Test/DBIx/Class/Types.pm
+%%PERL5_MAN3%%/Test::DBIx::Class.3.gz
+%%PERL5_MAN3%%/Test::DBIx::Class::Example::Schema.3.gz
+%%PERL5_MAN3%%/Test::DBIx::Class::Example::Schema::DefaultRS.3.gz
+%%PERL5_MAN3%%/Test::DBIx::Class::Example::Schema::Result.3.gz
+%%PERL5_MAN3%%/Test::DBIx::Class::Example::Schema::Result::CD.3.gz
+%%PERL5_MAN3%%/Test::DBIx::Class::Example::Schema::Result::CD::Artist.3.gz
+%%PERL5_MAN3%%/Test::DBIx::Class::Example::Schema::Result::CD::Track.3.gz
+%%PERL5_MAN3%%/Test::DBIx::Class::Example::Schema::Result::Company.3.gz
+%%PERL5_MAN3%%/Test::DBIx::Class::Example::Schema::Result::Company::Employee.3.gz
+%%PERL5_MAN3%%/Test::DBIx::Class::Example::Schema::Result::Job.3.gz
+%%PERL5_MAN3%%/Test::DBIx::Class::Example::Schema::Result::Person.3.gz
+%%PERL5_MAN3%%/Test::DBIx::Class::Example::Schema::Result::Person::Artist.3.gz
+%%PERL5_MAN3%%/Test::DBIx::Class::Example::Schema::Result::Person::Employee.3.gz
+%%PERL5_MAN3%%/Test::DBIx::Class::Example::Schema::Result::Phone.3.gz
+%%PERL5_MAN3%%/Test::DBIx::Class::Example::Schema::ResultSet.3.gz
+%%PERL5_MAN3%%/Test::DBIx::Class::FixtureCommand::Populate.3.gz
+%%PERL5_MAN3%%/Test::DBIx::Class::FixtureCommand::PopulateMore.3.gz
+%%PERL5_MAN3%%/Test::DBIx::Class::Role::FixtureCommand.3.gz
+%%PERL5_MAN3%%/Test::DBIx::Class::SchemaManager.3.gz
+%%PERL5_MAN3%%/Test::DBIx::Class::SchemaManager::Trait::SQLite.3.gz
+%%PERL5_MAN3%%/Test::DBIx::Class::SchemaManager::Trait::Testmysqld.3.gz
+%%PERL5_MAN3%%/Test::DBIx::Class::SchemaManager::Trait::Testpostgresql.3.gz
+%%PERL5_MAN3%%/Test::DBIx::Class::Types.3.gz
 %%SITE_PERL%%/Test/DBIx/Class.pm
+%%SITE_PERL%%/Test/DBIx/Class/Example/Schema.pm
+%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/DefaultRS.pm
+%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result.pm
+%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/CD.pm
+%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/CD/Artist.pm
+%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/CD/Track.pm
+%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Company.pm
+%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Company/Employee.pm
+%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Job.pm
+%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Person.pm
+%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Person/Artist.pm
+%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Person/Employee.pm
+%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Phone.pm
+%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/ResultSet.pm
+%%SITE_PERL%%/Test/DBIx/Class/FixtureCommand/Populate.pm
+%%SITE_PERL%%/Test/DBIx/Class/FixtureCommand/PopulateMore.pm
+%%SITE_PERL%%/Test/DBIx/Class/Role/FixtureCommand.pm
+%%SITE_PERL%%/Test/DBIx/Class/SchemaManager.pm
+%%SITE_PERL%%/Test/DBIx/Class/SchemaManager/Trait/SQLite.pm
+%%SITE_PERL%%/Test/DBIx/Class/SchemaManager/Trait/Testmysqld.pm
+%%SITE_PERL%%/Test/DBIx/Class/SchemaManager/Trait/Testpostgresql.pm
+%%SITE_PERL%%/Test/DBIx/Class/Types.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/DBIx/Class/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/DBIx/Class
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/DBIx
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
-@dirrmtry %%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/CD
-@dirrmtry %%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Company
-@dirrmtry %%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Person
-@dirrmtry %%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result
-@dirrmtry %%SITE_PERL%%/Test/DBIx/Class/Example/Schema
-@dirrmtry %%SITE_PERL%%/Test/DBIx/Class/Example
-@dirrmtry %%SITE_PERL%%/Test/DBIx/Class/FixtureCommand
-@dirrmtry %%SITE_PERL%%/Test/DBIx/Class/Role
-@dirrmtry %%SITE_PERL%%/Test/DBIx/Class/SchemaManager/Trait
-@dirrmtry %%SITE_PERL%%/Test/DBIx/Class/SchemaManager
+@dirrm %%SITE_PERL%%/Test/DBIx/Class/SchemaManager/Trait
+@dirrm %%SITE_PERL%%/Test/DBIx/Class/SchemaManager
+@dirrm %%SITE_PERL%%/Test/DBIx/Class/Role
+@dirrm %%SITE_PERL%%/Test/DBIx/Class/FixtureCommand
+@dirrm %%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Person
+@dirrm %%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Company
+@dirrm %%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/CD
+@dirrm %%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result
+@dirrm %%SITE_PERL%%/Test/DBIx/Class/Example/Schema
+@dirrm %%SITE_PERL%%/Test/DBIx/Class/Example
 @dirrmtry %%SITE_PERL%%/Test/DBIx/Class
 @dirrmtry %%SITE_PERL%%/Test/DBIx
+@dirrmtry %%SITE_PERL%%/Test

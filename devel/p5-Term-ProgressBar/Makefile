@@ -22,9 +22,6 @@ TEST_DEPENDS=	p5-Capture-Tiny>=0.13:${PORTSDIR}/devel/p5-Capture-Tiny \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Term::ProgressBar.3
-
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|Term-ProgressBar|Term/ProgressBar|' ${WRKSRC}/Makefile.PL
 
@@ -32,8 +29,8 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}/
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>

@@ -1,8 +1,9 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Taint/Runtime/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Taint/Runtime/Runtime.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Taint/Runtime/Runtime.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/Taint/is_taint_bench.pl
+%%PERL5_MAN3%%/Taint::Runtime.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Taint/Runtime.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Taint/is_taint_bench.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Taint/Runtime/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Taint/Runtime/Runtime.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Taint/Runtime/Runtime.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Taint/Runtime
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Taint
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Taint
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Taint
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Taint

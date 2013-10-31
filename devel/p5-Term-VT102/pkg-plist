@@ -1,10 +1,11 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/VT102/.packlist
+%%PERL5_MAN3%%/Term::VT102.3.gz
 %%SITE_PERL%%/Term/VT102.pm
 %%SITE_PERL%%/Term/VT102/examples/sanitize-dump.pl
 %%SITE_PERL%%/Term/VT102/examples/ssh-usage.pl
 %%SITE_PERL%%/Term/VT102/examples/telnet-usage.pl
-@dirrmtry %%SITE_PERL%%/Term/VT102/examples
-@dirrmtry %%SITE_PERL%%/Term/VT102
-@dirrmtry %%SITE_PERL%%/Term
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/VT102
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/VT102/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/VT102
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
+@dirrm %%SITE_PERL%%/Term/VT102/examples
+@dirrm %%SITE_PERL%%/Term/VT102
+@dirrmtry %%SITE_PERL%%/Term

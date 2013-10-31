@@ -1,3 +1,9 @@
+%%PERL5_MAN3%%/Term::ReadLine::Zoid.3.gz
+%%PERL5_MAN3%%/Term::ReadLine::Zoid::Base.3.gz
+%%PERL5_MAN3%%/Term::ReadLine::Zoid::Emacs.3.gz
+%%PERL5_MAN3%%/Term::ReadLine::Zoid::FileBrowse.3.gz
+%%PERL5_MAN3%%/Term::ReadLine::Zoid::ISearch.3.gz
+%%PERL5_MAN3%%/Term::ReadLine::Zoid::ViCommand.3.gz
 %%SITE_PERL%%/Term/ReadLine/Zoid.pm
 %%SITE_PERL%%/Term/ReadLine/Zoid/Base.pm
 %%SITE_PERL%%/Term/ReadLine/Zoid/Emacs.pm
@@ -47,10 +53,10 @@
 %%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_r.al
 %%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_repeat.al
 %%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand/vi_topic.al
-@dirrm %%SITE_PERL%%/Term/ReadLine/Zoid
 @dirrm %%SITE_PERL%%/auto/Term/ReadLine/Zoid/ViCommand
 @dirrm %%SITE_PERL%%/auto/Term/ReadLine/Zoid
-@dirrmtry %%SITE_PERL%%/Term/ReadLine
-@dirrmtry %%SITE_PERL%%/Term
 @dirrmtry %%SITE_PERL%%/auto/Term/ReadLine
 @dirrmtry %%SITE_PERL%%/auto/Term
+@dirrm %%SITE_PERL%%/Term/ReadLine/Zoid
+@dirrmtry %%SITE_PERL%%/Term/ReadLine
+@dirrmtry %%SITE_PERL%%/Term

@@ -1,3 +1,5 @@
+%%PERL5_MAN3%%/Test::Deep.3.gz
+%%PERL5_MAN3%%/Test::Deep::NoTest.3.gz
 %%SITE_PERL%%/Test/Deep.pm
 %%SITE_PERL%%/Test/Deep/All.pm
 %%SITE_PERL%%/Test/Deep/Any.pm
@@ -23,16 +25,16 @@
 %%SITE_PERL%%/Test/Deep/ListMethods.pm
 %%SITE_PERL%%/Test/Deep/MM.pm
 %%SITE_PERL%%/Test/Deep/Methods.pm
-%%SITE_PERL%%/Test/Deep/Number.pm
 %%SITE_PERL%%/Test/Deep/NoTest.pm
+%%SITE_PERL%%/Test/Deep/Number.pm
 %%SITE_PERL%%/Test/Deep/Ref.pm
 %%SITE_PERL%%/Test/Deep/RefType.pm
 %%SITE_PERL%%/Test/Deep/Regexp.pm
 %%SITE_PERL%%/Test/Deep/RegexpMatches.pm
-%%SITE_PERL%%/Test/Deep/RegexpVersion.pm
 %%SITE_PERL%%/Test/Deep/RegexpOnly.pm
 %%SITE_PERL%%/Test/Deep/RegexpRef.pm
 %%SITE_PERL%%/Test/Deep/RegexpRefOnly.pm
+%%SITE_PERL%%/Test/Deep/RegexpVersion.pm
 %%SITE_PERL%%/Test/Deep/ScalarRef.pm
 %%SITE_PERL%%/Test/Deep/ScalarRefOnly.pm
 %%SITE_PERL%%/Test/Deep/Set.pm

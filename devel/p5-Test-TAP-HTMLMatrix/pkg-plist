@@ -1,4 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TAP/HTMLMatrix/.packlist
+%%PERL5_MAN3%%/Test::TAP::HTMLMatrix.3.gz
+%%PERL5_MAN3%%/Test::TAP::Model::Colorful.3.gz
+%%PERL5_MAN3%%/Test::TAP::Model::File::Visual.3.gz
+%%PERL5_MAN3%%/Test::TAP::Model::Subtest::Visual.3.gz
+%%PERL5_MAN3%%/Test::TAP::Model::Visual.3.gz
 %%SITE_PERL%%/Test/TAP/HTMLMatrix.pm
 %%SITE_PERL%%/Test/TAP/HTMLMatrix/detailed_view.html
 %%SITE_PERL%%/Test/TAP/HTMLMatrix/htmlmatrix.css
@@ -7,10 +11,13 @@
 %%SITE_PERL%%/Test/TAP/Model/File/Visual.pm
 %%SITE_PERL%%/Test/TAP/Model/Subtest/Visual.pm
 %%SITE_PERL%%/Test/TAP/Model/Visual.pm
-@dirrm %%SITE_PERL%%/Test/TAP/HTMLMatrix
-@dirrmtry %%SITE_PERL%%/Test/TAP/Model/Subtest
-@dirrmtry %%SITE_PERL%%/Test/TAP/Model/File
-@dirrmtry %%SITE_PERL%%/Test/TAP/Model
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TAP/HTMLMatrix/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TAP/HTMLMatrix
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TAP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test/TAP/Model/Subtest
+@dirrmtry %%SITE_PERL%%/Test/TAP/Model/File
+@dirrmtry %%SITE_PERL%%/Test/TAP/Model
+@dirrm %%SITE_PERL%%/Test/TAP/HTMLMatrix
+@dirrmtry %%SITE_PERL%%/Test/TAP
+@dirrmtry %%SITE_PERL%%/Test

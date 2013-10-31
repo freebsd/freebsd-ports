@@ -1,4 +1,31 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Unit/.packlist
+%%PERL5_MAN3%%/Test::Unit.3.gz
+%%PERL5_MAN3%%/Test::Unit::Assert.3.gz
+%%PERL5_MAN3%%/Test::Unit::Assertion.3.gz
+%%PERL5_MAN3%%/Test::Unit::Assertion::Boolean.3.gz
+%%PERL5_MAN3%%/Test::Unit::Assertion::CodeRef.3.gz
+%%PERL5_MAN3%%/Test::Unit::Assertion::Exception.3.gz
+%%PERL5_MAN3%%/Test::Unit::Assertion::Regexp.3.gz
+%%PERL5_MAN3%%/Test::Unit::Debug.3.gz
+%%PERL5_MAN3%%/Test::Unit::Decorator.3.gz
+%%PERL5_MAN3%%/Test::Unit::Error.3.gz
+%%PERL5_MAN3%%/Test::Unit::Exception.3.gz
+%%PERL5_MAN3%%/Test::Unit::Failure.3.gz
+%%PERL5_MAN3%%/Test::Unit::HarnessUnit.3.gz
+%%PERL5_MAN3%%/Test::Unit::Listener.3.gz
+%%PERL5_MAN3%%/Test::Unit::Loader.3.gz
+%%PERL5_MAN3%%/Test::Unit::Procedural.3.gz
+%%PERL5_MAN3%%/Test::Unit::Result.3.gz
+%%PERL5_MAN3%%/Test::Unit::Runner.3.gz
+%%PERL5_MAN3%%/Test::Unit::Runner::Terminal.3.gz
+%%PERL5_MAN3%%/Test::Unit::Setup.3.gz
+%%PERL5_MAN3%%/Test::Unit::Test.3.gz
+%%PERL5_MAN3%%/Test::Unit::TestCase.3.gz
+%%PERL5_MAN3%%/Test::Unit::TestRunner.3.gz
+%%PERL5_MAN3%%/Test::Unit::TestSuite.3.gz
+%%PERL5_MAN3%%/Test::Unit::TkTestRunner.3.gz
+%%PERL5_MAN3%%/Test::Unit::Tutorial.3.gz
+%%PERL5_MAN3%%/Test::Unit::UnitHarness.3.gz
+%%PERL5_MAN3%%/Test::Unit::Warning.3.gz
 %%SITE_PERL%%/Test/TestLister.pl
 %%SITE_PERL%%/Test/TestRunner.pl
 %%SITE_PERL%%/Test/TkTestRunner.pl
@@ -30,9 +57,10 @@
 %%SITE_PERL%%/Test/Unit/Tutorial.pm
 %%SITE_PERL%%/Test/Unit/UnitHarness.pm
 %%SITE_PERL%%/Test/Unit/Warning.pm
-@dirrm %%SITE_PERL%%/Test/Unit/Assertion
-@dirrm %%SITE_PERL%%/Test/Unit/Runner
-@dirrm %%SITE_PERL%%/Test/Unit
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Unit/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Unit
-@dirrmtry %%SITE_PERL%%/Test
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrm %%SITE_PERL%%/Test/Unit/Runner
+@dirrm %%SITE_PERL%%/Test/Unit/Assertion
+@dirrm %%SITE_PERL%%/Test/Unit
+@dirrmtry %%SITE_PERL%%/Test

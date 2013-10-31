@@ -26,8 +26,5 @@ TEST_DEPENDS=	p5-Catalyst-Plugin-Session>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-S
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Test::WWW::Mechanize::Catalyst.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
 

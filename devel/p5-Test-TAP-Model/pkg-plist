@@ -1,13 +1,18 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TAP/Model/.packlist
+%%PERL5_MAN3%%/Test::TAP::Model.3.gz
+%%PERL5_MAN3%%/Test::TAP::Model::Consolidated.3.gz
+%%PERL5_MAN3%%/Test::TAP::Model::File.3.gz
+%%PERL5_MAN3%%/Test::TAP::Model::File::Consolidated.3.gz
+%%PERL5_MAN3%%/Test::TAP::Model::Subtest.3.gz
 %%SITE_PERL%%/Test/TAP/Model.pm
 %%SITE_PERL%%/Test/TAP/Model/Consolidated.pm
 %%SITE_PERL%%/Test/TAP/Model/File.pm
 %%SITE_PERL%%/Test/TAP/Model/File/Consolidated.pm
 %%SITE_PERL%%/Test/TAP/Model/Subtest.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TAP/Model/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TAP/Model
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TAP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
 @dirrm %%SITE_PERL%%/Test/TAP/Model/File
 @dirrm %%SITE_PERL%%/Test/TAP/Model
 @dirrmtry %%SITE_PERL%%/Test/TAP
 @dirrmtry %%SITE_PERL%%/Test
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TAP/Model
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TAP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test

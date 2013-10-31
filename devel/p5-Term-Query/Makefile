@@ -15,7 +15,4 @@ RUN_DEPENDS=	p5-Array-PrintCols>=0:${PORTSDIR}/misc/p5-Array-PrintCols
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Term::Query.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

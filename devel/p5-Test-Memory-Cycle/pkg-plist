@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Memory/Cycle/.packlist
+%%PERL5_MAN3%%/Test::Memory::Cycle.3.gz
 %%SITE_PERL%%/Test/Memory/Cycle.pm
-@dirrmtry %%SITE_PERL%%/Test/Memory
-@dirrmtry %%SITE_PERL%%/Test
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Memory/Cycle/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Memory/Cycle
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Memory
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test/Memory
+@dirrmtry %%SITE_PERL%%/Test

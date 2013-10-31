@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Thread::Cancel.3.gz
 %%SITE_PERL%%/Thread/Cancel.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread/Cancel/.packlist
-@dirrmtry %%SITE_PERL%%/Thread
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread/Cancel
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread/Cancel
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread
+@dirrmtry %%SITE_PERL%%/Thread

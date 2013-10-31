@@ -13,7 +13,4 @@ COMMENT=	Tie::Hash::Sorted - presents hashes in sorted order
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Tie::Hash::Sorted.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

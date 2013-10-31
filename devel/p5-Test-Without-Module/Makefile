@@ -14,7 +14,4 @@ COMMENT=	Test fallback behaviour in absence of modules
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Test::Without::Module.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

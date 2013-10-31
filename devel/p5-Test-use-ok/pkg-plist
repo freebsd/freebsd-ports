@@ -1,8 +1,10 @@
+%%PERL5_MAN3%%/Test::use::ok.3.gz
+%%PERL5_MAN3%%/ok.3.gz
 %%SITE_PERL%%/Test/use/ok.pm
-%%SITE_PERL%%/ok.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/use/ok/.packlist
-@dirrmtry %%SITE_PERL%%/Test/use
-@dirrmtry %%SITE_PERL%%/Test
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/use/ok
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/use
+%%SITE_PERL%%/ok.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/use/ok
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/use
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrm %%SITE_PERL%%/Test/use
+@dirrmtry %%SITE_PERL%%/Test

@@ -35,31 +35,6 @@ TEST_DEPENDS=	p5-Test-Deep>=0.106:${PORTSDIR}/devel/p5-Test-Deep \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Test::DBIx::Class.3 \
-	Test::DBIx::Class::Example::Schema.3 \
-	Test::DBIx::Class::Example::Schema::DefaultRS.3 \
-	Test::DBIx::Class::Example::Schema::Result.3 \
-	Test::DBIx::Class::Example::Schema::Result::CD.3 \
-	Test::DBIx::Class::Example::Schema::Result::CD::Artist.3 \
-	Test::DBIx::Class::Example::Schema::Result::CD::Track.3 \
-	Test::DBIx::Class::Example::Schema::Result::Company.3 \
-	Test::DBIx::Class::Example::Schema::Result::Company::Employee.3 \
-	Test::DBIx::Class::Example::Schema::Result::Job.3 \
-	Test::DBIx::Class::Example::Schema::Result::Person.3 \
-	Test::DBIx::Class::Example::Schema::Result::Person::Artist.3 \
-	Test::DBIx::Class::Example::Schema::Result::Person::Employee.3 \
-	Test::DBIx::Class::Example::Schema::Result::Phone.3 \
-	Test::DBIx::Class::Example::Schema::ResultSet.3 \
-	Test::DBIx::Class::FixtureCommand::Populate.3 \
-	Test::DBIx::Class::FixtureCommand::PopulateMore.3 \
-	Test::DBIx::Class::Role::FixtureCommand.3 \
-	Test::DBIx::Class::SchemaManager.3 \
-	Test::DBIx::Class::SchemaManager::Trait::SQLite.3 \
-	Test::DBIx::Class::SchemaManager::Trait::Testmysqld.3 \
-	Test::DBIx::Class::SchemaManager::Trait::Testpostgresql.3 \
-	Test::DBIx::Class::Types.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

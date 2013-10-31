@@ -17,12 +17,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=	Term::ReadLine::Zoid.3 \
-	Term::ReadLine::Zoid::Base.3 \
-	Term::ReadLine::Zoid::Emacs.3 \
-	Term::ReadLine::Zoid::FileBrowse.3 \
-	Term::ReadLine::Zoid::ISearch.3 \
-	Term::ReadLine::Zoid::ViCommand.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

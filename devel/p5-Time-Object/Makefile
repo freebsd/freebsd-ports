@@ -11,10 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Perl OO interface to time and dates
 
-MAN3=		Time::Object.3 Time::Seconds.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -15,7 +15,4 @@ COMMENT=	A perl module that contains code to deal with time periods
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Time::Period.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
