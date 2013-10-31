@@ -3,4 +3,4 @@ A S-Lang module to plot graphs using grace.
 Grace is a popular plotting tool that produces publication quality
 plots.  The S-Lang module interacts with grace via pipes.
 
-WWW:	http://www.jedsoft.org/slang/modules/grace/index.html
+WWW: http://www.jedsoft.org/slang/modules/grace/index.html
