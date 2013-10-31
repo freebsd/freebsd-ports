@@ -96,7 +96,7 @@
 -TCLLIB = -L$(TCLDIR)/unix -ltcl8.2
 +#TCLLIB = -L$(TCLDIR)/unix -ltcl9.2
  #TCLLIB = -L$(TCLDIR)/unix -ltcl8.0
-+TCLLIB = -L%%TCL_LIBDIR%% -ltcl%%USE_TCL%%
++TCLLIB = -L%%TCL_LIBDIR%% -ltcl%%TCL_SHLIB_VER%%
  # if you have an installed Tcl/Tk, you probably just want:
  #TCLLIB = -ltcl
  # MacOSX (Aqua):
@@ -116,7 +116,7 @@
 -TKLIB = -L$(TKDIR)/unix -ltk8.2
 +#TKLIB = -L$(TKDIR)/unix -ltk8.2
  #TKLIB = -L$(TKDIR)/unix -ltk8.0
-+TKLIB = -L%%TK_LIBDIR%% -ltk%%USE_TK%%
++TKLIB = -L%%TK_LIBDIR%% -ltk%%TK_SHLIB_VER%%
  # if you have an installed Tcl/Tk, you probably just want:
  #TKLIB = -ltk
  # MacOSX (Aqua):

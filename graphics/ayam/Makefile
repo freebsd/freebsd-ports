@@ -10,13 +10,18 @@ DISTNAME=	${PORTNAME}${PORTVERSION}.src
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	3D modeling environment for the RenderMan interface
 
-LIB_DEPENDS=	aqsis_util.1:${PORTSDIR}/graphics/aqsis \
-		tiff.4:${PORTSDIR}/graphics/tiff
+LICENSE=	BSD
+
+LIB_DEPENDS=	libaqsis_util.so:${PORTSDIR}/graphics/aqsis \
+		libtiff.so:${PORTSDIR}/graphics/tiff
+BUILD_DEPENDS=	aqsl:${PORTSDIR}/graphics/aqsis
+
+OPTIONS_DEFINE=	DOCS
 
 USE_XORG=	xmu xext x11
 USE_GL=		yes
 USE_LDCONFIG=	${PREFIX}/lib/ayam
-USE_TK=		84
+USES+=		tk:84
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 MAKEFILE=	Makefile.shared
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
@@ -25,8 +30,7 @@ MAKE_JOBS_UNSAFE=	yes
 AYAM_PLUGINS=	csphere mfio
 PLUGINS_DIR=	${PREFIX}/lib/${PORTNAME}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "alpha"
 BROKEN=		Does not build on alpha
@@ -38,60 +42,68 @@ post-patch:
 		${WRKSRC}/MF3D/Makefile.mf3d
 	@${REINPLACE_CMD} -e \
 	   's|%%TCL_INCLUDEDIR%%|${TCL_INCLUDEDIR}|g; \
-	    s|%%TCL_LIBDIR%%|${TCL_LIBDIR}|g; s|%%USE_TCL%%|${USE_TCL}|g; \
+	    s|%%TCL_LIBDIR%%|${LOCALBASE}/lib|g; s|%%TCL_SHLIB_VER%%|${TCL_SHLIB_VER}|g; \
 	    s|%%TK_INCLUDEDIR%%|${TK_INCLUDEDIR}|g; \
-	    s|%%TK_LIBDIR%%|${TK_LIBDIR}|g; s|%%USE_TK%%|${USE_TK}|g' \
+	    s|%%TK_LIBDIR%%|${LOCALBASE}/lib|g; s|%%TK_SHLIB_VER%%|${TK_SHLIB_VER}|g' \
 	    ${WRKSRC}/Makefile.shared
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/../scn/shaders/Makefile
+
+post-build:
+	cd ${WRKSRC}/../scn/shaders && ${GMAKE} slx
 
 do-install:
 # binary and wrapper
-	${INSTALL_PROGRAM} ${WRKSRC}/ayamsh ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ayamsh ${STAGEDIR}${PREFIX}/bin
 	@(${ECHO_CMD} "#!${SH}"; \
 	  ${ECHO_CMD} "${PREFIX}/bin/ayamsh ${PLUGINS_DIR}/tcl/ayam.tcl \$$@" \
-	) >${PREFIX}/bin/ayam
-	@${CHMOD} ugo+x ${PREFIX}/bin/ayam
+	) > ${STAGEDIR}${PREFIX}/bin/ayam
+	@${CHMOD} ugo+x ${STAGEDIR}${PREFIX}/bin/ayam
+
+# shaders
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ayam/shaders
+	${INSTALL_DATA} ${WRKSRC}/../scn/shaders/*.slx ${STAGEDIR}${PREFIX}/lib/ayam/shaders
 
 # plugins
-	@${MKDIR} ${PLUGINS_DIR}
+	@${MKDIR} ${STAGEDIR}${PLUGINS_DIR}
 .for i in ${AYAM_PLUGINS}
-	${INSTALL_DATA} ${WRKSRC}/plugins/${i}.tcl ${PLUGINS_DIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/plugins/${i}.so ${PLUGINS_DIR}
+	${INSTALL_DATA} ${WRKSRC}/plugins/${i}.tcl ${STAGEDIR}${PLUGINS_DIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/plugins/${i}.so ${STAGEDIR}${PLUGINS_DIR}
 .endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/plugins/ayslx.so ${PLUGINS_DIR}
-	${INSTALL_DATA} ${WRKSRC}/plugins/loadayslx.tcl ${PLUGINS_DIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/plugins/ayslx.so ${STAGEDIR}${PLUGINS_DIR}
+	${INSTALL_DATA} ${WRKSRC}/plugins/loadayslx.tcl ${STAGEDIR}${PLUGINS_DIR}
 
-	${INSTALL_DATA} ${WRKSRC}/contrib/meta/*.tcl ${PLUGINS_DIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/contrib/meta/metaobj.so ${PLUGINS_DIR}
+	${INSTALL_DATA} ${WRKSRC}/contrib/meta/*.tcl ${STAGEDIR}${PLUGINS_DIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/contrib/meta/metaobj.so ${STAGEDIR}${PLUGINS_DIR}
 
 # tcl libs
-	@${MKDIR} ${PLUGINS_DIR}/tcl
-	${INSTALL_DATA} ${WRKSRC}/tcl/*.tcl ${PLUGINS_DIR}/tcl
-	@${MKDIR} ${PLUGINS_DIR}/tcl/BWidget-1.2.1
+	@${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/tcl
+	${INSTALL_DATA} ${WRKSRC}/tcl/*.tcl ${STAGEDIR}${PLUGINS_DIR}/tcl
+	@${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/tcl/BWidget-1.2.1
 	${INSTALL_DATA} ${WRKSRC}/tcl/BWidget-1.2.1/*.tcl \
-		${PLUGINS_DIR}/tcl/BWidget-1.2.1
-	@${MKDIR} ${PLUGINS_DIR}/tcl/BWidget-1.2.1/images
+		${STAGEDIR}${PLUGINS_DIR}/tcl/BWidget-1.2.1
+	@${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/tcl/BWidget-1.2.1/images
 	${INSTALL_DATA} ${WRKSRC}/tcl/BWidget-1.2.1/images/* \
-		${PLUGINS_DIR}/tcl/BWidget-1.2.1/images
-	@${MKDIR} ${PLUGINS_DIR}/tcl/BWidget-1.2.1/lang
+		${STAGEDIR}${PLUGINS_DIR}/tcl/BWidget-1.2.1/images
+	@${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/tcl/BWidget-1.2.1/lang
 	${INSTALL_DATA} ${WRKSRC}/tcl/BWidget-1.2.1/lang/* \
-		${PLUGINS_DIR}/tcl/BWidget-1.2.1/lang
+		${STAGEDIR}${PLUGINS_DIR}/tcl/BWidget-1.2.1/lang
 
 # data
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/lib/ayam-splash.gif ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/lib/ayam-splash.gif ${STAGEDIR}${DATADIR}
 
 # docs
-.ifndef (NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/Setup.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/doc/ayam.pdf ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/doc/refcard.pdf ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/doc/refcard.tcl ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/html
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/doc/html/*.html ${DOCSDIR}/html
-	@${MKDIR} ${DOCSDIR}/html/pics
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/Setup.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/doc/ayam.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/doc/refcard.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/doc/refcard.tcl ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/doc/html/*.html ${STAGEDIR}${DOCSDIR}/html
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html/pics
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/doc/html/pics/* \
-		${DOCSDIR}/html/pics
+		${STAGEDIR}${DOCSDIR}/html/pics
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
