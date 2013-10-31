@@ -13,12 +13,15 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A SLang-based text editor
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
 
 CONFLICTS=	jed-devel-[0-9]*
 
 OPTIONS_DEFINE=	X11 PERMS HOSTLOOKUP DOCS
 OPTIONS_DEFAULT=X11 HOSTLOOKUP DOCS
+OPTIONS_SUB=	X11
 
 PERMS_DESC=	Respect permissions by Root
 HOSTLOOKUP_DESC=Look-up for hostname
@@ -40,15 +43,10 @@ MAKE_ENV+=	JED_DOC_FILES="" \
 
 ALL_TARGET=	all getmail
 
-.include <bsd.port.pre.mk>
+X11_USE=	XORG=x11 XORG=ice XORG=xt
+X11_ALL_TARGET=	xjed
 
-.if ${PORT_OPTIONS:MX11}
-USE_XORG=	x11 ice xt
-ALL_TARGET+=	xjed
-PLIST_SUB+=	XJED=""
-.else
-PLIST_SUB+=	XJED="@comment "
-.endif
+.include <bsd.port.pre.mk>
 
 .if empty(PORT_OPTIONS:MHOSTLOOKUP)
 HOSTNAME_CMD=	/bin/hostname
@@ -60,10 +58,8 @@ post-patch:
 			  -e 's,\.\./info/\*,,' \
 			  -e 's,^\(JED_DOC_.*FILES\) =,\1 \?=,g' \
 		${WRKSRC}/src/Makefile.in
-.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e '/MKINSDIR.*DEST_DOC_DIR/d' \
 		${WRKSRC}/src/Makefile.in
-.endif
 .if empty(PORT_OPTIONS:MPERMS)
 	@${REINPLACE_CMD} 's|jed_file_is_readonly (file, 1)|jed_file_is_readonly (file, 0)|' ${WRKSRC}/src/file.c
 .endif
