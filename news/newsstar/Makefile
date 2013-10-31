@@ -3,6 +3,7 @@
 
 PORTNAME=	newsstar
 PORTVERSION=	1.5.6
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	SF
 
@@ -16,7 +17,8 @@ BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto \
 		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 
 GNU_CONFIGURE=	yes
-USES=		iconv perl5
+USES=		iconv perl5 shebangfix
+SHEBANG_FILES=	newsstar.in
 
 OPTIONS_DEFINE=		SSL
 OPTIONS_DEFAULT=	SSL
@@ -59,7 +61,6 @@ CONFIGURE_ARGS+=--with-sn-spool-dir=/var/spool/news \
 CONFIGURE_ARGS+=--with-inn-path=${LOCALBASE}/news/bin
 .endif
 
-MAN1=		newsstar.1
 DOCS=		AUTHORS INSTALL NEWS README TODO docs/QuickStart docs/manual.txt \
 		docs/index.html docs/ar01s02.html docs/ar01s03.html docs/ar01s04.html \
 		docs/ar01s05.html docs/ar01s06.html docs/ar01s07.html docs/ar01s08.html \
@@ -70,9 +71,9 @@ EX_CONFIGS=	cf.server.sample curses.cf.sample filter.pl.sample main.cf.sample \
 		master.ignore.sample master.score.sample newsrc.sample
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/share/sgml/docbook/dtd/xml|${LOCALBASE}/share/xml/docbook|' ${WRKSRC}/docs/manual.xml
-	@${REINPLACE_CMD} -e 's|/usr/share/sgml/docbook/dtd/xml|${LOCALBASE}/share/xml/docbook|' ${WRKSRC}/docs/news.xml
-	@${REINPLACE_CMD} -e 's|install-data-local: install-docs|install-data-local:|' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's|/usr/share/sgml/docbook/dtd/xml|${LOCALBASE}/share/xml/docbook|' ${WRKSRC}/docs/manual.xml
+	${REINPLACE_CMD} -e 's|/usr/share/sgml/docbook/dtd/xml|${LOCALBASE}/share/xml/docbook|' ${WRKSRC}/docs/news.xml
+	${REINPLACE_CMD} -e 's|install-data-local: install-docs|install-data-local:|' ${WRKSRC}/Makefile.in
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
