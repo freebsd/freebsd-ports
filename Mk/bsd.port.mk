@@ -4155,6 +4155,8 @@ install-ldconfig-file:
 .if defined(WITH_PKGNG)
 _UG_OUTPUT=	${WRKDIR}/users-groups.sh
 PKGPREINSTALL+=	${_UG_OUTPUT}
+.else
+_UG_OUTPUT=	/dev/null
 .endif
 .endif
 create-users-groups:
