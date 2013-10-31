@@ -13,7 +13,7 @@ COMMENT=	MPEG Audio Layer 2 encoder
 
 LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
 		libFLAC.so:${PORTSDIR}/audio/flac \
-		libvorbis.so:${PORTSDIR}/audio/livorbis \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libogg.so:${PORTSDIR}/audio/libogg
 
 USES=		gmake pathfix pkgconfig
