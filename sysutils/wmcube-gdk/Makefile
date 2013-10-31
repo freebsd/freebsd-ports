@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A modified version of the dockapp wmCube
 
+LICENSE=	GPLv2
+
 OPTIONS_DEFINE=	DOCS
 
 USE_XORG=	xpm
@@ -24,8 +26,6 @@ DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 PORTDOCS=	CHANGES README README.GDK TODO
 
-.include <bsd.port.pre.mk>
-
 do-install:
 	${INSTALL_PROGRAM} -m 2755 -o root -g kmem ${WRKSRC}/wmcube \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
@@ -33,11 +33,9 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/3dObjects/${files} ${STAGEDIR}${DATADIR}
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-. for doc in ${PORTDOCS}
+.for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
-. endfor
-.endif
+.endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
