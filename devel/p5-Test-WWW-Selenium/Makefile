@@ -24,10 +24,4 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Devel::REPL::Plugin::Selenium.3 \
-		Test::WWW::Selenium.3 \
-		WWW::Selenium::Util.3 \
-		WWW::Selenium.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -21,9 +21,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Test::Dependencies.3 \
-		Test::Dependencies::Heavy.3 \
-		Test::Dependencies::Light.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

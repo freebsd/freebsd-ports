@@ -13,7 +13,4 @@ COMMENT=	Alternative to Test::More::use_ok
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Test::use::ok.3 ok.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>                                                         

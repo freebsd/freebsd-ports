@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/VT102/Boundless/.packlist
+%%PERL5_MAN3%%/Term::VT102::Boundless.3.gz
 %%SITE_PERL%%/Term/VT102/Boundless.pm
-@dirrmtry %%SITE_PERL%%/Term/VT102
-@dirrmtry %%SITE_PERL%%/Term
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/VT102/Boundless
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/VT102/Boundless/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/VT102/Boundless
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/VT102
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
+@dirrmtry %%SITE_PERL%%/Term/VT102
+@dirrmtry %%SITE_PERL%%/Term

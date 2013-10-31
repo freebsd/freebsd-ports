@@ -1,6 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/RefHash/Weak/.packlist
+%%PERL5_MAN3%%/Tie::RefHash::Weak.3.gz
 %%SITE_PERL%%/Tie/RefHash/Weak.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/RefHash/Weak
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/RefHash/Weak/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/RefHash/Weak
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/RefHash
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
 @dirrmtry %%SITE_PERL%%/Tie/RefHash

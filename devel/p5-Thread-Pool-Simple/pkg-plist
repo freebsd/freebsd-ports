@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread/Pool/Simple/.packlist
+%%PERL5_MAN3%%/Thread::Pool::Simple.3.gz
 %%SITE_PERL%%/Thread/Pool/Simple.pm
-@dirrmtry %%SITE_PERL%%/Thread/Pool
-@dirrmtry %%SITE_PERL%%/Thread
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread/Pool/Simple/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread/Pool/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread/Pool
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread
+@dirrmtry %%SITE_PERL%%/Thread/Pool
+@dirrmtry %%SITE_PERL%%/Thread

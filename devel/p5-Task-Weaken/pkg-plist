@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Task::Weaken.3.gz
 %%SITE_PERL%%/Task/Weaken.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Task/Weaken/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Task/Weaken
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Task/Weaken
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Task
 @dirrmtry %%SITE_PERL%%/Task

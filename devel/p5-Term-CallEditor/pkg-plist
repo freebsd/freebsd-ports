@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Term::CallEditor.3.gz
 %%SITE_PERL%%/Term/CallEditor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/CallEditor/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/CallEditor
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/CallEditor
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
 @dirrmtry %%SITE_PERL%%/Term

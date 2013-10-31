@@ -1,6 +1,8 @@
+%%PERL5_MAN3%%/Term::ProgressBar::Quiet.3.gz
 %%SITE_PERL%%/Term/ProgressBar/Quiet.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ProgressBar/Quiet/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ProgressBar/Quiet
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ProgressBar
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
-@dirrmtry %%SITE_PERL%%//Term/ProgressBar
+@dirrmtry %%SITE_PERL%%/Term/ProgressBar
 @dirrmtry %%SITE_PERL%%/Term

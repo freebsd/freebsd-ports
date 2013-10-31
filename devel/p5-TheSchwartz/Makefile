@@ -18,16 +18,12 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	schwartzmon.1
-MAN3=	TheSchwartz.3 TheSchwartz::Job.3 TheSchwartz::Worker.3
-
-NO_STAGE=	yes
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/extras/check_schwartz ${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${WRKSRC}/extras/thetop ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/extras/check_schwartz ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/extras/thetop ${STAGEDIR}${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>

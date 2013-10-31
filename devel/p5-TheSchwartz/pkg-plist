@@ -1,8 +1,9 @@
-@comment $FreeBSD$
 bin/check_schwartz
 bin/schwartzmon
 bin/thetop
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/TheSchwartz/.packlist
+%%PERL5_MAN3%%/TheSchwartz.3.gz
+%%PERL5_MAN3%%/TheSchwartz::Job.3.gz
+%%PERL5_MAN3%%/TheSchwartz::Worker.3.gz
 %%SITE_PERL%%/TheSchwartz.pm
 %%SITE_PERL%%/TheSchwartz/Error.pm
 %%SITE_PERL%%/TheSchwartz/ExitStatus.pm
@@ -10,10 +11,12 @@ bin/thetop
 %%SITE_PERL%%/TheSchwartz/Job.pm
 %%SITE_PERL%%/TheSchwartz/JobHandle.pm
 %%SITE_PERL%%/TheSchwartz/Worker.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/TheSchwartz/.packlist
+man/man1/schwartzmon.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/http-mappings.txt
 %%PORTDOCS%%%%DOCSDIR%%/notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/schema-postgres.sql
 %%PORTDOCS%%%%DOCSDIR%%/schema.sql
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%SITE_PERL%%/TheSchwartz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/TheSchwartz
+@dirrmtry %%SITE_PERL%%/TheSchwartz

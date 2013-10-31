@@ -14,10 +14,7 @@ BUILD_DEPENDS=	p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-
 		p5-Expect-Simple>=0:${PORTSDIR}/devel/p5-Expect-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	Test::Expect.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

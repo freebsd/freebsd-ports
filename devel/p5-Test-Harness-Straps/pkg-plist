@@ -1,7 +1,12 @@
-%%SITE_PERL%%/Test/Harness/Results.pm
-%%SITE_PERL%%/Test/Harness/Point.pm
-%%SITE_PERL%%/Test/Harness/Iterator.pm
+%%PERL5_MAN3%%/Test::Harness::Assert.3.gz
+%%PERL5_MAN3%%/Test::Harness::Iterator.3.gz
+%%PERL5_MAN3%%/Test::Harness::Point.3.gz
+%%PERL5_MAN3%%/Test::Harness::Results.3.gz
+%%PERL5_MAN3%%/Test::Harness::Straps.3.gz
 %%SITE_PERL%%/Test/Harness/Assert.pm
+%%SITE_PERL%%/Test/Harness/Iterator.pm
+%%SITE_PERL%%/Test/Harness/Point.pm
+%%SITE_PERL%%/Test/Harness/Results.pm
 %%SITE_PERL%%/Test/Harness/Straps.pm
 @dirrmtry %%SITE_PERL%%/Test/Harness
 @dirrmtry %%SITE_PERL%%/Test

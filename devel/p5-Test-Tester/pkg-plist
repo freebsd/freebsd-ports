@@ -1,8 +1,11 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Tester/.packlist
+%%PERL5_MAN3%%/Test::Tester.3.gz
+%%PERL5_MAN3%%/Test::Tester::Capture.3.gz
+%%PERL5_MAN3%%/Test::Tester::CaptureRunner.3.gz
 %%SITE_PERL%%/Test/Tester.pm
 %%SITE_PERL%%/Test/Tester/Capture.pm
 %%SITE_PERL%%/Test/Tester/CaptureRunner.pm
 %%SITE_PERL%%/Test/Tester/Delegate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Tester/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Tester
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
 @dirrm %%SITE_PERL%%/Test/Tester

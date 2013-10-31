@@ -30,16 +30,4 @@ BUILD_DEPENDS+=	p5-Test-ClassAPI>=1.02:${PORTSDIR}/devel/p5-Test-ClassAPI \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	inline2test.1
-MAN3=	Test::Inline.3 \
-	Test::Inline::Content.3 \
-	Test::Inline::Content::Default.3 \
-	Test::Inline::Content::Legacy.3 \
-	Test::Inline::Content::Simple.3 \
-	Test::Inline::Extract.3 \
-	Test::Inline::IO::File.3 \
-	Test::Inline::Script.3 \
-	Test::Inline::Section.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

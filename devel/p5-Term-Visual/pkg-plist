@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Visual/.packlist
+%%PERL5_MAN3%%/Term::Visual.3.gz
 %%SITE_PERL%%/Term/Visual.pm
 %%SITE_PERL%%/Term/Visual/StatusBar.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Visual
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Visual/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Visual
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
-@dirrmtry %%SITE_PERL%%/Term/Visual
+@dirrm %%SITE_PERL%%/Term/Visual
 @dirrmtry %%SITE_PERL%%/Term

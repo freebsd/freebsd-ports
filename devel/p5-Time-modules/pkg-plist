@@ -1,8 +1,13 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Time-modules/.packlist
+%%PERL5_MAN3%%/Time::CTime.3.gz
+%%PERL5_MAN3%%/Time::DaysInMonth.3.gz
+%%PERL5_MAN3%%/Time::JulianDay.3.gz
+%%PERL5_MAN3%%/Time::ParseDate.3.gz
+%%PERL5_MAN3%%/Time::Timezone.3.gz
 %%SITE_PERL%%/Time/CTime.pm
 %%SITE_PERL%%/Time/DaysInMonth.pm
 %%SITE_PERL%%/Time/JulianDay.pm
 %%SITE_PERL%%/Time/ParseDate.pm
 %%SITE_PERL%%/Time/Timezone.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Time-modules/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time-modules
 @dirrmtry %%SITE_PERL%%/Time

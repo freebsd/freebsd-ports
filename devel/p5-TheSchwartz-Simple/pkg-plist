@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/TheSchwartz/Simple/.packlist
-%%SITE_PERL%%/TheSchwartz/Simple/Job.pm
+%%PERL5_MAN3%%/TheSchwartz::Simple.3.gz
 %%SITE_PERL%%/TheSchwartz/Simple.pm
-@dirrmtry %%SITE_PERL%%/TheSchwartz/Simple
-@dirrmtry %%SITE_PERL%%/TheSchwartz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/TheSchwartz/Simple
+%%SITE_PERL%%/TheSchwartz/Simple/Job.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/TheSchwartz/Simple/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/TheSchwartz/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/TheSchwartz
+@dirrm %%SITE_PERL%%/TheSchwartz/Simple
+@dirrmtry %%SITE_PERL%%/TheSchwartz

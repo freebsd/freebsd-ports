@@ -14,7 +14,4 @@ COMMENT=	Check if your Manifest matches your distro
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Test::CheckManifest.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

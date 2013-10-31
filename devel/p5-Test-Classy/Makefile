@@ -23,7 +23,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Test::Classy.3 Test::Classy::Base.3 Test::Classy::Util.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

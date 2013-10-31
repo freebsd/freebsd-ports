@@ -1,3 +1,5 @@
+%%PERL5_MAN3%%/Test::Cmd.3.gz
+%%PERL5_MAN3%%/Test::Common.3.gz
 %%SITE_PERL%%/Test/Cmd.pm
 %%SITE_PERL%%/Test/Cmd/Common.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Cmd/.packlist

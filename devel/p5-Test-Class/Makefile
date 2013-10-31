@@ -17,9 +17,4 @@ BUILD_DEPENDS+=	p5-Test-Exception>=0.25:${PORTSDIR}/devel/p5-Test-Exception
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Test::Class.3 \
-		Test::Class::Load.3 \
-		Test::Class::MethodInfo.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

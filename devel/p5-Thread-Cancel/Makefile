@@ -16,13 +16,10 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Thread::Cancel.3
-
-NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} "--------------------------------------------------------"
 	@${ECHO_MSG} "This module requires a threaded perl.  If your install"
-	@${ECHO_MSG} "is not threaded please install lang/perl5.8 with threads"
+	@${ECHO_MSG} "is not threaded please install lang/${PERL_PORT} with threads"
 	@${ECHO_MSG} "--------------------------------------------------------"
 
 .include <bsd.port.mk>

@@ -14,7 +14,4 @@ COMMENT=	Check for POD errors in files
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Test::Pod.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

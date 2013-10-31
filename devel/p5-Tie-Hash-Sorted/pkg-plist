@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Tie::Hash::Sorted.3.gz
 %%SITE_PERL%%/Tie/Hash/Sorted.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Hash/Sorted/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Hash/Sorted
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Hash/Sorted
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Hash
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
 @dirrmtry %%SITE_PERL%%/Tie/Hash
