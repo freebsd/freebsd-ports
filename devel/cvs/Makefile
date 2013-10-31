@@ -10,6 +10,7 @@ COMMENT=	Version control system
 
 LICENSE=	GPLv2
 
+USES=		uidfix
 WRKSRC=		${WRKDIR}/call/cvs-build
 USE_XZ=		yes
 INFO=		cvs cvsclient
@@ -17,8 +18,6 @@ INFO=		cvs cvsclient
 # bsd.stage.makes sets the wrong value for DESTDIR
 DESTDIRNAME=	NADA
 MAKE_ARGS=	DESTDIR=${STAGEDIR}${PREFIX}
-
-NEED_ROOT=	yes
 
 .include <bsd.port.pre.mk>
 

@@ -12,7 +12,7 @@ COMMENT=	Resolver re-initialization NSS module
 
 LICENSE=	BSD
 
-NEED_ROOT=	yes
+USES=		uidfix
 
 PLIST_FILES=	lib/nss_resinit.so lib/nss_resinit.so.1 \
 		man/man8/nss_resinit.8.gz
