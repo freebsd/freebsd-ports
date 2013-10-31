@@ -1758,6 +1758,7 @@
     SUBDIR += rubygem-omniauth-openid
     SUBDIR += rubygem-openid-redis-store
     SUBDIR += rubygem-passenger
+    SUBDIR += rubygem-puma
     SUBDIR += rubygem-rack
     SUBDIR += rubygem-rack-cache
     SUBDIR += rubygem-rack-canonical-host
