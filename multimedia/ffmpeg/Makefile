@@ -26,7 +26,7 @@ WANT_SDL=	yes
 
 OPTIONS_DEFINE=	AACPLUS ALSA AMR_NB AMR_WB ASS CDIO CELT DEBUG FAAC \
 		FDK_AAC FFSERVER FONTCONFIG FREETYPE FREI0R GNUTLS GSM ICONV \
-		LAME LIBBLURAY LIBV4L MODPLUG OPENAL OPENCV OPENJPEG OPENSSL \
+		JACK LAME LIBBLURAY LIBV4L MODPLUG OPENAL OPENCV OPENJPEG OPENSSL \
 		OPTIMIZED_CFLAGS OPUS PULSEAUDIO RTMP SCHROEDINGER SDL SPEEX \
 		THEORA VAAPI VDPAU VO_AACENC VO_AMRWBENC VORBIS VPX \
 		X11GRAB X264 XVID
@@ -106,6 +106,9 @@ GSM_CONFIGURE_ENABLE=	libgsm
 ICONV_USES=	iconv
 ICONV_CONFIGURE_ENABLE=	iconv
 
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audi/jack
+JACK_CONFIGURE_OFF=	--disable-indev=jack
+
 # lame
 LAME_LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame
 LAME_CONFIGURE_ENABLE=	libmp3lame
@@ -117,6 +120,8 @@ LIBBLURAY_CONFIGURE_ENABLE=	libbluray
 # libv4l
 LIBV4L_LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 LIBV4L_CONFIGURE_ENABLE=	libv4l2
+LIBV4L_CONFIGURE_OFF=		--disable-indev=v4l2 \
+				--disable-outdev=v4l2
 
 # modplug
 MODPLUG_LIB_DEPENDS=	libmodplug.so:${PORTSDIR}/audio/libmodplug
@@ -125,6 +130,7 @@ MODPLUG_CONFIGURE_ENABLE=	libmodplug
 # OpenAL
 OPENAL_LIB_DEPENDS=	libopenal.so:${PORTSDIR}/audio/openal-soft
 OPENAL_CONFIGURE_ENABLE=	openal
+OPENAL_CONFIGURE_OFF=		--disable-indev=openal
 
 # opencv
 OPENCV_LIB_DEPENDS=	libopencv_imgproc.so:${PORTSDIR}/graphics/opencv-core
@@ -141,6 +147,8 @@ OPUS_CONFIGURE_ENABLE=	libopus
 # pulseaudio
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	libpulse
+PULSEAUDIO_CONFIGURE_OFF=	--disable-indev=pulse \
+				--disable-outdev=pulse
 
 # rtmp
 RTMP_LIB_DEPENDS=	librtmp.so:${PORTSDIR}/multimedia/librtmp
@@ -305,7 +313,7 @@ FFPROGS+=	ffplay
 DOC_DOCFILES+=	ffplay.html
 .endif
 .else
-CONFIGURE_ARGS+=	--disable-ffplay
+CONFIGURE_ARGS+=	--disable-ffplay --disable-outdev=sdl
 .endif
 
 # vorbis
