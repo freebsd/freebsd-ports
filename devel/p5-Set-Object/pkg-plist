@@ -1,3 +1,6 @@
+%%PERL5_MAN3%%/Set::Changes.3.gz
+%%PERL5_MAN3%%/Set::Object.3.gz
+%%PERL5_MAN3%%/Set::Object::Weak.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Set/Changes.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Set/Object.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Set/Object/Weak.pm
@@ -5,7 +8,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/Object/Object.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/Object/Object.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/Object/autosplit.ix
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/Object
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/Object
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Set/Object
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Set/Object
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Set

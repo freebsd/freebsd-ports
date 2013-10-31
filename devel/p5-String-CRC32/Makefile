@@ -13,7 +13,4 @@ COMMENT=	Perl interface for cyclic redundancy check generation
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		String::CRC32.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

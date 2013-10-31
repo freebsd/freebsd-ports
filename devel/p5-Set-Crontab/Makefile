@@ -13,7 +13,4 @@ COMMENT=	Set::Crontab - Expand crontab(5)-style integer lists
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Set::Crontab.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

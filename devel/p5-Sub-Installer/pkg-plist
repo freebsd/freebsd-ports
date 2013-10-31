@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Sub::Installer.3.gz
 %%SITE_PERL%%/Sub/Installer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Installer/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Installer
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Installer
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub
 @dirrmtry %%SITE_PERL%%/Sub

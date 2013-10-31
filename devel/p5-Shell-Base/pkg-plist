@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Shell::Base.3.gz
 %%SITE_PERL%%/Shell/Base.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shell/Base/.packlist
-@dirrm %%SITE_PERL%%/Shell
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shell/Base
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shell
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shell
+@dirrmtry %%SITE_PERL%%/Shell

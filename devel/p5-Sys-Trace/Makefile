@@ -13,11 +13,4 @@ COMMENT=	Interface to system call tracing interfaces
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Sys::Trace.3 \
-		Sys::Trace::Impl::Ktrace.3 \
-		Sys::Trace::Impl::Strace.3 \
-		Sys::Trace::Impl::Truss.3 \
-		Sys::Trace::Results.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

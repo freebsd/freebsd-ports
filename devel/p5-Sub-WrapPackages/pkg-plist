@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Sub::WrapPackages.3.gz
 %%SITE_PERL%%/Sub/WrapPackages.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/WrapPackages/.packlist
-@dirrmtry %%SITE_PERL%%/Sub
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/WrapPackages
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/WrapPackages
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub
+@dirrmtry %%SITE_PERL%%/Sub

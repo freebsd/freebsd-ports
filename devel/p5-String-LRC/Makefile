@@ -13,7 +13,4 @@ COMMENT=	A perl interface for longitudinal redundancy check generation
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		String::LRC.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

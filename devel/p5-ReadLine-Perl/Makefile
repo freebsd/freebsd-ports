@@ -16,5 +16,4 @@ COMMENT=	Perl 5 module for Term::ReadLine editing without GNU readline
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

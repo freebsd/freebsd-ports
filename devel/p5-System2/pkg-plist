@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/System2.3.gz
+%%SITE_PERL%%/System2.pm
 %%SITE_PERL%%/auto/System2/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/System2/.packlist
-%%SITE_PERL%%/System2.pm
-@dirrm %%SITE_PERL%%/auto/System2
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/System2
+@dirrm %%SITE_PERL%%/auto/System2

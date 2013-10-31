@@ -13,7 +13,4 @@ COMMENT=	Simple shell script parser
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Shell::Parser.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

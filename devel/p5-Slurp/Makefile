@@ -16,11 +16,4 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Slurp.3
-
-PLIST_FILES=	%%SITE_PERL%%/Slurp.pm \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slurp/.packlist
-PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slurp
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

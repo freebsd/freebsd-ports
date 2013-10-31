@@ -13,9 +13,6 @@ COMMENT=	System2 - like system(), but with STDERR available as well
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		System2.3
-
-NO_STAGE=	yes
 pre-configure:
 	${RM} -f ${WRKSRC}/io_test.pl
 

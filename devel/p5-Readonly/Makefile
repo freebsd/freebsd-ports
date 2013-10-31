@@ -18,9 +18,6 @@ USE_PERL5=	configure
 CONFIGURE_ARGS=	DIR="${PORTNAME}-XS-${PORTVERSION_XS}"
 PORTVERSION_XS=	1.05
 
-MAN3=		Readonly.3 Readonly::XS.3
-
-NO_STAGE=	yes
 post-patch:
 	${MV} ${WRKDIR}/${PORTNAME}-XS-${PORTVERSION_XS} ${WRKSRC}
 	${RM} ${WRKSRC}/*.pl

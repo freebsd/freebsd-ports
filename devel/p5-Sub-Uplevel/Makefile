@@ -14,7 +14,4 @@ COMMENT=	Sub::Uplevel - apparently run a function in a higher stack frame
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Sub::Uplevel.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
