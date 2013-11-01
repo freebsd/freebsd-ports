@@ -11,9 +11,6 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module that provides a way to write/read ID3 v2.3 tags
 
 USES=		perl5
-NO_STAGE=	yes
 USE_PERL5=	configure
-
-MAN3=		MPEG::ID3v2Tag.3
 
 .include <bsd.port.mk>

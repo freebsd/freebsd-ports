@@ -1,7 +1,9 @@
+%%PERL5_MAN3%%/Audio::APE.3.gz
+%%PERL5_MAN3%%/Audio::Musepack.3.gz
 %%SITE_PERL%%/Audio/APE.pm
 %%SITE_PERL%%/Audio/APETags.pm
 %%SITE_PERL%%/Audio/Musepack.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Musepack/.packlist
-@dirrmtry %%SITE_PERL%%/Audio
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Musepack
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Musepack
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio
+@dirrmtry %%SITE_PERL%%/Audio

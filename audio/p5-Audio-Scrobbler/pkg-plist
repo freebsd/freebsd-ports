@@ -1,7 +1,8 @@
 bin/scrobbler-helper
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Scrobbler/.packlist
+%%PERL5_MAN3%%/Audio::Scrobbler.3.gz
 %%SITE_PERL%%/Audio/Scrobbler.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Scrobbler
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Scrobbler/.packlist
+man/man1/scrobbler-helper.1.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Scrobbler
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio
-@dirrmtry %%SITE_PERL%%/mach
 @dirrmtry %%SITE_PERL%%/Audio

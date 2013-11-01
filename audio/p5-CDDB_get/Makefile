@@ -17,9 +17,6 @@ LICENSE=	GPLv2
 PORTSCOUT=	skipv:2.28.1
 
 USES=		perl5
-NO_STAGE=	yes
 USE_PERL5=	configure
-
-MAN3=		CDDB_get.3
 
 .include <bsd.port.mk>

@@ -11,9 +11,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fetch info from WMA audio files
 
 USES=		perl5
-NO_STAGE=	yes
 USE_PERL5=	configure
-
-MAN3=		Audio::WMA.3
 
 .include <bsd.port.mk>

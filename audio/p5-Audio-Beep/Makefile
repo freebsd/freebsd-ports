@@ -14,9 +14,6 @@ BUILD_DEPENDS=	beep:${PORTSDIR}/audio/beep
 RUN_DEPENDS=	beep:${PORTSDIR}/audio/beep
 
 USES=		perl5
-NO_STAGE=	yes
 USE_PERL5=	configure
-
-MAN3=		Audio::Beep.3 Audio::Beep::BSD::beep.3
 
 .include <bsd.port.mk>

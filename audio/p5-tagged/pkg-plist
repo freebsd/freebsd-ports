@@ -1,9 +1,14 @@
+%%PERL5_MAN3%%/MP3::Tag.3.gz
+%%PERL5_MAN3%%/MP3::Tag::File.3.gz
+%%PERL5_MAN3%%/MP3::Tag::ID3v1.3.gz
+%%PERL5_MAN3%%/MP3::Tag::ID3v2-Data.3.gz
+%%PERL5_MAN3%%/MP3::Tag::ID3v2.3.gz
 %%SITE_PERL%%/MP3/Tag.pm
 %%SITE_PERL%%/MP3/Tag/File.pm
 %%SITE_PERL%%/MP3/Tag/ID3v1.pm
 %%SITE_PERL%%/MP3/Tag/ID3v2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Tag/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Tag
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Tag
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3
 @dirrmtry %%SITE_PERL%%/MP3/Tag
 @dirrmtry %%SITE_PERL%%/MP3

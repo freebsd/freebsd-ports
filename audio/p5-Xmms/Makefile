@@ -17,15 +17,8 @@ BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms \
 		p5-ReadLine-Perl>=0:${PORTSDIR}/devel/p5-ReadLine-Perl
 
 USES=		perl5
-NO_STAGE=	yes
 USE_PERL5=	configure
 REINPLACE_ARGS=	-i ''
-
-MAN3=		Bundle::Xmms.3 \
-		Xmms.3 \
-		Xmms::Config.3 \
-		Xmms::Remote.3 \
-		Xmms::SongChange.3
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|MPEG::MP3Info|MP3::Info|g' \

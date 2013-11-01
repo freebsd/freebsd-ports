@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Audio::CD.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Audio/CD.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/CD/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/CD/CD.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/CD/CD.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/CD/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/CD
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Audio

@@ -14,11 +14,7 @@ COMMENT=	Perl5 module for handling MIDI files
 OPTIONS_DEFINE=	GD
 
 USES=		perl5
-NO_STAGE=	yes
 USE_PERL5=	configure
-
-MAN3=		MIDI.3 MIDI::Event.3 MIDI::Filespec.3 MIDI::Opus.3 MIDI::Score.3 \
-		MIDI::Simple.3 MIDI::Track.3
 
 GD_BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 GD_RUN_DEPENDS=		p5-GD>=0:${PORTSDIR}/graphics/p5-GD
