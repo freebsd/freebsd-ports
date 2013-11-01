@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	Teng
-PORTVERSION=	0.18
+PORTVERSION=	0.20
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:NEKOKAK
+MASTER_SITE_SUBDIR=	CPAN:SATOH
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -29,26 +29,6 @@ TEST_DEPENDS=	\
 	p5-Class-Method-Modifiers>0:${PORTSDIR}/devel/p5-Class-Method-Modifiers
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 
-MAN3=	Teng.3 \
-	Teng::Iterator.3 \
-	Teng::Plugin::BulkInsert.3 \
-	Teng::Plugin::Count.3 \
-	Teng::Plugin::FindOrCreate.3 \
-	Teng::Plugin::Lookup.3 \
-	Teng::Plugin::Pager.3 \
-	Teng::Plugin::Pager::MySQLFoundRows.3 \
-	Teng::Plugin::Replace.3 \
-	Teng::Plugin::SQLPager.3 \
-	Teng::Plugin::SingleBySQL.3 \
-	Teng::QueryBuilder.3 \
-	Teng::Row.3 \
-	Teng::Schema.3 \
-	Teng::Schema::Declare.3 \
-	Teng::Schema::Dumper.3 \
-	Teng::Schema::Loader.3 \
-	Teng::Schema::Table.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

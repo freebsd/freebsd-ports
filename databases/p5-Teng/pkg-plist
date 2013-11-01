@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Teng/.packlist
 %%SITE_PERL%%/Teng.pm
 %%SITE_PERL%%/Teng/Iterator.pm
 %%SITE_PERL%%/Teng/Plugin/BulkInsert.pm
@@ -17,8 +16,25 @@
 %%SITE_PERL%%/Teng/Schema/Dumper.pm
 %%SITE_PERL%%/Teng/Schema/Loader.pm
 %%SITE_PERL%%/Teng/Schema/Table.pm
+%%PERL5_MAN3%%/Teng.3.gz
+%%PERL5_MAN3%%/Teng::Iterator.3.gz
+%%PERL5_MAN3%%/Teng::Plugin::BulkInsert.3.gz
+%%PERL5_MAN3%%/Teng::Plugin::Count.3.gz
+%%PERL5_MAN3%%/Teng::Plugin::FindOrCreate.3.gz
+%%PERL5_MAN3%%/Teng::Plugin::Lookup.3.gz
+%%PERL5_MAN3%%/Teng::Plugin::Pager.3.gz
+%%PERL5_MAN3%%/Teng::Plugin::Pager::MySQLFoundRows.3.gz
+%%PERL5_MAN3%%/Teng::Plugin::Replace.3.gz
+%%PERL5_MAN3%%/Teng::Plugin::SQLPager.3.gz
+%%PERL5_MAN3%%/Teng::Plugin::SingleBySQL.3.gz
+%%PERL5_MAN3%%/Teng::QueryBuilder.3.gz
+%%PERL5_MAN3%%/Teng::Row.3.gz
+%%PERL5_MAN3%%/Teng::Schema.3.gz
+%%PERL5_MAN3%%/Teng::Schema::Declare.3.gz
+%%PERL5_MAN3%%/Teng::Schema::Dumper.3.gz
+%%PERL5_MAN3%%/Teng::Schema::Loader.3.gz
+%%PERL5_MAN3%%/Teng::Schema::Table.3.gz
 @dirrm %%SITE_PERL%%/Teng/Schema
 @dirrm %%SITE_PERL%%/Teng/Plugin/Pager
 @dirrm %%SITE_PERL%%/Teng/Plugin
 @dirrm %%SITE_PERL%%/Teng
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Teng
