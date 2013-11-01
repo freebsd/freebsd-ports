@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/namespace::autoclean.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/namespace/autoclean/.packlist
 %%SITE_PERL%%/namespace/autoclean.pm
 @dirrmtry %%SITE_PERL%%/namespace

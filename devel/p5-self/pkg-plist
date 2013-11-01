@@ -1,3 +1,5 @@
+%%PERL5_MAN3%%/self.3.gz
+%%PERL5_MAN3%%/self::implicit.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/self/.packlist
 %%SITE_PERL%%/self.pm
 %%SITE_PERL%%/self/implicit.pm

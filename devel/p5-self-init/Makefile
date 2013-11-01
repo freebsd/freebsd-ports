@@ -14,10 +14,7 @@ TEST_DEPENDS=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings \
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Invoke package init methods at compile time
 
-MAN3=	self::init.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

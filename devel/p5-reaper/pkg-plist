@@ -1,4 +1,6 @@
+%%PERL5_MAN3%%/Reaper.3.gz
+%%PERL5_MAN3%%/reaper.3.gz
+%%SITE_PERL%%/Reaper.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Reaper/.packlist
 %%SITE_PERL%%/reaper.pm
-%%SITE_PERL%%/Reaper.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Reaper

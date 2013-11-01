@@ -1,5 +1,6 @@
-%%SITE_PERL%%/self/init.pm
+%%PERL5_MAN3%%/self::init.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/self/init/.packlist
+%%SITE_PERL%%/self/init.pm
 @dirrmtry %%SITE_PERL%%/self
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/self/init
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/self/init
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/self

@@ -14,7 +14,4 @@ COMMENT=	Use the latest Perl features
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=	latest.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

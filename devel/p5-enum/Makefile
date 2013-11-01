@@ -10,13 +10,9 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	\
-	Defines symbolic constants with ordered numeric values, like C enums
+COMMENT=	Defines symbolic constants with ordered numeric values, like C enums
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		enum.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

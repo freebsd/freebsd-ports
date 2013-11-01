@@ -16,9 +16,4 @@ PORTSCOUT=	skipv:0.30_01
 USES=		perl5
 USE_PERL5=	modbuild
 
-PLIST_FILES=	${SITE_PERL_REL}/aliased.pm
-
-MAN3=	aliased.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

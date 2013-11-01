@@ -1,4 +1,4 @@
+%%PERL5_MAN3%%/prefork.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/prefork/.packlist
 %%SITE_PERL%%/prefork.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/prefork
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/prefork
