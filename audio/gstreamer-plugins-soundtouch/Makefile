@@ -10,6 +10,5 @@ COMMENT=	GStreamer soundtouch plugin
 GST_PLUGIN=	soundtouch
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

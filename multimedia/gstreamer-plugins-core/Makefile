@@ -14,12 +14,12 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Core set of typical audio and video gstreamer-plugins
 
 NO_BUILD=	yes
+NO_MTREE=	yes
 GST_DIR=	lib/gstreamer-${PORTVERSION}
 PLIST_FILES=	${GST_DIR}/.gstreamer-plugins-core.keep
 
 WANT_GSTREAMER=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Audio plugins

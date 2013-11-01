@@ -8,6 +8,5 @@ CATEGORIES=	audio
 GST_PLUGIN=	wavpack
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

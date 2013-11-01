@@ -10,6 +10,5 @@ COMMENT=	Gstreamer gsm encoding/decoding plugin
 GST_PLUGIN=	gsm
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

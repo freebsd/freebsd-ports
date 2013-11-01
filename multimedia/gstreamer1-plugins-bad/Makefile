@@ -21,7 +21,6 @@ BAD_GST_DIRS=	gst-libs sys gst po pkgconfig
 NO_GSTREAMER_COMMON=	yes
 PLIST=		${.CURDIR}/pkg-plist
 
-NO_STAGE=	yes
 do-build:
 .for dir in ${BAD_GST_DIRS}
 	@(cd ${BUILD_WRKSRC}/${dir}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})

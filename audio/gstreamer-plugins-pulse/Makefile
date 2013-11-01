@@ -9,6 +9,5 @@ COMMENT=	GStreamer plugin for pulseaudio
 GST_PLUGIN=	pulse
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

@@ -10,6 +10,5 @@ COMMENT=	Gstreamer OpenSPC frontend
 GST_PLUGIN=	spc
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

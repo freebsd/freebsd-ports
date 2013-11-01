@@ -10,6 +10,5 @@ COMMENT=	Gstreamer low-latency audio server plugin
 GST_PLUGIN=	jack
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

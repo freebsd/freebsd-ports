@@ -14,7 +14,6 @@ LICENSE=	MIT
 
 CFLAGS:=	${CFLAGS} -O2
 USES=		pkgconfig
-NO_STAGE=	yes
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
 PLIST_FILES=	lib/gstreamer-0.10/libgstflump3dec.la \

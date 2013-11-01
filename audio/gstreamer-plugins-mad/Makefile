@@ -10,6 +10,5 @@ COMMENT=	Gstreamer mp3 decoder plugin
 GST_PLUGIN=	mad
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

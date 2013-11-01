@@ -11,5 +11,4 @@ GST_PLUGIN=	mpeg2enc
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -10,6 +10,5 @@ COMMENT=	Gstreamer frontend to libcdaudio
 GST_PLUGIN=	cdaudio
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

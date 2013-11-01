@@ -9,6 +9,5 @@ COMMENT=	Gstreamer High-quality free MP2 encoder plugin
 GST_PLUGIN=	twolame
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

@@ -14,13 +14,14 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Gstreamer Plugins Mp3 decoder meta-port
 
 NO_BUILD=	yes
+NO_INSTALL=	yes
+NO_MTREE=	yes
 WANT_GSTREAMER=	yes
 
 OPTIONS_MULTI=	MP3
 OPTIONS_MULTI_MP3=	MAD FLUENDO
 OPTIONS_DEFAULT=	MAD
 FLUENDO_DESC=	Use Fluendo Mp3 decoder
-NO_STAGE=	yes
 
 .include <bsd.port.options.mk>
 
@@ -31,7 +32,5 @@ USE_GSTREAMER+=	mad
 .if ${PORT_OPTIONS:MFLUENDO}
 USE_GSTREAMER+=	fluendo-mp3
 .endif
-
-do-install:
 
 .include <bsd.port.mk>

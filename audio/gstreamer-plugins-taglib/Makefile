@@ -10,6 +10,5 @@ COMMENT=	Gstreamer taglib plugin
 GST_PLUGIN=	taglib
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

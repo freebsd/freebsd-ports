@@ -10,6 +10,5 @@ COMMENT=	Gstreamer enlightenment sound library plugin
 GST_PLUGIN=	esound
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

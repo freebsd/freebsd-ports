@@ -12,5 +12,4 @@ GST_PLUGIN=	gdk_pixbuf
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -10,6 +10,5 @@ COMMENT=	Gstreamer Ogg bitstream plugin
 GST_PLUGIN=	ogg
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

@@ -20,7 +20,6 @@ USE_GSTREAMER=	yes
 PLIST_FILES=	lib/gstreamer-0.10/libgnl.la \
 		lib/gstreamer-0.10/libgnl.so
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' ${WRKSRC}/configure
 

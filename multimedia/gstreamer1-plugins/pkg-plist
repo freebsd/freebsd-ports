@@ -173,6 +173,7 @@ libdata/pkgconfig/gstreamer-rtsp-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-sdp-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-tag-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-video-%%VERSION%%.pc
+man/man1/gst-discoverer-1.0.1.gz
 share/gir-1.0/GstApp-%%VERSION%%.gir
 share/gir-1.0/GstAudio-%%VERSION%%.gir
 share/gir-1.0/GstFft-%%VERSION%%.gir

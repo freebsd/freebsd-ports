@@ -9,6 +9,5 @@ COMMENT=	Gstreamer game-music-emu (libgme) frontend
 GST_PLUGIN=	gme
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"
