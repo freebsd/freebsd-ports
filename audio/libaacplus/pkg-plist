@@ -5,3 +5,4 @@ lib/libaacplus.la
 lib/libaacplus.so
 lib/libaacplus.so.2
 libdata/pkgconfig/aacplus.pc
+man/man1/aacplusenc.1.gz

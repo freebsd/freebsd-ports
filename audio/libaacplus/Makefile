@@ -19,11 +19,9 @@ RESTRICTED=	unclear legal status, probably need licenses from 3GPP, Via Licensin
 CONFLICTS=	aacplusenc-0*
 
 USE_CSTD=	gnu89
-NO_STAGE=	yes
 USES=		pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool libtoolize aclocal autoheader automake
-GNOME_MAKEFILEIN=	Makefile.am
 PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
@@ -31,16 +29,15 @@ MAKE_JOBS_UNSAFE=	yes
 AUTOMAKE_ARGS=	--add-missing
 LIBTOOLIZE_ARGS=--automake
 
-MAN1=		aacplusenc.1
-
 OPTIONS_DEFINE=	FFTW3
 OPTIONS_DEFAULT=FFTW3
-FFTW3_DESC=	Use FFTW3
+
+FFTW3_DESC=	Use FFTW3 library for performance
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFFTW3}
-LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3\
+LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3 \
 		fftw3f:${PORTSDIR}/math/fftw3-float
 CONFIGURE_ARGS+=--with-fftw3=yes --with-fftw3-prefix=${LOCALBASE}
 .else
@@ -49,7 +46,9 @@ CONFIGURE_ARGS+=--with-fftw3=no
 
 pre-configure:
 	@${CP} ${DISTDIR}/26410-800.zip ${WRKSRC}/src
-	@${REINPLACE_CMD} -e 's,@includedir@\/aacplus,@prefix@\/include,' ${WRKSRC}/aacplus.pc.in
-	@${REINPLACE_CMD} -e 's,\/aacplus\.h,\/libaacplus\/aacplus\.h,' ${WRKSRC}/aacplus.spec.in
+	@${REINPLACE_CMD} -e 's,@includedir@\/aacplus,@prefix@\/include,' \
+		${WRKSRC}/aacplus.pc.in
+	@${REINPLACE_CMD} -e 's,\/aacplus\.h,\/libaacplus\/aacplus\.h,' \
+		${WRKSRC}/aacplus.spec.in
 
 .include <bsd.port.mk>
