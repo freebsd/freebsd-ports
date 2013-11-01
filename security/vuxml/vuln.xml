@@ -173,7 +173,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>gnutls3</name>
-	<range><lt>3.1.15</lt></range>
+	<range><lt>3.1.16</lt></range>
       </package>
     </affects>
     <description>
