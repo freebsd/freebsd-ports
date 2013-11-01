@@ -106,7 +106,7 @@ GSM_CONFIGURE_ENABLE=	libgsm
 ICONV_USES=	iconv
 ICONV_CONFIGURE_ENABLE=	iconv
 
-JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audi/jack
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 JACK_CONFIGURE_OFF=	--disable-indev=jack
 
 # lame
