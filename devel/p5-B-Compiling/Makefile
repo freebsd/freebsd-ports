@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	B-Compiling
-PORTVERSION=	0.02
+PORTVERSION=	0.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	B::Compiling.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
