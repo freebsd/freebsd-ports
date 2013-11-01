@@ -20,5 +20,4 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	lib/gstreamer-0.10/libgstflumpegdemux.la \
 		lib/gstreamer-0.10/libgstflumpegdemux.so
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -21,7 +21,6 @@ PLIST_SUB=	VERSION="${GST_VERSION}"
 NO_GSTREAMER_COMMON=	yes
 PLIST=	${.CURDIR}/pkg-plist
 
-NO_STAGE=	yes
 do-build:
 .for dir in ${UGLY_GST_DIRS}
 	@(cd ${BUILD_WRKSRC}/${dir}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})

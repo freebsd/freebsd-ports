@@ -10,6 +10,5 @@ COMMENT=	Gstreamer vorbis encoder/decoder plugin
 GST_PLUGIN=	vorbis
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

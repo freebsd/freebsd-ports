@@ -9,6 +9,5 @@ COMMENT=	Gstreamer flite run-time speech synthesis engine plugin
 GST_PLUGIN=	flite
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

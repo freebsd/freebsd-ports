@@ -10,6 +10,5 @@ COMMENT=	Gstreamer speex voice plugin
 GST_PLUGIN=	speex
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

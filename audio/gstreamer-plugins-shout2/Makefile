@@ -10,6 +10,5 @@ COMMENT=	Gstreamer icecast plugin
 GST_PLUGIN=	shout2
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

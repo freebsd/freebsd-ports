@@ -15,8 +15,10 @@ COMMENT=	Meta-port of all gstreamer plugins with options
 
 .MAKE.FreeBSD_UL=	yes
 NO_BUILD=	yes
+NO_INSTALL=	yes
+NO_MTREE=	yes
 USE_GSTREAMER=	yes
-NO_STAGE=	yes
+
 .include "${.CURDIR}/../../Mk/bsd.gstreamer.mk"
 
 .for all in ${_GSTREAMER_PLUGINS}
@@ -44,7 +46,5 @@ PORT_OPTIONS:=	${PORT_OPTIONS:NSPC} # i386 only
 USE_GSTREAMER+=	${f:L}
 .endif
 .endfor
-
-do-install:	# empty
 
 .include <bsd.port.post.mk>

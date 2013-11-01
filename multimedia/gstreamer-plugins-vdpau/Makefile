@@ -10,5 +10,4 @@ GST_PLUGIN=	vdpau
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

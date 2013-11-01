@@ -10,6 +10,5 @@ COMMENT=	Gstreamer Commodore SID decoder plugin
 GST_PLUGIN=	sidplay
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

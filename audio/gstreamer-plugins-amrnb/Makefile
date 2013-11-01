@@ -9,6 +9,5 @@ COMMENT=	Gstreamer OpenCore based Adaptive Multi-Rate Narrow-Band plugin
 GST_PLUGIN=	amrnb
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

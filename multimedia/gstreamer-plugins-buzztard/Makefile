@@ -11,7 +11,7 @@ DISTNAME=	gst-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Buzztard gstreamer plugins
 
-LIB_DEPENDS=	fluidsynth.1:${PORTSDIR}/audio/fluidsynth
+LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
 
 USES=		pkgconfig
 USE_AUTOTOOLS=	libtool
@@ -20,7 +20,6 @@ USE_GNOME=	gnomehack ltverhack
 USE_LDCONFIG=	yes
 PLIST_SUB=	GST_VERSION="${GST_VERSION}"
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${datadir}/gtk-doc/html|${DOCSDIR}|' \
 		${WRKSRC}/configure

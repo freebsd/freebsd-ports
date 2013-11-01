@@ -135,6 +135,12 @@ libdata/pkgconfig/gstreamer-controller-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-dataprotocol-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-net-%%VERSION%%.pc
 libexec/gstreamer-%%VERSION%%/gst-plugin-scanner
+man/man1/gst-feedback-0.10.1.gz
+man/man1/gst-inspect-0.10.1.gz
+man/man1/gst-launch-0.10.1.gz
+man/man1/gst-typefind-0.10.1.gz
+man/man1/gst-xmlinspect-0.10.1.gz
+man/man1/gst-xmllaunch-0.10.1.gz
 share/aclocal/gst-element-check-%%VERSION%%.m4
 share/gir-1.0/Gst-%%VERSION%%.gir
 share/gir-1.0/GstBase-%%VERSION%%.gir

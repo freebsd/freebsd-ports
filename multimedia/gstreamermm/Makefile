@@ -12,19 +12,16 @@ COMMENT=	C++ wrapper library for the multimedia library GStreamer
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
-
 USES=		pkgconfig
 USE_XZ=		yes
 USE_GMAKE=	yes
 USE_GSTREAMER=	theora vorbis cdparanoia gio pango
-USE_GNOME=	gnomeprefix gnomehack
+USE_GNOME=	gnomeprefix gnomehack gtkmm24
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-documentation
 USE_LDCONFIG=	yes
 PLIST_SUB=	GST_VERSION="${GST_VERSION}"
 
-NO_STAGE=	yes
 post-patch:
 # Fix the build with clang
 	@${REINPLACE_CMD} -e 's|GREP "\\-L"|GREP "conftest\\.$$objext"|g' \

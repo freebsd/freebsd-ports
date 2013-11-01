@@ -11,5 +11,4 @@ PKGNAMESUFFIX?=	-plugins-v4l2
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

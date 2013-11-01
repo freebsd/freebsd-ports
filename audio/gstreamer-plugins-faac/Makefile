@@ -10,6 +10,5 @@ COMMENT=	Gstreamer MPEG-2 and MPEG-4 AAC encoder plugin
 GST_PLUGIN=	faac
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

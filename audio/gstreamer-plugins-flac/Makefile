@@ -10,6 +10,5 @@ COMMENT=	Gstreamer free lossless audio encoder/decoder plugin
 GST_PLUGIN=	flac
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

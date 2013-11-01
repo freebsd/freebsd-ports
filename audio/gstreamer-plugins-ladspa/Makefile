@@ -10,6 +10,5 @@ COMMENT=	Gstreamer ladspa (Linux Audio Developer's Simple Plugin API) plugin
 GST_PLUGIN=	ladspa
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

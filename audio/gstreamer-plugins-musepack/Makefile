@@ -10,6 +10,5 @@ COMMENT=	Gstreamer musepack mpc encoder/decoder plugin
 GST_PLUGIN=	musepack
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

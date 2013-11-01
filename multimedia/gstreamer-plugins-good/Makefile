@@ -24,7 +24,6 @@ FILESDIR=${.CURDIR}/files
 PATCHDIR=${.CURDIR}/files
 NO_GSTREAMER_COMMON=	yes
 
-NO_STAGE=	yes
 do-build:
 .for dir in ${GOOD_GST_DIRS}
 	@(cd ${BUILD_WRKSRC}/${dir}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})

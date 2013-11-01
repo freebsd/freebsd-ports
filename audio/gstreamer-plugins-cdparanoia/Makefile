@@ -10,6 +10,5 @@ COMMENT=	Gstreamer CDDA extraction (aka audio ripping) plugin
 GST_PLUGIN=	cdparanoia
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

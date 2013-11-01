@@ -10,6 +10,5 @@ COMMENT=	Gstreamer ATSC A/52 stream aka AC-3 (dvd audio) plugin
 GST_PLUGIN=	a52dec
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

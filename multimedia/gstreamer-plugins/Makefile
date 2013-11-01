@@ -21,8 +21,8 @@ COMMENT?=	GStreamer written collection of plugins handling several media types
 BUILD_DEPENDS+=	v4l_compat>=1.0.20110720:${PORTSDIR}/multimedia/v4l_compat \
 		gstreamer>=0.10.36:${PORTSDIR}/multimedia/gstreamer \
 		orc>=0.4.14:${PORTSDIR}/devel/orc
-LIB_DEPENDS+=	gstreamer-0.10:${PORTSDIR}/multimedia/gstreamer \
-		orc-0.4:${PORTSDIR}/devel/orc
+LIB_DEPENDS+=	libgstreamer-0.10.so:${PORTSDIR}/multimedia/gstreamer \
+		liborc-0.4.so:${PORTSDIR}/devel/orc
 
 CFLAGS:=	${CFLAGS} -O2 -Wno-format
 
@@ -44,24 +44,19 @@ SHLIB_VERSION=	1
 VERSION=	${GST_VERSION}
 WANT_GSTREAMER=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_GNOME+=	gnomehack ltverhack ltasneededhack
-USES=		pkgconfig gettext
+USE_GNOME+=	ltverhack ltasneededhack
+USES=		gettext gmake pathfix pkgconfig shebangfix
 USE_AUTOTOOLS=	libtool
 GST_PLUGIN?=	base
 
 CONFIGURE_ARGS=	--disable-option-checking
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${EXTRA_LIBS} ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${EXTRA_LIBS}
 CFLAGS+=	-I${LOCALBASE}/include
-
-# workaround a crash in clang 3.3 crash llvm bug # 15840
-USE_GCC=	any
 
 DEFAULT_AUDIOSINK?=	osssink
 DEFAULT_AUDIOSRC?=	osssrc
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH}=="i386"
@@ -75,9 +70,9 @@ gst_base_DIST=	base
 NO_GSTREAMER_COMMON=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xv xext videoproto xextproto
-MAN1=		gst-visualise-0.10.1
 PLIST_SUB+=	VERSION="${VERSION}" \
 		SHLIB_VERSION="${SHLIB_VERSION}"
+SHEBANG_FILES=	tools/gst-visualise-m.m
 .else
 USE_GSTREAMER=	yes
 .endif
@@ -167,5 +162,17 @@ post-patch:
 	-@${REINPLACE_CMD} -e 's|-Wl,--as-needed||g' \
 		${WRKSRC}/../gnome-libtool
 .endif
+
+# workaround a crash in clang 3.3 crash llvm bug # 15840
+.if ((${OSVERSION} >= 901504 && ${OSVERSION} < 902502) || \
+     (${OSVERSION} >= 1000037 && ${OSVERSION} < 1000056))
+USE_GCC=	any
+.endif
+
+post-install:
+.if ${GST_PLUGIN}==base
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgst*.so.0
+.endif
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gstreamer-0.10/lib*.so
 
 .include <bsd.port.post.mk>

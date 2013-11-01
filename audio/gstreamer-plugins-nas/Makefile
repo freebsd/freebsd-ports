@@ -10,6 +10,5 @@ COMMENT=	GStreamer NAS (Network Audio System) plugin
 GST_PLUGIN=	nas
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
-NO_STAGE=	yes
 
 .include "${MASTERDIR}/Makefile"

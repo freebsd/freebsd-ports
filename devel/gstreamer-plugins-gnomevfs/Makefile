@@ -11,5 +11,4 @@ GST_PLUGIN=	gnomevfs
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
