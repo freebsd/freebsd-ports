@@ -1,18 +1,15 @@
+bin/gen-multirules
 bin/lifeconv
 bin/table2r
 bin/xlife
+man/man6/lifeconv.6.gz
+man/man6/xlife.6.gz
 %%DATADIR%%/patterns/boundedgrid/14-2-t.l
 %%DATADIR%%/patterns/boundedgrid/beginning-plain.l
 %%DATADIR%%/patterns/boundedgrid/beginning-torus.l
 %%DATADIR%%/patterns/boundedgrid/glider-torus.l
 %%DATADIR%%/patterns/boundedgrid/ice-nine-24.l
 %%DATADIR%%/patterns/boundedgrid/snowflakes.l
-%%DATADIR%%/patterns/codd/Codd.colors
-%%DATADIR%%/patterns/codd/codd.r
-%%DATADIR%%/patterns/codd/coders-demo.l
-%%DATADIR%%/patterns/codd/construction-arm-demo.l
-%%DATADIR%%/patterns/codd/lr-growth.l
-%%DATADIR%%/patterns/codd/tape-reader-demo.l
 %%DATADIR%%/patterns/formats/123p271_105.lif
 %%DATADIR%%/patterns/formats/13enginecordership.rle
 %%DATADIR%%/patterns/formats/17c45reaction.cells
@@ -25,46 +22,15 @@ bin/xlife
 %%DATADIR%%/patterns/langton/langton-ant.r
 %%DATADIR%%/patterns/langton/langton-loop.r
 %%DATADIR%%/patterns/langton/loop.l
-%%DATADIR%%/patterns/life/Eric_Angelini_integer_glider_gun.l
-%%DATADIR%%/patterns/life/acorn.l
-%%DATADIR%%/patterns/life/bi-gun.l
-%%DATADIR%%/patterns/life/bunnies.l
-%%DATADIR%%/patterns/life/cmu.l
-%%DATADIR%%/patterns/life/futility.l
-%%DATADIR%%/patterns/life/match.l
-%%DATADIR%%/patterns/life/named-patterns
-%%DATADIR%%/patterns/life-like/2-expanding-rakes.l
-%%DATADIR%%/patterns/life-like/DNShips.l
-%%DATADIR%%/patterns/life-like/Day-and-Night-gun-and-antigun.l
-%%DATADIR%%/patterns/life-like/S8B0+.l
-%%DATADIR%%/patterns/life-like/breeder2.l
-%%DATADIR%%/patterns/life-like/brians-brain/Giles_BBP3.l
-%%DATADIR%%/patterns/life-like/brians-brain/Giles_butterfly_gun.l
-%%DATADIR%%/patterns/life-like/brians-brain/Stretcher.l
-%%DATADIR%%/patterns/life-like/brians-brain/butterfly.l
-%%DATADIR%%/patterns/life-like/brians-brain/gen3.l
-%%DATADIR%%/patterns/life-like/brians-brain/puffer-l1.l
-%%DATADIR%%/patterns/life-like/brians-brain/puffer-l2.l
-%%DATADIR%%/patterns/life-like/coral.l
-%%DATADIR%%/patterns/life-like/enterprise-gun.l
-%%DATADIR%%/patterns/life-like/highlife.l
 %%DATADIR%%/patterns/life-like/osc-b3-s23-g32.l
-%%DATADIR%%/patterns/life-like/p168-knightship.l
-%%DATADIR%%/patterns/life-like/persian-rugs.l
-%%DATADIR%%/patterns/life-like/replicator.l
-%%DATADIR%%/patterns/life-like/spiral-growth.l
-%%DATADIR%%/patterns/life-like/white-whale.l
 %%DATADIR%%/patterns/pd/lloyd-torus.l
 %%DATADIR%%/patterns/pd/lloyd.l
 %%DATADIR%%/patterns/pd/lloyd2.l
 %%DATADIR%%/patterns/pd/osc-3.l
 @dirrm %%DATADIR%%/patterns/pd
-@dirrm %%DATADIR%%/patterns/life-like/brians-brain
 @dirrm %%DATADIR%%/patterns/life-like
-@dirrm %%DATADIR%%/patterns/life
 @dirrm %%DATADIR%%/patterns/langton
 @dirrm %%DATADIR%%/patterns/formats
-@dirrm %%DATADIR%%/patterns/codd
 @dirrm %%DATADIR%%/patterns/boundedgrid
 @dirrm %%DATADIR%%/patterns
 @dirrm %%DATADIR%%
