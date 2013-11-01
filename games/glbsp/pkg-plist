@@ -1,3 +1,4 @@
 bin/glbsp
-%%GUI_VERSION%%bin/glBSPX
+man/man1/glbsp.1.gz
+%%GUI%%bin/glBSPX
 %%PLUGIN%%lib/libglbsp.a
