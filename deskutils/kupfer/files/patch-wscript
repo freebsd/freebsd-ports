@@ -1,0 +1,29 @@
+--- wscript.orig	2013-01-22 20:54:49.000000000 +0100
++++ wscript	2013-04-17 11:25:11.000000000 +0200
+@@ -265,16 +265,16 @@
+ 		)
+ 		bld.add_group()
+ 		# compress and install man page
+-		manpage = bld.new_task_gen(
+-			source = "kupfer.1",
+-			target = "kupfer.1.gz",
+-			rule = 'gzip -9 -c ${SRC} > ${TGT}',
+-			install_path = "${MANDIR}/man1",
+-		)
+-		man_path = Utils.subst_vars(
+-				os.path.join(manpage.install_path, manpage.target),
+-				bld.env)
+-		bld.symlink_as("${MANDIR}/man1/kupfer-exec.1.gz", man_path)
++#		manpage = bld.new_task_gen(
++#			source = "kupfer.1",
++#			target = "kupfer.1.gz",
++#			rule = 'gzip -9 -c ${SRC} > ${TGT}',
++#			install_path = "${MANDIR}/man1",
++#		)
++#		man_path = Utils.subst_vars(
++#				os.path.join(manpage.install_path, manpage.target),
++#				bld.env)
++#		bld.symlink_as("${MANDIR}/man1/kupfer-exec.1.gz", man_path)
+ 
+ 	# Separate subdirectories
+ 	bld.add_subdirs(build_subdirs)
