@@ -21,10 +21,7 @@ RUN_DEPENDS=	p5-Unicode-String>=0:${PORTSDIR}/converters/p5-Unicode-String
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Unicode::IMAPUtf7.3
-
 post-extract:	# breaks non-root build otherwise
 	@${FIND} ${WRKSRC} -type d | ${XARGS} ${CHMOD} a+rx
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

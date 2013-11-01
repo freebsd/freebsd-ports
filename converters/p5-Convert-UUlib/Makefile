@@ -16,16 +16,12 @@ COMMENT=	Perl5 interface to the uulib library (a.k.a. uudeview/uuenview)
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Convert::UUlib.3
-NO_STAGE=	yes
-
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README
 
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

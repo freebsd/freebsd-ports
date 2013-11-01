@@ -1,7 +1,8 @@
-bin/mirrorMappings
-bin/mkmapfile
 bin/map
+bin/mirrorMappings
 bin/mkCSGB2312
+bin/mkmapfile
+%%PERL5_MAN3%%/Unicode::Map.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/ADOBE/STDENC.map
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/ADOBE/SYMBOL.map
@@ -96,21 +97,23 @@ bin/mkCSGB2312
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/MS/WIN/CP950.map
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/NEXT/NEXTSTEP.map
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/REGISTRY
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map/Map.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map/Map.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/ADOBE
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/APPLE
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/EASTASIA
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/IBM
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/ISO
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/MS/DOS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/MS/EBCDIC
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/MS/MAC
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/MS/WIN
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/MS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/NEXT
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map
+man/man1/map.1.gz
+man/man1/mkmapfile.1.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/NEXT
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/MS/WIN
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/MS/MAC
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/MS/EBCDIC
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/MS/DOS
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/MS
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/ISO
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/IBM
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/EASTASIA
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/APPLE
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/ADOBE
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode

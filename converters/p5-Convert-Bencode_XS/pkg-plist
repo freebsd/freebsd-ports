@@ -1,10 +1,11 @@
-%%EXAMPLESDIR%%/bench_decode.pl
-%%EXAMPLESDIR%%/bench_encode.pl
+%%PERL5_MAN3%%/Convert::Bencode_XS.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Convert/Bencode_XS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/Bencode_XS/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/Bencode_XS/Bencode_XS.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/Bencode_XS/Bencode_XS.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/Bencode_XS
+%%EXAMPLESDIR%%/bench_decode.pl
+%%EXAMPLESDIR%%/bench_encode.pl
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/Bencode_XS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Convert
-@dirrmtry %%EXAMPLESDIR%%

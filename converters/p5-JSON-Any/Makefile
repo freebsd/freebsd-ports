@@ -19,7 +19,4 @@ RUN_DEPENDS=	p5-JSON>=2.02:${PORTSDIR}/converters/p5-JSON
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		JSON::Any.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,12 +1,15 @@
 bin/ccconfig
+%%PERL5_MAN3%%/Convert::Binary::C.3.gz
+%%PERL5_MAN3%%/Convert::Binary::C::Cached.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Convert/Binary/C.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Convert/Binary/C/Cached.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/Binary/C/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/Binary/C/C.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/Binary/C/C.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Convert/Binary/C
+man/man1/ccconfig.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/Binary/C
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Convert/Binary
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Convert
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/Binary
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/Binary
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Convert/Binary/C
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Convert/Binary
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Convert

@@ -12,12 +12,9 @@ COMMENT=	Convert between XML and WBXML using libwbxml2
 
 LIB_DEPENDS=	wbxml2:${PORTSDIR}/textproc/wbxml2
 
-MAN3=	XML::WBXML.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,-I.,-I. -I${LOCALBASE}/include,' ${WRKSRC}/Makefile.PL
 

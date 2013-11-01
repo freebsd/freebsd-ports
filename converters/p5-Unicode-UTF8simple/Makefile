@@ -13,7 +13,4 @@ COMMENT=	Conversions to/from UTF-8 from/to charactersets
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Unicode::UTF8simple.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

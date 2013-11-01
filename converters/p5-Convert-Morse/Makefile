@@ -13,7 +13,4 @@ COMMENT=	Perl module to convert between ASCII and Morse codes
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Convert::Morse.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

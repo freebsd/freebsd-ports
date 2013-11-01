@@ -1,7 +1,10 @@
 bin/binhex.pl
 bin/debinhex.pl
+%%PERL5_MAN3%%/Convert::BinHex.3.gz
 %%SITE_PERL%%/Convert/BinHex.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/BinHex/.packlist
+man/man1/binhex.pl.1.gz
+man/man1/debinhex.pl.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/BinHex
-@dirrmtry %%SITE_PERL%%/Convert
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert
+@dirrmtry %%SITE_PERL%%/Convert
