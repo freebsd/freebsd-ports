@@ -3,6 +3,7 @@
 
 PORTNAME=	firefox
 DISTVERSION=	25.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
@@ -51,10 +52,6 @@ MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
 .include <bsd.port.pre.mk>
 
 WRKSRC:=	${WRKDIR}/mozilla-release
-
-.if ${ARCH} == i386 && ${OSVERSION} < 1000000
-USE_GCC?=	yes
-.endif
 
 post-extract:
 	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON}|' -e 's|@MOZILLA@|${MOZILLA}|' \
