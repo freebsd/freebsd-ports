@@ -14,8 +14,7 @@ COMMENT=	Freeciv standard sound set
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/data
 
-NO_STAGE=	yes
 do-install:
-	@cd ${WRKSRC}/&&${COPYTREE_SHARE} . ${DATADIR}/
+	@cd ${WRKSRC}/&&${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
