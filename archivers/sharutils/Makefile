@@ -20,8 +20,8 @@ CONFIGURE_ARGS=	--program-prefix=g --disable-uucode
 INSTALL_TARGET=	install install-man
 INFO=		sharutils
 USES=		charsetfix perl5
+OPTIONS_SUB=	yes
 
-OPTIONS_SUB=	NLS
 NLS_USES=	gettext
 NLS_CONFIGURE_ON=	--with-libintl-prefix="${LOCALBASE}"
 NLS_CONFIGURE_OFF=	--disable-nls
