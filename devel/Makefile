@@ -2318,6 +2318,7 @@
     SUBDIR += p5-MooX-Options
     SUBDIR += p5-MooX-Types-MooseLike
     SUBDIR += p5-MooX-Types-MooseLike-Numeric
+    SUBDIR += p5-MooX-late
     SUBDIR += p5-Moos
     SUBDIR += p5-Moose
     SUBDIR += p5-Moose-Autobox
