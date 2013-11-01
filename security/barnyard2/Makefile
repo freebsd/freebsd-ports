@@ -2,6 +2,7 @@
 
 PORTNAME=	barnyard2
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	pauls@utdallas.edu
@@ -37,14 +38,12 @@ ACLOCAL_ARGS=	-I m4 -I ${LOCALBASE}/share/aclocal
 
 USE_RC_SUBR=	barnyard2
 GNU_CONFIGURE=	yes
-NO_STAGE=	yes
 
 SUB_FILES=	pkg-message
 
 PORTDOCS1=	README RELEASE.NOTES
 PORTDOCS2=	INSTALL README.aruba README.database README.sguil README.snortsam
-PORTDOCS=	${PORTDOCS1} ${PORTDOCS2}
-PORTEXAMPLES=	SCHEMA_ACCESS create_db2 create_mssql create_mysql create_oracle.sql create_postgresql
+EXAMPLES=	SCHEMA_ACCESS create_db2 create_mssql create_mysql create_oracle.sql create_postgresql
 
 .include <bsd.port.options.mk>
 
@@ -62,7 +61,7 @@ CONFIGURE_ARGS+=	--disable-aruba
 
 .if ${PORT_OPTIONS:MBRO}
 BROKEN=			Bro port is in transition right now, so this is not supported at this time
-BUILD_DEPENDS+=		bro:${PORTSDIR}/security/bro-barnyard2
+LIB_DEPENDS+=		libbroccoli.so:${PORTSDIR}/security/broccoli
 CONFIGURE_ARGS+=	--enable-bro --with-broccoli=${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--disable-bro
@@ -135,22 +134,13 @@ post-patch:
 	@${REINPLACE_CMD} 's|/etc|${LOCALBASE}/etc|' \
 		${WRKSRC}/etc/barnyard2.conf
 
-post-install:
-	@${CP} ${WRKSRC}/etc/barnyard2.conf ${PREFIX}/etc/barnyard2.conf.sample
-	if [ ! -f ${PREFIX}/etc/barnyard2.conf ]; then \
-		${CP} -p ${PREFIX}/etc/barnyard2.conf.sample ${PREFIX}/etc/barnyard2.conf; \
-	fi
-
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS1} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS2} ${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/schemas && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
-.endif
-
-	@${CAT} ${PKGMESSAGE}
+do-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS1:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS2:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/schemas/|} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/barnyard2 ${STAGEDIR}${PREFIX}/bin/
+	${CP} ${WRKSRC}/etc/barnyard2.conf ${STAGEDIR}${PREFIX}/etc/barnyard2.conf.sample
 
 .include <bsd.port.mk>

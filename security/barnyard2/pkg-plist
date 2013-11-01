@@ -2,3 +2,18 @@ bin/barnyard2
 @unexec if cmp -s %D/etc/barnyard2.conf %D/etc/barnyard2.conf.sample; then rm -f %D/etc/barnyard2.conf; fi
 etc/barnyard2.conf.sample
 @exec [ -f %B/barnyard2.conf ] || cp -p %B/%f %B/barnyard2.conf
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.aruba
+%%PORTDOCS%%%%DOCSDIR%%/README.database
+%%PORTDOCS%%%%DOCSDIR%%/README.sguil
+%%PORTDOCS%%%%DOCSDIR%%/README.snortsam
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SCHEMA_ACCESS
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/create_db2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/create_mssql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/create_mysql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/create_oracle.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/create_postgresql
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
