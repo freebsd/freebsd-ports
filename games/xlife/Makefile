@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xlife
-PORTVERSION=	6.6.1
+PORTVERSION=	6.7.5
 CATEGORIES=	games
 MASTER_SITES=	http://litwr2.atspace.eu/xlife/
 
@@ -12,50 +12,57 @@ COMMENT=	John Horton Conway's Game of Life
 LICENSE=	MIT GPLv2
 LICENSE_COMB=	multi
 
+RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
+
+OPTIONS_DEFINE=	DOCS
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_BZIP2=	yes
+USES=		imake:notall
 USE_XORG=	x11
 
-MLINKS=		xlife.6 lifeconv.6
-MAN6=		xlife.6
 PORTDOCS=	*
 
 DESKTOP_ENTRIES="XLife" "" "" "${PORTNAME}" "" false
 
-DOC_FILES=	CHANGES DEVELOPMENT-TREE HACKING HOW-TO-INSTALL INSTALL \
-		MISSED README SHORT-INFO changelog.debian changelog.openbsd
+DOC_FILES=	CHANGES HACKING HOW-TO-INSTALL INSTALL MISSED README \
+		SHORT-INFO XLIFE-HISTORY.dot changelog.debian changelog.openbsd
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:
 	@${LN} -sf xlife.man ${WRKSRC}/xlife.6
 
 pre-patch:
-	@(${CAT} ${WRKDIR}/xlife6.6to6.6.1.patch | ${PATCH} -d ${WRKSRC} -p1 -s)
+.for i in xlife6.7to6.7.1.patch xlife6.7.1to6.7.2.patch xlife6.7.2to6.7.3.patch
+	@(${CAT} ${WRKDIR}/${i} | ${PATCH} -d ${WRKSRC} -p1 -s)
+.endfor
 
-do-configure:
-	@(cd ${WRKSRC} && ${SED} -e \
-		's|/usr/games|$$(PREFIX)/bin| ; \
-		 s|/usr/share|$$(PREFIX)/share| ; \
-		 s|/usr/X11R6|$$(LOCALBASE)| ; \
-		 s|-g -O3|$$(CFLAGS)| ; \
-		 s|-lstdc++|| ; \
-		 s|$$(CC) -o|$$(CXX) -o|' < Makefile.common > Makefile)
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/CDEBUGFLAGS[[:space:]]/s|^|XCOMM | ; \
+		 s|/usr/share/xlife|${DATADIR}|' ${WRKSRC}/Imakefile
+	@${REINPLACE_CMD} -e \
+		's|GAWKPATH|${LOCALBASE}/bin/gawk|' ${WRKSRC}/table2r
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} xlife ${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_SCRIPT} table2r ${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_MAN} xlife.6 ${MAN6PREFIX}/man/man6)
-	@${LN} -sf xlife ${PREFIX}/bin/lifeconv
-	@${MKDIR} ${DATADIR}/patterns
-	@(cd ${WRKSRC}/patterns && ${COPYTREE_SHARE} . ${DATADIR}/patterns)
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOC_FILES} ${DOCSDIR})
-	@${MKDIR} ${DOCSDIR}/doc
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}/doc)
-.endif
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} gen-multirules xlife \
+		${STAGEDIR}${PREFIX}/bin)
+	@${LN} -sf xlife ${STAGEDIR}${PREFIX}/bin/lifeconv
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} table2r \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_MAN} xlife.6 \
+		${STAGEDIR}${MAN6PREFIX}/man/man6)
+	@${LN} -sf xlife.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/lifeconv.6
+	@${MKDIR} ${STAGEDIR}${DATADIR}/patterns
+	(cd ${WRKSRC}/patterns && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${DATADIR}/patterns)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOC_FILES} \
+		${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/doc
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${DOCSDIR}/doc)
 
 .include <bsd.port.mk>
