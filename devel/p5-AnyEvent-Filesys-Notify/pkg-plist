@@ -4,6 +4,12 @@
 %%SITE_PERL%%/AnyEvent/Filesys/Notify/Role/Fallback.pm
 %%SITE_PERL%%/AnyEvent/Filesys/Notify/Role/Inotify2.pm
 %%SITE_PERL%%/AnyEvent/Filesys/Notify/Role/KQueue.pm
+%%PERL5_MAN3%%/AnyEvent::Filesys::Notify.3.gz
+%%PERL5_MAN3%%/AnyEvent::Filesys::Notify::Event.3.gz
+%%PERL5_MAN3%%/AnyEvent::Filesys::Notify::Role::FSEvents.3.gz
+%%PERL5_MAN3%%/AnyEvent::Filesys::Notify::Role::Fallback.3.gz
+%%PERL5_MAN3%%/AnyEvent::Filesys::Notify::Role::Inotify2.3.gz
+%%PERL5_MAN3%%/AnyEvent::Filesys::Notify::Role::KQueue.3.gz
 @dirrmtry %%SITE_PERL%%/AnyEvent/Filesys/Notify/Role
 @dirrmtry %%SITE_PERL%%/AnyEvent/Filesys/Notify
 @dirrmtry %%SITE_PERL%%/AnyEvent/Filesys
