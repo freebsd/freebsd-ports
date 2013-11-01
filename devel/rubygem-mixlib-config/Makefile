@@ -1,9 +1,5 @@
-# Ports collection makefile for:	rubygem-mixlib-config
-# Date created:				18 Mar 2010
-# Whom:					renchap@cocoa-x.com
-#
+# Created by: renchap@cocoa-x.com
 # $FreeBSD$
-#
 
 PORTNAME=	mixlib-config
 PORTVERSION=	2.0.0

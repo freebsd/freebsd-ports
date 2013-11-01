@@ -1,9 +1,5 @@
-# Ports collection makefile for:	rubygem-chef-expander
-# Date created:				13 Dec 2011
-# Whom:					Scott Sanders <scott@jssjr.com>
-#
+# Created by: Scott Sanders <scott@jssjr.com>
 # $FreeBSD$
-#
 
 PORTNAME=	chef-expander
 PORTVERSION=	11.0.0

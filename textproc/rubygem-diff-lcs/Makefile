@@ -11,7 +11,7 @@ COMMENT=	LCS-based diff library for ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=  yes
+RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/ldiff bin/htmldiff
 
 .include <bsd.port.mk>

@@ -1,9 +1,5 @@
-# Ports collection makefile for:	rubygem-chef-solr
-# Date created:				13 Dec 2011
-# Whom:					Scott Sanders <scott@jssjr.com>
-#
+# Created by: Scott Sanders <scott@jssjr.com>
 # $FreeBSD$
-#
 
 PORTNAME=	chef-solr
 PORTVERSION=	11.0.0

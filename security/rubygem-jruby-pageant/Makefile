@@ -7,7 +7,7 @@ CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	tomoyukis@reallyenglish.com
-COMMENT=	jruby-pageant allows Pageant access on JRuby + Windows
+COMMENT=	Allows Pageant access on JRuby + Windows
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
