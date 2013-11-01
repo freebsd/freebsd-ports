@@ -1,7 +1,13 @@
 @comment $FreeBSD$
 bin/bash
+@exec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells; rm -f /etc/shells.bak
+@unexec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
 bin/rbash
+@exec cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells; rm -f /etc/shells.bak
+@unexec cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
 bin/bashbug
+man/man1/bash.1.gz
+man/man1/bashbug.1.gz
 %%NLS%%share/locale/af/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/bash.mo
