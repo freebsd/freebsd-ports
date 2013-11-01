@@ -4,13 +4,15 @@
 # Remeber to check sysutils/rubygem-chef
 
 PORTNAME=	net-ssh
-PORTVERSION=	2.2.2
-PORTEPOCH=	2
+PORTVERSION=	2.6.0
+#PORTEPOCH=	2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Non-interactive SSH processing
+
+RUN_DEPENDS=	rubygem-jruby-pageant>=1.1.1:${PORTSDIR}/security/rubygem-jruby-pageant
 
 OPTIONS_DEFINE=	PROMPT_PASSPHRASES
 PROMPT_PASSPHRASES_DESC=	Prompt for passphrases on keys
