@@ -14,8 +14,6 @@ COMMENT=	Pool/snooker/billiards/carrom/etc game
 
 USES=		imake
 USE_XORG=	x11
-MAN1=		flying.1
-PLIST_FILES=	bin/flying
+PLIST_FILES=	bin/flying man/man1/flying.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
