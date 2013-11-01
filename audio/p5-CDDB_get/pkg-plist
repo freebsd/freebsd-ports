@@ -1,4 +1,5 @@
 bin/cddb.pl
+%%PERL5_MAN3%%/CDDB_get.3.gz
 %%SITE_PERL%%/CDDB_cache.pm
 %%SITE_PERL%%/CDDB_get.pm
 %%SITE_PERL%%/auto/CDDB_cache/autosplit.ix
@@ -6,5 +7,5 @@ bin/cddb.pl
 %%SITE_PERL%%/cddb.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CDDB_get/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CDDB_get
-@dirrm %%SITE_PERL%%/auto/CDDB_cache
 @dirrm %%SITE_PERL%%/auto/CDDB_get
+@dirrm %%SITE_PERL%%/auto/CDDB_cache

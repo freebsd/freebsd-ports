@@ -16,9 +16,6 @@ LICENSE=	GPLv2
 TEST_DEPENDS=	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
 USES=		perl5
-NO_STAGE=	yes
 USE_PERL5=	configure
-
-MAN3=		Audio::Scan.3
 
 .include <bsd.port.mk>

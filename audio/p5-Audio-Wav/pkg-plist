@@ -1,11 +1,14 @@
+%%PERL5_MAN3%%/Audio::Wav.3.gz
+%%PERL5_MAN3%%/Audio::Wav::Read.3.gz
+%%PERL5_MAN3%%/Audio::Wav::Write.3.gz
 %%SITE_PERL%%/Audio/Wav.pm
-%%SITE_PERL%%/Audio/Wav/Write.pm
-%%SITE_PERL%%/Audio/Wav/Write/Header.pm
 %%SITE_PERL%%/Audio/Wav/Read.pm
 %%SITE_PERL%%/Audio/Wav/Tools.pm
+%%SITE_PERL%%/Audio/Wav/Write.pm
+%%SITE_PERL%%/Audio/Wav/Write/Header.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Wav/.packlist
-@dirrm %%SITE_PERL%%/Audio/Wav/Write
-@dirrm %%SITE_PERL%%/Audio/Wav
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Wav
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio
+@dirrm %%SITE_PERL%%/Audio/Wav/Write
+@dirrm %%SITE_PERL%%/Audio/Wav
 @dirrmtry %%SITE_PERL%%/Audio

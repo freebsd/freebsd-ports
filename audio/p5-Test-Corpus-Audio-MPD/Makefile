@@ -16,9 +16,6 @@ BUILD_DEPENDS=	p5-File-ShareDir-PathClass>0:${PORTSDIR}/devel/p5-File-ShareDir-P
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
-NO_STAGE=	yes
 USE_PERL5=	modbuild
-
-MAN3=		Test::Corpus::Audio::MPD.3
 
 .include <bsd.port.mk>

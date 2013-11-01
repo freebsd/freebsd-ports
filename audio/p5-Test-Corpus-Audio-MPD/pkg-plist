@@ -1,17 +1,19 @@
+%%PERL5_MAN3%%/Test::Corpus::Audio::MPD.3.gz
 %%SITE_PERL%%/Test/Corpus/Audio/MPD.pm
+%%SITE_PERL%%/auto/share/dist/Test-Corpus-Audio-MPD/mpd.conf.template
 %%SITE_PERL%%/auto/share/dist/Test-Corpus-Audio-MPD/music/dir1/title-artist-album.ogg
 %%SITE_PERL%%/auto/share/dist/Test-Corpus-Audio-MPD/music/dir1/title-artist.ogg
 %%SITE_PERL%%/auto/share/dist/Test-Corpus-Audio-MPD/music/dir2/album.ogg
 %%SITE_PERL%%/auto/share/dist/Test-Corpus-Audio-MPD/music/title-artist-album-genre.ogg
 %%SITE_PERL%%/auto/share/dist/Test-Corpus-Audio-MPD/music/title.ogg
 %%SITE_PERL%%/auto/share/dist/Test-Corpus-Audio-MPD/playlists/test.m3u
-%%SITE_PERL%%/auto/share/dist/Test-Corpus-Audio-MPD/mpd.conf.template
-@dirrm %%SITE_PERL%%/auto/share/dist/Test-Corpus-Audio-MPD/music/dir1
-@dirrm %%SITE_PERL%%/auto/share/dist/Test-Corpus-Audio-MPD/music/dir2
-@dirrm %%SITE_PERL%%/auto/share/dist/Test-Corpus-Audio-MPD/music
 @dirrm %%SITE_PERL%%/auto/share/dist/Test-Corpus-Audio-MPD/playlists
+@dirrm %%SITE_PERL%%/auto/share/dist/Test-Corpus-Audio-MPD/music/dir2
+@dirrm %%SITE_PERL%%/auto/share/dist/Test-Corpus-Audio-MPD/music/dir1
+@dirrm %%SITE_PERL%%/auto/share/dist/Test-Corpus-Audio-MPD/music
 @dirrm %%SITE_PERL%%/auto/share/dist/Test-Corpus-Audio-MPD
 @dirrmtry %%SITE_PERL%%/auto/share/dist
+@dirrmtry %%SITE_PERL%%/auto/share
 @dirrm %%SITE_PERL%%/Test/Corpus/Audio
 @dirrm %%SITE_PERL%%/Test/Corpus
 @dirrmtry %%SITE_PERL%%/Test

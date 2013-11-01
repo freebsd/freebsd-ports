@@ -1,8 +1,14 @@
+bin/mpd-dynamic
 bin/mpd-rate
+%%PERL5_MAN3%%/Audio::MPD.3.gz
+%%PERL5_MAN3%%/Audio::MPD::Collection.3.gz
+%%PERL5_MAN3%%/Audio::MPD::Playlist.3.gz
+%%PERL5_MAN3%%/Audio::MPD::Types.3.gz
 %%SITE_PERL%%/Audio/MPD.pm
 %%SITE_PERL%%/Audio/MPD/Collection.pm
 %%SITE_PERL%%/Audio/MPD/Playlist.pm
 %%SITE_PERL%%/Audio/MPD/Types.pm
-bin/mpd-dynamic
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/MPD
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio
+man/man1/mpd-dynamic.1.gz
+man/man1/mpd-rate.1.gz
+@dirrmtry %%SITE_PERL%%/Audio/MPD
+@dirrmtry %%SITE_PERL%%/Audio

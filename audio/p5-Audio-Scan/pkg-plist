@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Scan/Scan.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Scan/Scan.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Scan/.packlist
+%%PERL5_MAN3%%/Audio::Scan.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Audio/Scan.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Scan/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Scan/Scan.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Scan/Scan.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Scan
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Audio
