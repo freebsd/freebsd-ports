@@ -1,3 +1,17 @@
+%%PERL5_MAN3%%/Data::ICal.3.gz
+%%PERL5_MAN3%%/Data::ICal::Entry.3.gz
+%%PERL5_MAN3%%/Data::ICal::Entry::Alarm::Audio.3.gz
+%%PERL5_MAN3%%/Data::ICal::Entry::Alarm::Display.3.gz
+%%PERL5_MAN3%%/Data::ICal::Entry::Alarm::Email.3.gz
+%%PERL5_MAN3%%/Data::ICal::Entry::Alarm::Procedure.3.gz
+%%PERL5_MAN3%%/Data::ICal::Entry::Event.3.gz
+%%PERL5_MAN3%%/Data::ICal::Entry::FreeBusy.3.gz
+%%PERL5_MAN3%%/Data::ICal::Entry::Journal.3.gz
+%%PERL5_MAN3%%/Data::ICal::Entry::TimeZone.3.gz
+%%PERL5_MAN3%%/Data::ICal::Entry::TimeZone::Daylight.3.gz
+%%PERL5_MAN3%%/Data::ICal::Entry::TimeZone::Standard.3.gz
+%%PERL5_MAN3%%/Data::ICal::Entry::Todo.3.gz
+%%PERL5_MAN3%%/Data::ICal::Property.3.gz
 %%SITE_PERL%%/Data/ICal.pm
 %%SITE_PERL%%/Data/ICal/Entry.pm
 %%SITE_PERL%%/Data/ICal/Entry/Alarm/Audio.pm
@@ -15,8 +29,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ICal/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ICal
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrmtry %%SITE_PERL%%/Data/ICal/Entry/TimeZone
-@dirrmtry %%SITE_PERL%%/Data/ICal/Entry/Alarm
-@dirrmtry %%SITE_PERL%%/Data/ICal/Entry
+@dirrm %%SITE_PERL%%/Data/ICal/Entry/TimeZone
+@dirrm %%SITE_PERL%%/Data/ICal/Entry/Alarm
+@dirrm %%SITE_PERL%%/Data/ICal/Entry
 @dirrmtry %%SITE_PERL%%/Data/ICal
 @dirrmtry %%SITE_PERL%%/Data
