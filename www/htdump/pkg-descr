@@ -1,7 +1,7 @@
-HTdump is an automation utility to retrieve URLs and write them to a file, or
-process them through a pipeline. It is also a very usefull tool for web
-developer who work low level, for example with CGI binaries. This makes a
-perfect debugging tool, since it allows usual but also rfc-illegal operations.
-Packet level debugging is included in this tool.
+HTdump is an automation utility to retrieve URLs and write them to a
+file, or process them through a pipeline. It is also a very usefull tool
+for web developer who work low level, for example with CGI binaries.
+This makes a perfect debugging tool, since it allows usual but also
+rfc-illegal operations. Packet level debugging is included in this tool.
 
 WWW: http://ivo.palli.nl/prog/linux/htdump/overview.html

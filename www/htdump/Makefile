@@ -2,21 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	htdump
-PORTVERSION=	0.9x
-PORTREVISION=	1
+PORTVERSION=	0.9y
 CATEGORIES=	www
 MASTER_SITES=	http://ivo.palli.nl/prog/linux/htdump/bin/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool to retrieve WWW data
+COMMENT=	Tool to retrieve WWW data
+
+LICENSE=	AL2
 
 OPTIONS_DEFINE=	SSL
 OPTIONS_DEFAULT=SSL
 
-CFLAGS+=	${CPPFLAGS}
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LFLAGS="-s ${LDFLAGS}"
+PLIST_FILES=	bin/htdump
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
@@ -24,9 +23,16 @@ USE_OPENSSL=	yes
 ALL_TARGET=	ssl
 .endif
 
-PLIST_FILES=	bin/htdump
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^CFLAGS|#CFLAGS| ; \
+		 s|^CC|#CC| ; \
+		 s|$$(LFLAGS)|$$(LDFLAGS)| ; \
+		 s|-L/usr/local/ssl/lib|| ; \
+		 s|%.o: %.c|| ; \
+		 s|-I /usr/local/ssl/include|$$(CPPFLAGS)|' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/htdump ${PREFIX}/bin
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} htdump ${STAGEDIR}${PREFIX}/bin)
 
 .include <bsd.port.mk>
