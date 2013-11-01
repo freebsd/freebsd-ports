@@ -21,11 +21,10 @@ USE_MYSQL=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
-	@${CP} ${DISTDIR}/${PORTNAME}.sh \
-		${PREFIX}/bin/${PORTNAME}
-	@${CHMOD} 755 ${PREFIX}/bin/${PORTNAME}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}.sh \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${CHMOD} 755 ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${ECHO_CMD} '@exec ${CHMOD} 755 ${PREFIX}/bin/${PORTNAME}' \
 		>> ${TMPPLIST}
 
