@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	repsnapper
-PORTVERSION=	2.2.0b3
-PORTREVISION=	1
+PORTVERSION=	2.3.0a4
 CATEGORIES=	cad
 MASTER_SITES=	https://codeload.github.com/timschmidt/repsnapper/tar.gz/
 DISTNAME=	${PORTVERSION}
@@ -41,17 +40,12 @@ USE_GL=		gl
 USE_AUTOTOOLS=	automake libtool
 USE_XORG=	ice pixman sm x11 xau xcb xcomposite xcursor xdamage xdmcp \
 		xext xfixes xi xinerama xmu xrandr xrender xt xxf86vm
+INSTALLS_ICONS=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 INSTALL_TARGET=	install-strip
@@ -67,12 +61,9 @@ post-configure:
 		${WRKSRC}/po/Makefile
 
 post-install:
-	${MKDIR} ${PREFIX}/etc/xdg/repsnapper
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/xdg/repsnapper
 	${INSTALL_DATA} ${WRKSRC}/src/repsnapper.conf \
-		${PREFIX}/etc/xdg/repsnapper/repsnapper.conf.sample
-	@if [ ! -f ${PREFIX}/etc/xdg/repsnapper/repsnapper.conf ]; then \
-		${CP} -p ${PREFIX}/etc/xdg/repsnapper/repsnapper.conf.sample \
-			${PREFIX}/etc/xdg/repsnapper/repsnapper.conf ; \
-	fi
+		${STAGEDIR}${PREFIX}/etc/xdg/repsnapper/repsnapper.conf.sample
+
 
 .include <bsd.port.mk>
