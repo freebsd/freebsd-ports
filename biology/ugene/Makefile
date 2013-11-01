@@ -5,6 +5,9 @@ PORTNAME=	ugene
 DISTVERSION=	1.12.3
 CATEGORIES=	biology
 MASTER_SITES=	http://ugene.unipro.ru/downloads/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTDOCS}
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	h2+fbsdports@fsfe.org
 COMMENT=	Free, open-source, cross-platform bioinformatics toolkit
@@ -28,6 +31,13 @@ QMAKE_ARGS=	INSTALL_PREFIX=${PREFIX} UGENE_INSTALL_DATA=${DATADIR} \
 		INSTALL_MANDIR=${MAN1PREFIX}/man
 ALL_TARGET=	release
 
+DOCSDIR=	${DATADIR}/manuals
+PORTDOCS=	QueryDesigner_UserManual.pdf UniproUGENE_UserManual.pdf \
+		WorkflowDesigner_UserManual.pdf
+
+OPTIONS_DEFINE=	DOCS
+DOCS_DESC=	Install official UGENE documentation (PDF)
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 1000054
@@ -45,6 +55,9 @@ PLIST_SUB=	NOX64=""
 .if ${MACHINE_CPU:Msse2}
 QMAKE_ARGS+=	UGENE_SSE2_DETECTED=1
 .endif
+
+post-extract:
+	${CP} -p ${_DISTDIR}/*.pdf ${WRKSRC}/data/manuals
 
 post-patch:
 # yes, bash is required, stuff will not execute with sh

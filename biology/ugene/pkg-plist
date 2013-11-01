@@ -1276,7 +1276,6 @@ share/pixmaps/ugene.xpm
 @dirrm %%DATADIR%%/position_weight_matrix/JASPAR/fungi
 @dirrm %%DATADIR%%/position_weight_matrix/JASPAR
 @dirrm %%DATADIR%%/position_weight_matrix
-@dirrm %%DATADIR%%/manuals
 @dirrm %%DATADIR%%/enzymes
 @dirrm %%DATADIR%%/cmdline
 @dirrm %%DATADIR%%/biostruct3d_plugin
