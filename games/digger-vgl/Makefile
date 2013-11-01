@@ -14,30 +14,24 @@ ONLY_FOR_ARCHS=	i386	# Alphas don't have libvgl yet...
 
 MAKEFILE=	Makefile.fbsd
 
-.if defined(WITH_SOUND)
+OPTIONS_DEFINE=	SOUND
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSOUND}
 USE_SDL=	yes
 MAKE_ENV=	SOUND=yes
-.endif
-
-NO_STAGE=	yes
-pre-everything::
-.if !defined(WITH_SOUND)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Please use \"make -DWITH_SOUND\" if you want to build the game with sound support."
-	@${ECHO_MSG} ""
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|Software|Software\\n\\|g' ${WRKSRC}/alpha.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/digger ${PREFIX}/bin
-	@${MKDIR} /var/games/digger
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/digger.txt ${DOCSDIR}
-.endif
-.if defined(WITH_SOUND)
+	${INSTALL_PROGRAM} ${WRKSRC}/digger ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}/var/games/digger
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/digger.txt ${STAGEDIR}${DOCSDIR}
+.if ${PORT_OPTIONS:MSOUND}
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Use \"digger /A\" command to run Digger with sound enabled."
 	@${ECHO_MSG}
