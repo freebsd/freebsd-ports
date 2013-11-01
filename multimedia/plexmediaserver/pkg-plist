@@ -1731,8 +1731,6 @@
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/connection_test.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/myplex.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/myplex@2x.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/navbar/alert.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/navbar/alert@2x.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/navbar/divider.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/plugins/flash.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/plugins/silverlight.png
@@ -1771,7 +1769,6 @@
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/sections/video_large@2x.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/server.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/server@2x.png
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/setup-wizard-server.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/touch/icon_ipad.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/touch/icon_ipad@2x.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/touch/icon_iphone.png
