@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gkrelltop
-PORTVERSION=	2.2.10
+PORTVERSION=	2.2.13
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -10,30 +10,40 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin for gkrellm 2.x shows top three processes, requires procfs
 
-RUN_DEPENDS=	gkrellmd:${PORTSDIR}/sysutils/gkrellm2
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+LICENSE=	GPLv2
 
-USES=		gmake pkgconfig
-MAKE_ARGS=	INSTALLDIR=${LOCALBASE}/libexec/gkrellm2/plugins \
-		INSTALLDIRD=${PREFIX}/libexec/gkrellm2/plugins-gkrellmd
-
-.if defined(GKRELLM_SERVER_ONLY)
-ALL_TARGET=	server
-INSTALL_TARGET=	install-server
-PLIST_SUB+=	CLIENT="@comment "
-.else
-PLIST_SUB+=	CLIENT=""
-.endif
+BUILD_DEPENDS=	gkrellmd:${PORTSDIR}/sysutils/gkrellm2
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 
-NO_STAGE=	yes
-post-patch:
+USES=		gmake pkgconfig
+MAKE_ARGS=	CC="${CC} ${CFLAGS} $$(pkg-config gtk+-2.0 --cflags)" \
+		CCD="${CC} ${CFLAGS} $$(pkg-config glib-2.0 --cflags)" \
+		INSTALLDIR=${PREFIX}/libexec/gkrellm2/plugins \
+		INSTALLDIRD=${PREFIX}/libexec/gkrellm2/plugins-gkrellmd
+
+CFLAGS+=	-fPIC -DFREEBSD -DGKRELLM2
+
+PLIST_FILES=	libexec/gkrellm2/plugins-gkrellmd/gkrelltopd.so
+PLIST_DIRS=	libexec/gkrellm2/plugins-gkrellmd \
+		libexec/gkrellm2/plugins \
+		libexec/gkrellm2
+
 .if defined(GKRELLM_SERVER_ONLY)
-	${REINPLACE_CMD} 's/^\(PKG.*\)gkrellm/\1gkrellmd/' ${WRKSRC}/configure
+ALL_TARGET=	server
+.else
+PLIST_FILES+=	libexec/gkrellm2/plugins/gkrelltop.so
 .endif
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins-gkrellmd
+	(cd ${WRKSRC} && ${INSTALL_DATA} gkrelltopd.so \
+		${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins-gkrellmd)
+.if !defined(GKRELLM_SERVER_ONLY)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
+	(cd ${WRKSRC} && ${INSTALL_DATA} gkrelltop.so \
+		${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins)
+.endif
 
 .include <bsd.port.mk>
