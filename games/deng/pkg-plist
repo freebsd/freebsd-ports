@@ -1,5 +1,6 @@
 bin/deng
 bin/doomsday
+man/man6/doomsday.6.gz
 lib/libdpdehread.so
 lib/libdpwadmapconverter.so
 %%OPENAL%%lib/libdsopenal.so
