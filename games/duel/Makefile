@@ -10,10 +10,10 @@ MASTER_SITE_SUBDIR=	alepulver
 DISTNAME=	lin${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An overhead, OpenGL space shooter
+COMMENT=	Overhead, OpenGL space shooter
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		ftgl.2:${PORTSDIR}/graphics/ftgl
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libftgl.so:${PORTSDIR}/graphics/ftgl
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
@@ -26,16 +26,15 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 SUB_FILES=	${PORTNAME}-sh
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-sh ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/libexec
-	${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/runDir/* ${DATADIR}
-	${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
-	${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/libexec
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${CP} -R ${WRKSRC}/runDir/* ${STAGEDIR}${DATADIR}
+	${FIND} ${STAGEDIR}${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
+	${FIND} ${STAGEDIR}${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE}
 
 .include <bsd.port.mk>
