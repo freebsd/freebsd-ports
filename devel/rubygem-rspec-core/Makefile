@@ -1,12 +1,8 @@
-# New ports collection makefile for:	rubygem-rspec-core
-# Date created:		2011-06-12
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	rspec-core
-PORTVERSION=	2.11.1
+PORTVERSION=	2.14.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

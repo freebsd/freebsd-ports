@@ -1,11 +1,8 @@
-# Ports collection makefile for:	rubygem-diff-lcs
-# Date created:				2008-11-05
-# Whom:					Daniel Roethlisberger <daniel@roe.ch>
-#
+# Created by: Daniel Roethlisberger <daniel@roe.ch>
 # $FreeBSD$
 
 PORTNAME=	diff-lcs
-PORTVERSION=	1.1.3
+PORTVERSION=	1.2.4
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +11,7 @@ COMMENT=	LCS-based diff library for ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=  yes
+RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/ldiff bin/htmldiff
 
 .include <bsd.port.mk>

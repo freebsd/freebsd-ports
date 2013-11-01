@@ -1,0 +1,5 @@
+Ever wondered what HTTP requests the Ruby gem you are using to connect to a
+third party API is making? Use HTTP Spy to see what is going on behind the
+scenes.
+
+WWW: http://github.com/martinbtt/net-http-spy

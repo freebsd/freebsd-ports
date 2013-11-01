@@ -1749,6 +1749,7 @@
     SUBDIR += rubygem-nanoc
     SUBDIR += rubygem-net-http-digest_auth
     SUBDIR += rubygem-net-http-persistent
+    SUBDIR += rubygem-net-http-spy
     SUBDIR += rubygem-nicovideo
     SUBDIR += rubygem-ntlm-http
     SUBDIR += rubygem-octokit
@@ -1757,6 +1758,7 @@
     SUBDIR += rubygem-omniauth-openid
     SUBDIR += rubygem-openid-redis-store
     SUBDIR += rubygem-passenger
+    SUBDIR += rubygem-puma
     SUBDIR += rubygem-rack
     SUBDIR += rubygem-rack-cache
     SUBDIR += rubygem-rack-canonical-host

@@ -1,12 +1,8 @@
-# Ports collection makefile for:	rubygem-chef-solr
-# Date created:				13 Dec 2011
-# Whom:					Scott Sanders <scott@jssjr.com>
-#
+# Created by: Scott Sanders <scott@jssjr.com>
 # $FreeBSD$
-#
 
 PORTNAME=	chef-solr
-PORTVERSION=	0.10.8
+PORTVERSION=	11.0.0
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -22,5 +18,9 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/chef-solr \
 		bin/chef-solr-installer
+
+DISTVERSIONSUFFIX=	.alpha.1
+GEM_NAME=	${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
+MASTER_SITE_RUBYGEMS=	http://dist.reallyenglish.com/pub/gems/%SUBDIR%/
 
 .include <bsd.port.mk>
