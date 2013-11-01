@@ -11,12 +11,11 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create ASCII character cursive handwriting
 
-MAN6=		cursive.6
-PLIST_FILES=	bin/cursive
+PLIST_FILES=	bin/cursive \
+		man/man6/cursive.6.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/cursive ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/cursive.6 ${PREFIX}/man/man6
+	${INSTALL_PROGRAM} ${WRKSRC}/cursive ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/cursive.6 ${STAGEDIR}${PREFIX}/man/man6
 
 .include <bsd.port.mk>
