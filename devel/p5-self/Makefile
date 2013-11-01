@@ -21,7 +21,4 @@ TEST_DEPENDS=	p5-PadWalker>=0:${PORTSDIR}/devel/p5-PadWalker
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		self.3 self::implicit.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,8 +1,6 @@
+%%PERL5_MAN3%%/constant::boolean.3.gz
 %%SITE_PERL%%/constant/boolean.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/constant/boolean/.packlist
-@dirrmtry %%SITE_PERL%%/auto/constant/boolean
-@dirrmtry %%SITE_PERL%%/auto/constant
-@dirrmtry %%SITE_PERL%%/constant
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/constant/boolean
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/constant/boolean
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/constant
-@dirrmtry blib/script
+@dirrmtry %%SITE_PERL%%/constant

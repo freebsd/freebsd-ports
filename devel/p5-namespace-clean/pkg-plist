@@ -1,5 +1,6 @@
-%%SITE_PERL%%/namespace/clean.pm
+%%PERL5_MAN3%%/namespace::clean.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/namespace/clean/.packlist
+%%SITE_PERL%%/namespace/clean.pm
+@dirrmtry %%SITE_PERL%%/namespace
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/namespace/clean
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/namespace
-@dirrmtry %%SITE_PERL%%/namespace

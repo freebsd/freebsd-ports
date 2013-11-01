@@ -1,3 +1,11 @@
+%%PERL5_MAN3%%/forks.3.gz
+%%PERL5_MAN3%%/forks::Devel::Symdump.3.gz
+%%PERL5_MAN3%%/forks::shared.3.gz
+%%PERL5_MAN3%%/forks::signals.3.gz
+%%PERL5_MAN3%%/threads::shared::array.3.gz
+%%PERL5_MAN3%%/threads::shared::handle.3.gz
+%%PERL5_MAN3%%/threads::shared::hash.3.gz
+%%PERL5_MAN3%%/threads::shared::scalar.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/forks/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/forks/forks.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/forks/forks.so
@@ -11,9 +19,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/threads/shared/handle.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/threads/shared/hash.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/threads/shared/scalar.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/forks
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/forks/shared
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/forks/Devel
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/forks
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/threads/shared
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/threads
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/forks/shared
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/forks/Devel
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/forks
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/forks

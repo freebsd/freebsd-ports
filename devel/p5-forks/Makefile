@@ -20,14 +20,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
+CONFIGURE_ARGS=	</dev/null
 
-MAN3=		forks.3 forks::signals.3 \
-		forks::shared.3 \
-		forks::Devel::Symdump.3 \
-		threads::shared::array.3 \
-		threads::shared::handle.3 \
-		threads::shared::hash.3 \
-		threads::shared::scalar.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
