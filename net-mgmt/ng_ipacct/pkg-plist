@@ -1,3 +1,4 @@
+man/ru.KOI8-R/man8/ipacctctl.8.gz
 include/netgraph/ng_ipacct.h
 etc/ng_ipacct.conf.sample
 sbin/ipacctctl

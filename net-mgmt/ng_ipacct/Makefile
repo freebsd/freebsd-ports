@@ -3,42 +3,33 @@
 
 PORTNAME=	ng_ipacct
 PORTVERSION=	20061223
-PORTREVISION=	1
-CATEGORIES=	net-mgmt kld
+PORTREVISION=	2
+CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_LOCAL:S!$!skv/!} \
 		http://highsecure.ru/distfiles/
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Netgraph IP accounting
 
-.ifndef PACKAGE_BUILDING
-NO_PACKAGE=	depends on kernel
-.else
-IGNORE=		depends on kernel
-.endif
+LICENSE=	BSD
 
-KMODDIR=	/boot/modules
-PLIST_SUB+=	KMODDIR=${KMODDIR:S!^/!!}
+USES=	kmod
 
-MAKE_ENV=	BINDIR="${PREFIX}/sbin" KMODDIR=${KMODDIR}
-
-MAN8=		ipacctctl.8
-MANLANG=	ru.KOI8-R
-MANCOMPRESSED=	yes
+MAKE_ENV=	BINDIR="${PREFIX}/sbin" KMODDIR=${KMODDIR} NO_XREF=yes
 
 USE_RC_SUBR=	ng_ipacct
 SUB_FILES=	pkg-message
 CFLAGS+=	-DMEM_USE_ZONE
+NEED_ROOT=	yes
 
-NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 post-install:
-	@${MKDIR} ${PREFIX}/include/netgraph
-	${INSTALL_DATA} ${WRKSRC}/ng_ipacct/ng_ipacct.h ${PREFIX}/include/netgraph
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/netgraph
+	${INSTALL_DATA} ${WRKSRC}/ng_ipacct/ng_ipacct.h ${STAGEDIR}${PREFIX}/include/netgraph
 	${INSTALL_DATA} ${FILESDIR}/ng_ipacct.conf \
-		${PREFIX}/etc/ng_ipacct.conf.sample
+		${STAGEDIR}${PREFIX}/etc/ng_ipacct.conf.sample
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
