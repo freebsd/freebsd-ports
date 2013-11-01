@@ -133,6 +133,7 @@
     SUBDIR += docbook-xsl
     SUBDIR += docbook-xsl-ns
     SUBDIR += docbook2X
+    SUBDIR += docbook2odf
     SUBDIR += docbookide.el
     SUBDIR += docdiff
     SUBDIR += doclifter
