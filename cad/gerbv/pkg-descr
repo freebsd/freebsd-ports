@@ -16,4 +16,4 @@ The different layers of the PCB are separated into different files. gerbv
 can load all files at the same time and display them "on top of each
 other". You can independently turn them on and off.
 
-WWW: http://gerbv.gpleda.org/
+WWW: http://gerbv.geda-project.org/
