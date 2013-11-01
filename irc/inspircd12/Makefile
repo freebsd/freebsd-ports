@@ -6,12 +6,15 @@ PORTVERSION=	1.2.9
 PORTREVISION=	3
 CATEGORIES=	irc
 MASTER_SITES=	http://cloud.github.com/downloads/inspircd/inspircd/
+PKGNAMESUFFIX=	12
 DISTNAME=	InspIRCd-v${PORTVERSION}
 
-MAINTAINER=	gelraen.ua@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modular C++ IRC daemon
 
 CONFLICTS=	inspircd-2.*
+EXPIRATION_DATE=2013-12-01
+DEPRECATED=	No upstream support; known vulnerable. Please use irc/inspircd
 
 LATEST_LINK=	inspircd12
 
