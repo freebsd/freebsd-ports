@@ -32,7 +32,7 @@ CONFIGURE_ARGS+=--enable-ctype
 .endif
 
 .if ${PHP_MODNAME} == "curl"
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 
 CONFIGURE_ARGS+=--with-curl=${LOCALBASE}
 .endif
@@ -87,9 +87,9 @@ USE_OPENSSL=	yes
 .endif
 
 .if ${PHP_MODNAME} == "gd"
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		png15:${PORTSDIR}/graphics/png \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libfreetype.so.9:${PORTSDIR}/print/freetype2 \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libjpeg.so.11:${PORTSDIR}/graphics/jpeg
 
 CONFIGURE_ARGS+=--with-gd \
 		--with-freetype-dir=${LOCALBASE} \
@@ -114,7 +114,7 @@ USES+=		gettext
 .endif
 
 .if ${PHP_MODNAME} == "gmp"
-LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS+=	libgmp.so.10:${PORTSDIR}/math/gmp
 
 CONFIGURE_ARGS+=--with-gmp=${LOCALBASE}
 .endif
@@ -133,7 +133,7 @@ USES+=	iconv
 .if ${PHP_MODNAME} == "imap"
 OPTIONS_DEFINE=	SSL
 OPTIONS_DEFAULT=	SSL
-LIB_DEPENDS+=	c-client4.9:${PORTSDIR}/mail/cclient
+LIB_DEPENDS+=	libc-client4.so.9:${PORTSDIR}/mail/cclient
 
 CONFIGURE_ARGS+=--with-imap=${LOCALBASE} \
 		--with-pcre-dir=${LOCALBASE}
@@ -174,7 +174,7 @@ PHP_HEADER_DIRS=libmbfl libmbfl/filters libmbfl/mbfl libmbfl/nls
 .endif
 
 .if ${PHP_MODNAME} == "mcrypt"
-LIB_DEPENDS+=	mcrypt.8:${PORTSDIR}/security/libmcrypt
+LIB_DEPENDS+=	libmcrypt.so.8:${PORTSDIR}/security/libmcrypt
 
 CONFIGURE_ARGS+=--with-mcrypt=${LOCALBASE}
 
@@ -182,7 +182,7 @@ USE_AUTOTOOLS=	libltdl
 .endif
 
 .if ${PHP_MODNAME} == "mssql"
-LIB_DEPENDS+=	sybdb.5:${PORTSDIR}/databases/freetds-msdblib
+LIB_DEPENDS+=	libsybdb.so.5:${PORTSDIR}/databases/freetds-msdblib
 
 CONFIGURE_ARGS+=--with-mssql=${LOCALBASE}
 .endif
@@ -297,7 +297,7 @@ CONFIGURE_ARGS+=--enable-posix
 .endif
 
 .if ${PHP_MODNAME} == "pspell"
-LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS+=	libaspell.so.16:${PORTSDIR}/textproc/aspell
 
 CONFIGURE_ARGS+=--with-pspell=${LOCALBASE}
 
@@ -311,7 +311,7 @@ CONFIGURE_ARGS+=--with-readline=/usr
 .endif
 
 .if ${PHP_MODNAME} == "recode"
-LIB_DEPENDS+=	recode.3:${PORTSDIR}/converters/recode
+LIB_DEPENDS+=	librecode.so.3:${PORTSDIR}/converters/recode
 
 CONFIGURE_ARGS+=--with-recode=${LOCALBASE}
 .endif
@@ -338,7 +338,7 @@ CONFIGURE_ARGS+=--with-snmp=${LOCALBASE} \
 		--with-openssl-dir=${OPENSSLBASE} \
 		--enable-ucd-snmp-hack
 
-LIB_DEPENDS+=   netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=   libnetsnmp.so.30:${PORTSDIR}/net-mgmt/net-snmp
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 USE_OPENSSL=	yes
 .endif
@@ -375,7 +375,7 @@ CONFIGURE_ARGS+=--with-sqlite3=${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "sybase_ct"
-LIB_DEPENDS+=	ct.4:${PORTSDIR}/databases/freetds
+LIB_DEPENDS+=	libct.so.4:${PORTSDIR}/databases/freetds
 
 CONFIGURE_ARGS+=--with-sybase-ct=${LOCALBASE}
 .endif
@@ -395,7 +395,7 @@ CONFIGURE_ARGS+=--enable-sysvshm
 .if ${PHP_MODNAME} == "tidy"
 CONFIGURE_ARGS+=--with-tidy=${LOCALBASE}
 
-LIB_DEPENDS+=	tidy-0.99.0:${PORTSDIR}/www/tidy-lib
+LIB_DEPENDS+=	libtidy-0.99.so.0:${PORTSDIR}/www/tidy-lib
 .endif
 
 .if ${PHP_MODNAME} == "tokenizer"
@@ -480,12 +480,12 @@ USE_BDB=		40+
 WITH_BDB_HIGHEST=	yes
 .	endif
 .	if ${PORT_OPTIONS:MGDBM}
-LIB_DEPENDS+=	gdbm.4:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	libgdbm.so.4:${PORTSDIR}/databases/gdbm
 
 CONFIGURE_ARGS+=--with-gdbm=${LOCALBASE}
 .	endif
 .	if ${PORT_OPTIONS:MQDBM}
-LIB_DEPENDS+=	qdbm.14:${PORTSDIR}/databases/qdbm
+LIB_DEPENDS+=	libqdbm.so.14:${PORTSDIR}/databases/qdbm
 
 CONFIGURE_ARGS+=--with-qdbm=${LOCALBASE}
 .	endif
@@ -507,7 +507,7 @@ CONFIGURE_ARGS+=--with-xpm-dir=${LOCALBASE}
 .	endif
 
 .	if ${PORT_OPTIONS:MT1LIB}
-LIB_DEPENDS+=	t1.5:${PORTSDIR}/devel/t1lib
+LIB_DEPENDS+=	libt1.so.5:${PORTSDIR}/devel/t1lib
 
 CONFIGURE_ARGS+=--with-t1lib=${LOCALBASE}
 .	endif
@@ -528,7 +528,7 @@ LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 
 .if ${PHP_MODNAME} == "mbstring"
 .	if ${PORT_OPTIONS:MREGEX}
-LIB_DEPENDS+=	onig.1:${PORTSDIR}/devel/oniguruma4
+LIB_DEPENDS+=	libonig.so.1:${PORTSDIR}/devel/oniguruma4
 CONFIGURE_ARGS+=--with-onig=${LOCALBASE}
 .	else
 CONFIGURE_ARGS+=--disable-mbregex
@@ -563,11 +563,11 @@ post-extract:
 
 .if ${PHP_MODNAME} == "odbc"
 .if ${PORT_OPTIONS:MIODBC}
-LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS+=	libiodbc.so.3:${PORTSDIR}/databases/libiodbc
 
 CONFIGURE_ARGS+=--with-iodbc=${LOCALBASE}
 .else
-LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	libodbc.so.2:${PORTSDIR}/databases/unixODBC
 
 CONFIGURE_ARGS+=--with-unixODBC=${LOCALBASE}
 .endif
@@ -575,19 +575,19 @@ CONFIGURE_ARGS+=--with-unixODBC=${LOCALBASE}
 
 .if ${PHP_MODNAME} == "pdo_dblib"
 .if ${PORT_OPTIONS:MMSSQL}
-LIB_DEPENDS+=	sybdb.5:${PORTSDIR}/databases/freetds-msdblib
+LIB_DEPENDS+=	libsybdb.so.5:${PORTSDIR}/databases/freetds-msdblib
 .else
-LIB_DEPENDS+=	ct.4:${PORTSDIR}/databases/freetds
+LIB_DEPENDS+=	libct.so.4:${PORTSDIR}/databases/freetds
 .endif
 .endif
 
 .if ${PHP_MODNAME} == "pdo_odbc"
 .if ${PORT_OPTIONS:MIODBC}
-LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS+=	libiodbc.so.3:${PORTSDIR}/databases/libiodbc
 
 CONFIGURE_ARGS+=--with-pdo-odbc=iODBC,${LOCALBASE}
 .else
-LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	libodbc.so.2:${PORTSDIR}/databases/unixODBC
 
 CONFIGURE_ARGS+=--with-pdo-odbc=unixODBC,${LOCALBASE}
 .endif

@@ -16,6 +16,7 @@ IGNORE_WITH_PHP=5 52
 USE_PHP_BUILD=	yes
 
 NO_BUILD=	yes
+NO_MTREE=	yes
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
@@ -111,7 +112,6 @@ XSL_DESC=		XSL support (Implies DOM)
 ZIP_DESC=		ZIP support
 ZLIB_DESC=		ZLIB support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .for opt in ${OPTIONS_DEFINE}
