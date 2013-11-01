@@ -114,8 +114,8 @@ post-install:
 	cd ${STAGEDIR}${PREFIX}/bin && ${RM} lives && ${LN} -s lives-exe lives
 
 .if ${PORT_OPTIONS:MDOXYGEN}
-	@cd ${PREFIX} && \
-	${FIND} ${DOCSDIR:S|${PREFIX}/||} ! -type d >> ${TMPPLIST} && \
+	@cd ${STAGEDIR}${PREFIX} && \
+	${FIND} ${DOCSDIR:S|${PREFIX}/||}/html ! -type d >> ${TMPPLIST} && \
 	${FIND} ${DOCSDIR:S|${PREFIX}/||} -type d | ${SORT} -r | \
 	${SED} 's|^|@dirrm |' >> ${TMPPLIST}
 .endif
