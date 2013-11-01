@@ -117,7 +117,7 @@ CONFIGURE_ARGS+=	--enable-rpz-nsdname
 
 .if ${PORT_OPTIONS:MRPZRRL_PATCH}
 PATCHFILES=		rpz2+rl-9.8.6.patch
-PATCH_SITES=		http://ss.vix.com/~vjs/
+PATCH_SITES=		http://ss.vix.su/~vjs/
 .endif
 
 .if ${PORT_OPTIONS:MDLZ_POSTGRESQL}
