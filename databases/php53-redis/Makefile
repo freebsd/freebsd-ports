@@ -24,5 +24,4 @@ DEFAULT_PHP_VER=53
 
 PHP_MODNAME=	redis
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
