@@ -14,7 +14,6 @@ LICENSE=	BSD
 
 OPTIONS_DEFINE=	DEBUG CURL LIBWWW CPLUSPLUS
 OPTIONS_DEFAULT=CURL LIBWWW CPLUSPLUS
-OPTIONS_SUB=	CPLUSPLUS
 
 LIBWWW_DESC=	 Compile with libwww support
 CPLUSPLUS_DESC=	 Build xmlrpc-c c++ libs and tools
@@ -22,6 +21,7 @@ CPLUSPLUS_DESC=	 Build xmlrpc-c c++ libs and tools
 CONFLICTS=	xmlrpc-epi-0.* xmlrpc-c-[0-9]*
 
 USES=		gmake
+OPTIONS_SUB=	yes
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
