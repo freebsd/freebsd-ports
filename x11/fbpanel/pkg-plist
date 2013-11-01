@@ -22,6 +22,7 @@ lib/fbpanel/tray.so
 lib/fbpanel/volume.so
 lib/fbpanel/wincmd.so
 libexec/fbpanel/make_profile
+man/man1/fbpanel.1.gz
 %%DATADIR%%/default
 %%DATADIR%%/images/battery_0.png
 %%DATADIR%%/images/battery_1.png
