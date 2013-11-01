@@ -1,14 +1,14 @@
 bin/repsnapper
 @unexec if cmp -s %D/etc/xdg/repsnapper/repsnapper.conf.sample %D/etc/xdg/repsnapper/repsnapper.conf; then rm -f %D/etc/xdg/repsnapper/repsnapper.conf; fi
 etc/xdg/repsnapper/repsnapper.conf.sample
-@exec if [ ! -f %D/etc/xdg/repsnapper/repsnapper.conf ] ; then cp -p %D/%F %B/xdg/repsnapper/repsnapper.conf; fi
+@exec if [ ! -f %D/etc/xdg/repsnapper/repsnapper.conf ] ; then cp -p %D/%F %B/repsnapper.conf; fi
 share/applications/repsnapper.desktop
-share/locale/en_GB/LC_MESSAGES/repsnapper.mo
-share/locale/de_DE/LC_MESSAGES/repsnapper.mo
-share/repsnapper/repsnapper.ui
-share/repsnapper/repsnapper.svg
+%%NLS%%share/locale/en_GB/LC_MESSAGES/repsnapper.mo
+%%NLS%%share/locale/de_DE/LC_MESSAGES/repsnapper.mo
+%%DATADIR%%/repsnapper.ui
+%%DATADIR%%/repsnapper.svg
 share/icons/hicolor/scalable/apps/repsnapper.svg
 @dirrmtry etc/xdg/repsnapper
-@dirrmtry share/locale/de_DE/LC_MESSAGES
-@dirrmtry share/locale/de_DE
-@dirrm share/repsnapper
+%%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de_DE
+@dirrm %%DATADIR%%
