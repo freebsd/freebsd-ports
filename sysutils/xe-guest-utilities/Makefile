@@ -19,7 +19,7 @@ GIT_PROJECT=	freebsd-xen-tools-scripts
 GIT_VERSION=	5a355c9
 GITSRC=		${WRKDIR}/${GIT_ACCOUNT}-${GIT_PROJECT}-${GIT_VERSION}/src/
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_PYTHON=	yes
 USE_RC_SUBR=	xenguest
 
@@ -29,12 +29,11 @@ ONLY_FOR_ARCHS_REASON=	"Requires i385 XEN or amd64 XENHVM kernels"
 PLIST_FILES=	sbin/xe-daemon \
 		sbin/xe-update-guest-attrs
 
-NO_STAGE=	yes
 do-build:
 	@${DO_NADA}
 
 do-install:
-	${INSTALL_SCRIPT} ${GITSRC}/sbin/xe-daemon ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${GITSRC}/sbin/xe-update-guest-attrs ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${GITSRC}/sbin/xe-daemon ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${GITSRC}/sbin/xe-update-guest-attrs ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>
