@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	chef-expander
-PORTVERSION=	0.10.8
+PORTVERSION=	11.0.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -21,7 +21,12 @@ RUN_DEPENDS=	rubygem-amqp=0.6.7:${PORTSDIR}/net/rubygem-amqp067 \
 		rubygem-highline>=1.6.1:${PORTSDIR}/devel/rubygem-highline \
 		rubygem-mixlib-log>=1.2.0:${PORTSDIR}/devel/rubygem-mixlib-log \
 		rubygem-uuidtools>=2.1.1:${PORTSDIR}/devel/rubygem-uuidtools \
-		rubygem-yajl-ruby=0.7.7:${PORTSDIR}/devel/rubygem-yajl-ruby077
+		rubygem-yajl-ruby>=1.0.0:${PORTSDIR}/devel/rubygem-yajl-ruby
+
+DISTVERSIONSUFFIX=	.alpha.1
+GEM_NAME=	${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
+# alpha release, use locally created gem file
+MASTER_SITE_RUBYGEMS=	http://dist.reallyenglish.com/pub/gems/%SUBDIR%/
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
