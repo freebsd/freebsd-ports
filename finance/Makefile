@@ -161,6 +161,7 @@
     SUBDIR += trytond_stock_supply_forecast
     SUBDIR += trytond_stock_supply_production
     SUBDIR += trytond_timesheet
+    SUBDIR += vanitygen
     SUBDIR += venice
     SUBDIR += weberp
     SUBDIR += wmstock
