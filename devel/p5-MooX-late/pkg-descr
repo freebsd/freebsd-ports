@@ -1,0 +1,5 @@
+Moo is a light-weight object oriented programming framework which aims
+to be compatible with Moose.  MooX::late provides some assistance by
+enabling a slightly more Moosey surface syntax.
+
+WWW: http://search.cpan.org/dist/MooX-late/
