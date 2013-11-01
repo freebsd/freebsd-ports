@@ -23,7 +23,6 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 GNU_CONFIGURE=	yes
 USES=		ncurses gmake pkgconfig
-NO_STAGE=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 MAKE_JOBS_UNSAFE=	yes

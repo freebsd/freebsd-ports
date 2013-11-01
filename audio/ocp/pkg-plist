@@ -96,4 +96,3 @@ lib/ocp/playxm.so
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/ocp/autoload
 @dirrm lib/ocp
-%%XORG%%@dirrmtry etc/X11
