@@ -105,7 +105,7 @@ NULL)
 	<<EOF cat
 
 Choose a port origin (directory) from the list
-above, and then run $0 category/port
+above, and then run ${0##*/} category/port
 
 EOF
 	exit 0
@@ -152,6 +152,10 @@ NULL)
 		<<EOF cat
 You should be done-- now cd into ${destination} and you can run
 # make deinstall install clean
+
+Please note that ${0##*/} no longer modifies the ports tree; the
+checked out port is at
+$(pwd)/${destination}
 EOF
 		;;
 	true)
