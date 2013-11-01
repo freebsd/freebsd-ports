@@ -17,7 +17,7 @@ RUN_DEPENDS+=	pnmscale:${PORTSDIR}/graphics/netpbm
 MAKE_JOBS_UNSAFE=	yes
 NO_STAGE=	yes
 
-USES=		imake:env
+USES=		imake:env pkgconfig
 USE_XORG=	x11 xext xmu xt sm ice xi xtst
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
