@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chef
-PORTVERSION=	11.10.0
+PORTVERSION=	11.8.0
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -29,11 +29,8 @@ RUN_DEPENDS=	rubygem-bunny>=0.6.0:${PORTSDIR}/net/rubygem-bunny \
 		rubygem-erubis>=2.7.0:${PORTSDIR}/www/rubygem-erubis \
 		rubygem-diff-lcs>=1.2.4:${PORTSDIR}/textproc/rubygem-diff-lcs \
 		rubygem-chef-zero>=1.6.2:${PORTSDIR}/sysutils/rubygem-chef-zero \
+		rubygem-pry>=0.9.0:${PORTSDIR}/devel/rubygem-pry \
 		rubygem-puma>=1.6.2:${PORTSDIR}/www/rubygem-puma
-
-DISTVERSIONSUFFIX=	.alpha.0
-GEM_NAME=	${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
-MASTER_SITE_RUBYGEMS=	http://dist.reallyenglish.com/pub/gems/%SUBDIR%/
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
@@ -51,13 +48,11 @@ PLIST_FILES=	bin/chef-client \
 MAN1=	chef-shell.1 knife-bootstrap.1 knife-client.1 knife-configure.1 \
 	knife-cookbook-site.1 knife-cookbook.1 knife-data-bag.1 knife-delete.1 \
 	knife-deps.1 knife-diff.1 knife-download.1 knife-edit.1 knife-environment.1 \
-	knife-exec.1 knife-index-rebuild.1 knife-index.1 knife-list.1 knife-node.1 \
-	knife-raw.1 knife-recipe-list.1 knife-role.1 knife-search.1 knife-show.1 \
-	knife-ssh.1 knife-status.1 knife-tag.1 knife-upload.1 knife-user.1 \
-	knife-xargs.1 knife.1
+	knife-exec.1 knife-index-rebuild.1 knife-list.1 knife-node.1 knife-raw.1 \
+	knife-recipe-list.1 knife-role.1 knife-search.1 knife-show.1 knife-ssh.1 \
+	knife-status.1 knife-tag.1 knife-upload.1 knife-user.1 knife-xargs.1 knife.1
 
-MAN8=	chef-client.8 chef-expander.8 chef-expanderctl.8 chef-server-webui.8 \
-	chef-server.8 chef-solo.8 chef-solr.8
+MAN8=	chef-client.8 chef-solo.8
 
 SUB_LIST=	RUBY=${RUBY}
 USE_RC_SUBR=	chef_client

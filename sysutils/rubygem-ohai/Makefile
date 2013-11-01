@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ohai
-PORTVERSION=	6.14.0
+PORTVERSION=	6.20.0
 PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
@@ -17,6 +17,7 @@ COMMENT=	Ohai profiles your system and emits JSON
 RUN_DEPENDS=	rubygem-mixlib-log>=0:${PORTSDIR}/devel/rubygem-mixlib-log \
 		rubygem-mixlib-config>=0:${PORTSDIR}/devel/rubygem-mixlib-config \
 		rubygem-mixlib-cli>=0:${PORTSDIR}/devel/rubygem-mixlib-cli \
+		rubygem-mixlib-shellout>=0:${PORTSDIR}/devel/rubygem-mixlib-shellout \
 		rubygem-systemu>=0:${PORTSDIR}/devel/rubygem-systemu \
 		rubygem-yajl-ruby>=0:${PORTSDIR}/devel/rubygem-yajl-ruby \
 		net/rubygem-ipaddress>=0:${PORTSDIR}/net/rubygem-ipaddress \
@@ -31,7 +32,6 @@ PLIST_FILES=	bin/ohai
 post-install:
 	@${PATCH} -p0 -d ${PREFIX}/${GEM_LIB_DIR} < ${PATCHDIR}/lib-plugins-freebsd-virtualization.rb.patch
 	@${PATCH} -p0 -d ${PREFIX}/${GEM_LIB_DIR} < ${PATCHDIR}/lib-plugins-freebsd-network.rb.patch
-	@${PATCH} -p0 -d ${PREFIX}/${GEM_LIB_DIR} < ${PATCHDIR}/lib-ohai-plugins-network.patch
 	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -name "*.orig" -delete
 
 .include <bsd.port.mk>
