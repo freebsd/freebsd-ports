@@ -2,4 +2,4 @@ pyquery allows you to make jquery queries on XML documents.
 The API is as much as possible the similar to jquery (http://jquery.com).
 pyquery uses lxml for fast XML and HTML manipulation.
 
-WWW:	http://pyquery.org
+WWW: https://pypi.python.org/pypi/pyquery
