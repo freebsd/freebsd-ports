@@ -119,6 +119,7 @@
     SUBDIR += kdeplasma-addons
     SUBDIR += kruler
     SUBDIR += ksshaskpass
+    SUBDIR += kupfer
     SUBDIR += labyrinth
     SUBDIR += launchy
     SUBDIR += libgcal

@@ -1,0 +1,12 @@
+Kupfer is a GTK interface for quick and convenient access to applications
+and their documents.
+
+The most typical use is to find a specific application and launch it.
+We have tried to make Kupfer easy to extend with plugins so that this
+quick-access paradigm can be extended to many more objects than just
+applications.
+
+Kupfer is heavily inspired by Quicksilver. You can enable more Plugins,
+but must have installed Applications which this Plugin needs.
+
+WWW: http://engla.github.com/kupfer/
