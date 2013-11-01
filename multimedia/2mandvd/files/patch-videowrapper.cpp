@@ -10,12 +10,12 @@ diff -urN videowrapper.cpp videowrapper.cpp
          if (avformat_open_input(&pFormatCtx,filename.toAscii().data(),NULL,NULL)!=0)
          {
      #else
-@@ -90,7 +90,7 @@
+@@ -91,7 +91,7 @@
  
      // *** OUVERTURE DU CODEC ***
  
--    if(avcodec_open(pCodecCtx, pCodec)<0)
-+    if(avcodec_open2(pCodecCtx, pCodec, NULL)<0)
+-    #ifdef av_find_stream_info
++    #if 0
+     if(avcodec_open(pCodecCtx, pCodec)<0)
      {
-         qDebug() << "CAN'T FIND VIDEO CODEC";
-         return 1;
+     #else
