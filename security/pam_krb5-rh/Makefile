@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pam_krb5
-DISTVERSION=	2.4.7
+DISTVERSION=	2.4.8
 CATEGORIES=	security
 MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
