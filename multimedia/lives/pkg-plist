@@ -435,7 +435,7 @@ share/pixmaps/lives.xpm
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrm share/app-install/icons
 @dirrm share/app-install
 @dirrm lib/lives/plugins/playback/video
