@@ -7,7 +7,7 @@ PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A (C)SLIP/PPP emulator for users with shell accounts
 
 # serious LP64 issues
