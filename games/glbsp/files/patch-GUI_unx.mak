@@ -1,6 +1,6 @@
---- GUI_unx.mak.orig	2005-09-16 07:29:39.000000000 +0200
-+++ GUI_unx.mak	2010-01-08 15:40:37.000000000 +0100
-@@ -8,16 +8,15 @@
+--- ./GUI_unx.mak.orig	2005-09-16 02:29:39.000000000 -0300
++++ ./GUI_unx.mak	2013-11-01 20:56:43.000000000 -0200
+@@ -8,16 +8,16 @@
  
  PROGNAME=glBSPX
  
@@ -10,7 +10,8 @@
 -          -lfltk -lX11 -lXext
 +FLTK_PREFIX=${LOCALBASE}
 +FLTK_CFLAGS=`fltk-config --use-images --cflags`
-+FLTK_LIBS=`fltk-config --use-images --ldflags`
++FLTK_LIBSTMP=$(shell fltk-config --use-images --ldflags)
++FLTK_LIBS=$(subst -R,-L,$(FLTK_LIBSTMP))
  
 -CC=gcc
 -CXX=g++
