@@ -758,6 +758,9 @@ ALL_TARGET=	profiledbuild
 LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
 RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
 MOZ_OPTIONS+=	--enable-alsa
+. if exists(${FILESDIR}/extra-bug780531)
+EXTRA_PATCHES+=	${FILESDIR}/extra-bug780531
+. endif
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
