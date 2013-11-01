@@ -5157,3 +5157,4 @@ net-im/pidgin-msn-pecan||2013-10-31|Has expired: Primary MSN Messenger service t
 net-im/py-msnp||2013-10-31|Has expired: Primary MSN Messenger service terminated 30 APR 2013
 net-im/pymsn||2013-10-31|Has expired: Primary MSN Messenger service terminated 30 APR 2013
 net-im/tmsnc||2013-10-31|Has expired: Primary MSN Messenger service terminated 30 APR 2013
+mail/squirrelmail-postfixadmin-plugin|mail/postfixadmin|2013-11-01|Has expired: Now distributed with postfixadmin
