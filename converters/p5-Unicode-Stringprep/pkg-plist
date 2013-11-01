@@ -1,3 +1,9 @@
+%%PERL5_MAN3%%/Unicode::Stringprep.3.gz
+%%PERL5_MAN3%%/Unicode::Stringprep::BiDi.3.gz
+%%PERL5_MAN3%%/Unicode::Stringprep::Mapping.3.gz
+%%PERL5_MAN3%%/Unicode::Stringprep::Prohibited.3.gz
+%%PERL5_MAN3%%/Unicode::Stringprep::Unassigned.3.gz
+%%PERL5_MAN3%%/Unicode::Stringprep::_Common.3.gz
 %%SITE_PERL%%/Unicode/Stringprep.pm
 %%SITE_PERL%%/Unicode/Stringprep/BiDi.pm
 %%SITE_PERL%%/Unicode/Stringprep/Mapping.pm

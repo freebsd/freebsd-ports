@@ -19,9 +19,4 @@ TEST_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		binhex.pl.1 \
-		debinhex.pl.1
-MAN3=		Convert::BinHex.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

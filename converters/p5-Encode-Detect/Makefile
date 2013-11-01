@@ -16,7 +16,4 @@ BUILD_DEPENDS+=	p5-ExtUtils-CBuilder>=0:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Encode::Detect.3 Encode::Detect::Detector.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

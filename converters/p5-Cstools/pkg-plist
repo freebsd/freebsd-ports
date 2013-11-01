@@ -1,7 +1,11 @@
 bin/cssort
 bin/cstocs
 bin/dbfcstocs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cz/.packlist
+%%PERL5_MAN3%%/Cz::Cstocs.3.gz
+%%PERL5_MAN3%%/Cz::Sort.3.gz
+%%PERL5_MAN3%%/Cz::Time.3.gz
+%%SITE_PERL%%/Cz/Cstocs.pm
+%%SITE_PERL%%/Cz/Cstocs/Getopt.pm
 %%SITE_PERL%%/Cz/Cstocs/enc/1250.enc
 %%SITE_PERL%%/Cz/Cstocs/enc/1252.enc
 %%SITE_PERL%%/Cz/Cstocs/enc/accent
@@ -17,13 +21,15 @@ bin/dbfcstocs
 %%SITE_PERL%%/Cz/Cstocs/enc/pc2.enc
 %%SITE_PERL%%/Cz/Cstocs/enc/pc2a.enc
 %%SITE_PERL%%/Cz/Cstocs/enc/tex.enc
-%%SITE_PERL%%/Cz/Cstocs/enc/vga.enc
 %%SITE_PERL%%/Cz/Cstocs/enc/utf8.enc
-%%SITE_PERL%%/Cz/Cstocs/Getopt.pm
-%%SITE_PERL%%/Cz/Cstocs.pm
+%%SITE_PERL%%/Cz/Cstocs/enc/vga.enc
 %%SITE_PERL%%/Cz/Sort.pm
 %%SITE_PERL%%/Cz/Time.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cz/.packlist
+man/man1/cssort.1.gz
+man/man1/cstocs.1.gz
+man/man1/dbfcstocs.1.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cz
 @dirrm %%SITE_PERL%%/Cz/Cstocs/enc
 @dirrm %%SITE_PERL%%/Cz/Cstocs
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cz
-@dirrmtry %%SITE_PERL%%/Cz
+@dirrm %%SITE_PERL%%/Cz

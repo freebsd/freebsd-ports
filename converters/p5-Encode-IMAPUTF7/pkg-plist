@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/IMAPUTF7/.packlist
+%%PERL5_MAN3%%/Encode::IMAPUTF7.3.gz
 %%SITE_PERL%%/Encode/IMAPUTF7.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/IMAPUTF7
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/IMAPUTF7/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/IMAPUTF7
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode
 @dirrmtry %%SITE_PERL%%/Encode

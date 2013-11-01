@@ -15,11 +15,8 @@ RUN_DEPENDS=	p5-Convert-Bencode>=0:${PORTSDIR}/converters/p5-Convert-Bencode
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Convert::Bencode_XS.3
-
-NO_STAGE=	yes
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/extras/* ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/extras/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

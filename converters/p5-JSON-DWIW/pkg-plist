@@ -1,10 +1,13 @@
+%%PERL5_MAN3%%/JSON::DWIW.3.gz
+%%PERL5_MAN3%%/JSON::DWIW::Boolean.3.gz
+%%PERL5_MAN3%%/JSON::DWIW::Changes.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/JSON/DWIW.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/JSON/DWIW/Boolean.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/JSON/DWIW/Changes.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/DWIW/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/DWIW/DWIW.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/DWIW/DWIW.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/DWIW
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/DWIW
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/JSON/DWIW
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/JSON/
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/JSON/DWIW
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/JSON

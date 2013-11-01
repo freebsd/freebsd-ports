@@ -13,7 +13,4 @@ COMMENT=	Perl module to format a bytecount and make it human readable
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Format::Human::Bytes.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

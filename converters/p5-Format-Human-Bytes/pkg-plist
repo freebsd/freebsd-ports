@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Format::Human::Bytes.3.gz
 %%SITE_PERL%%/Format/Human/Bytes.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Format/Human/Bytes/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Format/Human/Bytes
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Format/Human
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Format/Human/Bytes
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Format/Human
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Format
-@dirrmtry %%SITE_PERL%%/Format/Human
+@dirrm %%SITE_PERL%%/Format/Human
 @dirrmtry %%SITE_PERL%%/Format

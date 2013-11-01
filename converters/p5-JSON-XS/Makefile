@@ -16,10 +16,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		json_xs.1
-MAN3=		JSON::XS.3 JSON::XS::Boolean.3
-
 PORTSCOUT=	skipv:2.232
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

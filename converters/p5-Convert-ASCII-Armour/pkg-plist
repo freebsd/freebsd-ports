@@ -1,8 +1,10 @@
+%%PERL5_MAN3%%/Convert::ASCII::Armor.3.gz
+%%PERL5_MAN3%%/Convert::ASCII::Armour.3.gz
 %%SITE_PERL%%/Convert/ASCII/Armor.pm
 %%SITE_PERL%%/Convert/ASCII/Armour.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/ASCII/Armour/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/ASCII/Armour
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/ASCII
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/ASCII/Armour
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/ASCII
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert
-@dirrmtry %%SITE_PERL%%/Convert/ASCII
+@dirrm %%SITE_PERL%%/Convert/ASCII
 @dirrmtry %%SITE_PERL%%/Convert

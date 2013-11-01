@@ -1,4 +1,5 @@
 bin/umap
+%%PERL5_MAN3%%/Unicode::Map8.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map8.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map8/maps/ANSI_X3.110-1983.bin
 %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map8/maps/ANSI_X3.4-1968.bin
@@ -184,8 +185,9 @@ bin/umap
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map8/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map8/Map8.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map8/Map8.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map8
+man/man1/umap.1.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map8
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map8/maps
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map8
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map8/maps
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map8
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode

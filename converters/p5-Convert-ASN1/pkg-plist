@@ -1,12 +1,13 @@
+%%PERL5_MAN3%%/Convert::ASN1.3.gz
 %%SITE_PERL%%/Convert/ASN1.pm
 %%SITE_PERL%%/Convert/ASN1.pod
-%%SITE_PERL%%/Convert/ASN1/_decode.pm
-%%SITE_PERL%%/Convert/ASN1/_encode.pm
 %%SITE_PERL%%/Convert/ASN1/Debug.pm
 %%SITE_PERL%%/Convert/ASN1/IO.pm
+%%SITE_PERL%%/Convert/ASN1/_decode.pm
+%%SITE_PERL%%/Convert/ASN1/_encode.pm
 %%SITE_PERL%%/Convert/ASN1/parser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/ASN1/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/ASN1
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/ASN1
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert
-@dirrm %%SITE_PERL%%/Convert/ASN1
+@dirrmtry %%SITE_PERL%%/Convert/ASN1
 @dirrmtry %%SITE_PERL%%/Convert

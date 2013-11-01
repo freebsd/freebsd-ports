@@ -15,7 +15,4 @@ USE_PERL5=	configure
 CONFIGURE_ARGS+=	INC="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib ${ICONV_LIB}"
 
-MAN3=		Text::Iconv.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
