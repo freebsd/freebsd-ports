@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Filesys-Notify-KQueue
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,10 +15,6 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-SharedFork>=0.19:${PORTSDIR}/devel/p5-Test-SharedFork
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 
-MAN3=	Filesys::Notify::KQueue.3 \
-	Filesys::Notify::README.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
