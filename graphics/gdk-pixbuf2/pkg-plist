@@ -76,6 +76,8 @@ lib/libgdk_pixbuf_xlib-2.0.so
 lib/libgdk_pixbuf_xlib-2.0.so.0
 libdata/pkgconfig/gdk-pixbuf-2.0.pc
 libdata/pkgconfig/gdk-pixbuf-xlib-2.0.pc
+man/man1/gdk-pixbuf-csource.1.gz
+man/man1/gdk-pixbuf-query-loaders.1.gz
 share/gir-1.0/GdkPixbuf-2.0.gir
 %%NLS%%share/locale/af/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/ang/LC_MESSAGES/gdk-pixbuf.mo
