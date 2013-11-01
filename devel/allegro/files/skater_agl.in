@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# # $FreeBSD$
+#
+
+cd "%%EXAMPLESDIR%%/demos/skater"
+exec ./skater_agl "${@}"

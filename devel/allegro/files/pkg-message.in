@@ -1,0 +1,25 @@
+===============================================================================
+
+Allegro has been installed.
+
+Allegro have two Demos (Games)
+
+Shooter and Skater
+
+
+You can use executable
+
+    %%LOCALBASE%%/bin/shooter
+
+    %%LOCALBASE%%/bin/skater
+
+
+Or can use desktop files
+
+    %%LOCALBASE%%/share/applications/shooter.desktop
+
+    %%LOCALBASE%%/share/applications/skater.desktop
+
+Have fun!
+
+===============================================================================
