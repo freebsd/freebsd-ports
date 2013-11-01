@@ -13,11 +13,10 @@ COMMENT=	Text based card game, the objective is to get rid of all your cards
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/eights
 
-NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC} && ${CC} ${CFLAGS} ${PORTNAME}.c -o ${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
