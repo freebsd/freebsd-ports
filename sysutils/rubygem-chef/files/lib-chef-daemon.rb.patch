@@ -1,69 +1,5 @@
 --- lib/chef/daemon.rb.orig	2012-09-05 11:19:47.000000000 +0900
 +++ lib/chef/daemon.rb	2012-09-05 11:22:42.000000000 +0900
-@@ -32,26 +32,24 @@
-       #
-       def daemonize(name)
-         @name = name
--        pid = pid_from_file
--        unless running?
--          remove_pid_file()
--          Chef::Log.info("Daemonizing..")
--          begin
--            exit if fork
--            Process.setsid
--            exit if fork
--            Chef::Log.info("Forked, in #{Process.pid}. Privileges: #{Process.euid} #{Process.egid}")
--            File.umask Chef::Config[:umask]
--            $stdin.reopen("/dev/null")
--            $stdout.reopen("/dev/null", "a")
--            $stderr.reopen($stdout)
--            save_pid_file
--            at_exit { remove_pid_file }
--          rescue NotImplementedError => e
--            Chef::Application.fatal!("There is no fork: #{e.message}")
-+        Chef::Log.info("Daemonizing..")
-+        begin
-+          exit if fork
-+          Process.setsid
-+          exit if fork
-+          Chef::Log.info("Forked, in #{Process.pid}. Privileges: #{Process.euid} #{Process.egid}")
-+          File.umask Chef::Config[:umask]
-+          $stdin.reopen("/dev/null")
-+          $stdout.reopen("/dev/null", "a")
-+          $stderr.reopen($stdout)
-+          read_pid_file
-+          if running?
-+            Chef::Application.fatal!("Chef(#{$0}) is already running pid #{@pid}")
-           end
--        else
--          Chef::Application.fatal!("Chef is already running pid #{pid}")
-+          save_pid_file
-+          at_exit { remove_pid_file }
-+        rescue NotImplementedError => e
-+          Chef::Application.fatal!("There is no fork: #{e.message}")
-         end
-       end
-   
-@@ -62,16 +60,14 @@
-       # False if Chef is not running
-       #
-       def running?
--        if pid_from_file.nil?
-+        if @pid.nil?
-           false
-         else
--          Process.kill(0, pid_from_file)
-+          Process.kill(0, @pid)
-           true
-         end
-       rescue Errno::ESRCH, Errno::ENOENT
-         false
--      rescue Errno::EACCES => e
--        Chef::Application.fatal!("You don't have access to the PID file at #{pid_file}: #{e.message}")
-       end
-       
-       # Gets the pid file for @name
-@@ -89,10 +85,19 @@
        # nil::
        #   Returned if the pid_file does not exist.
        #
@@ -87,16 +23,3 @@
        end
      
        # Store the PID on the filesystem
-@@ -107,7 +112,11 @@
-         end
-       
-         begin
--          File.open(file, "w") { |f| f.write(Process.pid.to_s) }
-+          @fh.rewind
-+          @fh.write("#{Process.pid.to_s}\n")
-+          @fh.flush
-+          @fh.truncate(@fh.pos)
-+          @fh.close
-         rescue Errno::EACCES => e
-           Chef::Application.fatal!("Couldn't write to pidfile #{file}, permission denied: #{e.message}")
-         end

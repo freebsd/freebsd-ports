@@ -1,6 +1,6 @@
---- lib/chef/platform.rb.orig	2010-11-02 15:48:57.000000000 +0900
-+++ lib/chef/platform.rb	2010-11-02 15:49:12.000000000 +0900
-@@ -50,7 +50,7 @@
+--- lib/chef/platform/provider_mapping.rb.orig	2013-11-01 12:12:31.000000000 +0900
++++ lib/chef/platform/provider_mapping.rb	2013-11-01 12:12:47.000000000 +0900
+@@ -60,7 +60,7 @@
            :freebsd => {
              :default => {
                :group   => Chef::Provider::Group::Pw,
