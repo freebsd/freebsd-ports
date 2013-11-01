@@ -8,17 +8,17 @@ MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/archive/
 DISTNAME=	${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A standalone vanity address generator for bitcoin
+COMMENT=	Standalone vanity address generator for bitcoin
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	samr7
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	20130402
-LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	bin/keyconv bin/vanitygen
+
 NO_STAGE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
