@@ -15,7 +15,7 @@ COMMENT=	Portable fast-paced 3D shooter
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs
+LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -23,13 +23,15 @@ USE_BZIP2=	yes
 USE_GL=		yes
 USE_SDL=	image sdl ttf
 USE_OPENAL=	al alut
-USE_GMAKE=	yes
+USES=		gmake
 
-NO_STAGE=	yes
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+OPTIONS_DEFINE=	DOCS
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/excido ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/data ; ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
