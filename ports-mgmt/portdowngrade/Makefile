@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	portdowngrade
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -15,8 +15,7 @@ RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
 NO_BUILD=	yes
 PLIST_FILES=	sbin/portdowngrade
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/${PORTNAME} ${PREFIX}/sbin/
+	${INSTALL_SCRIPT} ${FILESDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin/
 
 .include <bsd.port.mk>
