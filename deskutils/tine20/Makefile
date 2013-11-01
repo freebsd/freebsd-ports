@@ -4,7 +4,7 @@
 PORTNAME=	tine20
 PORTVERSION=	0.0.2012.10.04
 DISTVERSIONSUFFIX=	2012.10.4
-CATEGORIES=	deskutils
+CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.tine20.org/downloads/${DISTVERSIONSUFFIX}/
 DISTNAME=	${PORTNAME}-allinone_${DISTVERSIONSUFFIX}
 
@@ -31,7 +31,6 @@ USE_MYSQL=	yes
 USE_PHP=	ctype dom gd iconv json mcrypt mysql pdo_mysql simplexml spl xml zip
 WANT_PHP_WEB=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPC}
@@ -53,8 +52,8 @@ do-extract:
 	cd ${WRKDIR}/${PORTNAME} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${EXTRACT_ONLY} ${EXTRACT_AFTER_ARGS}
 
 do-install:
-	${MKDIR} ${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR}
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${WWWDIR}
 
 post-install:
 	${CAT} ${PKGMESSAGE}
