@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cego
-PORTVERSION=	2.19.10
+PORTVERSION=	2.19.11
 CATEGORIES=	databases
 MASTER_SITES=	http://www.lemke-it.com/
 
@@ -18,7 +18,6 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	autoconf:env
 USE_RC_SUBR=	cego
 
 USES=		ncurses readline
