@@ -1,6 +1,0 @@
-The Postfixadmin SquirrelMail plugin let users change their virtual alias,
-vacation status/message and password if you are using the great postfixadmin
-tool from http://high5.net/postfixadmin.  This plugin uses the XmlRpc
-feature of Postfix Admin v2.3 and later.
-
-WWW: http://squirrelmail-postfixadmin.palepurple.co.uk/
