@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	1.4.1
-PORTREVISION=	2
+DISTVERSION=	1.6
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -17,12 +16,12 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
-LIB_DEPENDS=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		freetype:${PORTSDIR}/print/freetype2 \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		lcms:${PORTSDIR}/graphics/lcms \
-		png15:${PORTSDIR}/graphics/png \
-		xml2:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libxml2.so:${PORTSDIR}/textproc/libxml2
 
 CONFLICTS_INSTALL=	i386-wine-* wine-1.5* wine-1.7*
 
@@ -43,16 +42,9 @@ WINELIBDIR?=	${PREFIX}/lib
 .if !defined(USE_LDCONFIG32)
 USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine
 .endif
-MAN1=		msiexec.1 notepad.1 regedit.1 regsvr32.1 widl.1 wine.1 \
-		wineboot.1 winebuild.1 winecfg.1 wineconsole.1 winedbg.1 \
-		winedump.1 winefile.1 winegcc.1 winemaker.1 winemine.1 \
-		winepath.1 wineserver.1 wmc.1 wrc.1
-MLINKS=		winegcc.1 winecpp.1 \
-		winegcc.1 wineg++.1
 ONLY_FOR_ARCHS=	i386
-USES=		bison
+USES=		bison gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GL=		glu
 USE_XORG=	xcursor xi xpm xrandr xrender
 
@@ -70,12 +62,11 @@ PORTDATA=	fonts/ generic.ppd l_intl.nls wine.inf
 
 PORTSCOUT=	limitw:1,even
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MCUPS}
 CONFIGURE_ARGS+=	--with-cups
-LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-client
+LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client
 .else
 CONFIGURE_ARGS+=	--without-cups
 .endif
@@ -86,14 +77,14 @@ RUN_DEPENDS+=	dosbox:${PORTSDIR}/emulators/dosbox
 
 .if ${PORT_OPTIONS:MGNUTLS}
 CONFIGURE_ARGS+=	--with-gnutls
-LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--without-gnutls
 .endif
 
 .if ${PORT_OPTIONS:MHAL}
 CONFIGURE_ARGS+=	--with-hal
-LIB_DEPENDS+=	hal:${PORTSDIR}/sysutils/hal
+LIB_DEPENDS+=	libhal.so:${PORTSDIR}/sysutils/hal
 .else
 CONFIGURE_ARGS+=	--without-hal
 .endif
@@ -107,7 +98,7 @@ CONFIGURE_ARGS+=	--without-ldap
 
 .if ${PORT_OPTIONS:MLIBXSLT}
 CONFIGURE_ARGS+=	--with-xslt
-LIB_DEPENDS+=	xslt:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS+=	libxslt.so:${PORTSDIR}/textproc/libxslt
 .else
 CONFIGURE_ARGS+=	--without-xslt
 .endif
@@ -141,27 +132,17 @@ pre-build:
 	cd ${WRKSRC} && ${GMAKE} depend
 
 post-install:
-	@${RM} -f ${MAN1PREFIX}/man/de.UTF-8/man1/wine.1 \
-	          ${MAN1PREFIX}/man/de.UTF-8/man1/winemaker.1 \
-	          ${MAN1PREFIX}/man/de.UTF-8/man1/wineserver.1 \
-	          ${MAN1PREFIX}/man/fr.UTF-8/man1/wine.1 \
-	          ${MAN1PREFIX}/man/fr.UTF-8/man1/winemaker.1 \
-	          ${MAN1PREFIX}/man/fr.UTF-8/man1/wineserver.1 \
-	          ${MAN1PREFIX}/man/pl.UTF-8/man1/wine.1
-	@-${RMDIR} -p ${MAN1PREFIX}/man/de.UTF-8/man1 \
-	              ${MAN1PREFIX}/man/fr.UTF-8/man1 \
-	              ${MAN1PREFIX}/man/pl.UTF-8/man1
-	@${MV} -f ${WINELIBDIR}/libwine.so.1.0 ${WINELIBDIR}/libwine.so.1
-	@${LN} -sf libwine.so.1 ${WINELIBDIR}/libwine.so
+	@${MV} -f ${STAGEDIR}${WINELIBDIR}/libwine.so.1.0 \
+	          ${STAGEDIR}${WINELIBDIR}/libwine.so.1
+	@${LN} -sf libwine.so.1 ${STAGEDIR}/${WINELIBDIR}/libwine.so
 .if !defined(NOPORTDOCS)
-	-@${MKDIR} ${DOCSDIR}
+	-@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README ANNOUNCE AUTHORS
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/programs/winedbg/README ${DOCSDIR}/README.winedbg
-	@${INSTALL_DATA} ${WRKSRC}/tools/winedump/README ${DOCSDIR}/README.winedump
+	@${INSTALL_DATA} ${WRKSRC}/programs/winedbg/README ${STAGEDIR}${DOCSDIR}/README.winedbg
+	@${INSTALL_DATA} ${WRKSRC}/tools/winedump/README ${STAGEDIR}${DOCSDIR}/README.winedump
 .endif
-	@${MKDIR} ${DESKTOPDIR}
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
 
