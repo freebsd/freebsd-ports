@@ -2,7 +2,7 @@
 
 PORTNAME=	ldapdb
 PORTVERSION=	2.1.26
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/
 PKGNAMEPREFIX=	cyrus-sasl-
@@ -38,7 +38,6 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--includedir=${PREFIX}/include \
 		--enable-static \
 		--with-rc4=openssl
-
 CONFIGURE_ARGS+=--with-dblib=none \
 		--disable-anon \
 		--disable-cram \
@@ -49,8 +48,8 @@ CONFIGURE_ARGS+=--with-dblib=none \
 		--disable-otp \
 		--disable-plain \
 		--disable-scram
-
 CONFIGURE_ARGS+=--enable-ldapdb --with-ldap=${LOCALBASE}
+MAKE_ENV+=	INSTALL_STRIP_FLAG=${STRIP}
 
 PLIST_FILES=	lib/sasl2/libldapdb.a \
 		lib/sasl2/libldapdb.la \

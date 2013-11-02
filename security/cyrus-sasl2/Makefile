@@ -2,7 +2,7 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	2.1.26
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/ \
 		http://cyrusimap.org/releases/
@@ -32,6 +32,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-rc4=openssl \
 		--with-saslauthd=${SASLAUTHD_RUNPATH} \
 		--disable-krb4
+MAKE_ENV+=	INSTALL_STRIP_FLAG=${STRIP}
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}2
 
