@@ -1,4 +1,5 @@
 bin/gtetrinet
+man/man6/gtetrinet.6.gz
 share/applications/gtetrinet.desktop
 share/gtetrinet/themes/default/blocks.png
 share/gtetrinet/themes/default/theme.cfg

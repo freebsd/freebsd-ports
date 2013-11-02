@@ -19,10 +19,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --enable-ipv6
 
-MAN6=		gtetrinet.6
 GCONF_SCHEMAS=	gtetrinet.schemas
 
-NO_STAGE=	yes
 pre-configure:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[(]prefix[)]/games|{bindir}|g; /_DISABLE_DEPRECATED/d'
