@@ -1,4 +1,5 @@
 bin/pmw
+man/man1/pmw.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/spec.pdf
 %%DATADIR%%/MIDIperc
@@ -20,6 +21,8 @@ bin/pmw
 %%DATADIR%%/fontmetrics/Helvetica-BoldOblique.afm
 %%DATADIR%%/fontmetrics/Helvetica-Oblique.afm
 %%DATADIR%%/fontmetrics/Helvetica.afm
+%%DATADIR%%/fontmetrics/LICENCE
+%%DATADIR%%/fontmetrics/MustRead.html
 %%DATADIR%%/fontmetrics/NewCenturySchlbk-Bold.afm
 %%DATADIR%%/fontmetrics/NewCenturySchlbk-BoldItalic.afm
 %%DATADIR%%/fontmetrics/NewCenturySchlbk-Italic.afm
