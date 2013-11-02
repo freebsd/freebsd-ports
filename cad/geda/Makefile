@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geda
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://ftp.geda-project.org/geda-gaf/stable/%SUBDIR%/
@@ -10,18 +10,24 @@ MASTER_SITE_SUBDIR=	v${PORTVERSION:R}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-gaf-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The GPL Electronic Design Automation tools
+COMMENT=	GPL Electronic Design Automation tools
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	stroke:${PORTSDIR}/devel/libstroke \
-		guile:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	libstroke.so:${PORTSDIR}/devel/libstroke \
+		libguile.so:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		pathfix gettext perl5 gmake pkgconfig
-USE_GNOME=	desktopfileutils gtk20
+USES=		desktop-file-utils gettext gmake pathfix perl5 pkgconfig \
+		shared-mime-info shebangfix
+SHEBANG_FILES=	examples/lightning_detector/bom libgeda/docs/*.dox \
+		utils/gxyrs/*.pl utils/scripts/* \
+		utils/docs/*.dox gattrib/docs/*.dox \
+		gschem/docs/*.dox gsymcheck/docs/*.dox \
+		gnetlist/docs/*.dox
+USE_GNOME=	gtk20
 USE_PERL5=	run
 USE_PYTHON=	run
 USE_AUTOTOOLS=	libtool
@@ -35,12 +41,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-gaf
 DATADIR=	${PREFIX}/share/gEDA
 
-MAN1=		convert_sym.1 garchive.1 gattrib.1 gmk_sym.1 \
-		gnetlist.1 grenum.1 gsch2pcb.1 gschem.1 \
-		gschlas.1 gsymcheck.1 gsymfix.1 gxyrs.1 \
-		olib.1 pads_backannotate.1 pcb_backannotate.1 refdes_renum.1 \
-		sarlacc_schem.1 sarlacc_sym.1 schdiff.1 smash_megafile.1 \
-		sw2asc.1 tragesym.1
 INFO=		geda-scheme
 
 CONFLICTS=	geda-docs-[0-9]* geda-examples-[0-9]* geda-gattrib-[0-9]* \
@@ -49,12 +49,7 @@ CONFLICTS=	geda-docs-[0-9]* geda-examples-[0-9]* geda-gattrib-[0-9]* \
 
 PORTSCOUT=	limitw:1,even
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if empty(PORT_OPTIONS:MDOCS)
-CONFIGURE_ARGS+=--docdir=${WRKDIR}/fakeroot
-.endif
 
 post-patch:
 .for dir in gattrib gschem libgeda
@@ -63,9 +58,5 @@ post-patch:
 .endfor
 	@${REINPLACE_CMD} -e \
 		'/OS_LINUX=/s|no|yes|' ${WRKSRC}/configure
-	@${GREP} -lR "/usr/bin/python" ${WRKSRC} | ${XARGS} \
-		${REINPLACE_CMD} -e '/^#!/s|/usr/bin|${LOCALBASE}/bin|'
-	@${GREP} -lR "/usr/bin/perl" ${WRKSRC} | ${XARGS} \
-		${REINPLACE_CMD} -e '/^#!/s|/usr/bin|${LOCALBASE}/bin|'
 
 .include <bsd.port.mk>
