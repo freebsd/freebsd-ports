@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tsshbatch
-PORTVERSION=	1.137
+PORTVERSION=	1.171
 CATEGORIES=	security python
 MASTER_SITES=	http://www.tundraware.com/Software/tsshbatch/
 
@@ -18,29 +18,22 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}paramiko>=1.7.7.1:${PORTSDIR}/security/py-p
 
 USE_PYTHON_RUN=	yes
 
-MAN1=	tsshbatch.1
-MANCOMPRESSED=	yes
-
-PLIST_FILES=	bin/tsshbatch.py
+PLIST_FILES=	bin/tsshbatch.py \
+		man/man1/tsshbatch.1.gz
 PORTDOCS=	WHATSNEW.txt \
 		tsshbatch.html \
 		tsshbatch.pdf \
 		tsshbatch.ps \
 		tsshbatch.rst
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/tsshbatch.py ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/tsshbatch.1.gz ${MAN1PREFIX}/man/man1
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/tsshbatch.py ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/tsshbatch.1.gz ${STAGEDIR}${MAN1PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	cd ${WRKSRC} && ${INSTALL_DATA} $i ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} $i ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
