@@ -1,4 +1,6 @@
+%%PERL5_MAN3%%/base.3.gz
+%%PERL5_MAN3%%/fields.3.gz
 %%SITE_PERL%%/base.pm
 %%SITE_PERL%%/fields.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/base/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/base
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/base
