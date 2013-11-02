@@ -31,8 +31,9 @@ TLS_SRP_DESC=	TLS-SRP (Secure Remote Password) support
 CONFIGURE_ARGS+=--disable-werror \
 		--enable-imap --enable-pop3 --enable-rtsp --enable-smtp \
 		--without-axtls
-CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
+CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
 GNU_CONFIGURE=	yes
+MAKE_ENV+=	INSTALL_STRIP_FLAG=${STRIP}
 USE_PERL5=	build
 USE_XZ=		yes
 USES=		pathfix perl5
