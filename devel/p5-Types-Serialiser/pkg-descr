@@ -1,0 +1,6 @@
+Types::Serialiser provides some extra datatypes that are used by common
+serialisation formats such as JSON or CBOR. The idea is to have a repository of
+simple/small constants and containers that can be shared by different
+implementations so they become interoperable between each other.
+
+WWW: http://search.cpan.org/dist/Types-Serialiser/
