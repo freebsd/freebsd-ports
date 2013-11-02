@@ -39,8 +39,13 @@ CONFIGURE_ENV=	OPENSSL_LIBS="-L/usr/lib -ssl -crypto" OPENSSL_CFLAGS="-I/usr/inc
 
 CONFIGURE_ARGS+=	--disable-debug
 
+# Workaround to build on > 10.x
+.if ${OSVERSION} >= 1000000
+USE_GCC=	yes
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's/-O3/${CFLAGS}/' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-O3|${CFLAGS}|' ${WRKSRC}/configure
 
 .if ${PORT_OPTIONS:MKQUEUE}
 CONFIGURE_ARGS+=	--with-kqueue
