@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Fuse
-PORTVERSION=	0.16
+PORTVERSION=	0.16.1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DPATES
@@ -16,7 +16,4 @@ LICENSE=	LGPL21
 USES=		perl5 fuse pkgconfig
 USE_PERL5=	configure
 
-MAN3=		Fuse.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
