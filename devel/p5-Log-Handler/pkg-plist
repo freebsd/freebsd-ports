@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Handler/.packlist
 %%SITE_PERL%%/Log/Handler.pm
 %%SITE_PERL%%/Log/Handler/Config.pm
 %%SITE_PERL%%/Log/Handler/Examples.pod
@@ -15,6 +14,7 @@
 %%SITE_PERL%%/Log/Handler/Plugin/Config/General.pm
 %%SITE_PERL%%/Log/Handler/Plugin/Config/Properties.pm
 %%SITE_PERL%%/Log/Handler/Plugin/YAML.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Handler/.packlist
 %%PERL5_MAN3%%/Log::Handler.3.gz
 %%PERL5_MAN3%%/Log::Handler::Config.3.gz
 %%PERL5_MAN3%%/Log::Handler::Examples.3.gz
@@ -31,10 +31,10 @@
 %%PERL5_MAN3%%/Log::Handler::Plugin::Config::General.3.gz
 %%PERL5_MAN3%%/Log::Handler::Plugin::Config::Properties.3.gz
 %%PERL5_MAN3%%/Log::Handler::Plugin::YAML.3.gz
-@dirrm %%SITE_PERL%%/Log/Handler/Output
-@dirrm %%SITE_PERL%%/Log/Handler/Plugin/Config
-@dirrm %%SITE_PERL%%/Log/Handler/Plugin
-@dirrm %%SITE_PERL%%/Log/Handler
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Handler
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log
+@dirrm %%SITE_PERL%%/Log/Handler/Plugin/Config
+@dirrm %%SITE_PERL%%/Log/Handler/Plugin
+@dirrm %%SITE_PERL%%/Log/Handler/Output
+@dirrm %%SITE_PERL%%/Log/Handler
 @dirrmtry %%SITE_PERL%%/Log
