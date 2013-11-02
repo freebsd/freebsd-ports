@@ -2,65 +2,58 @@
 # $FreeBSD$
 
 PORTNAME=	hadoop
-PORTVERSION=	1.0.0
+PORTVERSION=	1.2.1
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/core/${PORTNAME}-${PORTVERSION}
+PKGNAMEPREFIX=	apache-
 DIST_SUBDIR=	hadoop
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pfg@apache.org
 COMMENT=	Apache Map/Reduce framework
 
 LICENSE=	AL2
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+BUILD_DEPENDS=	gmake:${PORTSDIR}/devel/gmake \
+		gsed:${PORTSDIR}/textproc/gsed
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6
 USE_ANT=	yes
-ONLY_FOR_ARCHS=	amd64 i386
+DESTDIRNAME=	-Ddestdir
+ONLY_FOR_ARCHS= amd64 i386
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-BUILD_DEPENDS+=	${LOCALBASE}/bin/gmake:${PORTSDIR}/devel/gmake \
-		${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
-RUN_DEPENDS+=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
-
-_HADOOP_DIR=	share/${PORTNAME}
-_HADOOP_ETC=	etc/${PORTNAME}
-HADOOP_HOME=	${PREFIX}/${_HADOOP_DIR}
-HADOOP_ETC=	${PREFIX}/${_HADOOP_ETC}
+OPTIONS_DEFINE=	DOCS
 
 HADOOP_LOGDIR=	/var/log/${PORTNAME}
 HADOOP_RUNDIR=	/var/run/${PORTNAME}
-HADOOP_BIN=	${PREFIX}/bin/${PORTNAME}
 
-USERS=		hadoop
-GROUPS=		hadoop
-HADOOP_USER=	${USERS}
-HADOOP_GROUP=	${GROUPS}
+HADOOP_USER=	hadoop
+HADOOP_GROUP=	hadoop
+USERS=		${HADOOP_USER}
+GROUPS=		${HADOOP_GROUP}
 
-SUB_FILES+=	pkg-install pkg-deinstall hadoop 000.java_home.env
-USE_RC_SUBR+=	tasktracker jobtracker datanode namenode secondarynamenode
+SUB_FILES=	hadoop 000.java_home.env
+USE_RC_SUBR=	tasktracker jobtracker datanode namenode secondarynamenode
 
-PLIST_SUB+=	PORTVERSION="${PORTVERSION}"\
-		HADOOP_HOME="${_HADOOP_DIR}" \
-		HADOOP_ETC="${_HADOOP_ETC}"
-SUB_LIST=	HADOOP_LOGDIR="${HADOOP_LOGDIR}" \
+PLIST_SUB=	PORTVERSION="${PORTVERSION}" \
+		HADOOP_LOGDIR="${HADOOP_LOGDIR}" \
 		HADOOP_RUNDIR="${HADOOP_RUNDIR}" \
 		HADOOP_USER="${HADOOP_USER}" \
+		HADOOP_GROUP="${HADOOP_GROUP}"
+SUB_LIST=	HADOOP_USER="${HADOOP_USER}" \
 		HADOOP_GROUP="${HADOOP_GROUP}" \
-		HADOOP_UID="${HADOOP_UID}" \
-		HADOOP_GID="${HADOOP_GID}" \
-		HADOOP_HOME="${HADOOP_HOME}" \
-		HADOOP_ETC="${HADOOP_ETC}" \
 		JAVA_HOME="${JAVA_HOME}"
 
 PORTDOCS=	*
-FIX_PERMS=	src/c++/pipes/install-sh src/c++/utils/install-sh src/c++/libhdfs/install-sh \
-		src/c++/libhdfs/tests/test-libhdfs.sh
 
-FIX_DOCS=	docs/cn/skin/css docs/cn/skin/scripts docs/cn/skin/translations \
-		docs/jdiff docs/skin/css docs/skin/scripts docs/skin/translations
+FIX_GCC=	src/c++/libhdfs/configure src/c++/pipes/configure \
+		src/c++/task-controller/configure src/c++/utils/configure \
+		src/examples/pipes/configure src/native/configure
+FIX_PERMS=	src/c++/pipes/install-sh src/c++/utils/install-sh \
+		src/c++/libhdfs/install-sh src/c++/libhdfs/tests/test-libhdfs.sh
+FIX_DOCS=	docs/jdiff docs/skin/css docs/skin/scripts docs/skin/translations
 
 DOC=		CHANGES.txt LICENSE.txt NOTICE.txt README.txt
 
@@ -75,17 +68,21 @@ MAKE_ARGS=	-Dbuild.classes=${WRKSRC}/hadoop-core-${PORTVERSION}.jar -Dversion=${
 		-Dcompile.c++=true -Dmake.cmd=${GMAKE} -Dlibhdfs=1 -Dlibrecordio=true  -Dskip.record-parser=true
 ALL_TARGET=	compile-core-native compile-c++ compile-c++-libhdfs compile-c++-pipes compile-c++-utils
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64"
 _HADOOP_ARCH=	FreeBSD-amd64-64
 .else
-_HADOOP_ARCH=	FreeBSD-i386-32
+_HADOOP_ARCH=	FreeBSD-${ARCH}-32
 .endif
 PLIST_SUB+=	HADOOP_ARCH=${_HADOOP_ARCH}
 
-pre-build:
+post-patch:
+	@${REINPLACE_CMD} -e 's/ -DCPU=\\\\\\".*\\\\\\"//' \
+		${WRKSRC}/src/c++/libhdfs/configure
+.for f in ${FIX_GCC}
+	@${REINPLACE_CMD} -e 's/`gcc/`$$LTCC/' ${WRKSRC}/${f}
+.endfor
 .for f in ${FIX_PERMS}
 	@${CHMOD} +x ${WRKSRC}/${f}
 .endfor
@@ -93,50 +90,37 @@ pre-build:
 	@${TOUCH} ${WRKSRC}/${d}/.empty
 .endfor
 
-#do-build:
-#	@cd ${WRKSRC}; \
-#	${ANT} -Dbuild.classes=${WRKSRC}/hadoop-core-${PORTVERSION}.jar -Dversion=${PORTVERSION} -Dcompile.native=true \
-#	-Dcompile.c++=true -Dmake.cmd=${GMAKE} compile-core-native compile-c++ compile-c++-libhdfs compile-c++-pipes \
-#	compile-c++-utils -Dlibhdfs=1 -Dlibrecordio=true  -Dskip.record-parser=true
-
 post-build:
 	@cd ${WRKSRC} ;${ANT} FreeBSD-dist
 	@${TAR} -cf - -C ${WRKSRC}/build/c++/ ${_HADOOP_ARCH}/lib ${_HADOOP_ARCH}/include | ${TAR} xf - -C ${WRKSRC}/c++/
 
-pre-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 do-install:
-	@${MKDIR} ${HADOOP_HOME}
-	@${TAR} -cf - -C ${WRKSRC}/ ${DIST}  | ${TAR} -xf - -C ${HADOOP_HOME}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${TAR} -cf - -C ${WRKSRC} ${DIST} | ${TAR} -xf - -C ${STAGEDIR}${DATADIR}
 
-	@${MKDIR} ${HADOOP_ETC} ${HADOOP_ETC}/envvars.d
-	@${INSTALL_DATA} ${WRKDIR}/000.java_home.env ${HADOOP_ETC}/envvars.d/
-	@${ECHO} "export HADOOP_HOME=${HADOOP_HOME}" > ${HADOOP_ETC}/envvars.d/001.hadoop_home.env
-	@${ECHO} "export HADOOP_CONF_DIR=${HADOOP_ETC}" > ${HADOOP_ETC}/envvars.d/002.hadoop_conf.env
-	@${ECHO} "export HADOOP_LOG_DIR=${HADOOP_LOGDIR}" > ${HADOOP_ETC}/envvars.d/003.hadoop_log.env
-	@${ECHO} "export HADOOP_PID_DIR=${HADOOP_RUNDIR}" > ${HADOOP_ETC}/envvars.d/004.hadoop_run.env
-	@${MKDIR} ${EXAMPLESDIR}
-	@${TAR} -cf - -C ${WRKSRC}/c++/${_HADOOP_ARCH}/  include lib| ${TAR} xf - -C ${PREFIX}
+	${MKDIR} ${STAGEDIR}${ETCDIR}/envvars.d
+	${INSTALL_DATA} ${WRKDIR}/000.java_home.env ${STAGEDIR}${ETCDIR}/envvars.d
+	${ECHO} "export HADOOP_PREFIX=${DATADIR}" > ${STAGEDIR}${ETCDIR}/envvars.d/001.hadoop_home.env
+	${ECHO} "export HADOOP_CONF_DIR=${ETCDIR}" > ${STAGEDIR}${ETCDIR}/envvars.d/002.hadoop_conf.env
+	${ECHO} "export HADOOP_LOG_DIR=${HADOOP_LOGDIR}" > ${STAGEDIR}${ETCDIR}/envvars.d/003.hadoop_log.env
+	${ECHO} "export HADOOP_PID_DIR=${HADOOP_RUNDIR}" > ${STAGEDIR}${ETCDIR}/envvars.d/004.hadoop_run.env
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${TAR} -cf - -C ${WRKSRC}/c++/${_HADOOP_ARCH} include lib | ${TAR} xf - -C ${STAGEDIR}${PREFIX}
 
 .for f in ${DEFAULTS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${TAR} -cf - -C ${WRKSRC}/ docs | ${TAR} -xf - -C ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${DOCSDIR}
 .for f in ${DOC}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-	@${INSTALL_SCRIPT} ${WRKDIR}/hadoop ${PREFIX}/bin/
-	@cd ${WRKSRC}; ${COPYTREE_SHARE} conf ${EXAMPLESDIR}
-.for f in ${CONF}
-	@[ -f ${HADOOP_ETC}/${f} ] || ${INSTALL_DATA} ${EXAMPLESDIR}/conf/${f} ${HADOOP_ETC}
-.endfor
+	${INSTALL_SCRIPT} ${WRKDIR}/hadoop ${STAGEDIR}${PREFIX}/bin
+	cd ${WRKSRC} && ${COPYTREE_SHARE} conf ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${HADOOP_LOGDIR}
+	${MKDIR} ${STAGEDIR}${HADOOP_RUNDIR}
 
-post-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

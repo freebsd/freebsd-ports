@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-for i in `ls %%HADOOP_ETC%%/envvars.d/*.env`
+for i in `ls %%ETCDIR%%/envvars.d/*.env`
 do
    . ${i}
 done
 
-exec %%HADOOP_HOME%%/bin/hadoop $@
+exec %%DATADIR%%/bin/hadoop $@

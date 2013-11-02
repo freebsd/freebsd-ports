@@ -31,7 +31,7 @@ load_rc_config "${name}"
 : ${namenode_user:=%%HADOOP_USER%%}
 : ${namenode_group:=%%HADOOP_GROUP%%}
 
-command="%%HADOOP_HOME%%/bin/hadoop-daemon.sh"
+command="%%DATADIR%%/bin/hadoop-daemon.sh"
 command_args='--config ${HADOOP_CONF_DIR} start namenode'
 
 start_precmd=namenode_init
@@ -46,7 +46,7 @@ namenode_init()
 		export JAVA_HOME="${namenode_java_home}"
 	fi
 
-	for f in %%HADOOP_ETC%%/envvars.d/*.env
+	for f in %%ETCDIR%%/envvars.d/*.env
 	do
 		. ${f}
 	done

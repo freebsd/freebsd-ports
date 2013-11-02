@@ -1,6 +1,6 @@
---- build.xml.orig	2011-05-04 08:30:16.000000000 +0200
-+++ build.xml	2011-08-08 00:08:22.000000000 +0200
-@@ -372,7 +372,7 @@
+--- build.xml.orig	2013-07-23 00:26:41.000000000 +0200
++++ build.xml	2013-10-29 16:27:54.000000000 +0100
+@@ -452,7 +452,7 @@
    <!-- ====================================================== -->
    <!-- Compile the Java files                                 -->
    <!-- ====================================================== -->
@@ -9,16 +9,16 @@
        <javacc
            target="${core.src.dir}/org/apache/hadoop/record/compiler/generated/rcc.jj"
            outputdirectory="${core.src.dir}/org/apache/hadoop/record/compiler/generated"
-@@ -539,7 +539,7 @@
-     </antcall> 
+@@ -636,7 +636,7 @@
+     </exec>
    </target>
  
--  <target name="compile-core-native" depends="compile-core-classes"
+-  <target name="compile-core-native" depends="create-native-configure, compile-core-classes"
 +  <target name="compile-core-native"
            if="compile.native">
    	
      <mkdir dir="${build.native}/lib"/>
-@@ -1669,7 +1669,7 @@
+@@ -2042,7 +2042,7 @@
  <!-- librecordio targets.                                               -->
  <!-- ================================================================== -->		
  
@@ -27,7 +27,7 @@
       <mkdir dir="${build.librecordio}"/>
       <exec dir="${librecordio.src}" executable="${make.cmd}" failonerror="true">
          <env key="XERCESCROOT" value="${xercescroot}"/>
-@@ -1703,7 +1703,7 @@
+@@ -2076,7 +2076,7 @@
      </chmod>
    </target>
   
@@ -36,7 +36,7 @@
      <exec executable="autoreconf" dir="${c++.utils.src}" searchpath="yes" 
            failonerror="yes">
         <arg value="-if"/>
-@@ -1726,7 +1726,7 @@
+@@ -2099,7 +2099,7 @@
      </exec>
    </target>
  
@@ -45,7 +45,7 @@
      <condition property="need.c++.utils.makefile">
         <not> <available file="${build.c++.utils}/Makefile"/> </not>
      </condition>
-@@ -1747,7 +1747,7 @@
+@@ -2120,7 +2120,7 @@
      </condition>
    </target>
  
@@ -54,8 +54,17 @@
      <condition property="need.c++.libhdfs.makefile">
         <not> <available file="${build.c++.libhdfs}/Makefile"/> </not>
      </condition>
-@@ -2326,5 +2326,23 @@
-       <fileset file="${jsvc.install.dir}/jsvc"/>
+@@ -2176,7 +2176,7 @@
+   </target>
+ 
+   <target name="compile-c++" 
+-          depends="create-c++-configure,compile-c++-pipes"/>
++          depends="compile-c++-pipes"/>
+ 
+   <target name="create-c++-examples-pipes-makefile" 
+           depends="check-c++-makefiles" 
+@@ -2824,5 +2824,23 @@
+       <fileset file="${jsvc.install.dir}/jsvc.${os.arch}"/>
      </chmod>
   </target>
 +  <target name="FreeBSD-dist" >
