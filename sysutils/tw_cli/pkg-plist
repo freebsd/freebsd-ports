@@ -1,3 +1,4 @@
+man/man8/tw_cli.8.gz
 sbin/tw_cli
 etc/periodic/daily/407.status-3ware-raid
 @dirrmtry etc/periodic/daily
