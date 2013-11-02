@@ -2,31 +2,46 @@
 # $FreeBSD$
 
 PORTNAME=	bulk_extractor
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://cloud.github.com/downloads/simsong/bulk_extractor/
+MASTER_SITES=	http://www.digitalcorpora.org/downloads/bulk_extractor/
 
 MAINTAINER=	nobutaka@FreeBSD.org
-COMMENT=	A program that scans a disk image and extracts useful information
+COMMENT=	Program that scans a disk image and extracts useful information
 
-LICENSE=	PD
-LICENSE_NAME=	public domain
+LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	afflib:${PORTSDIR}/sysutils/afflib \
-		ewf:${PORTSDIR}/devel/libewf \
-		exiv2:${PORTSDIR}/graphics/exiv2 \
-		expat:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libafflib.so:${PORTSDIR}/sysutils/afflib \
+		libewf.so:${PORTSDIR}/devel/libewf \
+		libexiv2.so:${PORTSDIR}/graphics/exiv2 \
+		libexpat.so:${PORTSDIR}/textproc/expat2
 
-USE_AUTOTOOLS=	autoconf
 USE_OPENSSL=	yes
-USE_PYTHON=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-exiv2=true
+CPPFLAGS+=	-I${LOCALBASE}/include
 
-MAN1=		bulk_extractor.1
+PLIST_FILES=	bin/bulk_extractor bin/plugin_test man/man1/bulk_extractor.1.gz
 
-PLIST_FILES=	bin/bulk_extractor
+OPTIONS_DEFINE=	BEVIEWER
+BEVIEWER_DESC=	Build BEViewer (requires Java)
+OPTIONS_DEFAULT=BEVIEWER
 
-NO_STAGE=	yes
+BEVIEWER_CONFIGURE_OFF=	--disable-BEViewer
+BEVIEWER_USE=	JAVA=yes
+BEVIEWER_PLIST_FILES=	bin/BEViewer bin/BEViewer.jar
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == i386 && ! ${CFLAGS:M-march=*}
+# Needed for __sync_add_and_fetch_8
+CFLAGS+=	-march=i586
+.endif
+
+.if ${OSVERSION} < 1000033
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+CONFIGURE_ENV=	LEX=${LOCALBASE}/bin/flex
+.endif
+
 .include <bsd.port.mk>
