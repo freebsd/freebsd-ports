@@ -1,4 +1,3 @@
-# Created by: Hiroki Sato <hrs@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	xmlcatmgr
