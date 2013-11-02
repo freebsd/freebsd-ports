@@ -1,4 +1,8 @@
+@group games
+@mode 2755
 bin/lbreakout
+@mode
+@group
 share/lbreakout/ball.bmp
 share/lbreakout/bkgnd0.bmp
 share/lbreakout/bkgnd1.bmp
@@ -45,5 +49,9 @@ share/lbreakout/weapon.wav
 share/lbreakout/wontgiveup.wav
 @dirrm share/lbreakout
 @cwd /var/games
+@group games
+@mode 664
 lbreakout/lbreakout.hscr
+@mode
+@group
 @dirrm lbreakout
