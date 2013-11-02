@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	swfmill
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://swfmill.org/releases/
 
@@ -11,15 +11,13 @@ COMMENT=	Tool to generate or decompile Adobe Flash SWF files
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libfreetype.so:${PORTSDIR}/print/freetype2
 
-USES=		pkgconfig iconv
+USES=		iconv gmake pkgconfig
 USE_GNOME=	libxml2 libxslt
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 
 PLIST_FILES=	bin/swfmill
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
