@@ -2,52 +2,51 @@
 # $FreeBSD$
 
 PORTNAME=	mpop
-PORTVERSION=	1.0.27
-PORTREVISION=	1
+PORTVERSION=	1.0.28
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	MPOP is a small and fast POP3 client
 
-LIB_DEPENDS=	idn.17:${PORTSDIR}/dns/libidn
+LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
 
-OPTIONS_DEFINE=	GNUTLS GSASL NLS
-GNUTLS_DESC=	GNUTLS Enable gnuTLS support
+OPTIONS_DEFINE=	GSASL NLS
+OPTIONS_RADIO=	SSL
+OPTIONS_RADIO_SSL=	GNUTLS OPENSSL
+OPTIONS_SUB=	yes
+
 GSASL_DESC=	GSASL GNU SASL authentication support
+
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 USES=		pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libidn
 
-MAN1=	mpop.1
 INFO=	mpop
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=		gnutls.26:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		libgnutls.so:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-ssl=gnutls
-.else
+.elif ${PORT_OPTIONS:MOPENSSL}
+USE_GCC=		yes
 USE_OPENSSL=		yes
-CONFIGURE_ARGS+=	--with-ssl=openssl
+CONFIGURE_ARGS+=	--with-ssl=openssl \
+			libssl_CFLAGS=-I${OPENSSLINC} \
+			libssl_LIBS=-lssl
+.else
+CONFIGURE_ARGS+=	--with-ssl=no
 .endif
 
 .if ${PORT_OPTIONS:MGSASL}
-LIB_DEPENDS+=		gsasl.16:${PORTSDIR}/security/gsasl
+LIB_DEPENDS+=		libgsasl.so:${PORTSDIR}/security/gsasl
 .else
-CONFIGURE_ARGS+=	--without-libgsasl-prefix
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CONFIGURE_ARGS+=	--enable-nls
-PLIST_SUB=		NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB=		NLS="@comment "
+CONFIGURE_ARGS+=	--without-libgsasl
 .endif
 
 .include <bsd.port.mk>
