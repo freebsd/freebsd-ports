@@ -68,9 +68,8 @@ GNUTLS_CONFIGURE_OFF=	--without-gnutls
 GNUTLS_CONFIGURE_ON=	--with-gnutls=${LOCALBASE}
 GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 GSSAPI_CONFIGURE_OFF=	--without-gssapi
-GSSAPI_CONFIGURE_ON=	--with-gssapi \
-			--with-gssapi-includes=${INCLUDEDIR} \
-			--with-gssapi-libs=${LIBDIR}
+GSSAPI_CONFIGURE_ON=	--with-gssapi=/usr
+GSSAPI_CPPFLAGS=	-I${INCLUDEDIR}/gssapi
 IDN_CONFIGURE_OFF=	--without-libidn
 IDN_CONFIGURE_ON=	--with-libidn=${LOCALBASE}
 IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
