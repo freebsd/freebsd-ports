@@ -37,6 +37,28 @@ lib/libgeda.la
 lib/libgeda.so
 lib/libgeda.so.42
 libdata/pkgconfig/libgeda.pc
+man/man1/convert_sym.1.gz
+man/man1/garchive.1.gz
+man/man1/gattrib.1.gz
+man/man1/gmk_sym.1.gz
+man/man1/gnetlist.1.gz
+man/man1/grenum.1.gz
+man/man1/gsch2pcb.1.gz
+man/man1/gschem.1.gz
+man/man1/gschlas.1.gz
+man/man1/gsymcheck.1.gz
+man/man1/gsymfix.1.gz
+man/man1/gxyrs.1.gz
+man/man1/olib.1.gz
+man/man1/pads_backannotate.1.gz
+man/man1/pcb_backannotate.1.gz
+man/man1/refdes_renum.1.gz
+man/man1/sarlacc_schem.1.gz
+man/man1/sarlacc_sym.1.gz
+man/man1/schdiff.1.gz
+man/man1/smash_megafile.1.gz
+man/man1/sw2asc.1.gz
+man/man1/tragesym.1.gz
 share/applications/geda-gattrib.desktop
 share/applications/geda-gschem.desktop
 %%PORTDOCS%%%%DOCSDIR%%/examples/README
@@ -2316,6 +2338,9 @@ share/locale/zh_CN/LC_MESSAGES/libgeda42.mo
 share/locale/zh_TW/LC_MESSAGES/geda-gattrib.mo
 share/locale/zh_TW/LC_MESSAGES/geda-gschem.mo
 share/locale/zh_TW/LC_MESSAGES/libgeda42.mo
+share/mime/application/x-geda-gsch2pcb-project.xml
+share/mime/application/x-geda-schematic.xml
+share/mime/application/x-geda-symbol.xml
 share/mime/packages/libgeda.xml
 @dirrm %%DATADIR%%/sym/xilinx
 @dirrm %%DATADIR%%/sym/vhdl
@@ -2400,7 +2425,3 @@ share/mime/packages/libgeda.xml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/libgeda
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
