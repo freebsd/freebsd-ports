@@ -9,7 +9,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	flo@FreeBSD.org
-COMMENT=	A PECL extension that provides direct access to low level IO
+COMMENT=	PECL extension that provides direct access to low level IO
 
 LICENSE=	PHP30
 
