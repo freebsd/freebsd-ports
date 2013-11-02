@@ -15,6 +15,7 @@ LIB_DEPENDS=	proxy.1:${PORTSDIR}/net/libproxy \
 MASTERDIR=	${.CURDIR}/../libproxy
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
+USES=		pkgconfig
 
 LIBPROXY_SLAVE=	webkit
 
