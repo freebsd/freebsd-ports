@@ -16,18 +16,17 @@ MAKE_ENV=	GRAPHICPATH="${GRAPHICPATH}" LEVELPATH="${LEVELPATH}"
 GRAPHICPATH=	${PREFIX}/share/hex/graphics
 LEVELPATH=	${PREFIX}/share/hex/levels
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/hex ${PREFIX}/bin
-	@${MKDIR} ${GRAPHICPATH}
-	${INSTALL_DATA} ${WRKSRC}/graphics/*.png ${GRAPHICPATH}
-	@${MKDIR} ${LEVELPATH}
-	${INSTALL_DATA} ${WRKSRC}/levels/Level1 ${LEVELPATH}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/hex
+	${INSTALL_PROGRAM} ${WRKSRC}/hex ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${GRAPHICPATH}
+	${INSTALL_DATA} ${WRKSRC}/graphics/*.png ${STAGEDIR}${GRAPHICPATH}
+	@${MKDIR} ${STAGEDIR}${LEVELPATH}
+	${INSTALL_DATA} ${WRKSRC}/levels/Level1 ${STAGEDIR}${LEVELPATH}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in HISTORY README TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/hex
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
