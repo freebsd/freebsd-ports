@@ -18,12 +18,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml \
 		${LOCALBASE}/bin/xdg-open:${PORTSDIR}/devel/xdg-utils \
 		${PYTHON_PKGNAMEPREFIX}chardet>0:${PORTSDIR}/textproc/py-chardet
 
-USES=		gettext
+USES=		desktop-file-utils gettext
 
 INSTALLS_ICONS=	yes
 USE_GNOME=	pygtk2
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
