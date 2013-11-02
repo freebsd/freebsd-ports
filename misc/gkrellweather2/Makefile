@@ -2,36 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	gkrellweather
-PORTVERSION=	2.0.7
-PORTREVISION=	9
+PORTVERSION=	2.0.8
 CATEGORIES=	misc geography
-MASTER_SITES=	http://makovick.googlepages.com/
+MASTER_SITES=	https://sites.google.com/site/makovick/projects/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GKrellWeather is a weather plugin for GKrellM
+COMMENT=	Weather plugin for GKrellM
+
+LICENSE=	GPLv2 # (or later)
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
-USES=		gmake pkgconfig
+FETCH_ARGS=	-Fpr
+
+USES=		gettext gmake pkgconfig
+MAKE_ENV=	enable_nls=1
 ALL_TARGET=	gkrellweather.so
 
-MAKE_ENV=	enable_nls=1 PTHREAD_LIBS=${PTHREAD_LIBS}
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-# uses C99 builtin lrintf
-.if ${ARCH} != "amd64"
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-lrintf
-.endif
-
 do-install:
-	${MKDIR} ${PREFIX}/libexec/gkrellm2/plugins
-	${INSTALL_DATA} ${WRKSRC}/gkrellweather.so ${PREFIX}/libexec/gkrellm2/plugins
-	${MKDIR} ${PREFIX}/share/locale/ru/
-	${INSTALL_DATA} ${WRKSRC}/po/ru.mo ${PREFIX}/share/locale/ru/LC_MESSAGES/gkrellweather.mo
-	${INSTALL_SCRIPT} ${WRKSRC}/GrabWeather ${PREFIX}/bin
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} GrabWeather \
+		${STAGEDIR}${PREFIX}/bin)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
+	(cd ${WRKSRC} && ${INSTALL_DATA} gkrellweather.so \
+		${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/ru
+	(cd ${WRKSRC}/po && ${INSTALL_DATA} ru.mo \
+		${STAGEDIR}${PREFIX}/share/locale/ru/LC_MESSAGES/gkrellweather.mo)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

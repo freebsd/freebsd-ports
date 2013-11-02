@@ -11,6 +11,6 @@ Features
 - Display using metric units (degrees Celsius, millimeters of
   Mercury, kilometers per hour)
 - Display pressure in kPa, hPa and mmHg
-- Display wind speeds in kmph, mps and beaufort scale
+- Display wind speeds in kmph, mps and Beaufort scale
 
-WWW: http://makovick.googlepages.com/gkrellmplugins
+WWW: https://sites.google.com/site/makovick/gkrellm-plugins
