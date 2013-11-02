@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	4.6.3
-PORTREVISION=	1
+PORTVERSION=	4.6.4
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	releases/gcc-${DISTVERSION}
@@ -11,9 +10,9 @@ MASTER_SITE_SUBDIR=	releases/gcc-${DISTVERSION}
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.6
 
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
-		mpfr:${PORTSDIR}/math/mpfr \
-		mpc:${PORTSDIR}/math/mpc
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
+		libmpfr.so:${PORTSDIR}/math/mpfr \
+		libmpc.so:${PORTSDIR}/math/mpc
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 
@@ -21,7 +20,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 .endif
 
-CONFLICTS=	gcc-4.6.[4-9]*
+CONFLICTS=	gcc-4.6.4*,1
 
 # DISTVERSION relates to downloads, GCC_VERSION and SUFFIX to names
 # of executables and directories once installed.
@@ -29,7 +28,7 @@ DISTVERSION=	${PORTVERSION}
 GCC_VERSION=	${PORTVERSION:C/(.+)\.[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 ONLY_FOR_ARCHS=	amd64 i386 ia64 powerpc sparc64
-USES=		bison gmake iconv perl5
+USES=		gmake iconv perl5
 USE_BINUTILS=	yes
 USE_BZIP2=	yes
 USE_PERL5=	build
@@ -45,7 +44,6 @@ OPTIONS_DEFAULT_i386=	JAVA
 OPTIONS_DEFAULT_amd64=	JAVA
 BOOTSTRAP_DESC=		Build using a full bootstrap
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
@@ -82,11 +80,6 @@ USE_LDCONFIG=	${TARGLIB}
 PLIST_SUB=	GCC_VERSION=${GCC_VERSION} \
 		GNU_HOST=${CONFIGURE_TARGET} \
 		SUFFIX=${SUFFIX}
-MAN1=		cpp${SUFFIX}.1 \
-		g++${SUFFIX}.1 \
-		gcc${SUFFIX}.1 \
-		gcov${SUFFIX}.1 \
-		gfortran${SUFFIX}.1
 INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/cppinternals \
 		gcc${SUFFIX}/gcc \
@@ -107,31 +100,6 @@ RUN_DEPENDS+=	${ECJ_JAR}:${PORTSDIR}/lang/gcc-ecj45
 EXTRA_PATCHES+=	${FILESDIR}/java-patch-hier
 CONFIGURE_ARGS+=--with-ecj-jar=${ECJ_JAR}
 LANGUAGES:=	${LANGUAGES},java
-MAN1+=		aot-compile${SUFFIX}.1 \
-		gappletviewer${SUFFIX}.1 \
-		gc-analyze${SUFFIX}.1 \
-		gcj${SUFFIX}.1 \
-		gcj-dbtool${SUFFIX}.1 \
-		gcjh${SUFFIX}.1 \
-		gij${SUFFIX}.1 \
-		gjar${SUFFIX}.1 \
-		gjarsigner${SUFFIX}.1 \
-		gjavah${SUFFIX}.1 \
-		gjdoc${SUFFIX}.1 \
-		gkeytool${SUFFIX}.1 \
-		gnative2ascii${SUFFIX}.1 \
-		gorbd${SUFFIX}.1 \
-		grmic${SUFFIX}.1 \
-		grmid${SUFFIX}.1 \
-		grmiregistry${SUFFIX}.1 \
-		gserialver${SUFFIX}.1 \
-		gtnameserv${SUFFIX}.1 \
-		jcf-dump${SUFFIX}.1 \
-		jv-convert${SUFFIX}.1 \
-		rebuild-gcj-db${SUFFIX}.1
-MAN3=		ffi${SUFFIX}.3 \
-		ffi_call${SUFFIX}.3 \
-		ffi_prep_cif${SUFFIX}.3
 INFO+=		gcc${SUFFIX}/cp-tools \
 		gcc${SUFFIX}/gcj
 PLIST_SUB+=	JAVA=""
@@ -155,13 +123,11 @@ full-regression-test: build
 .endif
 
 post-install:
-	${RM} -f ${PREFIX}/man/man7/fsf-funding.7 \
-	         ${PREFIX}/man/man7/gfdl.7 ${PREFIX}/man/man7/gpl.7
-	${RM} -f ${TARGLIB}/*.la
+	${RM} -f ${STAGEDIR}${TARGLIB}/*.la
 	# Add target libraries and include files to packaging list.
 	${RM} -f ${WRKDIR}/PLIST.lib
 .for d in ${TARGLIB:S/^${PREFIX}\///} ${LIBEXEC:S/^${PREFIX}\///} include/gcj include/gnu include/java include/javax
-	cd ${PREFIX} ; if [ -d $d ]; then \
+	cd ${STAGEDIR}${PREFIX} ; if [ -d $d ]; then \
 	    ${FIND} $d -type f -o -type l >>${WRKDIR}/PLIST.lib ;\
 	    ${FIND} $d -type d | ${SORT} -r \
 	        | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib ;\
