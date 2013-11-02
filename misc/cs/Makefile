@@ -2,29 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	cs
-PORTVERSION=	0.9.5
-PORTREVISION=	2
+PORTVERSION=	0.9.6
 CATEGORIES=	misc
-MASTER_SITES=	http://njhurst.org/programming/cross-stitch/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	pav
+MASTER_SITES=	http://njhurst.com/programming/cross-stitch/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross Stitch software
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/Image.py:${PORTSDIR}/graphics/py-imaging
+LICENSE=	GPLv2 # (or later)
 
-USE_PYTHON=	yes
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>=0:${PORTSDIR}/graphics/py-imaging
+
 NO_BUILD=	yes
+
+USES=		shebangfix
+SHEBANG_FILES=	xs.py
+USE_PYTHON_RUN=	yes
 
 PLIST_FILES=	bin/xs
 
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e "s,/usr/bin/python,${SETENV} python," ${WRKSRC}/xs.py
-
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/xs.py ${PREFIX}/bin/xs
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} xs.py ${STAGEDIR}${PREFIX}/bin/xs)
 
 .include <bsd.port.mk>
