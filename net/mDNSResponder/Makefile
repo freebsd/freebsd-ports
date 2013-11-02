@@ -3,7 +3,7 @@
 
 PORTNAME=	mDNSResponder
 PORTVERSION=	379.38.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net dns
 MASTER_SITES=	http://opensource.apple.com/tarballs/${PORTNAME}/
 
@@ -20,7 +20,7 @@ INSTALL_WRKSRC=	${WRKSRC}/mDNSPosix
 MAKE_ARGS=	LOCALBASE=${PREFIX} MANPATH=${MANPREFIX}/man os=freebsd
 USES=		bison gmake
 USE_LDCONFIG=	yes
-USE_RC_SUBR=	mdnsd
+USE_RC_SUBR=	mdnsd mdnsresponder
 
 EXTRA_BIN=	mDNSClientPosix mDNSIdentify mDNSNetMonitor mDNSProxyResponderPosix mDNSResponderPosix
 EXTRA_MAN1=	dns-sd.1
