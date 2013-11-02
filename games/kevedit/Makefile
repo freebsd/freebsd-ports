@@ -16,5 +16,4 @@ RUN_DEPENDS=		cdrecord:${PORTSDIR}/sysutils/cdrtools
 USE_SDL=		yes
 HAS_CONFIGURE=		yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
