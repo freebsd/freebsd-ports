@@ -2,27 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	mencal
-PORTVERSION=	2.4
+PORTVERSION=	3.0
 CATEGORIES=	deskutils
 MASTER_SITES=	http://kyberdigi.cz/projects/mencal/files/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A variation of the unix command cal
+COMMENT=	Simple variation of the unix command cal
 
 LICENSE=	GPLv2
 
 NO_BUILD=	yes
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	${PORTNAME}
 USE_PERL5=	run
 
 PLIST_FILES=	bin/mencal
 
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e '/^#!/s|/.*|${PERL} -w|' ${WRKSRC}/${PORTNAME}
-
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/mencal ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
