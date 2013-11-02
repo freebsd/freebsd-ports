@@ -1,8 +1,9 @@
-bin/isql
 bin/dltest
-bin/odbcinst
+bin/isql
 bin/iusql
 bin/odbc_config
+bin/odbcinst
+bin/slencheck
 include/autotest.h
 include/odbcinst.h
 include/odbcinstext.h
@@ -10,21 +11,28 @@ include/sql.h
 include/sqlext.h
 include/sqltypes.h
 include/sqlucode.h
-include/uodbc_stats.h
-include/uodbc_extras.h
 include/unixodbc_conf.h
-lib/libodbcinst.so
-lib/libodbcinst.so.2
-lib/libodbcinst.la
-lib/libodbcinst.a
+include/uodbc_extras.h
+include/uodbc_stats.h
+lib/libodbc.a
+lib/libodbc.la
 lib/libodbc.so
 lib/libodbc.so.2
-lib/libodbc.la
-lib/libodbc.a
+lib/libodbccr.a
+lib/libodbccr.la
 lib/libodbccr.so
 lib/libodbccr.so.2
-lib/libodbccr.la
-lib/libodbccr.a
-@unexec test -s %D/etc/odbc.ini || rm -f %D/etc/odbc.ini
+lib/libodbcinst.a
+lib/libodbcinst.la
+lib/libodbcinst.so
+lib/libodbcinst.so.2
+man/man1/isql.1.gz
+man/man1/odbcinst.1.gz
+man/man5/odbc.ini.5.gz
+man/man5/odbcinst.ini.5.gz
 @unexec test -s %D/etc/odbcinst.ini || rm -f %D/etc/odbcinst.ini
+@unexec test -s %D/etc/odbc.ini || rm -f %D/etc/odbc.ini
 @dirrmtry etc/ODBCDataSources
+@exec mkdir -p %D/etc/ODBCDataSources
+@exec test -e %D/etc/odbc.ini || touch %D/etc/odbc.ini
+@exec test -e %D/etc/odbcinst.ini || touch %D/etc/odbcinst.ini
