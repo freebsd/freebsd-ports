@@ -689,9 +689,9 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/json/tool.py
 %%PYTHON_LIBDIR%%/keyword.py
 %%PYTHON_LIBDIR%%/lib2to3/Grammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/Grammar2.6.8.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/Grammar2.6.9.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/PatternGrammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar2.6.8.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar2.6.9.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/__init__.py
 %%PYTHON_LIBDIR%%/lib2to3/fixer_base.py
 %%PYTHON_LIBDIR%%/lib2to3/fixer_util.py
@@ -1411,8 +1411,10 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_netrc.py
 %%PYTHON_LIBDIR%%/test/test_new.py
 %%PYTHON_LIBDIR%%/test/test_nis.py
+%%PYTHON_LIBDIR%%/test/test_nntplib.py
 %%PYTHON_LIBDIR%%/test/test_normalization.py
 %%PYTHON_LIBDIR%%/test/test_ntpath.py
+%%PYTHON_LIBDIR%%/test/nullbytecert.pem
 %%PYTHON_LIBDIR%%/test/test_old_mailbox.py
 %%PYTHON_LIBDIR%%/test/test_opcodes.py
 %%PYTHON_LIBDIR%%/test/test_openpty.py
