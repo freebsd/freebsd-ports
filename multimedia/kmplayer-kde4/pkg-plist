@@ -29,16 +29,23 @@ share/icons/hicolor/48x48/apps/kmplayer.png
 share/icons/hicolor/64x64/apps/kmplayer.png
 share/icons/hicolor/scalable/apps/kmplayer.svgz
 share/kde4/services/kmplayer_part.desktop
+share/locale/bg/LC_MESSAGES/kmplayer.mo
+share/locale/bs/LC_MESSAGES/kmplayer.mo
+share/locale/ca/LC_MESSAGES/kmplayer.mo
+share/locale/ca@valencia/LC_MESSAGES/kmplayer.mo
 share/locale/cs/LC_MESSAGES/kmplayer.mo
 share/locale/da/LC_MESSAGES/kmplayer.mo
 share/locale/de/LC_MESSAGES/kmplayer.mo
 share/locale/el/LC_MESSAGES/kmplayer.mo
 share/locale/en_GB/LC_MESSAGES/kmplayer.mo
+share/locale/eo/LC_MESSAGES/kmplayer.mo
 share/locale/es/LC_MESSAGES/kmplayer.mo
 share/locale/et/LC_MESSAGES/kmplayer.mo
 share/locale/fr/LC_MESSAGES/kmplayer.mo
 share/locale/ga/LC_MESSAGES/kmplayer.mo
 share/locale/gl/LC_MESSAGES/kmplayer.mo
+share/locale/hr/LC_MESSAGES/kmplayer.mo
+share/locale/hu/LC_MESSAGES/kmplayer.mo
 share/locale/it/LC_MESSAGES/kmplayer.mo
 share/locale/ja/LC_MESSAGES/kmplayer.mo
 share/locale/km/LC_MESSAGES/kmplayer.mo
@@ -56,14 +63,15 @@ share/locale/pt_BR/LC_MESSAGES/kmplayer.mo
 share/locale/ro/LC_MESSAGES/kmplayer.mo
 share/locale/ru/LC_MESSAGES/kmplayer.mo
 share/locale/sk/LC_MESSAGES/kmplayer.mo
+share/locale/sr/LC_MESSAGES/kmplayer.mo
+share/locale/sr@latin/LC_MESSAGES/kmplayer.mo
 share/locale/sv/LC_MESSAGES/kmplayer.mo
+share/locale/th/LC_MESSAGES/kmplayer.mo
 share/locale/tr/LC_MESSAGES/kmplayer.mo
+share/locale/ug/LC_MESSAGES/kmplayer.mo
 share/locale/uk/LC_MESSAGES/kmplayer.mo
-share/locale/x-test/LC_MESSAGES/kmplayer.mo
 share/locale/zh_CN/LC_MESSAGES/kmplayer.mo
 share/locale/zh_TW/LC_MESSAGES/kmplayer.mo
 @dirrmtry share/doc/HTML/en/kmplayer
 @dirrmtry share/apps/kmplayer/generators
 @dirrmtry share/apps/kmplayer
-@dirrmtry share/locale/x-test/LC_MESSAGES
-@dirrmtry share/locale/x-test
