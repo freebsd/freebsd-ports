@@ -1,8 +1,4 @@
 bin/labplot2
-bin/opj2dat
-lib/liblabplot_origin.so
-lib/liblabplot_origin.so.0
-lib/liblabplot_origin.so.0.0.4
 share/apps/LabPlot/LabPlotui.rc
 share/apps/LabPlot/labplot.png
 share/apps/LabPlot/pics/auto-scale-all.png
