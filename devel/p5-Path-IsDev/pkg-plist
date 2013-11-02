@@ -1,0 +1,72 @@
+%%PERL5_MAN3%%/Path::IsDev.3.gz
+%%PERL5_MAN3%%/Path::IsDev::Heuristic::Changelog.3.gz
+%%PERL5_MAN3%%/Path::IsDev::Heuristic::DevDirMarker.3.gz
+%%PERL5_MAN3%%/Path::IsDev::Heuristic::META.3.gz
+%%PERL5_MAN3%%/Path::IsDev::Heuristic::MYMETA.3.gz
+%%PERL5_MAN3%%/Path::IsDev::Heuristic::Makefile.3.gz
+%%PERL5_MAN3%%/Path::IsDev::Heuristic::TestDir.3.gz
+%%PERL5_MAN3%%/Path::IsDev::Heuristic::Tool::Dzil.3.gz
+%%PERL5_MAN3%%/Path::IsDev::Heuristic::Tool::MakeMaker.3.gz
+%%PERL5_MAN3%%/Path::IsDev::Heuristic::Tool::ModuleBuild.3.gz
+%%PERL5_MAN3%%/Path::IsDev::Heuristic::VCS::Git.3.gz
+%%PERL5_MAN3%%/Path::IsDev::HeuristicSet::Basic.3.gz
+%%PERL5_MAN3%%/Path::IsDev::NegativeHeuristic::HomeDir.3.gz
+%%PERL5_MAN3%%/Path::IsDev::NegativeHeuristic::IsDev::IgnoreFile.3.gz
+%%PERL5_MAN3%%/Path::IsDev::NegativeHeuristic::PerlINC.3.gz
+%%PERL5_MAN3%%/Path::IsDev::Object.3.gz
+%%PERL5_MAN3%%/Path::IsDev::Result.3.gz
+%%PERL5_MAN3%%/Path::IsDev::Role::Heuristic.3.gz
+%%PERL5_MAN3%%/Path::IsDev::Role::HeuristicSet.3.gz
+%%PERL5_MAN3%%/Path::IsDev::Role::HeuristicSet::Simple.3.gz
+%%PERL5_MAN3%%/Path::IsDev::Role::Matcher::Child::BaseName::MatchRegexp.3.gz
+%%PERL5_MAN3%%/Path::IsDev::Role::Matcher::Child::BaseName::MatchRegexp::File.3.gz
+%%PERL5_MAN3%%/Path::IsDev::Role::Matcher::Child::Exists::Any.3.gz
+%%PERL5_MAN3%%/Path::IsDev::Role::Matcher::Child::Exists::Any::Dir.3.gz
+%%PERL5_MAN3%%/Path::IsDev::Role::Matcher::Child::Exists::Any::File.3.gz
+%%PERL5_MAN3%%/Path::IsDev::Role::Matcher::FullPath::Is::Any.3.gz
+%%PERL5_MAN3%%/Path::IsDev::Role::NegativeHeuristic.3.gz
+%%SITE_PERL%%/Path/IsDev.pm
+%%SITE_PERL%%/Path/IsDev/Heuristic/Changelog.pm
+%%SITE_PERL%%/Path/IsDev/Heuristic/DevDirMarker.pm
+%%SITE_PERL%%/Path/IsDev/Heuristic/META.pm
+%%SITE_PERL%%/Path/IsDev/Heuristic/MYMETA.pm
+%%SITE_PERL%%/Path/IsDev/Heuristic/Makefile.pm
+%%SITE_PERL%%/Path/IsDev/Heuristic/TestDir.pm
+%%SITE_PERL%%/Path/IsDev/Heuristic/Tool/Dzil.pm
+%%SITE_PERL%%/Path/IsDev/Heuristic/Tool/MakeMaker.pm
+%%SITE_PERL%%/Path/IsDev/Heuristic/Tool/ModuleBuild.pm
+%%SITE_PERL%%/Path/IsDev/Heuristic/VCS/Git.pm
+%%SITE_PERL%%/Path/IsDev/HeuristicSet/Basic.pm
+%%SITE_PERL%%/Path/IsDev/NegativeHeuristic/HomeDir.pm
+%%SITE_PERL%%/Path/IsDev/NegativeHeuristic/IsDev/IgnoreFile.pm
+%%SITE_PERL%%/Path/IsDev/NegativeHeuristic/PerlINC.pm
+%%SITE_PERL%%/Path/IsDev/Object.pm
+%%SITE_PERL%%/Path/IsDev/Result.pm
+%%SITE_PERL%%/Path/IsDev/Role/Heuristic.pm
+%%SITE_PERL%%/Path/IsDev/Role/HeuristicSet.pm
+%%SITE_PERL%%/Path/IsDev/Role/HeuristicSet/Simple.pm
+%%SITE_PERL%%/Path/IsDev/Role/Matcher/Child/BaseName/MatchRegexp.pm
+%%SITE_PERL%%/Path/IsDev/Role/Matcher/Child/BaseName/MatchRegexp/File.pm
+%%SITE_PERL%%/Path/IsDev/Role/Matcher/Child/Exists/Any.pm
+%%SITE_PERL%%/Path/IsDev/Role/Matcher/Child/Exists/Any/Dir.pm
+%%SITE_PERL%%/Path/IsDev/Role/Matcher/Child/Exists/Any/File.pm
+%%SITE_PERL%%/Path/IsDev/Role/Matcher/FullPath/Is/Any.pm
+%%SITE_PERL%%/Path/IsDev/Role/NegativeHeuristic.pm
+@dirrm %%SITE_PERL%%/Path/IsDev/Role/Matcher/FullPath/Is
+@dirrm %%SITE_PERL%%/Path/IsDev/Role/Matcher/FullPath
+@dirrm %%SITE_PERL%%/Path/IsDev/Role/Matcher/Child/Exists/Any
+@dirrm %%SITE_PERL%%/Path/IsDev/Role/Matcher/Child/Exists
+@dirrm %%SITE_PERL%%/Path/IsDev/Role/Matcher/Child/BaseName/MatchRegexp
+@dirrm %%SITE_PERL%%/Path/IsDev/Role/Matcher/Child/BaseName
+@dirrm %%SITE_PERL%%/Path/IsDev/Role/Matcher/Child
+@dirrm %%SITE_PERL%%/Path/IsDev/Role/Matcher
+@dirrm %%SITE_PERL%%/Path/IsDev/Role/HeuristicSet
+@dirrm %%SITE_PERL%%/Path/IsDev/Role
+@dirrm %%SITE_PERL%%/Path/IsDev/NegativeHeuristic/IsDev
+@dirrm %%SITE_PERL%%/Path/IsDev/NegativeHeuristic
+@dirrm %%SITE_PERL%%/Path/IsDev/HeuristicSet
+@dirrm %%SITE_PERL%%/Path/IsDev/Heuristic/VCS
+@dirrm %%SITE_PERL%%/Path/IsDev/Heuristic/Tool
+@dirrm %%SITE_PERL%%/Path/IsDev/Heuristic
+@dirrm %%SITE_PERL%%/Path/IsDev
+@dirrmtry %%SITE_PERL%%/Path
