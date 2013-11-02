@@ -15,9 +15,11 @@ CONFLICTS=	mediawiki-1.1[0-9].* mediawiki-1.21.*
 
 FETCH_ARGS=	-pr
 NO_LATEST_LINK=	yes
-USE_PHP=	ctype iconv mbstring pcre session xml zlib readline dom
+USE_PHP=	ctype hash iconv mbstring pcre session xml zlib readline dom
 WANT_PHP_WEB=	yes
 MEDIAWIKIDIR?=	www/mediawiki
+SUB_FILES=	pkg-message
+SUB_LIST+=	MEDIAWIKIDIR="${PREFIX}/${MEDIAWIKIDIR}"
 
 NO_BUILD=	yes
 
@@ -30,7 +32,6 @@ EACCEL_DESC=	use eAccelerator (instead of pecl-APC)
 XCACHE_DESC=	use xCache (instead of pecl-APC)
 IMAGICK_DESC=	use ImageMagick
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -67,15 +68,13 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xcache.so:${PORTSDIR}/www/xcac
 .endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/${MEDIAWIKIDIR}
-	${CP} -r ${WRKSRC}/ ${PREFIX}/${MEDIAWIKIDIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${MEDIAWIKIDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${MEDIAWIKIDIR}
+	${CP} -r ${WRKSRC}/ ${STAGEDIR}${PREFIX}/${MEDIAWIKIDIR}
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${MEDIAWIKIDIR}
 
-post-install:
 	@${FIND} ${WRKSRC}/${file} -not -type d \
 		| ${SED} -ne 's,^${WRKSRC},${MEDIAWIKIDIR},p' >> ${TMPPLIST}
 	@${FIND} -d ${WRKSRC}/${file} -type d \
 		| ${SED} -ne 's,^${WRKSRC},@dirrm ${MEDIAWIKIDIR},p' >> ${TMPPLIST}
-	@${SED} -e 's|%%MEDIAWIKIDIR%%|${PREFIX}/${MEDIAWIKIDIR}|' ${PKGMESSAGE}
 
 .include <bsd.port.mk>
