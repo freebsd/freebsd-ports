@@ -17,6 +17,8 @@ ALL_TARGET=
 
 CFLAGS+=	-Wno-implicit
 
+USE_GCC=	any
+
 do-install:
 	-cd ${WRKSRC}; \
 	${INSTALL_PROGRAM} ephem ${PREFIX}/bin; \
