@@ -3,7 +3,6 @@ include/rudiments/character.h
 include/rudiments/charstring.h
 include/rudiments/chat.h
 include/rudiments/client.h
-include/rudiments/clientserverfactory.h
 include/rudiments/codetree.h
 include/rudiments/commandline.h
 include/rudiments/crypt.h
@@ -41,7 +40,6 @@ include/rudiments/private/chat.h
 include/rudiments/private/chatincludes.h
 include/rudiments/private/client.h
 include/rudiments/private/clientincludes.h
-include/rudiments/private/clientserverfactoryincludes.h
 include/rudiments/private/codetree.h
 include/rudiments/private/codetreeincludes.h
 include/rudiments/private/commandline.h
@@ -56,7 +54,6 @@ include/rudiments/private/dictionary.h
 include/rudiments/private/dictionaryincludes.h
 include/rudiments/private/dictionaryinlines.h
 include/rudiments/private/dictionarynode.h
-include/rudiments/private/dictionarynodeinlines.h
 include/rudiments/private/directory.h
 include/rudiments/private/directoryincludes.h
 include/rudiments/private/dll.h
@@ -91,8 +88,6 @@ include/rudiments/private/linkedlist.h
 include/rudiments/private/linkedlistincludes.h
 include/rudiments/private/linkedlistinlines.h
 include/rudiments/private/linkedlistnode.h
-include/rudiments/private/linkedlistnodeinlines.h
-include/rudiments/private/linkedlistutil.h
 include/rudiments/private/linkedlistutilinlines.h
 include/rudiments/private/listener.h
 include/rudiments/private/listenerincludes.h
@@ -202,10 +197,11 @@ include/rudiments/variablebuffer.h
 include/rudiments/xmldom.h
 include/rudiments/xmldomnode.h
 include/rudiments/xmlsax.h
+lib/librudiments-%%VERSION%%.so
+lib/librudiments-%%VERSION%%.so.1
 lib/librudiments.a
 lib/librudiments.la
 lib/librudiments.so
-lib/librudiments.so.1
 libdata/pkgconfig/rudiments.pc
 man/man1/rudiments-config.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/annotated.html
