@@ -3,6 +3,7 @@
 
 PORTNAME=	csound
 PORTVERSION=	5.18.02
+PORTREVISION=	1
 CATEGORIES=	audio lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}5.18/ \
 		SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}${PORTVERSION:R}/manual:manual
@@ -102,8 +103,8 @@ PLIST_SUB+=	OSC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPORTAUDIO}
-BUILD_DEPENDS+=	portaudio>=19:${PORTSDIR}/audio/portaudio2
-RUN_DEPENDS+=	portaudio>=19:${PORTSDIR}/audio/portaudio2
+BUILD_DEPENDS+=	portaudio2>=0:${PORTSDIR}/audio/portaudio2
+RUN_DEPENDS+=	portaudio2>=0:${PORTSDIR}/audio/portaudio2
 SCONS_ARGS+=	usePortAudio=1
 PLIST_SUB+=	PORTAUDIO=""
 PORTAUDIO_L=	"${LOCALBASE}/lib/portaudio2"
