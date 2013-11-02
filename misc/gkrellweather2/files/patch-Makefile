@@ -24,7 +24,7 @@
  gkrellweather.so: $(OBJS)
  	(cd po && ${MAKE} all )
 -	$(CC) $(OBJS) -DVERSION=\"$(VERSION)\" -o gkrellweather.so $(LFLAGS) $(LIBS) -lpthread
-+	$(CC) $(OBJS) -DVERSION=\"$(VERSION)\" -o gkrellweather.so $(LFLAGS) $(LIBS) ${PTHREAD_LIBS}
++	$(CC) $(OBJS) -DVERSION=\"$(VERSION)\" -o gkrellweather.so $(LFLAGS) $(LIBS) -pthread
  
  clean:
  	(cd po && ${MAKE} clean )
