@@ -18,16 +18,12 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_CSTD=	gnu89
 USE_SQLITE=	3
 USE_PERL5=	build
-USES=		gettext ncurses perl5
-USE_GMAKE=	yes
+USES=		gettext gmake ncurses perl5
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -D_XOPEN_SOURCE_EXTENDED
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		latrine.1
-
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.c" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<ncursesw/|<|'

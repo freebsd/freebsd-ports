@@ -1,4 +1,5 @@
 bin/latrine
+man/man1/latrine.1.gz
 share/locale/da/LC_MESSAGES/latrine.mo
 share/locale/de/LC_MESSAGES/latrine.mo
 share/locale/fr/LC_MESSAGES/latrine.mo
