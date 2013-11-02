@@ -1,6 +1,6 @@
---- Makefile.PL-orig	2013-07-09 09:44:14.000000000 +0200
-+++ Makefile.PL	2013-07-09 09:48:24.000000000 +0200
-@@ -28,33 +28,22 @@
+--- Makefile.PL-orig	2013-11-02 17:48:46.000000000 +0100
++++ Makefile.PL	2013-11-02 17:52:26.000000000 +0100
+@@ -28,49 +28,30 @@
  Getopt::Long::GetOptions(
      $opt,
      "help",
@@ -31,26 +31,31 @@
 -    "CC" => "g++",
 -    "LD" => "g++",
 -    "XSPROTOARG" => "-noprototypes",
--    'OPTIMIZE'      => '-O6 -DNDEBUG=1',
 +    'INC'           => '-I$(DBI_INSTARCH_DIR) -I/usr/local/include',
 +    'MYEXTLIB'      => '-lcego -llfcxml -llfcbase',
 +    'CCFLAGS'       => '-O2 -pipe -fno-strict-aliasing -fpermissive',
 +    'LD'            => '$(CC) -L/usr/local/lib',
 +    'XSPROTOARG'    => '-noprototypes',
-+    'OPTIMIZE'      => '-O3 -DNDEBUG=1',
-     'XSOPT'             => '-C++',
-     'TYPEMAPS'          => ['perlobject.map' ],
+     'OPTIMIZE'      => '-O3 -DNDEBUG=1',
+-    'XSOPT'             => '-C++',
+-    'TYPEMAPS'          => ['perlobject.map' ],
+-    'LICENSE'	=> 'gpl3',
++    'XSOPT'         => '-C++',
++    'TYPEMAPS'      => ['perlobject.map' ],
++    'LICENSE'       => 'gpl3',
      'clean'         => { FILES => 'config.h' },
-@@ -63,12 +53,6 @@
+ );
+ 
  sub Usage {
-   print STDERR <<"USAGE";
- Usage: perl $0 [options]
+-  print STDERR <<"USAGE";
+-Usage: perl $0 [options]
 -
 -Possible options are:
 -
 -  --prefix=<prefix path>       Use <prefix> for setting up the appropriate prefix path
 -                               to find cego libs and includes
 -
- USAGE
+-USAGE
++  print STDERR "Usage: perl $0 [options]\n";
    exit 1;
  }
