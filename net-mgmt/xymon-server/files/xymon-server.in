@@ -5,22 +5,30 @@
 
 # PROVIDE: xymon_server
 # REQUIRE: DAEMON
+# KEYWORD: shutdown
 
 . /etc/rc.subr
 
-name="xymon_server"
-rcvar="xymon_server_enable"
+name=xymon_server
+rcvar=xymon_server_enable
 
 load_rc_config "$name"
-: ${xymon_server_enable:="NO"}
+: ${xymon_server_enable:=NO}
 
 command="su -m %%XYMONUSER%% -c '%%PREFIX%%/www/xymon/server/xymon.sh'"
+start_precmd=xymon_prestart
 start_cmd="su -m %%XYMONUSER%% -c '%%PREFIX%%/www/xymon/server/xymon.sh start'"
 stop_cmd="su -m %%XYMONUSER%% -c '%%PREFIX%%/www/xymon/server/xymon.sh stop'"
 status_cmd="su -m %%XYMONUSER%% -c '%%PREFIX%%/www/xymon/server/xymon.sh status'"
 reload_cmd="su -m %%XYMONUSER%% -c '%%PREFIX%%/www/xymon/server/xymon.sh reload'"
 restart_cmd="su -m %%XYMONUSER%% -c '%%PREFIX%%/www/xymon/server/xymon.sh restart'"
-pidfile="/var/log/xymon/xymond.pid"
+pidfile=/var/log/xymon/xymond.pid
+
+xymon_prestart()
+{
+	if [ ! -d /var/log/xymon ]; then
+		install -d -o xymon /var/log/xymon
+	fi
+}
 
 run_rc_command "$1"
-# eof
