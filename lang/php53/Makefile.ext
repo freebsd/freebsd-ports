@@ -372,6 +372,7 @@ UTF8_DESC=	UTF-8 support
 .if ${PHP_MODNAME} == "sqlite3"
 USE_SQLITE=	yes
 CONFIGURE_ARGS+=--with-sqlite3=${LOCALBASE}
+LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 .if ${PHP_MODNAME} == "sybase_ct"
