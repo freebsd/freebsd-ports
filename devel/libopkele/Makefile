@@ -11,13 +11,14 @@ MAINTAINER=	zhoushuqun@gmail.com
 COMMENT=	A c++ implementation of an OpenID decentralized identity system
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		pcre.3:${PORTSDIR}/devel/pcre \
-		expat.6:${PORTSDIR}/textproc/expat2 \
-		tidy:${PORTSDIR}/www/tidy-lib \
-		xslt:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libtidy.so:${PORTSDIR}/www/tidy-lib \
+		libxslt.so:${PORTSDIR}/textproc/libxslt
 
 USE_LDCONFIG=	yes
+USE_GCC=	4.6
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	"OPENSSL_CFLAGS=${CFLAGS} -l${OPENSSLINC}" \
@@ -29,7 +30,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 # This port needs OpenSSL 0.9.8b which is present in 7.0 and up
 USE_OPENSSL=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
