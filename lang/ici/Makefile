@@ -5,7 +5,7 @@ PORTNAME=	ici
 PORTVERSION=	4.1.2
 PORTREVISION=	1
 CATEGORIES=	lang
-MASTER_SITES=	http://www.zeta.org.au/~atrn/ici/distfiles/
+MASTER_SITES=	http://atrn.org/ici/distfiles
 
 MAINTAINER=	atrn@zeta.org.au
 COMMENT=	An interpretive language with C's feel and high level data types
