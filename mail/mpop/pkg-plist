@@ -1,2 +1,3 @@
 bin/mpop
+man/man1/mpop.1.gz
 %%NLS%%share/locale/de/LC_MESSAGES/mpop.mo

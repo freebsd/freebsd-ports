@@ -4,4 +4,4 @@ delivery to mbox files, maildir folders, or a mail delivery agent,
 a very fast POP3 implementation, many authentication methods,
 and good support for TLS/SSL.
 
-WWW:    http://mpop.sourceforge.net
+WWW: http://mpop.sourceforge.net
