@@ -45,8 +45,9 @@ NLS_USES=		gettext
 
 SLANG_LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
 
-SMB_CONFIGURE_ENABLE=	vfs-smb configdir=${LOCALBASE}/etc \
-			codepagedir=${LOCALBASE}/etc/codepages
+SMB_CONFIGURE_ENABLE=	vfs-smb
+SMB_CONFIGURE_ON=	--with-smb-configdir=${LOCALBASE}/etc \
+			--with-smb-codepagedir=${LOCALBASE}/etc/codepages
 
 SUBSHELL_CONFIGURE_WITH=	subshell
 
@@ -77,7 +78,7 @@ CONFIGURE_ARGS+=--with-screen=slang --with-slang-includes=${LOCALBASE}/include
 .endif
 
 .if ${PORT_OPTIONS:MNCURSES}
-CONFIGURE_ARGS+=--with-screen=ncurses --with-ncurses-includes=${LOCALBASE}/include
+CONFIGURE_ARGS+=--with-screen=ncurses
 .endif
 
 post-patch:
