@@ -15,6 +15,7 @@ MASTERDIR=	${.CURDIR}/../libproxy
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 USE_GNOME=	gconf2
+USES=		pkgconfig
 
 LIBPROXY_SLAVE=	gnome
 
