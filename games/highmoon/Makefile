@@ -13,13 +13,14 @@ COMMENT=	Duel in the universe
 WRKSRC=		${WRKDIR}/HighMoon
 
 USE_SDL=	image sdl
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" LIBS="${LDFLAGS}"
 
 CXXFLAGS+=	`${SDL_CONFIG} --cflags`
 LDFLAGS+=	`${SDL_CONFIG} --libs` -lSDL_image
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${FIND} ${WRKSRC}/src -type f | ${XARGS} ${REINPLACE_CMD} -e \
 		's|SDL/SDL|SDL|g ; \
@@ -29,14 +30,12 @@ post-patch:
 		 s|-round(|-rint(|g'
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ufo ${PREFIX}/bin/${PORTNAME}
-	@${MKDIR} ${DATADIR}/gfx
-	${INSTALL_DATA} ${WRKSRC}/gfx/* ${DATADIR}/gfx
-	@${MKDIR} ${DATADIR}/snd
-	${INSTALL_DATA} ${WRKSRC}/snd/* ${DATADIR}/snd
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/ufo ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/gfx
+	${INSTALL_DATA} ${WRKSRC}/gfx/* ${STAGEDIR}${DATADIR}/gfx
+	@${MKDIR} ${STAGEDIR}${DATADIR}/snd
+	${INSTALL_DATA} ${WRKSRC}/snd/* ${STAGEDIR}${DATADIR}/snd
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
