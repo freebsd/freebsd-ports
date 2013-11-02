@@ -11,30 +11,24 @@ LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A multiplayer 2D shoot'em up game
+COMMENT=	Multiplayer 2D shoot'em up game
 
 USE_SDL=	image sdl
 GNU_CONFIGURE=	yes
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/client/jfkclient ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/server/jfkserver ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/client/jfkclient ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/server/jfkserver ${STAGEDIR}${PREFIX}/bin
 .for file in art levels
-	@(cd ${WRKSRC}/${file}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install)
+	(cd ${WRKSRC}/${file}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install)
 .endfor
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in controls.txt jfkclient.sample jfkserver.sample
-	${INSTALL_MAN} ${WRKSRC}/doc/${file} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
