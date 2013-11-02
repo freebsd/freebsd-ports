@@ -5,7 +5,7 @@ PORTNAME=	HTML_QuickForm_Controller
 PORTVERSION=	1.0.9
 CATEGORIES=	devel www pear
 
-MAINTAINER=	dk@catpipe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The add-on to HTML_QuickForm that allows building of multipage forms
 
 BUILD_DEPENDS=	${PEARDIR}/HTML/QuickForm.php:${PORTSDIR}/devel/pear-HTML_QuickForm
