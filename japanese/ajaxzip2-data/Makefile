@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ajaxzip2
-PORTVERSION=	20130830
+PORTVERSION=	20131031
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kuriyama
@@ -21,14 +21,13 @@ USE_PERL5=	build
 PORTVERSION_K?=	${PORTVERSION}
 PORTVERSION_J?=	${PORTVERSION}
 
-NO_STAGE=	yes
 do-build:
 	${MKDIR} ${WRKSRC}/data ${WRKSRC}/work
 	cd ${WRKSRC}/work && ${DATADIR}/csv2jsonzip.pl ../ken_all.csv ../jigyosyo.csv
 
 do-install:
-	${MKDIR} ${DATADIR}/data
-	cd ${WRKSRC}/data && ${INSTALL_DATA} zip-???.json ${DATADIR}/data/
+	${MKDIR} ${STAGEDIR}${DATADIR}/data
+	cd ${WRKSRC}/data && ${INSTALL_DATA} zip-???.json ${STAGEDIR}${DATADIR}/data/
 
 # for maintenance.
 fetch1:
