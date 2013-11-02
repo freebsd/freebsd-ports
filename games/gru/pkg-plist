@@ -1,3 +1,4 @@
 bin/gru
-%%PORTDOCS%%share/doc/ja/gru/README.jp
-%%PORTDOCS%%@dirrm share/doc/ja/gru
+man/man1/gru.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/README.jp
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

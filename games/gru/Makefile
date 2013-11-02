@@ -13,16 +13,12 @@ COMMENT=	Gru makes your eyes happy
 USES=		imake
 USE_XORG=	x11 xext xmu xpm xaw xt sm ice
 
-MAN1=		gru.1
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
 DOCSDIR=	${PREFIX}/share/doc/ja/gru
+
 post-install:
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.jp ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.jp ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
