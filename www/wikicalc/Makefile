@@ -1,4 +1,3 @@
-# Created by: hrs@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	wikicalc
@@ -12,25 +11,23 @@ COMMENT=	An Open Source Wiki-Spreadsheet
 
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-USES=		perl5
+USES=		perl5 shebangfix
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	setup.sh
+SHEBANG_FILES=	*.pl
+perl_CMD=	${LOCALBASE}/bin/perl -I${DATADIR}
 
-NO_STAGE=	yes
 post-extract:
 	@${RM} -f ${WRKSRC}/gpl.txt
 
-post-patch:
-	${REINPLACE_CMD} 's,/usr/bin/perl,${PERL5} -I${DATADIR},' ${WRKSRC}/*.pl
-
 do-install:
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && \
 	${FIND} . -type f -a ! -name \*.pl -a ! -name \*.bak | \
-		${XARGS} -J % ${INSTALL_DATA} % ${DATADIR}/$${i}; \
+		${XARGS} -J % ${INSTALL_DATA} % ${STAGEDIR}${DATADIR}/$${i}; \
 	${FIND} . -type f -a -name \*.pl | \
-		${XARGS} -J % ${INSTALL_SCRIPT} % ${DATADIR}/$${i}; \
-	${INSTALL_SCRIPT} ${WRKDIR}/setup.sh ${DATADIR}
+		${XARGS} -J % ${INSTALL_SCRIPT} % ${STAGEDIR}${DATADIR}/$${i}; \
+	${INSTALL_SCRIPT} ${WRKDIR}/setup.sh ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
