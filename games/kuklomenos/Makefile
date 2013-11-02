@@ -12,10 +12,11 @@ COMMENT=	Simple but challenging abstract shoot-em-up game
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 OPTIONS_DEFINE=	VORBIS
 OPTIONS_DEFAULT=	VORBIS
+OPTIONS_SUB=	yes
 
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
@@ -23,16 +24,8 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHEAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
-PLIST_SUB+=	VORBIS=""
-.else
-CONFIGURE_ARGS+=--disable-sound
-PLIST_SUB+=	VORBIS="@comment "
-.endif
+VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_CONFIGURE_ENABLE=	sound
 
 post-patch:
 	@${REINPLACE_CMD} -e \
