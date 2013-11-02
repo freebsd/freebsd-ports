@@ -2,40 +2,40 @@
 # $FreeBSD$
 
 PORTNAME=	unixODBC
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.unixodbc.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ODBC library suite for Unix
 
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
+
+OPTIONS_DEFINE=	DOCS
+
 CONFLICTS=	libiodbc-[0-9]*
 
 USES=		iconv
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_header_msql_h=no
 CONFIGURE_ARGS=	--enable-static --enable-shared \
 		${ICONV_CONFIGURE_ARG}
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 post-patch:
-	@${REINPLACE_CMD} 's,$$LIBS $$THREADLIB,$$LIBS,;s,$$CFLAGS -pthread,$$CFLAGS,' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's,@MSQL_TRUE@lib_LTLIBRARIES,#&,' \
-		${WRKSRC}/Drivers/MiniSQL/Makefile.in
+	@${REINPLACE_CMD} -e \
+		'/\.ini/s|^|#|' ${WRKSRC}/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${TAR} -C ${WRKSRC}/doc --exclude '*Makefile*' -cf - . \
-		| ${TAR} -C ${DOCSDIR} --unlink -xf -
-.if !defined(INSTALL_AS_USER)
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-	${FIND} ${DOCSDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-	${FIND} ${DOCSDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
-.endif
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	@${FIND} ${STAGEDIR}${DOCSDIR} -type f -name "*Makefile*" -delete
 .endif
 
 .include <bsd.port.mk>
