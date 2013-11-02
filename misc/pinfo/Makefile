@@ -4,55 +4,54 @@
 PORTNAME=	pinfo
 PORTVERSION=	0.6.10
 CATEGORIES=	misc
-MASTER_SITES=   http://spout.ussg.indiana.edu/linux/gentoo/distfiles/ \
-		http://ftp.yellowdoglinux.com/.2/gentoo/distfiles/
+MASTER_SITES=	GENTOO/distfiles \
+		http://alioth.debian.org/frs/download.php/file/3351/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses based, lynx style info documentation browser
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	READLINE
+OPTIONS_DEFINE=	READLINE NLS
 OPTIONS_DEFAULT=READLINE
 
 USE_BZIP2=	yes
-USES=		ncurses gettext
+USES=		ncurses
 USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
 LIBTOOLIZE_ARGS=--force
 ACLOCAL_ARGS=	-I macros
 AUTOMAKE_ARGS=	--add-missing --force-missing
 CONFIGURE_ARGS=	--with-localedir=${PREFIX}/share/locale
 
+CFLAGS+=	-DHAVE_LOCALE_H
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		pinfo.1
 INFO=		pinfo
+PLIST_FILES=	bin/pinfo etc/pinforc man/man1/pinfo.1.gz
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-PLIST_FILES=	bin/pinfo etc/pinforc
-.for lang in cs de eu ja nl pl pt_BR ro ru sv vi
-PLIST_FILES+=	%%NLS%%share/locale/${lang}/LC_MESSAGES/pinfo.mo
-.endfor
+READLINE_USES=	readline
+READLINE_CONFIGURE_WITH=	readline
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-PLIST_SUB+=	NLS=""
+USES+=		gettext
+.for lang in cs de eu ja nl pl pt_BR ro ru sv vi
+PLIST_FILES+=	share/locale/${lang}/LC_MESSAGES/pinfo.mo
+.endfor
 .else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
+USES+=		gettext:build
+CONFIGURE_ARGS+=--disable-nls
 .endif
 
-.if ${PORT_OPTIONS:MREADLINE}
-USES+=		readline
-.else
-CONFIGURE_ARGS+=--without-readline
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|@MKINSTALLDIRS@|$$(top_srcdir)/tools/install-sh -d|' \
+		${WRKSRC}/po/Makefile.in.in
 
 pre-configure:
-	@(cd ${WRKSRC} && ${LOCALBASE}/bin/autopoint)
+	@${MKDIR} ${WRKSRC}/tools
+	@${LN} -sf ${LOCALBASE}/share/gettext/config.rpath ${WRKSRC}/tools
 
 .include <bsd.port.mk>
