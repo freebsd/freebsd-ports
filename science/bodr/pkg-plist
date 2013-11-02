@@ -1,18 +1,19 @@
-share/doc/bodr/AUTHORS
-share/doc/bodr/THANKS
-share/doc/bodr/ChangeLog
-share/doc/bodr/COPYING
-share/doc/bodr/README
-share/doc/bodr/biblio/crystalstructures_biblio.html
-share/doc/bodr/biblio/elements_biblio.html
-share/doc/bodr/biblio/space-groups_biblio.html
-share/bodr/dicts/blueobelisk-dictionary.xml
-share/bodr/crystalstructures.xml
-share/bodr/elements.xml
-share/bodr/isotopes.xml
-share/bodr/space-groups.xml
 libdata/pkgconfig/bodr.pc
-@dirrm share/bodr/dicts
-@dirrm share/bodr
-@dirrm share/doc/bodr/biblio
-@dirrm share/doc/bodr
+%%DATADIR%%/crystalstructures.xml
+%%DATADIR%%/dicts/blueobelisk-dictionary.xml
+%%DATADIR%%/elements.xml
+%%DATADIR%%/isotopes.xml
+%%DATADIR%%/space-groups.xml
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/biblio/crystalstructures_biblio.html
+%%PORTDOCS%%%%DOCSDIR%%/biblio/elements_biblio.html
+%%PORTDOCS%%%%DOCSDIR%%/biblio/isotopes_biblio.html
+%%PORTDOCS%%%%DOCSDIR%%/biblio/space-groups_biblio.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/biblio
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/dicts
+@dirrm %%DATADIR%%

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bodr
-PORTVERSION=	9
+PORTVERSION=	10
 CATEGORIES=	science
 MASTER_SITES=	SF
 
@@ -11,14 +11,16 @@ COMMENT=	Chemistry data like element and isotope properties, atomic radii, etc
 
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
-USES=		perl5
+OPTIONS_DEFINE=	DOCS
+
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	PERL="${PERL}"
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e 's|{datadir}/pkgconfig|{prefix}/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		'/pkgconfig/s|{datadir}|{prefix}/libdata|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
