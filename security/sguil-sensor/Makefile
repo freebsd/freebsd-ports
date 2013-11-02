@@ -41,7 +41,6 @@ PORTDOCS2=	README.daemonlogger
 PORTDOCS3=	CHANGES FAQ INSTALL INSTALL.openbsd OPENSSL.README \
 		TODO UPGRADE USAGE sguildb.dia
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSANCP}
@@ -66,53 +65,50 @@ PLIST_SUB+=	USEPADS="@comment "
 
 post-patch:
 .for f in ${AGENTS}
-	@${REINPLACE_CMD} 's|/bin/sh|${PREFIX}/bin/${TCLSH}|' \
+	@${REINPLACE_CMD} 's|/bin/sh|${STAGEDIR}${PREFIX}/bin/${TCLSH}|' \
 		${WRKSRC}/sensor/${f}
 .endfor
 
 do-install:
-	@${MKDIR} ${PREFIX}/bin/${SGUILDIR}
-	@${MKDIR} ${PREFIX}/etc/${SGUILDIR}
-	@${MKDIR} ${PREFIX}/share/${SGUILDIR}
-	@${MKDIR} ${PREFIX}/share/${SGUILDIR}/contrib
-	@${MKDIR} ${PREFIX}/share/${SGUILDIR}/init
-	(cd ${WRKSRC}/sensor/contrib && ${COPYTREE_SHARE} \* ${PREFIX}/share/${SGUILDIR}/contrib "! -name ossec_agent.tcl.orig")
-	(cd ${WRKSRC}/sensor/init && ${COPYTREE_SHARE} \* ${PREFIX}/share/${SGUILDIR}/init)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin/${SGUILDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/${SGUILDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${SGUILDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${SGUILDIR}/contrib
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${SGUILDIR}/init
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/sensor/contrib && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/share/${SGUILDIR}/contrib "! -name ossec_agent.tcl.orig")
+	(cd ${WRKSRC}/sensor/init && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/share/${SGUILDIR}/init)
+	${INSTALL_DATA} ${PORTDOCS1:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS2:S|^|${WRKSRC}/sensor/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS3:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 .for f in ${AGENTS}
 	${INSTALL_SCRIPT} -m 751 ${WRKSRC}/sensor/${f} \
-		${PREFIX}/bin/${SGUILDIR}/${f}
+		${STAGEDIR}${PREFIX}/bin/${SGUILDIR}/${f}
 .endfor
 .for f in ${LOG_SCRIPTS}
 	${INSTALL_SCRIPT} -m 751 ${WRKSRC}/sensor/${f} \
-		${PREFIX}/bin/${SGUILDIR}/${f}
+		${STAGEDIR}${PREFIX}/bin/${SGUILDIR}/${f}
 .endfor
 .for f in ${CONFS}
 	${INSTALL_DATA} ${WRKSRC}/sensor/${f} \
-		${PREFIX}/etc/${SGUILDIR}/${f}-sample
+		${STAGEDIR}${PREFIX}/etc/${SGUILDIR}/${f}-sample
 .endfor
 .if ${PORT_OPTIONS:MSANCP}
 .for f in log_packets-sancp.sh
 	${INSTALL_SCRIPT} -m 751 ${WRKSRC}/sensor/${f} \
-		${PREFIX}/bin/${SGUILDIR}/${f}
+		${STAGEDIR}${PREFIX}/bin/${SGUILDIR}/${f}
 .endfor
 .for f in sancp.conf
 	${INSTALL_DATA} ${WRKSRC}/sensor/sancp/${f} \
-		${PREFIX}/etc/${SGUILDIR}/${f}-sample
+		${STAGEDIR}${PREFIX}/etc/${SGUILDIR}/${f}-sample
 .endfor
 .endif
 post-install:
 
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS1} ${DOCSDIR}
-	cd ${WRKSRC}/sensor && ${INSTALL_DATA} ${PORTDOCS2} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS3} ${DOCSDIR}
 .if ${PORT_OPTIONS:MSANCP}
 .for f in README.sancp_indexed_pcap
-	cd ${WRKSRC}/sensor && ${INSTALL_DATA} ${f} ${DOCSDIR}
+	cd ${WRKSRC}/sensor && ${INSTALL_DATA} ${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-.endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
