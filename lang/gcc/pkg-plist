@@ -11,6 +11,11 @@ bin/gcc%%SUFFIX%%
 bin/gcov%%SUFFIX%%
 bin/gfortran%%SUFFIX%%
 info/gcc%%SUFFIX%%/dir
+man/man1/cpp%%SUFFIX%%.1.gz
+man/man1/g++%%SUFFIX%%.1.gz
+man/man1/gcc%%SUFFIX%%.1.gz
+man/man1/gcov%%SUFFIX%%.1.gz
+man/man1/gfortran%%SUFFIX%%.1.gz
 %%JAVA%%share/gcc-%%GCC_VERSION%%/python/libjava/aotcompile.py
 %%JAVA%%share/gcc-%%GCC_VERSION%%/python/libjava/classfile.py
 %%JAVA%%@dirrm share/gcc-%%GCC_VERSION%%/python/libjava
@@ -44,6 +49,31 @@ share/gcc-%%GCC_VERSION%%/python/libstdcxx/v6/printers.py
 %%JAVA%%bin/jv-convert%%SUFFIX%%
 %%JAVA%%bin/rebuild-gcj-db%%SUFFIX%%
 %%JAVA%%libdata/pkgconfig/libgcj-4.6.pc
+%%JAVA%%man/man1/aot-compile%%SUFFIX%%.1.gz
+%%JAVA%%man/man1/gappletviewer%%SUFFIX%%.1.gz
+%%JAVA%%man/man1/gc-analyze%%SUFFIX%%.1.gz
+%%JAVA%%man/man1/gcj%%SUFFIX%%.1.gz
+%%JAVA%%man/man1/gcj-dbtool%%SUFFIX%%.1.gz
+%%JAVA%%man/man1/gcjh%%SUFFIX%%.1.gz
+%%JAVA%%man/man1/gij%%SUFFIX%%.1.gz
+%%JAVA%%man/man1/gjar%%SUFFIX%%.1.gz
+%%JAVA%%man/man1/gjarsigner%%SUFFIX%%.1.gz
+%%JAVA%%man/man1/gjavah%%SUFFIX%%.1.gz
+%%JAVA%%man/man1/gjdoc%%SUFFIX%%.1.gz
+%%JAVA%%man/man1/gkeytool%%SUFFIX%%.1.gz
+%%JAVA%%man/man1/gnative2ascii%%SUFFIX%%.1.gz
+%%JAVA%%man/man1/gorbd%%SUFFIX%%.1.gz
+%%JAVA%%man/man1/grmic%%SUFFIX%%.1.gz
+%%JAVA%%man/man1/grmid%%SUFFIX%%.1.gz
+%%JAVA%%man/man1/grmiregistry%%SUFFIX%%.1.gz
+%%JAVA%%man/man1/gserialver%%SUFFIX%%.1.gz
+%%JAVA%%man/man1/gtnameserv%%SUFFIX%%.1.gz
+%%JAVA%%man/man1/jcf-dump%%SUFFIX%%.1.gz
+%%JAVA%%man/man1/jv-convert%%SUFFIX%%.1.gz
+%%JAVA%%man/man1/rebuild-gcj-db%%SUFFIX%%.1.gz
+%%JAVA%%man/man3/ffi%%SUFFIX%%.3.gz
+%%JAVA%%man/man3/ffi_call%%SUFFIX%%.3.gz
+%%JAVA%%man/man3/ffi_prep_cif%%SUFFIX%%.3.gz
 %%JAVA%%share/java/libgcj-%%GCC_VERSION%%.jar
 %%JAVA%%share/java/libgcj-tools-%%GCC_VERSION%%.jar
 @exec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi
