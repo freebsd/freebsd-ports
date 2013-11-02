@@ -60,7 +60,6 @@ CONFIGURE_ARGS+=	--disable-aruba
 .endif
 
 .if ${PORT_OPTIONS:MBRO}
-BROKEN=			Bro port is in transition right now, so this is not supported at this time
 LIB_DEPENDS+=		libbroccoli.so:${PORTSDIR}/security/broccoli
 CONFIGURE_ARGS+=	--enable-bro --with-broccoli=${LOCALBASE}/lib
 .else
