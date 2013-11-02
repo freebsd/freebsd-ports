@@ -11,41 +11,34 @@ MASTER_SITE_SUBDIR=	support/${PORTNAME}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Convert LaTeX documents to HTML
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/dvips:${PORTSDIR}/print/dvipsk-tetex \
-		${LOCALBASE}/bin/anytopnm:${PORTSDIR}/graphics/netpbm
+BUILD_DEPENDS=	${LOCALBASE}/bin/anytopnm:${PORTSDIR}/graphics/netpbm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	ja-latex2html-[0-9]*
 
-USES=			perl5
-USE_GHOSTSCRIPT=	yes
-USE_TEX=		latex dvipsk
-GNU_CONFIGURE=		yes
+USES=		perl5
+USE_GHOSTSCRIPT=yes
+USE_TEX=	latex dvipsk texhash
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-perl=${PERL} \
 		--disable-gif \
 		--shlibdir=${DATADIR} \
-		--with-texpath=${PREFIX}/${TEXMFDIR}/tex/latex/html
+		--with-texpath=${PREFIX}/${TEXMFDIR}/tex/latex/html \
+		--without-mktexlsr
 SUB_FILES=	pkg-message
-PLIST_SUB=	TEXMFDIR=${TEXMFDIR} MKTEXLSR=${MKTEXLSR}
-
-MAN1=	latex2html.1
-
-TEXMFDIR=	share/texmf
-MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
+PLIST_SUB=	TEXMFDIR=${TEXMFDIR}
+TEXHASHDIRS=	${TEXMFDIR}
 PORTDOCS=	FAQ INSTALL LICENSE README
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 post-install:
-	${INSTALL_MAN} ${FILESDIR}/latex2html.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	${INSTALL_MAN} ${FILESDIR}/latex2html.1 ${STAGEDIR}${MANPREFIX}/man/man1
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
-	@${MKTEXLSR} ${PREFIX}/${TEXMFDIR}
-	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

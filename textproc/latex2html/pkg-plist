@@ -4,6 +4,7 @@ bin/pstoimg
 bin/texexpand
 lib/latex2html/cfgcache.pm
 lib/latex2html/l2hconf.pm
+man/man1/latex2html.1.gz
 %%DATADIR%%/IndicTeX-HTML/README
 %%DATADIR%%/IndicTeX-HTML/bengali.perl
 %%DATADIR%%/IndicTeX-HTML/bengali.sty
@@ -315,8 +316,6 @@ lib/latex2html/l2hconf.pm
 %%TEXMFDIR%%/tex/latex/html/techexplHTML.tex
 %%TEXMFDIR%%/tex/latex/html/url.sty
 %%TEXMFDIR%%/tex/latex/html/verbatimfiles.sty
-@exec %%MKTEXLSR%% %D/%%TEXMFDIR%%
-@unexec %%MKTEXLSR%% %D/%%TEXMFDIR%%
 @dirrm lib/latex2html
 @dirrm %%DATADIR%%/IndicTeX-HTML
 @dirrm %%DATADIR%%/L2hos
