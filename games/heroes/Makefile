@@ -15,7 +15,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${MUSICDISTNAME}${EXTRACT_SUFX}:music
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A game of yore similar to the "Tron" and "Nibbles"
+COMMENT=	Game of yore similar to the "Tron" and "Nibbles"
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -31,32 +31,19 @@ SOUNDSRC=	${WRKDIR}/${SOUNDISTNAME}
 MUSICSRC=	${WRKDIR}/${MUSICDISTNAME}
 
 USE_SDL=	mixer sdl
-USE_GMAKE=	yes
-USES=		gettext iconv
+USES=		gettext gmake iconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--with-sdl_mixer=${LOCALBASE} --without-gii --without-ggi
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
-CONFIGURE_ARGS+=--enable-optimizations
-.else
-CONFIGURE_ARGS+=--disable-optimizations
-.endif
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
-MAN6=		heroes.6 heroeslvl.6
+OPTIMIZED_CFLAGS_CONFIGURE_ENABLE=	optimizations
+
 INFO=		heroes
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib -lsmpeg -lm ${PTHREAD_LIBS}
-
-NO_STAGE=	yes
-pre-everything::
-.ifndef(WITH_OPTIMIZED_CFLAGS)
-	@${ECHO_MSG} '>>>'
-	@${ECHO_MSG} '>>> You can enable extra optimizations by defining WITH_OPTIMIZED_CFLAGS'
-	@${ECHO_MSG} ">>> For example, 'make WITH_OPTIMIZED_CFLAGS=yes'"
-	@${ECHO_MSG} '>>>'
-.endif
 
 post-patch:
 	@for dir in ${DATASRC} ${SOUNDSRC} ${MUSICSRC}; do \
@@ -67,12 +54,12 @@ post-patch:
 
 post-install:
 .for dir in levels pics tilesets
-	${MKDIR} ${DATADIR}/${dir}
-	${INSTALL_DATA} ${DATASRC}/${dir}/* ${DATADIR}/${dir}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/${dir}
+	${INSTALL_DATA} ${DATASRC}/${dir}/* ${STAGEDIR}${DATADIR}/${dir}
 .endfor
-	${MKDIR} ${DATADIR}/sfx
-	${INSTALL_DATA} ${SOUNDSRC}/*.wav ${SOUNDSRC}/sfx.conf ${DATADIR}/sfx
-	${MKDIR} ${DATADIR}/mod
-	${INSTALL_DATA} ${MUSICSRC}/*.xm ${MUSICSRC}/sound.conf ${DATADIR}/mod
+	@${MKDIR} ${STAGEDIR}${DATADIR}/sfx
+	${INSTALL_DATA} ${SOUNDSRC}/*.wav ${SOUNDSRC}/sfx.conf ${STAGEDIR}${DATADIR}/sfx
+	@${MKDIR} ${STAGEDIR}${DATADIR}/mod
+	${INSTALL_DATA} ${MUSICSRC}/*.xm ${MUSICSRC}/sound.conf ${STAGEDIR}${DATADIR}/mod
 
 .include <bsd.port.mk>

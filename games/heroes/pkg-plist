@@ -1,5 +1,7 @@
 bin/heroes
 bin/heroeslvl
+man/man6/heroes.6.gz
+man/man6/heroeslvl.6.gz
 %%DATADIR%%/etc/heroesrc
 %%DATADIR%%/levels/level.lst
 %%DATADIR%%/levels/niv010.lvl
