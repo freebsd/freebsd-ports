@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cimg
-PORTVERSION=	1.5.6
-PORTREVISION=	4
+PORTVERSION=	1.5.7
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/${PORTNAME}		\
@@ -36,19 +35,19 @@ LDFLAGS+=	${PTHREAD_LIBS}
 .if !defined(NOPORTDOCS)
 USES=		gmake
 REINPLACE_ARGS=	-i ""
-LIB_DEPENDS+=	board.0:${PORTSDIR}/graphics/libboard
+LIB_DEPENDS+=	libboard.so:${PORTSDIR}/graphics/libboard
 
 USE_FORTRAN=	yes
 
 . if !defined(WITH_DEBUG)
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png		\
-		jpeg:${PORTSDIR}/graphics/jpeg		\
-		tiff:${PORTSDIR}/graphics/tiff		\
-		opencv_legacy.2:${PORTSDIR}/graphics/opencv		\
-		IlmImf:${PORTSDIR}/graphics/OpenEXR	\
-		gimp-2.0:${PORTSDIR}/graphics/gimp-app	\
-		fftw3:${PORTSDIR}/math/fftw3		\
-		GraphicsMagick++:${PORTSDIR}/graphics/GraphicsMagick
+LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png		\
+		libjpeg.so:${PORTSDIR}/graphics/jpeg		\
+		libtiff.so:${PORTSDIR}/graphics/tiff		\
+		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR	\
+		libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app	\
+		libfftw3.so:${PORTSDIR}/math/fftw3		\
+		libGraphicsMagick++.so:${PORTSDIR}/graphics/GraphicsMagick
+#		libopencv_legacy.so:${PORTSDIR}/graphics/opencv
 ALL_TARGET=	Mlinux
 . else
 ALL_TARGET=	dlinux
@@ -61,7 +60,7 @@ WITHOUT_LAPACK=	yes
 RUN_DEPENDS+=	medcon:${PORTSDIR}/graphics/xmedcon
 . endif
 . if !defined(WITHOUT_FFMPEG)
-LIB_DEPENDS+=	avformat:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavformat.so:${PORTSDIR}/multimedia/ffmpeg
 . endif
 
 DOCBASE=	README.txt
@@ -77,7 +76,6 @@ PROGS=		CImg_demo captcha curve_editor2d dtmri_view3d			\
 NO_BUILD=	yes
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(NOPORTDOCS)
@@ -86,11 +84,11 @@ NO_STAGE=	yes
 WITH_ATLAS=	yes
 .  endif
 .  if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
 LAPACK_LIB=	-L${LOCALBASE}/lib -lalapack -lcblas -lf77blas
 .  else
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
 LAPACK_LIB=	-L${LOCALBASE}/lib -llapack -lblas
 .  endif
 . endif
@@ -118,20 +116,20 @@ pre-configure:
 		-e 's|-lpthread|${PTHREAD_LIBS}|' ${BUILD_WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/CImg.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/CImg.h ${STAGEDIR}${PREFIX}/include
 .if !defined(NOPORTDOCS)
-	${INSTALL_PROGRAM} ${PROGS:C|^|${BUILD_WRKSRC}/|} ${PREFIX}/bin
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOCBASE:S|^|${WRKSRC}/|} ${DOCSDIR}
-	cd ${WRKSRC}/html && ${COPYTREE_SHARE} \* ${DOCSDIR}
+	${INSTALL_PROGRAM} ${PROGS:C|^|${BUILD_WRKSRC}/|} ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCBASE:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/html && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
 .endif
 .if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
-	@(cd ${EXAMPLESDIR} && ${GMAKE} clean)
-	@${RM} ${EXAMPLESDIR}/*.orig
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
-	${FIND} ${DOCSDIR} ${EXAMPLESDIR} -type f -exec ${CHMOD} ${SHAREMODE} {} \;
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
+	@(cd ${STAGEDIR}${EXAMPLESDIR} && ${GMAKE} clean)
+	@${RM} ${STAGEDIR}${EXAMPLESDIR}/*.orig
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${EXAMPLESDIR}
+	${FIND} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR} -type f -exec ${CHMOD} ${SHAREMODE} {} \;
 .endif
 
 .include <bsd.port.post.mk>
