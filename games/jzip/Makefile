@@ -16,12 +16,10 @@ USE_ZIP=	yes
 
 CPPFLAGS+=	-DPOSIX -DHAVE_GETOPT
 
-MAN1=		jzip.1
 PORTDOCS=	Jzip.doc
-PLIST_FILES=	bin/jzip
+PLIST_FILES=	bin/jzip man/man1/jzip.1.gz
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -34,11 +32,9 @@ post-patch:
 		's|^void main|int main|' ${WRKSRC}/jzexe.c
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} jzip ${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_DATA} jzip.1 ${MANPREFIX}/man/man1)
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} Jzip.doc ${DOCSDIR})
-.endif
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} jzip ${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_DATA} jzip.1 ${STAGEDIR}${MANPREFIX}/man/man1)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} Jzip.doc ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
