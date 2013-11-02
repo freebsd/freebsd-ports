@@ -9,14 +9,14 @@ MASTER_SITES=	http://launchpad.net/duplicity/0.6-series/${PORTVERSION}/+download
 MAINTAINER=	jase@FreeBSD.org
 COMMENT=	Backup tool that uses librsync and GnuPG
 
-LIB_DEPENDS=	rsync:${PORTSDIR}/net/librsync
+LIB_DEPENDS=	librsync.so:${PORTSDIR}/net/librsync
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
 FETCH_ARGS=	-pRr
 
 CONFLICTS=	duplicity-0.5.* duplicity-devel-[0-9]*
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_LDCONFIG=	yes
 
@@ -32,7 +32,7 @@ SSH_DESC=	Install SSH/SCP/SFTP backend
 U1_DESC=	Install Ubuntu One backend
 
 NO_STAGE=	yes
-.include "bsd.port.options.mk"
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
