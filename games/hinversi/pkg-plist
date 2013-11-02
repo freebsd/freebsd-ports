@@ -1,5 +1,6 @@
 bin/hinversi-cgi
 bin/hinversi-cli
+man/man1/hinversi-cli.1.gz
 include/hinversi/abClient.h
 include/hinversi/aiManager.h
 include/hinversi/macros.h
