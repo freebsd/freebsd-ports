@@ -2,45 +2,43 @@
 # $FreeBSD$
 
 PORTNAME=	aap
-PORTVERSION=	1.092
+PORTVERSION=	1.093
 CATEGORIES=	devel
-MASTER_SITES=	SF/a-a-p/Aap
+MASTER_SITES=	SF/a-a-p/Aap/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A build tool alternative to make with internet access and CVS support
+COMMENT=	Build tool alternative to make with internet access and CVS support
 
 LICENSE=	GPLv2
 
-MAN1=		aap.1
+OPTIONS_DEFINE=	DOCS
 
-NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
 
 USE_ZIP=	yes
 USE_PYTHON=	yes
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
-FULLDOCS=yes
-.else
-FULLDOCS=no
-.endif
-
-.include <bsd.port.pre.mk>
-
 do-install:
-	@cd ${WRKSRC} && \
-		${PYTHON_CMD} ./aap PREFIX="${PREFIX}" FULLDOCS=${FULLDOCS} \
-			HTMLDIR=/html install
+	@cd ${WRKSRC} && ${PYTHON_CMD} ./aap PREFIX="${STAGEDIR}/${PREFIX}" \
+		FULLDOCS=no install
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+	    -d ${PREFIX}/lib/aap/Exec-${PORTVERSION}/ -f ${STAGEDIR}${PREFIX}/lib/aap/Exec-${PORTVERSION}
+	@${LN} -sf ../lib/aap/Exec-${PORTVERSION}/aap \
+		${STAGEDIR}${PREFIX}/bin/aap
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} exec.pdf \
+		${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}/html
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} *.html \
+		${STAGEDIR}${DOCSDIR}/html)
+	@${LN} -sf ../../../${DOCSDIR_REL} \
+		${STAGEDIR}${PREFIX}/lib/aap/Exec-${PORTVERSION}/doc
 
 test: install
 	cd ${WRKSRC}; ${PREFIX}/bin/aap
 
-# This target is only meant to be used by the port maintainer.
-x-generate-plist:
-	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX}|${SED} -E 's,.*share/nls/.+$$,,g;s,${PORTVERSION},%%PORTVERSION%%,g;s,^(lib/aap/Exec-%%PORTVERSION%%/doc/),%%PORTDOCS%%\1,g;s,^share/doc/aap/.*,,g'|${TR} -s '\n') > temp-pkg-plist
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

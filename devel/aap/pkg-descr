@@ -1,12 +1,9 @@
-A-A-P is an Open Source build tool.  It does everything that make does in a
-better way.  Includes Internet access for uploading and downloading files.
-Integrated CVS support: obtain a module from a CVS server and check changes
-into a CVS server.
+A-A-P is an Open Source build tool. It does everything that make does in
+a better way. Includes Internet access for uploading and downloading
+files.  Integrated CVS support: obtain a module from a CVS server and
+check changes into a CVS server.
 
 Can be used to build programs, maintain web sites, distribute software,
 download and install an application, etc.
-
-Language: Python (version 1.5 or later)
-License: GNU GPL
 
 WWW: http://www.a-a-p.org/
