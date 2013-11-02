@@ -69,11 +69,18 @@ sbin/gdnsd
 %%DOCSDIR%%/gdnsd_geoip_test.txt
 %%DOCSDIR%%/gdnsd_manual.pod
 %%DOCSDIR%%/gdnsd_manual.txt
+man/man1/gdnsd_geoip_test.1.gz
+man/man3/gdnsd-plugin-api.3.gz
+man/man5/gdnsd.config.5.gz
+man/man5/gdnsd.zonefile.5.gz
+man/man8/gdnsd-plugin-extmon.8.gz
+man/man8/gdnsd-plugin-geoip.8.gz
+man/man8/gdnsd-plugin-metafo.8.gz
+man/man8/gdnsd-plugin-multifo.8.gz
+man/man8/gdnsd-plugin-simplefo.8.gz
+man/man8/gdnsd-plugin-weighted.8.gz
+man/man8/gdnsd.8.gz
 @dirrm %%DOCSDIR%%
-@exec mkdir -p %D/var/run/gdnsd
-@dirrmtry var/run/gdnsd
-etc/gdnsd/zones/.keep-me
 @exec mkdir -p %D/%%ETCDIR%%/gdnsd/zones
 @dirrmtry etc/gdnsd/zones
 @dirrmtry etc/gdnsd
-@stopdaemon gdnsd
