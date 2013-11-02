@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	oniguruma
-PORTVERSION=	5.9.4
+PORTVERSION=	5.9.5
 CATEGORIES=	devel textproc
 MASTER_SITES=	http://www.geocities.jp/kosako3/oniguruma/archive/
+PKGNAMESUFFIX=	5
 DISTNAME=	onig-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
@@ -12,19 +13,15 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSDL Regular Expressions library compatible with POSIX/GNU/Perl
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 CONFLICTS=	oniguruma-2.*
 
-PKGNAMESUFFIX=	5
-
 USES=		pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -33,14 +30,10 @@ post-patch:
 		 s|$$(<)|$$(@).in|' ${WRKSRC}/Makefile.in
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} HISTORY README ${DOCSDIR})
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} * ${DOCSDIR})
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/sample && ${INSTALL_DATA} *.c ${EXAMPLESDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} HISTORY README ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/sample && ${INSTALL_DATA} *.c ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
