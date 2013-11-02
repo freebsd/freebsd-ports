@@ -8,7 +8,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	SF/museek-plus/museek-plus/${PORTVERSION}
 DISTNAME=	museek+-${PORTVERSION}
 
-MAINTAINER=	silver@ultrasoft.ee
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SoulSeek client with separate terminal and Qt based interface
 
 LIB_DEPENDS=	xml\\+\\+:${PORTSDIR}/textproc/libxml++26
