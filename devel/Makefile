@@ -2516,6 +2516,7 @@
     SUBDIR += p5-Path-Class-File-Lockable
     SUBDIR += p5-Path-Dispatcher
     SUBDIR += p5-Path-Dispatcher-Declarative
+    SUBDIR += p5-Path-IsDev
     SUBDIR += p5-Path-Iterator-Rule
     SUBDIR += p5-Path-Resource
     SUBDIR += p5-Path-Tiny

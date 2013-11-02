@@ -1,0 +1,8 @@
+This module is more or less a bunch of heuristics for determining if a
+given path is a development tree root of some kind.
+
+This has many useful applications, notably ones that require
+behaviours for "installed" modules to be different to those that are
+still "in development"
+
+WWW: http://search.cpan.org/dist/Path-IsDev/
