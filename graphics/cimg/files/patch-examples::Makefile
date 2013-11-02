@@ -1,9 +1,9 @@
---- examples/Makefile.orig	2013-07-04 17:26:45.000000000 +0200
-+++ examples/Makefile	2013-09-04 21:02:00.000000000 +0200
+--- examples/Makefile.orig	2013-10-31 10:07:28.000000000 +0100
++++ examples/Makefile	2013-11-02 22:49:54.000000000 +0100
 @@ -84,8 +84,8 @@
  # Set correct variables and paths
  #---------------------------------
- CIMG_VERSION = 1.5.6
+ CIMG_VERSION = 1.5.7
 -X11PATH      = /usr/X11R6
 -CC           = g++
 +#X11PATH      = $(X11PATH)
@@ -31,18 +31,19 @@
  endif
  
  # Flags to enable OpenMP support.
-@@ -136,8 +136,8 @@
+@@ -136,8 +136,9 @@
  endif
  
  # Flags to enable OpenCV support.
 -CIMG_OPENCV_CFLAGS = -Dcimg_use_opencv -I/usr/include/opencv
 -CIMG_OPENCV_LDFLAGS = -lcv -lhighgui
-+CIMG_OPENCV_CFLAGS = -Dcimg_use_opencv -I$(LOCALBASE)/include/opencv
-+CIMG_OPENCV_LDFLAGS = -lopencv_legacy -lopencv_highgui
++# Disavle OpenCV in 1.5.7 due to failure
++#CIMG_OPENCV_CFLAGS = -Dcimg_use_opencv -I$(LOCALBASE)/include/opencv
++#CIMG_OPENCV_LDFLAGS = -lopencv_legacy -lopencv_highgui
  
  # Flags used to disable display capablities of CImg
  CIMG_NODISPLAY_CFLAGS = -Dcimg_display=0
-@@ -146,7 +146,7 @@
+@@ -146,7 +147,7 @@
  # (X11 is used by CImg to handle display windows)
  # !!! For 64bits systems : replace -L$(X11PATH)/lib by -L$(X11PATH)/lib64 !!!
  CIMG_X11_CFLAGS = -I$(X11PATH)/include
@@ -51,7 +52,16 @@
  
  # Flags to enable fast image display, using the XSHM library (when using X11).
  # !!! Seems to randomly crash when used on MacOSX and 64bits systems, so use it only when necessary !!!
-@@ -185,8 +185,8 @@
+@@ -176,7 +177,7 @@
+ # Flags to enable native support for TIFF image files, using the TIFF library.
+ # ( http://www.libtiff.org/ )
+ CIMG_TIFF_CFLAGS = -Dcimg_use_tiff
+-CIMG_TIFF_LDFLAGS = -ltiff
++CIMG_TIFF_LDFLAGS = -ltiff -ltiffxx
+ 
+ # Flags to enable native support for MINC2 image files, using the MINC2 library.
+ # ( http://en.wikibooks.org/wiki/MINC/Reference/MINC2.0_Users_Guide )
+@@ -185,7 +186,7 @@
  
  # Flags to enable native support for EXR image files, using the OpenEXR library.
  # ( http://www.openexr.com/ )
@@ -60,8 +70,7 @@
  CIMG_EXR_LDFLAGS = -lIlmImf -lHalf
  
  # Flags to enable native support for various video files, using the FFMPEG library.
- # ( http://www.ffmpeg.org/ )
-@@ -200,8 +200,8 @@
+@@ -200,8 +201,8 @@
  
  # Flags to enable native support of most classical image file formats, using the Magick++ library.
  # ( http://www.imagemagick.org/Magick++/ )
@@ -72,7 +81,7 @@
  
  # Flags to enable faster Discrete Fourier Transform computation, using the FFTW3 library
  # ( http://www.fftw.org/ )
-@@ -214,14 +214,17 @@
+@@ -214,14 +215,17 @@
  
  # Flags to enable the use of LAPACK routines for matrix computation
  # ( http://www.netlib.org/lapack/ )
@@ -93,7 +102,7 @@
  # Flags to compile on Sun Solaris
  CIMG_SOLARIS_LDFLAGS = -R$(X11PATH)/lib -lrt -lnsl -lsocket
  
-@@ -344,26 +347,26 @@
+@@ -359,26 +363,26 @@
  $(CIMG_XSHM_CFLAGS) \
  $(CIMG_XRANDR_CFLAGS) \
  $(CIMG_TIFF_CFLAGS) \
