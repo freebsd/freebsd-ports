@@ -21,11 +21,11 @@ USE_GCC=	any
 
 do-install:
 	-cd ${WRKSRC}; \
-	${INSTALL_PROGRAM} ephem ${PREFIX}/bin; \
-	${MKDIR} ${PREFIX}/share/ephem; \
-	${INSTALL_DATA} Man.txt ${PREFIX}/share/ephem/; \
-	[ ! -f ${PREFIX}/share/ephem/ephem.db ] && ${INSTALL_DATA} ephem.db ${PREFIX}/share/ephem/; \
-	[ ! -f ${PREFIX}/share/ephem/ephem.cfg ] && ${INSTALL_DATA} ephem.cfg ${PREFIX}/share/ephem/
+	${INSTALL_PROGRAM} ephem ${STAGEDIR}${PREFIX}/bin; \
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/ephem; \
+	${INSTALL_DATA} Man.txt ${STAGEDIR}${PREFIX}/share/ephem/; \
+	[ ! -f ${STAGEDIR}${PREFIX}/share/ephem/ephem.db ] && ${INSTALL_DATA} ephem.db ${STAGEDIR}${PREFIX}/share/ephem/; \
+	[ ! -f ${STAGEDIR}${PREFIX}/share/ephem/ephem.cfg ] && ${INSTALL_DATA} ephem.cfg ${STAGEDIR}${PREFIX}/share/ephem/
 
 post-install:
 	@${ECHO_MSG} Don\'t forget to edit ${PREFIX}/share/ephem/ephem.cfg!
