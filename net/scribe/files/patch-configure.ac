@@ -1,0 +1,10 @@
+--- configure.ac.orig   2013-10-03 17:44:40.410915000 +0800
++++ configure.ac        2013-10-03 17:44:49.128744000 +0800
+@@ -10,7 +10,6 @@
+ AC_PREREQ(2.52)
+ AC_INIT([scribe], [1.5.0])
+ AC_CONFIG_MACRO_DIR([aclocal])
+-AM_INIT_AUTOMAKE([foreign -Wall])
+ # To install locally
+ FB_INITIALIZE([localinstall])
+ AC_PREFIX_DEFAULT([/usr/local])
