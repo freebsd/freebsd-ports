@@ -16,8 +16,6 @@ USE_XORG=	xpm
 USE_AUTOTOOLS=	autoheader
 CONFIGURE_ARGS=	--program-prefix=""
 
-MAN1=		wmupmon.1
-PLIST_FILES=	bin/wmupmon
+PLIST_FILES=	bin/wmupmon man/man1/wmupmon.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
