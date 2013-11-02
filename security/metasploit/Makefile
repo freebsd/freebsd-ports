@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-DISTVERSION=	4.7.0
-PORTREVISION=	1
+DISTVERSION=	4.7.2
 CATEGORIES=	security
 MASTER_SITES=	http://downloads.metasploit.com/data/releases/archive/
 DISTNAME=	framework-${DISTVERSION}
@@ -36,32 +35,27 @@ OPTIONS_DEFINE=	DB
 OPTIONS_DEFAULT=DB
 DB_DESC=	Database support
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDB}
-RUN_DEPENDS+=	rubygem-activerecord>=0:${PORTSDIR}/databases/rubygem-activerecord \
+DB_RUN_DEPENDS=	rubygem-activerecord>=0:${PORTSDIR}/databases/rubygem-activerecord \
 		rubygem-metasploit_data_models>=0.15.1:${PORTSDIR}/security/rubygem-metasploit_data_models \
 		rubygem-pg>=0.11:${PORTSDIR}/databases/rubygem-pg
-.endif
 
 post-patch:
 	${REINPLACE_CMD} 's|bundler/setup|rubygems|' ${WRKSRC}/lib/msfenv.rb
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	${CP} -Rp ${WRKSRC}/ ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${CP} -Rp ${WRKSRC}/ ${STAGEDIR}${DATADIR}
 .for f in ${SCRIPTS}
-	${LN} -s ${DATADIR}/${f} ${PREFIX}/bin/${f}
+	${LN} -s ${DATADIR}/${f} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
 
 post-install:
 .for f in ${SCRIPTS}
 	${ECHO} "bin/${f}" >> ${TMPPLIST}
 .endfor
-	@${FIND} ${DATADIR} -type f | ${SED} 's,${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${DATADIR} -type l | ${SED} 's,${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
-		${SED} 's,${PREFIX}/,, ; s,^,@dirrm ,' >> ${TMPPLIST}
+	@${FIND} ${STAGEDIR}${DATADIR} -type f | ${SED} 's,${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${STAGEDIR}${DATADIR} -type l | ${SED} 's,${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${STAGEDIR}${DATADIR} -type d | ${SORT} -r | \
+		${SED} 's,${STAGEDIR}${PREFIX}/,, ; s,^,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
