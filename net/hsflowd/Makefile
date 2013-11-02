@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hsflowd
-PORTVERSION=	1.23.3
+PORTVERSION=	1.23.4
 CATEGORIES=	net
 MASTER_SITES=	SF/host-sflow/Latest/ \
 		http://mirrors.rit.edu/zi/
