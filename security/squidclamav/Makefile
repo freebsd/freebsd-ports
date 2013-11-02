@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	llevier@argosnet.com
 COMMENT=	Squid interface to ClamAV
 
+DEPRECATED=	Obsolete and broken with clang, use www/squidclamav instead
+EXPIRATION_DATE=2013-12-02
+
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USE_GMAKE=	yes
