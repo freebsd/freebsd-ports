@@ -1,8 +1,8 @@
-%%PERL5_MAN3%%/Data::Random.3.gz
-%%PERL5_MAN3%%/Data::Random::WordList.3.gz
 %%SITE_PERL%%/Data/Random.pm
 %%SITE_PERL%%/Data/Random/WordList.pm
 %%SITE_PERL%%/Data/Random/dict
+%%PERL5_MAN3%%/Data::Random.3.gz
+%%PERL5_MAN3%%/Data::Random::WordList.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Random/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Random
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
