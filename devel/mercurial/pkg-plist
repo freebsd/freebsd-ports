@@ -170,6 +170,12 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/hgext/share.py
 %%PYTHON_SITELIBDIR%%/hgext/share.pyc
 %%PYTHON_SITELIBDIR%%/hgext/share.pyo
+%%PYTHON_SITELIBDIR%%/hgext/shelve.py
+%%PYTHON_SITELIBDIR%%/hgext/shelve.pyc
+%%PYTHON_SITELIBDIR%%/hgext/shelve.pyo
+%%PYTHON_SITELIBDIR%%/hgext/strip.py
+%%PYTHON_SITELIBDIR%%/hgext/strip.pyc
+%%PYTHON_SITELIBDIR%%/hgext/strip.pyo
 %%PYTHON_SITELIBDIR%%/hgext/transplant.py
 %%PYTHON_SITELIBDIR%%/hgext/transplant.pyc
 %%PYTHON_SITELIBDIR%%/hgext/transplant.pyo
