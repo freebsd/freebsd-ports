@@ -1,7 +1,7 @@
 --- configure.orig	2012-02-17 13:38:13.000000000 +0900
 +++ configure	2012-04-13 00:56:01.000000000 +0900
-@@ -14781,6 +14781,9 @@
- 	*haiku* )
+@@ -15691,6 +15691,9 @@
+ 	*minix* )
  		WERROR=""
  		;;
 +	freebsd* )
@@ -10,7 +10,7 @@
  	*)
  		;;
  esac
-@@ -16334,8 +16337,8 @@
+@@ -17476,8 +17479,8 @@
  
  
  	HAVE_PTHREAD=""
@@ -21,7 +21,7 @@
  
  	if ( test "$cross_compiling" = "yes" )
  	then
-@@ -16354,7 +16357,7 @@
+@@ -17496,7 +17499,7 @@
  
  	else
  
@@ -30,7 +30,7 @@
  		do
  			if ( test -n "$i" )
  			then
-@@ -16388,9 +16391,6 @@
+@@ -17530,9 +17533,6 @@
  STATIC=""
  HEADERSANDLIBSPATH=""
  
@@ -40,7 +40,7 @@
  eval "PTHREADSTATIC=\"\""
  if ( test -n "" )
  then
-@@ -16605,9 +16605,6 @@
+@@ -17747,9 +17747,6 @@
  LIBSTRING=`echo $LIBSTRING | sed -e "s|-L/usr/lib$||g" -e "s|-L/lib$||g" -e "s|-L/usr/lib ||g" -e "s|-L/lib ||g"`
  LIBSTRING=`echo $LIBSTRING | sed -e "s|-L/usr/lib64$||g" -e "s|-L/lib64$||g" -e "s|-L/usr/lib64 ||g" -e "s|-L/lib64 ||g"`
  
@@ -50,3 +50,62 @@
  eval "PTHREADSTATIC=\"$STATIC\""
  if ( test -n "" )
  then
+@@ -29618,47 +29615,47 @@
+ # prepend DESTDIR where appropriate
+ if ( test "`echo $ac_default_prefix | cut -c1`" = "/" )
+ then
+-	ac_default_prefix='${DESTDIR}'"$ac_default_prefix"
++	ac_default_prefix="$ac_default_prefix"
+ fi
+ if ( test "`echo $prefix | cut -c1`" = "/" )
+ then
+-	prefix='${DESTDIR}'"$prefix"
++	prefix="$prefix"
+ fi
+ if ( test "`echo $exec_prefix | cut -c1`" = "/" )
+ then
+-	exec_prefix='${DESTDIR}'"$exec_prefix"
++	exec_prefix="$exec_prefix"
+ fi
+ if ( test "`echo $includedir | cut -c1`" = "/" )
+ then
+-	includedir='${DESTDIR}'"$includedir"
++	includedir="$includedir"
+ fi
+ if ( test "`echo $libdir | cut -c1`" = "/" )
+ then
+-	libdir='${DESTDIR}'"$libdir"
++	libdir="$libdir"
+ fi
+ if ( test "`echo $libexecdir | cut -c1`" = "/" )
+ then
+-	libexecdir='${DESTDIR}'"$libexecdir"
++	libexecdir="$libexecdir"
+ fi
+ if ( test "`echo $bindir | cut -c1`" = "/" )
+ then
+-	bindir='${DESTDIR}'"$bindir"
++	bindir="$bindir"
+ fi
+ if ( test "`echo $localstatedir | cut -c1`" = "/" )
+ then
+-	localstatedir='${DESTDIR}'"$localstatedir"
++	localstatedir="$localstatedir"
+ fi
+ if ( test "`echo $sysconfdir | cut -c1`" = "/" )
+ then
+-	sysconfdir='${DESTDIR}'"$sysconfdir"
++	sysconfdir="$sysconfdir"
+ fi
+ if ( test "`echo $mandir | cut -c1`" = "/" )
+ then
+-	mandir='${DESTDIR}'"$mandir"
++	mandir="$mandir"
+ fi
+ if ( test "`echo $datadir | cut -c1`" = "/" )
+ then
+-	datadir='${DESTDIR}'"$datadir"
++	datadir="$datadir"
+ fi
+ 
+ 
