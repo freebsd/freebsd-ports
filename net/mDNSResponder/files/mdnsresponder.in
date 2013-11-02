@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+# PROVIDE: mdnsresponder
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=mdnsresponder
+rcvar=mdnsresponder_enable
+
+load_rc_config $name
+
+: ${mdnsresponder_enable="NO"}
+: ${mdnsresponder_pidfile="/var/run/${name}.pid"}
+
+command="%%PREFIX%%/bin/mDNSResponderPosix"
+command_args="-b -P ${mdnsresponder_pidfile}"
+
+run_rc_command $*
