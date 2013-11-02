@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Data-Random
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,16 +23,9 @@ GD_DESC=	Support for rand_image()
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDATE_CALC}
-BUILD_DEPENDS+=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
-RUN_DEPENDS+=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
-.endif
-
-.if ${PORT_OPTIONS:MGD}
-BUILD_DEPENDS+=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
-RUN_DEPENDS+=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
-.endif
+DATE_CALC_BUILD_DEPENDS=p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
+DATE_CALC_RUN_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
+GD_BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
+GD_RUN_DEPENDS=		p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 
 .include <bsd.port.mk>
