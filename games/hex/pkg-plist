@@ -1,18 +1,18 @@
 bin/hex
-%%PORTDOCS%%share/doc/hex/HISTORY
-%%PORTDOCS%%share/doc/hex/README
-%%PORTDOCS%%share/doc/hex/TODO
-share/hex/graphics/ball0.png
-share/hex/graphics/ball1.png
-share/hex/graphics/ball2.png
-share/hex/graphics/ball3.png
-share/hex/graphics/ball4.png
-share/hex/graphics/ball5.png
-share/hex/graphics/ball6.png
-share/hex/graphics/ball7.png
-share/hex/graphics/ball8.png
-share/hex/levels/Level1
-@dirrm share/hex/levels
-@dirrm share/hex/graphics
-@dirrm share/hex
-%%PORTDOCS%%@dirrm share/doc/hex
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%DATADIR%%/graphics/ball0.png
+%%DATADIR%%/graphics/ball1.png
+%%DATADIR%%/graphics/ball2.png
+%%DATADIR%%/graphics/ball3.png
+%%DATADIR%%/graphics/ball4.png
+%%DATADIR%%/graphics/ball5.png
+%%DATADIR%%/graphics/ball6.png
+%%DATADIR%%/graphics/ball7.png
+%%DATADIR%%/graphics/ball8.png
+%%DATADIR%%/levels/Level1
+@dirrm %%DATADIR%%/levels
+@dirrm %%DATADIR%%/graphics
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
