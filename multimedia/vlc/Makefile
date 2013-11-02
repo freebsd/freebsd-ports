@@ -3,7 +3,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	2.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -17,8 +17,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libproxy.so:${PORTSDIR}/net/libproxy \
-		libdvbpsi.so:${PORTSDIR}/multimedia/libdvbpsi \
-		libpulse.so:${PORTSDIR}/audio/pulseaudio
+		libdvbpsi.so:${PORTSDIR}/multimedia/libdvbpsi
 BUILD_DEPENDS=	ffmpeg>=2.0:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS=	ffmpeg>=2.0:${PORTSDIR}/multimedia/ffmpeg
 
@@ -26,7 +25,7 @@ OPTIONS_DEFINE=	A52 AALIB ASS AVAHI CACA DBUS DIRAC DOCS DTS DVDREAD \
 		DVDNAV FAAD FLAC FLUID FRIBIDI GNOMEVFS GNUTLS GOOM \
 		HTTPD JACK LIBSSH2 LIRC LIVEMEDIA LUA MAD MATROSKA MODPLUG \
 		MPEG2 MTP MUSEPACK NCURSES NLS NOTIFY OPTIMIZED_CFLAGS OGG \
-		OPUS PNG QT4 REALAUDIO RUNROOT \
+		OPUS PNG PULSEAUDIO QT4 REALAUDIO RUNROOT \
 		SAMBA SCHROED SDL SHOUTCAST SKINS STREAM SPEEX SVG \
 		TAGLIB THEORA TWOLAME UPNP V4L VAAPI VCD VORBIS \
 		X11 X264 ZVBI SERVER_ONLY DEBUG \
@@ -182,8 +181,8 @@ OPUS_CONFIGURE_ENABLE=	opus
 PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 PNG_CONFIGURE_ENABLE=	png
 
-#PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
-#PULSEAUDIO_CONFIGURE_ENABLE=	pulse
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 
 REALAUDIO_CONFIGURE_ENABLE=	realrtsp
 
@@ -258,14 +257,13 @@ LDFLAGS+=	${PTHREAD_LIBS} -lc
 CONFIGURE_ARGS+=	--enable-vlc \
 			--enable-avcodec \
 			--enable-avformat \
+			--enable-oss \
 			--enable-postproc \
-			--enable-pulse \
 			--enable-sftp \
 			--enable-libgcrypt \
 			--disable-alsa \
 			--disable-dc1394 \
 			--disable-directfb \
-			--disable-oss \
 			--disable-projectm \
 			--disable-telx \
 			--disable-tremor \
