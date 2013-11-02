@@ -29,7 +29,6 @@ SANCP_DESC=	Use sancp
 WIRESHARK_DESC=	Install wireshark
 
 NO_BUILD=	yes
-NO_STAGE=	yes
 USES=		tk:wrapper
 WRKSRC=		${WRKDIR}/sguil-${PORTVERSION}
 SUB_LIST=	SGUILDIR=${SGUILDIR}
@@ -58,31 +57,27 @@ RUN_DEPENDS+=	wireshark:${PORTSDIR}/net/wireshark
 .endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/bin/${SGUILDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin/${SGUILDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_SCRIPT} -m 751 ${WRKSRC}/client/sguil.tk \
-		${PREFIX}/bin/${SGUILDIR}/sguil.tk
+		${STAGEDIR}${PREFIX}/bin/${SGUILDIR}/sguil.tk
+	${INSTALL_DATA} ${PORTDOCS1:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS2:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 .for f in sguil.conf
 	${INSTALL_DATA} ${WRKSRC}/client/${f} \
-		${PREFIX}/etc/${f}-sample
+		${STAGEDIR}${PREFIX}/etc/${f}-sample
 .endfor
 .for f in ${LIBFILES}
-	@${MKDIR} ${PREFIX}/bin/${SGUILDIR}/lib
-	${INSTALL_DATA} ${WRKSRC}/client/lib/${f} ${PREFIX}/bin/${SGUILDIR}/lib/${f}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin/${SGUILDIR}/lib
+	${INSTALL_DATA} ${WRKSRC}/client/lib/${f} ${STAGEDIR}${PREFIX}/bin/${SGUILDIR}/lib/${f}
 .endfor
 .for f in sguil_logo_h.gif
-	@${MKDIR} ${PREFIX}/bin/${SGUILDIR}/images
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin/${SGUILDIR}/images
 	${INSTALL_DATA} ${WRKSRC}/client/lib/images/${f} \
-		${PREFIX}/bin/${SGUILDIR}/images/${f}
+		${STAGEDIR}${PREFIX}/bin/${SGUILDIR}/images/${f}
 .endfor
 
 	(cd ${WRKSRC}/client/lib/tablelist4.1 && ${COPYTREE_SHARE} \* \
-		${PREFIX}/bin/${SGUILDIR}/lib/tablelist4.1/)
-
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS1} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS2} ${DOCSDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+		${STAGEDIR}${PREFIX}/bin/${SGUILDIR}/lib/tablelist4.1/)
 
 .include <bsd.port.mk>
