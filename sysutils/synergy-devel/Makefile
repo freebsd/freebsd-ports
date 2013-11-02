@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	gnn@FreeBSD.org
 COMMENT=	Mouse and keyboard sharing utility
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS= unzip:${PORTSDIR}/archivers/unzip
 
 CONFLICTS=	synergy-[0-9]*
 USES=		cmake
