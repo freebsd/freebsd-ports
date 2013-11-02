@@ -1,346 +1,364 @@
 bin/hadoop
-%%HADOOP_ETC%%/envvars.d/000.java_home.env
-%%HADOOP_ETC%%/envvars.d/001.hadoop_home.env
-%%HADOOP_ETC%%/envvars.d/002.hadoop_conf.env
-%%HADOOP_ETC%%/envvars.d/003.hadoop_log.env
-%%HADOOP_ETC%%/envvars.d/004.hadoop_run.env
-%%HADOOP_HOME%%/bin/hadoop
-%%HADOOP_HOME%%/bin/hadoop-config.sh
-%%HADOOP_HOME%%/bin/hadoop-daemon.sh
-%%HADOOP_HOME%%/bin/hadoop-daemons.sh
-%%HADOOP_HOME%%/bin/rcc
-%%HADOOP_HOME%%/bin/slaves.sh
-%%HADOOP_HOME%%/bin/start-all.sh
-%%HADOOP_HOME%%/bin/start-balancer.sh
-%%HADOOP_HOME%%/bin/start-dfs.sh
-%%HADOOP_HOME%%/bin/start-jobhistoryserver.sh
-%%HADOOP_HOME%%/bin/start-mapred.sh
-%%HADOOP_HOME%%/bin/stop-all.sh
-%%HADOOP_HOME%%/bin/stop-balancer.sh
-%%HADOOP_HOME%%/bin/stop-dfs.sh
-%%HADOOP_HOME%%/bin/stop-jobhistoryserver.sh
-%%HADOOP_HOME%%/bin/stop-mapred.sh
-%%HADOOP_HOME%%/bin/task-controller
-%%HADOOP_HOME%%/lib/hadoop-capacity-scheduler-%%PORTVERSION%%.jar
-%%HADOOP_HOME%%/contrib/datajoin/hadoop-datajoin-%%PORTVERSION%%.jar
-%%HADOOP_HOME%%/contrib/failmon/hadoop-failmon-%%PORTVERSION%%.jar
-%%HADOOP_HOME%%/lib/hadoop-fairscheduler-%%PORTVERSION%%.jar
-%%HADOOP_HOME%%/contrib/gridmix/hadoop-gridmix-%%PORTVERSION%%.jar
-%%HADOOP_HOME%%/contrib/hdfsproxy/bin/hdfsproxy
-%%HADOOP_HOME%%/contrib/hdfsproxy/bin/hdfsproxy-config.sh
-%%HADOOP_HOME%%/contrib/hdfsproxy/bin/hdfsproxy-daemon.sh
-%%HADOOP_HOME%%/contrib/hdfsproxy/bin/hdfsproxy-daemons.sh
-%%HADOOP_HOME%%/contrib/hdfsproxy/bin/hdfsproxy-slaves.sh
-%%HADOOP_HOME%%/contrib/hdfsproxy/bin/start-hdfsproxy.sh
-%%HADOOP_HOME%%/contrib/hdfsproxy/bin/stop-hdfsproxy.sh
-%%HADOOP_HOME%%/contrib/hdfsproxy/conf/configuration.xsl
-%%HADOOP_HOME%%/contrib/hdfsproxy/conf/hdfsproxy-default.xml
-%%HADOOP_HOME%%/contrib/hdfsproxy/conf/hdfsproxy-env.sh
-%%HADOOP_HOME%%/contrib/hdfsproxy/conf/hdfsproxy-env.sh.template
-%%HADOOP_HOME%%/contrib/hdfsproxy/conf/hdfsproxy-hosts
-%%HADOOP_HOME%%/contrib/hdfsproxy/conf/log4j.properties
-%%HADOOP_HOME%%/contrib/hdfsproxy/conf/ssl-server.xml
-%%HADOOP_HOME%%/contrib/hdfsproxy/conf/tomcat-forward-web.xml
-%%HADOOP_HOME%%/contrib/hdfsproxy/conf/tomcat-web.xml
-%%HADOOP_HOME%%/contrib/hdfsproxy/conf/user-certs.xml
-%%HADOOP_HOME%%/contrib/hdfsproxy/conf/user-permissions.xml
-%%HADOOP_HOME%%/contrib/hdfsproxy/README
-%%HADOOP_HOME%%/contrib/hdfsproxy/build.xml
-%%HADOOP_HOME%%/contrib/hdfsproxy/hdfsproxy-2.0.jar
-%%HADOOP_HOME%%/contrib/hod/bin/VERSION
-%%HADOOP_HOME%%/contrib/hod/bin/checknodes
-%%HADOOP_HOME%%/contrib/hod/bin/hod
-%%HADOOP_HOME%%/contrib/hod/bin/hodcleanup
-%%HADOOP_HOME%%/contrib/hod/bin/hodring
-%%HADOOP_HOME%%/contrib/hod/bin/ringmaster
-%%HADOOP_HOME%%/contrib/hod/bin/verify-account
-%%HADOOP_HOME%%/contrib/hod/conf/hodrc
-%%HADOOP_HOME%%/contrib/hod/hodlib/AllocationManagers/__init__.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/AllocationManagers/goldAllocationManager.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/Common/__init__.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/Common/allocationManagerUtil.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/Common/desc.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/Common/descGenerator.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/Common/hodsvc.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/Common/logger.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/Common/miniHTMLParser.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/Common/nodepoolutil.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/Common/setup.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/Common/socketServers.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/Common/tcp.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/Common/threads.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/Common/types.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/Common/util.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/Common/xmlrpc.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/GridServices/__init__.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/GridServices/hdfs.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/GridServices/mapred.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/GridServices/service.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/Hod/__init__.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/Hod/hadoop.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/Hod/hod.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/Hod/nodePool.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/HodRing/__init__.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/HodRing/hodRing.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/NodePools/__init__.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/NodePools/torque.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/RingMaster/__init__.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/RingMaster/idleJobTracker.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/RingMaster/ringMaster.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/Schedulers/__init__.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/Schedulers/torque.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/ServiceProxy/__init__.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/ServiceProxy/serviceProxy.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/ServiceRegistry/__init__.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/ServiceRegistry/serviceRegistry.py
-%%HADOOP_HOME%%/contrib/hod/hodlib/__init__.py
-%%HADOOP_HOME%%/contrib/hod/ivy/libraries.properties
-%%HADOOP_HOME%%/contrib/hod/support/checklimits.sh
-%%HADOOP_HOME%%/contrib/hod/support/logcondense.py
-%%HADOOP_HOME%%/contrib/hod/testing/__init__.py
-%%HADOOP_HOME%%/contrib/hod/testing/helper.py
-%%HADOOP_HOME%%/contrib/hod/testing/lib.py
-%%HADOOP_HOME%%/contrib/hod/testing/main.py
-%%HADOOP_HOME%%/contrib/hod/testing/testHadoop.py
-%%HADOOP_HOME%%/contrib/hod/testing/testHod.py
-%%HADOOP_HOME%%/contrib/hod/testing/testHodCleanup.py
-%%HADOOP_HOME%%/contrib/hod/testing/testHodRing.py
-%%HADOOP_HOME%%/contrib/hod/testing/testModule.py
-%%HADOOP_HOME%%/contrib/hod/testing/testRingmasterRPCs.py
-%%HADOOP_HOME%%/contrib/hod/testing/testThreads.py
-%%HADOOP_HOME%%/contrib/hod/testing/testTypes.py
-%%HADOOP_HOME%%/contrib/hod/testing/testUtil.py
-%%HADOOP_HOME%%/contrib/hod/testing/testXmlrpc.py
-%%HADOOP_HOME%%/contrib/hod/CHANGES.txt
-%%HADOOP_HOME%%/contrib/hod/README
-%%HADOOP_HOME%%/contrib/hod/build.xml
-%%HADOOP_HOME%%/contrib/hod/config.txt
-%%HADOOP_HOME%%/contrib/hod/getting_started.txt
-%%HADOOP_HOME%%/contrib/hod/ivy.xml
-%%HADOOP_HOME%%/contrib/index/hadoop-index-%%PORTVERSION%%.jar
-%%HADOOP_HOME%%/contrib/streaming/hadoop-streaming-%%PORTVERSION%%.jar
-%%HADOOP_HOME%%/lib/hadoop-thriftfs-%%PORTVERSION%%.jar
-%%HADOOP_HOME%%/contrib/vaidya/bin/vaidya.sh
-%%HADOOP_HOME%%/contrib/vaidya/conf/postex_diagnosis_tests.xml
-%%HADOOP_HOME%%/contrib/vaidya/hadoop-vaidya-%%PORTVERSION%%.jar
-%%HADOOP_HOME%%/hadoop-ant-%%PORTVERSION%%.jar
-%%HADOOP_HOME%%/hadoop-core-%%PORTVERSION%%.jar
-%%HADOOP_HOME%%/hadoop-test-%%PORTVERSION%%.jar
-%%HADOOP_HOME%%/hadoop-tools-%%PORTVERSION%%.jar
-%%HADOOP_HOME%%/lib/jdiff/hadoop_0.17.0.xml
-%%HADOOP_HOME%%/lib/jdiff/hadoop_0.18.1.xml
-%%HADOOP_HOME%%/lib/jdiff/hadoop_0.18.2.xml
-%%HADOOP_HOME%%/lib/jdiff/hadoop_0.18.3.xml
-%%HADOOP_HOME%%/lib/jdiff/hadoop_0.19.0.xml
-%%HADOOP_HOME%%/lib/jdiff/hadoop_0.19.1.xml
-%%HADOOP_HOME%%/lib/jdiff/hadoop_0.19.2.xml
-%%HADOOP_HOME%%/lib/jdiff/hadoop_0.20.1.xml
-%%HADOOP_HOME%%/lib/jdiff/hadoop_0.20.205.0.xml
-%%HADOOP_HOME%%/lib/jdiff/hadoop_%%PORTVERSION%%.xml
-%%HADOOP_HOME%%/lib/jsp-2.1/jsp-2.1.jar
-%%HADOOP_HOME%%/lib/jsp-2.1/jsp-api-2.1.jar
-%%HADOOP_HOME%%/lib/native/Linux-amd64-64/libhadoop.a
-%%HADOOP_HOME%%/lib/native/Linux-amd64-64/libhadoop.la
-%%HADOOP_HOME%%/lib/native/Linux-amd64-64/libhadoop.so
-%%HADOOP_HOME%%/lib/native/Linux-amd64-64/libhadoop.so.1
-%%HADOOP_HOME%%/lib/native/Linux-amd64-64/libhadoop.so.1.0.0
-%%HADOOP_HOME%%/lib/native/Linux-i386-32/libhadoop.a
-%%HADOOP_HOME%%/lib/native/Linux-i386-32/libhadoop.la
-%%HADOOP_HOME%%/lib/native/Linux-i386-32/libhadoop.so
-%%HADOOP_HOME%%/lib/native/Linux-i386-32/libhadoop.so.1
-%%HADOOP_HOME%%/lib/native/Linux-i386-32/libhadoop.so.1.0.0
-%%HADOOP_HOME%%/lib/native/%%HADOOP_ARCH%%/libhadoop.a
-%%HADOOP_HOME%%/lib/native/%%HADOOP_ARCH%%/libhadoop.la
-%%HADOOP_HOME%%/lib/native/%%HADOOP_ARCH%%/libhadoop.so
-%%HADOOP_HOME%%/lib/native/%%HADOOP_ARCH%%/libhadoop.so.1
-%%HADOOP_HOME%%/lib/asm-3.2.jar
-%%HADOOP_HOME%%/lib/aspectjrt-1.6.5.jar
-%%HADOOP_HOME%%/lib/aspectjtools-1.6.5.jar
-%%HADOOP_HOME%%/lib/commons-beanutils-1.7.0.jar
-%%HADOOP_HOME%%/lib/commons-beanutils-core-1.8.0.jar
-%%HADOOP_HOME%%/lib/commons-cli-1.2.jar
-%%HADOOP_HOME%%/lib/commons-codec-1.4.jar
-%%HADOOP_HOME%%/lib/commons-collections-3.2.1.jar
-%%HADOOP_HOME%%/lib/commons-configuration-1.6.jar
-%%HADOOP_HOME%%/lib/commons-daemon-1.0.1.jar
-%%HADOOP_HOME%%/lib/commons-digester-1.8.jar
-%%HADOOP_HOME%%/lib/commons-el-1.0.jar
-%%HADOOP_HOME%%/lib/commons-httpclient-3.0.1.jar
-%%HADOOP_HOME%%/lib/commons-lang-2.4.jar
-%%HADOOP_HOME%%/lib/commons-logging-1.1.1.jar
-%%HADOOP_HOME%%/lib/commons-logging-api-1.0.4.jar
-%%HADOOP_HOME%%/lib/commons-math-2.1.jar
-%%HADOOP_HOME%%/lib/commons-net-1.4.1.jar
-%%HADOOP_HOME%%/lib/core-3.1.1.jar
-%%HADOOP_HOME%%/lib/hsqldb-1.8.0.10.LICENSE.txt
-%%HADOOP_HOME%%/lib/hsqldb-1.8.0.10.jar
-%%HADOOP_HOME%%/lib/jackson-core-asl-1.0.1.jar
-%%HADOOP_HOME%%/lib/jackson-mapper-asl-1.0.1.jar
-%%HADOOP_HOME%%/lib/jasper-compiler-5.5.12.jar
-%%HADOOP_HOME%%/lib/jasper-runtime-5.5.12.jar
-%%HADOOP_HOME%%/lib/jdeb-0.8.jar
-%%HADOOP_HOME%%/lib/jersey-core-1.8.jar
-%%HADOOP_HOME%%/lib/jersey-json-1.8.jar
-%%HADOOP_HOME%%/lib/jersey-server-1.8.jar
-%%HADOOP_HOME%%/lib/jets3t-0.6.1.jar
-%%HADOOP_HOME%%/lib/jetty-6.1.26.jar
-%%HADOOP_HOME%%/lib/jetty-util-6.1.26.jar
-%%HADOOP_HOME%%/lib/jsch-0.1.42.jar
-%%HADOOP_HOME%%/lib/junit-4.5.jar
-%%HADOOP_HOME%%/lib/kfs-0.2.2.jar
-%%HADOOP_HOME%%/lib/kfs-0.2.LICENSE.txt
-%%HADOOP_HOME%%/lib/log4j-1.2.15.jar
-%%HADOOP_HOME%%/lib/mockito-all-1.8.5.jar
-%%HADOOP_HOME%%/lib/oro-2.0.8.jar
-%%HADOOP_HOME%%/lib/servlet-api-2.5-20081211.jar
-%%HADOOP_HOME%%/lib/slf4j-api-1.4.3.jar
-%%HADOOP_HOME%%/lib/slf4j-log4j12-1.4.3.jar
-%%HADOOP_HOME%%/lib/xmlenc-0.52.jar
-%%HADOOP_HOME%%/webapps/task/index.html
-%%HADOOP_HOME%%/webapps/task/WEB-INF/web.xml
-%%HADOOP_HOME%%/webapps/static/sorttable.js
-%%HADOOP_HOME%%/webapps/static/jobtracker.js
-%%HADOOP_HOME%%/webapps/static/jobconf.xsl
-%%HADOOP_HOME%%/webapps/static/hadoop.css
-%%HADOOP_HOME%%/webapps/static/hadoop-logo.jpg
-%%HADOOP_HOME%%/webapps/job/taskstatshistory.jsp
-%%HADOOP_HOME%%/webapps/job/taskstats.jsp
-%%HADOOP_HOME%%/webapps/job/taskdetailshistory.jsp
-%%HADOOP_HOME%%/webapps/job/taskdetails.jsp
-%%HADOOP_HOME%%/webapps/job/machines.jsp
-%%HADOOP_HOME%%/webapps/job/loadhistory.jsp
-%%HADOOP_HOME%%/webapps/job/legacyjobhistory.jsp
-%%HADOOP_HOME%%/webapps/job/jobtracker.jsp
-%%HADOOP_HOME%%/webapps/job/jobtaskshistory.jsp
-%%HADOOP_HOME%%/webapps/job/jobtasks.jsp
-%%HADOOP_HOME%%/webapps/job/jobqueue_details.jsp
-%%HADOOP_HOME%%/webapps/job/jobhistoryhome.jsp
-%%HADOOP_HOME%%/webapps/job/jobhistory.jsp
-%%HADOOP_HOME%%/webapps/job/jobfailures.jsp
-%%HADOOP_HOME%%/webapps/job/jobdetailshistory.jsp
-%%HADOOP_HOME%%/webapps/job/jobdetails.jsp
-%%HADOOP_HOME%%/webapps/job/jobconf_history.jsp
-%%HADOOP_HOME%%/webapps/job/jobconf.jsp
-%%HADOOP_HOME%%/webapps/job/jobblacklistedtrackers.jsp
-%%HADOOP_HOME%%/webapps/job/job_authorization_error.jsp
-%%HADOOP_HOME%%/webapps/job/index.html
-%%HADOOP_HOME%%/webapps/job/gethistory.jsp
-%%HADOOP_HOME%%/webapps/job/analysejobhistory.jsp
-%%HADOOP_HOME%%/webapps/job/WEB-INF/web.xml
-%%HADOOP_HOME%%/webapps/history/WEB-INF/web.xml
-%%HADOOP_HOME%%/webapps/hdfs/index.html
-%%HADOOP_HOME%%/webapps/hdfs/WEB-INF/web.xml
-%%HADOOP_HOME%%/webapps/datanode/WEB-INF/web.xml
+%%ETCDIR%%/envvars.d/000.java_home.env
+%%ETCDIR%%/envvars.d/001.hadoop_home.env
+%%ETCDIR%%/envvars.d/002.hadoop_conf.env
+%%ETCDIR%%/envvars.d/003.hadoop_log.env
+%%ETCDIR%%/envvars.d/004.hadoop_run.env
+%%DATADIR%%/bin/hadoop
+%%DATADIR%%/bin/hadoop-config.sh
+%%DATADIR%%/bin/hadoop-daemon.sh
+%%DATADIR%%/bin/hadoop-daemons.sh
+%%DATADIR%%/bin/rcc
+%%DATADIR%%/bin/slaves.sh
+%%DATADIR%%/bin/start-all.sh
+%%DATADIR%%/bin/start-balancer.sh
+%%DATADIR%%/bin/start-dfs.sh
+%%DATADIR%%/bin/start-jobhistoryserver.sh
+%%DATADIR%%/bin/start-mapred.sh
+%%DATADIR%%/bin/stop-all.sh
+%%DATADIR%%/bin/stop-balancer.sh
+%%DATADIR%%/bin/stop-dfs.sh
+%%DATADIR%%/bin/stop-jobhistoryserver.sh
+%%DATADIR%%/bin/stop-mapred.sh
+%%DATADIR%%/bin/task-controller
+%%DATADIR%%/lib/hadoop-capacity-scheduler-%%PORTVERSION%%.jar
+%%DATADIR%%/contrib/datajoin/hadoop-datajoin-%%PORTVERSION%%.jar
+%%DATADIR%%/contrib/failmon/hadoop-failmon-%%PORTVERSION%%.jar
+%%DATADIR%%/lib/hadoop-fairscheduler-%%PORTVERSION%%.jar
+%%DATADIR%%/contrib/gridmix/hadoop-gridmix-%%PORTVERSION%%.jar
+%%DATADIR%%/contrib/hdfsproxy/bin/hdfsproxy
+%%DATADIR%%/contrib/hdfsproxy/bin/hdfsproxy-config.sh
+%%DATADIR%%/contrib/hdfsproxy/bin/hdfsproxy-daemon.sh
+%%DATADIR%%/contrib/hdfsproxy/bin/hdfsproxy-daemons.sh
+%%DATADIR%%/contrib/hdfsproxy/bin/hdfsproxy-slaves.sh
+%%DATADIR%%/contrib/hdfsproxy/bin/start-hdfsproxy.sh
+%%DATADIR%%/contrib/hdfsproxy/bin/stop-hdfsproxy.sh
+%%DATADIR%%/contrib/hdfsproxy/conf/configuration.xsl
+%%DATADIR%%/contrib/hdfsproxy/conf/hdfsproxy-default.xml
+%%DATADIR%%/contrib/hdfsproxy/conf/hdfsproxy-env.sh
+%%DATADIR%%/contrib/hdfsproxy/conf/hdfsproxy-env.sh.template
+%%DATADIR%%/contrib/hdfsproxy/conf/hdfsproxy-hosts
+%%DATADIR%%/contrib/hdfsproxy/conf/log4j.properties
+%%DATADIR%%/contrib/hdfsproxy/conf/ssl-server.xml
+%%DATADIR%%/contrib/hdfsproxy/conf/tomcat-forward-web.xml
+%%DATADIR%%/contrib/hdfsproxy/conf/tomcat-web.xml
+%%DATADIR%%/contrib/hdfsproxy/conf/user-certs.xml
+%%DATADIR%%/contrib/hdfsproxy/conf/user-permissions.xml
+%%DATADIR%%/contrib/hdfsproxy/README
+%%DATADIR%%/contrib/hdfsproxy/build.xml
+%%DATADIR%%/contrib/hdfsproxy/hdfsproxy-2.0.jar
+%%DATADIR%%/contrib/hod/bin/VERSION
+%%DATADIR%%/contrib/hod/bin/checknodes
+%%DATADIR%%/contrib/hod/bin/hod
+%%DATADIR%%/contrib/hod/bin/hodcleanup
+%%DATADIR%%/contrib/hod/bin/hodring
+%%DATADIR%%/contrib/hod/bin/ringmaster
+%%DATADIR%%/contrib/hod/bin/verify-account
+%%DATADIR%%/contrib/hod/conf/hodrc
+%%DATADIR%%/contrib/hod/hodlib/AllocationManagers/__init__.py
+%%DATADIR%%/contrib/hod/hodlib/AllocationManagers/goldAllocationManager.py
+%%DATADIR%%/contrib/hod/hodlib/Common/__init__.py
+%%DATADIR%%/contrib/hod/hodlib/Common/allocationManagerUtil.py
+%%DATADIR%%/contrib/hod/hodlib/Common/desc.py
+%%DATADIR%%/contrib/hod/hodlib/Common/descGenerator.py
+%%DATADIR%%/contrib/hod/hodlib/Common/hodsvc.py
+%%DATADIR%%/contrib/hod/hodlib/Common/logger.py
+%%DATADIR%%/contrib/hod/hodlib/Common/miniHTMLParser.py
+%%DATADIR%%/contrib/hod/hodlib/Common/nodepoolutil.py
+%%DATADIR%%/contrib/hod/hodlib/Common/setup.py
+%%DATADIR%%/contrib/hod/hodlib/Common/socketServers.py
+%%DATADIR%%/contrib/hod/hodlib/Common/tcp.py
+%%DATADIR%%/contrib/hod/hodlib/Common/threads.py
+%%DATADIR%%/contrib/hod/hodlib/Common/types.py
+%%DATADIR%%/contrib/hod/hodlib/Common/util.py
+%%DATADIR%%/contrib/hod/hodlib/Common/xmlrpc.py
+%%DATADIR%%/contrib/hod/hodlib/GridServices/__init__.py
+%%DATADIR%%/contrib/hod/hodlib/GridServices/hdfs.py
+%%DATADIR%%/contrib/hod/hodlib/GridServices/mapred.py
+%%DATADIR%%/contrib/hod/hodlib/GridServices/service.py
+%%DATADIR%%/contrib/hod/hodlib/Hod/__init__.py
+%%DATADIR%%/contrib/hod/hodlib/Hod/hadoop.py
+%%DATADIR%%/contrib/hod/hodlib/Hod/hod.py
+%%DATADIR%%/contrib/hod/hodlib/Hod/nodePool.py
+%%DATADIR%%/contrib/hod/hodlib/HodRing/__init__.py
+%%DATADIR%%/contrib/hod/hodlib/HodRing/hodRing.py
+%%DATADIR%%/contrib/hod/hodlib/NodePools/__init__.py
+%%DATADIR%%/contrib/hod/hodlib/NodePools/torque.py
+%%DATADIR%%/contrib/hod/hodlib/RingMaster/__init__.py
+%%DATADIR%%/contrib/hod/hodlib/RingMaster/idleJobTracker.py
+%%DATADIR%%/contrib/hod/hodlib/RingMaster/ringMaster.py
+%%DATADIR%%/contrib/hod/hodlib/Schedulers/__init__.py
+%%DATADIR%%/contrib/hod/hodlib/Schedulers/torque.py
+%%DATADIR%%/contrib/hod/hodlib/ServiceProxy/__init__.py
+%%DATADIR%%/contrib/hod/hodlib/ServiceProxy/serviceProxy.py
+%%DATADIR%%/contrib/hod/hodlib/ServiceRegistry/__init__.py
+%%DATADIR%%/contrib/hod/hodlib/ServiceRegistry/serviceRegistry.py
+%%DATADIR%%/contrib/hod/hodlib/__init__.py
+%%DATADIR%%/contrib/hod/ivy/libraries.properties
+%%DATADIR%%/contrib/hod/support/checklimits.sh
+%%DATADIR%%/contrib/hod/support/logcondense.py
+%%DATADIR%%/contrib/hod/testing/__init__.py
+%%DATADIR%%/contrib/hod/testing/helper.py
+%%DATADIR%%/contrib/hod/testing/lib.py
+%%DATADIR%%/contrib/hod/testing/main.py
+%%DATADIR%%/contrib/hod/testing/testHadoop.py
+%%DATADIR%%/contrib/hod/testing/testHod.py
+%%DATADIR%%/contrib/hod/testing/testHodCleanup.py
+%%DATADIR%%/contrib/hod/testing/testHodRing.py
+%%DATADIR%%/contrib/hod/testing/testModule.py
+%%DATADIR%%/contrib/hod/testing/testRingmasterRPCs.py
+%%DATADIR%%/contrib/hod/testing/testThreads.py
+%%DATADIR%%/contrib/hod/testing/testTypes.py
+%%DATADIR%%/contrib/hod/testing/testUtil.py
+%%DATADIR%%/contrib/hod/testing/testXmlrpc.py
+%%DATADIR%%/contrib/hod/CHANGES.txt
+%%DATADIR%%/contrib/hod/README
+%%DATADIR%%/contrib/hod/build.xml
+%%DATADIR%%/contrib/hod/config.txt
+%%DATADIR%%/contrib/hod/getting_started.txt
+%%DATADIR%%/contrib/hod/ivy.xml
+%%DATADIR%%/contrib/index/hadoop-index-%%PORTVERSION%%.jar
+%%DATADIR%%/contrib/streaming/hadoop-streaming-%%PORTVERSION%%.jar
+%%DATADIR%%/lib/hadoop-thriftfs-%%PORTVERSION%%.jar
+%%DATADIR%%/contrib/vaidya/bin/vaidya.sh
+%%DATADIR%%/contrib/vaidya/conf/postex_diagnosis_tests.xml
+%%DATADIR%%/contrib/vaidya/hadoop-vaidya-%%PORTVERSION%%.jar
+%%DATADIR%%/hadoop-ant-%%PORTVERSION%%.jar
+%%DATADIR%%/hadoop-core-%%PORTVERSION%%.jar
+%%DATADIR%%/hadoop-test-%%PORTVERSION%%.jar
+%%DATADIR%%/hadoop-tools-%%PORTVERSION%%.jar
+%%DATADIR%%/lib/jdiff/hadoop_0.17.0.xml
+%%DATADIR%%/lib/jdiff/hadoop_0.18.1.xml
+%%DATADIR%%/lib/jdiff/hadoop_0.18.2.xml
+%%DATADIR%%/lib/jdiff/hadoop_0.18.3.xml
+%%DATADIR%%/lib/jdiff/hadoop_0.19.0.xml
+%%DATADIR%%/lib/jdiff/hadoop_0.19.1.xml
+%%DATADIR%%/lib/jdiff/hadoop_0.19.2.xml
+%%DATADIR%%/lib/jdiff/hadoop_0.20.1.xml
+%%DATADIR%%/lib/jdiff/hadoop_0.20.205.0.xml
+%%DATADIR%%/lib/jdiff/hadoop_1.0.0.xml
+%%DATADIR%%/lib/jdiff/hadoop_1.0.1.xml
+%%DATADIR%%/lib/jdiff/hadoop_1.0.2.xml
+%%DATADIR%%/lib/jdiff/hadoop_1.0.3.xml
+%%DATADIR%%/lib/jdiff/hadoop_1.0.4.xml
+%%DATADIR%%/lib/jdiff/hadoop_1.1.0.xml
+%%DATADIR%%/lib/jdiff/hadoop_1.1.1.xml
+%%DATADIR%%/lib/jdiff/hadoop_1.1.2.xml
+%%DATADIR%%/lib/jdiff/hadoop_1.2.0.xml
+%%DATADIR%%/lib/jdiff/hadoop_%%PORTVERSION%%.xml
+%%DATADIR%%/lib/jsp-2.1/jsp-2.1.jar
+%%DATADIR%%/lib/jsp-2.1/jsp-api-2.1.jar
+%%DATADIR%%/lib/native/Linux-amd64-64/libhadoop.a
+%%DATADIR%%/lib/native/Linux-amd64-64/libhadoop.la
+%%DATADIR%%/lib/native/Linux-amd64-64/libhadoop.so
+%%DATADIR%%/lib/native/Linux-amd64-64/libhadoop.so.1
+%%DATADIR%%/lib/native/Linux-amd64-64/libhadoop.so.1.0.0
+%%DATADIR%%/lib/native/Linux-i386-32/libhadoop.a
+%%DATADIR%%/lib/native/Linux-i386-32/libhadoop.la
+%%DATADIR%%/lib/native/Linux-i386-32/libhadoop.so
+%%DATADIR%%/lib/native/Linux-i386-32/libhadoop.so.1
+%%DATADIR%%/lib/native/Linux-i386-32/libhadoop.so.1.0.0
+%%DATADIR%%/lib/native/%%HADOOP_ARCH%%/libhadoop.a
+%%DATADIR%%/lib/native/%%HADOOP_ARCH%%/libhadoop.la
+%%DATADIR%%/lib/native/%%HADOOP_ARCH%%/libhadoop.so
+%%DATADIR%%/lib/native/%%HADOOP_ARCH%%/libhadoop.so.1
+%%DATADIR%%/lib/asm-3.2.jar
+%%DATADIR%%/lib/aspectjrt-1.6.11.jar
+%%DATADIR%%/lib/aspectjtools-1.6.11.jar
+%%DATADIR%%/lib/commons-beanutils-1.7.0.jar
+%%DATADIR%%/lib/commons-beanutils-core-1.8.0.jar
+%%DATADIR%%/lib/commons-cli-1.2.jar
+%%DATADIR%%/lib/commons-codec-1.4.jar
+%%DATADIR%%/lib/commons-collections-3.2.1.jar
+%%DATADIR%%/lib/commons-configuration-1.6.jar
+%%DATADIR%%/lib/commons-daemon-1.0.1.jar
+%%DATADIR%%/lib/commons-digester-1.8.jar
+%%DATADIR%%/lib/commons-el-1.0.jar
+%%DATADIR%%/lib/commons-httpclient-3.0.1.jar
+%%DATADIR%%/lib/commons-io-2.1.jar
+%%DATADIR%%/lib/commons-lang-2.4.jar
+%%DATADIR%%/lib/commons-logging-1.1.1.jar
+%%DATADIR%%/lib/commons-logging-api-1.0.4.jar
+%%DATADIR%%/lib/commons-math-2.1.jar
+%%DATADIR%%/lib/commons-net-3.1.jar
+%%DATADIR%%/lib/core-3.1.1.jar
+%%DATADIR%%/lib/hsqldb-1.8.0.10.LICENSE.txt
+%%DATADIR%%/lib/hsqldb-1.8.0.10.jar
+%%DATADIR%%/lib/jackson-core-asl-1.8.8.jar
+%%DATADIR%%/lib/jackson-mapper-asl-1.8.8.jar
+%%DATADIR%%/lib/jasper-compiler-5.5.12.jar
+%%DATADIR%%/lib/jasper-runtime-5.5.12.jar
+%%DATADIR%%/lib/jdeb-0.8.jar
+%%DATADIR%%/lib/jersey-core-1.8.jar
+%%DATADIR%%/lib/jersey-json-1.8.jar
+%%DATADIR%%/lib/jersey-server-1.8.jar
+%%DATADIR%%/lib/jets3t-0.6.1.jar
+%%DATADIR%%/lib/jetty-6.1.26.jar
+%%DATADIR%%/lib/jetty-util-6.1.26.jar
+%%DATADIR%%/lib/jsch-0.1.42.jar
+%%DATADIR%%/lib/junit-4.5.jar
+%%DATADIR%%/lib/kfs-0.2.2.jar
+%%DATADIR%%/lib/kfs-0.2.LICENSE.txt
+%%DATADIR%%/lib/log4j-1.2.15.jar
+%%DATADIR%%/lib/mockito-all-1.8.5.jar
+%%DATADIR%%/lib/oro-2.0.8.jar
+%%DATADIR%%/lib/servlet-api-2.5-20081211.jar
+%%DATADIR%%/lib/slf4j-api-1.4.3.jar
+%%DATADIR%%/lib/slf4j-log4j12-1.4.3.jar
+%%DATADIR%%/lib/xmlenc-0.52.jar
+%%DATADIR%%/webapps/task/index.html
+%%DATADIR%%/webapps/task/WEB-INF/web.xml
+%%DATADIR%%/webapps/static/sorttable.js
+%%DATADIR%%/webapps/static/jobtracker.js
+%%DATADIR%%/webapps/static/jobconf.xsl
+%%DATADIR%%/webapps/static/hadoop.css
+%%DATADIR%%/webapps/static/hadoop-logo.jpg
+%%DATADIR%%/webapps/secondary/index.html
+%%DATADIR%%/webapps/secondary/WEB-INF/web.xml
+%%DATADIR%%/webapps/job/taskstatshistory.jsp
+%%DATADIR%%/webapps/job/taskstats.jsp
+%%DATADIR%%/webapps/job/taskdetailshistory.jsp
+%%DATADIR%%/webapps/job/taskdetails.jsp
+%%DATADIR%%/webapps/job/machines.jsp
+%%DATADIR%%/webapps/job/loadhistory.jsp
+%%DATADIR%%/webapps/job/legacyjobhistory.jsp
+%%DATADIR%%/webapps/job/jobtracker.jsp
+%%DATADIR%%/webapps/job/jobtaskshistory.jsp
+%%DATADIR%%/webapps/job/jobtasks.jsp
+%%DATADIR%%/webapps/job/jobqueue_details.jsp
+%%DATADIR%%/webapps/job/jobhistoryhome.jsp
+%%DATADIR%%/webapps/job/jobhistory.jsp
+%%DATADIR%%/webapps/job/jobfailures.jsp
+%%DATADIR%%/webapps/job/jobdetailshistory.jsp
+%%DATADIR%%/webapps/job/jobdetails.jsp
+%%DATADIR%%/webapps/job/jobconf_history.jsp
+%%DATADIR%%/webapps/job/jobconf.jsp
+%%DATADIR%%/webapps/job/jobblacklistedtrackers.jsp
+%%DATADIR%%/webapps/job/job_authorization_error.jsp
+%%DATADIR%%/webapps/job/index.html
+%%DATADIR%%/webapps/job/gethistory.jsp
+%%DATADIR%%/webapps/job/analysejobhistory.jsp
+%%DATADIR%%/webapps/job/WEB-INF/web.xml
+%%DATADIR%%/webapps/history/WEB-INF/web.xml
+%%DATADIR%%/webapps/hdfs/index.html
+%%DATADIR%%/webapps/hdfs/WEB-INF/web.xml
+%%DATADIR%%/webapps/datanode/WEB-INF/web.xml
 %%EXAMPLESDIR%%/hadoop-examples-%%PORTVERSION%%.jar
 %%EXAMPLESDIR%%/core-default.xml
 %%EXAMPLESDIR%%/hdfs-default.xml
 %%EXAMPLESDIR%%/mapred-default.xml
 %%EXAMPLESDIR%%/conf/masters
 %%EXAMPLESDIR%%/conf/slaves
+%%EXAMPLESDIR%%/conf/task-log4j.properties
 %%EXAMPLESDIR%%/conf/ssl-client.xml.example
 %%EXAMPLESDIR%%/conf/ssl-server.xml.example
-@unexec if cmp -s %D/%%HADOOP_ETC%%/capacity-scheduler.xml %D/%%EXAMPLESDIR%%/conf/capacity-scheduler.xml; then rm -f %D/%%HADOOP_ETC%%/capacity-scheduler.xml; fi
+@unexec if cmp -s %D/%%ETCDIR%%/capacity-scheduler.xml %D/%%EXAMPLESDIR%%/conf/capacity-scheduler.xml; then rm -f %D/%%ETCDIR%%/capacity-scheduler.xml; fi
 %%EXAMPLESDIR%%/conf/capacity-scheduler.xml
-@exec [ -f %D/%%HADOOP_ETC%%/capacity-scheduler.xml ] || cp %D/%%EXAMPLESDIR%%/conf/capacity-scheduler.xml %D/%%HADOOP_ETC%%
-@unexec if cmp -s %D/%%HADOOP_ETC%%/configuration.xsl %D/%%EXAMPLESDIR%%/conf/configuration.xsl; then rm -f %D/%%HADOOP_ETC%%/configuration.xsl; fi
+@exec [ -f %D/%%ETCDIR%%/capacity-scheduler.xml ] || cp %D/%%EXAMPLESDIR%%/conf/capacity-scheduler.xml %D/%%ETCDIR%%
+@unexec if cmp -s %D/%%ETCDIR%%/configuration.xsl %D/%%EXAMPLESDIR%%/conf/configuration.xsl; then rm -f %D/%%ETCDIR%%/configuration.xsl; fi
 %%EXAMPLESDIR%%/conf/configuration.xsl
-@exec [ -f %D/%%HADOOP_ETC%%/configuration.xsl ] || cp %D/%%EXAMPLESDIR%%/conf/configuration.xsl %D/%%HADOOP_ETC%%
-@unexec if cmp -s %D/%%HADOOP_ETC%%/core-site.xml %D/%%EXAMPLESDIR%%/conf/core-site.xml; then rm -f %D/%%HADOOP_ETC%%/core-site.xml; fi
+@exec [ -f %D/%%ETCDIR%%/configuration.xsl ] || cp %D/%%EXAMPLESDIR%%/conf/configuration.xsl %D/%%ETCDIR%%
+@unexec if cmp -s %D/%%ETCDIR%%/core-site.xml %D/%%EXAMPLESDIR%%/conf/core-site.xml; then rm -f %D/%%ETCDIR%%/core-site.xml; fi
 %%EXAMPLESDIR%%/conf/core-site.xml
-@exec [ -f %D/%%HADOOP_ETC%%/core-site.xml ] || cp %D/%%EXAMPLESDIR%%/conf/core-site.xml %D/%%HADOOP_ETC%%
-@unexec if cmp -s %D/%%HADOOP_ETC%%/hadoop-env.sh %D/%%EXAMPLESDIR%%/conf/hadoop-env.sh; then rm -f %D/%%HADOOP_ETC%%/hadoop-env.sh; fi
+@exec [ -f %D/%%ETCDIR%%/core-site.xml ] || cp %D/%%EXAMPLESDIR%%/conf/core-site.xml %D/%%ETCDIR%%
+@unexec if cmp -s %D/%%ETCDIR%%/hadoop-env.sh %D/%%EXAMPLESDIR%%/conf/hadoop-env.sh; then rm -f %D/%%ETCDIR%%/hadoop-env.sh; fi
 %%EXAMPLESDIR%%/conf/hadoop-env.sh
-@exec [ -f %D/%%HADOOP_ETC%%/hadoop-env.sh ] || cp %D/%%EXAMPLESDIR%%/conf/hadoop-env.sh %D/%%HADOOP_ETC%%
-@unexec if cmp -s %D/%%HADOOP_ETC%%/hadoop-metrics2.properties %D/%%EXAMPLESDIR%%/conf/hadoop-metrics2.properties; then rm -f %D/%%HADOOP_ETC%%/hadoop-metrics2.properties; fi
+@exec [ -f %D/%%ETCDIR%%/hadoop-env.sh ] || cp %D/%%EXAMPLESDIR%%/conf/hadoop-env.sh %D/%%ETCDIR%%
+@unexec if cmp -s %D/%%ETCDIR%%/hadoop-metrics2.properties %D/%%EXAMPLESDIR%%/conf/hadoop-metrics2.properties; then rm -f %D/%%ETCDIR%%/hadoop-metrics2.properties; fi
 %%EXAMPLESDIR%%/conf/hadoop-metrics2.properties
-@exec [ -f %D/%%HADOOP_ETC%%/hadoop-metrics2.properties ] || cp %D/%%EXAMPLESDIR%%/conf/hadoop-metrics2.properties %D/%%HADOOP_ETC%%
-@unexec if cmp -s %D/%%HADOOP_ETC%%/hadoop-policy.xml %D/%%EXAMPLESDIR%%/conf/hadoop-policy.xml; then rm -f %D/%%HADOOP_ETC%%/hadoop-policy.xml; fi
+@exec [ -f %D/%%ETCDIR%%/hadoop-metrics2.properties ] || cp %D/%%EXAMPLESDIR%%/conf/hadoop-metrics2.properties %D/%%ETCDIR%%
+@unexec if cmp -s %D/%%ETCDIR%%/hadoop-policy.xml %D/%%EXAMPLESDIR%%/conf/hadoop-policy.xml; then rm -f %D/%%ETCDIR%%/hadoop-policy.xml; fi
 %%EXAMPLESDIR%%/conf/hadoop-policy.xml
-@exec [ -f %D/%%HADOOP_ETC%%/hadoop-policy.xml ] || cp %D/%%EXAMPLESDIR%%/conf/hadoop-policy.xml %D/%%HADOOP_ETC%%
-@unexec if cmp -s %D/%%HADOOP_ETC%%/hdfs-site.xml %D/%%EXAMPLESDIR%%/conf/hdfs-site.xml; then rm -f %D/%%HADOOP_ETC%%/hdfs-site.xml; fi
+@exec [ -f %D/%%ETCDIR%%/hadoop-policy.xml ] || cp %D/%%EXAMPLESDIR%%/conf/hadoop-policy.xml %D/%%ETCDIR%%
+@unexec if cmp -s %D/%%ETCDIR%%/hdfs-site.xml %D/%%EXAMPLESDIR%%/conf/hdfs-site.xml; then rm -f %D/%%ETCDIR%%/hdfs-site.xml; fi
 %%EXAMPLESDIR%%/conf/hdfs-site.xml
-@exec [ -f %D/%%HADOOP_ETC%%/hdfs-site.xml ] || cp %D/%%EXAMPLESDIR%%/conf/hdfs-site.xml %D/%%HADOOP_ETC%%
-@unexec if cmp -s %D/%%HADOOP_ETC%%/log4j.properties %D/%%EXAMPLESDIR%%/conf/log4j.properties; then rm -f %D/%%HADOOP_ETC%%/log4j.properties; fi
+@exec [ -f %D/%%ETCDIR%%/hdfs-site.xml ] || cp %D/%%EXAMPLESDIR%%/conf/hdfs-site.xml %D/%%ETCDIR%%
+@unexec if cmp -s %D/%%ETCDIR%%/log4j.properties %D/%%EXAMPLESDIR%%/conf/log4j.properties; then rm -f %D/%%ETCDIR%%/log4j.properties; fi
 %%EXAMPLESDIR%%/conf/log4j.properties
-@exec [ -f %D/%%HADOOP_ETC%%/log4j.properties ] || cp %D/%%EXAMPLESDIR%%/conf/log4j.properties %D/%%HADOOP_ETC%%
-@unexec if cmp -s %D/%%HADOOP_ETC%%/mapred-queue-acls.xml %D/%%EXAMPLESDIR%%/conf/mapred-queue-acls.xml; then rm -f %D/%%HADOOP_ETC%%/mapred-queue-acls.xml; fi
+@exec [ -f %D/%%ETCDIR%%/log4j.properties ] || cp %D/%%EXAMPLESDIR%%/conf/log4j.properties %D/%%ETCDIR%%
+@unexec if cmp -s %D/%%ETCDIR%%/mapred-queue-acls.xml %D/%%EXAMPLESDIR%%/conf/mapred-queue-acls.xml; then rm -f %D/%%ETCDIR%%/mapred-queue-acls.xml; fi
 %%EXAMPLESDIR%%/conf/mapred-queue-acls.xml
-@exec [ -f %D/%%HADOOP_ETC%%/mapred-queue-acls.xml ] || cp %D/%%EXAMPLESDIR%%/conf/mapred-queue-acls.xml %D/%%HADOOP_ETC%%
-@unexec if cmp -s %D/%%HADOOP_ETC%%/mapred-site.xml %D/%%EXAMPLESDIR%%/conf/mapred-site.xml; then rm -f %D/%%HADOOP_ETC%%/mapred-site.xml; fi
+@exec [ -f %D/%%ETCDIR%%/mapred-queue-acls.xml ] || cp %D/%%EXAMPLESDIR%%/conf/mapred-queue-acls.xml %D/%%ETCDIR%%
+@unexec if cmp -s %D/%%ETCDIR%%/mapred-site.xml %D/%%EXAMPLESDIR%%/conf/mapred-site.xml; then rm -f %D/%%ETCDIR%%/mapred-site.xml; fi
 %%EXAMPLESDIR%%/conf/mapred-site.xml
-@exec [ -f %D/%%HADOOP_ETC%%/mapred-site.xml ] || cp %D/%%EXAMPLESDIR%%/conf/mapred-site.xml %D/%%HADOOP_ETC%%
-@unexec if cmp -s %D/%%HADOOP_ETC%%/taskcontroller.cfg %D/%%EXAMPLESDIR%%/conf/taskcontroller.cfg; then rm -f %D/%%HADOOP_ETC%%/taskcontroller.cfg; fi
+@exec [ -f %D/%%ETCDIR%%/mapred-site.xml ] || cp %D/%%EXAMPLESDIR%%/conf/mapred-site.xml %D/%%ETCDIR%%
+@unexec if cmp -s %D/%%ETCDIR%%/taskcontroller.cfg %D/%%EXAMPLESDIR%%/conf/taskcontroller.cfg; then rm -f %D/%%ETCDIR%%/taskcontroller.cfg; fi
 %%EXAMPLESDIR%%/conf/taskcontroller.cfg
-@exec [ -f %D/%%HADOOP_ETC%%/taskcontroller.cfg ] || cp %D/%%EXAMPLESDIR%%/conf/taskcontroller.cfg %D/%%HADOOP_ETC%%
-@unexec if cmp -s %D/%%HADOOP_ETC%%/fair-scheduler.xml %D/%%EXAMPLESDIR%%/conf/fair-scheduler.xml; then rm -f %D/%%HADOOP_ETC%%/fair-scheduler.xml; fi
+@exec [ -f %D/%%ETCDIR%%/taskcontroller.cfg ] || cp %D/%%EXAMPLESDIR%%/conf/taskcontroller.cfg %D/%%ETCDIR%%
+@unexec if cmp -s %D/%%ETCDIR%%/fair-scheduler.xml %D/%%EXAMPLESDIR%%/conf/fair-scheduler.xml; then rm -f %D/%%ETCDIR%%/fair-scheduler.xml; fi
 %%EXAMPLESDIR%%/conf/fair-scheduler.xml
-@exec [ -f %D/%%HADOOP_ETC%%/fair-scheduler.xml ] || cp %D/%%EXAMPLESDIR%%/conf/fair-scheduler.xml %D/%%HADOOP_ETC%%
+@exec [ -f %D/%%ETCDIR%%/fair-scheduler.xml ] || cp %D/%%EXAMPLESDIR%%/conf/fair-scheduler.xml %D/%%ETCDIR%%
 include/hadoop/StringUtils.hh
 include/hadoop/SerialUtils.hh
 include/hadoop/Pipes.hh
 include/hadoop/TemplateFactory.hh
 lib/libhadooputils.a
 lib/libhadooppipes.a
+lib/libhdfs.a
 lib/libhdfs.so.0
 lib/libhdfs.so
 lib/libhdfs.la
-@exec mkdir -p %D/%%HADOOP_HOME%%/webapps/secondary/WEB-INF
-@exec mkdir -p %D/%%HADOOP_HOME%%/contrib/hdfsproxy/logs
+@exec mkdir -p %D/%%DATADIR%%/webapps/secondary/WEB-INF
+@exec mkdir -p %D/%%DATADIR%%/contrib/hdfsproxy/logs
+@exec install -d -o %%HADOOP_USER%% -g %%HADOOP_GROUP%% -m 0755 %%HADOOP_LOGDIR%%
+@exec install -d -o %%HADOOP_USER%% -g %%HADOOP_GROUP%% -m 0755 %%HADOOP_RUNDIR%%
+@unexec rmdir %%HADOOP_RUNDIR%% 2>/dev/null || true
+@unexec rmdir %%HADOOP_LOGDIR%% 2>/dev/null || true
 @dirrm %%EXAMPLESDIR%%/conf
 @dirrm %%EXAMPLESDIR%%
-@dirrm %%HADOOP_HOME%%/lib/native/Linux-i386-32
-@dirrm %%HADOOP_HOME%%/lib/native/Linux-amd64-64
-@dirrm %%HADOOP_HOME%%/lib/native/%%HADOOP_ARCH%%
-@dirrm %%HADOOP_HOME%%/lib/native
-@dirrm %%HADOOP_HOME%%/lib/jsp-2.1
-@dirrm %%HADOOP_HOME%%/lib/jdiff
-@dirrm %%HADOOP_HOME%%/lib
-@dirrm %%HADOOP_HOME%%/bin
-@dirrm %%HADOOP_HOME%%/webapps/task/WEB-INF
-@dirrm %%HADOOP_HOME%%/webapps/task
-@dirrm %%HADOOP_HOME%%/webapps/static
-@dirrm %%HADOOP_HOME%%/webapps/secondary/WEB-INF
-@dirrm %%HADOOP_HOME%%/webapps/secondary
-@dirrm %%HADOOP_HOME%%/webapps/job/WEB-INF
-@dirrm %%HADOOP_HOME%%/webapps/job
-@dirrm %%HADOOP_HOME%%/webapps/history/WEB-INF
-@dirrm %%HADOOP_HOME%%/webapps/history
-@dirrm %%HADOOP_HOME%%/webapps/hdfs/WEB-INF
-@dirrm %%HADOOP_HOME%%/webapps/hdfs
-@dirrm %%HADOOP_HOME%%/webapps/datanode/WEB-INF
-@dirrm %%HADOOP_HOME%%/webapps/datanode
-@dirrm %%HADOOP_HOME%%/webapps/
-@dirrm %%HADOOP_HOME%%/contrib/vaidya/conf
-@dirrm %%HADOOP_HOME%%/contrib/vaidya/bin
-@dirrm %%HADOOP_HOME%%/contrib/vaidya
-@dirrm %%HADOOP_HOME%%/contrib/streaming
-@dirrm %%HADOOP_HOME%%/contrib/index
-@dirrm %%HADOOP_HOME%%/contrib/hod/testing
-@dirrm %%HADOOP_HOME%%/contrib/hod/support
-@dirrm %%HADOOP_HOME%%/contrib/hod/ivy
-@dirrm %%HADOOP_HOME%%/contrib/hod/hodlib/ServiceRegistry
-@dirrm %%HADOOP_HOME%%/contrib/hod/hodlib/ServiceProxy
-@dirrm %%HADOOP_HOME%%/contrib/hod/hodlib/Schedulers
-@dirrm %%HADOOP_HOME%%/contrib/hod/hodlib/RingMaster
-@dirrm %%HADOOP_HOME%%/contrib/hod/hodlib/NodePools
-@dirrm %%HADOOP_HOME%%/contrib/hod/hodlib/HodRing
-@dirrm %%HADOOP_HOME%%/contrib/hod/hodlib/Hod
-@dirrm %%HADOOP_HOME%%/contrib/hod/hodlib/GridServices
-@dirrm %%HADOOP_HOME%%/contrib/hod/hodlib/Common
-@dirrm %%HADOOP_HOME%%/contrib/hod/hodlib/AllocationManagers
-@dirrm %%HADOOP_HOME%%/contrib/hod/hodlib
-@dirrm %%HADOOP_HOME%%/contrib/hod/conf
-@dirrm %%HADOOP_HOME%%/contrib/hod/bin
-@dirrm %%HADOOP_HOME%%/contrib/hod
-@dirrm %%HADOOP_HOME%%/contrib/hdfsproxy/logs
-@dirrm %%HADOOP_HOME%%/contrib/hdfsproxy/conf
-@dirrm %%HADOOP_HOME%%/contrib/hdfsproxy/bin
-@dirrm %%HADOOP_HOME%%/contrib/hdfsproxy
-@dirrm %%HADOOP_HOME%%/contrib/gridmix
-@dirrm %%HADOOP_HOME%%/contrib/failmon
-@dirrm %%HADOOP_HOME%%/contrib/datajoin
-@dirrm %%HADOOP_HOME%%/contrib/
-@dirrm %%HADOOP_HOME%%
+@dirrm %%DATADIR%%/lib/native/Linux-i386-32
+@dirrm %%DATADIR%%/lib/native/Linux-amd64-64
+@dirrm %%DATADIR%%/lib/native/%%HADOOP_ARCH%%
+@dirrm %%DATADIR%%/lib/native
+@dirrm %%DATADIR%%/lib/jsp-2.1
+@dirrm %%DATADIR%%/lib/jdiff
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/bin
+@dirrm %%DATADIR%%/webapps/task/WEB-INF
+@dirrm %%DATADIR%%/webapps/task
+@dirrm %%DATADIR%%/webapps/static
+@dirrm %%DATADIR%%/webapps/secondary/WEB-INF
+@dirrm %%DATADIR%%/webapps/secondary
+@dirrm %%DATADIR%%/webapps/job/WEB-INF
+@dirrm %%DATADIR%%/webapps/job
+@dirrm %%DATADIR%%/webapps/history/WEB-INF
+@dirrm %%DATADIR%%/webapps/history
+@dirrm %%DATADIR%%/webapps/hdfs/WEB-INF
+@dirrm %%DATADIR%%/webapps/hdfs
+@dirrm %%DATADIR%%/webapps/datanode/WEB-INF
+@dirrm %%DATADIR%%/webapps/datanode
+@dirrm %%DATADIR%%/webapps
+@dirrm %%DATADIR%%/contrib/vaidya/conf
+@dirrm %%DATADIR%%/contrib/vaidya/bin
+@dirrm %%DATADIR%%/contrib/vaidya
+@dirrm %%DATADIR%%/contrib/streaming
+@dirrm %%DATADIR%%/contrib/index
+@dirrm %%DATADIR%%/contrib/hod/testing
+@dirrm %%DATADIR%%/contrib/hod/support
+@dirrm %%DATADIR%%/contrib/hod/ivy
+@dirrm %%DATADIR%%/contrib/hod/hodlib/ServiceRegistry
+@dirrm %%DATADIR%%/contrib/hod/hodlib/ServiceProxy
+@dirrm %%DATADIR%%/contrib/hod/hodlib/Schedulers
+@dirrm %%DATADIR%%/contrib/hod/hodlib/RingMaster
+@dirrm %%DATADIR%%/contrib/hod/hodlib/NodePools
+@dirrm %%DATADIR%%/contrib/hod/hodlib/HodRing
+@dirrm %%DATADIR%%/contrib/hod/hodlib/Hod
+@dirrm %%DATADIR%%/contrib/hod/hodlib/GridServices
+@dirrm %%DATADIR%%/contrib/hod/hodlib/Common
+@dirrm %%DATADIR%%/contrib/hod/hodlib/AllocationManagers
+@dirrm %%DATADIR%%/contrib/hod/hodlib
+@dirrm %%DATADIR%%/contrib/hod/conf
+@dirrm %%DATADIR%%/contrib/hod/bin
+@dirrm %%DATADIR%%/contrib/hod
+@dirrm %%DATADIR%%/contrib/hdfsproxy/logs
+@dirrm %%DATADIR%%/contrib/hdfsproxy/conf
+@dirrm %%DATADIR%%/contrib/hdfsproxy/bin
+@dirrm %%DATADIR%%/contrib/hdfsproxy
+@dirrm %%DATADIR%%/contrib/gridmix
+@dirrm %%DATADIR%%/contrib/failmon
+@dirrm %%DATADIR%%/contrib/datajoin
+@dirrm %%DATADIR%%/contrib
+@dirrm %%DATADIR%%
 @dirrm include/hadoop
-@dirrmtry %%HADOOP_ETC%%/envvars.d
-@dirrmtry %%HADOOP_ETC%%
+@dirrmtry %%ETCDIR%%/envvars.d
+@dirrmtry %%ETCDIR%%

@@ -1,52 +1,56 @@
---- src/native/Makefile.in.orig	2011-05-04 08:30:16.000000000 +0200
-+++ src/native/Makefile.in	2011-12-09 10:38:40.000000000 +0100
-@@ -92,10 +92,7 @@
- libLTLIBRARIES_INSTALL = $(INSTALL)
+--- src/native/Makefile.in.orig	2013-07-22 17:26:40.000000000 -0500
++++ src/native/Makefile.in	2013-10-25 09:42:34.000000000 -0500
+@@ -93,10 +93,7 @@
  LTLIBRARIES = $(lib_LTLIBRARIES)
  libhadoop_la_DEPENDENCIES =
--am_libhadoop_la_OBJECTS = ZlibCompressor.lo ZlibDecompressor.lo \
--	getGroup.lo JniBasedUnixGroupsMapping.lo \
+ am_libhadoop_la_OBJECTS = ZlibCompressor.lo ZlibDecompressor.lo \
+-	SnappyCompressor.lo SnappyDecompressor.lo getGroup.lo \
+-	JniBasedUnixGroupsMapping.lo \
 -	JniBasedUnixGroupsNetgroupMapping.lo file_descriptor.lo \
 -	errno_enum.lo NativeIO.lo
-+am_libhadoop_la_OBJECTS = ZlibCompressor.lo ZlibDecompressor.lo
++	SnappyCompressor.lo SnappyDecompressor.lo
  libhadoop_la_OBJECTS = $(am_libhadoop_la_OBJECTS)
  DEFAULT_INCLUDES = -I. -I$(srcdir) -I.
  depcomp = $(SHELL) $(top_srcdir)/config/depcomp
-@@ -223,24 +220,15 @@
- sysconfdir = @sysconfdir@
+@@ -230,9 +227,7 @@
  target_alias = @target_alias@
  AM_CPPFLAGS = @JNI_CPPFLAGS@ -I$(HADOOP_NATIVE_SRCDIR)/src \
--              -Isrc/org/apache/hadoop/io/compress/zlib \
+               -Isrc/org/apache/hadoop/io/compress/zlib \
+-              -Isrc/org/apache/hadoop/io/compress/snappy \
 -              -Isrc/org/apache/hadoop/io/nativeio \
 -              -Isrc/org/apache/hadoop/security
-+              -Isrc/org/apache/hadoop/io/compress/zlib 
++              -Isrc/org/apache/hadoop/io/compress/snappy
  
  AM_LDFLAGS = @JNI_LDFLAGS@ -m$(JVM_DATA_MODEL)
  AM_CFLAGS = -g -Wall -fPIC -O2 -m$(JVM_DATA_MODEL)
- lib_LTLIBRARIES = libhadoop.la
+@@ -240,16 +235,10 @@
  libhadoop_la_SOURCES = src/org/apache/hadoop/io/compress/zlib/ZlibCompressor.c \
--                       src/org/apache/hadoop/io/compress/zlib/ZlibDecompressor.c \
+                        src/org/apache/hadoop/io/compress/zlib/ZlibDecompressor.c \
+                        src/org/apache/hadoop/io/compress/snappy/SnappyCompressor.c \
+-                       src/org/apache/hadoop/io/compress/snappy/SnappyDecompressor.c \
 -                       src/org/apache/hadoop/security/getGroup.c \
 -                       src/org/apache/hadoop/security/JniBasedUnixGroupsMapping.c \
 -                       src/org/apache/hadoop/security/JniBasedUnixGroupsNetgroupMapping.c \
 -                       src/org/apache/hadoop/io/nativeio/file_descriptor.c \
 -                       src/org/apache/hadoop/io/nativeio/errno_enum.c \
 -                       src/org/apache/hadoop/io/nativeio/NativeIO.c
--
-+                       src/org/apache/hadoop/io/compress/zlib/ZlibDecompressor.c 
- libhadoop_la_LDFLAGS = -version-info 1:0:0
++                       src/org/apache/hadoop/io/compress/snappy/SnappyDecompressor.c
+ 
+ libhadoop_la_LDFLAGS = -version-info 1:0:0 $(AM_LDFLAGS)
 -libhadoop_la_LIBADD = -ldl -ljvm
 +libhadoop_la_LIBADD = -ljvm
  all: config.h
  	$(MAKE) $(AM_MAKEFLAGS) all-am
  
-@@ -332,14 +320,8 @@
+@@ -341,16 +330,10 @@
  distclean-compile:
  	-rm -f *.tab.c
  
 -@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/JniBasedUnixGroupsMapping.Plo@am__quote@
 -@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/JniBasedUnixGroupsNetgroupMapping.Plo@am__quote@
 -@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/NativeIO.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/SnappyCompressor.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/SnappyDecompressor.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ZlibCompressor.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ZlibDecompressor.Plo@am__quote@
 -@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/errno_enum.Plo@am__quote@
@@ -55,9 +59,9 @@
  
  .c.o:
  @am__fastdepCC_TRUE@	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
-@@ -376,47 +358,6 @@
+@@ -401,47 +384,6 @@
  @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
- @am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o ZlibDecompressor.lo `test -f 'src/org/apache/hadoop/io/compress/zlib/ZlibDecompressor.c' || echo '$(srcdir)/'`src/org/apache/hadoop/io/compress/zlib/ZlibDecompressor.c
+ @am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o SnappyDecompressor.lo `test -f 'src/org/apache/hadoop/io/compress/snappy/SnappyDecompressor.c' || echo '$(srcdir)/'`src/org/apache/hadoop/io/compress/snappy/SnappyDecompressor.c
  
 -getGroup.lo: src/org/apache/hadoop/security/getGroup.c
 -@am__fastdepCC_TRUE@	if $(LIBTOOL) --tag=CC --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT getGroup.lo -MD -MP -MF "$(DEPDIR)/getGroup.Tpo" -c -o getGroup.lo `test -f 'src/org/apache/hadoop/security/getGroup.c' || echo '$(srcdir)/'`src/org/apache/hadoop/security/getGroup.c; \

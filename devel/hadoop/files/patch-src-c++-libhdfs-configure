@@ -1,0 +1,11 @@
+--- src/c++/libhdfs/configure.orig	2013-07-23 00:26:40.000000000 +0200
++++ src/c++/libhdfs/configure	2013-11-01 12:45:14.000000000 +0100
+@@ -3782,7 +3782,7 @@
+   i?86)
+     CFLAGS="$CFLAGS -DCPU=\\\"i386\\\""
+     HOST_CPU=i386;;
+-  x86_64)
++  amd64|x86_64)
+     CFLAGS="$CFLAGS -DCPU=\\\"amd64\\\""
+     HOST_CPU=amd64;;
+   bs2000)

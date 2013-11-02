@@ -31,7 +31,7 @@ load_rc_config "${name}"
 : ${tasktracker_user:=%%HADOOP_USER%%}
 : ${tasktracker_group:=%%HADOOP_GROUP%%}
 
-command="%%HADOOP_HOME%%/bin/hadoop-daemon.sh"
+command="%%DATADIR%%/bin/hadoop-daemon.sh"
 command_args='--config ${HADOOP_CONF_DIR} start tasktracker'
 
 start_precmd=tasktracker_init
@@ -46,7 +46,7 @@ tasktracker_init()
 		export JAVA_HOME="${tasktracker_java_home}"
 	fi
 
-	for f in %%HADOOP_ETC%%/envvars.d/*.env
+	for f in %%ETCDIR%%/envvars.d/*.env
 	do
 		. ${f}
 	done
