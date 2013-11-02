@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wmconfig
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.arrishq.net/files/
 
@@ -24,12 +24,8 @@ NLS_CPPFLAGS=	-I${LOCALBASE}/include
 NLS_LDFLAGS=	-L${LOCALBASE}/lib
 NLS_USES=	gettext
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
