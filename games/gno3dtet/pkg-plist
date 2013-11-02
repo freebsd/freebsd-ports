@@ -1,6 +1,14 @@
+@group games
+@mode 2555
 bin/gno3dtet
+@mode
+@group
 share/applications/gno3dtet.desktop
+@group games
+@mode 664
 share/games/gno3dtet.hof
+@mode
+@group
 share/gnome/help/gno3dtet/C/gno3dtet.xml
 share/gnome/help/gno3dtet/C/legal.xml
 share/omf/gno3dtet/gno3dtet-C.omf

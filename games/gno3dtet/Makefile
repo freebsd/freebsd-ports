@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME version of the classic 3D-ified T*tris
 
-EXTRACT_DEPENDS=intltoolize:${PORTSDIR}/textproc/intltool
+EXTRACT_DEPENDS=	intltoolize:${PORTSDIR}/textproc/intltool
 
 USES=        pathfix gmake pkgconfig
 USE_GNOME=	gnomeprefix intlhack libgnomeui librsvg2
@@ -25,7 +25,6 @@ INSTALLS_OMF=	yes
 run-autotools:: run-autotools-aclocal run-autotools-autoheader \
 		run-autotools-automake run-autotools-autoconf
 
-NO_STAGE=	yes
 post-extract:
 	@cd ${WRKSRC} && ${LOCALBASE}/bin/intltoolize -c -f
 
@@ -35,11 +34,5 @@ post-patch:
 
 pre-configure:
 	@${INSTALL_SCRIPT} ${AUTOMAKE_DIR}/mkinstalldirs ${WRKSRC}
-
-post-install:
-	${CHOWN} root:games ${PREFIX}/bin/gno3dtet
-	${CHMOD} 2555 ${PREFIX}/bin/gno3dtet
-	${CHOWN} root:games ${PREFIX}/share/games/gno3dtet.hof
-	${CHMOD} 664 ${PREFIX}/share/games/gno3dtet.hof
 
 .include <bsd.port.mk>
