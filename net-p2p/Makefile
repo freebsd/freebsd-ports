@@ -13,6 +13,7 @@
     SUBDIR += btpd
     SUBDIR += btqueue
     SUBDIR += cdonkey
+    SUBDIR += cpuminer
     SUBDIR += createtorrent
     SUBDIR += ctcs
     SUBDIR += ctorrent
