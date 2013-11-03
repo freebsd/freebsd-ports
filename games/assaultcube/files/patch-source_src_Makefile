@@ -1,7 +1,8 @@
---- source/src/Makefile.orig	2013-10-09 23:35:27.000000000 +0400
-+++ source/src/Makefile	2013-10-11 02:18:50.000000000 +0400
-@@ -1,8 +1,7 @@
+--- source/src/Makefile.orig	2013-10-29 13:20:58.000000000 +0400
++++ source/src/Makefile	2013-10-29 17:00:06.000000000 +0400
+@@ -1,9 +1,7 @@
 -CXXFLAGS= -O3 -fomit-frame-pointer
+-CXX=clang++	# Use clang++, as g++ optimizations cause crashes...
  override CXXFLAGS+= -Wall -fsigned-char
  
  PLATFORM= $(shell uname -s)
@@ -10,10 +11,10 @@
  
  INCLUDES= -I. -Ibot -I../enet/include
  
-@@ -21,8 +20,8 @@
+@@ -22,8 +20,8 @@
  else
  USRLIB=$(shell if [ -e /usr/lib64 ]; then echo "/usr/lib64"; else echo "/usr/lib"; fi)
- override CXXFLAGS+= -rdynamic
+ # override CXXFLAGS+= -rdynamic		# clang++ doesn't use this...
 -CLIENT_INCLUDES= $(INCLUDES) -I/usr/include `sdl-config --cflags` -idirafter ../include
 -CLIENT_LIBS= -L../enet/.libs -lenet -L$(USRLIB) -lX11 `sdl-config --libs` -lSDL_image -lz -lGL -lopenal -lvorbisfile -lcurl
 +CLIENT_INCLUDES= $(INCLUDES) -I${LOCALBASE}/include `${SDL_CONFIG} --cflags` -idirafter ../include
@@ -21,7 +22,7 @@
  endif
  
  CLIENT_OBJS= \
-@@ -86,8 +85,8 @@
+@@ -87,8 +85,8 @@
  SERVER_INCLUDES= -DSTANDALONE $(INCLUDES) -I../include
  SERVER_LIBS= -L../lib -lzdll -lenet -llibintl -lws2_32 -lwinmm
  else
