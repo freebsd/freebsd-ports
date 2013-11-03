@@ -12,6 +12,9 @@ MASTER_SITES=	http://www.gphpedit.org/download/store/ \
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	PHP, HTML, and CSS development environment for GNOME 2.x
 
+DEPRECATED=	No longer maintaned upstream
+EXPIRATION_DATE=	2013-12-01
+
 USES=		gmake pkgconfig
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libgtkhtml
 USE_AUTOTOOLS=	libtool
