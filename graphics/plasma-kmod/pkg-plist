@@ -1,4 +1,0 @@
-@cwd /
-%%KMODDIR%%/plasma_saver.ko
-@exec /usr/sbin/kldxref /%%KMODDIR%%
-@unexec /usr/sbin/kldxref /%%KMODDIR%%
