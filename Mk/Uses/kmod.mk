@@ -26,6 +26,9 @@ SSP_UNSAFE=	kernel module does not support SSP
 KMODDIR?=	/boot/modules
 PLIST_SUB+=	KMODDIR="${KMODDIR:C,^/,,}"
 MAKE_ENV+=	KMODDIR="${KMODDIR}" SYSDIR="${SRC_BASE}/sys"
+.if !defined(NO_STAGE)
+MAKE_ENV+=	NO_XREF=yes
+.endif
 
 pre-install: kmod-pre-install
 kmod-pre-install:
