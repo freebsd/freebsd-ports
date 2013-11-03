@@ -1,0 +1,4 @@
+Send Devise's emails in background. Supports Resque, Sidekiq, Delayed::Job and
+QueueClassic.
+
+WWW: https://github.com/mhfs/devise-async/
