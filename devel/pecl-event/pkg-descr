@@ -1,0 +1,3 @@
+This is a port of libevent to the PHP infrastructure.
+
+WWW: http://pecl.php.net/package/event
