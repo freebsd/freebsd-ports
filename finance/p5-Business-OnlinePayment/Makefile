@@ -21,10 +21,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Business::OnlinePayment.3 \
-		Business::FraudDetect.3 \
-		Business::FraudDetect::preCharge.3 \
-		Business::OnlinePayment::HTTPS.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
