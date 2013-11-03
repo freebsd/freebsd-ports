@@ -1,0 +1,50 @@
+commit b0b45d0b871c4cdcd714de29f1d587a26366fbca
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Mon Nov 4 00:07:22 2013 +0200
+
+    Use Eigen2's newer StdVector implementation if it is available.
+    
+    This should fix the build with libc++ (ie. recent versions of FreeBSD and OS
+    X at least), as Eigen2's default StdVector implementation reimplements
+    std::vector in an incompatible way.
+    
+    Defining EIGEN_USE_NEW_STDVECTOR makes Eigen >= 2.0.6 use the new
+    implementation that does not have these problems and is the default in
+    Eigen3.
+
+diff --git a/stepcore/collisionsolver.cc b/stepcore/collisionsolver.cc
+index a5d2f90..9a263a8 100644
+--- stepcore/collisionsolver.cc
++++ stepcore/collisionsolver.cc
+@@ -23,6 +23,7 @@
+ #include <algorithm>
+ #include <QtGlobal>
+ 
++#define EIGEN_USE_NEW_STDVECTOR
+ #include <Eigen/StdVector>
+ 
+ namespace StepCore {
+diff --git a/stepcore/collisionsolver.h b/stepcore/collisionsolver.h
+index c136d9a..d67d1d0 100644
+--- stepcore/collisionsolver.h
++++ stepcore/collisionsolver.h
+@@ -28,6 +28,7 @@
+ #include "vector.h"
+ #include "solver.h"
+ 
++#define EIGEN_USE_NEW_STDVECTOR
+ #include <Eigen/StdVector>
+ 
+ namespace StepCore
+diff --git a/stepcore/types.h b/stepcore/types.h
+index 05dbd9d..b1259a6 100644
+--- stepcore/types.h
++++ stepcore/types.h
+@@ -25,6 +25,7 @@
+ 
+ #include "object.h"
+ #include "vector.h"
++#define EIGEN_USE_NEW_STDVECTOR
+ #include <Eigen/StdVector>
+ #include <QByteArray>
+ #include <Eigen/Sparse>
