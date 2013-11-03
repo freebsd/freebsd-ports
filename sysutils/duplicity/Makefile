@@ -10,7 +10,7 @@ MASTER_SITES=	http://launchpad.net/duplicity/0.6-series/${PORTVERSION}/+download
 MAINTAINER=	jase@FreeBSD.org
 COMMENT=	Backup tool that uses librsync and GnuPG
 
-LIB_DEPENDS=	rsync:${PORTSDIR}/net/librsync
+LIB_DEPENDS=	librsync.so:${PORTSDIR}/net/librsync
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
 FETCH_ARGS=	-pRr
