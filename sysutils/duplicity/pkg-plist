@@ -1,5 +1,7 @@
 bin/duplicity
 bin/rdiffdir
+man/man1/duplicity.1.gz
+man/man1/rdiffdir.1.gz
 %%PYTHON_SITELIBDIR%%/duplicity/__init__.py
 %%PYTHON_SITELIBDIR%%/duplicity/__init__.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/__init__.pyo
