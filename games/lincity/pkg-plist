@@ -1,4 +1,5 @@
 %%PROG%%
+man/man6/lincity.6.gz
 %%DATADIR%%/colour.pal
 %%DATADIR%%/help/ask-dir.hlp
 %%DATADIR%%/help/blacksmith.hlp
