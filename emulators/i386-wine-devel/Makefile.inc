@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-PORTVERSION=	1.7.3
+PORTVERSION=	1.7.4
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	LOCAL/dbn/repos/wine/${DIST_SUBDIR}/${PORTVERSION}
 PKGNAMEPREFIX=	i386-
+PKGNAMESUFFIX=	-devel
 DISTNAME=	${PKGNAME}
 EXTRACT_SUFX=	.txz
 DIST_SUBDIR=	freebsd:${OSREL:C/\..*//}:x86:64
@@ -23,11 +24,11 @@ GECKO_DESC=     Bundle Gecko MSI package for Wine
 MONO_DESC=      Bundle Mono MSI package for Wine
 
 CONFLICTS_INSTALL=	i386-wine-1.4* i386-wine-1.6* wine-[0-9]*
-LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}-devel
 
 EXTRACT_AFTER_ARGS=	-C / --exclude +COMPACT_MANIFEST --exclude +MANIFEST \
 				--exclude +MTREE_DIRS --exclude share/licenses/'*' \
-				--exclude libdata/ldconfig32/${LATEST_LINK}
+				--exclude libdata/ldconfig32/${UNIQUENAME} \
+				-s '|/usr/local|${STAGEDIR}${PREFIX}|gs'
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	wine only runs on x86 architecture
@@ -46,15 +47,11 @@ DISTFILES=
 .endif
 
 .if ${PORT_OPTIONS:MGECKO}
-RUN_DEPENDS+=   ${DATADIR}/gecko/wine_gecko-2.21-x86.msi:${PORTSDIR}/emulators/wine-gecko-devel
+RUN_DEPENDS+=   ${DATADIR}/gecko/wine_gecko-2.24-x86.msi:${PORTSDIR}/emulators/wine-gecko-devel
 .endif
 
 .if ${PORT_OPTIONS:MMONO}
 RUN_DEPENDS+=   ${DATADIR}/mono/wine-mono-0.0.8.msi:${PORTSDIR}/emulators/wine-mono
-.endif
-
-.if ${PREFIX} != /usr/local
-EXTRACT_AFTER_ARGS+=	-s '|/usr/local|${PREFIX}|gs'
 .endif
 
 do-extract:
@@ -64,10 +61,6 @@ do-extract:
 
 do-install:
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${EXTRACT_ONLY} ${EXTRACT_AFTER_ARGS}
-	@${ECHO}
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${CAT} ${PKGMESSAGE}
 
 pkg-plist: extract
 	${TAR} -tf ${_DISTDIR}/${EXTRACT_ONLY} ${EXTRACT_AFTER_ARGS} | ${GREP} -v '/$$' | ${SED} 's|/usr/local/||g' | sort > ${WRKDIR}/pkg-plist
