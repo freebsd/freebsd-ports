@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	couchdb
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.0
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_APACHE}
@@ -75,6 +75,8 @@ post-configure:
 pre-install:
 	@${REINPLACE_CMD} -e '9s|database_dir = /var/lib/couchdb|database_dir = /var/db/couchdb|' ${WRKSRC}/etc/couchdb/default.ini
 	@${REINPLACE_CMD} -e '10s|view_index_dir = /var/lib/couchdb|view_index_dir = /var/db/couchdb|' ${WRKSRC}/etc/couchdb/default.ini
+	@${REINPLACE_CMD} -e '16s|uri_file = /usr/local/var/run/couchdb/couch.uri|view_index_dir = /var/run/couchdb/couch.uri|' ${WRKSRC}/etc/couchdb/default.ini
+	@${REINPLACE_CMD} -e '58s|file = /usr/local/var/log/couchdb/couch.log|file = /var/log/couchdb/couch.log|' ${WRKSRC}/etc/couchdb/default.ini
 
 post-install:
 .ifndef PACKAGE_BUILDING
