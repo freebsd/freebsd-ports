@@ -44,7 +44,6 @@ PLIST_FILES+=	"@cwd"
 MAKEFILE=	Makefile.freebsd
 
 MAKE_ARGS+=	LDFLAGS=${LDFLAGS:S/^-Wl,//}
-MAKE_ARGS+=	CWARNFLAGS=-Wall
 
 .if ${ARCH} == "amd64"
 GMAKE_ARGS+=	ARCH=x86_64
