@@ -1,9 +1,0 @@
-This is a client library for memcached (www.danga.com/memcached/), a
-high-performance distributed memory cache.
-
-MemCache is used to alleviate database load by caching oft-used values
-in network-accessable memory space, and is used behind several
-high-traffic dynamic web sites like LiveJournal, Slashdot, WikiPedia,
-and others.
-
-WWW: http://www.deveiate.org/code/Ruby-MemCache.html

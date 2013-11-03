@@ -14,7 +14,6 @@
     SUBDIR += basket
     SUBDIR += bigyear
     SUBDIR += bitcollider
-    SUBDIR += blogtk
     SUBDIR += bmp-docklet
     SUBDIR += cairo-dock
     SUBDIR += cairo-dock-plugins

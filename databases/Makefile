@@ -824,7 +824,6 @@
     SUBDIR += ruby-dbi
     SUBDIR += ruby-frontbase
     SUBDIR += ruby-gdbm
-    SUBDIR += ruby-memcache
     SUBDIR += ruby-msql
     SUBDIR += ruby-mysql
     SUBDIR += ruby-o_dbm
