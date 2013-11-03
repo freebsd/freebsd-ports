@@ -36,7 +36,7 @@ BROKEN=		Does not configure on arm
 .endif
 
 # Workaround to build and segfault on > 10.x
-.if ${OSVERSION} >= 1000000
+.if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 1000000
 USE_GCC=        yes
 LDFLAGS+=	-lc++
 .endif
