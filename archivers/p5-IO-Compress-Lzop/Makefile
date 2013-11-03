@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	IO-Compress-Lzop
-PORTVERSION=	2.062
+PORTVERSION=	2.063
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PMQS
@@ -15,7 +15,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Compress-LZO>=0:${PORTSDIR}/archivers/p5-Compress-LZO \
-		p5-IO-Compress>=2.062:${PORTSDIR}/archivers/p5-IO-Compress
+		p5-IO-Compress>=2.063:${PORTSDIR}/archivers/p5-IO-Compress
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
 
