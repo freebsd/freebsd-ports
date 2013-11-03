@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	dhcpd-pools
-PORTVERSION=	2.23
+PORTVERSION=	2.24
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	zi@FreeBSD.org
-COMMENT=	A tool to analyze isc-dhcp pool usage based on leases
+COMMENT=	Tool to analyze isc-dhcp pool usage based on leases
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
