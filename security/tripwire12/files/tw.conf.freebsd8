@@ -82,7 +82,6 @@
 /.forward	R	# may not exist
 
 # Unix itself
-/kernel		R
 /boot		R
 /boot.config	R
 
@@ -114,10 +113,6 @@
 
 # /libexec
 /libexec		R-2
-
-# /lkm and /modules
-/lkm			R-2
-/modules		R-2
 
 # /boot
 /boot			R-2
