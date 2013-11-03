@@ -1,5 +1,11 @@
-bin/xvcg
+bin/pbm2hp
 bin/pbmrot90
 bin/pbmshift
-bin/pbm2hp
 bin/vcgdemomaker
+bin/xvcg
+man/manl/pbm2hp.l.gz
+man/manl/pbmrot90.l.gz
+man/manl/pbmshift.l.gz
+man/manl/vcg.l.gz
+man/manl/vcgdemomaker.l.gz
+man/manl/xvcg.l.gz

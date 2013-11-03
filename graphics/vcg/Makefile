@@ -3,7 +3,7 @@
 
 PORTNAME=	vcg
 PORTVERSION=	1.30
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.polytechnic.edu.na/pub2/openpkg1/sources/DST/vcg/ \
 		http://ftp.gwdg.de/linux/openpkg/openpkg-ftp/sources/DST/vcg/ \
@@ -23,9 +23,6 @@ USES=		imake:env
 USE_XORG=	x11 xext
 MAKE_JOBS_UNSAFE=	yes
 
-MANL=		pbmrot90.l pbmshift.l pbm2hp.l vcgdemomaker.l vcg.l xvcg.l
-
-NO_STAGE=	yes
 pre-patch:
 	@${MKDIR} ${WRKSRC}/preconf/X11ccFreeBSD
 .for file in conf demo.csh globals.h tMakefile
@@ -33,7 +30,7 @@ pre-patch:
 	        -e "s:%%CFLAGS%%:${CFLAGS}:g" \
 	        -e "s:%%MAKE%%:${MAKE}:g;" \
 		-e "s:%%LOCALBASE%%:${LOCALBASE}:g" \
-	        -e "s:%%PREFIX%%:${PREFIX}:g" \
+	        -e "s:%%PREFIX%%:${STAGEDIR}${PREFIX}:g" \
 	        -e "s:%%INSTALL_PROGRAM%%:${INSTALL_PROGRAM}:g" \
 	        -e "s:%%INSTALL_MAN%%:${INSTALL_MAN}:g" \
 		< ${FILESDIR}/${file} > ${WRKSRC}/preconf/X11ccFreeBSD/${file}
