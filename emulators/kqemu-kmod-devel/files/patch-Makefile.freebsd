@@ -1,0 +1,9 @@
+--- Makefile.freebsd.orig
++++ Makefile.freebsd
+@@ -8,3 +8,6 @@ OBJS=	kqemu-mod-x86_64.o
+ WERROR=
+ 
+ .include <bsd.kmod.mk>
++
++CFLAGS:=	${CFLAGS:N-fformat-extensions}
++CFLAGS:=	${CFLAGS:N-mno-align-long-strings}
