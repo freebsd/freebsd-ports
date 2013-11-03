@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Business/OnlinePayment/BankOfAmerica.pm
 %%SITE_PERL%%/auto/Business/OnlinePayment/BankOfAmerica/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/BankOfAmerica/.packlist
+%%PERL5_MAN3%%/Business::OnlinePayment::BankOfAmerica.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/BankOfAmerica
 @dirrm %%SITE_PERL%%/auto/Business/OnlinePayment/BankOfAmerica
 @dirrmtry %%SITE_PERL%%/auto/Business/OnlinePayment

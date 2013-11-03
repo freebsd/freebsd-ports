@@ -3,6 +3,10 @@
 %%SITE_PERL%%/HTML/FormFu/Imager.pm
 %%SITE_PERL%%/HTML/FormFu/Validator/Imager/Size.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormFu/Imager/.packlist
+%%PERL5_MAN3%%/HTML::FormFu::Imager.3.gz
+%%PERL5_MAN3%%/HTML::FormFu::Inflator::Imager.3.gz
+%%PERL5_MAN3%%/HTML::FormFu::Transformer::Imager.3.gz
+%%PERL5_MAN3%%/HTML::FormFu::Validator::Imager::Size.3.gz
 @dirrmtry %%SITE_PERL%%/auto/HTML/FormFu/Imager
 @dirrmtry %%SITE_PERL%%/auto/HTML/FormFu
 @dirrmtry %%SITE_PERL%%/auto/HTML

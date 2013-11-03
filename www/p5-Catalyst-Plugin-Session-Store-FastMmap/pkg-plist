@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Catalyst/Plugin/Session/Store/FastMmap.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Session/Store/FastMmap/.packlist
+%%PERL5_MAN3%%/Catalyst::Plugin::Session::Store::FastMmap.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Session/Store/FastMmap
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Session/Store
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Session

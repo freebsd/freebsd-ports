@@ -1,5 +1,6 @@
 %%SITE_PERL%%/CGI/Cache.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Cache/.packlist
+%%PERL5_MAN3%%/CGI::Cache.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Cache
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
 @dirrmtry %%SITE_PERL%%/CGI

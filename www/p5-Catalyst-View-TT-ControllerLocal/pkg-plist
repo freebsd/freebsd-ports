@@ -1,6 +1,8 @@
 %%SITE_PERL%%/Catalyst/View/TT/ControllerLocal.pm
 %%SITE_PERL%%/Catalyst/Helper/View/TTControllerLocal.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/TT/ControllerLocal/.packlist
+%%PERL5_MAN3%%/Catalyst::Helper::View::TTControllerLocal.3.gz
+%%PERL5_MAN3%%/Catalyst::View::TT::ControllerLocal.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/TT/ControllerLocal
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/TT
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View

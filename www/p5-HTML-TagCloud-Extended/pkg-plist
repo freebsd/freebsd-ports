@@ -5,6 +5,7 @@
 %%SITE_PERL%%/HTML/TagCloud/Extended/TagColors.pm
 %%SITE_PERL%%/HTML/TagCloud/Extended/TagList.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TagCloud/Extended/.packlist
+%%PERL5_MAN3%%/HTML::TagCloud::Extended.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TagCloud/Extended
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TagCloud
 @dirrm %%SITE_PERL%%/HTML/TagCloud/Extended

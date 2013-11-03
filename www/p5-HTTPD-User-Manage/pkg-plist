@@ -15,6 +15,11 @@
 %%SITE_PERL%%/HTTPD/UserAdmin/Text.pm
 %%SITE_PERL%%/HTTPD/UserAdmin/Text/cern.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTPD-User-Manage/.packlist
+%%PERL5_MAN3%%/HTTPD::Authen.3.gz
+%%PERL5_MAN3%%/HTTPD::GroupAdmin.3.gz
+%%PERL5_MAN3%%/HTTPD::Realm.3.gz
+%%PERL5_MAN3%%/HTTPD::RealmManager.3.gz
+%%PERL5_MAN3%%/HTTPD::UserAdmin.3.gz
 @dirrm %%SITE_PERL%%/HTTPD/UserAdmin/DBM
 @dirrm %%SITE_PERL%%/HTTPD/UserAdmin/Text
 @dirrm %%SITE_PERL%%/HTTPD/UserAdmin

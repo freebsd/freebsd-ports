@@ -1,4 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML-TableExtract/.packlist
 %%SITE_PERL%%/HTML/TableExtract.pm
+%%PERL5_MAN3%%/HTML::TableExtract.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML-TableExtract
 @dirrmtry %%SITE_PERL%%/HTML

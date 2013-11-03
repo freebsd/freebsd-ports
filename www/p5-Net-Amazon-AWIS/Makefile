@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Use the Amazon Alexa Web Information Service
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-IO-Prompt>=0:${PORTSDIR}/devel/p5-IO-Prompt \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
@@ -22,7 +25,4 @@ RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::Amazon::AWIS.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

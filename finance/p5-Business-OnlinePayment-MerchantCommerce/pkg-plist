@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Business/OnlinePayment/MerchantCommerce.pm
 %%SITE_PERL%%/auto/Business/OnlinePayment/MerchantCommerce/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/MerchantCommerce/.packlist
+%%PERL5_MAN3%%/Business::OnlinePayment::MerchantCommerce.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/MerchantCommerce
 @dirrm %%SITE_PERL%%/auto/Business/OnlinePayment/MerchantCommerce
 @dirrmtry %%SITE_PERL%%/auto/Business/OnlinePayment

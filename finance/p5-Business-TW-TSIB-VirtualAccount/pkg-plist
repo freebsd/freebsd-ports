@@ -1,6 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/TW/TSIB/VirtualAccount/.packlist
 %%SITE_PERL%%/Business/TW/TSIB/VirtualAccount.pm
 %%SITE_PERL%%/Business/TW/TSIB/VirtualAccount/Entry.pm
+%%PERL5_MAN3%%/Business::TW::TSIB::VirtualAccount.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/TW/TSIB/VirtualAccount
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/TW/TSIB
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/TW

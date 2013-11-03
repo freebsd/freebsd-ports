@@ -1,5 +1,6 @@
 %%SITE_PERL%%/HTML/Template/Expr.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Expr/.packlist
+%%PERL5_MAN3%%/HTML::Template::Expr.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Expr
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML

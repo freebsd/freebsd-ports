@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to YouTube
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 RUN_DEPENDS=	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww \
 		p5-URI>0:${PORTSDIR}/net/p5-URI \
@@ -20,12 +23,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	WebService::YouTube.3 \
-	WebService::YouTube::Feeds.3 \
-	WebService::YouTube::User.3 \
-	WebService::YouTube::Util.3 \
-	WebService::YouTube::Video.3 \
-	WebService::YouTube::Videos.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

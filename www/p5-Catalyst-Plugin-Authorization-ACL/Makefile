@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	ACL support for Catalyst applications
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 RUN_DEPENDS=	p5-Catalyst-Plugin-Authentication>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Authentication \
 		p5-Catalyst-Plugin-Authorization-Roles>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Authorization-Roles \
 		p5-Catalyst-Runtime>=5.80013:${PORTSDIR}/www/p5-Catalyst-Runtime \
@@ -28,8 +31,4 @@ BUILD_DEPENDS+=	p5-Catalyst-Plugin-Session>=0:${PORTSDIR}/www/p5-Catalyst-Plugin
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Catalyst::Plugin::Authorization::ACL::Engine.3 \
-	Catalyst::Plugin::Authorization::ACL.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

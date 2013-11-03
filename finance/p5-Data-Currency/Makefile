@@ -24,7 +24,4 @@ RUN_DEPENDS=	p5-Locale-Currency-Format>=0:${PORTSDIR}/finance/p5-Locale-Currency
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Data::Currency.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

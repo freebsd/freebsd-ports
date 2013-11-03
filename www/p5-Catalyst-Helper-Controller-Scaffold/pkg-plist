@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Catalyst/Helper/Controller/Scaffold.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Helper/Controller/Scaffold/.packlist
+%%PERL5_MAN3%%/Catalyst::Helper::Controller::Scaffold.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Helper/Controller/Scaffold
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Helper/Controller
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Helper

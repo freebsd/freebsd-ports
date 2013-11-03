@@ -4,6 +4,11 @@
 %%SITE_PERL%%/Catalyst/Engine/Apache2/MP19.pm
 %%SITE_PERL%%/Catalyst/Engine/Apache2/MP20.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Engine/Apache/.packlist
+%%PERL5_MAN3%%/Catalyst::Engine::Apache.3.gz
+%%PERL5_MAN3%%/Catalyst::Engine::Apache2.3.gz
+%%PERL5_MAN3%%/Catalyst::Engine::Apache2::MP19.3.gz
+%%PERL5_MAN3%%/Catalyst::Engine::Apache2::MP20.3.gz
+%%PERL5_MAN3%%/Catalyst::Engine::Apache::MP13.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Engine/Apache
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Engine
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst

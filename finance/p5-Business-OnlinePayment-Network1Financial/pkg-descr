@@ -1,3 +1,5 @@
 A Business::OnlinePayment backend module for Network1 Financial.  It
 is only useful if you have a merchant account with Network1Financial:
 http://www.eftsecure.com
+
+WWW: http://search.cpan.org/dist/Business-OnlinePayment-Network1Financial/

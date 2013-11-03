@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/ParseSearchString/.packlist
 %%SITE_PERL%%/URI/ParseSearchString.pm
+%%PERL5_MAN3%%/URI::ParseSearchString.3.gz
 @dirrmtry %%SITE_PERL%%/URI
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/ParseSearchString
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI

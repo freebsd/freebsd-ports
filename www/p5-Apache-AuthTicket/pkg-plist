@@ -2,6 +2,9 @@
 %%SITE_PERL%%/Apache/AuthTicket/Base.pm
 %%SITE_PERL%%/Apache2/AuthTicket.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AuthTicket/.packlist
+%%PERL5_MAN3%%/Apache::AuthTicket.3.gz
+%%PERL5_MAN3%%/Apache::AuthTicket::Base.3.gz
+%%PERL5_MAN3%%/Apache2::AuthTicket.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AuthTicket
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
 @dirrmtry %%SITE_PERL%%/Apache/AuthTicket

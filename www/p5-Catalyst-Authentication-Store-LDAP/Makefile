@@ -20,9 +20,4 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Catalyst::Authentication::Store::LDAP.3 \
-		Catalyst::Authentication::Store::LDAP::Backend.3 \
-		Catalyst::Authentication::Store::LDAP::User.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
