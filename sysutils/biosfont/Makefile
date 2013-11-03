@@ -19,7 +19,6 @@ USES=		uidfix kmod
 .include <bsd.port.pre.mk>
 
 PLIST_SUB+=	PREFIX=${PREFIX}
-MAKE_ENV+=	NO_XREF=yes
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/biosfont.h ${STAGEDIR}${PREFIX}/include
