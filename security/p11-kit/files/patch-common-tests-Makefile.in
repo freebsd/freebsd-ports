@@ -1,0 +1,10 @@
+--- common/tests/Makefile.in.orig	2013-11-03 13:55:44.000000000 +0400
++++ common/tests/Makefile.in	2013-11-03 13:55:44.000000000 +0400
+@@ -457,6 +457,7 @@
+ 	-I$(srcdir)/.. \
+ 	-I$(COMMON) \
+ 	-DBUILDDIR=\"$(abs_builddir)\" \
++	$(LIBTASN1_CFLAGS) \
+ 	$(TEST_CFLAGS)
+ 
+ LDADD = $(NULL) $(top_builddir)/common/libp11-test.la \
