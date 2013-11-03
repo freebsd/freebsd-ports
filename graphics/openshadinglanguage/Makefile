@@ -11,12 +11,12 @@ COMMENT=	Advanced shading language for production GI renderers
 
 LICENSE=	BSD
 
-BUILD_DEPENDS=	llvm-config32:${PORTSDIR}/devel/llvm32 \
+BUILD_DEPENDS=	llvm>=3.1:${PORTSDIR}/devel/llvm \
 		flex>=2.5.37:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		OpenImageIO:${PORTSDIR}/graphics/openimageio
-RUN_DEPENDS=	llvm-config32:${PORTSDIR}/devel/llvm32
+RUN_DEPENDS=	llvm>=3.1:${PORTSDIR}/devel/llvm
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	imageworks
@@ -27,7 +27,6 @@ GH_COMMIT=	18671dc
 WRKSRC=		${WRKDIR}/imageworks-OpenShadingLanguage-${GH_COMMIT}/src
 
 CMAKE_ARGS=	-DFLEX_EXECUTABLE:STRING=${LOCALBASE}/bin/flex \
-		-DLLVM_CONFIG:STRING=${LOCALBASE}/bin/llvm-config32 \
 		-DUSE_TBB:BOOL=OFF
 CXXFLAGS+=	-I${LOCALBASE}/include/flex
 USE_LDCONFIG=	yes
@@ -36,7 +35,9 @@ USES=		bison cmake:outsource
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
-BUILD_DEPENDS+=	clang32:${PORTSDIR}/lang/clang32
+.if ${OSVERSION} < 900000
+BUILD_DEPENDS+=	clang:${PORTSDIR}/lang/clang
+.endif
 
 .if ${ARCH} == i386
 CFLAGS+=	-march=i586
