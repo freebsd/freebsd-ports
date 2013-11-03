@@ -1,12 +1,6 @@
---- setup.py.orig	2013-08-22 15:30:09.000000000 +0200
-+++ setup.py	2013-10-06 19:43:39.000000000 +0200
-@@ -26,11 +26,15 @@
- version_string = "0.6.22"
- 
- if sys.version_info[:2] < (2,4):
--    print "Sorry, duplicity requires version 2.4 or later of python"
-+    print("Sorry, duplicity requires version 2.4 or later of python")
-     sys.exit(1)
+--- setup.py.orig	2011-11-25 23:58:57.147597966 +0000
++++ setup.py	2011-11-26 00:00:43.169721395 +0000
+@@ -31,6 +31,10 @@
  
  incdir_list = libdir_list = None
  
