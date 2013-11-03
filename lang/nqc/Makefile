@@ -9,9 +9,10 @@ MASTER_SITES=	http://bricxcc.sourceforge.net/nqc/release/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jhay@FreeBSD.org
-COMMENT=	A compiler for writing programs for the Lego RCX
+COMMENT=	Compiler for writing programs for the Lego RCX
 
-USE_GMAKE=	yes
+USES=		gmake
+USE_DOS2UNIX=	yes
 NO_WRKSUBDIR=	yes
 
 MAN1=		nqc.1
@@ -24,8 +25,7 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800064
-USE_DOS2UNIX=	rcxlib/RCX_USBTowerPipe_fbsd.cpp
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 800064
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-rcxlib-RCX_USBTowerPipe_fbsd.cpp
 .endif
 
