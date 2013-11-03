@@ -1,11 +1,14 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	aureal-kmod
+PORTNAME=	aureal
 PORTVERSION=	1.5
 PORTREVISION=	6
 CATEGORIES=	audio kld
-MASTER_SITES=	http://www.matey.org/au88x0/
+MASTER_SITES=	http://www.matey.org/au88x0/ \
+		http://www.b1t.name/distfiles/ \
+		http://aureal-snd.googlecode.com/files/
+PKGNAMESUFFIX=	-kmod
 DISTNAME=	au88x0-${PORTVERSION}_${DISTREVISION}
 
 MAINTAINER=	c.kworr@gmail.com
