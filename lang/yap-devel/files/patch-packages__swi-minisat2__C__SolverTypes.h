@@ -1,5 +1,5 @@
---- ./packages/swi-minisat2/C/SolverTypes.h.orig	2013-08-13 18:37:17.000000000 -0300
-+++ ./packages/swi-minisat2/C/SolverTypes.h	2013-08-13 18:38:31.000000000 -0300
+--- ./packages/swi-minisat2/C/SolverTypes.h.orig	2012-06-29 18:30:38.000000000 -0300
++++ ./packages/swi-minisat2/C/SolverTypes.h	2013-11-03 01:59:03.000000000 -0200
 @@ -97,6 +97,9 @@
  //=================================================================================================
  // Clause -- a simple class for representing a clause:
