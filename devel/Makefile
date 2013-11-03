@@ -3998,7 +3998,6 @@
     SUBDIR += ruby-gio2
     SUBDIR += ruby-glib2
     SUBDIR += ruby-intl
-    SUBDIR += ruby-io-reactor
     SUBDIR += ruby-korundum
     SUBDIR += ruby-krossruby
     SUBDIR += ruby-langscan
