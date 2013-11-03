@@ -4,7 +4,7 @@
 PORTNAME=	linux-ov511-kmod
 PORTVERSION=	1.0
 PORTREVISION=	1
-CATEGORIES=	multimedia kld
+CATEGORIES=	multimedia
 MASTER_SITES=	http://info.iet.unipi.it/~luigi/FreeBSD/linux/drivers/media/video/
 DISTFILES=	ov511.c ov511.h
 DIST_SUBDIR=	${PORTNAME}
@@ -22,6 +22,12 @@ NO_PACKAGE=	depends on kernel sources
 # This is our Makefile to be used for build/install.
 MAKEFILE=	Makefile.kld
 ALL_TARGET=	depend all
+  
+PLIST_FILES=	${KMODDIR}/ov511.ko
+
+# forcibly overwrite KMODDIR being /boot/kernel :
+KMODDIR=	/boot/modules
+USES=		kmod
 
 # we simply copy the sources from the original site
 NO_STAGE=	yes

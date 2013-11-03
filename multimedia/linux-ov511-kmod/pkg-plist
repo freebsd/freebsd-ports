@@ -1,5 +1,0 @@
-@comment The module is installed in /boot/modules
-@comment on removal, re-run kldxref to restore or delete linker.hints
-@cwd /boot/modules
-ov511.ko
-@unexec kldxref %D
