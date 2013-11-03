@@ -3,6 +3,7 @@
 
 PORTNAME=	aaphoto
 PORTVERSION=	0.43.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	mail@log69.com
@@ -19,6 +20,7 @@ GH_ACCOUNT=	log69
 GH_COMMIT=	e566f9b
 GH_TAGNAME=	v${PORTVERSION}
 
+USE_GCC=	any
 GNU_CONFIGURE=	yes
 USES=		compiler
 
