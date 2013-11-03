@@ -1,5 +1,9 @@
 @comment $FreeBSD$
+@owner uucp
+@mode 4555
 bin/_bqueue
+@mode
+@owner
 bin/bqueue
 bin/bsmtp
 bin/cbsmtp
@@ -8,17 +12,20 @@ bin/rcsmtp
 bin/rgsmtp
 bin/rsmtp
 libexec/bsmtp/batcher
+@mode 4555
 libexec/bsmtp/bsmtp
+@mode
 libexec/bsmtp/rsmtp
 libexec/bsmtp/transmitter.c-cbsmtp
 libexec/bsmtp/transmitter.c-rcsmtp
 libexec/bsmtp/transmitter.g-rcsmtp
 libexec/bsmtp/transmitter.g-rgsmtp
 libexec/bsmtp/transmitter.n-rsmtp
-share/doc/bsmtp/README
+%%DOCSDIR%%/README
 share/sendmail/bsmtp.m4
 @dirrm libexec/bsmtp
 @dirrm share/doc/bsmtp
 @dirrm share/sendmail
-@exec mkdir -pm 770 /var/spool/bsmtp; chown uucp:uucp /var/spool/bsmtp
-@unexec rmdir /var/spool/bsmtp || true
+@exec install -d -o uucp -g uucp -m 0770 /var/spool/bsmtp
+@comment Do not use rmdir to avoid inappropriate pkg tools magic
+@unexec rm -d /var/spool/bsmtp 2>/dev/null || true

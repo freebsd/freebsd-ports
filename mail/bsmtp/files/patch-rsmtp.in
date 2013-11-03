@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- rsmtp.in.orig
-+++ rsmtp.in
-@@ -72,7 +72,7 @@
+--- rsmtp.in.orig	1999-05-16 11:24:09.000000000 +0200
++++ rsmtp.in	2013-11-01 19:55:42.000000000 +0100
+@@ -72,7 +72,7 @@ while (<>) {
      print STDERR "Recipient: $r\n" if ($debug);
      push (@recipients, $r);
    }

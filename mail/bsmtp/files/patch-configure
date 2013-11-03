@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- configure.orig
-+++ configure
-@@ -41,6 +41,11 @@
+--- configure.orig	2013-11-01 19:55:42.000000000 +0100
++++ configure	2013-11-01 19:55:42.000000000 +0100
+@@ -41,6 +41,11 @@ if ($#ARGV == 0) {
    "batcher",
    "batcher.c",
    "bsmtp.c",
@@ -15,7 +15,7 @@ $FreeBSD$
    "bsmtp.m4.8.9",
    "bsmtp.m4.8.8",
    "bsmtp.m4.8.7",
-@@ -198,6 +203,16 @@
+@@ -198,6 +203,16 @@ if (! $redo) {
  	    $default[$i] = '8.8';
  	  } elsif ($value{'@SENDMAILVERS@'} =~ /^\s*8\.9(\..*)?\s*$/) {
  	    $default[$i] = '8.9';
