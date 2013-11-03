@@ -3,8 +3,5 @@ include/rtc.h
 modules/rtc.ko
 %%EXAMPLESDIR%%/test.c
 @exec rm -f %%DEVDIR%%/rtc
-@exec /usr/sbin/kldxref %D/modules
-@unexec /usr/sbin/kldxref %D/modules
 @dirrm %%EXAMPLESDIR%%
-@dirrmtry modules
 @unexec rm -f /dev/rtc
