@@ -49,7 +49,6 @@ USE_GNOME=	glib20 gtk20
 USE_EMACS=	yes
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800107
@@ -153,7 +152,7 @@ do-install-mozc_server:
 	${INSTALL_PROGRAM} \
 		${WRKSRC}/out_linux/${BUILD_MODE}/mozc_server \
 		${WRKSRC}/out_linux/${BUILD_MODE}/mozc_emacs_helper \
-		${PREFIX}/bin
+		${STAGEDIR}${PREFIX}/bin
 .endif
 
 # mozc_tool
@@ -176,15 +175,15 @@ do-build-mozc_tool:
 do-install-mozc_tool:
 	${INSTALL_PROGRAM} \
 		${WRKSRC}/out_linux/${BUILD_MODE}/mozc_tool \
-		${PREFIX}/libexec
-	${INSTALL_SCRIPT} ${WRKDIR}/mozc_tool ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}/icons
+		${STAGEDIR}${PREFIX}/libexec
+	${INSTALL_SCRIPT} ${WRKDIR}/mozc_tool ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}/icons
 	${INSTALL_DATA} \
 		${WRKSRC}/data/images/unix/ime_product_icon_opensource-32.png \
-		${DATADIR}/icons/product_logo.png
+		${STAGEDIR}${DATADIR}/icons/product_logo.png
 	${INSTALL_DATA} \
 		${WRKSRC}/data/images/unix/ime_product_icon_opensource-32.png \
-		${DATADIR}/icons/update_uptodate.png
+		${STAGEDIR}${DATADIR}/icons/update_uptodate.png
 .endif
 
 # ibus_mozc
@@ -222,23 +221,23 @@ do-build-ibus_mozc:
 do-install-ibus_mozc:
 	${INSTALL_PROGRAM} \
 		${WRKSRC}/out_linux/${BUILD_MODE}/mozc_renderer \
-		${PREFIX}/bin/mozc_renderer
+		${STAGEDIR}${PREFIX}/bin/mozc_renderer
 	${INSTALL_PROGRAM} \
 		${WRKSRC}/out_linux/${BUILD_MODE}/ibus_mozc \
-		${PREFIX}/libexec/ibus-engine-mozc
+		${STAGEDIR}${PREFIX}/libexec/ibus-engine-mozc
 	${INSTALL_DATA} \
 		${WRKSRC}/out_linux/${BUILD_MODE}/obj/gen/unix/ibus/mozc.xml \
-		${PREFIX}/share/ibus/component/mozc.xml
-	@${MKDIR} ${DATADIR}/icons
+		${STAGEDIR}${PREFIX}/share/ibus/component/mozc.xml
+	@${MKDIR} ${STAGEDIR}${DATADIR}/icons
 .for F in ui-alpha_full ui-alpha_half ui-dictionary ui-direct \
 	ui-hiragana ui-katakana_full ui-katakana_half ui-properties ui-tool
 	${INSTALL_DATA} \
 		${WRKSRC}/data/images/unix/${F}.png \
-		${DATADIR}/icons/${F:S/^ui-//}.png
+		${STAGEDIR}${DATADIR}/icons/${F:S/^ui-//}.png
 .endfor
 	${INSTALL_DATA} \
 		${WRKSRC}/data/images/unix/ime_product_icon_opensource-32.png \
-		${DATADIR}/icons/product_icon.png
+		${STAGEDIR}${DATADIR}/icons/product_icon.png
 .endif
 
 # fcitx_mozc
@@ -281,32 +280,32 @@ do-build-fcitx_mozc:
 
 do-install-fcitx_mozc:
 	@${MKDIR} \
-		${PREFIX}/lib/fcitx \
-		${PREFIX}/share/fcitx/addon \
-		${PREFIX}/share/fcitx/inputmethod
+		${STAGEDIR}${PREFIX}/lib/fcitx \
+		${STAGEDIR}${PREFIX}/share/fcitx/addon \
+		${STAGEDIR}${PREFIX}/share/fcitx/inputmethod
 	${INSTALL_LIB} \
 		${WRKSRC}/out_linux/${BUILD_MODE}/fcitx-mozc.so \
-		${PREFIX}/lib/fcitx/fcitx-mozc.so
+		${STAGEDIR}${PREFIX}/lib/fcitx/fcitx-mozc.so
 	${INSTALL_DATA} \
 		${WRKSRC}/unix/fcitx/fcitx-mozc.conf \
-		${PREFIX}/share/fcitx/addon/fcitx-mozc.conf
+		${STAGEDIR}${PREFIX}/share/fcitx/addon/fcitx-mozc.conf
 	${INSTALL_DATA} \
 		${WRKSRC}/unix/fcitx/mozc.conf \
-		${PREFIX}/share/fcitx/inputmethod/mozc.conf
+		${STAGEDIR}${PREFIX}/share/fcitx/inputmethod/mozc.conf
 	@${MKDIR} ${DATADIR}/icon
 .for F in ui-alpha_full ui-alpha_half ui-dictionary ui-direct \
 	ui-hiragana ui-katakana_full ui-katakana_half ui-properties ui-tool
 	${INSTALL_DATA} \
 		${WRKSRC}/data/images/unix/${F}.png \
-		${DATADIR}/icon/${F:S,^ui-,mozc-,}.png
+		${STAGEDIR}${DATADIR}/icon/${F:S,^ui-,mozc-,}.png
 .endfor
 	${INSTALL_DATA} \
 		${WRKSRC}/data/images/product_icon_32bpp-128.png \
-		${DATADIR}/icon/mozc.png
+		${STAGEDIR}${DATADIR}/icon/mozc.png
 .for L in ja zh_CN zh_TW
 	${INSTALL_DATA} \
 		${WRKSRC}/out_linux/${BUILD_MODE}/obj/gen/unix/fcitx/po/${L}.mo \
-		${PREFIX}/share/locale/${L}/LC_MESSAGES/fcitx-mozc.mo
+		${STAGEDIR}${PREFIX}/share/locale/${L}/LC_MESSAGES/fcitx-mozc.mo
 .endfor
 .endif
 
@@ -332,15 +331,10 @@ do-install-mozc_el:
 		${WRKSRC}/unix/emacs/mozc.el \
 		${WRKSRC}/unix/emacs/mozc.elc \
 		${FILESDIR}/leim-list.el \
-		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/mozc/
+		${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/mozc/
 .endif
 
 do-build: ${BUILD_MOZC_LIST:S/^/do-build-/}
 do-install: ${BUILD_MOZC_LIST:S/^/do-install-/}
-
-.if defined(PKGMESSAGE) && exists(${PKGMESSAGE})
-post-install:
-	@${CAT} ${PKGMESSAGE}
-.endif
 
 .include <bsd.port.post.mk>
