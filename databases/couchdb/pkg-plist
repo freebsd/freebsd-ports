@@ -6,70 +6,73 @@ etc/couchdb/default.ini
 etc/couchdb/local.ini.sample
 @exec if [ ! -f %D/etc/couchdb/local.ini ] ; then cp -p %D/%F %B/local.ini; chown couchdb:couchdb %B/local.ini; fi
 etc/logrotate.d/couchdb
+info/CouchDB
 lib/couchdb/bin/couchjs
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch.app
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_app.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_auth_cache.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_btree.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_changes.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_compaction_daemon.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_compress.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_config.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_config_writer.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_db.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_db_update_notifier.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_db_update_notifier_sup.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_db_updater.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_doc.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_drv.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_ejson_compare.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_event_sup.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_external_manager.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_external_server.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_file.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_httpd.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_httpd_auth.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_httpd_cors.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_httpd_db.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_httpd_external.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_httpd_misc_handlers.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_httpd_oauth.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_httpd_proxy.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_httpd_rewrite.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_httpd_stats_handlers.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_httpd_vhost.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_key_tree.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_log.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_native_process.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_os_daemons.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_os_process.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_passwords.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_primary_sup.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_query_servers.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_ref_counter.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_secondary_sup.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_server.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_server_sup.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_stats_aggregator.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_stats_collector.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_stream.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_task_status.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_users_db.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_util.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_uuids.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/couch_work_queue.beam
-lib/couchdb/erlang/lib/couch-1.3.1/ebin/json_stream_parse.beam
-lib/couchdb/erlang/lib/couch-1.3.1/include/couch_db.hrl
-lib/couchdb/erlang/lib/couch-1.3.1/include/couch_js_functions.hrl
-lib/couchdb/erlang/lib/couch-1.3.1/priv/couchspawnkillable
-lib/couchdb/erlang/lib/couch-1.3.1/priv/lib/couch_ejson_compare.a
-lib/couchdb/erlang/lib/couch-1.3.1/priv/lib/couch_ejson_compare.la
-lib/couchdb/erlang/lib/couch-1.3.1/priv/lib/couch_ejson_compare.so
-lib/couchdb/erlang/lib/couch-1.3.1/priv/lib/couch_icu_driver.a
-lib/couchdb/erlang/lib/couch-1.3.1/priv/lib/couch_icu_driver.la
-lib/couchdb/erlang/lib/couch-1.3.1/priv/lib/couch_icu_driver.so
-lib/couchdb/erlang/lib/couch-1.3.1/priv/stat_descriptions.cfg
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch.app
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_app.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_auth_cache.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_btree.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_changes.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_compaction_daemon.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_compress.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_config.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_config_writer.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_db.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_db_update_notifier.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_db_update_notifier_sup.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_db_updater.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_doc.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_drv.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_ejson_compare.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_event_sup.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_external_manager.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_external_server.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_file.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_httpd.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_httpd_auth.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_httpd_cors.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_httpd_db.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_httpd_external.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_httpd_misc_handlers.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_httpd_oauth.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_httpd_proxy.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_httpd_rewrite.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_httpd_stats_handlers.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_httpd_vhost.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_key_tree.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_log.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_native_process.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_os_daemons.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_os_process.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_passwords.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_primary_sup.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_query_servers.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_ref_counter.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_secondary_sup.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_server.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_server_sup.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_stats_aggregator.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_stats_collector.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_stream.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_task_status.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_users_db.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_util.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_uuids.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/couch_work_queue.beam
+lib/couchdb/erlang/lib/couch-1.4.0/ebin/json_stream_parse.beam
+lib/couchdb/erlang/lib/couch-1.4.0/include/couch_db.hrl
+lib/couchdb/erlang/lib/couch-1.4.0/include/couch_js_functions.hrl
+lib/couchdb/erlang/lib/couch-1.4.0/priv/couchspawnkillable
+lib/couchdb/erlang/lib/couch-1.4.0/priv/lib/couch_ejson_compare.a
+lib/couchdb/erlang/lib/couch-1.4.0/priv/lib/couch_ejson_compare.la
+lib/couchdb/erlang/lib/couch-1.4.0/priv/lib/couch_ejson_compare.so
+lib/couchdb/erlang/lib/couch-1.4.0/priv/lib/couch_icu_driver.a
+lib/couchdb/erlang/lib/couch-1.4.0/priv/lib/couch_icu_driver.la
+lib/couchdb/erlang/lib/couch-1.4.0/priv/lib/couch_icu_driver.so
+lib/couchdb/erlang/lib/couch-1.4.0/priv/stat_descriptions.cfg
+lib/couchdb/erlang/lib/couch_dbupdates-0.1/ebin/couch_dbupdates.beam
+lib/couchdb/erlang/lib/couch_dbupdates-0.1/ebin/couch_dbupdates_httpd.beam
 lib/couchdb/erlang/lib/couch_index-0.1/ebin/couch_index.beam
 lib/couchdb/erlang/lib/couch_index-0.1/ebin/couch_index_compactor.beam
 lib/couchdb/erlang/lib/couch_index-0.1/ebin/couch_index_server.beam
@@ -109,11 +112,6 @@ lib/couchdb/erlang/lib/ejson-0.1.0/priv/ejson.la
 lib/couchdb/erlang/lib/ejson-0.1.0/priv/ejson.so
 lib/couchdb/erlang/lib/erlang-oauth/ebin/oauth.app
 lib/couchdb/erlang/lib/erlang-oauth/ebin/oauth.beam
-lib/couchdb/erlang/lib/erlang-oauth/ebin/oauth_hmac_sha1.beam
-lib/couchdb/erlang/lib/erlang-oauth/ebin/oauth_http.beam
-lib/couchdb/erlang/lib/erlang-oauth/ebin/oauth_plaintext.beam
-lib/couchdb/erlang/lib/erlang-oauth/ebin/oauth_unix.beam
-lib/couchdb/erlang/lib/erlang-oauth/ebin/oauth_uri.beam
 lib/couchdb/erlang/lib/etap/ebin/etap.beam
 lib/couchdb/erlang/lib/ibrowse-2.2.0/ebin/ibrowse.app
 lib/couchdb/erlang/lib/ibrowse-2.2.0/ebin/ibrowse.beam
@@ -157,11 +155,11 @@ lib/couchdb/erlang/lib/mochiweb-1.4.1/ebin/mochiweb_socket_server.beam
 lib/couchdb/erlang/lib/mochiweb-1.4.1/ebin/mochiweb_sup.beam
 lib/couchdb/erlang/lib/mochiweb-1.4.1/ebin/mochiweb_util.beam
 lib/couchdb/erlang/lib/mochiweb-1.4.1/ebin/reloader.beam
-lib/couchdb/erlang/lib/snappy-1.0.3/ebin/snappy.app
-lib/couchdb/erlang/lib/snappy-1.0.3/ebin/snappy.beam
-lib/couchdb/erlang/lib/snappy-1.0.3/priv/snappy_nif.a
-lib/couchdb/erlang/lib/snappy-1.0.3/priv/snappy_nif.la
-lib/couchdb/erlang/lib/snappy-1.0.3/priv/snappy_nif.so
+lib/couchdb/erlang/lib/snappy-1.0.5/ebin/snappy.app
+lib/couchdb/erlang/lib/snappy-1.0.5/ebin/snappy.beam
+lib/couchdb/erlang/lib/snappy-1.0.5/priv/snappy_nif.a
+lib/couchdb/erlang/lib/snappy-1.0.5/priv/snappy_nif.la
+lib/couchdb/erlang/lib/snappy-1.0.5/priv/snappy_nif.so
 share/couchdb/server/main-coffee.js
 share/couchdb/server/main.js
 share/couchdb/www/_sidebar.html
@@ -201,12 +199,14 @@ share/couchdb/www/docs/_sources/changelog.txt
 share/couchdb/www/docs/_sources/changes.txt
 share/couchdb/www/docs/_sources/config_reference.txt
 share/couchdb/www/docs/_sources/configuring.txt
+share/couchdb/www/docs/_sources/contributing.txt
 share/couchdb/www/docs/_sources/ddocs.txt
 share/couchdb/www/docs/_sources/index.txt
 share/couchdb/www/docs/_sources/intro.txt
 share/couchdb/www/docs/_sources/json-structure.txt
 share/couchdb/www/docs/_sources/query-servers.txt
 share/couchdb/www/docs/_sources/replication.txt
+share/couchdb/www/docs/_sources/replicator.txt
 share/couchdb/www/docs/_static/ajax-loader.gif
 share/couchdb/www/docs/_static/basic.css
 share/couchdb/www/docs/_static/comment-bright.png
@@ -251,6 +251,7 @@ share/couchdb/www/docs/json-structure.html
 share/couchdb/www/docs/objects.inv
 share/couchdb/www/docs/query-servers.html
 share/couchdb/www/docs/replication.html
+share/couchdb/www/docs/replicator.html
 share/couchdb/www/docs/search.html
 share/couchdb/www/docs/searchindex.js
 share/couchdb/www/document.html
@@ -310,6 +311,7 @@ share/couchdb/www/script/jspec/jspec.jquery.js
 share/couchdb/www/script/jspec/jspec.js
 share/couchdb/www/script/jspec/jspec.xhr.js
 share/couchdb/www/script/oauth.js
+share/couchdb/www/script/replicator_db_inc.js
 share/couchdb/www/script/sha1.js
 share/couchdb/www/script/test/all_docs.js
 share/couchdb/www/script/test/attachment_names.js
@@ -359,8 +361,24 @@ share/couchdb/www/script/test/reduce_builtin.js
 share/couchdb/www/script/test/reduce_false.js
 share/couchdb/www/script/test/reduce_false_temp.js
 share/couchdb/www/script/test/replication.js
-share/couchdb/www/script/test/replicator_db.js
+share/couchdb/www/script/test/replicator_db_bad_rep_id.js
+share/couchdb/www/script/test/replicator_db_by_doc_id.js
+share/couchdb/www/script/test/replicator_db_compact_rep_db.js
+share/couchdb/www/script/test/replicator_db_continuous.js
+share/couchdb/www/script/test/replicator_db_credential_delegation.js
+share/couchdb/www/script/test/replicator_db_field_validation.js
+share/couchdb/www/script/test/replicator_db_filtered.js
+share/couchdb/www/script/test/replicator_db_identical.js
+share/couchdb/www/script/test/replicator_db_identical_continuous.js
+share/couchdb/www/script/test/replicator_db_invalid_filter.js
 share/couchdb/www/script/test/replicator_db_security.js
+share/couchdb/www/script/test/replicator_db_simple.js
+share/couchdb/www/script/test/replicator_db_successive.js
+share/couchdb/www/script/test/replicator_db_survives.js
+share/couchdb/www/script/test/replicator_db_swap_rep_db.js
+share/couchdb/www/script/test/replicator_db_update_security.js
+share/couchdb/www/script/test/replicator_db_user_ctx.js
+share/couchdb/www/script/test/replicator_db_write_auth.js
 share/couchdb/www/script/test/rev_stemming.js
 share/couchdb/www/script/test/rewrite.js
 share/couchdb/www/script/test/security_validation.js
@@ -402,18 +420,16 @@ share/couchdb/www/style/layout.css
 share/couchdb/www/verify_install.html
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.gz
 %%PORTDOCS%%%%DOCSDIR%%/BUGS.gz
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES.gz
 %%PORTDOCS%%%%DOCSDIR%%/CouchDB.pdf.gz
 %%PORTDOCS%%%%DOCSDIR%%/DEVELOPERS.gz
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.Unix.gz
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.Windows.gz
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.gz
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.gz
-%%PORTDOCS%%%%DOCSDIR%%/NEWS.gz
 %%PORTDOCS%%%%DOCSDIR%%/NOTICE.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.gz
 %%PORTDOCS%%%%DOCSDIR%%/THANKS.gz
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PORTDOCS%%%%DOCSDIR%%
 @dirrm share/couchdb/www/style
 @dirrm share/couchdb/www/spec
 @dirrm share/couchdb/www/script/test
@@ -430,9 +446,9 @@ share/couchdb/www/verify_install.html
 @dirrm share/couchdb/www
 @dirrm share/couchdb/server
 @dirrm share/couchdb
-@dirrm lib/couchdb/erlang/lib/snappy-1.0.3/priv
-@dirrm lib/couchdb/erlang/lib/snappy-1.0.3/ebin
-@dirrm lib/couchdb/erlang/lib/snappy-1.0.3
+@dirrm lib/couchdb/erlang/lib/snappy-1.0.5/priv
+@dirrm lib/couchdb/erlang/lib/snappy-1.0.5/ebin
+@dirrm lib/couchdb/erlang/lib/snappy-1.0.5
 @dirrm lib/couchdb/erlang/lib/mochiweb-1.4.1/ebin
 @dirrm lib/couchdb/erlang/lib/mochiweb-1.4.1
 @dirrm lib/couchdb/erlang/lib/ibrowse-2.2.0/ebin
@@ -452,11 +468,13 @@ share/couchdb/www/verify_install.html
 @dirrm lib/couchdb/erlang/lib/couch_mrview-0.1
 @dirrm lib/couchdb/erlang/lib/couch_index-0.1/ebin
 @dirrm lib/couchdb/erlang/lib/couch_index-0.1
-@dirrm lib/couchdb/erlang/lib/couch-1.3.1/priv/lib
-@dirrm lib/couchdb/erlang/lib/couch-1.3.1/priv
-@dirrm lib/couchdb/erlang/lib/couch-1.3.1/include
-@dirrm lib/couchdb/erlang/lib/couch-1.3.1/ebin
-@dirrm lib/couchdb/erlang/lib/couch-1.3.1
+@dirrm lib/couchdb/erlang/lib/couch_dbupdates-0.1/ebin
+@dirrm lib/couchdb/erlang/lib/couch_dbupdates-0.1
+@dirrm lib/couchdb/erlang/lib/couch-1.4.0/priv/lib
+@dirrm lib/couchdb/erlang/lib/couch-1.4.0/priv
+@dirrm lib/couchdb/erlang/lib/couch-1.4.0/include
+@dirrm lib/couchdb/erlang/lib/couch-1.4.0/ebin
+@dirrm lib/couchdb/erlang/lib/couch-1.4.0
 @dirrm lib/couchdb/erlang/lib
 @dirrm lib/couchdb/erlang
 @dirrm lib/couchdb/bin
