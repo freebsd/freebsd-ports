@@ -8,6 +8,6 @@ The main features of this library are:
 - off-line ASN1 structure management with C code file generation 
   containing an array;
 - DER (Distinguish Encoding Rules) encoding;
-- no limits for INTEGER and ENUMERATED values 
-	
-WWW:	http://www.gnu.org/software/libtasn1/
+- no limits for INTEGER and ENUMERATED values
+
+WWW: http://www.gnu.org/software/libtasn1/
