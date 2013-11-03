@@ -1,3 +1,4 @@
+include/ck_array.h
 include/ck_backoff.h
 include/ck_elide.h
 include/ck_stack.h
@@ -48,6 +49,7 @@ lib/libck.so
 lib/libck.so.0
 lib/libck.a
 libdata/pkgconfig/ck.pc
+man/man3/CK_ARRAY_FOREACH.3.gz
 man/man3/CK_COHORT_INIT.3.gz
 man/man3/CK_COHORT_INSTANCE.3.gz
 man/man3/CK_COHORT_LOCK.3.gz
@@ -63,6 +65,15 @@ man/man3/CK_RWCOHORT_READ_LOCK.3.gz
 man/man3/CK_RWCOHORT_READ_UNLOCK.3.gz
 man/man3/CK_RWCOHORT_WRITE_LOCK.3.gz
 man/man3/CK_RWCOHORT_WRITE_UNLOCK.3.gz
+man/man3/ck_array_buffer.3.gz
+man/man3/ck_array_commit.3.gz
+man/man3/ck_array_deinit.3.gz
+man/man3/ck_array_init.3.gz
+man/man3/ck_array_initialized.3.gz
+man/man3/ck_array_length.3.gz
+man/man3/ck_array_put.3.gz
+man/man3/ck_array_put_unique.3.gz
+man/man3/ck_array_remove.3.gz
 man/man3/ck_bag_allocator_set.3.gz
 man/man3/ck_bag_block_count.3.gz
 man/man3/ck_bag_block_next.3.gz
