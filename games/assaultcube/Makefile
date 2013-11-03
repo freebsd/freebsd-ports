@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	assaultcube
-PORTVERSION=	1.2.0.0
+PORTVERSION=	1.2.0.1
 CATEGORIES=	games
 MASTER_SITES=	SF/actiongame/AssaultCube%20Version%20${PORTVERSION}
 DISTNAME=	AssaultCube_v${PORTVERSION}
@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--enable-shared=no --enable-static=yes
 CONFIGURE_WRKSRC=	${WRKSRC}/source/enet
 BUILD_WRKSRC=	${WRKSRC}/source/src
 
-PORTDATA=	config demos packages
+PORTDATA=	config packages scripts
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
@@ -55,7 +55,7 @@ SUB_FILES+=	${PORTNAME}_client
 ACUBE_BIN+=	client
 
 DESKTOP_ENTRIES="AssaultCube" "${COMMENT}" \
-	"${DATADIR}/packages/misc/startscreen.png" "${PORTNAME}_client" \
+	"${PREFIX}/share/pixmaps/${PORTNAME}.png" "${PORTNAME}_client" \
 	"Game;" false
 .endif
 
@@ -71,6 +71,13 @@ SUB_FILES+=	${PORTNAME}_master
 ACUBE_BIN+=	master
 .endif
 
+pre-install: .SILENT
+.if !defined(NOPORTDATA)
+	# 	Current STAGEDIR doesn't create empty directories for package,
+	# in case of dynamically generated TMPPLIST, where these directories exist
+	${RMDIR} ${WRKSRC}/packages/maps/servermaps/incoming
+.endif
+
 do-install:
 .for f in ${ACUBE_BIN}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}_${f} ${STAGEDIR}${PREFIX}/bin
@@ -84,11 +91,17 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 .endif
+.if ${PORT_OPTIONS:MCLIENT}
+	${INSTALL_DATA} ${WRKSRC}/docs/images/icon.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+.endif
 
 post-install:
 .for f in ${ACUBE_BIN}
 	@${ECHO_CMD} bin/${PORTNAME}_${f} >> ${TMPPLIST}
 	@${ECHO_CMD} libexec/${PORTNAME}_${f} >> ${TMPPLIST}
 .endfor
+.if ${PORT_OPTIONS:MCLIENT}
+	@${ECHO_CMD} share/pixmaps/${PORTNAME}.png >> ${TMPPLIST}
+.endif
 
 .include <bsd.port.mk>
