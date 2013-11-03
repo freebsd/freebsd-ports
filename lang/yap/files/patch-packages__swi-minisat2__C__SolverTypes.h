@@ -1,5 +1,5 @@
---- ./packages/swi-minisat2/C/SolverTypes.h.orig	2013-06-28 00:56:48.000000000 -0300
-+++ ./packages/swi-minisat2/C/SolverTypes.h	2013-06-28 00:57:51.000000000 -0300
+--- ./packages/swi-minisat2/C/SolverTypes.h.orig	2010-10-18 06:48:21.000000000 -0200
++++ ./packages/swi-minisat2/C/SolverTypes.h	2013-11-02 21:10:56.000000000 -0200
 @@ -119,11 +119,7 @@
  
      // -- use this function instead:
