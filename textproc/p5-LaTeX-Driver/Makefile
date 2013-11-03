@@ -2,31 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	LaTeX-Driver
-PORTVERSION=	0.12
+PORTVERSION=	0.20.02
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module of LaTeX Driver
 
-BUILD_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class \
-		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
+		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
+		p5-IPC-ShellCmd>=0:${PORTSDIR}/devel/p5-IPC-ShellCmd \
+		p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_TEX=	latex
 USES=		perl5
 USE_PERL5=	configure
+USE_TEX=	latex
 
-MAN1=	latex2ps.1 latex2pdf.1 latex2dvi.1
-MAN3=	LaTeX::Driver.3 \
-	LaTeX::Driver::Paths.3 \
-	LaTeX::Driver::FilterProgram.3
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-post-extract:
-	@${REINPLACE_CMD} -e 's#<STDIN>#"\r"#g' ${WRKSRC}/Makefile.PL
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
