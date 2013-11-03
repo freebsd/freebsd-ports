@@ -1,3 +1,5 @@
+%%PERL5_MAN3%%/Net::DNSBL::MultiDaemon.3.gz
+%%PERL5_MAN3%%/Net::DNSBL::Utilities.3.gz
 %%SITE_PERL%%/Net/DNSBL/MultiDaemon.pm
 %%SITE_PERL%%/Net/DNSBL/Utilities.pm
 %%SITE_PERL%%/auto/Net/DNSBL/Utilities/A1271.al
@@ -7,8 +9,6 @@
 %%SITE_PERL%%/auto/Net/DNSBL/Utilities/A1275.al
 %%SITE_PERL%%/auto/Net/DNSBL/Utilities/A1276.al
 %%SITE_PERL%%/auto/Net/DNSBL/Utilities/A1277.al
-%%SITE_PERL%%/auto/Net/DNSBL/Utilities/setAUTH.al
-%%SITE_PERL%%/auto/Net/DNSBL/Utilities/setRA.al
 %%SITE_PERL%%/auto/Net/DNSBL/Utilities/_loadSocket.al
 %%SITE_PERL%%/auto/Net/DNSBL/Utilities/autosplit.ix
 %%SITE_PERL%%/auto/Net/DNSBL/Utilities/bystat.al
@@ -20,12 +20,16 @@
 %%SITE_PERL%%/auto/Net/DNSBL/Utilities/not_found.al
 %%SITE_PERL%%/auto/Net/DNSBL/Utilities/open_udpNB.al
 %%SITE_PERL%%/auto/Net/DNSBL/Utilities/s_response.al
+%%SITE_PERL%%/auto/Net/DNSBL/Utilities/setAUTH.al
+%%SITE_PERL%%/auto/Net/DNSBL/Utilities/setRA.al
 %%SITE_PERL%%/auto/Net/DNSBL/Utilities/statinit.al
 %%SITE_PERL%%/auto/Net/DNSBL/Utilities/write_stats.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNSBL/MultiDaemon/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNSBL/MultiDaemon
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNSBL
-@dirrm %%SITE_PERL%%/auto/Net/DNSBL/Utilities
-@dirrm %%SITE_PERL%%/auto/Net/DNSBL
-@dirrm %%SITE_PERL%%/auto/Net
-@dirrm %%SITE_PERL%%/Net/DNSBL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNSBL/MultiDaemon
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNSBL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/auto/Net/DNSBL/Utilities
+@dirrmtry %%SITE_PERL%%/auto/Net/DNSBL
+@dirrmtry %%SITE_PERL%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net/DNSBL
+@dirrmtry %%SITE_PERL%%/Net

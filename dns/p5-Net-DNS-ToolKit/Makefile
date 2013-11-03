@@ -19,35 +19,4 @@ MAKE_JOBS_UNSAFE=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::DNS::ToolKit.3 \
-		Net::DNS::ToolKit::Debug.3 \
-		Net::DNS::ToolKit::Question.3 \
-		Net::DNS::ToolKit::RR.3 \
-		Net::DNS::ToolKit::RR::A.3 \
-		Net::DNS::ToolKit::RR::AAAA.3 \
-		Net::DNS::ToolKit::RR::AFSDB.3 \
-		Net::DNS::ToolKit::RR::CNAME.3 \
-		Net::DNS::ToolKit::RR::HINFO.3 \
-		Net::DNS::ToolKit::RR::ISDN.3 \
-		Net::DNS::ToolKit::RR::MB.3 \
-		Net::DNS::ToolKit::RR::MD.3 \
-		Net::DNS::ToolKit::RR::MF.3 \
-		Net::DNS::ToolKit::RR::MG.3 \
-		Net::DNS::ToolKit::RR::MINFO.3 \
-		Net::DNS::ToolKit::RR::MR.3 \
-		Net::DNS::ToolKit::RR::MX.3 \
-		Net::DNS::ToolKit::RR::NS.3 \
-		Net::DNS::ToolKit::RR::NULL.3 \
-		Net::DNS::ToolKit::RR::PTR.3 \
-		Net::DNS::ToolKit::RR::RP.3 \
-		Net::DNS::ToolKit::RR::RT.3 \
-		Net::DNS::ToolKit::RR::SOA.3 \
-		Net::DNS::ToolKit::RR::SRV.3 \
-		Net::DNS::ToolKit::RR::TXT.3 \
-		Net::DNS::ToolKit::RR::TYPE.3 \
-		Net::DNS::ToolKit::RR::Template.3 \
-		Net::DNS::ToolKit::RR::X25.3 \
-		Net::DNS::ToolKit::Utilities.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

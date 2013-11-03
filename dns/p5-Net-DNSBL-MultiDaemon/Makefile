@@ -16,12 +16,9 @@ BUILD_DEPENDS=	p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog \
 		p5-Net-DNS-Codes>=0:${PORTSDIR}/dns/p5-Net-DNS-Codes \
 		p5-Net-DNS-ToolKit>=0:${PORTSDIR}/dns/p5-Net-DNS-ToolKit
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-				p5-File-SafeDO>=0:${PORTSDIR}/devel/p5-File-SafeDO
+		p5-File-SafeDO>=0:${PORTSDIR}/devel/p5-File-SafeDO
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::DNSBL::MultiDaemon.3 Net::DNSBL::Utilities.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

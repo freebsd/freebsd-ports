@@ -1,6 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Stanford/DNSserver/.packlist
+%%PERL5_MAN3%%/Stanford::DNS.3.gz
+%%PERL5_MAN3%%/Stanford::DNSserver.3.gz
 %%SITE_PERL%%/Stanford/DNS.pm
 %%SITE_PERL%%/Stanford/DNSserver.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Stanford/DNSserver
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Stanford
-@dirrm %%SITE_PERL%%/Stanford
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Stanford/DNSserver/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Stanford/DNSserver
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Stanford
+@dirrmtry %%SITE_PERL%%/Stanford

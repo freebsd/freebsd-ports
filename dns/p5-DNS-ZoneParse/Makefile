@@ -13,7 +13,4 @@ COMMENT=	Parse and manipulate DNS Zone Files
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		DNS::ZoneParse.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

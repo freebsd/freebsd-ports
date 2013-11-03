@@ -17,7 +17,4 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS+=	--with-libidn=${PREFIX}/lib --with-libidn-inc=${PREFIX}/include
 
-MAN3=		Net::LibIDN.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
