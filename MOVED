@@ -5162,3 +5162,4 @@ lang/dragonegg46||2013-11-03|Has expired: Upgrade to dragonegg46-33 or dragonegg
 sysutils/mktool||2013-11-03|Has expired
 databases/ruby-memcache||2013-11-03|Has expired: Development has been abandoned upstream
 deskutils/blogtk||2013-11-03|Has expired: This is dead upstream and is no longer being maintained
+devel/ruby-io-reactor||2013-11-03|Has expired: Does not work with Ruby 1.9
