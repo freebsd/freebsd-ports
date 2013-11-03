@@ -20,7 +20,7 @@ GH_ACCOUNT=	log69
 GH_COMMIT=	e566f9b
 GH_TAGNAME=	v${PORTVERSION}
 
-USE_GCC=	any
+USE_GCC=	yes
 GNU_CONFIGURE=	yes
 USES=		compiler
 
