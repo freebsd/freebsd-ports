@@ -39,13 +39,13 @@ WITH_OPENMPI=	yes
 .endif
 
 .if defined(WITH_OPENMPI)
-BUILD_DEPENDS=	${LOCALBASE}/mpi/openmpi/lib/libmpi.so:${PORTSDIR}/net/openmpi
-RUN_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
-MAKE_ENV=	MPI_HOME=${LOCALBASE}/mpi/openmpi
+BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/lib/libmpi.so:${PORTSDIR}/net/openmpi
+RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
+MAKE_ENV+=	MPI_HOME=${LOCALBASE}/mpi/openmpi
 .else
-BUILD_DEPENDS=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
-RUN_DEPENDS=	${LOCALBASE}/bin/mpirun:${PORTSDIR}/net/mpich2
-MAKE_ENV=	MPI_HOME=${LOCALBASE}
+BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
+RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:${PORTSDIR}/net/mpich2
+MAKE_ENV+=	MPI_HOME=${LOCALBASE}
 .endif
 
 do-install:
