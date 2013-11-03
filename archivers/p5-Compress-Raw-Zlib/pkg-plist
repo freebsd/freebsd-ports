@@ -2,7 +2,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/Raw/Zlib/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/Raw/Zlib/Zlib.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/Raw/Zlib/Zlib.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/Raw/Zlib/autosplit.ix
 %%PERL5_MAN3%%/Compress::Raw::Zlib.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/Raw/Zlib
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/Raw
