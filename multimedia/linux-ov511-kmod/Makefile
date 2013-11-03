@@ -12,6 +12,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux ov511 webcam driver
 
+BROKEN=		does not compile
+
 # Requires the linux emulation layer to be built
 BUILD_DEPENDS=	/usr/share/mk/bsd.linux_kmod.mk:${PORTSDIR}/devel/linux-kmod-compat
 
