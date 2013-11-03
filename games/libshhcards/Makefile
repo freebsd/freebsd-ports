@@ -16,14 +16,15 @@ MAKEFILE=	${FILESDIR}/Makefile.lib
 USE_LDCONFIG=	yes
 MAKE_ENV=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/CREDITS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+do-install:
+	${INSTALL_LIB} ${WRKSRC}/libshhcards.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/libshhcards.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/libshhcards.so.1 ${STAGEDIR}${PREFIX}/lib
+	${INSTALL} ${WRKSRC}/shhcards.h ${STAGEDIR}${PREFIX}/include
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CREDITS ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
