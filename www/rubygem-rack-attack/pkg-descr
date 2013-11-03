@@ -1,0 +1,3 @@
+Rack middleware for throttling and blocking abusive requests
+
+WWW: http://github.com/kickstarter/rack-attack
