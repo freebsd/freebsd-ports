@@ -1,0 +1,16 @@
+IPC::ShellCmd comes from the nth time I've had to implement a select loop and
+wanted appropriate sudo/su privilege magic, environment variables that are set
+in the child, working directories set etc.
+
+It aims to provide a reasonable interface for setting up command execution
+environment (working directory, environment variables, stdin, stdout and stderr
+redirection if necessary), but allowing for ssh and sudo and magicking in the
+appropriate shell quoting.
+
+It tries to be flexible about how you might want to capture output, exit status
+and other such, but in such a way as it's hopefully easy to understand and make
+it work.
+
+Setup method calls are chain-able in a File::Find::Rule kind of a way.
+
+WWW: http://search.cpan.org/dist/IPC-ShellCmd/

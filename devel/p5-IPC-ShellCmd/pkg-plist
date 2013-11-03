@@ -1,0 +1,15 @@
+%%SITE_PERL%%/IPC/ShellCmd.pm
+%%SITE_PERL%%/IPC/ShellCmd/Generic.pm
+%%SITE_PERL%%/IPC/ShellCmd/SSH.pm
+%%SITE_PERL%%/IPC/ShellCmd/ShBase.pm
+%%SITE_PERL%%/IPC/ShellCmd/Sudo.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/ShellCmd/.packlist
+%%PERL5_MAN3%%/IPC::ShellCmd.3.gz
+%%PERL5_MAN3%%/IPC::ShellCmd::Generic.3.gz
+%%PERL5_MAN3%%/IPC::ShellCmd::SSH.3.gz
+%%PERL5_MAN3%%/IPC::ShellCmd::ShBase.3.gz
+%%PERL5_MAN3%%/IPC::ShellCmd::Sudo.3.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/ShellCmd
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC
+@dirrm %%SITE_PERL%%/IPC/ShellCmd
+@dirrmtry %%SITE_PERL%%/IPC
