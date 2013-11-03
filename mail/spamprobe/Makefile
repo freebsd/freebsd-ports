@@ -13,8 +13,13 @@ COMMENT=	Spam detector using Bayesian analysis of word counts
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-default-8bit
 
-MAN1=		spamprobe.1
-PLIST_FILES=	bin/spamprobe
+PLIST_FILES=	bin/spamprobe man/man1/spamprobe.1.gz
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1000024
+BROKEN=		does not build with clang
+.endif
 
 # PBL support
 .if !defined(WITHOUT_PBL)
@@ -59,5 +64,4 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
-NO_STAGE=	yes
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
