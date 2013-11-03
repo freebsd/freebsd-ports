@@ -51,10 +51,6 @@ PAYPAL_CONFIGURE_ON=	--with-backends="aqhbci aqnone aqofxconnect aqpaypal"
 LIB_DEPENDS+=	libktoblzcheck.so:${PORTSDIR}/finance/ktoblzcheck
 .endif
 
-post-patch:
-	${REINPLACE_CMD} -e 's|install-idataDATA install-iheaderHEADERS|install-iheaderHEADERS|' \
-		${WRKSRC}/Makefile.in
-
 post-build:
 .if ${PORT_OPTIONS:MDOXYGEN}
 	@cd ${WRKSRC} && ${GMAKE} srcdoc
