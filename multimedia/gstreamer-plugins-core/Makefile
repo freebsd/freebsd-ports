@@ -45,9 +45,7 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 do-install:
-	if [ ! -d ${PREFIX}/${GST_DIR} ]; then \
-		${MKDIR} ${PREFIX}/${GST_DIR} ; \
-	fi
-	${TOUCH} -f ${PREFIX}/${GST_DIR}/.gstreamer-plugins-core.keep
+	${MKDIR} ${STAGEDIR}${PREFIX}/${GST_DIR}
+	${TOUCH} -f ${STAGEDIR}${PREFIX}/${GST_DIR}/.gstreamer-plugins-core.keep
 
 .include <bsd.port.post.mk>
