@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/DBIx::Tree.3.gz
 %%SITE_PERL%%/DBIx/Tree.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Tree/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Tree

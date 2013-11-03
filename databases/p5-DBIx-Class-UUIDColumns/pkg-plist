@@ -1,3 +1,13 @@
+%%PERL5_MAN3%%/DBIx::Class::UUIDColumns.3.gz
+%%PERL5_MAN3%%/DBIx::Class::UUIDColumns::UUIDMaker.3.gz
+%%PERL5_MAN3%%/DBIx::Class::UUIDColumns::UUIDMaker::APR::UUID.3.gz
+%%PERL5_MAN3%%/DBIx::Class::UUIDColumns::UUIDMaker::Data::GUID.3.gz
+%%PERL5_MAN3%%/DBIx::Class::UUIDColumns::UUIDMaker::Data::UUID.3.gz
+%%PERL5_MAN3%%/DBIx::Class::UUIDColumns::UUIDMaker::Data::Uniqid.3.gz
+%%PERL5_MAN3%%/DBIx::Class::UUIDColumns::UUIDMaker::UUID.3.gz
+%%PERL5_MAN3%%/DBIx::Class::UUIDColumns::UUIDMaker::UUID::Random.3.gz
+%%PERL5_MAN3%%/DBIx::Class::UUIDColumns::UUIDMaker::Win32::Guidgen.3.gz
+%%PERL5_MAN3%%/DBIx::Class::UUIDColumns::UUIDMaker::Win32API::GUID.3.gz
 %%SITE_PERL%%/DBIx/Class/UUIDColumns.pm
 %%SITE_PERL%%/DBIx/Class/UUIDColumns/UUIDMaker.pm
 %%SITE_PERL%%/DBIx/Class/UUIDColumns/UUIDMaker/APR/UUID.pm
@@ -9,15 +19,15 @@
 %%SITE_PERL%%/DBIx/Class/UUIDColumns/UUIDMaker/Win32/Guidgen.pm
 %%SITE_PERL%%/DBIx/Class/UUIDColumns/UUIDMaker/Win32API/GUID.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/UUIDColumns/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/UUIDColumns
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
 @dirrmtry %%SITE_PERL%%/DBIx/Class/UUIDColumns/UUIDMaker/Win32API
 @dirrmtry %%SITE_PERL%%/DBIx/Class/UUIDColumns/UUIDMaker/Win32
 @dirrmtry %%SITE_PERL%%/DBIx/Class/UUIDColumns/UUIDMaker/UUID
 @dirrmtry %%SITE_PERL%%/DBIx/Class/UUIDColumns/UUIDMaker/Data
 @dirrmtry %%SITE_PERL%%/DBIx/Class/UUIDColumns/UUIDMaker/APR
 @dirrmtry %%SITE_PERL%%/DBIx/Class/UUIDColumns/UUIDMaker
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/UUIDColumns
 @dirrmtry %%SITE_PERL%%/DBIx/Class/UUIDColumns
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
 @dirrmtry %%SITE_PERL%%/DBIx/Class
 @dirrmtry %%SITE_PERL%%/DBIx

@@ -1,3 +1,71 @@
+%%PERL5_MAN3%%/Rose::DB::Object.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Cached.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::ConventionManager.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::ConventionManager::Null.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Helpers.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Iterator.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Loader.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::MakeMethods::BigNum.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::MakeMethods::Date.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::MakeMethods::Generic.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::MakeMethods::Pg.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::MakeMethods::Std.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::MakeMethods::Time.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Manager.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::Array.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::BigInt.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::BigSerial.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::Bitfield.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::Blob.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::Boolean.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::Character.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::Date.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::Datetime.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::DatetimeYearToFraction.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::DatetimeYearToFraction1.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::DatetimeYearToFraction2.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::DatetimeYearToFraction3.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::DatetimeYearToFraction4.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::DatetimeYearToFraction5.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::DatetimeYearToMinute.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::DatetimeYearToMonth.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::DatetimeYearToSecond.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::Decimal.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::DoublePrecision.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::Enum.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::Epoch.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::Epoch::HiRes.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::Float.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::Integer.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::Interval.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::Numeric.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::Pg::Bytea.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::Pg::Chkpass.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::Scalar.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::Serial.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::Set.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::Text.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::Time.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::Timestamp.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::TimestampWithTimeZone.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Column::Varchar.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::ForeignKey.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::PrimaryKey.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Relationship.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Relationship::ManyToMany.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Relationship::ManyToOne.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Relationship::OneToMany.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::Relationship::OneToOne.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Metadata::UniqueKey.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::MixIn.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::QueryBuilder.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Std.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Std::Cached.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Std::Metadata.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Tutorial.3.gz
+%%PERL5_MAN3%%/Rose::DB::Object::Util.3.gz
 %%SITE_PERL%%/Rose/DB/Object.pm
 %%SITE_PERL%%/Rose/DB/Object/Cached.pm
 %%SITE_PERL%%/Rose/DB/Object/Constants.pm
@@ -80,18 +148,18 @@
 %%SITE_PERL%%/Rose/DB/Object/Tutorial.pod
 %%SITE_PERL%%/Rose/DB/Object/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/DB/Object/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/DB/Object
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/DB
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose
+@dirrmtry %%SITE_PERL%%/Rose/DB/Object/Std
 @dirrmtry %%SITE_PERL%%/Rose/DB/Object/Metadata/Relationship
-@dirrmtry %%SITE_PERL%%/Rose/DB/Object/Metadata/Column/Epoch
 @dirrmtry %%SITE_PERL%%/Rose/DB/Object/Metadata/Column/Pg
-@dirrmtry %%SITE_PERL%%/Rose/DB/Object/ConventionManager
+@dirrmtry %%SITE_PERL%%/Rose/DB/Object/Metadata/Column/Epoch
 @dirrmtry %%SITE_PERL%%/Rose/DB/Object/Metadata/Column
 @dirrmtry %%SITE_PERL%%/Rose/DB/Object/Metadata/Auto
-@dirrmtry %%SITE_PERL%%/Rose/DB/Object/MakeMethods
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/DB/Object
 @dirrmtry %%SITE_PERL%%/Rose/DB/Object/Metadata
-@dirrmtry %%SITE_PERL%%/Rose/DB/Object/Std
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/DB
+@dirrmtry %%SITE_PERL%%/Rose/DB/Object/MakeMethods
+@dirrmtry %%SITE_PERL%%/Rose/DB/Object/ConventionManager
 @dirrmtry %%SITE_PERL%%/Rose/DB/Object
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose
 @dirrmtry %%SITE_PERL%%/Rose/DB
 @dirrmtry %%SITE_PERL%%/Rose

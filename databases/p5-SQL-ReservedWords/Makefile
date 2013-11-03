@@ -19,16 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	sqlrw.1
-MAN3=	SQL::ReservedWords.3 \
-	SQL::ReservedWords::DB2.3 \
-	SQL::ReservedWords::MySQL.3 \
-	SQL::ReservedWords::ODBC.3 \
-	SQL::ReservedWords::Oracle.3 \
-	SQL::ReservedWords::PostgreSQL.3 \
-	SQL::ReservedWords::SQLServer.3 \
-	SQL::ReservedWords::SQLite.3 \
-	SQL::ReservedWords::Sybase.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

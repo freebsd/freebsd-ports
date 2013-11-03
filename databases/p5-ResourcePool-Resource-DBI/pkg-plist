@@ -1,17 +1,25 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/DBI/.packlist
-%%SITE_PERL%%/ResourcePool/Command/DBI/Execute.pm
-%%SITE_PERL%%/ResourcePool/Command/DBI/SelectRow.pod
-%%SITE_PERL%%/ResourcePool/Command/DBI/Select.pod
-%%SITE_PERL%%/ResourcePool/Command/DBI/Select.pm
-%%SITE_PERL%%/ResourcePool/Command/DBI/SelectRow.pm
-%%SITE_PERL%%/ResourcePool/Command/DBI/Execute.pod
+%%PERL5_MAN3%%/ResourcePool::Command::DBI::Execute.3.gz
+%%PERL5_MAN3%%/ResourcePool::Command::DBI::Select.3.gz
+%%PERL5_MAN3%%/ResourcePool::Command::DBI::SelectRow.3.gz
+%%PERL5_MAN3%%/ResourcePool::Factory::DBI.3.gz
+%%PERL5_MAN3%%/ResourcePool::Resource::DBI.3.gz
 %%SITE_PERL%%/ResourcePool/Command/DBI/Common.pm
-%%SITE_PERL%%/ResourcePool/Resource/DBI.pm
-%%SITE_PERL%%/ResourcePool/Resource/DBI.pod
+%%SITE_PERL%%/ResourcePool/Command/DBI/Execute.pm
+%%SITE_PERL%%/ResourcePool/Command/DBI/Execute.pod
+%%SITE_PERL%%/ResourcePool/Command/DBI/Select.pm
+%%SITE_PERL%%/ResourcePool/Command/DBI/Select.pod
+%%SITE_PERL%%/ResourcePool/Command/DBI/SelectRow.pm
+%%SITE_PERL%%/ResourcePool/Command/DBI/SelectRow.pod
 %%SITE_PERL%%/ResourcePool/Factory/DBI.pm
 %%SITE_PERL%%/ResourcePool/Factory/DBI.pod
-@dirrm %%SITE_PERL%%/ResourcePool/Command/DBI
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/DBI
+%%SITE_PERL%%/ResourcePool/Resource/DBI.pm
+%%SITE_PERL%%/ResourcePool/Resource/DBI.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/DBI/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/DBI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool
 @dirrmtry %%SITE_PERL%%/ResourcePool/Resource
 @dirrmtry %%SITE_PERL%%/ResourcePool/Factory
+@dirrmtry %%SITE_PERL%%/ResourcePool/Command/DBI
+@dirrmtry %%SITE_PERL%%/ResourcePool/Command
+@dirrmtry %%SITE_PERL%%/ResourcePool

@@ -12,14 +12,10 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Database connection caching and organization
 
 BUILD_DEPENDS=	p5-DBIx-ContextualFetch>=0:${PORTSDIR}/databases/p5-DBIx-ContextualFetch \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Ima::DBI.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

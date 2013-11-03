@@ -19,7 +19,4 @@ LICENSE=	ART10 GPLv1
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Exception::Class::DBI.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

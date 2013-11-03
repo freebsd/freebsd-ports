@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/MLDBM.3.gz
 %%SITE_PERL%%/MLDBM.pm
+%%SITE_PERL%%/MLDBM/Serializer/Data/Dumper.pm
 %%SITE_PERL%%/MLDBM/Serializer/FreezeThaw.pm
 %%SITE_PERL%%/MLDBM/Serializer/Storable.pm
-%%SITE_PERL%%/MLDBM/Serializer/Data/Dumper.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MLDBM/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MLDBM
 @dirrm %%SITE_PERL%%/MLDBM/Serializer/Data

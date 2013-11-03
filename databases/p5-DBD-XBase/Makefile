@@ -16,14 +16,4 @@ RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		dbfdump.1 indexdump.1
-MAN3=		DBD::XBase.3 \
-		XBase.3 \
-		XBase::Base.3 \
-		XBase::FAQ.3 \
-		XBase::Index.3 \
-		XBase::Memo.3 \
-		XBase::SDBM.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -19,16 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Test::Database.3 Test::Database::Driver.3 \
-		Test::Database::Driver::CSV.3 \
-		Test::Database::Driver::DBM.3 \
-		Test::Database::Driver::Pg.3 \
-		Test::Database::Driver::SQLite.3 \
-		Test::Database::Driver::SQLite2.3 \
-		Test::Database::Driver::mysql.3 \
-		Test::Database::Handle.3 \
-		Test::Database::Tutorial.3 \
-		Test::Database::Util.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

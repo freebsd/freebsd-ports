@@ -16,10 +16,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Metadata::Base.3 \
-	Metadata::HTTP.3 \
-	Metadata::IAFA.3 \
-	Metadata::SOIF.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

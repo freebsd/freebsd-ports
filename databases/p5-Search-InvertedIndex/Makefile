@@ -19,14 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Search::InvertedIndex.3 \
-		Search::InvertedIndex::AutoLoader.3 \
-		Search::InvertedIndex::DB::DB_File_SplitHash.3 \
-		Search::InvertedIndex::DB::Mysql.3 \
-		Search::InvertedIndex::Query.3 \
-		Search::InvertedIndex::Update.3 \
-		Search::InvertedIndex::Query::Leaf.3 \
-		Search::InvertedIndex::Result.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

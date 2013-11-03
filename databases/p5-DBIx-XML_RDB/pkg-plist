@@ -1,9 +1,10 @@
 bin/sql2xml.pl
 bin/xml2sql.pl
+%%PERL5_MAN3%%/DBIx::XML_RDB.3.gz
 %%SITE_PERL%%/DBIx/XML_RDB.pm
 %%SITE_PERL%%/DBIx/sql2xml.pl
 %%SITE_PERL%%/DBIx/xml2sql.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/XML_RDB/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/XML_RDB
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/XML_RDB
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
 @dirrmtry %%SITE_PERL%%/DBIx

@@ -2,6 +2,14 @@ bin/t2-db-info.pl
 bin/t2-fsck-schema.pl
 bin/t2-migrate-db.pl
 bin/t2-write-js.pl
+%%PERL5_MAN3%%/T2.3.gz
+%%PERL5_MAN3%%/T2::Association.3.gz
+%%PERL5_MAN3%%/T2::Attribute.3.gz
+%%PERL5_MAN3%%/T2::Class.3.gz
+%%PERL5_MAN3%%/T2::DBSetup.3.gz
+%%PERL5_MAN3%%/T2::Method.3.gz
+%%PERL5_MAN3%%/T2::Schema.3.gz
+%%PERL5_MAN3%%/T2::Storage.3.gz
 %%SITE_PERL%%/T2.pm
 %%SITE_PERL%%/T2/Association.pm
 %%SITE_PERL%%/T2/Attribute.pm
@@ -11,5 +19,5 @@ bin/t2-write-js.pl
 %%SITE_PERL%%/T2/Schema.pm
 %%SITE_PERL%%/T2/Storage.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/T2/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/T2
-@dirrm %%SITE_PERL%%/T2
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/T2
+@dirrmtry %%SITE_PERL%%/T2

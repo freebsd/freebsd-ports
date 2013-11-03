@@ -1,7 +1,15 @@
-%%SITE_PERL%%/DBIx/Class/QueryLog/Analyzer.pm
-%%SITE_PERL%%/DBIx/Class/QueryLog/Transaction.pm
-%%SITE_PERL%%/DBIx/Class/QueryLog/Query.pm
+%%PERL5_MAN3%%/DBIx::Class::QueryLog.3.gz
+%%PERL5_MAN3%%/DBIx::Class::QueryLog::Analyzer.3.gz
+%%PERL5_MAN3%%/DBIx::Class::QueryLog::Query.3.gz
+%%PERL5_MAN3%%/DBIx::Class::QueryLog::Transaction.3.gz
 %%SITE_PERL%%/DBIx/Class/QueryLog.pm
+%%SITE_PERL%%/DBIx/Class/QueryLog/Analyzer.pm
+%%SITE_PERL%%/DBIx/Class/QueryLog/Query.pm
+%%SITE_PERL%%/DBIx/Class/QueryLog/Transaction.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/QueryLog/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/QueryLog
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
 @dirrmtry %%SITE_PERL%%/DBIx/Class/QueryLog
+@dirrmtry %%SITE_PERL%%/DBIx/Class
+@dirrmtry %%SITE_PERL%%/DBIx

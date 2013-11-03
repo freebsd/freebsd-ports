@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Dancer::Plugin::Database.3.gz
 %%SITE_PERL%%/Dancer/Plugin/Database.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin/Database/.packlist
-@dirrmtry %%SITE_PERL%%/Dancer/Plugin
-@dirrmtry %%SITE_PERL%%/Dancer
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin/Database
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer
+@dirrmtry %%SITE_PERL%%/Dancer/Plugin
+@dirrmtry %%SITE_PERL%%/Dancer

@@ -1,6 +1,20 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Xapian/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Xapian/Xapian.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Xapian/Xapian.so
+%%PERL5_MAN3%%/Search::Xapian.3.gz
+%%PERL5_MAN3%%/Search::Xapian::BM25Weight.3.gz
+%%PERL5_MAN3%%/Search::Xapian::BoolWeight.3.gz
+%%PERL5_MAN3%%/Search::Xapian::Database.3.gz
+%%PERL5_MAN3%%/Search::Xapian::Document.3.gz
+%%PERL5_MAN3%%/Search::Xapian::Enquire.3.gz
+%%PERL5_MAN3%%/Search::Xapian::MultiValueSorter.3.gz
+%%PERL5_MAN3%%/Search::Xapian::PositionIterator.3.gz
+%%PERL5_MAN3%%/Search::Xapian::PostingIterator.3.gz
+%%PERL5_MAN3%%/Search::Xapian::QueryParser.3.gz
+%%PERL5_MAN3%%/Search::Xapian::Stem.3.gz
+%%PERL5_MAN3%%/Search::Xapian::TermGenerator.3.gz
+%%PERL5_MAN3%%/Search::Xapian::TermIterator.3.gz
+%%PERL5_MAN3%%/Search::Xapian::TradWeight.3.gz
+%%PERL5_MAN3%%/Search::Xapian::ValueIterator.3.gz
+%%PERL5_MAN3%%/Search::Xapian::Weight.3.gz
+%%PERL5_MAN3%%/Search::Xapian::WritableDatabase.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/BM25Weight.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/BoolWeight.pm
@@ -28,6 +42,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/ValueIterator.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/Weight.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/WritableDatabase.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Xapian/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Xapian/Xapian.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Xapian/Xapian.so
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Xapian
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/MSet

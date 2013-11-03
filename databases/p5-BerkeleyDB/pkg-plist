@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/BerkeleyDB.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/BerkeleyDB.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/BerkeleyDB.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/BerkeleyDB/Btree.pm
@@ -8,5 +9,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BerkeleyDB/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/mkconsts.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/scan.pl
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/BerkeleyDB
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/BerkeleyDB
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BerkeleyDB
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/BerkeleyDB

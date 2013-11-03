@@ -21,13 +21,4 @@ TEST_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	DBIx::Class::Loader.3 \
-	DBIx::Class::Loader::DB2.3 \
-	DBIx::Class::Loader::Generic.3 \
-	DBIx::Class::Loader::Pg.3 \
-	DBIx::Class::Loader::SQLite.3 \
-	DBIx::Class::Loader::Writing.3 \
-	DBIx::Class::Loader::mysql.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

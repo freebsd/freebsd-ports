@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/Cache::Memcached.3.gz
 %%SITE_PERL%%/Cache/Memcached.pm
 %%SITE_PERL%%/Cache/Memcached/GetParser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Memcached/.packlist

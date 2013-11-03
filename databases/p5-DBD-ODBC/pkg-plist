@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/DBD::ODBC.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/ODBC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/ODBC/Changes.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/ODBC/FAQ.pm
@@ -5,7 +6,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/ODBC/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/ODBC/ODBC.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/ODBC/ODBC.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/ODBC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/ODBC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/DBD/ODBC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBD/ODBC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBD

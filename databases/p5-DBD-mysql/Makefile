@@ -19,12 +19,9 @@ TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
 CONFLICTS_INSTALL?=	p5-Mysql-modules-[0-9]* p5-DBD-mysql[45][0-9]-[0-9]*
 
-NO_STAGE=	yes
 USE_MYSQL=	yes
 USE_PERL5=	configure
 USES=		perl5
-
-MAN3=		Bundle::DBD::mysql.3 DBD::mysql.3 DBD::mysql::INSTALL.3
 
 OPTIONS_DEFINE=	SSL
 SSL_BUILD_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay

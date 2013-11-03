@@ -1,4 +1,121 @@
 bin/dbicadmin
+%%PERL5_MAN3%%/DBIx::Class.3.gz
+%%PERL5_MAN3%%/DBIx::Class::AccessorGroup.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Admin.3.gz
+%%PERL5_MAN3%%/DBIx::Class::CDBICompat.3.gz
+%%PERL5_MAN3%%/DBIx::Class::CDBICompat::AbstractSearch.3.gz
+%%PERL5_MAN3%%/DBIx::Class::CDBICompat::ColumnsAsHash.3.gz
+%%PERL5_MAN3%%/DBIx::Class::CDBICompat::Copy.3.gz
+%%PERL5_MAN3%%/DBIx::Class::CDBICompat::Iterator.3.gz
+%%PERL5_MAN3%%/DBIx::Class::CDBICompat::NoObjectIndex.3.gz
+%%PERL5_MAN3%%/DBIx::Class::CDBICompat::Relationship.3.gz
+%%PERL5_MAN3%%/DBIx::Class::CDBICompat::Relationships.3.gz
+%%PERL5_MAN3%%/DBIx::Class::CDBICompat::SQLTransformer.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Carp.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Core.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Cursor.3.gz
+%%PERL5_MAN3%%/DBIx::Class::DB.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Exception.3.gz
+%%PERL5_MAN3%%/DBIx::Class::FilterColumn.3.gz
+%%PERL5_MAN3%%/DBIx::Class::InflateColumn.3.gz
+%%PERL5_MAN3%%/DBIx::Class::InflateColumn::DateTime.3.gz
+%%PERL5_MAN3%%/DBIx::Class::InflateColumn::File.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Manual.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Manual::Component.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Manual::Cookbook.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Manual::DocMap.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Manual::Example.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Manual::FAQ.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Manual::Features.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Manual::Glossary.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Manual::Intro.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Manual::Joining.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Manual::Reading.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Manual::ResultClass.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Manual::Troubleshooting.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Optional::Dependencies.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Ordered.3.gz
+%%PERL5_MAN3%%/DBIx::Class::PK.3.gz
+%%PERL5_MAN3%%/DBIx::Class::PK::Auto.3.gz
+%%PERL5_MAN3%%/DBIx::Class::PK::Auto::DB2.3.gz
+%%PERL5_MAN3%%/DBIx::Class::PK::Auto::MSSQL.3.gz
+%%PERL5_MAN3%%/DBIx::Class::PK::Auto::MySQL.3.gz
+%%PERL5_MAN3%%/DBIx::Class::PK::Auto::Oracle.3.gz
+%%PERL5_MAN3%%/DBIx::Class::PK::Auto::Pg.3.gz
+%%PERL5_MAN3%%/DBIx::Class::PK::Auto::SQLite.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Relationship.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Relationship::Base.3.gz
+%%PERL5_MAN3%%/DBIx::Class::ResultClass::HashRefInflator.3.gz
+%%PERL5_MAN3%%/DBIx::Class::ResultSet.3.gz
+%%PERL5_MAN3%%/DBIx::Class::ResultSetColumn.3.gz
+%%PERL5_MAN3%%/DBIx::Class::ResultSetManager.3.gz
+%%PERL5_MAN3%%/DBIx::Class::ResultSource.3.gz
+%%PERL5_MAN3%%/DBIx::Class::ResultSource::Table.3.gz
+%%PERL5_MAN3%%/DBIx::Class::ResultSource::View.3.gz
+%%PERL5_MAN3%%/DBIx::Class::ResultSourceHandle.3.gz
+%%PERL5_MAN3%%/DBIx::Class::ResultSourceProxy::Table.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Row.3.gz
+%%PERL5_MAN3%%/DBIx::Class::SQLMaker.3.gz
+%%PERL5_MAN3%%/DBIx::Class::SQLMaker::LimitDialects.3.gz
+%%PERL5_MAN3%%/DBIx::Class::SQLMaker::OracleJoins.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Versioned.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Serialize::Storable.3.gz
+%%PERL5_MAN3%%/DBIx::Class::StartupCheck.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::BlockRunner.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::ACCESS.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::ADO.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::ADO::MS_Jet.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::ADO::MS_Jet::Cursor.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::ADO::Microsoft_SQL_Server.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::ADO::Microsoft_SQL_Server::Cursor.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::AutoCast.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::Cursor.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::DB2.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::Firebird.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::Firebird::Common.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::IdentityInsert.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::Informix.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::InterBase.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::MSSQL.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::NoBindVars.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::ODBC.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::ODBC::ACCESS.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::ODBC::DB2_400_SQL.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::ODBC::Firebird.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::ODBC::Microsoft_SQL_Server.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::ODBC::SQL_Anywhere.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::Oracle.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::Oracle::Generic.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::Oracle::WhereJoins.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::Pg.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::Replicated.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::Replicated::Balancer.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::Replicated::Balancer::First.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::Replicated::Balancer::Random.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::Replicated::Introduction.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::Replicated::Pool.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::Replicated::Replicant.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::Replicated::WithDSN.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::SQLAnywhere.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::SQLAnywhere::Cursor.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::SQLite.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::Sybase.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::Sybase::ASE.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::Sybase::ASE::NoBindVars.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::Sybase::FreeTDS.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::Sybase::MSSQL.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::Sybase::Microsoft_SQL_Server.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::Sybase::Microsoft_SQL_Server::NoBindVars.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::UniqueIdentifier.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::DBI::mysql.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::Statistics.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::TxnScopeGuard.3.gz
+%%PERL5_MAN3%%/DBIx::Class::UTF8Columns.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Parser::DBIx::Class.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Producer::DBIx::Class::File.3.gz
 %%SITE_PERL%%/DBIx/Class.pm
 %%SITE_PERL%%/DBIx/Class/AccessorGroup.pm
 %%SITE_PERL%%/DBIx/Class/Admin.pm
@@ -176,6 +293,9 @@ bin/dbicadmin
 %%SITE_PERL%%/SQL/Translator/Parser/DBIx/Class.pm
 %%SITE_PERL%%/SQL/Translator/Producer/DBIx/Class/File.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/.packlist
+man/man1/dbicadmin.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
 @dirrmtry %%SITE_PERL%%/SQL/Translator/Producer/DBIx/Class
 @dirrmtry %%SITE_PERL%%/SQL/Translator/Producer/DBIx
 @dirrmtry %%SITE_PERL%%/SQL/Translator/Producer
@@ -217,5 +337,3 @@ bin/dbicadmin
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Admin
 @dirrmtry %%SITE_PERL%%/DBIx/Class
 @dirrmtry %%SITE_PERL%%/DBIx
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx

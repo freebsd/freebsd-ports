@@ -1,6 +1,8 @@
-%%SITE_PERL%%/Tie/RDBM.pm
+%%PERL5_MAN3%%/Tie::DBI.3.gz
+%%PERL5_MAN3%%/Tie::RDBM.3.gz
 %%SITE_PERL%%/Tie/DBI.pm
+%%SITE_PERL%%/Tie/RDBM.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/DBI/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/DBI
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
-@dirrm %%SITE_PERL%%/Tie
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/DBI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
+@dirrmtry %%SITE_PERL%%/Tie

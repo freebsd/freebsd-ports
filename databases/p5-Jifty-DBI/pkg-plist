@@ -1,4 +1,37 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/DBI/.packlist
+%%PERL5_MAN3%%/Jifty::DBI.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Collection.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Collection::Union.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Collection::Unique.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Column.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Filter.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Filter::Boolean.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Filter::Date.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Filter::DateTime.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Filter::Duration.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Filter::SaltHash.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Filter::Storable.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Filter::Time.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Filter::Truncate.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Filter::URI.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Filter::YAML.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Filter::base64.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Filter::utf8.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Handle.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Handle::Informix.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Handle::ODBC.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Handle::Oracle.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Handle::Pg.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Handle::SQLite.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Handle::Sybase.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Handle::mysql.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Handle::mysqlPP.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::HasFilters.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Record.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Record::Cachable.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Record::Memcached.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Record::Plugin.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::Schema.3.gz
+%%PERL5_MAN3%%/Jifty::DBI::SchemaGenerator.3.gz
 %%SITE_PERL%%/Jifty/DBI.pm
 %%SITE_PERL%%/Jifty/DBI/Collection.pm
 %%SITE_PERL%%/Jifty/DBI/Collection/Union.pm
@@ -33,11 +66,12 @@
 %%SITE_PERL%%/Jifty/DBI/Record/Plugin.pm
 %%SITE_PERL%%/Jifty/DBI/Schema.pm
 %%SITE_PERL%%/Jifty/DBI/SchemaGenerator.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/DBI/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/DBI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty
 @dirrmtry %%SITE_PERL%%/Jifty/DBI/Record
 @dirrmtry %%SITE_PERL%%/Jifty/DBI/Handle
 @dirrmtry %%SITE_PERL%%/Jifty/DBI/Filter
 @dirrmtry %%SITE_PERL%%/Jifty/DBI/Collection
 @dirrmtry %%SITE_PERL%%/Jifty/DBI
 @dirrmtry %%SITE_PERL%%/Jifty
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/DBI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty

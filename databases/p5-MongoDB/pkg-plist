@@ -1,21 +1,36 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/GridFS/File.pm
+%%PERL5_MAN3%%/MongoDB.3.gz
+%%PERL5_MAN3%%/MongoDB::BSON.3.gz
+%%PERL5_MAN3%%/MongoDB::Code.3.gz
+%%PERL5_MAN3%%/MongoDB::Collection.3.gz
+%%PERL5_MAN3%%/MongoDB::Connection.3.gz
+%%PERL5_MAN3%%/MongoDB::Cursor.3.gz
+%%PERL5_MAN3%%/MongoDB::DataTypes.3.gz
+%%PERL5_MAN3%%/MongoDB::Database.3.gz
+%%PERL5_MAN3%%/MongoDB::Examples.3.gz
+%%PERL5_MAN3%%/MongoDB::GridFS.3.gz
+%%PERL5_MAN3%%/MongoDB::GridFS::File.3.gz
+%%PERL5_MAN3%%/MongoDB::Indexing.3.gz
+%%PERL5_MAN3%%/MongoDB::OID.3.gz
+%%PERL5_MAN3%%/MongoDB::Timestamp.3.gz
+%%PERL5_MAN3%%/MongoDB::Tutorial.3.gz
+%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/BSON.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Code.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Connection.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Database.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/DataTypes.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Cursor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Collection.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Connection.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Cursor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/DataTypes.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Database.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Examples.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Indexing.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/GridFS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/GridFS/File.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Indexing.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/OID.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Timestamp.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Tutorial.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MongoDB/MongoDB.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MongoDB/MongoDB.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MongoDB/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MongoDB
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/GridFS
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MongoDB/MongoDB.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MongoDB/MongoDB.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MongoDB
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/GridFS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB

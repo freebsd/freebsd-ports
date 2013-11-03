@@ -17,10 +17,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		DBIx::Class::QueryLog.3 \
-		DBIx::Class::QueryLog::Analyzer.3 \
-		DBIx::Class::QueryLog::Query.3 \
-		DBIx::Class::QueryLog::Transaction.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -15,14 +15,10 @@ COMMENT=	Wrap all inserts into transaction
 BUILD_DEPENDS=	p5-DBIx-Class>=0:${PORTSDIR}/databases/p5-DBIx-Class \
 		p5-DBD-Mock>=0:${PORTSDIR}/databases/p5-DBD-Mock
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 TEST_DEPENDS=	p5-Test-Compile>=0.08:${PORTSDIR}/devel/p5-Test-Compile \
 		p5-Test-Pod>=1.22:${PORTSDIR}/devel/p5-Test-Pod
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		DBICx::TxnInsert.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

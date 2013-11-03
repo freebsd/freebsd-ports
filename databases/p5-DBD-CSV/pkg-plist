@@ -1,8 +1,10 @@
+%%PERL5_MAN3%%/Bundle::DBD::CSV.3.gz
+%%PERL5_MAN3%%/DBD::CSV.3.gz
 %%SITE_PERL%%/Bundle/DBD/CSV.pm
 %%SITE_PERL%%/DBD/CSV.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/CSV/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/CSV
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/CSV
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD
 @dirrmtry %%SITE_PERL%%/DBD
-@dirrm %%SITE_PERL%%/Bundle/DBD
+@dirrmtry %%SITE_PERL%%/Bundle/DBD
 @dirrmtry %%SITE_PERL%%/Bundle

@@ -22,7 +22,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	DBIWrapper.3 DBIWrapper::ResultSet.3 DBIWrapper::XMLParser.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

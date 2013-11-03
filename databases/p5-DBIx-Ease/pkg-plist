@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/DBIx::Ease.3.gz
 %%SITE_PERL%%/DBIx/Ease.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Ease/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Ease
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Ease
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
 @dirrmtry %%SITE_PERL%%/DBIx

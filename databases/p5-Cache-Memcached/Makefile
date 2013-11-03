@@ -20,7 +20,4 @@ RUN_DEPENDS=	p5-String-CRC32>0:${PORTSDIR}/devel/p5-String-CRC32
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Cache::Memcached.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

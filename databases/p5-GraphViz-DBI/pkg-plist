@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/GraphViz::DBI.3.gz
 %%SITE_PERL%%/GraphViz/DBI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GraphViz/DBI/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GraphViz/DBI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GraphViz/DBI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GraphViz
 @dirrmtry %%SITE_PERL%%/GraphViz

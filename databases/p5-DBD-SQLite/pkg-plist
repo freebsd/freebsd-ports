@@ -1,3 +1,5 @@
+%%PERL5_MAN3%%/DBD::SQLite.3.gz
+%%PERL5_MAN3%%/DBD::SQLite::Cookbook.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/SQLite.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/SQLite/Cookbook.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/SQLite/.packlist
@@ -11,6 +13,5 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/SQLite
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBD/SQLite
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBD

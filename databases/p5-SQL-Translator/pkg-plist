@@ -4,7 +4,81 @@ bin/sqlt-diff
 bin/sqlt-diff-old
 bin/sqlt-dumper
 bin/sqlt-graph
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Translator/.packlist
+%%PERL5_MAN3%%/SQL::Translator.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Diff.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Filter::DefaultExtra.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Filter::Globals.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Filter::Names.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Generator::DDL::PostgreSQL.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Generator::DDL::SQLServer.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Generator::DDL::SQLite.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Generator::Role::DDL.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Generator::Role::Quote.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Manual.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Parser.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Parser::Access.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Parser::DB2.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Parser::DBI.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Parser::DBI::DB2.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Parser::DBI::MySQL.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Parser::DBI::Oracle.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Parser::DBI::PostgreSQL.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Parser::DBI::SQLServer.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Parser::DBI::SQLite.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Parser::DBI::Sybase.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Parser::Excel.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Parser::MySQL.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Parser::Oracle.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Parser::PostgreSQL.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Parser::SQLServer.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Parser::SQLite.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Parser::Storable.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Parser::Sybase.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Parser::XML.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Parser::XML::SQLFairy.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Parser::YAML.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Parser::xSV.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Producer.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Producer::ClassDBI.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Producer::DB2.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Producer::DiaUml.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Producer::Diagram.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Producer::Dumper.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Producer::GraphViz.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Producer::HTML.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Producer::Latex.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Producer::MySQL.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Producer::Oracle.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Producer::POD.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Producer::PostgreSQL.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Producer::SQLServer.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Producer::SQLite.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Producer::Storable.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Producer::Sybase.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Producer::TT::Base.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Producer::TT::Table.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Producer::TTSchema.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Producer::XML.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Producer::XML::SQLFairy.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Producer::YAML.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Role::BuildArgs.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Role::Error.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Role::ListAttr.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Schema.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Schema::Constants.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Schema::Constraint.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Schema::Field.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Schema::Index.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Schema::Object.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Schema::Procedure.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Schema::Role::Compare.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Schema::Role::Extra.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Schema::Table.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Schema::Trigger.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Schema::View.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Types.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Utils.3.gz
+%%PERL5_MAN3%%/Test::SQL::Translator.3.gz
 %%SITE_PERL%%/SQL/Translator.pm
 %%SITE_PERL%%/SQL/Translator/Diff.pm
 %%SITE_PERL%%/SQL/Translator/Filter/DefaultExtra.pm
@@ -91,6 +165,15 @@ bin/sqlt-graph
 %%SITE_PERL%%/auto/share/dist/SQL-Translator/DiaUml/uml-class-start.tt2
 %%SITE_PERL%%/auto/share/dist/SQL-Translator/DiaUml/uml-class.tt2
 %%SITE_PERL%%/auto/share/dist/SQL-Translator/PrecompiledParsers/Parse/RecDescent/DDL/SQLT/README
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Translator/.packlist
+man/man1/sqlt-diagram.1.gz
+man/man1/sqlt-diff-old.1.gz
+man/man1/sqlt-diff.1.gz
+man/man1/sqlt-dumper.1.gz
+man/man1/sqlt-graph.1.gz
+man/man1/sqlt.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Translator
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL
 @dirrmtry %%SITE_PERL%%/auto/share/dist/SQL-Translator/PrecompiledParsers/Parse/RecDescent/DDL/SQLT
 @dirrmtry %%SITE_PERL%%/auto/share/dist/SQL-Translator/PrecompiledParsers/Parse/RecDescent/DDL
 @dirrmtry %%SITE_PERL%%/auto/share/dist/SQL-Translator/PrecompiledParsers/Parse/RecDescent
@@ -98,6 +181,8 @@ bin/sqlt-graph
 @dirrmtry %%SITE_PERL%%/auto/share/dist/SQL-Translator/PrecompiledParsers
 @dirrmtry %%SITE_PERL%%/auto/share/dist/SQL-Translator/DiaUml
 @dirrmtry %%SITE_PERL%%/auto/share/dist/SQL-Translator
+@dirrmtry %%SITE_PERL%%/auto/share/dist
+@dirrmtry %%SITE_PERL%%/auto/share
 @dirrmtry %%SITE_PERL%%/Test/SQL
 @dirrmtry %%SITE_PERL%%/Test
 @dirrmtry %%SITE_PERL%%/SQL/Translator/Schema/Role
@@ -116,5 +201,3 @@ bin/sqlt-graph
 @dirrmtry %%SITE_PERL%%/SQL/Translator/Filter
 @dirrmtry %%SITE_PERL%%/SQL/Translator
 @dirrmtry %%SITE_PERL%%/SQL
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Translator
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL

@@ -1,24 +1,46 @@
-%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Inflator/Find.pm
-%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Inflator/Env.pm
+%%PERL5_MAN3%%/DBIx::Class::Schema::PopulateMore.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::PopulateMore::Command.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::PopulateMore::Inflator.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::PopulateMore::Inflator::Date.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::PopulateMore::Inflator::Env.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::PopulateMore::Inflator::Find.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::PopulateMore::Inflator::Index.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::PopulateMore::Test::Schema.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::PopulateMore::Test::Schema::Result.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::PopulateMore::Test::Schema::Result::Company.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::PopulateMore::Test::Schema::Result::CompanyPerson.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::PopulateMore::Test::Schema::Result::EmploymentHistory.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::PopulateMore::Test::Schema::Result::FriendList.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::PopulateMore::Test::Schema::Result::Gender.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::PopulateMore::Test::Schema::Result::Person.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::PopulateMore::Test::Schema::ResultSet.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::PopulateMore::Test::Schema::ResultSet::Person.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::PopulateMore::Visitor.3.gz
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore.pm
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Command.pm
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Inflator.pm
 %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Inflator/Date.pm
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Inflator/Env.pm
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Inflator/Find.pm
 %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Inflator/Index.pm
-%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/Result/FriendList.pm
-%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/Result/CompanyPerson.pm
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema.pm
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/Result.pm
 %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/Result/Company.pm
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/Result/CompanyPerson.pm
 %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/Result/EmploymentHistory.pm
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/Result/FriendList.pm
 %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/Result/Gender.pm
 %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/Result/Person.pm
-%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/ResultSet/Person.pm
 %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/ResultSet.pm
-%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/Result.pm
-%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema.pm
-%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Inflator.pm
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/ResultSet/Person.pm
 %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Visitor.pm
-%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Command.pm
-%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema/PopulateMore/.packlist
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/Result
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema/PopulateMore
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/ResultSet
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/Result
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Inflator
@@ -26,7 +48,3 @@
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Schema
 @dirrmtry %%SITE_PERL%%/DBIx/Class
 @dirrmtry %%SITE_PERL%%/DBIx
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema/PopulateMore
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx

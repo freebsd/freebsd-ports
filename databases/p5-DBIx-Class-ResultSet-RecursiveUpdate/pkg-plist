@@ -1,7 +1,10 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/ResultSet/RecursiveUpdate/.packlist
+%%PERL5_MAN3%%/DBIx::Class::ResultSet::RecursiveUpdate.3.gz
 %%SITE_PERL%%/DBIx/Class/ResultSet/RecursiveUpdate.pm
-@dirrmtry %%SITE_PERL%%/DBIx/Class/ResultSet
-@dirrmtry %%SITE_PERL%%/DBIx/Class
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/ResultSet/RecursiveUpdate/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/ResultSet/RecursiveUpdate
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/ResultSet
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
+@dirrmtry %%SITE_PERL%%/DBIx/Class/ResultSet
+@dirrmtry %%SITE_PERL%%/DBIx/Class
+@dirrmtry %%SITE_PERL%%/DBIx

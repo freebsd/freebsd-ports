@@ -22,7 +22,4 @@ USE_PERL5=	configure
 CONFIGURE_ARGS=	< /dev/null
 .endif
 
-MAN3=		DBD::Sybase.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

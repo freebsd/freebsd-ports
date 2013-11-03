@@ -13,7 +13,4 @@ COMMENT=	Perl5 module to handle HP 200LX palmtop computer databases
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		HP200LX::DB.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

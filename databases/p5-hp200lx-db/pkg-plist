@@ -1,16 +1,17 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HP200LX/DB/.packlist
+%%PERL5_MAN3%%/HP200LX::DB.3.gz
 %%SITE_PERL%%/HP200LX/DB.pm
 %%SITE_PERL%%/HP200LX/DB/adb.pm
+%%SITE_PERL%%/HP200LX/DB/diag.pm
 %%SITE_PERL%%/HP200LX/DB/recurrence.pm
 %%SITE_PERL%%/HP200LX/DB/tools.pm
 %%SITE_PERL%%/HP200LX/DB/vpt.pm
-%%SITE_PERL%%/HP200LX/DB/diag.pm
 %%SITE_PERL%%/HP200LX/DBgui.pm
 %%SITE_PERL%%/HP200LX/DBgui/card.pm
 %%SITE_PERL%%/HP200LX/DBgui/list.pm
 %%SITE_PERL%%/HP200LX/DBgui/vpt.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HP200LX/DB
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HP200LX
-@dirrm %%SITE_PERL%%/HP200LX/DB
-@dirrm %%SITE_PERL%%/HP200LX/DBgui
-@dirrm %%SITE_PERL%%/HP200LX
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HP200LX/DB/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HP200LX/DB
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HP200LX
+@dirrmtry %%SITE_PERL%%/HP200LX/DBgui
+@dirrmtry %%SITE_PERL%%/HP200LX/DB
+@dirrmtry %%SITE_PERL%%/HP200LX

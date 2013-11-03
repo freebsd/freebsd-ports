@@ -1,4 +1,14 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Database/.packlist
+%%PERL5_MAN3%%/Test::Database.3.gz
+%%PERL5_MAN3%%/Test::Database::Driver.3.gz
+%%PERL5_MAN3%%/Test::Database::Driver::CSV.3.gz
+%%PERL5_MAN3%%/Test::Database::Driver::DBM.3.gz
+%%PERL5_MAN3%%/Test::Database::Driver::Pg.3.gz
+%%PERL5_MAN3%%/Test::Database::Driver::SQLite.3.gz
+%%PERL5_MAN3%%/Test::Database::Driver::SQLite2.3.gz
+%%PERL5_MAN3%%/Test::Database::Driver::mysql.3.gz
+%%PERL5_MAN3%%/Test::Database::Handle.3.gz
+%%PERL5_MAN3%%/Test::Database::Tutorial.3.gz
+%%PERL5_MAN3%%/Test::Database::Util.3.gz
 %%SITE_PERL%%/Test/Database.pm
 %%SITE_PERL%%/Test/Database/Driver.pm
 %%SITE_PERL%%/Test/Database/Driver/CSV.pm
@@ -10,8 +20,9 @@
 %%SITE_PERL%%/Test/Database/Handle.pm
 %%SITE_PERL%%/Test/Database/Tutorial.pod
 %%SITE_PERL%%/Test/Database/Util.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Database
-@dirrm %%SITE_PERL%%/Test/Database/Driver
-@dirrm %%SITE_PERL%%/Test/Database
-@dirrmtry %%SITE_PERL%%/Test
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Database/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Database
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test/Database/Driver
+@dirrmtry %%SITE_PERL%%/Test/Database
+@dirrmtry %%SITE_PERL%%/Test

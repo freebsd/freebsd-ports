@@ -17,12 +17,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure patch
 
-MAN3=		POE::Component::LaDBI.3 POE::Component::LaDBI::Commands.3 \
-		POE::Component::LaDBI::Engine.3 \
-		POE::Component::LaDBI::Request.3 \
-		POE::Component::LaDBI::Response.3
-
-NO_STAGE=	yes
 post-extract:
 	${RM} ${WRKSRC}/*.pl
 

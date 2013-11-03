@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/DateTime/Epoch/.packlist
+%%PERL5_MAN3%%/DBIx::Class::DateTime::Epoch.3.gz
 %%SITE_PERL%%/DBIx/Class/DateTime/Epoch.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/DateTime/Epoch/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/DateTime/Epoch
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/DateTime
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class

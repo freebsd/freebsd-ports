@@ -1,3 +1,6 @@
+%%PERL5_MAN3%%/Redis.3.gz
+%%PERL5_MAN3%%/Redis::Hash.3.gz
+%%PERL5_MAN3%%/Redis::List.3.gz
 %%SITE_PERL%%/Redis.pm
 %%SITE_PERL%%/Redis/Hash.pm
 %%SITE_PERL%%/Redis/List.pm

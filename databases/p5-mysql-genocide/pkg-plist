@@ -1,0 +1,4 @@
+bin/mysql-genocide
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/mysql-genocide/.packlist
+man/man1/mysql-genocide.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/mysql-genocide

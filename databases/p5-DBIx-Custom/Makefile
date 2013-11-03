@@ -22,17 +22,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		DBIx::Custom.3 \
-		DBIx::Custom::Mapper.3 \
-		DBIx::Custom::Model.3 \
-		DBIx::Custom::NotExists.3 \
-		DBIx::Custom::Order.3 \
-		DBIx::Custom::Query.3 \
-		DBIx::Custom::QueryBuilder.3 \
-		DBIx::Custom::Result.3 \
-		DBIx::Custom::Tag.3 \
-		DBIx::Custom::Util.3 \
-		DBIx::Custom::Where.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,10 +1,17 @@
-%%SITE_PERL%%/DBIx/Class/Loader/Writing.pm
-%%SITE_PERL%%/DBIx/Class/Loader/mysql.pm
+%%PERL5_MAN3%%/DBIx::Class::Loader.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Loader::DB2.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Loader::Generic.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Loader::Pg.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Loader::SQLite.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Loader::Writing.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Loader::mysql.3.gz
+%%SITE_PERL%%/DBIx/Class/Loader.pm
 %%SITE_PERL%%/DBIx/Class/Loader/DB2.pm
 %%SITE_PERL%%/DBIx/Class/Loader/Generic.pm
 %%SITE_PERL%%/DBIx/Class/Loader/Pg.pm
 %%SITE_PERL%%/DBIx/Class/Loader/SQLite.pm
-%%SITE_PERL%%/DBIx/Class/Loader.pm
+%%SITE_PERL%%/DBIx/Class/Loader/Writing.pm
+%%SITE_PERL%%/DBIx/Class/Loader/mysql.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Loader/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Loader
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class

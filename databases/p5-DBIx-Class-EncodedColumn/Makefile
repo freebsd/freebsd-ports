@@ -24,13 +24,6 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 USES=		perl5
 USE_PERL5=	configure extract
 
-MAN3=	DBIx::Class::EncodedColumn.3 \
-	DBIx::Class::EncodedColumn::Crypt.3 \
-	DBIx::Class::EncodedColumn::Crypt::Eksblowfish::Bcrypt.3 \
-	DBIx::Class::EncodedColumn::Crypt::OpenPGP.3 \
-	DBIx::Class::EncodedColumn::Digest.3
-
-NO_STAGE=	yes
 post-extract:
 	@${PERL} -i -ne 'print unless m,^build_requires, || m,^feature, .. m,;,' ${WRKSRC}/Makefile.PL
 
