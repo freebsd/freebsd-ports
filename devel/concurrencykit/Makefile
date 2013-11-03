@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	concurrencykit
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	devel
 MASTER_SITES=	http://concurrencykit.org/releases/ \
 		http://repnop.org/releases/
