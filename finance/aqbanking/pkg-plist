@@ -1,7 +1,7 @@
 bin/aqbanking-cli
 bin/aqbanking-config
 bin/aqhbci-tool4
-%%WITH_PAYPAL%%bin/aqpaypal-tool
+%%PAYPAL%%bin/aqpaypal-tool
 bin/hbcixml3
 include/aqbanking5/aqbanking/ab_accountqueue.h
 include/aqbanking5/aqbanking/ab_accountqueuefns.h
@@ -118,9 +118,9 @@ include/aqbanking5/aqofxconnect/oh_institute_spec_fns.h
 include/aqbanking5/aqofxconnect/provider.h
 include/aqbanking5/aqofxconnect/user.h
 include/aqbanking5/aqofxconnect/version.h
-%%WITH_PAYPAL%%include/aqpaypal/aqpaypal.h
-%%WITH_PAYPAL%%include/aqpaypal/provider.h
-%%WITH_PAYPAL%%include/aqpaypal/user.h
+%%PAYPAL%%include/aqpaypal/aqpaypal.h
+%%PAYPAL%%include/aqpaypal/provider.h
+%%PAYPAL%%include/aqpaypal/user.h
 lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/bankinfo/at.a
 lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/bankinfo/at.la
 lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/bankinfo/at.so
@@ -197,10 +197,10 @@ lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqofxconnect.a
 lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqofxconnect.la
 lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqofxconnect.so
 lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqofxconnect.xml
-%%WITH_PAYPAL%%lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqpaypal.a
-%%WITH_PAYPAL%%lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqpaypal.la
-%%WITH_PAYPAL%%lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqpaypal.so
-%%WITH_PAYPAL%%lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqpaypal.xml
+%%PAYPAL%%lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqpaypal.a
+%%PAYPAL%%lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqpaypal.la
+%%PAYPAL%%lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqpaypal.so
+%%PAYPAL%%lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqpaypal.xml
 lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/dbio/dtaus.a
 lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/dbio/dtaus.la
 lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/dbio/dtaus.so
@@ -229,10 +229,10 @@ lib/libaqofxconnect.a
 lib/libaqofxconnect.la
 lib/libaqofxconnect.so
 lib/libaqofxconnect.so.7
-%%WITH_PAYPAL%%lib/libaqpaypal.a
-%%WITH_PAYPAL%%lib/libaqpaypal.la
-%%WITH_PAYPAL%%lib/libaqpaypal.so
-%%WITH_PAYPAL%%lib/libaqpaypal.so.0
+%%PAYPAL%%lib/libaqpaypal.a
+%%PAYPAL%%lib/libaqpaypal.la
+%%PAYPAL%%lib/libaqpaypal.so
+%%PAYPAL%%lib/libaqpaypal.so.0
 libdata/pkgconfig/aqbanking.pc
 share/aclocal/aqbanking.m4
 share/aqbanking/aqbanking/typemaker2/c/ab_account.tm2
@@ -261,8 +261,8 @@ share/aqbanking/backends/aqofxconnect/dialogs/dlg_edituser.dlg
 share/aqbanking/backends/aqofxconnect/dialogs/dlg_getinst.dlg
 share/aqbanking/backends/aqofxconnect/dialogs/dlg_newuser.dlg
 share/aqbanking/backends/aqofxconnect/dialogs/dlg_ofx_special.dlg
-%%WITH_PAYPAL%%share/aqbanking/backends/aqpaypal/dialogs/dlg_edituser.dlg
-%%WITH_PAYPAL%%share/aqbanking/backends/aqpaypal/dialogs/dlg_newuser.dlg
+%%PAYPAL%%share/aqbanking/backends/aqpaypal/dialogs/dlg_edituser.dlg
+%%PAYPAL%%share/aqbanking/backends/aqpaypal/dialogs/dlg_newuser.dlg
 share/aqbanking/bankinfo/at/banks.data
 share/aqbanking/bankinfo/at/bic.idx
 share/aqbanking/bankinfo/at/blz.idx
@@ -343,10 +343,10 @@ share/aqbanking/typemaker2/c/ab_queue.tm2
 share/aqbanking/typemaker2/c/ab_userqueue.tm2
 share/aqbanking/typemaker2/c/ab_userqueue_list.tm2
 share/doc/aqhbci/aqhbci-tool/README
-%%WITH_PAYPAL%%share/doc/aqpaypal/aqpaypal-tool/README
+%%PAYPAL%%share/doc/aqpaypal/aqpaypal-tool/README
 share/locale/de/LC_MESSAGES/aqbanking.mo
-%%WITH_PAYPAL%%@dirrm share/doc/aqpaypal/aqpaypal-tool
-%%WITH_PAYPAL%%@dirrm share/doc/aqpaypal
+%%PAYPAL%%@dirrm share/doc/aqpaypal/aqpaypal-tool
+%%PAYPAL%%@dirrm share/doc/aqpaypal
 @dirrm share/doc/aqhbci/aqhbci-tool
 @dirrm share/doc/aqhbci
 @dirrm share/aqbanking/typemaker2/c
@@ -383,8 +383,8 @@ share/locale/de/LC_MESSAGES/aqbanking.mo
 @dirrm share/aqbanking/bankinfo/ca
 @dirrm share/aqbanking/bankinfo/at
 @dirrm share/aqbanking/bankinfo
-%%WITH_PAYPAL%%@dirrm share/aqbanking/backends/aqpaypal/dialogs
-%%WITH_PAYPAL%%@dirrm share/aqbanking/backends/aqpaypal
+%%PAYPAL%%@dirrm share/aqbanking/backends/aqpaypal/dialogs
+%%PAYPAL%%@dirrm share/aqbanking/backends/aqpaypal
 @dirrm share/aqbanking/backends/aqofxconnect/dialogs
 @dirrm share/aqbanking/backends/aqofxconnect
 @dirrm share/aqbanking/backends/aqhbci/dialogs
@@ -400,7 +400,7 @@ share/locale/de/LC_MESSAGES/aqbanking.mo
 @dirrm lib/aqbanking/plugins/%%AQB_SHLIB_VER%%
 @dirrm lib/aqbanking/plugins
 @dirrm lib/aqbanking
-%%WITH_PAYPAL%%@dirrm include/aqpaypal
+%%PAYPAL%%@dirrm include/aqpaypal
 @dirrm include/aqbanking5/aqofxconnect
 @dirrm include/aqbanking5/aqhbci
 @dirrm include/aqbanking5/aqbankingpp
