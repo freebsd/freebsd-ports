@@ -89,7 +89,7 @@ USES=		perl5
 USE_PERL5=	configure
 
 OPTIONS_DEFINE=	DEPLOY FASTCGI TOCGEN RECAPTCHA SYNTAX_HIGHLIGHT RSS_FORMATTER \
-		DOCBOOK_FORMATTER POD_FORMATTER TRANSCLUSION AMAZON EMOTICONS
+		DOCBOOK_FORMATTER POD_FORMATTER TRANSCLUSION AMAZON
 DEPLOY_DESC=		Automatic database deployment
 TOCGEN_DESC=		Table of Contents generator
 RECAPTCHA_DESC=		reCAPTCHA for anonymous edits
@@ -99,7 +99,6 @@ DOCBOOK_FORMATTER_DESC=	DocBook formatter
 POD_FORMATTER_DESC=	POD formatter
 TRANSCLUSION_DESC=	Transclusion support
 AMAZON_DESC=		Amazon boxes
-EMOTICONS_DESC=		Emoticons
 
 DEPLOY_BUILD_DEPENDS=		p5-SQL-Translator>=0.09006:${PORTSDIR}/databases/p5-SQL-Translator
 DEPLOY_RUN_DEPENDS=		p5-SQL-Translator>=0.09006:${PORTSDIR}/databases/p5-SQL-Translator
@@ -125,7 +124,5 @@ TRANSCLUSION_RUN_DEPENDS=	p5-URI-Fetch>=0:${PORTSDIR}/www/p5-URI-Fetch \
 				p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 AMAZON_BUILD_DEPENDS=		p5-Net-Amazon>=0:${PORTSDIR}/net/p5-Net-Amazon
 AMAZON_RUN_DEPENDS=		p5-Net-Amazon>=0:${PORTSDIR}/net/p5-Net-Amazon
-EMOTICONS_BUILD_DEPENDS=	p5-Text-Emoticon-MSN>=0:${PORTSDIR}/textproc/p5-Text-Emoticon-MSN
-EMOTICONS_RUN_DEPENDS=		p5-Text-Emoticon-MSN>=0:${PORTSDIR}/textproc/p5-Text-Emoticon-MSN
 
 .include <bsd.port.mk>
