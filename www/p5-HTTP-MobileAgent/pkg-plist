@@ -9,6 +9,14 @@
 %%SITE_PERL%%/HTTP/MobileAgent/Request.pm
 %%SITE_PERL%%/HTTP/MobileAgent/Vodafone.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/MobileAgent/.packlist
+%%PERL5_MAN3%%/HTTP::MobileAgent.3.gz
+%%PERL5_MAN3%%/HTTP::MobileAgent::AirHPhone.3.gz
+%%PERL5_MAN3%%/HTTP::MobileAgent::Display.3.gz
+%%PERL5_MAN3%%/HTTP::MobileAgent::DoCoMo.3.gz
+%%PERL5_MAN3%%/HTTP::MobileAgent::EZweb.3.gz
+%%PERL5_MAN3%%/HTTP::MobileAgent::JPhone.3.gz
+%%PERL5_MAN3%%/HTTP::MobileAgent::NonMobile.3.gz
+%%PERL5_MAN3%%/HTTP::MobileAgent::Vodafone.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/MobileAgent
 @dirrm %%SITE_PERL%%/HTTP/MobileAgent
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP

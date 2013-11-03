@@ -1,5 +1,6 @@
 %%SITE_PERL%%/CGI/SSI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/SSI/.packlist
+%%PERL5_MAN3%%/CGI::SSI.3.gz
 @dirrmtry %%SITE_PERL%%/CGI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/SSI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI

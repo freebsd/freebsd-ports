@@ -17,11 +17,4 @@ TEST_DEPENDS=	p5-Test-Assertions>0:${PORTSDIR}/devel/p5-Test-Assertions
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Any::Template.3 Any::Template::Backend.3 \
-	Any::Template::Backend::HTML::Template.3 \
-	Any::Template::Backend::TemplateToolkit.3 \
-	Any::Template::Backend::Text::MicroMason.3 \
-	Any::Template::Backend::Text::Template.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

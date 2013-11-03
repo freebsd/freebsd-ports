@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Business/OnlinePayment/Cardstream.pm
 %%SITE_PERL%%/auto/Business/OnlinePayment/Cardstream/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/Cardstream/.packlist
+%%PERL5_MAN3%%/Business::OnlinePayment::Cardstream.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/Cardstream
 @dirrm %%SITE_PERL%%/auto/Business/OnlinePayment/Cardstream
 @dirrmtry %%SITE_PERL%%/auto/Business/OnlinePayment

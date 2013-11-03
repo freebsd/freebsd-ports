@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CatalystX/REPL/.packlist
 %%SITE_PERL%%/CatalystX/REPL.pm
+%%PERL5_MAN3%%/CatalystX::REPL.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CatalystX/REPL
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CatalystX
 @dirrmtry %%SITE_PERL%%/CatalystX

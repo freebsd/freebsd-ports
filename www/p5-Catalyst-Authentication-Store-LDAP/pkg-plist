@@ -2,6 +2,9 @@
 %%SITE_PERL%%/Catalyst/Authentication/Store/LDAP.pm
 %%SITE_PERL%%/Catalyst/Authentication/Store/LDAP/Backend.pm
 %%SITE_PERL%%/Catalyst/Authentication/Store/LDAP/User.pm
+%%PERL5_MAN3%%/Catalyst::Authentication::Store::LDAP.3.gz
+%%PERL5_MAN3%%/Catalyst::Authentication::Store::LDAP::Backend.3.gz
+%%PERL5_MAN3%%/Catalyst::Authentication::Store::LDAP::User.3.gz
 @dirrm %%SITE_PERL%%/Catalyst/Authentication/Store/LDAP
 @dirrmtry %%SITE_PERL%%/Catalyst/Authentication/Store
 @dirrmtry %%SITE_PERL%%/Catalyst/Authentication

@@ -18,9 +18,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Business::TW::TSIB::VirtualAccount.3
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/b//}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

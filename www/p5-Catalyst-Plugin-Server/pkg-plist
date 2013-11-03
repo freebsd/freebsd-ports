@@ -5,6 +5,11 @@ bin/rpc_client
 %%SITE_PERL%%/Catalyst/Plugin/Server/XMLRPC/DispatchType/XMLRPCPath.pm
 %%SITE_PERL%%/Catalyst/Plugin/Server/XMLRPC/DispatchType/XMLRPCRegex.pm
 %%SITE_PERL%%/Catalyst/Plugin/Server/XMLRPC/Tutorial.pod
+%%PERL5_MAN3%%/Catalyst::Plugin::Server.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::Server::XMLRPC.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::Server::XMLRPC::DispatchType::XMLRPCPath.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::Server::XMLRPC::DispatchType::XMLRPCRegex.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::Server::XMLRPC::Tutorial.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Server
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst

@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/JavaScript/.packlist
 %%SITE_PERL%%/Template/Plugin/JavaScript.pm
+%%PERL5_MAN3%%/Template::Plugin::JavaScript.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/JavaScript
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template

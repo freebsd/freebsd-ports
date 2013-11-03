@@ -25,14 +25,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		HTTP::MobileAgent.3 \
-		HTTP::MobileAgent::AirHPhone.3 \
-		HTTP::MobileAgent::Display.3 \
-		HTTP::MobileAgent::DoCoMo.3 \
-		HTTP::MobileAgent::EZweb.3 \
-		HTTP::MobileAgent::JPhone.3 \
-		HTTP::MobileAgent::NonMobile.3 \
-		HTTP::MobileAgent::Vodafone.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

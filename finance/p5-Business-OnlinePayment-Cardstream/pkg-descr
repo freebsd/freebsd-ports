@@ -1,3 +1,5 @@
 This is Business::OnlinePayment::Cardstream, an Business::OnlinePayment
 backend module for Cardstream. For information on obtaining a merchant
 account please visit http://www.cardstream.com or e-mail sales@cardstream.com.
+
+WWW: http://search.cpan.org/dist/Business-OnlinePayment-Cardstream/

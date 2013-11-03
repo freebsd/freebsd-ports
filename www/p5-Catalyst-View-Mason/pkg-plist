@@ -1,6 +1,8 @@
 %%SITE_PERL%%/Catalyst/Helper/View/Mason.pm
 %%SITE_PERL%%/Catalyst/View/Mason.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/Mason/.packlist
+%%PERL5_MAN3%%/Catalyst::Helper::View::Mason.3.gz
+%%PERL5_MAN3%%/Catalyst::View::Mason.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/Mason
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst

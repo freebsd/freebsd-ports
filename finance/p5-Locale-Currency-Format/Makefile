@@ -10,13 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl functions for formatting monetary values
 
+LICENSE=	ART20 GPLv1
+LICENSE_COMB=	dual
+
 USES=		perl5
 USE_PERL5=	configure
 
-LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
-
-MAN3=		Locale::Currency::Format.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 %%SITE_PERL%%/HTTP/Daemon.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Daemon/.packlist
+%%PERL5_MAN3%%/HTTP::Daemon.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Daemon
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
 @dirrmtry %%SITE_PERL%%/HTTP

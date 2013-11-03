@@ -2,6 +2,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Cookie/XS/XS.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Cookie/XS/XS.so
 %%SITE_PERL%%/%%PERL_ARCH%%/CGI/Cookie/XS.pm
+%%PERL5_MAN3%%/CGI::Cookie::XS.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Cookie/XS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Cookie
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI

@@ -1,5 +1,6 @@
 %%SITE_PERL%%/SWF/Chart.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/Chart/.packlist
+%%PERL5_MAN3%%/SWF::Chart.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/Chart
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF
 @dirrmtry %%SITE_PERL%%/SWF

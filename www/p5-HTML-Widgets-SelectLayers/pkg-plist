@@ -1,6 +1,7 @@
 %%SITE_PERL%%/HTML/Widgets/SelectLayers.pm
 %%SITE_PERL%%/HTML/Widgets/homepage.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Widgets/SelectLayers/.packlist
+%%PERL5_MAN3%%/HTML::Widgets::SelectLayers.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Widgets/SelectLayers
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Widgets
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML

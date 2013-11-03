@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Data/Currency.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Currency/.packlist
+%%PERL5_MAN3%%/Data::Currency.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Currency
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
 @dirrmtry %%SITE_PERL%%/Data

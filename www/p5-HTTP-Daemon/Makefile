@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple HTTP server class
 
+LICENSE=        ART10 GPLv1
+LICENSE_COMB=   dual
+
 BUILD_DEPENDS=	p5-HTTP-Date>=6:${PORTSDIR}/www/p5-HTTP-Date \
 		p5-HTTP-Message>=6:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-LWP-MediaTypes>=6:${PORTSDIR}/www/p5-LWP-MediaTypes
@@ -20,7 +23,4 @@ CONFLICTS=	p5-libwww-5*
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		HTTP::Daemon.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

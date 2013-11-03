@@ -8,6 +8,15 @@
 %%SITE_PERL%%/Net/Trac/TicketHistoryEntry.pm
 %%SITE_PERL%%/Net/Trac/TicketPropChange.pm
 %%SITE_PERL%%/Net/Trac/TicketSearch.pm
+%%PERL5_MAN3%%/Net::Trac.3.gz
+%%PERL5_MAN3%%/Net::Trac::Connection.3.gz
+%%PERL5_MAN3%%/Net::Trac::Mechanize.3.gz
+%%PERL5_MAN3%%/Net::Trac::Ticket.3.gz
+%%PERL5_MAN3%%/Net::Trac::TicketAttachment.3.gz
+%%PERL5_MAN3%%/Net::Trac::TicketHistory.3.gz
+%%PERL5_MAN3%%/Net::Trac::TicketHistoryEntry.3.gz
+%%PERL5_MAN3%%/Net::Trac::TicketPropChange.3.gz
+%%PERL5_MAN3%%/Net::Trac::TicketSearch.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Trac
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrmtry %%SITE_PERL%%/Net/Trac

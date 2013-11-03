@@ -5,6 +5,12 @@
 %%SITE_PERL%%/WebService/YouTube/Video.pm
 %%SITE_PERL%%/WebService/YouTube/Videos.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/YouTube/.packlist
+%%PERL5_MAN3%%/WebService::YouTube.3.gz
+%%PERL5_MAN3%%/WebService::YouTube::Feeds.3.gz
+%%PERL5_MAN3%%/WebService::YouTube::User.3.gz
+%%PERL5_MAN3%%/WebService::YouTube::Util.3.gz
+%%PERL5_MAN3%%/WebService::YouTube::Video.3.gz
+%%PERL5_MAN3%%/WebService::YouTube::Videos.3.gz
 @dirrm %%SITE_PERL%%/WebService/YouTube
 @dirrmtry %%SITE_PERL%%/WebService
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/YouTube
