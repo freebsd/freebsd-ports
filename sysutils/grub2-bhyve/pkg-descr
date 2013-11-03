@@ -1,0 +1,8 @@
+GNU GRUB is a multiboot boot loader.  It was derived from GRUB, the GRand
+Unified Bootloader, which was originally designed and implemented by Erich 
+Stefan Boleyn.
+
+This port builds the grub-bhyve binary, allowing booting of non-FreeBSD
+operating systems in bhyve.
+
+WWW: https://github.com/grehan-freebsd/grub2-bhyve
