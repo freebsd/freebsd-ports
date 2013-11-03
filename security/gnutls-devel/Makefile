@@ -3,7 +3,7 @@
 
 PORTNAME=	gnutls
 PORTVERSION=	2.99.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 MASTER_SITES=	http://alpha.gnu.org/gnu/gnutls/ \
 		ftp://ftp.gnutls.org/pub/gnutls/devel/
@@ -34,8 +34,8 @@ MANCOMPRESSED=	no
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if (defined(WITH_LIBTASN1) || exists(${LOCALBASE}/lib/libtasn1.so.5)) && !defined(WITHOUT_LIBTASN1)
-LIB_DEPENDS+=	tasn1.5:${PORTSDIR}/security/libtasn1
+.if (defined(WITH_LIBTASN1) || exists(${LOCALBASE}/lib/libtasn1.so.7)) && !defined(WITHOUT_LIBTASN1)
+LIB_DEPENDS+=	tasn1.7:${PORTSDIR}/security/libtasn1
 .else
 CONFIGURE_ARGS+=	--with-included-libtasn1
 .endif
