@@ -2,4 +2,8 @@
 %%SITE_PERL%%/HTML/FormatRTF.pm
 %%SITE_PERL%%/HTML/FormatText.pm
 %%SITE_PERL%%/HTML/Formatter.pm
+%%PERL5_MAN3%%/HTML::FormatPS.3.gz
+%%PERL5_MAN3%%/HTML::FormatRTF.3.gz
+%%PERL5_MAN3%%/HTML::FormatText.3.gz
+%%PERL5_MAN3%%/HTML::Formatter.3.gz
 @dirrmtry %%SITE_PERL%%/HTML
