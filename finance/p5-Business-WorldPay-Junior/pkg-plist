@@ -1,19 +1,21 @@
-%%SITE_PERL%%/auto/Business/WorldPay/Junior/new.al
-%%SITE_PERL%%/auto/Business/WorldPay/Junior/callback.al
-%%SITE_PERL%%/auto/Business/WorldPay/Junior/valid_callback_host.al
-%%SITE_PERL%%/auto/Business/WorldPay/Junior/register.al
-%%SITE_PERL%%/auto/Business/WorldPay/Junior/authorised.al
-%%SITE_PERL%%/auto/Business/WorldPay/Junior/errstr.al
-%%SITE_PERL%%/auto/Business/WorldPay/Junior/exchange_rate.al
-%%SITE_PERL%%/auto/Business/WorldPay/Junior/db_connect.al
-%%SITE_PERL%%/auto/Business/WorldPay/Junior/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/WorldPay/Junior/.packlist
+%%PERL5_MAN3%%/Business::WorldPay::Junior.3.gz
 %%SITE_PERL%%/Business/WorldPay/Junior.pm
 %%SITE_PERL%%/Business/WorldPay/get-rates.pl
-@dirrm %%SITE_PERL%%/auto/Business/WorldPay/Junior
-@dirrm %%SITE_PERL%%/auto/Business/WorldPay
-@dirrm %%SITE_PERL%%/Business/WorldPay
-@dirrmtry %%SITE_PERL%%/auto/Business
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/WorldPay/Junior
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/WorldPay
+%%SITE_PERL%%/auto/Business/WorldPay/Junior/authorised.al
+%%SITE_PERL%%/auto/Business/WorldPay/Junior/autosplit.ix
+%%SITE_PERL%%/auto/Business/WorldPay/Junior/callback.al
+%%SITE_PERL%%/auto/Business/WorldPay/Junior/db_connect.al
+%%SITE_PERL%%/auto/Business/WorldPay/Junior/errstr.al
+%%SITE_PERL%%/auto/Business/WorldPay/Junior/exchange_rate.al
+%%SITE_PERL%%/auto/Business/WorldPay/Junior/new.al
+%%SITE_PERL%%/auto/Business/WorldPay/Junior/register.al
+%%SITE_PERL%%/auto/Business/WorldPay/Junior/valid_callback_host.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/WorldPay/Junior/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/WorldPay/Junior
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/WorldPay
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
+@dirrmtry %%SITE_PERL%%/auto/Business/WorldPay/Junior
+@dirrmtry %%SITE_PERL%%/auto/Business/WorldPay
+@dirrmtry %%SITE_PERL%%/auto/Business
+@dirrmtry %%SITE_PERL%%/Business/WorldPay
+@dirrmtry %%SITE_PERL%%/Business

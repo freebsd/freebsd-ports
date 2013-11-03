@@ -2,13 +2,17 @@
 %%PERL5_MAN3%%/Business::OnlinePayment.3.gz
 %%PERL5_MAN3%%/Business::FraudDetect.3.gz
 %%PERL5_MAN3%%/Business::FraudDetect::preCharge.3.gz
+%%PERL5_MAN3%%/Business::FraudDetect.3.gz
+%%PERL5_MAN3%%/Business::FraudDetect::preCharge.3.gz
+%%PERL5_MAN3%%/Business::OnlinePayment.3.gz
 %%PERL5_MAN3%%/Business::OnlinePayment::HTTPS.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
 %%SITE_PERL%%/Business/FraudDetect.pm
-%%SITE_PERL%%/Business/OnlinePayment.pm
 %%SITE_PERL%%/Business/FraudDetect/preCharge.pm
+%%SITE_PERL%%/Business/OnlinePayment.pm
 %%SITE_PERL%%/Business/OnlinePayment/HTTPS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
 @dirrmtry %%SITE_PERL%%/Business/OnlinePayment
 @dirrmtry %%SITE_PERL%%/Business/FraudDetect
 @dirrmtry %%SITE_PERL%%/Business

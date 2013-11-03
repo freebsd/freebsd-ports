@@ -1,4 +1,8 @@
+%%PERL5_MAN3%%/Business::OnlinePayment::SurePay.3.gz
 %%SITE_PERL%%/Business/OnlinePayment/SurePay.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/SurePay/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/SurePay
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/SurePay
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
 @dirrmtry %%SITE_PERL%%/Business/OnlinePayment
+@dirrmtry %%SITE_PERL%%/Business

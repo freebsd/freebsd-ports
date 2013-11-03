@@ -1,8 +1,11 @@
+%%PERL5_MAN3%%/Business::OnlinePayment::OCV.3.gz
 %%SITE_PERL%%/Business/OnlinePayment/OCV.pm
 %%SITE_PERL%%/auto/Business/OnlinePayment/OCV/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/OCV/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/OCV
-@dirrm %%SITE_PERL%%/auto/Business/OnlinePayment/OCV
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/OCV
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
+@dirrmtry %%SITE_PERL%%/auto/Business/OnlinePayment/OCV
 @dirrmtry %%SITE_PERL%%/auto/Business/OnlinePayment
 @dirrmtry %%SITE_PERL%%/auto/Business
 @dirrmtry %%SITE_PERL%%/Business/OnlinePayment
