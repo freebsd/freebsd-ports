@@ -520,7 +520,6 @@
     SUBDIR += mkfwimage
     SUBDIR += mkntpwd
     SUBDIR += mksunbootcd
-    SUBDIR += mktool
     SUBDIR += mmore
     SUBDIR += modules
     SUBDIR += monit

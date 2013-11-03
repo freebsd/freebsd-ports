@@ -5158,3 +5158,7 @@ net-im/py-msnp||2013-10-31|Has expired: Primary MSN Messenger service terminated
 net-im/pymsn||2013-10-31|Has expired: Primary MSN Messenger service terminated 30 APR 2013
 net-im/tmsnc||2013-10-31|Has expired: Primary MSN Messenger service terminated 30 APR 2013
 mail/squirrelmail-postfixadmin-plugin|mail/postfixadmin|2013-11-01|Has expired: Now distributed with postfixadmin
+lang/dragonegg46||2013-11-03|Has expired: Upgrade to dragonegg46-33 or dragonegg47-33
+sysutils/mktool||2013-11-03|Has expired
+databases/ruby-memcache||2013-11-03|Has expired: Development has been abandoned upstream
+deskutils/blogtk||2013-11-03|Has expired: This is dead upstream and is no longer being maintained
