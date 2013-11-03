@@ -3,6 +3,7 @@
 
 PORTNAME=	netdisco
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF
 
@@ -38,6 +39,7 @@ USE_APACHE_RUN=	22+
 USE_RC_SUBR=	netdisco
 
 NO_BUILD=	yes
+NO_STAGE=	yes
 
 NETDISCO_RUNDIR=/var/run
 NETDISCO_DBDIR=	/var/db/netdisco
@@ -56,8 +58,7 @@ CONFIG_FILES=	netdisco.conf netdisco.crontab netdisco-topology.txt \
 
 DOCFILES=	ChangeLog doc/*.pod INSTALL README* UPGRADE
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 MIBSDIR=	${PREFIX}/share/netdisco-mibs
 .if ${PORT_OPTIONS:MMIBS}
@@ -150,4 +151,4 @@ post-install:
 .	endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
