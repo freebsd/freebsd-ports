@@ -10,6 +10,9 @@ MASTER_SITES=	http://novel.evilcoder.org/ecru/files/
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Flexible command line LiveJournal client
 
+DEPRECATED=	No longer maintained upstream
+EXPIRATION_DATE=	2013-12-01
+
 LIB_DEPENDS=	xmlrpc.3:${PORTSDIR}/net/xmlrpc-c \
 		config++.10:${PORTSDIR}/devel/libconfig \
 		glibmm-2.4.1:${PORTSDIR}/devel/glibmm
