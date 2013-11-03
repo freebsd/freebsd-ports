@@ -1,5 +1,4 @@
 %%SITE_PERL%%/Finance/Currency/Convert/WebserviceX.pm
-%%PERL5_MAN3%%/Finance::Currency::Convert::WebserviceX.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Currency/Convert/WebserviceX/.packlist
 %%PERL5_MAN3%%/Finance::Currency::Convert::WebserviceX.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Currency/Convert/WebserviceX
