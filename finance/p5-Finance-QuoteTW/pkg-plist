@@ -9,6 +9,16 @@
 %%SITE_PERL%%/Finance/QuoteTW/Paradigm.pm
 %%SITE_PERL%%/Finance/QuoteTW/Schroders.pm
 %%SITE_PERL%%/Finance/QuoteTW/Tisc.pm
+%%PERL5_MAN3%%/Finance::QuoteTW.3.gz
+%%PERL5_MAN3%%/Finance::QuoteTW::Allianz.3.gz
+%%PERL5_MAN3%%/Finance::QuoteTW::Blackrock.3.gz
+%%PERL5_MAN3%%/Finance::QuoteTW::Capital.3.gz
+%%PERL5_MAN3%%/Finance::QuoteTW::Franklin.3.gz
+%%PERL5_MAN3%%/Finance::QuoteTW::Iit.3.gz
+%%PERL5_MAN3%%/Finance::QuoteTW::Jpmrich.3.gz
+%%PERL5_MAN3%%/Finance::QuoteTW::Paradigm.3.gz
+%%PERL5_MAN3%%/Finance::QuoteTW::Schroders.3.gz
+%%PERL5_MAN3%%/Finance::QuoteTW::Tisc.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/QuoteTW
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance
 @dirrmtry %%SITE_PERL%%/Finance/QuoteTW

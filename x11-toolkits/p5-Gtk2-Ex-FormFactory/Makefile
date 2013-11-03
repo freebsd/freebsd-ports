@@ -21,46 +21,4 @@ RUN_DEPENDS=	p5-Glib2>=1.00:${PORTSDIR}/devel/p5-Glib2 \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Gtk2::Ex::FormFactory.3 \
-		Gtk2::Ex::FormFactory::Button.3 \
-		Gtk2::Ex::FormFactory::CheckButton.3 \
-		Gtk2::Ex::FormFactory::CheckButtonGroup.3 \
-		Gtk2::Ex::FormFactory::Combo.3 \
-		Gtk2::Ex::FormFactory::Container.3 \
-		Gtk2::Ex::FormFactory::Context.3 \
-		Gtk2::Ex::FormFactory::DialogButtons.3 \
-		Gtk2::Ex::FormFactory::Entry.3 \
-		Gtk2::Ex::FormFactory::ExecFlow.3 \
-		Gtk2::Ex::FormFactory::Expander.3 \
-		Gtk2::Ex::FormFactory::Form.3 \
-		Gtk2::Ex::FormFactory::GtkWidget.3 \
-		Gtk2::Ex::FormFactory::HBox.3 \
-		Gtk2::Ex::FormFactory::HPaned.3 \
-		Gtk2::Ex::FormFactory::HSeparator.3 \
-		Gtk2::Ex::FormFactory::Image.3 \
-		Gtk2::Ex::FormFactory::Intro.3 \
-		Gtk2::Ex::FormFactory::Label.3 \
-		Gtk2::Ex::FormFactory::Layout.3 \
-		Gtk2::Ex::FormFactory::List.3 \
-		Gtk2::Ex::FormFactory::Loader.3 \
-		Gtk2::Ex::FormFactory::Menu.3 \
-		Gtk2::Ex::FormFactory::Notebook.3 \
-		Gtk2::Ex::FormFactory::Popup.3 \
-		Gtk2::Ex::FormFactory::ProgressBar.3 \
-		Gtk2::Ex::FormFactory::Proxy.3 \
-		Gtk2::Ex::FormFactory::ProxyBuffered.3 \
-		Gtk2::Ex::FormFactory::RadioButton.3 \
-		Gtk2::Ex::FormFactory::Rules.3 \
-		Gtk2::Ex::FormFactory::Table.3 \
-		Gtk2::Ex::FormFactory::TextView.3 \
-		Gtk2::Ex::FormFactory::Timestamp.3 \
-		Gtk2::Ex::FormFactory::ToggleButton.3 \
-		Gtk2::Ex::FormFactory::VBox.3 \
-		Gtk2::Ex::FormFactory::VPaned.3 \
-		Gtk2::Ex::FormFactory::VSeparator.3 \
-		Gtk2::Ex::FormFactory::Widget.3 \
-		Gtk2::Ex::FormFactory::Window.3 \
-		Gtk2::Ex::FormFactory::YesNo.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

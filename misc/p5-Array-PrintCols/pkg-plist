@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Array/PrintCols.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/PrintCols/.packlist
+%%PERL5_MAN3%%/Array::PrintCols.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/PrintCols
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array
 @dirrmtry %%SITE_PERL%%/Array

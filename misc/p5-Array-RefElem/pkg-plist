@@ -2,6 +2,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/RefElem/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/RefElem/RefElem.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/RefElem/RefElem.so
+%%PERL5_MAN3%%/Array::RefElem.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/RefElem
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Array

@@ -16,10 +16,4 @@ USES=		perl5
 USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/asterisk-perl-${PORTVERSION}
 
-MAN3=		Asterisk::AGI.3 \
-		Asterisk::Manager.3 \
-		Asterisk::Outgoing.3 \
-		Asterisk::Voicemail.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

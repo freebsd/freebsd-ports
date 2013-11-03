@@ -13,6 +13,18 @@
 %%SITE_PERL%%/Tk/TabFrame.pm
 %%SITE_PERL%%/Tk/TabbedForm.pm
 %%SITE_PERL%%/Tk/TableEdit.pm
+%%PERL5_MAN3%%/Tk::CheckBox.3.gz
+%%PERL5_MAN3%%/Tk::Columns.3.gz
+%%PERL5_MAN3%%/Tk::ComboEntry.3.gz
+%%PERL5_MAN3%%/Tk::CornerBox.3.gz
+%%PERL5_MAN3%%/Tk::DockFrame.3.gz
+%%PERL5_MAN3%%/Tk::IconCanvas.3.gz
+%%PERL5_MAN3%%/Tk::Menustrip.3.gz
+%%PERL5_MAN3%%/Tk::ProgressIndicator.3.gz
+%%PERL5_MAN3%%/Tk::SplitFrame.3.gz
+%%PERL5_MAN3%%/Tk::TabFrame.3.gz
+%%PERL5_MAN3%%/Tk::TabbedForm.3.gz
+%%PERL5_MAN3%%/Tk::TableEdit.3.gz
 @dirrmtry %%SITE_PERL%%/Tk
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/DKW
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk

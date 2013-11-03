@@ -16,7 +16,4 @@ RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Geo::Weather.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

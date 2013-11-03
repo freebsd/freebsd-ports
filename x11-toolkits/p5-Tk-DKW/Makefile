@@ -20,9 +20,7 @@ USE_PERL5=	configure
 DKW_MODULES=	CheckBox Columns ComboEntry CornerBox DockFrame IconCanvas\
 		Menustrip ProgressIndicator SplitFrame TabFrame TabbedForm\
 		TableEdit
-MAN3=		${DKW_MODULES:S/^/Tk::/:S/$/.3/}
 
-NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKSRC}/Tk/* ${WRKSRC}/
 	@${RMDIR} ${WRKSRC}/Tk/

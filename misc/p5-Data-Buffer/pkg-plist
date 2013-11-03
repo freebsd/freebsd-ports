@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Buffer/.packlist
 %%SITE_PERL%%/Data/Buffer.pm
+%%PERL5_MAN3%%/Data::Buffer.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Buffer
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
 @dirrm %%SITE_PERL%%/Data

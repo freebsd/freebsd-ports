@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Locale/US.pm
 %%SITE_PERL%%/Locale/kruft2codes.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/US/.packlist
+%%PERL5_MAN3%%/Locale::US.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/US
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale
 @dirrmtry %%SITE_PERL%%/Locale

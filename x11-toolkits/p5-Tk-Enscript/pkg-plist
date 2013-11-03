@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Tk/Enscript.pm
 %%SITE_PERL%%/Tk/enscript.cfg
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Enscript/.packlist
+%%PERL5_MAN3%%/Tk::Enscript.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Enscript
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk
 @dirrmtry %%SITE_PERL%%/Tk

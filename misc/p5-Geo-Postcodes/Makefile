@@ -14,12 +14,4 @@ COMMENT=	Base class for the Geo::Postcodes::XX modules
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Geo::Postcodes.3 \
-		Geo::Postcodes::Ajax.3 \
-		Geo::Postcodes::Selection.3 \
-		Geo::Postcodes::Subclass.3 \
-		Geo::Postcodes::Tutorial.3 \
-		Geo::Postcodes::Update.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

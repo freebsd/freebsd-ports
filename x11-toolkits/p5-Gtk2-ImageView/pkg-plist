@@ -17,6 +17,17 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Tool/Selector.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Zoom.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/index.pod
+%%PERL5_MAN3%%/Gtk2::ImageView.3.gz
+%%PERL5_MAN3%%/Gtk2::Gdk::Pixbuf::Draw::Cache.3.gz
+%%PERL5_MAN3%%/Gtk2::ImageView::Anim.3.gz
+%%PERL5_MAN3%%/Gtk2::ImageView::Nav.3.gz
+%%PERL5_MAN3%%/Gtk2::ImageView::ScrollWin.3.gz
+%%PERL5_MAN3%%/Gtk2::ImageView::Tool.3.gz
+%%PERL5_MAN3%%/Gtk2::ImageView::Tool::Dragger.3.gz
+%%PERL5_MAN3%%/Gtk2::ImageView::Tool::Painter.3.gz
+%%PERL5_MAN3%%/Gtk2::ImageView::Tool::Selector.3.gz
+%%PERL5_MAN3%%/Gtk2::ImageView::Zoom.3.gz
+%%PERL5_MAN3%%/Gtk2::ImageView::index.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/ImageView
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Tool

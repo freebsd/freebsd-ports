@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Geo/Weather.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Weather/.packlist
+%%PERL5_MAN3%%/Geo::Weather.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Weather
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
 @dirrmtry %%SITE_PERL%%/Geo

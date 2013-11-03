@@ -3,6 +3,10 @@
 %%SITE_PERL%%/Business/OnlinePayment/AuthorizeNet/AIM/ErrorCodes.pm
 %%SITE_PERL%%/Business/OnlinePayment/AuthorizeNet/ARB.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/AuthorizeNet/.packlist
+%%PERL5_MAN3%%/Business::OnlinePayment::AuthorizeNet.3.gz
+%%PERL5_MAN3%%/Business::OnlinePayment::AuthorizeNet::AIM.3.gz
+%%PERL5_MAN3%%/Business::OnlinePayment::AuthorizeNet::AIM::ErrorCodes.3.gz
+%%PERL5_MAN3%%/Business::OnlinePayment::AuthorizeNet::ARB.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/AuthorizeNet
 @dirrm %%SITE_PERL%%/Business/OnlinePayment/AuthorizeNet/AIM
 @dirrmtry %%SITE_PERL%%/Business/OnlinePayment/AuthorizeNet

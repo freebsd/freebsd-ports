@@ -7,6 +7,9 @@
 %%SITE_PERL%%/Tk/JComboBox/jcb_edit.gif
 %%SITE_PERL%%/Tk/JComboBox/jcb_ro.gif
 %%SITE_PERL%%/Tk/JComboBox/tutorial.pod
+%%PERL5_MAN3%%/Tk::JComboBox.3.gz
+%%PERL5_MAN3%%/Tk::CWidget.3.gz
+%%PERL5_MAN3%%/Tk::JComboBox::tutorial.3.gz
 @dirrmtry %%SITE_PERL%%/Tk/JComboBox
 @dirrmtry %%SITE_PERL%%/Tk/CWidget/Util
 @dirrmtry %%SITE_PERL%%/Tk/CWidget

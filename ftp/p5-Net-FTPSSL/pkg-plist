@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Net/FTPSSL.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FTPSSL/.packlist
+%%PERL5_MAN3%%/Net::FTPSSL.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FTPSSL
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrmtry %%SITE_PERL%%/Net
