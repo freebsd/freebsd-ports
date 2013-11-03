@@ -360,8 +360,6 @@ lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/EnumMap.pod
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Exception.pod
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Failure.pod
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/FatRat.pod
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/File/Find.pir
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/File/Find.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Grammar.pod
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Grammar/Debugger.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Grammar/Debugger.pm
@@ -420,23 +418,16 @@ lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/ObjAt.pod
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/PSGI.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/PSGI.pm6
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Pair.pod
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Panda.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Panda.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Panda/App.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Panda/App.pm
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Panda/Builder.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Panda/Builder.pm
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Panda/Common.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Panda/Common.pm
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Panda/Ecosystem.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Panda/Ecosystem.pm
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Panda/Fetcher.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Panda/Fetcher.pm
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Panda/Installer.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Panda/Installer.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Panda/Project.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Panda/Project.pm
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Panda/Tester.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Panda/Tester.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Parameter.pod
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Parcel.pod
@@ -483,8 +474,6 @@ lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/SVG/Plot/Pie.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/SVG/Plot/Pie.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/SVG/Plot/Positioned.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/SVG/Plot/Positioned.pm
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Shell/Command.pir
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Shell/Command.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Signature.pod
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Str.pod
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Stringy.pod
@@ -1134,7 +1123,6 @@ src/parrot/%%PARROT_VERSION%%/vtable.tbl
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Test
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Term
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Template
-@dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Shell
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/SVG/Plot/Data
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/SVG/Plot
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/SVG
@@ -1157,7 +1145,6 @@ src/parrot/%%PARROT_VERSION%%/vtable.tbl
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/HTTP
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Grammar/Profiler
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Grammar
-@dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/File
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Digest
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Debugger/UI
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Debugger
