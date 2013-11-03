@@ -1,5 +1,6 @@
 %%SITE_PERL%%/News/Newsrc.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/News/Newsrc/.packlist
+%%PERL5_MAN3%%/News::Newsrc.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/News/Newsrc
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/News
 @dirrmtry %%SITE_PERL%%/News

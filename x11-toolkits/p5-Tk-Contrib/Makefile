@@ -16,7 +16,5 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
-MAN3=		Tk::Axis.3 Tk::Dial.3 Tk::OlWm.3 Tk::TiedListbox.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

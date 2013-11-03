@@ -17,8 +17,4 @@ RUN_DEPENDS=	p5-POE>=0.38:${PORTSDIR}/devel/p5-POE \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		POE::Component::Server::NNTP.3 \
-		POE::Component::Server::NNTP::Constants.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

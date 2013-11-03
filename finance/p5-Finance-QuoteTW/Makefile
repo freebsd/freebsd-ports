@@ -23,16 +23,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Finance::QuoteTW.3 \
-		Finance::QuoteTW::Allianz.3 \
-		Finance::QuoteTW::Blackrock.3 \
-		Finance::QuoteTW::Capital.3 \
-		Finance::QuoteTW::Franklin.3 \
-		Finance::QuoteTW::Iit.3 \
-		Finance::QuoteTW::Jpmrich.3 \
-		Finance::QuoteTW::Paradigm.3 \
-		Finance::QuoteTW::Schroders.3 \
-		Finance::QuoteTW::Tisc.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

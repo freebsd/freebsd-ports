@@ -1,6 +1,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server/NNTP/.packlist
 %%SITE_PERL%%/POE/Component/Server/NNTP.pm
 %%SITE_PERL%%/POE/Component/Server/NNTP/Constants.pm
+%%PERL5_MAN3%%/POE::Component::Server::NNTP.3.gz
+%%PERL5_MAN3%%/POE::Component::Server::NNTP::Constants.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server/NNTP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component

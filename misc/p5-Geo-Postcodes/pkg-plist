@@ -5,6 +5,12 @@
 %%SITE_PERL%%/Geo/Postcodes/Subclass.pod
 %%SITE_PERL%%/Geo/Postcodes/Tutorial.pod
 %%SITE_PERL%%/Geo/Postcodes/Update.pm
+%%PERL5_MAN3%%/Geo::Postcodes.3.gz
+%%PERL5_MAN3%%/Geo::Postcodes::Ajax.3.gz
+%%PERL5_MAN3%%/Geo::Postcodes::Selection.3.gz
+%%PERL5_MAN3%%/Geo::Postcodes::Subclass.3.gz
+%%PERL5_MAN3%%/Geo::Postcodes::Tutorial.3.gz
+%%PERL5_MAN3%%/Geo::Postcodes::Update.3.gz
 @dirrmtry %%SITE_PERL%%/Geo/Postcodes
 @dirrmtry %%SITE_PERL%%/Geo
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Postcodes

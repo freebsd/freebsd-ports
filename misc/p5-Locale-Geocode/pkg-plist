@@ -2,6 +2,9 @@
 %%SITE_PERL%%/Locale/Geocode/Division.pm
 %%SITE_PERL%%/Locale/Geocode/Territory.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Geocode/.packlist
+%%PERL5_MAN3%%/Locale::Geocode.3.gz
+%%PERL5_MAN3%%/Locale::Geocode::Division.3.gz
+%%PERL5_MAN3%%/Locale::Geocode::Territory.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Geocode
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale
 @dirrmtry %%SITE_PERL%%/Locale/Geocode

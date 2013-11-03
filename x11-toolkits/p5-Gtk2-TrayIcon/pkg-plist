@@ -5,6 +5,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TrayIcon/Install/trayicon-autogen.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TrayIcon/Install/trayicon.typemap
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TrayIcon.pm
+%%PERL5_MAN3%%/Gtk2::TrayIcon.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/TrayIcon
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TrayIcon/Install

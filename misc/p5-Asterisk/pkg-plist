@@ -5,5 +5,9 @@
 %%SITE_PERL%%/Asterisk/QCall.pm
 %%SITE_PERL%%/Asterisk/Voicemail.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/asterisk-perl/.packlist
+%%PERL5_MAN3%%/Asterisk::AGI.3.gz
+%%PERL5_MAN3%%/Asterisk::Manager.3.gz
+%%PERL5_MAN3%%/Asterisk::Outgoing.3.gz
+%%PERL5_MAN3%%/Asterisk::Voicemail.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/asterisk-perl
 @dirrm %%SITE_PERL%%/Asterisk

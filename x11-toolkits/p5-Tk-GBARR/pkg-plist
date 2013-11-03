@@ -9,6 +9,11 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widtrib/numentryplain.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widtrib/tframe.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/GBARR/.packlist
+%%PERL5_MAN3%%/Tk::Cloth.3.gz
+%%PERL5_MAN3%%/Tk::FireButton.3.gz
+%%PERL5_MAN3%%/Tk::NumEntry.3.gz
+%%PERL5_MAN3%%/Tk::NumEntryPlain.3.gz
+%%PERL5_MAN3%%/Tk::TFrame.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/GBARR
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widtrib
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos

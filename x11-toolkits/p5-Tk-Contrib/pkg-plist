@@ -3,6 +3,10 @@
 %%SITE_PERL%%/Tk/Dial.pm
 %%SITE_PERL%%/Tk/OlWm.pm
 %%SITE_PERL%%/Tk/TiedListbox.pm
+%%PERL5_MAN3%%/Tk::Axis.3.gz
+%%PERL5_MAN3%%/Tk::Dial.3.gz
+%%PERL5_MAN3%%/Tk::OlWm.3.gz
+%%PERL5_MAN3%%/Tk::TiedListbox.3.gz
 @dirrmtry %%SITE_PERL%%/Tk
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Contrib
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk

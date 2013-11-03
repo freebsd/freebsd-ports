@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Tk/ColourChooser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/ColourChooser/.packlist
+%%PERL5_MAN3%%/Tk::ColourChooser.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/ColourChooser
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk
 @dirrmtry %%SITE_PERL%%/Tk

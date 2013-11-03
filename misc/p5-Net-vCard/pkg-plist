@@ -3,6 +3,8 @@ bin/vCard2label
 %%SITE_PERL%%/Net/vCard/ADR.pm
 %%SITE_PERL%%/Net/vFile.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/vCard/.packlist
+%%PERL5_MAN3%%/Net::vFile.3.gz
+%%PERL5_MAN3%%/Net::vCard.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/vCard
 @dirrm %%SITE_PERL%%/Net/vCard
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

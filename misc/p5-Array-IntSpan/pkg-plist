@@ -2,6 +2,8 @@
 %%SITE_PERL%%/Array/IntSpan/IP.pm
 %%SITE_PERL%%/Array/IntSpan/Fields.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/IntSpan/.packlist
+%%PERL5_MAN3%%/Array::IntSpan.3.gz
+%%PERL5_MAN3%%/Array::IntSpan::Fields.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/IntSpan
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array
 @dirrm %%SITE_PERL%%/Array/IntSpan

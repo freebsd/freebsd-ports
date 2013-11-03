@@ -20,10 +20,4 @@ RUN_DEPENDS=	p5-Business-OnlinePayment>=3:${PORTSDIR}/finance/p5-Business-Online
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Business::OnlinePayment::AuthorizeNet.3 \
-		Business::OnlinePayment::AuthorizeNet::AIM.3 \
-		Business::OnlinePayment::AuthorizeNet::AIM::ErrorCodes.3 \
-		Business::OnlinePayment::AuthorizeNet::ARB.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

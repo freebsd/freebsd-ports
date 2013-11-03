@@ -16,7 +16,4 @@ RUN_DEPENDS=	p5-Geo-Postcodes>=0.31:${PORTSDIR}/misc/p5-Geo-Postcodes
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Geo::Postcodes::DK.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

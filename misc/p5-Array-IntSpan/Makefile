@@ -13,9 +13,6 @@ COMMENT=	Module for handling arrays using IntSpan techniques
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Array::IntSpan.3 Array::IntSpan::Fields.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's/3pm/3/g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 

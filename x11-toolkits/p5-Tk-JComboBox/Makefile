@@ -17,7 +17,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	${PORTNAME:S/-/::/g}.3 Tk::CWidget.3 Tk::JComboBox::tutorial.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
