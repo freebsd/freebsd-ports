@@ -3,7 +3,7 @@
 
 PORTNAME=	aaphoto
 PORTVERSION=	0.43.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	mail@log69.com
@@ -20,9 +20,8 @@ GH_ACCOUNT=	log69
 GH_COMMIT=	e566f9b
 GH_TAGNAME=	v${PORTVERSION}
 
-USE_GCC=	yes
 GNU_CONFIGURE=	yes
-USES=		compiler
+USES=		compiler:openmp
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
