@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	flexget
-PORTVERSION=	1.1.148
+PORTVERSION=	1.1.155
 PORTEPOCH=	1
 CATEGORIES=	www python
-MASTER_SITES=	http://download.flexget.com/ \
-		http://download.flexget.com/archive/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	FlexGet-${PORTVERSION}
 
