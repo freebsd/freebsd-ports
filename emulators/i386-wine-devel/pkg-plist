@@ -2149,7 +2149,6 @@ share/wine/fonts/vgasysg.fon
 share/wine/fonts/vgasysr.fon
 share/wine/fonts/vgasyst.fon
 share/wine/fonts/wingding.ttf
-share/wine/generic.ppd
 share/wine/l_intl.nls
 share/wine/patch-nvidia.sh
 share/wine/wine.inf

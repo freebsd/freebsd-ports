@@ -61,6 +61,8 @@
 # Version 1.11 - 2013/05/26
 #  - install libGL.so.1 to ${PREFIX}/lib32/.nvidia and link to it
 #  - add deinstall option
+# Version 1.12 - 2013/11/03
+#  - add detection for i386-wine-devel
 
 set -e
 
@@ -145,7 +147,7 @@ echo "===> Patching i386-wine to work with x11/nvidia-driver:"
 
 if [ -z "${WINE}" ]
 then
-  WINE=`version i386-wine`
+  WINE=`version i386-wine; version i386-wine-devel`
 fi
 [ -n "$WINE" ] \
   || terminate 255 "Unable to detect i386-wine, please install first"
