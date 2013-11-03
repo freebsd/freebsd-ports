@@ -2150,6 +2150,7 @@
     SUBDIR += p5-IPC-ShareLite
     SUBDIR += p5-IPC-Shareable
     SUBDIR += p5-IPC-SharedCache
+    SUBDIR += p5-IPC-ShellCmd
     SUBDIR += p5-IPC-Signal
     SUBDIR += p5-IPC-System-Simple
     SUBDIR += p5-Import-Into
