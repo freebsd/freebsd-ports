@@ -2,6 +2,7 @@
 
 PORTNAME=	ldap-account-manager
 PORTVERSION=	4.3
+PORTREVISION=	1
 CATEGORIES=	sysutils www
 MASTER_SITES=	SF/${SHORTNAME}/LAM/${PORTVERSION}
 
@@ -17,7 +18,7 @@ RUN_DEPENDS=	p5-Quota>=0:${PORTSDIR}/sysutils/p5-Quota \
 
 NO_BUILD=	yes
 USES=		gettext perl5
-USE_PHP=	gettext hash iconv ldap mcrypt pcre session simplexml spl xml json zip
+USE_PHP=	gettext hash iconv ldap mcrypt pcre session simplexml spl xml json zip openssl
 WANT_PHP_WEB=	yes
 DEFAULT_PHP_VER=	5
 
