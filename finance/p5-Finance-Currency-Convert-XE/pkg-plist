@@ -1,9 +1,10 @@
+%%PERL5_MAN3%%/Finance::Currency::Convert::XE.3.gz
 %%SITE_PERL%%/Finance/Currency/Convert/XE.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Currency/Convert/XE/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Currency/Convert/XE
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Currency/Convert/XE
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Currency/Convert
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Currency
-@dirrmtry %%SITE_PERL%%/Finance/Currency/Convert
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance
+@dirrmtry %%SITE_PERL%%/Finance/Currency/Convert
 @dirrmtry %%SITE_PERL%%/Finance/Currency
 @dirrmtry %%SITE_PERL%%/Finance

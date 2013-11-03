@@ -1,5 +1,5 @@
 %%SITE_PERL%%/Business/OCV.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OCV/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OCV
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OCV
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
 @dirrmtry %%SITE_PERL%%/Business
