@@ -13,7 +13,7 @@
    ***	file that corresponds with your operating system.
    ***/
   
-! #include "../configs/conf-freebsd2.h"
+! #include "../configs/conf-freebsd8.h"
   
   #ifdef TW_TYPE32
   typedef TW_TYPE32 int32;
