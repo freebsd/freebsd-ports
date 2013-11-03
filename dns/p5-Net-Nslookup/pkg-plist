@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Net::Nslookup.3.gz
 %%SITE_PERL%%/Net/Nslookup.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Nslookup/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Nslookup
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Nslookup
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrmtry %%SITE_PERL%%/Net

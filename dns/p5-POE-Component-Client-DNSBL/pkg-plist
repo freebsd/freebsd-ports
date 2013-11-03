@@ -1,3 +1,10 @@
+%%PERL5_MAN3%%/POE::Component::Client::DNSBL.3.gz
 %%SITE_PERL%%/POE/Component/Client/DNSBL.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/DNSBL/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/DNSBL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
+@dirrmtry %%SITE_PERL%%/POE/Component/Client
+@dirrmtry %%SITE_PERL%%/POE/Component
+@dirrmtry %%SITE_PERL%%/POE

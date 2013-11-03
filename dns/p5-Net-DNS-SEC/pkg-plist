@@ -1,3 +1,16 @@
+%%PERL5_MAN3%%/Net::DNS::Keyset.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::DLV.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::DNSKEY.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::DS.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::KEY.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::NSEC.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::NSEC3.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::NSEC3PARAM.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::NXT.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::RRSIG.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::SIG.3.gz
+%%PERL5_MAN3%%/Net::DNS::SEC.3.gz
+%%PERL5_MAN3%%/Net::DNS::SEC::Private.3.gz
 %%SITE_PERL%%/Net/DNS/Keyset.pm
 %%SITE_PERL%%/Net/DNS/RR/DLV.pm
 %%SITE_PERL%%/Net/DNS/RR/DNSKEY.pm
@@ -15,7 +28,7 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/SEC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrm %%SITE_PERL%%/Net/DNS/SEC
+@dirrmtry %%SITE_PERL%%/Net/DNS/SEC
 @dirrmtry %%SITE_PERL%%/Net/DNS/RR
 @dirrmtry %%SITE_PERL%%/Net/DNS
 @dirrmtry %%SITE_PERL%%/Net

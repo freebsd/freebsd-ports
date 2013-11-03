@@ -10,8 +10,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DNS-Config/.packlist
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DNS-Config
-@dirrm %%SITE_PERL%%/DNS/Config/Statement
-@dirrm %%SITE_PERL%%/DNS/Config/File
-@dirrm %%SITE_PERL%%/DNS/Config
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DNS-Config
+@dirrmtry %%SITE_PERL%%/DNS/Config/Statement
+@dirrmtry %%SITE_PERL%%/DNS/Config/File
+@dirrmtry %%SITE_PERL%%/DNS/Config
 @dirrmtry %%SITE_PERL%%/DNS

@@ -1,3 +1,67 @@
+%%PERL5_MAN3%%/Net::DNS.3.gz
+%%PERL5_MAN3%%/Net::DNS::Domain.3.gz
+%%PERL5_MAN3%%/Net::DNS::DomainName.3.gz
+%%PERL5_MAN3%%/Net::DNS::FAQ.3.gz
+%%PERL5_MAN3%%/Net::DNS::Header.3.gz
+%%PERL5_MAN3%%/Net::DNS::Mailbox.3.gz
+%%PERL5_MAN3%%/Net::DNS::Nameserver.3.gz
+%%PERL5_MAN3%%/Net::DNS::Packet.3.gz
+%%PERL5_MAN3%%/Net::DNS::Parameters.3.gz
+%%PERL5_MAN3%%/Net::DNS::Question.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::A.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::AAAA.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::AFSDB.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::APL.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::CERT.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::CNAME.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::DHCID.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::DNAME.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::EID.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::HINFO.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::HIP.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::IPSECKEY.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::ISDN.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::KX.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::L32.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::L64.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::LOC.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::LP.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::MB.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::MG.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::MINFO.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::MR.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::MX.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::NAPTR.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::NID.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::NIMLOC.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::NS.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::NSAP.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::NULL.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::OPT.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::PTR.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::PX.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::RP.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::RT.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::SOA.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::SPF.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::SRV.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::SSHFP.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::TKEY.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::TLSA.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::TSIG.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::TXT.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::X25.3.gz
+%%PERL5_MAN3%%/Net::DNS::Resolver.3.gz
+%%PERL5_MAN3%%/Net::DNS::Resolver::Base.3.gz
+%%PERL5_MAN3%%/Net::DNS::Resolver::MSWin32.3.gz
+%%PERL5_MAN3%%/Net::DNS::Resolver::Recurse.3.gz
+%%PERL5_MAN3%%/Net::DNS::Resolver::UNIX.3.gz
+%%PERL5_MAN3%%/Net::DNS::Resolver::cygwin.3.gz
+%%PERL5_MAN3%%/Net::DNS::Resolver::os2.3.gz
+%%PERL5_MAN3%%/Net::DNS::Text.3.gz
+%%PERL5_MAN3%%/Net::DNS::Update.3.gz
+%%PERL5_MAN3%%/Net::DNS::ZoneFile.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Domain.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/DomainName.pm
@@ -67,7 +131,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/DNS.so
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Resolver
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Resolver
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net

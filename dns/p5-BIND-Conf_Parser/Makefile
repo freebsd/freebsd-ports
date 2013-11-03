@@ -14,7 +14,4 @@ COMMENT=	Perl5 module to parse BIND 8 configuration files
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	BIND::Conf_Parser.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
