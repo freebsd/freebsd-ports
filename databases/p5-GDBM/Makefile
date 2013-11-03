@@ -23,7 +23,4 @@ USE_PERL5=	configure
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/ext/GDBM_File
 
-MAN3=		GDBM_File.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

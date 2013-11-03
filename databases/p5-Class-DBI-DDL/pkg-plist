@@ -1,5 +1,7 @@
+%%PERL5_MAN3%%/Class::DBI::DDL.3.gz
+%%PERL5_MAN3%%/Class::DBI::DDL::Pg.3.gz
 %%SITE_PERL%%/Class/DBI/DDL.pm
 %%SITE_PERL%%/Class/DBI/DDL/Pg.pm
-@dirrm %%SITE_PERL%%/Class/DBI/DDL
+@dirrmtry %%SITE_PERL%%/Class/DBI/DDL
 @dirrmtry %%SITE_PERL%%/Class/DBI
 @dirrmtry %%SITE_PERL%%/Class

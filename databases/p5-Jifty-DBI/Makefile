@@ -38,46 +38,9 @@ BUILD_DEPENDS=	p5-Cache-Memcached>=0:${PORTSDIR}/databases/p5-Cache-Memcached \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 TEST_DEPENDS=	p5-Test-Warn>=0.1:${PORTSDIR}/devel/p5-Test-Warn
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Jifty::DBI.3 \
-	Jifty::DBI::Collection.3 \
-	Jifty::DBI::Collection::Union.3 \
-	Jifty::DBI::Collection::Unique.3 \
-	Jifty::DBI::Column.3 \
-	Jifty::DBI::Filter.3 \
-	Jifty::DBI::Filter::Boolean.3 \
-	Jifty::DBI::Filter::Date.3 \
-	Jifty::DBI::Filter::DateTime.3 \
-	Jifty::DBI::Filter::Duration.3 \
-	Jifty::DBI::Filter::SaltHash.3 \
-	Jifty::DBI::Filter::Storable.3 \
-	Jifty::DBI::Filter::Time.3 \
-	Jifty::DBI::Filter::Truncate.3 \
-	Jifty::DBI::Filter::URI.3 \
-	Jifty::DBI::Filter::YAML.3 \
-	Jifty::DBI::Filter::base64.3 \
-	Jifty::DBI::Filter::utf8.3 \
-	Jifty::DBI::Handle.3 \
-	Jifty::DBI::Handle::Informix.3 \
-	Jifty::DBI::Handle::ODBC.3 \
-	Jifty::DBI::Handle::Oracle.3 \
-	Jifty::DBI::Handle::Pg.3 \
-	Jifty::DBI::Handle::SQLite.3 \
-	Jifty::DBI::Handle::Sybase.3 \
-	Jifty::DBI::Handle::mysql.3 \
-	Jifty::DBI::Handle::mysqlPP.3 \
-	Jifty::DBI::HasFilters.3 \
-	Jifty::DBI::Record.3 \
-	Jifty::DBI::Record::Cachable.3 \
-	Jifty::DBI::Record::Memcached.3 \
-	Jifty::DBI::Record::Plugin.3 \
-	Jifty::DBI::Schema.3 \
-	Jifty::DBI::SchemaGenerator.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,8 +1,11 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Candy/.packlist
+%%PERL5_MAN3%%/DBIx::Class::Candy.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Candy::Exports.3.gz
 %%SITE_PERL%%/DBIx/Class/Candy.pm
 %%SITE_PERL%%/DBIx/Class/Candy/Exports.pm
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Candy
-@dirrmtry %%SITE_PERL%%/DBIx/Class
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Candy/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Candy
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Candy
+@dirrmtry %%SITE_PERL%%/DBIx/Class
+@dirrmtry %%SITE_PERL%%/DBIx

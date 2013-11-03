@@ -20,12 +20,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN1=		sqlreport.1 \
-		sqlw_import.1 \
-		sqlw_mail.1
-MAN3=		SQLite::Work.3 \
-		SQLite::Work::CGI.3 \
-		SQLite::Work::Mail.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

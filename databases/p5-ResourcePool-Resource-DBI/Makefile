@@ -19,9 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		ResourcePool::Resource::DBI.3 ResourcePool::Factory::DBI.3 \
-		ResourcePool::Command::DBI::Execute.3 ResourcePool::Command::DBI::Select.3 \
-		ResourcePool::Command::DBI::SelectRow.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

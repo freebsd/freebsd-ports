@@ -23,25 +23,6 @@ USES=		perl5
 USE_PERL5=	configure
 CC=		${CXX}
 
-MAN3=	Search::Xapian.3 \
-	Search::Xapian::BM25Weight.3 \
-	Search::Xapian::BoolWeight.3 \
-	Search::Xapian::Database.3 \
-	Search::Xapian::Document.3 \
-	Search::Xapian::Enquire.3 \
-	Search::Xapian::MultiValueSorter.3 \
-	Search::Xapian::PositionIterator.3 \
-	Search::Xapian::PostingIterator.3 \
-	Search::Xapian::QueryParser.3 \
-	Search::Xapian::Stem.3 \
-	Search::Xapian::TermGenerator.3 \
-	Search::Xapian::TermIterator.3 \
-	Search::Xapian::TradWeight.3 \
-	Search::Xapian::ValueIterator.3 \
-	Search::Xapian::Weight.3 \
-	Search::Xapian::WritableDatabase.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/^if (defined $$builddir/if (0/' ${WRKSRC}/Makefile.PL
 

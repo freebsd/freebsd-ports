@@ -26,10 +26,8 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS=	-o ${LOCALBASE}
 
-MAN3=		DBD::ODBC.3
 PORTDOCS=	Changes README README.adabas README.informix
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MODBC)
@@ -60,9 +58,8 @@ post-configure:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.post.mk>

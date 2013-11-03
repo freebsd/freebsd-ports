@@ -1,9 +1,10 @@
+%%PERL5_MAN3%%/DBIx::Log4perl.3.gz
 %%SITE_PERL%%/DBIx/Log4perl.pm
-%%SITE_PERL%%/DBIx/Log4perl/st.pm
 %%SITE_PERL%%/DBIx/Log4perl/Constants.pm
 %%SITE_PERL%%/DBIx/Log4perl/db.pm
+%%SITE_PERL%%/DBIx/Log4perl/st.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Log4perl/.packlist
-@dirrmtry %%SITE_PERL%%/DBIx/Log4perl
-@dirrmtry %%SITE_PERL%%/DBIx
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Log4perl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
+@dirrmtry %%SITE_PERL%%/DBIx/Log4perl
+@dirrmtry %%SITE_PERL%%/DBIx

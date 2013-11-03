@@ -1,5 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Piece/MySQL/.packlist
+%%PERL5_MAN3%%/Time::Piece::MySQL.3.gz
 %%SITE_PERL%%/Time/Piece/MySQL.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Piece/MySQL
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Piece/MySQL/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Piece/MySQL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Piece
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time
 @dirrmtry %%SITE_PERL%%/Time/Piece
 @dirrmtry %%SITE_PERL%%/Time

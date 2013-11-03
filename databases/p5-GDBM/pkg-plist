@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/GDBM_File.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/GDBM_File.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GDBM_File/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GDBM_File/GDBM_File.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GDBM_File/GDBM_File.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GDBM_File
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GDBM_File

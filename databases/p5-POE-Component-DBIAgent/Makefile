@@ -19,8 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		POE::Component::DBIAgent.3 POE::Component::DBIAgent::Helper.3 \
-		POE::Component::DBIAgent::Queue.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

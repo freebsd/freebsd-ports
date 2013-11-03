@@ -17,7 +17,5 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild
-MAN3=		RRD::Simple.3 RRD::Simple::Examples.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

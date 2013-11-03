@@ -1,10 +1,13 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/DBIAgent/.packlist
+%%PERL5_MAN3%%/POE::Component::DBIAgent.3.gz
+%%PERL5_MAN3%%/POE::Component::DBIAgent::Helper.3.gz
+%%PERL5_MAN3%%/POE::Component::DBIAgent::Queue.3.gz
 %%SITE_PERL%%/POE/Component/DBIAgent.pm
 %%SITE_PERL%%/POE/Component/DBIAgent/Helper.pm
 %%SITE_PERL%%/POE/Component/DBIAgent/Queue.pm
-@dirrm %%SITE_PERL%%/POE/Component/DBIAgent
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/DBIAgent
-@dirrmtry %%SITE_PERL%%/POE/Component
-@dirrmtry %%SITE_PERL%%/POE
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/DBIAgent/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/DBIAgent
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
+@dirrmtry %%SITE_PERL%%/POE/Component/DBIAgent
+@dirrmtry %%SITE_PERL%%/POE/Component
+@dirrmtry %%SITE_PERL%%/POE

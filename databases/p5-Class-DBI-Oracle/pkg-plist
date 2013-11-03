@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Class::DBI::Oracle.3.gz
 %%SITE_PERL%%/Class/DBI/Oracle.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Oracle/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Oracle
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Oracle
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
 @dirrmtry %%SITE_PERL%%/Class/DBI

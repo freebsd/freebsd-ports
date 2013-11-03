@@ -10,17 +10,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for abstraction and simplification of database access
 
-BUILD_DEPENDS+=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS+=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		DBIx::Compat.3 DBIx::Database.3 DBIx::Intrors.3 \
-		DBIx::Recordset.3 DBIx::Recordset::DBSeq.3 \
-		DBIx::Recordset::FileSeq.3
-
-NO_STAGE=	yes
 post-configure:
 # bad DBIx::Intrors.3
 		@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 -lax/;' \

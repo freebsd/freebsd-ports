@@ -24,15 +24,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Class::DBI.3 Class::DBI::Attribute.3 \
-		Class::DBI::Cascade::Delete.3 Class::DBI::Cascade::Fail.3 \
-		Class::DBI::Cascade::None.3 Class::DBI::Column.3 \
-		Class::DBI::ColumnGrouper.3 Class::DBI::Iterator.3 \
-		Class::DBI::Query.3 Class::DBI::Relationship.3 \
-		Class::DBI::SQL::Transformer.3 Class::DBI::Search::Basic.3 \
-		Class::DBI::Test::SQLite.3
-
-NO_STAGE=	yes
 post-configure:
 # dirty hack to deceive irritable pod2man
 	@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' ${WRKSRC}/Makefile

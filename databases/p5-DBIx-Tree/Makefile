@@ -13,13 +13,10 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for generating a tree from a self-referential table
 
 BUILD_DEPENDS=	p5-DBI>=1.622:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS=	p5-DBI>=1.622:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-DBD-SQLite>=1.37:${PORTSDIR}/databases/p5-DBD-SQLite
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		DBIx::Tree.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

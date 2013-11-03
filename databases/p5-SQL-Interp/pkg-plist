@@ -1,7 +1,9 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Interp/.packlist
+%%PERL5_MAN3%%/DBIx::Interp.3.gz
+%%PERL5_MAN3%%/SQL::Interp.3.gz
 %%SITE_PERL%%/DBIx/Interp.pm
 %%SITE_PERL%%/SQL/Interp.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Interp
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Interp/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Interp
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL
 @dirrmtry %%SITE_PERL%%/SQL
 @dirrmtry %%SITE_PERL%%/DBIx
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL

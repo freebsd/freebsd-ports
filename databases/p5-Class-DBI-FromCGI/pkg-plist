@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Class::DBI::FromCGI.3.gz
 %%SITE_PERL%%/Class/DBI/FromCGI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/FromCGI/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/FromCGI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/FromCGI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
 @dirrmtry %%SITE_PERL%%/Class/DBI

@@ -20,24 +20,16 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Class::DBI::Loader.3 \
-		Class::DBI::Loader::Generic.3 \
-		Class::DBI::Loader::Pg.3 \
-		Class::DBI::Loader::SQLite.3 \
-		Class::DBI::Loader::mysql.3
-
 OPTIONS_DEFINE=	PGSQL MYSQL SQLITE DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	Changes README
 
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}

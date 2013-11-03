@@ -1,12 +1,17 @@
+%%PERL5_MAN3%%/Class::DBI::Loader.3.gz
+%%PERL5_MAN3%%/Class::DBI::Loader::Generic.3.gz
+%%PERL5_MAN3%%/Class::DBI::Loader::Pg.3.gz
+%%PERL5_MAN3%%/Class::DBI::Loader::SQLite.3.gz
+%%PERL5_MAN3%%/Class::DBI::Loader::mysql.3.gz
 %%SITE_PERL%%/Class/DBI/Loader.pm
 %%SITE_PERL%%/Class/DBI/Loader/Generic.pm
 %%SITE_PERL%%/Class/DBI/Loader/Pg.pm
 %%SITE_PERL%%/Class/DBI/Loader/SQLite.pm
 %%SITE_PERL%%/Class/DBI/Loader/mysql.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Loader/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Loader
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Loader
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
-@dirrm %%SITE_PERL%%/Class/DBI/Loader
+@dirrmtry %%SITE_PERL%%/Class/DBI/Loader
 @dirrmtry %%SITE_PERL%%/Class/DBI
 @dirrmtry %%SITE_PERL%%/Class

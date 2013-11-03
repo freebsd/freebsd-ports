@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/ContextualFetch/.packlist
+%%PERL5_MAN3%%/DBIx::ContextualFetch.3.gz
 %%SITE_PERL%%/DBIx/ContextualFetch.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/ContextualFetch
-@dirrmtry %%SITE_PERL%%/DBIx
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/ContextualFetch/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/ContextualFetch
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
+@dirrmtry %%SITE_PERL%%/DBIx

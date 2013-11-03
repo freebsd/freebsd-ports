@@ -1,26 +1,39 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/.packlist
+%%PERL5_MAN3%%/Class::DBI.3.gz
+%%PERL5_MAN3%%/Class::DBI::Attribute.3.gz
+%%PERL5_MAN3%%/Class::DBI::Cascade::Delete.3.gz
+%%PERL5_MAN3%%/Class::DBI::Cascade::Fail.3.gz
+%%PERL5_MAN3%%/Class::DBI::Cascade::None.3.gz
+%%PERL5_MAN3%%/Class::DBI::Column.3.gz
+%%PERL5_MAN3%%/Class::DBI::ColumnGrouper.3.gz
+%%PERL5_MAN3%%/Class::DBI::Iterator.3.gz
+%%PERL5_MAN3%%/Class::DBI::Query.3.gz
+%%PERL5_MAN3%%/Class::DBI::Relationship.3.gz
+%%PERL5_MAN3%%/Class::DBI::SQL::Transformer.3.gz
+%%PERL5_MAN3%%/Class::DBI::Search::Basic.3.gz
+%%PERL5_MAN3%%/Class::DBI::Test::SQLite.3.gz
 %%SITE_PERL%%/Class/DBI.pm
 %%SITE_PERL%%/Class/DBI/Attribute.pm
 %%SITE_PERL%%/Class/DBI/Cascade/Delete.pm
 %%SITE_PERL%%/Class/DBI/Cascade/Fail.pm
 %%SITE_PERL%%/Class/DBI/Cascade/None.pm
-%%SITE_PERL%%/Class/DBI/ColumnGrouper.pm
 %%SITE_PERL%%/Class/DBI/Column.pm
+%%SITE_PERL%%/Class/DBI/ColumnGrouper.pm
 %%SITE_PERL%%/Class/DBI/Iterator.pm
 %%SITE_PERL%%/Class/DBI/Query.pm
 %%SITE_PERL%%/Class/DBI/Relationship.pm
 %%SITE_PERL%%/Class/DBI/Relationship/HasA.pm
 %%SITE_PERL%%/Class/DBI/Relationship/HasMany.pm
 %%SITE_PERL%%/Class/DBI/Relationship/MightHave.pm
-%%SITE_PERL%%/Class/DBI/Search/Basic.pm
 %%SITE_PERL%%/Class/DBI/SQL/Transformer.pm
+%%SITE_PERL%%/Class/DBI/Search/Basic.pm
 %%SITE_PERL%%/Class/DBI/Test/SQLite.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
 @dirrmtry %%SITE_PERL%%/Class/DBI/Test
-@dirrmtry %%SITE_PERL%%/Class/DBI/SQL
 @dirrmtry %%SITE_PERL%%/Class/DBI/Search
+@dirrmtry %%SITE_PERL%%/Class/DBI/SQL
 @dirrmtry %%SITE_PERL%%/Class/DBI/Relationship
 @dirrmtry %%SITE_PERL%%/Class/DBI/Cascade
 @dirrmtry %%SITE_PERL%%/Class/DBI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI
 @dirrmtry %%SITE_PERL%%/Class
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class

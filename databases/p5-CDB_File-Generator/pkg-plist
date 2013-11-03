@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/CDB_File::Generator.3.gz
 %%SITE_PERL%%/CDB_File/Generator.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CDB_File/Generator/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CDB_File/Generator
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CDB_File/Generator
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CDB_File
 @dirrmtry %%SITE_PERL%%/CDB_File

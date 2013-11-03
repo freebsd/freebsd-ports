@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Iterator::DBI.3.gz
 %%SITE_PERL%%/Iterator/DBI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Iterator/DBI/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Iterator/DBI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Iterator/DBI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Iterator
 @dirrmtry %%SITE_PERL%%/Iterator

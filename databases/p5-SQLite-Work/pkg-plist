@@ -1,8 +1,14 @@
-%%SITE_PERL%%/SQLite/Work.pm
-%%SITE_PERL%%/SQLite/Work/CGI.pm
-%%SITE_PERL%%/SQLite/Work/Mail.pm
 bin/sqlreport
 bin/sqlw_import
 bin/sqlw_mail
+%%PERL5_MAN3%%/SQLite::Work.3.gz
+%%PERL5_MAN3%%/SQLite::Work::CGI.3.gz
+%%PERL5_MAN3%%/SQLite::Work::Mail.3.gz
+%%SITE_PERL%%/SQLite/Work.pm
+%%SITE_PERL%%/SQLite/Work/CGI.pm
+%%SITE_PERL%%/SQLite/Work/Mail.pm
+man/man1/sqlreport.1.gz
+man/man1/sqlw_import.1.gz
+man/man1/sqlw_mail.1.gz
 @dirrmtry %%SITE_PERL%%/SQLite/Work
 @dirrmtry %%SITE_PERL%%/SQLite

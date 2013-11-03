@@ -19,16 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	DBIx::Class::UUIDColumns.3 \
-	DBIx::Class::UUIDColumns::UUIDMaker.3 \
-	DBIx::Class::UUIDColumns::UUIDMaker::APR::UUID.3 \
-	DBIx::Class::UUIDColumns::UUIDMaker::Data::GUID.3 \
-	DBIx::Class::UUIDColumns::UUIDMaker::Data::UUID.3 \
-	DBIx::Class::UUIDColumns::UUIDMaker::Data::Uniqid.3 \
-	DBIx::Class::UUIDColumns::UUIDMaker::UUID.3 \
-	DBIx::Class::UUIDColumns::UUIDMaker::UUID::Random.3 \
-	DBIx::Class::UUIDColumns::UUIDMaker::Win32::Guidgen.3 \
-	DBIx::Class::UUIDColumns::UUIDMaker::Win32API::GUID.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

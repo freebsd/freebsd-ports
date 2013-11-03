@@ -1,11 +1,17 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Recordset/.packlist
+%%PERL5_MAN3%%/DBIx::Compat.3.gz
+%%PERL5_MAN3%%/DBIx::Database.3.gz
+%%PERL5_MAN3%%/DBIx::Intrors.3.gz
+%%PERL5_MAN3%%/DBIx::Recordset.3.gz
+%%PERL5_MAN3%%/DBIx::Recordset::DBSeq.3.gz
+%%PERL5_MAN3%%/DBIx::Recordset::FileSeq.3.gz
 %%SITE_PERL%%/DBIx/Compat.pm
 %%SITE_PERL%%/DBIx/Database.pm
 %%SITE_PERL%%/DBIx/Intrors.pod
 %%SITE_PERL%%/DBIx/Recordset.pm
 %%SITE_PERL%%/DBIx/Recordset/DBSeq.pm
 %%SITE_PERL%%/DBIx/Recordset/FileSeq.pm
-@dirrm %%SITE_PERL%%/DBIx/Recordset
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Recordset
-@dirrmtry %%SITE_PERL%%/DBIx
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Recordset/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Recordset
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
+@dirrmtry %%SITE_PERL%%/DBIx/Recordset
+@dirrmtry %%SITE_PERL%%/DBIx

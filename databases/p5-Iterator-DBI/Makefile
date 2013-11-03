@@ -13,10 +13,7 @@ COMMENT=	An iterator for returning DBI query results
 BUILD_DEPENDS=	p5-Iterator>=0:${PORTSDIR}/devel/p5-Iterator
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	Iterator::DBI.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

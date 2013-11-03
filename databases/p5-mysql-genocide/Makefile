@@ -16,11 +16,5 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
-MAN1=		mysql-genocide.1
 
-PLIST_FILES=	bin/mysql-genocide \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/mysql-genocide/.packlist
-PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/mysql-genocide
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

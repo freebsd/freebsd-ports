@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Class::DBI::Pager.3.gz
 %%SITE_PERL%%/Class/DBI/Pager.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Pager/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Pager
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Pager
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
 @dirrmtry %%SITE_PERL%%/Class/DBI

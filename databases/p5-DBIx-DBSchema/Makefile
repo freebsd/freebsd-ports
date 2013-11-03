@@ -16,23 +16,13 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
-NO_STAGE=	yes
-
-MAN3=	DBIx::DBSchema.3 DBIx::DBSchema::ColGroup.3 \
-	DBIx::DBSchema::ColGroup::Index.3 DBIx::DBSchema::ColGroup::Unique.3 \
-	DBIx::DBSchema::Column.3 DBIx::DBSchema::DBD.3 \
-	DBIx::DBSchema::DBD::mysql.3 DBIx::DBSchema::DBD::Pg.3 \
-	DBIx::DBSchema::DBD::Sybase.3 DBIx::DBSchema::Table.3 \
-	DBIx::DBSchema::DBD::Oracle.3 DBIx::DBSchema::DBD::SQLite.3 \
-	DBIx::DBSchema::Index.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README
 
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

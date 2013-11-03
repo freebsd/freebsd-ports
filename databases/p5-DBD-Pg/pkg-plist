@@ -1,10 +1,12 @@
+%%PERL5_MAN3%%/Bundle::DBD::Pg.3.gz
+%%PERL5_MAN3%%/DBD::Pg.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Bundle/DBD/Pg.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/Pg.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/testme.tmp.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Pg/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Pg/Pg.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Pg/Pg.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Pg
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Pg
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBD
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Bundle/DBD

@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/DBIx::Sunny.3.gz
+%%PERL5_MAN3%%/DBIx::Sunny::Schema.3.gz
 %%SITE_PERL%%/DBIx/Sunny.pm
 %%SITE_PERL%%/DBIx/Sunny/Schema.pm
-@dirrm %%SITE_PERL%%/DBIx/Sunny
+@dirrmtry %%SITE_PERL%%/DBIx/Sunny
 @dirrmtry %%SITE_PERL%%/DBIx
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx

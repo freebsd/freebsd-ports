@@ -20,7 +20,4 @@ RUN_DEPENDS=	p5-DBI>=1.57:${PORTSDIR}/databases/p5-DBI
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		DBD::SQLite.3 DBD::SQLite::Cookbook.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

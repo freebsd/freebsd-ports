@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Class::DBI::SQLite.3.gz
 %%SITE_PERL%%/Class/DBI/SQLite.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/SQLite/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/SQLite
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/SQLite
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
 @dirrmtry %%SITE_PERL%%/Class/DBI

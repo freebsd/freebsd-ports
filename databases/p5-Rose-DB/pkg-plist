@@ -1,3 +1,16 @@
+%%PERL5_MAN3%%/Rose::DB.3.gz
+%%PERL5_MAN3%%/Rose::DB::Cache.3.gz
+%%PERL5_MAN3%%/Rose::DB::Cache::Entry.3.gz
+%%PERL5_MAN3%%/Rose::DB::Constants.3.gz
+%%PERL5_MAN3%%/Rose::DB::Generic.3.gz
+%%PERL5_MAN3%%/Rose::DB::Informix.3.gz
+%%PERL5_MAN3%%/Rose::DB::MySQL.3.gz
+%%PERL5_MAN3%%/Rose::DB::Oracle.3.gz
+%%PERL5_MAN3%%/Rose::DB::Pg.3.gz
+%%PERL5_MAN3%%/Rose::DB::Registry.3.gz
+%%PERL5_MAN3%%/Rose::DB::Registry::Entry.3.gz
+%%PERL5_MAN3%%/Rose::DB::SQLite.3.gz
+%%PERL5_MAN3%%/Rose::DB::Tutorial.3.gz
 %%SITE_PERL%%/Rose/DB.pm
 %%SITE_PERL%%/Rose/DB/Cache.pm
 %%SITE_PERL%%/Rose/DB/Cache/Entry.pm
@@ -12,19 +25,6 @@
 %%SITE_PERL%%/Rose/DB/SQLite.pm
 %%SITE_PERL%%/Rose/DB/Tutorial.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/DB/.packlist
-%%PERL5_MAN3%%/Rose::DB.3.gz
-%%PERL5_MAN3%%/Rose::DB::Cache.3.gz
-%%PERL5_MAN3%%/Rose::DB::Cache::Entry.3.gz
-%%PERL5_MAN3%%/Rose::DB::Constants.3.gz
-%%PERL5_MAN3%%/Rose::DB::Generic.3.gz
-%%PERL5_MAN3%%/Rose::DB::Informix.3.gz
-%%PERL5_MAN3%%/Rose::DB::MySQL.3.gz
-%%PERL5_MAN3%%/Rose::DB::Oracle.3.gz
-%%PERL5_MAN3%%/Rose::DB::Pg.3.gz
-%%PERL5_MAN3%%/Rose::DB::Registry.3.gz
-%%PERL5_MAN3%%/Rose::DB::Registry::Entry.3.gz
-%%PERL5_MAN3%%/Rose::DB::SQLite.3.gz
-%%PERL5_MAN3%%/Rose::DB::Tutorial.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/DB
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose
 @dirrmtry %%SITE_PERL%%/Rose/DB/Registry

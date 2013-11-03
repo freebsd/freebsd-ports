@@ -1,7 +1,11 @@
+%%PERL5_MAN3%%/Metadata::Base.3.gz
+%%PERL5_MAN3%%/Metadata::HTTP.3.gz
+%%PERL5_MAN3%%/Metadata::IAFA.3.gz
+%%PERL5_MAN3%%/Metadata::SOIF.3.gz
 %%SITE_PERL%%/Metadata/Base.pm
 %%SITE_PERL%%/Metadata/HTTP.pm
 %%SITE_PERL%%/Metadata/IAFA.pm
 %%SITE_PERL%%/Metadata/SOIF.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Metadata/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Metadata
-@dirrm %%SITE_PERL%%/Metadata
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Metadata
+@dirrmtry %%SITE_PERL%%/Metadata

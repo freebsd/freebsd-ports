@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Pg.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Pg.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pg/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pg/Pg.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pg/Pg.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pg/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pg/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pg
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pg

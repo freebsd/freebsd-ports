@@ -1,7 +1,10 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/ORLite/Migrate/.packlist
+%%PERL5_MAN3%%/ORLite::Migrate.3.gz
+%%PERL5_MAN3%%/ORLite::Migrate::Timeline.3.gz
 %%SITE_PERL%%/ORLite/Migrate.pm
 %%SITE_PERL%%/ORLite/Migrate/Patch.pm
 %%SITE_PERL%%/ORLite/Migrate/Timeline.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/ORLite/Migrate/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ORLite/Migrate
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ORLite
 @dirrmtry %%SITE_PERL%%/ORLite/Migrate
 @dirrmtry %%SITE_PERL%%/ORLite
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ORLite/Migrate

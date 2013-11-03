@@ -1,9 +1,11 @@
+%%PERL5_MAN3%%/DBIx::SQLite::Simple.3.gz
+%%PERL5_MAN3%%/DBIx::SQLite::Simple::Table.3.gz
 %%SITE_PERL%%/DBIx/SQLite/Simple.pm
 %%SITE_PERL%%/DBIx/SQLite/Simple/Table.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/SQLite/Simple/.packlist
-@dirrm    %%SITE_PERL%%/DBIx/SQLite/Simple
-@dirrmtry %%SITE_PERL%%/DBIx/SQLite
-@dirrmtry %%SITE_PERL%%/DBIx
-@dirrm    %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/SQLite/Simple
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/SQLite/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/SQLite
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
+@dirrmtry %%SITE_PERL%%/DBIx/SQLite/Simple
+@dirrmtry %%SITE_PERL%%/DBIx/SQLite
+@dirrmtry %%SITE_PERL%%/DBIx

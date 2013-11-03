@@ -1,8 +1,10 @@
+%%PERL5_MAN3%%/DBIx::Class::ResultSet::HashRef.3.gz
 %%SITE_PERL%%/DBIx/Class/ResultSet/HashRef.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/ResultSet/HashRef/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/ResultSet/HashRef
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/ResultSet
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
 @dirrmtry %%SITE_PERL%%/DBIx/Class/ResultSet
 @dirrmtry %%SITE_PERL%%/DBIx/Class
 @dirrmtry %%SITE_PERL%%/DBIx

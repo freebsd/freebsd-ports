@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/DBIx::Password.3.gz
 %%SITE_PERL%%/DBIx/Password.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Password/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Password
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Password
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
 @dirrmtry %%SITE_PERL%%/DBIx

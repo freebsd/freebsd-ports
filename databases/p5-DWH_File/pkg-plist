@@ -1,35 +1,61 @@
+%%PERL5_MAN3%%/DWH_File.3.gz
+%%PERL5_MAN3%%/DWH_File::Aware.3.gz
+%%PERL5_MAN3%%/DWH_File::Cache.3.gz
+%%PERL5_MAN3%%/DWH_File::Cached.3.gz
+%%PERL5_MAN3%%/DWH_File::ID_Mill.3.gz
+%%PERL5_MAN3%%/DWH_File::Kernel.3.gz
+%%PERL5_MAN3%%/DWH_File::Reference.3.gz
+%%PERL5_MAN3%%/DWH_File::Registry.3.gz
+%%PERL5_MAN3%%/DWH_File::Registry::Class.3.gz
+%%PERL5_MAN3%%/DWH_File::Registry::URI.3.gz
+%%PERL5_MAN3%%/DWH_File::Slot.3.gz
+%%PERL5_MAN3%%/DWH_File::Subscript.3.gz
+%%PERL5_MAN3%%/DWH_File::Subscript::Wired.3.gz
+%%PERL5_MAN3%%/DWH_File::Tie.3.gz
+%%PERL5_MAN3%%/DWH_File::Tie::Array.3.gz
+%%PERL5_MAN3%%/DWH_File::Tie::Array::Node.3.gz
+%%PERL5_MAN3%%/DWH_File::Tie::Foreign.3.gz
+%%PERL5_MAN3%%/DWH_File::Tie::Hash.3.gz
+%%PERL5_MAN3%%/DWH_File::Tie::Hash::Node.3.gz
+%%PERL5_MAN3%%/DWH_File::Tie::Scalar.3.gz
+%%PERL5_MAN3%%/DWH_File::Tie::Subscripted.3.gz
+%%PERL5_MAN3%%/DWH_File::Value.3.gz
+%%PERL5_MAN3%%/DWH_File::Value::Factory.3.gz
+%%PERL5_MAN3%%/DWH_File::Value::Plain.3.gz
+%%PERL5_MAN3%%/DWH_File::Value::Undef.3.gz
+%%PERL5_MAN3%%/DWH_File::Work.3.gz
 %%SITE_PERL%%/DWH_File.pm
-%%SITE_PERL%%/DWH_File/Registry/URI.pm
+%%SITE_PERL%%/DWH_File/Aware.pm
+%%SITE_PERL%%/DWH_File/Cache.pm
+%%SITE_PERL%%/DWH_File/Cached.pm
+%%SITE_PERL%%/DWH_File/ID_Mill.pm
+%%SITE_PERL%%/DWH_File/Kernel.pm
+%%SITE_PERL%%/DWH_File/Reference.pm
+%%SITE_PERL%%/DWH_File/Registry.pm
 %%SITE_PERL%%/DWH_File/Registry/Class.pm
-%%SITE_PERL%%/DWH_File/Value/Factory.pm
-%%SITE_PERL%%/DWH_File/Value/Undef.pm
-%%SITE_PERL%%/DWH_File/Value/Plain.pm
+%%SITE_PERL%%/DWH_File/Registry/URI.pm
+%%SITE_PERL%%/DWH_File/Slot.pm
+%%SITE_PERL%%/DWH_File/Subscript.pm
+%%SITE_PERL%%/DWH_File/Subscript/Wired.pm
+%%SITE_PERL%%/DWH_File/Tie.pm
+%%SITE_PERL%%/DWH_File/Tie/Array.pm
 %%SITE_PERL%%/DWH_File/Tie/Array/Node.pm
-%%SITE_PERL%%/DWH_File/Tie/Scalar.pm
+%%SITE_PERL%%/DWH_File/Tie/Foreign.pm
 %%SITE_PERL%%/DWH_File/Tie/Hash.pm
 %%SITE_PERL%%/DWH_File/Tie/Hash/Node.pm
-%%SITE_PERL%%/DWH_File/Tie/Array.pm
-%%SITE_PERL%%/DWH_File/Tie/Foreign.pm
+%%SITE_PERL%%/DWH_File/Tie/Scalar.pm
 %%SITE_PERL%%/DWH_File/Tie/Subscripted.pm
 %%SITE_PERL%%/DWH_File/Value.pm
-%%SITE_PERL%%/DWH_File/Aware.pm
-%%SITE_PERL%%/DWH_File/Kernel.pm
-%%SITE_PERL%%/DWH_File/Subscript.pm
-%%SITE_PERL%%/DWH_File/ID_Mill.pm
-%%SITE_PERL%%/DWH_File/Tie.pm
+%%SITE_PERL%%/DWH_File/Value/Factory.pm
+%%SITE_PERL%%/DWH_File/Value/Plain.pm
+%%SITE_PERL%%/DWH_File/Value/Undef.pm
 %%SITE_PERL%%/DWH_File/Work.pm
-%%SITE_PERL%%/DWH_File/Subscript/Wired.pm
-%%SITE_PERL%%/DWH_File/Registry.pm
-%%SITE_PERL%%/DWH_File/Cached.pm
-%%SITE_PERL%%/DWH_File/Reference.pm
-%%SITE_PERL%%/DWH_File/Cache.pm
-%%SITE_PERL%%/DWH_File/Slot.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DWH_File/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DWH_File
-@dirrm %%SITE_PERL%%/DWH_File/Registry
 @dirrm %%SITE_PERL%%/DWH_File/Value
-@dirrm %%SITE_PERL%%/DWH_File/Tie/Array
 @dirrm %%SITE_PERL%%/DWH_File/Tie/Hash
-@dirrm %%SITE_PERL%%/DWH_File/Subscript
+@dirrm %%SITE_PERL%%/DWH_File/Tie/Array
 @dirrm %%SITE_PERL%%/DWH_File/Tie
+@dirrm %%SITE_PERL%%/DWH_File/Subscript
+@dirrm %%SITE_PERL%%/DWH_File/Registry
 @dirrm %%SITE_PERL%%/DWH_File

@@ -1,4 +1,70 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Genezzo/.packlist
+bin/gendba.pl
+bin/genexp.pl
+%%PERL5_MAN3%%/Genezzo.3.gz
+%%PERL5_MAN3%%/Genezzo::BasicHelp.3.gz
+%%PERL5_MAN3%%/Genezzo::Block::RDBArray.3.gz
+%%PERL5_MAN3%%/Genezzo::Block::RDBlkA.3.gz
+%%PERL5_MAN3%%/Genezzo::Block::RDBlk_NN.3.gz
+%%PERL5_MAN3%%/Genezzo::Block::RDBlock.3.gz
+%%PERL5_MAN3%%/Genezzo::Block::RowDir.3.gz
+%%PERL5_MAN3%%/Genezzo::Block::Std.3.gz
+%%PERL5_MAN3%%/Genezzo::Block::Util.3.gz
+%%PERL5_MAN3%%/Genezzo::BufCa::BCFile.3.gz
+%%PERL5_MAN3%%/Genezzo::BufCa::BufCa.3.gz
+%%PERL5_MAN3%%/Genezzo::BufCa::BufCaElt.3.gz
+%%PERL5_MAN3%%/Genezzo::BufCa::DirtyScalar.3.gz
+%%PERL5_MAN3%%/Genezzo::BufCa::PinScalar.3.gz
+%%PERL5_MAN3%%/Genezzo::Dict.3.gz
+%%PERL5_MAN3%%/Genezzo::GenDBI.3.gz
+%%PERL5_MAN3%%/Genezzo::Havok.3.gz
+%%PERL5_MAN3%%/Genezzo::Havok::Basic.3.gz
+%%PERL5_MAN3%%/Genezzo::Havok::DebugUtils.3.gz
+%%PERL5_MAN3%%/Genezzo::Havok::Examples.3.gz
+%%PERL5_MAN3%%/Genezzo::Havok::OO_Examples.3.gz
+%%PERL5_MAN3%%/Genezzo::Havok::SQLCompare.3.gz
+%%PERL5_MAN3%%/Genezzo::Havok::SQLScalar.3.gz
+%%PERL5_MAN3%%/Genezzo::Havok::SysHelp.3.gz
+%%PERL5_MAN3%%/Genezzo::Havok::SysHook.3.gz
+%%PERL5_MAN3%%/Genezzo::Havok::UserExtend.3.gz
+%%PERL5_MAN3%%/Genezzo::Havok::UserFunctions.3.gz
+%%PERL5_MAN3%%/Genezzo::Havok::Utils.3.gz
+%%PERL5_MAN3%%/Genezzo::Index::bt2.3.gz
+%%PERL5_MAN3%%/Genezzo::Index::bt3.3.gz
+%%PERL5_MAN3%%/Genezzo::Index::btHash.3.gz
+%%PERL5_MAN3%%/Genezzo::Parse::SQL.3.gz
+%%PERL5_MAN3%%/Genezzo::Parse::SQLGrammar.3.gz
+%%PERL5_MAN3%%/Genezzo::Plan.3.gz
+%%PERL5_MAN3%%/Genezzo::Plan::MakeAlgebra.3.gz
+%%PERL5_MAN3%%/Genezzo::Plan::QueryRewrite.3.gz
+%%PERL5_MAN3%%/Genezzo::Plan::TypeCheck.3.gz
+%%PERL5_MAN3%%/Genezzo::PushHash::HPHRowBlk.3.gz
+%%PERL5_MAN3%%/Genezzo::PushHash::PHArray.3.gz
+%%PERL5_MAN3%%/Genezzo::PushHash::PHFixed.3.gz
+%%PERL5_MAN3%%/Genezzo::PushHash::PHNoUpdate.3.gz
+%%PERL5_MAN3%%/Genezzo::PushHash::PushHash.3.gz
+%%PERL5_MAN3%%/Genezzo::PushHash::hph.3.gz
+%%PERL5_MAN3%%/Genezzo::RawIO.3.gz
+%%PERL5_MAN3%%/Genezzo::Row::RSBlock.3.gz
+%%PERL5_MAN3%%/Genezzo::Row::RSDual.3.gz
+%%PERL5_MAN3%%/Genezzo::Row::RSExpr.3.gz
+%%PERL5_MAN3%%/Genezzo::Row::RSFile.3.gz
+%%PERL5_MAN3%%/Genezzo::Row::RSIdx1.3.gz
+%%PERL5_MAN3%%/Genezzo::Row::RSJoinA.3.gz
+%%PERL5_MAN3%%/Genezzo::Row::RSTab.3.gz
+%%PERL5_MAN3%%/Genezzo::SpaceMan::SMExtent.3.gz
+%%PERL5_MAN3%%/Genezzo::SpaceMan::SMFile.3.gz
+%%PERL5_MAN3%%/Genezzo::SpaceMan::SMFreeBlock.3.gz
+%%PERL5_MAN3%%/Genezzo::SpaceMan::SMHook.3.gz
+%%PERL5_MAN3%%/Genezzo::TSHash.3.gz
+%%PERL5_MAN3%%/Genezzo::Tablespace.3.gz
+%%PERL5_MAN3%%/Genezzo::TestSQL.3.gz
+%%PERL5_MAN3%%/Genezzo::TestSetup.3.gz
+%%PERL5_MAN3%%/Genezzo::Util.3.gz
+%%PERL5_MAN3%%/Genezzo::XEval.3.gz
+%%PERL5_MAN3%%/Genezzo::XEval::Prepare.3.gz
+%%PERL5_MAN3%%/Genezzo::XEval::SQLAlter.3.gz
+%%PERL5_MAN3%%/Genezzo::gendba.3.gz
+%%PERL5_MAN3%%/Genezzo::genexp.3.gz
 %%SITE_PERL%%/Genezzo.pm
 %%SITE_PERL%%/Genezzo/BasicHelp.pm
 %%SITE_PERL%%/Genezzo/Block/RDBArray.pm
@@ -78,8 +144,10 @@
 %%SITE_PERL%%/Genezzo/genexp.pl
 %%SITE_PERL%%/Genezzo/havok.sql
 %%SITE_PERL%%/Genezzo/syshook.sql
-bin/gendba.pl
-bin/genexp.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Genezzo/.packlist
+man/man1/gendba.pl.1.gz
+man/man1/genexp.pl.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Genezzo
 @dirrmtry %%SITE_PERL%%/Genezzo/XEval
 @dirrmtry %%SITE_PERL%%/Genezzo/SpaceMan
 @dirrmtry %%SITE_PERL%%/Genezzo/Row
@@ -91,4 +159,3 @@ bin/genexp.pl
 @dirrmtry %%SITE_PERL%%/Genezzo/BufCa
 @dirrmtry %%SITE_PERL%%/Genezzo/Block
 @dirrmtry %%SITE_PERL%%/Genezzo
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Genezzo

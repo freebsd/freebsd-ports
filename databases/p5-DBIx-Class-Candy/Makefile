@@ -20,8 +20,4 @@ TEST_DEPENDS=	p5-Test-Fatal>0:${PORTSDIR}/devel/p5-Test-Fatal \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	DBIx::Class::Candy.3 \
-	DBIx::Class::Candy::Exports.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,5 +1,43 @@
 bin/dbicdump
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema/Loader/.packlist
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::Base.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBI.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBI::ADO.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBI::ADO::MS_Jet.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBI::ADO::Microsoft_SQL_Server.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBI::Component::QuotedDefault.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBI::DB2.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBI::Firebird.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBI::Informix.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBI::InterBase.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBI::MSSQL.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBI::ODBC.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBI::ODBC::ACCESS.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBI::ODBC::Firebird.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBI::ODBC::Microsoft_SQL_Server.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBI::ODBC::SQL_Anywhere.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBI::Oracle.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBI::Pg.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBI::SQLAnywhere.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBI::SQLite.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBI::Sybase.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBI::Sybase::Common.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBI::Sybase::Microsoft_SQL_Server.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBI::Writing.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBI::mysql.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBObject.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBObject::Informix.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::DBObject::Sybase.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::Manual::UpgradingFromV4.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::Optional::Dependencies.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::RelBuilder.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::RelBuilder::Compat::v0_040.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::RelBuilder::Compat::v0_05.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::RelBuilder::Compat::v0_06.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::RelBuilder::Compat::v0_07.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::Table.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::Table::Informix.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Schema::Loader::Table::Sybase.3.gz
 %%SITE_PERL%%/DBIx/Class/Schema/Loader.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/Base.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI.pm
@@ -41,22 +79,24 @@ bin/dbicdump
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/Table/Informix.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/Table/Sybase.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/Utils.pm
-@dirrm %%SITE_PERL%%/DBIx/Class/Schema/Loader/Table
-@dirrm %%SITE_PERL%%/DBIx/Class/Schema/Loader/RelBuilder/Compat
-@dirrm %%SITE_PERL%%/DBIx/Class/Schema/Loader/RelBuilder
-@dirrm %%SITE_PERL%%/DBIx/Class/Schema/Loader/Optional
-@dirrm %%SITE_PERL%%/DBIx/Class/Schema/Loader/Manual
-@dirrm %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBObject
-@dirrm %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Sybase
-@dirrm %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/ODBC
-@dirrm %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Component
-@dirrm %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/ADO
-@dirrm %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema
-@dirrmtry %%SITE_PERL%%/DBIx/Class
-@dirrmtry %%SITE_PERL%%/DBIx
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema/Loader/.packlist
+man/man1/dbicdump.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema/Loader
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/Table
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/RelBuilder/Compat
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/RelBuilder
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/Optional
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/Manual
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBObject
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Sybase
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/ODBC
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Component
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/ADO
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema
+@dirrmtry %%SITE_PERL%%/DBIx/Class
+@dirrmtry %%SITE_PERL%%/DBIx

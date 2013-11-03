@@ -1,19 +1,21 @@
+%%PERL5_MAN3%%/DBIx::NoSQL.3.gz
+%%PERL5_MAN3%%/DBIx::NoSQLite.3.gz
 %%SITE_PERL%%/DBIx/NoSQL.pm
-%%SITE_PERL%%/DBIx/NoSQLite.pm
+%%SITE_PERL%%/DBIx/NoSQL/Class.pm
+%%SITE_PERL%%/DBIx/NoSQL/ClassScaffold.pm
+%%SITE_PERL%%/DBIx/NoSQL/Entity.pm
+%%SITE_PERL%%/DBIx/NoSQL/Model.pm
 %%SITE_PERL%%/DBIx/NoSQL/Model/Field.pm
 %%SITE_PERL%%/DBIx/NoSQL/Model/Index.pm
-%%SITE_PERL%%/DBIx/NoSQL/Entity.pm
-%%SITE_PERL%%/DBIx/NoSQL/TypeMap.pm
-%%SITE_PERL%%/DBIx/NoSQL/Class.pm
-%%SITE_PERL%%/DBIx/NoSQL/Store.pm
 %%SITE_PERL%%/DBIx/NoSQL/Search.pm
-%%SITE_PERL%%/DBIx/NoSQL/Model.pm
 %%SITE_PERL%%/DBIx/NoSQL/Stash.pm
 %%SITE_PERL%%/DBIx/NoSQL/Storage.pm
-%%SITE_PERL%%/DBIx/NoSQL/ClassScaffold.pm
-@dirrmtry %%SITE_PERL%%/DBIx/NoSQL/Model
-@dirrmtry %%SITE_PERL%%/DBIx/NoSQL
-@dirrmtry %%SITE_PERL%%/DBIx
+%%SITE_PERL%%/DBIx/NoSQL/Store.pm
+%%SITE_PERL%%/DBIx/NoSQL/TypeMap.pm
+%%SITE_PERL%%/DBIx/NoSQLite.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/NoSQL/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/NoSQL
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
+@dirrmtry %%SITE_PERL%%/DBIx/NoSQL/Model
+@dirrmtry %%SITE_PERL%%/DBIx/NoSQL
+@dirrmtry %%SITE_PERL%%/DBIx

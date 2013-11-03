@@ -18,9 +18,6 @@ USE_PGSQL=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Pg.3
-
 CONFIGURE_ENV=	POSTGRES_INCLUDE=${LOCALBASE}/include POSTGRES_LIB=${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

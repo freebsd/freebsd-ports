@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ima/DBI/.packlist
+%%PERL5_MAN3%%/Ima::DBI.3.gz
 %%SITE_PERL%%/Ima/DBI.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ima/DBI
-@dirrmtry %%SITE_PERL%%/Ima
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ima/DBI/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ima/DBI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ima
+@dirrmtry %%SITE_PERL%%/Ima

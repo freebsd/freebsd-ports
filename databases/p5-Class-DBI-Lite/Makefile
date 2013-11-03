@@ -28,16 +28,4 @@ DEPRECATED=	deprecated by upstream
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Class::DBI::Lite.3 \
-		Class::DBI::Lite::CacheManager.3 \
-		Class::DBI::Lite::CacheManager::InMemory.3 \
-		Class::DBI::Lite::CacheManager::Memcached.3 \
-		Class::DBI::Lite::ColumnInfo.3 \
-		Class::DBI::Lite::Fixture.3 \
-		Class::DBI::Lite::Iterator.3 \
-		Class::DBI::Lite::Pager.3 \
-		Class::DBI::Lite::TableInfo.3 \
-		Class::DBI::Lite::Tutorial.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,3 +1,39 @@
+%%PERL5_MAN3%%/Tangram.3.gz
+%%PERL5_MAN3%%/Tangram::Complicity.3.gz
+%%PERL5_MAN3%%/Tangram::Core.3.gz
+%%PERL5_MAN3%%/Tangram::Cursor.3.gz
+%%PERL5_MAN3%%/Tangram::Deploy.3.gz
+%%PERL5_MAN3%%/Tangram::Driver::Oracle.3.gz
+%%PERL5_MAN3%%/Tangram::Driver::Pg.3.gz
+%%PERL5_MAN3%%/Tangram::Driver::SQLite.3.gz
+%%PERL5_MAN3%%/Tangram::Driver::Sybase.3.gz
+%%PERL5_MAN3%%/Tangram::Driver::mysql.3.gz
+%%PERL5_MAN3%%/Tangram::Expr.3.gz
+%%PERL5_MAN3%%/Tangram::Intro.3.gz
+%%PERL5_MAN3%%/Tangram::Relational.3.gz
+%%PERL5_MAN3%%/Tangram::Relational::Mappings.3.gz
+%%PERL5_MAN3%%/Tangram::Remote.3.gz
+%%PERL5_MAN3%%/Tangram::Schema.3.gz
+%%PERL5_MAN3%%/Tangram::Springfield.3.gz
+%%PERL5_MAN3%%/Tangram::Storage.3.gz
+%%PERL5_MAN3%%/Tangram::Sucks.3.gz
+%%PERL5_MAN3%%/Tangram::Tour.3.gz
+%%PERL5_MAN3%%/Tangram::Type.3.gz
+%%PERL5_MAN3%%/Tangram::Type::Array::FromMany.3.gz
+%%PERL5_MAN3%%/Tangram::Type::Array::FromOne.3.gz
+%%PERL5_MAN3%%/Tangram::Type::Array::Scalar.3.gz
+%%PERL5_MAN3%%/Tangram::Type::Dump.3.gz
+%%PERL5_MAN3%%/Tangram::Type::Dump::Any.3.gz
+%%PERL5_MAN3%%/Tangram::Type::Dump::Perl.3.gz
+%%PERL5_MAN3%%/Tangram::Type::Dump::Storable.3.gz
+%%PERL5_MAN3%%/Tangram::Type::Dump::YAML.3.gz
+%%PERL5_MAN3%%/Tangram::Type::Extending.3.gz
+%%PERL5_MAN3%%/Tangram::Type::Hash::Scalar.3.gz
+%%PERL5_MAN3%%/Tangram::Type::Ref::FromMany.3.gz
+%%PERL5_MAN3%%/Tangram::Type::Scalar.3.gz
+%%PERL5_MAN3%%/Tangram::Type::Set::FromMany.3.gz
+%%PERL5_MAN3%%/Tangram::Type::Set::FromOne.3.gz
+%%PERL5_MAN3%%/Tangram::Type::TimeAndDate.3.gz
 %%SITE_PERL%%/Tangram.pm
 %%SITE_PERL%%/Tangram.pod
 %%SITE_PERL%%/Tangram/Compat.pm
@@ -120,31 +156,31 @@
 %%SITE_PERL%%/Tangram/Type/TimeAndDate.pod
 %%SITE_PERL%%/auto/Tangram/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tangram/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tangram
-@dirrm %%SITE_PERL%%/auto/Tangram
-@dirrm %%SITE_PERL%%/Tangram/Type/Set
-@dirrm %%SITE_PERL%%/Tangram/Type/Ref
-@dirrm %%SITE_PERL%%/Tangram/Type/Hash
-@dirrm %%SITE_PERL%%/Tangram/Type/Dump
-@dirrm %%SITE_PERL%%/Tangram/Type/Date
-@dirrm %%SITE_PERL%%/Tangram/Type/Array
-@dirrm %%SITE_PERL%%/Tangram/Type/Abstract
-@dirrm %%SITE_PERL%%/Tangram/Type
-@dirrm %%SITE_PERL%%/Tangram/Storage
-@dirrm %%SITE_PERL%%/Tangram/Schema
-@dirrm %%SITE_PERL%%/Tangram/Relational/Engine
-@dirrm %%SITE_PERL%%/Tangram/Relational
-@dirrm %%SITE_PERL%%/Tangram/Lazy
-@dirrm %%SITE_PERL%%/Tangram/Expr/Coll
-@dirrm %%SITE_PERL%%/Tangram/Expr
-@dirrm %%SITE_PERL%%/Tangram/Driver/mysql/Expr
-@dirrm %%SITE_PERL%%/Tangram/Driver/mysql
-@dirrm %%SITE_PERL%%/Tangram/Driver/Sybase/Expr
-@dirrm %%SITE_PERL%%/Tangram/Driver/Sybase
-@dirrm %%SITE_PERL%%/Tangram/Driver/SQLite
-@dirrm %%SITE_PERL%%/Tangram/Driver/Pg
-@dirrm %%SITE_PERL%%/Tangram/Driver/Oracle
-@dirrm %%SITE_PERL%%/Tangram/Driver
-@dirrm %%SITE_PERL%%/Tangram/Cursor
-@dirrm %%SITE_PERL%%/Tangram/Compat
-@dirrm %%SITE_PERL%%/Tangram
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tangram
+@dirrmtry %%SITE_PERL%%/auto/Tangram
+@dirrmtry %%SITE_PERL%%/Tangram/Type/Set
+@dirrmtry %%SITE_PERL%%/Tangram/Type/Ref
+@dirrmtry %%SITE_PERL%%/Tangram/Type/Hash
+@dirrmtry %%SITE_PERL%%/Tangram/Type/Dump
+@dirrmtry %%SITE_PERL%%/Tangram/Type/Date
+@dirrmtry %%SITE_PERL%%/Tangram/Type/Array
+@dirrmtry %%SITE_PERL%%/Tangram/Type/Abstract
+@dirrmtry %%SITE_PERL%%/Tangram/Type
+@dirrmtry %%SITE_PERL%%/Tangram/Storage
+@dirrmtry %%SITE_PERL%%/Tangram/Schema
+@dirrmtry %%SITE_PERL%%/Tangram/Relational/Engine
+@dirrmtry %%SITE_PERL%%/Tangram/Relational
+@dirrmtry %%SITE_PERL%%/Tangram/Lazy
+@dirrmtry %%SITE_PERL%%/Tangram/Expr/Coll
+@dirrmtry %%SITE_PERL%%/Tangram/Expr
+@dirrmtry %%SITE_PERL%%/Tangram/Driver/mysql/Expr
+@dirrmtry %%SITE_PERL%%/Tangram/Driver/mysql
+@dirrmtry %%SITE_PERL%%/Tangram/Driver/Sybase/Expr
+@dirrmtry %%SITE_PERL%%/Tangram/Driver/Sybase
+@dirrmtry %%SITE_PERL%%/Tangram/Driver/SQLite
+@dirrmtry %%SITE_PERL%%/Tangram/Driver/Pg
+@dirrmtry %%SITE_PERL%%/Tangram/Driver/Oracle
+@dirrmtry %%SITE_PERL%%/Tangram/Driver
+@dirrmtry %%SITE_PERL%%/Tangram/Cursor
+@dirrmtry %%SITE_PERL%%/Tangram/Compat
+@dirrmtry %%SITE_PERL%%/Tangram
