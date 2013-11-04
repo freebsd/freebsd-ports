@@ -1,0 +1,5 @@
+%%PERL5_MAN3%%/Proc::Pidfile.3.gz
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/Pidfile/.packlist
+%%SITE_PERL%%/Proc/Pidfile.pm
+@dirrmtry %%SITE_PERL%%/Proc
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/Pidfile
