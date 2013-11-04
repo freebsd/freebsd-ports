@@ -1,173 +1,173 @@
 bin/tuxracer
-share/tuxracer/courses/bumpy_ride/course.tcl
-share/tuxracer/courses/bumpy_ride/elev.rgb
-share/tuxracer/courses/bumpy_ride/preview.rgb
-share/tuxracer/courses/bumpy_ride/terrain.rgb
-share/tuxracer/courses/bumpy_ride/trees.rgb
-@dirrm share/tuxracer/courses/bumpy_ride
-share/tuxracer/courses/course_idx.tcl
-share/tuxracer/courses/bunny_hill/course.tcl
-share/tuxracer/courses/bunny_hill/elev.rgb
-share/tuxracer/courses/bunny_hill/preview.rgb
-share/tuxracer/courses/bunny_hill/terrain.rgb
-share/tuxracer/courses/bunny_hill/trees.rgb
-@dirrm share/tuxracer/courses/bunny_hill
-share/tuxracer/courses/common/buttprint.rgb
-share/tuxracer/courses/common/buttstart.rgb
-share/tuxracer/courses/common/buttstop.rgb
-share/tuxracer/courses/common/cloudyback.rgb
-share/tuxracer/courses/common/cloudybottom.rgb
-share/tuxracer/courses/common/cloudyfront.rgb
-share/tuxracer/courses/common/cloudyleft.rgb
-share/tuxracer/courses/common/cloudyright.rgb
-share/tuxracer/courses/common/cloudytop.rgb
-share/tuxracer/courses/common/courseinit.tcl
-share/tuxracer/courses/common/cupicon.rgb
-share/tuxracer/courses/common/envmap.rgb
-share/tuxracer/courses/common/finish.rgb
-share/tuxracer/courses/common/flag.rgb
-share/tuxracer/courses/common/foggy_light.tcl
-share/tuxracer/courses/common/herring_standard.rgb
-share/tuxracer/courses/common/herringrunicon.rgb
-share/tuxracer/courses/common/ice.rgb
-share/tuxracer/courses/common/night_light.tcl
-share/tuxracer/courses/common/nightback.rgb
-share/tuxracer/courses/common/nightbottom.rgb
-share/tuxracer/courses/common/nightenv.rgb
-share/tuxracer/courses/common/nightfront.rgb
-share/tuxracer/courses/common/nightleft.rgb
-share/tuxracer/courses/common/nightright.rgb
-share/tuxracer/courses/common/nighttop.rgb
-share/tuxracer/courses/common/nopreview.rgb
-share/tuxracer/courses/common/rock.rgb
-share/tuxracer/courses/common/shrub.rgb
-share/tuxracer/courses/common/snow.rgb
-share/tuxracer/courses/common/snowparticles.rgb
-share/tuxracer/courses/common/start.rgb
-share/tuxracer/courses/common/sunny_light.tcl
-share/tuxracer/courses/common/sunnyback.rgb
-share/tuxracer/courses/common/sunnybottom.rgb
-share/tuxracer/courses/common/sunnyfront.rgb
-share/tuxracer/courses/common/sunnyleft.rgb
-share/tuxracer/courses/common/sunnyright.rgb
-share/tuxracer/courses/common/sunnytop.rgb
-share/tuxracer/courses/common/tree.rgb
-share/tuxracer/courses/common/tree_barren.rgb
-share/tuxracer/courses/common/tux_walk.tcl
-share/tuxracer/courses/common/tree_polyhedron.tcl
-share/tuxracer/courses/common/tux_moonwalk.tcl
-@dirrm share/tuxracer/courses/common
-share/tuxracer/courses/contrib/downhill_fear/course.tcl
-share/tuxracer/courses/contrib/downhill_fear/elev.rgb
-share/tuxracer/courses/contrib/downhill_fear/preview.rgb
-share/tuxracer/courses/contrib/downhill_fear/terrain.rgb
-share/tuxracer/courses/contrib/downhill_fear/trees.rgb
-@dirrm share/tuxracer/courses/contrib/downhill_fear
-share/tuxracer/courses/contrib/ice_canyon/course.tcl
-share/tuxracer/courses/contrib/ice_canyon/elev.rgb
-share/tuxracer/courses/contrib/ice_canyon/preview.rgb
-share/tuxracer/courses/contrib/ice_canyon/terrain.rgb
-share/tuxracer/courses/contrib/ice_canyon/trees.rgb
-@dirrm share/tuxracer/courses/contrib/ice_canyon
-share/tuxracer/courses/contrib/ingos_speedway/course.tcl
-share/tuxracer/courses/contrib/ingos_speedway/elev.rgb
-share/tuxracer/courses/contrib/ingos_speedway/preview.rgb
-share/tuxracer/courses/contrib/ingos_speedway/terrain.rgb
-share/tuxracer/courses/contrib/ingos_speedway/trees.rgb
-@dirrm share/tuxracer/courses/contrib/ingos_speedway
-share/tuxracer/courses/contrib/jools_big_mountain/course.tcl
-share/tuxracer/courses/contrib/jools_big_mountain/elev.rgb
-share/tuxracer/courses/contrib/jools_big_mountain/preview.rgb
-share/tuxracer/courses/contrib/jools_big_mountain/terrain.rgb
-share/tuxracer/courses/contrib/jools_big_mountain/trees.rgb
-@dirrm share/tuxracer/courses/contrib/jools_big_mountain
-share/tuxracer/courses/contrib/nebula/course.tcl
-share/tuxracer/courses/contrib/nebula/elev.rgb
-share/tuxracer/courses/contrib/nebula/preview.rgb
-share/tuxracer/courses/contrib/nebula/terrain.rgb
-share/tuxracer/courses/contrib/nebula/trees.rgb
-@dirrm share/tuxracer/courses/contrib/nebula
-share/tuxracer/courses/contrib/penguins_cant_fly/course.tcl
-share/tuxracer/courses/contrib/penguins_cant_fly/elev.rgb
-share/tuxracer/courses/contrib/penguins_cant_fly/preview.rgb
-share/tuxracer/courses/contrib/penguins_cant_fly/terrain.rgb
-share/tuxracer/courses/contrib/penguins_cant_fly/trees.rgb
-@dirrm share/tuxracer/courses/contrib/penguins_cant_fly
-share/tuxracer/courses/contrib/sentinel_towers/course.tcl
-share/tuxracer/courses/contrib/sentinel_towers/elev.rgb
-share/tuxracer/courses/contrib/sentinel_towers/preview.rgb
-share/tuxracer/courses/contrib/sentinel_towers/terrain.rgb
-share/tuxracer/courses/contrib/sentinel_towers/trees.rgb
-@dirrm share/tuxracer/courses/contrib/sentinel_towers
-share/tuxracer/courses/contrib/twin_paths/course.tcl
-share/tuxracer/courses/contrib/twin_paths/elev.rgb
-share/tuxracer/courses/contrib/twin_paths/preview.rgb
-share/tuxracer/courses/contrib/twin_paths/terrain.rgb
-share/tuxracer/courses/contrib/twin_paths/trees.rgb
-@dirrm share/tuxracer/courses/contrib/twin_paths
-@dirrm share/tuxracer/courses/contrib
-share/tuxracer/courses/frozen_river/course.tcl
-share/tuxracer/courses/frozen_river/elev.rgb
-share/tuxracer/courses/frozen_river/preview.rgb
-share/tuxracer/courses/frozen_river/terrain.rgb
-share/tuxracer/courses/frozen_river/trees.rgb
-@dirrm share/tuxracer/courses/frozen_river
-share/tuxracer/courses/path_of_daggers/course.tcl
-share/tuxracer/courses/path_of_daggers/elev.rgb
-share/tuxracer/courses/path_of_daggers/preview.rgb
-share/tuxracer/courses/path_of_daggers/terrain.rgb
-share/tuxracer/courses/path_of_daggers/trees.rgb
-@dirrm share/tuxracer/courses/path_of_daggers
-share/tuxracer/courses/twisty_slope/course.tcl
-share/tuxracer/courses/twisty_slope/elev.rgb
-share/tuxracer/courses/twisty_slope/preview.rgb
-share/tuxracer/courses/twisty_slope/terrain.rgb
-share/tuxracer/courses/twisty_slope/trees.rgb
-@dirrm share/tuxracer/courses/twisty_slope
-@dirrm share/tuxracer/courses
-share/tuxracer/README
-share/tuxracer/fonts/trebuchet.tfm
-share/tuxracer/fonts/trebuchet_white.rgb
-share/tuxracer/fonts/trebuchet_yel_blk.rgb
-@dirrm share/tuxracer/fonts
-share/tuxracer/music/options1-jt.it
-share/tuxracer/music/race1-jt.it
-share/tuxracer/music/race2-jt.it
-share/tuxracer/music/readme
-share/tuxracer/music/start1-jt.it
-share/tuxracer/music/wonrace1-jt.it
-@dirrm share/tuxracer/music
-share/tuxracer/sounds/tux_hit_tree1.wav
-share/tuxracer/sounds/tux_on_ice1.wav
-share/tuxracer/sounds/tux_on_rock1.wav
-share/tuxracer/sounds/tux_on_snow1.wav
-share/tuxracer/sounds/fish_pickup1.wav
-share/tuxracer/sounds/fish_pickup2.wav
-share/tuxracer/sounds/fish_pickup3.wav
-@dirrm share/tuxracer/sounds
-share/tuxracer/textures/checkmark.rgb
-share/tuxracer/textures/conditions_button.rgb
-share/tuxracer/textures/gaugeenergymask.rgb
-share/tuxracer/textures/gaugeoutline.rgb
-share/tuxracer/textures/gaugespeedmask.rgb
-share/tuxracer/textures/herringicon.rgb
-share/tuxracer/textures/listbox_arrows.rgb
-share/tuxracer/textures/menu_bottom_left.rgb
-share/tuxracer/textures/menu_bottom_right.rgb
-share/tuxracer/textures/menu_title.rgb
-share/tuxracer/textures/menu_top_left.rgb
-share/tuxracer/textures/menu_top_right.rgb
-share/tuxracer/textures/mirror_button.rgb
-share/tuxracer/textures/mouse_cursor.rgb
-share/tuxracer/textures/noicon.rgb
-share/tuxracer/textures/snow_button.rgb
-share/tuxracer/textures/splash_bl.rgb
-share/tuxracer/textures/splash_br.rgb
-share/tuxracer/textures/splash_tl.rgb
-share/tuxracer/textures/splash_tr.rgb
-share/tuxracer/textures/tuxlife.rgb
-share/tuxracer/textures/wind_button.rgb
-@dirrm share/tuxracer/textures
-share/tuxracer/tux.tcl
-share/tuxracer/tuxracer_init.tcl
-@dirrm share/tuxracer
+%%DATADIR%%/README
+%%DATADIR%%/courses/bumpy_ride/course.tcl
+%%DATADIR%%/courses/bumpy_ride/elev.rgb
+%%DATADIR%%/courses/bumpy_ride/preview.rgb
+%%DATADIR%%/courses/bumpy_ride/terrain.rgb
+%%DATADIR%%/courses/bumpy_ride/trees.rgb
+%%DATADIR%%/courses/bunny_hill/course.tcl
+%%DATADIR%%/courses/bunny_hill/elev.rgb
+%%DATADIR%%/courses/bunny_hill/preview.rgb
+%%DATADIR%%/courses/bunny_hill/terrain.rgb
+%%DATADIR%%/courses/bunny_hill/trees.rgb
+%%DATADIR%%/courses/common/buttprint.rgb
+%%DATADIR%%/courses/common/buttstart.rgb
+%%DATADIR%%/courses/common/buttstop.rgb
+%%DATADIR%%/courses/common/cloudyback.rgb
+%%DATADIR%%/courses/common/cloudybottom.rgb
+%%DATADIR%%/courses/common/cloudyfront.rgb
+%%DATADIR%%/courses/common/cloudyleft.rgb
+%%DATADIR%%/courses/common/cloudyright.rgb
+%%DATADIR%%/courses/common/cloudytop.rgb
+%%DATADIR%%/courses/common/courseinit.tcl
+%%DATADIR%%/courses/common/cupicon.rgb
+%%DATADIR%%/courses/common/envmap.rgb
+%%DATADIR%%/courses/common/finish.rgb
+%%DATADIR%%/courses/common/flag.rgb
+%%DATADIR%%/courses/common/foggy_light.tcl
+%%DATADIR%%/courses/common/herring_standard.rgb
+%%DATADIR%%/courses/common/herringrunicon.rgb
+%%DATADIR%%/courses/common/ice.rgb
+%%DATADIR%%/courses/common/night_light.tcl
+%%DATADIR%%/courses/common/nightback.rgb
+%%DATADIR%%/courses/common/nightbottom.rgb
+%%DATADIR%%/courses/common/nightenv.rgb
+%%DATADIR%%/courses/common/nightfront.rgb
+%%DATADIR%%/courses/common/nightleft.rgb
+%%DATADIR%%/courses/common/nightright.rgb
+%%DATADIR%%/courses/common/nighttop.rgb
+%%DATADIR%%/courses/common/nopreview.rgb
+%%DATADIR%%/courses/common/rock.rgb
+%%DATADIR%%/courses/common/shrub.rgb
+%%DATADIR%%/courses/common/snow.rgb
+%%DATADIR%%/courses/common/snowparticles.rgb
+%%DATADIR%%/courses/common/start.rgb
+%%DATADIR%%/courses/common/sunny_light.tcl
+%%DATADIR%%/courses/common/sunnyback.rgb
+%%DATADIR%%/courses/common/sunnybottom.rgb
+%%DATADIR%%/courses/common/sunnyfront.rgb
+%%DATADIR%%/courses/common/sunnyleft.rgb
+%%DATADIR%%/courses/common/sunnyright.rgb
+%%DATADIR%%/courses/common/sunnytop.rgb
+%%DATADIR%%/courses/common/tree.rgb
+%%DATADIR%%/courses/common/tree_barren.rgb
+%%DATADIR%%/courses/common/tree_polyhedron.tcl
+%%DATADIR%%/courses/common/tux_moonwalk.tcl
+%%DATADIR%%/courses/common/tux_walk.tcl
+%%DATADIR%%/courses/contrib/downhill_fear/course.tcl
+%%DATADIR%%/courses/contrib/downhill_fear/elev.rgb
+%%DATADIR%%/courses/contrib/downhill_fear/preview.rgb
+%%DATADIR%%/courses/contrib/downhill_fear/terrain.rgb
+%%DATADIR%%/courses/contrib/downhill_fear/trees.rgb
+%%DATADIR%%/courses/contrib/ice_canyon/course.tcl
+%%DATADIR%%/courses/contrib/ice_canyon/elev.rgb
+%%DATADIR%%/courses/contrib/ice_canyon/preview.rgb
+%%DATADIR%%/courses/contrib/ice_canyon/terrain.rgb
+%%DATADIR%%/courses/contrib/ice_canyon/trees.rgb
+%%DATADIR%%/courses/contrib/ingos_speedway/course.tcl
+%%DATADIR%%/courses/contrib/ingos_speedway/elev.rgb
+%%DATADIR%%/courses/contrib/ingos_speedway/preview.rgb
+%%DATADIR%%/courses/contrib/ingos_speedway/terrain.rgb
+%%DATADIR%%/courses/contrib/ingos_speedway/trees.rgb
+%%DATADIR%%/courses/contrib/jools_big_mountain/course.tcl
+%%DATADIR%%/courses/contrib/jools_big_mountain/elev.rgb
+%%DATADIR%%/courses/contrib/jools_big_mountain/preview.rgb
+%%DATADIR%%/courses/contrib/jools_big_mountain/terrain.rgb
+%%DATADIR%%/courses/contrib/jools_big_mountain/trees.rgb
+%%DATADIR%%/courses/contrib/nebula/course.tcl
+%%DATADIR%%/courses/contrib/nebula/elev.rgb
+%%DATADIR%%/courses/contrib/nebula/preview.rgb
+%%DATADIR%%/courses/contrib/nebula/terrain.rgb
+%%DATADIR%%/courses/contrib/nebula/trees.rgb
+%%DATADIR%%/courses/contrib/penguins_cant_fly/course.tcl
+%%DATADIR%%/courses/contrib/penguins_cant_fly/elev.rgb
+%%DATADIR%%/courses/contrib/penguins_cant_fly/preview.rgb
+%%DATADIR%%/courses/contrib/penguins_cant_fly/terrain.rgb
+%%DATADIR%%/courses/contrib/penguins_cant_fly/trees.rgb
+%%DATADIR%%/courses/contrib/sentinel_towers/course.tcl
+%%DATADIR%%/courses/contrib/sentinel_towers/elev.rgb
+%%DATADIR%%/courses/contrib/sentinel_towers/preview.rgb
+%%DATADIR%%/courses/contrib/sentinel_towers/terrain.rgb
+%%DATADIR%%/courses/contrib/sentinel_towers/trees.rgb
+%%DATADIR%%/courses/contrib/twin_paths/course.tcl
+%%DATADIR%%/courses/contrib/twin_paths/elev.rgb
+%%DATADIR%%/courses/contrib/twin_paths/preview.rgb
+%%DATADIR%%/courses/contrib/twin_paths/terrain.rgb
+%%DATADIR%%/courses/contrib/twin_paths/trees.rgb
+%%DATADIR%%/courses/course_idx.tcl
+%%DATADIR%%/courses/frozen_river/course.tcl
+%%DATADIR%%/courses/frozen_river/elev.rgb
+%%DATADIR%%/courses/frozen_river/preview.rgb
+%%DATADIR%%/courses/frozen_river/terrain.rgb
+%%DATADIR%%/courses/frozen_river/trees.rgb
+%%DATADIR%%/courses/path_of_daggers/course.tcl
+%%DATADIR%%/courses/path_of_daggers/elev.rgb
+%%DATADIR%%/courses/path_of_daggers/preview.rgb
+%%DATADIR%%/courses/path_of_daggers/terrain.rgb
+%%DATADIR%%/courses/path_of_daggers/trees.rgb
+%%DATADIR%%/courses/twisty_slope/course.tcl
+%%DATADIR%%/courses/twisty_slope/elev.rgb
+%%DATADIR%%/courses/twisty_slope/preview.rgb
+%%DATADIR%%/courses/twisty_slope/terrain.rgb
+%%DATADIR%%/courses/twisty_slope/trees.rgb
+%%DATADIR%%/fonts/trebuchet.tfm
+%%DATADIR%%/fonts/trebuchet_white.rgb
+%%DATADIR%%/fonts/trebuchet_yel_blk.rgb
+%%DATADIR%%/music/options1-jt.it
+%%DATADIR%%/music/race1-jt.it
+%%DATADIR%%/music/race2-jt.it
+%%DATADIR%%/music/readme
+%%DATADIR%%/music/start1-jt.it
+%%DATADIR%%/music/wonrace1-jt.it
+%%DATADIR%%/sounds/fish_pickup1.wav
+%%DATADIR%%/sounds/fish_pickup2.wav
+%%DATADIR%%/sounds/fish_pickup3.wav
+%%DATADIR%%/sounds/tux_hit_tree1.wav
+%%DATADIR%%/sounds/tux_on_ice1.wav
+%%DATADIR%%/sounds/tux_on_rock1.wav
+%%DATADIR%%/sounds/tux_on_snow1.wav
+%%DATADIR%%/textures/checkmark.rgb
+%%DATADIR%%/textures/conditions_button.rgb
+%%DATADIR%%/textures/gaugeenergymask.rgb
+%%DATADIR%%/textures/gaugeoutline.rgb
+%%DATADIR%%/textures/gaugespeedmask.rgb
+%%DATADIR%%/textures/herringicon.rgb
+%%DATADIR%%/textures/listbox_arrows.rgb
+%%DATADIR%%/textures/menu_bottom_left.rgb
+%%DATADIR%%/textures/menu_bottom_right.rgb
+%%DATADIR%%/textures/menu_title.rgb
+%%DATADIR%%/textures/menu_top_left.rgb
+%%DATADIR%%/textures/menu_top_right.rgb
+%%DATADIR%%/textures/mirror_button.rgb
+%%DATADIR%%/textures/mouse_cursor.rgb
+%%DATADIR%%/textures/noicon.rgb
+%%DATADIR%%/textures/snow_button.rgb
+%%DATADIR%%/textures/splash_bl.rgb
+%%DATADIR%%/textures/splash_br.rgb
+%%DATADIR%%/textures/splash_tl.rgb
+%%DATADIR%%/textures/splash_tr.rgb
+%%DATADIR%%/textures/tuxlife.rgb
+%%DATADIR%%/textures/wind_button.rgb
+%%DATADIR%%/tux.tcl
+%%DATADIR%%/tuxracer_init.tcl
+@dirrmtry %%DATADIR%%/textures
+@dirrmtry %%DATADIR%%/sounds
+@dirrmtry %%DATADIR%%/music
+@dirrmtry %%DATADIR%%/fonts
+@dirrmtry %%DATADIR%%/courses/twisty_slope
+@dirrmtry %%DATADIR%%/courses/path_of_daggers
+@dirrmtry %%DATADIR%%/courses/frozen_river
+@dirrmtry %%DATADIR%%/courses/contrib/twin_paths
+@dirrmtry %%DATADIR%%/courses/contrib/sentinel_towers
+@dirrmtry %%DATADIR%%/courses/contrib/penguins_cant_fly
+@dirrmtry %%DATADIR%%/courses/contrib/nebula
+@dirrmtry %%DATADIR%%/courses/contrib/jools_big_mountain
+@dirrmtry %%DATADIR%%/courses/contrib/ingos_speedway
+@dirrmtry %%DATADIR%%/courses/contrib/ice_canyon
+@dirrmtry %%DATADIR%%/courses/contrib/downhill_fear
+@dirrmtry %%DATADIR%%/courses/contrib
+@dirrmtry %%DATADIR%%/courses/common
+@dirrmtry %%DATADIR%%/courses/bunny_hill
+@dirrmtry %%DATADIR%%/courses/bumpy_ride
+@dirrmtry %%DATADIR%%/courses
+@dirrmtry %%DATADIR%%
