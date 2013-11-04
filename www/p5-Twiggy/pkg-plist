@@ -1,3 +1,6 @@
+man/man1/twiggy.1.gz
+%%PERL5_MAN3%%/Plack::Handler::Twiggy.3.gz
+%%PERL5_MAN3%%/Twiggy.3.gz
 bin/twiggy
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Twiggy/.packlist
 %%SITE_PERL%%/AnyEvent/Server/PSGI.pm
