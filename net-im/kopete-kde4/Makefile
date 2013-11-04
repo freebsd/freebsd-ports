@@ -2,6 +2,7 @@
 
 PORTNAME=	kopete
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net-im kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -14,7 +15,6 @@ COMMENT=	KDE multi-protocol instant messenger
 LIB_DEPENDS=	idn.17:${PORTSDIR}/dns/libidn \
 		qca.2:${PORTSDIR}/devel/qca \
 		otr.4:${PORTSDIR}/security/libotr3 \
-		msn.0:${PORTSDIR}/net-im/libmsn \
 		gadu.3:${PORTSDIR}/polish/libgadu \
 		ortp.8:${PORTSDIR}/net/linphone-base \
 		mediastreamer.0:${PORTSDIR}/net/linphone-base \
@@ -59,6 +59,9 @@ CMAKE_ARGS+=	-DWITH_Alsa:BOOL=OFF
 
 # Route Mozilla plugin by standard path.
 CMAKE_ARGS+=	-DMOZPLUGIN_INSTALL_DIR:PATH="${WEBPLUGINS_DIR}"
+
+# Forcefully disable net-im/libmsn which was deprecated on 2013-07-27.
+CMAKE_ARGS+=	-DHAVE_LIBMSN:BOOL=OFF
 
 # Fix build with fresh multimedia/v4l_compat installed.
 CFLAGS+=	-DHAVE_LINUX_INTEGER_TYPES=1

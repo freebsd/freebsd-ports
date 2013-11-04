@@ -1,0 +1,98 @@
+Build fix for clang and libc++.
+
+stl_decl.h overrides std::vector which is not supposed to be done and does not
+work with libc++. Using plain std::vector with both libc++ and libstdc++ should
+be harmless on FreeBSD.
+
+--- kopete/protocols/jabber/googletalk/libjingle/talk/xmllite/xmlbuilder.cc
+++- kopete/protocols/jabber/googletalk/libjingle/talk/xmllite/xmlbuilder.cc
+@@ -25,7 +25,6 @@
+  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  */
+ 
+-#include "talk/base/stl_decl.h"
+ #include <vector>
+ #include <set>
+ #include <expat.h>
+--- kopete/protocols/jabber/googletalk/libjingle/talk/xmllite/xmlbuilder.h
+++- kopete/protocols/jabber/googletalk/libjingle/talk/xmllite/xmlbuilder.h
+@@ -29,8 +29,8 @@
+ #define _xmlbuilder_h_
+ 
+ #include <string>
++#include <vector>
+ #include "talk/base/scoped_ptr.h"
+-#include "talk/base/stl_decl.h"
+ #include "talk/xmllite/xmlparser.h"
+ 
+ #include <expat.h>
+--- kopete/protocols/jabber/googletalk/libjingle/talk/xmllite/xmlnsstack.cc
+++- kopete/protocols/jabber/googletalk/libjingle/talk/xmllite/xmlnsstack.cc
+@@ -25,7 +25,6 @@
+  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  */
+ 
+-#include "talk/base/stl_decl.h"
+ #include <string>
+ #include <iostream>
+ #include <vector>
+--- kopete/protocols/jabber/googletalk/libjingle/talk/xmllite/xmlnsstack.h
+++- kopete/protocols/jabber/googletalk/libjingle/talk/xmllite/xmlnsstack.h
+@@ -29,8 +29,8 @@
+ #define _xmlnsstack_h_
+ 
+ #include <string>
++#include <vector>
+ #include "talk/base/scoped_ptr.h"
+-#include "talk/base/stl_decl.h"
+ #include "talk/xmllite/qname.h"
+ 
+ namespace buzz {
+--- kopete/protocols/jabber/googletalk/libjingle/talk/xmllite/xmlparser.cc
+++- kopete/protocols/jabber/googletalk/libjingle/talk/xmllite/xmlparser.cc
+@@ -27,7 +27,6 @@
+ 
+ #include "talk/xmllite/xmlparser.h"
+ 
+-#include "talk/base/stl_decl.h"
+ #include <string>
+ #include <vector>
+ #include <iostream>
+--- kopete/protocols/jabber/googletalk/libjingle/talk/xmllite/xmlprinter.cc
+++- kopete/protocols/jabber/googletalk/libjingle/talk/xmllite/xmlprinter.cc
+@@ -25,7 +25,6 @@
+  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  */
+ 
+-#include "talk/base/stl_decl.h"
+ #include <string>
+ #include <iostream>
+ #include <vector>
+--- kopete/protocols/jabber/googletalk/libjingle/talk/xmpp/xmppengineimpl.h
+++- kopete/protocols/jabber/googletalk/libjingle/talk/xmpp/xmppengineimpl.h
+@@ -259,10 +259,10 @@ private:
+   XmppOutputHandler* output_handler_;
+   XmppSessionHandler* session_handler_;
+ 
+-  typedef STD_VECTOR(XmppStanzaHandler*) StanzaHandlerVector;
++  typedef std::vector<XmppStanzaHandler*> StanzaHandlerVector;
+   scoped_ptr<StanzaHandlerVector> stanza_handlers_[HL_COUNT];
+ 
+-  typedef STD_VECTOR(XmppIqEntry*) IqEntryVector;
++  typedef std::vector<XmppIqEntry*> IqEntryVector;
+   scoped_ptr<IqEntryVector> iq_entries_;
+ 
+   scoped_ptr<SaslHandler> sasl_handler_;
+--- kopete/protocols/jabber/googletalk/libjingle/talk/xmpp/xmpplogintask.h
+++- kopete/protocols/jabber/googletalk/libjingle/talk/xmpp/xmpplogintask.h
+@@ -29,9 +29,9 @@
+ #define _logintask_h_
+ 
+ #include <string>
++#include <vector>
+ #include "talk/base/logging.h"
+ #include "talk/base/scoped_ptr.h"
+-#include "talk/base/stl_decl.h"
+ #include "talk/xmpp/jid.h"
+ #include "talk/xmpp/xmppengine.h"
+ 
