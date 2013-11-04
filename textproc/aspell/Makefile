@@ -59,7 +59,7 @@ CFLAGS+=		-O
 post-install:	${DICT_TARGET}
 	@${INSTALL_DATA} ${WRKDIR}/aspell.ver ${STAGEDIR}${PREFIX}/etc
 .if ${PORT_OPTIONS:MISPELL}
-	@${INSTALL_SCRIPT} ${SCRIPTS:S|^|${WRKSRC}/scripts/|} ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${SCRIPTS:S|^|${WRKSRC}/scripts/|} ${STAGEDIR}${PREFIX}/bin
 .endif
 	@${ECHO_CMD} "@dirrm share/aspell" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm lib/aspell-${VERINST}" >> ${TMPPLIST}
