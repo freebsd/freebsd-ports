@@ -1,3 +1,7 @@
+%%PERL5_MAN3%%/AnyEvent::IRC.3.gz
+%%PERL5_MAN3%%/AnyEvent::IRC::Client.3.gz
+%%PERL5_MAN3%%/AnyEvent::IRC::Connection.3.gz
+%%PERL5_MAN3%%/AnyEvent::IRC::Util.3.gz
 %%SITE_PERL%%/AnyEvent/IRC.pm
 %%SITE_PERL%%/AnyEvent/IRC/Client.pm
 %%SITE_PERL%%/AnyEvent/IRC/Connection.pm
@@ -5,5 +9,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/IRC/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/IRC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent
-@dirrm %%SITE_PERL%%/AnyEvent/IRC
+@dirrmtry %%SITE_PERL%%/AnyEvent/IRC
 @dirrmtry %%SITE_PERL%%/AnyEvent

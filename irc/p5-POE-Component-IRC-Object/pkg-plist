@@ -1,9 +1,12 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/Object/.packlist
+%%PERL5_MAN3%%/POE::Component::IRC::Object.3.gz
 %%SITE_PERL%%/POE/Component/IRC/Object.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/Object
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/Object/.packlist
+%%PORTDOCS%%%%EXAMPLESDIR%%/elizabot.pl
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/Object
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
 @dirrmtry %%SITE_PERL%%/POE/Component/IRC
 @dirrmtry %%SITE_PERL%%/POE/Component
 @dirrmtry %%SITE_PERL%%/POE
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
-%%PORTDOCS%%%%EXAMPLESDIR%%/elizabot.pl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

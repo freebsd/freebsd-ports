@@ -17,10 +17,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	AnyEvent::IRC::Client.3 \
-	AnyEvent::IRC::Connection.3 \
-	AnyEvent::IRC.3 \
-	AnyEvent::IRC::Util.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
