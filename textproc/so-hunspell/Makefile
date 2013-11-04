@@ -16,7 +16,6 @@ COMMENT=	Somali hunspell dictionaries
 
 LICENSE=	GPLv2
 
-USE_ZIP=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/dictionaries
 

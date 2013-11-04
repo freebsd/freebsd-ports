@@ -15,7 +15,6 @@ COMMENT=	Dutch hunspell dictionaries
 
 LICENSE=	BSD
 
-USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

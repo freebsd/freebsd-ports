@@ -12,7 +12,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Norwegian (Nynorsk and Bokmaal) hunspell dictionaries
 
-USE_ZIP=	yes
+EXTRACT_SUFX=	.zip
 NO_BUILD=	yes
 
 PLIST_FILES=	%%DATADIR%%/nb_NO.aff \
@@ -22,8 +22,9 @@ PLIST_FILES=	%%DATADIR%%/nb_NO.aff \
 PLIST_DIRSTRY=	%%DATADIR%%
 
 post-extract:
-	@${EXTRACT_CMD} ${WRKDIR}/nb_NO.zip -d ${WRKSRC}/
-	@${EXTRACT_CMD} ${WRKDIR}/nn_NO.zip -d ${WRKSRC}/
+	@${MKDIR} ${WRKSRC}
+	@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${WRKDIR}/nb_NO.zip -C ${WRKSRC}/
+	@${EXTRACT_CMD} ${EXTRACT_BEOFRE_ARGS} ${WRKDIR}/nn_NO.zip -C ${WRKSRC}/
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
