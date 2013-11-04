@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Log-Contextual
-PORTVERSION=	0.005005
+PORTVERSION=	0.006000
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,11 +19,4 @@ TEST_DEPENDS=	p5-Log-Log4perl>0:${PORTSDIR}/devel/p5-Log-Log4perl
 USES=	perl5
 USE_PERL5=	configure
 
-MAN3=	Log::Contextual.3 \
-	Log::Contextual::Role::Router.3 \
-	Log::Contextual::SimpleLogger.3 \
-	Log::Contextual::TeeLogger.3 \
-	Log::Contextual::WarnLogger.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

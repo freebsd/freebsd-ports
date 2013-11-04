@@ -1,5 +1,14 @@
+%%PERL5_MAN3%%/Log::Contextual.3.gz
+%%PERL5_MAN3%%/Log::Contextual::Easy::Default.3.gz
+%%PERL5_MAN3%%/Log::Contextual::Easy::Package.3.gz
+%%PERL5_MAN3%%/Log::Contextual::Role::Router.3.gz
+%%PERL5_MAN3%%/Log::Contextual::SimpleLogger.3.gz
+%%PERL5_MAN3%%/Log::Contextual::TeeLogger.3.gz
+%%PERL5_MAN3%%/Log::Contextual::WarnLogger.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Contextual/.packlist
 %%SITE_PERL%%/Log/Contextual.pm
+%%SITE_PERL%%/Log/Contextual/Easy/Default.pm
+%%SITE_PERL%%/Log/Contextual/Easy/Package.pm
 %%SITE_PERL%%/Log/Contextual/Role/Router.pm
 %%SITE_PERL%%/Log/Contextual/Role/Router/SetLogger.pm
 %%SITE_PERL%%/Log/Contextual/Role/Router/WithLogger.pm
@@ -9,6 +18,7 @@
 %%SITE_PERL%%/Log/Contextual/WarnLogger.pm
 @dirrm %%SITE_PERL%%/Log/Contextual/Role/Router
 @dirrm %%SITE_PERL%%/Log/Contextual/Role
+@dirrm %%SITE_PERL%%/Log/Contextual/Easy
 @dirrm %%SITE_PERL%%/Log/Contextual
 @dirrmtry %%SITE_PERL%%/Log
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Contextual
