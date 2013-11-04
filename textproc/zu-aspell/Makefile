@@ -12,6 +12,5 @@ COMMENT=	Aspell Zulu dictionary
 
 DICT=	 	zu
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

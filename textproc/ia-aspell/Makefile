@@ -12,6 +12,5 @@ COMMENT=	Aspell Interlingua dictionary
 
 DICT=	 	ia
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

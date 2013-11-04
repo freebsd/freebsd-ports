@@ -12,6 +12,5 @@ COMMENT=	Aspell Italian dictionary
 
 DICT=	 	it
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

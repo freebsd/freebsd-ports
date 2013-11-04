@@ -12,6 +12,5 @@ COMMENT=	Aspell Greek dictionary
 
 DICT=	 	el
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

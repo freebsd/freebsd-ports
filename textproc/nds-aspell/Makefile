@@ -12,6 +12,5 @@ COMMENT=	Aspell Low Saxon dictionary
 
 DICT=	 	nds
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

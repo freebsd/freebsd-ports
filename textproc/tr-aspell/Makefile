@@ -12,6 +12,5 @@ COMMENT=	Aspell Turkish dictionary
 
 DICT=	 	tr
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

@@ -77,6 +77,12 @@ lib/libpspell.a
 lib/libpspell.la
 lib/libpspell.so
 lib/libpspell.so.16
+man/man1/aspell-import.1.gz
+man/man1/aspell.1.gz
+man/man1/prezip-bin.1.gz
+man/man1/pspell-config.1.gz
+man/man1/run-with-aspell.1.gz
+man/man1/word-list-compress.1.gz
 %%DATADIR%%/ccpp.amf
 %%DATADIR%%/comment.amf
 %%DATADIR%%/email.amf

@@ -12,6 +12,5 @@ COMMENT=	Aspell Persian (Farsi) dictionary
 
 DICT=	 	fa
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>
