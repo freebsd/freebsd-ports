@@ -1,0 +1,5 @@
+%%PERL5_MAN3%%/Acme::GuessNumber.3.gz
+%%SITE_PERL%%/Acme/GuessNumber.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme-GuessNumber/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme-GuessNumber
+@dirrmtry %%SITE_PERL%%/Acme

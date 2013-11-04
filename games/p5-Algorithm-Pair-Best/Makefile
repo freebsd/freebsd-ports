@@ -15,7 +15,4 @@ DEPRECATED=	Use games/p5-Algorithm-Pair-Best2 instead
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Algorithm::Pair::Best.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

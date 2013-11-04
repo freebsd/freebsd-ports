@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Games::GuessWord.3.gz
 %%SITE_PERL%%/Games/GuessWord.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/GuessWord/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/GuessWord
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/GuessWord
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Games
 @dirrmtry %%SITE_PERL%%/Games
