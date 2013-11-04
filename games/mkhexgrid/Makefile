@@ -10,25 +10,23 @@ MASTER_SITES=	http://www.nomic.net/~uckelman/mkhexgrid/releases/ \
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A fully-configurable hex grid generator
+COMMENT=	Fully-configurable hex grid generator
 
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/lexical_cast.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 
-USE_GMAKE=	yes
+USES=		gmake
 
 PORTDOCS=	mkhexgrid.html
 PLIST_FILES=	bin/mkhexgrid
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/mkhexgrid ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/mkhexgrid.html ${DOCSDIR}
-	@${ECHO} "Documentation has been installed into ${DOCSDIR}."
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/mkhexgrid ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/mkhexgrid.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
