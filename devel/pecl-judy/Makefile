@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	judy
-PORTVERSION=	0.1.6
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
