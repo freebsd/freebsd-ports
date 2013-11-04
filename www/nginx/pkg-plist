@@ -28,3 +28,4 @@
 %%WWWDATA%%@dirrmtry www/nginx-dist
 sbin/nginx
 @unexec if [ -z ${UPGRADE_PORT} ] ; then rm -fr %%NGINX_TMPDIR%%; fi
+man/man8/nginx.8.gz

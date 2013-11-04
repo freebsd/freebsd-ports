@@ -193,7 +193,6 @@ VIDEO_DESC=			Video module support
 
 WANT_GNOME=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPASSENGER}
@@ -217,9 +216,6 @@ SUB_LIST+=	WWWOWN=${WWWOWN} \
 		WWWGRP=${WWWGRP} \
 		NGINX_RUNDIR=${NGINX_RUNDIR} \
 		NGINX_TMPDIR=${NGINX_TMPDIR}
-.if !defined(NO_INSTALL_MANPAGES)
-MAN8=		nginx.8
-.endif
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${ETCDIR} \
@@ -987,40 +983,36 @@ do-build:
 	@cd ${WRKSRC} && ${MAKE}
 
 do-install:
-	${MKDIR} ${ETCDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/objs/nginx ${PREFIX}/sbin
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/objs/nginx ${STAGEDIR}${PREFIX}/sbin
 .for i in koi-utf koi-win win-utf
-	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${STAGEDIR}${ETCDIR}
 .endfor
 .for i in fastcgi_params mime.types nginx.conf scgi_params uwsgi_params
-	[ -f ${ETCDIR}/${i} ] || \
-		${INSTALL_DATA} ${WRKSRC}/conf/${i} ${ETCDIR}
-	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${ETCDIR}/${i}-dist
+	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${STAGEDIR}${ETCDIR}/${i}-dist
 .endfor
 .if !empty(PORT_OPTIONS:MHTTP) && !empty(PORT_OPTIONS:MWWW)
-	${MKDIR} ${PREFIX}/www/nginx-dist
+	${MKDIR} ${STAGEDIR}${PREFIX}/www/nginx-dist
 .for i in index.html 50x.html
-	${INSTALL_DATA} ${WRKSRC}/html/${i} ${PREFIX}/www/nginx-dist
+	${INSTALL_DATA} ${WRKSRC}/html/${i} ${STAGEDIR}${PREFIX}/www/nginx-dist
 .endfor
-	${ECHO_CMD} "" >>${PREFIX}/www/nginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
-	[ -e ${PREFIX}/www/nginx ] || \
-		${LN} -sf ${PREFIX}/www/nginx-dist ${PREFIX}/www/nginx
+	${ECHO_CMD} "" >>${STAGEDIR}${PREFIX}/www/nginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
 .endif
 
 .if !empty(PORT_OPTIONS:MHTTP) && !empty(PORT_OPTIONS:MHTTP_PERL)
-	${MKDIR} ${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx
+	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx
 	${INSTALL_PROGRAM} ${WRKSRC}/objs/src/http/modules/perl/blib/arch/auto/nginx/nginx.so \
-		${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx
+		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx
 	${INSTALL_DATA} ${WRKSRC}/objs/src/http/modules/perl/blib/arch/auto/nginx/nginx.bs \
-		${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx
+		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx
 	${INSTALL_DATA} ${WRKSRC}/objs/src/http/modules/perl/blib/lib/nginx.pm \
-		${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/
+		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/
 .endif
 
 .if ${PORT_OPTIONS:MNAXSI}
 	${INSTALL_DATA} \
 	${WRKDIR}/naxsi-core-${NGINX_NAXSI_VERSION}/naxsi_config/naxsi_core.rules \
-	${ETCDIR}
+	${STAGEDIR}${ETCDIR}
 .endif
 
 post-install:
@@ -1030,9 +1022,7 @@ post-install:
 	${ECHO_CMD} ${SITE_PERL_REL}/${PERL_ARCH}/nginx.pm >> ${TMPPLIST}
 	${ECHO_CMD} @dirrm ${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx >> ${TMPPLIST}
 .endif
-.if !defined(NO_INSTALL_MANPAGES)
-	@${INSTALL_MAN} ${WRKSRC}/objs/nginx.8 ${MAN8PREFIX}/man/man8
-.endif
+	@${INSTALL_MAN} ${WRKSRC}/objs/nginx.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 
 .if ${PORT_OPTIONS:MNAXSI}
 	${ECHO_CMD} etc/nginx/naxsi_core.rules >> ${TMPPLIST}
