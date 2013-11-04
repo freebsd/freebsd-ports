@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Plack-Middleware-Debug
-PORTVERSION=	0.14
+PORTVERSION=	0.16
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -21,21 +21,6 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuildtiny
 
-MAN3=	Plack::Middleware::Debug.3 \
-	Plack::Middleware::Debug::Base.3 \
-	Plack::Middleware::Debug::CatalystLog.3 \
-	Plack::Middleware::Debug::DBITrace.3 \
-	Plack::Middleware::Debug::Environment.3 \
-	Plack::Middleware::Debug::Memory.3 \
-	Plack::Middleware::Debug::ModuleVersions.3 \
-	Plack::Middleware::Debug::Parameters.3 \
-	Plack::Middleware::Debug::PerlConfig.3 \
-	Plack::Middleware::Debug::Response.3 \
-	Plack::Middleware::Debug::Session.3 \
-	Plack::Middleware::Debug::Timer.3 \
-	Plack::Middleware::Debug::TrackObjects.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
