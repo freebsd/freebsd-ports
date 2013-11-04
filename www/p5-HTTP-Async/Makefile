@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTTP-Async
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,7 +23,4 @@ TEST_DEPENDS=	p5-Test-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-Test-HTTP-Server-
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		HTTP::Async.3 HTTP::Async::Polite.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
