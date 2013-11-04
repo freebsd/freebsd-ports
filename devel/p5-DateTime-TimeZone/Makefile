@@ -22,23 +22,16 @@ TEST_DEPENDS=	p5-Test-Output>0:${PORTSDIR}/devel/p5-Test-Output
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		DateTime::TimeZone.3 DateTime::TimeZone::Floating.3 \
-		DateTime::TimeZone::Local.3 DateTime::TimeZone::Local::Unix.3 \
-   		DateTime::TimeZone::Local::VMS.3 DateTime::TimeZone::Local::Win32.3 \
-	  	DateTime::TimeZone::OffsetOnly.3 DateTime::TimeZone::OlsonDB.3 \
-		DateTime::TimeZone::UTC.3 DateTime::TimeZone::Catalog.3
-
 PORTDOCS=	Changes README
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
 
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${STAGEDIR}${DOCSDIR}."
 .endif
 
 .include <bsd.port.mk>

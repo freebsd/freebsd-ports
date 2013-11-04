@@ -2,6 +2,9 @@
 %%SITE_PERL%%/Config/General/Extended.pm
 %%SITE_PERL%%/Config/General/Interpolated.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/General/.packlist
+%%PERL5_MAN3%%/Config::General.3.gz
+%%PERL5_MAN3%%/Config::General::Extended.3.gz
+%%PERL5_MAN3%%/Config::General::Interpolated.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/General
 @dirrm %%SITE_PERL%%/Config/General
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
