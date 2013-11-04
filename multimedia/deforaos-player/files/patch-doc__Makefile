@@ -1,0 +1,23 @@
+--- doc/Makefile.orig	2013-11-01 13:11:04.895668592 +0100
++++ doc/Makefile	2013-11-01 13:12:00.005665722 +0100
+@@ -1,4 +1,4 @@
+-TARGETS	= index.html player.1 player.html playerctl.1 playerctl.html
++TARGETS	= player.1 playerctl.1
+ PREFIX	= /usr/local
+ DESTDIR	=
+ RM	= rm -f
+@@ -33,14 +33,10 @@
+ 
+ install: $(TARGETS)
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "player.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "player.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "playerctl.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "playerctl.html"
+ 
+ uninstall:
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "player.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "player.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "playerctl.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "playerctl.html"
+ 
+ .PHONY: all clean distclean install uninstall
