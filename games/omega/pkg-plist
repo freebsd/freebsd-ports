@@ -1,19 +1,21 @@
-@owner games
 @group games
-@mode 4711
+@mode 2711
 bin/omega-game
-@mode 666
+@mode
+@group
+@mode 460
 %%DATADIR%%/omega.hi
 %%DATADIR%%/omega.log
-@mode 600
 %%DATADIR%%/omegahi.bak
 @mode
+man/man6/omega.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/buglist.txt
 %%PORTDOCS%%%%DOCSDIR%%/compile.all
 %%PORTDOCS%%%%DOCSDIR%%/omega.txt
 %%PORTDOCS%%%%DOCSDIR%%/readme.1st
 %%PORTDOCS%%%%DOCSDIR%%/readme3
 %%PORTDOCS%%%%DOCSDIR%%/readme4
+@group games
 %%DATADIR%%/abyss.dat
 %%DATADIR%%/abyss.txt
 %%DATADIR%%/arena.dat
@@ -40,6 +42,7 @@ bin/omega-game
 %%DATADIR%%/home3.dat
 %%DATADIR%%/intro.txt
 %%DATADIR%%/lgpl.txt
+%%DATADIR%%/license.old
 %%DATADIR%%/license.txt
 %%DATADIR%%/maze1.dat
 %%DATADIR%%/maze2.dat
@@ -61,5 +64,6 @@ bin/omega-game
 %%DATADIR%%/village4.dat
 %%DATADIR%%/village5.dat
 %%DATADIR%%/village6.dat
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
+@group
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
