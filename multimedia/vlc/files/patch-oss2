@@ -1,0 +1,17 @@
+Use SNDCTL_DSP_HALT ioctl instead, for some reason SNDCTL_DSP_HALT_OUTPUT
+does not seem to be flushing properly.
+
+https://trac.videolan.org/vlc/ticket/9760
+diff --git modules/audio_output/oss.c modules/audio_output/oss.c
+index 8dc4a4a..940718f 100644
+--- modules/audio_output/oss.c
++++ modules/audio_output/oss.c
+@@ -281,7 +282,7 @@ static void Flush (audio_output_t *aout, bool wait)
+ 
+     if (wait)
+         return; /* drain is implicit with OSS */
+-    ioctl (fd, SNDCTL_DSP_HALT_OUTPUT, NULL);
++    ioctl (fd, SNDCTL_DSP_HALT, NULL);
+ }
+ 
+ static int VolumeSync (audio_output_t *aout)
