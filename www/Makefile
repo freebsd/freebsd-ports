@@ -837,6 +837,7 @@
     SUBDIR += p5-ClearSilver
     SUBDIR += p5-Compress-LeadingBlankSpaces
     SUBDIR += p5-Continuity
+    SUBDIR += p5-Cookie-Baker
     SUBDIR += p5-Corona
     SUBDIR += p5-Dancer
     SUBDIR += p5-Dancer-Logger-Log4perl
