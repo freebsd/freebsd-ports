@@ -10,7 +10,7 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Program that keeps passwords and other secrets
 
-LIB_DEPENDS=    tasn1.5:${PORTSDIR}/security/libtasn1 \
+LIB_DEPENDS=    tasn1.7:${PORTSDIR}/security/libtasn1 \
                 gcrypt:${PORTSDIR}/security/libgcrypt
 
 USE_BZIP2=	yes
