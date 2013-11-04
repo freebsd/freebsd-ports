@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Furl
-PORTVERSION=	2.18
+PORTVERSION=	2.19
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOKUHIROM
@@ -27,13 +27,6 @@ TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
 USES=	perl5
 USE_PERL5=	modbuild
 
-MAN3=	Furl.3 \
-	Furl::HTTP.3 \
-	Furl::Headers.3 \
-	Furl::Request.3 \
-	Furl::Response.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400
