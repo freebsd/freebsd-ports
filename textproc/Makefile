@@ -22,6 +22,7 @@
     SUBDIR += ansifilter
     SUBDIR += ant-xinclude-task
     SUBDIR += antiword
+    SUBDIR += apache-poi
     SUBDIR += apache-solr
     SUBDIR += apache-solr3
     SUBDIR += apertium
@@ -328,7 +329,6 @@
     SUBDIR += itstool
     SUBDIR += jade
     SUBDIR += jakarta-commons-digester
-    SUBDIR += jakarta-poi
     SUBDIR += jalingo
     SUBDIR += jarnal
     SUBDIR += java2html
