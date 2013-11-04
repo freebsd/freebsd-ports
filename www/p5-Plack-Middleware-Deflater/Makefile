@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Plack-Middleware-Deflater
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KAZEBURO
@@ -20,7 +20,4 @@ TEST_DEPENDS=	\
 USES=	perl5
 USE_PERL5=	configure
 
-MAN3=	Plack::Middleware::Deflater.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
