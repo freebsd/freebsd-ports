@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mythes
-PORTVERSION=	20131002
+PORTVERSION=	20131102
 CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 PKGNAMEPREFIX=	es-
@@ -28,13 +28,12 @@ PLIST_FILES+=	%%DATADIR%%/th_${ALIAS}_v2.dat \
 		%%DATADIR%%/th_${ALIAS}_v2.idx
 .endfor
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/th_es_ES_v2.dat ${WRKSRC}/th_es_ES_v2.idx ${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/th_es_ES_v2.dat ${WRKSRC}/th_es_ES_v2.idx ${STAGEDIR}${DATADIR}/
 .for ALIAS in ${ESALIASES}
-	${LN} -s th_es_ES_v2.dat ${DATADIR}/th_${ALIAS}_v2.dat
-	${LN} -s th_es_ES_v2.idx ${DATADIR}/th_${ALIAS}_v2.idx
+	${LN} -s th_es_ES_v2.dat ${STAGEDIR}${DATADIR}/th_${ALIAS}_v2.dat
+	${LN} -s th_es_ES_v2.idx ${STAGEDIR}${DATADIR}/th_${ALIAS}_v2.idx
 .endfor
 
 .include <bsd.port.mk>
