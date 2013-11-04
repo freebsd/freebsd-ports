@@ -407,6 +407,16 @@
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Wallis.pm
 %%SITE_PERL%%/DateTime/TimeZone/UTC.pm
 %%SITE_PERL%%/DateTime/TimeZone/WET.pm
+%%PERL5_MAN3%%/DateTime::TimeZone.3.gz
+%%PERL5_MAN3%%/DateTime::TimeZone::Catalog.3.gz
+%%PERL5_MAN3%%/DateTime::TimeZone::Floating.3.gz
+%%PERL5_MAN3%%/DateTime::TimeZone::Local.3.gz
+%%PERL5_MAN3%%/DateTime::TimeZone::Local::Unix.3.gz
+%%PERL5_MAN3%%/DateTime::TimeZone::Local::VMS.3.gz
+%%PERL5_MAN3%%/DateTime::TimeZone::Local::Win32.3.gz
+%%PERL5_MAN3%%/DateTime::TimeZone::OffsetOnly.3.gz
+%%PERL5_MAN3%%/DateTime::TimeZone::OlsonDB.3.gz
+%%PERL5_MAN3%%/DateTime::TimeZone::UTC.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/TimeZone/
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime
 @dirrmtry %%SITE_PERL%%/DateTime/TimeZone/Pacific
