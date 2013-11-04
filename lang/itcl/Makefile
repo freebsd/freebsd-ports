@@ -38,7 +38,7 @@ NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
-	${REINPLACE_CMD} -r '/^includedir/s|/include|/include/itcl${PORTVERSION:R}|' \
+	${REINPLACE_CMD} -E '/^includedir/s|/include|/include/itcl${PORTVERSION:R}|' \
 	    ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-build test:
