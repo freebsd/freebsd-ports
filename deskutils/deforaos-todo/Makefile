@@ -3,6 +3,7 @@
 
 PORTNAME=	todo
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.defora.org/os/download/download/3506/
 PKGNAMEPREFIX=	deforaos-
@@ -13,13 +14,12 @@ COMMENT=	DeforaOS desktop todo list
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	System:${PORTSDIR}/devel/deforaos-libsystem \
-		Desktop:${PORTSDIR}/x11/deforaos-libdesktop
+LIB_DEPENDS=	libSystem.so:${PORTSDIR}/devel/deforaos-libsystem \
+		libDesktop.so:${PORTSDIR}/x11/deforaos-libdesktop
 
-USES=		pkgconfig gettext
-USE_GNOME=	gtk20 desktopfileutils
+USES=		desktop-file-utils gettext pkgconfig
+USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

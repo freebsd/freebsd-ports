@@ -4,3 +4,11 @@ share/icons/hicolor/16x16/apps/todo.png
 share/icons/hicolor/24x24/apps/todo.png
 share/icons/hicolor/48x48/apps/todo.png
 share/locale/fr/LC_MESSAGES/Todo.mo
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
