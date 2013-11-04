@@ -1,4 +1,5 @@
 To enable sending of panic reports, add
+	dumpdev="AUTO"
 	panicmail_enable="YES"
 to your /etc/rc.conf.
 
