@@ -1,0 +1,23 @@
+--- doc/Makefile.orig	2013-11-04 12:16:46.534030500 +0100
++++ doc/Makefile	2013-11-04 12:17:20.050448106 +0100
+@@ -1,4 +1,4 @@
+-TARGETS	= index.html phone.1 phone.html phonectl.1 phonectl.html
++TARGETS	= phone.1 phonectl.1
+ PREFIX	= /usr/local
+ DESTDIR	=
+ RM	= rm -f
+@@ -33,14 +33,10 @@
+ 
+ install: $(TARGETS)
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "phone.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "phone.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "phonectl.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "phonectl.html"
+ 
+ uninstall:
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "phone.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "phone.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "phonectl.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "phonectl.html"
+ 
+ .PHONY: all clean distclean install uninstall

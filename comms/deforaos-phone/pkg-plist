@@ -20,10 +20,14 @@ lib/Phone/plugins/notify.so
 lib/Phone/plugins/openmoko.so
 lib/Phone/plugins/oss.so
 lib/Phone/plugins/panel.so
+lib/Phone/plugins/password.so
 lib/Phone/plugins/profiles.so
+lib/Phone/plugins/pulseaudio.so
 lib/Phone/plugins/smscrypt.so
 lib/Phone/plugins/systray.so
 lib/Phone/plugins/ussd.so
+man/man1/phone.1.gz
+man/man1/phonectl.1.gz
 share/applications/phone-contacts.desktop
 share/applications/phone-dialer.desktop
 share/applications/phone-log.desktop
@@ -65,3 +69,16 @@ share/locale/fr/LC_MESSAGES/Phone.mo
 @dirrm lib/Phone/modem
 @dirrm lib/Phone/plugins
 @dirrm lib/Phone
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry include/Desktop
