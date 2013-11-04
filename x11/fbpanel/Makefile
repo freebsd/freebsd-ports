@@ -3,13 +3,13 @@
 
 PORTNAME=	fbpanel
 PORTVERSION=	6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tbz2
 
-MAINTAINER=	nemysis@gmx.ch
-COMMENT=	Lightweight, NETWM compliant X11 desktop panel
+MAINTAINER=	bsam@FreeBSD.org
+COMMENT=	Lightweight, NEtWM compliant X11 desktop panel
 
 LICENSE=	MIT
 
