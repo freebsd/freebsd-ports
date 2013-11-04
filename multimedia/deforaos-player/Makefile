@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	player
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.6
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.defora.org/os/download/download/3708/
+MASTER_SITES=	http://www.defora.org/os/download/download/4297/
 PKGNAMEPREFIX=	deforaos-
 DISTNAME=	Player-${PORTVERSION}
 
@@ -13,13 +13,18 @@ COMMENT=	DeforaOS desktop media player
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	System:${PORTSDIR}/devel/deforaos-libsystem \
-		Desktop:${PORTSDIR}/x11/deforaos-libdesktop
+BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
+		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+LIB_DEPENDS=	libSystem.so:${PORTSDIR}/devel/deforaos-libsystem \
+		libDesktop.so:${PORTSDIR}/x11/deforaos-libdesktop
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
 MAKE_ARGS+=	PREFIX=${PREFIX}
-USE_GNOME=	gtk20 desktopfileutils
-USES=		pkgconfig gettext
+USE_GNOME=	gtk20
+USES=		desktop-file-utils gettext pkgconfig
 
-NO_STAGE=	yes
+MAKE_ENV+=	MANDIR=${STAGEDIR}${MANPREFIX}/man
+
+post-install: compress-man
+
 .include <bsd.port.mk>
