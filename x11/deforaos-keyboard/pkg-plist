@@ -3,3 +3,4 @@ bin/keyboard
 include/Desktop/Keyboard.h
 share/applications/keyboard.desktop
 share/locale/fr/LC_MESSAGES/Keyboard.mo
+@dirrm include/Desktop
