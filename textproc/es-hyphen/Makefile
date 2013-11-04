@@ -12,7 +12,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Spanish hyphenation rules
 
-USE_ZIP=	yes
+EXTRACT_SUFX=	.zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

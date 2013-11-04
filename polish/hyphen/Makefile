@@ -13,16 +13,15 @@ COMMENT=	Polish hyphenation rules
 
 LICENSE=	LGPL21
 
-USE_ZIP=	yes
+EXTRACT_SUFX=	.zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	%%DATADIR%%/hyph_pl_PL.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/hyph_pl_PL.dic ${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/hyph_pl_PL.dic ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
