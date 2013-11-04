@@ -13,7 +13,7 @@ COMMENT=	JasperReports is a powerful open source Java reporting tool
 RUN_DEPENDS=	${JAVALIBDIR}/itext.jar:${PORTSDIR}/devel/itext			\
 		${JAVALIBDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j		\
 		${JAVALIBDIR}/crimson.jar:${PORTSDIR}/textproc/crimson		\
-		${JAVALIBDIR}/poi.jar:${PORTSDIR}/textproc/jakarta-poi		\
+		${JAVALIBDIR}/poi.jar:${PORTSDIR}/textproc/apache-poi		\
 		${JAVALIBDIR}/jfreechart.jar:${PORTSDIR}/java/jfreechart	\
 		${JAVASHAREDIR}/batik/batik.jar:${PORTSDIR}/graphics/batik	\
 		${JAVALIBDIR}/commons-beanutils.jar:${PORTSDIR}/java/jakarta-commons-beanutils\

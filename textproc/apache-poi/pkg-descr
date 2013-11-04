@@ -5,4 +5,4 @@ write Word files using Java. POI is your Java Excel solution as well as your
 Word Excel solution. However, we have a complete API for porting other OLE 2
 Compound Document formats and welcome others to participate.
 
-WWW: http://jakarta.apache.org/poi/
+WWW: http://poi.apache.org/
