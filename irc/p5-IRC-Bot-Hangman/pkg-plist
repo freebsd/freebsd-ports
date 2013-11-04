@@ -1,4 +1,15 @@
 bin/hangman.pl
+%%PERL5_MAN3%%/IRC::Bot::Hangman.3.gz
+%%PERL5_MAN3%%/IRC::Bot::Hangman::Command.3.gz
+%%PERL5_MAN3%%/IRC::Bot::Hangman::Command::Default.3.gz
+%%PERL5_MAN3%%/IRC::Bot::Hangman::Command::Eliza.3.gz
+%%PERL5_MAN3%%/IRC::Bot::Hangman::Command::Profanity.3.gz
+%%PERL5_MAN3%%/IRC::Bot::Hangman::Response.3.gz
+%%PERL5_MAN3%%/IRC::Bot::Hangman::Response::Default.3.gz
+%%PERL5_MAN3%%/IRC::Bot::Hangman::Response::Profanity.3.gz
+%%PERL5_MAN3%%/IRC::Bot::Hangman::WordList.3.gz
+%%PERL5_MAN3%%/IRC::Bot::Hangman::WordList::Default.3.gz
+%%PERL5_MAN3%%/IRC::Bot::Hangman::WordList::TooEasy.3.gz
 %%SITE_PERL%%/IRC/Bot/Hangman.pm
 %%SITE_PERL%%/IRC/Bot/Hangman/Command.pm
 %%SITE_PERL%%/IRC/Bot/Hangman/Command/Default.pm
@@ -10,9 +21,9 @@ bin/hangman.pl
 %%SITE_PERL%%/IRC/Bot/Hangman/WordList.pm
 %%SITE_PERL%%/IRC/Bot/Hangman/WordList/Default.pm
 %%SITE_PERL%%/IRC/Bot/Hangman/WordList/TooEasy.pm
-@dirrm %%SITE_PERL%%/IRC/Bot/Hangman/WordList
-@dirrm %%SITE_PERL%%/IRC/Bot/Hangman/Response
-@dirrm %%SITE_PERL%%/IRC/Bot/Hangman/Command
-@dirrm %%SITE_PERL%%/IRC/Bot/Hangman
+@dirrmtry %%SITE_PERL%%/IRC/Bot/Hangman/WordList
+@dirrmtry %%SITE_PERL%%/IRC/Bot/Hangman/Response
+@dirrmtry %%SITE_PERL%%/IRC/Bot/Hangman/Command
+@dirrmtry %%SITE_PERL%%/IRC/Bot/Hangman
 @dirrmtry %%SITE_PERL%%/IRC/Bot
 @dirrmtry %%SITE_PERL%%/IRC

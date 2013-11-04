@@ -18,20 +18,7 @@ BUILD_DEPENDS=	p5-Bot-BasicBot>=0:${PORTSDIR}/irc/p5-Bot-BasicBot \
 		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	IRC::Bot::Hangman.3 \
-	IRC::Bot::Hangman::Command.3 \
-	IRC::Bot::Hangman::Command::Default.3 \
-	IRC::Bot::Hangman::Command::Eliza.3 \
-	IRC::Bot::Hangman::Command::Profanity.3 \
-	IRC::Bot::Hangman::Response.3 \
-	IRC::Bot::Hangman::Response::Default.3 \
-	IRC::Bot::Hangman::Response::Profanity.3 \
-	IRC::Bot::Hangman::WordList.3 \
-	IRC::Bot::Hangman::WordList::Default.3 \
-	IRC::Bot::Hangman::WordList::TooEasy.3
-
 USES=		perl5
 USE_PERL5=	modbuild
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
