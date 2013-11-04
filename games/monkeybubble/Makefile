@@ -11,7 +11,9 @@ DISTNAME=	monkey-bubble-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 Puzzle Bobble clone with monkeys
 
-USES=        pathfix gmake pkgconfig
+LICENSE=	GPLv2
+
+USES=		pathfix gmake pkgconfig
 USE_GNOME=	gnomedocutils gnomeprefix intlhack \
 		librsvg2 libgnomeui
 USE_GSTREAMER=	yes
@@ -22,9 +24,6 @@ INSTALLS_OMF=	yes
 
 GCONF_SCHEMAS=	monkey-bubble.schemas
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-g -O2||g ; \
@@ -34,4 +33,4 @@ post-patch:
 		${WRKSRC}/src/net/simple-server.c \
 		${WRKSRC}/src/ui/main.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
