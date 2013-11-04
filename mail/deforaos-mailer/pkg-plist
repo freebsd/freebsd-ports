@@ -18,6 +18,8 @@ lib/libMailer.so
 lib/libMailer.so.0
 lib/libMailer.so.0.0
 libdata/pkgconfig/Mailer.pc
+man/man1/compose.1.gz
+man/man1/mailer.1.gz
 share/applications/mailer.desktop
 share/icons/hicolor/16x16/apps/mailer-accounts.png
 share/icons/hicolor/16x16/apps/mailer-drafts.png
@@ -37,6 +39,15 @@ share/icons/hicolor/48x48/apps/mailer-sent.png
 share/icons/hicolor/48x48/apps/mailer.png
 share/locale/fr/LC_MESSAGES/Mailer.mo
 @dirrm include/Desktop/Mailer
+@dirrmtry include/Desktop
 @dirrm lib/Mailer/account
 @dirrm lib/Mailer/plugins
 @dirrm lib/Mailer
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
