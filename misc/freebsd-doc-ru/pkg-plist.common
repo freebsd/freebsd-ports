@@ -1,4 +1,6 @@
 @comment $FreeBSD$
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/imagelib/callouts
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/imagelib
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail

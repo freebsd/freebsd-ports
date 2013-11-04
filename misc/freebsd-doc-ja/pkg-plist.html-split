@@ -190,7 +190,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-config.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-custom-kernel.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-devices.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-modules.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-trouble.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/l10n-basics.html
