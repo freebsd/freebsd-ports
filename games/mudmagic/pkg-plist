@@ -1,5 +1,6 @@
 bin/mudmagic
 bin/mudmagic-bin
+man/man1/mudmagic.1.gz
 lib/libmudmagic.a
 lib/libmudmagic.la
 lib/libmudmagic.so
