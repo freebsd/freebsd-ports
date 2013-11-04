@@ -20,23 +20,25 @@ XYMONUSER?=	xymon
 XYMONHOSTIP?=	127.0.0.1
 
 MAKE_JOBS_UNSAFE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 CONFIGURE_ENV=	MAKE=gmake
 MAKE_ENV+=	XYMONUSER="${XYMONUSER}"
 MAKE_ENV+=	XYMONHOSTIP="${XYMONHOSTIP}"
+MAKE_ENV+=	INSTALLROOT="${STAGEDIR}"
+MAKE_ENV+=	PKGBUILD=1
+MANPREFIX=	${STAGEDIR}${PREFIX}
 USE_RC_SUBR=	xymon-client
 PLIST_SUB+=	XYMONUSER="${XYMONUSER}"
 CONFIG_FILES=	clientlaunch.cfg xymonclient.cfg localclient.cfg
 
 # Configure script is interactive
-NO_STAGE=	yes
 do-configure:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}/
 
 post-install:
 .for i in ${CONFIG_FILES}
-	${CP} -np ${WWWDIR}/client/etc/${i}.DIST \
-		${WWWDIR}/client/etc/${i} || ${TRUE}
+	${CP} -np ${STAGEDIR}${WWWDIR}/client/etc/${i}.DIST \
+		${STAGEDIR}${WWWDIR}/client/etc/${i} || ${TRUE}
 .endfor
 
 .include <bsd.port.mk>
