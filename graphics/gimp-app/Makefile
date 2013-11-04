@@ -2,9 +2,9 @@
 # $FreeBSD$
 #   $MCom: ports/graphics/gimp-app/Makefile,v 1.65 2012/12/30 18:09:11 mezz Exp $
 
-PORTNAME=	gimp-app
-PORTVERSION=	2.8.6
-PORTREVISION?=	1
+PORTNAME?=	gimp-app
+PORTVERSION=	2.8.8
+PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -27,7 +27,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
-		liblcms.so:${PORTSDIR}/graphics/lcms \
+		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 		libgegl-0.2.so:${PORTSDIR}/graphics/gegl \
 		libbabl-0.1.so:${PORTSDIR}/x11/babl
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
@@ -35,8 +35,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 USE_BZIP2=	yes
 USE_XORG=	xpm xmu xext
 USE_AUTOTOOLS=	libtool
-USE_GNOME+=	intltool intlhack gtk20 libartlgpl2 ltverhack gnomehier \
-		desktopfileutils
+USE_GNOME+=	intltool intlhack gtk20 libartlgpl2 ltverhack gnomehier
 USES=		desktop-file-utils gettext gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
@@ -46,12 +45,14 @@ CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc/gimp \
 		--without-linux-input \
 		--with-print \
 		--enable-default-binary \
+		--with-lcms=lcms2 \
 		--disable-gimp-console \
 		--disable-python \
 		--with-desktop-dir=${PREFIX}/share \
 		--docdir=${PREFIX}/share/doc/gimp \
 		--enable-default-binary
-CONFIGURE_ENV=	GIMP_THREAD_LIBS=${PTHREAD_LIBS}
+CONFIGURE_ENV=	GIMP_THREAD_LIBS=${PTHREAD_LIBS} \
+		LIBS=${LIBS}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -180,6 +181,11 @@ PLIST_SUB+=		WMF="@comment "
 
 .endif
 
+.if ${OSVERSION} < 1000052
+LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+.endif
+LIBS+=-lexecinfo
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%GIMP_LIBS%%|${GIMP_LIBS}|; \
 		s|%%GIMP_THUMB_LIBS%%|${GIMP_THUMB_LIBS}|; \
@@ -190,5 +196,15 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|"libpng"|"libpng15"|' \
 	    	-e 's|x86_64|amd64|g' \
 		${WRKSRC}/configure
+
+
+.if defined(GIMP_SLAVE) && ${GIMP_SLAVE}==pygimp
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/gimp/2.2/python/*.so
+.else ! defined(GIMP_SLAVE)
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgimp*-2.0.so.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/gimp/2.2/modules/*.so
+.endif
 
 .include <bsd.port.mk>

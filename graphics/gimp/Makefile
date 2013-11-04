@@ -3,7 +3,7 @@
 #   $MCom: ports/graphics/gimp/Makefile,v 1.22 2012/11/26 13:31:16 kwm Exp $
 
 PORTNAME=	gimp
-DISTVERSION?=	2.8.6
+DISTVERSION?=	2.8.8
 PORTREVISION?=	0
 PORTEPOCH?=	2
 CATEGORIES=	graphics gnome
@@ -23,8 +23,9 @@ PRINT_DESC=	Gutenprint (gimp-print) plugin
 HELP_DESC=	Gimp-Help (50+MB distfile)
 
 NO_BUILD=	yes
+NO_INSTALL=	yes
+NO_MTREE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHELP}
@@ -39,7 +40,5 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/gimp/2.2/environ/pygimp.env:${PORTSDIR}/graph
 RUN_DEPENDS+=	${LOCALBASE}/libexec/gimp/2.2/plug-ins/gutenprint:${PORTSDIR}/print/gimp-gutenprint
 RUN_DEPENDS+=	gutenprint>0:${PORTSDIR}/print/gutenprint
 .endif
-
-do-install:	# empty
 
 .include <bsd.port.mk>
