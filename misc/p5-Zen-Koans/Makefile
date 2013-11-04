@@ -11,10 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library containing over 100 Zen Koans
 
-MAN3=	Zen::Koan.3 Zen::Koans.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

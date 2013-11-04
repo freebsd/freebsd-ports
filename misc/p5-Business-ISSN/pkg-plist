@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Business::ISSN.3.gz
 %%SITE_PERL%%/Business/ISSN.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/ISSN/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/ISSN
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/ISSN
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
 @dirrmtry %%SITE_PERL%%/Business

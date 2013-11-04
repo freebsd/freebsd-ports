@@ -1,0 +1,10 @@
+%%PERL5_MAN3%%/Business::ISBN.3.gz
+%%PERL5_MAN3%%/Business::ISBN10.3.gz
+%%PERL5_MAN3%%/Business::ISBN13.3.gz
+%%SITE_PERL%%/Business/ISBN.pm
+%%SITE_PERL%%/Business/ISBN10.pm
+%%SITE_PERL%%/Business/ISBN13.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/ISBN/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/ISBN
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
+@dirrmtry %%SITE_PERL%%/Business

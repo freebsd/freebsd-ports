@@ -1,21 +1,18 @@
 # Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
 
-PORTNAME=		Business-ISSN
-PORTVERSION=		0.91
-CATEGORIES=		misc perl5
-MASTER_SITES=		CPAN
-PKGNAMEPREFIX=		p5-
+PORTNAME=	Business-ISSN
+PORTVERSION=	0.91
+CATEGORIES=	misc perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl extension for International Standard Serial Numbers
 
-USES=			perl5
-USE_PERL5=		configure
+USES=		perl5
+USE_PERL5=	configure
 
-MAN3=			Business::ISSN.3
-
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,Business-ISSN,Business::ISSN,' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
