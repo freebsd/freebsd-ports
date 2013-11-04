@@ -1,3 +1,5 @@
+%%PERL5_MAN3%%/Games::League::Member.3.gz
+%%PERL5_MAN3%%/Games::Tournament::RoundRobin.3.gz
 %%SITE_PERL%%/Games/League/Member.pm
 %%SITE_PERL%%/Games/Tournament/RoundRobin.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/Tournament/RoundRobin/.packlist

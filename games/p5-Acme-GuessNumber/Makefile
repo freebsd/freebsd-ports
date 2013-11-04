@@ -13,12 +13,5 @@ COMMENT=	Automatic number guessing game robot
 
 USES=		perl5
 USE_PERL5=	configure
-MAN3=		Acme::GuessNumber.3
 
-PLIST_FILES=	%%SITE_PERL%%/Acme/GuessNumber.pm \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme-GuessNumber/.packlist
-PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme-GuessNumber \
-		%%SITE_PERL%%/Acme
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
