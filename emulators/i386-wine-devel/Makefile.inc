@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-PORTVERSION=	1.7.4
+PORTVERSION=	1.7.5
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	LOCAL/dbn/repos/wine/${DIST_SUBDIR}/${PORTVERSION}
@@ -67,5 +67,16 @@ pkg-plist: extract
 	${TAR} -tf ${_DISTDIR}/${EXTRACT_ONLY} ${EXTRACT_AFTER_ARGS} | ${GREP} '/$$' | ${SED} 's|/usr/local/\(.*\)/$$|@dirrm \1|g' | sort -r >> ${WRKDIR}/pkg-plist
 	${REINPLACE_CMD} -e 's|@dirrm share/applications|@dirrmtry share/applications|' -e 's|/$$||g' ${WRKDIR}/pkg-plist
 	${MV} ${WRKDIR}/pkg-plist ${PLIST}
+
+port-update:
+	${RM} -f ${.CURDIR}/distinfo ${.CURDIR}/distinfo~
+.for osrel in 8 9
+	${MAKE} fetch OSREL=${osrel}
+	${MAKE} makesum OSREL=${osrel}
+	${CAT} ${.CURDIR}/distinfo >> ${.CURDIR}/distinfo~
+	${RM} ${.CURDIR}/distinfo
+.endfor
+	${MV} ${.CURDIR}/distinfo~ ${.CURDIR}/distinfo
+	${MAKE} pkg-plist
 
 .include <bsd.port.post.mk>
