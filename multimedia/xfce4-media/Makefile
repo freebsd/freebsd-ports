@@ -14,6 +14,9 @@ COMMENT=	Lightweight media player for Xfce4 based on the xine engine
 
 LIB_DEPENDS=	xine:${PORTSDIR}/multimedia/libxine
 
+DEPRECATED=	Upstream development dead, use multimedia/xfce4-parole instead
+EXPIRATION_DATE=	2014-01-04 
+
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
