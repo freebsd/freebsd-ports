@@ -23,6 +23,7 @@ lib/Panel/applets/memory.so
 lib/Panel/applets/mixer.so
 lib/Panel/applets/pager.so
 lib/Panel/applets/phone.so
+lib/Panel/applets/player.so
 lib/Panel/applets/rotate.so
 lib/Panel/applets/separator.so
 lib/Panel/applets/spacer.so
@@ -34,6 +35,11 @@ lib/Panel/applets/usb.so
 lib/Panel/applets/volume.so
 lib/Panel/applets/wpa_supplicant.so
 libdata/pkgconfig/Panel.pc
+man/man1/panel-embed.1.gz
+man/man1/panel-message.1.gz
+man/man1/panel-notify.1.gz
+man/man1/panel.1.gz
+man/man1/panelctl.1.gz
 share/applications/panel-settings.desktop
 share/icons/hicolor/16x16/apps/panel-applet-bluetooth.png
 share/icons/hicolor/16x16/apps/panel-applet-desktop.png
@@ -54,5 +60,20 @@ share/icons/hicolor/48x48/apps/panel-applet-desktop.png
 share/icons/hicolor/48x48/apps/panel-settings.png
 share/icons/hicolor/scalable/apps/panel-applet-bluetooth.svg
 share/locale/fr/LC_MESSAGES/Panel.mo
-@dirrm lib/Panel/applets
-@dirrm lib/Panel
+@dirrmtry lib/Panel/applets
+@dirrmtry lib/Panel
+@dirrmtry include/Desktop
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
