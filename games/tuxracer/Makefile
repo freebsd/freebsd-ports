@@ -16,8 +16,7 @@ COMMENT=	3D penguin racing game using OpenGL
 USE_SDL=	mixer sdl
 USE_GL=		gl
 USE_XORG=	x11 xt xmu xi
-USE_TK=		yes
-USE_GMAKE=	yes
+USES=		gmake tk
 USE_AUTOTOOLS=	automake14 autoconf
 AUTOMAKE_ARGS=	-a
 CONFIGURE_ENV=	THREAD_LIB="${PTHREAD_LIBS}"
@@ -29,13 +28,12 @@ CONFIGURE_ARGS=	--with-tcl-inc="${TCL_INCLUDEDIR}" \
 		--with-data-dir=${DATADIR}
 MAKE_ENV=	${CONFIGURE_ENV}
 
-NO_STAGE=	yes
 post-extract:
 	@${RM} ${WRKSRC}/missing
 
 post-install:
-	@${MKDIR} ${DATADIR}
-	@(cd ${WORKDATA} ${WRKDIR}/${PORTNAME}-data-${PORTVERSION} \
-		&& ${COPYTREE_SHARE} . ${DATADIR})
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WORKDATA} ${WRKDIR}/${PORTNAME}-data-${PORTVERSION} \
+		&& ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>
