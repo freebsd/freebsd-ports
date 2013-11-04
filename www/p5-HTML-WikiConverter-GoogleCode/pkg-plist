@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter/GoogleCode/.packlist
 %%SITE_PERL%%/HTML/WikiConverter/GoogleCode.pm
+%%PERL5_MAN3%%/HTML::WikiConverter::GoogleCode.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter/GoogleCode
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter
 @dirrmtry %%SITE_PERL%%/HTML/WikiConverter

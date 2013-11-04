@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Catalyst/Plugin/Static/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Static/Simple/.packlist
+%%PERL5_MAN3%%/Catalyst::Plugin::Static::Simple.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Static/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Static
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin

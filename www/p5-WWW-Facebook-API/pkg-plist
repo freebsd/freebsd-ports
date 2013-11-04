@@ -29,6 +29,36 @@
 %%SITE_PERL%%/WWW/Facebook/API/Users.pm
 %%SITE_PERL%%/WWW/Facebook/API/Video.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Facebook/API/.packlist
+%%PERL5_MAN3%%/WWW::Facebook::API.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::Admin.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::Application.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::Auth.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::Canvas.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::Comments.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::Connect.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::Data.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::Events.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::Exception.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::FBML.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::FQL.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::Feed.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::Friends.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::Groups.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::Intl.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::Links.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::LiveMessage.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::Message.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::Notes.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::Notifications.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::Pages.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::Permissions.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::Photos.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::Profile.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::SMS.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::Status.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::Stream.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::Users.3.gz
+%%PERL5_MAN3%%/WWW::Facebook::API::Video.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Facebook/API
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Facebook
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW

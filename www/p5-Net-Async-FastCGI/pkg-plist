@@ -5,6 +5,10 @@
 %%SITE_PERL%%/Net/Async/FastCGI/Request.pm
 %%SITE_PERL%%/Net/Async/FastCGI/ServerProtocol.pm
 %%SITE_PERL%%/Plack/Handler/Net/Async/FastCGI.pm
+%%PERL5_MAN3%%/Net::Async::FastCGI.3.gz
+%%PERL5_MAN3%%/Net::Async::FastCGI::PSGI.3.gz
+%%PERL5_MAN3%%/Net::Async::FastCGI::Request.3.gz
+%%PERL5_MAN3%%/Plack::Handler::Net::Async::FastCGI.3.gz
 @dirrmtry %%SITE_PERL%%/Plack/Handler/Net/Async
 @dirrmtry %%SITE_PERL%%/Plack/Handler/Net
 @dirrmtry %%SITE_PERL%%/Plack/Handler

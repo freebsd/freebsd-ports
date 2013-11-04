@@ -24,10 +24,4 @@ TEST_DEPENDS=	p5-Test-HexString>=0:${PORTSDIR}/devel/p5-Test-HexString \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Net::Async::FastCGI.3 \
-	Net::Async::FastCGI::PSGI.3 \
-	Net::Async::FastCGI::Request.3 \
-	Plack::Handler::Net::Async::FastCGI.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

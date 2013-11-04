@@ -1,6 +1,8 @@
 %%SITE_PERL%%/Mojolicious/Plugin/Database.pm
 %%SITE_PERL%%/Mojolicious/Plugin/README.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious/Plugin/Database/.packlist
+%%PERL5_MAN3%%/Mojolicious::Plugin::Database.3.gz
+%%PERL5_MAN3%%/Mojolicious::Plugin::README.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious/Plugin/Database
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious

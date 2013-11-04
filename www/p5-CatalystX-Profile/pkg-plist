@@ -1,6 +1,8 @@
 %%SITE_PERL%%/CatalystX/Profile/Controller/ControlProfiling.pm
 %%SITE_PERL%%/CatalystX/Profile.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CatalystX/Profile/.packlist
+%%PERL5_MAN3%%/CatalystX::Profile.3.gz
+%%PERL5_MAN3%%/CatalystX::Profile::Controller::ControlProfiling.3.gz
 @dirrmtry %%SITE_PERL%%/CatalystX/Profile/Controller
 @dirrmtry %%SITE_PERL%%/CatalystX/Profile
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CatalystX/Profile

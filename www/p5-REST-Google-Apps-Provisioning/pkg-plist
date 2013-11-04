@@ -1,6 +1,7 @@
 %%SITE_PERL%%/REST/Google/Apps/Provisioning.pm
 %%SITE_PERL%%/REST/Google/Apps/Provisioning.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/REST/Google/Apps/Provisioning/.packlist
+%%PERL5_MAN3%%/REST::Google::Apps::Provisioning.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/REST/Google/Apps/Provisioning
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/REST/Google/Apps
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/REST/Google

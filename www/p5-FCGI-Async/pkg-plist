@@ -2,6 +2,9 @@
 %%SITE_PERL%%/FCGI/Async.pm
 %%SITE_PERL%%/FCGI/Async/PSGI.pm
 %%SITE_PERL%%/Plack/Handler/FCGI/Async.pm
+%%PERL5_MAN3%%/Plack::Handler::FCGI::Async.3.gz
+%%PERL5_MAN3%%/FCGI::Async::PSGI.3.gz
+%%PERL5_MAN3%%/FCGI::Async.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI/Async
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI
 @dirrmtry %%SITE_PERL%%/FCGI/Async

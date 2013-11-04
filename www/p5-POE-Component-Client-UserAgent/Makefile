@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	LWP and LWP::Parallel based POE component
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
 		p5-ParallelUA>=0:${PORTSDIR}/www/p5-ParallelUA
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -18,7 +21,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		POE::Component::Client::UserAgent.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

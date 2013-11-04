@@ -41,16 +41,4 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Catalyst::ActionRole::NeedsLogin.3 \
-		CatalystX::SimpleLogin.3 \
-		CatalystX::SimpleLogin::Controller::Login.3 \
-		CatalystX::SimpleLogin::Form::Login.3 \
-		CatalystX::SimpleLogin::Form::LoginOpenID.3 \
-		CatalystX::SimpleLogin::Manual.3 \
-		CatalystX::SimpleLogin::TraitFor::Controller::Login::Logout.3 \
-		CatalystX::SimpleLogin::TraitFor::Controller::Login::OpenID.3 \
-		CatalystX::SimpleLogin::TraitFor::Controller::Login::RenderAsTTTemplate.3 \
-		CatalystX::SimpleLogin::TraitFor::Controller::Login::WithRedirect.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

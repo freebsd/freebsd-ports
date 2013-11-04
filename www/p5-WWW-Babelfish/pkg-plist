@@ -1,6 +1,7 @@
 %%SITE_PERL%%/WWW/Babelfish.pm
 %%SITE_PERL%%/auto/WWW/Babelfish/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Babelfish/.packlist
+%%PERL5_MAN3%%/WWW::Babelfish.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Babelfish
 @dirrm %%SITE_PERL%%/auto/WWW/Babelfish
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW

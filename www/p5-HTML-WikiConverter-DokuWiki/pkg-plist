@@ -1,5 +1,6 @@
 %%SITE_PERL%%/HTML/WikiConverter/DokuWiki.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter/DokuWiki/.packlist
+%%PERL5_MAN3%%/HTML::WikiConverter::DokuWiki.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter/DokuWiki
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter
 @dirrmtry %%SITE_PERL%%/HTML/WikiConverter
