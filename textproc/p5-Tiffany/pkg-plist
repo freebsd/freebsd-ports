@@ -1,3 +1,14 @@
+%%PERL5_MAN3%%/Tiffany.3.gz
+%%PERL5_MAN3%%/Tiffany::HTML::Template.3.gz
+%%PERL5_MAN3%%/Tiffany::HTML::Template::Pro.3.gz
+%%PERL5_MAN3%%/Tiffany::TT.3.gz
+%%PERL5_MAN3%%/Tiffany::Template::Declare.3.gz
+%%PERL5_MAN3%%/Tiffany::Template::Semantic.3.gz
+%%PERL5_MAN3%%/Tiffany::Text::ClearSilver.3.gz
+%%PERL5_MAN3%%/Tiffany::Text::MicroMason.3.gz
+%%PERL5_MAN3%%/Tiffany::Text::MicroTemplate::Extended.3.gz
+%%PERL5_MAN3%%/Tiffany::Text::MicroTemplate::File.3.gz
+%%PERL5_MAN3%%/Tiffany::Text::Xslate.3.gz
 %%SITE_PERL%%/Tiffany.pm
 %%SITE_PERL%%/Tiffany/HTML/Template.pm
 %%SITE_PERL%%/Tiffany/HTML/Template/Pro.pm
