@@ -16,8 +16,4 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=	Locale::SubCountry.3 \
-	Locale::SubCountry::Data.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

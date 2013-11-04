@@ -16,13 +16,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Array::FileReader.3
-
-PLIST_FILES=	%%SITE_PERL%%/Array/FileReader.pm \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/FileReader/.packlist
-PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/FileReader \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Array \
-		%%SITE_PERL%%/Array
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

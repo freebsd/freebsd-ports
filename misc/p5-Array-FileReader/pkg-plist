@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/Array::FileReader.3.gz
+%%SITE_PERL%%/Array/FileReader.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/FileReader/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/FileReader
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array
+@dirrmtry %%SITE_PERL%%/Array

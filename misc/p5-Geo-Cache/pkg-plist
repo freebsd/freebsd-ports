@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Geo::Cache.3.gz
 %%SITE_PERL%%/Geo/Cache.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Cache/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Cache
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Cache
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
 @dirrmtry %%SITE_PERL%%/Geo

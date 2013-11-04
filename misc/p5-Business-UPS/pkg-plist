@@ -1,10 +1,11 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/UPS/.packlist
+%%PERL5_MAN3%%/Business::UPS.3.gz
 %%SITE_PERL%%/Business/UPS.pm
 %%SITE_PERL%%/auto/Business/UPS/autosplit.ix
-%%PORTDOCS%%share/examples/Business-UPS/test.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/UPS/.packlist
+%%PORTDOCS%%%%EXAMPLESDIR%%/test.pl
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/UPS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
 @dirrmtry %%SITE_PERL%%/auto/Business/UPS
 @dirrmtry %%SITE_PERL%%/auto/Business
 @dirrmtry %%SITE_PERL%%/Business
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/UPS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
-%%PORTDOCS%%@dirrmtry share/examples/Business-UPS

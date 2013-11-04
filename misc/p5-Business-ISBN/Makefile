@@ -24,18 +24,6 @@ XISBN_DESC=	xISBN support
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Business::ISBN.3 \
-		Business::ISBN10.3 \
-		Business::ISBN13.3
-PLIST_FILES=	%%SITE_PERL%%/Business/ISBN.pm \
-		%%SITE_PERL%%/Business/ISBN10.pm \
-		%%SITE_PERL%%/Business/ISBN13.pm \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/ISBN/.packlist
-PLIST_DIRSTRY=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/ISBN \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business \
-		%%SITE_PERL%%/Business
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBARCODE}

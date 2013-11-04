@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/File::Sort.3.gz
 %%SITE_PERL%%/File/Sort.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Sort/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Sort
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Sort
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
 @dirrmtry %%SITE_PERL%%/File
