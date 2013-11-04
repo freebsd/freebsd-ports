@@ -72,10 +72,12 @@ share/xfce4/panel-plugins/xfce4-notes-plugin-47.desktop
 @dirrmtry %%DATADIR%%/pixmaps
 @dirrmtry %%DATADIR%%/gtk-2.0/scrollbars
 @dirrmtry %%DATADIR%%/gtk-2.0
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%
 @dirrmtry share/xfce4
 @dirrmtry share/locale/ur_PK/LC_MESSAGES
 @dirrmtry share/locale/ur_PK
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/kk/LC_MESSAGES
