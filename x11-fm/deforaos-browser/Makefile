@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	deforaos-browser
-PORTVERSION=	0.4.10
+PORTVERSION=	0.4.13
 CATEGORIES=	x11-fm
-MASTER_SITES=	http://www.defora.org/os/download/download/4010/
+MASTER_SITES=	http://www.defora.org/os/download/download/4310/
 DISTNAME=	Browser-${PORTVERSION}
 
 MAINTAINER=	olivier@cochard.me
@@ -14,28 +14,17 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
-LIB_DEPENDS=	System:${PORTSDIR}/devel/deforaos-libsystem \
-		Desktop:${PORTSDIR}/x11/deforaos-libdesktop \
-		Xrandr:${PORTSDIR}/x11/libXrandr
+LIB_DEPENDS=	libSystem.so:${PORTSDIR}/devel/deforaos-libsystem \
+		libDesktop.so:${PORTSDIR}/x11/deforaos-libdesktop \
+		libXrandr.so:${PORTSDIR}/x11/libXrandr
 
-USE_GNOME=	gtk20 desktopfileutils
-USES=		pkgconfig gettext
+USE_GNOME=	gtk20
+USES=		desktop-file-utils gettext pkgconfig
 INSTALLS_ICONS=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
 
-MAKE_ENV+=	MANDIR=${MANPREFIX}/man
+MAKE_ENV+=	MANDIR=${STAGEDIR}${MANPREFIX}/man
 
-MAN1=		browser.1 \
-		copy.1 \
-		delete.1 \
-		desktop.1 \
-		desktopctl.1 \
-		move.1 \
-		open.1 \
-		properties.1 \
-		view.1
-
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|/lib/|/libdata/|g' \
 		${WRKSRC}/data/pkgconfig.sh
