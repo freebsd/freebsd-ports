@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/Plack::Middleware::Deflater.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/Deflater/.packlist
 %%SITE_PERL%%/Plack/Middleware/Deflater.pm
 @dirrmtry %%SITE_PERL%%/Plack/Middleware
