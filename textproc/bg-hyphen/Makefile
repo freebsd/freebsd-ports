@@ -15,7 +15,7 @@ COMMENT=	Bulgarian hyphenation rules
 LICENSE=	GPLv2 LGPL21 MPL
 LICENSE_COMB=	dual
 
-USE_ZIP=	yes
+EXTRACT_SUFX=	.zip
 NO_BUILD=	yes
 
 PLIST_FILES=	%%DATADIR%%/hyph_bg_BG.dic

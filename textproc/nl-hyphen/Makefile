@@ -14,7 +14,7 @@ COMMENT=	Dutch hyphenation rules
 
 LICENSE=	LGPL21
 
-USE_ZIP=	yes
+EXTRACT_SUFX=	.zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
