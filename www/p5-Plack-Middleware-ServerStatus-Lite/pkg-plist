@@ -1,2 +1,5 @@
+bin/server-status
+man/man1/server-status.1.gz
+%%PERL5_MAN3%%/Plack::Middleware::ServerStatus::Lite.3.gz
 %%SITE_PERL%%/Plack/Middleware/ServerStatus/Lite.pm
 @dirrm %%SITE_PERL%%/Plack/Middleware/ServerStatus
