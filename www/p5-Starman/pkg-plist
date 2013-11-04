@@ -1,3 +1,8 @@
+man/man1/starman.1.gz
+%%PERL5_MAN3%%/HTTP::Server::PSGI::Net::Server::PreFork.3.gz
+%%PERL5_MAN3%%/Plack::Handler::Starman.3.gz
+%%PERL5_MAN3%%/Starman.3.gz
+%%PERL5_MAN3%%/Starman::Server.3.gz
 bin/starman
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Starman/.packlist
 %%SITE_PERL%%/HTTP/Server/PSGI/Net/Server/PreFork.pm
