@@ -12,6 +12,5 @@ COMMENT=	Aspell Amharic dictionary
 
 DICT=	 	am
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

@@ -11,6 +11,5 @@ COMMENT=	Aspell Catalan dictionary
 
 DICT=	 	ca
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

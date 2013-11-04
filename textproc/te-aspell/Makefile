@@ -12,6 +12,5 @@ COMMENT=	Aspell Telugu dictionary
 
 DICT=	 	te
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

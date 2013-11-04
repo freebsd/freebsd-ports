@@ -12,6 +12,5 @@ COMMENT=	Aspell Armenian dictionary
 
 DICT=	 	hy
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

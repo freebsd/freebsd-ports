@@ -11,6 +11,5 @@ COMMENT=	Aspell Upper Sorbian dictionary
 
 DICT=	 	hsb
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

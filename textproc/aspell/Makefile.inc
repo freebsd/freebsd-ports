@@ -6,10 +6,10 @@ MASTER_SITE_SUBDIR?=	aspell/dict/${DICT}
 DISTNAME?=	aspell${DISTVERSION}
 PORTVERSION?=	${DISTVERSION:L:C/cvs/0_/:C/pt_../p/:C/[0-9]?-?[a-z]+-//g:C/([0-9])([a-z])/\1.\2/g:C/:(.)/\1/g:C/[^a-z0-9+]+/./g}
 
-LIB_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
 
+USES+=		gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 
 PLIST_SUB=	VER=${VER}

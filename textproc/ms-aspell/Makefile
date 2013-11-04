@@ -12,6 +12,5 @@ COMMENT=	Aspell Malay dictionary
 
 DICT=	 	ms
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

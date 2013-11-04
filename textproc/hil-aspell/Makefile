@@ -12,6 +12,5 @@ COMMENT=	Aspell Hiligaynon dictionary
 
 DICT=	 	hil
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

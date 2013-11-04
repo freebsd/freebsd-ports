@@ -11,6 +11,5 @@ COMMENT=	Aspell German dictionary
 
 DICT=	 	de
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

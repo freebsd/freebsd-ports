@@ -12,6 +12,5 @@ COMMENT=	Aspell Esperanto dictionary
 
 DICT=	 	eo
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>
