@@ -1,3 +1,17 @@
+%%PERL5_MAN3%%/Plack::Middleware::Debug.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::Debug::Base.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::Debug::CatalystLog.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::Debug::DBITrace.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::Debug::Environment.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::Debug::Memory.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::Debug::ModuleVersions.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::Debug::Panel.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::Debug::Parameters.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::Debug::PerlConfig.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::Debug::Response.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::Debug::Session.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::Debug::Timer.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::Debug::TrackObjects.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/Debug/.packlist
 %%SITE_PERL%%/Plack/Middleware/Debug.pm
 %%SITE_PERL%%/Plack/Middleware/Debug/Base.pm
