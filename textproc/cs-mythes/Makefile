@@ -14,7 +14,6 @@ COMMENT=	Czech thesaurus
 
 LICENSE=	BSD
 
-USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
@@ -22,9 +21,8 @@ PLIST_FILES=	%%DATADIR%%/th_cs_CZ_v2.dat \
 		%%DATADIR%%/th_cs_CZ_v2.idx
 PLIST_DIRSTRY=	%%DATADIR%%
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/th_cs_CZ_v2.dat ${WRKSRC}/th_cs_CZ_v2.idx ${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/th_cs_CZ_v2.dat ${WRKSRC}/th_cs_CZ_v2.idx ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>

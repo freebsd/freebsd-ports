@@ -14,7 +14,6 @@ COMMENT=	Dutch thesaurus
 
 LICENSE=	BSD
 
-USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
@@ -28,14 +27,13 @@ PLIST_FILES+=	%%DATADIR%%/th_${ALIAS}_v2.dat \
 		%%DATADIR%%/th_${ALIAS}_v2.idx
 .endfor
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/th_nl_v2.dat ${DATADIR}/th_nl_NL_v2.dat
-	${INSTALL_DATA} ${WRKSRC}/th_nl_v2.dat ${DATADIR}/th_nl_NL_v2.idx
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/th_nl_v2.dat ${STAGEDIR}${DATADIR}/th_nl_NL_v2.dat
+	${INSTALL_DATA} ${WRKSRC}/th_nl_v2.dat ${STAGEDIR}${DATADIR}/th_nl_NL_v2.idx
 .for ALIAS in ${NLALIASES}
-	${LN} -s th_nl_NL_v2.dat ${DATADIR}/th_${ALIAS}_v2.dat
-	${LN} -s th_nl_NL_v2.idx ${DATADIR}/th_${ALIAS}_v2.idx
+	${LN} -s th_nl_NL_v2.dat ${STAGEDIR}${DATADIR}/th_${ALIAS}_v2.dat
+	${LN} -s th_nl_NL_v2.idx ${STAGEDIR}${DATADIR}/th_${ALIAS}_v2.idx
 .endfor
 
 .include <bsd.port.mk>

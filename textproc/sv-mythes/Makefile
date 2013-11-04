@@ -14,7 +14,7 @@ COMMENT=	Swedish thesaurus
 
 LICENSE=	MIT
 
-USE_ZIP=	yes
+EXTRACT_SUFX=	.zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
@@ -24,11 +24,10 @@ PLIST_FILES=	%%DATADIR%%/th_sv_SE.dat \
 		%%DATADIR%%/th_sv_FI.idx
 PLIST_DIRSTRY=	%%DATADIR%%
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/th_sv_SE.dat ${WRKSRC}/th_sv_SE.idx ${DATADIR}/
-	${LN} -s th_sv_SE.dat ${DATADIR}/th_sv_FI.dat
-	${LN} -s th_sv_SE.idx ${DATADIR}/th_sv_FI.idx
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/th_sv_SE.dat ${WRKSRC}/th_sv_SE.idx ${STAGEDIR}${DATADIR}/
+	${LN} -s th_sv_SE.dat ${STAGEDIR}${DATADIR}/th_sv_FI.dat
+	${LN} -s th_sv_SE.idx ${STAGEDIR}${DATADIR}/th_sv_FI.idx
 
 .include <bsd.port.mk>
