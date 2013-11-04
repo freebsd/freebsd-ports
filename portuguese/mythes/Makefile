@@ -13,7 +13,7 @@ COMMENT=	Portuguese thesaurus
 
 LICENSE=	GPLv2
 
-USE_ZIP=	yes
+EXTRACT_SUFX=	.zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
@@ -23,11 +23,10 @@ PLIST_FILES=	%%DATADIR%%/th_pt_BR_v2.dat \
 		%%DATADIR%%/th_pt_PT_v2.idx
 PLIST_DIRSTRY=	%%DATADIR%%
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/th_pt_PT_v2.dat ${WRKSRC}/th_pt_PT_v2.idx ${DATADIR}/
-	${LN} -s th_pt_PT_v2.dat ${DATADIR}/th_pt_BR_v2.dat
-	${LN} -s th_pt_PT_v2.idx ${DATADIR}/th_pt_BR_v2.idx
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/th_pt_PT_v2.dat ${WRKSRC}/th_pt_PT_v2.idx ${STAGEDIR}${DATADIR}/
+	${LN} -s th_pt_PT_v2.dat ${STAGEDIR}${DATADIR}/th_pt_BR_v2.dat
+	${LN} -s th_pt_PT_v2.idx ${STAGEDIR}${DATADIR}/th_pt_BR_v2.idx
 
 .include <bsd.port.mk>
