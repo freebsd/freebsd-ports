@@ -1,0 +1,9 @@
+To enable sending of panic reports, add
+	panicmail_enable="YES"
+to your /etc/rc.conf.
+
+By default panic reports will be sent to root with instructions to forward
+them if they do not contain any sensitive information.  To automatically
+submit panic reports directly, add
+	panicmail_autosubmit="YES"
+to your /etc/rc.conf in addition.
