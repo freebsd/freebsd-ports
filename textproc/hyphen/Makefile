@@ -2,6 +2,7 @@
 
 PORTNAME=	hyphen
 PORTVERSION=	2.8.6
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/hunspell/Hyphen/${PORTVERSION:R}/
 DIST_SUBDIR=	${PORTNAME}
@@ -12,9 +13,9 @@ COMMENT=	Library for high quality hyphenation and justification
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 
 GNU_CONFIGURE=	yes
-USES=	pathfix perl5
-USE_PERL5=	build
+USES=	pathfix perl5 shebangfix
 USE_LDCONFIG=	yes
+SHEBANG_FILES=	substrings.pl
 
 CONFIGURE_ENV+=	ac_cv_prog_AWK=gawk
 
@@ -35,10 +36,10 @@ CONFIGURE_ENV+=	ac_cv_prog_AWK=gawk
 PLIST_FILES+=	%%DATADIR%%/hyph_${ALIAS}.dic
 .endfor
 
-NO_STAGE=	yes
 post-install:
 .for ALIAS in ${USALIASES}
-	${LN} -s hyph_en_US.dic ${DATADIR}/hyph_${ALIAS}.dic
+	${LN} -s hyph_en_US.dic ${STAGEDIR}${DATADIR}/hyph_${ALIAS}.dic
 .endfor
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libhyphen.so.2
 
 .include <bsd.port.mk>
