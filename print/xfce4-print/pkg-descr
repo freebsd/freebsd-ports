@@ -1,6 +1,4 @@
-The printing helper is a graphical frontend for printing, a printer
-management, and a job queue management. It doesn't let you configure
-printers but only use printing systems that have already been
-configured properly.
+Xfprint contains a print dialog and a printer manager for the Xfce Desktop
+Environment. It supports CUPS, BSD-LPR and file as printing destination.
 
-WWW: http://www.xfce.org/projects/xfprint/
+WWW: http://www.xfce.org/
