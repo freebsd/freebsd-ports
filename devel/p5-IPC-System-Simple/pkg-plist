@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/IPC::System::Simple.3.gz
 %%SITE_PERL%%/IPC/System/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/System/Simple/.packlist
 @dirrmtry %%SITE_PERL%%/IPC/System
