@@ -11,7 +11,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Vietnamese hunspell dictionaries
 
-USE_ZIP=	yes
+EXTRACT_SUFX=	.zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PROJECTHOST=	hunspell-spellcheck-vi
@@ -20,9 +20,8 @@ PLIST_FILES=	%%DATADIR%%/vi_VN.aff \
 		%%DATADIR%%/vi_VN.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/vi_VN.aff ${WRKSRC}/vi_VN.dic ${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/vi_VN.aff ${WRKSRC}/vi_VN.dic ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
