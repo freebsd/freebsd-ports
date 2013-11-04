@@ -1,0 +1,11 @@
+--- src/keyboard.c.orig	2013-10-30 12:04:38.512854430 +0100
++++ src/keyboard.c	2013-10-30 12:04:53.198851447 +0100
+@@ -437,7 +437,7 @@
+ 	keyboard_set_layout(keyboard, KLS_LETTERS);
+ 	pango_font_description_free(bold);
+ 	/* messages */
+-	desktop_message_register(KEYBOARD_CLIENT_MESSAGE, on_keyboard_message,
++	desktop_message_register(keyboard->window,KEYBOARD_CLIENT_MESSAGE, on_keyboard_message,
+ 			keyboard);
+ 	return keyboard;
+ }
