@@ -3,6 +3,7 @@
 
 PORTNAME=	editor
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.defora.org/os/download/download/3702/
 PKGNAMEPREFIX=	deforaos-
@@ -13,12 +14,11 @@ COMMENT=	DeforaOS desktop text editor
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	System:${PORTSDIR}/devel/deforaos-libsystem \
-		Desktop:${PORTSDIR}/x11/deforaos-libdesktop
+LIB_DEPENDS=	libSystem.so:${PORTSDIR}/devel/deforaos-libsystem \
+		libDesktop.so:${PORTSDIR}/x11/deforaos-libdesktop
 
 MAKE_ARGS=	PREFIX=${PREFIX}
-USES=		pkgconfig gettext
-USE_GNOME=	gtk20 desktopfileutils
+USES=		desktop-file-utils gettext pkgconfig
+USE_GNOME=	gtk20
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
