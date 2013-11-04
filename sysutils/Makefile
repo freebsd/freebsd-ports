@@ -196,6 +196,7 @@
     SUBDIR += dtpstree
     SUBDIR += du2ps
     SUBDIR += duff
+    SUBDIR += dunst
     SUBDIR += duplicity
     SUBDIR += duply
     SUBDIR += dupmerge
