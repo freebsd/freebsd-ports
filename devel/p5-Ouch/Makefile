@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Ouch
-PORTVERSION=	0.0403
+PORTVERSION=	0.0408
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RIZEN
@@ -15,7 +15,4 @@ TEST_DEPENDS=	p5-Test-Trap>=0:${PORTSDIR}/devel/p5-Test-Trap
 USES=	perl5
 USE_PERL5=	configure
 
-MAN3=	Ouch.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
