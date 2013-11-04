@@ -120,7 +120,6 @@ lib/kde4/kopete_texteffect.so
 lib/kde4/kopete_translator.so
 lib/kde4/kopete_urlpicpreview.so
 lib/kde4/kopete_webpresence.so
-lib/kde4/kopete_wlm.so
 lib/kde4/kopete_wp.so
 lib/kde4/kopete_yahoo.so
 lib/kde4/libchattexteditpart.so
@@ -256,7 +255,6 @@ share/apps/kopete/icons/oxygen/128x128/apps/qq_protocol.png
 share/apps/kopete/icons/oxygen/128x128/apps/skype_protocol.png
 share/apps/kopete/icons/oxygen/128x128/apps/sms_protocol.png
 share/apps/kopete/icons/oxygen/128x128/apps/testbed_protocol.png
-share/apps/kopete/icons/oxygen/128x128/apps/wlm_protocol.png
 share/apps/kopete/icons/oxygen/128x128/apps/wp_protocol.png
 share/apps/kopete/icons/oxygen/128x128/apps/yahoo_protocol.png
 share/apps/kopete/icons/oxygen/16x16/actions/aim_away.png
@@ -317,18 +315,6 @@ share/apps/kopete/icons/oxygen/16x16/actions/skype_contact_online.png
 share/apps/kopete/icons/oxygen/16x16/actions/skype_contact_skypeme.png
 share/apps/kopete/icons/oxygen/16x16/actions/skype_contact_skypeout.png
 share/apps/kopete/icons/oxygen/16x16/actions/skype_contact_unknown.png
-share/apps/kopete/icons/oxygen/16x16/actions/wlm_away.png
-share/apps/kopete/icons/oxygen/16x16/actions/wlm_blocked.png
-share/apps/kopete/icons/oxygen/16x16/actions/wlm_brb.png
-share/apps/kopete/icons/oxygen/16x16/actions/wlm_busy.png
-share/apps/kopete/icons/oxygen/16x16/actions/wlm_fakefriend.png
-share/apps/kopete/icons/oxygen/16x16/actions/wlm_invisible.png
-share/apps/kopete/icons/oxygen/16x16/actions/wlm_lunch.png
-share/apps/kopete/icons/oxygen/16x16/actions/wlm_na.png
-share/apps/kopete/icons/oxygen/16x16/actions/wlm_newmsg.png
-share/apps/kopete/icons/oxygen/16x16/actions/wlm_offline.png
-share/apps/kopete/icons/oxygen/16x16/actions/wlm_online.png
-share/apps/kopete/icons/oxygen/16x16/actions/wlm_phone.png
 share/apps/kopete/icons/oxygen/16x16/actions/wp_away.png
 share/apps/kopete/icons/oxygen/16x16/actions/yahoo_away.png
 share/apps/kopete/icons/oxygen/16x16/actions/yahoo_busy.png
@@ -359,7 +345,6 @@ share/apps/kopete/icons/oxygen/16x16/apps/qq_protocol.png
 share/apps/kopete/icons/oxygen/16x16/apps/skype_protocol.png
 share/apps/kopete/icons/oxygen/16x16/apps/sms_protocol.png
 share/apps/kopete/icons/oxygen/16x16/apps/testbed_protocol.png
-share/apps/kopete/icons/oxygen/16x16/apps/wlm_protocol.png
 share/apps/kopete/icons/oxygen/16x16/apps/wp_protocol.png
 share/apps/kopete/icons/oxygen/16x16/apps/yahoo_protocol.png
 share/apps/kopete/icons/oxygen/22x22/actions/logging.png
@@ -376,7 +361,6 @@ share/apps/kopete/icons/oxygen/22x22/apps/kopete_avdevice.png
 share/apps/kopete/icons/oxygen/22x22/apps/meanwhile_protocol.png
 share/apps/kopete/icons/oxygen/22x22/apps/qq_protocol.png
 share/apps/kopete/icons/oxygen/22x22/apps/skype_protocol.png
-share/apps/kopete/icons/oxygen/22x22/apps/wlm_protocol.png
 share/apps/kopete/icons/oxygen/32x32/actions/logging.png
 share/apps/kopete/icons/oxygen/32x32/actions/skype_blockcontact.png
 share/apps/kopete/icons/oxygen/32x32/actions/skype_call.png
@@ -398,7 +382,6 @@ share/apps/kopete/icons/oxygen/32x32/apps/qq_protocol.png
 share/apps/kopete/icons/oxygen/32x32/apps/skype_protocol.png
 share/apps/kopete/icons/oxygen/32x32/apps/sms_protocol.png
 share/apps/kopete/icons/oxygen/32x32/apps/testbed_protocol.png
-share/apps/kopete/icons/oxygen/32x32/apps/wlm_protocol.png
 share/apps/kopete/icons/oxygen/32x32/apps/wp_protocol.png
 share/apps/kopete/icons/oxygen/32x32/apps/yahoo_protocol.png
 share/apps/kopete/icons/oxygen/48x48/actions/logging.png
@@ -412,7 +395,6 @@ share/apps/kopete/icons/oxygen/48x48/apps/qq_protocol.png
 share/apps/kopete/icons/oxygen/48x48/apps/skype_protocol.png
 share/apps/kopete/icons/oxygen/48x48/apps/sms_protocol.png
 share/apps/kopete/icons/oxygen/48x48/apps/testbed_protocol.png
-share/apps/kopete/icons/oxygen/48x48/apps/wlm_protocol.png
 share/apps/kopete/icons/oxygen/48x48/apps/wp_protocol.png
 share/apps/kopete/icons/oxygen/48x48/apps/yahoo_protocol.png
 share/apps/kopete/icons/oxygen/64x64/actions/logging.png
@@ -426,7 +408,6 @@ share/apps/kopete/icons/oxygen/64x64/apps/meanwhile_protocol.png
 share/apps/kopete/icons/oxygen/64x64/apps/qq_protocol.png
 share/apps/kopete/icons/oxygen/64x64/apps/sms_protocol.png
 share/apps/kopete/icons/oxygen/64x64/apps/testbed_protocol.png
-share/apps/kopete/icons/oxygen/64x64/apps/wlm_protocol.png
 share/apps/kopete/icons/oxygen/64x64/apps/wp_protocol.png
 share/apps/kopete/icons/oxygen/64x64/apps/yahoo_protocol.png
 share/apps/kopete/icons/oxygen/scalable/apps/meanwhile_protocol.svgz
@@ -637,7 +618,6 @@ share/apps/kopete_skype/skypeui.rc
 share/apps/kopete_statistics/statisticsui.rc
 share/apps/kopete_translator/translatorchatui.rc
 share/apps/kopete_translator/translatorui.rc
-share/apps/kopete_wlm/wlmchatui.rc
 share/apps/kopete_yahoo/yahoochatui.rc
 share/apps/kopete_yahoo/yahooconferenceui.rc
 share/apps/kopete_yahoo/yahooimui.rc
@@ -821,7 +801,6 @@ share/kde4/services/kopete_texteffect.desktop
 share/kde4/services/kopete_translator.desktop
 share/kde4/services/kopete_urlpicpreview.desktop
 share/kde4/services/kopete_webpresence.desktop
-share/kde4/services/kopete_wlm.desktop
 share/kde4/services/kopete_wp.desktop
 share/kde4/services/kopete_yahoo.desktop
 share/kde4/services/skype.protocol
@@ -839,7 +818,6 @@ share/sounds/Kopete_User_is_Online.ogg
 @dirrm share/doc/HTML/en/kopete
 @dirrm share/apps/kopeterichtexteditpart
 @dirrm share/apps/kopete_yahoo
-@dirrm share/apps/kopete_wlm
 @dirrm share/apps/kopete_translator
 @dirrm share/apps/kopete_statistics
 @dirrm share/apps/kopete_skype
