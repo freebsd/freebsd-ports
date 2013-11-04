@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:S,-,/,}/release/src
 PKGNAMEPREFIX=	apache-
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}-20121203
 
-MAINTAINER=	toha@toha.org.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java API To Access Microsoft Format Files
 
 BUILD_DEPENDS=	${JAVALIBDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j
