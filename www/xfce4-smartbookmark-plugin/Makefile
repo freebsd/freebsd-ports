@@ -12,13 +12,13 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Query search engines from the Xfce panel
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 intltool intlhack
-USES=		pkgconfig gettext
+USES=		pkgconfig gettext gmake
 USE_XFCE=	configenv libexo libmenu libutil panel
 USE_XORG=	ice
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
