@@ -37,7 +37,7 @@ OPTIONS_GROUP_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
 .endif	# BIND_TOOLS_SLAVE
 
 SSL_DESC=		Build with OpenSSL (Required for DNSSEC)
-REPLACE_BASE_DESC=	Replace base BIND with this version
+REPLACE_BASE_DESC=	Replace base BIND (FreeBSD 9.x and earlier)
 LARGE_FILE_DESC=	64-bit file support
 FIXED_RRSET_DESC=	Enable fixed rrset ordering
 SIGCHASE_DESC=		dig/host/nslookup will do DNSSEC validation
@@ -169,6 +169,9 @@ CONFIGURE_ARGS+=        --without-gssapi
 .endif
 
 .if ${PORT_OPTIONS:MREPLACE_BASE}
+.if ${OSVERSION} >= 1000500
+IGNORE=		REPLACE_BASE option is not supported on this release
+.endif
 PKGNAMESUFFIX=	-base
 PREFIX=		/usr
 BIND_DESTETC=	/etc/namedb
