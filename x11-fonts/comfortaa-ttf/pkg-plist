@@ -5,4 +5,4 @@
 %%FONTDIR%%/fonts.scale
 @unexec rm %D/%%FONTDIR%%/fonts.cache-1 2>/dev/null || true
 @dirrm %%FONTDIR%%
-@exec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%FONTSDIR%% || /usr/bin/true
+@exec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%FONTDIR%% || /usr/bin/true
