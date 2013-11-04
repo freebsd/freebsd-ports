@@ -1,6 +1,8 @@
 %%SITE_PERL%%/MIME/Lite.pm
 %%SITE_PERL%%/MIME/changes.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Lite/.packlist
+%%PERL5_MAN3%%/MIME::Lite.3.gz
+%%PERL5_MAN3%%/MIME::changes.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Lite
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME
 @dirrmtry %%SITE_PERL%%/MIME
