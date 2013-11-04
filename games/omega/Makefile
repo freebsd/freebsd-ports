@@ -10,36 +10,23 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complex rogue-style game of dungeon exploration
 
-USES=		gmake	# to allow -jX builds (rules with multiple outputs)
+USES=		gmake
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	# empty
 CFLAGS+=	-Wno-return-type
-MAN6=		omega.6
 
 MYPORTDOCS=	buglist.txt docs/compile.all docs/omega.txt docs/readme.1st \
 		docs/readme3 docs/readme4
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/omega ${PREFIX}/bin/omega-game
-	@${CHOWN} root:games ${PREFIX}/bin/omega-game
-	@${CHMOD} 2711 ${PREFIX}/bin/omega-game
-	${INSTALL_MAN} ${WRKSRC}/docs/omega.6 ${MANPREFIX}/man/man6
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/lib/* ${DATADIR}
-	@${RM} ${DATADIR}/license.old
-	@${CHMOD} 0460 ${DATADIR}/omega.hi
-	@${CHMOD} 0460 ${DATADIR}/omega.log
-	${CP} ${DATADIR}/omega.hi ${DATADIR}/omegahi.bak
-	@${CHMOD} 0460 ${DATADIR}/omegahi.bak
-	@${CHOWN} -R root:games ${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${MYPORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/omega ${STAGEDIR}${PREFIX}/bin/omega-game
+	${INSTALL_MAN} ${WRKSRC}/docs/omega.6 ${STAGEDIR}${MANPREFIX}/man/man6
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/* ${STAGEDIR}${DATADIR}
+	${CP} ${STAGEDIR}${DATADIR}/omega.hi ${STAGEDIR}${DATADIR}/omegahi.bak
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${MYPORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
