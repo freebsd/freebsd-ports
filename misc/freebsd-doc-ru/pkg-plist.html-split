@@ -528,9 +528,9 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-xdm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11-wm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/appendices.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/build-cluster.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/building.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/ch06s25.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/conflicts.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-after-port-mk.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-avoiding-linuxisms.html
@@ -563,6 +563,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/makefile-masterdir.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/makefile-naming.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/makefile-options.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/makefile-portscout.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/makefile-wrkdir.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/makefile.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/moved-and-updating-files.html
@@ -594,6 +595,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/portsmon.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/quick-porting.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/rc-scripts.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/requiring-kernel-sources.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/security-fix.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/security-notify.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/security.html
