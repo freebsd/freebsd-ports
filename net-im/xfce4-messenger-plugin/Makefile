@@ -13,6 +13,9 @@ COMMENT=	Messenger plugin for Xfce
 
 LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 
+DEPRECATED=	Deprecated and no update for 7 years
+EXPIRATION_DATE=	2014-01-04
+
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USES=		gettext pkgconfig
