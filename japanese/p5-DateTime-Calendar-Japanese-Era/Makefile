@@ -10,6 +10,9 @@ MASTER_SITES=	CPAN
 MAINTAINER=	markun@onohara.to
 COMMENT=	DateTime Extension for Japanese Eras
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		p5-Module-Install>=0.91:${PORTSDIR}/devel/p5-Module-Install \
@@ -23,9 +26,6 @@ TEST_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		DateTime::Calendar::Japanese::Era.3
-
-NO_STAGE=	yes
 post-patch:
 	@${RM} -rf ${WRKSRC}/inc
 
