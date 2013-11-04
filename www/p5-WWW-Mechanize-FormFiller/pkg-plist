@@ -10,6 +10,17 @@
 %%SITE_PERL%%/WWW/Mechanize/FormFiller/Value/Random/Date.pm
 %%SITE_PERL%%/WWW/Mechanize/FormFiller/Value/Random/Chars.pm
 %%SITE_PERL%%/WWW/Mechanize/FormFiller/Value/Random/Word.pm
+%%PERL5_MAN3%%/WWW::Mechanize::FormFiller.3.gz
+%%PERL5_MAN3%%/WWW::Mechanize::FormFiller::Value.3.gz
+%%PERL5_MAN3%%/WWW::Mechanize::FormFiller::Value::Callback.3.gz
+%%PERL5_MAN3%%/WWW::Mechanize::FormFiller::Value::Default.3.gz
+%%PERL5_MAN3%%/WWW::Mechanize::FormFiller::Value::Fixed.3.gz
+%%PERL5_MAN3%%/WWW::Mechanize::FormFiller::Value::Interactive.3.gz
+%%PERL5_MAN3%%/WWW::Mechanize::FormFiller::Value::Keep.3.gz
+%%PERL5_MAN3%%/WWW::Mechanize::FormFiller::Value::Random.3.gz
+%%PERL5_MAN3%%/WWW::Mechanize::FormFiller::Value::Random::Chars.3.gz
+%%PERL5_MAN3%%/WWW::Mechanize::FormFiller::Value::Random::Date.3.gz
+%%PERL5_MAN3%%/WWW::Mechanize::FormFiller::Value::Random::Word.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/FormFiller
 @dirrm %%SITE_PERL%%/WWW/Mechanize/FormFiller/Value/Random
 @dirrm %%SITE_PERL%%/WWW/Mechanize/FormFiller/Value

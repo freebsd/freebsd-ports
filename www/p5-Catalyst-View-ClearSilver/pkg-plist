@@ -1,6 +1,8 @@
 %%SITE_PERL%%/Catalyst/View/ClearSilver.pm
 %%SITE_PERL%%/Catalyst/Helper/View/ClearSilver.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/ClearSilver/.packlist
+%%PERL5_MAN3%%/Catalyst::Helper::View::ClearSilver.3.gz
+%%PERL5_MAN3%%/Catalyst::View::ClearSilver.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/ClearSilver
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View
 @dirrmtry %%SITE_PERL%%/Catalyst/View

@@ -1,5 +1,6 @@
 %%SITE_PERL%%/HTTP/Request/AsCGI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Request/AsCGI/.packlist
+%%PERL5_MAN3%%/HTTP::Request::AsCGI.3.gz
 @dirrmtry %%SITE_PERL%%/HTTP/Request
 @dirrmtry %%SITE_PERL%%/HTTP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Request/AsCGI

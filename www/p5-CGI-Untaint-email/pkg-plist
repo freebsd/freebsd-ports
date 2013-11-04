@@ -1,3 +1,4 @@
 %%SITE_PERL%%/CGI/Untaint/email.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Untaint/email/.packlist
+%%PERL5_MAN3%%/CGI::Untaint::email.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Untaint/email

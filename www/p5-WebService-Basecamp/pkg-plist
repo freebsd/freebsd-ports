@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Basecamp/.packlist
 %%SITE_PERL%%/WebService/Basecamp.pm
+%%PERL5_MAN3%%/WebService::Basecamp.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Basecamp
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService
 @dirrmtry %%SITE_PERL%%/WebService

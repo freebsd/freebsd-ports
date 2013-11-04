@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Catalyst/Plugin/StackTrace.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/StackTrace/.packlist
+%%PERL5_MAN3%%/Catalyst::Plugin::StackTrace.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/StackTrace
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst

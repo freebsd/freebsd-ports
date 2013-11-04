@@ -9,6 +9,16 @@
 %%SITE_PERL%%/CatalystX/SimpleLogin/Manual.pod
 %%SITE_PERL%%/CatalystX/SimpleLogin.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CatalystX/SimpleLogin/.packlist
+%%PERL5_MAN3%%/Catalyst::ActionRole::NeedsLogin.3.gz
+%%PERL5_MAN3%%/CatalystX::SimpleLogin.3.gz
+%%PERL5_MAN3%%/CatalystX::SimpleLogin::Controller::Login.3.gz
+%%PERL5_MAN3%%/CatalystX::SimpleLogin::Form::Login.3.gz
+%%PERL5_MAN3%%/CatalystX::SimpleLogin::Form::LoginOpenID.3.gz
+%%PERL5_MAN3%%/CatalystX::SimpleLogin::Manual.3.gz
+%%PERL5_MAN3%%/CatalystX::SimpleLogin::TraitFor::Controller::Login::Logout.3.gz
+%%PERL5_MAN3%%/CatalystX::SimpleLogin::TraitFor::Controller::Login::OpenID.3.gz
+%%PERL5_MAN3%%/CatalystX::SimpleLogin::TraitFor::Controller::Login::RenderAsTTTemplate.3.gz
+%%PERL5_MAN3%%/CatalystX::SimpleLogin::TraitFor::Controller::Login::WithRedirect.3.gz
 @dirrmtry %%SITE_PERL%%/Catalyst/ActionRole
 @dirrmtry %%SITE_PERL%%/Catalyst
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CatalystX/SimpleLogin

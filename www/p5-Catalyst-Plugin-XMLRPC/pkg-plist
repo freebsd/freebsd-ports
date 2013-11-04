@@ -2,6 +2,9 @@
 %%SITE_PERL%%/Catalyst/Plugin/XMLRPC.pm
 %%SITE_PERL%%/Catalyst/Plugin/XMLRPC/DispatchType/XMLRPC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/XMLRPC/.packlist
+%%PERL5_MAN3%%/Catalyst::Plugin::XMLRPC.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::XMLRPC::DispatchType::XMLRPC.3.gz
+%%PERL5_MAN3%%/Catalyst::Action::XMLRPC.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/XMLRPC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst

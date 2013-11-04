@@ -1,6 +1,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/HTTP/.packlist
 %%SITE_PERL%%/Test/HTTP.pm
 %%SITE_PERL%%/Test/HTTP/Syntax.pm
+%%PERL5_MAN3%%/Test::HTTP.3.gz
+%%PERL5_MAN3%%/Test::HTTP::Syntax.3.gz
 @dirrmtry %%SITE_PERL%%/Test/HTTP
 @dirrmtry %%SITE_PERL%%/Test
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/HTTP

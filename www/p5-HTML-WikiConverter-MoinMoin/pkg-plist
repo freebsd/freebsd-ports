@@ -1,4 +1,5 @@
 %%SITE_PERL%%/HTML/WikiConverter/MoinMoin.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter/MoinMoin/.packlist
+%%PERL5_MAN3%%/HTML::WikiConverter::MoinMoin.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter/MoinMoin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter

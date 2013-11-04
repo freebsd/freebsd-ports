@@ -162,6 +162,32 @@
 %%SITE_PERL%%/WebService/GData/YouTube/YT/Username.pm
 %%SITE_PERL%%/WebService/GData/YouTube/YT/Videoid.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/GData/.packlist
+%%PERL5_MAN3%%/WebService::GData::Error.3.gz
+%%PERL5_MAN3%%/WebService::GData::ClientLogin.3.gz
+%%PERL5_MAN3%%/WebService::GData::Collection.3.gz
+%%PERL5_MAN3%%/WebService::GData::Feed::Entry.3.gz
+%%PERL5_MAN3%%/WebService::GData::Base.3.gz
+%%PERL5_MAN3%%/WebService::GData::Node.3.gz
+%%PERL5_MAN3%%/WebService::GData::Node::AbstractEntity.3.gz
+%%PERL5_MAN3%%/WebService::GData::Serialize.3.gz
+%%PERL5_MAN3%%/WebService::GData::YouTube::Constants.3.gz
+%%PERL5_MAN3%%/WebService::GData::YouTube::Doc::BrowserBasedUpload.3.gz
+%%PERL5_MAN3%%/WebService::GData::YouTube::Doc::GeneralOverview.3.gz
+%%PERL5_MAN3%%/WebService::GData::YouTube::Feed::Complaint.3.gz
+%%PERL5_MAN3%%/WebService::GData::YouTube::Feed::Friend.3.gz
+%%PERL5_MAN3%%/WebService::GData::YouTube::Feed::UserProfile.3.gz
+%%PERL5_MAN3%%/WebService::GData::YouTube::Feed::Video.3.gz
+%%PERL5_MAN3%%/WebService::GData::YouTube::StagingServer.3.gz
+%%PERL5_MAN3%%/WebService::GData::Constants.3.gz
+%%PERL5_MAN3%%/WebService::GData::Query.3.gz
+%%PERL5_MAN3%%/WebService::GData::YouTube::Query.3.gz
+%%PERL5_MAN3%%/WebService::GData.3.gz
+%%PERL5_MAN3%%/WebService::GData::Error::Entry.3.gz
+%%PERL5_MAN3%%/WebService::GData::Feed.3.gz
+%%PERL5_MAN3%%/WebService::GData::YouTube.3.gz
+%%PERL5_MAN3%%/WebService::GData::YouTube::Feed::Comment.3.gz
+%%PERL5_MAN3%%/WebService::GData::YouTube::Feed::PlaylistLink.3.gz
+%%PERL5_MAN3%%/WebService::GData::YouTube::Feed::VideoMessage.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/GData
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService
 @dirrm %%SITE_PERL%%/WebService/GData/YouTube/YT/Media

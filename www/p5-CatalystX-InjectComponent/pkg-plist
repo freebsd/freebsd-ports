@@ -1,5 +1,6 @@
 %%SITE_PERL%%/CatalystX/InjectComponent.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CatalystX/InjectComponent/.packlist
+%%PERL5_MAN3%%/CatalystX::InjectComponent.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CatalystX/InjectComponent
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CatalystX
 @dirrmtry %%SITE_PERL%%/CatalystX

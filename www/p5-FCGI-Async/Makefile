@@ -25,9 +25,4 @@ TEST_DEPENDS=	p5-Test-Identity>=0:${PORTSDIR}/devel/p5-Test-Identity \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Plack::Handler::FCGI::Async.3 \
-		FCGI::Async::PSGI.3 \
-		FCGI::Async.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

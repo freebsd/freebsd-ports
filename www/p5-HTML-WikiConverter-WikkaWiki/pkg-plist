@@ -1,4 +1,5 @@
 %%SITE_PERL%%/HTML/WikiConverter/WikkaWiki.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter/WikkaWiki/.packlist
+%%PERL5_MAN3%%/HTML::WikiConverter::WikkaWiki.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter/WikkaWiki
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter

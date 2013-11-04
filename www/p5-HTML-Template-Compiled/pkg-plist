@@ -15,6 +15,21 @@
 %%SITE_PERL%%/HTML/Template/Compiled/Token.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Utils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Compiled/.packlist
+%%PERL5_MAN3%%/HTML::Template::Compiled.3.gz
+%%PERL5_MAN3%%/HTML::Template::Compiled::Classic.3.gz
+%%PERL5_MAN3%%/HTML::Template::Compiled::Compiler.3.gz
+%%PERL5_MAN3%%/HTML::Template::Compiled::Compiler::Classic.3.gz
+%%PERL5_MAN3%%/HTML::Template::Compiled::Exception.3.gz
+%%PERL5_MAN3%%/HTML::Template::Compiled::Expr.3.gz
+%%PERL5_MAN3%%/HTML::Template::Compiled::Expression.3.gz
+%%PERL5_MAN3%%/HTML::Template::Compiled::Filter.3.gz
+%%PERL5_MAN3%%/HTML::Template::Compiled::Formatter.3.gz
+%%PERL5_MAN3%%/HTML::Template::Compiled::Lazy.3.gz
+%%PERL5_MAN3%%/HTML::Template::Compiled::Parser.3.gz
+%%PERL5_MAN3%%/HTML::Template::Compiled::Plugin::XMLEscape.3.gz
+%%PERL5_MAN3%%/HTML::Template::Compiled::Reference.3.gz
+%%PERL5_MAN3%%/HTML::Template::Compiled::Token.3.gz
+%%PERL5_MAN3%%/HTML::Template::Compiled::Utils.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Compiled
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
