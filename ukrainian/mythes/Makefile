@@ -22,12 +22,11 @@ PLIST_FILES=	%%DATADIR%%/th_uk_UA.dat \
 		%%DATADIR%%/th_uk_UA.idx
 PLIST_DIRSTRY=	%%DATADIR%%
 
-NO_STAGE=	yes
 do-build:
 	@${PERL} ${WRKSRC}/bin/th_gen_idx.pl < ${WRKSRC}/src/thesaurus/th_uk_UA.dat > ${WRKSRC}/src/thesaurus/th_uk_UA.idx
 
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/src/thesaurus/th_uk_UA.dat ${WRKSRC}/src/thesaurus/th_uk_UA.idx ${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/src/thesaurus/th_uk_UA.dat ${WRKSRC}/src/thesaurus/th_uk_UA.idx ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
