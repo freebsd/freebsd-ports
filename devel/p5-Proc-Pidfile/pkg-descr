@@ -1,0 +1,7 @@
+Proc::Pidfile is a very simple OO interface which manages a pidfile
+for the current process.  You can pass the path to a pidfile to use as
+an argument to the constructor, or you can let Proc::Pidfile choose
+one (basically, "/var/run/$basename", if you can write to /var/run,
+otherwise "/$tmpdir/$basename").
+
+WWW: http://search.cpan.org/dist/Proc-Pidfile/
