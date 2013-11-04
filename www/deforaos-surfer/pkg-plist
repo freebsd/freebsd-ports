@@ -1,6 +1,9 @@
 bin/download
 bin/surfer
 bin/helper
+man/man1/download.1.gz
+man/man1/helper.1.gz
+man/man1/surfer.1.gz
 share/applications/surfer.desktop
 share/applications/helper.desktop
 share/icons/hicolor/16x16/apps/surfer-view-html-source.png
@@ -9,3 +12,9 @@ share/locale/de/LC_MESSAGES/Surfer.mo
 share/locale/es/LC_MESSAGES/Surfer.mo
 share/locale/fr/LC_MESSAGES/Surfer.mo
 share/locale/it/LC_MESSAGES/Surfer.mo
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
