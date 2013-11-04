@@ -1,3 +1,2 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/ConfigFromFile/.packlist
+%%PERL5_MAN3%%/MooseX::ConfigFromFile.3.gz
 %%SITE_PERL%%/MooseX/ConfigFromFile.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/ConfigFromFile
