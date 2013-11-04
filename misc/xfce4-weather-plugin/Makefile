@@ -10,26 +10,26 @@ MASTER_SITE_SUBDIR=src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	Xfce 4 weather module for xfce4-panel
+COMMENT=	Weather plugin for the Xfce panel
 
-LIB_DEPENDS=	soup-2:${PORTSDIR}/devel/libsoup
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USES=		pkgconfig gettext pathfix
+USES=		pkgconfig gettext gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	glib20 gtk20 intltool intlhack libxml2
 USE_XFCE=	configenv libmenu libutil panel
 
 OPTIONS_DEFINE=	UPOWER
-UPOWER_DESC=	Power state support
+UPOWER_DESC=	Power management tasks
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUPOWER}
-LIB_DEPENDS+=	upower-glib:${PORTSDIR}/sysutils/upower
+LIB_DEPENDS+=	libupower-glib.so:${PORTSDIR}/sysutils/upower
 CONFIGURE_ARGS+=--enable-upower
 .else
 CONFIGURE_ARGS+=--disable-upower
