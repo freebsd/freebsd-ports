@@ -18,10 +18,10 @@ COMMENT=	KDE Crystal style X cursor theme
 BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		xcursorgen:${PORTSDIR}/x11/xcursorgen
 
+MAKE_ENV+=	DESTDIR=${STAGEDIR}
+USES=		gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|function ||' \
 		${WRKSRC}/colorize.sh \
@@ -36,9 +36,9 @@ post-patch:
 
 pre-install:
 	@${REINPLACE_CMD} \
-		-e 's|$$(HOME)/.icons/|${DESTDIR}${PREFIX}/lib/X11/icons|' \
-		-e 's|$$(MAKE) .*install|$$(MAKE) PREFIX=${DESTDIR}${PREFIX}/lib/X11/icons install|g' \
-		-e 's|theme.default .*/default/index.theme|theme.default ${DESTDIR}${PREFIX}/lib/X11/icons/default/index.theme|' \
+		-e 's|$$(HOME)/.icons/|${STAGEDIR}${PREFIX}/lib/X11/icons|' \
+		-e 's|$$(MAKE) .*install|$$(MAKE) PREFIX=${STAGEDIR}${PREFIX}/lib/X11/icons install|g' \
+		-e 's|theme.default .*/default/index.theme|theme.default ${STAGEDIR}${PREFIX}/lib/X11/icons/default/index.theme|' \
 		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
