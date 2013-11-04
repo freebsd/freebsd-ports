@@ -15,9 +15,6 @@ USES=		perl5
 USE_PERL5=	configure
 USE_FORTRAN=	yes
 
-MAN3=		ExtUtils::F77.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|'gfortran44'|'${FC}'|" \
 			  -e "s|'-O2'|'${CFLAGS}'|" \

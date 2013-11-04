@@ -1,3 +1,6 @@
+%%PERL5_MAN3%%/Pugs::Compiler::Perl6.3.gz
+%%PERL5_MAN3%%/Pugs::Runtime::Perl6.3.gz
+%%PERL5_MAN3%%/v6.3.gz
 %%SITE_PERL%%/Pugs/Compiler/Perl6.pm
 %%SITE_PERL%%/Pugs/Emitter/Perl6/Perl5.pm
 %%SITE_PERL%%/Pugs/Emitter/YAML.pm
@@ -24,15 +27,15 @@
 %%SITE_PERL%%/Pugs/Runtime/Perl6AST.pmc
 %%SITE_PERL%%/Pugs/Runtime/Perl6Prelude.pm
 %%SITE_PERL%%/Pugs/Runtime/Perl6Prelude.pmc
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/v6/alpha/.packlist
 %%SITE_PERL%%/v6.pm
 %%SITE_PERL%%/v6/hello_world.pl
+@dirrmtry %%SITE_PERL%%/v6
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/v6/alpha
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/v6
 @dirrmtry %%SITE_PERL%%/Pugs/Runtime
 @dirrmtry %%SITE_PERL%%/Pugs/Grammar
 @dirrmtry %%SITE_PERL%%/Pugs/Emitter/Perl6
 @dirrmtry %%SITE_PERL%%/Pugs/Emitter
 @dirrmtry %%SITE_PERL%%/Pugs/Compiler
 @dirrmtry %%SITE_PERL%%/Pugs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/v6/alpha/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/v6/alpha
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/v6
-@dirrmtry %%SITE_PERL%%/v6
