@@ -1,8 +1,8 @@
-%%SHRPX%%bin/shrpx
+bin/shrpx
 bin/spdycat
 bin/spdycli
 bin/spdyd
-%%SHRPX%%etc/shrpx.conf.sample
+etc/shrpx.conf.sample
 include/spdylay/spdylay.h
 include/spdylay/spdylayver.h
 lib/libspdylay.a
