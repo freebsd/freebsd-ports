@@ -1,6 +1,6 @@
 # $FreeBSD$
 #
-# Handles dependency on kernel sources
+# Handles common items for kernel module ports.
 #
 # MAINTAINER: rene@FreeBSD.org
 #
@@ -43,10 +43,8 @@ kmod-post-install:
 	${ECHO_CMD} "@exec /usr/sbin/kldxref ${KMODDIR}"  >> ${TMPPLIST}
 	${ECHO_CMD} "@unexec /usr/sbin/kldxref ${KMODDIR}" >> ${TMPPLIST}
 .if defined(NO_STAGE)
-	${ECHO_CMD} "@unexec rmdir ${KMODDIR} 2>/dev/null || true" >> ${TMPPLIST}
 	/usr/sbin/kldxref ${KMODDIR}
-.else
-	${ECHO_CMD} "@dirrmtry ${KMODDIR}" >> ${TMPPLIST}
 .endif
+	${ECHO_CMD} "@unexec rmdir ${KMODDIR} 2>/dev/null || true" >> ${TMPPLIST}
 
 .endif
