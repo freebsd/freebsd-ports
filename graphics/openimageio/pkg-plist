@@ -34,12 +34,13 @@ include/OpenImageIO/typedesc.h
 include/OpenImageIO/ustring.h
 include/OpenImageIO/varyingref.h
 include/OpenImageIO/pugixml.hpp
+include/OpenImageIO/pugixml.cpp
 include/OpenImageIO/pugiconfig.hpp
 include/OpenImageIO/version.h
 lib/libOpenImageIO.so
 lib/libOpenImageIO.so.1
 lib/libOpenImageIO.so.1.2
-lib/libOpenImageIO.so.1.2.2
+lib/libOpenImageIO.so.1.2.3
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/openimageio.pdf
