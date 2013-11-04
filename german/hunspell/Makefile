@@ -13,10 +13,9 @@ COMMENT=	German hunspell dictionaries
 BUILD_DEPENDS=	buildhash:${PORTSDIR}/textproc/ispell \
 		hunspell:${PORTSDIR}/textproc/hunspell
 
-USES=		shebangfix perl5
+USES=		gmake shebangfix perl5
 USE_BZIP2=	yes
 ALL_TARGET=	hunspell-all
-USE_GMAKE=	yes
 USE_PERL5=	build
 SHEBANG_FILES=	bin/*.pl
 
@@ -35,19 +34,18 @@ PLIST_FILES+=	%%DATADIR%%/${ALIAS}.aff \
 		%%DATADIR%%/${ALIAS}.dic
 .endfor
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/hunspell/de_AT.aff ${WRKSRC}/hunspell/de_AT.dic \
 		${WRKSRC}/hunspell/de_CH.aff ${WRKSRC}/hunspell/de_CH.dic \
-		${WRKSRC}/hunspell/de_DE.aff ${WRKSRC}/hunspell/de_DE.dic ${DATADIR}/
+		${WRKSRC}/hunspell/de_DE.aff ${WRKSRC}/hunspell/de_DE.dic ${STAGEDIR}${DATADIR}/
 .for ALIAS in ${CHALIASES}
-	${LN} -s de_CH.aff ${DATADIR}/${ALIAS}.aff
-	${LN} -s de_CH.dic ${DATADIR}/${ALIAS}.dic
+	${LN} -s de_CH.aff ${STAGEDIR}${DATADIR}/${ALIAS}.aff
+	${LN} -s de_CH.dic ${STAGEDIR}${DATADIR}/${ALIAS}.dic
 .endfor
 .for ALIAS in ${DEALIASES}
-	${LN} -s de_DE.aff ${DATADIR}/${ALIAS}.aff
-	${LN} -s de_DE.dic ${DATADIR}/${ALIAS}.dic
+	${LN} -s de_DE.aff ${STAGEDIR}${DATADIR}/${ALIAS}.aff
+	${LN} -s de_DE.dic ${STAGEDIR}${DATADIR}/${ALIAS}.dic
 .endfor
 
 .include <bsd.port.mk>

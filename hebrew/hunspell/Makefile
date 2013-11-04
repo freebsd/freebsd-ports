@@ -15,18 +15,15 @@ ALL_TARGET=	hunspell
 CONFIGURE_ARGS=	--enable-fatverb
 GNU_CONFIGURE=	yes
 USE_PERL5=	build
-USES=		gmake iconv:build perl5
+USES=		gmake iconv:build perl5 shebangfix
+SHEBANG_FILES=	${WRKSRC}/pmerge
 
 PLIST_FILES=	%%DATADIR%%/he.aff \
 		%%DATADIR%%/he.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} 's|/usr/bin/perl|${PERL}|g' ${WRKSRC}/pmerge
-
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/he.aff ${WRKSRC}/he.dic ${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/he.aff ${WRKSRC}/he.dic ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
