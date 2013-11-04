@@ -1,3 +1,6 @@
+%%PERL5_MAN3%%/Parallel::Scoreboard.3.gz
+%%PERL5_MAN3%%/Parallel::Scoreboard::PSGI::App.3.gz
+%%PERL5_MAN3%%/Parallel::Scoreboard::PSGI::App::JSON.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel/Scoreboard/.packlist
 %%SITE_PERL%%/Parallel/Scoreboard.pm
 %%SITE_PERL%%/Parallel/Scoreboard/PSGI/App.pm
