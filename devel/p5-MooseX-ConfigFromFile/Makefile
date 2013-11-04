@@ -2,6 +2,7 @@
 
 PORTNAME=	MooseX-ConfigFromFile
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +15,7 @@ RUN_DEPENDS=	\
 	p5-MooseX-Types>=0.19:${PORTSDIR}/devel/p5-MooseX-Types \
 	p5-MooseX-Types-Path-Tiny>=0.005:${PORTSDIR}/devel/p5-MooseX-Types-Path-Tiny \
 	p5-namespace-autoclean>0:${PORTSDIR}/devel/p5-namespace-autoclean
-BUILD_DEPENDS:=	${RUN_DEPENDS} \
-	p5-Module-Build-Tiny>0:${PORTSDIR}/devel/p5-Module-Build-Tiny
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-Test-CheckDeps>=0.006:${PORTSDIR}/devel/p5-Test-CheckDeps \
 	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
@@ -25,6 +25,6 @@ TEST_DEPENDS=	\
 	p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep
 
 USES=	perl5
-USE_PERL5=	modbuild
+USE_PERL5=	modbuildtiny
 
 .include <bsd.port.mk>
