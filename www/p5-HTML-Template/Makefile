@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTML-Template
-PORTVERSION=	2.94
+PORTVERSION=	2.95
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,8 +12,4 @@ COMMENT=	Perl module to use HTML Templates from CGI scripts
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		HTML::Template.3 \
-		HTML::Template::FAQ.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
