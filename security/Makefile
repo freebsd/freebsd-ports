@@ -669,6 +669,7 @@
     SUBDIR += pecl-crack
     SUBDIR += pecl-gnupg
     SUBDIR += pecl-pam
+    SUBDIR += pecl-scrypt
     SUBDIR += pecl-ssh2
     SUBDIR += pecl-taint
     SUBDIR += pecl-tcpwrap
