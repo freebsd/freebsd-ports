@@ -18,7 +18,7 @@ PLIST_FILES=	bin/spamprobe man/man1/spamprobe.1.gz
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 1000024
-BROKEN=		does not build with clang
+USE_GCC=	yes
 .endif
 
 # PBL support
