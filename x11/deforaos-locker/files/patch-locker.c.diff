@@ -1,0 +1,15 @@
+--- src/locker.c.orig	2013-11-03 22:28:05.640455922 +0100
++++ src/locker.c	2013-11-03 22:30:35.005447608 +0100
+@@ -268,8 +268,10 @@
+ 			GDK_WINDOW_XID(root), ScreenSaverNotifyMask);
+ 	gdk_x11_register_standard_event_type(locker->display, locker->event, 1);
+ 	gdk_window_add_filter(root, _locker_on_filter, locker);
+-	desktop_message_register(LOCKER_CLIENT_MESSAGE, _locker_on_message,
+-			locker);
++  /* listen to desktop messages */
++  gtk_widget_realize(locker->windows[0]);
++  desktop_message_register(locker->windows[0], LOCKER_CLIENT_MESSAGE,
++      _locker_on_message, locker);
+ 	return locker;
+ }
+ 
