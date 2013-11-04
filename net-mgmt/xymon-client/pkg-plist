@@ -1,6 +1,3 @@
-@exec if ! pw groupshow %%XYMONUSER%% 2>/dev/null; then pw groupadd %%XYMONUSER%% -g 280; fi
-@exec if ! pw usershow %%XYMONUSER%% 2>/dev/null; then pw useradd %%XYMONUSER%% -g %%XYMONUSER%% -u 280 -h - -d %%WWWDIR%% -s /usr/sbin/nologin -c "Xymon Monitor"; fi
-@unexec if pw usershow %%XYMONUSER%%; then pw userdel %%XYMONUSER%%; fi
 %%WWWDIR%%/client/bin/clientupdate
 %%WWWDIR%%/client/bin/freebsd-meminfo
 %%WWWDIR%%/client/bin/orcaxymon
@@ -36,12 +33,7 @@
 @exec [ ! -f %B/localclient.cfg ] && cp %B/%f %B/localclient.cfg
 %%WWWDIR%%/client/local/README
 %%WWWDIR%%/client/runclient.sh
-@exec mkdir %D/%%WWWDIR%%/client/ext
-@exec mkdir %D/%%WWWDIR%%/client/logs
-@exec mkdir %D/%%WWWDIR%%/client/tmp
-@exec chown %%XYMONUSER%% %D/%%WWWDIR%%/client/ext
-@exec chown %%XYMONUSER%% %D/%%WWWDIR%%/client/logs
-@exec chown %%XYMONUSER%% %D/%%WWWDIR%%/client/tmp
+@exec chown -R %%XYMONUSER%% %D/%%WWWDIR%%/client
 @dirrm %%WWWDIR%%/client/tmp
 @dirrm %%WWWDIR%%/client/logs
 @dirrm %%WWWDIR%%/client/local
