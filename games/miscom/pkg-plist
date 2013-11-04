@@ -1,13 +1,14 @@
 bin/miscom
-%%PORTDOCS%%share/doc/miscom/COPYING
-%%PORTDOCS%%share/doc/miscom/ChangeLog
-%%PORTDOCS%%share/doc/miscom/README
-%%PORTDOCS%%share/doc/miscom/TODO
-share/miscom/citybang.raw
-share/miscom/explode.raw
-share/miscom/gameover.raw
-share/miscom/launch.raw
-share/miscom/levelend.raw
-share/miscom/levelst.raw
-%%PORTDOCS%%@dirrm share/doc/miscom
-@dirrm share/miscom
+man/man6/miscom.6.gz
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%DATADIR%%/citybang.raw
+%%DATADIR%%/explode.raw
+%%DATADIR%%/gameover.raw
+%%DATADIR%%/launch.raw
+%%DATADIR%%/levelend.raw
+%%DATADIR%%/levelst.raw
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
