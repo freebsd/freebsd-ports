@@ -1107,6 +1107,7 @@
     SUBDIR += p5-Perlbal-Plugin-PSGI
     SUBDIR += p5-Plack
     SUBDIR += p5-Plack-App-Proxy
+    SUBDIR += p5-Plack-Builder-Conditionals
     SUBDIR += p5-Plack-Handler-AnyEvent-HTTPD
     SUBDIR += p5-Plack-Handler-AnyEvent-ReverseHTTP
     SUBDIR += p5-Plack-Handler-AnyEvent-SCGI
