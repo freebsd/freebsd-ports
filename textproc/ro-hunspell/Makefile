@@ -14,7 +14,7 @@ COMMENT=	Romanian hunspell dictionaries
 LICENSE=	LGPL21 GPLv2 MPL
 LICENSE_COMB=	dual
 
-USE_ZIP=	yes
+EXTRACT_SUFX=	.zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
