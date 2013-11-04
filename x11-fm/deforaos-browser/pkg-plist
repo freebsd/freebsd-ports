@@ -12,12 +12,23 @@ include/Desktop/Browser/desktop.h
 include/Desktop/Browser/plugin.h
 lib/Browser/plugins/cvs.so
 lib/Browser/plugins/dirtree.so
+lib/Browser/plugins/favorites.so
 lib/Browser/plugins/git.so
+lib/Browser/plugins/make.so
 lib/Browser/plugins/preview.so
 lib/Browser/plugins/properties.so
 lib/Browser/plugins/subversion.so
 lib/Browser/plugins/volumes.so
 libdata/pkgconfig/Browser.pc
+man/man1/browser.1.gz
+man/man1/copy.1.gz
+man/man1/delete.1.gz
+man/man1/desktop.1.gz
+man/man1/desktopctl.1.gz
+man/man1/move.1.gz
+man/man1/open.1.gz
+man/man1/properties.1.gz
+man/man1/view.1.gz
 share/applications/browser.desktop
 share/applications/desktop-settings.desktop
 share/icons/hicolor/16x16/apps/browser-view-details.png
@@ -27,6 +38,11 @@ share/locale/de/LC_MESSAGES/Browser.mo
 share/locale/es/LC_MESSAGES/Browser.mo
 share/locale/fr/LC_MESSAGES/Browser.mo
 share/locale/it/LC_MESSAGES/Browser.mo
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrm include/Desktop/Browser
+@dirrm include/Desktop
 @dirrm lib/Browser/plugins
 @dirrm lib/Browser
