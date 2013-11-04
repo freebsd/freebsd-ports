@@ -10,11 +10,13 @@ MASTER_SITES=	http://www.mudmagic.com/mud-client/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK+ based MUD client
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		pcre.3:${PORTSDIR}/devel/pcre \
-		png15:${PORTSDIR}/graphics/png \
-		expat:${PORTSDIR}/textproc/expat2 \
-		sqlite3.8:${PORTSDIR}/databases/sqlite3
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 USES=		gmake pathfix pkgconfig
 USE_GNOME=	gtk20 libglade2 libxml2
@@ -24,9 +26,6 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		mudmagic.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
 		${WRKSRC}/src/network/network.h \
