@@ -27,9 +27,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	JSAN::Shell.3 JSAN.3 JSAN::Indexer::Creator.3 JSAN::Indexer.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "40 s,new,new(\'jsan\')," ${WRKSRC}/lib/JSAN.pm
 	${FIND} ${WRKSRC}/lib -name "*.bak" -delete

@@ -13,8 +13,4 @@ COMMENT=	Reduce/Compact JavaScript code to as few characters as possible
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	js_compactor.1
-MAN3=	JavaScript::Squish.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

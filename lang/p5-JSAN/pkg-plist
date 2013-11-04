@@ -1,9 +1,13 @@
 bin/jsan
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/JSAN/.packlist
+%%PERL5_MAN3%%/JSAN.3.gz
+%%PERL5_MAN3%%/JSAN::Indexer.3.gz
+%%PERL5_MAN3%%/JSAN::Indexer::Creator.3.gz
+%%PERL5_MAN3%%/JSAN::Shell.3.gz
 %%SITE_PERL%%/JSAN.pm
-%%SITE_PERL%%/JSAN/Shell.pm
 %%SITE_PERL%%/JSAN/Indexer.pm
 %%SITE_PERL%%/JSAN/Indexer/Creator.pm
+%%SITE_PERL%%/JSAN/Shell.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/JSAN/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSAN
 @dirrmtry %%SITE_PERL%%/JSAN/Indexer
 @dirrmtry %%SITE_PERL%%/JSAN

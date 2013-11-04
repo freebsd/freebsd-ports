@@ -1,3 +1,5 @@
+%%PERL5_MAN3%%/Error.3.gz
+%%PERL5_MAN3%%/Error::Simple.3.gz
 %%SITE_PERL%%/Error.pm
 %%SITE_PERL%%/Error/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Error/.packlist

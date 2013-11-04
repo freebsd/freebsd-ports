@@ -1,4 +1,5 @@
-%%SITE_PERL%%/Expect.pod
+%%PERL5_MAN3%%/Expect.3.gz
 %%SITE_PERL%%/Expect.pm
+%%SITE_PERL%%/Expect.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Expect/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Expect
