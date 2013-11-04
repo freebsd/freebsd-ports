@@ -17,6 +17,7 @@ PLIST_FILES=	${KMODDIR}/plasma_saver.ko
 
 USES=		kmod uidfix
 
+KMODDIR=	/boot/modules
 MAKE_ARGS=	KMODDIR=${KMODDIR}
 
 .include <bsd.port.mk>
