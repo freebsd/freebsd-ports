@@ -13,6 +13,9 @@ COMMENT=	Xfce 4 Lila window decoration theme for Xfwm4
 
 RUN_DEPENDS=	xfwm4:${PORTSDIR}/x11-wm/xfce4-wm
 
+DEPRECATED=	Upstream development dead
+EXPIRATION_DATE=	2013-12-04
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
