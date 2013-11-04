@@ -5164,3 +5164,4 @@ databases/ruby-memcache||2013-11-03|Has expired: Development has been abandoned 
 deskutils/blogtk||2013-11-03|Has expired: This is dead upstream and is no longer being maintained
 devel/ruby-io-reactor||2013-11-03|Has expired: Does not work with Ruby 1.9
 textproc/p5-Text-Emoticon-MSN||2013-11-03|Has expired: Primary MSN Messenger service terminated 30 APR 2013
+textproc/jakarta-poi|textproc/apache-poi|2013-11-04|Replaced with apache-poi
