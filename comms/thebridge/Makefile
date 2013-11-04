@@ -11,28 +11,24 @@ MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio Echolink conference bridge
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake
 GNU_CONFIGURE=	yes
 PORTDOCS=	README
 USE_RC_SUBR=	tbd
+MAKE_ARGS=	AUTOMAKE="${TRUE}"
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+INSTALL_TARGET=	install-strip
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},; \
-		s,%%PREFIX%%,${PREFIX},' \
-		${WRKSRC}/addons/usermgmt.cgi
+.include <bsd.port.pre.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}/${DOCSDIR}
 .endif
-	${MKDIR} ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/addons/usermgmt.cgi ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/addons/README ${DATADIR}
+	${MKDIR} ${STAGEDIR}/${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/addons/usermgmt.cgi ${STAGEDIR}/${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/addons/README ${STAGEDIR}/${DATADIR}
 
 .include <bsd.port.mk>
