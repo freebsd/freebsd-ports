@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-TCP
-PORTVERSION=	2.00
+PORTVERSION=	2.02
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOKUHIROM
@@ -18,11 +18,6 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=	perl5
 USE_PERL5=	modbuild
 
-MAN3=	Net::EmptyPort.3 \
-	Test::TCP.3 \
-	Test::TCP::CheckPort.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400
