@@ -13,7 +13,7 @@ COMMENT=	Slovenian thesaurus
 
 LICENSE=	LGPL21
 
-USE_ZIP=	yes
+EXTRACT_SUFX=	.zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
@@ -21,9 +21,8 @@ PLIST_FILES=	%%DATADIR%%/th_sl_SI_v2.dat \
 		%%DATADIR%%/th_sl_SI_v2.idx
 PLIST_DIRSTRY=	%%DATADIR%%
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/th_sl_SI_v2.dat ${WRKSRC}/th_sl_SI_v2.idx ${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/th_sl_SI_v2.dat ${WRKSRC}/th_sl_SI_v2.idx ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>

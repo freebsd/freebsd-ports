@@ -15,16 +15,15 @@ COMMENT=	Bulgarian thesaurus
 LICENSE=	GPLv2 LGPL21 MPL
 LICENSE_COMB=	dual
 
-USE_ZIP=	yes
+EXTRACT_SUFX=	.zip
 NO_BUILD=	yes
 
 PLIST_FILES=	%%DATADIR%%/th_bg_BG.dat \
 		%%DATADIR%%/th_bg_BG.idx
 PLIST_DIRSTRY=	%%DATADIR%%
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/th_bg_BG.dat ${WRKSRC}/th_bg_BG.idx ${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/th_bg_BG.dat ${WRKSRC}/th_bg_BG.idx ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
