@@ -71,7 +71,7 @@ PLIST_SUB+=	FFMPEG="@comment "
 
 .if ${PORT_OPTIONS:MCUPS}
 CMAKE_ARGS+=	-DWITH_CUPS=ON
-LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-base
+LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-client
 .else
 CMAKE_ARGS+=	-DWITH_CUPS=OFF
 .endif
