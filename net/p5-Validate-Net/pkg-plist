@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Validate/Net/.packlist
+%%PERL5_MAN3%%/Validate::Net.3.gz
 %%SITE_PERL%%/Validate/Net.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Validate/Net
-@dirrmtry %%SITE_PERL%%/Validate
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Validate/Net/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Validate/Net
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Validate
+@dirrmtry %%SITE_PERL%%/Validate

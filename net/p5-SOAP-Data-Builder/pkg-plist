@@ -1,9 +1,11 @@
+%%PERL5_MAN3%%/SOAP::Data::Builder.3.gz
+%%PERL5_MAN3%%/SOAP::Data::Builder::Element.3.gz
 %%SITE_PERL%%/SOAP/Data/Builder.pm
 %%SITE_PERL%%/SOAP/Data/Builder/Element.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Data/Builder/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Data/Builder
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Data/Builder
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Data
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP
-@dirrm %%SITE_PERL%%/SOAP/Data/Builder
+@dirrmtry %%SITE_PERL%%/SOAP/Data/Builder
 @dirrmtry %%SITE_PERL%%/SOAP/Data
 @dirrmtry %%SITE_PERL%%/SOAP

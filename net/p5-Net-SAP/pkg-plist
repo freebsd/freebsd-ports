@@ -1,5 +1,8 @@
 bin/psapd
+%%PERL5_MAN3%%/Net::SAP.3.gz
+%%PERL5_MAN3%%/Net::SAP::Packet.3.gz
 %%SITE_PERL%%/Net/SAP.pm
 %%SITE_PERL%%/Net/SAP/Packet.pm
-@dirrm %%SITE_PERL%%/Net/SAP
+man/man1/psapd.1.gz
+@dirrmtry %%SITE_PERL%%/Net/SAP
 @dirrmtry %%SITE_PERL%%/Net

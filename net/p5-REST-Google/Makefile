@@ -22,18 +22,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=	REST::Google.3 \
-	REST::Google::Feeds.3 \
-	REST::Google::Search.3 \
-	REST::Google::Search::Blogs.3 \
-	REST::Google::Search::Books.3 \
-	REST::Google::Search::Images.3 \
-	REST::Google::Search::Local.3 \
-	REST::Google::Search::News.3 \
-	REST::Google::Search::Patent.3 \
-	REST::Google::Search::Video.3 \
-	REST::Google::Search::Web.3 \
-	REST::Google::Translate.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

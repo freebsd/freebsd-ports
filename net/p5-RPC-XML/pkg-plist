@@ -1,4 +1,14 @@
 bin/make_method
+%%PERL5_MAN3%%/Apache::RPC::Server.3.gz
+%%PERL5_MAN3%%/Apache::RPC::Status.3.gz
+%%PERL5_MAN3%%/RPC::XML.3.gz
+%%PERL5_MAN3%%/RPC::XML::Client.3.gz
+%%PERL5_MAN3%%/RPC::XML::Parser.3.gz
+%%PERL5_MAN3%%/RPC::XML::Parser::XMLLibXML.3.gz
+%%PERL5_MAN3%%/RPC::XML::Parser::XMLParser.3.gz
+%%PERL5_MAN3%%/RPC::XML::ParserFactory.3.gz
+%%PERL5_MAN3%%/RPC::XML::Procedure.3.gz
+%%PERL5_MAN3%%/RPC::XML::Server.3.gz
 %%SITE_PERL%%/Apache/RPC/Server.pm
 %%SITE_PERL%%/Apache/RPC/Status.pm
 %%SITE_PERL%%/Apache/RPC/status.xpl
@@ -18,10 +28,11 @@ bin/make_method
 %%SITE_PERL%%/RPC/XML/multicall.xpl
 %%SITE_PERL%%/RPC/XML/status.xpl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC/XML/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC/XML
+man/man1/make_method.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC/XML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC
-@dirrm %%SITE_PERL%%/RPC/XML/Parser
-@dirrm %%SITE_PERL%%/RPC/XML
+@dirrmtry %%SITE_PERL%%/RPC/XML/Parser
+@dirrmtry %%SITE_PERL%%/RPC/XML
 @dirrmtry %%SITE_PERL%%/RPC
 @dirrmtry %%SITE_PERL%%/Apache/RPC
 @dirrmtry %%SITE_PERL%%/Apache

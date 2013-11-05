@@ -15,13 +15,9 @@ BUILD_DEPENDS=	p5-AnyEvent>=5.34:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-JSON>=2.53:${PORTSDIR}/converters/p5-JSON \
 		p5-Net-OAuth>=0.27:${PORTSDIR}/net/p5-Net-OAuth \
 		p5-URI>=1.58:${PORTSDIR}/net/p5-URI
-
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		AnyEvent::Twitter.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

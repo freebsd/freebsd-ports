@@ -1,8 +1,11 @@
+%%PERL5_MAN3%%/AnyMQ::AMQP.3.gz
 %%SITE_PERL%%/AnyMQ/AMQP.pm
 %%SITE_PERL%%/AnyMQ/Topic/Trait/AMQP.pm
 %%SITE_PERL%%/AnyMQ/Trait/AMQP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyMQ/AMQP/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyMQ/AMQP
-@dirrmtry %%SITE_PERL%%/AnyMQ/Topic/Trait
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyMQ
 @dirrmtry %%SITE_PERL%%/AnyMQ/Trait
+@dirrmtry %%SITE_PERL%%/AnyMQ/Topic/Trait
+@dirrmtry %%SITE_PERL%%/AnyMQ/Topic
 @dirrmtry %%SITE_PERL%%/AnyMQ

@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/URI::Template.3.gz
 %%SITE_PERL%%/URI/Template.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/Template/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/Template

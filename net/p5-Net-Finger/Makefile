@@ -13,7 +13,4 @@ COMMENT=	A Perl implementation of a finger client
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::Finger.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

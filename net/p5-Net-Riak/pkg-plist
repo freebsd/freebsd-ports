@@ -1,4 +1,36 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Riak/.packlist
+%%PERL5_MAN3%%/Net::Riak.3.gz
+%%PERL5_MAN3%%/Net::Riak::Bucket.3.gz
+%%PERL5_MAN3%%/Net::Riak::Client.3.gz
+%%PERL5_MAN3%%/Net::Riak::Link.3.gz
+%%PERL5_MAN3%%/Net::Riak::LinkPhase.3.gz
+%%PERL5_MAN3%%/Net::Riak::MapReduce.3.gz
+%%PERL5_MAN3%%/Net::Riak::MapReducePhase.3.gz
+%%PERL5_MAN3%%/Net::Riak::Object.3.gz
+%%PERL5_MAN3%%/Net::Riak::Role::Base.3.gz
+%%PERL5_MAN3%%/Net::Riak::Role::Hosts.3.gz
+%%PERL5_MAN3%%/Net::Riak::Role::MapReduce.3.gz
+%%PERL5_MAN3%%/Net::Riak::Role::PBC.3.gz
+%%PERL5_MAN3%%/Net::Riak::Role::PBC::Bucket.3.gz
+%%PERL5_MAN3%%/Net::Riak::Role::PBC::Link.3.gz
+%%PERL5_MAN3%%/Net::Riak::Role::PBC::MapReduce.3.gz
+%%PERL5_MAN3%%/Net::Riak::Role::PBC::Message.3.gz
+%%PERL5_MAN3%%/Net::Riak::Role::PBC::Meta.3.gz
+%%PERL5_MAN3%%/Net::Riak::Role::PBC::Object.3.gz
+%%PERL5_MAN3%%/Net::Riak::Role::REST.3.gz
+%%PERL5_MAN3%%/Net::Riak::Role::REST::Bucket.3.gz
+%%PERL5_MAN3%%/Net::Riak::Role::REST::Link.3.gz
+%%PERL5_MAN3%%/Net::Riak::Role::REST::MapReduce.3.gz
+%%PERL5_MAN3%%/Net::Riak::Role::REST::Object.3.gz
+%%PERL5_MAN3%%/Net::Riak::Role::REST::Search.3.gz
+%%PERL5_MAN3%%/Net::Riak::Role::Replica.3.gz
+%%PERL5_MAN3%%/Net::Riak::Role::UserAgent.3.gz
+%%PERL5_MAN3%%/Net::Riak::Search.3.gz
+%%PERL5_MAN3%%/Net::Riak::Transport::PBC.3.gz
+%%PERL5_MAN3%%/Net::Riak::Transport::PBC::Code.3.gz
+%%PERL5_MAN3%%/Net::Riak::Transport::PBC::Message.3.gz
+%%PERL5_MAN3%%/Net::Riak::Transport::PBC::Transport.3.gz
+%%PERL5_MAN3%%/Net::Riak::Transport::REST.3.gz
+%%PERL5_MAN3%%/Net::Riak::Types.3.gz
 %%SITE_PERL%%/Net/Riak.pm
 %%SITE_PERL%%/Net/Riak/Bucket.pm
 %%SITE_PERL%%/Net/Riak/Client.pm
@@ -7,37 +39,38 @@
 %%SITE_PERL%%/Net/Riak/MapReduce.pm
 %%SITE_PERL%%/Net/Riak/MapReducePhase.pm
 %%SITE_PERL%%/Net/Riak/Object.pm
-%%SITE_PERL%%/Net/Riak/Search.pm
-%%SITE_PERL%%/Net/Riak/Types.pm
 %%SITE_PERL%%/Net/Riak/Role/Base.pm
 %%SITE_PERL%%/Net/Riak/Role/Hosts.pm
 %%SITE_PERL%%/Net/Riak/Role/MapReduce.pm
 %%SITE_PERL%%/Net/Riak/Role/PBC.pm
-%%SITE_PERL%%/Net/Riak/Role/REST.pm
-%%SITE_PERL%%/Net/Riak/Role/Replica.pm
-%%SITE_PERL%%/Net/Riak/Role/UserAgent.pm
-%%SITE_PERL%%/Net/Riak/Role/PBC/Meta.pm
-%%SITE_PERL%%/Net/Riak/Role/PBC/Message.pm
-%%SITE_PERL%%/Net/Riak/Role/PBC/Object.pm
-%%SITE_PERL%%/Net/Riak/Role/PBC/MapReduce.pm
 %%SITE_PERL%%/Net/Riak/Role/PBC/Bucket.pm
 %%SITE_PERL%%/Net/Riak/Role/PBC/Link.pm
+%%SITE_PERL%%/Net/Riak/Role/PBC/MapReduce.pm
+%%SITE_PERL%%/Net/Riak/Role/PBC/Message.pm
+%%SITE_PERL%%/Net/Riak/Role/PBC/Meta.pm
+%%SITE_PERL%%/Net/Riak/Role/PBC/Object.pm
+%%SITE_PERL%%/Net/Riak/Role/REST.pm
+%%SITE_PERL%%/Net/Riak/Role/REST/Bucket.pm
 %%SITE_PERL%%/Net/Riak/Role/REST/Link.pm
 %%SITE_PERL%%/Net/Riak/Role/REST/MapReduce.pm
-%%SITE_PERL%%/Net/Riak/Role/REST/Bucket.pm
 %%SITE_PERL%%/Net/Riak/Role/REST/Object.pm
 %%SITE_PERL%%/Net/Riak/Role/REST/Search.pm
+%%SITE_PERL%%/Net/Riak/Role/Replica.pm
+%%SITE_PERL%%/Net/Riak/Role/UserAgent.pm
+%%SITE_PERL%%/Net/Riak/Search.pm
 %%SITE_PERL%%/Net/Riak/Transport/PBC.pm
-%%SITE_PERL%%/Net/Riak/Transport/REST.pm
-%%SITE_PERL%%/Net/Riak/Transport/PBC/Transport.pm
-%%SITE_PERL%%/Net/Riak/Transport/PBC/Message.pm
 %%SITE_PERL%%/Net/Riak/Transport/PBC/Code.pm
+%%SITE_PERL%%/Net/Riak/Transport/PBC/Message.pm
+%%SITE_PERL%%/Net/Riak/Transport/PBC/Transport.pm
+%%SITE_PERL%%/Net/Riak/Transport/REST.pm
+%%SITE_PERL%%/Net/Riak/Types.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Riak/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Riak
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net/Riak/Transport/PBC
+@dirrmtry %%SITE_PERL%%/Net/Riak/Transport
 @dirrmtry %%SITE_PERL%%/Net/Riak/Role/REST
 @dirrmtry %%SITE_PERL%%/Net/Riak/Role/PBC
 @dirrmtry %%SITE_PERL%%/Net/Riak/Role
-@dirrmtry %%SITE_PERL%%/Net/Riak/Transport/PBC
-@dirrmtry %%SITE_PERL%%/Net/Riak/Transport
 @dirrmtry %%SITE_PERL%%/Net/Riak
 @dirrmtry %%SITE_PERL%%/Net
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Riak
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

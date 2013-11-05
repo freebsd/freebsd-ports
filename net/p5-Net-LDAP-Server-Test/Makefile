@@ -20,7 +20,4 @@ BUILD_DEPENDS=	p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::LDAP::Server::Test.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

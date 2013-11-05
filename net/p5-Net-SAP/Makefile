@@ -19,8 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN1=		psapd.1
-MAN3=		Net::SAP.3 Net::SAP::Packet.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

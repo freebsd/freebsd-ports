@@ -16,7 +16,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	SOAP::Data::Builder.3 SOAP::Data::Builder::Element.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

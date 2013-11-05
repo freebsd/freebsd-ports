@@ -18,37 +18,11 @@ BUILD_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-XML-Compile>=1.35:${PORTSDIR}/textproc/p5-XML-Compile \
 		p5-XML-Compile-Cache>=0.99.3:${PORTSDIR}/textproc/p5-XML-Compile-Cache \
 		p5-libwww>=5.816:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
-		p5-Log-Report>=0.90:${PORTSDIR}/devel/p5-Log-Report \
-		p5-XML-Compile>=1.35:${PORTSDIR}/textproc/p5-XML-Compile \
-		p5-XML-Compile-Cache>=0.99.3:${PORTSDIR}/textproc/p5-XML-Compile-Cache \
-		p5-libwww>=5.816:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0.095:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-XML-Compile-Tester>=0.90:${PORTSDIR}/devel/p5-XML-Compile-Tester
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		XML::Compile::SOAP.3 \
-		XML::Compile::SOAP10.3 \
-		XML::Compile::SOAP10::Operation.3 \
-		XML::Compile::SOAP11.3 \
-		XML::Compile::SOAP11::Client.3 \
-		XML::Compile::SOAP11::Encoding.3 \
-		XML::Compile::SOAP11::Operation.3 \
-		XML::Compile::SOAP11::Server.3 \
-		XML::Compile::SOAP::Client.3 \
-		XML::Compile::SOAP::Extension.3 \
-		XML::Compile::SOAP::FAQ.3 \
-		XML::Compile::SOAP::Operation.3 \
-		XML::Compile::SOAP::Server.3 \
-		XML::Compile::SOAP::Trace.3 \
-		XML::Compile::SOAP::Util.3 \
-		XML::Compile::Transport.3 \
-		XML::Compile::Transport::SOAPHTTP.3 \
-		XML::Compile::WSDL11.3 \
-		XML::Compile::XOP.3 \
-		XML::Compile::XOP::Include.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -18,17 +18,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		gmake perl5
 USE_PERL5=	configure
 
-MAN1=		make_method.1
-MAN3=		Apache::RPC::Server.3 \
-		Apache::RPC::Status.3 \
-		RPC::XML.3 \
-		RPC::XML::Client.3 \
-		RPC::XML::Parser.3 \
-		RPC::XML::Parser::XMLLibXML.3 \
-		RPC::XML::Parser::XMLParser.3 \
-		RPC::XML::ParserFactory.3 \
-		RPC::XML::Procedure.3 \
-		RPC::XML::Server.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

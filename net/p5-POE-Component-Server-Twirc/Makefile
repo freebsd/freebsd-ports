@@ -35,14 +35,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		App::Twirc.3 \
-		App::Twirc::Manual.3 \
-		App::Twirc::Plugin::SquashWhiteSpace.3 \
-		App::Twirc::Plugin::BangCommands.3 \
-		App::Twirc::Plugin::SecondaryAccount.3 \
-		POE::Component::Server::Twirc.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e '/auto_install/d' ${WRKSRC}/Makefile.PL
 

@@ -14,7 +14,4 @@ COMMENT=	Perl5 module to communicate with socks v4 and v5 servers
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::SOCKS.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,11 +1,17 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Samba/LDAP/.packlist
+%%PERL5_MAN3%%/Samba::LDAP.3.gz
+%%PERL5_MAN3%%/Samba::LDAP::Base.3.gz
+%%PERL5_MAN3%%/Samba::LDAP::Config.3.gz
+%%PERL5_MAN3%%/Samba::LDAP::Group.3.gz
+%%PERL5_MAN3%%/Samba::LDAP::Machine.3.gz
+%%PERL5_MAN3%%/Samba::LDAP::User.3.gz
 %%SITE_PERL%%/Samba/LDAP.pm
 %%SITE_PERL%%/Samba/LDAP/Base.pm
 %%SITE_PERL%%/Samba/LDAP/Config.pm
 %%SITE_PERL%%/Samba/LDAP/Group.pm
 %%SITE_PERL%%/Samba/LDAP/Machine.pm
 %%SITE_PERL%%/Samba/LDAP/User.pm
-@dirrmtry %%SITE_PERL%%/Samba/LDAP
-@dirrmtry %%SITE_PERL%%/Samba
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Samba/LDAP/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Samba/LDAP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Samba
+@dirrmtry %%SITE_PERL%%/Samba/LDAP
+@dirrmtry %%SITE_PERL%%/Samba

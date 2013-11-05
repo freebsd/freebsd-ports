@@ -1,3 +1,10 @@
+%%PERL5_MAN3%%/Net::Gen.3.gz
+%%PERL5_MAN3%%/Net::Inet.3.gz
+%%PERL5_MAN3%%/Net::TCP.3.gz
+%%PERL5_MAN3%%/Net::TCP::Server.3.gz
+%%PERL5_MAN3%%/Net::UDP.3.gz
+%%PERL5_MAN3%%/Net::UNIX.3.gz
+%%PERL5_MAN3%%/Net::UNIX::Server.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/Gen.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/Inet.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/TCP.pm
@@ -63,11 +70,11 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/UNIX/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/UNIX/bind.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/UNIX/setdebug.al
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/TCP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/UNIX
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Gen
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Inet
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/UDP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/UNIX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/UDP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Inet
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Gen
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/UNIX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/TCP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net

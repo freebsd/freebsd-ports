@@ -1,4 +1,5 @@
 bin/cassidy.pl
+%%PERL5_MAN3%%/Net::Cassandra::Easy.3.gz
 %%SITE_PERL%%/Net/Cassandra/Easy.pm
 %%SITE_PERL%%/Net/Cassandra/cassidy.pl
 %%SITE_PERL%%/Net/Cassandra/genthrift.pl

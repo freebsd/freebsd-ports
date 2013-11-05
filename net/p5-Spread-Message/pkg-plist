@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Spread::Message.3.gz
 %%SITE_PERL%%/Spread/Message.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spread/Message/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spread/Message
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spread/Message
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spread
 @dirrmtry %%SITE_PERL%%/Spread

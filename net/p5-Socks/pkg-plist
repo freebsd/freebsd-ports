@@ -1,5 +1,16 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SOCKS/.packlist
+%%PERL5_MAN3%%/Net::SOCKS.3.gz
 %%SITE_PERL%%/Net/SOCKS.pm
+%%SITE_PERL%%/auto/Net/SOCKS/_connect.al
+%%SITE_PERL%%/auto/Net/SOCKS/_get_resp5.al
+%%SITE_PERL%%/auto/Net/SOCKS/_get_response.al
+%%SITE_PERL%%/auto/Net/SOCKS/_import_args.al
+%%SITE_PERL%%/auto/Net/SOCKS/_method_request5.al
+%%SITE_PERL%%/auto/Net/SOCKS/_method_response5.al
+%%SITE_PERL%%/auto/Net/SOCKS/_request.al
+%%SITE_PERL%%/auto/Net/SOCKS/_request5.al
+%%SITE_PERL%%/auto/Net/SOCKS/_user_request5.al
+%%SITE_PERL%%/auto/Net/SOCKS/_user_response5.al
+%%SITE_PERL%%/auto/Net/SOCKS/_validate.al
 %%SITE_PERL%%/auto/Net/SOCKS/accept.al
 %%SITE_PERL%%/auto/Net/SOCKS/autosplit.ix
 %%SITE_PERL%%/auto/Net/SOCKS/bind.al
@@ -7,19 +18,9 @@
 %%SITE_PERL%%/auto/Net/SOCKS/connect.al
 %%SITE_PERL%%/auto/Net/SOCKS/new.al
 %%SITE_PERL%%/auto/Net/SOCKS/param.al
-%%SITE_PERL%%/auto/Net/SOCKS/_connect.al
-%%SITE_PERL%%/auto/Net/SOCKS/_get_resp5.al
-%%SITE_PERL%%/auto/Net/SOCKS/_get_response.al
-%%SITE_PERL%%/auto/Net/SOCKS/_import_args.al
-%%SITE_PERL%%/auto/Net/SOCKS/_method_request5.al
-%%SITE_PERL%%/auto/Net/SOCKS/_method_response5.al
-%%SITE_PERL%%/auto/Net/SOCKS/_request5.al
-%%SITE_PERL%%/auto/Net/SOCKS/_request.al
-%%SITE_PERL%%/auto/Net/SOCKS/_user_request5.al
-%%SITE_PERL%%/auto/Net/SOCKS/_user_response5.al
-%%SITE_PERL%%/auto/Net/SOCKS/_validate.al
-@dirrm %%SITE_PERL%%/auto/Net/SOCKS
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SOCKS
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SOCKS/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SOCKS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/auto/Net/SOCKS
 @dirrmtry %%SITE_PERL%%/auto/Net
 @dirrmtry %%SITE_PERL%%/Net

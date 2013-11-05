@@ -13,12 +13,9 @@ COMMENT=	Fast IP-in-subnet matcher for IPv4 and IPv6, CIDR or mask
 LICENSE=	ART10
 
 BUILD_DEPENDS=	p5-Socket6>=0.23:${PORTSDIR}/net/p5-Socket6
-RUN_DEPENDS=	p5-Socket6>=0.23:${PORTSDIR}/net/p5-Socket6
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::Subnet.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Google::SAML::Response.3.gz
 %%SITE_PERL%%/Google/SAML/Response.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/SAML/Response/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/SAML/Response
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/SAML/Response
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/SAML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google
 @dirrmtry %%SITE_PERL%%/Google/SAML

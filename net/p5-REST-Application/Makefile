@@ -14,11 +14,7 @@ COMMENT=	Framework for building RESTful web-applications
 BUILD_DEPENDS=	p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	REST::Application.3 \
-	REST::Application::Routes.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

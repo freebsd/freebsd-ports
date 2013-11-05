@@ -24,12 +24,4 @@ TEST_DEPENDS=	p5-XML-Compile-Tester>=0.90:${PORTSDIR}/devel/p5-XML-Compile-Teste
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	XML::Compile::SOAP::Daemon.3 \
-	XML::Compile::SOAP::Daemon::AnyDaemon.3 \
-	XML::Compile::SOAP::Daemon::CGI.3 \
-	XML::Compile::SOAP::Daemon::LWPutil.3 \
-	XML::Compile::SOAP::Daemon::NetServer.3 \
-	XML::Compile::SOAP::Daemon::PSGI.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

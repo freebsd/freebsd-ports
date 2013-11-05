@@ -1,3 +1,24 @@
+%%PERL5_MAN3%%/SOAP.3.gz
+%%PERL5_MAN3%%/SOAP::Defs.3.gz
+%%PERL5_MAN3%%/SOAP::Envelope.3.gz
+%%PERL5_MAN3%%/SOAP::EnvelopeMaker.3.gz
+%%PERL5_MAN3%%/SOAP::GenericHashSerializer.3.gz
+%%PERL5_MAN3%%/SOAP::GenericInputStream.3.gz
+%%PERL5_MAN3%%/SOAP::GenericScalarSerializer.3.gz
+%%PERL5_MAN3%%/SOAP::OutputStream.3.gz
+%%PERL5_MAN3%%/SOAP::Packager.3.gz
+%%PERL5_MAN3%%/SOAP::Parser.3.gz
+%%PERL5_MAN3%%/SOAP::Serializer.3.gz
+%%PERL5_MAN3%%/SOAP::SimpleTypeWrapper.3.gz
+%%PERL5_MAN3%%/SOAP::Struct.3.gz
+%%PERL5_MAN3%%/SOAP::StructSerializer.3.gz
+%%PERL5_MAN3%%/SOAP::Transport::HTTP::Apache.3.gz
+%%PERL5_MAN3%%/SOAP::Transport::HTTP::CGI.3.gz
+%%PERL5_MAN3%%/SOAP::Transport::HTTP::Client.3.gz
+%%PERL5_MAN3%%/SOAP::Transport::HTTP::Server.3.gz
+%%PERL5_MAN3%%/SOAP::TypeMapper.3.gz
+%%PERL5_MAN3%%/SOAP::TypedPrimitive.3.gz
+%%PERL5_MAN3%%/SOAP::TypedPrimitiveSerializer.3.gz
 %%SITE_PERL%%/SOAP.pm
 %%SITE_PERL%%/SOAP/Defs.pm
 %%SITE_PERL%%/SOAP/Envelope.pm
@@ -20,8 +41,7 @@
 %%SITE_PERL%%/SOAP/TypedPrimitive.pm
 %%SITE_PERL%%/SOAP/TypedPrimitiveSerializer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP
-@dirrm %%SITE_PERL%%/SOAP/Transport/HTTP
-@dirrm %%SITE_PERL%%/SOAP/Transport
-@dirrmtry %%SITE_PERL%%/SOAP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP
+@dirrmtry %%SITE_PERL%%/SOAP/Transport/HTTP
+@dirrmtry %%SITE_PERL%%/SOAP/Transport
+@dirrmtry %%SITE_PERL%%/SOAP

@@ -19,11 +19,6 @@ BUILD_DEPENDS+=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 USES=		perl5
 USE_PERL5=	configure extract
 
-MAN3=	POE::Component::ControlPort.3 \
-	POE::Component::ControlPort::Command.3 \
-	POE::Component::ControlPort::DefaultCommands.3
-
-NO_STAGE=	yes
 post-extract:
 	@${PERL} -pi -e 's/my \$$ret =.*/my \$$ret = 0;/' ${WRKSRC}/Makefile.PL
 

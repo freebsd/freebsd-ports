@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Address/Ethernet/.packlist
+%%PERL5_MAN3%%/Net::Address::Ethernet.3.gz
 %%SITE_PERL%%/Net/Address/Ethernet.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Address/Ethernet/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Address/Ethernet
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Address
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

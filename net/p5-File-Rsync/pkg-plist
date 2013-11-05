@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/File::Rsync.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/File/Rsync.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/File/Rsync/Config.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Rsync/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Rsync
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Rsync
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/File/Rsync
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/File/Rsync
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/File

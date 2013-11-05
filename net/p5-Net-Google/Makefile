@@ -16,11 +16,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Net::Google.3 Net::Google::Cache.3 Net::Google::Response.3 \
-		Net::Google::Search.3 Net::Google::Service.3 \
-		Net::Google::Spelling.3 Net::Google::tool.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's/CPAN/ExtUtils/g' ${WRKSRC}/Makefile.PL
 

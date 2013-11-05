@@ -1,8 +1,10 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SNPP/.packlist
+%%PERL5_MAN3%%/Net::SNPP.3.gz
+%%PERL5_MAN3%%/Net::SNPP::Server.3.gz
 %%SITE_PERL%%/Net/SNPP.pm
-%%SITE_PERL%%/Net/SNPP/Server.pm
 %%SITE_PERL%%/Net/SNPP/HylaFAX.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SNPP
-@dirrm %%SITE_PERL%%/Net/SNPP
+%%SITE_PERL%%/Net/SNPP/Server.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SNPP/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SNPP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net/SNPP
 @dirrmtry %%SITE_PERL%%/Net

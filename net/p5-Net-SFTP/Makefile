@@ -16,11 +16,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::SFTP.3 \
-		Net::SFTP::Attributes.3 \
-		Net::SFTP::Buffer.3 \
-		Net::SFTP::Constants.3 \
-		Net::SFTP::Util.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

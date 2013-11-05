@@ -1,4 +1,5 @@
+%%PERL5_MAN3%%/Net::Address::IPv4::Local.3.gz
 %%SITE_PERL%%/Net/Address/IPv4/Local.pm
-@dirrm %%SITE_PERL%%/Net/Address/IPv4
+@dirrmtry %%SITE_PERL%%/Net/Address/IPv4
 @dirrmtry %%SITE_PERL%%/Net/Address
 @dirrmtry %%SITE_PERL%%/Net

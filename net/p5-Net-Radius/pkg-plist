@@ -1,7 +1,9 @@
+%%PERL5_MAN3%%/Net::Radius::Dictionary.3.gz
+%%PERL5_MAN3%%/Net::Radius::Packet.3.gz
 %%SITE_PERL%%/Net/Radius/Dictionary.pm
 %%SITE_PERL%%/Net/Radius/Packet.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Radius/.packlist
-@dirrm %%SITE_PERL%%/Net/Radius
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Radius
-@dirrmtry %%SITE_PERL%%/Net
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Radius
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net/Radius
+@dirrmtry %%SITE_PERL%%/Net

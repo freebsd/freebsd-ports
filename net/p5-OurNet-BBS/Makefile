@@ -43,8 +43,4 @@ PORTSCOUT=	skipv:1.67
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		bbsboard.1 bbscomd.1 bbsmail.1
-MAN3=		OurNet::BBS.3 OurNet::BBS::Roadmap.3 OurNet::BBS::Tutorial.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

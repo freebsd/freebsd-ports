@@ -1,7 +1,8 @@
 bin/mt
 bin/mt-upload
+%%PERL5_MAN3%%/Net::MovableType.3.gz
 %%SITE_PERL%%/Net/MovableType.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/MovableType/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/MovableType
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/MovableType
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrmtry %%SITE_PERL%%/Net

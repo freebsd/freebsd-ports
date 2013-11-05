@@ -3,7 +3,14 @@ bin/rtplosslog.pl
 bin/rtpsend-pcmu.pl
 bin/rtpstats.pl
 bin/rtptimer.pl
+%%PERL5_MAN3%%/Net::RTP.3.gz
+%%PERL5_MAN3%%/Net::RTP::Packet.3.gz
 %%SITE_PERL%%/Net/RTP.pm
 %%SITE_PERL%%/Net/RTP/Packet.pm
-@dirrm %%SITE_PERL%%/Net/RTP
+man/man1/rtpdump.pl.1.gz
+man/man1/rtplosslog.pl.1.gz
+man/man1/rtpsend-pcmu.pl.1.gz
+man/man1/rtpstats.pl.1.gz
+man/man1/rtptimer.pl.1.gz
+@dirrmtry %%SITE_PERL%%/Net/RTP
 @dirrmtry %%SITE_PERL%%/Net

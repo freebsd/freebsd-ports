@@ -26,8 +26,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		nas.1
-MAN3=		Net::Appliance::Session.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

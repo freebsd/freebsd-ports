@@ -1,3 +1,14 @@
+%%PERL5_MAN3%%/Net::Frame.3.gz
+%%PERL5_MAN3%%/Net::Frame::Layer.3.gz
+%%PERL5_MAN3%%/Net::Frame::Layer::ARP.3.gz
+%%PERL5_MAN3%%/Net::Frame::Layer::ETH.3.gz
+%%PERL5_MAN3%%/Net::Frame::Layer::IPv4.3.gz
+%%PERL5_MAN3%%/Net::Frame::Layer::NULL.3.gz
+%%PERL5_MAN3%%/Net::Frame::Layer::PPP.3.gz
+%%PERL5_MAN3%%/Net::Frame::Layer::RAW.3.gz
+%%PERL5_MAN3%%/Net::Frame::Layer::SLL.3.gz
+%%PERL5_MAN3%%/Net::Frame::Layer::TCP.3.gz
+%%PERL5_MAN3%%/Net::Frame::Layer::UDP.3.gz
 %%SITE_PERL%%/Net/Frame.pm
 %%SITE_PERL%%/Net/Frame/Layer.pm
 %%SITE_PERL%%/Net/Frame/Layer/ARP.pm
@@ -12,6 +23,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Frame/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Frame
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrm %%SITE_PERL%%/Net/Frame/Layer
+@dirrmtry %%SITE_PERL%%/Net/Frame/Layer
 @dirrmtry %%SITE_PERL%%/Net/Frame
 @dirrmtry %%SITE_PERL%%/Net

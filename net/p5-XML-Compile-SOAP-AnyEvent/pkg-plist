@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/SOAP/AnyEvent/.packlist
+%%PERL5_MAN3%%/XML::Compile::Transfer::SOAPHTTP_AnyEvent.3.gz
 %%SITE_PERL%%/XML/Compile/Transfer/SOAPHTTP_AnyEvent.pm
 %%SITE_PERL%%/XML/Compile/Transfer/SOAPHTTP_AnyEvent.pod
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/SOAP/AnyEvent
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/SOAP/AnyEvent/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/SOAP/AnyEvent
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/SOAP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML

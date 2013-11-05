@@ -1,3 +1,18 @@
+%%PERL5_MAN3%%/Net::Delicious.3.gz
+%%PERL5_MAN3%%/Net::Delicious::Bundle.3.gz
+%%PERL5_MAN3%%/Net::Delicious::Config.3.gz
+%%PERL5_MAN3%%/Net::Delicious::Constants.3.gz
+%%PERL5_MAN3%%/Net::Delicious::Constants::Config.3.gz
+%%PERL5_MAN3%%/Net::Delicious::Constants::Pause.3.gz
+%%PERL5_MAN3%%/Net::Delicious::Constants::Response.3.gz
+%%PERL5_MAN3%%/Net::Delicious::Constants::Uri.3.gz
+%%PERL5_MAN3%%/Net::Delicious::Date.3.gz
+%%PERL5_MAN3%%/Net::Delicious::Iterator.3.gz
+%%PERL5_MAN3%%/Net::Delicious::Object.3.gz
+%%PERL5_MAN3%%/Net::Delicious::Post.3.gz
+%%PERL5_MAN3%%/Net::Delicious::Subscription.3.gz
+%%PERL5_MAN3%%/Net::Delicious::Tag.3.gz
+%%PERL5_MAN3%%/Net::Delicious::User.3.gz
 %%SITE_PERL%%/Net/Delicious.pm
 %%SITE_PERL%%/Net/Delicious/Bundle.pm
 %%SITE_PERL%%/Net/Delicious/Config.pm
@@ -13,6 +28,6 @@
 %%SITE_PERL%%/Net/Delicious/Subscription.pm
 %%SITE_PERL%%/Net/Delicious/Tag.pm
 %%SITE_PERL%%/Net/Delicious/User.pm
-@dirrm %%SITE_PERL%%/Net/Delicious/Constants
-@dirrm %%SITE_PERL%%/Net/Delicious
+@dirrmtry %%SITE_PERL%%/Net/Delicious/Constants
+@dirrmtry %%SITE_PERL%%/Net/Delicious
 @dirrmtry %%SITE_PERL%%/Net

@@ -15,7 +15,4 @@ RUN_DEPENDS=	p5-Socket6>=0.19:${PORTSDIR}/net/p5-Socket6
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Socket::Multicast6.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

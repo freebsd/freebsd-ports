@@ -1,3 +1,5 @@
+bin/s3-driver.pl
+bin/s3-test.pl
 %%SITE_PERL%%/S3.pm
 %%SITE_PERL%%/S3/AWSAuthConnection.pm
 %%SITE_PERL%%/S3/GetResponse.pm
@@ -7,6 +9,4 @@
 %%SITE_PERL%%/S3/QueryStringAuthGenerator.pm
 %%SITE_PERL%%/S3/Response.pm
 %%SITE_PERL%%/S3/S3Object.pm
-bin/s3-driver.pl
-bin/s3-test.pl
 @dirrmtry %%SITE_PERL%%/S3

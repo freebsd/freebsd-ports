@@ -1,10 +1,12 @@
+%%PERL5_MAN3%%/IO::Interface.3.gz
+%%PERL5_MAN3%%/IO::Interface::Simple.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/IO/Interface.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/IO/Interface/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Interface/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Interface/Interface.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Interface/Interface.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Interface/autosplit.ix
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Interface
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Interface
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IO/Interface
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IO

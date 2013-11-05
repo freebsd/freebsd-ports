@@ -14,10 +14,6 @@ COMMENT=	Net::SNPP - Perl Simple Network Pager Protocol Client
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::SNPP.3 \
-		Net::SNPP::Server.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e '/warnings/d' \
 		${WRKSRC}/lib/Net/SNPP/Server.pm

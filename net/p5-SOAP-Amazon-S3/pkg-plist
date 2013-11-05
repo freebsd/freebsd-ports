@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Amazon/S3/.packlist
+%%PERL5_MAN3%%/SOAP::Amazon::S3.3.gz
 %%SITE_PERL%%/SOAP/Amazon/S3.pm
-@dirrmtry %%SITE_PERL%%/SOAP/Amazon
-@dirrmtry %%SITE_PERL%%/SOAP
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Amazon/S3/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Amazon/S3
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Amazon
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP
+@dirrmtry %%SITE_PERL%%/SOAP/Amazon
+@dirrmtry %%SITE_PERL%%/SOAP

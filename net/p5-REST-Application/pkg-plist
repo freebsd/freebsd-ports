@@ -1,7 +1,9 @@
+%%PERL5_MAN3%%/REST::Application.3.gz
+%%PERL5_MAN3%%/REST::Application::Routes.3.gz
 %%SITE_PERL%%/REST/Application.pm
 %%SITE_PERL%%/REST/Application/Routes.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/REST/Application/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/REST/Application
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/REST
-@dirrm %%SITE_PERL%%/REST/Application
-@dirrm %%SITE_PERL%%/REST
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/REST/Application
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/REST
+@dirrmtry %%SITE_PERL%%/REST/Application
+@dirrmtry %%SITE_PERL%%/REST

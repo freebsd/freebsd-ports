@@ -13,8 +13,4 @@ COMMENT=	Look up country by IP Address
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	geoip-lookup.1
-MAN3=	Geo::IP::PurePerl.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

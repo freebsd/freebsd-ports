@@ -30,39 +30,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::Riak.3 \
-		Net::Riak::Bucket.3 \
-		Net::Riak::Client.3 \
-		Net::Riak::Link.3 \
-		Net::Riak::LinkPhase.3 \
-		Net::Riak::MapReduce.3 \
-		Net::Riak::MapReducePhase.3 \
-		Net::Riak::Object.3 \
-		Net::Riak::Role::Base.3 \
-		Net::Riak::Role::Hosts.3 \
-		Net::Riak::Role::MapReduce.3 \
-		Net::Riak::Role::PBC.3 \
-		Net::Riak::Role::PBC::Bucket.3 \
-		Net::Riak::Role::PBC::Link.3 \
-		Net::Riak::Role::PBC::MapReduce.3 \
-		Net::Riak::Role::PBC::Message.3 \
-		Net::Riak::Role::PBC::Meta.3 \
-		Net::Riak::Role::PBC::Object.3 \
-		Net::Riak::Role::REST.3 \
-		Net::Riak::Role::REST::Bucket.3 \
-		Net::Riak::Role::REST::Link.3 \
-		Net::Riak::Role::REST::MapReduce.3 \
-		Net::Riak::Role::REST::Object.3 \
-		Net::Riak::Role::REST::Search.3 \
-		Net::Riak::Role::Replica.3 \
-		Net::Riak::Role::UserAgent.3 \
-		Net::Riak::Search.3 \
-		Net::Riak::Transport::PBC.3 \
-		Net::Riak::Transport::PBC::Code.3 \
-		Net::Riak::Transport::PBC::Message.3 \
-		Net::Riak::Transport::PBC::Transport.3 \
-		Net::Riak::Transport::REST.3 \
-		Net::Riak::Types.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

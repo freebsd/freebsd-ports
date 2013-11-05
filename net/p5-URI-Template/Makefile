@@ -16,10 +16,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-URI>0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=		URI::Template.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

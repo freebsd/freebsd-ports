@@ -21,19 +21,4 @@ TEST_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=	Net::Blogger.3 \
-	Net::Blogger::API::Core.3 \
-	Net::Blogger::API::Extended.3 \
-	Net::Blogger::Engine::Base.3 \
-	Net::Blogger::Engine::Blogger.3 \
-	Net::Blogger::Engine::Manila.3 \
-	Net::Blogger::Engine::Movabletype.3 \
-	Net::Blogger::Engine::Movabletype::mt.3 \
-	Net::Blogger::Engine::Radio.3 \
-	Net::Blogger::Engine::Slash.3 \
-	Net::Blogger::Engine::Slash::slashcode.3 \
-	Net::Blogger::Engine::Userland.3 \
-	Net::Blogger::Engine::Userland::metaWeblog.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

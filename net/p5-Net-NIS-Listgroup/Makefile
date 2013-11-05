@@ -16,8 +16,4 @@ RUN_DEPENDS=	p5-Net-NIS>0:${PORTSDIR}/net/p5-Net-NIS
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		listgroup.1
-MAN3=		Net::NIS::Listgroup.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

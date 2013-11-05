@@ -1,10 +1,15 @@
+%%PERL5_MAN3%%/Apache::XMLRPC.3.gz
+%%PERL5_MAN3%%/Frontier::Client.3.gz
+%%PERL5_MAN3%%/Frontier::Daemon.3.gz
+%%PERL5_MAN3%%/Frontier::RPC2.3.gz
+%%PERL5_MAN3%%/Frontier::Responder.3.gz
 %%SITE_PERL%%/Apache/XMLRPC.pm
 %%SITE_PERL%%/Frontier/Client.pm
 %%SITE_PERL%%/Frontier/Daemon.pm
 %%SITE_PERL%%/Frontier/RPC2.pm
 %%SITE_PERL%%/Frontier/Responder.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Frontier/RPC/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Frontier/RPC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Frontier/RPC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Frontier
-@dirrm %%SITE_PERL%%/Frontier
+@dirrmtry %%SITE_PERL%%/Frontier
 @dirrmtry %%SITE_PERL%%/Apache

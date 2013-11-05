@@ -1,3 +1,9 @@
+%%PERL5_MAN3%%/XML::Compile::SOAP::Daemon.3.gz
+%%PERL5_MAN3%%/XML::Compile::SOAP::Daemon::AnyDaemon.3.gz
+%%PERL5_MAN3%%/XML::Compile::SOAP::Daemon::CGI.3.gz
+%%PERL5_MAN3%%/XML::Compile::SOAP::Daemon::LWPutil.3.gz
+%%PERL5_MAN3%%/XML::Compile::SOAP::Daemon::NetServer.3.gz
+%%PERL5_MAN3%%/XML::Compile::SOAP::Daemon::PSGI.3.gz
 %%SITE_PERL%%/XML/Compile/SOAP/Daemon.pm
 %%SITE_PERL%%/XML/Compile/SOAP/Daemon.pod
 %%SITE_PERL%%/XML/Compile/SOAP/Daemon/AnyDaemon.pm

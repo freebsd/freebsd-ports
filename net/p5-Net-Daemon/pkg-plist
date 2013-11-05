@@ -1,8 +1,11 @@
+%%PERL5_MAN3%%/Net::Daemon.3.gz
+%%PERL5_MAN3%%/Net::Daemon::Log.3.gz
+%%PERL5_MAN3%%/Net::Daemon::Test.3.gz
 %%SITE_PERL%%/Net/Daemon.pm
 %%SITE_PERL%%/Net/Daemon/Log.pm
 %%SITE_PERL%%/Net/Daemon/Test.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Daemon/.packlist
-@dirrm %%SITE_PERL%%/Net/Daemon
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Daemon
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Daemon
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net/Daemon
 @dirrmtry %%SITE_PERL%%/Net

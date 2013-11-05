@@ -1,3 +1,32 @@
+%%PERL5_MAN3%%/Net::SIP.3.gz
+%%PERL5_MAN3%%/Net::SIP::Authorize.3.gz
+%%PERL5_MAN3%%/Net::SIP::Blocker.3.gz
+%%PERL5_MAN3%%/Net::SIP::DTMF.3.gz
+%%PERL5_MAN3%%/Net::SIP::Debug.3.gz
+%%PERL5_MAN3%%/Net::SIP::Dispatcher.3.gz
+%%PERL5_MAN3%%/Net::SIP::Dispatcher::Eventloop.3.gz
+%%PERL5_MAN3%%/Net::SIP::Dropper.3.gz
+%%PERL5_MAN3%%/Net::SIP::Dropper::ByField.3.gz
+%%PERL5_MAN3%%/Net::SIP::Dropper::ByIPPort.3.gz
+%%PERL5_MAN3%%/Net::SIP::Endpoint.3.gz
+%%PERL5_MAN3%%/Net::SIP::Endpoint::Context.3.gz
+%%PERL5_MAN3%%/Net::SIP::Leg.3.gz
+%%PERL5_MAN3%%/Net::SIP::NATHelper::Base.3.gz
+%%PERL5_MAN3%%/Net::SIP::NATHelper::Client.3.gz
+%%PERL5_MAN3%%/Net::SIP::NATHelper::Local.3.gz
+%%PERL5_MAN3%%/Net::SIP::NATHelper::Server.3.gz
+%%PERL5_MAN3%%/Net::SIP::Packet.3.gz
+%%PERL5_MAN3%%/Net::SIP::ReceiveChain.3.gz
+%%PERL5_MAN3%%/Net::SIP::Redirect.3.gz
+%%PERL5_MAN3%%/Net::SIP::Registrar.3.gz
+%%PERL5_MAN3%%/Net::SIP::Request.3.gz
+%%PERL5_MAN3%%/Net::SIP::Response.3.gz
+%%PERL5_MAN3%%/Net::SIP::SDP.3.gz
+%%PERL5_MAN3%%/Net::SIP::Simple.3.gz
+%%PERL5_MAN3%%/Net::SIP::Simple::Call.3.gz
+%%PERL5_MAN3%%/Net::SIP::Simple::RTP.3.gz
+%%PERL5_MAN3%%/Net::SIP::StatelessProxy.3.gz
+%%PERL5_MAN3%%/Net::SIP::Util.3.gz
 %%SITE_PERL%%/Net/SIP.pm
 %%SITE_PERL%%/Net/SIP.pod
 %%SITE_PERL%%/Net/SIP/Authorize.pm
@@ -54,12 +83,12 @@
 %%SITE_PERL%%/Net/SIP/Util.pm
 %%SITE_PERL%%/Net/SIP/Util.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SIP/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SIP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SIP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrm %%SITE_PERL%%/Net/SIP/Simple
-@dirrm %%SITE_PERL%%/Net/SIP/NATHelper
-@dirrm %%SITE_PERL%%/Net/SIP/Endpoint
-@dirrm %%SITE_PERL%%/Net/SIP/Dropper
-@dirrm %%SITE_PERL%%/Net/SIP/Dispatcher
-@dirrm %%SITE_PERL%%/Net/SIP
+@dirrmtry %%SITE_PERL%%/Net/SIP/Simple
+@dirrmtry %%SITE_PERL%%/Net/SIP/NATHelper
+@dirrmtry %%SITE_PERL%%/Net/SIP/Endpoint
+@dirrmtry %%SITE_PERL%%/Net/SIP/Dropper
+@dirrmtry %%SITE_PERL%%/Net/SIP/Dispatcher
+@dirrmtry %%SITE_PERL%%/Net/SIP
 @dirrmtry %%SITE_PERL%%/Net
