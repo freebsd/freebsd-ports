@@ -2,28 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	spatialite
-PORTVERSION=	3.0.1
-PORTREVISION=	2
+PORTVERSION=	4.1.1
 CATEGORIES=	databases geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	coder@tuxfamily.org
 COMMENT=	Spatial Extensions for SQLite
 
-LIB_DEPENDS=	geos_c.9:${PORTSDIR}/graphics/geos \
-		proj.7:${PORTSDIR}/graphics/proj \
-		freexl.1:${PORTSDIR}/textproc/freexl
+LIB_DEPENDS=	libgeos_c.so:${PORTSDIR}/graphics/geos \
+		libproj.so:${PORTSDIR}/graphics/proj \
+		libfreexl.so:${PORTSDIR}/textproc/freexl
 
-EXTRACT_SUFX =	.tar.gz
 WRKSRC=		${WRKDIR}/lib${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_SQLITE=	yes
 USES=		gmake iconv
+USE_GCC=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${WRKSRC}/src/headers -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
-CONFIGURE_ARGS+=CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS+=CFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 
 NO_STAGE=	yes

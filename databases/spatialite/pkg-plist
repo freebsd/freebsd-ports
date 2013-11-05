@@ -1,4 +1,10 @@
 include/spatialite.h
+include/spatialite/geopackage.h
+include/spatialite/debug.h
+include/spatialite/gg_dxf.h
+include/spatialite/gg_wfs.h
+include/spatialite/sqlite.h
+include/spatialite/gg_xml.h
 include/spatialite/gaiaaux.h
 include/spatialite/gaiaexif.h
 include/spatialite/gaiageo.h
@@ -13,7 +19,7 @@ include/spatialite/spatialite.h
 lib/libspatialite.a
 lib/libspatialite.la
 lib/libspatialite.so
-lib/libspatialite.so.4
+lib/libspatialite.so.6
 libdata/pkgconfig/spatialite.pc
 @dirrmtry libdata/pkgconfig
 @dirrm include/spatialite
