@@ -1,13 +1,13 @@
-       The Locale::Country module provides access to the ISO two-
-       letter codes for identifying countries, as defined in ISO
-       3166. You can either access the codes via the section
-       on conversion routines (described below), or with the two
-       functions which return lists of all country codes or all
-       country names.
+The Locale::Country module provides access to the ISO two-letter codes
+for identifying countries, as defined in ISO 3166.  You can either access
+the codes via the section on conversion routines (described below), or
+with the two functions which return lists of all country codes or all
+country names.
 
-       The Locale::Language module provides access to the ISO
-       two-letter codes for identifying languages, as defined in
-       ISO 639. You can either access the codes via the the
-       section on conversion routines (described below), or with
-       the two functions which return lists of all language codes
-       or all language names.
+The Locale::Language module provides access to the ISO two-letter codes
+for identifying languages, as defined in ISO 639.  You can either access
+the codes via the the section on conversion routines (described below),
+or with the two functions which return lists of all language codes
+or all language names.
+
+WWW: http://search.cpan.org/dist/Locale-Codes/
