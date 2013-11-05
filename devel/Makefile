@@ -2569,6 +2569,7 @@
     SUBDIR += p5-Proc-Wait3
     SUBDIR += p5-Proc-WaitStat
     SUBDIR += p5-Project-Gantt
+    SUBDIR += p5-Project-Libs
     SUBDIR += p5-Qudo
     SUBDIR += p5-RRDTool-OO
     SUBDIR += p5-Range-String

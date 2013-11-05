@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/Project::Libs.3.gz
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Project/Libs/.packlist
+%%SITE_PERL%%/Project/Libs.pm
+@dirrmtry %%SITE_PERL%%/Project
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Project/Libs
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Project
