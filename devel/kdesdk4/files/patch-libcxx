@@ -1,0 +1,221 @@
+commit 6aa61a76e792354ab646849f1dcfeccab7d0063d
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Sun Nov 3 01:21:49 2013 +0200
+
+    kdevcppparser: Always define the `identity' unary function.
+
+    _Identity is an internal, libstdc++-specific struct that is not to be relied
+    upon by external code.
+
+    preprocesslexer.cpp used to assume GCC (with libstdc++) and MSVC were the
+    only compilers available, and defined its own _Identity implementation for
+    the latter. It breaks things if any other compiler or STL implementation
+    (such as clang with libc++) is used.
+
+    The easiest fix is to just unconditionally define the `identity' unary
+    function and use it regardless of whether _Identity is defined or not.
+
+commit f89f9c6358001619222a4b3c187b5e969b553d0b
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Sun Nov 3 13:19:56 2013 +0200
+
+    kdevcppparser: Replace PositionFilename with a typedef to QString.
+
+    The C++ standard (98, 03 and 11) states that std::basic_string is supposed
+    to work only with POD-like types, which is not the case for QChar.
+
+    GCC's libstdc++'s std::basic_string implementation, though, does not use any
+    features present only in POD types, so the previous behavior of using
+    std::basic_string<QChar> has worked for most people using Linux, and some
+    workarounds were present for other compilers such as SunPro CC and MSVC.
+
+    Instead of adding yet another workaround to get things working with clang
+    with libc++, try to fix the problem in a different way by getting rid of the
+    need for std::basic_string in position.h altogether and using a plain
+    QString instead.
+
+    std::basic_string was used only to store the name of the source file being
+    processed, which was originally a QString anyway, so we can avoid the
+    QString -> std::basic_string -> QString conversions, as well as the need to
+    have a full-fledged PositionFilename class with a toString() method that
+    performed this conversion.
+
+    It also allows us to remove the MSVC/SunPro workarounds from the code and
+    the build system.
+--- umbrello/CMakeLists.txt
++++ umbrello/CMakeLists.txt
+@@ -267,37 +267,21 @@ set(libcodeimport_SRCS
+     codeimport/csharp/csharpimport.cpp
+ )
+ 
+-if (WIN32 AND NOT MSVC)
+-    # SunPRO CC have a problem with position.h; we try to put a
+-    # QChar into a spirit iterator, which, after a bunch of futzing, ends up in
+-    # the STL string_ref templates, which use
+-    #
+-    #     union {
+-    #        size_type _C_size;    // Number of actual data values stored
+-    #        _CharT    _C_dummy;   // force the alignment of the first char
+-    #     } _C_size;               // named to work around an HP aCC 3.30 bug
+-    #
+-    # and you can't have a class which requires an initializer in a union.
+-    #
+-    add_definitions(-DDISABLE_CPP_IMPORT)
+-    set(libkdevcppparser_SRCS)
+-else (WIN32 AND NOT MSVC)
+-    list(APPEND libcodeimport_SRCS
+-        codeimport/cppimport.cpp
+-    )
+-    set(libkdevcppparser_SRCS
+-        codeimport/kdevcppparser/ast.cpp
+-        codeimport/kdevcppparser/driver.cpp
+-        codeimport/kdevcppparser/errors.cpp
+-        codeimport/kdevcppparser/lexer.cpp
+-        codeimport/kdevcppparser/lookup.cpp
+-        codeimport/kdevcppparser/parser.cpp
+-        codeimport/kdevcppparser/preprocesslexer.cpp
+-        codeimport/kdevcppparser/tree_parser.cpp
+-        codeimport/kdevcppparser/ast_utils.cpp
+-        codeimport/kdevcppparser/cpptree2uml.cpp
+-    )
+-endif(WIN32 AND NOT MSVC)
++list(APPEND libcodeimport_SRCS
++    codeimport/cppimport.cpp
++)
++set(libkdevcppparser_SRCS
++    codeimport/kdevcppparser/ast.cpp
++    codeimport/kdevcppparser/driver.cpp
++    codeimport/kdevcppparser/errors.cpp
++    codeimport/kdevcppparser/lexer.cpp
++    codeimport/kdevcppparser/lookup.cpp
++    codeimport/kdevcppparser/parser.cpp
++    codeimport/kdevcppparser/preprocesslexer.cpp
++    codeimport/kdevcppparser/tree_parser.cpp
++    codeimport/kdevcppparser/ast_utils.cpp
++    codeimport/kdevcppparser/cpptree2uml.cpp
++)
+ 
+ set(libclipboard_SRCS
+     clipboard/umldragdata.cpp
+--- umbrello/codeimport/classimport.cpp
++++ umbrello/codeimport/classimport.cpp
+@@ -20,9 +20,7 @@
+ #include "javaimport.h"
+ #include "adaimport.h"
+ #include "pascalimport.h"
+-#ifndef DISABLE_CPP_IMPORT
+ #include "cppimport.h"
+-#endif
+ #include "csharpimport.h"
+ #include "codeimpthread.h"
+ 
+@@ -52,13 +50,8 @@ ClassImport *ClassImport::createImporterByFileExt(const QString &fileName, CodeI
+         classImporter = new PascalImport(thread);
+     else if (fileName.endsWith(QLatin1String(".cs")))
+         classImporter = new CSharpImport(thread);
+-#ifndef DISABLE_CPP_IMPORT
+     else
+         classImporter = new CppImport(thread);  // the default.
+-#else
+-    else 
+-        classImporter = 0;
+-#endif
+     return classImporter;
+ }
+ 
+--- umbrello/codeimport/kdevcppparser/position.h
++++ umbrello/codeimport/kdevcppparser/position.h
+@@ -20,22 +20,6 @@
+ #ifndef POSITION_H
+ #define POSITION_H
+ 
+-#ifdef _MSC_VER //Q_CC_MSVC isn't defined here
+-/*
+-workaround for the following msvc error 
+-...\Microsoft Visual Studio 8\VC\INCLUDE\xstring(2044) : error C2620: 
+-    member 'std::basic_string<_Elem>::_Bxty::_Buf ' of union 'std::basic_string<_Elem>::_Bxty' 
+-    has user-defined constructor or non-trivial default constructor with [  _Elem=QChar]
+-...\Microsoft Visual Studio 8\VC\INCLUDE\xstring(2046) : see reference to class 
+-    template instantiation 'std::basic_string<_Elem>::_Bxty' being compiled with [  _Elem=QChar]
+-..\umbrello\umbrello\codeimport\kdevcppparser\position.h(49) : see reference to class 
+-    template instantiation 'std::basic_string<_Elem>' being compiled with [  _Elem=QChar]
+-*/
+-#define union struct 
+-#include <xstring>
+-#undef union 
+-#endif
+-
+ #include <limits.h>
+ #include <boost/version.hpp>
+ #include <boost/spirit/include/classic.hpp>
+@@ -43,34 +27,7 @@ workaround for the following msvc error
+ #include <QChar>
+ #include <QDebug>
+ 
+-typedef std::basic_string<QChar> PositionFilenameType;
+-
+-class PositionFilename : public PositionFilenameType
+-{
+-public:
+-    PositionFilename()
+-    {
+-    }
+-
+-    explicit PositionFilename(const QString &p) : PositionFilenameType(p.data())
+-    {
+-    }
+-
+-    QString toString() const
+-    {
+-        QString result;
+-        for(unsigned int i = 0; i < size(); i++)
+-            result.append(at(i));
+-        return result;
+-    }
+-};
+-
+-inline QDebug operator<<(QDebug out, const PositionFilename &p)
+-{
+-    out << p.toString();
+-    return out;
+-}
+-
++typedef QString PositionFilename;
+ typedef boost::spirit::classic::file_position_base<PositionFilename> PositionType;
+ 
+ class Position : public PositionType
+--- umbrello/codeimport/kdevcppparser/preprocesslexer.cpp
++++ umbrello/codeimport/kdevcppparser/preprocesslexer.cpp
+@@ -41,13 +41,11 @@
+ 
+ #define PREPROCESSLEXER_DEBUG
+ 
+-#ifdef Q_CC_MSVC
+ template <class _Tp>
+-struct _Identity : public std::unary_function<_Tp, _Tp> {
++struct identity : public std::unary_function<_Tp, _Tp> {
+   _Tp& operator()(_Tp& __x) const { return __x; }
+   const _Tp& operator()(const _Tp& __x) const { return __x; }
+ };
+-#endif
+ 
+ template <class _Tp>
+ struct tilde : public std::unary_function<_Tp, _Tp> {
+@@ -593,7 +591,7 @@ void PreprocessLexer::dumpToFile()
+     if (!d.exists())
+         d.mkdir(tempPath);
+ 
+-    QString fileName = tempPath + '/' + currentPosition().file.toString().replace(QRegExp("[/:mn]"), "-");
++    QString fileName = tempPath + '/' + currentPosition().file.replace(QRegExp("[/:mn]"), "-");
+     QFile f(fileName);
+     if (f.open(QIODevice::WriteOnly | QIODevice::Text)) {
+         QTextStream out(&f);
+@@ -839,7 +837,7 @@ int PreprocessLexer::macroPrimary()
+         if (!l_hit)
+             result = 0;
+     } else {
+-        boost::function < int (int) > l_op = _Identity<int>();
++        boost::function < int (int) > l_op = identity<int>();
+         if (m_source.parse(ch_p('+')
+                            | ch_p('-')[var(l_op) = std::negate<int>()]
+                            | ch_p('!')[var(l_op) = std::logical_not<int>()]
