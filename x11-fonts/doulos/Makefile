@@ -11,10 +11,7 @@ MASTER_SITE_SUBDIR=	#prevent bsd.xorg.mk from setting a default subdirectory
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Doulos SIL TrueType font collection
 
-LICENSE=	OFL
-LICENSE_NAME=	SIL Open Font License (OFL)
-LICENSE_FILE=	${WRKSRC}/OFL.txt
-LICENSE_PERMS=	auto-accept
+LICENSE=	OFL11
 
 USE_ZIP=	yes
 XORG_CAT=	font

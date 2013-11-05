@@ -11,10 +11,7 @@ DISTNAME=	${PORTNAME:C/-.*//}-${PORTVERSION}
 MAINTAINER=	lichray@gmail.com
 COMMENT=	CJK Mincho-typeface developed by Hanazono University
 
-LICENSE=	OFL
-LICENSE_NAME=	Open Font License
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-LICENSE_PERMS=	auto-accept
+LICENSE=	OFL11
 
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale

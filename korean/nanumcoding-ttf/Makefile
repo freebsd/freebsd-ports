@@ -12,10 +12,7 @@ DISTNAME=	NanumGothicCoding-${PORTVERSION}
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	NanumGothic Coding Hangul font (TrueType)
 
-LICENSE=	OFL
-LICENSE_NAME=	Open Font License version 1.1
-LICENSE_FILE=	${FILESDIR}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	OFL11
 
 BUILD_DEPENDS+=	${LOCALBASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		${LOCALBASE}/bin/mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale

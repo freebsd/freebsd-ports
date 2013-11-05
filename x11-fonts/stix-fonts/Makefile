@@ -10,10 +10,7 @@ DISTNAME=	STIXv${PORTVERSION}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A comprehensive set of fonts for scientific and engineering purposes
 
-LICENSE=	OFL
-LICENSE_NAME=	Open Font License
-LICENSE_FILE=	${WRKSRC}/License/STIX\ Font\ License\ 2010.pdf
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	OFL11
 
 BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir

@@ -12,10 +12,7 @@ MASTER_SITE_SUBDIR=	thierry
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Liberation fonts from Red Hat to replace MS TTF fonts
 
-LICENSE=	OFL
-LICENSE_NAME=	SIL Open Font License (OFL)
-LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	OFL11
 
 BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir

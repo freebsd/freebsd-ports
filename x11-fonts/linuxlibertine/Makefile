@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	Linux Libertine Open Fonts
 
-LICENSE=	GPLv2 LINUXLIBERTINE OFL
+LICENSE=	GPLv2 LINUXLIBERTINE OFL10
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig

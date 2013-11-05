@@ -9,10 +9,7 @@ DISTNAME=	lohit-ttf-${PORTVERSION}
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Lohit fonts
 
-LICENSE=	OFL
-LICENSE_NAME=	SIL Open Font License (OFL)
-LICENSE_FILE=	${WRKSRC}/OFL.txt
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	OFL11
 
 EXTRACT_SUFX=	.tar.gz
 XORG_CAT=	font

@@ -10,10 +10,7 @@ DISTNAME=	SourceSansPro_FontsOnly-${PORTVERSION}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	A set of fonts by Adobe designed for user interfaces
 
-LICENSE=	OFL
-LICENSE_NAME=	SIL OPEN FONT LICENSE Version 1.1
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	OFL11
 
 BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
