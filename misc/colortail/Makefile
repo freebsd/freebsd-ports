@@ -9,14 +9,16 @@ MASTER_SITES=	http://joakimandersson.se/files/
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A colour-able replacement for tail(1)
 
+LICENCE=	GPLv2
 
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
-post-install:
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/colortail ${STAGEDIR}${PREFIX}/bin
+
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/example-conf/conf* ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/example-conf/conf* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
