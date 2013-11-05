@@ -1,0 +1,2 @@
+libexec/nagios/check_memcached_paranoid
+@dirrmtry libexec/nagios
