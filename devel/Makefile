@@ -4382,6 +4382,7 @@
     SUBDIR += subclipse
     SUBDIR += subcommander2
     SUBDIR += subversion
+    SUBDIR += subversion-book
     SUBDIR += subversion-static
     SUBDIR += subversion16
     SUBDIR += subversion17
