@@ -8,8 +8,8 @@ CATEGORIES=	irc
 MASTER_SITES=	http://www.kreativrauschen.de/gseen.mod/
 DISTNAME=	${PORTNAME}.${PORTVERSION:S/p/dev/}
 
-MAINTAINER=	bdrewery@FreeBSD.org
-COMMENT=	A seen-module for the eggdrop IRC bot
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Seen-module for the eggdrop IRC bot
 
 LICENSE=	GPLv2
 
@@ -17,8 +17,7 @@ EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/irc/eggdrop:extract
 BUILD_DEPENDS=	eggdrop:${PORTSDIR}/irc/eggdrop
 RUN_DEPENDS=	eggdrop:${PORTSDIR}/irc/eggdrop
 
-USES=		tcl:85+
-NO_STAGE=	yes
+USES=		tcl:84,85
 
 WRKSRC=		${WRKDIR}/eggdrop
 
@@ -46,10 +45,14 @@ pre-build:
 	@cd ${WRKSRC} && ./configure ${CONFIGURE_ARGS}
 
 do-install:
-	@${MKDIR} ${LOCALBASE}/lib/eggdrop ${LOCALBASE}/share/eggdrop/language
-	@${INSTALL_PROGRAM} ${WRKSRC}/gseen.so ${LOCALBASE}/lib/eggdrop
-	@${INSTALL_DATA} ${WRKSRC}/src/mod/gseen.mod/*lang ${LOCALBASE}/share/eggdrop/language
-	@${INSTALL_DATA} ${WRKSRC}/src/mod/gseen.mod/gseen.conf ${PREFIX}/etc
+	@${MKDIR} ${STAGEDIR}${LOCALBASE}/lib/eggdrop \
+	    ${STAGEDIR}${LOCALBASE}/share/eggdrop/language
+	${INSTALL_PROGRAM} ${WRKSRC}/gseen.so \
+	    ${STAGEDIR}${LOCALBASE}/lib/eggdrop
+	${INSTALL_DATA} ${WRKSRC}/src/mod/gseen.mod/*lang \
+	    ${STAGEDIR}${LOCALBASE}/share/eggdrop/language
+	${INSTALL_DATA} ${WRKSRC}/src/mod/gseen.mod/gseen.conf \
+	    ${STAGEDIR}${PREFIX}/etc
 	@${ECHO_MSG} "Please add the line"
 	@${ECHO_MSG} "source ${PREFIX}/etc/gseen.conf"
 	@${ECHO_MSG} "at the end of your eggdrop config file"
