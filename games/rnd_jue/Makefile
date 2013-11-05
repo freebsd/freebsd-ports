@@ -3,38 +3,39 @@
 
 PORTNAME=	rnd_jue
 PORTVERSION=	3.3.0.0
+PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.jb-line.de/rnd/ \
-		http://www.artsoft.org/RELEASES/unix/rocksndiamonds/ \
-		SF/rocksndiamonds.mirror/:rocksndiamonds \
-		http://www.bd-fans.com/Files/RnD/Levels/:bd_fans_levels \
-		SF/nemysisfreebsdp/rocksndiamonds/:icons
-DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
-		rocksndiamonds-3.3.0.1.tar.gz:rocksndiamonds \
-		Walpurgis_Collection.zip:bd_fans_levels \
-		rnd_the_h_world.zip:bd_fans_levels \
+MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/:game \
+		http://www.bd-fans.com/Files/RnD/Levels/ \
+		SF/nemysisfreebsdp/${CATEGORIES}/rocksndiamonds/:icons
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:game \
+		rocksndiamonds-3.3.1.0${EXTRACT_SUFX}:game \
+		${LEVELS_BD_FANS:S/$/.zip/} \
+		Tutorial_Alpha.zip \
 		${PORTNAME}_icons.tar.gz:icons
 DIST_SUBDIR=	rocksndiamonds
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
-		rocksndiamonds-3.3.0.1.tar.gz \
+		rocksndiamonds-3.3.1.0${EXTRACT_SUFX} \
 		${PORTNAME}_icons.tar.gz
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Colorful Boulderdash'n'Emerald Mine'n'Sokoban'n'Stuff jue
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS+=	smpeg:${PORTSDIR}/multimedia/smpeg
+LIB_DEPENDS+=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg
 EXTRACT_DEPENDS+=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 
+USES=		gmake
 USE_SDL=	image mixer net sdl
-USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" MAKE="${GMAKE}" OPTIONS="${CFLAGS}" \
 		RO_GAME_DIR="${DATADIR}" \
 		X11_PATH="${LOCALBASE}"
 ALL_TARGET=	sdl
 
 SUB_FILES=	pkg-message
+
+LEVELS_BD_FANS=	JuergenBonhagen rnd_the_h_world Walpurgis_Collection
 
 PORTDOCS=	*
 
@@ -51,18 +52,20 @@ ICON_SIZES=	32x32 48x48 64x64 72x72 96x96
 DESKTOP_ENTRIES="R'n'D jue" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" false
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract-script:
 	@(cd ${WRKDIR}/rocksndiamonds* && ${COPYTREE_SHARE} levels ${WRKSRC})
-.for l in Walpurgis_Collection.zip rnd_the_h_world.zip
+.for l in ${LEVELS_BD_FANS:S/$/.zip/}
 	@${UNZIP_CMD} -qo -d ${WRKSRC}/levels ${_DISTDIR}/${l}
 .endfor
+	@${UNZIP_CMD} -qo -d ${WRKSRC}/levels/Tutorials ${_DISTDIR}/Tutorial_Alpha.zip
+	@(cd ${WRKSRC}/levels/Tutorials && ${MV} "Tutorial Alpha" rnd_tutorial_alpha)
+
 	@(cd ${WRKSRC}/levels/"Walpurgis Collection" && \
 		${RM} -fr "Walpurgis Gardens" "Walpurgis World")
 	@(cd ${WRKSRC}/levels/rnd_the_h_world && ${RM} -fr hwld_dceos)
-		@${RM} -f ${WRKDIR}/${PORTNAME}/Readme.txt
+	@${RM} -f ${WRKDIR}/${PORTNAME}/Readme.txt
 	@${RM} -f ${WRKSRC}/levels/Readme.txt
 
 post-patch:
@@ -74,31 +77,28 @@ post-patch:
 		-e 's|machine/joystick.h|sys/joystick.h|' ${WRKSRC}/src/libgame/joystick.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
 .for dir in graphics levels music sounds
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${DATADIR})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${DATADIR})
 .endfor
 
-post-install:
 .for s in ${ICON_SIZES}
-	${MKDIR} ${PREFIX}/share/icons/hicolor/${s}/apps
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}_${s}.png \
-		${PREFIX}/share/icons/hicolor/${s}/apps/${PORTNAME}.png
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/${PORTNAME}.png
 .endfor
-	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${PREFIX}/share/pixmaps
+	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR2}
-	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${DOCSDIR2}
-.endif
-	@${ECHO} "@unexec ${RMDIR} \"${DATADIR}/levels\" 2>/dev/null || true" >> ${TMPPLIST}
-	@${ECHO} "@unexec ${RMDIR} \"${DATADIR}\" 2>/dev/null || true" >> ${TMPPLIST}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
+	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
 
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+	@cd ${STAGEDIR}${PREFIX} && ${FIND} ${DATADIR_REL}/levels \
+		-type f >> ${TMPPLIST} && \
+		${FIND} ${DATADIR_REL}/levels -type d -o -type l | ${SORT} -r | \
+		${SED} 's|^|@dirrm |' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
