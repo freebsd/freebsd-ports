@@ -1,4 +1,5 @@
 bin/gtick
+man/man1/gtick.1.gz
 %%NLS%%share/locale/af/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gtick.mo
