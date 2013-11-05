@@ -17,9 +17,4 @@ CONFIGURE_ARGS=	-options "JPEG,FT,XPM,GIF,PNG" \
 		-lib_gd_path ${LOCALBASE} -lib_ft_path} \
 		-lib_png_path ${LOCALBASE} -lib_zlib_path
 
-MAN1=		bdf2gdfont.pl.1
-MAN3=		GD.3 GD::Polyline.3 GD::Simple.3 \
-		GD::Image.3 GD::Polygon.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

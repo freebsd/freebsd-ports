@@ -1,7 +1,10 @@
 bin/svg_annotate
 bin/svg_validate
+%%PERL5_MAN3%%/SVG::Metadata.3.gz
 %%SITE_PERL%%/SVG/Metadata.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVG/Metadata/.packlist
+man/man1/svg_annotate.1.gz
+man/man1/svg_validate.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVG/Metadata
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVG
 @dirrmtry %%SITE_PERL%%/SVG

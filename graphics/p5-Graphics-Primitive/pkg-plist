@@ -1,4 +1,27 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Primitive/.packlist
+%%PERL5_MAN3%%/Graphics::Primitive.3.gz
+%%PERL5_MAN3%%/Graphics::Primitive::Aligned.3.gz
+%%PERL5_MAN3%%/Graphics::Primitive::Border.3.gz
+%%PERL5_MAN3%%/Graphics::Primitive::Brush.3.gz
+%%PERL5_MAN3%%/Graphics::Primitive::Canvas.3.gz
+%%PERL5_MAN3%%/Graphics::Primitive::Component.3.gz
+%%PERL5_MAN3%%/Graphics::Primitive::ComponentList.3.gz
+%%PERL5_MAN3%%/Graphics::Primitive::Container.3.gz
+%%PERL5_MAN3%%/Graphics::Primitive::Driver.3.gz
+%%PERL5_MAN3%%/Graphics::Primitive::Driver::TextLayout.3.gz
+%%PERL5_MAN3%%/Graphics::Primitive::Font.3.gz
+%%PERL5_MAN3%%/Graphics::Primitive::Image.3.gz
+%%PERL5_MAN3%%/Graphics::Primitive::Insets.3.gz
+%%PERL5_MAN3%%/Graphics::Primitive::Operation.3.gz
+%%PERL5_MAN3%%/Graphics::Primitive::Operation::Fill.3.gz
+%%PERL5_MAN3%%/Graphics::Primitive::Operation::Stroke.3.gz
+%%PERL5_MAN3%%/Graphics::Primitive::Oriented.3.gz
+%%PERL5_MAN3%%/Graphics::Primitive::Paint.3.gz
+%%PERL5_MAN3%%/Graphics::Primitive::Paint::Gradient.3.gz
+%%PERL5_MAN3%%/Graphics::Primitive::Paint::Gradient::Linear.3.gz
+%%PERL5_MAN3%%/Graphics::Primitive::Paint::Gradient::Radial.3.gz
+%%PERL5_MAN3%%/Graphics::Primitive::Paint::Solid.3.gz
+%%PERL5_MAN3%%/Graphics::Primitive::Path.3.gz
+%%PERL5_MAN3%%/Graphics::Primitive::TextBox.3.gz
 %%SITE_PERL%%/Graphics/Primitive.pm
 %%SITE_PERL%%/Graphics/Primitive/Aligned.pm
 %%SITE_PERL%%/Graphics/Primitive/Border.pm
@@ -17,12 +40,13 @@
 %%SITE_PERL%%/Graphics/Primitive/Operation/Stroke.pm
 %%SITE_PERL%%/Graphics/Primitive/Oriented.pm
 %%SITE_PERL%%/Graphics/Primitive/Paint.pm
+%%SITE_PERL%%/Graphics/Primitive/Paint/Gradient.pm
 %%SITE_PERL%%/Graphics/Primitive/Paint/Gradient/Linear.pm
 %%SITE_PERL%%/Graphics/Primitive/Paint/Gradient/Radial.pm
-%%SITE_PERL%%/Graphics/Primitive/Paint/Gradient.pm
 %%SITE_PERL%%/Graphics/Primitive/Paint/Solid.pm
 %%SITE_PERL%%/Graphics/Primitive/Path.pm
 %%SITE_PERL%%/Graphics/Primitive/TextBox.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Primitive/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Primitive
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics
 @dirrmtry %%SITE_PERL%%/Graphics/Primitive/Paint/Gradient

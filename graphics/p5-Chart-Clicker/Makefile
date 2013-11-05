@@ -31,44 +31,4 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Chart::Clicker.3 \
-		Chart::Clicker::Axis.3 \
-		Chart::Clicker::Axis::DateTime.3 \
-		Chart::Clicker::Axis::DivisionType.3 \
-		Chart::Clicker::Axis::DivisionType::Exact.3 \
-		Chart::Clicker::Axis::DivisionType::LinearExpandGraph.3 \
-		Chart::Clicker::Axis::DivisionType::LinearRounded.3 \
-		Chart::Clicker::Component.3 \
-		Chart::Clicker::Container.3 \
-		Chart::Clicker::Context.3 \
-		Chart::Clicker::Data::DataSet.3 \
-		Chart::Clicker::Data::Marker.3 \
-		Chart::Clicker::Data::Range.3 \
-		Chart::Clicker::Data::Series.3 \
-		Chart::Clicker::Data::Series::HighLow.3 \
-		Chart::Clicker::Data::Series::Size.3 \
-		Chart::Clicker::Decoration.3 \
-		Chart::Clicker::Decoration::Glass.3 \
-		Chart::Clicker::Decoration::Grid.3 \
-		Chart::Clicker::Decoration::Legend.3 \
-		Chart::Clicker::Decoration::Legend::Tabular.3 \
-		Chart::Clicker::Decoration::MarkerOverlay.3 \
-		Chart::Clicker::Decoration::OverAxis.3 \
-		Chart::Clicker::Decoration::Plot.3 \
-		Chart::Clicker::Drawing::ColorAllocator.3 \
-		Chart::Clicker::Positioned.3 \
-		Chart::Clicker::Renderer.3 \
-		Chart::Clicker::Renderer::Area.3 \
-		Chart::Clicker::Renderer::Bar.3 \
-		Chart::Clicker::Renderer::Bubble.3 \
-		Chart::Clicker::Renderer::CandleStick.3 \
-		Chart::Clicker::Renderer::Line.3 \
-		Chart::Clicker::Renderer::Pie.3 \
-		Chart::Clicker::Renderer::Point.3 \
-		Chart::Clicker::Renderer::PolarArea.3 \
-		Chart::Clicker::Renderer::StackedArea.3 \
-		Chart::Clicker::Renderer::StackedBar.3 \
-		Chart::Clicker::Tutorial.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -16,11 +16,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Image::Caa.3
-
-NO_STAGE=	yes
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/demos/* ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/demos/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

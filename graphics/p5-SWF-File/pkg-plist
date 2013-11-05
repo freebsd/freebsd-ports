@@ -1,5 +1,11 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/File/.packlist
 bin/dumpswf.plx
+%%PERL5_MAN3%%/SWF::BinStream.3.gz
+%%PERL5_MAN3%%/SWF::BinStream::Codec.3.gz
+%%PERL5_MAN3%%/SWF::BinStream::Codec::Zlib.3.gz
+%%PERL5_MAN3%%/SWF::BinStream::File.3.gz
+%%PERL5_MAN3%%/SWF::Element.3.gz
+%%PERL5_MAN3%%/SWF::File.3.gz
+%%PERL5_MAN3%%/SWF::Parser.3.gz
 %%SITE_PERL%%/SWF/BinStream.pm
 %%SITE_PERL%%/SWF/BinStream/Codec.pod
 %%SITE_PERL%%/SWF/BinStream/Codec/Zlib.pm
@@ -8,8 +14,9 @@ bin/dumpswf.plx
 %%SITE_PERL%%/SWF/Element.pod
 %%SITE_PERL%%/SWF/File.pm
 %%SITE_PERL%%/SWF/Parser.pm
-@dirrm %%SITE_PERL%%/SWF/BinStream/Codec
-@dirrm %%SITE_PERL%%/SWF/BinStream
-@dirrmtry %%SITE_PERL%%/SWF
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/File
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/File/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/File
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF
+@dirrmtry %%SITE_PERL%%/SWF/BinStream/Codec
+@dirrmtry %%SITE_PERL%%/SWF/BinStream
+@dirrmtry %%SITE_PERL%%/SWF

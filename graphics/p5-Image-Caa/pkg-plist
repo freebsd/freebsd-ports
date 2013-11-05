@@ -1,11 +1,4 @@
-%%EXAMPLESDIR%%/curses.pl
-%%EXAMPLESDIR%%/kitten.jpg
-%%EXAMPLESDIR%%/kitten.pl
-%%EXAMPLESDIR%%/portrait.jpg
-%%EXAMPLESDIR%%/portrait.pl
-%%EXAMPLESDIR%%/sunset.jpg
-%%EXAMPLESDIR%%/sunset.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Caa/.packlist
+%%PERL5_MAN3%%/Image::Caa.3.gz
 %%SITE_PERL%%/Image/Caa.pm
 %%SITE_PERL%%/Image/Caa/DitherNone.pm
 %%SITE_PERL%%/Image/Caa/DitherOrdered2.pm
@@ -15,8 +8,16 @@
 %%SITE_PERL%%/Image/Caa/DriverANSI.pm
 %%SITE_PERL%%/Image/Caa/DriverCurses.pm
 %%SITE_PERL%%/Image/Caa/DriverTest.pm
-@dirrmtry %%SITE_PERL%%/Image/Caa
-@dirrmtry %%SITE_PERL%%/Image
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Caa/.packlist
+%%EXAMPLESDIR%%/curses.pl
+%%EXAMPLESDIR%%/kitten.jpg
+%%EXAMPLESDIR%%/kitten.pl
+%%EXAMPLESDIR%%/portrait.jpg
+%%EXAMPLESDIR%%/portrait.pl
+%%EXAMPLESDIR%%/sunset.jpg
+%%EXAMPLESDIR%%/sunset.pl
+@dirrm %%EXAMPLESDIR%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Caa
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
-@dirrmtry %%EXAMPLESDIR%%
+@dirrmtry %%SITE_PERL%%/Image/Caa
+@dirrmtry %%SITE_PERL%%/Image

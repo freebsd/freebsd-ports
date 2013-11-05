@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Graph::SocialMap.3.gz
 %%SITE_PERL%%/Graph/SocialMap.pm
 %%SITE_PERL%%/Graph/SocialMap.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph/SocialMap/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph/SocialMap
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph/SocialMap
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph
 @dirrmtry %%SITE_PERL%%/Graph

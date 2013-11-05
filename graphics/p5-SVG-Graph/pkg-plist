@@ -1,23 +1,42 @@
+%%PERL5_MAN3%%/SVG::Graph.3.gz
+%%PERL5_MAN3%%/SVG::Graph::Data.3.gz
+%%PERL5_MAN3%%/SVG::Graph::Data::Datum.3.gz
+%%PERL5_MAN3%%/SVG::Graph::Data::Node.3.gz
+%%PERL5_MAN3%%/SVG::Graph::Data::Tree.3.gz
+%%PERL5_MAN3%%/SVG::Graph::File.3.gz
+%%PERL5_MAN3%%/SVG::Graph::Frame.3.gz
+%%PERL5_MAN3%%/SVG::Graph::Glyph.3.gz
+%%PERL5_MAN3%%/SVG::Graph::Glyph::axis.3.gz
+%%PERL5_MAN3%%/SVG::Graph::Glyph::bar.3.gz
+%%PERL5_MAN3%%/SVG::Graph::Glyph::barflex.3.gz
+%%PERL5_MAN3%%/SVG::Graph::Glyph::bezier.3.gz
+%%PERL5_MAN3%%/SVG::Graph::Glyph::bubble.3.gz
+%%PERL5_MAN3%%/SVG::Graph::Glyph::heatmap.3.gz
+%%PERL5_MAN3%%/SVG::Graph::Glyph::line.3.gz
+%%PERL5_MAN3%%/SVG::Graph::Glyph::pictogram.3.gz
+%%PERL5_MAN3%%/SVG::Graph::Glyph::scatter.3.gz
+%%PERL5_MAN3%%/SVG::Graph::Glyph::tree.3.gz
+%%PERL5_MAN3%%/SVG::Graph::Glyph::wedge.3.gz
 %%SITE_PERL%%/SVG/Graph.pm
 %%SITE_PERL%%/SVG/Graph/Data.pm
-%%SITE_PERL%%/SVG/Graph/Frame.pm
-%%SITE_PERL%%/SVG/Graph/File.pm
-%%SITE_PERL%%/SVG/Graph/Glyph.pm
+%%SITE_PERL%%/SVG/Graph/Data/Datum.pm
 %%SITE_PERL%%/SVG/Graph/Data/Node.pm
 %%SITE_PERL%%/SVG/Graph/Data/Tree.pm
-%%SITE_PERL%%/SVG/Graph/Data/Datum.pm
+%%SITE_PERL%%/SVG/Graph/File.pm
+%%SITE_PERL%%/SVG/Graph/Frame.pm
+%%SITE_PERL%%/SVG/Graph/Glyph.pm
 %%SITE_PERL%%/SVG/Graph/Glyph/axis.pm
-%%SITE_PERL%%/SVG/Graph/Glyph/bubble.pm
-%%SITE_PERL%%/SVG/Graph/Glyph/bezier.pm
-%%SITE_PERL%%/SVG/Graph/Glyph/pictogram.pm
-%%SITE_PERL%%/SVG/Graph/Glyph/barflex.pm
 %%SITE_PERL%%/SVG/Graph/Glyph/bar.pm
-%%SITE_PERL%%/SVG/Graph/Glyph/wedge.pm
-%%SITE_PERL%%/SVG/Graph/Glyph/line.pm
-%%SITE_PERL%%/SVG/Graph/Glyph/tree.pm
+%%SITE_PERL%%/SVG/Graph/Glyph/barflex.pm
+%%SITE_PERL%%/SVG/Graph/Glyph/bezier.pm
+%%SITE_PERL%%/SVG/Graph/Glyph/bubble.pm
 %%SITE_PERL%%/SVG/Graph/Glyph/heatmap.pm
+%%SITE_PERL%%/SVG/Graph/Glyph/line.pm
+%%SITE_PERL%%/SVG/Graph/Glyph/pictogram.pm
 %%SITE_PERL%%/SVG/Graph/Glyph/scatter.pm
-@dirrm %%SITE_PERL%%/SVG/Graph/Data
-@dirrm %%SITE_PERL%%/SVG/Graph/Glyph
-@dirrm %%SITE_PERL%%/SVG/Graph
+%%SITE_PERL%%/SVG/Graph/Glyph/tree.pm
+%%SITE_PERL%%/SVG/Graph/Glyph/wedge.pm
+@dirrmtry %%SITE_PERL%%/SVG/Graph/Glyph
+@dirrmtry %%SITE_PERL%%/SVG/Graph/Data
+@dirrmtry %%SITE_PERL%%/SVG/Graph
 @dirrmtry %%SITE_PERL%%/SVG

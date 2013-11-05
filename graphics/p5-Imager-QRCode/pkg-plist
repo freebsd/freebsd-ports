@@ -1,5 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/QRCode/QRCode.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/QRCode/QRCode.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/QRCode/.packlist
+%%PERL5_MAN3%%/Imager::QRCode.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/QRCode.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/QRCode/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/QRCode/QRCode.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/QRCode/QRCode.so
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/QRCode
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Imager

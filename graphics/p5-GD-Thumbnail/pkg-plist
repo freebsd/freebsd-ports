@@ -1,4 +1,6 @@
+%%PERL5_MAN3%%/GD::Thumbnail.3.gz
 %%SITE_PERL%%/GD/Thumbnail.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Thumbnail/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Thumbnail
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD
 @dirrmtry %%SITE_PERL%%/GD

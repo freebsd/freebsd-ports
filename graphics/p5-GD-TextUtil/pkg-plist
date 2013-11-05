@@ -1,7 +1,11 @@
+%%PERL5_MAN3%%/GD::Text.3.gz
+%%PERL5_MAN3%%/GD::Text::Align.3.gz
+%%PERL5_MAN3%%/GD::Text::Wrap.3.gz
 %%SITE_PERL%%/GD/Text.pm
-%%SITE_PERL%%/GD/Text/Wrap.pm
 %%SITE_PERL%%/GD/Text/Align.pm
+%%SITE_PERL%%/GD/Text/Wrap.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Text/.packlist
-@dirrm %%SITE_PERL%%/GD/Text
-@dirrmtry %%SITE_PERL%%/GD
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Text
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD
+@dirrmtry %%SITE_PERL%%/GD/Text
+@dirrmtry %%SITE_PERL%%/GD

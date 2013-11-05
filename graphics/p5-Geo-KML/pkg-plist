@@ -1,24 +1,25 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/KML/.packlist
+%%PERL5_MAN3%%/Geo::KML.3.gz
+%%PERL5_MAN3%%/Geo::KML::Util.3.gz
 %%SITE_PERL%%/Geo/KML.pm
 %%SITE_PERL%%/Geo/KML.pod
 %%SITE_PERL%%/Geo/KML/Util.pm
 %%SITE_PERL%%/Geo/KML/Util.pod
 %%SITE_PERL%%/Geo/KML/xsd/atom-2005/atom-author-link.xsd
+%%SITE_PERL%%/Geo/KML/xsd/kml-2.1/kml21.xsd
 %%SITE_PERL%%/Geo/KML/xsd/kml-2.2-beta/fixes.xsd
 %%SITE_PERL%%/Geo/KML/xsd/kml-2.2-beta/kml22beta.xsd
 %%SITE_PERL%%/Geo/KML/xsd/kml-2.2.0/ReadMe.txt
-%%SITE_PERL%%/Geo/KML/xsd/kml-2.2.0/ogckml22.xsd
 %%SITE_PERL%%/Geo/KML/xsd/kml-2.2.0/kml22gx.xsd
+%%SITE_PERL%%/Geo/KML/xsd/kml-2.2.0/ogckml22.xsd
 %%SITE_PERL%%/Geo/KML/xsd/xal-2.0/xAL.xsd
-%%SITE_PERL%%/Geo/KML/xsd/kml-2.1/kml21.xsd
-@dirrmtry %%SITE_PERL%%/Geo/KML/xsd/atom-2005
-@dirrmtry %%SITE_PERL%%/Geo/KML/xsd/kml-2.2-beta
-@dirrmtry %%SITE_PERL%%/Geo/KML/xsd/kml-2.2.0
-@dirrmtry %%SITE_PERL%%/Geo/KML/xsd/kml-2.1
-@dirrmtry %%SITE_PERL%%/Geo/KML/xsd/xal-2.0
-@dirrmtry %%SITE_PERL%%/Geo/KML/xsd
-@dirrmtry %%SITE_PERL%%/Geo/KML
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/KML/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/KML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
-@dirrmtry %%SITE_PERL%%/mach
+@dirrmtry %%SITE_PERL%%/Geo/KML/xsd/xal-2.0
+@dirrmtry %%SITE_PERL%%/Geo/KML/xsd/kml-2.2.0
+@dirrmtry %%SITE_PERL%%/Geo/KML/xsd/kml-2.2-beta
+@dirrmtry %%SITE_PERL%%/Geo/KML/xsd/kml-2.1
+@dirrmtry %%SITE_PERL%%/Geo/KML/xsd/atom-2005
+@dirrmtry %%SITE_PERL%%/Geo/KML/xsd
+@dirrmtry %%SITE_PERL%%/Geo/KML
 @dirrmtry %%SITE_PERL%%/Geo

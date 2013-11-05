@@ -1,3 +1,13 @@
+%%PERL5_MAN3%%/Graph::Reader.3.gz
+%%PERL5_MAN3%%/Graph::Reader::Dot.3.gz
+%%PERL5_MAN3%%/Graph::Reader::HTK.3.gz
+%%PERL5_MAN3%%/Graph::Reader::XML.3.gz
+%%PERL5_MAN3%%/Graph::Writer.3.gz
+%%PERL5_MAN3%%/Graph::Writer::Dot.3.gz
+%%PERL5_MAN3%%/Graph::Writer::HTK.3.gz
+%%PERL5_MAN3%%/Graph::Writer::VCG.3.gz
+%%PERL5_MAN3%%/Graph::Writer::XML.3.gz
+%%PERL5_MAN3%%/Graph::Writer::daVinci.3.gz
 %%SITE_PERL%%/Graph/Reader.pm
 %%SITE_PERL%%/Graph/Reader/Dot.pm
 %%SITE_PERL%%/Graph/Reader/HTK.pm
@@ -9,8 +19,8 @@
 %%SITE_PERL%%/Graph/Writer/XML.pm
 %%SITE_PERL%%/Graph/Writer/daVinci.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph/ReadWrite/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph/ReadWrite
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph/ReadWrite
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph
-@dirrm %%SITE_PERL%%/Graph/Writer
-@dirrm %%SITE_PERL%%/Graph/Reader
+@dirrmtry %%SITE_PERL%%/Graph/Writer
+@dirrmtry %%SITE_PERL%%/Graph/Reader
 @dirrmtry %%SITE_PERL%%/Graph

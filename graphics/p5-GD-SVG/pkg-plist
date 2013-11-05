@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/SVG/.packlist
+%%PERL5_MAN3%%/GD::SVG.3.gz
 %%SITE_PERL%%/GD/SVG.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/SVG
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/SVG/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/SVG
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD
 @dirrmtry %%SITE_PERL%%/GD

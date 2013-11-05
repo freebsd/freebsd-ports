@@ -18,14 +18,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		GD::Graph.3 \
-		GD::Graph::Data.3 \
-		GD::Graph::Error.3 \
-		GD::Graph::FAQ.3 \
-		GD::Graph::colour.3 \
-		GD::Graph::hbars.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

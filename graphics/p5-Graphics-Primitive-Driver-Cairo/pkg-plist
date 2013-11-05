@@ -1,6 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Primitive/Driver/Cairo/.packlist
+%%PERL5_MAN3%%/Graphics::Primitive::Driver::Cairo.3.gz
+%%PERL5_MAN3%%/Graphics::Primitive::Driver::Cairo::TextLayout.3.gz
 %%SITE_PERL%%/Graphics/Primitive/Driver/Cairo.pm
 %%SITE_PERL%%/Graphics/Primitive/Driver/Cairo/TextLayout.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Primitive/Driver/Cairo/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Primitive/Driver/Cairo
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Primitive/Driver
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Primitive

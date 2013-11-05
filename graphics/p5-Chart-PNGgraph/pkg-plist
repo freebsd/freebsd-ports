@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/Chart::PNGgraph.3.gz
 %%SITE_PERL%%/Chart/PNGgraph.pm
 %%SITE_PERL%%/Chart/PNGgraph/Convert.pm
 %%SITE_PERL%%/Chart/PNGgraph/area.pm
@@ -9,7 +10,7 @@
 %%SITE_PERL%%/Chart/PNGgraph/pie.pm
 %%SITE_PERL%%/Chart/PNGgraph/points.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart/PNGgraph/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart/PNGgraph
-@dirrm %%SITE_PERL%%/Chart/PNGgraph
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart/PNGgraph
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart
+@dirrmtry %%SITE_PERL%%/Chart/PNGgraph
 @dirrmtry %%SITE_PERL%%/Chart

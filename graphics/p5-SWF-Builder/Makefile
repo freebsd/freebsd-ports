@@ -19,17 +19,6 @@ USES=		perl5
 USE_PERL5=	configure
 USE_DOS2UNIX=	yes
 
-MAN3=		SWF::Builder.3 SWF::Builder::ActionScript.3 \
-		SWF::Builder::Character::Bitmap.3 \
-		SWF::Builder::Character::EditText.3 \
-		SWF::Builder::Character::Font.3 \
-		SWF::Builder::Character::MovieClip.3 \
-		SWF::Builder::Character::Shape.3 \
-		SWF::Builder::Character::Sound.3 \
-		SWF::Builder::Character::Text.3 SWF::Builder::Gradient.3
-MAN1=		asc.plx.1
-
-NO_STAGE=	yes
 post-configure:
 	@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' ${WRKSRC}/Makefile
 

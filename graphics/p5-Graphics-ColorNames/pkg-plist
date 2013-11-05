@@ -1,7 +1,12 @@
+%%PERL5_MAN3%%/Graphics::ColorNames.3.gz
+%%PERL5_MAN3%%/Graphics::ColorNames::HTML.3.gz
+%%PERL5_MAN3%%/Graphics::ColorNames::Netscape.3.gz
+%%PERL5_MAN3%%/Graphics::ColorNames::Windows.3.gz
+%%PERL5_MAN3%%/Graphics::ColorNames::X.3.gz
 %%SITE_PERL%%/Graphics/ColorNames.pm
 %%SITE_PERL%%/Graphics/ColorNames/HTML.pm
 %%SITE_PERL%%/Graphics/ColorNames/Netscape.pm
 %%SITE_PERL%%/Graphics/ColorNames/Windows.pm
 %%SITE_PERL%%/Graphics/ColorNames/X.pm
-@dirrm %%SITE_PERL%%/Graphics/ColorNames
+@dirrmtry %%SITE_PERL%%/Graphics/ColorNames
 @dirrmtry %%SITE_PERL%%/Graphics

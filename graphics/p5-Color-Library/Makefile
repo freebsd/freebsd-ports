@@ -22,31 +22,4 @@ TEST_DEPENDS=	p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Color::Library.3 \
-		Color::Library::Color.3 \
-		Color::Library::Dictionary.3 \
-		Color::Library::Dictionary::HTML.3 \
-		Color::Library::Dictionary::IE.3 \
-		Color::Library::Dictionary::Mozilla.3 \
-		Color::Library::Dictionary::NBS_ISCC.3 \
-		Color::Library::Dictionary::NBS_ISCC::A.3 \
-		Color::Library::Dictionary::NBS_ISCC::B.3 \
-		Color::Library::Dictionary::NBS_ISCC::F.3 \
-		Color::Library::Dictionary::NBS_ISCC::H.3 \
-		Color::Library::Dictionary::NBS_ISCC::M.3 \
-		Color::Library::Dictionary::NBS_ISCC::P.3 \
-		Color::Library::Dictionary::NBS_ISCC::R.3 \
-		Color::Library::Dictionary::NBS_ISCC::RC.3 \
-		Color::Library::Dictionary::NBS_ISCC::S.3 \
-		Color::Library::Dictionary::NBS_ISCC::SC.3 \
-		Color::Library::Dictionary::NBS_ISCC::TC.3 \
-		Color::Library::Dictionary::Netscape.3 \
-		Color::Library::Dictionary::SVG.3 \
-		Color::Library::Dictionary::Tango.3 \
-		Color::Library::Dictionary::VACCC.3 \
-		Color::Library::Dictionary::WWW.3 \
-		Color::Library::Dictionary::Windows.3 \
-		Color::Library::Dictionary::X11.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

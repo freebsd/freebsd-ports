@@ -14,10 +14,7 @@ COMMENT=	Build a GraphViz object via callback traversal
 BUILD_DEPENDS=	p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	GraphViz::Traverse.3 GraphViz::Traverse::Filesystem.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

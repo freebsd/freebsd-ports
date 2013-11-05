@@ -13,13 +13,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl bindings for Imlib2
 
 USE_EFL=	imlib2
-
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Imlib2.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' ${WRKSRC}/Makefile.PL
 

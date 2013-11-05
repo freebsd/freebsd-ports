@@ -1,9 +1,10 @@
+%%PERL5_MAN3%%/Imlib2.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Imlib2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imlib2/Object.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imlib2/ooimlib.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imlib2/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imlib2/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imlib2/Imlib2.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imlib2/Imlib2.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imlib2/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imlib2
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Imlib2
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imlib2/autosplit.ix
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imlib2
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Imlib2

@@ -1,3 +1,15 @@
+%%PERL5_MAN3%%/CAD::Drawing.3.gz
+%%PERL5_MAN3%%/CAD::Drawing::Calculate.3.gz
+%%PERL5_MAN3%%/CAD::Drawing::Calculate::Finite.3.gz
+%%PERL5_MAN3%%/CAD::Drawing::Defined.3.gz
+%%PERL5_MAN3%%/CAD::Drawing::IO.3.gz
+%%PERL5_MAN3%%/CAD::Drawing::IO::Circ.3.gz
+%%PERL5_MAN3%%/CAD::Drawing::IO::Compressed.3.gz
+%%PERL5_MAN3%%/CAD::Drawing::IO::FlatYAML.3.gz
+%%PERL5_MAN3%%/CAD::Drawing::IO::Split.3.gz
+%%PERL5_MAN3%%/CAD::Drawing::Manipulate.3.gz
+%%PERL5_MAN3%%/CAD::Drawing::Manipulate::Graphics.3.gz
+%%PERL5_MAN3%%/CAD::Drawing::Manipulate::Transform.3.gz
 %%SITE_PERL%%/CAD/Drawing.pm
 %%SITE_PERL%%/CAD/Drawing/Calculate.pm
 %%SITE_PERL%%/CAD/Drawing/Calculate/Finite.pm
@@ -10,8 +22,8 @@
 %%SITE_PERL%%/CAD/Drawing/Manipulate.pm
 %%SITE_PERL%%/CAD/Drawing/Manipulate/Graphics.pm
 %%SITE_PERL%%/CAD/Drawing/Manipulate/Transform.pm
-@dirrm %%SITE_PERL%%/CAD/Drawing/Manipulate
-@dirrm %%SITE_PERL%%/CAD/Drawing/IO
-@dirrm %%SITE_PERL%%/CAD/Drawing/Calculate
-@dirrm %%SITE_PERL%%/CAD/Drawing
+@dirrmtry %%SITE_PERL%%/CAD/Drawing/Manipulate
+@dirrmtry %%SITE_PERL%%/CAD/Drawing/IO
+@dirrmtry %%SITE_PERL%%/CAD/Drawing/Calculate
+@dirrmtry %%SITE_PERL%%/CAD/Drawing
 @dirrmtry %%SITE_PERL%%/CAD

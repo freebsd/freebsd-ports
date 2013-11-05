@@ -1,16 +1,26 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/GraphViz/.packlist
-%%SITE_PERL%%/GraphViz.pm
+%%PERL5_MAN3%%/Devel::GraphVizProf.3.gz
+%%PERL5_MAN3%%/GraphViz.3.gz
+%%PERL5_MAN3%%/GraphViz::Data::Grapher.3.gz
+%%PERL5_MAN3%%/GraphViz::No.3.gz
+%%PERL5_MAN3%%/GraphViz::Parse::RecDescent.3.gz
+%%PERL5_MAN3%%/GraphViz::Parse::Yacc.3.gz
+%%PERL5_MAN3%%/GraphViz::Parse::Yapp.3.gz
+%%PERL5_MAN3%%/GraphViz::Regex.3.gz
+%%PERL5_MAN3%%/GraphViz::Small.3.gz
+%%PERL5_MAN3%%/GraphViz::XML.3.gz
 %%SITE_PERL%%/Devel/GraphVizProf.pm
-%%SITE_PERL%%/GraphViz/Small.pm
-%%SITE_PERL%%/GraphViz/Regex.pm
-%%SITE_PERL%%/GraphViz/XML.pm
+%%SITE_PERL%%/GraphViz.pm
+%%SITE_PERL%%/GraphViz/Data/Grapher.pm
 %%SITE_PERL%%/GraphViz/No.pm
-%%SITE_PERL%%/GraphViz/Parse/Yapp.pm
 %%SITE_PERL%%/GraphViz/Parse/RecDescent.pm
 %%SITE_PERL%%/GraphViz/Parse/Yacc.pm
-%%SITE_PERL%%/GraphViz/Data/Grapher.pm
-@dirrm %%SITE_PERL%%/GraphViz/Parse
-@dirrm %%SITE_PERL%%/GraphViz/Data
+%%SITE_PERL%%/GraphViz/Parse/Yapp.pm
+%%SITE_PERL%%/GraphViz/Regex.pm
+%%SITE_PERL%%/GraphViz/Small.pm
+%%SITE_PERL%%/GraphViz/XML.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GraphViz/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GraphViz
-@dirrmtry %%SITE_PERL%%/Devel
+@dirrmtry %%SITE_PERL%%/GraphViz/Parse
+@dirrmtry %%SITE_PERL%%/GraphViz/Data
 @dirrmtry %%SITE_PERL%%/GraphViz
+@dirrmtry %%SITE_PERL%%/Devel
