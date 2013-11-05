@@ -1,9 +1,10 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter/Transparent/SMTP/.packlist
+%%PERL5_MAN3%%/POE::Filter::Transparent::SMTP.3.gz
 %%SITE_PERL%%/POE/Filter/Transparent/SMTP.pm
-@dirrmtry %%SITE_PERL%%/POE/Filter/Transparent
-@dirrmtry %%SITE_PERL%%/POE/Filter
-@dirrmtry %%SITE_PERL%%/POE
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter/Transparent/SMTP
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter/Transparent/SMTP/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter/Transparent/SMTP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter/Transparent
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
+@dirrmtry %%SITE_PERL%%/POE/Filter/Transparent
+@dirrmtry %%SITE_PERL%%/POE/Filter
+@dirrmtry %%SITE_PERL%%/POE

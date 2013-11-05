@@ -16,7 +16,4 @@ BUILD_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::SMTP_auth.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

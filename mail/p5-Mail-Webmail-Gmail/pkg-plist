@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Mail::Webmail::Gmail.3.gz
 %%SITE_PERL%%/Mail/Webmail/Gmail.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Webmail/Gmail/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Webmail/Gmail
-@dirrmtry %%SITE_PERL%%/Mail/Webmail
-@dirrmtry %%SITE_PERL%%/Mail
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Webmail/Gmail
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Webmail
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
+@dirrmtry %%SITE_PERL%%/Mail/Webmail
+@dirrmtry %%SITE_PERL%%/Mail

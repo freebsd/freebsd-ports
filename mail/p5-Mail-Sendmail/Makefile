@@ -13,7 +13,4 @@ COMMENT=	Perl module implementing a simple, platform-independent mailer
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Mail::Sendmail.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

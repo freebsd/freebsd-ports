@@ -20,9 +20,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Email::Simple.3 \
-		Email::Simple::Creator.3 \
-		Email::Simple::Header.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

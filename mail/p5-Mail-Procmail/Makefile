@@ -17,7 +17,4 @@ RUN_DEPENDS= 	p5-LockFile-Simple>=0:${PORTSDIR}/devel/p5-LockFile-Simple \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Mail::Procmail.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

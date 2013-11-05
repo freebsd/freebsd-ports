@@ -1,3 +1,10 @@
+%%PERL5_MAN3%%/Mail::Audit.3.gz
+%%PERL5_MAN3%%/Mail::Audit::KillDups.3.gz
+%%PERL5_MAN3%%/Mail::Audit::MAPS.3.gz
+%%PERL5_MAN3%%/Mail::Audit::MailInternet.3.gz
+%%PERL5_MAN3%%/Mail::Audit::MimeEntity.3.gz
+%%PERL5_MAN3%%/Mail::Audit::Util::Tempdir.3.gz
+%%PERL5_MAN3%%/Mail::Audit::Vacation.3.gz
 %%SITE_PERL%%/Mail/Audit.pm
 %%SITE_PERL%%/Mail/Audit/KillDups.pm
 %%SITE_PERL%%/Mail/Audit/MAPS.pm
@@ -8,6 +15,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Audit/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Audit
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
-@dirrm %%SITE_PERL%%/Mail/Audit/Util
-@dirrm %%SITE_PERL%%/Mail/Audit
+@dirrmtry %%SITE_PERL%%/Mail/Audit/Util
+@dirrmtry %%SITE_PERL%%/Mail/Audit
 @dirrmtry %%SITE_PERL%%/Mail

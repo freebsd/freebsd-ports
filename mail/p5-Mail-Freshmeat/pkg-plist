@@ -1,8 +1,10 @@
+%%PERL5_MAN3%%/Freshmeat.3.gz
 %%SITE_PERL%%/Mail/Freshmeat.pm
 %%SITE_PERL%%/Mail/Freshmeat/Article.pm
 %%SITE_PERL%%/Mail/Freshmeat/Entry.pm
 %%SITE_PERL%%/Mail/Freshmeat/Utils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Freshmeat/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Freshmeat
-@dirrm %%SITE_PERL%%/Mail/Freshmeat
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Freshmeat
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
+@dirrmtry %%SITE_PERL%%/Mail/Freshmeat
 @dirrmtry %%SITE_PERL%%/Mail

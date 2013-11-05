@@ -1,4 +1,22 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/DKIM/.packlist
+bin/dkimsign.pl
+bin/dkimverify.pl
+%%PERL5_MAN3%%/Mail::DKIM.3.gz
+%%PERL5_MAN3%%/Mail::DKIM::Algorithm::Base.3.gz
+%%PERL5_MAN3%%/Mail::DKIM::AuthorDomainPolicy.3.gz
+%%PERL5_MAN3%%/Mail::DKIM::Canonicalization::Base.3.gz
+%%PERL5_MAN3%%/Mail::DKIM::Canonicalization::DkimCommon.3.gz
+%%PERL5_MAN3%%/Mail::DKIM::DNS.3.gz
+%%PERL5_MAN3%%/Mail::DKIM::DkPolicy.3.gz
+%%PERL5_MAN3%%/Mail::DKIM::DkSignature.3.gz
+%%PERL5_MAN3%%/Mail::DKIM::DkimPolicy.3.gz
+%%PERL5_MAN3%%/Mail::DKIM::Policy.3.gz
+%%PERL5_MAN3%%/Mail::DKIM::PrivateKey.3.gz
+%%PERL5_MAN3%%/Mail::DKIM::PublicKey.3.gz
+%%PERL5_MAN3%%/Mail::DKIM::Signature.3.gz
+%%PERL5_MAN3%%/Mail::DKIM::Signer.3.gz
+%%PERL5_MAN3%%/Mail::DKIM::SignerPolicy.3.gz
+%%PERL5_MAN3%%/Mail::DKIM::TextWrap.3.gz
+%%PERL5_MAN3%%/Mail::DKIM::Verifier.3.gz
 %%SITE_PERL%%/Mail/DKIM.pm
 %%SITE_PERL%%/Mail/DKIM/Algorithm/Base.pm
 %%SITE_PERL%%/Mail/DKIM/Algorithm/dk_rsa_sha1.pm
@@ -15,9 +33,9 @@
 %%SITE_PERL%%/Mail/DKIM/Canonicalization/simple.pm
 %%SITE_PERL%%/Mail/DKIM/Common.pm
 %%SITE_PERL%%/Mail/DKIM/DNS.pm
+%%SITE_PERL%%/Mail/DKIM/DkPolicy.pm
 %%SITE_PERL%%/Mail/DKIM/DkSignature.pm
 %%SITE_PERL%%/Mail/DKIM/DkimPolicy.pm
-%%SITE_PERL%%/Mail/DKIM/DkPolicy.pm
 %%SITE_PERL%%/Mail/DKIM/Key.pm
 %%SITE_PERL%%/Mail/DKIM/KeyValueList.pm
 %%SITE_PERL%%/Mail/DKIM/MessageParser.pm
@@ -30,11 +48,10 @@
 %%SITE_PERL%%/Mail/DKIM/TextWrap.pm
 %%SITE_PERL%%/Mail/DKIM/Verifier.pm
 %%SITE_PERL%%/Mail/sample_mime_lite.pl
-bin/dkimsign.pl
-bin/dkimverify.pl
-@dirrm %%SITE_PERL%%/Mail/DKIM/Canonicalization
-@dirrm %%SITE_PERL%%/Mail/DKIM/Algorithm
-@dirrm %%SITE_PERL%%/Mail/DKIM
-@dirrmtry %%SITE_PERL%%/Mail
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/DKIM
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/DKIM/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/DKIM
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
+@dirrmtry %%SITE_PERL%%/Mail/DKIM/Canonicalization
+@dirrmtry %%SITE_PERL%%/Mail/DKIM/Algorithm
+@dirrmtry %%SITE_PERL%%/Mail/DKIM
+@dirrmtry %%SITE_PERL%%/Mail

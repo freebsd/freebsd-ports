@@ -1,4 +1,7 @@
-%%SITE_PERL%%/Mail/mailfilter.pl
+%%PERL5_MAN3%%/Mail::FilterXML.3.gz
 %%SITE_PERL%%/Mail/FilterXML.pm
+%%SITE_PERL%%/Mail/mailfilter.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/FilterXML/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/FilterXML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/FilterXML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
+@dirrmtry %%SITE_PERL%%/Mail

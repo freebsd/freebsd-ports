@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Email::Filter.3.gz
 %%SITE_PERL%%/Email/Filter.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Filter/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Filter
-@dirrmtry %%SITE_PERL%%/Email
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Filter
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email
+@dirrmtry %%SITE_PERL%%/Email

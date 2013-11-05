@@ -16,14 +16,11 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		POE::Component::Client::POP3.3
-
-NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/samples/* ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/samples/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

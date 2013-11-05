@@ -1,9 +1,11 @@
+%%PERL5_MAN3%%/MIME::Type.3.gz
+%%PERL5_MAN3%%/MIME::Types.3.gz
 %%SITE_PERL%%/MIME/Type.pm
-%%SITE_PERL%%/MIME/Types.pm
 %%SITE_PERL%%/MIME/Type.pod
+%%SITE_PERL%%/MIME/Types.pm
 %%SITE_PERL%%/MIME/Types.pod
 %%SITE_PERL%%/MIME/types.db
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Types/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Types
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Types
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME
 @dirrmtry %%SITE_PERL%%/MIME

@@ -14,7 +14,4 @@ COMMENT=	Perl OO interface to procmail rc files
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Mail::Procmailrc.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

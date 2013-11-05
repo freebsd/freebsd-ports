@@ -19,11 +19,4 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS+=	</dev/null
 
-MAN3=		Mail::Mbox::MessageParser.3 \
-		Mail::Mbox::MessageParser::Cache.3 \
-		Mail::Mbox::MessageParser::Grep.3 \
-		Mail::Mbox::MessageParser::Perl.3 \
-		Mail::Mbox::MessageParser::MetaInfo.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

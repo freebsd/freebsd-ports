@@ -22,8 +22,4 @@ CONFLICTS=	libspf2-[0-9]* p5-Mail-SPF-[0-9]*
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		spfd.1 spfquery.1
-MAN3=		Mail::SPF::Query.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
