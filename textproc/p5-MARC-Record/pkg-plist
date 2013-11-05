@@ -1,4 +1,13 @@
 bin/marcdump
+man/man1/marcdump.1.gz
+%%PERL5_MAN3%%/MARC::Batch.3.gz
+%%PERL5_MAN3%%/MARC::Doc::Tutorial.3.gz
+%%PERL5_MAN3%%/MARC::Field.3.gz
+%%PERL5_MAN3%%/MARC::File::Encode.3.gz
+%%PERL5_MAN3%%/MARC::File.3.gz
+%%PERL5_MAN3%%/MARC::File::MicroLIF.3.gz
+%%PERL5_MAN3%%/MARC::File::USMARC.3.gz
+%%PERL5_MAN3%%/MARC::Record.3.gz
 %%SITE_PERL%%/MARC/Batch.pm
 %%SITE_PERL%%/MARC/Doc/Tutorial.pod
 %%SITE_PERL%%/MARC/Field.pm
