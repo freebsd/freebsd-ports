@@ -29,6 +29,7 @@ USE_QT4=	qmake_build moc_build rcc_build uic_build \
 		corelib dbus designer gui network qt3support sql webkit
 USE_OPENLDAP=	yes
 USE_LDCONFIG=	yes
+MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
 
 MAN1=		kabcclient.1
 
