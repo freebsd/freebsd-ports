@@ -2634,6 +2634,7 @@
     SUBDIR += p5-Scope-Guard
     SUBDIR += p5-Scope-Upper
     SUBDIR += p5-Search-Binary
+    SUBDIR += p5-Sentinel
     SUBDIR += p5-Sepia
     SUBDIR += p5-Set-Array
     SUBDIR += p5-Set-ConsistentHash
