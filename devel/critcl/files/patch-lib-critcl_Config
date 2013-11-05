@@ -1,0 +1,21 @@
+--- lib/critcl/Config.orig	2013-11-05 09:57:26.000000000 +0100
++++ lib/critcl/Config	2013-11-05 09:57:54.000000000 +0100
+@@ -52,13 +52,13 @@
+ # the "copy" option and then specifically setting the config bits that
+ # you want to change. See win32-x86_64-cl for an example.
+ 
+-compile         gcc -c -fPIC
+-version         gcc -v
+-link            gcc -shared
++compile         %%CC%% -c -fPIC
++version         %%CC%% -v
++link            %%CC%% -shared
+ include         -I
+ libinclude      -L
+-preproc_define  gcc -E -dM
+-preproc_enum    gcc -E
++preproc_define  %%CC%% -E -dM
++preproc_enum    %%CC%% -E
+ tclstubs        -DUSE_TCL_STUBS
+ tkstubs         -DUSE_TK_STUBS
+ debug_memory    -DTCL_MEM_DEBUG
