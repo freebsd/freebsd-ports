@@ -4,20 +4,15 @@
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Version control system
 
-CONFLICTS_INSTALL=	subversion-1.[6|7].[0-9]*
+_CONFLICTS_INSTALL=	subversion-1.[^8].[0-9]* \
+			subversion1[^8]-1.[^8].[0-9]*
 
 USE_RC_SUBR=	svnserve
 
-MAN1=		svn.1 svnadmin.1 svnlook.1 svndumpfilter.1 svnrdump.1 \
-		svnsync.1 svnversion.1 svnmucc.1
-MAN5=		svnserve.conf.5
-MAN8=		svnserve.8
-
-TXT_DOCS=	BUGS CHANGES COMMITTERS INSTALL README
+PORTDOCS=	BUGS CHANGES COMMITTERS INSTALL README
 
 OPTIONS_DEFINE=	\
 		BDB		\
-		BOOK		\
 		DOCS		\
 		FREEBSD_TEMPLATE\
 		GNOME_KEYRING	\
@@ -37,7 +32,6 @@ OPTIONS_DEFAULT=P4_STYLE_MARKERS \
 		FREEBSD_TEMPLATE \
 		SERF
 
-BOOK_DESC=		Install the Subversion Book
 FREEBSD_TEMPLATE_DESC=	FreeBSD Project log template
 GNOME_KEYRING_DESC=	Build with GNOME Keyring auth support
 KDE_KWALLET_DESC=	Build with KDE KWallet auth support
@@ -55,26 +49,15 @@ P4_STYLE_MARKERS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-3way-conflict-markers
 FREEBSD_TEMPLATE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-fbsd-template
 SVNSERVE_WRAPPER_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-svnserve-wrapper
 
-NO_STAGE=	yes
 .include "Makefile.common"
-
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 SVNREPOS?=	/home/svn/repos
 SVNFSTYPE?=	fsfs
 
 SUB_FILES=	pkg-install
 
-BOOK_VERSION=	4515
-
 .if !${PORT_OPTIONS:MMAINTAINER_DEBUG}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.in
-.endif
-
-.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MBOOK}
-BOOK_HTML=	svn-book-html-r${BOOK_VERSION}.tar.bz2
-BOOK_PDF=	svn-book-r${BOOK_VERSION}.pdf
-DISTFILES+=	${BOOK_HTML}:book ${BOOK_PDF}:book
 .endif
 
 .if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
@@ -123,38 +106,6 @@ MKREPOS_TARGET=	_mkrepos
 
 pre-everything::
 	@${ECHO_MSG} ""
-.if ${PORT_OPTIONS:MBDB}
-	@${ECHO_MSG} "Berkeley DB (4 or 5) repository backend enabled."
-.else
-	@${ECHO_MSG} "Berkeley DB (4 or 5) repository backend disabled."
-.endif
-	@${ECHO_MSG} ""
-.if ${PORT_OPTIONS:MMAINTAINER_DEBUG}
-	@${ECHO_MSG} "Build debug version."
-	@${ECHO_MSG} ""
-.endif
-.if ${PORT_OPTIONS:MTOOLS}
-	@${ECHO_MSG} "Several tools enabled."
-.else
-	@${ECHO_MSG} "You can enable installation fo tools"
-.endif
-	@${ECHO_MSG} ""
-.if ${PORT_OPTIONS:MMOD_DAV_SVN}
-	@${ECHO_MSG} "mod_dav_svn module for Apache 2.X enabled."
-.else
-	@${ECHO_MSG} "You can enable the mod_dav_svn module for Apache 2.X"
-.endif
-	@${ECHO_MSG} ""
-.if ${PORT_OPTIONS:MTOOLS} && ${PORT_OPTIONS:MMOD_DAV_SVN}
-	@${ECHO_MSG} "mod_dontdothat module for Apache 2.X enabled."
-.else
-	@${ECHO_MSG} "You can enable the mod_dontdothat module for Apache 2.X"
-.endif
-	@${ECHO_MSG} ""
-.if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
-	@${ECHO_MSG} "svnserve wrapper enabled."
-	@${ECHO_MSG} ""
-.endif
 .if defined(WITH_REPOSITORY_CREATION)
 	@${ECHO_MSG} "I will create (or use, if it exists) '${SVNUSER}' user and '${SVNGROUP}' group."
 	@${ECHO_MSG} "Make sure that all committers are its members."
@@ -174,21 +125,11 @@ pre-everything::
 .endif
 
 	@${ECHO_MSG} ""
-.if !defined(NOPORTDOCS) && ${PORT_OPTIONS:MBOOK}
-	@${ECHO_MSG} "Subversion Book will be installed."
-	@${ECHO_MSG} ""
-.endif
 .if ${PORT_OPTIONS:MSTATIC}
 .  if ${PORT_OPTIONS:MMOD_DAV_SVN}
 	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	@${ECHO_MSG} "!!! mod_dav_svn and static build are not compatible !!!"
 	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${FALSE}
-.  endif
-.  if ${PORT_OPTIONS:MSVNAUTHZ_VALIDATE}
-	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${ECHO_MSG} "!!! svnauthz_validate and static build are not compatible !!!"
-	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	@${FALSE}
 .  endif
 .  if ${PORT_OPTIONS:MGNOME_KEYRING}
@@ -246,40 +187,18 @@ post-build:
 	@${MAKE} -C ${WRKSRC} tools ${MAKE_ARGS}
 .endif
 
-pre-install:
-.if ${PORT_OPTIONS:MMOD_DAV_SVN}
-# activate dav_module now in pkg-install to prevent double activation.
-# workaround for apxs bug: https://issues.apache.org/bugzilla/show_bug.cgi?id=47397
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-.endif
-
 post-install:	${MKREPOS_TARGET}
 .if ${PORT_OPTIONS:MTOOLS}
 	@${MAKE} -C ${WRKSRC} install-tools ${MAKE_ARGS}
 .endif
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/tools.examples && ${TAR} --exclude '*.in' -cf - * | ${TAR} -C ${STAGEDIR}${DATADIR} -xof - )
 
-	@${MKDIR} ${DATADIR}
-	@(cd ${WRKSRC}/tools.examples && ${TAR} --exclude '*.in' -cf - * | ${TAR} -C ${DATADIR} -xof - )
-
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${TXT_DOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.  if ${PORT_OPTIONS:MBOOK}
-	${TAR} -xof ${DISTDIR}/${DIST_SUBDIR}/${BOOK_HTML} -C ${DOCSDIR}
-	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/${BOOK_PDF} ${DOCSDIR}/svn-book.pdf
-.  endif
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
-	@${INSTALL_SCRIPT} ${FILESDIR}/svnserve.wrapper ${PREFIX}/bin/svnserve
-.endif
-
-.if ${PORT_OPTIONS:MMOD_DAV_SVN}
-	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dav_svn ${PREFIX}/${APACHEMODDIR}/mod_dav_svn.so
-	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n authz_svn ${PREFIX}/${APACHEMODDIR}/mod_authz_svn.so
-.  if ${PORT_OPTIONS:MTOOLS}
-	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dontdothat ${PREFIX}/${APACHEMODDIR}/mod_dontdothat.so
-.  endif
+	@${INSTALL_SCRIPT} ${FILESDIR}/svnserve.wrapper ${STAGEDIR}${PREFIX}/bin/svnserve
 .endif
 
 # ===============================================================================

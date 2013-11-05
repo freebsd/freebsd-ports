@@ -1,18 +1,18 @@
 @comment $FreeBSD$
-bin/svn
 %%TOOLS%%bin/fsfs-access-map
 %%TOOLS%%bin/fsfs-reorg
 %%TOOLS%%bin/fsfs-stats
+bin/svn
 %%TOOLS%%bin/svn-bench
 %%TOOLS%%bin/svn-populate-node-origins-index
 %%TOOLS%%bin/svn-rep-sharing-stats
+bin/svnadmin
 %%TOOLS%%bin/svnauthz
 %%TOOLS%%bin/svnauthz-validate
-%%TOOLS%%bin/svnraisetreeconflict
-bin/svnadmin
 bin/svndumpfilter
 bin/svnlook
 bin/svnmucc
+%%TOOLS%%bin/svnraisetreeconflict
 bin/svnrdump
 bin/svnserve
 %%SVNSERVE_WRAPPER%%bin/svnserve.bin
@@ -136,32 +136,21 @@ lib/libsvn_wc-1.la
 %%MOD_DAV_SVN%%%%TOOLS%%@unexec %%SED%% -i '' -E '/LoadModule[[:blank:]]+dontdothat_module/d' %D/%%APACHEETCDIR%%/httpd.conf
 %%MOD_DAV_SVN%%%%TOOLS%%%%APACHEMODDIR%%/mod_dontdothat.so
 %%MOD_DAV_SVN%%%%TOOLS%%@exec %D/sbin/apxs -e -a -n dontdothat %D/%F
+man/man1/svn.1.gz
+man/man1/svnadmin.1.gz
+man/man1/svndumpfilter.1.gz
+man/man1/svnlook.1.gz
+man/man1/svnmucc.1.gz
+man/man1/svnrdump.1.gz
+man/man1/svnsync.1.gz
+man/man1/svnversion.1.gz
+man/man5/svnserve.conf.5.gz
+man/man8/svnserve.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COMMITTERS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch01dia1.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch02dia1.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch02dia2.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch02dia3.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch02dia4.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch02dia5.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch02dia6.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch02dia7.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch04dia1.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch04dia2.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch04dia3.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch04dia4.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch08dia1.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch08dia2.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/draft.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/note.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/tip.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/warning.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/styles.css
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/svn-book.html
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book.pdf
 %%NLS%%share/locale/de/LC_MESSAGES/subversion.mo
 %%NLS%%share/locale/es/LC_MESSAGES/subversion.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/subversion.mo
@@ -466,7 +455,5 @@ lib/libsvn_wc-1.la
 @dirrm %%DATADIR%%/bdb
 @dirrm %%DATADIR%%/backup
 @dirrm %%DATADIR%%
-%%PORTDOCS%%%%BOOK%%@dirrm %%DOCSDIR%%/svn-book-html/images
-%%PORTDOCS%%%%BOOK%%@dirrm %%DOCSDIR%%/svn-book-html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/subversion-1
