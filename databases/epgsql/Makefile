@@ -2,6 +2,7 @@
 
 PORTNAME=	epgsql
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	GH
 
@@ -25,7 +26,19 @@ ALL_TARGET=	app
 
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS OPSCODE
+OPSCODE_DESC=	Use a fork by opscode for chef
+# XXX databases/erl-sqerl requires patched epgsql available at
+# https://github.com/opscode/epgsql
+OPTIONS_DEFAULT=	OPSCODE
+
 .include <bsd.port.options.mk>
+
+do-patch:
+.if ${PORT_OPTIONS:MOPSCODE}
+	${PATCH} -p1 -d ${WRKSRC} < files/opscode.patch
+	${RM} ${WRKSRC}/src/*.orig
+.endif
 
 do-install:
 .if ${PORT_OPTIONS:MDOCS}

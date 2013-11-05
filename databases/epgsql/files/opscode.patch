@@ -1,0 +1,369 @@
+XXX Makefile is excluded because opscode Makefile replaces VERSION with the latest commit.
+diff -Nru --exclude .git --exclude Makefile --exclude epgsql.app.src wg-epgsql-6dd2d26/README epgsql/README
+--- wg-epgsql-6dd2d26/README	2011-08-29 19:34:54.000000000 +0900
++++ epgsql/README	2013-11-05 11:20:59.000000000 +0900
+@@ -20,7 +20,8 @@
+   ok = pgsql:close(C).
+ 
+   The timeout parameter will trigger an {error, timeout} result when the
+-  server fails to respond within Timeout milliseconds.
++  server fails to respond within Timeout milliseconds. This timeout applies
++  to the initial connection attempt and any subsequent queries.
+ 
+ * Simple Query
+ 
+Files wg-epgsql-6dd2d26/rebar and epgsql/rebar differ
+diff -Nru --exclude .git --exclude Makefile --exclude epgsql.app.src wg-epgsql-6dd2d26/rebar.config epgsql/rebar.config
+--- wg-epgsql-6dd2d26/rebar.config	1970-01-01 09:00:00.000000000 +0900
++++ epgsql/rebar.config	2013-11-05 11:20:59.000000000 +0900
+@@ -0,0 +1 @@
++{eunit_compile_opts, [{src_dirs, ["test_src"]}]}.
+diff -Nru --exclude .git --exclude Makefile --exclude epgsql.app.src wg-epgsql-6dd2d26/src/pgsql_binary.erl epgsql/src/pgsql_binary.erl
+--- wg-epgsql-6dd2d26/src/pgsql_binary.erl	2011-08-29 19:34:54.000000000 +0900
++++ epgsql/src/pgsql_binary.erl	2013-11-05 11:20:59.000000000 +0900
+@@ -26,12 +26,17 @@
+ encode(bytea, B) when is_binary(B)          -> <<(byte_size(B)):?int32, B/binary>>;
+ encode(text, B) when is_binary(B)           -> <<(byte_size(B)):?int32, B/binary>>;
+ encode(varchar, B) when is_binary(B)        -> <<(byte_size(B)):?int32, B/binary>>;
++encode(uuid, B) when is_binary(B)           -> encode_uuid(B);
+ encode(boolarray, L) when is_list(L)        -> encode_array(bool, L);
+ encode(int2array, L) when is_list(L)        -> encode_array(int2, L);
+ encode(int4array, L) when is_list(L)        -> encode_array(int4, L);
+ encode(int8array, L) when is_list(L)        -> encode_array(int8, L);
++encode(float4array, L) when is_list(L)      -> encode_array(float4, L);
++encode(float8array, L) when is_list(L)      -> encode_array(float8, L);
+ encode(chararray, L) when is_list(L)        -> encode_array(bpchar, L);
+ encode(textarray, L) when is_list(L)        -> encode_array(text, L);
++encode(uuidarray, L) when is_list(L)        -> encode_array(uuid, L);
++encode(varchararray, L) when is_list(L)     -> encode_array(varchar, L);
+ encode(Type, L) when is_list(L)             -> encode(Type, list_to_binary(L));
+ encode(_Type, _Value)                       -> {error, unsupported}.
+ 
+@@ -50,18 +55,23 @@
+ decode(timestamp = Type, B)                 -> ?datetime:decode(Type, B);
+ decode(timestamptz = Type, B)               -> ?datetime:decode(Type, B);
+ decode(interval = Type, B)                  -> ?datetime:decode(Type, B);
++decode(uuid, B)                             -> decode_uuid(B);
+ decode(boolarray, B)                        -> decode_array(B);
+ decode(int2array, B)                        -> decode_array(B);
+ decode(int4array, B)                        -> decode_array(B);
+ decode(int8array, B)                        -> decode_array(B);
++decode(float4array, B)                      -> decode_array(B);
++decode(float8array, B)                      -> decode_array(B);
+ decode(chararray, B)                        -> decode_array(B);
+ decode(textarray, B)                        -> decode_array(B);
++decode(uuidarray, B)                        -> decode_array(B);
++decode(varchararray, B)                     -> decode_array(B);
+ decode(_Other, Bin)                         -> Bin.
+ 
+ encode_array(Type, A) ->
+     {Data, {NDims, Lengths}} = encode_array(Type, A, 0, []),
+     Oid  = pgsql_types:type2oid(Type),
+-    Lens = [<<N:?int32, 0:?int32>> || N <- lists:reverse(Lengths)],
++    Lens = [<<N:?int32, 1:?int32>> || N <- lists:reverse(Lengths)],
+     Hdr  = <<NDims:?int32, 0:?int32, Oid:?int32>>,
+     Bin  = iolist_to_binary([Hdr, Lens, Data]),
+     <<(byte_size(Bin)):?int32, Bin/binary>>.
+@@ -109,6 +119,24 @@
+     Value2 = decode(pgsql_types:oid2type(Type), Value),
+     decode_record(Rest, [Value2 | Acc]).
+ 
++%% @doc encode a UUID.  This accepts UUIDs as lists or binaries in either form of:
++%%   <<"80910cc0-f7a5-45a6-9528-22d335b03e05">>
++%% or
++%%   <<"80910cc0f7a545a6952822d335b03e05">>
++encode_uuid(U) when is_binary(U) ->
++    encode_uuid(binary_to_list(U));
++encode_uuid(U) ->
++    Hex = lists:filter(fun(Elem) -> Elem /= $- end, U),
++    {ok, [Int], _} = io_lib:fread("~16u", Hex),
++    <<16:?int32,Int:128>>.
++
++%% @doc decode a UUID to the format:
++%%   <<"80910cc0-f7a5-45a6-9528-22d335b03e05">>
++decode_uuid(<<U0:32, U1:16, U2:16, U3:16, U4:48>>) ->
++    list_to_binary(lists:flatten(io_lib:format("~8.16.0b-~4.16.0b-~4.16.0b-~4.16.0b-~12.16.0b",
++                                               [U0, U1, U2, U3, U4]))).
++
++
+ supports(bool)    -> true;
+ supports(bpchar)  -> true;
+ supports(int2)    -> true;
+@@ -126,10 +154,15 @@
+ supports(timestamp)   -> true;
+ supports(timestamptz) -> true;
+ supports(interval)    -> true;
++supports(uuid)        -> true;
+ supports(boolarray)   -> true;
+ supports(int2array)   -> true;
+ supports(int4array)   -> true;
+ supports(int8array)   -> true;
++supports(float4array) -> true;
++supports(float8array) -> true;
+ supports(chararray)   -> true;
+ supports(textarray)   -> true;
++supports(uuidarray)   -> true;
++supports(varchararray)   -> true;
+ supports(_Type)       -> false.
+diff -Nru --exclude .git --exclude Makefile --exclude epgsql.app.src wg-epgsql-6dd2d26/src/pgsql_connection.erl epgsql/src/pgsql_connection.erl
+--- wg-epgsql-6dd2d26/src/pgsql_connection.erl	2011-08-29 19:34:54.000000000 +0900
++++ epgsql/src/pgsql_connection.erl	2013-11-05 11:20:59.000000000 +0900
+@@ -14,8 +14,8 @@
+ 
+ -export([startup/3, auth/2, initializing/2, ready/2, ready/3]).
+ -export([querying/2, parsing/2, binding/2, describing/2]).
+--export([executing/2, closing/2, synchronizing/2, timeout/2]).
+--export([aborted/3]).
++-export([executing/2, closing/2, synchronizing/2, synchronizing/3]).
++-export([timeout/2]).
+ 
+ -include("pgsql.hrl").
+ 
+@@ -27,6 +27,8 @@
+           reply,
+           reply_to,
+           async,
++          autosync=false,
++          callers=[],
+           backend,
+           statement,
+           txstatus}).
+@@ -46,31 +48,31 @@
+     gen_fsm:sync_send_event(C, {connect, Host, Username, Password, Opts}, infinity).
+ 
+ get_parameter(C, Name) ->
+-    gen_fsm:sync_send_event(C, {get_parameter, to_binary(Name)}).
++    sync_send_event(C, {get_parameter, to_binary(Name)}, infinity).
+ 
+ squery(C, Sql) ->
+-    gen_fsm:sync_send_event(C, {squery, Sql}, infinity).
++    sync_send_event(C, {squery, Sql}, infinity).
+ 
+ equery(C, Statement, Parameters) ->
+-    gen_fsm:sync_send_event(C, {equery, Statement, Parameters}, infinity).
++    sync_send_event(C, {equery, Statement, Parameters}, infinity).
+ 
+ parse(C, Name, Sql, Types) ->
+-    gen_fsm:sync_send_event(C, {parse, Name, Sql, Types}, infinity).
++    sync_send_event(C, {parse, Name, Sql, Types}, infinity).
+ 
+ bind(C, Statement, PortalName, Parameters) ->
+-    gen_fsm:sync_send_event(C, {bind, Statement, PortalName, Parameters}, infinity).
++    sync_send_event(C, {bind, Statement, PortalName, Parameters}, infinity).
+ 
+ execute(C, Statement, PortalName, MaxRows) ->
+-    gen_fsm:sync_send_event(C, {execute, Statement, PortalName, MaxRows}, infinity).
++    sync_send_event(C, {execute, Statement, PortalName, MaxRows}, infinity).
+ 
+ describe(C, Type, Name) ->
+-    gen_fsm:sync_send_event(C, {describe, Type, Name}, infinity).
++    sync_send_event(C, {describe, Type, Name}, infinity).
+ 
+ close(C, Type, Name) ->
+-    gen_fsm:sync_send_event(C, {close, Type, Name}, infinity).
++    sync_send_event(C, {close, Type, Name}, infinity).
+ 
+ sync(C) ->
+-    gen_fsm:sync_send_event(C, sync, infinity).
++    sync_send_event(C, sync, infinity).
+ 
+ %% -- gen_fsm implementation --
+ 
+@@ -295,6 +297,12 @@
+     State2 = State#state{reply = ok, reply_to = From},
+     {next_state, synchronizing, State2, Timeout}.
+ 
++%% If a caller sends a request while the connection is autosyncing
++%% store the caller's pid and tell them to wait.
++synchronizing(_Msg, {Pid, _Tag}, #state{callers = Callers, autosync = true} = State) ->
++    {reply, {wait, synchronizing}, synchronizing, State#state{callers = [Pid|Callers]}}.
++
++
+ %% BindComplete
+ querying({$2, <<>>}, State) ->
+     #state{timeout = Timeout, statement = #statement{columns = Columns}} = State,
+@@ -470,7 +478,11 @@
+ executing({error, E}, State) ->
+     #state{timeout = Timeout} = State,
+     notify(State, {error, E}),
+-    {next_state, aborted, State, Timeout}.
++    %% Send sync command to database and transition immediately
++    %% to synchronizing state. This automatically handles the
++    %% case where the driver needs to checkpoint after an error
++    send(State, $S, []),
++    {next_state, synchronizing, State#state{autosync = true}, Timeout}.
+ 
+ %% CloseComplete
+ closing({$3, <<>>}, State) ->
+@@ -500,9 +512,8 @@
+ 
+ %% ReadyForQuery
+ synchronizing({$Z, <<Status:8>>}, State) ->
+-    #state{reply = Reply, reply_to = Reply_To} = State,
+-    gen_fsm:reply(Reply_To, Reply),
+-    {next_state, ready, State#state{reply = undefined, txstatus = Status}}.
++    State1 = maybe_reply(State),
++    {next_state, ready, State1#state{reply = undefined, txstatus = Status, autosync = false}}.
+ 
+ timeout({$Z, <<Status:8>>}, State) ->
+     notify(State, timeout),
+@@ -516,16 +527,6 @@
+     #state{timeout = Timeout} = State,
+     {next_state, timeout, State, Timeout}.
+ 
+-aborted(sync, From, State) ->
+-    #state{timeout = Timeout} = State,
+-    send(State, $S, []),
+-    State2 = State#state{reply = ok, reply_to = From},
+-    {next_state, synchronizing, State2, Timeout};
+-
+-aborted(_Msg, _From, State) ->
+-    #state{timeout = Timeout} = State,
+-    {reply, {error, sync_required}, aborted, State, Timeout}.
+-
+ %% -- internal functions --
+ 
+ %% decode data
+@@ -659,3 +660,25 @@
+ 
+ send(#state{sock = Sock}, Type, Data) ->
+     pgsql_sock:send(Sock, Type, Data).
++
++%% If autosyncing, tell callers we are done so they can
++%% retry their request
++maybe_reply(#state{autosync = true, callers = Callers} = State) ->
++    [Caller ! {ok, proceed} || Caller <- Callers],
++    State#state{callers = []};
++%% If not autosyncing, send FSM reply as usual
++maybe_reply(#state{reply = Reply, reply_to = Reply_To, autosync = false} = State) ->
++    gen_fsm:reply(Reply_To, Reply),
++    State.
++
++%% send event and handle connection autosync
++sync_send_event(C, Event, Timeout) ->
++    case gen_fsm:sync_send_event(C, Event, Timeout) of
++        {wait, synchronizing} ->
++            receive
++                {ok, proceed} ->
++                    sync_send_event(C, Event, Timeout)
++            end;
++        R ->
++            R
++    end.
+diff -Nru --exclude .git --exclude Makefile --exclude epgsql.app.src wg-epgsql-6dd2d26/src/pgsql_types.erl epgsql/src/pgsql_types.erl
+--- wg-epgsql-6dd2d26/src/pgsql_types.erl	2011-08-29 19:34:54.000000000 +0900
++++ epgsql/src/pgsql_types.erl	2013-11-05 11:20:59.000000000 +0900
+@@ -46,10 +46,12 @@
+ oid2type(1014) -> chararray;
+ oid2type(1016) -> int8array;
+ oid2type(1021) -> float4array;
++oid2type(1022) -> float8array;
+ oid2type(1033) -> aclitem;
+ oid2type(1263) -> cstringarray;
+ oid2type(1042) -> bpchar;
+ oid2type(1043) -> varchar;
++oid2type(1015) -> varchararray;
+ oid2type(1082) -> date;
+ oid2type(1083) -> time;
+ oid2type(1114) -> timestamp;
+@@ -83,6 +85,8 @@
+ oid2type(2283) -> anyelement;
+ oid2type(2776) -> anynonarray;
+ oid2type(3500) -> anyenum;
++oid2type(2950) -> uuid;
++oid2type(2951) -> uuidarray;
+ oid2type(Oid)  -> {unknown_oid, Oid}.
+ 
+ type2oid(bool)                  -> 16;
+@@ -129,10 +133,12 @@
+ type2oid(chararray)             -> 1014;
+ type2oid(int8array)             -> 1016;
+ type2oid(float4array)           -> 1021;
++type2oid(float8array)           -> 1022;
+ type2oid(aclitem)               -> 1033;
+ type2oid(cstringarray)          -> 1263;
+ type2oid(bpchar)                -> 1042;
+ type2oid(varchar)               -> 1043;
++type2oid(varchararray)          -> 1015;
+ type2oid(date)                  -> 1082;
+ type2oid(time)                  -> 1083;
+ type2oid(timestamp)             -> 1114;
+@@ -166,4 +172,6 @@
+ type2oid(anyelement)            -> 2283;
+ type2oid(anynonarray)           -> 2776;
+ type2oid(anyenum)               -> 3500;
++type2oid(uuid)                  -> 2950;
++type2oid(uuidarray)             -> 2951;
+ type2oid(Type)                  -> {unknown_type, Type}.
+diff -Nru --exclude .git --exclude Makefile --exclude epgsql.app.src wg-epgsql-6dd2d26/test_src/pgsql_tests.erl epgsql/test_src/pgsql_tests.erl
+--- wg-epgsql-6dd2d26/test_src/pgsql_tests.erl	2011-08-29 19:34:54.000000000 +0900
++++ epgsql/test_src/pgsql_tests.erl	2013-11-05 11:20:59.000000000 +0900
+@@ -266,7 +266,7 @@
+           {ok, S} = pgsql:parse(C, "insert into test_table1 (id, value) values ($1, $2)"),
+           ok = pgsql:bind(C, S, [1, <<"foo">>]),
+           {error, #error{code = <<"23505">>}} = pgsql:execute(C, S, 0),
+-          {error, sync_required} = pgsql:bind(C, S, [3, <<"quux">>]),
++          ok = pgsql:bind(C, S, [3, <<"quux">>]),
+           ok = pgsql:sync(C),
+           ok = pgsql:bind(C, S, [3, <<"quux">>]),
+           {ok, _} = pgsql:execute(C, S, 0),
+@@ -427,19 +427,29 @@
+ array_type_test() ->
+     with_connection(
+       fun(C) ->
+-          Select = fun(Type, V) ->
+-                       Query = "select $1::" ++ Type,
+-                       {ok, _Cols, [{V}]} = pgsql:equery(C, Query, [V])
++          {ok, _, [{[1, 2]}]} = pgsql:equery(C, "select ($1::int[])[1:2]", [[1, 2, 3]]),
++          Select = fun(Type, A) ->
++                       Query = "select $1::" ++ atom_to_list(Type) ++ "[]",
++                       {ok, _Cols, [{A2}]} = pgsql:equery(C, Query, [A]),
++                       case lists:all(fun({V, V2}) -> compare(Type, V, V2) end, lists:zip(A, A2)) of
++                           true  -> ok;
++                           false -> ?assertMatch(A, A2)
++                       end
+                    end,
+-          Select("int2[]", []),
+-          Select("int2[]", [1, 2, 3, 4]),
+-          Select("int2[]", [[1], [2], [3], [4]]),
+-          Select("int2[]", [[[[[[1, 2]]]]]]),
+-          Select("bool[]", [true]),
+-          Select("char[]", [$a, $b, $c]),
+-          Select("int4[]", [[1, 2]]),
+-          Select("int8[]", [[[[1, 2]], [[3, 4]]]]),
+-          Select("text[]", [<<"one">>, <<"two>">>])
++          Select(int2,   []),
++          Select(int2,   [1, 2, 3, 4]),
++          Select(int2,   [[1], [2], [3], [4]]),
++          Select(int2,   [[[[[[1, 2]]]]]]),
++          Select(bool,   [true]),
++          Select(char,   [$a, $b, $c]),
++          Select(int4,   [[1, 2]]),
++          Select(int8,   [[[[1, 2]], [[3, 4]]]]),
++          Select(text,   [<<"one">>, <<"two>">>]),
++          Select(float4, [0.0, 1.0, 0.123]),
++          Select(float8, [0.0, 1.0, 0.123]),
++          Select(uuid,   [<<"80910cc0-f7a5-45a6-9528-22d335b03e05">>,
++                          <<"6eb989e8-1827-4f71-8d59-a8269388182b">>,
++                          <<"b5027485-2eaf-4cde-a3cb-bd372a75c0fb">>])
+       end).
+ 
+ text_format_test() ->
+@@ -520,9 +530,15 @@
+ warning_notice_test() ->
+     with_connection(
+       fun(C) ->
+-          {ok, _, _} = pgsql:squery(C, "select 'test\\n'"),
++          Q = "create function pg_temp.raise() returns void as $$
++               begin
++                 raise warning 'oops';
++               end;
++               $$ language plpgsql;
++               select pg_temp.raise()",
++          [{ok, _, _}, _] = pgsql:squery(C, Q),
+           receive
+-              {pgsql, C, {notice, #error{code = <<"22P06">>}}} -> ok
++              {pgsql, C, {notice, #error{message = <<"oops">>}}} -> ok
+           after
+               100 -> erlang:error(didnt_receive_notice)
+           end
