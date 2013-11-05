@@ -58,6 +58,7 @@ CONFIGURE_ARGS+=	--disable-freetype
 .endif
 
 .if ${PORT_OPTIONS:MXFT}
+USES+=		iconv
 USE_XORG+=	xft
 CONFIGURE_ARGS+=	--enable-xft2
 .else
