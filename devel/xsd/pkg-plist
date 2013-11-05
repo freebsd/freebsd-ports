@@ -176,6 +176,7 @@ include/xsd/cxx/xml/string.ixx
 include/xsd/cxx/xml/string.txx
 include/xsd/cxx/zc-istream.hxx
 include/xsd/cxx/zc-istream.txx
+man/man1/xsdcxx.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/generated/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cxx/parser/generated/library.xml
