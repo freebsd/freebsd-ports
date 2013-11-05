@@ -7,7 +7,7 @@
 
 PORTNAME=	ohai
 PORTVERSION=	6.20.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -32,6 +32,7 @@ PLIST_FILES=	bin/ohai
 post-install:
 	@${PATCH} -p0 -d ${PREFIX}/${GEM_LIB_DIR} < ${PATCHDIR}/lib-plugins-freebsd-virtualization.rb.patch
 	@${PATCH} -p0 -d ${PREFIX}/${GEM_LIB_DIR} < ${PATCHDIR}/lib-plugins-freebsd-network.rb.patch
+	@${PATCH} -p0 -d ${PREFIX}/${GEM_LIB_DIR} < ${PATCHDIR}/lib-plugins-network.rb.patch
 	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -name "*.orig" -delete
 
 .include <bsd.port.mk>
