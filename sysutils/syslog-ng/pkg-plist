@@ -86,7 +86,7 @@ include/syslog-ng/uuid.h
 include/syslog-ng/value-pairs.h
 include/syslog-ng/versioning.h
 include/syslog-ng/vptransform.h
-lib/libsyslog-ng-3.4.3.so
+lib/libsyslog-ng-3.4.5.so
 lib/libsyslog-ng.la
 lib/libsyslog-ng.so
 lib/syslog-ng/libafamqp.la
