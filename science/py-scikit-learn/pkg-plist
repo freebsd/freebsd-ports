@@ -12,6 +12,7 @@
 %%PYTHON_SITELIBDIR%%/sklearn/_build_utils.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/_build_utils.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/_hmmc.so
+%%PYTHON_SITELIBDIR%%/sklearn/_isotonic.so
 %%PYTHON_SITELIBDIR%%/sklearn/base.py
 %%PYTHON_SITELIBDIR%%/sklearn/base.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/base.pyo
@@ -26,6 +27,24 @@
 %%PYTHON_SITELIBDIR%%/sklearn/cluster/affinity_propagation_.py
 %%PYTHON_SITELIBDIR%%/sklearn/cluster/affinity_propagation_.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/cluster/affinity_propagation_.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/cluster/bicluster/__init__.py
+%%PYTHON_SITELIBDIR%%/sklearn/cluster/bicluster/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/cluster/bicluster/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/cluster/bicluster/spectral.py
+%%PYTHON_SITELIBDIR%%/sklearn/cluster/bicluster/spectral.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/cluster/bicluster/spectral.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/cluster/bicluster/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/sklearn/cluster/bicluster/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/cluster/bicluster/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/cluster/bicluster/tests/test_spectral.py
+%%PYTHON_SITELIBDIR%%/sklearn/cluster/bicluster/tests/test_spectral.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/cluster/bicluster/tests/test_spectral.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/cluster/bicluster/tests/test_utils.py
+%%PYTHON_SITELIBDIR%%/sklearn/cluster/bicluster/tests/test_utils.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/cluster/bicluster/tests/test_utils.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/cluster/bicluster/utils.py
+%%PYTHON_SITELIBDIR%%/sklearn/cluster/bicluster/utils.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/cluster/bicluster/utils.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/cluster/dbscan_.py
 %%PYTHON_SITELIBDIR%%/sklearn/cluster/dbscan_.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/cluster/dbscan_.pyo
@@ -98,6 +117,15 @@
 %%PYTHON_SITELIBDIR%%/sklearn/covariance/tests/test_robust_covariance.py
 %%PYTHON_SITELIBDIR%%/sklearn/covariance/tests/test_robust_covariance.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/covariance/tests/test_robust_covariance.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/cross_decomposition/__init__.py
+%%PYTHON_SITELIBDIR%%/sklearn/cross_decomposition/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/cross_decomposition/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/cross_decomposition/cca_.py
+%%PYTHON_SITELIBDIR%%/sklearn/cross_decomposition/cca_.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/cross_decomposition/cca_.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/cross_decomposition/pls_.py
+%%PYTHON_SITELIBDIR%%/sklearn/cross_decomposition/pls_.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/cross_decomposition/pls_.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/cross_validation.py
 %%PYTHON_SITELIBDIR%%/sklearn/cross_validation.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/cross_validation.pyo
@@ -232,6 +260,12 @@
 %%PYTHON_SITELIBDIR%%/sklearn/decomposition/tests/test_sparse_pca.py
 %%PYTHON_SITELIBDIR%%/sklearn/decomposition/tests/test_sparse_pca.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/decomposition/tests/test_sparse_pca.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/decomposition/tests/test_truncated_svd.py
+%%PYTHON_SITELIBDIR%%/sklearn/decomposition/tests/test_truncated_svd.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/decomposition/tests/test_truncated_svd.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/decomposition/truncated_svd.py
+%%PYTHON_SITELIBDIR%%/sklearn/decomposition/truncated_svd.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/decomposition/truncated_svd.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/dummy.py
 %%PYTHON_SITELIBDIR%%/sklearn/dummy.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/dummy.pyo
@@ -266,9 +300,18 @@
 %%PYTHON_SITELIBDIR%%/sklearn/ensemble/tests/test_gradient_boosting.py
 %%PYTHON_SITELIBDIR%%/sklearn/ensemble/tests/test_gradient_boosting.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/ensemble/tests/test_gradient_boosting.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/ensemble/tests/test_gradient_boosting_loss_functions.py
+%%PYTHON_SITELIBDIR%%/sklearn/ensemble/tests/test_gradient_boosting_loss_functions.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/ensemble/tests/test_gradient_boosting_loss_functions.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/ensemble/tests/test_partial_dependence.py
 %%PYTHON_SITELIBDIR%%/sklearn/ensemble/tests/test_partial_dependence.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/ensemble/tests/test_partial_dependence.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/ensemble/tests/test_weight_boosting.py
+%%PYTHON_SITELIBDIR%%/sklearn/ensemble/tests/test_weight_boosting.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/ensemble/tests/test_weight_boosting.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/ensemble/weight_boosting.py
+%%PYTHON_SITELIBDIR%%/sklearn/ensemble/weight_boosting.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/ensemble/weight_boosting.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/externals/__init__.py
 %%PYTHON_SITELIBDIR%%/sklearn/externals/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/externals/__init__.pyo
@@ -344,6 +387,9 @@
 %%PYTHON_SITELIBDIR%%/sklearn/externals/setup.py
 %%PYTHON_SITELIBDIR%%/sklearn/externals/setup.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/externals/setup.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/externals/six.py
+%%PYTHON_SITELIBDIR%%/sklearn/externals/six.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/externals/six.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/externals/test_externals_setup.py
 %%PYTHON_SITELIBDIR%%/sklearn/externals/test_externals_setup.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/externals/test_externals_setup.pyo
@@ -387,6 +433,12 @@
 %%PYTHON_SITELIBDIR%%/sklearn/feature_selection/__init__.py
 %%PYTHON_SITELIBDIR%%/sklearn/feature_selection/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/feature_selection/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/feature_selection/base.py
+%%PYTHON_SITELIBDIR%%/sklearn/feature_selection/base.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/feature_selection/base.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/feature_selection/from_model.py
+%%PYTHON_SITELIBDIR%%/sklearn/feature_selection/from_model.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/feature_selection/from_model.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/feature_selection/rfe.py
 %%PYTHON_SITELIBDIR%%/sklearn/feature_selection/rfe.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/feature_selection/rfe.pyo
@@ -396,18 +448,21 @@
 %%PYTHON_SITELIBDIR%%/sklearn/feature_selection/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/sklearn/feature_selection/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/feature_selection/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/feature_selection/tests/test_base.py
+%%PYTHON_SITELIBDIR%%/sklearn/feature_selection/tests/test_base.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/feature_selection/tests/test_base.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/feature_selection/tests/test_chi2.py
 %%PYTHON_SITELIBDIR%%/sklearn/feature_selection/tests/test_chi2.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/feature_selection/tests/test_chi2.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/feature_selection/tests/test_feature_select.py
 %%PYTHON_SITELIBDIR%%/sklearn/feature_selection/tests/test_feature_select.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/feature_selection/tests/test_feature_select.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/feature_selection/tests/test_from_model.py
+%%PYTHON_SITELIBDIR%%/sklearn/feature_selection/tests/test_from_model.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/feature_selection/tests/test_from_model.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/feature_selection/tests/test_rfe.py
 %%PYTHON_SITELIBDIR%%/sklearn/feature_selection/tests/test_rfe.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/feature_selection/tests/test_rfe.pyo
-%%PYTHON_SITELIBDIR%%/sklearn/feature_selection/tests/test_selector_mixin.py
-%%PYTHON_SITELIBDIR%%/sklearn/feature_selection/tests/test_selector_mixin.pyc
-%%PYTHON_SITELIBDIR%%/sklearn/feature_selection/tests/test_selector_mixin.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/feature_selection/univariate_selection.py
 %%PYTHON_SITELIBDIR%%/sklearn/feature_selection/univariate_selection.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/feature_selection/univariate_selection.pyo
@@ -536,15 +591,27 @@
 %%PYTHON_SITELIBDIR%%/sklearn/manifold/mds.py
 %%PYTHON_SITELIBDIR%%/sklearn/manifold/mds.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/manifold/mds.pyo
-%%PYTHON_SITELIBDIR%%/sklearn/manifold/spectral_embedding.py
-%%PYTHON_SITELIBDIR%%/sklearn/manifold/spectral_embedding.pyc
-%%PYTHON_SITELIBDIR%%/sklearn/manifold/spectral_embedding.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/manifold/spectral_embedding_.py
+%%PYTHON_SITELIBDIR%%/sklearn/manifold/spectral_embedding_.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/manifold/spectral_embedding_.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/metrics/__init__.py
 %%PYTHON_SITELIBDIR%%/sklearn/metrics/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/metrics/__init__.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/metrics/cluster/__init__.py
 %%PYTHON_SITELIBDIR%%/sklearn/metrics/cluster/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/metrics/cluster/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/metrics/cluster/bicluster/__init__.py
+%%PYTHON_SITELIBDIR%%/sklearn/metrics/cluster/bicluster/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/metrics/cluster/bicluster/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/metrics/cluster/bicluster/bicluster_metrics.py
+%%PYTHON_SITELIBDIR%%/sklearn/metrics/cluster/bicluster/bicluster_metrics.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/metrics/cluster/bicluster/bicluster_metrics.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/metrics/cluster/bicluster/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/sklearn/metrics/cluster/bicluster/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/metrics/cluster/bicluster/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/metrics/cluster/bicluster/tests/test_bicluster_metrics.py
+%%PYTHON_SITELIBDIR%%/sklearn/metrics/cluster/bicluster/tests/test_bicluster_metrics.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/metrics/cluster/bicluster/tests/test_bicluster_metrics.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/metrics/cluster/expected_mutual_info_fast.so
 %%PYTHON_SITELIBDIR%%/sklearn/metrics/cluster/setup.py
 %%PYTHON_SITELIBDIR%%/sklearn/metrics/cluster/setup.pyc
@@ -571,6 +638,9 @@
 %%PYTHON_SITELIBDIR%%/sklearn/metrics/pairwise.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/metrics/pairwise.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/metrics/pairwise_fast.so
+%%PYTHON_SITELIBDIR%%/sklearn/metrics/scorer.py
+%%PYTHON_SITELIBDIR%%/sklearn/metrics/scorer.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/metrics/scorer.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/metrics/setup.py
 %%PYTHON_SITELIBDIR%%/sklearn/metrics/setup.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/metrics/setup.pyo
@@ -583,6 +653,9 @@
 %%PYTHON_SITELIBDIR%%/sklearn/metrics/tests/test_pairwise.py
 %%PYTHON_SITELIBDIR%%/sklearn/metrics/tests/test_pairwise.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/metrics/tests/test_pairwise.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/metrics/tests/test_score_objects.py
+%%PYTHON_SITELIBDIR%%/sklearn/metrics/tests/test_score_objects.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/metrics/tests/test_score_objects.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/mixture/__init__.py
 %%PYTHON_SITELIBDIR%%/sklearn/mixture/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/mixture/__init__.pyo
@@ -617,9 +690,14 @@
 %%PYTHON_SITELIBDIR%%/sklearn/neighbors/classification.py
 %%PYTHON_SITELIBDIR%%/sklearn/neighbors/classification.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/neighbors/classification.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/neighbors/dist_metrics.so
 %%PYTHON_SITELIBDIR%%/sklearn/neighbors/graph.py
 %%PYTHON_SITELIBDIR%%/sklearn/neighbors/graph.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/neighbors/graph.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/neighbors/kd_tree.so
+%%PYTHON_SITELIBDIR%%/sklearn/neighbors/kde.py
+%%PYTHON_SITELIBDIR%%/sklearn/neighbors/kde.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/neighbors/kde.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/neighbors/nearest_centroid.py
 %%PYTHON_SITELIBDIR%%/sklearn/neighbors/nearest_centroid.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/neighbors/nearest_centroid.pyo
@@ -629,18 +707,37 @@
 %%PYTHON_SITELIBDIR%%/sklearn/neighbors/setup.py
 %%PYTHON_SITELIBDIR%%/sklearn/neighbors/setup.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/neighbors/setup.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/neighbors/typedefs.so
 %%PYTHON_SITELIBDIR%%/sklearn/neighbors/unsupervised.py
 %%PYTHON_SITELIBDIR%%/sklearn/neighbors/unsupervised.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/neighbors/unsupervised.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/neural_network/__init__.py
+%%PYTHON_SITELIBDIR%%/sklearn/neural_network/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/neural_network/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/neural_network/rbm.py
+%%PYTHON_SITELIBDIR%%/sklearn/neural_network/rbm.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/neural_network/rbm.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/pipeline.py
 %%PYTHON_SITELIBDIR%%/sklearn/pipeline.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/pipeline.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/pls.py
 %%PYTHON_SITELIBDIR%%/sklearn/pls.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/pls.pyo
-%%PYTHON_SITELIBDIR%%/sklearn/preprocessing.py
-%%PYTHON_SITELIBDIR%%/sklearn/preprocessing.pyc
-%%PYTHON_SITELIBDIR%%/sklearn/preprocessing.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/preprocessing/__init__.py
+%%PYTHON_SITELIBDIR%%/sklearn/preprocessing/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/preprocessing/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/preprocessing/_weights.py
+%%PYTHON_SITELIBDIR%%/sklearn/preprocessing/_weights.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/preprocessing/_weights.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/preprocessing/data.py
+%%PYTHON_SITELIBDIR%%/sklearn/preprocessing/data.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/preprocessing/data.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/preprocessing/imputation.py
+%%PYTHON_SITELIBDIR%%/sklearn/preprocessing/imputation.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/preprocessing/imputation.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/preprocessing/label.py
+%%PYTHON_SITELIBDIR%%/sklearn/preprocessing/label.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/preprocessing/label.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/qda.py
 %%PYTHON_SITELIBDIR%%/sklearn/qda.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/qda.pyo
@@ -674,15 +771,6 @@
 %%PYTHON_SITELIBDIR%%/sklearn/svm/setup.py
 %%PYTHON_SITELIBDIR%%/sklearn/svm/setup.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/svm/setup.pyo
-%%PYTHON_SITELIBDIR%%/sklearn/svm/sparse/__init__.py
-%%PYTHON_SITELIBDIR%%/sklearn/svm/sparse/__init__.pyc
-%%PYTHON_SITELIBDIR%%/sklearn/svm/sparse/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sklearn/svm/sparse/base.py
-%%PYTHON_SITELIBDIR%%/sklearn/svm/sparse/base.pyc
-%%PYTHON_SITELIBDIR%%/sklearn/svm/sparse/base.pyo
-%%PYTHON_SITELIBDIR%%/sklearn/svm/sparse/classes.py
-%%PYTHON_SITELIBDIR%%/sklearn/svm/sparse/classes.pyc
-%%PYTHON_SITELIBDIR%%/sklearn/svm/sparse/classes.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/svm/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/sklearn/svm/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/svm/tests/__init__.pyo
@@ -743,12 +831,6 @@
 %%PYTHON_SITELIBDIR%%/sklearn/tests/test_pipeline.py
 %%PYTHON_SITELIBDIR%%/sklearn/tests/test_pipeline.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/tests/test_pipeline.pyo
-%%PYTHON_SITELIBDIR%%/sklearn/tests/test_pls.py
-%%PYTHON_SITELIBDIR%%/sklearn/tests/test_pls.pyc
-%%PYTHON_SITELIBDIR%%/sklearn/tests/test_pls.pyo
-%%PYTHON_SITELIBDIR%%/sklearn/tests/test_preprocessing.py
-%%PYTHON_SITELIBDIR%%/sklearn/tests/test_preprocessing.pyc
-%%PYTHON_SITELIBDIR%%/sklearn/tests/test_preprocessing.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/tests/test_qda.py
 %%PYTHON_SITELIBDIR%%/sklearn/tests/test_qda.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/tests/test_qda.pyo
@@ -759,12 +841,18 @@
 %%PYTHON_SITELIBDIR%%/sklearn/tree/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/tree/__init__.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/tree/_tree.so
+%%PYTHON_SITELIBDIR%%/sklearn/tree/export.py
+%%PYTHON_SITELIBDIR%%/sklearn/tree/export.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/tree/export.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/tree/setup.py
 %%PYTHON_SITELIBDIR%%/sklearn/tree/setup.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/tree/setup.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/tree/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/sklearn/tree/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/tree/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/tree/tests/test_export.py
+%%PYTHON_SITELIBDIR%%/sklearn/tree/tests/test_export.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/tree/tests/test_export.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/tree/tests/test_tree.py
 %%PYTHON_SITELIBDIR%%/sklearn/tree/tests/test_tree.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/tree/tests/test_tree.pyo
@@ -774,9 +862,7 @@
 %%PYTHON_SITELIBDIR%%/sklearn/utils/__init__.py
 %%PYTHON_SITELIBDIR%%/sklearn/utils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/utils/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sklearn/utils/_csgraph.py
-%%PYTHON_SITELIBDIR%%/sklearn/utils/_csgraph.pyc
-%%PYTHON_SITELIBDIR%%/sklearn/utils/_csgraph.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/utils/_logistic_sigmoid.so
 %%PYTHON_SITELIBDIR%%/sklearn/utils/arpack.py
 %%PYTHON_SITELIBDIR%%/sklearn/utils/arpack.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/utils/arpack.pyo
@@ -799,6 +885,12 @@
 %%PYTHON_SITELIBDIR%%/sklearn/utils/graph.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/utils/graph_shortest_path.so
 %%PYTHON_SITELIBDIR%%/sklearn/utils/lgamma.so
+%%PYTHON_SITELIBDIR%%/sklearn/utils/linear_assignment_.py
+%%PYTHON_SITELIBDIR%%/sklearn/utils/linear_assignment_.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/utils/linear_assignment_.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/utils/multiclass.py
+%%PYTHON_SITELIBDIR%%/sklearn/utils/multiclass.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/utils/multiclass.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/utils/murmurhash.so
 %%PYTHON_SITELIBDIR%%/sklearn/utils/random.so
 %%PYTHON_SITELIBDIR%%/sklearn/utils/seq_dataset.so
@@ -809,10 +901,12 @@
 %%PYTHON_SITELIBDIR%%/sklearn/utils/sparsetools/__init__.py
 %%PYTHON_SITELIBDIR%%/sklearn/utils/sparsetools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/utils/sparsetools/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sklearn/utils/sparsetools/_csgraph.so
-%%PYTHON_SITELIBDIR%%/sklearn/utils/sparsetools/csgraph.py
-%%PYTHON_SITELIBDIR%%/sklearn/utils/sparsetools/csgraph.pyc
-%%PYTHON_SITELIBDIR%%/sklearn/utils/sparsetools/csgraph.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/utils/sparsetools/_graph_tools.so
+%%PYTHON_SITELIBDIR%%/sklearn/utils/sparsetools/_graph_validation.py
+%%PYTHON_SITELIBDIR%%/sklearn/utils/sparsetools/_graph_validation.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/utils/sparsetools/_graph_validation.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/utils/sparsetools/_min_spanning_tree.so
+%%PYTHON_SITELIBDIR%%/sklearn/utils/sparsetools/_traversal.so
 %%PYTHON_SITELIBDIR%%/sklearn/utils/sparsetools/setup.py
 %%PYTHON_SITELIBDIR%%/sklearn/utils/sparsetools/setup.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/utils/sparsetools/setup.pyo
@@ -825,6 +919,9 @@
 %%PYTHON_SITELIBDIR%%/sklearn/utils/tests/test_bench.py
 %%PYTHON_SITELIBDIR%%/sklearn/utils/tests/test_bench.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/utils/tests/test_bench.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/utils/tests/test_class_weight.py
+%%PYTHON_SITELIBDIR%%/sklearn/utils/tests/test_class_weight.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/utils/tests/test_class_weight.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/utils/tests/test_extmath.py
 %%PYTHON_SITELIBDIR%%/sklearn/utils/tests/test_extmath.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/utils/tests/test_extmath.pyo
@@ -834,6 +931,12 @@
 %%PYTHON_SITELIBDIR%%/sklearn/utils/tests/test_graph.py
 %%PYTHON_SITELIBDIR%%/sklearn/utils/tests/test_graph.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/utils/tests/test_graph.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/utils/tests/test_linear_assignment.py
+%%PYTHON_SITELIBDIR%%/sklearn/utils/tests/test_linear_assignment.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/utils/tests/test_linear_assignment.pyo
+%%PYTHON_SITELIBDIR%%/sklearn/utils/tests/test_multiclass.py
+%%PYTHON_SITELIBDIR%%/sklearn/utils/tests/test_multiclass.pyc
+%%PYTHON_SITELIBDIR%%/sklearn/utils/tests/test_multiclass.pyo
 %%PYTHON_SITELIBDIR%%/sklearn/utils/tests/test_murmurhash.py
 %%PYTHON_SITELIBDIR%%/sklearn/utils/tests/test_murmurhash.pyc
 %%PYTHON_SITELIBDIR%%/sklearn/utils/tests/test_murmurhash.pyo
@@ -866,14 +969,17 @@
 @dirrm %%PYTHON_SITELIBDIR%%/sklearn/tree
 @dirrm %%PYTHON_SITELIBDIR%%/sklearn/tests
 @dirrm %%PYTHON_SITELIBDIR%%/sklearn/svm/tests
-@dirrm %%PYTHON_SITELIBDIR%%/sklearn/svm/sparse
 @dirrm %%PYTHON_SITELIBDIR%%/sklearn/svm
 @dirrm %%PYTHON_SITELIBDIR%%/sklearn/semi_supervised
+@dirrm %%PYTHON_SITELIBDIR%%/sklearn/preprocessing
+@dirrm %%PYTHON_SITELIBDIR%%/sklearn/neural_network
 @dirrm %%PYTHON_SITELIBDIR%%/sklearn/neighbors
 @dirrm %%PYTHON_SITELIBDIR%%/sklearn/mixture/tests
 @dirrm %%PYTHON_SITELIBDIR%%/sklearn/mixture
 @dirrm %%PYTHON_SITELIBDIR%%/sklearn/metrics/tests
 @dirrm %%PYTHON_SITELIBDIR%%/sklearn/metrics/cluster/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sklearn/metrics/cluster/bicluster/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sklearn/metrics/cluster/bicluster
 @dirrm %%PYTHON_SITELIBDIR%%/sklearn/metrics/cluster
 @dirrm %%PYTHON_SITELIBDIR%%/sklearn/metrics
 @dirrm %%PYTHON_SITELIBDIR%%/sklearn/manifold
@@ -898,9 +1004,12 @@
 @dirrm %%PYTHON_SITELIBDIR%%/sklearn/datasets/descr
 @dirrm %%PYTHON_SITELIBDIR%%/sklearn/datasets/data
 @dirrm %%PYTHON_SITELIBDIR%%/sklearn/datasets
+@dirrm %%PYTHON_SITELIBDIR%%/sklearn/cross_decomposition
 @dirrm %%PYTHON_SITELIBDIR%%/sklearn/covariance/tests
 @dirrm %%PYTHON_SITELIBDIR%%/sklearn/covariance
 @dirrm %%PYTHON_SITELIBDIR%%/sklearn/cluster/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sklearn/cluster/bicluster/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sklearn/cluster/bicluster
 @dirrm %%PYTHON_SITELIBDIR%%/sklearn/cluster
 @dirrm %%PYTHON_SITELIBDIR%%/sklearn/__check_build
 @dirrm %%PYTHON_SITELIBDIR%%/sklearn
