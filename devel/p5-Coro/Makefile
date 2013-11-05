@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Coro
-PORTVERSION=	6.31
+PORTVERSION=	6.32
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -22,17 +22,20 @@ BUILD_DEPENDS=	p5-AnyEvent>=7:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+USES=		perl5 shebangfix
 USE_PERL5=	configure
 
+SHEBANG_FILES=	Coro/*.pl eg/*
+SHEBANG_LANG=	perl2
+perl2_OLD_CMD=	/opt/bin/perl
+perl2_CMD=	${LOCALBASE}/bin/perl
+
 post-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/cede-vs-schedule ${STAGEDIR}${DOCSDIR}/
-.endif
-.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_SCRIPT} ${WRKSRC}/eg/* ${STAGEDIR}${EXAMPLESDIR}/
-.endif
 
 .include <bsd.port.mk>
