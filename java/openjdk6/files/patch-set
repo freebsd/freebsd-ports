@@ -931,7 +931,18 @@
                         flags, -1, 0);
  
    if (addr != MAP_FAILED) {
-@@ -3654,8 +3756,8 @@
+@@ -3156,7 +3258,9 @@
+ static size_t _large_page_size = 0;
+ 
+ void os::large_page_init() {
+-#ifndef _ALLBSD_SOURCE
++#ifdef _ALLBSD_SOURCE
++  UseLargePages = UseHugeTLBFS = UseSHM = false;
++#else
+   if (!UseLargePages) {
+     UseHugeTLBFS = false;
+     UseSHM = false;
+@@ -3654,8 +3758,8 @@
    return OS_OK;
  #else
    int ret = setpriority(PRIO_PROCESS, thread->osthread()->thread_id(), newpri);
@@ -941,7 +952,7 @@
  }
  
  OSReturn os::get_native_priority(const Thread* const thread, int *priority_ptr) {
-@@ -4634,6 +4736,20 @@
+@@ -4634,6 +4738,20 @@
  
  int os::active_processor_count() {
  #ifdef _ALLBSD_SOURCE
@@ -7916,12 +7927,12 @@
 -    return thr_suspend(tid->sys_thread);
 +#ifdef __APPLE__
 +    if (thread_suspend(pthread_mach_thread_np(tid->sys_thread)) == KERN_SUCCESS)
++#else
++    if (pthread_suspend_np(tid->sys_thread) == 0)
++#endif
 +        return SYS_OK;
 +    else
 +        return SYS_ERR;
-+#else
-+    return pthread_suspend_np(tid->sys_thread);
-+#endif
  }
  
 -
@@ -7935,30 +7946,42 @@
 -    return thr_continue(tid->sys_thread);
 +#ifdef __APPLE__
 +    if (thread_resume(pthread_mach_thread_np(tid->sys_thread)) == KERN_SUCCESS)
++#else
++    if (pthread_resume_np(tid->sys_thread) == 0)
++#endif
 +        return SYS_OK;
 +    else
 +        return SYS_ERR;
-+#else
-+    return pthread_resume_np(tid->sys_thread);
-+#endif
  }
  
  /*
-@@ -127,26 +105,74 @@
+@@ -122,9 +100,64 @@
+  */
+ void np_initialize_thread(sys_thread_t *tid)
+ {
+-    return;
+ }
  
- 
- /*
++/*
 + * Internal helper function to get stack information about specified thread.
 + */
-+#ifdef __APPLE__
++#if defined(__APPLE__)
 +static int
 +get_stackinfo(pthread_t tid, void **addr, long *sizep)
 +{
 +    void *stacktop = pthread_get_stackaddr_np(tid);
 +    *sizep = pthread_get_stacksize_np(tid);
 +    *addr = stacktop - *sizep;
-+
-+    return (SYS_OK);
++    return SYS_OK;
++}
++#elif defined(__FreeBSD__)
++static int
++get_stackinfo(pthread_t tid, pthread_attr_t *attr, void **addr, long *sizep)
++{
++    if (pthread_attr_get_np(tid, attr) == 0 &&
++        pthread_attr_getstack(attr, addr, sizep) == 0)
++        return SYS_OK;
++    return SYS_ERR;
 +}
 +#elif defined(__OpenBSD__)
 +static int
@@ -7970,45 +7993,44 @@
 +        *addr = (void *)(ss.ss_sp) - ss.ss_size;
 +        *sizep = (long)(ss.ss_size);
 +        return SYS_OK;
-+    } else {
-+        return SYS_ERR; /* pthreads_stackseg_np failed. */
 +    }
++    return SYS_ERR;
 +}
 +#else
 +static int
-+get_stackinfo(pthread_t tid, pthread_attr_t attr, void **addr, long *sizep)
++get_stackinfo(pthread_t tid, pthread_attr_t *attr, void **addr, long *sizep)
 +{
-+    size_t s;
-+    void  *p;
-+    int    ret = SYS_ERR;
-+
-+    if (pthread_attr_get_np(tid, &attr) != 0)
-+        goto err;
-+    if (pthread_attr_getstackaddr(&attr, &p) != 0)
-+        goto err;
-+    if (pthread_attr_getstacksize(&attr, &s) != 0)
-+        goto err;
-+    *addr = p;
-+    *sizep = s;
-+    ret = SYS_OK;
-+err:
-+
-+    return (ret);
++    if (pthread_attr_get_np(tid, attr) == 0 &&
++        pthread_attr_getstackaddr(attr, addr) == 0 &&
++        pthread_attr_getstacksize(attr, sizep) == 0)
++        return SYS_OK;
++    return SYS_ERR;
 +}
 +#endif
 +
-+/*
++#if !defined(__APPLE__) && !defined(__OpenBSD__)
++static int
++get_stackaddr(pthread_t tid, pthread_attr_t *attr, void **addr)
++{
++    if (pthread_attr_get_np(tid, attr) == 0 &&
++        pthread_attr_getstackaddr(attr, addr) == 0)
++        return SYS_OK;
++    return SYS_ERR;
++}
++#endif
+ 
+ /*
   * Get the stack start address, and max stack size for the current thread.
-  */
+@@ -132,21 +165,19 @@
  int
  np_stackinfo(void **addr, long *size)
  {
 -    stack_t stkseg;
-+#if defined(__OpenBSD__) || defined(__APPLE__)
-+    return(get_stackinfo(pthread_self(), addr, size));
++#if defined(__APPLE__) || defined(__OpenBSD__)
++    return get_stackinfo(pthread_self(), addr, size);
 +#else
 +    pthread_attr_t attr;
-+    int    ret = SYS_ERR;
++    int ret;
  
 -    if (thr_stksegment(&stkseg) == 0) {
 -        *addr = (void *)(stkseg.ss_sp);
@@ -8023,16 +8045,16 @@
 -    } else {
 -        return SYS_ERR; /* thr_stksegment failed. */
 +    if (pthread_attr_init(&attr) == 0) {
-+        ret = get_stackinfo(pthread_self(), attr, addr, size);
++        ret = get_stackinfo(pthread_self(), &attr, addr, size);
 +        pthread_attr_destroy(&attr);
++        return ret;
      }
-+
-+    return (ret);
++    return SYS_ERR;
 +#endif
  }
  
  /*
-@@ -155,309 +181,194 @@
+@@ -155,309 +186,192 @@
  void
  np_profiler_init(sys_thread_t *tid)
  {
@@ -8196,7 +8218,7 @@
 -    int ret;
 +{ 
 +    sysAssert(SYS_QUEUE_LOCKED(sysThreadSelf()));
- 
++
 +    /* Iterate over all the threads in the task, suspending each one.
 +     * We have to loop until no new threads appear, and all are suspended */
 +    mach_port_t self = pthread_mach_thread_np(pthread_self());
@@ -8243,7 +8265,7 @@
 +            mach_port_deallocate(self, prev_list[k]);
 +
 +        vm_deallocate(self, (vm_address_t)prev_list, sizeof(thread_t) * prev_count);
-+
+ 
 +        /* Set up the 'new' list for the next loop iteration */
 +        prev_list = cur_list;
 +        prev_count = cur_count;
@@ -8347,14 +8369,14 @@
      }
 +
 +    vm_deallocate(self, (vm_address_t) thr_list, sizeof(thread_t) * thr_count);
-+}
+ }
 +#else
 +void
 +np_multi(void)
 +{
 +    sysAssert(SYS_QUEUE_LOCKED(sysThreadSelf()));
 +    pthread_resume_all_np();
- }
++}
 +#endif
  
  /*
@@ -8453,13 +8475,11 @@
  record_thread_regs()
  {
 +    void *addr;
-+    long sz;
-+
      sys_thread_t *tid;
      int i;
-+    int sp;
-+
-+#ifndef __OpenBSD__
++#if defined(__APPLE__) || defined(__OpenBSD__)
++    long sz;
++#else
 +    pthread_attr_t attr;
 +    int attr_inited;
 +    attr_inited = pthread_attr_init(&attr) == 0;
@@ -8467,15 +8487,15 @@
  
      tid = ThreadQueue;
      for (i = 0; i < ActiveThreadCount && tid != 0; i++) {
-@@ -466,7 +377,14 @@
+@@ -466,7 +380,14 @@
  
              if (tid->sys_thread != 0) {
                  /* if thread has already been initialized */
 -                tid->sp = __gettsp(tid->sys_thread);
-+#if defined(__OpenBSD__) || defined(__APPLE__)
++#if defined(__APPLE__) || defined(__OpenBSD__)
 +            if (get_stackinfo(tid->sys_thread, &addr, &sz) == SYS_OK)
 +#else
-+            if (get_stackinfo(tid->sys_thread, attr, &addr, &sz) == SYS_OK)
++            if (get_stackaddr(tid->sys_thread, &attr, &addr) == SYS_OK)
 +#endif
 +                tid->sp = addr;
 +            else
@@ -8483,7 +8503,7 @@
              } else {
                  /*
                   * thread is still in the process of being initalized.
-@@ -475,192 +393,11 @@
+@@ -475,192 +396,11 @@
                   */
                  tid->sp = 0;
              }
@@ -8516,10 +8536,7 @@
 -#ifdef MY_DEBUG
 -                VM_CALL(jio_fprintf)(stderr, "lwpid %d was not found in process\n",
 -                            lwpid_list[i]);
-+#ifndef __OpenBSD__
-+    if (attr_inited)
-+        pthread_attr_destroy(&attr);
- #endif
+-#endif
 -                continue;
 -            }
 -            memset(&lwpstatus, 0, sizeof(lwpstatus));
@@ -8618,7 +8635,10 @@
 -        if (syscall(SYS_ioctl, procfd, PIOCLWPIDS, lwpid_list) == -1) {
 -#ifdef MY_DEBUG
 -            VM_CALL(jio_fprintf)(stderr, "Can't read proc's lwpid list");
--#endif
++#if !defined(__APPLE__) && !defined(__OpenBSD__)
++    if (attr_inited)
++        pthread_attr_destroy(&attr);
+ #endif
 -            return;
 -        }
 -
@@ -9210,7 +9230,7 @@
  Java_com_sun_management_UnixOperatingSystem_getTotalPhysicalMemorySize
    (JNIEnv *env, jobject mbean)
  {
-+#ifdef _ALLBSD_SOURCE
++#if defined(_ALLBSD_SOURCE) && !defined(_SC_PHYS_PAGES)
 +    jlong result;
 +    int mib[2];
 +    size_t rlen;
