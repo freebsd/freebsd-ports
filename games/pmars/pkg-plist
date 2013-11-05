@@ -1,5 +1,6 @@
 %%CURSES%%bin/pmars-curses
 %%SERVER%%bin/pmars-server
+man/man6/pmars.6.gz
 %%X11%%bin/pmars-x11
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/config/94x.opt
