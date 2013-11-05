@@ -2,6 +2,11 @@ bin/xdg-user-dir
 bin/xdg-user-dirs-update
 etc/xdg/user-dirs.conf
 etc/xdg/user-dirs.defaults
+man/man1/xdg-user-dir.1.gz
+man/man1/xdg-user-dirs-update.1.gz
+man/man5/user-dirs.conf.5.gz
+man/man5/user-dirs.defaults.5.gz
+man/man5/user-dirs.dirs.5.gz
 share/locale/af/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/an/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/ar/LC_MESSAGES/xdg-user-dirs.mo
