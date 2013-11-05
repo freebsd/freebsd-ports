@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	minidlna
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 PORTEPOCH=	1
 CATEGORIES=	net multimedia www
 MASTER_SITES=	SF
@@ -23,6 +22,9 @@ LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3	\
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-db-path=/var/db/minidlna \
 		--with-os-url="http://www.FreeBSD.org"
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+USES=		iconv
 
 PKGMESSAGE=	${WRKSRC}/pkg-message
 SUB_FILES+=	pkg-message
@@ -32,20 +34,14 @@ SUB_LIST+=	USER=${USERS}
 USERS=	dlna
 GROUPS=	dlna
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=	gettext
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/*.5 ${STAGEDIR}${MANPREFIX}/man/man5/
 	${INSTALL_MAN} ${WRKSRC}/*.8 ${STAGEDIR}${MANPREFIX}/man/man8/
 	${INSTALL_DATA} ${WRKSRC}/minidlna.conf ${STAGEDIR}${PREFIX}/etc/minidlna.conf.sample
-	@${FMT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
