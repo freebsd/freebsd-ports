@@ -20,8 +20,6 @@ USE_LDCONFIG=	yes
 USES=		gmake pathfix
 
 INFO=		check
-#NO_STAGE=	yes
-#MAN1=		checkmk.1
 
 .include <bsd.port.options.mk>
 
@@ -43,5 +41,8 @@ post-patch:
 		-e 's|install-exampletestsDATA ||' \
 			${WRKSRC}/doc/Makefile.in
 .endif
+
+post-build:
+	@${STRIP_CMD} ${WRKSRC}/src/.libs/libcheck.so.0
 
 .include <bsd.port.mk>
