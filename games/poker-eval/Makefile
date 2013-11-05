@@ -8,17 +8,15 @@ MASTER_SITES=	http://download.gna.org/pokersource/sources/
 DISTNAME=	${PORTNAME}-${PORTVERSION:E}.0
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A C library to evaluate poker hands
+COMMENT=	C library to evaluate poker hands
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|{libdir}/pkgconfig|(prefix)/libdata/pkgconfig|g' \
