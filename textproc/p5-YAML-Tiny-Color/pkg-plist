@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/YAML::Tiny::Color.3.gz
+%%SITE_PERL%%/YAML/Tiny/Color.pm
+@dirrmtry %%SITE_PERL%%/YAML/Tiny
+@dirrmtry %%SITE_PERL%%/YAML
