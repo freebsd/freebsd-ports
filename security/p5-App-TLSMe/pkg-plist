@@ -1,8 +1,18 @@
+man/man1/tlsme.1.gz
+%%PERL5_MAN3%%/App::TLSMe.3.gz
+%%PERL5_MAN3%%/App::TLSMe::Connection.3.gz
+%%PERL5_MAN3%%/App::TLSMe::Connection::http.3.gz
+%%PERL5_MAN3%%/App::TLSMe::Connection::raw.3.gz
+%%PERL5_MAN3%%/App::TLSMe::Pool.3.gz
 bin/tlsme
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/TLSMe/.packlist
 %%SITE_PERL%%/App/TLSMe.pm
 %%SITE_PERL%%/App/TLSMe/Connection.pm
+%%SITE_PERL%%/App/TLSMe/Connection/http.pm
+%%SITE_PERL%%/App/TLSMe/Connection/raw.pm
+%%SITE_PERL%%/App/TLSMe/Logger.pm
 %%SITE_PERL%%/App/TLSMe/Pool.pm
+@dirrm %%SITE_PERL%%/App/TLSMe/Connection
 @dirrm %%SITE_PERL%%/App/TLSMe
 @dirrmtry %%SITE_PERL%%/App
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/TLSMe
