@@ -27,7 +27,7 @@ OPTIONS_DEFAULT=	IPV6 JPEG SSL PNG
 CFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-CONFIGURE_ARGS=	--cc="${CC}" --X11-path="${LOCALBASE}" \
+CONFIGURE_ARGS=	--prefix="${PREFIX}" --cc="${CC}" --X11-path="${LOCALBASE}" \
 		--extra-cflags="${CFLAGS}" --extra-ldflags="${LDFLAGS}" \
 		--enable-pic \
 		--disable-wx \
