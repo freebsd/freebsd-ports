@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-beta//}
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKEFILE=	makefile
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	# empty
@@ -34,16 +34,15 @@ PLIST_FILES=	bin/phalanx \
 		%%DATADIR%%/sbook.phalanx
 PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/phalanx ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.phalanx ${DATADIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/phalanx ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.phalanx ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
