@@ -1,7 +1,7 @@
---- Makefile.orig	Mon May 31 21:46:31 1999
-+++ Makefile	Mon Oct 25 19:52:03 1999
-@@ -3,7 +3,7 @@
- # Please read the next few lines and enter the correct values.
+--- Makefile.orig	2002-04-05 05:56:05.000000000 +0200
++++ Makefile	2013-11-05 16:39:16.000000000 +0100
+@@ -6,7 +6,7 @@
+ PREFIX = /usr/local/
  
  # What compiler should be used
 -CC = gcc 
@@ -9,7 +9,7 @@
  
  # Where to find the gtk-config script
  GTK_DIR =
-@@ -17,9 +17,9 @@
+@@ -20,9 +20,9 @@ GTK_DIR =
  # add -DUSE_GNOME if you want to make grpn GNOME compliant.
  
  
@@ -21,7 +21,7 @@
  
  # end of user configurable section
  
-@@ -34,7 +34,7 @@
+@@ -37,7 +37,7 @@ OBJS = test_gtk_ver.o real.o complex.o m
  
  
  
