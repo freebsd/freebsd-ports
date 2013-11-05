@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpMyAdmin
-DISTVERSION=	4.0.8
+DISTVERSION=	4.0.9
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${DISTVERSION}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
@@ -12,7 +12,8 @@ COMMENT=	A set of PHP-scripts to manage MySQL over the web
 
 LICENSE=	GPLv2
 
-USE_XZ=	yes
+USE_XZ=		yes
+USES=		shebangfix
 NO_BUILD=	yes
 .if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	ctype session filter mbstring json spl
@@ -77,7 +78,8 @@ SUB_LIST+=	PKGNAME=${PKGNAME}	       \
 		SUPHP_ENABLED=${SUPHP_ENABLED}
 SUB_FILES+=	pkg-install pkg-deinstall pkg-message
 
-LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
+SHEBANG_FILES=	libraries/plugins/transformations/generator_main_class.sh \
+		libraries/plugins/transformations/generator_plugin.sh
 
 .if !defined(WITHOUT_PHP_DEPENDS)
 
