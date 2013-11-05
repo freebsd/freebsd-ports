@@ -1,34 +1,35 @@
---- UI/Makefile.orig	Mon Sep  6 19:43:39 1999
-+++ UI/Makefile	Mon Sep  6 21:35:14 1999
+--- UI/Makefile.orig	1998-11-09 04:39:29.000000000 +0100
++++ UI/Makefile	2013-11-05 17:30:19.000000000 +0100
 @@ -20,31 +20,31 @@
  	echo '# export TCL_LIBRARY TK_LIBRARY' >> bsvc
  	echo 'ARGS=$$*' >> bsvc
  	echo 'export ARGS' >> bsvc
 -	echo 'exec $(WISH) -f $(INSTALL_DIR)/UI/bsvc.tk' >> bsvc
-+	echo 'exec $(WISH) -f $(PROJECT_BASE)/lib/bsvc/bsvc.tk' >> bsvc
++	echo 'exec $(WISH) -f $(PREFIX)/lib/bsvc/bsvc.tk' >> bsvc
  	chmod +x bsvc
  
  bsvc.tk: Makefile
  	echo '#!$(WISH) -f' > bsvc.tk
- 	echo 'set Program(InstallDir) $(INSTALL_DIR)' >> bsvc.tk
+-	echo 'set Program(InstallDir) $(INSTALL_DIR)' >> bsvc.tk
 -	echo 'set Program(BitmapDir) $$Program(InstallDir)/UI/bitmaps' >> bsvc.tk
 -	echo 'set Program(HelpDir) $$Program(InstallDir)/UI/help' >> bsvc.tk
 -	echo 'set Program(LibDir) $$Program(InstallDir)/UI' >> bsvc.tk
-+	echo 'set Program(BitmapDir) $(PROJECT_BASE)/lib/bsvc/bitmaps' >> bsvc.tk
-+	echo 'set Program(HelpDir) $(PROJECT_BASE)/lib/bsvc/help' >> bsvc.tk
-+	echo 'set Program(LibDir) $(PROJECT_BASE)/lib/bsvc' >> bsvc.tk
++	echo 'set Program(InstallDir) $(PREFIX)' >> bsvc.tk
++	echo 'set Program(BitmapDir) $(PREFIX)/lib/bsvc/bitmaps' >> bsvc.tk
++	echo 'set Program(HelpDir) $(PREFIX)/lib/bsvc/help' >> bsvc.tk
++	echo 'set Program(LibDir) $(PREFIX)/lib/bsvc' >> bsvc.tk
  	echo 'set Program(WWWBrowser) "$(WWW_BROWSER)"' >> bsvc.tk
  	echo 'set Program(WWWHomePage) "$(WWW_HOME_PAGE)"' >> bsvc.tk
  	echo 'set Program(StopIndicator) C:\\BSVC\\bin\\STOP' >> bsvc.tk
  	echo 'if {$$tcl_version >= 7.5 && $$tcl_platform(platform) == "windows"} {' >> bsvc.tk
 -	echo '  option readfile $$Program(InstallDir)/UI/bsvc.win 40' >> bsvc.tk
-+	echo '  option readfile $(PROJECT_BASE)/lib/bsvc/bsvc.win 40' >> bsvc.tk
++	echo '  option readfile $(PREFIX)/lib/bsvc/bsvc.win 40' >> bsvc.tk
  	echo '} else {' >> bsvc.tk
 -	echo '  option readfile $$Program(InstallDir)/UI/bsvc.ad 40' >> bsvc.tk
-+	echo '  option readfile $(PROJECT_BASE)/lib/bsvc/bsvc.ad 40' >> bsvc.tk
++	echo '  option readfile $(PREFIX)/lib/bsvc/bsvc.ad 40' >> bsvc.tk
  	echo '}' >> bsvc.tk
 -	echo 'source $$Program(InstallDir)/UI/main.tk' >> bsvc.tk
-+	echo 'source $(PROJECT_BASE)/lib/bsvc/main.tk' >> bsvc.tk
++	echo 'source $(PREFIX)/lib/bsvc/main.tk' >> bsvc.tk
  
  install: bsvc bsvc.tk
 -	$(MKDIR) $(INSTALL_DIR)/UI

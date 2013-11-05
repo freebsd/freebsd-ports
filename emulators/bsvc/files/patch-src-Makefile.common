@@ -13,7 +13,7 @@
  ## Name or path and Name of the Tcl/Tk "wish" executable
  #WISH        = /usr/bin/wish
 -WISH         = wish
-+WISH         = wish8.4
++WISH         ?= wish8.4
  
  ## Name of WWW Browser and URL of the BSVC Home Page (or blank)
  WWW_BROWSER   = 
