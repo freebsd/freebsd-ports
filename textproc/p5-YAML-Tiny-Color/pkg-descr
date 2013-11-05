@@ -1,0 +1,4 @@
+This module dumps your data structure as YAML with color using ANSI
+escape sequences. To change the colors, see %theme in source code.
+
+WWW: http://search.cpan.org/dist/YAML-Tiny-Color/

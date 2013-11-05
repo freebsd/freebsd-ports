@@ -1036,6 +1036,7 @@
     SUBDIR += p5-YAML-Shell
     SUBDIR += p5-YAML-Syck
     SUBDIR += p5-YAML-Tiny
+    SUBDIR += p5-YAML-Tiny-Color
     SUBDIR += p5-YAPE-HTML
     SUBDIR += p5-YAPE-Regex
     SUBDIR += p5-YAPE-Regex-Explain
