@@ -7,7 +7,6 @@ libdata/pkgconfig/libquvi-scripts.pc
 %%DATADIR%%/lua/website/101greatgoals.lua
 %%DATADIR%%/lua/website/1tvru.lua
 %%DATADIR%%/lua/website/ardmediathek.lua
-%%DATADIR%%/lua/website/arte.lua
 %%DATADIR%%/lua/website/audioboo.lua
 %%DATADIR%%/lua/website/bbc.lua
 %%NSFW%%%%DATADIR%%/lua/website/beeg.lua
@@ -15,8 +14,10 @@ libdata/pkgconfig/libquvi-scripts.pc
 %%DATADIR%%/lua/website/canalplus.lua
 %%DATADIR%%/lua/website/cbsnews.lua
 %%DATADIR%%/lua/website/clipfish.lua
+%%DATADIR%%/lua/website/collegehumor.lua
 %%DATADIR%%/lua/website/dailymotion.lua
 %%NSFW%%%%DATADIR%%/lua/website/deviantclip.lua
+%%DATADIR%%/lua/website/dorkly.lua
 %%NSFW%%%%DATADIR%%/lua/website/empflix.lua
 %%DATADIR%%/lua/website/foxnews.lua
 %%DATADIR%%/lua/website/funnyordie.lua
@@ -55,7 +56,6 @@ libdata/pkgconfig/libquvi-scripts.pc
 %%DATADIR%%/lua/website/tvrain.lua
 %%DATADIR%%/lua/website/videa.lua
 %%DATADIR%%/lua/website/videobash.lua
-%%DATADIR%%/lua/website/vimeo.lua
 %%DATADIR%%/lua/website/wdrmaus.lua
 %%DATADIR%%/lua/website/wimp.lua
 %%NSFW%%%%DATADIR%%/lua/website/xhamster.lua
