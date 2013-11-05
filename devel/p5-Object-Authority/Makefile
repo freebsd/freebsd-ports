@@ -11,13 +11,10 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module that adds an AUTHORITY method to your class
 
 BUILD_DEPENDS=	p5-Object-Role>=0:${PORTSDIR}/devel/p5-Object-Role
-RUN_DEPENDS=	p5-Object-Role>=0:${PORTSDIR}/devel/p5-Object-Role
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Object::AUTHORITY.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
