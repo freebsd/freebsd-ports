@@ -9,10 +9,7 @@ MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?format=file
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Gentium Plus TrueType font collection
 
-LICENSE=	OFL
-LICENSE_NAME=	SIL Open Font License (OFL)
-LICENSE_FILE=	${WRKSRC}/OFL.txt
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	OFL11
 
 USE_ZIP=	yes
 XORG_CAT=	font

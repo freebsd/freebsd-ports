@@ -10,10 +10,7 @@ DISTNAME=	SourceCodePro_FontsOnly-${PORTVERSION}
 MAINTAINER=	masaki@club.kyutech.ac.jp
 COMMENT=	A set of fonts by Adobe designed for coders
 
-LICENSE=	OFL
-LICENSE_NAME=	SIL OPEN FONT LICENSE Version 1.1
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-LICENSE_PERMS=	auto-accept
+LICENSE=	OFL11
 
 BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir

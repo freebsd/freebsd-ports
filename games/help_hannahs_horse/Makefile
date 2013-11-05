@@ -13,11 +13,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Pacman with a fast food twist
 
-LICENSE=	GPLv2 OFL
+LICENSE=	GPLv2 OFL11
 LICENSE_COMB=	dual
-LICENSE_NAME_OFL=SIL OPEN FONT LICENSE Version 1.1
-LICENSE_FILE_OFL=${WRKSRC}/StansHandOFL.txt
-LICENSE_PERMS_OFL=dist-mirror pkg-mirror auto-accept
 
 WRKSRC=		${WRKDIR}/hhh-2008-03-29
 
