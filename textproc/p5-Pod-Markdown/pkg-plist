@@ -1,6 +1,8 @@
 bin/pod2markdown
 %%SITE_PERL%%/Pod/Markdown.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Markdown/.packlist
+%%PERL5_MAN3%%/Pod::Markdown.3.gz
+man/man1/pod2markdown.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Markdown
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
 @dirrmtry %%SITE_PERL%%/Pod
