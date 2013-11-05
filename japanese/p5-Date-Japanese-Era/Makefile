@@ -16,11 +16,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Date::Japanese::Era.3 \
-		Date::Japanese::Era::Table.3 \
-		Date::Japanese::Era::Table::JIS_X0301.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
