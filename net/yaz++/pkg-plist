@@ -24,6 +24,7 @@ lib/libzoompp.a
 lib/libzoompp.la
 lib/libzoompp.so
 lib/libzoompp.so.6
+man/man1/yazpp-config.1.gz
 share/aclocal/yazpp.m4
 share/doc/yazpp/api.html
 share/doc/yazpp/common/id.png
