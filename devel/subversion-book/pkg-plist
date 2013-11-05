@@ -1,0 +1,25 @@
+%%HTML_SINGLE%%%%DOCSDIR%%/svn-book-html/images/ch01dia1.png
+%%HTML_SINGLE%%%%DOCSDIR%%/svn-book-html/images/ch02dia1.png
+%%HTML_SINGLE%%%%DOCSDIR%%/svn-book-html/images/ch02dia2.png
+%%HTML_SINGLE%%%%DOCSDIR%%/svn-book-html/images/ch02dia3.png
+%%HTML_SINGLE%%%%DOCSDIR%%/svn-book-html/images/ch02dia4.png
+%%HTML_SINGLE%%%%DOCSDIR%%/svn-book-html/images/ch02dia5.png
+%%HTML_SINGLE%%%%DOCSDIR%%/svn-book-html/images/ch02dia6.png
+%%HTML_SINGLE%%%%DOCSDIR%%/svn-book-html/images/ch02dia7.png
+%%HTML_SINGLE%%%%DOCSDIR%%/svn-book-html/images/ch04dia1.png
+%%HTML_SINGLE%%%%DOCSDIR%%/svn-book-html/images/ch04dia2.png
+%%HTML_SINGLE%%%%DOCSDIR%%/svn-book-html/images/ch04dia3.png
+%%HTML_SINGLE%%%%DOCSDIR%%/svn-book-html/images/ch04dia4.png
+%%HTML_SINGLE%%%%DOCSDIR%%/svn-book-html/images/ch08dia1.png
+%%HTML_SINGLE%%%%DOCSDIR%%/svn-book-html/images/ch08dia2.png
+%%HTML_SINGLE%%%%DOCSDIR%%/svn-book-html/images/draft.png
+%%HTML_SINGLE%%%%DOCSDIR%%/svn-book-html/images/note.png
+%%HTML_SINGLE%%%%DOCSDIR%%/svn-book-html/images/tip.png
+%%HTML_SINGLE%%%%DOCSDIR%%/svn-book-html/images/warning.png
+%%HTML_SINGLE%%%%DOCSDIR%%/svn-book-html/index.html
+%%HTML_SINGLE%%%%DOCSDIR%%/svn-book-html/styles.css
+%%HTML_SINGLE%%%%DOCSDIR%%/svn-book-html/svn-book.html
+%%PDF%%%%DOCSDIR%%/svn-book.pdf
+%%HTML_SINGLE%%@dirrmtry %%DOCSDIR%%/svn-book-html/images
+%%HTML_SINGLE%%@dirrmtry %%DOCSDIR%%/svn-book-html
+@dirrmtry %%DOCSDIR%%
