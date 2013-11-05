@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Hash/Merge.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Merge/.packlist
+%%PERL5_MAN3%%/Hash::Merge.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Merge
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash
 @dirrmtry %%SITE_PERL%%/Hash
