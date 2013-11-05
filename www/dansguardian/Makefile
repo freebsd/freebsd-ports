@@ -3,7 +3,7 @@
 
 PORTNAME=	dansguardian
 PORTVERSION=	2.10.1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
 
@@ -57,7 +57,8 @@ ICAP_CONFIGURE_ENABLE=		icap
 KAV_CONFIGURE_ENABLE=		kavd
 NTLM_CONFIGURE_ENABLE=		ntlm
 EMAIL_CONFIGURE_ENABLE=		email
-DEBUG_CONFIGURE_WITH=		dgdebug
+DEBUG_CONFIGURE_ON=		--with-dgdebug
+DEBUG_CONFIGURE_OFF=		--with-dgdebug=off
 
 .include <bsd.port.pre.mk>
 
