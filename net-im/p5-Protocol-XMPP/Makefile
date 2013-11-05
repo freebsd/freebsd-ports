@@ -18,38 +18,4 @@ RUN_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Protocol::XMPP.3 \
-		Protocol::XMPP::Base.3 \
-		Protocol::XMPP::Contact.3 \
-		Protocol::XMPP::Element::Active.3 \
-		Protocol::XMPP::Element::Auth.3 \
-		Protocol::XMPP::Element::Bind.3 \
-		Protocol::XMPP::Element::Body.3 \
-		Protocol::XMPP::Element::Challenge.3 \
-		Protocol::XMPP::Element::Feature.3 \
-		Protocol::XMPP::Element::Features.3 \
-		Protocol::XMPP::Element::HTML.3 \
-		Protocol::XMPP::Element::IQ.3 \
-		Protocol::XMPP::Element::JID.3 \
-		Protocol::XMPP::Element::Mechanism.3 \
-		Protocol::XMPP::Element::Mechanisms.3 \
-		Protocol::XMPP::Element::Message.3 \
-		Protocol::XMPP::Element::Nick.3 \
-		Protocol::XMPP::Element::Presence.3 \
-		Protocol::XMPP::Element::Proceed.3 \
-		Protocol::XMPP::Element::Register.3 \
-		Protocol::XMPP::Element::Response.3 \
-		Protocol::XMPP::Element::Session.3 \
-		Protocol::XMPP::Element::StartTLS.3 \
-		Protocol::XMPP::Element::Subject.3 \
-		Protocol::XMPP::Element::Success.3 \
-		Protocol::XMPP::ElementBase.3 \
-		Protocol::XMPP::Handler.3 \
-		Protocol::XMPP::IQ::Roster.3 \
-		Protocol::XMPP::Message.3 \
-		Protocol::XMPP::Stream.3 \
-		Protocol::XMPP::TextElement.3 \
-		Protocol::XMPP::User.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -26,23 +26,4 @@ TEST_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	DJabberd.3\
-	DJabberd::Agent.3\
-	DJabberd::Agent::Node.3\
-	DJabberd::Component.3\
-	DJabberd::Component::Example.3\
-	DJabberd::Component::External.3\
-	DJabberd::Component::Node.3\
-	DJabberd::Config.3\
-	DJabberd::Connection::ComponentIn.3\
-	DJabberd::Connection::ComponentOut.3\
-	DJabberd::Delivery::ComponentConnection.3\
-	DJabberd::Delivery::LocalVHosts.3\
-	DJabberd::SASL.3\
-	DJabberd::SASL::AuthenSASL.3\
-	DJabberd::SASL::Connection.3\
-	DJabberd::SASL::DumbPlain.3\
-	DJabberd::SASL::ManagerBase.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

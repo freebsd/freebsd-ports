@@ -1,7 +1,57 @@
+%%PERL5_MAN3%%/AnyEvent::XMPP.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Client.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Component.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Connection.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Error.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Error::Exception.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Error::IQ.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Error::IQAuth.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Error::MUC.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Error::Message.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Error::Parser.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Error::Presence.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Error::Register.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Error::SASL.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Error::Stanza.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Error::Stream.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Ext.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Ext::DataForm.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Ext::Disco.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Ext::Disco::Info.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Ext::Disco::Items.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Ext::MUC.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Ext::MUC::Message.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Ext::MUC::Room.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Ext::MUC::RoomInfo.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Ext::MUC::User.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Ext::OOB.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Ext::Ping.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Ext::Pubsub.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Ext::Receipts.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Ext::RegisterForm.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Ext::Registration.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Ext::VCard.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Ext::Version.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Extendable.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::IM::Account.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::IM::Connection.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::IM::Contact.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::IM::Delayed.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::IM::Message.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::IM::Presence.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::IM::Roster.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Namespaces.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Node.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Parser.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::SimpleConnection.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::TestClient.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Util.3.gz
+%%PERL5_MAN3%%/AnyEvent::XMPP::Writer.3.gz
 %%SITE_PERL%%/AnyEvent/XMPP.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Client.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Component.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Connection.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Error.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Error/Exception.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Error/IQ.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Error/IQAuth.pm
@@ -13,16 +63,16 @@
 %%SITE_PERL%%/AnyEvent/XMPP/Error/SASL.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Error/Stanza.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Error/Stream.pm
-%%SITE_PERL%%/AnyEvent/XMPP/Error.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Ext.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Ext/DataForm.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Ext/Disco.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Ext/Disco/Info.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Ext/Disco/Items.pm
-%%SITE_PERL%%/AnyEvent/XMPP/Ext/Disco.pm
+%%SITE_PERL%%/AnyEvent/XMPP/Ext/MUC.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Ext/MUC/Message.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Ext/MUC/Room.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Ext/MUC/RoomInfo.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Ext/MUC/User.pm
-%%SITE_PERL%%/AnyEvent/XMPP/Ext/MUC.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Ext/OOB.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Ext/Ping.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Ext/Pubsub.pm
@@ -31,7 +81,6 @@
 %%SITE_PERL%%/AnyEvent/XMPP/Ext/Registration.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Ext/VCard.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Ext/Version.pm
-%%SITE_PERL%%/AnyEvent/XMPP/Ext.pm
 %%SITE_PERL%%/AnyEvent/XMPP/Extendable.pm
 %%SITE_PERL%%/AnyEvent/XMPP/IM/Account.pm
 %%SITE_PERL%%/AnyEvent/XMPP/IM/Connection.pm
@@ -50,10 +99,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/XMPP/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/XMPP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent
-@dirrm %%SITE_PERL%%/AnyEvent/XMPP/Error
-@dirrm %%SITE_PERL%%/AnyEvent/XMPP/Ext/Disco
-@dirrm %%SITE_PERL%%/AnyEvent/XMPP/Ext/MUC
-@dirrm %%SITE_PERL%%/AnyEvent/XMPP/Ext
-@dirrm %%SITE_PERL%%/AnyEvent/XMPP/IM
-@dirrm %%SITE_PERL%%/AnyEvent/XMPP
+@dirrmtry %%SITE_PERL%%/AnyEvent/XMPP/IM
+@dirrmtry %%SITE_PERL%%/AnyEvent/XMPP/Ext/MUC
+@dirrmtry %%SITE_PERL%%/AnyEvent/XMPP/Ext/Disco
+@dirrmtry %%SITE_PERL%%/AnyEvent/XMPP/Ext
+@dirrmtry %%SITE_PERL%%/AnyEvent/XMPP/Error
+@dirrmtry %%SITE_PERL%%/AnyEvent/XMPP
 @dirrmtry %%SITE_PERL%%/AnyEvent

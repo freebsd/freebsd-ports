@@ -1,3 +1,16 @@
+%%PERL5_MAN3%%/Net::XMPP.3.gz
+%%PERL5_MAN3%%/Net::XMPP::Client.3.gz
+%%PERL5_MAN3%%/Net::XMPP::Connection.3.gz
+%%PERL5_MAN3%%/Net::XMPP::Debug.3.gz
+%%PERL5_MAN3%%/Net::XMPP::IQ.3.gz
+%%PERL5_MAN3%%/Net::XMPP::JID.3.gz
+%%PERL5_MAN3%%/Net::XMPP::Message.3.gz
+%%PERL5_MAN3%%/Net::XMPP::Namespaces.3.gz
+%%PERL5_MAN3%%/Net::XMPP::Presence.3.gz
+%%PERL5_MAN3%%/Net::XMPP::PrivacyLists.3.gz
+%%PERL5_MAN3%%/Net::XMPP::Protocol.3.gz
+%%PERL5_MAN3%%/Net::XMPP::Roster.3.gz
+%%PERL5_MAN3%%/Net::XMPP::Stanza.3.gz
 %%SITE_PERL%%/Net/XMPP.pm
 %%SITE_PERL%%/Net/XMPP/Client.pm
 %%SITE_PERL%%/Net/XMPP/Connection.pm
@@ -12,7 +25,7 @@
 %%SITE_PERL%%/Net/XMPP/Roster.pm
 %%SITE_PERL%%/Net/XMPP/Stanza.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/XMPP/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/XMPP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/XMPP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrm %%SITE_PERL%%/Net/XMPP
+@dirrmtry %%SITE_PERL%%/Net/XMPP
 @dirrmtry %%SITE_PERL%%/Net

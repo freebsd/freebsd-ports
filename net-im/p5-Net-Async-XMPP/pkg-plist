@@ -1,4 +1,7 @@
-@comment $FreeBSD$
+%%PERL5_MAN3%%/Net::Async::XMPP.3.gz
+%%PERL5_MAN3%%/Net::Async::XMPP::Client.3.gz
+%%PERL5_MAN3%%/Net::Async::XMPP::Protocol.3.gz
+%%PERL5_MAN3%%/Net::Async::XMPP::Server.3.gz
 %%SITE_PERL%%/Net/Async/XMPP.pm
 %%SITE_PERL%%/Net/Async/XMPP/Client.pm
 %%SITE_PERL%%/Net/Async/XMPP/Protocol.pm

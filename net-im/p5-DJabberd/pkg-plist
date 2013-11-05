@@ -1,3 +1,21 @@
+bin/djabberd
+%%PERL5_MAN3%%/DJabberd.3.gz
+%%PERL5_MAN3%%/DJabberd::Agent.3.gz
+%%PERL5_MAN3%%/DJabberd::Agent::Node.3.gz
+%%PERL5_MAN3%%/DJabberd::Component.3.gz
+%%PERL5_MAN3%%/DJabberd::Component::Example.3.gz
+%%PERL5_MAN3%%/DJabberd::Component::External.3.gz
+%%PERL5_MAN3%%/DJabberd::Component::Node.3.gz
+%%PERL5_MAN3%%/DJabberd::Config.3.gz
+%%PERL5_MAN3%%/DJabberd::Connection::ComponentIn.3.gz
+%%PERL5_MAN3%%/DJabberd::Connection::ComponentOut.3.gz
+%%PERL5_MAN3%%/DJabberd::Delivery::ComponentConnection.3.gz
+%%PERL5_MAN3%%/DJabberd::Delivery::LocalVHosts.3.gz
+%%PERL5_MAN3%%/DJabberd::SASL.3.gz
+%%PERL5_MAN3%%/DJabberd::SASL::AuthenSASL.3.gz
+%%PERL5_MAN3%%/DJabberd::SASL::Connection.3.gz
+%%PERL5_MAN3%%/DJabberd::SASL::DumbPlain.3.gz
+%%PERL5_MAN3%%/DJabberd::SASL::ManagerBase.3.gz
 %%SITE_PERL%%/DJabberd.pm
 %%SITE_PERL%%/DJabberd/Agent.pm
 %%SITE_PERL%%/DJabberd/Agent/Node.pm
@@ -77,21 +95,20 @@
 %%SITE_PERL%%/DJabberd/VHost.pm
 %%SITE_PERL%%/DJabberd/XMLElement.pm
 %%SITE_PERL%%/DJabberd/XMLParser.pm
-%%SITE_PERL%%/mach/auto/DJabberd/.packlist
-bin/djabberd
-@dirrm %%SITE_PERL%%/mach/auto/DJabberd
-@dirrm %%SITE_PERL%%/DJabberd/Stanza
-@dirrm %%SITE_PERL%%/DJabberd/SASL/Manager
-@dirrm %%SITE_PERL%%/DJabberd/SASL/Connection
-@dirrm %%SITE_PERL%%/DJabberd/SASL
-@dirrm %%SITE_PERL%%/DJabberd/RosterStorage
-@dirrm %%SITE_PERL%%/DJabberd/Queue
-@dirrm %%SITE_PERL%%/DJabberd/PresenceChecker
-@dirrm %%SITE_PERL%%/DJabberd/Delivery
-@dirrm %%SITE_PERL%%/DJabberd/Connection
-@dirrm %%SITE_PERL%%/DJabberd/Component
-@dirrm %%SITE_PERL%%/DJabberd/ClusterMessage
-@dirrm %%SITE_PERL%%/DJabberd/Bot
-@dirrm %%SITE_PERL%%/DJabberd/Authen
-@dirrm %%SITE_PERL%%/DJabberd/Agent
-@dirrm %%SITE_PERL%%/DJabberd
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DJabberd/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DJabberd
+@dirrmtry %%SITE_PERL%%/DJabberd/Stanza
+@dirrmtry %%SITE_PERL%%/DJabberd/SASL/Manager
+@dirrmtry %%SITE_PERL%%/DJabberd/SASL/Connection
+@dirrmtry %%SITE_PERL%%/DJabberd/SASL
+@dirrmtry %%SITE_PERL%%/DJabberd/RosterStorage
+@dirrmtry %%SITE_PERL%%/DJabberd/Queue
+@dirrmtry %%SITE_PERL%%/DJabberd/PresenceChecker
+@dirrmtry %%SITE_PERL%%/DJabberd/Delivery
+@dirrmtry %%SITE_PERL%%/DJabberd/Connection
+@dirrmtry %%SITE_PERL%%/DJabberd/Component
+@dirrmtry %%SITE_PERL%%/DJabberd/ClusterMessage
+@dirrmtry %%SITE_PERL%%/DJabberd/Bot
+@dirrmtry %%SITE_PERL%%/DJabberd/Authen
+@dirrmtry %%SITE_PERL%%/DJabberd/Agent
+@dirrmtry %%SITE_PERL%%/DJabberd

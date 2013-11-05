@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jabber/SimpleSend/.packlist
+%%PERL5_MAN3%%/Jabber::SimpleSend.3.gz
 %%SITE_PERL%%/Jabber/SimpleSend.pm
-@dirrmtry %%SITE_PERL%%/Jabber
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jabber/SimpleSend/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jabber/SimpleSend
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jabber
+@dirrmtry %%SITE_PERL%%/Jabber

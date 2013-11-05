@@ -1,8 +1,23 @@
 bin/oscartest
+%%PERL5_MAN3%%/Net::OSCAR.3.gz
+%%PERL5_MAN3%%/Net::OSCAR::Buddylist.3.gz
+%%PERL5_MAN3%%/Net::OSCAR::Callbacks.3.gz
+%%PERL5_MAN3%%/Net::OSCAR::Common.3.gz
+%%PERL5_MAN3%%/Net::OSCAR::Connection.3.gz
+%%PERL5_MAN3%%/Net::OSCAR::Connection::Chat.3.gz
+%%PERL5_MAN3%%/Net::OSCAR::Connection::Direct.3.gz
+%%PERL5_MAN3%%/Net::OSCAR::Connection::Server.3.gz
+%%PERL5_MAN3%%/Net::OSCAR::Constants.3.gz
+%%PERL5_MAN3%%/Net::OSCAR::MethodInfo.3.gz
+%%PERL5_MAN3%%/Net::OSCAR::Screenname.3.gz
+%%PERL5_MAN3%%/Net::OSCAR::ServerCallbacks.3.gz
+%%PERL5_MAN3%%/Net::OSCAR::TLV.3.gz
+%%PERL5_MAN3%%/Net::OSCAR::Utility.3.gz
+%%PERL5_MAN3%%/Net::OSCAR::XML.3.gz
+%%PERL5_MAN3%%/Net::OSCAR::_BLInternal.3.gz
 %%SITE_PERL%%/Net/OSCAR.pm
 %%SITE_PERL%%/Net/OSCAR/Buddylist.pm
 %%SITE_PERL%%/Net/OSCAR/Callbacks.pm
-%%SITE_PERL%%/Net/OSCAR/Callbacks/INDEX
 %%SITE_PERL%%/Net/OSCAR/Callbacks/1/incoming_extended_information.pm
 %%SITE_PERL%%/Net/OSCAR/Callbacks/1/incoming_warning.pm
 %%SITE_PERL%%/Net/OSCAR/Callbacks/1/migrate.pm
@@ -43,6 +58,7 @@ bin/oscartest
 %%SITE_PERL%%/Net/OSCAR/Callbacks/7/admin_request_response.pm
 %%SITE_PERL%%/Net/OSCAR/Callbacks/7/confirm_account_response.pm
 %%SITE_PERL%%/Net/OSCAR/Callbacks/9/BOS_rights_response.pm
+%%SITE_PERL%%/Net/OSCAR/Callbacks/INDEX
 %%SITE_PERL%%/Net/OSCAR/Common.pm
 %%SITE_PERL%%/Net/OSCAR/Connection.pm
 %%SITE_PERL%%/Net/OSCAR/Connection/Chat.pm
@@ -78,30 +94,30 @@ bin/oscartest
 %%SITE_PERL%%/Net/OSCAR/XML/Template.pm
 %%SITE_PERL%%/Net/OSCAR/_BLInternal.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OSCAR/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OSCAR
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OSCAR
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrm %%SITE_PERL%%/Net/OSCAR/XML
-@dirrm %%SITE_PERL%%/Net/OSCAR/ServerCallbacks/9
-@dirrm %%SITE_PERL%%/Net/OSCAR/ServerCallbacks/4
-@dirrm %%SITE_PERL%%/Net/OSCAR/ServerCallbacks/3
-@dirrm %%SITE_PERL%%/Net/OSCAR/ServerCallbacks/23
-@dirrm %%SITE_PERL%%/Net/OSCAR/ServerCallbacks/2
-@dirrm %%SITE_PERL%%/Net/OSCAR/ServerCallbacks/19
-@dirrm %%SITE_PERL%%/Net/OSCAR/ServerCallbacks/1
-@dirrm %%SITE_PERL%%/Net/OSCAR/ServerCallbacks
-@dirrm %%SITE_PERL%%/Net/OSCAR/Connection
-@dirrm %%SITE_PERL%%/Net/OSCAR/Callbacks/9
-@dirrm %%SITE_PERL%%/Net/OSCAR/Callbacks/7
-@dirrm %%SITE_PERL%%/Net/OSCAR/Callbacks/4
-@dirrm %%SITE_PERL%%/Net/OSCAR/Callbacks/3
-@dirrm %%SITE_PERL%%/Net/OSCAR/Callbacks/23
-@dirrm %%SITE_PERL%%/Net/OSCAR/Callbacks/21
-@dirrm %%SITE_PERL%%/Net/OSCAR/Callbacks/2
-@dirrm %%SITE_PERL%%/Net/OSCAR/Callbacks/19
-@dirrm %%SITE_PERL%%/Net/OSCAR/Callbacks/16
-@dirrm %%SITE_PERL%%/Net/OSCAR/Callbacks/14
-@dirrm %%SITE_PERL%%/Net/OSCAR/Callbacks/13
-@dirrm %%SITE_PERL%%/Net/OSCAR/Callbacks/1
-@dirrm %%SITE_PERL%%/Net/OSCAR/Callbacks
-@dirrm %%SITE_PERL%%/Net/OSCAR
+@dirrmtry %%SITE_PERL%%/Net/OSCAR/XML
+@dirrmtry %%SITE_PERL%%/Net/OSCAR/ServerCallbacks/9
+@dirrmtry %%SITE_PERL%%/Net/OSCAR/ServerCallbacks/4
+@dirrmtry %%SITE_PERL%%/Net/OSCAR/ServerCallbacks/3
+@dirrmtry %%SITE_PERL%%/Net/OSCAR/ServerCallbacks/23
+@dirrmtry %%SITE_PERL%%/Net/OSCAR/ServerCallbacks/2
+@dirrmtry %%SITE_PERL%%/Net/OSCAR/ServerCallbacks/19
+@dirrmtry %%SITE_PERL%%/Net/OSCAR/ServerCallbacks/1
+@dirrmtry %%SITE_PERL%%/Net/OSCAR/ServerCallbacks
+@dirrmtry %%SITE_PERL%%/Net/OSCAR/Connection
+@dirrmtry %%SITE_PERL%%/Net/OSCAR/Callbacks/9
+@dirrmtry %%SITE_PERL%%/Net/OSCAR/Callbacks/7
+@dirrmtry %%SITE_PERL%%/Net/OSCAR/Callbacks/4
+@dirrmtry %%SITE_PERL%%/Net/OSCAR/Callbacks/3
+@dirrmtry %%SITE_PERL%%/Net/OSCAR/Callbacks/23
+@dirrmtry %%SITE_PERL%%/Net/OSCAR/Callbacks/21
+@dirrmtry %%SITE_PERL%%/Net/OSCAR/Callbacks/2
+@dirrmtry %%SITE_PERL%%/Net/OSCAR/Callbacks/19
+@dirrmtry %%SITE_PERL%%/Net/OSCAR/Callbacks/16
+@dirrmtry %%SITE_PERL%%/Net/OSCAR/Callbacks/14
+@dirrmtry %%SITE_PERL%%/Net/OSCAR/Callbacks/13
+@dirrmtry %%SITE_PERL%%/Net/OSCAR/Callbacks/1
+@dirrmtry %%SITE_PERL%%/Net/OSCAR/Callbacks
+@dirrmtry %%SITE_PERL%%/Net/OSCAR
 @dirrmtry %%SITE_PERL%%/Net
