@@ -2719,6 +2719,41 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Line/LineOrthogonal/ts/LineOrthogonal_pl.ts
 %%DATADIR%%/scripts/Draw/Line/LineOrthogonal/ts/LineOrthogonal_pt.qm
 %%DATADIR%%/scripts/Draw/Line/LineOrthogonal/ts/LineOrthogonal_pt.ts
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/LineOrthogonalTangent.js
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/LineOrthogonalTangent.pro
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/LineOrthogonalTangent.svg
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/LineOrthogonalTangentInit.js
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/doc/LineOrthogonalTangent_de.html
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/doc/LineOrthogonalTangent_desc_de.html
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/doc/LineOrthogonalTangent_desc_en.html
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/doc/LineOrthogonalTangent_desc_es.html
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/doc/LineOrthogonalTangent_desc_fr.html
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/doc/LineOrthogonalTangent_desc_it.html
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/doc/LineOrthogonalTangent_desc_ja.html
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/doc/LineOrthogonalTangent_desc_pt.html
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/doc/LineOrthogonalTangent_en.html
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/doc/LineOrthogonalTangent_ja.html
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/doc/LineOrthogonalTangent_proc_de.html
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/doc/LineOrthogonalTangent_proc_en.html
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/doc/LineOrthogonalTangent_proc_es.html
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/doc/LineOrthogonalTangent_proc_fr.html
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/doc/LineOrthogonalTangent_proc_it.html
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/doc/LineOrthogonalTangent_proc_ja.html
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/doc/LineOrthogonalTangent_proc_pt.html
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/ts/LineOrthogonalTangent_de.qm
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/ts/LineOrthogonalTangent_de.ts
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/ts/LineOrthogonalTangent_es.qm
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/ts/LineOrthogonalTangent_es.ts
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/ts/LineOrthogonalTangent_fr.qm
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/ts/LineOrthogonalTangent_fr.ts
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/ts/LineOrthogonalTangent_it.qm
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/ts/LineOrthogonalTangent_it.ts
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/ts/LineOrthogonalTangent_ja.qm
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/ts/LineOrthogonalTangent_ja.ts
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/ts/LineOrthogonalTangent_pl.qm
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/ts/LineOrthogonalTangent_pl.ts
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/ts/LineOrthogonalTangent_pt.qm
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/ts/LineOrthogonalTangent_pt.ts
 %%DATADIR%%/scripts/Draw/Line/LineParallel/LineParallel.js
 %%DATADIR%%/scripts/Draw/Line/LineParallel/LineParallel.pro
 %%DATADIR%%/scripts/Draw/Line/LineParallel/LineParallel.svg
@@ -3520,6 +3555,24 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/FontPreferences/ts/FontPreferences_pt.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GraphicsViewPreferences.js
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GraphicsViewPreferences.pro
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/GridPreferences.js
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/GridPreferences.pro
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/GridPreferencesInit.js
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/PreferencesPage.ui
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/ts/GridPreferences_de.qm
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/ts/GridPreferences_de.ts
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/ts/GridPreferences_es.qm
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/ts/GridPreferences_es.ts
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/ts/GridPreferences_fr.qm
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/ts/GridPreferences_fr.ts
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/ts/GridPreferences_it.qm
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/ts/GridPreferences_it.ts
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/ts/GridPreferences_ja.qm
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/ts/GridPreferences_ja.ts
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/ts/GridPreferences_pl.qm
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/ts/GridPreferences_pl.ts
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/ts/GridPreferences_pt.qm
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/ts/GridPreferences_pt.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/PreferencesPage.ui
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/ts/GraphicsViewPreferences_de.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/ts/GraphicsViewPreferences_de.ts
@@ -4639,8 +4692,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/File/ts/ts.pro
 %%DATADIR%%/scripts/Help/About/About.js
 %%DATADIR%%/scripts/Help/About/About.pro
-%%DATADIR%%/scripts/Help/About/About.ui
 %%DATADIR%%/scripts/Help/About/AboutCredits.js
+%%DATADIR%%/scripts/Help/About/AboutDialog.ui
 %%DATADIR%%/scripts/Help/About/AboutInit.js
 %%DATADIR%%/scripts/Help/About/doc/About_de.html
 %%DATADIR%%/scripts/Help/About/doc/About_desc_de.html
@@ -4824,7 +4877,7 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Help/ReportTranslationError/ts/ReportTranslationError_pt.ts
 %%DATADIR%%/scripts/Help/ShowReadme/ShowReadme.js
 %%DATADIR%%/scripts/Help/ShowReadme/ShowReadme.pro
-%%DATADIR%%/scripts/Help/ShowReadme/ShowReadme.ui
+%%DATADIR%%/scripts/Help/ShowReadme/ShowReadmeDialog.ui
 %%DATADIR%%/scripts/Help/ShowReadme/ShowReadmeInit.js
 %%DATADIR%%/scripts/Help/ShowReadme/doc/ShowReadme_de.html
 %%DATADIR%%/scripts/Help/ShowReadme/doc/ShowReadme_ja.html
@@ -5802,6 +5855,23 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscDraw/ts/MiscDraw_pt.qm
 %%DATADIR%%/scripts/Misc/MiscDraw/ts/MiscDraw_pt.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/ts/ts.pro
+%%DATADIR%%/scripts/Misc/Screencast/Screencast.js
+%%DATADIR%%/scripts/Misc/Screencast/Screencast.pro
+%%DATADIR%%/scripts/Misc/Screencast/ScMirrored/ArrowCursor.svg
+%%DATADIR%%/scripts/Misc/Screencast/ScMirrored/ClosedHandCursor.svg
+%%DATADIR%%/scripts/Misc/Screencast/ScMirrored/CrossCursor.svg
+%%DATADIR%%/scripts/Misc/Screencast/ScMirrored/IBeamCursor.svg
+%%DATADIR%%/scripts/Misc/Screencast/ScMirrored/Key.svg
+%%DATADIR%%/scripts/Misc/Screencast/ScMirrored/KeyWide.svg
+%%DATADIR%%/scripts/Misc/Screencast/ScMirrored/MouseButtonLeft.svg
+%%DATADIR%%/scripts/Misc/Screencast/ScMirrored/MouseButtonMiddle.svg
+%%DATADIR%%/scripts/Misc/Screencast/ScMirrored/MouseButtonRight.svg
+%%DATADIR%%/scripts/Misc/Screencast/ScMirrored/OpenHandCursor.svg
+%%DATADIR%%/scripts/Misc/Screencast/ScMirrored/PrintPreviewOffsetCursor.svg
+%%DATADIR%%/scripts/Misc/Screencast/ScMirrored/ScMirrored.js
+%%DATADIR%%/scripts/Misc/Screencast/ScMirrored/ScMirrored.pro
+%%DATADIR%%/scripts/Misc/Screencast/ScMirrored/ScMirroredInit.js
+%%DATADIR%%/scripts/Misc/Screencast/ScMirrored/WindowZoomCursor.svg
 %%DATADIR%%/scripts/Misc/Tutorials/CommandLineTools/CommandLineTools.dox
 %%DATADIR%%/scripts/Misc/Tutorials/CommandLineTools/CommandLineTools.js
 %%DATADIR%%/scripts/Misc/Tutorials/CommandLineTools/CommandLineTools.pro
@@ -8047,6 +8117,52 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/SnapReference/ts/SnapReference_pl.ts
 %%DATADIR%%/scripts/Snap/SnapReference/ts/SnapReference_pt.qm
 %%DATADIR%%/scripts/Snap/SnapReference/ts/SnapReference_pt.ts
+%%DATADIR%%/scripts/Snap/SnapXManual/SnapXManual.js
+%%DATADIR%%/scripts/Snap/SnapXManual/SnapXManual.pro
+%%DATADIR%%/scripts/Snap/SnapXManual/SnapXManualInit.js
+%%DATADIR%%/scripts/Snap/SnapXManual/doc/SnapXManual_de.html
+%%DATADIR%%/scripts/Snap/SnapXManual/doc/SnapXManual_desc_de.html
+%%DATADIR%%/scripts/Snap/SnapXManual/doc/SnapXManual_desc_en.html
+%%DATADIR%%/scripts/Snap/SnapXManual/doc/SnapXManual_en.html
+%%DATADIR%%/scripts/Snap/SnapXManual/doc/SnapXManual_ja.html
+%%DATADIR%%/scripts/Snap/SnapXManual/doc/SnapXManual_proc_de.html
+%%DATADIR%%/scripts/Snap/SnapXManual/doc/SnapXManual_proc_en.html
+%%DATADIR%%/scripts/Snap/SnapXManual/ts/SnapXManual_de.qm
+%%DATADIR%%/scripts/Snap/SnapXManual/ts/SnapXManual_de.ts
+%%DATADIR%%/scripts/Snap/SnapXManual/ts/SnapXManual_es.qm
+%%DATADIR%%/scripts/Snap/SnapXManual/ts/SnapXManual_es.ts
+%%DATADIR%%/scripts/Snap/SnapXManual/ts/SnapXManual_fr.qm
+%%DATADIR%%/scripts/Snap/SnapXManual/ts/SnapXManual_fr.ts
+%%DATADIR%%/scripts/Snap/SnapXManual/ts/SnapXManual_it.qm
+%%DATADIR%%/scripts/Snap/SnapXManual/ts/SnapXManual_it.ts
+%%DATADIR%%/scripts/Snap/SnapXManual/ts/SnapXManual_ja.qm
+%%DATADIR%%/scripts/Snap/SnapXManual/ts/SnapXManual_ja.ts
+%%DATADIR%%/scripts/Snap/SnapXManual/ts/SnapXManual_pl.qm
+%%DATADIR%%/scripts/Snap/SnapXManual/ts/SnapXManual_pl.ts
+%%DATADIR%%/scripts/Snap/SnapXManual/ts/SnapXManual_pt.qm
+%%DATADIR%%/scripts/Snap/SnapXManual/ts/SnapXManual_pt.ts
+%%DATADIR%%/scripts/Snap/SnapYManual/SnapYManual.js
+%%DATADIR%%/scripts/Snap/SnapYManual/SnapYManual.pro
+%%DATADIR%%/scripts/Snap/SnapYManual/SnapYManualInit.js
+%%DATADIR%%/scripts/Snap/SnapYManual/doc/SnapYManual_de.html
+%%DATADIR%%/scripts/Snap/SnapYManual/doc/SnapYManual_desc_de.html
+%%DATADIR%%/scripts/Snap/SnapYManual/doc/SnapYManual_desc_en.html
+%%DATADIR%%/scripts/Snap/SnapYManual/doc/SnapYManual_en.html
+%%DATADIR%%/scripts/Snap/SnapYManual/doc/SnapYManual_ja.html
+%%DATADIR%%/scripts/Snap/SnapYManual/ts/SnapYManual_de.qm
+%%DATADIR%%/scripts/Snap/SnapYManual/ts/SnapYManual_de.ts
+%%DATADIR%%/scripts/Snap/SnapYManual/ts/SnapYManual_es.qm
+%%DATADIR%%/scripts/Snap/SnapYManual/ts/SnapYManual_es.ts
+%%DATADIR%%/scripts/Snap/SnapYManual/ts/SnapYManual_fr.qm
+%%DATADIR%%/scripts/Snap/SnapYManual/ts/SnapYManual_fr.ts
+%%DATADIR%%/scripts/Snap/SnapYManual/ts/SnapYManual_it.qm
+%%DATADIR%%/scripts/Snap/SnapYManual/ts/SnapYManual_it.ts
+%%DATADIR%%/scripts/Snap/SnapYManual/ts/SnapYManual_ja.qm
+%%DATADIR%%/scripts/Snap/SnapYManual/ts/SnapYManual_ja.ts
+%%DATADIR%%/scripts/Snap/SnapYManual/ts/SnapYManual_pl.qm
+%%DATADIR%%/scripts/Snap/SnapYManual/ts/SnapYManual_pl.ts
+%%DATADIR%%/scripts/Snap/SnapYManual/ts/SnapYManual_pt.qm
+%%DATADIR%%/scripts/Snap/SnapYManual/ts/SnapYManual_pt.ts
 %%DATADIR%%/scripts/Snap/doc/Snap_de.html
 %%DATADIR%%/scripts/Snap/doc/Snap_en.html
 %%DATADIR%%/scripts/Snap/doc/Snap_es.html
@@ -8276,6 +8392,33 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/View/IsometricView/ts/IsometricView_pt.qm
 %%DATADIR%%/scripts/View/IsometricView/ts/IsometricView_pt.ts
 %%DATADIR%%/scripts/View/IsometricView/ts/ts.pro
+%%DATADIR%%/scripts/View/LinetypeMode/LinetypeMode.js
+%%DATADIR%%/scripts/View/LinetypeMode/LinetypeMode.pro
+%%DATADIR%%/scripts/View/LinetypeMode/LinetypeMode.svg
+%%DATADIR%%/scripts/View/LinetypeMode/doc/LinetypeMode_de.html
+%%DATADIR%%/scripts/View/LinetypeMode/doc/LinetypeMode_desc_de.html
+%%DATADIR%%/scripts/View/LinetypeMode/doc/LinetypeMode_desc_en.html
+%%DATADIR%%/scripts/View/LinetypeMode/doc/LinetypeMode_desc_es.html
+%%DATADIR%%/scripts/View/LinetypeMode/doc/LinetypeMode_desc_fr.html
+%%DATADIR%%/scripts/View/LinetypeMode/doc/LinetypeMode_desc_it.html
+%%DATADIR%%/scripts/View/LinetypeMode/doc/LinetypeMode_desc_ja.html
+%%DATADIR%%/scripts/View/LinetypeMode/doc/LinetypeMode_desc_pt.html
+%%DATADIR%%/scripts/View/LinetypeMode/doc/LinetypeMode_en.html
+%%DATADIR%%/scripts/View/LinetypeMode/doc/LinetypeMode_ja.html
+%%DATADIR%%/scripts/View/LinetypeMode/ts/LinetypeMode_de.qm
+%%DATADIR%%/scripts/View/LinetypeMode/ts/LinetypeMode_de.ts
+%%DATADIR%%/scripts/View/LinetypeMode/ts/LinetypeMode_es.qm
+%%DATADIR%%/scripts/View/LinetypeMode/ts/LinetypeMode_es.ts
+%%DATADIR%%/scripts/View/LinetypeMode/ts/LinetypeMode_fr.qm
+%%DATADIR%%/scripts/View/LinetypeMode/ts/LinetypeMode_fr.ts
+%%DATADIR%%/scripts/View/LinetypeMode/ts/LinetypeMode_it.qm
+%%DATADIR%%/scripts/View/LinetypeMode/ts/LinetypeMode_it.ts
+%%DATADIR%%/scripts/View/LinetypeMode/ts/LinetypeMode_ja.qm
+%%DATADIR%%/scripts/View/LinetypeMode/ts/LinetypeMode_ja.ts
+%%DATADIR%%/scripts/View/LinetypeMode/ts/LinetypeMode_pl.qm
+%%DATADIR%%/scripts/View/LinetypeMode/ts/LinetypeMode_pl.ts
+%%DATADIR%%/scripts/View/LinetypeMode/ts/LinetypeMode_pt.qm
+%%DATADIR%%/scripts/View/LinetypeMode/ts/LinetypeMode_pt.ts
 %%DATADIR%%/scripts/View/OptionsToolBarFocus/OptionsToolBarFocus.js
 %%DATADIR%%/scripts/View/OptionsToolBarFocus/OptionsToolBarFocus.pro
 %%DATADIR%%/scripts/View/OptionsToolBarFocus/OptionsToolBarFocusInit.js
@@ -8740,7 +8883,7 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Widgets/DirectoryList/ts/DirectoryList_pt.ts
 %%DATADIR%%/scripts/Widgets/FirstStart/FirstStart.js
 %%DATADIR%%/scripts/Widgets/FirstStart/FirstStart.pro
-%%DATADIR%%/scripts/Widgets/FirstStart/FirstStart.ui
+%%DATADIR%%/scripts/Widgets/FirstStart/FirstStartDialog.ui
 %%DATADIR%%/scripts/Widgets/FirstStart/FirstStartInit.js
 %%DATADIR%%/scripts/Widgets/FirstStart/firststart.png
 %%DATADIR%%/scripts/Widgets/FirstStart/ts/FirstStart_de.qm
@@ -8926,15 +9069,15 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Widgets/ProgressBar/ts/ProgressBar_pl.ts
 %%DATADIR%%/scripts/Widgets/ProgressBar/ts/ProgressBar_pt.qm
 %%DATADIR%%/scripts/Widgets/ProgressBar/ts/ProgressBar_pt.ts
-%%DATADIR%%/scripts/Widgets/PropertyEditor/AddCustomProperty.ui
+%%DATADIR%%/scripts/Widgets/PropertyEditor/AddCustomProperty.svg
+%%DATADIR%%/scripts/Widgets/PropertyEditor/AddCustomPropertyDialog.ui
 %%DATADIR%%/scripts/Widgets/PropertyEditor/AddLayer.svg
-%%DATADIR%%/scripts/Widgets/PropertyEditor/AddProperty.svg
 %%DATADIR%%/scripts/Widgets/PropertyEditor/Clear.svg
 %%DATADIR%%/scripts/Widgets/PropertyEditor/PropertyEditor.js
 %%DATADIR%%/scripts/Widgets/PropertyEditor/PropertyEditor.pro
 %%DATADIR%%/scripts/Widgets/PropertyEditor/PropertyEditor.svg
 %%DATADIR%%/scripts/Widgets/PropertyEditor/PropertyEditor.ui
-%%DATADIR%%/scripts/Widgets/PropertyEditor/RemoveProperty.svg
+%%DATADIR%%/scripts/Widgets/PropertyEditor/RemoveCustomProperty.svg
 %%DATADIR%%/scripts/Widgets/PropertyEditor/doc/PropertyEditor_de.html
 %%DATADIR%%/scripts/Widgets/PropertyEditor/doc/PropertyEditor_en.html
 %%DATADIR%%/scripts/Widgets/PropertyEditor/doc/PropertyEditor_es.html
@@ -9396,6 +9539,9 @@ lib/libstemmer.a
 @dirrm %%DATADIR%%/scripts/View/OptionsToolBarFocus/ts
 @dirrm %%DATADIR%%/scripts/View/OptionsToolBarFocus/doc
 @dirrm %%DATADIR%%/scripts/View/OptionsToolBarFocus
+@dirrm %%DATADIR%%/scripts/View/LinetypeMode/ts
+@dirrm %%DATADIR%%/scripts/View/LinetypeMode/doc
+@dirrm %%DATADIR%%/scripts/View/LinetypeMode
 @dirrm %%DATADIR%%/scripts/View/IsometricView/ts
 @dirrm %%DATADIR%%/scripts/View/IsometricView/IsometricGridTop/ts
 @dirrm %%DATADIR%%/scripts/View/IsometricView/IsometricGridTop/doc
@@ -9422,6 +9568,12 @@ lib/libstemmer.a
 @dirrm %%DATADIR%%/scripts/View
 @dirrm %%DATADIR%%/scripts/Snap/ts
 @dirrm %%DATADIR%%/scripts/Snap/doc
+@dirrm %%DATADIR%%/scripts/Snap/SnapYManual/ts
+@dirrm %%DATADIR%%/scripts/Snap/SnapYManual/doc
+@dirrm %%DATADIR%%/scripts/Snap/SnapYManual
+@dirrm %%DATADIR%%/scripts/Snap/SnapXManual/ts
+@dirrm %%DATADIR%%/scripts/Snap/SnapXManual/doc
+@dirrm %%DATADIR%%/scripts/Snap/SnapXManual
 @dirrm %%DATADIR%%/scripts/Snap/SnapReference/ts
 @dirrm %%DATADIR%%/scripts/Snap/SnapReference/doc
 @dirrm %%DATADIR%%/scripts/Snap/SnapReference
@@ -9672,6 +9824,8 @@ lib/libstemmer.a
 @dirrm %%DATADIR%%/scripts/Misc/Tutorials/CommandLineTools/CreatingDrawing
 @dirrm %%DATADIR%%/scripts/Misc/Tutorials/CommandLineTools
 @dirrm %%DATADIR%%/scripts/Misc/Tutorials
+@dirrm %%DATADIR%%/scripts/Misc/Screencast/ScMirrored
+@dirrm %%DATADIR%%/scripts/Misc/Screencast
 @dirrm %%DATADIR%%/scripts/Misc/MiscDraw/ts
 @dirrm %%DATADIR%%/scripts/Misc/MiscDraw/PointPowerCenter
 @dirrm %%DATADIR%%/scripts/Misc/MiscDraw/PointPole
@@ -9920,6 +10074,8 @@ lib/libstemmer.a
 @dirrm %%DATADIR%%/scripts/Edit/AppPreferences/InputPreferences/ts
 @dirrm %%DATADIR%%/scripts/Edit/AppPreferences/InputPreferences
 @dirrm %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/ts
+@dirrm %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/ts
+@dirrm %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences
 @dirrm %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/FontPreferences/ts
 @dirrm %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/FontPreferences
 @dirrm %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/ColorPreferences/ts
@@ -10015,6 +10171,9 @@ lib/libstemmer.a
 @dirrm %%DATADIR%%/scripts/Draw/Line/LineParallel/Tests/actual
 @dirrm %%DATADIR%%/scripts/Draw/Line/LineParallel/Tests
 @dirrm %%DATADIR%%/scripts/Draw/Line/LineParallel
+@dirrm %%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/ts
+@dirrm %%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/doc
+@dirrm %%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent
 @dirrm %%DATADIR%%/scripts/Draw/Line/LineOrthogonal/ts
 @dirrm %%DATADIR%%/scripts/Draw/Line/LineOrthogonal/doc
 @dirrm %%DATADIR%%/scripts/Draw/Line/LineOrthogonal/Tests/required

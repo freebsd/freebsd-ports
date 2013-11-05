@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qcad
-PORTVERSION=	3.3.3.0
+PORTVERSION=	3.4.2.0
 CATEGORIES=	cad
 MASTER_SITES=	http://github.com/${PORTNAME}/${PORTNAME}/archive/${DISTNAME}.tar.gz?dummy=/	\
 		https://github.com/${PORTNAME}/${PORTNAME}/archive/${DISTNAME}.tar.gz?dummy=/
@@ -20,6 +20,7 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
 FETCH_ARGS=	-Fpr
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+MAKE_JOBS_UNSAFE=yes
 
 USES=		gmake qmake
 USE_LDCONFIG=	yes
