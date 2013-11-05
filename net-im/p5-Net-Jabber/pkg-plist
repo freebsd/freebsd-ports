@@ -1,3 +1,22 @@
+%%PERL5_MAN3%%/Net::Jabber.3.gz
+%%PERL5_MAN3%%/Net::Jabber::Client.3.gz
+%%PERL5_MAN3%%/Net::Jabber::Component.3.gz
+%%PERL5_MAN3%%/Net::Jabber::Data.3.gz
+%%PERL5_MAN3%%/Net::Jabber::Debug.3.gz
+%%PERL5_MAN3%%/Net::Jabber::Dialback.3.gz
+%%PERL5_MAN3%%/Net::Jabber::Dialback::Result.3.gz
+%%PERL5_MAN3%%/Net::Jabber::Dialback::Verify.3.gz
+%%PERL5_MAN3%%/Net::Jabber::IQ.3.gz
+%%PERL5_MAN3%%/Net::Jabber::JID.3.gz
+%%PERL5_MAN3%%/Net::Jabber::Key.3.gz
+%%PERL5_MAN3%%/Net::Jabber::Log.3.gz
+%%PERL5_MAN3%%/Net::Jabber::Message.3.gz
+%%PERL5_MAN3%%/Net::Jabber::Namespaces.3.gz
+%%PERL5_MAN3%%/Net::Jabber::Presence.3.gz
+%%PERL5_MAN3%%/Net::Jabber::Protocol.3.gz
+%%PERL5_MAN3%%/Net::Jabber::Server.3.gz
+%%PERL5_MAN3%%/Net::Jabber::Stanza.3.gz
+%%PERL5_MAN3%%/Net::Jabber::XDB.3.gz
 %%SITE_PERL%%/Net/Jabber.pm
 %%SITE_PERL%%/Net/Jabber/Client.pm
 %%SITE_PERL%%/Net/Jabber/Component.pm
@@ -18,8 +37,8 @@
 %%SITE_PERL%%/Net/Jabber/Stanza.pm
 %%SITE_PERL%%/Net/Jabber/XDB.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Jabber/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Jabber
-@dirrm %%SITE_PERL%%/Net/Jabber/Dialback
-@dirrm %%SITE_PERL%%/Net/Jabber
-@dirrmtry %%SITE_PERL%%/Net
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Jabber
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net/Jabber/Dialback
+@dirrmtry %%SITE_PERL%%/Net/Jabber
+@dirrmtry %%SITE_PERL%%/Net

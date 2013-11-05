@@ -22,57 +22,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	AnyEvent::XMPP.3 \
-	AnyEvent::XMPP::Connection.3 \
-	AnyEvent::XMPP::Error::MUC.3 \
-	AnyEvent::XMPP::Error.3 \
-	AnyEvent::XMPP::Ext::Disco.3 \
-	AnyEvent::XMPP::IM::Connection.3 \
-	AnyEvent::XMPP::Util.3 \
-	AnyEvent::XMPP::Ext::VCard.3 \
-	AnyEvent::XMPP::IM::Account.3 \
-	AnyEvent::XMPP::Namespaces.3 \
-	AnyEvent::XMPP::IM::Roster.3 \
-	AnyEvent::XMPP::Ext::MUC.3 \
-	AnyEvent::XMPP::TestClient.3 \
-	AnyEvent::XMPP::Ext::DataForm.3 \
-	AnyEvent::XMPP::Node.3 \
-	AnyEvent::XMPP::Ext::Disco::Items.3 \
-	AnyEvent::XMPP::Ext::MUC::RoomInfo.3 \
-	AnyEvent::XMPP::Ext::MUC::User.3 \
-	AnyEvent::XMPP::Error::Presence.3 \
-	AnyEvent::XMPP::Ext::MUC::Message.3 \
-	AnyEvent::XMPP::Ext.3 \
-	AnyEvent::XMPP::Ext::Pubsub.3 \
-	AnyEvent::XMPP::SimpleConnection.3 \
-	AnyEvent::XMPP::IM::Delayed.3 \
-	AnyEvent::XMPP::Error::Stanza.3 \
-	AnyEvent::XMPP::Ext::Disco::Info.3 \
-	AnyEvent::XMPP::Writer.3 \
-	AnyEvent::XMPP::IM::Contact.3 \
-	AnyEvent::XMPP::IM::Message.3 \
-	AnyEvent::XMPP::Ext::RegisterForm.3 \
-	AnyEvent::XMPP::Ext::Registration.3 \
-	AnyEvent::XMPP::Error::Message.3 \
-	AnyEvent::XMPP::Error::Stream.3 \
-	AnyEvent::XMPP::Error::Register.3 \
-	AnyEvent::XMPP::Parser.3 \
-	AnyEvent::XMPP::Error::IQAuth.3 \
-	AnyEvent::XMPP::Error::Exception.3 \
-	AnyEvent::XMPP::Extendable.3 \
-	AnyEvent::XMPP::Ext::Version.3 \
-	AnyEvent::XMPP::Error::SASL.3 \
-	AnyEvent::XMPP::Ext::OOB.3 \
-	AnyEvent::XMPP::Error::Parser.3 \
-	AnyEvent::XMPP::Component.3 \
-	AnyEvent::XMPP::Ext::Ping.3 \
-	AnyEvent::XMPP::Error::IQ.3 \
-	AnyEvent::XMPP::IM::Presence.3 \
-	AnyEvent::XMPP::Ext::MUC::Room.3 \
-	AnyEvent::XMPP::Ext::Receipts.3 \
-	AnyEvent::XMPP::Client.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 # One of it's dependency is p5-GSSAPI which is marked broken for 7.X
 .if ${OSVERSION} < 800000
