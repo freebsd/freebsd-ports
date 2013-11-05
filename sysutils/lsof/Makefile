@@ -39,6 +39,7 @@ HAS_CONFIGURE=	yes
 
 USES=		shebangfix
 SHEBANG_FILES=	scripts/sort_res.perl5
+NEED_ROOT=	yes
 
 .include <bsd.port.pre.mk>
 
