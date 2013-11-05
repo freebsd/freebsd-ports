@@ -13,7 +13,4 @@ COMMENT=	Parse/Build Peer Packets from BitTorrent
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Net::BitTorrent::PeerPacket.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
