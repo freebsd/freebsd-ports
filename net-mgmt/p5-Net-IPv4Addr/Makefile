@@ -16,8 +16,4 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		ipv4calc.1
-MAN3=		Net::IPv4Addr.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

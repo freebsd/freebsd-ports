@@ -17,9 +17,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		POE::Component::SNMP.3
-
-NO_STAGE=	yes
 post-patch:
 	@${TOUCH} ${WRKSRC}/config.cache
 
