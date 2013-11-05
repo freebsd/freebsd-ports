@@ -25,5 +25,4 @@ USE_LDCONFIG=	yes
 USE_QT4=	corelib gui xml \
 		moc_build qmake_build rcc_build uic_build
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
