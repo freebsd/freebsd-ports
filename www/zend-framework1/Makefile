@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ZendFramework
-PORTVERSION=	1.12.0
-PORTREVISION=	1
+PORTVERSION=	1.12.3
 CATEGORIES=	www
 MASTER_SITES=	http://packages.zendframework.com/releases/${DISTNAME}/
 PKGNAMESUFFIX=	1
