@@ -1,7 +1,4 @@
 %%PERL5_MAN3%%/DBIx::DBSchema.3.gz
-%%PERL5_MAN3%%/DBIx::DBSchema::ColGroup.3.gz
-%%PERL5_MAN3%%/DBIx::DBSchema::ColGroup::Index.3.gz
-%%PERL5_MAN3%%/DBIx::DBSchema::ColGroup::Unique.3.gz
 %%PERL5_MAN3%%/DBIx::DBSchema::Column.3.gz
 %%PERL5_MAN3%%/DBIx::DBSchema::DBD.3.gz
 %%PERL5_MAN3%%/DBIx::DBSchema::DBD::Oracle.3.gz
@@ -12,9 +9,6 @@
 %%PERL5_MAN3%%/DBIx::DBSchema::Index.3.gz
 %%PERL5_MAN3%%/DBIx::DBSchema::Table.3.gz
 %%SITE_PERL%%/DBIx/DBSchema.pm
-%%SITE_PERL%%/DBIx/DBSchema/ColGroup.pm
-%%SITE_PERL%%/DBIx/DBSchema/ColGroup/Index.pm
-%%SITE_PERL%%/DBIx/DBSchema/ColGroup/Unique.pm
 %%SITE_PERL%%/DBIx/DBSchema/Column.pm
 %%SITE_PERL%%/DBIx/DBSchema/DBD.pm
 %%SITE_PERL%%/DBIx/DBSchema/DBD/Oracle.pm
@@ -29,6 +23,5 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/DBSchema
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
 @dirrmtry %%SITE_PERL%%/DBIx/DBSchema/DBD
-@dirrmtry %%SITE_PERL%%/DBIx/DBSchema/ColGroup
 @dirrmtry %%SITE_PERL%%/DBIx/DBSchema
 @dirrmtry %%SITE_PERL%%/DBIx
