@@ -1,4 +1,8 @@
 @comment $FreeBSD$
+@comment keep the next three lines on top (only required for old pkg_... tools)
+@exec mkdir -p %D/%%ETCDIR%%/envvars.d 2> /dev/null || true
+@exec mkdir -p %D/%%ETCDIR%%/extra 2> /dev/null || true
+@exec mkdir -p %D/%%ETCDIR%%/Includes 2> /dev/null || true
 %%ETCDIR%%/Includes/no-accf.conf
 include/apache22/ap_compat.h
 include/apache22/ap_config.h

@@ -1,0 +1,50 @@
+PR: ports/183685
+[1] http://svn.apache.org/viewvc?view=revision&revision=1528718
+[2] https://issues.apache.org/bugzilla/show_bug.cgi?id=55306
+===========================================================================
+--- modules/dav/main/mod_dav.c.orig	2013-06-27 18:54:14.000000000 +0200
++++ modules/dav/main/mod_dav.c	2013-11-05 16:31:51.000000000 +0100
+@@ -2733,7 +2733,9 @@
+      */
+     if ((err = dav_validate_request(r, resource, depth, NULL,
+                                     &multi_response,
+-                                    DAV_VALIDATE_PARENT
++                                    (is_move ? DAV_VALIDATE_PARENT
++                                         :DAV_VALIDATE_RESOURCE
++                                          |DAV_VALIDATE_NO_MODIFY)
+                                     | DAV_VALIDATE_USE_424,
+                                     NULL)) != NULL) {
+         err = dav_push_error(r->pool, err->status, 0,
+--- modules/dav/main/mod_dav.h.orig	2013/10/03 05:06:08	1528717
++++ modules/dav/main/mod_dav.h	2013/10/03 05:29:35	1528718
+@@ -1297,6 +1297,9 @@
+                                            the 424 DAV:response */
+ #define DAV_VALIDATE_USE_424    0x0080  /* return 424 status, not 207 */
+ #define DAV_VALIDATE_IS_PARENT  0x0100  /* for internal use */
++#define DAV_VALIDATE_NO_MODIFY  0x0200  /* resource is not being modified
++                                           so allow even if lock token
++                                           is not provided */
+ 
+ /* Lock-null related public lock functions */
+ DAV_DECLARE(int) dav_get_resource_state(request_rec *r,
+--- modules/dav/main/util.c.orig	2013/10/03 05:06:08	1528717
++++ modules/dav/main/util.c	2013/10/03 05:29:35	1528718
+@@ -954,13 +954,16 @@
+         /*
+         ** For methods other than LOCK:
+         **
+-        ** If we have no locks, then <seen_locktoken> can be set to true --
++        ** If we have no locks or if the resource is not being modified
++        ** (per RFC 4918 the lock token is not required on resources
++        ** we are not changing), then <seen_locktoken> can be set to true --
+         ** pretending that we've already met the requirement of seeing one
+         ** of the resource's locks in the If: header.
+         **
+         ** Otherwise, it must be cleared and we'll look for one.
+         */
+-        seen_locktoken = (lock_list == NULL);
++        seen_locktoken = (lock_list == NULL
++                          || flags & DAV_VALIDATE_NO_MODIFY);
+     }
+ 
+     /*
