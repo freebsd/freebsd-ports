@@ -25,7 +25,6 @@ GENDOCS_DESC=	Build documentation (requires doxygen)
 OPTIONS_DEFAULT+=	GENDOCS
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGENDOCS}
