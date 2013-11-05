@@ -1,0 +1,3 @@
+This extension provides API for communicating with MessagePack serialization.
+
+WWW: http://pecl.php.net/package/msgpack
