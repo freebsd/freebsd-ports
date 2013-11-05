@@ -1,0 +1,40 @@
+--- ./SConstruct.orig	2013-10-04 17:11:04.000000000 +0200
++++ ./SConstruct	2013-10-05 16:16:20.000000000 +0200
+@@ -69,6 +69,9 @@
+ 
+ opts = Variables(files=[SAVED_CONFIG])
+ opts.AddVariables(
++  RawListVariable('DESTDIR',
++               'Required *dummy*, without scons will stop with "Unknown variables: DESTDIR"',
++                None),
+   PathVariable('PREFIX',
+                'Directory to install under',
+                default_prefix,
+@@ -203,6 +206,7 @@
+ thisdir = os.getcwd()
+ libdir = '$LIBDIR'
+ incdir = '$PREFIX/include/serf-$MAJOR'
++pkgconfdir = '$PREFIX/libdata'
+ 
+ # This version string is used in the dynamic library name, and for Mac OS X also
+ # for the current_version and compatibility_version options in the .dylib
+@@ -385,7 +389,9 @@
+                                                        env.get('GSSAPI_LIBS')),
+                            })
+ 
+-env.Default(lib_static, lib_shared, pkgconfig)
++env.Default(lib_static, lib_shared, pkgconfig )
++
++#print env.Dump()
+ 
+ if CALLOUT_OKAY:
+   conf = Configure(env)
+@@ -418,7 +424,7 @@
+ env.Alias('install-lib', [install_static, install_shared,
+                           ])
+ env.Alias('install-inc', env.Install(incdir, HEADER_FILES))
+-env.Alias('install-pc', env.Install(os.path.join(libdir, 'pkgconfig'),
++env.Alias('install-pc', env.Install(os.path.join(pkgconfdir, 'pkgconfig'),
+                                     pkgconfig))
+ env.Alias('install', ['install-lib', 'install-inc', 'install-pc', ])
+ 

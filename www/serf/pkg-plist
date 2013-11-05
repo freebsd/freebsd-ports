@@ -2,9 +2,9 @@ include/serf-1/serf.h
 include/serf-1/serf_bucket_types.h
 include/serf-1/serf_bucket_util.h
 lib/libserf-1.a
-lib/libserf-1.la
 lib/libserf-1.so
-lib/libserf-1.so.0
+lib/libserf-1.so.1
+lib/libserf-1.so.1.3.0
 libdata/pkgconfig/serf-1.pc
 %%PORTDOCS%%%%DOCSDIR%%/design-guide.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
