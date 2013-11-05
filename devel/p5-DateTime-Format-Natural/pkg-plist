@@ -14,6 +14,21 @@ bin/dateparse
 %%SITE_PERL%%/DateTime/Format/Natural/Utils.pm
 %%SITE_PERL%%/DateTime/Format/Natural/Wrappers.pm
 %%SITE_PERL%%/DateTime/Format/Natural/Duration/Checks.pm
+man/man1/dateparse.1.gz
+%%PERL5_MAN3%%/DateTime::Format::Natural.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Natural::Calc.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Natural::Compat.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Natural::Duration.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Natural::Expand.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Natural::Extract.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Natural::Formatted.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Natural::Helpers.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Natural::Lang::Base.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Natural::Lang::EN.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Natural::Rewrite.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Natural::Test.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Natural::Utils.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Natural::Wrappers.3.gz
 @dirrmtry %%SITE_PERL%%/DateTime/Format/Natural/Duration
 @dirrmtry %%SITE_PERL%%/DateTime/Format/Natural/Lang
 @dirrmtry %%SITE_PERL%%/DateTime/Format/Natural
