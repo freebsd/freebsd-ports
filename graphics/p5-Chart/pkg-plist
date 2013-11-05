@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/Chart.3.gz
 %%SITE_PERL%%/Chart.pod
 %%SITE_PERL%%/Chart/Bars.pm
 %%SITE_PERL%%/Chart/Base.pm
@@ -17,4 +18,4 @@
 %%SITE_PERL%%/Chart/StackedBars.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart
-@dirrm %%SITE_PERL%%/Chart
+@dirrmtry %%SITE_PERL%%/Chart

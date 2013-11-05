@@ -20,7 +20,4 @@ USES=		perl5
 USE_PERL5=	configure
 CFLAGS+=	-I${LOCALBASE}/include
 
-MAN3=		Imager::QRCode.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

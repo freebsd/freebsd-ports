@@ -23,13 +23,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Layout::Manager.3 \
-		Layout::Manager::Absolute.3 \
-		Layout::Manager::Axis.3 \
-		Layout::Manager::Compass.3 \
-		Layout::Manager::Flow.3 \
-		Layout::Manager::Grid.3 \
-		Layout::Manager::Single.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

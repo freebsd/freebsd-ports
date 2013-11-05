@@ -1,36 +1,37 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/EOP/.packlist
+%%PERL5_MAN3%%/Geo::EOP.3.gz
+%%PERL5_MAN3%%/Geo::EOP::Util.3.gz
 %%SITE_PERL%%/Geo/EOP.pm
 %%SITE_PERL%%/Geo/EOP.pod
 %%SITE_PERL%%/Geo/EOP/Util.pm
 %%SITE_PERL%%/Geo/EOP/Util.pod
 %%SITE_PERL%%/Geo/EOP/xsd/ChangeLog.xls
-%%SITE_PERL%%/Geo/EOP/xsd/eop1.2b/opt.xsd
-%%SITE_PERL%%/Geo/EOP/xsd/eop1.2b/sar.xsd
-%%SITE_PERL%%/Geo/EOP/xsd/eop1.2b/atm.xsd
-%%SITE_PERL%%/Geo/EOP/xsd/eop1.2b/eop.xsd
-%%SITE_PERL%%/Geo/EOP/xsd/eop1.1/gmlSubset.xsd
-%%SITE_PERL%%/Geo/EOP/xsd/eop1.1/sar.xsd
-%%SITE_PERL%%/Geo/EOP/xsd/eop1.1/changelog.xls
-%%SITE_PERL%%/Geo/EOP/xsd/eop1.1/opt.xsd
 %%SITE_PERL%%/Geo/EOP/xsd/eop1.1/atm.xsd
+%%SITE_PERL%%/Geo/EOP/xsd/eop1.1/changelog.xls
 %%SITE_PERL%%/Geo/EOP/xsd/eop1.1/eop.xsd
-%%SITE_PERL%%/Geo/EOP/xsd/eop1.2.1/sar.xsd
-%%SITE_PERL%%/Geo/EOP/xsd/eop1.2.1/opt.xsd
+%%SITE_PERL%%/Geo/EOP/xsd/eop1.1/gmlSubset.xsd
+%%SITE_PERL%%/Geo/EOP/xsd/eop1.1/opt.xsd
+%%SITE_PERL%%/Geo/EOP/xsd/eop1.1/sar.xsd
+%%SITE_PERL%%/Geo/EOP/xsd/eop1.2.1/atm.xsd
 %%SITE_PERL%%/Geo/EOP/xsd/eop1.2.1/eop.xsd
 %%SITE_PERL%%/Geo/EOP/xsd/eop1.2.1/gmlSubset.xsd
-%%SITE_PERL%%/Geo/EOP/xsd/eop1.2.1/atm.xsd
-%%SITE_PERL%%/Geo/EOP/xsd/hma1.0/hma.xsd
+%%SITE_PERL%%/Geo/EOP/xsd/eop1.2.1/opt.xsd
+%%SITE_PERL%%/Geo/EOP/xsd/eop1.2.1/sar.xsd
+%%SITE_PERL%%/Geo/EOP/xsd/eop1.2b/atm.xsd
+%%SITE_PERL%%/Geo/EOP/xsd/eop1.2b/eop.xsd
+%%SITE_PERL%%/Geo/EOP/xsd/eop1.2b/opt.xsd
+%%SITE_PERL%%/Geo/EOP/xsd/eop1.2b/sar.xsd
 %%SITE_PERL%%/Geo/EOP/xsd/hma1.0/atm.xsd
 %%SITE_PERL%%/Geo/EOP/xsd/hma1.0/gmlSubset.xsd
+%%SITE_PERL%%/Geo/EOP/xsd/hma1.0/hma.xsd
 %%SITE_PERL%%/Geo/EOP/xsd/hma1.0/ohr.xsd
 %%SITE_PERL%%/Geo/EOP/xsd/hma1.0/sar.xsd
-@dirrmtry %%SITE_PERL%%/Geo/EOP/xsd/eop1.1
-@dirrmtry %%SITE_PERL%%/Geo/EOP/xsd/eop1.2.1
-@dirrmtry %%SITE_PERL%%/Geo/EOP/xsd/eop1.2b
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/EOP/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/EOP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
 @dirrmtry %%SITE_PERL%%/Geo/EOP/xsd/hma1.0
+@dirrmtry %%SITE_PERL%%/Geo/EOP/xsd/eop1.2b
+@dirrmtry %%SITE_PERL%%/Geo/EOP/xsd/eop1.2.1
+@dirrmtry %%SITE_PERL%%/Geo/EOP/xsd/eop1.1
 @dirrmtry %%SITE_PERL%%/Geo/EOP/xsd
 @dirrmtry %%SITE_PERL%%/Geo/EOP
 @dirrmtry %%SITE_PERL%%/Geo
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/EOP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
-@dirrmtry %%SITE_PERL%%/mach

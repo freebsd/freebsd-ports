@@ -18,11 +18,4 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=	Graphics::ColorNames.3 \
-	Graphics::ColorNames::HTML.3 \
-	Graphics::ColorNames::Netscape.3 \
-	Graphics::ColorNames::Windows.3 \
-	Graphics::ColorNames::X.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

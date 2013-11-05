@@ -17,10 +17,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=1.30:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-XML-Compile-Cache>=0.97:${PORTSDIR}/textproc/p5-XML-Compile-Cache
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=		Geo::KML.3 Geo::KML::Util.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

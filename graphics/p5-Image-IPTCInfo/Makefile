@@ -14,16 +14,13 @@ USES=		perl5 shebangfix
 USE_PERL5=	configure
 SHEBANG_FILES=	demo.pl
 
-MAN3=		Image::IPTCInfo.3
-
-NO_STAGE=	yes
 post-patch:
 	@${RM} -f ${WRKSRC}/._*
 
 .if !defined(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/demo_images/* ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/demo_images/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

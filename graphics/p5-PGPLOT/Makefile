@@ -20,14 +20,10 @@ SCRIPTS_ENV=	PERL=${PERL}
 USE_FORTRAN=	yes
 USES=		perl5
 
-MAN3=		PGPLOT.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}
-
 .if !defined(NOPORTEXAMPLES)
-NO_STAGE=	yes
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} LICENSE test* ${EXAMPLESDIR}/
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} LICENSE test* ${STAGEDIR}${EXAMPLESDIR}/
 .endif
 
 .if defined(MAINTAINER_MODE) && !defined(BATCH)

@@ -1,5 +1,14 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/Builder/.packlist
 bin/asc.plx
+%%PERL5_MAN3%%/SWF::Builder.3.gz
+%%PERL5_MAN3%%/SWF::Builder::ActionScript.3.gz
+%%PERL5_MAN3%%/SWF::Builder::Character::Bitmap.3.gz
+%%PERL5_MAN3%%/SWF::Builder::Character::EditText.3.gz
+%%PERL5_MAN3%%/SWF::Builder::Character::Font.3.gz
+%%PERL5_MAN3%%/SWF::Builder::Character::MovieClip.3.gz
+%%PERL5_MAN3%%/SWF::Builder::Character::Shape.3.gz
+%%PERL5_MAN3%%/SWF::Builder::Character::Sound.3.gz
+%%PERL5_MAN3%%/SWF::Builder::Character::Text.3.gz
+%%PERL5_MAN3%%/SWF::Builder::Gradient.3.gz
 %%SITE_PERL%%/SWF/Builder.pm
 %%SITE_PERL%%/SWF/Builder/ActionScript.pm
 %%SITE_PERL%%/SWF/Builder/ActionScript/Compiler.pm
@@ -21,13 +30,15 @@ bin/asc.plx
 %%SITE_PERL%%/SWF/Builder/ExElement.pm
 %%SITE_PERL%%/SWF/Builder/Gradient.pm
 %%SITE_PERL%%/SWF/Builder/Shape.pm
-@dirrm %%SITE_PERL%%/SWF/Builder/ActionScript
-@dirrm %%SITE_PERL%%/SWF/Builder/Character/Bitmap/Lossless
-@dirrm %%SITE_PERL%%/SWF/Builder/Character/Bitmap
-@dirrm %%SITE_PERL%%/SWF/Builder/Character/Font
-@dirrm %%SITE_PERL%%/SWF/Builder/Character/Sound
-@dirrm %%SITE_PERL%%/SWF/Builder/Character
-@dirrm %%SITE_PERL%%/SWF/Builder
-@dirrmtry %%SITE_PERL%%/SWF
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/Builder
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/Builder/.packlist
+man/man1/asc.plx.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/Builder
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF
+@dirrmtry %%SITE_PERL%%/SWF/Builder/Character/Sound
+@dirrmtry %%SITE_PERL%%/SWF/Builder/Character/Font
+@dirrmtry %%SITE_PERL%%/SWF/Builder/Character/Bitmap/Lossless
+@dirrmtry %%SITE_PERL%%/SWF/Builder/Character/Bitmap
+@dirrmtry %%SITE_PERL%%/SWF/Builder/Character
+@dirrmtry %%SITE_PERL%%/SWF/Builder/ActionScript
+@dirrmtry %%SITE_PERL%%/SWF/Builder
+@dirrmtry %%SITE_PERL%%/SWF

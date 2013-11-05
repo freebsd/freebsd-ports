@@ -21,20 +21,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Bundle::Image::Info::Everything.3 \
-		Bundle::Image::Info::PNG.3 \
-		Bundle::Image::Info::SVG.3 \
-		Bundle::Image::Info::XBM.3 \
-		Bundle::Image::Info::XPM.3 \
-		Image::Info.3 \
-		Image::Info::BMP.3 \
-		Image::Info::ICO.3 \
-		Image::Info::PPM.3 \
-		Image::Info::SVG.3 \
-		Image::Info::TIFF.3 \
-		Image::Info::WBMP.3 \
-		Image::Info::XBM.3 \
-		Image::Info::XPM.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

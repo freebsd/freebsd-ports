@@ -1,11 +1,13 @@
-%%SITE_PERL%%/GD/Graph3d.pm
+%%PERL5_MAN3%%/GD::Graph3d.3.gz
 %%SITE_PERL%%/GD/Graph/axestype3d.pm
 %%SITE_PERL%%/GD/Graph/bars3d.pm
-%%SITE_PERL%%/GD/Graph/cylinder3d.pm
 %%SITE_PERL%%/GD/Graph/cylinder.pm
+%%SITE_PERL%%/GD/Graph/cylinder3d.pm
 %%SITE_PERL%%/GD/Graph/lines3d.pm
 %%SITE_PERL%%/GD/Graph/pie3d.pm
+%%SITE_PERL%%/GD/Graph3d.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Graph3d/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Graph3d
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD
 @dirrmtry %%SITE_PERL%%/GD/Graph
 @dirrmtry %%SITE_PERL%%/GD
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Graph3d

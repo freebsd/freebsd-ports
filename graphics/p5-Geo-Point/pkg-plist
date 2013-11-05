@@ -1,17 +1,22 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Point/.packlist
-%%SITE_PERL%%/Geo/Surface.pod
-%%SITE_PERL%%/Geo/Point.pod
-%%SITE_PERL%%/Geo/Point.pm
-%%SITE_PERL%%/Geo/Proj.pm
-%%SITE_PERL%%/Geo/Shape.pm
-%%SITE_PERL%%/Geo/Line.pod
-%%SITE_PERL%%/Geo/Surface.pm
+%%PERL5_MAN3%%/Geo::Line.3.gz
+%%PERL5_MAN3%%/Geo::Point.3.gz
+%%PERL5_MAN3%%/Geo::Proj.3.gz
+%%PERL5_MAN3%%/Geo::Shape.3.gz
+%%PERL5_MAN3%%/Geo::Space.3.gz
+%%PERL5_MAN3%%/Geo::Surface.3.gz
 %%SITE_PERL%%/Geo/Line.pm
+%%SITE_PERL%%/Geo/Line.pod
+%%SITE_PERL%%/Geo/Point.pm
+%%SITE_PERL%%/Geo/Point.pod
+%%SITE_PERL%%/Geo/Proj.pm
+%%SITE_PERL%%/Geo/Proj.pod
+%%SITE_PERL%%/Geo/Shape.pm
+%%SITE_PERL%%/Geo/Shape.pod
 %%SITE_PERL%%/Geo/Space.pm
 %%SITE_PERL%%/Geo/Space.pod
-%%SITE_PERL%%/Geo/Proj.pod
-%%SITE_PERL%%/Geo/Shape.pod
+%%SITE_PERL%%/Geo/Surface.pm
+%%SITE_PERL%%/Geo/Surface.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Point/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Point
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
-@dirrmtry %%SITE_PERL%%/mach
 @dirrmtry %%SITE_PERL%%/Geo

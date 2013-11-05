@@ -16,10 +16,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	svg_validate.1 svg_annotate.1
-MAN3=	SVG::Metadata.3
-
-NO_STAGE=	yes
 post-patch:
 	${RM} -f ${WRKSRC}/lib/SVG/Metadata.pm.orig
 

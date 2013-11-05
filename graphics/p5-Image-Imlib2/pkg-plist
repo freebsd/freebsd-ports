@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/Image::Imlib2.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Image/Imlib2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Imlib2/Imlib2.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Imlib2/Imlib2.so
@@ -5,6 +6,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/benchmark.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/maeda.pl
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Imlib2
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Imlib2
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Image

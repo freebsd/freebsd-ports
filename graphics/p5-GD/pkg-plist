@@ -1,4 +1,9 @@
 bin/bdf2gdfont.pl
+%%PERL5_MAN3%%/GD.3.gz
+%%PERL5_MAN3%%/GD::Image.3.gz
+%%PERL5_MAN3%%/GD::Polygon.3.gz
+%%PERL5_MAN3%%/GD::Polyline.3.gz
+%%PERL5_MAN3%%/GD::Simple.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/GD.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/GD/Group.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/GD/Image.pm
@@ -10,5 +15,6 @@ bin/bdf2gdfont.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/GD.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/qd.pl
+man/man1/bdf2gdfont.pl.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/GD

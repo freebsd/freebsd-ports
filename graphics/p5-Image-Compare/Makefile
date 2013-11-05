@@ -22,13 +22,4 @@ TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Image::Compare.3 \
-		Image::Compare::AVG_THRESHOLD.3 \
-		Image::Compare::Comparator.3 \
-		Image::Compare::EXACT.3 \
-		Image::Compare::IMAGE.3 \
-		Image::Compare::THRESHOLD.3 \
-		Image::Compare::THRESHOLD_COUNT.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

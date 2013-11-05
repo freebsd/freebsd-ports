@@ -23,30 +23,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Graphics::Primitive.3 \
-		Graphics::Primitive::Aligned.3 \
-		Graphics::Primitive::Border.3 \
-		Graphics::Primitive::Brush.3 \
-		Graphics::Primitive::Canvas.3 \
-		Graphics::Primitive::Component.3 \
-		Graphics::Primitive::ComponentList.3 \
-		Graphics::Primitive::Container.3 \
-		Graphics::Primitive::Driver.3 \
-		Graphics::Primitive::Driver::TextLayout.3 \
-		Graphics::Primitive::Font.3 \
-		Graphics::Primitive::Image.3 \
-		Graphics::Primitive::Insets.3 \
-		Graphics::Primitive::Operation.3 \
-		Graphics::Primitive::Operation::Fill.3 \
-		Graphics::Primitive::Operation::Stroke.3 \
-		Graphics::Primitive::Oriented.3 \
-		Graphics::Primitive::Paint.3 \
-		Graphics::Primitive::Paint::Gradient.3 \
-		Graphics::Primitive::Paint::Gradient::Linear.3 \
-		Graphics::Primitive::Paint::Gradient::Radial.3 \
-		Graphics::Primitive::Paint::Solid.3 \
-		Graphics::Primitive::Path.3 \
-		Graphics::Primitive::TextBox.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

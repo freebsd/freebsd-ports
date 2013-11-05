@@ -24,15 +24,4 @@ TEST_DEPENDS=	p5-Test-Number-Delta>=0:${PORTSDIR}/devel/p5-Test-Number-Delta
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Graphics::Color.3 \
-		Graphics::Color::CMYK.3 \
-		Graphics::Color::Equal.3 \
-		Graphics::Color::HSL.3 \
-		Graphics::Color::HSV.3 \
-		Graphics::Color::RGB.3 \
-		Graphics::Color::Types.3 \
-		Graphics::Color::YIQ.3 \
-		Graphics::Color::YUV.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

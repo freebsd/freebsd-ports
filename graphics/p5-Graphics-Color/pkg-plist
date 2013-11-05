@@ -1,4 +1,12 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Color/.packlist
+%%PERL5_MAN3%%/Graphics::Color.3.gz
+%%PERL5_MAN3%%/Graphics::Color::CMYK.3.gz
+%%PERL5_MAN3%%/Graphics::Color::Equal.3.gz
+%%PERL5_MAN3%%/Graphics::Color::HSL.3.gz
+%%PERL5_MAN3%%/Graphics::Color::HSV.3.gz
+%%PERL5_MAN3%%/Graphics::Color::RGB.3.gz
+%%PERL5_MAN3%%/Graphics::Color::Types.3.gz
+%%PERL5_MAN3%%/Graphics::Color::YIQ.3.gz
+%%PERL5_MAN3%%/Graphics::Color::YUV.3.gz
 %%SITE_PERL%%/Graphics/Color.pm
 %%SITE_PERL%%/Graphics/Color/CMYK.pm
 %%SITE_PERL%%/Graphics/Color/Equal.pm
@@ -8,6 +16,7 @@
 %%SITE_PERL%%/Graphics/Color/Types.pm
 %%SITE_PERL%%/Graphics/Color/YIQ.pm
 %%SITE_PERL%%/Graphics/Color/YUV.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Color/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Color
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics
 @dirrmtry %%SITE_PERL%%/Graphics/Color

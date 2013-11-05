@@ -16,9 +16,4 @@ BUILD_DEPENDS=	p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Visio.3 Visio::Hyperlink.3 Visio::Layout.3 Visio::Line.3 \
-		Visio::Master.3 Visio::Page.3 Visio::PageProps.3 \
-		Visio::PageSheet.3 Visio::Shape.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,8 +1,12 @@
 bin/tkjpeg-lite
+%%PERL5_MAN3%%/Tk::JPEG::Lite.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/JPEG/Lite.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/JPEG/Lite/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/JPEG/Lite/Lite.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/JPEG/Lite/Lite.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/JPEG/Lite
+man/man1/tkjpeg-lite.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/JPEG/Lite
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/JPEG
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tk/JPEG
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tk

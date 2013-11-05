@@ -14,10 +14,7 @@ COMMENT=	Directed graph alternative to GraphViz
 
 BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 
-MAN3=	SpringGraph.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

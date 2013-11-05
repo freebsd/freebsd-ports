@@ -1,3 +1,9 @@
+%%PERL5_MAN3%%/GD::Graph.3.gz
+%%PERL5_MAN3%%/GD::Graph::Data.3.gz
+%%PERL5_MAN3%%/GD::Graph::Error.3.gz
+%%PERL5_MAN3%%/GD::Graph::FAQ.3.gz
+%%PERL5_MAN3%%/GD::Graph::colour.3.gz
+%%PERL5_MAN3%%/GD::Graph::hbars.3.gz
 %%SITE_PERL%%/GD/Graph.pm
 %%SITE_PERL%%/GD/Graph/Data.pm
 %%SITE_PERL%%/GD/Graph/Error.pm
@@ -14,7 +20,7 @@
 %%SITE_PERL%%/GD/Graph/points.pm
 %%SITE_PERL%%/GD/Graph/utils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Graph/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Graph
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Graph
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD
-@dirrm %%SITE_PERL%%/GD/Graph
+@dirrmtry %%SITE_PERL%%/GD/Graph
 @dirrmtry %%SITE_PERL%%/GD

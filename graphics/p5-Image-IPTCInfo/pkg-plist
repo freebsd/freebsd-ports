@@ -1,9 +1,10 @@
-%%PORTDOCS%%%%EXAMPLESDIR%%/burger_van.jpg
-%%PORTDOCS%%%%EXAMPLESDIR%%/dog.jpg
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/IPTCInfo/.packlist
+%%PERL5_MAN3%%/Image::IPTCInfo.3.gz
 %%SITE_PERL%%/Image/IPTCInfo.pm
 %%SITE_PERL%%/Image/demo.pl
-%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/IPTCInfo/.packlist
+%%PORTDOCS%%%%EXAMPLESDIR%%/burger_van.jpg
+%%PORTDOCS%%%%EXAMPLESDIR%%/dog.jpg
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/IPTCInfo
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
 @dirrmtry %%SITE_PERL%%/Image

@@ -1,7 +1,9 @@
+%%PERL5_MAN3%%/GraphViz::Traverse.3.gz
+%%PERL5_MAN3%%/GraphViz::Traverse::Filesystem.3.gz
 %%SITE_PERL%%/GraphViz/Traverse.pm
 %%SITE_PERL%%/GraphViz/Traverse/Filesystem.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GraphViz/Traverse/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GraphViz/Traverse
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GraphViz/Traverse
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GraphViz
-@dirrm %%SITE_PERL%%/GraphViz/Traverse
+@dirrmtry %%SITE_PERL%%/GraphViz/Traverse
 @dirrmtry %%SITE_PERL%%/GraphViz

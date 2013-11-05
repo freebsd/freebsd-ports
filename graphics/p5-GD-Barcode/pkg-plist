@@ -1,3 +1,16 @@
+%%PERL5_MAN3%%/GD::Barcode.3.gz
+%%PERL5_MAN3%%/GD::Barcode::COOP2of5.3.gz
+%%PERL5_MAN3%%/GD::Barcode::Code39.3.gz
+%%PERL5_MAN3%%/GD::Barcode::EAN13.3.gz
+%%PERL5_MAN3%%/GD::Barcode::EAN8.3.gz
+%%PERL5_MAN3%%/GD::Barcode::IATA2of5.3.gz
+%%PERL5_MAN3%%/GD::Barcode::ITF.3.gz
+%%PERL5_MAN3%%/GD::Barcode::Industrial2of5.3.gz
+%%PERL5_MAN3%%/GD::Barcode::Matrix2of5.3.gz
+%%PERL5_MAN3%%/GD::Barcode::NW7.3.gz
+%%PERL5_MAN3%%/GD::Barcode::QRcode.3.gz
+%%PERL5_MAN3%%/GD::Barcode::UPCA.3.gz
+%%PERL5_MAN3%%/GD::Barcode::UPCE.3.gz
 %%SITE_PERL%%/GD/Barcode.pm
 %%SITE_PERL%%/GD/Barcode/COOP2of5.pm
 %%SITE_PERL%%/GD/Barcode/Code39.pm
@@ -185,8 +198,8 @@
 %%SITE_PERL%%/GD/Barcode/UPCA.pm
 %%SITE_PERL%%/GD/Barcode/UPCE.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Barcode/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Barcode
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Barcode
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD
-@dirrm %%SITE_PERL%%/GD/Barcode/QRcode
-@dirrm %%SITE_PERL%%/GD/Barcode
+@dirrmtry %%SITE_PERL%%/GD/Barcode/QRcode
+@dirrmtry %%SITE_PERL%%/GD/Barcode
 @dirrmtry %%SITE_PERL%%/GD

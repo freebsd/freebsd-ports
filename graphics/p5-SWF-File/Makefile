@@ -12,18 +12,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Manipulating Flash movie (SWF) files
 
-RUN_DEPENDS=	p5-Data-TemporaryBag>=0:${PORTSDIR}/devel/p5-Data-TemporaryBag
 BUILD_DEPENDS=	p5-Data-TemporaryBag>=0:${PORTSDIR}/devel/p5-Data-TemporaryBag
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 USE_DOS2UNIX=	yes
 
-MAN3=		SWF::BinStream.3 SWF::BinStream::Codec.3 \
-		SWF::BinStream::Codec::Zlib.3 SWF::BinStream::File.3 \
-		SWF::Element.3 SWF::File.3 SWF::Parser.3
-
-NO_STAGE=	yes
 post-configure:
 	@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' ${WRKSRC}/Makefile
 

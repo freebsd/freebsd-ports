@@ -20,25 +20,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		SVG::Graph.3 \
-		SVG::Graph::Data.3 \
-		SVG::Graph::Data::Datum.3 \
-		SVG::Graph::Data::Node.3 \
-		SVG::Graph::Data::Tree.3 \
-		SVG::Graph::File.3 \
-		SVG::Graph::Frame.3 \
-		SVG::Graph::Glyph.3 \
-		SVG::Graph::Glyph::axis.3 \
-		SVG::Graph::Glyph::bar.3 \
-		SVG::Graph::Glyph::barflex.3 \
-		SVG::Graph::Glyph::bezier.3 \
-		SVG::Graph::Glyph::bubble.3 \
-		SVG::Graph::Glyph::heatmap.3 \
-		SVG::Graph::Glyph::line.3 \
-		SVG::Graph::Glyph::pictogram.3 \
-		SVG::Graph::Glyph::scatter.3 \
-		SVG::Graph::Glyph::tree.3 \
-		SVG::Graph::Glyph::wedge.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
