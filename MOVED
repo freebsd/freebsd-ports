@@ -5165,3 +5165,5 @@ deskutils/blogtk||2013-11-03|Has expired: This is dead upstream and is no longer
 devel/ruby-io-reactor||2013-11-03|Has expired: Does not work with Ruby 1.9
 textproc/p5-Text-Emoticon-MSN||2013-11-03|Has expired: Primary MSN Messenger service terminated 30 APR 2013
 textproc/jakarta-poi|textproc/apache-poi|2013-11-04|Replaced with apache-poi
+net-im/qutim||2013-11-05|Has expired: Old version, a new one needs to be ported from scratch
+textproc/gtkdiff||2013-11-05|Has expired: Gnome1 EOLed by upstream for a while.

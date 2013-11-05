@@ -138,7 +138,6 @@
     SUBDIR += py-xmpppy-irc
     SUBDIR += py-xmpppy-yahoo
     SUBDIR += qq
-    SUBDIR += qutim
     SUBDIR += qwit
     SUBDIR += qwit-devel
     SUBDIR += qxmpp
