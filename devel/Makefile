@@ -273,6 +273,7 @@
     SUBDIR += cproto
     SUBDIR += cpuflags
     SUBDIR += creduce
+    SUBDIR += critcl
     SUBDIR += cross-binutils
     SUBDIR += cross-gcc
     SUBDIR += cross-gdb

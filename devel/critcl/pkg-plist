@@ -1,0 +1,114 @@
+bin/critcl
+lib/critcl-app%%VER%%/critcl.tcl
+lib/critcl-app%%VER%%/pkgIndex.tcl
+lib/critcl-app%%VER%%/runtime.tcl
+lib/critcl-app%%VER%%/tea/Config.in
+lib/critcl-app%%VER%%/tea/Makefile.in
+lib/critcl-app%%VER%%/tea/aclocal.m4
+lib/critcl-app%%VER%%/tea/configure.in
+lib/critcl-app%%VER%%/tea/tclconfig/README.txt
+lib/critcl-app%%VER%%/tea/tclconfig/install-sh
+lib/critcl-app%%VER%%/tea/tclconfig/tcl.m4
+lib/critcl-class1.0.6/class.h
+lib/critcl-class1.0.6/class.tcl
+lib/critcl-class1.0.6/pkgIndex.tcl
+lib/critcl-iassoc1.0.1/iassoc.h
+lib/critcl-iassoc1.0.1/iassoc.tcl
+lib/critcl-iassoc1.0.1/pkgIndex.tcl
+lib/critcl-platform/pkgIndex.tcl
+lib/critcl-platform/platform.tcl
+lib/critcl-platform/shell.tcl
+lib/critcl-util1/pkgIndex.tcl
+lib/critcl-util1/util.tcl
+lib/critcl%%VER%%/Config
+lib/critcl%%VER%%/critcl.tcl
+lib/critcl%%VER%%/critcl_c/cdata.c
+lib/critcl%%VER%%/critcl_c/header.c
+lib/critcl%%VER%%/critcl_c/pkginit.c
+lib/critcl%%VER%%/critcl_c/pkginitend.c
+lib/critcl%%VER%%/critcl_c/pkginittk.c
+lib/critcl%%VER%%/critcl_c/preload.c
+lib/critcl%%VER%%/critcl_c/stubs.c
+lib/critcl%%VER%%/critcl_c/stubs_e.c
+lib/critcl%%VER%%/critcl_c/tcl8.4/X11/X.h
+lib/critcl%%VER%%/critcl_c/tcl8.4/X11/Xatom.h
+lib/critcl%%VER%%/critcl_c/tcl8.4/X11/Xfuncproto.h
+lib/critcl%%VER%%/critcl_c/tcl8.4/X11/Xlib.h
+lib/critcl%%VER%%/critcl_c/tcl8.4/X11/Xutil.h
+lib/critcl%%VER%%/critcl_c/tcl8.4/X11/cursorfont.h
+lib/critcl%%VER%%/critcl_c/tcl8.4/X11/keysym.h
+lib/critcl%%VER%%/critcl_c/tcl8.4/X11/keysymdef.h
+lib/critcl%%VER%%/critcl_c/tcl8.4/X11/tkIntXlibDecls.h
+lib/critcl%%VER%%/critcl_c/tcl8.4/tcl.h
+lib/critcl%%VER%%/critcl_c/tcl8.4/tclDecls.h
+lib/critcl%%VER%%/critcl_c/tcl8.4/tclPlatDecls.h
+lib/critcl%%VER%%/critcl_c/tcl8.4/tk.h
+lib/critcl%%VER%%/critcl_c/tcl8.4/tkDecls.h
+lib/critcl%%VER%%/critcl_c/tcl8.4/tkPlatDecls.h
+lib/critcl%%VER%%/critcl_c/tcl8.5/X11/X.h
+lib/critcl%%VER%%/critcl_c/tcl8.5/X11/Xatom.h
+lib/critcl%%VER%%/critcl_c/tcl8.5/X11/Xfuncproto.h
+lib/critcl%%VER%%/critcl_c/tcl8.5/X11/Xlib.h
+lib/critcl%%VER%%/critcl_c/tcl8.5/X11/Xutil.h
+lib/critcl%%VER%%/critcl_c/tcl8.5/X11/cursorfont.h
+lib/critcl%%VER%%/critcl_c/tcl8.5/X11/keysym.h
+lib/critcl%%VER%%/critcl_c/tcl8.5/X11/keysymdef.h
+lib/critcl%%VER%%/critcl_c/tcl8.5/X11/tk.h
+lib/critcl%%VER%%/critcl_c/tcl8.5/X11/tkIntXlibDecls.h
+lib/critcl%%VER%%/critcl_c/tcl8.5/tcl.h
+lib/critcl%%VER%%/critcl_c/tcl8.5/tclDecls.h
+lib/critcl%%VER%%/critcl_c/tcl8.5/tclPlatDecls.h
+lib/critcl%%VER%%/critcl_c/tcl8.5/tk.h
+lib/critcl%%VER%%/critcl_c/tcl8.5/tkDecls.h
+lib/critcl%%VER%%/critcl_c/tcl8.5/tkPlatDecls.h
+lib/critcl%%VER%%/critcl_c/tcl8.6/X11/X.h
+lib/critcl%%VER%%/critcl_c/tcl8.6/X11/Xatom.h
+lib/critcl%%VER%%/critcl_c/tcl8.6/X11/Xfuncproto.h
+lib/critcl%%VER%%/critcl_c/tcl8.6/X11/Xlib.h
+lib/critcl%%VER%%/critcl_c/tcl8.6/X11/Xutil.h
+lib/critcl%%VER%%/critcl_c/tcl8.6/X11/cursorfont.h
+lib/critcl%%VER%%/critcl_c/tcl8.6/X11/keysym.h
+lib/critcl%%VER%%/critcl_c/tcl8.6/X11/keysymdef.h
+lib/critcl%%VER%%/critcl_c/tcl8.6/X11/tk.h
+lib/critcl%%VER%%/critcl_c/tcl8.6/X11/tkIntXlibDecls.h
+lib/critcl%%VER%%/critcl_c/tcl8.6/tcl.h
+lib/critcl%%VER%%/critcl_c/tcl8.6/tclDecls.h
+lib/critcl%%VER%%/critcl_c/tcl8.6/tclPlatDecls.h
+lib/critcl%%VER%%/critcl_c/tcl8.6/tk.h
+lib/critcl%%VER%%/critcl_c/tcl8.6/tkDecls.h
+lib/critcl%%VER%%/critcl_c/tcl8.6/tkPlatDecls.h
+lib/critcl%%VER%%/critcl_c/tclAppInit.c
+lib/critcl%%VER%%/critcl_c/tkstubs.c
+lib/critcl%%VER%%/license.terms
+lib/critcl%%VER%%/pkgIndex.tcl
+lib/stubs/container.tcl
+lib/stubs/gen_decl.tcl
+lib/stubs/gen_header.tcl
+lib/stubs/gen_init.tcl
+lib/stubs/gen_lib.tcl
+lib/stubs/gen_macro.tcl
+lib/stubs/gen_slot.tcl
+lib/stubs/genframe.tcl
+lib/stubs/pkgIndex.tcl
+lib/stubs/reader.tcl
+lib/stubs/writer.tcl
+lib/util84/dict.tcl
+lib/util84/lassign.tcl
+lib/util84/pkgIndex.tcl
+@dirrm lib/util84
+@dirrm lib/stubs
+@dirrm lib/critcl%%VER%%/critcl_c/tcl8.6/X11
+@dirrm lib/critcl%%VER%%/critcl_c/tcl8.6
+@dirrm lib/critcl%%VER%%/critcl_c/tcl8.5/X11
+@dirrm lib/critcl%%VER%%/critcl_c/tcl8.5
+@dirrm lib/critcl%%VER%%/critcl_c/tcl8.4/X11
+@dirrm lib/critcl%%VER%%/critcl_c/tcl8.4
+@dirrm lib/critcl%%VER%%/critcl_c
+@dirrm lib/critcl%%VER%%
+@dirrm lib/critcl-util1
+@dirrm lib/critcl-platform
+@dirrm lib/critcl-iassoc1.0.1
+@dirrm lib/critcl-class1.0.6
+@dirrm lib/critcl-app%%VER%%/tea/tclconfig
+@dirrm lib/critcl-app%%VER%%/tea
+@dirrm lib/critcl-app%%VER%%
