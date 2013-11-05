@@ -1,0 +1,11 @@
+--- configure.orig	2013-11-05 17:12:10.000000000 +0100
++++ configure	2013-11-05 17:12:16.000000000 +0100
+@@ -48,7 +48,7 @@
+ bindir='${exec_prefix}/bin'
+ sbindir='${exec_prefix}/sbin'
+ libexecdir='${exec_prefix}/libexec'
+-datadir='${prefix}/share'
++datadir='${exec_prefix}/share'
+ sysconfdir='${prefix}/etc'
+ sharedstatedir='${prefix}/com'
+ localstatedir='${prefix}/var'
