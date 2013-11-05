@@ -15,9 +15,8 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USES+=		gmake tcl
 USE_XORG=	x11 xinerama
-USE_TCL=	yes
-USE_GMAKE=	yes
 MAKE_ARGS=	PREFIX="${PREFIX}" \
 		TCL_INCLUDE="-I${TCL_INCLUDEDIR}" \
 		TCL_LIB="-L${LOCALBASE}/lib" \
@@ -30,7 +29,6 @@ MAKE_ARGS=	PREFIX="${PREFIX}" \
 
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lstdc++||g ; \
 		 s|;make|;$$(MAKE)|g' ${WRKSRC}/Makefile
@@ -38,11 +36,11 @@ post-patch:
 		 /<X11\/Shell.h>/d' ${WRKSRC}/xgui/includes.h
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/e93 ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/lib/e93lib
+	${INSTALL_PROGRAM} ${WRKSRC}/e93 ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/e93lib
+	cd ${WRKSRC}/e93lib && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/e93lib
 .for ext in e93 regex syntaxmaps
-	${INSTALL_DATA} ${WRKSRC}/README.${ext} ${PREFIX}/lib/e93lib
+	${INSTALL_DATA} ${WRKSRC}/README.${ext} ${STAGEDIR}${PREFIX}/lib/e93lib
 .endfor
-	@(cd ${WRKSRC}/e93lib && ${COPYTREE_SHARE} . ${PREFIX}/lib/e93lib)
 
 .include <bsd.port.mk>
