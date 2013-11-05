@@ -11,12 +11,9 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl base class for non-Moose roles
 
 BUILD_DEPENDS=	p5-Sub-Name>=0:${PORTSDIR}/devel/p5-Sub-Name
-RUN_DEPENDS=	p5-Sub-Name>=0:${PORTSDIR}/devel/p5-Sub-Name
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Object::Role.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
