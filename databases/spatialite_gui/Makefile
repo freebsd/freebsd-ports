@@ -3,7 +3,7 @@
 
 PORTNAME=	spatialite_gui
 PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-stable
