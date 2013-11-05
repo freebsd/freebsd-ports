@@ -201,7 +201,7 @@ post-patch:
 .if defined(GIMP_SLAVE) && ${GIMP_SLAVE}==pygimp
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/gimp/2.2/python/*.so
-.else ! defined(GIMP_SLAVE)
+.elif ! defined(GIMP_SLAVE)
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgimp*-2.0.so.0
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/gimp/2.2/modules/*.so
