@@ -42,8 +42,8 @@ Date:   Sun Nov 3 13:19:56 2013 +0200
 
     It also allows us to remove the MSVC/SunPro workarounds from the code and
     the build system.
---- umbrello/CMakeLists.txt
-+++ umbrello/CMakeLists.txt
+--- umbrello/umbrello/CMakeLists.txt
++++ umbrello/umbrello/CMakeLists.txt
 @@ -267,37 +267,21 @@ set(libcodeimport_SRCS
      codeimport/csharp/csharpimport.cpp
  )
@@ -97,8 +97,8 @@ Date:   Sun Nov 3 13:19:56 2013 +0200
  
  set(libclipboard_SRCS
      clipboard/umldragdata.cpp
---- umbrello/codeimport/classimport.cpp
-+++ umbrello/codeimport/classimport.cpp
+--- umbrello/umbrello/codeimport/classimport.cpp
++++ umbrello/umbrello/codeimport/classimport.cpp
 @@ -20,9 +20,7 @@
  #include "javaimport.h"
  #include "adaimport.h"
@@ -123,8 +123,8 @@ Date:   Sun Nov 3 13:19:56 2013 +0200
      return classImporter;
  }
  
---- umbrello/codeimport/kdevcppparser/position.h
-+++ umbrello/codeimport/kdevcppparser/position.h
+--- umbrello/umbrello/codeimport/kdevcppparser/position.h
++++ umbrello/umbrello/codeimport/kdevcppparser/position.h
 @@ -20,22 +20,6 @@
  #ifndef POSITION_H
  #define POSITION_H
@@ -184,16 +184,16 @@ Date:   Sun Nov 3 13:19:56 2013 +0200
  typedef boost::spirit::classic::file_position_base<PositionFilename> PositionType;
  
  class Position : public PositionType
---- umbrello/codeimport/kdevcppparser/preprocesslexer.cpp
-+++ umbrello/codeimport/kdevcppparser/preprocesslexer.cpp
+--- umbrello/umbrello/codeimport/kdevcppparser/preprocesslexer.cpp
++++ umbrello/umbrello/codeimport/kdevcppparser/preprocesslexer.cpp
 @@ -41,13 +41,11 @@
  
  #define PREPROCESSLEXER_DEBUG
  
 -#ifdef Q_CC_MSVC
  template <class _Tp>
--struct _Identity : public std::unary_function<_Tp, _Tp> {
-+struct identity : public std::unary_function<_Tp, _Tp> {
+-struct _Identity : public std::unary_function<_Tp,_Tp> {
++struct identity : public std::unary_function<_Tp,_Tp> {
    _Tp& operator()(_Tp& __x) const { return __x; }
    const _Tp& operator()(const _Tp& __x) const { return __x; }
  };
