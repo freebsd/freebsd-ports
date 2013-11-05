@@ -12,8 +12,7 @@ COMMENT=	Database layer originally written for chef
 
 BUILD_DEPENDS=	epgsql>=0:${PORTSDIR}/databases/epgsql \
 	erl-pooler>=0:${PORTSDIR}/devel/erl-pooler \
-	rebar>=0:${PORTSDIR}/devel/rebar \
-	git>=0:${PORTSDIR}/devel/git
+	rebar>=0:${PORTSDIR}/devel/rebar
 RUN_DEPENDS=	epgsql>=0:${PORTSDIR}/databases/epgsql \
 	erl-pooler>=0:${PORTSDIR}/devel/erl-pooler
 
