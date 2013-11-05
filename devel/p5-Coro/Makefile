@@ -30,7 +30,7 @@ USE_PERL5=	configure
 SHEBANG_FILES=	Coro/*.pl eg/*
 SHEBANG_LANG=	perl2
 perl2_OLD_CMD=	/opt/bin/perl
-perl2_CMD=	${LOCALBASE}/bin/perl
+perl2_CMD=	${perl_CMD}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
