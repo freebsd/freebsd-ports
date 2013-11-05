@@ -34,6 +34,9 @@
 %%WWWDIR%%/client/local/README
 %%WWWDIR%%/client/runclient.sh
 @exec chown -R %%XYMONUSER%% %D/%%WWWDIR%%/client
+@exec mkdir %D/%%WWWDIR%%/client/ext
+@exec mkdir %D/%%WWWDIR%%/client/logs
+@exec mkdir %D/%%WWWDIR%%/client/tmp
 @dirrm %%WWWDIR%%/client/tmp
 @dirrm %%WWWDIR%%/client/logs
 @dirrm %%WWWDIR%%/client/local
