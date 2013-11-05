@@ -21,7 +21,6 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOXYGEN
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOXYGEN}
@@ -30,9 +29,9 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 PORTDOCS=	*
 
 post-install:
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${BUILD_WRKSRC} && ${MAKE} docs
-	cd ${BUILD_WRKSRC}/apidox && ${COPYTREE_SHARE} \* ${DOCSDIR}
+	cd ${BUILD_WRKSRC}/apidox && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
