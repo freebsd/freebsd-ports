@@ -3,7 +3,7 @@
 
 PORTNAME=	grpn
 PORTVERSION=	1.1.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 MASTER_SITES=	http://lashwhip.com/grpn/
 
@@ -14,12 +14,10 @@ USE_GNOME=	gtk12
 
 ALL_TARGET=
 
-MAN1=		grpn.1
-PLIST_FILES=	bin/grpn
+PLIST_FILES=	bin/grpn man/man1/grpn.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/grpn ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/grpn.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/grpn ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/grpn.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
