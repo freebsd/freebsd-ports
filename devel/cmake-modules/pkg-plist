@@ -62,6 +62,7 @@
 %%DATADIR%%/Modules/CMakeFortranCompilerId.F.in
 %%DATADIR%%/Modules/CMakeFortranInformation.cmake
 %%DATADIR%%/Modules/CMakeGenericSystem.cmake
+%%DATADIR%%/Modules/CMakeGraphVizOptions.cmake
 %%DATADIR%%/Modules/CMakeImportBuildSettings.cmake
 %%DATADIR%%/Modules/CMakeJOMFindMake.cmake
 %%DATADIR%%/Modules/CMakeJavaCompiler.cmake.in
@@ -74,6 +75,7 @@
 %%DATADIR%%/Modules/CMakeParseArguments.cmake
 %%DATADIR%%/Modules/CMakeParseImplicitLinkInfo.cmake
 %%DATADIR%%/Modules/CMakePlatformId.h.in
+%%DATADIR%%/Modules/CMakePrintHelpers.cmake
 %%DATADIR%%/Modules/CMakePrintSystemInformation.cmake
 %%DATADIR%%/Modules/CMakePushCheckState.cmake
 %%DATADIR%%/Modules/CMakeRCCompiler.cmake.in
@@ -178,6 +180,10 @@
 %%DATADIR%%/Modules/Compiler/HP-C.cmake
 %%DATADIR%%/Modules/Compiler/HP-CXX.cmake
 %%DATADIR%%/Modules/Compiler/HP-Fortran.cmake
+%%DATADIR%%/Modules/Compiler/IAR-ASM.cmake
+%%DATADIR%%/Modules/Compiler/IAR-C.cmake
+%%DATADIR%%/Modules/Compiler/IAR-CXX.cmake
+%%DATADIR%%/Modules/Compiler/IAR.cmake
 %%DATADIR%%/Modules/Compiler/Intel-ASM.cmake
 %%DATADIR%%/Modules/Compiler/Intel-C.cmake
 %%DATADIR%%/Modules/Compiler/Intel-CXX.cmake
@@ -453,6 +459,7 @@
 %%DATADIR%%/Modules/Platform/Darwin-GNU-CXX.cmake
 %%DATADIR%%/Modules/Platform/Darwin-GNU-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Darwin-GNU.cmake
+%%DATADIR%%/Modules/Platform/Darwin-Intel-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Darwin-NAG-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Darwin-VisualAge-C.cmake
 %%DATADIR%%/Modules/Platform/Darwin-VisualAge-CXX.cmake
