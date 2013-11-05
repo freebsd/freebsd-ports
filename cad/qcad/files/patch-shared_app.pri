@@ -11,14 +11,3 @@
  }
  
  win32 {
-@@ -40,6 +40,10 @@
-     LIBS += -lGLU
- }
- 
-+freebsd-g++ {
-+    LIBS += -lGLU -lexecinfo
-+}
-+
- macx {
-     QMAKE_LFLAGS += -framework ApplicationServices
-     LIBS += \
