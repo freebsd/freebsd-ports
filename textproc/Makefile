@@ -221,7 +221,6 @@
     SUBDIR += groonga
     SUBDIR += gsed
     SUBDIR += gtk-doc
-    SUBDIR += gtkdiff
     SUBDIR += gtkspell
     SUBDIR += gtkspell-reference
     SUBDIR += gu-aspell
