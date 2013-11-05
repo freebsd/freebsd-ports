@@ -1,5 +1,5 @@
 --- ser_unix.c.orig	2008-12-17 12:46:15.000000000 -0500
-+++ ser_unix.c	2012-11-04 09:22:00.000000000 -0500
++++ ser_unix.c	2013-11-05 18:03:15.000000000 -0500
 @@ -14,7 +14,14 @@
  #include <errno.h>
  #include <unistd.h>
@@ -32,7 +32,7 @@
  {
    if (fd > 0) {
 +#ifdef BSD
-+    if (tcgetattr(fd, &svbuf) < 0 ) {
++    if (tcsetattr(fd, TCSANOW, &svbuf) < 0 ) {
 +#else
      if (ioctl(fd, TCSETA, &svbuf) < 0) {
 +#endif

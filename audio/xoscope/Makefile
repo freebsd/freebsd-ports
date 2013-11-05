@@ -10,9 +10,8 @@ MAINTAINER=	db@FreeBSD.org
 COMMENT=	Sound card oscilloscope
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX}
+CONFIGURE_ARGS=	--prefix=${STAGEDIR}${PREFIX} --sysconfdir=${STAGEDIR}${PREFIX}
 USES=		gmake pkgconfig
-NO_STAGE=	yes
 USE_GNOME=	gtk20
 USE_XORG=	x11
 
