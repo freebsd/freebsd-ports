@@ -19,9 +19,6 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Mail::DomainKeys.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' '6,38d' ${WRKSRC}/Makefile.PL
 

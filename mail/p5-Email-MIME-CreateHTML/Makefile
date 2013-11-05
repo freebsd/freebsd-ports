@@ -26,11 +26,4 @@ TEST_DEPENDS=	p5-Test-Assertions>0:${PORTSDIR}/devel/p5-Test-Assertions
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Email::MIME::CreateHTML.3 \
-	Email::MIME::CreateHTML::Resolver.3 \
-	Email::MIME::CreateHTML::Resolver::Cached.3 \
-	Email::MIME::CreateHTML::Resolver::Filesystem.3 \
-	Email::MIME::CreateHTML::Resolver::LWP.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

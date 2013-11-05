@@ -1,6 +1,6 @@
-@comment $FreeBSD$
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SMTP/TLS/ButMaintained/.packlist
+%%PERL5_MAN3%%/Net::SMTP::TLS::ButMaintained.3.gz
 %%SITE_PERL%%/Net/SMTP/TLS/ButMaintained.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SMTP/TLS/ButMaintained/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SMTP/TLS/ButMaintained
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SMTP/TLS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SMTP

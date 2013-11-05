@@ -1,8 +1,11 @@
+%%PERL5_MAN3%%/Email::Simple.3.gz
+%%PERL5_MAN3%%/Email::Simple::Creator.3.gz
+%%PERL5_MAN3%%/Email::Simple::Header.3.gz
 %%SITE_PERL%%/Email/Simple.pm
 %%SITE_PERL%%/Email/Simple/Creator.pm
 %%SITE_PERL%%/Email/Simple/Header.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Simple/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Simple
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email
-@dirrm %%SITE_PERL%%/Email/Simple
+@dirrmtry %%SITE_PERL%%/Email/Simple
 @dirrmtry %%SITE_PERL%%/Email

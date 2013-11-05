@@ -19,9 +19,4 @@ MASTER_SITE_BACKUP+=	http://www.macgyver.org/software/perl/
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::SMTP::Server.3 \
-		Net::SMTP::Server::Client.3 \
-		Net::SMTP::Server::Relay.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,3 +1,6 @@
+%%PERL5_MAN3%%/Net::SMTP::Server.3.gz
+%%PERL5_MAN3%%/Net::SMTP::Server::Client.3.gz
+%%PERL5_MAN3%%/Net::SMTP::Server::Relay.3.gz
 %%SITE_PERL%%/Net/SMTP/Server.pm
 %%SITE_PERL%%/Net/SMTP/Server/Client.pm
 %%SITE_PERL%%/Net/SMTP/Server/Relay.pm
@@ -5,14 +8,14 @@
 %%SITE_PERL%%/auto/Net/SMTP/Server/Relay/autosplit.ix
 %%SITE_PERL%%/auto/Net/SMTP/Server/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SMTP/Server/.packlist
-@dirrm %%SITE_PERL%%/Net/SMTP/Server
-@dirrmtry %%SITE_PERL%%/Net/SMTP
-@dirrmtry %%SITE_PERL%%/Net
-@dirrm %%SITE_PERL%%/auto/Net/SMTP/Server/Client
-@dirrm %%SITE_PERL%%/auto/Net/SMTP/Server/Relay
-@dirrm %%SITE_PERL%%/auto/Net/SMTP/Server
-@dirrmtry %%SITE_PERL%%/auto/Net/SMTP
-@dirrmtry %%SITE_PERL%%/auto/Net
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SMTP/Server
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SMTP/Server
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SMTP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/auto/Net/SMTP/Server/Relay
+@dirrmtry %%SITE_PERL%%/auto/Net/SMTP/Server/Client
+@dirrmtry %%SITE_PERL%%/auto/Net/SMTP/Server
+@dirrmtry %%SITE_PERL%%/auto/Net/SMTP
+@dirrmtry %%SITE_PERL%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net/SMTP/Server
+@dirrmtry %%SITE_PERL%%/Net/SMTP
+@dirrmtry %%SITE_PERL%%/Net

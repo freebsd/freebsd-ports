@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Email::MessageID.3.gz
 %%SITE_PERL%%/Email/MessageID.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MessageID/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MessageID
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MessageID
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email
 @dirrmtry %%SITE_PERL%%/Email

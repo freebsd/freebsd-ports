@@ -1,8 +1,9 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Explode/Explode.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Explode/Explode.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Explode/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Explode/.packlist
+%%PERL5_MAN3%%/MIME::Explode.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/MIME/Explode.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Explode
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Explode/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Explode/Explode.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Explode/Explode.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Explode/autosplit.ix
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Explode
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/MIME

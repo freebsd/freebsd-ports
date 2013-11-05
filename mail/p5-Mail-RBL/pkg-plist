@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Mail::RBL.3.gz
 %%SITE_PERL%%/Mail/RBL.pm
-@dirrmtry %%SITE_PERL%%/Mail
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/RBL/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/RBL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/RBL
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
+@dirrmtry %%SITE_PERL%%/Mail

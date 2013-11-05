@@ -1,0 +1,4 @@
+%%PERL5_MAN3%%/Clamd.3.gz
+%%SITE_PERL%%/Clamd.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Clamd/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Clamd

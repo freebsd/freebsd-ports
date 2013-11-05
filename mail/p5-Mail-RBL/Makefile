@@ -18,9 +18,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Mail::RBL.3
-
-FILES=		Makefile.PL RBL.pm
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

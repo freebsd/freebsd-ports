@@ -1,14 +1,18 @@
+%%PERL5_MAN3%%/Mail::Mbox::MessageParser.3.gz
+%%PERL5_MAN3%%/Mail::Mbox::MessageParser::Cache.3.gz
+%%PERL5_MAN3%%/Mail::Mbox::MessageParser::Grep.3.gz
+%%PERL5_MAN3%%/Mail::Mbox::MessageParser::MetaInfo.3.gz
+%%PERL5_MAN3%%/Mail::Mbox::MessageParser::Perl.3.gz
 %%SITE_PERL%%/Mail/Mbox/MessageParser.pm
 %%SITE_PERL%%/Mail/Mbox/MessageParser/Cache.pm
-%%SITE_PERL%%/Mail/Mbox/MessageParser/Grep.pm
-%%SITE_PERL%%/Mail/Mbox/MessageParser/Perl.pm
-%%SITE_PERL%%/Mail/Mbox/MessageParser/MetaInfo.pm
 %%SITE_PERL%%/Mail/Mbox/MessageParser/Config.pm
+%%SITE_PERL%%/Mail/Mbox/MessageParser/Grep.pm
+%%SITE_PERL%%/Mail/Mbox/MessageParser/MetaInfo.pm
+%%SITE_PERL%%/Mail/Mbox/MessageParser/Perl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Mbox/MessageParser/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto//Mail/Mbox/MessageParser
-@dirrm %%SITE_PERL%%/Mail/Mbox/MessageParser
-@dirrmtry %%SITE_PERL%%/Mail/Mbox
-@dirrmtry %%SITE_PERL%%/Mail
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Mbox/MessageParser
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Mbox
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
+@dirrmtry %%SITE_PERL%%/Mail/Mbox/MessageParser
+@dirrmtry %%SITE_PERL%%/Mail/Mbox
+@dirrmtry %%SITE_PERL%%/Mail

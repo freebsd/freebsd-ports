@@ -1,9 +1,12 @@
 bin/spfd
 bin/spfquery
+%%PERL5_MAN3%%/Mail::SPF::Query.3.gz
 %%SITE_PERL%%/Mail/SPF/Query.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SPF/Query/.packlist
-@dirrm %%SITE_PERL%%/Mail/SPF
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SPF/Query
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SPF
+man/man1/spfd.1.gz
+man/man1/spfquery.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SPF/Query
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SPF
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
+@dirrmtry %%SITE_PERL%%/Mail/SPF
 @dirrmtry %%SITE_PERL%%/Mail

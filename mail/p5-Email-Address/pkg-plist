@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/Email::Address.3.gz
 %%SITE_PERL%%/Email/Address.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Address/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Address

@@ -1,13 +1,35 @@
+%%PERL5_MAN3%%/MIME::Body.3.gz
+%%PERL5_MAN3%%/MIME::Decoder.3.gz
+%%PERL5_MAN3%%/MIME::Decoder::Base64.3.gz
+%%PERL5_MAN3%%/MIME::Decoder::BinHex.3.gz
+%%PERL5_MAN3%%/MIME::Decoder::Binary.3.gz
+%%PERL5_MAN3%%/MIME::Decoder::Gzip64.3.gz
+%%PERL5_MAN3%%/MIME::Decoder::NBit.3.gz
+%%PERL5_MAN3%%/MIME::Decoder::QuotedPrint.3.gz
+%%PERL5_MAN3%%/MIME::Decoder::UU.3.gz
+%%PERL5_MAN3%%/MIME::Entity.3.gz
+%%PERL5_MAN3%%/MIME::Field::ConTraEnc.3.gz
+%%PERL5_MAN3%%/MIME::Field::ContDisp.3.gz
+%%PERL5_MAN3%%/MIME::Field::ContType.3.gz
+%%PERL5_MAN3%%/MIME::Field::ParamVal.3.gz
+%%PERL5_MAN3%%/MIME::Head.3.gz
+%%PERL5_MAN3%%/MIME::Parser.3.gz
+%%PERL5_MAN3%%/MIME::Parser::Filer.3.gz
+%%PERL5_MAN3%%/MIME::Parser::Reader.3.gz
+%%PERL5_MAN3%%/MIME::Parser::Results.3.gz
+%%PERL5_MAN3%%/MIME::Tools.3.gz
+%%PERL5_MAN3%%/MIME::WordDecoder.3.gz
+%%PERL5_MAN3%%/MIME::Words.3.gz
 %%SITE_PERL%%/MIME/Body.pm
-%%SITE_PERL%%/MIME/Entity.pm
 %%SITE_PERL%%/MIME/Decoder.pm
-%%SITE_PERL%%/MIME/Decoder/QuotedPrint.pm
 %%SITE_PERL%%/MIME/Decoder/Base64.pm
 %%SITE_PERL%%/MIME/Decoder/BinHex.pm
 %%SITE_PERL%%/MIME/Decoder/Binary.pm
 %%SITE_PERL%%/MIME/Decoder/Gzip64.pm
 %%SITE_PERL%%/MIME/Decoder/NBit.pm
+%%SITE_PERL%%/MIME/Decoder/QuotedPrint.pm
 %%SITE_PERL%%/MIME/Decoder/UU.pm
+%%SITE_PERL%%/MIME/Entity.pm
 %%SITE_PERL%%/MIME/Field/ConTraEnc.pm
 %%SITE_PERL%%/MIME/Field/ContDisp.pm
 %%SITE_PERL%%/MIME/Field/ContType.pm
@@ -23,7 +45,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Tools/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Tools
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME
+@dirrmtry %%SITE_PERL%%/MIME/Parser
 @dirrmtry %%SITE_PERL%%/MIME/Field
 @dirrmtry %%SITE_PERL%%/MIME/Decoder
-@dirrmtry %%SITE_PERL%%/MIME/Parser
 @dirrmtry %%SITE_PERL%%/MIME

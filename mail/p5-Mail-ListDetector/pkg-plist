@@ -1,3 +1,26 @@
+%%PERL5_MAN3%%/Mail::ListDetector.3.gz
+%%PERL5_MAN3%%/Mail::ListDetector::Detector::AutoShare.3.gz
+%%PERL5_MAN3%%/Mail::ListDetector::Detector::Base.3.gz
+%%PERL5_MAN3%%/Mail::ListDetector::Detector::CommuniGate.3.gz
+%%PERL5_MAN3%%/Mail::ListDetector::Detector::CommuniGatePro.3.gz
+%%PERL5_MAN3%%/Mail::ListDetector::Detector::Ecartis.3.gz
+%%PERL5_MAN3%%/Mail::ListDetector::Detector::Ezmlm.3.gz
+%%PERL5_MAN3%%/Mail::ListDetector::Detector::Fml.3.gz
+%%PERL5_MAN3%%/Mail::ListDetector::Detector::GoogleGroups.3.gz
+%%PERL5_MAN3%%/Mail::ListDetector::Detector::LetterRip.3.gz
+%%PERL5_MAN3%%/Mail::ListDetector::Detector::ListSTAR.3.gz
+%%PERL5_MAN3%%/Mail::ListDetector::Detector::Listar.3.gz
+%%PERL5_MAN3%%/Mail::ListDetector::Detector::Listbox.3.gz
+%%PERL5_MAN3%%/Mail::ListDetector::Detector::Listserv.3.gz
+%%PERL5_MAN3%%/Mail::ListDetector::Detector::Lyris.3.gz
+%%PERL5_MAN3%%/Mail::ListDetector::Detector::Mailman.3.gz
+%%PERL5_MAN3%%/Mail::ListDetector::Detector::Majordomo.3.gz
+%%PERL5_MAN3%%/Mail::ListDetector::Detector::Onelist.3.gz
+%%PERL5_MAN3%%/Mail::ListDetector::Detector::RFC2369.3.gz
+%%PERL5_MAN3%%/Mail::ListDetector::Detector::RFC2919.3.gz
+%%PERL5_MAN3%%/Mail::ListDetector::Detector::Smartlist.3.gz
+%%PERL5_MAN3%%/Mail::ListDetector::Detector::Yahoogroups.3.gz
+%%PERL5_MAN3%%/Mail::ListDetector::List.3.gz
 %%SITE_PERL%%/Mail/ListDetector.pm
 %%SITE_PERL%%/Mail/ListDetector/Detector/AutoShare.pm
 %%SITE_PERL%%/Mail/ListDetector/Detector/Base.pm
@@ -25,10 +48,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/ListDetector/.packlist
 %%EXAMPLESDIR%%/sample.pl
 @dirrm %%EXAMPLESDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/ListDetector
-@dirrm %%SITE_PERL%%/auto/Mail/ListDetector
-@dirrm %%SITE_PERL%%/Mail/ListDetector/Detector
-@dirrm %%SITE_PERL%%/Mail/ListDetector
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/ListDetector
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
+@dirrmtry %%SITE_PERL%%/auto/Mail/ListDetector
 @dirrmtry %%SITE_PERL%%/auto/Mail
+@dirrmtry %%SITE_PERL%%/Mail/ListDetector/Detector
+@dirrmtry %%SITE_PERL%%/Mail/ListDetector
 @dirrmtry %%SITE_PERL%%/Mail

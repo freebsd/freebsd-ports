@@ -1,10 +1,15 @@
+%%PERL5_MAN3%%/Email::MIME::CreateHTML.3.gz
+%%PERL5_MAN3%%/Email::MIME::CreateHTML::Resolver.3.gz
+%%PERL5_MAN3%%/Email::MIME::CreateHTML::Resolver::Cached.3.gz
+%%PERL5_MAN3%%/Email::MIME::CreateHTML::Resolver::Filesystem.3.gz
+%%PERL5_MAN3%%/Email::MIME::CreateHTML::Resolver::LWP.3.gz
 %%SITE_PERL%%/Email/MIME/CreateHTML.pm
 %%SITE_PERL%%/Email/MIME/CreateHTML/Resolver.pm
 %%SITE_PERL%%/Email/MIME/CreateHTML/Resolver/Cached.pm
 %%SITE_PERL%%/Email/MIME/CreateHTML/Resolver/Filesystem.pm
 %%SITE_PERL%%/Email/MIME/CreateHTML/Resolver/LWP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME/CreateHTML/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME/CreateHTML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME/CreateHTML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email
 @dirrmtry %%SITE_PERL%%/Email/MIME/CreateHTML/Resolver

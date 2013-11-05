@@ -20,35 +20,26 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Mail::Audit.3 \
-		Mail::Audit::KillDups.3 \
-		Mail::Audit::MAPS.3 \
-		Mail::Audit::MailInternet.3 \
-		Mail::Audit::MimeEntity.3 \
-    		Mail::Audit::Util::Tempdir.3 \
-		Mail::Audit::Vacation.3
-
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 PORTDOCS=	Changes FAQ README
 PORTEXAMPLES=	popread proc2ma
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/var/spool/mail|/var/mail|g' \
 		${WRKSRC}/lib/Mail/Audit.pm
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/${i}
 .endfor
 .endif
 .if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for i in ${PORTEXAMPLES}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${i}  ${EXAMPLESDIR}/${i}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${i}  ${STAGEDIR}${EXAMPLESDIR}/${i}
 .endfor
 .endif
 

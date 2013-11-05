@@ -1,6 +1,8 @@
 bin/mailstat.pl
+%%PERL5_MAN3%%/Log::Procmail.3.gz
 %%SITE_PERL%%/Log/Procmail.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Procmail/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Procmail
+man/man1/mailstat.pl.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Procmail
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log
 @dirrmtry %%SITE_PERL%%/Log

@@ -16,8 +16,4 @@ RUN_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::IMAP::Client.3 Net::IMAP::Client::MsgAddress.3 \
-		Net::IMAP::Client::MsgSummary.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

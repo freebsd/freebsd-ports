@@ -15,7 +15,4 @@ USE_PERL5=	configure
 
 INSTALL_TARGET=	pure_site_install
 
-MAN3=		Mail::RFC822::Address.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

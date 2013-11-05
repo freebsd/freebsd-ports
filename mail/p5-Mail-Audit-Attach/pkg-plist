@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Mail::Audit::Attach.3.gz
 %%SITE_PERL%%/Mail/Audit/Attach.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Audit/Attach/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Audit/Attach
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Audit/Attach
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Audit
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
 @dirrmtry %%SITE_PERL%%/Mail/Audit
