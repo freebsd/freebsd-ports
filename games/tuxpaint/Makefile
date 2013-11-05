@@ -10,8 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drawing program designed for young children
 
-LIB_DEPENDS=	fribidi:${PORTSDIR}/converters/fribidi \
-		paper:${PORTSDIR}/print/libpaper
+LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi \
+		libpaper.so:${PORTSDIR}/print/libpaper
 
 OPTIONS_DEFINE=	DOCS
 
@@ -21,33 +21,20 @@ USES=		gettext gmake pkgconfig
 MAKE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PREFIX="${PREFIX}" \
-		DOC_PREFIX="${DOCSDIR}" \
-		DEVDOC_PREFIX="${DOCSDIR}/dev" \
-		MAN_PREFIX="${MANPREFIX}/man" \
-		DEVMAN_PREFIX="${MANPREFIX}/man" \
-		X11_ICON_PREFIX="${PREFIX}/share/pixmaps" \
+		DOC_PREFIX="${STAGEDIR}${DOCSDIR}" \
+		DEVDOC_PREFIX="${STAGEDIR}${DOCSDIR}/dev" \
+		MAN_PREFIX="${STAGEDIR}${MANPREFIX}/man" \
+		DEVMAN_PREFIX="${STAGEDIR}${MANPREFIX}/man" \
+		X11_ICON_PREFIX="${STAGEDIR}${PREFIX}/share/pixmaps" \
 		ARCH_INSTALL="" \
 		OPTFLAGS="${CFLAGS} -DHAVE_STRCASESTR" \
 		MAGIC_CFLAGS="${CFLAGS} -fno-common -Isrc `$(SDL_CONFIG) --cflags `" \
 		SHARED_FLAGS="-shared -fPIC"
 
-MANCOMPRESSED=	yes
-MAN1=		tp-magic-config.1 tuxpaint.1 tuxpaint-import.1
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MDOCS}
-INSTALL_TARGET=	install-bin install-data install-man install-magic-plugins \
-		install-magic-plugin-dev install-icon install-gettext \
-		install-im install-importscript install-default-config \
-		install-example-stamps install-example-starters
-.else
 INSTALL_TARGET=	install-bin install-data install-man install-magic-plugins \
 		install-magic-plugin-dev install-icon install-gettext \
 		install-im install-importscript install-default-config \
 		install-example-stamps install-example-starters install-doc
-.endif
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/fonts/locale/vi_docs

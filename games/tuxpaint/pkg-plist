@@ -1,5 +1,8 @@
 bin/tp-magic-config
 bin/tuxpaint
+man/man1/tp-magic-config.1.gz
+man/man1/tuxpaint-import.1.gz
+man/man1/tuxpaint.1.gz
 bin/tuxpaint-import
 @unexec if cmp -s %D/etc/tuxpaint/tuxpaint.conf %D/etc/tuxpaint/tuxpaint.conf.sample; then rm -f %D/etc/tuxpaint/tuxpaint.conf; fi
 etc/tuxpaint/tuxpaint.conf.sample
