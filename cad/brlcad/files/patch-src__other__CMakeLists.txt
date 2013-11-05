@@ -1,0 +1,16 @@
+Fixes a build failure with CMake 2.8.12.
+
+Discussed in http://article.gmane.org/gmane.comp.cad.brlcad.devel/3782
+
+Index: src/other/CMakeLists.txt
+===================================================================
+--- src/other/CMakeLists.txt	(revision 58323)
++++ src/other/CMakeLists.txt	(working copy)
+@@ -390,6 +390,7 @@
+   # PNG_INCLUDE_DIR, so a generic macro won't pick up the setting -
+   # handle it here.
+ 
++  set(PNG_LIBRARY "${PNG_LIBRARY}" CACHE STRING "PNG library" FORCE)
+   set(PNG_INCLUDE_DIR ${PNG_PNG_INCLUDE_DIR} CACHE STRING "PNG include directory" FORCE)
+ endif(BRLCAD_PNG_BUILD)
+ DISTCLEAN(${CMAKE_CURRENT_BINARY_DIR}/libpng/CTestTestfile.cmake)

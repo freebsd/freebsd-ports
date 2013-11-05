@@ -1,0 +1,81 @@
+------------------------------------------------------------------------
+r57006 | starseeker | 2013-08-21 04:30:27 +0300 (Wed, 21 Aug 2013) | 1 line
+
+Latest CMake spotted a syntax error.
+
+------------------------------------------------------------------------
+r57007 | starseeker | 2013-08-21 04:40:51 +0300 (Wed, 21 Aug 2013) | 1 line
+
+More string formatting gotchas caught by 2.8.12rc1 CMake
+
+------------------------------------------------------------------------
+Index: src/other/tk/CMake/tcl.cmake
+===================================================================
+--- src/other/tk/CMake/tcl.cmake        (revision 57006)
++++ src/other/tk/CMake/tcl.cmake        (revision 57007)
+@@ -959,8 +959,8 @@
+ ENDMACRO(CHECK_FD_SET_IN_TYPES_D)
+ 
+ MACRO(CHECK_COMPILER_SUPPORTS_HIDDEN_D)
+-	SET(TEST_SRC"
+-	#define MODULE_SCOPE extern __attribute__((__visibility__("hidden")))
++	SET(TEST_SRC "
++	#define MODULE_SCOPE extern __attribute__((__visibility__(\"hidden\")))
+ 	main(){};
+ 	")
+ 	CHECK_C_SOURCE_COMPILES("${TEST_SRC}" COMPILER_SUPPORTS_HIDDEN)
+Index: src/other/tcl/CMake/tcl.cmake
+===================================================================
+--- src/other/tcl/CMake/tcl.cmake       (revision 57006)
++++ src/other/tcl/CMake/tcl.cmake       (revision 57007)
+@@ -959,8 +959,8 @@
+ ENDMACRO(CHECK_FD_SET_IN_TYPES_D)
+ 
+ MACRO(CHECK_COMPILER_SUPPORTS_HIDDEN_D)
+-	SET(TEST_SRC"
+-	#define MODULE_SCOPE extern __attribute__((__visibility__("hidden")))
++	SET(TEST_SRC "
++	#define MODULE_SCOPE extern __attribute__((__visibility__(\"hidden\")))
+ 	main(){};
+ 	")
+ 	CHECK_C_SOURCE_COMPILES("${TEST_SRC}" COMPILER_SUPPORTS_HIDDEN)
+Index: misc/CMake/FindTCL.cmake
+===================================================================
+--- misc/CMake/FindTCL.cmake    (revision 57006)
++++ misc/CMake/FindTCL.cmake    (revision 57007)
+@@ -307,7 +307,7 @@
+ 
+ 
+ # Set up the logic for determining if a particular Tcl is compiled threaded.
+-set(tclthreaded_script"
++set(tclthreaded_script "
+ set filename \"${CMAKE_BINARY_DIR}/CMakeTmp/TCL_THREADED\"
+ set fileId [open $filename \"w\"]
+ if {[info exists tcl_platform(threaded)]} {puts $fileId 1}
+Index: INSTALL
+===================================================================
+--- INSTALL     (revision 57005)
++++ INSTALL     (revision 57006)
+@@ -374,7 +374,7 @@
+ Disabling the run-time debugging facilities can provide a significant
+ (10%-30%) performance boost at the expense of extensive error
+ checking (that in turn help prevent corruption of your data).
+-Default is ;ON;, and should only be disabled for read-only render
++Default is "ON", and should only be disabled for read-only render
+ work where performance is critical.
+ 
+ Aliases:  ENABLE_RUNTIME_DEBUG, ENABLE_RUN_TIME_DEBUG, ENABLE_RUNTIME_DEBUGGING
+Index: CMakeLists.txt
+===================================================================
+--- CMakeLists.txt      (revision 57005)
++++ CMakeLists.txt      (revision 57006)
+@@ -1121,7 +1121,7 @@
+ Disabling the run-time debugging facilities can provide a significant
+ (10%-30%) performance boost at the expense of extensive error
+ checking (that in turn help prevent corruption of your data).
+-Default is "ON", and should only be disabled for read-only render
++Default is \"ON\", and should only be disabled for read-only render
+ work where performance is critical.
+ ")
+ BRLCAD_OPTION(ON BRLCAD_ENABLE_RUNTIME_DEBUG BRLCAD_ENABLE_RUNTIME_DEBUG_ALIASES BRLCAD_ENABLE_RUNTIME_DEBUG_DESCRIPTION)
+

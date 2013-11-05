@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cmake
-PORTVERSION=	2.8.11.2
+PORTVERSION=	2.8.12
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cmake.org/files/v2.8/
 PKGNAMESUFFIX=	-gui
@@ -14,14 +14,12 @@ USES=		cmake:run
 CMAKE_ARGS=	-DBUILD_QtDialog:bool=on \
 		-DCMAKE_DATA_DIR:STRING="/${DATADIR_REL}" \
 		-DCMAKE_DOC_DIR:STRING="/${DOCSDIR_REL}"
-MAN1=		cmake-gui.1
 
 BUILD_WRKSRC=	${WRKSRC}/Source/QtDialog
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 DISTINFO_FILE=  ${.CURDIR}/../cmake/distinfo
 
-NO_STAGE=	yes
 post-patch:
 	@(${FIND} ${WRKSRC}/Modules -name "*.cmake" -print0; \
 		${FIND} ${WRKSRC}/Tests -name "CMakeLists.txt" -print0 ) | \
@@ -33,7 +31,7 @@ pre-install:
 	${WRKSRC}/bin/cmake-gui --help-man > ${WRKSRC}/cmake-gui.1
 
 post-install:
-	${MKDIR} ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/cmake-gui.1 ${MANPREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/cmake-gui.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
