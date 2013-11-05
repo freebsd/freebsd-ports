@@ -116,6 +116,7 @@ lib/Yap/json.so
 lib/Yap/matrix.so
 lib/Yap/memfile.so
 lib/Yap/mime.so
+lib/Yap/odbc4pl.so
 lib/Yap/pl-minisat.so
 lib/Yap/prism.so
 lib/Yap/process.so
@@ -341,6 +342,14 @@ lib/libYap.a
 %%DATADIR%%/menu.pl
 %%DATADIR%%/mime.pl
 %%DATADIR%%/minisat.pl
+%%DATADIR%%/myddas.yap
+%%DATADIR%%/myddas_assert_predicates.yap
+%%DATADIR%%/myddas_errors.yap
+%%DATADIR%%/myddas_mysql.yap
+%%DATADIR%%/myddas_prolog2sql.yap
+%%DATADIR%%/myddas_prolog2sql_optimizer.yap
+%%DATADIR%%/myddas_top_level.yap
+%%DATADIR%%/myddas_util_predicates.yap
 %%DATADIR%%/nb.yap
 %%DATADIR%%/nb_set.pl
 %%DATADIR%%/occurs.yap
@@ -716,27 +725,27 @@ lib/libYap.a
 %%PORTDOCS%%%%DOCSDIR%%/packages/problog/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/yap.html
 %%PORTDOCS%%%%DOCSDIR%%/yap.pdf
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/packages/problog
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/packages/examples/xml
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/packages/examples/problog
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/packages/examples/prism/noisy_or
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/packages/examples/prism/jtree
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/packages/examples/prism
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/packages/examples/plunit
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/packages/examples/pldoc
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/packages/examples/minisat
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/packages/examples/meld
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/packages/examples/http/pwp
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/packages/examples/http
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/packages/examples/chr
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/packages/examples/R
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/packages/examples/CLPBN/learning
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/packages/examples/CLPBN/School
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/packages/examples/CLPBN/HMMer
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/packages/examples/CLPBN
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/packages/examples
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/packages
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%/packages/problog
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%/packages/examples/xml
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%/packages/examples/problog
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%/packages/examples/prism/noisy_or
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%/packages/examples/prism/jtree
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%/packages/examples/prism
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%/packages/examples/plunit
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%/packages/examples/pldoc
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%/packages/examples/minisat
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%/packages/examples/meld
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%/packages/examples/http/pwp
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%/packages/examples/http
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%/packages/examples/chr
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%/packages/examples/R
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%/packages/examples/CLPBN/learning
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%/packages/examples/CLPBN/School
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%/packages/examples/CLPBN/HMMer
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%/packages/examples/CLPBN
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%/packages/examples
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%/packages
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%
 @dirrmtry %%DATADIR%%/xml
 @dirrmtry %%DATADIR%%/semweb
 @dirrmtry %%DATADIR%%/problog
