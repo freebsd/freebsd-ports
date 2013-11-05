@@ -1,5 +1,5 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/Dancer/Plugin/DBIC.pm
+%%PERL5_MAN3%%/Dancer::Plugin::DBIC.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin/DBIC/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin/DBIC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer-Plugin-DBIC
-PORTVERSION=	0.1802
+PORTVERSION=	0.1803
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,8 +22,4 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 
 USES=		perl5
 USE_PERL5=	configure
-
-MAN3=		Dancer::Plugin::DBIC.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
