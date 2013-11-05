@@ -13,8 +13,4 @@ COMMENT=	Perl module implements the evolution search strategy
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	ps_evol.1
-MAN3=	Math::Evol.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,3 +1,5 @@
+%%PERL5_MAN3%%/Math::Random::MT::Auto.3.gz
+%%PERL5_MAN3%%/Math::Random::MT::Auto::Range.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/Random/MT/Auto.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/Random/MT/Auto/Range.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Random/MT/Auto/.packlist

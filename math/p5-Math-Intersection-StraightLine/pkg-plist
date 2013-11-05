@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Math::Intersection::StraightLine.3.gz
 %%SITE_PERL%%/Math/Intersection/StraightLine.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Intersection/StraightLine/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Intersection/StraightLine
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Intersection/StraightLine
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Intersection
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
 @dirrmtry %%SITE_PERL%%/Math/Intersection

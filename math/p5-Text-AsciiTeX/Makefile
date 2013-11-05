@@ -16,7 +16,4 @@ RUN_DEPENDS=	p5-parent>=0:${PORTSDIR}/devel/p5-parent
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=	Text::AsciiTeX.3 Text::AsciiTeX::Syntax.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

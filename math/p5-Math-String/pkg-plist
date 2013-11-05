@@ -1,9 +1,16 @@
-%%SITE_PERL%%/Math/String/Charset/Nested.pm
-%%SITE_PERL%%/Math/String/Charset/Grouped.pm
-%%SITE_PERL%%/Math/String/Charset.pm
-%%SITE_PERL%%/Math/String/Sequence.pm
+%%PERL5_MAN3%%/Math::String.3.gz
+%%PERL5_MAN3%%/Math::String::Charset.3.gz
+%%PERL5_MAN3%%/Math::String::Charset::Grouped.3.gz
+%%PERL5_MAN3%%/Math::String::Charset::Nested.3.gz
+%%PERL5_MAN3%%/Math::String::Sequence.3.gz
 %%SITE_PERL%%/Math/String.pm
+%%SITE_PERL%%/Math/String/Charset.pm
+%%SITE_PERL%%/Math/String/Charset/Grouped.pm
+%%SITE_PERL%%/Math/String/Charset/Nested.pm
+%%SITE_PERL%%/Math/String/Sequence.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/String/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/String
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
 @dirrmtry %%SITE_PERL%%/Math/String/Charset
 @dirrmtry %%SITE_PERL%%/Math/String
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/String
+@dirrmtry %%SITE_PERL%%/Math

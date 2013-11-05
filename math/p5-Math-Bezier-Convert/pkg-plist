@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Math::Bezier::Convert.3.gz
 %%SITE_PERL%%/Math/Bezier/Convert.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Bezier/Convert/.packlist
-@dirrmtry %%SITE_PERL%%/Math/Bezier
-@dirrmtry %%SITE_PERL%%/Math
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Bezier/Convert
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Bezier/Convert
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Bezier
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrmtry %%SITE_PERL%%/Math/Bezier
+@dirrmtry %%SITE_PERL%%/Math

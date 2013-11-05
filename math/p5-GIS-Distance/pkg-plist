@@ -1,4 +1,12 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/GIS/Distance/.packlist
+%%PERL5_MAN3%%/GIS::Distance.3.gz
+%%PERL5_MAN3%%/GIS::Distance::Formula.3.gz
+%%PERL5_MAN3%%/GIS::Distance::Formula::Cosine.3.gz
+%%PERL5_MAN3%%/GIS::Distance::Formula::GeoEllipsoid.3.gz
+%%PERL5_MAN3%%/GIS::Distance::Formula::GreatCircle.3.gz
+%%PERL5_MAN3%%/GIS::Distance::Formula::Haversine.3.gz
+%%PERL5_MAN3%%/GIS::Distance::Formula::MathTrig.3.gz
+%%PERL5_MAN3%%/GIS::Distance::Formula::Polar.3.gz
+%%PERL5_MAN3%%/GIS::Distance::Formula::Vincenty.3.gz
 %%SITE_PERL%%/GIS/Distance.pm
 %%SITE_PERL%%/GIS/Distance/Formula.pm
 %%SITE_PERL%%/GIS/Distance/Formula/Cosine.pm
@@ -8,8 +16,9 @@
 %%SITE_PERL%%/GIS/Distance/Formula/MathTrig.pm
 %%SITE_PERL%%/GIS/Distance/Formula/Polar.pm
 %%SITE_PERL%%/GIS/Distance/Formula/Vincenty.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GIS/Distance/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GIS/Distance
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GIS
 @dirrmtry %%SITE_PERL%%/GIS/Distance/Formula
 @dirrmtry %%SITE_PERL%%/GIS/Distance
 @dirrmtry %%SITE_PERL%%/GIS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GIS/Distance
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GIS

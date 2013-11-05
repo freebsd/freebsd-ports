@@ -1,6 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bit/Vector/Minimal/.packlist
+%%PERL5_MAN3%%/Bit::Vector::Minimal.3.gz
 %%SITE_PERL%%/Bit/Vector/Minimal.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bit/Vector/Minimal
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bit/Vector/Minimal/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bit/Vector/Minimal
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bit/Vector
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bit
 @dirrmtry %%SITE_PERL%%/Bit/Vector

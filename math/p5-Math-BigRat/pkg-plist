@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/BigRat/.packlist
+%%PERL5_MAN3%%/Math::BigRat.3.gz
 %%SITE_PERL%%/Math/BigRat.pm
-@dirrmtry %%SITE_PERL%%/Math
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/BigRat
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/BigRat/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/BigRat
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrmtry %%SITE_PERL%%/Math

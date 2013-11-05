@@ -1,8 +1,9 @@
+%%PERL5_MAN3%%/Math::Geometry::Planar::GPC.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/Geometry/Planar/GPC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Geometry/Planar/GPC/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Geometry/Planar/GPC/GPC.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Geometry/Planar/GPC/GPC.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Geometry/Planar/GPC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Geometry/Planar/GPC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Geometry/Planar
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Geometry
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math

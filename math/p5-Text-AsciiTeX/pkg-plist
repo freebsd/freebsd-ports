@@ -1,5 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Text/AsciiTeX/Syntax.pod
+%%PERL5_MAN3%%/Text::AsciiTeX.3.gz
+%%PERL5_MAN3%%/Text::AsciiTeX::Syntax.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/AsciiTeX.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/AsciiTeX/Syntax.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/AsciiTeX/AsciiTeX.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/AsciiTeX/AsciiTeX.so
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/AsciiTeX

@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Math::FixedPrecision.3.gz
 %%SITE_PERL%%/Math/FixedPrecision.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/FixedPrecision/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/FixedPrecision
-@dirrmtry %%SITE_PERL%%/Math
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/FixedPrecision
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrmtry %%SITE_PERL%%/Math

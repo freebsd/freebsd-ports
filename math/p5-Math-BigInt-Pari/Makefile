@@ -12,13 +12,9 @@ COMMENT=	Use Math::Pari for Math::BigInt routines
 
 BUILD_DEPENDS=	p5-Math-BigInt>=1.997:${PORTSDIR}/math/p5-Math-BigInt \
 		p5-Math-Pari>=2.010709:${PORTSDIR}/math/p5-Math-Pari
-RUN_DEPENDS=	p5-Math-BigInt>=1.997:${PORTSDIR}/math/p5-Math-BigInt \
-		p5-Math-Pari>=2.010709:${PORTSDIR}/math/p5-Math-Pari
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Math::BigInt::Pari.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

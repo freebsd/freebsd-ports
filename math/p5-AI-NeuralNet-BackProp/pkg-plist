@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/AI::NeuralNet::BackProp.3.gz
 %%SITE_PERL%%/AI/NeuralNet/BackProp.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/NeuralNet/BackProp/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/NeuralNet/BackProp
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/NeuralNet
-@dirrm %%SITE_PERL%%/AI/NeuralNet
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/NeuralNet/BackProp
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/NeuralNet
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI
+@dirrmtry %%SITE_PERL%%/AI/NeuralNet
 @dirrmtry %%SITE_PERL%%/AI

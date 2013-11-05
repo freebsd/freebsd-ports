@@ -1,10 +1,11 @@
+%%PERL5_MAN3%%/Math::Geometry::Voronoi.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/Geometry/Voronoi.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/Geometry/leak-test.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Geometry/Voronoi/Voronoi.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Geometry/Voronoi/Voronoi.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Geometry/Voronoi/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Math/Geometry
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Math
-@dirrm %%SITE_PERL%%//%%PERL_ARCH%%/auto/Math/Geometry/Voronoi
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Geometry/Voronoi/Voronoi.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Geometry/Voronoi/Voronoi.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Geometry/Voronoi
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Geometry
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Math/Geometry
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Math

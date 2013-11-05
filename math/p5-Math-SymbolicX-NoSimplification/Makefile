@@ -13,10 +13,7 @@ COMMENT=	Turn off Math::Symbolic simplification
 BUILD_DEPENDS=	p5-Math-Symbolic>=0:${PORTSDIR}/math/p5-Math-Symbolic
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	Math::SymbolicX::NoSimplification.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

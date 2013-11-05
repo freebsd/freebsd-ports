@@ -15,9 +15,6 @@ USES=		perl5
 USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAN3=		Statistics::LineFit.3
-
-NO_STAGE=	yes
 post-extract:
 	${CHMOD} 755 ${WRKSRC}
 

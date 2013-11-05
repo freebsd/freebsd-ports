@@ -1,9 +1,10 @@
+%%PERL5_MAN3%%/Math::SymbolicX::Statistics::Distributions.3.gz
 %%SITE_PERL%%/Math/SymbolicX/Statistics/Distributions.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SymbolicX/Statistics/Distributions/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SymbolicX/Statistics/Distributions
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SymbolicX/Statistics
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SymbolicX/Statistics/Distributions
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SymbolicX/Statistics
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SymbolicX
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
-@dirrm %%SITE_PERL%%/Math/SymbolicX/Statistics
+@dirrmtry %%SITE_PERL%%/Math/SymbolicX/Statistics
 @dirrmtry %%SITE_PERL%%/Math/SymbolicX
 @dirrmtry %%SITE_PERL%%/Math

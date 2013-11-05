@@ -12,7 +12,5 @@ COMMENT=	Perl module providing pure 2, 3, or multi-value logic
 
 USES=		perl5
 USE_PERL5=	configure
-MAN3=		Math::Logic.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

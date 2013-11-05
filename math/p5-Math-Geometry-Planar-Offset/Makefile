@@ -13,10 +13,7 @@ COMMENT=	Calculate offset polygons
 BUILD_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	Math::Geometry::Planar::Offset.3
-
 USES=		perl5
 USE_PERL5=	modbuild
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

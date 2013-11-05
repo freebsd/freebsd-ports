@@ -1,6 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Complex/.packlist
+%%PERL5_MAN3%%/Math::Complex.3.gz
+%%PERL5_MAN3%%/Math::Trig.3.gz
 %%SITE_PERL%%/Math/Complex.pm
 %%SITE_PERL%%/Math/Trig.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Complex/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Complex
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
 @dirrmtry %%SITE_PERL%%/Math

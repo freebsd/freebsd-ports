@@ -1,4 +1,14 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Expr/.packlist
+%%PERL5_MAN3%%/Math::Expr.3.gz
+%%PERL5_MAN3%%/Math::Expr::FormulaDB.3.gz
+%%PERL5_MAN3%%/Math::Expr::MatchSet.3.gz
+%%PERL5_MAN3%%/Math::Expr::Node.3.gz
+%%PERL5_MAN3%%/Math::Expr::Num.3.gz
+%%PERL5_MAN3%%/Math::Expr::Opp.3.gz
+%%PERL5_MAN3%%/Math::Expr::OpperationDB.3.gz
+%%PERL5_MAN3%%/Math::Expr::Rule.3.gz
+%%PERL5_MAN3%%/Math::Expr::TypeDB.3.gz
+%%PERL5_MAN3%%/Math::Expr::Var.3.gz
+%%PERL5_MAN3%%/Math::Expr::VarSet.3.gz
 %%SITE_PERL%%/Math/Expr.pm
 %%SITE_PERL%%/Math/Expr/FormulaDB.pm
 %%SITE_PERL%%/Math/Expr/MatchSet.pm
@@ -10,7 +20,8 @@
 %%SITE_PERL%%/Math/Expr/TypeDB.pm
 %%SITE_PERL%%/Math/Expr/Var.pm
 %%SITE_PERL%%/Math/Expr/VarSet.pm
-@dirrm %%SITE_PERL%%/Math/Expr
-@dirrm %%SITE_PERL%%/Math
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Expr
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Expr/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Expr
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrmtry %%SITE_PERL%%/Math/Expr
+@dirrmtry %%SITE_PERL%%/Math

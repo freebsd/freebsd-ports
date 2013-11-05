@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Math::SymbolicX::Complex.3.gz
 %%SITE_PERL%%/Math/SymbolicX/Complex.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SymbolicX/Complex/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SymbolicX/Complex
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SymbolicX/Complex
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SymbolicX
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
 @dirrmtry %%SITE_PERL%%/Math/SymbolicX

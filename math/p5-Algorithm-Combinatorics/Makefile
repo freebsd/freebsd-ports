@@ -14,10 +14,7 @@ COMMENT=	Efficient generation of combinatorial sequences
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-MAN3=		Algorithm::Combinatorics.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

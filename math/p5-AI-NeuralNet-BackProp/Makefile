@@ -15,7 +15,4 @@ NO_WRKSUBDIR=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		AI::NeuralNet::BackProp.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,6 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Interpolate/.packlist
+%%PERL5_MAN3%%/Math::Interpolate.3.gz
+%%PERL5_MAN3%%/Math::IntervalSearch.3.gz
 %%SITE_PERL%%/Math/Interpolate.pm
 %%SITE_PERL%%/Math/IntervalSearch.pm
-@dirrm %%SITE_PERL%%/Math
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Interpolate
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Interpolate/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Interpolate
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrmtry %%SITE_PERL%%/Math

@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Derivative/.packlist
+%%PERL5_MAN3%%/Math::Derivative.3.gz
 %%SITE_PERL%%/Math/Derivative.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Derivative
-@dirrm %%SITE_PERL%%/Math
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Derivative/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Derivative
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrmtry %%SITE_PERL%%/Math

@@ -14,7 +14,4 @@ COMMENT=	Perl module that provides decimal math without floating point errors
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Math::FixedPrecision.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

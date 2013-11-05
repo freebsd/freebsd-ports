@@ -13,10 +13,6 @@ COMMENT=	Perl module for calculating time differences
 USES=		perl5
 USE_PERL5=	configure patch
 
-MAN3=		Date::Handler.3 Date::Handler::Delta.3 \
-		Date::Handler::Range.3 Date::Handler::Test.3
-
-NO_STAGE=	yes
 post-patch:
 	@${PERL} -pi -e 's/[a-z][a-z]_[A-Z][A-Z]/$$&.ISO8859-15/g' \
 		${WRKSRC}/Handler.* ${WRKSRC}/README*

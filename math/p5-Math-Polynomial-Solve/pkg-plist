@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Polynomial/Solve/.packlist
+%%PERL5_MAN3%%/Math::Polynomial::Solve.3.gz
 %%SITE_PERL%%/Math/Polynomial/Solve.pm
-@dirrmtry %%SITE_PERL%%/Math/Polynomial
-@dirrmtry %%SITE_PERL%%/Math
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Polynomial/Solve/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Polynomial/Solve
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Polynomial
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrmtry %%SITE_PERL%%/Math/Polynomial
+@dirrmtry %%SITE_PERL%%/Math
