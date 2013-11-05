@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Fax::Hylafax::Client.3.gz
 %%SITE_PERL%%/Fax/Hylafax/Client.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fax/Hylafax/Client/.packlist
-@dirrmtry %%SITE_PERL%%/Fax/Hylafax
-@dirrmtry %%SITE_PERL%%/Fax
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fax/Hylafax/Client
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fax/Hylafax
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fax
+@dirrmtry %%SITE_PERL%%/Fax/Hylafax
+@dirrmtry %%SITE_PERL%%/Fax
