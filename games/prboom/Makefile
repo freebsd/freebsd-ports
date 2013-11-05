@@ -26,13 +26,8 @@ DATADIR=	${DMDIR}
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 OPENGL_CONFIGURE_ENABLE=	gl
+OPENGL_USE=	GL=yes
 
 .include "${.CURDIR}/../doom-data/Makefile.include"
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MOPENGL}
-USE_GL=		yes
-.endif
 
 .include <bsd.port.mk>
