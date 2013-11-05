@@ -3,7 +3,7 @@
 
 PORTNAME=	pyspatialite
 PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP:pyspatialite \
 		http://www.gaia-gis.it/gaia-sins/libspatialite-sources/:amalgam
