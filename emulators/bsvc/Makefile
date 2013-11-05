@@ -13,12 +13,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extensible hardware simulation framework with MC68K support
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-MAKE_ENV=	PROJECT_BASE=${PREFIX} WRKSRC=${WRKSRC}
-USE_TK_RUN=	yes
-MAKE_JOBS_UNSAFE=	yes
+MAKE_ENV=	PROJECT_BASE=${STAGEDIR}${PREFIX} WRKSRC=${WRKSRC} WISH=${WISH}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+USES+=		tk
+MAKE_JOBS_UNSAFE=	yes
 
 pre-patch:
 	@${CP} ${WRKSRC}/Makefile.Linux ${WRKSRC}/Makefile
@@ -39,4 +37,4 @@ post-patch:
 	@${FIND} ${WRKSRC} -name Makefile -exec \
 		${REINPLACE_CMD} -e 's/make/$(MAKE)/' \{\} \;
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
