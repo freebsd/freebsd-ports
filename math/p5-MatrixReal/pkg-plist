@@ -1,7 +1,9 @@
+%%PERL5_MAN3%%/Math::Kleene.3.gz
+%%PERL5_MAN3%%/Math::MatrixReal.3.gz
 %%SITE_PERL%%/Math/Kleene.pod
 %%SITE_PERL%%/Math/MatrixReal.pm
 %%SITE_PERL%%/Math/funcs.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/MatrixReal/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/MatrixReal
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/MatrixReal
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
 @dirrmtry %%SITE_PERL%%/Math

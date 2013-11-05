@@ -1,6 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/NumberCruncher/.packlist
-%%SITE_PERL%%/Math/NumberCruncher.pod
+%%PERL5_MAN3%%/Math::NumberCruncher.3.gz
 %%SITE_PERL%%/Math/NumberCruncher.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/NumberCruncher
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+%%SITE_PERL%%/Math/NumberCruncher.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/NumberCruncher/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/NumberCruncher
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
 @dirrmtry %%SITE_PERL%%/Math

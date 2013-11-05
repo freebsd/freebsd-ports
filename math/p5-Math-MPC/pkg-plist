@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Math::MPC.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/MPC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/MPC/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/MPC/MPC.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/MPC/MPC.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Math
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/MPC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/MPC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Math

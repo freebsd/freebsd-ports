@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/Forecast/.packlist
+%%PERL5_MAN3%%/Statistics::Forecast.3.gz
 %%SITE_PERL%%/Statistics/Forecast.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/Forecast/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/Forecast
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics
 @dirrmtry %%SITE_PERL%%/Statistics

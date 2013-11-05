@@ -20,9 +20,4 @@ RUN_DEPENDS=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Statistics::R::Legacy.3 \
-		Statistics::R::Win32.3 \
-		Statistics::R.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

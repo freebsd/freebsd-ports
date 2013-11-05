@@ -1,3 +1,7 @@
+%%PERL5_MAN3%%/Date::Handler.3.gz
+%%PERL5_MAN3%%/Date::Handler::Delta.3.gz
+%%PERL5_MAN3%%/Date::Handler::Range.3.gz
+%%PERL5_MAN3%%/Date::Handler::Test.3.gz
 %%SITE_PERL%%/Date/Handler.pm
 %%SITE_PERL%%/Date/Handler.pod
 %%SITE_PERL%%/Date/Handler/Constants.pm
@@ -5,7 +9,7 @@
 %%SITE_PERL%%/Date/Handler/Range.pm
 %%SITE_PERL%%/Date/Handler/Test.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Handler/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Handler
-@dirrm %%SITE_PERL%%/Date/Handler
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Handler
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date
+@dirrmtry %%SITE_PERL%%/Date/Handler
 @dirrmtry %%SITE_PERL%%/Date

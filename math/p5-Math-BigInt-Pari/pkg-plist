@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Math::BigInt::Pari.3.gz
 %%SITE_PERL%%/Math/BigInt/Pari.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/BigInt/Pari/.packlist
-@dirrmtry %%SITE_PERL%%/Math/BigInt
-@dirrmtry %%SITE_PERL%%/Math
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/BigInt/Pari
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/BigInt
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrmtry %%SITE_PERL%%/Math/BigInt
+@dirrmtry %%SITE_PERL%%/Math

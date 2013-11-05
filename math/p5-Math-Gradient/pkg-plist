@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/Math::Gradient.3.gz
 %%SITE_PERL%%/Math/Gradient.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Gradient/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Gradient

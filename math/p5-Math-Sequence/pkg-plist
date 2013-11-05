@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Math::Sequence.3.gz
 %%SITE_PERL%%/Math/Sequence.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Sequence/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Sequence
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Sequence
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
 @dirrmtry %%SITE_PERL%%/Math

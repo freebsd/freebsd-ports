@@ -14,9 +14,6 @@ COMMENT=	Simple representation of mathematical variables
 USES=		perl5
 USE_PERL5=	configure patch
 
-MAN3=		Math::SimpleVariable.3
-
-NO_STAGE=	yes
 pre-patch:
 	@${FIND} ${WRKSRC} -name "*.pm" | ${XARGS} ${PERL} -pi -e \
 		'$$package=$$1 if /^package\s+([^\s;]*);/; s!^require 5.005_62;!!; s!^use warnings;!!; s!^our\s+(\$$)(VERSION)\s+=!$$1$${package}::$$2=!;'

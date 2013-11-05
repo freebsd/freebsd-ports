@@ -1,3 +1,6 @@
+%%PERL5_MAN3%%/Math::Pari.3.gz
+%%PERL5_MAN3%%/Math::PariInit.3.gz
+%%PERL5_MAN3%%/Math::libPARI.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/Pari.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/PariInit.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/libPARI.pod

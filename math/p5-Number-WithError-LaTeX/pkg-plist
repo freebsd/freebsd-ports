@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Number::WithError::LaTeX.3.gz
 %%SITE_PERL%%/Number/WithError/LaTeX.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/WithError/LaTeX/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/WithError/LaTeX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/WithError/LaTeX
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/WithError
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number
 @dirrmtry %%SITE_PERL%%/Number/WithError

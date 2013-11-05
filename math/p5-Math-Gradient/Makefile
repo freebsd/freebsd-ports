@@ -14,7 +14,4 @@ COMMENT=	Calculating gradients for color transitions and the like
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Math::Gradient.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

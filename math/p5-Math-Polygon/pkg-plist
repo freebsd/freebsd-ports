@@ -1,18 +1,23 @@
+%%PERL5_MAN3%%/Math::Polygon.3.gz
+%%PERL5_MAN3%%/Math::Polygon::Calc.3.gz
+%%PERL5_MAN3%%/Math::Polygon::Clip.3.gz
+%%PERL5_MAN3%%/Math::Polygon::Convex.3.gz
+%%PERL5_MAN3%%/Math::Polygon::Surface.3.gz
+%%PERL5_MAN3%%/Math::Polygon::Transform.3.gz
+%%SITE_PERL%%/Math/Polygon.pm
 %%SITE_PERL%%/Math/Polygon.pod
-%%SITE_PERL%%/Math/Polygon/Surface.pm
-%%SITE_PERL%%/Math/Polygon/Transform.pm
 %%SITE_PERL%%/Math/Polygon/Calc.pm
-%%SITE_PERL%%/Math/Polygon/Transform.pod
-%%SITE_PERL%%/Math/Polygon/Clip.pm
-%%SITE_PERL%%/Math/Polygon/Surface.pod
 %%SITE_PERL%%/Math/Polygon/Calc.pod
+%%SITE_PERL%%/Math/Polygon/Clip.pm
 %%SITE_PERL%%/Math/Polygon/Clip.pod
 %%SITE_PERL%%/Math/Polygon/Convex.pm
 %%SITE_PERL%%/Math/Polygon/Convex.pod
+%%SITE_PERL%%/Math/Polygon/Surface.pm
+%%SITE_PERL%%/Math/Polygon/Surface.pod
+%%SITE_PERL%%/Math/Polygon/Transform.pm
+%%SITE_PERL%%/Math/Polygon/Transform.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Polygon/.packlist
-%%SITE_PERL%%/Math/Polygon.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Polygon
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
 @dirrmtry %%SITE_PERL%%/Math/Polygon
 @dirrmtry %%SITE_PERL%%/Math
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Polygon
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math

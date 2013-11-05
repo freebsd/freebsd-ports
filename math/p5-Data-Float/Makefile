@@ -14,7 +14,4 @@ COMMENT=	Details of the floating point data type
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Data::Float.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

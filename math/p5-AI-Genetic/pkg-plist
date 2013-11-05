@@ -1,3 +1,8 @@
+%%PERL5_MAN3%%/AI::Genetic.3.gz
+%%PERL5_MAN3%%/AI::Genetic::Individual.3.gz
+%%PERL5_MAN3%%/AI::Genetic::OpCrossover.3.gz
+%%PERL5_MAN3%%/AI::Genetic::OpMutation.3.gz
+%%PERL5_MAN3%%/AI::Genetic::OpSelection.3.gz
 %%SITE_PERL%%/AI/Genetic.pm
 %%SITE_PERL%%/AI/Genetic/Defaults.pm
 %%SITE_PERL%%/AI/Genetic/IndBitVector.pm
@@ -8,7 +13,7 @@
 %%SITE_PERL%%/AI/Genetic/OpMutation.pm
 %%SITE_PERL%%/AI/Genetic/OpSelection.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/Genetic/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/Genetic
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/Genetic
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI
-@dirrm %%SITE_PERL%%/AI/Genetic
+@dirrmtry %%SITE_PERL%%/AI/Genetic
 @dirrmtry %%SITE_PERL%%/AI

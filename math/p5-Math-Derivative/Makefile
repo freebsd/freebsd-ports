@@ -13,7 +13,4 @@ COMMENT=	Numeric 1st and 2nd order differentiation
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Math::Derivative.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -13,9 +13,4 @@ COMMENT=	Transparent BigNumber/BigRational support for Perl
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		bigint.3 \
-		bignum.3 \
-		bigrat.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,8 +1,11 @@
+%%PERL5_MAN3%%/Statistics::R.3.gz
+%%PERL5_MAN3%%/Statistics::R::Legacy.3.gz
+%%PERL5_MAN3%%/Statistics::R::Win32.3.gz
+%%SITE_PERL%%/Statistics/R.pm
 %%SITE_PERL%%/Statistics/R/Legacy.pm
 %%SITE_PERL%%/Statistics/R/Win32.pm
-%%SITE_PERL%%/Statistics/R.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/R/.packlist
-@dirrmtry %%SITE_PERL%%/Statistics/R
-@dirrmtry %%SITE_PERL%%/Statistics
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/R
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics
+@dirrmtry %%SITE_PERL%%/Statistics/R
+@dirrmtry %%SITE_PERL%%/Statistics

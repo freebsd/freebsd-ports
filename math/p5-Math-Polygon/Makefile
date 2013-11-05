@@ -16,12 +16,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Math::Polygon.3 \
-		Math::Polygon::Calc.3 \
-		Math::Polygon::Clip.3 \
-		Math::Polygon::Surface.3 \
-		Math::Polygon::Transform.3 \
-		Math::Polygon::Convex.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

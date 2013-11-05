@@ -1,3 +1,22 @@
+%%PERL5_MAN3%%/Math::Symbolic.3.gz
+%%PERL5_MAN3%%/Math::Symbolic::AuxFunctions.3.gz
+%%PERL5_MAN3%%/Math::Symbolic::Base.3.gz
+%%PERL5_MAN3%%/Math::Symbolic::Compiler.3.gz
+%%PERL5_MAN3%%/Math::Symbolic::Constant.3.gz
+%%PERL5_MAN3%%/Math::Symbolic::Custom.3.gz
+%%PERL5_MAN3%%/Math::Symbolic::Custom::Base.3.gz
+%%PERL5_MAN3%%/Math::Symbolic::Custom::DefaultDumpers.3.gz
+%%PERL5_MAN3%%/Math::Symbolic::Custom::DefaultMods.3.gz
+%%PERL5_MAN3%%/Math::Symbolic::Custom::DefaultTests.3.gz
+%%PERL5_MAN3%%/Math::Symbolic::Derivative.3.gz
+%%PERL5_MAN3%%/Math::Symbolic::ExportConstants.3.gz
+%%PERL5_MAN3%%/Math::Symbolic::MiscAlgebra.3.gz
+%%PERL5_MAN3%%/Math::Symbolic::MiscCalculus.3.gz
+%%PERL5_MAN3%%/Math::Symbolic::Operator.3.gz
+%%PERL5_MAN3%%/Math::Symbolic::Parser.3.gz
+%%PERL5_MAN3%%/Math::Symbolic::Parser::Precompiled.3.gz
+%%PERL5_MAN3%%/Math::Symbolic::Variable.3.gz
+%%PERL5_MAN3%%/Math::Symbolic::VectorCalculus.3.gz
 %%SITE_PERL%%/Math/Symbolic.pm
 %%SITE_PERL%%/Math/Symbolic/AuxFunctions.pm
 %%SITE_PERL%%/Math/Symbolic/Base.pm
@@ -20,9 +39,9 @@
 %%SITE_PERL%%/Math/Symbolic/VectorCalculus.pm
 %%SITE_PERL%%/Math/compile_yapp_parser.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Symbolic/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Symbolic
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Symbolic
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
-@dirrm %%SITE_PERL%%/Math/Symbolic/Parser
-@dirrm %%SITE_PERL%%/Math/Symbolic/Custom
-@dirrm %%SITE_PERL%%/Math/Symbolic
+@dirrmtry %%SITE_PERL%%/Math/Symbolic/Parser
+@dirrmtry %%SITE_PERL%%/Math/Symbolic/Custom
+@dirrmtry %%SITE_PERL%%/Math/Symbolic
 @dirrmtry %%SITE_PERL%%/Math

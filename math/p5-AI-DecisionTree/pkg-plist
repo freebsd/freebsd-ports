@@ -1,10 +1,12 @@
+%%PERL5_MAN3%%/AI::DecisionTree.3.gz
+%%PERL5_MAN3%%/AI::DecisionTree::Instance.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/AI/DecisionTree.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/AI/DecisionTree/Instance.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/DecisionTree/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/DecisionTree/Instance/Instance.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/DecisionTree/Instance/Instance.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/AI/DecisionTree
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/DecisionTree/Instance
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/DecisionTree
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/AI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/DecisionTree/Instance
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/DecisionTree
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/AI/DecisionTree
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/AI

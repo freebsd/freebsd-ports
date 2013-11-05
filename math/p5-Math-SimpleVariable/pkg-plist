@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SimpleVariable/.packlist
+%%PERL5_MAN3%%/Math::SimpleVariable.3.gz
 %%SITE_PERL%%/Math/SimpleVariable.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SimpleVariable
-@dirrmtry %%SITE_PERL%%/Math
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SimpleVariable/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SimpleVariable
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrmtry %%SITE_PERL%%/Math

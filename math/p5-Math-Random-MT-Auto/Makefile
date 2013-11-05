@@ -18,9 +18,6 @@ TEST_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Math::Random::MT::Auto.3 Math::Random::MT::Auto::Range.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

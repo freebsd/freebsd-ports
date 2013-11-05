@@ -15,7 +15,4 @@ RUN_DEPENDS=	p5-Math-Derivative>=0:${PORTSDIR}/math/p5-Math-Derivative
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Math::Spline.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

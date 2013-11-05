@@ -22,15 +22,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		GIS::Distance.3 \
-		GIS::Distance::Formula.3 \
-		GIS::Distance::Formula::Cosine.3 \
-		GIS::Distance::Formula::GeoEllipsoid.3 \
-		GIS::Distance::Formula::GreatCircle.3 \
-		GIS::Distance::Formula::Haversine.3 \
-		GIS::Distance::Formula::MathTrig.3 \
-		GIS::Distance::Formula::Polar.3 \
-		GIS::Distance::Formula::Vincenty.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

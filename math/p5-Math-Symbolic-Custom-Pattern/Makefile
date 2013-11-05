@@ -16,11 +16,7 @@ BUILD_DEPENDS=	p5-Math-Symbolic>=0.510:${PORTSDIR}/math/p5-Math-Symbolic \
 		p5-Clone>=0:${PORTSDIR}/devel/p5-Clone
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	Math::Symbolic::Custom::Pattern.3 \
-	Math::Symbolic::Custom::Pattern::Export.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

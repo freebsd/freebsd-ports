@@ -16,11 +16,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Math::String.3 \
-		Math::String::Charset.3 \
-		Math::String::Charset::Grouped.3 \
-		Math::String::Charset::Nested.3 \
-		Math::String::Sequence.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

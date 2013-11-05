@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Math::Currency.3.gz
 %%SITE_PERL%%/Math/Currency.pm
 %%SITE_PERL%%/Math/Currency/de_DE.pm
 %%SITE_PERL%%/Math/Currency/en_GB.pm
 %%SITE_PERL%%/Math/Currency/ja_JP.pm
-@dirrm %%SITE_PERL%%/Math/Currency
+@dirrmtry %%SITE_PERL%%/Math/Currency
 @dirrmtry %%SITE_PERL%%/Math

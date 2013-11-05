@@ -1,8 +1,9 @@
+%%PERL5_MAN3%%/Math::BigInt::GMP.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/BigInt/GMP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/BigInt/GMP/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/BigInt/GMP/GMP.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/BigInt/GMP/GMP.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/BigInt/GMP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/BigInt/GMP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/BigInt
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Math/BigInt
