@@ -1,18 +1,32 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/UPnP/.packlist
-%%SITE_PERL%%/Net/UPnP/AV/MediaServer.pm
+%%PERL5_MAN3%%/Net::UPnP.3.gz
+%%PERL5_MAN3%%/Net::UPnP::AV::Container.3.gz
+%%PERL5_MAN3%%/Net::UPnP::AV::Content.3.gz
+%%PERL5_MAN3%%/Net::UPnP::AV::Item.3.gz
+%%PERL5_MAN3%%/Net::UPnP::AV::MediaRenderer.3.gz
+%%PERL5_MAN3%%/Net::UPnP::AV::MediaServer.3.gz
+%%PERL5_MAN3%%/Net::UPnP::ActionResponse.3.gz
+%%PERL5_MAN3%%/Net::UPnP::ControlPoint.3.gz
+%%PERL5_MAN3%%/Net::UPnP::Device.3.gz
+%%PERL5_MAN3%%/Net::UPnP::GW::Gateway.3.gz
+%%PERL5_MAN3%%/Net::UPnP::HTTP.3.gz
+%%PERL5_MAN3%%/Net::UPnP::HTTPResponse.3.gz
+%%PERL5_MAN3%%/Net::UPnP::QueryResponse.3.gz
+%%PERL5_MAN3%%/Net::UPnP::Service.3.gz
+%%SITE_PERL%%/Net/UPnP.pm
 %%SITE_PERL%%/Net/UPnP/AV/Container.pm
-%%SITE_PERL%%/Net/UPnP/AV/MediaRenderer.pm
-%%SITE_PERL%%/Net/UPnP/AV/Item.pm
 %%SITE_PERL%%/Net/UPnP/AV/Content.pm
-%%SITE_PERL%%/Net/UPnP/Device.pm
-%%SITE_PERL%%/Net/UPnP/HTTP.pm
+%%SITE_PERL%%/Net/UPnP/AV/Item.pm
+%%SITE_PERL%%/Net/UPnP/AV/MediaRenderer.pm
+%%SITE_PERL%%/Net/UPnP/AV/MediaServer.pm
+%%SITE_PERL%%/Net/UPnP/ActionResponse.pm
 %%SITE_PERL%%/Net/UPnP/ControlPoint.pm
+%%SITE_PERL%%/Net/UPnP/Device.pm
+%%SITE_PERL%%/Net/UPnP/GW/Gateway.pm
+%%SITE_PERL%%/Net/UPnP/HTTP.pm
 %%SITE_PERL%%/Net/UPnP/HTTPResponse.pm
 %%SITE_PERL%%/Net/UPnP/QueryResponse.pm
-%%SITE_PERL%%/Net/UPnP/GW/Gateway.pm
 %%SITE_PERL%%/Net/UPnP/Service.pm
-%%SITE_PERL%%/Net/UPnP/ActionResponse.pm
-%%SITE_PERL%%/Net/UPnP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/UPnP/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/UPnP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrmtry %%SITE_PERL%%/Net/UPnP/GW

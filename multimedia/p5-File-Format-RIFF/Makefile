@@ -13,10 +13,4 @@ COMMENT=	Read, manipulate, and write RIFF files
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		File::Format::RIFF.3 \
-		File::Format::RIFF::Chunk.3 \
-		File::Format::RIFF::Container.3 \
-		File::Format::RIFF::List.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

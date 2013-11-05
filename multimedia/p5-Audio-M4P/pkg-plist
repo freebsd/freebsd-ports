@@ -1,9 +1,13 @@
+%%PERL5_MAN3%%/Audio::M4P.3.gz
+%%PERL5_MAN3%%/Audio::M4P::Atom.3.gz
+%%PERL5_MAN3%%/Audio::M4P::Decrypt.3.gz
+%%PERL5_MAN3%%/Audio::M4P::QuickTime.3.gz
 %%SITE_PERL%%/Audio/M4P.pm
 %%SITE_PERL%%/Audio/M4P/Atom.pm
 %%SITE_PERL%%/Audio/M4P/Decrypt.pm
 %%SITE_PERL%%/Audio/M4P/QuickTime.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/M4P/.packlist
-@dirrmtry %%SITE_PERL%%/Audio/M4P
-@dirrmtry %%SITE_PERL%%/Audio
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/M4P
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio
+@dirrmtry %%SITE_PERL%%/Audio/M4P
+@dirrmtry %%SITE_PERL%%/Audio
