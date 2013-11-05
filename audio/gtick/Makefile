@@ -11,16 +11,13 @@ COMMENT=	A metronome application
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile \
-		pulse-simple:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
+		libpulse-simple.so:${PORTSDIR}/audio/pulseaudio
 
 USES=		pkgconfig
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-MAN1=	gtick.1
 
 .include <bsd.port.options.mk>
 
