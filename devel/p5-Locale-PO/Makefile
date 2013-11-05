@@ -21,7 +21,4 @@ BUILD_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=		Locale::PO.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
