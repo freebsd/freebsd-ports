@@ -12,7 +12,6 @@ COMMENT=	Tools for using Parity v2 Archive files
 
 LICENSE=	GPLv2
 
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	README
@@ -23,8 +22,8 @@ PLIST_FILES=	bin/par2 bin/par2create bin/par2repair bin/par2verify
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
