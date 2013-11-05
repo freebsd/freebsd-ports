@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/corewar/pMARS/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A portable corewar system with ICWS'94 extensions
+COMMENT=	Portable corewar system with ICWS'94 extensions
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
@@ -22,45 +22,27 @@ PERMUTATE_DESC=	Enable the -P switch
 SERVER_DESC=	Build the command-line interface
 SMALLMEM_DESC=	Use 16-bit addresses (smaller)
 
+OPTIONS_SUB=	yes
+
 MAKE_ARGS+=	CFLAGS+="${CFLAGS}" \
 		CFLAGS+="-fno-builtin"
 
-MAN6=		pmars.6
+ICWS94_MAKE_ARGS=	CFLAGS+="-DEXT94"
+OPTIMIZED_CFLAGS_MAKE_ARGS=	CFLAGS+="-O3 -fomit-frame-pointer"
+PERMUTATE_MAKE_ARGS=	CFLAGS+="-DPERMUTATE"
+SMALLMEM_MAKE_ARGS=	CFLAGS+="-DSMALLMEM"
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCURSES}
 TARGETS+=	curses
 CURSES_ARGS+=	CFLAGS+="-DGRAPHX" \
 		LIB+="-lcurses"
-PLIST_SUB+=	CURSES=""
-.else
-PLIST_SUB+=	CURSES="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MICWS94}
-MAKE_ARGS+=	CFLAGS+="-DEXT94"
-.endif
-
-.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-MAKE_ARGS+=	CFLAGS+="-O3 -fomit-frame-pointer"
-.endif
-
-.if ${PORT_OPTIONS:MPERMUTATE}
-MAKE_ARGS+=	CFLAGS+="-DPERMUTATE"
 .endif
 
 .if ${PORT_OPTIONS:MSERVER}
 TARGETS+=	server
 SERVER_ARGS+=	CFLAGS+="-DSERVER"
-PLIST_SUB+=	SERVER=""
-.else
-PLIST_SUB+=	SERVER="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSMALLMEM}
-MAKE_ARGS+=	CFLAGS+="-DSMALLMEM"
 .endif
 
 .if ${PORT_OPTIONS:MX11}
@@ -69,9 +51,6 @@ TARGETS+=	x11
 X11_ARGS+=	CFLAGS+="-DXWINGRAPHX" \
 		CFLAGS+="-I${LOCALBASE}/include" \
 		LIB+="-L${LOCALBASE}/lib -lX11"
-PLIST_SUB+=	X11=""
-.else
-PLIST_SUB+=	X11="@comment "
 .endif
 
 do-build:
@@ -83,14 +62,12 @@ do-build:
 
 do-install:
 .for f in ${TARGETS}
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-${f} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/../doc/pmars.6 ${PREFIX}/man/man6
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/../doc/pmars.6 ${STAGEDIR}${PREFIX}/man/man6
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .   for f in README config doc warriors
-	${CP} -R ${WRKSRC}/../${f} ${DOCSDIR}
+	${CP} -R ${WRKSRC}/../${f} ${STAGEDIR}${DOCSDIR}
 .   endfor
-.endif
 
 .include <bsd.port.mk>
