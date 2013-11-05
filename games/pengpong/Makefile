@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}-linux
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A cross-platform pong game written in SDL
+COMMENT=	Cross-platform pong game written in SDL
 
 USES=		perl5
 USE_SDL=	image sdl
@@ -18,21 +18,18 @@ USE_PERL5=	build
 DATAFILES=	24P_Copperplate_Blue.png ball.tga logo.jpg \
 		paddle.tga red.png
 
-NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/usr/local/share/games/pengpong|${DATADIR}|' \
 		${WRKSRC}/files.h
 	@${REINPLACE_CMD} -i '' -e 's|V 0.2|V ${PORTVERSION}|' ${WRKSRC}/pengpong.cpp
 
 do-install:
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
-	@${INSTALL_PROGRAM} ${WRKSRC}/pengpong ${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/pengpong ${STAGEDIR}${PREFIX}/bin
 .for files in ${DATAFILES}
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/${files} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${files} ${STAGEDIR}${DATADIR}
 .endfor
 
 .include <bsd.port.mk>
