@@ -18,6 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/fc-cache:${PORTSDIR}/x11-fonts/fontconfig	\
 		${LOCALBASE}/share/misc/terminfo.db:${PORTSDIR}/devel/ncurses
 
 USES=			pkgconfig shebangfix
+USE_GCC=		yes # segfaults when trying to scroll with the mouse wheel if clang
 USE_XORG=		xpm xft xrender
 GNU_CONFIGURE=		yes
 CPPFLAGS+=		-I${LOCALBASE}/include
