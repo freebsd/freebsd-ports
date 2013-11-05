@@ -1,11 +1,14 @@
+%%PERL5_MAN3%%/Date::Japanese::Era.3.gz
+%%PERL5_MAN3%%/Date::Japanese::Era::Table.3.gz
+%%PERL5_MAN3%%/Date::Japanese::Era::Table::JIS_X0301.3.gz
 %%SITE_PERL%%/Date/Japanese/Era.pm
 %%SITE_PERL%%/Date/Japanese/Era/Table.pm
 %%SITE_PERL%%/Date/Japanese/Era/Table/JIS_X0301.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Japanese/Era/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Japanese/Era
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Japanese/Era
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Japanese
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date
-@dirrm %%SITE_PERL%%/Date/Japanese/Era/Table
-@dirrm %%SITE_PERL%%/Date/Japanese/Era
+@dirrmtry %%SITE_PERL%%/Date/Japanese/Era/Table
+@dirrmtry %%SITE_PERL%%/Date/Japanese/Era
 @dirrmtry %%SITE_PERL%%/Date/Japanese
 @dirrmtry %%SITE_PERL%%/Date

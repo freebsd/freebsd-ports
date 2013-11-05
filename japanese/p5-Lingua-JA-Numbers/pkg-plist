@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Lingua::JA::Numbers.3.gz
 %%SITE_PERL%%/Lingua/JA/Numbers.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/JA/Numbers/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/JA/Numbers
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/JA/Numbers
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/JA
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
 @dirrmtry %%SITE_PERL%%/Lingua/JA

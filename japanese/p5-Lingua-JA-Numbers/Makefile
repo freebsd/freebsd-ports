@@ -10,10 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts numeric values to and from their Japanese string equivalents
 
-MAN3=	Lingua::JA::Numbers.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

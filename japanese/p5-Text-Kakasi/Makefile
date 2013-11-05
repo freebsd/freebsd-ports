@@ -13,9 +13,7 @@ LIB_DEPENDS=	kakasi.3:${PORTSDIR}/japanese/kakasi
 
 USES=		perl5
 USE_PERL5=	configure
-MAN3=		Text::Kakasi.3 Text::Kakasi::JP.3
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-

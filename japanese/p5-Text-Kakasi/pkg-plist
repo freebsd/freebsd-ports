@@ -1,9 +1,11 @@
+%%PERL5_MAN3%%/Text::Kakasi.3.gz
+%%PERL5_MAN3%%/Text::Kakasi::JP.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Kakasi.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Kakasi/JP.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Kakasi/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Kakasi/Kakasi.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Kakasi/Kakasi.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text/Kakasi
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Kakasi
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text/Kakasi
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text
