@@ -1,9 +1,9 @@
 bin/pengpong
-share/pengpong/24P_Copperplate_Blue.png
-share/pengpong/ball.tga
-share/pengpong/logo.jpg
-share/pengpong/paddle.tga
-share/pengpong/red.png
-%%PORTDOCS%%share/doc/pengpong/README
-@dirrm share/pengpong
-%%PORTDOCS%%@dirrm share/doc/pengpong
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/24P_Copperplate_Blue.png
+%%DATADIR%%/ball.tga
+%%DATADIR%%/logo.jpg
+%%DATADIR%%/paddle.tga
+%%DATADIR%%/red.png
+@dirrmtry %%DATADIR%%
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%
