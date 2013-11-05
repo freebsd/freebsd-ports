@@ -2179,6 +2179,7 @@
     SUBDIR += p5-JSON-RPC-Dispatcher
     SUBDIR += p5-Java
     SUBDIR += p5-Jonk
+    SUBDIR += p5-LV
     SUBDIR += p5-Lexical-Alias
     SUBDIR += p5-Lexical-Import
     SUBDIR += p5-Lexical-Persistence

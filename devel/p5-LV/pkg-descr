@@ -1,0 +1,15 @@
+LV makes lvalue subroutines easy and practical to use. It's inspired by the
+lvalue module which is sadly problematic because of the existence of another
+module on CPAN called Lvalue. (They can get confused on file-systems that have
+case-insensitive file names.)
+
+LV comes with three different implementations, based on Variable::Magic,
+Sentinel and tie; it will choose and use the best available one. You can force
+LV to pick a particular implementation using:
+
+    $ENV{PERL_LV_IMPLEMENTATION} = 'Magic'; # or 'Sentinel' or 'Tie'
+
+The tie implementation is the slowest, but will work on Perl 5.6 with only core
+modules.
+
+WWW: http://search.cpan.org/dist/LV/
