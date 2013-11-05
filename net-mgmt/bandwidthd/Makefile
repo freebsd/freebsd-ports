@@ -13,16 +13,15 @@ COMMENT=	Tracks bandwidth usage by IP address
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd
 
 USE_CSTD=	gnu89
-NO_STAGE=	yes
 
 GNU_CONFIGURE=	YES
 USES=		iconv gmake
 
 post-install:
-	@${INSTALL_SCRIPT} ${FILESDIR}/bandwidthd.sh \
-				${PREFIX}/etc/rc.d/bandwidthd.sh.sample
+	${INSTALL_SCRIPT} ${FILESDIR}/bandwidthd.sh \
+	    ${STAGEDIR}${PREFIX}/etc/rc.d/bandwidthd.sh.sample
 
 .include <bsd.port.mk>
