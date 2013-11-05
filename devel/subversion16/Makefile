@@ -4,135 +4,103 @@
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Version control system
 
-CONFLICTS_INSTALL=	subversion-1.[7|8].[0-9]*
+CONFLICTS_INSTALL=	subversion-1.[^6].[0-9]* \
+			subversion1[^6]-1.[^6].[0-9]*
 
 USE_RC_SUBR=	svnserve
 
-MAN1=		svn.1 svnadmin.1 svnlook.1 svndumpfilter.1 svnsync.1 \
-		svnversion.1
-MAN5=		svnserve.conf.5
-MAN8=		svnserve.8
+PORTDOCS=	BUGS CHANGES COMMITTERS COPYING HACKING INSTALL README
 
-TXT_DOCS=	BUGS CHANGES COMMITTERS COPYING HACKING INSTALL README
+OPTIONS_DEFINE=	ASVN		\
+		BDB		\
+		DOCS		\
+		ENHANCED_KEYWORD\
+		FREEBSD_TEMPLATE\
+		GNOME_KEYRING	\
+		KDE_KWALLET	\
+		MAINTAINER_DEBUG\
+		MOD_DAV_SVN	\
+		MOD_DONTDOTHAT	\
+		NLS		\
+		NEON		\
+		P4_STYLE_MARKERS\
+		SASL		\
+		SERF		\
+		STATIC		\
+		SVNSERVE_WRAPPER\
+		TOOLS
 
-OPTIONS_DEFINE=	P4_STYLE_MARKERS ENHANCED_KEYWORD FREEBSD_TEMPLATE MOD_DAV_SVN MOD_DONTDOTHAT \
-		NEON SERF SASL BDB ASVN MAINTAINER_DEBUG SVNSERVE_WRAPPER SVNAUTHZ_VALIDATE \
-		STATIC GNOME_KEYRING KDE_KWALLET BOOK DOCS
-OPTIONS_DEFAULT=	P4_STYLE_MARKERS ENHANCED_KEYWORD FREEBSD_TEMPLATE NEON BDB
-P4_STYLE_MARKERS_DESC=	Perforce-style conflict markers
+OPTIONS_DEFAULT=P4_STYLE_MARKERS \
+		ENHANCED_KEYWORD \
+		FREEBSD_TEMPLATE \
+		NEON		\
+		BDB
+
+ASVN_DESC=		Build and install Archive SVN (asvn)
+BDB_DESC=		Berkeley DB (4 or 5) repository backend (deprected in 1.8.x)
 ENHANCED_KEYWORD_DESC=	Enhanced svn:keyword support
 FREEBSD_TEMPLATE_DESC=	FreeBSD Project log template
-MOD_DAV_SVN_DESC=	mod_dav_svn module for Apache 2.X
-MOD_DONTDOTHAT_DESC=	mod_dontdothat for Apache 2.X
-NEON_DESC=		WebDAV/Delta-V repo access module (neon)
-SERF_DESC=		WebDAV/Delta-V repo access module (serf)
-SASL_DESC=		SASL2 authorization support
-BDB_DESC=		Berkeley DB (4 or 5) repository backend
-ASVN_DESC=		Build and install Archive SVN (asvn)
-MAINTAINER_DEBUG_DESC=	Build debug version
-SVNSERVE_WRAPPER_DESC=	Enable svnserve wrapper
-SVNAUTHZ_VALIDATE_DESC=	install svnauthz-validate
-STATIC_DESC=		Build static version (no shared libs)
 GNOME_KEYRING_DESC=	Build with GNOME Keyring auth support
 KDE_KWALLET_DESC=	Build with KDE KWallet auth support
-BOOK_DESC=		Install the Subversion Book
+MAINTAINER_DEBUG_DESC=	Build debug version
+MOD_DAV_SVN_DESC=	mod_dav_svn module for Apache 2.X
+MOD_DONTDOTHAT_DESC=	mod_dontdothat for Apache 2.X
+NEON_DESC=		WebDAV/Delta-V (HTTP/HTTPS) repo access module
+P4_STYLE_MARKERS_DESC=	Perforce-style conflict markers
+SERF_DESC=		WebDAV/Delta-V (HTTP/HTTPS) repo access module
+STATIC_DESC=		Build static version (no shared libs)
+SVNSERVE_WRAPPER_DESC=	Enable svnserve wrapper (umask setter)
+TOOLS_DESC=		Install several tools (svnauthz-validate and mod_dontdothat are among them)
 
-NO_STAGE=	yes
+# Patches required for use with the FreeBSD Project repository only
+P4_STYLE_MARKERS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-3way-conflict-markers
+ENHANCED_KEYWORD_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-enhanced-keyword
+FREEBSD_TEMPLATE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-fbsd-template
+SVNSERVE_WRAPPER_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-svnserve-wrapper
+
+ASVN_RUN_DEPENDS=	${LOCALBASE}/bin/gfind:${PORTSDIR}/misc/findutils
+
 .include "Makefile.common"
 
 SVNREPOS?=	/home/svn/repos
 SVNFSTYPE?=	fsfs
 
-SUB_FILES=	pkg-install \
-		pkg-deinstall
+SUB_FILES=	pkg-install
+
+.if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
+SUB_LIST+=	SVNSERVE_BIN_EXT=".bin"
+.else
+SUB_LIST+=	SVNSERVE_BIN_EXT=""
+.endif
+
+.if ${PORT_OPTIONS:MMOD_DAV_SVN}
+SUB_LIST+=	MOD_DAV_SVN_INSTALL="YES"
+PLIST_SUB+=	SED=${SED}
+SVNGROUP?=	www
+SVNUSER?=	www
+.else
+SUB_LIST+=	MOD_DAV_SVN_INSTALL="NO"
+SVNGROUP?=	svn
+SVNUSER?=	svn
+.endif
+
+.if ${PORT_OPTIONS:MSTATIC}
+PLIST_SUB+=	DYNAMIC_ENABLED="@comment "
+.else
+PLIST_SUB+=	DYNAMIC_ENABLED=""
+.endif
 
 .if make(repository)
 WITH_REPOSITORY_CREATION=	yes
 .endif
 
-.if ${PORT_OPTIONS:MREPOSITORY_CREATION}
+.if defined(WITH_REPOSITORY_CREATION)
 MKREPOS_TARGET=	_mkrepos
 .endif
 
-# Patches required for use with the FreeBSD Project repository only
-.if ${PORT_OPTIONS:MP4_STYLE_MARKERS}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-3way-conflict-markers
-.endif
-.if ${PORT_OPTIONS:MENHANCED_KEYWORD}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-enhanced-keyword
-.endif
-.if ${PORT_OPTIONS:MFREEBSD_TEMPLATE}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-fbsd-template
-.endif
-
-.if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
-PLIST_SUB+=	SVNSERVE_WRAPPER=""
-SUB_LIST+=	SVNSERVE_BIN_EXT=".bin"
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-svnserve-wrapper
-.else
-PLIST_SUB+=	SVNSERVE_WRAPPER="@comment "
-SUB_LIST+=	SVNSERVE_BIN_EXT=""
-.endif
-
-.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MBOOK}
-BOOK_HTML=	svn-book-html.tar.bz2
-BOOK_PDF=	svn-book.pdf
-DISTFILES+=	${BOOK_HTML}:book ${BOOK_PDF}:book
-PLIST_SUB+=	BOOK=""
-.else
-PLIST_SUB+=	BOOK="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MASVN}
-RUN_DEPENDS+=	${LOCALBASE}/bin/gfind:${PORTSDIR}/misc/findutils
-PLIST_SUB+=	ASVN=""
-.else
-PLIST_SUB+=	ASVN="@comment "
-.endif
-
-SCRIPTS=
-
-SCRIPTS_DATA=
-
 pre-everything::
 	@${ECHO_MSG} ""
-.if ${PORT_OPTIONS:MNEON}
-	@${ECHO_MSG} "WebDAV/Delta-V repository access module enabled."
-.else
-	@${ECHO_MSG} "WebDAV/Delta-V repository access module disabled."
-.endif
-	@${ECHO_MSG} ""
-.if ${PORT_OPTIONS:MBDB}
-	@${ECHO_MSG} "Berkeley DB (4 or 5) repository backend enabled."
-.else
-	@${ECHO_MSG} "Berkeley DB (4 or 5) repository backend disabled."
-.endif
-	@${ECHO_MSG} ""
-.if ${PORT_OPTIONS:MMAINTAINER_DEBUG}
-	@${ECHO_MSG} "Build debug version."
-	@${ECHO_MSG} ""
-.endif
-.if ${PORT_OPTIONS:MMOD_DAV_SVN}
-	@${ECHO_MSG} "mod_dav_svn module for Apache 2.X enabled."
-.else
-	@${ECHO_MSG} "You can enable the mod_dav_svn module for Apache 2.X"
-.endif
-	@${ECHO_MSG} ""
-.if ${PORT_OPTIONS:MMOD_DONTDOTHAT} && ${PORT_OPTIONS:MMOD_DAV_SVN}
-	@${ECHO_MSG} "mod_dontdothat module for Apache 2.X enabled."
-.else
-	@${ECHO_MSG} "You can enable the mod_dontdothat module for Apache 2.X"
-.endif
-	@${ECHO_MSG} ""
-.if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
-	@${ECHO_MSG} "svnserve wrapper enabled."
-	@${ECHO_MSG} ""
-.endif
-.if ${PORT_OPTIONS:MSVNAUTHZ_VALIDATE}
-	@${ECHO_MSG} "svnauthz-validate enabled."
-	@${ECHO_MSG} ""
-.endif
-.if ${PORT_OPTIONS:MREPOSITORY_CREATION}
+.if defined(WITH_REPOSITORY_CREATION)
 	@${ECHO_MSG} "I will create (or use, if it exists) '${SVNUSER}' user and '${SVNGROUP}' group."
 	@${ECHO_MSG} "Make sure that all committers are its members."
 	@${ECHO_MSG} ""
@@ -149,42 +117,29 @@ pre-everything::
 	@${ECHO_MSG} "  subdirectories of your repository"
 	@${ECHO_MSG} "* the above subdirectories are writable by this group"
 .endif
+
 	@${ECHO_MSG} ""
-.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MBOOK}
-	@${ECHO_MSG} "Subversion Book will be installed."
-	@${ECHO_MSG} ""
-.endif
-.if ${PORT_OPTIONS:MASVN}
-	@${ECHO_MSG} "asvn will be installed"
-	@${ECHO_MSG} ""
-.endif
 .if ${PORT_OPTIONS:MSTATIC}
-.if ${PORT_OPTIONS:MMOD_DAV_SVN}
+.  if ${PORT_OPTIONS:MMOD_DAV_SVN}
 	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	@${ECHO_MSG} "!!! mod_dav_svn and static build are not compatible !!!"
 	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	@${FALSE}
-.endif
-.if ${PORT_OPTIONS:MSVNAUTHZ_VALIDATE}
-	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${ECHO_MSG} "!!! svnauthz_validate and static build are not compatible !!!"
-	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${FALSE}
-.endif
-.if ${PORT_OPTIONS:MGNOME_KEYRING}
+.  endif
+.  if ${PORT_OPTIONS:MGNOME_KEYRING}
 	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	@${ECHO_MSG} "!!! Gnome Keyring and static build are not compatible !!!"
 	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	@${FALSE}
-.endif
-.if ${PORT_OPTIONS:MKDE_WALLET}
+.  endif
+.  if ${PORT_OPTIONS:MKDE_WALLET}
 	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	@${ECHO_MSG} "!!! KDE Wallet and static build are not compatible !!!"
 	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	@${FALSE}
-.endif
+.  endif
 	@${ECHO_MSG} "Static binaries will be built."
-.endif
+.endif # STATIC
 	@${ECHO_MSG} "Many useful scripts will be installed into ${DATADIR}"
 
 pre-configure:
@@ -192,68 +147,55 @@ pre-configure:
 	@BDB_VERSION=`${APR_APU_DIR}/${APU_CONFIG} --db-version`; \
 	if [ "$${BDB_VERSION}" != "4" -a "$${BDB_VERSION}" != "5" ] ; then \
 		${ECHO_MSG} "" ; \
-		${ECHO_MSG} 'You should build `'"${APR_PORT}' with Berkeley DB (4 or 5) support to use subversion with it." ; \
-		${ECHO_MSG} 'Please rebuild `'"${APR_PORT}' with option "'`'"${OPT_NAME}' and try again." ; \
+		${ECHO_MSG} 'You should build `'"devel/apr1' with Berkeley DB (4 or 5) support to use subversion with it." ; \
+		${ECHO_MSG} 'Please rebuild `'"devel/apr1' with option "'`'"${OPT_NAME}' and try again." ; \
 		${ECHO_MSG} "" ; \
 		${ECHO_MSG} "Or you can disable Berkeley DB support. Only 'fs' repository backend will be available." ; \
-		${ECHO_MSG} "To disable Berkeley DB support, define WITHOUT_BDB." ; \
 		${ECHO_MSG} "" ; \
 		${FALSE} ; \
 	fi
 .endif
 
+post-configure:
+# ugly hack: save tools directory so we don't have to cleanup before installing
+	@${CP} -R ${WRKSRC}/tools ${WRKSRC}/tools.examples
+	@${CHMOD} -R a-st,o+rX ${WRKSRC}/tools.examples
+
 post-build:
+.if ${PORT_OPTIONS:MTOOLS}
+	@${MAKE} -C ${WRKSRC} tools ${MAKE_ARGS}
+.endif
+
 .if ${PORT_OPTIONS:MMOD_DAV_SVN} && ${PORT_OPTIONS:MMOD_DONTDOTHAT}
 	cd ${WRKSRC}/contrib/server-side/mod_dontdothat && \
 		${APXS} -c -I${WRKSRC}/subversion/include -L${WRKSRC}/subversion/libsvn_subr/.libs -lsvn_subr-1 mod_dontdothat.c
 .endif
-.if ${PORT_OPTIONS:MSVNAUTHZ_VALIDATE}
-	# place binary in ${WRKDIR}, else we install it twice
-	cd ${WRKSRC}/tools/server-side && \
-		${CC} svnauthz-validate.c -o ../../svnauthz-validate -I${WRKSRC}/subversion/include -I${APR_INCLUDE_DIR} \
-		-L${WRKSRC}/subversion/libsvn_repos/.libs -L${WRKSRC}/subversion/libsvn_subr/.libs -lsvn_repos-1 -lsvn_subr-1
-.endif
-
-pre-install:
-.if ${PORT_OPTIONS:MMOD_DAV_SVN}
-# activate dav_module now in pkg-install to prevent double activation.
-# workaround for apxs bug: https://issues.apache.org/bugzilla/show_bug.cgi?id=47397
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-.endif
 
 post-install:	${MKREPOS_TARGET}
-.if ${PORT_OPTIONS:MMOD_DAV_SVN}
-	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n authz_svn ${PREFIX}/${APACHEMODDIR}/mod_authz_svn.so
-.if ${PORT_OPTIONS:MMOD_DONTDOTHAT}
-	cd ${WRKSRC}/contrib/server-side/mod_dontdothat && \
-		${APXS} -i -n dontdothat mod_dontdothat.la
-	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dontdothat ${PREFIX}/${APACHEMODDIR}/mod_dontdothat.so
-.endif
-.endif
-.if ${PORT_OPTIONS:MSVNAUTHZ_VALIDATE}
-	${INSTALL_PROGRAM} ${WRKSRC}/svnauthz-validate ${PREFIX}/bin
-.endif
-	@${MKDIR} ${DATADIR}
-	cd ${WRKSRC}/tools ; \
-	  ${TAR} --exclude '*.in' -cf - * | ${TAR} -C ${DATADIR} -xf -
-	@${CHMOD} -R a-st,o+rX ${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	for f in ${TXT_DOCS}; do \
-	  ${INSTALL_MAN} ${WRKSRC}/$$f ${DOCSDIR}; \
-	done
-.if ${PORT_OPTIONS:MBOOK}
-	${TAR} -xof ${DISTDIR}/${DIST_SUBDIR}/${BOOK_HTML} -C ${DOCSDIR}
-	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/${BOOK_PDF} ${DOCSDIR}
-.endif
-.endif
-.if ${PORT_OPTIONS:MASVN}
-	${INSTALL_SCRIPT} ${WRKSRC}/contrib/client-side/asvn ${PREFIX}/bin
-.endif
-.if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
-	@${INSTALL_SCRIPT} ${FILESDIR}/svnserve.wrapper ${PREFIX}/bin/svnserve
+.if ${PORT_OPTIONS:MMOD_DAV_SVN} && ${PORT_OPTIONS:MMOD_DONTDOTHAT}
+# install only, activation will be done during installation by pkg-plist
+	(cd ${WRKSRC}/contrib/server-side/mod_dontdothat && \
+		${APXS} -S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR} -i -n dontdothat mod_dontdothat.la )
 .endif
 
+.if ${PORT_OPTIONS:MTOOLS}
+	@${MAKE} -C ${WRKSRC} install-tools ${MAKE_ARGS}
+.endif
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/tools.examples && ${TAR} --exclude '*.in' -cf - * | ${TAR} -C ${STAGEDIR}${DATADIR} -xof - )
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+.if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
+	@${INSTALL_SCRIPT} ${FILESDIR}/svnserve.wrapper ${STAGEDIR}${PREFIX}/bin/svnserve
+.endif
+
+.if ${PORT_OPTIONS:MASVN}
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/client-side/asvn ${STAGEDIR}${PREFIX}/bin
+.endif
+
+# ===============================================================================
 repository:	_mkrepos
 
 _SVNGRPFILES=	db locks locks/db.lock locks/db-logs.lock

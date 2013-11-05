@@ -1,6 +1,2 @@
 SHA256 (subversion/subversion-1.6.23.tar.bz2) = 214abc6b9359ea3a5fda2dee87dad110d1b33dcf888c1f8e361d69fbfa053943
 SIZE (subversion/subversion-1.6.23.tar.bz2) = 5566442
-SHA256 (subversion/svn-book-html.tar.bz2) = 5c4788e1f225b3186db5979b071fcc4c9543bfb5916cd62e003eea4507b8c8cb
-SIZE (subversion/svn-book-html.tar.bz2) = 406484
-SHA256 (subversion/svn-book.pdf) = 64e483cd27be6752eb8dfc1b00749f8dc46adfc4fb1ab1356dd8e2406d878225
-SIZE (subversion/svn-book.pdf) = 1671317

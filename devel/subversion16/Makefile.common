@@ -5,149 +5,96 @@ PORTNAME=	subversion
 PORTVERSION=	#please edit Makefile.inc for PORTVERSION, so ../svnmerge can stay in sync.
 PORTREVISION?=	2
 CATEGORIES+=	devel
-MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
-		http://svnbook.red-bean.com/en/1.5/:book
-DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:main
+MASTER_SITES=	http://subversion.tigris.org/downloads/
 DIST_SUBDIR=	subversion
+
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_KDE4=	# Used below if KWallet support is enabled
+USES=		pkgconfig
 
 LICENSE=	AL2
 
-CONFLICTS_INSTALL+=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-1.[7|8].[0-9]*
+CONFLICTS_INSTALL+=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-1.[^6].[0-9]*
+
 LATEST_LINK=		${PKGNAMEPREFIX}${PORTNAME}16${PKGNAMESUFFIX}
 
-LIB_DEPENDS+=		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
+LIB_DEPENDS+=		libapr-1.so:${PORTSDIR}/devel/apr1 \
+			libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
 			libexpat.so:${PORTSDIR}/textproc/expat2
 
-CONFIGURE_ARGS+=	--with-ssl \
-			--without-swig \
+CONFIGURE_ARGS+=	--without-swig \
+			--with-ssl \
 			--with-sqlite=${LOCALBASE} \
-			--with-expat=/usr/local/include:/usr/local/lib:expat
+			--with-expat=${LOCALBASE}/include:${LOCALBASE}/lib:expat
 
 .if defined(SVN_BUILD_BINDINGS)
-CONFLICTS_BUILD+=	${PORTNAME}-1.[7|8].[0-9]*
+CONFLICTS_BUILD+=	${PORTNAME}-1.[^6].[0-9]*
 LIB_DEPENDS+=		libsvn_client-1.so:${PORTSDIR}/devel/subversion16
 OPTIONSFILE=		${PORT_DBDIR}/${PORTNAME}16/options
 OPTIONS=		# Dirty hack: if OPTIONS is not defined, OPTIONSFILE will not be included
 .endif
 
+# ===============================================================
+OPTIONS_SUB=			yes
+
+BDB_CONFIGURE_OFF=		--without-berkeley-db
+BDB_USE=			BDB=42+
+
+GNOME_KEYRING_CONFIGURE_OFF=	--without-gnome-keyring
+GNOME_KEYRING_CONFIGURE_ON=	--with-gnome-keyring
+GNOME_KEYRING_LIB_DEPENDS=	libgcr.so:${PORTSDIR}/security/gnome-keyring
+
+KDE_KWALLET_CONFIGURE_OFF=	--without-kwallet
+KDE_KWALLET_CONFIGURE_ON=	--with-kwallet=${KDE4_PREFIX}
+KDE_KWALLET_USE=		KDE4=kdelibs runtime
+
+MAINTAINER_DEBUG_CFLAGS=	-g
+MAINTAINER_DEBUG_CONFIGURE_ON=	--enable-maintainer-mode --enable-debug
+
+MOD_DAV_SVN_CONFIGURE_OFF=	--with-apxs=no
+MOD_DAV_SVN_CONFIGURE_ON=	--with-apxs=${APXS}
+MOD_DAV_SVN_USE=		APACHE=22+
+
+NEON_CONFIGURE_OFF=		--without-neon
+NEON_CONFIGURE_ON=		--with-neon=${LOCALBASE}
+NEON_LIB_DEPENDS=		libneon.so:${PORTSDIR}/www/neon29
+
+NLS_CONFIGURE_OFF=		--disable-nls
+NLS_USES=			gettext
+
+SASL_CONFIGURE_OFF=		--without-sasl
+SASL_CONFIGURE_ON=		--with-sasl=${LOCALBASE}
+SASL_LIB_DEPENDS=		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+
+# serf >= 0.7.2 not supported, serf 1.0.0 was committed in r287686
+SERF_CONFIGURE_OFF=		--without-serf
+SERF_CONFIGURE_ON=		--with-serf=${LOCALBASE}
+SERF_LIB_DEPENDS=		libserf-0.so:${PORTSDIR}/www/serf
+
+STATIC_CONFIGURE_ON=		--enable-all-static
+
+# ===============================================================
 .include <bsd.port.options.mk>
 .include "Makefile.inc"
 
-# Default is "on"
-.if ${PORT_OPTIONS:MNEON}
-LIB_DEPENDS+=	libneon.so:${PORTSDIR}/www/neon29
-PLIST_SUB+=	NEON=""
-.else
-CONFIGURE_ARGS+=--without-neon
-PLIST_SUB+=	NEON="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSASL}
-LIB_DEPENDS+=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
-CONFIGURE_ARGS+=--with-sasl=${LOCALBASE}
-PLIST_SUB+=	SASL=""
-.else
-CONFIGURE_ARGS+=--without-sasl
-PLIST_SUB+=	SASL="@comment "
-.endif
-
-# Default is "on"
-.if ${PORT_OPTIONS:MBDB}
-USE_BDB=	42+
-PLIST_SUB+=	BDB=""
-.else
-CONFIGURE_ARGS+=--without-berkeley-db
-PLIST_SUB+=	BDB="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMOD_DAV_SVN}
-USE_APACHE=   22+
-CONFIGURE_ARGS+=--with-apxs=${APXS}
-PLIST_SUB+=	MOD_DAV_SVN=""
-SUB_LIST+=	MOD_DAV_SVN_INSTALL="YES"
-SVNGROUP?=	www
-SVNUSER?=	www
-.if ${PORT_OPTIONS:MMOD_DONTDOTHAT}
-PLIST_SUB+=	MOD_DONTDOTHAT=""
-.else
-PLIST_SUB+=	MOD_DONTDOTHAT="@comment "
-.endif
-.else
-CONFIGURE_ARGS+=--with-apxs=no
-PLIST_SUB+=	MOD_DAV_SVN="@comment "
-PLIST_SUB+=	MOD_DONTDOTHAT="@comment "
-SUB_LIST+=	MOD_DAV_SVN_INSTALL="NO"
-SVNGROUP?=	svn
-SVNUSER?=	svn
-.endif
-
-LIB_DEPENDS+=	libapr-1.so:${PORTSDIR}/devel/apr1
-APR_CONFIG=   ${LOCALBASE}/bin/apr-1-config
-APU_CONFIG=   ${LOCALBASE}/bin/apu-1-config
-
-CONFIGURE_ARGS+=  --with-apr=${APR_CONFIG} --with-apr-util=${APU_CONFIG}
-
-.if ${PORT_OPTIONS:MSVNAUTHZ_VALIDATE}
-APR_INCLUDE_DIR!=	${APR_CONFIG} --includedir
-PLIST_SUB+=     SVNAUTHZ_VALIDATE=""
-.else
-PLIST_SUB+=     SVNAUTHZ_VALIDATE="@comment "
+.if ${PORT_OPTIONS:MMOD_DONTDOTHAT} && !${PORT_OPTIONS:MMOD_DAV_SVN}
+IGNORE=	to build mod_dontdothat OPTION mod_dav_svn is required
 .endif
 
 .if ${PORT_OPTIONS:MSERF}
-LIB_DEPENDS+=	libserf-1.so:${PORTSDIR}/www/serf
-CONFIGURE_ARGS+=--with-serf=${LOCALBASE}
-PLIST_SUB+=	SERF=""
-.else
-CONFIGURE_ARGS+=--without-serf
-PLIST_SUB+=	SERF="@comment "
+IGNORE=	port is to old for current serf, please use neon
 .endif
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=	gettext
-PLIST_SUB+=	WITHOUT_GETTEXT=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	WITHOUT_GETTEXT="@comment "
-.endif
+APR_CONFIG=	${LOCALBASE}/bin/apr-1-config
+APU_CONFIG=	${LOCALBASE}/bin/apu-1-config
+
+CONFIGURE_ARGS+=--with-apr=${APR_CONFIG} --with-apr-util=${APU_CONFIG}
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fpic -DPIC
-.endif
-
-.if ${PORT_OPTIONS:MMAINTAINER_DEBUG}
-CONFIGURE_ARGS+=--enable-maintainer-mode --enable-debug
-CFLAGS+=	-g
-.endif
-
-.if ${PORT_OPTIONS:MSTATIC}
-CONFIGURE_ARGS+=--enable-all-static
-PLIST_SUB+=	DYNAMIC_ENABLED="@comment "
-.else
-PLIST_SUB+=	DYNAMIC_ENABLED=""
-.endif
-
-.if ${PORT_OPTIONS:MGNOME_KEYRING}
-LIB_DEPENDS+=	libgcr.so:${PORTSDIR}/security/gnome-keyring
-CONFIGURE_ARGS+=--with-gnome-keyring
-PLIST_SUB+=	GNOME_KEYRING=""
-.else
-CONFIGURE_ARGS+=--without-gnome-keyring
-PLIST_SUB+=	GNOME_KEYRING="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MKDE_KWALLET}
-USE_KDE4=	kdelibs runtime
-CONFIGURE_ARGS+=--with-kwallet=${KDE4_PREFIX}
-PLIST_SUB+=	KDE_KWALLET=""
-.else
-CONFIGURE_ARGS+=--without-kwallet
-PLIST_SUB+=	KDE_KWALLET="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
