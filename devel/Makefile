@@ -3271,6 +3271,7 @@
     SUBDIR += pecl-svn
     SUBDIR += pecl-test_helpers
     SUBDIR += pecl-uploadprogress
+    SUBDIR += pecl-uri_template
     SUBDIR += pecl-uuid
     SUBDIR += pecl-vld
     SUBDIR += pecl-xhprof
