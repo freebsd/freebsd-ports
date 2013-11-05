@@ -3,6 +3,23 @@ bin/flv2mp3
 bin/flv2swf
 bin/flvinfo
 bin/swf2flv
+%%PERL5_MAN3%%/FLV::AMFReader.3.gz
+%%PERL5_MAN3%%/FLV::AMFWriter.3.gz
+%%PERL5_MAN3%%/FLV::AudioTag.3.gz
+%%PERL5_MAN3%%/FLV::Base.3.gz
+%%PERL5_MAN3%%/FLV::Body.3.gz
+%%PERL5_MAN3%%/FLV::Cut.3.gz
+%%PERL5_MAN3%%/FLV::File.3.gz
+%%PERL5_MAN3%%/FLV::FromSWF.3.gz
+%%PERL5_MAN3%%/FLV::Header.3.gz
+%%PERL5_MAN3%%/FLV::Info.3.gz
+%%PERL5_MAN3%%/FLV::MetaTag.3.gz
+%%PERL5_MAN3%%/FLV::Splice.3.gz
+%%PERL5_MAN3%%/FLV::Tag.3.gz
+%%PERL5_MAN3%%/FLV::ToMP3.3.gz
+%%PERL5_MAN3%%/FLV::ToSWF.3.gz
+%%PERL5_MAN3%%/FLV::Util.3.gz
+%%PERL5_MAN3%%/FLV::VideoTag.3.gz
 %%SITE_PERL%%/FLV/AMFReader.pm
 %%SITE_PERL%%/FLV/AMFWriter.pm
 %%SITE_PERL%%/FLV/AudioTag.pm
@@ -21,6 +38,11 @@ bin/swf2flv
 %%SITE_PERL%%/FLV/Util.pm
 %%SITE_PERL%%/FLV/VideoTag.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/FLV/Info/.packlist
+man/man1/flv2flv.1.gz
+man/man1/flv2mp3.1.gz
+man/man1/flv2swf.1.gz
+man/man1/flvinfo.1.gz
+man/man1/swf2flv.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FLV/Info
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FLV
 @dirrmtry %%SITE_PERL%%/FLV
