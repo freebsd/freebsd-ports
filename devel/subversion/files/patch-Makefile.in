@@ -1,5 +1,8 @@
---- Makefile.in.orig	2013-06-06 21:01:29.000000000 +0400
-+++ Makefile.in	2013-06-20 01:28:44.000000000 +0400
+========================================================================
+This patch is required to build SVN Apache modules with staging support
+========================================================================
+--- ./Makefile.in.orig	2013-10-21 21:12:04.000000000 +0200
++++ ./Makefile.in	2013-10-21 21:13:30.000000000 +0200
 @@ -85,7 +85,7 @@
  swig_pydir_extra = @libdir@/svn-python/svn
  swig_pldir = @libdir@/svn-perl
@@ -9,3 +12,12 @@
  
  javahl_javadir = @libdir@/svn-javahl
  javahl_javahdir = @libdir@/svn-javahl/include
+@@ -207,7 +207,7 @@
+ LINK_CXX_LIB = $(LINK_CXX) $(LT_SO_VERSION)
+ 
+ # special link rule for mod_dav_svn
+-LINK_APACHE_MOD = $(LIBTOOL) $(LTFLAGS) --mode=link $(CC) $(LT_LDFLAGS) $(CFLAGS) $(LDFLAGS) -rpath $(APACHE_LIBEXECDIR) -avoid-version -module $(APACHE_LDFLAGS)
++LINK_APACHE_MOD = $(LIBTOOL) $(LTFLAGS) --mode=link $(CC) $(LT_LDFLAGS) $(CFLAGS) $(LDFLAGS) -rpath $(APACHE_LIBEXECDIR) -avoid-version -module $(APACHE_LDFLAGS) -inst-prefix-dir ${DESTDIR}
+ 
+ # Special LDFLAGS for some libraries
+ libsvn_auth_gnome_keyring_LDFLAGS = @libsvn_auth_gnome_keyring_LDFLAGS@

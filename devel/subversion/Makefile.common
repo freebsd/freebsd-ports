@@ -2,23 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.8.3
+PORTVERSION=	1.8.4
 PORTREVISION?=	0
 CATEGORIES+=	devel
-MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:main/} \
-		${MASTER_SITE_LOCAL:S/$/:book/}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main
+MASTER_SITES=	${MASTER_SITE_APACHE}
 DIST_SUBDIR=	subversion18
-MASTER_SITE_SUBDIR=	subversion/:main \
-			lev/:book
+MASTER_SITE_SUBDIR=	subversion/
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_KDE4=	# Used below if KWallet support is enabled
+USES=		pkgconfig
 
 LICENSE=	AL2
 
-CONFLICTS_INSTALL+=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-1.[6|7].[0-9]*
+CONFLICTS_INSTALL+=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-1.[^8].[0-9]*
 
 LIB_DEPENDS+=		libapr-1.so:${PORTSDIR}/devel/apr1 \
 			libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
@@ -26,10 +24,10 @@ LIB_DEPENDS+=		libapr-1.so:${PORTSDIR}/devel/apr1 \
 
 CONFIGURE_ARGS+=	--without-swig \
 			--with-sqlite=${LOCALBASE} \
-			--with-expat=/usr/local/include:/usr/local/lib:expat
+			--with-expat=${LOCALBASE}/include:${LOCALBASE}/lib:expat
 
 .if defined(SVN_BUILD_BINDINGS)
-CONFLICTS_BUILD+=	${PORTNAME}-1.[6|7].[0-9]*
+CONFLICTS_BUILD+=	${PORTNAME}-1.[^8].[0-9]*
 LIB_DEPENDS+=		libsvn_client-1.so:${PORTSDIR}/devel/subversion
 OPTIONSFILE=		${PORT_DBDIR}/${PORTNAME}/options
 OPTIONS=		# Dirty hack: if OPTIONS is not defined, OPTIONSFILE will not be included
@@ -71,10 +69,6 @@ STATIC_CONFIGURE_ON=		--enable-all-static
 
 # ===============================================================
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MBOOK} && !${PORT_OPTIONS:MDOCS}
-IGNORE=	SVN book requires OPTION DOCS set to ON
-.endif
 
 .if ${PORT_OPTIONS:MMOD_DONTDOTHAT} && !${PORT_OPTIONS:MMOD_DAV_SVN}
 IGNORE=	to build mod_dontdothat OPTION mod_dav_svn is required
