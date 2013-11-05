@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/SOAP::Transport::TCP.3.gz
 %%SITE_PERL%%/SOAP/Transport/TCP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Transport/TCP/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Transport/TCP/
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Transport/
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Transport/TCP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Transport
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP
 @dirrmtry %%SITE_PERL%%/SOAP/Transport
 @dirrmtry %%SITE_PERL%%/SOAP

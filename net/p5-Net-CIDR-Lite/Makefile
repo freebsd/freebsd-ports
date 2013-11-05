@@ -13,7 +13,4 @@ COMMENT=	Perl extension for merging IPv4 or IPv6 CIDR addresses
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::CIDR::Lite.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

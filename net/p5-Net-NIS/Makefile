@@ -13,7 +13,4 @@ COMMENT=	Interface to Sun's Network Information Service
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::NIS.3 Net::NISTable.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

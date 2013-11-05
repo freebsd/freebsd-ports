@@ -13,7 +13,4 @@ COMMENT=	Perform domain lookups on 2-letter and 3-letter TLDs
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::DLookup.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

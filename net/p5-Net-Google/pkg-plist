@@ -1,11 +1,18 @@
+%%PERL5_MAN3%%/Net::Google.3.gz
+%%PERL5_MAN3%%/Net::Google::Cache.3.gz
+%%PERL5_MAN3%%/Net::Google::Response.3.gz
+%%PERL5_MAN3%%/Net::Google::Search.3.gz
+%%PERL5_MAN3%%/Net::Google::Service.3.gz
+%%PERL5_MAN3%%/Net::Google::Spelling.3.gz
+%%PERL5_MAN3%%/Net::Google::tool.3.gz
 %%SITE_PERL%%/Net/Google.pm
-%%SITE_PERL%%/Net/Google/tool.pm
 %%SITE_PERL%%/Net/Google/Cache.pm
 %%SITE_PERL%%/Net/Google/Response.pm
 %%SITE_PERL%%/Net/Google/Search.pm
 %%SITE_PERL%%/Net/Google/Service.pm
 %%SITE_PERL%%/Net/Google/Services/GoogleSearch.wsdl
 %%SITE_PERL%%/Net/Google/Spelling.pm
-@dirrm %%SITE_PERL%%/Net/Google/Services
-@dirrm %%SITE_PERL%%/Net/Google
+%%SITE_PERL%%/Net/Google/tool.pm
+@dirrmtry %%SITE_PERL%%/Net/Google/Services
+@dirrmtry %%SITE_PERL%%/Net/Google
 @dirrmtry %%SITE_PERL%%/Net

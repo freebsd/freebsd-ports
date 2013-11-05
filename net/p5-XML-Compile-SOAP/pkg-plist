@@ -1,4 +1,23 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/SOAP/.packlist
+%%PERL5_MAN3%%/XML::Compile::SOAP.3.gz
+%%PERL5_MAN3%%/XML::Compile::SOAP10.3.gz
+%%PERL5_MAN3%%/XML::Compile::SOAP10::Operation.3.gz
+%%PERL5_MAN3%%/XML::Compile::SOAP11.3.gz
+%%PERL5_MAN3%%/XML::Compile::SOAP11::Client.3.gz
+%%PERL5_MAN3%%/XML::Compile::SOAP11::Encoding.3.gz
+%%PERL5_MAN3%%/XML::Compile::SOAP11::Operation.3.gz
+%%PERL5_MAN3%%/XML::Compile::SOAP11::Server.3.gz
+%%PERL5_MAN3%%/XML::Compile::SOAP::Client.3.gz
+%%PERL5_MAN3%%/XML::Compile::SOAP::Extension.3.gz
+%%PERL5_MAN3%%/XML::Compile::SOAP::FAQ.3.gz
+%%PERL5_MAN3%%/XML::Compile::SOAP::Operation.3.gz
+%%PERL5_MAN3%%/XML::Compile::SOAP::Server.3.gz
+%%PERL5_MAN3%%/XML::Compile::SOAP::Trace.3.gz
+%%PERL5_MAN3%%/XML::Compile::SOAP::Util.3.gz
+%%PERL5_MAN3%%/XML::Compile::Transport.3.gz
+%%PERL5_MAN3%%/XML::Compile::Transport::SOAPHTTP.3.gz
+%%PERL5_MAN3%%/XML::Compile::WSDL11.3.gz
+%%PERL5_MAN3%%/XML::Compile::XOP.3.gz
+%%PERL5_MAN3%%/XML::Compile::XOP::Include.3.gz
 %%SITE_PERL%%/XML/Compile/Operation.pm
 %%SITE_PERL%%/XML/Compile/SOAP.pm
 %%SITE_PERL%%/XML/Compile/SOAP.pod
@@ -48,6 +67,7 @@
 %%SITE_PERL%%/XML/Compile/XOP/Include.pod
 %%SITE_PERL%%/XML/Compile/XOP/xsd/200411-xmlmime.xsd
 %%SITE_PERL%%/XML/Compile/XOP/xsd/200505-xmlmime.xsd
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/SOAP/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/SOAP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML

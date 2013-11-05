@@ -14,9 +14,6 @@ COMMENT=	Whois Client Interface for Perl5
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::XWhois.3
-
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -type f -name "*.orig" -delete
 

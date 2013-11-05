@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/POE::Component::Spread.3.gz
 %%SITE_PERL%%/POE/Component/Spread.pm
 %%SITE_PERL%%/POE/Driver/Spread.pm
 %%SITE_PERL%%/POE/Filter/Spread.pm
-@dirrmtry %%SITE_PERL%%/POE/Component
-@dirrmtry %%SITE_PERL%%/POE/Driver
 @dirrmtry %%SITE_PERL%%/POE/Filter
+@dirrmtry %%SITE_PERL%%/POE/Driver
+@dirrmtry %%SITE_PERL%%/POE/Component
 @dirrmtry %%SITE_PERL%%/POE

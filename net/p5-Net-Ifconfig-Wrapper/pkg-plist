@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Ifconfig/Wrapper/.packlist
+%%PERL5_MAN3%%/Net::Ifconfig::Wrapper.3.gz
 %%SITE_PERL%%/Net/Ifconfig/Wrapper.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Ifconfig/Wrapper/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Ifconfig/Wrapper
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Ifconfig
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

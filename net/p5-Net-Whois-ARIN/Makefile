@@ -15,12 +15,4 @@ TEST_DEPENDS=	p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::Whois::ARIN.3 \
-		Net::Whois::ARIN::AS.3 \
-		Net::Whois::ARIN::Contact.3 \
-		Net::Whois::ARIN::Customer.3 \
-		Net::Whois::ARIN::Network.3 \
-		Net::Whois::ARIN::Organization.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

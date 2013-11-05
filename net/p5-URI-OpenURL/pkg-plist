@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/URI::OpenURL.3.gz
 %%SITE_PERL%%/URI/OpenURL.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/OpenURL/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/OpenURL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/OpenURL
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI
 @dirrmtry %%SITE_PERL%%/URI

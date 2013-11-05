@@ -1,3 +1,5 @@
+%%PERL5_MAN3%%/Net::DAV::LockManager.3.gz
+%%PERL5_MAN3%%/Net::DAV::Server.3.gz
 %%SITE_PERL%%/Net/DAV/Lock.pm
 %%SITE_PERL%%/Net/DAV/LockManager.pm
 %%SITE_PERL%%/Net/DAV/LockManager.pod

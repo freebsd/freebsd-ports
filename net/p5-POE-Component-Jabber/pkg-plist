@@ -1,11 +1,19 @@
+%%PERL5_MAN3%%/POE::Component::Jabber.3.gz
+%%PERL5_MAN3%%/POE::Component::Jabber::Events.3.gz
+%%PERL5_MAN3%%/POE::Component::Jabber::J14.3.gz
+%%PERL5_MAN3%%/POE::Component::Jabber::J2.3.gz
+%%PERL5_MAN3%%/POE::Component::Jabber::Legacy.3.gz
+%%PERL5_MAN3%%/POE::Component::Jabber::Protocol.3.gz
+%%PERL5_MAN3%%/POE::Component::Jabber::ProtocolFactory.3.gz
+%%PERL5_MAN3%%/POE::Component::Jabber::XMPP.3.gz
+%%SITE_PERL%%/POE/Component/Jabber.pm
+%%SITE_PERL%%/POE/Component/Jabber/Events.pm
 %%SITE_PERL%%/POE/Component/Jabber/J14.pm
+%%SITE_PERL%%/POE/Component/Jabber/J2.pm
 %%SITE_PERL%%/POE/Component/Jabber/Legacy.pm
 %%SITE_PERL%%/POE/Component/Jabber/Protocol.pm
-%%SITE_PERL%%/POE/Component/Jabber/XMPP.pm
 %%SITE_PERL%%/POE/Component/Jabber/ProtocolFactory.pm
-%%SITE_PERL%%/POE/Component/Jabber/J2.pm
-%%SITE_PERL%%/POE/Component/Jabber/Events.pm
-%%SITE_PERL%%/POE/Component/Jabber.pm
+%%SITE_PERL%%/POE/Component/Jabber/XMPP.pm
 @dirrmtry %%SITE_PERL%%/POE/Component/Jabber
 @dirrmtry %%SITE_PERL%%/POE/Component
 @dirrmtry %%SITE_PERL%%/POE

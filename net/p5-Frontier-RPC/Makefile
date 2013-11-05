@@ -18,11 +18,4 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Apache::XMLRPC.3 \
-	Frontier::Client.3 \
-	Frontier::Daemon.3 \
-	Frontier::RPC2.3 \
-	Frontier::Responder.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

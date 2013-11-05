@@ -17,13 +17,9 @@ BUILD_DEPENDS=	p5-Class-Std-Utils>=v0.0.0:${PORTSDIR}/devel/p5-Class-Std-Utils \
 		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-Proc-Queue>=0:${PORTSDIR}/devel/p5-Proc-Queue
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::CascadeCopy.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

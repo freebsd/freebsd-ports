@@ -23,21 +23,4 @@ TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Net::AMQP.3 \
-		Net::AMQP::Common.3 \
-		Net::AMQP::Frame.3 \
-		Net::AMQP::Frame::Body.3 \
-		Net::AMQP::Frame::Header.3 \
-		Net::AMQP::Frame::Heartbeat.3 \
-		Net::AMQP::Frame::Method.3 \
-		Net::AMQP::Frame::OOBBody.3 \
-		Net::AMQP::Frame::OOBHeader.3 \
-		Net::AMQP::Frame::OOBMethod.3 \
-		Net::AMQP::Frame::Trace.3 \
-		Net::AMQP::Protocol.3 \
-		Net::AMQP::Protocol::Base.3 \
-		Net::AMQP::Protocol::v0_8.3 \
-		Net::AMQP::Value.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

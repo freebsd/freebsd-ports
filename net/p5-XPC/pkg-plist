@@ -1,8 +1,11 @@
 bin/xpcc
 bin/xpcd
+%%PERL5_MAN3%%/XPC.3.gz
+%%PERL5_MAN3%%/XPC::Agent.3.gz
+%%PERL5_MAN3%%/XPC::Daemon.3.gz
 %%SITE_PERL%%/XPC.pm
 %%SITE_PERL%%/XPC/Agent.pm
 %%SITE_PERL%%/XPC/Daemon.pm
-@dirrm %%SITE_PERL%%/XPC
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XPC/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XPC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XPC
+@dirrmtry %%SITE_PERL%%/XPC

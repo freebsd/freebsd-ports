@@ -25,21 +25,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Net::Delicious.3 \
-		Net::Delicious::Bundle.3 \
-		Net::Delicious::Config.3 \
-		Net::Delicious::Constants.3 \
-		Net::Delicious::Constants::Config.3 \
-		Net::Delicious::Constants::Pause.3 \
-		Net::Delicious::Constants::Response.3 \
-		Net::Delicious::Constants::Uri.3 \
-		Net::Delicious::Date.3 \
-		Net::Delicious::Iterator.3 \
-		Net::Delicious::Object.3 \
-		Net::Delicious::Post.3 \
-		Net::Delicious::Subscription.3 \
-		Net::Delicious::Tag.3 \
-		Net::Delicious::User.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

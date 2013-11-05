@@ -19,13 +19,9 @@ BUILD_DEPENDS=	p5-Crypt-OpenSSL-Bignum>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-
 		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
 		p5-XML-CanonicalizeXML>=0:${PORTSDIR}/textproc/p5-XML-CanonicalizeXML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Google::SAML::Response.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

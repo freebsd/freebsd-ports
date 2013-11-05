@@ -1,3 +1,54 @@
+%%PERL5_MAN3%%/Bundle::Net::LDAP.3.gz
+%%PERL5_MAN3%%/LWP::Protocol::ldap.3.gz
+%%PERL5_MAN3%%/LWP::Protocol::ldapi.3.gz
+%%PERL5_MAN3%%/LWP::Protocol::ldaps.3.gz
+%%PERL5_MAN3%%/Net::LDAP.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Constant.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Control.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Control::Assertion.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Control::EntryChange.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Control::ManageDsaIT.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Control::MatchedValues.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Control::Paged.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Control::PasswordPolicy.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Control::PersistentSearch.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Control::PostRead.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Control::PreRead.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Control::ProxyAuth.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Control::Relax.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Control::Sort.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Control::SortResult.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Control::SyncDone.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Control::SyncRequest.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Control::SyncState.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Control::VLV.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Control::VLVResponse.3.gz
+%%PERL5_MAN3%%/Net::LDAP::DSML.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Entry.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Examples.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Extension::Cancel.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Extension::Refresh.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Extension::SetPassword.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Extension::WhoAmI.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Extra.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Extra::AD.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Extra::eDirectory.3.gz
+%%PERL5_MAN3%%/Net::LDAP::FAQ.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Filter.3.gz
+%%PERL5_MAN3%%/Net::LDAP::FilterMatch.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Intermediate.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Intermediate::SyncInfo.3.gz
+%%PERL5_MAN3%%/Net::LDAP::LDIF.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Message.3.gz
+%%PERL5_MAN3%%/Net::LDAP::RFC.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Reference.3.gz
+%%PERL5_MAN3%%/Net::LDAP::RootDSE.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Schema.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Search.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Security.3.gz
+%%PERL5_MAN3%%/Net::LDAP::Util.3.gz
+%%PERL5_MAN3%%/Net::LDAPI.3.gz
+%%PERL5_MAN3%%/Net::LDAPS.3.gz
 %%SITE_PERL%%/Bundle/Net/LDAP.pm
 %%SITE_PERL%%/LWP/Protocol/ldap.pm
 %%SITE_PERL%%/LWP/Protocol/ldapi.pm
@@ -59,11 +110,9 @@
 %%SITE_PERL%%/Net/LDAP/Util.pm
 %%SITE_PERL%%/Net/LDAPI.pm
 %%SITE_PERL%%/Net/LDAPS.pm
-%%SITE_PERL%%/mach/auto/Net/LDAP/.packlist
-@dirrmtry %%SITE_PERL%%/mach/auto/Net/LDAP
-@dirrmtry %%SITE_PERL%%/mach/auto/Net
-@dirrmtry %%SITE_PERL%%/mach/auto
-@dirrmtry %%SITE_PERL%%/mach
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/LDAP/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/LDAP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrmtry %%SITE_PERL%%/Net/LDAP/Intermediate
 @dirrmtry %%SITE_PERL%%/Net/LDAP/Extra
 @dirrmtry %%SITE_PERL%%/Net/LDAP/Extension

@@ -20,13 +20,9 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::OpenID::Association.3 Net::OpenID::ClaimedIdentity.3 \
-		Net::OpenID::Consumer.3 Net::OpenID::VerifiedIdentity.3
-
 .if defined(MAINTAINER_MODE)
 regression-test: build
 	cd ${WRKSRC} && ${MAKE} test
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

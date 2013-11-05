@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Net::Jifty.3.gz
 %%SITE_PERL%%/Net/Jifty.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Jifty/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Jifty
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Jifty
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrmtry %%SITE_PERL%%/Net

@@ -1,4 +1,25 @@
 bin/net-server
+%%PERL5_MAN3%%/Net::Server.3.gz
+%%PERL5_MAN3%%/Net::Server::Daemonize.3.gz
+%%PERL5_MAN3%%/Net::Server::Fork.3.gz
+%%PERL5_MAN3%%/Net::Server::HTTP.3.gz
+%%PERL5_MAN3%%/Net::Server::INET.3.gz
+%%PERL5_MAN3%%/Net::Server::Log::Log::Log4perl.3.gz
+%%PERL5_MAN3%%/Net::Server::Log::Sys::Syslog.3.gz
+%%PERL5_MAN3%%/Net::Server::MultiType.3.gz
+%%PERL5_MAN3%%/Net::Server::Multiplex.3.gz
+%%PERL5_MAN3%%/Net::Server::PSGI.3.gz
+%%PERL5_MAN3%%/Net::Server::PreFork.3.gz
+%%PERL5_MAN3%%/Net::Server::PreForkSimple.3.gz
+%%PERL5_MAN3%%/Net::Server::Proto.3.gz
+%%PERL5_MAN3%%/Net::Server::Proto::SSL.3.gz
+%%PERL5_MAN3%%/Net::Server::Proto::SSLEAY.3.gz
+%%PERL5_MAN3%%/Net::Server::Proto::TCP.3.gz
+%%PERL5_MAN3%%/Net::Server::Proto::UDP.3.gz
+%%PERL5_MAN3%%/Net::Server::Proto::UNIX.3.gz
+%%PERL5_MAN3%%/Net::Server::Proto::UNIXDGRAM.3.gz
+%%PERL5_MAN3%%/Net::Server::SIG.3.gz
+%%PERL5_MAN3%%/Net::Server::Single.3.gz
 %%SITE_PERL%%/Net/Server.pm
 %%SITE_PERL%%/Net/Server.pod
 %%SITE_PERL%%/Net/Server/Daemonize.pm
@@ -22,6 +43,7 @@ bin/net-server
 %%SITE_PERL%%/Net/Server/SIG.pm
 %%SITE_PERL%%/Net/Server/Single.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Server/.packlist
+man/man1/net-server.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Server
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrmtry %%SITE_PERL%%/Net/Server/Proto

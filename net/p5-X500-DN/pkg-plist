@@ -1,8 +1,10 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/X500/DN/.packlist
+%%PERL5_MAN3%%/X500::DN.3.gz
+%%PERL5_MAN3%%/X500::RDN.3.gz
 %%SITE_PERL%%/X500/DN.pm
 %%SITE_PERL%%/X500/DN.pod
 %%SITE_PERL%%/X500/RDN.pm
 %%SITE_PERL%%/X500/RDN.pod
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/X500/DN
-@dirrmtry %%SITE_PERL%%/X500
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/X500/DN/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/X500/DN
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/X500
+@dirrmtry %%SITE_PERL%%/X500

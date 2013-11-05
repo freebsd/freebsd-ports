@@ -13,10 +13,7 @@ COMMENT=	A class for discovering the local system's IP address
 BUILD_DEPENDS=	p5-Error>=0:${PORTSDIR}/lang/p5-Error
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	Net::Address::IPv4::Local.3
-
 USES=		perl5
 USE_PERL5=	modbuild
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

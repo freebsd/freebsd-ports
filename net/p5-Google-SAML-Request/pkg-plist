@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/SAML/Request/.packlist
+%%PERL5_MAN3%%/Google::SAML::Request.3.gz
 %%SITE_PERL%%/Google/SAML/Request.pm
-@dirrmtry %%SITE_PERL%%/Google/SAML
-@dirrmtry %%SITE_PERL%%/Google
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/SAML/Request/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/SAML/Request
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/SAML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google
+@dirrmtry %%SITE_PERL%%/Google/SAML
+@dirrmtry %%SITE_PERL%%/Google

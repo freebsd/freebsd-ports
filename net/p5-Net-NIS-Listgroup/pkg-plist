@@ -1,7 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/.packlist
-%%SITE_PERL%%/Net/NIS/Listgroup.pm
 bin/listgroup
 bin/make_cron
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/NIS/Listgroup/.packlist
+man/man1/listgroup.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/NIS/Listgroup
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/NIS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/Net/NIS
-@dirrmtry %%SITE_PERL%%/Net

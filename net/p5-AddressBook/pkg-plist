@@ -1,3 +1,13 @@
+%%PERL5_MAN3%%/AddressBook.3.gz
+%%PERL5_MAN3%%/AddressBook::Config.3.gz
+%%PERL5_MAN3%%/AddressBook::DB::BBDB.3.gz
+%%PERL5_MAN3%%/AddressBook::DB::DBI.3.gz
+%%PERL5_MAN3%%/AddressBook::DB::HTML.3.gz
+%%PERL5_MAN3%%/AddressBook::DB::LDAP.3.gz
+%%PERL5_MAN3%%/AddressBook::DB::LDIF.3.gz
+%%PERL5_MAN3%%/AddressBook::DB::PDB.3.gz
+%%PERL5_MAN3%%/AddressBook::DB::Text.3.gz
+%%PERL5_MAN3%%/AddressBook::Entry.3.gz
 %%SITE_PERL%%/AddressBook.pm
 %%SITE_PERL%%/AddressBook/Config.pm
 %%SITE_PERL%%/AddressBook/DB/BBDB.pm
@@ -9,6 +19,6 @@
 %%SITE_PERL%%/AddressBook/DB/Text.pm
 %%SITE_PERL%%/AddressBook/Entry.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AddressBook/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AddressBook
-@dirrm %%SITE_PERL%%/AddressBook/DB
-@dirrm %%SITE_PERL%%/AddressBook
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AddressBook
+@dirrmtry %%SITE_PERL%%/AddressBook/DB
+@dirrmtry %%SITE_PERL%%/AddressBook

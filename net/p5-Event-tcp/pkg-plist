@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/Event::tcpsession.3.gz
 %%SITE_PERL%%/Event/tcplisten.pm
 %%SITE_PERL%%/Event/tcpsession.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/tcp/.packlist

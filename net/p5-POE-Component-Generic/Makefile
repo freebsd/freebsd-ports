@@ -18,10 +18,4 @@ RUN_DEPENDS=	p5-POE>=0.31:${PORTSDIR}/devel/p5-POE \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		POE::Component::Generic.3 \
-		POE::Component::Generic::Child.3 \
-		POE::Component::Generic::Net::SSH2.3 \
-		POE::Component::Generic::Object.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

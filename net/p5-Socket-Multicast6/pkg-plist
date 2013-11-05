@@ -1,6 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Multicast6/Multicast6.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Multicast6/Multicast6.bs
+%%PERL5_MAN3%%/Socket::Multicast6.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Socket/Multicast6.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Multicast6/Multicast6.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Multicast6/Multicast6.so
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Multicast6
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Socket

@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Net::EPP::Proxy.3.gz
 %%SITE_PERL%%/Net/EPP/Proxy.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/EPP/Proxy/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/EPP/Proxy
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/EPP/Proxy
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/EPP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrmtry %%SITE_PERL%%/Net/EPP

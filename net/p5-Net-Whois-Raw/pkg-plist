@@ -1,11 +1,13 @@
 bin/pwhois
+%%PERL5_MAN3%%/Net::Whois::Raw.3.gz
 %%SITE_PERL%%/Net/Whois/Raw.pm
 %%SITE_PERL%%/Net/Whois/Raw/Common.pm
 %%SITE_PERL%%/Net/Whois/Raw/Data.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Whois/Raw/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Whois/Raw
+man/man1/pwhois.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Whois/Raw
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Whois
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrm %%SITE_PERL%%/Net/Whois/Raw
+@dirrmtry %%SITE_PERL%%/Net/Whois/Raw
 @dirrmtry %%SITE_PERL%%/Net/Whois
 @dirrmtry %%SITE_PERL%%/Net

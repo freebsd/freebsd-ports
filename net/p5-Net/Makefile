@@ -23,16 +23,4 @@ PORTSCOUT=	skipv:1.0901
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::Cmd.3 \
-		Net::Config.3 \
-		Net::Domain.3 \
-		Net::FTP.3 \
-		Net::NNTP.3 \
-		Net::Netrc.3 \
-		Net::POP3.3 \
-		Net::SMTP.3 \
-		Net::Time.3 \
-		Net::libnetFAQ.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

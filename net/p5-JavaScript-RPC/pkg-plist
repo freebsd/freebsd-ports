@@ -1,8 +1,10 @@
+%%PERL5_MAN3%%/JavaScript::RPC.3.gz
+%%PERL5_MAN3%%/JavaScript::RPC::Server::CGI.3.gz
+%%SITE_PERL%%/JavaScript/RPC.pm
 %%SITE_PERL%%/JavaScript/RPC/Server/CGI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/JavaScript/RPC/.packlist
-%%SITE_PERL%%/JavaScript/RPC.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/JavaScript/RPC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JavaScript/RPC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JavaScript
-@dirrm %%SITE_PERL%%/JavaScript/RPC/Server
-@dirrm %%SITE_PERL%%/JavaScript/RPC
+@dirrmtry %%SITE_PERL%%/JavaScript/RPC/Server
+@dirrmtry %%SITE_PERL%%/JavaScript/RPC
 @dirrmtry %%SITE_PERL%%/JavaScript

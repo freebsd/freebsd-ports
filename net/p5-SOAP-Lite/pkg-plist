@@ -1,6 +1,34 @@
 bin/SOAPsh.pl
 bin/XMLRPCsh.pl
 bin/stubmaker.pl
+%%PERL5_MAN3%%/Apache::SOAP.3.gz
+%%PERL5_MAN3%%/Apache::XMLRPC::Lite.3.gz
+%%PERL5_MAN3%%/SOAP::Client.3.gz
+%%PERL5_MAN3%%/SOAP::Constants.3.gz
+%%PERL5_MAN3%%/SOAP::Data.3.gz
+%%PERL5_MAN3%%/SOAP::Deserializer.3.gz
+%%PERL5_MAN3%%/SOAP::Fault.3.gz
+%%PERL5_MAN3%%/SOAP::Header.3.gz
+%%PERL5_MAN3%%/SOAP::Lite.3.gz
+%%PERL5_MAN3%%/SOAP::Lite::Packager.3.gz
+%%PERL5_MAN3%%/SOAP::Packager.3.gz
+%%PERL5_MAN3%%/SOAP::SOM.3.gz
+%%PERL5_MAN3%%/SOAP::Schema.3.gz
+%%PERL5_MAN3%%/SOAP::Serializer.3.gz
+%%PERL5_MAN3%%/SOAP::Server.3.gz
+%%PERL5_MAN3%%/SOAP::Test.3.gz
+%%PERL5_MAN3%%/SOAP::Trace.3.gz
+%%PERL5_MAN3%%/SOAP::Transport.3.gz
+%%PERL5_MAN3%%/SOAP::Transport::LOOPBACK.3.gz
+%%PERL5_MAN3%%/SOAP::Transport::POP3.3.gz
+%%PERL5_MAN3%%/SOAP::Utils.3.gz
+%%PERL5_MAN3%%/UDDI::Lite.3.gz
+%%PERL5_MAN3%%/XML::Parser::Lite.3.gz
+%%PERL5_MAN3%%/XMLRPC::Lite.3.gz
+%%PERL5_MAN3%%/XMLRPC::Test.3.gz
+%%PERL5_MAN3%%/XMLRPC::Transport::HTTP.3.gz
+%%PERL5_MAN3%%/XMLRPC::Transport::POP3.3.gz
+%%PERL5_MAN3%%/XMLRPC::Transport::TCP.3.gz
 %%SITE_PERL%%/Apache/SOAP.pm
 %%SITE_PERL%%/Apache/XMLRPC/Lite.pm
 %%SITE_PERL%%/SOAP/Client.pod
@@ -39,16 +67,19 @@ bin/stubmaker.pl
 %%SITE_PERL%%/XMLRPC/Transport/POP3.pm
 %%SITE_PERL%%/XMLRPC/Transport/TCP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Lite/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Lite
+man/man1/SOAPsh.pl.1.gz
+man/man1/XMLRPCsh.pl.1.gz
+man/man1/stubmaker.pl.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Lite
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP
-@dirrm %%SITE_PERL%%/XMLRPC/Transport
+@dirrmtry %%SITE_PERL%%/XMLRPC/Transport
 @dirrmtry %%SITE_PERL%%/XMLRPC
 @dirrmtry %%SITE_PERL%%/XML/Parser
 @dirrmtry %%SITE_PERL%%/XML
-@dirrm %%SITE_PERL%%/UDDI
+@dirrmtry %%SITE_PERL%%/UDDI
 @dirrmtry %%SITE_PERL%%/SOAP/Transport
-@dirrm %%SITE_PERL%%/SOAP/Lite/Deserializer
-@dirrm %%SITE_PERL%%/SOAP/Lite
+@dirrmtry %%SITE_PERL%%/SOAP/Lite/Deserializer
+@dirrmtry %%SITE_PERL%%/SOAP/Lite
 @dirrmtry %%SITE_PERL%%/SOAP
-@dirrm %%SITE_PERL%%/Apache/XMLRPC
+@dirrmtry %%SITE_PERL%%/Apache/XMLRPC
 @dirrmtry %%SITE_PERL%%/Apache

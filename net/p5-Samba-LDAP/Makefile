@@ -27,11 +27,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Samba::LDAP.3 Samba::LDAP::Base.3 Samba::LDAP::Config.3 \
-		Samba::LDAP::Group.3 Samba::LDAP::Machine.3 \
-		Samba::LDAP::User.3
-
-NO_STAGE=	yes
 post-patch:
 		@${REINPLACE_CMD} -i '' -e '/auto_install/d' ${WRKSRC}/Makefile.PL
 

@@ -1,3 +1,42 @@
+%%PERL5_MAN3%%/Net::SSH::Perl.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Agent.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Auth.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Auth::KeyboardInt.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Auth::Password.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Auth::PublicKey.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Auth::RSA.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Auth::Rhosts.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Auth::Rhosts_RSA.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::AuthMgr.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Buffer.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Channel.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::ChannelMgr.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Cipher.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Cipher::Blowfish.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Cipher::CBC.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Cipher::CFB.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Cipher::DES.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Cipher::DES3.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Cipher::IDEA.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Cipher::RC4.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Comp.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Comp::Zlib.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Config.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Constants.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Handle.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Kex.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Kex::DH1.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Key.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Key::DSA.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Key::RSA.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Key::RSA1.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Mac.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Packet.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::SSH1.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::SSH2.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Subsystem::Client.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Subsystem::Server.3.gz
+%%PERL5_MAN3%%/Net::SSH::Perl::Util.3.gz
 %%SITE_PERL%%/Net/SSH/Perl.pm
 %%SITE_PERL%%/Net/SSH/Perl/Agent.pm
 %%SITE_PERL%%/Net/SSH/Perl/Auth.pm
@@ -49,17 +88,17 @@
 %%SITE_PERL%%/Net/SSH/Perl/Util/SSH2MP.pm
 %%SITE_PERL%%/Net/SSH/Perl/Util/Term.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSH/Perl/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSH/Perl
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSH/Perl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSH
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrm %%SITE_PERL%%/Net/SSH/Perl/Util
-@dirrm %%SITE_PERL%%/Net/SSH/Perl/Subsystem
-@dirrm %%SITE_PERL%%/Net/SSH/Perl/Key
-@dirrm %%SITE_PERL%%/Net/SSH/Perl/Kex
-@dirrm %%SITE_PERL%%/Net/SSH/Perl/Handle
-@dirrm %%SITE_PERL%%/Net/SSH/Perl/Comp
-@dirrm %%SITE_PERL%%/Net/SSH/Perl/Cipher
-@dirrm %%SITE_PERL%%/Net/SSH/Perl/Auth
-@dirrm %%SITE_PERL%%/Net/SSH/Perl
+@dirrmtry %%SITE_PERL%%/Net/SSH/Perl/Util
+@dirrmtry %%SITE_PERL%%/Net/SSH/Perl/Subsystem
+@dirrmtry %%SITE_PERL%%/Net/SSH/Perl/Key
+@dirrmtry %%SITE_PERL%%/Net/SSH/Perl/Kex
+@dirrmtry %%SITE_PERL%%/Net/SSH/Perl/Handle
+@dirrmtry %%SITE_PERL%%/Net/SSH/Perl/Comp
+@dirrmtry %%SITE_PERL%%/Net/SSH/Perl/Cipher
+@dirrmtry %%SITE_PERL%%/Net/SSH/Perl/Auth
+@dirrmtry %%SITE_PERL%%/Net/SSH/Perl
 @dirrmtry %%SITE_PERL%%/Net/SSH
 @dirrmtry %%SITE_PERL%%/Net

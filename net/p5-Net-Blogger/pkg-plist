@@ -1,3 +1,16 @@
+%%PERL5_MAN3%%/Net::Blogger.3.gz
+%%PERL5_MAN3%%/Net::Blogger::API::Core.3.gz
+%%PERL5_MAN3%%/Net::Blogger::API::Extended.3.gz
+%%PERL5_MAN3%%/Net::Blogger::Engine::Base.3.gz
+%%PERL5_MAN3%%/Net::Blogger::Engine::Blogger.3.gz
+%%PERL5_MAN3%%/Net::Blogger::Engine::Manila.3.gz
+%%PERL5_MAN3%%/Net::Blogger::Engine::Movabletype.3.gz
+%%PERL5_MAN3%%/Net::Blogger::Engine::Movabletype::mt.3.gz
+%%PERL5_MAN3%%/Net::Blogger::Engine::Radio.3.gz
+%%PERL5_MAN3%%/Net::Blogger::Engine::Slash.3.gz
+%%PERL5_MAN3%%/Net::Blogger::Engine::Slash::slashcode.3.gz
+%%PERL5_MAN3%%/Net::Blogger::Engine::Userland.3.gz
+%%PERL5_MAN3%%/Net::Blogger::Engine::Userland::metaWeblog.3.gz
 %%SITE_PERL%%/Net/Blogger.pm
 %%SITE_PERL%%/Net/Blogger/API/Core.pm
 %%SITE_PERL%%/Net/Blogger/API/Extended.pm
@@ -11,10 +24,10 @@
 %%SITE_PERL%%/Net/Blogger/Engine/Slash/slashcode.pm
 %%SITE_PERL%%/Net/Blogger/Engine/Userland.pm
 %%SITE_PERL%%/Net/Blogger/Engine/Userland/metaWeblog.pm
-@dirrm %%SITE_PERL%%/Net/Blogger/API
-@dirrm %%SITE_PERL%%/Net/Blogger/Engine/Movabletype
-@dirrm %%SITE_PERL%%/Net/Blogger/Engine/Slash
-@dirrm %%SITE_PERL%%/Net/Blogger/Engine/Userland
-@dirrm %%SITE_PERL%%/Net/Blogger/Engine
-@dirrm %%SITE_PERL%%/Net/Blogger
+@dirrmtry %%SITE_PERL%%/Net/Blogger/Engine/Userland
+@dirrmtry %%SITE_PERL%%/Net/Blogger/Engine/Slash
+@dirrmtry %%SITE_PERL%%/Net/Blogger/Engine/Movabletype
+@dirrmtry %%SITE_PERL%%/Net/Blogger/Engine
+@dirrmtry %%SITE_PERL%%/Net/Blogger/API
+@dirrmtry %%SITE_PERL%%/Net/Blogger
 @dirrmtry %%SITE_PERL%%/Net

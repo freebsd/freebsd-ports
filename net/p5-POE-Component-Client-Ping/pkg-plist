@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/POE::Component::Client::Ping.3.gz
 %%SITE_PERL%%/POE/Component/Client/Ping.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/Ping/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/Ping
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/Ping
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE

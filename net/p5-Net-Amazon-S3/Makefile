@@ -36,31 +36,4 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::Amazon::S3.3 Net::Amazon::S3::Bucket.3 \
-		Net::Amazon::S3::Request::GetObjectAccessControl.3 \
-		Net::Amazon::S3::Client.3 \
-		Net::Amazon::S3::Client::Bucket.3 \
-		Net::Amazon::S3::Request::CompleteMultipartUpload.3 \
-		Net::Amazon::S3::Request::DeleteMultiObject.3 \
-		Net::Amazon::S3::Request::InitiateMultipartUpload.3 \
-		Net::Amazon::S3::Request::ListAllMyBuckets.3 \
-		Net::Amazon::S3::Request::ListParts.3 \
-		Net::Amazon::S3::Request::PutObject.3 \
-		Net::Amazon::S3::Request::PutPart.3 \
-		Net::Amazon::S3::HTTPRequest.3 \
-		Net::Amazon::S3::Request::ListBucket.3 \
-		Net::Amazon::S3::Request::DeleteObject.3 \
-		Net::Amazon::S3::Request::DeleteBucket.3 \
-		Net::Amazon::S3::Client::Object.3 \
-		Net::Amazon::S3::Request::GetBucketLocationConstraint.3 \
-		Net::Amazon::S3::Request::SetBucketAccessControl.3 \
-		Net::Amazon::S3::Request::SetObjectAccessControl.3 \
-		Net::Amazon::S3::Request::GetBucketAccessControl.3 \
-		Net::Amazon::S3::Request::GetObject.3 \
-		Net::Amazon::S3::Request.3 \
-		Net::Amazon::S3::Request::CreateBucket.3
-
-MAN1=		s3cl.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

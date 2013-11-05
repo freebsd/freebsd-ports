@@ -1,9 +1,10 @@
+%%PERL5_MAN3%%/Net::LDAP::Server::Test.3.gz
 %%SITE_PERL%%/Net/LDAP/Server/Test.pm
-%%SITE_PERL%%/mach/auto/Net/LDAP/Server/Test/.packlist
-@dirrmtry %%SITE_PERL%%/mach/auto/Net/LDAP/Server/Test
-@dirrmtry %%SITE_PERL%%/mach/auto/Net/LDAP/Server
-@dirrmtry %%SITE_PERL%%/mach/auto/Net/LDAP
-@dirrmtry %%SITE_PERL%%/mach/auto/Net
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/LDAP/Server/Test/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/LDAP/Server/Test
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/LDAP/Server
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/LDAP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrmtry %%SITE_PERL%%/Net/LDAP/Server
 @dirrmtry %%SITE_PERL%%/Net/LDAP
 @dirrmtry %%SITE_PERL%%/Net

@@ -1,11 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Class/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Class/Class.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Class/Class.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Class/mod_sc.h
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Class/Const/Const.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Class/Const/Const.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Class/SSL/SSL.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Class/SSL/SSL.bs
+%%PERL5_MAN3%%/Socket::Class.3.gz
+%%PERL5_MAN3%%/Socket::Class::CTX.3.gz
+%%PERL5_MAN3%%/Socket::Class::Const.3.gz
+%%PERL5_MAN3%%/Socket::Class::SSL.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Socket/Class.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Socket/Class.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Socket/Class/CTX.pod
@@ -13,6 +9,14 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Socket/Class/Const.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Socket/Class/SSL.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Socket/Class/SSL.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Class/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Class/Class.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Class/Class.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Class/Const/Const.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Class/Const/Const.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Class/SSL/SSL.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Class/SSL/SSL.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Class/mod_sc.h
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Class/SSL
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Class/Const
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Class

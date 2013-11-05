@@ -13,10 +13,7 @@ COMMENT=	Parse and construct OpenURL's (NISO Z39.88-2004)
 BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	URI::OpenURL.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

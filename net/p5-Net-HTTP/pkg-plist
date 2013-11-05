@@ -1,9 +1,12 @@
+%%PERL5_MAN3%%/Net::HTTP.3.gz
+%%PERL5_MAN3%%/Net::HTTP::NB.3.gz
+%%PERL5_MAN3%%/Net::HTTPS.3.gz
 %%SITE_PERL%%/Net/HTTP.pm
-%%SITE_PERL%%/Net/HTTPS.pm
 %%SITE_PERL%%/Net/HTTP/Methods.pm
 %%SITE_PERL%%/Net/HTTP/NB.pm
+%%SITE_PERL%%/Net/HTTPS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/HTTP/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/HTTP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/HTTP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrm %%SITE_PERL%%/Net/HTTP
+@dirrmtry %%SITE_PERL%%/Net/HTTP
 @dirrmtry %%SITE_PERL%%/Net

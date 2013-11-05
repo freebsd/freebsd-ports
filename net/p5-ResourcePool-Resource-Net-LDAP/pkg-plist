@@ -1,12 +1,16 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/Net/LDAP/.packlist
-%%SITE_PERL%%/ResourcePool/Resource/Net/LDAP.pm
-%%SITE_PERL%%/ResourcePool/Resource/Net/LDAP.pod
+%%PERL5_MAN3%%/ResourcePool::Factory::Net::LDAP.3.gz
+%%PERL5_MAN3%%/ResourcePool::Resource::Net::LDAP.3.gz
 %%SITE_PERL%%/ResourcePool/Factory/Net/LDAP.pm
 %%SITE_PERL%%/ResourcePool/Factory/Net/LDAP.pod
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/Net/LDAP
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/Net
+%%SITE_PERL%%/ResourcePool/Resource/Net/LDAP.pm
+%%SITE_PERL%%/ResourcePool/Resource/Net/LDAP.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/Net/LDAP/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/Net/LDAP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/Net
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource
-@dirrm %%SITE_PERL%%/ResourcePool/Resource/Net
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool
+@dirrmtry %%SITE_PERL%%/ResourcePool/Resource/Net
 @dirrmtry %%SITE_PERL%%/ResourcePool/Resource
-@dirrm %%SITE_PERL%%/ResourcePool/Factory/Net
+@dirrmtry %%SITE_PERL%%/ResourcePool/Factory/Net
 @dirrmtry %%SITE_PERL%%/ResourcePool/Factory
+@dirrmtry %%SITE_PERL%%/ResourcePool

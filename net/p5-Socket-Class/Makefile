@@ -13,10 +13,4 @@ COMMENT=	Perl class to communicate with sockets
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Socket::Class::Const.3 \
-		Socket::Class::CTX.3 \
-		Socket::Class::SSL.3 \
-		Socket::Class.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

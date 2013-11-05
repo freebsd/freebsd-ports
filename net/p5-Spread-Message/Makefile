@@ -14,10 +14,7 @@ COMMENT=	Provide messaging using the Spread toolkit
 BUILD_DEPENDS=	spread>=0:${PORTSDIR}/net/spread
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	Spread::Message.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

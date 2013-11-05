@@ -19,10 +19,4 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	AddressBook.3 AddressBook::Config.3 AddressBook::DB::BBDB.3 \
-	AddressBook::DB::DBI.3 AddressBook::DB::HTML.3 AddressBook::DB::LDAP.3 \
-	AddressBook::DB::LDIF.3 AddressBook::DB::PDB.3 AddressBook::DB::Text.3 \
-	AddressBook::Entry.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

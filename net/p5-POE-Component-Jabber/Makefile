@@ -26,21 +26,12 @@ USE_PERL5=	modbuild
 CONFIGURE_ARGS=	</dev/null
 
 PORTEXAMPLES=	*
-MAN3=		POE::Component::Jabber.3 \
-		POE::Component::Jabber::Events.3 \
-		POE::Component::Jabber::J14.3 \
-		POE::Component::Jabber::J2.3 \
-		POE::Component::Jabber::Legacy.3 \
-		POE::Component::Jabber::Protocol.3 \
-		POE::Component::Jabber::ProtocolFactory.3 \
-		POE::Component::Jabber::XMPP.3
 
-NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
-	@${MKDIR} ${EXAMPLESDIR}/
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}/
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>

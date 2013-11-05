@@ -16,8 +16,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN1=		sdp2rat.1
-MAN3=		Net::SDP.3 Net::SDP::Media.3 Net::SDP::Time.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

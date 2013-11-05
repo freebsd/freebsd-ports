@@ -1,4 +1,28 @@
 bin/s3cl
+%%PERL5_MAN3%%/Net::Amazon::S3.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Bucket.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Client.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Client::Bucket.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Client::Object.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::HTTPRequest.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Request.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Request::CompleteMultipartUpload.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Request::CreateBucket.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Request::DeleteBucket.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Request::DeleteMultiObject.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Request::DeleteObject.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Request::GetBucketAccessControl.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Request::GetBucketLocationConstraint.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Request::GetObject.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Request::GetObjectAccessControl.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Request::InitiateMultipartUpload.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Request::ListAllMyBuckets.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Request::ListBucket.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Request::ListParts.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Request::PutObject.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Request::PutPart.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Request::SetBucketAccessControl.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Request::SetObjectAccessControl.3.gz
 %%SITE_PERL%%/Net/Amazon/S3.pm
 %%SITE_PERL%%/Net/Amazon/S3/Bucket.pm
 %%SITE_PERL%%/Net/Amazon/S3/Client.pm
@@ -24,6 +48,7 @@ bin/s3cl
 %%SITE_PERL%%/Net/Amazon/S3/Request/SetBucketAccessControl.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/SetObjectAccessControl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/S3/.packlist
+man/man1/s3cl.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/S3
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
@@ -31,3 +56,4 @@ bin/s3cl
 @dirrmtry %%SITE_PERL%%/Net/Amazon/S3/Client
 @dirrmtry %%SITE_PERL%%/Net/Amazon/S3
 @dirrmtry %%SITE_PERL%%/Net/Amazon
+@dirrmtry %%SITE_PERL%%/Net

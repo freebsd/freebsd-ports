@@ -39,29 +39,4 @@ TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Net::Identica.3 \
-		Net::Twitter.3 \
-		Net::Twitter::API.3 \
-		Net::Twitter::Core.3 \
-		Net::Twitter::Error.3 \
-		Net::Twitter::Manual::MigratingToV1_1.3 \
-		Net::Twitter::OAuth.3 \
-		Net::Twitter::Role::API::Lists.3 \
-		Net::Twitter::Role::API::REST.3 \
-		Net::Twitter::Role::API::RESTv1_1.3 \
-		Net::Twitter::Role::API::Search.3 \
-		Net::Twitter::Role::API::Search::Trends.3 \
-		Net::Twitter::Role::API::TwitterVision.3 \
-		Net::Twitter::Role::API::Upload.3 \
-		Net::Twitter::Role::AutoCursor.3 \
-		Net::Twitter::Role::InflateObjects.3 \
-		Net::Twitter::Role::Legacy.3 \
-		Net::Twitter::Role::OAuth.3 \
-		Net::Twitter::Role::RateLimit.3 \
-		Net::Twitter::Role::RetryOnError.3 \
-		Net::Twitter::Role::SimulateCursors.3 \
-		Net::Twitter::Role::WrapError.3 \
-		Net::Twitter::Search.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,3 +1,15 @@
+%%PERL5_MAN3%%/REST::Google.3.gz
+%%PERL5_MAN3%%/REST::Google::Feeds.3.gz
+%%PERL5_MAN3%%/REST::Google::Search.3.gz
+%%PERL5_MAN3%%/REST::Google::Search::Blogs.3.gz
+%%PERL5_MAN3%%/REST::Google::Search::Books.3.gz
+%%PERL5_MAN3%%/REST::Google::Search::Images.3.gz
+%%PERL5_MAN3%%/REST::Google::Search::Local.3.gz
+%%PERL5_MAN3%%/REST::Google::Search::News.3.gz
+%%PERL5_MAN3%%/REST::Google::Search::Patent.3.gz
+%%PERL5_MAN3%%/REST::Google::Search::Video.3.gz
+%%PERL5_MAN3%%/REST::Google::Search::Web.3.gz
+%%PERL5_MAN3%%/REST::Google::Translate.3.gz
 %%SITE_PERL%%/REST/Google.pm
 %%SITE_PERL%%/REST/Google.pod
 %%SITE_PERL%%/REST/Google/Feeds.pm
@@ -12,16 +24,16 @@
 %%SITE_PERL%%/REST/Google/Search/Images.pod
 %%SITE_PERL%%/REST/Google/Search/Local.pm
 %%SITE_PERL%%/REST/Google/Search/Local.pod
-%%SITE_PERL%%/REST/Google/Search/Patent.pm
-%%SITE_PERL%%/REST/Google/Search/Patent.pod
 %%SITE_PERL%%/REST/Google/Search/News.pm
 %%SITE_PERL%%/REST/Google/Search/News.pod
+%%SITE_PERL%%/REST/Google/Search/Patent.pm
+%%SITE_PERL%%/REST/Google/Search/Patent.pod
 %%SITE_PERL%%/REST/Google/Search/Video.pm
 %%SITE_PERL%%/REST/Google/Search/Video.pod
 %%SITE_PERL%%/REST/Google/Search/Web.pm
 %%SITE_PERL%%/REST/Google/Search/Web.pod
 %%SITE_PERL%%/REST/Google/Translate.pm
 %%SITE_PERL%%/REST/Google/Translate.pod
-@dirrm %%SITE_PERL%%/REST/Google/Search
-@dirrm %%SITE_PERL%%/REST/Google
-@dirrm %%SITE_PERL%%/REST
+@dirrmtry %%SITE_PERL%%/REST/Google/Search
+@dirrmtry %%SITE_PERL%%/REST/Google
+@dirrmtry %%SITE_PERL%%/REST

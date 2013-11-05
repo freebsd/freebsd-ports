@@ -1,3 +1,6 @@
+%%PERL5_MAN3%%/Geo::IP.3.gz
+%%PERL5_MAN3%%/Geo::IP::Record.3.gz
+%%PERL5_MAN3%%/Geo::Mirror.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Geo/IP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Geo/IP/Record.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Geo/IP/Record.pod
@@ -5,7 +8,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/IP/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/IP/IP.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/IP/IP.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/IP
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Geo/IP
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Geo
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/IP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Geo/IP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Geo

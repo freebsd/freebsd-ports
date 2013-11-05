@@ -1,4 +1,4 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/NBsocket/.packlist
+%%PERL5_MAN3%%/Net::NBsocket.3.gz
 %%SITE_PERL%%/Net/NBsocket.pm
 %%SITE_PERL%%/auto/Net/NBsocket/_accept.al
 %%SITE_PERL%%/auto/Net/NBsocket/_connect.al
@@ -9,8 +9,9 @@
 %%SITE_PERL%%/auto/Net/NBsocket/open_UDP.al
 %%SITE_PERL%%/auto/Net/NBsocket/open_udpNB.al
 %%SITE_PERL%%/auto/Net/NBsocket/set_NB.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/NBsocket/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/NBsocket
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrmtry %%SITE_PERL%%/auto/Net/NBsocket
 @dirrmtry %%SITE_PERL%%/auto/Net
 @dirrmtry %%SITE_PERL%%/Net
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/NBsocket
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

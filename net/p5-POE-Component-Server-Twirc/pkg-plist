@@ -1,21 +1,27 @@
 bin/twirc
+%%PERL5_MAN3%%/App::Twirc.3.gz
+%%PERL5_MAN3%%/App::Twirc::Manual.3.gz
+%%PERL5_MAN3%%/App::Twirc::Plugin::BangCommands.3.gz
+%%PERL5_MAN3%%/App::Twirc::Plugin::SecondaryAccount.3.gz
+%%PERL5_MAN3%%/App::Twirc::Plugin::SquashWhiteSpace.3.gz
+%%PERL5_MAN3%%/POE::Component::Server::Twirc.3.gz
+%%SITE_PERL%%/App/Twirc.pm
 %%SITE_PERL%%/App/Twirc/Manual.pod
 %%SITE_PERL%%/App/Twirc/Plugin/BangCommands.pm
 %%SITE_PERL%%/App/Twirc/Plugin/SecondaryAccount.pm
 %%SITE_PERL%%/App/Twirc/Plugin/SquashWhiteSpace.pm
-%%SITE_PERL%%/App/Twirc.pm
-%%SITE_PERL%%/POE/Component/Server/Twirc/State.pm
-%%SITE_PERL%%/POE/Component/Server/Twirc/LogAppender.pm
 %%SITE_PERL%%/POE/Component/Server/Twirc.pm
+%%SITE_PERL%%/POE/Component/Server/Twirc/LogAppender.pm
+%%SITE_PERL%%/POE/Component/Server/Twirc/State.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server/Twirc/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server/Twirc
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
-@dirrmtry %%SITE_PERL%%/App/Twirc/Plugin
-@dirrmtry %%SITE_PERL%%/App/Twirc
-@dirrmtry %%SITE_PERL%%/App
 @dirrmtry %%SITE_PERL%%/POE/Component/Server/Twirc
 @dirrmtry %%SITE_PERL%%/POE/Component/Server
 @dirrmtry %%SITE_PERL%%/POE/Component
 @dirrmtry %%SITE_PERL%%/POE
+@dirrmtry %%SITE_PERL%%/App/Twirc/Plugin
+@dirrmtry %%SITE_PERL%%/App/Twirc
+@dirrmtry %%SITE_PERL%%/App

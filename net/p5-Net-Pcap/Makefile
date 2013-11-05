@@ -17,8 +17,4 @@ TEST_DEPENDS=	p5-Socket>=0:${PORTSDIR}/net/p5-Socket \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		pcapinfo.1
-MAN3=		Net::Pcap.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
