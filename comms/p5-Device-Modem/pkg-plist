@@ -1,9 +1,15 @@
+%%PERL5_MAN3%%/Device::Modem.3.gz
+%%PERL5_MAN3%%/Device::Modem::FAQ.3.gz
+%%PERL5_MAN3%%/Device::Modem::Log::File.3.gz
+%%PERL5_MAN3%%/Device::Modem::Log::Syslog.3.gz
+%%PERL5_MAN3%%/Device::Modem::Protocol::Xmodem.3.gz
+%%PERL5_MAN3%%/Device::Modem::UsRobotics.3.gz
+%%SITE_PERL%%/Device/Modem.pm
 %%SITE_PERL%%/Device/Modem/FAQ.pod
 %%SITE_PERL%%/Device/Modem/Log/File.pm
 %%SITE_PERL%%/Device/Modem/Log/Syslog.pm
 %%SITE_PERL%%/Device/Modem/Protocol/Xmodem.pm
 %%SITE_PERL%%/Device/Modem/UsRobotics.pm
-%%SITE_PERL%%/Device/Modem.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Device/Modem/.packlist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/active.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/caller-id.pl
@@ -11,9 +17,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shell.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmodem.pl
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Device/Modem
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Device/Modem
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Device
-@dirrm %%SITE_PERL%%/Device/Modem/Protocol
-@dirrm %%SITE_PERL%%/Device/Modem/Log
-@dirrm %%SITE_PERL%%/Device/Modem
+@dirrmtry %%SITE_PERL%%/Device/Modem/Protocol
+@dirrmtry %%SITE_PERL%%/Device/Modem/Log
+@dirrmtry %%SITE_PERL%%/Device/Modem
 @dirrmtry %%SITE_PERL%%/Device

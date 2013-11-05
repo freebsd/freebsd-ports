@@ -1,8 +1,10 @@
 bin/modemtest
+%%PERL5_MAN3%%/Device::SerialPort.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Device/SerialPort.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Device/SerialPort/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Device/SerialPort/SerialPort.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Device/SerialPort/SerialPort.so
+man/man1/modemtest.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Device/SerialPort
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Device
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Device
