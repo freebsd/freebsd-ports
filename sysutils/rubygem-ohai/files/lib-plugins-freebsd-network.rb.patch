@@ -24,7 +24,7 @@
  
 +# when default interface cannot be determined for some reason (i.e. jail)
 +# XXX doesn't work if the jail has multiple IP addresses
-+if network[:default_interface] == ""
++if network[:default_interface].nil? || network[:default_interface].empty?
 +  network["interfaces"].keys.sort.each do |iface|
 +    next unless network["interfaces"][iface]["addresses"]
 +    network["interfaces"][iface]["addresses"].keys.each do |addr|
