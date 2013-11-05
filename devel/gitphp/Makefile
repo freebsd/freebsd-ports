@@ -20,13 +20,12 @@ SUB_FILES=	pkg-message
 
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xdiff.so:${PORTSDIR}/textproc/pecl-xdiff
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${WWWDIR}
+	${MKDIR} ${STAGEDIR}${WWWDIR}
 	(cd ${WRKSRC} \
-		 && ${COPYTREE_SHARE} \* ${WWWDIR})
-	${CHOWN} -R www:www ${WWWDIR}
-	${FIND} ${WWWDIR} -type f -exec ${CHMOD} 644 '{}' +
+		 && ${COPYTREE_SHARE} \* ${STAGEDIR}${WWWDIR})
+	${CHOWN} -R www:www ${STAGEDIR}${WWWDIR}
+	${FIND} ${STAGEDIR}${WWWDIR} -type f -exec ${CHMOD} 644 '{}' +
 
 .if !defined(BATCH)
 	@ ${CAT} ${PKGMESSAGE}
