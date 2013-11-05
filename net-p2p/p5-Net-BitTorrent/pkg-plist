@@ -1,4 +1,17 @@
 bin/net-bittorrent.pl
+%%PERL5_MAN3%%/Net::BitTorrent.3.gz
+%%PERL5_MAN3%%/Net::BitTorrent::ConfigData.3.gz
+%%PERL5_MAN3%%/Net::BitTorrent::DHT.3.gz
+%%PERL5_MAN3%%/Net::BitTorrent::Notes.3.gz
+%%PERL5_MAN3%%/Net::BitTorrent::Peer.3.gz
+%%PERL5_MAN3%%/Net::BitTorrent::Protocol.3.gz
+%%PERL5_MAN3%%/Net::BitTorrent::Torrent.3.gz
+%%PERL5_MAN3%%/Net::BitTorrent::Torrent::File.3.gz
+%%PERL5_MAN3%%/Net::BitTorrent::Torrent::Tracker.3.gz
+%%PERL5_MAN3%%/Net::BitTorrent::Torrent::Tracker::HTTP.3.gz
+%%PERL5_MAN3%%/Net::BitTorrent::Torrent::Tracker::UDP.3.gz
+%%PERL5_MAN3%%/Net::BitTorrent::Util.3.gz
+%%PERL5_MAN3%%/Net::BitTorrent::Version.3.gz
 %%SITE_PERL%%/Net/BitTorrent.pm
 %%SITE_PERL%%/Net/BitTorrent/ConfigData.pm
 %%SITE_PERL%%/Net/BitTorrent/DHT.pm
@@ -12,6 +25,7 @@ bin/net-bittorrent.pl
 %%SITE_PERL%%/Net/BitTorrent/Torrent/Tracker/UDP.pm
 %%SITE_PERL%%/Net/BitTorrent/Util.pm
 %%SITE_PERL%%/Net/BitTorrent/Version.pm
+man/man1/net-bittorrent.pl.1.gz
 @dirrmtry %%SITE_PERL%%/Net/BitTorrent/Torrent/Tracker
 @dirrmtry %%SITE_PERL%%/Net/BitTorrent/Torrent
 @dirrmtry %%SITE_PERL%%/Net/BitTorrent
