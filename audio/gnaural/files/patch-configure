@@ -1,0 +1,11 @@
+--- configure.orig	2011-05-26 00:38:21.000000000 +0200
++++ configure	2013-10-31 06:32:24.000000000 +0100
+@@ -7642,7 +7642,7 @@
+ esac
+ 
+ #do pkgconfig stuff:
+-pkg_modules="gtk+-2.0 >= 2.0.0 gthread-2.0 sndfile >= 1.0.2 portaudio-2.0 >= 19"
++pkg_modules="portaudio-2.0 >= 19 gtk+-2.0 >= 2.0.0 gthread-2.0 sndfile >= 1.0.2"
+ 
+ 
+ 
