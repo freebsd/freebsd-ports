@@ -1,0 +1,25 @@
+===============================================================================
+
+Allegro-devel has been installed.
+
+Allegro-devel have two Demos (Games)
+
+Cosmic Protector and SPEED
+
+
+You can use executable
+
+    %%LOCALBASE%%/bin/cosmic_protector
+
+    %%LOCALBASE%%/bin/speed
+
+
+Or can use desktop files
+
+    %%LOCALBASE%%/share/applications/cosmic_protector.desktop
+
+    %%LOCALBASE%%/share/applications/speed.desktop
+
+Have fun!
+
+===============================================================================
