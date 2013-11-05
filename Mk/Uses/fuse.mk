@@ -17,7 +17,7 @@ IGNORE=	USES=fuse does not require args
 .endif
 
 LIB_DEPENDS+=	libfuse.so:${PORTSDIR}/sysutils/fusefs-libs
-.if !exists(/sbin/mount_fusefs) || ${OSVERSION} < 1000019
+.if !exists(/sbin/mount_fusefs)
 RUN_DEPENDS+=	mount_fusefs:${PORTSDIR}/sysutils/fusefs-kmod
 .endif
 
