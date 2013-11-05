@@ -2,7 +2,7 @@
 
 PORTNAME=	libslang2
 PORTVERSION=	2.2.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v${PORTVERSION:R}/ \
 		ftp://ftp.fu-berlin.de/pub/unix/misc/slang/v${PORTVERSION:R}/ \
@@ -53,5 +53,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's, install[_-]docs,,g; /MKINSDIR.*DEST_SLSH_DOC_DIR/d' \
 		${WRKSRC}/src/Makefile.in \
 		${WRKSRC}/slsh/Makefile.in
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in NEWS changes.txt
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
+.endfor
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
