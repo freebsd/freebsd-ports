@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mako
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.0
 CATEGORIES=	textproc www python
 MASTER_SITES=	http://www.makotemplates.org/downloads/ \
 		CHEESESHOP
