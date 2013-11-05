@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	App-Cmd
-PORTVERSION=	0.320
+PORTVERSION=	0.322
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	App::Cmd - Write command line apps with less suffering
+
+LICENSE=	ARTPERL10
 
 BUILD_DEPENDS=	p5-Capture-Tiny>=0.13:${PORTSDIR}/devel/p5-Capture-Tiny \
 		p5-Class-Load>=0.06:${PORTSDIR}/devel/p5-Class-Load \
