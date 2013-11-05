@@ -1,13 +1,15 @@
 @comment $FreeBSD$
+%%ASVN%%bin/asvn
 bin/svn
+%%TOOLS%%bin/svn-populate-node-origins-index
 bin/svnadmin
+%%TOOLS%%bin/svnauthz-validate
 bin/svndumpfilter
 bin/svnlook
+%%TOOLS%%bin/svnmucc
 bin/svnserve
-bin/svnsync
-%%ASVN%%bin/asvn
-%%SVNAUTHZ_VALIDATE%%bin/svnauthz-validate
 %%SVNSERVE_WRAPPER%%bin/svnserve.bin
+bin/svnsync
 bin/svnversion
 include/subversion-1/mod_authz_svn.h
 include/subversion-1/mod_dav_svn.h
@@ -52,7 +54,6 @@ include/subversion-1/svn_utf.h
 include/subversion-1/svn_version.h
 include/subversion-1/svn_wc.h
 include/subversion-1/svn_xml.h
-@dirrm include/subversion-1
 %%GNOME_KEYRING%%lib/libsvn_auth_gnome_keyring-1.a
 %%GNOME_KEYRING%%lib/libsvn_auth_gnome_keyring-1.la
 %%DYNAMIC_ENABLED%%%%GNOME_KEYRING%%lib/libsvn_auth_gnome_keyring-1.so
@@ -93,14 +94,14 @@ lib/libsvn_ra-1.a
 lib/libsvn_ra-1.la
 %%DYNAMIC_ENABLED%%lib/libsvn_ra-1.so
 %%DYNAMIC_ENABLED%%lib/libsvn_ra-1.so.0
-%%NEON%%lib/libsvn_ra_neon-1.a
-%%NEON%%lib/libsvn_ra_neon-1.la
-%%DYNAMIC_ENABLED%%%%NEON%%lib/libsvn_ra_neon-1.so
-%%DYNAMIC_ENABLED%%%%NEON%%lib/libsvn_ra_neon-1.so.0
 lib/libsvn_ra_local-1.a
 lib/libsvn_ra_local-1.la
 %%DYNAMIC_ENABLED%%lib/libsvn_ra_local-1.so
 %%DYNAMIC_ENABLED%%lib/libsvn_ra_local-1.so.0
+%%NEON%%lib/libsvn_ra_neon-1.a
+%%NEON%%lib/libsvn_ra_neon-1.la
+%%DYNAMIC_ENABLED%%%%NEON%%lib/libsvn_ra_neon-1.so
+%%DYNAMIC_ENABLED%%%%NEON%%lib/libsvn_ra_neon-1.so.0
 lib/libsvn_ra_svn-1.a
 lib/libsvn_ra_svn-1.la
 %%DYNAMIC_ENABLED%%lib/libsvn_ra_svn-1.so
@@ -121,6 +122,24 @@ lib/libsvn_wc-1.a
 lib/libsvn_wc-1.la
 %%DYNAMIC_ENABLED%%lib/libsvn_wc-1.so
 %%DYNAMIC_ENABLED%%lib/libsvn_wc-1.so.0
+@comment enable modules in this order: dav_svn, authz_svn, dontdothat
+%%MOD_DAV_SVN%%@unexec %%SED%% -i '' -E '/LoadModule[[:blank:]]+dav_svn_module/d' %D/%%APACHEETCDIR%%/httpd.conf
+%%MOD_DAV_SVN%%%%APACHEMODDIR%%/mod_dav_svn.so
+%%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -a -n dav_svn %D/%F
+%%MOD_DAV_SVN%%@unexec %%SED%% -i '' -E '/LoadModule[[:blank:]]+authz_svn_module/d' %D/%%APACHEETCDIR%%/httpd.conf
+%%MOD_DAV_SVN%%%%APACHEMODDIR%%/mod_authz_svn.so
+%%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -a -n authz_svn %D/%F
+%%MOD_DONTDOTHAT%%@unexec %%SED%% -i '' -E '/LoadModule[[:blank:]]+dontdothat_module/d' %D/%%APACHEETCDIR%%/httpd.conf
+%%MOD_DONTDOTHAT%%%%APACHEMODDIR%%/mod_dontdothat.so
+%%MOD_DONTDOTHAT%%@exec %D/sbin/apxs -e -a -n dontdothat %D/%F
+man/man1/svn.1.gz
+man/man1/svnadmin.1.gz
+man/man1/svndumpfilter.1.gz
+man/man1/svnlook.1.gz
+man/man1/svnsync.1.gz
+man/man1/svnversion.1.gz
+man/man5/svnserve.conf.5.gz
+man/man8/svnserve.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COMMITTERS
@@ -128,38 +147,18 @@ lib/libsvn_wc-1.la
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch01dia1.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch02dia1.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch02dia2.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch02dia3.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch02dia4.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch02dia5.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch02dia6.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch02dia7.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch04dia1.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch04dia2.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch04dia3.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch04dia4.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch08dia1.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch08dia2.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/note.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/tip.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/warning.png
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/styles.css
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/svn-book.html
-%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book.pdf
-%%WITHOUT_GETTEXT%%share/locale/de/LC_MESSAGES/subversion.mo
-%%WITHOUT_GETTEXT%%share/locale/es/LC_MESSAGES/subversion.mo
-%%WITHOUT_GETTEXT%%share/locale/fr/LC_MESSAGES/subversion.mo
-%%WITHOUT_GETTEXT%%share/locale/it/LC_MESSAGES/subversion.mo
-%%WITHOUT_GETTEXT%%share/locale/ja/LC_MESSAGES/subversion.mo
-%%WITHOUT_GETTEXT%%share/locale/ko/LC_MESSAGES/subversion.mo
-%%WITHOUT_GETTEXT%%share/locale/nb/LC_MESSAGES/subversion.mo
-%%WITHOUT_GETTEXT%%share/locale/pl/LC_MESSAGES/subversion.mo
-%%WITHOUT_GETTEXT%%share/locale/pt_BR/LC_MESSAGES/subversion.mo
-%%WITHOUT_GETTEXT%%share/locale/sv/LC_MESSAGES/subversion.mo
-%%WITHOUT_GETTEXT%%share/locale/zh_CN/LC_MESSAGES/subversion.mo
-%%WITHOUT_GETTEXT%%share/locale/zh_TW/LC_MESSAGES/subversion.mo
+%%NLS%%share/locale/de/LC_MESSAGES/subversion.mo
+%%NLS%%share/locale/es/LC_MESSAGES/subversion.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/subversion.mo
+%%NLS%%share/locale/it/LC_MESSAGES/subversion.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/subversion.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/subversion.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/subversion.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/subversion.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/subversion.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/subversion.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/subversion.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/subversion.mo
 %%DATADIR%%/README
 %%DATADIR%%/backup/hot-backup.py
 %%DATADIR%%/bdb/erase-all-text-data.py
@@ -296,35 +295,28 @@ lib/libsvn_wc-1.la
 %%DATADIR%%/server-side/test_svn_server_log_parse.py
 %%DATADIR%%/xslt/svnindex.css
 %%DATADIR%%/xslt/svnindex.xsl
-%%MOD_DAV_SVN%%%%APACHEMODDIR%%/mod_dav_svn.so
-%%MOD_DAV_SVN%%%%APACHEMODDIR%%/mod_authz_svn.so
-%%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/%%APACHEMODDIR%% -a -n dav_svn libexec/%%APACHEDIR%%/mod_dav_svn.so
-%%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/%%APACHEMODDIR%% -a -n authz_svn libexec/%%APACHEDIR%%/mod_authz_svn.so
-%%MOD_DONTDOTHAT%%%%APACHEMODDIR%%/mod_dontdothat.so
-%%MOD_DONTDOTHAT%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/%%APACHEMODDIR%% -a -n dontdothat libexec/%%APACHEDIR%%/mod_dontdothat.so
-%%PORTDOCS%%%%BOOK%%@dirrm %%DOCSDIR%%/svn-book-html/images
-%%PORTDOCS%%%%BOOK%%@dirrm %%DOCSDIR%%/svn-book-html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/backup
-@dirrm %%DATADIR%%/bdb
-@dirrm %%DATADIR%%/buildbot/slaves/i686-debian-sarge1
-@dirrm %%DATADIR%%/buildbot/slaves/osx10.4-gcc4.0.1-ia32
-@dirrm %%DATADIR%%/buildbot/slaves/ubuntu-x64
-@dirrm %%DATADIR%%/buildbot/slaves/win32-xp-VS2005
-@dirrm %%DATADIR%%/buildbot/slaves/xp-vc60-ia32
-@dirrm %%DATADIR%%/buildbot/slaves
-@dirrm %%DATADIR%%/buildbot
-@dirrm %%DATADIR%%/client-side/svnmucc
-@dirrm %%DATADIR%%/client-side
-@dirrm %%DATADIR%%/dev/iz
-@dirrm %%DATADIR%%/dev
-@dirrm %%DATADIR%%/diff
-@dirrm %%DATADIR%%/dist
-@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/xslt
+@dirrm %%DATADIR%%/server-side
+@dirrm %%DATADIR%%/po
 @dirrm %%DATADIR%%/hook-scripts/mailer/tests
 @dirrm %%DATADIR%%/hook-scripts/mailer
 @dirrm %%DATADIR%%/hook-scripts
-@dirrm %%DATADIR%%/po
-@dirrm %%DATADIR%%/server-side
-@dirrm %%DATADIR%%/xslt
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/dist
+@dirrm %%DATADIR%%/diff
+@dirrm %%DATADIR%%/dev/iz
+@dirrm %%DATADIR%%/dev
+@dirrm %%DATADIR%%/client-side/svnmucc
+@dirrm %%DATADIR%%/client-side
+@dirrm %%DATADIR%%/buildbot/slaves/xp-vc60-ia32
+@dirrm %%DATADIR%%/buildbot/slaves/win32-xp-VS2005
+@dirrm %%DATADIR%%/buildbot/slaves/ubuntu-x64
+@dirrm %%DATADIR%%/buildbot/slaves/osx10.4-gcc4.0.1-ia32
+@dirrm %%DATADIR%%/buildbot/slaves/i686-debian-sarge1
+@dirrm %%DATADIR%%/buildbot/slaves
+@dirrm %%DATADIR%%/buildbot
+@dirrm %%DATADIR%%/bdb
+@dirrm %%DATADIR%%/backup
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/subversion-1

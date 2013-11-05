@@ -1,5 +1,14 @@
---- Makefile.in.orig	2011-04-11 01:50:03.390898319 +0200
-+++ Makefile.in	2011-04-11 01:51:34.081021527 +0200
+--- ./Makefile.in.orig	2010-11-25 18:55:59.000000000 +0100
++++ ./Makefile.in	2013-11-05 22:29:01.000000000 +0100
+@@ -81,7 +81,7 @@
+ swig_pldir = @libdir@/svn-perl
+ swig_rbdir = $(SWIG_RB_SITE_ARCH_DIR)/svn/ext
+ contribdir = @bindir@/svn-contrib
+-toolsdir = @bindir@/svn-tools
++toolsdir = @bindir@
+ 
+ javahl_javadir = @libdir@/svn-javahl
+ javahl_javahdir = @libdir@/svn-javahl/include
 @@ -110,8 +110,9 @@
  LT_CXX_LIBADD = @LT_CXX_LIBADD@
  
@@ -11,3 +20,12 @@
             @SVN_NEON_INCLUDES@ @SVN_SASL_INCLUDES@ @SVN_SERF_INCLUDES@ \
             @SVN_SQLITE_INCLUDES@ @SVN_ZLIB_INCLUDES@
  
+@@ -188,7 +189,7 @@
+ LINK_CXX = $(LIBTOOL) $(LTCXXFLAGS) --mode=link $(CXX) $(LT_LDFLAGS) $(CXXFLAGS) $(LDFLAGS) -rpath $(libdir)
+ 
+ # special link rule for mod_dav_svn
+-LINK_APACHE_MOD = $(LIBTOOL) $(LTFLAGS) --mode=link $(CC) $(LT_LDFLAGS) $(CFLAGS) $(LDFLAGS) -rpath $(APACHE_LIBEXECDIR) -avoid-version -module $(APACHE_LDFLAGS)
++LINK_APACHE_MOD = $(LIBTOOL) $(LTFLAGS) --mode=link $(CC) $(LT_LDFLAGS) $(CFLAGS) $(LDFLAGS) -rpath $(APACHE_LIBEXECDIR) -avoid-version -module $(APACHE_LDFLAGS) -inst-prefix-dir ${DESTDIR}
+ 
+ # Compilation of SWIG-generated C source code
+ COMPILE_PY_WRAPPER = $(LIBTOOL) $(LTFLAGS) --mode=compile $(SWIG_PY_COMPILE) $(CPPFLAGS) $(SWIG_PY_INCLUDES) -prefer-pic -c -o $@
