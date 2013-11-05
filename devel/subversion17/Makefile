@@ -9,11 +9,10 @@ CONFLICTS_INSTALL=	subversion-1.[^7].[0-9]* \
 
 USE_RC_SUBR=	svnserve
 
-TXT_DOCS=	BUGS CHANGES COMMITTERS INSTALL README
+PORTDOCS=	BUGS CHANGES COMMITTERS INSTALL README
 
 OPTIONS_DEFINE=	\
 		BDB		\
-		BOOK		\
 		DOCS		\
 		ENHANCED_KEYWORD\
 		FREEBSD_TEMPLATE\
@@ -37,7 +36,6 @@ OPTIONS_DEFAULT=P4_STYLE_MARKERS \
 		NEON
 
 BDB_DESC=		Berkeley DB (deprected in 1.8.x)
-BOOK_DESC=		Install the Subversion Book
 ENHANCED_KEYWORD_DESC=	Enhanced svn:keyword support
 FREEBSD_TEMPLATE_DESC=	FreeBSD Project log template
 GNOME_KEYRING_DESC=	Build with GNOME Keyring auth support
@@ -60,23 +58,13 @@ ENHANCED_KEYWORD_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-enhanced-keyword
 
 .include "Makefile.common"
 
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-
 SVNREPOS?=	/home/svn/repos
 SVNFSTYPE?=	fsfs
 
 SUB_FILES=	pkg-install
 
-BOOK_VERSION=	4515
-
 .if !${PORT_OPTIONS:MMAINTAINER_DEBUG}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.in
-.endif
-
-.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MBOOK}
-BOOK_HTML=	svn-book-html-r${BOOK_VERSION}.tar.bz2
-BOOK_PDF=	svn-book-r${BOOK_VERSION}.pdf
-DISTFILES+=	${BOOK_HTML}:book ${BOOK_PDF}:book
 .endif
 
 .if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
@@ -213,14 +201,8 @@ post-install:	${MKREPOS_TARGET}
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@(cd ${WRKSRC}/tools.examples && ${TAR} --exclude '*.in' -cf - * | ${TAR} -C ${STAGEDIR}${DATADIR} -xof - )
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${TXT_DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-.  if ${PORT_OPTIONS:MBOOK}
-	${TAR} -xof ${DISTDIR}/${DIST_SUBDIR}/${BOOK_HTML} -C ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/${BOOK_PDF} ${STAGEDIR}${DOCSDIR}/svn-book.pdf
-.  endif
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
 	@${INSTALL_SCRIPT} ${FILESDIR}/svnserve.wrapper ${STAGEDIR}${PREFIX}/bin/svnserve

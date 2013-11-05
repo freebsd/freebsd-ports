@@ -5,12 +5,10 @@ PORTNAME=	subversion
 PORTVERSION=	1.7.13
 PORTREVISION?=	0
 CATEGORIES+=	devel
-MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:main/} \
-		${MASTER_SITE_LOCAL:S/$/:book/}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main
+MASTER_SITES=	${MASTER_SITE_APACHE}
 DIST_SUBDIR=	subversion17
-MASTER_SITE_SUBDIR=	subversion/:main \
-			lev/:book
+MASTER_SITE_SUBDIR=	subversion
+
 #·setting·PKGSUFFIX·not·possible·wo.·having·a·Mk/Uses·file·and·fixing·a·bunch·of·ports
 #PKGNAMESUFFIX=	17
 
@@ -81,10 +79,6 @@ STATIC_CONFIGURE_ON=		--enable-all-static
 
 # ===============================================================
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MBOOK} && !${PORT_OPTIONS:MDOCS}
-IGNORE=	SVN book requires OPTION DOCS set to ON
-.endif
 
 .if ${PORT_OPTIONS:MMOD_DONTDOTHAT} && !${PORT_OPTIONS:MMOD_DAV_SVN}
 IGNORE=	to build mod_dontdothat OPTION mod_dav_svn is required
