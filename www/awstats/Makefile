@@ -3,6 +3,7 @@
 
 PORTNAME=	awstats
 PORTVERSION=	7.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/AWStats/${PORTVERSION}
@@ -14,7 +15,10 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-Net-XWhois>=0:${PORTSDIR}/net/p5-Net-XWhois
 
-USES=		perl5
+USES=		perl5 shebangfix
+
+SHEBANG_FILES=	tools/*.pl wwwroot/cgi-bin/*.pl wwwroot/cgi-bin/plugins/*.pm
+
 NO_BUILD=	yes
 USE_PERL5=	run
 USE_DOS2UNIX=	tools/*.pl \
@@ -34,7 +38,6 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS IPV6
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MIPV6}
@@ -49,60 +52,60 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/wwwroot/cgi-bin/awstats.pl
 
 do-install:
-	@${MKDIR} ${PREFIX}/www/awstats
-	@${MKDIR} ${PREFIX}/www/awstats/cgi-bin
-	@${MKDIR} ${PREFIX}/www/awstats/cgi-bin/lang
-	@${MKDIR} ${PREFIX}/www/awstats/cgi-bin/lang/tooltips_f
-	@${MKDIR} ${PREFIX}/www/awstats/cgi-bin/lang/tooltips_m
-	@${MKDIR} ${PREFIX}/www/awstats/cgi-bin/lang/tooltips_w
-	@${MKDIR} ${PREFIX}/www/awstats/cgi-bin/lib
-	@${MKDIR} ${PREFIX}/www/awstats/cgi-bin/plugins
-	@${MKDIR} ${PREFIX}/www/awstats/cgi-bin/plugins/example
-	@${MKDIR} ${PREFIX}/www/awstats/classes
-	@${MKDIR} ${PREFIX}/www/awstats/css
-	@${MKDIR} ${PREFIX}/www/awstats/icons/browser
-	@${MKDIR} ${PREFIX}/www/awstats/icons/clock
-	@${MKDIR} ${PREFIX}/www/awstats/icons/cpu
-	@${MKDIR} ${PREFIX}/www/awstats/icons/flags
-	@${MKDIR} ${PREFIX}/www/awstats/icons/mime
-	@${MKDIR} ${PREFIX}/www/awstats/icons/os
-	@${MKDIR} ${PREFIX}/www/awstats/icons/other
-	@${MKDIR} ${PREFIX}/www/awstats/js
-	@${MKDIR} ${PREFIX}/www/awstats/tools
-	@${MKDIR} ${PREFIX}/www/awstats/tools/webmin
-	@${MKDIR} ${PREFIX}/www/awstats/tools/xslt
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/awstats_buildstaticpages.pl ${PREFIX}/www/awstats/tools
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/awstats_configure.pl ${PREFIX}/www/awstats/tools
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/awstats_exportlib.pl ${PREFIX}/www/awstats/tools
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/awstats_updateall.pl ${PREFIX}/www/awstats/tools
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/logresolvemerge.pl ${PREFIX}/www/awstats/tools
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/maillogconvert.pl ${PREFIX}/www/awstats/tools
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/urlaliasbuilder.pl ${PREFIX}/www/awstats/tools
-	${INSTALL_DATA} ${WRKSRC}/tools/xslt/* ${PREFIX}/www/awstats/tools/xslt
-	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awredir.pl ${PREFIX}/www/awstats/cgi-bin
-	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awstats.model.conf ${PREFIX}/www/awstats/cgi-bin
-	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awstats.pl ${PREFIX}/www/awstats/cgi-bin
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lang/tooltips_f/*.txt ${PREFIX}/www/awstats/cgi-bin/lang/tooltips_f
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lang/tooltips_m/*.txt ${PREFIX}/www/awstats/cgi-bin/lang/tooltips_m
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lang/tooltips_w/*.txt ${PREFIX}/www/awstats/cgi-bin/lang/tooltips_w
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lang/*.txt ${PREFIX}/www/awstats/cgi-bin/lang
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lib/* ${PREFIX}/www/awstats/cgi-bin/lib
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/*.pm ${PREFIX}/www/awstats/cgi-bin/plugins
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/example/* ${PREFIX}/www/awstats/cgi-bin/plugins/example
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/classes/awgraphapplet.jar ${PREFIX}/www/awstats/classes/awgraphapplet.jar
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/css/* ${PREFIX}/www/awstats/css
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/browser/* ${PREFIX}/www/awstats/icons/browser
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/clock/* ${PREFIX}/www/awstats/icons/clock
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/cpu/* ${PREFIX}/www/awstats/icons/cpu
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/flags/* ${PREFIX}/www/awstats/icons/flags
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/mime/* ${PREFIX}/www/awstats/icons/mime
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/os/* ${PREFIX}/www/awstats/icons/os
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/other/* ${PREFIX}/www/awstats/icons/other
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/js/* ${PREFIX}/www/awstats/js
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/awstats
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/awstats/cgi-bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/awstats/cgi-bin/lang
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/awstats/cgi-bin/lang/tooltips_f
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/awstats/cgi-bin/lang/tooltips_m
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/awstats/cgi-bin/lang/tooltips_w
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/awstats/cgi-bin/lib
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/awstats/cgi-bin/plugins
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/awstats/cgi-bin/plugins/example
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/awstats/classes
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/awstats/css
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/awstats/icons/browser
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/awstats/icons/clock
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/awstats/icons/cpu
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/awstats/icons/flags
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/awstats/icons/mime
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/awstats/icons/os
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/awstats/icons/other
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/awstats/js
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/awstats/tools
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/awstats/tools/webmin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/awstats/tools/xslt
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/awstats_buildstaticpages.pl ${STAGEDIR}${PREFIX}/www/awstats/tools
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/awstats_configure.pl ${STAGEDIR}${PREFIX}/www/awstats/tools
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/awstats_exportlib.pl ${STAGEDIR}${PREFIX}/www/awstats/tools
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/awstats_updateall.pl ${STAGEDIR}${PREFIX}/www/awstats/tools
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/logresolvemerge.pl ${STAGEDIR}${PREFIX}/www/awstats/tools
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/maillogconvert.pl ${STAGEDIR}${PREFIX}/www/awstats/tools
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/urlaliasbuilder.pl ${STAGEDIR}${PREFIX}/www/awstats/tools
+	${INSTALL_DATA} ${WRKSRC}/tools/xslt/* ${STAGEDIR}${PREFIX}/www/awstats/tools/xslt
+	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awredir.pl ${STAGEDIR}${PREFIX}/www/awstats/cgi-bin
+	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awstats.model.conf ${STAGEDIR}${PREFIX}/www/awstats/cgi-bin
+	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awstats.pl ${STAGEDIR}${PREFIX}/www/awstats/cgi-bin
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lang/tooltips_f/*.txt ${STAGEDIR}${PREFIX}/www/awstats/cgi-bin/lang/tooltips_f
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lang/tooltips_m/*.txt ${STAGEDIR}${PREFIX}/www/awstats/cgi-bin/lang/tooltips_m
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lang/tooltips_w/*.txt ${STAGEDIR}${PREFIX}/www/awstats/cgi-bin/lang/tooltips_w
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lang/*.txt ${STAGEDIR}${PREFIX}/www/awstats/cgi-bin/lang
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lib/* ${STAGEDIR}${PREFIX}/www/awstats/cgi-bin/lib
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/*.pm ${STAGEDIR}${PREFIX}/www/awstats/cgi-bin/plugins
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/example/* ${STAGEDIR}${PREFIX}/www/awstats/cgi-bin/plugins/example
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/classes/awgraphapplet.jar ${STAGEDIR}${PREFIX}/www/awstats/classes/awgraphapplet.jar
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/css/* ${STAGEDIR}${PREFIX}/www/awstats/css
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/browser/* ${STAGEDIR}${PREFIX}/www/awstats/icons/browser
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/clock/* ${STAGEDIR}${PREFIX}/www/awstats/icons/clock
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/cpu/* ${STAGEDIR}${PREFIX}/www/awstats/icons/cpu
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/flags/* ${STAGEDIR}${PREFIX}/www/awstats/icons/flags
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/mime/* ${STAGEDIR}${PREFIX}/www/awstats/icons/mime
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/os/* ${STAGEDIR}${PREFIX}/www/awstats/icons/os
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/other/* ${STAGEDIR}${PREFIX}/www/awstats/icons/other
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/js/* ${STAGEDIR}${PREFIX}/www/awstats/js
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}/images
-	${INSTALL_DATA} ${WRKSRC}/docs/images/* ${DOCSDIR}/images
-	${INSTALL_DATA} ${WRKSRC}/docs/*.* ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/images
+	${INSTALL_DATA} ${WRKSRC}/docs/images/* ${STAGEDIR}${DOCSDIR}/images
+	${INSTALL_DATA} ${WRKSRC}/docs/*.* ${STAGEDIR}${DOCSDIR}
 .endif
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "* Use ${PREFIX}/www/awstats/tools/awstats_configure.pl to setup your hosts."
@@ -110,10 +113,5 @@ do-install:
 	@${ECHO_CMD} "* Documentation has been installed in ${PREFIX}/share/doc/awstats"
 .endif
 	@${ECHO_CMD} ""
-
-.if !defined(BATCH)
-post-install:
-	@${CAT} ${PKGMESSAGE}
-.endif
 
 .include <bsd.port.post.mk>
