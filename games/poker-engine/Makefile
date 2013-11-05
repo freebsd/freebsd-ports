@@ -22,14 +22,10 @@ RUN_DEPENDS=	${LOCALBASE}/bin/rsync:${PORTSDIR}/net/rsync \
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pkgconfig gettext
+USES=		gmake pkgconfig gettext
 USE_PYTHON=	2.5-2.7
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-MAN8=	pokerconfigupgrade.8
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|{datadir}/pkgconfig|(prefix)/libdata/pkgconfig|g' \

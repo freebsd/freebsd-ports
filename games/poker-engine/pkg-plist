@@ -195,6 +195,7 @@ share/locale/sv/LC_MESSAGES/poker-engine.mo
 %%DATADIR%%/conf/poker.omaha8.xml
 %%DATADIR%%/conf/poker.payouts.xml
 %%DATADIR%%/conf/poker.razz.xml
+man/man8/pokerconfigupgrade.8.gz
 @dirrmtry share/locale/fr_FX/LC_MESSAGES
 @dirrmtry share/locale/fr_FX
 @dirrmtry share/locale/fr_CA/LC_MESSAGES
