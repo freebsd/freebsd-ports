@@ -17,7 +17,7 @@ EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/irc/eggdrop:extract
 BUILD_DEPENDS=	eggdrop:${PORTSDIR}/irc/eggdrop
 RUN_DEPENDS=	eggdrop:${PORTSDIR}/irc/eggdrop
 
-USES=		tcl:84,85
+USES=		tcl:85+
 
 WRKSRC=		${WRKDIR}/eggdrop
 
