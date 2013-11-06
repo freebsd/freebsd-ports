@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	subversion/
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_KDE4=	# Used below if KWallet support is enabled
-USES=		pkgconfig
+USES+=		pkgconfig
 
 LICENSE=	AL2
 
