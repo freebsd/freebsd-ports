@@ -7,7 +7,7 @@ PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF/amanda/amanda%20-%20stable/${PORTVERSION}
-PKGNAMESUFFIX?=	-server
+PKGNAMESUFFIX?=	32-server
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT?=	The Advanced Maryland Automatic Network Disk Archiver (server)
@@ -18,7 +18,6 @@ BUILD_DEPENDS=	perl-amanda:${PORTSDIR}/misc/amanda-perl-wrapper
 WRKSRC=		${WRKDIR}/amanda-${PORTVERSION}
 SLAVEDIRS=	misc/amanda32-client
 
-NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
 USES=		gmake perl5 pkgconfig
 USE_GNOME=	glib20
@@ -98,7 +97,7 @@ pre-fetch:
 	@${ECHO} "    AMANDA_DATES=path to client amandates file"
 	@${ECHO} ""
 
-CONFLICTS=	amanda-server-2.5.* amanda-server-2.6.* amanda-server-3.3.*
+CONFLICTS=	amanda-server-2.* amanda-server-3.3.* amanda2[56]-server-*
 
 BUILD_DEPENDS+=	${LOCALBASE}/lib/amanda/libamandad-${PORTVERSION}.so:${PORTSDIR}/misc/amanda32-client
 RUN_DEPENDS+=	${LOCALBASE}/lib/amanda/libamandad-${PORTVERSION}.so:${PORTSDIR}/misc/amanda32-client
@@ -173,7 +172,7 @@ pre-fetch:
 	@${ECHO} "    AMANDA_DATES=path to client amandates file"
 	@${ECHO} ""
 
-CONFLICTS=	amanda-client-2.5.* amanda-client-2.6.* amanda-client-3.3.*
+CONFLICTS=	amanda-client-2.* amanda-client-3.3.* amanda2[56]-client-*
 CONFIGURE_ARGS+=--without-server --with-amandates=${AMANDA_DATES}
 .if defined(AMANDA_NO_SNAPSHOT_DUMP)
 CFLAGS=		-DFreeBSD_NO_SNAPSHOT_DUMP=t

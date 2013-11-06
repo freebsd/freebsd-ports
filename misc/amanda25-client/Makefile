@@ -1,7 +1,7 @@
 # Created by: gpalmer
 # $FreeBSD$
 
-PKGNAMESUFFIX=	-client
+PKGNAMESUFFIX=	25-client
 PORTREVISION=	4
 
 COMMENT=	The Advanced Maryland Automatic Network Disk Archiver (client)
