@@ -1,0 +1,4 @@
+bin/arclog
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/arclog/.packlist
+man/man1/arclog.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/arclog

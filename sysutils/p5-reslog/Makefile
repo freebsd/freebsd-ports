@@ -19,11 +19,5 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
-MAN1=		reslog.1
 
-PLIST_FILES=	bin/reslog \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/reslog/.packlist
-PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/reslog
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

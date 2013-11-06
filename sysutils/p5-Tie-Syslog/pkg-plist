@@ -1,6 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Syslog/.packlist
+%%PERL5_MAN3%%/Tie::Syslog.3.gz
 %%SITE_PERL%%/Tie/Syslog.pm
 %%SITE_PERL%%/Tie/Syslog.pod
-@dirrmtry %%SITE_PERL%%/Tie
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Syslog/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Syslog
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
+@dirrmtry %%SITE_PERL%%/Tie

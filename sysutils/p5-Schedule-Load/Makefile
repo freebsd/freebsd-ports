@@ -23,23 +23,11 @@ MAKE_JOBS_UNSAFE=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		rschedule.1 slchoosed.1 slpolice.1 slreportd.1 slrsh.1 \
-		slchoosed_watchd.1
-MAN3=		Schedule::Load.3 Schedule::Load::Chooser.3 \
-		Schedule::Load::FakeReporter.3 Schedule::Load::Hold.3 \
-		Schedule::Load::Hosts.3 Schedule::Load::Hosts::Host.3 \
-		Schedule::Load::Hosts::Proc.3 Schedule::Load::Reporter.3 \
-		Schedule::Load::ResourceReq.3 Schedule::Load::Safe.3 \
-		Schedule::Load::Schedule.3 \
-		Schedule::Load::Reporter::Disk.3 Schedule::Load::Reporter::Filesys.3 \
-		Schedule::Load::Reporter::Network.3
-
-NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
-	@${MKDIR} ${EXAMPLESDIR}/init.d
-	${INSTALL_SCRIPT} ${WRKSRC}/init.d/* ${EXAMPLESDIR}/init.d
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/init.d
+	${INSTALL_SCRIPT} ${WRKSRC}/init.d/* ${STAGEDIR}${EXAMPLESDIR}/init.d
 .endif
 
 .include <bsd.port.mk>

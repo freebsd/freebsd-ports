@@ -1,20 +1,22 @@
 bin/gamin-monitor
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/Gamin.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/Gamin.bs
+%%PERL5_MAN3%%/Sys::Gamin.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Sys/Gamin.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/new.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/pending.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/next_event.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/monitor.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/check_monitored.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/cancel.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/monitored.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/suspended.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/suspend.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/resume.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/which.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/Gamin.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/Gamin.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/autosplit.ix
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/cancel.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/check_monitored.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/monitor.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/monitored.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/new.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/next_event.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/pending.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/resume.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/suspend.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/suspended.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin/which.al
+man/man1/gamin-monitor.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Gamin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sys

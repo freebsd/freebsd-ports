@@ -13,7 +13,4 @@ COMMENT=	Perl5 interface to the UNIX syslog(3) calls
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Unix::Syslog.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

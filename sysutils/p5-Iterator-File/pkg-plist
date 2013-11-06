@@ -1,12 +1,20 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Iterator/File/.packlist
+%%PERL5_MAN3%%/Iterator::File.3.gz
+%%PERL5_MAN3%%/Iterator::File::Source::FlatFile.3.gz
+%%PERL5_MAN3%%/Iterator::File::Source::Interface.3.gz
+%%PERL5_MAN3%%/Iterator::File::State::IPCShareable.3.gz
+%%PERL5_MAN3%%/Iterator::File::State::Interface.3.gz
+%%PERL5_MAN3%%/Iterator::File::State::TempFile.3.gz
+%%PERL5_MAN3%%/Iterator::File::Status.3.gz
+%%PERL5_MAN3%%/Iterator::File::Utility.3.gz
 %%SITE_PERL%%/Iterator/File.pm
-%%SITE_PERL%%/Iterator/File/Status.pm
-%%SITE_PERL%%/Iterator/File/Utility.pm
 %%SITE_PERL%%/Iterator/File/Source/FlatFile.pm
 %%SITE_PERL%%/Iterator/File/Source/Interface.pm
+%%SITE_PERL%%/Iterator/File/State/IPCShareable.pm
 %%SITE_PERL%%/Iterator/File/State/Interface.pm
 %%SITE_PERL%%/Iterator/File/State/TempFile.pm
-%%SITE_PERL%%/Iterator/File/State/IPCShareable.pm
+%%SITE_PERL%%/Iterator/File/Status.pm
+%%SITE_PERL%%/Iterator/File/Utility.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Iterator/File/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Iterator/File
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Iterator
 @dirrmtry %%SITE_PERL%%/Iterator/File/State

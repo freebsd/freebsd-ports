@@ -14,7 +14,4 @@ COMMENT=	Perl equivalent of df(2)
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Filesys::DiskFree.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

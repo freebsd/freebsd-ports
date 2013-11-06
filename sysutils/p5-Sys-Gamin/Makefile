@@ -14,10 +14,7 @@ COMMENT=	Perl interface to Gamin (File Access Monitor implementation)
 USES=		perl5
 USE_PERL5=	configure
 USE_FAM=	yes
-MAN1=	gamin-monitor.1
-MAN3=	Sys::Gamin.3
 
-NO_STAGE=	yes
 pre-configure:
 	# Pass in include in LOCALBASE
 	${PERL} -pi -e 'm/LIBS =>/ && print "  INC => \"-I${LOCALBASE}/include\",\n"' ${WRKSRC}/Makefile.PL

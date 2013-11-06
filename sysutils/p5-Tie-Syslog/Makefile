@@ -13,7 +13,4 @@ COMMENT=	Tie a filehandle to Syslog
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Tie::Syslog.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,6 +1,7 @@
 bin/one-liner
+%%PERL5_MAN3%%/Sysadm::Install.3.gz
 %%SITE_PERL%%/Sysadm/Install.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sysadm/Install/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sysadm/Install
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sysadm/Install
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sysadm
 @dirrmtry %%SITE_PERL%%/Sysadm

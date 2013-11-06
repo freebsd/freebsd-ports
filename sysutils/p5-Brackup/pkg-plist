@@ -1,4 +1,27 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Brackup/.packlist
+bin/brackup
+bin/brackup-mount
+bin/brackup-restore
+bin/brackup-target
+bin/brackup-verify-inventory
+%%PERL5_MAN3%%/Brackup.3.gz
+%%PERL5_MAN3%%/Brackup::Chunker::MP3.3.gz
+%%PERL5_MAN3%%/Brackup::Config.3.gz
+%%PERL5_MAN3%%/Brackup::Dict::Null.3.gz
+%%PERL5_MAN3%%/Brackup::Dict::SQLite.3.gz
+%%PERL5_MAN3%%/Brackup::Dict::SQLite2.3.gz
+%%PERL5_MAN3%%/Brackup::DigestCache.3.gz
+%%PERL5_MAN3%%/Brackup::InventoryDatabase.3.gz
+%%PERL5_MAN3%%/Brackup::Manual::Overview.3.gz
+%%PERL5_MAN3%%/Brackup::Mount.3.gz
+%%PERL5_MAN3%%/Brackup::Root.3.gz
+%%PERL5_MAN3%%/Brackup::Target.3.gz
+%%PERL5_MAN3%%/Brackup::Target::Amazon.3.gz
+%%PERL5_MAN3%%/Brackup::Target::CloudFiles.3.gz
+%%PERL5_MAN3%%/Brackup::Target::Filesystem.3.gz
+%%PERL5_MAN3%%/Brackup::Target::Ftp.3.gz
+%%PERL5_MAN3%%/Brackup::Target::GoogleAppEngine.3.gz
+%%PERL5_MAN3%%/Brackup::Target::Riak.3.gz
+%%PERL5_MAN3%%/Brackup::Target::Sftp.3.gz
 %%SITE_PERL%%/Brackup.pm
 %%SITE_PERL%%/Brackup/Backup.pm
 %%SITE_PERL%%/Brackup/BackupStats.pm
@@ -10,10 +33,10 @@
 %%SITE_PERL%%/Brackup/ConfigSection.pm
 %%SITE_PERL%%/Brackup/Decrypt.pm
 %%SITE_PERL%%/Brackup/DecryptedFile.pm
-%%SITE_PERL%%/Brackup/Dict/SQLite.pm
-%%SITE_PERL%%/Brackup/Dict/SQLite2.pm
 %%SITE_PERL%%/Brackup/Dict/DBM.pm
 %%SITE_PERL%%/Brackup/Dict/Null.pm
+%%SITE_PERL%%/Brackup/Dict/SQLite.pm
+%%SITE_PERL%%/Brackup/Dict/SQLite2.pm
 %%SITE_PERL%%/Brackup/DigestCache.pm
 %%SITE_PERL%%/Brackup/File.pm
 %%SITE_PERL%%/Brackup/GPGProcManager.pm
@@ -38,14 +61,15 @@
 %%SITE_PERL%%/Brackup/TargetBackupStatInfo.pm
 %%SITE_PERL%%/Brackup/Test.pm
 %%SITE_PERL%%/Brackup/Util.pm
-bin/brackup
-bin/brackup-mount
-bin/brackup-restore
-bin/brackup-target
-bin/brackup-verify-inventory
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Brackup/.packlist
+man/man1/brackup-mount.1.gz
+man/man1/brackup-restore.1.gz
+man/man1/brackup-target.1.gz
+man/man1/brackup-verify-inventory.1.gz
+man/man1/brackup.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Brackup
 @dirrmtry %%SITE_PERL%%/Brackup/Target
 @dirrmtry %%SITE_PERL%%/Brackup/Manual
 @dirrmtry %%SITE_PERL%%/Brackup/Dict
 @dirrmtry %%SITE_PERL%%/Brackup/Chunker
 @dirrmtry %%SITE_PERL%%/Brackup
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Brackup
