@@ -3,24 +3,23 @@
 PORTNAME=	yaws
 PORTVERSION=	1.98
 CATEGORIES=	www devel
-MASTER_SITES=	GH
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A webserver for dynamic content written in Erlang
+COMMENT=	Web server for dynamic content written in Erlang
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
+USES=		gmake
+USE_AUTOTOOLS=	autoconf
 USE_GITHUB=	yes
+
 GH_ACCOUNT=	klacke
 GH_PROJECT=	yaws
 GH_COMMIT=	83bdc80
 GH_TAGNAME=	yaws-${PORTVERSION}
-
-USE_AUTOTOOLS+=	autoconf
-USE_GMAKE=	yes
 
 MAN1=		yaws.1
 MAN5=		yaws.conf.5 yaws_api.5 yaws_soap_lib.5
