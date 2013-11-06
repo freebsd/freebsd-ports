@@ -1,5 +1,7 @@
 @comment $FreeBSD$
 bin/port
+man/man1/port.1.gz
+man/man5/porttools.5.gz
 %%DATADIR%%/cmd_commit
 %%DATADIR%%/cmd_create
 %%DATADIR%%/cmd_diff

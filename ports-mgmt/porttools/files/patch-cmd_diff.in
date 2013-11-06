@@ -1,5 +1,5 @@
---- cmd_diff.in.orig	2009-09-10 04:59:59.000000000 +0900
-+++ cmd_diff.in	2012-12-27 20:13:30.000000000 +0900
+--- cmd_diff.in.orig	2009-09-09 21:59:59.000000000 +0200
++++ cmd_diff.in	2013-10-22 10:37:13.000000000 +0200
 @@ -20,7 +20,7 @@
  Usage: port diff [-h] [-d <diff mode>]
  	-h	- Display this usage summary
@@ -9,3 +9,12 @@
  		<dir> - against Ports tree in <dir>
  		<pattern> - against original port in <pwd><pattern>
  EOF
+@@ -65,7 +65,7 @@
+ 	[ -n "${DIFF_VIEWER}" ] || DIFF_VIEWER="more"
+ fi
+ echo "===> Viewing diff with ${DIFF_VIEWER}"
+-${DIFF_VIEWER} ${PATCH}
++${DIFF_VIEWER} < ${PATCH}
+ 
+ # Cleanup
+ rm -rf ${TEMPROOT}
