@@ -11,5 +11,4 @@ unhide detects hidden processes through:
 unhide-tcp identifies TCP/UDP ports that are listening but not listed in
 /bin/netstat by doing brute forcing of all TCP/UDP ports availables.
 
-
 WWW: http://www.unhide-forensics.info/

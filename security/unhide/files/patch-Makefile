@@ -1,8 +1,7 @@
 --- /dev/null	2013-01-06 20:26:43.000000000 +0200
 +++ Makefile	2013-01-06 20:26:46.000000000 +0200
-@@ -0,0 +1,23 @@
-+DESTDIR		:= ${PREFIX}
-+MANDIR		:= ${DESTDIR}/man
+@@ -0,0 +1,20 @@
++MANDIR		:= ${PREFIX}/man
 +INSTALL_PROGRAM	:= /usr/bin/install -s -m 0700
 +INSTALL_MAN	:= /usr/bin/install -m 0444
 +GZIP_CMD	:= /usr/bin/gzip -9
@@ -11,16 +10,14 @@
 +all: unhide unhide-tcp
 +
 +unhide: unhide-posix.c
-+	gcc -Wall -O2 --static unhide-posix.c -o unhide
++	${CC} -Wall -O2 --static unhide-posix.c -o unhide
 +
 +unhide-tcp: unhide-tcp.c unhide-tcp-fast.c unhide-output.c
-+	gcc -Wall -O2 --static unhide-tcp.c unhide-tcp-fast.c unhide-output.c -o unhide-tcp
++	${CC} -Wall -O2 --static unhide-tcp.c unhide-tcp-fast.c unhide-output.c -o unhide-tcp
 +
 +install: all
-+	${MKDIR_CMD} ${DESTDIR}/sbin ${MANDIR}/man8
-+	${INSTALL_PROGRAM} unhide ${DESTDIR}/sbin/unhide
-+	${INSTALL_PROGRAM} unhide-tcp ${DESTDIR}/sbin/unhide-tcp
-+	${INSTALL_MAN} man/unhide.8 ${MANDIR}/man8 && \
-+		${GZIP_CMD} ${MANDIR}/man8/unhide.8
-+	${INSTALL_MAN} man/unhide-tcp.8 ${MANDIR}/man8 && \
-+		${GZIP_CMD} ${MANDIR}/man8/unhide-tcp.8
++	${MKDIR_CMD} ${DESTDIR}${PREFIX}/sbin ${DESTDIR}${MANDIR}/man8
++	${INSTALL_PROGRAM} unhide ${DESTDIR}${PREFIX}/sbin/unhide
++	${INSTALL_PROGRAM} unhide-tcp ${DESTDIR}${PREFIX}/sbin/unhide-tcp
++	${INSTALL_MAN} man/unhide.8 ${DESTDIR}${MANDIR}/man8
++	${INSTALL_MAN} man/unhide-tcp.8 ${DESTDIR}${MANDIR}/man8
