@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qpdf
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}
@@ -19,9 +19,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		gmake
 
-MAN1=		fix-qdf.1 qpdf.1 zlib-flate.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
 		-e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
