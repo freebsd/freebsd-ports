@@ -10,9 +10,11 @@ cat >> ${MAKE_CONF} << EOF
 # Do not touch these lines
 .if !empty(.CURDIR:M${PORTS_DIR}*) && exists(${PKG_PREFIX}/libexec/portconf)
 _PORTCONF!=${PKG_PREFIX}/libexec/portconf
-.for i in \${_PORTCONF:S/|/ /g}
-\${i:S/%/ /g}
+.if \${_PORTCONF} != "|"
+.for i in \${_PORTCONF:S/^|//:S/|/ /g}
+\${i:C/^([^=]*)=.*/\1/}=\${i:C/^[^=]*=//:S/%/ /g}
 .endfor
+.endif
 .endif
 # End portconf settings
 EOF
