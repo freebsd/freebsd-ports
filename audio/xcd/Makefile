@@ -12,6 +12,8 @@ COMMENT=	Tcl/Tk CD player
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+BROKEN=		Does not build
+
 USES+=		tk
 NO_STAGE=	yes
 
