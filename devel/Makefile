@@ -3737,6 +3737,7 @@
     SUBDIR += py-sdl2
     SUBDIR += py-serpent
     SUBDIR += py-setproctitle
+    SUBDIR += py-setuptools
     SUBDIR += py-setuptools-git
     SUBDIR += py-setuptools_darcs
     SUBDIR += py-setuptools_hg
@@ -3753,6 +3754,7 @@
     SUBDIR += py-sqlcc
     SUBDIR += py-statgrab
     SUBDIR += py-stevedore
+    SUBDIR += py-stsci.distutils
     SUBDIR += py-subversion
     SUBDIR += py-subvertpy
     SUBDIR += py-sysctl
