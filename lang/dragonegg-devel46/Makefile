@@ -12,27 +12,28 @@ DISTNAME=	dragonegg-${PORTVERSION}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	GCC plugin to use the LLVM backend
 
-CONFLICTS+=	dragonegg46-3*
+BUILD_DEPENDS+=	llvm-config${LLVM_SUFFIX}:${PORTSDIR}/devel/llvm-devel
+RUN_DEPENDS+=	llvm-config${LLVM_SUFFIX}:${PORTSDIR}/devel/llvm-devel
 
-# XXX: not entierly sure if llvm-devel is a depend
-BUILD_DEPENDS+=	llvm-devel>=${PORTVERSION}:${PORTSDIR}/devel/llvm-devel
-RUN_DEPENDS+=	llvm-devel>=${PORTVERSION}:${PORTSDIR}/devel/llvm-devel
+LLVM_SUFFIX=	-devel
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		compiler:features
+USES=		compiler:features gmake
 USE_BZIP2=	yes
 USE_GCC=	4.6
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-DRAGONEGG_RELEASE=	${PORTVERSION:C/\.r[0-9]*//}
+DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
+UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
+
+DRAGONEGG_RELEASE=	${PORTVERSION:C/\.r[0-9]*//}svn
 DRAGONEGG_SO=		dragonegg-${DRAGONEGG_RELEASE}.so
 DRAGONEGG_PATH=		${GCC_LIBDIR}/${DRAGONEGG_SO}
 GCC_LIBDIR=		lib/${CC}
 
 ALL_TARGET=
-MAKE_ARGS=	GCC=${LOCALBASE}/bin/${CC} VERBOSE=1
+MAKE_ARGS=	GCC=${LOCALBASE}/bin/${CC} LLVM_CONFIG=llvm-config${LLVM_SUFFIX}
 
 .include "${.CURDIR}/../../devel/llvm-devel/Makefile.svn_rev"
 
@@ -40,9 +41,7 @@ PLIST_FILES=		${GCC_LIBDIR}/${DRAGONEGG_SO}
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=		README
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -72,12 +71,10 @@ post-patch:
 	    ${WRKSRC}/README
 
 do-install:
-	mkdir -p ${STAGEDIR}${LOCALBASE}/${GCC_LIBDIR}
+	@${MKDIR} ${STAGEDIR}${LOCALBASE}/${GCC_LIBDIR}
 	${INSTALL_LIB} ${WRKSRC}/dragonegg.so \
 	    ${STAGEDIR}${LOCALBASE}/${GCC_LIBDIR}/${DRAGONEGG_SO}
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.post.mk>
