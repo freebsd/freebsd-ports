@@ -1,5 +1,5 @@
 --- ./Makefile.orig	2009-09-09 21:59:59.000000000 +0200
-+++ ./Makefile	2011-11-23 23:11:14.000000000 +0100
++++ ./Makefile	2013-10-22 10:41:23.000000000 +0200
 @@ -9,6 +9,15 @@
  PORTNAME?=	porttools
  PORTVERSION?=	0.99
@@ -16,7 +16,7 @@
  
  PROGRAMS=	port
  SCRIPTS=	cmd_commit cmd_create cmd_diff cmd_fetch cmd_getpr cmd_help \
-@@ -31,8 +40,8 @@
+@@ -31,23 +40,23 @@
  
  .SUFFIXES: .in
  
@@ -27,3 +27,27 @@
  		inc_header.in ${.IMPSRC} > ${.TARGET}
  	chmod a+x ${.TARGET}
  
+ install: ${PROGRAMS} ${SCRIPTS}
+-	${BSD_INSTALL_SCRIPT} ${PROGRAMS} ${PREFIX}/bin
+-	mkdir -p ${DATADIR}
+-	${BSD_INSTALL_SCRIPT} ${SCRIPTS} ${DATADIR}
+-	mkdir -p ${MANPREFIX}/man/man1
+-	${BSD_INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1
+-	mkdir -p ${MANPREFIX}/man/man5
+-	${BSD_INSTALL_MAN} ${MAN5} ${MANPREFIX}/man/man5
++	${BSD_INSTALL_SCRIPT} ${PROGRAMS} ${DESTDIR}${PREFIX}/bin
++	mkdir -p ${DESTDIR}${DATADIR}
++	${BSD_INSTALL_SCRIPT} ${SCRIPTS} ${DESTDIR}${DATADIR}
++	mkdir -p ${DESTDIR}${MANPREFIX}/man/man1
++	${BSD_INSTALL_MAN} ${MAN1} ${DESTDIR}${MANPREFIX}/man/man1
++	mkdir -p ${DESTDIR}${MANPREFIX}/man/man5
++	${BSD_INSTALL_MAN} ${MAN5} ${DESTDIR}${MANPREFIX}/man/man5
+ 
+ install-docs:
+-	mkdir -p ${DOCSDIR}
+-	${BSD_INSTALL_DATA} ${DOCS} ${DOCSDIR}
++	mkdir -p ${DESTDIR}${DOCSDIR}
++	${BSD_INSTALL_DATA} ${DOCS} ${DESTDIR}${DOCSDIR}
+ 
+ clean:
+ 	rm -rf ${PROGRAMS} ${SCRIPTS} ${DISTNAME}*
