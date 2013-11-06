@@ -29,7 +29,8 @@ STRIP=	#none
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--enable-max-performance
+CONFIGURE_ARGS+=	--enable-max-performance \
+			--disable-clpbn-bp
 USES=	gmake
 USE_GCC=	any
 
