@@ -20,11 +20,5 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
-MAN1=		arclog.1
 
-PLIST_FILES=	bin/arclog \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/arclog/.packlist
-PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/arclog
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

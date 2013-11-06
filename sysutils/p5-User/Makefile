@@ -13,7 +13,4 @@ COMMENT=	User - API for locating user information regardless of OS
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		User.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/File::DirCompare.3.gz
 %%SITE_PERL%%/File/DirCompare.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/DirCompare/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/DirCompare
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/DirCompare
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
 @dirrmtry %%SITE_PERL%%/File

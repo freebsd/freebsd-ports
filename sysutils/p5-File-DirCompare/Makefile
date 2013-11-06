@@ -13,7 +13,4 @@ COMMENT=	Perl module to compare two directories using callbacks
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		File::DirCompare.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

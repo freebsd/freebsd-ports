@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/DiskFree/.packlist
+%%PERL5_MAN3%%/Filesys::DiskFree.3.gz
 %%SITE_PERL%%/Filesys/DiskFree.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/DiskFree
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys
-@dirrm %%SITE_PERL%%/Filesys
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/DiskFree/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/DiskFree
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys
+@dirrmtry %%SITE_PERL%%/Filesys
