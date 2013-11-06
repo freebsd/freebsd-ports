@@ -6,28 +6,36 @@ PORTVERSION=	1.1
 CATEGORIES=	math tcl
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Multiple precision math for Tcl
+
+LICENSE=	BSD
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
-USE_TCL=	84
-USE_TCL_BUILD=	84
+USES+=		gmake tcl
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
-USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--with-tcl=${TCL_LIBDIR}
+CONFIGURE_ENV+=	TCL_INC_DIR=${TCL_INCLUDEDIR} \
+		TCL_LIB_DIR=${TCL_LIBDIR}
 
 PLIST_DIRS=	lib/Mpexpr10
-PLIST_FILES=	lib/libMpexpr10.so \
-		lib/Mpexpr10/pkgIndex.tcl
-MANN=		mpexpr.n
+PLIST_FILES=	lib/Mpexpr10/libMpexpr10.so \
+		lib/Mpexpr10/pkgIndex.tcl \
+		man/mann/mpexpr.n.gz
 
-NO_STAGE=	yes
+post-patch:
+	${REINPLACE_CMD} -e 's|\.\.||' ${WRKSRC}/pkgIndex.tcl.in
+	${REINPLACE_CMD} -e '/set VERBOSE/s|0|1|' ${WRKSRC}/../tests/defs
+
 do-install:
-	${MKDIR} ${PREFIX}/lib/Mpexpr10
-	${INSTALL_PROGRAM} ${WRKSRC}/libMpexpr10.so ${PREFIX}/lib/
-	${INSTALL_DATA} ${WRKSRC}/pkgIndex.tcl ${PREFIX}/lib/Mpexpr10/
-	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/mpexpr.man ${PREFIX}/man/mann/mpexpr.n
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/Mpexpr10
+	${INSTALL_PROGRAM} ${WRKSRC}/libMpexpr10.so ${STAGEDIR}${PREFIX}/lib/Mpexpr10
+	${INSTALL_DATA} ${WRKSRC}/pkgIndex.tcl ${STAGEDIR}${PREFIX}/lib/Mpexpr10
+	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/mpexpr.man ${STAGEDIR}${PREFIX}/man/mann/mpexpr.n
+
+regression-test: build
+	cd ${WRKSRC} && ${GMAKE} test
 
 .include <bsd.port.mk>

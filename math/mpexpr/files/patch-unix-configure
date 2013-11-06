@@ -1,5 +1,5 @@
---- unix/configure.orig	Thu Mar 15 03:26:26 2007
-+++ unix/configure	Thu Mar 15 03:25:16 2007
+--- unix/configure.orig	2013-11-06 15:39:52.000000000 +0100
++++ unix/configure	2013-11-06 15:39:52.000000000 +0100
 @@ -23,6 +23,8 @@
  # Initialize some variables set by options.
  # The variables have the same names as the options, with
@@ -9,25 +9,28 @@
  build=NONE
  cache_file=./config.cache
  exec_prefix=NONE
-@@ -735,8 +737,8 @@
+@@ -733,24 +735,6 @@
+ fi
  
- # find include/tcl.h
- for f in $with_tclpath $prefix_locations ; do
+ 
+-# find include/tcl.h
+-for f in $with_tclpath $prefix_locations ; do
 -  if test -r "$f/include/tcl.h"; then
 -    TCL_INC_DIR=$f/include
-+  if test -r "$f/include/tcl8.4/tcl.h"; then
-+    TCL_INC_DIR=$f/include/tcl8.4
-     echo "$ac_t""setting TCL_INC_DIR to $TCL_INC_DIR" 1>&6
-     break
-   fi
-@@ -744,8 +746,8 @@
-  
- # find lib/tclConfig.sh
- for f in $with_tclpath $exec_prefix_locations ; do
+-    echo "$ac_t""setting TCL_INC_DIR to $TCL_INC_DIR" 1>&6
+-    break
+-  fi
+-done
+- 
+-# find lib/tclConfig.sh
+-for f in $with_tclpath $exec_prefix_locations ; do
 -  if test -r "$f/lib/tclConfig.sh"; then
 -    TCL_LIB_DIR=$f/lib
-+  if test -r "$f/lib/tcl8.4/tclConfig.sh"; then
-+    TCL_LIB_DIR=$f/lib/tcl8.4
-     echo "$ac_t""setting TCL_LIB_DIR to $TCL_LIB_DIR" 1>&6
-     break
-   fi
+-    echo "$ac_t""setting TCL_LIB_DIR to $TCL_LIB_DIR" 1>&6
+-    break
+-  fi
+-done
+- 
+ if test -z "$TCL_INC_DIR" ; then
+   { echo "configure: error: could not find include/tcl.h in $prefix_locations" 1>&2; exit 1; }
+ fi
