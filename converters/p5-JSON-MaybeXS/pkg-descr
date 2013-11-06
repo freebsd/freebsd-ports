@@ -1,0 +1,8 @@
+JSON::MaybeXS tries to load Cpanel::JSON::XS, and if that fails instead tries to
+load JSON::PP. If neither is available, an exception will be thrown.
+
+It then exports the encode_json and decode_json functions from the loaded
+module, along with a JSON constant that returns the class name for calling new
+on.
+
+WWW: http://search.cpan.org/dist/JSON-MaybeXS/

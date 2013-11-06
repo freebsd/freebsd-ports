@@ -88,6 +88,7 @@
     SUBDIR += p5-JSON
     SUBDIR += p5-JSON-Any
     SUBDIR += p5-JSON-DWIW
+    SUBDIR += p5-JSON-MaybeXS
     SUBDIR += p5-JSON-PP
     SUBDIR += p5-JSON-XS
     SUBDIR += p5-JSON-XS-VersionOneAndTwo
