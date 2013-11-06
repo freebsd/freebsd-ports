@@ -75,7 +75,7 @@ include/syslog-ng/utils.h
 include/syslog-ng/value-pairs.h
 lib/libsyslog-ng.la
 lib/libsyslog-ng.so
-lib/libsyslog-ng-3.3.9.so
+lib/libsyslog-ng-3.3.11.so
 libdata/pkgconfig/syslog-ng.pc
 lib/syslog-ng/libaffile.la
 lib/syslog-ng/libaffile.so
