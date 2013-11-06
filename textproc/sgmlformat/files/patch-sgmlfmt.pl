@@ -1,5 +1,14 @@
---- sgmlfmt/sgmlfmt.pl.orig	Tue Sep 15 21:05:47 1998
-+++ sgmlfmt/sgmlfmt.pl	Tue Sep  4 15:27:32 2001
+--- sgmlfmt/sgmlfmt.pl.orig	1998-09-15 23:05:47.000000000 +0200
++++ sgmlfmt/sgmlfmt.pl	2013-10-22 12:52:49.000000000 +0200
+@@ -32,7 +32,7 @@
+ # project.  
+ 
+ 
+-require 'newgetopt.pl';
++use Getopt::Long;
+ 
+ #
+ # Where to find DTDs and related files
 @@ -151,19 +151,15 @@
      open (outfile, ">$fileroot.trf");
      &sgmlparse(infile, "roff");
@@ -24,3 +33,12 @@
      unlink("${fileroot}.trf");
  }
  
+@@ -655,7 +651,7 @@
+ 
+ sub main {
+     # Check arguments
+-    if (!&NGetOpt('d=s', 'f=s', 'links', 'i:s@', 'hdr=s', 'ftr=s', 'e=s')) {
++    if (!GetOptions('d=s', 'f=s', 'links', 'i:s@', 'hdr=s', 'ftr=s', 'e=s')) {
+ 	&usage;
+ 	exit 1;
+     }
