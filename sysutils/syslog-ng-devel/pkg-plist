@@ -14,45 +14,28 @@ include/syslog-ng/alarms.h
 include/syslog-ng/apphook.h
 include/syslog-ng/atomic.h
 include/syslog-ng/block-ref-parser.h
-include/syslog-ng/cfg-args.h
 include/syslog-ng/cfg-grammar.h
-include/syslog-ng/cfg-lexer-subst.h
 include/syslog-ng/cfg-lexer.h
 include/syslog-ng/cfg-parser.h
-include/syslog-ng/cfg-tree.h
 include/syslog-ng/cfg.h
 include/syslog-ng/children.h
+include/syslog-ng/cfg-args.h
+include/syslog-ng/cfg-lexer-subst.h
 include/syslog-ng/compat.h
 include/syslog-ng/control.h
 include/syslog-ng/crypto.h
 include/syslog-ng/dnscache.h
 include/syslog-ng/driver.h
-include/syslog-ng/file-perms.h
-include/syslog-ng/filter-expr-parser.h
-include/syslog-ng/filter.h
 include/syslog-ng/gprocess.h
 include/syslog-ng/gsockaddr.h
 include/syslog-ng/gsocket.h
 include/syslog-ng/logmatcher.h
 include/syslog-ng/logmpx.h
 include/syslog-ng/logmsg.h
-include/syslog-ng/logparser.h
 include/syslog-ng/logpipe.h
-include/syslog-ng/logproto-buffered-server.h
-include/syslog-ng/logproto-builtins.h
-include/syslog-ng/logproto-client.h
-include/syslog-ng/logproto-dgram-server.h
-include/syslog-ng/logproto-framed-client.h
-include/syslog-ng/logproto-framed-server.h
-include/syslog-ng/logproto-record-server.h
-include/syslog-ng/logproto-server.h
-include/syslog-ng/logproto-text-client.h
-include/syslog-ng/logproto-text-server.h
-include/syslog-ng/logproto.h
 include/syslog-ng/logqueue-fifo.h
 include/syslog-ng/logqueue.h
 include/syslog-ng/logreader.h
-include/syslog-ng/logrewrite.h
 include/syslog-ng/logsource.h
 include/syslog-ng/logstamp.h
 include/syslog-ng/logtransport.h
@@ -64,11 +47,9 @@ include/syslog-ng/misc.h
 include/syslog-ng/ml-batched-timer.h
 include/syslog-ng/msg-format.h
 include/syslog-ng/nvtable.h
-include/syslog-ng/parser-expr-parser.h
 include/syslog-ng/persist-state.h
 include/syslog-ng/plugin.h
 include/syslog-ng/pragma-parser.h
-include/syslog-ng/rewrite-expr-parser.h
 include/syslog-ng/scratch-buffers.h
 include/syslog-ng/serialize.h
 include/syslog-ng/stats.h
@@ -76,17 +57,56 @@ include/syslog-ng/str-format.h
 include/syslog-ng/syslog-names.h
 include/syslog-ng/syslog-ng.h
 include/syslog-ng/tags.h
-include/syslog-ng/templates.h
 include/syslog-ng/timeutils.h
 include/syslog-ng/tls-support.h
 include/syslog-ng/tlscontext.h
 include/syslog-ng/tlstransport.h
 include/syslog-ng/utils.h
-include/syslog-ng/uuid.h
 include/syslog-ng/value-pairs.h
 include/syslog-ng/versioning.h
+include/syslog-ng/cfg-tree.h
+include/syslog-ng/file-perms.h
+include/syslog-ng/uuid.h
 include/syslog-ng/vptransform.h
-lib/libsyslog-ng-3.4.3.so
+include/syslog-ng/filter/filter-expr.h
+include/syslog-ng/filter/filter-op.h
+include/syslog-ng/filter/filter-cmp.h
+include/syslog-ng/filter/filter-in-list.h
+include/syslog-ng/filter/filter-tags.h
+include/syslog-ng/filter/filter-netmask.h
+include/syslog-ng/filter/filter-call.h
+include/syslog-ng/filter/filter-re.h
+include/syslog-ng/filter/filter-pri.h
+include/syslog-ng/filter/filter-pipe.h
+include/syslog-ng/filter/filter-expr-parser.h
+include/syslog-ng/logproto/logproto-client.h
+include/syslog-ng/logproto/logproto-server.h
+include/syslog-ng/logproto/logproto-buffered-server.h
+include/syslog-ng/logproto/logproto-dgram-server.h
+include/syslog-ng/logproto/logproto-framed-client.h
+include/syslog-ng/logproto/logproto-framed-server.h
+include/syslog-ng/logproto/logproto-text-client.h
+include/syslog-ng/logproto/logproto-text-server.h
+include/syslog-ng/logproto/logproto-indented-multiline-server.h
+include/syslog-ng/logproto/logproto-regexp-multiline-server.h
+include/syslog-ng/logproto/logproto-record-server.h
+include/syslog-ng/logproto/logproto-builtins.h
+include/syslog-ng/logproto/logproto.h
+include/syslog-ng/parser/parser-expr.h
+include/syslog-ng/parser/parser-expr-parser.h
+include/syslog-ng/logthrdestdrv.h
+include/syslog-ng/parse-number.h
+include/syslog-ng/plugin-types.h
+include/syslog-ng/poll-events.h
+include/syslog-ng/poll-fd-events.h
+include/syslog-ng/type-hinting.h
+include/syslog-ng/rewrite/rewrite-expr.h
+include/syslog-ng/rewrite/rewrite-set-tag.h
+include/syslog-ng/rewrite/rewrite-set.h
+include/syslog-ng/rewrite/rewrite-subst.h
+include/syslog-ng/rewrite/rewrite-expr-parser.h
+include/syslog-ng/template/templates.h
+lib/libsyslog-ng-3.5.1.so
 lib/libsyslog-ng.la
 lib/libsyslog-ng.so
 lib/syslog-ng/libafamqp.la
@@ -119,11 +139,6 @@ lib/syslog-ng/libsyslogformat.so
 lib/syslog-ng/libsystem-source.la
 lib/syslog-ng/libsystem-source.so
 libdata/pkgconfig/syslog-ng.pc
-man/man1/loggen.1.gz
-man/man1/pdbtool.1.gz
-man/man1/syslog-ng-ctl.1.gz
-man/man5/syslog-ng.conf.5.gz
-man/man8/syslog-ng.8.gz
 sbin/syslog-ng
 sbin/syslog-ng-ctl
 share/include/scl/pacct/plugin.conf
@@ -131,6 +146,7 @@ share/include/scl/syslogconf/README
 share/include/scl/syslogconf/convert-syslogconf.awk
 share/include/scl/syslogconf/plugin.conf
 share/include/scl/system/plugin.conf
+share/include/scl/rewrite/cc-mask.conf
 share/tools/cfg-grammar.y
 share/tools/lex-rules.am
 share/tools/merge-grammar.pl
@@ -147,9 +163,15 @@ share/xsd/patterndb-4.xsd
 @dirrm share/include/scl/system
 @dirrm share/include/scl/syslogconf
 @dirrm share/include/scl/pacct
+@dirrm share/include/scl/rewrite
 @dirrm share/include/scl
 @dirrm share/include
 @dirrm lib/syslog-ng
+@dirrm include/syslog-ng/filter
+@dirrm include/syslog-ng/logproto
+@dirrm include/syslog-ng/parser
+@dirrm include/syslog-ng/rewrite
+@dirrm include/syslog-ng/template
 @dirrm include/syslog-ng
 @exec mkdir -p %D/etc/patterndb.d
 @dirrmtry etc/patterndb.d
