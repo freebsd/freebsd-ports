@@ -2711,6 +2711,7 @@
     SUBDIR += p5-Sys-Mmap
     SUBDIR += p5-Sys-RunAlone
     SUBDIR += p5-Sys-RunAlways
+    SUBDIR += p5-Sys-Sendfile
     SUBDIR += p5-Sys-Sendfile-FreeBSD
     SUBDIR += p5-Sys-Sig
     SUBDIR += p5-Sys-SigAction

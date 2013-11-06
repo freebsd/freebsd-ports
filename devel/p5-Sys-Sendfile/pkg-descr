@@ -1,0 +1,7 @@
+Sys::Sendfile provides access to your operating system's sendfile
+facility.  It allows you to efficiently transfer data from one
+filehandle to another.  Typically the source is a file on disk and the
+sink is a socket, and some operating systems may not even support
+other usage.
+
+WWW: http://search.cpan.org/dist/Sys-Sendfile/
