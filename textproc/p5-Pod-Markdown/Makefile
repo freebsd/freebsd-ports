@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Pod-Markdown
-PORTVERSION=	1.400000
+PORTVERSION=	1.401000
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ COMMENT=	Module to convert POD to Markdown
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Pod-Parser>=0:${PORTSDIR}/textproc/p5-Pod-Parser
+BUILD_DEPENDS=	p5-Pod-Parser>=1.51:${PORTSDIR}/textproc/p5-Pod-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Difference>=0:${PORTSDIR}/devel/p5-Test-Differences
 
