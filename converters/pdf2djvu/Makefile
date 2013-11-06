@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pdf2djvu
-PORTVERSION=	0.5.11
-PORTREVISION=	11
+PORTVERSION=	0.7.17
 CATEGORIES=	converters
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFFIX}
@@ -11,30 +10,29 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFFIX}
 MAINTAINER=	darcsis@gmail.com
 COMMENT=	Pdf2djvu creates DjVu files from PDF files
 
-DEPRECATED=	Broken for more than 6 month
-EXPIRATION_DATE=	2013-11-18
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/pstreams/pstream.h:${PORTSDIR}/devel/pstreams
-LIB_DEPENDS=	poppler:${PORTSDIR}/graphics/poppler
-LIB_DEPENDS+=	djvulibre:${PORTSDIR}/graphics/djvulibre
+LIB_DEPENDS=	libpoppler.so:${PORTSDIR}/graphics/poppler \
+		libdjvulibre.so:${PORTSDIR}/graphics/djvulibre
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS=-pthread
 CPPFLAGS+=	-I${LOCALBASE}/include
-USES=		pkgconfig
-USE_GMAKE=	yes
+USES=		compiler:c++11-lang gmake pkgconfig
 
-BROKEN=		does not build
+PLIST_FILES=	bin/pdf2djvu man/man1/pdf2djvu.1.gz
 
-PLIST_FILES=	bin/pdf2djvu
-MAN1=		pdf2djvu.1
-MANCOMPRESSED=	no
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+.include <bsd.port.options.mk>
 
-NO_STAGE=	yes
+.if ${OSVERSION} < 900014
+FAVORITE_COMPILER=      gcc
+.endif
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN}  ${WRKSRC}/doc/${PORTNAME}.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN}  ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
