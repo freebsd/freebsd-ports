@@ -21,16 +21,13 @@ EXTRACT_CMD=		${CP}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	.
 
-NOMAN=		defined
 PLIST_FILES=	sbin/${PORTNAME}
 
-NO_STAGE=	yes
 do-build:
 	${CC} -o ${WRKSRC}/${PORTNAME} -lm \
 	    ${WRKSRC}/${DISTFILES}
 
 do-install:
-	${INSTALL} ${COPY} ${STRIP} -o root -g wheel -m 04555 \
-	    ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>
