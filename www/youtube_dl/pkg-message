@@ -1,6 +1,6 @@
 ==============================================================================
 
-If you want to use mp3 audio conversion please make sure multimedia/ffmpeg or
-multimedia/ffmpeg-devel is built with the "LAME" option enabled.
+If you want to use mp3 audio conversion please make sure multimedia/ffmpeg is
+built with the "LAME" option enabled.
 
 ==============================================================================

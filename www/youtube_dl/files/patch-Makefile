@@ -1,23 +1,21 @@
---- Makefile	2013-07-02 05:35:23.000000000 +0000
-+++ Makefile.new	2013-06-14 23:10:06.000000000 +0000
-@@ -9,19 +9,9 @@
- PREFIX=/usr/local
+--- Makefile.orig	2013-10-17 06:55:06.000000000 +0800
++++ Makefile	2013-10-26 18:28:59.588795031 +0800
+@@ -10,17 +10,7 @@
  BINDIR=$(PREFIX)/bin
  MANDIR=$(PREFIX)/man
-+SYSCONFDIR=/etc
  PYTHON=/usr/bin/env python
- 
+-
 -# set SYSCONFDIR to /etc if PREFIX=/usr or PREFIX=/usr/local
 -ifeq ($(PREFIX),/usr)
--    SYSCONFDIR=/etc
+-	SYSCONFDIR=/etc
 -else
--    ifeq ($(PREFIX),/usr/local)
--        SYSCONFDIR=/etc
--    else
--        SYSCONFDIR=$(PREFIX)/etc
--    endif
+-	ifeq ($(PREFIX),/usr/local)
+-		SYSCONFDIR=/etc
+-	else
+-		SYSCONFDIR=$(PREFIX)/etc
+-	endif
 -endif
--
++SYSCONFDIR=/etc
+ 
  install: youtube-dl youtube-dl.1 youtube-dl.bash-completion
  	install -d $(DESTDIR)$(BINDIR)
- 	install -m 755 youtube-dl $(DESTDIR)$(BINDIR)
