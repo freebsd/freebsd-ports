@@ -16,7 +16,6 @@ COMMENT=	Parser-generator from KDevplatform
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 
-USE_GCC=	yes
 USE_BZIP2=	yes
 USES=		bison cmake:outsource compiler:c++11-lib
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
