@@ -235,6 +235,8 @@ include/d/phobos2/std/xml.d
 include/d/phobos2/std/zip.d
 include/d/phobos2/std/zlib.d
 include/d/phobos2/unittest.d
+man/man1/dmd2.1.gz
+man/man5/dmd2.conf.5.gz
 @dirrm %%EXAMPLESDIR%%/samples/d/mydll
 @dirrm %%EXAMPLESDIR%%/samples/d
 @dirrm %%EXAMPLESDIR%%/samples
