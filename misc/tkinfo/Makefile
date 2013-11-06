@@ -13,19 +13,18 @@ COMMENT=	Tk script to read GNU "info" files and display them
 LICENSE=	BSD
 
 NO_BUILD=	yes
+USES+=		tk
 
-USE_TK_WRAPPER=	yes
+PLIST_FILES=	bin/tkinfo \
+		man/man1/tkinfo.1.gz
 
-MAN1=		tkinfo.1
-PLIST_FILES=	bin/tkinfo
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|/usr/local/info|${LOCALBASE}/info|' ${WRKSRC}/tkinfo
+		's|/usr/local/info|${LOCALBASE}/info|; \
+		 s|exec wish|exec ${WISH}|' ${WRKSRC}/tkinfo
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/tkinfo ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/tkinfo.1 ${MANPREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/tkinfo ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/tkinfo.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
