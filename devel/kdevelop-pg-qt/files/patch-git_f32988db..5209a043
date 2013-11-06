@@ -1,0 +1,31 @@
+commit f32988dbaefcad34ab7966676058629e73c438fd
+Author: Milian Wolff <mail@milianw.de>
+Date:   Sun Aug 4 21:37:01 2013 +0200
+
+    Fix compile with clang, also enable exceptions there.
+
+commit 5209a0439006c1ceac6e25fe583a8f1e068af0b8
+Author: Sven Brauch <svenbrauch@googlemail.com>
+Date:   Sun Sep 8 01:24:00 2013 +0200
+
+    -std=c++11 -> -std=c++0x to fix build on build.kde.org
+    
+    still builds with gcc 4.8
+
+diff --git a/kdev-pg/CMakeLists.txt b/kdev-pg/CMakeLists.txt
+index 7022121..57eb03b 100644
+--- kdev-pg/CMakeLists.txt
++++ kdev-pg/CMakeLists.txt
+@@ -4,9 +4,9 @@ PROJECT(kdevpg)
+ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
+ REMOVE_DEFINITIONS(-DQT_NO_STL)
+ ADD_DEFINITIONS(-DQT_STL)
+-if(CMAKE_COMPILER_IS_GNUCC)
+-    add_definitions(-fexceptions)
+-endif(CMAKE_COMPILER_IS_GNUCC)
++if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_CXX_COMPILER_ID MATCHES Clang)
++    add_definitions(-fexceptions -std=c++0x)
++endif(CMAKE_COMPILER_IS_GNUCC OR CMAKE_CXX_COMPILER_ID MATCHES Clang)
+ 
+ QT4_ADD_RESOURCES(kdevpg_rcc_srcs ../unidata.qrc)
+ 
