@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 EXTRACT_SUFX=	.tbz2
 
 MAINTAINER=	bsam@FreeBSD.org
-COMMENT=	Lightweight, NEtWM compliant X11 desktop panel
+COMMENT=	Lightweight, NETWM compliant X11 desktop panel
 
 LICENSE=	MIT
 
