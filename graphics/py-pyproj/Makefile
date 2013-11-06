@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pyproj
-PORTVERSION=	1.8.8
+PORTVERSION=	1.9.3
 CATEGORIES=	graphics python geography
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	fmysh@iijmio-mail.jp
@@ -13,25 +13,18 @@ COMMENT=	Pyrex wrapper to provide python interfaces to PROJ.4
 WRKSRC=		${WRKDIR}/${DISTNAME:C/[a-z]$//}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-PORTDOCS=	Changelog README README.html LICENSE_proj4
+PORTDOCS=	Changelog README LICENSE_proj4
 PORTEXAMPLES=	datum_shift.py geodtest.py sample.out \
 		test.py test2.py test_transform.py
 
-NO_STAGE=	yes
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/$f ${DOCSDIR}
-.endfor
-.endif
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-.for f in ${PORTEXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/test/$f ${EXAMPLESDIR}
-.endfor
-.endif
+post-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/test/,} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
