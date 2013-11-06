@@ -14,21 +14,20 @@ LICENSE=	BSD
 OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
+MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USES=		pathfix
+USES=		pathfix shebangfix
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README README_windows.txt \
 		designstyle.css gflags.html
 
-NO_STAGE=	yes
+SHEBANG_FILES=	src/gflags_completions.sh
+
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|^\(docdir = \).*|\1${DOCSDIR}|' \
-		-e 's|^\(pkgconfigdir = \).*|\1$$(DESTDIR)$$(prefix)/libdata/pkgconfig|' \
-			${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|^\(docdir = \).*|\1${DOCSDIR}|' ${WRKSRC}/Makefile.in
 .if !${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/^install-data-am: / s| install-dist_docDATA||' ${WRKSRC}/Makefile.in
 .endif
