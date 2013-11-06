@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Chemistry::Elements.3.gz
 %%SITE_PERL%%/Chemistry/Elements.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Elements/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Elements
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Elements
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry
 @dirrmtry %%SITE_PERL%%/Chemistry

@@ -1,25 +1,31 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coordinates/Converter/.packlist
-%%SITE_PERL%%/Geo/Coordinates/Converter/Datum/Wgs84.pm
-%%SITE_PERL%%/Geo/Coordinates/Converter/Datum/Tokyo.pm
+%%PERL5_MAN3%%/Geo::Coordinates::Converter.3.gz
+%%PERL5_MAN3%%/Geo::Coordinates::Converter::Datum.3.gz
+%%PERL5_MAN3%%/Geo::Coordinates::Converter::Format.3.gz
+%%PERL5_MAN3%%/Geo::Coordinates::Converter::Format::ISO6709.3.gz
+%%PERL5_MAN3%%/Geo::Coordinates::Converter::Point.3.gz
+%%PERL5_MAN3%%/Geo::Coordinates::Converter::Point::ISO6709.3.gz
+%%SITE_PERL%%/Geo/Coordinates/Converter.pm
+%%SITE_PERL%%/Geo/Coordinates/Converter/Datum.pm
 %%SITE_PERL%%/Geo/Coordinates/Converter/Datum/Grs67.pm
-%%SITE_PERL%%/Geo/Coordinates/Converter/Datum/Jgd2000.pm
 %%SITE_PERL%%/Geo/Coordinates/Converter/Datum/Grs80.pm
+%%SITE_PERL%%/Geo/Coordinates/Converter/Datum/Jgd2000.pm
+%%SITE_PERL%%/Geo/Coordinates/Converter/Datum/Tokyo.pm
 %%SITE_PERL%%/Geo/Coordinates/Converter/Datum/Wgs72.pm
-%%SITE_PERL%%/Geo/Coordinates/Converter/Format/Dms.pm
+%%SITE_PERL%%/Geo/Coordinates/Converter/Datum/Wgs84.pm
+%%SITE_PERL%%/Geo/Coordinates/Converter/Format.pm
 %%SITE_PERL%%/Geo/Coordinates/Converter/Format/Degree.pm
+%%SITE_PERL%%/Geo/Coordinates/Converter/Format/Dms.pm
 %%SITE_PERL%%/Geo/Coordinates/Converter/Format/ISO6709.pm
 %%SITE_PERL%%/Geo/Coordinates/Converter/Format/Milliseconds.pm
-%%SITE_PERL%%/Geo/Coordinates/Converter/Point/ISO6709.pm
 %%SITE_PERL%%/Geo/Coordinates/Converter/Point.pm
-%%SITE_PERL%%/Geo/Coordinates/Converter/Datum.pm
-%%SITE_PERL%%/Geo/Coordinates/Converter/Format.pm
-%%SITE_PERL%%/Geo/Coordinates/Converter.pm
+%%SITE_PERL%%/Geo/Coordinates/Converter/Point/ISO6709.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coordinates/Converter/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coordinates/Converter
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coordinates
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
-@dirrm %%SITE_PERL%%/Geo/Coordinates/Converter/Datum
-@dirrm %%SITE_PERL%%/Geo/Coordinates/Converter/Format
-@dirrm %%SITE_PERL%%/Geo/Coordinates/Converter/Point
+@dirrmtry %%SITE_PERL%%/Geo/Coordinates/Converter/Point
+@dirrmtry %%SITE_PERL%%/Geo/Coordinates/Converter/Format
+@dirrmtry %%SITE_PERL%%/Geo/Coordinates/Converter/Datum
 @dirrmtry %%SITE_PERL%%/Geo/Coordinates/Converter
 @dirrmtry %%SITE_PERL%%/Geo/Coordinates
 @dirrmtry %%SITE_PERL%%/Geo
