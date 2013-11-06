@@ -14,20 +14,15 @@ LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
 
 ONLY_FOR_ARCHS=	i386
 
-USES=		readline
+USES=		readline gmake tk
 USE_XORG=	x11
-USE_TCL_BUILD=	yes
-USE_TCL=	yes
-USE_TK_BUILD=	yes
-USE_TK=		yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=--prefix=${PREFIX} \
 	--enable-ansi \
 	--enable-machine=FreeBSD \
 	--enable-info=${PREFIX}/info \
-	--enable-tkconfig=${LOCALBASE}/lib/tk${TCL_VER} \
-	--enable-tclconfig=${LOCALBASE}/lib/tcl${TCL_VER} \
+	--enable-tkconfig=${TK_LIBDIR} \
+	--enable-tclconfig=${TCL_LIBDIR} \
 	--with-x \
 	--disable-dlopen \
 	--disable-dynsysbfd \
