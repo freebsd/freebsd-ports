@@ -3,6 +3,7 @@
 
 PORTNAME=	bonnie++
 PORTVERSION=	1.97
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.coker.com.au/bonnie++/experimental/
 EXTRACT_SUFX=	.tgz
@@ -13,15 +14,15 @@ COMMENT=	Performance Test of Filesystem I/O
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
+USE_GCC=	yes
+
+USES=	shebangfix
+SHEBANG_FILES=	bon_csv2txt.in
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-1.97.1
 
-MAN1=	bon_csv2html.1 bon_csv2txt.1 generate_randfile.1
-MAN8=	bonnie++.8 getc_putc.8 zcav.8
-
 PORTDOCS=	readme.html
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -32,8 +33,8 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme.html ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.html ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
