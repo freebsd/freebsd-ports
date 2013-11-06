@@ -10,15 +10,3 @@ or "in", etc) and are the same as those used in TeX. The default unit is
 a bp, or a PostScript point, unlike TeX.
 
 WWW: http://search.cpan.org/dist/PostScript-Simple/
-PostScript::Simple allows you to have a simple method of writing
-PostScript files from Perl. It has graphics primitives that allow lines,
-curves, circles, polygons and boxes to be drawn. Text can be added to
-the page using standard PostScript fonts.
-
-The images can be single page EPS files, or multipage PostScript files.
-The image size can be set by using a recognised paper size ("A4", for
-example) or by giving dimensions. The units used can be specified ("mm"
-or "in", etc) and are the same as those used in TeX. The default unit is
-a bp, or a PostScript point, unlike TeX.
-
-WWW: http://search.cpan.org/dist/PostScript-Simple/

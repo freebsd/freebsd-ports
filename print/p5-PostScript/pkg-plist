@@ -10,12 +10,3 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PostScript/Metrics
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PostScript
 @dirrmtry %%SITE_PERL%%/PostScript
-%%SITE_PERL%%/PostScript/Document.pm
-%%SITE_PERL%%/PostScript/Elements.pm
-%%SITE_PERL%%/PostScript/TextBlock.pm
-%%SITE_PERL%%/PostScript/Metrics.pm
-%%SITE_PERL%%/PostScript/example.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PostScript/Metrics/.packlist
-@dirrmtry %%SITE_PERL%%/PostScript
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PostScript/Metrics
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PostScript
