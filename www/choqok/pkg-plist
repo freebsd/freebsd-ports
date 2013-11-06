@@ -43,6 +43,7 @@ include/choqok/twitterapihelper/twitterapitimelinewidget.h
 include/choqok/twitterapihelper/twitterapiwhoiswidget.h
 include/choqok/uploader.h
 include/choqok/uploadmediadialog.h
+lib/kde4/choqok_betternotify.so
 lib/kde4/choqok_bit_ly.so
 lib/kde4/choqok_filter.so
 lib/kde4/choqok_flickr.so
@@ -73,6 +74,7 @@ lib/kde4/choqok_yourls.so
 lib/kde4/kcm_choqok_accountsconfig.so
 lib/kde4/kcm_choqok_appearanceconfig.so
 lib/kde4/kcm_choqok_behaviorconfig.so
+lib/kde4/kcm_choqok_betternotify.so
 lib/kde4/kcm_choqok_bit_ly.so
 lib/kde4/kcm_choqok_flickr.so
 lib/kde4/kcm_choqok_imstatus.so
@@ -104,8 +106,6 @@ share/apps/cmake/modules/FindChoqok.cmake
 share/apps/cmake/modules/FindQtOAuth.cmake
 share/apps/khtml/kpartplugins/konqchoqok.desktop
 share/apps/khtml/kpartplugins/konqchoqok.rc
-@comment share/apps/kwebkitpart/kpartplugins/konqchoqok.desktop
-@comment share/apps/kwebkitpart/kpartplugins/konqchoqok.rc
 share/config.kcfg/bit_ly_settings.kcfg
 share/config.kcfg/choqokappearancesettings.kcfg
 share/config.kcfg/choqokbehaviorsettings.kcfg
@@ -129,7 +129,6 @@ share/doc/HTML/en/choqok/common
 share/doc/HTML/en/choqok/index.cache.bz2
 share/doc/HTML/en/choqok/index.docbook
 share/icons/hicolor/128x128/apps/choqok.png
-share/icons/hicolor/128x128/apps/choqok_offline.png
 share/icons/hicolor/16x16/actions/retweet.png
 share/icons/hicolor/16x16/apps/choqok.png
 share/icons/hicolor/16x16/apps/choqok_offline.png
@@ -202,6 +201,8 @@ share/kde4/services/choqok_is_gd_config.desktop
 share/kde4/services/choqok_laconica.desktop
 share/kde4/services/choqok_mobypicture.desktop
 share/kde4/services/choqok_mobypicture_config.desktop
+share/kde4/services/choqok_notify.desktop
+share/kde4/services/choqok_notify_config.desktop
 share/kde4/services/choqok_nowlistening.desktop
 share/kde4/services/choqok_nowlistening_config.desktop
 share/kde4/services/choqok_ocs.desktop
@@ -248,10 +249,12 @@ share/locale/ga/LC_MESSAGES/choqok.mo
 share/locale/gl/LC_MESSAGES/choqok.mo
 share/locale/hr/LC_MESSAGES/choqok.mo
 share/locale/hu/LC_MESSAGES/choqok.mo
+share/locale/it/LC_MESSAGES/choqok.mo
 share/locale/is/LC_MESSAGES/choqok.mo
 share/locale/ja/LC_MESSAGES/choqok.mo
 share/locale/km/LC_MESSAGES/choqok.mo
 share/locale/lt/LC_MESSAGES/choqok.mo
+share/locale/mr/LC_MESSAGES/choqok.mo
 share/locale/ms/LC_MESSAGES/choqok.mo
 share/locale/nb/LC_MESSAGES/choqok.mo
 share/locale/nds/LC_MESSAGES/choqok.mo
@@ -263,6 +266,7 @@ share/locale/pt_BR/LC_MESSAGES/choqok.mo
 share/locale/ro/LC_MESSAGES/choqok.mo
 share/locale/ru/LC_MESSAGES/choqok.mo
 share/locale/sk/LC_MESSAGES/choqok.mo
+share/locale/sl/LC_MESSAGES/choqok.mo
 share/locale/sq/LC_MESSAGES/choqok.mo
 share/locale/sv/LC_MESSAGES/choqok.mo
 share/locale/tr/LC_MESSAGES/choqok.mo
@@ -271,8 +275,6 @@ share/locale/uk/LC_MESSAGES/choqok.mo
 share/locale/zh_CN/LC_MESSAGES/choqok.mo
 share/locale/zh_TW/LC_MESSAGES/choqok.mo
 @dirrm share/doc/HTML/en/choqok
-@comment @dirrmtry share/apps/kwebkitpart/kpartplugins
-@comment @dirrmtry share/apps/kwebkitpart
 @dirrm share/apps/choqok_searchaction
 @dirrm share/apps/choqok_quickfilter
 @dirrm share/apps/choqok_nowlistening
