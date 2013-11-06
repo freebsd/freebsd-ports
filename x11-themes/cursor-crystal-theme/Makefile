@@ -18,7 +18,6 @@ COMMENT=	KDE Crystal style X cursor theme
 BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		xcursorgen:${PORTSDIR}/x11/xcursorgen
 
-MAKE_ENV+=	DESTDIR=${STAGEDIR}
 USES=		gmake
 USE_BZIP2=	yes
 
