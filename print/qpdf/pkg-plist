@@ -32,6 +32,9 @@ lib/libqpdf.la
 lib/libqpdf.so
 lib/libqpdf.so.13
 libdata/pkgconfig/libqpdf.pc
+man/man1/fix-qdf.1.gz
+man/man1/qpdf.1.gz
+man/man1/zlib-flate.1.gz
 share/doc/qpdf/qpdf-manual.html
 share/doc/qpdf/qpdf-manual.pdf
 share/doc/qpdf/stylesheet.css
