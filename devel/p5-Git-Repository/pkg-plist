@@ -1,24 +1,16 @@
 %%PERL5_MAN3%%/Git::Repository.3.gz
 %%PERL5_MAN3%%/Git::Repository::Command.3.gz
-%%PERL5_MAN3%%/Git::Repository::Log.3.gz
-%%PERL5_MAN3%%/Git::Repository::Log::Iterator.3.gz
 %%PERL5_MAN3%%/Git::Repository::Plugin.3.gz
-%%PERL5_MAN3%%/Git::Repository::Plugin::Log.3.gz
 %%PERL5_MAN3%%/Git::Repository::Tutorial.3.gz
 %%PERL5_MAN3%%/Test::Git.3.gz
 %%SITE_PERL%%/Git/Repository.pm
 %%SITE_PERL%%/Git/Repository/Command.pm
-%%SITE_PERL%%/Git/Repository/Log.pm
-%%SITE_PERL%%/Git/Repository/Log/Iterator.pm
 %%SITE_PERL%%/Git/Repository/Plugin.pm
-%%SITE_PERL%%/Git/Repository/Plugin/Log.pm
 %%SITE_PERL%%/Git/Repository/Tutorial.pod
 %%SITE_PERL%%/Test/Git.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/Repository/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/Repository
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git
 @dirrmtry %%SITE_PERL%%/Test
-@dirrm %%SITE_PERL%%/Git/Repository/Plugin
-@dirrm %%SITE_PERL%%/Git/Repository/Log
 @dirrm %%SITE_PERL%%/Git/Repository
 @dirrmtry %%SITE_PERL%%/Git
