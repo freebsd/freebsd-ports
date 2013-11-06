@@ -3,7 +3,6 @@
 
 PORTNAME=	kdevelop
 DISTVERSION=	${KDEVELOP_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDEVELOP_BRANCH}/kdevelop/${DISTVERSION}/src
@@ -19,23 +18,21 @@ LATEST_LINK=	${PORTNAME}-kde4
 
 USE_KDE4=	kdehier kdelibs kdeprefix sharedmime workspace automoc4
 USE_QT4=	qmake_build moc_build uic_build rcc_build
-USE_BZIP2=	yes
-USES=		cmake shared-mime-info
-USE_GMAKE=	yes
+USE_XZ=		yes
+USES=		cmake gmake shared-mime-info
 
 OPTIONS_DEFINE=	OKTETA PHP NLS
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 OKTETA_DESC=	Hex editing support via Okteta
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOKTETA}
 LIB_DEPENDS+=	okteta1core:${PORTSDIR}/devel/kdesdk4
 PLIST_SUB+=	OKTETA=""
 .else
-CMAKE_ARGS+=	WITH_LibOkteta:BOOL=FALSE
+CMAKE_ARGS+=	-DWITH_LibOkteta:BOOL=FALSE
 PLIST_SUB+=	OKTETA="@comment "
 .endif
 
