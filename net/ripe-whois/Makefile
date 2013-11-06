@@ -15,16 +15,16 @@ USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
 
-MAN1=		whois3.1
-PLIST_FILES=	bin/whois3
+PLIST_FILES=	bin/whois3 man/man1/whois3.1.gz
 
-NO_STAGE=	yes
 post-patch::
 	${REINPLACE_CMD} -E \
 		-e '/^bin_PROGRAMS =/ s/whois\$$\(EXEEXT\)/whois3$$(EXEEXT)/' \
 		${WRKSRC}/Makefile.in
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/doc
 DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
 PORTDOCS=	HELP.txt FLAGS.txt
