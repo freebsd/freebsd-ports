@@ -21,33 +21,26 @@ PORTDOCS=	ChangeLog README mp3info.txt
 OPTIONS_DEFINE=	GTK2
 GTK2_DESC=	Enable to have the gmp3info
 
-PLIST_FILES=	bin/mp3info \
-		%%WITH_GTK%%bin/gmp3info
+GTK2_USES=		pkgconfig
+GTK2_USE=		GNOME=gtk20
+GTK2_ALL_TARGET=	gmp3info
+GTK2_PLIST_FILES=	bin/gmp3info
 
-MAN1=		mp3info.1
-NO_STAGE=	yes
+PLIST_FILES=	bin/mp3info man/man1/mp3info.1.gz
 
 ALL_TARGET=	doc mp3info
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MGTK2}
-USE_GNOME+=	gtk20
-ALL_TARGET+=	gmp3info
-MAKE_ARGS=	install-gmp3info
-PLIST_SUB+=	WITH_GTK=""
-.else
-PLIST_SUB+=	WITH_GTK="@comment "
-.endif
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mp3info ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/mp3info.1 ${PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for docs in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
-.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/mp3info ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/mp3info.1 ${STAGEDIR}${PREFIX}/man/man1
+.if ${PORT_OPTIONS:MGTK2}
+	${INSTALL_PROGRAM} ${WRKSRC}/gmp3info ${STAGEDIR}${PREFIX}/bin
+.endif
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
