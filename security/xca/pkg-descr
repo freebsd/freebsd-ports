@@ -6,4 +6,4 @@ signing and revoking of PEM DER PKCS12, and selection of x509v3 extensions.
 A tree view of certificates is presented.
 
 Author:	Christian Hohnstaedt <christian@hohnstaedt.de>
-WWW:	http://www.hohnstaedt.de/xca.html
+WWW: http://www.hohnstaedt.de/xca.html
