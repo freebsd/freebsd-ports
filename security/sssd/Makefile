@@ -31,7 +31,8 @@ LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 BUILD_DEPENDS=	xmlcatalog:${PORTSDIR}/textproc/libxml2 \
 		docbook-xsl>=1:${PORTSDIR}/textproc/docbook-xsl \
 		xmlcatmgr:${PORTSDIR}/textproc/xmlcatmgr \
-		krb5>=1.10:${PORTSDIR}/security/krb5
+		krb5>=1.10:${PORTSDIR}/security/krb5 \
+		nsupdate:${PORTSDIR}/dns/bind99
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-selinux=no --with-semanage=no \
@@ -43,8 +44,8 @@ CONFIGURE_ARGS=	--with-selinux=no --with-semanage=no \
 		--with-db-path=/var/db/sss --with-pipe-path=/var/run/sss \
 		--with-pubconf-path=/var/run/sss --with-mcache-path=/var/db/sss_mc \
 		--with-unicode-lib=libunistring --with-autofs=no
-CFLAGS+=	-L${LOCALBASE}/lib -fstack-protector-all -Wno-format
-LDFLAGS+=	-linotify
+CFLAGS+=	 -fstack-protector-all -Wno-format
+LDFLAGS+=	-L${LOCALBASE}/lib -linotify
 PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 #DEBUG_FLAGS=  -g
 MAKE_ENV+=	LINGUAS="bg de eu es fr hu id it ja nb nl pl pt ru sv tg tr uk zh_CN zh_TW"
