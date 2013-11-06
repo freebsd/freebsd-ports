@@ -4,6 +4,7 @@
 PORTNAME=	msql
 PORTVERSION=	3.8
 CATEGORIES=	databases
+PKGNAMESUFX=	3
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Version 3 of the Mini SQL relational database system
@@ -15,8 +16,6 @@ USE_LDCONFIG=	YES
 
 USERS=		${PORTNAME}
 GROUPS=		${USERS}
-
-LATEST_LINK=	msql3
 
 # Not free for commercial use.
 RESTRICTED=	restrictive copyright (no commercial use)

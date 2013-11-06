@@ -20,7 +20,7 @@ BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto \
 		${LOCALBASE}/share/sgml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-450
 
-CONFLICTS=	dbmail-2.*
+CONFLICTS=	dbmail-2.* dbmail22-*
 
 OPTIONS_DEFINE=	DOCS LDAP SIEVE THREADS
 OPTIONS_DEFAULT=	THREADS

@@ -7,11 +7,11 @@ CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cc.uoc.gr/system/security/tools/tripwire/ \
 		ftp://ftp.uni-potsdam.de/pub/unix/tools/
 DISTNAME=	Tripwire-${PORTVERSION}-1
+PKGNAMESUFFIX=	-131
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	File system security and verification program
 
-LATEST_LINK=	tripwire-131
 MAN5=		tw.config.5
 MAN8=		siggen.8 tripwire.8
 NO_CDROM=	cannot be redistributed for more than the cost of duplication

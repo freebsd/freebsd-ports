@@ -9,7 +9,7 @@ CATEGORIES=	databases
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Mini SQL server, version 2
 
-CONFLICTS=	msql-3*
+CONFLICTS=	msql-3* msql3-*
 
 USES=		perl5
 USE_LDCONFIG=	YES
