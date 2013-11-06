@@ -16,12 +16,10 @@ COMMENT=	Perl5 interface to the uulib library (a.k.a. uudeview/uuenview)
 USES=		perl5
 USE_PERL5=	configure
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
