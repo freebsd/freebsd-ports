@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recoll
-PORTVERSION=	1.19.7
+PORTVERSION=	1.19.8
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/${PORTNAME}/
 
@@ -37,7 +37,7 @@ X11MON_CONFIGURE_ENABLE=	x11mon
 
 .include <bsd.port.options.mk>
 
-PLIST_SUB+=	MAJORVER=${PORTVERSION}
+PLIST_SUB+=	VERSION=${PORTVERSION}
 
 .if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	yes
@@ -61,14 +61,12 @@ CONFIGURE_ARGS+=--with-fam
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e 's|$${MAKE} -C query recollq|@NOQTMAKE@$${MAKE} -C query recollq|' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} \
 		-e 's|/usr/local/lib|${LOCALBASE}/lib|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} \
 		-e 's|= -g -O2|=|' ${WRKSRC}/mk/localdefs.in
 	@${REINPLACE_CMD} \
 		-e 's|-pthread|${PTHREAD_LIBS}|' ${WRKSRC}/mk/${OPSYS}
-	@${REINPLACE_CMD} -e 's|@NOCMDLINE@|@NOQTMAKE@|g' \
+	@${REINPLACE_CMD} -e 's|@NOCMDLINE@||g' \
 		${WRKSRC}/recollinstall.in
 
 post-configure:
