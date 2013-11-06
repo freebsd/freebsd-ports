@@ -3,11 +3,12 @@
 
 PORTNAME=	netcdf
 PORTVERSION=	3.6.3
-PORTREVISION=	4
+PORTREVISION?=	4
 CATEGORIES=	science
 MASTER_SITES=	http://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
 		ftp://ftp.unidata.ucar.edu/pub/netcdf/ \
 		LOCAL/sunpoet
+PKGNAMESUFFIX?=	3
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT?=	Library for machine-independent, array-oriented data access
@@ -41,7 +42,6 @@ CONFIGURE_ARGS+=--disable-docs-install
 CPPFLAGS+=	-DpgiFortran
 CONFLICTS+=	netcdf-3.*
 MAN3+=		netcdf_f77.3 netcdf_f90.3
-PKGNAMESUFFIX+=	-ftn
 PLIST_SUB+=	FORTRAN=""
 USE_FORTRAN=	yes
 .else
