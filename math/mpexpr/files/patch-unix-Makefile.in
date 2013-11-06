@@ -1,21 +1,5 @@
---- unix/Makefile.in.orig	Tue Jun  8 04:16:40 2004
-+++ unix/Makefile.in	Thu Mar 15 03:28:30 2007
-@@ -92,13 +92,13 @@
- #------------------------------------------------------------------------------
- # define names for Mpexpr tclsh/tcl executable
- 
--TCL_EXEC   = tclsh
-+TCL_EXEC   = tclsh8.4
- TCLX_EXEC  = tcl
- 
- #------------------------------------------------------------------------------
- # define name for Mpexpr wish/wishx executable
- 
--WISH_EXEC  = wish
-+WISH_EXEC  = wish8.4
- WISHX_EXEC = wishx
- 
- #------------------------------------------------------------------------------
+--- unix/Makefile.in.orig	2004-06-08 04:16:40.000000000 +0200
++++ unix/Makefile.in	2013-11-06 15:14:48.000000000 +0100
 @@ -219,17 +219,17 @@
  # a make clobber and try LITTLE_ENDIAN.  If that fails, ask a wizard
  # for help.
@@ -38,21 +22,3 @@
  #LONG_BITS= 64
  
  
-@@ -402,14 +402,15 @@
- #------------------------------------------------------------------------------
- # install targets
- 
--install:	@INSTALL_TARGET@  install-man install-tools
-+#install:	@INSTALL_TARGET@  install-man install-tools
-+install:	@INSTALL_TARGET@  install-man
- 
- install-shared:	$(LIB_SH_MPEXPR)   
- 	@echo installing $(LIB_SH_MPEXPR)
- 	$(INSTALL_PROGRAM) $(LIB_SH_MPEXPR)  $(LIB_DIR)/$(LIB_SH_MPEXPR)
- 	@echo installing pkgIndex.tcl
- 	-mkdir $(LIB_DIR)/Mpexpr$(MPEXPR_LIBVER)
--	$(INSTALL_PROGRAM) pkgIndex.tcl  $(LIB_DIR)/Mpexpr$(MPEXPR_LIBVER)/pkgIndex.tcl
-+	$(INSTALL_DATA) pkgIndex.tcl  $(LIB_DIR)/Mpexpr$(MPEXPR_LIBVER)/pkgIndex.tcl
- 
- install-static:	@PROGS@   $(LIB_MPEXPR)
- 	@for f in $(T_EXEC) $(W_EXEC) ; do  \
