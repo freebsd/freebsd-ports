@@ -1,8 +1,7 @@
-@stopdaemon knotd
 @unexec if cmp -s %B/knot.sample.conf %B/knot.conf; then rm -f %B/knot.conf; fi
+%%ETCDIR%%/knot.sample.conf
 @exec [ -f %B/knot.conf ] || cp %B/%f %B/knot.conf
 %%ETCDIR%%/example.com.zone
-%%ETCDIR%%/knot.sample.conf
 man/man1/kdig.1.gz
 man/man1/khost.1.gz
 man/man1/knsupdate.1.gz
@@ -11,8 +10,10 @@ man/man8/knotc.8.gz
 man/man8/knotd.8.gz
 @dirrmtry %%ETCDIR%%
 @dirrmtry var/run/knot
+@dirrmtry var/run
 @dirrmtry var/lib/knot
 @dirrmtry var/lib
+@dirrmtry var
 bin/kdig
 bin/khost
 bin/knsupdate
