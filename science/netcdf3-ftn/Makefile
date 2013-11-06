@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	netcdf
+PKGNAMESUFFIX=	3-ftn
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	NetCDF (network Common Data Form), with Fortran support
 
-LATEST_LINK=	netcdf3-ftn
 MASTERDIR=	${.CURDIR}/../netcdf
 
 WITH_FORTRAN=	yes
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
