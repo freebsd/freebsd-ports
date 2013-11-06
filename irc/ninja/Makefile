@@ -4,6 +4,7 @@
 PORTNAME=	ninja
 PORTVERSION=	1.5.8.1
 CATEGORIES=	irc
+PKGNAMEPREFIX=	irc-
 MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,8 +15,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	IRCLIB="${DATADIR}"
 MAKE_JOBS_UNSAFE=	yes
-
-LATEST_LINK=	irc-ninja
 
 NO_STAGE=	yes
 post-patch:

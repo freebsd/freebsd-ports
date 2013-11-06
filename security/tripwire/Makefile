@@ -14,7 +14,6 @@ COMMENT=	File system security and verification program
 LICENSE=	GPLv2
 
 NO_LICENSES_INSTALL=	yes
-LATEST_LINK=	${PORTNAME}
 MAN5=		twfiles.5 twconfig.5 twpolicy.5
 MAN8=		siggen.8 tripwire.8 twadmin.8 twintro.8 twprint.8
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src

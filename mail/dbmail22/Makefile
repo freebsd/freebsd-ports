@@ -5,6 +5,7 @@ PORTNAME=	dbmail
 PORTVERSION=	2.2.18
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/2.2/
+PKGNAMESUFFIX=	22
 
 MAINTAINER=	ahicks@p-o.co.uk
 COMMENT=	SQL database-based mail system (POP3 and IMAP)
