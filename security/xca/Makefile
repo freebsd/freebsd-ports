@@ -3,7 +3,7 @@
 
 PORTNAME=	xca
 PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -15,17 +15,20 @@ LICENSE=	BSD
 USE_OPENSSL=	yes
 USE_QT4=	gui moc_build uic_build qmake_build rcc_build linguist_build
 USE_AUTOTOOLS=	libltdl
-USES=		gmake shared-mime-info
+USES=		desktop-file-utils gmake shared-mime-info
+DESTDIRNAME=	destdir
 
-MAN1=		xca.1
-MANCOMPRESSED=	yes
+.include <bsd.port.pre.mk>
 
-NO_STAGE=	yes
+.if ${OSVERSION} >= 1000054
+LD_CXX_LIB=	-lc++
+.endif
+
 post-patch:
 	@echo "CPPFLAGS=-I. -I.. -I${WRKSRC}/ui -I${QT_INCDIR} -I${QT_INCDIR}/Qt -I${LOCALBASE}/include" > ${WRKSRC}/Local.mak
 	@echo "CFLAGS= ${CFLAGS} -Wall -ggdb" >> ${WRKSRC}/Local.mak
 	@echo "LDFLAGS= ${LDFLAGS} -L${QT_LIBDIR} -L${LOCALBASE}/lib" >> ${WRKSRC}/Local.mak
-	@echo "LIBS= -lQtGui ${PTHREAD_LIBS} -lcrypto -lltdl" >> ${WRKSRC}/Local.mak
+	@echo "LIBS=-lQtCore -lQtGui ${PTHREAD_LIBS} -lcrypto -lltdl ${LD_CXX_LIB}" >> ${WRKSRC}/Local.mak
 	@echo "MOC=${MOC}" >> ${WRKSRC}/Local.mak
 	@echo "UIC=${QT_PREFIX}/bin/uic-qt4" >> ${WRKSRC}/Local.mak
 	@echo "RCC=${LOCALBASE}/bin/rcc"  >> ${WRKSRC}/Local.mak
@@ -45,7 +48,4 @@ post-patch:
 	@${REINPLACE_CMD} -e "/VPATH/{G;s/$$/TOPDIR_/;}" -e "s:\(TOPDIR\)_:\1=${WRKSRC}:" ${WRKSRC}/misc/Makefile
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/lib/import.cpp
 
-post-configure:
-	${REINPLACE_CMD} -e 's/-lQtGui/-lQtCore -lQtGui/' ${WRKSRC}/Local.mak
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

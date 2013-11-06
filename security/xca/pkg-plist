@@ -14,6 +14,7 @@ bin/xca
 %%DATADIR%%/xca_ru.qm
 %%DATADIR%%/xca_tr.qm
 %%DOCSDIR%%/xca.html
+man/man1/xca.1.gz
 share/applications/xca.desktop
 share/mime/packages/xca.xml
 share/pixmaps/xca-32x32.xpm
@@ -21,5 +22,3 @@ share/pixmaps/xca-32x32.xpm
 @dirrm %%DOCSDIR%%
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
