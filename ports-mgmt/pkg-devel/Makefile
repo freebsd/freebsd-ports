@@ -29,6 +29,9 @@ USE_SUBMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/PROGNAME/PROG/g' ${WRKSRC}/pkg/Makefile
+
 .if defined(WITH_PKGNG)
 .if ${WITH_PKGNG} != devel
 NO_LATEST_LINK=	yes
