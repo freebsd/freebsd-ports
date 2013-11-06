@@ -1,4 +1,5 @@
 bin/qbittorrent
+man/man1/qbittorrent.1.gz
 share/applications/qBittorrent.desktop
 share/icons/hicolor/128x128/apps/qbittorrent.png
 share/icons/hicolor/16x16/apps/qbittorrent.png
@@ -12,3 +13,4 @@ share/icons/hicolor/64x64/apps/qbittorrent.png
 share/icons/hicolor/72x72/apps/qbittorrent.png
 share/icons/hicolor/96x96/apps/qbittorrent.png
 share/pixmaps/qbittorrent.png
+@dirrmtry share/applications
