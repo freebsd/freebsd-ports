@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Bitcard/.packlist
+%%PERL5_MAN3%%/Authen::Bitcard.3.gz
 %%SITE_PERL%%/Authen/Bitcard.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Bitcard/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Bitcard
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen
 @dirrmtry %%SITE_PERL%%/Authen

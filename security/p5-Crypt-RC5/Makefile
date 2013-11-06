@@ -13,7 +13,4 @@ COMMENT=	Perl implementation of the RC5 encryption algorithm
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Crypt::RC5.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/CBC/.packlist
+%%PERL5_MAN3%%/Filter::CBC.3.gz
 %%SITE_PERL%%/Filter/CBC.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/CBC/.packlist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/autofilter.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blowfish.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cbc2code.pl
@@ -14,6 +15,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tea.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/twofish.pl
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/CBC
-@dirrmtry %%SITE_PERL%%/Filter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/CBC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter
+@dirrmtry %%SITE_PERL%%/Filter

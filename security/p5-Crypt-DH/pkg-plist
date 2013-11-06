@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/Crypt::DH.3.gz
+%%SITE_PERL%%/Crypt/DH.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/DH/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/DH
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
+@dirrmtry %%SITE_PERL%%/Crypt

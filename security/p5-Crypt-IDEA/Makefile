@@ -13,7 +13,4 @@ COMMENT=	Perl5 interface to IDEA block cipher
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Crypt::IDEA.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

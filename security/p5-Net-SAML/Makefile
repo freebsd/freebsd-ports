@@ -22,16 +22,13 @@ USES=		perl5
 USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/${DISTNAME}/Net
 
-MAN3=		Net::SAML.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/apps/openssl/std|${LOCALBASE}|' ${WRKSRC}/Makefile.PL
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}/
-	cd ${WRKSRC}/../ && ${INSTALL_SCRIPT} zxid.pl zxidhlo.pl ${EXAMPLESDIR}/
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	cd ${WRKSRC}/../ && ${INSTALL_SCRIPT} zxid.pl zxidhlo.pl ${STAGEDIR}${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>

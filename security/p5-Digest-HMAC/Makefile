@@ -13,9 +13,4 @@ COMMENT=	Perl5 interface to HMAC Message-Digest Algorithms
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Digest::HMAC.3 \
-		Digest::HMAC_MD5.3 \
-		Digest::HMAC_SHA1.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Crypt::CBCeasy.3.gz
 %%SITE_PERL%%/Crypt/CBCeasy.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/CBCeasy/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/CBCeasy
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/CBCeasy
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
 @dirrmtry %%SITE_PERL%%/Crypt

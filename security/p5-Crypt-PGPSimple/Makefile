@@ -15,7 +15,4 @@ RUN_DEPENDS=	${LOCALBASE}/bin/pgp:${PORTSDIR}/security/pgp
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Crypt::PGPSimple.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

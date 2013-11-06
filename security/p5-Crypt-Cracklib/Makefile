@@ -16,15 +16,11 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Pod-Coverage>=0.19:${PORTSDIR}/devel/p5-Pod-Coverage \
 		p5-Test-Pod-Coverage>=1.08:${PORTSDIR}/devel/p5-Test-Pod-Coverage
-LIB_DEPENDS=	crack:${PORTSDIR}/security/cracklib
-
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+LIB_DEPENDS=	libcrack.so:${PORTSDIR}/security/cracklib
 
 USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include" DEFINE="-DCRACKLIB_DICTPATH=\\\"${PREFIX}/libdata/cracklib/pw_dict\\\""
 
-MAN3=		Crypt::Cracklib.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

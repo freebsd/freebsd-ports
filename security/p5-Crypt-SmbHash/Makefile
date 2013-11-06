@@ -13,7 +13,4 @@ COMMENT=	Perl module implementing lanman and nt md4 hash functions
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Crypt::SmbHash.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

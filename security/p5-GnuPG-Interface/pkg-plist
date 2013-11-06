@@ -1,4 +1,16 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/GnuPG/Interface/.packlist
+%%PERL5_MAN3%%/GnuPG::Fingerprint.3.gz
+%%PERL5_MAN3%%/GnuPG::Handles.3.gz
+%%PERL5_MAN3%%/GnuPG::Interface.3.gz
+%%PERL5_MAN3%%/GnuPG::Key.3.gz
+%%PERL5_MAN3%%/GnuPG::Options.3.gz
+%%PERL5_MAN3%%/GnuPG::PrimaryKey.3.gz
+%%PERL5_MAN3%%/GnuPG::PublicKey.3.gz
+%%PERL5_MAN3%%/GnuPG::Revoker.3.gz
+%%PERL5_MAN3%%/GnuPG::SecretKey.3.gz
+%%PERL5_MAN3%%/GnuPG::Signature.3.gz
+%%PERL5_MAN3%%/GnuPG::SubKey.3.gz
+%%PERL5_MAN3%%/GnuPG::UserAttribute.3.gz
+%%PERL5_MAN3%%/GnuPG::UserId.3.gz
 %%SITE_PERL%%/GnuPG/Fingerprint.pm
 %%SITE_PERL%%/GnuPG/Handles.pm
 %%SITE_PERL%%/GnuPG/HashInit.pm
@@ -13,6 +25,7 @@
 %%SITE_PERL%%/GnuPG/SubKey.pm
 %%SITE_PERL%%/GnuPG/UserAttribute.pm
 %%SITE_PERL%%/GnuPG/UserId.pm
-@dirrmtry %%SITE_PERL%%/GnuPG
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GnuPG/Interface/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GnuPG/Interface
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GnuPG
+@dirrmtry %%SITE_PERL%%/GnuPG

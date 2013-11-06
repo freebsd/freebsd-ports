@@ -18,16 +18,12 @@ CONFIGURE_ENV=	PERL_MM_USE_DEFAULT="yes"
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		cpansign.1
-MAN3=		Module::Signature.3
-
 OPTIONS_DEFAULT=	GPG2
 OPTIONS_MULTI=	GPG
 OPTIONS_MULTI_GPG=	GPG1 GPG2
 GPG1_DESC=	Use GnuPG version 1
 GPG2_DESC=	Use GnuPG version 2
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGPG1}

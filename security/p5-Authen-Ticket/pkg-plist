@@ -1,9 +1,13 @@
+%%PERL5_MAN3%%/Authen::Ticket.3.gz
+%%PERL5_MAN3%%/Authen::Ticket::Client.3.gz
+%%PERL5_MAN3%%/Authen::Ticket::Server.3.gz
+%%PERL5_MAN3%%/Authen::Ticket::Signature.3.gz
 %%SITE_PERL%%/Authen/Ticket.pm
 %%SITE_PERL%%/Authen/Ticket/Client.pm
 %%SITE_PERL%%/Authen/Ticket/Server.pm
 %%SITE_PERL%%/Authen/Ticket/Signature.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Ticket/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Ticket
-@dirrm %%SITE_PERL%%/Authen/Ticket
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Ticket
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen
+@dirrmtry %%SITE_PERL%%/Authen/Ticket
 @dirrmtry %%SITE_PERL%%/Authen

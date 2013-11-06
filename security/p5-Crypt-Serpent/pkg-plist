@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Crypt::Serpent.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/Serpent.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Serpent/Serpent.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Serpent/Serpent.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Serpent/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Serpent
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Serpent/Serpent.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Serpent/Serpent.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Serpent
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt

@@ -1,3 +1,4 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sudo/.packlist
+%%PERL5_MAN3%%/Sudo.3.gz
 %%SITE_PERL%%/Sudo.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sudo/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sudo

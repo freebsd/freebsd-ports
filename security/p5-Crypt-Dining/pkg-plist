@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Crypt::Dining.3.gz
 %%SITE_PERL%%/Crypt/Dining.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Dining/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Dining
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Dining
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
 @dirrmtry %%SITE_PERL%%/Crypt

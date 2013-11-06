@@ -18,7 +18,4 @@ TEST_DEPENDS=	p5-Crypt-Blowfish>=0:${PORTSDIR}/security/p5-Crypt-Blowfish \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Tie::EncryptedHash.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

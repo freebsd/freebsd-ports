@@ -1,3 +1,12 @@
+%%PERL5_MAN3%%/Authen::SASL.3.gz
+%%PERL5_MAN3%%/Authen::SASL::Perl.3.gz
+%%PERL5_MAN3%%/Authen::SASL::Perl::ANONYMOUS.3.gz
+%%PERL5_MAN3%%/Authen::SASL::Perl::CRAM_MD5.3.gz
+%%PERL5_MAN3%%/Authen::SASL::Perl::DIGEST_MD5.3.gz
+%%PERL5_MAN3%%/Authen::SASL::Perl::EXTERNAL.3.gz
+%%PERL5_MAN3%%/Authen::SASL::Perl::GSSAPI.3.gz
+%%PERL5_MAN3%%/Authen::SASL::Perl::LOGIN.3.gz
+%%PERL5_MAN3%%/Authen::SASL::Perl::PLAIN.3.gz
 %%SITE_PERL%%/Authen/SASL.pm
 %%SITE_PERL%%/Authen/SASL.pod
 %%SITE_PERL%%/Authen/SASL/CRAM_MD5.pm
@@ -12,8 +21,8 @@
 %%SITE_PERL%%/Authen/SASL/Perl/LOGIN.pm
 %%SITE_PERL%%/Authen/SASL/Perl/PLAIN.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/SASL/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/SASL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/SASL
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen
-@dirrm %%SITE_PERL%%/Authen/SASL/Perl
-@dirrm %%SITE_PERL%%/Authen/SASL
+@dirrmtry %%SITE_PERL%%/Authen/SASL/Perl
+@dirrmtry %%SITE_PERL%%/Authen/SASL
 @dirrmtry %%SITE_PERL%%/Authen

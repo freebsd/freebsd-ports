@@ -20,17 +20,6 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ENV+=	AUTOMATED_TESTING=yes
 
-MAN3=		Authen::SASL.3 \
-		Authen::SASL::Perl.3 \
-		Authen::SASL::Perl::ANONYMOUS.3 \
-		Authen::SASL::Perl::CRAM_MD5.3 \
-		Authen::SASL::Perl::DIGEST_MD5.3 \
-		Authen::SASL::Perl::EXTERNAL.3 \
-		Authen::SASL::Perl::GSSAPI.3 \
-		Authen::SASL::Perl::LOGIN.3 \
-		Authen::SASL::Perl::PLAIN.3
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKERBEROS}

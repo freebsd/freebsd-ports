@@ -1,4 +1,6 @@
+%%PERL5_MAN3%%/Crypt::DES_EDE3.3.gz
 %%SITE_PERL%%/Crypt/DES_EDE3.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/DES_EDE3/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/DES_EDE3
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/DES_EDE3
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
 @dirrmtry %%SITE_PERL%%/Crypt

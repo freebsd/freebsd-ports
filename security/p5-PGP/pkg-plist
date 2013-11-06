@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/PGP::Pipe.3.gz
 %%SITE_PERL%%/PGP/Pipe.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PGP/Pipe/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PGP/Pipe
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PGP
-@dirrm %%SITE_PERL%%/PGP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PGP/Pipe
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PGP
+@dirrmtry %%SITE_PERL%%/PGP

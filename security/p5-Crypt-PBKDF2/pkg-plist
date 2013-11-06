@@ -1,3 +1,8 @@
+%%PERL5_MAN3%%/Crypt::PBKDF2.3.gz
+%%PERL5_MAN3%%/Crypt::PBKDF2::Hash.3.gz
+%%PERL5_MAN3%%/Crypt::PBKDF2::Hash::DigestHMAC.3.gz
+%%PERL5_MAN3%%/Crypt::PBKDF2::Hash::HMACSHA1.3.gz
+%%PERL5_MAN3%%/Crypt::PBKDF2::Hash::HMACSHA2.3.gz
 %%SITE_PERL%%/Crypt/PBKDF2.pm
 %%SITE_PERL%%/Crypt/PBKDF2/Hash.pm
 %%SITE_PERL%%/Crypt/PBKDF2/Hash/DigestHMAC.pm

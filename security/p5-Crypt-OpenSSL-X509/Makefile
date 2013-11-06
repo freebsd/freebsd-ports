@@ -14,9 +14,6 @@ COMMENT=	Perl extension for OpenSSL X509 API
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Crypt::OpenSSL::X509.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^cc_optimize_flags/ s| -Werror||' ${WRKSRC}/Makefile.PL
 

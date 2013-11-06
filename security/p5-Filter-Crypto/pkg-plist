@@ -1,4 +1,8 @@
 bin/crypt_file
+%%PERL5_MAN3%%/Filter::Crypto.3.gz
+%%PERL5_MAN3%%/Filter::Crypto::CryptFile.3.gz
+%%PERL5_MAN3%%/Filter::Crypto::Decrypt.3.gz
+%%PERL5_MAN3%%/PAR::Filter::Crypto.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Filter/Crypto.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Filter/Crypto/CryptFile.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Filter/Crypto/Decrypt.pm
@@ -8,11 +12,12 @@ bin/crypt_file
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Crypto/CryptFile/CryptFile.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Crypto/Decrypt/Decrypt.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Crypto/Decrypt/Decrypt.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Filter/Crypto
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Filter
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/PAR/Filter
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/PAR
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Crypto/CryptFile
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Crypto/Decrypt
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Crypto
+man/man1/crypt_file.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Crypto/Decrypt
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Crypto/CryptFile
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Crypto
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/PAR/Filter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/PAR
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Filter/Crypto
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Filter

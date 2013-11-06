@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Crypt::xDBM_File.3.gz
 %%SITE_PERL%%/Crypt/xDBM_File.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/xDBM_File/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/xDBM_File
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/xDBM_File
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
 @dirrmtry %%SITE_PERL%%/Crypt

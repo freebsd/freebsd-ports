@@ -16,9 +16,6 @@ LIB_DEPENDS=	krb5.3:${PORTSDIR}/security/krb5
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Authen::Krb5.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr,${LOCALBASE},g' ${WRKSRC}/Makefile.PL
 

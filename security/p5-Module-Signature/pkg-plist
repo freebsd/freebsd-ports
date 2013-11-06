@@ -1,6 +1,8 @@
 bin/cpansign
+%%PERL5_MAN3%%/Module::Signature.3.gz
 %%SITE_PERL%%/Module/Signature.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Signature/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Signature
-@dirrmtry %%SITE_PERL%%/Module
+man/man1/cpansign.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Signature
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
+@dirrmtry %%SITE_PERL%%/Module

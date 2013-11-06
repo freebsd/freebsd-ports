@@ -22,10 +22,8 @@ CONFIGURE_ENV=	OPENSSL_PREFIX=${OPENSSLBASE}
 REINPLACE_ARGS=	-i ''
 USE_OPENSSL=	yes
 
-MAN3=		Net::SSLeay.3 Net::SSLeay::Handle.3
 PORTEXAMPLES=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -35,9 +33,9 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}/
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${EXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKSRC}/examples/req.conf ${EXAMPLESDIR}/req.conf
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/examples/req.conf ${STAGEDIR}${EXAMPLESDIR}/req.conf
 .endif
 
 .include <bsd.port.mk>

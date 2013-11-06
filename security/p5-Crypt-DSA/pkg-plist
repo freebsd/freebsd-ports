@@ -1,11 +1,20 @@
-%%SITE_PERL%%/Crypt/DSA/Key/SSH2.pm
-%%SITE_PERL%%/Crypt/DSA/Key/PEM.pm
-%%SITE_PERL%%/Crypt/DSA/Key.pm
-%%SITE_PERL%%/Crypt/DSA/Signature.pm
-%%SITE_PERL%%/Crypt/DSA/KeyChain.pm
-%%SITE_PERL%%/Crypt/DSA/Util.pm
+%%PERL5_MAN3%%/Crypt::DSA.3.gz
+%%PERL5_MAN3%%/Crypt::DSA::Key.3.gz
+%%PERL5_MAN3%%/Crypt::DSA::Key::PEM.3.gz
+%%PERL5_MAN3%%/Crypt::DSA::Key::SSH2.3.gz
+%%PERL5_MAN3%%/Crypt::DSA::KeyChain.3.gz
+%%PERL5_MAN3%%/Crypt::DSA::Signature.3.gz
+%%PERL5_MAN3%%/Crypt::DSA::Util.3.gz
 %%SITE_PERL%%/Crypt/DSA.pm
+%%SITE_PERL%%/Crypt/DSA/Key.pm
+%%SITE_PERL%%/Crypt/DSA/Key/PEM.pm
+%%SITE_PERL%%/Crypt/DSA/Key/SSH2.pm
+%%SITE_PERL%%/Crypt/DSA/KeyChain.pm
+%%SITE_PERL%%/Crypt/DSA/Signature.pm
+%%SITE_PERL%%/Crypt/DSA/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/DSA/.packlist
-@dirrm %%SITE_PERL%%/Crypt/DSA/Key
-@dirrm %%SITE_PERL%%/Crypt/DSA
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/DSA
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/DSA
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
+@dirrmtry %%SITE_PERL%%/Crypt/DSA/Key
+@dirrmtry %%SITE_PERL%%/Crypt/DSA
+@dirrmtry %%SITE_PERL%%/Crypt

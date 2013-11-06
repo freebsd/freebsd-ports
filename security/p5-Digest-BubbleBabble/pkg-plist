@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Digest::BubbleBabble.3.gz
 %%SITE_PERL%%/Digest/BubbleBabble.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/BubbleBabble/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/BubbleBabble
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/BubbleBabble
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest
 @dirrmtry %%SITE_PERL%%/Digest

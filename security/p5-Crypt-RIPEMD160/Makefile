@@ -16,7 +16,4 @@ LICENSE=	ART20 GPLv1
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Crypt::RIPEMD160::MAC.3 Crypt::RIPEMD160.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
