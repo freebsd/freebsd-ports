@@ -3,26 +3,25 @@
 
 PORTNAME=	cpuminer
 PORTVERSION=	2.3.2
+PORTREVISION=	1
 CATEGORIES=	net-p2p math
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	cpuminer
+DISTNAME=	pooler-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	CPU miner for Litecoin and Bitcoin
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		jansson:${PORTSDIR}/devel/jansson
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libjansson.so:${PORTSDIR}/devel/jansson
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	pooler
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	8b30b7b
-
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf
 AUTOMAKE_ARGS=	--gnu --add-missing --copy
-GNU_CONFIGURE=	yes
 
-.include <bsd.port.options.mk>
+PLIST_FILES=	bin/minerd
 
 .include <bsd.port.pre.mk>
 
@@ -31,11 +30,9 @@ USE_GCC=        yes
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
 .for FILE in NEWS README
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
 
 .include <bsd.port.post.mk>
