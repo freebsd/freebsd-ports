@@ -2,9 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	mono
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.3
 CATEGORIES=	lang
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
+
+PATCHFILES=	d2cc22580898df5d4a15e0f99ab513e1570a6082.patch
+PATCH_SITES=	https://github.com/mono/mono/commit/
+PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	An open source implementation of .NET Development Framework
@@ -36,21 +40,18 @@ MAKE_ENV=	MONO_SHARED_DIR="${MONO_SHARED_DIR}" \
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc
 
-MAN1=		al.1 cccheck.1 ccrewrite.1 cert2spc.1 certmgr.1 chktrust.1 \
-		cilc.1 crlupdate.1 csharp.1 disco.1 dtd2xsd.1 gacutil.1 \
-		genxs.1 httpcfg.1 ilasm.1 lc.1 macpack.1 makecert.1 mconfig.1 \
-		mcs.1 mdassembler.1 mdoc-assemble.1 mdoc-export-html.1 \
-		mdoc-export-msxdoc.1 mdoc-update.1 mdoc-validate.1 mdoc.1 \
-		mdvalidater.1 mkbundle.1 mono-api-info.1 mono-cil-strip.1 \
-		mono-configuration-crypto.1 mono-service.1 mono-shlib-cop.1 \
-		mono-xmltool.1 mono.1 monodis.1 monodocer.1 monodocs2html.1 \
-		monolinker.1 monop.1 mozroots.1 mprof-report.1 pdb2mdb.1 \
-		permview.1 prj2make.1 resgen.1 secutil.1 setreg.1 sgen.1 \
-		signcode.1 sn.1 soapsuds.1 sqlsharp.1 wsdl.1 xbuild.1 xsd.1
-MAN5=		mdoc.5 mono-config.5
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900014 && exists(/usr/bin/clang)
+CC=	/usr/bin/clang
+CXX=	/usr/bin/clang++
+CPP=	/usr/bin/clang-cpp
+.else
+BUILD_DEPENDS+=	clang33:${PORTSDIR}/lang/clang33
+CC=	clang33
+CXX=	clang33
+CPP=	clang-cpp33
+.endif
 
 pre-everything::
 	@${CAT} ${PKGMESSAGE}
@@ -60,6 +61,10 @@ post-patch:
 		${WRKSRC}/mcs/class/Managed.Windows.Forms/build-csproj \
 		${WRKSRC}/mcs/class/Managed.Windows.Forms/build-csproj2k5 \
 		${WRKSRC}/mcs/class/Mono.WebBrowser/build-csproj2k5
+	@${REINPLACE_CMD} -e 's|^#!/bin/bash|#!/usr/bin/env bash|g' \
+		${WRKSRC}/scripts/mono-find-provides.in \
+		${WRKSRC}/scripts/mono-find-requires.in \
+		${WRKSRC}/scripts/mono-test-install
 	@${FIND} ${WRKSRC} -name '*.sh' | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|^#!/bin/bash|#!/bin/sh|g'
 	@${REINPLACE_CMD} 's/(1)/(1.0)/g' ${WRKSRC}/configure

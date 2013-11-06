@@ -37,8 +37,8 @@ bin/mdvalidater
 bin/mkbundle
 bin/mod
 bin/mono
-bin/mono-boehm
 bin/mono-api-info
+bin/mono-boehm
 bin/mono-cil-strip
 bin/mono-configuration-crypto
 bin/mono-find-provides
@@ -229,6 +229,7 @@ lib/mono/2.0/System.Data.Services.Client.dll
 lib/mono/2.0/System.Data.Services.dll
 lib/mono/2.0/System.Data.dll
 lib/mono/2.0/System.Design.dll
+lib/mono/2.0/System.DirectoryServices.Protocols.dll
 lib/mono/2.0/System.DirectoryServices.dll
 lib/mono/2.0/System.Drawing.Design.dll
 lib/mono/2.0/System.Drawing.dll
@@ -338,6 +339,7 @@ lib/mono/4.0/Microsoft.CSharp.dll
 lib/mono/4.0/Microsoft.CSharp.targets
 lib/mono/4.0/Microsoft.Common.targets
 lib/mono/4.0/Microsoft.Common.tasks
+lib/mono/4.0/Microsoft.Portable.CSharp.targets
 lib/mono/4.0/Microsoft.VisualBasic.targets
 lib/mono/4.0/Microsoft.VisualC.dll
 lib/mono/4.0/Microsoft.Web.Infrastructure.dll
@@ -378,6 +380,7 @@ lib/mono/4.0/System.Data.Services.Client.dll
 lib/mono/4.0/System.Data.Services.dll
 lib/mono/4.0/System.Data.dll
 lib/mono/4.0/System.Design.dll
+lib/mono/4.0/System.DirectoryServices.Protocols.dll
 lib/mono/4.0/System.DirectoryServices.dll
 lib/mono/4.0/System.Drawing.Design.dll
 lib/mono/4.0/System.Drawing.dll
@@ -385,8 +388,8 @@ lib/mono/4.0/System.Dynamic.dll
 lib/mono/4.0/System.EnterpriseServices.dll
 lib/mono/4.0/System.IdentityModel.Selectors.dll
 lib/mono/4.0/System.IdentityModel.dll
-lib/mono/4.0/System.Json.dll
 lib/mono/4.0/System.Json.Microsoft.dll
+lib/mono/4.0/System.Json.dll
 lib/mono/4.0/System.Management.dll
 lib/mono/4.0/System.Messaging.dll
 lib/mono/4.0/System.Net.dll
@@ -397,6 +400,7 @@ lib/mono/4.0/System.Runtime.Remoting.dll
 lib/mono/4.0/System.Runtime.Serialization.Formatters.Soap.dll
 lib/mono/4.0/System.Runtime.Serialization.dll
 lib/mono/4.0/System.Security.dll
+lib/mono/4.0/System.ServiceModel.Activation.dll
 lib/mono/4.0/System.ServiceModel.Discovery.dll
 lib/mono/4.0/System.ServiceModel.Routing.dll
 lib/mono/4.0/System.ServiceModel.Web.dll
@@ -524,6 +528,7 @@ lib/mono/4.5/System.Data.Services.Client.dll
 lib/mono/4.5/System.Data.Services.dll
 lib/mono/4.5/System.Data.dll
 lib/mono/4.5/System.Design.dll
+lib/mono/4.5/System.DirectoryServices.Protocols.dll
 lib/mono/4.5/System.DirectoryServices.dll
 lib/mono/4.5/System.Drawing.Design.dll
 lib/mono/4.5/System.Drawing.dll
@@ -533,8 +538,8 @@ lib/mono/4.5/System.IO.Compression.FileSystem.dll
 lib/mono/4.5/System.IO.Compression.dll
 lib/mono/4.5/System.IdentityModel.Selectors.dll
 lib/mono/4.5/System.IdentityModel.dll
-lib/mono/4.5/System.Json.dll
 lib/mono/4.5/System.Json.Microsoft.dll
+lib/mono/4.5/System.Json.dll
 lib/mono/4.5/System.Management.dll
 lib/mono/4.5/System.Messaging.dll
 lib/mono/4.5/System.Net.Http.Formatting.dll
@@ -558,6 +563,7 @@ lib/mono/4.5/System.Runtime.Remoting.dll
 lib/mono/4.5/System.Runtime.Serialization.Formatters.Soap.dll
 lib/mono/4.5/System.Runtime.Serialization.dll
 lib/mono/4.5/System.Security.dll
+lib/mono/4.5/System.ServiceModel.Activation.dll
 lib/mono/4.5/System.ServiceModel.Discovery.dll
 lib/mono/4.5/System.ServiceModel.Routing.dll
 lib/mono/4.5/System.ServiceModel.Web.dll
@@ -943,6 +949,10 @@ lib/mono/gac/System.Design/2.0.0.0__b03f5f7f11d50a3a/System.Design.dll
 lib/mono/gac/System.Design/2.0.0.0__b03f5f7f11d50a3a/System.Design.dll.mdb
 lib/mono/gac/System.Design/4.0.0.0__b03f5f7f11d50a3a/System.Design.dll
 lib/mono/gac/System.Design/4.0.0.0__b03f5f7f11d50a3a/System.Design.dll.mdb
+lib/mono/gac/System.DirectoryServices.Protocols/2.0.0.0__b03f5f7f11d50a3a/System.DirectoryServices.Protocols.dll
+lib/mono/gac/System.DirectoryServices.Protocols/2.0.0.0__b03f5f7f11d50a3a/System.DirectoryServices.Protocols.dll.mdb
+lib/mono/gac/System.DirectoryServices.Protocols/4.0.0.0__b03f5f7f11d50a3a/System.DirectoryServices.Protocols.dll
+lib/mono/gac/System.DirectoryServices.Protocols/4.0.0.0__b03f5f7f11d50a3a/System.DirectoryServices.Protocols.dll.mdb
 lib/mono/gac/System.DirectoryServices/2.0.0.0__b03f5f7f11d50a3a/System.DirectoryServices.dll
 lib/mono/gac/System.DirectoryServices/2.0.0.0__b03f5f7f11d50a3a/System.DirectoryServices.dll.mdb
 lib/mono/gac/System.DirectoryServices/4.0.0.0__b03f5f7f11d50a3a/System.DirectoryServices.dll
@@ -995,8 +1005,8 @@ lib/mono/gac/System.Net.Http/4.0.0.0__b03f5f7f11d50a3a/System.Net.Http.dll
 lib/mono/gac/System.Net.Http/4.0.0.0__b03f5f7f11d50a3a/System.Net.Http.dll.mdb
 lib/mono/gac/System.Net/3.5.0.0__b77a5c561934e089/System.Net.dll
 lib/mono/gac/System.Net/3.5.0.0__b77a5c561934e089/System.Net.dll.mdb
-lib/mono/gac/System.Net/4.0.0.0__b77a5c561934e089/System.Net.dll
-lib/mono/gac/System.Net/4.0.0.0__b77a5c561934e089/System.Net.dll.mdb
+lib/mono/gac/System.Net/4.0.0.0__b03f5f7f11d50a3a/System.Net.dll
+lib/mono/gac/System.Net/4.0.0.0__b03f5f7f11d50a3a/System.Net.dll.mdb
 lib/mono/gac/System.Numerics/4.0.0.0__b77a5c561934e089/System.Numerics.dll
 lib/mono/gac/System.Numerics/4.0.0.0__b77a5c561934e089/System.Numerics.dll.mdb
 lib/mono/gac/System.Reactive.Core/2.1.30214.0__31bf3856ad364e35/System.Reactive.Core.dll
@@ -1039,6 +1049,8 @@ lib/mono/gac/System.Security/2.0.0.0__b03f5f7f11d50a3a/System.Security.dll
 lib/mono/gac/System.Security/2.0.0.0__b03f5f7f11d50a3a/System.Security.dll.mdb
 lib/mono/gac/System.Security/4.0.0.0__b03f5f7f11d50a3a/System.Security.dll
 lib/mono/gac/System.Security/4.0.0.0__b03f5f7f11d50a3a/System.Security.dll.mdb
+lib/mono/gac/System.ServiceModel.Activation/4.0.0.0__31bf3856ad364e35/System.ServiceModel.Activation.dll
+lib/mono/gac/System.ServiceModel.Activation/4.0.0.0__31bf3856ad364e35/System.ServiceModel.Activation.dll.mdb
 lib/mono/gac/System.ServiceModel.Discovery/4.0.0.0__31bf3856ad364e35/System.ServiceModel.Discovery.dll
 lib/mono/gac/System.ServiceModel.Discovery/4.0.0.0__31bf3856ad364e35/System.ServiceModel.Discovery.dll.mdb
 lib/mono/gac/System.ServiceModel.Routing/4.0.0.0__31bf3856ad364e35/System.ServiceModel.Routing.dll
@@ -1128,7 +1140,7 @@ lib/mono/gac/System.Xml.Linq/3.5.0.0__b77a5c561934e089/System.Xml.Linq.dll
 lib/mono/gac/System.Xml.Linq/3.5.0.0__b77a5c561934e089/System.Xml.Linq.dll.mdb
 lib/mono/gac/System.Xml.Linq/4.0.0.0__b77a5c561934e089/System.Xml.Linq.dll
 lib/mono/gac/System.Xml.Linq/4.0.0.0__b77a5c561934e089/System.Xml.Linq.dll.mdb
-lib/mono/gac/System.Xml.Serialization/4.0.0.0__b03f5f7f11d50a3a/System.Xml.Serialization.dll
+lib/mono/gac/System.Xml.Serialization/4.0.0.0__b77a5c561934e089/System.Xml.Serialization.dll
 lib/mono/gac/System.Xml/2.0.0.0__b77a5c561934e089/System.Xml.dll
 lib/mono/gac/System.Xml/2.0.0.0__b77a5c561934e089/System.Xml.dll.mdb
 lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll
@@ -1181,6 +1193,7 @@ lib/mono/xbuild-frameworks/.NETFramework/v3.5/RedistList/FrameworkList.xml
 lib/mono/xbuild-frameworks/.NETFramework/v4.0/RedistList/FrameworkList.xml
 lib/mono/xbuild-frameworks/.NETFramework/v4.5/RedistList/FrameworkList.xml
 lib/mono/xbuild/Microsoft/Portable/v4.0/Microsoft.Portable.CSharp.targets
+lib/mono/xbuild/Microsoft/Portable/v4.5/Microsoft.Portable.CSharp.targets
 lib/mono/xbuild/Microsoft/Silverlight/v2.0/Microsoft.Silverlight.CSharp.targets
 lib/mono/xbuild/Microsoft/Silverlight/v2.0/Microsoft.Silverlight.Common.targets
 lib/mono/xbuild/Microsoft/Silverlight/v2.0/Microsoft.Silverlight.VisualBasic.targets
@@ -1189,6 +1202,8 @@ lib/mono/xbuild/Microsoft/Silverlight/v3.0/Microsoft.Silverlight.CSharp.targets
 lib/mono/xbuild/Microsoft/Silverlight/v3.0/Microsoft.Silverlight.Common.targets
 lib/mono/xbuild/Microsoft/Silverlight/v3.0/Microsoft.Silverlight.VisualBasic.targets
 lib/mono/xbuild/Microsoft/Silverlight/v3.0/Moonlight.Build.Tasks.dll
+lib/mono/xbuild/Microsoft/VisualStudio/v10.0/WebApplications/Microsoft.WebApplication.targets
+lib/mono/xbuild/Microsoft/VisualStudio/v11.0/WebApplications/Microsoft.WebApplication.targets
 lib/mono/xbuild/Microsoft/VisualStudio/v9.0/WebApplications/Microsoft.WebApplication.targets
 lib/monodoc/monodoc.xml
 lib/monodoc/sources/Mono.source
@@ -1234,6 +1249,65 @@ libdata/pkgconfig/system.web.mvc.pc
 libdata/pkgconfig/system.web.mvc2.pc
 libdata/pkgconfig/system.web.mvc3.pc
 libdata/pkgconfig/wcf.pc
+man/man1/al.1.gz
+man/man1/cccheck.1.gz
+man/man1/ccrewrite.1.gz
+man/man1/cert2spc.1.gz
+man/man1/certmgr.1.gz
+man/man1/chktrust.1.gz
+man/man1/cilc.1.gz
+man/man1/crlupdate.1.gz
+man/man1/csharp.1.gz
+man/man1/disco.1.gz
+man/man1/dtd2xsd.1.gz
+man/man1/gacutil.1.gz
+man/man1/genxs.1.gz
+man/man1/httpcfg.1.gz
+man/man1/ilasm.1.gz
+man/man1/lc.1.gz
+man/man1/macpack.1.gz
+man/man1/makecert.1.gz
+man/man1/mconfig.1.gz
+man/man1/mcs.1.gz
+man/man1/mdassembler.1.gz
+man/man1/mdoc-assemble.1.gz
+man/man1/mdoc-export-html.1.gz
+man/man1/mdoc-export-msxdoc.1.gz
+man/man1/mdoc-update.1.gz
+man/man1/mdoc-validate.1.gz
+man/man1/mdoc.1.gz
+man/man1/mdvalidater.1.gz
+man/man1/mkbundle.1.gz
+man/man1/mono-api-info.1.gz
+man/man1/mono-cil-strip.1.gz
+man/man1/mono-configuration-crypto.1.gz
+man/man1/mono-service.1.gz
+man/man1/mono-shlib-cop.1.gz
+man/man1/mono-xmltool.1.gz
+man/man1/mono.1.gz
+man/man1/monodis.1.gz
+man/man1/monodocer.1.gz
+man/man1/monodocs2html.1.gz
+man/man1/monolinker.1.gz
+man/man1/monop.1.gz
+man/man1/mozroots.1.gz
+man/man1/mprof-report.1.gz
+man/man1/pdb2mdb.1.gz
+man/man1/permview.1.gz
+man/man1/prj2make.1.gz
+man/man1/resgen.1.gz
+man/man1/secutil.1.gz
+man/man1/setreg.1.gz
+man/man1/sgen.1.gz
+man/man1/signcode.1.gz
+man/man1/sn.1.gz
+man/man1/soapsuds.1.gz
+man/man1/sqlsharp.1.gz
+man/man1/wsdl.1.gz
+man/man1/xbuild.1.gz
+man/man1/xsd.1.gz
+man/man5/mdoc.5.gz
+man/man5/mono-config.5.gz
 share/libgc-mono/README
 share/libgc-mono/README.DGUX386
 share/libgc-mono/README.Mac
@@ -1279,10 +1353,15 @@ share/mono-2.0/mono/cil/cil-opcodes.xml
 @dirrmtry lib/monodoc
 @dirrm lib/mono/xbuild/Microsoft/VisualStudio/v9.0/WebApplications
 @dirrm lib/mono/xbuild/Microsoft/VisualStudio/v9.0
+@dirrm lib/mono/xbuild/Microsoft/VisualStudio/v11.0/WebApplications
+@dirrm lib/mono/xbuild/Microsoft/VisualStudio/v11.0
+@dirrm lib/mono/xbuild/Microsoft/VisualStudio/v10.0/WebApplications
+@dirrm lib/mono/xbuild/Microsoft/VisualStudio/v10.0
 @dirrm lib/mono/xbuild/Microsoft/VisualStudio
 @dirrm lib/mono/xbuild/Microsoft/Silverlight/v3.0
 @dirrm lib/mono/xbuild/Microsoft/Silverlight/v2.0
 @dirrm lib/mono/xbuild/Microsoft/Silverlight
+@dirrm lib/mono/xbuild/Microsoft/Portable/v4.5
 @dirrm lib/mono/xbuild/Microsoft/Portable/v4.0
 @dirrm lib/mono/xbuild/Microsoft/Portable
 @dirrm lib/mono/xbuild/Microsoft
@@ -1335,7 +1414,7 @@ share/mono-2.0/mono/cil/cil-opcodes.xml
 @dirrm lib/mono/gac/System/2.0.0.0__b77a5c561934e089
 @dirrm lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089
 @dirrm lib/mono/gac/System.Xml/2.0.0.0__b77a5c561934e089
-@dirrm lib/mono/gac/System.Xml.Serialization/4.0.0.0__b03f5f7f11d50a3a
+@dirrm lib/mono/gac/System.Xml.Serialization/4.0.0.0__b77a5c561934e089
 @dirrm lib/mono/gac/System.Xml.Serialization
 @dirrm lib/mono/gac/System.Xml.Linq/4.0.0.0__b77a5c561934e089
 @dirrm lib/mono/gac/System.Xml.Linq/3.5.0.0__b77a5c561934e089
@@ -1410,6 +1489,8 @@ share/mono-2.0/mono/cil/cil-opcodes.xml
 @dirrm lib/mono/gac/System.ServiceModel.Routing
 @dirrm lib/mono/gac/System.ServiceModel.Discovery/4.0.0.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.ServiceModel.Discovery
+@dirrm lib/mono/gac/System.ServiceModel.Activation/4.0.0.0__31bf3856ad364e35
+@dirrm lib/mono/gac/System.ServiceModel.Activation
 @dirrm lib/mono/gac/System.ServiceModel
 @dirrm lib/mono/gac/System.Security/4.0.0.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/System.Security/2.0.0.0__b03f5f7f11d50a3a
@@ -1449,7 +1530,7 @@ share/mono-2.0/mono/cil/cil-opcodes.xml
 @dirrm lib/mono/gac/System.Reactive.Core
 @dirrm lib/mono/gac/System.Numerics/4.0.0.0__b77a5c561934e089
 @dirrm lib/mono/gac/System.Numerics
-@dirrm lib/mono/gac/System.Net/4.0.0.0__b77a5c561934e089
+@dirrm lib/mono/gac/System.Net/4.0.0.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/System.Net/3.5.0.0__b77a5c561934e089
 @dirrm lib/mono/gac/System.Net.Http/4.0.0.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/System.Net.Http.WebRequest/4.0.0.0__b03f5f7f11d50a3a
@@ -1492,6 +1573,9 @@ share/mono-2.0/mono/cil/cil-opcodes.xml
 @dirrm lib/mono/gac/System.Drawing
 @dirrm lib/mono/gac/System.DirectoryServices/4.0.0.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/System.DirectoryServices/2.0.0.0__b03f5f7f11d50a3a
+@dirrm lib/mono/gac/System.DirectoryServices.Protocols/4.0.0.0__b03f5f7f11d50a3a
+@dirrm lib/mono/gac/System.DirectoryServices.Protocols/2.0.0.0__b03f5f7f11d50a3a
+@dirrm lib/mono/gac/System.DirectoryServices.Protocols
 @dirrm lib/mono/gac/System.DirectoryServices
 @dirrm lib/mono/gac/System.Design/4.0.0.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/System.Design/2.0.0.0__b03f5f7f11d50a3a
