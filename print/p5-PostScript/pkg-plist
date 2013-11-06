@@ -1,3 +1,15 @@
+%%PERL5_MAN3%%/PostScript::Elements.3.gz
+%%PERL5_MAN3%%/PostScript::Metrics.3.gz
+%%PERL5_MAN3%%/PostScript::TextBlock.3.gz
+%%SITE_PERL%%/PostScript/Document.pm
+%%SITE_PERL%%/PostScript/Elements.pm
+%%SITE_PERL%%/PostScript/Metrics.pm
+%%SITE_PERL%%/PostScript/TextBlock.pm
+%%SITE_PERL%%/PostScript/example.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PostScript/Metrics/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PostScript/Metrics
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PostScript
+@dirrmtry %%SITE_PERL%%/PostScript
 %%SITE_PERL%%/PostScript/Document.pm
 %%SITE_PERL%%/PostScript/Elements.pm
 %%SITE_PERL%%/PostScript/TextBlock.pm

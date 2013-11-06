@@ -1,3 +1,7 @@
+%%PERL5_MAN3%%/PDFLib.3.gz
+%%SITE_PERL%%/PDFLib.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PDFLib/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDFLib
 %%SITE_PERL%%/PDFLib.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDFLib/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDFLib
