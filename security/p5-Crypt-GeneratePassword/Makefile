@@ -13,7 +13,4 @@ COMMENT=	Generate secure random pronounceable passwords
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Crypt::GeneratePassword.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

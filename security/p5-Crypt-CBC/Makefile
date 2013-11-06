@@ -13,7 +13,4 @@ COMMENT=	Perl5 interface to Cipher Block Chaining with DES and IDEA
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Crypt::CBC.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -14,10 +14,7 @@ COMMENT=	Simple authentication via FTP, POP3, or SMTP
 BUILD_DEPENDS=	p5-Authen-Simple>=0:${PORTSDIR}/security/p5-Authen-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	Authen::Simple::FTP.3 Authen::Simple::POP3.3 Authen::Simple::SMTP.3
-
 USES=		perl5
 USE_PERL5=	modbuild
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

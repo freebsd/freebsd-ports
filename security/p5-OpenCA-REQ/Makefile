@@ -18,9 +18,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		OpenCA::REQ.3
-
-NO_STAGE=	yes
 post-patch:
 	@${MV} ${WRKSRC}/prova.pl  ${WRKSRC}/prova.pl.sample
 

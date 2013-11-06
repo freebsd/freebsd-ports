@@ -1,3 +1,10 @@
+%%PERL5_MAN3%%/Data::Entropy.3.gz
+%%PERL5_MAN3%%/Data::Entropy::Algorithms.3.gz
+%%PERL5_MAN3%%/Data::Entropy::RawSource::CryptCounter.3.gz
+%%PERL5_MAN3%%/Data::Entropy::RawSource::Local.3.gz
+%%PERL5_MAN3%%/Data::Entropy::RawSource::RandomOrg.3.gz
+%%PERL5_MAN3%%/Data::Entropy::RawSource::RandomnumbersInfo.3.gz
+%%PERL5_MAN3%%/Data::Entropy::Source.3.gz
 %%SITE_PERL%%/Data/Entropy.pm
 %%SITE_PERL%%/Data/Entropy/Algorithms.pm
 %%SITE_PERL%%/Data/Entropy/RawSource/CryptCounter.pm

@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Digest::MD2.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Digest/MD2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/MD2/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/MD2/MD2.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/MD2/MD2.bs
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/MD2
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/MD2/MD2.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/MD2
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Digest

@@ -18,9 +18,4 @@ USE_PERL5=	configure
 USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--prefix-dir=${OPENSSLBASE} --defaults
 
-MAN1=		crypt_file.1
-MAN3=		Filter::Crypto.3 Filter::Crypto::CryptFile.3 \
-		Filter::Crypto::Decrypt.3 PAR::Filter::Crypto.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

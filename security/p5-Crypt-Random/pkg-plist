@@ -1,14 +1,15 @@
 bin/makerandom
-%%SITE_PERL%%/Crypt/Random/Provider/rand.pm
+%%PERL5_MAN3%%/Crypt::Random.3.gz
+%%SITE_PERL%%/Crypt/Random.pm
+%%SITE_PERL%%/Crypt/Random/Generator.pm
+%%SITE_PERL%%/Crypt/Random/Provider/File.pm
+%%SITE_PERL%%/Crypt/Random/Provider/devrandom.pm
 %%SITE_PERL%%/Crypt/Random/Provider/devurandom.pm
 %%SITE_PERL%%/Crypt/Random/Provider/egd.pm
-%%SITE_PERL%%/Crypt/Random/Provider/devrandom.pm
-%%SITE_PERL%%/Crypt/Random/Provider/File.pm
-%%SITE_PERL%%/Crypt/Random/Generator.pm
-%%SITE_PERL%%/Crypt/Random.pm
+%%SITE_PERL%%/Crypt/Random/Provider/rand.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Random/.packlist
-@dirrm %%SITE_PERL%%/Crypt/Random/Provider
-@dirrm %%SITE_PERL%%/Crypt/Random
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Random
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Random
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
+@dirrmtry %%SITE_PERL%%/Crypt/Random/Provider
+@dirrmtry %%SITE_PERL%%/Crypt/Random
 @dirrmtry %%SITE_PERL%%/Crypt

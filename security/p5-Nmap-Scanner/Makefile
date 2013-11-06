@@ -20,23 +20,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Nmap::Scanner.3 Nmap::Scanner::Address.3 \
-		Nmap::Scanner::Backend::Processor.3 \
-		Nmap::Scanner::Backend::Results.3 Nmap::Scanner::ExtraPorts.3 \
-		Nmap::Scanner::Host.3 Nmap::Scanner::HostList.3 Nmap::Scanner::Hostname.3 \
-		Nmap::Scanner::Hosts.3 Nmap::Scanner::NmapRun.3 \
-		Nmap::Scanner::OS.3 Nmap::Scanner::OS::Class.3 \
-		Nmap::Scanner::OS::IPIdSequence.3 Nmap::Scanner::OS::Match.3 \
-		Nmap::Scanner::OS::PortUsed.3 Nmap::Scanner::OS::TCPSequence.3 \
-		Nmap::Scanner::OS::TCPTSSequence.3 Nmap::Scanner::OS::Uptime.3 \
-		Nmap::Scanner::Port.3 Nmap::Scanner::PortList.3 Nmap::Scanner::RunStats.3 \
-		Nmap::Scanner::RunStats::Finished.3 Nmap::Scanner::ScanInfo.3 \
-		Nmap::Scanner::Scanner.3 Nmap::Scanner::Service.3 \
-		Nmap::Scanner::OS::Fingerprint.3 Nmap::Scanner::Distance.3 \
-		Nmap::Scanner::Task.3 Nmap::Scanner::TaskProgress.3 \
-		Nmap::Scanner::Util::BannerScanner.3
-
-NO_STAGE=	yes
 post-configure:
 	@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' ${WRKSRC}/Makefile
 

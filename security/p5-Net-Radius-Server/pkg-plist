@@ -1,4 +1,23 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Radius/Server/.packlist
+bin/nrsd
+bin/nrsdbtoyaml
+bin/pam-client
+bin/rad-bulk
+bin/rad-bulk-make
+bin/rad-client
+%%PERL5_MAN3%%/Net::Radius::Server.3.gz
+%%PERL5_MAN3%%/Net::Radius::Server::Base.3.gz
+%%PERL5_MAN3%%/Net::Radius::Server::DBStore.3.gz
+%%PERL5_MAN3%%/Net::Radius::Server::Dump.3.gz
+%%PERL5_MAN3%%/Net::Radius::Server::Match.3.gz
+%%PERL5_MAN3%%/Net::Radius::Server::Match::LDAP.3.gz
+%%PERL5_MAN3%%/Net::Radius::Server::Match::Simple.3.gz
+%%PERL5_MAN3%%/Net::Radius::Server::NS.3.gz
+%%PERL5_MAN3%%/Net::Radius::Server::PAM.3.gz
+%%PERL5_MAN3%%/Net::Radius::Server::Rule.3.gz
+%%PERL5_MAN3%%/Net::Radius::Server::Set.3.gz
+%%PERL5_MAN3%%/Net::Radius::Server::Set::Proxy.3.gz
+%%PERL5_MAN3%%/Net::Radius::Server::Set::Replace.3.gz
+%%PERL5_MAN3%%/Net::Radius::Server::Set::Simple.3.gz
 %%SITE_PERL%%/Net/Radius/Server.pm
 %%SITE_PERL%%/Net/Radius/Server/Base.pm
 %%SITE_PERL%%/Net/Radius/Server/DBStore.pm
@@ -13,17 +32,18 @@
 %%SITE_PERL%%/Net/Radius/Server/Set/Proxy.pm
 %%SITE_PERL%%/Net/Radius/Server/Set/Replace.pm
 %%SITE_PERL%%/Net/Radius/Server/Set/Simple.pm
-bin/nrsd
-bin/nrsdbtoyaml
-bin/pam-client
-bin/rad-bulk
-bin/rad-bulk-make
-bin/rad-client
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Radius/Server/.packlist
+man/man1/nrsd.1.gz
+man/man1/nrsdbtoyaml.1.gz
+man/man1/pam-client.1.gz
+man/man1/rad-bulk-make.1.gz
+man/man1/rad-bulk.1.gz
+man/man1/rad-client.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Radius/Server
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Radius
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrmtry %%SITE_PERL%%/Net/Radius/Server/Set
 @dirrmtry %%SITE_PERL%%/Net/Radius/Server/Match
 @dirrmtry %%SITE_PERL%%/Net/Radius/Server
 @dirrmtry %%SITE_PERL%%/Net/Radius
 @dirrmtry %%SITE_PERL%%/Net
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Radius/Server
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Radius
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

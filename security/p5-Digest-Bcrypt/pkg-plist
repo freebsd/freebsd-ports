@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Digest::Bcrypt.3.gz
 %%SITE_PERL%%/Digest/Bcrypt.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Bcrypt/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Bcrypt
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Bcrypt
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest
 @dirrmtry %%SITE_PERL%%/Digest

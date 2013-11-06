@@ -19,5 +19,4 @@ USE_PERL5=	configure
 
 PORTSCOUT=	skipv:0.9.47
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

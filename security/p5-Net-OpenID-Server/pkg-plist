@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Net::OpenID::Server.3.gz
 %%SITE_PERL%%/Net/OpenID/Server.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OpenID/Server/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OpenID/Server
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OpenID/Server
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OpenID
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrmtry %%SITE_PERL%%/Net/OpenID

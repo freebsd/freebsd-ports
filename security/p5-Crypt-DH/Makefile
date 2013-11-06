@@ -16,12 +16,4 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Crypt::DH.3
-PLIST_FILES=	%%SITE_PERL%%/Crypt/DH.pm \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/DH/.packlist
-PLIST_DIRSTRY=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/DH \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt \
-		%%SITE_PERL%%/Crypt
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenCA/PKCS7/.packlist
 %%SITE_PERL%%/OpenCA/PKCS7.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenCA/PKCS7
-@dirrmtry %%SITE_PERL%%/OpenCA
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenCA/PKCS7/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenCA/PKCS7
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenCA
+@dirrmtry %%SITE_PERL%%/OpenCA

@@ -1,17 +1,25 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OpenID/JanRain/.packlist
-%%SITE_PERL%%/Net/OpenID/JanRain/Stores.pm
-%%SITE_PERL%%/Net/OpenID/JanRain/CryptUtil.pm
+%%PERL5_MAN3%%/Net::OpenID::JanRain::Consumer.3.gz
+%%PERL5_MAN3%%/Net::OpenID::JanRain::Server.3.gz
+%%PERL5_MAN3%%/Net::OpenID::JanRain::Stores::FileStore.3.gz
+%%PERL5_MAN3%%/Net::OpenID::JanRain::Stores::MySQLStore.3.gz
+%%PERL5_MAN3%%/Net::OpenID::JanRain::Stores::PostgreSQLStore.3.gz
+%%PERL5_MAN3%%/Net::OpenID::JanRain::Stores::SQLStore.3.gz
+%%PERL5_MAN3%%/Net::OpenID::JanRain::Stores::SQLiteStore.3.gz
+%%PERL5_MAN3%%/Net::OpenID::JanRain::Util.3.gz
 %%SITE_PERL%%/Net/OpenID/JanRain/Association.pm
-%%SITE_PERL%%/Net/OpenID/JanRain/Util.pm
 %%SITE_PERL%%/Net/OpenID/JanRain/Consumer.pm
-%%SITE_PERL%%/Net/OpenID/JanRain/Server.pm
 %%SITE_PERL%%/Net/OpenID/JanRain/Consumer/LinkParser.pm
+%%SITE_PERL%%/Net/OpenID/JanRain/CryptUtil.pm
+%%SITE_PERL%%/Net/OpenID/JanRain/Server.pm
+%%SITE_PERL%%/Net/OpenID/JanRain/Stores.pm
 %%SITE_PERL%%/Net/OpenID/JanRain/Stores/DumbStore.pm
 %%SITE_PERL%%/Net/OpenID/JanRain/Stores/FileStore.pm
+%%SITE_PERL%%/Net/OpenID/JanRain/Stores/MySQLStore.pm
 %%SITE_PERL%%/Net/OpenID/JanRain/Stores/PostgreSQLStore.pm
 %%SITE_PERL%%/Net/OpenID/JanRain/Stores/SQLStore.pm
-%%SITE_PERL%%/Net/OpenID/JanRain/Stores/MySQLStore.pm
 %%SITE_PERL%%/Net/OpenID/JanRain/Stores/SQLiteStore.pm
+%%SITE_PERL%%/Net/OpenID/JanRain/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OpenID/JanRain/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OpenID/JanRain
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OpenID
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

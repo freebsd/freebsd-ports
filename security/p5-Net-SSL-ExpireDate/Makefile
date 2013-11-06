@@ -16,17 +16,9 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Time-Duration-Parse>=0:${PORTSDIR}/devel/p5-Time-Duration-Parse \
 		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
 		p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require
-RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-Crypt-OpenSSL-X509>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-X509 \
-		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
-		p5-Time-Duration-Parse>=0:${PORTSDIR}/devel/p5-Time-Duration-Parse \
-		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
-		p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::SSL::ExpireDate.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

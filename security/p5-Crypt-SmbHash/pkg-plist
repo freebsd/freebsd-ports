@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Crypt::SmbHash.3.gz
 %%SITE_PERL%%/Crypt/SmbHash.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/SmbHash/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/SmbHash
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/SmbHash
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
 @dirrmtry %%SITE_PERL%%/Crypt

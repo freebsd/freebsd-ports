@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Crypt::PasswdMD5.3.gz
 %%SITE_PERL%%/Crypt/PasswdMD5.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/PasswdMD5/.packlist
-@dirrmtry %%SITE_PERL%%/Crypt
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/PasswdMD5
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/PasswdMD5
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
+@dirrmtry %%SITE_PERL%%/Crypt

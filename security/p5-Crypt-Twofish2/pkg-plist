@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Crypt::Twofish2.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/Twofish2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Twofish2/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Twofish2/Twofish2.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Twofish2/Twofish2.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Twofish2
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Twofish2
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt

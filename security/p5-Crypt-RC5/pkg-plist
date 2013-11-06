@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Crypt::RC5.3.gz
 %%SITE_PERL%%/Crypt/RC5.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RC5/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RC5
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RC5
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
 @dirrmtry %%SITE_PERL%%/Crypt

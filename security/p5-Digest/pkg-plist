@@ -1,6 +1,9 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/.packlist
+%%PERL5_MAN3%%/Digest.3.gz
+%%PERL5_MAN3%%/Digest::base.3.gz
+%%PERL5_MAN3%%/Digest::file.3.gz
 %%SITE_PERL%%/Digest.pm
 %%SITE_PERL%%/Digest/base.pm
 %%SITE_PERL%%/Digest/file.pm
-@dirrmtry %%SITE_PERL%%/Digest
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest
+@dirrmtry %%SITE_PERL%%/Digest

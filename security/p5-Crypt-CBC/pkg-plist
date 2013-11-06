@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Crypt::CBC.3.gz
 %%SITE_PERL%%/Crypt/CBC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/CBC/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/CBC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/CBC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
 @dirrmtry %%SITE_PERL%%/Crypt

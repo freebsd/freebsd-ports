@@ -1,4 +1,15 @@
 bin/authen-paas-passwd
+%%PERL5_MAN3%%/Authen::PAAS.3.gz
+%%PERL5_MAN3%%/Authen::PAAS::BasicLoginModule.3.gz
+%%PERL5_MAN3%%/Authen::PAAS::BasicUser.3.gz
+%%PERL5_MAN3%%/Authen::PAAS::Callback.3.gz
+%%PERL5_MAN3%%/Authen::PAAS::ConsoleCallback.3.gz
+%%PERL5_MAN3%%/Authen::PAAS::Context.3.gz
+%%PERL5_MAN3%%/Authen::PAAS::Credential.3.gz
+%%PERL5_MAN3%%/Authen::PAAS::LoginModule.3.gz
+%%PERL5_MAN3%%/Authen::PAAS::Principal.3.gz
+%%PERL5_MAN3%%/Authen::PAAS::SimpleCallback.3.gz
+%%PERL5_MAN3%%/Authen::PAAS::Subject.3.gz
 %%SITE_PERL%%/Authen/PAAS.pm
 %%SITE_PERL%%/Authen/PAAS/BasicLoginModule.pm
 %%SITE_PERL%%/Authen/PAAS/BasicUser.pm
@@ -11,7 +22,8 @@ bin/authen-paas-passwd
 %%SITE_PERL%%/Authen/PAAS/SimpleCallback.pm
 %%SITE_PERL%%/Authen/PAAS/Subject.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/PAAS/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/PAAS
+man/man1/authen-paas-passwd.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/PAAS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen
-@dirrm %%SITE_PERL%%/Authen/PAAS
+@dirrmtry %%SITE_PERL%%/Authen/PAAS
 @dirrmtry %%SITE_PERL%%/Authen

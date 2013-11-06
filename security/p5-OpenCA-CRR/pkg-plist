@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenCA/CRR/.packlist
+%%PERL5_MAN3%%/OpenCA::CRR.3.gz
 %%SITE_PERL%%/OpenCA/CRR.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenCA/CRR
-@dirrmtry %%SITE_PERL%%/OpenCA
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenCA/CRR/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenCA/CRR
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenCA
+@dirrmtry %%SITE_PERL%%/OpenCA

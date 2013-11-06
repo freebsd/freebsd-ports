@@ -14,12 +14,6 @@ COMMENT=	Perl extension providing access to the GSSAPIv2 library
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		GSSAPI.3 \
-		GSSAPI::OID.3 \
-		GSSAPI::OID::Set.3 \
-		GSSAPI::Status.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000

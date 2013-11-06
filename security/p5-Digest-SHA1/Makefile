@@ -13,7 +13,4 @@ COMMENT=	Perl interface to the SHA-1 Algorithm
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Digest::SHA1.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

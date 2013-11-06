@@ -14,10 +14,7 @@ BUILD_DEPENDS=	p5-Crypt-Random>=0:${PORTSDIR}/security/p5-Crypt-Random \
 		p5-Net-Address-IPv4-Local>=0:${PORTSDIR}/net/p5-Net-Address-IPv4-Local
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	Crypt::Dining.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

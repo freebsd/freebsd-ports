@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Crypt::Blowfish.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/Blowfish.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Blowfish/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Blowfish/Blowfish.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Blowfish/Blowfish.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Blowfish
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Blowfish
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt

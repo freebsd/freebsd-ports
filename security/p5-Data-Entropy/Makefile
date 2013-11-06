@@ -18,13 +18,4 @@ RUN_DEPENDS=	p5-Crypt-Rijndael>=0:${PORTSDIR}/security/p5-Crypt-Rijndael \
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Data::Entropy.3 \
-		Data::Entropy::Algorithms.3 \
-		Data::Entropy::RawSource::CryptCounter.3 \
-		Data::Entropy::RawSource::Local.3 \
-		Data::Entropy::RawSource::RandomOrg.3 \
-		Data::Entropy::RawSource::RandomnumbersInfo.3 \
-		Data::Entropy::Source.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

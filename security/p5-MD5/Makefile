@@ -14,7 +14,4 @@ COMMENT=	wrapper to the Digest::MD5 module
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		MD5.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

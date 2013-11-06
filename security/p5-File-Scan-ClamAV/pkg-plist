@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Scan/ClamAV/.packlist
+%%PERL5_MAN3%%/File::Scan::ClamAV.3.gz
 %%SITE_PERL%%/File/Scan/ClamAV.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Scan/ClamAV
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Scan 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/File 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/File/Scan 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/File 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Scan/ClamAV/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Scan/ClamAV
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Scan
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
+@dirrmtry %%SITE_PERL%%/File/Scan
+@dirrmtry %%SITE_PERL%%/File

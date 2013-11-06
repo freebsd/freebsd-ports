@@ -1,8 +1,9 @@
+%%PERL5_MAN3%%/Crypt::IDEA.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/IDEA.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/IDEA.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/IDEA/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/IDEA/IDEA.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/IDEA/IDEA.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/IDEA
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/IDEA
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt

@@ -1,10 +1,13 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/SSLify/.packlist
+%%PERL5_MAN3%%/POE::Component::SSLify.3.gz
+%%PERL5_MAN3%%/POE::Component::SSLify::ClientHandle.3.gz
+%%PERL5_MAN3%%/POE::Component::SSLify::ServerHandle.3.gz
 %%SITE_PERL%%/POE/Component/SSLify.pm
 %%SITE_PERL%%/POE/Component/SSLify/ClientHandle.pm
 %%SITE_PERL%%/POE/Component/SSLify/ServerHandle.pm
-@dirrm %%SITE_PERL%%/POE/Component/SSLify
-@dirrmtry %%SITE_PERL%%/POE/Component
-@dirrmtry %%SITE_PERL%%/POE
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/SSLify
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/SSLify/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/SSLify
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
+@dirrmtry %%SITE_PERL%%/POE/Component/SSLify
+@dirrmtry %%SITE_PERL%%/POE/Component
+@dirrmtry %%SITE_PERL%%/POE

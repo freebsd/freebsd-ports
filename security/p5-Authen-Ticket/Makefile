@@ -13,10 +13,4 @@ COMMENT=	Perl module providing the framework for implementing a ticketing system
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Authen::Ticket.3 \
-	Authen::Ticket::Client.3 \
-	Authen::Ticket::Server.3 \
-	Authen::Ticket::Signature.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

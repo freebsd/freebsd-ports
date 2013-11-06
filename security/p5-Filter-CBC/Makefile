@@ -19,14 +19,11 @@ PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Filter::CBC.3
-
-NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

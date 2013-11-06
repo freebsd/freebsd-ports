@@ -1,9 +1,13 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/SecurityImage/.packlist
+%%PERL5_MAN3%%/GD::SecurityImage.3.gz
+%%PERL5_MAN3%%/GD::SecurityImage::GD.3.gz
+%%PERL5_MAN3%%/GD::SecurityImage::Magick.3.gz
+%%PERL5_MAN3%%/GD::SecurityImage::Styles.3.gz
 %%SITE_PERL%%/GD/SecurityImage.pm
 %%SITE_PERL%%/GD/SecurityImage/GD.pm
 %%SITE_PERL%%/GD/SecurityImage/Magick.pm
 %%SITE_PERL%%/GD/SecurityImage/Styles.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/SecurityImage
-@dirrm %%SITE_PERL%%/GD/SecurityImage
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/SecurityImage/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/SecurityImage
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD
+@dirrmtry %%SITE_PERL%%/GD/SecurityImage
 @dirrmtry %%SITE_PERL%%/GD

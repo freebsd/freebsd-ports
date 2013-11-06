@@ -14,10 +14,7 @@ BUILD_DEPENDS=	p5-Authen-Simple>=0:${PORTSDIR}/security/p5-Authen-Simple \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	Authen::Simple::HTTP.3
-
 USES=		perl5
 USE_PERL5=	modbuild
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

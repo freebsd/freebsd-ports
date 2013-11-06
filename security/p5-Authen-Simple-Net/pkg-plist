@@ -1,3 +1,6 @@
+%%PERL5_MAN3%%/Authen::Simple::FTP.3.gz
+%%PERL5_MAN3%%/Authen::Simple::POP3.3.gz
+%%PERL5_MAN3%%/Authen::Simple::SMTP.3.gz
 %%SITE_PERL%%/Authen/Simple/FTP.pm
 %%SITE_PERL%%/Authen/Simple/POP3.pm
 %%SITE_PERL%%/Authen/Simple/SMTP.pm

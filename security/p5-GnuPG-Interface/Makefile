@@ -20,19 +20,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	GnuPG::Fingerprint.3 \
-	GnuPG::Handles.3 \
-	GnuPG::Interface.3 \
-	GnuPG::Key.3 \
-	GnuPG::Options.3 \
-	GnuPG::PrimaryKey.3 \
-	GnuPG::PublicKey.3 \
-	GnuPG::Revoker.3 \
-	GnuPG::SecretKey.3 \
-	GnuPG::Signature.3 \
-	GnuPG::SubKey.3 \
-	GnuPG::UserAttribute.3 \
-	GnuPG::UserId.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,3 +1,17 @@
+%%PERL5_MAN3%%/Crypt::RSA.3.gz
+%%PERL5_MAN3%%/Crypt::RSA::DataFormat.3.gz
+%%PERL5_MAN3%%/Crypt::RSA::Debug.3.gz
+%%PERL5_MAN3%%/Crypt::RSA::ES::OAEP.3.gz
+%%PERL5_MAN3%%/Crypt::RSA::ES::PKCS1v15.3.gz
+%%PERL5_MAN3%%/Crypt::RSA::Errorhandler.3.gz
+%%PERL5_MAN3%%/Crypt::RSA::Key.3.gz
+%%PERL5_MAN3%%/Crypt::RSA::Key::Private.3.gz
+%%PERL5_MAN3%%/Crypt::RSA::Key::Private::SSH.3.gz
+%%PERL5_MAN3%%/Crypt::RSA::Key::Public.3.gz
+%%PERL5_MAN3%%/Crypt::RSA::Key::Public::SSH.3.gz
+%%PERL5_MAN3%%/Crypt::RSA::Primitives.3.gz
+%%PERL5_MAN3%%/Crypt::RSA::SS::PKCS1v15.3.gz
+%%PERL5_MAN3%%/Crypt::RSA::SS::PSS.3.gz
 %%SITE_PERL%%/Crypt/RSA.pm
 %%SITE_PERL%%/Crypt/RSA/DataFormat.pm
 %%SITE_PERL%%/Crypt/RSA/Debug.pm
@@ -13,12 +27,12 @@
 %%SITE_PERL%%/Crypt/RSA/SS/PKCS1v15.pm
 %%SITE_PERL%%/Crypt/RSA/SS/PSS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RSA/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RSA
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RSA
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
-@dirrm %%SITE_PERL%%/Crypt/RSA/SS
-@dirrm %%SITE_PERL%%/Crypt/RSA/Key/Public
-@dirrm %%SITE_PERL%%/Crypt/RSA/Key/Private
-@dirrm %%SITE_PERL%%/Crypt/RSA/Key
-@dirrm %%SITE_PERL%%/Crypt/RSA/ES
-@dirrm %%SITE_PERL%%/Crypt/RSA
+@dirrmtry %%SITE_PERL%%/Crypt/RSA/SS
+@dirrmtry %%SITE_PERL%%/Crypt/RSA/Key/Public
+@dirrmtry %%SITE_PERL%%/Crypt/RSA/Key/Private
+@dirrmtry %%SITE_PERL%%/Crypt/RSA/Key
+@dirrmtry %%SITE_PERL%%/Crypt/RSA/ES
+@dirrmtry %%SITE_PERL%%/Crypt/RSA
 @dirrmtry %%SITE_PERL%%/Crypt

@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/PGP::Sign.3.gz
 %%SITE_PERL%%/PGP/Sign.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PGP/Sign/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PGP/Sign
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PGP/Sign
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PGP
 @dirrmtry %%SITE_PERL%%/PGP

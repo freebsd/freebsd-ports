@@ -17,9 +17,6 @@ PORTSCOUT=	skipv:0.9.17
 USES=		perl5
 USE_PERL5=	configure
 
-P5MAN3=		OpenCA::CRL.3
-
-NO_STAGE=	yes
 post-patch:
 	@${MV} ${WRKSRC}/prova.pl ${WRKSRC}/prova.pl.sample
 

@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Crypt::OpenSSL::RSA.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/OpenSSL/RSA.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/RSA.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/RSA.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/RSA.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/get_key_parameters.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/import_random_seed.al

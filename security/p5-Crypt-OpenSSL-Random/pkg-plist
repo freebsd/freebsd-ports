@@ -1,10 +1,11 @@
+%%PERL5_MAN3%%/Crypt::OpenSSL::Random.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/OpenSSL/Random.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/Random/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/Random/Random.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/Random/Random.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/Random/Random.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/Random/autosplit.ix
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/OpenSSL
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/Random
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/OpenSSL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt

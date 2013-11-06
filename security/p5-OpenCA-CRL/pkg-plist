@@ -1,6 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenCA/CRL/.packlist
+%%PERL5_MAN3%%/OpenCA::CRL.3.gz
 %%SITE_PERL%%/OpenCA/CRL.pm
 %%SITE_PERL%%/OpenCA/CRL.pod
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenCA/CRL
-@dirrmtry %%SITE_PERL%%/OpenCA
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenCA/CRL/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenCA/CRL
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenCA
+@dirrmtry %%SITE_PERL%%/OpenCA

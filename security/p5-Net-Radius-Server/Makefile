@@ -22,26 +22,4 @@ RUN_DEPENDS=	p5-Authen-PAM>=0:${PORTSDIR}/security/p5-Authen-PAM \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		nrsd.1 \
-		nrsdbtoyaml.1 \
-		pam-client.1 \
-		rad-bulk-make.1 \
-		rad-bulk.1 \
-		rad-client.1
-MAN3=		Net::Radius::Server.3 \
-		Net::Radius::Server::Base.3 \
-		Net::Radius::Server::DBStore.3 \
-		Net::Radius::Server::Dump.3 \
-		Net::Radius::Server::Match.3 \
-		Net::Radius::Server::Match::LDAP.3 \
-		Net::Radius::Server::Match::Simple.3 \
-		Net::Radius::Server::NS.3 \
-		Net::Radius::Server::PAM.3 \
-		Net::Radius::Server::Rule.3 \
-		Net::Radius::Server::Set.3 \
-		Net::Radius::Server::Set::Proxy.3 \
-		Net::Radius::Server::Set::Replace.3 \
-		Net::Radius::Server::Set::Simple.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

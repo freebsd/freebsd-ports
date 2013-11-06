@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Crypt::CipherSaber.3.gz
 %%SITE_PERL%%/Crypt/CipherSaber.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/CipherSaber/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/CipherSaber
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/CipherSaber
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
 @dirrmtry %%SITE_PERL%%/Crypt
