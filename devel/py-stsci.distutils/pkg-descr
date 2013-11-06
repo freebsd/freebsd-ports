@@ -1,0 +1,11 @@
+This package contains utilities used to package some of STScI's Python
+projects, specifically those projects that comprise stsci_python and Astrolib.
+
+It currently consists mostly of some setup_hook scripts meant for use with
+distutils2/packaging and/or d2to1, and a customized easy_install command meant
+for use with distribute.
+
+This package is not meant for general consumption, though it might be worth
+looking at for examples of how to do certain things with your own packages.
+
+WWW: http://www.stsci.edu/institute/software_hardware/pyraf/stsci_python
