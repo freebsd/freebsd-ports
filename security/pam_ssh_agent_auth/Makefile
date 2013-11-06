@@ -15,8 +15,6 @@ CONFIGURE_ENV=	ac_cv_func_strnvis=no
 CONFIGURE_ARGS=	--libexecdir=${LOCALBASE}/lib
 USES=		perl5
 
-MAN8=		pam_ssh_agent_auth.8
-PLIST_FILES=	lib/pam_ssh_agent_auth.so
+PLIST_FILES=	lib/pam_ssh_agent_auth.so man/man8/pam_ssh_agent_auth.8.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
