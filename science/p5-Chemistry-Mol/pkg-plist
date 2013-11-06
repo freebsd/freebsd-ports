@@ -1,13 +1,21 @@
+%%PERL5_MAN3%%/Chemistry::Atom.3.gz
+%%PERL5_MAN3%%/Chemistry::Bond.3.gz
+%%PERL5_MAN3%%/Chemistry::File.3.gz
+%%PERL5_MAN3%%/Chemistry::File::Dumper.3.gz
+%%PERL5_MAN3%%/Chemistry::File::Formula.3.gz
+%%PERL5_MAN3%%/Chemistry::Mol.3.gz
+%%PERL5_MAN3%%/Chemistry::Obj.3.gz
+%%PERL5_MAN3%%/Chemistry::Tutorial.3.gz
 %%SITE_PERL%%/Chemistry/Atom.pm
 %%SITE_PERL%%/Chemistry/Bond.pm
-%%SITE_PERL%%/Chemistry/Obj.pm
 %%SITE_PERL%%/Chemistry/File.pm
-%%SITE_PERL%%/Chemistry/Tutorial.pod
-%%SITE_PERL%%/Chemistry/Mol.pm
 %%SITE_PERL%%/Chemistry/File/Dumper.pm
 %%SITE_PERL%%/Chemistry/File/Formula.pm
+%%SITE_PERL%%/Chemistry/Mol.pm
+%%SITE_PERL%%/Chemistry/Obj.pm
+%%SITE_PERL%%/Chemistry/Tutorial.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Mol/.packlist
-@dirrm %%SITE_PERL%%/Chemistry/File
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Mol
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Mol
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry
+@dirrmtry %%SITE_PERL%%/Chemistry/File
 @dirrmtry %%SITE_PERL%%/Chemistry

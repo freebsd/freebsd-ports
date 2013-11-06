@@ -19,17 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		bufr_reencode.pl.1 \
-		bufralter.pl.1 \
-		bufrencode.pl.1 \
-		bufrread.pl.1 \
-		bufrresolve.pl.1
-MAN3=		Geo::BUFR.3 \
-		Geo::bufr_reencode.3 \
-		Geo::bufralter.3 \
-		Geo::bufrencode.3 \
-		Geo::bufrread.3 \
-		Geo::bufrresolve.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

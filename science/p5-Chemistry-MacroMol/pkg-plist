@@ -1,6 +1,8 @@
+%%PERL5_MAN3%%/Chemistry::Domain.3.gz
+%%PERL5_MAN3%%/Chemistry::MacroMol.3.gz
 %%SITE_PERL%%/Chemistry/Domain.pm
 %%SITE_PERL%%/Chemistry/MacroMol.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/MacroMol/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/MacroMol
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/MacroMol
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry
 @dirrmtry %%SITE_PERL%%/Chemistry

@@ -23,12 +23,4 @@ TEST_DEPENDS=	p5-Test-Base>0:${PORTSDIR}/devel/p5-Test-Base
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Geo::Coordinates::Converter::Datum.3 \
-		Geo::Coordinates::Converter.3 \
-		Geo::Coordinates::Converter::Point.3 \
-		Geo::Coordinates::Converter::Point::ISO6709.3 \
-		Geo::Coordinates::Converter::Format.3 \
-		Geo::Coordinates::Converter::Format::ISO6709.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
