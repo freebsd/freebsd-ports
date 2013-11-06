@@ -7,23 +7,17 @@
 # PROVIDE: sslh
 # REQUIRE: login
 # KEYWORD: shutdown
-
 #
 # Add the following to /etc/rc.conf[.local] to enable this service
 #
 # sslh_enable="YES"
 #
 # You can fine tune others variables too:
+# You can fine tune others variables too:
 # sslh_mode="fork | select"
 # fork: stable but slow performance
 # select: new but high performance
-# sslh_pidfile="/var/run/sslh.pid"
-# sslh_ssltarget="localhost:443"
-# sslh_sshtarget="localhost:22"
-# sslh_sshtimeout="2"
-# sslh_listening="0.0.0.0:8443"	
-# sslh_uid="nobody"
-# sslh_flags
+# sslh_fib: Routing table number
 
 sslh_precmd() {
 	if command -v check_namevarlist > /dev/null 2>&1; then
@@ -47,30 +41,17 @@ name="sslh"
 rcvar=sslh_enable
 
 start_precmd="sslh_precmd"
-stop_postcmd="sslh_postcmd"
 
 load_rc_config $name
-
 sslh_enable=${sslh_enable:-"NO"}
 sslh_mode=${sslh_mode:-"fork"}
-sslh_listening=${sslh_listening:-"0.0.0.0:443"}
-sslh_sshtarget=${sslh_sshtarget:-"localhost:22"}
-sslh_ssltarget=${sslh_ssltarget:-"localhost:8443"}
-sslh_sshtimeout=${sslh_sshtimeout:-"2"}
-sslh_openvpntarget=${sslh_openvpntarget:-"localhost:1193"}
-sslh_xmpptarget=${sslh_xmpptarget:-"localhost:5222"}
-sslh_tinctarget=${sslh_tinctarget:-"localhost:655"}
 
-pidfile=${sslh_pidfile:-"/var/run/sslh.pid"}
+required_files="%%PREFIX%%/etc/${name}.conf"
+for value in listening sshtarget ssltarget sshtimeout openvpntarget xmpptarget tinctarget;do
+	eval "[ -n \"\${sslh_${value}}\" ]" && warn "${name}_${value} no more used: Configuration file available"
+done
+
 command="%%PREFIX%%/sbin/${name}-${sslh_mode}"
-command_args="-t ${sslh_sshtimeout} -p ${sslh_listening} \
-	--ssh ${sslh_sshtarget} --ssl ${sslh_ssltarget} -P ${pidfile} \
-	--user nobody --openvpn ${sslh_openvpntarget} \
-	--xmpp ${sslh_xmpptarget} --tinc ${sslh_tinctarget}"
-
-sslh_postcmd()
-{
-    rm -f ${pidfile}
-}
+command_args="-F %%PREFIX%%/etc/${name}.conf"
 
 run_rc_command "$1"
