@@ -5,4 +5,4 @@ lexical closures, built-in list and matrix support and an easy-to-use C
 interface. The interpreter uses LLVM as a backend to JIT-compile Pure
 programs to fast native code.
 
-WWW:	https://code.google.com/p/pure-lang/
+WWW: http://purelang.bitbucket.org/

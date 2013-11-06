@@ -4,4 +4,4 @@ libsamplerate, as well as a realtime module which gives Pure scripts access
 to realtime scheduling on systems which have a pthreads library with the
 POSIX realtime threads extension.
 
-WWW:	http://docs.pure-lang.googlecode.com/hg/pure-audio.html
+WWW: http://docs.pure-lang.googlecode.com/hg/pure-audio.html

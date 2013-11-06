@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	pure
-PORTVERSION=	0.55
+PORTVERSION=	0.58
 CATEGORIES=	lang
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
-		${PORTNAME}-docs-${PORTVERSION}.tar.gz
+MASTER_SITES=	https://cdn.bitbucket.org/purelang/pure-lang/downloads/
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz ${PORTNAME}-docs-${PORTVERSION}.tar.gz
+DIST_SUBDIR=	pure
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Modern-style functional programming language
@@ -15,34 +16,49 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 		libmpfr.so:${PORTSDIR}/math/mpfr
-BUILD_DEPENDS=	llvm31>=3.1:${PORTSDIR}/devel/llvm31
-RUN_DEPENDS=	llvm31>=3.1:${PORTSDIR}/devel/llvm31
+BUILD_DEPENDS=	llvm>=3.2:${PORTSDIR}/devel/llvm
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		iconv pkgconfig
-USE_AUTOTOOLS=	libltdl
-GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack
-USE_LDCONFIG=	yes
-USE_PURE=	yes
-
-CONFIGURE_ARGS=	--with-libgmp-prefix=${LOCALBASE} --enable-release
-
-OPTIONS_DEFINE=	EMACS
-EMACS_DESC=	Compile pure-mode.el with Emacs
-
-MAN1=		pure.1
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
+USES=		gmake iconv pathfix pkgconfig
+USE_AUTOTOOLS=	libltdl
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-libgmp-prefix=${LOCALBASE} --enable-release
+USE_LDCONFIG=	yes
+
+MAKE_ARGS+=	prefix=${PREFIX} mandir=${PREFIX}/man \
+		CC=${CC} CFLAGS="${CFLAGS}" \
+		CXX=${CXX} CXXFLAGS="${CXXFLAGS}" \
+		CPPFLAGS+=-I${LOCALBASE}/include \
+		LDFLAGS+=-L${LOCALBASE}/lib
+
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	DOCS EMACS ETC EXAMPLES
+
+EMACS_DESC=	Compile pure-mode.el with Emacs
+ETC_DESC=	Copy Pure syntax highlighting to ${DATADIR}/etc
+
+OPTIONS_DEFAULT=	ETC
+
+OPTIONS_SUB=	yes
+
+EMACS_CONFIGURE_ENABLE=		--with-elisp
+EMACS_CONFIGURE_DISABLE=	--without-elisp
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEMACS}
 USE_EMACS=	yes
 MAKE_ARGS+=	emacs_prefix=${PREFIX}
-PLIST_SUB+=	ELC=""
+.endif
+
+.if ${OSVERSION} < 900014
+SUB_LIST+=	NOCLANG=""
 .else
-CONFIGURE_ARGS+=	--without-elisp
-PLIST_SUB+=	ELC="@comment "
+SUB_LIST+=	NOCLANG="@comment "
 .endif
 
 # automatically disable readline support if editline support is available
@@ -54,48 +70,21 @@ CONFIGURE_ARGS+=	--without-readline
 CONFIGURE_TARGET=	x86_64-portbld-freebsd
 .endif
 
-PORTDATA=	*
-PORTEXAMPLES=	*
-PORTDOCS=	*
-
-.if !defined(NOPORTDATA)
-SUB_LIST+=	ETC=""
-.else
-SUB_LIST+=	ETC="@comment "
-.endif
-
-.if !defined(NOPORTDOCS)
-PLIST_SUB+=	DOCS=""
-.else
-PLIST_SUB+=	DOCS="@comment "
-.endif
-
-.if ${OSVERSION} < 900014
-SUB_LIST+=	NOCLANG=""
-.else
-SUB_LIST+=	NOCLANG="@comment "
-.endif
-
-.include "${.CURDIR}/bsd.pure.mk"
-.include <bsd.port.pre.mk>
-
 post-install:
-.if !defined(NOPORTDATA)
-	@${MKDIR} ${DATADIR}/etc
-	(cd ${WRKSRC} && ${RM} -f etc/*.in && ${COPYTREE_SHARE} etc ${DATADIR})
+.if ${PORT_OPTIONS:METC}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/etc/
+	@(cd ${WRKSRC} && ${RM} -f etc/*.in && ${COPYTREE_SHARE} etc/ ${STAGEDIR}${DATADIR})
 .endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
-.endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION} && \
-		${RM} -f Makefile && ${COPYTREE_SHARE} . ${DOCSDIR})
-	${LN} -fs ${DOCSDIR} ${PREFIX}/lib/${PORTNAME}/docs
-.endif
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
 
-.include <bsd.port.post.mk>
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION} && ${RM} -f Makefile && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	${LN} -sf ${DOCSDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/docs
+.endif
+
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+.endif
+
+.include <bsd.port.mk>

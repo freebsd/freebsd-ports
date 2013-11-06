@@ -2,4 +2,4 @@ pure-gtk is a collection of bindings to use the GTK+ GUI toolkit version 2.x
 with Pure. The bindings include the gtk (+gdk), glib, atk, cairo and pango
 libraries, each in their own Pure module.
 
-WWW:	http://docs.pure-lang.googlecode.com/hg/pure-gtk.html
+WWW: http://docs.pure-lang.googlecode.com/hg/pure-gtk.html

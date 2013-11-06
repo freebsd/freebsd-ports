@@ -6,6 +6,8 @@ lib/libpure.so.8.0
 lib/pure/array.pure
 lib/pure/avltrees.pure
 lib/pure/dict.pure
+lib/pure/docs
+lib/pure/enum.pure
 lib/pure/faustui.pure
 lib/pure/getopt.pure
 lib/pure/heap.pure
@@ -18,15 +20,26 @@ lib/pure/primitives.pure
 lib/pure/pure_main.c
 lib/pure/pure_main.o
 lib/pure/quasiquote.pure
-lib/pure/quasiquote1.pure
 lib/pure/records.pure
 lib/pure/regex.pure
 lib/pure/set.pure
 lib/pure/strings.pure
 lib/pure/system.pure
 libdata/pkgconfig/pure.pc
-%%ELC%%%%EMACS_SITE_LISPDIR%%/pure-mode.el
-%%ELC%%%%EMACS_SITE_LISPDIR%%/pure-mode.elc
-%%DOCS%%lib/pure/docs
+man/man1/pure.1.gz
+%%EMACS%%share/emacs/site-lisp/pure-mode.el
+%%EMACS%%share/emacs/site-lisp/pure-mode.elc
+%%ETC%%%%DATADIR%%/etc/pure-highlight.lang
+%%ETC%%%%DATADIR%%/etc/pure-mode.el
+%%EMACS%%%%ETC%%%%DATADIR%%/etc/pure-mode.elc
+%%ETC%%%%DATADIR%%/etc/pure.lang
+%%ETC%%%%DATADIR%%/etc/pure.nanorc
+%%ETC%%%%DATADIR%%/etc/pure.plist
+%%ETC%%%%DATADIR%%/etc/pure.py
+%%ETC%%%%DATADIR%%/etc/pure.ssh
+%%ETC%%%%DATADIR%%/etc/pure.vim
+%%ETC%%%%DATADIR%%/etc/pure.xml
+%%ETC%%@dirrm %%DATADIR%%/etc
+%%ETC%%@dirrm %%DATADIR%%
 @dirrm lib/pure
 @dirrm include/pure

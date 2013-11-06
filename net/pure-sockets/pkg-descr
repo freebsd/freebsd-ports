@@ -3,4 +3,4 @@ functionality, so you can create sockets for both stream and datagram based
 protocols and use these to transmit messages. Unix-style file sockets are
 also available if the host system supports them.
 
-WWW:	http://docs.pure-lang.googlecode.com/hg/pure-sockets.html
+WWW: http://docs.pure-lang.googlecode.com/hg/pure-sockets.html

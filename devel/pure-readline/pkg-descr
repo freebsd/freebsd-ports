@@ -2,4 +2,4 @@ Pure's interface to C++ vectors, specialized to hold pointers to arbitrary
 Pure expressions, and the C++ Standard Template Library algorithms that act
 on them.
 
-WWW:	http://docs.pure-lang.googlecode.com/hg/pure-readline.html
+WWW: http://docs.pure-lang.googlecode.com/hg/pure-readline.html
