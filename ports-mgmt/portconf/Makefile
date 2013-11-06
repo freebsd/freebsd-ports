@@ -3,6 +3,7 @@
 
 PORTNAME=	portconf
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none

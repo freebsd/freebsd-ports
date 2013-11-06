@@ -29,6 +29,7 @@
 #
 
 _conf=%%PREFIX%%/etc/ports.conf
+echo -n "|"
 if [ ! -r "${_conf}" ]; then
     exit
 fi
