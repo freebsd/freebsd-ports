@@ -2,20 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	pyfits
-PORTVERSION=	2.3
-PORTREVISION=	1
+PORTVERSION=	3.1.2
 CATEGORIES=	astro python
-MASTER_SITES=	http://www.stsci.edu/resources/software_hardware/${PORTNAME}/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tonymaher@optusnet.com.au
 COMMENT=	Python Interface to FITS Formatted Files
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:${PORTSDIR}/math/py-numpy
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-NO_STAGE=	yes
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:${PORTSDIR}/math/py-numpy \
+		${PYTHON_PKGNAMEPREFIX}d2to1>=0:${PORTSDIR}/devel/py-d2to1 \
+		${PYTHON_PKGNAMEPREFIX}stsci.distutils>=0:${PORTSDIR}/devel/py-stsci.distutils
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:${PORTSDIR}/math/py-numpy \
+		${PYTHON_PKGNAMEPREFIX}d2to1>=0:${PORTSDIR}/devel/py-d2to1
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_AUTOPLIST=	yes
+PYEASYINSTALL_ARCHDEP=	yes
+NO_STAGE=	yes
 
 .include <bsd.port.mk>
