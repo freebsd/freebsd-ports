@@ -11,6 +11,8 @@ COMMENT=	A GNOME applet displaying the round-trip time to one or more hosts
 
 LICENSE=	GPLv3
 
+BROKEN=		Does not build
+
 BUILD_DEPENDS=	gob2:${PORTSDIR}/devel/gob2
 LIB_DEPENDS=	GeoIP:${PORTSDIR}/net/GeoIP
 
