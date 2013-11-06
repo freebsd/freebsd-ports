@@ -7,10 +7,3 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PostScript
 @dirrmtry %%SITE_PERL%%/PostScript/Simple
 @dirrmtry %%SITE_PERL%%/PostScript
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PostScript/Simple/.packlist
-%%SITE_PERL%%/PostScript/Simple.pm
-%%SITE_PERL%%/PostScript/Simple/EPS.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PostScript/Simple
-@dirrm %%SITE_PERL%%/PostScript/Simple
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PostScript
-@dirrmtry %%SITE_PERL%%/PostScript
