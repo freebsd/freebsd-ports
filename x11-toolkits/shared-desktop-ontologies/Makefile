@@ -14,7 +14,6 @@ INSTALL_TARGET=	install
 USE_BZIP2=	yes
 USES=		cmake pkgconfig
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/cmake/SharedDesktopOntologies|lib/cmake/SharedDesktopOntologies|' \
 		${WRKSRC}/CMakeLists.txt
