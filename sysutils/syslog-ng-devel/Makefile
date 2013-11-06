@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	syslog-ng
-PORTVERSION=	3.4.3
+PORTVERSION=	3.5.1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
@@ -19,7 +19,7 @@ WRKSRC=		$(WRKDIR)/$(PORTNAME)-$(DISTVERSION)
 
 OPTIONS_RADIO=	SSL
 OPTIONS_RADIO_SSL=	SYS_SSL PORTS_SSL
-OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 PCRE SMTP JSON GEOIP DOCS
+OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 PCRE SMTP JSON GEOIP DOCS REDIS
 OPTIONS_DEFAULT=	PORTS_SSL PCRE
 SYS_SSL_DESC=		Build with OpenSSL support (from system)
 PORTS_SSL_DESC=		Build with OpenSSL support (from ports)
@@ -31,6 +31,7 @@ PCRE_DESC=		Build with PCRE support
 SMTP_DESC=		Build with SMTP support
 JSON_DESC=		Build with JSON-C support
 GEOIP_DESC=		Build with GeoIP support
+REDIS_DESC=		Build with Redis support
 
 LIB_DEPENDS=	evtlog.0:${PORTSDIR}/sysutils/eventlog
 
@@ -104,6 +105,15 @@ PLIST_FILES+=		lib/syslog-ng/libtfgeoip.la lib/syslog-ng/libtfgeoip.so
 .else
 CONFIGURE_ARGS+=	--disable-geoip
 .endif
+
+.if ${PORT_OPTIONS:MREDIS}
+CONFIGURE_ARGS+=        --enable-redis
+LIB_DEPENDS+=           hiredis.0:${PORTSDIR}/databases/hiredis
+PLIST_FILES+=           lib/syslog-ng/libredis.so lib/syslog-ng/libredis.la
+.else
+CONFIGURE_ARGS+=        --disable-redis
+.endif
+
 
 .if ${PORT_OPTIONS:MSMTP}
 CONFIGURE_ARGS+=	--with-libesmtp=/usr/local/
