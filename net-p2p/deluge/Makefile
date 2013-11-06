@@ -14,7 +14,7 @@ COMMENT=	Bittorrent client using Python, GTK+2, and libtorrent-rasterbar
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>=0.18:${PORTSDIR}/devel/py-xdg \
-		${PYTHON_PKGNAMEPREFIX}libtorrent-rasterbar>=0.16.0:${PORTSDIR}/net-p2p/libtorrent-rasterbar-16-python \
+		${PYTHON_PKGNAMEPREFIX}libtorrent-rasterbar>=0:${PORTSDIR}/net-p2p/libtorrent-rasterbar-python \
 		${PYTHON_PKGNAMEPREFIX}openssl>=0.8:${PORTSDIR}/security/py-openssl \
 		${PYTHON_PKGNAMEPREFIX}chardet>=1.0.1:${PORTSDIR}/textproc/py-chardet \
 		${PYTHON_PKGNAMEPREFIX}mako>=0.2.5:${PORTSDIR}/textproc/py-mako
