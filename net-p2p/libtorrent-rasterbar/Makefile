@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libtorrent-rasterbar
-PORTVERSION=	0.16.11
+PORTVERSION=	0.16.12
 CATEGORIES?=	net-p2p ipv6
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	libtorrent
@@ -20,9 +20,6 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFLICTS+=	libtorrent-rasterbar-0.1[45789].*
-NO_LATEST_LINK=	yes
-
 CONFIGURE_ARGS+=	--disable-debug \
 		--disable-static \
 		--enable-dht \
@@ -35,6 +32,8 @@ CONFIGURE_ARGS+=	--disable-debug \
 		--with-libgeoip \
 		--with-libiconv \
 		--with-openssl=${OPENSSLBASE}
+
+SUB_FILES=	pkg-message
 
 PORTDOCS=	*
 
@@ -49,9 +48,6 @@ PORTEXAMPLES=	*.cpp
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 .if defined(SLAVE_PORT) && ${SLAVE_PORT:L} == "yes" && defined(USE_PYTHON)
 CONFIGURE_ARGS+=	--enable-python-binding \
 			--with-boost-python=boost_python
@@ -64,15 +60,12 @@ post-patch:
 		${WRKSRC}/Jamfile
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR2}
-	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${DOCSDIR2}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/examples/|} ${EXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
+	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
+
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/examples/|} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

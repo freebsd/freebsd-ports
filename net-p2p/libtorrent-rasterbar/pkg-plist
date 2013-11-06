@@ -137,7 +137,7 @@ lib/libtorrent-rasterbar.la
 lib/libtorrent-rasterbar.so
 lib/libtorrent-rasterbar.so.7
 libdata/pkgconfig/libtorrent-rasterbar.pc
-@dirrm include/libtorrent/aux_
-@dirrm include/libtorrent/extensions
 @dirrm include/libtorrent/kademlia
+@dirrm include/libtorrent/extensions
+@dirrm include/libtorrent/aux_
 @dirrm include/libtorrent

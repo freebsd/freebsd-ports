@@ -5167,3 +5167,5 @@ textproc/p5-Text-Emoticon-MSN||2013-11-03|Has expired: Primary MSN Messenger ser
 textproc/jakarta-poi|textproc/apache-poi|2013-11-04|Replaced with apache-poi
 net-im/qutim||2013-11-05|Has expired: Old version, a new one needs to be ported from scratch
 textproc/gtkdiff||2013-11-05|Has expired: Gnome1 EOLed by upstream for a while.
+net-p2p/libtorrent-rasterbar-16|net-p2p/libtorrent-rasterbar|2013-11-06|Moved to net-p2p/libtorrent-rasterbar since it's a stable version
+net-p2p/libtorrent-rasterbar-python-16|net-p2p/libtorrent-rasterbar-python|2013-11-06|Moved to net-p2p/libtorrent-rasterbar-python since it's a stable version
