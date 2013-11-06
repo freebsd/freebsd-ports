@@ -1,5 +1,5 @@
---- ./unit-tests/googletest/include/gtest/internal/gtest-port.h.orig	2010-05-15 18:30:14.000000000 -0400
-+++ ./unit-tests/googletest/include/gtest/internal/gtest-port.h	2013-10-29 12:25:07.000000000 -0400
+--- unit-tests/googletest/include/gtest/internal/gtest-port.h.orig	2010-05-15 22:30:14.000000000 +0000
++++ unit-tests/googletest/include/gtest/internal/gtest-port.h
 @@ -80,6 +80,7 @@
  // the given platform; otherwise undefined):
  //   GTEST_OS_AIX      - IBM AIX
@@ -12,7 +12,7 @@
  #define GTEST_OS_SOLARIS 1
  #elif defined(_AIX)
  #define GTEST_OS_AIX 1
-+#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined(__DragonFly__)
 +#define GTEST_OS_FREEBSD 1
 +#define GTEST_USE_OWN_TR1_TUPLE 1
  #endif  // __CYGWIN__
