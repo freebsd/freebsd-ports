@@ -3,7 +3,7 @@
 
 PORTNAME=	dmd
 PKGNAMESUFFIX=	2
-PORTVERSION=	2.063.2
+PORTVERSION=	2.064
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.digitalmars.com/
 DISTNAME=	dmd.${PORTVERSION}
@@ -14,8 +14,6 @@ COMMENT=	D 2.0 compiler, not officially validated for FreeBSD
 USE_ZIP=	yes
 USE_GMAKE=	yes
 MAKEFILE=	posix.mak
-MAN1=		dmd2.1
-MAN5=		dmd2.conf.5
 EXAMPLESDIR=	${PREFIX}/share/examples/dmd2
 DOCSDIR=	${PREFIX}/share/doc/dmd2
 PORTDOCS=	*.txt druntime/ html/ phobos/
@@ -26,7 +24,6 @@ LICENSE_NAME_DMD=	Digital Mars license
 LICENSE_FILE_DMD=	${WRKSRC}/backendlicense.txt
 LICENSE_PERMS_DMD=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000
@@ -77,37 +74,36 @@ post-build:
 		${SETENV} PATH=${WRKSRC}:${PATH} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} ${BUILD}
 
 do-install:
-	${INSTALL_MAN} ${WRKDIR}/dmd2/man/man1/dmd.1 ${MANPREFIX}/man/man1/dmd2.1
-	${INSTALL_MAN} ${WRKDIR}/dmd2/man/man1/dmd.conf.5 ${MANPREFIX}/man/man5/dmd2.conf.5
-.if !exists(${PREFIX}/etc/dmd2.conf)
-	${INSTALL_DATA} ${WRKDIR}/dmd2/linux/bin32/dmd.conf ${PREFIX}/etc/dmd2.conf
+	${INSTALL_MAN} ${WRKDIR}/dmd2/man/man1/dmd.1 ${STAGEDIR}${MANPREFIX}/man/man1/dmd2.1
+	${INSTALL_MAN} ${WRKDIR}/dmd2/man/man1/dmd.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5/dmd2.conf.5
+.if !exists(${STAGEDIR}${PREFIX}/etc/dmd2.conf)
+	${INSTALL_DATA} ${WRKDIR}/dmd2/linux/bin32/dmd.conf ${STAGEDIR}${PREFIX}/etc/dmd2.conf
 .endif
-	${INSTALL_PROGRAM} ${WRKSRC}/dmd ${PREFIX}/bin/dmd2
+	${INSTALL_PROGRAM} ${WRKSRC}/dmd ${STAGEDIR}${PREFIX}/bin/dmd2
 .if ${ARCH} == "amd64"
-	${INSTALL_DATA} ${WRKSRC}/../phobos/generated/freebsd/${BUILD}/64/libphobos2.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/../phobos/generated/freebsd/${BUILD}/64/libphobos2.a ${STAGEDIR}${PREFIX}/lib
 .else
-	${INSTALL_DATA} ${WRKSRC}/../phobos/generated/freebsd/${BUILD}/32/libphobos2.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/../phobos/generated/freebsd/${BUILD}/32/libphobos2.a ${STAGEDIR}${PREFIX}/lib
 .endif
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKDIR}/dmd2/linux/bin32/dmd.conf ${EXAMPLESDIR}/dmd2.conf
-	cd ${WRKDIR}/dmd2 && ${COPYTREE_SHARE} samples ${EXAMPLESDIR}
-	${MKDIR} ${MODULEDIR}
-	${INSTALL_DATA} ${WRKSRC}/../phobos/*.d ${MODULEDIR}
-	${MKDIR} ${MODULEDIR}/etc/c
-	${INSTALL_DATA} ${WRKSRC}/../phobos/etc/c/zlib.d ${MODULEDIR}/etc/c
-	cd ${WRKSRC}/../phobos && ${COPYTREE_SHARE} std ${MODULEDIR}
-	${MKDIR} ${MODULEDIR}/../druntime
-	cd ${WRKSRC}/../druntime && ${COPYTREE_SHARE} import ${MODULEDIR}/../druntime
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKDIR}/dmd2/linux/bin32/dmd.conf ${STAGEDIR}${EXAMPLESDIR}/dmd2.conf
+	cd ${WRKDIR}/dmd2 && ${COPYTREE_SHARE} samples ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${MODULEDIR}/etc/c
+	${INSTALL_DATA} ${WRKSRC}/../phobos/*.d ${STAGEDIR}${MODULEDIR}
+	${INSTALL_DATA} ${WRKSRC}/../phobos/etc/c/zlib.d ${STAGEDIR}${MODULEDIR}/etc/c
+	cd ${WRKSRC}/../phobos && ${COPYTREE_SHARE} std ${STAGEDIR}${MODULEDIR}
+	${MKDIR} ${STAGEDIR}${MODULEDIR}/../druntime
+	cd ${WRKSRC}/../druntime && ${COPYTREE_SHARE} import ${STAGEDIR}${MODULEDIR}/../druntime
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
-	cd ${WRKDIR}/dmd2 && ${COPYTREE_SHARE} html ${DOCSDIR}
-	${MKDIR} ${DOCSDIR}/druntime
-	${INSTALL_DATA} ${WRKSRC}/../druntime/LICENSE ${DOCSDIR}/druntime
-	${INSTALL_DATA} ${WRKSRC}/../druntime/README ${DOCSDIR}/druntime
-	cd ${WRKSRC}/../druntime && ${COPYTREE_SHARE} doc ${DOCSDIR}/druntime
-	${MKDIR} ${DOCSDIR}/phobos
-	${INSTALL_DATA} ${WRKSRC}/../phobos/std.ddoc ${DOCSDIR}/phobos
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.txt ${STAGEDIR}${DOCSDIR}
+	cd ${WRKDIR}/dmd2 && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/druntime
+	${INSTALL_DATA} ${WRKSRC}/../druntime/LICENSE ${STAGEDIR}${DOCSDIR}/druntime
+	${INSTALL_DATA} ${WRKSRC}/../druntime/README ${STAGEDIR}${DOCSDIR}/druntime
+	cd ${WRKSRC}/../druntime && ${COPYTREE_SHARE} doc ${STAGEDIR}${DOCSDIR}/druntime
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/phobos
+	${INSTALL_DATA} ${WRKSRC}/../phobos/std.ddoc ${STAGEDIR}${DOCSDIR}/phobos
 .endif
 
 .include <bsd.port.post.mk>
