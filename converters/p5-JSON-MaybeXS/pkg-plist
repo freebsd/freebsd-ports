@@ -1,0 +1,6 @@
+%%SITE_PERL%%/JSON/MaybeXS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/MaybeXS/.packlist
+%%PERL5_MAN3%%/JSON::MaybeXS.3.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/MaybeXS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON
+@dirrmtry %%SITE_PERL%%/JSON
