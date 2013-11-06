@@ -5,3 +5,9 @@ sbin/bonnie++
 sbin/getc_putc
 sbin/getc_putc_helper
 sbin/zcav
+man/man1/bon_csv2html.1.gz
+man/man1/bon_csv2txt.1.gz
+man/man1/generate_randfile.1.gz
+man/man8/bonnie++.8.gz
+man/man8/getc_putc.8.gz
+man/man8/zcav.8.gz
