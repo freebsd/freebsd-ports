@@ -11,26 +11,27 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI app launcher with completion and history
 
+OPTIONS_DEFINE=	EXAMPLES
+
 LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+USES+=		tk
 NO_BUILD=	yes
-
-USE_TK_WRAPPER=	yes
 
 PORTEXAMPLES=	${PORTNAME:L}
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|/usr/local/bin|${PREFIX}/bin|' ${WRKSRC}/runit.tcl
+	@${REINPLACE_CMD} -e 's|wish|${WISH}|g' ${WRKSRC}/runit.tcl
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/runit.tcl ${PREFIX}/bin/${PORTNAME}
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/runitrc.sample ${EXAMPLESDIR}/${PORTNAME:L}
+	${INSTALL_SCRIPT} ${WRKSRC}/runit.tcl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/runitrc.sample ${STAGEDIR}${EXAMPLESDIR}/${PORTNAME:L}
 	@${ECHO_MSG} "		"
 	@${ECHO_MSG} "-------------------------------------------------------------------"
 	@${ECHO_MSG} "===> Installing runitrc.sample in ${EXAMPLESDIR}/${PORTNAME:L}"
