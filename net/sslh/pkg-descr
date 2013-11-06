@@ -2,4 +2,4 @@ sslh accepts HTTPS, SSH, OpenVPN, tinc and XMPP connections on the same port.
 This makes it possible to connect to any of these servers on port 443 while
 still serving HTTPS on that port.
 
-WWW:	http://www.rutschle.net/tech/sslh.shtml
+WWW: http://www.rutschle.net/tech/sslh.shtml

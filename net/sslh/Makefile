@@ -2,52 +2,41 @@
 # $FreeBSD$
 
 PORTNAME=	sslh
-PORTVERSION=	1.13
-PORTREVISION=	1
+PORTVERSION=	1.15
 CATEGORIES=	net
 MASTER_SITES=	http://www.rutschle.net/tech/
 
 MAINTAINER=	olivier@cochard.me
-COMMENT=	A ssl/ssh multiplexer
+COMMENT=	SSL/SSH multiplexer
 
-LICENSE=    GPLv2
+LICENSE=	GPLv2
 
-DISTFILES=	${PORTNAME}-${PORTVERSION}b.tar.gz
-
-LIB_DEPENDS=	config:${PORTSDIR}/devel/libconfig
+LIB_DEPENDS=	libconfig.so:${PORTSDIR}/devel/libconfig
 
 USES=		gmake perl5
 USE_PERL5=	build
 
-OPTIONS_DEFINE=	MANPAGES EXAMPLES
-OPTIONS_DEFAULT=	MANPAGES EXAMPLES
+OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_DEFAULT=	EXAMPLES
 
-CFLAGS+=	-I${LOCALBASE}/include
-MAKE_ENV+=	LIBS="-L${LOCALBASE}/lib"
+CFLAGS=		-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMANPAGES}
-MAN8=		sslh.8
-.endif
+PLIST_FILES=	sbin/sslh-fork \
+		sbin/sslh-select \
+		etc/sslh.conf.sample \
+		man/man8/sslh.8.gz
 
 USE_RC_SUBR=	sslh
 
 PORTEXAMPLES=	example.cfg
-MANCOMPRESSED=	yes
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/sslh-fork ${PREFIX}/sbin
-	@${INSTALL_PROGRAM} ${WRKSRC}/sslh-select ${PREFIX}/sbin
-	#@${MKDIR} ${VARDIR}/run/${PORTNAME}
-	#@${CHOWN} -R nobody:nobody ${VARDIR}/run/${PORTNAME}
-.if ${PORT_OPTIONS:MMANPAGES}
-	@${INSTALL_MAN} ${WRKSRC}/sslh.8.gz ${MANPREFIX}/man/man8
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/${PORTEXAMPLES} ${EXAMPLESDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/sslh-fork ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/sslh-select ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/basic.cfg ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
+	${INSTALL_MAN} ${WRKSRC}/sslh.8.gz ${STAGEDIR}${MANPREFIX}/man/man8
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/,} ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>
