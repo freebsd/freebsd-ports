@@ -15,19 +15,16 @@ LICENSE=	BSD
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-embfts
 
-MANCOMPRESSED=	no
-MAN1=		fpart.1
-PLIST_FILES=	bin/fpart
+PLIST_FILES=	bin/fpart man/man1/fpart.1.gz
 PORTDOCS=	Changelog README TODO
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
