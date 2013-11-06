@@ -29,11 +29,13 @@
 %%MONO_OR_CLIENT%%share/apps/quassel/translations/fi.qm
 %%MONO_OR_CLIENT%%share/apps/quassel/translations/fr.qm
 %%MONO_OR_CLIENT%%share/apps/quassel/translations/gl.qm
+%%MONO_OR_CLIENT%%share/apps/quassel/translations/hi.qm
 %%MONO_OR_CLIENT%%share/apps/quassel/translations/hu.qm
 %%MONO_OR_CLIENT%%share/apps/quassel/translations/it.qm
 %%MONO_OR_CLIENT%%share/apps/quassel/translations/ja.qm
 %%MONO_OR_CLIENT%%share/apps/quassel/translations/ko.qm
 %%MONO_OR_CLIENT%%share/apps/quassel/translations/lt.qm
+%%MONO_OR_CLIENT%%share/apps/quassel/translations/mr.qm
 %%MONO_OR_CLIENT%%share/apps/quassel/translations/nb.qm
 %%MONO_OR_CLIENT%%share/apps/quassel/translations/nl.qm
 %%MONO_OR_CLIENT%%share/apps/quassel/translations/oc.qm

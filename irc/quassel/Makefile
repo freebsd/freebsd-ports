@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	quassel
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	irc
 MASTER_SITES=	http://www.quassel-irc.org/pub/
 
