@@ -3,4 +3,4 @@ functions from Pure and vice versa. It extends and complements Pure's
 built-in C interface in that it also handles C structs and makes Pure
 functions callable from C without writing a single line of C code.
 
-WWW:	http://docs.pure-lang.googlecode.com/hg/pure-ffi.html
+WWW: http://docs.pure-lang.googlecode.com/hg/pure-ffi.html

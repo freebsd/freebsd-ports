@@ -7,4 +7,4 @@ wrapper module which allows you to create interfaces to pretty much any
 code which can be called via C. Interfaces to C++ can be made using SWIG's
 new C language module which can wrap arbitrary C++ libraries in C.
 
-WWW:	http://docs.pure-lang.googlecode.com/hg/pure-gen.html
+WWW: http://docs.pure-lang.googlecode.com/hg/pure-gen.html

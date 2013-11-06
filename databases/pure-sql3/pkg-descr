@@ -3,4 +3,4 @@ minimal wrapper around Sqlite3's C interface which is designed to give the
 developer access to all of Sqlite3's features in a way that is convenient
 for Pure programmers.
 
-WWW:	http://docs.pure-lang.googlecode.com/hg/pure-sql3.html
+WWW: http://docs.pure-lang.googlecode.com/hg/pure-sql3.html
