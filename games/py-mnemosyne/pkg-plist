@@ -1,6 +1,3 @@
-bin/mnemosyne
-bin/mnemosyne-webserver
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 share/applications/mnemosyne.desktop
 share/icons/mnemosyne.png
 share/locale/cs/LC_MESSAGES/mnemosyne.mo
@@ -10,6 +7,7 @@ share/locale/eo/LC_MESSAGES/mnemosyne.mo
 share/locale/es/LC_MESSAGES/mnemosyne.mo
 share/locale/fa/LC_MESSAGES/mnemosyne.mo
 share/locale/fr/LC_MESSAGES/mnemosyne.mo
+share/locale/gl/LC_MESSAGES/mnemosyne.mo
 share/locale/he/LC_MESSAGES/mnemosyne.mo
 share/locale/hr/LC_MESSAGES/mnemosyne.mo
 share/locale/hu/LC_MESSAGES/mnemosyne.mo
