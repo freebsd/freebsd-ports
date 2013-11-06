@@ -11,17 +11,14 @@ COMMENT=	Public Key Encryption SHell script
 
 LICENSE=	BSD
 
-NO_BUILD=	YES
-NO_INSTALL=	YES
+NO_BUILD=	yes
+NO_INSTALL=	yes
 
-PLIST_FILES=	bin/pkesh			\
-		%%PORTDOCS%%%%DOCSDIR%%/README
-PLIST_DIRS=	%%DOCSDIR%%
+PLIST_FILES=	bin/pkesh
+PORTDOCS=	README
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pkesh.sh ${STAGEDIR}${PREFIX}/bin/pkesh
-
-post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
