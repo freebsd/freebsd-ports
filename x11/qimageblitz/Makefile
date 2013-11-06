@@ -16,7 +16,6 @@ USE_LDCONFIG=	yes
 USE_QT4=	corelib gui qmake_build moc_build uic_build rcc_build
 USES=		cmake
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e \
 		's,$${LIB_INSTALL_DIR}/pkgconfig,libdata/pkgconfig,' \

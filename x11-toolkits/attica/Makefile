@@ -19,7 +19,6 @@ USES=		cmake
 CMAKE_ARGS=	-DATTICA_ENABLE_TESTS:BOOL=OFF \
 		-DQT4_BUILD:BOOL=ON
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's,$${LIB_DESTINATION}/pkgconfig,libdata/pkgconfig,' \
