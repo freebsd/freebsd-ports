@@ -1,10 +1,12 @@
 bin/RetroShare
-%%NOGUI%%bin/retroshare-nogui
-%%PLUGINS%%lib/retroshare/extensions/libLinksCloud.so
-%%PLUGINS%%lib/retroshare/extensions/libLinksCloud.so.1
-%%PLUGINS%%lib/retroshare/extensions/libVOIP.so
-%%PLUGINS%%lib/retroshare/extensions/libVOIP.so.1
+lib/retroshare/extensions/libLinksCloud.so
+lib/retroshare/extensions/libLinksCloud.so.1
+lib/retroshare/extensions/libVOIP.so
+lib/retroshare/extensions/libVOIP.so.1
+lib/retroshare/extensions/libFeedReader.so
+lib/retroshare/extensions/libFeedReader.so.1
 %%DATADIR%%/bdboot.txt
+%%DATADIR%%/retrosharelogo1.png
 @dirrm %%DATADIR%%
-%%PLUGINS%%@dirrm lib/retroshare/extensions
-%%PLUGINS%%@dirrm lib/retroshare
+@dirrm lib/retroshare/extensions
+@dirrm lib/retroshare
