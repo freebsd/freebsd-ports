@@ -108,15 +108,15 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/watermarks.perl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wheels2.perl
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
-@dirrm %%SITE_PERL%%/POE/Wheel
-@dirrm %%SITE_PERL%%/POE/Resource
-@dirrm %%SITE_PERL%%/POE/Queue
-@dirrm %%SITE_PERL%%/POE/Pipe
-@dirrm %%SITE_PERL%%/POE/Loop
-@dirrm %%SITE_PERL%%/POE/Filter
-@dirrm %%SITE_PERL%%/POE/Driver
-@dirrm %%SITE_PERL%%/POE/Component/Server
-@dirrm %%SITE_PERL%%/POE/Component/Client
-@dirrm %%SITE_PERL%%/POE/Component
-@dirrm %%SITE_PERL%%/POE
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
+@dirrmtry %%SITE_PERL%%/POE/Wheel
+@dirrmtry %%SITE_PERL%%/POE/Resource
+@dirrmtry %%SITE_PERL%%/POE/Queue
+@dirrmtry %%SITE_PERL%%/POE/Pipe
+@dirrmtry %%SITE_PERL%%/POE/Loop
+@dirrmtry %%SITE_PERL%%/POE/Filter
+@dirrmtry %%SITE_PERL%%/POE/Driver
+@dirrmtry %%SITE_PERL%%/POE/Component/Server
+@dirrmtry %%SITE_PERL%%/POE/Component/Client
+@dirrmtry %%SITE_PERL%%/POE/Component
+@dirrmtry %%SITE_PERL%%/POE
