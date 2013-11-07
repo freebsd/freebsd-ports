@@ -14,7 +14,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	yes
 
-NO_STAGE=	yes
 regression-test:
 	cd ${WRKSRC}; ${MAKE} check
 
