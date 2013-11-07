@@ -11,23 +11,24 @@ MASTER_SITES=	http://offload1.icculus.org:9090/neverball/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tilt the floor to guide a ball through an obstacle course
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		vorbis:${PORTSDIR}/audio/libvorbis \
-		physfs:${PORTSDIR}/devel/physfs
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libphysfs.so:${PORTSDIR}/devel/physfs
 
+USES=		gmake
 USE_GL=		gl
 USE_SDL=	sdl ttf
-USE_GMAKE=	yes
 MAKE_ENV+=	ENABLE_WII=0
 USE_XORG=	x11
 
 PORTDOCS=	CHANGES COPYING README
-MAN6=		neverball.6 neverputt.6
+PORTDATA=	*
 
 LDFLAGS+=	-lX11 # calls X functions directly, but doesn't link libX11
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS NLS
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -50,30 +51,26 @@ post-patch:
 			${WRKSRC}/Makefile
 
 do-install:
-	@${MKDIR} ${DATADIR}/data
-	@(cd ${WRKSRC}/data ; ${COPYTREE_SHARE} . ${DATADIR}/data/)
-	@(cd ${WRKSRC}/dist ; ${INSTALL_MAN} ${MAN6} ${MAN6PREFIX}/man/man6/)
+	@${MKDIR} ${STAGEDIR}${DATADIR}/data
+	cd ${WRKSRC} && ${COPYTREE_SHARE} data ${STAGEDIR}${DATADIR}/
+	${INSTALL_MAN} ${WRKSRC}/dist/*.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/
 .for f in neverball neverputt
-	@${INSTALL_DATA} ${WRKSRC}/dist/${f}.desktop \
-		${PREFIX}/share/applications/
-	@${INSTALL_DATA} ${WRKSRC}/dist/${f}_512.png \
-		${PREFIX}/share/pixmaps/${f}.png
-	@${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/dist/${f}.desktop \
+		${STAGEDIR}${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/dist/${f}_512.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${f}.png
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin/
 .endfor
 .if ${PORT_OPTIONS:MNLS}
 .  for ii in ${LOCALE_DIRS}
-	@${MKDIR} ${PREFIX}/share/locale/${ii}/LC_MESSAGES
-	@${INSTALL_DATA} ${WRKSRC}/locale/${ii}/LC_MESSAGES/*.mo \
-		${PREFIX}/share/locale/${ii}/LC_MESSAGES/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${ii}/LC_MESSAGES
+	${INSTALL_DATA} ${WRKSRC}/locale/${ii}/LC_MESSAGES/*.mo \
+		${STAGEDIR}${PREFIX}/share/locale/${ii}/LC_MESSAGES/
 .  endfor
 .endif
-
-.if ${PORT_OPTIONS:MDOCS}
-post-install:
-	@${MKDIR} ${DOCSDIR}
-.  for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.  endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
+.endfor
 
 .include <bsd.port.mk>
