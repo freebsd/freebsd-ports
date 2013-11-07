@@ -23,6 +23,7 @@ share/apps/plasma-cwp/ilmeteo_it.xml
 share/apps/plasma-cwp/in_weather_com.xml
 share/apps/plasma-cwp/myforecast_com_celsius.xml
 share/apps/plasma-cwp/myforecast_com_fahrenheit.xml
+share/apps/plasma-cwp/openweathermap_org.xml
 share/apps/plasma-cwp/pogodynka_pl.xml
 share/apps/plasma-cwp/satellite_images.xml
 share/apps/plasma-cwp/uk_weather_com.xml
