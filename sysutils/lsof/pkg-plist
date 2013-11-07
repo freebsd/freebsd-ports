@@ -1,0 +1,22 @@
+man/man8/lsof.8.gz
+@group kmem
+@mode 2755
+sbin/lsof
+@mode
+@group wheel
+share/lsof/00MANIFEST
+share/lsof/00README
+share/lsof/big_brother.perl5
+share/lsof/count_pf.perl
+share/lsof/count_pf.perl5
+share/lsof/identd.perl5
+share/lsof/idrlogin.perl
+share/lsof/idrlogin.perl5
+share/lsof/list_NULf.perl5
+share/lsof/list_fields.awk
+share/lsof/list_fields.perl
+share/lsof/shared.perl5
+share/lsof/sort_res.perl5
+share/lsof/watch_a_file.perl
+share/lsof/xusers.awk
+@dirrm share/lsof
