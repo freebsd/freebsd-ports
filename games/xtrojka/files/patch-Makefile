@@ -1,0 +1,78 @@
+--- Makefile.orig	1996-07-27 20:05:03.000000000 +0200
++++ Makefile	2013-09-12 11:55:14.000000000 +0200
+@@ -10,15 +10,15 @@
+ #					xtrojka version (do not change!)
+ VERSION=123
+ #					where to put the binary
+-TARGET_DIR=/usr/games
++TARGET_DIR=${PREFIX}/bin
+ #					where to put the manpage
+-MANDIR=/usr/local/man/man6
++MANDIR=${PREFIX}/man/man6
+ #					the location of the highscorefile
+-HSFILE=/fill_in_your_scorefile
++HSFILE=${PREFIX}/share/xtrojka/xtrojka.scores
+ #					your favourite packer
+ COMPRESS=gzip -v9
+ #					your favourite c-compiler
+-CC=gcc
++CC?=gcc
+ #					used X libraries
+ XLIBS= -lXaw -lXmu -lXt -lX11 -lXext
+ #					some more X libraries
+@@ -48,7 +48,7 @@
+ #	comment out your favorite system (the one you use, that is...)
+ #
+ #					search the libaries here
+-LIBPATH=-L/usr/X11/lib
++LIBPATH=-L${LOCALBASE}/lib
+ #					doesn't work too well on all systems
+ #LCK=-DLOCKING
+ #					add debug info
+@@ -75,7 +75,13 @@
+ #
+ # Linux
+ #
+-SYS=-DLINUX
++#SYS=-DLINUX
++
++#
++# FreeBSD
++#
++XDIR=-I${LOCALBASE}/include
++LIBS=-lm
+ 
+ #
+ #
+@@ -105,11 +111,17 @@
+ 	rm -rf xtrojka$(VERSION);
+ 
+ install:
+-	@echo $(HSFILE)|sed -e 's/\//\\\//g'>/tmp/hsn; \
+-	sed -e "s/__SCOREDIR__/`cat /tmp/hsn`/g" xtrojka.man > xtrojka.6; \
+-	cp xtrojka.6 $(MANDIR); chmod go+r xtrojka.6; \
+-	cp xtrojka $(TARGET_DIR);chmod go+rx xtrojka; \
+-	touch $(HSFILE); chmod go+rwx $(HSFILE);
++	@rm -f hsn
++	echo $(HSFILE)|sed -e 's/\//\\\//g'>hsn
++	sed -e "s/__SCOREDIR__/`cat hsn`/g" xtrojka.man > xtrojka.6
++	gzip -c xtrojka.6 >$(MANDIR)/xtrojka.6.gz
++	cp xtrojka $(TARGET_DIR)
++	chmod 2755 $(TARGET_DIR)/xtrojka
++	chgrp games $(TARGET_DIR)/xtrojka
++	touch $(HSFILE)
++	chmod 664 $(HSFILE)
++	chgrp games $(HSFILE)
++	@rm -f hsn
+ 	
+ clean:
+ 	rm -rf tags *.o core xtrojka xtrojka.6 
+@@ -119,7 +131,7 @@
+ #	DEPENDENCIES
+ #
+ 
+-_strdefs.h _resdefs.h:	XTrojka 
++_strdefs.h _resdefs.h:	XTrojka.uk
+ 	$(RESGEN)
+ 
+ actions.o: actions.c actions.h xtrojka.h debug.h

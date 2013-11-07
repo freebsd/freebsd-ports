@@ -1,26 +1,24 @@
-# Created by: Edwin Mons
 # $FreeBSD$
 
 PORTNAME=	xtrojka
-PORTVERSION=	1.1
-PORTREVISION=	3
+PORTVERSION=	1.2.3
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/games/
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	games/arcade/tetris
+DISTNAME=	${PORTNAME}${PORTVERSION:C/\.//g}
 
-MAINTAINER=	e@ik.nu
+MAINTAINER=	ports@edwinm.ik.nu
 COMMENT=	Game of skill similar to T*tris
 
-USE_XORG=	x11 xt xproto xaw
-WRKSRC=		${WRKDIR}
-MAN6=		xtrojka.6
-MANCOMPRESSED=	yes
+USE_XORG=	x11 xt xproto xaw xmu xext
+MAKE_JOBS_UNSAFE=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME}
+MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
-NO_STAGE=	yes
 pre-install:
-	${MKDIR} ${PREFIX}/share/xtrojka
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/xtrojka
 
 post-install:
-	${STRIP_CMD} ${PREFIX}/bin/xtrojka
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xtrojka
 
 .include <bsd.port.mk>

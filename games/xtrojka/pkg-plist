@@ -1,3 +1,4 @@
 bin/xtrojka
 share/xtrojka/xtrojka.scores
+man/man6/xtrojka.6.gz
 @dirrm share/xtrojka
