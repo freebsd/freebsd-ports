@@ -215,7 +215,88 @@
 %%SITE_PERL%%/Gantry/Utils/Threeway.pm
 %%SITE_PERL%%/Gantry/Utils/Validate.pm
 %%SITE_PERL%%/Template/Plugin/GantryAuthCookie.pm
-@dirrmtry www/gantry
+%%WWWDIR%%/bookerrata.html
+%%WWWDIR%%/control_wrapper.tt
+%%WWWDIR%%/css/default.css
+%%WWWDIR%%/css/gantry_datepicker.css
+%%WWWDIR%%/css/gantry_forms.css
+%%WWWDIR%%/css/gantry_layout.css
+%%WWWDIR%%/css/gantry_site.css
+%%WWWDIR%%/css/my.css
+%%WWWDIR%%/css/pod_style.css
+%%WWWDIR%%/data.tt
+%%WWWDIR%%/default.tt
+%%WWWDIR%%/delete.tt
+%%WWWDIR%%/editor_init.ttc
+%%WWWDIR%%/form.tt
+%%WWWDIR%%/form_ajax.tt
+%%WWWDIR%%/gantry_site.html
+%%WWWDIR%%/gantrybookcode.tar.gz
+%%WWWDIR%%/images/bar.a-center-gray.png
+%%WWWDIR%%/images/bar.a-left-gray.png
+%%WWWDIR%%/images/bar.a-right-gray.png
+%%WWWDIR%%/images/bar2-center-gray.png
+%%WWWDIR%%/images/bar2-left-gray.png
+%%WWWDIR%%/images/bar2-right-gray.png
+%%WWWDIR%%/images/blc-gray-block.gif
+%%WWWDIR%%/images/bookcover.gif
+%%WWWDIR%%/images/brc-gray-block.gif
+%%WWWDIR%%/images/building240.jpg
+%%WWWDIR%%/images/form.png
+%%WWWDIR%%/images/gantry_gears.jpg
+%%WWWDIR%%/images/gantry_logo.png
+%%WWWDIR%%/images/mainlist.png
+%%WWWDIR%%/images/pdf.gif
+%%WWWDIR%%/images/tenttut/appbody.png
+%%WWWDIR%%/images/tenttut/appconfig.png
+%%WWWDIR%%/images/tenttut/appstat.png
+%%WWWDIR%%/images/tenttut/backends.png
+%%WWWDIR%%/images/tenttut/controledit.png
+%%WWWDIR%%/images/tenttut/dataedit.png
+%%WWWDIR%%/images/tenttut/fieldedit.png
+%%WWWDIR%%/images/tenttut/fieldedit2.png
+%%WWWDIR%%/images/tenttut/formedit.png
+%%WWWDIR%%/images/tenttut/joiner.png
+%%WWWDIR%%/images/tenttut/main_listingout.png
+%%WWWDIR%%/images/tenttut/mainlistedit.png
+%%WWWDIR%%/images/tenttut/optionsedit.png
+%%WWWDIR%%/images/tenttut/quickedit.png
+%%WWWDIR%%/images/tenttut/stubmethedit.png
+%%WWWDIR%%/images/tenttut/tableedit.png
+%%WWWDIR%%/images/tenttut/tentopening.png
+%%WWWDIR%%/images/tlc-gray-block.gif
+%%WWWDIR%%/images/trc-gray-block.gif
+%%WWWDIR%%/js/datePicker.js
+%%WWWDIR%%/js/gantry-yui-calendar.js
+%%WWWDIR%%/js/gantry.js
+%%WWWDIR%%/js/jquery.js
+%%WWWDIR%%/login.tt
+%%WWWDIR%%/main.tt
+%%WWWDIR%%/moxie/delete.tt
+%%WWWDIR%%/moxie/form.tt
+%%WWWDIR%%/moxie/form_onetomany.tt
+%%WWWDIR%%/moxie/gantry_wrapper.tt
+%%WWWDIR%%/moxie/results.tt
+%%WWWDIR%%/moxie/threeway.tt
+%%WWWDIR%%/paging.ttc
+%%WWWDIR%%/pod.tt
+%%WWWDIR%%/pod_wrapper.tt
+%%WWWDIR%%/results.tt
+%%WWWDIR%%/sample_wrapper.tt
+%%WWWDIR%%/search.tt
+%%WWWDIR%%/sfbb/form.tt
+%%WWWDIR%%/threeway.tt
+%%WWWDIR%%/wrapper.tt
+%%WWWDIR%%/wsdl.tt
+%%WWWDIR%%/wsdldoc.tt
+%%WWWDIR%%/yapcna2007.pdf
+@dirrmtry %%WWWDIR%%/sfbb
+@dirrmtry %%WWWDIR%%/moxie
+@dirrmtry %%WWWDIR%%/js
+@dirrmtry %%WWWDIR%%/images/tenttut
+@dirrmtry %%WWWDIR%%/images
+@dirrmtry %%WWWDIR%%/css
+@dirrmtry %%WWWDIR%%
 @dirrmtry %%SITE_PERL%%/Template/Plugin
 @dirrmtry %%SITE_PERL%%/Template
 @dirrmtry %%SITE_PERL%%/Gantry/Utils/Model
