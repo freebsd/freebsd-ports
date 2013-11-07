@@ -2,55 +2,52 @@
 # $FreeBSD$
 
 PORTNAME=	teeworlds
-PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTVERSION=	0.6.2
 CATEGORIES=	games
-MASTER_SITES=	http://www.teeworlds.com/files/ \
-		http://mirror.amdmi3.ru/distfiles/ \
-		http://github.com/downloads/matricks/bam/ \
-		http://files.malikania.fr/distfiles/
+MASTER_SITES=	https://www.teeworlds.com/files/ \
+		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} bam-${BAM_VERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Platform game featuring buggers equipped with weapons
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
+LICENSE=	ZLIB
+
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
 USE_PYTHON_BUILD=	yes
 
 BAM_VERSION=	0.4.0
 BAM_WRKSRC=	${WRKDIR}/bam-${BAM_VERSION}
 BAM_TARGET=	release
-WRKSRC=		${WRKDIR}/teeworlds-b177-r50edfd37-source
 
-PORTDOCS=	readme.txt license.txt
+PLIST_FILES+=	bin/${PORTNAME}_srv
+PORTDATA=	*
 
-OPTIONS_DEFINE=	SERVER
-SERVER_DESC=	Build dedicated server only
+OPTIONS_DEFINE=	SERVER_ONLY
+SERVER_ONLY_DESC=Build dedicated server only
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "ia64"
 BROKEN=		Does not install on ia64: gets bus error
 .endif
 
-.if ${PORT_OPTIONS:MSERVER}
+.if ${PORT_OPTIONS:MSERVER_ONLY}
 BAM_TARGET=	server_release
-PLIST_SUB+=	CLIENT="@comment "
 PKGNAMESUFFX=	-server
 .else
 USE_XORG=	x11
 USE_GL=		gl glu
 USE_SDL=	sdl
-PLIST_SUB+=	CLIENT=""
+PLIST_FILES+=	bin/${PORTNAME}
 DESKTOP_ENTRIES="Teeworlds" \
 		"Platform game featuring buggers equipped with weapons" \
 		"${DATADIR}/Teeworlds.ico" \
-		"teeworlds" \
+		"${PORTNAME}" \
 		"Game;ActionGame;" \
-		false
+		""
 .endif
 
 post-patch:
@@ -72,17 +69,11 @@ do-build:
 		${BAM_WRKSRC}/bam -n -a -v ${_MAKE_JOBS:C/-j/-j /} ${BAM_TARGET}
 
 do-install:
-.if ! ${PORT_OPTIONS:MSERVER}
-	${INSTALL_PROGRAM} ${WRKSRC}/teeworlds ${PREFIX}/bin
+.if ! ${PORT_OPTIONS:MSERVER_ONLY}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 .endif
-	${INSTALL_PROGRAM} ${WRKSRC}/teeworlds_srv ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	@cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/other/icons/Teeworlds.ico ${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/license.txt ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}/
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}_srv ${STAGEDIR}${PREFIX}/bin/
+	@cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/other/icons/Teeworlds.ico ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
