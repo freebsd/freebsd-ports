@@ -17,12 +17,12 @@ if [ -f "${%%TX_SHELL_U%%_CONF}" ]; then
     fi
   else
     %%ECHO_CMD%% "You do not have set path to default %%TX_SHELL%% in the configuration file:"
-    %%ECHO_CMD%% "%%TX_CONF%%"
+    %%ECHO_CMD%% "%%TX_CONF_FULL%%"
     %%ECHO_CMD%% "Please see the sample configuration file for details:"
-    %%ECHO_CMD%% "%%TX_CONF%%.sample"
+    %%ECHO_CMD%% "%%TX_CONF_FULL%%.sample"
   fi
 else
-  %%ECHO_CMD%% "Configuration file not found: %%TX_CONF%%"
+  %%ECHO_CMD%% "Configuration file not found: %%TX_CONF_FULL%%"
   %%ECHO_CMD%% "Please see the sample configuration file for details:"
-  %%ECHO_CMD%% "%%TX_CONF%%.sample"
+  %%ECHO_CMD%% "%%TX_CONF_FULL%%.sample"
 fi
