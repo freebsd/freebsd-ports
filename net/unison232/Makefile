@@ -3,7 +3,7 @@
 
 PORTNAME=	unison
 PORTVERSION=	2.32.52
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/${DISTNAME}/
 PKGNAMESUFFIX=	232
@@ -24,17 +24,15 @@ MAKE_ARGS=	CFLAGS=""
 
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE= DOCS X11
-OPTIONS_DEFAULT=	DOCS X11
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
 DOCS=		BUGS.txt NEWS README
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 EXTRA_DOCS=	${PORTNAME}-${PORTVERSION}-manual.html \
 		${PORTNAME}-${PORTVERSION}-manual.pdf ${PORTNAME}-${PORTVERSION}-manual.ps
-.endif
+
+OPTIONS_DEFINE=		DOCS X11
+OPTIONS_DEFAULT=	DOCS X11
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
 MAKE_ARGS+=	UISTYLE=gtk2
@@ -45,7 +43,6 @@ BUILD_DEPENDS+=	ocamlc:${PORTSDIR}/lang/ocaml \
 RUN_DEPENDS+=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 PATCH_DEPENDS+=	${BUILD_DEPENDS}
 CONFLICTS+=	ocaml-nox11*
-USE_GNOME=	desktopfileutils
 SUB_FILES+=	${PORTNAME}.desktop
 PLIST_FILES+=	share/pixmaps/${PORTNAME}${PKGNAMESUFFIX}.png
 .else
@@ -78,7 +75,6 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-text ${STAGEDIR}${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}-text
 	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}/${PORTNAME}${PKGNAMESUFFIX}.desktop
-	-update-desktop-database > /dev/null
 	@${INSTALL_DATA} ${WRKSRC}/win32rc/U_4_48x48x32.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}${PKGNAMESUFFIX}.png
 .endif
 
