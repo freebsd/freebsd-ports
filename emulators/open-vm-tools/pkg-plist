@@ -30,7 +30,6 @@ lib/libguestlib.la
 lib/libguestlib.so
 lib/libguestlib.so.0
 libdata/pkgconfig/vmguestlib.pc
-lib/vmware-tools/modules/drivers/linker.hints
 lib/vmware-tools/modules/drivers/vmblock.ko
 lib/vmware-tools/modules/drivers/vmhgfs.ko
 lib/vmware-tools/modules/drivers/vmmemctl.ko
@@ -53,11 +52,8 @@ share/open-vm-tools/messages/ja/toolbox.vmsg
 share/open-vm-tools/messages/zh_CN/toolbox.vmsg
 share/vmware-tools/statechange.subr
 share/vmware-tools/scripts/vmware/network
-@exec kldxref %D/lib/vmware-tools/modules/drivers 2>/dev/null || true
-@unexec if test -f %D/lib/vmware-tools/modules/drivers/linker.hints; then rm -f %D/lib/vmware-tools/modules/drivers/linker.hints; fi
 @unexec if test -f %D/share/vmware-tools/tools.conf; then rm -f %D/share/vmware-tools/tools.conf; fi
 @unexec if test -h %D/etc/vmware-tools/plugins; then rm -f %D/etc/vmware-tools/plugins; fi
-@dirrmtry lib/vmware-tools/modules/drivers
 @dirrmtry lib/vmware-tools/modules/input
 @dirrmtry lib/vmware-tools/modules
 @dirrmtry lib/vmware-tools

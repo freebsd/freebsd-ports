@@ -5,7 +5,7 @@ PORTNAME=		open-vm-tools
 PORTVERSION=		${BUILD_VER}
 PORTREVISION=		4
 PORTEPOCH=		1
-CATEGORIES=		emulators kld
+CATEGORIES=		emulators
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/stable-8.6.x
 DISTNAME=		open-vm-tools-${RELEASE_VER}-${BUILD_VER}
 
@@ -20,10 +20,11 @@ BUILD_VER=		425873
 
 WRKSRC=			${WRKDIR}/open-vm-tools-${RELEASE_VER}-${BUILD_VER}
 GNU_CONFIGURE=		yes
-USES=			pkgconfig
+USES=			pkgconfig kmod
 USE_GNOME=		glib20
 USE_LDCONFIG=		yes
 CPPFLAGS+=		-Wno-deprecated-declarations
+KMODDIR=		${PREFIX}/lib/vmware-tools/modules/drivers
 
 SSP_UNSAFE=		kernel module does not support ssp
 
@@ -75,7 +76,6 @@ LIB_DEPENDS+=		libicuuc.so:${PORTSDIR}/devel/icu
 
 USE_RC_SUBR=		vmware-guestd vmware-kmod
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
@@ -83,16 +83,17 @@ IGNORE=		not yet ported to sparc64
 .endif
 
 post-build:
-	(cd ${WRKSRC}/modules && ${MAKE})
+	(cd ${WRKSRC}/modules && env ${MAKE_ENV} ${MAKE} ${MAKE_ARGS})
 
 post-install:
-	${MKDIR} ${PREFIX}/lib/vmware-tools/modules/drivers
-	${MKDIR} ${PREFIX}/lib/vmware-tools/modules/input
-	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmmemctl.ko ${PREFIX}/lib/vmware-tools/modules/drivers/vmmemctl.ko
-	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmxnet.ko ${PREFIX}/lib/vmware-tools/modules/drivers/vmxnet.ko
-	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmhgfs.ko ${PREFIX}/lib/vmware-tools/modules/drivers/vmhgfs.ko
-	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmblock.ko ${PREFIX}/lib/vmware-tools/modules/drivers/vmblock.ko
-	@-kldxref ${PREFIX}/lib/vmware-tools/modules/drivers 2>/dev/null
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vmware-tools/modules/drivers
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vmware-tools/modules/input
+	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmmemctl.ko ${STAGEDIR}${PREFIX}/lib/vmware-tools/modules/drivers/vmmemctl.ko
+	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmxnet.ko ${STAGEDIR}${PREFIX}/lib/vmware-tools/modules/drivers/vmxnet.ko
+	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmhgfs.ko ${STAGEDIR}${PREFIX}/lib/vmware-tools/modules/drivers/vmhgfs.ko
+	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmblock.ko ${STAGEDIR}${PREFIX}/lib/vmware-tools/modules/drivers/vmblock.ko
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/open-vm-tools/scripts/vmware/
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/open-vm-tools/scripts/
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/open-vm-tools/tests/
 
 .include <bsd.port.post.mk>
