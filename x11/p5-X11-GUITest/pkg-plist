@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/X11::GUITest.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/X11/GUITest.pm
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/X11
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/GUITest/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/GUITest/GUITest.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/GUITest/GUITest.bs
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/GUITest
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/X11
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/GUITest/GUITest.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/GUITest
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/X11
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/X11

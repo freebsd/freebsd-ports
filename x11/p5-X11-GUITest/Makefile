@@ -15,9 +15,6 @@ USE_XORG=	x11 xt xext xtst
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		X11::GUITest.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6/\([a-z]*\)\(64\)*|${LOCALBASE}/\1|' ${WRKSRC}/Makefile.PL
 
