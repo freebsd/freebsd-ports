@@ -25,6 +25,7 @@ USE_GNUSTEP_SYSTEM_LIBS+=	\
 USE_GNUSTEP_LOCAL_LIBS+=	\
 	Pantomime:mail/pantomime \
 	Addresses:mail/addresses \
+	BioCocoa:biology/biococoa \
 	SlideShow:graphics/gnustep-slideshowkit \
 	WizardKit:devel/wizardkit \
 	HighlighterKit:devel/highlighterkit \
@@ -96,7 +97,6 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	LuserNET:news/lusernet \
 	Popup:textproc/popup \
 	Fortunate:games/fortunate \
-	BioCocoa:biology/biococoa \
 	Sudoku:games/gnustep-sudoku \
 	LaternaMagica:graphics/laternamagica \
 	SimpleAgenda:deskutils/simpleagenda \
