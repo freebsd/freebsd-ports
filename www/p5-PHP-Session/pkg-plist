@@ -1,8 +1,10 @@
+%%PERL5_MAN3%%/PHP::Session.3.gz
+%%PERL5_MAN3%%/PHP::Session::Serializer::PHP.3.gz
 %%SITE_PERL%%/PHP/Session.pm
 %%SITE_PERL%%/PHP/Session/Serializer/PHP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PHP/Session/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PHP/Session
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PHP/Session
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PHP
-@dirrm %%SITE_PERL%%/PHP/Session/Serializer
-@dirrm %%SITE_PERL%%/PHP/Session
+@dirrmtry %%SITE_PERL%%/PHP/Session/Serializer
+@dirrmtry %%SITE_PERL%%/PHP/Session
 @dirrmtry %%SITE_PERL%%/PHP

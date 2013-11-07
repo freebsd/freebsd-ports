@@ -32,60 +32,6 @@ PORTSCOUT=	skipv:0.6061
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Rose::HTML::Anchor.3 \
-		Rose::HTML::Form.3 \
-		Rose::HTML::Form::Field.3 \
-		Rose::HTML::Form::Field::Checkbox.3 \
-		Rose::HTML::Form::Field::CheckboxGroup.3 \
-		Rose::HTML::Form::Field::Compound.3 \
-		Rose::HTML::Form::Field::Date.3 \
-		Rose::HTML::Form::Field::DateTime.3 \
-		Rose::HTML::Form::Field::DateTime::EndDate.3 \
-		Rose::HTML::Form::Field::DateTime::Range.3 \
-		Rose::HTML::Form::Field::DateTime::Split::MDYHMS.3 \
-		Rose::HTML::Form::Field::DateTime::Split::MonthDayYear.3 \
-		Rose::HTML::Form::Field::DateTime::StartDate.3 \
-		Rose::HTML::Form::Field::Email.3 \
-		Rose::HTML::Form::Field::File.3 \
-		Rose::HTML::Form::Field::Hidden.3 \
-		Rose::HTML::Form::Field::Integer.3 \
-		Rose::HTML::Form::Field::Numeric.3 \
-		Rose::HTML::Form::Field::Option.3 \
-		Rose::HTML::Form::Field::OptionGroup.3 \
-		Rose::HTML::Form::Field::Password.3 \
-		Rose::HTML::Form::Field::PhoneNumber::US.3 \
-		Rose::HTML::Form::Field::PhoneNumber::US::Split.3 \
-		Rose::HTML::Form::Field::PopUpMenu.3 \
-		Rose::HTML::Form::Field::RadioButton.3 \
-		Rose::HTML::Form::Field::RadioButtonGroup.3 \
-		Rose::HTML::Form::Field::Reset.3 \
-		Rose::HTML::Form::Field::SelectBox.3 \
-		Rose::HTML::Form::Field::Set.3 \
-		Rose::HTML::Form::Field::Submit.3 \
-		Rose::HTML::Form::Field::Text.3 \
-		Rose::HTML::Form::Field::TextArea.3 \
-		Rose::HTML::Form::Field::Time.3 \
-		Rose::HTML::Form::Field::Time::Hours.3 \
-		Rose::HTML::Form::Field::Time::Minutes.3 \
-		Rose::HTML::Form::Field::Time::Seconds.3 \
-		Rose::HTML::Form::Field::Time::Split::HourMinuteSecond.3 \
-		Rose::HTML::Form::Repeatable.3 \
-		Rose::HTML::Image.3 \
-		Rose::HTML::Label.3 \
-		Rose::HTML::Link.3 \
-		Rose::HTML::Object.3 \
-		Rose::HTML::Object::Error.3 \
-		Rose::HTML::Object::Errors.3 \
-		Rose::HTML::Object::Message.3 \
-		Rose::HTML::Object::Message::Localized.3 \
-		Rose::HTML::Object::Message::Localizer.3 \
-		Rose::HTML::Object::Messages.3 \
-		Rose::HTML::Objects.3 \
-		Rose::HTML::Script.3 \
-		Rose::HTML::Text.3 \
-		Rose::HTML::Util.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501600

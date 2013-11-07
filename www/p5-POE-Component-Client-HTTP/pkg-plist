@@ -1,15 +1,20 @@
+%%PERL5_MAN3%%/POE::Component::Client::HTTP.3.gz
+%%PERL5_MAN3%%/POE::Component::Client::HTTP::Request.3.gz
+%%PERL5_MAN3%%/POE::Component::Client::HTTP::RequestFactory.3.gz
+%%PERL5_MAN3%%/POE::Filter::HTTPChunk.3.gz
+%%PERL5_MAN3%%/POE::Filter::HTTPHead.3.gz
 %%SITE_PERL%%/POE/Component/Client/HTTP.pm
 %%SITE_PERL%%/POE/Component/Client/HTTP/Request.pm
 %%SITE_PERL%%/POE/Component/Client/HTTP/RequestFactory.pm
 %%SITE_PERL%%/POE/Filter/HTTPChunk.pm
 %%SITE_PERL%%/POE/Filter/HTTPHead.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/HTTP/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/HTTP
-@dirrm %%SITE_PERL%%/POE/Component/Client/HTTP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/HTTP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
+@dirrmtry %%SITE_PERL%%/POE/Filter
+@dirrmtry %%SITE_PERL%%/POE/Component/Client/HTTP
 @dirrmtry %%SITE_PERL%%/POE/Component/Client
 @dirrmtry %%SITE_PERL%%/POE/Component
-@dirrmtry %%SITE_PERL%%/POE/Filter
 @dirrmtry %%SITE_PERL%%/POE

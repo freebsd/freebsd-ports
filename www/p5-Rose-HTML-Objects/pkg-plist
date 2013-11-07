@@ -1,91 +1,143 @@
-%%SITE_PERL%%/Rose/HTML/Form/Field/DateTime/Split/MDYHMS.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/DateTime/Split/MonthDayYear.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/DateTime/Split.pm
+%%PERL5_MAN3%%/Rose::HTML::Anchor.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::Checkbox.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::CheckboxGroup.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::Compound.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::Date.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::DateTime.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::DateTime::EndDate.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::DateTime::Range.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::DateTime::Split::MDYHMS.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::DateTime::Split::MonthDayYear.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::DateTime::StartDate.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::Email.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::File.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::Hidden.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::Integer.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::Numeric.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::Option.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::OptionGroup.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::Password.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::PhoneNumber::US.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::PhoneNumber::US::Split.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::PopUpMenu.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::RadioButton.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::RadioButtonGroup.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::Reset.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::SelectBox.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::Set.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::Submit.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::Text.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::TextArea.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::Time.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::Time::Hours.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::Time::Minutes.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::Time::Seconds.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Field::Time::Split::HourMinuteSecond.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Form::Repeatable.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Image.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Label.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Link.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Object.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Object::Error.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Object::Errors.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Object::Message.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Object::Message::Localized.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Object::Message::Localizer.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Object::Messages.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Objects.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Script.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Text.3.gz
+%%PERL5_MAN3%%/Rose::HTML::Util.3.gz
+%%SITE_PERL%%/Rose/HTML/Anchor.pm
+%%SITE_PERL%%/Rose/HTML/Form.pm
+%%SITE_PERL%%/Rose/HTML/Form/Constants.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/Checkbox.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/CheckboxGroup.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/Collection.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/Compound.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/Date.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/DateTime.pm
 %%SITE_PERL%%/Rose/HTML/Form/Field/DateTime/EndDate.pm
 %%SITE_PERL%%/Rose/HTML/Form/Field/DateTime/Range.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/DateTime/Split.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/DateTime/Split/MDYHMS.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/DateTime/Split/MonthDayYear.pm
 %%SITE_PERL%%/Rose/HTML/Form/Field/DateTime/StartDate.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/Email.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/File.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/Group.pm
 %%SITE_PERL%%/Rose/HTML/Form/Field/Group/OnOff.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/Hidden.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/Input.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/Integer.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/Numeric.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/OnOff.pm
 %%SITE_PERL%%/Rose/HTML/Form/Field/OnOff/Checkable.pm
 %%SITE_PERL%%/Rose/HTML/Form/Field/OnOff/Selectable.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/Option.pm
 %%SITE_PERL%%/Rose/HTML/Form/Field/Option/Container.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/PhoneNumber/US/Split.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/OptionGroup.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/Password.pm
 %%SITE_PERL%%/Rose/HTML/Form/Field/PhoneNumber/US.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/Time/Split/HourMinuteSecond.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/Time/Seconds.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/Time/Split.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/Time/Minutes.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/Time/Hours.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/Numeric.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/PhoneNumber/US/Split.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/PopUpMenu.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/RadioButton.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/RadioButtonGroup.pm
 %%SITE_PERL%%/Rose/HTML/Form/Field/Reset.pm
 %%SITE_PERL%%/Rose/HTML/Form/Field/SelectBox.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/File.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/DateTime.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/Input.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/OptionGroup.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/Text.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/Time.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/Option.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/Checkbox.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/PopUpMenu.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/Email.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/Date.pm
 %%SITE_PERL%%/Rose/HTML/Form/Field/Set.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/Group.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/OnOff.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/RadioButtonGroup.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/RadioButton.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/Integer.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/Compound.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/Collection.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/TextArea.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/Hidden.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/Password.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field/CheckboxGroup.pm
 %%SITE_PERL%%/Rose/HTML/Form/Field/Submit.pm
-%%SITE_PERL%%/Rose/HTML/Form/Constants.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/Text.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/TextArea.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/Time.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/Time/Hours.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/Time/Minutes.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/Time/Seconds.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/Time/Split.pm
+%%SITE_PERL%%/Rose/HTML/Form/Field/Time/Split/HourMinuteSecond.pm
 %%SITE_PERL%%/Rose/HTML/Form/Repeatable.pm
-%%SITE_PERL%%/Rose/HTML/Form/Field.pm
-%%SITE_PERL%%/Rose/HTML/Object/Error/Localized.pm
-%%SITE_PERL%%/Rose/HTML/Object/MakeMethods/Localization.pm
-%%SITE_PERL%%/Rose/HTML/Object/MakeMethods/Generic.pm
-%%SITE_PERL%%/Rose/HTML/Object/Message/Localizer.pm
-%%SITE_PERL%%/Rose/HTML/Object/Message/Localized.pm
-%%SITE_PERL%%/Rose/HTML/Object/WithWrapAroundChildren.pm
-%%SITE_PERL%%/Rose/HTML/Object/Error.pm
-%%SITE_PERL%%/Rose/HTML/Object/Message.pm
-%%SITE_PERL%%/Rose/HTML/Object/Exporter.pm
-%%SITE_PERL%%/Rose/HTML/Object/Repeatable.pm
-%%SITE_PERL%%/Rose/HTML/Object/Messages.pm
-%%SITE_PERL%%/Rose/HTML/Object/Localized.pm
-%%SITE_PERL%%/Rose/HTML/Object/Errors.pm
-%%SITE_PERL%%/Rose/HTML/Label.pm
 %%SITE_PERL%%/Rose/HTML/Image.pm
-%%SITE_PERL%%/Rose/HTML/Text.pm
-%%SITE_PERL%%/Rose/HTML/Object.pm
-%%SITE_PERL%%/Rose/HTML/Form.pm
-%%SITE_PERL%%/Rose/HTML/Anchor.pm
+%%SITE_PERL%%/Rose/HTML/Label.pm
 %%SITE_PERL%%/Rose/HTML/Link.pm
-%%SITE_PERL%%/Rose/HTML/Util.pm
+%%SITE_PERL%%/Rose/HTML/Object.pm
+%%SITE_PERL%%/Rose/HTML/Object/Error.pm
+%%SITE_PERL%%/Rose/HTML/Object/Error/Localized.pm
+%%SITE_PERL%%/Rose/HTML/Object/Errors.pm
+%%SITE_PERL%%/Rose/HTML/Object/Exporter.pm
+%%SITE_PERL%%/Rose/HTML/Object/Localized.pm
+%%SITE_PERL%%/Rose/HTML/Object/MakeMethods/Generic.pm
+%%SITE_PERL%%/Rose/HTML/Object/MakeMethods/Localization.pm
+%%SITE_PERL%%/Rose/HTML/Object/Message.pm
+%%SITE_PERL%%/Rose/HTML/Object/Message/Localized.pm
+%%SITE_PERL%%/Rose/HTML/Object/Message/Localizer.pm
+%%SITE_PERL%%/Rose/HTML/Object/Messages.pm
+%%SITE_PERL%%/Rose/HTML/Object/Repeatable.pm
+%%SITE_PERL%%/Rose/HTML/Object/WithWrapAroundChildren.pm
 %%SITE_PERL%%/Rose/HTML/Objects.pm
 %%SITE_PERL%%/Rose/HTML/Script.pm
+%%SITE_PERL%%/Rose/HTML/Text.pm
+%%SITE_PERL%%/Rose/HTML/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/HTML/Objects/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/HTML/Objects
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/HTML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field/DateTime/Split
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field/DateTime
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field/Group
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field/OnOff
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field/Option
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field/PhoneNumber/US
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field/PhoneNumber
+@dirrmtry %%SITE_PERL%%/Rose/HTML/Object/Message
+@dirrmtry %%SITE_PERL%%/Rose/HTML/Object/MakeMethods
+@dirrmtry %%SITE_PERL%%/Rose/HTML/Object/Error
+@dirrmtry %%SITE_PERL%%/Rose/HTML/Object
 @dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field/Time/Split
 @dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field/Time
+@dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field/PhoneNumber/US
+@dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field/PhoneNumber
+@dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field/Option
+@dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field/OnOff
+@dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field/Group
+@dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field/DateTime/Split
+@dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field/DateTime
 @dirrmtry %%SITE_PERL%%/Rose/HTML/Form/Field
 @dirrmtry %%SITE_PERL%%/Rose/HTML/Form
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Object/Error
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Object/MakeMethods
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Object/Message
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Object
 @dirrmtry %%SITE_PERL%%/Rose/HTML
 @dirrmtry %%SITE_PERL%%/Rose

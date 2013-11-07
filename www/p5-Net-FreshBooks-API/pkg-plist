@@ -1,3 +1,25 @@
+%%PERL5_MAN3%%/Net::FreshBooks::API.3.gz
+%%PERL5_MAN3%%/Net::FreshBooks::API::Base.3.gz
+%%PERL5_MAN3%%/Net::FreshBooks::API::Client.3.gz
+%%PERL5_MAN3%%/Net::FreshBooks::API::Client::Contact.3.gz
+%%PERL5_MAN3%%/Net::FreshBooks::API::Estimate.3.gz
+%%PERL5_MAN3%%/Net::FreshBooks::API::Gateway.3.gz
+%%PERL5_MAN3%%/Net::FreshBooks::API::Invoice.3.gz
+%%PERL5_MAN3%%/Net::FreshBooks::API::InvoiceLine.3.gz
+%%PERL5_MAN3%%/Net::FreshBooks::API::Iterator.3.gz
+%%PERL5_MAN3%%/Net::FreshBooks::API::Language.3.gz
+%%PERL5_MAN3%%/Net::FreshBooks::API::Links.3.gz
+%%PERL5_MAN3%%/Net::FreshBooks::API::OAuth.3.gz
+%%PERL5_MAN3%%/Net::FreshBooks::API::Payment.3.gz
+%%PERL5_MAN3%%/Net::FreshBooks::API::Recurring.3.gz
+%%PERL5_MAN3%%/Net::FreshBooks::API::Recurring::AutoBill.3.gz
+%%PERL5_MAN3%%/Net::FreshBooks::API::Recurring::AutoBill::Card.3.gz
+%%PERL5_MAN3%%/Net::FreshBooks::API::Recurring::AutoBill::Card::Expiration.3.gz
+%%PERL5_MAN3%%/Net::FreshBooks::API::Role::CRUD.3.gz
+%%PERL5_MAN3%%/Net::FreshBooks::API::Role::Common.3.gz
+%%PERL5_MAN3%%/Net::FreshBooks::API::Role::Iterator.3.gz
+%%PERL5_MAN3%%/Net::FreshBooks::API::Role::LineItem.3.gz
+%%PERL5_MAN3%%/Net::FreshBooks::API::Role::SendBy.3.gz
 %%SITE_PERL%%/Net/FreshBooks/API.pm
 %%SITE_PERL%%/Net/FreshBooks/API/Base.pm
 %%SITE_PERL%%/Net/FreshBooks/API/Client.pm
@@ -20,11 +42,11 @@
 %%SITE_PERL%%/Net/FreshBooks/API/Role/Iterator.pm
 %%SITE_PERL%%/Net/FreshBooks/API/Role/LineItem.pm
 %%SITE_PERL%%/Net/FreshBooks/API/Role/SendBy.pm
-@dirrm %%SITE_PERL%%/Net/FreshBooks/API/Role
-@dirrm %%SITE_PERL%%/Net/FreshBooks/API/Recurring/AutoBill/Card
-@dirrm %%SITE_PERL%%/Net/FreshBooks/API/Recurring/AutoBill
-@dirrm %%SITE_PERL%%/Net/FreshBooks/API/Recurring
-@dirrm %%SITE_PERL%%/Net/FreshBooks/API/Client
-@dirrm %%SITE_PERL%%/Net/FreshBooks/API
+@dirrmtry %%SITE_PERL%%/Net/FreshBooks/API/Role
+@dirrmtry %%SITE_PERL%%/Net/FreshBooks/API/Recurring/AutoBill/Card
+@dirrmtry %%SITE_PERL%%/Net/FreshBooks/API/Recurring/AutoBill
+@dirrmtry %%SITE_PERL%%/Net/FreshBooks/API/Recurring
+@dirrmtry %%SITE_PERL%%/Net/FreshBooks/API/Client
+@dirrmtry %%SITE_PERL%%/Net/FreshBooks/API
 @dirrmtry %%SITE_PERL%%/Net/FreshBooks
 @dirrmtry %%SITE_PERL%%/Net
