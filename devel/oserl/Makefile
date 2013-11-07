@@ -3,7 +3,6 @@
 PORTNAME=	oserl
 PORTVERSION=	3.2.4
 CATEGORIES=	devel
-MASTER_SITES=	GH
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	SMPP library for Erlang
