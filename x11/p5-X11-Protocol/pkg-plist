@@ -1,14 +1,30 @@
+%%PERL5_MAN3%%/X11::Auth.3.gz
+%%PERL5_MAN3%%/X11::Keysyms.3.gz
+%%PERL5_MAN3%%/X11::Protocol.3.gz
+%%PERL5_MAN3%%/X11::Protocol::Connection.3.gz
+%%PERL5_MAN3%%/X11::Protocol::Connection::FileHandle.3.gz
+%%PERL5_MAN3%%/X11::Protocol::Connection::INETFH.3.gz
+%%PERL5_MAN3%%/X11::Protocol::Connection::INETSocket.3.gz
+%%PERL5_MAN3%%/X11::Protocol::Connection::Socket.3.gz
+%%PERL5_MAN3%%/X11::Protocol::Connection::UNIXFH.3.gz
+%%PERL5_MAN3%%/X11::Protocol::Connection::UNIXSocket.3.gz
+%%PERL5_MAN3%%/X11::Protocol::Ext::BIG_REQUESTS.3.gz
+%%PERL5_MAN3%%/X11::Protocol::Ext::DPMS.3.gz
+%%PERL5_MAN3%%/X11::Protocol::Ext::RENDER.3.gz
+%%PERL5_MAN3%%/X11::Protocol::Ext::SHAPE.3.gz
+%%PERL5_MAN3%%/X11::Protocol::Ext::XC_MISC.3.gz
+%%PERL5_MAN3%%/X11::Protocol::Ext::XFree86_Misc.3.gz
 %%SITE_PERL%%/X11/Auth.pm
 %%SITE_PERL%%/X11/Keysyms.pm
 %%SITE_PERL%%/X11/Protocol.pm
 %%SITE_PERL%%/X11/Protocol/Connection.pm
-%%SITE_PERL%%/X11/Protocol/Constants.pm
 %%SITE_PERL%%/X11/Protocol/Connection/FileHandle.pm
 %%SITE_PERL%%/X11/Protocol/Connection/INETFH.pm
 %%SITE_PERL%%/X11/Protocol/Connection/INETSocket.pm
 %%SITE_PERL%%/X11/Protocol/Connection/Socket.pm
 %%SITE_PERL%%/X11/Protocol/Connection/UNIXFH.pm
 %%SITE_PERL%%/X11/Protocol/Connection/UNIXSocket.pm
+%%SITE_PERL%%/X11/Protocol/Constants.pm
 %%SITE_PERL%%/X11/Protocol/Ext/BIG_REQUESTS.pm
 %%SITE_PERL%%/X11/Protocol/Ext/DPMS.pm
 %%SITE_PERL%%/X11/Protocol/Ext/RENDER.pm
@@ -16,9 +32,9 @@
 %%SITE_PERL%%/X11/Protocol/Ext/XC_MISC.pm
 %%SITE_PERL%%/X11/Protocol/Ext/XFree86_Misc.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/Protocol/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/Protocol
-@dirrm %%SITE_PERL%%/X11/Protocol/Ext
-@dirrm %%SITE_PERL%%/X11/Protocol/Connection
-@dirrm %%SITE_PERL%%/X11/Protocol
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/Protocol
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/X11
+@dirrmtry %%SITE_PERL%%/X11/Protocol/Ext
+@dirrmtry %%SITE_PERL%%/X11/Protocol/Connection
+@dirrmtry %%SITE_PERL%%/X11/Protocol
 @dirrmtry %%SITE_PERL%%/X11
