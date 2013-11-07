@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.figlet.org/pub/figlet/fonts/
 DISTFILES=	contributed.tar.gz international.tar.gz
 DIST_SUBDIR=	figlet
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Assorted fonts for the figlet(6) program
 
 RUN_DEPENDS=    figlet:${PORTSDIR}/misc/figlet
@@ -19,7 +19,6 @@ NO_WRKSUBDIR=	yes
 DATADIR=	${PREFIX}/share/figlet
 PLIST_SUB=	DATADIR=${DATADIR:S|^${PREFIX}/||}
 
-NO_STAGE=	yes
 post-extract:
 	@cd ${WRKDIR}/contributed && \
 		${TAR} xf Obanner-canon.tgz -C ${WRKDIR}/contributed/ && \
@@ -41,7 +40,7 @@ post-extract:
 
 do-install:
 .for f in contributed international
-	@cd ${WRKDIR}/${f} && ${COPYTREE_SHARE} \* ${DATADIR}
+	@cd ${WRKDIR}/${f} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 .endfor
 
 .include <bsd.port.mk>
