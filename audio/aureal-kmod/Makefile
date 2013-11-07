@@ -5,28 +5,24 @@ PORTNAME=	aureal
 PORTVERSION=	1.5
 PORTREVISION=	6
 CATEGORIES=	audio kld
-MASTER_SITES=	http://www.matey.org/au88x0/ \
-		http://www.b1t.name/distfiles/ \
-		http://aureal-snd.googlecode.com/files/
+MASTER_SITES=	GOOGLE_CODE
+PROJECTHOST=	${PORTNAME}-snd
 PKGNAMESUFFIX=	-kmod
-DISTNAME=	au88x0-${PORTVERSION}_${DISTREVISION}
+DISTNAME=	au88x0-${PORTVERSION}_4
 
 MAINTAINER=	c.kworr@gmail.com
-COMMENT=	A FreeBSD Driver for Aureal Vortex based soundcards
+COMMENT=	Driver for Aureal Vortex based soundcards
 
-BROKEN=		Does not fetch
-
-NO_PACKAGE=	Should be in sync with the kernel to work correctly
+NO_PACKAGE=	should be in sync with the kernel to work correctly
 
 ONLY_FOR_ARCHS=	i386
 STRAYFILES=	au88x0.h au88x0.c asp10.o asp20.o asp30.o
-DISTREVISION=	4
 
 KMODDIR=	${PREFIX}/modules/au88x0
 KMODDIR_REL=	${KMODDIR:S%${PREFIX}/%%}
 
 NO_STAGE=	yes
-USE_RC_SUBR=	aureal
+USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-message
 SUB_LIST=	KMODDIR=${KMODDIR}
 
