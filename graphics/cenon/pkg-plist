@@ -92,6 +92,7 @@ GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/LayerDetails.nib/cl
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/LayerDetails.nib/info.nib
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/LayerDetails.nib/keyedobjects.nib
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/Localizable.strings
+GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/Main.xib
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/Operations.strings
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PSFontInfo.nib/classes.nib
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PSFontInfo.nib/info.nib
@@ -102,6 +103,7 @@ GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PSInfo.nib/keyedobj
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PSSettings.nib/classes.nib
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PSSettings.nib/info.nib
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PSSettings.nib/keyedobjects.nib
+GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PreferencesPanel.xib
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PrintPanelAccessory.nib/classes.nib
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PrintPanelAccessory.nib/info.nib
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PrintPanelAccessory.nib/keyedobjects.nib
@@ -138,6 +140,7 @@ GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/TransformPanel.nib/
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/TransformPanel.nib/classes.nib
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/TransformPanel.nib/info.nib
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/TransformPanel.nib/keyedobjects.nib
+GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/Vectorizer.xib
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/WorkingAreaPanel.nib/classes.nib
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/WorkingAreaPanel.nib/info.nib
 GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/WorkingAreaPanel.nib/keyedobjects.nib
@@ -242,6 +245,7 @@ GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/LayerDetails.nib/cla
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/LayerDetails.nib/info.nib
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/LayerDetails.nib/keyedobjects.nib
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/Localizable.strings
+GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/Main.xib
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/Operations.strings
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PSInfo.nib/classes.nib
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PSInfo.nib/info.nib
@@ -249,6 +253,7 @@ GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PSInfo.nib/keyedobje
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PSSettings.nib/classes.nib
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PSSettings.nib/info.nib
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PSSettings.nib/keyedobjects.nib
+GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PreferencesPanel.xib
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PrintPanelAccessory.nib/classes.nib
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PrintPanelAccessory.nib/info.nib
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PrintPanelAccessory.nib/keyedobjects.nib
@@ -286,6 +291,7 @@ GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/TransformPanel.nib/b
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/TransformPanel.nib/classes.nib
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/TransformPanel.nib/info.nib
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/TransformPanel.nib/keyedobjects.nib
+GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/Vectorizer.xib
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/WorkingAreaPanel.nib/classes.nib
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/WorkingAreaPanel.nib/info.nib
 GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/WorkingAreaPanel.nib/keyedobjects.nib
@@ -311,6 +317,7 @@ GNUstep/Local/Applications/Cenon.app/Resources/Import.prefs/Resources/prefsImpor
 GNUstep/Local/Applications/Cenon.app/Resources/Import.prefs/stamp.make
 GNUstep/Local/Applications/Cenon.app/Resources/Info-gnustep.plist
 GNUstep/Local/Applications/Cenon.app/Resources/Info.tiff
+GNUstep/Local/Applications/Cenon.app/Resources/Info.xib
 GNUstep/Local/Applications/Cenon.app/Resources/InspectorPanel.nib/buttonFilling.tiff
 GNUstep/Local/Applications/Cenon.app/Resources/InspectorPanel.nib/buttonLayers.tiff
 GNUstep/Local/Applications/Cenon.app/Resources/InspectorPanel.nib/buttonStroke.tiff
@@ -319,6 +326,7 @@ GNUstep/Local/Applications/Cenon.app/Resources/InspectorPanel.nib/classes.nib
 GNUstep/Local/Applications/Cenon.app/Resources/InspectorPanel.nib/info.nib
 GNUstep/Local/Applications/Cenon.app/Resources/InspectorPanel.nib/keyedobjects.nib
 GNUstep/Local/Applications/Cenon.app/Resources/SinkingMetrics.plist
+GNUstep/Local/Applications/Cenon.app/Resources/ToolPanel.xib
 GNUstep/Local/Applications/Cenon.app/Resources/alignHCenter.tiff
 GNUstep/Local/Applications/Cenon.app/Resources/alignHLeft.tiff
 GNUstep/Local/Applications/Cenon.app/Resources/alignHRight.tiff
@@ -377,6 +385,7 @@ GNUstep/Local/Applications/Cenon.app/Resources/pencilBroken.tiff
 GNUstep/Local/Applications/Cenon.app/Resources/psImport.prolog
 GNUstep/Local/Applications/Cenon.app/Resources/psImportAI3.prolog
 GNUstep/Local/Applications/Cenon.app/Resources/psImportAI3.trailer
+GNUstep/Local/Applications/Cenon.app/Resources/psImportAI3_old.prolog
 GNUstep/Local/Applications/Cenon.app/Resources/sinkingFine.tiff
 GNUstep/Local/Applications/Cenon.app/Resources/sinkingMedium.tiff
 GNUstep/Local/Applications/Cenon.app/Resources/sortColLLUR.tiff
@@ -425,298 +434,325 @@ GNUstep/Local/Applications/Cenon.app/Resources/typeGerber_48x48.tiff
 GNUstep/Local/Applications/Cenon.app/Resources/typeHPGL.tiff
 GNUstep/Local/Applications/Cenon.app/Resources/typeHPGL_128x128.tiff
 GNUstep/Local/Applications/Cenon.app/Resources/typeHPGL_48x48.tiff
+GNUstep/Local/Applications/Cenon.app/Resources/typeICut.tiff
+GNUstep/Local/Applications/Cenon.app/Resources/typeICut_128x128.tiff
+GNUstep/Local/Applications/Cenon.app/Resources/typeICut_48x48.tiff
+GNUstep/Local/Applications/Cenon.app/Resources/typePDF.tiff
 GNUstep/Local/Applications/Cenon.app/Resources/typePS.tiff
 GNUstep/Local/Applications/Cenon.app/stamp.make
+@group wheel
+@owner root
+GNUstep/Local/Library/.dir.tiff
 GNUstep/Local/Library/Cenon/.dir.tiff
-GNUstep/Local/Library/Cenon/COPYRIGHT
 GNUstep/Local/Library/Cenon/Devices/.dir.tiff
 GNUstep/Local/Library/Cenon/Devices/din/.dir.tiff
 GNUstep/Local/Library/Cenon/Devices/din/excellon.dev
 GNUstep/Local/Library/Cenon/Devices/din/sm_1000.dev
 GNUstep/Local/Library/Cenon/Devices/din/sm_3000.dev
 GNUstep/Local/Library/Cenon/Devices/gerber/.dir.tiff
-%%FULL%%GNUstep/Local/Library/Cenon/Devices/gerber/_c_r_o.dev
+GNUstep/Local/Library/Cenon/Devices/gerber/_c_r_o.dev
 GNUstep/Local/Library/Cenon/Devices/gerber/emma.dev
 GNUstep/Local/Library/Cenon/Devices/gerber/emma.tab
 GNUstep/Local/Library/Cenon/Devices/gerber/gerber.dev
-%%FULL%%GNUstep/Local/Library/Cenon/Devices/gerber/gerber.doc
+GNUstep/Local/Library/Cenon/Devices/gerber/gerber.doc
 GNUstep/Local/Library/Cenon/Devices/gerber/gerber.tab
 GNUstep/Local/Library/Cenon/Devices/gerber/mill_01.dev
 GNUstep/Local/Library/Cenon/Devices/gerber/mm_0001.dev
 GNUstep/Local/Library/Cenon/Devices/hpgl/.dir.tiff
 GNUstep/Local/Library/Cenon/Devices/hpgl/hpgl_8Pen.dev
-%%FULL%%GNUstep/Local/Library/Cenon/Devices/hpgl/hpgl_8Pen.strings
-%%FULL%%GNUstep/Local/Library/Cenon/Documentation/.dir.tiff
-%%FULL%%GNUstep/Local/Library/Cenon/Documentation/SinkingMetrics.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/.dir.tiff
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/AI-3/.dir.tiff
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/AI-3/Apple.ai
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/AI-3/Bat.ai
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/AI-3/Ducks_30x20.ai
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/AI-3/Heart.ai
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/AI-3/HighTension.ai
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/AI-3/Monimaus.ai
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/AI-3/Mosquito_3mm.ai
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/AI-3/PickOut/Eagle.ai
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/AI-3/PickOut/Stempel.ai
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/AI-3/PickOut/Times24pt.ai
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/AI-3/Rose.ai
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/AI-3/logopilot.ai
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/AI-3/vhf_Logo.ai
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/DXF/.dir.tiff
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/DXF/bleistift.dxf
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/DXF/columbia.dxf
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/DXF/pleuel.dxf
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/Gerber/.dir.tiff
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/Gerber/cpu.ger
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/HPGL/.dir.tiff
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/HPGL/zztop.hgl
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/Images/Medicine.tiff
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/Images/Vamp.tiff
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/PDF/Cenon.pdf
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/PS/.dir.tiff
-%%FULL%%GNUstep/Local/Library/Cenon/Examples/PS/skala.eps
+GNUstep/Local/Library/Cenon/Devices/hpgl/hpgl_8Pen.strings
+GNUstep/Local/Library/Cenon/Documentation/.dir.tiff
+GNUstep/Local/Library/Cenon/Documentation/SinkingMetrics.cenon/document
+GNUstep/Local/Library/Cenon/Examples/.dir.tiff
+GNUstep/Local/Library/Cenon/Examples/AI-3/.dir.tiff
+GNUstep/Local/Library/Cenon/Examples/AI-3/Apple.ai
+GNUstep/Local/Library/Cenon/Examples/AI-3/Bat.ai
+GNUstep/Local/Library/Cenon/Examples/AI-3/Ducks_30x20.ai
+GNUstep/Local/Library/Cenon/Examples/AI-3/Heart.ai
+GNUstep/Local/Library/Cenon/Examples/AI-3/HighTension.ai
+GNUstep/Local/Library/Cenon/Examples/AI-3/Monimaus.ai
+GNUstep/Local/Library/Cenon/Examples/AI-3/Mosquito_3mm.ai
+GNUstep/Local/Library/Cenon/Examples/AI-3/PickOut/Eagle.ai
+GNUstep/Local/Library/Cenon/Examples/AI-3/PickOut/Stempel.ai
+GNUstep/Local/Library/Cenon/Examples/AI-3/PickOut/Times24pt.ai
+GNUstep/Local/Library/Cenon/Examples/AI-3/Rose.ai
+GNUstep/Local/Library/Cenon/Examples/AI-3/logopilot.ai
+GNUstep/Local/Library/Cenon/Examples/AI-3/vhf_Logo.ai
+GNUstep/Local/Library/Cenon/Examples/DXF/.dir.tiff
+GNUstep/Local/Library/Cenon/Examples/DXF/bleistift.dxf
+GNUstep/Local/Library/Cenon/Examples/DXF/columbia.dxf
+GNUstep/Local/Library/Cenon/Examples/DXF/pleuel.dxf
+GNUstep/Local/Library/Cenon/Examples/Gerber/.dir.tiff
+GNUstep/Local/Library/Cenon/Examples/Gerber/cpu.ger
+GNUstep/Local/Library/Cenon/Examples/HPGL/.dir.tiff
+GNUstep/Local/Library/Cenon/Examples/HPGL/zztop.hgl
+GNUstep/Local/Library/Cenon/Examples/Images/Medicine.tiff
+GNUstep/Local/Library/Cenon/Examples/Images/Vamp.tiff
+GNUstep/Local/Library/Cenon/Examples/PDF/Cenon.pdf
+GNUstep/Local/Library/Cenon/Examples/PS/.dir.tiff
+GNUstep/Local/Library/Cenon/Examples/PS/skala.eps
+GNUstep/Local/Library/Cenon/Examples/SVG/AigaHeliport.svg
+GNUstep/Local/Library/Cenon/Examples/SVG/Hibiskus.svg
+GNUstep/Local/Library/Cenon/Examples/SVG/Verkehrszeichen.svg
+GNUstep/Local/Library/Cenon/Examples/SVG/WappenGermany.svg
+GNUstep/Local/Library/Cenon/Examples/SVG/WappenStuttgart.svg
+GNUstep/Local/Library/Cenon/Examples/SVG/WappenWurmlingen.svg
 GNUstep/Local/Library/Cenon/Projects/.dir.tiff
 GNUstep/Local/Library/Cenon/Projects/Cenon.cenon/document
 GNUstep/Local/Library/Cenon/Projects/Cenon.cenon/output
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/DTP/.dir.tiff
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/DTP/Advertising.cenon/CAM1525.jpg
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/DTP/Advertising.cenon/Catalogue1.jpg
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/DTP/Advertising.cenon/Catalogue2.jpg
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/DTP/Advertising.cenon/Catalogue2_.tiff
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/DTP/Advertising.cenon/Magazine.jpg
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/DTP/Advertising.cenon/Remote.jpg
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/DTP/Advertising.cenon/Spindle.jpg
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/DTP/Advertising.cenon/Thread.jpg
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/DTP/Advertising.cenon/Vacuum.jpg
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/DTP/Advertising.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/DTP/vhf-interservice.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/DTP/vhf-interservice.cenon/output
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Ducks.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Ducks.cenon/output
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Models/.dir.tiff
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Models/Ant.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Models/Ant.cenon/output
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Models/Butterfly.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Models/Butterfly.cenon/output
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Models/Dino.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Models/Dino.cenon/output
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Models/Helicopter.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Models/Helicopter.cenon/output
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Models/Mosquito.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Models/Mosquito.cenon/output
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Models/Plane.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Models/Plane.cenon/output
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Models/Spider.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Models/Spider.cenon/output
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Models/plane_big.ai
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/MultiPage.cenon/Dragon.tiff
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/MultiPage.cenon/Inspector.tiff
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/MultiPage.cenon/Inspector_t.tiff
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/MultiPage.cenon/LayerDetails.tiff
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/MultiPage.cenon/LayerDetails_t.tiff
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/MultiPage.cenon/TemplateString.tiff
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/MultiPage.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/NoSmoking/.dir.tiff
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/NoSmoking/NoSmoking.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/NoSmoking/NoSmoking.cenon/output
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/.dir.tiff
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/Butterfly.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/Butterfly.cenon/output
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/Car.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/Car.cenon/output
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/Dino.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/Dino.cenon/output
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/Duck.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/Duck.cenon/output
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/Fish.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/Fish.cenon/output
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/Golf.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/Golf.cenon/output
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/Gorilla.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/Gorilla.cenon/output
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/HandVictory.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/HandVictory.cenon/output
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/Heart.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/Heart.cenon/output
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/Key.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/Key.cenon/output
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/Star.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/Star.cenon/output
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/ThumbUp.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/ThumbUp.cenon/output
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/Tree.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Shapes/Tree.cenon/output
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Teddy.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/Teddy.cenon/output
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/TurboDuck.cenon/document
-%%FULL%%GNUstep/Local/Library/Cenon/Projects/TurboDuck.cenon/output
-GNUstep/Local/Library/Cenon/README
+GNUstep/Local/Library/Cenon/Projects/DTP/.dir.tiff
+GNUstep/Local/Library/Cenon/Projects/DTP/Advertising.cenon/CAM1525.jpg
+GNUstep/Local/Library/Cenon/Projects/DTP/Advertising.cenon/Catalogue1.jpg
+GNUstep/Local/Library/Cenon/Projects/DTP/Advertising.cenon/Catalogue2.jpg
+GNUstep/Local/Library/Cenon/Projects/DTP/Advertising.cenon/Catalogue2_.tiff
+GNUstep/Local/Library/Cenon/Projects/DTP/Advertising.cenon/Magazine.jpg
+GNUstep/Local/Library/Cenon/Projects/DTP/Advertising.cenon/Remote.jpg
+GNUstep/Local/Library/Cenon/Projects/DTP/Advertising.cenon/Spindle.jpg
+GNUstep/Local/Library/Cenon/Projects/DTP/Advertising.cenon/Thread.jpg
+GNUstep/Local/Library/Cenon/Projects/DTP/Advertising.cenon/Vacuum.jpg
+GNUstep/Local/Library/Cenon/Projects/DTP/Advertising.cenon/document
+GNUstep/Local/Library/Cenon/Projects/DTP/vhf-interservice.cenon/document
+GNUstep/Local/Library/Cenon/Projects/DTP/vhf-interservice.cenon/output
+GNUstep/Local/Library/Cenon/Projects/Ducks.cenon/document
+GNUstep/Local/Library/Cenon/Projects/Ducks.cenon/output
+GNUstep/Local/Library/Cenon/Projects/Models/.dir.tiff
+GNUstep/Local/Library/Cenon/Projects/Models/Ant.cenon/document
+GNUstep/Local/Library/Cenon/Projects/Models/Ant.cenon/output
+GNUstep/Local/Library/Cenon/Projects/Models/Butterfly.cenon/document
+GNUstep/Local/Library/Cenon/Projects/Models/Butterfly.cenon/output
+GNUstep/Local/Library/Cenon/Projects/Models/Dino.cenon/document
+GNUstep/Local/Library/Cenon/Projects/Models/Dino.cenon/output
+GNUstep/Local/Library/Cenon/Projects/Models/Helicopter.cenon/document
+GNUstep/Local/Library/Cenon/Projects/Models/Helicopter.cenon/output
+GNUstep/Local/Library/Cenon/Projects/Models/Mosquito.cenon/document
+GNUstep/Local/Library/Cenon/Projects/Models/Mosquito.cenon/output
+GNUstep/Local/Library/Cenon/Projects/Models/Plane.cenon/document
+GNUstep/Local/Library/Cenon/Projects/Models/Plane.cenon/output
+GNUstep/Local/Library/Cenon/Projects/Models/Spider.cenon/document
+GNUstep/Local/Library/Cenon/Projects/Models/Spider.cenon/output
+GNUstep/Local/Library/Cenon/Projects/Models/plane_big.ai
+GNUstep/Local/Library/Cenon/Projects/MultiPage.cenon/Dragon.tiff
+GNUstep/Local/Library/Cenon/Projects/MultiPage.cenon/Inspector.tiff
+GNUstep/Local/Library/Cenon/Projects/MultiPage.cenon/Inspector_t.tiff
+GNUstep/Local/Library/Cenon/Projects/MultiPage.cenon/LayerDetails.tiff
+GNUstep/Local/Library/Cenon/Projects/MultiPage.cenon/LayerDetails_t.tiff
+GNUstep/Local/Library/Cenon/Projects/MultiPage.cenon/TemplateString.tiff
+GNUstep/Local/Library/Cenon/Projects/MultiPage.cenon/document
+GNUstep/Local/Library/Cenon/Projects/NoSmoking/.dir.tiff
+GNUstep/Local/Library/Cenon/Projects/NoSmoking/NoSmoking.cenon/document
+GNUstep/Local/Library/Cenon/Projects/NoSmoking/NoSmoking.cenon/output
+GNUstep/Local/Library/Cenon/Projects/Shapes/.dir.tiff
+GNUstep/Local/Library/Cenon/Projects/Shapes/Butterfly.cenon/document
+GNUstep/Local/Library/Cenon/Projects/Shapes/Butterfly.cenon/output
+GNUstep/Local/Library/Cenon/Projects/Shapes/Car.cenon/document
+GNUstep/Local/Library/Cenon/Projects/Shapes/Car.cenon/output
+GNUstep/Local/Library/Cenon/Projects/Shapes/Dino.cenon/document
+GNUstep/Local/Library/Cenon/Projects/Shapes/Dino.cenon/output
+GNUstep/Local/Library/Cenon/Projects/Shapes/Duck.cenon/document
+GNUstep/Local/Library/Cenon/Projects/Shapes/Duck.cenon/output
+GNUstep/Local/Library/Cenon/Projects/Shapes/Fish.cenon/document
+GNUstep/Local/Library/Cenon/Projects/Shapes/Fish.cenon/output
+GNUstep/Local/Library/Cenon/Projects/Shapes/Golf.cenon/document
+GNUstep/Local/Library/Cenon/Projects/Shapes/Golf.cenon/output
+GNUstep/Local/Library/Cenon/Projects/Shapes/Gorilla.cenon/document
+GNUstep/Local/Library/Cenon/Projects/Shapes/Gorilla.cenon/output
+GNUstep/Local/Library/Cenon/Projects/Shapes/HandVictory.cenon/document
+GNUstep/Local/Library/Cenon/Projects/Shapes/HandVictory.cenon/output
+GNUstep/Local/Library/Cenon/Projects/Shapes/Heart.cenon/document
+GNUstep/Local/Library/Cenon/Projects/Shapes/Heart.cenon/output
+GNUstep/Local/Library/Cenon/Projects/Shapes/Key.cenon/document
+GNUstep/Local/Library/Cenon/Projects/Shapes/Key.cenon/output
+GNUstep/Local/Library/Cenon/Projects/Shapes/Star.cenon/document
+GNUstep/Local/Library/Cenon/Projects/Shapes/Star.cenon/output
+GNUstep/Local/Library/Cenon/Projects/Shapes/ThumbUp.cenon/document
+GNUstep/Local/Library/Cenon/Projects/Shapes/ThumbUp.cenon/output
+GNUstep/Local/Library/Cenon/Projects/Shapes/Tree.cenon/document
+GNUstep/Local/Library/Cenon/Projects/Shapes/Tree.cenon/output
+GNUstep/Local/Library/Cenon/Projects/Teddy.cenon/document
+GNUstep/Local/Library/Cenon/Projects/Teddy.cenon/output
+GNUstep/Local/Library/Cenon/Projects/TurboDuck.cenon/document
+GNUstep/Local/Library/Cenon/Projects/TurboDuck.cenon/output
+GNUstep/Local/Library/Devices/.dir.tiff
+GNUstep/Local/Library/Devices/din/.dir.tiff
+GNUstep/Local/Library/Devices/din/excellon.dev
+GNUstep/Local/Library/Devices/din/sm_1000.dev
+GNUstep/Local/Library/Devices/din/sm_3000.dev
+GNUstep/Local/Library/Devices/gerber/.dir.tiff
+GNUstep/Local/Library/Devices/gerber/emma.dev
+GNUstep/Local/Library/Devices/gerber/emma.tab
+GNUstep/Local/Library/Devices/gerber/gerber.dev
+GNUstep/Local/Library/Devices/gerber/gerber.doc
+GNUstep/Local/Library/Devices/gerber/gerber.tab
+GNUstep/Local/Library/Devices/gerber/mill_01.dev
+GNUstep/Local/Library/Devices/gerber/mm_0001.dev
+GNUstep/Local/Library/Devices/hpgl/.dir.tiff
+GNUstep/Local/Library/Devices/hpgl/hpgl_8Pen.dev
+GNUstep/Local/Library/Projects/.dir.tiff
+GNUstep/Local/Library/Projects/Cenon.cenon/document
+GNUstep/Local/Library/Projects/Cenon.cenon/output
+GNUstep/Local/Library/README
 GNUstep/Local/Tools/Cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/TurboDuck.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/Teddy.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/Shapes/Tree.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/Shapes/ThumbUp.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/Shapes/Star.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/Shapes/Key.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/Shapes/Heart.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/Shapes/HandVictory.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/Shapes/Gorilla.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/Shapes/Golf.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/Shapes/Fish.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/Shapes/Duck.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/Shapes/Dino.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/Shapes/Car.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/Shapes/Butterfly.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/Shapes
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/NoSmoking/NoSmoking.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/NoSmoking
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/MultiPage.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/Models/Spider.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/Models/Plane.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/Models/Mosquito.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/Models/Helicopter.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/Models/Dino.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/Models/Butterfly.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/Models/Ant.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/Models
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/Ducks.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/DTP/vhf-interservice.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/DTP/Advertising.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Projects/DTP
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Examples/PS
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Examples/PDF
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Examples/Images
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Examples/HPGL
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Examples/Gerber
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Examples/DXF
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Examples/AI-3/PickOut
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Examples/AI-3
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Examples
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Documentation/SinkingMetrics.cenon
-%%FULL%%@dirrm GNUstep/Local/Library/Cenon/Documentation
-GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/Main.xib
-GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PreferencesPanel.xib
-GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/Vectorizer.xib
-GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/Main.xib
-GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PreferencesPanel.xib
-GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/Vectorizer.xib
-GNUstep/Local/Applications/Cenon.app/Resources/Info.xib
-GNUstep/Local/Applications/Cenon.app/Resources/ToolPanel.xib
-GNUstep/Local/Applications/Cenon.app/Resources/psImportAI3_old.prolog
-GNUstep/Local/Applications/Cenon.app/Resources/typeICut.tiff
-GNUstep/Local/Applications/Cenon.app/Resources/typeICut_%%MAJORVERSION%%8x%%MAJORVERSION%%8.tiff
-GNUstep/Local/Applications/Cenon.app/Resources/typeICut_128x128.tiff
-GNUstep/Local/Applications/Cenon.app/Resources/typePDF.tiff
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj
-@dirrm GNUstep/Local/Library/Cenon/Projects/Cenon.cenon
-@dirrm GNUstep/Local/Library/Cenon/Projects
-@dirrm GNUstep/Local/Library/Cenon/Devices/hpgl
-@dirrm GNUstep/Local/Library/Cenon/Devices/gerber
-@dirrm GNUstep/Local/Library/Cenon/Devices/din
-@dirrm GNUstep/Local/Library/Cenon/Devices
-@dirrm GNUstep/Local/Library/Cenon
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/InspectorPanel.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/Import.prefs/Resources/German.lproj/Import.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/Import.prefs/Resources/German.lproj
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/Import.prefs/Resources/English.lproj/Import.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/Import.prefs/Resources/English.lproj
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/Import.prefs/Resources
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/Import.prefs
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/WorkingAreaPanel.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/TransformPanel.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/TilePanel.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/TPScale.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/TPRotate.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/TPMove.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/TPMix.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/TPAlign.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/ProjectSettingsPanel.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PrintPanelAccessory.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PSSettings.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PSInfo.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/LayerDetails.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IntersectionPanel.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPWeb.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPThread.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPTextPath.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPText.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPSinking.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPRectangle.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPPolyLine.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPPath.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPMark.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPLine.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPImage.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPGroup.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPCurve.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPCrosshairs.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPArc.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPAllStrokeWidth.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPAllLayers.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPAllFilling.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPAllAcc.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPAccText.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/GridPanel.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/Document.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/Contour.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/German.lproj
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/General.prefs/Resources/German.lproj/General.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/General.prefs/Resources/German.lproj
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/General.prefs/Resources/English.lproj/General.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/General.prefs/Resources/English.lproj
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/General.prefs/Resources
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/General.prefs
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/Export.prefs/Resources/German.lproj/Export.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/Export.prefs/Resources/German.lproj
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/Export.prefs/Resources/English.lproj/Export.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/Export.prefs/Resources/English.lproj
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/Export.prefs/Resources
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/Export.prefs
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/WorkingAreaPanel.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/TransformPanel.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/TilePanel.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/TPScale.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/TPRotate.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/TPMove.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/TPMix.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/TPAlign.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/ProjectSettingsPanel.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PrintPanelAccessory.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PSSettings.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PSInfo.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PSFontInfo.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/LayerDetails.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IntersectionPanel.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPWeb.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPThread.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPTextPath.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPText.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPSinking.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPRectangle.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPPolyLine.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPPath.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPMark.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPLine.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPImage.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPGroup.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPCurve.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPCrosshairs.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPArc.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPAllStrokeWidth.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPAllLayers.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPAllFilling.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPAllAcc.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPAccText.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/GridPanel.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/Document.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/Contour.nib
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/English.lproj
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/CropMarks/rightup.cenon
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/CropMarks/middledown.cenon
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/CropMarks/leftup.cenon
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/CropMarks
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources/CharConversion
-@dirrm GNUstep/Local/Applications/Cenon.app/Resources
-@dirrm GNUstep/Local/Applications/Cenon.app
+@dirrmtry GNUstep/Local/Tools
+@dirrmtry GNUstep/Local/Library/Projects/Cenon.cenon
+@dirrmtry GNUstep/Local/Library/Projects
+@dirrmtry GNUstep/Local/Library/Devices/hpgl
+@dirrmtry GNUstep/Local/Library/Devices/gerber
+@dirrmtry GNUstep/Local/Library/Devices/din
+@dirrmtry GNUstep/Local/Library/Devices
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/TurboDuck.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/Teddy.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/Shapes/Tree.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/Shapes/ThumbUp.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/Shapes/Star.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/Shapes/Key.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/Shapes/Heart.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/Shapes/HandVictory.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/Shapes/Gorilla.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/Shapes/Golf.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/Shapes/Fish.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/Shapes/Duck.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/Shapes/Dino.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/Shapes/Car.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/Shapes/Butterfly.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/Shapes
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/NoSmoking/NoSmoking.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/NoSmoking
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/MultiPage.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/Models/Spider.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/Models/Plane.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/Models/Mosquito.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/Models/Helicopter.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/Models/Dino.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/Models/Butterfly.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/Models/Ant.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/Models
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/Ducks.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/DTP/vhf-interservice.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/DTP/Advertising.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/DTP
+@dirrmtry GNUstep/Local/Library/Cenon/Projects/Cenon.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Projects
+@dirrmtry GNUstep/Local/Library/Cenon/Examples/SVG
+@dirrmtry GNUstep/Local/Library/Cenon/Examples/PS
+@dirrmtry GNUstep/Local/Library/Cenon/Examples/PDF
+@dirrmtry GNUstep/Local/Library/Cenon/Examples/Images
+@dirrmtry GNUstep/Local/Library/Cenon/Examples/HPGL
+@dirrmtry GNUstep/Local/Library/Cenon/Examples/Gerber
+@dirrmtry GNUstep/Local/Library/Cenon/Examples/DXF
+@dirrmtry GNUstep/Local/Library/Cenon/Examples/AI-3/PickOut
+@dirrmtry GNUstep/Local/Library/Cenon/Examples/AI-3
+@dirrmtry GNUstep/Local/Library/Cenon/Examples
+@dirrmtry GNUstep/Local/Library/Cenon/Documentation/SinkingMetrics.cenon
+@dirrmtry GNUstep/Local/Library/Cenon/Documentation
+@dirrmtry GNUstep/Local/Library/Cenon/Devices/hpgl
+@dirrmtry GNUstep/Local/Library/Cenon/Devices/gerber
+@dirrmtry GNUstep/Local/Library/Cenon/Devices/din
+@dirrmtry GNUstep/Local/Library/Cenon/Devices
+@dirrmtry GNUstep/Local/Library/Cenon
+@dirrmtry GNUstep/Local/Library
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/InspectorPanel.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/Import.prefs/Resources/German.lproj/Import.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/Import.prefs/Resources/German.lproj
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/Import.prefs/Resources/English.lproj/Import.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/Import.prefs/Resources/English.lproj
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/Import.prefs/Resources
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/Import.prefs
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/WorkingAreaPanel.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/TransformPanel.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/TilePanel.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/TPScale.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/TPRotate.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/TPMove.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/TPMix.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/TPAlign.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/ProjectSettingsPanel.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PrintPanelAccessory.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PSSettings.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/PSInfo.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/LayerDetails.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IntersectionPanel.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPWeb.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPThread.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPTextPath.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPText.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPSinking.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPRectangle.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPPolyLine.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPPath.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPMark.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPLine.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPImage.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPGroup.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPCurve.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPCrosshairs.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPArc.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPAllStrokeWidth.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPAllLayers.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPAllFilling.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPAllAcc.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/IPAccText.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/GridPanel.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/Document.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj/Contour.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/German.lproj
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/General.prefs/Resources/German.lproj/General.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/General.prefs/Resources/German.lproj
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/General.prefs/Resources/English.lproj/General.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/General.prefs/Resources/English.lproj
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/General.prefs/Resources
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/General.prefs
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/Export.prefs/Resources/German.lproj/Export.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/Export.prefs/Resources/German.lproj
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/Export.prefs/Resources/English.lproj/Export.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/Export.prefs/Resources/English.lproj
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/Export.prefs/Resources
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/Export.prefs
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/WorkingAreaPanel.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/TransformPanel.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/TilePanel.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/TPScale.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/TPRotate.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/TPMove.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/TPMix.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/TPAlign.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/ProjectSettingsPanel.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PrintPanelAccessory.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PSSettings.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PSInfo.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/PSFontInfo.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/LayerDetails.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IntersectionPanel.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPWeb.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPThread.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPTextPath.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPText.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPSinking.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPRectangle.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPPolyLine.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPPath.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPMark.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPLine.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPImage.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPGroup.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPCurve.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPCrosshairs.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPArc.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPAllStrokeWidth.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPAllLayers.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPAllFilling.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPAllAcc.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/IPAccText.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/GridPanel.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/Document.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj/Contour.nib
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/English.lproj
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/CropMarks/rightup.cenon
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/CropMarks/middledown.cenon
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/CropMarks/leftup.cenon
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/CropMarks
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources/CharConversion
+@dirrmtry GNUstep/Local/Applications/Cenon.app/Resources
+@dirrmtry GNUstep/Local/Applications/Cenon.app
+@dirrmtry GNUstep/Local/Applications
+@dirrmtry GNUstep/Local
+@dirrmtry GNUstep
