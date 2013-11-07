@@ -38,30 +38,6 @@ TEST_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Net::FreshBooks::API.3 \
-		Net::FreshBooks::API::Base.3 \
-		Net::FreshBooks::API::Client.3 \
-		Net::FreshBooks::API::Client::Contact.3 \
-		Net::FreshBooks::API::Estimate.3 \
-		Net::FreshBooks::API::Gateway.3 \
-		Net::FreshBooks::API::Invoice.3 \
-		Net::FreshBooks::API::InvoiceLine.3 \
-		Net::FreshBooks::API::Iterator.3 \
-		Net::FreshBooks::API::Language.3 \
-		Net::FreshBooks::API::Links.3 \
-		Net::FreshBooks::API::OAuth.3 \
-		Net::FreshBooks::API::Payment.3 \
-		Net::FreshBooks::API::Recurring.3 \
-		Net::FreshBooks::API::Recurring::AutoBill.3 \
-		Net::FreshBooks::API::Recurring::AutoBill::Card.3 \
-		Net::FreshBooks::API::Recurring::AutoBill::Card::Expiration.3 \
-		Net::FreshBooks::API::Role::CRUD.3 \
-		Net::FreshBooks::API::Role::Common.3 \
-		Net::FreshBooks::API::Role::Iterator.3 \
-		Net::FreshBooks::API::Role::LineItem.3 \
-		Net::FreshBooks::API::Role::SendBy.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

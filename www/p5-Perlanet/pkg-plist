@@ -1,4 +1,15 @@
-@comment $FreeBSD$
+bin/perlanet
+%%PERL5_MAN3%%/Perlanet.3.gz
+%%PERL5_MAN3%%/Perlanet::Entry.3.gz
+%%PERL5_MAN3%%/Perlanet::Feed.3.gz
+%%PERL5_MAN3%%/Perlanet::Simple.3.gz
+%%PERL5_MAN3%%/Perlanet::Trait::Cache.3.gz
+%%PERL5_MAN3%%/Perlanet::Trait::FeedFile.3.gz
+%%PERL5_MAN3%%/Perlanet::Trait::OPML.3.gz
+%%PERL5_MAN3%%/Perlanet::Trait::Scrubber.3.gz
+%%PERL5_MAN3%%/Perlanet::Trait::TemplateToolkit.3.gz
+%%PERL5_MAN3%%/Perlanet::Trait::Tidy.3.gz
+%%PERL5_MAN3%%/Perlanet::Trait::YAMLConfig.3.gz
 %%SITE_PERL%%/Perlanet.pm
 %%SITE_PERL%%/Perlanet/Entry.pm
 %%SITE_PERL%%/Perlanet/Feed.pm
@@ -10,6 +21,6 @@
 %%SITE_PERL%%/Perlanet/Trait/TemplateToolkit.pm
 %%SITE_PERL%%/Perlanet/Trait/Tidy.pm
 %%SITE_PERL%%/Perlanet/Trait/YAMLConfig.pm
-bin/perlanet
+man/man1/perlanet.1.gz
 @dirrmtry %%SITE_PERL%%/Perlanet/Trait
 @dirrmtry %%SITE_PERL%%/Perlanet
