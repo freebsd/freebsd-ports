@@ -9,8 +9,9 @@ MASTER_SITES=	http://chickenshick.com/jpilot-db/download/
 EXTRACT_SUFX=	-ej.jar
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A desktop app for pilot-db
+COMMENT=	Desktop app for pilot-db
 
+BROKEN=		Distfile is unfetchable after MASTER_SITES reorganization
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	# empty
