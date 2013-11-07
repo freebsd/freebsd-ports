@@ -3,7 +3,6 @@
 PORTNAME=	ranch
 PORTVERSION=	0.8.5
 CATEGORIES=	net
-MASTER_SITES=	GH
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Erlang socket acceptor pool for TCP protocols
@@ -13,7 +12,7 @@ RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	extend
 GH_PROJECT=	ranch
