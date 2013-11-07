@@ -1,3 +1,5 @@
+%%PERL5_MAN3%%/Apache::SessionX.3.gz
+%%PERL5_MAN3%%/Apache::SessionX::Generate::MD5.3.gz
 %%SITE_PERL%%/Apache/SessionX.pm
 %%SITE_PERL%%/Apache/SessionX/Config.pm
 %%SITE_PERL%%/Apache/SessionX/Generate/MD5.pm
@@ -5,9 +7,9 @@
 %%SITE_PERL%%/Apache/SessionX/Store/File.pm
 %%SITE_PERL%%/Apache/testcount.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/SessionX/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/SessionX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/SessionX
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
-@dirrm %%SITE_PERL%%/Apache/SessionX/Store
-@dirrm %%SITE_PERL%%/Apache/SessionX/Generate
-@dirrm %%SITE_PERL%%/Apache/SessionX
+@dirrmtry %%SITE_PERL%%/Apache/SessionX/Store
+@dirrmtry %%SITE_PERL%%/Apache/SessionX/Generate
+@dirrmtry %%SITE_PERL%%/Apache/SessionX
 @dirrmtry %%SITE_PERL%%/Apache

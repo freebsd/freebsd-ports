@@ -1,3 +1,8 @@
+%%PERL5_MAN3%%/Apache::MP3.3.gz
+%%PERL5_MAN3%%/Apache::MP3::L10N.3.gz
+%%PERL5_MAN3%%/Apache::MP3::Playlist.3.gz
+%%PERL5_MAN3%%/Apache::MP3::Resample.3.gz
+%%PERL5_MAN3%%/Apache::MP3::Sorted.3.gz
 %%SITE_PERL%%/Apache/MP3.pm
 %%SITE_PERL%%/Apache/MP3/L10N.pm
 %%SITE_PERL%%/Apache/MP3/L10N/Aliases.pm
@@ -43,19 +48,19 @@
 %%SITE_PERL%%/Apache/MP3/Resample.pm
 %%SITE_PERL%%/Apache/MP3/Sorted.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/MP3/.packlist
-share/Apache-MP3/apache_mp3.css
-share/Apache-MP3/apache_mp3_fig1.gif
-share/Apache-MP3/apache_mp3_help.gif
-share/Apache-MP3/back.gif
-share/Apache-MP3/cd_icon.gif
-share/Apache-MP3/cd_icon_small.gif
-share/Apache-MP3/functions.js
-share/Apache-MP3/playlist.gif
-share/Apache-MP3/right_arrow.gif
-share/Apache-MP3/sound.gif
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/MP3
+%%DATADIR%%/apache_mp3.css
+%%DATADIR%%/apache_mp3_fig1.gif
+%%DATADIR%%/apache_mp3_help.gif
+%%DATADIR%%/back.gif
+%%DATADIR%%/cd_icon.gif
+%%DATADIR%%/cd_icon_small.gif
+%%DATADIR%%/functions.js
+%%DATADIR%%/playlist.gif
+%%DATADIR%%/right_arrow.gif
+%%DATADIR%%/sound.gif
+@dirrmtry %%DATADIR%%
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/MP3
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
-@dirrm %%SITE_PERL%%/Apache/MP3/L10N
-@dirrm %%SITE_PERL%%/Apache/MP3
+@dirrmtry %%SITE_PERL%%/Apache/MP3/L10N
+@dirrmtry %%SITE_PERL%%/Apache/MP3
 @dirrmtry %%SITE_PERL%%/Apache
-@dirrm share/Apache-MP3

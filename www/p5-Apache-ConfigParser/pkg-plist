@@ -1,9 +1,11 @@
+%%PERL5_MAN3%%/Apache::ConfigParser.3.gz
+%%PERL5_MAN3%%/Apache::ConfigParser::Directive.3.gz
 %%SITE_PERL%%/Apache/ConfigParser.pm
 %%SITE_PERL%%/Apache/ConfigParser.pod
 %%SITE_PERL%%/Apache/ConfigParser/Directive.pm
 %%SITE_PERL%%/Apache/ConfigParser/Directive.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/ConfigParser/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/ConfigParser
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/ConfigParser
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
-@dirrm %%SITE_PERL%%/Apache/ConfigParser
+@dirrmtry %%SITE_PERL%%/Apache/ConfigParser
 @dirrmtry %%SITE_PERL%%/Apache

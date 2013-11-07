@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Apache::Session::SQLite3.3.gz
 %%SITE_PERL%%/Apache/Session/SQLite3.pm
 %%SITE_PERL%%/Apache/Session/Store/SQLite3.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Session/SQLite3/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Session/SQLite3
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Session/SQLite3
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Session
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
 @dirrmtry %%SITE_PERL%%/Apache/Session/Store

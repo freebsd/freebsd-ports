@@ -1,6 +1,11 @@
+%%PERL5_MAN3%%/Apache::Session::SharedMem.3.gz
+%%PERL5_MAN3%%/Apache::Session::Store::SharedMem.3.gz
 %%SITE_PERL%%/Apache/Session/SharedMem.pm
 %%SITE_PERL%%/Apache/Session/Store/SharedMem.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Session/SharedMem/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Session/SharedMem
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Session/SharedMem
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Session
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
+@dirrmtry %%SITE_PERL%%/Apache/Session/Store
+@dirrmtry %%SITE_PERL%%/Apache/Session
+@dirrmtry %%SITE_PERL%%/Apache

@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Apache::Clean.3.gz
 %%SITE_PERL%%/Apache/Clean.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Clean/.packlist
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Clean
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Clean
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
 @dirrmtry %%SITE_PERL%%/Apache

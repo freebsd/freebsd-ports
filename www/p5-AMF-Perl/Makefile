@@ -18,14 +18,6 @@ RUN_DEPENDS=	p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class \
 USES=		perl5
 USE_PERL5=	configure patch
 
-NO_MANCOMPRESS=	no
-MAN3=		AMF::Perl.3 AMF::Perl::App::Executive.3 \
-		AMF::Perl::IO::Deserializer.3 AMF::Perl::IO::InputStream.3 \
-		AMF::Perl::IO::OutputStream.3 AMF::Perl::IO::Serializer.3 \
-		AMF::Perl::Sql::MysqlRecordSet.3 AMF::Perl::Util::Object.3 \
-		AMF::Perl::Util::RemotingService.3
-
-NO_STAGE=	yes
 post-patch:
 	@${PERL} -pi -e 's/=(?==head)//g' ${WRKSRC}/lib/AMF/Perl.pm
 

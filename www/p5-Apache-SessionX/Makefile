@@ -13,12 +13,8 @@ COMMENT=	Extented persistence framework for session data
 BUILD_DEPENDS=	p5-Apache-Session>=0:${PORTSDIR}/www/p5-Apache-Session
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	Apache::SessionX.3 \
-	Apache::SessionX::Generate::MD5.3
-
 USES=		perl5
 USE_PERL5=	configure
-IS_INTERACTIVE=	yes
+CONFIGURE_ARGS=	</dev/null
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

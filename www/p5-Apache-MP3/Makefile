@@ -22,16 +22,8 @@ USES=		perl5
 USE_PERL5=	configure
 USE_APACHE=	22+
 
-MAN3=		Apache::MP3.3 \
-		Apache::MP3::L10N.3 \
-		Apache::MP3::Playlist.3 \
-		Apache::MP3::Resample.3 \
-		Apache::MP3::Sorted.3
-
-NO_STAGE=	yes
 post-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/apache_mp3/* ${DATADIR}
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/apache_mp3/* ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
