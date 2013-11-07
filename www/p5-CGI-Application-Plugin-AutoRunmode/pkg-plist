@@ -1,7 +1,13 @@
-%%SITE_PERL%%/CGI/Application/Plugin/AutoRunmode/FileDelegate.pm
+%%PERL5_MAN3%%/CGI::Application::Plugin::AutoRunmode.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::AutoRunmode::FileDelegate.3.gz
 %%SITE_PERL%%/CGI/Application/Plugin/AutoRunmode.pm
+%%SITE_PERL%%/CGI/Application/Plugin/AutoRunmode/FileDelegate.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/Plugin/AutoRunmode/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/Plugin/AutoRunmode
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
 @dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/AutoRunmode
 @dirrmtry %%SITE_PERL%%/CGI/Application/Plugin
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/Plugin/AutoRunmode
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/Plugin/
+@dirrmtry %%SITE_PERL%%/CGI/Application
+@dirrmtry %%SITE_PERL%%/CGI

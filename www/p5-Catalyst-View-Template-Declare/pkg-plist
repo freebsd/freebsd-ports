@@ -1,9 +1,15 @@
+%%PERL5_MAN3%%/Catalyst::Helper::View::Template::Declare.3.gz
+%%PERL5_MAN3%%/Catalyst::View::Template::Declare.3.gz
 %%SITE_PERL%%/Catalyst/Helper/View/Template/Declare.pm
 %%SITE_PERL%%/Catalyst/View/Template/Declare.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/Template/Declare/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/Template/Declare
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/Template
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst/View/Template
+@dirrmtry %%SITE_PERL%%/Catalyst/View
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper/View/Template
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper/View
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper
-@dirrmtry %%SITE_PERL%%/Catalyst/View/Template
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/Template/Declare
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/Template
+@dirrmtry %%SITE_PERL%%/Catalyst

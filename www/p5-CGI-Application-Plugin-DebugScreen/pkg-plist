@@ -1,9 +1,10 @@
+%%PERL5_MAN3%%/CGI::Application::Plugin::DebugScreen.3.gz
 %%SITE_PERL%%/CGI/Application/Plugin/DebugScreen.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/Plugin/DebugScreen/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/Plugin/DebugScreen
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
 @dirrmtry %%SITE_PERL%%/CGI/Application/Plugin
 @dirrmtry %%SITE_PERL%%/CGI/Application
 @dirrmtry %%SITE_PERL%%/CGI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/Plugin/DebugScreen
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/Plugin/
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/

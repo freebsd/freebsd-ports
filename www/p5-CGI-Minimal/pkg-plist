@@ -1,9 +1,10 @@
+%%PERL5_MAN3%%/CGI::Minimal.3.gz
 %%SITE_PERL%%/CGI/Minimal.pm
 %%SITE_PERL%%/CGI/Minimal.pod
 %%SITE_PERL%%/CGI/Minimal/Misc.pm
 %%SITE_PERL%%/CGI/Minimal/Multipart.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Minimal/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Minimal
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Minimal
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
-@dirrm %%SITE_PERL%%/CGI/Minimal
+@dirrmtry %%SITE_PERL%%/CGI/Minimal
 @dirrmtry %%SITE_PERL%%/CGI

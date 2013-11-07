@@ -1,11 +1,19 @@
-%%SITE_PERL%%/CGI/Application/Plugin/AnyTemplate/Driver/Petal.pm
-%%SITE_PERL%%/CGI/Application/Plugin/AnyTemplate/ComponentHandler.pm
-%%SITE_PERL%%/CGI/Application/Plugin/AnyTemplate/Driver/HTMLTemplatePluggable.pm
-%%SITE_PERL%%/CGI/Application/Plugin/AnyTemplate/Driver/HTMLTemplate.pm
-%%SITE_PERL%%/CGI/Application/Plugin/AnyTemplate/Base.pm
-%%SITE_PERL%%/CGI/Application/Plugin/AnyTemplate/Driver/TemplateToolkit.pm
+%%PERL5_MAN3%%/CGI::Application::Plugin::AnyTemplate.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::AnyTemplate::Base.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::AnyTemplate::ComponentHandler.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::AnyTemplate::Driver::HTMLTemplate.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::AnyTemplate::Driver::HTMLTemplateExpr.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::AnyTemplate::Driver::HTMLTemplatePluggable.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::AnyTemplate::Driver::Petal.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::AnyTemplate::Driver::TemplateToolkit.3.gz
 %%SITE_PERL%%/CGI/Application/Plugin/AnyTemplate.pm
+%%SITE_PERL%%/CGI/Application/Plugin/AnyTemplate/Base.pm
+%%SITE_PERL%%/CGI/Application/Plugin/AnyTemplate/ComponentHandler.pm
+%%SITE_PERL%%/CGI/Application/Plugin/AnyTemplate/Driver/HTMLTemplate.pm
 %%SITE_PERL%%/CGI/Application/Plugin/AnyTemplate/Driver/HTMLTemplateExpr.pm
+%%SITE_PERL%%/CGI/Application/Plugin/AnyTemplate/Driver/HTMLTemplatePluggable.pm
+%%SITE_PERL%%/CGI/Application/Plugin/AnyTemplate/Driver/Petal.pm
+%%SITE_PERL%%/CGI/Application/Plugin/AnyTemplate/Driver/TemplateToolkit.pm
 @dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/AnyTemplate/Driver
 @dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/AnyTemplate
 @dirrmtry %%SITE_PERL%%/CGI/Application/Plugin

@@ -1,3 +1,5 @@
+%%PERL5_MAN3%%/Catalyst::Model::CDBI::Sweet.3.gz
 %%SITE_PERL%%/Catalyst/Model/CDBI/Sweet.pm
 @dirrmtry %%SITE_PERL%%/Catalyst/Model/CDBI
 @dirrmtry %%SITE_PERL%%/Catalyst/Model
+@dirrmtry %%SITE_PERL%%/Catalyst

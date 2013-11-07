@@ -1,8 +1,18 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Ex/.packlist
-%%SITE_PERL%%/CGI/Ex/App/Constants.pm
+%%PERL5_MAN3%%/CGI::Ex.3.gz
+%%PERL5_MAN3%%/CGI::Ex::App.3.gz
+%%PERL5_MAN3%%/CGI::Ex::App::Constants.3.gz
+%%PERL5_MAN3%%/CGI::Ex::Auth.3.gz
+%%PERL5_MAN3%%/CGI::Ex::Conf.3.gz
+%%PERL5_MAN3%%/CGI::Ex::Die.3.gz
+%%PERL5_MAN3%%/CGI::Ex::Dump.3.gz
+%%PERL5_MAN3%%/CGI::Ex::Fill.3.gz
+%%PERL5_MAN3%%/CGI::Ex::JSONDump.3.gz
+%%PERL5_MAN3%%/CGI::Ex::Template.3.gz
+%%PERL5_MAN3%%/CGI::Ex::Validate.3.gz
 %%SITE_PERL%%/CGI/Ex.pm
 %%SITE_PERL%%/CGI/Ex/App.pm
 %%SITE_PERL%%/CGI/Ex/App.pod
+%%SITE_PERL%%/CGI/Ex/App/Constants.pm
 %%SITE_PERL%%/CGI/Ex/Auth.pm
 %%SITE_PERL%%/CGI/Ex/Conf.pm
 %%SITE_PERL%%/CGI/Ex/Die.pm
@@ -16,6 +26,7 @@
 %%SITE_PERL%%/CGI/Ex/sha1.js
 %%SITE_PERL%%/CGI/Ex/validate.js
 %%SITE_PERL%%/CGI/Ex/yaml_load.js
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Ex/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Ex
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
 @dirrmtry %%SITE_PERL%%/CGI/Ex/App

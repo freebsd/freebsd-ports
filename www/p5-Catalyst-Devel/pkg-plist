@@ -1,3 +1,9 @@
+%%PERL5_MAN3%%/Catalyst::Devel.3.gz
+%%PERL5_MAN3%%/Catalyst::Helper.3.gz
+%%PERL5_MAN3%%/Catalyst::Restarter.3.gz
+%%PERL5_MAN3%%/Catalyst::Restarter::Forking.3.gz
+%%PERL5_MAN3%%/Catalyst::Restarter::Win32.3.gz
+%%PERL5_MAN3%%/Module::Install::Catalyst.3.gz
 %%SITE_PERL%%/Catalyst/Devel.pm
 %%SITE_PERL%%/Catalyst/Helper.pm
 %%SITE_PERL%%/Catalyst/Restarter.pm
@@ -44,8 +50,8 @@
 @dirrmtry %%SITE_PERL%%/auto/share/dist/Catalyst-Devel/lib/Helper
 @dirrmtry %%SITE_PERL%%/auto/share/dist/Catalyst-Devel/lib
 @dirrmtry %%SITE_PERL%%/auto/share/dist/Catalyst-Devel
-@dirrmtry %%SITE_PERL%%/auto/share/dist/
-@dirrmtry %%SITE_PERL%%/auto/share/
+@dirrmtry %%SITE_PERL%%/auto/share/dist
+@dirrmtry %%SITE_PERL%%/auto/share
 @dirrmtry %%SITE_PERL%%/Module/Install
 @dirrmtry %%SITE_PERL%%/Module
 @dirrmtry %%SITE_PERL%%/Catalyst/Restarter

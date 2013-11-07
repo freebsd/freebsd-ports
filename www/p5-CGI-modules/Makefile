@@ -16,10 +16,6 @@ BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		CGI::Base.3 CGI::BasePlus.3 CGI::Carp.3 CGI::Form.3 \
-		CGI::MiniSvr.3 CGI::Request.3
-
-NO_STAGE=	yes
 post-patch:
 	@${RM} ${WRKSRC}/CGI/*.orig
 

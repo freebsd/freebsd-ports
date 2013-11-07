@@ -17,11 +17,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Bundle::CGI::Builder::Complete.3 \
-	CGI::Builder.3 \
-	CGI::Builder::Conf.3 \
-	CGI::Builder::Const.3 \
-	CGI::Builder::Test.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

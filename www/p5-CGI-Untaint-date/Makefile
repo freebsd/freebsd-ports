@@ -15,10 +15,7 @@ BUILD_DEPENDS=	p5-CGI-Untaint>=0:${PORTSDIR}/www/p5-CGI-Untaint \
 		p5-Date-Simple>=0:${PORTSDIR}/devel/p5-Date-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	CGI::Untaint::date.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

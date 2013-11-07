@@ -1,3 +1,5 @@
+%%PERL5_MAN3%%/Catalyst::Model::XML::Feed.3.gz
+%%PERL5_MAN3%%/Catalyst::Model::XML::Feed::Item.3.gz
 %%SITE_PERL%%/Catalyst/Model/XML/Feed.pm
 %%SITE_PERL%%/Catalyst/Model/XML/Feed/Item.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model/XML/Feed/.packlist

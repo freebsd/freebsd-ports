@@ -1,8 +1,12 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/Email/.packlist
-%%SITE_PERL%%/Catalyst/View/Email.pm
-%%SITE_PERL%%/Catalyst/View/Email/Template.pm
+%%PERL5_MAN3%%/Catalyst::Helper::View::Email.3.gz
+%%PERL5_MAN3%%/Catalyst::Helper::View::Email::Template.3.gz
+%%PERL5_MAN3%%/Catalyst::View::Email.3.gz
+%%PERL5_MAN3%%/Catalyst::View::Email::Template.3.gz
 %%SITE_PERL%%/Catalyst/Helper/View/Email.pm
 %%SITE_PERL%%/Catalyst/Helper/View/Email/Template.pm
+%%SITE_PERL%%/Catalyst/View/Email.pm
+%%SITE_PERL%%/Catalyst/View/Email/Template.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/Email/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/Email
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst

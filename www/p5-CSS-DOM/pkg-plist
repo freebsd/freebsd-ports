@@ -1,4 +1,25 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/DOM/.packlist
+%%PERL5_MAN3%%/CSS::DOM.3.gz
+%%PERL5_MAN3%%/CSS::DOM::Array.3.gz
+%%PERL5_MAN3%%/CSS::DOM::Constants.3.gz
+%%PERL5_MAN3%%/CSS::DOM::Exception.3.gz
+%%PERL5_MAN3%%/CSS::DOM::Interface.3.gz
+%%PERL5_MAN3%%/CSS::DOM::MediaList.3.gz
+%%PERL5_MAN3%%/CSS::DOM::Parser.3.gz
+%%PERL5_MAN3%%/CSS::DOM::PropertyParser.3.gz
+%%PERL5_MAN3%%/CSS::DOM::Rule.3.gz
+%%PERL5_MAN3%%/CSS::DOM::Rule::Charset.3.gz
+%%PERL5_MAN3%%/CSS::DOM::Rule::FontFace.3.gz
+%%PERL5_MAN3%%/CSS::DOM::Rule::Import.3.gz
+%%PERL5_MAN3%%/CSS::DOM::Rule::Media.3.gz
+%%PERL5_MAN3%%/CSS::DOM::Rule::Page.3.gz
+%%PERL5_MAN3%%/CSS::DOM::Rule::Style.3.gz
+%%PERL5_MAN3%%/CSS::DOM::RuleList.3.gz
+%%PERL5_MAN3%%/CSS::DOM::Style.3.gz
+%%PERL5_MAN3%%/CSS::DOM::StyleSheetList.3.gz
+%%PERL5_MAN3%%/CSS::DOM::Util.3.gz
+%%PERL5_MAN3%%/CSS::DOM::Value.3.gz
+%%PERL5_MAN3%%/CSS::DOM::Value::List.3.gz
+%%PERL5_MAN3%%/CSS::DOM::Value::Primitive.3.gz
 %%SITE_PERL%%/CSS/DOM.pm
 %%SITE_PERL%%/CSS/DOM/Array.pm
 %%SITE_PERL%%/CSS/DOM/Constants.pm
@@ -22,10 +43,11 @@
 %%SITE_PERL%%/CSS/DOM/Value/List.pm
 %%SITE_PERL%%/CSS/DOM/Value/Primitive.pm
 %%SITE_PERL%%/CSS/DOM/Value/Primitive/colours.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/DOM/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/DOM
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS
 @dirrmtry %%SITE_PERL%%/CSS/DOM/Value/Primitive
 @dirrmtry %%SITE_PERL%%/CSS/DOM/Value
 @dirrmtry %%SITE_PERL%%/CSS/DOM/Rule
 @dirrmtry %%SITE_PERL%%/CSS/DOM
 @dirrmtry %%SITE_PERL%%/CSS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/DOM
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS

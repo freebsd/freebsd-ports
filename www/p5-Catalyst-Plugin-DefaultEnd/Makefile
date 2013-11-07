@@ -10,13 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Sensible default end action
 
-RUN_DEPENDS=	p5-Catalyst-Runtime>=5.2000:${PORTSDIR}/www/p5-Catalyst-Runtime
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.2000:${PORTSDIR}/www/p5-Catalyst-Runtime
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=	Catalyst::Plugin::DefaultEnd.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

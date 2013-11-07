@@ -10,16 +10,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nested params (ala Ruby on Rails or PHP-style param arrays)
 
-BUILD_DEPENDS=	p5-CGI-Expand>=1.06:${PORTSDIR}/www/p5-CGI-Expand 
-RUN_DEPENDS=	p5-CGI-Expand>=1.06:${PORTSDIR}/www/p5-CGI-Expand \
+BUILD_DEPENDS=	p5-CGI-Expand>=1.06:${PORTSDIR}/www/p5-CGI-Expand \
 		p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Catalyst::Plugin::Params::Nested.3 \
-	Catalyst::Plugin::Params::Nested::Expander.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

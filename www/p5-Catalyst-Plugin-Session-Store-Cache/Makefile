@@ -11,12 +11,9 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Store sessions using a Catalyst::Plugin::Cache
 
 BUILD_DEPENDS=	p5-Catalyst-Plugin-Session>=0.06:${PORTSDIR}/www/p5-Catalyst-Plugin-Session
-RUN_DEPENDS=	p5-Catalyst-Plugin-Session>=0.06:${PORTSDIR}/www/p5-Catalyst-Plugin-Session
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Catalyst::Plugin::Session::Store::Cache.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,5 +1,7 @@
-%%SITE_PERL%%/Catalyst/Plugin/ConfigLoader/Manual.pod
+%%PERL5_MAN3%%/Catalyst::Plugin::ConfigLoader.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::ConfigLoader::Manual.3.gz
 %%SITE_PERL%%/Catalyst/Plugin/ConfigLoader.pm
+%%SITE_PERL%%/Catalyst/Plugin/ConfigLoader/Manual.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/ConfigLoader/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/ConfigLoader
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin

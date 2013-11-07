@@ -19,8 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Catalyst::Plugin::I18N.3 \
-		Catalyst::Plugin::I18N::Manual.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

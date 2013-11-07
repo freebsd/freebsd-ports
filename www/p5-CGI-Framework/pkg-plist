@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/CGI::Framework.3.gz
 %%SITE_PERL%%/CGI/Framework.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Framework/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Framework
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Framework
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
 @dirrmtry %%SITE_PERL%%/CGI

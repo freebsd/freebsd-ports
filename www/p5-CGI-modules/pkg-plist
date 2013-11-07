@@ -1,3 +1,9 @@
+%%PERL5_MAN3%%/CGI::Base.3.gz
+%%PERL5_MAN3%%/CGI::BasePlus.3.gz
+%%PERL5_MAN3%%/CGI::Carp.3.gz
+%%PERL5_MAN3%%/CGI::Form.3.gz
+%%PERL5_MAN3%%/CGI::MiniSvr.3.gz
+%%PERL5_MAN3%%/CGI::Request.3.gz
 %%SITE_PERL%%/CGI/Base.pm
 %%SITE_PERL%%/CGI/BasePlus.pm
 %%SITE_PERL%%/CGI/Carp.pm
@@ -6,5 +12,5 @@
 %%SITE_PERL%%/CGI/Request.pm
 %%SITE_PERL%%/CGI/test.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
-@dirrm %%SITE_PERL%%/CGI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
+@dirrmtry %%SITE_PERL%%/CGI

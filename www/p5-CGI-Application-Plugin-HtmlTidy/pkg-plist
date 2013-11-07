@@ -1,12 +1,13 @@
+%%PERL5_MAN3%%/CGI::Application::Plugin::HtmlTidy.3.gz
 %%SITE_PERL%%/CGI/Application/Plugin/HtmlTidy.pm
 %%SITE_PERL%%/CGI/Application/Plugin/HtmlTidy/tidy.conf
 %%SITE_PERL%%/CGI/Application/Plugin/HtmlTidy/validate.tmpl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/Plugin/HtmlTidy/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/Plugin/HtmlTidy
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
 @dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/HtmlTidy
 @dirrmtry %%SITE_PERL%%/CGI/Application/Plugin
 @dirrmtry %%SITE_PERL%%/CGI/Application
 @dirrmtry %%SITE_PERL%%/CGI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/Plugin/HtmlTidy
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/Plugin/
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/

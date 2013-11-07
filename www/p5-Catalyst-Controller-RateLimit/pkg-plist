@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Catalyst::Controller::RateLimit.3.gz
 %%SITE_PERL%%/Catalyst/Controller/RateLimit.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Controller/RateLimit/.packlist
-@dirrmtry %%SITE_PERL%%/Catalyst/Controller
-@dirrmtry %%SITE_PERL%%/Catalyst
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Controller/RateLimit
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Controller
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst/Controller
+@dirrmtry %%SITE_PERL%%/Catalyst

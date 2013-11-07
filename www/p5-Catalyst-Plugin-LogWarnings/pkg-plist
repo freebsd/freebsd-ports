@@ -1,8 +1,8 @@
+%%PERL5_MAN3%%/Catalyst::Plugin::LogWarnings.3.gz
 %%SITE_PERL%%/Catalyst/Plugin/LogWarnings.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/LogWarnings/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/LogWarnings
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/LogWarnings
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/Catalyst

@@ -1,0 +1,5 @@
+%%PERL5_MAN3%%/Catalyst::Plugin::Log::Handler.3.gz
+%%SITE_PERL%%/Catalyst/Plugin/Log/Handler.pm
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Log
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/Catalyst

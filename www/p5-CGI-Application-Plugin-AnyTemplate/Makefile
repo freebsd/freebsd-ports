@@ -19,14 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=	CGI::Application::Plugin::AnyTemplate.3 \
-	CGI::Application::Plugin::AnyTemplate::Driver::HTMLTemplate.3 \
-	CGI::Application::Plugin::AnyTemplate::Base.3 \
-	CGI::Application::Plugin::AnyTemplate::Driver::TemplateToolkit.3 \
-	CGI::Application::Plugin::AnyTemplate::ComponentHandler.3 \
-	CGI::Application::Plugin::AnyTemplate::Driver::HTMLTemplatePluggable.3 \
-	CGI::Application::Plugin::AnyTemplate::Driver::HTMLTemplateExpr.3 \
-	CGI::Application::Plugin::AnyTemplate::Driver::Petal.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

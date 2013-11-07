@@ -19,8 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Catalyst::Helper::View::HTML::Template::Compiled.3 \
-		Catalyst::View::HTML::Template::Compiled.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

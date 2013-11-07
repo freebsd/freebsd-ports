@@ -13,13 +13,9 @@ COMMENT=	Automatically fill in forms in Catalyst using HTML::FillInForms
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-HTML-FillInForm>=0:${PORTSDIR}/www/p5-HTML-FillInForm \
 		p5-Catalyst-Action-RenderView>=0:${PORTSDIR}/www/p5-Catalyst-Action-RenderView
-RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-HTML-FillInForm>=0:${PORTSDIR}/www/p5-HTML-FillInForm
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Catalyst::Plugin::FillInForm.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

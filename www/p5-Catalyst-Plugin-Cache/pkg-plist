@@ -1,3 +1,10 @@
+%%PERL5_MAN3%%/Catalyst::Plugin::Cache.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::Cache::Backend.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::Cache::Backend::Memory.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::Cache::Choose::KeyRegexes.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::Cache::Curried.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::Cache::Store.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::Cache::Store::Memory.3.gz
 %%SITE_PERL%%/Catalyst/Plugin/Cache.pm
 %%SITE_PERL%%/Catalyst/Plugin/Cache/Backend.pm
 %%SITE_PERL%%/Catalyst/Plugin/Cache/Backend/Memory.pm

@@ -15,16 +15,9 @@ BUILD_DEPENDS=	p5-Catalyst-Plugin-Session>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-
 		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
-RUN_DEPENDS=	p5-Catalyst-Plugin-Session>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Session \
-		p5-Catalyst-Runtime>=5.49:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Catalyst::Plugin::Session::Store::DBI.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

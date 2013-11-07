@@ -37,12 +37,4 @@ TEST_DEPENDS=	p5-IPC-Run3>=0:${PORTSDIR}/devel/p5-IPC-Run3 \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Catalyst::Devel.3 \
-		Catalyst::Helper.3 \
-		Catalyst::Restarter.3 \
-		Catalyst::Restarter::Forking.3 \
-		Catalyst::Restarter::Win32.3 \
-		Module::Install::Catalyst.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
