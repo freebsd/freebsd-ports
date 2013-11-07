@@ -1,0 +1,86 @@
+--- CMakeLists.txt.orig	2013-07-12 01:01:18.000000000 +0200
++++ CMakeLists.txt	2013-11-05 21:12:26.000000000 +0100
+@@ -9,10 +9,8 @@
+ set (OSO_FILE_VERSION_MAJOR 1)
+ set (OSO_FILE_VERSION_MINOR 0)
+ 
+-cmake_minimum_required (VERSION 2.6)
+-if (NOT CMAKE_VERSION VERSION_LESS 2.8.4)
+-    cmake_policy (SET CMP0017 NEW)
+-endif ()
++cmake_minimum_required (VERSION 2.8.7)
++cmake_policy (SET CMP0017 NEW)
+ set (CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS TRUE)
+ message (STATUS "Project source dir = ${PROJECT_SOURCE_DIR}")
+ message (STATUS "Project build dir = ${CMAKE_BINARY_DIR}")
+@@ -21,6 +19,8 @@
+     message (FATAL_ERROR "Not allowed to run in-source build!")
+ endif ()
+ 
++include (CheckCXXSymbolExists)
++
+ if (NOT CMAKE_BUILD_TYPE)
+     set (CMAKE_BUILD_TYPE "Release")
+ endif ()
+@@ -42,12 +42,11 @@
+                      OUTPUT_STRIP_TRAILING_WHITESPACE)
+     message (STATUS "Using gcc ${GCC_VERSION} as the compiler")
+ endif ()
+-if (NOT CMAKE_COMPILER_IS_CLANG)
+-    string (REGEX MATCH clang CMAKE_COMPILER_IS_CLANG ${CMAKE_CXX_COMPILER})
+-    if (CMAKE_COMPILER_IS_CLANG)
+-        set (CMAKE_COMPILER_IS_CLANG 1)
+-        message (STATUS "Using clang as the compiler")
+-    endif ()
++
++message (STATUS "CMAKE_CXX_COMPILER_ID is ${CMAKE_CXX_COMPILER_ID}")
++if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
++    set (CMAKE_COMPILER_IS_CLANG 1)
++    message (STATUS "Using clang as the compiler")
+ endif ()
+ 
+ ## turn on more detailed warnings and consider warnings as errors
+@@ -121,6 +120,10 @@
+     endif ()
+ endif ()
+ 
++# Try to detect libc++, in which case we should force use of Boost
++# Wave (because that avoids a nonstandard g++ extension in the other
++# code path).
++check_cxx_symbol_exists(_LIBCPP_VERSION string OSL_SYSTEM_HAS_LIBCPP)
+ 
+ set (VERBOSE OFF CACHE BOOL "Print lots of messages while compiling")
+ set (BUILDSTATIC OFF CACHE BOOL "Build static library instead of shared")
+@@ -129,12 +132,16 @@
+      "Use an externally built shared library version of the pugixml library")
+ set (PUGIXML_HOME "" CACHE STRING "Hint about where to find external PugiXML library")
+ if (WIN32)
+-    set (USE_BOOST_WAVE ON CACHE BOOL "Use Boost Wave as preprocessor")
+     set (USE_LLVM_BITCODE OFF CACHE BOOL "Generate embedded LLVM bitcode")
+ else ()
+-    set (USE_BOOST_WAVE OFF CACHE BOOL "Use Boost Wave as preprocessor")
+     set (USE_LLVM_BITCODE ON CACHE BOOL "Generated embedded LLVM bitcode")
+ endif ()
++if (WIN32 OR OSL_SYSTEM_HAS_LIBCPP)
++    set (USE_BOOST_WAVE ON CACHE BOOL "Use Boost Wave as preprocessor")
++else ()
++    set (USE_BOOST_WAVE OFF CACHE BOOL "Use Boost Wave as preprocessor")
++endif ()
++
+ set (USE_PARTIO ON CACHE BOOL "Use Partio if found")
+ 
+ if (LLVM_NAMESPACE)
+@@ -149,6 +156,13 @@
+     add_definitions ("${EXTRA_CPP_DEFINITIONS}")
+ endif()
+ 
++if (USE_BOOST_WAVE)
++    add_definitions ("-DUSE_BOOST_WAVE")
++endif ()
++
++if (CMAKE_COMPILER_IS_CLANG AND OSL_SYSTEM_HAS_LIBCPP)
++    message (STATUS "Using libc++")
++endif ()
+ 
+ set (CMAKE_MODULE_PATH
+      "${PROJECT_SOURCE_DIR}/cmake/modules"
