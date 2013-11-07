@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-dicom
 PORTVERSION=	0.1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -17,7 +17,7 @@ OCTSRC=		${OCTAVE_PKGNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
-GDCM_MAJ=	2.2
+GDCM_MAJ=	2.4
 NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} s/gdcm-2.0/gdcm-${GDCM_MAJ}/ \
