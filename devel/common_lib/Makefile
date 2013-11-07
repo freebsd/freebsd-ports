@@ -3,7 +3,6 @@
 PORTNAME=	common_lib
 PORTVERSION=	3.3.4
 CATEGORIES=	devel
-MASTER_SITES=	GH
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Library of commonly used Erlang functions
@@ -20,10 +19,9 @@ GH_PROJECT=	common_lib
 GH_COMMIT=	c242861
 GH_TAGNAME=	${PORTVERSION}
 
-USE_GMAKE=	yes
 USE_DOS2UNIX=	Makefile
 ALL_TARGET=	compile doc
-USES=		iconv:build
+USES=		gmake iconv:build
 
 post-extract:
 	@${REINPLACE_CMD} -e "s@&lt;@<@g" -e "s@&gt;@>@g" ${WRKSRC}/doc/*.ndoc
