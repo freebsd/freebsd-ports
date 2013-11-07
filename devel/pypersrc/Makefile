@@ -5,10 +5,10 @@ PORTNAME=	pypersrc
 PORTVERSION=	20120106
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.jimbrooks.org/pypersrc/
+MASTER_SITES=	http://www.jimbrooks.org/software/pypersrc/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Python/Tkinter based source browser
 
 LICENSE=	GPLv2
@@ -19,27 +19,28 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USES+=		gmake
 USE_BZIP2=	yes
 USE_PYTHON=	yes
-USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.sh
 MAKE_ENV=	CXX_FLAGS="${CXXFLAGS}"
 
 PLIST_FILES=	bin/pypersrc.py bin/pypersrc2.py bin/pypersrc
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e \
 		'/INSTALL_DIR/s|=.*|=$$(PREFIX)/bin| ; \
 		 /MAN_DIR/s|\/usr\/local|$$(PREFIX)| ; \
 		 /-O2/s|^|#|' ${WRKSRC}/GNUmakefile
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e \
 		's|/bin/bash|${SH}|g' ${WRKSRC}/configure.sh
+	${REINPLACE_CMD} -e 's|g++|${CXX}|g' ${WRKSRC}/tests/GNUmakefile
+	@${REINPLACE_CMD} -e 's|tolower|::tolower|' ${WRKSRC}/src/cc/utils_string.hh
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/out/pypersrc ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/out/pypersrc.py ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/out/pypersrc2.py ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/out/pypersrc ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/out/pypersrc.py ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/out/pypersrc2.py ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
