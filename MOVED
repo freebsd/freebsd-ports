@@ -5174,3 +5174,4 @@ x11/gnome-libs||2013-11-07|Has expired: EOLed upstream for very long
 textproc/stardict2||2013-11-07|Has expired: Newer version available in ports: textproc/stardict3
 devel/pure-stldict|devel/pure-stllib|2013-11-07|Removed: Use devel/pure-stllib instead
 devel/pure-stlvec|devel/pure-stllib|2013-11-07|Removed: Use devel/pure-stllib instead
+textproc/lexxia||2013-11-07|Removed no public distfile available anymore

@@ -357,7 +357,6 @@
     SUBDIR += latex-service
     SUBDIR += latex2html
     SUBDIR += lemmatizer2
-    SUBDIR += lexxia
     SUBDIR += libcrm114
     SUBDIR += libcroco
     SUBDIR += libcsv
