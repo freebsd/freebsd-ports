@@ -5175,3 +5175,4 @@ textproc/stardict2||2013-11-07|Has expired: Newer version available in ports: te
 devel/pure-stldict|devel/pure-stllib|2013-11-07|Removed: Use devel/pure-stllib instead
 devel/pure-stlvec|devel/pure-stllib|2013-11-07|Removed: Use devel/pure-stllib instead
 textproc/lexxia||2013-11-07|Removed no public distfile available anymore
+textproc/docproj-nojadetex||2013-11-07|Removed

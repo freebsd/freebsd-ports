@@ -139,7 +139,6 @@
     SUBDIR += docdiff
     SUBDIR += doclifter
     SUBDIR += docproj
-    SUBDIR += docproj-nojadetex
     SUBDIR += dom4j
     SUBDIR += domc
     SUBDIR += dsssl-docbook-modular
