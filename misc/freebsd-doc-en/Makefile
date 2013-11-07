@@ -26,6 +26,7 @@
 
 PORTNAME=	freebsd-doc
 PORTVERSION=	43088
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	misc docs
 MASTER_SITES=	LOCAL/blackend
@@ -85,11 +86,7 @@ DOCFORMAT=		html-split
 WITH_HTML_SPLIT=	yes
 .endif
 
-.if ${PORT_OPTIONS:MPDF} || ${PORT_OPTIONS:MPS}
 BUILD_DEPENDS=	docproj>=1.17:${PORTSDIR}/textproc/docproj
-.else
-BUILD_DEPENDS=	docproj-nojadetex>=1.17:${PORTSDIR}/textproc/docproj-nojadetex
-.endif
 
 MAKE_JOBS_UNSAFE=	yes
 
