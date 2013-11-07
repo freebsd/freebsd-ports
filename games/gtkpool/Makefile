@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.seul.org/pub/gtkpool/ \
 		http://www.sourcefiles.org/Games/Sports/Pool/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A 2D pool game using the GTK+ toolkit
+COMMENT=	2D pool game using the GTK+ toolkit
 
 USES=		gmake perl5 pkgconfig
 USE_GNOME=	gtk20
