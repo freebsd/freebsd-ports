@@ -9,41 +9,34 @@ MASTER_SITES=	http://boxes.thomasjensen.com/download/ \
 #		SUNSITE/utils/text
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Draws ASCII-art configurable boxes around text or code
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
-USES=		bison
+USES=		bison gmake
 ALL_TARGET=	boxes
 MAKE_ARGS=	CC="${CC}" GLOBALCONF=${GLOBALCONF} CFLAGS="${CFLAGS} -ansi -I. -Iregexp"
 
 GLOBALCONF=	${DATADIR}/boxes-config
 
 PLIST_FILES=	bin/boxes \
-		${DATADIR_REL}/boxes-config
+		${DATADIR_REL}/boxes-config \
+		man/man1/boxes.1.gz
 PLIST_DIRS=	${DATADIR_REL}
 
-MAN1=		boxes.1
-
 PORTDOCS=	README
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 post-patch:
 	${RM} ${WRKSRC}/src/boxes.h ${WRKSRC}/doc/boxes.1
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/boxes ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/boxes-config ${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/src/boxes ${STAGEDIR}${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/boxes-config ${STAGEDIR}${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/boxes.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
