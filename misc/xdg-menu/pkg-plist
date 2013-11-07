@@ -46,5 +46,3 @@ share/pixmaps/xdg-menu.png
 @dirrm apps/XDG-Menu/Messages
 @dirrm apps/XDG-Menu
 @dirrmtry apps
-@exec %%LOCALBASE%%/bin/update-desktop-database -q || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database -q || /usr/bin/true
