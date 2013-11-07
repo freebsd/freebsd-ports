@@ -12,6 +12,8 @@ COMMENT=	An alternative GUI for the Xine media player
 
 LICENSE=	GPLv2
 
+BROKEN=		Does not build with recent libxul
+
 LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr \
 		xine.2:${PORTSDIR}/multimedia/libxine
 
