@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	owncloud
-PORTVERSION=	5.0.12
+PORTVERSION=	5.0.13
 CATEGORIES=	www
 MASTER_SITES=	http://download.owncloud.org/community/
 
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	mp3info:${PORTSDIR}/audio/mp3info
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
-USE_PHP=	ctype curl dom fileinfo filter gd hash iconv json mbstring \
+USE_PHP=	ctype curl dom fileinfo filter gd hash iconv json ldap mbstring \
 		mysql openssl pdo pdo_mysql pdo_sqlite session simplexml \
 		sqlite3 xml xmlreader xsl wddx zip zlib
 WANT_PHP_WEB=	yes
@@ -37,6 +37,6 @@ post-install:
 		${SED} -e "s#^\.#${WWWDIR_REL}#" >> ${TMPPLIST}
 	@cd ${WRKSRC} && \
 	    ${FIND} -s -d . -type d  -print | \
-		${SED} -e "s#^\.#@dirrm ${WWWDIR_REL}#" >> ${TMPPLIST}
+		${SED} -e "s#^\.#@unexec rmdir ${WWWDIR_REL}#" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
