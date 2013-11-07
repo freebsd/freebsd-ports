@@ -1,5 +1,5 @@
-SHA256 (Jmol-12.2.23-full.tar.gz) = 97778f1c488870433c12e3fc728cd80fa59167ac093dec9399cf7e4f7b4924a6
-SIZE (Jmol-12.2.23-full.tar.gz) = 29491696
+SHA256 (Jmol-13.2.3-full.tar.gz) = c5835015ddaebd90c286fbfd55938b6995046481c117a0cd20c7f369f61ba70f
+SIZE (Jmol-13.2.3-full.tar.gz) = 116255368
 SHA256 (selfSignedCertificate.cer) = 0fa14fd5f21593a328ba4439ac17b3b507969d71a2734e392239b83ae8ec2920
 SIZE (selfSignedCertificate.cer) = 735
 SHA256 (selfSignedCertificate.store) = 81b69722530d94dc599ce79382a3386cce518baa7ab79fbb530d13483b51bed5
