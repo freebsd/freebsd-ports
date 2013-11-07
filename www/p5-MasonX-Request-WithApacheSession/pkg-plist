@@ -1,3 +1,5 @@
+%%PERL5_MAN3%%/MasonX::Request::WithApacheSession.3.gz
+%%PERL5_MAN3%%/MasonX::Request::WithMultiSession.3.gz
 %%SITE_PERL%%/MasonX/Request/WithApacheSession.pm
 %%SITE_PERL%%/MasonX/Request/WithMultiSession.pm
 @dirrmtry %%SITE_PERL%%/MasonX/Request

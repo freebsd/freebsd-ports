@@ -15,7 +15,4 @@ COMMENT=	Support perl code inside CGI scripts using simple tags
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Markup::Perl.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

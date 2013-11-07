@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MediaWiki/.packlist
+%%PERL5_MAN3%%/MediaWiki.3.gz
 %%SITE_PERL%%/MediaWiki.pm
 %%SITE_PERL%%/MediaWiki/page.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MediaWiki/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MediaWiki
 @dirrmtry %%SITE_PERL%%/MediaWiki

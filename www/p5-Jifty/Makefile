@@ -12,8 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Jifty -- Just Do It -- Yet another web framework
 
-BUILD_DEPENDS=	\
-		p5-App-CLI>=0.03:${PORTSDIR}/devel/p5-App-CLI \
+BUILD_DEPENDS=	p5-App-CLI>=0.03:${PORTSDIR}/devel/p5-App-CLI \
 		p5-CGI-Cookie-Splitter>=0:${PORTSDIR}/www/p5-CGI-Cookie-Splitter \
 		p5-CGI-Emulate-PSGI>=0.06:${PORTSDIR}/www/p5-CGI-Emulate-PSGI \
 		p5-CSS-Squish>=0.05:${PORTSDIR}/textproc/p5-CSS-Squish \
@@ -104,9 +103,6 @@ TEST_DEPENDS=	p5-Test-Base>=0.44:${PORTSDIR}/devel/p5-Test-Base \
 
 USES=		perl5
 USE_PERL5=	configure
-
-NO_STAGE=	yes
-.include "Makefile.man"
 
 post-patch:
 	${REINPLACE_CMD} -e '/auto_install/d' ${WRKSRC}/Makefile.PL
