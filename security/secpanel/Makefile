@@ -7,13 +7,13 @@ PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	security tcl tk
 MASTER_SITES=	SF/${PORTNAME} \
-		SF/nemysisfreebsdp/:icons
+		SF/nemysisfreebsdp/security/:icons
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz \
 		${PORTNAME}.png:icons
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tgz
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	GUI for managing and running ssh and related utilities
 
 LICENSE=	GPLv2
@@ -25,20 +25,19 @@ NO_BUILD=	yes
 
 USE_TK_WRAPPER=	yes
 
-DESKTOP_ENTRIES="SecPanel" "${COMMENT}" "${PREFIX}/share/pixmaps/${PORTNAME}.png" \
+DESKTOP_ENTRIES="SecPanel" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "" "false"
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|\[file dirname \[info script\]\]/../lib/secpanel|${DATADIR}|' \
 			${WRKSRC}/bin/secpanel
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/secpanel ${PREFIX}/bin
-	@(cd ${WRKSRC}/lib/secpanel && ${COPYTREE_SHARE} \* ${DATADIR})
-	@${CHMOD} u+rw ${DATADIR}/default.config
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	@(cd ${WRKSRC}/lib/secpanel && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
+	@${CHMOD} u+rw ${STAGEDIR}${DATADIR}/default.config
 
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}.png ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
 
 .include <bsd.port.mk>
