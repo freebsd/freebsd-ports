@@ -1,72 +1,29 @@
 # Created by: Klaus Goger <klaus.goger@reflex.at>
 # $FreeBSD$
 
-PORTNAME=	frozenbubble
-PORTVERSION=	2.2.0
-PORTREVISION=	7
+PORTNAME=	frozen-bubble
+DISTVERSION=	2.2.1-beta1
 CATEGORIES=	games
 MASTER_SITES=	http://www.frozen-bubble.org/data/
-DISTNAME=	frozen-bubble-${PORTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Throw colourful bubbles to build groups and destroy the groups
 
-BUILD_DEPENDS=	p5-SDL>=0:${PORTSDIR}/devel/p5-SDL
-RUN_DEPENDS=	p5-SDL>=0:${PORTSDIR}/devel/p5-SDL
+LICENSE=	GPLv2
 
-USE_SDL=	mixer sdl pango
-USES=		gmake perl5 pkgconfig
+BUILD_DEPENDS:=	${RUN_DEPENDS} \
+		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
+RUN_DEPENDS=	p5-SDL>=2.511:${PORTSDIR}/devel/p5-SDL \
+		p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext \
+		p5-IPC-System-Simple>=0:${PORTSDIR}/devel/p5-IPC-System-Simple \
+		p5-Locale-Maketext-Simple>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
+		p5-Locale-Maketext-Lexicon>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
+		p5-Compress-Bzip2>=0:${PORTSDIR}/archivers/p5-Compress-Bzip2 \
+		p5-Alien-SDL>=1.413:${PORTSDIR}/devel/p5-Alien-SDL
+
+USES=		perl5 pkgconfig
 USE_BZIP2=	yes
-USE_PERL5=	configure
-
-CONFIGURE_WRKSRC=	${WRKSRC}/c_stuff
-REINPLACE_ARGS=	-i ""
-
-MAN6=		frozen-bubble-editor.6 frozen-bubble.6
-
-LEXECDIR=	${PREFIX}/libexec/${PORTNAME}
-
-OPTIONS_DEFINE=	NLS
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-RUN_DEPENDS+=	p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-post-patch:
-	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
-		-e '/MANDIR/s|$$(DATADIR)|${PREFIX}|' \
-		 ${WRKSRC}/settings.mk
-	@${REINPLACE_CMD} -e 's|sdl-config|\${SDL_CONFIG}|g' \
-		${WRKSRC}/c_stuff/Makefile.PL
-
-pre-install:
-	${REINPLACE_CMD} -E -e \
-		"s,^(\\\$$FPATH[[:space:]]+=[[:space:]]+).*,\1'${DATADIR}';," \
-		-e \
-		"s,^(\\\$$FLPATH[[:space:]]+=[[:space:]]+).*,\1'${LEXECDIR}';,"\
-		${WRKSRC}/c_stuff/lib/fb_config.pm
-	${CP} ${WRKSRC}/c_stuff/lib/fb_config.pm ${WRKSRC}/c_stuff/blib/lib/
-
-do-install:
-	cd ${WRKSRC}/c_stuff && ${GMAKE} install
-.if ${PORT_OPTIONS:MNLS}
-	cd ${WRKSRC}/po && ${GMAKE} install
-.endif
-	${INSTALL_SCRIPT} ${BUILD_WRKSRC}/frozen-bubble ${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${BUILD_WRKSRC}/frozen-bubble-editor ${PREFIX}/bin/
-	${INSTALL_MAN} ${MAN6:S,^,${WRKSRC}/doc/,} ${PREFIX}/man/man6/
-	${MKDIR} ${DATADIR}
-	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "gfx snd data" ${DATADIR}/)
-	${MKDIR} ${LEXECDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/server/fb-server ${LEXECDIR}/
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+USE_PERL5=	modbuild
+USE_SDL=	mixer pango sdl ttf
 
 .include <bsd.port.mk>
