@@ -13,11 +13,11 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Shell wrapper for ${TX_SHELL} (${TX_PORT_U})
 
-BUILD_DEPENDS=	shc:${PORTSDIR}/misc/shc
-
 LICENSE=	BSD
 
-SUB_FILES=	wrapper conf.sample pkg-message pkg-install pkg-deinstall
+BUILD_DEPENDS=	shc:${PORTSDIR}/misc/shc
+
+SUB_FILES=	wrapper conf.sample pkg-message
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
@@ -32,19 +32,16 @@ TX_SHELL=	wish
 TX_PORT=	tk
 TX_PORT_U=	Tk
 TX_CAT=		x11-toolkits
-USE_TK_RUN=	84+
+USES+=		tk:run
 CATEGORIES=	x11-toolkits tk
 .else
-USE_TCL_RUN=	84+
+USES+=		tcl:run
 .endif
 
 TX_CONF=	${TX_SHELL}.conf
 TX_CONF_FULL=	${PREFIX}/etc/${TX_CONF}
 
 PLIST_FILES=	bin/${TX_SHELL} etc/${TX_CONF}.sample
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
 .if defined(TK_VER)
 TX_VER=${TK_VER}
@@ -57,19 +54,13 @@ SUB_LIST+=	ECHO_CMD="${ECHO_CMD}" GREP="${GREP}" LS="${LS}" \
 		TX_SHELL="${TX_SHELL}" TX_SHELL_U="${TX_SHELL:U}" \
 		TX_PORT="${TX_PORT}" TX_PORT_U="${TX_PORT_U}" \
 		TX_CAT="${TX_CAT}" TX_VER="${TX_VER}" TX_CONF="${TX_CONF}" \
-		TX_CONF_FULL="${TX_CONF_FULL}"
+		TX_CONF_FULL="${TX_CONF_FULL:S/${STAGEDIR}//}"
 
 do-build: apply-slist
 	${MAKE_ENV} ${LOCALBASE}/bin/shc -r -T -f ${WRKDIR}/wrapper
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/wrapper.x ${PREFIX}/bin/${TX_SHELL}
-	${INSTALL_DATA} ${WRKDIR}/conf.sample ${PREFIX}/etc/${TX_CONF}.sample
+	${INSTALL_PROGRAM} ${WRKDIR}/wrapper.x ${STAGEDIR}${PREFIX}/bin/${TX_SHELL}
+	${INSTALL_DATA} ${WRKDIR}/conf.sample ${STAGEDIR}${PREFIX}/etc/${TX_CONF}.sample
 
-post-install:
-	@MD5SUM=`${MD5} -q ${WRKDIR}/conf.sample` && \
-	${REINPLACE_CMD} -e "s|^MD5SUM=.*$$|MD5SUM=$${MD5SUM}|g" ${WRKDIR}/pkg-deinstall
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
