@@ -4,7 +4,8 @@
 PORTNAME=	awesome-vicious
 PORTVERSION=	2.1.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://git.sysphere.org/vicious/snapshot/
+MASTER_SITES=	http://git.sysphere.org/vicious/snapshot/ \
+		LOCAL/wg
 DISTNAME=	vicious-${PORTVERSION}
 
 MAINTAINER=	wg@FreeBSD.org
