@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Mojolicious::Plugin::Mongodb.3.gz
 %%SITE_PERL%%/Mojolicious/Plugin/Mongodb.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious/Plugin/Mongodb/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious/Plugin/Mongodb
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious/Plugin/Mongodb
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious
 @dirrmtry %%SITE_PERL%%/Mojolicious/Plugin

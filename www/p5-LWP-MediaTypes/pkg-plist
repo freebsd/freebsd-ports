@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/LWP::MediaTypes.3.gz
 %%SITE_PERL%%/LWP/MediaTypes.pm
 %%SITE_PERL%%/LWP/media.types
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/MediaTypes/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/MediaTypes
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/MediaTypes
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP
 @dirrmtry %%SITE_PERL%%/LWP
