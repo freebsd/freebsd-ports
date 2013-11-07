@@ -14,6 +14,8 @@ SCRIPTDEV2REV=	245
 MAINTAINER=    	neon_cyrex@mail.ru
 COMMENT=	Free dedicated-server for World of Warcraft
 
+BROKEN=		Fails with newer autotools
+
 OPTIONS_DEFINE=	SCRIPTDEV2 CLI RA DBC
 SCRIPTDEV2_DESC=	ScriptDev2 support
 CLI_DESC=	Command Line Itrerface support
