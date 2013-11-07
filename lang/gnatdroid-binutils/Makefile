@@ -16,9 +16,8 @@ BUILD_DEPENDS=	gnatdroid-sysroot>=9:${PORTSDIR}/lang/gnatdroid-sysroot \
 		${LOCALBASE}/lib/libmpfr.so:${PORTSDIR}/math/mpfr
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+USES=		gmake
 USE_BZIP2=	YES
-USE_GCC=	any
-USE_GMAKE=	YES
 HAS_CONFIGURE=	YES
 NO_MTREE=	YES
 
@@ -38,6 +37,7 @@ CONFIGURE_ARGS+=	--prefix=${BR1_PREFIX}
 CONFIGURE_ARGS+=	--with-sysroot=${PREFIX}
 CONFIGURE_ARGS+=	--with-gmp=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-mpfr=${LOCALBASE}
+CONFIGURE_ARGS+=	--disable-werror
 CONFIGURE_ARGS+=	--disable-nls
 
 NO_STAGE=	yes
