@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nocc
-PORTVERSION=	1.9.3
-PORTREVISION=	1
+PORTVERSION=	1.9.4
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/NOCC/${PORTVERSION}
 
@@ -17,7 +16,6 @@ WANT_PHP_WEB=	yes
 
 SUB_FILES=	pkg-message
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
 
 NOCCCOMP=	.htaccess favicon.ico robots.txt \
 		action.php common.php contacts.php contacts_manager.php \
@@ -27,26 +25,21 @@ NOCCCOMP=	.htaccess favicon.ico robots.txt \
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 do-install:
-	@${MKDIR} ${WWWDIR}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
 .for i in ${NOCCCOMP}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${WWWDIR}
 .endfor
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
+	@${ECHO_CMD} "@owner ${WWWOWN}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@group ${WWWGRP}" >> ${TMPPLIST}
 	@(cd ${WRKSRC}; ${FIND} ${NOCCCOMP} -not -type d) | ${SORT} | \
 		${SED} -ne 's,^,${WWWDIR_REL}/,p' >> ${TMPPLIST}
 	@(cd ${WRKSRC}; ${FIND} ${NOCCCOMP} -type d) | ${SORT} -r | \
 		${SED} -ne 's,^,@dirrm ${WWWDIR_REL}/,p' >> ${TMPPLIST}
 	@${ECHO_CMD} '@dirrm ${WWWDIR_REL}' >> ${TMPPLIST}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD} "@owner" >> ${TMPPLIST}
+	@${ECHO_CMD} "@group" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
