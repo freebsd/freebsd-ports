@@ -3389,8 +3389,7 @@
     SUBDIR += pure-ffi
     SUBDIR += pure-gen
     SUBDIR += pure-readline
-    SUBDIR += pure-stldict
-    SUBDIR += pure-stlvec
+    SUBDIR += pure-stllib
     SUBDIR += pushmi
     SUBDIR += pwlib
     SUBDIR += py-Acquisition

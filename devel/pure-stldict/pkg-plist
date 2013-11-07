@@ -1,7 +1,0 @@
-lib/pure/hashdict.pure
-lib/pure/hashdict.so
-lib/pure/orddict.pure
-lib/pure/orddict.so
-lib/pure/stldict.pure
-lib/pure/stldictbase.pure
-@dirrm lib/pure
