@@ -19,20 +19,15 @@ RUN_DEPENDS=	dovecot>=2.2.0:${PORTSDIR}/mail/dovecot2
 CONFLICTS=	dovecot-antispam-1.*
 WRKSRC=		${WRKDIR}/dovecot-antispam-plugin-5ebc6aae4d7c
 
+USES=		gmake
 USE_AUTOTOOLS=	aclocal autoheader autoconf
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/dovecot
 
 ACLOCAL_ARGS=	-I m4
 
-MAN7=		dovecot-antispam.7
-
-PLIST_FILES=	lib/dovecot/lib90_antispam_plugin.so
+PLIST_FILES=	lib/dovecot/lib90_antispam_plugin.so \
+		man/man7/dovecot-antispam.7.gz
 PLIST_DIRSTRY=	lib/dovecot
-
-NO_STAGE=	yes
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
