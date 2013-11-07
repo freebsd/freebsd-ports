@@ -1,6 +1,8 @@
 bin/flickr_upload
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Flickr/Upload/.packlist
+%%PERL5_MAN3%%/Flickr::Upload.3.gz
 %%SITE_PERL%%/Flickr/Upload.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Flickr/Upload/.packlist
+man/man1/flickr_upload.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Flickr/Upload
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Flickr
 @dirrmtry %%SITE_PERL%%/Flickr
