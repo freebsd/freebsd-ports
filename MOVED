@@ -5169,3 +5169,5 @@ net-im/qutim||2013-11-05|Has expired: Old version, a new one needs to be ported 
 textproc/gtkdiff||2013-11-05|Has expired: Gnome1 EOLed by upstream for a while.
 net-p2p/libtorrent-rasterbar-16|net-p2p/libtorrent-rasterbar|2013-11-06|Moved to net-p2p/libtorrent-rasterbar since it's a stable version
 net-p2p/libtorrent-rasterbar-python-16|net-p2p/libtorrent-rasterbar-python|2013-11-06|Moved to net-p2p/libtorrent-rasterbar-python since it's a stable version
+devel/ORBit||2013-11-07|Has expired: EOLed upstream for very long
+x11/gnome-libs||2013-11-07|Has expired: EOLed upstream for very long

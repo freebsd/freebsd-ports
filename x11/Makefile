@@ -78,7 +78,6 @@
     SUBDIR += gnome-clipboard-daemon
     SUBDIR += gnome-desktop
     SUBDIR += gnome-desktop-reference
-    SUBDIR += gnome-libs
     SUBDIR += gnome-menus
     SUBDIR += gnome-panel
     SUBDIR += gnome-panel-reference
