@@ -1,5 +1,6 @@
 lib/xorg/modules/drivers/neomagic_drv.la
 lib/xorg/modules/drivers/neomagic_drv.so
+man/man4/neomagic.4x.gz
 @dirrmtry lib/xorg/modules/drivers
 @dirrmtry lib/xorg/modules
 @dirrmtry lib/xorg
