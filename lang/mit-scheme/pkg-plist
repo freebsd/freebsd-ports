@@ -551,6 +551,7 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/xml/xml-rpc.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/xml/xml-struct.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/xml/xml-struct.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/xml/xml-unx.pkd
+man/man1/scheme.1.gz
 @dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/xml
 @dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/star-parser
 @dirrm lib/mit-scheme-%%MIT_SCHEME_ARCH%%/ssp
