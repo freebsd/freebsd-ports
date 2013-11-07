@@ -1,3 +1,36 @@
+%%PERL5_MAN3%%/WebService::IMDB.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::Birth.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::Certificate.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::Char.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::Credit.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::CreditList.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::Date.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::DatePlace.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::DateText.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::Death.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::Encoding.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::Goof.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::Image.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::KnownFor.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::Name.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::Name::Stub.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::News.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::NewsItem.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::NewsSource.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::ParentalGuideItem.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::Photo.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::Plot.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::Quote.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::QuoteLine.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::Review.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::Runtime.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::Season.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::Title.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::Title::Stub.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::Trailer.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::Trivium.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::UserComment.3.gz
+%%PERL5_MAN3%%/WebService::IMDB::WhereNow.3.gz
 %%SITE_PERL%%/WebService/IMDB.pm
 %%SITE_PERL%%/WebService/IMDB/Base.pm
 %%SITE_PERL%%/WebService/IMDB/Birth.pm
@@ -33,9 +66,9 @@
 %%SITE_PERL%%/WebService/IMDB/UserComment.pm
 %%SITE_PERL%%/WebService/IMDB/WhereNow.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/IMDB/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/IMDB
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/IMDB
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService
-@dirrm %%SITE_PERL%%/WebService/IMDB/Title
-@dirrm %%SITE_PERL%%/WebService/IMDB/Name
-@dirrm %%SITE_PERL%%/WebService/IMDB
+@dirrmtry %%SITE_PERL%%/WebService/IMDB/Title
+@dirrmtry %%SITE_PERL%%/WebService/IMDB/Name
+@dirrmtry %%SITE_PERL%%/WebService/IMDB
 @dirrmtry %%SITE_PERL%%/WebService

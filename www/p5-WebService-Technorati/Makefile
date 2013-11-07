@@ -19,20 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	WebService::Technorati.3 \
-	WebService::Technorati::ApiQuery.3 \
-	WebService::Technorati::Author.3 \
-	WebService::Technorati::AuthorinfoApiQuery.3 \
-	WebService::Technorati::Blog.3 \
-	WebService::Technorati::BlogLink.3 \
-	WebService::Technorati::BloginfoApiQuery.3 \
-	WebService::Technorati::CosmosApiQuery.3 \
-	WebService::Technorati::Exception.3 \
-	WebService::Technorati::LinkQuerySubject.3 \
-	WebService::Technorati::OutboundApiQuery.3 \
-	WebService::Technorati::SearchApiQuery.3 \
-	WebService::Technorati::SearchMatch.3 \
-	WebService::Technorati::SearchTerm.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

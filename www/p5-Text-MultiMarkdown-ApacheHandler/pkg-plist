@@ -1,8 +1,8 @@
-@comment $FreeBSD$
+%%PERL5_MAN3%%/Text::MultiMarkdown::ApacheHandler.3.gz
 %%SITE_PERL%%/Text/MultiMarkdown/ApacheHandler.pm
-@dirrmtry %%SITE_PERL%%/Text/MultiMarkdown
-@dirrmtry %%SITE_PERL%%/Text
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/MultiMarkdown/ApacheHandler/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/MultiMarkdown/ApacheHandler
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/MultiMarkdown
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
+@dirrmtry %%SITE_PERL%%/Text/MultiMarkdown
+@dirrmtry %%SITE_PERL%%/Text

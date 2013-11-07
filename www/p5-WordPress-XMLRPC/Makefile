@@ -10,17 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl 5 API to WordPress XML-RPC services
 
-BUILD_DEPENDS+=	p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite
+BUILD_DEPENDS=	p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
-MAN3=		WordPress::XMLRPC.3
-PLIST_FILES=	%%SITE_PERL%%/WordPress/XMLRPC.pm \
-				%%SITE_PERL%%/WordPress/XMLRPC.pod \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/WordPress/XMLRPC/.packlist
-PLIST_DIRS=	%%SITE_PERL%%/WordPress \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/WordPress/XMLRPC \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/WordPress \
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

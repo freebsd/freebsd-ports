@@ -16,13 +16,7 @@ BUILD_DEPENDS=	p5-HTML-Form>=6:${PORTSDIR}/www/p5-HTML-Form \
 		p5-HTTP-Server-Simple>=0.35:${PORTSDIR}/www/p5-HTTP-Server-Simple \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=5.829:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	p5-HTML-Form>=6:${PORTSDIR}/www/p5-HTML-Form \
-		p5-HTML-Parser>=3.33:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
-		p5-HTTP-Server-Simple>=0.35:${PORTSDIR}/www/p5-HTTP-Server-Simple \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-libwww>=5.829:${PORTSDIR}/www/p5-libwww
-
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
 		p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings \
@@ -34,19 +28,13 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		mech-dump.1
-MAN3=		WWW::Mechanize.3 WWW::Mechanize::Cookbook.3 \
-		WWW::Mechanize::Examples.3 WWW::Mechanize::FAQ.3 \
-		WWW::Mechanize::Image.3 WWW::Mechanize::Link.3
-
 DOCS=		Changes etc/www-mechanize-logo.png
 PORTDOCS=	${DOCS:T}
 
-NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 

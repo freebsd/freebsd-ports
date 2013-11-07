@@ -10,18 +10,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl interface to MoviePosterDB
 
-RUN_DEPENDS=	p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache \
+BUILD_DEPENDS=	p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		WebService::MoviePosterDB.3 \
-		WebService::MoviePosterDB::Movie.3 \
-		WebService::MoviePosterDB::Poster.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

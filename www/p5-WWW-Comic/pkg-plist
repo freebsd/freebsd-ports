@@ -1,12 +1,21 @@
+%%PERL5_MAN3%%/WWW::Comic.3.gz
+%%PERL5_MAN3%%/WWW::Comic::Plugin.3.gz
+%%PERL5_MAN3%%/WWW::Comic::Plugin::Dilbert.3.gz
+%%PERL5_MAN3%%/WWW::Comic::Plugin::Goats.3.gz
+%%PERL5_MAN3%%/WWW::Comic::Plugin::MrWiggles.3.gz
+%%PERL5_MAN3%%/WWW::Comic::Plugin::UFS.3.gz
+%%PERL5_MAN3%%/WWW::Comic::Plugin::UserFriendly.3.gz
+%%PERL5_MAN3%%/WWW::Comic::Plugin::VenusEnvy.3.gz
+%%PERL5_MAN3%%/WWW::Comic::Plugin::uComics.3.gz
 %%SITE_PERL%%/WWW/Comic.pm
 %%SITE_PERL%%/WWW/Comic/Plugin.pm
-%%SITE_PERL%%/WWW/Comic/Plugin/UserFriendly.pm
-%%SITE_PERL%%/WWW/Comic/Plugin/uComics.pm
-%%SITE_PERL%%/WWW/Comic/Plugin/VenusEnvy.pm
+%%SITE_PERL%%/WWW/Comic/Plugin/Dilbert.pm
 %%SITE_PERL%%/WWW/Comic/Plugin/Goats.pm
 %%SITE_PERL%%/WWW/Comic/Plugin/MrWiggles.pm
-%%SITE_PERL%%/WWW/Comic/Plugin/Dilbert.pm
 %%SITE_PERL%%/WWW/Comic/Plugin/UFS.pm
+%%SITE_PERL%%/WWW/Comic/Plugin/UserFriendly.pm
+%%SITE_PERL%%/WWW/Comic/Plugin/VenusEnvy.pm
+%%SITE_PERL%%/WWW/Comic/Plugin/uComics.pm
 @dirrmtry %%SITE_PERL%%/WWW/Comic/Plugin
 @dirrmtry %%SITE_PERL%%/WWW/Comic
 @dirrmtry %%SITE_PERL%%/WWW

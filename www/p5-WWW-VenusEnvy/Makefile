@@ -11,13 +11,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	VenusEnvy comic strip archive and retrieval module
 
-RUN_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild
+CONFIGURE_ARGS=	</dev/null
 
-MAN3=		WWW::VenusEnvy.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

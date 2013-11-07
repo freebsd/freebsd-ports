@@ -1,3 +1,17 @@
+%%PERL5_MAN3%%/WebService::Technorati.3.gz
+%%PERL5_MAN3%%/WebService::Technorati::ApiQuery.3.gz
+%%PERL5_MAN3%%/WebService::Technorati::Author.3.gz
+%%PERL5_MAN3%%/WebService::Technorati::AuthorinfoApiQuery.3.gz
+%%PERL5_MAN3%%/WebService::Technorati::Blog.3.gz
+%%PERL5_MAN3%%/WebService::Technorati::BlogLink.3.gz
+%%PERL5_MAN3%%/WebService::Technorati::BloginfoApiQuery.3.gz
+%%PERL5_MAN3%%/WebService::Technorati::CosmosApiQuery.3.gz
+%%PERL5_MAN3%%/WebService::Technorati::Exception.3.gz
+%%PERL5_MAN3%%/WebService::Technorati::LinkQuerySubject.3.gz
+%%PERL5_MAN3%%/WebService::Technorati::OutboundApiQuery.3.gz
+%%PERL5_MAN3%%/WebService::Technorati::SearchApiQuery.3.gz
+%%PERL5_MAN3%%/WebService::Technorati::SearchMatch.3.gz
+%%PERL5_MAN3%%/WebService::Technorati::SearchTerm.3.gz
 %%SITE_PERL%%/WebService/Technorati.pm
 %%SITE_PERL%%/WebService/Technorati/ApiQuery.pm
 %%SITE_PERL%%/WebService/Technorati/Author.pm
@@ -13,13 +27,13 @@
 %%SITE_PERL%%/WebService/Technorati/SearchApiQuery.pm
 %%SITE_PERL%%/WebService/Technorati/SearchMatch.pm
 %%SITE_PERL%%/WebService/Technorati/SearchTerm.pm
-@dirrm %%SITE_PERL%%/WebService/Technorati
 %%SITE_PERL%%/WebService/pod2html.pl
-@dirrmtry %%SITE_PERL%%/WebService
 %%SITE_PERL%%/auto/WebService/Technorati/BaseTechnoratiObject/autosplit.ix
-@dirrm %%SITE_PERL%%/auto/WebService/Technorati/BaseTechnoratiObject
-@dirrm %%SITE_PERL%%/auto/WebService/Technorati
-@dirrmtry %%SITE_PERL%%/auto/WebService
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Technorati/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Technorati
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Technorati
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService
+@dirrmtry %%SITE_PERL%%/auto/WebService/Technorati/BaseTechnoratiObject
+@dirrmtry %%SITE_PERL%%/auto/WebService/Technorati
+@dirrmtry %%SITE_PERL%%/auto/WebService
+@dirrmtry %%SITE_PERL%%/WebService/Technorati
+@dirrmtry %%SITE_PERL%%/WebService

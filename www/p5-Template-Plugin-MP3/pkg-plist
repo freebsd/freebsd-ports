@@ -1,6 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/MP3/.packlist
+%%PERL5_MAN3%%/Template::Plugin::MP3.3.gz
 %%SITE_PERL%%/Template/Plugin/MP3.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/MP3
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/MP3/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/MP3
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
 @dirrmtry %%SITE_PERL%%/Template/Plugin
 @dirrmtry %%SITE_PERL%%/Template

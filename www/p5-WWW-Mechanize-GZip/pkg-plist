@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/WWW::Mechanize::GZip.3.gz
 %%SITE_PERL%%/WWW/Mechanize/GZip.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/GZip/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/GZip
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/GZip
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
 @dirrmtry %%SITE_PERL%%/WWW/Mechanize

@@ -27,23 +27,20 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		WWW::Mechanize::Shell.3
+DOCS=		Changes README
+EXAMPLES=	banking.postbank.de.mech hotmail.signup.mech wwwshell.pl
 
-PORTDOCS=	Changes README
-PORTEXAMPLES=	banking.postbank.de.mech hotmail.signup.mech wwwshell.pl
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}/
-	cd ${WRKSRC}/bin/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}/
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	cd ${WRKSRC}/bin/ && ${INSTALL_DATA} ${EXAMPLES} ${STAGEDIR}${EXAMPLESDIR}/
 	@${ECHO_MSG} "===> Documentation installed in ${EXAMPLESDIR}."
 .endif
 

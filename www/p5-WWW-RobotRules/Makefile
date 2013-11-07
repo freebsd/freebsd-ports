@@ -11,15 +11,11 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Database of robots.txt-derived permissions
 
 BUILD_DEPENDS=	p5-URI>=1.10:${PORTSDIR}/net/p5-URI
-RUN_DEPENDS=	p5-URI>=1.10:${PORTSDIR}/net/p5-URI
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	p5-libwww-5*
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		WWW::RobotRules.3 \
-		WWW::RobotRules::AnyDBM_File.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

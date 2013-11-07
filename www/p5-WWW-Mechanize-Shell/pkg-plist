@@ -1,6 +1,14 @@
+%%PERL5_MAN3%%/WWW::Mechanize::Shell.3.gz
 %%SITE_PERL%%/WWW/Mechanize/Shell.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/Shell/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/Shell
+%%PORTDOCS%%%%DOCSDIR%%/Changes
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/banking.postbank.de.mech
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hotmail.signup.mech
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wwwshell.pl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/Shell
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
 @dirrmtry %%SITE_PERL%%/WWW/Mechanize

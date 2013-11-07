@@ -13,11 +13,9 @@ COMMENT=	WWW::Robot - configurable web traversal engine
 BUILD_DEPENDS=	p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-HTML-Tagset>=0:${PORTSDIR}/www/p5-HTML-Tagset
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		WWW::Robot.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

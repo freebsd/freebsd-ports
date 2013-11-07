@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search/MSN/.packlist
+%%PERL5_MAN3%%/WWW::Search::MSN.3.gz
 %%SITE_PERL%%/WWW/Search/MSN.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search/MSN/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search/MSN
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW

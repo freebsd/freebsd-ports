@@ -29,8 +29,4 @@ TEST_DEPENDS=	p5-Test-TCP>=0:${PORTSDIR}/devel/p5-Test-TCP
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Tatsumaki.3 \
-		Tatsumaki::MessageQueue.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

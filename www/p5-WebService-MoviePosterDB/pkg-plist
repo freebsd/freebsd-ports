@@ -1,8 +1,11 @@
+%%PERL5_MAN3%%/WebService::MoviePosterDB.3.gz
+%%PERL5_MAN3%%/WebService::MoviePosterDB::Movie.3.gz
+%%PERL5_MAN3%%/WebService::MoviePosterDB::Poster.3.gz
 %%SITE_PERL%%/WebService/MoviePosterDB.pm
 %%SITE_PERL%%/WebService/MoviePosterDB/Movie.pm
 %%SITE_PERL%%/WebService/MoviePosterDB/Poster.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/MoviePosterDB/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/MoviePosterDB
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/MoviePosterDB
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService
-@dirrm %%SITE_PERL%%/WebService/MoviePosterDB
+@dirrmtry %%SITE_PERL%%/WebService/MoviePosterDB
 @dirrmtry %%SITE_PERL%%/WebService
