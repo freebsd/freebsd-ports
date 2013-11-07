@@ -14,7 +14,6 @@ COMMENT=	Utility to set override_redirect in XWindowAttributes to True
 NO_WRKSUBDIR=	yes
 USE_XORG=	x11
 PLIST_FILES=	bin/xnodecor
-MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
