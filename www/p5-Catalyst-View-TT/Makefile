@@ -24,9 +24,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Catalyst::Helper::View::TT.3 \
-		Catalyst::Helper::View::TTSite.3 \
-		Catalyst::View::TT.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

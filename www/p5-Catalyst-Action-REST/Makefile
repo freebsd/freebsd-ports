@@ -30,17 +30,4 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS=	--default
 
-MAN3=		Catalyst::Action::Deserialize.3 \
-		Catalyst::Action::DeserializeMultiPart.3 \
-		Catalyst::Action::REST.3 \
-		Catalyst::Action::REST::ForBrowsers.3 \
-		Catalyst::Action::Serialize.3 \
-		Catalyst::Action::SerializeBase.3 \
-		Catalyst::Controller::REST.3 \
-		Catalyst::Request::REST.3 \
-		Catalyst::Request::REST::ForBrowsers.3 \
-		Catalyst::TraitFor::Request::REST.3 \
-		Catalyst::TraitFor::Request::REST::ForBrowsers.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Catalyst::Plugin::Browser.3.gz
 %%SITE_PERL%%/Catalyst/Plugin/Browser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Browser/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Browser
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
-@dirrmtry %%SITE_PERL%%/Catalyst
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/Catalyst

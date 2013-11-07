@@ -22,13 +22,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=	CGI::Application::Plugin::Authorization::Driver::Generic.3 \
-	CGI::Application::Plugin::Authorization::Driver.3 \
-	CGI::Application::Plugin::Authorization::Driver::DBI.3 \
-	CGI::Application::Plugin::Authorization::Driver::Dummy.3 \
-	CGI::Application::Plugin::Authorization::Driver::SimpleGroup.3 \
-	CGI::Application::Plugin::Authorization.3 \
-	CGI::Application::Plugin::Authorization::Driver::HTGroup.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

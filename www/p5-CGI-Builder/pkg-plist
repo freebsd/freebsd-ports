@@ -1,13 +1,18 @@
+%%PERL5_MAN3%%/Bundle::CGI::Builder::Complete.3.gz
+%%PERL5_MAN3%%/CGI::Builder.3.gz
+%%PERL5_MAN3%%/CGI::Builder::Conf.3.gz
+%%PERL5_MAN3%%/CGI::Builder::Const.3.gz
+%%PERL5_MAN3%%/CGI::Builder::Test.3.gz
 %%SITE_PERL%%/Bundle/CGI/Builder/Complete.pm
 %%SITE_PERL%%/CGI/Builder.pm
 %%SITE_PERL%%/CGI/Builder/Conf.pm
 %%SITE_PERL%%/CGI/Builder/Const.pm
 %%SITE_PERL%%/CGI/Builder/Test.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Builder/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Builder
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Builder
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
-@dirrm %%SITE_PERL%%/CGI/Builder
+@dirrmtry %%SITE_PERL%%/CGI/Builder
 @dirrmtry %%SITE_PERL%%/CGI
-@dirrm %%SITE_PERL%%/Bundle/CGI/Builder
+@dirrmtry %%SITE_PERL%%/Bundle/CGI/Builder
 @dirrmtry %%SITE_PERL%%/Bundle/CGI
 @dirrmtry %%SITE_PERL%%/Bundle

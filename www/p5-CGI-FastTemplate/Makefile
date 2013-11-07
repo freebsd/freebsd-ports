@@ -13,7 +13,4 @@ COMMENT=	Perl module for manage templates and parses templates
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		CGI::FastTemplate.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

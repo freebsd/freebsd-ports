@@ -1,9 +1,12 @@
+%%PERL5_MAN3%%/Catalyst::Helper::View::RRDGraph.3.gz
+%%PERL5_MAN3%%/Catalyst::View::RRDGraph.3.gz
 %%SITE_PERL%%/Catalyst/Helper/View/RRDGraph.pm
 %%SITE_PERL%%/Catalyst/View/RRDGraph.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/RRDGraph/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/RRDGraph
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst/View
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper/View
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper
-@dirrmtry %%SITE_PERL%%/Catalyst/View
+@dirrmtry %%SITE_PERL%%/Catalyst

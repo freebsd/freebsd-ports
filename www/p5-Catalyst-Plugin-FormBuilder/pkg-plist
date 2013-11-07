@@ -1,9 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/FormBuilder/.packlist
+%%PERL5_MAN3%%/Catalyst::Plugin::FormBuilder.3.gz
 %%SITE_PERL%%/Catalyst/Plugin/FormBuilder.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/FormBuilder
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/FormBuilder/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/FormBuilder
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/Catalyst
-@dirrmtry %%SITE_PERL%%

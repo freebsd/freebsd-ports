@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/CGI::FastTemplate.3.gz
 %%SITE_PERL%%/CGI/FastTemplate.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/FastTemplate/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/FastTemplate
-@dirrmtry %%SITE_PERL%%/CGI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/FastTemplate
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
+@dirrmtry %%SITE_PERL%%/CGI

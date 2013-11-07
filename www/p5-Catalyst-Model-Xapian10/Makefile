@@ -22,8 +22,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Catalyst::Model::Xapian.3 \
-	Catalyst::Helper::Model::Xapian.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/Catalyst::Plugin::Authentication::CDBI.3.gz
 %%SITE_PERL%%/Catalyst/Plugin/Authentication/CDBI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Authentication/CDBI/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Authentication/CDBI

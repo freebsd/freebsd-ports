@@ -27,10 +27,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Catalyst::Helper::View::Email.3 \
-		Catalyst::Helper::View::Email::Template.3 \
-		Catalyst::View::Email.3 \
-		Catalyst::View::Email::Template.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

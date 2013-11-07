@@ -11,15 +11,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Send emails with Catalyst
 
-RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Email-Send>=0:${PORTSDIR}/mail/p5-Email-Send \
 		p5-Email-MIME>=0:${PORTSDIR}/mail/p5-Email-MIME
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Catalyst::Plugin::Email.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

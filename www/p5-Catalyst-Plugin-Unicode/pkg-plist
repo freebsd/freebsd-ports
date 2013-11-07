@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/Catalyst::Plugin::Unicode.3.gz
 %%SITE_PERL%%/Catalyst/Plugin/Unicode.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Unicode/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Unicode

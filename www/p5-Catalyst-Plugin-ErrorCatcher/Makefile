@@ -43,15 +43,4 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Catalyst::Plugin::ErrorCatcher.3 \
-		Catalyst::Plugin::ErrorCatcher::Email.3 \
-		Catalyst::Plugin::ErrorCatcher::File.3 \
-		Catalyst::Plugin::ErrorCatcher::Plugin::CleanUp::CaughtException.3 \
-		Catalyst::Plugin::ErrorCatcher::Plugin::CleanUp::Pg::ForeignKeyConstraint.3 \
-		Catalyst::Plugin::ErrorCatcher::Plugin::CleanUp::Pg::MissingColumn.3 \
-		Catalyst::Plugin::ErrorCatcher::Plugin::CleanUp::Pg::TransactionAborted.3 \
-		Catalyst::Plugin::ErrorCatcher::Plugin::CleanUp::Pg::UniqueConstraintViolation.3 \
-		Catalyst::Plugin::ErrorCatcher::Plugin::CleanUp::TxnDo.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

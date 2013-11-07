@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/Catalyst::Plugin::Scheduler.3.gz
 %%SITE_PERL%%/Catalyst/Plugin/Scheduler.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Scheduler/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Scheduler

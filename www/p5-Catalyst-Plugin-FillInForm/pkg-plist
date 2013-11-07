@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Catalyst::Plugin::FillInForm.3.gz
 %%SITE_PERL%%/Catalyst/Plugin/FillInForm.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/FillInForm/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/FillInForm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/FillInForm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin

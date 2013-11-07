@@ -19,8 +19,4 @@ TEST_DEPENDS=	p5-Test-MockObject>=1.07:${PORTSDIR}/devel/p5-Test-MockObject
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Catalyst::Helper::View::RRDGraph.3 \
-	Catalyst::View::RRDGraph.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

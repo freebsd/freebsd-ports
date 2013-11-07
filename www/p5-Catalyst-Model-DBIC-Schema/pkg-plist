@@ -1,11 +1,21 @@
+%%PERL5_MAN3%%/Catalyst::Helper::Model::DBIC::Schema.3.gz
+%%PERL5_MAN3%%/Catalyst::Model::DBIC::Schema.3.gz
+%%PERL5_MAN3%%/Catalyst::TraitFor::Model::DBIC::Schema::Caching.3.gz
+%%PERL5_MAN3%%/Catalyst::TraitFor::Model::DBIC::Schema::PerRequestSchema.3.gz
+%%PERL5_MAN3%%/Catalyst::TraitFor::Model::DBIC::Schema::Replicated.3.gz
+%%PERL5_MAN3%%/Catalyst::TraitFor::Model::DBIC::Schema::SchemaProxy.3.gz
 %%SITE_PERL%%/Catalyst/Helper/Model/DBIC/Schema.pm
 %%SITE_PERL%%/Catalyst/Model/DBIC/Schema.pm
 %%SITE_PERL%%/Catalyst/Model/DBIC/Schema/Types.pm
 %%SITE_PERL%%/Catalyst/TraitFor/Model/DBIC/Schema/Caching.pm
-%%SITE_PERL%%/Catalyst/TraitFor/Model/DBIC/Schema/Replicated.pm
 %%SITE_PERL%%/Catalyst/TraitFor/Model/DBIC/Schema/PerRequestSchema.pm
+%%SITE_PERL%%/Catalyst/TraitFor/Model/DBIC/Schema/Replicated.pm
 %%SITE_PERL%%/Catalyst/TraitFor/Model/DBIC/Schema/SchemaProxy.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model/DBIC/Schema/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model/DBIC/Schema
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model/DBIC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
 @dirrmtry %%SITE_PERL%%/Catalyst/TraitFor/Model/DBIC/Schema
 @dirrmtry %%SITE_PERL%%/Catalyst/TraitFor/Model/DBIC
 @dirrmtry %%SITE_PERL%%/Catalyst/TraitFor/Model
@@ -17,7 +27,3 @@
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper/Model
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper
 @dirrmtry %%SITE_PERL%%/Catalyst
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model/DBIC/Schema
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model/DBIC
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst

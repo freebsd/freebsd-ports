@@ -1,3 +1,8 @@
+%%PERL5_MAN3%%/Catalyst::Helper::Model::LDAP.3.gz
+%%PERL5_MAN3%%/Catalyst::Model::LDAP.3.gz
+%%PERL5_MAN3%%/Catalyst::Model::LDAP::Connection.3.gz
+%%PERL5_MAN3%%/Catalyst::Model::LDAP::Entry.3.gz
+%%PERL5_MAN3%%/Catalyst::Model::LDAP::Search.3.gz
 %%SITE_PERL%%/Catalyst/Helper/Model/LDAP.pm
 %%SITE_PERL%%/Catalyst/Model/LDAP.pm
 %%SITE_PERL%%/Catalyst/Model/LDAP/Connection.pm

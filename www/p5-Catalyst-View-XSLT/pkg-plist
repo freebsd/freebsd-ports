@@ -1,8 +1,12 @@
+%%PERL5_MAN3%%/Catalyst::Helper::View::XSLT.3.gz
+%%PERL5_MAN3%%/Catalyst::View::XSLT.3.gz
+%%PERL5_MAN3%%/Catalyst::View::XSLT::XML::LibXSLT.3.gz
+%%SITE_PERL%%/Catalyst/Helper/View/XSLT.pm
 %%SITE_PERL%%/Catalyst/View/XSLT.pm
 %%SITE_PERL%%/Catalyst/View/XSLT/XML/LibXSLT.pm
-%%SITE_PERL%%/Catalyst/Helper/View/XSLT.pm
-@dirrm %%SITE_PERL%%/Catalyst/View/XSLT/XML
-@dirrm %%SITE_PERL%%/Catalyst/View/XSLT
+@dirrmtry %%SITE_PERL%%/Catalyst/View/XSLT/XML
+@dirrmtry %%SITE_PERL%%/Catalyst/View/XSLT
 @dirrmtry %%SITE_PERL%%/Catalyst/View
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper/View
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper
+@dirrmtry %%SITE_PERL%%/Catalyst

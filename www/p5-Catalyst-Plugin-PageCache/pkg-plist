@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Catalyst::Plugin::PageCache.3.gz
 %%SITE_PERL%%/Catalyst/Plugin/PageCache.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/PageCache/.packlist
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
-@dirrmtry %%SITE_PERL%%/Catalyst
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/PageCache
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/Catalyst

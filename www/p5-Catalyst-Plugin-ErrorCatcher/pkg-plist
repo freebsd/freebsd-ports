@@ -1,3 +1,12 @@
+%%PERL5_MAN3%%/Catalyst::Plugin::ErrorCatcher.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::ErrorCatcher::Email.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::ErrorCatcher::File.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::ErrorCatcher::Plugin::CleanUp::CaughtException.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::ErrorCatcher::Plugin::CleanUp::Pg::ForeignKeyConstraint.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::ErrorCatcher::Plugin::CleanUp::Pg::MissingColumn.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::ErrorCatcher::Plugin::CleanUp::Pg::TransactionAborted.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::ErrorCatcher::Plugin::CleanUp::Pg::UniqueConstraintViolation.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::ErrorCatcher::Plugin::CleanUp::TxnDo.3.gz
 %%SITE_PERL%%/Catalyst/Plugin/ErrorCatcher.pm
 %%SITE_PERL%%/Catalyst/Plugin/ErrorCatcher/Email.pm
 %%SITE_PERL%%/Catalyst/Plugin/ErrorCatcher/File.pm

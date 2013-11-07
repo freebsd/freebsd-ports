@@ -1,9 +1,12 @@
+%%PERL5_MAN3%%/Catalyst::Helper::View::HTML::Template::Compiled.3.gz
+%%PERL5_MAN3%%/Catalyst::View::HTML::Template::Compiled.3.gz
 %%SITE_PERL%%/Catalyst/Helper/View/HTML/Template/Compiled.pm
 %%SITE_PERL%%/Catalyst/View/HTML/Template/Compiled.pm
+@dirrmtry %%SITE_PERL%%/Catalyst/View/HTML/Template
+@dirrmtry %%SITE_PERL%%/Catalyst/View/HTML
+@dirrmtry %%SITE_PERL%%/Catalyst/View
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper/View/HTML/Template
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper/View/HTML
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper/View
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper
-@dirrmtry %%SITE_PERL%%/Catalyst/View/HTML/Template
-@dirrmtry %%SITE_PERL%%/Catalyst/View/HTML
-@dirrmtry %%SITE_PERL%%/Catalyst/View
+@dirrmtry %%SITE_PERL%%/Catalyst

@@ -1,11 +1,13 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Params/Nested/.packlist
+%%PERL5_MAN3%%/Catalyst::Plugin::Params::Nested.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::Params::Nested::Expander.3.gz
 %%SITE_PERL%%/Catalyst/Plugin/Params/Nested.pm
 %%SITE_PERL%%/Catalyst/Plugin/Params/Nested/Expander.pm
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Params/Nested
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Params
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
-@dirrmtry %%SITE_PERL%%/Catalyst
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Params/Nested/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Params/Nested
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Params
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Params/Nested
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Params
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/Catalyst

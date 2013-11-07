@@ -1,6 +1,9 @@
-%%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/Htpasswd/User.pm
-%%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/Htpasswd/Backend.pm
+%%PERL5_MAN3%%/Catalyst::Plugin::Authentication::Store::Htpasswd.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::Authentication::Store::Htpasswd::Backend.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::Authentication::Store::Htpasswd::User.3.gz
 %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/Htpasswd.pm
+%%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/Htpasswd/Backend.pm
+%%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/Htpasswd/User.pm
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/Htpasswd
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authentication

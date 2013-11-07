@@ -1,3 +1,11 @@
+%%PERL5_MAN3%%/Catalyst::Enzyme.3.gz
+%%PERL5_MAN3%%/Catalyst::Enzyme::CRUD::Controller.3.gz
+%%PERL5_MAN3%%/Catalyst::Enzyme::CRUD::Model.3.gz
+%%PERL5_MAN3%%/Catalyst::Enzyme::CRUD::View.3.gz
+%%PERL5_MAN3%%/Catalyst::Enzyme::Controller.3.gz
+%%PERL5_MAN3%%/Catalyst::Helper::Controller::Enzyme::CRUD.3.gz
+%%PERL5_MAN3%%/Catalyst::Helper::Model::Enzyme::CDBI.3.gz
+%%PERL5_MAN3%%/Catalyst::Helper::View::Enzyme::TT.3.gz
 %%SITE_PERL%%/Catalyst/Enzyme.pm
 %%SITE_PERL%%/Catalyst/Enzyme/CRUD/Controller.pm
 %%SITE_PERL%%/Catalyst/Enzyme/CRUD/Model.pm

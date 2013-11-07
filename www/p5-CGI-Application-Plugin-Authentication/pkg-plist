@@ -1,7 +1,26 @@
+%%PERL5_MAN3%%/CGI::Application::Plugin::Authentication.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::Authentication::Display.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::Authentication::Display::Basic.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::Authentication::Display::Classic.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::Authentication::Driver.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::Authentication::Driver::Authen::Simple.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::Authentication::Driver::DBI.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::Authentication::Driver::Dummy.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::Authentication::Driver::Filter::crypt.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::Authentication::Driver::Filter::lc.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::Authentication::Driver::Filter::md5.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::Authentication::Driver::Filter::sha1.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::Authentication::Driver::Filter::strip.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::Authentication::Driver::Filter::uc.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::Authentication::Driver::Generic.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::Authentication::Driver::HTPasswd.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::Authentication::Store.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::Authentication::Store::Cookie.3.gz
+%%PERL5_MAN3%%/CGI::Application::Plugin::Authentication::Store::Session.3.gz
 %%SITE_PERL%%/CGI/Application/Plugin/Authentication.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authentication/Display.pm
 %%SITE_PERL%%/CGI/Application/Plugin/Authentication/Display/Basic.pm
 %%SITE_PERL%%/CGI/Application/Plugin/Authentication/Display/Classic.pm
-%%SITE_PERL%%/CGI/Application/Plugin/Authentication/Display.pm
 %%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver.pm
 %%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver/Authen/Simple.pm
 %%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver/DBI.pm
@@ -25,3 +44,4 @@
 @dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/Authentication
 @dirrmtry %%SITE_PERL%%/CGI/Application/Plugin
 @dirrmtry %%SITE_PERL%%/CGI/Application
+@dirrmtry %%SITE_PERL%%/CGI

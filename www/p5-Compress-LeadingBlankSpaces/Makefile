@@ -13,7 +13,4 @@ COMMENT=	Perl class to compress leading blank spaces in web content
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Compress::LeadingBlankSpaces.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

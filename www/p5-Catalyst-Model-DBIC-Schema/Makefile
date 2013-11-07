@@ -34,18 +34,6 @@ TEST_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
 USES=		perl5
-#USE_PERL5=	configure extract
 USE_PERL5=	configure
-
-MAN3=		Catalyst::Helper::Model::DBIC::Schema.3 \
-		Catalyst::Model::DBIC::Schema.3 \
-		Catalyst::TraitFor::Model::DBIC::Schema::Caching.3 \
-		Catalyst::TraitFor::Model::DBIC::Schema::PerRequestSchema.3 \
-		Catalyst::TraitFor::Model::DBIC::Schema::Replicated.3 \
-		Catalyst::TraitFor::Model::DBIC::Schema::SchemaProxy.3
-
-NO_STAGE=	yes
-#post-patch:
-#	@${PERL} -i.bak -ne 'print unless m,^feature, .. m,;$$,' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

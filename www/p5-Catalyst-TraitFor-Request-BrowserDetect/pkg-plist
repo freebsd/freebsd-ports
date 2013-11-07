@@ -1,7 +1,10 @@
+%%PERL5_MAN3%%/Catalyst::TraitFor::Request::BrowserDetect.3.gz
 %%SITE_PERL%%/Catalyst/TraitFor/Request/BrowserDetect.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/TraitFor/Request/BrowserDetect/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/TraitFor/Request/BrowserDetect
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/TraitFor/Request
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/TraitFor
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
 @dirrmtry %%SITE_PERL%%/Catalyst/TraitFor/Request
 @dirrmtry %%SITE_PERL%%/Catalyst/TraitFor
+@dirrmtry %%SITE_PERL%%/Catalyst

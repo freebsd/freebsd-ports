@@ -1,3 +1,14 @@
+%%PERL5_MAN3%%/Catalyst::Action::Deserialize.3.gz
+%%PERL5_MAN3%%/Catalyst::Action::DeserializeMultiPart.3.gz
+%%PERL5_MAN3%%/Catalyst::Action::REST.3.gz
+%%PERL5_MAN3%%/Catalyst::Action::REST::ForBrowsers.3.gz
+%%PERL5_MAN3%%/Catalyst::Action::Serialize.3.gz
+%%PERL5_MAN3%%/Catalyst::Action::SerializeBase.3.gz
+%%PERL5_MAN3%%/Catalyst::Controller::REST.3.gz
+%%PERL5_MAN3%%/Catalyst::Request::REST.3.gz
+%%PERL5_MAN3%%/Catalyst::Request::REST::ForBrowsers.3.gz
+%%PERL5_MAN3%%/Catalyst::TraitFor::Request::REST.3.gz
+%%PERL5_MAN3%%/Catalyst::TraitFor::Request::REST::ForBrowsers.3.gz
 %%SITE_PERL%%/Catalyst/Action/Deserialize.pm
 %%SITE_PERL%%/Catalyst/Action/Deserialize/Callback.pm
 %%SITE_PERL%%/Catalyst/Action/Deserialize/JSON.pm
@@ -36,12 +47,10 @@
 @dirrmtry %%SITE_PERL%%/Catalyst/Action/Serialize/YAML
 @dirrmtry %%SITE_PERL%%/Catalyst/Action/Serialize/XML
 @dirrmtry %%SITE_PERL%%/Catalyst/Action/Serialize/JSON
-@dirrmtry %%SITE_PERL%%/Catalyst/Action/Serialize/Data
 @dirrmtry %%SITE_PERL%%/Catalyst/Action/Serialize
 @dirrmtry %%SITE_PERL%%/Catalyst/Action/REST
 @dirrmtry %%SITE_PERL%%/Catalyst/Action/Deserialize/XML
 @dirrmtry %%SITE_PERL%%/Catalyst/Action/Deserialize/JSON
-@dirrmtry %%SITE_PERL%%/Catalyst/Action/Deserialize/Data
 @dirrmtry %%SITE_PERL%%/Catalyst/Action/Deserialize
 @dirrmtry %%SITE_PERL%%/Catalyst/Action
 @dirrmtry %%SITE_PERL%%/Catalyst

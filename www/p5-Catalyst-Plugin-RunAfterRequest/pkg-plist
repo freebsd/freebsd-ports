@@ -1,9 +1,12 @@
-%%SITE_PERL%%/Catalyst/Plugin/RunAfterRequest.pm
+%%PERL5_MAN3%%/Catalyst::Model::Role::RunAfterRequest.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::RunAfterRequest.3.gz
 %%SITE_PERL%%/Catalyst/Model/Role/RunAfterRequest.pm
+%%SITE_PERL%%/Catalyst/Plugin/RunAfterRequest.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/RunAfterRequest/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/RunAfterRequest
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/Catalyst/Model/Role
 @dirrmtry %%SITE_PERL%%/Catalyst/Model
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/Catalyst

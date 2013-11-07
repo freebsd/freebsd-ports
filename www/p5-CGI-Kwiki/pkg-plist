@@ -1,4 +1,32 @@
 bin/kwiki-install
+%%PERL5_MAN3%%/CGI::Kwiki.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::Blog.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::CGI.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::Changes.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::Config.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::Config_yaml.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::Cookie.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::Database.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::Display.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::Driver.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::Edit.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::Formatter.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::Import.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::Javascript.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::Metadata.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::New.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::Pages.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::Pages::zh_cn.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::Pages::zh_tw.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::Plugin.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::Plugin::Diff.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::Prefs.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::Privacy.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::Scripts.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::Search.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::Slides.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::Style.3.gz
+%%PERL5_MAN3%%/CGI::Kwiki::Template.3.gz
 %%SITE_PERL%%/CGI/Kwiki.pm
 %%SITE_PERL%%/CGI/Kwiki/Backup.pm
 %%SITE_PERL%%/CGI/Kwiki/Backup/Rcs.pm
@@ -37,10 +65,11 @@ bin/kwiki-install
 %%SITE_PERL%%/CGI/Kwiki/Style.pm
 %%SITE_PERL%%/CGI/Kwiki/Template.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI-Kwiki/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI-Kwiki
-@dirrm %%SITE_PERL%%/CGI/Kwiki/Plugin
-@dirrm %%SITE_PERL%%/CGI/Kwiki/Pages
-@dirrm %%SITE_PERL%%/CGI/Kwiki/I18N
-@dirrm %%SITE_PERL%%/CGI/Kwiki/Backup
-@dirrm %%SITE_PERL%%/CGI/Kwiki
+man/man1/kwiki-install.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI-Kwiki
+@dirrmtry %%SITE_PERL%%/CGI/Kwiki/Plugin
+@dirrmtry %%SITE_PERL%%/CGI/Kwiki/Pages
+@dirrmtry %%SITE_PERL%%/CGI/Kwiki/I18N
+@dirrmtry %%SITE_PERL%%/CGI/Kwiki/Backup
+@dirrmtry %%SITE_PERL%%/CGI/Kwiki
 @dirrmtry %%SITE_PERL%%/CGI

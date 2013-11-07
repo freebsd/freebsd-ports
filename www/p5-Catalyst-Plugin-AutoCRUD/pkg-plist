@@ -1,3 +1,7 @@
+%%PERL5_MAN3%%/Catalyst::Plugin::AutoCRUD.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::AutoCRUD::Manual::DBICTips.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::AutoCRUD::Manual::Limitations.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::AutoCRUD::Manual::Troubleshooting.3.gz
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD.pm
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Controller/AJAX.pm
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Controller/DisplayEngine/ExtJS2.pm
@@ -72,29 +76,32 @@
 %%SITE_PERL%%/SQL/Translator/Filter/AutoCRUD/StorageEngine/DBIC/Relationships.pm
 %%SITE_PERL%%/SQL/Translator/Filter/AutoCRUD/StorageEngine/DBIC/ViewsAsTables.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/AutoCRUD/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/AutoCRUD
-@dirrm %%SITE_PERL%%/SQL/Translator/Filter/AutoCRUD/StorageEngine/DBIC
-@dirrm %%SITE_PERL%%/SQL/Translator/Filter/AutoCRUD/StorageEngine
-@dirrm %%SITE_PERL%%/SQL/Translator/Filter/AutoCRUD
-@dirrm %%SITE_PERL%%/SQL/Translator/AutoCRUD
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/AutoCRUD
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/SQL/Translator/Filter/AutoCRUD/StorageEngine/DBIC
+@dirrmtry %%SITE_PERL%%/SQL/Translator/Filter/AutoCRUD/StorageEngine
+@dirrmtry %%SITE_PERL%%/SQL/Translator/Filter/AutoCRUD
+@dirrmtry %%SITE_PERL%%/SQL/Translator/Filter
+@dirrmtry %%SITE_PERL%%/SQL/Translator/AutoCRUD
 @dirrmtry %%SITE_PERL%%/SQL/Translator
 @dirrmtry %%SITE_PERL%%/SQL
-@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/skinny/wrapper
-@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/skinny
-@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/extjs2/wrapper
-@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/extjs2/javascript/update
-@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/extjs2/javascript/grid
-@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/extjs2/javascript
-@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/extjs2
-@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates
-@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static
-@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/View
-@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Model/StorageEngine/DBIC
-@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Model/StorageEngine
-@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Model
-@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Manual
-@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Controller/DisplayEngine
-@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Controller
-@dirrm %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/skinny/wrapper
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/skinny
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/extjs2/wrapper
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/extjs2/javascript/update
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/extjs2/javascript/grid
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/extjs2/javascript
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates/extjs2
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/templates
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/static
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/View
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Model/StorageEngine/DBIC
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Model/StorageEngine
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Model
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Manual
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Controller/DisplayEngine
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Controller
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/Catalyst

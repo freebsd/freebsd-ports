@@ -22,7 +22,4 @@ TEST_DEPENDS=	p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Catalyst::Plugin::PageCache.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

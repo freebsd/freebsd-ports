@@ -19,9 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=	Catalyst::Plugin::Authentication::Store::Htpasswd::User.3 \
-	Catalyst::Plugin::Authentication::Store::Htpasswd.3 \
-	Catalyst::Plugin::Authentication::Store::Htpasswd::Backend.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
