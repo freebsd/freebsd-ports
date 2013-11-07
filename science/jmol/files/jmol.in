@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec java -Djmol.home="%%JAVAJARDIR%%" -jar "%%JAVAJARDIR%%/Jmol.jar" "$@"
