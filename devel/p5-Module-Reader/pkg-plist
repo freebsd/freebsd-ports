@@ -1,0 +1,5 @@
+%%PERL5_MAN3%%/Module::Reader.3.gz
+%%SITE_PERL%%/Module/Reader.pm
+%%SITE_PERL%%/mach/auto/Module-Reader/.packlist
+@dirrm %%SITE_PERL%%/mach/auto/Module-Reader
+@dirrm %%SITE_PERL%%/Module
