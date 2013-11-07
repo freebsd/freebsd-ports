@@ -1,6 +1,0 @@
-************************************************************
-
-SDL Perl should be used with a threaded Perl, make sure
-that Perl has been built with THREADS option enabled.
-
-************************************************************
