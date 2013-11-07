@@ -1,73 +1,414 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL_perl/SDL_perl.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL_perl/SDL_perl.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/SFont/SFont.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/SFont/SFont.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/OpenGL/OpenGL.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/OpenGL/OpenGL.so
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/App.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Cdrom.pm
+%%PERL5_MAN3%%/Module::Build::SDL.3.gz
+%%PERL5_MAN3%%/SDL::ConfigData.3.gz
+%%PERL5_MAN3%%/SDLx::FPS.3.gz
+%%PERL5_MAN3%%/pods::SDL.3.gz
+%%PERL5_MAN3%%/pods::SDL::Audio.3.gz
+%%PERL5_MAN3%%/pods::SDL::AudioCVT.3.gz
+%%PERL5_MAN3%%/pods::SDL::AudioSpec.3.gz
+%%PERL5_MAN3%%/pods::SDL::CD.3.gz
+%%PERL5_MAN3%%/pods::SDL::CDROM.3.gz
+%%PERL5_MAN3%%/pods::SDL::CDTrack.3.gz
+%%PERL5_MAN3%%/pods::SDL::Color.3.gz
+%%PERL5_MAN3%%/pods::SDL::Cookbook.3.gz
+%%PERL5_MAN3%%/pods::SDL::Cookbook::OpenGL.3.gz
+%%PERL5_MAN3%%/pods::SDL::Cookbook::PDL.3.gz
+%%PERL5_MAN3%%/pods::SDL::Credits.3.gz
+%%PERL5_MAN3%%/pods::SDL::Cursor.3.gz
+%%PERL5_MAN3%%/pods::SDL::Deprecated.3.gz
+%%PERL5_MAN3%%/pods::SDL::Event.3.gz
+%%PERL5_MAN3%%/pods::SDL::Events.3.gz
+%%PERL5_MAN3%%/pods::SDL::GFX::BlitFunc.3.gz
+%%PERL5_MAN3%%/pods::SDL::GFX::FPSManager.3.gz
+%%PERL5_MAN3%%/pods::SDL::GFX::Framerate.3.gz
+%%PERL5_MAN3%%/pods::SDL::GFX::ImageFilter.3.gz
+%%PERL5_MAN3%%/pods::SDL::GFX::Primitives.3.gz
+%%PERL5_MAN3%%/pods::SDL::GFX::Rotozoom.3.gz
+%%PERL5_MAN3%%/pods::SDL::Image.3.gz
+%%PERL5_MAN3%%/pods::SDL::Joystick.3.gz
+%%PERL5_MAN3%%/pods::SDL::MPEG.3.gz
+%%PERL5_MAN3%%/pods::SDL::Mixer.3.gz
+%%PERL5_MAN3%%/pods::SDL::Mixer::Channels.3.gz
+%%PERL5_MAN3%%/pods::SDL::Mixer::Effects.3.gz
+%%PERL5_MAN3%%/pods::SDL::Mixer::Groups.3.gz
+%%PERL5_MAN3%%/pods::SDL::Mixer::MixChunk.3.gz
+%%PERL5_MAN3%%/pods::SDL::Mixer::MixMusic.3.gz
+%%PERL5_MAN3%%/pods::SDL::Mixer::Music.3.gz
+%%PERL5_MAN3%%/pods::SDL::Mixer::Samples.3.gz
+%%PERL5_MAN3%%/pods::SDL::Mouse.3.gz
+%%PERL5_MAN3%%/pods::SDL::MultiThread.3.gz
+%%PERL5_MAN3%%/pods::SDL::Overlay.3.gz
+%%PERL5_MAN3%%/pods::SDL::Palette.3.gz
+%%PERL5_MAN3%%/pods::SDL::Pango.3.gz
+%%PERL5_MAN3%%/pods::SDL::Pango::Context.3.gz
+%%PERL5_MAN3%%/pods::SDL::PixelFormat.3.gz
+%%PERL5_MAN3%%/pods::SDL::Platform.3.gz
+%%PERL5_MAN3%%/pods::SDL::RWOps.3.gz
+%%PERL5_MAN3%%/pods::SDL::Rect.3.gz
+%%PERL5_MAN3%%/pods::SDL::SMPEG.3.gz
+%%PERL5_MAN3%%/pods::SDL::Surface.3.gz
+%%PERL5_MAN3%%/pods::SDL::TTF.3.gz
+%%PERL5_MAN3%%/pods::SDL::TTF::Font.3.gz
+%%PERL5_MAN3%%/pods::SDL::Time.3.gz
+%%PERL5_MAN3%%/pods::SDL::Tutorial.3.gz
+%%PERL5_MAN3%%/pods::SDL::Tutorial::Animation.3.gz
+%%PERL5_MAN3%%/pods::SDL::Tutorial::LunarLander.3.gz
+%%PERL5_MAN3%%/pods::SDL::Version.3.gz
+%%PERL5_MAN3%%/pods::SDL::Video.3.gz
+%%PERL5_MAN3%%/pods::SDL::VideoInfo.3.gz
+%%PERL5_MAN3%%/pods::SDLx::App.3.gz
+%%PERL5_MAN3%%/pods::SDLx::Controller.3.gz
+%%PERL5_MAN3%%/pods::SDLx::Controller::Interface.3.gz
+%%PERL5_MAN3%%/pods::SDLx::Controller::State.3.gz
+%%PERL5_MAN3%%/pods::SDLx::Layer.3.gz
+%%PERL5_MAN3%%/pods::SDLx::LayerManager.3.gz
+%%PERL5_MAN3%%/pods::SDLx::Music.3.gz
+%%PERL5_MAN3%%/pods::SDLx::Rect.3.gz
+%%PERL5_MAN3%%/pods::SDLx::SFont.3.gz
+%%PERL5_MAN3%%/pods::SDLx::Sound.3.gz
+%%PERL5_MAN3%%/pods::SDLx::Sprite.3.gz
+%%PERL5_MAN3%%/pods::SDLx::Sprite::Animated.3.gz
+%%PERL5_MAN3%%/pods::SDLx::Surface.3.gz
+%%PERL5_MAN3%%/pods::SDLx::Text.3.gz
+%%SITE_PERL%%/%%PERL_ARCH%%/Module/Build/SDL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Audio.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/AudioCVT.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/AudioSpec.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/CD.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/CDROM.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/CDTrack.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Color.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Config.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/ConfigData.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Constants.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Cursor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Event.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Font.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Game/Rect.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/MPEG.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Events.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/GFX.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/GFX/BlitFunc.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/GFX/FPSManager.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/GFX/Framerate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/GFX/ImageFilter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/GFX/Primitives.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/GFX/Rotozoom.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Image.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Internal/Loader.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Joystick.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Mixer.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Music.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/OpenGL.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/OpenGL/Constants.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Mixer/Channels.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Mixer/Effects.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Mixer/Groups.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Mixer/MixChunk.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Mixer/MixMusic.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Mixer/Music.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Mixer/Samples.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Mouse.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/MultiThread.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Net.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Net/IPaddress.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Net/TCP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Net/UDP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Overlay.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Palette.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Pango.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Pango/Context.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/PixelFormat.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/RWOps.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Rect.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/SFont.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Sound.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/SMPEG.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/SMPEG/Info.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Surface.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/TTF.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/TTF/Font.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/TTFont.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Timer.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Tool/Font.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Tool/Graphic.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Time.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Tutorial.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Tutorial/Animation.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Tutorial/Drawing.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Tutorial/Images.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Tutorial/LunarLander.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Version.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Video.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SDL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/VideoInfo.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/typemap
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL_perl.pm
-%%PERL5_MAN3%%/SDL.3.gz
-%%PERL5_MAN3%%/SDL::App.3.gz
-%%PERL5_MAN3%%/SDL::Cdrom.3.gz
-%%PERL5_MAN3%%/SDL::Color.3.gz
-%%PERL5_MAN3%%/SDL::Cursor.3.gz
-%%PERL5_MAN3%%/SDL::Event.3.gz
-%%PERL5_MAN3%%/SDL::Font.3.gz
-%%PERL5_MAN3%%/SDL::Game::Rect.3.gz
-%%PERL5_MAN3%%/SDL::MPEG.3.gz
-%%PERL5_MAN3%%/SDL::Mixer.3.gz
-%%PERL5_MAN3%%/SDL::Music.3.gz
-%%PERL5_MAN3%%/SDL::OpenGL.3.gz
-%%PERL5_MAN3%%/SDL::Palette.3.gz
-%%PERL5_MAN3%%/SDL::Rect.3.gz
-%%PERL5_MAN3%%/SDL::SFont.3.gz
-%%PERL5_MAN3%%/SDL::Sound.3.gz
-%%PERL5_MAN3%%/SDL::Surface.3.gz
-%%PERL5_MAN3%%/SDL::TTFont.3.gz
-%%PERL5_MAN3%%/SDL::Timer.3.gz
-%%PERL5_MAN3%%/SDL::Tool::Font.3.gz
-%%PERL5_MAN3%%/SDL::Tool::Graphic.3.gz
-%%PERL5_MAN3%%/SDL::Tutorial.3.gz
-%%PERL5_MAN3%%/SDL::Tutorial::Animation.3.gz
-%%PERL5_MAN3%%/SDL::Tutorial::Drawing.3.gz
-%%PERL5_MAN3%%/SDL::Tutorial::Images.3.gz
-%%PERL5_MAN3%%/SDL::Tutorial::LunarLander.3.gz
-%%PERL5_MAN3%%/SDL::Video.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/OpenGL
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/SFont
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL_perl
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Game
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/SDL/OpenGL
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Tool
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Tutorial
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/SDL
+%%SITE_PERL%%/%%PERL_ARCH%%/SDLx/App.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDLx/Controller.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDLx/Controller/Interface.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDLx/Controller/State.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDLx/Controller/Timer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDLx/FPS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDLx/Layer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDLx/LayerManager.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDLx/Music.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDLx/Music/Data.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDLx/Music/Default.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDLx/Rect.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDLx/SFont.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDLx/Sound.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDLx/Sprite.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDLx/Sprite/Animated.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDLx/Surface.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDLx/Surface/TiedMatrix.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDLx/Surface/TiedMatrixRow.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDLx/TTF.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDLx/Text.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDLx/Validate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Audio/Audio.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Audio/Audio.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/AudioCVT/AudioCVT.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/AudioCVT/AudioCVT.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/AudioSpec/AudioSpec.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/AudioSpec/AudioSpec.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/CD/CD.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/CD/CD.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/CDROM/CDROM.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/CDROM/CDROM.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/CDTrack/CDTrack.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/CDTrack/CDTrack.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Color/Color.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Color/Color.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Cursor/Cursor.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Cursor/Cursor.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Event/Event.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Event/Event.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Events/Events.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Events/Events.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/GFX/BlitFunc/BlitFunc.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/GFX/BlitFunc/BlitFunc.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/GFX/FPSManager/FPSManager.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/GFX/FPSManager/FPSManager.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/GFX/Framerate/Framerate.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/GFX/Framerate/Framerate.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/GFX/GFX.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/GFX/GFX.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/GFX/ImageFilter/ImageFilter.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/GFX/ImageFilter/ImageFilter.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/GFX/Primitives/Primitives.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/GFX/Primitives/Primitives.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/GFX/Rotozoom/Rotozoom.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/GFX/Rotozoom/Rotozoom.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Image/Image.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Image/Image.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Joystick/Joystick.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Joystick/Joystick.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mixer/Channels/Channels.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mixer/Channels/Channels.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mixer/Effects/Effects.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mixer/Effects/Effects.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mixer/Groups/Groups.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mixer/Groups/Groups.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mixer/MixChunk/MixChunk.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mixer/MixChunk/MixChunk.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mixer/MixMusic/MixMusic.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mixer/MixMusic/MixMusic.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mixer/Mixer.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mixer/Mixer.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mixer/Music/Music.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mixer/Music/Music.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mixer/Samples/Samples.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mixer/Samples/Samples.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mouse/Mouse.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mouse/Mouse.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/MultiThread/MultiThread.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/MultiThread/MultiThread.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Overlay/Overlay.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Overlay/Overlay.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Palette/Palette.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Palette/Palette.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Pango/Context/Context.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Pango/Context/Context.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Pango/Pango.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Pango/Pango.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/PixelFormat/PixelFormat.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/PixelFormat/PixelFormat.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/RWOps/RWOps.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/RWOps/RWOps.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Rect/Rect.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Rect/Rect.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Surface/Surface.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Surface/Surface.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/TTF/Font/Font.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/TTF/Font/Font.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/TTF/TTF.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/TTF/TTF.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Time/Time.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Time/Time.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Version/Version.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Version/Version.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Video/Video.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Video/Video.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/VideoInfo/VideoInfo.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/VideoInfo/VideoInfo.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL_perl/SDL_perl.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL_perl/SDL_perl.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDLx/Controller/Interface/Interface.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDLx/Controller/Interface/Interface.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDLx/Controller/State/State.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDLx/Controller/State/State.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDLx/Controller/Timer/Timer.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDLx/Controller/Timer/Timer.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDLx/Layer/Layer.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDLx/Layer/Layer.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDLx/LayerManager/LayerManager.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDLx/LayerManager/LayerManager.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDLx/SFont/SFont.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDLx/SFont/SFont.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDLx/Surface/Surface.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDLx/Surface/Surface.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDLx/Validate/Validate.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SDLx/Validate/Validate.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist/SDL/GenBasR.ttf
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Audio.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/AudioCVT.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/AudioSpec.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/CD.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/CDROM.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/CDTrack.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Color.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Cookbook.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Cookbook/OpenGL.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Cookbook/PDL.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Credits.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Cursor.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Deprecated.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Event.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Events.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/GFX/BlitFunc.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/GFX/FPSManager.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/GFX/Framerate.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/GFX/ImageFilter.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/GFX/Primitives.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/GFX/Rotozoom.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Image.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Joystick.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/MPEG.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Mixer.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Mixer/Channels.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Mixer/Effects.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Mixer/Groups.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Mixer/MixChunk.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Mixer/MixMusic.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Mixer/Music.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Mixer/Samples.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Mouse.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/MultiThread.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Overlay.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Palette.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Pango.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Pango/Context.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/PixelFormat.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Platform.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/RWOps.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Rect.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/SMPEG.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Surface.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/TTF.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/TTF/Font.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Time.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Tutorial.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Tutorial/Animation.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Tutorial/LunarLander.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Version.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Video.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/VideoInfo.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDLx/App.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDLx/Controller.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDLx/Controller/Interface.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDLx/Controller/State.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDLx/Layer.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDLx/LayerManager.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDLx/Music.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDLx/Rect.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDLx/SFont.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDLx/Sound.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDLx/Sprite.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDLx/Sprite/Animated.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDLx/Surface.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/pods/SDLx/Text.pod
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/pods/SDLx/Sprite
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/pods/SDLx/Controller
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/pods/SDLx
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Tutorial
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/TTF
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Pango
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Mixer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/GFX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL/Cookbook
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/pods/SDL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/pods
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist/SDL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDLx/Validate
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDLx/Surface
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDLx/SFont
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDLx/LayerManager
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDLx/Layer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDLx/Controller/Timer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDLx/Controller/State
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDLx/Controller/Interface
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDLx/Controller
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDLx
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL_perl
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/VideoInfo
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Video
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Version
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Time
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/TTF/Font
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/TTF
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Surface
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Rect
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/RWOps
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/PixelFormat
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Pango/Context
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Pango
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Palette
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Overlay
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/MultiThread
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mouse
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mixer/Samples
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mixer/Music
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mixer/MixMusic
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mixer/MixChunk
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mixer/Groups
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mixer/Effects
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mixer/Channels
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Mixer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Joystick
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Image
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/GFX/Rotozoom
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/GFX/Primitives
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/GFX/ImageFilter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/GFX/Framerate
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/GFX/FPSManager
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/GFX/BlitFunc
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/GFX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Events
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Event
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Cursor
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Color
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/CDTrack
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/CDROM
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/CD
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/AudioSpec
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/AudioCVT
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/Audio
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/SDLx/Surface
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/SDLx/Sprite
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/SDLx/Music
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/SDLx/Controller
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/SDLx
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Tutorial
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/SDL/TTF
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/SDL/SMPEG
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Pango
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Net
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Mixer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Internal
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/SDL/GFX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/SDL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Module/Build
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Module
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%

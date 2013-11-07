@@ -2,41 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	SDL
-PORTVERSION=	2.2.6
-PORTREVISION=	4
+PORTVERSION=	2.540
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=SDL
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	SDL_Perl-v${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Perl Bindings for SDL
 
-BUILD_DEPENDS=	p5-YAML>=0.62:${PORTSDIR}/textproc/p5-YAML
+LICENSE=	GPLv2
+
+BUILD_DEPENDS=	p5-Alien-SDL>=1.426:${PORTSDIR}/devel/p5-Alien-SDL
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libsmpeg.so:${PORTSDIR}/multimedia/smpeg
+RUN_DEPENDS=	p5-Alien-SDL>=1.426:${PORTSDIR}/devel/p5-Alien-SDL \
+		p5-Tie-Simple>=0:${PORTSDIR}/devel/p5-Tie-Simple
 
 USES=		perl5
+USE_GL=		glu
 USE_PERL5=	modbuild
-USE_SDL=	sdl
-
-USE_LDCONFIG=	yes
-
-OPTIONS_DEFINE=	GFX IMAGE MIXER NET TTF
-
-GFX_DESC=	GFX support
-IMAGE_DESC=	IMAGE support
-MIXER_DESC=	MIXER support
-NET_DESC=	NET support
-TTF_DESC=	TTF support
-
-OPTIONS_DEFAULT=	GFX IMAGE MIXER NET TTF
-
-GFX_USE=	SDL=gfx
-IMAGE_USE=	SDL=image
-MIXER_USE=	SDL=mixer
-NET_USE=	SDL=net
-TTF_USE=	SDL=ttf
+USE_SDL=	gfx image mixer pango sdl ttf
 
 .include <bsd.port.mk>
