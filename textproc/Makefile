@@ -1421,7 +1421,6 @@
     SUBDIR += stardict-longman
     SUBDIR += stardict-oald
     SUBDIR += stardict-rptts
-    SUBDIR += stardict2
     SUBDIR += stardict2-dictd_mova
     SUBDIR += stardict2-quick
     SUBDIR += stardict3

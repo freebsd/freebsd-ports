@@ -5171,3 +5171,4 @@ net-p2p/libtorrent-rasterbar-16|net-p2p/libtorrent-rasterbar|2013-11-06|Moved to
 net-p2p/libtorrent-rasterbar-python-16|net-p2p/libtorrent-rasterbar-python|2013-11-06|Moved to net-p2p/libtorrent-rasterbar-python since it's a stable version
 devel/ORBit||2013-11-07|Has expired: EOLed upstream for very long
 x11/gnome-libs||2013-11-07|Has expired: EOLed upstream for very long
+textproc/stardict2||2013-11-07|Has expired: Newer version available in ports: textproc/stardict3
