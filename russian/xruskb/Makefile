@@ -11,15 +11,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Keyboard layout switcher and indicator
 
 USE_XORG=	x11 ice xt xmu
-USE_BZIP2=	YES
-GNU_CONFIGURE=	YES
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share
 
 DOCS=		FAQ NEWS README* TODO xrus.doc-*
 PORTDATA=	*
 
 OPTIONS_DEFINE=	MOTIF DOCS
-MOTIF_DESC=	Support for pixmaps in indicator icon
 
 MOTIF_USES=	motif
 MOTIF_CONFIGURE_ON=	--with-toolkit=motif
