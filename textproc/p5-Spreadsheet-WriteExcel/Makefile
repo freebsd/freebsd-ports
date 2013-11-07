@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Spreadsheet-WriteExcel
-PORTVERSION=	2.39
+PORTVERSION=	2.40
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,19 +10,25 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Write to a cross-platform Excel binary file
 
-BUILD_DEPENDS=	p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent \
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
+		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
 		p5-OLE-Storage_Lite>=0:${PORTSDIR}/devel/p5-OLE-Storage_Lite \
-		p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
-		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip
+		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
-USE_PERL5=	configure
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+USES=		perl5 shebangfix
 USE_DOS2UNIX=	yes
+USE_PERL5=	configure
 DOS2UNIX_REGEX=	"*.p[lm]"
 
+SHEBANG_FILES=	examples/*.pl
+
 post-install:
-.ifndef(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/images
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/tpj_images
@@ -35,6 +41,5 @@ post-install:
 		${WRKSRC}/examples/republic.png ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.txt ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>
