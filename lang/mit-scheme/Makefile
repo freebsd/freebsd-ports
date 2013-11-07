@@ -13,14 +13,13 @@ COMMENT=	MIT Scheme: includes runtime, compiler, and edwin binaries
 
 ONLY_FOR_ARCHS=	i386 amd64
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 WRKSRC=		${WRKDIR}/mit-scheme-${PORTVERSION}/src/
 
 OPTIONS_DEFINE=	GDBM MCRYPT MHASH OPENSSL PGSQL X11
 MCRYPT_DESC=	mcrypt library support
 MHASH_DESC=	mhash library support
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # TODO implement db4 support
@@ -87,17 +86,14 @@ MIT_SCHEME_ARCH=${ARCH}
 
 PLIST_SUB+=	MIT_SCHEME_ARCH=${MIT_SCHEME_ARCH}
 
-MAN1=	scheme.1
-
 post-build:
-	@${FIND} ${WRKDIR} -type d -empty | ${XARGS} ${RMDIR}
+	@${FIND} ${WRKDIR} -type d -empty -delete
 
 do-build:
 	@cd ${WRKDIR}/mit-scheme-${PORTVERSION}/src/microcode && ${GMAKE}
 
 do-install:
-	@cd ${WRKDIR}/mit-scheme-${PORTVERSION}/src && ${GMAKE} install
-	@${INSTALL_MAN} ${WRKDIR}/mit-scheme-${PORTVERSION}/doc/scheme.1 ${MAN1PREFIX}/man/man1/
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/mit-scheme-${MIT_SCHEME_ARCH}
+	@cd ${WRKDIR}/mit-scheme-${PORTVERSION}/src && ${GMAKE} install DESTDIR=${STAGEDIR}
+	${INSTALL_MAN} ${WRKDIR}/mit-scheme-${PORTVERSION}/doc/scheme.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
 
 .include <bsd.port.post.mk>
