@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Event Based High Performance Web Crawler Framework
 
-RUN_DEPENDS=	p5-Best>=0:${PORTSDIR}/devel/p5-Best \
+BUILD_DEPENDS=	p5-Best>=0:${PORTSDIR}/devel/p5-Best \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Class-C3-Componentised>=0:${PORTSDIR}/devel/p5-Class-C3-Componentised \
 		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
@@ -43,68 +43,12 @@ RUN_DEPENDS=	p5-Best>=0:${PORTSDIR}/devel/p5-Best \
 		p5-POE-Component-Client-HTTP>=0.81:${PORTSDIR}/www/p5-POE-Component-Client-HTTP \
 		p5-POE>=0.9999:${PORTSDIR}/devel/p5-POE \
 		p5-UNIVERSAL-isa>=0.06:${PORTSDIR}/devel/p5-UNIVERSAL-isa
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		gungho.1
-MAN3=		Gungho.3 \
-		Gungho::Base.3 \
-		Gungho::Base::Class.3 \
-		Gungho::Component.3 \
-		Gungho::Component::Authentication.3 \
-		Gungho::Component::Authentication::Basic.3 \
-		Gungho::Component::BlockPrivateIP.3 \
-		Gungho::Component::Cache.3 \
-		Gungho::Component::Core.3 \
-		Gungho::Component::RobotRules.3 \
-		Gungho::Component::RobotRules::Rule.3 \
-		Gungho::Component::RobotRules::Storage.3 \
-		Gungho::Component::RobotRules::Storage::Cache.3 \
-		Gungho::Component::RobotRules::Storage::DB_File.3 \
-		Gungho::Component::RobotsMETA.3 \
-		Gungho::Component::Scraper.3 \
-		Gungho::Component::Setup.3 \
-		Gungho::Component::Throttle.3 \
-		Gungho::Component::Throttle::Domain.3 \
-		Gungho::Component::Throttle::Provider.3 \
-		Gungho::Component::Throttle::Simple.3 \
-		Gungho::Component::Throttle::Throttler.3 \
-		Gungho::Engine.3 \
-		Gungho::Engine::Danga::Socket.3 \
-		Gungho::Engine::IO::Async.3 \
-		Gungho::Engine::POE.3 \
-		Gungho::Exception.3 \
-		Gungho::Handler.3 \
-		Gungho::Handler::FileWriter::Simple.3 \
-		Gungho::Handler::Inline.3 \
-		Gungho::Handler::Null.3 \
-		Gungho::Inline.3 \
-		Gungho::Log.3 \
-		Gungho::Log::Dispatch.3 \
-		Gungho::Log::Simple.3 \
-		Gungho::Manual::FAQ.3 \
-		Gungho::Manual::TODO.3 \
-		Gungho::Plugin.3 \
-		Gungho::Plugin::Apoptosis.3 \
-		Gungho::Plugin::RequestLog.3 \
-		Gungho::Plugin::RequestTimer.3 \
-		Gungho::Plugin::Statistics.3 \
-		Gungho::Plugin::Statistics::Format::XML.3 \
-		Gungho::Plugin::Statistics::Storage::SQLite.3 \
-		Gungho::Provider.3 \
-		Gungho::Provider::File::Simple.3 \
-		Gungho::Provider::Inline.3 \
-		Gungho::Provider::Simple.3 \
-		Gungho::Provider::YAML.3 \
-		Gungho::Request.3 \
-		Gungho::Request::http.3 \
-		Gungho::Response.3 \
-		Gungho::Util.3
-
-NO_STAGE=	yes
 post-install:
-		${INSTALL_SCRIPT} ${WRKSRC}/script/gungho ${PREFIX}/bin/gungho
+	${INSTALL_SCRIPT} ${WRKSRC}/script/gungho ${STAGEDIR}${PREFIX}/bin/gungho
 
 .include <bsd.port.mk>

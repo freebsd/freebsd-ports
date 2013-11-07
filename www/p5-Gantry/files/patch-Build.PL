@@ -1,6 +1,6 @@
---- ./Build.PL.orig	2009-07-14 17:08:45.608765850 -0400
-+++ ./Build.PL	2009-07-14 17:40:19.239457739 -0400
-@@ -106,27 +106,6 @@
+--- Build.PL.orig	2010-01-14 01:33:31.000000000 +0800
++++ Build.PL	2013-11-07 20:14:30.000000000 +0800
+@@ -107,27 +107,6 @@ if (! $template_path) {
  
  $build->notes( install_web_directory => $template_path );
  
@@ -28,7 +28,16 @@
  $build->create_build_script;
  
  sub _custom_code {
-@@ -157,7 +136,6 @@
+@@ -151,14 +130,13 @@ sub _custom_code {
+ 
+         my $install_base = $self->install_destination('lib') 
+             || $p->{install_sets}{site}{lib};
+-        
+-        my $initf = "$install_base/$p->{dist_name}/Init.pm";
++        my $destdir = $self->destdir;
++        my $initf = "$destdir$install_base/$p->{dist_name}/Init.pm";
+                 
+         $self->SUPER::ACTION_install();
  
          my $tmpl_dir = $self->notes( 'install_web_directory' );
              
@@ -36,7 +45,7 @@
  
              # write Init.pm file with install options
  
-@@ -235,10 +213,6 @@
+@@ -236,10 +214,6 @@ EO_INIT
              else {
                  print "\n$num Gantry templates copied to $tmpl_dir\n";
              }

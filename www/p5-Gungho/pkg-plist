@@ -1,4 +1,57 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gungho/.packlist
+bin/gungho
+%%PERL5_MAN3%%/Gungho.3.gz
+%%PERL5_MAN3%%/Gungho::Base.3.gz
+%%PERL5_MAN3%%/Gungho::Base::Class.3.gz
+%%PERL5_MAN3%%/Gungho::Component.3.gz
+%%PERL5_MAN3%%/Gungho::Component::Authentication.3.gz
+%%PERL5_MAN3%%/Gungho::Component::Authentication::Basic.3.gz
+%%PERL5_MAN3%%/Gungho::Component::BlockPrivateIP.3.gz
+%%PERL5_MAN3%%/Gungho::Component::Cache.3.gz
+%%PERL5_MAN3%%/Gungho::Component::Core.3.gz
+%%PERL5_MAN3%%/Gungho::Component::RobotRules.3.gz
+%%PERL5_MAN3%%/Gungho::Component::RobotRules::Rule.3.gz
+%%PERL5_MAN3%%/Gungho::Component::RobotRules::Storage.3.gz
+%%PERL5_MAN3%%/Gungho::Component::RobotRules::Storage::Cache.3.gz
+%%PERL5_MAN3%%/Gungho::Component::RobotRules::Storage::DB_File.3.gz
+%%PERL5_MAN3%%/Gungho::Component::RobotsMETA.3.gz
+%%PERL5_MAN3%%/Gungho::Component::Scraper.3.gz
+%%PERL5_MAN3%%/Gungho::Component::Setup.3.gz
+%%PERL5_MAN3%%/Gungho::Component::Throttle.3.gz
+%%PERL5_MAN3%%/Gungho::Component::Throttle::Domain.3.gz
+%%PERL5_MAN3%%/Gungho::Component::Throttle::Provider.3.gz
+%%PERL5_MAN3%%/Gungho::Component::Throttle::Simple.3.gz
+%%PERL5_MAN3%%/Gungho::Component::Throttle::Throttler.3.gz
+%%PERL5_MAN3%%/Gungho::Engine.3.gz
+%%PERL5_MAN3%%/Gungho::Engine::Danga::Socket.3.gz
+%%PERL5_MAN3%%/Gungho::Engine::IO::Async.3.gz
+%%PERL5_MAN3%%/Gungho::Engine::POE.3.gz
+%%PERL5_MAN3%%/Gungho::Exception.3.gz
+%%PERL5_MAN3%%/Gungho::Handler.3.gz
+%%PERL5_MAN3%%/Gungho::Handler::FileWriter::Simple.3.gz
+%%PERL5_MAN3%%/Gungho::Handler::Inline.3.gz
+%%PERL5_MAN3%%/Gungho::Handler::Null.3.gz
+%%PERL5_MAN3%%/Gungho::Inline.3.gz
+%%PERL5_MAN3%%/Gungho::Log.3.gz
+%%PERL5_MAN3%%/Gungho::Log::Dispatch.3.gz
+%%PERL5_MAN3%%/Gungho::Log::Simple.3.gz
+%%PERL5_MAN3%%/Gungho::Manual::FAQ.3.gz
+%%PERL5_MAN3%%/Gungho::Manual::TODO.3.gz
+%%PERL5_MAN3%%/Gungho::Plugin.3.gz
+%%PERL5_MAN3%%/Gungho::Plugin::Apoptosis.3.gz
+%%PERL5_MAN3%%/Gungho::Plugin::RequestLog.3.gz
+%%PERL5_MAN3%%/Gungho::Plugin::RequestTimer.3.gz
+%%PERL5_MAN3%%/Gungho::Plugin::Statistics.3.gz
+%%PERL5_MAN3%%/Gungho::Plugin::Statistics::Format::XML.3.gz
+%%PERL5_MAN3%%/Gungho::Plugin::Statistics::Storage::SQLite.3.gz
+%%PERL5_MAN3%%/Gungho::Provider.3.gz
+%%PERL5_MAN3%%/Gungho::Provider::File::Simple.3.gz
+%%PERL5_MAN3%%/Gungho::Provider::Inline.3.gz
+%%PERL5_MAN3%%/Gungho::Provider::Simple.3.gz
+%%PERL5_MAN3%%/Gungho::Provider::YAML.3.gz
+%%PERL5_MAN3%%/Gungho::Request.3.gz
+%%PERL5_MAN3%%/Gungho::Request::http.3.gz
+%%PERL5_MAN3%%/Gungho::Response.3.gz
+%%PERL5_MAN3%%/Gungho::Util.3.gz
 %%SITE_PERL%%/Gungho.pm
 %%SITE_PERL%%/Gungho/Base.pm
 %%SITE_PERL%%/Gungho/Base/Class.pm
@@ -52,7 +105,9 @@
 %%SITE_PERL%%/Gungho/Request/http.pm
 %%SITE_PERL%%/Gungho/Response.pm
 %%SITE_PERL%%/Gungho/Util.pm
-bin/gungho
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gungho/.packlist
+man/man1/gungho.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gungho
 @dirrmtry %%SITE_PERL%%/Gungho/Request
 @dirrmtry %%SITE_PERL%%/Gungho/Provider/File
 @dirrmtry %%SITE_PERL%%/Gungho/Provider
@@ -74,4 +129,3 @@ bin/gungho
 @dirrmtry %%SITE_PERL%%/Gungho/Component
 @dirrmtry %%SITE_PERL%%/Gungho/Base
 @dirrmtry %%SITE_PERL%%/Gungho
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gungho

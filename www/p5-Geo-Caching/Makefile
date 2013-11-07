@@ -16,10 +16,7 @@ BUILD_DEPENDS=	p5-Geo-Cache>=0:${PORTSDIR}/misc/p5-Geo-Cache \
 		p5-Geo-Gpx>=0:${PORTSDIR}/graphics/p5-Geo-Gpx
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	Geo::Caching.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
