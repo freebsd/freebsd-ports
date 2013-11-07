@@ -1169,6 +1169,7 @@
     SUBDIR += py-paragrep
     SUBDIR += py-pss
     SUBDIR += py-pyctpp2
+    SUBDIR += py-pyes
     SUBDIR += py-pygments
     SUBDIR += py-pystache
     SUBDIR += py-pyx12
