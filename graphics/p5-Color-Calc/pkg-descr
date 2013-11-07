@@ -1,0 +1,4 @@
+The module implements simple calculations with RGB colors.
+This can be used to create a full color scheme from a few colors.
+
+WWW: http://search.cpan.org/dist/Color-Calc/
