@@ -11,6 +11,8 @@ MASTER_SITE_SUBDIR=cherokee/1.2/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extremely fast and flexible web server
 
+BROKEN=		Does not configure
+
 USES=		gettext gmake pathfix pkgconfig
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
