@@ -11,7 +11,6 @@ MAINTAINER=	nlopes.ml@gmail.com
 COMMENT=	A fixed width sans designed especially for coders
 
 LICENSE=	OFL11
-LICENSE_PERMS=	auto-accept
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
