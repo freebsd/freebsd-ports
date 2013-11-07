@@ -4,13 +4,13 @@ bin/dvdunauthor
 bin/mpeg2desc
 bin/spumux
 bin/spuunmux
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
-%%PORTDOCS%%%%DOCSDIR%%/TODO
+man/man1/dvdauthor.1.gz
+man/man1/dvddirdel.1.gz
+man/man1/dvdunauthor.1.gz
+man/man1/mpeg2desc.1.gz
+man/man1/spumux.1.gz
+man/man1/spuunmux.1.gz
 %%DATADIR%%/common.xsd
 %%DATADIR%%/dvdauthor.xsd
 %%DATADIR%%/spumux.xsd
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

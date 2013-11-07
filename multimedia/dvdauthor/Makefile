@@ -6,25 +6,26 @@ PORTVERSION=	0.7.1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Makes a DVD file structure from one or more MPEG2 streams
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	dvdread:${PORTSDIR}/multimedia/libdvdread \
-		fribidi:${PORTSDIR}/converters/fribidi \
-		freetype:${PORTSDIR}/print/freetype2 \
-		png15:${PORTSDIR}/graphics/png \
-		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread \
+		libfribidi.so:${PORTSDIR}/converters/fribidi \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		pkgconfig iconv
+USES=		gmake iconv pkgconfig
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+
+PORTDOCS=	*
 
 DOCSRCDIR1=	${WRKSRC}
 DOC_FILES1=	AUTHORS ChangeLog README TODO
@@ -32,9 +33,7 @@ DOC_FILES1=	AUTHORS ChangeLog README TODO
 DOCSRCDIR2=	${WRKDIR}
 DOC_FILES2=	README.FreeBSD
 
-MAN1=		dvdauthor.1 dvddirdel.1 dvdunauthor.1 mpeg2desc.1 spumux.1 spuunmux.1
-
-OPTIONS_DEFINE=	VIDEO-FORMAT IMAGEMAGICK
+OPTIONS_DEFINE=	DOCS IMAGEMAGICK VIDEO-FORMAT
 
 OPTIONS_SINGLE=	VIDEO-FORMAT
 OPTIONS_SINGLE_VIDEO-FORMAT=	NTSC PAL
@@ -45,7 +44,8 @@ PAL_DESC=	Default video format PAL
 
 SUB_FILES=	README.FreeBSD
 
-NO_STAGE=	yes
+IMAGEMAGICK_LIB_DEPENDS=	libMagick++.so:${PORTSDIR}/graphics/ImageMagick
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNTSC}
@@ -60,21 +60,15 @@ CONFIGURE_ENV+=	--enable-default-video-format=PAL
 .endif
 .endif
 
-.if ${PORT_OPTIONS:MIMAGEMAGICK}
-LIB_DEPENDS+=	Magick:${PORTSDIR}/graphics/ImageMagick
-.endif
-
 pre-configure:
-.if !${PORT_OPTIONS:MIMAGEMAGICK}
+.if ! ${PORT_OPTIONS:MIMAGEMAGICK}
 	@${REINPLACE_CMD} 's|usemagick=1|usemagick=0|g' \
 		${WRKSRC}/configure
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
