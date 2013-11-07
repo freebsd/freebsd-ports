@@ -33,6 +33,7 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 USES=		perl5
 USE_PERL5=	modbuild
 CONFIGURE_ARGS=	</dev/null
+PLIST_SUB+=	WWWDIR=${WWWDIR}
 
 WWWDIR=		${PREFIX}/www/${PORTNAME:L}
 
@@ -40,8 +41,5 @@ post-patch:
 	${REINPLACE_CMD} -e 's,/home/httpd/html/gantry,${WWWDIR},g' \
 		-e 's,\$ENV{'GANTRY_TEMPLATE_PATH'},${WWWDIR},g' \
 	    ${WRKSRC}/Build.PL
-
-pre-su-install:
-	@${MKDIR} ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>
