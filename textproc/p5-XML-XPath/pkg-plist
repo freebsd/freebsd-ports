@@ -1,28 +1,44 @@
 bin/xpath
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XPath/.packlist
-%%SITE_PERL%%/XML/XPath/Node/Namespace.pm
-%%SITE_PERL%%/XML/XPath/Node/Comment.pm
+%%PERL5_MAN3%%/XML::XPath.3.gz
+%%PERL5_MAN3%%/XML::XPath::Boolean.3.gz
+%%PERL5_MAN3%%/XML::XPath::Builder.3.gz
+%%PERL5_MAN3%%/XML::XPath::Literal.3.gz
+%%PERL5_MAN3%%/XML::XPath::Node.3.gz
+%%PERL5_MAN3%%/XML::XPath::Node::Attribute.3.gz
+%%PERL5_MAN3%%/XML::XPath::Node::Comment.3.gz
+%%PERL5_MAN3%%/XML::XPath::Node::Element.3.gz
+%%PERL5_MAN3%%/XML::XPath::Node::Namespace.3.gz
+%%PERL5_MAN3%%/XML::XPath::Node::PI.3.gz
+%%PERL5_MAN3%%/XML::XPath::Node::Text.3.gz
+%%PERL5_MAN3%%/XML::XPath::NodeSet.3.gz
+%%PERL5_MAN3%%/XML::XPath::Number.3.gz
+%%PERL5_MAN3%%/XML::XPath::PerlSAX.3.gz
+%%PERL5_MAN3%%/XML::XPath::XMLParser.3.gz
+%%SITE_PERL%%/XML/XPath.pm
+%%SITE_PERL%%/XML/XPath/Boolean.pm
+%%SITE_PERL%%/XML/XPath/Builder.pm
+%%SITE_PERL%%/XML/XPath/Expr.pm
+%%SITE_PERL%%/XML/XPath/Function.pm
+%%SITE_PERL%%/XML/XPath/Literal.pm
+%%SITE_PERL%%/XML/XPath/LocationPath.pm
+%%SITE_PERL%%/XML/XPath/Node.pm
 %%SITE_PERL%%/XML/XPath/Node/Attribute.pm
+%%SITE_PERL%%/XML/XPath/Node/Comment.pm
+%%SITE_PERL%%/XML/XPath/Node/Element.pm
+%%SITE_PERL%%/XML/XPath/Node/Namespace.pm
 %%SITE_PERL%%/XML/XPath/Node/PI.pm
 %%SITE_PERL%%/XML/XPath/Node/Text.pm
-%%SITE_PERL%%/XML/XPath/Node/Element.pm
-%%SITE_PERL%%/XML/XPath/Root.pm
-%%SITE_PERL%%/XML/XPath/Variable.pm
-%%SITE_PERL%%/XML/XPath/Node.pm
-%%SITE_PERL%%/XML/XPath/LocationPath.pm
-%%SITE_PERL%%/XML/XPath/Function.pm
-%%SITE_PERL%%/XML/XPath/Builder.pm
-%%SITE_PERL%%/XML/XPath/Number.pm
-%%SITE_PERL%%/XML/XPath/Literal.pm
-%%SITE_PERL%%/XML/XPath/Parser.pm
 %%SITE_PERL%%/XML/XPath/NodeSet.pm
-%%SITE_PERL%%/XML/XPath/Step.pm
-%%SITE_PERL%%/XML/XPath/XMLParser.pm
-%%SITE_PERL%%/XML/XPath/Expr.pm
+%%SITE_PERL%%/XML/XPath/Number.pm
+%%SITE_PERL%%/XML/XPath/Parser.pm
 %%SITE_PERL%%/XML/XPath/PerlSAX.pm
-%%SITE_PERL%%/XML/XPath/Boolean.pm
-%%SITE_PERL%%/XML/XPath.pm
-@dirrm %%SITE_PERL%%/XML/XPath/Node
+%%SITE_PERL%%/XML/XPath/Root.pm
+%%SITE_PERL%%/XML/XPath/Step.pm
+%%SITE_PERL%%/XML/XPath/Variable.pm
+%%SITE_PERL%%/XML/XPath/XMLParser.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XPath/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XPath
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/XPath/Node
 @dirrmtry %%SITE_PERL%%/XML/XPath
 @dirrmtry %%SITE_PERL%%/XML

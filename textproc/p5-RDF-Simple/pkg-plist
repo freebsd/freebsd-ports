@@ -1,3 +1,9 @@
+%%PERL5_MAN3%%/RDF::Simple.3.gz
+%%PERL5_MAN3%%/RDF::Simple::NS.3.gz
+%%PERL5_MAN3%%/RDF::Simple::Parser.3.gz
+%%PERL5_MAN3%%/RDF::Simple::Parser::Handler.3.gz
+%%PERL5_MAN3%%/RDF::Simple::Serialiser.3.gz
+%%PERL5_MAN3%%/RDF::Simple::Serializer.3.gz
 %%SITE_PERL%%/RDF/Simple.pm
 %%SITE_PERL%%/RDF/Simple/NS.pm
 %%SITE_PERL%%/RDF/Simple/Parser.pm

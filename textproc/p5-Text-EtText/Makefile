@@ -17,10 +17,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Text::EtText.3 Text::EtText::DefaultGlossary.3 \
-		Text::EtText::LinkGlossary.3 Text::EtText::EtText2HTML.3 \
-		Text::EtText::HTML2EtText.3
-MAN1=		ethtml2text.1 ettext2html.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

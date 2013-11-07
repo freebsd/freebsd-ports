@@ -1,3 +1,12 @@
+%%PERL5_MAN3%%/Data::Phrasebook.3.gz
+%%PERL5_MAN3%%/Data::Phrasebook::Debug.3.gz
+%%PERL5_MAN3%%/Data::Phrasebook::Generic.3.gz
+%%PERL5_MAN3%%/Data::Phrasebook::Loader.3.gz
+%%PERL5_MAN3%%/Data::Phrasebook::Loader::Base.3.gz
+%%PERL5_MAN3%%/Data::Phrasebook::Loader::Text.3.gz
+%%PERL5_MAN3%%/Data::Phrasebook::Plain.3.gz
+%%PERL5_MAN3%%/Data::Phrasebook::SQL.3.gz
+%%PERL5_MAN3%%/Data::Phrasebook::SQL::Query.3.gz
 %%SITE_PERL%%/Data/Phrasebook.pm
 %%SITE_PERL%%/Data/Phrasebook/Debug.pm
 %%SITE_PERL%%/Data/Phrasebook/Generic.pm
@@ -10,7 +19,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Phrasebook/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Phrasebook
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrmtry %%SITE_PERL%%/Data/Phrasebook/Loader
 @dirrmtry %%SITE_PERL%%/Data/Phrasebook/SQL
+@dirrmtry %%SITE_PERL%%/Data/Phrasebook/Loader
 @dirrmtry %%SITE_PERL%%/Data/Phrasebook
 @dirrmtry %%SITE_PERL%%/Data

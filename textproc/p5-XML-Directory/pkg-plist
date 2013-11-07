@@ -1,9 +1,13 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Directory/.packlist
+%%PERL5_MAN3%%/XML::Directory.3.gz
+%%PERL5_MAN3%%/XML::Directory::Apache.3.gz
+%%PERL5_MAN3%%/XML::Directory::SAX.3.gz
+%%PERL5_MAN3%%/XML::Directory::String.3.gz
 %%SITE_PERL%%/XML/Directory.pm
 %%SITE_PERL%%/XML/Directory/Apache.pm
 %%SITE_PERL%%/XML/Directory/SAX.pm
 %%SITE_PERL%%/XML/Directory/String.pm
-@dirrm %%SITE_PERL%%/XML/Directory
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Directory
-@dirrmtry %%SITE_PERL%%/XML
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Directory/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Directory
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/Directory
+@dirrmtry %%SITE_PERL%%/XML

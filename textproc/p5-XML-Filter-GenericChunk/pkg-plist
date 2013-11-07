@@ -1,9 +1,10 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/GenericChunk/.packlist
+%%PERL5_MAN3%%/XML::Filter::CharacterChunk.3.gz
+%%PERL5_MAN3%%/XML::Filter::GenericChunk.3.gz
 %%SITE_PERL%%/XML/Filter/CharacterChunk.pm
 %%SITE_PERL%%/XML/Filter/GenericChunk.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/GenericChunk
-@dirrmtry %%SITE_PERL%%/XML/Filter
-@dirrmtry %%SITE_PERL%%/XML
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/GenericChunk/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/GenericChunk
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/Filter
+@dirrmtry %%SITE_PERL%%/XML

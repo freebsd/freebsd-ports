@@ -13,7 +13,4 @@ COMMENT=	OO interface for the gnu regex engine
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		POSIX::Regex.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,3 +1,7 @@
+%%PERL5_MAN3%%/XML::Feed.3.gz
+%%PERL5_MAN3%%/XML::Feed::Content.3.gz
+%%PERL5_MAN3%%/XML::Feed::Enclosure.3.gz
+%%PERL5_MAN3%%/XML::Feed::Entry.3.gz
 %%SITE_PERL%%/XML/Feed.pm
 %%SITE_PERL%%/XML/Feed/Content.pm
 %%SITE_PERL%%/XML/Feed/Enclosure.pm

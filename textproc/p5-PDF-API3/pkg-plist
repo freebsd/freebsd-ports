@@ -1,5 +1,163 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/API3/.packlist
+%%PERL5_MAN3%%/PDF::API3.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Annotation.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::PDF::Array.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::PDF::Bool.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::PDF::Dict.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::PDF::File.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::PDF::Filter.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::PDF::Name.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::PDF::Null.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::PDF::Number.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::PDF::Objind.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::PDF::Page.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::PDF::Pages.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::PDF::String.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::PDF::Utils.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::AATKern.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::AATutils.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Anchor.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Bsln.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Cmap.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Coverage.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Cvt_.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Delta.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Fdsc.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Feat.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Fmtx.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Font.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Fpgm.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::GDEF.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::GPOS.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::GSUB.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Glyf.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Glyph.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Hdmx.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Head.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Hhea.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Hmtx.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Kern.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Kern::ClassArray.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Kern::CompactClassArray.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Kern::OrderedList.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Kern::StateTable.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Kern::Subtable.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::LTSH.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Loca.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Maxp.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Mort.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Mort::Chain.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Mort::Contextual.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Mort::Insertion.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Mort::Ligature.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Mort::Noncontextual.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Mort::Rearrangement.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Mort::Subtable.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Name.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::OS_2.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::OldCmap.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::OldMort.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::PCLT.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Post.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Prep.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Prop.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Segarr.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Table.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Ttc.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Ttopen.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Utils.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Vhea.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::Vmtx.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Basic::TTF::XMLparse.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Content.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Content::Text.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::HOWTO.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Lite.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::NamedDestination.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Outline.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Outlines.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Page.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::BaseFont.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::CIDFont.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::CIDFont::CJKFont.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::CIDFont::CJKFont::adobemingstdlightacro.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::CIDFont::CJKFont::adobemyungjostdmediumacro.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::CIDFont::CJKFont::adobesongstdlightacro.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::CIDFont::CJKFont::kozgopromediumacro.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::CIDFont::CJKFont::kozminproregularacro.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::CIDFont::CMap::japanese.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::CIDFont::CMap::korean.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::CIDFont::CMap::simplified.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::CIDFont::CMap::traditional.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::CIDFont::TrueType.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::CIDFont::TrueType::FontFile.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::ColorSpace.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::ColorSpace::DeviceN.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::ColorSpace::Indexed.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::ColorSpace::Indexed::ACTFile.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::ColorSpace::Indexed::Hue.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::ColorSpace::Indexed::WebColor.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::ColorSpace::Separation.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::ExtGState.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::BdFont.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::bankgothic.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::courier.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::courierbold.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::courierboldoblique.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::courieroblique.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::georgia.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::georgiabold.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::georgiabolditalic.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::georgiaitalic.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::helvetica.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::helveticabold.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::helveticaboldoblique.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::helveticaoblique.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::symbol.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::timesbold.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::timesbolditalic.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::timesitalic.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::timesroman.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::trebuchet.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::trebuchetbold.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::trebuchetbolditalic.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::trebuchetitalic.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::verdana.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::verdanabold.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::verdanabolditalic.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::verdanaitalic.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::webdings.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::wingdings.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::CoreFont::zapfdingbats.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::Postscript.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::SynFont.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Font::neTrueType.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Pattern.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::Shading.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::UniFont.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::XObject.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::XObject::Form.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::XObject::Form::BarCode.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::XObject::Form::BarCode::codabar.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::XObject::Form::BarCode::code128.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::XObject::Form::BarCode::code3of9.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::XObject::Form::BarCode::ean13.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::XObject::Form::BarCode::int2of5.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::XObject::Form::Hybrid.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::XObject::Image.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::XObject::Image::GD.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::XObject::Image::GIF.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::XObject::Image::JPEG.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::XObject::Image::PNG.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::XObject::Image::PNM.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Resource::XObject::Image::TIFF.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Util.3.gz
+%%PERL5_MAN3%%/PDF::API3::Compat::API2::Win32.3.gz
 %%SITE_PERL%%/PDF/API3.pm
+%%SITE_PERL%%/PDF/API3/Compat/API2.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Annotation.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/PDF/Array.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/PDF/Bool.pm
@@ -37,15 +195,16 @@
 %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Head.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Hhea.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Hmtx.pm
+%%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Kern.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Kern/ClassArray.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Kern/CompactClassArray.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Kern/OrderedList.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Kern/StateTable.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Kern/Subtable.pm
-%%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Kern.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/LTSH.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Loca.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Maxp.pm
+%%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Mort.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Mort/Chain.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Mort/Contextual.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Mort/Insertion.pm
@@ -53,7 +212,6 @@
 %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Mort/Noncontextual.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Mort/Rearrangement.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Mort/Subtable.pm
-%%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Mort.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Name.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/OS_2.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/OldCmap.pm
@@ -73,8 +231,8 @@
 %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Vmtx.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Win32.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/XMLparse.pm
-%%SITE_PERL%%/PDF/API3/Compat/API2/Content/Text.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Content.pm
+%%SITE_PERL%%/PDF/API3/Compat/API2/Content/Text.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/HOWTO.pod
 %%SITE_PERL%%/PDF/API3/Compat/API2/Lite.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Matrix.pm
@@ -82,29 +240,32 @@
 %%SITE_PERL%%/PDF/API3/Compat/API2/Outline.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Outlines.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Page.pm
+%%SITE_PERL%%/PDF/API3/Compat/API2/Resource.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/BaseFont.pm
+%%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont.pm
+%%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont/CJKFont.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont/CJKFont/adobemingstdlightacro.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont/CJKFont/adobemyungjostdmediumacro.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont/CJKFont/adobesongstdlightacro.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont/CJKFont/kozgopromediumacro.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont/CJKFont/kozminproregularacro.pm
-%%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont/CJKFont.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont/CMap/japanese.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont/CMap/korean.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont/CMap/simplified.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont/CMap/traditional.pm
-%%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont/TrueType/FontFile.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont/TrueType.pm
-%%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont.pm
+%%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont/TrueType/FontFile.pm
+%%SITE_PERL%%/PDF/API3/Compat/API2/Resource/ColorSpace.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/ColorSpace/DeviceN.pm
+%%SITE_PERL%%/PDF/API3/Compat/API2/Resource/ColorSpace/Indexed.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/ColorSpace/Indexed/ACTFile.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/ColorSpace/Indexed/Hue.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/ColorSpace/Indexed/WebColor.pm
-%%SITE_PERL%%/PDF/API3/Compat/API2/Resource/ColorSpace/Indexed.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/ColorSpace/Separation.pm
-%%SITE_PERL%%/PDF/API3/Compat/API2/Resource/ColorSpace.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/ExtGState.pm
+%%SITE_PERL%%/PDF/API3/Compat/API2/Resource/Font.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/Font/BdFont.pm
+%%SITE_PERL%%/PDF/API3/Compat/API2/Resource/Font/CoreFont.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/Font/CoreFont/bankgothic.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/Font/CoreFont/courier.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/Font/CoreFont/courierbold.pm
@@ -134,34 +295,31 @@
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/Font/CoreFont/webdings.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/Font/CoreFont/wingdings.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/Font/CoreFont/zapfdingbats.pm
-%%SITE_PERL%%/PDF/API3/Compat/API2/Resource/Font/CoreFont.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/Font/Postscript.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/Font/SynFont.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/Font/neTrueType.pm
-%%SITE_PERL%%/PDF/API3/Compat/API2/Resource/Font.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/Pattern.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/Shading.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/UniFont.pm
+%%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject.pm
+%%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Form.pm
+%%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Form/BarCode.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Form/BarCode/codabar.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Form/BarCode/code128.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Form/BarCode/code3of9.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Form/BarCode/ean13.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Form/BarCode/int2of5.pm
-%%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Form/BarCode.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Form/Hybrid.pm
-%%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Form.pm
+%%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Image.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Image/GD.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Image/GIF.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Image/JPEG.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Image/PNG.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Image/PNM.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Image/TIFF.pm
-%%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Image.pm
-%%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/unicolor.txt
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/uniglyph.txt
 %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/unipaper.txt
-%%SITE_PERL%%/PDF/API3/Compat/API2/Resource.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/UniWrap.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Util.pm
 %%SITE_PERL%%/PDF/API3/Compat/API2/Win32.pm
@@ -194,30 +352,30 @@
 %%SITE_PERL%%/PDF/API3/Compat/API2/fonts/langcover.txt
 %%SITE_PERL%%/PDF/API3/Compat/API2/fonts/status.txt
 %%SITE_PERL%%/PDF/API3/Compat/API2/fonts/unicover.txt
-%%SITE_PERL%%/PDF/API3/Compat/API2.pm
-@dirrm %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/PDF
-@dirrm %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Kern
-@dirrm %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Mort
-@dirrm %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF
-@dirrm %%SITE_PERL%%/PDF/API3/Compat/API2/Basic
-@dirrm %%SITE_PERL%%/PDF/API3/Compat/API2/Content
-@dirrm %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont/CJKFont
-@dirrm %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont/CMap
-@dirrm %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont/TrueType
-@dirrm %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont
-@dirrm %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/ColorSpace/Indexed
-@dirrm %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/ColorSpace
-@dirrm %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/Font/CoreFont
-@dirrm %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/Font
-@dirrm %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Form/BarCode
-@dirrm %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Form
-@dirrm %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Image
-@dirrm %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject
-@dirrm %%SITE_PERL%%/PDF/API3/Compat/API2/Resource
-@dirrm %%SITE_PERL%%/PDF/API3/Compat/API2/fonts
-@dirrm %%SITE_PERL%%/PDF/API3/Compat/API2
-@dirrm %%SITE_PERL%%/PDF/API3/Compat
-@dirrm %%SITE_PERL%%/PDF/API3
-@dirrmtry %%SITE_PERL%%/PDF
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/API3
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/API3/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/API3
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF
+@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/fonts
+@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Image
+@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Form/BarCode
+@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject/Form
+@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/XObject
+@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/Font/CoreFont
+@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/Font
+@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/ColorSpace/Indexed
+@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/ColorSpace
+@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont/TrueType
+@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont/CMap
+@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont/CJKFont
+@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Resource/CIDFont
+@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Resource
+@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Content
+@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Mort
+@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF/Kern
+@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/TTF
+@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Basic/PDF
+@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2/Basic
+@dirrmtry %%SITE_PERL%%/PDF/API3/Compat/API2
+@dirrmtry %%SITE_PERL%%/PDF/API3/Compat
+@dirrmtry %%SITE_PERL%%/PDF/API3
+@dirrmtry %%SITE_PERL%%/PDF

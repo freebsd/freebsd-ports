@@ -21,16 +21,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		lpod_test.1
-MAN3=		ODF::lpOD.3 \
-		ODF::lpOD::Common.3 \
-		ODF::lpOD::Document.3 \
-		ODF::lpOD::Element.3 \
-		ODF::lpOD::StructuredContainer.3 \
-		ODF::lpOD::Style.3 \
-		ODF::lpOD::Table.3 \
-		ODF::lpOD::TextElement.3 \
-		ODF::lpOD::Tutorial.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

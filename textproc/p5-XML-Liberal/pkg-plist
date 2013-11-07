@@ -1,4 +1,5 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Liberal/.packlist
+%%PERL5_MAN3%%/XML::Liberal.3.gz
+%%PERL5_MAN3%%/XML::Liberal::Error.3.gz
 %%SITE_PERL%%/XML/Liberal.pm
 %%SITE_PERL%%/XML/Liberal/Error.pm
 %%SITE_PERL%%/XML/Liberal/LibXML.pm
@@ -18,8 +19,9 @@
 %%SITE_PERL%%/XML/Liberal/Remedy/UndeclaredNS.pm
 %%SITE_PERL%%/XML/Liberal/Remedy/UnquotedAttribute.pm
 %%SITE_PERL%%/XML/Liberal/Remedy/XHTMLEmptyTag.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Liberal/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Liberal
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML/Liberal/Remedy
 @dirrmtry %%SITE_PERL%%/XML/Liberal
 @dirrmtry %%SITE_PERL%%/XML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Liberal
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML

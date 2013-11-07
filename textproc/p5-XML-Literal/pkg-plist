@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Literal/.packlist
+%%PERL5_MAN3%%/XML::Literal.3.gz
 %%SITE_PERL%%/XML/Literal.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Literal/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Literal
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML

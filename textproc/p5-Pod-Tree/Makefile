@@ -18,21 +18,7 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		mod2html.1 perl2html.1 pods2html.1 podtree2html.1
-MAN3=		Pod::Tree.3 \
-		Pod::Tree::HTML.3 \
-		Pod::Tree::Node.3 \
-		Pod::Tree::PerlBin.3 \
-		Pod::Tree::PerlDist.3 \
-		Pod::Tree::PerlFunc.3 \
-		Pod::Tree::PerlLib.3 \
-		Pod::Tree::PerlMap.3 \
-		Pod::Tree::PerlPod.3 \
-		Pod::Tree::PerlTop.3 \
-		Pod::Tree::Pod.3
-
 # conflict with pod2html in perl 5.6 or above
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's/pod2html //g' ${WRKSRC}/Makefile.PL
 	${REINPLACE_CMD} -e '/pod2html/d' ${WRKSRC}/MANIFEST

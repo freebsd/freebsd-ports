@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/BufferText/.packlist
+%%PERL5_MAN3%%/XML::Filter::BufferText.3.gz
 %%SITE_PERL%%/XML/Filter/BufferText.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/BufferText
-@dirrmtry %%SITE_PERL%%/XML/Filter
-@dirrmtry %%SITE_PERL%%/XML
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/BufferText/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/BufferText
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/Filter
+@dirrmtry %%SITE_PERL%%/XML

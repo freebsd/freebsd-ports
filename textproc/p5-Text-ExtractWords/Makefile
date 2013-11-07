@@ -13,7 +13,4 @@ COMMENT=	Perl extension for extract words from strings
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Text::ExtractWords.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

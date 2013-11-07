@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Lingua::EN::Infinitive.3.gz
 %%SITE_PERL%%/Lingua/EN/Infinitive.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Infinitive/.packlist
-@dirrmtry %%SITE_PERL%%/Lingua/EN
-@dirrmtry %%SITE_PERL%%/Lingua
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Infinitive
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
+@dirrmtry %%SITE_PERL%%/Lingua/EN
+@dirrmtry %%SITE_PERL%%/Lingua

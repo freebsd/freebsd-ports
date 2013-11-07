@@ -1,6 +1,15 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/STX/.packlist
 bin/stxcmd.pl
 bin/stxview.pl
+%%PERL5_MAN3%%/XML::STX.3.gz
+%%PERL5_MAN3%%/XML::STX::Base.3.gz
+%%PERL5_MAN3%%/XML::STX::Buffer.3.gz
+%%PERL5_MAN3%%/XML::STX::Functions.3.gz
+%%PERL5_MAN3%%/XML::STX::Parser.3.gz
+%%PERL5_MAN3%%/XML::STX::Runtime.3.gz
+%%PERL5_MAN3%%/XML::STX::STXPath.3.gz
+%%PERL5_MAN3%%/XML::STX::Stylesheet.3.gz
+%%PERL5_MAN3%%/XML::STX::TrAX.3.gz
+%%PERL5_MAN3%%/XML::STX::Writer.3.gz
 %%SITE_PERL%%/XML/STX.pm
 %%SITE_PERL%%/XML/STX/Base.pm
 %%SITE_PERL%%/XML/STX/Buffer.pm
@@ -11,14 +20,15 @@ bin/stxview.pl
 %%SITE_PERL%%/XML/STX/Stylesheet.pm
 %%SITE_PERL%%/XML/STX/TrAX.pm
 %%SITE_PERL%%/XML/STX/Writer.pm
-@dirrm %%SITE_PERL%%/XML/STX
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/STX
-@dirrmtry %%SITE_PERL%%/XML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-%%PORTDOCS%%%%EXAMPLESDIR%%/stx-filter.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/tester.pl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/STX/.packlist
 %%PORTDOCS%%%%DOCSDIR%%/STX.html
 %%PORTDOCS%%%%DOCSDIR%%/TrAXref.html
 %%PORTDOCS%%%%DOCSDIR%%/TrAXref.pod
+%%PORTDOCS%%%%EXAMPLESDIR%%/stx-filter.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tester.pl
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/STX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/STX
+@dirrmtry %%SITE_PERL%%/XML

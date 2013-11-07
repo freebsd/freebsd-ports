@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/XML::DTDParser.3.gz
 %%SITE_PERL%%/XML/DTDParser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DTDParser/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DTDParser
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DTDParser
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML

@@ -24,10 +24,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		POE::Filter::XML.3 \
-		POE::Filter::XML::Handler.3 \
-		POE::Filter::XML::NS.3 \
-		POE::Filter::XML::Node.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

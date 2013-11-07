@@ -1,8 +1,9 @@
+%%PERL5_MAN3%%/Lingua::Preferred.3.gz
 %%SITE_PERL%%/Lingua/Preferred.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Preferred/.packlist
 %%SITE_PERL%%/auto/Lingua/Preferred/autosplit.ix
-@dirrm %%SITE_PERL%%/auto/Lingua/Preferred
-@dirrmtry %%SITE_PERL%%/auto/Lingua
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Preferred
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Preferred/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Preferred
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
+@dirrmtry %%SITE_PERL%%/auto/Lingua/Preferred
+@dirrmtry %%SITE_PERL%%/auto/Lingua
 @dirrmtry %%SITE_PERL%%/Lingua

@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/XML::Bare.3.gz
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/Bare.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Bare/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Bare/Bare.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Bare/Bare.so
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/Bare.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Bare
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Bare
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML

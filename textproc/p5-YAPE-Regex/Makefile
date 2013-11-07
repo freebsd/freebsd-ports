@@ -14,7 +14,4 @@ COMMENT=	Yet Another Parser/Extractor for Regular Expressions
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		YAPE::Regex.3 YAPE::Regex::Element.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Lingua::EN::MatchNames.3.gz
 %%SITE_PERL%%/Lingua/EN/MatchNames.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/MatchNames/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/MatchNames
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/MatchNames
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
 @dirrmtry %%SITE_PERL%%/Lingua/EN

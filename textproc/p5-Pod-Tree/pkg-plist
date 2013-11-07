@@ -2,6 +2,17 @@ bin/mod2html
 bin/perl2html
 bin/pods2html
 bin/podtree2html
+%%PERL5_MAN3%%/Pod::Tree.3.gz
+%%PERL5_MAN3%%/Pod::Tree::HTML.3.gz
+%%PERL5_MAN3%%/Pod::Tree::Node.3.gz
+%%PERL5_MAN3%%/Pod::Tree::PerlBin.3.gz
+%%PERL5_MAN3%%/Pod::Tree::PerlDist.3.gz
+%%PERL5_MAN3%%/Pod::Tree::PerlFunc.3.gz
+%%PERL5_MAN3%%/Pod::Tree::PerlLib.3.gz
+%%PERL5_MAN3%%/Pod::Tree::PerlMap.3.gz
+%%PERL5_MAN3%%/Pod::Tree::PerlPod.3.gz
+%%PERL5_MAN3%%/Pod::Tree::PerlTop.3.gz
+%%PERL5_MAN3%%/Pod::Tree::Pod.3.gz
 %%SITE_PERL%%/Pod/Tree.pm
 %%SITE_PERL%%/Pod/Tree/HTML.pm
 %%SITE_PERL%%/Pod/Tree/Node.pm
@@ -14,8 +25,12 @@ bin/podtree2html
 %%SITE_PERL%%/Pod/Tree/PerlTop.pm
 %%SITE_PERL%%/Pod/Tree/PerlUtil.pm
 %%SITE_PERL%%/Pod/Tree/Pod.pm
-@dirrm %%SITE_PERL%%/Pod/Tree
-@dirrmtry %%SITE_PERL%%/Pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Tree/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Tree
+man/man1/mod2html.1.gz
+man/man1/perl2html.1.gz
+man/man1/pods2html.1.gz
+man/man1/podtree2html.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Tree
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
+@dirrmtry %%SITE_PERL%%/Pod/Tree
+@dirrmtry %%SITE_PERL%%/Pod

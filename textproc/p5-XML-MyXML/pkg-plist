@@ -1,7 +1,9 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/MyXML/.packlist
+%%PERL5_MAN3%%/XML::MyXML.3.gz
+%%PERL5_MAN3%%/XML::MyXML::II.3.gz
 %%SITE_PERL%%/XML/MyXML.pm
 %%SITE_PERL%%/XML/MyXML/II.pm
-@dirrmtry %%SITE_PERL%%/XML/MyXML
-@dirrmtry %%SITE_PERL%%/XML
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/MyXML/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/MyXML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/MyXML
+@dirrmtry %%SITE_PERL%%/XML

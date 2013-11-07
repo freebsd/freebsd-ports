@@ -9,6 +9,27 @@ bin/similarity_server.pl
 bin/treebankFreq.pl
 bin/wnDepths.pl
 bin/wordVectors.pl
+%%PERL5_MAN3%%/WordNet::Similarity.3.gz
+%%PERL5_MAN3%%/WordNet::Similarity::DepthFinder.3.gz
+%%PERL5_MAN3%%/WordNet::Similarity::FrequencyCounter.3.gz
+%%PERL5_MAN3%%/WordNet::Similarity::GlossFinder.3.gz
+%%PERL5_MAN3%%/WordNet::Similarity::ICFinder.3.gz
+%%PERL5_MAN3%%/WordNet::Similarity::PathFinder.3.gz
+%%PERL5_MAN3%%/WordNet::Similarity::hso.3.gz
+%%PERL5_MAN3%%/WordNet::Similarity::jcn.3.gz
+%%PERL5_MAN3%%/WordNet::Similarity::lch.3.gz
+%%PERL5_MAN3%%/WordNet::Similarity::lesk.3.gz
+%%PERL5_MAN3%%/WordNet::Similarity::lin.3.gz
+%%PERL5_MAN3%%/WordNet::Similarity::path.3.gz
+%%PERL5_MAN3%%/WordNet::Similarity::random.3.gz
+%%PERL5_MAN3%%/WordNet::Similarity::res.3.gz
+%%PERL5_MAN3%%/WordNet::Similarity::vector.3.gz
+%%PERL5_MAN3%%/WordNet::Similarity::vector_pairs.3.gz
+%%PERL5_MAN3%%/WordNet::Similarity::wup.3.gz
+%%PERL5_MAN3%%/WordNet::Tools.3.gz
+%%PERL5_MAN3%%/WordNet::get_wn_info.3.gz
+%%PERL5_MAN3%%/WordNet::stem.3.gz
+%%PERL5_MAN3%%/WordNet::vectorFile.3.gz
 %%SITE_PERL%%/WordNet/Similarity.pm
 %%SITE_PERL%%/WordNet/Similarity/DepthFinder.pm
 %%SITE_PERL%%/WordNet/Similarity/FrequencyCounter.pm
@@ -38,6 +59,17 @@ bin/wordVectors.pl
 %%SITE_PERL%%/WordNet/vectorFile.pm
 %%SITE_PERL%%/WordNet/wordvectors.dat
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WordNet/Similarity/.packlist
+man/man1/BNCFreq.pl.1.gz
+man/man1/brownFreq.pl.1.gz
+man/man1/compounds.pl.1.gz
+man/man1/rawtextFreq.pl.1.gz
+man/man1/semCorFreq.pl.1.gz
+man/man1/semCorRawFreq.pl.1.gz
+man/man1/similarity.pl.1.gz
+man/man1/similarity_server.pl.1.gz
+man/man1/treebankFreq.pl.1.gz
+man/man1/wnDepths.pl.1.gz
+man/man1/wordVectors.pl.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WordNet/Similarity
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WordNet
 @dirrmtry %%SITE_PERL%%/WordNet/Similarity

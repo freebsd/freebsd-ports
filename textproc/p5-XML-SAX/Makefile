@@ -18,15 +18,10 @@ RUN_DEPENDS=	p5-XML-NamespaceSupport>=0.03:${PORTSDIR}/textproc/p5-XML-Namespace
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		XML::SAX.3 XML::SAX::DocumentLocator.3 XML::SAX::Intro.3 \
-		XML::SAX::ParserFactory.3 XML::SAX::PurePerl.3 \
-		XML::SAX::PurePerl::Reader.3
-
 OPTIONS_DEFINE=	WRITE_INI_OK
 
 WRITE_INI_OK_DESC=	Alter ParserDetails.ini information
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWRITE_INI_OK}

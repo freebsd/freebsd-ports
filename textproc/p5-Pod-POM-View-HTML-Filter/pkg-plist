@@ -1,11 +1,12 @@
+%%PERL5_MAN3%%/Pod::POM::View::HTML::Filter.3.gz
 %%SITE_PERL%%/Pod/POM/View/HTML/Filter.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/POM/View/HTML/Filter/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/POM/View/HTML/Filter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/POM/View/HTML/Filter
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/POM/View/HTML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/POM/View
-@dirrmtry %%SITE_PERL%%/Pod/POM/View/HTML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/POM
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
+@dirrmtry %%SITE_PERL%%/Pod/POM/View/HTML
 @dirrmtry %%SITE_PERL%%/Pod/POM/View
 @dirrmtry %%SITE_PERL%%/Pod/POM
 @dirrmtry %%SITE_PERL%%/Pod

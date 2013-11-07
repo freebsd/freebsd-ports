@@ -19,11 +19,4 @@ TEST_DEPENDS=	p5-Locale-Maketext-Gettext>=0:${PORTSDIR}/devel/p5-Locale-Maketext
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Petal.3 \
-		Petal::Cookbook.3 \
-		Petal::Deprecated.3 \
-		Petal::Hash::Test.3 \
-		Petal::I18N.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

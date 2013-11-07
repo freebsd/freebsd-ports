@@ -1,6 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/Spell/.packlist
+%%PERL5_MAN3%%/Number::Spell.3.gz
 %%SITE_PERL%%/Number/Spell.pm
 %%SITE_PERL%%/auto/Number/Spell/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/Spell/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/Spell
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number
 @dirrmtry %%SITE_PERL%%/auto/Number/Spell

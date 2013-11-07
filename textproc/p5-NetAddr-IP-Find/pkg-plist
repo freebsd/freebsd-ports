@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/NetAddr::IP::Find.3.gz
 %%SITE_PERL%%/NetAddr/IP/Find.pm
-@dirrmtry %%SITE_PERL%%/NetAddr/IP
-@dirrmtry %%SITE_PERL%%/NetAddr
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/Find/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/Find
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/Find
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr
+@dirrmtry %%SITE_PERL%%/NetAddr/IP
+@dirrmtry %%SITE_PERL%%/NetAddr

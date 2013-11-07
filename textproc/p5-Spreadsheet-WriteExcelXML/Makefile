@@ -17,12 +17,4 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Spreadsheet::WriteExcelXML.3 \
-		Spreadsheet::WriteExcelXML::Format.3 \
-		Spreadsheet::WriteExcelXML::Utility.3 \
-		Spreadsheet::WriteExcelXML::Workbook.3 \
-		Spreadsheet::WriteExcelXML::Worksheet.3 \
-		Spreadsheet::WriteExcelXML::XMLwriter.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

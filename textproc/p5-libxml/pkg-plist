@@ -1,4 +1,19 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/libxml-perl/.packlist
+%%PERL5_MAN3%%/Data::Grove.3.gz
+%%PERL5_MAN3%%/Data::Grove::Parent.3.gz
+%%PERL5_MAN3%%/Data::Grove::Visitor.3.gz
+%%PERL5_MAN3%%/XML::ESISParser.3.gz
+%%PERL5_MAN3%%/XML::Handler::CanonXMLWriter.3.gz
+%%PERL5_MAN3%%/XML::Handler::Sample.3.gz
+%%PERL5_MAN3%%/XML::Handler::Subs.3.gz
+%%PERL5_MAN3%%/XML::Handler::XMLWriter.3.gz
+%%PERL5_MAN3%%/XML::Parser::PerlSAX.3.gz
+%%PERL5_MAN3%%/XML::PatAct::ActionTempl.3.gz
+%%PERL5_MAN3%%/XML::PatAct::Amsterdam.3.gz
+%%PERL5_MAN3%%/XML::PatAct::MatchName.3.gz
+%%PERL5_MAN3%%/XML::PatAct::PatternTempl.3.gz
+%%PERL5_MAN3%%/XML::PatAct::ToObjects.3.gz
+%%PERL5_MAN3%%/XML::Perl2SAX.3.gz
+%%PERL5_MAN3%%/XML::SAX2Perl.3.gz
 %%SITE_PERL%%/Data/Grove.pm
 %%SITE_PERL%%/Data/Grove/Parent.pm
 %%SITE_PERL%%/Data/Grove/Visitor.pm
@@ -15,10 +30,11 @@
 %%SITE_PERL%%/XML/PatAct/ToObjects.pm
 %%SITE_PERL%%/XML/Perl2SAX.pm
 %%SITE_PERL%%/XML/SAX2Perl.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/libxml-perl
-@dirrmtry %%SITE_PERL%%/Data/Grove
-@dirrmtry %%SITE_PERL%%/XML/Handler
-@dirrmtry %%SITE_PERL%%/XML/Parser
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/libxml-perl/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/libxml-perl
 @dirrmtry %%SITE_PERL%%/XML/PatAct
+@dirrmtry %%SITE_PERL%%/XML/Parser
+@dirrmtry %%SITE_PERL%%/XML/Handler
 @dirrmtry %%SITE_PERL%%/XML
+@dirrmtry %%SITE_PERL%%/Data/Grove
 @dirrmtry %%SITE_PERL%%/Data

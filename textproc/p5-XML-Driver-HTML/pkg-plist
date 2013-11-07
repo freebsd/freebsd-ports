@@ -1,9 +1,10 @@
 bin/html2xhtml
+%%PERL5_MAN3%%/XML::Driver::HTML.3.gz
 %%SITE_PERL%%/XML/Driver/HTML.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Driver/HTML/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Driver/HTML
-@dirrmtry %%SITE_PERL%%/XML/Driver
-@dirrmtry %%SITE_PERL%%/XML
+man/man1/html2xhtml.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Driver/HTML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Driver
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/Driver
+@dirrmtry %%SITE_PERL%%/XML

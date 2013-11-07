@@ -1,3 +1,15 @@
+%%PERL5_MAN3%%/XML::DOM-ecmascript.3.gz
+%%PERL5_MAN3%%/XML::Grove.3.gz
+%%PERL5_MAN3%%/XML::Grove::AsCanonXML.3.gz
+%%PERL5_MAN3%%/XML::Grove::AsString.3.gz
+%%PERL5_MAN3%%/XML::Grove::Builder.3.gz
+%%PERL5_MAN3%%/XML::Grove::Factory.3.gz
+%%PERL5_MAN3%%/XML::Grove::IDs.3.gz
+%%PERL5_MAN3%%/XML::Grove::Path.3.gz
+%%PERL5_MAN3%%/XML::Grove::PerlSAX.3.gz
+%%PERL5_MAN3%%/XML::Grove::Sub.3.gz
+%%PERL5_MAN3%%/XML::Grove::Subst.3.gz
+%%PERL5_MAN3%%/XML::Grove::XPointer.3.gz
 %%SITE_PERL%%/XML/DOM-ecmascript.pod
 %%SITE_PERL%%/XML/Grove.pm
 %%SITE_PERL%%/XML/Grove/AsCanonXML.pm
@@ -11,7 +23,7 @@
 %%SITE_PERL%%/XML/Grove/Subst.pm
 %%SITE_PERL%%/XML/Grove/XPointer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Grove/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Grove
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Grove
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrm %%SITE_PERL%%/XML/Grove
+@dirrmtry %%SITE_PERL%%/XML/Grove
 @dirrmtry %%SITE_PERL%%/XML

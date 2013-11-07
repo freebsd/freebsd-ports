@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Chess::PGN::Parse.3.gz
 %%SITE_PERL%%/Chess/PGN/Parse.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chess/PGN/Parse/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chess/PGN/Parse
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chess/PGN/Parse
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chess/PGN
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chess
 @dirrmtry %%SITE_PERL%%/Chess/PGN

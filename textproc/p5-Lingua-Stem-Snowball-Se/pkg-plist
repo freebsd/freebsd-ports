@@ -1,7 +1,8 @@
 bin/stemmer-se.pl
+%%PERL5_MAN3%%/Lingua::Stem::Snowball::Se.3.gz
 %%SITE_PERL%%/Lingua/Stem/Snowball/Se.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/Snowball/Se/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/Snowball/Se
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/Snowball/Se
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/Snowball
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua

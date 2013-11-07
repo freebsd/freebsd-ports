@@ -1,3 +1,15 @@
+%%PERL5_MAN3%%/XML::XBEL.3.gz
+%%PERL5_MAN3%%/XML::XBEL::Alias.3.gz
+%%PERL5_MAN3%%/XML::XBEL::Bookmark.3.gz
+%%PERL5_MAN3%%/XML::XBEL::Folder.3.gz
+%%PERL5_MAN3%%/XML::XBEL::Separator.3.gz
+%%PERL5_MAN3%%/XML::XBEL::base.3.gz
+%%PERL5_MAN3%%/XML::XBEL::container.3.gz
+%%PERL5_MAN3%%/XML::XBEL::item.3.gz
+%%PERL5_MAN3%%/XML::XBEL::node.3.gz
+%%PERL5_MAN3%%/XML::XBEL::serialize.3.gz
+%%PERL5_MAN3%%/XML::XBEL::thingy.3.gz
+%%PERL5_MAN3%%/XML::XBEL::url.3.gz
 %%SITE_PERL%%/XML/XBEL.pm
 %%SITE_PERL%%/XML/XBEL/Alias.pm
 %%SITE_PERL%%/XML/XBEL/Bookmark.pm
@@ -10,5 +22,5 @@
 %%SITE_PERL%%/XML/XBEL/serialize.pm
 %%SITE_PERL%%/XML/XBEL/thingy.pm
 %%SITE_PERL%%/XML/XBEL/url.pm
-@dirrm %%SITE_PERL%%/XML/XBEL
+@dirrmtry %%SITE_PERL%%/XML/XBEL
 @dirrmtry %%SITE_PERL%%/XML

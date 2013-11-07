@@ -14,7 +14,4 @@ COMMENT=	Yet Another Parser/Extractor for HTML
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		YAPE::HTML.3 YAPE::HTML::Element.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

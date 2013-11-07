@@ -1,4 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XPathEngine/.packlist
+%%PERL5_MAN3%%/XML::XPathEngine.3.gz
+%%PERL5_MAN3%%/XML::XPathEngine::Boolean.3.gz
+%%PERL5_MAN3%%/XML::XPathEngine::Literal.3.gz
+%%PERL5_MAN3%%/XML::XPathEngine::NodeSet.3.gz
+%%PERL5_MAN3%%/XML::XPathEngine::Number.3.gz
 %%SITE_PERL%%/XML/XPathEngine.pm
 %%SITE_PERL%%/XML/XPathEngine/Boolean.pm
 %%SITE_PERL%%/XML/XPathEngine/Expr.pm
@@ -10,6 +14,7 @@
 %%SITE_PERL%%/XML/XPathEngine/Root.pm
 %%SITE_PERL%%/XML/XPathEngine/Step.pm
 %%SITE_PERL%%/XML/XPathEngine/Variable.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XPathEngine/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XPathEngine
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML/XPathEngine

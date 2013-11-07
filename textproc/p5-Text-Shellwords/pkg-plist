@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Text::Shellwords.3.gz
 %%SITE_PERL%%/Text/Shellwords.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Shellwords/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Shellwords
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Shellwords
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
 @dirrmtry %%SITE_PERL%%/Text

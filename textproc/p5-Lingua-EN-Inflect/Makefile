@@ -14,7 +14,4 @@ COMMENT=	Convert singular words to their plural form
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Lingua::EN::Inflect.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,8 +1,11 @@
+%%PERL5_MAN3%%/TeX::Encode.3.gz
+%%PERL5_MAN3%%/TeX::Encode::BibTeX.3.gz
+%%PERL5_MAN3%%/TeX::Encode::charmap.3.gz
 %%SITE_PERL%%/TeX/Encode.pm
 %%SITE_PERL%%/TeX/Encode/BibTeX.pm
 %%SITE_PERL%%/TeX/Encode/charmap.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/TeX/Encode/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/TeX/Encode
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/TeX/Encode
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/TeX
-@dirrm %%SITE_PERL%%/TeX/Encode
+@dirrmtry %%SITE_PERL%%/TeX/Encode
 @dirrmtry %%SITE_PERL%%/TeX

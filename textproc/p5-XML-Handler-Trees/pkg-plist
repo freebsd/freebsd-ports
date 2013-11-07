@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler/Trees/.packlist
+%%PERL5_MAN3%%/XML::Handler::Trees.3.gz
 %%SITE_PERL%%/XML/Handler/Trees.pm
-@dirrmtry %%SITE_PERL%%/XML/Handler
-@dirrmtry %%SITE_PERL%%/XML
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler/Trees
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler/Trees/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler/Trees
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/Handler
+@dirrmtry %%SITE_PERL%%/XML

@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Text::Bastardize.3.gz
 %%SITE_PERL%%/Text/Bastardize.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Bastardize/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Bastardize
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Bastardize
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
 @dirrmtry %%SITE_PERL%%/Text

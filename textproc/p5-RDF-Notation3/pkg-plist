@@ -1,4 +1,15 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF/Notation3/.packlist
+%%PERL5_MAN3%%/RDF::Notation3.3.gz
+%%PERL5_MAN3%%/RDF::Notation3::PrefTriples.3.gz
+%%PERL5_MAN3%%/RDF::Notation3::RDFCore.3.gz
+%%PERL5_MAN3%%/RDF::Notation3::RDFStore.3.gz
+%%PERL5_MAN3%%/RDF::Notation3::ReaderFile.3.gz
+%%PERL5_MAN3%%/RDF::Notation3::ReaderString.3.gz
+%%PERL5_MAN3%%/RDF::Notation3::SAX.3.gz
+%%PERL5_MAN3%%/RDF::Notation3::Template::TReader.3.gz
+%%PERL5_MAN3%%/RDF::Notation3::Template::TTriples.3.gz
+%%PERL5_MAN3%%/RDF::Notation3::Template::TXML.3.gz
+%%PERL5_MAN3%%/RDF::Notation3::Triples.3.gz
+%%PERL5_MAN3%%/RDF::Notation3::XML.3.gz
 %%SITE_PERL%%/RDF/Notation3.pm
 %%SITE_PERL%%/RDF/Notation3.pod
 %%SITE_PERL%%/RDF/Notation3/PrefTriples.pm
@@ -12,8 +23,9 @@
 %%SITE_PERL%%/RDF/Notation3/Template/TXML.pm
 %%SITE_PERL%%/RDF/Notation3/Triples.pm
 %%SITE_PERL%%/RDF/Notation3/XML.pm
-@dirrm %%SITE_PERL%%/RDF/Notation3/Template
-@dirrm %%SITE_PERL%%/RDF/Notation3
-@dirrmtry %%SITE_PERL%%/RDF
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF/Notation3
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF/Notation3/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF/Notation3
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF
+@dirrmtry %%SITE_PERL%%/RDF/Notation3/Template
+@dirrmtry %%SITE_PERL%%/RDF/Notation3
+@dirrmtry %%SITE_PERL%%/RDF

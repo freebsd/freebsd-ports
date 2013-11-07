@@ -1,5 +1,15 @@
-%%SITE_PERL%%/Lingua/Stem.pod
+%%PERL5_MAN3%%/Lingua::Stem.3.gz
+%%PERL5_MAN3%%/Lingua::Stem::AutoLoader.3.gz
+%%PERL5_MAN3%%/Lingua::Stem::Da.3.gz
+%%PERL5_MAN3%%/Lingua::Stem::De.3.gz
+%%PERL5_MAN3%%/Lingua::Stem::En.3.gz
+%%PERL5_MAN3%%/Lingua::Stem::EnBroken.3.gz
+%%PERL5_MAN3%%/Lingua::Stem::Gl.3.gz
+%%PERL5_MAN3%%/Lingua::Stem::No.3.gz
+%%PERL5_MAN3%%/Lingua::Stem::Pt.3.gz
+%%PERL5_MAN3%%/Lingua::Stem::Sv.3.gz
 %%SITE_PERL%%/Lingua/Stem.pm
+%%SITE_PERL%%/Lingua/Stem.pod
 %%SITE_PERL%%/Lingua/Stem/AutoLoader.pm
 %%SITE_PERL%%/Lingua/Stem/Da.pm
 %%SITE_PERL%%/Lingua/Stem/De.pm
@@ -10,5 +20,7 @@
 %%SITE_PERL%%/Lingua/Stem/Pt.pm
 %%SITE_PERL%%/Lingua/Stem/Sv.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
 @dirrmtry %%SITE_PERL%%/Lingua/Stem
 @dirrmtry %%SITE_PERL%%/Lingua

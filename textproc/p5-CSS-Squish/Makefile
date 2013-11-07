@@ -11,13 +11,10 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Compact many CSS files into one big file
 
 RUN_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI
-BUILD_DEPENDS:=	${RUN_DEPENDS}
-BUILD_DEPENDS+=	p5-Test-LongString>=0:${PORTSDIR}/devel/p5-Test-LongString
-
-MAN3=	CSS::Squish.3
+BUILD_DEPENDS:=	${RUN_DEPENDS} \
+		p5-Test-LongString>=0:${PORTSDIR}/devel/p5-Test-LongString
 
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -25,16 +25,9 @@ BUILD_DEPENDS=	p5-Class-ErrorHandler>=0:${PORTSDIR}/devel/p5-Class-ErrorHandler 
 		p5-XML-RSS>=1.47:${PORTSDIR}/textproc/p5-XML-RSS \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 TEST_DEPENDS=	p5-XML-RSS-LibXML>=0.30.04:${PORTSDIR}/textproc/p5-XML-RSS-LibXML
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		XML::Feed.3 \
-		XML::Feed::Content.3 \
-		XML::Feed::Enclosure.3 \
-		XML::Feed::Entry.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

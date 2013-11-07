@@ -14,7 +14,4 @@ COMMENT=	Regex::PreSuf - Given word lists, create regular expressions
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Regex::PreSuf.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

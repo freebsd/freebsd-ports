@@ -14,9 +14,6 @@ USES=		perl5
 USE_PERL5=	configure
 USE_DOS2UNIX=	Trees.pm
 
-MAN3=		XML::Handler::Trees.3
-
-NO_STAGE=	yes
 post-extract:
 	@${CHMOD} +w ${WRKSRC}/Trees.pm
 

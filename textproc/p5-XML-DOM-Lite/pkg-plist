@@ -1,17 +1,23 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DOM/Lite/.packlist
+%%PERL5_MAN3%%/XML::DOM::Lite.3.gz
+%%PERL5_MAN3%%/XML::DOM::Lite::Document.3.gz
+%%PERL5_MAN3%%/XML::DOM::Lite::NodeList.3.gz
+%%PERL5_MAN3%%/XML::DOM::Lite::Parser.3.gz
+%%PERL5_MAN3%%/XML::DOM::Lite::XPath.3.gz
+%%PERL5_MAN3%%/XML::DOM::Lite::XSLT.3.gz
 %%SITE_PERL%%/XML/DOM/Lite.pm
-%%SITE_PERL%%/XML/DOM/Lite/Parser.pm
-%%SITE_PERL%%/XML/DOM/Lite/XSLT.pm
-%%SITE_PERL%%/XML/DOM/Lite/NodeList.pm
-%%SITE_PERL%%/XML/DOM/Lite/NodeIterator.pm
-%%SITE_PERL%%/XML/DOM/Lite/XPath.pm
-%%SITE_PERL%%/XML/DOM/Lite/Serializer.pm
-%%SITE_PERL%%/XML/DOM/Lite/Node.pm
 %%SITE_PERL%%/XML/DOM/Lite/Constants.pm
 %%SITE_PERL%%/XML/DOM/Lite/Document.pm
-@dirrmtry %%SITE_PERL%%/XML/DOM/Lite
-@dirrmtry %%SITE_PERL%%/XML/DOM
-@dirrmtry %%SITE_PERL%%/XML
+%%SITE_PERL%%/XML/DOM/Lite/Node.pm
+%%SITE_PERL%%/XML/DOM/Lite/NodeIterator.pm
+%%SITE_PERL%%/XML/DOM/Lite/NodeList.pm
+%%SITE_PERL%%/XML/DOM/Lite/Parser.pm
+%%SITE_PERL%%/XML/DOM/Lite/Serializer.pm
+%%SITE_PERL%%/XML/DOM/Lite/XPath.pm
+%%SITE_PERL%%/XML/DOM/Lite/XSLT.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DOM/Lite/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DOM/Lite
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DOM
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/DOM/Lite
+@dirrmtry %%SITE_PERL%%/XML/DOM
+@dirrmtry %%SITE_PERL%%/XML

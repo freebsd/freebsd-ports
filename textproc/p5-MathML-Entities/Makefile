@@ -12,10 +12,7 @@ COMMENT=	Convert XHTML+MathML Named Entities to Numeric Character References
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAN3=	MathML::Entities.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

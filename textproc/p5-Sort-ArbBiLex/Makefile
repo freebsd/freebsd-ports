@@ -13,7 +13,4 @@ COMMENT=	Perl module to make sort functions for arbitrary sort orders
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Sort::ArbBiLex.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

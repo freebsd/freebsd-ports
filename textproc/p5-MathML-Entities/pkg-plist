@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/MathML::Entities.3.gz
 %%SITE_PERL%%/MathML/Entities.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MathML/Entities/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MathML/Entities
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MathML/Entities
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MathML
 @dirrmtry %%SITE_PERL%%/MathML

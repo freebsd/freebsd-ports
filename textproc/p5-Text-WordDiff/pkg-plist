@@ -1,6 +1,10 @@
+%%PERL5_MAN3%%/Text::WordDiff.3.gz
+%%PERL5_MAN3%%/Text::WordDiff::ANSIColor.3.gz
+%%PERL5_MAN3%%/Text::WordDiff::HTML.3.gz
+%%PERL5_MAN3%%/Text::WordDiff::HTMLTwoLines.3.gz
 %%SITE_PERL%%/Text/WordDiff.pm
+%%SITE_PERL%%/Text/WordDiff/ANSIColor.pm
 %%SITE_PERL%%/Text/WordDiff/HTML.pm
 %%SITE_PERL%%/Text/WordDiff/HTMLTwoLines.pm
-%%SITE_PERL%%/Text/WordDiff/ANSIColor.pm
-@dirrm %%SITE_PERL%%/Text/WordDiff
+@dirrmtry %%SITE_PERL%%/Text/WordDiff
 @dirrmtry %%SITE_PERL%%/Text

@@ -18,8 +18,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		XML::Directory.3 XML::Directory::Apache.3 \
-		XML::Directory::SAX.3 XML::Directory::String.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

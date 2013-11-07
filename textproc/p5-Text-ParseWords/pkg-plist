@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/Text::ParseWords.3.gz
+%%SITE_PERL%%/Text/ParseWords.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ParseWords/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ParseWords
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
+@dirrmtry %%SITE_PERL%%/Text

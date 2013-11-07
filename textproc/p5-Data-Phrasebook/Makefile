@@ -15,15 +15,4 @@ LICENSE=	ART20
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Data::Phrasebook.3 \
-	Data::Phrasebook::Debug.3 \
-	Data::Phrasebook::Generic.3 \
-	Data::Phrasebook::Loader.3 \
-	Data::Phrasebook::Loader::Base.3 \
-	Data::Phrasebook::Loader::Text.3 \
-	Data::Phrasebook::Plain.3 \
-	Data::Phrasebook::SQL.3 \
-	Data::Phrasebook::SQL::Query.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

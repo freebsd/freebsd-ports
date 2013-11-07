@@ -1,10 +1,16 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Parser/.packlist
+%%PERL5_MAN3%%/Pod::Find.3.gz
+%%PERL5_MAN3%%/Pod::InputObjects.3.gz
+%%PERL5_MAN3%%/Pod::ParseUtils.3.gz
+%%PERL5_MAN3%%/Pod::Parser.3.gz
+%%PERL5_MAN3%%/Pod::PlainText.3.gz
+%%PERL5_MAN3%%/Pod::Select.3.gz
 %%SITE_PERL%%/Pod/Find.pm
 %%SITE_PERL%%/Pod/InputObjects.pm
 %%SITE_PERL%%/Pod/ParseUtils.pm
 %%SITE_PERL%%/Pod/Parser.pm
 %%SITE_PERL%%/Pod/PlainText.pm
 %%SITE_PERL%%/Pod/Select.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Parser
-@dirrmtry %%SITE_PERL%%/Pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Parser/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Parser
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
+@dirrmtry %%SITE_PERL%%/Pod

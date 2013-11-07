@@ -25,13 +25,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		XML::Atom.3 \
-		XML::Atom::Client.3 \
-		XML::Atom::Entry.3 \
-		XML::Atom::Feed.3 \
-		XML::Atom::Person.3 \
-		XML::Atom::Server.3 \
-		XML::Atom::Util.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

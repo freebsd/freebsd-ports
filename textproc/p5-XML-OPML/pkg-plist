@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/XML::OPML.3.gz
 %%SITE_PERL%%/XML/OPML.pm
-@dirrmtry %%SITE_PERL%%/XML
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/OPML/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/OPML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/OPML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML

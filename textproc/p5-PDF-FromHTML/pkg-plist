@@ -1,4 +1,29 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/FromHTML/.packlist
+bin/html2pdf.pl
+%%PERL5_MAN3%%/PDF::FromHTML.3.gz
+%%PERL5_MAN3%%/PDF::FromHTML::Template.3.gz
+%%PERL5_MAN3%%/PDF::FromHTML::Template::Container::Always.3.gz
+%%PERL5_MAN3%%/PDF::FromHTML::Template::Container::Conditional.3.gz
+%%PERL5_MAN3%%/PDF::FromHTML::Template::Container::Font.3.gz
+%%PERL5_MAN3%%/PDF::FromHTML::Template::Container::Footer.3.gz
+%%PERL5_MAN3%%/PDF::FromHTML::Template::Container::Header.3.gz
+%%PERL5_MAN3%%/PDF::FromHTML::Template::Container::Loop.3.gz
+%%PERL5_MAN3%%/PDF::FromHTML::Template::Container::Margin.3.gz
+%%PERL5_MAN3%%/PDF::FromHTML::Template::Container::PageDef.3.gz
+%%PERL5_MAN3%%/PDF::FromHTML::Template::Container::PdfTemplate.3.gz
+%%PERL5_MAN3%%/PDF::FromHTML::Template::Container::Row.3.gz
+%%PERL5_MAN3%%/PDF::FromHTML::Template::Container::Scope.3.gz
+%%PERL5_MAN3%%/PDF::FromHTML::Template::Container::Section.3.gz
+%%PERL5_MAN3%%/PDF::FromHTML::Template::Element.3.gz
+%%PERL5_MAN3%%/PDF::FromHTML::Template::Element::Bookmark.3.gz
+%%PERL5_MAN3%%/PDF::FromHTML::Template::Element::Circle.3.gz
+%%PERL5_MAN3%%/PDF::FromHTML::Template::Element::HorizontalRule.3.gz
+%%PERL5_MAN3%%/PDF::FromHTML::Template::Element::Image.3.gz
+%%PERL5_MAN3%%/PDF::FromHTML::Template::Element::Line.3.gz
+%%PERL5_MAN3%%/PDF::FromHTML::Template::Element::PageBreak.3.gz
+%%PERL5_MAN3%%/PDF::FromHTML::Template::Element::TextBox.3.gz
+%%PERL5_MAN3%%/PDF::FromHTML::Template::Element::Var.3.gz
+%%PERL5_MAN3%%/PDF::FromHTML::Template::Element::Weblink.3.gz
+%%PERL5_MAN3%%/PDF::FromHTML::Twig.3.gz
 %%SITE_PERL%%/PDF/FromHTML.pm
 %%SITE_PERL%%/PDF/FromHTML/Template.pm
 %%SITE_PERL%%/PDF/FromHTML/Template/Base.pm
@@ -31,11 +56,12 @@
 %%SITE_PERL%%/PDF/FromHTML/Template/Iterator.pm
 %%SITE_PERL%%/PDF/FromHTML/Template/TextObject.pm
 %%SITE_PERL%%/PDF/FromHTML/Twig.pm
-bin/html2pdf.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/FromHTML/.packlist
+man/man1/html2pdf.pl.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/FromHTML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF
 @dirrmtry %%SITE_PERL%%/PDF/FromHTML/Template/Element
 @dirrmtry %%SITE_PERL%%/PDF/FromHTML/Template/Container
 @dirrmtry %%SITE_PERL%%/PDF/FromHTML/Template
 @dirrmtry %%SITE_PERL%%/PDF/FromHTML
 @dirrmtry %%SITE_PERL%%/PDF
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/FromHTML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF

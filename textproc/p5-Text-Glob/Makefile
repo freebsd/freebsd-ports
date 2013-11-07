@@ -13,7 +13,4 @@ COMMENT=	Match globbing patterns against text
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Text::Glob.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

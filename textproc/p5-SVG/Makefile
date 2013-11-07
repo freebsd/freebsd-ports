@@ -19,17 +19,13 @@ USES=		perl5
 USE_PERL5=	configure
 USE_DOS2UNIX=	yes
 
-MAN3=		SVG.3 SVG::DOM.3 SVG::Element.3 SVG::Extension.3 \
-		SVG::XML.3
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
-	@${MKDIR} ${EXAMPLESDIR}/
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}/
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>

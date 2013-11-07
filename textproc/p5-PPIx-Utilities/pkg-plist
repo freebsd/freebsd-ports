@@ -1,7 +1,11 @@
+%%PERL5_MAN3%%/PPIx::Utilities.3.gz
+%%PERL5_MAN3%%/PPIx::Utilities::Exception::Bug.3.gz
+%%PERL5_MAN3%%/PPIx::Utilities::Node.3.gz
+%%PERL5_MAN3%%/PPIx::Utilities::Statement.3.gz
 %%SITE_PERL%%/PPIx/Utilities.pm
 %%SITE_PERL%%/PPIx/Utilities/Exception/Bug.pm
 %%SITE_PERL%%/PPIx/Utilities/Node.pm
 %%SITE_PERL%%/PPIx/Utilities/Statement.pm
-@dirrm %%SITE_PERL%%/PPIx/Utilities/Exception
-@dirrm %%SITE_PERL%%/PPIx/Utilities
+@dirrmtry %%SITE_PERL%%/PPIx/Utilities/Exception
+@dirrmtry %%SITE_PERL%%/PPIx/Utilities
 @dirrmtry %%SITE_PERL%%/PPIx

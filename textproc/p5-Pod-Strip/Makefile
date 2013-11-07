@@ -15,7 +15,4 @@ COMMENT=	Remove POD from Perl code
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Pod::Strip.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

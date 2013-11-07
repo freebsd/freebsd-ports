@@ -13,7 +13,4 @@ COMMENT=	Generate meaningless text that creates the illusion of the document
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Text::Greeking.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

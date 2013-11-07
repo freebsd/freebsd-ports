@@ -1,5 +1,9 @@
 bin/xql.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XQL/.packlist
+%%PERL5_MAN3%%/XML::XQL.3.gz
+%%PERL5_MAN3%%/XML::XQL::DOM.3.gz
+%%PERL5_MAN3%%/XML::XQL::Date.3.gz
+%%PERL5_MAN3%%/XML::XQL::Query.3.gz
+%%PERL5_MAN3%%/XML::XQL::Tutorial.3.gz
 %%SITE_PERL%%/XML/XQL.pm
 %%SITE_PERL%%/XML/XQL/DOM.pm
 %%SITE_PERL%%/XML/XQL/Date.pm
@@ -10,5 +14,8 @@ bin/xql.pl
 %%SITE_PERL%%/XML/XQL/Query.pod
 %%SITE_PERL%%/XML/XQL/Strict.pm
 %%SITE_PERL%%/XML/XQL/Tutorial.pod
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XQL
-@dirrm %%SITE_PERL%%/XML/XQL
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XQL/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XQL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/XQL
+@dirrmtry %%SITE_PERL%%/XML

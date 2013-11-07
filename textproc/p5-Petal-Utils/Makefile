@@ -11,14 +11,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Useful template modifiers for Petal
 
-RUN_DEPENDS=	p5-Petal>=0:${PORTSDIR}/textproc/p5-Petal \
+BUILD_DEPENDS=	p5-Petal>=0:${PORTSDIR}/textproc/p5-Petal \
 		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
-
-MAN3=	Petal::Utils.3
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,13 @@
 bin/text_similarity.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Similarity/.packlist
+%%PERL5_MAN3%%/Text::OverlapFinder.3.gz
+%%PERL5_MAN3%%/Text::Similarity.3.gz
+%%PERL5_MAN3%%/Text::Similarity::Overlaps.3.gz
 %%SITE_PERL%%/Text/OverlapFinder.pm
 %%SITE_PERL%%/Text/Similarity.pm
 %%SITE_PERL%%/Text/Similarity/Overlaps.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Similarity
-@dirrm %%SITE_PERL%%/Text/Similarity
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Similarity/.packlist
+man/man1/text_similarity.pl.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Similarity
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
+@dirrmtry %%SITE_PERL%%/Text/Similarity
 @dirrmtry %%SITE_PERL%%/Text

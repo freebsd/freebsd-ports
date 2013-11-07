@@ -1,13 +1,20 @@
 bin/ethtml2text
 bin/ettext2html
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/EtText/.packlist
+%%PERL5_MAN3%%/Text::EtText.3.gz
+%%PERL5_MAN3%%/Text::EtText::DefaultGlossary.3.gz
+%%PERL5_MAN3%%/Text::EtText::EtText2HTML.3.gz
+%%PERL5_MAN3%%/Text::EtText::HTML2EtText.3.gz
+%%PERL5_MAN3%%/Text::EtText::LinkGlossary.3.gz
 %%SITE_PERL%%/Text/EtText.pm
-%%SITE_PERL%%/Text/EtText/Lists.pm
 %%SITE_PERL%%/Text/EtText/DefaultGlossary.pm
-%%SITE_PERL%%/Text/EtText/LinkGlossary.pm
-%%SITE_PERL%%/Text/EtText/HTML2EtText.pm
 %%SITE_PERL%%/Text/EtText/EtText2HTML.pm
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/EtText
+%%SITE_PERL%%/Text/EtText/HTML2EtText.pm
+%%SITE_PERL%%/Text/EtText/LinkGlossary.pm
+%%SITE_PERL%%/Text/EtText/Lists.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/EtText/.packlist
+man/man1/ethtml2text.1.gz
+man/man1/ettext2html.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/EtText
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
-@unexec rmdir %D/%%SITE_PERL%%/Text/EtText
+@dirrmtry %%SITE_PERL%%/Text/EtText
 @dirrmtry %%SITE_PERL%%/Text

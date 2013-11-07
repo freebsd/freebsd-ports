@@ -18,12 +18,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure patch
 
-MAN3=		XML::STX.3 XML::STX::Base.3 XML::STX::Buffer.3 \
-		XML::STX::Functions.3 XML::STX::Parser.3 XML::STX::Runtime.3 \
-		XML::STX::STXPath.3 XML::STX::Stylesheet.3 XML::STX::TrAX.3 \
-		XML::STX::Writer.3
-
-NO_STAGE=	yes
 post-extract:
 	@${MKDIR} ${WRKSRC}/scripts
 	@${MV} ${WRKSRC}/stx*.pl ${WRKSRC}/scripts
@@ -37,11 +31,11 @@ post-configure:
 post-install:
 .ifndef(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing additional documentation for ${PKGNAME}"
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

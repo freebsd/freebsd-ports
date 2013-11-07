@@ -1,10 +1,12 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/RTF/Writer/.packlist
+%%PERL5_MAN3%%/RTF::Cookbook.3.gz
+%%PERL5_MAN3%%/RTF::Writer.3.gz
+%%PERL5_MAN3%%/RTF::Writer::TableRowDecl.3.gz
 %%SITE_PERL%%/RTF/Cookbook.pod
 %%SITE_PERL%%/RTF/Writer.pm
 %%SITE_PERL%%/RTF/Writer.pod
 %%SITE_PERL%%/RTF/Writer/TableRowDecl.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RTF/Writer
-@dirrm %%SITE_PERL%%/RTF/Writer
-@dirrm %%SITE_PERL%%/RTF
-@dirrmtry %%SITE_PERL%%/RTF
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/RTF/Writer/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RTF/Writer
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RTF
+@dirrmtry %%SITE_PERL%%/RTF/Writer
+@dirrmtry %%SITE_PERL%%/RTF

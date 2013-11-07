@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/Text::Metaphone.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Metaphone.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Metaphone/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Metaphone/Metaphone.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Metaphone/Metaphone.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Metaphone
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Metaphone
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text

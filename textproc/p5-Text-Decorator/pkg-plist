@@ -1,3 +1,11 @@
+%%PERL5_MAN3%%/Text::Decorator.3.gz
+%%PERL5_MAN3%%/Text::Decorator::Filter.3.gz
+%%PERL5_MAN3%%/Text::Decorator::Filter::Quoted.3.gz
+%%PERL5_MAN3%%/Text::Decorator::Filter::TTBridge.3.gz
+%%PERL5_MAN3%%/Text::Decorator::Filter::Test.3.gz
+%%PERL5_MAN3%%/Text::Decorator::Filter::URIFind.3.gz
+%%PERL5_MAN3%%/Text::Decorator::Group.3.gz
+%%PERL5_MAN3%%/Text::Decorator::Node.3.gz
 %%SITE_PERL%%/Text/Decorator.pm
 %%SITE_PERL%%/Text/Decorator/Filter.pm
 %%SITE_PERL%%/Text/Decorator/Filter/Quoted.pm
@@ -6,6 +14,6 @@
 %%SITE_PERL%%/Text/Decorator/Filter/URIFind.pm
 %%SITE_PERL%%/Text/Decorator/Group.pm
 %%SITE_PERL%%/Text/Decorator/Node.pm
-@dirrm %%SITE_PERL%%/Text/Decorator/Filter
-@dirrm %%SITE_PERL%%/Text/Decorator
+@dirrmtry %%SITE_PERL%%/Text/Decorator/Filter
+@dirrmtry %%SITE_PERL%%/Text/Decorator
 @dirrmtry %%SITE_PERL%%/Text

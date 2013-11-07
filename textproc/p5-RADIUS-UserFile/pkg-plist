@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/RADIUS::UserFile.3.gz
 %%SITE_PERL%%/RADIUS/UserFile.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/RADIUS/UserFile/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RADIUS/UserFile
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RADIUS/UserFile
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RADIUS
 @dirrmtry %%SITE_PERL%%/RADIUS

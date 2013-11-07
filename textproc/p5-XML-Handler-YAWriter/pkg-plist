@@ -1,8 +1,10 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler/YAWriter/.packlist
 bin/xmlpretty
+%%PERL5_MAN3%%/XML::Handler::YAWriter.3.gz
 %%SITE_PERL%%/XML/Handler/YAWriter.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler/YAWriter
-@dirrmtry %%SITE_PERL%%/XML/Handler
-@dirrmtry %%SITE_PERL%%/XML
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler/YAWriter/.packlist
+man/man1/xmlpretty.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler/YAWriter
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/Handler
+@dirrmtry %%SITE_PERL%%/XML

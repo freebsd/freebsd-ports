@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Parse::Syslog.3.gz
 %%SITE_PERL%%/Parse/Syslog.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/Syslog/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/Syslog
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/Syslog
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse
 @dirrmtry %%SITE_PERL%%/Parse

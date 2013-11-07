@@ -1,9 +1,13 @@
+%%PERL5_MAN3%%/Template::Extract.3.gz
+%%PERL5_MAN3%%/Template::Extract::Compile.3.gz
+%%PERL5_MAN3%%/Template::Extract::Parser.3.gz
+%%PERL5_MAN3%%/Template::Extract::Run.3.gz
 %%SITE_PERL%%/Template/Extract.pm
 %%SITE_PERL%%/Template/Extract/Compile.pm
 %%SITE_PERL%%/Template/Extract/Parser.pm
 %%SITE_PERL%%/Template/Extract/Run.pm
-@dirrm %%SITE_PERL%%/Template/Extract
-@dirrmtry %%SITE_PERL%%/Template
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Extract/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Extract
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Extract
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
+@dirrmtry %%SITE_PERL%%/Template/Extract
+@dirrmtry %%SITE_PERL%%/Template

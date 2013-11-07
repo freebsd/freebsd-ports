@@ -1,5 +1,39 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/KinoSearch1/KinoSearch1.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/KinoSearch1/KinoSearch1.so
+%%PERL5_MAN3%%/KinoSearch1.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Analysis::Analyzer.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Analysis::LCNormalizer.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Analysis::PolyAnalyzer.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Analysis::Stemmer.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Analysis::Stopalizer.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Analysis::Token.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Analysis::TokenBatch.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Analysis::Tokenizer.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Docs::FileFormat.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Docs::Tutorial.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Document::Doc.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Document::Field.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Highlight::Encoder.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Highlight::Formatter.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Highlight::Highlighter.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Highlight::SimpleHTMLEncoder.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Highlight::SimpleHTMLFormatter.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Index::Term.3.gz
+%%PERL5_MAN3%%/KinoSearch1::InvIndexer.3.gz
+%%PERL5_MAN3%%/KinoSearch1::QueryParser::QueryParser.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Search::BooleanQuery.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Search::Hit.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Search::Hits.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Search::MultiSearcher.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Search::PhraseQuery.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Search::Query.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Search::QueryFilter.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Search::SearchClient.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Search::SearchServer.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Search::TermQuery.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Searcher.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Store::FSInvIndex.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Store::InvIndex.3.gz
+%%PERL5_MAN3%%/KinoSearch1::Store::RAMInvIndex.3.gz
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Analysis/Analyzer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Analysis/LCNormalizer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Analysis/PolyAnalyzer.pm
@@ -56,9 +90,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/PhraseScorer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/Query.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/QueryFilter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/Scorer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/SearchClient.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/SearchServer.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/Scorer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/Searchable.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/Similarity.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/TermQuery.pm
@@ -87,15 +121,16 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Util/ToStringUtils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Util/ToolSet.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Util/VerifyArgs.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Analysis
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Docs
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Document
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Highlight
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/QueryParser
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Store
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Util
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/KinoSearch1
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/KinoSearch1/KinoSearch1.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/KinoSearch1/KinoSearch1.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/KinoSearch1
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Util
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Store
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/QueryParser
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Highlight
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Document
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Docs
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Analysis
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1

@@ -1,5 +1,17 @@
 bin/perlpoint
 bin/pp2sdf
+%%PERL5_MAN3%%/PerlPoint::Anchors.3.gz
+%%PERL5_MAN3%%/PerlPoint::Backend.3.gz
+%%PERL5_MAN3%%/PerlPoint::Constants.3.gz
+%%PERL5_MAN3%%/PerlPoint::Generator.3.gz
+%%PERL5_MAN3%%/PerlPoint::Generator::Object::Page.3.gz
+%%PERL5_MAN3%%/PerlPoint::Generator::SDF.3.gz
+%%PERL5_MAN3%%/PerlPoint::Generator::SDF::Default.3.gz
+%%PERL5_MAN3%%/PerlPoint::Parser.3.gz
+%%PERL5_MAN3%%/PerlPoint::Tags.3.gz
+%%PERL5_MAN3%%/PerlPoint::Tags::Basic.3.gz
+%%PERL5_MAN3%%/PerlPoint::Tags::SDF.3.gz
+%%PERL5_MAN3%%/PerlPoint::Template.3.gz
 %%SITE_PERL%%/PerlPoint/Anchors.pm
 %%SITE_PERL%%/PerlPoint/Backend.pm
 %%SITE_PERL%%/PerlPoint/Constants.pm
@@ -13,6 +25,8 @@ bin/pp2sdf
 %%SITE_PERL%%/PerlPoint/Tags/SDF.pm
 %%SITE_PERL%%/PerlPoint/Template.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint/Package/.packlist
+man/man1/perlpoint.1.gz
+man/man1/pp2sdf.1.gz
 %%PORTDOCS%%%%EXAMPLESDIR%%/.pp2sdf
 %%PORTDOCS%%%%EXAMPLESDIR%%/perlpods.pp
 %%PORTDOCS%%%%EXAMPLESDIR%%/perlpoint
@@ -22,10 +36,10 @@ bin/pp2sdf
 %%PORTDOCS%%%%EXAMPLESDIR%%/pp2sdf
 %%PORTDOCS%%%%EXAMPLESDIR%%/pp2tree
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint/Package
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint/Package
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint
 @dirrmtry %%SITE_PERL%%/PerlPoint/Tags
-@dirrm %%SITE_PERL%%/PerlPoint/Generator/SDF
-@dirrm %%SITE_PERL%%/PerlPoint/Generator/Object
-@dirrm %%SITE_PERL%%/PerlPoint/Generator
+@dirrmtry %%SITE_PERL%%/PerlPoint/Generator/SDF
+@dirrmtry %%SITE_PERL%%/PerlPoint/Generator/Object
+@dirrmtry %%SITE_PERL%%/PerlPoint/Generator
 @dirrmtry %%SITE_PERL%%/PerlPoint

@@ -13,7 +13,4 @@ COMMENT=	Parse patch files containing unified and standard diffs
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Text::Diff::Parser.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

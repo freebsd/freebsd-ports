@@ -1,6 +1,45 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/API2/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/API2
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF
+%%PERL5_MAN3%%/PDF::API2.3.gz
+%%PERL5_MAN3%%/PDF::API2::Annotation.3.gz
+%%PERL5_MAN3%%/PDF::API2::Basic::PDF::Array.3.gz
+%%PERL5_MAN3%%/PDF::API2::Basic::PDF::Bool.3.gz
+%%PERL5_MAN3%%/PDF::API2::Basic::PDF::Dict.3.gz
+%%PERL5_MAN3%%/PDF::API2::Basic::PDF::File.3.gz
+%%PERL5_MAN3%%/PDF::API2::Basic::PDF::Filter.3.gz
+%%PERL5_MAN3%%/PDF::API2::Basic::PDF::Filter::RunLengthDecode.3.gz
+%%PERL5_MAN3%%/PDF::API2::Basic::PDF::Name.3.gz
+%%PERL5_MAN3%%/PDF::API2::Basic::PDF::Null.3.gz
+%%PERL5_MAN3%%/PDF::API2::Basic::PDF::Number.3.gz
+%%PERL5_MAN3%%/PDF::API2::Basic::PDF::Objind.3.gz
+%%PERL5_MAN3%%/PDF::API2::Basic::PDF::Page.3.gz
+%%PERL5_MAN3%%/PDF::API2::Basic::PDF::Pages.3.gz
+%%PERL5_MAN3%%/PDF::API2::Basic::PDF::String.3.gz
+%%PERL5_MAN3%%/PDF::API2::Basic::PDF::Utils.3.gz
+%%PERL5_MAN3%%/PDF::API2::Content.3.gz
+%%PERL5_MAN3%%/PDF::API2::Lite.3.gz
+%%PERL5_MAN3%%/PDF::API2::NamedDestination.3.gz
+%%PERL5_MAN3%%/PDF::API2::Outline.3.gz
+%%PERL5_MAN3%%/PDF::API2::Page.3.gz
+%%PERL5_MAN3%%/PDF::API2::Resource.3.gz
+%%PERL5_MAN3%%/PDF::API2::Resource::BaseFont.3.gz
+%%PERL5_MAN3%%/PDF::API2::Resource::CIDFont.3.gz
+%%PERL5_MAN3%%/PDF::API2::Resource::CIDFont::CJKFont.3.gz
+%%PERL5_MAN3%%/PDF::API2::Resource::CIDFont::TrueType.3.gz
+%%PERL5_MAN3%%/PDF::API2::Resource::ColorSpace.3.gz
+%%PERL5_MAN3%%/PDF::API2::Resource::ColorSpace::Indexed::ACTFile.3.gz
+%%PERL5_MAN3%%/PDF::API2::Resource::ColorSpace::Separation.3.gz
+%%PERL5_MAN3%%/PDF::API2::Resource::ExtGState.3.gz
+%%PERL5_MAN3%%/PDF::API2::Resource::Font.3.gz
+%%PERL5_MAN3%%/PDF::API2::Resource::Font::BdFont.3.gz
+%%PERL5_MAN3%%/PDF::API2::Resource::Font::CoreFont.3.gz
+%%PERL5_MAN3%%/PDF::API2::Resource::Font::SynFont.3.gz
+%%PERL5_MAN3%%/PDF::API2::Resource::UniFont.3.gz
+%%PERL5_MAN3%%/PDF::API2::Resource::XObject.3.gz
+%%PERL5_MAN3%%/PDF::API2::Resource::XObject::Form.3.gz
+%%PERL5_MAN3%%/PDF::API2::Resource::XObject::Form::BarCode.3.gz
+%%PERL5_MAN3%%/PDF::API2::Resource::XObject::Form::BarCode::code128.3.gz
+%%PERL5_MAN3%%/PDF::API2::Resource::XObject::Image.3.gz
+%%PERL5_MAN3%%/PDF::API2::Resource::XObject::Image::TIFF.3.gz
+%%PERL5_MAN3%%/PDF::API2::Util.3.gz
 %%SITE_PERL%%/PDF/API2.pm
 %%SITE_PERL%%/PDF/API2/Annotation.pm
 %%SITE_PERL%%/PDF/API2/Basic/PDF/Array.pm
@@ -22,38 +61,41 @@
 %%SITE_PERL%%/PDF/API2/Basic/PDF/Pages.pm
 %%SITE_PERL%%/PDF/API2/Basic/PDF/String.pm
 %%SITE_PERL%%/PDF/API2/Basic/PDF/Utils.pm
-%%SITE_PERL%%/PDF/API2/Content/Text.pm
 %%SITE_PERL%%/PDF/API2/Content.pm
+%%SITE_PERL%%/PDF/API2/Content/Text.pm
 %%SITE_PERL%%/PDF/API2/Lite.pm
 %%SITE_PERL%%/PDF/API2/Matrix.pm
 %%SITE_PERL%%/PDF/API2/NamedDestination.pm
 %%SITE_PERL%%/PDF/API2/Outline.pm
 %%SITE_PERL%%/PDF/API2/Outlines.pm
 %%SITE_PERL%%/PDF/API2/Page.pm
+%%SITE_PERL%%/PDF/API2/Resource.pm
 %%SITE_PERL%%/PDF/API2/Resource/BaseFont.pm
+%%SITE_PERL%%/PDF/API2/Resource/CIDFont.pm
+%%SITE_PERL%%/PDF/API2/Resource/CIDFont/CJKFont.pm
 %%SITE_PERL%%/PDF/API2/Resource/CIDFont/CJKFont/adobemingstdlightacro.data
 %%SITE_PERL%%/PDF/API2/Resource/CIDFont/CJKFont/adobemyungjostdmediumacro.data
 %%SITE_PERL%%/PDF/API2/Resource/CIDFont/CJKFont/adobesongstdlightacro.data
 %%SITE_PERL%%/PDF/API2/Resource/CIDFont/CJKFont/kozgopromediumacro.data
 %%SITE_PERL%%/PDF/API2/Resource/CIDFont/CJKFont/kozminproregularacro.data
-%%SITE_PERL%%/PDF/API2/Resource/CIDFont/CJKFont.pm
 %%SITE_PERL%%/PDF/API2/Resource/CIDFont/CMap/japanese.cmap
 %%SITE_PERL%%/PDF/API2/Resource/CIDFont/CMap/korean.cmap
 %%SITE_PERL%%/PDF/API2/Resource/CIDFont/CMap/simplified.cmap
 %%SITE_PERL%%/PDF/API2/Resource/CIDFont/CMap/traditional.cmap
-%%SITE_PERL%%/PDF/API2/Resource/CIDFont/TrueType/FontFile.pm
 %%SITE_PERL%%/PDF/API2/Resource/CIDFont/TrueType.pm
-%%SITE_PERL%%/PDF/API2/Resource/CIDFont.pm
+%%SITE_PERL%%/PDF/API2/Resource/CIDFont/TrueType/FontFile.pm
+%%SITE_PERL%%/PDF/API2/Resource/ColorSpace.pm
 %%SITE_PERL%%/PDF/API2/Resource/ColorSpace/DeviceN.pm
+%%SITE_PERL%%/PDF/API2/Resource/ColorSpace/Indexed.pm
 %%SITE_PERL%%/PDF/API2/Resource/ColorSpace/Indexed/ACTFile.pm
 %%SITE_PERL%%/PDF/API2/Resource/ColorSpace/Indexed/Hue.pm
 %%SITE_PERL%%/PDF/API2/Resource/ColorSpace/Indexed/WebColor.pm
-%%SITE_PERL%%/PDF/API2/Resource/ColorSpace/Indexed.pm
 %%SITE_PERL%%/PDF/API2/Resource/ColorSpace/Separation.pm
-%%SITE_PERL%%/PDF/API2/Resource/ColorSpace.pm
 %%SITE_PERL%%/PDF/API2/Resource/Colors.pm
 %%SITE_PERL%%/PDF/API2/Resource/ExtGState.pm
+%%SITE_PERL%%/PDF/API2/Resource/Font.pm
 %%SITE_PERL%%/PDF/API2/Resource/Font/BdFont.pm
+%%SITE_PERL%%/PDF/API2/Resource/Font/CoreFont.pm
 %%SITE_PERL%%/PDF/API2/Resource/Font/CoreFont/bankgothic.pm
 %%SITE_PERL%%/PDF/API2/Resource/Font/CoreFont/courier.pm
 %%SITE_PERL%%/PDF/API2/Resource/Font/CoreFont/courierbold.pm
@@ -83,52 +125,52 @@
 %%SITE_PERL%%/PDF/API2/Resource/Font/CoreFont/webdings.pm
 %%SITE_PERL%%/PDF/API2/Resource/Font/CoreFont/wingdings.pm
 %%SITE_PERL%%/PDF/API2/Resource/Font/CoreFont/zapfdingbats.pm
-%%SITE_PERL%%/PDF/API2/Resource/Font/CoreFont.pm
 %%SITE_PERL%%/PDF/API2/Resource/Font/Postscript.pm
 %%SITE_PERL%%/PDF/API2/Resource/Font/SynFont.pm
-%%SITE_PERL%%/PDF/API2/Resource/Font.pm
 %%SITE_PERL%%/PDF/API2/Resource/Glyphs.pm
 %%SITE_PERL%%/PDF/API2/Resource/PaperSizes.pm
 %%SITE_PERL%%/PDF/API2/Resource/Pattern.pm
 %%SITE_PERL%%/PDF/API2/Resource/Shading.pm
 %%SITE_PERL%%/PDF/API2/Resource/UniFont.pm
+%%SITE_PERL%%/PDF/API2/Resource/XObject.pm
+%%SITE_PERL%%/PDF/API2/Resource/XObject/Form.pm
+%%SITE_PERL%%/PDF/API2/Resource/XObject/Form/BarCode.pm
 %%SITE_PERL%%/PDF/API2/Resource/XObject/Form/BarCode/codabar.pm
 %%SITE_PERL%%/PDF/API2/Resource/XObject/Form/BarCode/code128.pm
 %%SITE_PERL%%/PDF/API2/Resource/XObject/Form/BarCode/code3of9.pm
 %%SITE_PERL%%/PDF/API2/Resource/XObject/Form/BarCode/ean13.pm
 %%SITE_PERL%%/PDF/API2/Resource/XObject/Form/BarCode/int2of5.pm
-%%SITE_PERL%%/PDF/API2/Resource/XObject/Form/BarCode.pm
 %%SITE_PERL%%/PDF/API2/Resource/XObject/Form/Hybrid.pm
-%%SITE_PERL%%/PDF/API2/Resource/XObject/Form.pm
+%%SITE_PERL%%/PDF/API2/Resource/XObject/Image.pm
 %%SITE_PERL%%/PDF/API2/Resource/XObject/Image/GD.pm
 %%SITE_PERL%%/PDF/API2/Resource/XObject/Image/GIF.pm
 %%SITE_PERL%%/PDF/API2/Resource/XObject/Image/JPEG.pm
 %%SITE_PERL%%/PDF/API2/Resource/XObject/Image/PNG.pm
 %%SITE_PERL%%/PDF/API2/Resource/XObject/Image/PNM.pm
 %%SITE_PERL%%/PDF/API2/Resource/XObject/Image/TIFF.pm
-%%SITE_PERL%%/PDF/API2/Resource/XObject/Image.pm
-%%SITE_PERL%%/PDF/API2/Resource/XObject.pm
 %%SITE_PERL%%/PDF/API2/Resource/uniglyph.txt
-%%SITE_PERL%%/PDF/API2/Resource.pm
 %%SITE_PERL%%/PDF/API2/UniWrap.pm
 %%SITE_PERL%%/PDF/API2/Util.pm
 %%SITE_PERL%%/PDF/API2/Win32.pm
-@dirrm %%SITE_PERL%%/PDF/API2/Basic/PDF/Filter
-@dirrm %%SITE_PERL%%/PDF/API2/Basic/PDF
-@dirrm %%SITE_PERL%%/PDF/API2/Basic
-@dirrm %%SITE_PERL%%/PDF/API2/Content
-@dirrm %%SITE_PERL%%/PDF/API2/Resource/CIDFont/CJKFont
-@dirrm %%SITE_PERL%%/PDF/API2/Resource/CIDFont/CMap
-@dirrm %%SITE_PERL%%/PDF/API2/Resource/CIDFont/TrueType
-@dirrm %%SITE_PERL%%/PDF/API2/Resource/CIDFont
-@dirrm %%SITE_PERL%%/PDF/API2/Resource/ColorSpace/Indexed
-@dirrm %%SITE_PERL%%/PDF/API2/Resource/ColorSpace
-@dirrm %%SITE_PERL%%/PDF/API2/Resource/Font/CoreFont
-@dirrm %%SITE_PERL%%/PDF/API2/Resource/Font
-@dirrm %%SITE_PERL%%/PDF/API2/Resource/XObject/Form/BarCode
-@dirrm %%SITE_PERL%%/PDF/API2/Resource/XObject/Form
-@dirrm %%SITE_PERL%%/PDF/API2/Resource/XObject/Image
-@dirrm %%SITE_PERL%%/PDF/API2/Resource/XObject
-@dirrm %%SITE_PERL%%/PDF/API2/Resource
-@dirrm %%SITE_PERL%%/PDF/API2
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/API2/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/API2
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF
+@dirrmtry %%SITE_PERL%%/PDF/API2/Resource/XObject/Image
+@dirrmtry %%SITE_PERL%%/PDF/API2/Resource/XObject/Form/BarCode
+@dirrmtry %%SITE_PERL%%/PDF/API2/Resource/XObject/Form
+@dirrmtry %%SITE_PERL%%/PDF/API2/Resource/XObject
+@dirrmtry %%SITE_PERL%%/PDF/API2/Resource/Font/CoreFont
+@dirrmtry %%SITE_PERL%%/PDF/API2/Resource/Font
+@dirrmtry %%SITE_PERL%%/PDF/API2/Resource/ColorSpace/Indexed
+@dirrmtry %%SITE_PERL%%/PDF/API2/Resource/ColorSpace
+@dirrmtry %%SITE_PERL%%/PDF/API2/Resource/CIDFont/TrueType
+@dirrmtry %%SITE_PERL%%/PDF/API2/Resource/CIDFont/CMap
+@dirrmtry %%SITE_PERL%%/PDF/API2/Resource/CIDFont/CJKFont
+@dirrmtry %%SITE_PERL%%/PDF/API2/Resource/CIDFont
+@dirrmtry %%SITE_PERL%%/PDF/API2/Resource
+@dirrmtry %%SITE_PERL%%/PDF/API2/Content
+@dirrmtry %%SITE_PERL%%/PDF/API2/Basic/PDF/Filter
+@dirrmtry %%SITE_PERL%%/PDF/API2/Basic/PDF
+@dirrmtry %%SITE_PERL%%/PDF/API2/Basic
+@dirrmtry %%SITE_PERL%%/PDF/API2
 @dirrmtry %%SITE_PERL%%/PDF

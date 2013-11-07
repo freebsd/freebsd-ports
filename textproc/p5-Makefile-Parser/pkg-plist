@@ -1,6 +1,10 @@
 bin/makesimple
 bin/pgmake-db
 bin/plmake
+%%PERL5_MAN3%%/Makefile::AST.3.gz
+%%PERL5_MAN3%%/Makefile::AST::Evaluator.3.gz
+%%PERL5_MAN3%%/Makefile::Parser.3.gz
+%%PERL5_MAN3%%/Makefile::Parser::GmakeDB.3.gz
 %%SITE_PERL%%/Makefile/AST.pm
 %%SITE_PERL%%/Makefile/AST/Command.pm
 %%SITE_PERL%%/Makefile/AST/Evaluator.pm
@@ -12,9 +16,12 @@ bin/plmake
 %%SITE_PERL%%/Makefile/Parser.pm
 %%SITE_PERL%%/Makefile/Parser/GmakeDB.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile/Parser/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile/Parser
+man/man1/makesimple.1.gz
+man/man1/pgmake-db.1.gz
+man/man1/plmake.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile/Parser
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile
-@dirrm %%SITE_PERL%%/Makefile/Parser
-@dirrm %%SITE_PERL%%/Makefile/AST/Rule
-@dirrm %%SITE_PERL%%/Makefile/AST
+@dirrmtry %%SITE_PERL%%/Makefile/Parser
+@dirrmtry %%SITE_PERL%%/Makefile/AST/Rule
+@dirrmtry %%SITE_PERL%%/Makefile/AST
 @dirrmtry %%SITE_PERL%%/Makefile

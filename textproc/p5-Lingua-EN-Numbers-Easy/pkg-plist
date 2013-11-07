@@ -1,4 +1,10 @@
+%%PERL5_MAN3%%/Lingua::EN::Numbers::Easy.3.gz
 %%SITE_PERL%%/Lingua/EN/Numbers/Easy.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Numbers/Easy/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Numbers/Easy
-@dirrm %%SITE_PERL%%/Lingua/EN/Numbers
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Numbers/Easy
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Numbers
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
+@dirrmtry %%SITE_PERL%%/Lingua/EN/Numbers
+@dirrmtry %%SITE_PERL%%/Lingua/EN
+@dirrmtry %%SITE_PERL%%/Lingua

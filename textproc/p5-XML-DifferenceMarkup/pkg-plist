@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DifferenceMarkup/.packlist
+%%PERL5_MAN3%%/XML::DifferenceMarkup.3.gz
 %%SITE_PERL%%/XML/DifferenceMarkup.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DifferenceMarkup
-@dirrmtry %%SITE_PERL%%/XML
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DifferenceMarkup/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DifferenceMarkup
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML

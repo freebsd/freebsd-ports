@@ -13,7 +13,4 @@ COMMENT=	The Fastest Lexer in the West
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Parse::Flex.3 Parse::Flex::Generate.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

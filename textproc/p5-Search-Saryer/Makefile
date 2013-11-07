@@ -11,12 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to the Sary library
 
-LIB_DEPENDS=	sary.10:${PORTSDIR}/textproc/sary
+LIB_DEPENDS=	libsary.so:${PORTSDIR}/textproc/sary
 
 USES=		perl5 pkgconfig
 USE_PERL5=	configure
 
-MAN3=		Search::Saryer.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

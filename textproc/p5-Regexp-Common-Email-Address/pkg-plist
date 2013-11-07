@@ -1,9 +1,10 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Common/Email/Address/.packlist
+%%PERL5_MAN3%%/Regexp::Common::Email::Address.3.gz
 %%SITE_PERL%%/Regexp/Common/Email/Address.pm
-@dirrmtry %%SITE_PERL%%/Regexp/Common/Email
-@dirrmtry %%SITE_PERL%%/Regexp/Common
-@dirrmtry %%SITE_PERL%%/Regexp
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Common/Email/Address
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Common/Email/Address/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Common/Email/Address
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Common/Email
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Common
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp
+@dirrmtry %%SITE_PERL%%/Regexp/Common/Email
+@dirrmtry %%SITE_PERL%%/Regexp/Common
+@dirrmtry %%SITE_PERL%%/Regexp

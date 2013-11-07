@@ -1,11 +1,14 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVG/.packlist
+%%PERL5_MAN3%%/SVG.3.gz
+%%PERL5_MAN3%%/SVG::DOM.3.gz
+%%PERL5_MAN3%%/SVG::Element.3.gz
+%%PERL5_MAN3%%/SVG::Extension.3.gz
+%%PERL5_MAN3%%/SVG::XML.3.gz
 %%SITE_PERL%%/SVG.pm
 %%SITE_PERL%%/SVG/DOM.pm
 %%SITE_PERL%%/SVG/Element.pm
 %%SITE_PERL%%/SVG/Extension.pm
 %%SITE_PERL%%/SVG/XML.pm
-@dirrmtry %%SITE_PERL%%/SVG
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVG
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVG/.packlist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/01_circle.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/02_circle_with_color.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/03_circle_and_square.pl
@@ -17,9 +20,11 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/inlinesvg.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/minsvg.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/starpath.cgi
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/svg2png.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sun_text_sample.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/svg2png.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/svg_dom_sample.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/svgtest2.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yaph5.cgi
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVG
+@dirrmtry %%SITE_PERL%%/SVG

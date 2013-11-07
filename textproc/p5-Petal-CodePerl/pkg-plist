@@ -1,3 +1,6 @@
+%%PERL5_MAN3%%/Petal::CodePerl.3.gz
+%%PERL5_MAN3%%/Petal::CodePerl::Expr.3.gz
+%%PERL5_MAN3%%/Petal::CodePerl::Modifiers.3.gz
 %%SITE_PERL%%/Petal/CodePerl.pm
 %%SITE_PERL%%/Petal/CodePerl/CodeGenerator.pm
 %%SITE_PERL%%/Petal/CodePerl/Compiler.pm
@@ -10,8 +13,8 @@
 %%SITE_PERL%%/Petal/CodePerl/Modifiers.pm
 %%SITE_PERL%%/Petal/CodePerl/Parser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Petal/CodePerl/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Petal/CodePerl
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Petal/CodePerl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Petal
-@dirrm %%SITE_PERL%%/Petal/CodePerl/Expr
-@dirrm %%SITE_PERL%%/Petal/CodePerl
+@dirrmtry %%SITE_PERL%%/Petal/CodePerl/Expr
+@dirrmtry %%SITE_PERL%%/Petal/CodePerl
 @dirrmtry %%SITE_PERL%%/Petal

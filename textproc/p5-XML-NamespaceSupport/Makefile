@@ -13,7 +13,4 @@ COMMENT=	Simple generic namespace support class
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		XML::NamespaceSupport.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

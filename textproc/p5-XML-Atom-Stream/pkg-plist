@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/XML::Atom::Stream.3.gz
 %%SITE_PERL%%/XML/Atom/Stream.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Atom/Stream/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Atom/Stream
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Atom/Stream
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Atom
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML/Atom

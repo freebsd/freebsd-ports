@@ -23,13 +23,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Data::FormValidator.3 \
-		Data::FormValidator::ConstraintsFactory.3 \
-		Data::FormValidator::Constraints.3 \
-		Data::FormValidator::Constraints::Dates.3 \
-		Data::FormValidator::Constraints::Upload.3 \
-		Data::FormValidator::Filters.3 \
-		Data::FormValidator::Results.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

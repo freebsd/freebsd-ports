@@ -1,6 +1,8 @@
 bin/htmlcopy
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Copy/.packlist
+%%PERL5_MAN3%%/HTML::Copy.3.gz
 %%SITE_PERL%%/HTML/Copy.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Copy/.packlist
+man/man1/htmlcopy.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Copy
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
 @dirrmtry %%SITE_PERL%%/HTML

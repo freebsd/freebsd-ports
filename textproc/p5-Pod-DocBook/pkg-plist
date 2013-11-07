@@ -1,6 +1,8 @@
 bin/pod2docbook
+%%PERL5_MAN3%%/Pod::DocBook.3.gz
 %%SITE_PERL%%/Pod/DocBook.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/DocBook/.packlist
-@dirrmtry %%SITE_PERL%%/Pod
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/DocBook
+man/man1/pod2docbook.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/DocBook
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
+@dirrmtry %%SITE_PERL%%/Pod

@@ -23,11 +23,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		XML::RSS::Feed.3 \
-		XML::RSS::Headline.3 \
-		XML::RSS::Headline::Fark.3 \
-		XML::RSS::Headline::PerlJobs.3 \
-		XML::RSS::Headline::UsePerlJournals.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

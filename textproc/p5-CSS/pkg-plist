@@ -1,18 +1,31 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/.packlist
+%%PERL5_MAN3%%/CSS.3.gz
+%%PERL5_MAN3%%/CSS::Adaptor.3.gz
+%%PERL5_MAN3%%/CSS::Adaptor::Debug.3.gz
+%%PERL5_MAN3%%/CSS::Adaptor::Pretty.3.gz
+%%PERL5_MAN3%%/CSS::Parse.3.gz
+%%PERL5_MAN3%%/CSS::Parse::Compiled.3.gz
+%%PERL5_MAN3%%/CSS::Parse::Heavy.3.gz
+%%PERL5_MAN3%%/CSS::Parse::Lite.3.gz
+%%PERL5_MAN3%%/CSS::Parse::PRDGrammar.3.gz
+%%PERL5_MAN3%%/CSS::Property.3.gz
+%%PERL5_MAN3%%/CSS::Selector.3.gz
+%%PERL5_MAN3%%/CSS::Style.3.gz
+%%PERL5_MAN3%%/CSS::Value.3.gz
 %%SITE_PERL%%/CSS.pm
-%%SITE_PERL%%/CSS/Value.pm
-%%SITE_PERL%%/CSS/Property.pm
-%%SITE_PERL%%/CSS/Style.pm
-%%SITE_PERL%%/CSS/Selector.pm
-%%SITE_PERL%%/CSS/Parse.pm
 %%SITE_PERL%%/CSS/Adaptor.pm
-%%SITE_PERL%%/CSS/Parse/Compiled.pm
-%%SITE_PERL%%/CSS/Parse/PRDGrammar.pm
-%%SITE_PERL%%/CSS/Parse/Heavy.pm
-%%SITE_PERL%%/CSS/Parse/Lite.pm
-%%SITE_PERL%%/CSS/Parse/CompiledGrammar.pm
 %%SITE_PERL%%/CSS/Adaptor/Debug.pm
 %%SITE_PERL%%/CSS/Adaptor/Pretty.pm
+%%SITE_PERL%%/CSS/Parse.pm
+%%SITE_PERL%%/CSS/Parse/Compiled.pm
+%%SITE_PERL%%/CSS/Parse/CompiledGrammar.pm
+%%SITE_PERL%%/CSS/Parse/Heavy.pm
+%%SITE_PERL%%/CSS/Parse/Lite.pm
+%%SITE_PERL%%/CSS/Parse/PRDGrammar.pm
+%%SITE_PERL%%/CSS/Property.pm
+%%SITE_PERL%%/CSS/Selector.pm
+%%SITE_PERL%%/CSS/Style.pm
+%%SITE_PERL%%/CSS/Value.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS
 @dirrmtry %%SITE_PERL%%/CSS/Parse
 @dirrmtry %%SITE_PERL%%/CSS/Adaptor

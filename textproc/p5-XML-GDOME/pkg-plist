@@ -1,32 +1,58 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/GDOME/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/GDOME/GDOME.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/GDOME/GDOME.bs
+%%PERL5_MAN3%%/XML::GDOME.3.gz
+%%PERL5_MAN3%%/XML::GDOME::Attr.3.gz
+%%PERL5_MAN3%%/XML::GDOME::CDATASection.3.gz
+%%PERL5_MAN3%%/XML::GDOME::CharacterData.3.gz
+%%PERL5_MAN3%%/XML::GDOME::Comment.3.gz
+%%PERL5_MAN3%%/XML::GDOME::Document.3.gz
+%%PERL5_MAN3%%/XML::GDOME::DocumentFragment.3.gz
+%%PERL5_MAN3%%/XML::GDOME::DocumentType.3.gz
+%%PERL5_MAN3%%/XML::GDOME::Element.3.gz
+%%PERL5_MAN3%%/XML::GDOME::Entity.3.gz
+%%PERL5_MAN3%%/XML::GDOME::EntityReference.3.gz
+%%PERL5_MAN3%%/XML::GDOME::NamedNodeMap.3.gz
+%%PERL5_MAN3%%/XML::GDOME::Node.3.gz
+%%PERL5_MAN3%%/XML::GDOME::NodeList.3.gz
+%%PERL5_MAN3%%/XML::GDOME::Notation.3.gz
+%%PERL5_MAN3%%/XML::GDOME::ProcessingInstruction.3.gz
+%%PERL5_MAN3%%/XML::GDOME::SAX::Builder.3.gz
+%%PERL5_MAN3%%/XML::GDOME::SAX::Generator.3.gz
+%%PERL5_MAN3%%/XML::GDOME::SAX::Parser.3.gz
+%%PERL5_MAN3%%/XML::GDOME::Text.3.gz
+%%PERL5_MAN3%%/XML::GDOME::XPath::Evaluator.3.gz
+%%PERL5_MAN3%%/XML::GDOME::XPath::NSResolver.3.gz
+%%PERL5_MAN3%%/XML::GDOME::XPath::Namespace.3.gz
+%%PERL5_MAN3%%/XML::GDOME::XPath::Result.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/ProcessingInstruction.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/Text.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/Attr.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/CDATASection.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/CharacterData.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/Comment.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/Document.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/DocumentFragment.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/DocumentType.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/Comment.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/NamedNodeMap.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/Document.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/CDATASection.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/Attr.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/NodeList.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/CharacterData.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/EntityReference.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/Node.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/Element.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/Entity.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/EntityReference.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/NamedNodeMap.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/Node.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/NodeList.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/Notation.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/SAX/Generator.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/ProcessingInstruction.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/SAX/Builder.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/SAX/Generator.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/SAX/Parser.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/XPath/Result.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/Text.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/XPath/Evaluator.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/XPath/NSResolver.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/XPath/Namespace.pod
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/XPath
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/SAX
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/GDOME
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/XPath/Result.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/GDOME/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/GDOME/GDOME.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/GDOME/GDOME.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/GDOME
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/XPath
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME/SAX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML/GDOME
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML

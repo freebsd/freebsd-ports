@@ -13,7 +13,4 @@ COMMENT=	Stemmers for Portuguese and Galician
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Lingua::GL::Stemmer.3 Lingua::PT::Stemmer.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,3 +1,20 @@
+%%PERL5_MAN3%%/XML::Validator::Schema.3.gz
+%%PERL5_MAN3%%/XML::Validator::Schema::Attribute.3.gz
+%%PERL5_MAN3%%/XML::Validator::Schema::AttributeLibrary.3.gz
+%%PERL5_MAN3%%/XML::Validator::Schema::AttributeNode.3.gz
+%%PERL5_MAN3%%/XML::Validator::Schema::ComplexTypeNode.3.gz
+%%PERL5_MAN3%%/XML::Validator::Schema::ElementLibrary.3.gz
+%%PERL5_MAN3%%/XML::Validator::Schema::ElementNode.3.gz
+%%PERL5_MAN3%%/XML::Validator::Schema::ElementRefNode.3.gz
+%%PERL5_MAN3%%/XML::Validator::Schema::Library.3.gz
+%%PERL5_MAN3%%/XML::Validator::Schema::ModelNode.3.gz
+%%PERL5_MAN3%%/XML::Validator::Schema::Node.3.gz
+%%PERL5_MAN3%%/XML::Validator::Schema::Parser.3.gz
+%%PERL5_MAN3%%/XML::Validator::Schema::RootNode.3.gz
+%%PERL5_MAN3%%/XML::Validator::Schema::SimpleType.3.gz
+%%PERL5_MAN3%%/XML::Validator::Schema::SimpleTypeNode.3.gz
+%%PERL5_MAN3%%/XML::Validator::Schema::TypeLibrary.3.gz
+%%PERL5_MAN3%%/XML::Validator::Schema::Util.3.gz
 %%SITE_PERL%%/XML/Validator/Schema.pm
 %%SITE_PERL%%/XML/Validator/Schema/Attribute.pm
 %%SITE_PERL%%/XML/Validator/Schema/AttributeLibrary.pm
@@ -16,9 +33,9 @@
 %%SITE_PERL%%/XML/Validator/Schema/TypeLibrary.pm
 %%SITE_PERL%%/XML/Validator/Schema/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Validator/Schema/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Validator/Schema
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Validator/Schema
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Validator
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrm %%SITE_PERL%%/XML/Validator/Schema
+@dirrmtry %%SITE_PERL%%/XML/Validator/Schema
 @dirrmtry %%SITE_PERL%%/XML/Validator
 @dirrmtry %%SITE_PERL%%/XML

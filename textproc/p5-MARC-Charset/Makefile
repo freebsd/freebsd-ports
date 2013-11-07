@@ -20,11 +20,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		MARC::Charset.3 \
-		MARC::Charset::Code.3 \
-		MARC::Charset::Compiler.3 \
-		MARC::Charset::Constants.3 \
-		MARC::Charset::Table.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

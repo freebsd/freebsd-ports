@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Generator/DBI/.packlist
+%%PERL5_MAN3%%/XML::Generator::DBI.3.gz
 %%SITE_PERL%%/XML/Generator/DBI.pm
-@dirrmtry %%SITE_PERL%%/XML/Generator
-@dirrmtry %%SITE_PERL%%/XML
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Generator/DBI
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Generator/DBI/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Generator/DBI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Generator
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/Generator
+@dirrmtry %%SITE_PERL%%/XML

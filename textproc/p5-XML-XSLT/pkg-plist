@@ -1,6 +1,8 @@
 bin/xslt-parser
+%%PERL5_MAN3%%/XML::XSLT.3.gz
 %%SITE_PERL%%/XML/XSLT.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XSLT/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XSLT
+man/man1/xslt-parser.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XSLT
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML

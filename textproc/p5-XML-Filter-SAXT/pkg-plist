@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/SAXT/.packlist
+%%PERL5_MAN3%%/XML::Filter::SAXT.3.gz
 %%SITE_PERL%%/XML/Filter/SAXT.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/SAXT
-@dirrmtry %%SITE_PERL%%/XML/Filter
-@dirrmtry %%SITE_PERL%%/XML
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/SAXT/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/SAXT
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/Filter
+@dirrmtry %%SITE_PERL%%/XML

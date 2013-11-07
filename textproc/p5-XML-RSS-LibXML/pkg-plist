@@ -1,3 +1,7 @@
+%%PERL5_MAN3%%/XML::RSS::LibXML.3.gz
+%%PERL5_MAN3%%/XML::RSS::LibXML::ImplBase.3.gz
+%%PERL5_MAN3%%/XML::RSS::LibXML::MagicElement.3.gz
+%%PERL5_MAN3%%/XML::RSS::LibXML::Namespaces.3.gz
 %%SITE_PERL%%/XML/RSS/LibXML.pm
 %%SITE_PERL%%/XML/RSS/LibXML/ImplBase.pm
 %%SITE_PERL%%/XML/RSS/LibXML/MagicElement.pm
@@ -11,9 +15,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS/LibXML/.packlist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/benchmark.pl
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS/LibXML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS/LibXML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrm %%SITE_PERL%%/XML/RSS/LibXML
+@dirrmtry %%SITE_PERL%%/XML/RSS/LibXML
 @dirrmtry %%SITE_PERL%%/XML/RSS
 @dirrmtry %%SITE_PERL%%/XML

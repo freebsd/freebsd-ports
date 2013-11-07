@@ -1,5 +1,6 @@
-%%SITE_PERL%%/Text/German.pod
+%%PERL5_MAN3%%/Text::German.3.gz
 %%SITE_PERL%%/Text/German.pm
+%%SITE_PERL%%/Text/German.pod
 %%SITE_PERL%%/Text/German/Adjektiv.pm
 %%SITE_PERL%%/Text/German/Ausnahme.pm
 %%SITE_PERL%%/Text/German/Cache.pm
@@ -9,7 +10,7 @@
 %%SITE_PERL%%/Text/German/Verb.pm
 %%SITE_PERL%%/Text/German/Vorsilbe.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/German/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/German
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/German
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
 @dirrmtry %%SITE_PERL%%/Text/German
 @dirrmtry %%SITE_PERL%%/Text

@@ -1,7 +1,28 @@
 bin/pom2
 bin/pomdump
 bin/podlint
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/POM/.packlist
+%%PERL5_MAN3%%/Pod::POM.3.gz
+%%PERL5_MAN3%%/Pod::POM::Constants.3.gz
+%%PERL5_MAN3%%/Pod::POM::Node.3.gz
+%%PERL5_MAN3%%/Pod::POM::Node::Begin.3.gz
+%%PERL5_MAN3%%/Pod::POM::Node::Code.3.gz
+%%PERL5_MAN3%%/Pod::POM::Node::Content.3.gz
+%%PERL5_MAN3%%/Pod::POM::Node::For.3.gz
+%%PERL5_MAN3%%/Pod::POM::Node::Head1.3.gz
+%%PERL5_MAN3%%/Pod::POM::Node::Head2.3.gz
+%%PERL5_MAN3%%/Pod::POM::Node::Head3.3.gz
+%%PERL5_MAN3%%/Pod::POM::Node::Head4.3.gz
+%%PERL5_MAN3%%/Pod::POM::Node::Item.3.gz
+%%PERL5_MAN3%%/Pod::POM::Node::Over.3.gz
+%%PERL5_MAN3%%/Pod::POM::Node::Pod.3.gz
+%%PERL5_MAN3%%/Pod::POM::Node::Sequence.3.gz
+%%PERL5_MAN3%%/Pod::POM::Node::Text.3.gz
+%%PERL5_MAN3%%/Pod::POM::Node::Verbatim.3.gz
+%%PERL5_MAN3%%/Pod::POM::Nodes.3.gz
+%%PERL5_MAN3%%/Pod::POM::View.3.gz
+%%PERL5_MAN3%%/Pod::POM::View::HTML.3.gz
+%%PERL5_MAN3%%/Pod::POM::View::Pod.3.gz
+%%PERL5_MAN3%%/Pod::POM::View::Text.3.gz
 %%SITE_PERL%%/Pod/POM.pm
 %%SITE_PERL%%/Pod/POM/Constants.pm
 %%SITE_PERL%%/Pod/POM/Node.pm
@@ -25,9 +46,13 @@ bin/podlint
 %%SITE_PERL%%/Pod/POM/View/HTML.pm
 %%SITE_PERL%%/Pod/POM/View/Pod.pm
 %%SITE_PERL%%/Pod/POM/View/Text.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/POM/.packlist
+man/man1/podlint.1.gz
+man/man1/pom2.1.gz
+man/man1/pomdump.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/POM
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
 @dirrmtry %%SITE_PERL%%/Pod/POM/View
 @dirrmtry %%SITE_PERL%%/Pod/POM/Node
 @dirrmtry %%SITE_PERL%%/Pod/POM
 @dirrmtry %%SITE_PERL%%/Pod
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/POM
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod

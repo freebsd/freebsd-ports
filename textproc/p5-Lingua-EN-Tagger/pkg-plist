@@ -1,13 +1,14 @@
+%%PERL5_MAN3%%/Lingua::EN::Tagger.3.gz
 %%SITE_PERL%%/Lingua/EN/Tagger.pm
-%%SITE_PERL%%/Lingua/EN/Tagger/tags.yml
-%%SITE_PERL%%/Lingua/EN/Tagger/pos_words.hash
 %%SITE_PERL%%/Lingua/EN/Tagger/pos_tags.hash
+%%SITE_PERL%%/Lingua/EN/Tagger/pos_words.hash
+%%SITE_PERL%%/Lingua/EN/Tagger/tags.yml
 %%SITE_PERL%%/Lingua/EN/Tagger/unknown.yml
 %%SITE_PERL%%/Lingua/EN/Tagger/words.yml
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Tagger/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Tagger
-@dirrm %%SITE_PERL%%/Lingua/EN/Tagger
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Tagger
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
+@dirrmtry %%SITE_PERL%%/Lingua/EN/Tagger
 @dirrmtry %%SITE_PERL%%/Lingua/EN
 @dirrmtry %%SITE_PERL%%/Lingua
