@@ -25,9 +25,7 @@ PORTEXAMPLES=	*
 .include <bsd.port.options.mk>
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	( cd ${WRKSRC}/contrib && ${INSTALL_DATA} \example-* ${STAGEDIR}${EXAMPLESDIR} )
-.endif
 
 .include <bsd.port.mk>
