@@ -18,14 +18,8 @@ CONFIGURE_ARGS=	--disable-embfts
 PLIST_FILES=	bin/fpart man/man1/fpart.1.gz
 PORTDOCS=	Changelog README TODO
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
