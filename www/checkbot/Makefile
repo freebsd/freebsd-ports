@@ -21,12 +21,12 @@ RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
 		p5-Time-Duration>=0:${PORTSDIR}/devel/p5-Time-Duration
 
-MAN1=		checkbot.1
 USES=		perl5
 USE_PERL5=	configure
 
-PLIST_FILES=	bin/checkbot ${SITE_PERL:S!${LOCALBASE}/!!}/${PERL_ARCH}/auto/checkbot/.packlist
+PLIST_FILES=	bin/checkbot \
+		${SITE_PERL:S!${LOCALBASE}/!!}/${PERL_ARCH}/auto/checkbot/.packlist \
+		man/man1/checkbot.1.gz
 PLIST_DIRS=	${SITE_PERL:S!${LOCALBASE}/!!}/${PERL_ARCH}/auto/checkbot
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

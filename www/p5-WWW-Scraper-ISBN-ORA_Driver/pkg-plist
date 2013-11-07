@@ -1,4 +1,5 @@
 %%SITE_PERL%%/WWW/Scraper/ISBN/ORA_Driver.pm
+%%PERL5_MAN3%%/WWW::Scraper::ISBN::ORA_Driver.3.gz
 @dirrmtry %%SITE_PERL%%/WWW/Scraper/ISBN
 @dirrmtry %%SITE_PERL%%/WWW/Scraper
 @dirrmtry %%SITE_PERL%%/WWW
