@@ -4261,7 +4261,7 @@ create-users-groups:
 								echo \"Adding user '$${_login}' to group '${_group}'.\"; \
 								${PW} groupmod ${_group} -m $${_login}; fi" >> ${TMPPLIST}; \
 					else \
-							${ECHO_CMD} "if ! ${PW} groupshow ${_group} | ${GREP} -qw $${_login}; then \n \
+							${ECHO_CMD} -e "if ! ${PW} groupshow ${_group} | ${GREP} -qw $${_login}; then \n \
 								echo \"Adding user '$${_login}' to group '${_group}'.\" \n \
 								${PW} groupmod ${_group} -m $${_login} \nfi" >> ${_UG_OUTPUT}; \
 					fi ; \
