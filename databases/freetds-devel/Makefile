@@ -53,7 +53,7 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 .endif
 
-.if ${PORT_OPTIONS:ODBCWIDE}
+.if ${PORT_OPTIONS:MODBCWIDE}
 CONFIGURE_ARGS+=	--enable-odbc-wide
 .endif
 
