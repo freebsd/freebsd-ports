@@ -1,0 +1,10 @@
+%%PERL5_MAN3%%/WWW::Pastebin::PastebinCom::Create.3.gz
+%%SITE_PERL%%/WWW/Pastebin/PastebinCom/Create.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Pastebin/PastebinCom/Create/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Pastebin/PastebinCom/Create
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Pastebin/PastebinCom
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Pastebin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW/Pastebin/PastebinCom
+@dirrmtry %%SITE_PERL%%/WWW/Pastebin
+@dirrmtry %%SITE_PERL%%/WWW

@@ -13,15 +13,10 @@ COMMENT=	Information from the CIA World Factbook
 RUN_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-MLDBM>=0:${PORTSDIR}/databases/p5-MLDBM
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${BUILD_DEPENDS}
 
-CONFIGURE_ARGS=	</dev/null
 USES=		perl5
 USE_PERL5=	modbuild
+CONFIGURE_ARGS=	</dev/null
 
-MAN3=		WebService::CIA.3 WebService::CIA::Parser.3 \
-		WebService::CIA::Source.3 WebService::CIA::Source::DBM.3 \
-		WebService::CIA::Source::Web.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

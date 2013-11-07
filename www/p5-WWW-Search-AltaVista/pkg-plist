@@ -1,3 +1,13 @@
+%%PERL5_MAN3%%/WWW::Search::AltaVista.3.gz
+%%PERL5_MAN3%%/WWW::Search::AltaVista::AdvancedNews.3.gz
+%%PERL5_MAN3%%/WWW::Search::AltaVista::AdvancedWeb.3.gz
+%%PERL5_MAN3%%/WWW::Search::AltaVista::Careers.3.gz
+%%PERL5_MAN3%%/WWW::Search::AltaVista::DE.3.gz
+%%PERL5_MAN3%%/WWW::Search::AltaVista::Intranet.3.gz
+%%PERL5_MAN3%%/WWW::Search::AltaVista::Intranet3.3.gz
+%%PERL5_MAN3%%/WWW::Search::AltaVista::NL.3.gz
+%%PERL5_MAN3%%/WWW::Search::AltaVista::News.3.gz
+%%PERL5_MAN3%%/WWW::Search::AltaVista::Web.3.gz
 %%SITE_PERL%%/WWW/Search/AltaVista.pm
 %%SITE_PERL%%/WWW/Search/AltaVista/AdvancedNews.pm
 %%SITE_PERL%%/WWW/Search/AltaVista/AdvancedWeb.pm
@@ -9,9 +19,9 @@
 %%SITE_PERL%%/WWW/Search/AltaVista/News.pm
 %%SITE_PERL%%/WWW/Search/AltaVista/Web.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search/AltaVista/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search/AltaVista
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search/AltaVista
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
-@dirrm %%SITE_PERL%%/WWW/Search/AltaVista
+@dirrmtry %%SITE_PERL%%/WWW/Search/AltaVista
 @dirrmtry %%SITE_PERL%%/WWW/Search
 @dirrmtry %%SITE_PERL%%/WWW

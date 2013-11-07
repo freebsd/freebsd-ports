@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/WWW::Mechanize::Plugin::phpBB.3.gz
 %%SITE_PERL%%/WWW/Mechanize/Plugin/phpBB.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/Plugin/phpBB/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/Plugin/phpBB
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/Plugin/phpBB
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW

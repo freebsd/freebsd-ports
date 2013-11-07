@@ -1,3 +1,13 @@
+%%PERL5_MAN3%%/WebService::ISBNDB.3.gz
+%%PERL5_MAN3%%/WebService::ISBNDB::API.3.gz
+%%PERL5_MAN3%%/WebService::ISBNDB::API::Authors.3.gz
+%%PERL5_MAN3%%/WebService::ISBNDB::API::Books.3.gz
+%%PERL5_MAN3%%/WebService::ISBNDB::API::Categories.3.gz
+%%PERL5_MAN3%%/WebService::ISBNDB::API::Publishers.3.gz
+%%PERL5_MAN3%%/WebService::ISBNDB::API::Subjects.3.gz
+%%PERL5_MAN3%%/WebService::ISBNDB::Agent.3.gz
+%%PERL5_MAN3%%/WebService::ISBNDB::Agent::REST.3.gz
+%%PERL5_MAN3%%/WebService::ISBNDB::Iterator.3.gz
 %%SITE_PERL%%/WebService/ISBNDB.pm
 %%SITE_PERL%%/WebService/ISBNDB/API.pm
 %%SITE_PERL%%/WebService/ISBNDB/API/Authors.pm
@@ -8,7 +18,7 @@
 %%SITE_PERL%%/WebService/ISBNDB/Agent.pm
 %%SITE_PERL%%/WebService/ISBNDB/Agent/REST.pm
 %%SITE_PERL%%/WebService/ISBNDB/Iterator.pm
-@dirrm %%SITE_PERL%%/WebService/ISBNDB/API
-@dirrm %%SITE_PERL%%/WebService/ISBNDB/Agent
-@dirrm %%SITE_PERL%%/WebService/ISBNDB
+@dirrmtry %%SITE_PERL%%/WebService/ISBNDB/Agent
+@dirrmtry %%SITE_PERL%%/WebService/ISBNDB/API
+@dirrmtry %%SITE_PERL%%/WebService/ISBNDB
 @dirrmtry %%SITE_PERL%%/WebService

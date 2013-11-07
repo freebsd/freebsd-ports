@@ -1,6 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/Markdown/.packlist
+%%PERL5_MAN3%%/Template::Plugin::Markdown.3.gz
 %%SITE_PERL%%/Template/Plugin/Markdown.pm
-@dirrmtry %%SITE_PERL%%/Template/Plugin
-@dirrmtry %%SITE_PERL%%/Template
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/Markdown/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/Markdown
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
+@dirrmtry %%SITE_PERL%%/Template/Plugin
+@dirrmtry %%SITE_PERL%%/Template

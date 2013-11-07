@@ -1,4 +1,10 @@
 bin/mech-dump
+%%PERL5_MAN3%%/WWW::Mechanize.3.gz
+%%PERL5_MAN3%%/WWW::Mechanize::Cookbook.3.gz
+%%PERL5_MAN3%%/WWW::Mechanize::Examples.3.gz
+%%PERL5_MAN3%%/WWW::Mechanize::FAQ.3.gz
+%%PERL5_MAN3%%/WWW::Mechanize::Image.3.gz
+%%PERL5_MAN3%%/WWW::Mechanize::Link.3.gz
 %%SITE_PERL%%/WWW/Mechanize.pm
 %%SITE_PERL%%/WWW/Mechanize/Cookbook.pod
 %%SITE_PERL%%/WWW/Mechanize/Examples.pod
@@ -6,7 +12,8 @@ bin/mech-dump
 %%SITE_PERL%%/WWW/Mechanize/Image.pm
 %%SITE_PERL%%/WWW/Mechanize/Link.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize
+man/man1/mech-dump.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
-@dirrm %%SITE_PERL%%/WWW/Mechanize
+@dirrmtry %%SITE_PERL%%/WWW/Mechanize
 @dirrmtry %%SITE_PERL%%/WWW

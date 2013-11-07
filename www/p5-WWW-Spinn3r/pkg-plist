@@ -1,11 +1,13 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Spinn3r/.packlist
+%%PERL5_MAN3%%/WWW::Spinn3r.3.gz
+%%PERL5_MAN3%%/WWW::Spinn3r::Synced.3.gz
+%%SITE_PERL%%/WWW/Spinn3r.pm
+%%SITE_PERL%%/WWW/Spinn3r/Common.pm
+%%SITE_PERL%%/WWW/Spinn3r/Synced.pm
 %%SITE_PERL%%/WWW/Spinn3r/item.pm
 %%SITE_PERL%%/WWW/Spinn3r/link.pm
-%%SITE_PERL%%/WWW/Spinn3r/Synced.pm
 %%SITE_PERL%%/WWW/Spinn3r/next_request_url.pm
-%%SITE_PERL%%/WWW/Spinn3r/Common.pm
-%%SITE_PERL%%/WWW/Spinn3r.pm
-@dirrmtry %%SITE_PERL%%/WWW/Spinn3r
-@dirrmtry %%SITE_PERL%%/WWW
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Spinn3r/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Spinn3r
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW/Spinn3r
+@dirrmtry %%SITE_PERL%%/WWW

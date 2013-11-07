@@ -1,5 +1,5 @@
-@comment $FreeBSD$
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tatsumaki/.packlist
+%%PERL5_MAN3%%/Tatsumaki.3.gz
+%%PERL5_MAN3%%/Tatsumaki::MessageQueue.3.gz
 %%SITE_PERL%%/Tatsumaki.pm
 %%SITE_PERL%%/Tatsumaki/Application.pm
 %%SITE_PERL%%/Tatsumaki/Error.pm
@@ -12,6 +12,7 @@
 %%SITE_PERL%%/Tatsumaki/Service.pm
 %%SITE_PERL%%/Tatsumaki/Template.pm
 %%SITE_PERL%%/Tatsumaki/Template/Micro.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tatsumaki/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tatsumaki
 @dirrmtry %%SITE_PERL%%/Tatsumaki/Template
 @dirrmtry %%SITE_PERL%%/Tatsumaki
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tatsumaki

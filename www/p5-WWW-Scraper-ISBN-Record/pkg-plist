@@ -1,9 +1,10 @@
+%%PERL5_MAN3%%/WWW::Scraper::ISBN::Record.3.gz
 %%SITE_PERL%%/WWW/Scraper/ISBN/Record.pm
-@dirrmtry %%SITE_PERL%%/WWW/Scraper/ISBN
-@dirrmtry %%SITE_PERL%%/WWW/Scraper
-@dirrmtry %%SITE_PERL%%/WWW
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scraper/ISBN/Record/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scraper/ISBN/Record
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scraper/ISBN/Record
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scraper/ISBN
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scraper
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW/Scraper/ISBN
+@dirrmtry %%SITE_PERL%%/WWW/Scraper
+@dirrmtry %%SITE_PERL%%/WWW

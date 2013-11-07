@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/DHL/.packlist
+%%PERL5_MAN3%%/WWW::DHL.3.gz
 %%SITE_PERL%%/WWW/DHL.pm
-@dirrmtry %%SITE_PERL%%/WWW
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/DHL/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/DHL
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW

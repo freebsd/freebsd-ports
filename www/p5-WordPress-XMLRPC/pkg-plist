@@ -1,0 +1,7 @@
+%%PERL5_MAN3%%/WordPress::XMLRPC.3.gz
+%%SITE_PERL%%/WordPress/XMLRPC.pm
+%%SITE_PERL%%/WordPress/XMLRPC.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WordPress/XMLRPC/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WordPress/XMLRPC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WordPress
+@dirrmtry %%SITE_PERL%%/WordPress

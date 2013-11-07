@@ -1,4 +1,11 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/OpenSearch/.packlist
+%%PERL5_MAN3%%/WWW::OpenSearch.3.gz
+%%PERL5_MAN3%%/WWW::OpenSearch::Agent.3.gz
+%%PERL5_MAN3%%/WWW::OpenSearch::Description.3.gz
+%%PERL5_MAN3%%/WWW::OpenSearch::Image.3.gz
+%%PERL5_MAN3%%/WWW::OpenSearch::Query.3.gz
+%%PERL5_MAN3%%/WWW::OpenSearch::Request.3.gz
+%%PERL5_MAN3%%/WWW::OpenSearch::Response.3.gz
+%%PERL5_MAN3%%/WWW::OpenSearch::Url.3.gz
 %%SITE_PERL%%/WWW/OpenSearch.pm
 %%SITE_PERL%%/WWW/OpenSearch/Agent.pm
 %%SITE_PERL%%/WWW/OpenSearch/Description.pm
@@ -7,6 +14,7 @@
 %%SITE_PERL%%/WWW/OpenSearch/Request.pm
 %%SITE_PERL%%/WWW/OpenSearch/Response.pm
 %%SITE_PERL%%/WWW/OpenSearch/Url.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/OpenSearch/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/OpenSearch
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
 @dirrmtry %%SITE_PERL%%/WWW/OpenSearch

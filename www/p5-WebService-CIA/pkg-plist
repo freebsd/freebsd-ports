@@ -1,9 +1,14 @@
+bin/webservice-cia-makedbm.pl
+%%PERL5_MAN3%%/WebService::CIA.3.gz
+%%PERL5_MAN3%%/WebService::CIA::Parser.3.gz
+%%PERL5_MAN3%%/WebService::CIA::Source.3.gz
+%%PERL5_MAN3%%/WebService::CIA::Source::DBM.3.gz
+%%PERL5_MAN3%%/WebService::CIA::Source::Web.3.gz
 %%SITE_PERL%%/WebService/CIA.pm
 %%SITE_PERL%%/WebService/CIA/Parser.pm
 %%SITE_PERL%%/WebService/CIA/Source.pm
 %%SITE_PERL%%/WebService/CIA/Source/DBM.pm
 %%SITE_PERL%%/WebService/CIA/Source/Web.pm
-bin/webservice-cia-makedbm.pl
 @dirrmtry %%SITE_PERL%%/WebService/CIA/Source
 @dirrmtry %%SITE_PERL%%/WebService/CIA
 @dirrmtry %%SITE_PERL%%/WebService

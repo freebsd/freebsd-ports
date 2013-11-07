@@ -1,10 +1,13 @@
 bin/mvs
+%%PERL5_MAN3%%/WWW::Mediawiki::Client.3.gz
+%%PERL5_MAN3%%/WWW::Mediawiki::Client::Exceptions.3.gz
 %%SITE_PERL%%/WWW/Mediawiki/Client.pm
 %%SITE_PERL%%/WWW/Mediawiki/Client/Exceptions.pm
-@dirrm %%SITE_PERL%%/WWW/Mediawiki/Client
-@dirrmtry %%SITE_PERL%%/WWW/Mediawiki
-@dirrmtry %%SITE_PERL%%/WWW
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mediawiki/Client/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mediawiki/Client
+man/man1/mvs.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mediawiki/Client
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mediawiki
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW/Mediawiki/Client
+@dirrmtry %%SITE_PERL%%/WWW/Mediawiki
+@dirrmtry %%SITE_PERL%%/WWW

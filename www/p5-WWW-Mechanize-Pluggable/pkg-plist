@@ -1,12 +1,16 @@
+%%PERL5_MAN3%%/WWW::Mechanize::Pluggable.3.gz
+%%PERL5_MAN3%%/WWW::Mechanize::Pluggable::Design.3.gz
+%%PERL5_MAN3%%/WWW::Mechanize::Plugin::Cookbook.3.gz
+%%PERL5_MAN3%%/WWW::Mechanize::Plugin::HelloWorld.3.gz
 %%SITE_PERL%%/WWW/Mechanize/Pluggable.pm
 %%SITE_PERL%%/WWW/Mechanize/Pluggable/Design.pm
 %%SITE_PERL%%/WWW/Mechanize/Plugin/Cookbook.pm
 %%SITE_PERL%%/WWW/Mechanize/Plugin/HelloWorld.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/Pluggable/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/Pluggable
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/Pluggable
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
 @dirrmtry %%SITE_PERL%%/WWW/Mechanize/Plugin
-@dirrm %%SITE_PERL%%/WWW/Mechanize/Pluggable
+@dirrmtry %%SITE_PERL%%/WWW/Mechanize/Pluggable
 @dirrmtry %%SITE_PERL%%/WWW/Mechanize
 @dirrmtry %%SITE_PERL%%/WWW

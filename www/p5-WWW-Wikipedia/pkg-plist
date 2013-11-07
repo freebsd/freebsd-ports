@@ -1,8 +1,11 @@
 bin/wikipedia
+%%PERL5_MAN3%%/WWW::Wikipedia.3.gz
+%%PERL5_MAN3%%/WWW::Wikipedia::Entry.3.gz
 %%SITE_PERL%%/WWW/Wikipedia.pm
 %%SITE_PERL%%/WWW/Wikipedia/Entry.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Wikipedia/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Wikipedia
-@dirrm %%SITE_PERL%%/WWW/Wikipedia
+man/man1/wikipedia.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Wikipedia
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW/Wikipedia
 @dirrmtry %%SITE_PERL%%/WWW

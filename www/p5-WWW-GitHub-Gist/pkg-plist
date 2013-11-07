@@ -1,6 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/GitHub/Gist/.packlist
+%%PERL5_MAN3%%/WWW::GitHub::Gist.3.gz
+%%PERL5_MAN3%%/WWW::GitHub::Gist::v3.3.gz
 %%SITE_PERL%%/WWW/GitHub/Gist.pm
 %%SITE_PERL%%/WWW/GitHub/Gist/v3.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/GitHub/Gist/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/GitHub/Gist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/GitHub
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
