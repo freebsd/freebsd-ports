@@ -5,7 +5,7 @@
  EXTRA_DIST = vmguestlib.pc.in
  
 -pkgconfigdir   = $(libdir)/pkgconfig
-+pkgconfigdir   = $(DESTDIR)$(prefix)/libdata/pkgconfig
++pkgconfigdir   = $(prefix)/libdata/pkgconfig
  pkgconfig_DATA = vmguestlib.pc
  
  $(pkgconfig_DATA): $(top_builddir)/config.status
@@ -16,7 +16,7 @@
  	$(top_srcdir)/lib/include/vm_basic_types.h
  EXTRA_DIST = vmguestlib.pc.in
 -pkgconfigdir = $(libdir)/pkgconfig
-+pkgconfigdir = $(DESTDIR)$(prefix)/libdata/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
  pkgconfig_DATA = vmguestlib.pc
  all: all-am
  
