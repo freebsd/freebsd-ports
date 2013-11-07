@@ -14,7 +14,5 @@ BUILD_DEPENDS=	googletest>=1.5.0:${PORTSDIR}/devel/googletest
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GCC=	4.2+
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
