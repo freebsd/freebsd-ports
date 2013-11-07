@@ -1,7 +1,7 @@
 bin/html_formfu_deploy.pl
 bin/html_formfu_dumpconf.pl
-man/man1/html_formfu_dumpconf.pl.1
-man/man1/html_formfu_deploy.pl.1
+man/man1/html_formfu_dumpconf.pl.1.gz
+man/man1/html_formfu_deploy.pl.1.gz
 %%SITE_PERL%%/HTML/FormFu/Constraint/Integer.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/AutoSet.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/DateTime.pm
