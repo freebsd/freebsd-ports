@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	${MODPERL_SUFFIX}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Active Server Pages for Apache
 
-RUN_DEPENDS=	p5-Devel-Symdump>=0:${PORTSDIR}/devel/p5-Devel-Symdump \
+BUILD_DEPENDS=	p5-Devel-Symdump>=0:${PORTSDIR}/devel/p5-Devel-Symdump \
 		p5-HTML-Clean>=0:${PORTSDIR}/www/p5-HTML-Clean \
 		p5-HTML-FillInForm>=0:${PORTSDIR}/www/p5-HTML-FillInForm \
 		p5-HTTP-Date>=0:${PORTSDIR}/www/p5-HTTP-Date \
@@ -20,7 +20,7 @@ RUN_DEPENDS=	p5-Devel-Symdump>=0:${PORTSDIR}/devel/p5-Devel-Symdump \
 		p5-MLDBM-Sync>=0.25:${PORTSDIR}/databases/p5-MLDBM-Sync \
 		p5-Tie-Cache>=0:${PORTSDIR}/devel/p5-Tie-Cache \
 		p5-XML-LibXSLT>=0:${PORTSDIR}/textproc/p5-XML-LibXSLT
-
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 # XXX not tested with mod_perl2, but mod_perl was removed ...
 #.if !defined(WITHOUT_MODPERL)
@@ -33,11 +33,4 @@ RUN_DEPENDS=	p5-Devel-Symdump>=0:${PORTSDIR}/devel/p5-Devel-Symdump \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		asp-perl.1
-MAN3=		Apache::ASP.3 \
-		Apache::ASP::CGI::Table.3 \
-		Bundle::Apache::ASP.3 \
-		Bundle::Apache::ASP::Extra.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

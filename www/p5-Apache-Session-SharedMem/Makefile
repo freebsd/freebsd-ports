@@ -17,12 +17,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Apache::Session::Store::SharedMem.3 \
-		Apache::Session::SharedMem.3
-
-NO_STAGE=	yes
-#post-patch:
-#	@${CP} ${WRKSRC}/Apache/Session/SharedMem.pm \
-#		${WRKSRC}/lib/Apache/Session
-
 .include <bsd.port.mk>

@@ -1,4 +1,12 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/AMF/Perl/.packlist
+%%PERL5_MAN3%%/AMF::Perl.3.gz
+%%PERL5_MAN3%%/AMF::Perl::App::Executive.3.gz
+%%PERL5_MAN3%%/AMF::Perl::IO::Deserializer.3.gz
+%%PERL5_MAN3%%/AMF::Perl::IO::InputStream.3.gz
+%%PERL5_MAN3%%/AMF::Perl::IO::OutputStream.3.gz
+%%PERL5_MAN3%%/AMF::Perl::IO::Serializer.3.gz
+%%PERL5_MAN3%%/AMF::Perl::Sql::MysqlRecordSet.3.gz
+%%PERL5_MAN3%%/AMF::Perl::Util::Object.3.gz
+%%PERL5_MAN3%%/AMF::Perl::Util::RemotingService.3.gz
 %%SITE_PERL%%/AMF/Perl.pm
 %%SITE_PERL%%/AMF/Perl/App/Executive.pm
 %%SITE_PERL%%/AMF/Perl/IO/Deserializer.pm
@@ -8,11 +16,12 @@
 %%SITE_PERL%%/AMF/Perl/Sql/MysqlRecordSet.pm
 %%SITE_PERL%%/AMF/Perl/Util/Object.pm
 %%SITE_PERL%%/AMF/Perl/Util/RemotingService.pm
-@dirrm %%SITE_PERL%%/AMF/Perl/App
-@dirrm %%SITE_PERL%%/AMF/Perl/IO
-@dirrm %%SITE_PERL%%/AMF/Perl/Sql
-@dirrm %%SITE_PERL%%/AMF/Perl/Util
-@dirrm %%SITE_PERL%%/AMF/Perl
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AMF/Perl
-@dirrmtry %%SITE_PERL%%/AMF
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/AMF/Perl/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AMF/Perl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AMF
+@dirrmtry %%SITE_PERL%%/AMF/Perl/Util
+@dirrmtry %%SITE_PERL%%/AMF/Perl/Sql
+@dirrmtry %%SITE_PERL%%/AMF/Perl/IO
+@dirrmtry %%SITE_PERL%%/AMF/Perl/App
+@dirrmtry %%SITE_PERL%%/AMF/Perl
+@dirrmtry %%SITE_PERL%%/AMF

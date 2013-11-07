@@ -1,4 +1,16 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Nopaste/.packlist
+bin/nopaste
+%%PERL5_MAN3%%/App::Nopaste.3.gz
+%%PERL5_MAN3%%/App::Nopaste::Command.3.gz
+%%PERL5_MAN3%%/App::Nopaste::Service.3.gz
+%%PERL5_MAN3%%/App::Nopaste::Service::Codepeek.3.gz
+%%PERL5_MAN3%%/App::Nopaste::Service::Debian.3.gz
+%%PERL5_MAN3%%/App::Nopaste::Service::Gist.3.gz
+%%PERL5_MAN3%%/App::Nopaste::Service::PastebinCom.3.gz
+%%PERL5_MAN3%%/App::Nopaste::Service::Pastie.3.gz
+%%PERL5_MAN3%%/App::Nopaste::Service::Shadowcat.3.gz
+%%PERL5_MAN3%%/App::Nopaste::Service::Snitch.3.gz
+%%PERL5_MAN3%%/App::Nopaste::Service::Ubuntu.3.gz
+%%PERL5_MAN3%%/App::Nopaste::Service::ssh.3.gz
 %%SITE_PERL%%/App/Nopaste.pm
 %%SITE_PERL%%/App/Nopaste/Command.pm
 %%SITE_PERL%%/App/Nopaste/Service.pm
@@ -9,11 +21,12 @@
 %%SITE_PERL%%/App/Nopaste/Service/Pastie.pm
 %%SITE_PERL%%/App/Nopaste/Service/Shadowcat.pm
 %%SITE_PERL%%/App/Nopaste/Service/Snitch.pm
-%%SITE_PERL%%/App/Nopaste/Service/ssh.pm
 %%SITE_PERL%%/App/Nopaste/Service/Ubuntu.pm
-bin/nopaste
-@dirrm %%SITE_PERL%%/App/Nopaste/Service
-@dirrm %%SITE_PERL%%/App/Nopaste
-@dirrm %%SITE_PERL%%/App
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Nopaste
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
+%%SITE_PERL%%/App/Nopaste/Service/ssh.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Nopaste/.packlist
+man/man1/nopaste.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Nopaste
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
+@dirrmtry %%SITE_PERL%%/App/Nopaste/Service
+@dirrmtry %%SITE_PERL%%/App/Nopaste
+@dirrmtry %%SITE_PERL%%/App

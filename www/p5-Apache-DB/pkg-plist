@@ -1,3 +1,7 @@
+%%PERL5_MAN3%%/Apache::DB.3.gz
+%%PERL5_MAN3%%/Apache::DProf.3.gz
+%%PERL5_MAN3%%/Apache::SmallProf.3.gz
+%%PERL5_MAN3%%/Apache::perl5db.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/DB.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/DProf.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/SmallProf.pm
@@ -5,6 +9,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DB/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DB/DB.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DB/DB.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DB
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Apache
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DB
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Apache

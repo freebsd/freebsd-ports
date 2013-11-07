@@ -1,6 +1,8 @@
 bin/gist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/gist/.packlist
+%%PERL5_MAN3%%/App::gist.3.gz
 %%SITE_PERL%%/App/gist.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/gist/.packlist
+man/man1/gist.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/gist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
 @dirrmtry %%SITE_PERL%%/App

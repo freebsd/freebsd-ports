@@ -1,0 +1,8 @@
+%%PERL5_MAN3%%/Apache::AuthDBI.3.gz
+%%PERL5_MAN3%%/Apache::DBI.3.gz
+%%SITE_PERL%%/Apache/AuthDBI.pm
+%%SITE_PERL%%/Apache/DBI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DBI/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DBI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
+@dirrmtry %%SITE_PERL%%/Apache

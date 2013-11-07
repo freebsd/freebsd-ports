@@ -1,7 +1,9 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Profiler/.packlist
+%%PERL5_MAN3%%/Apache2::Profiler.3.gz
+%%PERL5_MAN3%%/Apache::Profiler.3.gz
 %%SITE_PERL%%/Apache/Profiler.pm
 %%SITE_PERL%%/Apache2/Profiler.pm
-@dirrm %%SITE_PERL%%/Apache2
-@dirrm %%SITE_PERL%%/Apache
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Profiler
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Profiler/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Profiler
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
+@dirrmtry %%SITE_PERL%%/Apache2
+@dirrmtry %%SITE_PERL%%/Apache

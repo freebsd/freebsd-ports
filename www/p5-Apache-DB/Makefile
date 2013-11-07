@@ -17,8 +17,4 @@ USES=		perl5
 USE_PERL5=	configure
 USE_APACHE_RUN=	22+
 
-MAN3=		Apache::DB.3 Apache::DProf.3 Apache::perl5db.3 \
-		Apache::SmallProf.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

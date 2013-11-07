@@ -1,4 +1,8 @@
 bin/asp-perl
+%%PERL5_MAN3%%/Apache::ASP.3.gz
+%%PERL5_MAN3%%/Apache::ASP::CGI::Table.3.gz
+%%PERL5_MAN3%%/Bundle::Apache::ASP.3.gz
+%%PERL5_MAN3%%/Bundle::Apache::ASP::Extra.3.gz
 %%SITE_PERL%%/Apache/ASP.pm
 %%SITE_PERL%%/Apache/ASP/ApacheCommon.pm
 %%SITE_PERL%%/Apache/ASP/Application.pm
@@ -26,14 +30,15 @@ bin/asp-perl
 %%SITE_PERL%%/Bundle/Apache/ASP.pm
 %%SITE_PERL%%/Bundle/Apache/ASP/Extra.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/ASP/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/ASP
+man/man1/asp-perl.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/ASP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
-@dirrm %%SITE_PERL%%/Apache/ASP/CGI
-@dirrm %%SITE_PERL%%/Apache/ASP/Lang
-@dirrm %%SITE_PERL%%/Apache/ASP/Share/CORE
-@dirrm %%SITE_PERL%%/Apache/ASP/Share
-@dirrm %%SITE_PERL%%/Apache/ASP
-@dirrm %%SITE_PERL%%/Bundle/Apache/ASP
+@dirrmtry %%SITE_PERL%%/Bundle/Apache/ASP
 @dirrmtry %%SITE_PERL%%/Bundle/Apache
 @dirrmtry %%SITE_PERL%%/Bundle
+@dirrmtry %%SITE_PERL%%/Apache/ASP/Share/CORE
+@dirrmtry %%SITE_PERL%%/Apache/ASP/Share
+@dirrmtry %%SITE_PERL%%/Apache/ASP/Lang
+@dirrmtry %%SITE_PERL%%/Apache/ASP/CGI
+@dirrmtry %%SITE_PERL%%/Apache/ASP
 @dirrmtry %%SITE_PERL%%/Apache

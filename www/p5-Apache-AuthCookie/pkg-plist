@@ -1,4 +1,11 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AuthCookie/.packlist
+%%PERL5_MAN3%%/Apache2::AuthCookie.3.gz
+%%PERL5_MAN3%%/Apache2::AuthCookie::Params.3.gz
+%%PERL5_MAN3%%/Apache::AuthCookie.3.gz
+%%PERL5_MAN3%%/Apache::AuthCookie::Autobox.3.gz
+%%PERL5_MAN3%%/Apache::AuthCookie::FAQ.3.gz
+%%PERL5_MAN3%%/Apache::AuthCookie::Params.3.gz
+%%PERL5_MAN3%%/Apache::AuthCookie::Params::Base.3.gz
+%%PERL5_MAN3%%/Apache::AuthCookie::Util.3.gz
 %%SITE_PERL%%/Apache/AuthCookie.pm
 %%SITE_PERL%%/Apache/AuthCookie/Autobox.pm
 %%SITE_PERL%%/Apache/AuthCookie/FAQ.pod
@@ -7,10 +14,11 @@
 %%SITE_PERL%%/Apache/AuthCookie/Util.pm
 %%SITE_PERL%%/Apache2/AuthCookie.pm
 %%SITE_PERL%%/Apache2/AuthCookie/Params.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AuthCookie/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AuthCookie
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
 @dirrmtry %%SITE_PERL%%/Apache2/AuthCookie
 @dirrmtry %%SITE_PERL%%/Apache2
 @dirrmtry %%SITE_PERL%%/Apache/AuthCookie/Params
 @dirrmtry %%SITE_PERL%%/Apache/AuthCookie
 @dirrmtry %%SITE_PERL%%/Apache
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AuthCookie
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
