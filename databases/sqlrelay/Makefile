@@ -3,7 +3,6 @@
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
-PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
@@ -91,8 +90,8 @@ CONFIGURE_ARGS+=	--disable-freetds
 
 post-patch:
 	${REINPLACE_CMD} -E \
-		-e 's,(freebsd.*)/usr/local(.*rc.d),\1${PREFIX}\2/sqlrelay.sh-sample,' \
-		-e 's,(freebsd/sqlrelay )(.*etc),\1$$(sysconfdir)/sqlrelay-sample,' \
+		-e 's,\$$\(initroot\),\$$\(initroot\)${PREFIX},g' \
+		-e 's,/etc/rc.conf,/etc/defaults/rc.conf,g' \
 			${WRKSRC}/init/Makefile
 	${REINPLACE_CMD} -E \
 		-e 's,/usr/local[[:>:]],${PREFIX},g;' \

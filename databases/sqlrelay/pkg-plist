@@ -15,8 +15,9 @@ bin/sqlrclient-config
 bin/sqlrclientwrapper-config
 bin/sqlrserver-config
 bin/sqlrsh
-etc/rc.d/sqlrelay.sh-sample
-etc/sqlrelay-sample
+etc/rc.d/sqlrcachemanager
+etc/rc.d/sqlrelay
+etc/sqlrelay
 etc/sqlrelay.conf.example
 etc/sqlrelay.dtd
 etc/sqlrelay.xsd
@@ -99,6 +100,7 @@ libexec/sqlrelay/sqltranslation_temptablesaddmissingcolumns.so
 libexec/sqlrelay/sqltranslation_temptableslocalize.so
 libexec/sqlrelay/sqltranslation_temptablessybaseize.so
 libexec/sqlrelay/sqltranslation_translatedatetimes.so
+libexec/sqlrelay/sqltranslation_uniquetodistinct.so
 libexec/sqlrelay/sqltrigger_createtableautoincrementoracle.so
 libexec/sqlrelay/sqltrigger_droplocalizedtemptables.so
 libexec/sqlrelay/sqltrigger_droptableautoincrementoracle.so
@@ -122,6 +124,7 @@ share/examples/sample-oracle-mysql-errors.map
 @dirrmtry sqlrelay/tmp/pids
 @dirrmtry sqlrelay/tmp/ipc
 @dirrmtry sqlrelay/tmp
+@dirrmtry sqlrelay/log
 @dirrmtry sqlrelay/debug
 @dirrmtry sqlrelay/cache
 @dirrmtry sqlrelay
