@@ -1,13 +1,22 @@
 bin/htmltree
+%%PERL5_MAN3%%/HTML::AsSubs.3.gz
+%%PERL5_MAN3%%/HTML::Element.3.gz
+%%PERL5_MAN3%%/HTML::Element::traverse.3.gz
+%%PERL5_MAN3%%/HTML::Parse.3.gz
+%%PERL5_MAN3%%/HTML::Tree.3.gz
+%%PERL5_MAN3%%/HTML::Tree::AboutObjects.3.gz
+%%PERL5_MAN3%%/HTML::Tree::AboutTrees.3.gz
+%%PERL5_MAN3%%/HTML::Tree::Scanning.3.gz
+%%PERL5_MAN3%%/HTML::TreeBuilder.3.gz
 %%SITE_PERL%%/HTML/AsSubs.pm
 %%SITE_PERL%%/HTML/Element.pm
-%%SITE_PERL%%/HTML/Parse.pm
-%%SITE_PERL%%/HTML/TreeBuilder.pm
 %%SITE_PERL%%/HTML/Element/traverse.pm
+%%SITE_PERL%%/HTML/Parse.pm
 %%SITE_PERL%%/HTML/Tree.pm
 %%SITE_PERL%%/HTML/Tree/AboutObjects.pod
 %%SITE_PERL%%/HTML/Tree/AboutTrees.pod
 %%SITE_PERL%%/HTML/Tree/Scanning.pod
-@dirrm %%SITE_PERL%%/HTML/Element
-@dirrm %%SITE_PERL%%/HTML/Tree
+%%SITE_PERL%%/HTML/TreeBuilder.pm
+@dirrmtry %%SITE_PERL%%/HTML/Tree
+@dirrmtry %%SITE_PERL%%/HTML/Element
 @dirrmtry %%SITE_PERL%%/HTML

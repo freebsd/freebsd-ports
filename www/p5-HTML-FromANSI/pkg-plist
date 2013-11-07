@@ -1,6 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FromANSI/.packlist
-%%SITE_PERL%%/HTML/FromANSI.pm
 bin/ansi2html
-@dirrmtry %%SITE_PERL%%/HTML
+%%PERL5_MAN3%%/HTML::FromANSI.3.gz
+%%SITE_PERL%%/HTML/FromANSI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FromANSI/.packlist
+man/man1/ansi2html.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FromANSI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/HTML

@@ -11,13 +11,9 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Check the HTTP response code for a link
 
 BUILD_DEPENDS=	p5-libwww>0:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	p5-libwww>0:${PORTSDIR}/www/p5-libwww
-
-MAN1=	http_status.1
-MAN3=	HTTP::SimpleLinkChecker.3
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

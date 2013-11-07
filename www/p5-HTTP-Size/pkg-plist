@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/HTTP::Size.3.gz
 %%SITE_PERL%%/HTTP/Size.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Size/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Size
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Size
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
 @dirrmtry %%SITE_PERL%%/HTTP

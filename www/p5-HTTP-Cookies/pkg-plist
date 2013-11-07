@@ -1,8 +1,11 @@
+%%PERL5_MAN3%%/HTTP::Cookies.3.gz
+%%PERL5_MAN3%%/HTTP::Cookies::Microsoft.3.gz
+%%PERL5_MAN3%%/HTTP::Cookies::Netscape.3.gz
 %%SITE_PERL%%/HTTP/Cookies.pm
 %%SITE_PERL%%/HTTP/Cookies/Microsoft.pm
 %%SITE_PERL%%/HTTP/Cookies/Netscape.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Cookies/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Cookies
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Cookies
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
-@dirrm %%SITE_PERL%%/HTTP/Cookies
+@dirrmtry %%SITE_PERL%%/HTTP/Cookies
 @dirrmtry %%SITE_PERL%%/HTTP

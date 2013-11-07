@@ -13,10 +13,7 @@ COMMENT=	Perl extension for scrubbing/sanitizing html
 BUILD_DEPENDS=	p5-HTML-Parser>=3.47:${PORTSDIR}/www/p5-HTML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-NO_STAGE=	yes
 USES=		perl5
 USE_PERL5=	modbuild
-
-MAN3=		HTML::Scrubber.3
 
 .include <bsd.port.mk>

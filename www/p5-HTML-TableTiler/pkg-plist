@@ -1,4 +1,6 @@
+%%PERL5_MAN3%%/HTML::TableTiler.3.gz
 %%SITE_PERL%%/HTML/TableTiler.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TableTiler/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TableTiler
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TableTiler
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
 @dirrmtry %%SITE_PERL%%/HTML

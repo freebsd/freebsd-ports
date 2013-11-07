@@ -1,10 +1,11 @@
+%%PERL5_MAN3%%/HTTP::HeaderParser::XS.3.gz
+%%SITE_PERL%%/%%PERL_ARCH%%/HTTP/HeaderParser/XS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/HeaderParser/XS/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/HeaderParser/XS/XS.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/HeaderParser/XS/XS.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/HeaderParser/XS/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/HTTP/HeaderParser/XS.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/HTTP/HeaderParser
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/HTTP
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/HeaderParser/XS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/HeaderParser/XS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/HeaderParser
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/HTTP/HeaderParser
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/HTTP

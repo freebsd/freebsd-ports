@@ -1,4 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FillInForm/ForceUTF8/.packlist
+%%PERL5_MAN3%%/HTML::FillInForm::ForceUTF8.3.gz
 %%SITE_PERL%%/HTML/FillInForm/ForceUTF8.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FillInForm/ForceUTF8/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FillInForm/ForceUTF8
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FillInForm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
 @dirrmtry %%SITE_PERL%%/HTML/FillInForm
+@dirrmtry %%SITE_PERL%%/HTML

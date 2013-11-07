@@ -1,4 +1,8 @@
+%%PERL5_MAN3%%/HTML::WikiConverter::Oddmuse.3.gz
 %%SITE_PERL%%/HTML/WikiConverter/Oddmuse.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter/Oddmuse/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter/Oddmuse
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/HTML/WikiConverter
+@dirrmtry %%SITE_PERL%%/HTML

@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/HTTP::Negotiate.3.gz
 %%SITE_PERL%%/HTTP/Negotiate.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Negotiate/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Negotiate
-@dirrmtry %%SITE_PERL%%/HTTP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Negotiate
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
+@dirrmtry %%SITE_PERL%%/HTTP

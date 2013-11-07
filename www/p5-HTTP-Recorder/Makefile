@@ -21,10 +21,6 @@ USES=		perl5
 USE_PERL5=	configure
 USE_DOS2UNIX=	yes
 
-MAN1=		httprecorder.1
-MAN3=		HTTP::Recorder.3
-
-NO_STAGE=	yes
 post-patch:
 	@${RM} -f ${WRKSRC}/lib/HTTP/Recorder.pm.orig
 

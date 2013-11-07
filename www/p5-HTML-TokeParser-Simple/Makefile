@@ -17,14 +17,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		HTML::TokeParser::Simple.3 HTML::TokeParser::Simple::Token.3 \
-		HTML::TokeParser::Simple::Token::Comment.3 \
-		HTML::TokeParser::Simple::Token::Declaration.3 \
-		HTML::TokeParser::Simple::Token::ProcessInstruction.3 \
-		HTML::TokeParser::Simple::Token::Tag.3 \
-		HTML::TokeParser::Simple::Token::Tag::End.3 \
-		HTML::TokeParser::Simple::Token::Tag::Start.3 \
-		HTML::TokeParser::Simple::Token::Text.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

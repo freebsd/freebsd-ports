@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/HTML::FillInForm.3.gz
 %%SITE_PERL%%/HTML/FillInForm.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FillInForm/.packlist
-@dirrmtry %%SITE_PERL%%/HTML
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FillInForm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FillInForm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/HTML

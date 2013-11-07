@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/HTML::Strip.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/HTML/Strip.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Strip/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Strip/Strip.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Strip/Strip.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Strip
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Strip
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/HTML

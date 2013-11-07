@@ -22,10 +22,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		html2wiki.1
-MAN3=		HTML::WikiConverter.3 HTML::WikiConverter::Dialects.3 \
-		HTML::WikiConverter::Normalizer.3 \
-		HTML::WikiConverter::WebApp.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

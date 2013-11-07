@@ -1,9 +1,11 @@
 bin/htmlclean
+%%PERL5_MAN3%%/HTML::Clean.3.gz
 %%SITE_PERL%%/HTML/Clean.pm
-@dirrmtry %%SITE_PERL%%/HTML
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Clean/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Clean
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
 %%SITE_PERL%%/auto/HTML/Clean/autosplit.ix
-@dirrm %%SITE_PERL%%/auto/HTML/Clean
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Clean/.packlist
+man/man1/htmlclean.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Clean
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/auto/HTML/Clean
 @dirrmtry %%SITE_PERL%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/HTML

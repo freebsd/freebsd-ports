@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Cookies/iCab/.packlist
+%%PERL5_MAN3%%/HTTP::Cookies::iCab.3.gz
 %%SITE_PERL%%/HTTP/Cookies/iCab.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Cookies/iCab/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Cookies/iCab
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Cookies
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP

@@ -13,7 +13,4 @@ COMMENT=	Perl5 module for generating HTML on the fly
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		HTML::GenerateUtil.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -11,14 +11,11 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Implementation of the HTTP content negotiation algorithm
 
 BUILD_DEPENDS=	p5-HTTP-Message>=6:${PORTSDIR}/www/p5-HTTP-Message
-RUN_DEPENDS=	p5-HTTP-Message>=6:${PORTSDIR}/www/p5-HTTP-Message
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	p5-libwww-5*
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		HTTP::Negotiate.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

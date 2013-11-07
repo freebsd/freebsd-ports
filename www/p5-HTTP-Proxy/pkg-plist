@@ -1,3 +1,21 @@
+%%PERL5_MAN3%%/HTTP::Proxy.3.gz
+%%PERL5_MAN3%%/HTTP::Proxy::BodyFilter.3.gz
+%%PERL5_MAN3%%/HTTP::Proxy::BodyFilter::complete.3.gz
+%%PERL5_MAN3%%/HTTP::Proxy::BodyFilter::htmlparser.3.gz
+%%PERL5_MAN3%%/HTTP::Proxy::BodyFilter::htmltext.3.gz
+%%PERL5_MAN3%%/HTTP::Proxy::BodyFilter::lines.3.gz
+%%PERL5_MAN3%%/HTTP::Proxy::BodyFilter::save.3.gz
+%%PERL5_MAN3%%/HTTP::Proxy::BodyFilter::simple.3.gz
+%%PERL5_MAN3%%/HTTP::Proxy::BodyFilter::tags.3.gz
+%%PERL5_MAN3%%/HTTP::Proxy::Engine.3.gz
+%%PERL5_MAN3%%/HTTP::Proxy::Engine::Legacy.3.gz
+%%PERL5_MAN3%%/HTTP::Proxy::Engine::NoFork.3.gz
+%%PERL5_MAN3%%/HTTP::Proxy::Engine::ScoreBoard.3.gz
+%%PERL5_MAN3%%/HTTP::Proxy::Engine::Threaded.3.gz
+%%PERL5_MAN3%%/HTTP::Proxy::FilterStack.3.gz
+%%PERL5_MAN3%%/HTTP::Proxy::HeaderFilter.3.gz
+%%PERL5_MAN3%%/HTTP::Proxy::HeaderFilter::simple.3.gz
+%%PERL5_MAN3%%/HTTP::Proxy::HeaderFilter::standard.3.gz
 %%SITE_PERL%%/HTTP/Proxy.pm
 %%SITE_PERL%%/HTTP/Proxy/BodyFilter.pm
 %%SITE_PERL%%/HTTP/Proxy/BodyFilter/complete.pm
@@ -16,8 +34,8 @@
 %%SITE_PERL%%/HTTP/Proxy/HeaderFilter.pm
 %%SITE_PERL%%/HTTP/Proxy/HeaderFilter/simple.pm
 %%SITE_PERL%%/HTTP/Proxy/HeaderFilter/standard.pm
-@dirrm %%SITE_PERL%%/HTTP/Proxy/HeaderFilter
-@dirrm %%SITE_PERL%%/HTTP/Proxy/Engine
-@dirrm %%SITE_PERL%%/HTTP/Proxy/BodyFilter
-@dirrm %%SITE_PERL%%/HTTP/Proxy
+@dirrmtry %%SITE_PERL%%/HTTP/Proxy/HeaderFilter
+@dirrmtry %%SITE_PERL%%/HTTP/Proxy/Engine
+@dirrmtry %%SITE_PERL%%/HTTP/Proxy/BodyFilter
+@dirrmtry %%SITE_PERL%%/HTTP/Proxy
 @dirrmtry %%SITE_PERL%%/HTTP
