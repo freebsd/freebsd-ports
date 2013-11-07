@@ -1,4 +1,5 @@
 bin/postgresql_autodoc
+man/man1/postgresql_autodoc.1.gz
 %%DATADIR%%/dia.tmpl
 %%DATADIR%%/dot.tmpl
 %%DATADIR%%/html.tmpl
