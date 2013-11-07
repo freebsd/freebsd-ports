@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	milkytracker
-PORTVERSION=	0.90.85
-PORTREVISION=	3
+PORTVERSION=	0.90.86
 CATEGORIES=	audio
 MASTER_SITES=	http://www.milkytracker.org/files/ \
 		CRITICAL/${PORTNAME}/${PORTVERSION}/${PORTREVISION}
@@ -40,7 +39,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/share/pixmaps/${f:C/carton/milkytracker/}
 .endfor
 	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/resources/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
