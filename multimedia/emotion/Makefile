@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	emotion
-PORTVERSION=	1.7.8
+PORTVERSION=	1.7.9
 PORTEPOCH=	1
 CATEGORIES=	multimedia enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \

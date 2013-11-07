@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	edje
-PORTVERSION=	1.7.8
-PORTREVISION=	1
+PORTVERSION=	1.7.9
 PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \

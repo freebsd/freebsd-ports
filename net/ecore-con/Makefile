@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	con
-PORTVERSION=	1.7.8
+PORTVERSION=	1.7.9
 CATEGORIES=	net enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
 		LOCAL/gblach/e17/

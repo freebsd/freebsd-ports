@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	expedite
-PORTVERSION=	1.7.8
+PORTVERSION=	1.7.9
 CATEGORIES=	benchmarks enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
 		LOCAL/gblach/e17/
