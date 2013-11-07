@@ -1,0 +1,8 @@
+%%PERL5_MAN3%%/App::FatPacker.3.gz
+%%PERL5_MAN3%%/App::FatPacker::Trace.3.gz
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/FatPacker/.packlist
+%%SITE_PERL%%/App/FatPacker.pm
+%%SITE_PERL%%/App/FatPacker/Trace.pm
+@dirrm %%SITE_PERL%%/App/FatPacker
+@comment @dirrmtry %%SITE_PERL%%/App
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/FatPacker

@@ -1420,6 +1420,7 @@
     SUBDIR += p5-App-Cache
     SUBDIR += p5-App-Cmd
     SUBDIR += p5-App-Control
+    SUBDIR += p5-App-FatPacker
     SUBDIR += p5-App-GitGot
     SUBDIR += p5-App-GitHub
     SUBDIR += p5-App-Info
