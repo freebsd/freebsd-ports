@@ -1,11 +1,12 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Ex/Simple/List/.packlist
+%%PERL5_MAN3%%/Gtk2::Ex::Simple::List.3.gz
 %%SITE_PERL%%/Gtk2/Ex/Simple/List.pm
 %%SITE_PERL%%/Gtk2/Ex/Simple/TiedCommon.pm
 %%SITE_PERL%%/Gtk2/Ex/Simple/TiedList.pm
-@dirrmtry %%SITE_PERL%%/Gtk2/Ex/Simple
-@dirrmtry %%SITE_PERL%%/Gtk2/Ex
-@dirrmtry %%SITE_PERL%%/Gtk2
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Ex/Simple/List/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Ex/Simple/List
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Ex/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Ex
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2
+@dirrmtry %%SITE_PERL%%/Gtk2/Ex/Simple
+@dirrmtry %%SITE_PERL%%/Gtk2/Ex
+@dirrmtry %%SITE_PERL%%/Gtk2

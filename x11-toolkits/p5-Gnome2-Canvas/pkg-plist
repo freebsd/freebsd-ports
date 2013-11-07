@@ -1,3 +1,19 @@
+%%PERL5_MAN3%%/Gnome2::Canvas.3.gz
+%%PERL5_MAN3%%/Gnome2::Canvas::Bpath.3.gz
+%%PERL5_MAN3%%/Gnome2::Canvas::Ellipse.3.gz
+%%PERL5_MAN3%%/Gnome2::Canvas::Group.3.gz
+%%PERL5_MAN3%%/Gnome2::Canvas::Item.3.gz
+%%PERL5_MAN3%%/Gnome2::Canvas::Line.3.gz
+%%PERL5_MAN3%%/Gnome2::Canvas::PathDef.3.gz
+%%PERL5_MAN3%%/Gnome2::Canvas::Pixbuf.3.gz
+%%PERL5_MAN3%%/Gnome2::Canvas::RE.3.gz
+%%PERL5_MAN3%%/Gnome2::Canvas::Rect.3.gz
+%%PERL5_MAN3%%/Gnome2::Canvas::RichText.3.gz
+%%PERL5_MAN3%%/Gnome2::Canvas::Shape.3.gz
+%%PERL5_MAN3%%/Gnome2::Canvas::Text.3.gz
+%%PERL5_MAN3%%/Gnome2::Canvas::Widget.3.gz
+%%PERL5_MAN3%%/Gnome2::Canvas::index.3.gz
+%%PERL5_MAN3%%/Gnome2::Canvas::version.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/Bpath.pod
@@ -24,8 +40,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2/Canvas/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2/Canvas/Canvas.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2/Canvas/Canvas.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/Install
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2/Canvas
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2/Canvas
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/Install
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2
