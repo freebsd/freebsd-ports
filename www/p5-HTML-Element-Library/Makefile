@@ -26,12 +26,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	patch configure
 
-MAN3=		HTML::Element::Library::Changes.3 \
-		HTML::Element::Library.3
-
-NO_STAGE=	yes
-post-patch:
-	@cd ${WRKSRC} && pod2text lib/HTML/Element/Library.pm > README
-	@cd ${WRKSRC} && pod2text lib/HTML/Element/Library/Changes.pod > CHANGES
-
 .include <bsd.port.mk>

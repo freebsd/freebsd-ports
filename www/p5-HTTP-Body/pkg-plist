@@ -1,3 +1,9 @@
+%%PERL5_MAN3%%/HTTP::Body.3.gz
+%%PERL5_MAN3%%/HTTP::Body::MultiPart.3.gz
+%%PERL5_MAN3%%/HTTP::Body::OctetStream.3.gz
+%%PERL5_MAN3%%/HTTP::Body::UrlEncoded.3.gz
+%%PERL5_MAN3%%/HTTP::Body::XForms.3.gz
+%%PERL5_MAN3%%/HTTP::Body::XFormsMultipart.3.gz
 %%SITE_PERL%%/HTTP/Body.pm
 %%SITE_PERL%%/HTTP/Body/MultiPart.pm
 %%SITE_PERL%%/HTTP/Body/OctetStream.pm

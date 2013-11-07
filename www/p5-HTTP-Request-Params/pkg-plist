@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/HTTP::Request::Params.3.gz
 %%SITE_PERL%%/HTTP/Request/Params.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Request/Params/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Request/Params
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Request/Params
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Request
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
 @dirrmtry %%SITE_PERL%%/HTTP/Request

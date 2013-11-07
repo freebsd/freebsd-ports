@@ -1,5 +1,8 @@
+%%PERL5_MAN3%%/HTML::WikiConverter::Kwiki.3.gz
 %%SITE_PERL%%/HTML/WikiConverter/Kwiki.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter/Kwiki/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter/Kwiki
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
 @dirrmtry %%SITE_PERL%%/HTML/WikiConverter
+@dirrmtry %%SITE_PERL%%/HTML

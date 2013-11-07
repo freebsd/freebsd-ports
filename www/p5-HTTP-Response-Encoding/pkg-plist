@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Response/Encoding/.packlist
+%%PERL5_MAN3%%/HTTP::Response::Encoding.3.gz
 %%SITE_PERL%%/HTTP/Response/Encoding.pm
-@dirrmtry %%SITE_PERL%%/HTTP/Response
-@dirrmtry %%SITE_PERL%%/HTTP
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Response/Encoding/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Response/Encoding
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Response
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
+@dirrmtry %%SITE_PERL%%/HTTP/Response
+@dirrmtry %%SITE_PERL%%/HTTP

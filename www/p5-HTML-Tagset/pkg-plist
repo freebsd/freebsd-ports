@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/HTML::Tagset.3.gz
 %%SITE_PERL%%/HTML/Tagset.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Tagset/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Tagset
-@dirrmtry %%SITE_PERL%%/HTML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Tagset
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/HTML

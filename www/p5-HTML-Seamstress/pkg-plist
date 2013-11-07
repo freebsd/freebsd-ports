@@ -1,4 +1,12 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Seamstress/.packlist
+bin/sbase.pl
+bin/spkg.pl
+%%PERL5_MAN3%%/HTML::Seamstress.3.gz
+%%PERL5_MAN3%%/HTML::Seamstress::Doc::FAQ.3.gz
+%%PERL5_MAN3%%/HTML::Seamstress::EDIT_Quickstart.tt_DO_NOT_EDIT_Quickstart.3.gz
+%%PERL5_MAN3%%/HTML::Seamstress::Quickstart.3.gz
+%%PERL5_MAN3%%/HTML::sbase.3.gz
+%%PERL5_MAN3%%/HTML::spkg.3.gz
+%%PERL5_MAN3%%/XML::Seamstress.3.gz
 %%SITE_PERL%%/HTML/Seamstress.html
 %%SITE_PERL%%/HTML/Seamstress.pm
 %%SITE_PERL%%/HTML/Seamstress.pod
@@ -33,6 +41,11 @@
 %%SITE_PERL%%/HTML/sbase.pl
 %%SITE_PERL%%/HTML/spkg.pl
 %%SITE_PERL%%/XML/Seamstress.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Seamstress/.packlist
+man/man1/sbase.pl.1.gz
+man/man1/spkg.pl.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Seamstress
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
 @dirrmtry %%SITE_PERL%%/XML
 @dirrmtry %%SITE_PERL%%/HTML/Seamstress/Quickstart/lib/HTML/Seamstress
 @dirrmtry %%SITE_PERL%%/HTML/Seamstress/Quickstart/lib/HTML
@@ -41,6 +54,4 @@
 @dirrmtry %%SITE_PERL%%/HTML/Seamstress/Quickstart
 @dirrmtry %%SITE_PERL%%/HTML/Seamstress/Doc
 @dirrmtry %%SITE_PERL%%/HTML/Seamstress
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Seamstress
-bin/sbase.pl
-bin/spkg.pl
+@dirrmtry %%SITE_PERL%%/HTML

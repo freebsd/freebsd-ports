@@ -1,8 +1,10 @@
 bin/httprecorder
+%%PERL5_MAN3%%/HTTP::Recorder.3.gz
 %%SITE_PERL%%/HTTP/Recorder.pm
 %%SITE_PERL%%/HTTP/Recorder/Logger.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Recorder/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Recorder
+man/man1/httprecorder.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Recorder
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
-@dirrm %%SITE_PERL%%/HTTP/Recorder
+@dirrmtry %%SITE_PERL%%/HTTP/Recorder
 @dirrmtry %%SITE_PERL%%/HTTP

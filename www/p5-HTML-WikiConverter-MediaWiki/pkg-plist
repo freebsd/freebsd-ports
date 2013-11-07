@@ -1,4 +1,8 @@
+%%PERL5_MAN3%%/HTML::WikiConverter::MediaWiki.3.gz
 %%SITE_PERL%%/HTML/WikiConverter/MediaWiki.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter/MediaWiki/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter/MediaWiki
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/HTML/WikiConverter
+@dirrmtry %%SITE_PERL%%/HTML

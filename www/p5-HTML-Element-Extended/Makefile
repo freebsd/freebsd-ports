@@ -11,13 +11,9 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extended interface to HTML::Tree's HTML::Element class
 
 BUILD_DEPENDS=	p5-HTML-Tree>=3.01:${PORTSDIR}/www/p5-HTML-Tree
-RUN_DEPENDS=	p5-HTML-Tree>=3.01:${PORTSDIR}/www/p5-HTML-Tree
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		HTML::ElementRaw.3 HTML::ElementGlob.3 \
-		HTML::ElementSuper.3 HTML::ElementTable.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

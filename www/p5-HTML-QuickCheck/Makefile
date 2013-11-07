@@ -13,7 +13,4 @@ COMMENT=	A simple and fast HTML syntax checking package for perl 4 and perl 5
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		HTML::QuickCheck.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

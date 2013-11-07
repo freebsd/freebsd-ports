@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/HTML::StripScripts.3.gz
 %%SITE_PERL%%/HTML/StripScripts.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/StripScripts/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/StripScripts

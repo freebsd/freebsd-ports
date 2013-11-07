@@ -1,3 +1,10 @@
+%%PERL5_MAN3%%/HTML::Prototype.3.gz
+%%PERL5_MAN3%%/HTML::Prototype::Controls.3.gz
+%%PERL5_MAN3%%/HTML::Prototype::DragDrop.3.gz
+%%PERL5_MAN3%%/HTML::Prototype::Effects.3.gz
+%%PERL5_MAN3%%/HTML::Prototype::Helper.3.gz
+%%PERL5_MAN3%%/HTML::Prototype::Helper::Tag.3.gz
+%%PERL5_MAN3%%/HTML::Prototype::Js.3.gz
 %%SITE_PERL%%/HTML/Prototype.pm
 %%SITE_PERL%%/HTML/Prototype/Controls.pm
 %%SITE_PERL%%/HTML/Prototype/DragDrop.pm

@@ -17,13 +17,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		HTML::Prototype.3 \
-		HTML::Prototype::Controls.3 \
-		HTML::Prototype::DragDrop.3 \
-		HTML::Prototype::Effects.3 \
-		HTML::Prototype::Helper::Tag.3 \
-		HTML::Prototype::Helper.3 \
-		HTML::Prototype::Js.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

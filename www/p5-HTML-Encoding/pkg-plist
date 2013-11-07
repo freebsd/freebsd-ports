@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/HTML::Encoding.3.gz
 %%SITE_PERL%%/HTML/Encoding.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Encoding/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Encoding
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Encoding
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
 @dirrmtry %%SITE_PERL%%/HTML

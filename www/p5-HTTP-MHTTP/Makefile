@@ -16,9 +16,6 @@ USE_OPENSSL=	yes
 CONFIGURE_ENV=	GOTSSL=yes
 CONFIGURE_ARGS=	--default
 
-MAN3=		HTTP::MHTTP.3
-
-NO_STAGE=	yes
 post-patch:
 	@${PERL} -pi -e 's!(?<=POSSIBLE_SSL_DIRS = qw\().*(?=\);)!${OPENSSLBASE}!;' \
 		${WRKSRC}/Makefile.PL

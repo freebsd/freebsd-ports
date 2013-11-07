@@ -1,4 +1,9 @@
+%%PERL5_MAN3%%/HTML::Element::Replacer.3.gz
 %%SITE_PERL%%/HTML/Element/Replacer.pm
 %%SITE_PERL%%/HTML/Element/Replacer.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Element/Replacer/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Element/Replacer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Element
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/HTML/Element
+@dirrmtry %%SITE_PERL%%/HTML

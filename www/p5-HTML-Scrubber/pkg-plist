@@ -1,2 +1,3 @@
+%%PERL5_MAN3%%/HTML::Scrubber.3.gz
 %%SITE_PERL%%/HTML/Scrubber.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/HTML
+@dirrmtry %%SITE_PERL%%/HTML

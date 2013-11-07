@@ -1,10 +1,15 @@
 bin/html2wiki
+%%PERL5_MAN3%%/HTML::WikiConverter.3.gz
+%%PERL5_MAN3%%/HTML::WikiConverter::Dialects.3.gz
+%%PERL5_MAN3%%/HTML::WikiConverter::Normalizer.3.gz
+%%PERL5_MAN3%%/HTML::WikiConverter::WebApp.3.gz
 %%SITE_PERL%%/HTML/WikiConverter.pm
 %%SITE_PERL%%/HTML/WikiConverter/Dialects.pod
 %%SITE_PERL%%/HTML/WikiConverter/Normalizer.pm
 %%SITE_PERL%%/HTML/WikiConverter/WebApp.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter
+man/man1/html2wiki.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
-@dirrm %%SITE_PERL%%/HTML/WikiConverter
+@dirrmtry %%SITE_PERL%%/HTML/WikiConverter
 @dirrmtry %%SITE_PERL%%/HTML

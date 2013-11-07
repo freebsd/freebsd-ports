@@ -1,4 +1,8 @@
+%%PERL5_MAN3%%/HTML::WikiConverter::Socialtext.3.gz
 %%SITE_PERL%%/HTML/WikiConverter/Socialtext.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter/Socialtext/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter/Socialtext
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/HTML/WikiConverter
+@dirrmtry %%SITE_PERL%%/HTML

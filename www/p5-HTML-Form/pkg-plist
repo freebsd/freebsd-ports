@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/HTML::Form.3.gz
 %%SITE_PERL%%/HTML/Form.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Form/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Form
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Form
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
 @dirrmtry %%SITE_PERL%%/HTML

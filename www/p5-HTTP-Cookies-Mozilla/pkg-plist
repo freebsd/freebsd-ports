@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Cookies/Mozilla/.packlist
+%%PERL5_MAN3%%/HTTP::Cookies::Mozilla.3.gz
 %%SITE_PERL%%/HTTP/Cookies/Mozilla.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Cookies/Mozilla/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Cookies/Mozilla
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Cookies
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP

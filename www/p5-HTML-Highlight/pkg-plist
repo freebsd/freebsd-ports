@@ -1,6 +1,6 @@
+%%PERL5_MAN3%%/HTML::Highlight.3.gz
 %%SITE_PERL%%/HTML/Highlight.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Highlight/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Highlight
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
 @dirrmtry %%SITE_PERL%%/HTML
-@dirrmtry %%SITE_PERL%%
