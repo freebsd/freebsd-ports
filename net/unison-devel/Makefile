@@ -3,7 +3,7 @@
 
 PORTNAME=	unison
 PORTVERSION=	2.45.28
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/${DISTNAME}/
 PKGNAMESUFFIX=	-devel
@@ -22,6 +22,10 @@ WANT_GNOME=	yes
 MAKE_ARGS=	CFLAGS=""
 CONFLICTS=	unison-[0-9]* unison-nox11-[0-9]*
 
+DOCS=		BUGS.txt NEWS README
+EXTRA_DOCS=	unison-${PORTVERSION}-manual.html \
+		unison-${PORTVERSION}-manual.pdf unison-${PORTVERSION}-manual.ps
+
 OPTIONS_DEFINE=	DOCS X11
 OPTIONS_DEFAULT=	DOCS X11
 
@@ -29,12 +33,6 @@ MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	unison all
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-DOCS=		BUGS.txt NEWS README
-EXTRA_DOCS=	unison-${PORTVERSION}-manual.html \
-		unison-${PORTVERSION}-manual.pdf unison-${PORTVERSION}-manual.ps
-.endif
 
 .if ${PORT_OPTIONS:MX11}
 MAKE_ARGS+=	UISTYLE=gtk2
@@ -45,7 +43,6 @@ BUILD_DEPENDS+=	ocamlc:${PORTSDIR}/lang/ocaml \
 RUN_DEPENDS+=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 PATCH_DEPENDS+=	${BUILD_DEPENDS}
 CONFLICTS+=	ocaml-nox11*
-USE_GNOME=	desktopfileutils
 SUB_FILES+=	${PORTNAME}.desktop
 PLIST_FILES+=	share/pixmaps/${PORTNAME}.png
 .else
@@ -82,7 +79,6 @@ post-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/unison-text ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	@${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
-	@-update-desktop-database > /dev/null
 	@${INSTALL_DATA} ${WRKSRC}/win32rc/U_4_48x48x32.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 .endif
 
