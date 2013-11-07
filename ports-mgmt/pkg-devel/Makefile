@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.2.0.b1
+DISTVERSION=	1.2.0.b2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://files.etoilebsd.net/pkg/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
@@ -28,9 +28,6 @@ MAKE_ENV+=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null \
 USE_SUBMAKE=	yes
 
 .include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e 's/PROGNAME/PROG/g' ${WRKSRC}/pkg/Makefile
 
 .if defined(WITH_PKGNG)
 .if ${WITH_PKGNG} != devel
