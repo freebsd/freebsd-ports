@@ -1,20 +1,23 @@
 bin/fear
 bin/fear-recorder
 bin/fearperl
+%%PERL5_MAN3%%/FEAR::API.3.gz
+%%PERL5_MAN3%%/FEAR::API::Document.3.gz
+%%PERL5_MAN3%%/FEAR::API::Filters.3.gz
 %%SITE_PERL%%/FEAR/API.pm
 %%SITE_PERL%%/FEAR/API/Agent.pm
 %%SITE_PERL%%/FEAR/API/ChksumRepos.pm
 %%SITE_PERL%%/FEAR/API/Closure.pm
 %%SITE_PERL%%/FEAR/API/Document.pm
 %%SITE_PERL%%/FEAR/API/Extract.pm
-%%SITE_PERL%%/FEAR/API/Filters.pm
-%%SITE_PERL%%/FEAR/API/Link.pm
-%%SITE_PERL%%/FEAR/API/Log.pm
 %%SITE_PERL%%/FEAR/API/Extract/Base.pm
 %%SITE_PERL%%/FEAR/API/Extract/Regexp.GlobalBind.pm
 %%SITE_PERL%%/FEAR/API/Extract/Template.Extract.pm
-%%SITE_PERL%%/FEAR/API/Extract/Text.CSV.pm
 %%SITE_PERL%%/FEAR/API/Extract/Text.CSV.Array.pm
+%%SITE_PERL%%/FEAR/API/Extract/Text.CSV.pm
+%%SITE_PERL%%/FEAR/API/Filters.pm
+%%SITE_PERL%%/FEAR/API/Link.pm
+%%SITE_PERL%%/FEAR/API/Log.pm
 %%SITE_PERL%%/FEAR/API/Prefetching.pm
 %%SITE_PERL%%/FEAR/API/Prefetching/Base.pm
 %%SITE_PERL%%/FEAR/API/Prefetching/Server.pm
@@ -26,11 +29,12 @@ bin/fearperl
 %%SITE_PERL%%/FEAR/API/Translate.pm
 %%SITE_PERL%%/FEAR/API/Translate/Backend.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/FEAR/API/.packlist
-@dirrm %%SITE_PERL%%/FEAR/API/Prefetching
-@dirrm %%SITE_PERL%%/FEAR/API/Recorder
-@dirrm %%SITE_PERL%%/FEAR/API/Translate
-@dirrm %%SITE_PERL%%/FEAR/API/Extract
-@dirrm %%SITE_PERL%%/FEAR/API
-@dirrm %%SITE_PERL%%/FEAR
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FEAR/API
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FEAR
+man/man1/fear.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FEAR/API
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FEAR
+@dirrmtry %%SITE_PERL%%/FEAR/API/Translate
+@dirrmtry %%SITE_PERL%%/FEAR/API/Recorder
+@dirrmtry %%SITE_PERL%%/FEAR/API/Prefetching
+@dirrmtry %%SITE_PERL%%/FEAR/API/Extract
+@dirrmtry %%SITE_PERL%%/FEAR/API
+@dirrmtry %%SITE_PERL%%/FEAR

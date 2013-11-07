@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Web Scraping Zen
 
-RUN_DEPENDS=	p5-Email-Find>=0:${PORTSDIR}/mail/p5-Email-Find \
+BUILD_DEPENDS=	p5-Email-Find>=0:${PORTSDIR}/mail/p5-Email-Find \
 		p5-Exporter-Lite>=0:${PORTSDIR}/devel/p5-Exporter-Lite \
 		p5-File-MMagic>=0:${PORTSDIR}/devel/p5-File-MMagic \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
@@ -39,15 +39,9 @@ RUN_DEPENDS=	p5-Email-Find>=0:${PORTSDIR}/mail/p5-Email-Find \
 		p5-XML-RSS-SimpleGen>=0:${PORTSDIR}/textproc/p5-XML-RSS-SimpleGen \
 		p5-XML-XPath>=0:${PORTSDIR}/textproc/p5-XML-XPath \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	fear.1
-MAN3=	FEAR::API.3 \
-	FEAR::API::Filters.3 \
-	FEAR::API::Document.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
