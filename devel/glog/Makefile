@@ -13,14 +13,13 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
 		gflags:${PORTSDIR}/devel/gflags
 
 GNU_CONFIGURE=	yes
-USES=	pathfix
+USES=		pathfix
 USE_LDCONFIG=	yes
 PROJECTHOST=	google-glog
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -30,7 +29,7 @@ post-patch:
 	    ${WRKSRC}/Makefile.in
 .endif
 
-#regression-test:
-#	cd ${WRKSRC}; ${MAKE} check
+regression-test:
+	cd ${WRKSRC}; ${MAKE} check
 
 .include <bsd.port.post.mk>

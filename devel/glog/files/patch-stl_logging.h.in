@@ -1,0 +1,28 @@
+--- src/glog/stl_logging.h.in.orig	2013-01-09 21:57:36.000000000 +0800
++++ src/glog/stl_logging.h.in	2013-09-20 19:39:39.000000000 +0800
+@@ -53,8 +53,12 @@
+ #ifdef __GNUC__
+ # include <ext/hash_set>
+ # include <ext/hash_map>
++#ifdef _LIBCPP_VERSION
++# include <forward_list>
++#else
+ # include <ext/slist>
+ #endif
++#endif
+ 
+ // Forward declare these two, and define them after all the container streams
+ // operators so that we can recurse from pair -> container -> container -> pair
+@@ -81,8 +85,12 @@ OUTPUT_TWO_ARG_CONTAINER(std::vector)
+ OUTPUT_TWO_ARG_CONTAINER(std::deque)
+ OUTPUT_TWO_ARG_CONTAINER(std::list)
+ #ifdef __GNUC__
++#ifdef _LIBCPP_VERSION
++OUTPUT_TWO_ARG_CONTAINER(std::forward_list)
++#else
+ OUTPUT_TWO_ARG_CONTAINER(__gnu_cxx::slist)
+ #endif
++#endif
+ 
+ #undef OUTPUT_TWO_ARG_CONTAINER
+ 
