@@ -59,6 +59,22 @@ COMPILER_TYPE=	clang
 COMPILER_TYPE=	gcc
 .endif
 
+ALT_COMPILER_VERSION=	0
+ALT_COMPILER_TYPE=	none
+_ALTCCVERSION=	
+.if ${COMPILER_TYPE} == gcc && exists(/usr/bin/clang)
+_ALTCCVERSION!=	/usr/bin/clang --version
+.elif ${COMPILER_TYPE} == clang && exists(/usr/bin/gcc)
+_ALTCCVERSION!=	/usr/bin/gcc --version
+.endif
+
+ALT_COMPILER_VERSION=	${_ALTCCVERSION:M[0-9].[0-9]*:C/([0-9]).([0-9]).*/\1\2/g}
+.if ${_ALTCCVERSION:Mclang}
+ALT_COMPILER_TYPE=	clang
+.elif !empty(_ALTCCVERSION)
+ALT_COMPILER_TYPE=	gcc
+.endif
+
 .if ${_COMPILER_ARGS:Mopenmp}
 .if ${COMPILER_TYPE} == clang
 USE_GCC=	yes
@@ -101,10 +117,16 @@ USE_GCC=	yes
 .if defined(FAVORITE_COMPILER) && ${FAVORITE_COMPILER} == gcc
 USE_GCC=	yes
 .elif (${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 33) || ${COMPILER_TYPE} == gcc
+.if ${ALT_COMPILER_TYPE} == clang && ${ALT_COMPILER_VERSION} >= 33
+CPP=	clang-cpp
+CC=	clang
+CXX=	clang++
+.else
 BUILD_DEPENDS+=	${LOCALBASE}/bin/clang33:${PORTSDIR}/lang/clang33
 CPP=	${LOCALBASE}/bin/clang-cpp33
 CC=	${LOCALBASE}/bin/clang33
 CXX=	${LOCALBASE}/bin/clang++33
+.endif
 .endif
 .endif
 .endif
