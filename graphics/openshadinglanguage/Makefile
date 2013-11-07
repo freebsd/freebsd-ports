@@ -3,7 +3,7 @@
 
 PORTNAME=	openshadinglanguage
 PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics devel
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -11,12 +11,12 @@ COMMENT=	Advanced shading language for production GI renderers
 
 LICENSE=	BSD
 
-BUILD_DEPENDS=	llvm>=3.1:${PORTSDIR}/devel/llvm \
-		flex>=2.5.37:${PORTSDIR}/textproc/flex
-LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
-		IlmImf:${PORTSDIR}/graphics/OpenEXR \
-		OpenImageIO:${PORTSDIR}/graphics/openimageio
-RUN_DEPENDS=	llvm>=3.1:${PORTSDIR}/devel/llvm
+BUILD_DEPENDS=	llvm-config33:${PORTSDIR}/devel/llvm33 \
+		clang33>=3.3_3:${PORTSDIR}/lang/clang33
+LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
+		libOpenImageIO.so:${PORTSDIR}/graphics/openimageio
+RUN_DEPENDS=	llvm-config33:${PORTSDIR}/devel/llvm33
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	imageworks
@@ -26,27 +26,30 @@ GH_COMMIT=	18671dc
 
 WRKSRC=		${WRKDIR}/imageworks-OpenShadingLanguage-${GH_COMMIT}/src
 
-CMAKE_ARGS=	-DFLEX_EXECUTABLE:STRING=${LOCALBASE}/bin/flex \
-		-DUSE_TBB:BOOL=OFF
-CXXFLAGS+=	-I${LOCALBASE}/include/flex
+CMAKE_ARGS=	-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config33"
 USE_LDCONFIG=	yes
 USES=		bison cmake:outsource
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 900000
-BUILD_DEPENDS+=	clang:${PORTSDIR}/lang/clang
+.if ${ARCH} == i386 && ! ${MACHINE_CPU:Mi586}
+IGNORE=		CPUTYPE must be i586 or higher in /etc/make.conf
 .endif
 
-.if ${ARCH} == i386
-CFLAGS+=	-march=i586
+.if ${OSVERSION} < 1000033
+BUILD_DEPENDS+=	flex>=2.5.37:${PORTSDIR}/textproc/flex
+CMAKE_ARGS+=	-DFLEX_EXECUTABLE:STRING=${LOCALBASE}/bin/flex
+CXXFLAGS+=	-I${LOCALBASE}/include/flex
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,/bin/bash,/bin/sh,' \
+		${WRKSRC}/liboslexec/serialize-bc.bash
 
 post-install:
 .for LNAME in oslcomp oslexec oslquery testshade
-	cd ${PREFIX}/lib && ${MV} -f lib${LNAME}.so lib${LNAME}.so.1
-	cd ${PREFIX}/lib && ${LN} -sf lib${LNAME}.so.1 lib${LNAME}.so
+	${MV} ${STAGEDIR}${PREFIX}/lib/lib${LNAME}.so ${STAGEDIR}${PREFIX}/lib/lib${LNAME}.so.1
+	${LN} -s lib${LNAME}.so.1 ${STAGEDIR}${PREFIX}/lib/lib${LNAME}.so
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

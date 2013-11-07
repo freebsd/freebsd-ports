@@ -1,0 +1,9 @@
+--- ./liboslcomp/CMakeLists.txt.orig	2013-07-12 08:31:18.000000000 +0930
++++ ./liboslcomp/CMakeLists.txt	2013-11-03 18:07:25.644118883 +1030
+@@ -29,6 +29,3 @@
+     INSTALL ( TARGETS oslcomp LIBRARY DESTINATION lib )
+ endif ()
+ 
+-IF ( USE_BOOST_WAVE )
+-    ADD_DEFINITIONS ( -DUSE_BOOST_WAVE )
+-ENDIF ()
