@@ -640,6 +640,7 @@
     SUBDIR += p5-Chart-Clicker
     SUBDIR += p5-Chart-Graph
     SUBDIR += p5-Chart-PNGgraph
+    SUBDIR += p5-Color-Calc
     SUBDIR += p5-Color-Library
     SUBDIR += p5-Color-Palette
     SUBDIR += p5-Color-Rgb

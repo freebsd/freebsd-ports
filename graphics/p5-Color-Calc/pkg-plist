@@ -1,0 +1,9 @@
+%%PERL5_MAN3%%/Color::Calc.3.gz
+%%PERL5_MAN3%%/Color::Calc::WWW.3.gz
+%%SITE_PERL%%/Color/Calc.pm
+%%SITE_PERL%%/Color/Calc/WWW.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Color/Calc/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Color/Calc
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Color
+@dirrmtry %%SITE_PERL%%/Color/Calc
+@dirrmtry %%SITE_PERL%%/Color
