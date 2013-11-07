@@ -11,11 +11,11 @@ EXTRACT_SUFX=	#
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=	#
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A viewer for multiple sequence alignments
+MAINTAINER=	fbsd-ports@opsec.eu
+COMMENT=	Viewer for multiple sequence alignments
 
 DEPRECATED=	Broken for more than 6 month
-EXPIRATION_DATE=	2013-11-18
+EXPIRATION_DATE=	2013-12-18
 
 BROKEN=		checksum mismatch
 
