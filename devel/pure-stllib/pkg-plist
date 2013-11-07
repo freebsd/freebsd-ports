@@ -1,7 +1,14 @@
 lib/pure/stlalgorithm.so
 lib/pure/stlbase.pure
-lib/pure/stlcontainer.so
+lib/pure/stlbase.so
+lib/pure/stlhmap.pure
+lib/pure/stlhmap.so
+lib/pure/stlmap.pure
+lib/pure/stlmap.so
+lib/pure/stlmmap.pure
+lib/pure/stlmmap.so
 lib/pure/stlvec.pure
+lib/pure/stlvec.so
 lib/pure/stlvec/algorithms.pure
 lib/pure/stlvec/heap.pure
 lib/pure/stlvec/merge.pure

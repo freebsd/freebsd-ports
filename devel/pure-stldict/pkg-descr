@@ -1,6 +1,0 @@
-This package provides a light-weight, no frills interface to the C++
-dictionary containers map and unordered_map. The stldict module makes
-these data structures available in Pure land and equips them with a
-(more or less) idiomatic Pure container interface.
-
-WWW:	http://docs.pure-lang.googlecode.com/hg/pure-stldict.html
