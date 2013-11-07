@@ -1,4 +1,75 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Font/TTF/.packlist
+%%PERL5_MAN3%%/Font::TTF.3.gz
+%%PERL5_MAN3%%/Font::TTF::AATKern.3.gz
+%%PERL5_MAN3%%/Font::TTF::AATutils.3.gz
+%%PERL5_MAN3%%/Font::TTF::Anchor.3.gz
+%%PERL5_MAN3%%/Font::TTF::Bsln.3.gz
+%%PERL5_MAN3%%/Font::TTF::Cmap.3.gz
+%%PERL5_MAN3%%/Font::TTF::Coverage.3.gz
+%%PERL5_MAN3%%/Font::TTF::Cvt_.3.gz
+%%PERL5_MAN3%%/Font::TTF::Delta.3.gz
+%%PERL5_MAN3%%/Font::TTF::Dumper.3.gz
+%%PERL5_MAN3%%/Font::TTF::EBDT.3.gz
+%%PERL5_MAN3%%/Font::TTF::EBLC.3.gz
+%%PERL5_MAN3%%/Font::TTF::Fdsc.3.gz
+%%PERL5_MAN3%%/Font::TTF::Feat.3.gz
+%%PERL5_MAN3%%/Font::TTF::Features::Cvar.3.gz
+%%PERL5_MAN3%%/Font::TTF::Features::Size.3.gz
+%%PERL5_MAN3%%/Font::TTF::Features::Sset.3.gz
+%%PERL5_MAN3%%/Font::TTF::Fmtx.3.gz
+%%PERL5_MAN3%%/Font::TTF::Font.3.gz
+%%PERL5_MAN3%%/Font::TTF::Fpgm.3.gz
+%%PERL5_MAN3%%/Font::TTF::GDEF.3.gz
+%%PERL5_MAN3%%/Font::TTF::GPOS.3.gz
+%%PERL5_MAN3%%/Font::TTF::GSUB.3.gz
+%%PERL5_MAN3%%/Font::TTF::Gloc.3.gz
+%%PERL5_MAN3%%/Font::TTF::Glyf.3.gz
+%%PERL5_MAN3%%/Font::TTF::Glyph.3.gz
+%%PERL5_MAN3%%/Font::TTF::GrFeat.3.gz
+%%PERL5_MAN3%%/Font::TTF::Hdmx.3.gz
+%%PERL5_MAN3%%/Font::TTF::Head.3.gz
+%%PERL5_MAN3%%/Font::TTF::Hhea.3.gz
+%%PERL5_MAN3%%/Font::TTF::Hmtx.3.gz
+%%PERL5_MAN3%%/Font::TTF::Kern.3.gz
+%%PERL5_MAN3%%/Font::TTF::Kern::ClassArray.3.gz
+%%PERL5_MAN3%%/Font::TTF::Kern::CompactClassArray.3.gz
+%%PERL5_MAN3%%/Font::TTF::Kern::OrderedList.3.gz
+%%PERL5_MAN3%%/Font::TTF::Kern::StateTable.3.gz
+%%PERL5_MAN3%%/Font::TTF::Kern::Subtable.3.gz
+%%PERL5_MAN3%%/Font::TTF::LTSH.3.gz
+%%PERL5_MAN3%%/Font::TTF::Loca.3.gz
+%%PERL5_MAN3%%/Font::TTF::Manual.3.gz
+%%PERL5_MAN3%%/Font::TTF::Maxp.3.gz
+%%PERL5_MAN3%%/Font::TTF::Mort.3.gz
+%%PERL5_MAN3%%/Font::TTF::Mort::Chain.3.gz
+%%PERL5_MAN3%%/Font::TTF::Mort::Contextual.3.gz
+%%PERL5_MAN3%%/Font::TTF::Mort::Insertion.3.gz
+%%PERL5_MAN3%%/Font::TTF::Mort::Ligature.3.gz
+%%PERL5_MAN3%%/Font::TTF::Mort::Noncontextual.3.gz
+%%PERL5_MAN3%%/Font::TTF::Mort::Rearrangement.3.gz
+%%PERL5_MAN3%%/Font::TTF::Mort::Subtable.3.gz
+%%PERL5_MAN3%%/Font::TTF::Name.3.gz
+%%PERL5_MAN3%%/Font::TTF::OS_2.3.gz
+%%PERL5_MAN3%%/Font::TTF::OTTags.3.gz
+%%PERL5_MAN3%%/Font::TTF::OldCmap.3.gz
+%%PERL5_MAN3%%/Font::TTF::OldMort.3.gz
+%%PERL5_MAN3%%/Font::TTF::PCLT.3.gz
+%%PERL5_MAN3%%/Font::TTF::PSNames.3.gz
+%%PERL5_MAN3%%/Font::TTF::Post.3.gz
+%%PERL5_MAN3%%/Font::TTF::Prep.3.gz
+%%PERL5_MAN3%%/Font::TTF::Prop.3.gz
+%%PERL5_MAN3%%/Font::TTF::Segarr.3.gz
+%%PERL5_MAN3%%/Font::TTF::Silf.3.gz
+%%PERL5_MAN3%%/Font::TTF::Sill.3.gz
+%%PERL5_MAN3%%/Font::TTF::Table.3.gz
+%%PERL5_MAN3%%/Font::TTF::Ttc.3.gz
+%%PERL5_MAN3%%/Font::TTF::Ttopen.3.gz
+%%PERL5_MAN3%%/Font::TTF::Utils.3.gz
+%%PERL5_MAN3%%/Font::TTF::Vhea.3.gz
+%%PERL5_MAN3%%/Font::TTF::Vmtx.3.gz
+%%PERL5_MAN3%%/Font::TTF::Woff.3.gz
+%%PERL5_MAN3%%/Font::TTF::Woff::MetaData.3.gz
+%%PERL5_MAN3%%/Font::TTF::Woff::PrivateData.3.gz
+%%PERL5_MAN3%%/Font::TTF::XMLparse.3.gz
 %%SITE_PERL%%/Font/TTF.pm
 %%SITE_PERL%%/Font/TTF/AATKern.pm
 %%SITE_PERL%%/Font/TTF/AATutils.pm
@@ -76,12 +147,13 @@
 %%SITE_PERL%%/Font/TTF/Woff/MetaData.pm
 %%SITE_PERL%%/Font/TTF/Woff/PrivateData.pm
 %%SITE_PERL%%/Font/TTF/XMLparse.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Font/TTF/.packlist
 %%SITE_PERL%%/ttfmod.pl
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font/TTF
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font
 @dirrmtry %%SITE_PERL%%/Font/TTF/Woff
 @dirrmtry %%SITE_PERL%%/Font/TTF/Mort
 @dirrmtry %%SITE_PERL%%/Font/TTF/Kern
 @dirrmtry %%SITE_PERL%%/Font/TTF/Features
 @dirrmtry %%SITE_PERL%%/Font/TTF
 @dirrmtry %%SITE_PERL%%/Font
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font/TTF
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font
