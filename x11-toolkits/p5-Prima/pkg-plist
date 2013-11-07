@@ -5,6 +5,104 @@ bin/gencls
 bin/p-class
 bin/podview
 bin/tmlink
+%%PERL5_MAN3%%/Prima.3.gz
+%%PERL5_MAN3%%/Prima::Application.3.gz
+%%PERL5_MAN3%%/Prima::Buttons.3.gz
+%%PERL5_MAN3%%/Prima::Calendar.3.gz
+%%PERL5_MAN3%%/Prima::Classes.3.gz
+%%PERL5_MAN3%%/Prima::ColorDialog.3.gz
+%%PERL5_MAN3%%/Prima::ComboBox.3.gz
+%%PERL5_MAN3%%/Prima::Config.3.gz
+%%PERL5_MAN3%%/Prima::Const.3.gz
+%%PERL5_MAN3%%/Prima::CurvedText.3.gz
+%%PERL5_MAN3%%/Prima::DetailedList.3.gz
+%%PERL5_MAN3%%/Prima::DetailedOutline.3.gz
+%%PERL5_MAN3%%/Prima::DockManager.3.gz
+%%PERL5_MAN3%%/Prima::Docks.3.gz
+%%PERL5_MAN3%%/Prima::Edit.3.gz
+%%PERL5_MAN3%%/Prima::EditDialog.3.gz
+%%PERL5_MAN3%%/Prima::EventHook.3.gz
+%%PERL5_MAN3%%/Prima::ExtLists.3.gz
+%%PERL5_MAN3%%/Prima::FileDialog.3.gz
+%%PERL5_MAN3%%/Prima::FontDialog.3.gz
+%%PERL5_MAN3%%/Prima::FrameSet.3.gz
+%%PERL5_MAN3%%/Prima::Gencls.3.gz
+%%PERL5_MAN3%%/Prima::Grids.3.gz
+%%PERL5_MAN3%%/Prima::Header.3.gz
+%%PERL5_MAN3%%/Prima::HelpViewer.3.gz
+%%PERL5_MAN3%%/Prima::Image::AnimateGIF.3.gz
+%%PERL5_MAN3%%/Prima::Image::TransparencyControl.3.gz
+%%PERL5_MAN3%%/Prima::Image::gif.3.gz
+%%PERL5_MAN3%%/Prima::Image::jpeg.3.gz
+%%PERL5_MAN3%%/Prima::Image::tiff.3.gz
+%%PERL5_MAN3%%/Prima::ImageDialog.3.gz
+%%PERL5_MAN3%%/Prima::ImageViewer.3.gz
+%%PERL5_MAN3%%/Prima::IniFile.3.gz
+%%PERL5_MAN3%%/Prima::InputLine.3.gz
+%%PERL5_MAN3%%/Prima::IntUtils.3.gz
+%%PERL5_MAN3%%/Prima::KeySelector.3.gz
+%%PERL5_MAN3%%/Prima::Label.3.gz
+%%PERL5_MAN3%%/Prima::Lists.3.gz
+%%PERL5_MAN3%%/Prima::MDI.3.gz
+%%PERL5_MAN3%%/Prima::MsgBox.3.gz
+%%PERL5_MAN3%%/Prima::Notebooks.3.gz
+%%PERL5_MAN3%%/Prima::Outlines.3.gz
+%%PERL5_MAN3%%/Prima::PS::Drawable.3.gz
+%%PERL5_MAN3%%/Prima::PS::Encodings.3.gz
+%%PERL5_MAN3%%/Prima::PS::Fonts.3.gz
+%%PERL5_MAN3%%/Prima::PS::Printer.3.gz
+%%PERL5_MAN3%%/Prima::PS::Setup.3.gz
+%%PERL5_MAN3%%/Prima::PodView.3.gz
+%%PERL5_MAN3%%/Prima::PrintDialog.3.gz
+%%PERL5_MAN3%%/Prima::RubberBand.3.gz
+%%PERL5_MAN3%%/Prima::ScrollBar.3.gz
+%%PERL5_MAN3%%/Prima::ScrollWidget.3.gz
+%%PERL5_MAN3%%/Prima::Sliders.3.gz
+%%PERL5_MAN3%%/Prima::StartupWindow.3.gz
+%%PERL5_MAN3%%/Prima::StdBitmap.3.gz
+%%PERL5_MAN3%%/Prima::StdDlg.3.gz
+%%PERL5_MAN3%%/Prima::Stress.3.gz
+%%PERL5_MAN3%%/Prima::Terminals.3.gz
+%%PERL5_MAN3%%/Prima::TextView.3.gz
+%%PERL5_MAN3%%/Prima::Themes.3.gz
+%%PERL5_MAN3%%/Prima::Tie.3.gz
+%%PERL5_MAN3%%/Prima::Utils.3.gz
+%%PERL5_MAN3%%/Prima::VB::CfgMaint.3.gz
+%%PERL5_MAN3%%/Prima::VB::Classes.3.gz
+%%PERL5_MAN3%%/Prima::VB::Config.3.gz
+%%PERL5_MAN3%%/Prima::VB::CoreClasses.3.gz
+%%PERL5_MAN3%%/Prima::VB::VBControls.3.gz
+%%PERL5_MAN3%%/Prima::VB::VBLoader.3.gz
+%%PERL5_MAN3%%/Prima::VB::examples::Widgety.3.gz
+%%PERL5_MAN3%%/Prima::Widgets.3.gz
+%%PERL5_MAN3%%/Prima::noARGV.3.gz
+%%PERL5_MAN3%%/Prima::noX11.3.gz
+%%PERL5_MAN3%%/Prima::sys::gtk2::FileDialog.3.gz
+%%PERL5_MAN3%%/Prima::sys::win32::FileDialog.3.gz
+%%PERL5_MAN3%%/Prima::themes::color.3.gz
+%%PERL5_MAN3%%/Prima::themes::round3d.3.gz
+%%PERL5_MAN3%%/Prima::themes::sysimage.3.gz
+%%PERL5_MAN3%%/Prima::themes::tabset.3.gz
+%%PERL5_MAN3%%/pod::Prima::Clipboard.3.gz
+%%PERL5_MAN3%%/pod::Prima::Drawable.3.gz
+%%PERL5_MAN3%%/pod::Prima::File.3.gz
+%%PERL5_MAN3%%/pod::Prima::Image.3.gz
+%%PERL5_MAN3%%/pod::Prima::Menu.3.gz
+%%PERL5_MAN3%%/pod::Prima::Object.3.gz
+%%PERL5_MAN3%%/pod::Prima::Printer.3.gz
+%%PERL5_MAN3%%/pod::Prima::Timer.3.gz
+%%PERL5_MAN3%%/pod::Prima::Widget.3.gz
+%%PERL5_MAN3%%/pod::Prima::Widget::pack.3.gz
+%%PERL5_MAN3%%/pod::Prima::Widget::place.3.gz
+%%PERL5_MAN3%%/pod::Prima::Window.3.gz
+%%PERL5_MAN3%%/pod::Prima::X11.3.gz
+%%PERL5_MAN3%%/pod::Prima::codecs.3.gz
+%%PERL5_MAN3%%/pod::Prima::faq.3.gz
+%%PERL5_MAN3%%/pod::Prima::gp-problems.3.gz
+%%PERL5_MAN3%%/pod::Prima::image-load.3.gz
+%%PERL5_MAN3%%/pod::Prima::internals.3.gz
+%%PERL5_MAN3%%/pod::Prima::tutorial.3.gz
+%%PERL5_MAN3%%/pod::gencls.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Application.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Buttons.pm
@@ -258,21 +356,28 @@ bin/tmlink
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Prima/Prima.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Prima/Prima.so
 %%SITE_PERL%%/%%PERL_ARCH%%/gencls.pod
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Prima
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/tutorial
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/themes
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/sys/win32
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/sys/gtk2
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/sys
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/examples
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Widget
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/VB/examples
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/VB
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/PS/locale
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/PS/fonts
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/PS
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Image
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/CORE/unix
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/CORE/generic
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/CORE
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima
+man/man1/VB.1.gz
+man/man1/cfgmaint.1.gz
+man/man1/fmview.1.gz
+man/man1/gencls.1.gz
+man/man1/p-class.1.gz
+man/man1/podview.1.gz
+man/man1/tmlink.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Prima
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Prima/tutorial
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Prima/themes
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Prima/sys/win32
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Prima/sys/gtk2
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Prima/sys
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Prima/examples
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Widget
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Prima/VB/examples
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Prima/VB
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Prima/PS/locale
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Prima/PS/fonts
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Prima/PS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Image
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Prima/CORE/unix
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Prima/CORE/generic
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Prima/CORE
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Prima
