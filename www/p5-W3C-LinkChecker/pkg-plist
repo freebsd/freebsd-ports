@@ -1,4 +1,5 @@
 bin/checklink
+man/man1/checklink.1.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/W3C/LinkChecker/.packlist
 %%SITE_PERL%%/W3C/LinkChecker.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/W3C/LinkChecker

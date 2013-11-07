@@ -16,13 +16,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		HTML::Entities.3 \
-		HTML::Filter.3 \
-		HTML::HeadParser.3 \
-		HTML::LinkExtor.3 \
-		HTML::Parser.3 \
-		HTML::PullParser.3 \
-		HTML::TokeParser.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

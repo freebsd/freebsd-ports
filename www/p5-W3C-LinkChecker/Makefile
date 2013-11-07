@@ -21,11 +21,7 @@ BUILD_DEPENDS=	p5-CSS-DOM>=0.09:${PORTSDIR}/www/p5-CSS-DOM \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN1=		checklink.1
-MANCOMPRESSED=	no
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
