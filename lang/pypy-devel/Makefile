@@ -15,9 +15,9 @@ COMMENT=	Fast, compliant implementation of the Python language
 LICENSE=	MIT PSFL
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
-		ffi:${PORTSDIR}/devel/libffi \
-		sqlite3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libffi.so:${PORTSDIR}/devel/libffi \
+		libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 PYTHON_DESC=	Use Python-2.7 to translate (slowest)
 PYPY_DESC=	Use PyPy to translate (fastest, highest memory usage)
@@ -44,7 +44,7 @@ BUILD_WRKSRC=	${WRKDIR}
 COMMIT=		ab7580454b32
 DATE=		20130810
 USE_BZIP2=	yes
-USES=		gettext iconv
+USES=		compiler:c11 gettext iconv
 MAKEFILE=	${FILESDIR}/Makefile
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
@@ -67,17 +67,8 @@ MAKE_ENV+=	DISTVERSION=${DISTVERSION} PYTHON_CMD=${PYTHON_CMD} \
 LOCALBASE_REFIX=	\
 		lib_pypy/_sqlite3.py
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include "${MASTERDIR}/files/bsd.pypy.inst.mk"
-
-.if ${OSVERSION} < 1000024 || ( ${ARCH} != "i386" && ${ARCH} != "amd64" )
-.if ${CC:T} == cc && ( exists(/usr/bin/clang) || exists(${LOCALBASE}/clang) )
-CC=		clang
-.else
-USE_GCC=	4.2+
-.endif
-.endif
 
 .if ${PORT_OPTIONS:MPYPY} || defined(PYTHON_CMD)
 PYTHON_CMD?=	${LOCALBASE}/bin/pypy
@@ -116,7 +107,7 @@ WITH_BOEHM_GC=	yes
 .endfor # inst in ${PYPY_INST}
 
 .if defined(WITH_BOEHM_GC)
-LIB_DEPENDS+=	gc:${PORTSDIR}/devel/boehm-gc
+LIB_DEPENDS+=	libgc.so:${PORTSDIR}/devel/boehm-gc
 .endif
 
 # Translate FreeBSD ARCH types to PyPy ARCH types
@@ -274,12 +265,12 @@ post-build:
 
 do-install:
 .for _path in ${PYPYDIRS}
-	-${RM} ${PREFIX}/${_path:C/.*://}
-	(cd ${WRKSRC}/${_path:C/:.*//}; ${COPYTREE_SHARE} . ${PREFIX}/${_path:C/.*://})
+	${RM} -f ${STAGEDIR}${PREFIX}/${_path:C/.*://}
+	(cd ${WRKSRC}/${_path:C/:.*//}; ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${_path:C/.*://})
 .endfor
 .for name in ${PYPY_NAMES:O}
 	${STRIP_CMD} ${WRKDIR}/${name}
-	${INSTALL_PROGRAM} ${WRKDIR}/${name} ${PREFIX}/bin/${name}-${PYPY_VER}
+	${INSTALL_PROGRAM} ${WRKDIR}/${name} ${STAGEDIR}${PREFIX}/bin/${name}-${PYPY_VER}
 	${ECHO} bin/${name}-${PYPY_VER} >> ${TMPPLIST}
 .endfor
 

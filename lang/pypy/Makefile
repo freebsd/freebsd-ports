@@ -14,9 +14,9 @@ COMMENT=	Fast, compliant implementation of the Python language
 LICENSE=	MIT PSFL
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
-		ffi:${PORTSDIR}/devel/libffi \
-		sqlite3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libffi.so:${PORTSDIR}/devel/libffi \
+		libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 CLI_DESC=	(BROKEN) Translate a CLI (.NET) based pypy
 JVM_DESC=	(BROKEN) Translate a JVM (Java) based pypy
@@ -40,7 +40,7 @@ CONFLICTS_INSTALL=	pypy-devel-[0-9]*
 ALL_TARGET=	${PYPY_NAMES}
 BUILD_WRKSRC=	${WRKDIR}
 USE_BZIP2=	yes
-USES=		gettext iconv
+USES=		compiler:c11 gettext iconv
 MAKEFILE=	${FILESDIR}/Makefile
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
@@ -61,17 +61,8 @@ MAKE_ENV+=	DISTVERSION=${DISTVERSION} PYTHON_CMD=${PYTHON_CMD} \
 LOCALBASE_REFIX=	\
 		${PYPY_LIBDIR}/lib_pypy/_sqlite3.py
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include "${MASTERDIR}/files/bsd.pypy.inst.mk"
-
-.if ${OSVERSION} < 1000024 || ( ${ARCH} != "i386" && ${ARCH} != "amd64" )
-.if ${CC:T} == cc && ( exists(/usr/bin/clang) || exists(${LOCALBASE}/clang) )
-CC=		clang
-.else
-USE_GCC=	4.2+
-.endif
-.endif
 
 .if ${PORT_OPTIONS:MPYPY} || defined(PYTHON_CMD)
 PYTHON_CMD?=	${LOCALBASE}/bin/pypy
@@ -128,7 +119,7 @@ WITH_JVM=	yes
 .endfor # inst in ${PYPY_INST}
 
 .if defined(WITH_BOEHM_GC)
-LIB_DEPENDS+=	gc:${PORTSDIR}/devel/boehm-gc
+LIB_DEPENDS+=	libgc.so:${PORTSDIR}/devel/boehm-gc
 .endif
 
 .if defined(WITH_CLI)
@@ -299,11 +290,11 @@ post-build:
 
 do-install:
 .for dir in ${PYPYDIRS}
-	(cd ${WRKSRC}/${dir}; ${COPYTREE_SHARE} . ${PREFIX}/${dir})
+	(cd ${WRKSRC}/${dir}; ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${dir})
 .endfor
 .for name in ${PYPY_NAMES:O}
 	${STRIP_CMD} ${WRKDIR}/${name}
-	${INSTALL_PROGRAM} ${WRKDIR}/${name} ${PREFIX}/bin/${name}-${PYPY_VER}
+	${INSTALL_PROGRAM} ${WRKDIR}/${name} ${STAGEDIR}${PREFIX}/bin/${name}-${PYPY_VER}
 	${ECHO} bin/${name}-${PYPY_VER} >> ${TMPPLIST}
 .endfor
 
