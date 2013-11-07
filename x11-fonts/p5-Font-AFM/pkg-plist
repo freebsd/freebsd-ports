@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/Font::AFM.3.gz
 %%SITE_PERL%%/Font/AFM.pm
 %%SITE_PERL%%/Font/Metrics/Courier.pm
 %%SITE_PERL%%/Font/Metrics/CourierBold.pm
@@ -12,7 +13,7 @@
 %%SITE_PERL%%/Font/Metrics/TimesItalic.pm
 %%SITE_PERL%%/Font/Metrics/TimesRoman.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font/AFM/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font/AFM
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font/AFM
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font
-@dirrm %%SITE_PERL%%/Font/Metrics
+@dirrmtry %%SITE_PERL%%/Font/Metrics
 @dirrmtry %%SITE_PERL%%/Font

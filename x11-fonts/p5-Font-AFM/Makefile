@@ -13,7 +13,4 @@ COMMENT=	Interface to Adobe font metrics files
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Font::AFM.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
