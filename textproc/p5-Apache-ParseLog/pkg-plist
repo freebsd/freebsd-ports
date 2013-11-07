@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/Apache::ParseLog.3.gz
 %%SITE_PERL%%/Apache/ParseLog.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/ParseLog/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/ParseLog

@@ -1,10 +1,11 @@
-%%PORTDOCS%%%%EXAMPLESDIR%%/tdiff
+%%PERL5_MAN3%%/Text::ParagraphDiff.3.gz
+%%SITE_PERL%%/Text/ParagraphDiff.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ParagraphDiff/.packlist
 %%PORTDOCS%%%%EXAMPLESDIR%%/diff.html
 %%PORTDOCS%%%%EXAMPLESDIR%%/new.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/old.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/tdiff
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-%%SITE_PERL%%/Text/ParagraphDiff.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ParagraphDiff/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ParagraphDiff
-@dirrmtry %%SITE_PERL%%/Text
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ParagraphDiff
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
+@dirrmtry %%SITE_PERL%%/Text

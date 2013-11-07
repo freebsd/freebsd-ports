@@ -1,6 +1,8 @@
 bin/pod2xml
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/XML/.packlist
+%%PERL5_MAN3%%/Pod::XML.3.gz
 %%SITE_PERL%%/Pod/XML.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/XML
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/XML/.packlist
+man/man1/pod2xml.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/XML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
 @dirrmtry %%SITE_PERL%%/Pod

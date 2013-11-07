@@ -1,9 +1,9 @@
+%%PERL5_MAN3%%/YAPE::HTML.3.gz
+%%PERL5_MAN3%%/YAPE::HTML::Element.3.gz
 %%SITE_PERL%%/YAPE/HTML.pm
 %%SITE_PERL%%/YAPE/HTML/Element.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/YAPE/HTML/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/YAPE/HTML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/YAPE/HTML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/YAPE
-@dirrm %%SITE_PERL%%/YAPE/HTML
-@dirrmtry %%SITE_PERL%%/YAPE
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/YAPE
+@dirrmtry %%SITE_PERL%%/YAPE/HTML
 @dirrmtry %%SITE_PERL%%/YAPE

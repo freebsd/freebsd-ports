@@ -1,7 +1,8 @@
-%%SITE_PERL%%/Lingua/Stem/Snowball/stemmer.pl
+%%PERL5_MAN3%%/Lingua::Stem::Snowball::Da.3.gz
 %%SITE_PERL%%/Lingua/Stem/Snowball/Da.pm
+%%SITE_PERL%%/Lingua/Stem/Snowball/stemmer.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/Snowball/Da/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/Snowball/Da
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/Snowball/Da
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/Snowball
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua

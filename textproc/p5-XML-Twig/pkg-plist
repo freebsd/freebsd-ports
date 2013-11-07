@@ -3,10 +3,16 @@ bin/xml_merge
 bin/xml_pp
 bin/xml_spellcheck
 bin/xml_split
+%%PERL5_MAN3%%/XML::Twig.3.gz
 %%SITE_PERL%%/XML/Twig.pm
 %%SITE_PERL%%/XML/Twig/XPath.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Twig/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Twig
+man/man1/xml_grep.1.gz
+man/man1/xml_merge.1.gz
+man/man1/xml_pp.1.gz
+man/man1/xml_spellcheck.1.gz
+man/man1/xml_split.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Twig
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrm %%SITE_PERL%%/XML/Twig
+@dirrmtry %%SITE_PERL%%/XML/Twig
 @dirrmtry %%SITE_PERL%%/XML

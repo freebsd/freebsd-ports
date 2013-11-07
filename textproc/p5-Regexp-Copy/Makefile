@@ -15,7 +15,4 @@ COMMENT=	Copy the contents of one Regexp object to another
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Regexp::Copy.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

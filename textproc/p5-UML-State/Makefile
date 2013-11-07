@@ -16,10 +16,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		drawstatexml.pl.1 drawstate.pl.1
-MAN3=		UML::drawstate.3 \
-		UML::drawstatexml.3 \
-		UML::State.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

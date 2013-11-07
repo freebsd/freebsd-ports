@@ -13,6 +13,39 @@ bin/kocos.pl
 bin/rank-script.sh
 bin/rank.pl
 bin/statistic.pl
+%%PERL5_MAN3%%/Text::NSP.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::2D.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::2D::CHI.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::2D::CHI::phi.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::2D::CHI::tscore.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::2D::CHI::x2.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::2D::Dice.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::2D::Dice::dice.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::2D::Dice::jaccard.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::2D::Fisher.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::2D::Fisher2.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::2D::Fisher2::left.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::2D::Fisher2::right.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::2D::Fisher2::twotailed.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::2D::Fisher::left.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::2D::Fisher::right.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::2D::Fisher::twotailed.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::2D::MI.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::2D::MI::ll.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::2D::MI::pmi.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::2D::MI::ps.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::2D::MI::tmi.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::2D::odds.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::3D.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::3D::MI.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::3D::MI::ll.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::3D::MI::pmi.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::3D::MI::ps.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::3D::MI::tmi.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::4D.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::4D::MI.3.gz
+%%PERL5_MAN3%%/Text::NSP::Measures::4D::MI::ll.3.gz
 %%SITE_PERL%%/Text/NSP.pm
 %%SITE_PERL%%/Text/NSP/Measures.pm
 %%SITE_PERL%%/Text/NSP/Measures/2D.pm
@@ -47,18 +80,30 @@ bin/statistic.pl
 %%SITE_PERL%%/Text/NSP/Measures/4D/MI.pm
 %%SITE_PERL%%/Text/NSP/Measures/4D/MI/ll.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/NSP/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/NSP
+man/man1/combig.pl.1.gz
+man/man1/count.pl.1.gz
+man/man1/count2huge.pl.1.gz
+man/man1/find-compounds.pl.1.gz
+man/man1/huge-count.pl.1.gz
+man/man1/huge-delete.pl.1.gz
+man/man1/huge-merge.pl.1.gz
+man/man1/huge-sort.pl.1.gz
+man/man1/huge-split.pl.1.gz
+man/man1/kocos.pl.1.gz
+man/man1/rank.pl.1.gz
+man/man1/statistic.pl.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/NSP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
-@dirrm %%SITE_PERL%%/Text/NSP/Measures/4D/MI
-@dirrm %%SITE_PERL%%/Text/NSP/Measures/4D
-@dirrm %%SITE_PERL%%/Text/NSP/Measures/3D/MI
-@dirrm %%SITE_PERL%%/Text/NSP/Measures/3D
-@dirrm %%SITE_PERL%%/Text/NSP/Measures/2D/MI
-@dirrm %%SITE_PERL%%/Text/NSP/Measures/2D/Fisher2
-@dirrm %%SITE_PERL%%/Text/NSP/Measures/2D/Fisher
-@dirrm %%SITE_PERL%%/Text/NSP/Measures/2D/Dice
-@dirrm %%SITE_PERL%%/Text/NSP/Measures/2D/CHI
-@dirrm %%SITE_PERL%%/Text/NSP/Measures/2D
-@dirrm %%SITE_PERL%%/Text/NSP/Measures
-@dirrm %%SITE_PERL%%/Text/NSP
+@dirrmtry %%SITE_PERL%%/Text/NSP/Measures/4D/MI
+@dirrmtry %%SITE_PERL%%/Text/NSP/Measures/4D
+@dirrmtry %%SITE_PERL%%/Text/NSP/Measures/3D/MI
+@dirrmtry %%SITE_PERL%%/Text/NSP/Measures/3D
+@dirrmtry %%SITE_PERL%%/Text/NSP/Measures/2D/MI
+@dirrmtry %%SITE_PERL%%/Text/NSP/Measures/2D/Fisher2
+@dirrmtry %%SITE_PERL%%/Text/NSP/Measures/2D/Fisher
+@dirrmtry %%SITE_PERL%%/Text/NSP/Measures/2D/Dice
+@dirrmtry %%SITE_PERL%%/Text/NSP/Measures/2D/CHI
+@dirrmtry %%SITE_PERL%%/Text/NSP/Measures/2D
+@dirrmtry %%SITE_PERL%%/Text/NSP/Measures
+@dirrmtry %%SITE_PERL%%/Text/NSP
 @dirrmtry %%SITE_PERL%%/Text

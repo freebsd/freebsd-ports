@@ -1,33 +1,43 @@
 bin/lpod_test
-%%SITE_PERL%%/ODF/lpOD/data/rgb.txt
-%%SITE_PERL%%/ODF/lpOD/data/oasis_odf_logo.png
-%%SITE_PERL%%/ODF/lpOD/templates/spreadsheet.ods
-%%SITE_PERL%%/ODF/lpOD/templates/text.odt
-%%SITE_PERL%%/ODF/lpOD/templates/presentation.odp
-%%SITE_PERL%%/ODF/lpOD/templates/drawing.odg
-%%SITE_PERL%%/ODF/lpOD/Element.pm
-%%SITE_PERL%%/ODF/lpOD/Style.pod
-%%SITE_PERL%%/ODF/lpOD/Table.pod
-%%SITE_PERL%%/ODF/lpOD/Style.pm
+%%PERL5_MAN3%%/ODF::lpOD.3.gz
+%%PERL5_MAN3%%/ODF::lpOD::Common.3.gz
+%%PERL5_MAN3%%/ODF::lpOD::Document.3.gz
+%%PERL5_MAN3%%/ODF::lpOD::Element.3.gz
+%%PERL5_MAN3%%/ODF::lpOD::StructuredContainer.3.gz
+%%PERL5_MAN3%%/ODF::lpOD::Style.3.gz
+%%PERL5_MAN3%%/ODF::lpOD::Table.3.gz
+%%PERL5_MAN3%%/ODF::lpOD::TextElement.3.gz
+%%PERL5_MAN3%%/ODF::lpOD::Tutorial.3.gz
+%%SITE_PERL%%/ODF/lpOD.pm
+%%SITE_PERL%%/ODF/lpOD.pod
 %%SITE_PERL%%/ODF/lpOD/Attributes.pm
-%%SITE_PERL%%/ODF/lpOD/TextElement.pm
-%%SITE_PERL%%/ODF/lpOD/TextElement.pod
-%%SITE_PERL%%/ODF/lpOD/Document.pod
 %%SITE_PERL%%/ODF/lpOD/Common.pm
+%%SITE_PERL%%/ODF/lpOD/Common.pod
+%%SITE_PERL%%/ODF/lpOD/Document.pm
+%%SITE_PERL%%/ODF/lpOD/Document.pod
+%%SITE_PERL%%/ODF/lpOD/Element.pm
 %%SITE_PERL%%/ODF/lpOD/Element.pod
 %%SITE_PERL%%/ODF/lpOD/Field.pm
-%%SITE_PERL%%/ODF/lpOD/Table.pm
-%%SITE_PERL%%/ODF/lpOD/Document.pm
-%%SITE_PERL%%/ODF/lpOD/StructuredContainer.pod
-%%SITE_PERL%%/ODF/lpOD/Common.pod
 %%SITE_PERL%%/ODF/lpOD/StructuredContainer.pm
+%%SITE_PERL%%/ODF/lpOD/StructuredContainer.pod
+%%SITE_PERL%%/ODF/lpOD/Style.pm
+%%SITE_PERL%%/ODF/lpOD/Style.pod
+%%SITE_PERL%%/ODF/lpOD/Table.pm
+%%SITE_PERL%%/ODF/lpOD/Table.pod
+%%SITE_PERL%%/ODF/lpOD/TextElement.pm
+%%SITE_PERL%%/ODF/lpOD/TextElement.pod
 %%SITE_PERL%%/ODF/lpOD/Tutorial.pod
-%%SITE_PERL%%/ODF/lpOD.pod
-%%SITE_PERL%%/ODF/lpOD.pm
+%%SITE_PERL%%/ODF/lpOD/data/oasis_odf_logo.png
+%%SITE_PERL%%/ODF/lpOD/data/rgb.txt
+%%SITE_PERL%%/ODF/lpOD/templates/drawing.odg
+%%SITE_PERL%%/ODF/lpOD/templates/presentation.odp
+%%SITE_PERL%%/ODF/lpOD/templates/spreadsheet.ods
+%%SITE_PERL%%/ODF/lpOD/templates/text.odt
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ODF/lpOD/.packlist
-@dirrm %%SITE_PERL%%/ODF/lpOD/templates
-@dirrm %%SITE_PERL%%/ODF/lpOD/data
+man/man1/lpod_test.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ODF/lpOD
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ODF
+@dirrmtry %%SITE_PERL%%/ODF/lpOD/templates
+@dirrmtry %%SITE_PERL%%/ODF/lpOD/data
 @dirrmtry %%SITE_PERL%%/ODF/lpOD
 @dirrmtry %%SITE_PERL%%/ODF

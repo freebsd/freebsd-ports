@@ -1,4 +1,11 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Elemental/.packlist
+%%PERL5_MAN3%%/XML::Elemental.3.gz
+%%PERL5_MAN3%%/XML::Elemental::Characters.3.gz
+%%PERL5_MAN3%%/XML::Elemental::Document.3.gz
+%%PERL5_MAN3%%/XML::Elemental::Element.3.gz
+%%PERL5_MAN3%%/XML::Elemental::Node.3.gz
+%%PERL5_MAN3%%/XML::Elemental::SAXHandler.3.gz
+%%PERL5_MAN3%%/XML::Elemental::Util.3.gz
+%%PERL5_MAN3%%/XML::Parser::Style::Elemental.3.gz
 %%SITE_PERL%%/XML/Elemental.pm
 %%SITE_PERL%%/XML/Elemental/Characters.pm
 %%SITE_PERL%%/XML/Elemental/Document.pm
@@ -7,8 +14,10 @@
 %%SITE_PERL%%/XML/Elemental/SAXHandler.pm
 %%SITE_PERL%%/XML/Elemental/Util.pm
 %%SITE_PERL%%/XML/Parser/Style/Elemental.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Elemental
-@dirrm %%SITE_PERL%%/XML/Parser/Style
-@dirrm %%SITE_PERL%%/XML/Parser
-@dirrm %%SITE_PERL%%/XML/Elemental
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Elemental/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Elemental
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/Parser/Style
+@dirrmtry %%SITE_PERL%%/XML/Parser
+@dirrmtry %%SITE_PERL%%/XML/Elemental
 @dirrmtry %%SITE_PERL%%/XML

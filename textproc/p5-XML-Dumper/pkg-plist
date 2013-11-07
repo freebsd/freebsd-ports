@@ -1,4 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Dumper/.packlist
+%%PERL5_MAN3%%/XML::Dumper.3.gz
 %%SITE_PERL%%/XML/Dumper.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Dumper
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Dumper/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Dumper
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML

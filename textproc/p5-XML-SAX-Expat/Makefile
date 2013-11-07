@@ -18,9 +18,6 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure patch
 
-MAN3=		XML::SAX::Expat.3
-
-NO_STAGE=	yes
 post-patch:
 		@${PERL} -pi -e "s/(?<=XML::SAX::Base          => ')1\.00(?=')/0.25/;" ${WRKSRC}/Makefile.PL
 

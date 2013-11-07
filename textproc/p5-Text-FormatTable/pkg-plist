@@ -1,6 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/FormatTable/.packlist
+%%PERL5_MAN3%%/Text::FormatTable.3.gz
 %%SITE_PERL%%/Text/FormatTable.pm
 %%SITE_PERL%%/Text/example.pl
-@dirrmtry %%SITE_PERL%%/Text
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/FormatTable/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/FormatTable
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
+@dirrmtry %%SITE_PERL%%/Text

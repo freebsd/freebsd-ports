@@ -1,4 +1,5 @@
 bin/pod2projdocs
+%%PERL5_MAN3%%/Pod::ProjectDocs.3.gz
 %%SITE_PERL%%/Pod/ProjectDocs.pm
 %%SITE_PERL%%/Pod/ProjectDocs/ArrowImage.pm
 %%SITE_PERL%%/Pod/ProjectDocs/CSS.pm
@@ -12,8 +13,9 @@ bin/pod2projdocs
 %%SITE_PERL%%/Pod/ProjectDocs/Parser/PerlPod.pm
 %%SITE_PERL%%/Pod/ProjectDocs/Template.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/ProjectDocs/.packlist
-@dirrm %%SITE_PERL%%/Pod/ProjectDocs/Parser
-@dirrm %%SITE_PERL%%/Pod/ProjectDocs
-@dirrmtry %%SITE_PERL%%/Pod
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/ProjectDocs
+man/man1/pod2projdocs.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/ProjectDocs
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
+@dirrmtry %%SITE_PERL%%/Pod/ProjectDocs/Parser
+@dirrmtry %%SITE_PERL%%/Pod/ProjectDocs
+@dirrmtry %%SITE_PERL%%/Pod

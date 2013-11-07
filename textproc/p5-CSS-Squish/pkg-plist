@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/CSS::Squish.3.gz
 %%SITE_PERL%%/CSS/Squish.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Squish/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Squish
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Squish
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS
 @dirrmtry %%SITE_PERL%%/CSS

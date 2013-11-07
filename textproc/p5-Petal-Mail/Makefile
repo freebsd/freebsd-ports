@@ -15,10 +15,7 @@ BUILD_DEPENDS=	p5-Petal>=0:${PORTSDIR}/textproc/p5-Petal \
 		p5-Encode>=0:${PORTSDIR}/converters/p5-Encode
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	Petal::Mail.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

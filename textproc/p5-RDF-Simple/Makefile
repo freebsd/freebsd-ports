@@ -24,12 +24,4 @@ TEST_DEPENDS=	p5-IO-CaptureOutput>0:${PORTSDIR}/devel/p5-IO-CaptureOutput \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	RDF::Simple.3 \
-	RDF::Simple::NS.3 \
-	RDF::Simple::Parser.3 \
-	RDF::Simple::Parser::Handler.3 \
-	RDF::Simple::Serialiser.3 \
-	RDF::Simple::Serializer.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -18,32 +18,13 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
-NO_STAGE=	yes
-
-MAN3=		XML::Validator::Schema.3 \
-		XML::Validator::Schema::Attribute.3 \
-		XML::Validator::Schema::AttributeLibrary.3 \
-		XML::Validator::Schema::AttributeNode.3 \
-		XML::Validator::Schema::ComplexTypeNode.3 \
-		XML::Validator::Schema::ElementLibrary.3 \
-		XML::Validator::Schema::ElementNode.3 \
-		XML::Validator::Schema::ElementRefNode.3 \
-		XML::Validator::Schema::Library.3 \
-		XML::Validator::Schema::ModelNode.3 \
-		XML::Validator::Schema::Node.3 \
-		XML::Validator::Schema::Parser.3 \
-		XML::Validator::Schema::RootNode.3 \
-		XML::Validator::Schema::SimpleType.3 \
-		XML::Validator::Schema::SimpleTypeNode.3 \
-		XML::Validator::Schema::TypeLibrary.3 \
-		XML::Validator::Schema::Util.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	ANNOUNCE Changes README TODO
 
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 

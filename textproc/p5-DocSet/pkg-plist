@@ -1,31 +1,52 @@
 bin/docset_build
 bin/html2ps
-%%SITE_PERL%%/DocSet/Doc/POD2HTMLPS.pm
-%%SITE_PERL%%/DocSet/Doc/POD2HTML.pm
-%%SITE_PERL%%/DocSet/Doc/Text2HTML.pm
-%%SITE_PERL%%/DocSet/Doc/HTML2HTMLPS.pm
-%%SITE_PERL%%/DocSet/Doc/HTML2HTML.pm
+%%PERL5_MAN3%%/DocSet.3.gz
+%%PERL5_MAN3%%/DocSet::5005compat.3.gz
+%%PERL5_MAN3%%/DocSet::Cache.3.gz
+%%PERL5_MAN3%%/DocSet::Config.3.gz
+%%PERL5_MAN3%%/DocSet::Doc.3.gz
+%%PERL5_MAN3%%/DocSet::Doc::Common.3.gz
+%%PERL5_MAN3%%/DocSet::Doc::HTML2HTML.3.gz
+%%PERL5_MAN3%%/DocSet::Doc::HTML2HTMLPS.3.gz
+%%PERL5_MAN3%%/DocSet::Doc::POD2HTML.3.gz
+%%PERL5_MAN3%%/DocSet::Doc::POD2HTMLPS.3.gz
+%%PERL5_MAN3%%/DocSet::Doc::Text2HTML.3.gz
+%%PERL5_MAN3%%/DocSet::DocSet.3.gz
+%%PERL5_MAN3%%/DocSet::DocSet::HTML.3.gz
+%%PERL5_MAN3%%/DocSet::DocSet::PSPDF.3.gz
+%%PERL5_MAN3%%/DocSet::NavigateCache.3.gz
+%%PERL5_MAN3%%/DocSet::RunTime.3.gz
+%%PERL5_MAN3%%/DocSet::Source::HTML.3.gz
+%%PERL5_MAN3%%/DocSet::Source::POD.3.gz
+%%PERL5_MAN3%%/DocSet::Source::Text.3.gz
+%%PERL5_MAN3%%/DocSet::Util.3.gz
+%%SITE_PERL%%/DocSet.pm
+%%SITE_PERL%%/DocSet/5005compat.pm
+%%SITE_PERL%%/DocSet/Cache.pm
+%%SITE_PERL%%/DocSet/Config.pm
+%%SITE_PERL%%/DocSet/Doc.pm
 %%SITE_PERL%%/DocSet/Doc/Common.pm
+%%SITE_PERL%%/DocSet/Doc/HTML2HTML.pm
+%%SITE_PERL%%/DocSet/Doc/HTML2HTMLPS.pm
+%%SITE_PERL%%/DocSet/Doc/POD2HTML.pm
+%%SITE_PERL%%/DocSet/Doc/POD2HTMLPS.pm
+%%SITE_PERL%%/DocSet/Doc/Text2HTML.pm
+%%SITE_PERL%%/DocSet/DocSet.pm
 %%SITE_PERL%%/DocSet/DocSet/HTML.pm
 %%SITE_PERL%%/DocSet/DocSet/PSPDF.pm
-%%SITE_PERL%%/DocSet/Source/Text.pm
-%%SITE_PERL%%/DocSet/Source/POD.pm
-%%SITE_PERL%%/DocSet/Source/HTML.pm
-%%SITE_PERL%%/DocSet/Template/Plugin/NavigateCache.pm
-%%SITE_PERL%%/DocSet/DocSet.pm
-%%SITE_PERL%%/DocSet/Config.pm
-%%SITE_PERL%%/DocSet/Cache.pm
-%%SITE_PERL%%/DocSet/Doc.pm
-%%SITE_PERL%%/DocSet.pm
 %%SITE_PERL%%/DocSet/NavigateCache.pm
-%%SITE_PERL%%/DocSet/5005compat.pm
-%%SITE_PERL%%/DocSet/Util.pm
 %%SITE_PERL%%/DocSet/RunTime.pm
+%%SITE_PERL%%/DocSet/Source/HTML.pm
+%%SITE_PERL%%/DocSet/Source/POD.pm
+%%SITE_PERL%%/DocSet/Source/Text.pm
+%%SITE_PERL%%/DocSet/Template/Plugin/NavigateCache.pm
+%%SITE_PERL%%/DocSet/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DocSet/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DocSet
-@dirrm %%SITE_PERL%%/DocSet/Template/Plugin
-@dirrm %%SITE_PERL%%/DocSet/Template
-@dirrm %%SITE_PERL%%/DocSet/Source
-@dirrm %%SITE_PERL%%/DocSet/DocSet
-@dirrm %%SITE_PERL%%/DocSet/Doc
-@dirrm %%SITE_PERL%%/DocSet
+man/man1/docset_build.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DocSet
+@dirrmtry %%SITE_PERL%%/DocSet/Template/Plugin
+@dirrmtry %%SITE_PERL%%/DocSet/Template
+@dirrmtry %%SITE_PERL%%/DocSet/Source
+@dirrmtry %%SITE_PERL%%/DocSet/DocSet
+@dirrmtry %%SITE_PERL%%/DocSet/Doc
+@dirrmtry %%SITE_PERL%%/DocSet

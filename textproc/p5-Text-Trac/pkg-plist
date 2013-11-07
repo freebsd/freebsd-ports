@@ -1,4 +1,4 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Trac/.packlist
+%%PERL5_MAN3%%/Text::Trac.3.gz
 %%SITE_PERL%%/Text/Trac.pm
 %%SITE_PERL%%/Text/Trac/BlockNode.pm
 %%SITE_PERL%%/Text/Trac/Blockquote.pm
@@ -27,9 +27,10 @@
 %%SITE_PERL%%/Text/Trac/Table.pm
 %%SITE_PERL%%/Text/Trac/Text.pm
 %%SITE_PERL%%/Text/Trac/Ul.pm
-@dirrm %%SITE_PERL%%/Text/Trac/LinkResolver
-@dirrm %%SITE_PERL%%/Text/Trac/Macro
-@dirrm %%SITE_PERL%%/Text/Trac
-@dirrmtry %%SITE_PERL%%/Text
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Trac
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Trac/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Trac
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
+@dirrmtry %%SITE_PERL%%/Text/Trac/Macro
+@dirrmtry %%SITE_PERL%%/Text/Trac/LinkResolver
+@dirrmtry %%SITE_PERL%%/Text/Trac
+@dirrmtry %%SITE_PERL%%/Text

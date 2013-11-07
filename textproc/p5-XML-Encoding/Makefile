@@ -16,8 +16,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		compile_encoding.1 make_encmap.1
-MAN3=		XML::Encoding.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

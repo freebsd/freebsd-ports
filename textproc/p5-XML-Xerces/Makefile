@@ -24,5 +24,4 @@ CONFIGURE_ENV=	XERCES_LIB="${LOCALBASE}/lib" \
 		XERCES_DEVEL="yes" \
 		CXX="${CXX}"
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

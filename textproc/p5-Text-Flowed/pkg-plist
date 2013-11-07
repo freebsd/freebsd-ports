@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Flowed/.packlist
+%%PERL5_MAN3%%/Text::Flowed.3.gz
 %%SITE_PERL%%/Text/Flowed.pm
-@dirrmtry %%SITE_PERL%%/Text
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Flowed/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Flowed
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
+@dirrmtry %%SITE_PERL%%/Text

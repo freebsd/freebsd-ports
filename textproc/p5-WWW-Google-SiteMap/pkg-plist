@@ -1,12 +1,17 @@
+%%PERL5_MAN3%%/WWW::Google::SiteMap.3.gz
+%%PERL5_MAN3%%/WWW::Google::SiteMap::Index.3.gz
+%%PERL5_MAN3%%/WWW::Google::SiteMap::Ping.3.gz
+%%PERL5_MAN3%%/WWW::Google::SiteMap::Robot.3.gz
+%%PERL5_MAN3%%/WWW::Google::SiteMap::URL.3.gz
 %%SITE_PERL%%/WWW/Google/SiteMap.pm
 %%SITE_PERL%%/WWW/Google/SiteMap/Index.pm
 %%SITE_PERL%%/WWW/Google/SiteMap/Ping.pm
 %%SITE_PERL%%/WWW/Google/SiteMap/Robot.pm
 %%SITE_PERL%%/WWW/Google/SiteMap/URL.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Google/SiteMap/.packlist
-@dirrm    %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Google/SiteMap
-@dirrm    %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Google
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Google/SiteMap
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Google
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
-@dirrm    %%SITE_PERL%%/WWW/Google/SiteMap
-@dirrm    %%SITE_PERL%%/WWW/Google
+@dirrmtry %%SITE_PERL%%/WWW/Google/SiteMap
+@dirrmtry %%SITE_PERL%%/WWW/Google
 @dirrmtry %%SITE_PERL%%/WWW

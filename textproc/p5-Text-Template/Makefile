@@ -17,9 +17,6 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Text::Template.3 Text::Template::Preprocess.3
-
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 

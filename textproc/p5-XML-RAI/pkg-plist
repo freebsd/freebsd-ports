@@ -1,9 +1,15 @@
+%%PERL5_MAN3%%/XML::RAI.3.gz
+%%PERL5_MAN3%%/XML::RAI::Channel.3.gz
+%%PERL5_MAN3%%/XML::RAI::Image.3.gz
+%%PERL5_MAN3%%/XML::RAI::Item.3.gz
+%%PERL5_MAN3%%/XML::RAI::Object.3.gz
 %%SITE_PERL%%/XML/RAI.pm
-%%SITE_PERL%%/XML/RAI/Object.pm
-%%SITE_PERL%%/XML/RAI/Item.pm
 %%SITE_PERL%%/XML/RAI/Channel.pm
 %%SITE_PERL%%/XML/RAI/Image.pm
+%%SITE_PERL%%/XML/RAI/Item.pm
+%%SITE_PERL%%/XML/RAI/Object.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RAI/.packlist
-@dirrm %%SITE_PERL%%/XML/RAI/
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RAI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RAI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/RAI
+@dirrmtry %%SITE_PERL%%/XML

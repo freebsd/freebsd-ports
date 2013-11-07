@@ -1,6 +1,8 @@
 bin/Markdown.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Markdown/.packlist
+%%PERL5_MAN3%%/Text::Markdown.3.gz
 %%SITE_PERL%%/Text/Markdown.pm
-@dirrmtry %%SITE_PERL%%/Text
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Markdown/.packlist
+man/man1/Markdown.pl.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Markdown
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
+@dirrmtry %%SITE_PERL%%/Text

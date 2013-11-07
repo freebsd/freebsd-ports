@@ -1,9 +1,10 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Regexp/Storable.pm
+%%PERL5_MAN3%%/Regexp::Copy.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Regexp/Copy.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Copy/Copy.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Copy/Copy.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Copy/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/Regexp/Storable.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Copy/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Copy/Copy.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Copy/Copy.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Copy/autosplit.ix
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Copy
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Regexp

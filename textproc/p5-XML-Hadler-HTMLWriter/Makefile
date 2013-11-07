@@ -10,14 +10,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PerlSAX handlers for outputting HTML
 
-RUN_DEPENDS=	p5-XML-SAX-Writer>=0:${PORTSDIR}/textproc/p5-XML-SAX-Writer \
+BUILD_DEPENDS=	p5-XML-SAX-Writer>=0:${PORTSDIR}/textproc/p5-XML-SAX-Writer \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		XML::Handler::HTMLWriter.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Glob/.packlist
+%%PERL5_MAN3%%/Text::Glob.3.gz
 %%SITE_PERL%%/Text/Glob.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Glob/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Glob
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
 @dirrmtry %%SITE_PERL%%/Text

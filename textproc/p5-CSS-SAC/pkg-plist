@@ -1,4 +1,26 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/SAC/.packlist
+%%PERL5_MAN3%%/CSS::SAC.3.gz
+%%PERL5_MAN3%%/CSS::SAC::Condition.3.gz
+%%PERL5_MAN3%%/CSS::SAC::Condition::Attribute.3.gz
+%%PERL5_MAN3%%/CSS::SAC::Condition::Combinator.3.gz
+%%PERL5_MAN3%%/CSS::SAC::Condition::Content.3.gz
+%%PERL5_MAN3%%/CSS::SAC::Condition::Lang.3.gz
+%%PERL5_MAN3%%/CSS::SAC::Condition::Negative.3.gz
+%%PERL5_MAN3%%/CSS::SAC::Condition::Positional.3.gz
+%%PERL5_MAN3%%/CSS::SAC::ConditionFactory.3.gz
+%%PERL5_MAN3%%/CSS::SAC::LexicalUnit.3.gz
+%%PERL5_MAN3%%/CSS::SAC::Selector.3.gz
+%%PERL5_MAN3%%/CSS::SAC::Selector::CharacterData.3.gz
+%%PERL5_MAN3%%/CSS::SAC::Selector::Conditional.3.gz
+%%PERL5_MAN3%%/CSS::SAC::Selector::Descendant.3.gz
+%%PERL5_MAN3%%/CSS::SAC::Selector::Element.3.gz
+%%PERL5_MAN3%%/CSS::SAC::Selector::Negative.3.gz
+%%PERL5_MAN3%%/CSS::SAC::Selector::ProcessingInstruction.3.gz
+%%PERL5_MAN3%%/CSS::SAC::Selector::Sibling.3.gz
+%%PERL5_MAN3%%/CSS::SAC::Selector::Simple.3.gz
+%%PERL5_MAN3%%/CSS::SAC::SelectorFactory.3.gz
+%%PERL5_MAN3%%/CSS::SAC::SelectorList.3.gz
+%%PERL5_MAN3%%/CSS::SAC::TestWriter.3.gz
+%%PERL5_MAN3%%/CSS::SAC::Writer.3.gz
 %%SITE_PERL%%/CSS/SAC.pm
 %%SITE_PERL%%/CSS/SAC/Condition.pm
 %%SITE_PERL%%/CSS/SAC/Condition/Attribute.pm
@@ -22,9 +44,10 @@
 %%SITE_PERL%%/CSS/SAC/SelectorList.pm
 %%SITE_PERL%%/CSS/SAC/TestWriter.pm
 %%SITE_PERL%%/CSS/SAC/Writer.pm
-@dirrm %%SITE_PERL%%/CSS/SAC/Condition
-@dirrm %%SITE_PERL%%/CSS/SAC/Selector
-@dirrm %%SITE_PERL%%/CSS/SAC
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/SAC
-@dirrmtry %%SITE_PERL%%/CSS
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/SAC/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/SAC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS
+@dirrmtry %%SITE_PERL%%/CSS/SAC/Selector
+@dirrmtry %%SITE_PERL%%/CSS/SAC/Condition
+@dirrmtry %%SITE_PERL%%/CSS/SAC
+@dirrmtry %%SITE_PERL%%/CSS

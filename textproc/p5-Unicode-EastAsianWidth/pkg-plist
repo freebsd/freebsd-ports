@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Unicode::EastAsianWidth.3.gz
 %%SITE_PERL%%/Unicode/EastAsianWidth.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/EastAsianWidth/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/EastAsianWidth
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/EastAsianWidth
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode
 @dirrmtry %%SITE_PERL%%/Unicode

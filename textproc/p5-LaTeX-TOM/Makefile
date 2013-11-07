@@ -13,7 +13,4 @@ COMMENT=	Perl module for parsing, analyzing, and manipulating LaTeX documents
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	LaTeX::TOM.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -11,14 +11,9 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to find URIs in arbitrary text
 
 BUILD_DEPENDS=	p5-URI>=1:${PORTSDIR}/net/p5-URI
-RUN_DEPENDS=	p5-URI>=1:${PORTSDIR}/net/p5-URI
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN1=		urifind.1
-MAN3=		URI::Find.3 \
-		URI::Find::Schemeless.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

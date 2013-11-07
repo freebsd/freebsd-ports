@@ -11,14 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Encode characters for LaTeX formatting
 
+BUILD_DEPENDS=	p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 USES=		perl5
 USE_PERL5=	configure
 
-RUN_DEPENDS=	p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly
-BUILD_DEPENDS:=	${RUN_DEPENDS}
-
-MAN1=	latex-encode.1
-MAN3=	LaTeX::Encode.3 LaTeX::Encode::EncodingTable.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

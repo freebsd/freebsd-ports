@@ -15,16 +15,9 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
-RUN_DEPENDS=	p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff \
-		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Text::WordDiff.3 \
-		Text::WordDiff::ANSIColor.3 \
-		Text::WordDiff::HTML.3 \
-		Text::WordDiff::HTMLTwoLines.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,3 +1,15 @@
+%%PERL5_MAN3%%/XML::Atom::Syndication.3.gz
+%%PERL5_MAN3%%/XML::Atom::Syndication::Category.3.gz
+%%PERL5_MAN3%%/XML::Atom::Syndication::Content.3.gz
+%%PERL5_MAN3%%/XML::Atom::Syndication::Entry.3.gz
+%%PERL5_MAN3%%/XML::Atom::Syndication::Feed.3.gz
+%%PERL5_MAN3%%/XML::Atom::Syndication::Generator.3.gz
+%%PERL5_MAN3%%/XML::Atom::Syndication::Link.3.gz
+%%PERL5_MAN3%%/XML::Atom::Syndication::Object.3.gz
+%%PERL5_MAN3%%/XML::Atom::Syndication::Person.3.gz
+%%PERL5_MAN3%%/XML::Atom::Syndication::Source.3.gz
+%%PERL5_MAN3%%/XML::Atom::Syndication::Text.3.gz
+%%PERL5_MAN3%%/XML::Atom::Syndication::Writer.3.gz
 %%SITE_PERL%%/XML/Atom/Syndication.pm
 %%SITE_PERL%%/XML/Atom/Syndication/Category.pm
 %%SITE_PERL%%/XML/Atom/Syndication/Content.pm

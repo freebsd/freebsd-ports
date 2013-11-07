@@ -13,18 +13,15 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to parse WDDX Packets
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
-RUN_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		WDDX.3
-
-NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Changes ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Changes ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

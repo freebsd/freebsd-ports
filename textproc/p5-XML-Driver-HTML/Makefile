@@ -17,8 +17,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		html2xhtml.1
-MAN3=		XML::Driver::HTML.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

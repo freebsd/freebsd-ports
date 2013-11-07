@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SimpleObject/.packlist
+%%PERL5_MAN3%%/XML::SimpleObject.3.gz
 %%SITE_PERL%%/XML/SimpleObject.pm
 %%SITE_PERL%%/XML/SimpleObject/Enhanced.pm
 %%SITE_PERL%%/XML/ex.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SimpleObject/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SimpleObject
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML/SimpleObject

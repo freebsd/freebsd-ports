@@ -18,11 +18,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Template::Magic.3 \
-		Bundle::Template::Magic.3 \
-		Template::Magic::HTML.3 \
-		Template::Magic::QuickStart.3 \
-		Template::Magic::Zone.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

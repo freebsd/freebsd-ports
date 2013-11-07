@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Regex::PreSuf.3.gz
 %%SITE_PERL%%/Regex/PreSuf.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regex/PreSuf/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regex/PreSuf
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regex/PreSuf
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regex
 @dirrmtry %%SITE_PERL%%/Regex

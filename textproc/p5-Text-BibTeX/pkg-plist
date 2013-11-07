@@ -2,6 +2,16 @@ bin/biblex
 bin/bibparse
 bin/dumpnames
 lib/libbtparse.so
+%%PERL5_MAN3%%/Text::BibTeX.3.gz
+%%PERL5_MAN3%%/Text::BibTeX::Bib.3.gz
+%%PERL5_MAN3%%/Text::BibTeX::BibFormat.3.gz
+%%PERL5_MAN3%%/Text::BibTeX::BibSort.3.gz
+%%PERL5_MAN3%%/Text::BibTeX::Entry.3.gz
+%%PERL5_MAN3%%/Text::BibTeX::File.3.gz
+%%PERL5_MAN3%%/Text::BibTeX::Name.3.gz
+%%PERL5_MAN3%%/Text::BibTeX::NameFormat.3.gz
+%%PERL5_MAN3%%/Text::BibTeX::Structure.3.gz
+%%PERL5_MAN3%%/Text::BibTeX::Value.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX/Bib.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX/BibFormat.pm
@@ -14,7 +24,18 @@ lib/libbtparse.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX/Value.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/BibTeX/BibTeX.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/BibTeX/BibTeX.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/BibTeX
+man/man1/bt_format_names.1.gz
+man/man1/bt_input.1.gz
+man/man1/bt_language.1.gz
+man/man1/bt_macros.1.gz
+man/man1/bt_misc.1.gz
+man/man1/bt_post_processing.1.gz
+man/man1/bt_postprocess.1.gz
+man/man1/bt_split_names.1.gz
+man/man1/bt_traversal.1.gz
+man/man1/btool_faq.1.gz
+man/man1/btparse.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/BibTeX
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text/BibTeX
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text

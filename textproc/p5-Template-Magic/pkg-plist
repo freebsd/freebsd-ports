@@ -1,12 +1,17 @@
+%%PERL5_MAN3%%/Bundle::Template::Magic.3.gz
+%%PERL5_MAN3%%/Template::Magic.3.gz
+%%PERL5_MAN3%%/Template::Magic::HTML.3.gz
+%%PERL5_MAN3%%/Template::Magic::QuickStart.3.gz
+%%PERL5_MAN3%%/Template::Magic::Zone.3.gz
 %%SITE_PERL%%/Bundle/Template/Magic.pm
 %%SITE_PERL%%/Template/Magic.pm
 %%SITE_PERL%%/Template/Magic/HTML.pm
 %%SITE_PERL%%/Template/Magic/QuickStart.pm
 %%SITE_PERL%%/Template/Magic/Zone.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Magic/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Magic
-@dirrm %%SITE_PERL%%/Template/Magic
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Magic
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
+@dirrmtry %%SITE_PERL%%/Template/Magic
 @dirrmtry %%SITE_PERL%%/Template
 @dirrmtry %%SITE_PERL%%/Bundle/Template
 @dirrmtry %%SITE_PERL%%/Bundle

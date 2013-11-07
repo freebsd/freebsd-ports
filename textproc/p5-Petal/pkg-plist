@@ -1,3 +1,8 @@
+%%PERL5_MAN3%%/Petal.3.gz
+%%PERL5_MAN3%%/Petal::Cookbook.3.gz
+%%PERL5_MAN3%%/Petal::Deprecated.3.gz
+%%PERL5_MAN3%%/Petal::Hash::Test.3.gz
+%%PERL5_MAN3%%/Petal::I18N.3.gz
 %%SITE_PERL%%/Petal.pm
 %%SITE_PERL%%/Petal/Cache/Disk.pm
 %%SITE_PERL%%/Petal/Cache/Memory.pm
@@ -19,9 +24,9 @@
 %%SITE_PERL%%/Petal/TranslationService/Noop.pm
 %%SITE_PERL%%/Petal/TranslationService/h4x0r.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Petal/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Petal
-@dirrm %%SITE_PERL%%/Petal/TranslationService
-@dirrm %%SITE_PERL%%/Petal/Hash
-@dirrm %%SITE_PERL%%/Petal/Canonicalizer
-@dirrm %%SITE_PERL%%/Petal/Cache
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Petal
+@dirrmtry %%SITE_PERL%%/Petal/TranslationService
+@dirrmtry %%SITE_PERL%%/Petal/Hash
+@dirrmtry %%SITE_PERL%%/Petal/Canonicalizer
+@dirrmtry %%SITE_PERL%%/Petal/Cache
 @dirrmtry %%SITE_PERL%%/Petal

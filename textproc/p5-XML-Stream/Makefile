@@ -12,18 +12,9 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	XML::Stream provides you with access to XML Stream
 
 BUILD_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
-RUN_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		XML::Stream.3 \
-		XML::Stream::IO::Select::Win32.3 \
-		XML::Stream::Namespace.3 \
-		XML::Stream::Node.3 \
-		XML::Stream::Parser.3 \
-		XML::Stream::Parser::DTD.3 \
-		XML::Stream::Tree.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

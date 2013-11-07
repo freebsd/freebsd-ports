@@ -1,6 +1,8 @@
 bin/umlclass.pl
+%%PERL5_MAN3%%/UML::Class::Simple.3.gz
 %%SITE_PERL%%/UML/Class/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/UML/Class/Simple/.packlist
+man/man1/umlclass.pl.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UML/Class/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UML/Class
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UML

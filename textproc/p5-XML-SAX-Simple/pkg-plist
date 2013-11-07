@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/Simple/.packlist
+%%PERL5_MAN3%%/XML::SAX::Simple.3.gz
 %%SITE_PERL%%/XML/SAX/Simple.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/Simple
-@dirrmtry %%SITE_PERL%%/XML/SAX
-@dirrmtry %%SITE_PERL%%/XML
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/Simple/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/SAX
+@dirrmtry %%SITE_PERL%%/XML

@@ -1,23 +1,29 @@
 bin/dtd2db.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler/Dtd2DocBook/.packlist
+%%PERL5_MAN3%%/XML::Handler::Dtd2DocBook.3.gz
 %%SITE_PERL%%/XML/Handler/Dtd2DocBook.pm
-%%SITE_PERL%%/XML/Handler/Dtd2DocBook/fr/notation.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2DocBook/fr/element.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2DocBook/fr/custom.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2DocBook/fr/book.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2DocBook/fr/example.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2DocBook/fr/prolog.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2DocBook/fr/index.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2DocBook/fr/entity.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2DocBook/en/entity.tmpl
 %%SITE_PERL%%/XML/Handler/Dtd2DocBook/en/book.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2DocBook/en/prolog.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2DocBook/en/notation.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2DocBook/en/element.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2DocBook/en/index.tmpl
 %%SITE_PERL%%/XML/Handler/Dtd2DocBook/en/custom.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2DocBook/en/element.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2DocBook/en/entity.tmpl
 %%SITE_PERL%%/XML/Handler/Dtd2DocBook/en/example.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2DocBook/en/index.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2DocBook/en/notation.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2DocBook/en/prolog.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2DocBook/fr/book.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2DocBook/fr/custom.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2DocBook/fr/element.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2DocBook/fr/entity.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2DocBook/fr/example.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2DocBook/fr/index.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2DocBook/fr/notation.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2DocBook/fr/prolog.tmpl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler/Dtd2DocBook/.packlist
+man/man1/dtd2db.pl.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler/Dtd2DocBook
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML/Handler/Dtd2DocBook/fr
 @dirrmtry %%SITE_PERL%%/XML/Handler/Dtd2DocBook/en
 @dirrmtry %%SITE_PERL%%/XML/Handler/Dtd2DocBook
+@dirrmtry %%SITE_PERL%%/XML/Handler
+@dirrmtry %%SITE_PERL%%/XML

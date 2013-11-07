@@ -1,4 +1,10 @@
+%%PERL5_MAN3%%/HTML::FormatText::WithLinks::AndTables.3.gz
 %%SITE_PERL%%/HTML/FormatText/WithLinks/AndTables.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormatText/WithLinks/AndTables/.packlist
-@dirrm %%SITE_PERL%%/HTML/FormatText/WithLinks
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormatText/WithLinks/AndTables
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormatText/WithLinks/AndTables
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormatText/WithLinks
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormatText
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/HTML/FormatText/WithLinks
+@dirrmtry %%SITE_PERL%%/HTML/FormatText
+@dirrmtry %%SITE_PERL%%/HTML

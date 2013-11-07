@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Lingua::EN::Numbers::Ordinate.3.gz
 %%SITE_PERL%%/Lingua/EN/Numbers/Ordinate.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Numbers/Ordinate/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Numbers/Ordinate
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Numbers/Ordinate
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Numbers
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua

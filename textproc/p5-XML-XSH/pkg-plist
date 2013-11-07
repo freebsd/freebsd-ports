@@ -1,4 +1,6 @@
 bin/xsh
+%%PERL5_MAN3%%/XSH.3.gz
+%%SITE_PERL%%/Inline/XSH.pm
 %%SITE_PERL%%/XML/XSH.pm
 %%SITE_PERL%%/XML/XSH.pod
 %%SITE_PERL%%/XML/XSH/Completion.pm
@@ -11,10 +13,10 @@ bin/xsh
 %%SITE_PERL%%/XML/XSH/Iterators.pm
 %%SITE_PERL%%/XML/XSH/LibXMLCompat.pm
 %%SITE_PERL%%/XML/XSH/Parser.pm
-@dirrm %%SITE_PERL%%/XML/XSH
-@dirrmtry %%SITE_PERL%%/XML
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XSH/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XSH
+man/man1/xsh.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XSH
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-%%SITE_PERL%%/Inline/XSH.pm
+@dirrmtry %%SITE_PERL%%/XML/XSH
+@dirrmtry %%SITE_PERL%%/XML
 @dirrmtry %%SITE_PERL%%/Inline

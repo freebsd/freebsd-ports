@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Constants/.packlist
+%%PERL5_MAN3%%/Pod::Constants.3.gz
 %%SITE_PERL%%/Pod/Constants.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Constants
-@dirrmtry %%SITE_PERL%%/Pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Constants/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Constants
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
+@dirrmtry %%SITE_PERL%%/Pod

@@ -1,15 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CAM/PDF/.packlist
-%%SITE_PERL%%/CAM/PDF.pm
-%%SITE_PERL%%/CAM/PDF/Content.pm
-%%SITE_PERL%%/CAM/PDF/Decrypt.pm
-%%SITE_PERL%%/CAM/PDF/GS.pm
-%%SITE_PERL%%/CAM/PDF/GS/NoText.pm
-%%SITE_PERL%%/CAM/PDF/Node.pm
-%%SITE_PERL%%/CAM/PDF/PageText.pm
-%%SITE_PERL%%/CAM/PDF/Renderer/Dump.pm
-%%SITE_PERL%%/CAM/PDF/Renderer/Images.pm
-%%SITE_PERL%%/CAM/PDF/Renderer/Text.pm
-%%SITE_PERL%%/CAM/PDF/Renderer/TextFB.pm
 bin/appendpdf.pl
 bin/asciify
 bin/changepagestring.pl
@@ -39,9 +27,59 @@ bin/setpdfbackground.pl
 bin/setpdfpage.pl
 bin/stamppdf.pl
 bin/uninlinepdfimages.pl
+%%PERL5_MAN3%%/CAM::PDF.3.gz
+%%PERL5_MAN3%%/CAM::PDF::Content.3.gz
+%%PERL5_MAN3%%/CAM::PDF::Decrypt.3.gz
+%%PERL5_MAN3%%/CAM::PDF::GS.3.gz
+%%PERL5_MAN3%%/CAM::PDF::GS::NoText.3.gz
+%%PERL5_MAN3%%/CAM::PDF::Node.3.gz
+%%PERL5_MAN3%%/CAM::PDF::PageText.3.gz
+%%PERL5_MAN3%%/CAM::PDF::Renderer::Dump.3.gz
+%%PERL5_MAN3%%/CAM::PDF::Renderer::Images.3.gz
+%%PERL5_MAN3%%/CAM::PDF::Renderer::Text.3.gz
+%%PERL5_MAN3%%/CAM::PDF::Renderer::TextFB.3.gz
+%%SITE_PERL%%/CAM/PDF.pm
+%%SITE_PERL%%/CAM/PDF/Content.pm
+%%SITE_PERL%%/CAM/PDF/Decrypt.pm
+%%SITE_PERL%%/CAM/PDF/GS.pm
+%%SITE_PERL%%/CAM/PDF/GS/NoText.pm
+%%SITE_PERL%%/CAM/PDF/Node.pm
+%%SITE_PERL%%/CAM/PDF/PageText.pm
+%%SITE_PERL%%/CAM/PDF/Renderer/Dump.pm
+%%SITE_PERL%%/CAM/PDF/Renderer/Images.pm
+%%SITE_PERL%%/CAM/PDF/Renderer/Text.pm
+%%SITE_PERL%%/CAM/PDF/Renderer/TextFB.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CAM/PDF/.packlist
+man/man1/appendpdf.pl.1.gz
+man/man1/changepagestring.pl.1.gz
+man/man1/changepdfstring.pl.1.gz
+man/man1/changerefkeys.pl.1.gz
+man/man1/crunchjpgs.pl.1.gz
+man/man1/deillustrate.pl.1.gz
+man/man1/deletepdfpage.pl.1.gz
+man/man1/extractallimages.pl.1.gz
+man/man1/extractjpgs.pl.1.gz
+man/man1/fillpdffields.pl.1.gz
+man/man1/getpdffontobject.pl.1.gz
+man/man1/getpdfpage.pl.1.gz
+man/man1/getpdfpageobject.pl.1.gz
+man/man1/getpdftext.pl.1.gz
+man/man1/listfonts.pl.1.gz
+man/man1/listimages.pl.1.gz
+man/man1/listpdffields.pl.1.gz
+man/man1/pdfinfo.pl.1.gz
+man/man1/readpdf.pl.1.gz
+man/man1/renderpdf.pl.1.gz
+man/man1/replacepdfobj.pl.1.gz
+man/man1/revertpdf.pl.1.gz
+man/man1/rewritepdf.pl.1.gz
+man/man1/setpdfbackground.pl.1.gz
+man/man1/setpdfpage.pl.1.gz
+man/man1/stamppdf.pl.1.gz
+man/man1/uninlinepdfimages.pl.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CAM/PDF
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CAM
 @dirrmtry %%SITE_PERL%%/CAM/PDF/Renderer
 @dirrmtry %%SITE_PERL%%/CAM/PDF/GS
 @dirrmtry %%SITE_PERL%%/CAM/PDF
 @dirrmtry %%SITE_PERL%%/CAM
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CAM/PDF
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CAM

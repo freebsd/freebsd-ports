@@ -14,7 +14,4 @@ COMMENT=	Composition and decomposition of comma-separated values
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Text::CSV.3 Text::CSV_PP.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

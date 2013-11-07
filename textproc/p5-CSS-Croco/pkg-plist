@@ -1,3 +1,15 @@
+%%PERL5_MAN3%%/CSS::Croco.3.gz
+%%PERL5_MAN3%%/CSS::Croco::Selector.3.gz
+%%PERL5_MAN3%%/CSS::Croco::Statement.3.gz
+%%PERL5_MAN3%%/CSS::Croco::Statement::Media.3.gz
+%%PERL5_MAN3%%/CSS::Croco::Statement::RuleSet.3.gz
+%%PERL5_MAN3%%/CSS::Croco::StyleSheet.3.gz
+%%PERL5_MAN3%%/CSS::Croco::Term.3.gz
+%%PERL5_MAN3%%/CSS::Croco::Term::Hash.3.gz
+%%PERL5_MAN3%%/CSS::Croco::Term::Ident.3.gz
+%%PERL5_MAN3%%/CSS::Croco::Term::Number.3.gz
+%%PERL5_MAN3%%/CSS::Croco::Term::String.3.gz
+%%PERL5_MAN3%%/CSS::Croco::Term::URI.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/CSS/Croco.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/CSS/Croco/Selector.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/CSS/Croco/Statement.pm
@@ -10,10 +22,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/CSS/Croco/Term/Number.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/CSS/Croco/Term/String.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/CSS/Croco/Term/URI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Croco/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Croco/Croco.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Croco/Croco.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Croco/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Croco/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Croco
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/CSS/Croco/Term

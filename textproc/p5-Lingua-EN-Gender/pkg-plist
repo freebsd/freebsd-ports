@@ -1,8 +1,8 @@
+%%PERL5_MAN3%%/Lingua::EN::Gender.3.gz
 %%SITE_PERL%%/Lingua/EN/Gender.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Gender/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Gender
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
 @dirrmtry %%SITE_PERL%%/Lingua/EN
 @dirrmtry %%SITE_PERL%%/Lingua

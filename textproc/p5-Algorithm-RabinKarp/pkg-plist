@@ -1,9 +1,11 @@
 bin/rabin.pl
+%%PERL5_MAN3%%/Algorithm::RabinKarp.3.gz
+%%PERL5_MAN3%%/Algorithm::RabinKarp::Util.3.gz
 %%SITE_PERL%%/Algorithm/RabinKarp.pm
 %%SITE_PERL%%/Algorithm/RabinKarp/Util.pm
 %%SITE_PERL%%/Algorithm/rabin.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/RabinKarp/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/RabinKarp
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/RabinKarp
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
-@dirrm %%SITE_PERL%%/Algorithm/RabinKarp
+@dirrmtry %%SITE_PERL%%/Algorithm/RabinKarp
 @dirrmtry %%SITE_PERL%%/Algorithm

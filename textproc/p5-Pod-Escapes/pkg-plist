@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Pod::Escapes.3.gz
 %%SITE_PERL%%/Pod/Escapes.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Escapes/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Escapes
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Escapes
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
 @dirrmtry %%SITE_PERL%%/Pod

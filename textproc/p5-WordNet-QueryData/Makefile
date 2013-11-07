@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to the WordNet database files
 
-LIB_DEPENDS=	WN.2:${PORTSDIR}/textproc/wordnet
+LIB_DEPENDS=	libWN.so:${PORTSDIR}/textproc/wordnet
 
 WNHOME?=	${LOCALBASE}/share/WordNet
 
@@ -18,9 +18,6 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ENV=	WNHOME=${WNHOME}
 
-MAN3=		WordNet::QueryData.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e  \
 		'/wnHomeUnix/s|/usr/local/WordNet-3.0|${WNHOME}|; \

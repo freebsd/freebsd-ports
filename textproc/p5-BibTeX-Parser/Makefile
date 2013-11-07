@@ -17,9 +17,4 @@ RUN_DEPENDS=	p5-LaTeX-ToUnicode>=0.02:${PORTSDIR}/textproc/p5-LaTeX-ToUnicode \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		BibTeX::Parser.3 \
-		BibTeX::Parser::Entry.3 \
-		BibTeX::Parser::Author.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

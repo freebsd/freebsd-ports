@@ -13,7 +13,4 @@ COMMENT=	This is a thin wrapper around the shellwords.pl package
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Text::Shellwords.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

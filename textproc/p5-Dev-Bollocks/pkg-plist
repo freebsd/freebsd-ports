@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/Dev::Bollocks.3.gz
 %%SITE_PERL%%/Dev/Bollocks.pm
-%%SITE_PERL%%/mach/auto/Dev/Bollocks/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dev/Bollocks/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dev/Bollocks
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dev
 @dirrmtry %%SITE_PERL%%/Dev
-@dirrmtry %%SITE_PERL%%/mach/auto/Dev/Bollocks
-@dirrmtry %%SITE_PERL%%/mach/auto/Dev

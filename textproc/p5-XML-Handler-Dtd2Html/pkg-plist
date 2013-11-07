@@ -1,47 +1,52 @@
 bin/dtd2html.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler/Dtd2Html/.packlist
+%%PERL5_MAN3%%/XML::Handler::Dtd2Html.3.gz
 %%SITE_PERL%%/XML/Handler/Dtd2Html.pm
-%%SITE_PERL%%/XML/Handler/Dtd2Html/simple.css
-%%SITE_PERL%%/XML/Handler/Dtd2Html/frame.css
-%%SITE_PERL%%/XML/Handler/Dtd2Html/prev.png
 %%SITE_PERL%%/XML/Handler/Dtd2Html/book.css
-%%SITE_PERL%%/XML/Handler/Dtd2Html/home.png
-%%SITE_PERL%%/XML/Handler/Dtd2Html/up.png
-%%SITE_PERL%%/XML/Handler/Dtd2Html/example.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2Html/next.png
-%%SITE_PERL%%/XML/Handler/Dtd2Html/main.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2Html/en/frame.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2Html/en/alpha.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2Html/en/entity.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2Html/en/book.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2Html/en/_header.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2Html/en/_main.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2Html/en/_footer.tmpl
 %%SITE_PERL%%/XML/Handler/Dtd2Html/en/_desc.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2Html/en/prolog.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2Html/en/notation.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2Html/en/element.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2Html/en/simple.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2Html/en/index.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2Html/en/_footer.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2Html/en/_header.tmpl
 %%SITE_PERL%%/XML/Handler/Dtd2Html/en/_index.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2Html/en/_main.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2Html/en/alpha.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2Html/en/book.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2Html/en/element.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2Html/en/entity.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2Html/en/frame.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2Html/en/index.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2Html/en/notation.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2Html/en/prolog.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2Html/en/simple.tmpl
 %%SITE_PERL%%/XML/Handler/Dtd2Html/en/tree.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2Html/fr/notation.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2Html/fr/element.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2Html/fr/frame.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2Html/fr/_header.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2Html/fr/book.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2Html/fr/_footer.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2Html/fr/index.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2Html/fr/alpha.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2Html/example.tmpl
 %%SITE_PERL%%/XML/Handler/Dtd2Html/fr/_desc.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2Html/fr/_footer.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2Html/fr/_header.tmpl
 %%SITE_PERL%%/XML/Handler/Dtd2Html/fr/_index.tmpl
 %%SITE_PERL%%/XML/Handler/Dtd2Html/fr/_main.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2Html/fr/prolog.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2Html/fr/tree.tmpl
-%%SITE_PERL%%/XML/Handler/Dtd2Html/fr/simple.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2Html/fr/alpha.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2Html/fr/book.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2Html/fr/element.tmpl
 %%SITE_PERL%%/XML/Handler/Dtd2Html/fr/entity.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2Html/fr/frame.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2Html/fr/index.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2Html/fr/notation.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2Html/fr/prolog.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2Html/fr/simple.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2Html/fr/tree.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2Html/frame.css
+%%SITE_PERL%%/XML/Handler/Dtd2Html/home.png
+%%SITE_PERL%%/XML/Handler/Dtd2Html/main.tmpl
+%%SITE_PERL%%/XML/Handler/Dtd2Html/next.png
+%%SITE_PERL%%/XML/Handler/Dtd2Html/prev.png
+%%SITE_PERL%%/XML/Handler/Dtd2Html/simple.css
+%%SITE_PERL%%/XML/Handler/Dtd2Html/up.png
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler/Dtd2Html/.packlist
+man/man1/dtd2html.pl.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler/Dtd2Html
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML/Handler/Dtd2Html/fr
 @dirrmtry %%SITE_PERL%%/XML/Handler/Dtd2Html/en
 @dirrmtry %%SITE_PERL%%/XML/Handler/Dtd2Html
+@dirrmtry %%SITE_PERL%%/XML/Handler
+@dirrmtry %%SITE_PERL%%/XML

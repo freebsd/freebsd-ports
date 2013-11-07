@@ -1,4 +1,17 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DOM2/.packlist
+%%PERL5_MAN3%%/XML::DOM2.3.gz
+%%PERL5_MAN3%%/XML::DOM2::Attribute.3.gz
+%%PERL5_MAN3%%/XML::DOM2::Attribute::Namespace.3.gz
+%%PERL5_MAN3%%/XML::DOM2::DOM::Attribute.3.gz
+%%PERL5_MAN3%%/XML::DOM2::DOM::Document.3.gz
+%%PERL5_MAN3%%/XML::DOM2::DOM::Element.3.gz
+%%PERL5_MAN3%%/XML::DOM2::DOM::NameSpace.3.gz
+%%PERL5_MAN3%%/XML::DOM2::Element.3.gz
+%%PERL5_MAN3%%/XML::DOM2::Element::CDATA.3.gz
+%%PERL5_MAN3%%/XML::DOM2::Element::Comment.3.gz
+%%PERL5_MAN3%%/XML::DOM2::Element::Document.3.gz
+%%PERL5_MAN3%%/XML::DOM2::Element::DocumentType.3.gz
+%%PERL5_MAN3%%/XML::DOM2::Parser.3.gz
+%%PERL5_MAN3%%/XML::DOM2::XPath.3.gz
 %%SITE_PERL%%/XML/DOM2.pm
 %%SITE_PERL%%/XML/DOM2/Attribute.pm
 %%SITE_PERL%%/XML/DOM2/Attribute/Namespace.pm
@@ -13,10 +26,11 @@
 %%SITE_PERL%%/XML/DOM2/Element/DocumentType.pm
 %%SITE_PERL%%/XML/DOM2/Parser.pm
 %%SITE_PERL%%/XML/DOM2/XPath.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DOM2/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DOM2
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/XML/DOM2/Attribute
-@dirrmtry %%SITE_PERL%%/XML/DOM2/DOM
 @dirrmtry %%SITE_PERL%%/XML/DOM2/Element
+@dirrmtry %%SITE_PERL%%/XML/DOM2/DOM
+@dirrmtry %%SITE_PERL%%/XML/DOM2/Attribute
 @dirrmtry %%SITE_PERL%%/XML/DOM2
 @dirrmtry %%SITE_PERL%%/XML

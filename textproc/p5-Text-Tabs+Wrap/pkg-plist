@@ -1,5 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text-Wrap/.packlist
-%%SITE_PERL%%/Text/Wrap.pm
+%%PERL5_MAN3%%/modern::Text::Tabs.3.gz
+%%PERL5_MAN3%%/modern::Text::Wrap.3.gz
 %%SITE_PERL%%/Text/Tabs.pm
+%%SITE_PERL%%/Text/Wrap.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text-Wrap/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text-Wrap
 @dirrmtry %%SITE_PERL%%/Text

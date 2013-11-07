@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Lingua::EN::Syllable.3.gz
 %%SITE_PERL%%/Lingua/EN/Syllable.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Syllable/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Syllable
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Syllable
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
 @dirrmtry %%SITE_PERL%%/Lingua/EN

@@ -1,8 +1,10 @@
+%%PERL5_MAN3%%/Template::Plugin::HTML::SuperForm.3.gz
 %%SITE_PERL%%/Template/Plugin/HTML/SuperForm.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/HTML/SuperForm/.packlist
-@dirrmtry %%SITE_PERL%%/Template/Plugin/HTML
-@dirrmtry %%SITE_PERL%%/Template/Plugin
-@dirrmtry %%SITE_PERL%%/Template
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/HTML/SuperForm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/HTML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
+@dirrmtry %%SITE_PERL%%/Template/Plugin/HTML
+@dirrmtry %%SITE_PERL%%/Template/Plugin
+@dirrmtry %%SITE_PERL%%/Template

@@ -1,11 +1,21 @@
 bin/genericseq.pl
-bin/seq2svg.pl
 bin/seq2rast.pl
+bin/seq2svg.pl
+%%PERL5_MAN3%%/Devel::CallSeq.3.gz
+%%PERL5_MAN3%%/Devel::OOCallSeq.3.gz
+%%PERL5_MAN3%%/UML::Sequence.3.gz
+%%PERL5_MAN3%%/UML::Sequence::Activation.3.gz
+%%PERL5_MAN3%%/UML::Sequence::JavaSeq.3.gz
+%%PERL5_MAN3%%/UML::Sequence::PerlOOSeq.3.gz
+%%PERL5_MAN3%%/UML::Sequence::PerlSeq.3.gz
+%%PERL5_MAN3%%/UML::Sequence::Raster.3.gz
+%%PERL5_MAN3%%/UML::Sequence::SimpleSeq.3.gz
+%%PERL5_MAN3%%/UML::Sequence::Svg.3.gz
+%%PERL5_MAN3%%/UML::genericseq.3.gz
+%%PERL5_MAN3%%/UML::seq2rast.3.gz
+%%PERL5_MAN3%%/UML::seq2svg.3.gz
 %%SITE_PERL%%/Devel/CallSeq.pm
 %%SITE_PERL%%/Devel/OOCallSeq.pm
-%%SITE_PERL%%/UML/genericseq.pl
-%%SITE_PERL%%/UML/seq2svg.pl
-%%SITE_PERL%%/UML/seq2rast.pl
 %%SITE_PERL%%/UML/Sequence.pm
 %%SITE_PERL%%/UML/Sequence/Activation.pm
 %%SITE_PERL%%/UML/Sequence/JavaSeq.pm
@@ -14,9 +24,15 @@ bin/seq2rast.pl
 %%SITE_PERL%%/UML/Sequence/Raster.pm
 %%SITE_PERL%%/UML/Sequence/SimpleSeq.pm
 %%SITE_PERL%%/UML/Sequence/Svg.pm
+%%SITE_PERL%%/UML/genericseq.pl
+%%SITE_PERL%%/UML/seq2rast.pl
+%%SITE_PERL%%/UML/seq2svg.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/UML/Sequence/.packlist
-@dirrm %%SITE_PERL%%/UML/Sequence
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/UML/Sequence
+man/man1/genericseq.pl.1.gz
+man/man1/seq2rast.pl.1.gz
+man/man1/seq2svg.pl.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UML/Sequence
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UML
+@dirrmtry %%SITE_PERL%%/UML/Sequence
 @dirrmtry %%SITE_PERL%%/UML
 @dirrmtry %%SITE_PERL%%/Devel

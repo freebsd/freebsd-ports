@@ -13,7 +13,4 @@ COMMENT=	Regexp::Log - A base class for log files regexp builders
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Regexp::Log.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,9 +1,11 @@
+%%PERL5_MAN3%%/Lingua::GL::Stemmer.3.gz
+%%PERL5_MAN3%%/Lingua::PT::Stemmer.3.gz
 %%SITE_PERL%%/Lingua/GL/Stemmer.pm
 %%SITE_PERL%%/Lingua/PT/Stemmer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/PT/Stemmer/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/PT/Stemmer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/PT/Stemmer
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/PT
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
-@dirrm %%SITE_PERL%%/Lingua/PT
-@dirrm %%SITE_PERL%%/Lingua/GL
+@dirrmtry %%SITE_PERL%%/Lingua/PT
+@dirrmtry %%SITE_PERL%%/Lingua/GL
 @dirrmtry %%SITE_PERL%%/Lingua

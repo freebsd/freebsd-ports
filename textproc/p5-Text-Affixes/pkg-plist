@@ -1,8 +1,9 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Affixes/.packlist
-%%SITE_PERL%%/auto/Text/Affixes/autosplit.ix
+%%PERL5_MAN3%%/Text::Affixes.3.gz
 %%SITE_PERL%%/Text/Affixes.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Affixes
-@dirrm %%SITE_PERL%%/auto/Text/Affixes
-@dirrmtry %%SITE_PERL%%/auto/Text
+%%SITE_PERL%%/auto/Text/Affixes/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Affixes/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Affixes
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
+@dirrmtry %%SITE_PERL%%/auto/Text/Affixes
+@dirrmtry %%SITE_PERL%%/auto/Text
 @dirrmtry %%SITE_PERL%%/Text

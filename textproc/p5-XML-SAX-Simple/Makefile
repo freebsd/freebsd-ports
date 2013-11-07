@@ -10,15 +10,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	SAX version of XML::Simple
 
-RUN_DEPENDS=	p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
+BUILD_DEPENDS=	p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
 		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
 		p5-XML-Handler-Trees>=0:${PORTSDIR}/textproc/p5-XML-Handler-Trees
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		XML::SAX::Simple.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

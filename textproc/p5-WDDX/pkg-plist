@@ -1,5 +1,4 @@
-%%PORTDOCS%%%%DOCSDIR%%/Changes
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WDDX/.packlist
+%%PERL5_MAN3%%/WDDX.3.gz
 %%SITE_PERL%%/WDDX.pm
 %%SITE_PERL%%/WDDX/Array.pm
 %%SITE_PERL%%/WDDX/Binary.pm
@@ -11,6 +10,8 @@
 %%SITE_PERL%%/WDDX/Recordset.pm
 %%SITE_PERL%%/WDDX/String.pm
 %%SITE_PERL%%/WDDX/Struct.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WDDX/.packlist
+%%PORTDOCS%%%%DOCSDIR%%/Changes
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WDDX
 @dirrmtry %%SITE_PERL%%/WDDX

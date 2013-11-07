@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/NamespaceSupport/.packlist
+%%PERL5_MAN3%%/XML::NamespaceSupport.3.gz
 %%SITE_PERL%%/XML/NamespaceSupport.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/NamespaceSupport
-@dirrmtry %%SITE_PERL%%/XML
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/NamespaceSupport/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/NamespaceSupport
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML

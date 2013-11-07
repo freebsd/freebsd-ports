@@ -1,4 +1,16 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/Machines/.packlist
+%%PERL5_MAN3%%/XML::Filter::Distributor.3.gz
+%%PERL5_MAN3%%/XML::Filter::DocSplitter.3.gz
+%%PERL5_MAN3%%/XML::Filter::Merger.3.gz
+%%PERL5_MAN3%%/XML::Filter::Tee.3.gz
+%%PERL5_MAN3%%/XML::SAX::ByRecord.3.gz
+%%PERL5_MAN3%%/XML::SAX::EventMethodMaker.3.gz
+%%PERL5_MAN3%%/XML::SAX::Machine.3.gz
+%%PERL5_MAN3%%/XML::SAX::Machines.3.gz
+%%PERL5_MAN3%%/XML::SAX::Machines::ConfigDefaults.3.gz
+%%PERL5_MAN3%%/XML::SAX::Machines::ConfigHelper.3.gz
+%%PERL5_MAN3%%/XML::SAX::Manifold.3.gz
+%%PERL5_MAN3%%/XML::SAX::Pipeline.3.gz
+%%PERL5_MAN3%%/XML::SAX::Tap.3.gz
 %%SITE_PERL%%/XML/Filter/Distributor.pm
 %%SITE_PERL%%/XML/Filter/DocSplitter.pm
 %%SITE_PERL%%/XML/Filter/Merger.pm
@@ -12,15 +24,16 @@
 %%SITE_PERL%%/XML/SAX/Manifold.pm
 %%SITE_PERL%%/XML/SAX/Pipeline.pm
 %%SITE_PERL%%/XML/SAX/Tap.pm
-@dirrm %%SITE_PERL%%/XML/SAX/Machines
-@dirrmtry %%SITE_PERL%%/XML/Filter
-@dirrmtry %%SITE_PERL%%/XML/SAX
-@dirrmtry %%SITE_PERL%%/XML
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/Machines
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/Machines/.packlist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/append_to_xml_file
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/output_to_process
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml_records_thru_libxslt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml_records_to_data_structures
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrmtry %%PORTEXAMPLES%%%%EXAMPLESDIR%%
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/Machines
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/SAX/Machines
+@dirrmtry %%SITE_PERL%%/XML/SAX
+@dirrmtry %%SITE_PERL%%/XML/Filter
+@dirrmtry %%SITE_PERL%%/XML

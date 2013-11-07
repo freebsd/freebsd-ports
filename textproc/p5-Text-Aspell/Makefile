@@ -11,15 +11,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to the GNU Aspell library
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/aspell:${PORTSDIR}/textproc/aspell
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
 
 USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS+=INC=-I${LOCALBASE}/include \
 		"LIBS=-L${LOCALBASE}/lib -laspell"
 
-MAN3=		Text::Aspell.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,7 +1,10 @@
 bin/compile_encoding
 bin/make_encmap
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Encoding/.packlist
+%%PERL5_MAN3%%/XML::Encoding.3.gz
 %%SITE_PERL%%/XML/Encoding.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Encoding
-@dirrmtry %%SITE_PERL%%/XML
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Encoding/.packlist
+man/man1/compile_encoding.1.gz
+man/man1/make_encmap.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Encoding
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML

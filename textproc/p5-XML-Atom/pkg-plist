@@ -1,3 +1,10 @@
+%%PERL5_MAN3%%/XML::Atom.3.gz
+%%PERL5_MAN3%%/XML::Atom::Client.3.gz
+%%PERL5_MAN3%%/XML::Atom::Entry.3.gz
+%%PERL5_MAN3%%/XML::Atom::Feed.3.gz
+%%PERL5_MAN3%%/XML::Atom::Person.3.gz
+%%PERL5_MAN3%%/XML::Atom::Server.3.gz
+%%PERL5_MAN3%%/XML::Atom::Util.3.gz
 %%SITE_PERL%%/XML/Atom.pm
 %%SITE_PERL%%/XML/Atom/Base.pm
 %%SITE_PERL%%/XML/Atom/Category.pm
@@ -12,7 +19,7 @@
 %%SITE_PERL%%/XML/Atom/Thing.pm
 %%SITE_PERL%%/XML/Atom/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Atom/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Atom
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Atom
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML/Atom
 @dirrmtry %%SITE_PERL%%/XML

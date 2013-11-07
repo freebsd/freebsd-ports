@@ -21,11 +21,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		WWW::Google::SiteMap.3		\
-		WWW::Google::SiteMap::Index.3	\
-		WWW::Google::SiteMap::Ping.3	\
-		WWW::Google::SiteMap::Robot.3	\
-		WWW::Google::SiteMap::URL.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

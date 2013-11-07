@@ -13,7 +13,4 @@ COMMENT=	Styles for formatting Spreadsheet::WriteExcel
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Spreadsheet::WriteExcel::Styler.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

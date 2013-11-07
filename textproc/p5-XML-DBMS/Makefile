@@ -23,12 +23,11 @@ USES=		perl5
 USE_PERL5=	configure
 USE_DOS2UNIX=	yes
 
-NO_STAGE=	yes
 post-install:
 .ifndef(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/samples/*.* ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/*.* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

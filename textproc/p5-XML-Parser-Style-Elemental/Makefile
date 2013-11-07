@@ -16,7 +16,4 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	XML::Parser::Style::Elemental.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,6 +1,7 @@
+%%PERL5_MAN3%%/Petal::Mail.3.gz
 %%SITE_PERL%%/Petal/Mail.pm
 %%SITE_PERL%%/Petal/fake_sendmail.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Petal/Mail/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Petal/Mail
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Petal/Mail
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Petal
 @dirrmtry %%SITE_PERL%%/Petal

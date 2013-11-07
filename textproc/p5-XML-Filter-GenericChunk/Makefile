@@ -17,10 +17,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		XML::Filter::CharacterChunk.3 \
-		XML::Filter::GenericChunk.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' '/use warnings/d' \
 		${WRKSRC}/t/02filter.t \

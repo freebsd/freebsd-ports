@@ -9,15 +9,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface Template Toolkit to Lingua::EN::Inflect module
 
-RUN_DEPENDS=	p5-Template-Toolkit>0:${PORTSDIR}/www/p5-Template-Toolkit \
-  				p5-HTML-SuperForm>0:${PORTSDIR}/textproc/p5-HTML-SuperForm
+BUILD_DEPENDS=	p5-Template-Toolkit>0:${PORTSDIR}/www/p5-Template-Toolkit \
+ 		p5-HTML-SuperForm>0:${PORTSDIR}/textproc/p5-HTML-SuperForm
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
-MAN3=	Template::Plugin::HTML::SuperForm.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

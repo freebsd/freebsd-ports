@@ -15,10 +15,7 @@ COMMENT=	Rabin-Karp streaming hash
 BUILD_DEPENDS=	p5-File-Temp>=0:${PORTSDIR}/devel/p5-File-Temp
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	Algorithm::RabinKarp.3 Algorithm::RabinKarp::Util.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

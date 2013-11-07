@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/Petal::Utils.3.gz
 %%SITE_PERL%%/Petal/Utils.pm
 %%SITE_PERL%%/Petal/Utils/And.pm
 %%SITE_PERL%%/Petal/Utils/Base.pm
@@ -21,5 +22,5 @@
 %%SITE_PERL%%/Petal/Utils/US_Date.pm
 %%SITE_PERL%%/Petal/Utils/UpperCase.pm
 %%SITE_PERL%%/Petal/Utils/UriEscape.pm
-@dirrm %%SITE_PERL%%/Petal/Utils
+@dirrmtry %%SITE_PERL%%/Petal/Utils
 @dirrmtry %%SITE_PERL%%/Petal

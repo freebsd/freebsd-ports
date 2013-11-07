@@ -19,8 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		dtddiff2html.1 dtdformat.1 dtddiff.1 dtdparse.1 dtdflatten.1
-MAN3=		SGML::DTDParse::DTD.3 SGML::DTDParse.3 SGML::DTDParse::Util.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

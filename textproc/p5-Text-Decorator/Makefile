@@ -15,17 +15,7 @@ BUILD_DEPENDS=	p5-URI-Find>=0:${PORTSDIR}/textproc/p5-URI-Find \
 		p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	Text::Decorator.3 \
-	Text::Decorator::Filter.3 \
-	Text::Decorator::Filter::Quoted.3 \
-	Text::Decorator::Filter::TTBridge.3 \
-	Text::Decorator::Filter::Test.3 \
-	Text::Decorator::Filter::URIFind.3 \
-	Text::Decorator::Group.3 \
-	Text::Decorator::Node.3
-
 USES=		perl5
 USE_PERL5=	modbuild
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

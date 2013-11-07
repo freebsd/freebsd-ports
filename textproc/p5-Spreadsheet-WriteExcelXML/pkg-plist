@@ -1,3 +1,9 @@
+%%PERL5_MAN3%%/Spreadsheet::WriteExcelXML.3.gz
+%%PERL5_MAN3%%/Spreadsheet::WriteExcelXML::Format.3.gz
+%%PERL5_MAN3%%/Spreadsheet::WriteExcelXML::Utility.3.gz
+%%PERL5_MAN3%%/Spreadsheet::WriteExcelXML::Workbook.3.gz
+%%PERL5_MAN3%%/Spreadsheet::WriteExcelXML::Worksheet.3.gz
+%%PERL5_MAN3%%/Spreadsheet::WriteExcelXML::XMLwriter.3.gz
 %%SITE_PERL%%/Spreadsheet/WriteExcelXML.pm
 %%SITE_PERL%%/Spreadsheet/WriteExcelXML/Format.pm
 %%SITE_PERL%%/Spreadsheet/WriteExcelXML/Utility.pm
@@ -5,7 +11,7 @@
 %%SITE_PERL%%/Spreadsheet/WriteExcelXML/Worksheet.pm
 %%SITE_PERL%%/Spreadsheet/WriteExcelXML/XMLwriter.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet/WriteExcelXML/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet/WriteExcelXML
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet
-@dirrm %%SITE_PERL%%/Spreadsheet/WriteExcelXML
-@dirrm %%SITE_PERL%%/Spreadsheet
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet/WriteExcelXML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet
+@dirrmtry %%SITE_PERL%%/Spreadsheet/WriteExcelXML
+@dirrmtry %%SITE_PERL%%/Spreadsheet

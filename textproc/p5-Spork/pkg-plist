@@ -1,16 +1,23 @@
 bin/spork
+%%PERL5_MAN3%%/Spork.3.gz
+%%PERL5_MAN3%%/Spork::Command.3.gz
+%%PERL5_MAN3%%/Spork::Config.3.gz
+%%PERL5_MAN3%%/Spork::Formatter.3.gz
+%%PERL5_MAN3%%/Spork::Plugin.3.gz
+%%PERL5_MAN3%%/Spork::Slides.3.gz
 %%SITE_PERL%%/Spork.pm
-%%SITE_PERL%%/Spork/Formatter.pm
-%%SITE_PERL%%/Spork/Hub.pm
-%%SITE_PERL%%/Spork/Slides.pm
-%%SITE_PERL%%/Spork/Registry.pm
 %%SITE_PERL%%/Spork/Command.pm
 %%SITE_PERL%%/Spork/Config.pm
-%%SITE_PERL%%/Spork/Plugin.pm
-%%SITE_PERL%%/Spork/Template/TT2.pm
+%%SITE_PERL%%/Spork/Formatter.pm
 %%SITE_PERL%%/Spork/Formatter/Autringy.pm
+%%SITE_PERL%%/Spork/Hub.pm
+%%SITE_PERL%%/Spork/Plugin.pm
+%%SITE_PERL%%/Spork/Registry.pm
+%%SITE_PERL%%/Spork/Slides.pm
+%%SITE_PERL%%/Spork/Template/TT2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spork/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spork
-@dirrm %%SITE_PERL%%/Spork/Formatter
-@dirrm %%SITE_PERL%%/Spork/Template
-@dirrm %%SITE_PERL%%/Spork
+man/man1/spork.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spork
+@dirrmtry %%SITE_PERL%%/Spork/Template
+@dirrmtry %%SITE_PERL%%/Spork/Formatter
+@dirrmtry %%SITE_PERL%%/Spork

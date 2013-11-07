@@ -1,7 +1,8 @@
+%%PERL5_MAN3%%/XML::Parser::EasyTree.3.gz
+%%SITE_PERL%%/XML/Parser/EasyTree.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Parser/EasyTree/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Parser/EasyTree
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Parser/EasyTree
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Parser
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-%%SITE_PERL%%/XML/Parser/EasyTree.pm
 @dirrmtry %%SITE_PERL%%/XML/Parser
 @dirrmtry %%SITE_PERL%%/XML

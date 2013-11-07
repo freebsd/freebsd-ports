@@ -1,5 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Emoticon/GoogleTalk/.packlist
+%%PERL5_MAN3%%/Text::Emoticon::GoogleTalk.3.gz
 %%SITE_PERL%%/Text/Emoticon/GoogleTalk.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Emoticon/GoogleTalk/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Emoticon/GoogleTalk
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Emoticon
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text

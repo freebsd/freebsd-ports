@@ -15,21 +15,6 @@ USE_PERL5=	configure
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
-MAN3=	HTML::SuperForm.3 \
-	HTML::SuperForm::Field.3\
-	HTML::SuperForm::Field::Checkbox.3\
-	HTML::SuperForm::Field::CheckboxGroup.3\
-	HTML::SuperForm::Field::Hidden.3\
-	HTML::SuperForm::Field::Password.3\
-	HTML::SuperForm::Field::Radio.3\
-	HTML::SuperForm::Field::RadioGroup.3\
-	HTML::SuperForm::Field::Reset.3\
-	HTML::SuperForm::Field::Select.3\
-	HTML::SuperForm::Field::Submit.3\
-	HTML::SuperForm::Field::Text.3\
-	HTML::SuperForm::Field::Textarea.3
-
-NO_STAGE=	yes
 post-extract:
 	@${RM} ${WRKSRC}/lib/HTML/SuperForm.pm.orig
 

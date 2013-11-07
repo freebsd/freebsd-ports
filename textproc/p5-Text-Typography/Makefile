@@ -13,7 +13,4 @@ COMMENT=	Perl module to markup ASCII text with correct typography for HTML
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Text::Typography.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

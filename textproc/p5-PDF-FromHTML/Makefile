@@ -22,31 +22,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		html2pdf.pl.1
-MAN3=		PDF::FromHTML.3 PDF::FromHTML::Twig.3 \
-		PDF::FromHTML::Template.3 \
-		PDF::FromHTML::Template::Container::Always.3 \
-		PDF::FromHTML::Template::Container::Conditional.3 \
-		PDF::FromHTML::Template::Container::Font.3 \
-		PDF::FromHTML::Template::Container::Footer.3 \
-		PDF::FromHTML::Template::Container::Header.3 \
-		PDF::FromHTML::Template::Container::Loop.3 \
-		PDF::FromHTML::Template::Container::Margin.3 \
-		PDF::FromHTML::Template::Container::PageDef.3 \
-		PDF::FromHTML::Template::Container::PdfTemplate.3 \
-		PDF::FromHTML::Template::Container::Row.3 \
-		PDF::FromHTML::Template::Container::Scope.3 \
-		PDF::FromHTML::Template::Container::Section.3 \
-		PDF::FromHTML::Template::Element.3 \
-		PDF::FromHTML::Template::Element::Bookmark.3 \
-		PDF::FromHTML::Template::Element::Circle.3 \
-		PDF::FromHTML::Template::Element::HorizontalRule.3 \
-		PDF::FromHTML::Template::Element::Image.3 \
-		PDF::FromHTML::Template::Element::Line.3 \
-		PDF::FromHTML::Template::Element::PageBreak.3 \
-		PDF::FromHTML::Template::Element::TextBox.3 \
-		PDF::FromHTML::Template::Element::Var.3 \
-		PDF::FromHTML::Template::Element::Weblink.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

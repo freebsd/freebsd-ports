@@ -1,4 +1,22 @@
 bin/paf
+%%PERL5_MAN3%%/Pod::Abstract.3.gz
+%%PERL5_MAN3%%/Pod::Abstract::BuildNode.3.gz
+%%PERL5_MAN3%%/Pod::Abstract::Filter.3.gz
+%%PERL5_MAN3%%/Pod::Abstract::Filter::add_podcmds.3.gz
+%%PERL5_MAN3%%/Pod::Abstract::Filter::clear_podcmds.3.gz
+%%PERL5_MAN3%%/Pod::Abstract::Filter::cut.3.gz
+%%PERL5_MAN3%%/Pod::Abstract::Filter::find.3.gz
+%%PERL5_MAN3%%/Pod::Abstract::Filter::number_sections.3.gz
+%%PERL5_MAN3%%/Pod::Abstract::Filter::overlay.3.gz
+%%PERL5_MAN3%%/Pod::Abstract::Filter::sort.3.gz
+%%PERL5_MAN3%%/Pod::Abstract::Filter::summary.3.gz
+%%PERL5_MAN3%%/Pod::Abstract::Filter::uncut.3.gz
+%%PERL5_MAN3%%/Pod::Abstract::Filter::unoverlay.3.gz
+%%PERL5_MAN3%%/Pod::Abstract::Node.3.gz
+%%PERL5_MAN3%%/Pod::Abstract::Parser.3.gz
+%%PERL5_MAN3%%/Pod::Abstract::Path.3.gz
+%%PERL5_MAN3%%/Pod::Abstract::Serial.3.gz
+%%PERL5_MAN3%%/Pod::Abstract::Tree.3.gz
 %%SITE_PERL%%/Pod/Abstract.pm
 %%SITE_PERL%%/Pod/Abstract/BuildNode.pm
 %%SITE_PERL%%/Pod/Abstract/Filter.pm
@@ -18,6 +36,7 @@ bin/paf
 %%SITE_PERL%%/Pod/Abstract/Serial.pm
 %%SITE_PERL%%/Pod/Abstract/Tree.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Abstract/.packlist
+man/man1/paf.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Abstract
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
 @dirrmtry %%SITE_PERL%%/Pod/Abstract/Filter

@@ -17,31 +17,16 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
-NO_STAGE=	yes
-
-MAN1=		pp2sdf.1 perlpoint.1
-MAN3=		PerlPoint::Anchors.3 \
-		PerlPoint::Backend.3 \
-		PerlPoint::Constants.3 \
-		PerlPoint::Generator.3 \
-		PerlPoint::Generator::Object::Page.3 \
-		PerlPoint::Generator::SDF.3 \
-		PerlPoint::Generator::SDF::Default.3 \
-		PerlPoint::Parser.3 \
-		PerlPoint::Tags.3 \
-		PerlPoint::Tags::Basic.3 \
-		PerlPoint::Tags::SDF.3 \
-		PerlPoint::Template.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	# suck all DOCSDIR
 
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc; ${FIND} . | ${CPIO} -padm ${DOCSDIR}
-	cd ${WRKSRC}; ${FIND} utilities | ${CPIO} -padm ${DOCSDIR}
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/demo; ${FIND} . | ${CPIO} -padm ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc; ${FIND} . | ${CPIO} -padm ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}; ${FIND} utilities | ${CPIO} -padm ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/demo; ${FIND} . | ${CPIO} -padm ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

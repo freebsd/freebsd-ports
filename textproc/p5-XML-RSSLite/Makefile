@@ -13,7 +13,5 @@ COMMENT=	Lightweight, relaxed RSS (and XML-ish) parser
 
 USES=		perl5
 USE_PERL5=	configure
-MAN3=	XML::RSSLite.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

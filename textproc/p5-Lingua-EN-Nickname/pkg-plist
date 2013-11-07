@@ -1,8 +1,9 @@
+%%PERL5_MAN3%%/Lingua::EN::Nickname.3.gz
 %%SITE_PERL%%/Lingua/EN/Nickname.pm
 %%SITE_PERL%%/Lingua/EN/nickhash.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Nickname/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Nickname
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Nickname
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
-@dirrm %%SITE_PERL%%/Lingua/EN
+@dirrmtry %%SITE_PERL%%/Lingua/EN
 @dirrmtry %%SITE_PERL%%/Lingua

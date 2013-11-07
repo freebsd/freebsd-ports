@@ -10,13 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A perl module providing hash access to Lingua::EN::Numbers objects
 
-RUN_DEPENDS=	p5-Lingua-EN-Numbers>=1.01:${PORTSDIR}/textproc/p5-Lingua-EN-Numbers
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-Lingua-EN-Numbers>=1.01:${PORTSDIR}/textproc/p5-Lingua-EN-Numbers
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Lingua::EN::Numbers::Easy.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

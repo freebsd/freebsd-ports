@@ -1,4 +1,13 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Diff3/.packlist
+%%PERL5_MAN3%%/Text::Diff3.3.gz
+%%PERL5_MAN3%%/Text::Diff3::Base.3.gz
+%%PERL5_MAN3%%/Text::Diff3::Diff3.3.gz
+%%PERL5_MAN3%%/Text::Diff3::DiffHeckel.3.gz
+%%PERL5_MAN3%%/Text::Diff3::Factory.3.gz
+%%PERL5_MAN3%%/Text::Diff3::List.3.gz
+%%PERL5_MAN3%%/Text::Diff3::ListMixin.3.gz
+%%PERL5_MAN3%%/Text::Diff3::Range2.3.gz
+%%PERL5_MAN3%%/Text::Diff3::Range3.3.gz
+%%PERL5_MAN3%%/Text::Diff3::Text.3.gz
 %%SITE_PERL%%/Text/Diff3.pm
 %%SITE_PERL%%/Text/Diff3/Base.pm
 %%SITE_PERL%%/Text/Diff3/Diff3.pm
@@ -9,7 +18,8 @@
 %%SITE_PERL%%/Text/Diff3/Range2.pm
 %%SITE_PERL%%/Text/Diff3/Range3.pm
 %%SITE_PERL%%/Text/Diff3/Text.pm
-@dirrmtry %%SITE_PERL%%/Text/Diff3
-@dirrmtry %%SITE_PERL%%/Text
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Diff3/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Diff3
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
+@dirrmtry %%SITE_PERL%%/Text/Diff3
+@dirrmtry %%SITE_PERL%%/Text

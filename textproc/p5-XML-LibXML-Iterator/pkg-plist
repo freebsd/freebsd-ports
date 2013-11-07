@@ -1,9 +1,11 @@
+%%PERL5_MAN3%%/XML::LibXML::Iterator.3.gz
+%%PERL5_MAN3%%/XML::LibXML::NodeList::Iterator.3.gz
 %%SITE_PERL%%/XML/LibXML/Iterator.pm
 %%SITE_PERL%%/XML/LibXML/NodeList/Iterator.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML/Iterator/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML/Iterator
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML/Iterator
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrm %%SITE_PERL%%/XML/LibXML/NodeList
+@dirrmtry %%SITE_PERL%%/XML/LibXML/NodeList
 @dirrmtry %%SITE_PERL%%/XML/LibXML
 @dirrmtry %%SITE_PERL%%/XML

@@ -1,18 +1,26 @@
-bin/dtddiff2html
-bin/dtdformat
 bin/dtddiff
-bin/dtdparse
+bin/dtddiff2html
 bin/dtdflatten
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SGML/DTDParse/.packlist
+bin/dtdformat
+bin/dtdparse
+%%PERL5_MAN3%%/SGML::DTDParse.3.gz
+%%PERL5_MAN3%%/SGML::DTDParse::DTD.3.gz
+%%PERL5_MAN3%%/SGML::DTDParse::Util.3.gz
 %%SITE_PERL%%/SGML/DTDParse.pm
-%%SITE_PERL%%/SGML/DTDParse/Tokenizer.pm
-%%SITE_PERL%%/SGML/DTDParse/DTD.pm
-%%SITE_PERL%%/SGML/DTDParse/Util.pm
-%%SITE_PERL%%/SGML/DTDParse/ContentModel.pm
 %%SITE_PERL%%/SGML/DTDParse/Catalog.pm
+%%SITE_PERL%%/SGML/DTDParse/ContentModel.pm
+%%SITE_PERL%%/SGML/DTDParse/DTD.pm
+%%SITE_PERL%%/SGML/DTDParse/Format/html.pl
 %%SITE_PERL%%/SGML/DTDParse/Format/plain.pl
 %%SITE_PERL%%/SGML/DTDParse/Format/refentry.pl
-%%SITE_PERL%%/SGML/DTDParse/Format/html.pl
+%%SITE_PERL%%/SGML/DTDParse/Tokenizer.pm
+%%SITE_PERL%%/SGML/DTDParse/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SGML/DTDParse/.packlist
+man/man1/dtddiff.1.gz
+man/man1/dtddiff2html.1.gz
+man/man1/dtdflatten.1.gz
+man/man1/dtdformat.1.gz
+man/man1/dtdparse.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SGML/DTDParse
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SGML
 @dirrmtry %%SITE_PERL%%/SGML/DTDParse/Format

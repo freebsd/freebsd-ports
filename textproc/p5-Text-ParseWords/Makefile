@@ -12,14 +12,4 @@ COMMENT=	Parse text into an array of tokens or array of arrays
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Text::ParseWords.3
-
-PLIST_FILES=	%%SITE_PERL%%/Text/ParseWords.pm \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ParseWords/.packlist
-
-PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ParseWords
-PLIST_DIRSTRY=	%%SITE_PERL%%/Text \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

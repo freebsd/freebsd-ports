@@ -1,6 +1,8 @@
 bin/autopod
+%%PERL5_MAN3%%/Pod::Autopod.3.gz
 %%SITE_PERL%%/Pod/Autopod.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Autopod/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Autopod
+man/man1/autopod.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Autopod
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
 @dirrmtry %%SITE_PERL%%/Pod

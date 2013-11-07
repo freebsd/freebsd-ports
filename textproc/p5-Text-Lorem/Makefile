@@ -13,8 +13,4 @@ COMMENT=	Generate random Latin looking text
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	lorem.1
-MAN3=	Text::Lorem.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

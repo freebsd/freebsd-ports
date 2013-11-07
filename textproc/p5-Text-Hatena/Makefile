@@ -20,7 +20,4 @@ TEST_DEPENDS=	p5-Test-Base>=0:${PORTSDIR}/devel/p5-Test-Base
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Text::Hatena.3 Text::Hatena::AutoLink.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

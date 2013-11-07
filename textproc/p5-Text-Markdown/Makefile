@@ -12,15 +12,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Markdown Perl5 module
 
 BUILD_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
-RUN_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		Markdown.pl.1
-MAN3=		Text::Markdown.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

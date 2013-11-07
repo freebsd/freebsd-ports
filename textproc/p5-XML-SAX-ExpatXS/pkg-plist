@@ -1,3 +1,6 @@
+%%PERL5_MAN3%%/XML::SAX::ExpatXS.3.gz
+%%PERL5_MAN3%%/XML::SAX::ExpatXS::Encoding.3.gz
+%%PERL5_MAN3%%/XML::SAX::ExpatXS::Preload.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Encoding.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Encodings/big5.enc
@@ -21,10 +24,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/ExpatXS/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/ExpatXS/ExpatXS.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/ExpatXS/ExpatXS.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Encodings
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/ExpatXS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/ExpatXS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS/Encodings
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX/ExpatXS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML/SAX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML

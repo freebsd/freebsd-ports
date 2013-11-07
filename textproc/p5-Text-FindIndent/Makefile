@@ -14,7 +14,4 @@ COMMENT=	Perl5 module to heuristically determine the indent style of a file
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Text::FindIndent.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

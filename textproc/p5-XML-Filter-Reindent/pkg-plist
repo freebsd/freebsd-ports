@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/Reindent/.packlist
+%%PERL5_MAN3%%/XML::Filter::Reindent.3.gz
 %%SITE_PERL%%/XML/Filter/Reindent.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/Reindent
-@dirrmtry %%SITE_PERL%%/XML/Filter
-@dirrmtry %%SITE_PERL%%/XML
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/Reindent/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/Reindent
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/Filter
+@dirrmtry %%SITE_PERL%%/XML

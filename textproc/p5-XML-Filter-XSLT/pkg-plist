@@ -1,9 +1,11 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/XSLT/.packlist
+%%PERL5_MAN3%%/XML::Filter::XSLT.3.gz
+%%PERL5_MAN3%%/XML::Filter::XSLT::LibXSLT.3.gz
 %%SITE_PERL%%/XML/Filter/XSLT.pm
 %%SITE_PERL%%/XML/Filter/XSLT/LibXSLT.pm
-@dirrm %%SITE_PERL%%/XML/Filter/XSLT
-@dirrmtry %%SITE_PERL%%/XML/Filter
-@dirrmtry %%SITE_PERL%%/XML
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/XSLT
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/XSLT/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/XSLT
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/Filter/XSLT
+@dirrmtry %%SITE_PERL%%/XML/Filter
+@dirrmtry %%SITE_PERL%%/XML

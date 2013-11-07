@@ -1,21 +1,28 @@
+%%PERL5_MAN3%%/XML::Stream.3.gz
+%%PERL5_MAN3%%/XML::Stream::IO::Select::Win32.3.gz
+%%PERL5_MAN3%%/XML::Stream::Namespace.3.gz
+%%PERL5_MAN3%%/XML::Stream::Node.3.gz
+%%PERL5_MAN3%%/XML::Stream::Parser.3.gz
+%%PERL5_MAN3%%/XML::Stream::Parser::DTD.3.gz
+%%PERL5_MAN3%%/XML::Stream::Tree.3.gz
 %%SITE_PERL%%/XML/Stream.pm
+%%SITE_PERL%%/XML/Stream/IO/Select/Win32.pm
 %%SITE_PERL%%/XML/Stream/Namespace.pm
 %%SITE_PERL%%/XML/Stream/Node.pm
 %%SITE_PERL%%/XML/Stream/Parser.pm
 %%SITE_PERL%%/XML/Stream/Parser/DTD.pm
 %%SITE_PERL%%/XML/Stream/Tools.pm
 %%SITE_PERL%%/XML/Stream/Tree.pm
-%%SITE_PERL%%/XML/Stream/IO/Select/Win32.pm
 %%SITE_PERL%%/XML/Stream/XPath.pm
-%%SITE_PERL%%/XML/Stream/XPath/Value.pm
 %%SITE_PERL%%/XML/Stream/XPath/Op.pm
 %%SITE_PERL%%/XML/Stream/XPath/Query.pm
+%%SITE_PERL%%/XML/Stream/XPath/Value.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Stream/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Stream
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Stream
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrm %%SITE_PERL%%/XML/Stream/Parser
-@dirrm %%SITE_PERL%%/XML/Stream/XPath
-@dirrm %%SITE_PERL%%/XML/Stream/IO/Select
-@dirrm %%SITE_PERL%%/XML/Stream/IO
-@dirrm %%SITE_PERL%%/XML/Stream
+@dirrmtry %%SITE_PERL%%/XML/Stream/XPath
+@dirrmtry %%SITE_PERL%%/XML/Stream/Parser
+@dirrmtry %%SITE_PERL%%/XML/Stream/IO/Select
+@dirrmtry %%SITE_PERL%%/XML/Stream/IO
+@dirrmtry %%SITE_PERL%%/XML/Stream
 @dirrmtry %%SITE_PERL%%/XML
