@@ -1,0 +1,4 @@
+Alien::SDL can be used to detect and get configuration settings
+from an installed SDL and related libraries.
+
+WWW: http://search.cpan.org/dist/Alien-SDL/
