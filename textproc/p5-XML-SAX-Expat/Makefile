@@ -16,9 +16,9 @@ RUN_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
-USE_PERL5=	configure patch
+USE_PERL5=	configure
 
 post-patch:
-		@${PERL} -pi -e "s/(?<=XML::SAX::Base          => ')1\.00(?=')/0.25/;" ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e 's|-I\\$$(INSTALLSITELIB)|-I\\$$(DESTDIR)\\$$(INSTALLSITELIB)|' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
