@@ -26,17 +26,12 @@ GH_COMMIT=	${GH_TAGNAME}
 PLIST_FILES=	bin/screenFetch bin/screenfetch
 PORTDOCS=	CHANGELOG README.mkdn TODO
 
-.include <bsd.port.options.mk>
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME:L}-dev ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${LN} -fs ${PORTNAME} ${STAGEDIR}${PREFIX}/bin/screenfetch
-
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
