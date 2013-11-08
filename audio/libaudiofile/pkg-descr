@@ -6,8 +6,28 @@ implemented.  I feel, though, that this implementation of the Audio
 File Library offers enough functionality to be useful for general
 tasks.
 
-This library allows the processing of audio data to and from audio
-files of many common formats (currently AIFF, AIFC, WAVE, and
-NeXT/Sun).
+This library allows the processing of audio data to and from audio files.
+
+Support file formats:
+
+    AIFF/AIFF-C (.aiff, .aifc)
+    WAVE (.wav)
+    NeXT .snd/Sun .au (.snd, .au)
+    Berkeley/IRCAM/CARL Sound File (.sf)
+    Audio Visual Research (.avr)
+    Amiga IFF/8SVX (.iff)
+    Sample Vision (.smp) 
+    Creative Voice File (.voc)
+    NIST SPHERE (.wav)
+    Core Audio Format (.caf) 
+    FLAC (.flac) 
+
+Supported compression formats:
+
+    G.711 mu-law and A-law
+    IMA ADPCM
+    Microsoft ADPCM
+    FLAC
+    ALAC (Apple Lossless Audio Codec) 
 
 WWW: http://www.68k.org/~michael/audiofile/

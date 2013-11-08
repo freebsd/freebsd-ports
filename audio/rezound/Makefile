@@ -3,7 +3,7 @@
 
 PORTNAME=	rezound
 DISTVERSION=	0.12.3beta
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/ReZound/${DISTVERSION}
 
@@ -44,7 +44,7 @@ LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
 .endif
 
 .if ${PORT_OPTIONS:MAUDIOFILE}
-LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile
+LIB_DEPENDS+=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
 .endif
 
 .if ${PORT_OPTIONS:MPORTAUDIO}

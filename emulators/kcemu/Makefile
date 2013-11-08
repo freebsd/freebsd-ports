@@ -3,7 +3,7 @@
 
 PORTNAME=	kcemu
 PORTVERSION=	0.5.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/KCemu/KCemu-${PORTVERSION}
 DISTNAME=	KCemu-${PORTVERSION}
@@ -12,7 +12,7 @@ MAINTAINER=	hardy.schumacher@gmx.de
 COMMENT=	KC85 emulator
 
 BUILD_DEPENDS=	pngtopnm:${PORTSDIR}/graphics/netpbm
-LIB_DEPENDS=	audiofile:${PORTSDIR}/audio/libaudiofile \
+LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile \
 		avformat.1:${PORTSDIR}/multimedia/ffmpeg \
 		dirac_encoder.1:${PORTSDIR}/multimedia/dirac \
 		schroedinger-1.0:${PORTSDIR}/multimedia/schroedinger \

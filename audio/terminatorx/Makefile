@@ -4,7 +4,7 @@
 
 PORTNAME=	terminatorx
 PORTVERSION=	3.84
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://terminatorx.org/dist/
 DISTNAME=	terminatorX-${PORTVERSION}
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa \
 		rarian-sk-config:${PORTSDIR}/textproc/rarian
-LIB_DEPENDS=	audiofile:${PORTSDIR}/audio/libaudiofile \
+LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile \
 		lrdf:${PORTSDIR}/textproc/liblrdf
 
 OPTIONS_DEFINE=	ALSA JACK MPG123 SOX VORBIS MAD

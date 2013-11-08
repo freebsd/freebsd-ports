@@ -3,7 +3,7 @@
 
 PORTNAME=	ayttm
 PORTVERSION=	0.5.0.111
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-im
 MASTER_SITES=	SF/ayttm/ayttm/${PORTVERSION:R}-${PORTVERSION:E}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 MAINTAINER=	unixmania@gmail.com
 COMMENT=	A "chat" program that combines AIM, ICQ, and Yahoo! Chat into one
 
-LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
+LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		libgpgme.so:${PORTSDIR}/security/gpgme \
 		pspell.16:${PORTSDIR}/textproc/aspell

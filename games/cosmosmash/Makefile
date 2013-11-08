@@ -3,6 +3,7 @@
 
 PORTNAME=	cosmosmash
 DISTVERSION=	1.4.7
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/ \
 		LOCAL/martymac
@@ -15,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	flatzebra:${PORTSDIR}/devel/flatzebra \
 		aa:${PORTSDIR}/graphics/aalib \
 		mikmod:${PORTSDIR}/audio/libmikmod \
-		audiofile:${PORTSDIR}/audio/libaudiofile
+		libaudiofile.so:${PORTSDIR}/audio/libaudiofile
 
 USE_SDL=	sdl image mixer
 USE_XORG=	x11 xau xdmcp
