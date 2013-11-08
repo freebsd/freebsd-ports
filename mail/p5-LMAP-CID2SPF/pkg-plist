@@ -1,0 +1,3 @@
+bin/cid2spf
+%%SITE_PERL%%/LMAP/CID2SPF.pm
+@dirrmtry %%SITE_PERL%%/LMAP
