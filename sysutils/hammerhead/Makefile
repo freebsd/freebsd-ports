@@ -9,6 +9,9 @@ MASTER_SITES=	SF
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A webserver stressing tool
 
+DEPRECATED=	Development no more active
+EXPIRATION_DATE=	2013-12-08
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
