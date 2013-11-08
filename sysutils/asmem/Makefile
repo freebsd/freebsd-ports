@@ -16,12 +16,10 @@ CONFIGURE_ARGS=	--with-xpm \
 		--with-xpm-includes=${LOCALBASE}/include \
 		--with-xpm-library=${LOCALBASE}/lib
 
-MAN1=		asmem.1
-PLIST_FILES=	bin/asmem
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} -g kmem -m 2755 ${WRKSRC}/asmem ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/asmem.man ${MANPREFIX}/man/man1/asmem.1
+	${INSTALL_PROGRAM} -g kmem -m 2755 ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man ${STAGEDIR}${PREFIX}/man/man1/${PORTNAME}.1
 
 .include <bsd.port.mk>

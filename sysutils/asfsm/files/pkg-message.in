@@ -1,0 +1,4 @@
+
+If you would like to be able to mount and umount file systems
+using asfsm, as root, type \`chmod 4555 %%PREFIX%%/bin/asfsm\`
+NOTE: This opens a SECURITY HOLE as ALL users will have this ability.

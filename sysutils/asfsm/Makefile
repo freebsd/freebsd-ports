@@ -14,19 +14,11 @@ COMMENT=	File-system monitor for the AfterStep window manager
 USE_XORG=	xpm x11 sm ice xext xaw xt
 GNU_CONFIGURE=	yes
 
-MAN1=		asfsm.1
-PLIST_FILES=	bin/asfsm
+SUB_FILES=	pkg-message
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/asfsm.man ${PREFIX}/man/man1/asfsm.1
-	${INSTALL_PROGRAM} ${WRKSRC}/asfsm ${PREFIX}/bin
-
-post-install:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "If you would like to be able to mount and umount file systems"
-	@${ECHO_MSG} "using asfsm, as root, type \`chmod 4555 ${PREFIX}/bin/asfsm\`"
-	@${ECHO_MSG} "NOTE: This opens a SECURITY HOLE as ALL users will have this ability."
-	@${ECHO_MSG} ""
+	${INSTALL_MAN} ${WRKSRC}/asfsm.man ${STAGEDIR}${PREFIX}/man/man1/asfsm.1
+	${INSTALL_PROGRAM} ${WRKSRC}/asfsm ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
