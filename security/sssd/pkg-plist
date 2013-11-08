@@ -12,6 +12,53 @@ sbin/sss_cache
 sbin/sss_seed
 bin/sss_ssh_authorizedkeys
 bin/sss_ssh_knownhostsproxy
+man/es/man1/sss_ssh_authorizedkeys.1.gz
+man/es/man1/sss_ssh_knownhostsproxy.1.gz
+man/es/man5/sssd-ad.5.gz
+man/es/man5/sssd-ipa.5.gz
+man/es/man5/sssd-ldap.5.gz
+man/es/man5/sssd-simple.5.gz
+man/es/man5/sssd-sudo.5.gz
+man/es/man5/sssd.conf.5.gz
+man/es/man8/pam_sss.8.gz
+man/es/man8/sss_cache.8.gz
+man/es/man8/sss_debuglevel.8.gz
+man/es/man8/sss_groupadd.8.gz
+man/es/man8/sss_groupdel.8.gz
+man/es/man8/sss_groupmod.8.gz
+man/es/man8/sss_groupshow.8.gz
+man/es/man8/sss_obfuscate.8.gz
+man/es/man8/sss_seed.8.gz
+man/es/man8/sss_useradd.8.gz
+man/es/man8/sss_userdel.8.gz
+man/es/man8/sss_usermod.8.gz
+man/es/man8/sssd.8.gz
+man/es/man8/sssd_krb5_locator_plugin.8.gz
+man/fr/man1/sss_ssh_authorizedkeys.1.gz
+man/fr/man1/sss_ssh_knownhostsproxy.1.gz
+man/fr/man5/sssd-ad.5.gz
+man/fr/man5/sssd-ipa.5.gz
+man/fr/man5/sssd-krb5.5.gz
+man/fr/man5/sssd-ldap.5.gz
+man/fr/man5/sssd-simple.5.gz
+man/fr/man5/sssd-sudo.5.gz
+man/fr/man5/sssd.conf.5.gz
+man/fr/man8/pam_sss.8.gz
+man/fr/man8/sss_cache.8.gz
+man/fr/man8/sss_debuglevel.8.gz
+man/fr/man8/sss_groupadd.8.gz
+man/fr/man8/sss_groupdel.8.gz
+man/fr/man8/sss_groupmod.8.gz
+man/fr/man8/sss_groupshow.8.gz
+man/fr/man8/sss_obfuscate.8.gz
+man/fr/man8/sss_seed.8.gz
+man/fr/man8/sss_useradd.8.gz
+man/fr/man8/sss_userdel.8.gz
+man/fr/man8/sss_usermod.8.gz
+man/fr/man8/sssd.8.gz
+man/fr/man8/sssd_krb5_locator_plugin.8.gz
+man/ja/man5/sssd-ad.5.gz
+man/ja/man5/sssd-krb5.5.gz
 man/ja/man1/sss_ssh_authorizedkeys.1.gz
 man/ja/man1/sss_ssh_knownhostsproxy.1.gz
 man/ja/man5/sssd-ipa.5.gz
@@ -133,7 +180,7 @@ lib/shared-modules/ldb/memberof.la
 %%PYTHON_SITELIBDIR%%/SSSDConfig/ipachangeconf.py
 %%PYTHON_SITELIBDIR%%/SSSDConfig/sssd_upgrade_config.pyc
 %%PYTHON_SITELIBDIR%%/SSSDConfig/sssd_upgrade_config.py
-%%PYTHON_SITELIBDIR%%/SSSDConfig-1.9.5-py%%PYTHON_VER%%.egg-info
+%%PYTHON_SITELIBDIR%%/SSSDConfig-1.9.6-py%%PYTHON_VER%%.egg-info
 include/ipa_hbac.h
 include/sss_sudo.h
 include/sss_idmap.h
@@ -154,6 +201,14 @@ include/sss_idmap.h
 @dirrmtry man/nl/man5
 @dirrmtry man/nl/man1
 @dirrmtry man/nl
+@dirrmtry man/fr/man8
+@dirrmtry man/fr/man5
+@dirrmtry man/fr/man1
+@dirrmtry man/fr
+@dirrmtry man/es/man8
+@dirrmtry man/es/man5
+@dirrmtry man/es/man1
+@dirrmtry man/es
 @dirrmtry etc/sssd
 @dirrmtry share/sssd/sssd/sssd.api.d
 @dirrmtry share/sssd/sssd

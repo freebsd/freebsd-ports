@@ -1,44 +1,45 @@
-From 36ea9e6d18578237b9e7ffef382788736eab49f5 Mon Sep 17 00:00:00 2001
+From 5a0c2079efae0f9734d85932ed72645808b32091 Mon Sep 17 00:00:00 2001
 From: Lukas Slebodnik <lukas.slebodnik@intrak.sk>
-Date: Sat, 4 May 2013 16:08:11 +0200
-Subject: [PATCH 19/34] patch-src__sss_client__nss_group.c
+Date: Wed, 6 Nov 2013 22:01:20 +0100
+Subject: [PATCH 15/25] patch-src__sss_client__nss_group.c
 
 ---
- src/sss_client/nss_group.c | 71 ++++++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 71 insertions(+)
+ src/sss_client/nss_group.c | 70 ++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 70 insertions(+)
 
 diff --git src/sss_client/nss_group.c src/sss_client/nss_group.c
-index e6ea54b..88cd1ab 100644
+index e6ea54b..b27b671 100644
 --- src/sss_client/nss_group.c
 +++ src/sss_client/nss_group.c
-@@ -343,6 +343,77 @@ out:
+@@ -343,6 +343,76 @@ out:
  }
  
  
 +#define MIN(a, b)((a) < (b) ? (a) : (b))
 +
-+gr_addgid(gid_t gid, gid_t *groups, int maxgrp, int *grpcnt)
++int gr_addgid(gid_t gid, gid_t *groups, int maxgrp, int *grpcnt)
 +{
-+  int     ret, dupc;
++    int ret, dupc;
 +
-+  for (dupc = 0; dupc < MIN(maxgrp, *grpcnt); dupc++) {
-+    if (groups[dupc] == gid)
-+      return 1;
-+  }
++    for (dupc = 0; dupc < MIN(maxgrp, *grpcnt); dupc++) {
++        if (groups[dupc] == gid)
++            return 1;
++    }
 +
-+  ret = 1;
-+  if (*grpcnt < maxgrp)
-+    groups[*grpcnt] = gid;
-+  else
-+    ret = 0;
++    ret = 1;
++    if (*grpcnt < maxgrp)
++        groups[*grpcnt] = gid;
++    else
++        ret = 0;
 +
-+  (*grpcnt)++;
++    (*grpcnt)++;
 +
-+  return ret;
++    return ret;
 +}
 +
-+enum nss_status _nss_sss_getgroupmembership(const char *uname, gid_t agroup, gid_t *groups,
-+					    int maxgrp, int *grpcnt)
++enum nss_status _nss_sss_getgroupmembership(const char *uname, gid_t agroup,
++                                            gid_t *groups, int maxgrp,
++                                            int *grpcnt)
 +{
 +    struct sss_cli_req_data rd;
 +    uint8_t *repbuf;
@@ -57,7 +58,7 @@ index e6ea54b..88cd1ab 100644
 +    nret = sss_nss_make_request(SSS_NSS_INITGR, &rd,
 +                                &repbuf, &replen, &errnop);
 +    if (nret != NSS_STATUS_SUCCESS) {
-+        goto out;
++        goto done;
 +    }
 +
 +    /* no results if not found */
@@ -65,7 +66,7 @@ index e6ea54b..88cd1ab 100644
 +    if (num_ret == 0) {
 +        free(repbuf);
 +        nret = NSS_STATUS_NOTFOUND;
-+        goto out;
++        goto done;
 +    }
 +    max_ret = num_ret;
 +
@@ -79,11 +80,9 @@ index e6ea54b..88cd1ab 100644
 +    free(repbuf);
 +    nret = NSS_STATUS_SUCCESS;
 +
-+out:
++done:
 +    sss_nss_unlock();
 +    return nret;
-+
-+
 +}
 +
  enum nss_status _nss_sss_getgrnam_r(const char *name, struct group *result,

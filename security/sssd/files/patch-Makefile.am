@@ -1,34 +1,25 @@
-From 2f2d2045b64edf63bbfb845095dbfaf754dc5ad3 Mon Sep 17 00:00:00 2001
+From e40f55767383f300f71103ca404b7839b8499104 Mon Sep 17 00:00:00 2001
 From: Lukas Slebodnik <lukas.slebodnik@intrak.sk>
-Date: Sat, 4 May 2013 16:08:11 +0200
-Subject: [PATCH 01/34] patch-Makefile.am
+Date: Wed, 6 Nov 2013 22:01:20 +0100
+Subject: [PATCH 01/25] patch-Makefile.am
 
 ---
- Makefile.am | 15 ++++++++-------
- 1 file changed, 8 insertions(+), 7 deletions(-)
+ Makefile.am | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
 
 diff --git Makefile.am Makefile.am
-index f0ee88b..10e1e73 100644
+index 04df7cb..e2558f7 100644
 --- Makefile.am
 +++ Makefile.am
-@@ -649,7 +649,6 @@ sssd_be_SOURCES = \
-     src/providers/data_provider_callbacks.c \
-     $(SSSD_FAILOVER_OBJ)
- sssd_be_LDADD = \
--    -ldl \
-     $(SSSD_LIBS) \
-     $(CARES_LIBS) \
-     libsss_util.la
-@@ -772,7 +771,7 @@ sss_sudo_cli_SOURCES = \
-     src/sss_client/sudo/sss_sudo_response.c \
-     src/sss_client/sudo_testcli/sudo_testcli.c
- sss_sudo_cli_CFLAGS = $(AM_CFLAGS)
--sss_sudo_cli_LDFLAGS = $(CLIENT_LIBS)
-+sss_sudo_cli_LDFLAGS = $(CLIENT_LIBS) -lintl
- endif
- 
- if BUILD_SSH
-@@ -1159,7 +1158,7 @@ noinst_PROGRAMS += autofs_test_client
+@@ -369,6 +369,7 @@ dist_noinst_HEADERS = \
+     src/util/sss_selinux.h \
+     src/util/sss_utf8.h \
+     src/util/sss_ssh.h \
++    src/util/sss_bsd_errno.h \
+     src/util/refcount.h \
+     src/util/find_uid.h \
+     src/util/user_info_msg.h \
+@@ -1170,7 +1171,7 @@ noinst_PROGRAMS += autofs_test_client
  endif
  
  pam_test_client_SOURCES = src/sss_client/pam_test_client.c
@@ -37,7 +28,7 @@ index f0ee88b..10e1e73 100644
  
  if BUILD_AUTOFS
  autofs_test_client_SOURCES = src/sss_client/autofs/autofs_test_client.c \
-@@ -1173,9 +1172,10 @@ endif
+@@ -1184,9 +1185,10 @@ endif
  # Client Libraries #
  ####################
  
@@ -50,7 +41,7 @@ index f0ee88b..10e1e73 100644
      src/sss_client/nss_passwd.c \
      src/sss_client/nss_group.c \
      src/sss_client/nss_netgroup.c \
-@@ -1187,7 +1187,7 @@ libnss_sss_la_SOURCES = \
+@@ -1198,7 +1200,7 @@ libnss_sss_la_SOURCES = \
      src/sss_client/nss_mc_passwd.c \
      src/sss_client/nss_mc_group.c \
      src/sss_client/nss_mc.h
@@ -59,23 +50,6 @@ index f0ee88b..10e1e73 100644
      $(CLIENT_LIBS) \
      -module \
      -version-info 2:0:0 \
-@@ -1203,6 +1203,7 @@ pam_sss_la_SOURCES = \
- 
- pam_sss_la_LDFLAGS = \
-     $(CLIENT_LIBS) \
-+    -lintl \
-     -lpam \
-     -module \
-     -avoid-version \
-@@ -1727,7 +1728,7 @@ else
- 	mkdir -p $(DESTDIR)$(initdir)
- endif
- 
--install-data-hook:
-+nopenopeinstall-data-hook:
- 	rm $(DESTDIR)/$(nsslibdir)/libnss_sss.so.2 \
-        $(DESTDIR)/$(nsslibdir)/libnss_sss.so
- 	mv $(DESTDIR)/$(nsslibdir)/libnss_sss.so.2.0.0 $(DESTDIR)/$(nsslibdir)/libnss_sss.so.2
 -- 
 1.8.0
 

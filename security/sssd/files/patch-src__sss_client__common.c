@@ -1,14 +1,14 @@
-From f40ad7e39f68345f3bfec169556463c1a13706e0 Mon Sep 17 00:00:00 2001
+From 6874fb930a30eac6fe12104923ab97083f58bcf9 Mon Sep 17 00:00:00 2001
 From: Lukas Slebodnik <lukas.slebodnik@intrak.sk>
-Date: Sat, 4 May 2013 16:08:11 +0200
-Subject: [PATCH 18/34] patch-src__sss_client__common.c
+Date: Wed, 6 Nov 2013 22:01:20 +0100
+Subject: [PATCH 14/25] patch-src__sss_client__common.c
 
 ---
- src/sss_client/common.c | 20 +++++++++++---------
- 1 file changed, 11 insertions(+), 9 deletions(-)
+ src/sss_client/common.c | 15 +++++++--------
+ 1 file changed, 7 insertions(+), 8 deletions(-)
 
 diff --git src/sss_client/common.c src/sss_client/common.c
-index 6639ae1..d0b5c6d 100644
+index ec5c708..5d17eed 100644
 --- src/sss_client/common.c
 +++ src/sss_client/common.c
 @@ -25,6 +25,7 @@
@@ -19,18 +19,15 @@ index 6639ae1..d0b5c6d 100644
  #include <security/pam_modules.h>
  #include <errno.h>
  #include <sys/types.h>
-@@ -61,6 +62,10 @@
- #define SSS_DEFAULT_WRITE_FLAGS 0
- #endif
+@@ -43,6 +44,7 @@
+ #include <libintl.h>
+ #define _(STRING) dgettext (PACKAGE, STRING)
+ #include "sss_cli.h"
++#include "util/sss_bsd_errno.h"
  
-+#ifndef EOWNERDEAD
-+#define EOWNERDEAD               130
-+#endif
-+
- /* common functions */
- 
- int sss_cli_sd = -1; /* the sss client socket descriptor */
-@@ -124,7 +129,6 @@ static enum sss_status sss_cli_send_req(enum sss_cli_command cmd,
+ #if HAVE_PTHREAD
+ #include <pthread.h>
+@@ -124,7 +126,6 @@ static enum sss_status sss_cli_send_req(enum sss_cli_command cmd,
              *errnop = error;
              break;
          case 0:
@@ -38,7 +35,7 @@ index 6639ae1..d0b5c6d 100644
              break;
          case 1:
              if (pfd.revents & (POLLERR | POLLHUP | POLLNVAL)) {
-@@ -232,7 +236,6 @@ static enum sss_status sss_cli_recv_rep(enum sss_cli_command cmd,
+@@ -232,7 +233,6 @@ static enum sss_status sss_cli_recv_rep(enum sss_cli_command cmd,
              *errnop = error;
              break;
          case 0:
@@ -46,7 +43,7 @@ index 6639ae1..d0b5c6d 100644
              break;
          case 1:
              if (pfd.revents & (POLLHUP)) {
-@@ -669,7 +672,6 @@ static enum sss_status sss_cli_check_socket(int *errnop, const char *socket_name
+@@ -669,7 +669,6 @@ static enum sss_status sss_cli_check_socket(int *errnop, const char *socket_name
              *errnop = error;
              break;
          case 0:
@@ -54,7 +51,7 @@ index 6639ae1..d0b5c6d 100644
              break;
          case 1:
              if (pfd.revents & (POLLERR | POLLHUP | POLLNVAL)) {
-@@ -719,23 +721,23 @@ enum nss_status sss_nss_make_request(enum sss_cli_command cmd,
+@@ -719,23 +718,23 @@ enum nss_status sss_nss_make_request(enum sss_cli_command cmd,
      /* avoid looping in the nss daemon */
      envval = getenv("_SSS_LOOPS");
      if (envval && strcmp(envval, "NO") == 0) {
@@ -82,15 +79,6 @@ index 6639ae1..d0b5c6d 100644
 +        return NS_UNAVAIL;
      }
  }
- 
-@@ -984,7 +986,7 @@ errno_t sss_strnlen(const char *str, size_t maxlen, size_t *len)
-     *len = 0;
-     while (*len < maxlen) {
-         if (str[*len] == '\0') break;
--        len++;
-+        ++*len;
-     }
- #endif
  
 -- 
 1.8.0

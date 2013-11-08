@@ -1,14 +1,14 @@
-From cebca2806d06fce5a5c610a39044a5a4039f71ef Mon Sep 17 00:00:00 2001
+From 9a3d9a05b2c8790c771c166b42f8b80e76b4b336 Mon Sep 17 00:00:00 2001
 From: Lukas Slebodnik <lukas.slebodnik@intrak.sk>
-Date: Sat, 4 May 2013 16:08:11 +0200
-Subject: [PATCH 12/34] patch-src__providers__ldap__sdap_access.c
+Date: Wed, 6 Nov 2013 22:01:20 +0100
+Subject: [PATCH 11/25] patch-src__providers__ldap__sdap_access.c
 
 ---
- src/providers/ldap/sdap_access.c | 43 +++++++++++++++++++---------------------
- 1 file changed, 20 insertions(+), 23 deletions(-)
+ src/providers/ldap/sdap_access.c | 46 +++++++++++++++++++---------------------
+ 1 file changed, 22 insertions(+), 24 deletions(-)
 
 diff --git src/providers/ldap/sdap_access.c src/providers/ldap/sdap_access.c
-index b198e04..37eae45 100644
+index b198e04..1eaedf7 100644
 --- src/providers/ldap/sdap_access.c
 +++ src/providers/ldap/sdap_access.c
 @@ -22,9 +22,7 @@
@@ -155,11 +155,25 @@ index b198e04..37eae45 100644
      unsigned int i;
      char *host;
 -    char hostname[HOST_NAME_MAX+1];
-+    char hostname[_POSIX_HOST_NAME_MAX+1];
++    char hostname[_POSIX_HOST_NAME_MAX + 1];
  
      req = tevent_req_create(mem_ctx, &state, struct sdap_access_host_ctx);
      if (!req) {
-@@ -1365,7 +1362,7 @@ static void sdap_access_host_done(struct tevent_req *subreq)
+@@ -1285,11 +1282,12 @@ static struct tevent_req *sdap_access_host_send(
+         goto done;
+     }
+ 
+-    if (gethostname(hostname, sizeof(hostname)) == -1) {
++    if (gethostname(hostname, _POSIX_HOST_NAME_MAX) == -1) {
+         DEBUG(1, ("Unable to get system hostname. Access denied\n"));
+         ret = EOK;
+         goto done;
+     }
++    hostname[_POSIX_HOST_NAME_MAX] = '\0';
+ 
+     /* FIXME: PADL's pam_ldap also calls gethostbyname() on the hostname
+      *        in some attempt to get aliases and/or FQDN for the machine.
+@@ -1365,7 +1363,7 @@ static void sdap_access_host_done(struct tevent_req *subreq)
      talloc_zfree(subreq);
      if (ret != EOK) {
          DEBUG(1, ("Error retrieving access check result.\n"));
@@ -168,7 +182,7 @@ index b198e04..37eae45 100644
          tevent_req_error(req, ret);
          return;
      }
-@@ -1391,7 +1388,7 @@ sdap_access_recv(struct tevent_req *req, int *pam_status)
+@@ -1391,7 +1389,7 @@ sdap_access_recv(struct tevent_req *req, int *pam_status)
  static void sdap_access_done(struct tevent_req *req)
  {
      errno_t ret;
@@ -177,7 +191,7 @@ index b198e04..37eae45 100644
      struct be_req *breq =
              tevent_req_callback_data(req, struct be_req);
  
-@@ -1399,7 +1396,7 @@ static void sdap_access_done(struct tevent_req *req)
+@@ -1399,7 +1397,7 @@ static void sdap_access_done(struct tevent_req *req)
      talloc_zfree(req);
      if (ret != EOK) {
          DEBUG(1, ("Error retrieving access check result.\n"));
