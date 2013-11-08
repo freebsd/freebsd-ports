@@ -51,6 +51,51 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5709d244-4873-11e3-8a46-000d601460a4">
+    <topic>OpenSSH -- Memory corruption in sshd</topic>
+    <affects>
+      <package>
+	<name>openssh-portable</name>
+	<range><lt>6.4p1,1</lt></range>
+	<range><ge>6.2p2,1</ge></range>
+      </package>
+      <package>
+	<name>openssh-portable-base</name>
+	<range><lt>6.4p1,1</lt></range>
+	<range><ge>6.2p2,1</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSSH development team reports:</p>
+	<blockquote cite="http://www.openssh.com/txt/gcmrekey.adv">
+	  <p>A memory corruption vulnerability exists in the post-
+	    authentication sshd process when an AES-GCM cipher
+	    (aes128-gcm@openssh.com or aes256-gcm@openssh.com) is
+	    selected during kex exchange.
+
+	    If exploited, this vulnerability might permit code execution
+	    with the privileges of the authenticated user and may
+	    therefore allow bypassing restricted shell/command
+	    configurations.</p>
+	  <p>Either upgrade to 6.4 or disable AES-GCM in the server
+	    configuration. The following sshd_config option will disable
+	    AES-GCM while leaving other ciphers active:
+
+	    Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openssh.com/txt/gcmrekey.adv</url>
+    </references>
+    <dates>
+      <discovery>2013-11-07</discovery>
+      <entry>2013-11-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f969bad7-46fc-11e3-b6ee-00269ee29e57">
     <topic>Quassel IRC -- SQL injection vulnerability</topic>
     <affects>
