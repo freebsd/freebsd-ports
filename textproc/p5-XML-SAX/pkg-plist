@@ -1,3 +1,9 @@
+%%PERL5_MAN3%%/XML::SAX.3.gz
+%%PERL5_MAN3%%/XML::SAX::DocumentLocator.3.gz
+%%PERL5_MAN3%%/XML::SAX::Intro.3.gz
+%%PERL5_MAN3%%/XML::SAX::ParserFactory.3.gz
+%%PERL5_MAN3%%/XML::SAX::PurePerl.3.gz
+%%PERL5_MAN3%%/XML::SAX::PurePerl::Reader.3.gz
 %%SITE_PERL%%/XML/SAX.pm
 %%SITE_PERL%%/XML/SAX/DocumentLocator.pm
 %%SITE_PERL%%/XML/SAX/Intro.pod
@@ -11,18 +17,18 @@
 %%SITE_PERL%%/XML/SAX/PurePerl/Exception.pm
 %%SITE_PERL%%/XML/SAX/PurePerl/NoUnicodeExt.pm
 %%SITE_PERL%%/XML/SAX/PurePerl/Productions.pm
-%%SITE_PERL%%/XML/SAX/PurePerl/UnicodeExt.pm
 %%SITE_PERL%%/XML/SAX/PurePerl/Reader.pm
 %%SITE_PERL%%/XML/SAX/PurePerl/Reader/NoUnicodeExt.pm
 %%SITE_PERL%%/XML/SAX/PurePerl/Reader/Stream.pm
 %%SITE_PERL%%/XML/SAX/PurePerl/Reader/String.pm
 %%SITE_PERL%%/XML/SAX/PurePerl/Reader/URI.pm
 %%SITE_PERL%%/XML/SAX/PurePerl/Reader/UnicodeExt.pm
+%%SITE_PERL%%/XML/SAX/PurePerl/UnicodeExt.pm
 %%SITE_PERL%%/XML/SAX/PurePerl/XMLDecl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrm %%SITE_PERL%%/XML/SAX/PurePerl/Reader
+@dirrmtry %%SITE_PERL%%/XML/SAX/PurePerl/Reader
 @dirrmtry %%SITE_PERL%%/XML/SAX/PurePerl
 @dirrmtry %%SITE_PERL%%/XML/SAX
 @dirrmtry %%SITE_PERL%%/XML
