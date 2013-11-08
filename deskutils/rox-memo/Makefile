@@ -16,7 +16,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer \
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 
-NO_STAGE=	yes
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
 	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
@@ -24,11 +23,10 @@ do-build:
 pre-install:
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
 				${WRKSRC}/Memo/findrox.py
-	@${FIND} ${WRKSRC} -name *.bak | ${XARGS} ${RM}
+	@${FIND} ${WRKSRC} -name *.bak -delete
 
 do-install:
-	@${MKDIR} ${PREFIX}/apps
-	@${CP} -r ${WRKSRC}/Memo ${PREFIX}/apps/
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/apps/Memo
+	@${MKDIR} ${STAGEDIR}${PREFIX}/apps
+	${CP} -r ${WRKSRC}/Memo ${STAGEDIR}${PREFIX}/apps/
 
 .include <bsd.port.mk>
