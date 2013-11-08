@@ -9,6 +9,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A command line, password recovery tool for PDF-files
 
+DEPRECATED=	Not active since several years
+EXPIRATION_DATE=	2013-12-08
+
 USE_GMAKE=	yes
 
 PLIST_FILES=	bin/pdfcrack
