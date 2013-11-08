@@ -6,6 +6,8 @@ bin/brebis
 %%PYTHON_SITELIBDIR%%/brebis/__pycache__/applogger.cpython-%%PYTHON_SUFFIX%%.pyo
 %%PYTHON_SITELIBDIR%%/brebis/__pycache__/archiveinfomsg.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/brebis/__pycache__/archiveinfomsg.cpython-%%PYTHON_SUFFIX%%.pyo
+%%PYTHON_SITELIBDIR%%/brebis/__pycache__/checkfilelist.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/brebis/__pycache__/checkfilelist.cpython-%%PYTHON_SUFFIX%%.pyo
 %%PYTHON_SITELIBDIR%%/brebis/__pycache__/checkhashes.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/brebis/__pycache__/checkhashes.cpython-%%PYTHON_SUFFIX%%.pyo
 %%PYTHON_SITELIBDIR%%/brebis/__pycache__/cliparse.cpython-%%PYTHON_SUFFIX%%.pyc
@@ -49,6 +51,7 @@ bin/brebis
 %%PYTHON_SITELIBDIR%%/brebis/checkbackups/checktar.py
 %%PYTHON_SITELIBDIR%%/brebis/checkbackups/checktree.py
 %%PYTHON_SITELIBDIR%%/brebis/checkbackups/checkzip.py
+%%PYTHON_SITELIBDIR%%/brebis/checkfilelist.py
 %%PYTHON_SITELIBDIR%%/brebis/checkhashes.py
 %%PYTHON_SITELIBDIR%%/brebis/cliparse.py
 %%PYTHON_SITELIBDIR%%/brebis/configurations.py
