@@ -14,10 +14,24 @@
 %%SITE_PERL%%/Cache/RemovalStrategy/FIFO.pm
 %%SITE_PERL%%/Cache/RemovalStrategy/LRU.pm
 %%SITE_PERL%%/Cache/Tester.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/.packlist
+%%PERL5_MAN3%%/Cache.3.gz
+%%PERL5_MAN3%%/Cache::Entry.3.gz
+%%PERL5_MAN3%%/Cache::File.3.gz
+%%PERL5_MAN3%%/Cache::File::Entry.3.gz
+%%PERL5_MAN3%%/Cache::File::Handle.3.gz
+%%PERL5_MAN3%%/Cache::File::Heap.3.gz
+%%PERL5_MAN3%%/Cache::IOString.3.gz
+%%PERL5_MAN3%%/Cache::Memory.3.gz
+%%PERL5_MAN3%%/Cache::Memory::Entry.3.gz
+%%PERL5_MAN3%%/Cache::Memory::HeapElem.3.gz
+%%PERL5_MAN3%%/Cache::Null.3.gz
+%%PERL5_MAN3%%/Cache::Null::Entry.3.gz
+%%PERL5_MAN3%%/Cache::RemovalStrategy.3.gz
+%%PERL5_MAN3%%/Cache::RemovalStrategy::FIFO.3.gz
+%%PERL5_MAN3%%/Cache::RemovalStrategy::LRU.3.gz
+%%PERL5_MAN3%%/Cache::Tester.3.gz
 @dirrmtry %%SITE_PERL%%/Cache/RemovalStrategy
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache
+@dirrmtry %%SITE_PERL%%/Cache/Null
 @dirrmtry %%SITE_PERL%%/Cache/Memory
 @dirrmtry %%SITE_PERL%%/Cache/File
-@dirrmtry %%SITE_PERL%%/Cache/Null
 @dirrmtry %%SITE_PERL%%/Cache
