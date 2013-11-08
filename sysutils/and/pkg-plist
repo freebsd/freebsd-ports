@@ -1,3 +1,6 @@
-sbin/and
 etc/and.conf
 etc/and.priorities
+man/man5/and.conf.5.gz
+man/man5/and.priorities.5.gz
+man/man8/and.8.gz
+sbin/and
