@@ -23,6 +23,9 @@ CATEGORIES+=	kld
 
 SSP_UNSAFE=	kernel module does not support SSP
 
+.if ${KMODDIR} == "/boot/kernel"
+KMODDIR=	/boot/modules
+.endif
 KMODDIR?=	/boot/modules
 PLIST_SUB+=	KMODDIR="${KMODDIR:C,^/,,}"
 MAKE_ENV+=	KMODDIR="${KMODDIR}" SYSDIR="${SRC_BASE}/sys"
