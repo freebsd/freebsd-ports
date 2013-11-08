@@ -1,5 +1,5 @@
 --- Makefile.orig	2008-12-09 11:07:06.000000000 +0100
-+++ Makefile	2011-06-23 19:11:55.067358819 +0200
++++ Makefile	2013-11-05 17:07:34.000000000 +0100
 @@ -10,9 +10,10 @@
  VERSION=1.9.8
  
@@ -27,8 +27,8 @@
 -	
 +
 +docinstall:
-+	install -d -m 755 "$(docsdir)"
-+	$(INSTALL) -m 644 -c docs/help.ncd "$(docsdir)/help.ncd"
++	install -d -m 755 "$(DESTDIR)$(docsdir)"
++	$(INSTALL) -m 644 -c docs/help.ncd "$(DESTDIR)$(docsdir)/help.ncd"
 +
  #
  # install application
