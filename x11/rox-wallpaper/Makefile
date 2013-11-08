@@ -17,14 +17,12 @@ USE_PYTHON=	yes
 
 WRKSRC=		${WRKDIR}/Wallpaper
 
-NO_STAGE=	yes
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
 	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
 
 do-install:
-	@${MKDIR} ${PREFIX}/apps
-	@${CP} -r ${WRKSRC} ${PREFIX}/apps/Wallpaper
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/apps/Wallpaper
+	@${MKDIR} ${STAGEDIR}${PREFIX}/apps
+	${CP} -r ${WRKSRC} ${STAGEDIR}${PREFIX}/apps/Wallpaper
 
 .include <bsd.port.mk>
