@@ -15,7 +15,7 @@ lib/libocsync.so.0.2.1
 lib/ocsync-0/ocsync_owncloud.so
 lib/ocsync-0/ocsync_sftp.so
 lib/ocsync-0/ocsync_smb.so
-man/man1/ocsync.1.gz
+%%PORTDOCS%%man/man1/ocsync.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/userguide/csync.html
 %%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/README
 %%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/callouts/1.png
