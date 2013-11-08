@@ -22,4 +22,5 @@ lib/libafflib.la
 lib/libafflib.so
 lib/libafflib.so.0
 libdata/pkgconfig/afflib.pc
+man/man1/affcat.1.gz
 @dirrm include/afflib

@@ -13,8 +13,8 @@ COMMENT=	Advanced Forensics Format library and utilities
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
-		curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libcurl.so:${PORTSDIR}/ftp/curl
 
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
@@ -25,11 +25,8 @@ USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS=	--enable-s3=yes --libdir=${PREFIX}
 CPPFLAGS+=	-DFUSE_USE_VERSION=26
 
-MAN1=		affcat.1
-
 AUTOTOOLSFILES=	aclocal.m4
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|2.61|%%AUTOCONF_VERSION%%|g' ${WRKSRC}/aclocal.m4
 	@${REINPLACE_CMD} -e 's|(libdir)|(libdir)/lib|' \
