@@ -34,12 +34,6 @@ CONFIGURE_ENV+=	JED_ROOT=${PREFIX}/lib/jed
 
 PORTDOCS=	*
 MAKE_ENV+=	DEST_DOC_DIR=${STAGEDIR}${DOCSDIR}
-.if empty(PORT_OPTIONS:MDOCS)
-MAKE_ENV+=	JED_DOC_FILES="" \
-		JED_DOC_TXT_FILES="" \
-		JED_DOC_HLP_FILES="" \
-		JED_DOC_MAN_FILES=""
-.endif
 
 ALL_TARGET=	all getmail
 
@@ -57,8 +51,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,(DEST_JED_ROOT)/doc,(DEST_DOC_DIR),g' \
 			  -e 's,\.\./info/\*,,' \
 			  -e 's,^\(JED_DOC_.*FILES\) =,\1 \?=,g' \
-		${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e '/MKINSDIR.*DEST_DOC_DIR/d' \
 		${WRKSRC}/src/Makefile.in
 .if empty(PORT_OPTIONS:MPERMS)
 	@${REINPLACE_CMD} 's|jed_file_is_readonly (file, 1)|jed_file_is_readonly (file, 0)|' ${WRKSRC}/src/file.c
