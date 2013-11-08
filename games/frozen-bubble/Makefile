@@ -3,6 +3,7 @@
 
 PORTNAME=	frozen-bubble
 DISTVERSION=	2.2.1-beta1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.frozen-bubble.org/data/
 
@@ -25,5 +26,14 @@ USES=		perl5 pkgconfig
 USE_BZIP2=	yes
 USE_PERL5=	modbuild
 USE_SDL=	mixer pango sdl ttf
+CFLAGS+=	-Qunused-arguments
+
+DESKTOP_ENTRIES=	"Frozen Bubble" "" \
+			"${PREFIX}/share/pixmaps/frozen-bubble.png" \
+			"${PORTNAME}" "ArcadeGame;Game;" true
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/share/icons/frozen-bubble-icon-64x64.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/frozen-bubble.png
 
 .include <bsd.port.mk>

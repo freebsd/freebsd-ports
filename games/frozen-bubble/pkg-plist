@@ -3273,6 +3273,7 @@ bin/frozen-bubble-editor
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist/Games-FrozenBubble/snd/typewriter.ogg
 man/man1/frozen-bubble-editor.1.gz
 man/man1/frozen-bubble.1.gz
+share/pixmaps/frozen-bubble.png
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist/Games-FrozenBubble/snd
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist/Games-FrozenBubble/locale
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/dist/Games-FrozenBubble/icons
