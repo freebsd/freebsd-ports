@@ -150,7 +150,7 @@ NET_SNMP_LOGFILE?=	/var/log/snmpd.log
 NET_SNMP_PERSISTENTDIR?=/var/net-snmp
 NET_SNMP_WITH_MIB_MODULE_LIST+=	host disman/event-mib mibII/mta_sendmail mibII/tcpTable ucd-snmp/diskio
 
-.if ${OSVERSION} >= 700028
+.if ${OSVERSION} >= 700028 && ${OSVERSION} < 1100000
 NET_SNMP_WITH_MIB_MODULE_LIST+=	sctp-mib
 .endif
 
