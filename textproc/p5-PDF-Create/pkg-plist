@@ -6,6 +6,7 @@
 %%SITE_PERL%%/PDF/Create.pm
 %%SITE_PERL%%/PDF/Image/GIF.pm
 %%SITE_PERL%%/PDF/Image/JPEG.pm
+%%PERL5_MAN3%%/PDF::Create.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/Create
 @dirrm %%SITE_PERL%%/PDF/Create
 @dirrm %%SITE_PERL%%/PDF/Image

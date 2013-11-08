@@ -17,7 +17,6 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/busy bin/hourglass
 PORTDOCS=	CALIBRATION
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 THREAD_LIBS=	-pthread
@@ -32,9 +31,9 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 . for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 . endfor
 .endif
 
