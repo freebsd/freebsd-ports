@@ -190,6 +190,18 @@ do-autogenerate-plist: patch
 	${ECHO_CMD} "Cannot generate packing list: package files outside PREFIX"; \
 	exit 1; fi;
 	@${ECHO_CMD} "${LPKGREGDIR}/package.xml" > ${PLIST}
+	# pkg_install needs to escape $ in directory name while pkg does not
+.if defined(WITH_PKGNG)
+	@cd ${WRKDIR}/inst/${PREFIX} && ${FIND} . -type f | ${SORT} \
+	| ${CUT} -c 3- >> ${PLIST}
+	@DIRS=`cd ${WRKDIR}/inst/${PREFIX} && ${FIND} . -type d | ${SORT} -r | \
+	${CUT} -c 3-`; \
+	for d in $${DIRS}; do \
+		if [ ! -d ${LOCALBASE}/$${d} ]; then \
+			${ECHO_CMD} "@dirrmtry $${d}" >> ${PLIST}; \
+		fi; \
+	done
+.else
 	@cd ${WRKDIR}/inst/${PREFIX} && ${FIND} . -type f | ${SORT} \
 	| ${CUT} -c 3- >> ${PLIST}
 	@DIRS=`cd ${WRKDIR}/inst/${PREFIX} && ${FIND} . -type d | ${SORT} -r | \
@@ -199,6 +211,7 @@ do-autogenerate-plist: patch
 			${ECHO_CMD} "@dirrmtry $${d}" >> ${PLIST}; \
 		fi; \
 	done
+.endif
 	@${ECHO_CMD} "@dirrm ${LPKGREGDIR}" >> ${PLIST}
 	@${ECHO_CMD} "@dirrmtry ${LPKGREGDIR:H}" >> ${PLIST}
 
@@ -215,62 +228,66 @@ do-install: 	do-install-files do-install-docs do-install-tests do-install-sqls \
 
 do-auto-install:
 	@${ECHO_MSG} "===>   Installing package with pear"
+.if defined(NO_STAGE)
 	@cd ${WRKSRC} && ${PEAR} install -n -f package.xml
+.else
+	@cd ${WRKSRC} && ${PEAR} install -n -f -P ${STAGEDIR} package.xml
+.endif
 
 do-install-files: do-install-files-msg
-	@${MKDIR} ${INSTDIR}
+	@${MKDIR} ${STAGEDIR}${INSTDIR}
 . for dir in ${FILESDIRS}
-	@${MKDIR} ${INSTDIR}/${dir}
+	@${MKDIR} ${STAGEDIR}${INSTDIR}/${dir}
 . endfor
 . for file in ${FILES}
-	@${INSTALL_DATA} ${PEARWRKSRC}/${file} ${INSTDIR}/${file}
+	@${INSTALL_DATA} ${PEARWRKSRC}/${file} ${STAGEDIR}${INSTDIR}/${file}
 . endfor
 
 do-install-docs: do-install-docs-msg
 . if !defined(NOPORTDOCS) && !empty(DOCS)
 	@${ECHO_MSG} "===> Installing documentation in ${DOCSDIR}."
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .  for dir in ${DOCSDIRS}
-	@${MKDIR} ${DOCSDIR}/${dir}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/${dir}
 .  endfor
 .  for file in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${_DOCSDIR}/${file} ${DOCSDIR}/${file}
+	@${INSTALL_DATA} ${WRKSRC}/${_DOCSDIR}/${file} ${STAGEDIR}${DOCSDIR}/${file}
 .  endfor
 . endif
 
 do-install-tests: do-install-tests-msg
 . if !empty(TESTS)
 	@${ECHO_MSG} "===> Installing tests in ${TESTSDIR}."
-	@${MKDIR} ${TESTSDIR}
+	@${MKDIR} ${STAGEDIR}${TESTSDIR}
 .  for dir in ${TESTSDIRS}
-	@${MKDIR} ${TESTSDIR}/${dir}
+	@${MKDIR} ${STAGEDIR}${TESTSDIR}/${dir}
 .  endfor
 .  for file in ${TESTS}
-	@${INSTALL_DATA} ${WRKSRC}/${_TESTSDIR}/${file} ${TESTSDIR}/${file}
+	@${INSTALL_DATA} ${WRKSRC}/${_TESTSDIR}/${file} ${STAGEDIR}${TESTSDIR}/${file}
 .  endfor
 . endif
 
 do-install-data: do-install-data-msg
 . if !empty(DATA)
 	@${ECHO_MSG} "===> Installing data in ${DATADIR}."
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .  for dir in ${DATADIRS}
-	@${MKDIR} ${DATADIR}/${dir}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/${dir}
 .  endfor
 .  for file in ${DATA}
-	@${INSTALL_DATA} ${WRKSRC}/${_DATADIR}/${file} ${DATADIR}/${file}
+	@${INSTALL_DATA} ${WRKSRC}/${_DATADIR}/${file} ${STAGEDIR}${DATADIR}/${file}
 .  endfor
 . endif
 
 do-install-sqls: do-install-sqls-msg
 . if !empty(SQLS)
 	@${ECHO_MSG} "===> Installing sqls in ${SQLSDIR}."
-	@${MKDIR} ${SQLSDIR}
+	@${MKDIR} ${STAGEDIR}${SQLSDIR}
 .  for dir in ${SQLSDIRS}
-	@${MKDIR} ${SQLSDIR}/${dir}
+	@${MKDIR} ${STAGEDIR}${SQLSDIR}/${dir}
 .  endfor
 .  for file in ${SQLS}
-	@${INSTALL_DATA} ${WRKSRC}/${_SQLSDIR}/${file} ${SQLSDIR}/${file}
+	@${INSTALL_DATA} ${WRKSRC}/${_SQLSDIR}/${file} ${STAGEDIR}${SQLSDIR}/${file}
 .  endfor
 . endif
 
@@ -282,19 +299,19 @@ do-install-scriptfiles: do-install-scriptfiles-msg
 	@${REINPLACE_CMD} -e "s|@php_bin@|${SCRIPTFILESDIR}/php|g" ${WRKSRC}/${file}
 	@${REINPLACE_CMD} -e "s|@php_dir@|${PREFIX}/lib/php|g" ${WRKSRC}/${file}
 	@${REINPLACE_CMD} -e "s|@include_path@|${PREFIX}/${LPEARDIR}|g" ${WRKSRC}/${file}
-	@${INSTALL_SCRIPT} ${WRKSRC}/${file} ${SCRIPTFILESDIR}/${file}
+	@${INSTALL_SCRIPT} ${WRKSRC}/${file} ${STAGEDIR}${SCRIPTFILESDIR}/${file}
 .  endfor
 . endif
 
 do-install-examples: do-install-examples-msg
 . if !defined(NOPORTDOCS) && !empty(EXAMPLES)
 	@${ECHO_MSG} "===> Installing examples in ${EXAMPLESDIR}."
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .  for dir in ${EXAMPLESDIRS}
-	@${MKDIR} ${EXAMPLESDIR}/${dir}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${dir}
 .  endfor
 .  for file in ${EXAMPLES}
-	@${INSTALL_DATA} ${WRKSRC}/${_EXAMPLESDIR}/${file} ${EXAMPLESDIR}/${file}
+	@${INSTALL_DATA} ${WRKSRC}/${_EXAMPLESDIR}/${file} ${STAGEDIR}${EXAMPLESDIR}/${file}
 .  endfor
 . endif
 .endif
@@ -303,9 +320,9 @@ do-generate-deinstall-script:
 	@${SED} ${_SUB_LIST_TEMP} -e '/^@comment /d' ${PORTSDIR}/devel/pear/pear-deinstall.in > ${WRKDIR}/pear-deinstall
 
 pear-post-install:
-	@${MKDIR} ${PKGREGDIR}
-	@${INSTALL_DATA} ${WRKDIR}/package.xml ${PKGREGDIR}
-.if !defined(PEAR_AUTOINSTALL)
+	@${MKDIR} ${STAGEDIR}${PKGREGDIR}
+	@${INSTALL_DATA} ${WRKDIR}/package.xml ${STAGEDIR}${PKGREGDIR}
+.if defined(NO_STAGE) && !defined(PEAR_AUTOINSTALL)
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
