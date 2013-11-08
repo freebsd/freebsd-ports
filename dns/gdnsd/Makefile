@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libev.so:${PORTSDIR}/devel/libev
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var
+CONFIGURE_ARGS=	--localstatedir=/var --with-rootdir=${LOCALBASE}/etc/gdnsd
 USE_LDCONFIG=	yes
 USE_XZ=		yes
 USES=		pkgconfig
