@@ -1,4 +1,4 @@
-# Created by: alepulver
+# Created by: alepulver@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	menumaker
