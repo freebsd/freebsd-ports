@@ -7,15 +7,17 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.knopwob.org/public/dunst-release/
 
 MAINTAINER=	rodperson@rodperson.com
-COMMENT=	Lightweight notification deamon
+COMMENT=	Lightweight notification daemon
 
-LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
-		dbus:${PORTSDIR}/devel/dbus \
-		execinfo:${PORTSDIR}/devel/libexecinfo \
-		freetype:${PORTSDIR}/print/freetype2 \
-		notify:${PORTSDIR}/devel/libnotify \
-		pango:${PORTSDIR}/x11-toolkits/pango \
-		xdg-basedir:${PORTSDIR}/x11/libxdg-basedir
+LICENSE=	BSD
+
+LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
+		libdbus-1.so:${PORTSDIR}/devel/dbus \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libnotify.so:${PORTSDIR}/devel/libnotify \
+		libpango-1.0.so:${PORTSDIR}/x11-toolkits/pango \
+		libxdg-basedir.so:${PORTSDIR}/x11/libxdg-basedir
 
 USES=		gmake pkgconfig:build
 USE_BZIP2=	yes
@@ -27,8 +29,7 @@ MAKE_ARGS+=	MANPREFIX="${PREFIX}/man"
 ALL_TARGET=	dunst dunstify dunst.1
 INSTALL_TARGET=	install
 
-LDFLAGS+=	-O3 -g -Wall -rdynamic -lexecinfo
-CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-Wall -rdynamic -lexecinfo
 
 PLIST_FILES=	bin/dunst \
 		share/dunst/dunstrc \
