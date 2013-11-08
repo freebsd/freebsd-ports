@@ -11,7 +11,7 @@ COMMENT=	Gimp plug-in for texture synthesis
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/gimp/2.2/python/gimpfu.py:${PORTSDIR}/graphics/py-gimp
 BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool
-LIB_DEPENDS=	gimp-2.0:${PORTSDIR}/graphics/gimp-app
+LIB_DEPENDS=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bootchk
@@ -28,7 +28,6 @@ USE_GCC=	any # uses nested functions (gcc ext.)
 OPTIONS_DEFINE=	THREADS
 THREADS_DESC=	Threading support (produces nondeterministic results)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -38,10 +37,5 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^#define SYNTH_THREADED/ d' \
 		${WRKSRC}/src/buildSwitches.h
 .endif
-
-post-install:
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
 
 .include <bsd.port.mk>
