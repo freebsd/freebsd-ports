@@ -13,7 +13,4 @@ COMMENT=	Interface to processor (CPU) information
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Unix::Processors.3 Unix::Processors::Info.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
