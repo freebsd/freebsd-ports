@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ngircd
-PORTVERSION=	20.3
+PORTVERSION=	21
 PORTEPOCH=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.berlios.de/pub/%SUBDIR%/ \
@@ -19,21 +19,17 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-MAN5=		ngircd.conf.5
-MAN8=		ngircd.8
-
-OPTIONS_DEFINE=DOCS TCP_WRAPPERS SYSLOG ZLIB IPV6 OPENSSL GNUTLS IRCPLUS IDENT SNIFFER DEBUG
+OPTIONS_DEFINE=	DOCS TCP_WRAPPERS SYSLOG ZLIB IPV6 OPENSSL GNUTLS IRCPLUS IDENT SNIFFER DEBUG
 OPTIONS_DEFAULT=TCP_WRAPPERS SYSLOG ZLIB IPV6 IRCPLUS
 NO_OPTIONS_SORT=yes
-TCP_WRAPPERS_DESC=Enable TCP wrappers support
-SYSLOG_DESC=Enable syslog() support
-ZLIB_DESC=Enable ZLIB compression
-IRCPLUS_DESC=Enable IRC+ protocol
-IDENT_DESC=Enable IDENT (AUTH) protocol support
-SNIFFER_DESC=Enable IRC traffic sniffer
-DEBUG_DESC=Show additional debug output
+TCP_WRAPPERS_DESC=	Enable TCP wrappers support
+SYSLOG_DESC=		Enable syslog() support
+ZLIB_DESC=		Enable ZLIB compression
+IRCPLUS_DESC=		Enable IRC+ protocol
+IDENT_DESC=		Enable IDENT (AUTH) protocol support
+SNIFFER_DESC=		Enable IRC traffic sniffer
+DEBUG_DESC=		Show additional debug output
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if exists(/usr/include/tcpd.h) && !defined(WITHOUT_TCP_WRAPPERS)

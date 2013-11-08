@@ -1,9 +1,12 @@
 etc/ngircd.conf.sample
 sbin/ngircd
+man/man5/ngircd.conf.5.gz
+man/man8/ngircd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/Bopm.txt
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/Capabilities.txt
+%%PORTDOCS%%%%DOCSDIR%%/Commands.txt
 %%PORTDOCS%%%%DOCSDIR%%/Contributing.txt
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
