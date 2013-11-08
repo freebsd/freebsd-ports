@@ -13,28 +13,29 @@ COMMENT=	MP3 frame level editor
 
 LICENSE=	GPLv2
 
-NO_STAGE=	yes
-
 USES=		gmake
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.1
+PLIST_FILES=	bin/mp3asm
+PORTDOCS=	Changelog README
+
+.include <bsd.port.options.mk>
 
 post-extract:
 	@${RM} ${WRKSRC}/config.cache
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		's|getprogname|_getprogname|g' ${WRKSRC}/src/mp3asm.c
+	${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|#include <argz.h>||' \
+		-e 's|getprogname|_getprogname|g' \
+		-e 's|\([ (!]\)\(log[\.;]\)|\1mp3asm\2|g' \
+		${WRKSRC}/src/mp3asm.h ${WRKSRC}/src/*.c
 
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in Changelog README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
