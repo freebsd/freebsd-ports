@@ -166,6 +166,9 @@ etc/pear.conf.sample
 @rmtry share/pear/.lock
 @dirrmtry share/pear/.channels/.alias
 @dirrmtry share/pear/.channels
+@exec mkdir -p %D/share/pear/.registry/.channel.__uri
+@exec mkdir -p %D/share/pear/.registry/.channel.doc.php.net
+@exec mkdir -p %D/share/pear/.registry/.channel.pecl.php.net
 @dirrmtry share/pear/.registry/.channel.__uri
 @dirrmtry share/pear/.registry/.channel.doc.php.net
 @dirrmtry share/pear/.registry/.channel.pecl.php.net

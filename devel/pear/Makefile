@@ -3,7 +3,7 @@
 
 PORTNAME=	pear
 PORTVERSION=	1.9.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://miwibox.org/distfiles/
 
@@ -19,6 +19,8 @@ USE_PHP_BUILD=	yes
 
 PEARDIR=	${PREFIX}/share/pear
 
+# https://github.com/pear/pear-core/blob/master/install-pear.php
+# supports ${SETENV} INSTALL_ROOT=${STAGEDIR}
 NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" \
