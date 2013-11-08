@@ -1,6 +1,6 @@
 #!/bin/sh
 
-case $1 in
+case $2 in
   POST-INSTALL)
     perl -MXML::SAX -e 'XML::SAX->add_parser(q(XML::SAX::ExpatXS))->save_parsers();'
   ;;
