@@ -173,6 +173,10 @@ gtkmm30_DETECT=		${LOCALBASE}/libdata/pkgconfig/gtkmm-3.0.pc
 gtkmm30_LIB_DEPENDS=	libgtkmm-3.0.so:${PORTSDIR}/x11-toolkits/gtkmm30
 gtkmm30_USE_GNOME_IMPL=	glibmm cairomm atkmm pangomm gtk30
 
+gtksourceviewmm3_DETECT=	${LOCALBASE}/libdata/pkgconfig/gtksourceviewmm-3.0.pc
+gtksourceviewmm3_LIB_DEPENDS=	libgtksourceviewmm-3.0.so:${PORTSDIR}/x11-toolkits/gtksourceviewmm3
+gtksourceviewmm3_USE_GNOME_IMPL=gtkmm30 gtksourceview3
+
 libgdamm_DETECT=	${LOCALBASE}/libdata/pkgconfig/libgdamm-4.0.pc
 libgdamm_LIB_DEPENDS=	libgdamm-4.0.so:${PORTSDIR}/databases/libgdamm
 libgdamm_USE_GNOME_IMPL=libgda4 glibmm
