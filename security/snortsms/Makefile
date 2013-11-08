@@ -9,6 +9,9 @@ MASTER_SITES=	SF/${PORTNAME}/SnortSMS%20Suite%20%28Console_Agent%29/${PORTVERSIO
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A remote management and monitoring interface for Snort based IDS
 
+DEPRECATED=	Not active since several years.
+EXPIRATION_DATE=	2013-12-08
+
 RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB \
 		${LOCALBASE}/bin/curl:${PORTSDIR}/ftp/curl
 
