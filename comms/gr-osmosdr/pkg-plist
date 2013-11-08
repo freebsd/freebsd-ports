@@ -29,4 +29,9 @@ share/gnuradio/grc/blocks/osmosdr_source_c.xml
 %%PYTHON_SITELIBDIR%%/osmosdr/__init__.pyo
 @dirrm include/osmosdr/swig
 @dirrm include/osmosdr
+@dirrmtry share/gnuradio/grc/blocks
+@dirrmtry share/gnuradio/grc
+@dirrmtry share/gnuradio
 @dirrm %%PYTHON_SITELIBDIR%%/osmosdr
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%

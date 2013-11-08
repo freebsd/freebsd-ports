@@ -15,11 +15,11 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13 \
 		cheetah:${PORTSDIR}/devel/py-cheetah
-LIB_DEPENDS=	gnuradio-core:${PORTSDIR}/comms/gnuradio \
-		gnuradio-fcd:${PORTSDIR}/comms/gnuradio \
-		gruel:${PORTSDIR}/comms/gnuradio \
-		boost_system:${PORTSDIR}/devel/boost-libs \
-		boost_thread:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libgnuradio-core.so:${PORTSDIR}/comms/gnuradio \
+		libgnuradio-fcd.so:${PORTSDIR}/comms/gnuradio \
+		libgruel.so:${PORTSDIR}/comms/gnuradio \
+		libboost_system.so:${PORTSDIR}/devel/boost-libs \
+		libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
 USES=	pkgconfig cmake
 USE_LDCONFIG=	yes
@@ -32,17 +32,11 @@ CMAKE_ARGS+=	-DENABLE_DEFAULT:BOOL=OFF \
 OPTIONS_DEFINE=	RTLSDR
 RTLSDR_DESC=	Enable rtl-sdr (RTL2832) support
 OPTIONS_DEFAULT=	RTLSDR
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MRTLSDR}
-LIB_DEPENDS+=	rtlsdr:${PORTSDIR}/comms/rtl-sdr
-CMAKE_ARGS+=	-DENABLE_RTL:BOOL=ON \
-		-DENABLE_RTL_TCP:BOOL=ON
-.endif
+RTLSDR_LIB_DEPENDS=	librtlsdr.so:${PORTSDIR}/comms/rtl-sdr
+RTLSDR_CMAKE_ON=	-DENABLE_RTL:BOOL=ON -DENABLE_RTL_TCP:BOOL=ON
 
 post-install:
-	${LN} -s libgnuradio-osmosdr.so.0.0.1git ${PREFIX}/lib/libgnuradio-osmosdr.so.0
+	@${LN} -sf libgnuradio-osmosdr.so.0.0.1git \
+		${STAGEDIR}${PREFIX}/lib/libgnuradio-osmosdr.so.0
 
 .include <bsd.port.mk>
