@@ -13,9 +13,8 @@ COMMENT=	Tools for using Parity v2 Archive files (tbb version)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	tbb:${PORTSDIR}/devel/tbb
+LIB_DEPENDS=	libtbb.so:${PORTSDIR}/devel/tbb
 
-NO_STAGE=	yes
 ONLY_FOR_ARCHS=	i386 amd64 ia64
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -25,17 +24,14 @@ AUTOMAKE_ARGS=	--add-missing
 
 PORTDOCS=	README
 CONFLICTS=	par2cmdline-[0-9]*
+
 PLIST_FILES=	bin/par2 bin/par2create bin/par2repair bin/par2verify
 
 post-extract:
 	@${CHMOD} u+x ${WRKSRC}/install-sh
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
