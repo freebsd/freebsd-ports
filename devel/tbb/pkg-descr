@@ -6,4 +6,4 @@ is not just a threads-replacement library. It represents a higher-level,
 task-based parallelism that abstracts platform details and threading
 mechanism for performance and scalability.
 
-WWW: http://tbb.sourceforge.net/
+WWW: http://threadingbuildingblocks.org/
