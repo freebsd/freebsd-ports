@@ -1,3 +1,8 @@
+man/man1/cdappend.1.gz
+man/man1/cdbkup.1.gz
+man/man1/cdcat.1.gz
+man/man1/cdrstr.1.gz
+man/man1/cdsplit.1.gz
 sbin/cdappend
 sbin/cdbkup
 sbin/cdcat

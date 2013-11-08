@@ -15,9 +15,8 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 
 MAN1=		cdargs.1
-PLIST_FILES=	bin/cdargs
+PLIST_FILES=	bin/cdargs man/man1/cdargs.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^AM_CXXFLAGS|#AM_CXXFLAGS|' ${WRKSRC}/src/Makefile.in

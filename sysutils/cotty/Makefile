@@ -16,11 +16,10 @@ EXTRACT_CMD=	${GZCAT}
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/${DISTNAME}.c
 
-NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/cotty ${WRKSRC}/${DISTNAME}.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cotty ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/cotty ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

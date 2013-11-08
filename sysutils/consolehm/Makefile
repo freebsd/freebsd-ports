@@ -14,11 +14,8 @@ COMMENT=	Console based hardware monitor for FreeBSD
 WRKSRC=		${WRKDIR}/consolehm/consolehm
 
 GNU_CONFIGURE=	yes
-MAN8=		chm.8
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/chm
+PLIST_FILES=	bin/chm man/man8/chm.8.gz
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"

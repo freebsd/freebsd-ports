@@ -11,15 +11,11 @@ COMMENT=	Tool for clone HDD on FreeBSD
 
 USES=		perl5
 USE_PERL5=	run
-PLIST_FILES=	sbin/clonehdd
+PLIST_FILES=	sbin/clonehdd man/man8/${PORTNAME}.8.gz
 NO_BUILD=	YES
-MAN8=		clonehdd.8
-SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/clonehdd ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/clonehdd.8 ${MAN8PREFIX}/man/man8
-	${CAT} ${PKGMESSAGE}
+	${INSTALL_SCRIPT} ${WRKSRC}/clonehdd ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/clonehdd.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 
 .include <bsd.port.mk>

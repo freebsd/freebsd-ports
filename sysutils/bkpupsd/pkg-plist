@@ -1,6 +1,7 @@
-sbin/bkpupsd
+libexec/bkpupsd/bkpups.battlow
 libexec/bkpupsd/bkpups.failed
 libexec/bkpupsd/bkpups.restored
 libexec/bkpupsd/bkpups.shutdown
-libexec/bkpupsd/bkpups.battlow
+man/man8/bkpupsd.8.gz
+sbin/bkpupsd
 @dirrm libexec/bkpupsd
