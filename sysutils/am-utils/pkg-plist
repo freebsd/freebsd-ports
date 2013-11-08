@@ -6,6 +6,17 @@ lib/libamu.a
 lib/libamu.la
 lib/libamu.so
 lib/libamu.so.4
+man/man1/expn.1.gz
+man/man1/pawd.1.gz
+man/man5/amd.conf.5.gz
+man/man8/amd.8.gz
+man/man8/amq.8.gz
+man/man8/automount2amd.8.gz
+man/man8/fixmount.8.gz
+man/man8/fsinfo.8.gz
+man/man8/hlfsd.8.gz
+man/man8/mk-amd-map.8.gz
+man/man8/wire-test.8.gz
 sbin/am-eject
 sbin/amd
 sbin/amd2ldif
@@ -24,3 +35,12 @@ sbin/mk-amd-map
 sbin/wait4amd
 sbin/wait4amd2die
 sbin/wire-test
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README.attrcache
+%%LDAP_DOC%%%%PORTDOCS%%%%DOCSDIR%%/README.ldap
+%%LDAP_DOC%%%%PORTDOCS%%%%DOCSDIR%%/ldap-id.txt
+%%LDAP_DOC%%%%PORTDOCS%%%%DOCSDIR%%/ldap.schema
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
