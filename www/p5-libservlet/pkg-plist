@@ -1,25 +1,61 @@
+%%PERL5_MAN3%%/Servlet.3.gz
+%%PERL5_MAN3%%/Servlet::Config.3.gz
+%%PERL5_MAN3%%/Servlet::Filter.3.gz
+%%PERL5_MAN3%%/Servlet::FilterChain.3.gz
+%%PERL5_MAN3%%/Servlet::FilterConfig.3.gz
+%%PERL5_MAN3%%/Servlet::GenericServlet.3.gz
+%%PERL5_MAN3%%/Servlet::Http::Cookie.3.gz
+%%PERL5_MAN3%%/Servlet::Http::HttpServlet.3.gz
+%%PERL5_MAN3%%/Servlet::Http::HttpServletRequest.3.gz
+%%PERL5_MAN3%%/Servlet::Http::HttpServletRequestWrapper.3.gz
+%%PERL5_MAN3%%/Servlet::Http::HttpServletResponse.3.gz
+%%PERL5_MAN3%%/Servlet::Http::HttpServletResponseWrapper.3.gz
+%%PERL5_MAN3%%/Servlet::Http::HttpSession.3.gz
+%%PERL5_MAN3%%/Servlet::Http::HttpSessionActivationListener.3.gz
+%%PERL5_MAN3%%/Servlet::Http::HttpSessionAttributesListener.3.gz
+%%PERL5_MAN3%%/Servlet::Http::HttpSessionBindingEvent.3.gz
+%%PERL5_MAN3%%/Servlet::Http::HttpSessionBindingListener.3.gz
+%%PERL5_MAN3%%/Servlet::Http::HttpSessionEvent.3.gz
+%%PERL5_MAN3%%/Servlet::Http::HttpSessionListener.3.gz
+%%PERL5_MAN3%%/Servlet::RequestDispatcher.3.gz
+%%PERL5_MAN3%%/Servlet::Servlet.3.gz
+%%PERL5_MAN3%%/Servlet::ServletConfig.3.gz
+%%PERL5_MAN3%%/Servlet::ServletContext.3.gz
+%%PERL5_MAN3%%/Servlet::ServletContextAttributeEvent.3.gz
+%%PERL5_MAN3%%/Servlet::ServletContextAttributeListener.3.gz
+%%PERL5_MAN3%%/Servlet::ServletContextEvent.3.gz
+%%PERL5_MAN3%%/Servlet::ServletContextListener.3.gz
+%%PERL5_MAN3%%/Servlet::ServletException.3.gz
+%%PERL5_MAN3%%/Servlet::ServletInputStream.3.gz
+%%PERL5_MAN3%%/Servlet::ServletOutputStream.3.gz
+%%PERL5_MAN3%%/Servlet::ServletRequest.3.gz
+%%PERL5_MAN3%%/Servlet::ServletRequestWrapper.3.gz
+%%PERL5_MAN3%%/Servlet::ServletResponse.3.gz
+%%PERL5_MAN3%%/Servlet::ServletResponseWrapper.3.gz
+%%PERL5_MAN3%%/Servlet::SingleThreadModel.3.gz
+%%PERL5_MAN3%%/Servlet::UnavailableException.3.gz
+%%PERL5_MAN3%%/Servlet::Util::Event.3.gz
+%%PERL5_MAN3%%/Servlet::Util::Exception.3.gz
+%%PERL5_MAN3%%/Servlet::Util::Principal.3.gz
 %%SITE_PERL%%/Servlet.pm
-%%SITE_PERL%%/Servlet/Http/HttpSession.pm
-%%SITE_PERL%%/Servlet/Http/HttpServletRequestWrapper.pm
-%%SITE_PERL%%/Servlet/Http/HttpServletResponse.pm
-%%SITE_PERL%%/Servlet/Http/HttpServlet.pm
-%%SITE_PERL%%/Servlet/Http/HttpSessionEvent.pm
-%%SITE_PERL%%/Servlet/Http/Cookie.pm
-%%SITE_PERL%%/Servlet/Http/HttpSessionAttributesListener.pm
-%%SITE_PERL%%/Servlet/Http/HttpSessionListener.pm
-%%SITE_PERL%%/Servlet/Http/HttpServletResponseWrapper.pm
-%%SITE_PERL%%/Servlet/Http/HttpServletRequest.pm
-%%SITE_PERL%%/Servlet/Http/HttpSessionBindingEvent.pm
-%%SITE_PERL%%/Servlet/Http/HttpSessionActivationListener.pm
-%%SITE_PERL%%/Servlet/Http/HttpSessionBindingListener.pm
-%%SITE_PERL%%/Servlet/Util/Event.pm
-%%SITE_PERL%%/Servlet/Util/Exception.pm
-%%SITE_PERL%%/Servlet/Util/Principal.pm
 %%SITE_PERL%%/Servlet/Config.pm
 %%SITE_PERL%%/Servlet/Filter.pm
 %%SITE_PERL%%/Servlet/FilterChain.pm
 %%SITE_PERL%%/Servlet/FilterConfig.pm
 %%SITE_PERL%%/Servlet/GenericServlet.pm
+%%SITE_PERL%%/Servlet/Http/Cookie.pm
+%%SITE_PERL%%/Servlet/Http/HttpServlet.pm
+%%SITE_PERL%%/Servlet/Http/HttpServletRequest.pm
+%%SITE_PERL%%/Servlet/Http/HttpServletRequestWrapper.pm
+%%SITE_PERL%%/Servlet/Http/HttpServletResponse.pm
+%%SITE_PERL%%/Servlet/Http/HttpServletResponseWrapper.pm
+%%SITE_PERL%%/Servlet/Http/HttpSession.pm
+%%SITE_PERL%%/Servlet/Http/HttpSessionActivationListener.pm
+%%SITE_PERL%%/Servlet/Http/HttpSessionAttributesListener.pm
+%%SITE_PERL%%/Servlet/Http/HttpSessionBindingEvent.pm
+%%SITE_PERL%%/Servlet/Http/HttpSessionBindingListener.pm
+%%SITE_PERL%%/Servlet/Http/HttpSessionEvent.pm
+%%SITE_PERL%%/Servlet/Http/HttpSessionListener.pm
 %%SITE_PERL%%/Servlet/RequestDispatcher.pm
 %%SITE_PERL%%/Servlet/Servlet.pm
 %%SITE_PERL%%/Servlet/ServletConfig.pm
@@ -37,8 +73,11 @@
 %%SITE_PERL%%/Servlet/ServletResponseWrapper.pm
 %%SITE_PERL%%/Servlet/SingleThreadModel.pm
 %%SITE_PERL%%/Servlet/UnavailableException.pm
-@dirrm %%SITE_PERL%%/Servlet/Http
-@dirrm %%SITE_PERL%%/Servlet/Util
-@dirrm %%SITE_PERL%%/Servlet
+%%SITE_PERL%%/Servlet/Util/Event.pm
+%%SITE_PERL%%/Servlet/Util/Exception.pm
+%%SITE_PERL%%/Servlet/Util/Principal.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/libservlet/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/libservlet
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/libservlet
+@dirrmtry %%SITE_PERL%%/Servlet/Util
+@dirrmtry %%SITE_PERL%%/Servlet/Http
+@dirrmtry %%SITE_PERL%%/Servlet
