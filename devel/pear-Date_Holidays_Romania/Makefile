@@ -14,7 +14,6 @@ CATEGORY=	Date
 FILES=		Holidays/Driver/Romania.php
 TESTS=		Date_Holidays_Driver_Romania_TestSuite.php
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

@@ -13,7 +13,6 @@ RUN_DEPENDS:=	${PEARDIR}/XML/Util.php:${PORTSDIR}/devel/pear-XML_Util
 
 PEAR_AUTOINSTALL=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

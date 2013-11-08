@@ -16,7 +16,6 @@ TESTS=		Date_Holidays_Driver_Italy_TestSuite.php
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

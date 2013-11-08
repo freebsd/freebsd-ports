@@ -19,7 +19,6 @@ PEAR_TRANSLATION2_DESC=	PEAR::Translation2 support
 
 PEAR_AUTOINSTALL=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPEAR_HTML_JAVASCRIPT}

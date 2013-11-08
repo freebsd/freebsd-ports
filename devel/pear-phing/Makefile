@@ -18,7 +18,6 @@ IGNORE_WITH_PHP=52
 BUILD_DEPENDS+= ${PEARDIR}/.channels/pear.phing.info.reg:${PORTSDIR}/devel/pear-channel-phing
 RUN_DEPENDS+= ${PEARDIR}/.channels/pear.phing.info.reg:${PORTSDIR}/devel/pear-channel-phing
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

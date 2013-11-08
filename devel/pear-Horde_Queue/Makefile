@@ -8,7 +8,6 @@ PKGNAMEPREFIX=	pear-
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Queue
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
 .include <bsd.port.post.mk>

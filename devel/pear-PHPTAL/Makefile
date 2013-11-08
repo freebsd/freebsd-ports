@@ -17,7 +17,6 @@ GETTEXT_DESC=	"Enable GetText Support"
 SIMPLEXML_DESC=	"Enable SimpleXML Support"
 JSON_DESC=	"Enable JSON Support"
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USE_PHP=	ctype hash

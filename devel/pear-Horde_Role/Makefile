@@ -10,13 +10,12 @@ COMMENT=	PEAR installer role for Horde components
 
 PATCH_WRKSRC=	${WRKDIR}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
 
 post-install:
-	@${MKDIR} ${PREFIX}/${HORDE_DIR}
-	@${TOUCH} ${PREFIX}/${HORDE_DIR}/.keep_me
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${HORDE_DIR}
+	@${TOUCH} ${STAGEDIR}${PREFIX}/${HORDE_DIR}/.keep_me
 	@${ECHO_CMD} "${HORDE_DIR}/.keep_me" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/${HORDE_DIR} 2>/dev/null || true" >> \
 		${TMPPLIST}
