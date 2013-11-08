@@ -26,10 +26,7 @@ MAKE_ARGS=	KMODDIR="${KMODDIR}" CDEV_MAJOR="${CDEV_MAJOR}"
 PLIST_SUB=	DEVDIR="${DEVDIR}" CDEV_MAJOR="${CDEV_MAJOR}" \
 		RTC_H_DIR="${RTC_H_DIR}"
 
-NO_STAGE=	yes
-
 USES=		kmod
-.include <bsd.port.pre.mk>
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
@@ -38,10 +35,10 @@ do-extract:
 	@cd ${FILESDIR} && ${CP} Makefile *.[ch] ${WRKSRC}/
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/rtc.h ${PREFIX}/include/
-	${MKDIR} ${PREFIX}/share/examples/rtc
-	${INSTALL_DATA} ${WRKSRC}/test.c ${PREFIX}/share/examples/rtc/
+	${INSTALL_DATA} ${WRKSRC}/rtc.h ${STAGEDIR}${PREFIX}/include
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/test.c ${STAGEDIR}${EXAMPLESDIR}
 	@${ECHO} "Installing ${PREFIX}/etc/rc.d/${STARTUP} startup file.";
-	${INSTALL_SCRIPT} ${WRKDIR}/${STARTUP} ${PREFIX}/etc/rc.d/
+	${INSTALL_SCRIPT} ${WRKDIR}/${STARTUP} ${STAGEDIR}${PREFIX}/etc/rc.d
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
