@@ -52,7 +52,6 @@ SCRIPT_DESC=		Command line options in script
 NO_GUI_RPC_DESC=	Do not allow GUI RPC, do not make socket (breaks boinc_curses)
 NO_NET_INFO_DESC=	Do not send host address and name to servers
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 #.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
@@ -163,36 +162,35 @@ post-configure:
 .endif
 
 post-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if ${PORT_OPTIONS:MMANAGER} || ${PORT_OPTIONS:MX11}
-	${MKDIR} ${PREFIX}/share/boinc
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/boinc
 .endif
 .if ${PORT_OPTIONS:MMANAGER}
 . for name in 16 32 48
 	${INSTALL_DATA} ${WRKSRC}/clientgui/res/boincmgr.${name}x${name}.png \
-	    ${PREFIX}/share/pixmaps
+	    ${STAGEDIR}${PREFIX}/share/pixmaps
 . endfor
 . if ${PORT_OPTIONS:MSKINS}
 	(cd ${WRKSRC}/clientgui && \
-	${COPYTREE_SHARE} skins ${PREFIX}/share/boinc/ )
+	${COPYTREE_SHARE} skins ${STAGEDIR}${PREFIX}/share/boinc/ )
 . else
-	${MKDIR} ${PREFIX}/share/boinc/skins
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/boinc/skins
 	(cd ${WRKSRC}/clientgui/skins && \
-	${COPYTREE_SHARE} Default ${PREFIX}/share/boinc/skins/ )
+	${COPYTREE_SHARE} Default ${STAGEDIR}${PREFIX}/share/boinc/skins/ )
 . endif
 .endif
 . for name in config.h project_specific_defines.h api/reduce.h lib/shmem.h \
 	lib/std_fixes.h
-	${INSTALL_DATA} ${WRKSRC}/${name} ${PREFIX}/include/boinc
+	${INSTALL_DATA} ${WRKSRC}/${name} ${STAGEDIR}${PREFIX}/include/boinc
 . endfor
 .if ${PORT_OPTIONS:MX11}
 . for name in api/boinc_gl.h api/graphics_api.h api/graphics_data.h \
 	api/ttfont.h
-	${INSTALL_DATA} ${WRKSRC}/${name} ${PREFIX}/include/boinc
+	${INSTALL_DATA} ${WRKSRC}/${name} ${STAGEDIR}${PREFIX}/include/boinc
 . endfor
-	${MKDIR} ${PREFIX}/share/boinc/ttf
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/boinc/ttf
 	(cd ${WRKSRC}/api/ttf/liberation-fonts-ttf-2.00.0 && \
-	    ${COPYTREE_SHARE} \*.ttf ${PREFIX}/share/boinc/ttf/ )
+	    ${COPYTREE_SHARE} \*.ttf ${STAGEDIR}${PREFIX}/share/boinc/ttf/ )
 .endif
 
 .include <bsd.port.mk>
