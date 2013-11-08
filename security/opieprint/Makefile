@@ -9,6 +9,9 @@ MASTER_SITES=	http://www.inner.net/pub/opie/contrib/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.gz
 
+DEPRECATED=	No more active upstream
+EXPIRATION_DATE=	2013-12-08
+
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Output postscript with 100 OPIE passwords credit card sized
 

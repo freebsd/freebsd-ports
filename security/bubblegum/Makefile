@@ -9,6 +9,9 @@ MASTER_SITES=	SF/bjk/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Watch a file for changes
 
+DEPRECATED=	No more active upstream
+EXPIRATION_DATE=	2013-12-08
+
 GNU_CONFIGURE=	yes
 
 MAN1=		bubblegum.1
