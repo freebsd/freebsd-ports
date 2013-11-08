@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	slony1v2
-PORTVERSION=	2.1.3
+PORTVERSION=	2.2.1
 CATEGORIES=	databases
-MASTER_SITES=	http://main.slony.info/downloads/2.1/source/
+MASTER_SITES=	http://main.slony.info/downloads/2.2/source/
 DISTNAME=	slony1-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}-docs${EXTRACT_SUFX}
@@ -31,7 +31,6 @@ CONFLICTS?=	slony1-1*
 
 CONFIGURE_ENV+=	FLEX=${LOCALBASE}/bin/flex
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPERLTOOLS}
@@ -55,10 +54,6 @@ CONFIGURE_ARGS+=--with-pgconfigdir=${LOCALBASE}/bin \
 		--with-pgpkglibdir=${LOCALBASE}/lib/postgresql \
 		--with-pgsharedir=${LOCALBASE}/share/postgresql
 
-.if !defined(NO_INSTALL_MANPAGES)
-MAN1=		slon.1 slonik.1
-.endif
-
 # Setting/finding PostgreSQL version we want.
 .if exists(${LOCALBASE}/bin/postmaster)
 PGSQL_VER!=	${LOCALBASE}/bin/postmaster -V | \
@@ -72,25 +67,27 @@ PGSQL_VER=	${DEFAULT_PGSQL_VER}
 
 PORTDOCS=	*
 
-DOCS=		COPYRIGHT HISTORY-1.1 INSTALL README README.Unicode RELEASE \
-		RELEASE-2.0 SAMPLE TODO UPGRADING
+DOCS=		COPYRIGHT INSTALL README README.Unicode RELEASE \
+		SAMPLE TODO UPGRADING
+
+post-patch:
+	@for _file in ${WRKSRC}/doc/adminguide/man7/*.7; do \
+		mv "$${_file}" $$(echo $${_file} | sed -e 's/ [ ]*/_/g'); \
+	done
+	@for _file in ${WRKSRC}/doc/adminguide/man7/*.7; do \
+		${REINPLACE_CMD} -e '/^.TH/s/  [ ]*/ /g' $${_file}; \
+	done
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/adminguide
-	@${MKDIR} ${DOCSDIR}/howto
-.for FILE in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/adminguide
+.for _file in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${_file} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/doc/howto/*.txt ${WRKSRC}/doc/howto/*.html ${DOCSDIR}/howto/
-	@${INSTALL_DATA} ${WRKSRC}/doc/adminguide/*.html ${WRKSRC}/doc/adminguide/*.png ${DOCSDIR}/adminguide/
-.endif
-.if ! defined(NO_INSTALL_MANPAGES)
-	@${INSTALL_MAN} ${WRKSRC}/doc/adminguide/man1/*.1 ${MAN1PREFIX}/man/man1
-.endif
-	@${INSTALL_SCRIPT} ${WRKDIR}/slon-mkservice.sh ${PREFIX}/sbin/slon-mkservice
-	@${INSTALL_DATA} ${FILESDIR}/slon.conf-sample ${PREFIX}/etc/
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_DATA} ${WRKSRC}/doc/adminguide/*.html ${WRKSRC}/doc/adminguide/*.png ${STAGEDIR}${DOCSDIR}/adminguide/
+	${INSTALL_MAN} ${WRKSRC}/doc/adminguide/man1/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/adminguide/man7/*.7 ${STAGEDIR}${MAN1PREFIX}/man/man7
+	${INSTALL_SCRIPT} ${WRKDIR}/slon-mkservice.sh ${STAGEDIR}${PREFIX}/sbin/slon-mkservice
+	${INSTALL_DATA} ${FILESDIR}/slon.conf-sample ${STAGEDIR}${PREFIX}/etc
 
 .include <bsd.port.mk>
