@@ -1,6 +1,6 @@
-A free networking API that provides reliable UDP and high level networking
-constructs. Although RakNet can be used for any networked application, it
-was developed specifically for rapid development of online games and the
+RakNet is a free networking API that provides reliable UDP and high level
+networking constructs. Although it can be used for any networked application,
+it was developed specifically for rapid development of online games and the
 addition of multiplayer to single player games.
 
 WWW: http://www.jenkinssoftware.com/

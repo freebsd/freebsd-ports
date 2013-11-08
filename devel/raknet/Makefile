@@ -3,7 +3,7 @@
 
 PORTNAME=	raknet
 PORTVERSION=	3.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel net
 MASTER_SITES=	http://www.jenkinssoftware.com/raknet/downloads/ \
@@ -30,10 +30,8 @@ USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(cpp|h|txt)
 
 USE_GCC=	yes
-USE_GMAKE=	yes
-USES=		cmake
+USES=		cmake gmake
 
-NO_STAGE=	yes
 # XXX Do not provide Samples for the following reason :
 # - potential licensing problems
 # XXX Disable build of DependentExtensions for the following reasons :
@@ -43,8 +41,6 @@ NO_STAGE=	yes
 # - no install target is provided, which prevents us to determine what files
 #   have to be provided by the port to have working extensions
 CMAKE_ARGS+=	-DDISABLEDEPENDENCIES:BOOL=ON
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f -a '(' -name '*.cpp' -o -name '*.h' ')' -print0 \
@@ -56,18 +52,16 @@ pre-install:
 		| ${XARGS} -0 -x -n10 ${RM}
 
 do-install:
-	@${MKDIR} ${PREFIX}/include/raknet
-	@(cd ${WRKSRC}/Source/ && ${COPYTREE_SHARE} \*.h ${PREFIX}/include/raknet)
-	@${MKDIR} ${PREFIX}/lib
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/raknet
+	@(cd ${WRKSRC}/Source/ && ${COPYTREE_SHARE} \*.h ${STAGEDIR}${PREFIX}/include/raknet)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib
 	@${INSTALL_LIB} ${WRKSRC}/Lib/DLL/libRakNetDynamic.so \
-		${PREFIX}/lib/libraknet.so.0
-	@${LN} ${PREFIX}/lib/libraknet.so.0 ${PREFIX}/lib/libraknet.so
+		${STAGEDIR}${PREFIX}/lib/libraknet.so.0
+	@${LN} -sf ${PREFIX}/lib/libraknet.so.0 ${STAGEDIR}${PREFIX}/lib/libraknet.so
 	@${INSTALL_LIB} ${WRKSRC}/Lib/LibStatic/libRakNetStatic.a \
-		${PREFIX}/lib/libraknet.a
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}/Help
-	@(cd ${WRKSRC}/Help/ && ${COPYTREE_SHARE} \* ${DOCSDIR}/Help)
-	@${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}/
-.endif
+		${STAGEDIR}${PREFIX}/lib/libraknet.a
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/Help
+	@(cd ${WRKSRC}/Help/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}/Help)
+	@${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
