@@ -4,7 +4,7 @@
 PORTNAME=	msql
 PORTVERSION=	3.8
 CATEGORIES=	databases
-PKGNAMESUFX=	3
+PKGNAMESUFFIX=	3
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Version 3 of the Mini SQL relational database system
