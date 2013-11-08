@@ -30,7 +30,6 @@ PEAR_PHPUNIT_DESC=	PEAR::PHPUnit support
 PEAR_XML_UTIL_DESC=	PEAR::XML_Util support
 PEAR_HTML_TABLE_DESC=	PEAR::HTML_Table
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPEAR_XML_BEAUTIFIER}

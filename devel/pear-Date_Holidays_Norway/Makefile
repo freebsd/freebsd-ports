@@ -13,7 +13,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 CATEGORY=	Date
 FILES=		Holidays/Driver/Norway.php
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

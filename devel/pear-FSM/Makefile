@@ -17,7 +17,6 @@ LATEST_LINK=	pear-${PORTNAME}
 OPTIONS_DEFINE=	PEAR_GRAPGHVIZ
 PEAR_GRAPGHVIZ_DESC=	PEAR::GraphViz support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPEAR_GRAPHVIZ}

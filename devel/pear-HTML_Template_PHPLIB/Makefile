@@ -22,7 +22,6 @@ do-install-tests-msg: .USE
 	@${ECHO_MSG} "     (These tests also require PEAR::PHPUnit - see"
 	@${ECHO_MSG} "     <http://pear.php.net/package/PHPUnit>;;;)."
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

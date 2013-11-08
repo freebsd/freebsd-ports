@@ -42,7 +42,6 @@ TOKENIZER_DESC=	Enable Tokenizer support
 
 USE_PHP=	dom spl pcre
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MJSON}

@@ -22,7 +22,6 @@ RUN_DEPENDS=	pear>=1.4.2:${PORTSDIR}/devel/pear \
 PEAR_CHANNEL=	ezc
 PEAR_AUTOINSTALL=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

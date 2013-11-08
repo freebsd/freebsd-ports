@@ -18,7 +18,6 @@ PEAR_XML_UTIL_DESC=	PEAR::XML_Util support
 
 PEAR_AUTOINSTALL=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPEAR_XML_PARSER}
