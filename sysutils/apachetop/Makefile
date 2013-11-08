@@ -12,8 +12,7 @@ COMMENT=	Apache RealTime log stats
 
 GNU_CONFIGURE=	yes
 
-MAN1=		apachetop.1
-PLIST_FILES=	bin/apachetop
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
 OPTIONS_DEFINE=	ADNS FAM PCRE
 ADNS_DESC=	Asynchronous-capable DNS support
@@ -27,7 +26,6 @@ FAM_CONFIGURE_ON=	--with-fam=${LOCALBASE}
 PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 PCRE_COFNIGURE_ON=	--with-pcre=${LOCALBASE}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E -e 's,struct (circle_struct),\1,g' \
 		${WRKSRC}/src/hits_circle.*
