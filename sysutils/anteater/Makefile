@@ -12,8 +12,6 @@ COMMENT=	MTA log analyzer
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
-MAN1=		anteater.1
-PLIST_FILES=	bin/anteater
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

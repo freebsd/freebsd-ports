@@ -20,7 +20,26 @@ lib/autopsy/Vs.pm
 lib/autopsy/conf.pl
 lib/autopsy/define.pl
 lib/autopsy/search.pl
-@dirrm lib/autopsy
+man/man1/autopsy.1.gz
+%%DATADIR%%/help/blank.html
+%%DATADIR%%/help/caseman.html
+%%DATADIR%%/help/data_mode.html
+%%DATADIR%%/help/file_category.html
+%%DATADIR%%/help/file_mode.html
+%%DATADIR%%/help/fs_mode.html
+%%DATADIR%%/help/general.html
+%%DATADIR%%/help/grep.html
+%%DATADIR%%/help/grep_lim.html
+%%DATADIR%%/help/hash_db.html
+%%DATADIR%%/help/index.html
+%%DATADIR%%/help/int_mode.html
+%%DATADIR%%/help/menu.html
+%%DATADIR%%/help/meta_mode.html
+%%DATADIR%%/help/sequencer.html
+%%DATADIR%%/help/srch_mode.html
+%%DATADIR%%/help/temp.html
+%%DATADIR%%/help/timezones.html
+%%DATADIR%%/help/tl.html
 %%DATADIR%%/pict/back_pix.jpg
 %%DATADIR%%/pict/but_addnote.jpg
 %%DATADIR%%/pict/but_alloc_list.jpg
@@ -126,7 +145,6 @@ lib/autopsy/search.pl
 %%DATADIR%%/pict/menu_t_cg_cur.jpg
 %%DATADIR%%/pict/menu_t_cg_link.jpg
 %%DATADIR%%/pict/menu_t_cg_org.jpg
-%%DATADIR%%/pict/sanit_b_san.jpg
 %%DATADIR%%/pict/menu_t_hg_cur.jpg
 %%DATADIR%%/pict/menu_t_hg_link.jpg
 %%DATADIR%%/pict/menu_t_hg_org.jpg
@@ -134,6 +152,7 @@ lib/autopsy/search.pl
 %%DATADIR%%/pict/menu_t_hm_link.jpg
 %%DATADIR%%/pict/menu_t_hm_org.jpg
 %%DATADIR%%/pict/sanit_b_norm.jpg
+%%DATADIR%%/pict/sanit_b_san.jpg
 %%DATADIR%%/pict/sanitized.jpg
 %%DATADIR%%/pict/srch_b_lorig.jpg
 %%DATADIR%%/pict/srch_b_lun.jpg
@@ -149,25 +168,7 @@ lib/autopsy/search.pl
 %%DATADIR%%/pict/tl_t_tl_link.jpg
 %%DATADIR%%/pict/tl_t_view_cur.jpg
 %%DATADIR%%/pict/tl_t_view_link.jpg
-%%DATADIR%%/help/blank.html
-%%DATADIR%%/help/caseman.html
-%%DATADIR%%/help/data_mode.html
-%%DATADIR%%/help/file_category.html
-%%DATADIR%%/help/file_mode.html
-%%DATADIR%%/help/fs_mode.html
-%%DATADIR%%/help/general.html
-%%DATADIR%%/help/grep.html
-%%DATADIR%%/help/grep_lim.html
-%%DATADIR%%/help/hash_db.html
-%%DATADIR%%/help/index.html
-%%DATADIR%%/help/int_mode.html
-%%DATADIR%%/help/menu.html
-%%DATADIR%%/help/meta_mode.html
-%%DATADIR%%/help/sequencer.html
-%%DATADIR%%/help/srch_mode.html
-%%DATADIR%%/help/temp.html
-%%DATADIR%%/help/timezones.html
-%%DATADIR%%/help/tl.html
 @dirrm %%DATADIR%%/pict
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
+@dirrm lib/autopsy
