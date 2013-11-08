@@ -16,15 +16,11 @@ PLIST_SUB+=	LOCALBASE=${LOCALBASE}
 
 USE_AUTOTOOLS=	autoconf213
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_XORG=	x11 sm xaw xproto
 USE_GNOME=	atk gconf2 glib20 gnomevfs2 gtk20 libglade2 libidl libxml2 orbit2 pango
-USES=		pkgconfig
+USES=		gmake pkgconfig
 HAS_CONFIGURE=	yes
 
-MAN1=		rox.1
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ENV=		APP_DIR=${WRKSRC}/ROX-Filer
@@ -44,16 +40,13 @@ post-configure:
 	@${TOUCH} ${CONFIGURE_WRKSRC}/config.status
 
 do-install:
-	@${MKDIR} ${PREFIX}/apps/ROX-Filer
-	@cd ${WRKSRC}/ROX-Filer && ${CP} -r .DirIcon AppInfo.xml AppRun Help Messages Options.xml ROX ROX-Filer Templates.ui images style.css subclasses ${PREFIX}/apps/ROX-Filer
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/apps/ROX-Filer
-	@cd ${WRKSRC} && ${CP} -r Choices ${PREFIX}/share/
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/Choices
-	@${CAT} ${FILESDIR}/rox | ${SED} -e "s|%%PREFIX%%|${PREFIX}|" > ${PREFIX}/bin/rox
-	@${CHMOD} 755 ${PREFIX}/bin/rox
-	@${INSTALL_MAN} ${WRKSRC}/rox.1 ${PREFIX}/man/man1
-	@${INSTALL_DATA} ${WRKSRC}/rox.xml ${PREFIX}/share/mime/packages
-	@${LOCALBASE}/bin/update-mime-database ${PREFIX}/share/mime
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/apps/ROX-Filer
+	cd ${WRKSRC}/ROX-Filer && ${CP} -r .DirIcon AppInfo.xml AppRun Help Messages Options.xml ROX ROX-Filer Templates.ui images style.css subclasses ${STAGEDIR}${PREFIX}/apps/ROX-Filer
+	cd ${WRKSRC} && ${CP} -r Choices ${STAGEDIR}${PREFIX}/share/
+	${CAT} ${FILESDIR}/rox | ${SED} -e "s|%%PREFIX%%|${PREFIX}|" > ${STAGEDIR}${PREFIX}/bin/rox
+	${CHMOD} 755 ${STAGEDIR}${PREFIX}/bin/rox
+	${INSTALL_MAN} ${WRKSRC}/rox.1 ${STAGEDIR}${PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/mime/packages
+	${INSTALL_DATA} ${WRKSRC}/rox.xml ${STAGEDIR}${PREFIX}/share/mime/packages
 
 .include <bsd.port.post.mk>
