@@ -379,6 +379,7 @@ CONFIGURE_ARGS+=--enable-altivec # VLC's config script doesn't know to do this
 CC=	clang
 CXX=	clang++
 CPP=	clang-cpp
+CFLAGS+=	-fomit-frame-pointer
 .else
 .if ${ARCH} == "i386"
 USE_GCC?=	yes # sse/3dnow detection on i386 needs newer GCC
