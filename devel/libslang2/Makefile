@@ -45,7 +45,7 @@ PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 ICONV_CONFIGURE_WITH=	iconv
 ICONV_USES=		iconv
 ONIG_CONFIGURE_WITH=	onig
-ONI_LIB_DEPENDS=	libonig.so:${PORTSDIR}/devel/oniguruma4
+ONIG_LIB_DEPENDS=	libonig.so:${PORTSDIR}/devel/oniguruma4
 
 post-patch:
 	@${REINPLACE_CMD} -E 's,doc/slsh,doc/slang/v\@slang_major_version\@,' \
