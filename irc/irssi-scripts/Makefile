@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	irssi-scripts
-PORTVERSION=	20130629
+PORTVERSION=	20131030
 CATEGORIES=	irc
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/i/${PORTNAME}/
 DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
@@ -16,9 +16,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/share/irssi/scripts
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/*.pl ${PREFIX}/share/irssi/scripts
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/irssi/scripts
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/*.pl ${STAGEDIR}${PREFIX}/share/irssi/scripts
 
 .include <bsd.port.mk>
