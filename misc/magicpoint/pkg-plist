@@ -8,4 +8,10 @@ lib/X11/mgp/default.mgp
 lib/X11/mgp/mgp1.jpg
 lib/X11/mgp/mgp2.jpg
 lib/X11/mgp/mgp3.jpg
+man/man1/mgp.1.gz
+man/man1/mgp2ps.1.gz
+man/man1/mgpembed.1.gz
+man/man1/mgpnet.1.gz
+man/man1/xwintoppm.1.gz
+man/man1/xmindpath.1.gz
 @dirrm lib/X11/mgp
