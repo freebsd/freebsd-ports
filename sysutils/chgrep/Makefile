@@ -13,14 +13,12 @@ COMMENT=	Fast string substitution across multiple files
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-MAN1=		chgrep.1
-PLIST_FILES=	bin/chgrep
+PLIST_FILES=	bin/chgrep man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/chgrep \
-		${PREFIX}/bin
+		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/chgrep.1 \
-		${MANPREFIX}/man/man1
+		${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

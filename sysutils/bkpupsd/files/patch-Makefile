@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Aug  3 13:02:37 1997
-+++ Makefile	Wed Aug  4 13:43:37 1999
+--- Makefile.orig	1997-08-04 01:02:37.000000000 +0800
++++ Makefile	2013-11-08 20:53:42.000000000 +0800
 @@ -5,24 +5,22 @@
  # ver 1.0 A
  #
@@ -24,10 +24,10 @@
 -	cp ./doc/bkpupsd.8 ${MANDIR}/man8/bkpupsd.8
 -	chown root.wheel ./scripts/*
 -	cp -fR ./scripts ${SCRIPTDIR}/bkpupsd
-+	${BSD_INSTALL_PROGRAM} ./bin/bkpupsd ${SBINDIR}
-+	${BSD_INSTALL_MAN} ./doc/bkpupsd.8 ${MANDIR}
-+	mkdir -p ${SCRIPTDIR}
-+	(cd scripts; for i in *; do ${BSD_INSTALL_SCRIPT} $$i ${SCRIPTDIR}; done)
++	${BSD_INSTALL_PROGRAM} ./bin/bkpupsd ${DESTDIR}${SBINDIR}
++	${BSD_INSTALL_MAN} ./doc/bkpupsd.8 ${DESTDIR}${MANDIR}
++	mkdir -p ${DESTDIR}${SCRIPTDIR}
++	(cd scripts; for i in *; do ${BSD_INSTALL_SCRIPT} $$i ${DESTDIR}${SCRIPTDIR}; done)
  
  clean:
  	rm -f ./bin/bkpupsd

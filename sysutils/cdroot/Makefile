@@ -10,5 +10,4 @@ MASTER_SITE_SUBDIR=	bsd
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scripts to automate setting up a bootable CD-ROM based FreeBSD system
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

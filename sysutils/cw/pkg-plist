@@ -121,5 +121,13 @@ lib/cw/wc
 lib/cw/whereis
 lib/cw/who
 lib/cw/xferlog@
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIB
+%%PORTDOCS%%%%DOCSDIR%%/FILES
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/PLATFORM
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/VERSION
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/cw/etc
 @dirrm lib/cw
