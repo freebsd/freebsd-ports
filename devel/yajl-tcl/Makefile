@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yajl-tcl
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	devel
 
 MAINTAINER=	tcltk@FreeBSD.org
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libyajl.so:${PORTSDIR}/devel/yajl
 USE_GITHUB=	yes
 GH_ACCOUNT=	flightaware
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	eab11f1
+GH_COMMIT=	06b7c59
 
 USES+=		tcl:85+
 USE_AUTOTOOLS=	autoconf
