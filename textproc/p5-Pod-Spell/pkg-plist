@@ -2,6 +2,11 @@ bin/podspell
 %%SITE_PERL%%/Pod/Spell.pm
 %%SITE_PERL%%/Pod/Wordlist.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Spell/.packlist
+%%SITE_PERL%%/auto/share/dist/Pod-Spell/wordlist
+man/man1/podspell.1.gz
+%%PERL5_MAN3%%/Pod::Spell.3.gz
+%%PERL5_MAN3%%/Pod::Wordlist.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Spell
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
+@dirrmtry %%SITE_PERL%%/auto/share/dist/Pod-Spell
 @dirrmtry %%SITE_PERL%%/Pod
