@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.berlios.de/pub/smake/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./a/}
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable make program with automake features
 
 LICENSE=	CDDL GPLv2
@@ -24,6 +24,6 @@ MAKE_ARGS=	INS_BASE=${PREFIX} DEFMANBASE=. CC=${CC} CCOM=${CC}
 RULEUSED=	"`${WRKSRC}/conf/oarch.sh`"
 PLIST_SUB=	RULESUSED="${RULEUSED}"
 
-BROKEN_i386=	fails to find correct configuration file
+BROKEN=		fails to find correct configuration file
 
 .include <bsd.port.mk>
