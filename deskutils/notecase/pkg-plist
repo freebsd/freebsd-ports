@@ -34,9 +34,9 @@ share/locale/ta/LC_MESSAGES/notecase.mo
 share/locale/tr/LC_MESSAGES/notecase.mo
 share/locale/zh_CN/LC_MESSAGES/notecase.mo
 share/locale/zh_TW/LC_MESSAGES/notecase.mo
-share/mime/application/notecase-enc.xml
-share/mime/application/notecase-plain.xml
 share/mime/packages/notecase.xml
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
 share/pixmaps/notecase.xpm
 @dirrmtry share/locale/fr_CA/LC_MESSAGES
 @dirrmtry share/locale/fr_CA
