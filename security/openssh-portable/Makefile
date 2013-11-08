@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openssh
-DISTVERSION=	6.3p1
+DISTVERSION=	6.4p1
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
@@ -80,7 +80,8 @@ LPK_USE=		OPENLDAP=yes
 # See http://www.roumenpetrov.info/openssh/
 X509_VERSION=		7.6
 X509_PATCH_SITES=	http://www.roumenpetrov.info/openssh/x509-${X509_VERSION}/:x509
-X509_PATCHFILES=	${PORTNAME}-6.3p1+x509-${X509_VERSION}.diff.gz:-p1:x509
+X509_PATCHFILES=	openssh-6.4-x509-glue.patch \
+			${PORTNAME}-6.3p1+x509-${X509_VERSION}.diff.gz:-p1:x509
 
 # See https://bugzilla.mindrot.org/show_bug.cgi?id=2016
 SCTP_PATCHFILES=	${PORTNAME}-sctp-2329.patch.gz
@@ -107,9 +108,10 @@ PORTDOCS=	*
 # http://www.psc.edu/index.php/hpn-ssh
 .if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MAES_THREADED} || ${PORT_OPTIONS:MNONECIPHER}
 HPN_VERSION=		14v2
+HPN_DISTVERSION=	6.3p1
 PATCH_SITES+=		${MASTER_SITE_SOURCEFORGE:S/$/:hpn/}
-PATCH_SITE_SUBDIR+=	hpnssh/HPN-SSH%20${HPN_VERSION}%20${DISTVERSION}/:hpn
-PATCHFILES+=		${PORTNAME}-${DISTVERSION}-hpnssh${HPN_VERSION}.diff.gz:-p1:hpn
+PATCH_SITE_SUBDIR+=	hpnssh/HPN-SSH%20${HPN_VERSION}%20${HPN_DISTVERSION}/:hpn
+PATCHFILES+=		${PORTNAME}-${HPN_DISTVERSION}-hpnssh${HPN_VERSION}.diff.gz:-p1:hpn
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-hpn-build-options
 # Remove HPN if only AES requested
 .  if !${PORT_OPTIONS:MHPN}
