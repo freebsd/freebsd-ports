@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	String-Truncate
-PORTVERSION=	1.100600
+PORTVERSION=	1.100601
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		String::Truncate.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
