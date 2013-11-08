@@ -7,29 +7,26 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/dssi/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	DSSI softsynth that models the sound generation of a Yamaha DX7
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	dssialsacompat:${PORTSDIR}/audio/libdssialsacompat \
-		lo:${PORTSDIR}/audio/liblo \
-		jack:${PORTSDIR}/audio/jack
+LIB_DEPENDS=	libdssialsacompat.so:${PORTSDIR}/audio/libdssialsacompat \
+		liblo.so:${PORTSDIR}/audio/liblo \
+		libjack.so:${PORTSDIR}/audio/jack
 BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi
 
-GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
-NO_STAGE=	yes
+GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 
 PORTDOCS=	AUTHORS ChangeLog README TODO
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

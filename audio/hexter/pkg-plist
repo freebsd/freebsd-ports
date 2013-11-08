@@ -1,5 +1,5 @@
-lib/dssi/hexter.so
 lib/dssi/hexter.la
+lib/dssi/hexter.so
 lib/dssi/hexter/hexter_gtk
 %%DATADIR%%/dx7_roms.dx7
 %%DATADIR%%/fb01_roms_converted_12.dx7
@@ -8,3 +8,4 @@ lib/dssi/hexter/hexter_gtk
 %%DATADIR%%/tx7_roms.dx7
 @dirrm %%DATADIR%%
 @dirrm lib/dssi/hexter
+@dirrmtry lib/dssi
