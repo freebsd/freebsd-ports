@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nmap/Parser/.packlist
 %%SITE_PERL%%/Nmap/Parser.pm
+%%PERL5_MAN3%%/Nmap::Parser.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nmap/Parser
 @dirrmtry %%SITE_PERL%%/Nmap
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nmap
