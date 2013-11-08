@@ -3,6 +3,7 @@
 
 PORTNAME=	audiofile
 PORTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	audio ruby
 MASTER_SITES=	SF/ruby-${PORTNAME}/ruby-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby binding to the audiofile library
 
-LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
+LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
 
 USE_RUBY=	yes
 NO_STAGE=	yes

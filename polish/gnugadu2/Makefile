@@ -3,7 +3,7 @@
 
 PORTNAME=	gnugadu2
 PORTVERSION=	2.3.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	polish net-im
 MASTER_SITES=	SF/ggadu/gg2/${PORTVERSION}
 DISTNAME=	gg2-${PORTVERSION}
@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gadu-Gadu IM network client
 
 LIB_DEPENDS=	gadu.3:${PORTSDIR}/polish/libgadu \
-		audiofile.0:${PORTSDIR}/audio/libaudiofile
+		libaudiofile.so:${PORTSDIR}/audio/libaudiofile
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

@@ -2,7 +2,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.17.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF/${PORTNAME}/mpd/${PORTVERSION}
 DISTNAME=	mpd-${PORTVERSION}
@@ -114,7 +114,7 @@ CONFIGURE_ARGS+=--disable-httpd-output
 .endif
 
 .if ${PORT_OPTIONS:MWAV}
-LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
+LIB_DEPENDS+=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
 .else
 CONFIGURE_ARGS+=--disable-audiofile
 .endif

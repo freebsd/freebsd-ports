@@ -2,6 +2,7 @@
 
 PORTNAME=	soundmodem
 PORTVERSION=	0.17
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.baycom.org/~tom/ham/soundmodem/ \
 		http://chronos.org.uk/distfiles/
@@ -9,7 +10,7 @@ MASTER_SITES=	http://www.baycom.org/~tom/ham/soundmodem/ \
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio sound modem
 
-LIB_DEPENDS=	audiofile:${PORTSDIR}/audio/libaudiofile
+LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
 
 CONFIGURE_ARGS=	--disable-alsatest
 WRKSRC=		${WRKDIR}/${DISTNAME}
