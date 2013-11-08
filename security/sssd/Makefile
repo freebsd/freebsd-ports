@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sssd
-DISTVERSION=	1.9.5
+DISTVERSION=	1.9.6
 CATEGORIES=	security
 MASTER_SITES=   https://fedorahosted.org/released/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -15,7 +15,6 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 		libtalloc.so:${PORTSDIR}/devel/talloc \
 		libtevent.so:${PORTSDIR}/devel/tevent \
-		libxslt.so:${PORTSDIR}/textproc/libxslt \
 		libtdb.so:${PORTSDIR}/databases/tdb \
 		libldb.so:${PORTSDIR}/databases/ldb \
 		libcares.so:${PORTSDIR}/dns/c-ares \
@@ -30,6 +29,7 @@ LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 		libinotify.so:${PORTSDIR}/devel/libinotify
 BUILD_DEPENDS=	xmlcatalog:${PORTSDIR}/textproc/libxml2 \
 		docbook-xsl>=1:${PORTSDIR}/textproc/docbook-xsl \
+		xsltproc:${PORTSDIR}/textproc/libxslt \
 		xmlcatmgr:${PORTSDIR}/textproc/xmlcatmgr \
 		krb5>=1.10:${PORTSDIR}/security/krb5 \
 		nsupdate:${PORTSDIR}/dns/bind99
@@ -44,14 +44,13 @@ CONFIGURE_ARGS=	--with-selinux=no --with-semanage=no \
 		--with-db-path=/var/db/sss --with-pipe-path=/var/run/sss \
 		--with-pubconf-path=/var/run/sss --with-mcache-path=/var/db/sss_mc \
 		--with-unicode-lib=libunistring --with-autofs=no
-CFLAGS+=	 -fstack-protector-all -Wno-format
-LDFLAGS+=	-L${LOCALBASE}/lib -linotify
+CFLAGS=		-fstack-protector-all
 PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 #DEBUG_FLAGS=  -g
 MAKE_ENV+=	LINGUAS="bg de eu es fr hu id it ja nb nl pl pt ru sv tg tr uk zh_CN zh_TW"
 SUB_FILES=	pkg-message
 
-USE_AUTOTOOLS=	autoconf automake aclocal
+USE_AUTOTOOLS=	autoconf automake aclocal libtool
 AUTOMAKE_ARGS= --add-missing
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
@@ -63,9 +62,6 @@ PORTDATA=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800107
-IGNORE=		is not supported prior to 8.0-RELEASE
-.endif
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not link on ia64, powerpc, or sparc64
 .endif
@@ -73,11 +69,11 @@ BROKEN=		Does not link on ia64, powerpc, or sparc64
 post-patch:
 	@${REINPLACE_CMD} -e 's|SIGCLD|SIGCHLD|g' ${WRKSRC}/src/util/signal.c
 	@${REINPLACE_CMD} -e '/#define SIZE_T_MAX ((size_t) -1)/d' \
-	    	${WRKSRC}/src/util/util.h
+		${WRKSRC}/src/util/util.h
 	@${REINPLACE_CMD} -e '/pam_misc/d' \
-	    	${WRKSRC}/src/sss_client/pam_test_client.c
+		${WRKSRC}/src/sss_client/pam_test_client.c
 	@${REINPLACE_CMD} -e 's|security/pam_misc.h||g' \
-	    	${WRKSRC}/configure* ${WRKSRC}/src/external/pam.m4
+		${WRKSRC}/configure* ${WRKSRC}/src/external/pam.m4
 	@${REINPLACE_CMD} -e 's|NSS_STATUS_NOTFOUND|NS_NOTFOUND|g' \
 		-e 's|NSS_STATUS_UNAVAIL|NS_UNAVAIL|g' \
 		-e 's|NSS_STATUS_TRYAGAIN|NS_TRYAGAIN|g' \
@@ -85,7 +81,7 @@ post-patch:
 		-e 's|NSS_STATUS_SUCCESS|NS_SUCCESS|g' \
 		${WRKSRC}/src/sss_client/common.c
 	@${REINPLACE_CMD} -e 's|security/_pam_macros.h|pam_macros.h|g' \
-	    	${WRKSRC}/src/sss_client/sss_pam_macros.h
+		${WRKSRC}/src/sss_client/sss_pam_macros.h
 	@${REINPLACE_CMD} -e 's|#include <security/pam_modutil.h>||g' \
 		-e 's|PAM_BAD_ITEM|PAM_USER_UNKNOWN|g' \
 		-e 's|security/pam_ext.h|security/pam_appl.h|g' \
@@ -93,7 +89,7 @@ post-patch:
 		-e 's|pam_vsyslog(pamh,|vsyslog(|g' \
 		${WRKSRC}/src/sss_client/pam_sss.c
 	@${REINPLACE_CMD} -e '/..MAKE. ..AM_MAKEFLAGS. install-data-hook/d' \
-	    	${WRKSRC}/Makefile.in
+		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|' \
 		-e 's|install-data-hook install-dist_initSCRIPTS|install-dist_initSCRIPTS|g' \
 		-e 's|install-data-hook|notinstall-data-hook|g' \
@@ -104,6 +100,7 @@ post-patch:
 		${WRKSRC}/src/man/*xml
 	@${CP} ${FILESDIR}/pam_macros.h ${WRKSRC}/pam_macros.h
 	@${CP} ${FILESDIR}/bsdnss.c ${WRKSRC}/src/sss_client/bsdnss.c
+	@${CP} ${FILESDIR}/sss_bsd_errno.h ${WRKSRC}/src/util/sss_bsd_errno.h
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/examples/sssd-example.conf ${STAGEDIR}${ETCDIR}/sssd.conf.sample

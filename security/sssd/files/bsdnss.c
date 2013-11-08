@@ -7,37 +7,43 @@
 #include <netdb.h>
 
 extern enum nss_status _nss_sss_getgrent_r(struct group *, char *, size_t,
-    int *);
+                                           int *);
 extern enum nss_status _nss_sss_getgrnam_r(const char *, struct group *,
-    char *, size_t, int *);
+                                           char *, size_t, int *);
 extern enum nss_status _nss_sss_getgrgid_r(gid_t gid, struct group *, char *,
-    size_t, int *);
+                                           size_t, int *);
 extern enum nss_status _nss_sss_setgrent(void);
 extern enum nss_status _nss_sss_endgrent(void);
 
 extern enum nss_status _nss_sss_getpwent_r(struct passwd *, char *, size_t,
-    int *);
+                                           int *);
 extern enum nss_status _nss_sss_getpwnam_r(const char *, struct passwd *,
-    char *, size_t, int *);
+                                           char *, size_t, int *);
 extern enum nss_status _nss_sss_getpwuid_r(gid_t gid, struct passwd *, char *,
-    size_t, int *);
+                                           size_t, int *);
 extern enum nss_status _nss_sss_setpwent(void);
 extern enum nss_status _nss_sss_endpwent(void);
 
-extern enum nss_status _nss_sss_gethostbyname_r (const char *name, struct hostent * result,
-			   char *buffer, size_t buflen, int *errnop,
-			   int *h_errnop);
+extern enum nss_status _nss_sss_gethostbyname_r(const char *name,
+                                                struct hostent * result,
+                                                char *buffer, size_t buflen,
+                                                int *errnop,
+                                                int *h_errnop);
 
-extern enum nss_status _nss_sss_gethostbyname2_r (const char *name, int af, struct hostent * result,
-			    char *buffer, size_t buflen, int *errnop,
-			    int *h_errnop);
-extern enum nss_status _nss_sss_gethostbyaddr_r (struct in_addr * addr, int len, int type,
-			   struct hostent * result, char *buffer,
-			   size_t buflen, int *errnop, int *h_errnop);
+extern enum nss_status _nss_sss_gethostbyname2_r(const char *name, int af,
+                                                 struct hostent * result,
+                                                 char *buffer, size_t buflen,
+                                                 int *errnop,
+                                                 int *h_errnop);
+extern enum nss_status _nss_sss_gethostbyaddr_r(struct in_addr * addr, int len,
+                                                int type,
+                                                struct hostent * result,
+                                                char *buffer, size_t buflen,
+                                                int *errnop, int *h_errnop);
 
-extern enum nss_status _nss_sss_getgroupmembership(const char *uname, gid_t agroup, gid_t *groups,
-						   int maxgrp, int *grpcnt);
-
+extern enum nss_status _nss_sss_getgroupmembership(const char *uname,
+                                                   gid_t agroup, gid_t *groups,
+                                                   int maxgrp, int *grpcnt);
 
 NSS_METHOD_PROTOTYPE(__nss_compat_getgroupmembership);
 NSS_METHOD_PROTOTYPE(__nss_compat_getgrnam_r);
@@ -91,24 +97,24 @@ static ns_mtab methods[] = {
 
 ns_mtab *
 nss_module_register(const char *source, unsigned int *mtabsize,
-    nss_module_unregister_fn *unreg)
+                    nss_module_unregister_fn *unreg)
 {
-	*mtabsize = sizeof(methods)/sizeof(methods[0]);
-	*unreg = NULL;
-	return (methods);
+    *mtabsize = sizeof(methods)/sizeof(methods[0]);
+    *unreg = NULL;
+    return (methods);
 }
 
 int __nss_compat_getgroupmembership(void *retval, void *mdata, va_list ap)
 {
   int (*fn)(const char *, gid_t, gid_t *, int, int *);
-  
-  const char      *uname;
-  gid_t           agroup;
-  gid_t           *groups;
-  int             maxgrp;
-  int             *grpcnt;
-  int 		errnop;
-  enum nss_status  status;
+
+  const char *uname;
+  gid_t agroup;
+  gid_t *groups;
+  int maxgrp;
+  int *grpcnt;
+  int errnop = 0;
+  enum nss_status status;
 
   fn = mdata;
   uname = va_arg(ap, const char *);
@@ -123,65 +129,68 @@ int __nss_compat_getgroupmembership(void *retval, void *mdata, va_list ap)
 
 int __nss_compat_gethostbyname(void *retval, void *mdata, va_list ap)
 {
-	enum nss_status 	(*fn)(const char *, struct hostent *, char *, size_t, int *, int *);
-	const char 	*name;
-	struct hostent 	*result;
-	char 		buffer[1024];
-	size_t 		buflen = 1024;
-	int 		errnop;
-	int		h_errnop;
-	int		af;
-	enum nss_status	status;
-	fn = mdata;
-	name = va_arg(ap, const char*);
-	af = va_arg(ap,int);
-	result = va_arg(ap,struct hostent *);
-	status = fn(name, result, buffer, buflen, &errnop, &h_errnop);
-	status = __nss_compat_result(status,errnop);
-	h_errno = h_errnop;
-	return (status);
+    enum nss_status (*fn)(const char *, struct hostent *, char *, size_t, int *, int *);
+    const char *name;
+    struct hostent *result;
+    char buffer[1024];
+    size_t buflen = 1024;
+    int errnop;
+    int h_errnop;
+    int af;
+    enum nss_status status;
+
+    fn = mdata;
+    name = va_arg(ap, const char*);
+    af = va_arg(ap,int);
+    result = va_arg(ap,struct hostent *);
+    status = fn(name, result, buffer, buflen, &errnop, &h_errnop);
+    status = __nss_compat_result(status,errnop);
+    h_errno = h_errnop;
+    return (status);
 }
 
 int __nss_compat_gethostbyname2(void *retval, void *mdata, va_list ap)
 {
-	enum nss_status 	(*fn)(const char *, struct hostent *, char *, size_t, int *, int *);
-	const char 	*name;
-	struct hostent 	*result;
-	char 		buffer[1024];
-	size_t 		buflen = 1024;
-	int 		errnop;
-	int		h_errnop;
-	int		af;
-	enum nss_status	status;
-	fn = mdata;
-	name = va_arg(ap, const char*);
-	af = va_arg(ap,int);
-	result = va_arg(ap,struct hostent *);
-	status = fn(name, result, buffer, buflen, &errnop, &h_errnop);
-	status = __nss_compat_result(status,errnop);
-	h_errno = h_errnop;
-	return (status);
+    enum nss_status (*fn)(const char *, struct hostent *, char *, size_t, int *, int *);
+    const char *name;
+    struct hostent *result;
+    char buffer[1024];
+    size_t buflen = 1024;
+    int errnop;
+    int h_errnop;
+    int af;
+    enum nss_status status;
+
+    fn = mdata;
+    name = va_arg(ap, const char*);
+    af = va_arg(ap,int);
+    result = va_arg(ap,struct hostent *);
+    status = fn(name, result, buffer, buflen, &errnop, &h_errnop);
+    status = __nss_compat_result(status,errnop);
+    h_errno = h_errnop;
+    return (status);
 }
 
 int __nss_compat_gethostbyaddr(void *retval, void *mdata, va_list ap)
 {
-	struct in_addr 	*addr;
-	int 		len;
-	int 		type;
-	struct hostent	*result;
-	char 		buffer[1024];
-	size_t		buflen = 1024;
-	int		errnop;
-	int		h_errnop;
-	enum nss_status (*fn)(struct in_addr *, int, int, struct hostent *, char *, size_t, int *, int *);
-	enum nss_status status;
-	fn = mdata;
-	addr = va_arg(ap, struct in_addr*);
-	len = va_arg(ap,int);
-	type = va_arg(ap,int);
-	result = va_arg(ap, struct hostent*);
-	status = fn(addr, len, type, result, buffer, buflen, &errnop, &h_errnop);
-	status = __nss_compat_result(status,errnop);
-	h_errno = h_errnop;
-	return (status);
+    struct in_addr *addr;
+    int len;
+    int type;
+    struct hostent *result;
+    char buffer[1024];
+    size_t buflen = 1024;
+    int errnop;
+    int h_errnop;
+    enum nss_status (*fn)(struct in_addr *, int, int, struct hostent *, char *, size_t, int *, int *);
+    enum nss_status status;
+
+    fn = mdata;
+    addr = va_arg(ap, struct in_addr*);
+    len = va_arg(ap,int);
+    type = va_arg(ap,int);
+    result = va_arg(ap, struct hostent*);
+    status = fn(addr, len, type, result, buffer, buflen, &errnop, &h_errnop);
+    status = __nss_compat_result(status,errnop);
+    h_errno = h_errnop;
+    return (status);
 }

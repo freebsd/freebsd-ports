@@ -1,14 +1,14 @@
-From 18614fe436d525826e260e7a0e8334c41bd2ce37 Mon Sep 17 00:00:00 2001
+From 756e37d0ef957b15d782d5dd87d24e9359541931 Mon Sep 17 00:00:00 2001
 From: Lukas Slebodnik <lukas.slebodnik@intrak.sk>
-Date: Sat, 4 May 2013 16:08:11 +0200
-Subject: [PATCH 03/34] patch-src__confdb__confdb.c
+Date: Wed, 6 Nov 2013 22:01:20 +0100
+Subject: [PATCH 02/25] patch-src__confdb__confdb.c
 
 ---
  src/confdb/confdb.c | 5 +++++
  1 file changed, 5 insertions(+)
 
 diff --git src/confdb/confdb.c src/confdb/confdb.c
-index d70dc36..9ee1f8c 100644
+index 72c74fe..78b69b8 100644
 --- src/confdb/confdb.c
 +++ src/confdb/confdb.c
 @@ -28,6 +28,11 @@
@@ -17,7 +17,7 @@ index d70dc36..9ee1f8c 100644
  
 +char *strchrnul(const char *s, int ch) {
 +       char *ret = strchr(s, ch);
-+       return ret == NULL ? ((char *)s) + strlen(s) : ret;
++       return ret == NULL ? discard_const_p(char, s) + strlen(s) : ret;
 +}
 +
  #define CONFDB_ZERO_CHECK_OR_JUMP(var, ret, err, label) do { \
