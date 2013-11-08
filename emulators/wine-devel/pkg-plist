@@ -1095,7 +1095,7 @@ lib/wine/fakedlls/gameux.dll
 lib/wine/fakedlls/gdi.exe16
 lib/wine/fakedlls/gdi32.dll
 lib/wine/fakedlls/gdiplus.dll
-lib/wine/fakedlls/glu32.dll
+%%X11%%lib/wine/fakedlls/glu32.dll
 lib/wine/fakedlls/gphoto2.ds
 lib/wine/fakedlls/gpkcsp.dll
 lib/wine/fakedlls/hal.dll
@@ -1257,7 +1257,7 @@ lib/wine/fakedlls/olesvr32.dll
 lib/wine/fakedlls/olethk32.dll
 lib/wine/fakedlls/oleview.exe
 %%OPENAL%%lib/wine/fakedlls/openal32.dll
-lib/wine/fakedlls/opengl32.dll
+%%X11%%lib/wine/fakedlls/opengl32.dll
 lib/wine/fakedlls/pdh.dll
 lib/wine/fakedlls/photometadatahandler.dll
 lib/wine/fakedlls/pidgen.dll
@@ -1407,7 +1407,7 @@ lib/wine/fakedlls/winepath.exe
 lib/wine/fakedlls/wineps.drv
 lib/wine/fakedlls/wineps16.drv16
 lib/wine/fakedlls/winevdm.exe
-lib/wine/fakedlls/winex11.drv
+%%X11%%lib/wine/fakedlls/winex11.drv
 lib/wine/fakedlls/wing.dll16
 lib/wine/fakedlls/wing32.dll
 lib/wine/fakedlls/winhelp.exe16
@@ -1465,7 +1465,7 @@ lib/wine/gameux.dll.so
 lib/wine/gdi.exe16.so
 lib/wine/gdi32.dll.so
 lib/wine/gdiplus.dll.so
-lib/wine/glu32.dll.so
+%%X11%%lib/wine/glu32.dll.so
 lib/wine/gphoto2.ds.so
 lib/wine/gpkcsp.dll.so
 lib/wine/hal.dll.so
@@ -1796,7 +1796,7 @@ lib/wine/olesvr32.dll.so
 lib/wine/olethk32.dll.so
 lib/wine/oleview.exe.so
 %%OPENAL%%lib/wine/openal32.dll.so
-lib/wine/opengl32.dll.so
+%%X11%%lib/wine/opengl32.dll.so
 lib/wine/pdh.dll.so
 lib/wine/photometadatahandler.dll.so
 lib/wine/pidgen.dll.so
@@ -1946,7 +1946,7 @@ lib/wine/winepath.exe.so
 lib/wine/wineps.drv.so
 lib/wine/wineps16.drv16.so
 lib/wine/winevdm.exe.so
-lib/wine/winex11.drv.so
+%%X11%%lib/wine/winex11.drv.so
 lib/wine/wing.dll16.so
 lib/wine/wing32.dll.so
 lib/wine/winhelp.exe16.so
