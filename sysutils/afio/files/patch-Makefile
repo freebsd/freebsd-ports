@@ -1,0 +1,62 @@
+--- Makefile.orig	2003-12-21 18:23:51.000000000 +0800
++++ Makefile	2013-11-08 09:56:31.000000000 +0800
+@@ -28,7 +28,7 @@ SHELL=/bin/sh
+ c	= -DHAVEMEMCMP
+ ##  Define DEFFMTCMD to being how to format the media you use the most
+ ##		This is the DEFault FoRMat CoManD. 
+-d	= -DDEFFMTCMD='"fdformat /dev/fd0H1440"'
++d	= -DDEFFMTCMD='"/usr/sbin/fdformat -f 1440 /dev/fd0"'
+ ##  Define LONGZFILE if you want .Z to be tagged on the end of a 14 char
+ ##	file name (or longer for BSD) in the archive when the file is compressed
+ #e	= -DLONGZFILE
+@@ -39,7 +39,7 @@ e2      = -DHAVE_LCHOWN
+ 
+ ##  Define PRG_COMPRESS to get something other than `gzip'.
+ # you need to edit compfile.c (-G option) if you change this line.
+-f	= -DPRG_COMPRESS='"gzip"'
++f	= -DPRG_COMPRESS='"/usr/bin/gzip"'
+ 
+ ## Define HAVEFNMATCH if you want to use the gnu fnmatch() routine for
+ # -y -Y -w -W matching.
+@@ -49,6 +49,11 @@ f	= -DPRG_COMPRESS='"gzip"'
+ 
+ g	= -DHAVEFNMATCH
+ 
++## Define HAVE_PARAM_H if your system has sys/param.h. This is used for BSD
++#  detection.
++
++h 	= -DHAVE_PARAM_H
++
+ # fnmatch() is in the gnu C library, so it is directly available on
+ # Linux.  If your system (e.g. SCO) does not have the gnu C library,
+ # unpack the archive gnu.fnmatch.tar.gz and uncomment the following
+@@ -71,11 +76,14 @@ LARGEFILEFLAGS=-D_FILE_OFFSET_BITS=64 -D
+ MW=
+ #MW=-Wtraditional -Wcast-qual -Wcast-align -Wconversion -pedantic -Wlong-long -Wimplicit -Wuninitialized -W -Wshadow -Wsign-compare -Wstrict-prototypes -Wmissing-declarations
+ 
+-CFLAGS1 = -Wall -Wstrict-prototypes -s -O2 -fomit-frame-pointer ${LARGEFILEFLAGS} ${MW}
++#CFLAGS1 = -Wall -Wstrict-prototypes -s -O2 -fomit-frame-pointer ${LARGEFILEFLAGS} ${MW}
++CFLAGS1 = -fomit-frame-pointer -fno-strength-reduce
+ 
+-CC=gcc
++#CC=gcc
++#CC=cc
+ 
+-CFLAGS = ${CFLAGS1} $1 $2 $3 $4 $5 $6 $7 $8 $9 $a $b $c $d $e ${e2} $f $g $I
++#CFLAGS = ${CFLAGS1} $1 $2 $3 $4 $5 $6 $7 $8 $9 $a $b $c $d $e ${e2} $f $g $I
++CFLAGS += ${CFLAGS1} $1 $2 $3 $4 $5 $6 $7 $8 $9 $a $b $c $d $e $f $g $h $I
+ LDFLAGS =
+ 
+ afio : afio.o compfile.o exten.o match.o $M
+@@ -88,8 +96,9 @@ clean:
+ 	cd regtest; /bin/sh regtest.clean
+ 
+ install: afio
+-	cp afio /usr/local/bin
+-	cp afio.1 /usr/share/man/man1
++	install -cs -o root -g wheel afio ${DESTDIR}${PREFIX}/bin
++	install -c -o root -g wheel afio.1 ${DESTDIR}${PREFIX}/man/man1
++
+ 
+ # generate default list of -E extensions from manpage
+ # note: on sun, I had to change awk command below to nawk or gawk
