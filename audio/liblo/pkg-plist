@@ -13,4 +13,13 @@ lib/liblo.la
 lib/liblo.so
 lib/liblo.so.8
 libdata/pkgconfig/liblo.pc
+man/man3/liblo.3.gz
+man/man3/liblolowlevel.3.gz
+man/man3/lo.h.3.gz
+man/man3/lo_arg.3.gz
+man/man3/lo_lowlevel.h.3.gz
+man/man3/lo_osc_types.h.3.gz
+man/man3/lo_timetag.3.gz
+man/man3/lo_types.h.3.gz
+man/man3/pp.3.gz
 @dirrm include/lo
