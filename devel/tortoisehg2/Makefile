@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tortoisehg
-PORTVERSION=	2.9.1
+PORTVERSION=	2.10
 CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/tortoisehg/targz/downloads/
 
@@ -23,6 +23,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=4.10.2:${PORTSDIR}/devel/py-qt4-co
 
 OPTIONS_DEFINE=	NAUTILUS NLS
 
+NLS_USES=	gettext
+
 NAUTILUS_DESC=	Install TortoiseHG Nautilus extension
 
 OPTIONS_SUB=	yes
@@ -35,12 +37,7 @@ INSTALLS_EGGINFO=yes
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/_path/ s|/usr|${PREFIX}|' ${WRKSRC}/${PYSETUP}
@@ -59,12 +56,8 @@ post-patch:
 .endif
 
 post-install:
-	${MKDIR} ${PREFIX}/share/tortoisehg
-	${INSTALL_DATA} ${WRKSRC}/contrib/mergetools.rc ${PREFIX}/share/tortoisehg/
-	${INSTALL_DATA} ${WRKSRC}/contrib/tortoisehg.desktop ${PREFIX}/share/applications/
-
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/tortoisehg
+	${INSTALL_DATA} ${WRKSRC}/contrib/mergetools.rc ${STAGEDIR}${PREFIX}/share/tortoisehg/
+	${INSTALL_DATA} ${WRKSRC}/contrib/tortoisehg.desktop ${STAGEDIR}${PREFIX}/share/applications/
 
 .include <bsd.port.mk>
