@@ -2,8 +2,10 @@ bin/pigrep
 bin/pire_inline
 include/pire/align.h
 include/pire/any.h
+include/pire/config.h
 include/pire/defs.h
 include/pire/determine.h
+include/pire/easy.h
 include/pire/encoding.h
 include/pire/extra.h
 include/pire/fsm.h
@@ -11,6 +13,7 @@ include/pire/fwd.h
 include/pire/glue.h
 include/pire/partition.h
 include/pire/pire.h
+include/pire/platform.h
 include/pire/re_lexer.h
 include/pire/re_parser.h
 include/pire/run.h
@@ -20,10 +23,10 @@ include/pire/scanners/multi.h
 include/pire/scanners/pair.h
 include/pire/scanners/simple.h
 include/pire/scanners/slow.h
-include/pire/sse.h
 include/pire/static_assert.h
 include/pire/stub/defaults.h
 include/pire/stub/lexical_cast.h
+include/pire/stub/memstreams.h
 include/pire/stub/saveload.h
 include/pire/stub/singleton.h
 include/pire/stub/stl.h
@@ -32,6 +35,10 @@ lib/libpire.a
 lib/libpire.la
 lib/libpire.so
 lib/libpire.so.0
+lib/libpire_unit.a
+lib/libpire_unit.la
+lib/libpire_unit.so
+lib/libpire_unit.so.0
 @dirrm include/pire/stub
 @dirrm include/pire/scanners
 @dirrm include/pire
