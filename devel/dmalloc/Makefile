@@ -11,28 +11,36 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable debug memory allocation library
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-threads --enable-shlib
-CFLAGS+=	-fPIC
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-threads --enable-shlib --prefix="${STAGEDIR}${PREFIX}"
+CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL_DATA}"
+CFLAGS=		-fPIC
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 ALL_TARGET=	all heavy
 INSTALL_TARGET=	install
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 INSTALL_TARGET+=installdocs
 .endif
 
-NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -e 's|\.@shlibext@|\.@shlibext@.1|' ${WRKSRC}/Makefile.in
 
 post-install:
-	@(cd ${PREFIX}/lib; \
-		${LN} -sf ${PREFIX}/lib/libdmalloc.so.1 ${PREFIX}/lib/libdmalloc.so; \
-		${LN} -sf ${PREFIX}/lib/libdmallocxx.so.1 ${PREFIX}/lib/libdmallocxx.so; \
-		${LN} -sf ${PREFIX}/lib/libdmallocth.so.1 ${PREFIX}/lib/libdmallocth.so; \
-		${LN} -sf ${PREFIX}/lib/libdmallocthcxx.so.1 ${PREFIX}/lib/libdmallocthcxx.so)
+	@(cd ${STAGEDIR}${PREFIX}/lib; \
+		${STRIP_CMD} libdmalloc.so.1; \
+		${LN} -sf libdmalloc.so.1 libdmalloc.so; \
+		${STRIP_CMD} libdmallocxx.so.1; \
+		${LN} -sf libdmallocxx.so.1 libdmallocxx.so; \
+		${STRIP_CMD} libdmallocth.so.1; \
+		${LN} -sf libdmallocth.so.1 libdmallocth.so; \
+		${STRIP_CMD} libdmallocthcxx.so.1; \
+		${LN} -sf libdmallocthcxx.so.1 libdmallocthcxx.so)
 
 .include <bsd.port.mk>
