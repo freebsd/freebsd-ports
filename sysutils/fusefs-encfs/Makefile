@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	fusefs-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An encrypted pass-through FUSE filesystem
 
 LIB_DEPENDS=	rlog.5:${PORTSDIR}/devel/rlog \
