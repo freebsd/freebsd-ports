@@ -14,8 +14,7 @@ like this:
 	AcceptPathInfo On
 	<Directory %%WWWDIR%%>
 	    AllowOverride All
-	    Order Allow,Deny
-	    Allow from all
+	    Require all granted
 	</Directory>
 
 And restart Apache.
