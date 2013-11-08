@@ -5176,3 +5176,4 @@ devel/pure-stldict|devel/pure-stllib|2013-11-07|Removed: Use devel/pure-stllib i
 devel/pure-stlvec|devel/pure-stllib|2013-11-07|Removed: Use devel/pure-stllib instead
 textproc/lexxia||2013-11-07|Removed no public distfile available anymore
 textproc/docproj-nojadetex||2013-11-07|Removed
+games/frozenbubble|games/frozen-bubble|2013-11-08|Renamed to match upstream naming

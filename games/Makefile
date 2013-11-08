@@ -288,7 +288,7 @@
     SUBDIR += frobtads
     SUBDIR += frogatto
     SUBDIR += frotz
-    SUBDIR += frozenbubble
+    SUBDIR += frozen-bubble
     SUBDIR += fteqw
     SUBDIR += ftjava
     SUBDIR += fuhquake
