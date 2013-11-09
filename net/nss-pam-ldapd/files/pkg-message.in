@@ -8,5 +8,10 @@ To start nslcd add nslcd_enable="YES" to /etc/rc.conf and run:
 
   # service nslcd start
 
+If you also want to supervise the nslcd daemon
+add nslcd_supervisor="YES" to rc.conf as well.
+
+NOTE: supervision requires FreeBSD 9.1 or greater.
+
 See the comments in %%PREFIX%%/etc/rc.d/nslcd for additional tunables.
 =====================================================================
