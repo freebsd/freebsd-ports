@@ -3,11 +3,9 @@
 
 PORTNAME=	thrift
 PORTVERSION=	${THRIFT_PORTVERSION}
-PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	php5-
 DISTFILES=	# empty
-
 MAINTAINER=	webmaster@kibab.com
 COMMENT=	PHP interface to Thrift
 
