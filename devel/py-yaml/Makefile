@@ -11,7 +11,8 @@ DISTNAME=	PyYAML-${PORTVERSION}
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Python YAML parser
 
-OPTIONS_DEFINE=	YAML
+OPTIONS_DEFINE=	LIBYAML
+LIBYAML_DESC=	Use textproc/libyaml for faster parsing
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
@@ -36,7 +37,7 @@ post-install:
 .include "${PORTSDIR}/devel/py-virtualenv/files/py3k-fix-pkg-plist.inc"
 .endif
 
-.if ${PORT_OPTIONS:MYAML}
+.if ${PORT_OPTIONS:MLIBYAML}
 PYSETUP=	setup.py --with-libyaml
 PYDISTUTILS_BUILD_TARGET=	build_ext
 PYDISTUTILS_BUILDARGS+=	--include-dirs=${LOCALBASE}/include \
@@ -44,11 +45,11 @@ PYDISTUTILS_BUILDARGS+=	--include-dirs=${LOCALBASE}/include \
 
 LIB_DEPENDS+=		yaml-0.2:${PORTSDIR}/textproc/libyaml
 
-PLIST_SUB+=	YAML=""
+PLIST_SUB+=	LIBYAML=""
 .else
 PYSETUP=	setup.py --without-libyaml
 
-PLIST_SUB+=	YAML="@comment "
+PLIST_SUB+=	LIBYAML="@comment "
 .endif
 
 .include <bsd.port.post.mk>

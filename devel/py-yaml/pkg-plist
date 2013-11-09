@@ -1,4 +1,4 @@
-%%YAML%%%%PYTHON_SITELIBDIR%%/_yaml.so
+%%LIBYAML%%%%PYTHON_SITELIBDIR%%/_yaml.so
 %%PYTHON_SITELIBDIR%%/yaml/__init__.py
 %%PYTHON_SITELIBDIR%%/yaml/__init__.pyc
 %%PYTHON_SITELIBDIR%%/yaml/__init__.pyo
