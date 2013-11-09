@@ -1,16 +1,10 @@
 DIST_SUBDIR=	stardict
 
-USE_BZIP2=	yes
 NO_BUILD=	yes
 PKGMESSAGE?=	${.CURDIR}/../../russian/stardict-mueller7/files/pkg-message
 
 DICTDIR=	share/stardict/dic
 
 do-install:
-	${MKDIR} ${PREFIX}/${DICTDIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${PREFIX}/${DICTDIR}
-
-post-install:	echo-pkgmessage
-
-echo-pkgmessage:
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${DICTDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${DICTDIR}
