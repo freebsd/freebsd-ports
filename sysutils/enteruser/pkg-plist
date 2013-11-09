@@ -1,3 +1,2 @@
 sbin/enteruser
-@exec ln -f %D/sbin/enteruser %D/sbin/queueuser
-@unexec rm -f %D/sbin/queueuser
+sbin/queueuser

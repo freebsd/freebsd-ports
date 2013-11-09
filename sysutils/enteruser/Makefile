@@ -18,13 +18,12 @@ NO_BUILD=	yes
 
 SHEBANG_FILES=	enteruser
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/enteruser ${PREFIX}/sbin
-	${LN} -f ${PREFIX}/sbin/enteruser ${PREFIX}/sbin/queueuser
+	${INSTALL_SCRIPT} ${WRKSRC}/enteruser ${STAGEDIR}${PREFIX}/sbin
+	@cd ${STAGEDIR}${PREFIX}/sbin; ${LN} -sf enteruser queueuser
 
 .include <bsd.port.mk>
