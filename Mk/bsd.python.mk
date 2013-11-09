@@ -193,14 +193,6 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 # PYEASYINSTALL_CMD - Full file path to easy_install command.
 #					  default: ${LOCALBASE}/bin/easy_install-${PYTHON_VER}
 #
-# PYEASYINSTALL_INSTALLARGS
-#					- Arguments to easy_install command for egg installation.
-#					  default: -q -N -S ${PYTHON_SITELIBDIR} ${PYDISTUTILS_PKGNAME}==${PYDISTUTILS_PKGVERSION}
-#
-# PYEASYINSTALL_UNINSTALLARGS
-#					- Arguments to easy_install command for egg uninstallation.
-#					  default: -q -m -S ${PYTHON_SITELIBDIR} ${PYDISTUTILS_PKGNAME}==${PYDISTUTILS_PKGVERSION}
-#
 # USE_TWISTED		- If this option is just yes then build and run
 #					  the dependence to twistedCore is added. Alternatively
 #					  here can be listed specific components of twisted
@@ -469,14 +461,6 @@ PYEASYINSTALL_EGG?=				${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS
 PYEASYINSTALL_CMD?=				${LOCALBASE}/bin/easy_install-${PYTHON_VER}
 PYEASYINSTALL_BINDIR?=			${PREFIX}/bin
 PYEASYINSTALL_SITELIBDIR?=		${PYTHONPREFIX_SITELIBDIR}
-PYEASYINSTALL_INSTALLARGS?=		-q -N -S ${PYTHON_SITELIBDIR} \
-								-d ${PYEASYINSTALL_SITELIBDIR} \
-								-s ${PYEASYINSTALL_BINDIR} \
-								${PYDISTUTILS_PKGNAME}==${PYDISTUTILS_PKGVERSION}
-PYEASYINSTALL_UNINSTALLARGS?=	-q -N -m -S ${PYTHON_SITELIBDIR} \
-								-d ${PYEASYINSTALL_SITELIBDIR} \
-								-s ${PYEASYINSTALL_BINDIR} \
-								${PYDISTUTILS_PKGNAME}==${PYDISTUTILS_PKGVERSION}
 
 PLIST_SUB+=		PYEASYINSTALL_EGG=${PYEASYINSTALL_EGG}
 
