@@ -2,6 +2,7 @@
 
 PORTNAME=	libav
 PORTVERSION=	9.10
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://libav.org/releases/
 
@@ -26,6 +27,8 @@ CONFIGURE_ARGS+=	--prefix="${PREFIX}" \
 			--enable-pthreads \
 			--enable-shared \
 			--enable-runtime-cpudetect \
+			--disable-debug \
+			--cc="${CC}" \
 			--disable-avserver
 
 OPTIONS_DEFINE=	ALSA AMR_NB AMR_WB BZIP2 CDIO FAAC FDK_AAC FREETYPE FREI0R \
@@ -34,7 +37,7 @@ OPTIONS_DEFINE=	ALSA AMR_NB AMR_WB BZIP2 CDIO FAAC FDK_AAC FREETYPE FREI0R \
 		VO_AACENC VO_AMRWBENC VORBIS VPX X264 XVID ZLIB
 
 OPTIONS_DEFAULT=	BZIP2 FREETYPE FREI0R GNUTLS OPENCV SCHROEDINGER \
-			THEORA VPX X264 XVID
+			THEORA VO_AACENC VORBIS VPX X264 XVID ZLIB
 
 FDK_AAC_DESC=	AAC audio encoding via Fraunhofer FDK
 ILBC_DESC=	iLBC en/decoding via libilbc
@@ -149,6 +152,14 @@ USE_OPENSSL=	yes
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+CONFIGURE_ARGS+=	--extra-cflags=-m32
+.endif
+
+.if ${OSVERSION} < 900000
+USE_GCC=	4.6+
+.endif
 
 .if ${HAVE_SDL:Msdl}
 USE_SDL+=	sdl
