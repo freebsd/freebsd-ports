@@ -1,8 +1,8 @@
 %%PERL5_MAN3%%/XML::TreePP.3.gz
 %%SITE_PERL%%/XML/TreePP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/TreePP/.packlist
-%%EXAMPLESDIR%%/envxml.cgi
-@dirrmtry %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/envxml.cgi
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/TreePP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML
