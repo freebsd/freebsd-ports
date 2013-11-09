@@ -3,11 +3,14 @@
 
 PORTNAME=	serf
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Serf HTTP client library
+
+LICENSE=	AL2
 
 LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr1
 
@@ -15,6 +18,8 @@ USE_SCONS=	yes
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
+
+SUB_FILES=	libserf-1.la
 
 OPTIONS_DEFINE=	DOCS
 
@@ -34,6 +39,7 @@ post-patch:
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/design-guide.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${SUB_FILES:S|^|${WRKDIR}/|} ${STAGEDIR}${PREFIX}/lib
 
 regression-test check: build
 	@(cd ${WRKSRC} && ${SCONS_BIN} check)
