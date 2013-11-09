@@ -3,6 +3,7 @@
 
 PORTNAME=	pianobar
 PORTVERSION=	2013.09.15
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://6xq.net/projects/${PORTNAME}/
 

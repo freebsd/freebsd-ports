@@ -1,7 +1,7 @@
 # Created by: Cristiano Rolim Pereira <cristianorolim@hotmail.com>
 # $FreeBSD$
 
-PORTREVISION=	2
+PORTREVISION=	3
 
 COMMENT=	GNUTLS module for rsyslog
 MASTERDIR=	${.CURDIR}/../rsyslog6

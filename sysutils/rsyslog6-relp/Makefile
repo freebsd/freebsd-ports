@@ -1,7 +1,7 @@
 # Created by: Cristiano Rolim Pereira <cristianorolim@hotmail.com>
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	RELP input/output module for rsyslog
 MASTERDIR=	${.CURDIR}/../rsyslog6

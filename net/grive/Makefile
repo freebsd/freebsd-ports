@@ -3,6 +3,7 @@
 
 PORTNAME=	grive
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	ktsin@acm.org

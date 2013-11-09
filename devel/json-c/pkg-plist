@@ -1,16 +1,27 @@
 lib/libjson.a
 lib/libjson.la
 lib/libjson.so
-lib/libjson.so.0
-include/json/arraylist.h
-include/json/bits.h
-include/json/debug.h
-include/json/json.h
-include/json/json_object.h
-include/json/json_object_private.h
-include/json/json_tokener.h
-include/json/json_util.h
-include/json/linkhash.h
-include/json/printbuf.h
+lib/libjson.so.1
+lib/libjson-c.a
+lib/libjson-c.la
+lib/libjson-c.so
+lib/libjson-c.so.2
+include/json-c/arraylist.h
+include/json-c/bits.h
+include/json-c/debug.h
+include/json-c/json.h
+include/json-c/json_c_version.h
+include/json-c/json_config.h
+include/json-c/json_inttypes.h
+include/json-c/json_object.h
+include/json-c/json_object_iterator.h
+include/json-c/json_object_private.h
+include/json-c/json_tokener.h
+include/json-c/json_util.h
+include/json-c/linkhash.h
+include/json-c/printbuf.h
+include/json
 libdata/pkgconfig/json.pc
-@dirrm include/json
+libdata/pkgconfig/json-c.pc
+@dirrmtry include/json
+@dirrm include/json-c
