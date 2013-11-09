@@ -1,0 +1,11 @@
+JSON::Tiny is a standalone adaptation of Mojo::JSON, from the Mojolicious
+framework. It has been adapted as a single-source-file module of under 350 lines
+of code and core-only dependencies.
+
+Key features include relaxed JSON handling, transparent Unicode support, speed,
+small memory footprint, and a minimal code base ideal for bundling or inlining.
+
+Mojo::JSON was chosen as a model because it is robust, minimal, and well tested.
+Mojo::JSON's tests were also adapted to a design free of non-core dependencies.
+
+WWW: http://search.cpan.org/dist/JSON-Tiny/
