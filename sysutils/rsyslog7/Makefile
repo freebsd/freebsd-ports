@@ -2,6 +2,7 @@
 
 PORTNAME=	rsyslog
 PORTVERSION=	7.4.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
@@ -12,7 +13,7 @@ BUILD_DEPENDS=	libgcrypt-config:${PORTSDIR}/security/libgcrypt
 
 LIB_DEPENDS=	ee:${PORTSDIR}/devel/libee \
 		estr:${PORTSDIR}/devel/libestr \
-		json.0:${PORTSDIR}/devel/json-c
+		libjson.so:${PORTSDIR}/devel/json-c
 
 USE_LDCONFIG=	yes
 

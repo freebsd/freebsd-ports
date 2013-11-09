@@ -3,6 +3,7 @@
 
 PORTNAME=	newsbeuter
 PORTVERSION=	2.7
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://newsbeuter.org/downloads/
 
@@ -11,7 +12,7 @@ COMMENT=	An RSS feed reader for the text console
 
 LIB_DEPENDS=	stfl.1:${PORTSDIR}/devel/stfl \
 		curl:${PORTSDIR}/ftp/curl \
-		json.0:${PORTSDIR}/devel/json-c
+		libjson.so:${PORTSDIR}/devel/json-c
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

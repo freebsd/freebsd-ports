@@ -3,6 +3,7 @@
 
 PORTNAME=	virusTotal
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/razorbacktm/Nuggets
 PKGNAMEPREFIX=	razorback-

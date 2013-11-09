@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	json-c
-PORTVERSION=	0.9
+PORTVERSION=	0.11
 CATEGORIES=	devel
-MASTER_SITES=	http://oss.metaparadigm.com/json-c/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/archive/
 
 MAINTAINER=	gno@yahoo-inc.com
 COMMENT=	JSON (JavaScript Object Notation) implementation in C
@@ -12,8 +12,16 @@ COMMENT=	JSON (JavaScript Object Notation) implementation in C
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USES=		gmake pathfix pkgconfig
+USE_GITHUB=	yes
+USE_ZIP=	yes
+MAKE_JOBS_UNSAFE=	yes
+
+GH_ACCOUNT=	${PORTNAME}
+GH_PROJECT=	${PORTNAME}
+GH_TAGNAME=	20130402
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${PORTVERSION}
 
 CONFLICTS=	cocaine-core-[0-9]*
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

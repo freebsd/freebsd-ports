@@ -2,7 +2,7 @@
 
 PORTNAME=	api
 PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF/razorbacktm/API
 PKGNAMEPREFIX=	razorback-
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	config.10:${PORTSDIR}/devel/libconfig \
 		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		curl:${PORTSDIR}/ftp/curl \
-		json.0:${PORTSDIR}/devel/json-c
+		libjson.so:${PORTSDIR}/devel/json-c
 
 OPTIONS_DEFINE=	DEBUG ASSERT CNC_DEBUG STOMP_DEBUG
 

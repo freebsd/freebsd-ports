@@ -2,7 +2,7 @@
 
 PORTNAME=	rsyslog
 PORTVERSION=	6.6.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 PKGNAMESUFFIX=	6${EXTRASUFFIX}
@@ -18,7 +18,7 @@ USE_LDCONFIG=	yes
 LIB_DEPENDS+=	ee:${PORTSDIR}/devel/libee \
 		estr:${PORTSDIR}/devel/libestr \
 		sysinfo:${PORTSDIR}/devel/libsysinfo \
-		json.0:${PORTSDIR}/devel/json-c \
+		libjson.so:${PORTSDIR}/devel/json-c \
 		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
 
 USES=		pkgconfig
