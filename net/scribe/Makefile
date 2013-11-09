@@ -3,7 +3,7 @@
 
 PORTNAME=	scribe
 DISTVERSION=	2.2.2012.01.07
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/facebook/scribe/tarball/${GITVERSION}/
 DISTNAME=	facebook-scribe-${GITVERSION}
@@ -11,10 +11,11 @@ DISTNAME=	facebook-scribe-${GITVERSION}
 MAINTAINER=	jnlin@csie.nctu.edu.tw
 COMMENT=	Aggregating log data streamed in real time
 
-BUILD_DEPENDS=	fb303>0:${PORTSDIR}/devel/fb303
+BUILD_DEPENDS=	fb303>0:${PORTSDIR}/devel/fb303 \
+		thrift:${PORTSDIR}/devel/thrift
 LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
 		libevent.so:${PORTSDIR}/devel/libevent \
-		libthrift.so:${PORTSDIR}/devel/thrift
+		libthrift.so:${PORTSDIR}/devel/thrift-cpp
 RUN_DEPENDS=	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Thrift>0:${PORTSDIR}/devel/p5-Thrift \
 		${PYTHON_SITELIBDIR}/thrift/__init__.py:${PORTSDIR}/devel/py-thrift
