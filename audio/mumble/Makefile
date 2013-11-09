@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/Mumble/${PORTVERSION}
 
-MAINTAINER=	marius@nuenneri.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A voice chat software primarily intended for use while gaming
 
 LIB_DEPENDS+=	libspeex.so:${PORTSDIR}/audio/speex \
