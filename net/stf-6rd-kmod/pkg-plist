@@ -1,5 +1,3 @@
 @cwd /
 %%KMODDIR%%/if_stf.ko
 %%KMODDIR%%/if_stf.ko.symbols
-@exec /usr/sbin/kldxref /%%KMODDIR%%
-@unexec /usr/sbin/kldxref /%%KMODDIR%%

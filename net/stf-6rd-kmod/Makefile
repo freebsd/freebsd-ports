@@ -2,7 +2,7 @@
 
 PORTNAME=	stf
 PORTVERSION=	0.${SVN_REV}
-CATEGORIES=	net ipv6 kld
+CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kuriyama
 PKGNAMESUFFIX=	-6rd-kmod
@@ -15,14 +15,10 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 WRKSRC=		${WRKDIR}
 SVN_REV=	239080	# 8.1=r209773, 8.2=r216741, 8.3=r232314
-KMODDIR?=	/boot/modules
-PLIST_SUB=	KMODDIR=${KMODDIR:C,^/,,}
-
-.if !exists(${SRC_BASE}/sys/Makefile)
-IGNORE=		requires kernel source to be installed
-.endif
 
 NO_STAGE=	yes
+
+USES=		kmod
 .include <bsd.port.pre.mk>
 
 .if ${OSREL} != "8.1" && ${OSREL} != "8.2" && ${OSREL} != "8.3" && ${OSREL} != "8.4" && ${OSREL} != "9.1"
@@ -47,7 +43,6 @@ do-install:
 	${INSTALL_KLD} ${WRKSRC}/sys/modules/if_stf/${f}.ko ${KMODDIR}
 	${INSTALL_KLD} ${WRKSRC}/sys/modules/if_stf/${f}.ko.symbols ${KMODDIR}
 .endfor
-	/usr/sbin/kldxref ${KMODDIR}
 
 post-install:
 	${CAT} ${PKGMESSAGE}

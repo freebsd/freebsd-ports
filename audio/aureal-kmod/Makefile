@@ -4,7 +4,7 @@
 PORTNAME=	aureal
 PORTVERSION=	1.5
 PORTREVISION=	6
-CATEGORIES=	audio kld
+CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	${PORTNAME}-snd
 PKGNAMESUFFIX=	-kmod
@@ -26,22 +26,17 @@ USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-message
 SUB_LIST=	KMODDIR=${KMODDIR}
 
-PLIST_SUB=	KMODDIR=${KMODDIR_REL}
-
 WRKSRC=		${WRKDIR}
 
 MAKE_ENV=	WRKSRC="${WRKSRC}"
 MAKE_ARGS=	KMODDIR="${KMODDIR}"
 
+USES=		kmod
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 800000
 EXTRA_PATCHES+=	${PATCHDIR}/extra_800000_patch-au88x0.c
-.endif
-
-# Make sure kernel sources are present before going any further
-.if ! exists(${SRC_BASE}/sys/dev/sound/pcm/sound.c)
-IGNORE=	you need to extract kernel source tree before building this package
 .endif
 
 pre-everything::
@@ -60,9 +55,6 @@ pre-everything::
 	@${FALSE}
 .endif
 .endfor
-
-pre-install:
-	${MKDIR} ${KMODDIR}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

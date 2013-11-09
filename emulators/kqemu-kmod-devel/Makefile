@@ -4,7 +4,7 @@
 PORTNAME=	kqemu
 PORTVERSION=	1.4.0.p1
 PORTREVISION=	5
-CATEGORIES=	emulators kld
+CATEGORIES=	emulators
 MASTER_SITES=	http://bellard.org/qemu/ \
 		http://qemu.org/ \
 		${MASTER_SITE_LOCAL}
@@ -19,8 +19,6 @@ COMMENT=	Kernel Accelerator for QEMU CPU Emulator (development version)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-SSP_UNSAFE=	kernel module does not support ssp
-
 ONLY_FOR_ARCHS=	i386 amd64
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -31,6 +29,8 @@ CONFLICTS=	kqemu-kmod-[0-9]*
 USE_RC_SUBR=	kqemu
 
 NO_STAGE=	yes
+
+USES=		kmod
 .include <bsd.port.pre.mk>
 
 PORTDOCS=	kqemu-doc.html kqemu-tech.html
@@ -38,7 +38,6 @@ PLIST_FILES=	"include/kqemu/kqemu.h"
 PLIST_FILES+=	"@dirrm include/kqemu"
 PLIST_FILES+=	"@cwd /"
 PLIST_FILES+=	${KMODDIR:C,^/,,}/kqemu.ko
-PLIST_FILES+=	"@unexec kldxref ${KMODDIR}"
 PLIST_FILES+=	"@cwd"
 
 MAKEFILE=	Makefile.freebsd
@@ -47,18 +46,6 @@ MAKE_ARGS+=	LDFLAGS=${LDFLAGS:S/^-Wl,//}
 
 .if ${ARCH} == "amd64"
 GMAKE_ARGS+=	ARCH=x86_64
-.endif
-
-# install where x11/nvidia-driver does also:
-KMODDIR=	/boot/modules
-
-MAKE_ENV+=	KMODDIR="${KMODDIR}"
-
-SYSDIR?=	${SRC_BASE}/sys
-MAKE_ENV+=	SYSDIR="${SYSDIR}"
-
-.if !exists(${SYSDIR}/Makefile)
-IGNORE=		requires kernel source to be installed
 .endif
 
 CFLAGS+=	${DEBUG_FLAGS}

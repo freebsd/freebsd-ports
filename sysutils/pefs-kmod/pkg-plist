@@ -1,7 +1,5 @@
 sbin/pefs
 lib/pam_pefs.so
 lib/pam_pefs.so.5
-@cwd %%KMODDIR%%
+@cwd /%%KMODDIR%%
 pefs.ko
-@exec kldxref %%KMODDIR%%
-@unexec kldxref %%KMODDIR%%

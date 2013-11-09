@@ -16,7 +16,6 @@ lib/dahdi/dahdi_echocan_sec2.ko
 lib/dahdi/dahdi_transcode.ko
 lib/dahdi/dahdi_voicebus.ko
 %%X86%%lib/dahdi/dahdi_vpmadt032_loader.ko
-lib/dahdi/linker.hints
 lib/dahdi/ng_dahdi_netdev.ko
 lib/dahdi/wcb1xxp.ko
 lib/dahdi/wcb4xxp.ko
@@ -27,4 +26,3 @@ lib/dahdi/wctdm.ko
 lib/dahdi/wctdm24xxp.ko
 lib/dahdi/wcte11xp.ko
 lib/dahdi/wcte12xp.ko
-@dirrm lib/dahdi

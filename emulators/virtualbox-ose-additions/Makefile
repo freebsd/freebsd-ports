@@ -3,7 +3,7 @@
 
 PORTNAME=	virtualbox-ose
 DISTVERSION=	4.2.18
-CATEGORIES=	emulators kld
+CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
 		http://disasterarea.chruetertee.ch/
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 USE_RC_SUBR=	vboxguest vboxservice
-USES=		iconv
+USES=		iconv kmod
 ONLY_FOR_ARCHS=	i386 amd64
 FETCH_ARGS=	-pRr
 USE_BZIP2=	yes
@@ -43,10 +43,6 @@ OPTIONS_DEFAULT=	X11
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-PLIST_SUB+=	KMODDIR=${KMODDIR:C,^/,,}
-
-KMODDIR=	/boot/modules
-SRC_BASE?=	/usr/src
 VIDEODIR=	${PREFIX}/lib/xorg/modules/drivers
 INPUTDIR=	${PREFIX}/lib/xorg/modules/input
 
@@ -93,10 +89,6 @@ KMK_ARCH=	freebsd.${ARCH}
 
 XSERVER_ABI:=	${XSERVER_VER:S/.//:R}
 
-.if !exists(${SRC_BASE}/sys/kern/bus_if.m)
-IGNORE=		requires kernel sources
-.endif
-
 .include <bsd.port.pre.mk>
 
 pre-everything::
@@ -134,7 +126,6 @@ do-build:
 	cd ${VBOX_BIN}/src && make ${MAKE_FLAGS}
 
 do-install:
-	${MKDIR} ${KMODDIR}
 	${INSTALL_KLD} ${VBOX_BIN}/src/vboxguest/vboxguest.ko ${KMODDIR}
 .if ${PORT_OPTIONS:MDEBUG}
 	${INSTALL_KLD} ${VBOX_BIN}/src/vboxguest/vboxguest.ko.symbols ${KMODDIR}
@@ -145,7 +136,6 @@ do-install:
 	${INSTALL_KLD} ${VBOX_BIN}/vboxvideo.ko.symbols ${KMODDIR}
 .endif
 .endif
-	@/usr/sbin/kldxref ${KMODDIR}
 
 	${MKDIR} ${PREFIX}/etc/rc.d/
 

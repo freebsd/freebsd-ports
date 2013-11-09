@@ -9,5 +9,3 @@
 %%KMODDIR%%/virtio_blk.ko.symbols
 %%KMODDIR%%/virtio_pci.ko
 %%KMODDIR%%/virtio_pci.ko.symbols
-@exec /usr/sbin/kldxref /%%KMODDIR%%
-@unexec /usr/sbin/kldxref /%%KMODDIR%%

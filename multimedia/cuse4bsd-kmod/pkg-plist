@@ -24,5 +24,3 @@ man/man3/cuse_vmfree.3.gz
 man/man3/cuse_wait_and_process.3.gz
 @cwd %%KMODDIR%%
 %%KMODNAME%%.ko
-@exec kldxref %%KMODDIR%%
-@unexec kldxref %%KMODDIR%%

@@ -2,7 +2,7 @@
 
 PORTNAME=	ptx
 PORTVERSION=	0.0.20111212
-CATEGORIES=	multimedia kld
+CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	hrs
 PKGNAMESUFFIX=	-kmod
@@ -13,13 +13,12 @@ COMMENT=	Device driver for PT1/PT2 ISDB-S/T tuner cards
 
 LICENSE=	GPLv3
 
-SSP_UNSAFE=	kernel module does not support ssp
+#XXX rene: change KMODDIR from ${PREFIX}/libexec/${PORTNAME} to
+#          the default /boot/modules to get directories right
 
 ONLY_FOR_ARCHS=	amd64 i386
 BUILD_WRKSRC=	${WRKSRC}/dev/ptx
-MAKE_ENV=	KMODDIR=${PREFIX}/${KMODDIR} SYSDIR=${SYSDIR}
 PLIST_FILES=	${KMODDIR}/ptx.ko bin/recptx.pl
-PLIST_DIRS=	${KMODDIR}
 SUB_LIST=	KMODDIR=${KMODDIR}
 USE_RC_SUBR=	ptx
 PORTDOCS=	README
@@ -27,25 +26,12 @@ PORTDOCS=	README
 OPTIONS_DEFINE=	DOCS
 
 NO_STAGE=	yes
+
+USES=		kmod
 .include <bsd.port.pre.mk>
 
-KMODDIR=	libexec/${PORTNAME}
-SYSDIR?=	${SRC_BASE}/sys
-
-KERNCONF?=	GENERIC
-
-# Use the first component of ${KERNCONF}.
-.for K in ${KERNCONF}
-_KERNCONF?=$K
-.endfor
-
-.if !exists(${SRC_BASE}/sys/${ARCH}/conf/${_KERNCONF})
-IGNORE=		requires kernel source to be installed
-.endif
-
 do-install:
-	@${MKDIR} ${PREFIX}/${KMODDIR}
-	${INSTALL_KLD} ${BUILD_WRKSRC}/ptx.ko ${PREFIX}/${KMODDIR}
+	${INSTALL_KLD} ${BUILD_WRKSRC}/ptx.ko ${KMODDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/recptx.pl ${PREFIX}/bin
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}

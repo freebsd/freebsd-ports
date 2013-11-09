@@ -27,5 +27,3 @@ sbin/VBoxService
 %%WITH_DEBUG%%%%KMODDIR%%/vboxguest.ko.symbols
 %%X11%%%%KMODDIR%%/vboxvideo.ko
 %%WITH_DEBUG%%%%X11%%%%KMODDIR%%/vboxvideo.ko
-@exec /usr/sbin/kldxref /%%KMODDIR%%
-@unexec /usr/sbin/kldxref /%%KMODDIR%%

@@ -4,7 +4,7 @@
 PORTNAME=	linux_v4l2wrapper-kmod
 PORTVERSION=	1.0
 PORTREVISION=	2
-CATEGORIES=	multimedia kld
+CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/nox \
 		http://people.freebsd.org/~ae/
 DISTNAME=	linux_v4l2_kld
@@ -18,20 +18,12 @@ PATCH_STRIP=	-p1
 WRKSRC=		${WRKDIR}/linux_v4l2
 
 NO_STAGE=	yes
+
+USES=		kmod
 .include <bsd.port.pre.mk>
 
 PLIST_FILES+=	"@cwd /"
 PLIST_FILES+=	${KMODDIR:C,^/,,}/linux_v4l2wrapper.ko
-PLIST_FILES+=	"@exec kldxref ${KMODDIR}"
-PLIST_FILES+=	"@unexec kldxref ${KMODDIR}"
-
-# install where x11/nvidia-driver does also:
-KMODDIR=	/boot/modules
-
-MAKE_ENV+=	KMODDIR="${KMODDIR}"
-
-SYSDIR?=	${SRC_BASE}/sys
-MAKE_ENV+=	SYSDIR="${SYSDIR}"
 
 CFLAGS+=	${DEBUG_FLAGS}
 
@@ -39,10 +31,6 @@ CFLAGS+=	${DEBUG_FLAGS}
 
 .if ${LINUX_V4L2_AVAILABLE} == "1"
 IGNORE=		is already in kernel
-.else
-.if !exists(${SYSDIR}/Makefile)
-IGNORE=		requires kernel source to be installed
-.endif
 .endif
 
 .include <bsd.port.post.mk>

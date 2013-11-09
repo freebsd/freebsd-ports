@@ -3,7 +3,7 @@
 
 PORTNAME=	bwn-firmware
 PORTVERSION=	0.1.0
-CATEGORIES=	net kld
+CATEGORIES=	net
 MASTER_SITES=	http://downloads.openwrt.org/sources/ \
 		http://mirror2.openwrt.org/sources/
 PKGNAMESUFFIX=	-kmod
@@ -42,14 +42,14 @@ FWNAME_LP=	bwn_v4_lp
 FWFILE_LP=	broadcom-wl-${FWVERSION_LP}.tar.bz2
 FWVERSION_LP=	4.178.10.4
 KMODNAME_LP=	${FWNAME_LP}_ucode
-KMODDIR=	/boot/modules
 PLIST_SUB=	KMODNAME="${KMODNAME}" \
-		KMODNAME_LP="${KMODNAME_LP}" \
-		KMODDIR="${KMODDIR}"
+		KMODNAME_LP="${KMODNAME_LP}"
 
 NO_PACKAGE=	this is a modified version of a restricted firmware
 
 NO_STAGE=	yes
+
+USES=		kmod
 .include <bsd.port.pre.mk>
 
 do-build:

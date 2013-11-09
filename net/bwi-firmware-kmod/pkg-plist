@@ -1,4 +1,2 @@
 @cwd %%KMODDIR%%
 %%KMODNAME%%.ko
-@exec kldxref %%KMODDIR%%
-@unexec kldxref %%KMODDIR%%

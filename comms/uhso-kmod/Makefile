@@ -4,7 +4,7 @@
 PORTNAME=	uhso
 PORTVERSION=	20100416
 PORTREVISION=	2
-CATEGORIES=	comms kld
+CATEGORIES=	comms
 MASTER_SITES=	http://www.shapeshifter.se/pub/hso/
 PKGNAMESUFFIX=	-kmod
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
@@ -27,18 +27,15 @@ OPTIONS_DEFAULT=	UHSOCTL
 UHSOCTL_DESC=	Build uhsoctl tool
 
 SUB_FILES=	pkg-message
-KMODDIR?=	/boot/modules
-PLIST_SUB+=	KMODDIR=${KMODDIR}
-MAKE_ENV+=	KMODDIR=${KMODDIR}
 
 MAN4=		uhso.4
 
 NO_STAGE=	yes
+
+USES=		kmod
 .include <bsd.port.pre.mk>
 
-.if !exists(${SRC_BASE}/sys/Makefile)
-IGNORE=		requires kernel source files
-.elif ${OSVERSION} <= 800063
+.if ${OSVERSION} <= 800063
 IGNORE=		requires FreeBSD 8.0 or later, please try comms/hso-kmod instead
 .elif ${OSVERSION} >= 800501
 IGNORE=	the uhso driver is already available in the base system
