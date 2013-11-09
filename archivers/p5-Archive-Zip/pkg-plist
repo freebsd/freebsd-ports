@@ -5,8 +5,8 @@ bin/crc32
 %%PERL5_MAN3%%/Archive::Zip::Tree.3.gz
 %%SITE_PERL%%/Archive/Zip.pm
 %%SITE_PERL%%/Archive/Zip/Archive.pm
-%%SITE_PERL%%/Archive/Zip/DirectoryMember.pm
 %%SITE_PERL%%/Archive/Zip/BufferedFileHandle.pm
+%%SITE_PERL%%/Archive/Zip/DirectoryMember.pm
 %%SITE_PERL%%/Archive/Zip/FAQ.pod
 %%SITE_PERL%%/Archive/Zip/FileMember.pm
 %%SITE_PERL%%/Archive/Zip/Member.pm
