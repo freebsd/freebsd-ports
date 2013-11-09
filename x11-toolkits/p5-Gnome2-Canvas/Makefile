@@ -9,8 +9,10 @@ MASTER_SITES=	CPAN/Gnome2 \
 		SF/gtk2-perl/Gnome2_Canvas/${PORTVERSION}
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Allows a perl developer to use the GnomeCanvas widget with Gtk2-Perl
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-ExtUtils-Depends>=0:${PORTSDIR}/devel/p5-ExtUtils-Depends \
 		p5-ExtUtils-PkgConfig>=0:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
