@@ -452,7 +452,12 @@ PYDISTUTILS_INSTALLARGS?=		-O 1 -N -S ${PYTHON_SITELIBDIR} \
 								-d ${PYEASYINSTALL_SITELIBDIR} \
 								-s ${PYEASYINSTALL_BINDIR} \
 								${WRKSRC}/dist/${PYEASYINSTALL_EGG}
-.if ${PREFIX} != ${LOCALBASE}
+.if !defined(NO_STAGE)
+MAKE_ENV+=			PYTHONUSERBASE=${STAGEDIR}${PYTHONBASE}
+PYDISTUTILS_INSTALLARGS:=	-m -q --user ${PYDISTUTILS_INSTALLARGS}
+.endif
+
+.if ${PREFIX} != ${LOCALBASE} || !defined(NO_STAGE)
 MAKE_ENV+=						PYTHONPATH=${PYEASYINSTALL_SITELIBDIR}
 .endif
 
@@ -477,7 +482,11 @@ PLIST_SUB+=		PYEASYINSTALL_EGG=${PYEASYINSTALL_EGG}
 
 pre-install: pre-install-easyinstall
 pre-install-easyinstall:
+.if defined(NO_STAGE)
 	@${MKDIR} ${PYEASYINSTALL_SITELIBDIR}
+.else
+	@${MKDIR} ${STAGEDIR}${PYEASYINSTALL_SITELIBDIR}
+.endif
 
 add-plist-post: add-plist-easyinstall
 add-plist-easyinstall:
@@ -489,6 +498,20 @@ add-plist-easyinstall:
 	@${ECHO_CMD} "@exec ${PRINTF} '1a\n./${PYEASYINSTALL_EGG}\n.\nw\nq\n' | \
 			/bin/ed ${PYEASYINSTALL_SITELIBDIR}/easy-install.pth" \
 		>> ${TMPPLIST}
+
+.if !defined(NO_STAGE)
+.if !target(stage-python-compileall)
+stage-python-compileall:
+	(cd ${STAGEDIR}${PREFIX} && \
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+		-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;} && \
+	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
+		-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
+.endif
+
+post-install: stage-python-compileall
+.endif
+
 .endif		# defined(USE_PYDISTUTILS) && ${USE_PYDISTUTILS} == "easy_install"
 
 # distutils support
@@ -496,7 +519,7 @@ PYSETUP?=				setup.py
 PYDISTUTILS_CONFIGUREARGS?=
 PYDISTUTILS_BUILDARGS?=
 PYDISTUTILS_INSTALLARGS?=	-c -O1 --prefix=${PREFIX}
-.if !defined(NO_STAGE)
+.if !defined(NO_STAGE) && defined(USE_PYDISTUTILS) && ${USE_PYDISTUTILS} != "easy_install"
 PYDISTUTILS_INSTALLARGS+=	--root=${STAGEDIR}
 .endif
 PYDISTUTILS_PKGNAME?=	${PORTNAME}
@@ -529,10 +552,12 @@ add-plist-pymod:
 		${SED} '/^\.$$/d' > ${WRKDIR}/.localmtree
 	@${ECHO_CMD} "${_RELSITELIBDIR}" >> ${WRKDIR}/.localmtree
 	@${ECHO_CMD} "${_RELLIBDIR}" >> ${WRKDIR}/.localmtree
-	@${SED} -e 's|^${PREFIX}/||' \
+	@${SED} -e 's|^${STAGEDIR}${PREFIX}/||' \
+		-e 's|^${PREFIX}/||' \
 		-e 's|^\(man/man[0-9]\)/\(.*\.[0-9]\)$$|\1/\2${MANEXT}|' \
 		${_PYTHONPKGLIST} | ${SORT} >> ${TMPPLIST}
-	@${SED} -e 's|^${PREFIX}/\(.*\)/\(.*\)|\1|' ${_PYTHONPKGLIST} | \
+	@${SED} -e 's|^${STAGEDIR}${PREFIX}/\(.*\)/\(.*\)|\1|' \
+		-e 's|^${PREFIX}/\(.*\)/\(.*\)|\1|' ${_PYTHONPKGLIST} | \
 		${AWK} '{ num = split($$0, a, "/"); res=""; \
 					for(i = 1; i <= num; ++i) { \
 						if (i == 1) res = a[i]; \
@@ -546,6 +571,8 @@ add-plist-pymod:
 				${ECHO_CMD} "@unexec rmdir \"%D/$${line}\" 2>/dev/null || true"; \
 			}; \
 		done | ${SORT} | uniq | ${SORT} -r >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir \"%D/${PYTHON_SITELIBDIR:S;${PYTHONBASE}/;;}\" 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir \"%D/${PYTHON_LIBDIR:S;${PYTHONBASE}/;;}\" 2>/dev/null || true" >> ${TMPPLIST}
 
 .else
 .if ${PYTHON_REL} >= 320 && defined(PYTHON_PY3K_PLIST_HACK)
