@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	1.7.5
+DISTVERSION=	1.7.6
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -23,7 +23,6 @@ CONFLICTS_INSTALL=	i386-wine-* wine-1.4* wine-1.6*
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_GCC=	any
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--verbose --disable-tests \
 		--without-alsa --without-capi --without-dbus \
@@ -37,7 +36,7 @@ WINELIBDIR?=	${PREFIX}/lib
 USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine
 .endif
 ONLY_FOR_ARCHS=	i386
-USES=		bison gmake
+USES=		bison compiler:c11 gmake
 USE_BZIP2=	yes
 
 SUB_FILES=	pkg-message
