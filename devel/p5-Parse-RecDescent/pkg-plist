@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Parse/RecDescent.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/RecDescent/.packlist
+%%PERL5_MAN3%%/Parse::RecDescent.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/TPJ-PRD-proc.gif
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/TPJ-yacc-proc.gif
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/TPJ_maze.gif
