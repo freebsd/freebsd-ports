@@ -1,37 +1,33 @@
 --- Makefile.orig	2006-01-14 18:54:05.000000000 +0300
 +++ Makefile	2008-04-30 12:23:01.000000000 +0400
-@@ -5,26 +5,26 @@
+@@ -1,24 +1,23 @@
+ TARGET = yeahconsole
+-CC = gcc
++CC ?= gcc
+ #CC = cc
+ INSTALL = install
  
  PREFIX = /usr/local
  
--LIBS = -lX11 
+ LIBS = -lX11 
 -INCLUDES = -I/usr/X11R6/include 
 -LIB_DIRS = -L/usr/X11R6/lib
 -FLAGS = -Os -Wall
-+LIBS = -lX11
-+INCLUDES = -I/usr/local/include 
-+LIB_DIRS = -L/usr/local/lib
-+CFLAGS? = -Os -Wall
++INCLUDES = -I$(LOCALBASE)/include
++LIB_DIRS = -L$(LOCALBASE)/lib
++CFLAGS ?= -Os -Wall
  
  OBJECTS := yeahconsole.o
  SOURCES := yeahconsole.c
  
  $(TARGET): $(OBJECTS) 
 -	$(CC) $(DEFINES) $(INCLUDES) $(LIB_DIRS) $(LIBS) -o $@ $<
-+	$(CC) $(DEFINES) $(INCLUDES) $(LIB_DIRS) $(LIBS) -o $@ $(SOURCES)
- 	strip $@
+-	strip $@
++	$(CC) $(DEFINES) $(INCLUDES) $(LIB_DIRS) $(LIBS) -o $@ $>
  
  $(OBJECTS): $(SOURCES) 
 -	$(CC) $(FLAGS)  $(DEFINES) $(INCLUDES) $(LIB_DIRS) -c -o $@ $<
--
-+	$(CC) $(CFLAGS)  $(DEFINES) $(INCLUDES) $(LIB_DIRS) -c -o $@ $(SOURCES)
-+all:	$(TARGET)
++	$(CC) $(CFLAGS) $(DEFINES) $(INCLUDES) $(LIB_DIRS) -c -o $@ $<
+ 
  clean:
  	rm -rf $(TARGET) $(OBJECTS)
- 
- install: $(TARGET) $(MAN)
--	$(INSTALL) -o root -g root -m 0755 $(TARGET) $(PREFIX)/bin
-+	$(INSTALL) -o root -g wheel -m 0755 $(TARGET) $(PREFIX)/bin
- 	
- 
- uninstall:
