@@ -3,15 +3,13 @@
 # $FreeBSD$
 #
 # PROVIDE: nslcd
-# REQUIRE: ldconfig resolv
+# REQUIRE: NETWORKING ldconfig resolv
 # BEFORE: syslogd
+# KEYWORD: shutdown
 #
 # Add the following line to /etc/rc.conf to enable the nslcd daemon:
 #
 # nslcd_enable="YES"
-#
-# Optional:
-# nslcd_debug="NO" - start nslcd in debugging mode (does not daemonize).
 #
 
 . /etc/rc.subr
@@ -21,27 +19,71 @@ rcvar=nslcd_enable
 
 load_rc_config ${name}
 
-: ${nslcd_enable="NO"}
-: ${nslcd_debug="NO"}
+: ${nslcd_enable:=NO}
+: ${nslcd_supervisor=NO}
 
-command="%%PREFIX%%/sbin/${name}"
-pidfile="/var/run/${name}.pid"
-start_precmd="nslcd_prestart"
-start_postcmd="nslcd_poststart"
+command="/usr/sbin/daemon";
+start_precmd=nslcd_prestart
+start_cmd=nslcd_start
+status_cmd=nslcd_status
+stop_cmd=nslcd_stop
 
-nslcd_prestart () {
-	if checkyesno nslcd_debug
-	then
-		command_args="-d"
+nslcd_prestart()
+{
+	if checkyesno nslcd_supervisor ; then
+	    	notsupported=$(${command} -r 3>&1 1>&2 2>&3 | grep -c illegal)
+		if [ ${notsupported} -eq 0 ]; then
+			command_args="-f -r %%PREFIX%%/sbin/nslcd -d"
+		else
+		    	echo "Your FreeBSD version's daemon(8) does not support supervision.";
+			echo "${name} was not started.";
+			exit 1
+		fi
+	else
+		command_args="-f %%PREFIX%%/sbin/nslcd -d"
 	fi
 }
 
-nslcd_poststart () {
-       until $(%%PREFIX%%/sbin/${name} -c); do
-               echo " Waiting for nslcd to start"
-               sleep 1
-       done
+nslcd_start()
+{
+	nslcd_findpid
+	if [ ! ${mypid} = '' ]; then
+		echo "${name} is running with PID ${mypid}.";
+	else
+		echo "Starting ${name}."
+		${command} ${command_args}
+	fi
 }
 
+nslcd_status()
+{
+	nslcd_findpid
+	if [ ! ${mypid} = '' ]; then
+		echo "${name} is running with PID ${mypid}.";
+	else
+		echo "${name} not running?";
+	fi
+}
+
+nslcd_stop()
+{
+	nslcd_findpid
+	if [ ! ${mypid} = '' ]; then
+		echo "Stopping ${name}.";
+		kill -TERM ${mypid};
+		wait_for_pids ${mypid};
+	else
+		echo "${name} not running?";
+	fi
+}
+
+nslcd_findpid()
+{
+	if ! checkyesno nslcd_supervisor && $(%%PREFIX%%/sbin/nslcd -c && pgrep -F /var/run/nslcd.pid > /dev/null); then
+		mypid=$(cat /var/run/nslcd.pid) 
+	else
+		mypid=$(pgrep -f "daemon: %%PREFIX%%/sbin/nslcd")
+	fi
+}
 
 run_rc_command "$1"
