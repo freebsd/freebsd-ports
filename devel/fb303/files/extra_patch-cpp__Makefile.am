@@ -1,0 +1,11 @@
+--- ./cpp/Makefile.am.orig	2013-08-15 18:04:29.000000000 +0400
++++ ./cpp/Makefile.am	2013-10-17 19:36:43.000000000 +0400
+@@ -37,7 +37,7 @@
+ # USE flags AM_CXXFLAGS, AM_CFLAGS, AM_CPPFLAGS, AM_LDFLAGS, LDADD in this section.
+ 
+ AM_CPPFLAGS = -I..
+-AM_CPPFLAGS += -Igen-cpp
++AM_CPPFLAGS += -Igen-cpp -std=c++11
+ AM_CPPFLAGS += -I$(thrift_home)/include/thrift 
+ AM_CPPFLAGS += $(BOOST_CPPFLAGS)
+ AM_CPPFLAGS += $(FB_CPPFLAGS) $(DEBUG_CPPFLAGS)

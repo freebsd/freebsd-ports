@@ -3,7 +3,6 @@
 
 PORTNAME=	fb303
 PORTVERSION=	${THRIFT_PORTVERSION}
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	APACHE
@@ -15,22 +14,32 @@ COMMENT=	Facebook Bassline
 
 LICENSE=	AL2
 
-LIB_DEPENDS=	boost_system:${PORTSDIR}/devel/boost-libs \
-		thrift:${PORTSDIR}/devel/thrift
+LIB_DEPENDS=	libthrift.so:${PORTSDIR}/devel/thrift-cpp
+BUILD_DEPENDS=	thrift:${PORTSDIR}/devel/thrift
 
 ACLOCAL_ARGS=	-I ./aclocal
 AUTOMAKE_ARGS=	-a
 CONFIGURE_ARGS=	PY_PREFIX="${PREFIX}"
-USE_AUTOTOOLS=	aclocal automake autoconf
-USE_GMAKE=	yes
-USES=		perl5
+USE_AUTOTOOLS=	autoconf autoheader:env aclocal automake
+
+USES=		gmake perl5 compiler
 USE_PERL5=	run
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/contrib/fb303
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}" PYTHON_VER="${PYTHON_VER}"
 
+CONFIGURE_ARGS+=	--without-php
+
 NO_STAGE=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang
+USE_CXXSTD=	c++11
+EXTRA_PATCHES+=	${FILESDIR}/extra_patch-cpp__Makefile.am
+.endif
+
 post-build:
 	(cd ${WRKSRC} && ${LOCALBASE}/bin/thrift --gen perl ${WRKSRC}/if/fb303.thrift)
 
