@@ -1,7 +1,7 @@
-  Adzap is a http-redirector script for squid, that zaps by replacing
+Adzap is a http-redirector script for squid, that zaps by replacing
 those annoying ad banners from web pages with placeholder GIFs.
 It lives in the web proxy and so requires no special browser
-facilities.  It's readily customizable, small, fast, and easy to
+facilities. It's readily customizable, small, fast, and easy to
 install.
 
 WWW: http://adzapper.sourceforge.net/
