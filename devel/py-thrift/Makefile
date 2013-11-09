@@ -11,13 +11,14 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	komarov@valerka.net
 COMMENT=	Python interface to Thrift
 
-DISTINFO_FILE=	${.CURDIR}/../thrift/distinfo
+DISTINFO_FILE=	${PORTSDIR}/devel/thrift/distinfo
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/lib/py
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|setuptools|do_not_use_&|' ${WRKSRC}/${PYSETUP}
 
