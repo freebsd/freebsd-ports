@@ -2,31 +2,37 @@
 # $FreeBSD$
 
 PORTNAME=	Tie-DNS
-PORTVERSION=	0.6.2
+PORTVERSION=	1.132.260
 PORTEPOCH=	1
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Tie interface to p5-Net-DNS
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Tie interface to Net::DNS
 
-RUN_DEPENDS=	p5-Net-DNS>=0.12:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-Tie-Cache>=0.01:${PORTSDIR}/devel/p5-Tie-Cache
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-USES=		perl5
+BUILD_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
+		p5-Tie-Cache>=0:${PORTSDIR}/devel/p5-Tie-Cache
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-CheckManifest>=0:${PORTSDIR}/devel/p5-Test-CheckManifest \
+		p5-Test-Perl-Critic>=0:${PORTSDIR}/textproc/p5-Test-Perl-Critic \
+		p5-Test-PerlTidy>=0:${PORTSDIR}/devel/p5-Test-PerlTidy
+
+OPTIONS_DEFINE=	EXAMPLES
+
 USE_PERL5=	configure
-
-.if !defined(NOPORTEXAMPLES)
+USES=		perl5 shebangfix
 
 PORTEXAMPLES=	*
 
-post-install:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/eg/* ${STAGEDIR}${EXAMPLESDIR}
+SHEBANG_FILES=	eg/*.pl
 
-.endif
+post-install:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/eg/*.pl ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>
