@@ -133,7 +133,7 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 # PYDISTUTILS_AUTOPLIST
 #					- Automatically generates the packaging list for a port that uses
 #                                         distutils or setuptools (easy_install) when defined.
-#                                         requires: USE_PYDISUTILS
+#                                         requires: USE_PYDISTUTILS
 #
 # PYTHON_PY3K_PLIST_HACK
 #					- Automatically generates Python 3.x compatible __pycache__ entries
