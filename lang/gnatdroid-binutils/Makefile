@@ -40,9 +40,9 @@ CONFIGURE_ARGS+=	--with-mpfr=${LOCALBASE}
 CONFIGURE_ARGS+=	--disable-werror
 CONFIGURE_ARGS+=	--disable-nls
 
-NO_STAGE=	yes
 post-install:
-	${MKDIR} ${BR2_PREFIX}
-	(cd ${BR1_PREFIX} && ${COPYTREE_BIN} \* ${BR2_PREFIX})
+	${MKDIR} ${STAGEDIR}${BR2_PREFIX}
+	(cd ${STAGEDIR}${BR1_PREFIX} && ${COPYTREE_BIN} \* \
+		${STAGEDIR}${BR2_PREFIX})
 
 .include <bsd.port.mk>
