@@ -22,8 +22,7 @@ USE_PERL5=	run
 
 PLIST_FILES=	bin/dim
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/dim.pl ${PREFIX}/bin/dim
+	${INSTALL_SCRIPT} ${WRKSRC}/dim.pl ${STAGEDIR}${PREFIX}/bin/dim
 
 .include <bsd.port.mk>
