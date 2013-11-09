@@ -22,7 +22,6 @@ LATEST_LINK=		apache22-${WITH_MPM}-mpm
 DESCR=			${.CURDIR}/pkg-descr
 
 MPM_ITK_VERSION?=	20110321-01
-NO_STAGE=	yes
 
 EXTRA_PATCHES+=		${.CURDIR}/files/mpm-itk-${MPM_ITK_VERSION}
 

@@ -10,7 +10,6 @@ MASTERDIR=		${.CURDIR}/../apache22
 MAINTAINER=		ports@FreeBSD.org
 
 WITH_MPM=		peruser
-NO_STAGE=		yes
 
 LATEST_LINK=		apache22-${WITH_MPM}-mpm
 DESCR=			${.CURDIR}/pkg-descr
