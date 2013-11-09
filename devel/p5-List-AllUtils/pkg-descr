@@ -3,4 +3,4 @@ defined in List::Util or List::MoreUtils? I sure am. Now you don't
 have to remember. This module will export all of the functions that
 either of those two modules defines.
 
-WWW:	http://search.cpan.org/dist/List-AllUtils/
+WWW: http://search.cpan.org/dist/List-AllUtils/
