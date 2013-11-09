@@ -10,10 +10,10 @@ DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	The "meta-port" for the Xfce 4 desktop environment
+COMMENT=	The "meta-port" for the Xfce Desktop Environment
 
 OPTIONS_DEFINE=	ICONS ORAGE MOUSEPAD TERMINAL APPFINDER MIXER PRINT SQUEEZE GDM NOTIFY XPM
-OPTIONS_DEFAULT=	ICONS ORAGE MOUSEPAD TERMINAL APPFINDER SQUEEZE NOTIFY
+OPTIONS_DEFAULT=	ICONS ORAGE MOUSEPAD TERMINAL APPFINDER NOTIFY
 ORAGE_DESC=	Install the Xfce calendar application
 MOUSEPAD_DESC=	Install the Xfce text editor
 TERMINAL_DESC=	Install the Xfce terminal application
@@ -31,18 +31,14 @@ RUN_DEPENDS=	xfwm4:${PORTSDIR}/x11-wm/xfce4-wm \
 NO_BUILD=	yes
 LATEST_LINK=	xfce4
 
-NO_STAGE=	yes
+NO_MTREE=	yes
 .include <bsd.port.options.mk>
-
-.if exists(${LOCALBASE}/sbin/gdm)
-WITH_GDM=	yes
-.endif
 
 .if ${PORT_OPTIONS:MGDM}
 RUN_DEPENDS+=	${LOCALBASE}/sbin/gdm:${PORTSDIR}/x11/gdm
+REINPLACE_ARGS=	-i ""
 PLIST_FILES=	etc/gdm/Sessions/XFce4 \
 		etc/dm/Sessions/XFce4.desktop
-PLIST_DIRS=	etc/gdm/Sessions
 .endif
 
 .if ${PORT_OPTIONS:MICONS}
@@ -66,7 +62,7 @@ RUN_DEPENDS+=	xfce4-appfinder:${PORTSDIR}/misc/xfce4-appfinder
 .endif
 
 .if ${PORT_OPTIONS:MMIXER}
-RUN_DEPENDS+=	${LOCALBASE}/bin/xfce4-mixer:${PORTSDIR}/audio/xfce4-mixer
+RUN_DEPENDS+=	xfce4-mixer:${PORTSDIR}/audio/xfce4-mixer
 .endif
 
 .if ${PORT_OPTIONS:MPRINT}
@@ -89,30 +85,15 @@ do-install:	# empty
 
 post-install:
 .if ${PORT_OPTIONS:MGDM}
-	@${TEST} -d ${PREFIX}/etc/gdm/Sessions || \
-		${MKDIR} -p ${PREFIX}/etc/gdm/Sessions
-	@${INSTALL_SCRIPT} ${FILESDIR}/XFce4 ${PREFIX}/etc/gdm/Sessions
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|' ${FILESDIR}/XFce4.desktop > ${PREFIX}/etc/dm/Sessions/XFce4.desktop
+.for dir in dm gdm
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/${dir}/Sessions
+.endfor
+	@${INSTALL_SCRIPT} ${FILESDIR}/XFce4 \
+		${STAGEDIR}${PREFIX}/etc/gdm/Sessions
+	@${INSTALL_DATA} ${FILESDIR}/XFce4.desktop \
+		${STAGEDIR}${PREFIX}/etc/dm/Sessions
+	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|' \
+		${STAGEDIR}${PREFIX}/etc/dm/Sessions/XFce4.desktop
 .endif
-	@${ECHO} "================================================================"
-	@${ECHO}
-	@${ECHO} "If you want to allow users to restart or shutdown the system,"
-	@${ECHO} "do not forget to add the following lines between the <config>"
-	@${ECHO} "tags in your PolicyKit.conf file."
-	@${ECHO} "  ${PREFIX}/etc/PolicyKit/PolicyKit.conf"
-	@${ECHO} ""
-	@${ECHO} "<match action=\"org.freedesktop.hal.power-management.shutdown\">"
-	@${ECHO} "    <return result=\"yes\"/>"
-	@${ECHO} "</match>"
-	@${ECHO} ""
-	@${ECHO} "<match action=\"org.freedesktop.hal.power-management.reboot\">"
-	@${ECHO} "    <return result=\"yes\"/>"
-	@${ECHO} "</match>"
-	@${ECHO}
-	@${ECHO} "Make also sure, hald_enable, dbus_enable"
-	@${ECHO} "is set to YES in your /etc/rc.conf"
-	@${ECHO}
-	@${ECHO} "================================================================"
-
 
 .include <bsd.port.mk>
