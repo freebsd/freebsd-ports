@@ -3,10 +3,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scraper/ISBN/Amazon_Driver/.packlist
 %%PERL5_MAN3%%/WWW::Scraper::ISBN::AmazonUK_Driver.3.gz
 %%PERL5_MAN3%%/WWW::Scraper::ISBN::AmazonUS_Driver.3.gz
-@dirrmtry %%SITE_PERL%%/WWW/Scraper/ISBN
-@dirrmtry %%SITE_PERL%%/WWW/Scraper
-@dirrmtry %%SITE_PERL%%/WWW
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scraper/ISBN/Amazon_Driver
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scraper/ISBN
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scraper
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW/Scraper/ISBN
+@dirrmtry %%SITE_PERL%%/WWW/Scraper
+@dirrmtry %%SITE_PERL%%/WWW
