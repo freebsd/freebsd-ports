@@ -12,6 +12,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/_auth_tkt.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/_auth_tkt.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/_auth_tkt.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/_compat.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/_compat.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/_compat.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/api.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/api.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/api.pyo
@@ -76,6 +82,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/tests/test__auth_tkt.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/tests/test__auth_tkt.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/tests/test__auth_tkt.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/tests/test__compat.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/tests/test__compat.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/tests/test__compat.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/tests/test_api.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/tests/test_api.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/tests/test_api.pyo
@@ -94,11 +106,11 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/utils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/utils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/utils.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/plugins/tests/fixtures
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/plugins/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/plugins
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze/who
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/repoze
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
