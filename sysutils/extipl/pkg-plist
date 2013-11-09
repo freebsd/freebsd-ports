@@ -1,0 +1,11 @@
+man/man8/extipl.8.gz
+sbin/extipl
+%%PORTDOCS%%%%DOCSDIR%%/English/extipl.txt
+%%PORTDOCS%%%%DOCSDIR%%/English/scorpius.txt
+%%PORTDOCS%%%%DOCSDIR%%/English/techical.txt
+%%PORTDOCS%%%%DOCSDIR%%/Japanese/extipl.txt
+%%PORTDOCS%%%%DOCSDIR%%/Japanese/scorpius.txt
+%%PORTDOCS%%%%DOCSDIR%%/Japanese/techical.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Japanese
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/English
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

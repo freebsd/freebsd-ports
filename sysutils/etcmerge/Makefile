@@ -16,12 +16,10 @@ NO_WRKSUBDIR=	yes
 
 SRC=		${.CURDIR}/src
 
-MAN8=		${PORTNAME}.8
-PLIST_FILES=	sbin/etcmerge
+PLIST_FILES=	man/man8/${PORTNAME}.8.gz sbin/etcmerge
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${SRC}/${PORTNAME}.sh ${PREFIX}/sbin/${PORTNAME}
-	${INSTALL_MAN} ${SRC}/${PORTNAME}.8 ${PREFIX}/man/man8
+	${INSTALL_SCRIPT} ${SRC}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
+	${INSTALL_MAN} ${SRC}/${PORTNAME}.8 ${STAGEDIR}${PREFIX}/man/man8
 
 .include <bsd.port.mk>

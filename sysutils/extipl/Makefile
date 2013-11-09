@@ -14,12 +14,10 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 ONLY_FOR_ARCHS=	i386 amd64
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
+OPTIONS_DEFINE=	DOCS
 
-MAN8=		${PORTNAME}.8
-PORTDOCS=	*
-PLIST_FILES=	sbin/${PORTNAME}
+.include <bsd.port.options.mk>
 
-NO_STAGE=	yes
 post-patch:
 	cd ${WRKSRC}; \
 	${SED} -e 's|!!DOCDIR!!|${DOCSDIR}|g' \
@@ -28,13 +26,13 @@ post-patch:
 		-e 's/(DIR)[\t]*[?]=/$$1=/;' Makefile
 
 do-install:
-	${INSTALL_PROGRAM} -m 700 ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${MAN8PREFIX}/man/man8
+	${INSTALL_PROGRAM} -m 700 ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/English
-	${INSTALL_DATA} ${WRKSRC}/../doc/English/*.txt ${DOCSDIR}/English
-	@${MKDIR} ${DOCSDIR}/Japanese
-	${INSTALL_DATA} ${WRKSRC}/../doc/Japanese/*.txt ${DOCSDIR}/Japanese
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/English
+	${INSTALL_DATA} ${WRKSRC}/../doc/English/*.txt ${STAGEDIR}${DOCSDIR}/English
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/Japanese
+	${INSTALL_DATA} ${WRKSRC}/../doc/Japanese/*.txt ${STAGEDIR}${DOCSDIR}/Japanese
 .endif
 
 .include <bsd.port.mk>
