@@ -252,7 +252,6 @@ do-install:
 .endif
 
 post-install:
-
 	@${ECHO_MSG} ""
 	@${PREFIX}/bin/pacpl -f
 	@${ECHO_MSG} ""
@@ -261,7 +260,7 @@ post-install:
 	@${ECHO_MSG} "If you are updating from pacpl 3.x please do take"
 	@${ECHO_MSG} "time to review the changes in 4.x:"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "	http://pacpl.sourceforge.net/ChangeLog.txt"
+	@${ECHO_MSG} "  http://sourceforge.net/p/pacpl/code/ci/master/tree/ChangeLog"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "The command-line options are quite different in 4.x.  A"
 	@${ECHO_MSG} "few features are no longer available and several are new. "
