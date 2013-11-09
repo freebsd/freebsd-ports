@@ -11,7 +11,6 @@ COMMENT=	Library for lossless LAS compression
 
 LICENSE=	LGPL3
 
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USES=		cmake
 USE_LDCONFIG=	yes
@@ -19,6 +18,6 @@ USE_LDCONFIG=	yes
 CMAKE_DEFS+=	-DCMAKE_USE_PTHREADS:BOOL=ON
 
 post-install:
-	@${LN} -s liblaszip.so.5.0.0 ${PREFIX}/lib/liblaszip.so.5
+	@${LN} -s liblaszip.so.5.0.0 ${STAGEDIR}${PREFIX}/lib/liblaszip.so.5
 
 .include <bsd.port.mk>

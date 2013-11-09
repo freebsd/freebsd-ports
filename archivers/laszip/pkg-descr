@@ -8,4 +8,4 @@ LASzip is completely lossless. It compresses bulky LAS files into compact LAZ
 files that are only 10-20 percent of the original size, accurately preserving
 every single bit.
 
-WWW:   http://laszip.org/
+WWW: http://laszip.org/
