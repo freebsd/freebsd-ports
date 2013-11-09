@@ -1,0 +1,7 @@
+%%SITE_PERL%%/JSON/Tiny.pm
+%%SITE_PERL%%/JSON/Tiny.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/Tiny/.packlist
+%%PERL5_MAN3%%/JSON::Tiny.3.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/Tiny
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON
+@dirrmtry %%SITE_PERL%%/JSON
