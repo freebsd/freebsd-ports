@@ -255,18 +255,5 @@ post-install:
 	cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d | ${SORT} -r | \
 	   ${SED} -E -e '/^(bin|sbin|lib|libexec|share|man|include)$$/d' \
 	   -e '/^man\/man[1-9]$$/d' -e 's/^/@dirrm /g' >> ${TMPPLIST}
-.if ${OPSYS} == FreeBSD
-.  if ${OSVERSION} > 900000 && ${OSVERSION} < 900507
-	@${ECHO_MSG} "===================================================================="
-	@${ECHO_MSG} " NOTICE REGARDING ADA TASKING ON FREEBSD 9.0:"
-	@${ECHO_MSG} " Due to a bug in the FreeBSD 9.0 threading library, an exiting task"
-	@${ECHO_MSG} " panics with the message: 'thread exits with resources held!'."
-	@${ECHO_MSG} " This behavior breaks Ada tasking.  These are two solutions:"
-	@${ECHO_MSG} " 1) Upgrade to FreeBSD 9.1 or higher"
-	@${ECHO_MSG} " 2) Patch and rebuild thread library as described in"
-	@${ECHO_MSG} "    http://www.dragonlace.net/posts/F9_Fix/"
-	@${ECHO_MSG} "===================================================================="
-.  endif
-.endif
 
 .include <bsd.port.mk>
