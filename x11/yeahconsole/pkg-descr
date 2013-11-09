@@ -1,5 +1,6 @@
-YeahConsole turns an xterm into a gamelike console.
-This means it will slide down from top of your screen
-if you hit a shortcut key.
+YeahConsole is a terminal wrapper for creating drop-down consoles, similar
+to those found in games like Quake.
+
+By default, YeahConsole is activated and hidden with Ctrl+Alt+Y.
 
 WWW: http://phrat.de/yeahtools.html
