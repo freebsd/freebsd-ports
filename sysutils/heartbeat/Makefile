@@ -16,10 +16,10 @@ COMMENT=	Subsystem for High-Availability Clustering
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
-LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
-		net:${PORTSDIR}/net/libnet \
-		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		xml2:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
+		libnet.so:${PORTSDIR}/net/libnet \
+		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
+		libxml2.so:${PORTSDIR}/textproc/libxml2
 PATCH_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 
 USE_AUTOTOOLS=	autoconf autoheader automake aclocal libtool libltdl

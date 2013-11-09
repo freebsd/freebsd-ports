@@ -1,0 +1,11 @@
+--- tools/Makefile.am.orig	2008-08-18 12:32:19.000000000 +0000
++++ tools/Makefile.am	2013-11-08 13:57:58.000000000 +0000
+@@ -43,7 +43,7 @@
+ 
+ ## SOURCES
+ ccdv: 	$(top_srcdir)/tools/ccdv.c
+-	gcc $(AM_CFLAGS) $(CFLAGS) -o ccdv $(top_srcdir)/tools/ccdv.c
++	$(CC) $(AM_CFLAGS) $(CFLAGS) -o ccdv $(top_srcdir)/tools/ccdv.c
+ 
+ cl_status_SOURCES	= cl_status.c
+ # A little trick. Now ccdv can be auto-built but not auto-cleaned.
