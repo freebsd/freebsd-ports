@@ -14,8 +14,7 @@ bin/%%TARGET%%-gcov
 bin/%%TARGET%%-cpp
 bin/%%TARGET%%-gnatgcc
 bin/%%TARGET%%-gcc-%%GCCVERS%%
-%%FRT%%bin/%%TARGET%%-gnatgfortran
-lib/libiberty.a
+%%FORT%%bin/%%TARGET%%-gnatgfortran
 %%TARGET%%/bin/gnatbind
 %%TARGET%%/bin/gnatchop
 %%TARGET%%/bin/gnat
@@ -25,7 +24,4 @@ lib/libiberty.a
 %%TARGET%%/bin/gnatmake
 %%TARGET%%/bin/gnatprep
 %%TARGET%%/bin/gnatgcc
-%%FRT%%%%TARGET%%/bin/gnatgfortran
-%%FRT%%%%TARGET%%/lib/libgfortran.a
-%%FRT%%%%TARGET%%/lib/libgfortran.la
-%%FRT%%%%TARGET%%/lib/libgfortran.spec
+%%FORT%%%%TARGET%%/bin/gnatgfortran

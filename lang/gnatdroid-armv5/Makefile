@@ -3,7 +3,7 @@
 
 PORTNAME=	armv5
 PORTVERSION=	${SNAPSHOT}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	releases/gcc-${GCC_VERSION}
@@ -16,13 +16,16 @@ DISTFILES=	gcc-core-${GCC_VERSION}.tar.bz2 \
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	C/Ada cross-compiler, target: Android ARMv5
 
+LICENSE=	GPLv3
+
 BUILD_DEPENDS=	gnatdroid-sysroot>=9:${PORTSDIR}/lang/gnatdroid-sysroot \
 		gnatdroid-binutils>=2.21:${PORTSDIR}/lang/gnatdroid-binutils \
 		gnat-aux>=20110325:${PORTSDIR}/lang/gnat-aux
 RUN_DEPENDS:=	gnatdroid-sysroot>=9:${PORTSDIR}/lang/gnatdroid-sysroot \
 		gnatdroid-binutils>=2.21:${PORTSDIR}/lang/gnatdroid-binutils
 
-NO_STAGE=	yes
+NO_LICENSES_INSTALL= yes
+
 .include "${.CURDIR}/../gnat-aux/Makefile.common"
 
 LANGS=		c ada
@@ -33,6 +36,7 @@ NO_MTREE=	YES
 
 OPTIONS_DEFINE=		FORT OBJC #CXX
 OPTIONS_DEFAULT=
+OPTIONS_SUB=		yes
 CXX_DESC=		Also build c++ language
 FORT_DESC=		Also build Fortran language
 OBJC_DESC=		Also build Objective-C language
@@ -42,23 +46,24 @@ DROID_ARCH=		armv5te
 ARMVERSION=		ARMv5
 FPU=			vfp
 WRKSRC=			${WRKDIR}/gcc-${GCC_VERSION}
-BUILDDIR=		${WRKDIR}/build
-FILESDIR=		${.CURDIR}/../gnat-aux/files
+BUILD_WRKSRC=		${WRKDIR}/build
+PATCHDIR=		${.CURDIR}/../gnat-aux/files
 CFG_SCRIPT=		${WRKSRC}/configure
 REVFILE=		${WRKSRC}/gcc/REVISION
 SRPREFIX=		${LOCALBASE}/android9
 PREFIX=			${SRPREFIX}/${ARMVERSION}
 FULL_GNATGCC=		${LOCALBASE}/bin/gnatgcc
-INSTALLDIRS=		lib/gcc libexec/gcc share
-INSTALLDIRS+=		${DROID_TARGET}/lib/armv7-a
-INSTALLDIRS+=		${DROID_TARGET}/lib/thumb
+INSTALLDIRS=		lib libexec share
+INSTALLDIRS+=		${DROID_TARGET}/lib
 PLIST_SUB+=		TARGET="${DROID_TARGET}"
 PLIST_SUB+=		GCCVERS="${GCC_VERSION}"
+SUB_FILES=		pkg-message
+SUB_LIST=		TARGET="${DROID_TARGET}"
 
 ADA_CONFIGURE_ENV=	CC=${FULL_GNATGCC}
+ALL_TARGET=		all
 
 .include <bsd.port.pre.mk>
-.include <bsd.port.options.mk>
 
 .if ${ARCH:S/amd64/x86_64/} == x86_64
 OS_LABEL4VERS=	"[${OPSYS}64 x Android ${ARMVERSION}]"
@@ -75,9 +80,6 @@ LANGS+=		c++
 APPLY_DIFFS+=	cxx cxx-testsuite
 DISTFILES+=	gcc-g++-${GCC_VERSION}.tar.bz2
 INSTALLDIRS+=	include/c++/${GCC_VERSION}
-PLIST_SUB+=	CXX=""
-.else
-PLIST_SUB+=	CXX="@comment "
 .endif
 
 ###############
@@ -88,9 +90,6 @@ PLIST_SUB+=	CXX="@comment "
 LANGS+=		fortran
 APPLY_DIFFS+=	fortran
 DISTFILES+=	gcc-fortran-${GCC_VERSION}.tar.bz2
-PLIST_SUB+=	FRT=""
-.else
-PLIST_SUB+=	FRT="@comment "
 .endif
 
 ###################
@@ -132,7 +131,7 @@ post-extract:
 	@${ECHO} "-=> GNAT AUX ${OS_LABEL4VERS}" > ${REVFILE}
 
 	# Create new directories in preparation of applying diff files
-.if defined(WITH_CXX)
+.if ${PORT_OPTIONS:MCXX}
 	${MKDIR} ${WRKSRC}/libstdc++-v3/config/locale/dragonfly
 	${MKDIR} ${WRKSRC}/libstdc++-v3/config/os/bsd/dragonfly
 .endif
@@ -140,45 +139,45 @@ post-extract:
 	# Apply required composite diff files
 .for suffix in ${APPLY_DIFFS}
 	@${ECHO} "Applying composite patch diff-${suffix}"
-	@${PATCH} -d ${WRKSRC} -s -E < ${FILESDIR}/diff-${suffix}
+	@${PATCH} -d ${WRKSRC} -s -E < ${PATCHDIR}/diff-${suffix}
 .endfor
 
 do-configure:
-	${MKDIR} ${BUILDDIR}
-	cd ${BUILDDIR} && ${SETENV} ${ADA_CONFIGURE_ENV} \
+	${MKDIR} ${BUILD_WRKSRC}
+	cd ${BUILD_WRKSRC} && ${SETENV} ${ADA_CONFIGURE_ENV} \
 	${CFG_SCRIPT} ${CONFIGURE_ARGS}
 
-do-build:
-	cd ${BUILDDIR} && ${GMAKE} ${_MAKE_JOBS} all
+pre-install:
+	# The "native tools" won't install unless a directory exists
+	${MKDIR} ${STAGEDIR}${PREFIX}/${DROID_TARGET}/bin 
 
 do-install:
-	cd ${BUILDDIR} && ${GMAKE} install-strip DESTDIR=${DESTDIR}
-	${MV} ${PREFIX}/bin/${DROID_TARGET}-gcc \
-	   ${PREFIX}/bin/${DROID_TARGET}-gnatgcc
-	${MV} ${PREFIX}/${DROID_TARGET}/bin/gcc \
-	   ${PREFIX}/${DROID_TARGET}/bin/gnatgcc
-.if defined(WITH_FORT)
-	${MV} ${PREFIX}/bin/${DROID_TARGET}-gfortran \
-	   ${PREFIX}/bin/${DROID_TARGET}-gnatgfortran
-	${MV} ${PREFIX}/${DROID_TARGET}/bin/gfortran \
-	   ${PREFIX}/${DROID_TARGET}/bin/gnatgfortran
+	cd ${BUILD_WRKSRC} && ${GMAKE} install-strip DESTDIR=${STAGEDIR}
+	${MV} ${STAGEDIR}${PREFIX}/bin/${DROID_TARGET}-gcc \
+	   ${STAGEDIR}${PREFIX}/bin/${DROID_TARGET}-gnatgcc
+	${MV} ${STAGEDIR}${PREFIX}/${DROID_TARGET}/bin/gcc \
+	   ${STAGEDIR}${PREFIX}/${DROID_TARGET}/bin/gnatgcc
+.if ${PORT_OPTIONS:MFORT}
+	${MV} ${STAGEDIR}${PREFIX}/bin/${DROID_TARGET}-gfortran \
+	   ${STAGEDIR}${PREFIX}/bin/${DROID_TARGET}-gnatgfortran
+	${MV} ${STAGEDIR}${PREFIX}/${DROID_TARGET}/bin/gfortran \
+	   ${STAGEDIR}${PREFIX}/${DROID_TARGET}/bin/gnatgfortran
 .endif
 
 post-install:
 .for d in ${INSTALLDIRS}
-	cd ${PREFIX}; ${FIND} $d \( -type f -or -type l \) | ${SORT} >> ${TMPPLIST}
-	cd ${PREFIX}; ${FIND} $d -type d | ${SORT} -dr | \
-	   ${SED} -e 's/^/@dirrm /g' >> ${TMPPLIST}
+	cd ${STAGEDIR}${PREFIX}; ${FIND} $d \( -type f -or -type l \) | \
+		${SORT} >> ${TMPPLIST}
 .endfor
-	@${ECHO} "@dirrm include" >> ${TMPPLIST}
-	@${ECHO} "@dirrm libexec" >> ${TMPPLIST}
-	@${ECHO} "@dirrm lib" >> ${TMPPLIST}
-
-	@${ECHO} "============================================================"
-	@${ECHO} "  Add to path: ${PREFIX}/bin"
-	@${ECHO} "  All binaries have prefix of ${DROID_TARGET}-"
-	@${ECHO} "  e.g. ${DROID_TARGET}-gnatgcc"
-	@${ECHO} "       ${DROID_TARGET}-gnatmake"
-	@${ECHO} "============================================================"
+.for loop in A B
+	cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d -empty | \
+		${SORT} -dr | ${XARGS} ${RMDIR}
+.endfor
+	cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d | ${SORT} -dr | \
+	   ${SED} -e '/^bin$$/d' \
+	   -e '/^${DROID_TARGET}\/bin$$/d' \
+	   -e '/^${DROID_TARGET}\/lib$$/d' \
+	   -e '/^${DROID_TARGET}$$/d' \
+	   -e 's/^/@dirrm /g' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>

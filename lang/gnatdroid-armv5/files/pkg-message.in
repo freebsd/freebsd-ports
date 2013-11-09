@@ -1,0 +1,4 @@
+  Add to path: %%PREFIX%%/bin
+  All binaries have prefix of %%TARGET%%-
+  e.g. %%TARGET%%-gnatgcc
+       %%TARGET%%-gnatmake
