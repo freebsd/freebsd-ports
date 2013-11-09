@@ -10,15 +10,13 @@ MASTER_SITES=	SF
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Web-based network management tool for moderate to large networks
 
-OPTIONS_DEFINE=	DOCS GRAPHVIZ MIBS
-OPTIONS_DEFAULT=DOCS GRAPHVIZ MIBS
+OPTIONS_DEFINE=	DOCS GRAPHVIZ MIBS WEBUI
+OPTIONS_DEFAULT=DOCS GRAPHVIZ MIBS WEBUI
 MIBS_DESC=	Depend on net-mgmt/netdisco-mibs
 GRAPHVIZ_DESC=	Install GraphViz for network map support
+WEBUI_DESC=	With web interface (mod_perl2+apache22)
 
-RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
-		p5-Apache-DBI>=0:${PORTSDIR}/www/p5-Apache-DBI	\
-		p5-libapreq2>=0:${PORTSDIR}/www/p5-libapreq2 \
-		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
+RUN_DEPENDS+=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
 		p5-SNMP-Info>=3.01:${PORTSDIR}/net-mgmt/p5-SNMP-Info \
 		p5-HTML-Mason>=0:${PORTSDIR}/www/p5-HTML-Mason \
 		p5-DB_File-Lock>=0:${PORTSDIR}/devel/p5-DB_File-Lock \
@@ -26,7 +24,6 @@ RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
 		p5-Net-NBName>=0:${PORTSDIR}/net/p5-Net-NBName \
 		p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-MasonX-Request-WithApacheSession>=0:${PORTSDIR}/www/p5-MasonX-Request-WithApacheSession \
 		p5-Parallel-ForkManager>=0:${PORTSDIR}/devel/p5-Parallel-ForkManager
 
 USERS=		netdisco
@@ -34,7 +31,6 @@ GROUPS=		netdisco
 
 USES=		perl5
 USE_PGSQL=	yes
-USE_APACHE_RUN=	22+
 
 USE_RC_SUBR=	netdisco
 
@@ -64,7 +60,7 @@ MIBSDIR=	${PREFIX}/share/netdisco-mibs
 .if ${PORT_OPTIONS:MMIBS}
 RUN_DEPENDS+=	${MIBSDIR}/mib_index.txt:${PORTSDIR}/net-mgmt/netdisco-mibs
 BUILD_DEPENDS+=	${MIBSDIR}/mib_index.txt:${PORTSDIR}/net-mgmt/netdisco-mibs
-. include 	"${.CURDIR}/../netdisco-mibs/bsd.port.netdisco.mk"
+. include	"${.CURDIR}/../netdisco-mibs/bsd.port.netdisco.mk"
 MIBINCLUDES!=${ECHO} \"${MIBDIRS:S/^/${MIBSDIR}\//}\"
 MIBINCLUDES:=${MIBINCLUDES:S/ /:/g:S/"//g}
 .else
@@ -74,6 +70,16 @@ MIBINCLUDES="#please add here mibs dirs list (at least snmp and rfc ones)"
 .if ${PORT_OPTIONS:MGRAPHVIZ}
 RUN_DEPENDS+=	p5-Graph>=0:${PORTSDIR}/math/p5-Graph	\
 		p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz
+.endif
+
+.if ${PORT_OPTIONS:MWEBUI}
+RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
+		p5-Apache-DBI>=0:${PORTSDIR}/www/p5-Apache-DBI	\
+		p5-libapreq2>=0:${PORTSDIR}/www/p5-libapreq2 \
+		p5-MasonX-Request-WithApacheSession>=0:${PORTSDIR}/www/p5-MasonX-Request-WithApacheSession
+USE_APACHE_RUN=	22
+.else
+WWWDIR=	"@comment "
 .endif
 
 pre-install:
@@ -103,18 +109,19 @@ do-install:
 		cd ${WRKSRC} && ${INSTALL_SCRIPT} ${i} ${PREFIX}/bin
 .	endfor
 
-	${MKDIR} ${WWWDIR}
-	cd ${WRKSRC}/html && ${INSTALL_DATA} autohandler *.* ${WWWDIR}
+.	if ${PORT_OPTIONS:MWEBUI}
+		${MKDIR} ${WWWDIR}
+		cd ${WRKSRC}/html && ${INSTALL_DATA} autohandler *.* ${WWWDIR}
 
-	${MKDIR} ${WWWDIR}/doc
-	cd ${WRKSRC}/html/doc && ${INSTALL_DATA} *.* ${WWWDIR}/doc
+		${MKDIR} ${WWWDIR}/doc
+		cd ${WRKSRC}/html/doc && ${INSTALL_DATA} *.* ${WWWDIR}/doc
 
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+		${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 
-	${MKDIR} ${WWWDIR}/mason
+		${MKDIR} ${WWWDIR}/mason
+.	endif
 
 	${INSTALL_DATA} ${WRKSRC}/netdisco.pm ${SITE_PERL}
-
 	${INSTALL} -d -m 750 -o ${USERS} -g ${GROUPS} ${ETCDIR}
 
 .	for i in ${CONFIG_FILES}
