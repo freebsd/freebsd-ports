@@ -4,7 +4,7 @@
 PORTNAME=	sms1xxx
 PORTVERSION=	20120113
 PORTREVISION=	1
-CATEGORIES=	multimedia kld
+CATEGORIES=	multimedia
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-siano/
 PKGNAMESUFFIX=	-kmod
 DISTNAME=	siano-${PORTVERSION}
@@ -32,9 +32,6 @@ NOVA_DESC=	Build Hauppauge WinTV MiniStick FW
 ONLY_FOR_ARCHS=	i386 amd64
 
 SUB_FILES=	pkg-message
-KMODDIR?=	/boot/modules
-PLIST_SUB+=	KMODDIR=${KMODDIR}
-MAKE_ENV+=	KMODDIR=${KMODDIR}
 
 PORTDOCS=	CHANGELOG README COPYING
 
@@ -47,11 +44,11 @@ NOVA_FW=	novab0_dvbbda
 BUILD_FWS=
 
 NO_STAGE=	yes
+
+USES=		kmod
 .include <bsd.port.pre.mk>
 
-.if !exists(${SRC_BASE}/sys/Makefile)
-IGNORE=		requires kernel source files
-.elif ${OSVERSION} <= 800063
+.if ${OSVERSION} <= 800063
 IGNORE=		requires FreeBSD 8.0 or superior
 .endif
 

@@ -4,7 +4,7 @@
 PORTNAME=       kix
 PORTVERSION=	1.0
 PORTREVISION=	1
-CATEGORIES=     graphics kld
+CATEGORIES=     graphics
 MASTER_SITES=   http://homepage.ntlworld.com/jon.belson/files/kix-1.0.tar.gz \
 	LOCAL/pgollucci
 PKGNAMESUFFIX=	-kmod
@@ -12,15 +12,11 @@ PKGNAMESUFFIX=	-kmod
 MAINTAINER=	jon@witchspace.com
 COMMENT=	A graphical screensaver kernel module
 
-SSP_UNSAFE=	kernel module does not support ssp
-
 NO_STAGE=	yes
+
+USES=		kmod
 .include <bsd.port.pre.mk>
 
-SYSDIR?=	${SRC_BASE}/sys
-.if !exists(${SYSDIR}/dev/syscons/syscons.h)
-IGNORE=		requires kernel source (in ${SYSDIR}) to build
-.endif
 MAKE_ENV+=	WERROR=
 PLIST_FILES=	lib/kix_saver.ko
 SUB_FILES=	pkg-message

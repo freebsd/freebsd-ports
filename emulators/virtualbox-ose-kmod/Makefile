@@ -3,7 +3,7 @@
 
 PORTNAME=	virtualbox-ose
 DISTVERSION=	4.2.18
-CATEGORIES=	emulators kld
+CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
 		http://disasterarea.chruetertee.ch/
@@ -41,12 +41,9 @@ DEBUG_DESC=	Debug symbols, additional logs and assertions
 VIMAGE_DESC=	VIMAGE virtual networking support
 
 NO_STAGE=	yes
+
+USES=		kmod
 .include <bsd.port.options.mk>
-
-PLIST_SUB+=	KMODDIR=${KMODDIR:C,^/,,}
-
-KMODDIR=	/boot/modules
-SRC_BASE?=	/usr/src
 
 VBOX_BIN=	${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/src
 
@@ -70,10 +67,6 @@ PLIST_SUB+=	WITH_DEBUG="@comment "
 KMK_ARCH=	freebsd.x86
 .else
 KMK_ARCH=	freebsd.${ARCH}
-.endif
-
-.if !exists(${SRC_BASE}/sys/kern/bus_if.m)
-IGNORE=		requires kernel sources
 .endif
 
 .include <bsd.port.pre.mk>
@@ -108,7 +101,6 @@ do-build:
 	cd ${VBOX_BIN} && make ${MAKE_FLAGS}
 
 do-install:
-	${MKDIR} ${KMODDIR}
 	${INSTALL_KLD} ${VBOX_BIN}/vboxdrv/vboxdrv.ko ${KMODDIR}
 	${INSTALL_KLD} ${VBOX_BIN}/vboxnetadp/vboxnetadp.ko ${KMODDIR}
 	${INSTALL_KLD} ${VBOX_BIN}/vboxnetflt/vboxnetflt.ko ${KMODDIR}
@@ -117,6 +109,5 @@ do-install:
 	${INSTALL_KLD} ${VBOX_BIN}/vboxnetadp/vboxnetadp.ko.symbols ${KMODDIR}
 	${INSTALL_KLD} ${VBOX_BIN}/vboxnetflt/vboxnetflt.ko.symbols ${KMODDIR}
 .endif
-	@/usr/sbin/kldxref ${KMODDIR}
 
 .include <bsd.port.post.mk>

@@ -2,7 +2,7 @@
 
 PORTNAME=	virtio
 PORTVERSION=	0.${SVN_REV}
-CATEGORIES=	emulators kld
+CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kuriyama
 PKGNAMESUFFIX=	-kmod-${OSBRANCH}
@@ -14,17 +14,13 @@ COMMENT=	virtio kernel modules port for 8.[234]/9.[01]
 ONLY_FOR_ARCHS=	amd64 i386
 
 WRKSRC=		${WRKDIR}
-KMODDIR?=	/boot/modules
-PLIST_SUB=	KMODDIR=${KMODDIR:C,^/,,}
 NEEDSUBDIRS=	amd64 cam conf contrib dev/pci geom i386 kern net netinet netinet6 \
 	sys tools vm x86
 
 NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
-.if !exists(${SRC_BASE}/sys/Makefile)
-IGNORE=		requires kernel source to be installed
-.endif
+USES=		kmod
+.include <bsd.port.pre.mk>
 
 SVN_REV=	250249
 FILE_8=		${PORTNAME}-8-0.${SVN_REV}${EXTRACT_SUFX}
@@ -66,7 +62,6 @@ do-install:
 	${INSTALL_KLD} ${WRKSRC}/sys/modules/virtio/${f}.ko ${KMODDIR}
 	${INSTALL_KLD} ${WRKSRC}/sys/modules/virtio/${f}.ko.symbols ${KMODDIR}
 .endfor
-	/usr/sbin/kldxref ${KMODDIR}
 
 post-install:
 	${CAT} ${PKGMESSAGE}

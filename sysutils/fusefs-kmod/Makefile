@@ -4,7 +4,7 @@
 PORTNAME=	fusefs
 DISTVERSION=	0.3.9-pre1.20080208
 PORTREVISION=	11
-CATEGORIES=	sysutils kld
+CATEGORIES=	sysutils
 MASTER_SITES=	http://mercurial.creo.hu/repos/fuse4bsd-hg/index.cgi/archive/ \
     		http://mirrors.rit.edu/zi/fuse4bsd/ \
   		LOCAL/bdrewery/${PORTNAME}/
@@ -17,13 +17,9 @@ COMMENT=	Kernel module for fuse
 
 BUILD_DEPENDS=	fusefs-libs>2.4.1:${PORTSDIR}/sysutils/fusefs-libs
 
-SSP_UNSAFE=	kernel module does not support ssp
-
 USE_RC_SUBR=	fusefs
-KMODDIR?=	${PREFIX}/modules
-PLIST_SUB=	KMODDIR=${KMODDIR}
+KMODDIR=	${PREFIX}/modules
 MAKE_ENV=	BINDIR="${PREFIX}/sbin" MANDIR="${MANPREFIX}/man/man" \
-		KMODDIR="${KMODDIR}" SYSDIR="${SRC_BASE}/sys" \
 		MOUNT="${SRC_BASE}/sbin/mount"
 WRKSRC=		${WRKDIR}/fuse4bsd-${HG_SHORTREV}
 DISABLE_SIZE=	yes
@@ -32,13 +28,14 @@ OPTIONS_DEFINE=	AUTOSETUP DOCS
 AUTOSETUP_DESC=	Automatic global config file setup
 
 NO_STAGE=	yes
+
+USES=		kmod
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	deplate:${PORTSDIR}/textproc/ruby-deplate
 .endif
 
-SRC_BASE?=	/usr/src
 SETUP=		setup.sh
 HG_SHORTREV=	498acaef33b0
 
@@ -71,9 +68,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extrapatch-fuse_module__fuse_vnops.c
 .if exists(${SRC_BASE}/sys/fs/fuse)
 IGNORE=		Integrated into base
 .endif
-.if !exists(${SRC_BASE}/sys/Makefile)
-IGNORE=		requires the Kernel source to be installed. Set SRC_BASE if it is not in /usr/src
-.endif
 .if !exists(${SRC_BASE}/sbin/mount)
 IGNORE=		requires the userland sources to be installed. Set SRC_BASE if it is not in /usr/src
 .endif
@@ -101,9 +95,6 @@ post-build:
 .if ${PORT_OPTIONS:MDOCS}
 	@cd ${WRKSRC}/doc && make plaintext html_chunked
 .endif
-
-pre-su-install:
-	@${MKDIR} ${KMODDIR}
 
 post-install:
 	@${LN} -fs ${PREFIX}/sbin/mount_fusefs /usr/sbin

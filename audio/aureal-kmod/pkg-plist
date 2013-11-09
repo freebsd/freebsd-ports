@@ -1,8 +1,5 @@
-@unexec `if [ -e /bin/chflags ]; then echo /bin/chflags; else echo /usr/bin/chflags; fi` noschg %D/%%KMODDIR%%/snd_au88?0.ko
-@unexec kldxref %D/%%KMODDIR%%
-@unexec rm -f %D/%%KMODDIR%%/linker.hints
-%%KMODDIR%%/snd_au8810.ko
-%%KMODDIR%%/snd_au8820.ko
-%%KMODDIR%%/snd_au8830.ko
-@dirrmtry %%KMODDIR%%
+@unexec `if [ -e /bin/chflags ]; then echo /bin/chflags; else echo /usr/bin/chflags; fi` noschg /%%KMODDIR%%/snd_au88?0.ko
+/%%KMODDIR%%/snd_au8810.ko
+/%%KMODDIR%%/snd_au8820.ko
+/%%KMODDIR%%/snd_au8830.ko
 @dirrmtry modules

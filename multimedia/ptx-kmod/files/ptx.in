@@ -14,7 +14,7 @@ stop_cmd="ptx_stop"
 
 ptx_start()
 {
-	load_kld %%PREFIX%%/%%KMODDIR%%/ptx.ko
+	load_kld %%KMODDIR%%/ptx.ko
 }
 ptx_stop()
 {

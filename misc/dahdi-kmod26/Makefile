@@ -3,7 +3,7 @@
 
 PORTNAME=	dahdi-kmod26
 PORTVERSION=	${DAHDI_VERSION:S/-/./g}
-CATEGORIES=	misc kld
+CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL}\
 		http://people.freebsd.org/~fjoe/dahdi/\
 		http://downloads.digium.com/pub/telephony/firmware/releases/:firmware
@@ -17,8 +17,6 @@ MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Digium/Asterisk Hardware Device Interface
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/dahdi_cfg:${PORTSDIR}/misc/dahdi
-
-SSP_UNSAFE=	kernel module does not support ssp
 
 DAHDI_VERSION=		2.6.1-r10738
 DAHDI_TOOLS_VERSION=	2.4.0-rc1
@@ -51,14 +49,13 @@ ONLY_FOR_ARCHS=	i386 amd64 sparc64
 CONFLICTS=	zaptel-[0-9]* dahdi-kmod-*
 
 NO_STAGE=	yes
+
+KMODDIR=	${PREFIX}/lib/dahdi
+USES=		kmod
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 703000 || (${OSVERSION} >= 800000 && ${OSVERSION} < 800108)
 IGNORE=		requires firmware(9) support for kernel modules with hyphens
-.endif
-
-.if !exists(${SRC_BASE}/sys/Makefile)
-IGNORE=		requires kernel source present in ${SRC_BASE}/sys
 .endif
 
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
@@ -80,12 +77,6 @@ post-extract:
 .for _f in ${FIRMWARES}
 	${CP} ${DISTDIR}/${${_f}_DISTFILE} ${WRKSRC}/bsd-kmod/${${_f}_DIR}
 .endfor
-
-pre-su-install:
-	@${MKDIR} ${PREFIX}/lib/dahdi
-
-post-install:
-	@${TOUCH} ${PREFIX}/lib/dahdi/linker.hints
 
 fw-versions: extract
 .for _v in ${FIRMWARES:=_VERSION}

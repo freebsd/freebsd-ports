@@ -3,7 +3,7 @@
 
 PORTNAME=	bwi-firmware
 PORTVERSION=	${FWVERSION}
-CATEGORIES=	net kld
+CATEGORIES=	net
 MASTER_SITES=	http://downloads.openwrt.org/sources/ \
 		http://mirror2.openwrt.org/sources/
 PKGNAMESUFFIX=	-kmod
@@ -25,14 +25,14 @@ WRKSRC=		${WRKDIR}
 FWNAME=		bwi_v3
 FWFILE=		wl_apsta-${FWVERSION}.0.o
 FWVERSION=	3.130.20
-KMODDIR=	/boot/modules
 KMODNAME=	${FWNAME}_ucode
-PLIST_SUB=	KMODNAME="${KMODNAME}" \
-		KMODDIR="${KMODDIR}"
+PLIST_SUB=	KMODNAME="${KMODNAME}"
 
 NO_PACKAGE=	this is a modified version of a restricted firmware
 
 NO_STAGE=	yes
+
+USES=		kmod
 .include <bsd.port.pre.mk>
 
 do-build:

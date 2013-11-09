@@ -3,7 +3,7 @@
 
 PORTNAME=	quantis
 DISTVERSION=	v13.04.29
-CATEGORIES=	security kld
+CATEGORIES=	security
 MASTER_SITES=	http://www.idquantique.com/~download/Quantis/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ale
@@ -17,27 +17,19 @@ LICENSE=	BSD GPLv2
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKDIR}/Quantis-${DISTVERSION}/License.txt
 
-SSP_UNSAFE=	kernel module does not support ssp
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-aqo
 
 WRKSRC=		${WRKDIR}/Quantis-${DISTVERSION}/Drivers/Unix/QuantisPci
 
-KMODDIR?=	/boot/modules
-
-MAKE_ENV+=	KMODDIR=${KMODDIR}
-
 PLIST_FILES=	"@cwd ${KMODDIR}" \
 		"quantis.ko" \
-		"@unexec kldxref ${KMODDIR}" \
 		"@cwd ${PREFIX}"
 
 NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
-.if !exists(${SRC_BASE}/sys/Makefile)
-IGNORE=		requires kernel source to be installed
-.endif
+USES=		kmod
+.include <bsd.port.pre.mk>
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

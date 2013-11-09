@@ -6,5 +6,3 @@
 %%WITH_DEBUG%%%%KMODDIR%%/vboxnetadp.ko.symbols
 %%KMODDIR%%/vboxnetflt.ko
 %%WITH_DEBUG%%%%KMODDIR%%/vboxnetflt.ko.symbols
-@exec /usr/sbin/kldxref /%%KMODDIR%%
-@unexec /usr/sbin/kldxref /%%KMODDIR%%
