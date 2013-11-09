@@ -3,6 +3,7 @@
 
 PORTNAME=	DateTime-Format-Natural
 PORTVERSION=	1.02
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,8 +20,7 @@ BUILD_DEPENDS=	p5-boolean>=0:${PORTSDIR}/devel/p5-boolean \
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
-		p5-Module-Util>=0:${PORTSDIR}/devel/p5-Module-Util \
-		p5-Test-MockTime>=0:${PORTSDIR}/devel/p5-Test-MockTime
+		p5-Module-Util>=0:${PORTSDIR}/devel/p5-Module-Util
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-MockTime>=0:${PORTSDIR}/devel/p5-Test-MockTime
 
