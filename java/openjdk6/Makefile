@@ -3,7 +3,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b28
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,} \
 		http://download.java.net/openjdk/jtreg/promoted/4.1/b05/:jtreg \
@@ -192,7 +192,7 @@ ICONV_LIBS=	-L${LOCALBASE}/lib ${ICONV_LIB}
 ZLIB_LIBS?=	-lz
 
 .if ${COMPILER_TYPE} == "clang"
-MAKE_ENV+=	COMPILER_WARNINGS_FATAL=false
+MAKE_ENV+=	COMPILER_WARNINGS_FATAL=false DEBUG_CFLAGS/i486=-g
 .if empty(PORT_OPTIONS:MDEBUG) && empty(PORT_OPTIONS:MFASTDEBUG)
 MAKE_ENV+=	WARNINGS_ARE_ERRORS=-w
 .endif
