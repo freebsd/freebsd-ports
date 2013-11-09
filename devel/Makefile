@@ -4431,6 +4431,7 @@
     SUBDIR += tex-kpathsea
     SUBDIR += tex-web2c
     SUBDIR += thrift
+    SUBDIR += thrift-cpp
     SUBDIR += thunar-vcs-plugin
     SUBDIR += tide
     SUBDIR += tig
