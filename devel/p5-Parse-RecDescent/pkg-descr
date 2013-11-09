@@ -12,5 +12,4 @@ parsers from simple yacc-like grammar specifications. It provides:
   * Incremental extension of the parsing grammar (even during a parse)
   * The ability to retrieve the generated parsing code.
 
-Author: Damian Conway <damian@conway.org>
 WWW: http://search.cpan.org/dist/Parse-RecDescent/
