@@ -593,6 +593,110 @@
  
  // GC Ergo Flags
  define_pd_global(intx, CMSYoungGenPerWorker, 64*M);  // default max size of CMS young gen, per GC worker thread
+--- hotspot/src/os/bsd/vm/jvm_bsd.cpp
++++ hotspot/src/os/bsd/vm/jvm_bsd.cpp
+@@ -110,71 +110,30 @@
+ JVM_END
+ 
+ /*
+-  All the defined signal names for Bsd.
++  All the defined signal names for BSD are defined by sys_signame[].
+ 
+   NOTE that not all of these names are accepted by our Java implementation
+ 
+   Via an existing claim by the VM, sigaction restrictions, or
+   the "rules of Unix" some of these names will be rejected at runtime.
+   For example the VM sets up to handle USR1, sigaction returns EINVAL for
+-  STOP, and Bsd simply doesn't allow catching of KILL.
++  STOP, and BSD simply doesn't allow catching of KILL.
+ 
+   Here are the names currently accepted by a user of sun.misc.Signal with
+   1.4.1 (ignoring potential interaction with use of chaining, etc):
+ 
+-    HUP, INT, TRAP, ABRT, IOT, BUS, USR2, PIPE, ALRM, TERM, STKFLT,
+-    CLD, CHLD, CONT, TSTP, TTIN, TTOU, URG, XCPU, XFSZ, VTALRM, PROF,
+-    WINCH, POLL, IO, PWR, SYS
+-
++      HUP, INT, TRAP, ABRT, EMT, BUS, SYS, PIPE, ALRM, TERM, URG, TSTP,
++      CONT, CHLD, TTIN, TTOU, IO, XCPU, XFSZ, VTALRM, PROF, WINCH, INFO,
++      USR2
+ */
+ 
+-struct siglabel {
+-  const char *name;
+-  int   number;
+-};
+-
+-struct siglabel siglabels[] = {
+-  /* derived from /usr/include/bits/signum.h on RH7.2 */
+-   "HUP",       SIGHUP,         /* Hangup (POSIX).  */
+-  "INT",        SIGINT,         /* Interrupt (ANSI).  */
+-  "QUIT",       SIGQUIT,        /* Quit (POSIX).  */
+-  "ILL",        SIGILL,         /* Illegal instruction (ANSI).  */
+-  "TRAP",       SIGTRAP,        /* Trace trap (POSIX).  */
+-  "ABRT",       SIGABRT,        /* Abort (ANSI).  */
+-  "EMT",        SIGEMT,         /* EMT trap  */
+-  "FPE",        SIGFPE,         /* Floating-point exception (ANSI).  */
+-  "KILL",       SIGKILL,        /* Kill, unblockable (POSIX).  */
+-  "BUS",        SIGBUS,         /* BUS error (4.2 BSD).  */
+-  "SEGV",       SIGSEGV,        /* Segmentation violation (ANSI).  */
+-  "SYS",        SIGSYS,         /* Bad system call. Only on some Bsden! */
+-  "PIPE",       SIGPIPE,        /* Broken pipe (POSIX).  */
+-  "ALRM",       SIGALRM,        /* Alarm clock (POSIX).  */
+-  "TERM",       SIGTERM,        /* Termination (ANSI).  */
+-  "URG",        SIGURG,         /* Urgent condition on socket (4.2 BSD).  */
+-  "STOP",       SIGSTOP,        /* Stop, unblockable (POSIX).  */
+-  "TSTP",       SIGTSTP,        /* Keyboard stop (POSIX).  */
+-  "CONT",       SIGCONT,        /* Continue (POSIX).  */
+-  "CHLD",       SIGCHLD,        /* Child status has changed (POSIX).  */
+-  "TTIN",       SIGTTIN,        /* Background read from tty (POSIX).  */
+-  "TTOU",       SIGTTOU,        /* Background write to tty (POSIX).  */
+-  "IO",         SIGIO,          /* I/O now possible (4.2 BSD).  */
+-  "XCPU",       SIGXCPU,        /* CPU limit exceeded (4.2 BSD).  */
+-  "XFSZ",       SIGXFSZ,        /* File size limit exceeded (4.2 BSD).  */
+-  "VTALRM",     SIGVTALRM,      /* Virtual alarm clock (4.2 BSD).  */
+-  "PROF",       SIGPROF,        /* Profiling alarm clock (4.2 BSD).  */
+-  "WINCH",      SIGWINCH,       /* Window size change (4.3 BSD, Sun).  */
+-  "INFO",       SIGINFO,        /* Information request.  */
+-  "USR1",       SIGUSR1,        /* User-defined signal 1 (POSIX).  */
+-  "USR2",       SIGUSR2         /* User-defined signal 2 (POSIX).  */
+-  };
+-
+ JVM_ENTRY_NO_ENV(jint, JVM_FindSignal(const char *name))
+ 
+   /* find and return the named signal's number */
+ 
+-  for(uint i=0; i<ARRAY_SIZE(siglabels); i++)
+-    if(!strcmp(name, siglabels[i].name))
+-      return siglabels[i].number;
++  for (int i = 1; i < NSIG; i++)
++    if (strcasecmp(name, sys_signame[i]) == 0)
++      return i;
+ 
+   return -1;
+ 
+@@ -182,11 +141,14 @@
+ 
+ // used by os::exception_name()
+ extern bool signal_name(int signo, char* buf, size_t len) {
+-  for(uint i = 0; i < ARRAY_SIZE(siglabels); i++) {
+-    if (signo == siglabels[i].number) {
+-      jio_snprintf(buf, len, "SIG%s", siglabels[i].name);
+-      return true;
+-    }
+-  }
+-  return false;
++  if (signo <= 0 || signo >= NSIG)
++    return false;
++  char signame[8];
++  const char *s = sys_signame[signo];
++  uint i;
++  for (i = 0; i < strlen(s); i++)
++    signame[i] = toupper(s[i]);
++  signame[i] = '\0';
++  jio_snprintf(buf, len, "SIG%s", signame);
++  return true;
+ }
 --- hotspot/src/os/bsd/vm/osThread_bsd.cpp
 +++ hotspot/src/os/bsd/vm/osThread_bsd.cpp
 @@ -49,7 +49,7 @@
@@ -705,7 +809,25 @@
    // XXXBSD: this is just a stopgap implementation
    return physical_memory() >> 2;
  #else
-@@ -308,16 +342,22 @@
+@@ -221,6 +255,17 @@
+ }
+ 
+ julong os::allocatable_physical_memory(julong size) {
++#ifdef _ALLBSD_SOURCE
++  struct rlimit limits;
++  getrlimit(RLIMIT_DATA, &limits);
++  if (limits.rlim_cur != RLIM_INFINITY)
++    size = MIN2(size, (julong)limits.rlim_cur);
++#ifdef RLIMIT_AS
++  getrlimit(RLIMIT_AS, &limits);
++  if (limits.rlim_cur != RLIM_INFINITY)
++    size = MIN2(size, (julong)limits.rlim_cur);
++#endif
++#endif
+ #ifdef _LP64
+   return size;
+ #else
+@@ -308,16 +353,22 @@
  #define COMPILER_VARIANT "client"
  #endif
  
@@ -732,7 +854,7 @@
    int rslt = syscall(SYS_gettid);
    if (rslt == -1) {
       // old kernel, no NPTL support
-@@ -325,6 +365,7 @@
+@@ -325,6 +376,7 @@
    } else {
       return (pid_t)rslt;
    }
@@ -740,7 +862,7 @@
  }
  
  // Most versions of bsd have a bug where the number of processors are
-@@ -337,7 +378,35 @@
+@@ -337,7 +389,35 @@
                       "environment on Bsd when /proc filesystem is not mounted.";
  #endif
  
@@ -777,7 +899,7 @@
  void os::Bsd::initialize_system_info() {
    int mib[2];
    size_t len;
-@@ -452,7 +521,7 @@
+@@ -452,7 +532,7 @@
   *        7: The default directories, normally /lib and /usr/lib.
   */
  #ifndef DEFAULT_LIBPATH
@@ -786,7 +908,7 @@
  #endif
  
  #define EXTENSIONS_DIR  "/lib/ext"
-@@ -997,7 +1066,7 @@
+@@ -997,7 +1077,7 @@
      return NULL;
    }
  
@@ -795,7 +917,7 @@
  #ifdef __APPLE__
    // thread_id is mach thread on macos
    osthread->set_thread_id(::mach_thread_self());
-@@ -1009,6 +1078,7 @@
+@@ -1009,6 +1089,7 @@
    // thread_id is kernel thread id (similar to Solaris LWP id)
    osthread->set_thread_id(os::Bsd::gettid());
  
@@ -803,7 +925,7 @@
    if (UseNUMA) {
      int lgrp_id = os::numa_get_group_id();
      if (lgrp_id != -1) {
-@@ -1016,6 +1086,7 @@
+@@ -1016,6 +1097,7 @@
      }
    }
  #endif
@@ -811,7 +933,7 @@
    // initialize signal mask for this thread
    os::Bsd::hotspot_sigmask(thread);
  
-@@ -1194,7 +1265,7 @@
+@@ -1194,7 +1276,7 @@
    }
  
    // Store pthread info into the OSThread
@@ -820,7 +942,7 @@
  #ifdef __APPLE__
    osthread->set_thread_id(::mach_thread_self());
  #else
-@@ -1817,8 +1888,10 @@
+@@ -1817,8 +1899,10 @@
  }
  
  intx os::current_thread_id() {
@@ -832,12 +954,13 @@
  #else
    return (intx)::pthread_self();
  #endif
-@@ -2341,14 +2414,14 @@
+@@ -2341,14 +2425,16 @@
  }
  
  void os::print_os_info_brief(outputStream* st) {
 -  st->print("Bsd");
 +  st->print("BSD");
++  st->cr();
  
    os::Posix::print_uname_info(st);
  }
@@ -846,10 +969,11 @@
    st->print("OS:");
 -  st->print("Bsd");
 +  st->print("BSD");
++  st->cr();
  
    os::Posix::print_uname_info(st);
  
-@@ -2366,7 +2439,23 @@
+@@ -2366,7 +2452,23 @@
    st->print("Memory:");
    st->print(" %dk page", os::vm_page_size()>>10);
  
@@ -874,7 +998,7 @@
    // values in struct sysinfo are "unsigned long"
    struct sysinfo si;
    sysinfo(&si);
-@@ -2376,17 +2465,22 @@
+@@ -2376,17 +2478,22 @@
              os::physical_memory() >> 10);
    st->print("(" UINT64_FORMAT "k free)",
              os::available_memory() >> 10);
@@ -899,7 +1023,7 @@
    st->cr();
  }
  
-@@ -2533,10 +2627,17 @@
+@@ -2533,10 +2640,17 @@
          jrelib_p = buf + len;
  
          // Add the appropriate library subdir
@@ -917,7 +1041,7 @@
  
          // Add the appropriate client or server subdir
          len = strlen(buf);
-@@ -2997,9 +3098,10 @@
+@@ -2997,9 +3111,10 @@
      flags |= MAP_FIXED;
    }
  
@@ -931,7 +1055,7 @@
                         flags, -1, 0);
  
    if (addr != MAP_FAILED) {
-@@ -3156,7 +3258,9 @@
+@@ -3156,7 +3271,9 @@
  static size_t _large_page_size = 0;
  
  void os::large_page_init() {
@@ -942,7 +1066,7 @@
    if (!UseLargePages) {
      UseHugeTLBFS = false;
      UseSHM = false;
-@@ -3654,8 +3758,8 @@
+@@ -3654,8 +3771,8 @@
    return OS_OK;
  #else
    int ret = setpriority(PRIO_PROCESS, thread->osthread()->thread_id(), newpri);
@@ -952,7 +1076,7 @@
  }
  
  OSReturn os::get_native_priority(const Thread* const thread, int *priority_ptr) {
-@@ -4634,6 +4738,20 @@
+@@ -4634,6 +4751,20 @@
  
  int os::active_processor_count() {
  #ifdef _ALLBSD_SOURCE
@@ -1001,6 +1125,65 @@
      return _clock_gettime != NULL;
    }
  
+--- hotspot/src/os/bsd/vm/threadCritical_bsd.cpp
++++ hotspot/src/os/bsd/vm/threadCritical_bsd.cpp
+@@ -33,35 +33,36 @@
+ // See threadCritical.hpp for details of this class.
+ //
+ 
+-static pthread_t             tc_owner = 0;
+-static pthread_mutex_t       tc_mutex = PTHREAD_MUTEX_INITIALIZER;
+-static int                   tc_count = 0;
++static pthread_mutex_t       tc_mutex;
++static pthread_mutexattr_t   tc_attr;
++static bool                  initialized = false;
+ 
+ void ThreadCritical::initialize() {
++  int ret;
++  ret = pthread_mutexattr_init(&tc_attr);
++  guarantee(ret == 0, "fatal error with pthread_mutexattr_init()");
++  ret = pthread_mutexattr_settype(&tc_attr, PTHREAD_MUTEX_RECURSIVE);
++  guarantee(ret == 0, "fatal error with pthread_mutexattr_settype()");
++  ret = pthread_mutex_init(&tc_mutex, &tc_attr);
++  guarantee(ret == 0, "fatal error with pthread_mutex_init()");
++  initialized = true;
+ }
+ 
+ void ThreadCritical::release() {
++  pthread_mutex_destroy(&tc_mutex);
++  pthread_mutexattr_destroy(&tc_attr);
+ }
+ 
+ ThreadCritical::ThreadCritical() {
+-  pthread_t self = pthread_self();
+-  if (self != tc_owner) {
+-    int ret = pthread_mutex_lock(&tc_mutex);
+-    guarantee(ret == 0, "fatal error with pthread_mutex_lock()");
+-    assert(tc_count == 0, "Lock acquired with illegal reentry count.");
+-    tc_owner = self;
+-  }
+-  tc_count++;
++  if (initialized)
++    pthread_mutex_lock(&tc_mutex);
++  else
++    assert(Threads::number_of_threads() == 0, "valid only during initialization");
+ }
+ 
+ ThreadCritical::~ThreadCritical() {
+-  assert(tc_owner == pthread_self(), "must have correct owner");
+-  assert(tc_count > 0, "must have correct count");
+-
+-  tc_count--;
+-  if (tc_count == 0) {
+-    tc_owner = 0;
+-    int ret = pthread_mutex_unlock(&tc_mutex);
+-    guarantee(ret == 0, "fatal error with pthread_mutex_unlock()");
+-  }
++  if (initialized)
++    pthread_mutex_unlock(&tc_mutex);
++  else
++    assert(Threads::number_of_threads() == 0, "valid only during initialization");
+ }
 --- hotspot/src/os/bsd/vm/vmError_bsd.cpp
 +++ hotspot/src/os/bsd/vm/vmError_bsd.cpp
 @@ -34,6 +34,12 @@
@@ -1240,6 +1423,583 @@
  
  #define VM_INT_CONSTANTS_OS_CPU(declare_constant, declare_preprocessor_constant, declare_c1_constant, declare_c2_constant, declare_c2_preprocessor_constant, last_entry) \
                                                                          \
+--- hotspot/src/share/vm/adlc/arena.cpp
++++ hotspot/src/share/vm/adlc/arena.cpp
+@@ -24,7 +24,7 @@
+ 
+ #include "adlc.hpp"
+ 
+-void* Chunk::operator new(size_t requested_size, size_t length) {
++void* Chunk::operator new(size_t requested_size, size_t length) throw() {
+   return CHeapObj::operator new(requested_size + length);
+ }
+ 
+@@ -163,7 +163,7 @@
+ //-----------------------------------------------------------------------------
+ // CHeapObj
+ 
+-void* CHeapObj::operator new(size_t size){
++void* CHeapObj::operator new(size_t size) throw() {
+   return (void *) malloc(size);
+ }
+ 
+--- hotspot/src/share/vm/adlc/arena.hpp
++++ hotspot/src/share/vm/adlc/arena.hpp
+@@ -42,7 +42,7 @@
+ 
+ class CHeapObj {
+  public:
+-  void* operator new(size_t size);
++  void* operator new(size_t size) throw();
+   void  operator delete(void* p);
+   void* new_array(size_t size);
+ };
+@@ -53,7 +53,7 @@
+ 
+ class ValueObj {
+  public:
+-  void* operator new(size_t size);
++  void* operator new(size_t size) throw();
+   void operator delete(void* p);
+ };
+ 
+@@ -61,7 +61,7 @@
+ 
+ class AllStatic {
+  public:
+-  void* operator new(size_t size);
++  void* operator new(size_t size) throw();
+   void operator delete(void* p);
+ };
+ 
+@@ -70,7 +70,7 @@
+ // Linked list of raw memory chunks
+ class Chunk: public CHeapObj {
+  public:
+-  void* operator new(size_t size, size_t length);
++  void* operator new(size_t size, size_t length) throw();
+   void  operator delete(void* p, size_t length);
+   Chunk(size_t length);
+ 
+--- hotspot/src/share/vm/adlc/main.cpp
++++ hotspot/src/share/vm/adlc/main.cpp
+@@ -508,7 +508,7 @@
+ 
+ // VS2005 has its own definition, identical to this one.
+ #if !defined(_WIN32) || defined(_WIN64) || _MSC_VER < 1400
+-void *operator new( size_t size, int, const char *, int ) {
++void *operator new( size_t size, int, const char *, int ) throw() {
+   return ::operator new( size );
+ }
+ #endif
+--- hotspot/src/share/vm/asm/codeBuffer.hpp
++++ hotspot/src/share/vm/asm/codeBuffer.hpp
+@@ -290,7 +290,7 @@
+   // CodeBuffers must be allocated on the stack except for a single
+   // special case during expansion which is handled internally.  This
+   // is done to guarantee proper cleanup of resources.
+-  void* operator new(size_t size) { return ResourceObj::operator new(size); }
++  void* operator new(size_t size) throw() { return ResourceObj::operator new(size); }
+   void  operator delete(void* p)  { ShouldNotCallThis(); }
+ 
+  public:
+--- hotspot/src/share/vm/c1/c1_Compilation.hpp
++++ hotspot/src/share/vm/c1/c1_Compilation.hpp
+@@ -263,8 +263,8 @@
+ // Base class for objects allocated by the compiler in the compilation arena
+ class CompilationResourceObj ALLOCATION_SUPER_CLASS_SPEC {
+  public:
+-  void* operator new(size_t size) { return Compilation::current()->arena()->Amalloc(size); }
+-  void* operator new(size_t size, Arena* arena) {
++  void* operator new(size_t size) throw() { return Compilation::current()->arena()->Amalloc(size); }
++  void* operator new(size_t size, Arena* arena) throw() {
+     return arena->Amalloc(size);
+   }
+   void  operator delete(void* p) {} // nothing to do
+--- hotspot/src/share/vm/c1/c1_Instruction.hpp
++++ hotspot/src/share/vm/c1/c1_Instruction.hpp
+@@ -311,7 +311,7 @@
+   }
+ 
+  public:
+-  void* operator new(size_t size) {
++  void* operator new(size_t size) throw() {
+     Compilation* c = Compilation::current();
+     void* res = c->arena()->Amalloc(size);
+     ((Instruction*)res)->_id = c->get_next_id();
+@@ -1529,7 +1529,7 @@
+   friend class SuxAndWeightAdjuster;
+ 
+  public:
+-   void* operator new(size_t size) {
++   void* operator new(size_t size) throw() {
+     Compilation* c = Compilation::current();
+     void* res = c->arena()->Amalloc(size);
+     ((BlockBegin*)res)->_id = c->get_next_id();
+--- hotspot/src/share/vm/code/codeBlob.cpp
++++ hotspot/src/share/vm/code/codeBlob.cpp
+@@ -242,7 +242,7 @@
+ }
+ 
+ 
+-void* BufferBlob::operator new(size_t s, unsigned size) {
++void* BufferBlob::operator new(size_t s, unsigned size) throw() {
+   void* p = CodeCache::allocate(size);
+   return p;
+ }
+@@ -344,14 +344,14 @@
+ }
+ 
+ 
+-void* RuntimeStub::operator new(size_t s, unsigned size) {
++void* RuntimeStub::operator new(size_t s, unsigned size) throw() {
+   void* p = CodeCache::allocate(size);
+   if (!p) fatal("Initial size of CodeCache is too small");
+   return p;
+ }
+ 
+ // operator new shared by all singletons:
+-void* SingletonBlob::operator new(size_t s, unsigned size) {
++void* SingletonBlob::operator new(size_t s, unsigned size) throw() {
+   void* p = CodeCache::allocate(size);
+   if (!p) fatal("Initial size of CodeCache is too small");
+   return p;
+--- hotspot/src/share/vm/code/codeBlob.hpp
++++ hotspot/src/share/vm/code/codeBlob.hpp
+@@ -213,7 +213,7 @@
+   BufferBlob(const char* name, int size);
+   BufferBlob(const char* name, int size, CodeBuffer* cb);
+ 
+-  void* operator new(size_t s, unsigned size);
++  void* operator new(size_t s, unsigned size) throw();
+ 
+  public:
+   // Creation
+@@ -287,7 +287,7 @@
+     bool        caller_must_gc_arguments
+   );
+ 
+-  void* operator new(size_t s, unsigned size);
++  void* operator new(size_t s, unsigned size) throw();
+ 
+  public:
+   // Creation
+@@ -325,7 +325,7 @@
+   friend class VMStructs;
+ 
+  protected:
+-  void* operator new(size_t s, unsigned size);
++  void* operator new(size_t s, unsigned size) throw();
+ 
+  public:
+    SingletonBlob(
+--- hotspot/src/share/vm/code/debugInfoRec.cpp
++++ hotspot/src/share/vm/code/debugInfoRec.cpp
+@@ -38,7 +38,7 @@
+   int  _length; // number of bytes in the stream
+   int  _hash;   // hash of stream bytes (for quicker reuse)
+ 
+-  void* operator new(size_t ignore, DebugInformationRecorder* dir) {
++  void* operator new(size_t ignore, DebugInformationRecorder* dir) throw() {
+     assert(ignore == sizeof(DIR_Chunk), "");
+     if (dir->_next_chunk >= dir->_next_chunk_limit) {
+       const int CHUNK = 100;
+--- hotspot/src/share/vm/code/nmethod.cpp
++++ hotspot/src/share/vm/code/nmethod.cpp
+@@ -784,7 +784,7 @@
+ }
+ #endif // def HAVE_DTRACE_H
+ 
+-void* nmethod::operator new(size_t size, int nmethod_size) {
++void* nmethod::operator new(size_t size, int nmethod_size) throw() {
+   // Always leave some room in the CodeCache for I2C/C2I adapters
+   if (CodeCache::largest_free_block() < CodeCacheMinimumFreeSpace) return NULL;
+   return CodeCache::allocate(nmethod_size);
+--- hotspot/src/share/vm/code/nmethod.hpp
++++ hotspot/src/share/vm/code/nmethod.hpp
+@@ -263,7 +263,7 @@
+           int comp_level);
+ 
+   // helper methods
+-  void* operator new(size_t size, int nmethod_size);
++  void* operator new(size_t size, int nmethod_size) throw();
+ 
+   const char* reloc_string_for(u_char* begin, u_char* end);
+   // Returns true if this thread changed the state of the nmethod or
+--- hotspot/src/share/vm/code/relocInfo.hpp
++++ hotspot/src/share/vm/code/relocInfo.hpp
+@@ -686,7 +686,7 @@
+   }
+ 
+  public:
+-  void* operator new(size_t size, const RelocationHolder& holder) {
++  void* operator new(size_t size, const RelocationHolder& holder) throw() {
+     if (size > sizeof(holder._relocbuf)) guarantee_size();
+     assert((void* const *)holder.reloc() == &holder._relocbuf[0], "ptrs must agree");
+     return holder.reloc();
+--- hotspot/src/share/vm/code/vtableStubs.cpp
++++ hotspot/src/share/vm/code/vtableStubs.cpp
+@@ -49,7 +49,7 @@
+ static int num_vtable_chunks = 0;
+ 
+ 
+-void* VtableStub::operator new(size_t size, int code_size) {
++void* VtableStub::operator new(size_t size, int code_size) throw() {
+   assert(size == sizeof(VtableStub), "mismatched size");
+   num_vtable_chunks++;
+   // compute real VtableStub size (rounded to nearest word)
+--- hotspot/src/share/vm/code/vtableStubs.hpp
++++ hotspot/src/share/vm/code/vtableStubs.hpp
+@@ -46,7 +46,7 @@
+   bool           _is_vtable_stub;    // True if vtable stub, false, is itable stub
+   /* code follows here */            // The vtableStub code
+ 
+-  void* operator new(size_t size, int code_size);
++  void* operator new(size_t size, int code_size) throw();
+ 
+   VtableStub(bool is_vtable_stub, int index)
+         : _next(NULL), _is_vtable_stub(is_vtable_stub),
+--- hotspot/src/share/vm/gc_implementation/shared/gcUtil.hpp
++++ hotspot/src/share/vm/gc_implementation/shared/gcUtil.hpp
+@@ -144,9 +144,9 @@
+     _padded_avg(0.0), _deviation(0.0), _padding(padding) {}
+ 
+   // Placement support
+-  void* operator new(size_t ignored, void* p) { return p; }
++  void* operator new(size_t ignored, void* p) throw() { return p; }
+   // Allocator
+-  void* operator new(size_t size) { return CHeapObj::operator new(size); }
++  void* operator new(size_t size) throw() { return CHeapObj::operator new(size); }
+ 
+   // Accessor
+   float padded_average() const         { return _padded_avg; }
+--- hotspot/src/share/vm/libadt/port.hpp
++++ hotspot/src/share/vm/libadt/port.hpp
+@@ -163,7 +163,7 @@
+ extern void *safe_calloc (const char *file, unsigned line, unsigned nitems, unsigned size);
+ extern void *safe_realloc(const char *file, unsigned line, void *ptr, unsigned size);
+ extern char *safe_strdup (const char *file, unsigned line, const char *src);
+-inline void *operator new( size_t size ) { return malloc(size); }
++inline void *operator new( size_t size ) throw() { return malloc(size); }
+ inline void operator delete( void *ptr ) { free(ptr); }
+ #endif
+ 
+--- hotspot/src/share/vm/memory/allocation.cpp
++++ hotspot/src/share/vm/memory/allocation.cpp
+@@ -43,11 +43,11 @@
+ # include "os_bsd.inline.hpp"
+ #endif
+ 
+-void* CHeapObj::operator new(size_t size){
++void* CHeapObj::operator new(size_t size) throw() {
+   return (void *) AllocateHeap(size, "CHeapObj-new");
+ }
+ 
+-void* CHeapObj::operator new (size_t size, const std::nothrow_t&  nothrow_constant) {
++void* CHeapObj::operator new (size_t size, const std::nothrow_t&  nothrow_constant) throw() {
+   char* p = (char*) os::malloc(size);
+ #ifdef ASSERT
+   if (PrintMallocFree) trace_heap_malloc(size, "CHeapObj-new", p);
+@@ -59,12 +59,12 @@
+  FreeHeap(p);
+ }
+ 
+-void* StackObj::operator new(size_t size)  { ShouldNotCallThis(); return 0; };
++void* StackObj::operator new(size_t size) throw() { ShouldNotCallThis(); return 0; };
+ void  StackObj::operator delete(void* p)   { ShouldNotCallThis(); };
+-void* _ValueObj::operator new(size_t size)  { ShouldNotCallThis(); return 0; };
++void* _ValueObj::operator new(size_t size) throw() { ShouldNotCallThis(); return 0; };
+ void  _ValueObj::operator delete(void* p)   { ShouldNotCallThis(); };
+ 
+-void* ResourceObj::operator new(size_t size, allocation_type type) {
++void* ResourceObj::operator new(size_t size, allocation_type type) throw() {
+   address res;
+   switch (type) {
+    case C_HEAP:
+@@ -311,7 +311,7 @@
+ //--------------------------------------------------------------------------------------
+ // Chunk implementation
+ 
+-void* Chunk::operator new(size_t requested_size, AllocFailType alloc_failmode, size_t length) {
++void* Chunk::operator new(size_t requested_size, AllocFailType alloc_failmode, size_t length) throw() {
+   // requested_size is equal to sizeof(Chunk) but in order for the arena
+   // allocations to come out aligned as expected the size must be aligned
+   // to expected arean alignment.
+@@ -576,7 +576,7 @@
+ // src/share/native/sun/awt/font/fontmanager/textcache/hsMemory.cpp::hsSoftNew
+ // define CATCH_OPERATOR_NEW_USAGE if you want to use this.
+ #ifdef CATCH_OPERATOR_NEW_USAGE
+-void* operator new(size_t size){
++void* operator new(size_t size) throw() {
+   static bool warned = false;
+   if (!warned && warn_new_operator)
+     warning("should not call global (default) operator new");
+--- hotspot/src/share/vm/memory/allocation.hpp
++++ hotspot/src/share/vm/memory/allocation.hpp
+@@ -106,8 +106,8 @@
+ 
+ class CHeapObj ALLOCATION_SUPER_CLASS_SPEC {
+  public:
+-  void* operator new(size_t size);
+-  void* operator new (size_t size, const std::nothrow_t&  nothrow_constant);
++  void* operator new(size_t size) throw();
++  void* operator new (size_t size, const std::nothrow_t&  nothrow_constant) throw();
+   void  operator delete(void* p);
+   void* new_array(size_t size);
+ };
+@@ -117,7 +117,7 @@
+ 
+ class StackObj ALLOCATION_SUPER_CLASS_SPEC {
+  public:
+-  void* operator new(size_t size);
++  void* operator new(size_t size) throw();
+   void  operator delete(void* p);
+ };
+ 
+@@ -141,7 +141,7 @@
+ //
+ class _ValueObj {
+  public:
+-  void* operator new(size_t size);
++  void* operator new(size_t size) throw();
+   void operator delete(void* p);
+ };
+ 
+@@ -163,7 +163,7 @@
+   Chunk*       _next;     // Next Chunk in list
+   const size_t _len;      // Size of this Chunk
+  public:
+-  void* operator new(size_t size, AllocFailType alloc_failmode, size_t length);
++  void* operator new(size_t size, AllocFailType alloc_failmode, size_t length) throw();
+   void  operator delete(void* p);
+   Chunk(size_t length);
+ 
+@@ -392,19 +392,19 @@
+ #endif // ASSERT
+ 
+  public:
+-  void* operator new(size_t size, allocation_type type);
+-  void* operator new(size_t size, Arena *arena) {
++  void* operator new(size_t size, allocation_type type) throw();
++  void* operator new(size_t size, Arena *arena) throw() {
+       address res = (address)arena->Amalloc(size);
+       DEBUG_ONLY(set_allocation_type(res, ARENA);)
+       return res;
+   }
+-  void* operator new(size_t size) {
++  void* operator new(size_t size) throw() {
+       address res = (address)resource_allocate_bytes(size);
+       DEBUG_ONLY(set_allocation_type(res, RESOURCE_AREA);)
+       return res;
+   }
+ 
+-  void* operator new(size_t size, const std::nothrow_t& nothrow_constant) {
++  void* operator new(size_t size, const std::nothrow_t& nothrow_constant) throw() {
+     address res = (address)resource_allocate_bytes(size, AllocFailStrategy::RETURN_NULL);
+     DEBUG_ONLY(if (res != NULL) set_allocation_type(res, RESOURCE_AREA);)
+     return res;
+--- hotspot/src/share/vm/memory/memRegion.hpp
++++ hotspot/src/share/vm/memory/memRegion.hpp
+@@ -99,13 +99,13 @@
+ 
+ class MemRegionClosureRO: public MemRegionClosure {
+ public:
+-  void* operator new(size_t size, ResourceObj::allocation_type type) {
++  void* operator new(size_t size, ResourceObj::allocation_type type) throw() {
+         return ResourceObj::operator new(size, type);
+   }
+-  void* operator new(size_t size, Arena *arena) {
++  void* operator new(size_t size, Arena *arena) throw() {
+         return ResourceObj::operator new(size, arena);
+   }
+-  void* operator new(size_t size) {
++  void* operator new(size_t size) throw() {
+         return ResourceObj::operator new(size);
+   }
+ 
+--- hotspot/src/share/vm/oops/klass.cpp
++++ hotspot/src/share/vm/oops/klass.cpp
+@@ -181,7 +181,7 @@
+ }
+ 
+ void* Klass_vtbl::operator new(size_t ignored, KlassHandle& klass,
+-                               int size, TRAPS) {
++                               int size, TRAPS) throw() {
+   // The vtable pointer is installed during the execution of
+   // constructors in the call to permanent_obj_allocate().  Delay
+   // the installation of the klass pointer into the new klass "k"
+--- hotspot/src/share/vm/oops/klass.hpp
++++ hotspot/src/share/vm/oops/klass.hpp
+@@ -167,7 +167,7 @@
+   bool null_vtbl() { return *(intptr_t*)this == 0; }
+ 
+  protected:
+-  void* operator new(size_t ignored, KlassHandle& klass, int size, TRAPS);
++  void* operator new(size_t ignored, KlassHandle& klass, int size, TRAPS) throw();
+ };
+ 
+ 
+--- hotspot/src/share/vm/oops/symbol.cpp
++++ hotspot/src/share/vm/oops/symbol.cpp
+@@ -36,7 +36,7 @@
+   }
+ }
+ 
+-void* Symbol::operator new(size_t size, int len) {
++void* Symbol::operator new(size_t size, int len) throw() {
+   return (void *) AllocateHeap(object_size(len) * HeapWordSize, "symbol");
+ }
+ 
+--- hotspot/src/share/vm/oops/symbol.hpp
++++ hotspot/src/share/vm/oops/symbol.hpp
+@@ -121,7 +121,7 @@
+   }
+ 
+   Symbol(const u1* name, int length);
+-  void* operator new(size_t size, int len);
++  void* operator new(size_t size, int len) throw();
+ 
+  public:
+   // Low-level access (used with care, since not GC-safe)
+--- hotspot/src/share/vm/opto/callGenerator.hpp
++++ hotspot/src/share/vm/opto/callGenerator.hpp
+@@ -240,7 +240,7 @@
+   // Because WarmInfo objects live over the entire lifetime of the
+   // Compile object, they are allocated into the comp_arena, which
+   // does not get resource marked or reset during the compile process
+-  void *operator new( size_t x, Compile* C ) { return C->comp_arena()->Amalloc(x); }
++  void *operator new( size_t x, Compile* C ) throw() { return C->comp_arena()->Amalloc(x); }
+   void operator delete( void * ) { } // fast deallocation
+ 
+   static WarmCallInfo* always_hot();
+--- hotspot/src/share/vm/opto/callnode.hpp
++++ hotspot/src/share/vm/opto/callnode.hpp
+@@ -215,7 +215,7 @@
+   // Because JVMState objects live over the entire lifetime of the
+   // Compile object, they are allocated into the comp_arena, which
+   // does not get resource marked or reset during the compile process
+-  void *operator new( size_t x, Compile* C ) { return C->comp_arena()->Amalloc(x); }
++  void *operator new( size_t x, Compile* C ) throw() { return C->comp_arena()->Amalloc(x); }
+   void operator delete( void * ) { } // fast deallocation
+ 
+   // Create a new JVMState, ready for abstract interpretation.
+--- hotspot/src/share/vm/opto/machnode.hpp
++++ hotspot/src/share/vm/opto/machnode.hpp
+@@ -58,7 +58,7 @@
+ class MachOper : public ResourceObj {
+ public:
+   // Allocate right next to the MachNodes in the same arena
+-  void *operator new( size_t x, Compile* C ) { return C->node_arena()->Amalloc_D(x); }
++  void *operator new( size_t x, Compile* C ) throw() { return C->node_arena()->Amalloc_D(x); }
+ 
+   // Opcode
+   virtual uint opcode() const = 0;
+--- hotspot/src/share/vm/opto/node.hpp
++++ hotspot/src/share/vm/opto/node.hpp
+@@ -207,7 +207,7 @@
+ 
+   // New Operator that takes a Compile pointer, this will eventually
+   // be the "new" New operator.
+-  inline void* operator new( size_t x, Compile* C) {
++  inline void* operator new( size_t x, Compile* C) throw() {
+     Node* n = (Node*)C->node_arena()->Amalloc_D(x);
+ #ifdef ASSERT
+     n->_in = (Node**)n; // magic cookie for assertion check
+@@ -218,7 +218,7 @@
+ 
+   // New Operator that takes a Compile pointer, this will eventually
+   // be the "new" New operator.
+-  inline void* operator new( size_t x, Compile* C, int y) {
++  inline void* operator new( size_t x, Compile* C, int y) throw() {
+     Node* n = (Node*)C->node_arena()->Amalloc_D(x + y*sizeof(void*));
+     n->_in = (Node**)(((char*)n) + x);
+ #ifdef ASSERT
+--- hotspot/src/share/vm/opto/type.hpp
++++ hotspot/src/share/vm/opto/type.hpp
+@@ -144,7 +144,7 @@
+ 
+ public:
+ 
+-  inline void* operator new( size_t x ) {
++  inline void* operator new( size_t x ) throw() {
+     Compile* compile = Compile::current();
+     compile->set_type_last_size(x);
+     void *temp = compile->type_arena()->Amalloc_D(x);
+--- hotspot/src/share/vm/runtime/fprofiler.cpp
++++ hotspot/src/share/vm/runtime/fprofiler.cpp
+@@ -264,7 +264,7 @@
+ 
+  public:
+ 
+-  void* operator new(size_t size, ThreadProfiler* tp);
++  void* operator new(size_t size, ThreadProfiler* tp) throw();
+   void  operator delete(void* p);
+ 
+   ProfilerNode() {
+@@ -371,7 +371,7 @@
+   }
+ };
+ 
+-void* ProfilerNode::operator new(size_t size, ThreadProfiler* tp){
++void* ProfilerNode::operator new(size_t size, ThreadProfiler* tp) throw() {
+   void* result = (void*) tp->area_top;
+   tp->area_top += size;
+ 
+--- hotspot/src/share/vm/runtime/interfaceSupport.hpp
++++ hotspot/src/share/vm/runtime/interfaceSupport.hpp
+@@ -67,7 +67,7 @@
+   }
+ 
+  private:
+-  inline void* operator new(size_t size, void* ptr) {
++  inline void* operator new(size_t size, void* ptr) throw() {
+     return ptr;
+   }
+ };
+--- hotspot/src/share/vm/runtime/park.cpp
++++ hotspot/src/share/vm/runtime/park.cpp
+@@ -140,7 +140,7 @@
+ // well as bank access imbalance on Niagara-like platforms,
+ // although Niagara's hash function should help.
+ 
+-void * ParkEvent::operator new (size_t sz) {
++void * ParkEvent::operator new (size_t sz) throw() {
+   return (void *) ((intptr_t (CHeapObj::operator new (sz + 256)) + 256) & -256) ;
+ }
+ 
+--- hotspot/src/share/vm/runtime/park.hpp
++++ hotspot/src/share/vm/runtime/park.hpp
+@@ -166,7 +166,7 @@
+     // aligned on 256-byte address boundaries.  This ensures that the least
+     // significant byte of a ParkEvent address is always 0.
+ 
+-    void * operator new (size_t sz) ;
++    void * operator new (size_t sz) throw() ;
+     void operator delete (void * a) ;
+ 
+   public:
+--- hotspot/src/share/vm/runtime/thread.cpp
++++ hotspot/src/share/vm/runtime/thread.cpp
+@@ -170,7 +170,7 @@
+ // ======= Thread ========
+ 
+ // Support for forcing alignment of thread objects for biased locking
+-void* Thread::operator new(size_t size) {
++void* Thread::operator new(size_t size) throw() {
+   if (UseBiasedLocking) {
+     const int alignment = markOopDesc::biased_lock_alignment;
+     size_t aligned_size = size + (alignment - sizeof(intptr_t));
+--- hotspot/src/share/vm/runtime/thread.hpp
++++ hotspot/src/share/vm/runtime/thread.hpp
+@@ -104,7 +104,7 @@
+   // Support for forcing alignment of thread objects for biased locking
+   void*       _real_malloc_address;
+  public:
+-  void* operator new(size_t size);
++  void* operator new(size_t size) throw();
+   void  operator delete(void* p);
+  private:
+ 
 --- hotspot/src/share/vm/utilities/macros.hpp
 +++ hotspot/src/share/vm/utilities/macros.hpp
 @@ -177,6 +177,14 @@
