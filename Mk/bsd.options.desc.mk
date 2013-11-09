@@ -399,6 +399,7 @@ SOCKS_DESC?=		SOCKS proxy support
 SOUND_DESC?=		Sound (audio) support
 SOUNDTOUCH_DESC?=	Sound processing support via SoundTouch
 SPANDSP_DESC?=		Spandsp faxing support
+SPDY_DESC?=		SPDY support
 SPEEX_DESC?=		Speex audio format support
 SQL_DESC?=		SQL database support
 SQLITE_DESC?=		SQLite database support
