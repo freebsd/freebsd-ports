@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sierra AGI games interpreter
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_XORG=	x11
 MAKE_JOBS_UNSAFE=	yes
 
@@ -19,12 +19,11 @@ CFLAGS+=	-I${LOCALBASE}/include
 
 PLIST_FILES=	bin/sarien etc/sarien.conf
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/src/filesys/unix/path.c
 
 do-install:
-	${INSTALL} ${WRKSRC}/bin/sarien ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/etc/sarien.cfg ${PREFIX}/etc/sarien.conf
+	${INSTALL} ${WRKSRC}/bin/sarien ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/etc/sarien.cfg ${STAGEDIR}${PREFIX}/etc/sarien.conf
 
 .include <bsd.port.mk>
