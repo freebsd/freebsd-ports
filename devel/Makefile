@@ -3595,6 +3595,7 @@
     SUBDIR += py-instant
     SUBDIR += py-interface
     SUBDIR += py-ipaddr
+    SUBDIR += py-ipdb
     SUBDIR += py-isodate
     SUBDIR += py-iterpipes
     SUBDIR += py-itools
