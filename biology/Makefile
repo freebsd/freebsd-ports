@@ -16,7 +16,6 @@
     SUBDIR += clustalw
     SUBDIR += consed
     SUBDIR += crux
-    SUBDIR += dotter
     SUBDIR += embassy
     SUBDIR += emboss
     SUBDIR += fasta
@@ -86,6 +85,7 @@
     SUBDIR += seaview
     SUBDIR += seqan
     SUBDIR += seqio
+    SUBDIR += seqtools
     SUBDIR += sim4
     SUBDIR += ssaha
     SUBDIR += tRNAscan-SE

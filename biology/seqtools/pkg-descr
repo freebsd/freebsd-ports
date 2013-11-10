@@ -1,0 +1,17 @@
+A suite of tools for visualising sequence alignments.
+
+Blixem is an interactive browser of pairwise alignments that have
+been stacked up in a "master-slave" multiple alignment; it is not
+a 'true' multiple alignment but a 'one-to-many' alignment.
+
+Belvu is a multiple sequence alignment viewer and phylogenetic tool.
+It has an extensive set of user-configurable modes to color residues
+by conservation or by residue type, and some basic alignment editing
+capabilities.
+
+Dotter is a graphical dot-matrix program for detailed comparison
+of two sequences. Every residue in one sequence is compared to every
+residue in the other, with one sequence plotted on the x-axis and
+the other on the y-axis.
+
+WWW: http://www.sanger.ac.uk/resources/software/seqtools/
