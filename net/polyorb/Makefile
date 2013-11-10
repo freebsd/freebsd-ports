@@ -3,6 +3,7 @@
 
 PORTNAME=	polyorb
 PORTVERSION=	2.9.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 
@@ -16,11 +17,12 @@ BUILD_DEPENDS=	xmlada>=3.2:${PORTSDIR}/textproc/xmlada
 USES+=		ada gmake
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_PYTHON_BUILD=	yes
+NO_MTREE=	yes
 
-DESTINY=	${WRKDIR}/destino
-MAKE_ENV=	DESTDIR=${DESTINY} \
-		PROCESSORS=${MAKE_JOBS_NUMBER}
+USE_PYTHON_BUILD=	yes
+NO_LICENSES_INSTALL=	yes
+
+MAKE_ENV=	PROCESSORS=${MAKE_JOBS_NUMBER}
 CONFIGURE_ENV=	PYTHON=${PYTHON_CMD} \
 		ac_cv_prog_CXXCPP="cpp -E" \
 		ac_cv_prog_SVN=false
@@ -38,22 +40,19 @@ CONFIGURE_ARGS=	--with-appli-perso="corba dsa moma" \
 # However, GPL 2012 is particularly unstable, so a custom tarball from
 # SVN revision 201373 has been created, which is the last of PCS version 5.
 
-NO_STAGE=	yes
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} default
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} default
 
 post-install:
-	@cd ${DESTINY}${PREFIX}; ${FIND} * -type d -empty -print | ${XARGS} ${RMDIR}
-	${CP} -pR ${DESTINY}${PREFIX}/ ${PREFIX}/
-	@cd ${DESTINY}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
-	   ${SORT} > ${WRKDIR}/PLIST.all
-	@cd ${DESTINY}${PREFIX}; ${FIND} * -type d | ${AWK} '/\//' | ${SORT} -r | \
+	@cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d -empty -print | ${XARGS} ${RMDIR}
+	@cd ${STAGEDIR}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
+	   ${SORT} > ${TMPPLIST}
+	@cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d | ${AWK} '/\//' | ${SORT} -r | \
 	   ${SED} -e '/lib\/gnat$$/d' -e '/share\/doc$$/d' -e '/share\/gps/d' \
-	   -e 's/^/@dirrm /g' >> ${WRKDIR}/PLIST.all
-	@echo "@unexec rmdir %D/lib/gnat 2>/dev/null || true" >> ${WRKDIR}/PLIST.all
-	@echo "@unexec rmdir %D/share/gps/plug-ins 2>/dev/null || true" >> ${WRKDIR}/PLIST.all
-	@echo "@unexec rmdir %D/share/gps 2>/dev/null || true" >> ${WRKDIR}/PLIST.all
-	@echo "@unexec rmdir %D/share/doc 2>/dev/null || true" >> ${WRKDIR}/PLIST.all
-	@${CAT} ${WRKDIR}/PLIST.all >> ${TMPPLIST}
+	   -e 's/^/@dirrm /g' >> ${TMPPLIST}
+	@echo "@unexec rmdir %D/lib/gnat 2>/dev/null || true" >> ${TMPPLIST}
+	@echo "@unexec rmdir %D/share/gps/plug-ins 2>/dev/null || true" >> ${TMPPLIST}
+	@echo "@unexec rmdir %D/share/gps 2>/dev/null || true" >> ${TMPPLIST}
+	@echo "@unexec rmdir %D/share/doc 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
