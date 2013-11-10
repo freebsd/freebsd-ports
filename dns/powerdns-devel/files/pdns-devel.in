@@ -4,7 +4,7 @@
 #
 
 # PROVIDE: pdns_server
-# REQUIRE: DAEMON %%MYSQL%% %%PGSQL%% %%SLAPD%%
+# REQUIRE: DAEMON %%MYSQL_REQ%% %%PGSQL_REQ%% %%SLAPD_REQ%%
 # KEYWORD: shutdown
 
 #
