@@ -3,6 +3,7 @@
 
 PORTNAME=	xmlada
 PORTVERSION=	4.4.0.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 
@@ -12,18 +13,15 @@ COMMENT=	Adacore XML suite for the Ada language
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_BZIP2=	yes
-USES=		ada
-
-DESTINY=	${WRKDIR}/destino
-MAKE_ENV+=	DESTDIR=${DESTINY}
+USES=		ada gmake
+NO_MTREE=	yes
 
 MAKE_JOBS_UNSAFE=	yes
+NO_LICENSES_INSTALL=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -48,17 +46,15 @@ post-patch:
 .endif
 
 post-install:
-	${RM} -rf ${DESTINY}${PREFIX}/share/doc/xmlada/_sources
-	${CP} -pR ${DESTINY}${PREFIX}/ ${PREFIX}/
-	@cd ${DESTINY}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
-	   ${SORT} > ${WRKDIR}/PLIST.all
-	@cd ${DESTINY}${PREFIX}; ${FIND} * -type d | ${AWK} '/\//' | ${SORT} -r | \
+	${RM} -rf ${STAGEDIR}${PREFIX}/share/doc/xmlada/_sources
+	@cd ${STAGEDIR}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
+	   ${SORT} > ${TMPPLIST}
+	@cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d | ${AWK} '/\//' | ${SORT} -r | \
 	   ${SED} -e '/lib\/gnat$$/d' -e '/share\/doc$$/d' -e '/share\/gps/d' \
-	   -e 's/^/@dirrm /g' >> ${WRKDIR}/PLIST.all
-	@echo "@unexec rmdir %D/lib/gnat 2>/dev/null || true" >> ${WRKDIR}/PLIST.all
-	@echo "@unexec rmdir %D/share/gps/plug-ins 2>/dev/null || true" >> ${WRKDIR}/PLIST.all
-	@echo "@unexec rmdir %D/share/gps 2>/dev/null || true" >> ${WRKDIR}/PLIST.all
-	@echo "@unexec rmdir %D/share/doc 2>/dev/null || true" >> ${WRKDIR}/PLIST.all
-	@${CAT} ${WRKDIR}/PLIST.all >> ${TMPPLIST}
+	   -e 's/^/@dirrm /g' >> ${TMPPLIST}
+	@echo "@unexec rmdir %D/lib/gnat 2>/dev/null || true" >> ${TMPPLIST}
+	@echo "@unexec rmdir %D/share/gps/plug-ins 2>/dev/null || true" >> ${TMPPLIST}
+	@echo "@unexec rmdir %D/share/gps 2>/dev/null || true" >> ${TMPPLIST}
+	@echo "@unexec rmdir %D/share/doc 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
