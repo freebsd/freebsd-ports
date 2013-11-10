@@ -41,6 +41,7 @@ PKGNAMESUFFIX=	${PINENTRY_SLAVE}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MQT4}
+USE_GCC=	any
 USE_QT4=	gui moc_build
 PLIST_SUB+=	WITH_QT4=""
 MOC4=		${LOCALBASE}/bin/moc-qt4
