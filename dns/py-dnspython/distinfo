@@ -1,2 +1,4 @@
 SHA256 (dnspython-1.11.1.tar.gz) = c0c6fcf3ff52939e7eadd931282d083271f65cf0a174555a703563a400289768
 SIZE (dnspython-1.11.1.tar.gz) = 129573
+SHA256 (dnspython3-1.11.1.tar.gz) = e5a5349fd7cf29fc709254e8193eece79f9339e94f77e4fff3c3292f0f3ccace
+SIZE (dnspython3-1.11.1.tar.gz) = 129165
