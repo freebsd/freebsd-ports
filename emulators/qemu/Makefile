@@ -130,6 +130,9 @@ post-patch:
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/cdrom-dma-patch
 .endif
 	@${REINPLACE_CMD} -E \
+		-e "/^by Tibor .TS. S/s|Sch.*z.$$|Schuetz.|" \
+		${WRKSRC}/qemu-doc.texi
+	@${REINPLACE_CMD} -E \
 		-e "s|^(CFLAGS=).*|\1${CFLAGS} -fno-strict-aliasing|" \
 		-e "s|^(LDFLAGS=).*|\1${LDFLAGS}|" \
 		${WRKSRC}/Makefile.target
