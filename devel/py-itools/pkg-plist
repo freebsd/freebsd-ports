@@ -9,7 +9,9 @@ bin/ipkg-info.py
 bin/ipkg-quality.py
 bin/ipkg-update-locale.py
 bin/idb-inspect.py
+%%PYTHON_SITELIBDIR%%/itools/.mailmap
 %%PYTHON_SITELIBDIR%%/itools/CREDITS
+%%PYTHON_SITELIBDIR%%/itools/CREDITS.txt
 %%PYTHON_SITELIBDIR%%/itools/LICENSE.txt
 %%PYTHON_SITELIBDIR%%/itools/MANIFEST
 %%PYTHON_SITELIBDIR%%/itools/README.txt
@@ -24,6 +26,7 @@ bin/idb-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.62.6
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.62.7
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.62.8
+%%PYTHON_SITELIBDIR%%/itools/RELEASE-0.62.9
 %%PYTHON_SITELIBDIR%%/itools/__init__.py
 %%PYTHON_SITELIBDIR%%/itools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/itools/__init__.pyo
@@ -156,9 +159,13 @@ bin/idb-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/git/_libgit.py
 %%PYTHON_SITELIBDIR%%/itools/git/_libgit.pyc
 %%PYTHON_SITELIBDIR%%/itools/git/_libgit.pyo
+%%PYTHON_SITELIBDIR%%/itools/git/TODO.txt
 %%PYTHON_SITELIBDIR%%/itools/git/git.py
 %%PYTHON_SITELIBDIR%%/itools/git/git.pyc
 %%PYTHON_SITELIBDIR%%/itools/git/git.pyo
+%%PYTHON_SITELIBDIR%%/itools/git/worktree.py
+%%PYTHON_SITELIBDIR%%/itools/git/worktree.pyc
+%%PYTHON_SITELIBDIR%%/itools/git/worktree.pyo
 %%PYTHON_SITELIBDIR%%/itools/handlers/__init__.py
 %%PYTHON_SITELIBDIR%%/itools/handlers/__init__.pyc
 %%PYTHON_SITELIBDIR%%/itools/handlers/__init__.pyo
