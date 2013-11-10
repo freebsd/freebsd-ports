@@ -13,7 +13,8 @@ DISTFILES=	gcc-${GCC_VERSION}.tar.bz2
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Version of GCC ${GCC_BRANCH} with full Ada support
 
-NO_STAGE=	yes
+LICENSE=	GPLv3
+
 .include "${.CURDIR}/Makefile.common"
 
 LANGS=			c
@@ -24,6 +25,8 @@ BOOTSTRAP_TRIPLET=	NOT_SET
 FULL_GNATGCC=		NOT_SET
 OS_LABEL4VERS=		[${OPSYS}]
 GARCH=			${ARCH:S/amd64/x86_64/}
+NO_LICENSES_INSTALL=	yes
+NO_MTREE=		yes
 
 OPTIONS_DEFINE=	ADA CXX FORT OBJC STATIC TESTSUITE NLS
 OPTIONS_DEFAULT=	ADA CXX FORT OBJC
@@ -33,11 +36,8 @@ ADA_DESC=		Build Ada language
 CXX_DESC=		Build C++ language
 FORT_DESC=		Build Fortran language
 OBJC_DESC=		Build Objective-C language
-STATIC_DESC=	Build with no shared libraries other than libc
+STATIC_DESC=		Build with no shared libraries other than libc
 TESTSUITE_DESC=		Activate test support
-
-USES+=		perl5
-USE_PERL5=	extract
 
 .include <bsd.port.options.mk>
 
@@ -71,15 +71,10 @@ BUILDDIR=		${WRKDIR}/build
 CFG_SCRIPT=		${WRKSRC}/configure
 REVFILE=		${WRKSRC}/gcc/REVISION
 BOOTSTRAP_PREFIX=	${WRKDIR}/bootstrap
-DESTINY=		${WRKDIR}/destdir
 PKG_PREFIX=		${PREFIX}/${PORTNAME}
 STICONV=		${PREFIX}/lib/libiconv.a
 STINTL=			\$${top_builddir}/../intl/libintl.a
-USE_LDCONFIG=		${PREFIX}/${PORTNAME}/lib ${PREFIX}/${PORTNAME}/lib/gcc
-MAN1=			cpp.1 gcc.1 gcov.1
-MAN1PREFIX=		${PREFIX}/${PORTNAME}/share
-MAN7PREFIX=		${PREFIX}/${PORTNAME}/share
-NO_MANCOMPRESS=		yes
+AWKMANPAGE=		'{if ($$0 ~ /^man\/man[1-9]\/.+[1-9]$$/) print $$0 ".gz"; else print $$0}'
 
 # If we find gnatmake and friends in a standard location, then we'll use this
 # compiler instead of downloading the bootstrap.
@@ -130,7 +125,6 @@ APPLY_DIFFS+=	ada
 .if ${PORT_OPTIONS:MCXX}
 LANGS+=		c++
 APPLY_DIFFS+=	cxx
-MAN1+=		g++.1
 .endif
 
 ###############
@@ -140,7 +134,6 @@ MAN1+=		g++.1
 .if ${PORT_OPTIONS:MFORT}
 LANGS+=		fortran
 APPLY_DIFFS+=	fortran
-MAN1+=		gfortran.1
 EXTRA_CONFIG+=	--enable-libquadmath
 .else
 EXTRA_CONFIG+=	--disable-libquadmath
@@ -225,7 +218,7 @@ post-extract:
 
 	# Update LINK_SPEC to add gcc-aux lib runpath in every binary
 	@${ECHO} "Configuring LINK_SPEC runpath"
-	@${PERL} -pi -e 's;\@PREFIX\@;${PREFIX};' \
+	@${REINPLACE_CMD} -e 's;\@PREFIX\@;${PREFIX};' \
 	  ${WRKSRC}/gcc/config/dragonfly.h \
 	  ${WRKSRC}/gcc/config/i386/freebsd64.h \
 	  ${WRKSRC}/gcc/config/i386/freebsd.h
@@ -234,13 +227,14 @@ post-extract:
 	@${ECHO} "Reconfiguring GCC Makefile to build compiler statically"
 	@${PATCH} -d ${WRKSRC} -s -E < ${FILESDIR}/diff-static-version
 .if ${PORT_OPTIONS:MNLS}
-	@${PERL} -pi -e 's;\@LIBINTL\@;${STINTL} ${STICONV};' ${WRKSRC}/intl/config.intl.in
-	@${PERL} -pi -e 's;\@LIBICONV\@;;' \
+	@${REINPLACE_CMD} -e 's;\@LIBINTL\@;${STINTL} ${STICONV};' \
+	  ${WRKSRC}/intl/config.intl.in
+	@${REINPLACE_CMD} -e 's;\@LIBICONV\@;;' \
 	  ${WRKSRC}/gcc/Makefile.in \
 	  ${WRKSRC}/libcpp/Makefile.in \
 	  ${WRKSRC}/gcc/ada/gcc-interface/Makefile.in
 .else
-	@${PERL} -pi -e 's;\@LIBICONV\@;${STICONV};' \
+	@${REINPLACE_CMD} -e 's;\@LIBICONV\@;${STICONV};' \
 	  ${WRKSRC}/gcc/Makefile.in \
 	  ${WRKSRC}/libcpp/Makefile.in \
 	  ${WRKSRC}/gcc/ada/gcc-interface/Makefile.in
@@ -265,7 +259,7 @@ do-configure:
 	${CFG_SCRIPT} ${ADA_CONFIG_ARGS}
 
 do-build:
-	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} all
+	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} -j${MAKE_JOBS_NUMBER} all
 
 test: build test-ada test-fortran test-objc test-cxx test-c
 
@@ -296,34 +290,15 @@ test-c:
 .endif
 
 do-install:
-	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} install-strip DESTDIR=${DESTINY}
-	cd ${DESTINY}${PREFIX}; ${FIND} * -type d -empty -print | ${XARGS} ${RMDIR}
-	${CP} -pR ${DESTINY}${PREFIX}/ ${PREFIX}/
+	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} install-strip DESTDIR=${STAGEDIR}
 
 post-install:
-	${RM} -f ${WRKDIR}/PLIST.all
-	${RM} -rf ${DESTINY}/man
-	${MV} ${DESTINY}${PREFIX}/${PORTNAME}/share/man ${DESTINY}/
-	cd ${DESTINY}; ${FIND} man -type d \
-	   -exec ${MKDIR} ${DESTINY}${PREFIX}/${PORTNAME}/share/{} \;
-	cd ${DESTINY}${PREFIX}; ${FIND} ${PORTNAME} \( -type f -or -type l \) | \
-	   ${SORT} >> ${WRKDIR}/PLIST.all
-	cd ${DESTINY}${PREFIX}; ${FIND} ${PORTNAME}  -type d | ${SORT} -r | \
-	   ${SED} -e 's/^/@dirrm /g' >> ${WRKDIR}/PLIST.all
-
-	cd ${WRKDIR}; ${SED} -i -e "/PLIST.all/ r PLIST.all" ${TMPPLIST}
-.if ${OPSYS} == FreeBSD
-.  if ${OSVERSION} > 900000 && ${OSVERSION} < 900507
-	@${ECHO_MSG} "===================================================================="
-	@${ECHO_MSG} " NOTICE REGARDING ADA TASKING ON FREEBSD 9.0:"
-	@${ECHO_MSG} " Due to a bug in the FreeBSD 9.0 threading library, an exiting task"
-	@${ECHO_MSG} " panics with the message: 'thread exits with resources held!'."
-	@${ECHO_MSG} " This behavior breaks Ada tasking.  These are two solutions:"
-	@${ECHO_MSG} " 1) Upgrade to FreeBSD 9.1 or higher"
-	@${ECHO_MSG} " 2) Patch and rebuild thread library as described in"
-	@${ECHO_MSG} "    http://www.dragonlace.net/posts/F9_Fix/"
-	@${ECHO_MSG} "===================================================================="
-.  endif
-.endif
+	${MV} ${STAGEDIR}${PKG_PREFIX}/share/man ${STAGEDIR}/${PKG_PREFIX}
+	cd ${STAGEDIR}${PKG_PREFIX}; ${FIND} * -type d -empty | \
+	   ${SORT} -dr | ${XARGS} ${RMDIR}
+	cd ${STAGEDIR}${PREFIX}; ${FIND} ${PORTNAME} \( -type f -or -type l \) | \
+	   ${AWK} ${AWKMANPAGE} | ${SORT} >> ${TMPPLIST}
+	cd ${STAGEDIR}${PREFIX}; ${FIND} ${PORTNAME} -type d | ${SORT} -r | \
+	   ${SED} -E -e 's/^/@dirrm /g' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
