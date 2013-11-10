@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://home.datacomm.ch/t_wolf/tw/ada95/adabrowse/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
-MAINTAINER=	draco@marino.st
+MAINTAINER=	marino@FreeBSD.org
 COMMENT=	HTML generator for Ada 95 library unit specifications
 
 BUILD_DEPENDS=	asis>=2011:${PORTSDIR}/lang/asis \
@@ -20,8 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 MAKE_ENV=	ADA_INCLUDE_PATH=${LOCALBASE}/lib/asis
 MAKE_JOBS_UNSAFE=yes
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/adabrowse ${PREFIX}/bin/adabrowse
+	${INSTALL_PROGRAM} ${WRKSRC}/adabrowse ${STAGEDIR}${PREFIX}/bin/adabrowse
 
 .include <bsd.port.mk>
