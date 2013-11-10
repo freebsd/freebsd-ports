@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	phonon
-PORTVERSION=	4.6.0
-PORTREVISION=	1
+PORTVERSION=	4.7.0
 CATEGORIES=	multimedia kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${PHONON_BRANCH}/${PORTNAME}/${PORTVERSION}/src/
+MASTER_SITE_SUBDIR=	${PHONON_BRANCH}/${PORTNAME}/${PORTVERSION}
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
@@ -41,11 +40,6 @@ CMAKE_ARGS+=	-DWITH_PulseAudio:BOOL=OFF
 .endif
 
 PLIST_SUB+=	QT_PREFIX=${QT_PREFIX}
-
-pre-configure:
-	${REINPLACE_CMD} -e '/phonon.pc/s|pkgconfig|../libdata/pkgconfig|' \
-		-e 's|{QT_INCLUDES}|{QT_INCLUDES} ${LOCALBASE}/include|'\
-		${PATCH_WRKSRC}/CMakeLists.txt
 
 post-install:
 	${MKDIR} ${STAGEDIR}${QT_INCDIR}
