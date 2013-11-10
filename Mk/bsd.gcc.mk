@@ -7,20 +7,26 @@
 #
 # To request the use of a current version of GCC, specify USE_GCC=yes in
 # your port/system configuration.  This is the preferred use of USE_GCC.
-# It defines a canonical, default version of GCC; the same version of
+# It defines a canonical, default version of GCC.  The same version of
 # GCC is also implied by USE_FORTRAN=yes.
+#
+# USE_GCC=any is similar, except that it also accepts the old GCC 4.2-
+# based system compiler in older versions of FreeBSD.
 # 
 # If your port needs a specific (minimum) version of GCC, you can easily
 # specify that with a USE_GCC= statement.  Unless absolutely necessary
 # do so by specifying USE_GCC=X.Y+ which requests at least GCC version
-# X.Y.  To request a specific version omit the trailing + sign.  Use of
-# a Fortran compiler is declared by the USE_FORTRAN knob, not USE_GCC.
+# X.Y.  To request a specific version omit the trailing + sign.
+#
+# Use of a Fortran compiler is declared by the USE_FORTRAN knob, not
+# USE_GCC.
 #
 # Examples:
 #   USE_GCC=	yes			# port requires a current version of GCC
 #							# (4.6 as of today, subject to change).
-#   USE_GCC=	4.2+		# port requires GCC 4.2 or later.
-#   USE_GCC=	4.7			# port requires GCC 4.7.
+#   USE_GCC=	any			# port requires GCC 4.2 or later.
+#   USE_GCC=	4.8+		# port requires GCC 4.8 or later.
+#   USE_GCC=	4.8			# port requires GCC 4.8.
 #
 # If your port needs a Fortran compiler, please specify that with the
 # USE_FORTRAN= knob.  Here is the list of options for that knob:
