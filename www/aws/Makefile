@@ -16,8 +16,8 @@ BUILD_DEPENDS=	gprbuild>=20120510:${PORTSDIR}/devel/gprbuild \
 USE_PYTHON=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		ada
+NO_MTREE=	yes
+USES=		ada gmake
 DOTBUILD=	release
 ADDL_RPATH=	${LOCALBASE}/lib:${LOCALBASE}/lib/aws/native/relocatable
 
@@ -32,8 +32,7 @@ DSRT_DESC=		Disable shared runtime
 RELOC_DESC=		Build shared libraries (default is static)
 IP6_DESC=		Support IPv6 instead of IPv4
 
-DESTINY=	${WRKDIR}/destino
-MAKE_ENV+=	DESTDIR=${DESTINY} AWK=${AWK}
+MAKE_ENV+=	AWK=${AWK}
 MAKEFILE=	makefile
 
 CONF_ARGS=	PROCESSORS=${MAKE_JOBS_NUMBER}
@@ -45,7 +44,6 @@ CONF_ARGS+=	prefix=${PREFIX}
 CONF_ARGS+=	LPATH=${PREFIX}/lib
 CONF_ARGS+=	ZPATH=/usr/lib
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 ###################
@@ -116,30 +114,28 @@ do-configure:
 		${GMAKE} setup ${CONF_ARGS}
 
 do-build:
-	# We cannot use a redefined ALL_TARGET because MAKE_JOBS_SAFE is set
-	# for PROCESSORS, but that also sets -j for gmake which breaks build
+#	We cannot use a redefined ALL_TARGET because MAKE_JOBS_SAFE is set
+#	for PROCESSORS, but that also sets -j for gmake which breaks build
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-		${GMAKE} build build_doc
+		${GMAKE} ${MAKE_ARGS} build build_doc
 
 test: install
 	@cd ${WRKSRC}/regtests && ${SETENV} ${MAKE_ENV} \
 		python${PYTHON_VER} testsuite.py
 
 post-install:
-	# AWS plist changes due to options are complex, and are not simply
-	# additive.  Trying to capture every permutation is error prone and
-	# tedious, so a generated PLIST is the way to go.
-	@${CP} -pR ${DESTINY}${PREFIX}/ ${PREFIX}/
-	@cd ${DESTINY}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
-	   ${SORT} > ${WRKDIR}/PLIST.all
-	@cd ${DESTINY}${PREFIX}; ${FIND} * -type d | ${AWK} '/\//' | ${SORT} -r | \
+# 	AWS plist changes due to options are complex, and are not simply
+#	additive.  Trying to capture every permutation is error prone and
+#	tedious, so a generated PLIST is the way to go.
+	@cd ${STAGEDIR}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
+	   ${SORT} > ${TMPPLIST}
+	@cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d | ${AWK} '/\//' | ${SORT} -r | \
 	   ${SED} -e '/lib\/gnat$$/d' -e '/share\/doc$$/d' -e '/share\/gps/d' \
-	   -e '/share\/examples$$/d' -e 's/^/@dirrm /g' >> ${WRKDIR}/PLIST.all
-	@echo "@unexec rmdir %D/lib/gnat 2>/dev/null || true" >> ${WRKDIR}/PLIST.all
-	@echo "@unexec rmdir %D/share/gps/plug-ins 2>/dev/null || true" >> ${WRKDIR}/PLIST.all
-	@echo "@unexec rmdir %D/share/gps 2>/dev/null || true" >> ${WRKDIR}/PLIST.all
-	@echo "@unexec rmdir %D/share/doc 2>/dev/null || true" >> ${WRKDIR}/PLIST.all
-	@echo "@unexec rmdir %D/share/examples 2>/dev/null || true" >> ${WRKDIR}/PLIST.all
-	@${CAT} ${WRKDIR}/PLIST.all >> ${TMPPLIST}
+	   -e '/share\/examples$$/d' -e 's/^/@dirrm /g' >> ${TMPPLIST}
+	@echo "@unexec rmdir %D/lib/gnat 2>/dev/null || true" >> ${TMPPLIST}
+	@echo "@unexec rmdir %D/share/gps/plug-ins 2>/dev/null || true" >> ${TMPPLIST}
+	@echo "@unexec rmdir %D/share/gps 2>/dev/null || true" >> ${TMPPLIST}
+	@echo "@unexec rmdir %D/share/doc 2>/dev/null || true" >> ${TMPPLIST}
+	@echo "@unexec rmdir %D/share/examples 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
