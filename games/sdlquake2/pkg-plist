@@ -1,6 +1,6 @@
 %%CLIENT%%bin/sdlquake2
 %%DEDICATED%%bin/sdlquake2-ded
-%%GAME%%%%LIBDIR%%/baseq2/game.so
-%%CLIENT%%%%LIBDIR%%/ref_sdlgl.so
-@dirrm %%LIBDIR%%/baseq2
-@dirrm %%LIBDIR%%
+%%GAME%%lib/sdlquake2/baseq2/game.so
+%%CLIENT%%lib/sdlquake2/ref_sdlgl.so
+@dirrm lib/sdlquake2/baseq2
+@dirrm lib/sdlquake2
