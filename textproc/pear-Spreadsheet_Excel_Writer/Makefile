@@ -2,11 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	Spreadsheet_Excel_Writer
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	textproc www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	PEAR class for writing Microsoft Excel files
+
+LICENSE=	LGPL3
 
 BUILD_DEPENDS=	${PEARDIR}/OLE.php:${PORTSDIR}/devel/pear-OLE \
 		${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
@@ -15,7 +17,6 @@ RUN_DEPENDS=	${PEARDIR}/OLE.php:${PORTSDIR}/devel/pear-OLE \
 
 PEAR_AUTOINSTALL=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>
