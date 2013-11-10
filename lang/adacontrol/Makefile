@@ -16,29 +16,24 @@ BUILD_DEPENDS=	asis>=2011:${PORTSDIR}/lang/asis \
 
 USES=		ada gmake
 WRKSRC=		${WRKDIR}/adactl-${PORTVERSION}
-DESTINY=	${WRKDIR}/destino
 BUILD_WRKSRC=	${WRKSRC}/src
 ALL_TARGET=	build
 
-NO_STAGE=	yes
 do-install:
-	# To support DESTDIR in the future, install twice
-	${MKDIR} ${DESTINY}${PREFIX}/bin
-	${MKDIR} ${DESTINY}${PREFIX}/share/gps/plug-ins
-	${MKDIR} ${DESTINY}${PREFIX}/share/doc/gps/html
-	${MKDIR} ${DESTINY}${PREFIX}/share/doc/adacontrol
-	${MKDIR} ${DESTINY}${PREFIX}/share/gprconfig
+	${MKDIR} ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/gps/plug-ins
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/gps/html
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/adacontrol
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/gprconfig
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/adactl ${BUILD_WRKSRC}/pfni \
-		${BUILD_WRKSRC}/ptree ${DESTINY}/${PREFIX}/bin
+		${BUILD_WRKSRC}/ptree ${STAGEDIR}/${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/GPS/adacontrol.xml \
-		${DESTINY}${PREFIX}/share/gprconfig
+		${STAGEDIR}${PREFIX}/share/gprconfig
 	${INSTALL_DATA} ${WRKSRC}/GPS/*adactl* ${WRKSRC}/GPS/pfni.* \
-		${DESTINY}${PREFIX}/share/gps/plug-ins
+		${STAGEDIR}${PREFIX}/share/gps/plug-ins
 	${INSTALL_MAN} ${WRKSRC}/doc/*.html \
-		${DESTINY}${PREFIX}/share/doc/gps/html
+		${STAGEDIR}${PREFIX}/share/doc/gps/html
 	${INSTALL_MAN} ${WRKSRC}/doc/*.pdf ${WRKSRC}/doc/*.html \
-		${DESTINY}${PREFIX}/share/doc/adacontrol
-	# Now install from DESTDIR
-	${CP} -pR ${DESTINY}${PREFIX}/ ${PREFIX}/
+		${STAGEDIR}${PREFIX}/share/doc/adacontrol
 
 .include <bsd.port.mk>
