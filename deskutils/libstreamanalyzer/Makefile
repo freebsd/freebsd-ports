@@ -30,7 +30,6 @@ CMAKE_ARGS+=	-DFFMPEG_SUFFIX:STRING="${FFMPEG_SUFFIX}"
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-libstreamanalyzer__plugins__endplugins__CMakeLists.txt
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e \
 		's,$${LIB_DESTINATION}/pkgconfig,libdata/pkgconfig,' \

@@ -11,7 +11,5 @@ COMMENT=	Strigi desktop search: utilities
 LIB_DEPENDS=	streams:${PORTSDIR}/deskutils/libstreams \
 		streamanalyzer:${PORTSDIR}/deskutils/libstreamanalyzer
 
-
-NO_STAGE=	yes
 .include <${.CURDIR}/../strigi/Makefile.common>
 .include <bsd.port.mk>
