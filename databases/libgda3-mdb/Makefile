@@ -2,7 +2,7 @@
 # $FreeBSD$
 #   $MCom: ports/databases/libgda3-mdb/Makefile,v 1.2 2008/02/26 21:23:34 kwm Exp $
 
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	databases gnome
 PKGNAMESUFFIX?=	-mdb
 
@@ -17,4 +17,9 @@ PLIST=		${.CURDIR}/pkg-plist
 LIBGDA3_SLAVE=	mdb
 
 NO_STAGE=	yes
+
+post-extract:
+	@${REINPLACE_CMD} -e 's|MDB_SDATETIME|MDB_DATETIME|g' \
+		${WRKSRC}/providers/mdb/util.c
+
 .include "${MASTERDIR}/Makefile"

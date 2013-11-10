@@ -2,47 +2,65 @@
 # $FreeBSD$
 
 PORTNAME=	mdbtools
-PORTVERSION=	0.5
-PORTREVISION=	14
+PORTVERSION=	0.7.1
 CATEGORIES=	databases
-MASTER_SITES=	SF
+MASTER_SITES=	https://github.com/brianb/mdbtools/archive/
+DISTNAME=	${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	Utilities and libraries to export data from MS Access databases (.mdb)
 
-# To build man-pages
-BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
+LICENSE=	GPLv2
 
-USES=		bison pkgconfig
-USE_AUTOTOOLS=	libtool
+# To build man-pages
+BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
+		txt2man:${PORTSDIR}/textproc/txt2man
+LIB_DEPENDS=	libiodbc.so:${PORTSDIR}/databases/libiodbc
+
+FETCH_ARGS?=	-Fpr
+USES=		bison pkgconfig iconv
+USE_AUTOTOOLS=	libtool autoconf automake
+USE_LDCONFIG=	yes
 USE_GNOME=	glib20
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
+		--with-iodbc=${LOCALBASE}
 
 DOCS=		AUTHORS ChangeLog HACKING NEWS README TODO
-MAN1=		mdb-ver.1 mdb-tables.1 mdb-schema.1 mdb-sql.1 mdb-export.1
 
-NO_STAGE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
 USE_XORG=	x11
 USES+=		pathfix
-USE_GNOME+=	gnomeprefix libgnomeui
-PKGNAMESUFFIX=	-gnome
+USE_GNOME+=	gnomeprefix libgnomeui gconf2 intltool
+.endif
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CFLAGS+=	-fpic
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e \
+		's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
+		${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e 's|$$(srcdir)/$$<|$$(srcdir)/$$>|g' \
+		${WRKSRC}/doc/Makefile.am
+
+pre-configure:
+	@cd ${WRKSRC} && ${AUTORECONF} -if
+
+post-configure:
+	@${REINPLACE_CMD} -e 's|^install-man:.*|install-man: install-man1|' \
 		${WRKSRC}/doc/Makefile.in
 
-.if !defined(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${DOCSDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f}  ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,}  ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
