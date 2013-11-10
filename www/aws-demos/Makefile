@@ -15,8 +15,7 @@ BUILD_DEPENDS+=	gprbuild>=20120510:${PORTSDIR}/devel/gprbuild \
 		aws>=3.1:${PORTSDIR}/www/aws
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=		ada
+USES=		ada gmake
 
 CONF_ARGS=	PROCESSORS=1
 CONF_ARGS+=	GCC=ada
@@ -58,7 +57,6 @@ DEMO_DIRS+=	zdemo
 #DEMO_DIRS+=	hello_wsdl
 #DEMO_DIRS+=	interoplab
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
@@ -96,10 +94,10 @@ do-build:
 .endfor
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/examples/aws-demos
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/examples/aws-demos
 .for dd in ${DEMO_DIRS}
 	${FIND} ${WRKSRC}/demos/${dd} -type f -perm -0001 \
-	   -exec ${INSTALL} {} ${PREFIX}/share/examples/aws-demos/ \;
+	   -exec ${INSTALL} {} ${STAGEDIR}${PREFIX}/share/examples/aws-demos/ \;
 .endfor
 
 .include <bsd.port.mk>
