@@ -163,24 +163,21 @@ lib/cmake/phonon/PhononTargets-release.cmake
 lib/cmake/phonon/PhononTargets.cmake
 lib/libphonon.so
 lib/libphonon.so.4
-lib/libphonon.so.4.6.0
+lib/libphonon.so.4.7.0
 lib/libphononexperimental.so
 lib/libphononexperimental.so.4
-lib/libphononexperimental.so.4.6.0
+lib/libphononexperimental.so.4.7.0
 libdata/pkgconfig/phonon.pc
 share/dbus-1/interfaces/org.kde.Phonon.AudioOutput.xml
 %%DATADIR%%/buildsystem/COPYING-CMAKE-SCRIPTS
 %%DATADIR%%/buildsystem/FindAutomoc4.cmake
 %%DATADIR%%/buildsystem/FindPackageHandleStandardArgs.cmake
 %%DATADIR%%/buildsystem/FindPhononInternal.cmake
-%%DATADIR%%/buildsystem/FindQt4.cmake
 %%DATADIR%%/buildsystem/MacroEnsureVersion.cmake
 %%DATADIR%%/buildsystem/MacroLogFeature.cmake
 %%DATADIR%%/buildsystem/MacroOptionalFindPackage.cmake
 %%DATADIR%%/buildsystem/MacroPushRequiredVars.cmake
 %%DATADIR%%/buildsystem/PhononMacros.cmake
-%%DATADIR%%/buildsystem/Qt4ConfigDependentSettings.cmake
-%%DATADIR%%/buildsystem/Qt4Macros.cmake
 %%DATADIR%%/buildsystem/cmake_uninstall.cmake.in
 @dirrm %%DATADIR%%/buildsystem
 @dirrm %%DATADIR%%
