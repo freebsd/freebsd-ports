@@ -1,4 +1,14 @@
 bin/demandoc
 bin/mandoc
+man/man1/demandoc.1.gz
+man/man1/mandoc.1.gz
+man/man3/mandoc.3.gz
+man/man3/tbl.3.gz
+man/man7/eqn.7.gz
+man/man7/man.7.gz
+man/man7/mandoc_char.7.gz
+man/man7/mdoc.7.gz
+man/man7/roff.7.gz
+man/man7/tbl.7.gz
 %%EXAMPLESDIR%%/example.style.css
-@dirrm %%EXAMPLESDIR%%
+@dirrmtry %%EXAMPLESDIR%%
