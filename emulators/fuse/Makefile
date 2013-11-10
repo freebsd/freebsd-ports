@@ -3,6 +3,7 @@
 
 PORTNAME=	fuse
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}-emulator/${PORTNAME}/${PORTVERSION}
 
@@ -16,31 +17,40 @@ LIB_DEPENDS=	libspectrum.so:${PORTSDIR}/emulators/libspectrum \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
-USE_GNOME=	libxml2 glib20 gtk20
+USES=		pkgconfig gmake
+USE_GNOME=	libxml2 glib20
 
 CONFIGURE_ARGS+=--without-alsa --without-joystick
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 
-OPTIONS_DEFINE=	AO SAMPLERATE
-OPTIONS_DEFAULT=	SAMPLERATE
-AO_DESC=	Use libao for audio output
-SAMPLERATE_DESC=	Better beeper sound quality
+OPTIONS_DEFINE=		AO ICONS
+OPTIONS_DEFAULT=	ICONS GTK2
+OPTIONS_SINGLE=		UI
+UI_DESC=		User Interface
+OPTIONS_SINGLE_UI=	GTK2 GTK3 SDL SVGALIB
+
+OPTIONS_SUB=		yes
+AO_CONFIGURE_WITH=	libao
+AO_LIB_DEPENDS=		libao.so:${PORTSDIR}/audio/libao
+ICONS_USES=		desktop-file-utils shared-mime-info
+ICONS_CONFIGURE_ENABLE=	desktop-integration
+GTK2_USE=		GNOME=gtk20
+GTK2_CONFIGURE_ON=	--with-gtk
+GTK3_USE=		GNOME=gtk30
+GTK3_CONFIGURE_ON=	--with-gtk
+GTK3_CONFIGURE_ENABLE=	gtk3
+SDL_USE=		SDL=sdl
+SDL_CONFIGURE_WITH=	sdl
+SDL_CONFIGURE_ON=	--without-gtk
+SVGALIB_LIB_DEPENDS=	libvga.so:${PORTSDIR}/graphics/svgalib
+SVGALIB_CONFIGURE_WITH=	svgalib
+SVGALIB_CONFIGURE_ON=	--without-gtk
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MAO}
-CONFIGURE_ARGS+=--with-libao
-LIB_DEPENDS+=	libao.so:${PORTSDIR}/audio/libao
-.else
-CONFIGURE_ARGS+=--without-libao
-.endif
-
-.if ${PORT_OPTIONS:MSAMPLERATE}
-LIB_DEPENDS+=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
-.else
-CONFIGURE_ARGS+=--without-libsamplerate
+.if ${PORT_OPTIONS:MICONS}
+INSTALLS_ICONS=	yes
 .endif
 
 post-install:
