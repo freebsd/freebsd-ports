@@ -29,6 +29,7 @@ lib/libwcs.so
 lib/libwcs.so.%%VERSION%%
 lib/libwcs.so.4
 libdata/pkgconfig/wcslib.pc
+man/man1/fitshdr.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_0x73.html
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_vars_0x62.html
 %%PORTDOCS%%%%DOCSDIR%%/html/wcshdr_8h-source.html
