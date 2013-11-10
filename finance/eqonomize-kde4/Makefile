@@ -11,6 +11,9 @@ PKGNAMESUFFIX=	-kde4
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A personal accounting software
 
+DEPRECATED=	No upstream releases since 2008, does not build on FreeBSD 10 and 11
+EXPIRATION_DATE=	2013-12-01
+
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USE_QT4=	corelib dbus gui network svg xml qmake_build moc_build uic_build rcc_build
 USES=		cmake gettext iconv
