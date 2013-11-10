@@ -665,7 +665,6 @@ MASTER_SITE_KENAI+= \
 # Updated:	2012-10-26
 .if !defined(IGNORE_MASTER_SITE_KDE)
 MASTER_SITE_KDE+= \
-	http://mirrors.isc.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.gtlib.gatech.edu/pub/kde/%SUBDIR%/ \
 	ftp://ftp.informatik.hu-berlin.de/pub/Mirrors/ftp.kde.org/%SUBDIR%/ \
 	http://ftp.gtlib.gatech.edu/pub/kde/%SUBDIR%/ \
