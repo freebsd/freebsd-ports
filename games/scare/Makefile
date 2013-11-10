@@ -25,15 +25,12 @@ USE_ZIP=	yes
 
 PLIST_FILES=	bin/scare
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+XGLK_BUILD_DEPENDS=	${LOCALBASE}/lib/libxglk.a:${PORTSDIR}/games/xglk
+XGLK_RUN_DEPENDS=	${LOCALBASE}/lib/libxglk.a:${PORTSDIR}/games/xglk
+XGLK_ALL_TARGET=	scare glkscare
+XGLK_PLIST_FILES=	bin/glkscare
 
-.if ${PORT_OPTIONS:MXGLK}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libxglk.a:${PORTSDIR}/games/xglk
-RUN_DEPENDS+=	${LOCALBASE}/lib/libxglk.a:${PORTSDIR}/games/xglk
-ALL_TARGET=	scare glkscare
-PLIST_FILES+=	bin/glkscare
-.endif
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -55,9 +52,9 @@ do-configure:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/source/scare ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/source/scare ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MXGLK}
-	${INSTALL_PROGRAM} ${WRKSRC}/source/glkscare ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/source/glkscare ${STAGEDIR}${PREFIX}/bin
 .endif
 
 test:	build
