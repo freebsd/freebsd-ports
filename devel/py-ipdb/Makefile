@@ -1,0 +1,21 @@
+# $FreeBSD$
+
+PORTNAME=	ipdb
+PORTVERSION=	0.8
+CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	milki@rescomp.berkeley.edu
+COMMENT=	IPython-enabled pdb
+
+LICENSE=	GPLv2
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>=0.10:${PORTSDIR}/devel/ipython
+
+USE_ZIP=	yes
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_AUTOPLIST=	yes
+
+.include <bsd.port.mk>
