@@ -6,7 +6,7 @@ PORTVERSION=	1.2.0
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for parse, generate, and operate on KML
 
 LICENSE=	BSD
