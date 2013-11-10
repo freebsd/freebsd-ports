@@ -3257,6 +3257,7 @@
     SUBDIR += pecl-inclued
     SUBDIR += pecl-inotify
     SUBDIR += pecl-intl
+    SUBDIR += pecl-jsmin
     SUBDIR += pecl-judy
     SUBDIR += pecl-libevent
     SUBDIR += pecl-mcve
