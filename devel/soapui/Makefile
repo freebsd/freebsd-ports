@@ -2,43 +2,46 @@
 # $FreeBSD$
 
 PORTNAME=	soapui
-PORTVERSION=	4.5.1
+PORTVERSION=	4.6.1
 CATEGORIES=	devel java www
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/4.5.1/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-linux-bin
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
+DISTNAME=	SoapUI-${PORTVERSION}-linux-bin
 
 MAINTAINER=	fbsd-ports@opsec.eu
-COMMENT=	A web service, SOA, and SOAP testing tool
+COMMENT=	Web service, SOA, and SOAP testing tool
 
-USE_ZIP=	YES
-USE_JAVA=	1.5+
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+LICENSE=	GPLv2
+
+USE_JAVA=	1.6+
+WRKSRC=		${WRKDIR}/SoapUI-${PORTVERSION}
 REINPLACE_ARGS=	-i ''
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-NO_STAGE=	yes
-do-build:
-	${REINPLACE_CMD} -e 's:%%SOAPUI_HOME%%:${DATADIR}:' \
-			-e 's:%%JAVA%%:${JAVA}:' ${WRKSRC}/bin/${PORTNAME}.sh
+post-patch:
+	${REINPLACE_CMD} -e 's|\(SOAPUI_HOME=\).*$$|\1${DATADIR}| ; \
+		/-Dsoapui\.jxbrowser\.disable=true/s/^#// ; \
+		s|^java |exec ${JAVA} | ; /^cd $$DIRNAME/d' ${WRKSRC}/bin/*.sh
 
 .include <bsd.port.options.mk>
 
 do-install:
 .for dir in bin lib
-	( cd ${WRKSRC}/${dir} && ${COPYTREE_SHARE} . ${DATADIR}/${dir} )
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${DATADIR}
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME}.sh ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MEXAMPLES}
-	( cd ${WRKSRC}/Tutorials && ${COPYTREE_SHARE} . ${EXAMPLESDIR}/Tutorials )
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} Tutorials ${STAGEDIR}${EXAMPLESDIR}
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.	for i in ${PORTDOCS}
-		${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.	for i in README.md RELEASENOTES.txt
+		${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
 .	endfor
-	( cd ${WRKSRC}/licenses && ${COPYTREE_SHARE} . ${DOCSDIR}/licenses )
+	cd ${WRKSRC} && ${COPYTREE_SHARE} licenses ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
