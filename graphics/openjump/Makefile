@@ -8,7 +8,7 @@ MASTER_SITES=	SF/jump-pilot/OpenJUMP/${PORTVERSION}
 DISTNAME=	${PORTNAME}-Portable-${PORTVERSION}-r${PLUS_REV}-PLUS
 
 MAINTAINER=	rhurlin@gwdg.de
-COMMENT=	An open source GIS software written in Java
+COMMENT=	Open source GIS software written in Java
 
 LICENSE=	BSD CLEARTHOUGHT CPL ECW GPLv2 GPLv3 JAIDL JDOM JYTHON LGPL21 LGPL3
 LICENSE_COMB=	multi
@@ -37,7 +37,7 @@ LICENSE_NAME_JYTHON=	The Jython License
 LICENSE_FILE_JYTHON=	${WRKSRC}/licenses/jython_license.txt
 LICENSE_PERMS_JYTHON=	auto-accept
 
-TARGET_DIR=	${PREFIX}/${PORTNAME}
+TARGET_DIR=	${STAGEDIR}${PREFIX}/${PORTNAME}
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ZIP=	yes
@@ -46,17 +46,16 @@ NO_WRKSUBDIR=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-r${PLUS_REV}-PLUS
 PLUS_REV=	3576
 
-NO_STAGE=	yes
 do-install:
-	@${ECHO_CMD} "---> Installing JAR files"
+	@${ECHO_CMD} "--->  Installing JAR files"
 	${MKDIR} ${TARGET_DIR}/lib
 	${INSTALL_DATA} ${WRKSRC}/lib/*.jar ${TARGET_DIR}/lib
 	${MKDIR} ${TARGET_DIR}/lib/ext
 	@cd ${WRKSRC}/lib/ext && ${COPYTREE_SHARE} . ${TARGET_DIR}/lib/ext
-	@${ECHO_MSG} "Installing startup script"
+	@${ECHO_MSG} "--->  Installing startup script"
 	${MKDIR} ${TARGET_DIR}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/oj_linux.sh ${TARGET_DIR}/bin/openjump
-	${LN} -sf ${PREFIX}/${PORTNAME}/bin/openjump ${PREFIX}/bin/openjump
+	${LN} -sf ../${PORTNAME}/bin/openjump ${STAGEDIR}${PREFIX}/bin/openjump
 	${INSTALL_DATA} ${WRKSRC}/bin/default-plugins.xml ${TARGET_DIR}/bin/
 	${INSTALL_DATA} ${WRKSRC}/bin/log4j.xml ${TARGET_DIR}/bin/
 
@@ -64,12 +63,12 @@ do-install:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${ECHO_MSG} "---> Installing documentation"
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Changes.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
+	@${ECHO_MSG} "--->  Installing documentation"
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Changes.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
 .else
-	@${ECHO_MSG} "---> Skipping documentation"
+	@${ECHO_MSG} "--->  Skipping documentation"
 .endif
 
 .include <bsd.port.mk>
