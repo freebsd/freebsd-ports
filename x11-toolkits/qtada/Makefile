@@ -17,27 +17,24 @@ BUILD_DEPENDS=	gprbuild>=20120510:${PORTSDIR}/devel/gprbuild \
 USES=		ada gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_QT4=	corelib gui xml designer sql opengl webkit
-DESTINY=	${WRKDIR}/destino
-MAKE_ENV=	DESTDIR=${DESTINY}
+NO_MTREE=	yes
 
 #CONFIGURE_ARGS=	--with-gtkada=NO
 
-NO_STAGE=	yes
 post-install:
-	${MV} ${DESTINY}${PREFIX}/examples ${DESTINY}${PREFIX}/share/
-	${CP} -pR ${DESTINY}${PREFIX}/ ${PREFIX}/
-	@cd ${DESTINY}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
-	   ${SORT} > ${WRKDIR}/PLIST.all
-	@cd ${DESTINY}${PREFIX}; ${FIND} * -type d | ${AWK} '/\//' | \
+	${MKDIR} ${STAGEDIR}${PREFIX}/share
+	${MV} ${STAGEDIR}${PREFIX}/examples ${STAGEDIR}${PREFIX}/share/
+	@cd ${STAGEDIR}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
+	   ${SORT} > ${TMPPLIST}
+	@cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d | ${AWK} '/\//' | \
 	   ${SORT} -r | ${SED} -e '/lib\/gnat$$/d' -e '/share\/doc$$/d' \
 	   -e '/share\/gps$$/d' -e '/share\/gps\/plug-ins$$/d' \
 	   -e '/share\/gprconfig$$/d' -e 's/^/@dirrm /g' \
-	   >> ${WRKDIR}/PLIST.all
-	@echo "@unexec rmdir %D/lib/gnat 2>/dev/null || true" >> ${WRKDIR}/PLIST.all
-	@echo "@unexec rmdir %D/share/doc 2>/dev/null || true" >> ${WRKDIR}/PLIST.all
-	@echo "@unexec rmdir %D/share/gprconfig 2>/dev/null || true" >> ${WRKDIR}/PLIST.all
-	@echo "@unexec rmdir %D/share/gps/plug-ins 2>/dev/null || true" >> ${WRKDIR}/PLIST.all
-	@echo "@unexec rmdir %D/share/gps 2>/dev/null || true" >> ${WRKDIR}/PLIST.all
-	@${CAT} ${WRKDIR}/PLIST.all >> ${TMPPLIST}
+	   >> ${TMPPLIST}
+	@echo "@unexec rmdir %D/lib/gnat 2>/dev/null || true" >> ${TMPPLIST}
+	@echo "@unexec rmdir %D/share/doc 2>/dev/null || true" >> ${TMPPLIST}
+	@echo "@unexec rmdir %D/share/gprconfig 2>/dev/null || true" >> ${TMPPLIST}
+	@echo "@unexec rmdir %D/share/gps/plug-ins 2>/dev/null || true" >> ${TMPPLIST}
+	@echo "@unexec rmdir %D/share/gps 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
