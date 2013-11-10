@@ -1042,7 +1042,6 @@ bin/openjump
 @dirrm OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.fillSinks
 @dirrm OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.edgeContamination
 @dirrm OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.distToChannelNetwork
-@dirrm OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.createHyetogram
 @dirrm OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.channelNetwork
 @dirrm OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.cellBalance
 @dirrm OpenJUMP/lib/ext/sextante_help/en/es.unex.sextante.hydrology.cFactorFromNDVI
