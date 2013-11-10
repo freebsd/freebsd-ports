@@ -1,0 +1,19 @@
+------------------------------------------------------------------------
+r1179259 | mlaurent | 2010-09-25 01:54:11 +0300 (Sat, 25 Sep 2010) | 2 lines
+
+Compile with gold
+
+------------------------------------------------------------------------
+
+Index: src/CMakeLists.txt
+===================================================================
+--- src/CMakeLists.txt  (revision 1179258)
++++ src/CMakeLists.txt  (revision 1179259)
+@@ -56,6 +56,6 @@
+
+ kde4_add_executable ( kcoloredit ${kcoloredit_SRCS} )
+
+-target_link_libraries ( kcoloredit ${KDE4_KFILE_LIBS} )
++target_link_libraries ( kcoloredit ${KDE4_KFILE_LIBS} ${X11_LIBRARIES})
+
+ install (TARGETS kcoloredit  ${INSTALL_TARGETS_DEFAULT_ARGS} )
