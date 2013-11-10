@@ -26,5 +26,4 @@ USE_KDE4=	kdehier kdelibs kdeprefix libksane pimlibs \
 USE_QT4=	qmake_build moc_build uic_build rcc_build
 USES=		cmake gettext
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
