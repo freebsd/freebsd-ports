@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	phonon
-PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTVERSION=	0.7.0
 CATEGORIES=	multimedia kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${PHONON_BRANCH}/${PORTNAME}/${PORTNAME}-backend${PKGNAMESUFFIX}/${PORTVERSION}
+MASTER_SITE_SUBDIR=	${PHONON_BRANCH}/${PORTNAME}/${PORTNAME}-backend${PKGNAMESUFFIX}/${PORTVERSION}/src
 PKGNAMESUFFIX=	-vlc
 DISTNAME=	${PORTNAME}-backend${PKGNAMESUFFIX}-${PORTVERSION}
 DIST_SUBDIR=	KDE
@@ -22,7 +21,7 @@ USE_KDE4=	kdehier kdeprefix automoc4
 USE_QT4=	corelib gui phonon \
 		qmake_build moc_build rcc_build uic_build
 USE_XZ=		yes
-USES=		cmake
+USES=		cmake pkgconfig
 
 PHONON_BRANCH=	stable
 
