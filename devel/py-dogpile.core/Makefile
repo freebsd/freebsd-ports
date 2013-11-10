@@ -15,6 +15,5 @@ LICENSE=	BSD
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 PYDISTUTILS_AUTOPLIST=	yes
-NO_STAGE=	yes
 
 .include <bsd.port.mk>
