@@ -446,6 +446,13 @@ show-modules:
 
 .elif defined(AP_PORT_IS_MODULE)
 
+.if defined(AP_MODENABLE)
+AP_MOD_EN=	-a
+.else
+AP_MOD_EN=	-A
+.endif
+PLIST_SUB+=	AP_MOD_EN="${AP_MOD_EN}"
+
 .if defined(AP_FAST_BUILD)
 .if !target(ap-gen-plist)
 ap-gen-plist:
@@ -455,11 +462,7 @@ ap-gen-plist:
 # apache22
 	@${ECHO} "@unexec ${SED} -i '' -E '/LoadModule[[:blank:]]+%%AP_NAME%%_module/d' %D/%%APACHEETCDIR%%/httpd.conf" >> ${PLIST}
 	@${ECHO} "%%APACHEMODDIR%%/%%AP_MODULE%%" >> ${PLIST}
-.if defined(AP_MODENABLE)
-	@${ECHO} "@exec %D/sbin/apxs -e -a -n %%AP_NAME%% %D/%F" >> ${PLIST}
-.else
-	@${ECHO} "@exec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%F" >> ${PLIST}
-.endif
+	@${ECHO} "@exec %D/sbin/apxs -e ${AP_MOD_EN} -n %%AP_NAME%% %D/%F" >> ${PLIST}
 	@${ECHO} "@unexec echo \"Don't forget to remove all ${MODULENAME}-related directives in your httpd.conf\"">> ${PLIST}
 .	endif
 .else
@@ -474,12 +477,8 @@ do-build: ap-gen-plist
 
 .if !target(do-install)
 do-install:
-.if defined(AP_MODENABLE)
-	@${APXS} -i -a -n ${SHORTMODNAME} ${WRKSRC}/${MODULENAME}.${AP_BUILDEXT}
-.else
-	@${APXS} -i -A -n ${SHORTMODNAME} ${WRKSRC}/${MODULENAME}.${AP_BUILDEXT}
+	@${APXS} -i ${AP_MOD_EN} -n ${SHORTMODNAME} ${WRKSRC}/${MODULENAME}.${AP_BUILDEXT}
 .endif
-.endif
-.endif
-.endif
+.endif          # defined(AP_FAST_BUILD)
+.endif          # defined(AP_PORT_IS_MODULE)
 .endif          # defined(_POSTMKINCLUDED) && !defined(Apache_Post_Include)
