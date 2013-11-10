@@ -1,0 +1,16 @@
+bin/belvu
+bin/blixem
+bin/blixemh
+bin/dotter
+%%PORTDOCS%%%%DOCSDIR%%/Belvu_manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/Blixem_manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/Dotter_manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/belvu_quick_start.html
+%%PORTDOCS%%%%DOCSDIR%%/belvu_usage.txt
+%%PORTDOCS%%%%DOCSDIR%%/blixem_quick_start.html
+%%PORTDOCS%%%%DOCSDIR%%/blixem_usage.txt
+%%PORTDOCS%%%%DOCSDIR%%/dotter_quick_start.html
+%%PORTDOCS%%%%DOCSDIR%%/dotter_usage.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes.html
+%%PORTDOCS%%%%DOCSDIR%%/todo.html
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%
