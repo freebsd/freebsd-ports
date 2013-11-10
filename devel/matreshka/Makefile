@@ -3,6 +3,7 @@
 
 PORTNAME=	matreshka
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://forge.ada-ru.org/matreshka/downloads/
 
@@ -13,9 +14,8 @@ LICENSE=	BSD
 
 BUILD_DEPENDS=	gprbuild>=20120510:${PORTSDIR}/devel/gprbuild
 
-USES=		ada
-USE_GMAKE=	yes
-DESTINY=	${WRKDIR}/destino
+USES=		ada gmake
+NO_MTREE=	yes
 
 OPTIONS_DEFINE=	SQLITE3 FIREBIRD PGSQL MYSQL ORACLE AMF
 OPTIONS_DEFAULT=SQLITE3 FIREBIRD PGSQL MYSQL
@@ -23,11 +23,10 @@ OPTIONS_DEFAULT=SQLITE3 FIREBIRD PGSQL MYSQL
 AMF_DESC=	Build Ada Modeling Framework
 
 MAKE_JOBS_UNSAFE=	yes
+NO_LICENSES_INSTALL=	yes
 
-MAKE_ENV+=	SMP_MFLAGS=-j${MAKE_JOBS_NUMBER} \
-		DESTDIR=${DESTINY}
+MAKE_ENV+=	SMP_MFLAGS=-j${MAKE_JOBS_NUMBER}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFIREBIRD}
@@ -55,12 +54,10 @@ MAKE_ENV+= WANT_AMF=yes
 .endif
 
 post-install:
-	${CP} -pR ${DESTINY}${PREFIX}/ ${PREFIX}/
-	@cd ${DESTINY}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
-	   ${SORT} > ${WRKDIR}/PLIST.all
-	@cd ${DESTINY}${PREFIX}; ${FIND} * -type d | ${AWK} '/\//' | ${SORT} -r | \
-	   ${SED} -e '/lib\/gnat$$/d' -e 's/^/@dirrm /g' >> ${WRKDIR}/PLIST.all
-	@echo "@unexec rmdir %D/lib/gnat 2>/dev/null || true" >> ${WRKDIR}/PLIST.all
-	@${CAT} ${WRKDIR}/PLIST.all >> ${TMPPLIST}
+	@cd ${STAGEDIR}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
+	   ${SORT} > ${TMPPLIST}
+	@cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d | ${AWK} '/\//' | ${SORT} -r | \
+	   ${SED} -e '/lib\/gnat$$/d' -e 's/^/@dirrm /g' >> ${TMPPLIST}
+	@echo "@unexec rmdir %D/lib/gnat 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
