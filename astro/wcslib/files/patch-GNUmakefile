@@ -22,11 +22,11 @@
 -	   $(INSTALL) -m 444 html/* $(HTMLDIR)/html
 -	   if [ ! -d "$(LIBDIR)/pkgconfig" ] ; then \
 -	     $(INSTALL) -d -m 2775 $(LIBDIR)/pkgconfig ; \
-+	   if [ ! -d "/usr/local/libdata/pkgconfig" ] ; then \
-+	     $(INSTALL) -d -m 2775 /usr/local/libdata/pkgconfig ; \
++	   if [ ! -d "%%PKGDIR%%/pkgconfig" ] ; then \
++	     $(INSTALL) -d -m 2775 %%PKGDIR%%/pkgconfig ; \
  	   fi
 -	   $(INSTALL) -m 444 wcslib.pc $(LIBDIR)/pkgconfig/wcslib.pc
-+	   $(INSTALL) -m 444 wcslib.pc /usr/local/libdata/pkgconfig/wcslib.pc
++	   $(INSTALL) -m 444 wcslib.pc %%PKGDIR%%/pkgconfig/wcslib.pc
  
  clean cleaner :
  	   for DIR in $(SUBDIRS) doxygen ; do \

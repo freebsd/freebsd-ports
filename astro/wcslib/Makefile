@@ -9,7 +9,6 @@ MASTER_SITES=	ftp://ftp.atnf.csiro.au/pub/software/wcslib/
 MAINTAINER=	tonymaher@optusnet.com.au
 COMMENT=	Library for parsing/generating FITS headers
 
-NO_STAGE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USES=		gmake
@@ -17,7 +16,6 @@ MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
-MAN1=		fitshdr.1
 
 # See makedefs.in which describes why you want to set the extra support.
 # For most users it will not be required.
@@ -43,15 +41,13 @@ LIB_DEPENDS+=	pgplot.5:${PORTSDIR}/graphics/pgplot
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#%%PKGDIR%%#${LOCALBASE}/libdata#g' \
+	@${REINPLACE_CMD} -e 's#%%PKGDIR%%#${STAGEDIR}${PREFIX}/libdata#g' \
 		${WRKSRC}/GNUmakefile
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/ && ${INSTALL_DATA} CHANGES README COPYING COPYING.LESSER wcslib.pdf ${DOCSDIR})
-	@${MKDIR} ${DOCSDIR}/html
-	(cd ${WRKSRC}/html && ${INSTALL_DATA} * ${DOCSDIR}/html)
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/ && ${INSTALL_DATA} CHANGES README COPYING COPYING.LESSER wcslib.pdf ${STAGEDIR}${DOCSDIR})
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/html
+	(cd ${WRKSRC}/html && ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR}/html)
 
 .include <bsd.port.mk>
