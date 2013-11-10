@@ -16,20 +16,22 @@
 name="ircd_hybrid"
 rcvar=ircd_hybrid_enable
 
-command=/usr/local/bin/ircd
-pidfile=/var/run/ircd/ircd.pid
-required_files=/usr/local/etc/ircd-hybrid/ircd.conf
+command=/usr/local/sbin/ircd
 
 start_precmd=pid_touch
 stop_postcmd=pid_rm
 
-[ -z "$ircd_hybrid_enable" ] && ircd_hybrid_enable=NO
-[ -z "$ircd_hybrid_user" ] && ircd_hybrid_user=ircd
+load_rc_config ${name}
 
-load_rc_config $name
+pidfile=${ircd_hybrid_pidfile-"/var/run/ircd/ircd.pid"}
+: ${ircd_hybrid_enable:="NO"}
+: ${ircd_hybrid_user:="ircd"}
+: ${ircd_hybrid_config:="%%PREFIX%%/etc/ircd-hybrid/ircd.conf"}
+: ${ircd_hybrid_flags=" -pidfile ${pidfile}"}
 
 pid_touch ()
 {
+    install -d -o ${ircd_hybrid_user} ${pidfile%/*} /var/log/ircd
     touch $pidfile
     chown $ircd_hybrid_user $pidfile
 }

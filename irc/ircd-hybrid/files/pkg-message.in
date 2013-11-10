@@ -3,7 +3,7 @@ ircd-hybrid has now been installed.
 *** IMPORTANT: ***
 Please read the INSTALL file for more information.
 
-You should now copy %%PREFIX%%/etc/ircd-hybrid/example.conf to
+You should now copy %%PREFIX%%/etc/ircd-hybrid/reference.conf to
 %%PREFIX%%/etc/ircd-hybrid/ircd.conf, and then edit to suit your needs.
 ircd-hybrid will not start without %%PREFIX%%/etc/ircd-hybrid/ircd.conf
 
