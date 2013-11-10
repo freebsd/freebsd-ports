@@ -6,7 +6,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BerkeleyDB/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BerkeleyDB/BerkeleyDB.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BerkeleyDB/BerkeleyDB.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/BerkeleyDB/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/mkconsts.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/scan.pl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BerkeleyDB
