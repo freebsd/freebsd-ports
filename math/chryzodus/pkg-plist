@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/chryzodus
 %%PORTDOCS%%%%DOCSDIR%%/chryzode.html
 %%PORTDOCS%%%%DOCSDIR%%/file.html
