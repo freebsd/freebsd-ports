@@ -845,6 +845,7 @@
 %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/utils/validate.js
 %%WWWDIR%%/index.php
 %%WWWDIR%%/install/index.php
+%%WWWDIR%%/install/index.php.orig
 %%WWWDIR%%/install/sql.php
 %%WWWDIR%%/install/validate.js
 %%WWWDIR%%/js/dhtml.js
