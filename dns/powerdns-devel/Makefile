@@ -9,11 +9,12 @@ PKGNAMESUFFIX=	-devel
 DISTNAME=	auth-${PORTVERSION:S/.r/-rc/}
 
 MAINTAINER=	tremere@cainites.net
-COMMENT=	An advanced DNS server with multiple backends including SQL
+COMMENT=	Advanced DNS server with multiple backends including SQL
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	ragel:${PORTSDIR}/devel/ragel
+BUILD_DEPENDS=	ragel:${PORTSDIR}/devel/ragel \
+		bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	libboost_serialization.so:${PORTSDIR}/devel/boost-libs
 
 USE_GITHUB=	YES
@@ -37,7 +38,7 @@ GNU_CONFIGURE=	YES
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-modules="" \
-		--with-dynmodules="pipe ${CONFIGURE_MODULES}" \
+		--with-dynmodules="pipe ${MODULES}" \
 		--sysconfdir="${PREFIX}/etc/pdns" \
 		--with-boost="${LOCALBASE}"
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
@@ -48,20 +49,22 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	PGSQL PGSQL_LOCAL MYSQL MYSQL_LOCAL SQLITE SQLITE3 \
-		OPENDBX OPENLDAP OPENLDAP_LOCAL GEO POLARSSL TOOLS
+USE_RC_SUBR+=	pdns-devel
+
+OPTIONS_DEFINE=	GEO MYSQL MYSQL_LOCAL OPENDBX OPENLDAP OPENLDAP_LOCAL \
+		PGSQL PGSQL_LOCAL POLARSSL SQLITE3 TOOLS
 OPTIONS_MULTI=	DNSSEC
 OPTIONS_MULTI_DNSSEC=	BOTAN110 CRYPTOPP
 
+BACKENDS_DESC=		Choose backend(s)
 PGSQL_DESC=		PostgreSQL backend
 PGSQL_LOCAL_DESC=	RUN_DEPEND on PostgreSQL server
 MYSQL_DESC=		MySQL backend
 MYSQL_LOCAL_DESC=	RUN_DEPEND on MySQL server
-SQLITE_DESC=		SQLite 2 backend
-SQLITE3_DESC=		SQLite 3 backend
 OPENDBX_DESC=		OpenDBX backend
 OPENLDAP_DESC=		OpenLDAP backend
 OPENLDAP_LOCAL_DESC=	RUN_DEPEND on OpenLDAP server
+SQLITE3_DESC=		SQLite 3 backend
 GEO_DESC=		Geo backend
 DNSSEC_DESC=		Enable extra DNSSEC options
 BOTAN110_DESC=		Faster signing + ECDSA & GOST algorithms
@@ -71,115 +74,79 @@ TOOLS_DESC=		Build extra tools
 
 OPTIONS_DEFAULT=	PGSQL DNSSEC BOTAN110 POLARSSL
 
+OPTIONS_SUB=	yes
+
+TOOLS_CONFIGURE_ENABLE=	tools
+
+PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}
+PGSQL_CONFIGURE_OFF=	--without-pgsql
+PGSQL_USE=		PGSQL=YES
+PGSQL_LOCAL_USE=	PGSQL=server
+
+MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}
+MYSQL_CONFIGURE_OFF=	--without-mysql
+MYSQL_USE=		MYSQL=YES
+MYSQL_LOCAL_USE=	MYSQL=server
+
+OPENLDAP_CXXFLAGS=	-DLDAP_DEPRECATED=1
+OPENLDAP_USE=		OPENLDAP=YES
+OPENLDAP_LOCAL_RUN_DEPENDS=	openldap-server>=0:${PORTSDIR}/net/openldap24-server
+
+SQLITE3_USE=	SQLITE=3
+
+OPENDBX_LIB_DEPENDS=	libopendbx.so:${PORTSDIR}/databases/opendbx
+
+BOTAN110_CONFIGURE_ENABLE=	botan1.10
+BOTAN110_LIB_DEPENDS=		libbotan-1.10.so:${PORTSDIR}/security/botan110
+
 .include <bsd.port.pre.mk>
 
-USE_RC_SUBR+=	pdns-devel
-
-.if ${PORT_OPTIONS:MTOOLS}
-CONFIGURE_ARGS+=	--enable-tools
-PLIST_SUB+=		WITHTOOLS=""
-.else
-PLIST_SUB+=		WITHTOOLS="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MGEO}
-CONFIGURE_MODULES+=	"geo"
-PLIST_SUB+=		WITHGEO=""
-.else
-PLIST_SUB+=		WITHGEO="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE} && ${PORT_OPTIONS:MSQLITE3}
-BROKEN=			choose only one SQLite backend version
+MODULES+=	"geo"
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL?=		YES
-CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}
-CONFIGURE_MODULES+=	"gpgsql"
-PLIST_SUB+=		WITHPGSQL=""
-.else
-CONFIGURE_ARGS+=	--without-pgsql
-PLIST_SUB+=		WITHPGSQL="@comment "
+MODULES+=	"gpgsql"
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL?=		YES
-CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
-CONFIGURE_MODULES+=	"gmysql"
-PLIST_SUB+=		WITHMYSQL=""
-.else
-CONFIGURE_ARGS+=	--without-mysql
-PLIST_SUB+=		WITHMYSQL="@comment "
+MODULES+=	"gmysql"
 .endif
 
-.if ${PORT_OPTIONS:MOPENDBX} || ${PORT_OPTIONS:MPGSQL}
-.	if ${PORT_OPTIONS:MPGSQL_LOCAL}
-USE_PGSQL?=		server
-SUB_LIST+=		PGSQL=postgresql
-.	endif
+.if ${PORT_OPTIONS:MPGSQL_LOCAL}
+SUB_LIST+=	PGSQL_REQ=postgresql
 .else
-SUB_LIST+=		PGSQL=
+SUB_LIST+=	PGSQL_REQ=
 .endif
-.if ${PORT_OPTIONS:MOPENDBX} || ${PORT_OPTIONS:MMYSQL}
-.	if ${PORT_OPTIONS:MMYSQL_LOCAL}
-USE_MYSQL?=		server
-SUB_LIST+=		MYSQL=mysql
-.	endif
+
+.if ${PORT_OPTIONS:MMYSQL_LOCAL}
+SUB_LIST+=	MYSQL_REQ=mysql
 .else
-SUB_LIST+=		MYSQL=
+SUB_LIST+=	MYSQL_REQ=
 .endif
 
 .if ${PORT_OPTIONS:MOPENLDAP}
-USE_OPENLDAP?=		YES
-CONFIGURE_MODULES+=	"ldap"
-CXXFLAGS+=		-L${LOCALBASE}/lib -DLDAP_DEPRECATED=1
-PLIST_SUB+=		WITHOPENLDAP=""
-.	if ${PORT_OPTIONS:MOPENLDAP_LOCAL}
-RUN_DEPENDS+=		openldap-server>=0:${PORTSDIR}/net/openldap${WANT_OPENLDAP_VER}-server
-SUB_LIST+=		SLAPD=slapd
-.	else
-SUB_LIST+=		SLAPD=
-.	endif
-.else
-PLIST_SUB+=		WITHOPENLDAP="@comment "
-SUB_LIST+=		SLAPD=
+MODULES+=	"ldap"
 .endif
 
-.if ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE?=		2
-CONFIGURE_MODULES+=	"gsqlite"
-PLIST_SUB+=		WITHSQLITE=""
+.if ${PORT_OPTIONS:MOPENLDAP_LOCAL}
+SUB_LIST+=	SLAPD_REQ=slapd
 .else
-PLIST_SUB+=		WITHSQLITE="@comment "
+SUB_LIST+=	SLAPD_REQ=
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE3}
-USE_SQLITE?=		3
-CONFIGURE_MODULES+=	"gsqlite3"
-PLIST_SUB+=		WITHSQLITE3=""
-.else
-PLIST_SUB+=		WITHSQLITE3="@comment "
+MODULES+=	"gsqlite3"
 .endif
 
 .if ${PORT_OPTIONS:MOPENDBX}
-LIB_DEPENDS+=		libopendbx.so:${PORTSDIR}/databases/opendbx
-CONFIGURE_MODULES+=	"opendbx"
-PLIST_SUB+=		WITHOPENDBX=""
-CXXFLAGS+=		-L${LOCALBASE}/lib
-.else
-PLIST_SUB+=		WITHOPENDBX="@comment "
+MODULES+=	"opendbx"
 .endif
 
 .if ${PORT_OPTIONS:MPOLARSSL}
 CONFIGURE_ARGS+=	--without-system-polarssl
 .else
 LIB_DEPENDS+=		libpolarssl.so:${PORTSDIR}/security/polarssl
-.endif
-
-.if ${PORT_OPTIONS:MBOTAN110}
-CONFIGURE_ARGS+=	--enable-botan1.10
-LIB_DEPENDS+=		libbotan-1.10.so:${PORTSDIR}/security/botan110
 .endif
 
 .if ${PORT_OPTIONS:MCRYPTOPP}
@@ -192,6 +159,7 @@ CONFIGURE_ARGS+=	--enable-cryptopp
 .endif
 
 pre-patch:
+	${ECHO_CMD} ${BARBA}
 	@${REINPLACE_CMD} -e "s;/bin/bash;/usr/bin/env bash;" \
 		-e "s;ssed -r;sed -E -e;g" \
 		-e "s;-i;-i \.bak;g" \
@@ -223,9 +191,9 @@ post-install:
 .for i in pdns.conf
 	${INSTALL_DATA} ${FILESDIR}/$i ${STAGEDIR}${EXAMPLESDIR}/
 .endfor
-.for j in libgpgsqlbackend.so libgmysqlbackend.so libgsqlitebackend.so \
-	libgsqlite3backend.so libldapbackend.so libopendbxbackend.so \
-	libgeobackend.so libpipebackend.so
+.for j in libgpgsqlbackend.so libgmysqlbackend.so libgsqlite3backend.so \
+	libldapbackend.so libopendbxbackend.so libgeobackend.so \
+	libpipebackend.so
 	@if ([ -f ${STAGEDIR}${PREFIX}/lib/$j ] && [ ! -f ${STAGEDIR}${PREFIX}/lib/$j.0 ]); then \
 		${LN} -sf ${PREFIX}/lib/$j ${STAGEDIR}${PREFIX}/lib/$j.0; \
 	fi
