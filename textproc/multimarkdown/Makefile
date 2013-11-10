@@ -32,11 +32,13 @@ CONFLICTS_INSTALL=	mtools-*
 .endif
 
 do-fetch:
-	${MKDIR} ${WRKDIR}
-	cd ${WRKDIR} && git clone https://github.com/fletcher/MultiMarkdown-4.git
-	cd ${WRKSRC} && git checkout ${PORTVERSION}
-	cd ${WRKSRC} && git submodule init
-	cd ${WRKSRC} && git submodule update
+	@if [ ! -e ${WRKSRC}/greg/Makefile ]; then \
+		${MKDIR} ${WRKDIR}; \
+		cd ${WRKDIR} && git clone https://github.com/fletcher/MultiMarkdown-4.git; \
+		cd ${WRKSRC} && git checkout ${PORTVERSION}; \
+		cd ${WRKSRC} && git submodule init; \
+		cd ${WRKSRC} && git submodule update; \
+	fi
 
 do-extract:
 	@${DO_NADA}	#normally do-extract starts with an rm -rf ${WRKSRC}
