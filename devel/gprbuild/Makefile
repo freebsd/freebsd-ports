@@ -20,10 +20,8 @@ DOCSDIR=	share/doc/gprbuild
 WRKSRC=		${WRKDIR}/gprbuild-2012-src
 SNAPSHOT=	20120510
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES+=		ada
+USES=		ada gmake
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == "FreeBSD"
@@ -33,5 +31,9 @@ CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:L}${OSREL}
 post-patch:
 	@${REINPLACE_CMD} -e "s,@AUXPREFIX@,${PREFIX}/gcc-aux," \
 	  ${WRKSRC}/share/gprconfig/compilers.xml
+
+post-install:
+	cd ${STAGEDIR}${PREFIX}; ${FIND} share -type d -empty | \
+	  ${SORT} -dr | ${XARGS} ${RMDIR}
 
 .include <bsd.port.post.mk>
