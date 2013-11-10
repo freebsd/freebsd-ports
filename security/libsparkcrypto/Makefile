@@ -16,11 +16,9 @@ LICENSE=	BSD
 USES=		ada gmake
 USE_DOS2UNIX=	Makefile build/libsparkcrypto.gpr
 SPARKARCH:=	${ARCH:S/amd64/x86_64/:S/i386/i686/}
-DESTINY=	${WRKDIR}/destino
 
 MAKE_ENV+=	SPARKARCH=${SPARKARCH} \
 		SPARK_DIR=${WRKSRC}/src/spark \
-		DESTDIR=${DESTINY} \
 		MODE=release \
 		RUNTIME=native \
 		NO_TESTS=true \
@@ -28,7 +26,6 @@ MAKE_ENV+=	SPARKARCH=${SPARKARCH} \
 
 OPTIONS_DEFINE=		DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -38,11 +35,8 @@ MAKE_ENV+=	NO_APIDOC=true
 .endif
 
 post-patch:
-	# ports passed unwanted ARCH definition to Makefile
+#	ports passed unwanted ARCH definition to Makefile
 	@${REINPLACE_CMD} -e 's|ARCH|SPARKARCH|g' \
 		${WRKSRC}/Makefile
-
-post-install:
-	${CP} -pR ${DESTINY}${PREFIX}/ ${PREFIX}/
 
 .include <bsd.port.mk>
