@@ -51,6 +51,98 @@ bin/mp2bug
 %%APACHEINCLUDEDIR%%/modules/perl/modperl_trace.h
 %%APACHEINCLUDEDIR%%/modules/perl/modperl_types.h
 %%APACHEINCLUDEDIR%%/modules/perl/modperl_util.h
+%%PERL5_MAN3%%/APR.3.gz
+%%PERL5_MAN3%%/APR::Base64.3.gz
+%%PERL5_MAN3%%/APR::Brigade.3.gz
+%%PERL5_MAN3%%/APR::Bucket.3.gz
+%%PERL5_MAN3%%/APR::BucketAlloc.3.gz
+%%PERL5_MAN3%%/APR::BucketType.3.gz
+%%PERL5_MAN3%%/APR::Const.3.gz
+%%PERL5_MAN3%%/APR::Date.3.gz
+%%PERL5_MAN3%%/APR::Error.3.gz
+%%PERL5_MAN3%%/APR::Finfo.3.gz
+%%PERL5_MAN3%%/APR::IpSubnet.3.gz
+%%PERL5_MAN3%%/APR::OS.3.gz
+%%PERL5_MAN3%%/APR::PerlIO.3.gz
+%%PERL5_MAN3%%/APR::Pool.3.gz
+%%PERL5_MAN3%%/APR::SockAddr.3.gz
+%%PERL5_MAN3%%/APR::Socket.3.gz
+%%PERL5_MAN3%%/APR::Status.3.gz
+%%PERL5_MAN3%%/APR::String.3.gz
+%%PERL5_MAN3%%/APR::Table.3.gz
+%%PERL5_MAN3%%/APR::ThreadMutex.3.gz
+%%PERL5_MAN3%%/APR::ThreadRWLock.3.gz
+%%PERL5_MAN3%%/APR::URI.3.gz
+%%PERL5_MAN3%%/APR::UUID.3.gz
+%%PERL5_MAN3%%/APR::Util.3.gz
+%%PERL5_MAN3%%/Apache2::Access.3.gz
+%%PERL5_MAN3%%/Apache2::Build.3.gz
+%%PERL5_MAN3%%/Apache2::CmdParms.3.gz
+%%PERL5_MAN3%%/Apache2::Command.3.gz
+%%PERL5_MAN3%%/Apache2::Connection.3.gz
+%%PERL5_MAN3%%/Apache2::ConnectionUtil.3.gz
+%%PERL5_MAN3%%/Apache2::Const.3.gz
+%%PERL5_MAN3%%/Apache2::Directive.3.gz
+%%PERL5_MAN3%%/Apache2::Filter.3.gz
+%%PERL5_MAN3%%/Apache2::FilterRec.3.gz
+%%PERL5_MAN3%%/Apache2::HookRun.3.gz
+%%PERL5_MAN3%%/Apache2::Log.3.gz
+%%PERL5_MAN3%%/Apache2::MPM.3.gz
+%%PERL5_MAN3%%/Apache2::Module.3.gz
+%%PERL5_MAN3%%/Apache2::PerlSections.3.gz
+%%PERL5_MAN3%%/Apache2::Process.3.gz
+%%PERL5_MAN3%%/Apache2::Reload.3.gz
+%%PERL5_MAN3%%/Apache2::RequestIO.3.gz
+%%PERL5_MAN3%%/Apache2::RequestRec.3.gz
+%%PERL5_MAN3%%/Apache2::RequestUtil.3.gz
+%%PERL5_MAN3%%/Apache2::Resource.3.gz
+%%PERL5_MAN3%%/Apache2::Response.3.gz
+%%PERL5_MAN3%%/Apache2::ServerRec.3.gz
+%%PERL5_MAN3%%/Apache2::ServerUtil.3.gz
+%%PERL5_MAN3%%/Apache2::SizeLimit.3.gz
+%%PERL5_MAN3%%/Apache2::Status.3.gz
+%%PERL5_MAN3%%/Apache2::SubProcess.3.gz
+%%PERL5_MAN3%%/Apache2::SubRequest.3.gz
+%%PERL5_MAN3%%/Apache2::URI.3.gz
+%%PERL5_MAN3%%/Apache2::Util.3.gz
+%%PERL5_MAN3%%/Apache2::compat.3.gz
+%%PERL5_MAN3%%/Apache2::porting.3.gz
+%%PERL5_MAN3%%/Apache::Reload.3.gz
+%%PERL5_MAN3%%/Apache::SizeLimit.3.gz
+%%PERL5_MAN3%%/Apache::SizeLimit::Core.3.gz
+%%PERL5_MAN3%%/Apache::Test.3.gz
+%%PERL5_MAN3%%/Apache::TestConfig.3.gz
+%%PERL5_MAN3%%/Apache::TestHandler.3.gz
+%%PERL5_MAN3%%/Apache::TestMB.3.gz
+%%PERL5_MAN3%%/Apache::TestMM.3.gz
+%%PERL5_MAN3%%/Apache::TestReport.3.gz
+%%PERL5_MAN3%%/Apache::TestRequest.3.gz
+%%PERL5_MAN3%%/Apache::TestRun.3.gz
+%%PERL5_MAN3%%/Apache::TestRunPHP.3.gz
+%%PERL5_MAN3%%/Apache::TestRunPerl.3.gz
+%%PERL5_MAN3%%/Apache::TestServer.3.gz
+%%PERL5_MAN3%%/Apache::TestSmoke.3.gz
+%%PERL5_MAN3%%/Apache::TestTrace.3.gz
+%%PERL5_MAN3%%/Apache::TestUtil.3.gz
+%%PERL5_MAN3%%/Bundle::Apache2.3.gz
+%%PERL5_MAN3%%/Bundle::ApacheTest.3.gz
+%%PERL5_MAN3%%/ModPerl::BuildMM.3.gz
+%%PERL5_MAN3%%/ModPerl::CScan.3.gz
+%%PERL5_MAN3%%/ModPerl::Code.3.gz
+%%PERL5_MAN3%%/ModPerl::Config.3.gz
+%%PERL5_MAN3%%/ModPerl::Const.3.gz
+%%PERL5_MAN3%%/ModPerl::Global.3.gz
+%%PERL5_MAN3%%/ModPerl::MM.3.gz
+%%PERL5_MAN3%%/ModPerl::MethodLookup.3.gz
+%%PERL5_MAN3%%/ModPerl::PerlRun.3.gz
+%%PERL5_MAN3%%/ModPerl::PerlRunPrefork.3.gz
+%%PERL5_MAN3%%/ModPerl::Registry.3.gz
+%%PERL5_MAN3%%/ModPerl::RegistryBB.3.gz
+%%PERL5_MAN3%%/ModPerl::RegistryCooker.3.gz
+%%PERL5_MAN3%%/ModPerl::RegistryLoader.3.gz
+%%PERL5_MAN3%%/ModPerl::RegistryPrefork.3.gz
+%%PERL5_MAN3%%/ModPerl::Util.3.gz
+%%PERL5_MAN3%%/mod_perl2.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/APR.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/APR/Base64.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/APR/Brigade.pm
@@ -282,8 +374,10 @@ bin/mp2bug
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ModPerl/Util/Util.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/mod_perl2/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/mod_perl2.pm
-%%APACHEMODDIR%%/mod_perl.so
-@exec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%F
+@unexec sed -i '' -E '/LoadModule[[:blank:]]+%%AP_NAME%%_module/d' %D/%%APACHEETCDIR%%/httpd.conf
+@unexec echo "Don't forget to remove all mod_perl2-related directives in your httpd.conf"
+%%APACHEMODDIR%%/%%AP_MODULE%%
+@exec %D/sbin/apxs -e %%AP_MOD_EN%% -n %%AP_NAME%% %D/%F
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/mod_perl2
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ModPerl/Util
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ModPerl/Global
@@ -350,5 +444,3 @@ bin/mp2bug
 @dirrm %%APACHEINCLUDEDIR%%/modules/perl
 @dirrmtry %%APACHEINCLUDEDIR%%/modules
 @dirrmtry %%APACHEINCLUDEDIR%%
-@unexec sed -i '' -E '/LoadModule[[:blank:]]+%%AP_NAME%%_module/d' %D/%%APACHEETCDIR%%/httpd.conf
-@unexec echo "Don't forget to remove all mod_perl2-related directives in your httpd.conf"
