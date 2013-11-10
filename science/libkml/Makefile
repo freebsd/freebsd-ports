@@ -6,18 +6,20 @@ PORTVERSION=	1.2.0
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for parse, generate, and operate on KML
+
+LICENSE=	BSD
 
 BUILD_DEPENDS=	${LOCALBASE}/include/expat.h:${PORTSDIR}/textproc/expat2 \
 		${LOCALBASE}/bin/curl-config:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USE_GCC=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include -Wno-long-long
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
