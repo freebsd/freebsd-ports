@@ -84,7 +84,7 @@ CONFIGURE_ARGS+=	--without-tds
 .endif
 
 .if ${LIBGDA3_SLAVE}=="mdb"
-LIB_DEPENDS+=		mdbsql.0:${PORTSDIR}/databases/mdbtools
+LIB_DEPENDS+=		libmdbsql.so:${PORTSDIR}/databases/mdbtools
 CONFIGURE_ARGS+=	--with-mdb=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-mdb
