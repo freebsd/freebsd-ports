@@ -3,7 +3,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	2.1.0
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -412,6 +412,9 @@ post-patch:
 		-e '\|LIBS|s|-lrt||' \
 		-e 's|gnutls |gnutls3 |g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|^pkgconfigdir.*|pkgconfigdir = \$$\(prefix\)/libdata/pkgconfig|' \
+		${WRKSRC}/src/Makefile.in \
+		${WRKSRC}/lib/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf|${WITH_VLC_DEFAULT_FONT}|' \
 		${WRKSRC}/modules/text_renderer/freetype.c
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${WITH_CDROM_DEVICE}|g' \
