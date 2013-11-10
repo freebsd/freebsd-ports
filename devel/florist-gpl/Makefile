@@ -15,14 +15,8 @@ LICENSE=	GPLv3
 
 USES=		ada
 GNU_CONFIGURE=	yes
-DESTINY=	${WRKDIR}/destino
-MAKE_ENV+=	DESTDIR=${DESTINY}
 
-NO_STAGE=	yes
 post-extract:
 	${CP} ${FILESDIR}/pconfig.* ${WRKSRC}/configs
-
-post-install:
-	${CP} -pR ${DESTINY}${PREFIX}/ ${PREFIX}/
 
 .include <bsd.port.mk>
