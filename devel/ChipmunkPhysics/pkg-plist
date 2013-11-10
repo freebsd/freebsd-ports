@@ -1,4 +1,4 @@
-lib/libchipmunk.so.6.1.5
+lib/libchipmunk.so.6.2.0
 lib/libchipmunk.so
 lib/libchipmunk.a
 include/chipmunk/cpVect.h
