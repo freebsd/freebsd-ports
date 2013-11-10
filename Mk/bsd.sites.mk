@@ -454,7 +454,6 @@ MASTER_SITE_GCC+= \
 	ftp://ftp.iij.ad.jp/pub/gnu/gnu/gcc/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/lang/gcc/%SUBDIR%/ \
 	ftp://ftp.nluug.nl/mirror/languages/gcc/%SUBDIR%/ \
-	ftp://ftp.nctu.edu.tw/computer-languages/C/gcc/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/sourceware.org/pub/gcc/%SUBDIR%/ \
 	ftp://ftp.ntua.gr/pub/gnu/gcc/%SUBDIR%/ \
 	ftp://mirror.aarnet.edu.au/pub/gnu/gcc/%SUBDIR%/
