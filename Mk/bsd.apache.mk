@@ -477,7 +477,12 @@ do-build: ap-gen-plist
 
 .if !target(do-install)
 do-install:
+. if defined(NO_STAGE)
 	@${APXS} -i ${AP_MOD_EN} -n ${SHORTMODNAME} ${WRKSRC}/${MODULENAME}.${AP_BUILDEXT}
+. else
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
+	@${APXS} -S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR} -i -n ${SHORTMODNAME} ${WRKSRC}/${MODULENAME}.${AP_BUILDEXT}
+. endif
 .endif
 .endif          # defined(AP_FAST_BUILD)
 .endif          # defined(AP_PORT_IS_MODULE)
