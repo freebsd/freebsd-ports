@@ -1,14 +1,18 @@
 @comment $FreeBSD$
 bin/fuse
 man/man1/fuse.1.gz
+%%ICONS%%share/applications/fuse.desktop
 %%DATADIR%%/128-0.rom
 %%DATADIR%%/128-1.rom
 %%DATADIR%%/48.rom
 %%DATADIR%%/cassette.bmp
 %%DATADIR%%/disciple.rom
 %%DATADIR%%/disk_plus3.szx
+%%SDL%%%%DATADIR%%/fuse.font
+%%SVGALIB%%%%DATADIR%%/fuse.font
 %%DATADIR%%/keyboard.scr
-%%DATADIR%%/menu_data.ui
+%%GTK2%%%%DATADIR%%/menu_data.ui
+%%GTK3%%%%DATADIR%%/menu_data.ui
 %%DATADIR%%/microdrive.bmp
 %%DATADIR%%/plus2-0.rom
 %%DATADIR%%/plus2-1.rom
@@ -42,6 +46,41 @@ man/man1/fuse.1.gz
 %%DATADIR%%/tc2048.rom
 %%DATADIR%%/tc2068-0.rom
 %%DATADIR%%/tc2068-1.rom
+%%ICONS%%share/icons/hicolor/128x128/apps/fuse.png
+%%ICONS%%share/icons/hicolor/128x128/mimetypes/application-x-spectrum.png
+%%ICONS%%share/icons/hicolor/16x16/apps/fuse.png
+%%ICONS%%share/icons/hicolor/16x16/mimetypes/application-x-spectrum.png
+%%ICONS%%share/icons/hicolor/256x256/apps/fuse.png
+%%ICONS%%share/icons/hicolor/256x256/mimetypes/application-x-spectrum.png
+%%ICONS%%share/icons/hicolor/32x32/apps/fuse.png
+%%ICONS%%share/icons/hicolor/32x32/mimetypes/application-x-spectrum.png
+%%ICONS%%share/icons/hicolor/48x48/apps/fuse.png
+%%ICONS%%share/icons/hicolor/48x48/mimetypes/application-x-spectrum.png
+%%ICONS%%share/icons/hicolor/64x64/apps/fuse.png
+%%ICONS%%share/icons/hicolor/64x64/mimetypes/application-x-spectrum.png
+%%ICONS%%share/mime/packages/fuse.xml
+%%ICONS%%@dirrmtry share/mime/packages
+%%ICONS%%@dirrmtry share/mime
+%%ICONS%%@dirrmtry share/icons/hicolor/64x64/mimetypes
+%%ICONS%%@dirrmtry share/icons/hicolor/64x64/apps
+%%ICONS%%@dirrmtry share/icons/hicolor/64x64
+%%ICONS%%@dirrmtry share/icons/hicolor/48x48/mimetypes
+%%ICONS%%@dirrmtry share/icons/hicolor/48x48/apps
+%%ICONS%%@dirrmtry share/icons/hicolor/48x48
+%%ICONS%%@dirrmtry share/icons/hicolor/32x32/mimetypes
+%%ICONS%%@dirrmtry share/icons/hicolor/32x32/apps
+%%ICONS%%@dirrmtry share/icons/hicolor/32x32
+%%ICONS%%@dirrmtry share/icons/hicolor/256x256/mimetypes
+%%ICONS%%@dirrmtry share/icons/hicolor/256x256/apps
+%%ICONS%%@dirrmtry share/icons/hicolor/256x256
+%%ICONS%%@dirrmtry share/icons/hicolor/16x16/mimetypes
+%%ICONS%%@dirrmtry share/icons/hicolor/16x16/apps
+%%ICONS%%@dirrmtry share/icons/hicolor/16x16
+%%ICONS%%@dirrmtry share/icons/hicolor/128x128/mimetypes
+%%ICONS%%@dirrmtry share/icons/hicolor/128x128/apps
+%%ICONS%%@dirrmtry share/icons/hicolor/128x128
+%%ICONS%%@dirrmtry share/icons/hicolor
+%%ICONS%%@dirrmtry share/icons
 @dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
