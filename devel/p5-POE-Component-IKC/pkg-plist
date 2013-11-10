@@ -12,6 +12,16 @@
 %%SITE_PERL%%/POE/Component/IKC/Specifier.pm
 %%SITE_PERL%%/POE/Component/IKC/Timing.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IKC/.packlist
+%%PERL5_MAN3%%/POE::Component::IKC.3.gz
+%%PERL5_MAN3%%/POE::Component::IKC::Channel.3.gz
+%%PERL5_MAN3%%/POE::Component::IKC::Client.3.gz
+%%PERL5_MAN3%%/POE::Component::IKC::ClientLite.3.gz
+%%PERL5_MAN3%%/POE::Component::IKC::Freezer.3.gz
+%%PERL5_MAN3%%/POE::Component::IKC::Proxy.3.gz
+%%PERL5_MAN3%%/POE::Component::IKC::Responder.3.gz
+%%PERL5_MAN3%%/POE::Component::IKC::Server.3.gz
+%%PERL5_MAN3%%/POE::Component::IKC::Specifier.3.gz
+%%PERL5_MAN3%%/POE::Component::IKC::Timing.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IKC
 @dirrm %%SITE_PERL%%/POE/Component/IKC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
