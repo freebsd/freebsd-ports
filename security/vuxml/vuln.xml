@@ -56,13 +56,13 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>openssh-portable</name>
-	<range><lt>6.4p1,1</lt></range>
-	<range><ge>6.2p2,1</ge></range>
+	<range><lt>6.4.p1,1</lt></range>
+	<range><ge>6.2.p2,1</ge></range>
       </package>
       <package>
 	<name>openssh-portable-base</name>
-	<range><lt>6.4p1,1</lt></range>
-	<range><ge>6.2p2,1</ge></range>
+	<range><lt>6.4.p1,1</lt></range>
+	<range><ge>6.2.p2,1</ge></range>
       </package>
     </affects>
     <description>
@@ -93,6 +93,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2013-11-07</discovery>
       <entry>2013-11-08</entry>
+      <modified>2013-11-11</modified>
     </dates>
   </vuln>
 
