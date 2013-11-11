@@ -476,6 +476,7 @@
     SUBDIR += p5-Crypt-PGPSimple
     SUBDIR += p5-Crypt-PassGen
     SUBDIR += p5-Crypt-PasswdMD5
+    SUBDIR += p5-Crypt-Password-Util
     SUBDIR += p5-Crypt-Primes
     SUBDIR += p5-Crypt-RC4
     SUBDIR += p5-Crypt-RC5
