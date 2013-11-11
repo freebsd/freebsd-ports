@@ -18,7 +18,7 @@ LOCALBASE?=	/usr/local
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
 JDK_PORTDIR!=	${REALPATH} ${PORTSDIR}/java/${JDK_PORT}
-JDK_IMAGEDIR?=	${JDK_PORTDIR}/work/build/bsd-${ARCH:S/i386/i586/}/j2sdk-image
+JDK_IMAGEDIR?=	${JDK_PORTDIR}/work/stage/usr/local/${JDK_PORT}
 
 GET_REVISION=	${LOCALBASE}/bin/svnversion ${JDK_PORTDIR}
 TAR?=		/usr/bin/tar
@@ -36,6 +36,11 @@ EXTRA_PATCHES=	${.CURDIR}/files/bootstrap.patch
 MAKEFILE=	${.CURDIR}/Makefile
 PLIST?=		${.CURDIR}/pkg-plist
 PLIST_SUB=	ARCH="${ARCH}" JDK_ROOT="."
+
+BUILD_ARGS=	BATCH=yes
+BUILD_ARGS+=	EXTRA_PATCHES="${EXTRA_PATCHES}"
+BUILD_ARGS+=	PORT_DBDIR=/var/empty
+BUILD_ARGS+=	WITHOUT_ICEDTEA=yes
 
 .if ${ARCH} == "i386"
 PLIST_SUB+=	CLIENTVM=""
@@ -61,9 +66,10 @@ all:
 	@${ECHO} "=============================================================="
 	@${ECHO} ""
 .if !defined(NO_BUILD)
-	@${SETENV} -i PATH=${PATH} __MAKE_CONF=/dev/null \
-	    ${MAKE} -C "${JDK_PORTDIR}" BATCH=yes EXTRA_PATCHES="${EXTRA_PATCHES}" \
-	    PORT_DBDIR=/var/empty WITHOUT_ICEDTEA=yes
+	@${SETENV} -i PATH="${PATH}" __MAKE_CONF=/dev/null \
+	    ${MAKE} -C "${JDK_PORTDIR}" ${BUILD_ARGS} stage
+	@${FIND} "${JDK_IMAGEDIR}" -type f \
+	    -exec ${STRIP_CMD} -s {} \; 2> /dev/null
 .endif
 	@cd "${JDK_IMAGEDIR}" && \
 	${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PLIST} | \
