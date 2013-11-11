@@ -8,22 +8,22 @@ ECHO_CMD=echo
 case $2 in
 POST-DEINSTALL)
   ${ECHO_CMD}
-  ${ECHO_CMD} "The %%PKGNAME%% server package has been deleted."
+  ${ECHO_CMD} "The nessus server package has been deleted."
   ${ECHO_CMD} "If you're *not* upgrading and won't be using"
   ${ECHO_CMD} "it any longer, you may want to issue the"
   ${ECHO_CMD} "following commands:"
   ${ECHO_CMD}
-  if [ -d %%PREFIX%%/var/nessus ]; then
+  if [ -d ${PKG_PREFIX}/var/nessus ]; then
     ${ECHO_CMD} "- to delete the nessus server permanently (losing all data):"
-    ${ECHO_CMD} "  rm -Rf %%PREFIX%%/var/nessus"
+    ${ECHO_CMD} "  rm -Rf ${PKG_PREFIX}/var/nessus"
     ${ECHO_CMD}
   fi
   rm_dir=""
-  if [ -d %%PREFIX%%/com/CA ]; then
-    rm_dir=" %%PREFIX%%/com/CA"
+  if [ -d ${PKG_PREFIX}/com/CA ]; then
+    rm_dir=" ${PKG_PREFIX}/com/CA"
   fi
-  if [ -d %%PREFIX%%/var/CA ]; then
-    rm_dir="$rm_dir %%PREFIX%%/var/CA"
+  if [ -d ${PKG_PREFIX}/var/CA ]; then
+    rm_dir="$rm_dir ${PKG_PREFIX}/var/CA"
   fi
   if [ "x$rm_dir" != "x" ]; then
     ${ECHO_CMD} "- to remove the Certificate Authority associated with nessus:"

@@ -8,3 +8,7 @@ Available variables you add/set to /etc/rc.conf.
 - nessusd_enable (bool):      Set to "NO" by default.
                               Set it to "YES" to enable nessusd.
 - nessusd_flags (str):        Set to "-D" by default.
+
+**************************************************************************
+To create and install a new certificate, run nessus-mkcert
+**************************************************************************

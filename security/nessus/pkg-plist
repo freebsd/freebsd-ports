@@ -17,20 +17,31 @@ include/nessus/nessusraw.h
 include/nessus/nessustcp.h
 include/nessus/nessusudp.h
 include/nessus/ntcompat.h
+man/man1/nessus.1.gz
+man/man1/nessus-mkrand.1.gz
+man/man1/nessus-mkcert-client.1.gz
+man/man1/nessus-fetch.1.gz
+man/man8/nessusd.8.gz
+man/man8/nessus-adduser.8.gz
+man/man8/nessus-mkcert.8.gz
+man/man8/nessus-rmuser.8.gz
 sbin/nessus-adduser
 sbin/nessus-check-signature
 sbin/nessus-mkcert
 sbin/nessus-rmuser
 sbin/nessusd
+var/nessus/nessus-services
 @exec mkdir -p %D/var/nessus/jobs
 @exec mkdir -p %D/var/nessus/logs
+@exec mkdir -p %D/var/nessus/tmp
 @exec mkdir -p %D/var/nessus/users
 @unexec if [ ! -s %D/var/nessus/logs/nessusd.messages ]; then rm %D/var/nessus/logs/nessusd.messages 2> /dev/null; fi || true
 @dirrmtry var/nessus/jobs
 @dirrmtry var/nessus/logs
+@dirrmtry var/nessus/tmp
 @dirrmtry var/nessus/users
-var/nessus/nessus-services
 @dirrmtry var/nessus
+@dirrmtry var
 @dirrmtry etc/nessus
 @exec mkdir -p %D/lib/nessus/plugins
 @dirrmtry lib/nessus/plugins
