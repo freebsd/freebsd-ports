@@ -12,7 +12,7 @@ COMMENT=	Free cross-platform real-time strategy gaming engine
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 OPTIONS_DEFINE=	MIKMOD MNG THEORA VORBIS DOCS
 OPTIONS_DEFAULT=	VORBIS
@@ -28,53 +28,33 @@ CMAKE_ARGS=	-DGAMEDIR:STRING="bin" \
 		-DTOLUA++_INCLUDE_DIR:STRING="${LUA_INCDIR}" \
 		-DTOLUA++_LIBRARY:STRING="${LUA_LIBDIR}/libtolua++.so"
 
-MAN6=		stratagus.6
 PORTDOCS=	*
-PLIST_FILES=	bin/png2stratagus bin/stratagus sbin/metaserver
+PLIST_FILES=	bin/png2stratagus bin/stratagus sbin/metaserver \
+		man/man6/stratagus.6.gz
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+MIKMOD_LIB_DEPENDS=	libmikmod.so:${PORTSDIR}/audio/libmikmod
+MIKMOD_CMAKE_ON=	-DWITH_MIKMOD:BOOL=ON
+MIKMOD_CMAKE_OFF=	-DWITH_MIKMOD:BOOL=OFF
 
-.if ${PORT_OPTIONS:MMIKMOD}
-LIB_DEPENDS+=	mikmod:${PORTSDIR}/audio/libmikmod
-CMAKE_ARGS+=	-DWITH_MIKMOD:BOOL=ON
-.else
-CMAKE_ARGS+=	-DWITH_MIKMOD:BOOL=OFF
-.endif
+MNG_LIB_DEPENDS=	libmng.so:${PORTSDIR}/graphics/libmng
+MNG_CMAKE_ON=		-DWITH_MNG:BOOL=ON
+MNG_CMAKE_OFF=		-DWITH_MNG:BOOL=OFF
 
-.if ${PORT_OPTIONS:MMNG}
-LIB_DEPENDS+=	mng:${PORTSDIR}/graphics/libmng
-CMAKE_ARGS+=	-DWITH_MNG:BOOL=ON
-.else
-CMAKE_ARGS+=	-DWITH_MNG:BOOL=OFF
-.endif
+THEORA_LIB_DEPENDS=	libtheora.so:${PORTSDIR}/multimedia/libtheora
+THEORA_CMAKE_ON=	-DWITH_THEORA:BOOL=ON
+THEORA_CMAKE_OFF=	-DWITH_THEORA:BOOL=OFF
 
-.if ${PORT_OPTIONS:MTHEORA}
-LIB_DEPENDS+=	theora:${PORTSDIR}/multimedia/libtheora
-CMAKE_ARGS+=	-DWITH_THEORA:BOOL=ON
-.else
-CMAKE_ARGS+=	-DWITH_THEORA:BOOL=OFF
-.endif
-
-.if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
-CMAKE_ARGS+=	-DWITH_OGGVORBIS:BOOL=ON
-.else
-CMAKE_ARGS+=	-DWITH_OGGVORBIS:BOOL=OFF
-.endif
+VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_CMAKE_ON=	-DWITH_OGGVORBIS:BOOL=ON
+VORBIS_CMAKE_OFF=	-DWITH_OGGVORBIS:BOOL=OFF
 
 post-install:
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} stratagus.6 ${MAN6PREFIX}/man/man6)
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} [a-z]*.html *.txt ${DOCSDIR})
-	@${MKDIR} ${DOCSDIR}/graphics
-	(cd ${WRKSRC}/doc/graphics && ${INSTALL_DATA} * ${DOCSDIR}/graphics)
-	@${MKDIR} ${DOCSDIR}/scripts
-	(cd ${WRKSRC}/doc/scripts && ${INSTALL_DATA} * ${DOCSDIR}/scripts)
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
-.endif
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} stratagus.6 ${STAGEDIR}${MAN6PREFIX}/man/man6)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} [a-z]*.html *.txt ${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/graphics
+	(cd ${WRKSRC}/doc/graphics && ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR}/graphics)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/scripts
+	(cd ${WRKSRC}/doc/scripts && ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR}/scripts)
 
 .include <bsd.port.mk>
