@@ -11,17 +11,14 @@
 #
 # -- Rui Lopes <rui@ruilopes.com>
 
-XSL_DIR=${PKG_PREFIX}/%%INSTDIR%%
-CATALOG_XSL=${XSL_DIR}/catalog
-
-if [ "$2" != "POST-INSTALL" ]; then
-	exit 0
-fi
-
-%%XMLCATMGR%% -c %%CATALOG_PORTS%% add delegateSystem \
-	http://docbook.sourceforge.net/release/xsl/ \
-	"file://${CATALOG_XSL}"
-%%XMLCATMGR%% -c %%CATALOG_PORTS%% add delegateURI \
-	http://docbook.sourceforge.net/release/xsl/ \
-	"file://${CATALOG_XSL}"
+case $2 in
+POST-INSTALL)
+	%%XMLCATMGR%% -c %%CATALOG_PORTS%% add nextCatalog \
+	    "${PKG_PREFIX}/%%INSTDIR%%/catalog.xml"
+;;
+POST-DEINSTALL)
+	%%XMLCATMGR%% -c %%CATALOG_PORTS%% remove \
+	    "${PKG_PREFIX}/%%INSTDIR%%/catalog.xml"
+;;
+esac
 exit 0
