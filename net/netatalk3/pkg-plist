@@ -11,8 +11,9 @@ bin/netatalk-config
 bin/uniconv
 @unexec if cmp -s %D/etc/afp.conf %D/etc/afp.conf.dist; then rm -f %D/etc/afp.conf; fi
 etc/afp.conf.dist
-%%DBUS%%etc/dbus-1/system.d/netatalk-dbus.conf
 @exec [ -f %B/afp.conf ] || cp %B/%f %B/afp.conf
+%%DBUS%%etc/dbus-1/system.d/netatalk-dbus.conf
+%%DBUS%%etc/dbus-session.conf.netatalk
 @unexec if cmp -s %D/etc/extmap.conf %D/etc/extmap.conf.dist; then rm -f %D/etc/extmap.conf; fi
 etc/extmap.conf.dist
 @exec [ -f %B/extmap.conf ] || cp %B/%f %B/extmap.conf
@@ -71,7 +72,25 @@ include/atalk/volume.h
 lib/libatalk.a
 lib/libatalk.la
 lib/libatalk.so
-lib/libatalk.so.6
+lib/libatalk.so.12
+man/man1/ad.1.gz
+man/man1/afpldaptest.1.gz
+man/man1/afppasswd.1.gz
+%%DBUS%%man/man1/afpstats.1.gz
+man/man1/apple_dump.1.gz
+man/man1/asip-status.pl.1.gz
+man/man1/dbd.1.gz
+man/man1/macusers.1.gz
+man/man1/netatalk-config.1.gz
+man/man1/uniconv.1.gz
+man/man5/afp.conf.5.gz
+man/man5/afp_signature.conf.5.gz
+man/man5/afp_voluuid.conf.5.gz
+man/man5/extmap.conf.5.gz
+man/man8/afpd.8.gz
+man/man8/cnid_dbd.8.gz
+man/man8/cnid_metad.8.gz
+man/man8/netatalk.8.gz
 sbin/afpd
 sbin/cnid_dbd
 sbin/cnid_metad
