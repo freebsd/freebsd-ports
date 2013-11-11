@@ -1,0 +1,9 @@
+NX is a highly flexible, Tcl-based, object-oriented scripting language. It is a
+descendant of XOTcl and was designed based on 10 years of experience with XOTcl
+in projects containing several hundred thousand lines of code. While XOTcl was
+the first language designed to provide language support for design patterns and
+to provide a highly dynamic programming environment, the Next Scripting
+Framework (NSF) and NX add to these features support for language-oriented
+programming.
+
+WWW: https://next-scripting.org
