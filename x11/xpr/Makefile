@@ -10,9 +10,5 @@ COMMENT=	Utility for printing an X window dump
 XORG_CAT=	app
 USE_XORG=	xmuu x11
 
-PLIST_FILES=	bin/xdpr bin/xpr
-
-MAN1=		xdpr.1 xpr.1
-
-NO_STAGE=	yes
+PLIST_FILES=	bin/xdpr bin/xpr man/man1/xdpr.1.gz man/man1/xpr.1.gz
 .include <bsd.port.mk>
