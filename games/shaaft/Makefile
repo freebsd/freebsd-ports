@@ -9,9 +9,9 @@ MASTER_SITES=	SF/criticalmass/OldFiles
 DISTNAME=	Shaaft-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An OpenGL 3D falling block game similar to Blockout
+COMMENT=	OpenGL 3D falling block game similar to Blockout
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 CONFLICTS=	criticalmass-*
 
@@ -24,12 +24,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-optimize
 DATADIR=	${PREFIX}/share/Shaaft
 
-PLIST_FILES=	bin/Packer bin/shaaft %%DATADIR%%/resource.dat
+PLIST_FILES=	bin/Packer bin/shaaft %%DATADIR%%/resource.dat \
+		man/man6/shaaft.6.gz
 PLIST_DIRS=	%%DATADIR%%
 
-MAN6=		${PORTNAME}.6
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
