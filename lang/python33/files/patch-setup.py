@@ -57,7 +57,7 @@
              libraries = []
  
 -        elif host_platform in ('freebsd4', 'freebsd5', 'freebsd6', 'freebsd7', 'freebsd8'):
-+        elif host_platform in ('freebsd7', 'freebsd8', 'freebsd9', 'freebsd10'):
++        elif host_platform in ('freebsd7', 'freebsd8', 'freebsd9', 'freebsd10', 'freebsd11'):
              # FreeBSD's P1003.1b semaphore support is very experimental
              # and has many known problems. (as of June 2008)
              macros = dict()

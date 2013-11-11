@@ -2160,6 +2160,10 @@ libdata/pkgconfig/python-%%PYVER%%.pc
 %%PYTHON_LIBDIR%%/plat-freebsd10/__pycache__/IN.cpython-33.pyc
 %%PYTHON_LIBDIR%%/plat-freebsd10/__pycache__/IN.cpython-33.pyo
 %%PYTHON_LIBDIR%%/plat-freebsd10/regen
+%%PYTHON_LIBDIR%%/plat-freebsd11/IN.py
+%%PYTHON_LIBDIR%%/plat-freebsd11/__pycache__/IN.cpython-33.pyc
+%%PYTHON_LIBDIR%%/plat-freebsd11/__pycache__/IN.cpython-33.pyo
+%%PYTHON_LIBDIR%%/plat-freebsd11/regen
 %%PYTHON_LIBDIR%%/platform.py
 %%PYTHON_LIBDIR%%/plistlib.py
 %%PYTHON_LIBDIR%%/poplib.py
@@ -4561,6 +4565,8 @@ libdata/pkgconfig/python-%%PYVER%%.pc
 @dirrm %%PYTHON_LIBDIR%%/plat-freebsd9
 @dirrm %%PYTHON_LIBDIR%%/plat-freebsd10/__pycache__
 @dirrm %%PYTHON_LIBDIR%%/plat-freebsd10
+@dirrm %%PYTHON_LIBDIR%%/plat-freebsd11/__pycache__
+@dirrm %%PYTHON_LIBDIR%%/plat-freebsd11
 @dirrm %%PYTHON_LIBDIR%%/pydoc_data/__pycache__
 @dirrm %%PYTHON_LIBDIR%%/pydoc_data
 @dirrm %%PYTHON_LIBDIR%%/site-packages
