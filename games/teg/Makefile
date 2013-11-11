@@ -8,7 +8,7 @@ CATEGORIES=	games gnome
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A turn-based strategy game for GNOME
+COMMENT=	Turn-based strategy game for GNOME
 
 USES=		pathfix gmake iconv pkgconfig
 USE_GNOME=	gnomeprefix intlhack libgnomeui
@@ -19,7 +19,6 @@ CONFIGURE_ARGS=	--disable-ggz
 
 GCONF_SCHEMAS=	teg.schemas
 
-NO_STAGE=	yes
 post-patch:
 	@${GREP} -lR " LIST_NEXT" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's| LIST_NEXT| TEG_LIST_NEXT|g'
