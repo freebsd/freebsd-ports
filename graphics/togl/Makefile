@@ -11,10 +11,9 @@ DISTNAME=	Togl-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tk OpenGL widget
 
+USES+=		gmake tk
 USE_XORG=	x11 xt xmu
 USE_GL=		gl
-USE_TK=		yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-tk=${TK_LIBDIR} \
 		--with-tcl=${TCL_LIBDIR} \
