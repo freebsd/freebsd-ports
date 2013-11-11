@@ -11,6 +11,9 @@ DISTFILES=
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	BSD Installation of the Linux game "Heroes of Might and Magic III"
 
+DEPRECATED=	Depends on deprecated Linux GTK1
+EXPIRATION_DATE=2013-12-01
+
 PLIST=		${WRKDIR}/PLIST
 IS_INTERACTIVE=	yes
 ONLY_FOR_ARCHS=	i386 amd64

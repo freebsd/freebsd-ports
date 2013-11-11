@@ -11,7 +11,10 @@ DISTFILES=	${DISTNAME}.rpm ymessenger.bin
 EXTRACT_ONLY=	${DISTNAME}.rpm
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An RPM of Yahoo! Messenger instant messaging client
+COMMENT=	RPM of Yahoo! Messenger instant messaging client
+
+DEPRECATED=	Depends on deprecated Linux GTK1
+EXPIRATION_DATE=2013-12-01
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 

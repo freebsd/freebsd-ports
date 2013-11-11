@@ -12,6 +12,9 @@ DISTFILES=	gpupetemesagl${MAJOR}${MINOR}${EXTRACT_SUFX} \
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	PSEmu Pro GPU plugin using an OpenGL renderer (Linux version)
 
+DEPRECATED=	Depends on deprecated Linux GTK1
+EXPIRATION_DATE=2013-12-01
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_LINUX=	yes
