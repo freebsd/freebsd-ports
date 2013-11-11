@@ -1,4 +1,5 @@
 bin/tksol
+man/man6/tksol.6.gz
 %%DATADIR%%/cardbacks/bucky.xbm
 %%DATADIR%%/cardbacks/circles.xbm
 %%DATADIR%%/cardbacks/darts.xbm
@@ -101,4 +102,4 @@ bin/tksol
 @dirrm %%DATADIR%%/pictures
 @dirrm %%DATADIR%%/cards
 @dirrm %%DATADIR%%/cardbacks
-@dirrm %%DATADIR%%/
+@dirrm %%DATADIR%%
