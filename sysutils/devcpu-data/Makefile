@@ -3,7 +3,7 @@
 
 PORTNAME=	data
 PORTVERSION=	0.6
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 PKGNAMEPREFIX=	devcpu-
@@ -17,13 +17,13 @@ NO_BUILD=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-DATADIR=	${STAGEDIR}${PREFIX}/share/cpucontrol
+DATADIR=	${PREFIX}/share/cpucontrol
 
 USE_RC_SUBR=	microcode_update
 
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/mcodes/* ${DATADIR}/
-	@${TOUCH} ${DATADIR}/.do_not_delete
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/mcodes/* ${STAGEDIR}${DATADIR}/
+	@${TOUCH} ${STAGEDIR}${DATADIR}/.do_not_delete
 
 .include <bsd.port.mk>
