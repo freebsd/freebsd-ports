@@ -1,0 +1,14 @@
+Unix::Passwd::File can be used to read and manipulate entries in Unix system
+password files (/etc/passwd, /etc/group, /etc/group, /etc/gshadow) but can also
+be told to search in custom location, for testing purposes).
+
+This module uses a procedural (non-OO) interface. Each function in this module
+open and read the passwd files once. Read-only functions like `list_users()` and
+`get_max_gid()` open in read-only mode. Functions that might write to the files
+like `add_user()` or `delete_group()` first lock `passwd.lock` file, open in
+read+write mode and also read the files in the first pass, then seek to the
+beginning and write back the files.
+
+No caching is done so you should do your own if you need to.
+
+WWW: http://search.cpan.org/dist/Unix-Passwd-File/
