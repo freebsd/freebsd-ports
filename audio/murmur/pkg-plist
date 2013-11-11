@@ -1,7 +1,7 @@
-@stopdaemon murmur
 @unexec if cmp -s %D/etc/murmur.ini.sample %D/etc/murmur.ini; then rm -f %D/etc/murmur.ini; fi
 etc/murmur.ini.sample
 @exec if [ ! -f %D/etc/murmur.ini ] ; then cp -p %D/%F %B/murmur.ini; fi
+man/man1/murmurd.1.gz
 sbin/murmurd
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL

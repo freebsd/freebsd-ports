@@ -23,10 +23,19 @@ load_rc_config $name
 
 # Set some defaults
 : ${murmur_enable:=NO}
-: ${murmur_user=murmur}
+: ${murmur_user=%%USERS%%}
 
 command="%%PREFIX%%/sbin/murmurd"
 command_args="-ini %%PREFIX%%/etc/murmur.ini"
 pidfile=/var/run/murmur/murmur.pid
+start_precmd=murmur_prestart
+
+murmur_prestart() {
+	for i in /var/log/murmur /var/run/murmur /var/db/murmur; do
+		if [ ! -d ${i} ]; then
+			install -d -o %%USERS%% -g %%GROUPS%% ${i}
+		fi
+	done
+}
 
 run_rc_command "$1"
