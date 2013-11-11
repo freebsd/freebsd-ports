@@ -19,14 +19,9 @@ MAKE_ARGS=	FLAGS="${CFLAGS}"
 PORTDOCS=	README
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin)
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} README ${DOCSDIR})
-.endif
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${STAGEDIR}${PREFIX}/bin)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
