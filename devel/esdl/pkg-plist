@@ -93,6 +93,7 @@ lib/erlang/lib/esdl-%%VERSION%%/src/sdl_util.hrl
 lib/erlang/lib/esdl-%%VERSION%%/src/sdl_video.erl
 lib/erlang/lib/esdl-%%VERSION%%/src/sdl_video_funcs.hrl
 lib/erlang/lib/esdl-%%VERSION%%/vsn.mk
+lib/erlang/lib/esdl
 @dirrm lib/erlang/lib/esdl-%%VERSION%%/src
 @dirrm lib/erlang/lib/esdl-%%VERSION%%/priv
 @dirrm lib/erlang/lib/esdl-%%VERSION%%/include
@@ -100,5 +101,3 @@ lib/erlang/lib/esdl-%%VERSION%%/vsn.mk
 @dirrm lib/erlang/lib/esdl-%%VERSION%%/doc
 @dirrm lib/erlang/lib/esdl-%%VERSION%%/c_src
 @dirrm lib/erlang/lib/esdl-%%VERSION%%
-@exec ln -sf esdl-%%VERSION%% %D/lib/erlang/lib/esdl
-@rmtry lib/erlang/lib/esdl
