@@ -1,0 +1,16 @@
+Crypt::Password::Util is a crypt password utilities.
+
+Its crypt($str) works like Perl's crypt(), but automatically choose the
+appropriate crypt type and random salt. Will first choose SSHA512 with 64-bit
+random salt. If not supported by system, fall back to MD5-CRYPT with 32-bit
+random salt. If that is not supported, fall back to CRYPT.
+
+Its crypt_type($str) returns crypt type, or undef if $str does not look like a
+crypted password. Currently known types: CRYPT (traditional DES crypt),
+MD5-CRYPT (including Apache variant), SSHA256 (salted SHA256), SSHA512 (salted
+SHA512), and PLAIN-MD5.
+
+See also Authen::Passphrase which recognizes more encodings (but currently not
+SSHA256 and SSHA512).
+
+WWW: http://search.cpan.org/dist/Crypt-Password-Util/
