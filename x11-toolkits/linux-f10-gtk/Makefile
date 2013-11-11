@@ -11,6 +11,9 @@ DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Gtk library (Linux Fedora 10)
 
+DEPRECATED=	GTK1 is deprecated
+EXPIRATION_DATE=2013-12-01
+
 CONFLICTS=	linux-gtk-[0-9]* linux-f8-gtk-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
