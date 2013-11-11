@@ -2,7 +2,7 @@
 
 PORTNAME=	python33
 PORTVERSION=	3.3.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -40,7 +40,7 @@ DATADIR=	${PREFIX}/share/${PYTHON_VERSION}
 
 PLATFORMS=	plat-freebsd4 plat-freebsd5 plat-freebsd6 \
 		plat-freebsd7 plat-freebsd8 plat-freebsd9 \
-		plat-freebsd10
+		plat-freebsd10 plat-freebsd11
 
 BIN_SCRIPTS=	2to3 idle3 pydoc3
 BIN_FILES=	python python-shared python-config python-shared-config \
@@ -112,6 +112,8 @@ pre-patch:
 		${PATCH_WRKSRC}/Lib/plat-freebsd9
 	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
 		${PATCH_WRKSRC}/Lib/plat-freebsd10
+	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
+		${PATCH_WRKSRC}/Lib/plat-freebsd11
 	${MKDIR} ${WRKSRC} ${SHARED_WRKSRC}/Modules
 .for script in ${BIN_SCRIPTS}
 	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
