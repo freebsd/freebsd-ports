@@ -14,8 +14,6 @@ GNU_CONFIGURE=	yes
 
 PORTDOCS=	ChangeLog README
 
-MAKE_ENV+=	STAGEDIR=${STAGEDIR}
-
 OPTIONS_DEFINE=	DOCS NLS
 
 .include <bsd.port.options.mk>

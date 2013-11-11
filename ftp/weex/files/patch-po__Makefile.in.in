@@ -5,7 +5,7 @@
  datadir = $(prefix)/@DATADIRNAME@
  localedir = $(datadir)/locale
 -gnulocaledir = $(prefix)/share/locale
-+gnulocaledir = $(STAGEDIR)$(prefix)/share/locale
++gnulocaledir = $(DESTDIR)$(prefix)/share/locale
  gettextsrcdir = $(prefix)/share/gettext/po
  subdir = po
  
