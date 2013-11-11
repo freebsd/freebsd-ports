@@ -7,6 +7,7 @@ lib/seed7/bin/s7_draw.a
 lib/seed7/bin/seed7_05.a
 lib/seed7/lib/arc4.s7i
 lib/seed7/lib/asn1.s7i
+lib/seed7/lib/cc_conf.s7i
 lib/seed7/lib/cipher.s7i
 lib/seed7/lib/gethttps.s7i
 lib/seed7/lib/hmac.s7i
