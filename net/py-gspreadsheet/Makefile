@@ -13,8 +13,9 @@ COMMENT=	Wrapper around Google Spreadsheets to look like csv.DictReader
 LICENSE=	AL2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdata>0:${PORTSDIR}/devel/py-gdata
+
 USE_PYTHON=		2.7
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_AUTOPLIST=	yes
 
 PORTDOCS=	README.rst
