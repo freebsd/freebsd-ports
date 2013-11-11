@@ -3,6 +3,7 @@
 
 PORTNAME=	docproj
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -11,12 +12,8 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	The "meta-port" for the FreeBSD Documentation Project
 
-USES=		perl5
-USE_PERL5=	run
-
 # This dependency list should be kept in sync with the list of
 # required ports in src/release/Makefile.inc.docports.
-
 RUN_DEPENDS=	links:${PORTSDIR}/www/links1 \
 		pngtopnm:${PORTSDIR}/graphics/netpbm \
 		scr2png:${PORTSDIR}/graphics/scr2png \
@@ -24,23 +21,28 @@ RUN_DEPENDS=	links:${PORTSDIR}/www/links1 \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		peps:${PORTSDIR}/graphics/peps \
 		${LOCALBASE}/share/xml/dtd/xhtml/xhtml.soc:${PORTSDIR}/textproc/xhtml \
-		${LOCALBASE}/share/xsl/docbook-ns/xhtml/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl-ns \
+		docbook-xsl-ns>=1.78.1_4:${PORTSDIR}/textproc/docbook-xsl-ns \
 		${LOCALBASE}/share/xsl/iso-schematron/xslt1/iso_schematron_skeleton_for_xslt1.xsl:${PORTSDIR}/textproc/iso-schematron-xslt \
 		${LOCALBASE}/share/xml/docbook/5.0/dtd/docbook.dtd:${PORTSDIR}/textproc/docbook-500 \
 		${LOCALBASE}/share/xml/xmlcharent/catalog:${PORTSDIR}/textproc/xmlcharent \
 		p5-XML-Parser>=2.41:${PORTSDIR}/textproc/p5-XML-Parser \
 		zip:${PORTSDIR}/archivers/zip
 
+USES=		perl5
+USE_PERL5=	run
+USE_GHOSTSCRIPT_RUN=	yes
+DEPENDS_ARGS+=	BATCH=yes
+NO_BUILD=	yes
+
 OPTIONS_DEFINE=		X11 CJK SVN IGOR FOP JING DBLATEX
+OPTIONS_DEFAULT=	X11 CJK SVN IGOR
 CJK_DESC=		CJK (Simplified Chinese Language) support
 SVN_DESC=		Subversion support (required to check out sources)
 IGOR_DESC=		Igor automated proofreader for documentation
 FOP_DESC=		FOP PDF renderer (requires Java)
 JING_DESC=		Jing for advanced RELAX NG validation (optional)
 DBLATEX_DESC=		dblatex PDF renderer (experimental, requires TeXLive)
-OPTIONS_DEFAULT=	X11 CJK SVN IGOR
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSVN}
@@ -79,11 +81,6 @@ RUN_DEPENDS+=	${LOCALBASE}/share/fonts/TrueType/gkai00mp.ttf:${PORTSDIR}/chinese
 RUN_DEPENDS+=	${LOCALBASE}/share/fonts/OTF/ipam.otf:${PORTSDIR}/japanese/font-ipa
 .endif
 .endif
-
-USE_GHOSTSCRIPT_RUN=	yes
-NO_BUILD=		yes
-
-DEPENDS_ARGS+=	BATCH=yes
 
 .if !${PORT_OPTIONS:MX11}
 DEPENDS_ARGS+=	WITHOUT_X11=${WITHOUT_X11}
