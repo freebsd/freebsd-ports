@@ -14,5 +14,4 @@ PLIST_FILES=	bin/speyes
 USES=		imake
 USE_XORG=	xpm xmu
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
