@@ -13,16 +13,19 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Several forward error correction (FEC) decoders
 
 MAKEFILE=	makefile
-MAN3=		simd-viterbi.3 rs.3 dsp.3
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
+USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386 amd64
-PLIST_FILES=	include/fec.h lib/libfec.so lib/libfec.a
+PLIST_FILES=	include/fec.h		\
+		lib/libfec.so		\
+		lib/libfec.a		\
+		man/man3/dsp.3.gz	\
+		man/man3/rs.3.gz	\
+		man/man3/simd-viterbi.3.gz
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
@@ -31,5 +34,16 @@ CFLAGS+=	-fPIC
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/makefile.in
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib
+	@${MKDIR} ${STAGEDIR}${MAN3PREFIX}/man/man3
+	${INSTALL_DATA} ${WRKSRC}/fec.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_LIB} ${WRKSRC}/libfec.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/libfec.so ${STAGEDIR}${PREFIX}/lib
+.for _man in dsp.3 simd-viterbi.3 rs.3
+	${INSTALL_MAN} ${WRKSRC}/${_man} ${STAGEDIR}${MAN3PREFIX}/man/man3
+.endfor
 
 .include <bsd.port.post.mk>
