@@ -1,8 +1,10 @@
 bin/seabattle
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
 %%DATADIR%%/hit1.au
 %%DATADIR%%/hit2.au
 %%DATADIR%%/miss1.au
 %%DATADIR%%/miss2.au
 %%DATADIR%%/opening.au
 %%DATADIR%%/sunkit.au
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%

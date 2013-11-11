@@ -12,18 +12,13 @@ MASTER_SITE_SUBDIR=	games/strategy
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses based battleship type game
 
-PORTDOCS=	readme.txt
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/seabattle ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/seabattle
-	${INSTALL_DATA} ${WRKSRC}/*.au ${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/seabattle ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/seabattle
+	${INSTALL_DATA} ${WRKSRC}/*.au ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
