@@ -16,8 +16,6 @@ COMMENT=	Challenging double decked solitaire game
 USES=		imake
 USE_XORG=	x11 xext xaw xmu xt sm ice xpm
 INSTALL_TARGET=	install install.doc
-MAN1=		spider.1
 CFLAGS+=	-Wno-error=return-type
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
