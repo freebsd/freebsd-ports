@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	netatalk
-PORTVERSION=	3.0.5
+PORTVERSION=	3.1.0
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=${PORTNAME}/${PORTNAME}/3.1
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	File server for Mac OS X
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt \
     		event-2:${PORTSDIR}/devel/libevent2
@@ -33,22 +36,19 @@ CONFIGURE_ARGS+=	--enable-tcp-wrappers \
 			--with-libevent-header=${LOCALBASE}/include \
 			--with-libevent-lib=${LOCALBASE}/lib/event2
 
-OPTIONS_DEFINE=PAM KRB5 ZEROCONF LDAP SENDFILE KERBEROS DTRACE DBUS
-OPTIONS_DEFAULT=ZEROCONF KERBEROS DBUS
+OPTIONS_DEFINE=PAM KRB5 LDAP SENDFILE KERBEROS DTRACE DBUS MYSQL
+OPTIONS_DEFAULT=KERBEROS DBUS
+OPTIONS_RADIO=ZEROCONF
+OPTIONS_RADIO_ZEROCONF=AVAHI MDNSRESPONDER
+OPTIONS_DEFAULT+=AVAHI
 
-ZEROCONF_DESC=	Enable Zeroconf (Bonjour) support
+NOZEROCONF_DESC=Disable Zeroconf(Bonjour) support
 KRB5_DESC=	Enable Kerberos V UAM
 DTRACE_DESC=	Enable DTrace support
 SENDFILE_DESC=	Enable Sendfile support
+MYSQL_DESC=	Enable MySQL CNID backend support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-MAN1=		ad.1 afpldaptest.1 afppasswd.1 apple_dump.1 asip-status.pl.1 \
-		dbd.1 macusers.1 netatalk-config.1 uniconv.1
-MAN5=		afp.conf.5 afp_signature.conf.5 afp_voluuid.conf.5 \
-		extmap.conf.5
-MAN8=		afpd.8 cnid_dbd.8 cnid_metad.8 netatalk.8
 
 CONFLICTS=	bigloo-2.* cap-6.0.* tct-1.* netatalk-[12]* yudit-[0-9]*
 
@@ -79,14 +79,23 @@ CONFIGURE_ARGS+=	--without-pam
 PLIST_SUB+=		NETATALKPAM="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MZEROCONF}
+.if ${PORT_OPTIONS:MNOZEROCONF}
+CONFIGURE_ARGS+=	--disable-zerconf
+SUB_LIST+=		ZEROCONF=""
+.endif
+
+.if ${PORT_OPTIONS:MAVAHI}
 CONFIGURE_ARGS+=	--enable-zeroconf=${LOCALBASE}
 CFLAGS+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 LIB_DEPENDS+=		avahi-client:${PORTSDIR}/net/avahi-app
 SUB_LIST+=		ZEROCONF="avahi_daemon"
-.else
-CONFIGURE_ARGS+=	--disable-zerconf
-SUB_LIST+=		ZEROCONF=""
+.endif
+
+.if ${PORT_OPTIONS:MMDNSRESPONDER}
+CONFIGURE_ARGS+=	--enable-zeroconf=${LOCALBASE}
+CFLAGS+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
+LIB_DEPENDS+=		dns_sd:${PORTSDIR}/net/mDNSResponder
+SUB_LIST+=		ZEROCONF="mdnsd"
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}
@@ -107,9 +116,14 @@ CONFIGURE_ARGS+=	--disable-sendfile
 LIB_DEPENDS+=		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS+=		${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus
 PLIST_SUB+=		DBUS=""
-MAN1+=			afpstats.1
 .else
 PLIST_SUB+=		DBUS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MMYSQL}
+USE_MYSQL=	yes
+.else
+CONFIGURE_ARGS+=--with-mysql-config=/nonexistent
 .endif
 
 .if ${OSVERSION} < 800031
@@ -126,11 +140,11 @@ post-patch:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/macusers/macusers \
-		${PREFIX}/bin/macusers
-	[ -f ${PREFIX}/etc/afp.conf ] || \
-		${INSTALL_DATA} -c ${PREFIX}/etc/afp.conf.dist ${PREFIX}/etc/afp.conf
-	[ -f ${PREFIX}/etc/extmap.conf ] || \
-		${INSTALL_DATA} -c ${PREFIX}/etc/extmap.conf.dist ${PREFIX}/etc/extmap.conf
+		${STAGEDIR}${PREFIX}/bin/macusers
+	[ -f ${STAGEDIR}${PREFIX}/etc/afp.conf ] || \
+		${INSTALL_DATA} -c ${STAGEDIR}${PREFIX}/etc/afp.conf.dist ${STAGEDIR}${PREFIX}/etc/afp.conf
+	[ -f ${STAGEDIR}${PREFIX}/etc/extmap.conf ] || \
+		${INSTALL_DATA} -c ${STAGEDIR}${PREFIX}/etc/extmap.conf.dist ${STAGEDIR}${PREFIX}/etc/extmap.conf
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
