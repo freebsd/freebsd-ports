@@ -1,5 +1,14 @@
 --- configure.orig	2012-10-21 18:10:03.000000000 +0200
 +++ configure	2012-10-21 18:27:39.000000000 +0200
+@@ -18416,7 +18416,7 @@
+   GCCVER2=`echo $GCCVER | awk '{print $1 * 100}'`
+   case "$host" in
+     i386-*-freebsd*)
+-      if test $GCCVER2 -lt 300 ; then
++      if test "x$GCCVER" != x -a $GCCVER2 -lt 300 ; then
+         { { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+ $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+ as_fn_error $? "GCC $GCCVER causes a coredump on $host.
 @@ -22154,7 +22154,7 @@
  
  done
@@ -45,3 +54,11 @@
      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for error_message in -lkrb5" >&5
  $as_echo_n "checking for error_message in -lkrb5... " >&6; }
  if ${ac_cv_lib_krb5_error_message+:} false; then :
+@@ -24033,6 +24033,7 @@
+   cassert \
+   crypt.h \
+   cstdarg \
++  cstdio \
+   cstdlib \
+   cstring \
+   list \
