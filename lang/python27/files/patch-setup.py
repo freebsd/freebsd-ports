@@ -73,7 +73,7 @@
              libraries = []
  
 -        elif host_platform in ('freebsd4', 'freebsd5', 'freebsd6', 'freebsd7', 'freebsd8'):
-+        elif host_platform in ('freebsd4', 'freebsd5', 'freebsd6', 'freebsd7', 'freebsd8', 'freebsd9', 'freebsd10'):
++        elif host_platform in ('freebsd4', 'freebsd5', 'freebsd6', 'freebsd7', 'freebsd8', 'freebsd9', 'freebsd10', 'freebsd11'):
              # FreeBSD's P1003.1b semaphore support is very experimental
              # and has many known problems. (as of June 2008)
              macros = dict()
@@ -82,7 +82,7 @@
  
          if (host_platform in ('linux2', 'freebsd4', 'freebsd5', 'freebsd6',
 -                        'freebsd7', 'freebsd8')
-+                        'freebsd7', 'freebsd8', 'freebsd9', 'freebsd10')
++                        'freebsd7', 'freebsd8', 'freebsd9', 'freebsd10', 'freebsd11')
              or host_platform.startswith("gnukfreebsd")):
              exts.append( Extension('ossaudiodev', ['ossaudiodev.c']) )
          else:
