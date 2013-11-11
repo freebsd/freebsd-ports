@@ -5,7 +5,7 @@
 # Every line starting with a '#' is a comment
 
 # Path to the security checks folder : 
-plugins_folder = ${PREFIX}/lib/nessus/plugins
+plugins_folder = %%PREFIX%%/lib/nessus/plugins
 
 # Maximum number of simultaneous hosts tested : 
 max_hosts = 30
@@ -17,7 +17,7 @@ max_checks = 10
 be_nice = no
 
 # Log file (or 'syslog') : 
-logfile = ${PREFIX}/var/nessus/logs/nessusd.messages
+logfile = %%PREFIX%%/var/nessus/logs/nessusd.messages
 
 # Shall we log every details of the attack ?
 log_whole_attack = yes
@@ -26,13 +26,13 @@ log_whole_attack = yes
 log_plugins_name_at_load = no
 
 # Dump file for debugging output, use `-' for stdout
-dumpfile = ${PREFIX}/var/nessus/logs/nessusd.dump
+dumpfile = %%PREFIX%%/var/nessus/logs/nessusd.dump
 
 # Rules file : 
-rules = ${PREFIX}/etc/nessus/nessusd.rules
+rules = %%PREFIX%%/etc/nessus/nessusd.rules
 
 # Users database : 
-users = ${PREFIX}/etc/nessus/nessusd.users
+users = %%PREFIX%%/etc/nessus/nessusd.users
 
 # CGI paths to check for (cgi-bin:/cgi-aws:/ can do)
 cgi_path = /cgi-bin:/scripts
@@ -110,9 +110,9 @@ nasl_no_signature_check = no
 #
 # Added by nessus-mkcert
 #
-cert_file=${PREFIX}/com/CA/servercert.pem
-key_file=${PREFIX}/var/CA/serverkey.pem
-ca_file=${PREFIX}/com/CA/cacert.pem
+cert_file=%%PREFIX%%/com/CA/servercert.pem
+key_file=%%PREFIX%%/var/CA/serverkey.pem
+ca_file=%%PREFIX%%/com/CA/cacert.pem
 # If you decide to protect your private key with a password, 
 # uncomment and change next line
 # pem_password=password
