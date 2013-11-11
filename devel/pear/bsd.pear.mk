@@ -190,24 +190,24 @@ do-autogenerate-plist: patch
 	${ECHO_CMD} "Cannot generate packing list: package files outside PREFIX"; \
 	exit 1; fi;
 	@${ECHO_CMD} "${LPKGREGDIR}/package.xml" > ${PLIST}
-	# pkg_install needs to escape $ in directory name while pkg does not
+# pkg_install needs to escape $ in directory name while pkg does not
 .if defined(WITH_PKGNG)
 	@cd ${WRKDIR}/inst/${PREFIX} && ${FIND} . -type f | ${SORT} \
 	| ${CUT} -c 3- >> ${PLIST}
-	@DIRS=`cd ${WRKDIR}/inst/${PREFIX} && ${FIND} . -type d | ${SORT} -r | \
-	${CUT} -c 3-`; \
-	for d in $${DIRS}; do \
-		if [ ! -d ${LOCALBASE}/$${d} ]; then \
+	@cd ${WRKDIR}/inst/${PREFIX} && ${FIND} . -type d | ${SORT} -r | \
+	${CUT} -c 3- | \
+	while read d ; do \
+		if [ ! -d "${LOCALBASE}/$${d}" ]; then \
 			${ECHO_CMD} "@dirrmtry $${d}" >> ${PLIST}; \
 		fi; \
 	done
 .else
 	@cd ${WRKDIR}/inst/${PREFIX} && ${FIND} . -type f | ${SORT} \
 	| ${CUT} -c 3- >> ${PLIST}
-	@DIRS=`cd ${WRKDIR}/inst/${PREFIX} && ${FIND} . -type d | ${SORT} -r | \
-	${CUT} -c 3- | ${SED} -e 's,\\$$,\\\\$$,g'`; \
-	for d in $${DIRS}; do \
-		if [ ! -d ${LOCALBASE}/$${d} ]; then \
+	@cd ${WRKDIR}/inst/${PREFIX} && ${FIND} . -type d | ${SORT} -r | \
+	${CUT} -c 3- | ${SED} -e 's,\$$,\\\\$$,g' | \
+	while read d ; do \
+		if [ ! -d "${LOCALBASE}/$${d}" ]; then \
 			${ECHO_CMD} "@dirrmtry $${d}" >> ${PLIST}; \
 		fi; \
 	done
