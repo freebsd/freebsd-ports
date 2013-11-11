@@ -1,4 +1,5 @@
 bin/weex
+man/man1/weex.1.gz
 %%NLS%%share/locale/de/LC_MESSAGES/weex.mo
 %%NLS%%share/locale/es/LC_MESSAGES/weex.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/weex.mo
