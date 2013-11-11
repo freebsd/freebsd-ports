@@ -1,0 +1,72 @@
+bin/nxsh
+bin/nxwish
+bin/xotclsh
+bin/xowish
+include/nsf.h
+include/nsfDecls.h
+include/nsfInt.h
+include/nsfIntDecls.h
+lib/libnsf.so.1
+lib/%%PKGNAME%%/COPYRIGHT
+lib/%%PKGNAME%%/lib/make.tcl
+lib/%%PKGNAME%%/lib/nx-callback.tcl
+lib/%%PKGNAME%%/lib/nx-pp.tcl
+lib/%%PKGNAME%%/lib/nx-test.tcl
+lib/%%PKGNAME%%/lib/nx-traits.tcl
+lib/%%PKGNAME%%/lib/nx-zip.tcl
+lib/%%PKGNAME%%/lib/nxdoc-core.tcl
+lib/%%PKGNAME%%/lib/nxdoc-dc.tcl
+lib/%%PKGNAME%%/lib/nxdoc-html.tcl
+lib/%%PKGNAME%%/lib/nxdoc-xodoc.tcl
+lib/%%PKGNAME%%/lib/nxdoc-xowiki.tcl
+lib/%%PKGNAME%%/lib/pkgIndex.tcl
+lib/%%PKGNAME%%/libnsf.so.1
+lib/%%PKGNAME%%/libnsfstub.a
+lib/%%PKGNAME%%/nx/class-method.tcl
+lib/%%PKGNAME%%/nx/nx.tcl
+lib/%%PKGNAME%%/nx/nxdocIndex.tcl
+lib/%%PKGNAME%%/nx/pkgIndex.tcl
+lib/%%PKGNAME%%/nx/plain-object-method.tcl
+lib/%%PKGNAME%%/pkgIndex.tcl
+lib/%%PKGNAME%%/serialize/pkgIndex.tcl
+lib/%%PKGNAME%%/serialize/serializer.tcl
+lib/%%PKGNAME%%/xotcl/COPYRIGHT
+lib/%%PKGNAME%%/xotcl/comm/Access.xotcl
+lib/%%PKGNAME%%/xotcl/comm/Connection.xotcl
+lib/%%PKGNAME%%/xotcl/comm/Dav.xotcl
+lib/%%PKGNAME%%/xotcl/comm/Ftp.xotcl
+lib/%%PKGNAME%%/xotcl/comm/Httpd.xotcl
+lib/%%PKGNAME%%/xotcl/comm/Imap.xotcl
+lib/%%PKGNAME%%/xotcl/comm/Ldap.xotcl
+lib/%%PKGNAME%%/xotcl/comm/Mime.xotcl
+lib/%%PKGNAME%%/xotcl/comm/PCache.xotcl
+lib/%%PKGNAME%%/xotcl/comm/pkgIndex.tcl
+lib/%%PKGNAME%%/xotcl/lib/Script.xotcl
+lib/%%PKGNAME%%/xotcl/lib/htmllib.xotcl
+lib/%%PKGNAME%%/xotcl/lib/makeDoc.xotcl
+lib/%%PKGNAME%%/xotcl/lib/metadataAnalyzer.xotcl
+lib/%%PKGNAME%%/xotcl/lib/mixinStrategy.xotcl
+lib/%%PKGNAME%%/xotcl/lib/package.xotcl
+lib/%%PKGNAME%%/xotcl/lib/pkgIndex.tcl
+lib/%%PKGNAME%%/xotcl/lib/staticMetadata.xotcl
+lib/%%PKGNAME%%/xotcl/lib/trace.xotcl
+lib/%%PKGNAME%%/xotcl/lib/upvarcompat.xotcl
+lib/%%PKGNAME%%/xotcl/lib/wafecompat.tcl
+lib/%%PKGNAME%%/xotcl/lib/xodoc.xotcl
+lib/%%PKGNAME%%/xotcl/pkgIndex.tcl
+lib/%%PKGNAME%%/xotcl/serialize/RecoveryPoint.xotcl
+lib/%%PKGNAME%%/xotcl/serialize/ScriptCreator.xotcl
+lib/%%PKGNAME%%/xotcl/serialize/Serializer.xotcl
+lib/%%PKGNAME%%/xotcl/serialize/pkgIndex.tcl
+lib/%%PKGNAME%%/xotcl/xotcl2.tcl
+lib/nsfConfig.sh
+man/man1/xotclsh.1.gz
+man/man1/xowish.1.gz
+@dirrm lib/%%PKGNAME%%/xotcl/serialize
+@dirrm lib/%%PKGNAME%%/xotcl/lib
+@dirrm lib/%%PKGNAME%%/xotcl/comm
+@dirrm lib/%%PKGNAME%%/xotcl
+@dirrm lib/%%PKGNAME%%/serialize
+@dirrm lib/%%PKGNAME%%/nx
+@dirrm lib/%%PKGNAME%%/lib
+@dirrm lib/%%PKGNAME%%

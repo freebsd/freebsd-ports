@@ -1,0 +1,20 @@
+--- Makefile.in.orig	2013-06-07 12:07:24.000000000 +0200
++++ Makefile.in	2013-11-11 12:17:28.000000000 +0100
+@@ -665,7 +665,7 @@
+ #
+ 
+ genstubs:
+-	$(TCLSH) $(TCL_SRC_DIR)/tools/genStubs.tcl $(src_generic_dir) \
++	$(TCLSH) genStubs.tcl $(src_generic_dir) \
+ 		$(src_generic_dir)/nsf.decls $(src_generic_dir)/nsfInt.decls
+ 
+ #
+@@ -752,7 +752,7 @@
+ 	    else \
+ 		echo " $(RANLIB) $(DESTDIR)$(pkglibdir)/$$p"; \
+ 		$(RANLIB) $(DESTDIR)$(pkglibdir)/$$p; \
+-		ln -s $(DESTDIR)$(pkglibdir)/$$p $(DESTDIR)$(libdir)/$$p; \
++		ln -s $(pkglibdir)/$$p $(DESTDIR)$(libdir)/$$p; \
+ 	    fi; \
+ 	    ext=`echo $$p|sed -e "s/.*\.//"`; \
+ 	    if test "x$$ext" = "xdll"; then \
