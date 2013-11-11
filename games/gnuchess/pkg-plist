@@ -1,0 +1,25 @@
+bin/gnuchess
+bin/gnuchessu
+bin/gnuchessx
+%%PORTDOCS%%%%DOCSDIR%%/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/Makefile.am
+%%PORTDOCS%%%%DOCSDIR%%/Makefile.in
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/fdl.texi
+%%PORTDOCS%%%%DOCSDIR%%/gnuchess.info
+%%PORTDOCS%%%%DOCSDIR%%/gnuchess.texi
+%%PORTDOCS%%%%DOCSDIR%%/mdate-sh
+%%PORTDOCS%%%%DOCSDIR%%/quotes.rb
+%%PORTDOCS%%%%DOCSDIR%%/stamp-vti
+%%PORTDOCS%%%%DOCSDIR%%/texinfo.tex
+%%PORTDOCS%%%%DOCSDIR%%/version.texi
+%%DATADIR%%/gnuchess.ini
+%%DATADIR%%/smallbook.bin
+%%NLS%%share/locale/de/LC_MESSAGES/gnuchess.mo
+%%NLS%%share/locale/es/LC_MESSAGES/gnuchess.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/gnuchess.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/gnuchess.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/gnuchess.mo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
