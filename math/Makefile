@@ -561,6 +561,7 @@
     SUBDIR += py-numpy
     SUBDIR += py-nzmath
     SUBDIR += py-pandas
+    SUBDIR += py-patsy
     SUBDIR += py-plastex
     SUBDIR += py-probstat
     SUBDIR += py-pybloom
