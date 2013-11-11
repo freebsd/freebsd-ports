@@ -11,32 +11,28 @@ DISTNAME=	redcoder
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Corewars evolver - generates warriors using genetic algorithms
 
+USE_DOS2UNIX=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	VISITOOL
 VISITOOL_DESC=	Buil GUI tool for displaying evolution
 
-NO_STAGE=	yes
+OPTIONS_SUB=	yes
+
+VISITOOL_USE=	WX=2.4
+VISITOOL_ALL_TARGET=	all visitool
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MVISITOOL}
-USE_WX=		2.4
-ALL_TARGET=	all visitool
-PLIST_SUB+=	VISITOOL=""
-.else
-PLIST_SUB+=	VISITOOL="@comment "
-.endif
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} koen.* species.ini *.rc ${DATADIR}
-	cd ${WRKSRC} && ${CP} -r bench evolver_hill wilfiz ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} koen.* species.ini *.rc ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${CP} -r bench evolver_hill wilfiz ${STAGEDIR}${DATADIR}
 .if ${PORT_OPTIONS:MVISITOOL}
-	${INSTALL_PROGRAM} ${WRKSRC}/visitool \
-		${PREFIX}/bin/${PORTNAME}-visitool
+	${INSTALL_PROGRAM} ${WRKSRC}/visitool ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-visitool
 .endif
 
 .include <bsd.port.mk>
