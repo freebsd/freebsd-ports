@@ -11,14 +11,13 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Non-interactive FTP client
 
 GNU_CONFIGURE=	yes
-MANCOMPRESSED=	no
 
 PORTDOCS=	ChangeLog README
-MAN1=		weex.1
+
+MAKE_ENV+=	STAGEDIR=${STAGEDIR}
 
 OPTIONS_DEFINE=	DOCS NLS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -34,13 +33,13 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/sample.weexrc ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/sample.weexrc ${STAGEDIR}${EXAMPLESDIR}
 
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
