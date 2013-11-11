@@ -1,0 +1,5 @@
+%%SITE_PERL%%/UUID/Random/Patch/UseMRS.pm
+%%PERL5_MAN3%%/UUID::Random::Patch::UseMRS.3.gz
+@dirrmtry %%SITE_PERL%%/UUID/Random/Patch
+@dirrmtry %%SITE_PERL%%/UUID/Random
+@dirrmtry %%SITE_PERL%%/UUID

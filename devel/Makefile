@@ -2975,6 +2975,7 @@
     SUBDIR += p5-UNIVERSAL-which
     SUBDIR += p5-UUID
     SUBDIR += p5-UUID-Random
+    SUBDIR += p5-UUID-Random-Patch-UseMRS
     SUBDIR += p5-UUID-Tiny
     SUBDIR += p5-Uniq
     SUBDIR += p5-Unix-Statgrab
