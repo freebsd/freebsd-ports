@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pciutils
-PORTVERSION=	3.2.0
-PORTREVISION=	1
+PORTVERSION=	3.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
-		KERNEL/software/utils/pciutils \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org

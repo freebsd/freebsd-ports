@@ -5,4 +5,4 @@ all PCI devices (very useful for debugging of both kernel and
 device drivers) and `setpci' for manual configuration of PCI
 devices.
 
-WWW: http://atrey.karlin.mff.cuni.cz/~mj/pciutils.shtml
+WWW: http://mj.ucw.cz/sw/pciutils/
