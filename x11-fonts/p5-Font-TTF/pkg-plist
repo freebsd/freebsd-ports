@@ -6,6 +6,7 @@
 %%PERL5_MAN3%%/Font::TTF::Cmap.3.gz
 %%PERL5_MAN3%%/Font::TTF::Coverage.3.gz
 %%PERL5_MAN3%%/Font::TTF::Cvt_.3.gz
+%%PERL5_MAN3%%/Font::TTF::DSIG.3.gz
 %%PERL5_MAN3%%/Font::TTF::Delta.3.gz
 %%PERL5_MAN3%%/Font::TTF::Dumper.3.gz
 %%PERL5_MAN3%%/Font::TTF::EBDT.3.gz
@@ -21,6 +22,7 @@
 %%PERL5_MAN3%%/Font::TTF::GDEF.3.gz
 %%PERL5_MAN3%%/Font::TTF::GPOS.3.gz
 %%PERL5_MAN3%%/Font::TTF::GSUB.3.gz
+%%PERL5_MAN3%%/Font::TTF::Glat.3.gz
 %%PERL5_MAN3%%/Font::TTF::Gloc.3.gz
 %%PERL5_MAN3%%/Font::TTF::Glyf.3.gz
 %%PERL5_MAN3%%/Font::TTF::Glyph.3.gz
@@ -63,9 +65,11 @@
 %%PERL5_MAN3%%/Font::TTF::Table.3.gz
 %%PERL5_MAN3%%/Font::TTF::Ttc.3.gz
 %%PERL5_MAN3%%/Font::TTF::Ttopen.3.gz
+%%PERL5_MAN3%%/Font::TTF::Useall.3.gz
 %%PERL5_MAN3%%/Font::TTF::Utils.3.gz
 %%PERL5_MAN3%%/Font::TTF::Vhea.3.gz
 %%PERL5_MAN3%%/Font::TTF::Vmtx.3.gz
+%%PERL5_MAN3%%/Font::TTF::Win32.3.gz
 %%PERL5_MAN3%%/Font::TTF::Woff.3.gz
 %%PERL5_MAN3%%/Font::TTF::Woff::MetaData.3.gz
 %%PERL5_MAN3%%/Font::TTF::Woff::PrivateData.3.gz
@@ -75,7 +79,6 @@
 %%SITE_PERL%%/Font/TTF/AATutils.pm
 %%SITE_PERL%%/Font/TTF/Anchor.pm
 %%SITE_PERL%%/Font/TTF/Bsln.pm
-%%SITE_PERL%%/Font/TTF/Changes
 %%SITE_PERL%%/Font/TTF/Cmap.pm
 %%SITE_PERL%%/Font/TTF/Coverage.pm
 %%SITE_PERL%%/Font/TTF/Cvt_.pm
