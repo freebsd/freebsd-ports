@@ -510,6 +510,7 @@
     SUBDIR += p5-Crypt-X509
     SUBDIR += p5-Crypt-xDBM_File
     SUBDIR += p5-CryptX
+    SUBDIR += p5-Dancer-Plugin-Auth-Extensible
     SUBDIR += p5-Dancer-Plugin-Passphrase
     SUBDIR += p5-Data-Entropy
     SUBDIR += p5-Data-Password
