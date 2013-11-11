@@ -13,12 +13,10 @@ COMMENT=	Object-oriented scripting language based on Tcl
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USE_TCL=		84+
-INVALID_TCL_VER=	86
+USES+=		gmake tcl:84,85
 
 INSTALL_TARGET=	install
 ALL_TARGET=	all test-nohttp
-USE_GMAKE=	yes
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 MAKE_JOBS_UNSAFE=	yes
 
@@ -32,8 +30,8 @@ OPTIONS_DEFAULT=	ACTIWEB
 ACTIWEB_DESC=	Include actiweb
 TUTORIAL_DESC=	Install XOTcl tutorial
 
-LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
-CONFIGURE_ARGS+=	--with-expat=${LOCALBASE}/include,${LOCALBASE}/lib
+LIB_DEPENDS+=	libexpat.so:${PORTSDIR}/textproc/expat2
+CONFIGURE_ARGS+=--with-expat=${LOCALBASE}/include,${LOCALBASE}/lib
 .else
 AOLSERVERBASE?=	aolserver
 .endif
@@ -52,7 +50,7 @@ NO_BUILD=		yes
 
 .if ${PORT_OPTIONS:MACTIWEB}
 CONFIGURE_ARGS+=	--with-actiweb --with-gdbm=${LOCALBASE}/include,${LOCALBASE}/lib
-LIB_DEPENDS+=		gdbm.4:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=		libgdbm.so:${PORTSDIR}/databases/gdbm
 PLIST_SUB+=	ACTIWEB=""
 .else
 PLIST_SUB+=	ACTIWEB="@comment "
