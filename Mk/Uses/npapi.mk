@@ -164,11 +164,11 @@ PLIST_DIRS+=	${NPAPI_DIRS_${dist}:S!^!${_TD_${dist}}/!} ${_TD_${dist}}
 .endfor
 
 npapi-do-install:
-	${INSTALL} -d ${_TD_FULL} ${STAGEDIR}${NPAPI_SLDIRS_ALL}
-	${CP} -p ${NPAPI_FILES:S,^,${NPAPI_WRKSRC}/,} ${_TD_FULL}/
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${_TD_FULL}/
-	${CHMOD} -R a+rX,go-w ${_TD_FULL}/
-	for _dir in ${NPAPI_LINKFARMS} ; { ${LN} -sf ${_TD_FULL}/* $$_dir ${_Q} ; }
+	${INSTALL} -d ${STAGEDIR}${_TD_FULL} ${NPAPI_SLDIRS_ALL:S.^.${STAGEDIR}/.}
+	${CP} -p ${NPAPI_FILES:S,^,${NPAPI_WRKSRC}/,} ${STAGEDIR}${_TD_FULL}/
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${_TD_FULL}/
+	${CHMOD} -R a+rX,go-w ${STAGEDIR}${_TD_FULL}/
+	for _dir in ${NPAPI_LINKFARMS} ; { ${LN} -sf ${_TD_FULL}/* ${STAGEDIR}$$_dir ${_Q} ; }
 	${ECHO_CMD} '${INSTALL} -d ${NPAPI_SLDIRS_ALL}' > ${_PI}
 	${ECHO_CMD} 'for _dir in ${NPAPI_LINKFARMS} ; \
 	       { ${LN} -sf ${NPAPI_FILES:S,^,${_TD_FULL}/,} $$_dir/ ${_Q}; }' >> ${_PI}
