@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Reporter
-PORTVERSION=	1.59
+PORTVERSION=	1.60
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,10 +16,4 @@ USES=		perl5
 USE_PERL5=	configure
 MAKE_JOBS_UNSAFE=	yes
 
-MAN3=		Test::Reporter.3 \
-		Test::Reporter::Transport.3 \
-		Test::Reporter::Transport::File.3 \
-		Test::Reporter::Transport::Null.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
