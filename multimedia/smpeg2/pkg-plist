@@ -1,0 +1,20 @@
+%%PLAYMPEG%%bin/plaympeg
+bin/smpeg2-config
+include/smpeg2/MPEG.h
+include/smpeg2/MPEGaction.h
+include/smpeg2/MPEGaudio.h
+include/smpeg2/MPEGerror.h
+include/smpeg2/MPEGframe.h
+include/smpeg2/MPEGlist.h
+include/smpeg2/MPEGring.h
+include/smpeg2/MPEGstream.h
+include/smpeg2/MPEGsystem.h
+include/smpeg2/MPEGvideo.h
+include/smpeg2/smpeg.h
+lib/libsmpeg2.a
+lib/libsmpeg2.la
+lib/libsmpeg2.so
+lib/libsmpeg2.so.0
+%%PLAYMPEG%%man/man1/plaympeg.1.gz
+share/aclocal/smpeg2.m4
+@dirrm include/smpeg2

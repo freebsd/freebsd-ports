@@ -314,6 +314,7 @@
     SUBDIR += shell-fm
     SUBDIR += smile
     SUBDIR += smpeg
+    SUBDIR += smpeg2
     SUBDIR += smplayer
     SUBDIR += smplayer-skins
     SUBDIR += smplayer-themes

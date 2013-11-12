@@ -1,0 +1,14 @@
+SMPEG is a free MPEG1 video player library with sound support.  Video playback
+is based on the ubiquitous Berkeley MPEG player, mpeg_play v2.2.  Audio is
+played through a slightly modified mpegsound library, part of Splay v0.8.2.
+SMPEG supports MPEG audio (MP3), MPEG-1 video, and MPEG system streams.
+
+plaympeg is simple video players provided to test the library.  The C library
+interface is 'documented' in smpeg.h, and the C++ library interface is spread
+out over the MPEG*.h files.
+
+This is a work in progress.  Only 16 or 32 bit color depth is supported.
+The player will dynamically conver to other color depths, but playback
+will be much faster if your display is already set to 16 bit color depth.
+
+WWW: http://icculus.org/smpeg/
