@@ -102,7 +102,7 @@ festlex-ogi		audio/festlex-ogi	No commercial use
 fmsx*/*			emulators/fmsx		Unclear legal status of distributed ROMs
 foiltex*		textproc/foiltex	Redistribution on a not-for-profit basis only
 fp-freebsd-ws-*		security/f-prot		Free for personal use only
-fuse-emulator-roms*	emulators/fuse-roms	No explicit permission to redistribute
+fuse-emulator-roms* Opus-22.rom	emulators/fuse-roms	No explicit permission to redistribute
 freefonts-*		x11-fonts/freefonts	Some of the fonts are shareware.  Some are freeware.  Permission must be obtained before distributing at least four (mazama.license, muriel.license, roosthea.license, shf_____.license).  Two have inconsistent licenses (tempofon.license and tempoita.license say "placed into the public domain and may [not be] sold")
 freqship/*		sysutils/freqsdwn	License agreement is required to download
 fretsonfire/FretsOnFire-*-linux* games/fretsonfire-data	Only Unreal Voodoo site is allowed to distribute the music
