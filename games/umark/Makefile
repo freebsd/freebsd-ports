@@ -20,22 +20,16 @@ MAKEFILE=	${FILESDIR}/Makefile
 SUB_FILES=	pkg-message
 PORTDOCS=	ChangeLog INSTALL README TODO
 
-NO_STAGE=	yes
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/UMark/install_umark_data.sh ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/UMark/utxinfo.pl ${DATADIR}
-	cd ${WRKDIR}/UMark && ${FIND} data html pixmaps | \
-		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKDIR}/UMark/,} ${DOCSDIR}
-.endif
+OPTIONS_DEFINE=	DOCS
 
-post-install:
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/UMark/install_umark_data.sh ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/UMark/utxinfo.pl ${STAGEDIR}${DATADIR}
+	cd ${WRKDIR}/UMark && ${FIND} data html pixmaps | \
+		${CPIO} -pdu ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKDIR}/UMark/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
