@@ -5180,3 +5180,4 @@ biology/dotter|biology/seqtools|2013-11-10|Replaced with biology/seqtools
 games/nil||2013-11-11|Removed: long unmaintained, failes to build
 games/windstille||2013-11-12|Has expired: Unplayable, development ceased
 games/intensityengine||2013-11-12|Has expired: Unplayable, main server down, development ceased
+games/tmw|games/manaplus|2013-11-12|Replaced with games/manaplus
