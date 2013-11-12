@@ -27,4 +27,4 @@
  install:
 -	/usr/bin/install -c -o 0 -g 0 -s -m 755 wmtictactoe /usr/local/bin/wmtictactoe
 -
-+	@/usr/bin/install -c -o 0 -g 0 -s -m 755 wmtictactoe ${PREFIX}/bin/wmtictactoe
++	@/usr/bin/install -c -s -m 755 wmtictactoe ${DESTDIR}${PREFIX}/bin/wmtictactoe
