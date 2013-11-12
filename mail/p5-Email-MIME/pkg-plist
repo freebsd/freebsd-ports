@@ -4,6 +4,11 @@
 %%SITE_PERL%%/Email/MIME/Header.pm
 %%SITE_PERL%%/Email/MIME/Modifier.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME/.packlist
+%%PERL5_MAN3%%/Email::MIME.3.gz
+%%PERL5_MAN3%%/Email::MIME::Creator.3.gz
+%%PERL5_MAN3%%/Email::MIME::Encode.3.gz
+%%PERL5_MAN3%%/Email::MIME::Header.3.gz
+%%PERL5_MAN3%%/Email::MIME::Modifier.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email
 @dirrmtry %%SITE_PERL%%/Email/MIME
