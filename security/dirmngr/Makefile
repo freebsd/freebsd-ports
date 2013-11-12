@@ -13,35 +13,26 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	umq@ueo.co.jp
 COMMENT=	Client for managing and downloading certificate revocation lists
 
-LIB_DEPENDS=	assuan.0:${PORTSDIR}/security/libassuan \
-		gcrypt:${PORTSDIR}/security/libgcrypt \
-		gpg-error.0:${PORTSDIR}/security/libgpg-error \
-		ksba.19:${PORTSDIR}/security/libksba \
-		pth:${PORTSDIR}/devel/pth
+LIB_DEPENDS=	libassuan.so:${PORTSDIR}/security/libassuan \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+		libgpg-error.so:${PORTSDIR}/security/libgpg-error \
+		libksba.so:${PORTSDIR}/security/libksba \
+		libpth.so:${PORTSDIR}/devel/pth
 
+USES=		gmake iconv
 USE_BZIP2=	yes
-USES=		iconv
 USE_OPENLDAP=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 INFO=		dirmngr
-MAN1=		dirmngr-client.1 dirmngr.1
 
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=	gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext
 
 verify: checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.sig

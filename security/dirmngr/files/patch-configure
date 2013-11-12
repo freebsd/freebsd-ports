@@ -1,0 +1,11 @@
+--- configure.orig	2010-06-14 09:44:03.000000000 +0200
++++ configure	2013-10-28 17:10:59.000000000 +0100
+@@ -8627,6 +8627,8 @@
+ int
+ main ()
+ {
++BerElement *berctx = NULL;
++ber_free(berctx, 0);
+ ldap_open("foobar",1234);
+   ;
+   return 0;
