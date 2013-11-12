@@ -27,4 +27,4 @@
  install:
 -	/usr/bin/install -c -o 0 -g 0 -s -m 755 wmshuffle /usr/local/bin/wmshuffle
 -
-+	@/usr/bin/install -c -o 0 -g 0 -s -m 755 wmshuffle ${PREFIX}/bin/wmshuffle
++	@/usr/bin/install -c -s -m 755 wmshuffle ${DESTDIR}${PREFIX}/bin/wmshuffle
