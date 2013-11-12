@@ -230,6 +230,17 @@ sbin/rndc-confgen
 %%LINKS%%@unexec rm -rf /var/named/%D
 %%LINKS%%@unexec rmdir /var/named/usr 2>/dev/null || true
 @unexec rm -f %%BIND_DESTETC%%/rndc.conf.sample
+%%NOBASE%%etc/rc.d/named
+%%NOBASE%%%%BIND_DESTETC%%/named.conf
+%%NOBASE%%%%BIND_DESTETC%%/named.root
+%%NOBASE%%%%BIND_DESTETC%%/master/empty.db
+%%NOBASE%%%%BIND_DESTETC%%/master/localhost-forward.db
+%%NOBASE%%%%BIND_DESTETC%%/master/localhost-reverse.db
+%%NOBASE%%@dirrm %%BIND_DESTETC%%/dynamic
+%%NOBASE%%@dirrm %%BIND_DESTETC%%/master
+%%NOBASE%%@dirrm %%BIND_DESTETC%%/slave
+%%NOBASE%%@dirrm %%BIND_DESTETC%%/working
+%%NOBASE%%@dirrm %%BIND_DESTETC%%
 @dirrm include/bind9
 @dirrm include/dns
 @dirrm include/dst
