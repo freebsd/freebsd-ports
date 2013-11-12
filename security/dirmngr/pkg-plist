@@ -1,6 +1,8 @@
 bin/dirmngr
 bin/dirmngr-client
 libexec/dirmngr_ldap
+man/man1/dirmngr-client.1.gz
+man/man1/dirmngr.1.gz
 %%DOCSDIR%%/examples/README
 %%DOCSDIR%%/examples/bnetza-10r-ocsp.signer
 %%DOCSDIR%%/examples/dirmngr.conf
