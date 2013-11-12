@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.bstern.org/wmeyes/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The world's most useless WindowMaker dock app
+COMMENT=	World\'s most useless WindowMaker dock app
 
 USES=		imake
 USE_XORG=	xpm xmu
@@ -17,18 +17,13 @@ NO_INSTALL_MANPAGES=	yes
 PORTDOCS=	README
 PLIST_FILES=	bin/wmeyes
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|Target(|TargetNoMan(|g' ${WRKSRC}/Imakefile
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
