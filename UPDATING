@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20131112:
+  AFFECTS: users of dns/bind9*
+  AUTHOR: erwin@FreeBSD.org
+
+  All bind9 ports have been updated to support FreeBSD 10.x after
+  BIND was removed from the base system.  It is now self-contained
+  in ${PREFIX}/etc/namedb, and chroot and symlinking options are
+  no longer supported out of the box.
+
+  For users of FreeBSD 9.x and earlier, the LINKS option is no longer
+  enabled by default, but still supported.  No other changes should
+  affect those users, and updating without changing already set options
+  will keep the system in the same state.
+
 20131103:
   AFFECTS: users of security/libtasn1 and any port that depends on it
   AUTHOR: novel@FreeBSD.org
