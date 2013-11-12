@@ -1,2 +1,6 @@
+@group games
+@mode 2555
 bin/tt
+@mode
+@group
 @unexec if [ -f /var/games/ttscores ]; then rm /var/games/ttscores; fi
