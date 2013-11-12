@@ -28,9 +28,6 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 		%%JAVA_HOME%%/jre/lib/${MACHINE_ARCH}/libTerminal.so
 PORTDOCS=	*
 
-# Hack to be removed when included in bsd.java.mk
-DESTDIRNAME=	-Dstagedir
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

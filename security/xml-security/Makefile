@@ -37,10 +37,6 @@ PLIST_FILES=	%%JAVAJARDIR%%/xmlsec.jar
 ALL_TARGET+=	javadoc
 .endif
 
-do-build:
-	@(cd ${BUILD_WRKSRC}; \
-		${SETENV} ${MAKE_ENV} ${ANT} ${ALL_TARGET})
-
 do-install:
 	@${ECHO} -n ">> Installing JAR as ${JAVAJARDIR}/xmlsec.jar..."
 	@${INSTALL_DATA} ${WRKSRC}/build/xmlsec-${PORTVERSION}.jar \

@@ -21,9 +21,6 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
-# hack to be removed when included in bsd.java.mk
-DESTDIRNAME=	-Ddestdir
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
