@@ -10,8 +10,8 @@ DISTNAME=	${PORTNAME}Src${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast tool for local sequence similarity searches
 
-USE_ZIP=	yes
-USE_GMAKE=	yes
+USES=		gmake
+EXTRACT_SUFX=	.zip
 MAKEFILE=	makefile
 WRKSRC=		${WRKDIR}/${PORTNAME}Src
 MAKE_ENV+=	HOME="${WRKSRC}/${BINDIR}" MACHTYPE="${ARCH}"
@@ -27,30 +27,20 @@ PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 post-patch:
 	@${MKDIR} ${WRKSRC}/bin/${ARCH}
 	@${MKDIR} ${WRKSRC}/lib/${ARCH}
 	@${REINPLACE_CMD} -E 's,^(CC|CFLAGS)=,\1 ?=,g;s,-Werror,,g' \
 		${WRKSRC}/inc/common.mk
 
-.include <bsd.port.options.mk>
-
 do-install:
 .for exe in ${EXECUTABLES}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${ARCH}/${exe} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${ARCH}/${exe} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	@${MKDIR} ${DATADIR}/webBlat
-	${INSTALL_PROGRAM} ${WRKSRC}/webBlat/webBlat ${DATADIR}/webBlat
-	${INSTALL_DATA} ${WRKSRC}/webBlat/install.txt ${DATADIR}/webBlat
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
-
-post-install:
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/webBlat
+	${INSTALL_PROGRAM} ${WRKSRC}/webBlat/webBlat ${STAGEDIR}${DATADIR}/webBlat
+	${INSTALL_DATA} ${WRKSRC}/webBlat/install.txt ${STAGEDIR}${DATADIR}/webBlat
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
