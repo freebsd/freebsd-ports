@@ -3603,6 +3603,7 @@
     SUBDIR += py-iterpipes
     SUBDIR += py-itools
     SUBDIR += py-jcc
+    SUBDIR += py-jellyfish
     SUBDIR += py-jira
     SUBDIR += py-jmespath
     SUBDIR += py-jsmin
