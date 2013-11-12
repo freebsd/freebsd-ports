@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+# PROVIDE: mylar
+# REQUIRE: NETWORKING SERVERS DAEMON ldconfig resolv
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# mylar_enable (bool):	Set to NO by default.
+#			Set it to YES to enable it.
+# mylar_data_dir:	Directory where mylar configuration
+#			data is stored.
+#			Default: %%PREFIX%%/etc/mylar
+# mylar_user:		The user account mylar daemon runs as what
+#			you want it to be. It uses 'media' user by
+#			default. Do not sets it as empty or it will run
+#			as root.
+# mylar_group:		The group account mylar daemon runs as what
+#			you want it to be. It uses 'media' group by
+#			default. Do not sets it as empty or it will run
+#			as wheel.
+
+. /etc/rc.subr
+name="mylar"
+rcvar="${name}_enable"
+load_rc_config $name
+
+: ${mylar_enable:="NO"}
+: ${mylar_user:="media"}
+: ${mylar_group:="media"}
+: ${mylar_dir:="%%PREFIX%%/share/$name"}
+: ${mylar_data_dir:="%%PREFIX%%/etc/$name"}
+
+pidfile="$mylar_data_dir/$name.pid"
+command="%%PREFIX%%/bin/python"
+command_args="$mylar_dir/mylar/Mylar.py --config $mylar_data_dir/config.ini --datadir $mylar_data_dir -d --pidfile $pidfile -q --nolaunch"
+
+run_rc_command "$1"
