@@ -16,7 +16,6 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
-NO_STAGE=	yes
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	${PTHREAD_CFLAGS}
@@ -33,8 +32,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/ltconfig
 
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/samples/sample.gym ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/sample.gym ${STAGEDIR}${EXAMPLESDIR}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
