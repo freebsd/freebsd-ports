@@ -3194,6 +3194,7 @@
     SUBDIR += pear-SebastianBergmann_FinderFacade
     SUBDIR += pear-SebastianBergmann_PHPCPD
     SUBDIR += pear-SebastianBergmann_PHPLOC
+    SUBDIR += pear-SebastianBergmann_Version
     SUBDIR += pear-Structure_LinkedList
     SUBDIR += pear-Structures_DataGrid
     SUBDIR += pear-Structures_DataGrid_Renderer_Console
