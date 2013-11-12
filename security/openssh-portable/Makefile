@@ -101,12 +101,11 @@ LIBEDIT_CONFIGURE_WITH=	libedit
 BSM_CONFIGURE_ON=	--with-audit=bsm
 
 
-PORTDOCS=	*
-
 .include <bsd.port.pre.mk>
 
 # http://www.psc.edu/index.php/hpn-ssh
 .if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MAES_THREADED} || ${PORT_OPTIONS:MNONECIPHER}
+PORTDOCS+=		HPN-README
 HPN_VERSION=		14v2
 HPN_DISTVERSION=	6.3p1
 PATCH_SITES+=		${MASTER_SITE_SOURCEFORGE:S/$/:hpn/}
