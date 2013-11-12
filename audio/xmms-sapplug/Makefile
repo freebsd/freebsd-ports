@@ -16,8 +16,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
-USES=		gmake
-NO_STAGE=	yes
+USES=		gmake compiler
 USE_GNOME=	glib12
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
@@ -28,13 +27,10 @@ PLIST_FILES=	lib/xmms/Input/libsap.so
 
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
-.include <bsd.port.options.mk>
-
-_CLANG!=	${CXX} --version | ${HEAD} -1 | ${SED} -e 's/.*clang version \([0-9]\)\.\([0-9]\).*/\1\2/'
-ISCLANG=	${_CLANG:M[34][0-9]}
+.include <bsd.port.pre.mk>
 
 # clang can build this without -fno-exceptions
-.if empty(ISCLANG)
+.if ${COMPILER_TYPE} == "gcc"
 CXXFLAGS+=	-fno-exceptions
 .endif
 
@@ -56,9 +52,8 @@ post-patch:
 		${WRKSRC}/saplib/Makefile
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/libsap.so ${PREFIX}/lib/xmms/Input/libsap.so
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/Input
+	${INSTALL_DATA} ${WRKSRC}/libsap.so \
+		${STAGEDIR}${PREFIX}/lib/xmms/Input/libsap.so
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
