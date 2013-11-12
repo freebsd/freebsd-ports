@@ -1,22 +1,55 @@
 # $FreeBSD$
 
 PORTNAME=	kid3
-PORTVERSION=	2.3
-PORTREVISION=	2
+PORTVERSION=	3.0.1
 CATEGORIES=	audio kde
 MASTER_SITES=	SF
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	MP3/Ogg/FLAC tag editor for KDE
+COMMENT?=	MP3/Ogg/FLAC tag editor for KDE
 
 LICENSE=	GPLv2
 
-USE_KDE4=	kdelibs kdeprefix kdehier automoc4
-USE_QT4=	qmake_build moc_build rcc_build uic_build
-USES=		cmake gettext
+USE_QT4=	qmake_build moc_build rcc_build uic_build \
+		linguist_build
+USE_PERL5=	build
+USES=		cmake:outsource perl5
+CMAKE_ARGS=	-DWITH_DOCBOOKDIR=${LOCALBASE}/share/xsl/docbook \
+		-DWITH_MANDIR=man
+CXXFLAGS+=	-I${LOCALBASE}/include
 
-OPTIONS_DEFINE=	FLAC ID3LIB MP4V2 VORBIS TAGLIB CHROMAPRINT
+OPTIONS_DEFINE=	CHROMAPRINT FLAC ID3LIB MP4V2 VORBIS TAGLIB \
+		CLI
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+OPTIONS_SUB=	yes
+NO_OPTIONS_SORT=	yes
+
+.if defined(PKGNAMESUFFIX)
+CONFLICTS_INSTALL=	kid3-3.*
+
+BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+
+USES+=		desktop-file-utils
+USE_GNOME=	libxslt:build
+CMAKE_ARGS+=	-DWITH_APPS="${KID3_CLI}QT"
+PLIST_SUB+=	QT="" KDE="@comment "
+
+OPTIONS_DEFINE+=	PHONON
+PHONON_DESC=	Build with Phonon support
+PHONON_CMAKE_OFF=	-DWITH_PHONON=OFF
+PHONON_USE=	QT4=phonon
+.else
+CONFLICTS_INSTALL=	kid3-qt4-3.*
+
+USE_KDE4=	kdelibs automoc4 kdeprefix
+CMAKE_ARGS+=	-DWITH_APPS="${KID3_CLI}KDE"
+PLIST_SUB+=	QT="@comment " KDE=""
+.endif
+
+PLIST_SUB=	SHLIB_VER=${PORTVERSION}
+
+CLI_DESC=	Build and install command line utility
+CLI_USES=	readline
 
 FLAC_DESC=	Support for FLAC files
 FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
@@ -46,11 +79,22 @@ TAGLIB_CMAKE_OFF=	-DWITH_TAGLIB=OFF
 
 CHROMAPRINT_DESC=	Support for Chromaprint audio fingerprints
 CHROMAPRINT_LIB_DEPENDS=	libchromaprint.so:${PORTSDIR}/audio/chromaprint
-CHROMAPRINT_CMAKE_ON=	-DWITH_CHROMAPRINT=ON \
-			-DWITH_FFMPEG=ON
+CHROMAPRINT_CMAKE_ON=	-DWITH_CHROMAPRINT=ON
 CHROMAPRINT_CMAKE_OFF=	-DWITH_CHROMAPRINT=OFF
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MCLI}
+KID3_CLI=	CLI;
+.endif
+
+.if ${PORT_OPTIONS:MFLAC} || ${PORT_OPTIONS:MVORBIS}
+PLIST_SUB+=	OGGFLAC=""
+.else
+PLIST_SUB+=	OGGFLAC="@comment "
+.endif
+
 pre-configure:
-	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/CMakeLists.txt
+	${REINPLACE_CMD} 's,-lstdc++,,' ${WRKSRC}/src/app/qt/CMakeLists.txt
 
 .include <bsd.port.mk>
