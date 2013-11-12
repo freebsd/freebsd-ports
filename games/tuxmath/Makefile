@@ -18,6 +18,7 @@ LICENSE=	GPLv3 # (or later)
 
 OPTIONS_DEFINE=	NLS SVG DOCS
 OPTIONS_DEFAULT=	SVG
+OPTIONS_SUB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_w_fonts-${PORTVERSION}
 
@@ -38,23 +39,12 @@ T4K_VERSION=	0.1.1
 T4K_DISTFILE=	${T4K_NAME}-${T4K_VERSION}${EXTRACT_SUFX}
 T4K_WRKSRC=	${WRKDIR}/${T4K_NAME}-${T4K_VERSION}
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext
+NLS_LDFLAGS=	-lintl
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-LDFLAGS+=	-lintl
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSVG}
-USE_GNOME+=	librsvg2
-.else
-CONFIGURE_ARGS+=--without-rsvg
-.endif
+SVG_CONFIGURE_WITH=	rsvg
+SVG_USE=	GNOME=librsvg2
 
 # use multiple make jobs for T4K_WRKSRC
 _make_jobs=	-j${MAKE_JOBS_NUMBER}
@@ -80,11 +70,10 @@ pre-build:
 		${MAKEFILE} ${_make_jobs} ${ALL_TARGET})
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	${LN} -s ${DATADIR}/images/status ${STAGEDIR}${DATADIR}/images/menu
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in OFL README README_DATA_LICENSES TODO changelog
-	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
