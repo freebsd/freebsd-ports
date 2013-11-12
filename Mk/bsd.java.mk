@@ -383,6 +383,7 @@ RUN_DEPENDS+=		${DEPEND_JAVA}
 
 # Ant support: default do-build target
 .		if defined(USE_ANT)
+DESTDIRNAME?=		-Dfreebsd.ports.destdir
 ANT?=				${LOCALBASE}/bin/ant
 MAKE_ENV+=			JAVA_HOME=${JAVA_HOME}
 BUILD_DEPENDS+=		${ANT}:${PORTSDIR}/devel/apache-ant
