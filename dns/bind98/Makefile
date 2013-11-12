@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 
 CONFLICTS=	bind9*-9.[45679].* bind9*-sdb-9.[45679].* bind-tools-9.*
 
-OPTIONS_DEFAULT=	IPV6 SSL LINKS XML THREADS
+OPTIONS_DEFAULT=	IPV6 SSL XML THREADS
 OPTIONS_DEFINE=		SSL LINKS XML IDN REPLACE_BASE LARGE_FILE \
 			FIXED_RRSET RPZ_NSIP RPZ_NSDNAME RPZRRL_PATCH \
 			SIGCHASE IPV6 THREADS GSSAPI FILTER_AAAA
@@ -167,13 +167,23 @@ IGNORE=		REPLACE_BASE option is not supported on this release
 PKGNAMESUFFIX=	-base
 PREFIX=		/usr
 BIND_DESTETC=	/etc/namedb
-CONFIGURE_ARGS+=	--prefix=${PREFIX} \
-			--sysconfdir=${BIND_DESTETC}
+.else
+.if ${OSVERSION} >= 1000500
+BIND_DESTETC=	${PREFIX}/etc/namedb
 .else
 BIND_DESTETC=	${PREFIX}/etc
 .endif
+.endif
 
+CONFIGURE_ARGS+=	--prefix=${PREFIX} \
+			--sysconfdir=${BIND_DESTETC}
 PLIST_SUB+=	BIND_DESTETC="${BIND_DESTETC}"
+
+.if ${OSVERSION} >= 1000500
+PLIST_SUB+=	NOBASE=""
+.else
+PLIST_SUB+=	NOBASE="@comment "
+.endif
 
 MAN1=	arpaname.1 dig.1 host.1 isc-config.sh.1 nslookup.1 nsupdate.1
 MAN3=	lwres.3 lwres_addr_parse.3 lwres_buffer.3 lwres_buffer_add.3 \
@@ -238,8 +248,6 @@ post-patch:
 PORTDOCS=	*
 .endif
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
-		${BIND_DESTETC}/rndc.conf.sample
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/arm ${DOCSDIR}/misc
 	${INSTALL_DATA} ${WRKSRC}/doc/arm/*.html ${DOCSDIR}/arm
@@ -248,10 +256,31 @@ post-install:
 	${CP} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/FAQ \
 		${WRKSRC}/HISTORY ${WRKSRC}/README ${DOCSDIR}/
 .endif
-.if ${PORT_OPTIONS:MLINKS} && empty(PORT_OPTIONS:MREPLACE_BASE)
+.if ${OSVERSION} >= 1000500
+.for FILE in named named.conf
+	${SED} -e 's#%%PREFIX%%#${PREFIX}#g' \
+		-e 's#%%BIND_DESTETC%%#${BIND_DESTETC}#g' \
+		${FILESDIR}/${FILE} > ${WRKDIR}/${FILE}
+.endfor
+	${INSTALL_SCRIPT} ${WRKDIR}/named ${PREFIX}/etc/rc.d
+	${MKDIR} ${BIND_DESTETC}
+.for DIR in dynamic master slave working
+	${MKDIR} ${BIND_DESTETC}/${DIR}
+.endfor
+.for DIR in dynamic slave working
+	${CHOWN} bind:bind ${BIND_DESTETC}/${DIR}
+.endfor
+	${INSTALL_DATA} ${WRKDIR}/named.conf ${BIND_DESTETC}
+	${INSTALL_DATA} ${FILESDIR}/named.root ${BIND_DESTETC}
+	${INSTALL_DATA} ${FILESDIR}/empty.db ${BIND_DESTETC}/master
+	${INSTALL_DATA} ${FILESDIR}/localhost-forward.db ${BIND_DESTETC}/master
+	${INSTALL_DATA} ${FILESDIR}/localhost-reverse.db ${BIND_DESTETC}/master
+.elif ${PORT_OPTIONS:MLINKS} && empty(PORT_OPTIONS:MREPLACE_BASE)
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
+	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
+		${BIND_DESTETC}/rndc.conf.sample
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
