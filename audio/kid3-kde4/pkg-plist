@@ -1,33 +1,67 @@
-bin/kid3
-share/applications/kde4/kid3.desktop
-share/apps/kid3/kid3ui.rc
-share/dbus-1/interfaces/net.sourceforge.Kid3.xml
-share/doc/HTML/de/kid3/common
-share/doc/HTML/de/kid3/index.cache.bz2
-share/doc/HTML/de/kid3/index.docbook
-share/doc/HTML/en/kid3/common
-share/doc/HTML/en/kid3/index.cache.bz2
-share/doc/HTML/en/kid3/index.docbook
-share/icons/hicolor/16x16/apps/kid3.png
-share/icons/hicolor/32x32/apps/kid3.png
-share/icons/hicolor/48x48/apps/kid3.png
-share/icons/hicolor/scalable/apps/kid3.svgz
-share/locale/cs/LC_MESSAGES/kid3.mo
-share/locale/de/LC_MESSAGES/kid3.mo
-share/locale/es/LC_MESSAGES/kid3.mo
-share/locale/et/LC_MESSAGES/kid3.mo
-share/locale/fi/LC_MESSAGES/kid3.mo
-share/locale/fr/LC_MESSAGES/kid3.mo
-share/locale/it/LC_MESSAGES/kid3.mo
-share/locale/nl/LC_MESSAGES/kid3.mo
-share/locale/pl/LC_MESSAGES/kid3.mo
-share/locale/ru/LC_MESSAGES/kid3.mo
-share/locale/sr/LC_MESSAGES/kid3.mo
-share/locale/sr@ijekavian/LC_MESSAGES/kid3.mo
-share/locale/sr@ijekavianlatin/LC_MESSAGES/kid3.mo
-share/locale/sr@latin/LC_MESSAGES/kid3.mo
-share/locale/tr/LC_MESSAGES/kid3.mo
-share/locale/zh_TW/LC_MESSAGES/kid3.mo
-@dirrm share/doc/HTML/en/kid3
-@dirrm share/doc/HTML/de/kid3
-@dirrm share/apps/kid3
+%%KDE%%bin/kid3
+%%CLI%%bin/kid3-cli
+%%QT%%bin/kid3-qt
+lib/libkid3-core.so
+lib/libkid3-core.so.%%SHLIB_VER%%
+lib/libkid3-gui.so
+lib/libkid3-gui.so.%%SHLIB_VER%%
+%%CHROMAPRINT%%lib/kid3/libacoustidimport.so
+lib/kid3/libamazonimport.so
+lib/kid3/libdiscogsimport.so
+lib/kid3/libfreedbimport.so
+%%ID3LIB%%lib/kid3/libid3libmetadata.so
+%%MP4V2%%lib/kid3/libmp4v2metadata.so
+lib/kid3/libmusicbrainzimport.so
+%%OGGFLAC%%lib/kid3/liboggflacmetadata.so
+%%TAGLIB%%lib/kid3/libtaglibmetadata.so
+%%CLI%%man/de/man1/kid3-cli.1.gz
+%%QT%%man/de/man1/kid3-qt.1.gz
+man/de/man1/kid3.1.gz
+%%CLI%%man/man1/kid3-cli.1.gz
+%%QT%%man/man1/kid3-qt.1.gz
+man/man1/kid3.1.gz
+%%KDE%%share/applications/kde4/kid3.desktop
+%%QT%%share/applications/kid3-qt.desktop
+%%KDE%%share/apps/kid3/kid3ui.rc
+%%KDE%%share/dbus-1/interfaces/net.sourceforge.Kid3.xml
+%%KDE%%share/doc/HTML/de/kid3/common
+%%KDE%%share/doc/HTML/de/kid3/index.cache.bz2
+%%KDE%%share/doc/HTML/de/kid3/index.docbook
+%%KDE%%share/doc/HTML/en/kid3/common
+%%KDE%%share/doc/HTML/en/kid3/index.cache.bz2
+%%KDE%%share/doc/HTML/en/kid3/index.docbook
+%%QT%%share/doc/kid3-qt/kid3_de.html
+%%QT%%share/doc/kid3-qt/kid3_en.html
+%%QT%%share/icons/hicolor/16x16/apps/kid3-qt.png
+%%KDE%%share/icons/hicolor/16x16/apps/kid3.png
+%%QT%%share/icons/hicolor/32x32/apps/kid3-qt.png
+%%KDE%%share/icons/hicolor/32x32/apps/kid3.png
+%%QT%%share/icons/hicolor/48x48/apps/kid3-qt.png
+%%KDE%%share/icons/hicolor/48x48/apps/kid3.png
+%%QT%%share/icons/hicolor/scalable/apps/kid3-qt.svg
+%%KDE%%share/icons/hicolor/scalable/apps/kid3.svgz
+%%DATADIR%%/translations/kid3_cs.qm
+%%DATADIR%%/translations/kid3_de.qm
+%%DATADIR%%/translations/kid3_es.qm
+%%DATADIR%%/translations/kid3_et.qm
+%%DATADIR%%/translations/kid3_fi.qm
+%%DATADIR%%/translations/kid3_fr.qm
+%%DATADIR%%/translations/kid3_it.qm
+%%DATADIR%%/translations/kid3_nl.qm
+%%DATADIR%%/translations/kid3_pl.qm
+%%DATADIR%%/translations/kid3_ru.qm
+%%DATADIR%%/translations/kid3_sr.qm
+%%DATADIR%%/translations/kid3_sr@ijekavian.qm
+%%DATADIR%%/translations/kid3_sr@ijekavianlatin.qm
+%%DATADIR%%/translations/kid3_sr@latin.qm
+%%DATADIR%%/translations/kid3_tr.qm
+%%DATADIR%%/translations/kid3_zh_TW.qm
+@dirrm %%DATADIR%%/translations
+@dirrm %%DATADIR%%
+%%QT%%@dirrm share/doc/kid3-qt
+%%KDE%%@dirrm share/doc/HTML/en/kid3
+%%KDE%%@dirrm share/doc/HTML/de/kid3
+%%KDE%%@dirrm share/apps/kid3
+@dirrmtry man/de/man1
+@dirrmtry man/de
+@dirrm lib/kid3
