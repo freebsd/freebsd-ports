@@ -1,0 +1,85 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: nsd
+# REQUIRE: DAEMON
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable nsd:
+#
+# nsd_enable="YES"
+#
+
+. /etc/rc.subr
+
+case $0 in
+/etc/rc*)
+	# during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
+	# so get the name of the script from $_file
+	name=$_file
+	;;
+*)
+	name=$0
+	;;
+esac
+
+name=${name##*/}
+
+rcvar=${name}_enable
+
+load_rc_config ${name}
+
+eval ": \${${name}_conf:=\"%%PREFIX%%/etc/nsd/${name}.conf\"}"
+eval "_conf=\${${name}_conf}"
+
+command=%%PREFIX%%/sbin/nsdc
+procname=%%PREFIX%%/sbin/nsd
+
+required_files=${_conf}
+pidfile=`%%PREFIX%%/sbin/nsd-checkconf -o pidfile ${_conf}`
+
+extra_commands="notify patch rebuild reload update"
+
+notify_cmd="nsd_nsdc_cmd notify"
+patch_cmd="nsd_nsdc_cmd patch"
+rebuild_cmd="nsd_nsdc_cmd rebuild"
+reload_cmd="nsd_reload_cmd"
+start_cmd="nsd_start_cmd"
+stop_cmd="nsd_stop_cmd"
+update_cmd="nsd_nsdc_cmd update"
+
+nsd_nsdc_cmd()
+{
+	${command} -c ${_conf} "$1"
+}
+
+nsd_reload_cmd()
+{
+	nsd_nsdc_cmd rebuild && nsd_nsdc_cmd reload
+}
+
+nsd_start_cmd()
+{
+	local _db
+	_db=`%%PREFIX%%/sbin/nsd-checkconf -o database ${_conf}`
+	if [ ! -f "${_db}" ]; then
+		nsd_nsdc_cmd rebuild
+	fi
+
+	echo "Starting ${name}."
+	nsd_nsdc_cmd start
+}
+
+nsd_stop_cmd()
+{
+	echo "Merging nsd zone transfer changes to zone files."
+	nsd_nsdc_cmd patch
+
+	echo "Stopping ${name}."
+	nsd_nsdc_cmd stop	
+}
+
+run_rc_command "$1"
+

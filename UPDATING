@@ -6,6 +6,26 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20131112:
+  AFFECTS: users of dns/nsd
+  AUTHOR: erwin@FreeBSD.org
+
+  dns/nsd was updated to the new 4.0.0 major release.
+
+  This version replaces the nsdc control program with nsd-control. 
+  This requires some manual setup with nsd-control-setup and editing
+  of the config files. nsd-control is incompatible with nsdc so when 
+  that is used in scripts, these should be adapted.  More information:
+  http://www.nlnetlabs.nl/svn/nsd/tags/NSD_4_0_0_REL/doc/NSD-4-features
+
+  NSD version 3 is still supported in dns/nsd3.  To keep the old
+  version:
+  # portmaster -o dns/nsd3 dns/nsd
+    or
+  # portupgrade -fo dns/nsd3 dns/nsd
+    or
+  # pkg set -o dns/nsd:dns/nsd3
+
+20131112:
   AFFECTS: users of dns/bind9*
   AUTHOR: erwin@FreeBSD.org
 

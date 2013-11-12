@@ -1,0 +1,16 @@
+#!/bin/sh
+# $FreeBSD$
+
+PATH="/bin:/sbin:/usr/bin:/usr/sbin"
+
+NSDDBDIR=%%NSDDBDIR%%
+NSDRUNDIR=%%NSDRUNDIR%%
+
+if [ "$2" = "POST-DEINSTALL" ]; then
+	echo "=> Deleting ${NSDDBDIR} if empty..."
+	rm -d ${NSDDBDIR}  2>/dev/null || true
+	echo "=> Deleting ${NSDRUNDIR} if empty..."
+	rm -d ${NSDRUNDIR} 2>/dev/null || true
+fi
+
+exit 0
