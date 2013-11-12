@@ -126,6 +126,9 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/clang33:${PORTSDIR}/lang/clang33
 CPP=	${LOCALBASE}/bin/clang-cpp33
 CC=	${LOCALBASE}/bin/clang33
 CXX=	${LOCALBASE}/bin/clang++33
+.if ${OSVERSION} < 900033
+USE_BINUTILS=	yes
+.endif
 .endif
 .endif
 .endif
@@ -140,6 +143,9 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/clang33:${PORTSDIR}/lang/clang33
 CPP=	${LOCALBASE}/bin/clang-cpp33
 CC=	${LOCALBASE}/bin/clang33
 CXX=	${LOCALBASE}/bin/clang++33
+.if ${OSVERSION} < 900033
+USE_BINUTILS=	yes
+.endif
 .endif
 .endif
 .endif
