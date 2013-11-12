@@ -9,6 +9,17 @@
  
          check_module("QtGui", "qwidget.h", "new QWidget()")
          if qt_version < 0x050000: check_module("QtHelp", "qhelpengine.h", "new QHelpEngine(\"foo\")")
+@@ -371,8 +371,8 @@
+         check_module("QtTest", "QtTest", "QTest::qSleep(0)")
+         check_module("QtWebKit", "qwebpage.h", "new QWebPage()")
+         check_module("QtXmlPatterns", "qxmlname.h", "new QXmlName()")
+-        check_module("phonon", "phonon/videowidget.h",
+-                "new Phonon::VideoWidget()")
++        check_module("phonon", "phonon/mediacontroller.h",
++                "new Phonon::MediaController(0)")
+         check_module("QtAssistant", "qassistantclient.h",
+                 "new QAssistantClient(\"foo\")", extra_lib_dirs=ass_lib_dirs,
+                 extra_libs=ass_libs)
 @@ -648,21 +648,6 @@
          if opts.staticplugins:
              sipconfig.inform("Unable to find the following static plugins: %s" % ", ".join(opts.staticplugins))
