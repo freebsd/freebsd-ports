@@ -4,4 +4,6 @@ bin/flowdumper
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cflow/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/Cflow.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cflow/.packlist
+%%PERL5_MAN3%%/Cflow.3.gz
+man/man1/flowdumper.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cflow
