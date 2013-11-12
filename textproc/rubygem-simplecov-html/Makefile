@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	simplecov-html
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -15,6 +15,5 @@ RUN_DEPENDS=	rubygem-sass>=0:${PORTSDIR}/textproc/rubygem-sass \
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-
 
 .include <bsd.port.mk>
