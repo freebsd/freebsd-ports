@@ -100,13 +100,15 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of lang/perl5.12 lang/perl5.14
   AUTHOR: mat@FreeBSD.org
 
-  The default perl has been switched to lang/perl5.16. If you're using binary
-  packages, you need to do :
+  The default Perl has been switched to lang/perl5.16.  These examples
+  are for switching from lang/perl5.14, if you are running another
+  version, replace lang/perl5.14 with the origin of the Perl you have
+  installed.
 
-  # pkg set -o lang/perl5.14:lang/perl5.16
+  Pkgng users:
 
-  If you're not using binary packages and want to (and should) switch, if
-  you're using perl-5.14, for instance :
+    # pkg set -o lang/perl5.14:lang/perl5.16
+    # pkg install -Rf lang/perl5.16
 
   Portupgrade users:
     0) Fix pkgdb.db (for safety):
