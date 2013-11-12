@@ -2,13 +2,13 @@
 
 PORTNAME=	icedtea-web
 PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java www
 MASTER_SITES=	http://icedtea.wildebeest.org/download/source/ \
 		http://icedtea.classpath.org/download/source/
 
 MAINTAINER=	java@FreeBSD.org
-COMMENT=	A free Java plug-in and Java Web Start for OpenJDK
+COMMENT=	Free Java plug-in and Java Web Start for OpenJDK
 
 LICENSE=	GPLv2
 
@@ -23,7 +23,7 @@ JAVA_VENDOR=	openjdk
 JAVA_VERSION=	1.6+
 USE_PERL5=	build
 USE_XORG=	x11
-USES=		gmake pkgconfig shebangfix perl5
+USES=		gmake perl5 pkgconfig shebangfix
 SHEBANG_FILES=	javac.in jrunscript.in
 
 WANT_GNOME=	yes
@@ -32,8 +32,8 @@ EXTRACT_CMD=	${GZIP_CMD}
 EXTRACT_BEFORE_ARGS=	-dc
 EXTRACT_AFTER_ARGS=	| ${SETENV} LC_ALL=en_US.UTF-8 ${TAR} -xf -
 
-MAN1=		itweb-javaws.1
 PLIST_FILES=	bin/itweb-javaws bin/itweb-settings \
+		man/man1/itweb-javaws.1.gz \
 		share/applications/itweb-javaws.desktop \
 		share/applications/itweb-settings.desktop \
 		share/pixmaps/itweb-javaws.png
@@ -50,7 +50,6 @@ PLUGIN_DESC=	Enable the browser plug-in
 RHINO_DESC=	Add support for Proxy Auto Config files
 TEST_DESC=	Add support for running regression test
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MDOCS)
@@ -60,15 +59,13 @@ CONFIGURE_ARGS+=--disable-docs
 .if ${PORT_OPTIONS:MPLUGIN}
 USE_GECKO=	libxul
 USE_GNOME=	glib20
-USE_WEBPLUGINS=	native
-WEBPLUGINS_DIR=	${PREFIX}/lib
-WEBPLUGINS_FILES=IcedTeaPlugin.so
+USES+=		webplugin:native
+WEBPLUGIN_DIR=	${PREFIX}/lib
+WEBPLUGIN_FILES=IcedTeaPlugin.so
 
 PLIST_FILES+=	lib/IcedTeaPlugin.so
 PORTDATA+=	plugin.jar
 PORTDOCS+=	plugin
-
-.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 .else
 CONFIGURE_ARGS+=--disable-plugin
 .endif
@@ -117,10 +114,10 @@ post-build:
 .endif
 
 post-install:
-	${MKDIR} ${DESKTOPDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.desktop ${DESKTOPDIR}
+	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.desktop ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/javaws.png \
-	    ${PREFIX}/share/pixmaps/itweb-javaws.png
+	    ${STAGEDIR}${PREFIX}/share/pixmaps/itweb-javaws.png
 
 .if ${PORT_OPTIONS:MTEST}
 test:	build
