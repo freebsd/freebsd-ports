@@ -536,6 +536,7 @@ bin/tuxmathtestclient
 %%DATADIR%%/sounds/tock.wav
 %%DATADIR%%/sounds/towerclock.wav
 %%DATADIR%%/sounds/tuxi.ogg
+%%DATADIR%%/images/menu
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/missions/multiplay
 @dirrm %%DATADIR%%/missions/lessons
