@@ -92,6 +92,12 @@ named_prestart()
 		warn 'named_pidfile: now determined from the conf file'
 	fi
 
+	echo ${pidfile%/pid}
+	if [ ! -d ${pidfile%/pid} ]; then
+		mkdir -p ${pidfile%/pid}
+		chown ${named_uid}:${named_uid} ${pidfile%/pid}
+	fi
+
 	command_args="-u ${named_uid:=root}"
 
 	if [ ! "$named_conf" = '/etc/namedb/named.conf' ]; then
