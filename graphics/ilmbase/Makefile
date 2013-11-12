@@ -44,6 +44,7 @@ regression-test regression test check:	build
 post-patch:
 	@${REINPLACE_CMD} -e 's|Iex/libIex.la|Iex/libIex.la $(PTHREAD_LIBS)|' \
 		${WRKSRC}/IlmThread/Makefile.am
+	@${REINPLACE_CMD} -e 's|== x|= x|g' ${WRKSRC}/configure
 
 post-install:
 .for e in ${BIN}

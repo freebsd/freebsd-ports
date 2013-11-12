@@ -47,6 +47,7 @@ LARGE_STACK_CONFIGURE_ENABLE=	large-stack
 PLIST_SUB=	MAJORVER=2_0
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|== x|= x|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|$$(datadir)/doc/OpenEXR-@OPENEXR_VERSION@/examples|$$(prefix)/share/examples/${PORTNAME}|' \
 		${WRKSRC}/IlmImfExamples/Makefile.in
 	@${REINPLACE_CMD} -e 's|$$(datadir)/doc/OpenEXR-@OPENEXR_VERSION@||' \
