@@ -12,7 +12,6 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms \
 		gbsplay:${PORTSDIR}/audio/gbsplay
 
 USE_GNOME=	glib12
-NO_STAGE=	yes
 USE_GCC=	any
 
 CONFIGURE_ARGS=	--disable-nas
@@ -39,6 +38,8 @@ gbsplay-post-patch:
 		 /^default:/ s|$$(mans)||' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gbsxmms.so ${PREFIX}/lib/xmms/Input
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/Input
+	${INSTALL_PROGRAM} ${WRKSRC}/gbsxmms.so \
+		${STAGEDIR}${PREFIX}/lib/xmms/Input
 
 .include "${MASTERDIR}/Makefile"
