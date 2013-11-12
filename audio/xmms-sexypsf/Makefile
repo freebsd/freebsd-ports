@@ -16,7 +16,6 @@ BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
-NO_STAGE=	yes
 USE_GNOME=	gtk12
 USE_LDCONFIG=	yes
 
@@ -42,16 +41,15 @@ do-build:
 		-o ${WRKSRC}/libsexypsf.so -shared -lz
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/libsexypsf.so ${PREFIX}/lib/xmms/Input/libsexypsf.so
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/Input
+	${INSTALL_PROGRAM} ${WRKSRC}/libsexypsf.so \
+		${STAGEDIR}${PREFIX}/lib/xmms/Input/libsexypsf.so
 
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/Docs/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Docs/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-
-post-install:
-	@${CAT} pkg-message
 
 .include <bsd.port.mk>
