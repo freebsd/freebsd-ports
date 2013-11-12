@@ -201,6 +201,7 @@ bnetd:*:700:700::0:0:Bnetd user:/nonexistent:/usr/sbin/nologin
 bopm:*:717:717::0:0:Blitzed Open Proxy Monitor:/nonexistent:/bin/sh
 openxpki:*:777:777::0:0:OpenXPKI Owner:/nonexistent:/usr/sbin/nologin
 puppet:*:814:814::0:0:Puppet Daemon:/nonexistent:/usr/sbin/nologin
+media:*:816:816::0:0:media Daemon:/nonexistent:/usr/sbin/nologin
 jenkins:*:818:818::0:0:Jenkins CI:/usr/local/jenkins:/bin/sh
 openacs:*:820:820::0:0:OpenACS Daemon User:/nonexistent:/usr/sbin/nologin
 dotlrn:*:821:821::0:0:.LRN Daemon User:/nonexistent:/usr/sbin/nologin
