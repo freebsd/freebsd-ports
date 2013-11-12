@@ -51,6 +51,69 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3bfc7016-4bcc-11e3-b0cf-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>31.0.1650.48</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>25 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[268565] Medium CVE-2013-6621: Use after free related to speech input elements.
+	      Credit to Khalil Zhani.</li>
+	    <li>[272786] High CVE-2013-6622: Use after free related to media elements. Credit
+	      to cloudfuzzer.</li>
+	    <li>[282925] High CVE-2013-6623: Out of bounds read in SVG. Credit to miaubiz.</li>
+	    <li>[290566] High CVE-2013-6624: Use after free related to “id” attribute strings.
+	      Credit to Jon Butler.</li>
+	    <li>[295010] High CVE-2013-6625: Use after free in DOM ranges. Credit to
+	      cloudfuzzer.</li>
+	    <li>[295695] Low CVE-2013-6626: Address bar spoofing related to interstitial
+	      warnings. Credit to Chamal de Silva.</li>
+	    <li>[299892] High CVE-2013-6627: Out of bounds read in HTTP parsing. Credit to
+	      skylined.</li>
+	    <li>[306959] Medium CVE-2013-6628: Issue with certificates not being checked
+	      during TLS renegotiation. Credit to Antoine Delignat-Lavaud and Karthikeyan
+	      Bhargavan from Prosecco of INRIA Paris.</li>
+	    <li>[315823] Medium-Critical CVE-2013-2931: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	    <li>[258723] Medium CVE-2013-6629: Read of uninitialized memory in libjpeg and
+	      libjpeg-turbo. Credit to Michal Zalewski of Google.</li>
+	    <li>[299835] Medium CVE-2013-6630: Read of uninitialized memory in libjpeg-turbo.
+	      Credit to Michal Zalewski of Google.</li>
+	    <li>[296804] High CVE-2013-6631: Use after free in libjingle. Credit to Patrik
+	      Höglund of the Chromium project.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2931</cvename>
+      <cvename>CVE-2013-6621</cvename>
+      <cvename>CVE-2013-6622</cvename>
+      <cvename>CVE-2013-6623</cvename>
+      <cvename>CVE-2013-6624</cvename>
+      <cvename>CVE-2013-6625</cvename>
+      <cvename>CVE-2013-6626</cvename>
+      <cvename>CVE-2013-6627</cvename>
+      <cvename>CVE-2013-6628</cvename>
+      <cvename>CVE-2013-6629</cvename>
+      <cvename>CVE-2013-6630</cvename>
+      <cvename>CVE-2013-6631</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2013-11-12</discovery>
+      <entry>2013-11-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5709d244-4873-11e3-8a46-000d601460a4">
     <topic>OpenSSH -- Memory corruption in sshd</topic>
     <affects>
