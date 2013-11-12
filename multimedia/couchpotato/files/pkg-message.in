@@ -1,0 +1,15 @@
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+multimedia/couchpotato includes an RC script:
+%%PREFIX%%/etc/rc.d/couchpotato
+
+TO START COUCHPOTATO ON BOOT:
+echo 'couchpotato_enable="YES"' >> /etc/rc.conf
+
+START MANUALLY:
+%%PREFIX%%/etc/rc.d/couchpotato start
+
+Once started, visit the following to configure:
+http://localhost:5050/
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
