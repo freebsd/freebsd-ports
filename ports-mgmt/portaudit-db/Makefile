@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	ports-mgmt
 DISTFILES=
 
-MAINTAINER=	secteam@FreeBSD.org
+MAINTAINER=	ports-secteam@FreeBSD.org
 COMMENT=	Creates a portaudit database from a current ports tree
 
 RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt

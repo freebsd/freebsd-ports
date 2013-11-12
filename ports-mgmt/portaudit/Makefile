@@ -6,7 +6,7 @@ PORTVERSION=	0.6.1
 CATEGORIES=	ports-mgmt security
 DISTFILES=
 
-MAINTAINER=	secteam@FreeBSD.org
+MAINTAINER=	ports-secteam@FreeBSD.org
 COMMENT=	Checks installed ports against a list of security vulnerabilities
 
 MAN1=		portaudit.1
