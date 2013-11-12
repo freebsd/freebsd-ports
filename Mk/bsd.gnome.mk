@@ -395,7 +395,7 @@ librsvg2_LIB_DEPENDS=	librsvg-2.so:${PORTSDIR}/graphics/librsvg2
 librsvg2_DETECT=	${LOCALBASE}/libdata/pkgconfig/librsvg-2.0.pc
 librsvg2_USE_GNOME_IMPL=libgsf gtk20
 
-eel2_LIB_DEPENDS=	libeel-2.2.so:${PORTSDIR}/x11-toolkits/eel
+eel2_LIB_DEPENDS=	libeel-2.so:${PORTSDIR}/x11-toolkits/eel
 eel2_DETECT=		${LOCALBASE}/libdata/pkgconfig/eel-2.0.pc
 eel2_USE_GNOME_IMPL=	gnomedesktop
 
