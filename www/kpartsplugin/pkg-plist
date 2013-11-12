@@ -1,4 +1,4 @@
-%%WEBPLUGINS_DIR%%/libkpartsplugin.so
+%%WEBPLUGIN_DIR%%/libkpartsplugin.so
 lib/kde4/kcm_kpartsplugin.so
 share/kde4/services/kcm_kpartsplugin.desktop
-@dirrmtry %%WEBPLUGINS_DIR%%
+@dirrmtry %%WEBPLUGIN_DIR%%
