@@ -20,26 +20,23 @@ USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-nas
 
-MAN6=		xabacus.6
+MOTIF_USES=	motif
+MOTIF_CONFIGURE_WITH=	motif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMOTIF}
-USES=		motif
-.else
-CONFIGURE_ARGS+=	--without-motif
-.endif
 
 .if ${PORT_OPTIONS:MESOUND}
 USE_GNOME+=	esound
 CONFIGURE_ARGS+=	--without-rplay --with-esound
 .else
-LIB_DEPENDS+=	rplay:${PORTSDIR}/audio/rplay
+LIB_DEPENDS+=		librplay.so:${PORTSDIR}/audio/rplay
 CONFIGURE_ARGS+=	--with-rplay --without-esound
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/games/|/|g' ${WRKSRC}/Makefile.in
+
+post-configure:
+	@${REINPLACE_CMD} -e '/^XWIDGETLDFLAGS/d' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
