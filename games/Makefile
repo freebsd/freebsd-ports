@@ -401,7 +401,6 @@
     SUBDIR += inform
     SUBDIR += inform7
     SUBDIR += instead
-    SUBDIR += intensityengine
     SUBDIR += interlogic
     SUBDIR += ioquake3
     SUBDIR += ioquake3-devel
@@ -1009,7 +1008,6 @@
     SUBDIR += wesnoth
     SUBDIR += whichwayisup
     SUBDIR += widelands
-    SUBDIR += windstille
     SUBDIR += wizznic
     SUBDIR += wmeyes
     SUBDIR += wmfortune

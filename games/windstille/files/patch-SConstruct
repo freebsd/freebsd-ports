@@ -1,15 +1,0 @@
---- SConstruct.orig	Thu Jun 14 15:59:31 2007
-+++ SConstruct	Thu Jun 14 16:03:28 2007
-@@ -99,7 +99,11 @@
-     return output
- 
- 
--conf_env = Environment()
-+conf_env = Environment(**ARGUMENTS)
-+conf_env.Replace(CCFLAGS = conf_env['CCFLAGS'].split())
-+conf_env.Replace(CXXFLAGS = conf_env['CXXFLAGS'].split())
-+conf_env.Replace(CPPPATH = conf_env['CPPPATH'].split())
-+conf_env.Replace(LIBPATH = conf_env['LIBPATH'].split())
- conf = Configure(conf_env, custom_tests = { 'Check32bit' : Check32bit })
- if conf.Check32bit() == "64bit":
-   conf.env.Append(CXXFLAGS="-D_SQ64")
