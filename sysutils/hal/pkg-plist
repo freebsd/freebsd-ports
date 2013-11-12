@@ -70,6 +70,13 @@ libexec/hald-probe-storage
 libexec/hald-probe-volume
 libexec/hald-runner
 sbin/hald
+share/PolicyKit/policy/org.freedesktop.hal.dockstation.policy
+share/PolicyKit/policy/org.freedesktop.hal.killswitch.policy
+share/PolicyKit/policy/org.freedesktop.hal.leds.policy
+share/PolicyKit/policy/org.freedesktop.hal.policy
+share/PolicyKit/policy/org.freedesktop.hal.power-management.policy
+share/PolicyKit/policy/org.freedesktop.hal.storage.policy
+share/PolicyKit/policy/org.freedesktop.hal.wol.policy
 %%PORTDOCS%%%%DOCSDIR%%/README.freebsd
 %%PORTDOCS%%%%DOCSDIR%%/README.fuse
 %%DATADIR%%/dist/hal.conf
@@ -89,13 +96,6 @@ sbin/hald
 %%DATADIR%%/fdi/policy/10osvendor/20-storage-methods.fdi
 %%DATADIR%%/fdi/policy/10osvendor/30-wol.fdi
 %%DATADIR%%/mount-fuse
-share/PolicyKit/policy/org.freedesktop.hal.dockstation.policy
-share/PolicyKit/policy/org.freedesktop.hal.killswitch.policy
-share/PolicyKit/policy/org.freedesktop.hal.leds.policy
-share/PolicyKit/policy/org.freedesktop.hal.policy
-share/PolicyKit/policy/org.freedesktop.hal.power-management.policy
-share/PolicyKit/policy/org.freedesktop.hal.storage.policy
-share/PolicyKit/policy/org.freedesktop.hal.wol.policy
 @exec mkdir -p %D/%%DATADIR%%/fdi/policy/20thirdparty
 @exec mkdir -p %D/%%DATADIR%%/fdi/preprobe/10osvendor
 @exec mkdir -p %D/%%DATADIR%%/fdi/preprobe/20thirdparty
@@ -112,6 +112,8 @@ share/PolicyKit/policy/org.freedesktop.hal.wol.policy
 @dirrm %%DATADIR%%/dist
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
+@dirrmtry share/PolicyKit/policy
+@dirrmtry share/PolicyKit
 @dirrm libexec/hal/scripts/freebsd
 @dirrm libexec/hal/scripts
 @dirrm libexec/hal
