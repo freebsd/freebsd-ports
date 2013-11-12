@@ -1,13 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	Email-MIME
-PORTVERSION=	1.924
+PORTVERSION=	1.925
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Easy MIME message parsing
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Email-Simple>=2.102:${PORTSDIR}/mail/p5-Email-Simple \
 		p5-Email-MessageID>=0:${PORTSDIR}/mail/p5-Email-MessageID \
@@ -19,11 +22,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Email::MIME.3 \
-		Email::MIME::Creator.3 \
-		Email::MIME::Encode.3 \
-		Email::MIME::Header.3 \
-		Email::MIME::Modifier.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
