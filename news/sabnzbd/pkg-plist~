@@ -1,0 +1,570 @@
+%%ETCDIR%%
+%%DATADIR%%/SABnzbd/ABOUT.txt
+%%DATADIR%%/SABnzbd/CHANGELOG.txt
+%%DATADIR%%/SABnzbd/COPYRIGHT.txt
+%%DATADIR%%/SABnzbd/GPL2.txt
+%%DATADIR%%/SABnzbd/GPL3.txt
+%%DATADIR%%/SABnzbd/INSTALL.txt
+%%DATADIR%%/SABnzbd/ISSUES.txt
+%%DATADIR%%/SABnzbd/PKG-INFO
+%%DATADIR%%/SABnzbd/README.txt
+%%DATADIR%%/SABnzbd/SABHelper.py
+%%DATADIR%%/SABnzbd/SABnzbd.py
+%%DATADIR%%/SABnzbd/Sample-PostProc.cmd
+%%DATADIR%%/SABnzbd/Sample-PostProc.sh
+%%DATADIR%%/SABnzbd/cherrypy/LICENSE.txt
+%%DATADIR%%/SABnzbd/cherrypy/VERSION.txt
+%%DATADIR%%/SABnzbd/cherrypy/__init__.py
+%%DATADIR%%/SABnzbd/cherrypy/_cpcgifs.py
+%%DATADIR%%/SABnzbd/cherrypy/_cpchecker.py
+%%DATADIR%%/SABnzbd/cherrypy/_cpconfig.py
+%%DATADIR%%/SABnzbd/cherrypy/_cpdispatch.py
+%%DATADIR%%/SABnzbd/cherrypy/_cperror.py
+%%DATADIR%%/SABnzbd/cherrypy/_cplogging.py
+%%DATADIR%%/SABnzbd/cherrypy/_cpmodpy.py
+%%DATADIR%%/SABnzbd/cherrypy/_cprequest.py
+%%DATADIR%%/SABnzbd/cherrypy/_cpserver.py
+%%DATADIR%%/SABnzbd/cherrypy/_cpthreadinglocal.py
+%%DATADIR%%/SABnzbd/cherrypy/_cptools.py
+%%DATADIR%%/SABnzbd/cherrypy/_cptree.py
+%%DATADIR%%/SABnzbd/cherrypy/_cpwsgi.py
+%%DATADIR%%/SABnzbd/cherrypy/_cpwsgi_server.py
+%%DATADIR%%/SABnzbd/cherrypy/cherryd
+%%DATADIR%%/SABnzbd/cherrypy/favicon.ico
+%%DATADIR%%/SABnzbd/cherrypy/lib/__init__.py
+%%DATADIR%%/SABnzbd/cherrypy/lib/auth.py
+%%DATADIR%%/SABnzbd/cherrypy/lib/caching.py
+%%DATADIR%%/SABnzbd/cherrypy/lib/covercp.py
+%%DATADIR%%/SABnzbd/cherrypy/lib/cptools.py
+%%DATADIR%%/SABnzbd/cherrypy/lib/encoding.py
+%%DATADIR%%/SABnzbd/cherrypy/lib/http.py
+%%DATADIR%%/SABnzbd/cherrypy/lib/httpauth.py
+%%DATADIR%%/SABnzbd/cherrypy/lib/profiler.py
+%%DATADIR%%/SABnzbd/cherrypy/lib/safemime.py
+%%DATADIR%%/SABnzbd/cherrypy/lib/sessions.py
+%%DATADIR%%/SABnzbd/cherrypy/lib/static.py
+%%DATADIR%%/SABnzbd/cherrypy/lib/tidy.py
+%%DATADIR%%/SABnzbd/cherrypy/lib/wsgiapp.py
+%%DATADIR%%/SABnzbd/cherrypy/lib/xmlrpc.py
+%%DATADIR%%/SABnzbd/cherrypy/process/__init__.py
+%%DATADIR%%/SABnzbd/cherrypy/process/plugins.py
+%%DATADIR%%/SABnzbd/cherrypy/process/servers.py
+%%DATADIR%%/SABnzbd/cherrypy/process/win32.py
+%%DATADIR%%/SABnzbd/cherrypy/process/wspbus.py
+%%DATADIR%%/SABnzbd/cherrypy/wsgiserver/__init__.py
+%%DATADIR%%/SABnzbd/email/badfetch-da.tmpl
+%%DATADIR%%/SABnzbd/email/badfetch-de.tmpl
+%%DATADIR%%/SABnzbd/email/badfetch-en.tmpl
+%%DATADIR%%/SABnzbd/email/badfetch-es.tmpl
+%%DATADIR%%/SABnzbd/email/badfetch-fr.tmpl
+%%DATADIR%%/SABnzbd/email/badfetch-nb.tmpl
+%%DATADIR%%/SABnzbd/email/badfetch-nl.tmpl
+%%DATADIR%%/SABnzbd/email/badfetch-pl.tmpl
+%%DATADIR%%/SABnzbd/email/badfetch-pt_BR.tmpl
+%%DATADIR%%/SABnzbd/email/badfetch-ro.tmpl
+%%DATADIR%%/SABnzbd/email/badfetch-sv.tmpl
+%%DATADIR%%/SABnzbd/email/email-da.tmpl
+%%DATADIR%%/SABnzbd/email/email-de.tmpl
+%%DATADIR%%/SABnzbd/email/email-en.tmpl
+%%DATADIR%%/SABnzbd/email/email-es.tmpl
+%%DATADIR%%/SABnzbd/email/email-fr.tmpl
+%%DATADIR%%/SABnzbd/email/email-nb.tmpl
+%%DATADIR%%/SABnzbd/email/email-nl.tmpl
+%%DATADIR%%/SABnzbd/email/email-pl.tmpl
+%%DATADIR%%/SABnzbd/email/email-pt_BR.tmpl
+%%DATADIR%%/SABnzbd/email/email-ro.tmpl
+%%DATADIR%%/SABnzbd/email/email-sv.tmpl
+%%DATADIR%%/SABnzbd/email/rss-da.tmpl
+%%DATADIR%%/SABnzbd/email/rss-de.tmpl
+%%DATADIR%%/SABnzbd/email/rss-en.tmpl
+%%DATADIR%%/SABnzbd/email/rss-es.tmpl
+%%DATADIR%%/SABnzbd/email/rss-fr.tmpl
+%%DATADIR%%/SABnzbd/email/rss-nb.tmpl
+%%DATADIR%%/SABnzbd/email/rss-nl.tmpl
+%%DATADIR%%/SABnzbd/email/rss-pl.tmpl
+%%DATADIR%%/SABnzbd/email/rss-pt_BR.tmpl
+%%DATADIR%%/SABnzbd/email/rss-ro.tmpl
+%%DATADIR%%/SABnzbd/email/rss-sv.tmpl
+%%DATADIR%%/SABnzbd/gntp/__init__.py
+%%DATADIR%%/SABnzbd/gntp/notifier.py
+%%DATADIR%%/SABnzbd/icons/nzb.ico
+%%DATADIR%%/SABnzbd/icons/sabnzbd.ico
+%%DATADIR%%/SABnzbd/icons/sabnzbd16.ico
+%%DATADIR%%/SABnzbd/icons/sabnzbd16green.ico
+%%DATADIR%%/SABnzbd/icons/sabnzbd16paused.ico
+%%DATADIR%%/SABnzbd/interfaces/Classic/README.TXT
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/config.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/config_cat.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/config_folders.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/config_general.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/config_indexers.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/config_notify.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/config_rss.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/config_scheduling.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/config_server.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/config_sorting.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/config_switches.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/history.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/inc_bottom.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/inc_cmenu.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/inc_top.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/main.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/nzo.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/queue.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/static/images/favicon.ico
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/static/javascript/dropdown.js
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/static/placeholder.txt
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/static/stylesheets/colorschemes/black.css
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/static/stylesheets/colorschemes/classic.css
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/static/stylesheets/colorschemes/darkblue.css
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/static/stylesheets/colorschemes/green.css
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/static/stylesheets/colorschemes/lightblue.css
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/static/stylesheets/colorschemes/red.css
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/static/stylesheets/colorschemes/white-black.css
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/static/stylesheets/default.css
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/static/stylesheets/defaultcolors.css
+%%DATADIR%%/SABnzbd/interfaces/Classic/templates/status.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Config/README.txt
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/_inc_footer_uc.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/_inc_header_uc.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/config.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/config_cat.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/config_folders.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/config_general.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/config_indexers.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/config_notify.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/config_rss.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/config_scheduling.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/config_server.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/config_sorting.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/config_special.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/config_switches.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/main.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/css/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/css/images/ui-bg_flat_0_eeeeee_40x100.png
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/css/images/ui-bg_flat_0_ffffff_40x100.png
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/css/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/css/images/ui-bg_glass_95_fef1ec_1x400.png
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/css/images/ui-bg_highlight-soft_75_dcdcdc_1x100.png
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/css/images/ui-bg_highlight-soft_75_dddddd_1x100.png
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/css/images/ui-bg_highlight-soft_75_efefef_1x100.png
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/css/images/ui-bg_inset-soft_75_dfdfdf_1x100.png
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/css/images/ui-icons_222222_256x240.png
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/css/images/ui-icons_2e83ff_256x240.png
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/css/images/ui-icons_8c291d_256x240.png
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/css/images/ui-icons_cd0a0a_256x240.png
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/css/style.css
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/ico/apple-touch-icon-114x114-precomposed.png
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/ico/apple-touch-icon-144x144-precomposed.png
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/ico/apple-touch-icon-57x57-precomposed.png
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/ico/apple-touch-icon-72x72-precomposed.png
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/ico/apple-touch-icon-precomposed.png
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/ico/favicon.ico
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/images/button.png
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/images/loading-bar.gif
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/images/loading16.gif
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/images/logo.png
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/images/mini-left.gif
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/images/mini-right.gif
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/images/no16.png
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/images/select_arrow.gif
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/images/yes16.png
+%%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/js/script.js
+%%DATADIR%%/SABnzbd/interfaces/Mobile/README.txt
+%%DATADIR%%/SABnzbd/interfaces/Mobile/licenses/LICENSE-BSD.txt
+%%DATADIR%%/SABnzbd/interfaces/Mobile/licenses/LICENSE-CC.txt
+%%DATADIR%%/SABnzbd/interfaces/Mobile/licenses/LICENSE-GPL.txt
+%%DATADIR%%/SABnzbd/interfaces/Mobile/licenses/LICENSE-MIT.txt
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/main.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/dark/back_button.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/dark/back_button_clicked.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/dark/button.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/dark/button_clicked.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/dark/chevron.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/dark/chevron_circle.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/dark/grayButton.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/dark/loading.gif
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/dark/on_off.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/dark/rowhead.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/dark/toggle.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/dark/toggleOn.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/dark/toolbar.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/dark/whiteButton.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/light/backButton.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/light/blueButton.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/light/cancel.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/light/chevron.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/light/grayButton.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/light/listArrowSel.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/light/listGroup.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/light/loading.gif
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/light/on_off.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/light/pinstripes.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/light/selection.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/light/thumb.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/light/toggle.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/light/toggleOn.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/light/toolButton.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/light/toolbar.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/light/whiteButton.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/sab.png
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/javascripts/mobile.js
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/stylesheets/colorschemes/dark.css
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/stylesheets/colorschemes/light.css
+%%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/stylesheets/jqtouch.css
+%%DATADIR%%/SABnzbd/interfaces/Plush/README.txt
+%%DATADIR%%/SABnzbd/interfaces/Plush/licenses/LICENSE-BSD.txt
+%%DATADIR%%/SABnzbd/interfaces/Plush/licenses/LICENSE-CC.txt
+%%DATADIR%%/SABnzbd/interfaces/Plush/licenses/LICENSE-GPL.txt
+%%DATADIR%%/SABnzbd/interfaces/Plush/licenses/LICENSE-GPL3.txt
+%%DATADIR%%/SABnzbd/interfaces/Plush/licenses/LICENSE-LGPL.txt
+%%DATADIR%%/SABnzbd/interfaces/Plush/licenses/LICENSE-MIT.txt
+%%DATADIR%%/SABnzbd/interfaces/Plush/licenses/LICENSE-WebToolkit.txt
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/_inc_footer.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/_inc_header.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/_inc_modals.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/config.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/config_cat.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/config_folders.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/config_general.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/config_indexers.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/config_notify.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/config_rss.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/config_scheduling.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/config_server.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/config_sorting.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/config_special.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/config_switches.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/history.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/main.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/nzo.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/queue.tmpl
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/javascripts/config.js
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/javascripts/lib.js
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/javascripts/plush.js
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/gold.css
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images-split.tar.gz
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/colorbox-border.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/colorbox-controls.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/loading-bar.gif
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/loading-spinner.gif
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/addnzb-grey.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/addnzb.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/config.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/connections-grey.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/connections.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/downloads-grey.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/downloads.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/help-grey.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/help.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/options.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/refresh-grey.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/refresh.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/rss-grey.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/rss.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/sabnzbdplus.ico
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/sprite-config.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/sprite-main.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/sprite-tilex.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/sprite-tiley.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-bg_flat_0_eeeeee_40x100.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-bg_flat_55_c0402a_40x100.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-bg_flat_55_eeeeee_40x100.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-bg_glass_100_f8f8f8_1x400.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-bg_glass_35_dddddd_1x400.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-bg_glass_60_eeeeee_1x400.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-bg_inset-hard_75_999999_1x100.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-bg_inset-soft_50_c9c9c9_1x100.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-icons_3383bb_256x240.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-icons_454545_256x240.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-icons_70b2e1_256x240.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-icons_999999_256x240.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-icons_fbc856_256x240.png
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/jquery-ui-1.8.15.custom.css
+%%DATADIR%%/SABnzbd/interfaces/Plush/templates/status.tmpl
+%%DATADIR%%/SABnzbd/interfaces/smpl/CreativeCommons2-5.txt
+%%DATADIR%%/SABnzbd/interfaces/smpl/CreativeCommons3-0.txt
+%%DATADIR%%/SABnzbd/interfaces/smpl/GPL2.txt
+%%DATADIR%%/SABnzbd/interfaces/smpl/GPL3.txt
+%%DATADIR%%/SABnzbd/interfaces/smpl/LICENCE-silk_icons.txt
+%%DATADIR%%/SABnzbd/interfaces/smpl/LICENSE.txt
+%%DATADIR%%/SABnzbd/interfaces/smpl/License-ExCanvas.txt
+%%DATADIR%%/SABnzbd/interfaces/smpl/License-MochiKit.txt
+%%DATADIR%%/SABnzbd/interfaces/smpl/License-Nuvola.txt
+%%DATADIR%%/SABnzbd/interfaces/smpl/License-PlotKit.txt
+%%DATADIR%%/SABnzbd/interfaces/smpl/License-getElementPosition.txt
+%%DATADIR%%/SABnzbd/interfaces/smpl/README.txt
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/config.tmpl
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/config_cat.tmpl
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/config_folders.tmpl
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/config_general.tmpl
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/config_indexers.tmpl
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/config_notify.tmpl
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/config_rss.tmpl
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/config_scheduling.tmpl
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/config_server.tmpl
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/config_sorting.tmpl
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/config_switches.tmpl
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/history.tmpl
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/main.tmpl
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/nzo.tmpl
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/queue.tmpl
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/MochiKit/MochiKit.js
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/MochiKit/__package__.js
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/PlotKit/PlotKit.js
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/excanvas/excanvas.js
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/feed-icon-14x14.png
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/images/browser.png
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/images/bullet_arrow_down.png
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/images/control_pause.png
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/images/control_play.png
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/images/down.gif
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/images/drive.png
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/images/drive_go.png
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/images/favicon.ico
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/images/key_enter.png
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/images/messagebox_critical.png
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/images/newzbin.png
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/images/nuvola/kgpg.png
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/images/up.gif
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/sabnzbd_small4.png
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/stylesheets/colorschemes/black.css
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/stylesheets/colorschemes/white.css
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/stylesheets/smpl.css
+%%DATADIR%%/SABnzbd/interfaces/smpl/templates/status.tmpl
+%%DATADIR%%/SABnzbd/interfaces/wizard/README.TXT
+%%DATADIR%%/SABnzbd/interfaces/wizard/inc_bottom.tmpl
+%%DATADIR%%/SABnzbd/interfaces/wizard/inc_top.tmpl
+%%DATADIR%%/SABnzbd/interfaces/wizard/index.html
+%%DATADIR%%/SABnzbd/interfaces/wizard/one.html
+%%DATADIR%%/SABnzbd/interfaces/wizard/static/images/classic-th.png
+%%DATADIR%%/SABnzbd/interfaces/wizard/static/images/classic.png
+%%DATADIR%%/SABnzbd/interfaces/wizard/static/images/favicon.ico
+%%DATADIR%%/SABnzbd/interfaces/wizard/static/images/icon_sab.png
+%%DATADIR%%/SABnzbd/interfaces/wizard/static/images/plush-th.png
+%%DATADIR%%/SABnzbd/interfaces/wizard/static/images/plush.png
+%%DATADIR%%/SABnzbd/interfaces/wizard/static/images/smpl-th.png
+%%DATADIR%%/SABnzbd/interfaces/wizard/static/images/smpl.png
+%%DATADIR%%/SABnzbd/interfaces/wizard/static/javascript/checkserver.js
+%%DATADIR%%/SABnzbd/interfaces/wizard/static/javascript/jquery.js
+%%DATADIR%%/SABnzbd/interfaces/wizard/static/javascript/pagetwo.js
+%%DATADIR%%/SABnzbd/interfaces/wizard/static/javascript/restart.js
+%%DATADIR%%/SABnzbd/interfaces/wizard/static/style.css
+%%DATADIR%%/SABnzbd/interfaces/wizard/three.html
+%%DATADIR%%/SABnzbd/interfaces/wizard/two.html
+%%DATADIR%%/SABnzbd/licenses/License-CherryPy.txt
+%%DATADIR%%/SABnzbd/licenses/License-Python.txt
+%%DATADIR%%/SABnzbd/licenses/License-configobj.txt
+%%DATADIR%%/SABnzbd/licenses/License-feedparser.txt
+%%DATADIR%%/SABnzbd/licenses/License-gntp.txt
+%%DATADIR%%/SABnzbd/licenses/License-json.txt
+%%DATADIR%%/SABnzbd/licenses/License-kronos.txt
+%%DATADIR%%/SABnzbd/licenses/License-listquote.txt
+%%DATADIR%%/SABnzbd/licenses/License-msgfmt.txt
+%%DATADIR%%/SABnzbd/licenses/License-pynewsleecher.txt
+%%DATADIR%%/SABnzbd/licenses/License-rarfile.txt
+%%DATADIR%%/SABnzbd/licenses/License-rsslib.txt
+%%DATADIR%%/SABnzbd/licenses/License-ssmtplib.txt
+%%DATADIR%%/SABnzbd/licenses/License-systrayicon.txt
+%%DATADIR%%/SABnzbd/locale/da/LC_MESSAGES/SABnzbd.mo
+%%DATADIR%%/SABnzbd/locale/de/LC_MESSAGES/SABnzbd.mo
+%%DATADIR%%/SABnzbd/locale/es/LC_MESSAGES/SABnzbd.mo
+%%DATADIR%%/SABnzbd/locale/fr/LC_MESSAGES/SABnzbd.mo
+%%DATADIR%%/SABnzbd/locale/nb/LC_MESSAGES/SABnzbd.mo
+%%DATADIR%%/SABnzbd/locale/nl/LC_MESSAGES/SABnzbd.mo
+%%DATADIR%%/SABnzbd/locale/pl/LC_MESSAGES/SABnzbd.mo
+%%DATADIR%%/SABnzbd/locale/pt_BR/LC_MESSAGES/SABnzbd.mo
+%%DATADIR%%/SABnzbd/locale/ro/LC_MESSAGES/SABnzbd.mo
+%%DATADIR%%/SABnzbd/locale/sv/LC_MESSAGES/SABnzbd.mo
+%%DATADIR%%/SABnzbd/po/email/SABemail.pot
+%%DATADIR%%/SABnzbd/po/email/da.po
+%%DATADIR%%/SABnzbd/po/email/de.po
+%%DATADIR%%/SABnzbd/po/email/en.po
+%%DATADIR%%/SABnzbd/po/email/es.po
+%%DATADIR%%/SABnzbd/po/email/fr.po
+%%DATADIR%%/SABnzbd/po/email/nb.po
+%%DATADIR%%/SABnzbd/po/email/nl.po
+%%DATADIR%%/SABnzbd/po/email/pl.po
+%%DATADIR%%/SABnzbd/po/email/pl.px
+%%DATADIR%%/SABnzbd/po/email/pt_BR.po
+%%DATADIR%%/SABnzbd/po/email/ro.po
+%%DATADIR%%/SABnzbd/po/email/ro.px
+%%DATADIR%%/SABnzbd/po/email/sv.po
+%%DATADIR%%/SABnzbd/po/main/SABnzbd.pot
+%%DATADIR%%/SABnzbd/po/main/da.po
+%%DATADIR%%/SABnzbd/po/main/de.po
+%%DATADIR%%/SABnzbd/po/main/es.po
+%%DATADIR%%/SABnzbd/po/main/fr.po
+%%DATADIR%%/SABnzbd/po/main/nb.po
+%%DATADIR%%/SABnzbd/po/main/nl.po
+%%DATADIR%%/SABnzbd/po/main/pl.po
+%%DATADIR%%/SABnzbd/po/main/pl.px
+%%DATADIR%%/SABnzbd/po/main/pt_BR.po
+%%DATADIR%%/SABnzbd/po/main/ro.po
+%%DATADIR%%/SABnzbd/po/main/ro.px
+%%DATADIR%%/SABnzbd/po/main/sv.po
+%%DATADIR%%/SABnzbd/po/nsis/SABnsis.pot
+%%DATADIR%%/SABnzbd/po/nsis/da.po
+%%DATADIR%%/SABnzbd/po/nsis/de.po
+%%DATADIR%%/SABnzbd/po/nsis/es.po
+%%DATADIR%%/SABnzbd/po/nsis/fr.po
+%%DATADIR%%/SABnzbd/po/nsis/nb.po
+%%DATADIR%%/SABnzbd/po/nsis/nl.po
+%%DATADIR%%/SABnzbd/po/nsis/pl.po
+%%DATADIR%%/SABnzbd/po/nsis/pl.px
+%%DATADIR%%/SABnzbd/po/nsis/pt_BR.po
+%%DATADIR%%/SABnzbd/po/nsis/ro.po
+%%DATADIR%%/SABnzbd/po/nsis/ro.px
+%%DATADIR%%/SABnzbd/po/nsis/sv.po
+%%DATADIR%%/SABnzbd/sabnzbd/__init__.py
+%%DATADIR%%/SABnzbd/sabnzbd/api.py
+%%DATADIR%%/SABnzbd/sabnzbd/articlecache.py
+%%DATADIR%%/SABnzbd/sabnzbd/assembler.py
+%%DATADIR%%/SABnzbd/sabnzbd/bpsmeter.py
+%%DATADIR%%/SABnzbd/sabnzbd/cfg.py
+%%DATADIR%%/SABnzbd/sabnzbd/config.py
+%%DATADIR%%/SABnzbd/sabnzbd/constants.py
+%%DATADIR%%/SABnzbd/sabnzbd/database.py
+%%DATADIR%%/SABnzbd/sabnzbd/decoder.py
+%%DATADIR%%/SABnzbd/sabnzbd/decorators.py
+%%DATADIR%%/SABnzbd/sabnzbd/dirscanner.py
+%%DATADIR%%/SABnzbd/sabnzbd/downloader.py
+%%DATADIR%%/SABnzbd/sabnzbd/emailer.py
+%%DATADIR%%/SABnzbd/sabnzbd/encoding.py
+%%DATADIR%%/SABnzbd/sabnzbd/growler.py
+%%DATADIR%%/SABnzbd/sabnzbd/interface.py
+%%DATADIR%%/SABnzbd/sabnzbd/lang.py
+%%DATADIR%%/SABnzbd/sabnzbd/misc.py
+%%DATADIR%%/SABnzbd/sabnzbd/newsunpack.py
+%%DATADIR%%/SABnzbd/sabnzbd/newswrapper.py
+%%DATADIR%%/SABnzbd/sabnzbd/newzbin.py
+%%DATADIR%%/SABnzbd/sabnzbd/nzbqueue.py
+%%DATADIR%%/SABnzbd/sabnzbd/nzbstuff.py
+%%DATADIR%%/SABnzbd/sabnzbd/osxmenu.py
+%%DATADIR%%/SABnzbd/sabnzbd/panic.py
+%%DATADIR%%/SABnzbd/sabnzbd/postproc.py
+%%DATADIR%%/SABnzbd/sabnzbd/powersup.py
+%%DATADIR%%/SABnzbd/sabnzbd/rss.py
+%%DATADIR%%/SABnzbd/sabnzbd/sabtray.py
+%%DATADIR%%/SABnzbd/sabnzbd/scheduler.py
+%%DATADIR%%/SABnzbd/sabnzbd/skintext.py
+%%DATADIR%%/SABnzbd/sabnzbd/trylist.py
+%%DATADIR%%/SABnzbd/sabnzbd/tvsort.py
+%%DATADIR%%/SABnzbd/sabnzbd/urlgrabber.py
+%%DATADIR%%/SABnzbd/sabnzbd/utils/__init__.py
+%%DATADIR%%/SABnzbd/sabnzbd/utils/certgen.py
+%%DATADIR%%/SABnzbd/sabnzbd/utils/configobj.py
+%%DATADIR%%/SABnzbd/sabnzbd/utils/feedparser.py
+%%DATADIR%%/SABnzbd/sabnzbd/utils/json.py
+%%DATADIR%%/SABnzbd/sabnzbd/utils/kronos.py
+%%DATADIR%%/SABnzbd/sabnzbd/utils/listquote.py
+%%DATADIR%%/SABnzbd/sabnzbd/utils/pathbrowser.py
+%%DATADIR%%/SABnzbd/sabnzbd/utils/rarfile.py
+%%DATADIR%%/SABnzbd/sabnzbd/utils/rsslib.py
+%%DATADIR%%/SABnzbd/sabnzbd/utils/servertests.py
+%%DATADIR%%/SABnzbd/sabnzbd/utils/ssmtplib.py
+%%DATADIR%%/SABnzbd/sabnzbd/utils/systrayiconthread.py
+%%DATADIR%%/SABnzbd/sabnzbd/utils/upload.py
+%%DATADIR%%/SABnzbd/sabnzbd/version.py
+%%DATADIR%%/SABnzbd/sabnzbd/wizard.py
+%%DATADIR%%/SABnzbd/tools/make_mo.py
+%%DATADIR%%/SABnzbd/tools/msgfmt.py
+%%DATADIR%%/SABnzbd/util/__init__.py
+%%DATADIR%%/SABnzbd/util/apireg.py
+%%DATADIR%%/SABnzbd/util/mailslot.py
+@dirrmtry %%ETCDIR%%
+@dirrmtry %%DATADIR%%/SABnzbd/util
+@dirrmtry %%DATADIR%%/SABnzbd/tools
+@dirrmtry %%DATADIR%%/SABnzbd/sabnzbd/utils
+@dirrmtry %%DATADIR%%/SABnzbd/sabnzbd
+@dirrmtry %%DATADIR%%/SABnzbd/po/nsis
+@dirrmtry %%DATADIR%%/SABnzbd/po/main
+@dirrmtry %%DATADIR%%/SABnzbd/po/email
+@dirrmtry %%DATADIR%%/SABnzbd/po
+@dirrmtry %%DATADIR%%/SABnzbd/locale/sv/LC_MESSAGES
+@dirrmtry %%DATADIR%%/SABnzbd/locale/sv
+@dirrmtry %%DATADIR%%/SABnzbd/locale/ro/LC_MESSAGES
+@dirrmtry %%DATADIR%%/SABnzbd/locale/ro
+@dirrmtry %%DATADIR%%/SABnzbd/locale/pt_BR/LC_MESSAGES
+@dirrmtry %%DATADIR%%/SABnzbd/locale/pt_BR
+@dirrmtry %%DATADIR%%/SABnzbd/locale/pl/LC_MESSAGES
+@dirrmtry %%DATADIR%%/SABnzbd/locale/pl
+@dirrmtry %%DATADIR%%/SABnzbd/locale/nl/LC_MESSAGES
+@dirrmtry %%DATADIR%%/SABnzbd/locale/nl
+@dirrmtry %%DATADIR%%/SABnzbd/locale/nb/LC_MESSAGES
+@dirrmtry %%DATADIR%%/SABnzbd/locale/nb
+@dirrmtry %%DATADIR%%/SABnzbd/locale/fr/LC_MESSAGES
+@dirrmtry %%DATADIR%%/SABnzbd/locale/fr
+@dirrmtry %%DATADIR%%/SABnzbd/locale/es/LC_MESSAGES
+@dirrmtry %%DATADIR%%/SABnzbd/locale/es
+@dirrmtry %%DATADIR%%/SABnzbd/locale/de/LC_MESSAGES
+@dirrmtry %%DATADIR%%/SABnzbd/locale/de
+@dirrmtry %%DATADIR%%/SABnzbd/locale/da/LC_MESSAGES
+@dirrmtry %%DATADIR%%/SABnzbd/locale/da
+@dirrmtry %%DATADIR%%/SABnzbd/locale
+@dirrmtry %%DATADIR%%/SABnzbd/licenses
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/wizard/static/javascript
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/wizard/static/images
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/wizard/static
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/wizard
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/stylesheets/colorschemes
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/stylesheets
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/images/nuvola
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/images
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/excanvas
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/PlotKit
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/smpl/templates/static/MochiKit
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/smpl/templates/static
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/smpl/templates
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/smpl
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/jqueryui
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/stylesheets
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Plush/templates/static/javascripts
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Plush/templates/static
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Plush/templates
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Plush/licenses
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Plush
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/stylesheets/colorschemes
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/stylesheets
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/javascripts
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/light
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images/dark
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static/images
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Mobile/templates/static
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Mobile/templates
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Mobile/licenses
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Mobile
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/js
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/images
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/ico
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/css/images
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg/css
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Config/templates/staticcfg
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Config/templates
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Config
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Classic/templates/static/stylesheets/colorschemes
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Classic/templates/static/stylesheets
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Classic/templates/static/javascript
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Classic/templates/static/images
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Classic/templates/static
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Classic/templates
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces/Classic
+@dirrmtry %%DATADIR%%/SABnzbd/interfaces
+@dirrmtry %%DATADIR%%/SABnzbd/icons
+@dirrmtry %%DATADIR%%/SABnzbd/gntp
+@dirrmtry %%DATADIR%%/SABnzbd/email
+@dirrmtry %%DATADIR%%/SABnzbd/cherrypy/wsgiserver
+@dirrmtry %%DATADIR%%/SABnzbd/cherrypy/process
+@dirrmtry %%DATADIR%%/SABnzbd/cherrypy/lib
+@dirrmtry %%DATADIR%%/SABnzbd/cherrypy
+@dirrmtry %%DATADIR%%/SABnzbd
+@dirrmtry %%DATADIR%%
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%
+@exec chown media:media %D/etc/sabnzbd
