@@ -3,7 +3,7 @@
 
 PORTNAME=	arpwatch
 PORTVERSION=	2.1.a15
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/ \
 		${MASTER_SITE_GENTOO}
@@ -13,12 +13,12 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.([^\.]*)$/\1/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitor arp & rarp requests
 
+LICENSE=	BSD
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--quiet
 MAKE_ENV+=	BINOWN="${BINOWN}" BINGRP="${BINGRP}"
 INSTALL_TARGET=	install install-man
-MAN8=		arpwatch.8 arpsnmp.8
 
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	arpwatch
@@ -40,7 +40,5 @@ post-install:
 	done
 	${INSTALL_SCRIPT} ${WRKSRC}/arp2ethers ${STAGEDIR}${PREFIX}/arpwatch
 	${INSTALL_SCRIPT} ${WRKSRC}/massagevendor ${STAGEDIR}${PREFIX}/arpwatch
-
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

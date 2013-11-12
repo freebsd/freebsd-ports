@@ -6,6 +6,8 @@ arpwatch/ethercodes.dat
 arpwatch/euppertolower.awk
 arpwatch/massagevendor
 arpwatch/p.awk
+man/man8/arpsnmp.8.gz
+man/man8/arpwatch.8.gz
 sbin/arpsnmp
 sbin/arpwatch
 @unexec test -f %D/arpwatch/arp.dat && test -s %D/arpwatch/arp.dat || rm -f %D/arpwatch/arp.dat
