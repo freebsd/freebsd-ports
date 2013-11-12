@@ -1,4 +1,4 @@
 Cflow is a perl module for analyzing raw flow files written by
 cflowd, a package used to collect Cisco NetFlow data.
 
-WWW:	http://net.doit.wisc.edu/~plonka/Cflow/
+WWW: http://net.doit.wisc.edu/~plonka/Cflow/
