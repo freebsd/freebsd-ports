@@ -81,9 +81,10 @@ man/man1/fuse.1.gz
 %%ICONS%%@dirrmtry share/icons/hicolor/128x128
 %%ICONS%%@dirrmtry share/icons/hicolor
 %%ICONS%%@dirrmtry share/icons
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.copyright
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

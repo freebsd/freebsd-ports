@@ -3,7 +3,7 @@
 
 PORTNAME=	fuse
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}-emulator/${PORTNAME}/${PORTVERSION}
 
@@ -24,10 +24,11 @@ CONFIGURE_ARGS+=--without-alsa --without-joystick
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 
-OPTIONS_DEFINE=		AO ICONS
+OPTIONS_DEFINE=		AO ICONS ROMS
 OPTIONS_DEFAULT=	ICONS GTK2
 OPTIONS_SINGLE=		UI
 UI_DESC=		User Interface
+ROMS_DESC=		Extra ROM images (128p, 256s, Gluck, IF1, Opus, TrDOS)
 OPTIONS_SINGLE_UI=	GTK2 GTK3 SDL SVGALIB
 
 OPTIONS_SUB=		yes
@@ -46,6 +47,7 @@ SDL_CONFIGURE_ON=	--without-gtk
 SVGALIB_LIB_DEPENDS=	libvga.so:${PORTSDIR}/graphics/svgalib
 SVGALIB_CONFIGURE_WITH=	svgalib
 SVGALIB_CONFIGURE_ON=	--without-gtk
+ROMS_RUN_DEPENDS=	fuse-roms>0:${PORTSDIR}/emulators/fuse-roms
 
 .include <bsd.port.options.mk>
 
@@ -57,7 +59,7 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS ChangeLog README THANKS \
-		${STAGEDIR}${DOCSDIR}
+		roms/README.copyright ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
