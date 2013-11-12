@@ -11,28 +11,23 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programs to compare protein sequences and profiles
 
 WRKSRC=		${WRKDIR}/SRC-${PORTVERSION}
-USE_GMAKE=	yes
 
 PLIST_FILES+=	bin/ariadne bin/prospero
+USES=		gmake
 PORTDOCS=	README
+MAKE_ARGS+=	CC="${CC}"
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}| ; \
-		s|CC =|CC ?=| ; \
 		s|CFLAGS =|CFLAGS +=| ; \
 		s|-c $(OPTIMISE)|-c $(CFLAGS) $(OPTIMIZE)|g' ${WRKSRC}/Makefile
 
-.include <bsd.port.options.mk>
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${OPSYS}/ariadne ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/${OPSYS}/prospero ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${OPSYS}/ariadne ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${OPSYS}/prospero ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
