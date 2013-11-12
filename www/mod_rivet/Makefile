@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_rivet
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	www tcl
 MASTER_SITES=		${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tcl/rivet
@@ -16,21 +16,16 @@ LICENSE=	AL2
 LIB_DEPENDS=	libitcl.so:${PORTSDIR}/lang/itcl
 
 USE_APACHE=	22+
-USE_TCL=	85+
+USE_AUTOTOOLS=	aclocal automake
 USE_LDCONFIG=	${PREFIX}/lib/rivet
+USES+=		gmake tcl:85+
 
-USES=		gmake
-GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install
 
-INSTALL_TARGET=	install install-packages
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-CONFIGURE_ARGS+=	--with-apache-version=2 \
-			--prefix=${PREFIX} --with-apxs=${APXS} \
-			--with-tcl=${TCL_LIBDIR} --with-tclsh=${TCLSH} \
-			--with-rivet-target-dir=${PREFIX}/lib/rivet
+CONFIGURE_ARGS+=--with-apache-version=2 \
+		--prefix=${PREFIX} --with-apxs=${APXS} \
+		--with-tcl=${TCL_LIBDIR} --with-tclsh=${TCLSH} \
+		--with-rivet-target-dir=${PREFIX}/lib/rivet
 
 post-patch:
 	${REINPLACE_CMD}  -e 's|`$${apxs_found} -q LIBEXECDIR`|${PREFIX}/${APACHEMODDIR}|g' \
@@ -51,4 +46,4 @@ post-install:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "===================================================="
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
