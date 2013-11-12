@@ -13,8 +13,6 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Colourful 14th century Arab spice trading game
 
-NO_PACKAGE=	Package will be 186MB, set FORCE_PACKAGE if you really want to build it
-
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
@@ -26,10 +24,9 @@ SUB_LIST=	JARFILE="${DATADIR}/${DISTFILES}"
 PLIST_FILES=	bin/spicetrade %%DATADIR%%/${DISTFILES}
 PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
