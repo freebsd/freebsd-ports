@@ -21,23 +21,20 @@ MAKE_ARGS=	USE_SETGID="" \
 		LIBS="-lm -lX11" \
 		LDOPTIONS="${LDFLAGS}"
 
-MAN1=		xbl.1
-
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|@CFLA@ -g|@CFLA@|g' ${WRKSRC}/Makefile.in
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bl ${PREFIX}/bin/xbl
-	${INSTALL_MAN} ${WRKSRC}/xbl.man ${MANPREFIX}/man/man1/xbl.1
-	${INSTALL_DATA} ${WRKSRC}/Xbl.ad ${PREFIX}/lib/X11/app-defaults/Xbl
-	@${MKDIR} ${PREFIX}/lib/X11/xbl
-	${INSTALL_DATA} ${WRKSRC}/Xbl.ad ${PREFIX}/lib/X11/xbl/Xbl
-	${INSTALL_DATA} ${WRKSRC}/*.gif ${PREFIX}/lib/X11/xbl
-	${INSTALL_DATA} ${WRKSRC}/*.html ${PREFIX}/lib/X11/xbl
+	${INSTALL_PROGRAM} ${WRKSRC}/bl ${STAGEDIR}${PREFIX}/bin/xbl
+	${INSTALL_MAN} ${WRKSRC}/xbl.man ${STAGEDIR}${MANPREFIX}/man/man1/xbl.1
+	${INSTALL_DATA} ${WRKSRC}/Xbl.ad ${STAGEDIR}${PREFIX}/lib/X11/app-defaults/Xbl
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/xbl
+	${INSTALL_DATA} ${WRKSRC}/Xbl.ad ${STAGEDIR}${PREFIX}/lib/X11/xbl/Xbl
+	${INSTALL_DATA} ${WRKSRC}/*.gif ${STAGEDIR}${PREFIX}/lib/X11/xbl
+	${INSTALL_DATA} ${WRKSRC}/*.html ${STAGEDIR}${PREFIX}/lib/X11/xbl
 
 .include <bsd.port.mk>
