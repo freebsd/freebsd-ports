@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	simplecov
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,9 @@ COMMENT=	Powerful configuration library and automatic merging of coverage across
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-multi_json>=1.0:${PORTSDIR}/devel/rubygem-multi_json \
+RUN_DEPENDS=	rubygem-docile>=1.1.0:${PORTSDIR}/devel/rubygem-docile \
+		rubygem-lockfile>=2.1.0:${PORTSDIR}/devel/rubygem-lockfile \
+		rubygem-multi_json>=0:${PORTSDIR}/devel/rubygem-multi_json \
 		rubygem-simplecov-html>=0.7.1:${PORTSDIR}/textproc/rubygem-simplecov-html
 
 USE_RUBY=	yes
