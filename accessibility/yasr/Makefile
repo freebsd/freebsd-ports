@@ -40,7 +40,7 @@ PLIST_DIRS=	%%DATADIR%%
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-yasr__main.c
 .endif
 
 post-patch:
