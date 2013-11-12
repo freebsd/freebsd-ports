@@ -1,0 +1,36 @@
+--- ./hald/freebsd/Makefile.in.orig	2009-11-30 23:22:38.000000000 +0100
++++ ./hald/freebsd/Makefile.in	2013-10-22 02:07:00.268399458 +0200
+@@ -59,13 +59,14 @@
+ 	hf-pcmcia.c hf-pcmcia.h hf-scsi.c hf-scsi.h hf-serial.c \
+ 	hf-serial.h hf-sound.c hf-sound.h hf-storage.c hf-storage.h \
+ 	hf-usb.c hf-usb.h hf-util.c hf-util.h hf-volume.c hf-volume.h \
+-	osspec.c hal-file-monitor.c hf-usb2.c hf-usb2.h
++	osspec.c hal-file-monitor.c hf-usb2.c hf-usb2.h \
++	hf-memcard.c hf-memcard.h
+ @HAVE_LIBUSB20_TRUE@am__objects_1 = hf-usb2.lo
+ am_libhald_freebsd_la_OBJECTS = hf-acpi.lo hf-ata.lo hf-block.lo \
+ 	hf-computer.lo hf-devd.lo hf-devtree.lo hf-drm.lo hf-net.lo \
+ 	hf-pci.lo hf-pcmcia.lo hf-scsi.lo hf-serial.lo hf-sound.lo \
+ 	hf-storage.lo hf-usb.lo hf-util.lo hf-volume.lo osspec.lo \
+-	hal-file-monitor.lo $(am__objects_1)
++	hf-memcard.lo hal-file-monitor.lo $(am__objects_1)
+ libhald_freebsd_la_OBJECTS = $(am_libhald_freebsd_la_OBJECTS)
+ AM_V_lt = $(am__v_lt_$(V))
+ am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))
+@@ -325,7 +326,7 @@
+ 	hf-scsi.c hf-scsi.h hf-serial.c hf-serial.h hf-sound.c \
+ 	hf-sound.h hf-storage.c hf-storage.h hf-usb.c hf-usb.h \
+ 	hf-util.c hf-util.h hf-volume.c hf-volume.h osspec.c \
+-	hal-file-monitor.c $(am__append_1)
++	hf-memcard.c hf-memcard.h hal-file-monitor.c $(am__append_1)
+ libhald_freebsd_la_LDFLAGS = -lcam $(am__append_2)
+ EXTRA_DIST = README TODO
+ all: all-recursive
+@@ -388,6 +389,7 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hf-devd.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hf-devtree.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hf-drm.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hf-memcard.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hf-net.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hf-pci.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hf-pcmcia.Plo@am__quote@

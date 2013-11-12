@@ -1,5 +1,5 @@
---- hald/freebsd/hf-usb2.c.orig	2009-08-24 14:42:29.000000000 +0200
-+++ hald/freebsd/hf-usb2.c	2011-06-28 16:18:02.000000000 +0200
+--- ./hald/freebsd/hf-usb2.c.orig	2009-08-24 14:42:29.000000000 +0200
++++ ./hald/freebsd/hf-usb2.c	2013-10-23 13:10:36.639758556 +0200
 @@ -22,7 +22,7 @@
   **************************************************************************/
  
@@ -9,7 +9,7 @@
  #endif
  
  #include <string.h>
-@@ -42,246 +42,200 @@
+@@ -42,246 +42,213 @@
  static struct libusb20_backend *hf_usb2_be = NULL;
  
  static void
@@ -94,6 +94,19 @@
 +
 +			hf_usb_device_compute_udi(device);
 +			hf_device_add(device);
++
++			/*
++			 * The SCSI bus could already exist; make it a child of
++			 * this USB interface.
++			 */
++			if (driver && !strcmp(driver, "umass")) {
++				HalDevice *scsi_bus;
++				scsi_bus = hf_device_store_match(hald_get_gdl(),
++				    "scsi_host.freebsd.driver", HAL_PROPERTY_TYPE_STRING, driver,
++				    "scsi_host.freebsd.unit", HAL_PROPERTY_TYPE_INT32, hal_device_property_get_int(device, "freebsd.unit"), NULL);
++				if (scsi_bus)
++					hal_device_property_set_string(scsi_bus, "info.parent", hal_device_get_udi(device));
++			}
 +		}
 +	}
  }
