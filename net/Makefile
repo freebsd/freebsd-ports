@@ -1255,6 +1255,7 @@
     SUBDIR += wired-tracker
     SUBDIR += wireshark
     SUBDIR += wireshark-lite
+    SUBDIR += wizd
     SUBDIR += wlan2eth
     SUBDIR += wmlj
     SUBDIR += wmnd

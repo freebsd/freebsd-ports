@@ -1,0 +1,33 @@
+--- Makefile.orig	2013-11-12 12:35:19.000000000 +0100
++++ Makefile	2013-11-12 15:41:42.000000000 +0100
+@@ -5,19 +5,12 @@
+ ################################################################################
+ .SUFFIXES: .c .o .obj
+ 
+-CC = gcc
+-CFLAGS = -pipe -O2 -Wall
+-CFLAGS += -g	# debug symbols
+ CFLAGS += -D_FILE_OFFSET_BITS=64
+ CFLAGS += -D_LARGEFILE_SOURCE
+ ### -- If you dont want to use JPEG resize feature, comment it out.
+ CFLAGS += -DRESIZE_JPEG
+-CFLAGS += -I/usr/local/include
+-LDFLAGS += -static -L/usr/local/lib -ljpeg -ldvdread
+-
+-# keep the following lines only if you have the w32api library
+-LDFLAGS += -L/lib/w32api -lole32 -luuid
+-CFLAGS += -DHAVE_W32API
++CFLAGS += -I${LOCALBASE}/include
++LDFLAGS += -L${LOCALBASE}/lib -ljpeg -ldvdread -lm -lcompat
+ 
+ ### --
+ LDFLAGS += -s	# strip symbols
+@@ -215,7 +208,7 @@
+ 		myavinfo.o wizd_aviread.o
+ 
+ nkfwrap/nkfwrap.o:
+-	cd nkfwrap; $(MAKE) all
++	$(MAKE) -C nkfwrap all
+ 
+ .c.o:
+ 	$(CC) $(CFLAGS) -c $< -o $@
