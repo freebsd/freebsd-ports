@@ -24,7 +24,7 @@ CATEGORIES+=	kld
 SSP_UNSAFE=	kernel module does not support SSP
 
 KMODDIR?=	/boot/modules
-.if ${KMODDIR} == "/boot/kernel"
+.if ${KMODDIR} == /boot/kernel
 KMODDIR=	/boot/modules
 .endif
 PLIST_SUB+=	KMODDIR="${KMODDIR:C,^/,,}"
@@ -48,6 +48,8 @@ kmod-post-install:
 .if defined(NO_STAGE)
 	/usr/sbin/kldxref ${KMODDIR}
 .endif
+.if ${KMODDIR} != /boot/modules
 	${ECHO_CMD} "@unexec rmdir ${KMODDIR} 2>/dev/null || true" >> ${TMPPLIST}
+.endif
 
 .endif
