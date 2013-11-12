@@ -1,6 +1,9 @@
 %%ETCDIR%%/nsd.conf.sample
 sbin/nsd
 sbin/nsd-checkconf
-sbin/nsd-control
-sbin/nsd-control-setup
+sbin/nsd-notify
+sbin/nsd-patch
+sbin/nsd-xfer
+sbin/nsdc
+sbin/zonec
 @dirrmtry %%ETCDIR%%

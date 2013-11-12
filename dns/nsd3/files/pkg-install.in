@@ -1,0 +1,19 @@
+#!/bin/sh
+# $FreeBSD$
+
+PATH="/bin:/sbin:/usr/bin:/usr/sbin"
+
+NSDUSER=%%NSDUSER%%
+NSDGROUP=%%NSDGROUP%%
+NSDDBDIR=%%NSDDBDIR%%
+NSDRUNDIR=%%NSDRUNDIR%%
+
+CHOWN="chown"
+INSTALL_DIR="install -d -o ${NSDUSER} -g ${NSDGROUP} -m 0755"
+
+if [ "$2" = "POST-INSTALL" ]; then
+	${INSTALL_DIR} ${NSDDBDIR} ${NSDRUNDIR}
+	${CHOWN} -R ${NSDUSER}:${NSDGROUP} ${NSDDBDIR} ${NSDRUNDIR}
+fi
+
+exit 0
