@@ -95,6 +95,8 @@
 #
 # ${opt}_USE=	FOO=bar		When option is enabled, it will  enable
 #							USE_FOO+= bar
+#							If you need more than one option, you can do
+#							FOO=bar,baz and you'll get USE_FOO=bar baz
 #
 # For each of CFLAGS CPPFLAGS CXXFLAGS LDFLAGS CONFIGURE_ENV MAKE_ARGS MAKE_ENV
 # ALL_TARGET INSTALL_TARGET USES DISTFILES PLIST_FILES PLIST_DIRS PLIST_DIRSTRY
@@ -383,7 +385,7 @@ PLIST_SUB:=	${PLIST_SUB} ${opt}="@comment "
 .    if defined(${opt}_USE)
 .      for option in ${${opt}_USE}
 _u=		${option:C/=.*//g}
-USE_${_u:U}+=	${option:C/.*=//g}
+USE_${_u:U}+=	${option:C/.*=//g:C/,/ /g}
 .      endfor
 .    endif
 .    if defined(${opt}_CONFIGURE_ENABLE)
