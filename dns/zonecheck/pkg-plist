@@ -6,9 +6,10 @@ etc/zonecheck-dist/afnic.profile
 etc/zonecheck-dist/reverse.profile
 etc/zonecheck-dist/rootservers
 etc/zonecheck-dist/zc.conf
+man/man1/zonecheck.1.gz
 @dirrm etc/zonecheck-dist
-%%ZONECHECK_CGI%%libexec/zonecheck/cgi-bin/zc.cgi
-%%ZONECHECK_CGI%%@dirrm libexec/zonecheck/cgi-bin
+%%CGI%%libexec/zonecheck/cgi-bin/zc.cgi
+%%CGI%%@dirrm libexec/zonecheck/cgi-bin
 libexec/zonecheck/lib/textfmt.rb
 libexec/zonecheck/locale/cgi.en
 libexec/zonecheck/locale/cgi.fr
@@ -101,35 +102,37 @@ libexec/zonecheck/zc/zonecheck.rb
 @dirrm libexec/zonecheck/zc
 @dirrm libexec/zonecheck
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%ZONECHECK_CGI%%www/zonecheck/html/form.html.en
-%%ZONECHECK_CGI%%www/zonecheck/html/form.html.fr
-%%ZONECHECK_CGI%%www/zonecheck/zonecheck.conf.in
-%%ZONECHECK_CGI%%www/zonecheck/img/details.png
-%%ZONECHECK_CGI%%www/zonecheck/img/element.png
-%%ZONECHECK_CGI%%www/zonecheck/img/fatal.png
-%%ZONECHECK_CGI%%www/zonecheck/img/gear.png
-%%ZONECHECK_CGI%%www/zonecheck/img/info.png
-%%ZONECHECK_CGI%%www/zonecheck/img/light.png
-%%ZONECHECK_CGI%%www/zonecheck/img/logo.png
-%%ZONECHECK_CGI%%www/zonecheck/img/loupe.png
-%%ZONECHECK_CGI%%www/zonecheck/img/notepad.png
-%%ZONECHECK_CGI%%www/zonecheck/img/ok.png
-%%ZONECHECK_CGI%%www/zonecheck/img/primary.png
-%%ZONECHECK_CGI%%www/zonecheck/img/ref.png
-%%ZONECHECK_CGI%%www/zonecheck/img/secondary.png
-%%ZONECHECK_CGI%%www/zonecheck/img/warning.png
-%%ZONECHECK_CGI%%www/zonecheck/img/zc-fav.png
-%%ZONECHECK_CGI%%www/zonecheck/img/zone.png
-%%ZONECHECK_CGI%%www/zonecheck/js/formvalidation.js
-%%ZONECHECK_CGI%%www/zonecheck/js/popupmenu.js
-%%ZONECHECK_CGI%%www/zonecheck/js/progress.js
-%%ZONECHECK_CGI%%www/zonecheck/style/zc.css
-%%ZONECHECK_CGI%%@dirrm www/zonecheck/html
-%%ZONECHECK_CGI%%@dirrm www/zonecheck/img
-%%ZONECHECK_CGI%%@dirrm www/zonecheck/js
-%%ZONECHECK_CGI%%@dirrm www/zonecheck/style
-%%ZONECHECK_CGI%%@dirrm www/zonecheck
+%%CGI%%www/zonecheck/html/form.html.en
+%%CGI%%www/zonecheck/html/form.html.fr
+%%CGI%%www/zonecheck/zonecheck.conf.in
+%%CGI%%www/zonecheck/img/details.png
+%%CGI%%www/zonecheck/img/element.png
+%%CGI%%www/zonecheck/img/fatal.png
+%%CGI%%www/zonecheck/img/gear.png
+%%CGI%%www/zonecheck/img/info.png
+%%CGI%%www/zonecheck/img/light.png
+%%CGI%%www/zonecheck/img/logo.png
+%%CGI%%www/zonecheck/img/loupe.png
+%%CGI%%www/zonecheck/img/notepad.png
+%%CGI%%www/zonecheck/img/ok.png
+%%CGI%%www/zonecheck/img/primary.png
+%%CGI%%www/zonecheck/img/ref.png
+%%CGI%%www/zonecheck/img/secondary.png
+%%CGI%%www/zonecheck/img/warning.png
+%%CGI%%www/zonecheck/img/zc-fav.png
+%%CGI%%www/zonecheck/img/zone.png
+%%CGI%%www/zonecheck/js/formvalidation.js
+%%CGI%%www/zonecheck/js/popupmenu.js
+%%CGI%%www/zonecheck/js/progress.js
+%%CGI%%www/zonecheck/style/zc.css
+%%CGI%%@dirrm www/zonecheck/html
+%%CGI%%@dirrm www/zonecheck/img
+%%CGI%%@dirrm www/zonecheck/js
+%%CGI%%@dirrm www/zonecheck/style
+%%CGI%%@dirrm www/zonecheck
