@@ -11,7 +11,10 @@ DISTNAME=	ubnt-${PORTNAME}-${DISTVERSION}
 MAINTAINER=	adrian@FreeBSD.org
 COMMENT=	Ubiquiti Embedded Board Image Generator
 
+MAKE_ARGS+=	PREFIX=${STAGEDIR}${PREFIX}
 PLIST_FILES=	bin/mkfwimage
 
-NO_STAGE=	yes
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mkfwimage
+
 .include <bsd.port.mk>
