@@ -1,4 +1,5 @@
 bin/xbl
+man/man1/xbl.1.gz
 lib/X11/app-defaults/Xbl
 lib/X11/xbl/Xbl
 lib/X11/xbl/xbl-game.gif
