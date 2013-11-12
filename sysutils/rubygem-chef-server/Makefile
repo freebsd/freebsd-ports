@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chef-server
-PORTVERSION=	10.24.0
+PORTVERSION=	10.28.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -18,5 +18,4 @@ USE_RUBY=		yes
 USE_RUBYGEMS=		yes
 RUBYGEM_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
