@@ -12,14 +12,15 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-all
 MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	Free alternative graphics for OpenTTD game engine
 
+LICENSE=	GPLv2
+
 USE_ZIP=	yes
 NO_BUILD=	yes
 LATEST_LINK=	openttd-${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/share/openttd/baseset/opengfx
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/openttd/baseset/opengfx
 	${INSTALL_DATA} ${WRKDIR}/opengfx-${PORTVERSION}/* \
-		${PREFIX}/share/openttd/baseset/opengfx
+		${STAGEDIR}${PREFIX}/share/openttd/baseset/opengfx
 
 .include <bsd.port.mk>
