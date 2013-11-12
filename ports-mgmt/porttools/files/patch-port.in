@@ -1,6 +1,6 @@
 --- port.in.orig	2009-09-10 04:59:59.000000000 +0900
-+++ port.in	2012-12-27 19:30:02.000000000 +0900
-@@ -19,7 +19,7 @@
++++ port.in	2013-10-28 17:50:13.000000000 +0100
+@@ -19,12 +19,15 @@
  	ORGANIZATION=""
  	BUILDROOT="/tmp"
  	ARCHIVE_DIR=""
@@ -8,4 +8,12 @@
 +	DIFF_MODE="SVN"
  	DIFF_VIEWER="more"
  	PORTLINT_FLAGS="abct"
++	PORTSDIR="/usr/ports"
  	EOF
+ fi
+ 
++PORTSDIR="/usr/ports"
++
+ # Reading configuration file
+ . ${PORTTOOLS}
+ 

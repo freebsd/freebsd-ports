@@ -1,5 +1,5 @@
 --- util_diff.in.orig	2009-09-10 04:59:59.000000000 +0900
-+++ util_diff.in	2012-12-31 21:44:44.000000000 +0900
++++ util_diff.in	2013-10-28 17:48:33.000000000 +0100
 @@ -14,7 +14,8 @@
  # Determine if this is a new port
  if [ "${MODE}" = "" ]
@@ -24,24 +24,24 @@
 +	if [ "${DIFF_MODE}" = "" ]
  	then
 -		DIFF_MODE="/usr/ports"
-+		if [ -d /usr/ports/.svn ]
++		if [ -d ${PORTSDIR}/.svn ]
 +		then
 +			DIFF_MODE="SVN"
 +		else
-+			DIFF_MODE="/usr/ports"
++			DIFF_MODE="${PORTSDIR}"
 +		fi
 +		echo "Default diff mode is ${DIFF_MODE}"
 +	elif [ "${DIFF_MODE}" = "SVN" ]
 +	then
 +		# If there is no .svn directory then
-+		# fallback to diffing against /usr/ports tree
-+		if [ ! -d /usr/ports/.svn ]
++		# fallback to diffing against ${PORTSDIR} tree
++		if [ ! -d ${PORTSDIR}/.svn ]
 +		then
 +			echo "Diff mode was set to ${DIFF_MODE}, but there's no .svn directory"
-+			echo -n "Trying /usr/ports ... "
-+			if [ -d /usr/ports ]
++			echo -n "Trying ${PORTSDIR} ... "
++			if [ -d ${PORTSDIR} ]
 +			then
-+				DIFF_MODE="/usr/ports"
++				DIFF_MODE="${PORTSDIR}"
 +				echo "found"
 +			else
 +				echo "not found - please choose an approriate diff mode"
