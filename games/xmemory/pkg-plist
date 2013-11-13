@@ -1,4 +1,5 @@
 bin/xmemory
+man/man1/xmemory.1.gz
 lib/X11/xmemory/sports.mem
 lib/X11/xmemory/home.mem
 @exec ln -sf %f %B/default.mem
