@@ -1,5 +1,6 @@
 bin/nagstamon
 bin/nagstamon.py
+man/man1/nagstamon.1.gz
 %%PYTHON_SITELIBDIR%%/Nagstamon/Actions.py
 %%PYTHON_SITELIBDIR%%/Nagstamon/Actions.pyc
 %%PYTHON_SITELIBDIR%%/Nagstamon/Actions.pyo
