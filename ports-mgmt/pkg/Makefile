@@ -2,7 +2,7 @@
 
 PORTNAME=	pkg
 DISTVERSION=	1.1.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://files.etoilebsd.net/pkg/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
@@ -19,10 +19,15 @@ USE_XZ=		yes
 # With no dependency at all
 NO_CCACHE=	yes
 USE_LDCONFIG=	yes
-USES=		uidfix
+USES=		uidfix shebangfix
+SHEBANG_FILES=	scripts/completion/_pkg.bash.in
 
 MAKE_ENV+=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null \
 		PORTREVISION=${PORTREVISION}
+.if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
+MAKE_ARGS+=	DEBUG_FLAGS="${DEBUG_FLAGS}"
+.endif
+
 # Use a submake as 'deinstall install' needs to reevaluate PKG_CMD
 # so that pkg-static is used from the wrkdir
 USE_SUBMAKE=	yes
