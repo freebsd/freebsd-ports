@@ -33,10 +33,11 @@ include/libkvkontakte/version.h
 include/libkvkontakte/vkontaktejobs.h
 lib/cmake/LibKVkontakte/LibKVkontakteConfig.cmake
 lib/cmake/LibKVkontakte/LibKVkontakteConfigVersion.cmake
-lib/cmake/LibKVkontakte/LibKVkontakteTargets-release.cmake
+lib/cmake/LibKVkontakte/LibKVkontakteTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/LibKVkontakte/LibKVkontakteTargets.cmake
 lib/libkvkontakte.so
 lib/libkvkontakte.so.1
 lib/libkvkontakte.so.1.0.0
 @dirrm lib/cmake/LibKVkontakte
+@dirrmtry lib/cmake
 @dirrm include/libkvkontakte
