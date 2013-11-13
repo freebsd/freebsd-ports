@@ -16,5 +16,4 @@ USE_XORG=	xpm
 WRKSRC=		${WRKDIR}/xminehunter
 ALL_TARGET=	xminehunter
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

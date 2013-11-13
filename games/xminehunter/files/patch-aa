@@ -1,13 +1,13 @@
---- Makefile.orig	Mon Jul 22 02:11:34 1996
-+++ Makefile	Thu Jan 25 22:22:22 2007
+--- ./Makefile.orig	1996-07-22 03:11:34.000000000 -0300
++++ ./Makefile	2013-11-13 18:22:58.000000000 -0200
 @@ -1,9 +1,9 @@
 -INSTALL_BIN_PATH = /usr/local/bin
 -INSTALL_SCORE_PATH = /usr/local/lib/xminehunter
 -
 -INCLUDES = -I/usr/local/X11R5/include
 -LIBS = -L/usr/local/X11R5/lib -lXm -lXt -lXpm -lXext -lX11
-+INSTALL_BIN_PATH = ${LOCALBASE}/bin
-+INSTALL_SCORE_PATH = ${LOCALBASE}/lib/X11/xminehunter
++INSTALL_BIN_PATH = ${DESTDIR}${PREFIX}/bin
++INSTALL_SCORE_PATH = ${DESTDIR}${PREFIX}/lib/X11/xminehunter
  
 +INCLUDES = -I${LOCALBASE}/include
 +LIBS = -L${LOCALBASE}/lib ${MOTIFLIB} -lXt -lXpm -lXext -lX11
@@ -15,3 +15,12 @@
  
  CC = g++
  
+@@ -50,7 +50,7 @@
+ 
+ install:
+ 	mkdir -p ${INSTALL_SCORE_PATH}
+-	chmod 333 ${INSTALL_SCORE_PATH}
++	chmod 633 ${INSTALL_SCORE_PATH}
+ 	cp xminehunter ${INSTALL_BIN_PATH}
+ 
+ clean:
