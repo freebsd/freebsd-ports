@@ -25,15 +25,16 @@ RESTRICTED_FILES=	${DISTFILES:Nlinux-f10-flashsupport*:C/:[^:]+$//}
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-USE_NPAPI=	linux-*
-NPAPI_FILES=	libflashplayer.so
+USES=		webplugin:linux
+WEBPLUGIN_NAME=	# empty
+WEBPLUGIN_FILES=	libflashplayer.so
 
 OPTIONS_DEFINE=	GNOME
 GNOME_DESC=	include gnome support for .desktop file
 
 OPTIONS_SUB=	yes
+PLIST_SUB+=RESETPREFIX=${PREFIX}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNOME}
@@ -44,12 +45,12 @@ INSTALLS_ICONS=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' -e '/^NotShowIn=KDE/d' ${WRKDIR}/usr/share/applications/flash-player-properties.desktop
 
-post-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/libflashsupport.so ${LINUXBASE}/usr/lib
-	${INSTALL_PROGRAM} ${WRKDIR}/usr/bin/flash-player-properties ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKDIR}/usr/share/applications/flash-player-properties.desktop ${DESKTOPDIR}
-	(cd ${WRKDIR}/usr/share/icons && ${COPYTREE_SHARE} hicolor ${PREFIX}/share/icons)
+do-install:
+	${MKDIR} ${STAGEDIR}${WEBPLUGIN_DIR} ${STAGEDIR}${LINUXBASE}/usr/lib
+	${INSTALL_LIB} ${WRKDIR}/libflashplayer.so ${STAGEDIR}${WEBPLUGIN_DIR}
+	${INSTALL_LIB} ${WRKDIR}/libflashsupport.so ${STAGEDIR}${LINUXBASE}/usr/lib
+	${INSTALL_PROGRAM} ${WRKDIR}/usr/bin/flash-player-properties ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKDIR}/usr/share/applications/flash-player-properties.desktop ${STAGEDIR}${DESKTOPDIR}
+	(cd ${WRKDIR}/usr/share/icons && ${COPYTREE_SHARE} hicolor ${STAGEDIR}${PREFIX}/share/icons)
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/linux-mplayer-plugin/Makefile.npapi"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
