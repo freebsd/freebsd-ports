@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PORTDOCS%%%%DOCSDIR%%/libunistring_1.html
 %%PORTDOCS%%%%DOCSDIR%%/libunistring_10.html
 %%PORTDOCS%%%%DOCSDIR%%/libunistring_11.html
