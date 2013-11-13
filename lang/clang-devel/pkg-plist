@@ -427,12 +427,14 @@ llvm-devel/include/clang/Tooling/ReplacementsYaml.h
 llvm-devel/include/clang/Tooling/Tooling.h
 llvm-devel/lib/clang/3.4/include/__wmmintrin_aes.h
 llvm-devel/lib/clang/3.4/include/__wmmintrin_pclmul.h
+llvm-devel/lib/clang/3.4/include/altivec.h
 llvm-devel/lib/clang/3.4/include/ammintrin.h
 llvm-devel/lib/clang/3.4/include/arm_neon.h
 llvm-devel/lib/clang/3.4/include/avx2intrin.h
 llvm-devel/lib/clang/3.4/include/avxintrin.h
 llvm-devel/lib/clang/3.4/include/bmi2intrin.h
 llvm-devel/lib/clang/3.4/include/bmiintrin.h
+llvm-devel/lib/clang/3.4/include/cpuid.h
 llvm-devel/lib/clang/3.4/include/emmintrin.h
 llvm-devel/lib/clang/3.4/include/f16cintrin.h
 llvm-devel/lib/clang/3.4/include/fma4intrin.h
