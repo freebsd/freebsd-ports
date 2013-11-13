@@ -12,16 +12,17 @@ PKGNAMEPREFIX=	npapi-
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Embed Xine player into browser
 
-LIB_DEPENDS=	xine.2:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine
 
-USES=		pkgconfig
+USES=		pkgconfig webplugin:native
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_NPAPI=	native
-NPAPI_ID=	${PORTNAME}
-NPAPI_WRKSRC=	${WRKSRC}/src/.libs
-NPAPI_FILES=	xineplugin.so
+WEBPLUGIN_NAME=	#
+WEBPLUGIN_FILES=	xineplugin.so
+PLIST_FILES=	${WEBPLUGIN_DIR}${WEBPLUGIN_FILES}
 
-NO_STAGE=	yes
-.include "${.CURDIR}/../linux-mplayer-plugin/Makefile.npapi"
+do-install:
+	${MKDIR} ${STAGEDIR}${WEBPLUGIN_DIR}
+	${INSTALL_LIB} ${WRKSRC}/src/.libs/${WEBPLUGIN_FILES} ${STAGEDIR}${WEBPLUGIN_DIR}
+
 .include <bsd.port.mk>
