@@ -1,0 +1,84 @@
+This is the git commit below, with the change to include/openbabel/shared_ptr.h
+properly adapted since it originally depends on commit ce178cbb.
+
+commit c3abbddae78e654df9322ad1020ff79dd6332946
+Author: Matt Swain <m.swain@me.com>
+Date:   Thu Oct 31 15:25:53 2013 +0000
+
+    Detect libc++ as this is now the default in OS X Mavericks
+
+diff --git a/include/openbabel/obmolecformat.h b/include/openbabel/obmolecformat.h
+index 46ec724..c004313 100644
+--- include/openbabel/obmolecformat.h
++++ include/openbabel/obmolecformat.h
+@@ -23,7 +23,10 @@ GNU General Public License for more details.
+   #include <hash_map>
+ #endif
+ 
+-#if __GNUC__ == 4 && __GNUC_MINOR__ >= 1
++#include <ciso646>  // detect std::lib
++#ifdef _LIBCPP_VERSION
++  #include <unordered_map>
++#elif __GNUC__ == 4 && __GNUC_MINOR__ >= 1
+   #include <tr1/unordered_map>
+ #elif defined(USE_BOOST)
+   #include <boost/tr1/unordered_map.hpp>
+@@ -141,6 +144,8 @@ public:
+ 
+ #ifdef _MSC_VER
+   typedef stdext::hash_map<std::string, unsigned> NameIndexType;
++#elif defined(_LIBCPP_VERSION)
++  typedef std::unordered_map<std::string, unsigned> NameIndexType;
+ #elif (__GNUC__ == 4 && __GNUC_MINOR__ >= 1 && !defined(__APPLE_CC__)) || defined (USE_BOOST)
+   typedef std::tr1::unordered_map<std::string, unsigned> NameIndexType;
+ #else
+diff --git a/include/openbabel/shared_ptr.h b/include/openbabel/shared_ptr.h
+index 5d20254..378856a 100644
+--- include/openbabel/shared_ptr.h
++++ include/openbabel/shared_ptr.h
+@@ -22,9 +22,17 @@ GNU General Public License for more details.
+ #else
+   #include <memory>
+   #if __GNUC__ == 4  //&& __GNUC_MINOR__ < 3  removed at the suggestion of Konstantin Tokarev
+-    #include <tr1/memory>
++    #ifdef _LIBCPP_VERSION
++      #include <memory>
++    #else
++      #include <tr1/memory>
++    #endif
++  #endif
++  #ifdef _LIBCPP_VERSION
++    using std::shared_ptr;
++  #else
++    using std::tr1::shared_ptr;
+   #endif
+-  using std::tr1::shared_ptr;
+ #endif
+ 
+ #endif // OB_SHARED_PTR_H
+diff --git a/src/ops/unique.cpp b/src/ops/unique.cpp
+index 5f7714f..8527fba 100644
+--- src/ops/unique.cpp
++++ src/ops/unique.cpp
+@@ -21,7 +21,7 @@ GNU General Public License for more details.
+ #include <openbabel/obconversion.h>
+ #include <openbabel/descriptor.h>
+ #include <openbabel/inchiformat.h>
+-#ifdef _MSC_VER
++#if defined(_MSC_VER) || defined(_LIBCPP_VERSION)
+   #include <unordered_map>
+ #elif (__GNUC__ == 4 && __GNUC_MINOR__ >= 1 && !defined(__APPLE_CC__))
+   #include <tr1/unordered_map>
+@@ -36,7 +36,11 @@ GNU General Public License for more details.
+ 
+ using namespace std;
+ #ifndef NO_UNORDERED_MAP
+-using std::tr1::unordered_map;
++  #ifdef _LIBCPP_VERSION
++    using std::unordered_map;
++  #else
++    using std::tr1::unordered_map;
++  #endif
+ #endif
+ namespace OpenBabel
+ {
