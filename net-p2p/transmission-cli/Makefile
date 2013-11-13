@@ -32,8 +32,8 @@ NO_STAGE=	yes
 LIB_DEPENDS?=	${GEN_LIB_DEPENDS}
 
 # General dependencies
-GEN_LIB_DEPENDS=curl:${PORTSDIR}/ftp/curl \
-		event-2.0.6:${PORTSDIR}/devel/libevent2
+GEN_LIB_DEPENDS=libcurl.so:${PORTSDIR}/ftp/curl \
+		libevent-2.0.so.6:${PORTSDIR}/devel/libevent2
 GEN_RUN_DEPENDS=${LOCALBASE}/share/transmission/web/index.html:${PORTSDIR}/www/transmission-web
 
 # This is master port of transmission-*, so don't override USES definition 
