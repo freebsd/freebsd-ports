@@ -14,18 +14,18 @@ COMMENT=	X Windows Implementation of the Glk API
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png
 
 USE_XORG=	x11
 
 MAKE_ENV+=	AR=${AR} RANLIB=${RANLIB} ECHO=${ECHO} RM=${RM}
 
-NO_STAGE=	yes
 do-install:
-		${MKDIR} ${PREFIX}/include/xglk
-		${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/xglk/
-		${INSTALL_DATA} ${WRKSRC}/libxglk.a ${PREFIX}/lib/
-		${MKDIR} ${DATADIR}
-		${INSTALL_DATA} ${WRKSRC}/Make.xglk ${DATADIR}
+		@${MKDIR} ${STAGEDIR}${PREFIX}/include/xglk
+		${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/xglk/
+		${INSTALL_DATA} ${WRKSRC}/libxglk.a ${STAGEDIR}${PREFIX}/lib/
+		@${MKDIR} ${STAGEDIR}${DATADIR}
+		${INSTALL_DATA} ${WRKSRC}/Make.xglk ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
