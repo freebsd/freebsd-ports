@@ -1,7 +1,6 @@
 bin/xtexsh
 etc/xtexshrc
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/index.html
+man/man1/xtexsh.1.gz
 share/applications/xtexsh.desktop
 share/icons/locolor/16x16/apps/xtexsh.png
 share/icons/locolor/32x32/apps/xtexsh.png
@@ -12,4 +11,3 @@ share/pixmaps/xtexsh.png
 @dirrmtry share/icons/locolor/16x16
 @dirrmtry share/icons/locolor
 @dirrmtry share/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
