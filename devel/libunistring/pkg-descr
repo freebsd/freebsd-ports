@@ -1,6 +1,6 @@
-           GNU LIBUNISTRING - Unicode string library
+GNU LIBUNISTRING - Unicode string library
 
 This library provides functions for manipulating Unicode strings and
 for manipulating C strings according to the Unicode standard.
 
-WWW:	http://www.gnu.org/software/libunistring/
+WWW: http://www.gnu.org/software/libunistring/
