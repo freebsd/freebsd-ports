@@ -14,14 +14,14 @@ COMMENT=	Dino puzzle game for X11
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		imake
 USE_XORG=	x11 xext xt sm ice
-MAN1=		xdino.1
-MANCOMPRESSED=	no
-XFREE86_HTML_MAN=	no
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/xdino \
+		man/man1/xdino.1.gz \
+		lib/X11/app-defaults/Dino
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xdino ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/Dino.ad ${PREFIX}/lib/X11/app-defaults/Dino
-	${INSTALL_MAN} ${WRKSRC}/xdino.man ${MANPREFIX}/man/man1/xdino.1
+	${INSTALL_PROGRAM} ${WRKSRC}/xdino ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/Dino.ad ${STAGEDIR}${PREFIX}/lib/X11/app-defaults/Dino
+	${INSTALL_MAN} ${WRKSRC}/xdino.man ${STAGEDIR}${MANPREFIX}/man/man1/xdino.1
 
 .include <bsd.port.mk>
