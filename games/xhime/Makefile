@@ -14,27 +14,21 @@ COMMENT=	Resident Himechan for X Window System
 WRKSRC=		${WRKDIR}/xhime1.51
 USES=		imake
 USE_XORG=	x11 xext
-MANCOMPRESSED=	yes
-MANLANG=	. ja
-MAN6=		xhime.6
 
-NO_CDROM=	'contains commercial character data'
+NO_CDROM=	Contains commercial character data
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:
-	${STRIP_CMD} ${PREFIX}/bin/xhime
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xhime
 	${INSTALL_MAN} ${WRKSRC}/xhime-man.euc \
-		${PREFIX}/man/ja/man6
-	${MV} ${PREFIX}/man/ja/man6/xhime-man.euc ${PREFIX}/man/ja/man6/xhime.6
-	${GZIP_CMD} ${PREFIX}/man/ja/man6/xhime.6
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${PREFIX}/share/doc/ja/xhime
+		${STAGEDIR}${PREFIX}/man/ja/man6
+	${MV} ${STAGEDIR}${PREFIX}/man/ja/man6/xhime-man.euc ${STAGEDIR}${PREFIX}/man/ja/man6/xhime.6
+	#${GZIP_CMD} ${STAGEDIR}${PREFIX}/man/ja/man6/xhime.6
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/ja/xhime
 	@(cd ${WRKSRC};\
 	${INSTALL_DATA} xhime-doc.euc xhime.doc rh110-doc.euc \
-		${PREFIX}/share/doc/ja/xhime; \
+		${STAGEDIR}${PREFIX}/share/doc/ja/xhime; \
 	)
-.endif
 
 .include <bsd.port.mk>
