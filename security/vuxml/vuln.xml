@@ -51,6 +51,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="adcbdba2-4c27-11e3-9848-98fc11cdc4f5">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>11.2r202.327</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb13-26.html">
+	  <p>These updates address vulnerabilities that could cause a crash
+	    and potentially allow an attacker to take control of the affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-5329</cvename>
+      <cvename>CVE-2013-5330</cvename>
+      <url>http://www.adobe.com/support/security/bulletins/apsb13-26.html</url>
+    </references>
+    <dates>
+      <discovery>2013-11-12</discovery>
+      <entry>2013-11-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3bfc7016-4bcc-11e3-b0cf-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
