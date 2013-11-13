@@ -20,15 +20,12 @@ USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
 USE_GNOME=	pygtk2 librsvg2
 
-MAN1=		nagstamon.1
-
 WRKSRC=		${WRKDIR}/Nagstamon
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/\(man/man1\)|\1|' ${WRKSRC}/setup.py
 
 post-install:
-	@${LN} ${PREFIX}/bin/${PORTNAME}.py ${PREFIX}/bin/${PORTNAME}
+	@${LN} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}.py ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
