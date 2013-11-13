@@ -1,5 +1,5 @@
---- Makefile~	Fri Nov  3 06:03:40 2000
-+++ Makefile	Fri Nov  3 06:06:29 2000
+--- ./Makefile.orig	2000-02-26 19:02:52.000000000 -0200
++++ ./Makefile	2013-11-12 23:55:39.000000000 -0200
 @@ -1,12 +1,12 @@
 -PREFIX  = /usr/X11R6
 -X11BASE = /usr/X11R6
@@ -17,3 +17,14 @@
  LIBS = -lX11
  PKGNAME = xblood-2.0
  VERSION = XBlood-2.0
+@@ -27,8 +27,8 @@
+ 		$(RM) xblood.1.gz
+ 
+ install :
+-		cp xblood $(BINDIR)
+-		cp xblood.1.gz $(MANDIR)
++		cp xblood ${DESTDIR}$(BINDIR)
++		cp xblood.1.gz ${DESTDIR}$(MANDIR)
+ 
+ uninstall :
+ 		$(RM) $(BINDIR)/xblood
