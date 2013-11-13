@@ -27,6 +27,9 @@ bin/Rscript
 %%DOCSDIR%%/html/up.jpg
 lib/R/COPYING
 lib/R/NEWS
+lib/R/NEWS.0
+lib/R/NEWS.1
+lib/R/NEWS.2
 lib/R/NEWS.pdf
 lib/R/SVN-REVISION
 lib/R/bin/BATCH
@@ -132,7 +135,6 @@ lib/R/library/KernSmooth/libs/KernSmooth.so
 lib/R/library/MASS/CITATION
 lib/R/library/MASS/DESCRIPTION
 lib/R/library/MASS/INDEX
-lib/R/library/MASS/LICENCE
 lib/R/library/MASS/Meta/Rd.rds
 lib/R/library/MASS/Meta/data.rds
 lib/R/library/MASS/Meta/hsearch.rds
@@ -223,6 +225,7 @@ lib/R/library/Matrix/external/USCounties_slots.rda
 lib/R/library/Matrix/external/lund_a.mtx
 lib/R/library/Matrix/external/lund_a.rsa
 lib/R/library/Matrix/external/pores_1.mtx
+lib/R/library/Matrix/external/symW.rda
 lib/R/library/Matrix/external/test3comp.rda
 lib/R/library/Matrix/external/utm300.rua
 lib/R/library/Matrix/external/wrong.mtx
@@ -301,7 +304,6 @@ lib/R/library/boot/html/R.css
 lib/R/library/class/CITATION
 lib/R/library/class/DESCRIPTION
 lib/R/library/class/INDEX
-lib/R/library/class/LICENCE
 lib/R/library/class/Meta/Rd.rds
 lib/R/library/class/Meta/hsearch.rds
 lib/R/library/class/Meta/links.rds
@@ -611,23 +613,51 @@ lib/R/library/grid/Meta/hsearch.rds
 lib/R/library/grid/Meta/links.rds
 lib/R/library/grid/Meta/nsInfo.rds
 lib/R/library/grid/Meta/package.rds
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/Meta/vignette.rds
 lib/R/library/grid/NAMESPACE
 lib/R/library/grid/R/grid
 lib/R/library/grid/R/grid.rdb
 lib/R/library/grid/R/grid.rdx
 lib/R/library/grid/doc/changes.txt
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/displaylist.R
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/displaylist.Rnw
 lib/R/library/grid/doc/displaylist.pdf
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/frame.R
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/frame.Rnw
 lib/R/library/grid/doc/frame.pdf
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/grid.R
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/grid.Rnw
 lib/R/library/grid/doc/grid.pdf
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/grobs.R
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/grobs.Rnw
 lib/R/library/grid/doc/grobs.pdf
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/index.html
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/interactive.R
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/interactive.Rnw
 lib/R/library/grid/doc/interactive.pdf
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/locndimn.R
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/locndimn.Rnw
 lib/R/library/grid/doc/locndimn.pdf
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/moveline.R
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/moveline.Rnw
 lib/R/library/grid/doc/moveline.pdf
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/nonfinite.R
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/nonfinite.Rnw
 lib/R/library/grid/doc/nonfinite.pdf
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/plotexample.R
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/plotexample.Rnw
 lib/R/library/grid/doc/plotexample.pdf
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/rotated.R
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/rotated.Rnw
 lib/R/library/grid/doc/rotated.pdf
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/saveload.R
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/saveload.Rnw
 lib/R/library/grid/doc/saveload.pdf
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/sharing.R
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/sharing.Rnw
 lib/R/library/grid/doc/sharing.pdf
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/viewports.R
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/grid/doc/viewports.Rnw
 lib/R/library/grid/doc/viewports.pdf
 lib/R/library/grid/help/AnIndex
 lib/R/library/grid/help/aliases.rds
@@ -670,6 +700,8 @@ lib/R/library/lattice/libs/lattice.so
 %%NLS%%lib/R/library/lattice/po/de/LC_MESSAGES/R-lattice.mo
 %%NLS%%lib/R/library/lattice/po/en@quot/LC_MESSAGES/R-lattice.mo
 %%NLS%%lib/R/library/lattice/po/fr/LC_MESSAGES/R-lattice.mo
+%%NLS%%lib/R/library/lattice/po/ko/LC_MESSAGES/R-lattice.mo
+%%NLS%%lib/R/library/lattice/po/pl_PL/LC_MESSAGES/R-lattice.mo
 lib/R/library/methods/DESCRIPTION
 lib/R/library/methods/INDEX
 lib/R/library/methods/Meta/Rd.rds
@@ -715,7 +747,6 @@ lib/R/library/mgcv/libs/mgcv.so
 lib/R/library/nlme/CITATION
 lib/R/library/nlme/DESCRIPTION
 lib/R/library/nlme/INDEX
-lib/R/library/nlme/LICENCE
 lib/R/library/nlme/Meta/Rd.rds
 lib/R/library/nlme/Meta/data.rds
 lib/R/library/nlme/Meta/hsearch.rds
@@ -746,6 +777,8 @@ lib/R/library/nlme/mlbook/ch05.R
 %%NLS%%lib/R/library/nlme/po/en@quot/LC_MESSAGES/nlme.mo
 %%NLS%%lib/R/library/nlme/po/fr/LC_MESSAGES/R-nlme.mo
 %%NLS%%lib/R/library/nlme/po/fr/LC_MESSAGES/nlme.mo
+%%NLS%%lib/R/library/nlme/po/ko/LC_MESSAGES/R-nlme.mo
+%%NLS%%lib/R/library/nlme/po/ko/LC_MESSAGES/nlme.mo
 %%NLS%%lib/R/library/nlme/po/pl/LC_MESSAGES/R-nlme.mo
 %%NLS%%lib/R/library/nlme/po/pl/LC_MESSAGES/nlme.mo
 lib/R/library/nlme/scripts/ch01.R
@@ -759,7 +792,6 @@ lib/R/library/nlme/scripts/sims.rda
 lib/R/library/nnet/CITATION
 lib/R/library/nnet/DESCRIPTION
 lib/R/library/nnet/INDEX
-lib/R/library/nnet/LICENCE
 lib/R/library/nnet/Meta/Rd.rds
 lib/R/library/nnet/Meta/hsearch.rds
 lib/R/library/nnet/Meta/links.rds
@@ -790,10 +822,14 @@ lib/R/library/parallel/Meta/hsearch.rds
 lib/R/library/parallel/Meta/links.rds
 lib/R/library/parallel/Meta/nsInfo.rds
 lib/R/library/parallel/Meta/package.rds
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/parallel/Meta/vignette.rds
 lib/R/library/parallel/NAMESPACE
 lib/R/library/parallel/R/parallel
 lib/R/library/parallel/R/parallel.rdb
 lib/R/library/parallel/R/parallel.rdx
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/parallel/doc/index.html
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/parallel/doc/parallel.R
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/parallel/doc/parallel.Rnw
 lib/R/library/parallel/doc/parallel.pdf
 lib/R/library/parallel/help/AnIndex
 lib/R/library/parallel/help/aliases.rds
@@ -850,7 +886,6 @@ lib/R/library/rpart/libs/rpart.so
 lib/R/library/spatial/CITATION
 lib/R/library/spatial/DESCRIPTION
 lib/R/library/spatial/INDEX
-lib/R/library/spatial/LICENCE
 lib/R/library/spatial/Meta/Rd.rds
 lib/R/library/spatial/Meta/hsearch.rds
 lib/R/library/spatial/Meta/links.rds
@@ -1333,13 +1368,17 @@ lib/R/library/utils/Meta/hsearch.rds
 lib/R/library/utils/Meta/links.rds
 lib/R/library/utils/Meta/nsInfo.rds
 lib/R/library/utils/Meta/package.rds
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/utils/Meta/vignette.rds
 lib/R/library/utils/NAMESPACE
 lib/R/library/utils/R/utils
 lib/R/library/utils/R/utils.rdb
 lib/R/library/utils/R/utils.rdx
 lib/R/library/utils/Sweave/Sweave-test-1.Rnw
 lib/R/library/utils/Sweave/example-1.Rnw
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/utils/doc/Sweave.R
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/utils/doc/Sweave.Rnw
 lib/R/library/utils/doc/Sweave.pdf
+%%PORTDOCS%%%%PDF_MANUAL%%lib/R/library/utils/doc/index.html
 lib/R/library/utils/help/AnIndex
 lib/R/library/utils/help/aliases.rds
 lib/R/library/utils/help/paths.rds
@@ -1378,7 +1417,8 @@ lib/R/share/licenses/LGPL-3
 lib/R/share/licenses/MIT
 lib/R/share/licenses/license.db
 lib/R/share/make/basepkg.mk
-lib/R/share/make/check.mk
+lib/R/share/make/check_vars_ini.mk
+lib/R/share/make/check_vars_out.mk
 lib/R/share/make/clean.mk
 lib/R/share/make/config.mk
 lib/R/share/make/lazycomp.mk
@@ -1397,8 +1437,8 @@ lib/R/share/texmf/tex/latex/omsaett.fd
 lib/R/share/texmf/tex/latex/omscmtt.fd
 lib/R/share/texmf/tex/latex/ts1aer.fd
 lib/R/share/texmf/tex/latex/ts1aett.fd
-lib/R/share/texmf/tex/latex/upquote.sty
 %%LIBR%%libdata/pkgconfig/libR.pc
+%%DOCSDIR%%/html/NEWS.2.html
 %%DOCSDIR%%/manual/R-FAQ.html
 %%PORTDOCS%%%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-FAQ.pdf
 %%DOCSDIR%%/manual/R-admin.html
@@ -1413,7 +1453,7 @@ lib/R/share/texmf/tex/latex/upquote.sty
 %%PORTDOCS%%%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-ints.pdf
 %%DOCSDIR%%/manual/R-lang.html
 %%PORTDOCS%%%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-lang.pdf
-%%PORTDOCS%%%%PDF_MANUAL%%%%DOCSDIR%%/manual/refman.pdf
+%%PORTDOCS%%%%PDF_MANUAL%%%%DOCSDIR%%/manual/fullrefman.pdf
 @dirrm lib/R/share/texmf/tex/latex
 @dirrm lib/R/share/texmf/tex
 @dirrm lib/R/share/texmf/bibtex/bst
@@ -1579,6 +1619,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 @dirrm lib/R/library/nlme/scripts
 %%NLS%%@dirrm lib/R/library/nlme/po/pl/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/nlme/po/pl
+%%NLS%%@dirrm lib/R/library/nlme/po/ko/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/nlme/po/ko
 %%NLS%%@dirrm lib/R/library/nlme/po/fr/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/nlme/po/fr
 %%NLS%%@dirrm lib/R/library/nlme/po/en@quot/LC_MESSAGES
@@ -1607,6 +1649,10 @@ lib/R/share/texmf/tex/latex/upquote.sty
 @dirrm lib/R/library/methods/R
 @dirrm lib/R/library/methods/Meta
 @dirrm lib/R/library/methods
+%%NLS%%@dirrm lib/R/library/lattice/po/pl_PL/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/lattice/po/pl_PL
+%%NLS%%@dirrm lib/R/library/lattice/po/ko/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/lattice/po/ko
 %%NLS%%@dirrm lib/R/library/lattice/po/fr/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/lattice/po/fr
 %%NLS%%@dirrm lib/R/library/lattice/po/en@quot/LC_MESSAGES

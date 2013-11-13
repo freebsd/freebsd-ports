@@ -34,6 +34,8 @@ RUN_DEPENDS=	cjpeg:${PORTSDIR}/graphics/jpeg \
 USES=		gettext iconv gmake motif
 
 NO_STAGE=	yes
+BROKEN=	R_io.so fails to build with R-3.0.2
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
