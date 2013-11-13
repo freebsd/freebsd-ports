@@ -5,12 +5,11 @@ PORTVERSION=	${DIGIKAM_VER}
 CATEGORIES=	net kde
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	KDE4 library for accessing vk.com
+COMMENT=	KDE library for accessing vk.com
 
-NO_STAGE=	yes
-.include "${.CURDIR}/../../graphics/digikam-kde4/Makefile.common"
+.include "${.CURDIR:H:H}/graphics/digikam-kde4/Makefile.common"
 
-LIB_DEPENDS=	qjson:${PORTSDIR}/devel/qjson
+LIB_DEPENDS=	libqjson.so:${PORTSDIR}/devel/qjson
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
