@@ -29,7 +29,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGUI}
-USE_TK_WRAPPER=	yes
+USES+=		tk:wrapper
 PLIST_SUB+=	WATCH=""
 .else
 PLIST_SUB+=	WATCH="@comment "
