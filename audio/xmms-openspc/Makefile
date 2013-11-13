@@ -16,13 +16,12 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm \
 		xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
-NO_STAGE=	yes
+GNU_CONFIGURE=	yes
 
 PLIST_FILES=	lib/xmms/Input/openspc.la \
 		lib/xmms/Input/openspc.so
 
 ONLY_FOR_ARCHS=	i386	# contains x86 assembler code
-GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
