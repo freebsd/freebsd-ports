@@ -10,29 +10,28 @@ MASTER_SITES=	http://old.tuxick.net/xfrisk/files/ \
 DISTNAME=	XFrisk-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A multi-player networked Risk game for X11
+COMMENT=	Multi-player networked Risk game for X11
 
-LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
 
 NO_CDROM=	Possible trademark infringement
 
 WRKSRC=		${WRKDIR}/XFrisk
 
 USE_XORG=	x11 xt xaw xmu sm ice
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ENV=	XDIR="${LOCALBASE}"
 
-NO_STAGE=	yes
 do-install:
 .for file in aiColson aiConway aiDummy friskserver xfrisk
-	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for file in risk
-	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	@${MKDIR} ${PREFIX}/lib/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 .for file in Countries.risk Help.risk World.risk
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/lib/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 .endfor
 
 .include <bsd.port.mk>
