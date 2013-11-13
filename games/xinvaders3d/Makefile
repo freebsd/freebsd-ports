@@ -15,8 +15,7 @@ USE_XORG=	x11
 PLIST_FILES=	bin/xinv3d
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xinv3d ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/xinv3d ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
