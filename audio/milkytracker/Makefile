@@ -3,9 +3,10 @@
 
 PORTNAME=	milkytracker
 PORTVERSION=	0.90.86
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.milkytracker.org/files/ \
-		CRITICAL/${PORTNAME}/${PORTVERSION}/${PORTREVISION}
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Music creation tool inspired by Fast Tracker 2
