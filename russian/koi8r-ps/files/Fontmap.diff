@@ -1,8 +1,8 @@
---- Fontmap.orig	Mon Jan 25 12:39:01 1999
+--- Fontmap	Mon Jan 25 12:39:01 1999
 +++ Fontmap	Fri Jul 23 16:48:39 1999
-@@ -400,0 +401,42 @@
+@@ -350,0 +350,42 @@
 +
-+% Cyrrillic koi8 fonts/aliases
++% Cyrillic KOI8 fonts/aliases
 +
 +/ArialCyrMT				(arial8.pfb)	;
 +/Arial			/ArialCyrMT			;

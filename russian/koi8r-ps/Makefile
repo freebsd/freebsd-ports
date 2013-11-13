@@ -20,19 +20,7 @@ NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(FONTMAP)
-FONTMAP!=	if which gs > /dev/null 2>&1 ; then \
-			d=`gs -h  | awk '/^Search path:$$/ { nl=1; next } \
-					nl { print $$3; exit }'`; \
-			if [ -e $$d/Fontmap.GS ] ; then \
-				${ECHO_CMD} $$d/Fontmap.GS; \
-			elif [ -e $$d/Fontmap ] ; then \
-				${ECHO_CMD} $$d/Fontmap \
-			else \
-				${ECHO_CMD} /nicht/ ; \
-			fi; \
-		else \
-			${ECHO_CMD} /nicht/ ; \
-		fi; ${ECHO_CMD}
+FONTMAP!=	${SH} ${FILESDIR}/find-fontmap.sh
 .endif
 
 NO_PACKAGE=	Nothing to build, configurations only
@@ -46,7 +34,7 @@ do-extract:
 		> ${WRKSRC}/XFree86-Type1_fonts.dir.scale
 
 do-build:
-	${ECHO_CMD} `${GREP} koi8 ${WRKSRC}/XFree86-Type1_fonts.dir.scale | wc -l` \
+	${GREP} -c koi8 ${WRKSRC}/XFree86-Type1_fonts.dir.scale \
 		> ${WRKSRC}/fonts.dir
 	${GREP} koi8 ${WRKSRC}/XFree86-Type1_fonts.dir.scale \
 		>> ${WRKSRC}/fonts.dir
@@ -61,7 +49,7 @@ do-install:
 		${DISTDIR}/${DIST_SUBDIR}/gs-type1_koi8_fonts.tgz
 	${TAR} -C ${CPS_DIR} -xzpf \
 		${DISTDIR}/${DIST_SUBDIR}/gs-type1_koi8_afm.tgz
-.if ${FONTMAP} == "/nicht/"
+.if !exists(${FONTMAP})
 	#################################################################
 	### You do not appear to have GhostScript installed. The file
 	###	${CPS_DIR}/Fontmap.diff
