@@ -1,4 +1,5 @@
 bin/xjumpx
+man/man1/xjumpx.1.gz
 lib/X11/app-defaults/XJumpX
 @exec install -d -m 777 %D/lib/X11/xjumpx
 @unexec rm -rf %D/lib/X11/xjumpx 2>&1 >/dev/null || true
