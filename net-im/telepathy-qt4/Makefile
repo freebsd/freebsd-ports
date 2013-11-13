@@ -2,6 +2,7 @@
 
 PORTNAME=	telepathy-qt4
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME:C/4//}/
 DISTNAME=	${PORTNAME:C/4//}-${PORTVERSION}
@@ -11,13 +12,13 @@ COMMENT=	High-level Qt binding for Telepathy
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	telepathy-farsight:${PORTSDIR}/net-im/telepathy-farsight \
-		telepathy-glib:${PORTSDIR}/net-im/telepathy-glib
+LIB_DEPENDS=	libtelepathy-farsight.so:${PORTSDIR}/net-im/telepathy-farsight \
+		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
 
 USE_GNOME=	libxslt:build
 USE_GSTREAMER=	yes
 USE_PYTHON_BUILD=	2.5+
-USE_QT4=	dbus gui network qtestlib_build xml \
+USE_QT4=	corelib dbus gui network qtestlib_build xml \
 		moc_build qmake_build rcc_build uic_build
 USES=		cmake pkgconfig
 CMAKE_ARGS=	-DENABLE_FARSIGHT:BOOL=True \
@@ -28,43 +29,33 @@ PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 PORTDOCS=	AUTHORS ChangeLog HACKING NEWS README html
 
-PORTEXAMPLES=	Makefile accounts cm contact-messenger extensions \
+PORTEXAMPLES=	accounts cm contact-messenger extensions \
 		file-transfer protocols roster stream-tubes
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.if ${PORT_OPTIONS:MEXAMPLES}
-CMAKE_ARGS+=	-DENABLE_EXAMPLES:BOOL=True
-.else
-CMAKE_ARGS+=	-DENABLE_EXAMPLES:BOOL=False
-.endif
+EXAMPLES_CMAKE_ON=	-DENABLE_EXAMPLES:BOOL=True
+EXAMPLES_CMAKE_OFF=	-DENABLE_EXAMPLES:BOOL=False
 
 pre-configure:
-	${REINPLACE_CMD} -e '/FIND_PROGRAM/ s/qmake //' \
+	@${REINPLACE_CMD} -e '/FIND_PROGRAM/ s,qmake ,,' \
 		${WRKSRC}/cmake/modules/FindQt.cmake
-	${REINPLACE_CMD} -e '/^add_dependencies(doxygen-doc / d' \
+	@${REINPLACE_CMD} -e '/^add_dependencies(doxygen-doc / d' \
 		${WRKSRC}/TelepathyQt/CMakeLists.txt
-	${REINPLACE_CMD} -e '/TelepathyQt.*\.pc/ s|pkgconfig|../libdata/pkgconfig|' \
+	@${REINPLACE_CMD} -e '/TelepathyQt.*\.pc/ s,pkgconfig,../libdata/pkgconfig,' \
 		${WRKSRC}/TelepathyQt/CMakeLists.txt \
 		${WRKSRC}/TelepathyQt/Farsight/CMakeLists.txt
-	${REINPLACE_CMD} -e '/$${LIBXML2_INCLUDE_DIR}/ s|$$| ${LOCALBASE}/include|' \
+	@${REINPLACE_CMD} -e '/$${LIBXML2_INCLUDE_DIR}/ s,$$, ${LOCALBASE}/include,' \
 		${WRKSRC}/TelepathyQt/Farsight/CMakeLists.txt
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${CP} -R doc/html .
-. for f in ${PORTDOCS}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${DOCSDIR}
-. endfor
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	cd ${WRKSRC}/examples && ${RM} -rf */CMakeFiles */*.cmake */Makefile
-	${MKDIR} ${EXAMPLESDIR}
-. for f in ${PORTEXAMPLES}
-	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} ${f} ${EXAMPLESDIR}
-. endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:Nhtml:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC}/examples && ${RM} -rf */CMakeFiles */*.cmake */_gen */Makefile
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+.for f in ${PORTEXAMPLES}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} ${f} ${STAGEDIR}${EXAMPLESDIR}
+.endfor
 
 .include <bsd.port.mk>
