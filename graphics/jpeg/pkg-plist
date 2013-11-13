@@ -15,6 +15,11 @@ lib/libjpeg.a
 lib/libjpeg.la
 lib/libjpeg.so
 lib/libjpeg.so.11
+man/man1/cjpeg.1.gz
+man/man1/djpeg.1.gz
+man/man1/jpegtran.1.gz
+man/man1/rdjpgcom.1.gz
+man/man1/wrjpgcom.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/coderules.txt
 %%PORTDOCS%%%%DOCSDIR%%/filelist.txt
