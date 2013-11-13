@@ -122,12 +122,11 @@ PLIST_SUB+=	IPOD="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MITMS_PLUGIN}
-USE_WEBPLUGINS=	gecko18
-WEBPLUGINS_FILES=librhythmbox-itms-detection-plugin.so
-.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
+USES+=	webplugin:gecko
+WEBPLUGIN_FILES=librhythmbox-itms-detection-plugin.so
 
 CONFIGURE_ARGS+=--enable-browser-plugin
-CONFIGURE_ENV+=	MOZILLA_PLUGINDIR=${WEBPLUGINS_DIR}
+CONFIGURE_ENV+=	MOZILLA_PLUGINDIR=${WEBPLUGIN_DIR}
 PLIST_SUB+=	ITMS_PLUGIN=""
 .else
 CONFIGURE_ARGS+=--disable-browser-plugin
