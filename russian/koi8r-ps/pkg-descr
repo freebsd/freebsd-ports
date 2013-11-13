@@ -13,4 +13,4 @@ Fontmap file to print/display with this fonts by default.
 
 Note, however, that this will NOT make your PostScript printers print in
 Russian, since they have their own PostScript interpreters built in. Use
-`koify' port for to deal with those.
+`koify' to deal with those.
