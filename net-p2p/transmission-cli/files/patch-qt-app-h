@@ -1,0 +1,10 @@
+--- qt/app.h.orig	2013-11-13 20:00:41.000000000 +0100
++++ qt/app.h	2013-11-13 20:00:51.000000000 +0100
+@@ -13,6 +13,7 @@
+ #ifndef QTR_APP_H
+ #define QTR_APP_H
+ 
++#include <ctime>
+ #include <QApplication>
+ #include <QSet>
+ #include <QTimer>
