@@ -20,7 +20,6 @@ BJAM_ARGS+=	cxxflags=-fPIC
 # of gcc/g++):
 BJAM_ARGS+=    cxxflags="${CXXFLAGS:N-O*}" cflags="${CFLAGS:N-O*}"
 
-NO_CCACHE=	yes
 .if ${CC:T:Mgcc*}
 BOOST_TOOLSET:=	gcc
 .elif ${CC:T:Mclang}
