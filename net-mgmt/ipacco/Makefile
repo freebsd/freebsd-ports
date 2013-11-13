@@ -16,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/include/tclExtend.h:${PORTSDIR}/lang/tclX \
 
 NO_BUILD=	yes
 USE_PHP=	mysql gd
-USE_TCL_RUN=	yes
+USES+=		tcl:run
 
 IPACCO?=	www/${PORTNAME}
 IPACCO_WEB=	${PREFIX}/${IPACCO}
