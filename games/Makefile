@@ -568,6 +568,7 @@
     SUBDIR += magicor
     SUBDIR += mahjong
     SUBDIR += maitretarot
+    SUBDIR += manaplus
     SUBDIR += mangband
     SUBDIR += mangos
     SUBDIR += marsnomercy
@@ -931,7 +932,6 @@
     SUBDIR += tinymux
     SUBDIR += tkmoo
     SUBDIR += tksol
-    SUBDIR += tmw
     SUBDIR += tomatoes
     SUBDIR += tomenet
     SUBDIR += tong
