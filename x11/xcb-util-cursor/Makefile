@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xcb-util-cursor
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	x11
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
