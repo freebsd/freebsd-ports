@@ -1,0 +1,5 @@
+Etcdctl is a command line client for etcd. It can
+be used in scripts or for administrators to explore
+an etcd cluster.
+
+WWW: https://github.com/coreos/etcdctl#etcdctl
