@@ -1,0 +1,12 @@
+--- Makefile.in.orig	2013-04-30 12:23:15.000000000 +0200
++++ Makefile.in	2013-04-30 12:23:54.000000000 +0200
+@@ -256,7 +256,8 @@
+ 
+ VPATH = $(srcdir)/generic:$(srcdir)/unix:$(srcdir)/win
+ 
+-.c.@OBJEXT@:
++
++vfs.@OBJEXT@: $(srcdir)/generic/vfs.c
+ 	$(COMPILE) -c `@CYGPATH@ $<` -o $@
+ 
+ #========================================================================
