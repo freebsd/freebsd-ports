@@ -14,14 +14,14 @@ COMMENT=	Cube puzzle for X11
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		imake
 USE_XORG=	x11 xext xt sm ice
-MAN1=		xcubes.1
-MANCOMPRESSED=	no
-XFREE86_HTML_MAN=	no
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/xcubes \
+		man/man1/xcubes.1.gz \
+		lib/X11/app-defaults/Cubes
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xcubes ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/Cubes.ad ${PREFIX}/lib/X11/app-defaults/Cubes
-	${INSTALL_MAN} ${WRKSRC}/xcubes.man ${MANPREFIX}/man/man1/xcubes.1
+	${INSTALL_PROGRAM} ${WRKSRC}/xcubes ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/Cubes.ad ${STAGEDIR}${PREFIX}/lib/X11/app-defaults/Cubes
+	${INSTALL_MAN} ${WRKSRC}/xcubes.man ${STAGEDIR}${MANPREFIX}/man/man1/xcubes.1
 
 .include <bsd.port.mk>
