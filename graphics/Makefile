@@ -948,6 +948,7 @@
     SUBDIR += scr2png
     SUBDIR += scrot
     SUBDIR += scwm-icons
+    SUBDIR += sdl2_gfx
     SUBDIR += sdl2_image
     SUBDIR += sdl2_ttf
     SUBDIR += sdl_gfx

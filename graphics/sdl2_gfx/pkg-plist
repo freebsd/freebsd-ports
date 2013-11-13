@@ -1,0 +1,9 @@
+include/SDL2/SDL2_framerate.h
+include/SDL2/SDL2_gfxPrimitives.h
+include/SDL2/SDL2_imageFilter.h
+include/SDL2/SDL2_rotozoom.h
+lib/libSDL2_gfx-1.0.so
+lib/libSDL2_gfx-1.0.so.0
+lib/libSDL2_gfx.a
+lib/libSDL2_gfx.la
+lib/libSDL2_gfx.so
