@@ -2,24 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	tkregexp
-PORTVERSION=	3.0
-PORTREVISION=	3
+PORTVERSION=	3.1
 CATEGORIES=	misc tk
 MASTER_SITES=	http://laurent.riesterer.free.fr/regexp/
 DISTNAME=	visual_regexp-${PORTVERSION}
+EXTRACT_SUFX=	.tcl
+EXTRACT_ONLY=	
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Interactive regexp design tool
 
-USE_TK_RUN=	yes
+USES+=		tk
+USE_DOS2UNIX=	visual_regexp-${PORTVERSION}.tcl
 NO_BUILD=	yes
 PLIST_FILES=	bin/tkregexp
 
-NO_STAGE=	yes
+WRKSRC=		${WRKDIR}
+
+post-extract:
+	${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}
+
 post-patch:
-	@${REINPLACE_CMD} 's|wish8.3|${WISH}|' ${WRKSRC}/visual_regexp.tcl
+	${REINPLACE_CMD} -e "1s|^\(.*\)|#!${WISH}|; 2d" ${WRKDIR}/visual_regexp-${PORTVERSION}.tcl
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/visual_regexp.tcl ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/visual_regexp-${PORTVERSION}.tcl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
