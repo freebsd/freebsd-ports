@@ -16,12 +16,10 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USES=		fuse pkgconfig
 
-PLIST_FILES=	bin/pakmount
-MAN1=		pakmount.1
+PLIST_FILES=	bin/pakmount man/man1/pakmount.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,Linux,${OPSYS}, ; s,Fatnasy,Fantasy,' \
-		${WRKSRC}/src/${MAN1}
+		${WRKSRC}/src/pakmount.1
 
 .include <bsd.port.mk>

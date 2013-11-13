@@ -10,12 +10,11 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility that reports when files have been altered
 
-BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone \
-		help2man:${PORTSDIR}/misc/help2man
+LIB_DEPENDS=	libargp.so:${PORTSDIR}/devel/argp-standalone
+BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man
 
 GNU_CONFIGURE=	yes
-NO_STAGE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_FAM=	yes
 CONFIGURE_ENV+=	LIBS="-largp"
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -23,15 +22,17 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/doc --disable-nls
 
 INFO=		fileschanged
-MAN1=		fileschanged.1
-PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README
-PLIST_FILES=	bin/fileschanged
+DOCS=		AUTHORS ChangeLog INSTALL NEWS README
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-install:
-	${MKDIR} ${DOCSDIR}
-.for DOCFILE in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${DOCFILE} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for DOCFILE in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${DOCFILE} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

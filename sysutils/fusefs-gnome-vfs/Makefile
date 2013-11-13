@@ -13,18 +13,16 @@ COMMENT=	Interface between FUSE and the Gnome VFS 2.0
 
 RPORTNAME=	gnome-vfs-fuse
 WRKSRC=		${WRKDIR}/${RPORTNAME}
-USES=		fuse pkgconfig
+USES=		fuse pkgconfig gmake
 USE_GNOME=	gnomevfs2
-USE_GMAKE=	yes
 PLIST_FILES=	bin/gnomevfs-mount
 PORTDOCS=	README
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gnomevfs-mount ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/gnomevfs-mount ${STAGEDIR}${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

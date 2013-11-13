@@ -22,7 +22,6 @@ PORTDOCS=	README
 
 PLIST_FILES=	bin/sqlfs
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-build:
@@ -33,14 +32,11 @@ do-build:
 		-o sqlfs)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sqlfs ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/sqlfs ${STAGEDIR}${PREFIX}/bin/
 
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
