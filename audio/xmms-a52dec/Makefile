@@ -15,7 +15,6 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 RUN_DEPENDS=	${LOCALBASE}/lib/xmms/Output/libOSSSurround.so:${PORTSDIR}/audio/xmms-osssurround
 
 USE_BZIP2=	yes
-NO_STAGE=	yes
 USE_GNOME=	gtk12
 CFLAGS+=	`xmms-config --cflags` -L${LOCALBASE}/lib
 
@@ -30,6 +29,8 @@ do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -shared -o liba52dec.so xmms-a52dec.c -la52
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/liba52dec.so ${PREFIX}/lib/xmms/Input/
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/Input
+	${INSTALL_PROGRAM} ${WRKSRC}/liba52dec.so \
+		${STAGEDIR}${PREFIX}/lib/xmms/Input/
 
 .include <bsd.port.post.mk>
