@@ -15,12 +15,11 @@ USE_XORG=	xpm
 
 PLIST_FILES=	bin/xeyes+
 
-NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -I${LOCALBASE}/include -DXPM -DUSLEEP \
 		-o xeyes+ xeyes+.c -L${LOCALBASE}/lib -lX11 -lXpm -lm
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xeyes+ ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/xeyes+ ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
