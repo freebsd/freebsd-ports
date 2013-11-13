@@ -12,9 +12,7 @@ DISTNAME=	c${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet CB - a mostly-defunct chat client
 
-USES=		readline
-USE_TK_BUILD=	yes
-USE_TK=		yes
+USES=		readline tk
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tclinclude=${TCL_INCLUDEDIR} \
 		--with-tcllib=${LOCALBASE}/lib
@@ -23,17 +21,16 @@ PORTEXAMPLES=	bartender confuse echofunctions sample.icbrc
 PLIST_FILES=	bin/icb %%DATADIR%%/icbserverdb
 PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/icb/icb ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/icbserverdb ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/icb/icb ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/icbserverdb ${STAGEDIR}${DATADIR}
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ${PORTEXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/contrib/${f} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/contrib/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 .endif
 
