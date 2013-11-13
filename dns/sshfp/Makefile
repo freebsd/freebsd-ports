@@ -22,13 +22,10 @@ GH_ACCOUNT=	xelerance
 GH_TAGNAME=	${PORTVERSION}
 GH_COMMIT=	3378f7d
 
-MAN1=		sshfp.1 dane.1
-
 PY_FILES=	sshfp dane
 
 WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${PORTNAME}-${GH_COMMIT}
 
-NO_STAGE=	yes
 post-patch:
 .for f in ${PY_FILES} daneldnsx.py
 	@${REINPLACE_CMD} -e '1s|.*|#!${PYTHON_CMD}|' ${WRKSRC}/${f}
@@ -36,9 +33,10 @@ post-patch:
 
 do-install:
 .for f in ${PY_FILES}
-	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${f}.1 ${MANPREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${f}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/daneldnsx.py ${PYTHON_SITELIBDIR}/
+	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/daneldnsx.py ${STAGEDIR}${PYTHON_SITELIBDIR}
 
 .include <bsd.port.mk>
