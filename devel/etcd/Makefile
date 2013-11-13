@@ -2,8 +2,9 @@
 
 PORTNAME=	etcd
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	devel
-PKGNAMEPREFIX=	coreos
+PKGNAMEPREFIX=	coreos-
 
 MAINTAINER=	ports@robakdesign.com
 COMMENT=	Highly-available key value store and service discovery
@@ -19,17 +20,18 @@ PLIST_FILES=	bin/${PORTNAME}
 
 PORTDOCS=	README.md
 
-NO_BUILD=	yes
-
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS ETCDCTL
 DOCS_DESC=	Install etcd README file
+
+ETCDCTL_DESC=	Install etcdctl commandline tool
+ETCDCTL_RUN_DEPENDS=	etcdctl:${PORTSDIR}/devel/etcdctl
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$VER|${DISTVERSION}|' ${WRKSRC}/scripts/release-version
 	@${REINPLACE_CMD} -e '/VER=/d' ${WRKSRC}/scripts/release-version
 
-pre-install:
-	@(cd ${WRKSRC}; ${SH} build)
+do-build:
+	cd ${WRKSRC}; ${SH} build
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
