@@ -15,8 +15,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 USES=		fuse
 
-MAN1=		funionfs.1
-PLIST_FILES=	bin/funionfs
+PLIST_FILES=	bin/funionfs man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

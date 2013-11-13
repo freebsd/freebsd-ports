@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Apr 20 14:15:07 2000
-+++ Makefile	Wed Apr 26 19:16:04 2000
+--- Makefile.orig	2000-04-21 05:15:07.000000000 +0800
++++ Makefile	2013-11-09 19:38:12.000000000 +0800
 @@ -1,10 +1,10 @@
 -CC=gcc
 -CFLAGS=-O3
@@ -14,14 +14,14 @@
  
  all: $(TARGET)
  
-@@ -19,8 +19,8 @@
+@@ -19,8 +19,8 @@ fortunelock.o: fortunelock.c fortunelock
  
  install: 
  	strip fortunelock
 -	install -m 755 fortunelock $(PREFIXDIR)/bin
 -	install -m 644 fortunelock.1 $(PREFIXDIR)/man/man1
-+	install -c -m 755 fortunelock $(PREFIX)/bin
-+	install -c -m 644 fortunelock.1 $(PREFIX)/man/man1
++	install -c -m 755 fortunelock $(DESTDIR)$(PREFIX)/bin
++	install -c -m 644 fortunelock.1 $(DESTDIR)$(PREFIX)/man/man1
  
  uninstall:
 -	rm -rf $(PREFIXDIR)/bin/fortunelock

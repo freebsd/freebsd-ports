@@ -32,12 +32,6 @@ UBLIO_DESC=	Enable user space cache for improved speed
 SUB_FILES=	pkg-message
 DOCSDIR=	${PREFIX}/share/doc/ntfs-3g
 
-MAN8=		mkntfs.8 ntfs-3g.8 ntfs-3g.probe.8 \
-		ntfs-3g.secaudit.8 ntfs-3g.usermap.8 ntfscat.8 ntfsclone.8 \
-		ntfscluster.8 ntfscmp.8 ntfscp.8 ntfsfix.8 ntfsinfo.8 \
-		ntfslabel.8 ntfsls.8 ntfsprogs.8 ntfsresize.8 ntfsundelete.8
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MLOCK}
@@ -64,8 +58,7 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${STAGEDIR}${DOCSDIR}
 .endif
-	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
 .include <bsd.port.post.mk>

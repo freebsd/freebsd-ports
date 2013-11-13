@@ -17,15 +17,16 @@ LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt \
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USES=		fuse pkgconfig
-NO_STAGE=	yes
+DOCS=		README cryptofs.conf
 
-PLIST_FILES=	bin/cryptofs
+OPTIONS_DEFINE=	DOCS
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	README cryptofs.conf
+.include <bsd.port.options.mk>
+
 post-install:
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -14,12 +14,11 @@ LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
 
 PLIST_FILES=	bin/filedupe
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|filename\[80\]|filename[1024]|g; \
 		s|your_database|/var/db/filedupe.db|' ${WRKSRC}/filedupe.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/filedupe ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/filedupe ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
