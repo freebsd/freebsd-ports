@@ -5,5 +5,8 @@ etc/gbsplayrc.default
 @exec [ -f %B/gbsplayrc ] || cp %B/%f %B/gbsplayrc
 share/locale/de/LC_MESSAGES/gbsplay.mo
 share/locale/en/LC_MESSAGES/gbsplay.mo
+man/man1/gbsinfo.1.gz
+man/man1/gbsplay.1.gz
+man/man5/gbsplayrc.5.gz
 %%EXAMPLESDIR%%/nightmode.gbs
 @dirrm %%EXAMPLESDIR%%
