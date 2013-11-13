@@ -159,7 +159,7 @@ include/phonon/volumefaderinterface.h
 include/phonon/volumeslider.h
 lib/cmake/phonon/PhononConfig.cmake
 lib/cmake/phonon/PhononConfigVersion.cmake
-lib/cmake/phonon/PhononTargets-release.cmake
+lib/cmake/phonon/PhononTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/phonon/PhononTargets.cmake
 lib/libphonon.so
 lib/libphonon.so.4
