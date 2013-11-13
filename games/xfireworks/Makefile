@@ -15,15 +15,9 @@ LICENSE_COMB=	dual
 
 USE_XORG=	x11
 
-MAN1=		xfireworks.1
-
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xfireworks ${PREFIX}/bin/xfireworks
-	${INSTALL_MAN} ${WRKSRC}/xfireworks.1 ${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/xfireworks.conf ${PREFIX}/etc/xfireworks.conf.sample
-.if !exists(${PREFIX}/etc/xfireworks.conf)
-	${CP} ${PREFIX}/etc/xfireworks.conf.sample ${PREFIX}/etc/xfireworks.conf
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/xfireworks ${STAGEDIR}${PREFIX}/bin/xfireworks
+	${INSTALL_MAN} ${WRKSRC}/xfireworks.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/xfireworks.conf ${STAGEDIR}${PREFIX}/etc/xfireworks.conf.sample
 
 .include <bsd.port.mk>

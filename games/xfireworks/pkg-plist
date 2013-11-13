@@ -1,4 +1,5 @@
 bin/xfireworks
+man/man1/xfireworks.1.gz
 @unexec if cmp -s %D/etc/xfireworks.conf %D/etc/xfireworks.conf.sample; then rm -f %D/etc/xfireworks.conf; fi
 etc/xfireworks.conf.sample
 @exec test -f %B/xfireworks.conf || cp %B/%f %B/xfireworks.conf
