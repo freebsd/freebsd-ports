@@ -12,9 +12,6 @@ COMMENT=	Makes the root window bloody
 
 MAKE_ENV=	X11BASE=${LOCALBASE}
 USE_XORG=	x11
-MAN1=		xblood.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/xblood
+PLIST_FILES=	bin/xblood man/man1/xblood.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
