@@ -13,10 +13,6 @@ COMMENT=	Checkers game for X11
 USES=		imake
 USE_XORG=	x11 xext xpm
 
-MAN6=		xcheckers.6 simplech.6
-
-# included by both imake and sh
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} '/^#/d' ${WRKSRC}/Local.config
 
