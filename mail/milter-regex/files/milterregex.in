@@ -29,7 +29,16 @@ rcvar="milterregex_enable"
 command="%%PREFIX%%/libexec/milter-regex"
 pidfile="${spooldir}/milter-regex.pid"
 required_files="%%PREFIX%%/etc/milter-regex.conf"
+start_precmd="milterregex_prestart"
 stop_postcmd="milterregex_poststop"
+
+milterregex_prestart() {
+	if test ! -d "${spooldir}"
+	then
+		mkdir -m 700 -p "${spooldir}"
+		chown mailnull:daemon "${spooldir}"
+	fi
+}
 
 milterregex_poststop() {
 	/bin/rm -f ${pidfile}
