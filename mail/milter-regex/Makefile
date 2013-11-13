@@ -12,14 +12,13 @@ COMMENT=	Milter plugin to sendmail for regular expression filtering
 LICENSE=	BSD
 LICENSE_FILE=	${FILESDIR}/COPYRIGHT
 
-NO_STAGE=	yes
+USE_RC_SUBR=	milterregex
+SUB_LIST=	SPOOLDIR=${SPOOLDIR}
+PLIST_SUB=	SPOOLDIR=${SPOOLDIR}
+PLIST_FILES=	libexec/milter-regex man/man8/milter-regex.8.gz
 
 MAILUSER?=	mailnull
-MAN8=		milter-regex.8
-PLIST_FILES=	libexec/milter-regex
-USE_RC_SUBR=	milterregex
 SPOOLDIR?=	/var/run/milter-regex
-SUB_LIST=	SPOOLDIR=${SPOOLDIR}
 
 .include <bsd.port.pre.mk>
 
@@ -40,11 +39,7 @@ post-patch:
 	    s/-Werror//g"  ${WRKSRC}/Makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/milter-regex ${PREFIX}/libexec
-	@${INSTALL_MAN} ${WRKSRC}/milter-regex.8 ${PREFIX}/man/man8
-	@${INSTALL} -d -o ${MAILUSER} -g daemon -m 0700 ${SPOOLDIR}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/milter-regex ${STAGEDIR}${PREFIX}/libexec/
+	${INSTALL_MAN} ${WRKSRC}/milter-regex.8 ${STAGEDIR}${MANPREFIX}/man/man8/
 
 .include <bsd.port.post.mk>

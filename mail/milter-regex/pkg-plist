@@ -1,5 +1,3 @@
-@exec mkdir -m 700 -p /var/run/milter-regex
-@exec chown mailnull:daemon /var/run/milter-regex
 @cwd /
-@dirrmtry /var/run/milter-regex
+@dirrmtry %%SPOOLDIR%%
 @cwd
