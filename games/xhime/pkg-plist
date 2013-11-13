@@ -1,7 +1,9 @@
 bin/xhime
+man/ja/man6/xhime.6.gz
+man/man6/xhime.6.gz
 %%PORTDOCS%%share/doc/ja/xhime/xhime-doc.euc
 %%PORTDOCS%%share/doc/ja/xhime/xhime.doc
 %%PORTDOCS%%share/doc/ja/xhime/rh110-doc.euc
 %%PORTDOCS%%@dirrm share/doc/ja/xhime
-%%EXAMPLESDIR%%/rh110.xhm
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rh110.xhm
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
