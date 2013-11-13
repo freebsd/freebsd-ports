@@ -82,3 +82,12 @@
  #else
  static int
  cpu_get_load(cpu_priv *c)
+@@ -109,7 +173,7 @@
+     k->set_rows(&c->chart, 1, c->colors);
+     gtk_widget_set_tooltip_markup(((plugin_instance *)c)->pwid, "<b>Cpu</b>");
+     cpu_get_load(c);
+-    c->timer = g_timeout_add(1000, (GSourceFunc) cpu_get_load, (gpointer) c);
++    c->timer = g_timeout_add(2000, (GSourceFunc) cpu_get_load, (gpointer) c);
+     RET(1);
+ }
+ 
