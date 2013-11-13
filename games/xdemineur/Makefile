@@ -14,8 +14,7 @@ COMMENT=	Another minesweeper game for the X Window System
 
 USES=		imake
 USE_XORG=	xpm
-MAN1=		xdemineur.1
-PLIST_FILES=	bin/xdemineur
+PLIST_FILES=	bin/xdemineur \
+		man/man1/xdemineur.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
