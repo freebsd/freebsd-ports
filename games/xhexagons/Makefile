@@ -14,14 +14,14 @@ COMMENT=	Hexagons puzzle (similar to Fifteen Puzzle) for X Window System
 WRKSRC=		${WRKDIR}/xhexagons
 USES=		imake
 USE_XORG=	x11 xext xt sm ice
-MAN1=		xhexagons.1
-XFREE86_HTML_MAN=	no
-NO_INSTALL_MANPAGES=	yes
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/xhexagons \
+		man/man1/xhexagons.1.gz \
+		lib/X11/app-defaults/Hexagons
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xhexagons ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/Hexagons.ad ${PREFIX}/lib/X11/app-defaults/Hexagons
-	${INSTALL_MAN} ${WRKSRC}/xhexagons.man ${PREFIX}/man/man1/xhexagons.1
+	${INSTALL_PROGRAM} ${WRKSRC}/xhexagons ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/Hexagons.ad ${STAGEDIR}${PREFIX}/lib/X11/app-defaults/Hexagons
+	${INSTALL_MAN} ${WRKSRC}/xhexagons.man ${STAGEDIR}${PREFIX}/man/man1/xhexagons.1
 
 .include <bsd.port.mk>
