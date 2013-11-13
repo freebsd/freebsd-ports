@@ -46,7 +46,7 @@ CMAKE_ARGS+=	-DWITH_APPS="${KID3_CLI}KDE"
 PLIST_SUB+=	QT="@comment " KDE=""
 .endif
 
-PLIST_SUB=	SHLIB_VER=${PORTVERSION}
+PLIST_SUB+=	SHLIB_VER=${PORTVERSION}
 
 CLI_DESC=	Build and install command line utility
 CLI_USES=	readline
