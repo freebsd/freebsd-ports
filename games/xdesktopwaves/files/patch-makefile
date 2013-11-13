@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Dec 18 13:47:40 2004
-+++ Makefile	Wed Feb 23 22:28:56 2005
+--- ./Makefile.orig	2004-12-18 03:47:40.000000000 -0200
++++ ./Makefile	2013-11-13 00:35:29.000000000 -0200
 @@ -11,19 +11,19 @@
  
  #=========================== C compiler configuration ==========================
@@ -26,3 +26,14 @@
  INSTALL = install
  RM      = rm -f -v
  
+@@ -41,8 +41,8 @@
+ 	$(RM) xdesktopwaves.o
+ 
+ install: xdesktopwaves xdesktopwaves.1
+-	$(INSTALL) -c -m 0755 -s xdesktopwaves $(BINDIR)/xdesktopwaves
+-	$(INSTALL) -c -m 0444 xdesktopwaves.1 $(MAN1DIR)/xdesktopwaves.1
++	$(INSTALL) -c -m 0755 -s xdesktopwaves ${DESTDIR}$(BINDIR)/xdesktopwaves
++	$(INSTALL) -c -m 0444 xdesktopwaves.1 ${DESTDIR}$(MAN1DIR)/xdesktopwaves.1
+ 
+ uninstall:
+ 	$(RM) $(BINDIR)/xdesktopwaves

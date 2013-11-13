@@ -10,10 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simulation of water waves on the desktop
 
-MAN1=		xdesktopwaves.1
 USE_XORG=	x11 xext
 
-PLIST_FILES=	bin/xdesktopwaves
+PLIST_FILES=	bin/xdesktopwaves \
+		man/man1/xdesktopwaves.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
