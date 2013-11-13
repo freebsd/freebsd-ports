@@ -12,7 +12,7 @@ COMMENT=	Mastermind game for X Window System
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	forms:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=	libforms.so:${PORTSDIR}/x11-toolkits/xforms
 
 USE_XORG=	x11 xpm
 MAKE_ENV=	GRAPHLIBS="${LDFLAGS}"
@@ -23,7 +23,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lforms -lXpm -lX11
 PORTDOCS=	BUGS README.for.developers README.for.users
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^CC/s| =| ?=| ; \
@@ -32,15 +33,11 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|malloc.h|stdlib.h|' ${WRKSRC}/list.h
 
-.include <bsd.port.options.mk>
-
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin)
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${STAGEDIR}${PREFIX}/bin)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
 .endfor
-.endif
 
 .include <bsd.port.mk>
