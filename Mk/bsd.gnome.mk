@@ -419,7 +419,7 @@ gal2_DETECT=		${LOCALBASE}/libdata/pkgconfig/gal-2.4.pc
 gal2_USE_GNOME_IMPL=gnomeui libgnomeprintui
 
 gnomecontrolcenter2_DETECT=	${LOCALBASE}/libdata/pkgconfig/gnome-window-settings-2.0.pc
-gnomecontrolcenter2_LIB_DEPENDS=libgnome-window-settings:${PORTSDIR}/sysutils/gnome-control-center
+gnomecontrolcenter2_LIB_DEPENDS=libgnome-window-settings.so:${PORTSDIR}/sysutils/gnome-control-center
 gnomecontrolcenter2_USE_GNOME_IMPL=metacity gnomemenus libgnomekbd gnomedesktop librsvg2
 gnomecontrolcenter2_GNOME_DESKTOP_VERSION=2
 
