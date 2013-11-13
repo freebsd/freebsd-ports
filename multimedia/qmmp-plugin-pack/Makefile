@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qmmp-plugin-pack
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://qmmp.ylsoftware.com/files/plugins/ \
 		http://qmmp.googlecode.com/files/
@@ -19,65 +19,40 @@ USES=		cmake:outsource pkgconfig
 USE_QT4=	corelib gui qmake_build rcc_build moc_build linguist_build
 USE_LDCONFIG=	yes
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	FFAP MPG123 QSUI
 OPTIONS_DEFAULT=	FFAP MPG123 QSUI
+
 FFAP_DESC=		Support APE sound file
-MPG123_DESC=	Support libmpg123 (MPEG v1/2 layer1/2/3)
-QSUI_DESC=		Simple UI based on standard widgets set
+FFAP_LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
+FFAP_CMAKE_ON=	-DUSE_FFAP:BOOL=TRUE
+FFAP_CMAKE_OFF=	-DUSE_FFAP:BOOL=FALSE
 OPTIONS_DEFINE_i386=	FFAPASM
 OPTIONS_DEFAULT_i386=	FFAPASM
 OPTIONS_DEFINE_amd64=	FFAPASM
 OPTIONS_DEFAULT_amd64=	FFAPASM
 FFAPASM_DESC=	Optimize FFap decoder using devel/yasm
+FFAPASM_BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
+FFAPASM_CMAKE_ON=	-DUSE_ASM:BOOL=TRUE
+FFAPASM_CMAKE_OFF=	-DUSE_ASM:BOOL=FALSE
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+MPG123_LIB_DEPENDS=	libmpg123.so:${PORTSDIR}/audio/mpg123
+MPG123_USE=	QT4=uic_build
+MPG123_CMAKE_ON=	-DUSE_MPG123:BOOL=TRUE
+MPG123_CMAKE_OFF=	-DUSE_MPG123:BOOL=FALSE
 
-.if ${PORT_OPTIONS:MQSUI}
-USE_QT4+=	network
-PLIST_SUB+=	QSUI=""
-PLUGIN_OPTIONS_CMAKE+=	-DUSE_QSUI:BOOL=TRUE
-.else
-PLIST_SUB+=	QSUI="@comment "
-PLUGIN_OPTIONS_CMAKE+=	-DUSE_QSUI:BOOL=FALSE
-.endif
-
-.if ${PORT_OPTIONS:MMPG123}
-PLIST_SUB+=	MPG123=""
-LIB_DEPENDS+=	libmpg123.so:${PORTSDIR}/audio/mpg123
-PLUGIN_OPTIONS_CMAKE+=	-DUSE_MPG123:BOOL=TRUE
-.else
-PLIST_SUB+=	MPG123="@comment "
-PLUGIN_OPTIONS_CMAKE+=	-DUSE_MPG123:BOOL=FALSE
-.endif
+QSUI_DESC=		Simple UI based on standard widgets set
+QSUI_USE=	QT4=network,uic_build
+QSUI_CMAKE_ON=	-DUSE_QSUI:BOOL=TRUE
+QSUI_CMAKE_OFF=	-DUSE_QSUI:BOOL=FALSE
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MFFAP}
-PLIST_SUB+=	FFAP=""
-. if (${ARCH} == i386 || ${ARCH} == amd64) && ${PORT_OPTIONS:MFFAPASM}
-BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
-PLUGIN_OPTIONS_CMAKE+=	-DUSE_ASM:BOOL=TRUE
-. else
-PLUGIN_OPTIONS_CMAKE+=	-DUSE_ASM:BOOL=FALSE
-. endif
-LIB_DEPENDS+=	libtag.so:${PORTSDIR}/audio/taglib
-PLUGIN_OPTIONS_CMAKE+=	-DUSE_FFAP:BOOL=TRUE
-.else
-PLIST_SUB+=	FFAP="@comment "
-PLUGIN_OPTIONS_CMAKE+=	-DUSE_FFAP:BOOL=FALSE
-.endif
-
-.if ${PORT_OPTIONS:MQSUI} || ${PORT_OPTIONS:MMPG123}
-USE_QT4+=	uic_build
-.endif
-
-CMAKE_ARGS+=	${PLUGIN_OPTIONS_CMAKE} \
-	-DCMAKE_REQUIRED_INCLUDES:PATH=${LOCALBASE}/include
+CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:PATH=${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 pre-configure:
-	${RM} -f ${BUILD_WRKSRC}/CMakeCache.txt
+	@${RM} -f ${BUILD_WRKSRC}/CMakeCache.txt
 
 .include <bsd.port.post.mk>
