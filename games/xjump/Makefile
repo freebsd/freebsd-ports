@@ -9,19 +9,21 @@ MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple X game where one tries to jump up as many levels as possible
+COMMENT=	Simple X game where one tries to jump up as many levels as possible
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/g}
 
-PLIST_FILES=	bin/xjump
 USE_XORG=	xpm xaw
 MAKE_ARGS=	CC="${CC} ${CFLAGS}" RECORD_FILE="/var/games/xjump.record" \
 		IDIR="-I${LOCALBASE}/include" LDIR="-L${LOCALBASE}/lib"
 ALL_TARGET=	xjump
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} -m 2755 -g games ${WRKSRC}/xjump ${PREFIX}/bin
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/xjump ${STAGEDIR}${PREFIX}/bin
+	@${ECHO_CMD} "@group games" >> ${TMPPLIST}
+	@${ECHO_CMD} "@mode 2755" >> ${TMPPLIST}
+	@${ECHO_CMD} "bin/xjump" >> ${TMPPLIST}
+	@${ECHO_CMD} "@mode" >> ${TMPPLIST}
+	@${ECHO_CMD} "@group" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
