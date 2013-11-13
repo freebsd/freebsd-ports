@@ -1,9 +1,9 @@
 bin/relay
 bin/rport
 bin/xgospel
-%%PORTDOCS%%share/doc/xgospel/FAQ
-%%PORTDOCS%%share/doc/xgospel/README
-share/xgospel/board.xpm
-share/xgospel/pagoda.xpm
-@dirrm share/xgospel
-%%PORTDOCS%%@dirrm share/doc/xgospel
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/board.xpm
+%%DATADIR%%/pagoda.xpm
+@dirrmtry %%DATADIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
