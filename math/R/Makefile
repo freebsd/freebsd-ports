@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	R
-PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTVERSION=	3.0.2
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/%SUBDIR%/ \
 		ftp://cran.r-project.org/pub/R/%SUBDIR%/ \
@@ -22,6 +21,10 @@ MASTER_SITES=	http://cran.r-project.org/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	src/base/R-${PORTVERSION:C|\..*||}
 DISTNAME=	R-${PORTVERSION}
 
+PATCH_SITES=		${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	bf
+PATCHFILES=		R-patched-20131112-r64207.diff.bz2
+
 MAINTAINER=	bf@FreeBSD.org
 COMMENT?=	A language for statistical computing and graphics
 
@@ -29,7 +32,8 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=		${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 
-CONFIGURE_ENV=		SED="${LOCALBASE}/bin/gsed" \
+CONFIGURE_ENV=		LIBR_LDFLAGS="${LDFLAGS}" OBJC="${CC}" \
+			SED="${LOCALBASE}/bin/gsed" \
 			ac_cv_have_decl_powl=yes ac_cv_have_decl_log1pl=yes
 
 OPTIONS_DEFINE=		MISSING
@@ -116,23 +120,34 @@ PICFLAG?=		-fpic
 CONFIGURE_ENV +=	SHLIB_${flag}FLAGS="${PICFLAG}"
 .endfor
 
+.if ${OSVERSION} > 1000052 && \
+(${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == ia64 || ${ARCH} == pc98 || ${ARCH} == sparc64)
+.for _f in coshl erfcl erfl lgammal powl sinhl tanhl tgammal
+CFLAGS+=	-fno-builtin-${_f}
+LDFLAGS+=	-fno-builtin-${_f}
+.endfor
+.endif
+
 .if ${PORT_OPTIONS:MMISSING}
-LIB_DEPENDS+=		missing:${PORTSDIR}/math/libmissing
-LIBM=			-lm -L${LOCALBASE}/lib -lmissing
+.for _f in acos asin atan cos cosh exp log pow sin sinh tan tanh
+CONFIGURE_ENV+=		ac_cv_have_decl_c${_f}=yes
+.endfor
+LIB_DEPENDS+=		libmissing.so:${PORTSDIR}/math/libmissing
+LIBM=			-L${LOCALBASE}/lib -lmissing -lm
 LIBMH=			"missing_math.h"
 .if defined(LIBRMATH_SLAVEPORT)
 CPPFLAGS+=		-I${LOCALBASE}/include
 .endif
 .else
-LIBM=			-lm -lquadmath
+LIBM=			-lquadmath -lm
 LIBMH=			<quadmath.h>
 .endif
 
 .if !defined(LIBRMATH_SLAVEPORT)
 .if ${PORT_OPTIONS:MATLAS}
-LIB_DEPENDS+=		atlas:${PORTSDIR}/math/atlas
-BLAS?=			-lf77blas
-LAPACK?=		-lalapack -lcblas
+LIB_DEPENDS+=		libatlas.so:${PORTSDIR}/math/atlas
+BLAS?=			${LIBM} -lf77blas
+LAPACK?=		${LIBM} -lalapack -lcblas
 .else
 BLAS?=			no
 LAPACK?=		no
@@ -145,7 +160,7 @@ PLIST_SUB+=		LAPACK="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MICU}
-LIB_DEPENDS+=		icui18n:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=		libicui18n.so:${PORTSDIR}/devel/icu
 CONFIGURE_ARGS+=	--with-ICU
 .else
 CONFIGURE_ARGS+=	--without-ICU
@@ -160,7 +175,7 @@ PLIST_SUB+=		NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPCRE_PORT}
-LIB_DEPENDS+=		pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=		libpcre.so:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--with-system-pcre
 .else
 CONFIGURE_ARGS+=	--without-system-pcre
@@ -183,7 +198,7 @@ USE_GHOSTSCRIPT_RUN=	yes
 .endif
 
 .if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=		jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=		libjpeg.so:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=	--with-jpeglib
 .else
 CONFIGURE_ARGS+=	--without-jpeglib
@@ -210,14 +225,14 @@ PLIST_SUB+=		PANGOCAIRO="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=		libpng15.so:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=	--with-libpng
 .else
 CONFIGURE_ARGS+=	--without-libpng
 .endif
 
 .if ${PORT_OPTIONS:MTCLTK}
-USE_TK =		84+
+USES+=			tk:84+
 CONFIGURE_ARGS+=	--with-tcltk \
 			--with-tcl-config=${TCL_LIBDIR}/tclConfig.sh \
 			--with-tk-config=${TK_LIBDIR}/tkConfig.sh
@@ -228,7 +243,7 @@ PLIST_SUB+=		TCLTK="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTIFF}
-LIB_DEPENDS+=		tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=		libtiff.so:${PORTSDIR}/graphics/tiff
 CONFIGURE_ARGS+=	--with-libtiff
 .else
 CONFIGURE_ARGS+=	--without-libtiff
@@ -249,9 +264,7 @@ INFO=		R-FAQ R-admin R-data R-exts R-intro R-lang
 .endif
 
 .if ${PORT_OPTIONS:MPDF_MANUALS} && ${PORT_OPTIONS:MDOCS}
-BROKEN=			The PDF_MANUALS option cannot be used, because it\
-			requires broken components of texlive
-USE_TEX=		texlive pdftex:build
+USE_TEX=		texlive dvipsk kpathsea pdftex
 BUILD_DEPENDS +=	texi2dvi:${PORTSDIR}/print/texinfo
 ALL_TARGET+=		pdf
 CONFIGURE_ENV +=	INSTALL_INFO="${LOCALBASE}/bin/install-info" \
@@ -259,39 +272,54 @@ CONFIGURE_ENV +=	INSTALL_INFO="${LOCALBASE}/bin/install-info" \
 INSTALL_TARGET+=	install-pdf
 PLIST_SUB+=		PDF_MANUAL=""
 .else
+.for _b in KPSEWHICH MAKEINDEX PDFLATEX PDFTEX TEX TEXI2DVI
+CONFIGURE_ENV+=		ac_cv_path_${_b}=""
+.endfor
 PLIST_SUB+=		PDF_MANUAL="@comment "
 .endif
 .endif # LIBR_SLAVEPORT
 .endif # !LIBRMATH_SLAVEPORT
 
 post-patch:
+	@${REINPLACE_CMD} -e '\|LIBS=|s|-lrt ||' \
+		-e '\|-lm[". ]|s|-lm|${LIBM}|' \
+		${WRKSRC}/configure
 .if !${PORT_OPTIONS:MMISSING}
 .if ${OSVERSION} < 1000016
 	@${REINPLACE_CMD} -e 's/# define EXP expl/# define EXP(x) (long double)expq((__float128)(x))/' \
 		${WRKSRC}/src/nmath/pnchisq.c
 .endif
+.if ${OSVERSION} < 1000034
 	@${REINPLACE_CMD} -Ee 's/(log)(1p)?l\(/(long double)\1\2q((__float128)/' \
 		${WRKSRC}/src/nmath/dnbeta.c \
 		${WRKSRC}/src/nmath/pnbeta.c
+.endif
 	@${REINPLACE_CMD} -Ee 's/powl\((.*)(long double)/(long double)powq((__float128)\1__float128/' \
 		${WRKSRC}/src/main/format.c
+.else
+.if ${OSVERSION} > 1000052 && \
+(${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == ia64 || ${ARCH} == pc98 || ${ARCH} == sparc64)
+	@${REINPLACE_CMD} -e '\|^FLIBS="$$ac_cv_f77_libs"|s|"|&${LIBM} |' \
+		${WRKSRC}/configure
 .endif
 	@${REINPLACE_CMD} -e \
-	'\|#include <math.h>|{x;s|^.*$$|#include ${LIBMH}|;H;x;}' \
-		${WRKSRC}/src/nmath/nmath.h
-	@${REINPLACE_CMD} -e '\|LIBS=|s|-lrt ||' \
-		-e '\|-lm[". ]|s|-lm|${LIBM}|' \
-		${WRKSRC}/configure
+	'\|#[[:blank:]]*include[[:blank:]]*<complex.h>|{x;s|^.*$$|#include "missing_complex.h"|;H;x;}' \
+		${WRKSRC}/src/main/complex.c
+.endif
+	@${REINPLACE_CMD} -e \
+	'\|#[[:blank:]]*include[[:blank:]]*<math.h>|{x;s|^.*$$|#include ${LIBMH}|;H;x;}' \
+		${WRKSRC}/src/nmath/nmath.h \
+		${WRKSRC}/src/include/Rmath.h0.in
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/src/nmath/standalone/Makefile.in \
 		${WRKSRC}/src/unix/Makefile.in
 	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" \
 		${WRKSRC}/configure \
-		${WRKSRC}/src/scripts/javareconf
+		${WRKSRC}/src/scripts/javareconf.in
 	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|g" \
 		${WRKSRC}/configure \
 		${WRKSRC}/src/library/profile/Rprofile.unix \
-		${WRKSRC}/src/scripts/javareconf
+		${WRKSRC}/src/scripts/javareconf.in
 .if !defined(LIBRMATH_SLAVEPORT)
 .if !${PORT_OPTIONS:MNLS}
 	@(cd ${WRKSRC}/src/library/Recommended; \
