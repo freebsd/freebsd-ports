@@ -1,0 +1,11 @@
+--- ./src/frontends/uade123/Makefile.in.orig	2009-10-29 22:01:12.000000000 +0100
++++ ./src/frontends/uade123/Makefile.in	2013-11-13 16:29:09.084723709 +0100
+@@ -2,7 +2,7 @@
+ UADE123NAME = {UADE123NAME}
+ 
+ CC = {CC}
+-CFLAGS = -Wall -O2 -I../../include -I../common {AOFLAGS} {DEBUGFLAGS} {ARCHFLAGS}
++CFLAGS = -I../../include -I../common {AOFLAGS} {DEBUGFLAGS} {ARCHFLAGS}
+ CLIBS = {AOLIBS} {ARCHLIBS} -lm
+ 
+ all:	uade123

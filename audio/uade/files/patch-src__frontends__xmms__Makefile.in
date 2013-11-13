@@ -1,0 +1,11 @@
+--- ./src/frontends/xmms/Makefile.in.orig	2009-10-29 22:01:12.000000000 +0100
++++ ./src/frontends/xmms/Makefile.in	2013-11-13 16:29:09.085725693 +0100
+@@ -8,7 +8,7 @@
+ XMMSFLAGS={XMMSFLAGS}
+ XMMSLIBS={XMMSLIBS}
+ SHAREDLIBRARYFLAGS={SHAREDLIBRARYFLAGS}
+-CFLAGS = -Wall -O2 $(SHAREDLIBRARYFLAGS) $(DEBUGFLAGS) $(XMMSFLAGS) $(ARCHFLAGS) -I../common -I../../include
++CFLAGS = $(SHAREDLIBRARYFLAGS) $(DEBUGFLAGS) $(XMMSFLAGS) $(ARCHFLAGS) -I../common -I../../include
+ CLIBS = $(XMMSLIBS) -lm
+ 
+ all:	libuade2.so

@@ -11,22 +11,24 @@ MASTER_SITES=	http://zakalwe.fi/uade/uade2/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Unix Amiga Delitracker Emulator
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	ao:${PORTSDIR}/audio/libao
 
 USES=		gmake pkgconfig
-NO_STAGE=	yes
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/uade2
 DATADIR=	${PREFIX}/share/uade2
+
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--mandir=${MANPREFIX}/man/man1 \
-		--no-debug --without-audacious
+		--no-debug --without-audacious \
+		--package-prefix=${STAGEDIR}
 
 CONFIGURE_ENV=	SYSCFLAGS='${CFLAGS}'
 
-MAN1=		uade123.1
 PORTDOCS=	BUGS PLANS REDUNDANT_REPLAYERS UAE-CREDITS UAE-README \
 		VERSION_CONTROL_TAGGING audio_emulation.txt design.tex \
 		download.html faq.html layers.eps layers.xfig \
@@ -46,7 +48,6 @@ CONFIGURE_ARGS+=--with-text-scope
 
 .if ${PORT_OPTIONS:MFUSE}
 USES+=		fuse
-MAN1+=		uadefs.1
 PLIST_SUB+=	FUSE=""
 .else
 CONFIGURE_ARGS+=--without-uadefs
@@ -61,17 +62,18 @@ CONFIGURE_ARGS+=--without-xmms
 PLIST_SUB+=	XMMS="@comment "
 .endif
 
+post-extract:
+	@${RM} -rf ${WRKSRC}/players/S
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,lib/pkgconfig,libdata/pkgconfig,' \
 		${WRKSRC}/configure
 
 post-install:
-	@${RM} -rf ${DATADIR}/players/S
-
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
