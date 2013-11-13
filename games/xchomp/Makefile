@@ -17,5 +17,4 @@ USE_XORG=	x11 xext
 
 PLIST_FILES=	bin/xchomp
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
