@@ -96,7 +96,7 @@ lib/qmmp/CommandLineOptions/libstatusoption.so
 %%NULLOUT%%lib/qmmp/Output/libnull.so
 %%OSS%%lib/qmmp/Output/liboss.so
 %%OSS4%%lib/qmmp/Output/liboss4.so
-%%PULSE_AUDIO%%lib/qmmp/Output/libpulseaudio.so
+%%PULSEAUDIO%%lib/qmmp/Output/libpulseaudio.so
 lib/qmmp/PlayListFormats/libm3uplaylistformat.so
 lib/qmmp/PlayListFormats/libplsplaylistformat.so
 lib/qmmp/PlayListFormats/libxspfplaylistformat.so
