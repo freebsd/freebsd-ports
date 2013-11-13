@@ -1,6 +1,7 @@
-@comment $FreeBSD$
 bin/simplech
 bin/xcheckers
+man/man6/simplech.6.gz
+man/man6/xcheckers.6.gz
 %%DATADIR%%/big.xpm
 %%DATADIR%%/scene.xpm
 %%DATADIR%%/stars.xpm
