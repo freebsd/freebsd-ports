@@ -19,6 +19,7 @@ CONFIGURE_ARGS=	--enable-dynamic \
 CXXFLAGS+=	-fPIC
 GNU_CONFIGURE=	yes
 USES=		bison gmake perl5
+USE_GCC=	any
 USE_LDCONFIG=	yes
 
 NO_STAGE=	yes
