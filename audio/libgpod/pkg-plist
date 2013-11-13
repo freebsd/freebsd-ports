@@ -24,7 +24,7 @@ lib/libgpod.so.7
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/ipod.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/ipod.pyo
 libdata/pkgconfig/libgpod-1.0.pc
-libdata/pkgconfig/libgpod-sharp.pc
+%%MONO%%libdata/pkgconfig/libgpod-sharp.pc
 %%PORTDOCS%%%%DOCSDIR%%/ch01.html
 %%PORTDOCS%%%%DOCSDIR%%/home.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
@@ -42,7 +42,6 @@ libdata/pkgconfig/libgpod-sharp.pc
 %%PORTDOCS%%%%DOCSDIR%%/libgpod-The-Itdb-iTunesDB-structure.html
 %%PORTDOCS%%%%DOCSDIR%%/libgpod-Time-handling.html
 %%PORTDOCS%%%%DOCSDIR%%/libgpod-Tracks.html
-%%PORTDOCS%%%%DOCSDIR%%/libgpod.devhelp
 %%PORTDOCS%%%%DOCSDIR%%/libgpod.devhelp2
 %%PORTDOCS%%%%DOCSDIR%%/photodb.html
 %%PORTDOCS%%%%DOCSDIR%%/right.png
@@ -58,6 +57,8 @@ share/locale/ro/LC_MESSAGES/libgpod.mo
 share/locale/sv/LC_MESSAGES/libgpod.mo
 share/locale/zh_CN/LC_MESSAGES/libgpod.mo
 %%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/gpod
+%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%
+%%PYTHON%%@dirrmtry %%PYTHON_LIBDIR%%
 %%MONO%%@dirrm lib/libgpod
 @dirrm include/gpod-1.0/gpod
 @dirrm include/gpod-1.0
