@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generic archive extracting mechanism (using libarchive)
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-Object-Tiny>=0:${PORTSDIR}/devel/p5-Object-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
@@ -19,8 +22,5 @@ TEST_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 
 USE_PERL5=	modbuild
 USES=		perl5
-NO_STAGE=	yes
-
-MAN3=		Archive::Extract::Libarchive.3
 
 .include <bsd.port.mk>
