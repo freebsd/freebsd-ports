@@ -30,8 +30,8 @@ include/harbour/hbapicom.h
 include/harbour/hbdebug.ch
 include/harbour/hbtrace.h
 include/harbour/hbset.h
-%%WITH_SQLITE3%%include/harbour/hbsqlit3.ch
-%%WITH_SQLITE3%%include/harbour/hbsqlit3.hbx
+%%SQLITE%%include/harbour/hbsqlit3.ch
+%%SQLITE%%include/harbour/hbsqlit3.hbx
 include/harbour/hbgfx.ch
 include/harbour/hbmisc.hbx
 include/harbour/hbgtinfo.ch
@@ -290,8 +290,8 @@ lib/harbour/libhbexpat.a
 lib/harbour/libhbfship.a
 lib/harbour/libhbcomm.a
 lib/harbour/libhbrdd.a
-%%WITH_SQLITE3%%lib/harbour/libsddsqlt3.a
-%%WITH_SQLITE3%%lib/harbour/libhbsqlit3.a
+%%SQLITE%%lib/harbour/libsddsqlt3.a
+%%SQLITE%%lib/harbour/libhbsqlit3.a
 lib/libharbour.so
 lib/libharbour.so.3.0
 lib/libharbour.so.3.0.0
