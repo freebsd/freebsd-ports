@@ -17,5 +17,4 @@ USE_XORG=	xaw
 NO_INSTALL_MANPAGES=	yes
 PLIST_FILES=	bin/xoj
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
