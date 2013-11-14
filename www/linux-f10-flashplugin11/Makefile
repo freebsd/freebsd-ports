@@ -3,6 +3,7 @@
 
 PORTNAME=	flashplugin
 PORTVERSION=	11.2r202.327
+PORTREVISION=	1
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/pdc/${PORTVERSION:C/r/\./}/:plugin \
 		LOCAL/nox:suplib
@@ -26,7 +27,6 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 USES=		webplugin:linux
-WEBPLUGIN_NAME=	# empty
 WEBPLUGIN_FILES=	libflashplayer.so
 
 OPTIONS_DEFINE=	GNOME

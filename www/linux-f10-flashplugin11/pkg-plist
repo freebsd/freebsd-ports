@@ -1,5 +1,5 @@
 bin/flash-player-properties
-%%WEBPLUGIN_DIR%%libflashplayer.so
+%%WEBPLUGIN_DIR%%/libflashplayer.so
 share/applications/flash-player-properties.desktop
 share/icons/hicolor/16x16/apps/flash-player-properties.png
 share/icons/hicolor/22x22/apps/flash-player-properties.png
