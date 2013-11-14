@@ -3,6 +3,10 @@
 %%SITE_PERL%%/SVG/Parser/Expat.pm
 %%SITE_PERL%%/SVG/Parser/SAX.pm
 %%SITE_PERL%%/SVG/Parser/SAX/Handler.pm
+%%PERL5_MAN3%%/SVG::Parser.3.gz
+%%PERL5_MAN3%%/SVG::Parser::Expat.3.gz
+%%PERL5_MAN3%%/SVG::Parser::SAX.3.gz
+%%PERL5_MAN3%%/SVG::Parser::SAX::Handler.3.gz
 @dirrm %%SITE_PERL%%/SVG/Parser/SAX
 @dirrm %%SITE_PERL%%/SVG/Parser
 @dirrmtry %%SITE_PERL%%/SVG
