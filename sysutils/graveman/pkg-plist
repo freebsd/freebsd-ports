@@ -1,4 +1,5 @@
 bin/graveman
+man/man1/graveman.1.gz
 share/applications/graveman.desktop
 share/pixmaps/graveman48.png
 share/graveman/dialog-question3.png

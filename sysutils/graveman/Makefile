@@ -11,43 +11,26 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/-\1/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another GTK2 frontend for cdrecord, mkisofs, readcd, and sox
 
-LIB_DEPENDS=	mng:${PORTSDIR}/graphics/libmng
+LIB_DEPENDS=	libmng.so:${PORTSDIR}/graphics/libmng
 BUILD_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
-RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig gettext
+USES=		pathfix pkgconfig gettext gmake
 USE_GNOME=	libglade2 intlhack gnomeprefix
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-MAN1=		graveman.1
-
 OPTIONS_DEFINE=	MP3 OGG DVD
 DVD_DESC=	DVD+RW support
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMP3}
-LIB_DEPENDS+=	mad:${PORTSDIR}/audio/libmad \
-		id3tag:${PORTSDIR}/audio/libid3tag
-RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox
-.else
-CONFIGURE_ARGS+=--disable-mp3
-.endif
-
-.if ${PORT_OPTIONS:MOGG}
-LIB_DEPENDS+=	ogg:${PORTSDIR}/audio/libogg \
-		vorbis:${PORTSDIR}/audio/libvorbis
-.else
-CONFIGURE_ARGS+=--disable-ogg
-.endif
-
-.if ${PORT_OPTIONS:MDVD}
-RUN_DEPENDS+=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
-.endif
+MP3_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad \
+			libid3tag.so:${PORTSDIR}/audio/libid3tag
+MP3_RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
+MP3_CONFIGURE_OFF=	--disable-mp3
+OGG_LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
+			libvorbis.so:${PORTSDIR}/audio/libvorbis
+OGG_CONFIGURE_OFF=	--disable-ogg
+DVD_RUN_DEPENDS=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
 
 .include <bsd.port.mk>
