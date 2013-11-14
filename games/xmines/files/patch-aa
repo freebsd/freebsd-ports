@@ -36,6 +36,6 @@
  install:
 -	install -g games -o games -m 0664  scores/scores $(SCOREFILES)/xbomb-scores
 -	install -g games -o games -m 2755 xbombs $(BIN) 
-+	mkdir -p $(SCOREFILES)
-+	${INSTALL} -g games -o games -m 0666 scores/scores $(SCOREFILES)/scores
-+	${INSTALL} -s -g games -o games -m 0755 xmines $(BIN)
++	mkdir -p ${DESTDIR}$(SCOREFILES)
++	${INSTALL} -m 0666 scores/scores ${DESTDIR}$(SCOREFILES)/scores
++	${INSTALL} -s -m 0755 xmines ${DESTDIR}$(BIN)
