@@ -1,11 +1,39 @@
---- ./configure.orig	2011-01-21 06:49:01.000000000 +0300
-+++ ./configure	2012-10-22 12:27:41.000000000 +0400
-@@ -5800,7 +5800,7 @@
+--- configure.orig	2013-08-06 20:12:20.000000000 +0400
++++ configure	2013-11-10 23:00:05.000000000 +0400
+@@ -6906,7 +6906,7 @@
      MAKEVER="freebsd"
      LDFLAGS="-lpmc"
      # HWPMC driver is available for FreeBSD >= 6
 -    FREEBSD_VERSION=`uname -r | cut -c 1`
 +    FREEBSD_VERSION=`uname -r | cut -d'.' -f1`
      if test "${FREEBSD_VERSION}" -lt 6 ; then
-       as_fn_error "PAPI requires FreeBSD 6 or greater" "$LINENO" 5
-     fi
+       { { echo "$as_me:$LINENO: error: PAPI requires FreeBSD 6 or greater" >&5
+ echo "$as_me: error: PAPI requires FreeBSD 6 or greater" >&2;}
+@@ -7525,11 +7525,11 @@
+ 
+ 
+ for comp in $components; do
+-  idx=`expr index "$comp" /`
++  idx=`echo "$comp" | sed -n "s/\/.*//p" | wc -c`
+   if test "$idx" = 0; then
+ 	subcomp=$comp
+   else
+-    subcomp=${comp:$idx}
++    subcomp=`echo $comp | sed -E "s/^.{${idx}}//"`
+   fi
+   COMPONENT_RULES="$COMPONENT_RULES components/$comp/Rules.$subcomp"
+   echo "extern papi_vector_t _${subcomp}_vector;" >> components_config.h
+@@ -7542,11 +7542,11 @@
+ fi
+ 
+ for comp in $components; do
+-  idx=`expr index "$comp" /`
++  idx=`echo "$comp" | sed -n "s/\/.*//p" | wc -c`
+   if test "$idx" = 0; then
+ 	subcomp=$comp
+   else
+-    subcomp=${comp:$idx}
++    subcomp=`echo $comp | sed -E "s/^.{${idx}}//"`
+   fi
+   echo "   &_${subcomp}_vector," >> components_config.h
+ done

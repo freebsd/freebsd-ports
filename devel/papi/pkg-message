@@ -1,12 +1,11 @@
-
 In order to get PAPI working on this machine you must setup a kernel with
 
  * options HWPMC_HOOKS
- and,
- * device hwpmc (or kldload hwpmc.ko)
+ * device hwpmc
 
- Additionally, for i386 systems you need:
+Or load hwpmc module manually:
+
+# kldload hwpmc.ko
+
+Additionally, for i386 systems you need:
  * device apic
-
-See http://code.google.com/p/papi-for-freebsd/wiki/HowToInstall for further
-details.
