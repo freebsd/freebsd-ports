@@ -577,7 +577,6 @@
     SUBDIR += maverik
     SUBDIR += megapov
     SUBDIR += mesa-demos
-    SUBDIR += mesagl
     SUBDIR += meshviewer
     SUBDIR += metacam
     SUBDIR += metapixel
