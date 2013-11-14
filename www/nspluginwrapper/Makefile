@@ -3,7 +3,7 @@
 
 PORTNAME=	nspluginwrapper
 PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www linux emulators
 MASTER_SITES=	http://nspluginwrapper.org/download/ \
 		LOCAL/jkim \
@@ -11,7 +11,9 @@ MASTER_SITES=	http://nspluginwrapper.org/download/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${BINFILE}:binfile
 
 MAINTAINER=	jkim@FreeBSD.org
-COMMENT=	A compatibility plugin for Mozilla NPAPI plugins
+COMMENT=	Compatibility plugin for Mozilla NPAPI plugins
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
@@ -22,36 +24,36 @@ BINFILE=	${PORTNAME}-i386-${PORTVERSION}-${BINBUILD}${EXTRACT_SUFX}
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+HAS_CONFIGURE=	yes
+USE_GNOME=	glib20 gtk20
+USE_LDCONFIG=	yes
 USE_LINUX=	yes
 USE_LINUX_APPS=	gtk2
 USE_XORG=	x11 xext xt
-USES=		pkgconfig
-USE_GNOME=	glib20 gtk20
+USES=		gmake pkgconfig
 
 CFLAGS+=	-std=c99
-
-USE_LDCONFIG=	yes
-USE_GMAKE=	yes
-HAS_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--enable-generic --enable-strip --prefix=${PREFIX} \
 		--target-os=linux --target-cpu=i386 \
 		--with-cc=${CC} --with-cxx=${CXX}
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
+LINUX_BINDIR=	usr/lib/nspluginwrapper/i386/linux
 
 PLIST_SUB=	LIBDIR="${LIBDIR:C/^${PREFIX}\///}" HOST_ARCH="${HOST_ARCH}"
 
 SUB_FILES=	npviewer
 SUB_LIST+=	NSPLUGINWRAPPER="${LIBDIR}"
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
 HOST_ARCH=	x86_64
+PLIST_SUB+=	HOST_AMD64=""
 .else
 HOST_ARCH=	${ARCH}
+PLIST_SUB+=	HOST_AMD64="@comment "
 .endif
 
 post-patch:
@@ -62,11 +64,9 @@ post-patch:
 		${WRKSRC}/src/utils.c
 
 post-install:
-	${MKDIR} ${LIBDIR}/i386/linux
-	${INSTALL_PROGRAM} ${WRKDIR}/usr/lib/nspluginwrapper/i386/linux/*.bin \
-	    ${WRKDIR}/usr/lib/nspluginwrapper/i386/linux/*.so \
-	    ${LIBDIR}/i386/linux/
-	${INSTALL_SCRIPT} ${WRKDIR}/npviewer ${LIBDIR}/i386/linux/
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${LIBDIR}/i386/linux
+	${INSTALL_PROGRAM} ${WRKDIR}/${LINUX_BINDIR}/*.bin \
+	    ${WRKDIR}/${LINUX_BINDIR}/*.so ${STAGEDIR}${LIBDIR}/i386/linux/
+	${INSTALL_SCRIPT} ${WRKDIR}/npviewer ${STAGEDIR}${LIBDIR}/i386/linux/
 
 .include <bsd.port.post.mk>
