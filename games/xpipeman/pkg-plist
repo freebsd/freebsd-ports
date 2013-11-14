@@ -1,2 +1,9 @@
+@group games
+@mode 2555
 bin/xpipeman
+@mode
+@mode 664
 lib/X11/xpipescores
+@mode
+@group
+man/man6/xpipeman.6.gz

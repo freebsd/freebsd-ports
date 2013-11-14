@@ -18,16 +18,11 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USES=		imake
 USE_XORG=	x11 xaw xext xmu xt sm ice
-MAN6=		xpipeman.6
-MANCOMPRESSED=	no
 CFLAGS+=	-Wno-error=return-type
-BINGRP=		games
-BINMODE=	2555
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xpipeman ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xpipeman.man ${MANPREFIX}/man/man6/xpipeman.6
-	${INSTALL} -c -g games -m 664 ${FILESDIR}/xpipescores ${PREFIX}/lib/X11
+	${INSTALL_PROGRAM} ${WRKSRC}/xpipeman ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xpipeman.man ${STAGEDIR}${MANPREFIX}/man/man6/xpipeman.6
+	${INSTALL} -c ${FILESDIR}/xpipescores ${STAGEDIR}${PREFIX}/lib/X11
 
 .include <bsd.port.mk>
