@@ -3,6 +3,7 @@
 
 PORTNAME=	cdiff
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc
 
@@ -11,8 +12,8 @@ COMMENT=	Diff readability enhancer for color terminals
 
 USE_GITHUB=
 GH_ACCOUNT=	ymattw
-GH_TAGNAME=	0.9.3
-GH_COMMIT=	423551f
+GH_TAGNAME=	${GH_COMMIT}
+GH_COMMIT=	f85a5e2
 
 USE_PYTHON=
 USE_PYDISTUTILS=	yes
