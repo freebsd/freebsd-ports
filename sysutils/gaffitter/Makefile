@@ -15,17 +15,16 @@ LICENSE=	GPLv3 # or later
 USE_BZIP2=	yes
 USES=		gmake	# parallel builds (-jX) are broken with BSD make(1)
 
-MAN1=		${PORTNAME}.1
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
 # Change "cd foo; $(MAKE)" into "$(MAKE) -C foo" to unbreak parallel builds
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E 's|cd (.+); (\$$\(MAKE\))|\2 -C \1|' \
 		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|g++|${CXX}|g' ${WRKSRC}/src/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>

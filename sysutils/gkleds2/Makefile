@@ -22,15 +22,13 @@ USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_FILES=	libexec/gkrellm2/plugins/gkleds.so
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g ; \
 		 s|GK_LDFLAGS|GKM_LDFLAGS|g' ${WRKSRC}/src/Makefile.in
 
 do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
 	${INSTALL_DATA} ${WRKSRC}/src/.libs/gkleds.so \
-		${PREFIX}/libexec/gkrellm2/plugins
+		${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
 
 .include <bsd.port.mk>
