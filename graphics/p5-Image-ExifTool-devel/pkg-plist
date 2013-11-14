@@ -53,6 +53,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Charset/Vietnam.pm
 %%SITE_PERL%%/Image/ExifTool/DICOM.pm
 %%SITE_PERL%%/Image/ExifTool/DNG.pm
+%%SITE_PERL%%/Image/ExifTool/DPX.pm
 %%SITE_PERL%%/Image/ExifTool/DV.pm
 %%SITE_PERL%%/Image/ExifTool/DarwinCore.pm
 %%SITE_PERL%%/Image/ExifTool/DjVu.pm
@@ -180,6 +181,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/WritePNG.pl
 %%SITE_PERL%%/Image/ExifTool/WritePhotoshop.pl
 %%SITE_PERL%%/Image/ExifTool/WritePostScript.pl
+%%SITE_PERL%%/Image/ExifTool/WriteQuickTime.pl
 %%SITE_PERL%%/Image/ExifTool/WriteXMP.pl
 %%SITE_PERL%%/Image/ExifTool/Writer.pl
 %%SITE_PERL%%/Image/ExifTool/XMP.pm
@@ -206,6 +208,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Composite.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/DICOM.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/DNG.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/DPX.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/DV.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/DarwinCore.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/DjVu.html
