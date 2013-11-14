@@ -14,14 +14,14 @@ COMMENT=	Oct puzzle for X Window System
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		imake
 USE_XORG=	x11 xext xt sm ice
-MAN1=		xoct.1
-MANCOMPRESSED=	no
-XFREE86_HTML_MAN=	no
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/xoct \
+		lib/X11/app-defaults/Oct \
+		man/man1/xoct.1.gz
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xoct ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/Oct.ad ${PREFIX}/lib/X11/app-defaults/Oct
-	${INSTALL_MAN} ${WRKSRC}/xoct.man ${MANPREFIX}/man/man1/xoct.1
+	${INSTALL_PROGRAM} ${WRKSRC}/xoct ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/Oct.ad ${STAGEDIR}${PREFIX}/lib/X11/app-defaults/Oct
+	${INSTALL_MAN} ${WRKSRC}/xoct.man ${STAGEDIR}${MANPREFIX}/man/man1/xoct.1
 
 .include <bsd.port.mk>
