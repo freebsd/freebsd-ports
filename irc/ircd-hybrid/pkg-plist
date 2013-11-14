@@ -225,6 +225,5 @@ sbin/ircd
 @dirrm lib/ircd-hybrid
 @dirrmtry %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help
 @dirrmtry %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid
-@dirrmtry %%DATADIR%%-%%PORTVERSION%%/help
 @dirrmtry %%DATADIR%%-%%PORTVERSION%%
 @dirrm %%ETCDIR%%
