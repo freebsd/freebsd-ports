@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ts
-PORTVERSION=	0.7.3
-PORTREVISION=	1
+PORTVERSION=	0.7.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://vicerveza.homeunix.net/~viric/soft/ts/ CENKES
 
@@ -20,13 +19,10 @@ post-patch:
 		${WRKSRC}/Makefile
 
 # Install man page as ts.8 to avoid conflict with security/openssl
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ts ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/ts.1 ${STAGEDIR}${MAN1PREFIX}/man/man8/ts.8
-.ifndef NOPORTDOCS
 	${INSTALL} -d ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

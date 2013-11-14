@@ -6,5 +6,4 @@ very useful when you know that your commands depend on a lot of RAM,
 a lot of disk use, give a lot of output, or for whatever reason it's
 better not to run them at the same time.
 
-Author: Lluis Batlle i Rossell <viric_at_vicerveza_dot_homeunix_dot_net>
 WWW: http://vicerveza.homeunix.net/~viric/soft/ts/
