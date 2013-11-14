@@ -17,8 +17,6 @@ COMMENT=	X11 minesweeper game
 
 USES=		imake
 USE_XORG=	x11 xext xmu xaw xt xpm sm ice
-MAN1=		xminesweep.1
-PLIST_FILES=	bin/xminesweep
+PLIST_FILES=	bin/xminesweep man/man1/xminesweep.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
