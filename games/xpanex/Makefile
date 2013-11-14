@@ -14,14 +14,14 @@ COMMENT=	Panex puzzle for X Window System
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		imake
 USE_XORG=	x11 xext xt sm ice
-MAN1=		xpanex.1
-MANCOMPRESSED=	no
-XFREE86_HTML_MAN=	no
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/xpanex \
+		man/man1/xpanex.1.gz \
+		lib/X11/app-defaults/Panex
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xpanex ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/Panex.ad ${PREFIX}/lib/X11/app-defaults/Panex
-	${INSTALL_MAN} ${WRKSRC}/xpanex.man ${MANPREFIX}/man/man1/xpanex.1
+	${INSTALL_PROGRAM} ${WRKSRC}/xpanex ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/Panex.ad ${STAGEDIR}${PREFIX}/lib/X11/app-defaults/Panex
+	${INSTALL_MAN} ${WRKSRC}/xpanex.man ${STAGEDIR}${MANPREFIX}/man/man1/xpanex.1
 
 .include <bsd.port.mk>
