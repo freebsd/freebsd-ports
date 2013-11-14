@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	9.37
+PORTVERSION=	9.40
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sno.phy.queensu.ca/~phil/exiftool/
 PKGNAMEPREFIX=	p5-
@@ -27,7 +27,7 @@ MAN3=		File::RandomAccess.3 Image::ExifTool.3 \
 LANGTAGS=	cs de en_ca en_gb es fi fr it ja ko nl pl ru sv tr zh_cn zh_tw
 MANTAGS=	AES AFCP AIFF APE APP12 ASF Apple BMP BZZ BigTIFF BuildTagLookup \
 		Canon CanonCustom CanonRaw CanonVRD CaptureOne Casio Charset \
-		DICOM DNG DV DarwinCore DjVu EXE Exif FLAC FLIR Fixup Flash FlashPix Font \
+		DICOM DNG DPX DV DarwinCore DjVu EXE Exif FLAC FLIR Fixup Flash FlashPix Font \
 		FotoStation FujiFilm GE GIF GIMP GPS GeoTiff Geotag H264 HP \
 		HTML HtmlDump ICC_Profile ID3 IPTC ITC Import InDesign JPEG \
 		JPEGDigest JVC Jpeg2000 Kodak KyoceraRaw LNK Leaf M2TS MIE \
@@ -39,7 +39,7 @@ MANTAGS=	AES AFCP AIFF APE APP12 ASF Apple BMP BZZ BigTIFF BuildTagLookup \
 		Sanyo Scalado Shift Shortcuts Sigma SigmaRaw Sony SonyIDC Stim \
 		TagInfoXML TagLookup TagNames Theora Torrent Unknown Vorbis \
 		WriteCanonRaw WriteExif WriteIPTC WritePDF WritePNG \
-		WritePhotoshop WritePostScript WriteXMP Writer XMP XMP2 \
+		WritePhotoshop WritePostScript WriteQuickTime WriteXMP Writer XMP XMP2 \
 		XMPStruct ZIP iWork
 
 NO_STAGE=	yes
