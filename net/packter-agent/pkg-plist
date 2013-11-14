@@ -12,3 +12,5 @@ etc/packter.conf.sample
 %%PACKTERTC%%%%DATADIR%%/packter_tc/itm.conf
 %%PACKTERTC%%%%DATADIR%%/packter_tc/packter_tc.pl
 %%PACKTERTC%%%%DATADIR%%/packter_tc/xsd.pl
+%%PACKTERTC%%@dirrm %%DATADIR%%/packter_tc
+%%PACKTERTC%%@dirrm %%DATADIR%%

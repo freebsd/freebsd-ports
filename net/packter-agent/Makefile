@@ -3,27 +3,27 @@
 
 PORTNAME=	packter-agent
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://www.packter.net/
+MASTER_SITES=	http://www.packter.jp/
 DISTNAME=	PackterAgent-${PORTVERSION}
 
 MAINTAINER=	masaki@club.kyutech.ac.jp
-COMMENT=	An agent of the tool for graphical Internet traffic visualization
+COMMENT=	Agent of the tool for graphical Internet traffic visualization
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
 USE_GNOME=	glib20
+CFLAGS+=	-Wno-return-type
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL LICENSE NEWS README
 
-OPTIONS_DEFINE=	IPV6 PACKTERTC
+OPTIONS_DEFINE=	IPV6 PACKTERTC DOCS
 PACKTERTC_DESC=	Install Packter TC
 OPTIONS_DEFAULT=	IPV6
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}
@@ -43,20 +43,20 @@ PLIST_SUB+=	PACKTERTC="@comment "
 
 post-install:
 .if ${PORT_OPTIONS:MPACKTERTC}
-	@${MKDIR} ${DATADIR}
-	${CP} -pr ${WRKSRC}/packter_tc ${DATADIR}/
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${CP} -pr ${WRKSRC}/packter_tc ${STAGEDIR}${DATADIR}/
 .endif
 
 .for f in packter.conf
 	@if [ ! -f ${PREFIX}/etc/${f} ]; then \
-		${CP} -p ${PREFIX}/etc/${f}.sample ${PREFIX}/etc/${f} ; \
+		${CP} -p ${STAGEDIR}${PREFIX}/etc/${f}.sample ${STAGEDIR}/${PREFIX}/etc/${f} ; \
 	fi
 .endfor
 
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
