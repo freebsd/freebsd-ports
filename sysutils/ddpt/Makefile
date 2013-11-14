@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ddpt
-PORTVERSION=	0.92
+PORTVERSION=	0.93
 CATEGORIES=	sysutils
 MASTER_SITES=	http://sg.danny.cz/sg/p/
 EXTRACT_SUFX=	.tgz
@@ -18,6 +18,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 MAN8=		ddpt.8
+PLIST_FILES=	bin/ddpt
 
 NO_STAGE=	yes
 .include <bsd.port.mk>
