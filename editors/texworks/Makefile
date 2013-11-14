@@ -60,7 +60,8 @@ PLIST_FILES+=	lib/texworks/libTWPythonPlugin.so
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/zlib/d; s|COPYING ||' ${WRKSRC}/TeXworks.pro
+	@${REINPLACE_CMD} -e '/zlib/d; s|COPYING ||; /manual.path/s|TW_HELPPATH|DOCS_DIR|' \
+	    ${WRKSRC}/TeXworks.pro
 	@${REINPLACE_CMD} -e 's|/usr/share|${LOCALBASE}/share|' \
 		${WRKSRC}/src/TWUtils.cpp
 	@${REINPLACE_CMD} -e 's|lua5.1|lua-5.1|' \
