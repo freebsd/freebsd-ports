@@ -31,4 +31,3 @@ libexec/gitolite/sshkeys-lint
 @dirrm %%DATADIR%%/hooks
 @dirrm %%DATADIR%%
 @dirrm libexec/gitolite
-%%GITUSER%%@dirrmtry git

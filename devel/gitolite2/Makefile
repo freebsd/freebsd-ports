@@ -2,10 +2,12 @@
 
 PORTNAME=	gitolite
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://milki.github.io/${PORTNAME}/ \
+MASTER_SITES=	GH \
 		LOCAL/tdb
 PKGNAMESUFFIX=	2
+DISTNAME=	g-${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-${GH_COMMIT}
 
 MAINTAINER=	milki@rescomp.berkeley.edu
 COMMENT=	An access control layer on top of git
@@ -14,7 +16,11 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	git>=0:${PORTSDIR}/devel/git
 
-LATEST_LINK=	gitolite2
+USE_GITHUB=	yes
+GH_ACCOUNT=	sitaramc
+GH_COMMIT=	912a8bd
+GH_TAGNAME=	${GH_COMMIT}
+
 CONFLICTS=	gitolite-[^2]*
 
 USES=		perl5
@@ -57,6 +63,7 @@ post-patch:
 		${WRKSRC}/hooks/common/update
 
 do-build:
+	echo "v${PORTVERSION}-0-g${GH_COMMIT}" > ${WRKSRC}/conf/VERSION
 	-@${RM} ${WRKSRC}/src/gl-system-install
 	@${REINPLACE_CMD} \
 		-E 's%^GL_PACKAGE_CONF=.*%GL_PACKAGE_CONF=${DATADIR}/conf;%' \
