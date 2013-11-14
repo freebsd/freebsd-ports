@@ -11,5 +11,5 @@ bin/nspluginwrapper
 @dirrm %%LIBDIR%%/i386/linux
 @dirrm %%LIBDIR%%/%%HOST_ARCH%%/freebsd
 @dirrm %%LIBDIR%%/i386
-@dirrmtry %%LIBDIR%%/%%HOST_ARCH%%
+%%HOST_AMD64%%@dirrm %%LIBDIR%%/%%HOST_ARCH%%
 @dirrm %%LIBDIR%%
