@@ -14,14 +14,14 @@ COMMENT=	Missing Link puzzle for X Window System
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		imake
 USE_XORG=	x11 xext xt sm ice
-MAN1=		xmlink.1
-MANCOMPRESSED=	no
-XFREE86_HTML_MAN=	no
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/xmlink \
+		man/man1/xmlink.1.gz \
+		lib/X11/app-defaults/Mlink
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xmlink ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/Mlink.ad ${PREFIX}/lib/X11/app-defaults/Mlink
-	${INSTALL_MAN} ${WRKSRC}/xmlink.man ${MANPREFIX}/man/man1/xmlink.1
+	${INSTALL_PROGRAM} ${WRKSRC}/xmlink ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/Mlink.ad ${STAGEDIR}${PREFIX}/lib/X11/app-defaults/Mlink
+	${INSTALL_MAN} ${WRKSRC}/xmlink.man ${STAGEDIR}${MANPREFIX}/man/man1/xmlink.1
 
 .include <bsd.port.mk>
