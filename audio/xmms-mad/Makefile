@@ -14,7 +14,6 @@ LIB_DEPENDS=	mad:${PORTSDIR}/audio/libmad \
 		xmms:${PORTSDIR}/multimedia/xmms
 
 USES=		gmake pkgconfig
-NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
@@ -25,7 +24,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/Input
 	${INSTALL_DATA} ${WRKSRC}/src/.libs/libxmmsmad.so \
-		${PREFIX}/lib/xmms/Input
+		${STAGEDIR}${PREFIX}/lib/xmms/Input
 
 .include <bsd.port.mk>
