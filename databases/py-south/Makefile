@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	south
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,11 +14,8 @@ COMMENT=	Intelligent schema migrations for Django apps
 LICENSE=	AL2
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USE_PYDISTUTILS=easy_install
+PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_PKGNAME=	South
-PYTHON_PY3K_PLIST_HACK= yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|setuptools|distutils.core|' ${WRKSRC}/${PYSETUP}
 
 .include <bsd.port.mk>
