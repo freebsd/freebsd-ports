@@ -2,6 +2,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package/Stash/XS/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package/Stash/XS/XS.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package/Stash/XS/XS.so
+%%PERL5_MAN3%%/Package::Stash::XS.3.gz
 @dirrm    %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package/Stash/XS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package/Stash
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package
