@@ -207,6 +207,8 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/modules/hg.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/hosts.py
 %%PYTHON_SITELIBDIR%%/salt/modules/hosts.pyc
+%%PYTHON_SITELIBDIR%%/salt/modules/htpasswd.py
+%%PYTHON_SITELIBDIR%%/salt/modules/htpasswd.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/img.py
 %%PYTHON_SITELIBDIR%%/salt/modules/img.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/iptables.py
