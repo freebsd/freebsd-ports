@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libosmesa
-PORTVERSION=	9.2.2
+PORTVERSION=	9.2.3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/${PORTVERSION}/
 DISTNAME=	MesaLib-${PORTVERSION}
@@ -12,8 +12,6 @@ COMMENT=	Off-Screen Mesa implementation of the OpenGL API
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
-
-CONFLICTS=	mesagl-mangled-*
 
 USES+=		gmake pkgconfig
 USE_BZIP2=	yes
@@ -47,7 +45,7 @@ post-patch:
 
 pre-configure:
 #	following line is borrowed from graphics/libGL/bsd.mesalib.mk
-	cd ${WRKSRC} && env NOCONFIGURE=1 sh autogen.sh
+	cd ${WRKSRC} && ${SETENV} NOCONFIGURE=1 ${SH} autogen.sh
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/Mesa/GL
