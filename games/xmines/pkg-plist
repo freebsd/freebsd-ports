@@ -1,3 +1,7 @@
+@group games
+@owner games
 bin/xmines
 %%DATADIR%%/scores
+@owner
+@group
 @dirrm %%DATADIR%%
