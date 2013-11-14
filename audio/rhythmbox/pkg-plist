@@ -1,8 +1,8 @@
 bin/rhythmbox
 bin/rhythmbox-client
-%%ITMS_PLUGIN%%%%WEBPLUGINS_DIR%%/librhythmbox-itms-detection-plugin.a
-%%ITMS_PLUGIN%%%%WEBPLUGINS_DIR%%/librhythmbox-itms-detection-plugin.la
-%%ITMS_PLUGIN%%%%WEBPLUGINS_DIR%%/librhythmbox-itms-detection-plugin.so
+%%ITMS_PLUGIN%%%%WEBPLUGIN_DIR%%/librhythmbox-itms-detection-plugin.a
+%%ITMS_PLUGIN%%%%WEBPLUGIN_DIR%%/librhythmbox-itms-detection-plugin.la
+%%ITMS_PLUGIN%%%%WEBPLUGIN_DIR%%/librhythmbox-itms-detection-plugin.so
 lib/librhythmbox-core.la
 lib/librhythmbox-core.so
 lib/librhythmbox-core.so.0
@@ -761,7 +761,7 @@ share/rhythmbox/uri-new.ui
 %%PYTHON%%@dirrm lib/rhythmbox/plugins/artdisplay
 @dirrm lib/rhythmbox/plugins
 @dirrm lib/rhythmbox
-%%ITMS_PLUGIN%%@dirrmtry %%WEBPLUGINS_DIR%%
+%%ITMS_PLUGIN%%@dirrmtry %%WEBPLUGIN_DIR%%
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
