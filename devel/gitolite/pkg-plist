@@ -77,7 +77,6 @@ libexec/gitolite/triggers/post-compile/update-gitweb-daemon-from-options
 libexec/gitolite/triggers/renice
 libexec/gitolite/triggers/set-default-roles
 libexec/gitolite/triggers/upstream
-%%GITUSER%%@dirrmtry git
 @dirrm libexec/gitolite/triggers/post-compile
 @dirrm libexec/gitolite/triggers
 @dirrm libexec/gitolite/syntactic-sugar
@@ -89,4 +88,3 @@ libexec/gitolite/triggers/upstream
 @dirrm %%SITE_PERL%%/Gitolite/Hooks
 @dirrm %%SITE_PERL%%/Gitolite/Conf
 @dirrm %%SITE_PERL%%/Gitolite
-@dirrm %%SITE_PERL%%
