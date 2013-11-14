@@ -68,7 +68,8 @@ CONFIGURE_ARGS+=--disable-ldap
 .endif
 
 .if ${PORT_OPTIONS:MKDNS}
-LIB_DEPENDS+=	adns:${PORTSDIR}/dns/adns
+LIB_DEPENDS+=	libadns.so:${PORTSDIR}/dns/adns
+CONFIGURE_ARGS+=	--with-adns=${LOCALBASE}
 .else
 CONFIGURE_SUB=	-e '/GPGKEYS_KDNS=/s/".*"/""/'
 .endif
