@@ -12,9 +12,9 @@ COMMENT=	Extended Markdown processor with more features, written in C
 
 LICENSE=	MIT
 
-FETCH_DEPENDS=	git:${PORTSDIR}/devel/git
-
-WRKSRC=		${WRKDIR}/MultiMarkdown-4
+GITHUB_CREATOR=	fletcher
+GIT_PROJECT_NAME=	MultiMarkdown-4
+GIT_SUBMODULES=	yes
 
 ALL_TARGET=	${PORTNAME}
 
@@ -30,18 +30,6 @@ OPTIONS_SUB=	yes
 .if ${PORT_OPTIONS:MHELPERS}
 CONFLICTS_INSTALL=	mtools-*
 .endif
-
-do-fetch:
-	@if [ ! -e ${WRKSRC}/greg/Makefile ]; then \
-		${MKDIR} ${WRKDIR}; \
-		cd ${WRKDIR} && git clone https://github.com/fletcher/MultiMarkdown-4.git; \
-		cd ${WRKSRC} && git checkout ${PORTVERSION}; \
-		cd ${WRKSRC} && git submodule init; \
-		cd ${WRKSRC} && git submodule update; \
-	fi
-
-do-extract:
-	@${DO_NADA}	#normally do-extract starts with an rm -rf ${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -E "s/^(CFLAGS).+=/\1 \+=/" ${WRKSRC}/Makefile ${WRKSRC}/greg/Makefile
@@ -70,4 +58,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/cheat-sheet
 	cd ${WRKSRC} && ${FIND} cheat-sheet -not -path '*/.git*' | \
 		${CPIO} -pdmu --quiet ${STAGEDIR}${DOCSDIR}
+
+.include "${.CURDIR}/bsd.git-clone.mk"
 .include <bsd.port.mk>
