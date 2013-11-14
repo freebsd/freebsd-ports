@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XML Parser for SVG documents
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-SVG>=2:${PORTSDIR}/textproc/p5-SVG \
 		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX
@@ -18,10 +21,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PERL5=	modbuild
 USES=		perl5
 
-MAN3=		SVG::Parser.3 \
-		SVG::Parser::Expat.3 \
-		SVG::Parser::SAX.3 \
-		SVG::Parser::SAX::Handler.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
