@@ -13,46 +13,14 @@ COMMENT=	Tools and library routines for working with TIFF images
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		jbig:${PORTSDIR}/graphics/jbigkit
-
-NO_STAGE=	yes
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libjbig.so:${PORTSDIR}/graphics/jbigkit
 
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS+=	--with-jpeg-include-dir=${LOCALBASE}/include \
 			--with-jpeg-lib-dir=${LOCALBASE}/lib
 
-.if defined(WITH_X11) && !defined(WITHOUT_X11)
-USE_XORG=	sm ice xmu xi x11
-USE_GL=		glut glu gl
-PLIST_SUB+=	WITH_X11=""
-.else
-CONFIGURE_ARGS+=	--without-x --without-libgl
-PLIST_SUB+=	WITH_X11="@comment "
-.endif
-
-MAN1=	bmp2tiff.1 tiff2pdf.1 fax2ps.1 fax2tiff.1 gif2tiff.1 pal2rgb.1 \
-	ppm2tiff.1 ras2tiff.1 raw2tiff.1 rgb2ycbcr.1 sgi2tiff.1 \
-	thumbnail.1 tiff2bw.1 tiff2ps.1 tiff2rgba.1 tiffcmp.1 tiffcp.1 \
-	tiffcrop.1 tiffdither.1 tiffdump.1 tiffgt.1 tiffinfo.1 tiffmedian.1 \
-	tiffset.1 tiffsplit.1 tiffsv.1
-MAN3=	TIFFClose.3tiff TIFFDataWidth.3tiff TIFFError.3tiff \
-	TIFFFieldDataType.3tiff TIFFFieldName.3tiff TIFFFieldPassCount.3tiff \
-	TIFFFieldReadCount.3tiff TIFFFieldTag.3tiff TIFFFieldWriteCount.3tiff \
-	TIFFFlush.3tiff TIFFGetField.3tiff TIFFOpen.3tiff \
-	TIFFPrintDirectory.3tiff TIFFRGBAImage.3tiff TIFFReadDirectory.3tiff \
-	TIFFReadEncodedStrip.3tiff TIFFReadEncodedTile.3tiff \
-	TIFFReadRGBAImage.3tiff TIFFReadRGBAStrip.3tiff \
-	TIFFReadRGBATile.3tiff TIFFReadRawStrip.3tiff TIFFReadRawTile.3tiff \
-	TIFFReadScanline.3tiff TIFFReadTile.3tiff TIFFSetDirectory.3tiff \
-	TIFFSetField.3tiff TIFFWarning.3tiff TIFFWriteDirectory.3tiff \
-	TIFFWriteEncodedStrip.3tiff TIFFWriteEncodedTile.3tiff \
-	TIFFWriteRawStrip.3tiff TIFFWriteRawTile.3tiff \
-	TIFFWriteScanline.3tiff TIFFWriteTile.3tiff TIFFbuffer.3tiff \
-	TIFFcodec.3tiff TIFFcolor.3tiff TIFFmemory.3tiff TIFFquery.3tiff \
-	TIFFsize.3tiff TIFFstrip.3tiff TIFFswab.3tiff TIFFtile.3tiff \
-	libtiff.3tiff
 MLINKS=	TIFFError.3tiff          TIFFSetErrorHandler.3tiff \
 	TIFFFlush.3tiff          TIFFFlushData.3tiff \
 	TIFFGetField.3tiff       TIFFGetFieldDefaulted.3tiff \
@@ -111,6 +79,29 @@ MLINKS=	TIFFError.3tiff          TIFFSetErrorHandler.3tiff \
 	TIFFtile.3tiff           TIFFTileRowSize.3tiff \
 	TIFFtile.3tiff           TIFFVTileSize.3tiff
 
+OPTIONS_DEFINE=	X11
+OPTIONS_DEFAULT=X11
+
+.include <bsd.port.options.mk>
+
+.if !defined(BUILDING_INDEX)
+__pmlinks3!= ${ECHO_CMD} '${MLINKS:S/    / /}' | ${AWK} \
+	'{ if (NF % 2 != 0) { print "broken"; exit; } \
+	for (i=1; i<=NF; i++) { \
+		if ( i % 2 == 0) { print " " $$i " ;"; } \
+		else { printf "${LN} -s " $$i " "; } \
+	} }'
+.endif
+
+.if ${PORT_OPTIONS:MX11}
+USE_XORG=	sm ice xmu xi x11
+USE_GL=		glut glu gl
+PLIST_SUB+=	WITH_X11=""
+.else
+CONFIGURE_ARGS+=	--without-x --without-libgl
+PLIST_SUB+=	WITH_X11="@comment "
+.endif
+
 pre-configure:
 	${REINPLACE_CMD} \
 		-e 's|^LIBTIFF_VERSION_INFO =.*$$|LIBTIFF_VERSION_INFO = 4:0:0|' \
@@ -118,13 +109,14 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|^docfiles|no-docfiles|' \
 		-e 's|man html|man|' ${WRKSRC}/Makefile.in
 
-.if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${DOCSDIR}/images ${DOCSDIR}/man
-	${INSTALL_DATA} ${WRKSRC}/html/*.html ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/html/images/*.jpg ${DOCSDIR}/images/
-	${INSTALL_DATA} ${WRKSRC}/html/images/*.gif ${DOCSDIR}/images/
-	${INSTALL_DATA} ${WRKSRC}/html/man/*.html ${DOCSDIR}/man/
+	( cd ${STAGEDIR}${MANPREFIX}/man/man3 && ${__pmlinks3} )
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/images ${STAGEDIR}${DOCSDIR}/man
+	${INSTALL_DATA} ${WRKSRC}/html/*.html ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/html/images/*.jpg ${STAGEDIR}${DOCSDIR}/images/
+	${INSTALL_DATA} ${WRKSRC}/html/images/*.gif ${STAGEDIR}${DOCSDIR}/images/
+	${INSTALL_DATA} ${WRKSRC}/html/man/*.html ${STAGEDIR}${DOCSDIR}/man/
 .endif
 
 regression-test: build
