@@ -7,7 +7,6 @@ CATEGORIES=	mail
 MASTER_SITES=	SF/annoyancefilter/annoyancefilter/${PORTVERSION} \
 		http://www.fourmilab.ch/annoyance-filter/
 
-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adaptive Bayesian Junk Mail Filter
 
