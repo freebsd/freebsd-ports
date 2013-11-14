@@ -166,14 +166,12 @@ WEBPLUGIN_DIR?=		${_WEBPLUGIN_LIBDIR:S,^${LOCALBASE}/,${PREFIX}/,}/${WEBPLUGIN_N
 
 PLIST_SUB+=		WEBPLUGIN_DIR="${WEBPLUGIN_DIR:S,^${PREFIX}/,,}"
 
-_LNWF=		${WEBPLUGIN_FILES:S,^,${WEBPLUGIN_DIR}/,}
-
 webplugin-post-install:
 	@${ECHO_CMD} "@cwd ${LOCALBASE}" >> ${TMPPLIST}
 .for d in ${_WEBPLUGIN_LINKFARMS}
 	${INSTALL} -d ${STAGEDIR}${d}
-.for l in ${_LNWF}
-	${LN} -sf ${l} ${STAGEDIR}${d}/
+.for l in ${WEBPLUGIN_FILES}
+	${LN} -sf ${l:S,^,${WEBPLUGIN_DIR}/,} ${STAGEDIR}${d}/
 	@${ECHO_CMD} "${d:S,^${LOCALBASE}/,,}/${l:T}" >> ${TMPPLIST}
 .endfor
 	@${ECHO_CMD} "@unexec rmdir ${d:S,^${LOCALBASE},%D,} 2>/dev/null || true" >> ${TMPPLIST}
