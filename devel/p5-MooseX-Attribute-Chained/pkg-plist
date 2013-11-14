@@ -4,6 +4,12 @@
 %%SITE_PERL%%/MooseX/ChainedAccessors.pm
 %%SITE_PERL%%/MooseX/ChainedAccessors/Accessor.pm
 %%SITE_PERL%%/MooseX/Traits/Attribute/Chained.pm
+%%PERL5_MAN3%%/Moose::Meta::Attribute::Custom::Trait::Chained.3.gz
+%%PERL5_MAN3%%/MooseX::Attribute::Chained.3.gz
+%%PERL5_MAN3%%/MooseX::Attribute::ChainedClone.3.gz
+%%PERL5_MAN3%%/MooseX::ChainedAccessors.3.gz
+%%PERL5_MAN3%%/MooseX::ChainedAccessors::Accessor.3.gz
+%%PERL5_MAN3%%/MooseX::Traits::Attribute::Chained.3.gz
 @dirrmtry %%SITE_PERL%%/MooseX/Traits/Attribute
 @dirrmtry %%SITE_PERL%%/MooseX/Traits
 @dirrmtry %%SITE_PERL%%/MooseX/ChainedAccessors
