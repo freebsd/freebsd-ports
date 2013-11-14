@@ -3,6 +3,7 @@
 
 PORTNAME=	Bucardo
 PORTVERSION=	4.5.0
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://bucardo.org/downloads/ ${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mat/

@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- scripts/bucardo_ctl.rc.orig
++++ scripts/bucardo_ctl.rc
+@@ -15,6 +15,7 @@
+ command="/usr/local/bin/${name}"
+
+ load_rc_config $name
++bucardo_ctl_enable=${bucardo_ctl_enable:-"NO"}
+ bucardo_ctl_flags=${bucardo_ctl_flags:-"--dbuser bucardo --dbname bucardo"}
+
+ rc_usage="start|stop|reload|restart|status|kick [sync_name]"
