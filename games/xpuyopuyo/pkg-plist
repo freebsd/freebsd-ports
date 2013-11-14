@@ -1,4 +1,5 @@
 bin/xpuyopuyo
+man/man6/xpuyopuyo.6.gz
 %%GNOME:%%share/gnome/apps/Games/xpuyopuyo.desktop
 %%GNOME:%%share/pixmaps/xpuyopuyo.xpm
 %%DATADIR%%/copying.txt
