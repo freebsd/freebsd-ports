@@ -49,11 +49,6 @@ post-patch:
 	@${LN} -s base.src ${WRKSRC}/config/mobile/base.cfg
 	@${LN} -s base.src ${WRKSRC}/config/standard/base.cfg
 
-post-install:
-.if empty(PORT_OPTIONS:MEXAMPLES)
-	@${RMDIR} ${EXAMPLESDIR}
-.endif
-
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not install on sparc64: signal 10
 .endif
