@@ -1,3 +1,4 @@
 %%SITE_PERL%%/File/HomeDir/PathClass.pm
+%%PERL5_MAN3%%/File::HomeDir::PathClass.3.gz
 @dirrmtry %%SITE_PERL%%/File/HomeDir
 @dirrmtry %%SITE_PERL%%/File
