@@ -1,0 +1,5 @@
+man/man8/httplog.8.gz
+sbin/httplog
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
