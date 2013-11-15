@@ -14,9 +14,9 @@ LICENSE=	LGPL21
 
 WRKSRC=		${WRKDIR}/CodeWorker${PORTVERSION:S/./_/g}
 
+USES=		gmake
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
-USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CXX}" CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" LFLAGS="-lm"
 ALL_TARGET=	build
 
@@ -24,7 +24,6 @@ CFLAGS+=	-Dstricmp=strcasecmp
 
 PLIST_FILES=	bin/codeworker
 
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.cpp" -or -name "*.h" | ${XARGS} \
 		${REINPLACE_CMD} -e \
@@ -32,6 +31,6 @@ post-patch:
 		 s|__GNUC_PREREQ |__GNUC_PREREQ__|'
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} codeworker ${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} codeworker ${STAGEDIR}${PREFIX}/bin)
 
 .include <bsd.port.mk>
