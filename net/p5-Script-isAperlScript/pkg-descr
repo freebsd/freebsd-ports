@@ -1,4 +1,0 @@
-This does a basic check if something is a perl script or not.
-It can also optionally exclude scripts that use /usr/bin/env.
-
-WWW: http://search.cpan.org/dist/Script-isAperlScripat/

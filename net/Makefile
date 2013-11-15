@@ -743,7 +743,6 @@
     SUBDIR += p5-SOAP-MySOAP
     SUBDIR += p5-SOAP-Transport-TCP
     SUBDIR += p5-Samba-LDAP
-    SUBDIR += p5-Script-isAperlScript
     SUBDIR += p5-Server-Starter
     SUBDIR += p5-Socket
     SUBDIR += p5-Socket-Class
