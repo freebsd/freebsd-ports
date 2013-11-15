@@ -3,6 +3,7 @@
 
 PORTNAME=	lftp
 PORTVERSION=	4.4.9
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://ftp.yars.free.net/pub/source/lftp/ \
 		http://ftp.yars.free.net/pub/source/lftp/old/ \
@@ -18,9 +19,9 @@ COMMENT=	Shell-like command line ftp client
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
-USES=		iconv
+USES=		iconv shebangfix
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
@@ -33,50 +34,26 @@ PORTDOCS=	AUTHORS BUGS ChangeLog FAQ FEATURES INSTALL \
 		MIRRORS NEWS README README.debug-levels README.modules \
 		THANKS TODO
 
+SHEBANG_FILES=	src/verify-file \
+		src/convert-mozilla-cookies \
+		src/xdg-move
+
 OPTIONS_DEFINE=	NLS
 OPTIONS_RADIO=	SSL
 OPTIONS_RADIO_SSL=	OPENSSL GNUTLS
 OPTIONS_DEFAULT=	SSL OPENSSL NLS
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	--with-openssl
-.else
-CONFIGURE_ARGS+=	--without-openssl
-.endif
-
-.if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
-CONFIGURE_ARGS+=	--with-gnutls
-.else
-CONFIGURE_ARGS+=	--without-gnutls
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CONFIGURE_ARGS+=	--enable-nls
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-MAN1=		lftp.1 lftpget.1
-MAN5=		lftp.conf.5
+OPTIONS_SUB=	yes
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
+OPENSSL_CONFIGURE_WITH=	openssl
+OPENSSL_USE=	OPENSSL=yes
+GNUTLS_CONFIGURE_WITH=	gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/lftp.conf ${PREFIX}/etc/lftp.conf.sample
-.if !exists(${PREFIX}/etc/lftp.conf)
-	${CP} -p ${PREFIX}/etc/lftp.conf.sample ${PREFIX}/etc/lftp.conf
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
-.endif
+	${MV} ${STAGEDIR}${PREFIX}/etc/lftp.conf \
+		${STAGEDIR}${PREFIX}/etc/lftp.conf.sample
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
