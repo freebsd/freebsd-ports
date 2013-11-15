@@ -1578,6 +1578,7 @@
     SUBDIR += p5-Class-MethodMaker
     SUBDIR += p5-Class-MethodMapper
     SUBDIR += p5-Class-Mix
+    SUBDIR += p5-Class-Mixin
     SUBDIR += p5-Class-MixinFactory
     SUBDIR += p5-Class-Multimethods
     SUBDIR += p5-Class-Multimethods-Pure

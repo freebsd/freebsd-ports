@@ -1,0 +1,8 @@
+Class::Mixin provides a way to mix methods from one class into another,
+such that the target class can use both its methods as well as those of
+the source class.
+The primary advantage is that the behavior of a class can be modified
+to effectively be another class without changing any of the calling
+code -- just requires using the new class that mixes into the original.
+
+WWW: http://search.cpan.org/dist/Class-Mixin/
