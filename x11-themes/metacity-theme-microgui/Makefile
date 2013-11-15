@@ -20,6 +20,5 @@ RESTRICTED=	${REASON}
 
 WRKSRC=		${WRKDIR}/microGUI
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../metacity-themes/Makefile.metacity"
 .include <bsd.port.mk>
