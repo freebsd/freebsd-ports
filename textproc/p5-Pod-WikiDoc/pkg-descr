@@ -1,0 +1,7 @@
+Pod works well, but writing it can be time-consuming and tedious. For example,
+commonly used layouts like lists require numerous lines of text to make just a
+couple of simple points. An alternative approach is to write documentation in
+a wiki-text shorthand (referred to here as wikidoc) and use Pod::WikiDoc to
+extract it and convert it into its corresponding Pod as a separate .pod file.
+
+WWW: http://search.cpan.org/dist/Pod-WikiDoc/
