@@ -11,4 +11,5 @@ OpenID server, and they all work with each other without having to
 register with or pay anybody to "get started". An owner of a URL can
 pick which OpenID server to use.
 
+WWW: http://search.cpan.org/dist/Net-OpenID-Server/
 WWW: http://www.openid.net
