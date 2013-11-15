@@ -5215,6 +5215,7 @@
 %%WWWDIR%%/lib/files/mount.php
 %%WWWDIR%%/lib/files/storage/common.php
 %%WWWDIR%%/lib/files/storage/commontest.php
+%%WWWDIR%%/lib/files/storage/home.php
 %%WWWDIR%%/lib/files/storage/local.php
 %%WWWDIR%%/lib/files/storage/mappedlocal.php
 %%WWWDIR%%/lib/files/storage/storage.php
