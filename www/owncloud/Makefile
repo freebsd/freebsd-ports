@@ -2,7 +2,7 @@
 
 PORTNAME=	owncloud
 PORTVERSION=	5.0.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://download.owncloud.org/community/
 
@@ -21,8 +21,6 @@ USE_PHP=	ctype curl dom fileinfo filter gd hash iconv json ldap \
 WANT_PHP_WEB=	yes
 DEFAULT_PHP_VER=5
 
-WWWDOCROOT?=	www
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
@@ -30,21 +28,9 @@ SUB_FILES=	pkg-message
 OPTIONS_MULTI=	DB
 OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
 OPTIONS_DEFAULT=	SQLITE
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	client
-USE_PHP+=	mysql pdo_mysql
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
-USE_PHP+=	pgsql pdo_pgsql
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-USE_PHP+=	sqlite3 pdo_sqlite
-.endif
+MYSQL_USE=	MYSQL=client PHP=mysql,pdo_mysql
+PGSQL_USE=	PGSQL=yes PHP=pdo_pgsql,pgsql
+SQLITE_USE=	PHP=pdo_sqlite,sqlite3 SQLITE=yes
 
 do-install:
 	@${MKDIR} -m 0755 ${STAGEDIR}${WWWDIR}

@@ -1,5 +1,5 @@
-@group www
 @owner www
+@group www
 %%WWWDIR%%/.htaccess
 %%WWWDIR%%/3rdparty/Archive/Tar.php
 %%WWWDIR%%/3rdparty/Console/Getopt.php
@@ -2122,6 +2122,7 @@
 %%WWWDIR%%/apps/files_pdfviewer/viewer.php
 %%WWWDIR%%/apps/files_sharing/appinfo/app.php
 %%WWWDIR%%/apps/files_sharing/appinfo/info.xml
+%%WWWDIR%%/apps/files_sharing/appinfo/routes.php
 %%WWWDIR%%/apps/files_sharing/appinfo/update.php
 %%WWWDIR%%/apps/files_sharing/appinfo/version
 %%WWWDIR%%/apps/files_sharing/css/public.css
@@ -2183,6 +2184,7 @@
 %%WWWDIR%%/apps/files_sharing/l10n/zh_CN.GB2312.php
 %%WWWDIR%%/apps/files_sharing/l10n/zh_CN.php
 %%WWWDIR%%/apps/files_sharing/l10n/zh_TW.php
+%%WWWDIR%%/apps/files_sharing/lib/api.php
 %%WWWDIR%%/apps/files_sharing/lib/cache.php
 %%WWWDIR%%/apps/files_sharing/lib/permissions.php
 %%WWWDIR%%/apps/files_sharing/lib/share/file.php
@@ -2193,6 +2195,7 @@
 %%WWWDIR%%/apps/files_sharing/public.php
 %%WWWDIR%%/apps/files_sharing/templates/authenticate.php
 %%WWWDIR%%/apps/files_sharing/templates/public.php
+%%WWWDIR%%/apps/files_sharing/tests/api.php
 %%WWWDIR%%/apps/files_texteditor/ajax/loadfile.php
 %%WWWDIR%%/apps/files_texteditor/ajax/savefile.php
 %%WWWDIR%%/apps/files_texteditor/appinfo/app.php
@@ -3837,12 +3840,18 @@
 %%WWWDIR%%/core/doc/admin/_sources/maintenance/index.txt
 %%WWWDIR%%/core/doc/admin/_sources/maintenance/migrating.txt
 %%WWWDIR%%/core/doc/admin/_sources/maintenance/update.txt
+%%WWWDIR%%/core/doc/admin/_static/ajax-loader.gif
 %%WWWDIR%%/core/doc/admin/_static/basic.css
 %%WWWDIR%%/core/doc/admin/_static/bootstrap-responsive.css
 %%WWWDIR%%/core/doc/admin/_static/bootstrap-sphinx.css
 %%WWWDIR%%/core/doc/admin/_static/bootstrap.css
 %%WWWDIR%%/core/doc/admin/_static/bootstrap.js
+%%WWWDIR%%/core/doc/admin/_static/comment-bright.png
+%%WWWDIR%%/core/doc/admin/_static/comment-close.png
+%%WWWDIR%%/core/doc/admin/_static/comment.png
 %%WWWDIR%%/core/doc/admin/_static/doctools.js
+%%WWWDIR%%/core/doc/admin/_static/down-pressed.png
+%%WWWDIR%%/core/doc/admin/_static/down.png
 %%WWWDIR%%/core/doc/admin/_static/file.png
 %%WWWDIR%%/core/doc/admin/_static/img/glyphicons-halflings-white.png
 %%WWWDIR%%/core/doc/admin/_static/img/glyphicons-halflings.png
@@ -3857,6 +3866,9 @@
 %%WWWDIR%%/core/doc/admin/_static/searchtools.js
 %%WWWDIR%%/core/doc/admin/_static/style.css
 %%WWWDIR%%/core/doc/admin/_static/underscore.js
+%%WWWDIR%%/core/doc/admin/_static/up-pressed.png
+%%WWWDIR%%/core/doc/admin/_static/up.png
+%%WWWDIR%%/core/doc/admin/_static/websupport.js
 %%WWWDIR%%/core/doc/admin/configuration/auth_ldap.html
 %%WWWDIR%%/core/doc/admin/configuration/background_jobs.html
 %%WWWDIR%%/core/doc/admin/configuration/configuration_3rdparty.html
@@ -3952,12 +3964,18 @@
 %%WWWDIR%%/core/doc/user/_sources/pim/sync_thunderbird.txt
 %%WWWDIR%%/core/doc/user/_sources/pim/troubleshooting.txt
 %%WWWDIR%%/core/doc/user/_sources/webinterface.txt
+%%WWWDIR%%/core/doc/user/_static/ajax-loader.gif
 %%WWWDIR%%/core/doc/user/_static/basic.css
 %%WWWDIR%%/core/doc/user/_static/bootstrap-responsive.css
 %%WWWDIR%%/core/doc/user/_static/bootstrap-sphinx.css
 %%WWWDIR%%/core/doc/user/_static/bootstrap.css
 %%WWWDIR%%/core/doc/user/_static/bootstrap.js
+%%WWWDIR%%/core/doc/user/_static/comment-bright.png
+%%WWWDIR%%/core/doc/user/_static/comment-close.png
+%%WWWDIR%%/core/doc/user/_static/comment.png
 %%WWWDIR%%/core/doc/user/_static/doctools.js
+%%WWWDIR%%/core/doc/user/_static/down-pressed.png
+%%WWWDIR%%/core/doc/user/_static/down.png
 %%WWWDIR%%/core/doc/user/_static/file.png
 %%WWWDIR%%/core/doc/user/_static/img/glyphicons-halflings-white.png
 %%WWWDIR%%/core/doc/user/_static/img/glyphicons-halflings.png
@@ -3972,6 +3990,9 @@
 %%WWWDIR%%/core/doc/user/_static/searchtools.js
 %%WWWDIR%%/core/doc/user/_static/style.css
 %%WWWDIR%%/core/doc/user/_static/underscore.js
+%%WWWDIR%%/core/doc/user/_static/up-pressed.png
+%%WWWDIR%%/core/doc/user/_static/up.png
+%%WWWDIR%%/core/doc/user/_static/websupport.js
 %%WWWDIR%%/core/doc/user/bookmarks.html
 %%WWWDIR%%/core/doc/user/contents.html
 %%WWWDIR%%/core/doc/user/files/configuring_big_file_upload.html
@@ -5872,6 +5893,7 @@
 @dirrmtry %%WWWDIR%%/apps/files_texteditor/appinfo
 @dirrmtry %%WWWDIR%%/apps/files_texteditor/ajax
 @dirrmtry %%WWWDIR%%/apps/files_texteditor
+@dirrmtry %%WWWDIR%%/apps/files_sharing/tests
 @dirrmtry %%WWWDIR%%/apps/files_sharing/templates
 @dirrmtry %%WWWDIR%%/apps/files_sharing/lib/share
 @dirrmtry %%WWWDIR%%/apps/files_sharing/lib
