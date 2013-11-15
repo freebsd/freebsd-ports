@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twistedWords
-PORTVERSION=	13.1.0
+PORTVERSION=	13.2.0
 CATEGORIES=	net-im devel python
 MASTER_SITES=	http://twistedmatrix.com/Releases/Words/${PORTVERSION:R}/ \
 		LOCAL/sunpoet
