@@ -290,10 +290,8 @@
     SUBDIR += xemacs-mule-packages
     SUBDIR += xemacs-packages
     SUBDIR += xemacs21-mule
-    SUBDIR += xml2rfc-xxe
     SUBDIR += xmlcopyeditor
     SUBDIR += xvile
-    SUBDIR += xxe
     SUBDIR += yasnippet
     SUBDIR += yudit
     SUBDIR += yui

@@ -1,7 +1,0 @@
-xml2rfc-xxe is a configuration for the XMLMind XML Editor
-to assist in editing RFCs in RFC2629 format.  It includes
-WYSIWYG formatting, conversion using the web form or a
-locally-installed xml2rfc, conversion to HTML using XSL-FO,
-and more.
-
-WWW: http://code.google.com/p/xml2rfc-xxe/

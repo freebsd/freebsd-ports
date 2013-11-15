@@ -1,6 +1,0 @@
-#!/bin/sh
-#
-# xxe launching helper
-#
-PATH=%%JAVA_HOME%%/bin:${PATH}
-exec %%PREFIX%%/lib/%%DISTNAME%%/bin/`basename $0` "$@"
