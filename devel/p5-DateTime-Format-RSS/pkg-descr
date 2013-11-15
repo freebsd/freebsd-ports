@@ -1,0 +1,7 @@
+Format DateTime For RSS
+
+DateTime::Format::RSS attempts to deal with those nasty RSS
+date/time strings used in fields (such as <issued>, <modified>,
+<pubDate>) that never ever seems to be right.
+
+WWW: http://search.cpan.org/dist/DateTime-Format-RSS/
