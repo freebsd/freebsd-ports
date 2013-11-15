@@ -1809,6 +1809,7 @@
     SUBDIR += p5-DateTime-Format-Oracle
     SUBDIR += p5-DateTime-Format-Pg
     SUBDIR += p5-DateTime-Format-RFC3339
+    SUBDIR += p5-DateTime-Format-RSS
     SUBDIR += p5-DateTime-Format-Roman
     SUBDIR += p5-DateTime-Format-SQLite
     SUBDIR += p5-DateTime-Format-Strptime
