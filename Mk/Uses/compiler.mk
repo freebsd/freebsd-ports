@@ -128,6 +128,7 @@ CC=	${LOCALBASE}/bin/clang33
 CXX=	${LOCALBASE}/bin/clang++33
 .if ${OSVERSION} < 900033
 USE_BINUTILS=	yes
+LDFLAGS+=	-B${LOCALBASE}/bin
 .endif
 .endif
 .endif
@@ -145,6 +146,7 @@ CC=	${LOCALBASE}/bin/clang33
 CXX=	${LOCALBASE}/bin/clang++33
 .if ${OSVERSION} < 900033
 USE_BINUTILS=	yes
+LDFLAGS+=	-B${LOCALBASE}/bin
 .endif
 .endif
 .endif
