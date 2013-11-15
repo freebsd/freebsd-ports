@@ -3,6 +3,7 @@
 
 PORTNAME=	xdtp
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.ongs.co.jp/software/xdtp/
 EXTRACT_SUFX=	.tgz
