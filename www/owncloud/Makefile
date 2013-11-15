@@ -30,7 +30,7 @@ OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
 OPTIONS_DEFAULT=	SQLITE
 MYSQL_USE=	MYSQL=client PHP=mysql,pdo_mysql
 PGSQL_USE=	PGSQL=yes PHP=pdo_pgsql,pgsql
-SQLITE_USE=	PHP=pdo_sqlite,sqlite3 SQLITE=yes
+SQLITE_USE=	PHP=pdo_sqlite,sqlite3
 
 do-install:
 	@${MKDIR} -m 0755 ${STAGEDIR}${WWWDIR}
