@@ -6,3 +6,4 @@ lib/liborange.la
 lib/liborange.so
 lib/liborange.so.0
 libdata/pkgconfig/liborange.pc
+man/man1/orange.1.gz
