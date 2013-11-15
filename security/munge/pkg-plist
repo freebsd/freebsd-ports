@@ -8,7 +8,26 @@ lib/libmunge.so.2
 lib/libmunge.a
 lib/libmunge.so
 sbin/munged
-@cwd /
-@exec rm /var/run/${PORTNAME}
-@exec rm /var/log/${PORTNAME}
-@exec rm /var/lib/${PORTNAME}
+man/man1/munge.1.gz
+man/man1/remunge.1.gz
+man/man1/unmunge.1.gz
+man/man3/munge.3.gz
+man/man3/munge_ctx.3.gz
+man/man3/munge_ctx_copy.3.gz
+man/man3/munge_ctx_create.3.gz
+man/man3/munge_ctx_destroy.3.gz
+man/man3/munge_ctx_get.3.gz
+man/man3/munge_ctx_set.3.gz
+man/man3/munge_ctx_strerror.3.gz
+man/man3/munge_decode.3.gz
+man/man3/munge_encode.3.gz
+man/man3/munge_enum.3.gz
+man/man3/munge_enum_int_to_str.3.gz
+man/man3/munge_enum_is_valid.3.gz
+man/man3/munge_enum_str_to_int.3.gz
+man/man3/munge_strerror.3.gz
+man/man7/munge.7.gz
+man/man8/munged.8.gz
+@unexec rm %D/var/run/munge 2>&1 >/dev/null || true
+@unexec rm %D/var/log/munge 2>&1 >/dev/null || true
+@unexec rm %D/var/lib/munge 2>&1 >/dev/null || true
