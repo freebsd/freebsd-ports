@@ -27,7 +27,7 @@ PLIST_FILES+=	%%DATADIR%%/th_${ALIAS}_v2.dat \
 .endfor
 
 do-install:
-	${MKDIR} ${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/thes_fr.dat ${STAGEDIR}${DATADIR}/th_fr_FR_v2.dat
 	${INSTALL_DATA} ${WRKSRC}/thes_fr.idx ${STAGEDIR}${DATADIR}/th_fr_FR_v2.idx
 .for ALIAS in ${FRALIASES}
