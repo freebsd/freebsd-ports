@@ -51,6 +51,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e62ab2af-4df4-11e3-b0cf-00262d5ed8ee">
+    <topic>chromium -- multiple memory corruption issues</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>31.0.1650.57</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>[319117] [319125] Critical CVE-2013-6632: Multiple memory
+	   corruption issues. Credit to Pinkie Pie.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-6632</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2013-11-14</discovery>
+      <entry>2013-11-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="adcbdba2-4c27-11e3-9848-98fc11cdc4f5">
     <topic>linux-flashplugin -- multiple vulnerabilities</topic>
     <affects>
