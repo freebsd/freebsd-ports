@@ -83,6 +83,9 @@ bin/lore
 %%PYTHON_SITELIBDIR%%/twisted/lore/test/test_slides.py
 %%PYTHON_SITELIBDIR%%/twisted/lore/test/test_slides.pyc
 %%PYTHON_SITELIBDIR%%/twisted/lore/test/test_slides.pyo
+%%PYTHON_SITELIBDIR%%/twisted/lore/test/test_texi.py
+%%PYTHON_SITELIBDIR%%/twisted/lore/test/test_texi.pyc
+%%PYTHON_SITELIBDIR%%/twisted/lore/test/test_texi.pyo
 %%PYTHON_SITELIBDIR%%/twisted/lore/texi.py
 %%PYTHON_SITELIBDIR%%/twisted/lore/texi.pyc
 %%PYTHON_SITELIBDIR%%/twisted/lore/texi.pyo
