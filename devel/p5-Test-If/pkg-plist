@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/Test::If.3.gz
+%%SITE_PERL%%/Test/If.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/If/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/If
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test
