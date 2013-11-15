@@ -12,19 +12,15 @@ COMMENT=	Simple program to split or join files
 
 LICENSE=	GPLv2
 
-PLIST_FILES=	bin/lxsplit
-PORTDOCS=	ChangeLog README
+DOCS=		ChangeLog README
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/lxsplit ${PREFIX}/bin/
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/lxsplit ${STAGEDIR}${PREFIX}/bin/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

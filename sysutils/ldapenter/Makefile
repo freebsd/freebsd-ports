@@ -16,11 +16,9 @@ USE_BZIP2=	yes
 USE_OPENLDAP=	24
 LDFLAGS+=	-L${LOCALBASE}/lib -llber-2.4
 
-MANCOMPRESSED=	yes
-MAN1=		ldapform.1 ldapedit.1
-
 PLIST_FILES=	bin/ldapform \
-		bin/ldapedit
+		bin/ldapedit \
+		man/man1/ldapform.1.gz \
+		man/man1/ldapedit.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

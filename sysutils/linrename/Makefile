@@ -24,10 +24,8 @@ CPPFLAGS+=	-I../include \
 		-DHAVE_DIRFD -DHAVE_ERR_H -DHAVE_LANGINFO_H -DHAVE_LOCALE_H \
 		-DPACKAGE_STRING=\"util-linux\ ${PORTVERSION}\"
 
-MAN1=		${PORTNAME}.1
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	${LN} -sf rename.1 ${BUILD_WRKSRC}/${PORTNAME}.1
 
@@ -37,7 +35,7 @@ do-build:
 
 do-install:
 	(cd ${INSTALL_WRKSRC} \
-		&& ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin \
-		&& ${INSTALL_MAN} ${PORTNAME}.1 ${MANPREFIX}/man/man1)
+		&& ${INSTALL_PROGRAM} ${PORTNAME} ${STAGEDIR}${PREFIX}/bin \
+		&& ${INSTALL_MAN} ${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1)
 
 .include <bsd.port.mk>

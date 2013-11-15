@@ -20,25 +20,19 @@ USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=--program-prefix=''
 
-PORTDOCS=	README TODO AUTHORS
+DOCS=		README TODO AUTHORS
 
-MAN1=		lineakd.1
-#MANCOMPRESSED=	yes
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||' \
 		${WRKSRC}/lineak/Makefile.in ${WRKSRC}/lineakd/Makefile.in
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/lineakd.conf.example ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/lineakd.conf.example ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

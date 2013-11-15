@@ -1,6 +1,6 @@
---- lineakd/Makefile.in.orig	2006-05-24 17:26:52.000000000 +0200
-+++ lineakd/Makefile.in	2013-02-18 16:29:24.000000000 +0100
-@@ -239,9 +239,9 @@
+--- lineakd/Makefile.in.orig	2006-05-24 23:26:52.000000000 +0800
++++ lineakd/Makefile.in	2013-11-15 21:28:05.000000000 +0800
+@@ -239,9 +239,9 @@ target_vendor = @target_vendor@
  unsermake_enable_pch_FALSE = @unsermake_enable_pch_FALSE@
  unsermake_enable_pch_TRUE = @unsermake_enable_pch_TRUE@
  lineakd_SOURCES = lineakd_core_functions.cpp cmdprefs.cpp main.cpp 
@@ -12,7 +12,7 @@
  INCLUDES = $(all_includes) -I$(top_srcdir)/lineak -I. -I..
  AM_CPPFLAGS = -I$(top_srcdir) -I$(top_srcdir)/lineak -I$(top_srcdir)/lineakd -I. -I.. $(all_includes) 
  #>- all: all-am
-@@ -544,10 +544,10 @@
+@@ -544,25 +544,25 @@ uninstall-am: uninstall-binPROGRAMS unin
  
  #man_MANS = lineakd.1.gz
  
@@ -25,17 +25,28 @@
 +install-data-local: lineakd.1.gz
  #>- 	$(mkinstalldirs) ${DESTDIR}$(sysconfdir)/
  #>+ 1
- 	$(mkinstalldirs) $(DESTDIR)${DESTDIR}$(sysconfdir)/
-@@ -562,7 +562,7 @@
- 	$(INSTALL_DATA) $(srcdir)/lineakkb.def $(DESTDIR)${DESTDIR}$(sysconfdir)/lineakkb.def
+-	$(mkinstalldirs) $(DESTDIR)${DESTDIR}$(sysconfdir)/
++	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)/
+ #>- 	$(mkinstalldirs) ${DESTDIR}$(mandir)/man1/
+ #>+ 1
+-	$(mkinstalldirs) $(DESTDIR)${DESTDIR}$(mandir)/man1/
++	$(mkinstalldirs) $(DESTDIR)$(mandir)/man1/
+ #>- 	$(mkinstalldirs) ${DESTDIR}$(pkglibdir)/plugins/
+ #>+ 1
+-	$(mkinstalldirs) $(DESTDIR)${DESTDIR}$(pkglibdir)/plugins/
++	$(mkinstalldirs) $(DESTDIR)$(pkglibdir)/plugins/
+ #>- 	$(INSTALL_DATA) $(srcdir)/lineakkb.def ${DESTDIR}$(sysconfdir)/lineakkb.def
+ #>+ 1
+-	$(INSTALL_DATA) $(srcdir)/lineakkb.def $(DESTDIR)${DESTDIR}$(sysconfdir)/lineakkb.def
++	$(INSTALL_DATA) $(srcdir)/lineakkb.def $(DESTDIR)$(sysconfdir)/lineakkb.def
  #>- 	$(INSTALL_DATA) $(srcdir)/lineakd.1.bz2 ${DESTDIR}$(mandir)/man1/lineakd.1.bz2
  #>+ 1
 -	$(INSTALL_DATA) $(srcdir)/lineakd.1.bz2 $(DESTDIR)${DESTDIR}$(mandir)/man1/lineakd.1.bz2
-+	$(INSTALL_DATA) $(srcdir)/lineakd.1.gz $(DESTDIR)${DESTDIR}$(mandir)/man1/lineakd.1.gz
++	$(INSTALL_DATA) $(srcdir)/lineakd.1.gz $(DESTDIR)$(mandir)/man1/lineakd.1.gz
  	 if test "$(SETKEYCODES_SUID)" != "no" ; then \
             chown root `which setkeycodes` ; \
             chmod +s `which setkeycodes` ; \
-@@ -574,7 +574,7 @@
+@@ -574,7 +574,7 @@ uninstall-local:
  	-rm -f $(DESTDIR)${DESTDIR}$(sysconfdir)/lineakkb.def
  #>- 	-rm -f ${DESTDIR}$(mandir)/man1/lineakd.1.bz2
  #>+ 1

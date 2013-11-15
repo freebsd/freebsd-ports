@@ -17,16 +17,10 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-PORTEXAMPLES=	logmon.conf.example
-PLIST_FILES=	bin/logmon
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/logmon.conf.example ${EXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/logmon.conf.example ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
