@@ -88,6 +88,8 @@ bin/yang2html
 %%PYTHON_SITELIBDIR%%/pyang/yin_parser.py
 %%PYTHON_SITELIBDIR%%/pyang/yin_parser.pyc
 %%PYTHON_SITELIBDIR%%/pyang/yin_parser.pyo
+man/man1/pyang.1.gz
+man/man1/yang2dsdl.1.gz
 %%DATADIR%%/images/case.png
 %%DATADIR%%/images/choice.png
 %%DATADIR%%/images/container.png
@@ -104,7 +106,9 @@ bin/yang2html
 %%DATADIR%%/images/module.png
 %%DATADIR%%/images/notification.png
 %%DATADIR%%/modules/ietf-inet-types.yang
+%%DATADIR%%/modules/ietf-netconf.yang
 %%DATADIR%%/modules/ietf-netconf-monitoring.yang
+%%DATADIR%%/modules/ietf-netconf-with-defaults.yang
 %%DATADIR%%/modules/ietf-yang-smiv2.yang
 %%DATADIR%%/modules/ietf-yang-types.yang
 %%DATADIR%%/schema/relaxng-lib.rng
