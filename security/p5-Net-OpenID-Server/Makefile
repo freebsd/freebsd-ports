@@ -3,20 +3,23 @@
 
 PORTNAME=	Net-OpenID-Server
 PORTVERSION=	1.09
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Reference implementation of OpenID server
 
-BUILD_DEPENDS=	p5-Crypt-DH>=0:${PORTSDIR}/security/p5-Crypt-DH \
-		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Net-OpenID-Common>=1.11:${PORTSDIR}/security/p5-Net-OpenID-Common \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+INSTALL_TARGET=	pure_install
 USES=		perl5
 USE_PERL5=	configure
-INSTALL_TARGET=	pure_install
 
 .include <bsd.port.mk>
