@@ -12,24 +12,19 @@ COMMENT=	C and C++ Code Counter
 BUILD_DEPENDS=	antlr:${PORTSDIR}/devel/pccts \
 		dlg:${PORTSDIR}/devel/pccts
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKEFILE=	makefile
 MAKE_JOBS_UNSAFE=	yes
+MAKE_ARGS=	CCC="${CXX}"
 
 PORTDOCS=	readme.txt changes.txt
 PLIST_FILES=	bin/cccc
 
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e 's|=g++|=${CXX}|' ${WRKSRC}/*/posix*.mak
-
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/cccc/cccc ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_PROGRAM} ${WRKSRC}/cccc/cccc ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
