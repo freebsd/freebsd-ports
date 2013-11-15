@@ -10,8 +10,6 @@ MASTER_SITE_SUBDIR=wes
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Securely delete file[s]
 
-PLIST_FILES=	bin/obliterate
-MAN8=		obliterate.8
+PLIST_FILES=	bin/obliterate man/man8/${PORTNAME}.8.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
