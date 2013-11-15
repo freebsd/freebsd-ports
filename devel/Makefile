@@ -1861,6 +1861,7 @@
     SUBDIR += p5-Devel-Hide
     SUBDIR += p5-Devel-KYTProf
     SUBDIR += p5-Devel-Leak
+    SUBDIR += p5-Devel-Leak-Cb
     SUBDIR += p5-Devel-Leak-Object
     SUBDIR += p5-Devel-LeakGuard-Object
     SUBDIR += p5-Devel-LeakTrace
