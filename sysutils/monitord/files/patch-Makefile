@@ -1,6 +1,15 @@
---- Makefile.orig	Thu Jun  7 13:16:14 2007
-+++ Makefile	Thu Jun  7 13:16:41 2007
-@@ -24,8 +24,6 @@
+--- Makefile.orig	2003-08-22 06:36:42.000000000 +0800
++++ Makefile	2013-11-15 23:14:43.000000000 +0800
+@@ -6,7 +6,7 @@ OBJECTS	=	monitord.o mail.o
+ 
+ TARGET =	monitord
+ 
+-MANDIR = 	/usr/local/man
++MANDIR = 	$(PREFIX)/man
+ 
+ .SUFFIXES:
+ .SUFFIXES: .c .o
+@@ -24,10 +24,8 @@ clean:
  
  all: $(TARGET)
  
@@ -8,4 +17,9 @@
 -	$(CC) $(OBJECTS) -o $(TARGET)
  
  install:
- 	$(INSTALL) -cs $(TARGET) /usr/local/sbin
+-	$(INSTALL) -cs $(TARGET) /usr/local/sbin
+-	$(INSTALL) -c $(TARGET).conf.sample /usr/local/etc
+-	$(INSTALL) -c $(TARGET).8 $(MANDIR)/man8
++	$(INSTALL) -cs $(TARGET) $(DESTDIR)$(PREFIX)/sbin
++	$(INSTALL) -c $(TARGET).conf.sample $(DESTDIR)$(PREFIX)/etc
++	$(INSTALL) -c $(TARGET).8 $(DESTDIR)$(MANDIR)/man8
