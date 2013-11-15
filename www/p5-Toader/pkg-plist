@@ -1,0 +1,101 @@
+bin/toader-autodoc
+bin/toader-css
+bin/toader-dir
+bin/toader-entry
+bin/toader-find
+bin/toader-gallery
+bin/toader-ls
+bin/toader-migrate
+bin/toader-page
+bin/toader-ra
+bin/toader-temp
+%%PERL5_MAN3%%/Toader.3.gz
+%%PERL5_MAN3%%/Toader::AutoDoc.3.gz
+%%PERL5_MAN3%%/Toader::Config.3.gz
+%%PERL5_MAN3%%/Toader::Directory.3.gz
+%%PERL5_MAN3%%/Toader::Entry.3.gz
+%%PERL5_MAN3%%/Toader::Entry::Helper.3.gz
+%%PERL5_MAN3%%/Toader::Entry::Manage.3.gz
+%%PERL5_MAN3%%/Toader::Gallery.3.gz
+%%PERL5_MAN3%%/Toader::Page.3.gz
+%%PERL5_MAN3%%/Toader::Page::Helper.3.gz
+%%PERL5_MAN3%%/Toader::Page::Manage.3.gz
+%%PERL5_MAN3%%/Toader::Render.3.gz
+%%PERL5_MAN3%%/Toader::Render::AutoDoc.3.gz
+%%PERL5_MAN3%%/Toader::Render::AutoDoc::Cleanup.3.gz
+%%PERL5_MAN3%%/Toader::Render::CSS.3.gz
+%%PERL5_MAN3%%/Toader::Render::Directory.3.gz
+%%PERL5_MAN3%%/Toader::Render::Directory::Cleanup.3.gz
+%%PERL5_MAN3%%/Toader::Render::Directory::backends::html.3.gz
+%%PERL5_MAN3%%/Toader::Render::Directory::backends::pod.3.gz
+%%PERL5_MAN3%%/Toader::Render::Entry.3.gz
+%%PERL5_MAN3%%/Toader::Render::Entry::Cleanup.3.gz
+%%PERL5_MAN3%%/Toader::Render::Entry::backends::html.3.gz
+%%PERL5_MAN3%%/Toader::Render::Entry::backends::pod.3.gz
+%%PERL5_MAN3%%/Toader::Render::Gallery.3.gz
+%%PERL5_MAN3%%/Toader::Render::General.3.gz
+%%PERL5_MAN3%%/Toader::Render::Page.3.gz
+%%PERL5_MAN3%%/Toader::Render::Page::Cleanup.3.gz
+%%PERL5_MAN3%%/Toader::Render::Page::backends::html.3.gz
+%%PERL5_MAN3%%/Toader::Render::Page::backends::pod.3.gz
+%%PERL5_MAN3%%/Toader::Render::supportedBackends.3.gz
+%%PERL5_MAN3%%/Toader::Render::supportedObjects.3.gz
+%%PERL5_MAN3%%/Toader::Templates.3.gz
+%%PERL5_MAN3%%/Toader::Templates::Defaults.3.gz
+%%PERL5_MAN3%%/Toader::VCS.3.gz
+%%PERL5_MAN3%%/Toader::findToaderDirs.3.gz
+%%PERL5_MAN3%%/Toader::findToaderRoot.3.gz
+%%PERL5_MAN3%%/Toader::isaToaderDir.3.gz
+%%PERL5_MAN3%%/Toader::pathHelper.3.gz
+%%SITE_PERL%%/Toader.pm
+%%SITE_PERL%%/Toader/AutoDoc.pm
+%%SITE_PERL%%/Toader/Config.pm
+%%SITE_PERL%%/Toader/Directory.pm
+%%SITE_PERL%%/Toader/Entry.pm
+%%SITE_PERL%%/Toader/Entry/Helper.pm
+%%SITE_PERL%%/Toader/Entry/Manage.pm
+%%SITE_PERL%%/Toader/Gallery.pm
+%%SITE_PERL%%/Toader/Page.pm
+%%SITE_PERL%%/Toader/Page/Helper.pm
+%%SITE_PERL%%/Toader/Page/Manage.pm
+%%SITE_PERL%%/Toader/Render.pm
+%%SITE_PERL%%/Toader/Render/AutoDoc.pm
+%%SITE_PERL%%/Toader/Render/AutoDoc/Cleanup.pm
+%%SITE_PERL%%/Toader/Render/CSS.pm
+%%SITE_PERL%%/Toader/Render/Directory.pm
+%%SITE_PERL%%/Toader/Render/Directory/Cleanup.pm
+%%SITE_PERL%%/Toader/Render/Directory/backends/html.pm
+%%SITE_PERL%%/Toader/Render/Directory/backends/pod.pm
+%%SITE_PERL%%/Toader/Render/Entry.pm
+%%SITE_PERL%%/Toader/Render/Entry/Cleanup.pm
+%%SITE_PERL%%/Toader/Render/Entry/backends/html.pm
+%%SITE_PERL%%/Toader/Render/Entry/backends/pod.pm
+%%SITE_PERL%%/Toader/Render/Gallery.pm
+%%SITE_PERL%%/Toader/Render/General.pm
+%%SITE_PERL%%/Toader/Render/Page.pm
+%%SITE_PERL%%/Toader/Render/Page/Cleanup.pm
+%%SITE_PERL%%/Toader/Render/Page/backends/html.pm
+%%SITE_PERL%%/Toader/Render/Page/backends/pod.pm
+%%SITE_PERL%%/Toader/Render/supportedBackends.pm
+%%SITE_PERL%%/Toader/Render/supportedObjects.pm
+%%SITE_PERL%%/Toader/Templates.pm
+%%SITE_PERL%%/Toader/Templates/Defaults.pm
+%%SITE_PERL%%/Toader/VCS.pm
+%%SITE_PERL%%/Toader/findToaderDirs.pm
+%%SITE_PERL%%/Toader/findToaderRoot.pm
+%%SITE_PERL%%/Toader/isaToaderDir.pm
+%%SITE_PERL%%/Toader/pathHelper.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Toader/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Toader
+@dirrm %%SITE_PERL%%/Toader/Templates
+@dirrm %%SITE_PERL%%/Toader/Render/Page/backends
+@dirrm %%SITE_PERL%%/Toader/Render/Page
+@dirrm %%SITE_PERL%%/Toader/Render/Entry/backends
+@dirrm %%SITE_PERL%%/Toader/Render/Entry
+@dirrm %%SITE_PERL%%/Toader/Render/Directory/backends
+@dirrm %%SITE_PERL%%/Toader/Render/Directory
+@dirrm %%SITE_PERL%%/Toader/Render/AutoDoc
+@dirrm %%SITE_PERL%%/Toader/Render
+@dirrm %%SITE_PERL%%/Toader/Page
+@dirrm %%SITE_PERL%%/Toader/Entry
+@dirrm %%SITE_PERL%%/Toader

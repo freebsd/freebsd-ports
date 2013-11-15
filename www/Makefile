@@ -1209,6 +1209,7 @@
     SUBDIR += p5-TestGen4Web-Runner
     SUBDIR += p5-Text-MultiMarkdown-ApacheHandler
     SUBDIR += p5-Tie-TinyURL
+    SUBDIR += p5-Toader
     SUBDIR += p5-Twiggy
     SUBDIR += p5-Twiggy-TLS
     SUBDIR += p5-URI-Encode
