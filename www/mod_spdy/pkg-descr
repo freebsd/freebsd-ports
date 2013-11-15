@@ -3,4 +3,4 @@ Apache HTTPD web server. Because mod_spdy is an Apache module, it can be
 loaded into currently deployed Apache HTTPD 2.x web servers using mod_so.
 
 
-WWW:	http://code.google.com/p/mod-spdy/
+WWW: http://code.google.com/p/mod-spdy/

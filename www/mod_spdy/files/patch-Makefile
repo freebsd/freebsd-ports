@@ -1,0 +1,33 @@
+--- Makefile.orig	2013-10-29 15:19:19.000000000 +0900
++++ Makefile	2013-10-31 18:45:36.000000000 +0900
+@@ -54,9 +54,9 @@
+ CC.target ?= $(CC)
+ CFLAGS.target ?= $(CFLAGS)
+ CXX.target ?= $(CXX)
+-CXXFLAGS.target ?= $(CXXFLAGS)
++CXXFLAGS.target ?= %%GCCCXXFLAGS%% $(CXXFLAGS)
+ LINK.target ?= $(LINK)
+-LDFLAGS.target ?= $(LDFLAGS)
++LDFLAGS.target ?= %%GCCLDFLAGS%% $(LDFLAGS)
+ AR.target ?= $(AR)
+ ARFLAGS.target ?= crs
+ 
+@@ -64,12 +64,12 @@
+ # in gyp's make.py where ARFLAGS.host etc. is computed.
+ # TODO(evan): move all cross-compilation logic to gyp-time so we don't need
+ # to replicate this environment fallback in make as well.
+-CC.host ?= gcc
+-CFLAGS.host ?=
+-CXX.host ?= g++
+-CXXFLAGS.host ?=
+-LINK.host ?= g++
+-LDFLAGS.host ?=
++CC.host ?= $(CC)
++CFLAGS.host ?= $(CFLAGS)
++CXX.host ?= $(CXX)
++CXXFLAGS.host ?= %%GCCCXXFLAGS%% $(CXXFLAGS)
++LINK.host ?= $(LINK)
++LDFLAGS.host ?= %%GCCLDFLAGS%% $(LDFLAGS)
+ AR.host ?= ar
+ ARFLAGS.host := crs
+ 
