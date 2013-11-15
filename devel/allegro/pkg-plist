@@ -119,9 +119,9 @@ include/loadpng.h
 include/logg.h
 include/xalleg.h
 info/allegro.info
-lib/allegro/%%SHLIB_VER%%/alleg-alsadigi.so
-lib/allegro/%%SHLIB_VER%%/alleg-alsamidi.so
-lib/allegro/%%SHLIB_VER%%/alleg-dga2.so
+%%ALSA%%lib/allegro/%%SHLIB_VER%%/alleg-alsadigi.so
+%%ALSA%%lib/allegro/%%SHLIB_VER%%/alleg-alsamidi.so
+%%ALSA%%lib/allegro/%%SHLIB_VER%%/alleg-dga2.so
 %%JACK%%lib/allegro/%%SHLIB_VER%%/alleg-jack.so
 lib/allegro/%%SHLIB_VER%%/modules.lst
 lib/liballeg.so
