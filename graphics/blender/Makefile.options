@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 OPTIONS_DEFINE=		\
+	AVI		\
 	BULLET 		\
 	CINEON 		\
 	CAMERATRACK 	\
@@ -43,6 +44,7 @@ OPTIONS_DEFINE=		\
 	XF86VMODE
 
 OPTIONS_DEFAULT=	\
+	AVI		\
 	BULLET		\
 	CINEON		\
 	COMPOSITOR	\
@@ -74,6 +76,7 @@ OPTIONS_DEFAULT=	\
 	XINPUT		\
 	XF86VMODE
 
+AVI_DESC=		Enable Blender's own AVI file support
 BULLET_DESC=		Bullet physics engine
 CINEON_DESC=		CINEON and DPX graphics format support
 CAMERATRACK_DESC=	Camera tracking support
