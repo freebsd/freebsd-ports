@@ -11,13 +11,12 @@ MASTER_SITES=	http://cdn.bitbucket.org/libgd/gd-libgd/downloads/
 MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT?=	A graphics library for fast creation of images
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		tiff:${PORTSDIR}/graphics/tiff \
-		png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libfreetype.so:${PORTSDIR}/print/freetype2
 
 CONFLICTS=	bazaar-1.*
-NO_STAGE=	yes
 
 USE_XZ=		yes
 USES=		pkgconfig
@@ -29,32 +28,20 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	FONTCONFIG ICONV VPX XPM
 OPTIONS_DEFAULT=FONTCONFIG
 NO_OPTIONS_SORT=yes
+FONTCONFIG_LIB_DEPENDS+=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+FONTCONFIG_CONFIGURE_OFF=	--with-fontconfig=no
+ICONV_USES=	iconv
+ICONV_CONFIGURE_WITH=	libiconv
+ICONV_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG}
+ICONV_CONFIGURE_OFF=	--with-libiconv-prefix=no
+VPX_LIB_DEPENDS=	libvpx.so:${PORTSDIR}/multimedia/libvpx
+VPX_CONFIGURE_OFF=	--without-vpx
 
 .include <bsd.port.options.mk>
 
 PKGCONFIGDIR?=	${LOCALBASE}/libdata/pkgconfig
 # force gdlib-config --ldflags
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-.if ${PORT_OPTIONS:MFONTCONFIG}
-LIB_DEPENDS+=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig
-.else
-GNU_CONFIGURE_ARGS+=	--with-fontconfig=no
-.endif
-
-.if ${PORT_OPTIONS:MICONV}
-USES+=		iconv
-GNU_CONFIGURE_ARGS+=	${ICONV_CONFIGURE_ARG}
-.else
-GNU_CONFIGURE_ARGS+=	--without-libiconv
-GNU_CONFIGURE_ARGS+=	--with-libiconv-prefix=no
-.endif
-
-.if ${PORT_OPTIONS:MVPX}
-LIB_DEPENDS+=	vpx:${PORTSDIR}/multimedia/libvpx
-.else
-CONFIGURE_ARGS+=	--without-vpx
-.endif
 
 # honor global WITHOUT_X11
 .if !defined(WITHOUT_X11)
@@ -127,6 +114,6 @@ pre-build:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/gdhelpers.h \
-		${PREFIX}/include/
+		${STAGEDIR}${PREFIX}/include/
 
 .include <bsd.port.mk>
