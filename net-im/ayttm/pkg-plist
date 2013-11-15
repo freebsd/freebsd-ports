@@ -112,6 +112,7 @@ share/pixmaps/buddy.png
 share/pixmaps/group-chat.png
 share/pixmaps/group.png
 share/pixmaps/smileys.png
+man/man1/ayttm.1.gz
 @dirrmtry share/applnk/Internet
 @dirrmtry share/applnk
 @dirrm %%DATADIR%%/sounds
