@@ -7,4 +7,4 @@ BigTable. Like Dynamo, Cassandra is eventually consistent. Like
 BigTable, Cassandra provides a ColumnFamily-based data model richer
 than typical key/value systems.
 
-WWW:	http://code.google.com/a/apache-extras.org/p/cassandra-pdo/
+WWW: http://code.google.com/a/apache-extras.org/p/cassandra-pdo/
