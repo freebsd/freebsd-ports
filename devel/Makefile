@@ -2021,6 +2021,7 @@
     SUBDIR += p5-File-ShareDir-PathClass
     SUBDIR += p5-File-ShareDir-ProjectDistDir
     SUBDIR += p5-File-Slurp
+    SUBDIR += p5-File-Slurp-Tiny
     SUBDIR += p5-File-Slurp-Tree
     SUBDIR += p5-File-Spec-Native
     SUBDIR += p5-File-Stream
