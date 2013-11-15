@@ -31,6 +31,17 @@ lib/dbmail/libdbmail.so.0
 %%SQLITE%%lib/dbmail/libsqlite.so
 %%SQLITE%%lib/dbmail/libsqlite.so.0
 @dirrm lib/dbmail
+man/man1/dbmail-smtp.1.gz
+man/man1/dbmail.1.gz
+man/man5/dbmail.conf.5.gz
+man/man8/dbmail-export.8.gz
+man/man8/dbmail-imapd.8.gz
+man/man8/dbmail-lmtpd.8.gz
+man/man8/dbmail-pop3d.8.gz
+man/man8/dbmail-sievecmd.8.gz
+man/man8/dbmail-timsieved.8.gz
+man/man8/dbmail-users.8.gz
+man/man8/dbmail-util.8.gz
 sbin/dbmail-export
 sbin/dbmail-imapd
 sbin/dbmail-lmtpd
@@ -41,7 +52,7 @@ sbin/dbmail-smtp
 sbin/dbmail-users
 sbin/dbmail-util
 @exec mkdir -p %D/share/%%PORTNAME%%
-%%MYSQL%%@exec mkdir -p %D/share/PORTNAME/%%PORTNAME%%/mysql
+%%MYSQL%%@exec mkdir -p %D/share/%%PORTNAME%%/mysql
 %%MYSQL%%share/%%PORTNAME%%/mysql/2_1_7-2_2_0.mysql
 %%MYSQL%%share/%%PORTNAME%%/mysql/create_tables.mysql
 %%MYSQL%%share/%%PORTNAME%%/mysql/migrate_from_1.x_to_2.0_innodb.mysql
