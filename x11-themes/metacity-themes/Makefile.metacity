@@ -9,10 +9,10 @@ REASON=	Themes may contain artwork not done by the author. \
 	Keep FreeBSD safe if the theme author violated copyrights.
 
 do-install:
-	${MKDIR} ${PREFIX}/share/themes/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/themes/${PORTNAME}
 	cd ${WRKSRC} && ${FIND} . -type d ! -empty \
 		-exec ${MKDIR} -m 0755 \
-		${PREFIX}/share/themes/${PORTNAME}/"{}" \;
+		${STAGEDIR}${PREFIX}/share/themes/${PORTNAME}/"{}" \;
 	cd ${WRKSRC} && ${FIND} . -type f \
 		-exec ${INSTALL_DATA} ${WRKSRC}/"{}" \
-		${PREFIX}/share/themes/${PORTNAME}/"{}" \;
+		${STAGEDIR}${PREFIX}/share/themes/${PORTNAME}/"{}" \;
