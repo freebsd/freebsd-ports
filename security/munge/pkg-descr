@@ -7,4 +7,4 @@ cryptographic key. Clients within this security realm can create and validate
 credentials without the use of root privileges, reserved ports, or
 platform-specific methods.
 
-WWW:	http://code.google.com/p/munge/
+WWW: http://code.google.com/p/munge/

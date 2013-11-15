@@ -1,0 +1,10 @@
+--- src/Makefile.in.orig	2013-11-15 02:53:07.000000000 +0600
++++ src/Makefile.in	2013-11-15 02:53:15.000000000 +0600
+@@ -284,7 +284,6 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ SUBDIRS = \
+-	etc \
+ 	libcommon \
+ 	libmissing \
+ 	libmunge \
