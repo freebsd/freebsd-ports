@@ -1489,6 +1489,7 @@
     SUBDIR += p5-CPAN-Reporter
     SUBDIR += p5-CPAN-Reporter-Smoker
     SUBDIR += p5-CPAN-SQLite
+    SUBDIR += p5-CPAN-Site
     SUBDIR += p5-CPAN-Testers-Report
     SUBDIR += p5-CPAN-Uploader
     SUBDIR += p5-CPAN-YACSmoke
