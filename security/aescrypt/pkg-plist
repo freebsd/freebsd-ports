@@ -1,4 +1,6 @@
 bin/aescrypt
 bin/aesget
+man/man1/aescrypt.1.gz
+man/man1/aesget.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
