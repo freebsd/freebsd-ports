@@ -14,6 +14,7 @@ COMMENT=	Spelling checker with better suggestion logic than ispell
 LICENSE=	LGPL21
 
 OPTIONS_DEFINE=	NLS DOCS ISPELL
+OPTIONS_SUB=	yes
 
 ISPELL_DESC=	Install the ispell wrapper
 
@@ -33,22 +34,14 @@ PLIST_SUB=	VER=${VERINST}
 SUB_LIST=	VERINST=${VERINST}
 INFO=	aspell-dev aspell
 
+NLS_USES=		gettext
+NLS_CONFIGURE_ARGS=	--disable-nls
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=		NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		NLS="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MISPELL}
-CONFLICTS+=            ispell* ??-ispell*
-SCRIPTS=               ispell spell
-PLIST_SUB+=            SCRIPTS=""
-.else
-PLIST_SUB+=            SCRIPTS="@comment "
+CONFLICTS+=	ispell* ??-ispell*
+SCRIPTS=	ispell spell
 .endif
 
 # Does not link without at least -O

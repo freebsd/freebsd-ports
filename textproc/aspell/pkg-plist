@@ -1,13 +1,13 @@
 bin/aspell
 bin/aspell-import
-%%SCRIPTS%%bin/ispell
+%%ISPELL%%bin/ispell
 bin/precat
 bin/preunzip
 bin/prezip
 bin/prezip-bin
 bin/pspell-config
 bin/run-with-aspell
-%%SCRIPTS%%bin/spell
+%%ISPELL%%bin/spell
 bin/word-list-compress
 etc/aspell.ver
 include/aspell.h
