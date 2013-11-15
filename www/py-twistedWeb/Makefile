@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twistedWeb
-PORTVERSION=	13.1.0
+PORTVERSION=	13.2.0
 CATEGORIES=	www devel python
 MASTER_SITES=	http://twistedmatrix.com/Releases/Web/${PORTVERSION:R}/ \
 		LOCAL/sunpoet
