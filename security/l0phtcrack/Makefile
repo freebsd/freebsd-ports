@@ -21,7 +21,10 @@ USE_PERL5=	build
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-extract:
 	${RM} ${WRKDIR}/*exe
 	${REINPLACE_CMD} -i '' -e 's|ommited|omitted|' ${WRKDIR}/util.c
@@ -31,7 +34,7 @@ do-build:
 
 pre-install:
 	${ECHO_CMD} bin/lc_CLI > ${PLIST}
-.if !defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	for i in `${FIND} ${WRKDIR} -name '*txt'`; \
 		do ${ECHO_CMD} ${DOCDIR}/`${BASENAME} $${i}` >> ${PLIST}; \
 	done
@@ -39,10 +42,10 @@ pre-install:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/lc_CLI ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/${DOCDIR}
-	cd ${WRKSRC} && ${PAX} -r -w *txt ${PREFIX}/${DOCDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lc_CLI ${STAGEDIR}${PREFIX}/bin
+.if ! ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${DOCDIR}
+	cd ${WRKSRC} && ${PAX} -r -w *txt ${STAGEDIR}${PREFIX}/${DOCDIR}
 .endif
 
 .include <bsd.port.mk>
