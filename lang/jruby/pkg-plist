@@ -1647,8 +1647,8 @@ bin/jruby
 %%JRUBY_HOME%%/lib/ruby/2.0/yaml/dbm.rb
 %%JRUBY_HOME%%/lib/ruby/2.0/yaml/store.rb
 %%JRUBY_HOME%%/lib/ruby/gems/shared/cache/rake-10.1.0.gem
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/CHANGES
 %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/.gemtest
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/CHANGES
 %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/MIT-LICENSE
 %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/README.rdoc
 %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/Rakefile
