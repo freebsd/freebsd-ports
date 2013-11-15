@@ -1,4 +1,5 @@
 bin/pcsxr
+man/man1/pcsxr.1.gz
 %%NLS%%share/locale/fr_FR/LC_MESSAGES/pcsxr.mo
 %%NLS%%share/locale/it/LC_MESSAGES/pcsxr.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/pcsxr.mo

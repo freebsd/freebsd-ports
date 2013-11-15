@@ -3,6 +3,7 @@
 
 PORTNAME=	pcsxr
 PORTVERSION=	1.9.94.r87113
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
@@ -13,8 +14,8 @@ COMMENT=	Playstation (PSX) emulator
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
-LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis \
-		cdio:${PORTSDIR}/sysutils/libcdio
+LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libcdio.so:${PORTSDIR}/sysutils/libcdio
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -25,6 +26,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_CSTD=	gnu89
 CONFIGURE_ARGS=	--enable-opengl --enable-libcdio
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 USE_DOS2UNIX=	yes
@@ -36,27 +38,21 @@ USE_XORG=	x11 xv xext xxf86vm xtst
 USE_SDL=	sdl
 USE_GL=	gl
 
-MAN1=	pcsxr.1
 PORTDOCS=	ChangeLog README
 
 # Default CDROM device to use with dfcdrom,
 # accessed through libcdio (using cam(4) and pass(4))
 DEFAULT_DVD_DEVICE?=	/dev/cd0
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
+
+.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
 CONFIGURE_ARGS+=	--enable-dynarec=x86_64
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=	gettext
-CONFIGURE_ARGS+=	--enable-nls
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
 .endif
 
 # Add ${PREFIX} to plugins' lookup directories and set default CDROM device
@@ -70,11 +66,7 @@ pre-configure:
 	@(cd ${WRKSRC} && ${AUTORECONF} -fi)
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
