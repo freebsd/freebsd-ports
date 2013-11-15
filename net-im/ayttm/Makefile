@@ -8,15 +8,18 @@ CATEGORIES=	net-im
 MASTER_SITES=	SF/ayttm/ayttm/${PORTVERSION:R}-${PORTVERSION:E}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
-MAINTAINER=	unixmania@gmail.com
-COMMENT=	A "chat" program that combines AIM, ICQ, and Yahoo! Chat into one
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Chat program that combines AIM, ICQ, and Yahoo! Chat into one
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile \
-		jasper.4:${PORTSDIR}/graphics/jasper \
+		libjasper.so:${PORTSDIR}/graphics/jasper \
 		libgpgme.so:${PORTSDIR}/security/gpgme \
-		pspell.16:${PORTSDIR}/textproc/aspell
+		libpspell.so:${PORTSDIR}/textproc/aspell
 
 OPTIONS_DEFINE=	ESOUND AIM_TOC ICQ_TOC
+OPTIONS_SUB=	yes
 AIM_TOC_DESC=	Include aim-toc service
 ICQ_TOC_DESC=	Include icq-toc service
 
@@ -29,33 +32,13 @@ USE_AUTOTOOLS=	libltdl libtool
 CONFIGURE_ARGS=	--enable-oscar --disable-workwizu --enable-smtp --enable-lj \
 		--disable-arts
 
-MAN1=		ayttm.1
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MESOUND}
-USE_GNOME+=	esound
-.else
-CONFIGURE_ARGS+=	--disable-esd
-.endif
-
-.if ${PORT_OPTIONS:MAIM_TOC}
-CONFIGURE_ARGS+=	--enable-aim-toc
-PLIST_SUB+=		AIM_TOC=""
-.else
-PLIST_SUB+=		AIM_TOC="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MICQ_TOC}
-CONFIGURE_ARGS+=	--enable-icq-toc
-PLIST_SUB+=		ICQ_TOC=""
-.else
-PLIST_SUB+=		ICQ_TOC="@comment "
-.endif
+AIM_TOC_CONFIGURE_ON=	--enable-aim-toc
+ESOUND_CONFIGURE_OFF=	--disable-esd
+ESOUND_USE=		GNOME=esound
+ICQ_TOC_CONFIGURE_ON=	--enable-icq-toc
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-L/usr/local/lib||g ; \
@@ -69,4 +52,4 @@ post-patch:
 		's|-L/usr/local/lib/pth/||g ; \
 		 s|-lproxy|../libproxy/libproxy.a|g' ${WRKSRC}/src/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
