@@ -483,6 +483,7 @@
     SUBDIR += p5-Crypt-RC6
     SUBDIR += p5-Crypt-RIPEMD160
     SUBDIR += p5-Crypt-RSA
+    SUBDIR += p5-Crypt-RSA-Yandex
     SUBDIR += p5-Crypt-Rabbit
     SUBDIR += p5-Crypt-RandPasswd
     SUBDIR += p5-Crypt-Random
