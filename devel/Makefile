@@ -2541,6 +2541,7 @@
     SUBDIR += p5-Perl-Metrics-Simple
     SUBDIR += p5-Perl-OSType
     SUBDIR += p5-Perl-PrereqScanner
+    SUBDIR += p5-Perl-Tidy
     SUBDIR += p5-Perl-Unsafe-Signals
     SUBDIR += p5-Perl-Version
     SUBDIR += p5-Perl6-Builtins
@@ -3300,7 +3301,6 @@
     SUBDIR += pep8
     SUBDIR += performance
     SUBDIR += perlconsole
-    SUBDIR += perltidy
     SUBDIR += php-java-bridge
     SUBDIR += php-libawl
     SUBDIR += php-memoize
