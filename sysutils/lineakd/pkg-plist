@@ -1,36 +1,40 @@
 bin/lineakd
 etc/lineakkb.def
+include/lineak/cdromctrl.h
+include/lineak/commandexec.h
 include/lineak/configdirectives.h
 include/lineak/configloader.h
 include/lineak/definitions.h
 include/lineak/defloader.h
+include/lineak/displayctrl.h
+include/lineak/lbutton.h
+include/lineak/lcommand.h
 include/lineak/lconfig.h
 include/lineak/lconfigdata.h
 include/lineak/ldef.h
-include/lineak/lobject.h
+include/lineak/lineak_core_functions.h
+include/lineak/lineak_util_functions.h
 include/lineak/lkbd.h
 include/lineak/lkey.h
-include/lineak/lbutton.h
 include/lineak/loader.h
-include/lineak/msgpasser.h
-include/lineak/saver.h
-include/lineak/lcommand.h
+include/lineak/lobject.h
 include/lineak/lockctrl.h
-include/lineak/lineak_util_functions.h
-include/lineak/lineak_core_functions.h
-include/lineak/cdromctrl.h
-include/lineak/xmgr.h
-include/lineak/displayctrl.h
+include/lineak/msgpasser.h
 include/lineak/plugin_definitions.h
-include/lineak/commandexec.h
 include/lineak/pluginmanager.h
-lib/liblineak.so.8
-lib/liblineak.so
+include/lineak/saver.h
+include/lineak/xmgr.h
 lib/liblineak.a
 lib/liblineak.la
-@exec mkdir -p %D/lib/lineakd/plugins
-%%EXAMPLESDIR%%/lineakd.conf.example
-@dirrm %%EXAMPLESDIR%%
-@dirrm include/lineak
-@dirrm lib/lineakd/plugins
-@dirrm lib/lineakd
+lib/liblineak.so
+lib/liblineak.so.8
+man/man1/lineakd.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lineakd.conf.example
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry lib/lineakd/plugins
+@dirrmtry lib/lineakd
+@dirrmtry include/lineak

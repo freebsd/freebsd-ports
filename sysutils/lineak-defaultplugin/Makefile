@@ -23,17 +23,15 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--program-prefix=''
 
-MAN1=		lineak_defaultplugin.1
-MAN_COMPRESSED=	yes
 PLIST_FILES=	lib/lineakd/plugins/defaultplugin.a \
 		lib/lineakd/plugins/defaultplugin.la \
 		lib/lineakd/plugins/defaultplugin.so \
 		lib/lineakd/plugins/mediadetectplugin.a \
 		lib/lineakd/plugins/mediadetectplugin.la \
 		lib/lineakd/plugins/mediadetectplugin.so \
+		man/man1/lineak_defaultplugin.1.gz \
 		etc/media-detect.conf
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure

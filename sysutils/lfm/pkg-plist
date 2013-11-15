@@ -1,5 +1,7 @@
 bin/lfm
 bin/pyview
+man/man1/lfm.1.gz
+man/man1/pyview.1.gz
 %%PYTHON_SITELIBDIR%%/lfm/__init__.py
 %%PYTHON_SITELIBDIR%%/lfm/__init__.pyc
 %%PYTHON_SITELIBDIR%%/lfm/__init__.pyo
@@ -30,4 +32,10 @@ bin/pyview
 %%PYTHON_SITELIBDIR%%/lfm/vfs.py
 %%PYTHON_SITELIBDIR%%/lfm/vfs.pyc
 %%PYTHON_SITELIBDIR%%/lfm/vfs.pyo
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.pyview
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/lfm
