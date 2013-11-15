@@ -1,3 +1,4 @@
 %%SITE_PERL%%/Tk/Role/Dialog.pm
+%%PERL5_MAN3%%/Tk::Role::Dialog.3.gz
 @dirrmtry %%SITE_PERL%%/Tk/Role
 @dirrmtry %%SITE_PERL%%/Tk
