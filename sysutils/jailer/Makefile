@@ -11,13 +11,12 @@ COMMENT=	Manage FreeBSD jail startup, shutdown and console
 
 GNU_CONFIGURE=	YES
 
-MAN8=		injail.8 jailer.8
-
 PLIST_FILES=	bin/injail \
+		man/man8/injail.8.gz \
+		man/man8/jailer.8.gz \
 		sbin/dmesg \
 		sbin/halt \
 		sbin/jailer \
 		sbin/reboot
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
