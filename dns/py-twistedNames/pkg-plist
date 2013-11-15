@@ -67,6 +67,9 @@
 %%PYTHON_SITELIBDIR%%/twisted/names/test/test_names.py
 %%PYTHON_SITELIBDIR%%/twisted/names/test/test_names.pyc
 %%PYTHON_SITELIBDIR%%/twisted/names/test/test_names.pyo
+%%PYTHON_SITELIBDIR%%/twisted/names/test/test_resolve.py
+%%PYTHON_SITELIBDIR%%/twisted/names/test/test_resolve.pyc
+%%PYTHON_SITELIBDIR%%/twisted/names/test/test_resolve.pyo
 %%PYTHON_SITELIBDIR%%/twisted/names/test/test_rootresolve.py
 %%PYTHON_SITELIBDIR%%/twisted/names/test/test_rootresolve.pyc
 %%PYTHON_SITELIBDIR%%/twisted/names/test/test_rootresolve.pyo
