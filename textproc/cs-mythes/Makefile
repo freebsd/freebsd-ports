@@ -8,6 +8,7 @@ MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 PKGNAMEPREFIX=	cs-
 DISTNAME=	thes_cs_CZ_v2-${PORTVERSION:C/\.//g}
 DIST_SUBDIR=	${PORTNAME}
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Czech thesaurus
