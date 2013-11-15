@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	acpica
-PORTVERSION=	20130927
+PORTVERSION=	20131115
 CATEGORIES=	sysutils devel
 MASTER_SITES=	https://acpica.org/sites/acpica/files/ \
 		LOCAL
@@ -15,6 +15,8 @@ COMMENT=	Tools from the ACPI Component Architecture (ACPICA) project
 LICENSE=	BSD
 
 MAKE_ARGS=	HOST=_FreeBSD INSTALLFLAGS="${INSTALL_PROGRAM:S/^${INSTALL}//}"
+MAKE_ARGS+=	NOOPT=TRUE
+
 USES=		gmake
 WRKSRC_SUBDIR=	generate/unix
 LFLAGS=		-i -s
@@ -23,10 +25,6 @@ LFLAGS=		-i -s
 USES+=		bison
 YACC=		bison
 YFLAGS=		-y
-
-# XXX 20130927 did not include Makefile.config.
-post-extract:
-	@${CP} -f ${FILESDIR}/Makefile.config ${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CC[[:blank:]]*=.*|CC = ${CC}|' \
