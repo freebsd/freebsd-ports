@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jruby
-PORTVERSION=	1.7.6
+PORTVERSION=	1.7.8
 CATEGORIES=	lang ruby java
 MASTER_SITES=	http://jruby.org.s3.amazonaws.com/downloads/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
