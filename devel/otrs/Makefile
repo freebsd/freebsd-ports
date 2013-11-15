@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	otrs
-PORTVERSION=	3.2.10
+PORTVERSION=	3.2.11
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
