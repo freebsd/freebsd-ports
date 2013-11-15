@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/String::RewritePrefix.3.gz
+%%SITE_PERL%%/String/RewritePrefix.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/RewritePrefix/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/RewritePrefix
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
+@dirrmtry %%SITE_PERL%%/String
