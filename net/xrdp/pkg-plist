@@ -50,8 +50,8 @@ etc/xrdp/km-0410.ini
 etc/xrdp/km-0419.ini
 etc/xrdp/km-041d.ini
 %%JP106%%etc/xrdp/km-0411.ini
-%%JP106%%etc/xrdp/km-e0200411.ini
 %%JP106%%etc/xrdp/km-e0010411.ini
+%%JP106%%etc/xrdp/km-e0200411.ini
 %%JP106%%etc/xrdp/km-e0210411.ini
 @unexec if cmp -s %D/etc/xrdp/rsakeys.ini.sample %D/etc/xrdp/rsakeys.ini; then rm -f %D/etc/xrdp/rsakeys.ini; fi
 @unexec if cmp -s %D/etc/xrdp/sesman.ini.sample %D/etc/xrdp/sesman.ini; then rm -f %D/etc/xrdp/sesman.ini; fi
@@ -64,7 +64,6 @@ etc/xrdp/xrdp.ini.sample
 @exec [ -f %D/etc/xrdp/sesman.ini ] || cp -p %D/etc/xrdp/sesman.ini.sample %D/etc/xrdp/sesman.ini
 @exec [ -f %D/etc/xrdp/startwm.sh ] || cp -p %D/etc/xrdp/startwm.sh.sample %D/etc/xrdp/startwm.sh
 @exec [ -f %D/etc/xrdp/xrdp.ini ] || cp -p %D/etc/xrdp/xrdp.ini.sample %D/etc/xrdp/xrdp.ini
-etc/xrdp/xrdp.sh
 sbin/xrdp
 sbin/xrdp-chansrv
 sbin/xrdp-sesman

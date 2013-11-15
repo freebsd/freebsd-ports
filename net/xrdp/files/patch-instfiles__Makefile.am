@@ -1,0 +1,23 @@
+--- instfiles/Makefile.am.orig	2013-10-22 20:09:12.432299450 +0000
++++ instfiles/Makefile.am	2013-10-22 20:09:54.714401214 +0000
+@@ -1,4 +1,4 @@
+-EXTRA_DIST = xrdp.sh km-0407.ini  km-0409.ini km-040c.ini km-0410.ini km-0419.ini km-041d.ini
++EXTRA_DIST = km-0407.ini km-0409.ini km-040c.ini km-0410.ini km-0419.ini km-041d.ini
+ 
+ SUBDIRS = \
+   pam.d
+@@ -6,14 +6,9 @@
+ startscriptdir=$(sysconfdir)/xrdp
+ 
+ startscript_DATA = \
+-  xrdp.sh \
+   km-0407.ini \
+   km-0409.ini \
+   km-040c.ini \
+   km-0410.ini \
+   km-0419.ini \
+   km-041d.ini
+-
+-# must be tab below
+-install-data-hook:
+-	chmod 755 $(DESTDIR)$(sysconfdir)/xrdp/xrdp.sh
