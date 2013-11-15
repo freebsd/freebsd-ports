@@ -10,12 +10,10 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SNMP based command line network printer management tool
 
-MAN1=		npadmin.1
-PLIST_FILES=	bin/npadmin
-
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/npadmin man/man1/${PORTNAME}.1.gz
+
 pre-configure:
 	${RM} ${WRKSRC}/getopt.h ${WRKSRC}/getopt1.c
 

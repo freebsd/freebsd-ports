@@ -1,0 +1,12 @@
+--- Makefile.orig	2013-11-15 23:27:54.000000000 +0800
++++ Makefile	2013-11-15 23:28:07.000000000 +0800
+@@ -30,7 +30,7 @@ all:		nologin
+ nologin:	nologin.c
+ 
+ install:
+-		install -c -o root -g bin -m 755 nologin $(PREFIX)/bin
+-		install -c -o root -g wheel -m 444 nologin.8 $(PREFIX)/man/man8
++		install -c -o root -g bin -m 755 nologin $(DESTDIR)$(PREFIX)/bin
++		install -c -o root -g wheel -m 444 nologin.8 $(DESTDIR)$(PREFIX)/man/man8
+ clean:
+ 		-rm -f *.o *~ nologin
