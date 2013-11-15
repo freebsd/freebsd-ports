@@ -109,7 +109,7 @@ lib/activemq/lib/optional/org.linkedin.zookeeper-impl-1.4.0.jar
 lib/activemq/lib/optional/proton-api-0.5.jar
 lib/activemq/lib/optional/proton-j-impl-0.5.jar
 lib/activemq/lib/optional/proton-jms-0.5.jar
-lib/activemq/lib/optional/scala-library-2.9.2.jar
+lib/activemq/lib/optional/scala-library-2.9.1.jar
 lib/activemq/lib/optional/slf4j-log4j12-1.7.5.jar
 lib/activemq/lib/optional/snappy-0.2.jar
 lib/activemq/lib/optional/snappy-java-1.1.0-M4.jar
