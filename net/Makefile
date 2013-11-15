@@ -549,6 +549,7 @@
     SUBDIR += p5-Net-Blogger
     SUBDIR += p5-Net-CIDR-Lite
     SUBDIR += p5-Net-CIDR-MobileJP
+    SUBDIR += p5-Net-CIDR-Set
     SUBDIR += p5-Net-CLI-Interact
     SUBDIR += p5-Net-CSTA
     SUBDIR += p5-Net-CascadeCopy
