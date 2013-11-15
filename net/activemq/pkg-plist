@@ -92,8 +92,8 @@ lib/activemq/lib/optional/hawtdispatch-transport-1.18.jar
 lib/activemq/lib/optional/hawtjni-runtime-1.8.jar
 lib/activemq/lib/optional/httpclient-4.2.5.jar
 lib/activemq/lib/optional/httpcore-4.2.4.jar
-lib/activemq/lib/optional/jackson-core-asl-1.%%OSREL%%2.jar
-lib/activemq/lib/optional/jackson-mapper-asl-1.%%OSREL%%2.jar
+lib/activemq/lib/optional/jackson-core-asl-1.9.12.jar
+lib/activemq/lib/optional/jackson-mapper-asl-1.9.12.jar
 lib/activemq/lib/optional/jasypt-1.9.1.jar
 lib/activemq/lib/optional/jasypt-spring3-1.9.1.jar
 lib/activemq/lib/optional/jaxb2-basics-runtime-%%LVDBVERSION%%.4.jar
@@ -109,7 +109,7 @@ lib/activemq/lib/optional/org.linkedin.zookeeper-impl-1.4.0.jar
 lib/activemq/lib/optional/proton-api-0.5.jar
 lib/activemq/lib/optional/proton-j-impl-0.5.jar
 lib/activemq/lib/optional/proton-jms-0.5.jar
-lib/activemq/lib/optional/scala-library-2.%%OSREL%%.jar
+lib/activemq/lib/optional/scala-library-2.9.2.jar
 lib/activemq/lib/optional/slf4j-log4j12-1.7.5.jar
 lib/activemq/lib/optional/snappy-0.2.jar
 lib/activemq/lib/optional/snappy-java-1.1.0-M4.jar
