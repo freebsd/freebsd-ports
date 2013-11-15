@@ -255,6 +255,7 @@ bin/twistd
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/connectionmixins.py
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/connectionmixins.pyc
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/connectionmixins.pyo
+%%PYTHON_SITELIBDIR%%/twisted/internet/test/fake_CAs/chain.pem
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/fake_CAs/not-a-certificate
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/fake_CAs/thing1.pem
 %%PYTHON_SITELIBDIR%%/twisted/internet/test/fake_CAs/thing2-duplicate.pem
@@ -871,6 +872,9 @@ bin/twistd
 %%PYTHON_SITELIBDIR%%/twisted/scripts/test/test_scripts.py
 %%PYTHON_SITELIBDIR%%/twisted/scripts/test/test_scripts.pyc
 %%PYTHON_SITELIBDIR%%/twisted/scripts/test/test_scripts.pyo
+%%PYTHON_SITELIBDIR%%/twisted/scripts/test/test_tap2deb.py
+%%PYTHON_SITELIBDIR%%/twisted/scripts/test/test_tap2deb.pyc
+%%PYTHON_SITELIBDIR%%/twisted/scripts/test/test_tap2deb.pyo
 %%PYTHON_SITELIBDIR%%/twisted/scripts/test/test_tap2rpm.py
 %%PYTHON_SITELIBDIR%%/twisted/scripts/test/test_tap2rpm.pyc
 %%PYTHON_SITELIBDIR%%/twisted/scripts/test/test_tap2rpm.pyo
@@ -1383,6 +1387,9 @@ bin/twistd
 %%PYTHON_SITELIBDIR%%/twisted/trial/test/novars.py
 %%PYTHON_SITELIBDIR%%/twisted/trial/test/novars.pyc
 %%PYTHON_SITELIBDIR%%/twisted/trial/test/novars.pyo
+%%PYTHON_SITELIBDIR%%/twisted/trial/test/ordertests.py
+%%PYTHON_SITELIBDIR%%/twisted/trial/test/ordertests.pyc
+%%PYTHON_SITELIBDIR%%/twisted/trial/test/ordertests.pyo
 %%PYTHON_SITELIBDIR%%/twisted/trial/test/packages.py
 %%PYTHON_SITELIBDIR%%/twisted/trial/test/packages.pyc
 %%PYTHON_SITELIBDIR%%/twisted/trial/test/packages.pyo
