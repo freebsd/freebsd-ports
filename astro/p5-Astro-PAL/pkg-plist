@@ -2,6 +2,8 @@ bin/stime
 %%SITE_PERL%%/%%PERL_ARCH%%/Astro/PAL.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/PAL/PAL.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/PAL/PAL.so
+%%PERL5_MAN3%%/Astro::PAL.3.gz
+man/man1/stime.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/PAL
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Astro
