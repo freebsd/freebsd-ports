@@ -4,7 +4,7 @@
 PORTNAME=	l0pht-watch
 PORTVERSION=	1.1
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	LOCAL
 MASTER_SITE_SUBDIR=	vs
 DISTNAME=	${PORTNAME}
 
@@ -16,8 +16,7 @@ WRKSRC=		${WRKDIR}/temp-watch
 
 ALL_TARGET=	OpenBSD
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/temp-watch ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/temp-watch ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
