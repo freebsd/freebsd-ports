@@ -4,15 +4,16 @@
 PORTNAME=	rzip
 PORTVERSION=	2.1
 CATEGORIES=	archivers
-MASTER_SITES=	http://rzip.samba.org/ftp/rzip/
+MASTER_SITES=	SAMBA
+MASTER_SITE_SUBDIR=	rzip
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Compression program similar to gzip or bzip2
+
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
-MAN1=		rzip.1
-PLIST_FILES=	bin/rzip
+PLIST_FILES=	bin/rzip man/man1/rzip.1.gz
 
 .include <bsd.port.mk>
