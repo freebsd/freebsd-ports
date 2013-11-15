@@ -1,5 +1,5 @@
-DateTime::Format::Flexible attempts to take any string you give it
-and parse it into a DateTime object. The test file tests 2500+
-variations of date/time strings.
+DateTime::Format::Flexible attempts to take any string you give it and parse it
+into a DateTime object. The test file tests 2500+ variations of date/time
+strings.
 
 WWW: http://search.cpan.org/dist/DateTime-Format-Flexible/
