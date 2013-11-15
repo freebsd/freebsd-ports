@@ -11,6 +11,9 @@ lib/liblftp-tasks.a
 %%DATADIR%%/verify-file
 %%DATADIR%%/xdg-move
 @dirrm %%DATADIR%%
+man/man1/lftp.1.gz
+man/man1/lftpget.1.gz
+man/man5/lftp.conf.5.gz
 %%NLS%%share/locale/cs/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/de/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/es/LC_MESSAGES/lftp.mo
