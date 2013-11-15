@@ -1,8 +1,0 @@
-bin/acpibin
-bin/acpidump
-bin/acpiexec
-bin/acpihelp
-bin/acpinames
-bin/acpisrc
-bin/acpixtract
-bin/iasl
