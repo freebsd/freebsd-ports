@@ -16,5 +16,5 @@ SHA256 (opencl/cl_gl.h) = aa49d380177ac538b8ab00196381301fac6178e5b931398e3da430
 SIZE (opencl/cl_gl.h) = 7343
 SHA256 (opencl/cl_gl_ext.h) = 4d663bbfc932ab405623e5f5d1bba3f438351d0ead65e1ccdd9bb769caf7a7d0
 SIZE (opencl/cl_gl_ext.h) = 2630
-SHA256 (opencl/cl.hpp) = d7c8f5c17f88e098dc9f71d80e4b7408fab353e2828b0ba4d4bb55adaa427e83
-SIZE (opencl/cl.hpp) = 277155
+SHA256 (opencl/cl.hpp) = a726d674bfa4ee7f71d1287d86afa15db2e360518fd58594257a80f25642d6b4
+SIZE (opencl/cl.hpp) = 281446
