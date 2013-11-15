@@ -2641,6 +2641,7 @@
     SUBDIR += p5-Scalar-String
     SUBDIR += p5-Scope-Guard
     SUBDIR += p5-Scope-Upper
+    SUBDIR += p5-Script-isAperlScript
     SUBDIR += p5-Search-Binary
     SUBDIR += p5-Sentinel
     SUBDIR += p5-Sepia

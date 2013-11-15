@@ -1,0 +1,6 @@
+%%PERL5_MAN3%%/Script::isAperlScript.3.gz
+%%SITE_PERL%%/Script/isAperlScript.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Script/isAperlScript/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Script/isAperlScript
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Script
+@dirrmtry %%SITE_PERL%%/Script
