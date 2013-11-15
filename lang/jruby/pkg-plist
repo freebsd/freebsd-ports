@@ -10,6 +10,7 @@ bin/jruby
 %%JRUBY_HOME%%/bin/jruby.bash
 %%JRUBY_HOME%%/bin/jruby.dll
 %%JRUBY_HOME%%/bin/jruby.sh
+%%JRUBY_HOME%%/bin/jruby_visualizer
 %%JRUBY_HOME%%/bin/jrubyc
 %%JRUBY_HOME%%/bin/jrubyfx-compile
 %%JRUBY_HOME%%/bin/jrubyfx-generator
@@ -1647,6 +1648,7 @@ bin/jruby
 %%JRUBY_HOME%%/lib/ruby/2.0/yaml/store.rb
 %%JRUBY_HOME%%/lib/ruby/gems/shared/cache/rake-10.1.0.gem
 %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/CHANGES
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/.gemtest
 %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/MIT-LICENSE
 %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/README.rdoc
 %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/Rakefile
@@ -1991,6 +1993,7 @@ bin/jruby
 %%JRUBY_HOME%%/lib/ruby/shared/gauntlet_rubygems.rb
 %%JRUBY_HOME%%/lib/ruby/shared/java/inspect.rb
 %%JRUBY_HOME%%/lib/ruby/shared/jopenssl.jar
+%%JRUBY_HOME%%/lib/ruby/shared/jopenssl/load.rb
 %%JRUBY_HOME%%/lib/ruby/shared/jopenssl/version.rb
 %%JRUBY_HOME%%/lib/ruby/shared/jopenssl18/openssl.rb
 %%JRUBY_HOME%%/lib/ruby/shared/jopenssl18/openssl/bn.rb
@@ -2013,6 +2016,14 @@ bin/jruby
 %%JRUBY_HOME%%/lib/ruby/shared/jopenssl19/openssl/ssl.rb
 %%JRUBY_HOME%%/lib/ruby/shared/jopenssl19/openssl/x509-internal.rb
 %%JRUBY_HOME%%/lib/ruby/shared/jopenssl19/openssl/x509.rb
+%%JRUBY_HOME%%/lib/ruby/shared/jopenssl21/openssl.rb
+%%JRUBY_HOME%%/lib/ruby/shared/jopenssl21/openssl/bn.rb
+%%JRUBY_HOME%%/lib/ruby/shared/jopenssl21/openssl/buffering.rb
+%%JRUBY_HOME%%/lib/ruby/shared/jopenssl21/openssl/cipher.rb
+%%JRUBY_HOME%%/lib/ruby/shared/jopenssl21/openssl/config.rb
+%%JRUBY_HOME%%/lib/ruby/shared/jopenssl21/openssl/digest.rb
+%%JRUBY_HOME%%/lib/ruby/shared/jopenssl21/openssl/ssl.rb
+%%JRUBY_HOME%%/lib/ruby/shared/jopenssl21/openssl/x509.rb
 %%JRUBY_HOME%%/lib/ruby/shared/jruby/compiler.rb
 %%JRUBY_HOME%%/lib/ruby/shared/jruby/compiler/extending.rb
 %%JRUBY_HOME%%/lib/ruby/shared/jruby/compiler/java_class.rb
@@ -2338,6 +2349,8 @@ bin/jruby
 @dirrm %%JRUBY_HOME%%/lib/ruby/shared/jruby/core_ext
 @dirrm %%JRUBY_HOME%%/lib/ruby/shared/jruby/compiler
 @dirrm %%JRUBY_HOME%%/lib/ruby/shared/jruby
+@dirrm %%JRUBY_HOME%%/lib/ruby/shared/jopenssl21/openssl
+@dirrm %%JRUBY_HOME%%/lib/ruby/shared/jopenssl21
 @dirrm %%JRUBY_HOME%%/lib/ruby/shared/jopenssl19/openssl
 @dirrm %%JRUBY_HOME%%/lib/ruby/shared/jopenssl19
 @dirrm %%JRUBY_HOME%%/lib/ruby/shared/jopenssl18/openssl
@@ -2624,7 +2637,6 @@ bin/jruby
 %%PORTDOCS%%%%DOCSDIR%%/man/src/docbkx/jruby.xml
 %%PORTDOCS%%%%DOCSDIR%%/pom.xml
 %%PORTDOCS%%%%DOCSDIR%%/pom.xml.versionsBackup
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/man/target
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/man/src/docbkx
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/man/src
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/man
