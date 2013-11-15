@@ -9,13 +9,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}r${PORTVERSION:E}X
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A nifty editor based on Tcl
+COMMENT=	Nifty editor based on Tcl
 
 LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES+=		gmake tcl
+USES=		gmake tcl
 USE_XORG=	x11 xinerama
 MAKE_ARGS=	PREFIX="${PREFIX}" \
 		TCL_INCLUDE="-I${TCL_INCLUDEDIR}" \
