@@ -19,20 +19,13 @@ USE_PERL5=	run
 
 NO_BUILD=	yes
 
-PORTDOCS=	COPYING README
-PLIST_FILES=	bin/mtail
+DOCS=		COPYING README
 
-MAN1=		mtail.1
-MAN5=		mtailrc.5
-
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/mtail ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/mtail.1 ${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/mtailrc.5 ${MAN5PREFIX}/man/man5
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/mtail ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/mtail.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/mtailrc.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

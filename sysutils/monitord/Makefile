@@ -11,16 +11,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Service that restarts other standalone services
 
 USE_RC_SUBR=	monitord
-MAN8=		monitord.8
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e 's|syslodg|syslogd|' ${WRKSRC}/${MAN8}
+	@${REINPLACE_CMD} -e 's|syslodg|syslogd|' ${WRKSRC}/${PORTNAME}.8
 	@${REINPLACE_CMD} -e 's|-pipe||' ${WRKSRC}/Makefile
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/monitord.conf.sample \
-		${PREFIX}/etc/monitord.conf.sample
-	@${CAT} ${PKGMESSAGE}
+		${STAGEDIR}${PREFIX}/etc/monitord.conf.sample
 
 .include <bsd.port.mk>

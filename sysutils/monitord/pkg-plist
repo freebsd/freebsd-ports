@@ -1,3 +1,4 @@
 @unexec if cmp -s %D/etc/monitord.conf %D/etc/monitord.conf.sample; then rm -f %D/etc/monitord.conf; fi
 etc/monitord.conf.sample
+man/man8/monitord.8.gz
 sbin/monitord
