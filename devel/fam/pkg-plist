@@ -5,5 +5,7 @@ lib/libfam.a
 lib/libfam.la
 lib/libfam.so
 lib/libfam.so.0
+man/man1/fam.1m.gz
+man/man3/fam.3x.gz
 @comment For non-standard prefixes
 @rmtry libdata/ldconfig/fam
