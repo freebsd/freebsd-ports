@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twistedRunner
-PORTVERSION=	13.1.0
+PORTVERSION=	13.2.0
 CATEGORIES=	devel net python
 MASTER_SITES=	http://twistedmatrix.com/Releases/Runner/${PORTVERSION:R}/ \
 		LOCAL/sunpoet
