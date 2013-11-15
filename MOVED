@@ -5182,3 +5182,5 @@ games/windstille||2013-11-12|Has expired: Unplayable, development ceased
 games/intensityengine||2013-11-12|Has expired: Unplayable, main server down, development ceased
 games/tmw|games/manaplus|2013-11-12|Replaced with games/manaplus
 graphics/mesagl||2013-11-14|Old unmaintained version. Use graphics/libosmesa instead
+editors/xxe||2013-11-15|Has expired: XXE becomes unfetchable every 3-4 months as distfile is replaced with new version.  This high-maintenance port requires a maintainer to avoid removal.
+editors/xml2rfc-xxe||2013-11-15|Has expired: Depends on editors/xxe, which is due to be removed due to lack of maintainer
