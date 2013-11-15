@@ -109,7 +109,7 @@ LIB_DEPENDS+=		json-glib-1.0.0:${PORTSDIR}/devel/json-glib
 CONFIGURE_ARGS+=	--enable-json --with-json=json-glib
 PLIST_FILES+=		lib/syslog-ng/libtfjson.la lib/syslog-ng/libtfjson.so
 .elif ${PORT_OPTIONS:MJSON_C}
-LIB_DEPENDS+=		json.0:${PORTSDIR}/devel/json-c
+LIB_DEPENDS+=		json:${PORTSDIR}/devel/json-c
 CONFIGURE_ARGS+=	--enable-json --with-json=json-c
 PLIST_FILES+=		lib/syslog-ng/libtfjson.la lib/syslog-ng/libtfjson.so
 .else
