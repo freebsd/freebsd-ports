@@ -18,8 +18,5 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	modbuild
 USES=		perl5
-NO_STAGE=	yes
-
-MAN3=		Astro::Telescope.3
 
 .include <bsd.port.mk>

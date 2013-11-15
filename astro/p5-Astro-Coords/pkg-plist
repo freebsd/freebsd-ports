@@ -8,6 +8,16 @@
 %%SITE_PERL%%/Astro/Coords/Interpolated.pm
 %%SITE_PERL%%/Astro/Coords/Offset.pm
 %%SITE_PERL%%/Astro/Coords/Planet.pm
+%%PERL5_MAN3%%/Astro::Coords.3.gz
+%%PERL5_MAN3%%/Astro::Coords::Angle.3.gz
+%%PERL5_MAN3%%/Astro::Coords::Angle::Hour.3.gz
+%%PERL5_MAN3%%/Astro::Coords::Calibration.3.gz
+%%PERL5_MAN3%%/Astro::Coords::Elements.3.gz
+%%PERL5_MAN3%%/Astro::Coords::Equatorial.3.gz
+%%PERL5_MAN3%%/Astro::Coords::Fixed.3.gz
+%%PERL5_MAN3%%/Astro::Coords::Interpolated.3.gz
+%%PERL5_MAN3%%/Astro::Coords::Offset.3.gz
+%%PERL5_MAN3%%/Astro::Coords::Planet.3.gz
 @dirrmtry %%SITE_PERL%%/Astro/Coords/Angle
 @dirrmtry %%SITE_PERL%%/Astro/Coords
 @dirrmtry %%SITE_PERL%%/Astro
