@@ -10,10 +10,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bufferpool - the memory management library Feng and Felix depend upon
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USES=	pathfix pkgconfig
+USES=	gmake pathfix pkgconfig
 
-NO_STAGE=	yes
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libbufferpool.so.4
+
 .include <bsd.port.mk>
