@@ -1,0 +1,22 @@
+--- xrdp/xrdp_wm.c.orig	2013-11-13 10:47:47.291991020 +0000
++++ xrdp/xrdp_wm.c	2013-11-13 10:53:12.461993834 +0000
+@@ -509,12 +509,17 @@
+         {
+           /* if no doamin is passed, and no autorun in xrdp.ini,
+              use the first item in the xrdp.ini
+-             file thats not named 'globals' */
++             file thats not named 
++             'globals' or 'Logging' or channels */
++          /* TODO: change this and have a 'autologin'
++             line in globals section */
+           file_read_sections(fd, names);
+           for (index = 0; index < names->count; index++)
+           {
+             q = (char*)list_get_item(names, index);
+-            if (g_strncasecmp("globals", q, 8) != 0)
++            if ((g_strncasecmp("globals", q, 8) != 0) &&
++                (g_strncasecmp("Logging", q, 8) != 0) &&
++                (g_strncasecmp("channels", q, 9) != 0))
+             {
+               g_strncpy(section_name, q, 255);
+               break;
