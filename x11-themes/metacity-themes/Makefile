@@ -18,8 +18,8 @@ COMMENT=	Meta-port for Gnome Metacity themes
 RUN_DEPENDS=	${LOCALBASE}/share/themes/microgui/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/metacity-theme-microgui
 
 NO_BUILD=	yes
+NO_MTREE=	yes
 
 do-install:    # Empty
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
