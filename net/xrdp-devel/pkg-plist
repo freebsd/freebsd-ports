@@ -1,11 +1,11 @@
 @stopdaemon xrdp
+bin/xrdp-xcon
 bin/xrdp-dis
 bin/xrdp-genkeymap
 bin/xrdp-keygen
 bin/xrdp-sesadmin
 bin/xrdp-sesrun
 bin/xrdp-sestest
-bin/xrdp-xcon
 lib/xrdp/libcommon.a
 lib/xrdp/libcommon.la
 lib/xrdp/libcommon.so
@@ -30,14 +30,14 @@ lib/xrdp/libxrdp.a
 lib/xrdp/libxrdp.la
 lib/xrdp/libxrdp.so
 lib/xrdp/libxrdp.so.0
-lib/xrdp/libxrdpapi.la
-lib/xrdp/libxrdpapi.so
-lib/xrdp/libxrdpapi.so.0
-lib/xrdp/libxrdpapi.a
 lib/xrdp/libxup.a
 lib/xrdp/libxup.la
 lib/xrdp/libxup.so
 lib/xrdp/libxup.so.0
+lib/xrdp/libxrdpapi.so
+lib/xrdp/libxrdpapi.a
+lib/xrdp/libxrdpapi.so.0
+lib/xrdp/libxrdpapi.la
 etc/pam.d/xrdp-sesman
 etc/xrdp/km-0407.ini
 etc/xrdp/km-0409.ini
@@ -46,8 +46,8 @@ etc/xrdp/km-0410.ini
 etc/xrdp/km-0419.ini
 etc/xrdp/km-041d.ini
 %%JP106%%etc/xrdp/km-0411.ini
-%%JP106%%etc/xrdp/km-e0200411.ini
 %%JP106%%etc/xrdp/km-e0010411.ini
+%%JP106%%etc/xrdp/km-e0200411.ini
 %%JP106%%etc/xrdp/km-e0210411.ini
 @unexec if cmp -s %D/etc/xrdp/rsakeys.ini.sample %D/etc/xrdp/rsakeys.ini; then rm -f %D/etc/xrdp/rsakeys.ini; fi
 @unexec if cmp -s %D/etc/xrdp/sesman.ini.sample %D/etc/xrdp/sesman.ini; then rm -f %D/etc/xrdp/sesman.ini; fi
@@ -57,12 +57,14 @@ etc/xrdp/rsakeys.ini.sample
 etc/xrdp/sesman.ini.sample
 etc/xrdp/startwm.sh.sample
 etc/xrdp/xrdp.ini.sample
-@comment backup pre-compile-time keypair and generate new one
-@exec if [ -f %D/etc/xrdp/rsakeys.ini ]; then cp -a %D/etc/xrdp/rsakeys.ini %D/etc/xrdp/rsakeys.ini.bak`date +%%Y%%m%%d`; %D/bin/xrdp-keygen xrdp %D/etc/xrdp/rsakeys.ini; fi
 @exec [ -f %D/etc/xrdp/sesman.ini ] || cp -p %D/etc/xrdp/sesman.ini.sample %D/etc/xrdp/sesman.ini
 @exec [ -f %D/etc/xrdp/startwm.sh ] || cp -p %D/etc/xrdp/startwm.sh.sample %D/etc/xrdp/startwm.sh
 @exec [ -f %D/etc/xrdp/xrdp.ini ] || cp -p %D/etc/xrdp/xrdp.ini.sample %D/etc/xrdp/xrdp.ini
-etc/xrdp/xrdp.sh
+man/man5/sesman.ini.5.gz
+man/man5/xrdp.ini.5.gz
+man/man8/xrdp-sesman.8.gz
+man/man8/xrdp-sesrun.8.gz
+man/man8/xrdp.8.gz
 sbin/xrdp
 sbin/xrdp-chansrv
 sbin/xrdp-sesman
@@ -75,5 +77,5 @@ share/xrdp/sans-10.fv1
 share/xrdp/xrdp24b.bmp
 share/xrdp/xrdp256.bmp
 @dirrm share/xrdp
-@dirrmtry lib/xrdp
+@dirrm lib/xrdp
 @dirrmtry etc/xrdp
