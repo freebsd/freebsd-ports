@@ -15,7 +15,7 @@ COMMENT=	MPlayer version of the libdvdnav project
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	dvdread:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
@@ -27,23 +27,16 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 		--incdir="${PREFIX}/include/dvdnav" \
 		--disable-opts \
 		--cc="${CC}"
-USE_GMAKE=	yes
+USES=	gmake
 CONFLICTS=	libdvdnav-mplayer-[0-9]*
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DEBUG
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-debug --disable-strip
-.else
-CONFIGURE_ARGS+=	--disable-debug
-.endif
+DEBUG_CONFIGURE_ON=	--enable-debug --disable-strip
+DEBUG_CONFIGURE_OFF=	--disable-debug --enable-strip
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^threadlib="-lpthread"|threadlib="${PTHREAD_LIBS}"|g' \
 		${WRKSRC}/configure2
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
