@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twistedLore
-PORTVERSION=	13.1.0
+PORTVERSION=	13.2.0
 CATEGORIES=	textproc python
 MASTER_SITES=	http://twistedmatrix.com/Releases/Lore/${PORTVERSION:R}/ \
 		LOCAL/sunpoet
