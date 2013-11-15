@@ -1,4 +1,5 @@
 bin/fpdns
+man/man1/fpdns.1.gz
 %%SITE_PERL%%/Net/DNS/Fingerprint.pm
 %%SITE_PERL%%/Net/DNS/REPLACE
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/Fingerprint/.packlist
