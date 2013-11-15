@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twistedNews
-PORTVERSION=	13.1.0
+PORTVERSION=	13.2.0
 CATEGORIES=	news devel python
 MASTER_SITES=	http://twistedmatrix.com/Releases/News/${PORTVERSION:R}/ \
 		LOCAL/sunpoet
