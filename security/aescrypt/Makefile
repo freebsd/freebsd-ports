@@ -16,15 +16,22 @@ COMMENT=	Command-line AES encryption/decryption suite
 
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	BINGRP=wheel
-NO_STAGE=	yes
 
-MAN1=		aescrypt.1 aesget.1
-MANCOMPRESSED=	yes
+BINS=		aescrypt aesget
 
-.if !defined(NOPORTDOCS)
-post-install:
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+do-install:
+.for f in ${BINS}
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${f}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+.endfor
+
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.html ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
