@@ -15,19 +15,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 RUN_DEPENDS=	mtools:${PORTSDIR}/emulators/mtools
 
-USES=		perl5
+USES=		perl5 gmake
 USE_XZ=		yes
 USE_PERL5=	build
-USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}"
 ALL_TARGET=	bios
 
-MAN1=		syslinux.1
-
-PLIST_FILES+=	bin/syslinux
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+#.include <bsd.port.pre.mk>
 
 # convert elf_i386 to elf_i386_fbsd
 pre-patch:
@@ -40,14 +34,10 @@ post-patch:
 		's|^UMAKEDEPS|#UMAKEDEPS|' ${WRKSRC}/mk/syslinux.mk
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/bios/mtools/syslinux ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/man/syslinux.1 ${MANPREFIX}/man/man1
+	@${INSTALL_PROGRAM} ${WRKSRC}/bios/mtools/syslinux ${STAGEDIR}${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/man/syslinux.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	@${FIND} -d ${WRKSRC} -type d -empty -delete
-	@${MKDIR} ${DATADIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "bios efi32 efi64" ${DATADIR})
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "bios efi32 efi64" ${STAGEDIR}${DATADIR})
 
-post-install:
-	@(cd ${PREFIX} && ${FIND} -d ${DATADIR_REL} -type f >> ${TMPPLIST})
-	@(cd ${PREFIX} && ${FIND} -d ${DATADIR_REL} -type d -exec echo "@dirrm {}" \; >> ${TMPPLIST})
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

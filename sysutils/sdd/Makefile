@@ -10,10 +10,8 @@ COMMENT=	Faster and improved version of dd
 
 USES=		gmake
 MAKE_ENV=	MAKEPROG="${GMAKE}" CCOM="${CC}" COPTX="${CFLAGS}"
-MAN1=		sdd.1
-PLIST_FILES=	bin/sdd
+PLIST_FILES=	bin/sdd man/man1/sdd.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386" || ${CC} != "cc"
@@ -24,7 +22,7 @@ post-extract:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sdd/OBJ/${ARCH}-freebsd-${CC}/sdd \
-		${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/sdd/sdd.1 ${PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/sdd/sdd.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.post.mk>

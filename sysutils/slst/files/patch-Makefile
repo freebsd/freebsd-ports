@@ -1,50 +1,24 @@
-*** Makefile.orig	Sun Jan 22 07:29:28 2006
---- Makefile	Sun Jan 22 07:38:16 2006
-***************
-*** 1,10 ****
-! CC=gcc
-  
-! CXXFLAGS=-Wall -O2
-! CFLAGS=-Wall -O2
-! LDFLAGS=-lstdc++
-  VERSION=0.2
-  
-  OBJS=slst.o error.o utils.o intcnt.o array.o
-  
-  all: slst
---- 1,10 ----
-! #CC=gcc
-  
-! #CXXFLAGS=-Wall -O2
-! #CFLAGS=-Wall -O2
-! LDFLAGS+=-lstdc++
-  VERSION=0.2
-  
-  OBJS=slst.o error.o utils.o intcnt.o array.o
-  
-  all: slst
-***************
-*** 12,22 ****
-  slst: $(OBJS)
-  	$(CC) -Wall -W $(OBJS) $(LDFLAGS) -o slst
-  #	strip slst
-  
-  install: slst
-! 	cp slst /usr/bin
-  
-  clean:
-  	rm -f $(OBJS) slst core
-  
-  package: clean
---- 12,22 ----
-  slst: $(OBJS)
-  	$(CC) -Wall -W $(OBJS) $(LDFLAGS) -o slst
-  #	strip slst
-  
-  install: slst
-! 	${INSTALL} -m 755 slst ${PREFIX}/bin
-  
-  clean:
-  	rm -f $(OBJS) slst core
-  
-  package: clean
+--- Makefile.orig	2003-12-12 03:31:50.000000000 +0800
++++ Makefile	2013-11-16 12:33:55.000000000 +0800
+@@ -1,8 +1,8 @@
+-CC=gcc
++#CC=gcc
+ 
+-CXXFLAGS=-Wall -O2
+-CFLAGS=-Wall -O2
+-LDFLAGS=-lstdc++
++#CXXFLAGS=-Wall -O2
++#CFLAGS=-Wall -O2
++LDFLAGS+=-lstdc++
+ VERSION=0.2
+ 
+ OBJS=slst.o error.o utils.o intcnt.o array.o
+@@ -14,7 +14,7 @@ slst: $(OBJS)
+ #	strip slst
+ 
+ install: slst
+-	cp slst /usr/bin
++	${INSTALL} -m 755 slst $(DESTDIR)$(PREFIX)/bin
+ 
+ clean:
+ 	rm -f $(OBJS) slst core

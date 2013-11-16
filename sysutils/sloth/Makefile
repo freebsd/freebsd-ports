@@ -12,10 +12,8 @@ COMMENT=	Slow down a process
 
 GNU_CONFIGURE=	yes
 
-MAN1=		sloth.1
-PLIST_FILES=	bin/sloth
+PLIST_FILES=	bin/sloth man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,wait.h,sys/wait.h,g" ${WRKSRC}/configure
 
