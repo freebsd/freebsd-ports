@@ -19,7 +19,6 @@ CONFLICTS=	lynx-2.* ja-lynx-2.8.7.*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${VERSION:S/./-/g}
 USE_BZIP2=	yes
-NO_LATEST_LINK=	yes
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
