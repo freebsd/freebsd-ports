@@ -21,7 +21,11 @@
 %%PYPY_INCLUDEDIR%%/listobject.h
 %%PYPY_INCLUDEDIR%%/longintrepr.h
 %%PYPY_INCLUDEDIR%%/methodobject.h
+%%PYPY_INCLUDEDIR%%/missing.h
 %%PYPY_INCLUDEDIR%%/modsupport.h
+%%PYPY_INCLUDEDIR%%/numpy/arrayobject.h
+%%PYPY_INCLUDEDIR%%/numpy/npy_3kcompat.h
+%%PYPY_INCLUDEDIR%%/numpy/old_defines.h
 %%PYPY_INCLUDEDIR%%/object.h
 %%PYPY_INCLUDEDIR%%/patchlevel.h
 %%PYPY_INCLUDEDIR%%/pycapsule.h
@@ -1450,9 +1454,9 @@
 %%PYPY_LIBDIR%%/lib2to3/tests/test_util.pyc
 %%PYPY_LIBDIR%%/lib_pypy/__init__.py
 %%PYPY_LIBDIR%%/lib_pypy/__init__.pyc
-%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__g3b3d68b9x310af836.pypy-%%PYPY_VER%%.so
-%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__g7019d5d3xad93c709.pypy-%%PYPY_VER%%.so
-%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__g774d129dx1fd01a91.pypy-%%PYPY_VER%%.so
+%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__g3e8f69b6x1fd01a91.pypy-%%PYPY_VER%%.so
+%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__g45f34413x310af836.pypy-%%PYPY_VER%%.so
+%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__ga01735dbxad93c709.pypy-%%PYPY_VER%%.so
 %%PYPY_LIBDIR%%/lib_pypy/_codecs_cn.py
 %%PYPY_LIBDIR%%/lib_pypy/_codecs_cn.pyc
 %%PYPY_LIBDIR%%/lib_pypy/_codecs_hk.py
@@ -1590,6 +1594,8 @@
 %%PYPY_LIBDIR%%/lib_pypy/cffi/ffiplatform.pyc
 %%PYPY_LIBDIR%%/lib_pypy/cffi/gc_weakref.py
 %%PYPY_LIBDIR%%/lib_pypy/cffi/gc_weakref.pyc
+%%PYPY_LIBDIR%%/lib_pypy/cffi/lock.py
+%%PYPY_LIBDIR%%/lib_pypy/cffi/lock.pyc
 %%PYPY_LIBDIR%%/lib_pypy/cffi/model.py
 %%PYPY_LIBDIR%%/lib_pypy/cffi/model.pyc
 %%PYPY_LIBDIR%%/lib_pypy/cffi/vengine_cpy.py
@@ -1637,36 +1643,6 @@
 %%PYPY_LIBDIR%%/lib_pypy/marshal.pyc
 %%PYPY_LIBDIR%%/lib_pypy/msvcrt.py
 %%PYPY_LIBDIR%%/lib_pypy/msvcrt.pyc
-%%PYPY_LIBDIR%%/lib_pypy/numpy.py
-%%PYPY_LIBDIR%%/lib_pypy/numpy.pyc
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/__init__.py
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/__init__.pyc
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/core/__init__.py
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/core/__init__.pyc
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/core/_methods.py
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/core/_methods.pyc
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/core/arrayprint.py
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/core/arrayprint.pyc
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/core/fromnumeric.py
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/core/fromnumeric.pyc
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/core/multiarray.py
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/core/multiarray.pyc
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/core/numeric.py
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/core/numeric.pyc
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/core/numerictypes.py
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/core/numerictypes.pyc
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/core/shape_base.py
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/core/shape_base.pyc
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/core/umath.py
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/core/umath.pyc
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/lib/__init__.py
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/lib/__init__.pyc
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/lib/function_base.py
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/lib/function_base.pyc
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/lib/shape_base.py
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/lib/shape_base.pyc
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/lib/twodim_base.py
-%%PYPY_LIBDIR%%/lib_pypy/numpypy/lib/twodim_base.pyc
 %%PYPY_LIBDIR%%/lib_pypy/pwd.py
 %%PYPY_LIBDIR%%/lib_pypy/pwd.pyc
 %%PYPY_LIBDIR%%/lib_pypy/pyrepl/__init__.py
@@ -3788,9 +3764,6 @@
 @dirrm %%PYPY_LIBDIR%%/msilib
 @dirrm %%PYPY_LIBDIR%%/logging
 @dirrm %%PYPY_LIBDIR%%/lib_pypy/pyrepl
-@dirrm %%PYPY_LIBDIR%%/lib_pypy/numpypy/lib
-@dirrm %%PYPY_LIBDIR%%/lib_pypy/numpypy/core
-@dirrm %%PYPY_LIBDIR%%/lib_pypy/numpypy
 @dirrm %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache
 @dirrm %%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser/ply
 @dirrm %%PYPY_LIBDIR%%/lib_pypy/cffi/_pycparser
@@ -3832,4 +3805,5 @@
 @dirrm %%PYPY_LIBDIR%%/bsddb/test
 @dirrm %%PYPY_LIBDIR%%/bsddb
 @dirrmtry %%PYPY_LIBDIR%%
+@dirrm %%PYPY_INCLUDEDIR%%/numpy
 @dirrmtry %%PYPY_INCLUDEDIR%%
