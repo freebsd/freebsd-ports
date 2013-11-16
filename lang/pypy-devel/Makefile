@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	pypy
-DISTVERSION=	2.2-alpha${DATE}
-CATEGORIES=	lang python java
-MASTER_SITES=	https://bitbucket.org/pypy/pypy/get/ LOCAL/dbn/${PORTNAME}
+DISTVERSION=	2.2
+CATEGORIES=	lang python
+MASTER_SITES=	http://cdn.bitbucket.org/pypy/pypy/downloads/ https://bitbucket.org/pypy/pypy/downloads/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${COMMIT}
-DIST_SUBDIR=	pypy
+DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Fast, compliant implementation of the Python language
@@ -41,14 +40,12 @@ LATEST_LINK=	${PORTNAME}-devel
 
 ALL_TARGET=	${PYPY_NAMES}
 BUILD_WRKSRC=	${WRKDIR}
-COMMIT=		ab7580454b32
 DATE=		20130810
 USE_BZIP2=	yes
 USES=		compiler:c11 gettext iconv
 MAKEFILE=	${FILESDIR}/Makefile
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-WRKSRC=		${WRKDIR}/pypy-pypy-${COMMIT}
 
 PYPY_VER=	${DISTVERSION:C|([0-9])\.([0-9]).*|\1.\2|}
 PYTHON_IMPL_VER=	2.7
@@ -251,6 +248,7 @@ post-build:
 .for mod in _sqlite3 _curses syslog
 	${WRKDIR}/${PYPY_PRIMARY} -c 'import ${mod}'
 .endfor
+	${STRIP_CMD} ${WRKDIR}/${PYPY_LIBDIR}/lib_pypy/__pycache__/_cffi__*.pypy-${PYPY_VER:C/\.//}.so
 .for _path in ${PYPYDIRS}
 	-${FIND} ${WRKDIR}/${_path:C/.*://}/ -type d | \
 		${XARGS} -n1 ${WRKDIR}/${PYPY_PRIMARY} -m compileall -fl
