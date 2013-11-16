@@ -27,9 +27,13 @@ OPTIONS_DEFAULT=	DEMO_NM DEMO_UV
 DEMO_NM_DESC=	Install demos with -nomonsters
 DEMO_UV_DESC=	Install Ultra-Violence demos
 
+OPTIONS_SUB=	yes
+
 DATADIR=	${DMDIR}/${PORTNAME}
 
-NO_STAGE=	yes
+DEMO_NM_DISTFILES=	hrhelp${EXTRACT_SUFX}
+DEMO_UV_DISTFILES=	hruvlmp2${EXTRACT_SUFX}
+
 post-extract:
 	@(cd ${WRKDIR} && ${SH} ${SCRIPTDIR}/lowercase.sh)
 
@@ -37,29 +41,13 @@ post-extract:
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDEMO_NM}
-DISTFILES+=	hrhelp${EXTRACT_SUFX}
-PLIST_SUB+=	DEMO_NM=""
-.else
-PLIST_SUB+=	DEMO_NM="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDEMO_UV}
-DISTFILES+=	hruvlmp2${EXTRACT_SUFX}
-PLIST_SUB+=	DEMO_UV=""
-.else
-PLIST_SUB+=	DEMO_UV="@comment "
-.endif
-
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.wad ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.wad ${STAGEDIR}${DATADIR}
 .if ${PORT_OPTIONS:MDEMO_NM} || !empty(PORT_OPTIONS:MDEMO_UV)
-	${INSTALL_DATA} ${WRKSRC}/*.lmp ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.lmp ${STAGEDIR}${DATADIR}
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
