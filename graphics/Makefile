@@ -607,6 +607,7 @@
     SUBDIR += ogre3d
     SUBDIR += okular
     SUBDIR += openclipart
+    SUBDIR += opencollada
     SUBDIR += opencolorio
     SUBDIR += opencolorio-tools
     SUBDIR += opencsg
