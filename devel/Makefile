@@ -3565,6 +3565,7 @@
     SUBDIR += py-five.globalrequest
     SUBDIR += py-five.localsitemanager
     SUBDIR += py-flake8
+    SUBDIR += py-futures
     SUBDIR += py-paver
     SUBDIR += py-pyflakes
     SUBDIR += py-flask-babel
