@@ -5,6 +5,7 @@ PORTNAME=	ntp
 PORTVERSION=	4.2.7p364
 PORTREVISION=	2
 CATEGORIES=	net ipv6
+PKGNAMESUFFIX=	-devel
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ntp-dev/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
 		ftp://ftp.archive.de.uu.net/pub/unix/ntp/ntp4/ntp-dev/ \
@@ -13,8 +14,6 @@ DISTNAME=	${PORTNAME}-dev-${PORTVERSION:S/.r/-rc/}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
-
-LATEST_LINK=	${PORTNAME}-dev
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake libtool
