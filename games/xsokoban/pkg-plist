@@ -1,4 +1,5 @@
 bin/xsokoban
+man/man1/xsokoban.1.gz
 lib/X11/xsokoban/bitmaps/defaults/centerwall.xbm
 lib/X11/xsokoban/bitmaps/defaults/centerwall.xpm
 lib/X11/xsokoban/bitmaps/defaults/east_twall.xbm
