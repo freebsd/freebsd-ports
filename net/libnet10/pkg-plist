@@ -8,6 +8,7 @@ include/libnet10/libnet/libnet-ospf.h
 include/libnet10/libnet/libnet-structures.h
 lib/libnet10/libnet.a
 lib/libnet10/libpwrite.a
+man/man3/libnet10.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG-NEWFUNCTIONS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING

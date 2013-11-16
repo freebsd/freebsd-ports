@@ -12,6 +12,9 @@ lib/%%SNAME%%/libnet.so
 lib/%%SNAME%%/libnet.so.8
 lib/libnet-%%VERSION%%.so
 lib/libnet-%%VERSION%%.so.8
+man/man3/libnet-functions.h.3.gz
+man/man3/libnet-macros.h.3.gz
+man/man3/libnet.h.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIB
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
