@@ -1,13 +1,13 @@
 # Created by: stb
 # $FreeBSD$
 
-PORTNAME=	netatalk3
+PORTNAME=	netatalk
 PORTVERSION=	3.1.0
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=netatalk/netatalk/3.1
-DISTNAME=	netatalk-${PORTVERSION}
+MASTER_SITE_SUBDIR=${PORTNAME}/${PORTNAME}/3.1
+PKGNAMESUFFIX=	3
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	File server for Mac OS X
