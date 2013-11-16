@@ -14,10 +14,8 @@ COMMENT=	X version of a simple but tricky board game
 
 USES=		imake
 USE_XORG=	xaw
-MAN1=		xtic.1
-PLIST_FILES=	bin/xtic
+PLIST_FILES=	bin/xtic man/man1/xtic.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/configure.h
 
