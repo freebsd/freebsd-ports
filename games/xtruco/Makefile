@@ -15,8 +15,7 @@ COMMENT=	Simple version for X Window of the famous card game Super Truco
 USE_XORG=	x11
 PLIST_FILES=	bin/xtruco
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xtruco ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/xtruco ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
