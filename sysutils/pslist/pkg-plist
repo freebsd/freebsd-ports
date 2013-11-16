@@ -1,0 +1,6 @@
+bin/pslist
+bin/rkill
+bin/rrenice
+man/man1/pslist.1.gz
+man/man1/rkill.1.gz
+man/man1/rrenice.1.gz

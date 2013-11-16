@@ -19,11 +19,10 @@ USE_ZIP=	yes
 
 PLIST_FILES=	bin/pdixtract
 
-NO_STAGE=	yes
 do-build:
 	cd ${WRKDIR}; ${CC} ${CFLAGS} pdixtract.c -o pdixtract
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/pdixtract ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKDIR}/pdixtract ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
