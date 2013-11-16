@@ -20,5 +20,4 @@ USE_PYDISTUTILS=easy_install
 PLIST_FILES=	bin/plist.py \
 		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
