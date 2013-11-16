@@ -26,7 +26,6 @@ NO_CDKEY_DESC=	Use older version which doesn't require cd key
 DATADIR=	${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
 SUB_FILES=	doom3 doom3-ded pkg-message
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNO_CDKEY}
@@ -49,25 +48,20 @@ post-extract:
 .endif
 
 do-install:
-	${MKDIR} ${DATADIR}/base
+	@${MKDIR} ${STAGEDIR}${DATADIR}/base
 	cd ${WRKSRC}/base && \
-		${INSTALL_DATA} game01.pk4 pak*.pk4 ${DATADIR}/base
+		${INSTALL_DATA} game01.pk4 pak*.pk4 ${STAGEDIR}${DATADIR}/base
 	cd ${WRKSRC}/bin/Linux/x86 && \
-		${INSTALL_PROGRAM} doom.x86 doomded.x86 ${DATADIR}
+		${INSTALL_PROGRAM} doom.x86 doomded.x86 ${STAGEDIR}${DATADIR}
 .if empty(PORT_OPTIONS:MNO_CDKEY)
-	${MKDIR} ${DATADIR}/d3xp
+	@${MKDIR} ${STAGEDIR}${DATADIR}/d3xp
 	cd ${WRKSRC}/d3xp && \
-		${INSTALL_DATA} game01.pk4 pak*.pk4 ${DATADIR}/d3xp
-	${CP} -r ${WRKSRC}/pb ${DATADIR}
+		${INSTALL_DATA} game01.pk4 pak*.pk4 ${STAGEDIR}${DATADIR}/d3xp
+	${CP} -r ${WRKSRC}/pb ${STAGEDIR}${DATADIR}
 .endif
-	${INSTALL_DATA} ${WRKSRC}/doom3.png ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/doom3.png ${STAGEDIR}${PREFIX}/share/pixmaps
 .for f in doom3 doom3-ded
-	${INSTALL_PROGRAM} ${WRKDIR}/${f} ${PREFIX}/bin/${PKGNAMEPREFIX}${f}
+	${INSTALL_PROGRAM} ${WRKDIR}/${f} ${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}${f}
 .endfor
-
-post-install:
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
 
 .include <bsd.port.mk>
