@@ -4,7 +4,7 @@ bin/vmware-rpctool
 bin/vmware-xferlogs
 bin/vmtoolsd
 bin/vmware-toolbox-cmd
-%%FUSE%%bin/vmware-vmblock-fuse
+%%X11%%%%FUSE%%bin/vmware-vmblock-fuse
 lib/open-vm-tools/plugins/vmsvc/libguestInfo.so
 lib/open-vm-tools/plugins/vmsvc/libpowerOps.so
 lib/open-vm-tools/plugins/vmsvc/libtimeSync.so
