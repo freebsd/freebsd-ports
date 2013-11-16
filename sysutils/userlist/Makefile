@@ -13,8 +13,7 @@ COMMENT=	Prints a list of all usernames in /etc/passwd
 NO_BUILD=	yes
 PLIST_FILES=	bin/userlist
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/userlist ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/userlist ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

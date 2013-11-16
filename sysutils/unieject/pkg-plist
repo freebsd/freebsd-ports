@@ -7,6 +7,8 @@ lib/libunieject.la
 lib/libunieject.so
 lib/libunieject.so.5
 libdata/pkgconfig/libunieject.pc
+man/man1/unieject.1.gz
+man/man5/unieject.conf.5.gz
 share/locale/de/LC_MESSAGES/unieject.mo
 share/locale/es_AR/LC_MESSAGES/unieject.mo
 share/locale/es_ES/LC_MESSAGES/unieject.mo

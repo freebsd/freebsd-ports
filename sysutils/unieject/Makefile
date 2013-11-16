@@ -12,9 +12,9 @@ COMMENT=	Eject(1) replacement
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	confuse:${PORTSDIR}/devel/libconfuse \
-		pcre:${PORTSDIR}/devel/pcre \
-		cdio:${PORTSDIR}/sysutils/libcdio
+LIB_DEPENDS=	libconfuse.so:${PORTSDIR}/devel/libconfuse \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libcdio.so:${PORTSDIR}/sysutils/libcdio
 
 USE_BZIP2=	yes
 USES=		pathfix pkgconfig gettext iconv
@@ -27,10 +27,6 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		unieject.1
-MAN5=		unieject.conf.5
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/-D_POSIX_C_SOURCE/s|^CPPFLAGS|#CPPFLAGS|' ${WRKSRC}/configure
@@ -39,6 +35,6 @@ post-patch:
 		 /^install-data-am:/s|install-dist_htmlDATA||' ${WRKSRC}/Makefile.in
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/unieject.conf.sample ${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/unieject.conf.sample ${STAGEDIR}${PREFIX}/etc
 
 .include <bsd.port.mk>
