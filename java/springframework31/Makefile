@@ -3,6 +3,7 @@
 
 PORTNAME=	springframework
 PORTVERSION=	3.1.4
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://s3.amazonaws.com/dist.springframework.org/release/SPR/
 DISTNAME=	spring-framework-${PORTVERSION}.RELEASE-with-docs
@@ -12,7 +13,7 @@ COMMENT=	The Spring Framework for Java
 
 WRKSRC=		${WRKDIR}/spring-framework-${PORTVERSION}.RELEASE
 
-LATEST_LINK=	springframework31
+PKGNAMESUFFIX=	31
 
 CONFLICTS=	springframework-3.2.*
 
