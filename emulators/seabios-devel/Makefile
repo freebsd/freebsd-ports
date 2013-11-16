@@ -21,12 +21,16 @@ ONLY_FOR_ARCHS=	amd64 i386
 CONFLICTS_INSTALL=	qemu-[0-9]*
 
 NO_STAGE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900033
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin LD=${LOCALBASE}/bin/ld
 .endif
+
+DEPRECATED=	Outdated, no longer needed, broken on 10+
+EXPIRATION_DATE=	2013-01-15
 
 PLIST_FILES=	share/qemu/bios.bin-${PORTVERSION}
 PLIST_DIRSTRY=	share/qemu
