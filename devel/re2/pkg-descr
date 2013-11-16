@@ -8,4 +8,4 @@ use a small fixed C++ stack footprint no matter what inputs or regular
 expressions it must process; thus RE2 is useful in multithreaded environments
 where thread stacks cannot grow arbitrarily large.
 
-WWW:	http://code.google.com/p/re2/
+WWW: http://code.google.com/p/re2/

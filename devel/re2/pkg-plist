@@ -1,10 +1,10 @@
 include/re2/filtered_re2.h
 include/re2/re2.h
+include/re2/set.h
 include/re2/stringpiece.h
 include/re2/variadic_function.h
-include/re2/set.h
+lib/libre2.a
 lib/libre2.so
 lib/libre2.so.0
-lib/libre2.a
 lib/libre2.so.0.0.0
 @dirrm include/re2
