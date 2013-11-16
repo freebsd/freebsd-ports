@@ -6,6 +6,7 @@
 %%PERL5_MAN3%%/DBIx::DBSchema::DBD::SQLite.3.gz
 %%PERL5_MAN3%%/DBIx::DBSchema::DBD::Sybase.3.gz
 %%PERL5_MAN3%%/DBIx::DBSchema::DBD::mysql.3.gz
+%%PERL5_MAN3%%/DBIx::DBSchema::ForeignKey.3.gz
 %%PERL5_MAN3%%/DBIx::DBSchema::Index.3.gz
 %%PERL5_MAN3%%/DBIx::DBSchema::Table.3.gz
 %%SITE_PERL%%/DBIx/DBSchema.pm
@@ -16,6 +17,7 @@
 %%SITE_PERL%%/DBIx/DBSchema/DBD/SQLite.pm
 %%SITE_PERL%%/DBIx/DBSchema/DBD/Sybase.pm
 %%SITE_PERL%%/DBIx/DBSchema/DBD/mysql.pm
+%%SITE_PERL%%/DBIx/DBSchema/ForeignKey.pm
 %%SITE_PERL%%/DBIx/DBSchema/Index.pm
 %%SITE_PERL%%/DBIx/DBSchema/Table.pm
 %%SITE_PERL%%/DBIx/DBSchema/_util.pm
