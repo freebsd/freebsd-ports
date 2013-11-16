@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	django
-PORTVERSION=	1.5.5
+PORTVERSION=	1.6
 CATEGORIES=	www python
-MASTER_SITES=	https://www.djangoproject.com/m/releases/${PORTVERSION:R}/ \
+MASTER_SITES=	https://www.djangoproject.com/m/releases/${PORTVERSION}/ \
 		CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Django-${PORTVERSION}
@@ -15,13 +15,12 @@ COMMENT=	High-level Python Web framework
 
 LICENSE=	BSD
 
-USES=		gettext
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYTHON_PY3K_PLIST_HACK=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_PKGNAME=	Django
 
-CONFLICTS=	py[23][0-9]-django-devel-[0-9]* py[23][0-9]-django-1.[0-46-9].*
+CONFLICTS=	py[23][0-9]-django-devel-[0-9]* py[23][0-9]-django-1.[0-57-9].*
 
 DOCSDIR=	${PREFIX}/share/doc/py-django
 
@@ -32,6 +31,10 @@ OPTIONS_DEFAULT=SQLITE
 OPTIONS_GROUP=	DATABASE
 OPTIONS_GROUP_DATABASE=	PGSQL MYSQL SQLITE
 HTMLDOCS_DESC=	Install the HTML documentation (requires Sphinx)
+
+PLIST_FILES=	man/man1/daily_cleanup.1.gz \
+		man/man1/django-admin.1.gz \
+		man/man1/gather_profile_stats.1.gz
 
 .include <bsd.port.options.mk>
 
