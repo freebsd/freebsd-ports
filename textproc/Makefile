@@ -1426,11 +1426,11 @@
     SUBDIR += stardict3
     SUBDIR += supercat
     SUBDIR += sv-aspell
+    SUBDIR += sv-hunspell
     SUBDIR += sv-hyphen
     SUBDIR += sv-mythes
     SUBDIR += svn2cl
     SUBDIR += sw-aspell
-    SUBDIR += sw-hunspell
     SUBDIR += sxml
     SUBDIR += syck
     SUBDIR += ta-aspell
