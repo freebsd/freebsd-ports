@@ -1,0 +1,134 @@
+--- src/hash/dbr_hash.h.orig	2013-09-21 09:16:26.000000000 +0000
++++ src/hash/dbr_hash.h	2013-09-21 09:20:41.000000000 +0000
+@@ -124,7 +124,7 @@
+     inline bool remove(KT key)
+     {
+         struct dbr_hash_slot<KT> *slot;
+-        if (! search(key, &slot))
++        if (! this->search(key, &slot))
+             return false;
+         slot->key = deletedKey;
+         int array_slot = slot->array_slot;
+@@ -134,7 +134,7 @@
+             return true;
+         }
+         data_array[array_slot] = data_array[--this->count];
+-        if (! search(data_array[array_slot], &slot))
++        if (! this->search(data_array[array_slot], &slot))
+         {
+             log_debug("DBR-Hash-Error: (%d; array_slot=%d; count=%d)\n", data_array[array_slot], array_slot, this->count);
+             throw zmm::Exception(_("DBR-Hash-Error: key in data_array not found in hashtable"));
+@@ -146,7 +146,7 @@
+     inline void put(KT key)
+     {
+         struct dbr_hash_slot<KT> *slot;
+-        if (! search(key, &slot))
++        if (! this->search(key, &slot))
+         {
+ #ifdef TOMBDEBUG
+             if (this->count >= realCapacity)
+@@ -194,7 +194,7 @@
+     inline bool exists(KT key)
+     {
+         struct dbr_hash_slot<KT> *slot;
+-        return search(key, &slot);
++        return this->search(key, &slot);
+     }
+     
+     /*
+@@ -202,7 +202,7 @@
+      
+     inline bool exists(KT key, hash_slot_t *destSlot)
+     {
+-        return search(key, (KT **)destSlot);
++        return this->search(key, (KT **)destSlot);
+     }
+     */
+ };
+--- src/hash/dbo_hash.h.orig	2013-09-21 09:23:08.000000000 +0000
++++ src/hash/dbo_hash.h	2013-09-21 09:23:26.000000000 +0000
+@@ -106,7 +106,7 @@
+     inline bool remove(KT key)
+     {
+         struct dbo_hash_slot<KT, VT> *slot;
+-        if (! search(key, &slot))
++        if (! this->search(key, &slot))
+             return false;
+         slot->key = deletedKey;
+         slot->value->release();
+@@ -136,7 +136,7 @@
+     inline void put(KT key, zmm::Ref<VT> value)
+     {
+         struct dbo_hash_slot<KT, VT> *slot;
+-        search(key, &slot);
++        this->search(key, &slot);
+         put(key, (hash_slot_t)slot, value);
+     }
+     void put(KT key, hash_slot_t destSlot, zmm::Ref<VT> value)
+@@ -162,7 +162,7 @@
+     inline zmm::Ref<VT> get(KT key)
+     {
+         struct dbo_hash_slot<KT, VT> *slot;
+-        bool found = search(key, &slot);
++        bool found = this->search(key, &slot);
+         if (found)
+             return zmm::Ref<VT>(slot->value);
+         else
+@@ -174,7 +174,7 @@
+     inline zmm::Ref<VT> get(KT key, hash_slot_t *destSlot)
+     {
+         struct dbo_hash_slot<KT, VT> **slot = (struct dbo_hash_slot<KT, VT> **)destSlot;
+-        bool found = search(key, slot);
++        bool found = this->search(key, slot);
+         if (found)
+             return zmm::Ref<VT>((*slot)->value);
+         else
+--- src/hash/dso_hash.h.orig	2013-09-21 09:25:09.000000000 +0000
++++ src/hash/dso_hash.h	2013-09-21 09:25:27.000000000 +0000
+@@ -100,7 +100,7 @@
+     inline bool remove(zmm::String key)
+     {
+         struct dso_hash_slot<VT> *slot;
+-        if (! search(key, &slot))
++        if (! this->search(key, &slot))
+             return false;
+         slot->key->release();
+         slot->value->release();
+@@ -112,7 +112,7 @@
+     inline void put(zmm::String key, zmm::Ref<VT> value)
+     {
+         struct dso_hash_slot<VT> *slot;
+-        search(key, &slot);
++        this->search(key, &slot);
+         put(key, (hash_slot_t)slot, value);
+     }
+     void put(zmm::String key, hash_slot_t destSlot, zmm::Ref<VT> value)
+@@ -141,7 +141,7 @@
+     inline zmm::Ref<VT> get(zmm::String key)
+     {
+         struct dso_hash_slot<VT> *slot;
+-        bool found = search(key, &slot);
++        bool found = this->search(key, &slot);
+         if (found)
+             return zmm::Ref<VT>(slot->value);
+         else
+@@ -153,7 +153,7 @@
+     inline zmm::Ref<VT> get(zmm::String key, hash_slot_t *destSlot)
+     {
+         struct dso_hash_slot<VT> **slot = (struct dso_hash_slot<VT> **)destSlot;
+-        bool found = search(key, slot);
++        bool found = this->search(key, slot);
+         if (found)
+             return zmm::Ref<VT>((*slot)->value);
+         else
+--- tombupnp/upnp/src/genlib/net/http/webserver.c.orig	2013-09-30 04:20:49.000000000 +0000
++++ tombupnp/upnp/src/genlib/net/http/webserver.c	2013-09-30 04:21:45.000000000 +0000
+@@ -310,7 +310,7 @@
+ *	 0 - On Sucess														
+ *	 UPNP_E_OUTOF_MEMORY - on memory allocation failures				
+ ************************************************************************/
+-XINLINE int
++static XINLINE int
+ get_content_type( IN const char *filename,
+                   OUT DOMString * content_type )
+ {
