@@ -13,7 +13,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A C library for creating IP packets
 
 LATEST_LINK=	${PORTNAME}${SHORT_VER}
-NO_STAGE=	yes
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
@@ -29,7 +28,6 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${SHORT_NAME}
 USE_LDCONFIG=	${PREFIX}/lib/${SHORT_NAME}
 PLIST_SUB=	SVER=${SHORT_VER} SNAME=${SHORT_NAME} VERSION=${PORTVERSION}
 
-MAN3=		libnet-functions.h.3 libnet-macros.h.3 libnet.h.3
 DOCS=		README doc/CHANGELOG doc/CONTRIB doc/COPYING \
 		doc/DESIGN_NOTES doc/MIGRATION doc/PACKET_BUILDING doc/PORTED \
 		doc/RAWSOCKET_NON_SEQUITUR doc/TODO
@@ -60,17 +58,17 @@ post-patch:
 		${WRKSRC}/src/Makefile.in
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/libnet-config ${PREFIX}/bin/${SHORT_NAME}-config
-	@cd ${PREFIX}/lib && \
+	${INSTALL_SCRIPT} ${WRKSRC}/libnet-config ${STAGEDIR}${PREFIX}/bin/${SHORT_NAME}-config
+	@cd ${STAGEDIR}${PREFIX}/lib && \
 		${LN} -sf ${SHORT_NAME}/libnet.so libnet-${PORTVERSION}.so.8 && \
 		${LN} -sf libnet-${PORTVERSION}.so.8 libnet-${PORTVERSION}.so
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${STAGEDIR}${EXAMPLESDIR}/
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
