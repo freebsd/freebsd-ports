@@ -80,7 +80,7 @@ PLIST_SUB+=		NETATALKPAM="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNOZEROCONF}
-CONFIGURE_ARGS+=	--disable-zerconf
+CONFIGURE_ARGS+=	--disable-zeroconf
 SUB_LIST+=		ZEROCONF=""
 .endif
 
