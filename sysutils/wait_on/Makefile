@@ -11,9 +11,6 @@ COMMENT=	Enable shell scripts to monitor directories for new files
 
 WRKSRC=		${WRKDIR}/wait_on
 
-MAN1=		wait_on.1
-MANCOMPRESSED=	maybe
-PLIST_FILES=	bin/wait_on
+PLIST_FILES=	bin/wait_on man/man1/wait_on.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
