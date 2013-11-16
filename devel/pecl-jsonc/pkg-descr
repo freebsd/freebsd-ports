@@ -1,0 +1,4 @@
+Support for JSON (JavaScript Object Notation) serialization. This is a drop-in
+alternative to PHP standard json extension.
+
+WWW: http://pecl.php.net/package/jsonc
