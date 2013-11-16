@@ -21,30 +21,28 @@ GH_COMMIT=	568c234
 
 SUB_FILES=	ipy ipy64
 
-NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/xbuild /t:Stage \
 		/p:Configuration=Release /p:ReferencedPlatform=V4 \
 		/p:Mono=true /p:BaseConfiguration=Release
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/ironpython
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ironpython
 	cd ${WRKSRC}/Stage/Release/IronPython-${PORTVERSION} && \
-		${COPYTREE_SHARE} . ${PREFIX}/lib/ironpython;
-	${CHMOD} a+x ${PREFIX}/lib/ironpython/ipy.exe
-	${CHMOD} a+x ${PREFIX}/lib/ironpython/ipy64.exe
+		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/ironpython;
+	${CHMOD} a+x ${STAGEDIR}${PREFIX}/lib/ironpython/ipy.exe
+	${CHMOD} a+x ${STAGEDIR}${PREFIX}/lib/ironpython/ipy64.exe
 	for f in ${SUB_FILES}; do \
-		${INSTALL_SCRIPT} ${WRKDIR}/$$f ${PREFIX}/bin; \
+		${INSTALL_SCRIPT} ${WRKDIR}/$$f ${STAGEDIR}${PREFIX}/bin; \
 	done
 
 post-install:
 	@for f in ${SUB_FILES}; do \
 		${ECHO_CMD} "bin/$$f" >> ${TMPPLIST}; \
 	done
-	@${ECHO_CMD} "bin/
-	@${FIND} -P ${PREFIX}/lib/ironpython ! -type d 2>/dev/null | \
-		${SED} -ne 's,^${PREFIX}/,,p' >> ${TMPPLIST}
-	@${FIND} -P -d ${PREFIX}/lib/ironpython -type d 2>/dev/null | \
-		${SED} -ne 's,^${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
+	@${FIND} -P ${STAGEDIR}${PREFIX}/lib/ironpython ! -type d 2>/dev/null | \
+		${SED} -ne 's,^${STAGEDIR}${PREFIX}/,,p' >> ${TMPPLIST}
+	@${FIND} -P -d ${STAGEDIR}${PREFIX}/lib/ironpython -type d 2>/dev/null | \
+		${SED} -ne 's,^${STAGEDIR}${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
