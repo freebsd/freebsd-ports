@@ -12,13 +12,11 @@ COMMENT=	Terminal mixer
 
 LICENSE=	GPLv2
 
-PLIST_FILES=	bin/${PORTNAME}
-PORTDOCS=	ChangeLog DOCS index.html
+DOCS=		ChangeLog DOCS index.html
 MAKE_ENV=	LINUX_LIBS=-lutil
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKSRC}/web/index.html ${WRKSRC}/
 
@@ -31,10 +29,8 @@ post-patch:
 .include <bsd.port.options.mk>
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

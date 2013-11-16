@@ -26,11 +26,12 @@ bin/tentakel
 %%PYTHON_SITELIBDIR%%/lekatnet/tpg.py
 %%PYTHON_SITELIBDIR%%/lekatnet/tpg.pyc
 %%PYTHON_SITELIBDIR%%/lekatnet/tpg.pyo
-%%DOCSDIR%%/PLUGINS
-%%DOCSDIR%%/README
-%%DOCSDIR%%/TODO
-%%DOCSDIR%%/tentakel.1.html
-%%DOCSDIR%%/tentakel.conf.example
-@dirrm %%DOCSDIR%%
+man/man1/tentakel.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/PLUGINS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/tentakel.1.html
+%%PORTDOCS%%%%DOCSDIR%%/tentakel.conf.example
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/lekatnet/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/lekatnet
