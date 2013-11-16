@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	CoinMP
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	math
 MASTER_SITES=	http://www.coin-or.org/download/source/CoinMP/
 EXTRACT_SUFX=	.tgz
