@@ -1,3 +1,7 @@
+@group games
+@mode 2755
 bin/yahtzee
+@mode
 %%DATADIR%%/yahtzee.sco
+@group
 @dirrm %%DATADIR%%
