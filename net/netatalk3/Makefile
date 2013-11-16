@@ -1,12 +1,13 @@
 # Created by: stb
 # $FreeBSD$
 
-PORTNAME=	netatalk
+PORTNAME=	netatalk3
 PORTVERSION=	3.1.0
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=${PORTNAME}/${PORTNAME}/3.1
+MASTER_SITE_SUBDIR=netatalk/netatalk/3.1
+DISTNAME=	netatalk-${PORTVERSION}
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	File server for Mac OS X
@@ -16,7 +17,6 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt \
     		event-2:${PORTSDIR}/devel/libevent2
 
-LATEST_LINK=	netatalk3
 USE_AUTOTOOLS=	libtool
 USE_BDB=	46+
 USE_BZIP2=	yes
