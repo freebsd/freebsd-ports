@@ -42,7 +42,7 @@ ONLY_FOR_ARCHS=	i386 amd64 powerpc
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900014 && exists(/usr/bin/clang)
+.if ${OSVERSION} >= 902001 && exists(/usr/bin/clang)
 CC=	/usr/bin/clang
 CXX=	/usr/bin/clang++
 CPP=	/usr/bin/clang-cpp
