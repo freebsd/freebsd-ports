@@ -14,7 +14,6 @@ lib/open-vm-tools/plugins/common/libhgfsServer.la
 lib/open-vm-tools/plugins/common/libvix.so
 lib/open-vm-tools/plugins/common/libvix.la
 %%X11%%lib/open-vm-tools/plugins/vmusr/libresolutionSet.so
-%%X11%%lib/open-vm-tools/plugins/vmusr/libvixUser.so
 %%X11%%lib/open-vm-tools/plugins/vmusr/libdesktopEvents.so
 %%X11%%lib/open-vm-tools/plugins/vmusr/libdndcp.so
 lib/libhgfs.a
@@ -40,16 +39,12 @@ include/vmGuestLib/vmSessionId.h
 include/vmGuestLib/vm_basic_types.h
 @exec mkdir -p %D/lib/vmware-tools/modules/input
 sbin/mount_vmhgfs
-%%X11%%bin/vmware-toolbox
 %%X11%%bin/vmware-user-suid-wrapper
 share/vmware-tools/poweroff-vm-default
 share/vmware-tools/poweron-vm-default
 share/vmware-tools/resume-vm-default
 share/vmware-tools/suspend-vm-default
 share/vmware-tools/vm-support
-share/open-vm-tools/messages/de/toolbox.vmsg
-share/open-vm-tools/messages/ja/toolbox.vmsg
-share/open-vm-tools/messages/zh_CN/toolbox.vmsg
 share/vmware-tools/statechange.subr
 share/vmware-tools/scripts/vmware/network
 @unexec if test -f %D/share/vmware-tools/tools.conf; then rm -f %D/share/vmware-tools/tools.conf; fi
@@ -57,7 +52,6 @@ share/vmware-tools/scripts/vmware/network
 @dirrmtry lib/vmware-tools/modules/input
 @dirrmtry lib/vmware-tools/modules
 @dirrmtry lib/vmware-tools
-@dirrmtry etc/vmware-tools
 @dirrmtry share/open-vm-tools/messages/de
 @dirrmtry share/open-vm-tools/messages/ja
 @dirrmtry share/open-vm-tools/messages/zh_CN

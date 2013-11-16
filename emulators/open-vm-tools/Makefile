@@ -6,7 +6,7 @@ PORTVERSION=		${BUILD_VER}
 PORTREVISION=		4
 PORTEPOCH=		1
 CATEGORIES=		emulators
-MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/stable-8.6.x
+MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/stable-9.2.x
 DISTNAME=		open-vm-tools-${RELEASE_VER}-${BUILD_VER}
 
 MAINTAINER=		swills@FreeBSD.org
@@ -15,8 +15,8 @@ COMMENT?=		Open VMware tools for FreeBSD VMware guests
 LICENSE=		LGPL21
 LICENSE_FILE=		${WRKSRC}/COPYING
 
-RELEASE_VER=		8.6.0
-BUILD_VER=		425873
+RELEASE_VER=		9.2.3
+BUILD_VER=		1031360
 
 WRKSRC=			${WRKDIR}/open-vm-tools-${RELEASE_VER}-${BUILD_VER}
 GNU_CONFIGURE=		yes
@@ -36,12 +36,6 @@ CONFLICTS=		open-vm-tools-[0-9]*
 .else
 .if !defined(WITHOUT_LIBNOTIFY)
 LIB_DEPENDS+=		libnotify.so:${PORTSDIR}/devel/libnotify
-.endif
-.if defined(WITH_UNITY)
-CONFIGURE_ENV+=		CUSTOM_URIPARSER_CPPFLAGS="-I${LOCALBASE}/include/uriparser"
-LIB_DEPENDS+=		liburiparser.so:${PORTSDIR}/net/uriparser
-.else
-CONFIGURE_ARGS+=	--disable-unity
 .endif
 CONFIGURE_ARGS+=	--with-x
 LDFLAGS+=		-L${LOCALBASE}/lib
