@@ -1,4 +1,5 @@
 bin/xrisk
+man/man6/xrisk.6.gz
 lib/X11/xrisk/#100_Afghanistan.xras
 lib/X11/xrisk/#101_Alaska.xras
 lib/X11/xrisk/#102_Alberta.xras
