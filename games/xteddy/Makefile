@@ -18,8 +18,8 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lXext
 
-MAN6=		xteddy.6
 PLIST_FILES=	bin/xteddy bin/xteddy_test bin/xtoys \
+		man/man6/xteddy.6.gz \
 		%%DATADIR%%/teddy.png %%DATADIR%%/xalex.png \
 		%%DATADIR%%/xbobo.png %%DATADIR%%/xbrummi.png \
 		%%DATADIR%%/xcherubino.png %%DATADIR%%/xduck.png \
@@ -30,7 +30,6 @@ PLIST_FILES=	bin/xteddy bin/xteddy_test bin/xtoys \
 		%%DATADIR%%/xtrouble.png %%DATADIR%%/xtuxxy.png
 PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
 post-patch:
 .for f in configure xteddy.c
 	@${REINPLACE_CMD} -e \
