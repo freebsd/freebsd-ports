@@ -1,10 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	webmachine
-PORTVERSION=	1.10.1
-PORTREVISION=	1
+PORTVERSION=	1.10.5
 CATEGORIES=	www devel
-MASTER_SITES=	GH
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	HTTP semantic awareness on top mochiweb
@@ -21,10 +19,14 @@ PLIST_SUB=      VERSION="${PORTVERSION}"
 USE_GITHUB=     yes
 GH_ACCOUNT=     basho
 GH_PROJECT=     webmachine
-GH_COMMIT=      d600c0e
+GH_COMMIT=      4e2d89c
 GH_TAGNAME=     ${PORTVERSION}
 
 PORTDOCS=	*
+
+post-patch:
+	@${REINPLACE_CMD} -e "s/{vsn, git}/{vsn,\"${PORTVERSION}\"}/" ${WRKSRC}/src/webmachine.app.src
+	@${RM} ${WRKSRC}/src/*.bak
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
