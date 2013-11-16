@@ -1,5 +1,5 @@
---- Imakefile.orig	Tue Oct 29 13:23:52 1991
-+++ Imakefile	Fri Oct 13 21:42:28 2000
+--- ./Imakefile.orig	1991-10-29 02:23:52.000000000 -0200
++++ ./Imakefile	2013-11-16 00:46:31.000000000 -0200
 @@ -4,11 +4,13 @@
  # in the system default BINDIR
  # BINDIR =
@@ -22,5 +22,6 @@
 +	@if [ -d $(DESTDIR)$(DATADIR) ]; then set +x; \
 +	else (set -x; $(MKDIRHIER) $(DESTDIR)$(DATADIR)); fi
  	for i in lib//**/*; do \
- 		(set -x; install -c $$i $(DATADIR)); \
+-		(set -x; install -c $$i $(DATADIR)); \
++		(set -x; install -c $$i $(DESTDIR)$(DATADIR)); \
  	done
