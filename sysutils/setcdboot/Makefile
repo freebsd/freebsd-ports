@@ -12,7 +12,6 @@ DISTFILES=
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/setcdboot
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-extract:
@@ -23,6 +22,6 @@ do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o setcdboot setcdboot.c)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/setcdboot ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/setcdboot ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.post.mk>

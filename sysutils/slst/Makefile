@@ -14,5 +14,4 @@ ALL_TARGET=	all
 
 PLIST_FILES=	bin/slst
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

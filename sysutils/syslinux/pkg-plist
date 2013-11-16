@@ -1,0 +1,412 @@
+bin/syslinux
+man/man1/syslinux.1.gz
+%%DATADIR%%/bios/com32/chain/chain.c32
+%%DATADIR%%/bios/com32/cmenu/complex.c32
+%%DATADIR%%/bios/com32/cmenu/display.c32
+%%DATADIR%%/bios/com32/cmenu/libmenu/libmenu.c32
+%%DATADIR%%/bios/com32/cmenu/simple.c32
+%%DATADIR%%/bios/com32/cmenu/test.c
+%%DATADIR%%/bios/com32/cmenu/test.c32
+%%DATADIR%%/bios/com32/cmenu/test2.c
+%%DATADIR%%/bios/com32/cmenu/test2.c32
+%%DATADIR%%/bios/com32/elflink/ldlinux/ldlinux.c32
+%%DATADIR%%/bios/com32/elflink/ldlinux/ldlinux.elf
+%%DATADIR%%/bios/com32/gfxboot/gfxboot.c32
+%%DATADIR%%/bios/com32/gfxboot/gfxboot.elf
+%%DATADIR%%/bios/com32/gpllib/libgpl.c32
+%%DATADIR%%/bios/com32/gpllib/libgpl.elf
+%%DATADIR%%/bios/com32/hdt/hdt.c32
+%%DATADIR%%/bios/com32/lib/libcom32.c32
+%%DATADIR%%/bios/com32/lib/libcom32.elf
+%%DATADIR%%/bios/com32/libutil/libutil.c32
+%%DATADIR%%/bios/com32/libutil/libutil_lnx.a
+%%DATADIR%%/bios/com32/lua/src/liblua.c32
+%%DATADIR%%/bios/com32/lua/src/lua.c32
+%%DATADIR%%/bios/com32/mboot/mboot.c32
+%%DATADIR%%/bios/com32/menu/menu.c32
+%%DATADIR%%/bios/com32/menu/vesamenu.c32
+%%DATADIR%%/bios/com32/modules/cat.c32
+%%DATADIR%%/bios/com32/modules/cmd.c32
+%%DATADIR%%/bios/com32/modules/config.c32
+%%DATADIR%%/bios/com32/modules/cptime.c32
+%%DATADIR%%/bios/com32/modules/cpuid.c32
+%%DATADIR%%/bios/com32/modules/cpuidtest.c32
+%%DATADIR%%/bios/com32/modules/disk.c32
+%%DATADIR%%/bios/com32/modules/dmitest.c32
+%%DATADIR%%/bios/com32/modules/elf.c32
+%%DATADIR%%/bios/com32/modules/ethersel.c32
+%%DATADIR%%/bios/com32/modules/gpxecmd.c32
+%%DATADIR%%/bios/com32/modules/hexdump.c32
+%%DATADIR%%/bios/com32/modules/host.c32
+%%DATADIR%%/bios/com32/modules/ifcpu.c32
+%%DATADIR%%/bios/com32/modules/ifcpu64.c32
+%%DATADIR%%/bios/com32/modules/ifmemdsk.c32
+%%DATADIR%%/bios/com32/modules/ifplop.c32
+%%DATADIR%%/bios/com32/modules/kbdmap.c32
+%%DATADIR%%/bios/com32/modules/kontron_wdt.c32
+%%DATADIR%%/bios/com32/modules/linux.c32
+%%DATADIR%%/bios/com32/modules/ls.c32
+%%DATADIR%%/bios/com32/modules/meminfo.c32
+%%DATADIR%%/bios/com32/modules/pcitest.c32
+%%DATADIR%%/bios/com32/modules/pmload.c32
+%%DATADIR%%/bios/com32/modules/poweroff.c32
+%%DATADIR%%/bios/com32/modules/prdhcp.c32
+%%DATADIR%%/bios/com32/modules/pwd.c32
+%%DATADIR%%/bios/com32/modules/pxechn.c32
+%%DATADIR%%/bios/com32/modules/reboot.c32
+%%DATADIR%%/bios/com32/modules/sanboot.c32
+%%DATADIR%%/bios/com32/modules/sdi.c32
+%%DATADIR%%/bios/com32/modules/vesainfo.c32
+%%DATADIR%%/bios/com32/modules/vpdtest.c32
+%%DATADIR%%/bios/com32/modules/whichsys.c32
+%%DATADIR%%/bios/com32/modules/zzjson.c32
+%%DATADIR%%/bios/com32/rosh/rosh.c32
+%%DATADIR%%/bios/com32/samples/advdump.c32
+%%DATADIR%%/bios/com32/samples/entrydump.c32
+%%DATADIR%%/bios/com32/samples/fancyhello.c32
+%%DATADIR%%/bios/com32/samples/fancyhello.lnx
+%%DATADIR%%/bios/com32/samples/hello.c32
+%%DATADIR%%/bios/com32/samples/keytest.c32
+%%DATADIR%%/bios/com32/samples/keytest.lnx
+%%DATADIR%%/bios/com32/samples/localboot.c32
+%%DATADIR%%/bios/com32/samples/resolv.c32
+%%DATADIR%%/bios/com32/samples/serialinfo.c32
+%%DATADIR%%/bios/com32/sysdump/sysdump.c32
+%%DATADIR%%/bios/com32/sysdump/sysdump.elf
+%%DATADIR%%/bios/core/isolinux-debug.bin
+%%DATADIR%%/bios/core/isolinux.bin
+%%DATADIR%%/bios/core/kwdhash.gen
+%%DATADIR%%/bios/core/ldlinux.bin
+%%DATADIR%%/bios/core/ldlinux.bss
+%%DATADIR%%/bios/core/ldlinux.sys
+%%DATADIR%%/bios/core/lpxelinux.0
+%%DATADIR%%/bios/core/lpxelinux.bin
+%%DATADIR%%/bios/core/pxelinux.0
+%%DATADIR%%/bios/core/pxelinux.bin
+%%DATADIR%%/bios/diag/geodsp/geodsp1s.bin
+%%DATADIR%%/bios/diag/geodsp/geodsp1s.img.xz
+%%DATADIR%%/bios/diag/geodsp/geodspms.bin
+%%DATADIR%%/bios/diag/geodsp/geodspms.img.xz
+%%DATADIR%%/bios/diag/mbr/handoff.bin
+%%DATADIR%%/bios/dos/syslinux.com
+%%DATADIR%%/bios/dosutil/copybs.com
+%%DATADIR%%/bios/dosutil/eltorito.sys
+%%DATADIR%%/bios/extlinux/extlinux
+%%DATADIR%%/bios/gpxe/gpxelinux.0
+%%DATADIR%%/bios/gpxe/gpxelinuxk.0
+%%DATADIR%%/bios/libinstaller/bootsect_bin.c
+%%DATADIR%%/bios/libinstaller/gptmbr_bin.c
+%%DATADIR%%/bios/libinstaller/ldlinux_bin.c
+%%DATADIR%%/bios/libinstaller/ldlinuxc32_bin.c
+%%DATADIR%%/bios/libinstaller/mbr_bin.c
+%%DATADIR%%/bios/linux/syslinux
+%%DATADIR%%/bios/linux/syslinux-nomtools
+%%DATADIR%%/bios/mbr/altmbr.bin
+%%DATADIR%%/bios/mbr/altmbr_c.bin
+%%DATADIR%%/bios/mbr/altmbr_f.bin
+%%DATADIR%%/bios/mbr/gptmbr.bin
+%%DATADIR%%/bios/mbr/gptmbr_c.bin
+%%DATADIR%%/bios/mbr/gptmbr_f.bin
+%%DATADIR%%/bios/mbr/isohdpfx.bin
+%%DATADIR%%/bios/mbr/isohdpfx_c.bin
+%%DATADIR%%/bios/mbr/isohdpfx_f.bin
+%%DATADIR%%/bios/mbr/isohdppx.bin
+%%DATADIR%%/bios/mbr/isohdppx_c.bin
+%%DATADIR%%/bios/mbr/isohdppx_f.bin
+%%DATADIR%%/bios/mbr/mbr.bin
+%%DATADIR%%/bios/mbr/mbr_c.bin
+%%DATADIR%%/bios/mbr/mbr_f.bin
+%%DATADIR%%/bios/memdisk/memdisk
+%%DATADIR%%/bios/memdump/memdump.com
+%%DATADIR%%/bios/mtools/bootsect_bin.o
+%%DATADIR%%/bios/mtools/cache.o
+%%DATADIR%%/bios/mtools/fatchain.o
+%%DATADIR%%/bios/mtools/fs.o
+%%DATADIR%%/bios/mtools/ldlinux_bin.o
+%%DATADIR%%/bios/mtools/ldlinuxc32_bin.o
+%%DATADIR%%/bios/mtools/open.o
+%%DATADIR%%/bios/mtools/searchdir.o
+%%DATADIR%%/bios/mtools/setadv.o
+%%DATADIR%%/bios/mtools/syslinux
+%%DATADIR%%/bios/mtools/syslinux.o
+%%DATADIR%%/bios/mtools/syslxmod.o
+%%DATADIR%%/bios/mtools/syslxopt.o
+%%DATADIR%%/bios/sample/syslogo.lss
+%%DATADIR%%/bios/utils/gethostip
+%%DATADIR%%/bios/utils/isohybrid
+%%DATADIR%%/bios/utils/isohybrid.pl
+%%DATADIR%%/bios/utils/memdiskfind
+%%DATADIR%%/bios/utils/mkdiskimage
+%%DATADIR%%/bios/version.gen
+%%DATADIR%%/bios/version.h
+%%DATADIR%%/bios/win32/syslinux.exe
+%%DATADIR%%/bios/win64/syslinux64.exe
+%%DATADIR%%/efi32/com32/chain/chain.c32
+%%DATADIR%%/efi32/com32/cmenu/complex.c32
+%%DATADIR%%/efi32/com32/cmenu/display.c32
+%%DATADIR%%/efi32/com32/cmenu/libmenu/libmenu.c32
+%%DATADIR%%/efi32/com32/cmenu/simple.c32
+%%DATADIR%%/efi32/com32/cmenu/test.c
+%%DATADIR%%/efi32/com32/cmenu/test.c32
+%%DATADIR%%/efi32/com32/cmenu/test2.c
+%%DATADIR%%/efi32/com32/cmenu/test2.c32
+%%DATADIR%%/efi32/com32/elflink/ldlinux/ldlinux.e32
+%%DATADIR%%/efi32/com32/elflink/ldlinux/ldlinux.elf
+%%DATADIR%%/efi32/com32/gfxboot/gfxboot.c32
+%%DATADIR%%/efi32/com32/gfxboot/gfxboot.elf
+%%DATADIR%%/efi32/com32/gpllib/libgpl.c32
+%%DATADIR%%/efi32/com32/gpllib/libgpl.elf
+%%DATADIR%%/efi32/com32/hdt/hdt.c32
+%%DATADIR%%/efi32/com32/lib/libcom32.c32
+%%DATADIR%%/efi32/com32/lib/libcom32.elf
+%%DATADIR%%/efi32/com32/libutil/libutil.c32
+%%DATADIR%%/efi32/com32/libutil/libutil_lnx.a
+%%DATADIR%%/efi32/com32/lua/src/liblua.c32
+%%DATADIR%%/efi32/com32/lua/src/lua.c32
+%%DATADIR%%/efi32/com32/mboot/mboot.c32
+%%DATADIR%%/efi32/com32/menu/menu.c32
+%%DATADIR%%/efi32/com32/menu/vesamenu.c32
+%%DATADIR%%/efi32/com32/modules/cat.c32
+%%DATADIR%%/efi32/com32/modules/cmd.c32
+%%DATADIR%%/efi32/com32/modules/config.c32
+%%DATADIR%%/efi32/com32/modules/cptime.c32
+%%DATADIR%%/efi32/com32/modules/cpuid.c32
+%%DATADIR%%/efi32/com32/modules/cpuidtest.c32
+%%DATADIR%%/efi32/com32/modules/disk.c32
+%%DATADIR%%/efi32/com32/modules/dmitest.c32
+%%DATADIR%%/efi32/com32/modules/elf.c32
+%%DATADIR%%/efi32/com32/modules/ethersel.c32
+%%DATADIR%%/efi32/com32/modules/gpxecmd.c32
+%%DATADIR%%/efi32/com32/modules/hexdump.c32
+%%DATADIR%%/efi32/com32/modules/host.c32
+%%DATADIR%%/efi32/com32/modules/ifcpu.c32
+%%DATADIR%%/efi32/com32/modules/ifcpu64.c32
+%%DATADIR%%/efi32/com32/modules/ifmemdsk.c32
+%%DATADIR%%/efi32/com32/modules/ifplop.c32
+%%DATADIR%%/efi32/com32/modules/kbdmap.c32
+%%DATADIR%%/efi32/com32/modules/kontron_wdt.c32
+%%DATADIR%%/efi32/com32/modules/linux.c32
+%%DATADIR%%/efi32/com32/modules/ls.c32
+%%DATADIR%%/efi32/com32/modules/meminfo.c32
+%%DATADIR%%/efi32/com32/modules/pcitest.c32
+%%DATADIR%%/efi32/com32/modules/pmload.c32
+%%DATADIR%%/efi32/com32/modules/poweroff.c32
+%%DATADIR%%/efi32/com32/modules/prdhcp.c32
+%%DATADIR%%/efi32/com32/modules/pwd.c32
+%%DATADIR%%/efi32/com32/modules/pxechn.c32
+%%DATADIR%%/efi32/com32/modules/reboot.c32
+%%DATADIR%%/efi32/com32/modules/sanboot.c32
+%%DATADIR%%/efi32/com32/modules/sdi.c32
+%%DATADIR%%/efi32/com32/modules/vesainfo.c32
+%%DATADIR%%/efi32/com32/modules/vpdtest.c32
+%%DATADIR%%/efi32/com32/modules/whichsys.c32
+%%DATADIR%%/efi32/com32/modules/zzjson.c32
+%%DATADIR%%/efi32/com32/rosh/rosh.c32
+%%DATADIR%%/efi32/com32/samples/advdump.c32
+%%DATADIR%%/efi32/com32/samples/entrydump.c32
+%%DATADIR%%/efi32/com32/samples/fancyhello.c32
+%%DATADIR%%/efi32/com32/samples/fancyhello.lnx
+%%DATADIR%%/efi32/com32/samples/hello.c32
+%%DATADIR%%/efi32/com32/samples/keytest.c32
+%%DATADIR%%/efi32/com32/samples/keytest.lnx
+%%DATADIR%%/efi32/com32/samples/localboot.c32
+%%DATADIR%%/efi32/com32/samples/resolv.c32
+%%DATADIR%%/efi32/com32/samples/serialinfo.c32
+%%DATADIR%%/efi32/com32/sysdump/sysdump.c32
+%%DATADIR%%/efi32/com32/sysdump/sysdump.elf
+%%DATADIR%%/efi32/efi/syslinux.efi
+%%DATADIR%%/efi32/mbr/altmbr.bin
+%%DATADIR%%/efi32/mbr/altmbr_c.bin
+%%DATADIR%%/efi32/mbr/altmbr_f.bin
+%%DATADIR%%/efi32/mbr/gptmbr.bin
+%%DATADIR%%/efi32/mbr/gptmbr_c.bin
+%%DATADIR%%/efi32/mbr/gptmbr_f.bin
+%%DATADIR%%/efi32/mbr/isohdpfx.bin
+%%DATADIR%%/efi32/mbr/isohdpfx_c.bin
+%%DATADIR%%/efi32/mbr/isohdpfx_f.bin
+%%DATADIR%%/efi32/mbr/isohdppx.bin
+%%DATADIR%%/efi32/mbr/isohdppx_c.bin
+%%DATADIR%%/efi32/mbr/isohdppx_f.bin
+%%DATADIR%%/efi32/mbr/mbr.bin
+%%DATADIR%%/efi32/mbr/mbr_c.bin
+%%DATADIR%%/efi32/mbr/mbr_f.bin
+%%DATADIR%%/efi32/sample/syslogo.lss
+%%DATADIR%%/efi32/version.gen
+%%DATADIR%%/efi32/version.h
+%%DATADIR%%/efi64/com32/chain/chain.c32
+%%DATADIR%%/efi64/com32/cmenu/complex.c32
+%%DATADIR%%/efi64/com32/cmenu/display.c32
+%%DATADIR%%/efi64/com32/cmenu/libmenu/libmenu.c32
+%%DATADIR%%/efi64/com32/cmenu/simple.c32
+%%DATADIR%%/efi64/com32/cmenu/test.c
+%%DATADIR%%/efi64/com32/cmenu/test.c32
+%%DATADIR%%/efi64/com32/cmenu/test2.c
+%%DATADIR%%/efi64/com32/cmenu/test2.c32
+%%DATADIR%%/efi64/com32/elflink/ldlinux/ldlinux.e64
+%%DATADIR%%/efi64/com32/elflink/ldlinux/ldlinux.elf
+%%DATADIR%%/efi64/com32/gfxboot/gfxboot.c32
+%%DATADIR%%/efi64/com32/gfxboot/gfxboot.elf
+%%DATADIR%%/efi64/com32/gpllib/libgpl.c32
+%%DATADIR%%/efi64/com32/gpllib/libgpl.elf
+%%DATADIR%%/efi64/com32/hdt/hdt.c32
+%%DATADIR%%/efi64/com32/lib/libcom32.c32
+%%DATADIR%%/efi64/com32/lib/libcom32.elf
+%%DATADIR%%/efi64/com32/libutil/libutil.c32
+%%DATADIR%%/efi64/com32/libutil/libutil_lnx.a
+%%DATADIR%%/efi64/com32/lua/src/liblua.c32
+%%DATADIR%%/efi64/com32/lua/src/lua.c32
+%%DATADIR%%/efi64/com32/mboot/mboot.c32
+%%DATADIR%%/efi64/com32/menu/menu.c32
+%%DATADIR%%/efi64/com32/menu/vesamenu.c32
+%%DATADIR%%/efi64/com32/modules/cat.c32
+%%DATADIR%%/efi64/com32/modules/cmd.c32
+%%DATADIR%%/efi64/com32/modules/config.c32
+%%DATADIR%%/efi64/com32/modules/cptime.c32
+%%DATADIR%%/efi64/com32/modules/cpuid.c32
+%%DATADIR%%/efi64/com32/modules/cpuidtest.c32
+%%DATADIR%%/efi64/com32/modules/disk.c32
+%%DATADIR%%/efi64/com32/modules/dmitest.c32
+%%DATADIR%%/efi64/com32/modules/elf.c32
+%%DATADIR%%/efi64/com32/modules/ethersel.c32
+%%DATADIR%%/efi64/com32/modules/gpxecmd.c32
+%%DATADIR%%/efi64/com32/modules/hexdump.c32
+%%DATADIR%%/efi64/com32/modules/host.c32
+%%DATADIR%%/efi64/com32/modules/ifcpu.c32
+%%DATADIR%%/efi64/com32/modules/ifcpu64.c32
+%%DATADIR%%/efi64/com32/modules/ifmemdsk.c32
+%%DATADIR%%/efi64/com32/modules/ifplop.c32
+%%DATADIR%%/efi64/com32/modules/kbdmap.c32
+%%DATADIR%%/efi64/com32/modules/kontron_wdt.c32
+%%DATADIR%%/efi64/com32/modules/linux.c32
+%%DATADIR%%/efi64/com32/modules/ls.c32
+%%DATADIR%%/efi64/com32/modules/meminfo.c32
+%%DATADIR%%/efi64/com32/modules/pcitest.c32
+%%DATADIR%%/efi64/com32/modules/pmload.c32
+%%DATADIR%%/efi64/com32/modules/poweroff.c32
+%%DATADIR%%/efi64/com32/modules/prdhcp.c32
+%%DATADIR%%/efi64/com32/modules/pwd.c32
+%%DATADIR%%/efi64/com32/modules/pxechn.c32
+%%DATADIR%%/efi64/com32/modules/reboot.c32
+%%DATADIR%%/efi64/com32/modules/sanboot.c32
+%%DATADIR%%/efi64/com32/modules/sdi.c32
+%%DATADIR%%/efi64/com32/modules/vesainfo.c32
+%%DATADIR%%/efi64/com32/modules/vpdtest.c32
+%%DATADIR%%/efi64/com32/modules/whichsys.c32
+%%DATADIR%%/efi64/com32/modules/zzjson.c32
+%%DATADIR%%/efi64/com32/rosh/rosh.c32
+%%DATADIR%%/efi64/com32/samples/advdump.c32
+%%DATADIR%%/efi64/com32/samples/entrydump.c32
+%%DATADIR%%/efi64/com32/samples/fancyhello.c32
+%%DATADIR%%/efi64/com32/samples/fancyhello.lnx
+%%DATADIR%%/efi64/com32/samples/hello.c32
+%%DATADIR%%/efi64/com32/samples/keytest.c32
+%%DATADIR%%/efi64/com32/samples/keytest.lnx
+%%DATADIR%%/efi64/com32/samples/localboot.c32
+%%DATADIR%%/efi64/com32/samples/resolv.c32
+%%DATADIR%%/efi64/com32/samples/serialinfo.c32
+%%DATADIR%%/efi64/com32/sysdump/sysdump.c32
+%%DATADIR%%/efi64/com32/sysdump/sysdump.elf
+%%DATADIR%%/efi64/efi/syslinux.efi
+%%DATADIR%%/efi64/mbr/altmbr.bin
+%%DATADIR%%/efi64/mbr/altmbr_c.bin
+%%DATADIR%%/efi64/mbr/altmbr_f.bin
+%%DATADIR%%/efi64/mbr/gptmbr.bin
+%%DATADIR%%/efi64/mbr/gptmbr_c.bin
+%%DATADIR%%/efi64/mbr/gptmbr_f.bin
+%%DATADIR%%/efi64/mbr/isohdpfx.bin
+%%DATADIR%%/efi64/mbr/isohdpfx_c.bin
+%%DATADIR%%/efi64/mbr/isohdpfx_f.bin
+%%DATADIR%%/efi64/mbr/isohdppx.bin
+%%DATADIR%%/efi64/mbr/isohdppx_c.bin
+%%DATADIR%%/efi64/mbr/isohdppx_f.bin
+%%DATADIR%%/efi64/mbr/mbr.bin
+%%DATADIR%%/efi64/mbr/mbr_c.bin
+%%DATADIR%%/efi64/mbr/mbr_f.bin
+%%DATADIR%%/efi64/sample/syslogo.lss
+%%DATADIR%%/efi64/version.gen
+%%DATADIR%%/efi64/version.h
+@dirrm %%DATADIR%%/efi64/sample
+@dirrm %%DATADIR%%/efi64/mbr
+@dirrm %%DATADIR%%/efi64/efi
+@dirrm %%DATADIR%%/efi64/com32/sysdump
+@dirrm %%DATADIR%%/efi64/com32/samples
+@dirrm %%DATADIR%%/efi64/com32/rosh
+@dirrm %%DATADIR%%/efi64/com32/modules
+@dirrm %%DATADIR%%/efi64/com32/menu
+@dirrm %%DATADIR%%/efi64/com32/mboot
+@dirrm %%DATADIR%%/efi64/com32/lua/src
+@dirrm %%DATADIR%%/efi64/com32/lua
+@dirrm %%DATADIR%%/efi64/com32/libutil
+@dirrm %%DATADIR%%/efi64/com32/lib
+@dirrm %%DATADIR%%/efi64/com32/hdt
+@dirrm %%DATADIR%%/efi64/com32/gpllib
+@dirrm %%DATADIR%%/efi64/com32/gfxboot
+@dirrm %%DATADIR%%/efi64/com32/elflink/ldlinux
+@dirrm %%DATADIR%%/efi64/com32/elflink
+@dirrm %%DATADIR%%/efi64/com32/cmenu/libmenu
+@dirrm %%DATADIR%%/efi64/com32/cmenu
+@dirrm %%DATADIR%%/efi64/com32/chain
+@dirrm %%DATADIR%%/efi64/com32
+@dirrm %%DATADIR%%/efi64
+@dirrm %%DATADIR%%/efi32/sample
+@dirrm %%DATADIR%%/efi32/mbr
+@dirrm %%DATADIR%%/efi32/efi
+@dirrm %%DATADIR%%/efi32/com32/sysdump
+@dirrm %%DATADIR%%/efi32/com32/samples
+@dirrm %%DATADIR%%/efi32/com32/rosh
+@dirrm %%DATADIR%%/efi32/com32/modules
+@dirrm %%DATADIR%%/efi32/com32/menu
+@dirrm %%DATADIR%%/efi32/com32/mboot
+@dirrm %%DATADIR%%/efi32/com32/lua/src
+@dirrm %%DATADIR%%/efi32/com32/lua
+@dirrm %%DATADIR%%/efi32/com32/libutil
+@dirrm %%DATADIR%%/efi32/com32/lib
+@dirrm %%DATADIR%%/efi32/com32/hdt
+@dirrm %%DATADIR%%/efi32/com32/gpllib
+@dirrm %%DATADIR%%/efi32/com32/gfxboot
+@dirrm %%DATADIR%%/efi32/com32/elflink/ldlinux
+@dirrm %%DATADIR%%/efi32/com32/elflink
+@dirrm %%DATADIR%%/efi32/com32/cmenu/libmenu
+@dirrm %%DATADIR%%/efi32/com32/cmenu
+@dirrm %%DATADIR%%/efi32/com32/chain
+@dirrm %%DATADIR%%/efi32/com32
+@dirrm %%DATADIR%%/efi32
+@dirrm %%DATADIR%%/bios/win64
+@dirrm %%DATADIR%%/bios/win32
+@dirrm %%DATADIR%%/bios/utils
+@dirrm %%DATADIR%%/bios/sample
+@dirrm %%DATADIR%%/bios/mtools
+@dirrm %%DATADIR%%/bios/memdump
+@dirrm %%DATADIR%%/bios/memdisk
+@dirrm %%DATADIR%%/bios/mbr
+@dirrm %%DATADIR%%/bios/linux
+@dirrm %%DATADIR%%/bios/libinstaller
+@dirrm %%DATADIR%%/bios/gpxe
+@dirrm %%DATADIR%%/bios/extlinux
+@dirrm %%DATADIR%%/bios/dosutil
+@dirrm %%DATADIR%%/bios/dos
+@dirrm %%DATADIR%%/bios/diag/mbr
+@dirrm %%DATADIR%%/bios/diag/geodsp
+@dirrm %%DATADIR%%/bios/diag
+@dirrm %%DATADIR%%/bios/core
+@dirrm %%DATADIR%%/bios/com32/sysdump
+@dirrm %%DATADIR%%/bios/com32/samples
+@dirrm %%DATADIR%%/bios/com32/rosh
+@dirrm %%DATADIR%%/bios/com32/modules
+@dirrm %%DATADIR%%/bios/com32/menu
+@dirrm %%DATADIR%%/bios/com32/mboot
+@dirrm %%DATADIR%%/bios/com32/lua/src
+@dirrm %%DATADIR%%/bios/com32/lua
+@dirrm %%DATADIR%%/bios/com32/libutil
+@dirrm %%DATADIR%%/bios/com32/lib
+@dirrm %%DATADIR%%/bios/com32/hdt
+@dirrm %%DATADIR%%/bios/com32/gpllib
+@dirrm %%DATADIR%%/bios/com32/gfxboot
+@dirrm %%DATADIR%%/bios/com32/elflink/ldlinux
+@dirrm %%DATADIR%%/bios/com32/elflink
+@dirrm %%DATADIR%%/bios/com32/cmenu/libmenu
+@dirrm %%DATADIR%%/bios/com32/cmenu
+@dirrm %%DATADIR%%/bios/com32/chain
+@dirrm %%DATADIR%%/bios/com32
+@dirrm %%DATADIR%%/bios
+@dirrm %%DATADIR%%
