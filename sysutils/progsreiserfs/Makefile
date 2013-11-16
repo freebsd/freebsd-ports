@@ -18,7 +18,6 @@ CFLAGS+=	-Dgetopt_long_only=getopt_long
 
 EXTRA_PATCHES=	${FILESDIR}/extrapatch-progsreiserfs::libmisc::Makefile.in
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -28,9 +27,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=--disable-nls
 .endif
-
-MAN8=		cpfs.reiserfs.8 mkfs.reiserfs.8 reiserfs.8 \
-		resizefs.reiserfs.8 tunefs.reiserfs.8
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^LIBTOOL=.*|LIBTOOL=${LIBTOOL}|g' \

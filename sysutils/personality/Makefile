@@ -11,21 +11,17 @@ COMMENT=	System configuration management utility to alter system personality
 
 WRKSRC=		${WRKDIR}/src
 NO_BUILD=	YES
+SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
+PLIST_FILES=	man/man8/${PORTNAME}.8.gz sbin/personality
+
 do-extract:
 	@ ${RM} -rf ${WRKDIR}
 	@ ${MKDIR} ${WRKDIR}
 	@ ${CP} -RP ${.CURDIR}/src ${WRKDIR}
 
-MAN8=		personality.8
-PLIST_FILES=	sbin/personality
-
 do-install:
-	@ ${INSTALL_SCRIPT} ${WRKSRC}/personality ${PREFIX}/sbin
-	@ ${INSTALL_DATA} ${WRKSRC}/personality.8 ${PREFIX}/man/man8
-
-post-install:
-	@ ${CAT} ${.CURDIR}/pkg-message
+	@ ${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
+	@ ${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${PREFIX}/man/man8
 
 .include <bsd.port.mk>

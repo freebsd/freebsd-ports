@@ -1,0 +1,8 @@
+To change the personality of your system at system boot
+you have to add the following line into the /etc/rc script.
+
+[ -x %%PREFIX%%/sbin/personality ] && %%PREFIX%%/sbin/personality menu 60
+
+Make sure that you add this after mounting of the ufs filesystems.
+If you prefer you can use other values than 60 seconds.
+After 60 seconds the system boots with the last configuration.

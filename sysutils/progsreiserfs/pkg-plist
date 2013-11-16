@@ -29,6 +29,11 @@ lib/libreiserfs-0.3.so.0
 lib/libreiserfs.a
 lib/libreiserfs.la
 lib/libreiserfs.so
+man/man8/cpfs.reiserfs.8.gz
+man/man8/mkfs.reiserfs.8.gz
+man/man8/reiserfs.8.gz
+man/man8/resizefs.reiserfs.8.gz
+man/man8/tunefs.reiserfs.8.gz
 sbin/cpfs.reiserfs
 sbin/fsck.reiserfs
 sbin/mkfs.reiserfs
