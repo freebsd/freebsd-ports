@@ -6,7 +6,8 @@ PORTVERSION=	1.5.3
 PORTREVISION=	3
 CATEGORIES=	databases geography
 MASTER_SITES=	http://postgis.refractions.net/download/ \
- 		http://www.postgis.org/download/
+		http://www.postgis.org/download/
+PKGNAMESUFIX=	-legacy
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adds support for geographic objects to PostgreSQL databases
@@ -16,6 +17,9 @@ LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
 RUN_DEPENDS=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
 CONFLICTS=	postgis-2.*
+
+DEPRECATED=	EOLed upstream
+EXPIRATION_DATE=	2013-12-16
 
 USES=		bison iconv gmake perl5
 USE_GNOME=	libxml2
