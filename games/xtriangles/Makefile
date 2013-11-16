@@ -14,15 +14,15 @@ COMMENT=	Triangles puzzle
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		imake
 USE_XORG=	x11 xext xt sm ice
-MAN1=		xtriangles.1
-MANCOMPRESSED=	no
-XFREE86_HTML_MAN=	no
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/xtriangles \
+		lib/X11/app-defaults/Triangles \
+		man/man1/xtriangles.1.gz
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xtriangles ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/xtriangles ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/Triangles.ad \
-		 ${PREFIX}/lib/X11/app-defaults/Triangles
-	${INSTALL_MAN} ${WRKSRC}/xtriangles.man ${MANPREFIX}/man/man1/xtriangles.1
+		 ${STAGEDIR}${PREFIX}/lib/X11/app-defaults/Triangles
+	${INSTALL_MAN} ${WRKSRC}/xtriangles.man ${STAGEDIR}${MANPREFIX}/man/man1/xtriangles.1
 
 .include <bsd.port.mk>
