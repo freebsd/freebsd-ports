@@ -1,0 +1,6 @@
+bin/titlefix
+bin/titlefixid3
+bin/titleid3
+man/man1/titlefix.1.gz
+man/man1/titlefixid3.1.gz
+man/man1/titleid3.1.gz

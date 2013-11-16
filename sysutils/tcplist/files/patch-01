@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Apr 24 09:33:17 1997
-+++ Makefile	Thu Apr 24 10:02:39 1997
+--- Makefile.orig	2013-11-16 20:34:19.000000000 +0800
++++ Makefile	2013-11-16 20:35:17.000000000 +0800
 @@ -1,14 +1,16 @@
  # Compiler: eg. cc or gcc
  CC = cc                      
@@ -20,7 +20,7 @@
  
  # Owner of tcplist executable
  OWNER = root
-@@ -45,18 +47,18 @@
+@@ -45,18 +47,18 @@ MANEXT = 1
  # 
  # Solaris 2.x (using LSOF):
  #
@@ -47,7 +47,7 @@
  #
  
  # If you're using an old version of lsof, uncomment this:
-@@ -76,8 +78,8 @@
+@@ -76,8 +78,8 @@ OBJS = $(SRCS:.c=.o)
  RM = /bin/rm -rf
  CP = /bin/cp
  CHMOD = /bin/chmod
@@ -58,3 +58,22 @@
  
  all:: tcplist
  
+@@ -95,13 +97,13 @@ depend:
+ 
+ install: tcplist
+ 	strip tcplist
+-	$(CP) tcplist $(BINDIR)
+-	$(CHGRP) $(GROUP) $(BINDIR)/tcplist
+-	$(CHMOD) $(MODE) $(BINDIR)/tcplist
++	$(CP) tcplist $(DESTDIR)$(BINDIR)
++	$(CHGRP) $(GROUP) $(DESTDIR)$(BINDIR)/tcplist
++	$(CHMOD) $(MODE) $(DESTDIR)$(BINDIR)/tcplist
+ 
+ install.man: tcplist.1
+-	$(CP) tcplist.1 $(MANDIR)/tcplist.$(MANEXT)
+-	$(CHMOD) $(MANMODE) $(MANDIR)/tcplist.$(MANEXT)
++	$(CP) tcplist.1 $(DESTDIR)$(MANDIR)/tcplist.$(MANEXT)
++	$(CHMOD) $(MANMODE) $(DESTDIR)$(MANDIR)/tcplist.$(MANEXT)
+ 
+ shar:
+ 	shar `awk '{print $$1}' MANIFEST` >tcplist-`awk '{print $$7;exit}' patchlevel.h`.shar

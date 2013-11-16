@@ -15,7 +15,4 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/py
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-MAN1=		tentakel.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

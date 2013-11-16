@@ -14,13 +14,12 @@ RUN_DEPENDS=	id3v2:${PORTSDIR}/audio/id3v2
 USES=		perl5
 USE_PERL5=	run
 NO_BUILD=	yes
-MAN1=		titlefix.1 titlefixid3.1 titleid3.1
-PLIST_FILES=	bin/titlefix bin/titlefixid3 bin/titleid3
+MAN1S=		titlefix.1 titlefixid3.1 titleid3.1
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	@${LN} -sf ${PREFIX}/bin/${PORTNAME} ${PREFIX}/bin/titlefixid3
-	@${LN} -sf ${PREFIX}/bin/${PORTNAME} ${PREFIX}/bin/titleid3
-	@${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/man1/,} ${MAN1PREFIX}/man/man1/
+	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	@cd ${STAGEDIR}${PREFIX}/bin; ${LN} -sf ${PORTNAME} titlefixid3
+	@cd ${STAGEDIR}${PREFIX}/bin; ${LN} -sf ${PORTNAME} titleid3
+	@${INSTALL_MAN} ${MAN1S:S,^,${WRKSRC}/man1/,} ${STAGEDIR}${MAN1PREFIX}/man/man1/
+
 .include <bsd.port.mk>

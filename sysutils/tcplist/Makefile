@@ -18,7 +18,5 @@ EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|sh
 NO_WRKSUBDIR=	yes
 INSTALL_TARGET=	install install.man
-MAN1=		tcplist.1
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

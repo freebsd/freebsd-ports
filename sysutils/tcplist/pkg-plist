@@ -1,2 +1,2 @@
-@comment $FreeBSD$
 bin/tcplist
+man/man1/tcplist.1.gz
