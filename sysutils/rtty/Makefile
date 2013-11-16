@@ -16,5 +16,4 @@ EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|sh
 NO_WRKSUBDIR=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

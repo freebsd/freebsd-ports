@@ -1,6 +1,6 @@
---- Makefile.orig	Fri Nov  9 15:30:45 2001
-+++ Makefile	Fri Nov  9 15:32:24 2001
-@@ -19,12 +19,12 @@
+--- Makefile.orig	2013-11-16 11:45:54.000000000 +0800
++++ Makefile	2013-11-16 11:46:33.000000000 +0800
+@@ -19,12 +19,12 @@ VERSION = 4.0
  
  VPATH = ../src
  
@@ -16,7 +16,7 @@
  #
  # use -U to undefine, -D to define
  #	DEBUG		include code to help debug this software
-@@ -37,7 +37,7 @@
+@@ -37,7 +37,7 @@ CDEBUG = -O
  CDEFS = -DDEBUG -UWANT_TCPIP -UNEED_BITYPES_H -UNEED_INET_ATON \
  	-UNO_SOCKADDR_LEN -UNO_HSTRERROR
  #
@@ -25,12 +25,23 @@
  LIBS = -lcrypt
  #(if WANT_TCPIP defined and this isn't in your libc)
  # -lresolv
-@@ -64,7 +64,7 @@
- 		test -d $(DESTPATH)/$$x || mkdir $(DESTPATH)/$$x; \
+@@ -59,15 +59,15 @@ kit:; shar README Makefile *.c *.h *.sh 
+ bin.tar:; tar cf bin.tar $(ALL)
+ 
+ install: $(ALL) Makefile
+-	-set -x; test -d $(DESTPATH) || mkdir $(DESTPATH)
++	-set -x; test -d $(DESTDIR)$(DESTPATH) || mkdir $(DESTDIR)$(DESTPATH)
+ 	-set +e -x; for x in bin dev sock log pid opt out; do \
+-		test -d $(DESTPATH)/$$x || mkdir $(DESTPATH)/$$x; \
++		test -d $(DESTDIR)$(DESTPATH)/$$x || mkdir $(DESTDIR)$(DESTPATH)/$$x; \
  	done
  	set -x; for x in $(BINARY); do \
 -		install -c -m 111 $$x $(DESTBIN)/$$x; \
-+		install -c -s -m 111 $$x $(DESTBIN)/$$x; \
++		install -c -s -m 111 $$x $(DESTDIR)$(DESTBIN)/$$x; \
  	done
  	set -x; for x in $(SCRIPT); do \
- 		install -c -m 555 $$x $(DESTBIN)/$$x; \
+-		install -c -m 555 $$x $(DESTBIN)/$$x; \
++		install -c -m 555 $$x $(DESTDIR)$(DESTBIN)/$$x; \
+ 	done
+ 
+ ttysrv: ttysrv.o ttyprot.o connutil.o misc.o version.o
