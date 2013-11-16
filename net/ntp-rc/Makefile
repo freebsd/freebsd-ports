@@ -5,6 +5,7 @@ PORTNAME=	ntp
 PORTVERSION?=	4.2.6p5.r1
 PORTREVISION=	4
 CATEGORIES=	net ipv6
+PKGNAMESUFFIX=	-rc
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ \
 		ftp://ftp.archive.de.uu.net/pub/unix/ntp/ntp4/ntp-4.2/ \
@@ -14,8 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/P/p/:S/.r/-RC/:S/.b/-beta/}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 IGNORE=		RC branch not currently active
-
-LATEST_LINK=	${PORTNAME}-rc
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake libtool
