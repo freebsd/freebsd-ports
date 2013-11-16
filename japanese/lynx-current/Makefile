@@ -7,9 +7,10 @@ CATEGORIES=	japanese www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/ \
 		http://ftp2.uk.freebsd.org/sites/lynx.isc.org/current/
 DISTNAME=	${PORTNAME}${VERSION}${MINOR_VERSION}
+PKGNAMESUFFIX=	-current
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A terminal-based World-Wide Web Client with multi-byte modification (development version)
+COMMENT=	Terminal WWW client with multi-byte modification (development version)
 
 VERSION=	2.8.8
 MINOR_VERSION=	dev.3
