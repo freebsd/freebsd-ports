@@ -11,16 +11,13 @@ DISTNAME=	${PORTNAME}-src
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A curses version of the dice game for one or more players
+COMMENT=	Curses version of the dice game for one or more players
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-# Distribution does not include an install target. So here it is.
-#
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} -m 2755 -o root -g games ${WRKSRC}/yahtzee ${PREFIX}/bin
-	${MKDIR} -m 0755 ${DATADIR}
-	${INSTALL_DATA} -m 0664 -o root -g games /dev/null ${DATADIR}/yahtzee.sco
+	${INSTALL_PROGRAM} ${WRKSRC}/yahtzee ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} -m 0755 ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} -m 0664 /dev/null ${STAGEDIR}${DATADIR}/yahtzee.sco
 
 .include <bsd.port.mk>
