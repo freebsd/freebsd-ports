@@ -6,6 +6,7 @@ PORTVERSION=	2.12.10
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
+PKGNAMESUFFIX=	20
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	GTK+ and GNOME interfaces for the .NET runtime
@@ -18,11 +19,11 @@ LATEST_LINK=	gtk-sharp20
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		perl5 gmake pkgconfig
+USE_GNOME=	gtk20 libglade2
+USES=		gmake pathfix perl5 pkgconfig
 USE_PERL5=	run
-USE_GNOME=	gnomehack gtk20 libglade2
+MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.pl' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^#!/usr/bin/perl|#!${PERL}|'
