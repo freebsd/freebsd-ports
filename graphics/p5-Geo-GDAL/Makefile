@@ -20,7 +20,6 @@ LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
 USES=		perl5
 WRKSRC=		${WRKDIR}/${DISTNAME}/swig/perl
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's| install| pure_install|' ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e 's|(const char \*)""|(char \*)""|' ${WRKSRC}/gdal_wrap.cpp ${WRKSRC}/ogr_wrap.cpp
