@@ -1,6 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/Load/XS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Load/XS/XS.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Load/XS/XS.bs
+%%PERL5_MAN3%%/Class::Load::XS.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Load/XS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Load
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class

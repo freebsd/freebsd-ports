@@ -1,3 +1,4 @@
 %%SITE_PERL%%/Config/Model/Tester.pm
+%%PERL5_MAN3%%/Config::Model::Tester.3.gz
 @dirrmtry %%SITE_PERL%%/Config/Model
 @dirrmtry %%SITE_PERL%%/Config
