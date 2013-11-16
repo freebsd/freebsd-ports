@@ -14,8 +14,6 @@ USE_XORG=	x11 xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=""
 
-MAN1=		${PORTNAME}.1
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

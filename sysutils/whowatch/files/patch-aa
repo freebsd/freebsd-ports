@@ -1,13 +1,13 @@
---- Makefile.in.orig	Wed Jun 21 18:42:29 2000
-+++ Makefile.in	Wed Jun 21 18:42:36 2000
-@@ -70,8 +70,8 @@
+--- Makefile.in.orig	2000-06-06 18:42:04.000000000 +0800
++++ Makefile.in	2013-11-16 21:39:43.000000000 +0800
+@@ -70,8 +70,8 @@ clean: 
  	rm -rf ./*.o
  	rm -f whowatch
  install: whowatch
 -	$(INSTALL) -m 755 whowatch $(bindir)/whowatch
 -	$(INSTALL) -m 644 whowatch.1 $(mandir)/man1/whowatch.1
-+	$(BSD_INSTALL_PROGRAM) whowatch $(bindir)/whowatch
-+	$(BSD_INSTALL_MAN) whowatch.1 $(mandir)/man1/whowatch.1
++	$(BSD_INSTALL_PROGRAM) whowatch $(DESTDIR)$(bindir)/whowatch
++	$(BSD_INSTALL_MAN) whowatch.1 $(DESTDIR)$(mandir)/man1/whowatch.1
  	
  distclean:
  	make clean

@@ -14,10 +14,8 @@ COMMENT=	Displays information in real time about users currently logged on
 
 GNU_CONFIGURE=	yes
 
-MAN1=		whowatch.1
-PLIST_FILES=	bin/whowatch
+PLIST_FILES=	bin/whowatch man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900006
