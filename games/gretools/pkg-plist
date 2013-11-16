@@ -4,8 +4,8 @@ bin/gretools
 %%PYTHON_SITELIBDIR%%/gretools/gretools.pyc
 %%PYTHON_SITELIBDIR%%/gretools/gretools.pyo
 share/applications/gretools.desktop
-share/gretools/glade/gretools.glade
-share/gretools/lists/default.wl
+%%DATADIR%%/glade/gretools.glade
+%%DATADIR%%/lists/default.wl
 share/gnome/help/gretools/C/figures/gretools_start_window.png
 share/gnome/help/gretools/C/gretools.xml
 share/gnome/help/gretools/C/legal.xml
@@ -15,9 +15,9 @@ share/pixmaps/gretools.png
 @dirrm share/gnome/help/gretools/C/figures
 @dirrm share/gnome/help/gretools/C
 @dirrm share/gnome/help/gretools
-@dirrm share/gretools/lists
-@dirrm share/gretools/glade
-@dirrm share/gretools
+@dirrm %%DATADIR%%/lists
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/gretools
 @dirrmtry %%PYTHON_SITELIBDIR%%
 @dirrmtry %%PYTHON_LIBDIR%%
