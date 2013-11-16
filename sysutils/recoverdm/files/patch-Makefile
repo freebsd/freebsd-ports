@@ -1,38 +1,33 @@
-*** Makefile.orig	Sun Jan 22 05:15:13 2006
---- Makefile	Sun Jan 22 05:22:31 2006
-***************
-*** 1,14 ****
-  VERSION=0.19
-  
-! CFLAGS=-Wall -Wshadow -Wconversion -Wwrite-strings -Winline -O2 -DVERSION=\"$(VERSION)\"
-  LDFLAGS=
-  
-  OBJSr=recoverdm.o dev.o io.o utils.o error.o
-  OBJSm=mergebad.o io.o utils.o error.o
-  
-  all: recoverdm mergebad
-  
-  recoverdm: $(OBJSr)
-  	$(CC) -Wall -W $(OBJSr) $(LDFLAGS) -o recoverdm
-  	strip recoverdm
-  	echo
---- 1,19 ----
-  VERSION=0.19
-  
-! CFLAGS+=-Wall -DVERSION=\"$(VERSION)\"
-  LDFLAGS=
-  
-  OBJSr=recoverdm.o dev.o io.o utils.o error.o
-  OBJSm=mergebad.o io.o utils.o error.o
-  
-  all: recoverdm mergebad
-+ 
-+ install:
-+ 	${INSTALL} -m 755 recoverdm ${PREFIX}/bin
-+ 	${INSTALL} -m 755 mergebad ${PREFIX}/bin
-+ 	${INSTALL} -m 644 recoverdm.1 ${PREFIX}/man/man1
-  
-  recoverdm: $(OBJSr)
-  	$(CC) -Wall -W $(OBJSr) $(LDFLAGS) -o recoverdm
-  	strip recoverdm
-  	echo
+--- Makefile.orig	2009-01-06 23:22:12.000000000 +0800
++++ Makefile	2013-11-16 11:41:56.000000000 +0800
+@@ -1,6 +1,6 @@
+ VERSION=0.20
+ 
+-CFLAGS=-Wall -Wshadow -Wconversion -Wwrite-strings -Winline -O2 -DVERSION=\"$(VERSION)\"
++CFLAGS+=-Wall -DVERSION=\"$(VERSION)\"
+ LDFLAGS=
+ 
+ OBJSr=recoverdm.o dev.o io.o utils.o error.o
+@@ -8,17 +8,17 @@ OBJSm=mergebad.o io.o utils.o error.o
+ 
+ all: recoverdm mergebad
+ 
++install:
++	${INSTALL} -m 755 recoverdm $(DESTDIR)$(PREFIX)/bin
++	${INSTALL} -m 755 mergebad $(DESTDIR)$(PREFIX)/bin
++	${INSTALL} -m 644 recoverdm.1 $(DESTDIR)$(PREFIX)/man/man1
++
+ recoverdm: $(OBJSr)
+ 	$(CC) -Wall -W $(OBJSr) $(LDFLAGS) -o recoverdm
+ 
+ mergebad: $(OBJSm)
+ 	$(CC) -Wall -W $(OBJSm) $(LDFLAGS) -o mergebad
+ 
+-install:
+-	cp recoverdm mergebad /usr/local/bin
+-	echo
+-	echo Oh, blatant plug: http://keetweej.vanheusden.com/wishlist.html
+-
+ clean:
+ 	rm -f $(OBJSr) $(OBJSm) recoverdm mergebad core
+ 

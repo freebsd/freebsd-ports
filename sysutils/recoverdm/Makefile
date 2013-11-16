@@ -10,9 +10,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Recover files and discs with damaged sectors
 
-MAN1=		recoverdm.1
+PLIST_FILES=	bin/mergebad bin/recoverdm man/man1/${PORTNAME}.1.gz
 
-PLIST_FILES=	bin/mergebad bin/recoverdm
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

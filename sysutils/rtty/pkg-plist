@@ -6,17 +6,11 @@ rtty/bin/locbrok
 rtty/bin/rtty
 rtty/bin/startsrv
 rtty/bin/ttysrv
-@exec mkdir -p %D/rtty/dev
-@exec mkdir -p %D/rtty/log
-@exec mkdir -p %D/rtty/opt
-@exec mkdir -p %D/rtty/out
-@exec mkdir -p %D/rtty/pid
-@exec mkdir -p %D/rtty/sock
 @dirrmtry rtty/sock
 @dirrmtry rtty/pid
 @dirrmtry rtty/out
 @dirrmtry rtty/opt
 @dirrmtry rtty/log
 @dirrmtry rtty/dev
-@dirrm rtty/bin
-@dirrm rtty
+@dirrmtry rtty/bin
+@dirrmtry rtty
