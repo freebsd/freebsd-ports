@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		${SAMBA_BASENAME}36
-PORTVERSION=		3.6.18
+PORTVERSION=		3.6.20
 PORTREVISION?=		0
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
@@ -29,9 +29,8 @@ IPATHS=			-I${WRKDIR}/${DISTNAME}/source3/m4 -I${WRKDIR}/${DISTNAME}/m4 -I${WRKD
 AUTOHEADER_ARGS=	${IPATHS}
 AUTOCONF_ARGS=		${IPATHS}
 
-USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
-USES=			pkgconfig iconv
+USES=			gmake pkgconfig iconv
 USE_AUTOTOOLS=		autoconf autoheader
 USE_LDCONFIG=		${SAMBA_LIBDIR}
 # pkg-config is used to find talloc
