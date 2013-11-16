@@ -2,5 +2,9 @@
 %%SITE_PERL%%/Catalyst/DispatchType/LocalRegexp.pm
 %%SITE_PERL%%/Catalyst/DispatchType/Regex.pm
 %%SITE_PERL%%/Catalyst/DispatchType/Regexp.pm
+%%PERL5_MAN3%%/Catalyst::DispatchType::LocalRegex.3.gz
+%%PERL5_MAN3%%/Catalyst::DispatchType::LocalRegexp.3.gz
+%%PERL5_MAN3%%/Catalyst::DispatchType::Regex.3.gz
+%%PERL5_MAN3%%/Catalyst::DispatchType::Regexp.3.gz
 @dirrmtry %%SITE_PERL%%/Catalyst/DispatchType
 @dirrmtry %%SITE_PERL%%/Catalyst

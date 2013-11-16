@@ -17,15 +17,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Class-Accessor-Lite>=0.05:${PORTSDIR}/devel/p5-Class-Accessor-Lite
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-NO_STAGE=	yes
 USE_PERL5=	modbuild
 USES=		perl5
-
-MAN3=		Router::Simple.3 \
-		Router::Simple::Cookbook.3 \
-		Router::Simple::Declare.3 \
-		Router::Simple::Route.3 \
-		Router::Simple::SubMapper.3
 
 .include <bsd.port.pre.mk>
 

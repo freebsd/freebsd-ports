@@ -25,10 +25,4 @@ TEST_DEPENDS=	p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
 USE_PERL5=	modbuild
 USES=		perl5
 
-MAN3=		Catalyst::DispatchType::LocalRegex.3 \
-		Catalyst::DispatchType::LocalRegexp.3 \
-		Catalyst::DispatchType::Regex.3 \
-		Catalyst::DispatchType::Regexp.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
