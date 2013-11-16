@@ -1,0 +1,7 @@
+bin/videogen
+man/man1/videogen.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
