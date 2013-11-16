@@ -16,31 +16,7 @@ ALL_TARGET=	${PORTNAME}
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 
-NO_STAGE=	yes
-do-install:
-# Program.
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-
-# Data.
-	${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/warriors ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/bench.sh ${DATADIR}
-
-.include <bsd.port.pre.mk>
-
-# Adjust optimization flags for all architectures.
-.if ${ARCH} != "i386"
-BADCFLAGS+=	-malign-double
-.endif
-.if ${ARCH} != "amd64" && ${ARCH} != "i386"
-BADCFLAGS+=	-maccumulate-outgoing-args \
-		-minline-all-stringops \
-		-mno-align-stringops
-.endif
-.if ${ARCH} == "alpha"
-BADCFLAGS+=	-ffast-math \
-		-fprefetch-loop-arrays
-.endif
+.include <bsd.port.options.mk>
 
 post-patch:
 # Fix bench.sh.
@@ -48,17 +24,15 @@ post-patch:
 		s|\./exmars|exmars|' \
 		${WRKSRC}/bench.sh
 
-# Fix Makefile.
-	@${REINPLACE_CMD} -e 's|\($${OPT}\)|${CFLAGS} \1|' ${WRKSRC}/${MAKEFILE}
-
 # Enable/disable compilation optimizations.
-.if empty(PORT_OPTIONS:MOPTIMIZED_CFLAGS)
-	@${REINPLACE_CMD} -e 's|$${OPT}||' ${WRKSRC}/${MAKEFILE}
+.if ! ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
+	@${REINPLACE_CMD} -e 's|$${OPT}|${CFLAGS}|' ${WRKSRC}/${MAKEFILE}
 .endif
 
-# Adjust optimization flags for all architectures.
-.for f in ${BADCFLAGS}
-	@${REINPLACE_CMD} -e 's|${f}||g' ${WRKSRC}/${MAKEFILE}
-.endfor
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${CP} -R ${WRKSRC}/warriors ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/bench.sh ${STAGEDIR}${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
