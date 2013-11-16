@@ -1,4 +1,10 @@
+@group games
+@mode 2755
 bin/rockdodger
+@mode
+@group
+@exec touch /var/games/rockdodger.highscore ; chmod 664 /var/games/rockdodger.highscore
+@unexec if [ -f /var/games/rockdodger.highscore ] ; then rm /var/games/rockdodger.highscore; fi
 %%DATADIR%%/data/20P_Betadance.png
 %%DATADIR%%/data/4est_fulla3s.mod
 %%DATADIR%%/data/boom.wav
