@@ -19,11 +19,13 @@ bin/speech-dispatcher
 %%ETCDIR%%/modules/swift-generic.conf.sample
 %%ETCDIR%%/speechd.conf.sample
 @exec for f in %%ETCFILES%%; do [ -f %D/%%ETCDIR%%/$f ] || cp -p %D/%%ETCDIR%%/$f.sample %D/%%ETCDIR%%/$f; done
-include/libspeechd.h
+include/speech-dispatcher/libspeechd.h
+include/speech-dispatcher/spd_audio_plugin.h
+include/speech-dispatcher/speechd_types.h
 lib/libspeechd.a
 lib/libspeechd.la
 lib/libspeechd.so
-lib/libspeechd.so.5
+lib/libspeechd.so.6
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/speechd/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/speechd/__init__.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/speechd/__init__.pyo
@@ -51,10 +53,24 @@ lib/speech-dispatcher-modules/sd_dummy
 lib/speech-dispatcher-modules/sd_festival
 %%FLITE%%lib/speech-dispatcher-modules/sd_flite
 lib/speech-dispatcher-modules/sd_generic
-lib/speech-dispatcher/libsdaudio.a
-lib/speech-dispatcher/libsdaudio.la
-lib/speech-dispatcher/libsdaudio.so
-lib/speech-dispatcher/libsdaudio.so.2
+%%ALSA%%lib/speech-dispatcher/spd_alsa.a
+%%ALSA%%lib/speech-dispatcher/spd_alsa.la
+%%ALSA%%lib/speech-dispatcher/spd_alsa.so
+%%AO%%lib/speech-dispatcher/spd_libao.a
+%%AO%%lib/speech-dispatcher/spd_libao.la
+%%AO%%lib/speech-dispatcher/spd_libao.so
+%%NAS%%lib/speech-dispatcher/spd_nas.a
+%%NAS%%lib/speech-dispatcher/spd_nas.la
+%%NAS%%lib/speech-dispatcher/spd_nas.so
+lib/speech-dispatcher/spd_oss.a
+lib/speech-dispatcher/spd_oss.la
+lib/speech-dispatcher/spd_oss.so
+%%PULSEAUDIO%%lib/speech-dispatcher/spd_pulse.a
+%%PULSEAUDIO%%lib/speech-dispatcher/spd_pulse.la
+%%PULSEAUDIO%%lib/speech-dispatcher/spd_pulse.so
+libdata/pkgconfig/speech-dispatcher.pc
+share/locale/cs/LC_MESSAGES/speech-dispatcher.mo
+share/locale/hu/LC_MESSAGES/speech-dispatcher.mo
 share/sounds/speech-dispatcher/dummy-message.wav
 %%PYTHON%%share/sounds/speech-dispatcher/test.wav
 %%DATADIR%%/conf/clients/emacs.conf
@@ -83,6 +99,7 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/speechd
 %%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%
 %%PYTHON%%@dirrmtry %%PYTHON_LIBDIR%%
+@dirrm include/speech-dispatcher
 @dirrmtry %%ETCDIR%%/modules
 @dirrmtry %%ETCDIR%%/clients
 @dirrmtry %%ETCDIR%%
