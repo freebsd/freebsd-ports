@@ -9,8 +9,6 @@ MASTER_SITES=	SF/${PORTNAME}/DomainKeys%20Milter/${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Domainkeys milter for Sendmail
 
-NO_STAGE=	yes
-
 USE_RC_SUBR=	milter-dk
 USE_OPENSSL=	yes
 
@@ -104,20 +102,20 @@ pre-configure:
 
 post-install:
 .if !defined(WITH_DEBUG)
-	-${STRIP_CMD} ${PREFIX}/libexec/dk-filter
+	-${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/dk-filter
 .endif
 	${INSTALL_SCRIPT} ${WRKSRC}/dk-filter/gentxt.csh \
-		${PREFIX}/sbin/gentxt-dk
+		${STAGEDIR}${PREFIX}/sbin/gentxt-dk
 .for i in ${MAN8}
-	@${RM} -f ${MANPREFIX}/man/cat8/${i} ${MANPREFIX}/man/cat8/${i}.gz
-	${INSTALL_MAN} ${WRKSRC}/*/${i} ${MANPREFIX}/man/man8/
+	@${RM} -f ${STAGEDIR}${MANPREFIX}/man/cat8/${i} \
+		${STAGEDIR}${MANPREFIX}/man/cat8/${i}.gz
+	${INSTALL_MAN} ${WRKSRC}/*/${i} ${STAGEDIR}${MANPREFIX}/man/man8/
 .endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${DOCSFILES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
