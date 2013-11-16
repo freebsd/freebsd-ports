@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Class/AutoClass.pm
 %%SITE_PERL%%/Class/AutoClass/Root.pm
+%%PERL5_MAN3%%/Class::AutoClass.3.gz
 @dirrm %%SITE_PERL%%/Class/AutoClass
 @dirrmtry %%SITE_PERL%%/Class
