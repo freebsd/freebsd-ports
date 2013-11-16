@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	clone
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 
@@ -10,9 +10,7 @@ COMMENT=	File tree cloning tool
 
 LICENSE=	BSD
 
-PLIST_FILES=	bin/clone
+PLIST_FILES=	bin/clone \
+		man/man1/clone.1.gz
 
-MAN1=	clone.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

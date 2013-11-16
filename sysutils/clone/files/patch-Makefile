@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
+@@ -60,5 +60,5 @@
+ update: clean all
+ 
+ install: $(TOOL)
+-	strip -x -o /usr/local/bin/$(TOOL) $(TOOL)
+-	cp $(TOOL).1 /usr/local/man/man1/$(TOOL).1
++	strip -x -o $(DESTDIR)$(PREFIX)/bin/$(TOOL) $(TOOL)
++	cp $(TOOL).1 $(DESTDIR)$(PREFIX)/man/man1/$(TOOL).1
