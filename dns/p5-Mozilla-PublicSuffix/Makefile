@@ -16,11 +16,8 @@ LICENSE=	MIT
 BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-NO_STAGE=	yes
 USE_PERL5=	modbuild
 USES=		perl5
-
-MAN3=		Mozilla::PublicSuffix.3
 
 .include <bsd.port.pre.mk>
 

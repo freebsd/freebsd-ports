@@ -22,7 +22,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PERL5=	modbuild
 USES=		perl5
 
-MAN3=		Text::Padding.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -20,6 +20,20 @@
 %%SITE_PERL%%/Marpa/PP/Value.pm
 %%SITE_PERL%%/Marpa/PP/Version.pm
 %%SITE_PERL%%/Marpa/PP/Vocabulary.pod
+%%PERL5_MAN3%%/Marpa::PP.3.gz
+%%PERL5_MAN3%%/Marpa::PP::Advanced::Bibliography.3.gz
+%%PERL5_MAN3%%/Marpa::PP::Advanced::Models.3.gz
+%%PERL5_MAN3%%/Marpa::PP::Debug.3.gz
+%%PERL5_MAN3%%/Marpa::PP::Grammar.3.gz
+%%PERL5_MAN3%%/Marpa::PP::Recognizer.3.gz
+%%PERL5_MAN3%%/Marpa::PP::Rewrite.3.gz
+%%PERL5_MAN3%%/Marpa::PP::Semantics.3.gz
+%%PERL5_MAN3%%/Marpa::PP::Semantics::Infinite.3.gz
+%%PERL5_MAN3%%/Marpa::PP::Semantics::Null.3.gz
+%%PERL5_MAN3%%/Marpa::PP::Semantics::Order.3.gz
+%%PERL5_MAN3%%/Marpa::PP::Support.3.gz
+%%PERL5_MAN3%%/Marpa::PP::Tracing.3.gz
+%%PERL5_MAN3%%/Marpa::PP::Vocabulary.3.gz
 @dirrm %%SITE_PERL%%/Marpa/PP/Semantics
 @dirrm %%SITE_PERL%%/Marpa/PP/Advanced
 @dirrm %%SITE_PERL%%/Marpa/PP

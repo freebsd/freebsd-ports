@@ -1,2 +1,3 @@
 %%SITE_PERL%%/Mozilla/PublicSuffix.pm
+%%PERL5_MAN3%%/Mozilla::PublicSuffix.3.gz
 @dirrmtry %%SITE_PERL%%/Mozilla
