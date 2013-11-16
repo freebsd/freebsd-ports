@@ -52,14 +52,6 @@ share/vmware-tools/scripts/vmware/network
 @dirrmtry lib/vmware-tools/modules/input
 @dirrmtry lib/vmware-tools/modules
 @dirrmtry lib/vmware-tools
-@dirrmtry share/open-vm-tools/messages/de
-@dirrmtry share/open-vm-tools/messages/ja
-@dirrmtry share/open-vm-tools/messages/zh_CN
-@dirrmtry share/open-vm-tools/messages
-@dirrmtry share/open-vm-tools/scripts/vmware
-@dirrmtry share/open-vm-tools/scripts
-@dirrmtry share/open-vm-tools/tests
-@dirrmtry share/open-vm-tools
 @dirrmtry share/vmware-tools/scripts/vmware
 @dirrmtry share/vmware-tools/scripts
 @dirrmtry share/vmware-tools
