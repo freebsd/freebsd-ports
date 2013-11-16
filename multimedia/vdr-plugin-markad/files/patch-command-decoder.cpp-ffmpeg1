@@ -1,0 +1,11 @@
+--- a/command/decoder.cpp
++++ b/command/decoder.cpp
+@@ -164,7 +164,7 @@ cMarkAdDecoder::cMarkAdDecoder(bool useH
+     }
+ 
+     video_codec=NULL;
+-    CodecID video_codecid;
++    AVCodecID video_codecid;
+ 
+     if (useH264)
+     {
