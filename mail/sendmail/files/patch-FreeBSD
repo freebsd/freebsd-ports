@@ -1,11 +1,11 @@
 --- devtools/OS/FreeBSD.orig	2003-07-03 03:07:45.000000000 +0200
-+++ devtools/OS/FreeBSD	2011-06-24 20:24:03.000000000 +0200
++++ devtools/OS/FreeBSD	2013-11-16 07:06:27.000000000 +0100
 @@ -6,7 +6,7 @@
  define(`confMAPDEF', `-DNEWDB -DNIS -DMAP_REGEX')
  define(`confLIBS', `-lutil')
  
 -define(`confLD', `cc')
-+define(`confLD', `${CC}')
++define(`confCC', `%%CC%%')
  define(`confMTLDOPTS', `-pthread')
  define(`confMTCCOPTS', `-D_THREAD_SAFE')
  define(`confLDOPTS_SO', `-shared')
