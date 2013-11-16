@@ -30,7 +30,7 @@ MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin LD=${LOCALBASE}/bin/ld
 .endif
 
 DEPRECATED=	Outdated, no longer needed, broken on 10+
-EXPIRATION_DATE=	2013-01-15
+EXPIRATION_DATE=	2014-01-15
 
 PLIST_FILES=	share/qemu/bios.bin-${PORTVERSION}
 PLIST_DIRSTRY=	share/qemu
