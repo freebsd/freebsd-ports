@@ -1,27 +1,21 @@
---- ./modules/freebsd/vmhgfs/Makefile.orig	2010-10-20 05:19:54.000000000 +0900
-+++ ./modules/freebsd/vmhgfs/Makefile	2010-11-11 23:06:07.000000000 +0900
-@@ -90,22 +90,7 @@
-    CFLAGS += -Ishared
+--- modules/freebsd/vmhgfs/Makefile.orig	2013-04-17 22:12:22.000000000 +0000
++++ modules/freebsd/vmhgfs/Makefile	2013-11-16 03:21:39.890032940 +0000
+@@ -47,7 +47,7 @@
  .endif
  
--#
--# FreeBSD's kernel module build system defines a bunch of additional warning
--# flags for the compiler in addition to -Wall -Werror.  However, some of these,
--# like -Wredundant-decls, are overkill.  To get around this, I copied their list
--# of warning flags, but explicitly disabled a few.
--#
--CWARNFLAGS := -Wall
--CWARNFLAGS += -Werror
--CWARNFLAGS += -Wno-redundant-decls
--CWARNFLAGS += -Wnested-externs
--CWARNFLAGS += -Wstrict-prototypes
--CWARNFLAGS += -Wno-missing-prototypes
--CWARNFLAGS += -Wpointer-arith
--CWARNFLAGS += -Winline
--CWARNFLAGS += -Wcast-qual
--
+ COMMON_HGFS_SRCS := debug.c
+-COMMON_HGFS_SRCS := bdhandler.c
++COMMON_HGFS_SRCS += bdhandler.c
+ COMMON_HGFS_SRCS += request.c
+ COMMON_HGFS_SRCS += worker.c
+ COMMON_HGFS_SRCS += fsutil.c
+@@ -108,7 +108,9 @@
+ CWARNFLAGS += -Wpointer-arith
+ CWARNFLAGS += -Winline
+ CWARNFLAGS += -Wcast-qual
++CWARNFLAGS += ${NO_WUNNEEDED_INTERNAL_DECL}
+ 
  EXPORT_SYMS = NO
  
 +.include <bsd.own.mk>
  .include <bsd.kmod.mk>
-
