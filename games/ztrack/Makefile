@@ -14,12 +14,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DHAVE_RANDOM"
 ALL_TARGET=	ztrack
-MAN6=		ztrack.6
-PLIST_FILES=	bin/ztrack
+PLIST_FILES=	bin/ztrack man/man6/ztrack.6.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ztrack ${PREFIX}/bin/ztrack
-	${INSTALL_MAN} ${WRKSRC}/ztrack.6 ${MANPREFIX}/man/man6
+	${INSTALL_PROGRAM} ${WRKSRC}/ztrack ${STAGEDIR}${PREFIX}/bin/ztrack
+	${INSTALL_MAN} ${WRKSRC}/ztrack.6 ${STAGEDIR}${MANPREFIX}/man/man6
 
 .include <bsd.port.mk>
