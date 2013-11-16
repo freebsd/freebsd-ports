@@ -1,0 +1,8 @@
+Backport of the concurrent.futures package from Python 3.2
+
+The concurrent.futures module provides a high-level interface for
+asynchronously executing callables.
+
+This is described in PEP-3148 and is included in Python 3.2+
+
+WWW: http://code.google.com/p/pythonfutures/
