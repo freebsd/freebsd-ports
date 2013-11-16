@@ -15,7 +15,9 @@ USES=		imake
 USE_XORG=	x11 xaw xext xmu xt xpm sm ice
 NO_INSTALL_MANPAGES=	yes
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/xspacewarp \
+		lib/X11/app-defaults/XSpacewarp
+
 post-extract:
 	@${CP} ${WRKSRC}/XSpacewarp.app_def ${WRKSRC}/XSpacewarp.ad
 
