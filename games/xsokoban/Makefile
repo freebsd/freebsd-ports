@@ -15,22 +15,19 @@ USES=		imake
 USE_XORG=	xpm
 WRKSRC=		${WRKDIR}/xsokoban
 ALL_TARGET=	xsokoban
-MAN1=		xsokoban.1
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/config.h
 
 post-install:
-	@${MKDIR} ${PREFIX}/lib/X11/xsokoban/scores \
-		${PREFIX}/lib/X11/xsokoban/bitmaps/defaults \
-		${PREFIX}/lib/X11/xsokoban/saves \
-		${PREFIX}/lib/X11/xsokoban/screens
-	@${CHMOD} 777 ${PREFIX}/lib/X11/xsokoban/scores
-	@${CHMOD} 775 ${PREFIX}/lib/X11/xsokoban/saves
-	@${INSTALL_DATA} ${WRKSRC}/screens/* ${PREFIX}/lib/X11/xsokoban/screens
-	@${INSTALL_DATA} ${WRKSRC}/bitmaps/defaults/* \
-		${PREFIX}/lib/X11/xsokoban/bitmaps/defaults
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/xsokoban/scores \
+		${STAGEDIR}${PREFIX}/lib/X11/xsokoban/bitmaps/defaults \
+		${STAGEDIR}${PREFIX}/lib/X11/xsokoban/saves \
+		${STAGEDIR}${PREFIX}/lib/X11/xsokoban/screens
+	@${CHMOD} 777 ${STAGEDIR}${PREFIX}/lib/X11/xsokoban/scores
+	@${CHMOD} 775 ${STAGEDIR}${PREFIX}/lib/X11/xsokoban/saves
+	${INSTALL_DATA} ${WRKSRC}/screens/* ${STAGEDIR}${PREFIX}/lib/X11/xsokoban/screens
+	${INSTALL_DATA} ${WRKSRC}/bitmaps/defaults/* \
+		${STAGEDIR}${PREFIX}/lib/X11/xsokoban/bitmaps/defaults
 
 .include <bsd.port.mk>
