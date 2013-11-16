@@ -9,6 +9,7 @@ MASTER_SITES=	http://boxen.math.washington.edu/home/sagemath/sage-mirror/src/ \
 		http://mirrors.xmission.com/sage/src/ \
 		http://www-ftp.lip6.fr/pub/math/sagemath/src/ \
 		http://www.sagemath.org/src-old/
+PKGNAMESUFFIX=	-math
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	stephen@FreeBSD.org
