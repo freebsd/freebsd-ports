@@ -12,12 +12,9 @@ COMMENT=	Extract data from InstallShield CAB files
 
 LICENSE=	MIT
 
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USES=		pathfix
-
-MAN1=		${PORTNAME}.1
 
 .include <bsd.port.mk>
