@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME?=	inn
-PORTVERSION?=	2.5.2
-PORTREVISION?=	3
+PORTVERSION?=	2.5.3
+PORTREVISION?=	0
 CATEGORIES=	news ipv6
 # Master distribution broken
-#MASTER_SITES?=	${MASTER_SITE_ISC}
-#MASTER_SITE_SUBDIR?=	${PORTNAME}
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	fluffy
+MASTER_SITES?=	${MASTER_SITE_ISC}
+MASTER_SITE_SUBDIR?=	${PORTNAME}
+#MASTER_SITES=	${MASTER_SITE_LOCAL}
+#MASTER_SITE_SUBDIR=	fluffy
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	InterNetNews -- the Internet meets Netnews
@@ -49,6 +49,7 @@ NO_STAGE=	yes
 
 HAS_CONFIGURE=		yes
 CONFIGURE_ENV+=		LOCALBASE=${LOCALBASE}
+CONFIGURE_ENV+=		ac_cv_prog_AWK="${AWK}"
 CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man		\
 			--prefix=${INN_NEWSBASE}		\
 			--with-spool-dir=${INN_NEWSSPOOL}	\
@@ -133,7 +134,7 @@ PORTDOCS=	CONTRIBUTORS HACKING INSTALL LICENSE MANIFEST NEWS README TODO
 HEADERS=	clibrary.h config.h dbz.h libinn.h storage.h
 
 MAN1=		convdate.1 fastrm.1 getlist.1 grephistory.1 inews.1 innconfval.1 \
-		innfeed.1 innmail.1 nntpget.1 pgpverify.1 rnews.1 shlock.1 \
+		innmail.1 nntpget.1 pgpverify.1 rnews.1 shlock.1 \
 		shrinkfile.1 simpleftp.1 sm.1 pullnews.1
 MAN3=		INN::Config.3pm clientlib.3 dbz.3 inndcomm.3 libauth.3 libinn.3 \
 		libinnhist.3 libstorage.3 list.3 qio.3 tst.3 uwildmat.3
@@ -182,12 +183,6 @@ SUB_LIST+=	EGDIR="${EXAMPLESDIR:C,^${PREFIX},\\$\\${PREFIX},}"
 PLIST_SUB+=	ETCFILES="${CONFIG_FILES}"
 
 .include <bsd.port.pre.mk>
-
-# Perl 5.12 deprecated $[
-.if ${PERL_LEVEL} >= 501200
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-scripts_innreport.in \
-		${PATCHDIR}/extra-patch-scripts_innreport_inn.pm
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -E 's!\$$[{(]PATHETC[})]!${EXAMPLESDIR}!g' \

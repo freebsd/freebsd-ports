@@ -161,6 +161,7 @@ lib/libinn.a
 lib/libinnhist.a
 lib/libstorage.a
 lib/perl/INN/Config.pm
+lib/perl/INN/Utils/Shlock.pm
 @comment --------------------------------------------------------------
 @cwd
 @exec mkdir -p %%DBDIR%%
@@ -201,10 +202,14 @@ lib/perl/INN/Config.pm
 %%EXAMPLESDIR%%/inn.conf
 %%EXAMPLESDIR%%/innfeed.conf
 %%EXAMPLESDIR%%/innreport.conf
+%%EXAMPLESDIR%%/innshellvars.local
+%%EXAMPLESDIR%%/innshellvars.pl.local
+%%EXAMPLESDIR%%/innshellvars.tcl.local
 %%EXAMPLESDIR%%/innwatch.ctl
 %%EXAMPLESDIR%%/localgroups
 %%EXAMPLESDIR%%/moderators
-%%EXAMPLESDIR%%/motd.news
+%%EXAMPLESDIR%%/motd.innd
+%%EXAMPLESDIR%%/motd.nnrpd
 %%EXAMPLESDIR%%/news2mail.cf
 %%EXAMPLESDIR%%/newsfeeds
 %%EXAMPLESDIR%%/nnrpd.track
@@ -222,7 +227,7 @@ lib/perl/INN/Config.pm
 @comment --------------------------------------------------------------
 @dirrm %%EXAMPLESDIR%%/db
 @dirrm %%EXAMPLESDIR%%
-@unexec rm -Rf %%TMPDIR%%                 2>/dev/null || true
+@unexec rmdir  %%TMPDIR%%                 2>/dev/null || true
 @unexec rmdir  %%SHAREDIR%%               2>/dev/null || true
 @unexec rmdir  %%NEWSSPOOL%%/overview     2>/dev/null || true
 @unexec rmdir  %%NEWSSPOOL%%/outgoing     2>/dev/null || true
@@ -231,21 +236,23 @@ lib/perl/INN/Config.pm
 @unexec rmdir  %%NEWSSPOOL%%/incoming     2>/dev/null || true
 @unexec rmdir  %%NEWSSPOOL%%/articles     2>/dev/null || true
 @unexec rmdir  %%NEWSSPOOL%%/archive      2>/dev/null || true
-@unexec rm -Rf %%NEWSSPOOL%%/tmp          2>/dev/null || true
 @unexec rmdir  %%NEWSSPOOL%%              2>/dev/null || true
-@unexec rm -Rf %%RUNDIR%%                 2>/dev/null || true
-@unexec rm -R  %%NEWSBASE%%/http
-@unexec rm -R  %%NEWSBASE%%/lib
-@unexec rm -R  %%NEWSBASE%%/include/inn
-@unexec rm -R  %%NEWSBASE%%/include
+@unexec rmdir  %%RUNDIR%%                 2>/dev/null || true
+@unexec rmdir  %%NEWSBASE%%/http
+@unexec rmdir  %%NEWSBASE%%/lib/perl/INN/Utils
+@unexec rmdir  %%NEWSBASE%%/lib/perl/INN
+@unexec rmdir  %%NEWSBASE%%/lib/perl
+@unexec rmdir  %%NEWSBASE%%/lib
+@unexec rmdir  %%NEWSBASE%%/include/inn
+@unexec rmdir  %%NEWSBASE%%/include
 @unexec rmdir  %%ETCDIR%%                 2>/dev/null || true
-@unexec rm -Rf %%NEWSBASE%%/doc
+@unexec rmdir  %%NEWSBASE%%/doc
 @unexec rmdir  %%DBDIR%%                  2>/dev/null || true
-@unexec rm -Rf %%NEWSBASE%%/bin/rnews.libexec
-@unexec rm -Rf %%NEWSBASE%%/bin/filter
-@unexec rm -Rf %%NEWSBASE%%/bin/control
-@unexec rm -Rf %%NEWSBASE%%/bin/auth/resolv
-@unexec rm -Rf %%NEWSBASE%%/bin/auth/passwd
-@unexec rm -Rf %%NEWSBASE%%/bin/auth
-@unexec rm -Rf %%NEWSBASE%%/bin
+@unexec rmdir  %%NEWSBASE%%/bin/rnews.libexec
+@unexec rmdir  %%NEWSBASE%%/bin/filter
+@unexec rmdir  %%NEWSBASE%%/bin/control
+@unexec rmdir  %%NEWSBASE%%/bin/auth/resolv
+@unexec rmdir  %%NEWSBASE%%/bin/auth/passwd
+@unexec rmdir  %%NEWSBASE%%/bin/auth
+@unexec rmdir  %%NEWSBASE%%/bin
 @unexec rmdir %%NEWSBASE%% 2>/dev/null ||( echo "===>  If you don't plan to use inn later, you can safely remove %%NEWSBASE%%. Deinstall process kept these files intact:" | fmt && for i in $(find %D/news -type f); do echo "    - $i"; done)
