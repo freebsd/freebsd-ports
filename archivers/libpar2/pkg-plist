@@ -29,10 +29,10 @@ include/libpar2/verificationpacket.h
 lib/libpar2.a
 lib/libpar2.la
 lib/libpar2.so
-lib/libpar2.so.0
+lib/libpar2.so.1
 lib/libpar2/include/config.h
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/libpar2/include
-@dirrm lib/libpar2
-@dirrm include/libpar2
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry lib/libpar2/include
+@dirrmtry lib/libpar2
+@dirrmtry include/libpar2
