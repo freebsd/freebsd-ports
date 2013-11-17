@@ -119,14 +119,14 @@ lib/libQtGStreamerUi-0.10.so.0.10.2
 lib/libQtGStreamerUtils-0.10.so
 lib/libQtGStreamerUtils-0.10.so.0
 lib/libQtGStreamerUtils-0.10.so.0.10.2
-%%QT_LIBDIR_REL%%/imports/QtGStreamer/libQtGStreamerQML.so
-%%QT_LIBDIR_REL%%/imports/QtGStreamer/qmldir
+%%QT_LIBDIR%%/imports/QtGStreamer/libQtGStreamerQML.so
+%%QT_LIBDIR%%/imports/QtGStreamer/qmldir
 libdata/pkgconfig/QtGLib-2.0.pc
 libdata/pkgconfig/QtGStreamer-0.10.pc
 libdata/pkgconfig/QtGStreamerUi-0.10.pc
 libdata/pkgconfig/QtGStreamerUtils-0.10.pc
-@dirrm %%QT_LIBDIR_REL%%/imports/QtGStreamer
-@dirrmtry %%QT_LIBDIR_REL%%/imports
+@dirrm %%QT_LIBDIR%%/imports/QtGStreamer
+@dirrmtry %%QT_LIBDIR%%/imports
 @dirrm lib/QtGStreamer
 @dirrm include/QtGStreamer/QGst/Ui
 @dirrm include/QtGStreamer/QGst/Utils

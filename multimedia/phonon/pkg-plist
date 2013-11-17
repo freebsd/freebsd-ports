@@ -188,13 +188,13 @@ share/dbus-1/interfaces/org.kde.Phonon.AudioOutput.xml
 @dirrm include/KDE/Phonon/Experimental
 @dirrm include/KDE/Phonon
 @cwd %%QT_PREFIX%%
-%%QT_INCDIR_REL%%/Phonon
-%%QT_INCDIR_REL%%/phonon
-%%QT_LIBDIR_REL%%/libphonon.so
-%%QT_LIBDIR_REL%%/libphonon.so.4
-%%QT_LIBDIR_REL%%/libphononexperimental.so
-%%QT_LIBDIR_REL%%/libphononexperimental.so.4
+%%QT_INCDIR%%/Phonon
+%%QT_INCDIR%%/phonon
+%%QT_LIBDIR%%/libphonon.so
+%%QT_LIBDIR%%/libphonon.so.4
+%%QT_LIBDIR%%/libphononexperimental.so
+%%QT_LIBDIR%%/libphononexperimental.so.4
 share/qt4/mkspecs/modules/qt_phonon.pri
 @dirrmtry share/qt4/mkspecs/modules
-@dirrmtry %%QT_LIBDIR_REL%%
-@dirrmtry %%QT_INCDIR_REL%%
+@dirrmtry %%QT_LIBDIR%%
+@dirrmtry %%QT_INCDIR%%

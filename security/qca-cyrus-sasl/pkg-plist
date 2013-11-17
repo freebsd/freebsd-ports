@@ -1,4 +1,4 @@
-%%QT_PLUGINDIR_REL%%/crypto/libqca-cyrus-sasl.so
-%%DEBUG%%%%QT_PLUGINDIR_REL%%/crypto/libqca-cyrus-sasl.so.debug
-@dirrmtry %%QT_PLUGINDIR_REL%%/crypto
-@dirrmtry %%QT_PLUGINDIR_REL%%
+%%QT_PLUGINDIR%%/crypto/libqca-cyrus-sasl.so
+%%DEBUG%%%%QT_PLUGINDIR%%/crypto/libqca-cyrus-sasl.so.debug
+@dirrmtry %%QT_PLUGINDIR%%/crypto
+@dirrmtry %%QT_PLUGINDIR%%

@@ -629,12 +629,12 @@ lib/qt4/libQtCore.so.4
 lib/qt4/libQtCore.so.%%SHLIB_SHVER%%
 lib/qt4/libQtCore.so.%%SHLIB_VER%%
 %%DEBUG%%lib/qt4/libQtCore.so.%%SHLIB_VER%%.debug
-%%QT_PLUGINDIR_REL%%/.keep_me
+%%QT_PLUGINDIR%%/.keep_me
 libdata/pkgconfig/QtCore.pc
 share/qt4/mkspecs/qconfig.pri
 @dirrmtry share/qt4/mkspecs
 @dirrmtry share/qt4
-@dirrmtry %%QT_PLUGINDIR_REL%%
+@dirrmtry %%QT_PLUGINDIR%%
 @dirrmtry lib/qt4
 @dirrm include/qt4/QtCore
 @dirrmtry include/qt4/Qt

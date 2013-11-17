@@ -1,4 +1,4 @@
-%%QT_PLUGINDIR_REL%%/codecs/libqjpcodecs.so
-%%DEBUG%%%%QT_PLUGINDIR_REL%%/codecs/libqjpcodecs.so.debug
-@dirrmtry %%QT_PLUGINDIR_REL%%/codecs
-@dirrmtry %%QT_PLUGINDIR_REL%%
+%%QT_PLUGINDIR%%/codecs/libqjpcodecs.so
+%%DEBUG%%%%QT_PLUGINDIR%%/codecs/libqjpcodecs.so.debug
+@dirrmtry %%QT_PLUGINDIR%%/codecs
+@dirrmtry %%QT_PLUGINDIR%%

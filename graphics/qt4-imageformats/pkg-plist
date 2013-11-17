@@ -1,16 +1,16 @@
-%%QT_PLUGINDIR_REL%%/imageformats/libqgif.so
-%%DEBUG%%%%QT_PLUGINDIR_REL%%/imageformats/libqgif.so.debug
-%%QT_PLUGINDIR_REL%%/imageformats/libqico.so
-%%DEBUG%%%%QT_PLUGINDIR_REL%%/imageformats/libqico.so.debug
-%%QT_PLUGINDIR_REL%%/imageformats/libqjpeg.so
-%%DEBUG%%%%QT_PLUGINDIR_REL%%/imageformats/libqjpeg.so.debug
-%%QT_PLUGINDIR_REL%%/imageformats/libqmng.so
-%%DEBUG%%%%QT_PLUGINDIR_REL%%/imageformats/libqmng.so.debug
-%%QT_PLUGINDIR_REL%%/imageformats/libqsvg.so
-%%DEBUG%%%%QT_PLUGINDIR_REL%%/imageformats/libqsvg.so.debug
-%%QT_PLUGINDIR_REL%%/imageformats/libqtga.so
-%%DEBUG%%%%QT_PLUGINDIR_REL%%/imageformats/libqtga.so.debug
-%%QT_PLUGINDIR_REL%%/imageformats/libqtiff.so
-%%DEBUG%%%%QT_PLUGINDIR_REL%%/imageformats/libqtiff.so.debug
-@dirrm %%QT_PLUGINDIR_REL%%/imageformats
-@dirrmtry %%QT_PLUGINDIR_REL%%
+%%QT_PLUGINDIR%%/imageformats/libqgif.so
+%%DEBUG%%%%QT_PLUGINDIR%%/imageformats/libqgif.so.debug
+%%QT_PLUGINDIR%%/imageformats/libqico.so
+%%DEBUG%%%%QT_PLUGINDIR%%/imageformats/libqico.so.debug
+%%QT_PLUGINDIR%%/imageformats/libqjpeg.so
+%%DEBUG%%%%QT_PLUGINDIR%%/imageformats/libqjpeg.so.debug
+%%QT_PLUGINDIR%%/imageformats/libqmng.so
+%%DEBUG%%%%QT_PLUGINDIR%%/imageformats/libqmng.so.debug
+%%QT_PLUGINDIR%%/imageformats/libqsvg.so
+%%DEBUG%%%%QT_PLUGINDIR%%/imageformats/libqsvg.so.debug
+%%QT_PLUGINDIR%%/imageformats/libqtga.so
+%%DEBUG%%%%QT_PLUGINDIR%%/imageformats/libqtga.so.debug
+%%QT_PLUGINDIR%%/imageformats/libqtiff.so
+%%DEBUG%%%%QT_PLUGINDIR%%/imageformats/libqtiff.so.debug
+@dirrm %%QT_PLUGINDIR%%/imageformats
+@dirrmtry %%QT_PLUGINDIR%%

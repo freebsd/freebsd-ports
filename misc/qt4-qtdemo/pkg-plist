@@ -1,15 +1,15 @@
 bin/qtdemo
 %%DEBUG%%bin/qtdemo.debug
-%%QT_PLUGINDIR_REL%%/designer/libarthurplugin.so
-%%DEBUG%%%%QT_PLUGINDIR_REL%%/designer/libarthurplugin.so.debug
-%%QT_PLUGINDIR_REL%%/designer/libcontainerextension.so
-%%DEBUG%%%%QT_PLUGINDIR_REL%%/designer/libcontainerextension.so.debug
-%%QT_PLUGINDIR_REL%%/designer/libcustomwidgetplugin.so
-%%DEBUG%%%%QT_PLUGINDIR_REL%%/designer/libcustomwidgetplugin.so.debug
-%%QT_PLUGINDIR_REL%%/designer/libtaskmenuextension.so
-%%DEBUG%%%%QT_PLUGINDIR_REL%%/designer/libtaskmenuextension.so.debug
-%%QT_PLUGINDIR_REL%%/designer/libworldtimeclockplugin.so
-%%DEBUG%%%%QT_PLUGINDIR_REL%%/designer/libworldtimeclockplugin.so.debug
+%%QT_PLUGINDIR%%/designer/libarthurplugin.so
+%%DEBUG%%%%QT_PLUGINDIR%%/designer/libarthurplugin.so.debug
+%%QT_PLUGINDIR%%/designer/libcontainerextension.so
+%%DEBUG%%%%QT_PLUGINDIR%%/designer/libcontainerextension.so.debug
+%%QT_PLUGINDIR%%/designer/libcustomwidgetplugin.so
+%%DEBUG%%%%QT_PLUGINDIR%%/designer/libcustomwidgetplugin.so.debug
+%%QT_PLUGINDIR%%/designer/libtaskmenuextension.so
+%%DEBUG%%%%QT_PLUGINDIR%%/designer/libtaskmenuextension.so.debug
+%%QT_PLUGINDIR%%/designer/libworldtimeclockplugin.so
+%%DEBUG%%%%QT_PLUGINDIR%%/designer/libworldtimeclockplugin.so.debug
 share/examples/qt4/demos/README
 share/examples/qt4/demos/affine/affine
 %%DEBUG%%share/examples/qt4/demos/affine/affine.debug
@@ -4984,5 +4984,5 @@ share/examples/qt4/examples/xmlpatterns/xquery/xquery.pro
 @dirrm share/examples/qt4/demos/affine
 @dirrm share/examples/qt4/demos
 @dirrm share/examples/qt4
-@dirrmtry %%QT_PLUGINDIR_REL%%/designer
-@dirrmtry %%QT_PLUGINDIR_REL%%
+@dirrmtry %%QT_PLUGINDIR%%/designer
+@dirrmtry %%QT_PLUGINDIR%%

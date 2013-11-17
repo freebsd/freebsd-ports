@@ -60,7 +60,7 @@ include/qxmpp/QXmppByteStreamIq.h
 include/qxmpp/QXmppBindIq.h
 include/qxmpp/QXmppArchiveManager.h
 include/qxmpp/QXmppArchiveIq.h
-%%QT_LIBDIR_REL%%/libqxmpp.a
+%%QT_LIBDIR%%/libqxmpp.a
 %%DOCSDIR%%/html/tabs.css
 %%DOCSDIR%%/html/tab_s.png
 %%DOCSDIR%%/html/tab_h.png
