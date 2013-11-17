@@ -3,7 +3,7 @@
 
 PORTNAME=	rawtherapee
 PORTVERSION=	4.0.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 
@@ -23,12 +23,10 @@ LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
 
-USES=		cmake:outsource pkgconfig
+USES=		cmake:outsource pkgconfig compiler:features desktop-file-utils
 USE_XZ=		yes
 USE_GNOME=	gtk20 glib20
 USE_LDCONFIG=	yes
-# base GCC and clang in 9.1-RELEASE are insufficient:
-USE_GCC=	yes
 CFLAGS+=	-I${LOCALBASE}/include -fPIC ${PTHREAD_CFLAGS}
 CXXFLAGS+=	-I${LOCALBASE}/include -fPIC ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
@@ -47,9 +45,17 @@ INSTALLS_ICONS=	yes
 
 RTDIR=		${PREFIX}/libdata/${PORTNAME}
 
-OPTIONS_DEFINE=	OPTIMIZED_CFLAGS OPENMP
+OPTIONS_DEFINE=		OPTIMIZED_CFLAGS OPENMP
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS OPENMP
-OPENMP_DESC=	Enable multicore processing using OpenMP
+OPENMP_DESC=		Enable multicore processing using OpenMP
+
+.include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 1000024
+USE_GCC=	yes
+.endif
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#<auto_ptr.h>#<memory>#g' \
@@ -58,13 +64,28 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#DESTINATION "$${CMAKE_INSTALL_PREFIX}/share/man/man1"#DESTINATION "${MANPREFIX}/man/man1/"#' \
 		${WRKSRC}/CMakeLists.txt
 
+.if ${COMPILER_TYPE} != gcc
+pre-build:
+	# must compile ipsharpen.cc with lower optimization else the compilation time is excessive
+	# this is clang-specific and does not affect GCC.
+	${REINPLACE_CMD} -e 's,-o CMakeFiles/rtengine.dir/ipsharpen.cc.o,-O1 &,' \
+		${CONFIGURE_WRKSRC}/rtengine/CMakeFiles/rtengine.dir/build.make
+.if ${PORT_OPTIONS:MOPENMP}
+	@${ECHO_CMD} "WARNING: ignoring OpenMP option, not supported on clang." ; sleep 5
+.endif
+.endif
+
+.if ${COMPILER_TYPE} == clang
+CFLAGS+=	-Qunused-arguments
+CXXFLAGS+=	-Qunused-arguments
+.endif
+
 # paranoia: run rawtherapee --help to be sure it finds all its
 # shared libraries (this hinges on proper RPATH setting and propagation)
 post-install:
 	${SETENV} HOME=/dev/null ${STAGEDIR}${PREFIX}/bin/rawtherapee --help 2>&1 \
 	| ${EGREP} -q "RawTherapee, version ${PKGVERSION:C/_.*//:C/,.*//}"
 
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
@@ -75,10 +96,11 @@ CXXFLAGS+=	-O3 -ffast-math -fexpensive-optimizations \
 .endif
 .endif
 
-.if ${PORT_OPTIONS:MOPENMP}
-CMAKE_ARGS+=	-DOPTION_OMP:BOOL=ON
-.else
-CMAKE_ARGS+=	-DOPTION_OMP:BOOL=OFF
+_OpenMP_args=	-DOPTION_OMP:BOOL=OFF
+.if ${PORT_OPTIONS:MOPENMP} && ${COMPILER_TYPE} == gcc
+_OpenMP_args=	-DOPTION_OMP:BOOL=ON
 .endif
+
+CMAKE_ARGS+=	${_OpenMP_args}
 
 .include <bsd.port.post.mk>
