@@ -307,7 +307,6 @@
     SUBDIR += gplot
     SUBDIR += gpsmanshp
     SUBDIR += gqview
-    SUBDIR += gqview-devel
     SUBDIR += gracula
     SUBDIR += grads
     SUBDIR += grafx2

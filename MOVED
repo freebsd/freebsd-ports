@@ -5188,3 +5188,5 @@ devel/perltidy|devel/p5-Perl-Tidy|2013-11-15|Renamed to match upstream naming
 math/vtk|math/vtk5|2013-11-17|Removed, EOLed
 net-im/decibel||2013-11-17|Has expired: Deprecated and unsupported upstream for many years, not used by anything
 databases/postgresql-libpq++||2013-11-17|Has expired: Not maintained upstreams for 10+ years.
+audio/gmpeg-devel||2013-11-17|Removed, no active development since more than 8 years
+graphics/gqview-devel||2013-11-17|Removed, no active development since more than 8 years
