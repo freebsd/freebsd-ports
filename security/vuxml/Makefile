@@ -46,7 +46,6 @@ PLIST=		${WRKDIR}/PLIST
 
 VUXML_FILE?=	${PKGDIR}/vuln.xml
 
-NO_STAGE=	yes
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
