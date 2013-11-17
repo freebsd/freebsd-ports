@@ -9,6 +9,6 @@ share/kde4/services/phononbackends/gstreamer.desktop
 @dirrmtry share/kde4/services/phononbackends
 @dirrmtry lib/kde4/plugins/phonon_backend
 @cwd %%QT_PREFIX%%
-%%QT_PLUGINDIR_REL%%/phonon_backend/libphonon_gstreamer.so
-@dirrmtry %%QT_PLUGINDIR_REL%%/phonon_backend
-@dirrmtry %%QT_PLUGINDIR_REL%%
+%%QT_PLUGINDIR%%/phonon_backend/libphonon_gstreamer.so
+@dirrmtry %%QT_PLUGINDIR%%/phonon_backend
+@dirrmtry %%QT_PLUGINDIR%%

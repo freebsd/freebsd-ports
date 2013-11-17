@@ -1,54 +1,54 @@
-%%QT_INCDIR_REL%%/Qsci/qsciabstractapis.h
-%%QT_INCDIR_REL%%/Qsci/qsciapis.h
-%%QT_INCDIR_REL%%/Qsci/qscicommand.h
-%%QT_INCDIR_REL%%/Qsci/qscicommandset.h
-%%QT_INCDIR_REL%%/Qsci/qscidocument.h
-%%QT_INCDIR_REL%%/Qsci/qsciglobal.h
-%%QT_INCDIR_REL%%/Qsci/qscilexer.h
-%%QT_INCDIR_REL%%/Qsci/qscilexerbash.h
-%%QT_INCDIR_REL%%/Qsci/qscilexerbatch.h
-%%QT_INCDIR_REL%%/Qsci/qscilexercmake.h
-%%QT_INCDIR_REL%%/Qsci/qscilexercpp.h
-%%QT_INCDIR_REL%%/Qsci/qscilexercsharp.h
-%%QT_INCDIR_REL%%/Qsci/qscilexercss.h
-%%QT_INCDIR_REL%%/Qsci/qscilexercustom.h
-%%QT_INCDIR_REL%%/Qsci/qscilexerd.h
-%%QT_INCDIR_REL%%/Qsci/qscilexerdiff.h
-%%QT_INCDIR_REL%%/Qsci/qscilexerfortran.h
-%%QT_INCDIR_REL%%/Qsci/qscilexerfortran77.h
-%%QT_INCDIR_REL%%/Qsci/qscilexerhtml.h
-%%QT_INCDIR_REL%%/Qsci/qscilexeridl.h
-%%QT_INCDIR_REL%%/Qsci/qscilexerjava.h
-%%QT_INCDIR_REL%%/Qsci/qscilexerjavascript.h
-%%QT_INCDIR_REL%%/Qsci/qscilexerlua.h
-%%QT_INCDIR_REL%%/Qsci/qscilexermakefile.h
-%%QT_INCDIR_REL%%/Qsci/qscilexermatlab.h
-%%QT_INCDIR_REL%%/Qsci/qscilexeroctave.h
-%%QT_INCDIR_REL%%/Qsci/qscilexerpascal.h
-%%QT_INCDIR_REL%%/Qsci/qscilexerperl.h
-%%QT_INCDIR_REL%%/Qsci/qscilexerpostscript.h
-%%QT_INCDIR_REL%%/Qsci/qscilexerpov.h
-%%QT_INCDIR_REL%%/Qsci/qscilexerproperties.h
-%%QT_INCDIR_REL%%/Qsci/qscilexerpython.h
-%%QT_INCDIR_REL%%/Qsci/qscilexerruby.h
-%%QT_INCDIR_REL%%/Qsci/qscilexerspice.h
-%%QT_INCDIR_REL%%/Qsci/qscilexersql.h
-%%QT_INCDIR_REL%%/Qsci/qscilexertcl.h
-%%QT_INCDIR_REL%%/Qsci/qscilexertex.h
-%%QT_INCDIR_REL%%/Qsci/qscilexerverilog.h
-%%QT_INCDIR_REL%%/Qsci/qscilexervhdl.h
-%%QT_INCDIR_REL%%/Qsci/qscilexerxml.h
-%%QT_INCDIR_REL%%/Qsci/qscilexeryaml.h
-%%QT_INCDIR_REL%%/Qsci/qscimacro.h
-%%QT_INCDIR_REL%%/Qsci/qsciprinter.h
-%%QT_INCDIR_REL%%/Qsci/qsciscintilla.h
-%%QT_INCDIR_REL%%/Qsci/qsciscintillabase.h
-%%QT_INCDIR_REL%%/Qsci/qscistyle.h
-%%QT_INCDIR_REL%%/Qsci/qscistyledtext.h
-%%QT_LIBDIR_REL%%/libqscintilla2.so
-%%QT_LIBDIR_REL%%/libqscintilla2.so.9
-%%QT_LIBDIR_REL%%/libqscintilla2.so.9.0
-%%QT_LIBDIR_REL%%/libqscintilla2.so.9.0.2
+%%QT_INCDIR%%/Qsci/qsciabstractapis.h
+%%QT_INCDIR%%/Qsci/qsciapis.h
+%%QT_INCDIR%%/Qsci/qscicommand.h
+%%QT_INCDIR%%/Qsci/qscicommandset.h
+%%QT_INCDIR%%/Qsci/qscidocument.h
+%%QT_INCDIR%%/Qsci/qsciglobal.h
+%%QT_INCDIR%%/Qsci/qscilexer.h
+%%QT_INCDIR%%/Qsci/qscilexerbash.h
+%%QT_INCDIR%%/Qsci/qscilexerbatch.h
+%%QT_INCDIR%%/Qsci/qscilexercmake.h
+%%QT_INCDIR%%/Qsci/qscilexercpp.h
+%%QT_INCDIR%%/Qsci/qscilexercsharp.h
+%%QT_INCDIR%%/Qsci/qscilexercss.h
+%%QT_INCDIR%%/Qsci/qscilexercustom.h
+%%QT_INCDIR%%/Qsci/qscilexerd.h
+%%QT_INCDIR%%/Qsci/qscilexerdiff.h
+%%QT_INCDIR%%/Qsci/qscilexerfortran.h
+%%QT_INCDIR%%/Qsci/qscilexerfortran77.h
+%%QT_INCDIR%%/Qsci/qscilexerhtml.h
+%%QT_INCDIR%%/Qsci/qscilexeridl.h
+%%QT_INCDIR%%/Qsci/qscilexerjava.h
+%%QT_INCDIR%%/Qsci/qscilexerjavascript.h
+%%QT_INCDIR%%/Qsci/qscilexerlua.h
+%%QT_INCDIR%%/Qsci/qscilexermakefile.h
+%%QT_INCDIR%%/Qsci/qscilexermatlab.h
+%%QT_INCDIR%%/Qsci/qscilexeroctave.h
+%%QT_INCDIR%%/Qsci/qscilexerpascal.h
+%%QT_INCDIR%%/Qsci/qscilexerperl.h
+%%QT_INCDIR%%/Qsci/qscilexerpostscript.h
+%%QT_INCDIR%%/Qsci/qscilexerpov.h
+%%QT_INCDIR%%/Qsci/qscilexerproperties.h
+%%QT_INCDIR%%/Qsci/qscilexerpython.h
+%%QT_INCDIR%%/Qsci/qscilexerruby.h
+%%QT_INCDIR%%/Qsci/qscilexerspice.h
+%%QT_INCDIR%%/Qsci/qscilexersql.h
+%%QT_INCDIR%%/Qsci/qscilexertcl.h
+%%QT_INCDIR%%/Qsci/qscilexertex.h
+%%QT_INCDIR%%/Qsci/qscilexerverilog.h
+%%QT_INCDIR%%/Qsci/qscilexervhdl.h
+%%QT_INCDIR%%/Qsci/qscilexerxml.h
+%%QT_INCDIR%%/Qsci/qscilexeryaml.h
+%%QT_INCDIR%%/Qsci/qscimacro.h
+%%QT_INCDIR%%/Qsci/qsciprinter.h
+%%QT_INCDIR%%/Qsci/qsciscintilla.h
+%%QT_INCDIR%%/Qsci/qsciscintillabase.h
+%%QT_INCDIR%%/Qsci/qscistyle.h
+%%QT_INCDIR%%/Qsci/qscistyledtext.h
+%%QT_LIBDIR%%/libqscintilla2.so
+%%QT_LIBDIR%%/libqscintilla2.so.9
+%%QT_LIBDIR%%/libqscintilla2.so.9.0
+%%QT_LIBDIR%%/libqscintilla2.so.9.0.2
 share/qt4/qsci/api/python/Python-2.4.api
 share/qt4/qsci/api/python/Python-2.5.api
 share/qt4/qsci/api/python/Python-2.6.api
@@ -67,6 +67,6 @@ share/qt4/qsci/api/python/Python-3.3.api
 @dirrmtry share/qt4/qsci/api
 @dirrmtry share/qt4/qsci
 @dirrmtry share/qt4
-@dirrmtry %%QT_LIBDIR_REL%%
-@dirrm %%QT_INCDIR_REL%%/Qsci
-@dirrmtry %%QT_INCDIR_REL%%
+@dirrmtry %%QT_LIBDIR%%
+@dirrm %%QT_INCDIR%%/Qsci
+@dirrmtry %%QT_INCDIR%%

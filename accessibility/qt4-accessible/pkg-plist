@@ -1,6 +1,6 @@
-%%QT_PLUGINDIR_REL%%/accessible/libqtaccessiblecompatwidgets.so
-%%DEBUG%%%%QT_PLUGINDIR_REL%%/accessible/libqtaccessiblecompatwidgets.so.debug
-%%QT_PLUGINDIR_REL%%/accessible/libqtaccessiblewidgets.so
-%%DEBUG%%%%QT_PLUGINDIR_REL%%/accessible/libqtaccessiblewidgets.so.debug
-@dirrm %%QT_PLUGINDIR_REL%%/accessible
-@dirrmtry %%QT_PLUGINDIR_REL%%
+%%QT_PLUGINDIR%%/accessible/libqtaccessiblecompatwidgets.so
+%%DEBUG%%%%QT_PLUGINDIR%%/accessible/libqtaccessiblecompatwidgets.so.debug
+%%QT_PLUGINDIR%%/accessible/libqtaccessiblewidgets.so
+%%DEBUG%%%%QT_PLUGINDIR%%/accessible/libqtaccessiblewidgets.so.debug
+@dirrm %%QT_PLUGINDIR%%/accessible
+@dirrmtry %%QT_PLUGINDIR%%

@@ -1,5 +1,5 @@
 bin/mscore
-%%QT_PLUGINDIR_REL%%/designer/libawlplugin.so
+%%QT_PLUGINDIR%%/designer/libawlplugin.so
 share/applications/mscore.desktop
 %%DATADIR%%/demos/All_Dudes.mscz
 %%DATADIR%%/demos/Estudio-No1-Tarrega.mscx

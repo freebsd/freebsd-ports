@@ -43,4 +43,4 @@ share/mime/packages/akonadi-mime.xml
 @dirrmtry include/akonadi/private
 @dirrmtry include/akonadi
 %%SQLITE%%@cwd %%QT_PREFIX%%
-%%SQLITE%%%%QT_PLUGINDIR_REL%%/sqldrivers/libqsqlite3.so
+%%SQLITE%%%%QT_PLUGINDIR%%/sqldrivers/libqsqlite3.so

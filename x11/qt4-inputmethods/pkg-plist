@@ -1,4 +1,4 @@
-%%QT_PLUGINDIR_REL%%/inputmethods/libqimsw-multi.so
-%%DEBUG%%%%QT_PLUGINDIR_REL%%/inputmethods/libqimsw-multi.so.debug
-@dirrm %%QT_PLUGINDIR_REL%%/inputmethods
-@dirrmtry %%QT_PLUGINDIR_REL%%
+%%QT_PLUGINDIR%%/inputmethods/libqimsw-multi.so
+%%DEBUG%%%%QT_PLUGINDIR%%/inputmethods/libqimsw-multi.so.debug
+@dirrm %%QT_PLUGINDIR%%/inputmethods
+@dirrmtry %%QT_PLUGINDIR%%

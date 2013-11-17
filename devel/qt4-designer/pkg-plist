@@ -96,20 +96,20 @@ lib/qt4/libQtDesignerComponents.so.%%SHLIB_VER%%
 %%DEBUG%%lib/qt4/libQtDesignerComponents.so.%%SHLIB_VER%%.debug
 lib/qt4/libQtUiTools.a
 lib/qt4/libQtUiTools.prl
-%%QT_PLUGINDIR_REL%%/designer/libphononwidgets.so
-%%DEBUG%%%%QT_PLUGINDIR_REL%%/designer/libphononwidgets.so.debug
-%%QT_PLUGINDIR_REL%%/designer/libqdeclarativeview.so
-%%DEBUG%%%%QT_PLUGINDIR_REL%%/designer/libqdeclarativeview.so.debug
-%%QT_PLUGINDIR_REL%%/designer/libqt3supportwidgets.so
-%%DEBUG%%%%QT_PLUGINDIR_REL%%/designer/libqt3supportwidgets.so.debug
-%%QT_PLUGINDIR_REL%%/designer/libqwebview.so
-%%DEBUG%%%%QT_PLUGINDIR_REL%%/designer/libqwebview.so.debug
+%%QT_PLUGINDIR%%/designer/libphononwidgets.so
+%%DEBUG%%%%QT_PLUGINDIR%%/designer/libphononwidgets.so.debug
+%%QT_PLUGINDIR%%/designer/libqdeclarativeview.so
+%%DEBUG%%%%QT_PLUGINDIR%%/designer/libqdeclarativeview.so.debug
+%%QT_PLUGINDIR%%/designer/libqt3supportwidgets.so
+%%DEBUG%%%%QT_PLUGINDIR%%/designer/libqt3supportwidgets.so.debug
+%%QT_PLUGINDIR%%/designer/libqwebview.so
+%%DEBUG%%%%QT_PLUGINDIR%%/designer/libqwebview.so.debug
 libdata/pkgconfig/QtDesigner.pc
 libdata/pkgconfig/QtDesignerComponents.pc
 libdata/pkgconfig/QtUiTools.pc
 share/pixmaps/designer-qt4.png
-@dirrmtry %%QT_PLUGINDIR_REL%%/designer
-@dirrmtry %%QT_PLUGINDIR_REL%%
+@dirrmtry %%QT_PLUGINDIR%%/designer
+@dirrmtry %%QT_PLUGINDIR%%
 @dirrmtry lib/qt4
 @dirrm include/qt4/QtUiTools
 @dirrm include/qt4/QtDesigner
