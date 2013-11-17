@@ -1418,11 +1418,11 @@
     SUBDIR += stardict-MerrianWebster
     SUBDIR += stardict-OxfordCollocation
     SUBDIR += stardict-dict-fa_IR
+    SUBDIR += stardict-dictd_mova
     SUBDIR += stardict-longman
     SUBDIR += stardict-oald
+    SUBDIR += stardict-quick
     SUBDIR += stardict-rptts
-    SUBDIR += stardict2-dictd_mova
-    SUBDIR += stardict2-quick
     SUBDIR += stardict3
     SUBDIR += supercat
     SUBDIR += sv-aspell

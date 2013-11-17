@@ -5190,3 +5190,5 @@ net-im/decibel||2013-11-17|Has expired: Deprecated and unsupported upstream for 
 databases/postgresql-libpq++||2013-11-17|Has expired: Not maintained upstreams for 10+ years.
 audio/gmpeg-devel||2013-11-17|Removed, no active development since more than 8 years
 graphics/gqview-devel||2013-11-17|Removed, no active development since more than 8 years
+textproc/stardict2-dictd_mova|textproc/stardict-dictd_mova|2013-11-17|Renamed
+textproc/stardict2-quick|textproc/stardict-quick|2013-11-17|Renamed
