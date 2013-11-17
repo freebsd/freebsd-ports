@@ -3,7 +3,7 @@
 
 PORTNAME=	violetland
 PORTVERSION=	0.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE \
 		http://mirror.amdmi3.ru/distfiles/
@@ -18,7 +18,7 @@ USE_ZIP=	yes
 USE_SDL=	sdl mixer image ttf
 USE_GL=		gl glu
 USES=		cmake gettext
-USE_DOS2UNIX=	yes
+USE_DOS2UNIX=	CMakeLists.txt src/system/utility/FileUtility.cpp
 CMAKE_ARGS=	-DDATA_INSTALL_DIR="${DATADIR}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
