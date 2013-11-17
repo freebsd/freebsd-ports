@@ -1,0 +1,11 @@
+--- ./htp.pc.in.orig	2013-08-31 19:51:21.584289198 +1000
++++ ./htp.pc.in	2013-08-31 19:51:30.724208312 +1000
+@@ -5,7 +5,7 @@
+ 
+ Name: HTP
+ Description: HTTP parser
+-Version: 0.2.X
++Version: 0.2.14
+ Libs: -L${libdir} -lhtp
+ Cflags: -I${includedir}/htp -I${libdir}/htp/include
+ 

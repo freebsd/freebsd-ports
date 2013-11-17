@@ -1,0 +1,13 @@
+include/htp/hooks.h
+include/htp/htp_decompressors.h
+include/htp/bstr.h
+include/htp/utf8_decoder.h
+include/htp/dslib.h
+include/htp/htp.h
+lib/libhtp-0.2.so
+lib/libhtp-0.2.so.1
+lib/libhtp.a
+lib/libhtp.la
+lib/libhtp.so
+libdata/pkgconfig/htp.pc
+@dirrm include/htp
