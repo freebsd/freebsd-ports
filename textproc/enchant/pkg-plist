@@ -23,6 +23,7 @@ lib/libenchant.la
 lib/libenchant.so
 lib/libenchant.so.1
 libdata/pkgconfig/enchant.pc
+man/man1/enchant.1.gz
 %%DATADIR%%/enchant.ordering
 @dirrm %%DATADIR%%
 @dirrm lib/enchant

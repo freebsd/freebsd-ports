@@ -4,7 +4,7 @@
 
 PORTNAME=	enchant
 PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://www.abisource.com/downloads/${PORTNAME}/${PORTVERSION}/
 DIST_SUBDIR=	gnome2
@@ -22,15 +22,13 @@ CONFIGURE_ARGS=	--disable-uspell \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		enchant.1
-
-OPTIONS_DEFINE=	ASPELL HSPELL HUNSPELL ISPELL ZEMBEREK
-OPTIONS_DEFAULT=ASPELL
+OPTIONS_MULTI=	SPELL
+OPTIONS_MULTI_SPELL=ASPELL HSPELL HUNSPELL ISPELL ZEMBEREK
+OPTIONS_DEFAULT=HUNSPELL
 HSPELL_DESC=	Spell checking via Hspell
 HUNSPELL_DESC=	Spell checking via Hunspell
 ZEMBEREK_DESC=	Spell checking via Zemberek
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MASPELL}
@@ -56,7 +54,7 @@ PLIST_SUB+=	HSPELL="@comment "
 .if ${PORT_OPTIONS:MHUNSPELL}
 LIB_DEPENDS+=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
 CONFIGURE_ARGS+=--enable-myspell --with-system-myspell=yes \
-		--with-myspell-dir=${LOCALBASE}
+		--with-myspell-dir=${LOCALBASE}/share/hunspell
 PLIST_SUB+=	HUNSPELL=""
 .else
 CONFIGURE_ARGS+=--disable-myspell
@@ -66,7 +64,7 @@ PLIST_SUB+=	HUNSPELL="@comment "
 .if ${PORT_OPTIONS:MISPELL}
 RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 CONFIGURE_ARGS+=--enable-ispell \
-		--with-ispell-dir=${LOCALBASE}
+		--with-ispell-dir=${LOCALBASE}/share/ispell
 PLIST_SUB+=	ISPELL=""
 .else
 CONFIGURE_ARGS+=--disable-ispell
@@ -85,5 +83,9 @@ CONFIGURE_ARGS+=--disable-zemberek
 post-patch:
 	@${REINPLACE_CMD} -e 's|MKDIRPROG-mkdir|MKDIRPROG-mkdir -p|g' \
 		${WRKSRC}/install-sh
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libenchant.so.1 \
+		      ${STAGEDIR}${PREFIX}/lib/enchant/libenchant_*.so
 
 .include <bsd.port.mk>
