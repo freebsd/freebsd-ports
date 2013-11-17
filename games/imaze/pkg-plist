@@ -4,6 +4,12 @@ bin/genlab
 bin/imazesrv
 bin/imazestat
 bin/xlabed
+man/man6/genlab.6.gz
+man/man6/imaze.6.gz
+man/man6/imazesrv.6.gz
+man/man6/imazestat.6.gz
+man/man6/ninja.6.gz
+man/man6/xlabed.6.gz
 share/imaze/labs/10x10.lab
 share/imaze/labs/12x12.lab
 share/imaze/labs/15x15.lab
