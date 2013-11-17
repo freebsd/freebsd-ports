@@ -18,28 +18,29 @@ USE_LINUX=	yes
 USE_LINUX_APPS=	allegro xorglibs
 WRKSRC=		${WRKDIR}/DeluxeSnake
 
-SUB_FILES=	pkg-install pkg-deinstall
-SUB_LIST=	CONFIG_FILES="config.dat hiscores.dat stats.dat"
+CONFIG_FILES=	config.dat hiscores.dat stats.dat
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	${BRANDELF} -t Linux ${WRKSRC}/dsnake
 
 do-install:
 .for d in data midi
-	${MKDIR} ${DATADIR}/${d}
-	${INSTALL_DATA} ${WRKSRC}/${d}/* ${DATADIR}/${d}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/${d}
+	${INSTALL_DATA} ${WRKSRC}/${d}/* ${STAGEDIR}${DATADIR}/${d}
 .endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/dsnake ${DATADIR}
+.for c in ${CONFIG_FILES}
+	@${TOUCH} ${STAGEDIR}${DATADIR}/$c
+	@${CHMOD} 666 ${STAGEDIR}${DATADIR}/$c
+.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/dsnake ${STAGEDIR}${DATADIR}
 	${ECHO_CMD} "#!/bin/sh" > ${WRKDIR}/dsnake.sh
 	${ECHO_CMD} "cd ${DATADIR} && exec ./dsnake \"\$$@\"" >> ${WRKDIR}/dsnake.sh
-	${INSTALL_SCRIPT} ${WRKDIR}/dsnake.sh ${PREFIX}/bin/dsnake
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ReadMe.txt ${DOCSDIR}
-.endif
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${INSTALL_SCRIPT} ${WRKDIR}/dsnake.sh ${STAGEDIR}${PREFIX}/bin/dsnake
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ReadMe.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
