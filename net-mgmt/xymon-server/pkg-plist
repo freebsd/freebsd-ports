@@ -467,6 +467,7 @@ man/man8/xymonproxy.8
 @exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/server/www/rep
 @exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/server/www/snap
 @exec install -d -o %%XYMONUSER%% %D/%%WWWDIR%%/server/www/wml
+@exec chown %%XYMONUSER%% %D/%%WWWDIR%%/server/www
 @dirrm %%WWWDIR%%/server/www/wml
 @dirrm %%WWWDIR%%/server/www/snap
 @dirrm %%WWWDIR%%/server/www/rep
