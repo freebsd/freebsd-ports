@@ -47,7 +47,7 @@
  LIB_DIRS     = -L$(QT_LIB_DIR) -L$(X11_LIB_DIR)
  
 -LIBS         = -lX11 -lqt -lm
-+LIBS         = -lX11 -lQt3Support -lQtGui  -lm -pthread
++LIBS         = -lX11 -lQtCore -lQt3Support -lQtGui  -lm -pthread
  # If you want to use the QImageIO lib (to support jpg and png maps) use the
  # next two lines and comment the one above
  #WITH_QIMGIO  = -DWITH_QIMAGEIO
