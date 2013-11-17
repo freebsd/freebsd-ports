@@ -1,4 +1,10 @@
+@group games
+@mode 2755
 bin/dd2
+@mode
+@group
+@exec touch /var/games/dd2-hiscore ; chmod 664 /var/games/dd2-hiscore
+@unexec if [ -f /var/games/dd2-hiscore ] ; then rm /var/games/dd2-hiscore; fi
 @unexec if cmp -s %D/etc/dd2.cfg %D/etc/dd2.cfg.sample; then rm -f %D/etc/dd2.cfg; fi
 etc/dd2.cfg.sample
 @exec if test ! -f %D/etc/dd2.cfg; then cp -p %D/etc/dd2.cfg.sample %D/etc/dd2.cfg; fi
