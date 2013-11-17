@@ -1,4 +1,7 @@
 bin/dsnake
+%%DATADIR%%/config.dat
+%%DATADIR%%/hiscores.dat
+%%DATADIR%%/stats.dat
 %%DATADIR%%/data/fonts.dat
 %%DATADIR%%/data/logos.dat
 %%DATADIR%%/data/sfx.dat
