@@ -14,12 +14,10 @@ COMMENT=	Generic Monitor Xfce4 panel plugin
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=        pathfix gettext pkgconfig
+USES=		pathfix gettext pkgconfig gmake
 USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu panel
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

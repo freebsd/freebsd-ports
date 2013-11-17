@@ -12,8 +12,8 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CD/DVD burning tool for Xfce
 
-LIB_DEPENDS=	burn:${PORTSDIR}/devel/libburn \
-		isofs:${PORTSDIR}/devel/libisofs
+LIB_DEPENDS=	libburn.so:${PORTSDIR}/devel/libburn \
+		libisofs.so:${PORTSDIR}/devel/libisofs
 RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools
 
@@ -21,37 +21,21 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GMSGFMT=${PREFIX}/bin/msgfmt DATADIRNAME=share
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	intltool
 USE_XFCE=	configenv libexo libgui
-USES=		pkgconfig
+USES=		pkgconfig gmake
 INSTALLS_ICONS=	yes
-
-MAN1=		xfburn.1
 
 OPTIONS_DEFINE=	DBUS HAL GSTREAMER NLS
 OPTIONS_DEFAULT=	DBUS HAL
+NLS_USE=	USES=gettext
+MLS_CONFIGURE_ENABLE=	nls
+DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+DBUS_ENABLE=	dbus
+HAL_LIB_DEPENDS=	libhal.so:${PORTSDIR}/sysutils/hal
+HAL_ENABLE=	hal
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-.else
-CONFIGURE_ARGS+=	--disable-nls
-.endif
-
-.if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	dbus-1:${PORTSDIR}/devel/dbus
-.else
-CONFIGURE_ARGS+=	--disable-dbus
-.endif
-
-.if ${PORT_OPTIONS:MHAL}
-LIB_DEPENDS+=	hal:${PORTSDIR}/sysutils/hal
-.else
-CONFIGURE_ARGS+=	--disable-hal
-.endif
 
 .if ${PORT_OPTIONS:MGSTREAMER}
 USE_GSTREAMER=	core

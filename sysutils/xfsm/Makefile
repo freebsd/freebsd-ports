@@ -15,8 +15,6 @@ COMMENT=	X File System Monitor
 USES=		imake
 USE_XORG=	xbitmaps x11 xext
 MAKE_ARGS=	CC="${CC}" CCOPTIONS="-DFreeBSD"
-MAN1=		xfsm.1
-PLIST_FILES=	bin/xfsm
+PLIST_FILES=	bin/xfsm man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -20,8 +20,6 @@ NO_WRKSUBDIR=	yes
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xt
 
-MAN1=		${PORTNAME}.1
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -12,8 +12,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Splits standard input and pipes into a command
 
 GNU_CONFIGURE=	yes
-MAN1=		xin.1
-PLIST_FILES=	bin/xin
+PLIST_FILES=	bin/xin man/man1/xin.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
