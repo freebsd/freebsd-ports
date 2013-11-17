@@ -37,6 +37,7 @@ lib/torcs/setup_linux.sh
 lib/torcs/texmapper-bin
 lib/torcs/torcs-bin
 lib/torcs/trackgen-bin
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
 share/games/torcs/Ticon.ico
 share/games/torcs/Ticon.png
 share/games/torcs/cars/155-DTM/155-DTM-lod1.acc
@@ -85,6 +86,14 @@ share/games/torcs/cars/car1-stock1/grill.rgb
 share/games/torcs/cars/car1-stock1/readme.txt
 share/games/torcs/cars/car1-stock1/shadow.rgb
 share/games/torcs/cars/car1-stock1/tex-wheel.rgb
+share/games/torcs/cars/car1-stock2/car1-stock2.acc
+share/games/torcs/cars/car1-stock2/car1-stock2.rgb
+share/games/torcs/cars/car1-stock2/car1-stock2.xml
+share/games/torcs/cars/car1-stock2/carbon-128.rgb
+share/games/torcs/cars/car1-stock2/driver.rgb
+share/games/torcs/cars/car1-stock2/readme.txt
+share/games/torcs/cars/car1-stock2/shadow.rgb
+share/games/torcs/cars/car1-stock2/tex-wheel.rgb
 share/games/torcs/cars/car1-trb1/car1-trb1.acc
 share/games/torcs/cars/car1-trb1/car1-trb1.rgb
 share/games/torcs/cars/car1-trb1/car1-trb1.xml
@@ -540,6 +549,7 @@ share/games/torcs/categories/Track-RWD-GrC.xml
 share/games/torcs/categories/free.xml
 share/games/torcs/categories/ow1.xml
 share/games/torcs/categories/stock1.xml
+share/games/torcs/categories/stock2.xml
 share/games/torcs/categories/trb1.xml
 share/games/torcs/categories/trb3.xml
 share/games/torcs/config/graph.xml
@@ -1838,13 +1848,171 @@ share/games/torcs/tracks/road/e-track-1/tr-curb-bw-l.rgb
 share/games/torcs/tracks/road/e-track-1/tr-curb-bw-r.rgb
 share/games/torcs/tracks/road/e-track-1/tr-grass-bw1.rgb
 share/games/torcs/tracks/road/e-track-1/tr-grass-bw2.rgb
+share/games/torcs/tracks/road/e-track-2/01.png
+share/games/torcs/tracks/road/e-track-2/02.png
+share/games/torcs/tracks/road/e-track-2/ALAUBM.png
+share/games/torcs/tracks/road/e-track-2/BUS.png
+share/games/torcs/tracks/road/e-track-2/CAMPER01.png
+share/games/torcs/tracks/road/e-track-2/CAMPER02.png
+share/games/torcs/tracks/road/e-track-2/CAMPER3.png
+share/games/torcs/tracks/road/e-track-2/CAMPER4.png
+share/games/torcs/tracks/road/e-track-2/CAMPER41.png
+share/games/torcs/tracks/road/e-track-2/CAR01.png
+share/games/torcs/tracks/road/e-track-2/CAR02.png
+share/games/torcs/tracks/road/e-track-2/CAR05.png
+share/games/torcs/tracks/road/e-track-2/CAR06.png
+share/games/torcs/tracks/road/e-track-2/CHtree_n.png
+share/games/torcs/tracks/road/e-track-2/CMNTA.png
+share/games/torcs/tracks/road/e-track-2/CMNTB.png
+share/games/torcs/tracks/road/e-track-2/CMNTBB.png
+share/games/torcs/tracks/road/e-track-2/CONCTP.png
+share/games/torcs/tracks/road/e-track-2/FNCEB.png
+share/games/torcs/tracks/road/e-track-2/GBtree_n.png
+share/games/torcs/tracks/road/e-track-2/GEtree_n.png
+share/games/torcs/tracks/road/e-track-2/GSPAtree.png
+share/games/torcs/tracks/road/e-track-2/IYtree_n.png
+share/games/torcs/tracks/road/e-track-2/LAMAOP.png
+share/games/torcs/tracks/road/e-track-2/MASE01.png
+share/games/torcs/tracks/road/e-track-2/MASE02.png
+share/games/torcs/tracks/road/e-track-2/PASS10.png
+share/games/torcs/tracks/road/e-track-2/PASS3.png
+share/games/torcs/tracks/road/e-track-2/PASS4.png
+share/games/torcs/tracks/road/e-track-2/PDKKA13.png
+share/games/torcs/tracks/road/e-track-2/PITWB.png
+share/games/torcs/tracks/road/e-track-2/STAIRS.png
+share/games/torcs/tracks/road/e-track-2/STAIRSD.png
+share/games/torcs/tracks/road/e-track-2/TOPCROWD.png
+share/games/torcs/tracks/road/e-track-2/TRIBA08.png
+share/games/torcs/tracks/road/e-track-2/TRIBA11.png
+share/games/torcs/tracks/road/e-track-2/TRIBB01.png
+share/games/torcs/tracks/road/e-track-2/TRIBB02.png
+share/games/torcs/tracks/road/e-track-2/TRIBB03.png
+share/games/torcs/tracks/road/e-track-2/TreeRNS3.png
+share/games/torcs/tracks/road/e-track-2/TreeRNS4.png
+share/games/torcs/tracks/road/e-track-2/TreeRNS5.png
+share/games/torcs/tracks/road/e-track-2/asphalt-e2.png
+share/games/torcs/tracks/road/e-track-2/asphalt-pit-e2.png
+share/games/torcs/tracks/road/e-track-2/asphalt-sl-e2.png
+share/games/torcs/tracks/road/e-track-2/asphalt-tile-e2.png
+share/games/torcs/tracks/road/e-track-2/asphalt-tile-stripes-e2.png
+share/games/torcs/tracks/road/e-track-2/asphalt-white-tile.png
+share/games/torcs/tracks/road/e-track-2/back-sign.png
 share/games/torcs/tracks/road/e-track-2/background.png
+share/games/torcs/tracks/road/e-track-2/barrier-1.png
+share/games/torcs/tracks/road/e-track-2/barrier-2.png
+share/games/torcs/tracks/road/e-track-2/block4f.png
+share/games/torcs/tracks/road/e-track-2/block4s.png
+share/games/torcs/tracks/road/e-track-2/block5-arbor_n.png
+share/games/torcs/tracks/road/e-track-2/block5f.png
+share/games/torcs/tracks/road/e-track-2/block5fqa.png
+share/games/torcs/tracks/road/e-track-2/block5s.png
+share/games/torcs/tracks/road/e-track-2/block5t.png
+share/games/torcs/tracks/road/e-track-2/border-grass-e2.png
+share/games/torcs/tracks/road/e-track-2/border-grass-end-e2.png
+share/games/torcs/tracks/road/e-track-2/border-grass-start-e2.png
+share/games/torcs/tracks/road/e-track-2/border-gravel-e2.png
+share/games/torcs/tracks/road/e-track-2/border-gravel-end-e2.png
+share/games/torcs/tracks/road/e-track-2/border-gravel-start-e2.png
+share/games/torcs/tracks/road/e-track-2/border2m.png
+share/games/torcs/tracks/road/e-track-2/bordertile.png
+share/games/torcs/tracks/road/e-track-2/conc.png
+share/games/torcs/tracks/road/e-track-2/concrete-wall1.png
+share/games/torcs/tracks/road/e-track-2/curb-red-white-e2.png
 share/games/torcs/tracks/road/e-track-2/e-track-2.acc
 share/games/torcs/tracks/road/e-track-2/e-track-2.png
 share/games/torcs/tracks/road/e-track-2/e-track-2.xml
-share/games/torcs/tracks/road/e-track-2/env.png
+share/games/torcs/tracks/road/e-track-2/fence_arbor_n.png
+share/games/torcs/tracks/road/e-track-2/grass-bw-d2.png
+share/games/torcs/tracks/road/e-track-2/grass-cut-e2.png
+share/games/torcs/tracks/road/e-track-2/grass-dirt-e2.png
+share/games/torcs/tracks/road/e-track-2/grass-e2.png
+share/games/torcs/tracks/road/e-track-2/grass-end-e2.png
+share/games/torcs/tracks/road/e-track-2/grass-start-e2.png
+share/games/torcs/tracks/road/e-track-2/gravel-e2.png
+share/games/torcs/tracks/road/e-track-2/gravel-end-e2.png
+share/games/torcs/tracks/road/e-track-2/gravel-start-e2.png
+share/games/torcs/tracks/road/e-track-2/house16roof.png
+share/games/torcs/tracks/road/e-track-2/house17base.png
+share/games/torcs/tracks/road/e-track-2/house17concrete.png
+share/games/torcs/tracks/road/e-track-2/house17elevator.png
+share/games/torcs/tracks/road/e-track-2/house17facade.png
+share/games/torcs/tracks/road/e-track-2/house17roof.png
+share/games/torcs/tracks/road/e-track-2/house18chimney.png
+share/games/torcs/tracks/road/e-track-2/house18facade.png
+share/games/torcs/tracks/road/e-track-2/house18top.png
+share/games/torcs/tracks/road/e-track-2/house20facade.png
+share/games/torcs/tracks/road/e-track-2/house21w1.png
+share/games/torcs/tracks/road/e-track-2/house21w2.png
+share/games/torcs/tracks/road/e-track-2/house22base.png
+share/games/torcs/tracks/road/e-track-2/house22facade.png
+share/games/torcs/tracks/road/e-track-2/house23facade.png
+share/games/torcs/tracks/road/e-track-2/house24brick.png
+share/games/torcs/tracks/road/e-track-2/house24facade.png
+share/games/torcs/tracks/road/e-track-2/house24roof.png
+share/games/torcs/tracks/road/e-track-2/house24timber.png
+share/games/torcs/tracks/road/e-track-2/house24timber2.png
+share/games/torcs/tracks/road/e-track-2/house25ch.png
+share/games/torcs/tracks/road/e-track-2/house25chtop.png
+share/games/torcs/tracks/road/e-track-2/house25elevator.png
+share/games/torcs/tracks/road/e-track-2/house25facade.png
+share/games/torcs/tracks/road/e-track-2/house25roof.png
+share/games/torcs/tracks/road/e-track-2/house25side.png
+share/games/torcs/tracks/road/e-track-2/house26base.png
+share/games/torcs/tracks/road/e-track-2/house26ceil.png
+share/games/torcs/tracks/road/e-track-2/house26elev.png
+share/games/torcs/tracks/road/e-track-2/house26facade.png
+share/games/torcs/tracks/road/e-track-2/house26parking.png
+share/games/torcs/tracks/road/e-track-2/house27facade.png
+share/games/torcs/tracks/road/e-track-2/house27r1.png
+share/games/torcs/tracks/road/e-track-2/house27r2.png
+share/games/torcs/tracks/road/e-track-2/house27side.png
+share/games/torcs/tracks/road/e-track-2/house28facade.png
+share/games/torcs/tracks/road/e-track-2/house31facade.png
+share/games/torcs/tracks/road/e-track-2/house31roof.png
+share/games/torcs/tracks/road/e-track-2/house32facade.png
+share/games/torcs/tracks/road/e-track-2/house32roof.png
+share/games/torcs/tracks/road/e-track-2/house33facade.png
+share/games/torcs/tracks/road/e-track-2/house33side.png
+share/games/torcs/tracks/road/e-track-2/house34facade.png
+share/games/torcs/tracks/road/e-track-2/house34roof.png
+share/games/torcs/tracks/road/e-track-2/house35facade.png
+share/games/torcs/tracks/road/e-track-2/house36facade.png
+share/games/torcs/tracks/road/e-track-2/improveyou-wall.png
+share/games/torcs/tracks/road/e-track-2/mycast.png
+share/games/torcs/tracks/road/e-track-2/pylon1.rgb
+share/games/torcs/tracks/road/e-track-2/pylon2.rgb
 share/games/torcs/tracks/road/e-track-2/pylon3.rgb
+share/games/torcs/tracks/road/e-track-2/raceline.png
 share/games/torcs/tracks/road/e-track-2/readme.txt
+share/games/torcs/tracks/road/e-track-2/road-dirt.png
+share/games/torcs/tracks/road/e-track-2/road-e2.png
+share/games/torcs/tracks/road/e-track-2/rock-wall-e2.png
+share/games/torcs/tracks/road/e-track-2/rock1-e2.png
+share/games/torcs/tracks/road/e-track-2/shadow2.png
+share/games/torcs/tracks/road/e-track-2/shadow2.rgb
+share/games/torcs/tracks/road/e-track-2/tent2.png
+share/games/torcs/tracks/road/e-track-2/tire-wall-at.png
+share/games/torcs/tracks/road/e-track-2/tire-wall-green.png
+share/games/torcs/tracks/road/e-track-2/tire-wall-se.png
+share/games/torcs/tracks/road/e-track-2/tire-wall-ur.png
+share/games/torcs/tracks/road/e-track-2/toilette.png
+share/games/torcs/tracks/road/e-track-2/tree11_n.png
+share/games/torcs/tracks/road/e-track-2/tree18_n.png
+share/games/torcs/tracks/road/e-track-2/tree18end_n.png
+share/games/torcs/tracks/road/e-track-2/tree18side1_n.png
+share/games/torcs/tracks/road/e-track-2/tree18side2_n.png
+share/games/torcs/tracks/road/e-track-2/tree7_n.png
+share/games/torcs/tracks/road/e-track-2/tree9_n.png
+share/games/torcs/tracks/road/e-track-2/treeS3_n.png
+share/games/torcs/tracks/road/e-track-2/treeUGLIES01_n.png
+share/games/torcs/tracks/road/e-track-2/treeUGLIES02_n.png
+share/games/torcs/tracks/road/e-track-2/tree_eva_n.png
+share/games/torcs/tracks/road/e-track-2/treefc_n.png
+share/games/torcs/tracks/road/e-track-2/turn100.png
+share/games/torcs/tracks/road/e-track-2/turn200.png
+share/games/torcs/tracks/road/e-track-2/turn25.png
+share/games/torcs/tracks/road/e-track-2/turn300.png
+share/games/torcs/tracks/road/e-track-2/turn50.png
 share/games/torcs/tracks/road/e-track-3/BLBDBK.png
 share/games/torcs/tracks/road/e-track-3/CONCSH01.png
 share/games/torcs/tracks/road/e-track-3/PASS10.png
@@ -2059,6 +2227,7 @@ share/games/torcs/tracks/road/e-track-6/e-track-6.png
 share/games/torcs/tracks/road/e-track-6/e-track-6.xml
 share/games/torcs/tracks/road/e-track-6/grass3.png
 share/games/torcs/tracks/road/e-track-6/pylon1.rgb
+share/games/torcs/tracks/road/e-track-6/raceline.png
 share/games/torcs/tracks/road/e-track-6/readme.txt
 share/games/torcs/tracks/road/e-track-6/roadgras.png
 share/games/torcs/tracks/road/e-track-6/roadgrsd.png
@@ -2520,6 +2689,7 @@ share/games/torcs/tracks/road/wheel-2/clkdtm.png
 share/games/torcs/tracks/road/wheel-2/concdal.rgb
 share/games/torcs/tracks/road/wheel-2/girder_tree_n.png
 share/games/torcs/tracks/road/wheel-2/grass.png
+share/games/torcs/tracks/road/wheel-2/raceline.png
 share/games/torcs/tracks/road/wheel-2/readme.txt
 share/games/torcs/tracks/road/wheel-2/rmbl.png
 share/games/torcs/tracks/road/wheel-2/sand.png
@@ -2837,6 +3007,7 @@ share/games/torcs/wheels/trb1-6/wheel3d.png
 @dirrm share/games/torcs/cars/car2-trb1
 @dirrm share/games/torcs/cars/car1-trb3
 @dirrm share/games/torcs/cars/car1-trb1
+@dirrm share/games/torcs/cars/car1-stock2
 @dirrm share/games/torcs/cars/car1-stock1
 @dirrm share/games/torcs/cars/car1-ow1
 @dirrm share/games/torcs/cars/buggy
@@ -2846,6 +3017,7 @@ share/games/torcs/wheels/trb1-6/wheel3d.png
 @dirrm share/games/torcs/cars
 @dirrm share/games/torcs
 @dirrmtry share/games
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/torcs/modules/track
 @dirrm lib/torcs/modules/telemetry
 @dirrm lib/torcs/modules/simu
@@ -2866,9 +3038,3 @@ share/games/torcs/wheels/trb1-6/wheel3d.png
 @dirrm lib/torcs/drivers/berniw
 @dirrm lib/torcs/drivers
 @dirrm lib/torcs
-@exec mkdir -p %D/share/games/torcs/drivers/bt/1/race
-@exec mkdir -p %D/share/games/torcs/drivers/bt/1/qualifying
-@exec mkdir -p %D/share/games/torcs/drivers/bt/1/practice
-@exec mkdir -p %D/share/games/torcs/drivers/bt/0/race
-@exec mkdir -p %D/share/games/torcs/drivers/bt/0/qualifying
-@exec mkdir -p %D/share/games/torcs/drivers/bt/0/practice
