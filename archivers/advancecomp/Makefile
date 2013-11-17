@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	advancecomp
-PORTVERSION=	1.17
+PORTVERSION=	1.18
 CATEGORIES=	archivers
 MASTER_SITES=	SF/advancemame/${PORTNAME}/${PORTVERSION}
 
