@@ -28,7 +28,6 @@ USE_PHP_BUILD=	yes
 USES=		gmake
 WRKSRC=		${WRKDIR}/${DISTNAME}/swig/php
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^SWIG = swig/ s|$$|2.0|' ${WRKSRC}/../SWIGmake.base
 	@${REINPLACE_CMD} -e 's|^CC=.*$$|CC=${CC}|; s|^CXX=.*$$|CXX=${CXX}|; s|^CFLAGS=.*$$|CFLAGS=${CFLAGS}|' ${WRKSRC}/${MAKEFILE}
@@ -42,8 +41,8 @@ pre-build:
 	${CP} ${LOCALBASE}/include/cpl_config.h ${WRKSRC}/../../port/
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}/ ${PREFIX}/include/php/ext/${PORTNAME}/
-	${INSTALL_LIB} ${WRKSRC}/*.so ${PREFIX}/lib/php/${PHP_EXT_DIR}/
-	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/php/ext/${PORTNAME}/
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/ ${STAGEDIR}${PREFIX}/include/php/ext/${PORTNAME}/
+	${INSTALL_LIB} ${WRKSRC}/*.so ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/
+	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/php/ext/${PORTNAME}/
 
 .include <bsd.port.mk>
