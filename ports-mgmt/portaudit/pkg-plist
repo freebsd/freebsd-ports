@@ -1,6 +1,7 @@
 sbin/portaudit
 etc/portaudit.pubkey
 etc/portaudit.conf.sample
+man/man1/portaudit.1.gz
 %%PERIODICDIR%%/security/410.portaudit
 @dirrmtry %%PERIODICDIR%%/security
 @dirrmtry %%PERIODICDIR%%
