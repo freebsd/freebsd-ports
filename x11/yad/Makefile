@@ -1,8 +1,8 @@
-# Created by: Danilo Egea Gondolfo <danilogondolfo@gmail.com>
+# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	yad
-PORTVERSION=	0.23.1
+PORTVERSION=	0.24.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GOOGLE_CODE
 
