@@ -16,6 +16,20 @@ etc/uucp/passwd.sample
 etc/uucp/port.sample
 etc/uucp/sys1.sample
 etc/uucp/sys2.sample
+man/man1/cu.1.gz
+man/man1/uuconv.1.gz
+man/man1/uucp.1.gz
+man/man1/uulog.1.gz
+man/man1/uuname.1.gz
+man/man1/uupick.1.gz
+man/man1/uustat.1.gz
+man/man1/uuto.1.gz
+man/man1/uux.1.gz
+man/man8/uuchk.8.gz
+man/man8/uucico.8.gz
+man/man8/uusched.8.gz
+man/man8/uuxqt.8.gz
+man/man8/uucpd.8.gz
 @exec chown uucp:uucp %D/etc/uucp
 @exec chmod 750 %D/etc/uucp
 libexec/uucpd
@@ -33,5 +47,6 @@ sbin/uuconv
 @dirrm etc/periodic
 @dirrm etc/uucp
 @dirrm libexec/uucp
+@exec pw usermod uucp -s %D/libexec/uucp/uucico
 @exec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^suucp /etc/services.bak ; echo "suucp               4031/tcp  #UUCP over SSL";  echo "suucp               4031/udp  #UUCP over SSL") > /etc/services
 @unexec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^suucp /etc/services.bak ) > /etc/services
