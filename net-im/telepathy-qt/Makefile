@@ -13,6 +13,9 @@ COMMENT=	Framework for VoIP and IP applications
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
+DEPRECATED=	Unmaintained upstream since 2007, use net-im/telepathy-qt4
+EXPIRATION_DATE=	2013-12-01
+
 USES=		cmake pkgconfig
 CMAKE_SOURCE_PATH=	..
 USE_QT4=	corelib qmake_build uic_build moc_build rcc_build xml dbus

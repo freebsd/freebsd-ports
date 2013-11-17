@@ -15,6 +15,9 @@ LIB_DEPENDS=	QtTelepathyCore.0:${PORTSDIR}/net-im/telepathy-qt
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
+DEPRECATED=	Unmaintained upstream since 2007, not used by anything
+EXPIRATION_DATE=	2013-12-01
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/build
 
 USES=		cmake pkgconfig
