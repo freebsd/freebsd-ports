@@ -11,11 +11,13 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Collection of Emacs Development Environment Tools
 
-USE_EMACS=		yes
-MAKE_JOBS_UNSAFE=	yes
-USE_GMAKE=		yes
+LICENSE=	GPLv2
 
-CEDET_LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
+USE_EMACS=		yes
+USES=			gmake
+MAKE_JOBS_UNSAFE=	yes
+
+CEDET_LISPDIR=	${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 
 INFO=		bovine-cedet cogre ede-cedet eieio-cedet grammar-fw \
 		semantic-cedet semantic-appdev semantic-langdev semantic-user \
@@ -28,7 +30,6 @@ SEMANTIC_INFOS=	bovine-cedet.info grammar-fw.info semantic-appdev.info \
 
 CONFLICTS=	eieio-[0-9]* semantic-[0-9]* speedbar-[0-9]*
 
-NO_STAGE=	yes
 pre-build:
 #cleanup info
 	${RM} -f ${WRKSRC}/ede/ede.info
@@ -47,7 +48,7 @@ do-install:
 .for i in *.el *.elc
 	${INSTALL_DATA} ${WRKSRC}/cogre/${i} ${CEDET_LISPDIR}/cogre
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/cogre/cogre.info ${PREFIX}/info
+	${INSTALL_DATA} ${WRKSRC}/cogre/cogre.info ${STAGEDIR}${PREFIX}/info
 
 # common
 	${MKDIR} ${CEDET_LISPDIR}/common
@@ -64,14 +65,14 @@ do-install:
 .for i in *.el *.elc
 	${INSTALL_DATA} ${WRKSRC}/ede/${i} ${CEDET_LISPDIR}/ede
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/ede/ede-cedet.info ${PREFIX}/info
+	${INSTALL_DATA} ${WRKSRC}/ede/ede-cedet.info ${STAGEDIR}${PREFIX}/info
 
 # eieio
 	${MKDIR} ${CEDET_LISPDIR}/eieio
 .for i in *.el *.elc
 	${INSTALL_DATA} ${WRKSRC}/eieio/${i} ${CEDET_LISPDIR}/eieio
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/eieio/eieio-cedet.info ${PREFIX}/info
+	${INSTALL_DATA} ${WRKSRC}/eieio/eieio-cedet.info ${STAGEDIR}${PREFIX}/info
 
 # semantic
 	${MKDIR} ${CEDET_LISPDIR}/semantic
@@ -87,9 +88,9 @@ do-install:
 .endfor
 
 .for i in ${SEMANTIC_INFOS}
-	${INSTALL_DATA} ${WRKSRC}/semantic/doc/${i} ${PREFIX}/info
+	${INSTALL_DATA} ${WRKSRC}/semantic/doc/${i} ${STAGEDIR}${PREFIX}/info
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/semantic/semanticdb.sh ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/semantic/semanticdb.sh ${STAGEDIR}${PREFIX}/bin
 
 # speedbar (Emacs-22 have own but version oldes than req in cedet)
 	${MKDIR} ${CEDET_LISPDIR}/speedbar
@@ -98,7 +99,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/speedbar/${i} ${CEDET_LISPDIR}/speedbar
 .endfor
 
-	${INSTALL_DATA} ${WRKSRC}/speedbar/speedbar-cedet.info ${PREFIX}/info
+	${INSTALL_DATA} ${WRKSRC}/speedbar/speedbar-cedet.info ${STAGEDIR}${PREFIX}/info
 
 # srecode
 	${MKDIR} ${CEDET_LISPDIR}/srecode
@@ -109,7 +110,7 @@ do-install:
 .for i in *.srt
 	${INSTALL_DATA} ${WRKSRC}/srecode/templates/${i} ${CEDET_LISPDIR}/srecode/templates
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/srecode/srecode-cedet.info ${PREFIX}/info
+	${INSTALL_DATA} ${WRKSRC}/srecode/srecode-cedet.info ${STAGEDIR}${PREFIX}/info
 
 #contrib
 	${MKDIR} ${CEDET_LISPDIR}/contrib
