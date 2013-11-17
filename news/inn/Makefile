@@ -141,7 +141,7 @@ MAN3=		INN::Config.3pm INN::Utils::Shlock.3pm clientlib.3 dbz.3 inndcomm.3 libau
 MAN5=		active.5 active.times.5 buffindexed.conf.5 control.ctl.5 \
 		cycbuff.conf.5 distrib.pats.5 distributions.5 expire.ctl.5 history.5 \
 		incoming.conf.5 inn.conf.5 innfeed.conf.5 innwatch.ctl.5 \
-		moderators.5 motd.innd.5 motd.nnrpd.5 newsfeeds.5 newsgroups.5 \
+		moderators.5 motd.news.5 newsfeeds.5 newsgroups.5 \
 		newslog.5 nnrpd.track.5 nntpsend.ctl.5 ovdb.5 \
 		passwd.nntp.5 radius.conf.5 readers.conf.5 \
 		storage.conf.5 subscriptions.5
@@ -157,7 +157,8 @@ MAN8=		actsync.8 archive.8 batcher.8 buffchan.8 \
 		radius.8 rc.news.8 scanlogs.8 scanspool.8 send-nntp.8 send-uucp.8 \
 		sendinpaths.8 tally.control.8 tdx-util.8 tinyleaf.8 writelog.8
 MLINKS=		actsync.8 actsyncd.8	docheckgroups.8 localgroups.5	perl-nocem.8 nocem.ctl.5 \
-		innfeed.8 imapfeed.8	ninpaths.8 inpaths.8
+		innfeed.8 imapfeed.8	motd.news.5 motd.innd.5		motd.news.5 motd.nnrpd.5 \
+		ninpaths.8 inpaths.8
 
 TO_BE_STRIPPED=	bin/auth/resolv/domain bin/auth/resolv/ident \
 		bin/auth/passwd/ckpasswd bin/auth/passwd/radius bin/rnews.libexec/decode \
