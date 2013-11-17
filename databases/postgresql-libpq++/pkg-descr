@@ -1,5 +1,0 @@
-This is the C++ interface that has been shipped as part of PostgreSQL for
-many releases. There is a newer C++ interface called libpqxx, which is
-in a separate port, postgresql-libpqxx.
-
-WWW: http://gborg.postgresql.org/project/libpqpp/

@@ -15,7 +15,6 @@
     SUBDIR += climm
     SUBDIR += coccinella
     SUBDIR += convey
-    SUBDIR += decibel
     SUBDIR += echat
     SUBDIR += ejabberd
     SUBDIR += ekiga
