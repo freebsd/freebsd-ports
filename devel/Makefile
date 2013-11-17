@@ -3204,6 +3204,7 @@
     SUBDIR += pear-PhpDocumentor
     SUBDIR += pear-Pirum
     SUBDIR += pear-SebastianBergmann_FinderFacade
+    SUBDIR += pear-SebastianBergmann_Git
     SUBDIR += pear-SebastianBergmann_PHPCPD
     SUBDIR += pear-SebastianBergmann_PHPLOC
     SUBDIR += pear-SebastianBergmann_Version
