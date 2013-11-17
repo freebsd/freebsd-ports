@@ -3,11 +3,11 @@
 
 PORTNAME=	mumble
 PORTVERSION=	1.2.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/Mumble/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	feld@FreeBSD.org
 COMMENT=	A voice chat software primarily intended for use while gaming
 
 LIB_DEPENDS+=	libspeex.so:${PORTSDIR}/audio/speex \
