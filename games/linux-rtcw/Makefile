@@ -26,9 +26,6 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 # XXX: should probably be converted to use the LICENSE framework
 post-extract:
 	@${MV} ${WRKSRC}/pb/PB_EULA.txt ${WRKSRC}
@@ -41,23 +38,16 @@ do-build:
 .endfor
 
 do-install:
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for f in ${WRAPPERS}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/Linux/x86/${f}.x86 ${DATADIR}/${f}
-	${INSTALL_SCRIPT} ${WRKDIR}/${f} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/Linux/x86/${f}.x86 ${STAGEDIR}${DATADIR}/${f}
+	${INSTALL_SCRIPT} ${WRKDIR}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${CP} -a ${WRKSRC}/main ${WRKSRC}/pb ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/Wolf[MS]P.xpm ${PREFIX}/share/pixmaps
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	${CP} -a ${WRKSRC}/main ${WRKSRC}/pb ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/Wolf[MS]P.xpm ${STAGEDIR}${PREFIX}/share/pixmaps
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && \
-		${INSTALL_DATA} CHANGES INSTALL QUICKSTART *.txt ${DOCSDIR}
-	${CP} -a ${WRKSRC}/Docs ${DOCSDIR}
-.endif
-
-post-install:
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+		${INSTALL_DATA} CHANGES INSTALL QUICKSTART *.txt ${STAGEDIR}${DOCSDIR}
+	${CP} -a ${WRKSRC}/Docs ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
