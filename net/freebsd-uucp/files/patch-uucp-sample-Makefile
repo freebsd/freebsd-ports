@@ -1,0 +1,10 @@
+--- uucp/sample/Makefile.orig	2002-07-22 07:02:07.000000000 +0200
++++ uucp/sample/Makefile	2013-11-17 13:31:15.000000000 +0100
+@@ -12,6 +12,6 @@
+ 
+ install:
+ 	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} -m 440 ${FILES} \
+-		${PREFIX}/etc/uucp
++		${DESTDIR}${PREFIX}/etc/uucp
+ 
+ .include <bsd.prog.mk>

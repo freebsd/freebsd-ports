@@ -1,5 +1,5 @@
 --- Makefile.orig	2003-06-17 08:08:21.000000000 +0200
-+++ Makefile	2009-03-27 20:32:40.000000000 +0100
++++ Makefile	2013-11-17 10:23:16.000000000 +0100
 @@ -1,21 +1,21 @@
  PREFIX?=	/usr/local
  
@@ -12,11 +12,13 @@
 +	(cd etc && ${MAKE} all)
  
  install: uucp uucpd etc
- 	mtree -deU -f uucp.mtree -p /var
- 	mtree -deU -f local.mtree -p ${PREFIX}
+-	mtree -deU -f uucp.mtree -p /var
+-	mtree -deU -f local.mtree -p ${PREFIX}
 -	cd uucp && make install
 -	cd uucpd && make install
 -	cd etc && make install
++	mtree -deU -f uucp.mtree -p ${DESTDIR}/var
++	mtree -deU -f local.mtree -p ${DESTDIR}${PREFIX}
 +	(cd uucp && ${MAKE} install)
 +	(cd uucpd && ${MAKE} install)
 +	(cd etc && ${MAKE} install)
