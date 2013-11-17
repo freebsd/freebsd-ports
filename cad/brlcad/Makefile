@@ -43,8 +43,6 @@ OPTIONS_DEFINE=		OPTIMIZATION
 OPTIMIZATION_DESC=	Build with optimizations
 OPTIONS_DEFAULT=	OPTIMIZATION
 
-NO_STAGE=	yes
-.include "${.CURDIR}/Makefile.man"
 .include <bsd.port.pre.mk>
 
 EXTRA_LIBS=	-pthread
@@ -68,8 +66,9 @@ pre-install:
 
 # note that installing outside of PREFIX wigs out package stuff... :/
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/mged.sh ${PREFIX}/bin/mged.sh
-	${LN} -s ${PREFIX}/bin/mged.sh ${LOCALBASE}/bin/mged.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/mged.sh ${STAGEDIR}${PREFIX}/bin/mged.sh
+	${MKDIR} ${STAGEDIR}${LOCALBASE}/bin
+	${LN} -s ${PREFIX}/bin/mged.sh ${STAGEDIR}${LOCALBASE}/bin/mged.sh
 
 regression-test: build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} test)
