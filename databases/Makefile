@@ -665,7 +665,6 @@
     SUBDIR += postgis-jdbc
     SUBDIR += postgresql-jdbc
     SUBDIR += postgresql-libpgeasy
-    SUBDIR += postgresql-libpq++
     SUBDIR += postgresql-libpqxx
     SUBDIR += postgresql-libpqxx3
     SUBDIR += postgresql-odbc

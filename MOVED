@@ -5186,3 +5186,5 @@ editors/xxe||2013-11-15|Has expired: XXE becomes unfetchable every 3-4 months as
 editors/xml2rfc-xxe||2013-11-15|Has expired: Depends on editors/xxe, which is due to be removed due to lack of maintainer
 devel/perltidy|devel/p5-Perl-Tidy|2013-11-15|Renamed to match upstream naming
 math/vtk|math/vtk5|2013-11-17|Removed, EOLed
+net-im/decibel||2013-11-17|Has expired: Deprecated and unsupported upstream for many years, not used by anything
+databases/postgresql-libpq++||2013-11-17|Has expired: Not maintained upstreams for 10+ years.
