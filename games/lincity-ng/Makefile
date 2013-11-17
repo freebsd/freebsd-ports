@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved rich city simulation game for X
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
-LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs
+LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs
 
 USES=		pkgconfig
 USE_BZIP2=	yes
@@ -26,14 +26,13 @@ CONFIGURE_ARGS=	--with-libphysfs=${PREFIX} \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's| -O| -I${LOCALBASE}/include&|g' \
 		${WRKSRC}/Jamrules
 do-build:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} jam)
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} jam -j${MAKE_JOBS_NUMBER})
 
 do-install:
-	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} jam ${INSTALL_TARGET})
+	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} jam -sprefix=${STAGEDIR}${PREFIX} ${INSTALL_TARGET})
 
 .include <bsd.port.mk>
