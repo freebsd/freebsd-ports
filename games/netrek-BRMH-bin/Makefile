@@ -11,19 +11,17 @@ DISTNAME=	BRMH-2.2p2.freebsd.bin
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A 16-player network space battle/conquest game with a Star Trek theme
+COMMENT=	16-player network space battle/conquest game with a Star Trek theme
 
 NO_BUILD=		YES
 NO_WRKSUBDIR=		YES
 PLIST_FILES=	bin/netrek
 
-NO_STAGE=	yes
 do-extract:
-	${MKDIR} ${WRKDIR}
+	@${MKDIR} ${WRKDIR}
 	${GUNZIP_CMD} < ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/netrek
 
 do-install:
-	${INSTALL} -c -o root -g wheel -m 555 ${WRKDIR}/netrek ${PREFIX}/bin
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL} -c -m 555 ${WRKDIR}/netrek ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
