@@ -5,6 +5,7 @@ PORTNAME=	ptpd
 DISTVERSION=	2-RC-0
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/$(PORTNAME)/2-RC/
+PKGNAMESUFFIX=	2-devel
 
 MAINTAINER=	gnn@FreeBSD.org
 COMMENT=	Release candidate for the precision time protocol IEEE 1588-2008
@@ -13,8 +14,7 @@ LICENSE=	BSD
 
 WRKSRC=		${WRKDIR}/ptpd-${DISTVERSION}/src
 
-CONFLICTS=	ptpd-2.[0-9].*
-LATEST_LINK=	ptpd2-devel
+CONFLICTS=	ptpd2-2.[0-9].*
 
 PLIST_FILES=	sbin/ptpd2
 PORTDOCS=	*
