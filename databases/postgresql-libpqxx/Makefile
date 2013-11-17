@@ -11,7 +11,7 @@ DIST_SUBDIR=	postgresql
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	New C++ interface for PostgreSQL
 
-CONFLICTS=	postgresql-libpqxx-3.*
+CONFLICTS=	postgresql-libpqxx-3.* postgresql-libpqxx3-3.*
 PORTSCOUT=	limit:^2\.
 
 USE_PGSQL=	yes
