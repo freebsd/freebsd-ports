@@ -5,6 +5,7 @@ OPTIONS_DEFINE=		\
 	BULLET 		\
 	CINEON 		\
 	CAMERATRACK 	\
+	COLLADA		\
 	COMPOSITOR 	\
 	CYCLES 		\
 	CYCLESOSL 	\
@@ -80,6 +81,7 @@ AVI_DESC=		Enable Blender's own AVI file support
 BULLET_DESC=		Bullet physics engine
 CINEON_DESC=		CINEON and DPX graphics format support
 CAMERATRACK_DESC=	Camera tracking support
+COLLADA_DESC=		Enable read/write support for COLLADA files
 COMPOSITOR_DESC=	Use the tile-based nodal compositor
 CYCLES_DESC=		Cycles render engine support
 CYCLESOSL_DESC=		Shading support for the cycles render engine
