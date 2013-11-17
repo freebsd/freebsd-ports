@@ -164,6 +164,11 @@ samba_config_init() {
     fi
     # Defaults
     samba_enable=${samba_enable:=NO}
+    # Setup dependent variables
+    if [ -n "${rcvar}" ] && checkyesno "${rcvar}"; then
+	nmbd_enable=${nmbd_enable=YES}
+	smbd_enable=${smbd_enable=YES}
+    fi
     nmbd_enable=${nmbd_enable:=NO}
     smbd_enable=${smbd_enable:=NO}
 %%WINBIND%%    # Winbindd
@@ -175,11 +180,6 @@ samba_config_init() {
 %%WINBIND%%	fi
 %%WINBIND%%	winbindd_enable=${winbindd_enable:=NO}
 %%WINBIND%%    fi
-    # Setup dependent variables
-    if [ -n "${rcvar}" ] && checkyesno "${rcvar}"; then
-	nmbd_enable=${nmbd_enable=YES}
-	smbd_enable=${smbd_enable=YES}
-    fi
 }
 
 # Load configuration variables
