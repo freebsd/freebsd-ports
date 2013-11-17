@@ -62,4 +62,5 @@
 %%DATADIR%%/sounds/staffh.wav
 %%DATADIR%%/sounds/whirling.wav
 %%DATADIR%%/sounds/whoosh.wav
-@dirrm %%DATADIR%%/sounds
+@dirrmtry %%DATADIR%%/sounds
+@dirrmtry %%DATADIR%%
