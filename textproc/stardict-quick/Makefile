@@ -1,25 +1,23 @@
 # Created by: Timur I. Bakeyev <timur@gnome.org>
 # $FreeBSD$
 
-PORTNAME=	stardict
+PORTNAME=	stardict-quick
 PORTVERSION=	2.4.2
 PORTREVISION=	9
 CATEGORIES=	textproc
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-dictionaries-quick/${PORTVERSION}
-PKGNAMESUFFIX=	-quick
+MASTER_SITES=	http://abloz.com/huzheng/stardict-dic/Quick/
 DIST_SUBDIR=	stardict
 
-MAINTAINER=	timur@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Dictionaries from Quick for StarDict
 
 .MAKE.FreeBSD_UL=	yes
 NO_BUILD=	yes
 USE_BZIP2=	yes
 
-LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
-
-STARDICT_DIR=	share/stardict
-DICTDIR=	${STARDICT_DIR}/dic
+DATADIR=	${PREFIX}/share/stardict
+DICTDIR=	${DATADIR}/dic
+PORTDATA=	*
 
 DICTIONARIES=	afr-eng afr-swe bul-swe dan-deu dan-eng dan-fin dan-fra \
 		dan-hun dan-ind dan-ita dan-jpn dan-lat dan-nld dan-nor \
@@ -39,45 +37,29 @@ DICTIONARIES=	afr-eng afr-swe bul-swe dan-deu dan-eng dan-fin dan-fra \
 		swe-nld swe-nor swe-pol swe-por swe-rum swe-rus swe-slo \
 		swe-spa swe-swa swe-wel wel-swe
 
-.if !defined(DICT_PACK)
 OPTIONS_DEFINE=	ALL
 OPTIONS_DEFAULT=	ALL
 ALL_DESC=	All dictionaries
 .for dict in ${DICTIONARIES}
 OPTIONS_DEFINE+=	${dict:U:S|-|_|g}
 ${dict:U:S|-|_|g}_DESC=	${dict} dictionary
+${dict}_DISTNAME=	${PORTNAME}_${dict}-${PORTVERSION}
 .endfor
-.endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .for dict in ${DICTIONARIES}
 .if ${PORT_OPTIONS:MALL} || ${PORT_OPTIONS:M${dict:U:S|-|_|g}}
 INSTALL_DICTIONARIES+=	${dict}
+DISTFILES+=	${${dict}_DISTNAME}${EXTRACT_SUFX}
 .endif
 .endfor
 
-.for dict in ${INSTALL_DICTIONARIES}
-DISTFILES+=	${PORTNAME}${PKGNAMESUFFIX}_${dict}-${PORTVERSION}${EXTRACT_SUFX}
-.endfor
-
-do-build:
-	@${DO_NADA}
-
 do-install:
-		@${MKDIR} ${PREFIX}/${DICTDIR}
+	@${MKDIR} ${STAGEDIR}${DICTDIR}
 .for dict in ${INSTALL_DICTIONARIES}
-		${INSTALL_DATA} ${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}_${dict}-${PORTVERSION}/* \
-			${PREFIX}/${DICTDIR}
+	${INSTALL_DATA} ${WRKDIR}/${${dict}_DISTNAME}/* \
+		${STAGEDIR}${DICTDIR}
 .endfor
-
-post-install:
-.for dict in ${INSTALL_DICTIONARIES}
-		@cd ${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}_${dict}-${PORTVERSION} && \
-		${FIND} -s . -type f -o -type l | ${SED} -e 's|^\.|${DICTDIR}|' >> ${TMPPLIST}
-.endfor
-		@${ECHO_CMD} "@unexec ${RMDIR} %D/${DICTDIR} 2>/dev/null || true" >> ${TMPPLIST}
-		@${ECHO_CMD} "@unexec ${RMDIR} %D/${STARDICT_DIR} 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
