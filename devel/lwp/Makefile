@@ -4,13 +4,15 @@
 PORTNAME=	lwp
 PORTVERSION=	2.6
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/lwp/src/ \
-		ftp://ftp.wu-wien.ac.at/pub/systems/coda/src/ \
-		ftp://ftp.planetmirror.com/pub/coda/src/ \
-		ftp://ftp.nctu.edu.tw/mirror/Coda/src/
+MASTER_SITES=	http://ftp.coda.cs.cmu.edu/pub/lwp/src/ \
+		http://ftp.wu-wien.ac.at/pub/systems/coda/src/ \
+		ftp://ftp.coda.cs.cmu.edu/pub/lwp/src/ \
+		ftp://ftp.wu-wien.ac.at/pub/systems/coda/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Userspace thread library
+
+LICENSE=	LGPL20
 
 USES=		gmake pathfix
 GNU_CONFIGURE=	yes
