@@ -3,6 +3,7 @@ bin/radlast
 bin/radtest
 bin/radwho
 bin/radzap
+%%PAM%%etc/pam.d/radius
 etc/raddb/clients.sample
 etc/raddb/dictionary
 etc/raddb/hints.sample
@@ -11,6 +12,16 @@ etc/raddb/naslist.sample
 etc/raddb/naspasswd.sample
 etc/raddb/realms.sample
 etc/raddb/users.sample
+man/man1/radclient.1.gz
+man/man1/radlast.1.gz
+man/man1/radtest.1.gz
+man/man1/radwho.1.gz
+man/man1/radzap.1.gz
+man/man5/clients.5rad.gz
+man/man5/naslist.5rad.gz
+man/man8/radiusd.8.gz
+man/man8/radrelay.8.gz
+man/man8/radwatch.8.gz
 sbin/checkrad
 sbin/radiusd
 sbin/radrelay
@@ -40,8 +51,6 @@ share/radius/dictionary.versanet
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm etc/raddb
 @dirrm share/radius
-@unexec rm -f /var/log/radius.log
-@unexec rm -f /var/run/radiusd.pid
+@exec mkdir -m 700 /var/log/radacct || true
+@unexec rmdir /var/log/radacct || true
 @unexec echo "Leaving /var/run/radutmp, /var/log/radwtmp and /var/log/radacct alone."
-%%WITH_PAMD%%@cwd %%PAMBASE%%
-%%WITH_PAMD%%pam.d/radius
