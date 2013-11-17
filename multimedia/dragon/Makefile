@@ -6,6 +6,8 @@ PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
+# Avoid clash with devel/dragon
+PKGNAMESUFFIX=	-player
 DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,8 +15,6 @@ COMMENT=	KDE multimedia player with a focus on simplicity
 
 LICENSE=	GPLv2
 
-# Avoid clash with devel/dragon
-LATEST_LINK=	kdemultimedia-dragon
 CONFLICTS_INSTALL=	kdemultimedia-4.[1-8].*
 
 USES=		cmake:outsource
