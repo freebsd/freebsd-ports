@@ -2,6 +2,7 @@
 
 PORTNAME=	opencollada
 PORTVERSION=	1.2.2.20131105
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 
 MAINTAINER=	mva@FreeBSD.org
@@ -20,7 +21,7 @@ GH_COMMIT=	bd15211
 WRKSRC=		${WRKDIR}/KhronosGroup-OpenCOLLADA-${GH_COMMIT}
 
 USE_GNOME=	libxml2
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/lib/opencollada
 USES=		cmake:outsource compiler iconv pkgconfig
 CFLAGS+=	-I/${LOCALBASE}/include
 CMAKE_ARGS+=	-DUSE_SHARED:BOOL=ON -DUSE_STATIC:BOOL=OFF
