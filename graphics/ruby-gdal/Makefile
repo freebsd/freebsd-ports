@@ -25,7 +25,6 @@ USE_RUBY=	yes
 USES=		gmake
 WRKSRC=		${WRKDIR}/${DISTNAME}/swig/ruby
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^SWIG = swig/ s|$$|2.0|' ${WRKSRC}/../SWIGmake.base
 	@${REINPLACE_CMD} -e 's|Config::CONFIG|Rb&|g' ${WRKSRC}/RubyMakefile.mk
