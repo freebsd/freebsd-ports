@@ -388,6 +388,7 @@
     SUBDIR += libecap
     SUBDIR += libepc
     SUBDIR += libgtkhtml
+    SUBDIR += libhtp-suricata
     SUBDIR += libmicrohttpd
     SUBDIR += libwww
     SUBDIR += libxul
