@@ -13,6 +13,9 @@ COMMENT=	File manager for X11 similar to Norton Commander
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Latest release from 2005, upstream disappeared, does not build
+EXPIRATION_DATE=	2013-12-01
+
 NO_STAGE=	yes
 # xnc will use the following programs if you have them installed:
 #RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
