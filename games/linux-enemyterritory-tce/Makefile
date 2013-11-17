@@ -18,10 +18,11 @@ RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 ONLY_FOR_ARCHS=	i386 amd64
 USE_ZIP=	yes
 USE_LINUX=	yes
-NO_PACKAGE=	Distfile size is 450MB, set FORCE_PACKAGE if you really want to build this package
 RESTRICTED=	Redistribution is limited, see license
 ETDIR=		${PREFIX}/lib/enemyterritory
 PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="Enemy Territory TrueCombat:Elite" \
 		"Play Enemy Territory TrueCombat:Elite" \
@@ -30,7 +31,6 @@ DESKTOP_ENTRIES="Enemy Territory TrueCombat:Elite" \
 		"" \
 		false
 
-NO_STAGE=	yes
 do-build:
 .for f in et etded
 	@${ECHO_CMD} '#!/bin/sh' > ${WRKSRC}/${f}-tce
@@ -39,25 +39,17 @@ do-build:
 
 do-install:
 .for f in et etded
-	${INSTALL_SCRIPT} ${WRKSRC}/${f}-tce ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${f}-tce ${STAGEDIR}${PREFIX}/bin
 .endfor
-
-	${MKDIR} ${ETDIR}/tcetest
+	@${MKDIR} ${STAGEDIR}${ETDIR}/tcetest
 .for f in autoexec.cfg cgame.mp.i386.so mp_bin.pk3 official.dat pak0.pk3 \
 	pak1.pk3 pak2.pk3 pak3.pk3 qagame.mp.i386.so tce_icon_pc.ico \
 	ui.mp.i386.so
-	${INSTALL_DATA} ${WRKSRC}/${f} ${ETDIR}/tcetest
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${ETDIR}/tcetest
 .endfor
-.for f in cgame.mp.i386.so qagame.mp.i386.so ui.mp.i386.so
-	-${CHOWN} ${LIBOWN}:${LIBGRP} ${ETDIR}/tcetest/${f}
-	${CHMOD} ${LIBMODE} ${ETDIR}/tcetest/${f}
-.endfor
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in *.txt *.rtf
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
