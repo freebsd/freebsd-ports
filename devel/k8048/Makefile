@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	k8048
-PORTVERSION=	2.14
+PORTVERSION=	2.15
 CATEGORIES=	devel
 MASTER_SITES=	http://dev.kewl.org/k8048/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Programs Microchip PICs using Velleman K8048 board
 
 LICENSE=	BSD
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/Src
 
-USES=	gmake
+USES=		gmake
 ALL_TARGET=	build
 
 PLIST_FILES=	bin/${PORTNAME} bin/kio ${BIN_SYMLINKS}
