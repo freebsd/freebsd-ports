@@ -6,13 +6,14 @@ DISTVERSION=	2.2.2
 PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Implementation of the precision time protocol IEEE 1588-2008
 
 LICENSE=	BSD
 
-CONFLICTS=	ptpd-2.r.*
+CONFLICTS=	ptpd2-devel.*
 
 WRKSRC=		${WRKDIR}/ptpd-${DISTVERSION}/src
 
