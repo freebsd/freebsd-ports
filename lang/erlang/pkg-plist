@@ -6,7 +6,6 @@ bin/erl_call
 bin/erlc
 bin/escript
 bin/run_erl
-bin/run_test
 bin/to_erl
 bin/typer
 @comment Insert PLIST here

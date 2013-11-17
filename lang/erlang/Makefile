@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	15.b.03.1
-PORTREVISION=	2
+PORTVERSION=	16.b.02
 PORTEPOCH=	3
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
@@ -24,7 +23,7 @@ PATCH_SITES=	http://www.erlang.org/download
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A functional programming language from Ericsson
 
-WRKSRC=		${WRKDIR}/otp_src_R15B03
+WRKSRC=		${WRKDIR}/otp_src_R16B02
 
 ERLANG_LIB=	${PORTNAME}
 
@@ -56,8 +55,8 @@ USE_RC_SUBR=	epmd
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-EI_VSN=		3.7.9
-TOOLS_VSN=	2.6.8
+EI_VSN=		3.7.14
+TOOLS_VSN=	2.6.12
 
 .include <bsd.port.options.mk>
 
@@ -184,7 +183,7 @@ MAKE_ARGS+=	ARCH=x86
 
 post-install:
 	@${LN} -sf ../lib/${ERLANG_LIB}/lib/erl_interface-${EI_VSN}/bin/erl_call ${STAGEDIR}${PREFIX}/bin/erl_call
-	@for SECTION in 1 3 4 6; do \
+	@for SECTION in 1 3 4 6 7; do \
 		${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_MAN} \
 			-C ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB} \
 			"man/man$${SECTION}/*.$${SECTION}" || ${TRUE}; \
