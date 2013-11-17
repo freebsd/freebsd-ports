@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	torcs
-DISTVERSION=	1.3.4
-PORTREVISION=	1
+DISTVERSION=	1.3.5
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/all-in-one/${PORTVERSION}
 
@@ -32,18 +31,43 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--x-includes=${LOCALBASE}/include --x-libraries=${LOCALBASE}/lib
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include -DHAVE_DECL_GETOPT
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 ALL_TARGET=	default
 INSTALL_TARGET=	install datainstall
-
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 INSTDIR=	${PREFIX}/share/games/${PORTNAME}
 
 PORTDOCS=	faq.html
 
 BASH2FIX=	src/linux/torcs.in Make-default.mk
+
+STRIPFILES=	drivers/berniw/berniw.so \
+		drivers/berniw2/berniw2.so \
+		drivers/berniw3/berniw3.so \
+		drivers/bt/bt.so \
+		drivers/damned/damned.so \
+		drivers/human/human.so \
+		drivers/inferno/inferno.so \
+		drivers/inferno2/inferno2.so \
+		drivers/lliaw/lliaw.so \
+		drivers/olethros/olethros.so \
+		drivers/sparkle/sparkle.so \
+		drivers/tita/tita.so \
+		lib/libclient.so \
+		lib/libconfscreens.so \
+		lib/liblearning.so \
+		lib/libmusicplayer.so \
+		lib/libraceengine.so \
+		lib/libracescreens.so \
+		lib/librobottools.so \
+		lib/libtgf.so \
+		lib/libtgfclient.so \
+		lib/libtxml.so \
+		modules/graphic/ssggraph.so \
+		modules/simu/simuv2.so \
+		modules/telemetry/telemetry.so \
+		modules/track/track.so
 
 DESKTOP_ENTRIES=	"TORCS" \
 			"The Open Racing Car Simulator" \
@@ -54,8 +78,6 @@ DESKTOP_ENTRIES=	"TORCS" \
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 EMPTYDIR=	champ dtmrace endrace ncrace practice quickrace
 
 # shebangfix does not catch these two (not at top of file):
@@ -65,14 +87,17 @@ post-patch:
 	    ${WRKSRC}/${FILE}
 .endfor
 
+post-build:
+.for FILE in ${STRIPFILES}
+	${STRIP_CMD} ${WRKSRC}/export/${FILE}
+.endfor
+
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/games
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/faq/|} ${STAGEDIR}${DOCSDIR}
-.endif
 .for ed in ${EMPTYDIR}
 	${TOUCH} ${STAGEDIR}${INSTDIR}/results/${ed}/.keep_me
 .endfor
