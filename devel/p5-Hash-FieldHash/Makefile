@@ -18,7 +18,4 @@ TEST_DEPENDS=	p5-Test-LeakTrace>=0.07:${PORTSDIR}/devel/p5-Test-LeakTrace
 USE_PERL5=	modbuild
 USES=		perl5
 
-MAN3=		Hash::FieldHash.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
