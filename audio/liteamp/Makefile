@@ -13,6 +13,9 @@ COMMENT=	Light-weight Music Player for GNOME2
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Dead upstream since 2004, does not build with clang
+EXPIRATION_DATE=	2013-12-01
+
 LIB_DEPENDS=	id3tag.0:${PORTSDIR}/audio/libid3tag \
 		ao.4:${PORTSDIR}/audio/libao \
 		mad.2:${PORTSDIR}/audio/libmad \
