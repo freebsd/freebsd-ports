@@ -1,4 +1,33 @@
 bin/suricata
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/Basic_Setup.txt
+%%DOCSDIR%%/CentOS5.txt
+%%DOCSDIR%%/CentOS_56_Installation.txt
+%%DOCSDIR%%/Debian_Installation.txt
+%%DOCSDIR%%/Fedora_Core.txt
+%%DOCSDIR%%/FreeBSD_8.txt
+%%DOCSDIR%%/GITGUIDE
+%%DOCSDIR%%/HTP_library_installation.txt
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/INSTALL.PF_RING
+%%DOCSDIR%%/INSTALL.WINDOWS
+%%DOCSDIR%%/Installation_from_GIT_with_PCRE-JIT.txt
+%%DOCSDIR%%/Installation_from_GIT_with_PF_RING_on_Ubuntu_server_1104.txt
+%%DOCSDIR%%/Installation_with_CUDA_and_PFRING_on_Scientific_Linux_6.txt
+%%DOCSDIR%%/Installation_with_CUDA_and_PF_RING_on_Ubuntu_server_1104.txt
+%%DOCSDIR%%/Installation_with_CUDA_on_Scientific_Linux_6.txt
+%%DOCSDIR%%/Installation_with_CUDA_on_Ubuntu_server_1104.txt
+%%DOCSDIR%%/Installation_with_PF_RING.txt
+%%DOCSDIR%%/Mac_OS_X_106x.txt
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/OpenBSD_Installation_from_GIT.txt
+%%DOCSDIR%%/README
+%%DOCSDIR%%/Setting_up_IPSinline_for_Linux.txt
+%%DOCSDIR%%/TODO
+%%DOCSDIR%%/Third_Party_Installation_Guides.txt
+%%DOCSDIR%%/Ubuntu_Installation.txt
+%%DOCSDIR%%/Ubuntu_Installation_from_GIT.txt
+%%DOCSDIR%%/Windows.txt
 @unexec if cmp  -s %D/etc/suricata/suricata.yaml-sample %D/etc/suricata/suricata.yaml; then rm -f %D/etc/suricata/suricata.yaml; fi
 etc/suricata/suricata.yaml-sample
 @exec if [ ! -f %D/etc/suricata/suricata.yaml ] ; then cp -p %D/%F %B/suricata.yaml; fi
@@ -9,5 +38,7 @@ etc/suricata/classification.config-sample
 etc/suricata/reference.config-sample
 @exec if [ ! -f %D/etc/suricata/reference.config ] ; then cp -p %D/%F %B/reference.config; fi
 @dirrmtry etc/suricata/rules
+@exec mkdir -p %D/etc/suricata/rules
 @dirrmtry etc/suricata
 @unexec if [ -d %D/%%ETCDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/etc/suricata`` to remove any configuration files left."; fi
+@dirrm %%DOCSDIR%%
