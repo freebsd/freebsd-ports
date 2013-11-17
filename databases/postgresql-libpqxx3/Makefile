@@ -1,7 +1,7 @@
 # Created by: Palle Girgensohn <girgen@pingpong.net>
 # $FreeBSD$
 
-PORTNAME=	libpqxx
+PORTNAME=	libpqxx3
 PORTVERSION=	3.1.1
 CATEGORIES=	databases
 MASTER_SITES=	http://pqxx.org/download/software/${PORTNAME}/
