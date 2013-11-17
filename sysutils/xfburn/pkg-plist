@@ -1,6 +1,7 @@
 %%DATADIR%%/xfburn-toolbars.ui
 %%DATADIR%%/xfburn.ui
 bin/xfburn
+man/man1/xfburn.1.gz
 share/Thunar/sendto/thunar-sendto-xfburn.desktop
 share/applications/xfburn.desktop
 share/icons/hicolor/16x16/stock/media/stock_xfburn-audio-cd.png

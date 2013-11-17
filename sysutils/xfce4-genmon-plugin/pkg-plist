@@ -38,6 +38,7 @@ share/locale/zh_TW/LC_MESSAGES/xfce4-genmon-plugin.mo
 share/xfce4/panel/plugins/genmon.desktop
 @dirrmtry share/xfce4/panel/plugins
 @dirrmtry share/xfce4/panel
+@dirrmtry share/xfce4
 @dirrmtry share/locale/ur_PK/LC_MESSAGES
 @dirrmtry share/locale/ur_PK
 @dirrmtry share/locale/ur/LC_MESSAGES
