@@ -12,11 +12,25 @@ COMMENT=	Cross-platform multimedia development API
 
 LICENSE=	ZLIB
 
-USES=		pathfix cmake:outsource iconv
+USES=		gmake iconv pathfix pkgconfig
+USE_GNOME=	ltverhack
+USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CMAKE_ARGS+=	-DVIDEO_OPENGLES:BOOL=OFF -DALTIVEC:BOOL=OFF -DARTS:BOOL=OFF
-CMAKE_ENV+=	CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	--disable-video-opengles \
+			--disable-altivec \
+			--disable-arts \
+			--enable-diskaudio \
+			--enable-dummyaudio \
+			--enable-video-dummy \
+			--disable-dbus \
+			--disable-input-tslib \
+			--disable-rpath
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
 
 OPTIONS_DEFINE=		ALSA ASM DLOPEN ESOUND MMX NAS OSS \
 			PULSEAUDIO PTHREADS SSE SDL_ATOMIC SDL_AUDIO \
@@ -53,192 +67,112 @@ SDL_VIDEO_DESC=		Eanble the SDL Video subsystem
 VIDEO_OPENGL_DESC=	OpenGL rendering support
 VIDEO_X11_DESC=		X11 rendering support
 
+ASM_CONFIGURE_ENABLE=		assembly
+DLOPEN_CONFIGURE_ENABLE=	sdl-dlopen
+MMX_CONFIGURE_ENABLE=		mmx 3dnow
+PTHREADS_CONFIGURE_ENABLE=	pthreads pthreads-sem
+SDL_ATOMIC_CONFIGURE_ENABLE=	atomic gcc-atomics
+SDL_AUDIO_CONFIGURE_ENABLE=	audio
+SDL_CPUINFO_CONFIGURE_ENABLE=	cpuinfo
+SDL_EVENTS_CONFIGURE_ENABLE=	events
+SDL_FILE_CONFIGURE_ENABLE=	filesystem
+SDL_HAPTIC_CONFIGURE_ENABLE=	haptic
+SDL_JOYSTICK_CONFIGURE_ENABLE=	joystick
+SDL_LOADSO_CONFIGURE_ENABLE=	loadso
+SDL_POWER_CONFIGURE_ENABLE=	power
+SDL_RENDER_CONFIGURE_ENABLE=	render
+SDL_THREADS_CONFIGURE_ENABLE=	threads
+SDL_TIMERS_CONFIGURE_ENABLE=	timers
+SDL_VIDEO_CONFIGURE_EANBLE=	video
+SSE_CONFIGURE_ENABLE=		sse sse2 ssemath
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MALSA}
 .if !${PORT_OPTIONS:MSDL_AUDIO}
 IGNORE=	option ALSA requires SDL_AUDIO
 .endif
-CMAKE_ARGS+=	-DALSA:BOOL=ON -DALSA_SHARED:BOOL=ON
-LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
+CONFIGURE_ARGS+=	--enable-alsa --enable-alsa-shared
+LIB_DEPENDS+=		libasound.so:${PORTSDIR}/audio/alsa-lib
 .else
-CMAKE_ARGS+=	-DALSA:BOOL=OFF
-.endif
-
-CMAKE_ARGS+=	-DARTS:BOOL=OFF
-
-.if ${PORT_OPTIONS:MASM}
-CMAKE_ARGS+=	-DASSEMBLY:BOOL=ON
-.else
-CMAKE_ARGS+=	-DASSEMBLY:BOOL=OFF
-.endif
-
-.if ${PORT_OPTIONS:MDLOPEN}
-CMAKE_ARGS+=	-DSDL_DLOPEN:BOOL=ON
-.else
-CMAKE_ARGS+=	-DSDL_DLOPEN:BOOL=OFF
+CONFIGURE_ARGS+=	--disable-alsa --disable-alsa-shared
 .endif
 
 .if ${PORT_OPTIONS:MESOUND}
 .if !${PORT_OPTIONS:MSDL_AUDIO}
 IGNORE=	option ESOUND requires SDL_AUDIO
 .endif
-CMAKE_ARGS+=	-DESD:BOOL=ON -DESD_SHARED:BOOL=ON
-USE_GNOME+=	esound
+CONFIGURE_ARGS+=	--enable-esd --enable-esd-shared
+USE_GNOME+=		esound
 .else
-CMAKE_ARGS+=	-DESD:BOOL=OFF
-.endif
-
-.if ${PORT_OPTIONS:MMMX}
-CMAKE_ARGS+=	-DMMX:BOOL=ON -D3DNOW:BOOL=ON
-.else
-CMAKE_ARGS+=	-DMMX:BOOL=OFF -D3DNOW:BOOL=OFF
+CONFIGURE_ARGS+=	--disable-esd --disable-esd-shared
 .endif
 
 .if ${PORT_OPTIONS:MNAS}
 .if !${PORT_OPTIONS:MSDL_AUDIO}
 IGNORE=	option NAS requires SDL_AUDIO
 .endif
-CMAKE_ARGS+=	-DNAS:BOOL=ON
-LIB_DEPENDS+=	libaudio.so:${PORTSDIR}/audio/nas
+CONFIGURE_ARGS+=	--enable-nas --enable-nas-shared
+LIB_DEPENDS+=		libaudio.so:${PORTSDIR}/audio/nas
 .else
-CMAKE_ARGS+=	-DNAS:BOOL=OFF
+CONFIGURE_ARGS+=	--disable-nas --disable-nas-shared
 .endif
 
 .if ${PORT_OPTIONS:MOSS}
 .if !${PORT_OPTIONS:MSDL_AUDIO}
 IGNORE=	option OSS requires SDL_AUDIO
 .endif
-CMAKE_ARGS+=	-DOSS:BOOL=ON
+CONFIGURE_ARGS+=	--enable-oss
 .else
-CMAKE_ARGS+=	-DOSS:BOOL=OFF
+CONFIGURE_ARGS+=	--disable-oss
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
 .if !${PORT_OPTIONS:MSDL_AUDIO}
 IGNORE=	option PULSEAUDIO requires SDL_AUDIO
 .endif
-CMAKE_ARGS+=	-DPULSEAUDIO:BOOL=ON -DPULSEAUDIO_SHARED:BOOL=ON
+CONFIGURE_ARGS+=	--enable-pulseaudio --enable-pulseaudio-shared
 .else
-CMAKE_ARGS+=	-DPULSEAUDIO:BOOL=OFF
-.endif
-
-.if ${PORT_OPTIONS:MPTHREADS}
-CMAKE_ARGS+=	-DPTHREADS:BOOL=ON
-.else
-CMAKE_ARGS+=	-DPTHREADS:BOOL=OFF
-.endif
-
-.if ${PORT_OPTIONS:MSDL_ATOMIC}
-CMAKE_ARGS+=	-DSDL_ATOMIC:BOOL=ON
-.else
-CMAKE_ARGS+=	-DSDL_ATOMIC:BOOL=OFF
-.endif
-
-.if ${PORT_OPTIONS:MSDL_AUDIO}
-CMAKE_ARGS+=	-DSDL_AUDIO:BOOL=ON
-.else
-CMAKE_ARGS+=	-DSDL_AUDIO:BOOL=OFF
-.endif
-
-.if ${PORT_OPTIONS:MSDL_CPUINFO}
-CMAKE_ARGS+=	-DSDL_CPUINFO:BOOL=ON
-.else
-CMAKE_ARGS+=	-DSDL_CPUINFO:BOOL=OFF
-.endif
-
-.if ${PORT_OPTIONS:MSDL_EVENTS}
-CMAKE_ARGS+=	-DSDL_EVENTS:BOOL=ON
-.else
-CMAKE_ARGS+=	-DSDL_EVENTS:BOOL=OFF
-.endif
-
-.if ${PORT_OPTIONS:MSDL_FILE}
-CMAKE_ARGS+=	-DSDL_FILE:BOOL=ON
-.else
-CMAKE_ARGS+=	-DSDL_FILE:BOOL=OFF
-.endif
-
-.if ${PORT_OPTIONS:MSDL_HAPTIC}
-CMAKE_ARGS+=	-DSDL_HAPTIC:BOOL=ON
-.else
-CMAKE_ARGS+=	-DSDL_HAPTIC:BOOL=OFF
-.endif
-
-.if ${PORT_OPTIONS:MSDL_JOYSTICK}
-CMAKE_ARGS+=	-DSDL_JOYSTICK:BOOL=ON
-.else
-CMAKE_ARGS+=	-DSDL_JOYSTICK:BOOL=OFF
-.endif
-
-.if ${PORT_OPTIONS:MSDL_LOADSO}
-CMAKE_ARGS+=	-DSDL_LOADSO:BOOL=ON
-.else
-CMAKE_ARGS+=	-DSDL_LOADSO:BOOL=OFF
-.endif
-
-.if ${PORT_OPTIONS:MSDL_POWER}
-CMAKE_ARGS+=	-DSDL_POWER:BOOL=ON
-.else
-CMAKE_ARGS+=	-DSDL_POWER:BOOL=OFF
-.endif
-
-.if ${PORT_OPTIONS:MSDL_RENDER}
-CMAKE_ARGS+=	-DSDL_RENDER:BOOL=ON
-.else
-CMAKE_ARGS+=	-DSDL_RENDER:BOOL=OFF
-.endif
-
-.if ${PORT_OPTIONS:MSDL_THREADS}
-CMAKE_ARGS+=	-DSDL_THREADS:BOOL=ON
-.else
-CMAKE_ARGS+=	-DSDL_THREADS:BOOL=OFF
-.endif
-
-.if ${PORT_OPTIONS:MSDL_TIMERS}
-CMAKE_ARGS+=	-DSDL_TIMERS:BOOL=ON
-.else
-CMAKE_ARGS+=	-DSDL_TIMERS:BOOL=OFF
-.endif
-
-.if ${PORT_OPTIONS:MSDL_VIDEO}
-CMAKE_ARGS+=	-DSDL_VIDEO:BOOL=ON
-.else
-CMAKE_ARGS+=	-DSDL_VIDEO:BOOL=OFF
-.endif
-
-.if ${PORT_OPTIONS:MSSE}
-CMAKE_ARGS+=	-DSSE:BOOL=ON -DSSE2:BOOL=ON -DSSEMATH:BOOL=ON
-.else
-CMAKE_ARGS+=	-DSSE:BOOL=OFF -DSSE2:BOOL=OFF -DSSEMATH:BOOL=OFF
+CONFIGURE_ARGS+=	--disable-pulseaudio --disable-pulseaudio-shared
 .endif
 
 .if ${PORT_OPTIONS:MVIDEO_OPENGL}
 .if !${PORT_OPTIONS:MSDL_VIDEO}
 IGNORE=	option VIDEO_OPENGL requires SDL_VIDEO
 .endif
-CMAKE_ARGS+=	-DVIDEO_OPENGL:BOOL=ON
-USE_GL=		gl
+CONFIGURE_ARGS+=	--enable-video-opengl
+USE_GL=			gl
 .else
-CMAKE_ARGS+=	-DVIDEO_OPENGL:BOOL=OFF
+CONFIGURE_ARGS+=	--disable-video-opengl
 .endif
 
 .if ${PORT_OPTIONS:MVIDEO_X11}
 .if !${PORT_OPTIONS:MSDL_VIDEO}
 IGNORE=	option VIDEO_X11 requires SDL_VIDEO
 .endif
-CMAKE_ARGS+=	-DVIDEO_X11:BOOL=ON -DVIDEO_X11_XCURSOR:BOOL=ON \
-		-DVIDEO_X11_XINERAMA:BOOL=ON -DVIDEO_X11_XINPUT:BOOL=ON \
-		-DVIDEO_X11_XRANDR:BOOL=ON -DVIDEO_X11_XSCRNSAVER:BOOL=ON \
-		-DVIDEO_X11_XSHAPE:BOOL=ON -DVIDEO_X11_XVM:BOOL=ON \
-		-DX11_SHARED:BOOL=ON
+CONFIGURE_ARGS+=	--enable-video-x11 \
+			--enable-x11-shared \
+			--enable-video-x11-xcursor \
+			--enable-video-x11-xinerama \
+			--enable-video-x11-xinput \
+			--enable-video-x11-xrandr \
+			--enable-video-x11-scrnsaver \
+			--enable-video-x11-xshape \
+			--enable-video-x11-vm
 USE_XORG+=	xinerama xcursor xi xrandr xscrnsaver xxf86vm xext
 .else
-CMAKE_ARGS+=	-DVIDEO_X11:BOOL=OFF -DVIDEO_X11_XCURSOR:BOOL=OFF \
-		-DVIDEO_X11_XINERAMA:BOOL=OFF -DVIDEO_X11_XINPUT:BOOL=OFF \
-		-DVIDEO_X11_XRANDR:BOOL=OFF -DVIDEO_X11_XSCRNSAVER:BOOL=OFF \
-		-DVIDEO_X11_XSHAPE:BOOL=OFF -DVIDEO_X11_XVM:BOOL=OFF \
-		-DX11_SHARED:BOOL=OFF
+CONFIGURE_ARGS+=	--disable-video-x11 \
+			--disable-x11-shared \
+			--disable-video-x11-xcursor \
+			--disable-video-x11-xinerama \
+			--disable-video-x11-xinput \
+			--disable-video-x11-xrandr \
+			--disable-video-x11-scrnsaver \
+			--disable-video-x11-xshape \
+			--disable-video-x11-vm
 .endif
+
+post-patch:
+	 @${REINPLACE_CMD} -e '/ CheckInputEvents$$/d' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

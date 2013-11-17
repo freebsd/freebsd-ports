@@ -2,7 +2,7 @@
 
 PORTNAME=	sdl2_ttf
 PORTVERSION=	2.0.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_ttf/release/
 DISTNAME=	SDL2_ttf-${PORTVERSION}
