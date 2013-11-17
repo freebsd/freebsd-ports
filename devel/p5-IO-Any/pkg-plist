@@ -1,2 +1,3 @@
 %%SITE_PERL%%/IO/Any.pm
+%%PERL5_MAN3%%/IO::Any.3.gz
 @dirrmtry %%SITE_PERL%%/IO

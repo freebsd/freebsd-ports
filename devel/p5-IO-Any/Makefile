@@ -28,7 +28,4 @@ TEST_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
 USE_PERL5=	modbuild
 USES=		perl5
 
-MAN3=		IO::Any.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
