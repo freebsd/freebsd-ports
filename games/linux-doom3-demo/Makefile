@@ -19,7 +19,6 @@ COMMENT=	DOOM III demo for Linux
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
-NO_PACKAGE=	Distfile size is 462MB, set FORCE_PACKAGE if you really want to build this package
 NO_CDROM=	Redistribution is limited, see license
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -29,10 +28,12 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 SUB_FILES=	doom3-demo
 SUB_LIST=	DOOMDIR="${DOOMDIR}"
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS NVIDIA_GL
+NVIDIA_GL_DESC=	Use GL driver from nvidia-driver
 
-.if defined(WITH_NVIDIA_GL)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNVIDIA_GL}
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 .else
 USE_LINUX_APPS+=dri
@@ -43,23 +44,18 @@ do-extract:
 	@cd ${WRKSRC} && ${TAIL} -c +8767 ${_DISTDIR}/${DISTFILES} | ${TAR} zxf -
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/doom3-demo ${PREFIX}/bin/${PKGNAMEPREFIX}doom3-demo
-
-	${MKDIR} ${DOOMDIR}/demo
-	${INSTALL_DATA} ${WRKSRC}/demo/demo00.pk4 ${DOOMDIR}/demo
-
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/Linux/x86/doom.x86 ${DOOMDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/doom3-demo ${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}doom3-demo
+	${MKDIR} ${STAGEDIR}${DOOMDIR}/demo
+	${INSTALL_DATA} ${WRKSRC}/demo/demo00.pk4 ${STAGEDIR}${DOOMDIR}/demo
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/Linux/x86/doom.x86 ${STAGEDIR}${DOOMDIR}
 .for f in gamex86.so
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOOMDIR}
-	-${CHOWN} ${LIBOWN}:${LIBGRP} ${DOOMDIR}/${f}
-	${CHMOD} ${LIBMODE} ${DOOMDIR}/${f}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOOMDIR}
+	-${CHOWN} ${LIBOWN}:${LIBGRP} ${STAGEDIR}${DOOMDIR}/${f}
+	${CHMOD} ${LIBMODE} ${STAGEDIR}${DOOMDIR}/${f}
 .endfor
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in License.txt README
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
