@@ -31,9 +31,8 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	${TOOLKIT} X11Dir="${LOCALBASE}" CFlags="${CFLAGS}"
 MAKE_ENV=	SOUNDDIR="${DATADIR}/sounds"
 
-MAN6=		genlab.6 imaze.6 imazesrv.6 imazestat.6 ninja.6 xlabed.6
+MAN_PAGES=	genlab.6 imaze.6 imazesrv.6 imazestat.6 ninja.6 xlabed.6
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MAUDIO)
@@ -60,17 +59,17 @@ TOOLKIT=	xview
 
 do-install:
 .for i in genlab imaze imazesrv imazestat ninja xlabed
-	(cd ${WRKSRC}/source && ${INSTALL_PROGRAM} ${i} ${PREFIX}/bin)
+	(cd ${WRKSRC}/source && ${INSTALL_PROGRAM} ${i} ${STAGEDIR}${PREFIX}/bin)
 .endfor
-.for i in ${MAN6}
-	(cd ${WRKSRC}/man6 && ${INSTALL_MAN} ${i} ${MAN6PREFIX}/man/man6)
+.for i in ${MAN_PAGES}
+	(cd ${WRKSRC}/man6 && ${INSTALL_MAN} ${i} ${STAGEDIR}${MAN6PREFIX}/man/man6)
 .endfor
-	@${MKDIR} ${DATADIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} README ${DATADIR})
-	@${MKDIR} ${DATADIR}/labs
-	(cd ${WRKSRC}/labs && ${INSTALL_DATA} *.lab ${DATADIR}/labs)
-	@${MKDIR} ${DATADIR}/sounds
-	(cd ${WRKSRC}/sounds && ${INSTALL_DATA} *.au ${DATADIR}/sounds)
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} README ${STAGEDIR}${DATADIR})
+	@${MKDIR} ${STAGEDIR}${DATADIR}/labs
+	(cd ${WRKSRC}/labs && ${INSTALL_DATA} *.lab ${STAGEDIR}${DATADIR}/labs)
+	@${MKDIR} ${STAGEDIR}${DATADIR}/sounds
+	(cd ${WRKSRC}/sounds && ${INSTALL_DATA} *.au ${STAGEDIR}${DATADIR}/sounds)
 	@${ECHO_MSG} "Please read the file \"${DATADIR}/README\"."
 
 .include <bsd.port.mk>
