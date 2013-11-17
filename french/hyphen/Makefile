@@ -3,14 +3,15 @@
 PORTNAME=	hyphen
 PORTVERSION=	3.0
 CATEGORIES=	french textproc
-MASTER_SITES=	http://www.dicollecte.org/download/fr/
+MASTER_SITES=	http://www.dicollecte.org/download/fr/ \
+		LOCAL/sunpoet/${PORTNAME}
 DISTNAME=	hyph-fr-v${PORTVERSION}
+EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	French hyphenation rules
 
-EXTRACT_SUFX=	.zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
