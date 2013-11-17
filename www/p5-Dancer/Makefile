@@ -47,5 +47,4 @@ RUN_DEPENDS+=	p5-YAML>=0.71:${PORTSDIR}/textproc/p5-YAML
 USES=	perl5
 USE_PERL5=	configure
 
-MAN1=	dancer.1
 .include <bsd.port.mk>
