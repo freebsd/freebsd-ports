@@ -3,6 +3,7 @@
 
 PORTNAME=	django
 PORTVERSION=	1.5.5
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	https://www.djangoproject.com/m/releases/${PORTVERSION:R}/ \
 		CHEESESHOP
@@ -15,7 +16,8 @@ COMMENT=	High-level Python Web framework
 
 LICENSE=	BSD
 
-USES=		gettext
+LATEST_LINK=	${PYTHON_PKGNAMEPREFIX}django15
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYTHON_PY3K_PLIST_HACK=	yes
