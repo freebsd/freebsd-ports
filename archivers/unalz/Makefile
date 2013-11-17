@@ -30,7 +30,9 @@ UNALZ_OBJS=	main.o UnAlz.o UnAlzUtils.o UnAlzBz2decompress.o \
 		UnAlzBzip2.o UnAlzbzlib.o
 
 post-patch:
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e \
+		's/-liconv/${ICONV_LIB}/g' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e \
 		'/<sys\/timeb.h>/d' ${WRKSRC}/main.cpp
 
 do-install:
