@@ -32,7 +32,6 @@
     SUBDIR += synce-libsynce
     SUBDIR += synce-serial
     SUBDIR += synce-sync-engine
-    SUBDIR += synce-trayicon
     SUBDIR += synce-vdccm
 
 .include <bsd.port.subdir.mk>

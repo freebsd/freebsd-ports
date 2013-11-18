@@ -1,7 +1,0 @@
-
-You need to install one of the dccm implementation:
-
-palm/synce-hal or palm/synce-serial with palm/synce-vdccm 
-
-Please check your palm/synce-libsynce port options.
-

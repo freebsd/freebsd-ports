@@ -58,7 +58,6 @@
     SUBDIR += dbow
     SUBDIR += dbtool
     SUBDIR += dbview
-    SUBDIR += drizzle
     SUBDIR += emma
     SUBDIR += epgsql
     SUBDIR += erlang-mysql
@@ -97,7 +96,6 @@
     SUBDIR += gnats4
     SUBDIR += gnatsweb4
     SUBDIR += godis
-    SUBDIR += gomysql
     SUBDIR += gosqlite3
     SUBDIR += gqlplus
     SUBDIR += grass
@@ -316,7 +314,6 @@
     SUBDIR += p5-DBD-Excel
     SUBDIR += p5-DBD-FrontBase
     SUBDIR += p5-DBD-Google
-    SUBDIR += p5-DBD-InterBase
     SUBDIR += p5-DBD-LDAP
     SUBDIR += p5-DBD-Mock
     SUBDIR += p5-DBD-Multi
@@ -418,7 +415,6 @@
     SUBDIR += p5-DBIx-XHTML_Table
     SUBDIR += p5-DBIx-XML_RDB
     SUBDIR += p5-DBM-Deep
-    SUBDIR += p5-DBZ_File
     SUBDIR += p5-DMOZ-ParseRDF
     SUBDIR += p5-DR-Tarantool
     SUBDIR += p5-DWH_File

@@ -1,8 +1,0 @@
-The purpose of the module is to export the C++ Lucene API to perl 
-and at the same time be as close as possible to the original Java API. 
-This has the combined advantage of providing perl programmers with a 
-well-documented API and giving them access to a C++ search engine 
-library that is supposedly faster than the original.
-
-WWW: http://search.cpan.org/dist/Lucene/
-WWW: http://sourceforge.net/projects/clucene/

@@ -5199,3 +5199,34 @@ x11/libgnomemm|x11/libgnomemm26|2013-11-18|older version not in used in the port
 devel/gconfmm|devel/gconfmm26|2013-11-18|older version not in used in the ports tree
 sysutils/dircomp||2013-11-18|Removed, unmaintained and depends on expired devel/libXGP
 sysutils/iextract||2013-11-18|Removed, unmaintained and depends on expired devel/libYGP
+devel/libXGP||2013-11-18|Has expired: Broken for more than 6 month
+deskutils/google-gadgets||2013-11-18|Has expired: Broken for more than 6 month
+palm/synce-trayicon||2013-11-18|Has expired: Broken for more than 6 month
+security/linux-pam-docs||2013-11-18|Has expired: Broken for more than 6 month
+net-p2p/mooseekd||2013-11-18|Has expired: Broken for more than 6 month
+textproc/p5-Lucene||2013-11-18|Has expired: Broken for more than 6 month
+net-mgmt/zenpack-dellmonitor||2013-11-18|Has expired: Broken for more than 6 month
+x11-wm/fbpager||2013-11-18|Has expired: BRoken for more than 6 month
+net/hf6to4||2013-11-18|Has expired: Broken for more than 6 month
+x11-themes/kde-icons-exquisite||2013-11-18|Has expired: Broken for more than 6 month
+x11-themes/kde-icons-marbles-translucent||2013-11-18|Has expired: Broken for more than 6 month
+security/dissembler||2013-11-18|Has expired: Broken for more than 6 month
+net-mgmt/zenpack-apachemonitor||2013-11-18|Has expired: Broken for more than 6 month
+textproc/rst.el||2013-11-18|Has expired: Broken for more than 6 month
+net-mgmt/zenpack-ntpmonitor||2013-11-18|Has expired: Broken for more than 6 month
+x11-themes/kde-icons-steel||2013-11-18|Has expired: Broken for more than 6 month
+databases/drizzle||2013-11-18|Has expired: Broken for more than 6 month
+devel/p5-File-Lock||2013-11-18|Has expired: Broken for more than 6 month
+devel/valide||2013-11-18|Has expired: Broken for more than 6 month
+databases/gomysql||2013-11-18|Has expired: Broken for more than 6 month
+databases/p5-DBZ_File||2013-11-18|Has expired: BRoken for more than 6 month
+devel/monodevelop-vala||2013-11-18|Has expired: Broken for more than 6 month
+devel/gonzui||2013-11-18|Has expired: Broken for more than 6 month
+devel/monodevelop-java||2013-11-18|Has expired: Broken for more than 6 month
+lang/objc||2013-11-18|Has expired: Broken for more than 6 month
+devel/klee||2013-11-18|Has expired: Broken for more than 6 month
+databases/p5-DBD-InterBase||2013-11-18|Has expired: Broken for more than 6 month
+devel/simulavr||2013-11-18|Has expired: Broken for more than 6 month
+japanese/mobileimap||2013-11-18|Has expired: Broken for more than 6 month
+devel/libYGP||2013-11-18|Has expired: Broken for more than 6 month
+devel/monodevelop-python||2013-11-18|Has expired: Broken for more than 6 month

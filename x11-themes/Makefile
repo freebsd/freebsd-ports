@@ -100,7 +100,6 @@
     SUBDIR += kde-icons-cezanne
     SUBDIR += kde-icons-crystal-project
     SUBDIR += kde-icons-dark-glass
-    SUBDIR += kde-icons-exquisite
     SUBDIR += kde-icons-gartoon-blue-svg
     SUBDIR += kde-icons-gartoon-svg
     SUBDIR += kde-icons-graphite-rade8
@@ -108,14 +107,12 @@
     SUBDIR += kde-icons-kool-gorilla
     SUBDIR += kde-icons-lime-rade8
     SUBDIR += kde-icons-lush
-    SUBDIR += kde-icons-marbles-translucent
     SUBDIR += kde-icons-noia
     SUBDIR += kde-icons-nuovext
     SUBDIR += kde-icons-nuovext2
     SUBDIR += kde-icons-nuvola
     SUBDIR += kde-icons-os-k
     SUBDIR += kde-icons-sky
-    SUBDIR += kde-icons-steel
     SUBDIR += kde-icons-umicons
     SUBDIR += kde-icons-vista-inspirate
     SUBDIR += kde4-base-artwork
