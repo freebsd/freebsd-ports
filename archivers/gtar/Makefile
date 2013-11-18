@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	g
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	GNU version of the traditional tape archiver
 
+LICENSE=	GPLv3
+
 INFO=		tar
 
 USES=		iconv:${STATIC_ARGS}
