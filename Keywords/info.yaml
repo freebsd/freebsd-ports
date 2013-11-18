@@ -12,3 +12,6 @@ post-deinstall: |
   if [ $(info -d ${file%/*}  --output - 2>/dev/null | grep -c '^*') -eq 1 ]; then
     rm -f ${file%/*}/dir
   fi
+  if [ ${file%/*} != "%D/info" ]; then
+     rmdir ${file%/*} 2> /dev/null || true
+  fi
