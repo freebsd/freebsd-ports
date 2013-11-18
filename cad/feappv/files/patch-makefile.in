@@ -1,0 +1,13 @@
+--- makefile.in.orig	2013-07-15 19:15:37.000000000 +0000
++++ makefile.in
+@@ -31,8 +31,8 @@ FF = gfortran
+ CC = gcc
+ 
+ # What optimization level to use
+-  FFOPTFLAG = -O3 -ftree-vectorize -Wall
+-  CCOPTFLAG = -O3 -ftree-vectorize -Wall
++FFOPTFLAG = -O3 -ftree-vectorize -Wall
++CCOPTFLAG = -O3 -ftree-vectorize -Wall
+ 
+ # FFOPTFLAG = -g -O3 -ftree-vectorize -Wall
+ # CCOPTFLAG = -g -O3 -ftree-vectorize -Wall
