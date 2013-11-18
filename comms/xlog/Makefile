@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xlog
-PORTVERSION=	2.0.10
+PORTVERSION=	2.0.11
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SAVANNAH
 MASTER_SITE_SUBDIR=	xlog
@@ -12,14 +12,14 @@ COMMENT=	Amateur Radio logging application
 
 LICENSE=	GPLv3
 
-USES=		pkgconfig
+LIB_DEPENDS=	libhamlib.so:${PORTSDIR}/comms/hamlib
+
+USES=		pkgconfig shared-mime-info
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-mime-update
 CONFIGURE_ENV+=	ac_cv_c_compiler_gnu=no
 MAKE_ARGS=	PREFIX=/${PREFIX}
-
-LIB_DEPENDS=	libhamlib.so:${PORTSDIR}/comms/hamlib
 
 OPTIONS_DEFINE=	NLS DOCS
 OPTIONS_SUB=	yes
