@@ -22,6 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_ZIP=	yes
 USES=		gmake
+USE_DOS2UNIX=	*.h makefile mklist.c *.txt *.dat
 
 PORTDOCS=	Readme.txt
 
@@ -29,41 +30,34 @@ OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-extract-script:
-	@(cd ${WRKSRC} && ${UNZIP_CMD} -qo -d ${WRKSRC}/mklist1_4 ${WRKSRC}/mklist1_4.zip)
+	@(cd ${WRKSRC} && ${UNZIP_CMD} -qo -d ${WRKSRC}/mklist ${WRKSRC}/mklist1_6.zip)
+	@(cd ${WRKSRC}/mklist/include && ${MV} * ..)
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CC=gcc|CC?=gcc|' \
 		-e 's|CFLAGS=|CFLAGS?=|' \
-		${WRKSRC}/mklist1_4/makefile
+		${WRKSRC}/mklist/makefile
 	@${REINPLACE_CMD} -e 's|PARTS|parts|' \
-		${WRKSRC}/mklist1_4/mklist.c
+		${WRKSRC}/mklist/mklist.c
 
 do-build:
-	@(cd ${WRKSRC}/mklist1_4 ; ${GMAKE} ${MAKE_ENV})
+	@(cd ${WRKSRC}/mklist ; ${GMAKE} ${MAKE_ENV})
 
 do-install:
 .for f in models p parts LDCfgalt.ldr LDConfig.ldr LDConfig_TLG.ldr
-	@(cd ${WRKSRC} ; ${COPYTREE_SHARE} ${f} ${DATADIR})
+	@(cd ${WRKSRC} ; ${COPYTREE_SHARE} ${f} ${STAGEDIR}${DATADIR})
 .endfor
 
-	${INSTALL_SCRIPT} ${WRKSRC}/mklist1_4/mklist ${DATADIR}
-	@(cd ${DATADIR} ; ./mklist -n)
+	${INSTALL_SCRIPT} ${WRKSRC}/mklist/mklist ${STAGEDIR}${DATADIR}
+	@(cd ${STAGEDIR}${DATADIR} ; ./mklist -n)
 
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-	@${FIND} ${DATADIR}/ ! -type d | ${SED} 's|^${PREFIX}/||' >> ${TMPPLIST}
-	@${FIND} -ds ${DATADIR}/ -type d | \
-		${SED} -E -e 's,(.*),@unexec ${RMDIR} "\1" 2>/dev/null || true,' >> ${TMPPLIST}
-
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+	@cd ${STAGEDIR}${PREFIX} && ${FIND} ${DATADIR_REL}\
+		-type f >> ${TMPPLIST} && \
+		${FIND} ${DATADIR_REL} -type d -o -type l | ${SORT} -r | \
+		${SED} 's|^|@dirrm |' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
