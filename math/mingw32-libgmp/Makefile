@@ -19,6 +19,7 @@ GMP_TARG=	${PKGNAMEPREFIX:S/-$//}
 GNU_CONFIGURE=	yes
 CC=		${PKGNAMEPREFIX}gcc
 CXX=		${PKGNAMEPREFIX}c++
+CFLAGS+=	-I/usr/include
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split" \
 		PREFIX="${PREFIX}/${GMP_TARG}"
 CONFIGURE_ARGS=	--enable-cxx --host=${GMP_TARG} \
