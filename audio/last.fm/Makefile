@@ -11,26 +11,25 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Official last.fm radio player
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	gpod.7:${PORTSDIR}/audio/libgpod \
-		mad.2:${PORTSDIR}/audio/libmad \
-		samplerate.1:${PORTSDIR}/audio/libsamplerate \
-		fftw3f:${PORTSDIR}/math/fftw3-float \
-		asound.2:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS=	libgpod.so:${PORTSDIR}/audio/libgpod \
+		libmad.so:${PORTSDIR}/audio/libmad \
+		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
+		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
+		libasound.so:${PORTSDIR}/audio/alsa-lib
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 SUB_FILES=	pkg-install pkg-deinstall
-USES=		shebangfix
+USES=		dos2unix shebangfix
 NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_QT4=	gui imageformats_run moc_build network qmake_build rcc_build \
 		sql uic_build xml
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_DOS2UNIX=	*.h
+DOS2UNIX_GLOB=	*.h
 SHEBANG_FILES=	dist/tarball_files/configure
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
