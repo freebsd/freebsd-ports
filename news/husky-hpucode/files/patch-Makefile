@@ -1,5 +1,14 @@
---- Makefile.orig	Thu Jan  9 03:57:29 2003
-+++ Makefile	Thu Jan  9 03:57:46 2003
+--- Makefile.orig	2002-10-08 14:33:48.000000000 +0700
++++ Makefile	2013-10-31 17:22:27.000000000 +0700
+@@ -32,7 +32,7 @@
+ 
+ 
+ hpucode: $(OBJS)
+-		gcc $(OBJS) $(LFLAGS) $(LIBS) -o hpucode$(EXE)
++		$(CC) $(OBJS) $(LFLAGS) $(LIBS) -o hpucode$(EXE)
+ 
+ %.o: $(SRC_DIR)%.c
+ 	$(CC) $(CFLAGS) $(CDEFS) -c $<
 @@ -64,12 +64,12 @@
  	$(INSTALL) $(IBOPT) hpucode$(EXE) $(BINDIR)
  ifdef INFODIR
