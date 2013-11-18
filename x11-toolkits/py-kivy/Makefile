@@ -20,12 +20,14 @@ MAKE_JOBS_UNSAFE=	yes  # does not (really) use make
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
 GH_COMMIT=	ee1985a
+USES=		shebangfix
 USE_GL=		gl
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_BUILD_TARGET=	build_ext
 PYDISTUTILS_BUILDARGS=	--inplace
 PYDISTUTILS_EGGINFO=	Kivy-${PORTVERSION}-py${PYTHON_VER}.egg-info
 USE_PYTHON=	2.7
+SHEBANG_FILES=	kivy/lib/osc/OSC.py
 
 OPTIONS_DEFINE=	DOCS PDF TEST
 OPTIONS_SET=	ENCHANT OPENCV PYGAME # FFMPEG
@@ -65,6 +67,7 @@ GSTREAMER_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygst.py:${PORTSDIR}/multimedia/py-g
 OPENCV_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cv.py:${PORTSDIR}/graphics/py-opencv
 PDF_DESC=		Build PDF documentation (required TeXLive, DOCS)
 PDF_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+PDF_USES=		gmake
 PIL_DESC=		Text and window rendering support via PIL
 PIL_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL:${PORTSDIR}/graphics/py-imaging
 PYGAME_DESC=		Window, text and image rendering support via PyGame
@@ -80,11 +83,9 @@ X11_MAKE_ENV+=		USE_X11=1
 FFMPEG_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ffmpeg:${PORTSDIR}/multimedia/py-ffmpeg
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPDF}
-USE_GMAKE=	yes
 USE_TEX=	texlive pdftex:build dvipsk:build
 .if empty(PORT_OPTIONS:MDOCS)
 IGNORE=		option PDF requires DOCS
@@ -103,18 +104,22 @@ USE_SDL=	sdl2 ttf2 mixer2
 USE_XORG=	x11
 .endif
 
-do-build:
-	@(cd ${WRKSRC}; \
-		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} \
-			${PYDISTUTILS_BUILD_TARGET} ${PYDISTUTILS_BUILDARGS})
 .if ${PORT_OPTIONS:MTEST}
+
+post-build: do-test-build
+
+do-test-build:
 	@${RM} -rf kivy/tests/build
 	@(cd ${WRKSRC}; \
 		${SETENV} ${MAKE_ENV} nosetests ${NOSE_ARGS} ${WRKSRC}/kivy/tests)
+
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
-post-build-script:
+
+post-build: do-build-docs
+
+do-build-docs:
 	${MKDIR} ${WRKSRC}/doc/build/doctrees ${WRKSRC}/doc/build/html \
 		${WRKSRC}/doc/build/latex-a4 ${WRKSRC}/doc/build/latex-letter
 	(cd ${WRKSRC}; \
@@ -138,15 +143,20 @@ post-build-script:
 		all-pdf > /dev/null
 .endif
 
-post-install:
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/doc/build/html; ${COPYTREE_SHARE} . ${DOCSDIR})
+post-install: do-install-docs
+
+do-install-docs:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc/build/html; ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 .if ${PORT_OPTIONS:MPDF}
 	${INSTALL_DATA} ${WRKSRC}/doc/build/latex-a4/Kivy.pdf \
-		${DOCSDIR}/Kivy-a4.pdf
+		${STAGEDIR}${DOCSDIR}/Kivy-a4.pdf
 	${INSTALL_DATA} ${WRKSRC}/doc/build/latex-letter/Kivy.pdf \
-		${DOCSDIR}/Kivy-letter.pdf
+		${STAGEDIR}${DOCSDIR}/Kivy-letter.pdf
 .endif
 .endif
+
+post-install:
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/kivy -name '*.so' | ${XARGS} ${STRIP_CMD}
 
 .include <bsd.port.mk>
