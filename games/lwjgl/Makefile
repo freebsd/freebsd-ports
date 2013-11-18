@@ -9,7 +9,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-source-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The Lightweight Java Game Library
+COMMENT=	Lightweight Java Game Library
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/${DISTNAME}/doc/LICENSE
@@ -42,7 +42,6 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}/${PORTNAME}.jar \
 PLIST_DIRS=	%%JAVAJARDIR%%/${PORTNAME} \
 		lib/${PORTNAME}${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386
@@ -59,18 +58,16 @@ post-patch:
 		${WRKSRC}/platform_build/bsd_ant/build.xml
 
 do-install:
-	@${ECHO_MSG} -n ">> Install JAR files in ${JAVAJARDIR}/${PORTNAME}/ ..."
-	@${MKDIR} ${JAVAJARDIR}/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}
 .for _jar in ${PLIST_FILES:M*.jar}
-	@${INSTALL_DATA} ${WRKSRC}/libs/${_jar:T} ${JAVAJARDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/libs/${_jar:T} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}
 .endfor
-	@${ECHO_MSG} " [ DONE ]"
-	@${MKDIR} ${PREFIX}/lib/${PORTNAME}${PORTVERSION}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}${PORTVERSION}
 .if ${ARCH} == i386
-	@${INSTALL_DATA} ${WRKSRC}/libs/freebsd/lib${PORTNAME}.so ${PREFIX}/lib/${PORTNAME}${PORTVERSION}
+	${INSTALL_DATA} ${WRKSRC}/libs/freebsd/lib${PORTNAME}.so ${STAGEDIR}${PREFIX}/lib/${PORTNAME}${PORTVERSION}
 .endif
 .if ${ARCH} == amd64
-	@${INSTALL_DATA} ${WRKSRC}/libs/freebsd/lib${PORTNAME}64.so ${PREFIX}/lib/${PORTNAME}${PORTVERSION}
+	${INSTALL_DATA} ${WRKSRC}/libs/freebsd/lib${PORTNAME}64.so ${STAGEDIR}${PREFIX}/lib/${PORTNAME}${PORTVERSION}
 .endif
 
 .include <bsd.port.post.mk>
