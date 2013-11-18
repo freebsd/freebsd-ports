@@ -21,8 +21,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USES=		perl5 shebangfix
-USE_DOS2UNIX=	yes
+USES=		perl5 shebangfix dos2unix
 USE_PERL5=	configure
 DOS2UNIX_REGEX=	"*.p[lm]"
 
