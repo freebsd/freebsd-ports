@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/Odamex/${PORTVERSION}
 DISTNAME=	odamex-src-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The Standard in Online Multiplayer Doom
+COMMENT=	Standard in Online Multiplayer Doom
 
 USE_BZIP2=	yes
 USE_SDL=	sdl mixer
@@ -19,17 +19,13 @@ OPTIONS_DEFINE=	LAUNCHER
 
 LAUNCHER_DESC=	Enable GUI launcher program
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MLAUNCHER}
-USE_WX=		2.6+
-CMAKE_ARGS+=	-DODALAUNCH_TARGET=on -DNO_AG-ODALAUNCH_TARGET=off
-PLIST_SUB+=	LAUNCHER=""
-.else
-PLIST_SUB+=	LAUNCHER="@comment "
-CMAKE_ARGS+=	-DODALAUNCH_TARGET=off
-.endif
+LAUNCHER_USE=		WX=2.6+
+LAUNCHER_CMAKE_ON=	-DODALAUNCH_TARGET=on -DNO_AG-ODALAUNCH_TARGET=off
+LAUNCHER_CMAKE_OFF=	-DODALAUNCH_TARGET=off
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DMDIR%%|${DMDIR}|; \
@@ -44,29 +40,27 @@ post-patch:
 		${WRKSRC}/installer/arch/odamex.desktop
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/client/odamex ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/server/odasrv ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/client/odamex ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/server/odasrv ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MLAUNCHER}
-	${INSTALL_PROGRAM} ${WRKSRC}/odalaunch/odalaunch ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/odalaunch/odalaunch ${STAGEDIR}${PREFIX}/bin
 .endif
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/odamex.wad ${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/odamex.wad ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${STAGEDIR}${DOCSDIR}
 .for f in odamex odasrv
-	${INSTALL_DATA} ${WRKSRC}/media/icon_${f}_*.png ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/media/icon_${f}_*.png ${STAGEDIR}${PREFIX}/share/pixmaps
 .endfor
 .if ${PORT_OPTIONS:MLAUNCHER}
-	${INSTALL_DATA} ${WRKSRC}/media/icon_odalaunch_*.png ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/media/icon_odalaunch_*.png ${STAGEDIR}${PREFIX}/share/pixmaps
 .endif
 .for f in odamex odasrv
-	${INSTALL_DATA} ${WRKSRC}/installer/arch/${f}.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/installer/arch/${f}.desktop ${STAGEDIR}${PREFIX}/share/applications
 .endfor
 .if ${PORT_OPTIONS:MLAUNCHER}
-	${INSTALL_DATA} ${WRKSRC}/installer/arch/odalaunch.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/installer/arch/odalaunch.desktop ${STAGEDIR}${PREFIX}/share/applications
 .endif
 
 .include "${.CURDIR}/../doom-data/Makefile.include"
