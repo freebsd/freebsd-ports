@@ -358,8 +358,6 @@
     SUBDIR += tinypy
     SUBDIR += tolua
     SUBDIR += tolua++
-    SUBDIR += tolua++50
-    SUBDIR += tolua50
     SUBDIR += treecc
     SUBDIR += tuareg-mode.el
     SUBDIR += twelf
