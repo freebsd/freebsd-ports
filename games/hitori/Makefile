@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hitori
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	games
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,13 +16,13 @@ LICENSE_NAME_CCbyNCSA3=	Attribution-NonCommercial-ShareAlike 3.0 Unported
 LICENSE_FILE_CCbyNCSA3=	${WRKSRC}/COPYING-DOCS
 LICENSE_PERMS_CCbyNCSA3=dist-mirror pkg-mirror auto-accept
 
-BUILD_DEPENDS=	xml2po:${PORTSDIR}/textproc/gnome-doc-utils \
+BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
+		xml2po:${PORTSDIR}/textproc/gnome-doc-utils \
 		itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
 
 USE_XZ=		yes
 USES=		gmake pkgconfig desktop-file-utils
-USE_GNOME=	glib20 gtk30
+USE_GNOME=	cairo glib20 gtk30
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
@@ -34,21 +34,19 @@ OPTIONS_SUB=	yes
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
 .if ${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} -e 's|$$(prefix)/$$(DATADIRNAME)/locale|$$(prefix)/share/locale|' \
+	@${REINPLACE_CMD} -e 's|$$(DATADIRNAME)/locale|share/locale|' \
 		${WRKSRC}/po/Makefile.in.in
 .endif
 
 post-install:
-	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${PREFIX}/share/pixmaps/
+	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
+	${STAGEDIR}${PREFIX}/share/pixmaps/
 
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

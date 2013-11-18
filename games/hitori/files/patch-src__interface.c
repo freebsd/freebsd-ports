@@ -1,5 +1,5 @@
---- src/interface.c.orig	2012-09-29 03:47:48.000000000 +0200
-+++ src/interface.c	2012-11-02 15:11:34.000000000 +0100
+--- ./src/interface.c.orig	2013-10-10 10:27:44.000000000 +0200
++++ ./src/interface.c	2013-11-12 19:36:25.000000000 +0100
 @@ -26,6 +26,7 @@
  #include "main.h"
  #include "interface.h"
