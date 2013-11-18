@@ -1,0 +1,4 @@
+BackupPC::XS implements various BackupPC functions in a perl-callable module.
+This module is required for BackupPC V4+.
+
+WWW: http://backuppc.sourceforge.net
