@@ -5239,3 +5239,5 @@ devel/lua50-pty||2013-11-18|Removed
 lang/tolua++50||2013-11-18|Removed
 lang/tolua50||2013-11-18|Removed
 net/lua50-luasocket||2013-11-18|Removed
+devel/lua50-compat51||2013-11-18|Removed
+lang/lua50||2013-11-18|Removed

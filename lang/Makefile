@@ -154,7 +154,6 @@
     SUBDIR += logo
     SUBDIR += lua
     SUBDIR += lua-mode.el
-    SUBDIR += lua50
     SUBDIR += lua52
     SUBDIR += luajit
     SUBDIR += lush
