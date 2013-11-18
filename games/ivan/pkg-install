@@ -8,8 +8,8 @@ STATEDIR="/var/games/ivan"
 
 echo "Creating state directory..."
 
-mkdir "$STATEDIR"
+mkdir -p "$STATEDIR"
 touch "$STATEDIR/ivan-highscore.scores"
-mkdir "$STATEDIR/Bones"
+mkdir -p "$STATEDIR/Bones"
 chgrp -R games "$STATEDIR"
 chmod -R g+w "$STATEDIR"
