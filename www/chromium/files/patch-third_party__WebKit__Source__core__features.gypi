@@ -9,12 +9,3 @@
          'feature_defines': [
            'ENABLE_OPENTYPE_VERTICAL=1',
          ],
-@@ -104,7 +104,7 @@
-           'ENABLE_RUBBER_BANDING=1',
-         ],
-       }],
--      ['OS=="linux" or OS=="android"', {
-+      ['OS=="linux" or OS=="android" or os_bsd==1', {
-         'feature_defines': [
-           'WTF_USE_HARFBUZZ=1',
-         ],

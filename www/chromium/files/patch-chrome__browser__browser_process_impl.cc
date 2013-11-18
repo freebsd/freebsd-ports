@@ -12,7 +12,7 @@
 @@ -618,7 +618,7 @@
  }
  
- chrome::StorageMonitor* BrowserProcessImpl::storage_monitor() {
+ StorageMonitor* BrowserProcessImpl::storage_monitor() {
 -#if defined(OS_ANDROID) || defined(OS_IOS)
 +#if defined(OS_ANDROID) || defined(OS_IOS) || defined(OS_BSD)
    return NULL;
@@ -21,7 +21,7 @@
 @@ -627,7 +627,7 @@
  
  void BrowserProcessImpl::set_storage_monitor_for_test(
-     scoped_ptr<chrome::StorageMonitor> monitor) {
+     scoped_ptr<StorageMonitor> monitor) {
 -#if !defined(OS_ANDROID) && !defined(OS_IOS)
 +#if !defined(OS_ANDROID) && !defined(OS_IOS) && !defined(OS_BSD)
    storage_monitor_ = monitor.Pass();
@@ -33,6 +33,6 @@
  
 -#if !defined(OS_ANDROID) && !defined(OS_IOS)
 +#if !defined(OS_ANDROID) && !defined(OS_IOS) && !defined(OS_BSD)
-   storage_monitor_.reset(chrome::StorageMonitor::Create());
+   storage_monitor_.reset(StorageMonitor::Create());
  #endif
  

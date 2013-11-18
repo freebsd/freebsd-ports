@@ -13,25 +13,6 @@
  #else
  const int kValidInputRates[] = {44100};
  #endif
-@@ -39,14 +39,14 @@
- #if defined(OS_WIN) || defined(OS_MACOSX)
-   // Use a buffer size of 10ms.
-   buffer_size = (sample_rate / 100);
--#elif defined(OS_LINUX) || defined(OS_OPENBSD)
-+#elif defined(OS_ANDROID)
-+  // TODO(leozwang): Tune and adjust buffer size on Android.
-+  buffer_size = 2 * sample_rate / 100;
-+#elif defined(OS_POSIX)
-   // Based on tests using the current ALSA implementation in Chrome, we have
-   // found that the best combination is 20ms on the input side and 10ms on the
-   // output side.
-   buffer_size = 2 * sample_rate / 100;
--#elif defined(OS_ANDROID)
--  // TODO(leozwang): Tune and adjust buffer size on Android.
--    buffer_size = 2 * sample_rate / 100;
- #endif
-   return buffer_size;
- }
 @@ -430,7 +430,7 @@
    // CaptureCallback.
  #if defined(OS_WIN) || defined(OS_MACOSX)

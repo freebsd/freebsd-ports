@@ -15,6 +15,6 @@
              # TODO(mallinath) - Enable SCTP for Android and iOS platforms.
 -            ['OS!="android" and OS!="ios"', {
 +            ['OS!="android" and OS!="ios" and os_bsd!=1', {
-               'conditions': [
-                 ['OS!="win"', {
-                   'defines': [
+               'defines': [
+                 ['HAVE_SCTP',
+               ],

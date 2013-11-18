@@ -1,6 +1,6 @@
---- content/browser/geolocation/wifi_data_provider_freebsd.h.orig	2012-12-27 23:17:38.000000000 +0100
-+++ content/browser/geolocation/wifi_data_provider_freebsd.h	2012-12-28 12:31:07.000000000 +0100
-@@ -0,0 +1,29 @@
+--- content/browser/geolocation/wifi_data_provider_freebsd.h.orig	2013-11-15 12:34:18.000000000 +0100
++++ content/browser/geolocation/wifi_data_provider_freebsd.h	2013-11-15 22:08:05.000000000 +0100
+@@ -0,0 +1,31 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -8,7 +8,9 @@
 +#ifndef CONTENT_BROWSER_GEOLOCATION_WIFI_DATA_PROVIDER_FREEBSD_H_
 +#define CONTENT_BROWSER_GEOLOCATION_WIFI_DATA_PROVIDER_FREEBSD_H_
 +
++#include "base/compiler_specific.h"
 +#include "content/browser/geolocation/wifi_data_provider_common.h"
++#include "content/common/content_export.h"
 +
 +namespace content {
 +
@@ -22,7 +24,7 @@
 +
 +	// WifiDataProviderCommon
 +	virtual WlanApiInterface* NewWlanApi() OVERRIDE;
-+	virtual PollingPolicyInterface* NewPollingPolicy() OVERRIDE;
++	virtual WifiPollingPolicy* NewPollingPolicy() OVERRIDE;
 +
 +	DISALLOW_COPY_AND_ASSIGN(FreeBSDWifiDataProvider);
 +};
