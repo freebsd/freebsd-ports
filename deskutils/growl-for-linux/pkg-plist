@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/gol
 lib/growl-for-linux/display/libballoon.a
 lib/growl-for-linux/display/libballoon.la
@@ -24,14 +23,13 @@ lib/growl-for-linux/subscribe/libtweets.a
 lib/growl-for-linux/subscribe/libtweets.la
 lib/growl-for-linux/subscribe/libtweets.so
 lib/growl-for-linux/subscribe/libtweets.so.0
-lib/libgolplug.a
 %%DESKTOPDIR%%/gol.desktop
 %%DATADIR%%/data/growl4linux.jpg
 %%DATADIR%%/data/icon.png
 %%DATADIR%%/data/icon_dnd.png
 %%DATADIR%%/data/mattn.png
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
-@dirrm lib/growl-for-linux/subscribe
-@dirrm lib/growl-for-linux/display
-@dirrm lib/growl-for-linux
+@dirrmtry %%DATADIR%%/data
+@dirrmtry %%DATADIR%%
+@dirrmtry lib/growl-for-linux/subscribe
+@dirrmtry lib/growl-for-linux/display
+@dirrmtry lib/growl-for-linux
