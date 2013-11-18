@@ -27,19 +27,20 @@ OPTIONS_MULTI_TYPE=	CLIENT DEDICATED SMP
 OPTIONS_DEFINE=	PUNKBUSTER DOCS
 OPTIONS_DEFAULT=	CLIENT DEDICATED PUNKBUSTER SMP
 
+OPTIONS_SUB=	yes
+
 CLIENT_DESC=	Install client
 DEDICATED_DESC=	Install dedicated server
 PUNKBUSTER_DESC=	Install PunkBuster
 SMP_DESC=	Install SMP (threaded) client
 
-PLIST_SUB+=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
+PLIST_SUB+=	LIBDIR="libexec/${PKGNAMEPREFIX}${PORTNAME}"
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
 
 LIBDIR=		${PREFIX}/libexec/${PKGNAMEPREFIX}${PORTNAME}
 Q3DATAFILE=	linuxq3apoint-1.32b-3.x86.run
 Q3PATCHFILE=	quake3-${PORTVERSION}.zip
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} && ${TAIL} +356 ${_DISTDIR}/${Q3DATAFILE} | \
@@ -58,29 +59,14 @@ post-extract:
 
 .if ${PORT_OPTIONS:MDEDICATED}
 PROGS+=		q3ded
-PLIST_SUB+=	DEDICATED=""
-.else
-PLIST_SUB+=	DEDICATED="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCLIENT}
 PROGS+=		quake3.x86
-PLIST_SUB+=	CLIENT=""
-.else
-PLIST_SUB+=	CLIENT="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPUNKBUSTER}
-PLIST_SUB+=	PUNKBUSTER=""
-.else
-PLIST_SUB+=	PUNKBUSTER="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSMP}
 PROGS+=		quake3-smp.x86
-PLIST_SUB+=	SMP=""
-.else
-PLIST_SUB+=	SMP="@comment "
 .endif
 
 do-build:
@@ -91,23 +77,20 @@ do-build:
 .endfor
 
 do-install:
-	@${MKDIR} ${LIBDIR}
+	@${MKDIR} ${STAGEDIR}${LIBDIR}
 .for f in ${PROGS}
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/Linux/x86/${f} ${LIBDIR}/${f:R}
-	@${INSTALL_SCRIPT} ${WRKDIR}/${f:R} ${PREFIX}/bin/linux-${f:R}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/Linux/x86/${f} ${STAGEDIR}${LIBDIR}/${f:R}
+	${INSTALL_SCRIPT} ${WRKDIR}/${f:R} ${STAGEDIR}${PREFIX}/bin/linux-${f:R}
 .endfor
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .if ${PORT_OPTIONS:MPUNKBUSTER}
-	@${CP} -Rp ${WRKSRC}/pb ${DATADIR}
-	@${RM} ${DATADIR}/pb/PB_EULA.txt
+	@${CP} -Rp ${WRKSRC}/pb ${STAGEDIR}${DATADIR}
+	@${RM} ${STAGEDIR}${DATADIR}/pb/PB_EULA.txt
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README-linux.txt ${DOCSDIR}
-	@${CP} -Rp ${WRKSRC}/Docs/LinuxFAQ ${DOCSDIR}
-.   if ${PORT_OPTIONS:MPUNKBUSTER}
-	@${CP} -Rp ${WRKSRC}/Docs/PunkBuster ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/pb/PB_EULA.txt ${DOCSDIR}/PunkBuster
-.   endif
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README-linux.txt ${STAGEDIR}${DOCSDIR}
+	${CP} -Rp ${WRKSRC}/Docs/LinuxFAQ ${STAGEDIR}${DOCSDIR}
+	${CP} -Rp ${WRKSRC}/Docs/PunkBuster ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/pb/PB_EULA.txt ${STAGEDIR}${DOCSDIR}/PunkBuster
 
 .include <bsd.port.mk>
