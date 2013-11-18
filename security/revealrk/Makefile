@@ -11,18 +11,16 @@ COMMENT=	Search hidden procs/rootkits from cron with low false positive rate
 
 LICENSE=	GPLv3
 
-PLIST_FILES=	bin/revealrk
-MAN1=		revealrk.1
+PLIST_FILES=	bin/revealrk man/man1/revealrk.1.gz
 
 MANCOMPRESSED=	yes
 NO_MANCOMPRESS=	yes
 
 USE_SCONS=	yes
 .if !empty(PREFIX)
-SCONS_ARGS=	--prefix=${PREFIX}
+SCONS_ARGS=	--prefix=${STAGEDIR}${PREFIX}
 .else
-SCONS_ARGS=	--prefix=${LOCALBASE}
+SCONS_ARGS=	--prefix=${STAGEDIR}${LOCALBASE}
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
