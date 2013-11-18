@@ -5230,14 +5230,14 @@ devel/simulavr||2013-11-18|Has expired: Broken for more than 6 month
 japanese/mobileimap||2013-11-18|Has expired: Broken for more than 6 month
 devel/libYGP||2013-11-18|Has expired: Broken for more than 6 month
 devel/monodevelop-python||2013-11-18|Has expired: Broken for more than 6 month
-devel/lua50-app||2013-11-18|Removed
-devel/lua50-dfui||2013-11-18|Removed
-devel/lua50-filename||2013-11-18|Removed
-devel/lua50-gettext||2013-11-18|Removed
-devel/lua50-posix||2013-11-18|Removed
-devel/lua50-pty||2013-11-18|Removed
-lang/tolua++50||2013-11-18|Removed
-lang/tolua50||2013-11-18|Removed
-net/lua50-luasocket||2013-11-18|Removed
-devel/lua50-compat51||2013-11-18|Removed
-lang/lua50||2013-11-18|Removed
+devel/lua50-app||2013-11-18|Removed, lua50 is EOLed
+devel/lua50-dfui||2013-11-18|Removed, lua50 is EOLed
+devel/lua50-filename||2013-11-18|Removed, lua50 is EOLed
+devel/lua50-gettext||2013-11-18|Removed, lua50 is EOLed
+devel/lua50-posix||2013-11-18|Removed, lua50 is EOLed
+devel/lua50-pty||2013-11-18|Removed, lua50 is EOLed
+lang/tolua++50||2013-11-18|Removed, lua50 is EOLed
+lang/tolua50||2013-11-18|Removed, lua50 is EOLed
+net/lua50-luasocket||2013-11-18|Removed, lua50 is EOLed
+devel/lua50-compat51||2013-11-18|Removed, lua50 is EOLed
+lang/lua50|lang/lua|2013-11-18|Removed, lua50 is EOLed
