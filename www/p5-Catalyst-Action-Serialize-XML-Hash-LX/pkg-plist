@@ -1,0 +1,19 @@
+%%SITE_PERL%%/Catalyst/Action/Deserialize/XML/Hash/LX.pm
+%%SITE_PERL%%/Catalyst/Action/Serialize/XML/Hash/LX.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Action/Serialize/XML/Hash/LX/.packlist
+%%PERL5_MAN3%%/Catalyst::Action::Deserialize::XML::Hash::LX.3.gz
+%%PERL5_MAN3%%/Catalyst::Action::Serialize::XML::Hash::LX.3.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Action/Serialize/XML/Hash/LX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Action/Serialize/XML/Hash
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Action/Serialize/XML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Action/Serialize
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Action
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst/Action/Serialize/XML/Hash
+@dirrmtry %%SITE_PERL%%/Catalyst/Action/Serialize/XML
+@dirrmtry %%SITE_PERL%%/Catalyst/Action/Serialize
+@dirrmtry %%SITE_PERL%%/Catalyst/Action/Deserialize/XML/Hash
+@dirrmtry %%SITE_PERL%%/Catalyst/Action/Deserialize/XML
+@dirrmtry %%SITE_PERL%%/Catalyst/Action/Deserialize
+@dirrmtry %%SITE_PERL%%/Catalyst/Action
+@dirrmtry %%SITE_PERL%%/Catalyst
