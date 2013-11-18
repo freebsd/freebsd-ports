@@ -1,13 +1,13 @@
-scmpc is a client for MPD which submits your tracks to Audioscrobbler.
+scmpc is a client for MusicPD which submits your tracks to Audioscrobbler.
 Features include:
 
   * Can be run as a daemon, either as a user or as root
   * Keeps unsubmitted songs in a queue which is saved to a file at a
     configurable interval
-  * Will try to reconnect to MPD and Audioscrobbler if the network
+  * Will try to reconnect to MusicPD and Audioscrobbler if the network
     connection fails
-  * Works with a password-protected MPD server
+  * Works with a password-protected MusicPD server
   * Can connect to Audioscrobbler through a proxy
   * Works when crossfading is enabled
 
-WWW: http://scmpc.berlios.de/
+WWW: http://cmende.github.io/scmpc/
