@@ -12,4 +12,4 @@ inform:		$(OBJS)
 		$(CC) $(CFLAGS) -o ${.TARGET} $(OBJS)
 
 install:	inform
-		${BSD_INSTALL_PROGRAM} inform ${PREFIX}/bin
+		${BSD_INSTALL_PROGRAM} inform ${DESTDIR}${PREFIX}/bin
