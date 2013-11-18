@@ -1,5 +1,5 @@
---- libs/libmythtv/dvbstreamhandler.cpp.orig	2012-03-05 03:31:31.000000000 +0100
-+++ libs/libmythtv/dvbstreamhandler.cpp	2012-03-18 11:24:44.309770699 +0100
+--- libs/libmythtv/recorders/dvbstreamhandler.cpp.orig	2012-03-05 03:31:31.000000000 +0100
++++ libs/libmythtv/recorders/dvbstreamhandler.cpp	2012-03-18 11:24:44.309770699 +0100
 @@ -614,7 +614,7 @@
      {
          struct dmx_pes_filter_params pesFilterParams;

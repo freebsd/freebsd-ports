@@ -2,12 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mythtv-frontend
-PORTVERSION=	0.26.1
+PORTVERSION=	0.27
 CATEGORIES=	multimedia
-MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
-		http://ftp.osuosl.org/pub/mythtv/old_releases/ \
-		http://ftp.oregonstate.edu/pub/mythtv/ \
-		http://ftp.oregonstate.edu/pub/mythtv/old_releases/
 DISTNAME=	mythtv-${PORTVERSION}
 
 MAINTAINER=	decke@FreeBSD.org
@@ -15,20 +11,30 @@ COMMENT=	MythTV is a homebrew PVR project
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat \
 		yasm:${PORTSDIR}/devel/yasm
-LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
-		freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libtag.so:${PORTSDIR}/audio/taglib \
+		libxml2.so:${PORTSDIR}/textproc/libxml2
 
 CONFLICTS=	mythtv-[0-9]*
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	MythTV
+GH_PROJECT=	mythtv
+GH_TAGNAME=	v${PORTVERSION}
+
+WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-e9545c0/${GH_PROJECT}
+
+USE_GCC=	any
 ONLY_FOR_ARCHS=	i386 amd64
-USE_BZIP2=	yes
+USES=		gmake pkgconfig
 USE_QT4=	gui sql network script linguist_build l10n sql-mysql_run \
 		moc_build qmake_build rcc_build uic_build
 QT_NONSTANDARD=	yes
-USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/mythtv/filters
 REINPLACE_ARGS=	-i ""
+DESTDIRNAME=	INSTALL_ROOT
 
 DATADIR=	${PREFIX}/share/mythtv
 
@@ -38,9 +44,10 @@ MAKE_ENV=	QTDIR="${QT_PREFIX}" \
 CPPFLAGS+=	${QTCPPFLAGS}
 CONFIGURE_ENV+=	QMAKESPEC="${QMAKESPEC}" MOC="${MOC}" \
 		QTDIR="${QT_PREFIX}"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-CONFIGURE_ARGS=	--prefix="${PREFIX}" --disable-audio-alsa --disable-indev=alsa \
-		--disable-outdev=alsa --disable-firewire --disable-iptv \
+CONFIGURE_ARGS=	--prefix="${PREFIX}" --cc="${CC}" --cxx="${CXX}" --libxml2-path="${LOCALBASE}/include/libxml2" \
+		--disable-audio-alsa --disable-indev=alsa --disable-outdev=alsa --disable-firewire \
 		--disable-hdhomerun --disable-v4l2 --disable-ivtv --disable-hdpvr \
 		--disable-dvb --enable-opengl-video --without-bindings=perl,python,php
 
@@ -52,7 +59,17 @@ DESKTOP_ENTRIES="MythTV Frontend" "MythTV is a homebrew PVR project" "" \
 OPTIONS_DEFINE=	OPENGL JACK PULSEAUDIO VDPAU
 OPTIONS_DEFAULT=	OPENGL
 
-NO_STAGE=	yes
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_CONFIGURE_ENABLE=	audio-jack
+
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CONFIGURE_ENABLE=	audio-pulseoutput
+
+VDPAU_LIB_DEPENDS=	libvdpau.so:${PORTSDIR}/multimedia/libvdpau
+VDPAU_CONFIGURE_ENABLE=	vdpau
+
+OPENGL_CONFIGURE_ENABLE=	opengl-video
+
 .include <bsd.port.pre.mk>
 
 # for too old binutils in base
@@ -62,32 +79,8 @@ CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
 
-.if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
-CONFIGURE_ARGS+=	--enable-audio-jack
-.else
-CONFIGURE_ARGS+=	--disable-audio-jack
-.endif
-
 .if ${PORT_OPTIONS:MOPENGL}
 USE_QT4+=	opengl
-CONFIGURE_ARGS+=	--enable-opengl-video
-.else
-CONFIGURE_ARGS+=	--disable-opengl-video
-.endif
-
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
-CONFIGURE_ARGS+=	--enable-audio-pulseoutput
-.else
-CONFIGURE_ARGS+=	--disable-audio-pulseoutput
-.endif
-
-.if ${PORT_OPTIONS:MVDPAU}
-LIB_DEPENDS+=	vdpau.1:${PORTSDIR}/multimedia/libvdpau
-CONFIGURE_ARGS+=	--enable-vdpau
-.else
-CONFIGURE_ARGS+=	--disable-vdpau
 .endif
 
 post-patch:
