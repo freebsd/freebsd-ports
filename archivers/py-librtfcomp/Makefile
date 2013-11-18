@@ -1,32 +1,23 @@
 # Created by: Alexander Logvinov <ports@logvinov.com>
 # $FreeBSD$
 
-CATEGORIES=	archivers python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Python bindings for the LZRTF compression library
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Python bindings for library for handling compressed RTF documents
 
-LIB_DEPENDS=	rtfcomp.0:${PORTSDIR}/archivers/librtfcomp
-BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
+LICENSE=	LGPL21
 
-MASTERDIR=	${.CURDIR}/../librtfcomp
+BUILD_DEPENDS=	${LOCALBASE}/bin/pyrexc:${PORTSDIR}/devel/pyrex
+LIB_DEPENDS=	librtfcomp.so:${PORTSDIR}/archivers/librtfcomp
 
-NO_STAGE=	yes
 USE_PYTHON=	yes
 
+BUILD_WRKSRC=	${WRKSRC}/python
+INSTALL_WRKSRC=	${WRKSRC}/python
 PLIST=		${.CURDIR}/pkg-plist
 
-RTFCOMP_SLAVE=	pythonb
-
-pre-patch:
-	@${REINPLACE_CMD} -e 's|$$(top_builddir)/src/librtfcomp.la|${LOCALBASE}/lib/librtfcomp.la|g' \
-		${WRKSRC}/python/Makefile.in
-
-do-build:
-	@(cd ${WRKSRC}/python && ${MAKE})
-
-do-install:
-	@(cd ${WRKSRC}/python && ${MAKE} install)
+MASTERDIR=	${.CURDIR}/../librtfcomp
+SLAVEPORT=	py
 
 .include "${MASTERDIR}/Makefile"
