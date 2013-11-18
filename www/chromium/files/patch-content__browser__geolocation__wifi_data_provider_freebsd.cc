@@ -1,6 +1,6 @@
---- content/browser/geolocation/wifi_data_provider_freebsd.cc.orig	2013-08-17 18:48:06.000000000 +0300
-+++ content/browser/geolocation/wifi_data_provider_freebsd.cc	2013-08-17 20:22:02.000000000 +0300
-@@ -0,0 +1,201 @@
+--- content/browser/geolocation/wifi_data_provider_freebsd.cc.orig	2013-11-15 12:34:18.000000000 +0100
++++ content/browser/geolocation/wifi_data_provider_freebsd.cc	2013-11-15 22:09:52.000000000 +0100
+@@ -0,0 +1,200 @@
 +// Copyright (c) 2010 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -100,7 +100,7 @@
 +
 +		strncpy(ifr.ifr_name, ifa->ifa_name, sizeof(ifr.ifr_name));
 +		ifr.ifr_addr.sa_family = AF_LOCAL;
-+                 
++
 +		if ((s = socket(ifr.ifr_addr.sa_family, SOCK_DGRAM, 0)) < 0)
 +			continue;
 +
@@ -174,7 +174,6 @@
 +}  // namespace
 +
 +// static
-+template<>
 +WifiDataProviderImplBase* WifiDataProvider::DefaultFactoryFunction() {
 +	return new FreeBSDWifiDataProvider();
 +}
@@ -194,8 +193,8 @@
 +	return NULL;
 +}
 +
-+PollingPolicyInterface* FreeBSDWifiDataProvider::NewPollingPolicy() {
-+	return new GenericPollingPolicy<kDefaultPollingInterval,
++WifiPollingPolicy* FreeBSDWifiDataProvider::NewPollingPolicy() {
++	return new GenericWifiPollingPolicy<kDefaultPollingInterval,
 +	    kNoChangePollingInterval,
 +	    kTwoNoChangePollingInterval,
 +	    kNoWifiPollingIntervalMilliseconds>;

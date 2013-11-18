@@ -14,7 +14,7 @@
    ThreadIdNameManager::GetInstance()->SetName(CurrentId(), name);
    tracked_objects::ThreadData::InitializeThreadContext(name);
  
--#ifndef OS_NACL
+-#if !defined(OS_NACL)
 +#if !defined(OS_NACL) && !defined(OS_BSD)
    // On linux we can get the thread names to show up in the debugger by setting
    // the process name for the LWP.  We don't want to do this for the main

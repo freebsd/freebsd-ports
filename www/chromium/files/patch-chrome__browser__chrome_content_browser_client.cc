@@ -1,14 +1,5 @@
 --- chrome/browser/chrome_content_browser_client.cc.orig	2013-09-25 22:01:36.000000000 +0300
 +++ chrome/browser/chrome_content_browser_client.cc	2013-09-25 22:11:33.000000000 +0300
-@@ -166,7 +166,7 @@
- #include "chrome/browser/chrome_browser_main_posix.h"
- #endif
- 
--#if defined(OS_LINUX) || defined(OS_OPENBSD) || defined(OS_ANDROID)
-+#if defined(OS_LINUX) || defined(OS_ANDROID)
- #include "base/linux_util.h"
- #include "chrome/browser/crash_handler_host_linux.h"
- #endif
 @@ -480,7 +480,7 @@
    }
  }

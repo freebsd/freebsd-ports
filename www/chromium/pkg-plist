@@ -118,6 +118,8 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/Images/indexedDBObjectStore.png
 %%DATADIR%%/resources/inspector/Images/localStorage.png
 %%DATADIR%%/resources/inspector/Images/namedFlowOverflow.png
+%%DATADIR%%/resources/inspector/Images/navigationControls.png
+%%DATADIR%%/resources/inspector/Images/navigationControls_2x.png
 %%DATADIR%%/resources/inspector/Images/paneAddButtons.png
 %%DATADIR%%/resources/inspector/Images/paneElementStateButtons.png
 %%DATADIR%%/resources/inspector/Images/paneFilterButtons.png
@@ -189,6 +191,8 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/Images/trackVert.png
 %%DATADIR%%/resources/inspector/indexedDBViews.css
 %%DATADIR%%/resources/inspector/inspectorCommon.css
+%%DATADIR%%/resources/inspector/LayersPanel.js
+%%DATADIR%%/resources/inspector/layersPanel.css
 %%DATADIR%%/resources/inspector/navigatorView.css
 %%DATADIR%%/resources/inspector/networkLogView.css
 %%DATADIR%%/resources/inspector/networkPanel.css
@@ -201,8 +205,9 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/resourceView.css
 %%DATADIR%%/resources/inspector/revisionHistory.css
 %%DATADIR%%/resources/inspector/ScriptFormatterWorker.js
-%%DATADIR%%/resources/inspector/scriptsPanel.css
-%%DATADIR%%/resources/inspector/ScriptsPanel.js
+%%DATADIR%%/resources/inspector/screencastView.css
+%%DATADIR%%/resources/inspector/sourcesPanel.css
+%%DATADIR%%/resources/inspector/SourcesPanel.js
 %%DATADIR%%/resources/inspector/spectrum.css
 %%DATADIR%%/resources/inspector/splitView.css
 %%DATADIR%%/resources/inspector/tabbedPane.css

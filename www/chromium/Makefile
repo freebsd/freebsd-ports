@@ -5,7 +5,7 @@
 
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
-DISTVERSION=	30.0.1599.101
+DISTVERSION=	31.0.1650.57
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/:testdata \
 		http://download.goodking.org/downloads/:browser \
@@ -98,6 +98,9 @@ GCC_DESC=	Build Chromium with GCC 4.6+
 
 OPTIONS_DEFAULT=	CODECS GCONF
 
+GCONF_USE=	GNOME=gconf2
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCODECS}
@@ -108,14 +111,11 @@ GYP_DEFINES+=	ffmpeg_branding=Chromium
 GYP_DEFINES+=	proprietary_codecs=0
 .endif
 
-.if ${PORT_OPTIONS:MGCONF}
-USE_GNOME+=	gconf2
-.else
+.if ! ${PORT_OPTIONS:MGCONF}
 GYP_DEFINES+=	use_gconf=0
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 GYP_DEFINES+=	use_pulseaudio=1
 .else
 GYP_DEFINES+=	use_pulseaudio=0
@@ -163,8 +163,7 @@ TEST_TARGETS=	base_unittests \
 		content_unittests
 EXCLUDED_TESTS=	GpuDriverBugListTest.CurrentDriverBugListValidation
 NINJA_TARGETS+=	${TEST_TARGETS}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:browser \
-		${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}:testdata
+DISTFILES+=	${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -182,7 +181,7 @@ CONFIGURE_ENV+=	CC=${CC} \
 		GYP_DEFINES="${GYP_DEFINES}"
 # according to portlint the below is passed via bsd.port.mk,
 # but 'make -V CONFIGURE_ENV' does not show it:
-CONFIGURE_ENV+= CFLAGS="${CFLAGS}" \
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" \
 		CPPFLAGS="${CPPFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}" \
 		LDFLAGS="${LDFLAGS}"

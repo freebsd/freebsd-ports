@@ -1,9 +1,9 @@
 --- third_party/WebKit/Source/core/core.gyp.orig	2013-08-09 19:15:52.000000000 +0000
 +++ third_party/WebKit/Source/core/core.gyp	2013-08-12 21:31:28.000000000 +0000
 @@ -644,7 +644,7 @@
-             ['exclude', 'platform/chromium/ScrollbarThemeChromiumDefault.h'],
-           ],
-         }],
+         ['exclude', 'platform/graphics/cpu/arm/filters/.*NEON\\.(cpp|h)'],
+       ],
+       'conditions': [
 -        ['OS=="linux" or OS=="android"', {
 +        ['OS=="linux" or OS=="android" or os_bsd==1', {
            'sources/': [

@@ -1,11 +1,11 @@
---- content/browser/geolocation/empty_device_data_provider.cc.orig	2012-11-27 21:01:24.000000000 -0500
-+++ content/browser/geolocation/empty_device_data_provider.cc	2012-12-06 15:40:02.698863304 -0500
-@@ -5,7 +5,7 @@
- #include "content/browser/geolocation/empty_device_data_provider.h"
+--- content/browser/geolocation/empty_wifi_data_provider.cc.orig	2013-11-08 07:41:47.000000000 +0100
++++ content/browser/geolocation/empty_wifi_data_provider.cc	2013-11-14 17:33:23.000000000 +0100
+@@ -19,7 +19,7 @@
+ }
  
  // Only define for platforms that lack a real wifi data provider.
 -#if !defined(OS_WIN) && !defined(OS_MACOSX) && !defined(OS_LINUX)
 +#if !defined(OS_WIN) && !defined(OS_MACOSX) && !defined(OS_LINUX) && !defined(OS_FREEBSD)
  // static
- template<>
  WifiDataProviderImplBase* WifiDataProvider::DefaultFactoryFunction() {
+   return new EmptyWifiDataProvider();
