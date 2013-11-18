@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=gdb/:gdb
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:gdb
 
 MAINTAINER=	mi@aldan.algebra.com
-COMMENT?=	GNU GDB of newer version than comes with the system
+COMMENT=	GNU GDB of newer version than comes with the system
 
 PKGNAMESUFFIX=	66
 
@@ -21,27 +21,27 @@ INSIGHT_DESC=	Tcl/Tk GUI (experimental!)
 CONFLICTS?=	gdb-[7-9]*
 USE_BZIP2=	yes
 USE_GCC=	any
-USE_GMAKE=	yes
-USES=		gettext iconv
+USES=		gettext iconv gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CONFIGURED_M4=m4 CONFIGURED_BISON=byacc
 CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:S/.//g} \
+		--disable-werror \
 		--enable-target=all \
 		--enable-tui ${ICONV_CONFIGURE_ARG}
 CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
 CFLAGS+=	-DRL_NO_COMPAT
 EXCLUDE=	dejagnu expect readline sim texinfo intl
 EXTRACT_AFTER_ARGS=	${EXCLUDE:S/^/--exclude /}
-VER=	${PORTVERSION:S/.//}
+VER=		${PORTVERSION:S/.//}
 PLIST_SUB=	VER=${VER}
-MAN1=	gdb${VER}.1
+MAN1=		gdb${VER}.1
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MINSIGHT}
 PKGNAMESUFFIX=	-insight
-USE_TK=	84+
+USE_TK=		84+
 LIB_DEPENDS=	itk:${PORTSDIR}/x11-toolkits/itk
 RUN_DEPENDS=	${LOCALBASE}/lib/iwidgets:${PORTSDIR}/x11-toolkits/iwidgets
 DISTFILES+=	gdbtk-6.6${EXTRACT_SUFX}:gdbtk
