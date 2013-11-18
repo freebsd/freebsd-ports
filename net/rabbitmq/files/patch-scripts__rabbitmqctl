@@ -5,7 +5,7 @@
  ##--- End of overridden <var_name> variables
  
 -exec ${ERL_DIR}erl \
-+HOME=/var/db/rabbitmq exec ${ERL_DIR}/usr/local/bin//usr/local/bin/erl \
++HOME=/var/db/rabbitmq exec ${ERL_DIR}erl \
      -pa "${RABBITMQ_HOME}/ebin" \
      -noinput \
      -hidden \
