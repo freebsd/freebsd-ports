@@ -1,24 +1,5 @@
+@group games
+@mode 2555
 bin/ivan
-%%DATADIR%%/Script/char.dat
-%%DATADIR%%/Script/define.dat
-%%DATADIR%%/Script/dungeon.dat
-%%DATADIR%%/Script/glterra.dat
-%%DATADIR%%/Script/item.dat
-%%DATADIR%%/Script/material.dat
-%%DATADIR%%/Script/olterra.dat
-%%DATADIR%%/Graphics/Char.pcx
-%%DATADIR%%/Graphics/Cursor.pcx
-%%DATADIR%%/Graphics/Effect.pcx
-%%DATADIR%%/Graphics/Font.pcx
-%%DATADIR%%/Graphics/FOW.pcx
-%%DATADIR%%/Graphics/GLTerra.pcx
-%%DATADIR%%/Graphics/Humanoid.pcx
-%%DATADIR%%/Graphics/Icon.bmp
-%%DATADIR%%/Graphics/Item.pcx
-%%DATADIR%%/Graphics/Menu.pcx
-%%DATADIR%%/Graphics/OLTerra.pcx
-%%DATADIR%%/Graphics/Symbol.pcx
-%%DATADIR%%/Graphics/WTerra.pcx
-@dirrm %%DATADIR%%/Graphics
-@dirrm %%DATADIR%%/Script
-@dirrm %%DATADIR%%
+@mode
+@group

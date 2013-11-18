@@ -11,16 +11,15 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A graphical roguelike game
 
 USE_SDL=	sdl
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--localstatedir=/var/games
 
-STATEDIR=	/var/games/ivan
-
 PORTSCOUT=	skipv:0.301,0.310,0.311,0.401,0.410,0.420,0.430
 
-NO_STAGE=	yes
+PORTDATA=	*
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|IvanSave|.IvanSave|g' ${WRKSRC}/Main/Source/game.cpp
 	@${REINPLACE_CMD} -Ee 's|(fearray<type>::~?fearray)<type>|\1|' \
@@ -33,16 +32,5 @@ post-patch:
 		${WRKSRC}/Main/Include/human.h ${WRKSRC}/Main/Source/command.cpp \
 		${WRKSRC}/Main/Include/stack.h ${WRKSRC}/Main/Source/lsquare.cpp \
 		${WRKSRC}/Main/Source/lterras.cpp
-
-post-install:
-	${CHGRP} games ${PREFIX}/bin/ivan
-	${CHMOD} g+s ${PREFIX}/bin/ivan
-.if !exists(${STATEDIR})
-	${MKDIR} ${STATEDIR}
-	${TOUCH} ${STATEDIR}/ivan-highscore.scores
-	${MKDIR} ${STATEDIR}/Bones
-	${CHGRP} -R games ${STATEDIR}
-	${CHMOD} -R g+w ${STATEDIR}
-.endif
 
 .include <bsd.port.mk>
