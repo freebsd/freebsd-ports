@@ -14,27 +14,27 @@ COMMENT=	Tail multiple files on console with ncurses
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-USE_GMAKE=	yes
+USES=		gmake
 
-MAN1=		multitail.1
-PLIST_FILES=	bin/multitail etc/multitail.conf.sample
+PLIST_FILES=	bin/multitail etc/multitail.conf.sample \
+		man/man1/multitail.1.gz
 PORTDOCS=	readme.txt license.txt
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/multitail.conf,${PREFIX}/etc/multitail.conf,' \
+		-e 's/CC=gcc/CC?=gcc/' \
 		${WRKSRC}/mt.c ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/multitail ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/multitail.1 ${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/multitail.conf ${PREFIX}/etc/multitail.conf.sample
+	${INSTALL_PROGRAM} ${WRKSRC}/multitail ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/multitail.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/multitail.conf ${STAGEDIR}${PREFIX}/etc/multitail.conf.sample
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/license.txt ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/license.txt ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
