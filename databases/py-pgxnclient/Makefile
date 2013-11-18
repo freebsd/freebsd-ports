@@ -11,7 +11,6 @@ COMMENT=	Command line tool to interact with the PostgreSQL Extension Network
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
-
-NO_STAGE=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
