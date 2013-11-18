@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	fairymax
-PORTVERSION=	4.8S.5
+PORTVERSION=	4.8S.6
 CATEGORIES=	games
 MASTER_SITES=	http://freeheimdall.homeunix.org/files/
 DISTNAME=	${PORTNAME}-b6a7fa8
-# http://hgm.nubati.net/cgi-bin/gitweb.cgi?p=fairymax.git;a=snapshot;h=b6a7fa8ae7c54db7bb5a9415ccae3fd55e9b360e;sf=tgz
+# http://hgm.nubati.net/cgi-bin/gitweb.cgi?p=fairymax.git;a=snapshot;h=0e4813b1b6dbb8a2a85c5b6a42486cfa52724d68;sf=tgz
 
 MAINTAINER=	kalten@gmx.at
 COMMENT=	Chess engine for shatranj, courier chess, and others
@@ -21,27 +21,19 @@ DIST_SUBDIR=	${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/shamax \
 		bin/maxqi \
+		man/man6/fairymax.6.gz \
+		man/man6/shamax.6.gz \
+		man/man6/maxqi.6.gz \
 		%%DATADIR%%/fmax.ini \
 		%%DATADIR%%/qmax.ini
 PLIST_DIRS=	%%DATADIR%%
-
-MAN6=		${PORTNAME}.6
-MLINKS=		${PORTNAME}.6 shamax.6 \
-		${PORTNAME}.6 maxqi.6
 
 USES=		gmake perl5
 USE_PERL5=	build
 MAKE_ARGS+=	INI_F=${DATADIR}/fmax.ini \
 		INI_Q=${DATADIR}/qmax.ini
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-CFLAGS+=	-O2
-.else
-CFLAGS+=
-.endif
+OPTIMIZED_CFLAGS_CFLAGS=	-O2
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g'	\
@@ -49,12 +41,14 @@ post-patch:
 		${WRKSRC}/fairymax.pod
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/fairymax ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/shamax ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/maxqi ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/data/fmax.ini ${DATADIR}/fmax.ini
-	${INSTALL_DATA} ${WRKSRC}/data/qmax.ini ${DATADIR}/qmax.ini
-	${INSTALL_MAN} ${WRKSRC}/fmax.man ${MAN6PREFIX}/man/man6/${MAN6}
+	${INSTALL_PROGRAM} ${WRKSRC}/fairymax ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/shamax ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/maxqi ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/data/fmax.ini ${STAGEDIR}${DATADIR}/fmax.ini
+	${INSTALL_DATA} ${WRKSRC}/data/qmax.ini ${STAGEDIR}${DATADIR}/qmax.ini
+	${INSTALL_MAN} ${WRKSRC}/fmax.man ${STAGEDIR}${MAN6PREFIX}/man/man6/${PORTNAME}.6
+	${LN} -s ${MAN6PREFIX}/man/man6/${PORTNAME}.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/shamax.6
+	${LN} -s ${MAN6PREFIX}/man/man6/${PORTNAME}.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/maxqi.6
 
 .include <bsd.port.mk>
