@@ -1,0 +1,8 @@
+--- ./plugins/Makefile.am.orig	2013-11-18 02:12:05.000000000 +0100
++++ ./plugins/Makefile.am	2013-11-18 02:12:12.000000000 +0100
+@@ -1,4 +1,4 @@
+-lib_LIBRARIES = libgolplug.a
++noinst_LIBRARIES = libgolplug.a
+ libgolplug_a_SOURCES = memfile.c memfile.h from_url.c from_url.h
+ libgolplug_a_CFLAGS = $(GTK2_CFLAGS) $(LIBCURL_CFLAGS) -fPIC -I$(srcdir)/..
+ #libgolplug_a_LIBADD = $(GTK2_LIBS) $(LIBCURL_LIBS)
