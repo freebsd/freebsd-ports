@@ -11,6 +11,7 @@ PKGNAMESUFFIX=	${GNUTLS_SUFFIX}
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 LIB_DEPENDS=	libgpg-error.so:${PORTSDIR}/security/libgpg-error \
 		libnettle.so:${PORTSDIR}/security/nettle \
 		libp11-kit.so:${PORTSDIR}/security/p11-kit \
@@ -23,11 +24,12 @@ USE_AUTOTOOLS=	libtool
 USE_GNOME=	ltverhack
 USE_LDCONFIG=	${PREFIX}/lib/gnutls3
 USE_XZ=		yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CPPFLAGS+=	-fPIC
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS=	-fPIC
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--program-suffix=${GNUTLS_SUFFIX} \
+CONFIGURE_ENV=		MAKEINFO=${PREFIX}/bin/makeinfo
+CONFIGURE_ARGS=	--program-suffix=${GNUTLS_SUFFIX} \
 			--includedir="${PREFIX}/include/gnutls${GNUTLS_SUFFIX}" \
 			--libdir="${PREFIX}/lib/gnutls${GNUTLS_SUFFIX}" \
 			--disable-guile \
