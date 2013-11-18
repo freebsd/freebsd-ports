@@ -311,6 +311,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #                         passed to the compiler by setting DEBUG_FLAGS. It is
 #                         set to "-g" at default.
 #
+# WITH_DEBUG_PORTS		- A list of origins for which WITH_DEBUG will be set
+#
 # WITH_SSP_PORTS
 # 				- If set, SSP_FLAGS (defaults to -fstack-protector)
 #				  is added to CFLAGS and the necessary flags
@@ -1302,6 +1304,12 @@ TMPDIR?=	/tmp
 MAKE_ENV+=	TMPDIR="${TMPDIR}"
 CONFIGURE_ENV+=	TMPDIR="${TMPDIR}"
 .endif # defined(TMPDIR)
+
+.if defined(WITH_DEBUG_PORTS)
+.if ${WITH_DEBUG_PORTS:M${PKGORIGIN}}
+WITH_DEBUG=	yes
+.endif
+.endif
 
 # Reset value from bsd.own.mk.
 .if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
