@@ -26,7 +26,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/sxsame
 	(cd ${WRKSRC}/contrib ; ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/X11/sxsame)
 	${TOUCH} ${STAGEDIR}${PREFIX}/lib/X11/sxsame/hiscore
-	@${CHMOD} 664 ${STAGEDIR}${PREFIX}/lib/X11/sxsame/hiscore
+	@${CHMOD} -R 775 ${STAGEDIR}${PREFIX}/lib/X11/sxsame
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in INSTALL.jp README.jp
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
