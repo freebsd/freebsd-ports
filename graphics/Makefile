@@ -689,6 +689,7 @@
     SUBDIR += p5-Image-Imgur
     SUBDIR += p5-Image-Imlib2
     SUBDIR += p5-Image-Info
+    SUBDIR += p5-Image-LibExif
     SUBDIR += p5-Image-Magick-Iterator
     SUBDIR += p5-Image-Math-Constrain
     SUBDIR += p5-Image-MetaData-GQview

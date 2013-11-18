@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Image/LibExif.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/LibExif/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/LibExif/LibExif.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/LibExif/LibExif.bs
+%%PERL5_MAN3%%/Image::LibExif.3.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/LibExif
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Image
