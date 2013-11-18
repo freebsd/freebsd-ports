@@ -1,5 +1,6 @@
 bin/xye
 share/pixmaps/xye.png
+%%DATADIR%%/levels/4corners.xye
 %%DATADIR%%/levels/5levels.xye
 %%DATADIR%%/levels/ActionReplay v.1.xye
 %%DATADIR%%/levels/ActionReplay v.2.xye
@@ -12,8 +13,10 @@ share/pixmaps/xye.png
 %%DATADIR%%/levels/Pyramid Treasure.xye
 %%DATADIR%%/levels/SuperJustin.xye
 %%DATADIR%%/levels/afirflood.xye
+%%DATADIR%%/levels/againstforce.xye
 %%DATADIR%%/levels/atonce.xye
 %%DATADIR%%/levels/blobprison.xye
+%%DATADIR%%/levels/cab.xye
 %%DATADIR%%/levels/complexity.xye
 %%DATADIR%%/levels/controller.xye
 %%DATADIR%%/levels/cracked.xye
@@ -23,6 +26,7 @@ share/pixmaps/xye.png
 %%DATADIR%%/levels/fast.xye
 %%DATADIR%%/levels/find1.xye
 %%DATADIR%%/levels/gravity.xye
+%%DATADIR%%/levels/helpinghand.xye
 %%DATADIR%%/levels/insider.xye
 %%DATADIR%%/levels/levels.xye
 %%DATADIR%%/levels/logo.xye
