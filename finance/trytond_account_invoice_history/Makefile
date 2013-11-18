@@ -18,5 +18,4 @@ CONFLICTS=	trytond_account_invoice_history-2.[68].*
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
