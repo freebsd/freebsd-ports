@@ -17,10 +17,7 @@ TEST_DEPENDS=	p5-Capture-Tiny>=0:${PORTSDIR}/devel/p5-Capture-Tiny \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Tester>=0.108:${PORTSDIR}/devel/p5-Test-Tester
 
-NO_STAGE=	yes
 USE_PERL5=	modbuildtiny
 USES=		perl5
-
-MAN3=		Test::Warnings.3
 
 .include <bsd.port.mk>
