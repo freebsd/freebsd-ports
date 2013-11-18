@@ -1,0 +1,14 @@
+This plugin allows you to write e.g. shopping cart code
+which should behave well for guests as well as permanent users.
+
+The basic idea is both logged in and not logged in users can
+get the same benefits from sessions where it doesn't matter,
+but that logged in users can keep their sessions accross logins,
+and will even get the data they added/changed assimilated to their
+permanent account if they made the changes as guests and then logged in.
+
+This is probably most useful for e-commerce sites, where the
+shopping cart is typically used before login, and should be
+equally accessible to both guests and logged in users.
+
+WWW: http://search.cpan.org/dist/Catalyst-Plugin-Session-PerUser/
