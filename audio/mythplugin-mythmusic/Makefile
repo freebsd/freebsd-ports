@@ -2,30 +2,32 @@
 # $FreeBSD$
 
 PORTNAME=	mythmusic
-PORTVERSION=	0.26.1
+PORTVERSION=	0.27
 CATEGORIES=	audio
-MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
-		http://ftp.osuosl.org/pub/mythtv/old_releases/ \
-		http://ftp.oregonstate.edu/pub/mythtv/ \
-		http://ftp.oregonstate.edu/pub/mythtv/old_releases/
 PKGNAMEPREFIX=	mythplugin-
-DISTNAME=	mythplugins-${PORTVERSION}
+DISTNAME=	mythtv-${PORTVERSION}
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Music playing plugin for MythTV
 
-LIB_DEPENDS=	cdio.13:${PORTSDIR}/sysutils/libcdio \
-		FLAC:${PORTSDIR}/audio/flac \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		tag.1:${PORTSDIR}/audio/taglib \
-		fftw3f:${PORTSDIR}/math/fftw3-float
+LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio \
+		libFLAC.so:${PORTSDIR}/audio/flac \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libtag.so:${PORTSDIR}/audio/taglib \
+		libfftw3f.so:${PORTSDIR}/math/fftw3-float
 BUILD_DEPENDS=	mythfrontend:${PORTSDIR}/multimedia/mythtv
 
-USE_BZIP2=	yes
-NO_STAGE=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	MythTV
+GH_PROJECT=	mythtv
+GH_TAGNAME=	v${PORTVERSION}
+
+WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-e9545c0/mythplugins
+
 USE_QT4=	linguist_build moc_build qmake_build rcc_build uic_build
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/mythtv/plugins
+DESTDIRNAME=	INSTALL_ROOT
 
 PLIST_SUB+=	MYTHSHARE="share/mythtv"
 

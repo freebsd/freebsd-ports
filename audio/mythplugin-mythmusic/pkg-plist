@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 lib/mythtv/plugins/libmythmusic.so
 %%MYTHSHARE%%/i18n/mythmusic_ca.qm
 %%MYTHSHARE%%/i18n/mythmusic_cs.qm
@@ -48,6 +47,7 @@ lib/mythtv/plugins/libmythmusic.so
 %%MYTHSHARE%%/themes/default/mm_blackhole_border.png
 %%MYTHSHARE%%/themes/default/mm_browser_back_reg.png
 %%MYTHSHARE%%/themes/default/mm_browser_back_sel.png
+%%MYTHSHARE%%/themes/default/mm_cd.png
 %%MYTHSHARE%%/themes/default/mm_compartists.png
 %%MYTHSHARE%%/themes/default/mm_compilations.png
 %%MYTHSHARE%%/themes/default/mm_descending.png
@@ -121,6 +121,5 @@ lib/mythtv/plugins/libmythmusic.so
 %%MYTHSHARE%%/themes/default/stop_button_pushed.png
 %%MYTHSHARE%%/themes/default/stream-ui.xml
 %%MYTHSHARE%%/themes/default/track_info_background.png
-@dirrmtry lib/pkgconfig
 @dirrmtry lib/mythtv/plugins
 @dirrm %%MYTHSHARE%%/mythmusic

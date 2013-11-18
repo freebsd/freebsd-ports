@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%WWWDIR%%/INSTALL
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README
@@ -32,6 +31,7 @@
 %%WWWDIR%%/includes/data_dir.php
 %%WWWDIR%%/includes/database.php
 %%WWWDIR%%/includes/db_update.php
+%%WWWDIR%%/includes/defaults.php
 %%WWWDIR%%/includes/defines.php
 %%WWWDIR%%/includes/dynamic_strings.php
 %%WWWDIR%%/includes/errordisplay.php
@@ -51,6 +51,7 @@
 %%WWWDIR%%/js/AC_OETags.js
 %%WWWDIR%%/js/dialog/dialog.css
 %%WWWDIR%%/js/dialog/dialog.js
+%%WWWDIR%%/js/jquery-1.9.1.min.js
 %%WWWDIR%%/js/libs/flowplayer/flowplayer.controls.swf
 %%WWWDIR%%/js/libs/flowplayer/flowplayer.js
 %%WWWDIR%%/js/libs/flowplayer/flowplayer.swf
@@ -62,6 +63,7 @@
 %%WWWDIR%%/js/prototip/prototip.css
 %%WWWDIR%%/js/prototip/prototip.js
 %%WWWDIR%%/js/prototype.js
+%%WWWDIR%%/js/recommend.js
 %%WWWDIR%%/js/scriptaculous/builder.js
 %%WWWDIR%%/js/scriptaculous/controls.js
 %%WWWDIR%%/js/scriptaculous/dragdrop.js
@@ -75,6 +77,8 @@
 %%WWWDIR%%/js/utils.js
 %%WWWDIR%%/modules/_shared/lang/Catalan.cat
 %%WWWDIR%%/modules/_shared/lang/Catalan.lang
+%%WWWDIR%%/modules/_shared/lang/Chinese_HK.cat
+%%WWWDIR%%/modules/_shared/lang/Chinese_HK.lang
 %%WWWDIR%%/modules/_shared/lang/Czech.cat
 %%WWWDIR%%/modules/_shared/lang/Czech.lang
 %%WWWDIR%%/modules/_shared/lang/Danish.cat
@@ -95,6 +99,8 @@
 %%WWWDIR%%/modules/_shared/lang/French_CA.lang
 %%WWWDIR%%/modules/_shared/lang/German.cat
 %%WWWDIR%%/modules/_shared/lang/German.lang
+%%WWWDIR%%/modules/_shared/lang/Greek.cat
+%%WWWDIR%%/modules/_shared/lang/Greek.lang
 %%WWWDIR%%/modules/_shared/lang/Hungarian.cat
 %%WWWDIR%%/modules/_shared/lang/Hungarian.lang
 %%WWWDIR%%/modules/_shared/lang/Italian.cat
@@ -166,9 +172,11 @@
 %%WWWDIR%%/modules/mythweb/init.php
 %%WWWDIR%%/modules/mythweb/set_defaults.php
 %%WWWDIR%%/modules/mythweb/set_flvplayer.php
+%%WWWDIR%%/modules/mythweb/set_recommend.php
 %%WWWDIR%%/modules/mythweb/set_session.php
 %%WWWDIR%%/modules/mythweb/tmpl/default/set_defaults.php
 %%WWWDIR%%/modules/mythweb/tmpl/default/set_flvplayer.php
+%%WWWDIR%%/modules/mythweb/tmpl/default/set_recommend.php
 %%WWWDIR%%/modules/mythweb/tmpl/default/set_session.php
 %%WWWDIR%%/modules/mythweb/tmpl/lite/set_defaults.php
 %%WWWDIR%%/modules/mythweb/tmpl/lite/set_flvplayer.php
@@ -243,6 +251,7 @@
 %%WWWDIR%%/modules/tv/opensearch.php
 %%WWWDIR%%/modules/tv/playerProductInstall.swf
 %%WWWDIR%%/modules/tv/recorded.php
+%%WWWDIR%%/modules/tv/recommended.php
 %%WWWDIR%%/modules/tv/schedules.php
 %%WWWDIR%%/modules/tv/schedules_custom.php
 %%WWWDIR%%/modules/tv/schedules_manual.php
@@ -261,6 +270,7 @@
 %%WWWDIR%%/modules/tv/tmpl/default/list_cell_program.php
 %%WWWDIR%%/modules/tv/tmpl/default/list_data.php
 %%WWWDIR%%/modules/tv/tmpl/default/recorded.php
+%%WWWDIR%%/modules/tv/tmpl/default/recommended.php
 %%WWWDIR%%/modules/tv/tmpl/default/schedules.php
 %%WWWDIR%%/modules/tv/tmpl/default/schedules_custom.php
 %%WWWDIR%%/modules/tv/tmpl/default/schedules_manual.php
@@ -314,6 +324,9 @@
 %%WWWDIR%%/mythweb.pl
 %%WWWDIR%%/skins/clean_blue/backend_log.css
 %%WWWDIR%%/skins/clean_blue/header.css
+%%WWWDIR%%/skins/clean_blue/img/apple-touch-icons/apple-touch-icon-114x114.png
+%%WWWDIR%%/skins/clean_blue/img/apple-touch-icons/apple-touch-icon-72x72.png
+%%WWWDIR%%/skins/clean_blue/img/apple-touch-icons/apple-touch-icon.png
 %%WWWDIR%%/skins/clean_blue/img/backend_log.png
 %%WWWDIR%%/skins/clean_blue/img/blue_fade.jpg
 %%WWWDIR%%/skins/clean_blue/img/favicon.ico
@@ -327,6 +340,7 @@
 %%WWWDIR%%/skins/clean_blue/img/flags/no_autoexpire.png
 %%WWWDIR%%/skins/clean_blue/img/flags/processing.png
 %%WWWDIR%%/skins/clean_blue/img/flags/stereo.png
+%%WWWDIR%%/skins/clean_blue/img/flags/transcoded.png
 %%WWWDIR%%/skins/clean_blue/img/flags/watched.png
 %%WWWDIR%%/skins/clean_blue/img/flash_flv_icon.png
 %%WWWDIR%%/skins/clean_blue/img/grey_fade.jpg
@@ -382,8 +396,19 @@
 %%WWWDIR%%/skins/clean_blue/welcome.css
 %%WWWDIR%%/skins/default/backend_log.css
 %%WWWDIR%%/skins/default/header.css
+%%WWWDIR%%/skins/default/img/apple-touch-icons/apple-touch-icon-114x114.png
+%%WWWDIR%%/skins/default/img/apple-touch-icons/apple-touch-icon-72x72.png
+%%WWWDIR%%/skins/default/img/apple-touch-icons/apple-touch-icon.png
 %%WWWDIR%%/skins/default/img/backend_log.png
 %%WWWDIR%%/skins/default/img/favicon.ico
+%%WWWDIR%%/skins/default/img/feelings/dislike-active.png
+%%WWWDIR%%/skins/default/img/feelings/dislike-inactive.png
+%%WWWDIR%%/skins/default/img/feelings/like-active.png
+%%WWWDIR%%/skins/default/img/feelings/like-inactive.png
+%%WWWDIR%%/skins/default/img/feelings/meh-active.png
+%%WWWDIR%%/skins/default/img/feelings/meh-inactive.png
+%%WWWDIR%%/skins/default/img/feelings/star-active.png
+%%WWWDIR%%/skins/default/img/feelings/star-inactive.png
 %%WWWDIR%%/skins/default/img/flags/autoexpire.png
 %%WWWDIR%%/skins/default/img/flags/bookmark.png
 %%WWWDIR%%/skins/default/img/flags/cc.png
@@ -394,6 +419,7 @@
 %%WWWDIR%%/skins/default/img/flags/no_autoexpire.png
 %%WWWDIR%%/skins/default/img/flags/processing.png
 %%WWWDIR%%/skins/default/img/flags/stereo.png
+%%WWWDIR%%/skins/default/img/flags/transcoded.png
 %%WWWDIR%%/skins/default/img/flags/watched.png
 %%WWWDIR%%/skins/default/img/flash_flv_icon.png
 %%WWWDIR%%/skins/default/img/iCal2.0.png
@@ -448,6 +474,9 @@
 %%WWWDIR%%/skins/default/welcome.css
 %%WWWDIR%%/skins/elkin/backend_log.css
 %%WWWDIR%%/skins/elkin/header.css
+%%WWWDIR%%/skins/elkin/img/apple-touch-icons/apple-touch-icon-114x114.png
+%%WWWDIR%%/skins/elkin/img/apple-touch-icons/apple-touch-icon-72x72.png
+%%WWWDIR%%/skins/elkin/img/apple-touch-icons/apple-touch-icon.png
 %%WWWDIR%%/skins/elkin/img/backend_log.png
 %%WWWDIR%%/skins/elkin/img/background-gradient-h.png
 %%WWWDIR%%/skins/elkin/img/background-gradient.png
@@ -462,6 +491,7 @@
 %%WWWDIR%%/skins/elkin/img/flags/no_autoexpire.png
 %%WWWDIR%%/skins/elkin/img/flags/processing.png
 %%WWWDIR%%/skins/elkin/img/flags/stereo.png
+%%WWWDIR%%/skins/elkin/img/flags/transcoded.png
 %%WWWDIR%%/skins/elkin/img/flags/watched.png
 %%WWWDIR%%/skins/elkin/img/flash_flv_icon.png
 %%WWWDIR%%/skins/elkin/img/left.gif
@@ -516,6 +546,9 @@
 %%WWWDIR%%/skins/errors.css
 %%WWWDIR%%/skins/grey/backend_log.css
 %%WWWDIR%%/skins/grey/header.css
+%%WWWDIR%%/skins/grey/img/apple-touch-icons/apple-touch-icon-114x114.png
+%%WWWDIR%%/skins/grey/img/apple-touch-icons/apple-touch-icon-72x72.png
+%%WWWDIR%%/skins/grey/img/apple-touch-icons/apple-touch-icon.png
 %%WWWDIR%%/skins/grey/img/backend_log.png
 %%WWWDIR%%/skins/grey/img/favicon.ico
 %%WWWDIR%%/skins/grey/img/flags/autoexpire.png
@@ -528,6 +561,7 @@
 %%WWWDIR%%/skins/grey/img/flags/no_autoexpire.png
 %%WWWDIR%%/skins/grey/img/flags/processing.png
 %%WWWDIR%%/skins/grey/img/flags/stereo.png
+%%WWWDIR%%/skins/grey/img/flags/transcoded.png
 %%WWWDIR%%/skins/grey/img/flags/watched.png
 %%WWWDIR%%/skins/grey/img/left.gif
 %%WWWDIR%%/skins/grey/img/left_sm.png
@@ -560,6 +594,9 @@
 %%WWWDIR%%/skins/grey/welcome.css
 %%WWWDIR%%/skins/haze_dark/backend_log.css
 %%WWWDIR%%/skins/haze_dark/header.css
+%%WWWDIR%%/skins/haze_dark/img/apple-touch-icons/apple-touch-icon-114x114.png
+%%WWWDIR%%/skins/haze_dark/img/apple-touch-icons/apple-touch-icon-72x72.png
+%%WWWDIR%%/skins/haze_dark/img/apple-touch-icons/apple-touch-icon.png
 %%WWWDIR%%/skins/haze_dark/img/backend_log.png
 %%WWWDIR%%/skins/haze_dark/img/favicon.ico
 %%WWWDIR%%/skins/haze_dark/img/left.gif
@@ -589,6 +626,9 @@
 %%WWWDIR%%/skins/haze_dark/welcome.css
 %%WWWDIR%%/skins/haze_light/backend_log.css
 %%WWWDIR%%/skins/haze_light/header.css
+%%WWWDIR%%/skins/haze_light/img/apple-touch-icons/apple-touch-icon-114x114.png
+%%WWWDIR%%/skins/haze_light/img/apple-touch-icons/apple-touch-icon-72x72.png
+%%WWWDIR%%/skins/haze_light/img/apple-touch-icons/apple-touch-icon.png
 %%WWWDIR%%/skins/haze_light/img/backend_log.png
 %%WWWDIR%%/skins/haze_light/img/favicon.ico
 %%WWWDIR%%/skins/haze_light/img/left.gif
@@ -616,30 +656,41 @@
 %%WWWDIR%%/skins/haze_light/tv_upcoming.css
 %%WWWDIR%%/skins/haze_light/welcome.css
 %%WWWDIR%%/skins/wap/handheld.css
+%%WWWDIR%%/skins/wap/img/apple-touch-icons/apple-touch-icon-114x114.png
+%%WWWDIR%%/skins/wap/img/apple-touch-icons/apple-touch-icon-72x72.png
+%%WWWDIR%%/skins/wap/img/apple-touch-icons/apple-touch-icon.png
 %%WWWDIR%%/skins/wap/img/mythtv-logo.gif
 %%WWWDIR%%/skins/wap/img/spacer.gif
 %%WWWDIR%%/skins/wap/style.css
 %%WWWDIR%%/tests/testUPnP.php
 @dirrm %%WWWDIR%%/tests
+@dirrm %%WWWDIR%%/skins/wap/img/apple-touch-icons
 @dirrm %%WWWDIR%%/skins/wap/img
 @dirrm %%WWWDIR%%/skins/wap
+@dirrm %%WWWDIR%%/skins/haze_light/img/apple-touch-icons
 @dirrm %%WWWDIR%%/skins/haze_light/img
 @dirrm %%WWWDIR%%/skins/haze_light
+@dirrm %%WWWDIR%%/skins/haze_dark/img/apple-touch-icons
 @dirrm %%WWWDIR%%/skins/haze_dark/img
 @dirrm %%WWWDIR%%/skins/haze_dark
 @dirrm %%WWWDIR%%/skins/grey/img/flags
+@dirrm %%WWWDIR%%/skins/grey/img/apple-touch-icons
 @dirrm %%WWWDIR%%/skins/grey/img
 @dirrm %%WWWDIR%%/skins/grey
 @dirrm %%WWWDIR%%/skins/elkin/img/music
 @dirrm %%WWWDIR%%/skins/elkin/img/flags
+@dirrm %%WWWDIR%%/skins/elkin/img/apple-touch-icons
 @dirrm %%WWWDIR%%/skins/elkin/img
 @dirrm %%WWWDIR%%/skins/elkin
 @dirrm %%WWWDIR%%/skins/default/img/music
 @dirrm %%WWWDIR%%/skins/default/img/flags
+@dirrm %%WWWDIR%%/skins/default/img/feelings
+@dirrm %%WWWDIR%%/skins/default/img/apple-touch-icons
 @dirrm %%WWWDIR%%/skins/default/img
 @dirrm %%WWWDIR%%/skins/default
 @dirrm %%WWWDIR%%/skins/clean_blue/img/music
 @dirrm %%WWWDIR%%/skins/clean_blue/img/flags
+@dirrm %%WWWDIR%%/skins/clean_blue/img/apple-touch-icons
 @dirrm %%WWWDIR%%/skins/clean_blue/img
 @dirrm %%WWWDIR%%/skins/clean_blue
 @dirrm %%WWWDIR%%/skins
