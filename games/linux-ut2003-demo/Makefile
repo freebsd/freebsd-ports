@@ -14,8 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unreal Tournament 2003 demo
 
 USE_LINUX=	yes
-USE_LINUX_APPS=	xorglibs
-NO_PACKAGE=	Distfile is 130MB, set FORCE_PACKAGE if you really want to build this package
+USE_LINUX_APPS=	sdl12 xorglibs
 RESTRICTED=	Redistribution is limited, see license
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -36,12 +35,14 @@ PORTDOCS=	*
 LIBDIRS=	Animations Benchmark ForceFeedback KarmaData Maps Music \
 		Sounds StaticMeshes System Textures Web
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS NVIDIA_GL
+NVIDIA_GL_DESC=	Use GL driver from nvidia-driver
 
-.if defined(WITH_NVIDIA_GL)
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
-.else
+NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MNVIDIA_GL}
 USE_LINUX_APPS+=dri
 .endif
 
@@ -59,31 +60,27 @@ pre-install:
 	${FIND} ${LIBDIRS} -type d ! -empty | ${SORT} -r \
 		| ${SED} -e 's|^|@dirrm ${UTDIR_REL}/|' >> ${PLIST}
 
+	# This fix an error with the libSDL included in the ut2003 package
+	@${ECHO_CMD} "@exec cp ${LINUXBASE}/usr/lib/libSDL-1.2.so.0 ${UTDIR}/System/" \
+		>> ${PLIST}
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/ut2003-demo ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/ut2003-demo ${STAGEDIR}${PREFIX}/bin
 
 	cd ${WRKSRC} && \
 	${FIND} ${LIBDIRS} -type d ! -empty -exec \
-		${MKDIR} "${UTDIR}/{}" \; && \
+		${MKDIR} "${STAGEDIR}${UTDIR}/{}" \; && \
 	${FIND} ${LIBDIRS} -type f -exec \
-		${INSTALL_DATA} "{}" "${UTDIR}/{}" \;
-
-	-${CHOWN} ${BINOWN}:${BINGRP} ${UTDIR}/Benchmark/*.sh ${UTDIR}/System/*-bin
-	${CHMOD} ${BINMODE} ${UTDIR}/Benchmark/*.sh ${UTDIR}/System/*-bin
-
-	-${CHOWN} ${LIBOWN}:${LIBGRP} ${UTDIR}/System/*.so*
-	${CHMOD} ${LIBMODE} ${UTDIR}/System/*.so*
-
-	${MKDIR} ${DATADIR}
+		${INSTALL_DATA} "{}" "${STAGEDIR}${UTDIR}/{}" \;
+	${CHMOD} ${BINMODE} ${STAGEDIR}${UTDIR}/Benchmark/*.sh ${STAGEDIR}${UTDIR}/System/*-bin
+	${CHMOD} ${LIBMODE} ${STAGEDIR}${UTDIR}/System/*.so*
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for f in Help/UT2003Logo.bmp Unreal.xpm
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
+.endfor
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in README.linux Help/ReadMe-* eula/*
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.  for f in README.linux Help/ReadMe-* eula/*
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.  endfor
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
