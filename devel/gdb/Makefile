@@ -18,7 +18,7 @@ USES=		iconv gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CONFIGURED_M4=m4 CONFIGURED_BISON=byacc
 CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:S/.//g} \
-		--with-gdb-datadir=${STAGEDIR}${PREFIX}/share/gdb${PORTVERSION:S/.//g} \
+		--with-gdb-datadir=${PREFIX}/share/gdb${PORTVERSION:S/.//g} \
 		${ICONV_CONFIGURE_ARG} \
 		--without-libunwind-ia64 \
 		--enable-targets=all
@@ -91,8 +91,8 @@ do-install:
 	${LN} -sf gdb${VER} ${STAGEDIR}${PREFIX}/bin/gdb
 .endif
 .if ${PORT_OPTIONS:MPYTHON}
-	(cd ${WRKSRC}/gdb; ${GMAKE} install-python )
-	(cd ${WRKSRC}/gdb/data-directory; ${GMAKE} install-python )
+	(cd ${WRKSRC}/gdb; ${GMAKE} DESTDIR=${STAGEDIR} install-python )
+	(cd ${WRKSRC}/gdb/data-directory; ${GMAKE} DESTDIR=${STAGEDIR} install-python )
 .endif
 
 post-install:
