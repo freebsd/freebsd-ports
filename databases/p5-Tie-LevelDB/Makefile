@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl Interface to the Google LevelDB NoSQL database
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 LIB_DEPENDS=	libleveldb.so:${PORTSDIR}/databases/leveldb
 
 MAKE_ARGS=	CC=${CXX}
