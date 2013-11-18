@@ -1,2 +1,3 @@
 %%SITE_PERL%%/Time/Mock.pm
+%%PERL5_MAN3%%/Time::Mock.3.gz
 @dirrmtry %%SITE_PERL%%/Time

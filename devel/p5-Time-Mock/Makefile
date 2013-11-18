@@ -17,7 +17,4 @@ LICENSE_COMB=	dual
 USE_PERL5=	modbuild
 USES=		perl5
 
-MAN3=		Time::Mock.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
