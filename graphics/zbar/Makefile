@@ -12,9 +12,13 @@ COMMENT=	ZBar barcode reader
 
 LICENSE=	LGPL21
 
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		iconv gmake pkgconfig
+
+CONFIGURE_ARGS=		--with-jpeg=yes
 
 OPTIONS_DEFINE=	X11 IMAGEMAGICK V4L PYTHON GTK2 QT4
 OPTIONS_DEFAULT=	X11 IMAGEMAGICK
@@ -22,13 +26,6 @@ V4L_DESC=	Build zbarcam video scanner
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if exists(${LOCALBASE}/lib/libjpeg.so)
-CONFIGURE_ARGS+=	--with-jpeg=yes
-LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
-.else
-CONFIGURE_ARGS+=	--with-jpeg=no
-.endif
 
 .if ${PORT_OPTIONS:MX11}
 USE_XORG=	ice sm x11 xau xcb xdmcp xext xv
