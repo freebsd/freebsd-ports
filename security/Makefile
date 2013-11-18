@@ -474,6 +474,7 @@
     SUBDIR += p5-Crypt-PBKDF2
     SUBDIR += p5-Crypt-PGPSimple
     SUBDIR += p5-Crypt-PassGen
+    SUBDIR += p5-Crypt-Passwd-XS
     SUBDIR += p5-Crypt-PasswdMD5
     SUBDIR += p5-Crypt-Password-Util
     SUBDIR += p5-Crypt-Primes

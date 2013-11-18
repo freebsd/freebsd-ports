@@ -1,0 +1,21 @@
+Crypt::Passwd::XS - Full XS implementation of common crypt() algorithms
+
+This module provides several common crypt() schemes as full XS
+implementations.  It allows you to validate crypted passwords that were
+hashed using a scheme that the system's native crypt() implementation
+does not support.
+
+The following files are adapted from other sources (primarily DragonFly BSD.)
+See the copyright notices in these files for full details:
+
+crypt_to64.c - copyright 1991 University of California
+crypt_to64.h - copyright 1991 University of California
+des.c - copyright 1994 David Burren, Geoffrey M. Rehmet, Mark R V Murray
+md5.c - copyright 1999, 2000, 2002 Aladdin Enterprises
+md5.h - copyright 1999, 2000, 2002 Aladdin Enterprises
+md5crypt.c - copyright Poul-Henning Kamp
+md5crypt.h - copyright Poul-Henning Kamp
+sha256crypt.c - public domain reference implementation by Ulrich Drepper
+sha512crypt.c - public domain reference implementation by Ulrich Drepper
+
+WWW: http://search.cpan.org/dist/Crypt-Passwd-XS/
