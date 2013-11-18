@@ -1,6 +1,6 @@
---- ./texmaker.pro.orig	2010-07-29 19:40:36.000000000 +0400
-+++ ./texmaker.pro	2010-09-25 13:58:07.841559115 +0400
-@@ -222,13 +222,6 @@
+--- ./texmaker.pro.orig	2013-10-28 13:47:24.000000000 +0000
++++ ./texmaker.pro	2013-11-16 20:58:16.201993027 +0000
+@@ -390,13 +390,6 @@
  	utilities/AUTHORS \
  	utilities/COPYING \
  	utilities/CHANGELOG.txt \
@@ -14,10 +14,11 @@
  	locale/qt_cs.qm \
  	locale/qt_de.qm \
  	locale/qt_es.qm \
-@@ -270,6 +263,21 @@
- icon.path = $${ICONDIR}
+@@ -464,4 +457,20 @@
+ 
  icon.files = utilities/texmaker.png
  INSTALLS += icon
++
 +icon16.path = $${PREFIX}/share/icons/hicolor/16x16/apps
 +icon16.files= utilities/texmaker16x16.png
 +icon22.path = $${PREFIX}/share/icons/hicolor/22x22/apps
@@ -34,5 +35,3 @@
 +iconscale.files=utilities/texmaker.svg
 +INSTALLS += icon16 icon22 icon32 icon48 icon64 icon128 iconscale
  }
- ################################
- win32 {

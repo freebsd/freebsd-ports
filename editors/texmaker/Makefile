@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	texmaker
-PORTVERSION=	4.0.2
+PORTVERSION=	4.1
 PORTEPOCH=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://www.xm1math.net/texmaker/
@@ -12,11 +12,10 @@ COMMENT=	LaTeX Development Environment
 
 LIB_DEPENDS=	libpoppler.so:${PORTSDIR}/graphics/poppler \
 		libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4
-RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
-USES=		qmake
+USES=		desktop-file-utils pkgconfig qmake
 USE_BZIP2=	yes
-USE_GHOSTSCRIPT=yes
+USE_GHOSTSCRIPT_RUN=	yes
 USE_QT4=	gui network xml webkit \
 		moc_build qmake_build rcc_build uic_build
 USE_TEX=	latex dvipsk
@@ -32,11 +31,6 @@ XDVI_DESC=	View dvi files with xdvi
 XDVI_RUN_DEPENDS+=	xdvi:${PORTSDIR}/print/xdvik
 
 STRIP_FILES=	bin/texmaker
-
-pre-configure:
-	${REINPLACE_CMD} -e 's,/usr/include,${LOCALBASE}/include,g' \
-		-e 's,/usr/lib,${LOCALBASE}/lib,g' \
-		${WRKSRC}/texmaker.pro
 
 post-install:
 	${STRIP_CMD} ${STRIP_FILES:S,^,${STAGEDIR}${PREFIX}/,}
