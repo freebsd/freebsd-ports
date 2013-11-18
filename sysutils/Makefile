@@ -393,7 +393,6 @@
     SUBDIR += i2c-tools
     SUBDIR += i7z
     SUBDIR += iat
-    SUBDIR += iextract
     SUBDIR += installwatch
     SUBDIR += iogen
     SUBDIR += iograph
