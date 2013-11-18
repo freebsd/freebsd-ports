@@ -1,5 +1,5 @@
 --- setup.py.orig	2013-05-28 15:08:56.000000000 +0200
-+++ setup.py	2013-06-11 19:33:06.000000000 +0200
++++ setup.py	2013-11-18 20:41:50.000000000 +0200
 @@ -6,9 +6,10 @@
  import sys
  from copy import deepcopy
@@ -52,3 +52,18 @@
      return flags
  
  def determine_graphics_pxd():
+@@ -491,13 +498,7 @@
+         'data/glsl/*.fs',
+         'tools/highlight/*.vim',
+         'tools/highlight/*.el',
+-        'tools/packaging/README.txt',
+-        'tools/packaging/win32/kivy.bat',
+-        'tools/packaging/win32/kivyenv.sh',
+-        'tools/packaging/win32/README.txt',
+-        'tools/packaging/osx/Info.plist',
+-        'tools/packaging/osx/InfoPlist.strings',
+-        'tools/packaging/osx/kivy.sh']},
++        'tools/packaging/README.txt']},
+     data_files=examples.items(),
+     classifiers=[
+         'Development Status :: 5 - Production/Stable',
