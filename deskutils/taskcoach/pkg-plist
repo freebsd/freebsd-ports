@@ -248,12 +248,12 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/toolbar.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/toolbar.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/toolbar.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/xfce4warning.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/xfce4warning.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/xfce4warning.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/version.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/version.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/version.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/xfce4warning.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/xfce4warning.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/xfce4warning.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/icons.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/icons.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/icons.pyo
@@ -1097,9 +1097,6 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/__init__.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/_autosetuppubsubv1.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/_autosetuppubsubv1.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/_autosetuppubsubv1.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/__init__.pyo
@@ -1130,6 +1127,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/imp2.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/imp2.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/imp2.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/itopicdefnprovider.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/itopicdefnprovider.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/itopicdefnprovider.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/kwargs/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/kwargs/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/kwargs/__init__.pyo
@@ -1196,33 +1196,12 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pub.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pub.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pub.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsub1/__init__.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsub1/__init__.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsub1/__init__.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsub1/pub.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsub1/pub.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsub1/pub.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsub1/sphinx.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsub1/sphinx.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsub1/sphinx.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsub1/utils.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsub1/utils.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsub1/utils.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsubconf.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsubconf.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsubconf.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/setuparg1.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/setuparg1.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/setuparg1.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/setupkwargs.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/setupkwargs.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/setupkwargs.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/setupv1.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/setupv1.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/setupv1.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/setupv2.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/setupv2.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/setupv2.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/__init__.pyo
@@ -1241,6 +1220,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/topictreeprinter.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/topictreeprinter.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/topictreeprinter.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/xmltopicdefnprovider.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/xmltopicdefnprovider.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/xmltopicdefnprovider.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pybonjour.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pybonjour.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pybonjour.pyo
@@ -1446,7 +1428,6 @@ share/pixmaps/taskcoach.png
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/timeline
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/squaremap
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsub1
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/kwargs
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/arg1
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core
