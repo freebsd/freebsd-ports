@@ -8,28 +8,24 @@ MASTER_SITES=	http://www.soft-switch.org/downloads/spandsp/
 PKGNAMESUFFIX=	-devel
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	DSP library and software FAX machine
 
-LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
 
 WRKSRC=		${WRKDIR}/spandsp-${DISTVERSION:C/pre.*//}
-USE_AUTOTOOLS=	libtool autoconf
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack
 
+USES=		gmake pathfix
+USE_AUTOTOOLS=	libtool autoconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		-C
-
+		LDFLAGS="-L${LOCALBASE}/lib" -C
 USE_LDCONFIG=	yes
 
 CONFLICTS=	spandsp-[0-9]*
 
 OPTIONS_DEFINE=	DOXYGEN
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOXYGEN} && ${PORT_OPTIONS:MDOCS}
@@ -44,9 +40,9 @@ CONFIGURE_ARGS+=--disable-doc
 
 post-install:
 .if ${PORT_OPTIONS:MDOXYGEN} && ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && \
-		${COPYTREE_SHARE} \* ${DOCSDIR} "-type d -or -mindepth 1")
+		${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR} "-type d -or -mindepth 1")
 .endif
 
 .include <bsd.port.mk>
