@@ -1,5 +1,11 @@
 bin/xdx
+man/man1/xdx.1.gz
 share/applications/Xdx.desktop
+share/locale/es/LC_MESSAGES/xdx.mo
+share/locale/fr/LC_MESSAGES/xdx.mo
+share/locale/nl/LC_MESSAGES/xdx.mo
+share/locale/pl/LC_MESSAGES/xdx.mo
+share/locale/pt/LC_MESSAGES/xdx.mo
 %%DATADIR%%/MANUAL
 %%DATADIR%%/MANUAL.es
 %%DATADIR%%/MANUAL.fr
@@ -22,8 +28,3 @@ share/applications/Xdx.desktop
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
-share/locale/es/LC_MESSAGES/xdx.mo
-share/locale/fr/LC_MESSAGES/xdx.mo
-share/locale/nl/LC_MESSAGES/xdx.mo
-share/locale/pl/LC_MESSAGES/xdx.mo
-share/locale/pt/LC_MESSAGES/xdx.mo

@@ -38,11 +38,10 @@ FIXME=		include/bforce.h include/util.h include/logger.h \
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 
-PORTDOCS=	CHANGES CHANGES.kst COPYING README README.kst
+DOCS=		CHANGES CHANGES.kst COPYING README README.kst
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 pre-configure:
 	@${MKDIR} ${WRKSRC}/bin
 
@@ -55,25 +54,23 @@ post-patch:
 .include <bsd.port.options.mk>
 
 do-install:
-	@${MKDIR} ${PREFIX}/etc/fido/bforce
-	${INSTALL_DATA} ${WRKSRC}/../examples/bforce.conf ${PREFIX}/etc/fido/bforce/bforce.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/../examples/bforce.passwd ${PREFIX}/etc/fido/bforce/bforce.passwd.sample
-	${INSTALL_DATA} ${WRKSRC}/../examples/bforce.subst ${PREFIX}/etc/fido/bforce/bforce.subst.sample
-	${INSTALL_DATA} ${WRKSRC}/../examples/freq.aliases ${PREFIX}/etc/fido/bforce/freq.aliases.sample
-	${INSTALL_DATA} ${WRKSRC}/../examples/freq.dirs ${PREFIX}/etc/fido/bforce/freq.dirs.sample
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/fido/bforce
+	${INSTALL_DATA} ${WRKSRC}/../examples/bforce.conf ${STAGEDIR}${PREFIX}/etc/fido/bforce/bforce.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/../examples/bforce.passwd ${STAGEDIR}${PREFIX}/etc/fido/bforce/bforce.passwd.sample
+	${INSTALL_DATA} ${WRKSRC}/../examples/bforce.subst ${STAGEDIR}${PREFIX}/etc/fido/bforce/bforce.subst.sample
+	${INSTALL_DATA} ${WRKSRC}/../examples/freq.aliases ${STAGEDIR}${PREFIX}/etc/fido/bforce/freq.aliases.sample
+	${INSTALL_DATA} ${WRKSRC}/../examples/freq.dirs ${STAGEDIR}${PREFIX}/etc/fido/bforce/freq.dirs.sample
 
-	${MKDIR} ${DATADIR} ${DATADIR}/bfha ${DATADIR}/u-srif/conf ${DATADIR}/u-srif/lib
+	${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${DATADIR}/bfha ${STAGEDIR}${DATADIR}/u-srif/conf ${STAGEDIR}${DATADIR}/u-srif/lib
 .for i in ${CONTRIBS}
-	${INSTALL_DATA} ${WRKSRC}/../contrib/${i} ${DATADIR}/${i}
+	${INSTALL_DATA} ${WRKSRC}/../contrib/${i} ${STAGEDIR}${DATADIR}/${i}
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/../,} ${DOCSDIR}
-.endif
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/bforce ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/bfindex ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/bfstat ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/nlookup ${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/../,} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/bforce ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/bfindex ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/bfstat ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/nlookup ${STAGEDIR}${PREFIX}/bin
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|' -e 's|%%CONFIGDIR%%|etc/fido/bforce|' ${PKGMESSAGE}
 
 .include <bsd.port.mk>

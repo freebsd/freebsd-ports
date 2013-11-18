@@ -1,3 +1,5 @@
+bin/tkfax
+bin/tkscan
 %%TKSCANFAXDIR%%/Makefile
 %%TKSCANFAXDIR%%/doc/C/Config_Help.html
 %%TKSCANFAXDIR%%/doc/C/Cover_Page_Help.html
@@ -90,10 +92,6 @@
 %%TKSCANFAXDIR%%/tkscan
 %%TKSCANFAXDIR%%/tkscan.desktop
 %%TKSCANFAXDIR%%/tkscanfax.spec
-@exec /bin/ln -sf %D/%%TKSCANFAXDIR%%/tkfax %D/bin
-@exec /bin/ln -sf %D/%%TKSCANFAXDIR%%/tkscan %D/bin
-@unexec /bin/rm -f %D/bin/tkfax
-@unexec /bin/rm -f %D/bin/tkscan
 @dirrm %%TKSCANFAXDIR%%/tex
 @dirrm %%TKSCANFAXDIR%%/scan-drivers
 @dirrm %%TKSCANFAXDIR%%/images

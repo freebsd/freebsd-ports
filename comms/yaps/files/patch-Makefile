@@ -1,0 +1,21 @@
+--- Makefile.orig	2013-11-17 23:01:50.000000000 +0800
++++ Makefile	2013-11-17 23:04:00.000000000 +0800
+@@ -33,15 +33,15 @@ yaps.doc:	yaps.html
+ 	lynx -cfg=/dev/null -nolist -dump $< > $@
+ 
+ install:	$(DSTFLE) $(CFGFILE)
+-	if [ ! -d $(YAPS_LIBDIR) ]; then \
+-		install -d -m 755 -o $(YAPS_USER) -g $(YAPS_GROUP) $(YAPS_LIBDIR) ; \
++	if [ ! -d $(DESTDIR)$(YAPS_LIBDIR) ]; then \
++		install -d -m 755 -o $(YAPS_USER) -g $(YAPS_GROUP) $(DESTDIR)$(YAPS_LIBDIR) ; \
+ 	fi
+ 	@if [ -f contrib/Makefile ]; then	\
+ 		$(MAKE) -C contrib install ;	\
+ 	fi
+ 
+ $(DSTFLE):	yaps
+-	install -o $(YAPS_USER) -g $(YAPS_GROUP) -m $(YAPS_MODE) -s yaps $@
++	install -o $(YAPS_USER) -g $(YAPS_GROUP) -m $(YAPS_MODE) -s yaps $(DESTDIR)$@
+ 
+ $(CFGFILE):	yaps.rc
+ 	@if [ ! -f $@ ]; then \

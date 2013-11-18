@@ -1,0 +1,3 @@
+sbin/cdr_read
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

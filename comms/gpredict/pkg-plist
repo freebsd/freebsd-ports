@@ -1,4 +1,5 @@
 bin/gpredict
+man/man1/gpredict.1.gz
 share/applications/gpredict.desktop
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/COPYING

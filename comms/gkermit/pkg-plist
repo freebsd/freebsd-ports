@@ -1,0 +1,4 @@
+bin/gkermit
+man/man1/gkermit.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/gkermit.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

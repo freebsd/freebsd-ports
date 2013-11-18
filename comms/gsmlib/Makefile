@@ -18,15 +18,10 @@ USES=		gmake
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
-MAN1=	gsmctl.1 gsmpb.1 gsmsendsms.1 gsmsmsstore.1
-MAN7=	gsminfo.7
-MAN8=	gsmsmsd.8
-
 CPPFLAGS+=	-I${LOCALBASE}/include -DBROKEN_STRFTIME -DHAVE_DECL_GETOPT \
 		${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

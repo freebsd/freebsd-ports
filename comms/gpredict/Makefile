@@ -11,17 +11,14 @@ COMMENT=	Amateur Radio satellite tracking and prediction
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib \
-		curl:${PORTSDIR}/ftp/curl \
-		goocanvas:${PORTSDIR}/graphics/goocanvas
+LIB_DEPENDS=	libhamlib.so:${PORTSDIR}/comms/hamlib \
+		libcurl.so:${PORTSDIR}/ftp/curl \
+		libgoocanvas.so:${PORTSDIR}/graphics/goocanvas
 
 USES=		gettext pathfix gmake pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
-MAN1=		gpredict.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^Icon/s|=.*|=${PREFIX}/share/pixmaps/gpredict-icon.png|' \

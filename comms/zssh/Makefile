@@ -15,10 +15,8 @@ RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz
 
 HAS_CONFIGURE=	yes
 
-PLIST_FILES=	bin/zssh bin/ztelnet
-MAN1=		zssh.1 ztelnet.1
+PLIST_FILES=	bin/zssh bin/ztelnet man/man1/zssh.1.gz man/man1/ztelnet.1.gz
 
-NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} -e 's,^prefix.*,prefix = ${PREFIX},g' ${WRKSRC}/Makefile
 

@@ -12,9 +12,10 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	B Plus file transfer protocol
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/bp bin/bpl
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bpl ${PREFIX}/bin
-	@${LN} -fs ${PREFIX}/bin/bpl ${PREFIX}/bin/bp
+	${INSTALL_PROGRAM} ${WRKSRC}/bpl ${STAGEDIR}${PREFIX}/bin
+	(cd ${STAGEDIR}${PREFIX}/bin; ${LN} -sf bpl bp)
 
 .include <bsd.port.mk>

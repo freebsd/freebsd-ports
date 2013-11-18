@@ -16,8 +16,6 @@ CONFIGURE_ENV=	USE_LIBS="-lusb" \
 		ac_cv_lib_usbpath_usb_path2devnum=no
 CONFIGURE_ARGS=	--disable-silent-rules
 
-MAN1=		dfu-util.1
-PLIST_FILES=	bin/dfu-suffix bin/dfu-util
+PLIST_FILES=	bin/dfu-suffix bin/dfu-util man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -15,22 +15,12 @@ LICENSE=	GPLv2
 
 USES=		gmake
 
-MAN1=		yaps.1
-PLIST_FILES=	bin/yaps etc/yaps.rc.sample
-PORTDOCS=	yaps.doc yaps.html
-PORTDATA=	*
-
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/yaps.rc ${PREFIX}/etc/yaps.rc.sample
-	${INSTALL_MAN} ${WRKSRC}/yaps.1 ${PREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/yaps.doc ${WRKSRC}/yaps.html ${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${WRKSRC}/yaps.rc ${STAGEDIR}${PREFIX}/etc/yaps.rc.sample
+	${INSTALL_MAN} ${WRKSRC}/yaps.1 ${STAGEDIR}${PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/yaps.doc ${WRKSRC}/yaps.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
