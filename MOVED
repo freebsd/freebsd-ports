@@ -5232,3 +5232,10 @@ devel/libYGP||2013-11-18|Has expired: Broken for more than 6 month
 devel/monodevelop-python||2013-11-18|Has expired: Broken for more than 6 month
 devel/lua50-app||2013-11-18|Removed
 devel/lua50-dfui||2013-11-18|Removed
+devel/lua50-filename||2013-11-18|Removed
+devel/lua50-gettext||2013-11-18|Removed
+devel/lua50-posix||2013-11-18|Removed
+devel/lua50-pty||2013-11-18|Removed
+lang/tolua++50||2013-11-18|Removed
+lang/tolua50||2013-11-18|Removed
+net/lua50-luasocket||2013-11-18|Removed

@@ -1,8 +1,0 @@
---- src/lib/SCsub.orig	2005-11-28 16:51:15.000000000 +0300
-+++ src/lib/SCsub	2008-08-22 01:44:24.000000000 +0400
-@@ -10,4 +10,5 @@
- 	]
- 
- env.lib_target = env.Library('#/lib/'+env['tolua_lib'], sources)
-+env.lib_target += env.SharedLibrary('#/lib/'+env['tolua_lib'], sources)
- 

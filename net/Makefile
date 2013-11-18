@@ -362,7 +362,6 @@
     SUBDIR += liveMedia
     SUBDIR += lla
     SUBDIR += ltm
-    SUBDIR += lua50-luasocket
     SUBDIR += lualdap
     SUBDIR += luasocket
     SUBDIR += lvwimax

@@ -1178,10 +1178,6 @@
     SUBDIR += lua-redis-parser
     SUBDIR += lua-sysctl
     SUBDIR += lua50-compat51
-    SUBDIR += lua50-filename
-    SUBDIR += lua50-gettext
-    SUBDIR += lua50-posix
-    SUBDIR += lua50-pty
     SUBDIR += luabind
     SUBDIR += luafilesystem
     SUBDIR += luajava
