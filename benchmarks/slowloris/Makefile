@@ -20,13 +20,15 @@ PLIST_FILES=	bin/slowloris
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
-PERL_THREADS=	no
+PERL_THREADS=	yes
 
 .if exists(${PERL})
 PERL_THREADS!=	${PERL} -V::usethreads
 .if ${PERL_THREADS} == "'define';"
 RUN_DEPENDS+=	p5-threads-shared>=0:${PORTSDIR}/devel/p5-threads-shared
 PERL_THREADS=	yes
+.else
+PERL_THREADS=	no
 .endif
 .endif
 
