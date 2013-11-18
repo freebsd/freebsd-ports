@@ -3,25 +3,22 @@
 
 PORTNAME=	xye
 PORTVERSION=	0.12.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF:game \
 		http://xye.sourceforge.net/levels/ \
 		http://xye.sourceforge.net/:xmas \
-		SF/nemysisfreebsdp/:nemysis \
+		SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/:nemysis \
 		http://xye.sourceforge.net/skins/:skins
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:game \
 		${LEVELS:S/$/.zip/} \
 		${LEVELS_XYE:S/$/.xye/} \
 		xmas-xye-2009.zip:xmas \
 		xye_extra_levels.20121109.zip:nemysis \
-		XMASKYESKIN.zip:skins \
-		Xye%20skin%20-%20classic%20kye.zip:skins
+		Xye%20skin%20-%20classic%20kye.zip:skins \
+		XMASKYESKIN.zip:skins
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
-		${LEVELS:S/$/.zip/} \
-		xmas-xye-2009.zip \
-		xye_extra_levels.20121109.zip \
-		${SKINS:S/$/.zip/}
+EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Puzzle games like sokoban or boulderdash
@@ -35,7 +32,9 @@ USE_SDL=	sdl image ttf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-docdir=${PREFIX}/share/doc
 
-LEVELS=		Xye%20level%20-%20The%20plan Xye%20level%20-%20Controller \
+LEVELS=		Xye%20level%20-%204corners Xye%20level%20-%20Against%20the%20force \
+		Xye%20level%20-%20Stop%20that%20cab Xye%20level%20-%20Helping%20Hand \
+		Xye%20level%20-%20The%20plan Xye%20level%20-%20Controller \
 		Xye%20level%20-%20At%20once Xye%20level%20-%20Open%20Ended \
 		Xye%20level%20-%20Sorting Xye%20level%20-%20The%20insider \
 		Xye%20level%20-%20The%20slow%20speedrun Xye%20levels%20-%20SuperJustin \
@@ -46,7 +45,7 @@ LEVELS=		Xye%20level%20-%20The%20plan Xye%20level%20-%20Controller \
 
 LEVELS_XYE=	dungeon turnaround chekhov
 
-SKINS=		XMASKYESKIN Xye%20skin%20-%20classic%20kye
+SKINS=		Xye%20skin%20-%20classic%20kye XMASKYESKIN
 
 PORTDOCS=	*
 
@@ -61,7 +60,6 @@ SKINS_DESC=	Install additional skins
 
 OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract-script:
@@ -85,16 +83,13 @@ post-patch:
 .endif
 
 post-install:
-	@(cd ${WRKDIR} && ${COPYTREE_SHARE} "*.xye *.txt" ${DATADIR}/levels)
+	@(cd ${WRKDIR} && ${COPYTREE_SHARE} "*.xye *.txt" ${STAGEDIR}${DATADIR}/levels)
 
 .if ${PORT_OPTIONS:MSKINS}
-	@(cd ${WRKDIR}/skins && ${COPYTREE_SHARE} . ${DATADIR}/res)
+	@(cd ${WRKDIR}/skins && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/res)
 .endif
 
-	${LN} -sf ${DATADIR}/res/detailed_icon.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
-
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+	${LN} -sf ${DATADIR}/res/detailed_icon.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 .include <bsd.port.mk>
