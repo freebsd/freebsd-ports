@@ -1,5 +1,5 @@
-bin/bforce
 bin/bfindex
+bin/bforce
 bin/bfstat
 bin/nlookup
 etc/fido/bforce/bforce.conf.sample
@@ -27,10 +27,16 @@ etc/fido/bforce/freq.dirs.sample
 %%DATADIR%%/u-srif/u-srif-index.py
 %%DATADIR%%/u-srif/u-srif-lookup.py
 %%DATADIR%%/u-srif/u-srif.py
-@dirrm etc/fido/bforce
-@dirrm etc/fido
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.kst
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.kst
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/u-srif/lib
 @dirrm %%DATADIR%%/u-srif/conf
 @dirrm %%DATADIR%%/u-srif
 @dirrm %%DATADIR%%/bfha
 @dirrm %%DATADIR%%
+@dirrm etc/fido/bforce
+@dirrm etc/fido

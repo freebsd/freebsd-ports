@@ -1,0 +1,15 @@
+--- Makefile.in.orig	2013-11-17 23:06:21.000000000 +0800
++++ Makefile.in	2013-11-17 23:07:02.000000000 +0800
+@@ -75,9 +75,9 @@ ztelnet : $(NAME)
+ 
+ install :
+ 	strip $(NAME)
+-	$(INSTALL) -m 0711 zssh @bindir@
+-	ln -f @bindir@/zssh  @bindir@/ztelnet
+-	$(INSTALL) -m 0644 $(MANS) @mandir@/man1
++	$(INSTALL) -m 0711 zssh $(DESTDIR)@bindir@
++	(cd $(DESTDIR)@bindir@; ln -f zssh  ztelnet)
++	$(INSTALL) -m 0644 $(MANS) $(DESTDIR)@mandir@/man1
+ 
+ uninstall :
+ 	-cd @bindir@      && rm $(PRGS)

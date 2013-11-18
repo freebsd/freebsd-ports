@@ -13,22 +13,14 @@ COMMENT=	RFC 2217 compliant serial port redirector
 
 LICENSE=	GPLv2
 
-PLIST_FILES=	libexec/sredird
-PORTDOCS=	README
-
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} -Wall -o ${WRKSRC}/sredird ${WRKSRC}/sredird.c
 
-.include <bsd.port.options.mk>
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sredird ${PREFIX}/libexec
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/sredird ${STAGEDIR}${PREFIX}/libexec
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -20,18 +20,17 @@ PLIST_SUB=	TKSCANFAXDIR="${TKSCANFAXDIR:S,^${PREFIX}/,,}"
 
 TKSCANFAXDIR=	${PREFIX}/lib/tkscanfax1
 
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -i '' -e \
 		's|/usr/local/lib|${PREFIX}/lib|g'
 
 do-install:
-	@${MKDIR} ${TKSCANFAXDIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${TKSCANFAXDIR})
+	@${MKDIR} ${STAGEDIR}${TKSCANFAXDIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${TKSCANFAXDIR})
 .for file in tkfax tkscan
-	${CHMOD} ${BINMODE} ${TKSCANFAXDIR}/${file}
-	${CHOWN} ${BINOWN}:${BINGRP} ${TKSCANFAXDIR}/${file}
-	${LN} -sf ${TKSCANFAXDIR}/${file} ${PREFIX}/bin
+	${CHMOD} ${BINMODE} ${STAGEDIR}${TKSCANFAXDIR}/${file}
+	${CHOWN} ${BINOWN}:${BINGRP} ${STAGEDIR}${TKSCANFAXDIR}/${file}
+	${LN} -sf ${TKSCANFAXDIR}/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
 
 .include <bsd.port.mk>

@@ -15,8 +15,7 @@ WRKSRC=		${WRKDIR}
 NO_BUILD=	YES
 PLIST_FILES=	bin/callsign
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/callsign ${LOCALBASE}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/callsign ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>

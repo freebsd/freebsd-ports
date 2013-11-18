@@ -1,17 +1,18 @@
 bin/grig
+lib/locale/fr/LC_MESSAGES/grig.mo
+man/man1/grig.1.gz
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/COPYING
 %%DATADIR%%/ChangeLog
 %%DATADIR%%/NEWS
 %%DATADIR%%/README
-lib/locale/fr/LC_MESSAGES/grig.mo
 share/pixmaps/grig/digits_normal.png
 share/pixmaps/grig/digits_small.png
 share/pixmaps/grig/grig-logo.png
 share/pixmaps/grig/ic910.png
 share/pixmaps/grig/smeter.png
+@dirrm share/pixmaps/grig
+@dirrm %%DATADIR%%
 @dirrmtry lib/locale/fr/LC_MESSAGES
 @dirrmtry lib/locale/fr
 @dirrmtry lib/locale
-@dirrm share/pixmaps/grig
-@dirrm %%DATADIR%%

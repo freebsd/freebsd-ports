@@ -17,9 +17,8 @@ USES=		imake
 USE_XORG=	x11 xext xpm xmu xaw xt sm ice
 MAKE_JOBS_UNSAFE=	yes
 
-MAN1=		seyon.1
 PLIST_FILES=	bin/seyon lib/X11/app-defaults/Seyon \
-		lib/X11/app-defaults/Seyon-color lib/X11/seyon.help
+		lib/X11/app-defaults/Seyon-color lib/X11/seyon.help \
+		man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

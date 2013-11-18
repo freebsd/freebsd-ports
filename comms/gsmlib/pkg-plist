@@ -31,5 +31,11 @@ lib/libgsmme.a
 lib/libgsmme.la
 lib/libgsmme.so
 lib/libgsmme.so.1
+man/man1/gsmctl.1.gz
+man/man1/gsmpb.1.gz
+man/man1/gsmsendsms.1.gz
+man/man1/gsmsmsstore.1.gz
+man/man7/gsminfo.7.gz
+man/man8/gsmsmsd.8.gz
 %%NLS%%share/locale/de/LC_MESSAGES/gsmlib.mo
 @dirrm include/gsmlib
