@@ -935,7 +935,6 @@
     SUBDIR += spybye
     SUBDIR += sqlmap
     SUBDIR += sqlninja
-    SUBDIR += squidclamav
     SUBDIR += srm
     SUBDIR += srp
     SUBDIR += ssdeep
