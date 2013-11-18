@@ -189,7 +189,6 @@
     SUBDIR += nqc
     SUBDIR += nwcc
     SUBDIR += nx
-    SUBDIR += objc
     SUBDIR += ocaml
     SUBDIR += ocaml-autoconf
     SUBDIR += ocaml-camlidl

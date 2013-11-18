@@ -83,7 +83,6 @@
     SUBDIR += epplets
     SUBDIR += evilwm
     SUBDIR += fbcmd
-    SUBDIR += fbpager
     SUBDIR += fluxbox
     SUBDIR += fluxconf
     SUBDIR += fluxter

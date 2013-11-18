@@ -1,6 +1,0 @@
-A MySQL client library written in Go. The aim of this project is to
-provide a library with a high level of usability, good interal error
-handling and to emulate similar libraries available for other languages
-to provide an easy migration of MySQL based systems into the Go language.
-
-WWW: https://github.com/Philio/GoMySQL

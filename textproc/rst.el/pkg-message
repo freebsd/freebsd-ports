@@ -1,6 +1,0 @@
-
-To use rst.el, add the following line to your ~/.emacs or init.el:
-
-  (require 'rst)
-  (add-hook 'text-mode-hook 'rst-text-mode-bindings)
-

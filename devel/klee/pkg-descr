@@ -1,5 +1,0 @@
-KLEE is a symbolic virtual machine built on top of the
-LLVM compiler infrastructure, and available under the
-UIUC open source license.
-
-WWW:	http://klee.llvm.org/

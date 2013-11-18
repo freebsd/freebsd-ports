@@ -1,3 +1,0 @@
-mooseekd is a partial fork of Museek+, containing only the standalone
-daemon needed to connect to the Soulseek P2P network. Naming has been
-changed so as not to clash with an existing Museek+/museekd installation.

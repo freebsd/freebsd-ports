@@ -183,7 +183,6 @@
     SUBDIR += mikachan-ttfonts
     SUBDIR += mime_pls
     SUBDIR += ming
-    SUBDIR += mobileimap
     SUBDIR += monafonts
     SUBDIR += monafonts-ttf
     SUBDIR += mozc-additions

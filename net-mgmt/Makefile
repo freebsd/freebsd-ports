@@ -331,16 +331,13 @@
     SUBDIR += zabbix2-proxy
     SUBDIR += zabbix2-server
     SUBDIR += zenoss
-    SUBDIR += zenpack-apachemonitor
     SUBDIR += zenpack-checkping
     SUBDIR += zenpack-dellmon
-    SUBDIR += zenpack-dellmonitor
     SUBDIR += zenpack-deviceadvdetail
     SUBDIR += zenpack-devicesearch
     SUBDIR += zenpack-graphportlet
     SUBDIR += zenpack-interfacegraphs
     SUBDIR += zenpack-libvirt
     SUBDIR += zenpack-macreport
-    SUBDIR += zenpack-ntpmonitor
 
 .include <bsd.port.subdir.mk>

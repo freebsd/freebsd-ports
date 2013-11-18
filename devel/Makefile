@@ -589,7 +589,6 @@
     SUBDIR += gobject-introspection
     SUBDIR += goffice
     SUBDIR += goffice010
-    SUBDIR += gonzui
     SUBDIR += google-gdata
     SUBDIR += google-perftools
     SUBDIR += google-sparsehash
@@ -907,7 +906,6 @@
     SUBDIR += kdevelop-php-docs
     SUBDIR += kdevplatform
     SUBDIR += kimwitu
-    SUBDIR += klee
     SUBDIR += kyra
     SUBDIR += kyua
     SUBDIR += kyua-atf-compat
@@ -920,8 +918,6 @@
     SUBDIR += lfcxml
     SUBDIR += libIDL
     SUBDIR += libPropList
-    SUBDIR += libXGP
-    SUBDIR += libYGP
     SUBDIR += libafterbase
     SUBDIR += libarena
     SUBDIR += libassa
@@ -1242,9 +1238,6 @@
     SUBDIR += mono-tools
     SUBDIR += monodevelop
     SUBDIR += monodevelop-database
-    SUBDIR += monodevelop-java
-    SUBDIR += monodevelop-python
-    SUBDIR += monodevelop-vala
     SUBDIR += monotone
     SUBDIR += monotone-viz
     SUBDIR += motor
@@ -1992,7 +1985,6 @@
     SUBDIR += p5-File-HomeDir-PathClass
     SUBDIR += p5-File-Iterator
     SUBDIR += p5-File-LibMagic
-    SUBDIR += p5-File-Lock
     SUBDIR += p5-File-MMagic
     SUBDIR += p5-File-MMagic-XS
     SUBDIR += p5-File-Map
@@ -4371,7 +4363,6 @@
     SUBDIR += simgear
     SUBDIR += simian
     SUBDIR += simpletest
-    SUBDIR += simulavr
     SUBDIR += skalibs
     SUBDIR += slf4j
     SUBDIR += smack
@@ -4495,7 +4486,6 @@
     SUBDIR += uthash
     SUBDIR += valgrind
     SUBDIR += valgrind-devel
-    SUBDIR += valide
     SUBDIR += varconf
     SUBDIR += vera++
     SUBDIR += viewvc

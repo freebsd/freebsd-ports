@@ -1,6 +1,0 @@
-NTPMonitor monitors the offset between system time and a target NTP (Network 
-Time Server) server's time.
-
-More details can be found at provided url.
-
-WWW: http://community.zenoss.org/docs/DOC-3469

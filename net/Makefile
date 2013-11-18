@@ -210,7 +210,6 @@
     SUBDIR += hawknl-devel
     SUBDIR += hexinject
     SUBDIR += heybuddy
-    SUBDIR += hf6to4
     SUBDIR += hidentd
     SUBDIR += hinfo
     SUBDIR += hlmaster
