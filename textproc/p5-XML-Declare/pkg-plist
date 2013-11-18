@@ -1,0 +1,6 @@
+%%SITE_PERL%%/XML/Declare.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Declare/.packlist
+%%PERL5_MAN3%%/XML::Declare.3.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Declare
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML
