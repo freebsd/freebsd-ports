@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	taskcoach
-PORTVERSION=	1.3.31
-PORTREVISION=	1
+PORTVERSION=	1.3.33
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Release-${PORTVERSION}
 DISTNAME=	TaskCoach-${PORTVERSION}
@@ -21,15 +20,15 @@ USE_WX=		2.8
 WX_COMPS=	python:lib
 WX_UNICODE=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|taskcoach.py|taskcoach|' \
-		${WRKSRC}/build.in/fedora/taskcoach.desktop
+		${WRKSRC}/build.in/linux_common/taskcoach.desktop
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/taskcoach.py ${PREFIX}/bin/taskcoach
-	@${INSTALL_DATA} ${WRKSRC}/build.in/fedora/taskcoach.desktop \
-		${PREFIX}/share/applications/
+	${INSTALL_SCRIPT} ${WRKSRC}/taskcoach.py \
+		${STAGEDIR}${PREFIX}/bin/taskcoach
+	@${INSTALL_DATA} ${WRKSRC}/build.in/linux_common/taskcoach.desktop \
+		${STAGEDIR}${PREFIX}/share/applications/
 	@${INSTALL_DATA} ${WRKSRC}/icons.in/taskcoach.png \
-		${PREFIX}/share/pixmaps
+		${STAGEDIR}${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>
