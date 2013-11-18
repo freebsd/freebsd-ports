@@ -8,12 +8,12 @@
 -LDFLAGS += -L/usr/lib -L/usr/local/lib -lglut -lGLU -lGL -L/usr/X11R6/lib -lm -ldl 
 -LDFLAGS += -lpthread -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE 
 -LDFLAGS += -lcurses -ljpeg -lz -lfmod-3.63
-+INCLUDES = -I/usr/include -I$(LOCALBASE)/include
++INCLUDES = -I$(LOCALBASE)/include
 +CXX ?= g++
 +CXXFLAGS += -Wall $(INCLUDES)
 +
-+LDFLAGS += -L/usr/lib -L$(LOCALBASE)/lib -lglut -lGLU -lGL
-+LDFLAGS += $(PTHREAD_LIBS) -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE 
++LDFLAGS += -L$(LOCALBASE)/lib -lglut -lGLU -lGL
++LDFLAGS += -pthread -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE 
 +#LDFLAGS += -lcurses -ljpeg -lz -lfmod-3.63
 +LDFLAGS += -ljpeg
  
