@@ -47,6 +47,7 @@ man/man6/xaos.6.gz
 %%XAOSDIR%%/examples/bolygo.xpf
 %%XAOSDIR%%/examples/brown.xpf
 %%XAOSDIR%%/examples/burnship.xpf
+%%XAOSDIR%%/examples/butterfly-langston.xpf
 %%XAOSDIR%%/examples/butterfly.xpf
 %%XAOSDIR%%/examples/checker.xpf
 %%XAOSDIR%%/examples/circle.xpf
@@ -55,6 +56,7 @@ man/man6/xaos.6.gz
 %%XAOSDIR%%/examples/csiga3.xpf
 %%XAOSDIR%%/examples/csiga4.xpf
 %%XAOSDIR%%/examples/csiga5.xpf
+%%XAOSDIR%%/examples/dark.xpf
 %%XAOSDIR%%/examples/dblspira.xpf
 %%XAOSDIR%%/examples/dragons.xpf
 %%XAOSDIR%%/examples/dragons2.xpf
@@ -112,6 +114,7 @@ man/man6/xaos.6.gz
 %%XAOSDIR%%/examples/kovzsi9.2.xpf
 %%XAOSDIR%%/examples/kovzsi9.xpf
 %%XAOSDIR%%/examples/lemon.xpf
+%%XAOSDIR%%/examples/light-kovzsi.xpf
 %%XAOSDIR%%/examples/light.xpf
 %%XAOSDIR%%/examples/lighting.xpf
 %%XAOSDIR%%/examples/magnet.xpf
@@ -248,6 +251,7 @@ man/man6/xaos.6.gz
 %%NLS%%share/locale/it/LC_MESSAGES/xaos.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/xaos.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/xaos.mo
+share/pixmaps/xaos.png
 @dirrm %%XAOSDIR%%/tutorial
 @dirrm %%XAOSDIR%%/help
 @dirrm %%XAOSDIR%%/examples

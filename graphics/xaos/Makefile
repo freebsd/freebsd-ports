@@ -2,62 +2,64 @@
 # $FreeBSD$
 
 PORTNAME=	xaos
-PORTVERSION=	3.5
-PORTREVISION=	4
+PORTVERSION=	3.6
 CATEGORIES=	graphics math
 MASTER_SITES=	SF/${PORTNAME}/XaoS/${PORTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Real-time fractal browser
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libgsl.so:${PORTSDIR}/math/gsl
 
 USES=		gmake
-USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes
 
-OPTIONS_DEFINE=	GTK2 PTHREAD NLS
-GTK2_DESC=	GTK+ User Interface (experimental)
-PTHREAD_DESC=	Enable SMP support (experimental)
+OPTIONS_DEFINE=	 PTHREAD NLS
+OPTIONS_MULTI=	DRIVER
+OPTIONS_MULTI_DRIVER=	AALIB GTK2 X11
+DRIVER_DESC=	User Interface
+OPTIONS_DEFAULT=	X11
+OPTIONS_SUB=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
+AALIB_LIB_DEPENDS=	libaa.so:${PORTSDIR}/graphics/aalib
+AALIB_CONFIGURE_WITH=	aa-driver
+AALIB_CONFIGURE_ON=	ac_cv_aalib_ver_ok=yes
+
+GTK2_DESC=	GTK+ User Interface (experimental)
+GTK2_USE=	GNOME=gtk20
+GTK2_USES=	pkgconfig
+GTK2_CONFIGURE_WITH=	gtk-driver
+
+X11_USE=	XORG=x11,xext
+X11_CONFIGURE_WITH=	x11-driver x
+
+NLS_USES=	gettext iconv
+NLS_CONFIGURE_ENABLE=	nls
+
+PTHREAD_DESC=	Enable SMP support (experimental)
+PTHREAD_CONFIGURE_WITH=	pthread
+PTHREAD_CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
+
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--with-aa-driver=no --with-dga-driver=no \
-		--with-ggi-driver=no --with-svga-driver=no \
-		--with-sffe=no
 
 INFO=		xaos
 
 PLIST_SUB+=	XAOSDIR="share/XaoS"
 
-DESKTOP_ENTRIES=	"XaoS" "${COMMENT}" "" "xaos" "" false
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPTHREAD}
-CONFIGURE_ARGS+=	--with-pthread=yes
-CONFIGURE_ENV+=		LIBS="${PTHREAD_LIBS}"
-CFLAGS+=		${PTHREAD_CFLAGS}
-.else
-CONFIGURE_ARGS+=	--with-pthread=no
-.endif
-
-.if ${PORT_OPTIONS:MGTK2}
-USE_GNOME=	gtk20
-CONFIGURE_ARGS+=	--with-gtk-driver=yes --with-x11-driver=no
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+DESKTOP_ENTRIES=	"XaoS" "" "${PREFIX}/share/pixmaps/xaos.png" \
+			"xaos" "" false
 
 pre-configure:
 	${REINPLACE_CMD} -e 's,/usr\(/share/locale\),${PREFIX}\1,g' \
 		${WRKSRC}/configure \
 		${WRKSRC}/src/ui/ui.c
+	${REINPLACE_CMD} 's,malloc.h,stdlib.h,' \
+		${WRKSRC}/src/ui/ui-drv/aa/ui_aa.c
+
+post-install:
+	${INSTALL_DATA}	${WRKSRC}/src/ui/ui-drv/qt/images/xaosbig.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/xaos.png
 
 .include <bsd.port.mk>
