@@ -15,8 +15,7 @@ LICENSE_COMB=	dual
 OPTIONS_DEFINE=	DOCS
 
 LDFLAGS+=	-pthread
-USE_DOS2UNIX=	yes
-USES=		gmake
+USES=		dos2unix gmake
 WRKSRC=		${WRKDIR}/tcpser
 
 PORTDOCS=	README CHANGES
