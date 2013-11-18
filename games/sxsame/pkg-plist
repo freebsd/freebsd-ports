@@ -1,4 +1,8 @@
+@group games
+@mode 2755
 bin/sxsame
+@mode
+@group
 lib/X11/sxsame/bomb/blun.xpm
 lib/X11/sxsame/bomb/blus.xpm
 lib/X11/sxsame/bomb/cyan.xpm
@@ -28,6 +32,8 @@ lib/X11/sxsame/snake.bmp
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.jp
 %%PORTDOCS%%%%DOCSDIR%%/README.jp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry lib/X11/sxsame/mono1
+@dirrmtry lib/X11/sxsame/bomb
+@dirrmtry lib/X11/sxsame
 @exec mkdir -p %D/lib/X11/sxsame
-@exec chmod 2775 %D/lib/X11/sxsame
-@unexec rm -rf %D/lib/X11/sxsame
+@exec chmod 2775 %D/lib/X11/sxsame ; chown -R root:games %D/lib/X11/sxsame
