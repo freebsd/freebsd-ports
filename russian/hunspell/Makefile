@@ -1,16 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	hunspell
-PORTVERSION=	20120501
+PORTVERSION=	20131101
 CATEGORIES=	russian textproc
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://cdn.bitbucket.org/Shaman_Alex/russian-dictionary-hunspell/downloads/
 DISTNAME=	ru_RU_UTF-8_${PORTVERSION}
+EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Russian hunspell dictionaries
 
-EXTRACT_SUFX=	.zip
+LICENSE=	LGPL3
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PROJECTHOST=	hunspell-ru
