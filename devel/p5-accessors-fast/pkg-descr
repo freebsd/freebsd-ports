@@ -1,0 +1,15 @@
+This module was created as an alternative to use fields,
+and uses Class::Accessor::Fast as a base
+
+Creates accessors at compiletime
+
+Have own default new method: it creates object as a blessed hash,
+then locks keys to defined field list, and invoke init.
+So, recommended usage inside packages, is access by hash keys
+(it's 3 times faster then accessor). Since keys are locked,
+you will not suffer from autovivification. Public interface
+recommended to be documented as accessors.
+
+Uses Class::C3
+
+WWW: http://search.cpan.org/dist/accessors-fast/
