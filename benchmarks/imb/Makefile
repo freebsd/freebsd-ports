@@ -15,8 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intel MPI Benchmark
 
 WRKSRC=		${WRKDIR}/IMB_3.0/src/
-USES=		gmake
-USE_DOS2UNIX=	yes
+USES=		dos2unix gmake
 MAKEFILE=	make_mpich
 ALL_TARGET=	all
 # Intel hardcodes -O3 in make_mpich.  Replacing it with system defaults

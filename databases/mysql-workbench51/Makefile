@@ -12,13 +12,13 @@ PKGNAMESUFFIX?=	51
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The MySQL Workbench
 
-LIB_DEPENDS+=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		pcre.3:${PORTSDIR}/devel/pcre \
-		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		zip:${PORTSDIR}/archivers/libzip \
-		sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
-		cairo.2:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS+=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libxml2.so:${PORTSDIR}/textproc/libxml2 \
+		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
+		libzip.so:${PORTSDIR}/archivers/libzip \
+		libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
+		libcairo.so:${PORTSDIR}/graphics/cairo
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -30,10 +30,10 @@ ACLOCAL_ARGS=
 AUTOCONF_ARGS=
 USE_LDCONFIG=	${PREFIX}/lib/mysql-workbench
 SUBDIRS=	ext/yassl/taocrypt ext/yassl .
-USE_DOS2UNIX=	yes
-DOS2UNIX_REGEX=	.*ext/yassl/.*(Makefile.am|configure.in)
 AUTOTOOLSFILES=	configure.in
 
+USES=		dos2unix
+DOS2UNIX_REGEX=	.*ext/yassl/.*(Makefile.am|configure.in)
 USE_GL=		gl glu
 USE_GNOME=	libglade2 intltool libgnome gtk20 pango orbit2
 USE_LUA=	5.1

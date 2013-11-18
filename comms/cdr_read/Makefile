@@ -10,13 +10,12 @@ DISTNAME=	cdrr${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for reading of the call detail records from PBX
 
-USE_DOS2UNIX=	readme_eng.txt
+USES=		dos2unix
+DOS2UNIX_FILES=	readme_eng.txt
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 NO_WRKSUBDIR=	yes
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
