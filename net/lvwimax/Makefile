@@ -17,15 +17,10 @@ USE_RC_SUBR=	lvwimax
 
 PLIST_FILES=	etc/devd/lvwimax.conf sbin/lvwimax
 
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile
-
 post-install:
-	@${MKDIR} ${PREFIX}/etc/devd
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/devd
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		< ${FILESDIR}/lvwimax.conf.in > ${WRKDIR}/lvwimax.conf
-	${INSTALL_DATA} "${WRKDIR}/lvwimax.conf" ${PREFIX}/etc/devd
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_DATA} "${WRKDIR}/lvwimax.conf" ${STAGEDIR}${PREFIX}/etc/devd
 
 .include <bsd.port.mk>
