@@ -12,8 +12,8 @@ COMMENT=	File compression utility specializing in Quake demo compression
 
 LICENSE=	ZLIB
 
-USE_ZIP=	yes
-USE_DOS2UNIX=	yes
+USES=		dos2unix
+EXTRACT_SUFX=	.zip
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	${WRKSRC}/Makefile.linux
