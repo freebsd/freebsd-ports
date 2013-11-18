@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cppcheck
-PORTVERSION=	1.61
-PORTREVISION=	1
+PORTVERSION=	1.62
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
@@ -27,7 +26,7 @@ OPTIONS_DEFAULT=	MATCHCOMPILER RULES
 MATCHCOMPILER_DESC=	Build-time optimizations via Python
 RULES_DESC=		User-defined rule support (requires PCRE)
 
-PLIST_FILES=	bin/cppcheck
+PLIST_FILES=	bin/cppcheck bin/cppcheck-htmlreport
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
@@ -77,6 +76,7 @@ post-patch:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/cppcheck ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/htmlreport/cppcheck-htmlreport ${PREFIX}/bin
 
 check regression-test test: build
 	@(cd ${BUILD_WRKSRC}; \
