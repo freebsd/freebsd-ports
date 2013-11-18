@@ -1,4 +1,0 @@
-The Package Compatibility (Compat-5.1) is a set of files which provides an
-implementation of the new package model of Lua 5.1 to be used in Lua 5.0.
-
-WWW: http://luaforge.net/projects/compat/
