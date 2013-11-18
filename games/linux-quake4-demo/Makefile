@@ -18,12 +18,10 @@ USE_LINUX=	yes
 USE_LINUX_APPS=	sdl12
 NO_WRKSUBDIR=	yes
 NO_CDROM=	Redistribution is limited, see license
-NO_PACKAGE=	Package will be 337MB, set FORCE_PACKAGE if you really want it
 
 Q4DIR=		lib/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 PLIST_SUB=	Q4DIR="${Q4DIR}"
 
-NO_STAGE=	yes
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
@@ -39,13 +37,13 @@ do-build:
 .endfor
 
 do-install:
-	${MKDIR} ${PREFIX}/${Q4DIR}/q4base
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${Q4DIR}/q4base
 .for FILE in quake4 q4ded
 	${INSTALL_SCRIPT} ${WRKSRC}/${PKGNAMEPREFIX}${FILE}.sh \
-		${PREFIX}/bin/${PKGNAMEPREFIX}${FILE}-demo
+		${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}${FILE}-demo
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/FreeBSD/x86/${FILE}.x86 \
-		${PREFIX}/${Q4DIR}
+		${STAGEDIR}${PREFIX}/${Q4DIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/q4base/* ${PREFIX}/${Q4DIR}/q4base
+	${INSTALL_DATA} ${WRKSRC}/q4base/* ${STAGEDIR}${PREFIX}/${Q4DIR}/q4base
 
 .include <bsd.port.mk>
