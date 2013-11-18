@@ -153,7 +153,7 @@ _LUA_COMPS_ALL=			lua tolua toluaxx ruby \
 						alien app compat51 dfui filename gettext posix \
 						pty socket
 _LUA_DEP_TYPES_ALL=		build lib run
-_LUA_VERS_ALL=			5.0 5.1
+_LUA_VERS_ALL=			5.1
 _LUA_PLIST_ALL=			LUA_VER LUA_VER_SH LUA_VER_STR LUA_PREFIX LUA_SUBDIR
 _LUA_PLIST_DIR_ALL=		LUA_BINDIR LUA_INCDIR LUA_LIBDIR \
 						LUA_MODLIBDIR LUA_MODSHAREDIR
@@ -167,22 +167,6 @@ _LUA_VERS_LISTS=		_LUA_VER_INSTALLED WANT_LUA_VER WITH_LUA_VER
 # _LUA_FILE_comp_ver	- File installed by that component.
 # _LUA_DEPTYPE_comp_ver	- Default dependency type.
 #
-
-_LUA_PORT_lua_5.0=		lang/lua50
-_LUA_DEPTYPE_lua_5.0=	lib
-_LUA_PORT_tolua_5.0=	lang/tolua50
-_LUA_PORT_toluaxx_5.0=	lang/tolua++50
-_LUA_PORT_ruby_5.0=		lang/ruby-lua
-
-_LUA_PORT_app_5.0=		devel/lua50-app
-_LUA_PORT_compat51_5.0=	devel/lua50-compat51
-_LUA_FILE_compat51_5.0=	${LUA_MODSHAREDIR}/compat-5.1.lua
-_LUA_PORT_dfui_5.0=		devel/lua50-dfui
-_LUA_PORT_filename_5.0=	devel/lua50-filename
-_LUA_PORT_gettext_5.0=	devel/lua50-gettext
-_LUA_PORT_posix_5.0=	devel/lua50-posix
-_LUA_PORT_pty_5.0=		devel/lua50-pty
-_LUA_PORT_socket_5.0=	net/lua50-luasocket
 
 _LUA_PORT_lua_5.1=		lang/lua
 _LUA_DEPTYPE_lua_5.1=	lib
