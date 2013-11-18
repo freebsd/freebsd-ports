@@ -1,7 +1,0 @@
-The utility DirComp compares two directories (and - if specified - their
-subdirectories), where the comparison can be done both by existence and
-by date (of change) or contents. This comparison can be limited to
-certain files and and/directories matching specified name- or time-of-
-change restrictions.
-
-WWW: http://dircomp.sourceforge.net/
