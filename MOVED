@@ -5192,3 +5192,6 @@ audio/gmpeg-devel||2013-11-17|Removed, no active development since more than 8 y
 graphics/gqview-devel||2013-11-17|Removed, no active development since more than 8 years
 textproc/stardict2-dictd_mova|textproc/stardict-dictd_mova|2013-11-17|Renamed
 textproc/stardict2-quick|textproc/stardict-quick|2013-11-17|Renamed
+x11-toolkits/libgnomeuimm|x11-toolkits/libgnomeuimm26|2013-11-18|older version not in used in the ports tree
+devel/libglademm|devel/libglademm|2013-11-18|older version not in used in the ports tree
+graphics/libgnomecanvasmm|graphics/libgnomecanvasmm26|2013-11-18|older version not in used in the ports tree
