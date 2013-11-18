@@ -20,20 +20,16 @@ COMMENT=	Tile-removing puzzle game for the X Window system
 USES=		imake
 USE_XORG=	xpm
 INSTALL_TARGET=	install install.dir
-BINOWN=		root
-BINGRP=		games
-BINMODE=	2755
-MAKE_ENV+=	BINOWN=${BINOWN} BINGRP=${BINGRP} BINMODE=${BINMODE}
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/sxsame ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/sxsame
+	(cd ${WRKSRC}/contrib ; ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/X11/sxsame)
+	${TOUCH} ${STAGEDIR}${PREFIX}/lib/X11/sxsame/hiscore
+	@${CHMOD} 664 ${STAGEDIR}${PREFIX}/lib/X11/sxsame/hiscore
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in INSTALL.jp README.jp
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
