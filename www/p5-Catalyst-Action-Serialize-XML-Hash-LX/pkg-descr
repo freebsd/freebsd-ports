@@ -1,0 +1,4 @@
+XML::Hash::LX serialize/deserializer for Catalyst (Catalyst::Action::Serialize
+and Catalyst::Action::Deserialize).
+
+WWW: http://search.cpan.org/dist/Catalyst-Action-Serialize-XML-Hash-LX/

@@ -713,6 +713,7 @@
     SUBDIR += p5-CSS-Inliner
     SUBDIR += p5-Catalyst-Action-REST
     SUBDIR += p5-Catalyst-Action-RenderView
+    SUBDIR += p5-Catalyst-Action-Serialize-XML-Hash-LX
     SUBDIR += p5-Catalyst-ActionRole-ACL
     SUBDIR += p5-Catalyst-Authentication-Credential-HTTP
     SUBDIR += p5-Catalyst-Authentication-Credential-OpenID
