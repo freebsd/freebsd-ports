@@ -12,6 +12,7 @@ lib/stalin/stalin.architectures
 lib/stalin/xlib-c.c
 lib/stalin/xlib-original.sc
 lib/stalin/xlib.sc
+man/man1/stalin.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 share/emacs/site-lisp/stalin.el
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

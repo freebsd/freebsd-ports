@@ -9,15 +9,16 @@ MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 DISTNAME=	stalin-freebsd-${PORTVERSION}_1
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An aggressive optimizing Scheme compiler
+COMMENT=	Aggressive optimizing Scheme compiler
 
-LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
+LIB_DEPENDS=	libgc.so:${PORTSDIR}/devel/boehm-gc
 
 USE_BZIP2=	yes
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 ONLY_FOR_ARCHS_REASON=	has not been bootstrapped on other platforms yet
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
@@ -35,26 +36,23 @@ BROKEN=		Does not compile on sparc64: includes i386 asm
 
 EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
 SUB_FILES=	stalin.sh
-MAN1=	stalin.1
 
 do-build:
-	(cd ${WRKSRC}/ && ${CC} -o stalin -I${LOCALBASE}/include \
+	(cd ${WRKSRC} && ${CC} -o stalin -I${LOCALBASE}/include \
 	    -L${LOCALBASE}/lib -lgc -lm ${CFLAGS} ${STALIN_SRC})
 	ar -rc ${WRKSRC}/libstalin.a
 
 do-install:
-	${MKDIR} ${STALIN_LIBDIR}/
-	${INSTALL_PROGRAM} ${WRKSRC}/stalin ${STALIN_LIBDIR}/
-	(cd ${WRKSRC}/include && ${COPYTREE_SHARE} \* ${STALIN_LIBDIR}/)
-	${CHMOD} 755 ${STALIN_LIBDIR}
-	${CHMOD} a+x ${STALIN_LIBDIR}/stalin-architecture-name
-	${INSTALL_SCRIPT} ${WRKDIR}/stalin.sh ${PREFIX}/bin/stalin
-	${INSTALL_MAN} ${WRKSRC}/stalin.1 ${MAN1PREFIX}/man/man1/
-	${INSTALL_DATA} ${WRKSRC}/stalin.el ${EMACSLISPDIR}/
-	${INSTALL_DATA} ${WRKSRC}/libstalin.a ${STALIN_LIBDIR}/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
-.endif
+	@${MKDIR} ${STAGEDIR}${STALIN_LIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/stalin ${STAGEDIR}${STALIN_LIBDIR}
+	(cd ${WRKSRC}/include && ${COPYTREE_SHARE} \* ${STAGEDIR}${STALIN_LIBDIR})
+	${CHMOD} 755 ${STAGEDIR}${STALIN_LIBDIR}
+	${CHMOD} a+x ${STAGEDIR}${STALIN_LIBDIR}/stalin-architecture-name
+	${INSTALL_SCRIPT} ${WRKDIR}/stalin.sh ${STAGEDIR}${PREFIX}/bin/stalin
+	${INSTALL_MAN} ${WRKSRC}/stalin.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/stalin.el ${STAGEDIR}${EMACSLISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/libstalin.a ${STAGEDIR}${STALIN_LIBDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
