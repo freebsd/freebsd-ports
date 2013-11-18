@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Template/Plugin/StripScripts.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/StripScripts/.packlist
+%%PERL5_MAN3%%/Template::Plugin::StripScripts.3.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/StripScripts
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
+@dirrmtry %%SITE_PERL%%/Template/Plugin
+@dirrmtry %%SITE_PERL%%/Template

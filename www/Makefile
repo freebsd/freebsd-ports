@@ -1197,6 +1197,7 @@
     SUBDIR += p5-Template-Plugin-Markdown
     SUBDIR += p5-Template-Plugin-Monta
     SUBDIR += p5-Template-Plugin-Number-Format
+    SUBDIR += p5-Template-Plugin-StripScripts
     SUBDIR += p5-Template-Plugin-Subst
     SUBDIR += p5-Template-Plugin-VMethods
     SUBDIR += p5-Template-Provider-Encoding
