@@ -165,6 +165,7 @@
     SUBDIR += libgda5-mysql
     SUBDIR += libgda5-postgresql
     SUBDIR += libgda5-ui
+    SUBDIR += libgdamm
     SUBDIR += libgdamm5
     SUBDIR += libgnomedb
     SUBDIR += libgnomedb-reference
