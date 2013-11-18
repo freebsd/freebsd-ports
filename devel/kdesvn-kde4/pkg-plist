@@ -52,6 +52,8 @@ lib/kde4/kio_ksvn.so
 lib/libsvnqt.so
 lib/libsvnqt.so.7
 lib/libsvnqt.so.7.0.1
+man/man1/kdesvn.1.gz
+man/man1/kdesvnaskpass.1.gz
 share/applications/kde4/kdesvn.desktop
 share/apps/kconf_update/kdesvn-use-external-update.sh
 share/apps/kconf_update/kdesvnpartrc-use-external.upd

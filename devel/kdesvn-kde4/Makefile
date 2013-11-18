@@ -10,7 +10,7 @@ MASTER_SITES=	http://kdesvn.alwins-world.de/downloads/
 MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	KDE frontend for Subversion
 
-LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion
+LIB_DEPENDS=	libsvn_client-1.so:${PORTSDIR}/devel/subversion
 
 LICENSE=	GPLv2
 
@@ -24,9 +24,6 @@ USE_LDCONFIG=	yes
 USE_QT4=	corelib gui xml network dbus svg qt3support sql \
 		qmake_build moc_build rcc_build uic_build linguist_build
 
-MAN1=		kdesvn.1 kdesvnaskpass.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -45,8 +42,5 @@ post-patch:
 	${REINPLACE_CMD} -e 's,ADD_SUBDIRECTORY(po), ,g' \
 		${WRKSRC}/CMakeLists.txt
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
