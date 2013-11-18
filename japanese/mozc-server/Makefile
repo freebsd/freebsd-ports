@@ -82,6 +82,7 @@ BUILD_GYP_CMD=	cd ${WRKSRC}/third_party/gyp && \
 post-patch:
 	${MKDIR} ${WRKSRC}/mozc_build_tools/linux
 	${LN} -sf ${LOCALBASE}/bin/protoc ${WRKSRC}/mozc_build_tools/linux/
+	${REINPLACE_CMD} 's,-liconv,${ICONV_LIB},g' ${WRKSRC}/gui/qt_libraries.gypi
 .if ${BUILD_MOZC_LIST:Mfcitx_mozc} == "fcitx_mozc"
 	${REINPLACE_CMD} 's,/po/mo},%po}mo,g' \
 		${WRKSRC}/unix/fcitx/gen_fcitx_mozc_i18n.sh
