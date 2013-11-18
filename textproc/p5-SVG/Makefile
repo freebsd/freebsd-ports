@@ -15,9 +15,8 @@ LICENSE_COMB=	dual
 
 OPTIONS_DEFINE=	EXAMPLES
 
-USES=		perl5
+USES=		perl5 dos2unix
 USE_PERL5=	configure
-USE_DOS2UNIX=	yes
 
 .include <bsd.port.options.mk>
 

@@ -13,9 +13,8 @@ COMMENT=	Modules to work with POD (Plain Old Documentation)
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-USES=		perl5
+USES=		perl5 dos2unix
 USE_PERL5=	configure
-USE_DOS2UNIX=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/EXE_FILES/d' ${WRKSRC}/Makefile.PL

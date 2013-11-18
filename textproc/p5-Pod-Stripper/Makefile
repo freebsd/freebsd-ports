@@ -11,8 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Strip all pod, and output what's left
 
-USES=		perl5
+USES=		perl5 dos2unix
 USE_PERL5=	configure
-USE_DOS2UNIX=	yes
 
 .include <bsd.port.mk>

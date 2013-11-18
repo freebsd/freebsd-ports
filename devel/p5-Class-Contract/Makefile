@@ -10,9 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Design-by-Contract OO in Perl
 
-USES=		perl5
+USES=		perl5 dos2unix
 USE_PERL5=	configure
-USE_DOS2UNIX=	yes
 PLIST_SUB+=	EXAMPLESDIR="share/examples/${PORTNAME}"
 
 pre-configure:

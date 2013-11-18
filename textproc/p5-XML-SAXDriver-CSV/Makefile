@@ -16,8 +16,7 @@ BUILD_DEPENDS=	p5-Text-CSV_XS>=0.22:${PORTSDIR}/textproc/p5-Text-CSV_XS \
 		p5-XML-SAX>=0.14:${PORTSDIR}/textproc/p5-XML-SAX
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 dos2unix
 USE_PERL5=	configure
-USE_DOS2UNIX=	yes
 
 .include <bsd.port.mk>
