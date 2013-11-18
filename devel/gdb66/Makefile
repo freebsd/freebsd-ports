@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=gdb/:gdb
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:gdb
 
 MAINTAINER=	mi@aldan.algebra.com
-COMMENT=	GNU GDB of newer version than comes with the system
+COMMENT?=	GNU GDB of newer version than comes with the system
 
 PKGNAMESUFFIX=	66
 
