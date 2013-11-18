@@ -9,6 +9,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast and lightweight key/value database library by Google
 
+LICENSE=	BSD
+
 OPTIONS_DEFINE=	GPERFTOOLS SNAPPY
 OPTIONS_DEFAULT=SNAPPY
 
@@ -25,14 +27,12 @@ NOT_FOR_ARCHS_REASON=	not yet ported to this platform
 SHLIB_MAJOR=	${PORTVERSION:R:R}
 SHLIB_MINOR=	${PORTVERSION:R:E}
 
+GPERFTOOLS_LIB_DEPENDS=	libtcmalloc.so:${PORTSDIR}/devel/google-perftools
+SNAPPY_LIB_DEPENDS=	libsnappy.so:${PORTSDIR}/archivers/snappy
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MGPERFTOOLS}
-LIB_DEPENDS+=	libtcmalloc.so:${PORTSDIR}/devel/google-perftools
-.endif
-
 .if ${PORT_OPTIONS:MSNAPPY}
-LIB_DEPENDS+=	libsnappy.so:${PORTSDIR}/archivers/snappy
 SNAPPY=		1
 .else
 SNAPPY=		0
