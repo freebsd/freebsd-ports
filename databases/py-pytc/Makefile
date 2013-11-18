@@ -15,10 +15,8 @@ LIB_DEPENDS=	tokyocabinet:${PORTSDIR}/databases/tokyocabinet
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pytc.so
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
