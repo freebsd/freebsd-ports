@@ -10,6 +10,7 @@ include/nickle/opcode.h
 include/nickle/ref.h
 include/nickle/stack.h
 include/nickle/value.h
+man/man1/nickle.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/COPYING
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb.5c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cribbage.5c
