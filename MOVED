@@ -5195,3 +5195,4 @@ textproc/stardict2-quick|textproc/stardict-quick|2013-11-17|Renamed
 x11-toolkits/libgnomeuimm|x11-toolkits/libgnomeuimm26|2013-11-18|older version not in used in the ports tree
 devel/libglademm|devel/libglademm|2013-11-18|older version not in used in the ports tree
 graphics/libgnomecanvasmm|graphics/libgnomecanvasmm26|2013-11-18|older version not in used in the ports tree
+x11/libgnomemm|x11/libgnomemm26|2013-11-18|older version not in used in the ports tree
