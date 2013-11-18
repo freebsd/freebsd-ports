@@ -2,35 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	scmpc
-PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTVERSION=	0.4.1
 CATEGORIES=	audio
-MASTER_SITES=	http://cloud.github.com/downloads/cmende/${PORTNAME}/
+MASTER_SITES=	http://cdn.bitbucket.org/cmende/${PORTNAME}/downloads/
 
 MAINTAINER=	legioner.r@gmail.com
-COMMENT=	An Audioscrobbler client for MPD
+COMMENT=	Audioscrobbler client for MusicPD
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	confuse.0:${PORTSDIR}/devel/libconfuse \
-		curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libconfuse.so:${PORTSDIR}/devel/libconfuse \
+		libcurl.so:${PORTSDIR}/ftp/curl \
+		libmpdclient.so:${PORTSDIR}/audio/libmpdclient
 
 USES=		gmake pkgconfig
-NO_STAGE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 
-MAN1=		scmpc.1
-PLIST_FILES=	bin/scmpc
-PORTDOCS=	NEWS README scmpc.conf.example
-
-.include <bsd.port.options.mk>
+PLIST_FILES=	bin/scmpc man/man1/scmpc.1.gz
+PORTDOCS=	NEWS README.md scmpc.conf.example
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
