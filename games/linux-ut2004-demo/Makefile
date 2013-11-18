@@ -17,7 +17,6 @@ COMMENT=	Unreal Tournament 2004 demo
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
-NO_PACKAGE=	Distfile size is 275MB, set FORCE_PACKAGE if you really want to build this package
 RESTRICTED=	Redistribution is limited, see license
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -38,12 +37,14 @@ PORTDOCS=	*
 LIBDIRS=	Animations Benchmark ForceFeedback KarmaData Maps Music \
 		Sounds Speech StaticMeshes System Textures Web
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS NVIDIA_GL
+NVIDIA_GL_DESC=	Use GL driver from nvidia-driver
 
-.if defined(WITH_NVIDIA_GL)
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
-.else
+NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MNVIDIA_GL}
 USE_LINUX_APPS+=dri
 .endif
 
@@ -64,30 +65,21 @@ pre-install:
 		| ${SED} -e 's|^|@dirrm ${UTDIR_REL}/|' >> ${PLIST}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/ut2004-demo ${PREFIX}/bin
-
+	${INSTALL_SCRIPT} ${WRKDIR}/ut2004-demo ${STAGEDIR}${PREFIX}/bin
 	cd ${WRKSRC} && \
 	${FIND} ${LIBDIRS} -type d ! -empty -exec \
-		${MKDIR} "${UTDIR}/{}" \; && \
+		${MKDIR} "${STAGEDIR}${UTDIR}/{}" \; && \
 	${FIND} ${LIBDIRS} -type f -exec \
-		${INSTALL_DATA} "{}" "${UTDIR}/{}" \;
-
-	-${CHOWN} ${BINOWN}:${BINGRP} ${UTDIR}/System/*-bin
-	${CHMOD} ${BINMODE} ${UTDIR}/System/*-bin
-
-	-${CHOWN} ${LIBOWN}:${LIBGRP} ${UTDIR}/System/*.so*
-	${CHMOD} ${LIBMODE} ${UTDIR}/System/*.so*
-
-	${MKDIR} ${DATADIR}
+		${INSTALL_DATA} "{}" "${STAGEDIR}${UTDIR}/{}" \;
+	${CHMOD} ${BINMODE} ${STAGEDIR}${UTDIR}/System/*-bin
+	${CHMOD} ${LIBMODE} ${STAGEDIR}${UTDIR}/System/*.so*
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for f in Help/UT2004Logo.bmp ut2004.xpm
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
 .endfor
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in Help/Manual.pdf README.linux
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
