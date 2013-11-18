@@ -1,7 +1,7 @@
 #!/bin/sh
 
-SCOREDIR="/var/games/tecnoballs"
-SCOREFILE="/var/games/tecnoballz/tecnoballz.hi"
+SCOREDIR="/var/games/tecnoballz"
+SCOREFILE="${SCOREDIR}/tecnoballz.hi"
 
 [ "$2" != "POST-INSTALL" -o -f "$SCOREFILE" ] && exit 0
 

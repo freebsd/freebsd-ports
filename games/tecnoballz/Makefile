@@ -12,18 +12,18 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A brick breaker (Arkanoid-like game)
 
-LIB_DEPENDS=	mikmod:${PORTSDIR}/audio/libmikmod \
-		vorbisfile:${PORTSDIR}/audio/libvorbis \
-		ogg:${PORTSDIR}/audio/libogg \
-		smpeg:${PORTSDIR}/multimedia/smpeg
+LIB_DEPENDS=	libmikmod.so:${PORTSDIR}/audio/libmikmod \
+		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
+		libogg.so:${PORTSDIR}/audio/libogg \
+		libsmpeg.so:${PORTSDIR}/multimedia/smpeg
 
+USES=		gmake
 USE_AUTOTOOLS=	automake aclocal
 AUTOMAKE_ARGS=	--add-missing
 USE_SDL=	sdl mixer image
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-MAN6=		tecnoballz.6
+PORTDATA=	*
 
 DESKTOP_ENTRIES=	"TecnoballZ" \
 			"A brick breaker (Arkanoid-like game)" \
@@ -32,7 +32,6 @@ DESKTOP_ENTRIES=	"TecnoballZ" \
 			"Game;ArcadeGame;" \
 			false
 
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC}/include -name '*.h' | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|SDL/||'
@@ -46,6 +45,6 @@ post-patch:
 
 post-install:
 	@cd ${WRKSRC}/src/TecnoballZ && ${FIND} . -name "Makefile*" -delete
-	@cd ${WRKSRC}/src/TecnoballZ && ${COPYTREE_SHARE} . ${DATADIR}
+	@cd ${WRKSRC}/src/TecnoballZ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
