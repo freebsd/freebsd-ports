@@ -177,7 +177,6 @@
     SUBDIR += dfc
     SUBDIR += di
     SUBDIR += dim
-    SUBDIR += dircomp
     SUBDIR += dirdiff
     SUBDIR += dirvish
     SUBDIR += diskcheckd
