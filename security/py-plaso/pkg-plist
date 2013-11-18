@@ -1,8 +1,10 @@
+bin/image_export.py
 bin/log2timeline.py
-bin/plaso_console.py
-bin/plaso_information.py
+bin/pinfo.py
+bin/plasm.py
+bin/plaso_extract_search_history.py
 bin/pprof.py
-bin/presets.py
+bin/preg.py
+bin/pshell.py
 bin/psort.py
-bin/psort_test.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
