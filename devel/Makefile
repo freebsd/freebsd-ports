@@ -1006,7 +1006,6 @@
     SUBDIR += libglade-java
     SUBDIR += libglade2
     SUBDIR += libglade2-reference
-    SUBDIR += libglademm
     SUBDIR += libglademm24
     SUBDIR += libgpc
     SUBDIR += libgsf

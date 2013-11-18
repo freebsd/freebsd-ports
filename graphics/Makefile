@@ -507,7 +507,6 @@
     SUBDIR += libgltext
     SUBDIR += libgnomecanvas
     SUBDIR += libgnomecanvas-reference
-    SUBDIR += libgnomecanvasmm
     SUBDIR += libgnomecanvasmm26
     SUBDIR += libgphoto2
     SUBDIR += libimg
