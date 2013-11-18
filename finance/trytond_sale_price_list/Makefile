@@ -1,3 +1,4 @@
+# Created by: Matthias Petermann <matthias@petermann-it.de>
 # $FreeBSD$
 
 PORTNAME=	trytond_sale_price_list
