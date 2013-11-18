@@ -1,8 +1,8 @@
 bin/fromrtf
 bin/testrtf
 bin/tortf
-include/rtfcomp/rtfcomp.h
 include/rtfcomp/errors.h
+include/rtfcomp/rtfcomp.h
 lib/librtfcomp.a
 lib/librtfcomp.la
 lib/librtfcomp.so
