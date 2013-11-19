@@ -11,6 +11,7 @@ share/icons/hicolor/48x48/apps/xfce4-whiskermenu.png
 share/icons/hicolor/64x64/apps/xfce4-whiskermenu.png
 share/icons/hicolor/scalable/apps/xfce4-whiskermenu.svg
 share/locale/ar/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
+share/locale/ast/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/bg/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
@@ -20,6 +21,7 @@ share/locale/el/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/en_GB/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/es/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/et/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
+share/locale/fa/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/fi/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/fr/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/he/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
@@ -44,6 +46,7 @@ share/locale/tr/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/uk/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/uz/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/vi/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
+share/locale/zh_TW/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/xfce4/panel/plugins/whiskermenu.desktop
 @dirrmtry share/xfce4/panel/plugins
 @dirrmtry share/xfce4/panel
@@ -52,6 +55,8 @@ share/xfce4/panel/plugins/whiskermenu.desktop
 @dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/kk/LC_MESSAGES
 @dirrmtry share/locale/kk
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry lib/xfce4/panel/plugins
 @dirrmtry lib/xfce4/panel
 @dirrmtry lib/xfce4
