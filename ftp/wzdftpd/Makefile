@@ -45,9 +45,8 @@ CONFIGURE_ARGS+=	--disable-utf8
 .endif
 
 .if ${PORT_OPTIONS:MTCL}
-USE_TCL_BUILD=	yes
-USE_TCL=	yes
-CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR}
+USES+=		tcl
+CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR}
 PLIST_SUB+=	TCL=""
 .else
 PLIST_SUB+=	TCL="@comment "
@@ -60,7 +59,7 @@ CONFIGURE_ARGS+=	--disable-openssl
 .endif
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--disable-gnutls
 .endif
@@ -111,13 +110,13 @@ PLIST_SUB+=	ZEROCONF="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MAVAHI}
-LIB_DEPENDS+=	dbus-1:${PORTSDIR}/devel/dbus \
-		avahi-core:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS+=	libdbus-1.so:${PORTSDIR}/devel/dbus \
+		libavahi-core.so:${PORTSDIR}/net/avahi-app
 CONFIGURE_ARGS+=	--with-zeroconf --enable-avahi
 .endif
 
 .if ${PORT_OPTIONS:MHOWL}
-LIB_DEPENDS+=	howl:${PORTSDIR}/net/howl
+LIB_DEPENDS+=	libhowl.so:${PORTSDIR}/net/howl
 CPPFLAGS+=	-I${LOCALBASE}/include/howl
 CONFIGURE_ARGS+=	--with-zeroconf --enable-howl
 .endif
