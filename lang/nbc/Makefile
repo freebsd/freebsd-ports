@@ -13,26 +13,19 @@ DISTNAME=		${PORTNAME}-${PORTVERSION}.src
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		rene@FreeBSD.org
-COMMENT=		NBC is a programming language for the LEGO MINDSTORMS NXT product
+COMMENT=		Programming language for the LEGO MINDSTORMS NXT
 
 MAKE_JOBS_UNSAFE=	yes
 MAKEFILE=		nbcunix.mak
-
-OPTIONS_DEFINE=	DOCS ROBOCTL
-
-ROBOCTL_DESC=	Include roboctl to communicate with the NXT
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MROBOCTL}
-RUN_DEPENDS=		legoctl:${PORTSDIR}/devel/roboctl
-.endif
-
-USES=			gmake
-USE_DOS2UNIX=		yes
-USE_FPC=		fcl-base fcl-image
-
 WRKSRC=			${WRKDIR}/NXT
+
+OPTIONS_DEFINE=		DOCS ROBOCTL
+ROBOCTL_DESC=		Include roboctl to communicate with the NXT
+
+ROBOCTL_RUN_DEPENDS=	legoctl:${PORTSDIR}/devel/roboctl
+
+USES=			dos2unix gmake
+USE_FPC=		fcl-base fcl-image
 
 PLIST_FILES=		bin/nbc \
 			include/nbc/NXCDefs.h \
@@ -40,10 +33,8 @@ PLIST_FILES=		bin/nbc \
 			include/nbc/NXTDefs.h
 PLIST_DIRS=		include/nbc
 
-.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=		Changelog \
 			Readme
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/${MAKEFILE}
@@ -53,10 +44,9 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/nbc
 	${INSTALL_PROGRAM} ${WRKSRC}/nbc ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/nbc
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/doc/Changelog ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/doc/Readme ${STAGEDIR}${DOCSDIR}
-.endif
+.for f in ${PORDOCS}
+	${INSTALL_DATA} ${WRKDIR}/doc/${f} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>
