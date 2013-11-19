@@ -30,33 +30,30 @@ BUILD_WRKSRC=	${WRKSRC}/engine_source
 MAKEFILE=	BSDmakefile
 MAKE_ENV=	STRIP="${STRIP_CMD}"
 ALL_TARGET=	# empty
+MAKE_JOBS_UNSAFE=yes
 
 PORTDOCS=	README.txt
+PORTDATA=	*
 
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
-OPTIONS_MULTI=	FLAVOR
-OPTIONS_MULTI_FLAVOR=	CLIENT DEDICATED
+OPTIONS_MULTI=	COMPONENTS
+OPTIONS_MULTI_COMPONENTS=	CLIENT DEDICATED
+OPTIONS_DEFAULT=OPTIMIZED_CFLAGS CLIENT DEDICATED
+
 CLIENT_DESC=	Build client
 DEDICATED_DESC=	Dedicated server
-FLAVOR_DESC=	Executable Selection
 
-OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS CLIENT DEDICATED
-
-PLIST_FILES=	%%DATADIR%%/ssgamedata000001.pk3
-PLIST_DIRS=	%%DATADIR%%
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}
 ALL_TARGET+=	cl-release
 USE_XORG+=	x11 xpm xext xxf86dga xxf86vm
-PLIST_FILES+=	bin/steelstorm
+PLIST_FILES+=	bin/${PORTNAME}
 .endif
 
 .if ${PORT_OPTIONS:MDEDICATED}
 ALL_TARGET+=	sv-release
-PLIST_FILES+=	bin/steelstorm-dedicated
+PLIST_FILES+=	bin/${PORTNAME}-dedicated
 .endif
 
 post-patch:
@@ -71,16 +68,14 @@ post-patch:
 
 do-install:
 .if ${PORT_OPTIONS:MCLIENT}
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/darkplaces-glx ${PREFIX}/bin/steelstorm
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/darkplaces-glx ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 .endif
 .if ${PORT_OPTIONS:MDEDICATED}
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/darkplaces-dedicated ${PREFIX}/bin/steelstorm-dedicated
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/darkplaces-dedicated ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-dedicated
 .endif
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/gamedata/ssgamedata000001.pk3 ${DATADIR}/
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}/
-.endif
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/gamedata/ssgamedata000001.pk3 ${STAGEDIR}${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
