@@ -17,8 +17,8 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	regripper>=0:${PORTSDIR}/security/regripper
 
 NO_WRKSUBDIR=	yes
-USE_DOS2UNIX=	yes
 NO_BUILD=	yes
+USES=		dos2unix
 
 PORTDATA=	*.pl all ntuser sam security software system usrclass
 
