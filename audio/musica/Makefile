@@ -10,8 +10,9 @@ MASTER_SITES=	http://ict.ewi.tudelft.nl/~erik/open-source/musica/
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	GTK based midi player
 
+LICENSE=	GPLv2
+
 USE_GNOME=	gtk12
-NO_STAGE=	yes
 
 GNU_CONFIGURE=	yes
 USES=		gmake
