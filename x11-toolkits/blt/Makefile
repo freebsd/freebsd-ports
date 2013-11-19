@@ -2,50 +2,42 @@
 # $FreeBSD$
 
 PORTNAME=	blt
-PORTVERSION=	2.4z
-PORTREVISION=	7
+PORTVERSION=	2.5.3
 CATEGORIES=	x11-toolkits tk
-MASTER_SITES=	SF/${PORTNAME}/BLT/BLT%20${PORTVERSION} \
-		ftp://ftp.csl.sony.co.jp/pub/kjc/ttt-libs/
-DISTNAME=	BLT${PORTVERSION}
-
-PATCH_SITES=	${MASTER_SITE_SOURCEFORGE:C/%SUBDIR%/${PORTNAME}\/BLT\/BLT%20${PORTVERSION}/} \
-		ftp://ftp.csl.sony.co.jp/pub/kjc/ttt-libs/
-PATCH_SITE_SUBDIR=	${PORTNAME}
-PATCHFILES=	blt2.4z-patch-2
-PATCH_DIST_STRIP=-p1
+MASTER_SITES=	SF/wize
+DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Extension for the Tk toolkit (with shared libs)
+COMMENT=	Extension to the Tk toolkit
+
+LICENSE=	BSD
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
+WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:R}
+
+USES+=		gmake tk:84,85
+USE_ZIP=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
-
-WRKSRC=		${WRKDIR}/blt2.4z
 GNU_CONFIGURE=	yes
-CFLAGS+=	-Wall -Wno-uninitialized
-CFLAGS+=	-I${TK_INCLUDEDIR}/generic -I${TK_INCLUDEDIR}/unix
+CFLAGS+=	-I${TCL_INCLUDEDIR}/generic
+MAKE_JOBS_UNSAFE=
 
-USES+=		tk:84,85
-USE_XORG=	x11
+PLIST_SUB+=	BLTVER=${PORTVERSION:R} \
+    		BLTSHORTVER=${PORTVERSION:R:S/.//}
+
+CONFIGURE_ARGS+=--prefix=${PREFIX} \
+		--exec_prefix=${PREFIX} \
+		--enable-jpeg=${LOCALBASE} \
+		--with-tcl=${TCL_LIBDIR} \
+		--with-tk=${TK_LIBDIR} \
+		--with-tcllibs=${LOCALBASE}/lib \
+		--with-tklibs=${LOCALBASE}/lib
 
 post-patch:
 	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
 	    ${REINPLACE_CMD} -e '/^INSTALL_ROOT/s|$$|$${DESTDIR}|'
-
-post-install:
-	${LN} -sf libBLT24.so.3 ${STAGEDIR}${PREFIX}/lib/libBLT24.so
-	${LN} -sf libBLTlite24.so.3 ${STAGEDIR}${PREFIX}/lib/libBLTlite24.so
-
-CONFIGURE_ARGS+=--exec_prefix=${PREFIX} \
-		--enable-jpeg=${LOCALBASE} \
-		--with-tcl=${TCL_LIBDIR} \
-		--with-tk=${TK_LIBDIR} \
-		--with-tcllibs=${LOCALBASE}/lib/ \
-		--with-tklibs=${LOCALBASE}/lib/ \
-		--with-tclincls=${TCL_INCLUDEDIR} \
-		--with-tkincls=${TK_INCLUDEDIR}
+	${FIND} ${WRKSRC}/demos -name "*.tcl" | ${XARGS} \
+	    ${REINPLACE_CMD} -e 's|../src/bltwish|${LOCALBASE}/bin/bltwish|'
 
 .include <bsd.port.mk>
