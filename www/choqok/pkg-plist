@@ -103,7 +103,6 @@ share/apps/choqok_nowlistening/nowlisteningui.rc
 share/apps/choqok_quickfilter/quickfilterui.rc
 share/apps/choqok_searchaction/searchactionui.rc
 share/apps/cmake/modules/FindChoqok.cmake
-share/apps/cmake/modules/FindQtOAuth.cmake
 share/apps/khtml/kpartplugins/konqchoqok.desktop
 share/apps/khtml/kpartplugins/konqchoqok.rc
 share/config.kcfg/bit_ly_settings.kcfg
