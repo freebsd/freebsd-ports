@@ -335,7 +335,6 @@
     SUBDIR += tivodecode
     SUBDIR += totem
     SUBDIR += totem-pl-parser
-    SUBDIR += tovid
     SUBDIR += transcode
     SUBDIR += tstools
     SUBDIR += tunapie

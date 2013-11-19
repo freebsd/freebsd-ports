@@ -5242,3 +5242,4 @@ net/lua50-luasocket||2013-11-18|Removed, lua50 is EOLed
 devel/lua50-compat51||2013-11-18|Removed, lua50 is EOLed
 lang/lua50|lang/lua|2013-11-18|Removed, lua50 is EOLed
 security/squidclamav|www/squidclamav|2013-11-18|Has expired: Obsolete and broken with clang, use www/squidclamav instead
+multimedia/tovid||2013-11-19|Has expired: No more public distfiles
