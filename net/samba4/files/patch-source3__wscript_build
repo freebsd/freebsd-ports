@@ -1,5 +1,5 @@
---- ./source3/wscript_build.orig	2012-12-11 17:10:13.000000000 +0000
-+++ ./source3/wscript_build	2013-02-05 04:25:57.199878484 +0000
+--- source3/wscript_build.orig	2013-07-01 09:15:40.000000000 +0200
++++ source3/wscript_build	2013-11-12 10:13:36.004046408 +0100
 @@ -1,7 +1,8 @@
  #!/usr/bin/env python
  
@@ -28,7 +28,7 @@
                    source=WINBIND_WINS_NSS_SRC,
                    deps='''param libsmb LIBTSOCKET''',
                    realname='libnss_wins.so.2',
-@@ -972,10 +982,11 @@
+@@ -972,10 +982,12 @@
                      LIBAFS_SETTOKEN
                      RPC_SERVER
                      NDR_SMBXSRV
@@ -38,10 +38,19 @@
                      NDR_SMB_ACL
                      netapi
 +                    inotify
++                    dns_sd
                      ''' + bld.env['dmapi_lib'],
                      private_library=True,
                      vars=locals())
-@@ -1629,7 +1640,7 @@
+@@ -1277,6 +1289,7 @@
+                  libsmb
+                  msrpc3
+                  RPC_NDR_SRVSVC
++                 dns_sd
+                  cli_smb_common''')
+ 
+ bld.SAMBA3_BINARY('net',
+@@ -1629,7 +1642,7 @@
  
  bld.SAMBA3_PYTHON('pylibsmb',
                    source='libsmb/pylibsmb.c',

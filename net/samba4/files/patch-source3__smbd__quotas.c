@@ -1,6 +1,6 @@
---- ./source3/smbd/quotas.c.orig	2010-04-01 15:26:22.000000000 +0200
-+++ ./source3/smbd/quotas.c	2010-04-23 01:08:35.000000000 +0200
-@@ -1235,6 +1235,7 @@
+--- ./source3/smbd/quotas.c.orig	2012-10-02 08:24:45.000000000 +0000
++++ ./source3/smbd/quotas.c	2013-11-18 22:45:12.800444516 +0000
+@@ -144,6 +144,7 @@
  	if (!cutstr)
  		return False;
  
@@ -8,7 +8,7 @@
  	memset(cutstr, '\0', len+1);
  	host = strncat(cutstr,mnttype, sizeof(char) * len );
  	DEBUG(5,("nfs_quotas: looking for mount on \"%s\"\n", cutstr));
-@@ -1243,7 +1244,7 @@
+@@ -152,7 +153,7 @@
  	args.gqa_pathp = testpath+1;
  	args.gqa_uid = uid;
  

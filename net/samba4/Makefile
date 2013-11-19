@@ -18,7 +18,7 @@ CONFLICTS?=		*samba3[2-6]-3.*
 
 SAMBA4_BASENAME=	samba
 SAMBA4_PORTNAME=	${SAMBA4_BASENAME}4
-SAMBA4_VERSION=		4.0.8
+SAMBA4_VERSION=		4.0.12
 SAMBA4_DISTNAME=	${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=		${WRKDIR}/${DISTNAME}
@@ -57,6 +57,8 @@ CONFIGURE_ARGS+=	--prefix="${PREFIX}" \
 			--with-privatedir="${SAMBA4_PRIVATEDIR}" \
 			--with-logfilebase="${SAMBA4_LOGDIR}"
 
+DESTDIRNAME=		--destdir
+
 WAF_TOOL=		buildtools/bin/waf
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	${WAF_TOOL} configure
@@ -66,33 +68,32 @@ CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 			PTHREAD_LDFLAGS="${PTHREAD_LIBS}"
 
 USE_PYTHON_BUILD=	-2.7
-USE_PERL5=		build
 
-USE_GCC=		4.2+
 USE_PYTHON=		yes
-USES=			pkgconfig gettext iconv perl5
+USES=			compiler perl5 pkgconfig iconv
+USE_PERL5=		build
 USE_LDCONFIG=		${SAMBA4_LIBDIR}
 
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
 PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 # XXX: Unconditional dependencies which can't be switched off(if present in the system)
 # popt
-LIB_DEPENDS+=		popt:${PORTSDIR}/devel/popt
+LIB_DEPENDS+=		libpopt.so:${PORTSDIR}/devel/popt
 # XXX: We should try to switch to libunwind, libexecinfo is gcc specific(?)
 # backtrace
-LIB_DEPENDS+=		execinfo:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS+=		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 # inotify
-LIB_DEPENDS+=		inotify:${PORTSDIR}/devel/libinotify
+LIB_DEPENDS+=		libinotify.so:${PORTSDIR}/devel/libinotify
 # SASL
-LIB_DEPENDS+=		sasl2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 # GNUTLS
-LIB_DEPENDS+=		gcrypt:${PORTSDIR}/security/libgcrypt
-LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		libgcrypt.so:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=		libgnutls.so:${PORTSDIR}/security/gnutls
 # NFS4 ACL glue
-LIB_DEPENDS+=		sunacl:${PORTSDIR}/sysutils/libsunacl
+LIB_DEPENDS+=		libsunacl.so:${PORTSDIR}/sysutils/libsunacl
 # External Samba dependencies
 # IDL compiler
-BUILD_DEPENDS+=		p5-Parse-Pidl>=${SAMBA4_VERSION}:${PORTSDIR}/devel/p5-Parse-Pidl
+BUILD_DEPENDS+=		p5-Parse-Pidl>=4.0.0:${PORTSDIR}/devel/p5-Parse-Pidl
 # talloc
 BUILD_DEPENDS+=		talloc>=2.0.8:${PORTSDIR}/devel/talloc
 RUN_DEPENDS+=		talloc>=2.0.8:${PORTSDIR}/devel/talloc
@@ -109,9 +110,11 @@ SAMBA4_BUNDLED_LIBS+=	!tdb
 BUILD_DEPENDS+=		ldb>=1.1.15:${PORTSDIR}/databases/ldb
 RUN_DEPENDS+=		ldb>=1.1.15:${PORTSDIR}/databases/ldb
 SAMBA4_BUNDLED_LIBS+=	!ldb
+# Don't use external libcom_err
+SAMBA4_BUNDLED_LIBS+=	com_err
 ##############################################################################
 # Options
-OPTIONS_DEFINE=		ACL_SUPPORT ADS AIO_SUPPORT AVAHI CUPS DEBUG \
+OPTIONS_DEFINE=		ACL_SUPPORT ADS AIO_SUPPORT CUPS DEBUG \
 			DNSUPDATE FAM_SUPPORT LDAP PAM_SMBPASS \
 			PTHREADPOOL QUOTAS SWAT SYSLOG UTMP WINBIND
 
@@ -141,10 +144,12 @@ OPTIONS_SINGLE_DNS=	NSUPDATE BIND98 BIND99
 BIND98_DESC=		Use bind98 as a DNS server frontend
 BIND99_DESC=		Use bind99 as a DNS server frontend
 NSUPDATE_DESC=		Use internal DNS with NSUPDATE utility
-
 OPTIONS_DEFAULT+=	NSUPDATE
 
-NO_STAGE=	yes
+OPTIONS_RADIO=		ZEROCONF
+OPTIONS_RADIO_ZEROCONF=	AVAHI MDNSRESPONDER
+OPTIONS_DEFAULT+=	AVAHI
+
 .include <bsd.port.options.mk>
 
 # !SAMBA4_SUBPORT
@@ -157,11 +162,15 @@ NO_STAGE=	yes
 CONFIGURE_ARGS+=	\
 			--with-pam \
 			--with-iconv \
+			--without-gettext \
 			--with-sendfile-support \
 			--builtin-libraries=smbclient \
-			${ICONV_CONFIGURE_BASE} \
-			--with-gettext="${LOCALBASE}"
+			${ICONV_CONFIGURE_BASE}
 
+# No fancy error messages
+.if ${COMPILER_TYPE} == "clang"
+CFLAGS+=		-fno-color-diagnostics
+.endif
 # for libexecinfo: (so that __builtin_frame_address() finds the top of the stack)
 .if ${ARCH} == "amd64"
 CFLAGS+=		-fno-omit-frame-pointer
@@ -173,7 +182,7 @@ SUB_LIST+=		NSUPDATE="@comment "
 .elif ${PORT_OPTIONS:MBIND99}
 RUN_DEPENDS+=		bind99>=9.9.0.0:${PORTSDIR}/dns/bind99
 SUB_LIST+=		NSUPDATE="@comment "
-.else
+.elif ${PORT_OPTIONS:MNSUPDATE}
 RUN_DEPENDS+=		samba-nsupdate:${PORTSDIR}/dns/samba-nsupdate
 SUB_LIST+=		NSUPDATE=""
 .endif
@@ -187,14 +196,14 @@ CONFIGURE_ARGS+=	--enable-debug
 
 # https://bugzilla.samba.org/show_bug.cgi?id=8969
 .if ${PORT_OPTIONS:MDEVELOPER}
-GDB_CMD?=		gdb76
+GDB_CMD?=		gdb761
 BUILD_DEPENDS+=		${GDB_CMD}:${PORTSDIR}/devel/gdb
 RUN_DEPENDS+=		${GDB_CMD}:${PORTSDIR}/devel/gdb
 SAMBA4_MODULES+=	auth_skel perfcount_test pdb_test vfs_shadow_copy_test vfs_skel_opaque vfs_skel_transparent vfs_fake_acls
 CONFIGURE_ARGS+=	--enable-developer --enable-socket-wrapper --enable-nss-wrapper --enable-selftest
 PLIST_SUB+=		DEVELOPER=""
 .else
-GDB_CMD=		/usr/bin/true
+GDB_CMD=		true
 PLIST_SUB+=		DEVELOPER="@comment "
 .endif
 ##############################################################################
@@ -228,7 +237,7 @@ WANT_EXP_MODULES=	idmap_ad vfs_cacheprime gpext_scripts gpext_security gpext_reg
 
 .if ${PORT_OPTIONS:MACL_SUPPORT}
 .	if ${OSVERSION} > 800000
-LIB_DEPENDS+=		sunacl:${PORTSDIR}/sysutils/libsunacl
+LIB_DEPENDS+=		libsunacl.so:${PORTSDIR}/sysutils/libsunacl
 WANT_EXP_MODULES+=	vfs_zfsacl
 SAMBA4_MODULES+=	vfs_zfsacl
 .	endif
@@ -250,14 +259,21 @@ CONFIGURE_ARGS+=	--without-aio-support
 .endif
 
 .if ${PORT_OPTIONS:MAVAHI}
-LIB_DEPENDS+=		avahi-client:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS+=		libavahi-client.so:${PORTSDIR}/net/avahi-app
 CONFIGURE_ARGS+=	--enable-avahi
 .else
 CONFIGURE_ARGS+=	--disable-avahi
 .endif
 
+.if ${PORT_OPTIONS:MMDNSRESPONDER}
+LIB_DEPENDS+=		libdns_sd.so:${PORTSDIR}/net/mDNSResponder
+CONFIGURE_ARGS+=	--enable-dnssd
+.else
+CONFIGURE_ARGS+=	--disable-dnssd
+.endif
+
 .if ${PORT_OPTIONS:MCUPS}
-LIB_DEPENDS+=		cups:${PORTSDIR}/print/cups-client
+LIB_DEPENDS+=		libcups.so:${PORTSDIR}/print/cups-client
 CONFIGURE_ARGS+=	--enable-cups --enable-iprint
 .else
 CONFIGURE_ARGS+=	--disable-cups --disable-iprint
@@ -364,7 +380,7 @@ PLIST_REINPLACE_${m:U}=	s|^@comment ${m} ||g
 .endfor
 ##############################################################################
 .if ! ${PORT_OPTIONS:MMANPAGES}
-CONFIGURE_ENV+=		XSLTPROC="/usr/bin/true"
+CONFIGURE_ENV+=		XSLTPROC="true"
 .else
 BUILD_DEPENDS+=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
 			xsltproc:${PORTSDIR}/textproc/libxslt
@@ -392,7 +408,7 @@ CONFIGURE_ARGS+=	--jobs=${MAKE_JOBS_NUMBER}
 _MAKE_JOBS+=		--jobs=${MAKE_JOBS_NUMBER}
 .endif
 
-MAN1+=			dbwrap_tool.1 findsmb.1 gentest.1 locktest.1 \
+SAMBA_MAN1+=		dbwrap_tool.1 findsmb.1 gentest.1 locktest.1 \
 			log2pcap.1 masktest.1 ndrdump.1 nmblookup.1 \
 			nmblookup4.1 ntlm_auth.1 oLschema2ldif.1 \
 			profiles.1 regdiff.1 regpatch.1 regshell.1 \
@@ -401,12 +417,12 @@ MAN1+=			dbwrap_tool.1 findsmb.1 gentest.1 locktest.1 \
 			smbstatus.1 smbtar.1 smbtorture.1 smbtree.1 \
 			testparm.1 vfstest.1 wbinfo.1
 
-MAN5+=			lmhosts.5 smbgetrc.5 smbpasswd.5 pam_winbind.conf.5 \
+SAMBA_MAN5+=		lmhosts.5 smbgetrc.5 smbpasswd.5 pam_winbind.conf.5 \
 			smb.conf.5
 
-MAN7+=			samba.7 winbind_krb5_locator.7
+SAMBA_MAN7+=		samba.7 winbind_krb5_locator.7
 
-MAN8+=			eventlogadm.8 idmap_ad.8 idmap_autorid.8 idmap_hash.8 \
+SAMBA_MAN8+=		eventlogadm.8 idmap_ad.8 idmap_autorid.8 idmap_hash.8 \
 			idmap_ldap.8 idmap_nss.8 idmap_rid.8 idmap_tdb.8 \
 			idmap_tdb2.8 net.8 nmbd.8 pam_winbind.8 pdbedit.8 \
 			samba-tool.8 samba.8 smbd.8 smbpasswd.8 smbspool.8 \
@@ -422,8 +438,6 @@ MAN8+=			eventlogadm.8 idmap_ad.8 idmap_autorid.8 idmap_hash.8 \
 			vfs_shadow_copy2.8 vfs_smb_traffic_analyzer.8 \
 			vfs_streams_depot.8 vfs_streams_xattr.8 vfs_time_audit.8 \
 			vfs_tsmsm.8 vfs_xattr_tdb.8 winbindd.8
-
-MLINKS=			smb.conf.5 smb4.conf.5 samba.8 samba4.8
 
 PORTDOCS=		README.FreeBSD
 
@@ -479,7 +493,7 @@ pre-build:
 			@${INSTALL_MAN} ${FILESDIR}/man/`basename ${man}` ${BUILD_WRKSRC}/bin/default/${man}
 .	endfor
 			-@${MKDIR} ${BUILD_WRKSRC}/bin/default/docs-xml/manpages
-.	for man in ${MAN1} ${MAN5} ${MAN7} ${MAN8}
+.	for man in ${SAMBA_MAN1} ${SAMBA_MAN5} ${SAMBA_MAN7} ${SAMBA_MAN8}
 			-@${INSTALL_MAN} ${BUILD_WRKSRC}/docs/manpages/${man} ${BUILD_WRKSRC}/bin/default/docs-xml/manpages
 .	endfor
 .endif
@@ -499,13 +513,12 @@ do-install:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-			@${MKDIR} ${DOCSDIR}
+			@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .	for doc in ${PORTDOCS}
-			@${INSTALL_DATA} ${WRKDIR}/${doc} ${DOCSDIR}
+			@${INSTALL_DATA} ${WRKDIR}/${doc} ${STAGEDIR}${DOCSDIR}
 .	endfor
+			@${LN} -sf smb.conf.5.gz ${STAGEDIR}${PREFIX}/man/man5/smb4.conf.5.gz
 .endif
-			@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-			@${CAT} ${PKGMESSAGE}
 
 .if ${PORT_OPTIONS:MDEVELOPER}
 test: build

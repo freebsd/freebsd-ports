@@ -12,9 +12,9 @@ Signed-off-by: Guenter Kukkukk <kukks@samba.org>
 
 diff --git a/source4/dns_server/dns_crypto.c b/source4/dns_server/dns_crypto.c
 index 7604a05..71adf68 100644
---- ./source4/dns_server/dns_crypto.c
-+++ ./source4/dns_server/dns_crypto.c
-@@ -244,6 +244,8 @@ WERROR dns_sign_tsig(struct dns_server *dns,
+--- ./source4/dns_server/dns_crypto.c.orig	2012-10-02 08:24:46.000000000 +0000
++++ ./source4/dns_server/dns_crypto.c	2013-11-18 22:45:12.818702284 +0000
+@@ -244,6 +244,8 @@
  	DATA_BLOB packet_blob, tsig_blob, sig;
  	uint8_t *buffer = NULL;
  	size_t buffer_len = 0;
@@ -23,7 +23,7 @@ index 7604a05..71adf68 100644
  	struct dns_server_tkey * tkey = NULL;
  	struct dns_res_rec *tsig = talloc_zero(mem_ctx, struct dns_res_rec);
  
-@@ -298,16 +300,44 @@ WERROR dns_sign_tsig(struct dns_server *dns,
+@@ -298,16 +300,44 @@
  		return DNS_ERR(SERVER_FAILURE);
  	}
  
@@ -40,18 +40,18 @@ index 7604a05..71adf68 100644
 +		   length bytes of the MIC (here 16 + 12 = 28 bytes) */
 +		miclen_bytes = sizeof(state->tsig->rdata.tsig_record.mac_size);
 +		mic_size     = miclen_bytes + state->tsig->rdata.tsig_record.mac_size;
-+
+ 
+-	memcpy(buffer, packet_blob.data, packet_blob.length);
+-	memcpy(buffer+packet_blob.length, tsig_blob.data, tsig_blob.length);
 +		buffer_len = mic_size + packet_blob.length + tsig_blob.length;
 +		buffer = talloc_zero_array(mem_ctx, uint8_t, buffer_len);
 +		if (buffer == NULL) {
 +			return WERR_NOMEM;
 +		}
  
--	memcpy(buffer, packet_blob.data, packet_blob.length);
--	memcpy(buffer+packet_blob.length, tsig_blob.data, tsig_blob.length);
 +		/* copy the 2 length bytes of request MIC in big-endian order */
 +		RSSVAL(buffer,0,state->tsig->rdata.tsig_record.mac_size);
- 
++
 +		/* copy the request MIC itself */
 +		memcpy(buffer + miclen_bytes, state->tsig->rdata.tsig_record.mac,
 +			  state->tsig->rdata.tsig_record.mac_size);
@@ -65,15 +65,13 @@ index 7604a05..71adf68 100644
 +		if (buffer == NULL) {
 +			return WERR_NOMEM;
 +		}
-+
+ 
 +		memcpy(buffer, packet_blob.data, packet_blob.length);
 +		memcpy(buffer+packet_blob.length, tsig_blob.data, tsig_blob.length);
 +	}
- 
++
 +	/* FIXME: as in the verify case, some padding is wrong */
 +	buffer_len -=2;
  	status = gensec_sign_packet(tkey->gensec, mem_ctx, buffer, buffer_len,
  				    buffer, buffer_len, &sig);
  	if (!NT_STATUS_IS_OK(status)) {
--- 
-1.7.3.4
