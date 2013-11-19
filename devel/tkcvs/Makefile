@@ -15,10 +15,13 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	tkdiff:${PORTSDIR}/textproc/tkdiff
 
 NO_BUILD=	yes
-USE_TCL_WRAPPER=yes
-USE_TK_WRAPPER=	yes
+USES=		tk
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	${FIND} ${WRKSRC} -type f | ${XARGS} \
+	    ${REINPLACE_CMD} -e '/^exec wish/s|wish|${WISH}|g' -e '/^exec tclsh/s|tclsh|${TCLSH}|g'
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tkcvs/tkcvs ${STAGEDIR}${PREFIX}/bin
