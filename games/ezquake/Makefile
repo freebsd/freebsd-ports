@@ -22,11 +22,10 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		pcre.3:${PORTSDIR}/devel/pcre \
 		png15:${PORTSDIR}/graphics/png
 
-USE_DOS2UNIX=	*.[ch] Makefile*
-USE_GMAKE=	yes
-USE_TCL=	yes
+USES=		gmake tcl dos2unix
+DOS2UNIX_GLOB=	*.[ch] Makefile*
 USE_CSTD=	gnu89
-MAKE_ENV=	TCL_SUFX="${TCL_VER:S/.//}"
+MAKE_ENV=	TCL_SUFX=${TCL_SHLIB_VER}
 .for v in TCL_INCLUDEDIR TCL_LIBDIR DATADIR
 MAKE_ENV+=	${v}="${${v}}"
 .endfor
