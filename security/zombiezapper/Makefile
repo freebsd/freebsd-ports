@@ -22,7 +22,8 @@ LDFLAGS+=	$$(${LIBNET_CONFIG} --libs)
 PORTDOCS=	USAGE tekpaper.txt
 PLIST_FILES=	bin/zz
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 do-build:
@@ -30,10 +31,10 @@ do-build:
 		${CC} ${CFLAGS} ${CPPFLAGS} -o zz zz.c ${LDFLAGS}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/zz ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/zz ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
