@@ -10,10 +10,11 @@ DISTNAME=	samp${PORTVERSION:S,.,,}svr
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rockstar's GTA: San Andreas multiplayer modification dedicated server
 
+USES=		dos2unix
 USE_LINUX=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/samp03
-USE_DOS2UNIX=	*.txt *.pwn *.inc
+DOS2UNIX_GLOB=	*.txt *.pwn *.inc
 USE_RC_SUBR=	sampd
 SAMPDIR=	${PREFIX}/libexec/${PORTNAME}
 PORTDOCS=	LICENSE README

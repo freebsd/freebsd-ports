@@ -22,13 +22,12 @@ OPTIONS_DEFAULT=	TKINTER
 TKINTER_DESC=	Build with tkinter for X support
 OPTIONSFILE?=	${PORT_DBDIR}/${PORTNAME}/options
 
+USES=		dos2unix
 USE_GL=		glut
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	PyOpenGL
 PYDISTUTILS_PKGVERSION=	${PORTVERSION:S/.b/b/}
-
-USE_DOS2UNIX=	yes
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>

@@ -13,12 +13,13 @@ COMMENT=		LSI MegaRAID controller management utility
 BROKEN=			Does not fetch
 
 NO_WRKSUBDIR=		yes
+USES=			dos2unix
 USE_ZIP=		yes
 RESTRICTED=		Redistribution seems to be prohibited
 ONLY_FOR_ARCHS=		i386 amd64
 USE_LINUX=		yes
 SUB_FILES=		megamgr.sh
-USE_DOS2UNIX=		ut_linux_mgr_5.20.txt
+DOS2UNIX_FILES=		ut_linux_mgr_5.20.txt
 
 NO_STAGE=	yes
 do-build:

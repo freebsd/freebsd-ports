@@ -16,9 +16,8 @@ COMMENT=	The Marriage of XreaL and Icculus.org Q3 w/ Improvements
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
+USES=		gmake dos2unix
 USE_BZIP2=	yes
-USE_DOS2UNIX=	yes
-USE_GMAKE=	yes
 ALL_TARGET=	release
 WRKSRC=		${WRKDIR}/${PORTNAME}
 CFLAGS+=	-DMAP_ANONYMOUS=MAP_ANON

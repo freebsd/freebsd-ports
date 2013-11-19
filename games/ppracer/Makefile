@@ -14,11 +14,10 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig dos2unix
 USE_SDL=	mixer sdl
 USE_GL=		gl
 GNU_CONFIGURE=	yes
-USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(c|cpp|h)
 USE_XORG=	x11 xi xext xmu xt
 

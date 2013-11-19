@@ -11,11 +11,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Redcode simulator easy to embed into applications
 
 USE_ZIP=	yes
-USES=		gmake
+USES=		gmake dos2unix
 
 NO_WRKSUBDIR=	yes
-
-USE_DOS2UNIX=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 

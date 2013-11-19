@@ -15,9 +15,8 @@ COMMENT=	AI script based strategy game
 LIB_DEPENDS=	boost_filesystem:${PORTSDIR}/devel/boost-libs \
 		freetype.9:${PORTSDIR}/print/freetype2
 
+USES=		dos2unix gmake
 USE_BZIP2=	yes
-USE_DOS2UNIX=	yes
-USE_GMAKE=	yes
 USE_SDL=	gfx image mixer sdl
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 

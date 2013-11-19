@@ -13,8 +13,7 @@ COMMENT=	Tcl/Tk based manual browser
 RUN_DEPENDS=	glimpse:${PORTSDIR}/textproc/glimpse \
 		rman:${PORTSDIR}/textproc/rman
 
-USES+=		gmake tk
-USE_DOS2UNIX=	yes
+USES+=		gmake tk dos2unix
 MAKE_ARGS=	WISH="${WISH}" \
 		texinfodir="${PREFIX}/${INFO_PATH}" \
 		gzgrep="\"/usr/bin/zgrep -E\"" \

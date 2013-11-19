@@ -15,11 +15,10 @@ PROJECTHOST=	ghostplusplus
 PROJECTVERSION=	17.1
 
 USE_ZIP=	yes
-USE_DOS2UNIX=	yes
+USES=		dos2unix gmake
 
 WRKSRC=		${WRKDIR}/ghost/StormLib/stormlib
 
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
 NO_STAGE=	yes

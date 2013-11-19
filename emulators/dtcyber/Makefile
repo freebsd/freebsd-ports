@@ -13,9 +13,9 @@ DISTNAME=	dtcyber20b1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop CYBER Emulator
 
+USES=		dos2unix
 USE_ZIP=	yes
 USE_XORG=	x11
-USE_DOS2UNIX=	yes
 NO_WRKSUBDIR=	yes
 INSTALL_TARGET=
 MAKEFILE=	Makefile.x11

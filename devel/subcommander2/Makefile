@@ -21,11 +21,11 @@ CONFLICTS=	subcommander-1.*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R:S,.b,b,}p${PORTVERSION:E}
 
-USE_DOS2UNIX=	*.cpp *.h
+USES=		gmake dos2unix
+DOS2UNIX_GLOB=	*.cpp *.h
 USE_QT4=	corelib gui network qt3support moc_build rcc_build uic_build
 QT_NONSTANDARD=	yes
 USE_OPENSSL=	yes
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal automake autoheader autoconf
 ACLOCAL_ARGS=	-I ac-macros
 AUTOMAKE_ARGS=	--copy --force-missing --foreign

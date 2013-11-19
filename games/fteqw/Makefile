@@ -11,8 +11,7 @@ DISTNAME=	ftesrc${PORTVERSION}-all
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QuakeWorld client with cool features, but still compatible
 
-USE_DOS2UNIX=	yes
-USE_GMAKE=	yes
+USES=		gmake dos2unix
 USE_CSTD=	gnu89
 NO_WRKSUBDIR=	yes
 
