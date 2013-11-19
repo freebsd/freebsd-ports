@@ -16,7 +16,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_parser/__init__.py:${PORTSDIR}/devel/h
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PYDISTUTILS_CONFIGUREARGS+=	--disable-qt

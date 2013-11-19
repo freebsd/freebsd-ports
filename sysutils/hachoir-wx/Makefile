@@ -18,5 +18,4 @@ WX_COMPS=	python
 WX_UNICODE=	yes
 USE_PYDISTUTILS=yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
