@@ -21,6 +21,7 @@ include/OpenEXR/ImfCompressionAttribute.h
 include/OpenEXR/ImfConvert.h
 include/OpenEXR/ImfDeepCompositing.h
 include/OpenEXR/ImfDeepFrameBuffer.h
+include/OpenEXR/ImfDeepImageState.h
 include/OpenEXR/ImfDeepScanLineInputFile.h
 include/OpenEXR/ImfDeepScanLineInputPart.h
 include/OpenEXR/ImfDeepScanLineOutputFile.h
@@ -91,7 +92,7 @@ include/OpenEXR/ImfWav.h
 include/OpenEXR/ImfXdr.h
 include/OpenEXR/OpenEXRConfig.h
 lib/libIlmImf-Imf_%%MAJORVER%%.so
-lib/libIlmImf-Imf_%%MAJORVER%%.so.20
+lib/libIlmImf-Imf_%%MAJORVER%%.so.%%VER%%
 lib/libIlmImf.a
 lib/libIlmImf.la
 lib/libIlmImf.so

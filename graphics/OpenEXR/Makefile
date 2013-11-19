@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	OpenEXR
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1.0
 CATEGORIES=	graphics devel
 MASTER_SITES=	SAVANNAH/openexr/
 DISTNAME=	openexr-${DISTVERSION}
@@ -44,7 +44,8 @@ LARGE_STACK_CONFIGURE_ENABLE=	large-stack
 
 .include <bsd.port.options.mk>
 
-PLIST_SUB=	MAJORVER=2_0
+PLIST_SUB=	MAJORVER=2_1
+PLIST_SUB+=	VER=21
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|== x|= x|g' ${WRKSRC}/configure
