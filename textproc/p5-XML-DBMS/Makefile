@@ -23,7 +23,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		dos2unix perl5
 USE_PERL5=	configure
-USE_DOS2UNIX=	yes
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
