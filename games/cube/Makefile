@@ -7,16 +7,13 @@ PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 DISTFILES=	${CUBE_DATA} ${CUBE_SRC}
-EXTRACT_ONLY=	${CUBE_SRC}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL 3D FPS (first person shooter) game
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libenet.a:${PORTSDIR}/net/enet
 
-USE_ZIP=	yes
-USE_DOS2UNIX=	yes
-USES=		gmake
+USES=		dos2unix gmake
 ALL_TARGET=	#
 USE_XORG=	x11
 
@@ -55,9 +52,6 @@ LDFLAGS+=	-lX11
 ALL_TARGET+=	server
 CUBE_BIN+=	server
 .endif
-
-post-extract:
-	@${TAR} zxf ${DISTDIR}/${CUBE_DATA} -C ${WRKDIR}
 
 do-install:
 .for f in ${CUBE_BIN}
