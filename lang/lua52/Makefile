@@ -6,6 +6,7 @@ PORTVERSION=	5.2.2
 PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/
+PKGNAMESUFFIX=	${LUA_VER_STR}
 
 MAINTAINER=	fiziologus@gmail.com
 COMMENT=	Small, compilable scripting language providing easy access to C code
@@ -34,7 +35,6 @@ LDFLAGS+=	-lm -pthread
 
 MAN1=		lua-${LUA_VER}.1 luac-${LUA_VER}.1
 DOCSDIR=	${PREFIX}/share/doc/${LUA_SUBDIR}
-LATEST_LINK=	${LUA_SUBDIR}
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
