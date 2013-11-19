@@ -15,5 +15,4 @@ PLIST_FILES=	bin/gsfv
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
