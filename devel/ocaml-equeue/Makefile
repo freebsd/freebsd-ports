@@ -18,7 +18,7 @@ RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_FLAGS=	PACKAGES=	# If defined, would be used by ocamlfind
 HAS_CONFIGURE=	yes
 
@@ -28,8 +28,8 @@ MAKE_JOBS_UNSAFE=	yes
 PKGDEINSTALL=	${PKGINSTALL}
 
 .if defined(WITH_EQUEUE_TCL)
-USE_TCL=	84+
-CONFIGURE_ARGS+=	-with-equeue-tcl -equeue-tcl-defs "-I${TCL_INCLUDEDIR}" -equeue-tcl-libs "-L${LOCALBASE}/lib -ltcl${TCL_VER:S/.//}"
+USES+=		tcl
+CONFIGURE_ARGS+=	-with-equeue-tcl -equeue-tcl-defs "-I${TCL_INCLUDEDIR}" -equeue-tcl-libs "-L${LOCALBASE}/lib -ltcl${TCL_SHLIB_VER}"
 PLIST_SUB+=		TCL=""
 .else
 PLIST_SUB+=		TCL="@comment "
