@@ -10,8 +10,9 @@ DISTNAME=	dr_freebsd_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LSI Logic's MegaRAID controlling software
 
+USES=		dos2unix
 USE_ZIP=	yes
-USE_DOS2UNIX=	Release\ History.txt
+DOS2UNIX_FILES=	Release\ History.txt
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

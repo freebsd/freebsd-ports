@@ -11,8 +11,9 @@ DISTNAME=	reaprb81
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake 1 bots
 
+USES=		dos2unix
 USE_ZIP=	yes
-USE_DOS2UNIX=	${PORTDOCS}
+DOS2UNIX_GLOB=	${PORTDOCS}
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

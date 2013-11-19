@@ -11,8 +11,8 @@ COMMENT=	The Bywater Basic interpreter
 
 NO_WRKSUBDIR=	yes
 
+USES=		dos2unix
 USE_ZIP=	yes
-USE_DOS2UNIX=	yes
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	CFLAGS="${CFLAGS} -ansi"
 ALL_TARGET=	${PORTNAME}

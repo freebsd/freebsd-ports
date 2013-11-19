@@ -14,9 +14,8 @@ COMMENT=	Quake engine with lighting similar to that in Doom III
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
-USES=		gmake
+USES=		gmake dos2unix
 USE_ZIP=	yes
-USE_DOS2UNIX=	yes
 USE_GL=		glu
 USE_SDL=	yes
 USE_XORG=	xxf86dga

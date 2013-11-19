@@ -10,12 +10,12 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Assembler Interface
 
+USES=		dos2unix
 USE_ZIP=	yes
 USE_ANT=	yes
 ALL_TARGET=	jasmin
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(txt|xml|j|class|java|mf|css|bnf|html)
 
 SUB_FILES=	jasmin.sh

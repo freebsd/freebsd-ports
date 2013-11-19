@@ -36,10 +36,10 @@ OPENEXR_DESC=	OpenEXR file format module
 USE_BZIP2=	yes
 USE_GL=		glu
 USE_GNOME=	gtksourceview2
-USE_DOS2UNIX=	*.hpp
+DOS2UNIX_GLOB=	*.hpp
 USE_GCC=	yes
 USE_PYTHON=	yes
-USES=		cmake:outsource gettext
+USES=		cmake:outsource gettext dos2unix
 CMAKE_ARGS=	-DK3D_INTL_INCLUDE_DIRS:STRING="-I${LOCALBASE}/include" \
 		-DK3D_INTL_LIBS:STRING="-L${LOCALBASE}/lib -lintl" \
 		-DK3D_BUILD_CARVE_MODULE:BOOL=OFF \

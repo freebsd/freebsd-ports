@@ -21,11 +21,10 @@ LIB_DEPENDS=	speex:${PORTSDIR}/audio/speex \
 CONFLICTS=	krb4-[0-9]* krb5-[0-9]* heimdal-[0-9]* srp-[0-9]* \
 		clusterit-[0-9]* pcp-[0-9]* synce-librapi2-[0-9]*
 
-USES=		pkgconfig
-USE_DOS2UNIX=	README
+USES=		pkgconfig dos2unix gmake
+DOS2UNIX_FILES=	README
 USE_GNOME=	glib20
 USE_OPENSSL=	yes
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	EXPAT_CFLAGS="-I${LOCALBASE}/include" \
 		EXPAT_LIBS="-L${LOCALBASE}/lib -lexpat" \

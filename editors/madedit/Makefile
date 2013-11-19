@@ -12,10 +12,9 @@ COMMENT=	An open-source and cross-platform text/hex editor
 
 LICENSE=	GPLv2
 
-USES=		gettext pkgconfig
+USES=		gettext pkgconfig dos2unix
 USE_WX=		2.6+
 WANT_UNICODE=	yes
-USE_DOS2UNIX=	yes
 
 LIB_DEPENDS+=	boost_regex:${PORTSDIR}/devel/boost-libs
 

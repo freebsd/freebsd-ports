@@ -19,10 +19,9 @@ JAVA_VERSION=	1.6+
 JAVA_BUILD=	yes
 JAVA_RUN=	yes
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix gmake
 DOS2UNIX_REGEX=	.*/examples/.*Makefile.in
 
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-jdk=${JAVA_HOME}/include,${JAVA_HOME}/jre/lib/ \
 		--with-hdf5=${LOCALBASE}/include \

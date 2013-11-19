@@ -11,7 +11,8 @@ DISTNAME=	tiff
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to merge TIFF files into multi-page TIFF files
 
-USE_DOS2UNIX=	*.[ch]
+USES=		dos2unix
+DOS2UNIX_GLOB=	*.[ch]
 USE_LDCONFIG=	yes
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes

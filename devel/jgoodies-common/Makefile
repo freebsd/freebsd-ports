@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 
+USES=		dos2unix
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -22,7 +23,6 @@ USE_ANT=	yes
 MAKE_ARGS+=	-Djunit4.jar=${LOCALBASE}/share/java/classes/junit.jar
 ALL_TARGET=	jar test
 EXTRACT_AFTER_ARGS=-d ${WRKDIR} -x '*/api/*' '*.jar'
-USE_DOS2UNIX=	yes
 REINPLACE_ARGS=	-i ""
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

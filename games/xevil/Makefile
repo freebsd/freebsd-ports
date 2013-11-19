@@ -18,9 +18,10 @@ OPTIONS_DEFINE=	DOCS
 
 NO_WRKSUBDIR=yes
 
+USES=		dos2unix
 USE_ZIP=	yes
 USE_XORG=	xpm
-USE_DOS2UNIX=	*.cpp *.h config.mk makefile
+DOS2UNIX_GLOB=	*.cpp *.h config.mk makefile
 MAKEFILE=	makefile
 MAKE_ARGS=	DEPTH="${WRKSRC}"
 ALL_TARGET=	${OPSYS:L}

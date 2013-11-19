@@ -22,14 +22,13 @@ OPTIONS_DEFAULT=	WXGTK
 
 WRKSRC=		${WRKDIR}/src
 
+USES=		gmake dos2unix
 USE_ZIP=	yes
-USE_DOS2UNIX=	yes
 USE_GNOME=	glib20
 USE_OPENSSL=	yes
 USE_BDB=	yes
 WANT_BDB_VER=	47
 USE_GCC=	any
-USE_GMAKE=	yes
 ALL_TARGET=	${BINARY}
 
 CXXFLAGS+=	-Wno-invalid-offsetof

@@ -23,10 +23,9 @@ COMMENT=	Extensive German HTML reference
 
 WRKSRC=		${WRKDIR}
 
-USE_ZIP=	yes
 NO_BUILD=	yes
-
-USE_DOS2UNIX=	yes
+USES=		dos2unix
+USE_ZIP=	yes
 DOS2UNIX_REGEX=	.*\.(css|dhtml|diverses|editorial|grafik|helferlein|htm|inter|intro|javascript|layouts|navigation|perl|php|projekt|quellen|servercgi|src|xml|xls|dtd)$$
 
 PORTDOCS=	\

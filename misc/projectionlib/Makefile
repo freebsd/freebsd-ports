@@ -14,8 +14,9 @@ LIB_DEPENDS=	gctpc.1:${PORTSDIR}/misc/gctpc
 
 WRKSRC=		${WRKDIR}/dlgv32/ProjectionLib
 
+USES=		dos2unix
 USE_ZIP=	yes
-USE_DOS2UNIX=	*.cpp *.h
+DOS2UNIX_GLOB=	*.cpp *.h
 USE_LDCONFIG=	yes
 MAKEFILE=	${FILESDIR}/Makefile
 

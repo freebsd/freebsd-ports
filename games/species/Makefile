@@ -11,9 +11,8 @@ DISTNAME=	redcoder
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Corewars evolver - generates warriors using genetic algorithms
 
-USE_DOS2UNIX=	yes
 USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake dos2unix
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	VISITOOL

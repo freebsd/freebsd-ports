@@ -16,7 +16,7 @@ COMMENT=	Compiler generator that combines the functionality of lex and yacc
 
 NO_WRKSUBDIR=	yes
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 MAKE_ENV=	CRFRAMES="${WRKSRC}/frames"
 MAKEFILE=	unix.mk
 ALL_TARGET=	all1

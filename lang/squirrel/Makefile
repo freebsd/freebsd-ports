@@ -11,7 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High level imperative/OO programming language
 
 CONFLICTS=	squsq-[0-9]*
-USE_DOS2UNIX=	yes
+
+USES=		dos2unix
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/SQUIRREL2
 
