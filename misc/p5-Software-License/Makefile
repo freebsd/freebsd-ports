@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Software-License
-PORTVERSION=	0.103007
+PORTVERSION=	0.103008
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RJBS
@@ -15,9 +15,9 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Data-Section>=0:${PORTSDIR}/devel/p5-Data-Section \
+		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-Sub-Install>=0:${PORTSDIR}/devel/p5-Sub-Install \
-		p5-Text-Template>=0:${PORTSDIR}/textproc/p5-Text-Template \
-		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
+		p5-Text-Template>=0:${PORTSDIR}/textproc/p5-Text-Template
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 
