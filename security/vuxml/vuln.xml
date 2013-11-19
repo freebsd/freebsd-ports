@@ -51,6 +51,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="94b6264a-5140-11e3-8b22-f0def16c5c1b">
+    <topic>nginx -- Request line parsing vulnerability</topic>
+    <affects>
+      <package>
+	<name>nginx</name>
+	<range><ge>0.8.41</ge><lt>1.4.4,1</lt></range>
+      </package>
+      <package>
+	<name>nginx-devel</name>
+	<range><ge>0.8.41</ge><lt>1.5.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The nginx project reports:</p>
+	<blockquote cite="http://mailman.nginx.org/pipermail/nginx-announce/2013/000125.html">
+	  <p>Ivan Fratric of the Google Security Team discovered a bug in nginx, which might
+	   allow an attacker to bypass security restrictions in certain configurations by
+	   using a specially crafted request, or might have potential other impact
+	   (CVE-2013-4547).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4547</cvename>
+      <url>http://mailman.nginx.org/pipermail/nginx-announce/2013/000125.html</url>
+    </references>
+    <dates>
+      <discovery>2013-11-19</discovery>
+      <entry>2013-11-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e62ab2af-4df4-11e3-b0cf-00262d5ed8ee">
     <topic>chromium -- multiple memory corruption issues</topic>
     <affects>
