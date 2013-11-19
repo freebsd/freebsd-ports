@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	magic
-PORTVERSION=	7.5.231
+PORTVERSION=	7.5.233
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/magic/archive/ \
 		http://fossies.org/linux/misc/
@@ -13,17 +13,13 @@ COMMENT=	Interactive editor for VLSI layouts
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	BLT24:${PORTSDIR}/x11-toolkits/blt
+LIB_DEPENDS=	libBLT25.so:${PORTSDIR}/x11-toolkits/blt
 
 CONFIGURE_WRKSRC=	${WRKSRC}/scripts
 
+USES+=		gmake tk:build
 USE_XORG=	ice xext xi xmu
 USE_GL=		gl
-USE_TCL_BUILD=	yes
-USE_TK_BUILD=	yes
-USE_TCL=	yes
-USE_TK=		yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} --with-tk=${TK_LIBDIR}
 ALL_TARGET=	tcllibrary
@@ -31,15 +27,10 @@ ALL_TARGET=	tcllibrary
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		ext2sim.1 ext2spice.1 extcheck.1 magic.1
-MAN5=		cmap.5 displays.5 dlys.5 dstyle.5 ext.5 glyphs.5 mag.5 \
-		net.5 sim.5
-
 DESKTOP_ENTRIES="Magic" "" "" "${PORTNAME}" "" ""
 
 PORTSCOUT=	limit:^7\.
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
