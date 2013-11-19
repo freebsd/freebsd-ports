@@ -25,10 +25,8 @@ USE_XORG=	xi xmu xt xaw ice xpm xext sm
 USE_TK_WRAPPER=	yes
 USE_PERL5=	run
 
-MAN1=		ssvnc.1 ssvncviewer.1 ssvnc-gui.1
-NO_INSTALL_MANPAGES=	yes
+MAKE_ENV+=	ROOT=${STAGEDIR}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MULTRAFTP}
@@ -59,11 +57,11 @@ do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} config
 
 post-install:
-	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${MAN1PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${MAN1PREFIX}/man/man1
 .for man in ssvnc.1 ssvncviewer.1
-	${INSTALL_MAN} ${WRKSRC}/man/man1/${man} ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/man1/${man} \
+		${STAGEDIR}${MAN1PREFIX}/man/man1
 .endfor
 .endif
 
