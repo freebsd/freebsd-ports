@@ -1,1 +1,11 @@
 @comment $FreeBSD$
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributing/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributors/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/fonts/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/books/design-44bsd/book.txt
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/book.txt
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/book.txt
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/book.txt

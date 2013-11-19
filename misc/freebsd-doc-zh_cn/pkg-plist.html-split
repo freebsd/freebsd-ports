@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/contrib-how.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributing/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/first-setup.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/freebsdspecific.html
@@ -19,6 +20,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/updates.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/howto.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/rcng-args.html
@@ -65,6 +67,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/isa-driver-resources.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/isa-driver-shutdown.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/isa-driver.html
+%%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/jail-restrictions.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/jail.html
 %%DOCSDIR%%/%%DOCLANG%%/books/arch-handbook/kernel-objects-operation.html
@@ -259,6 +262,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/introduction.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ipsec.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails-application.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails-build.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails-intro.html

@@ -3,6 +3,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/create-port.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/fix-broken.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/maintain-port.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/mortal-coil.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/resources.html
@@ -10,6 +11,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/what-contribute.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/contrib-how.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributing/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/comparing-bsd-and-linux.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/index.html
@@ -17,6 +19,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/what-a-real-unix.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/why-is-bsd-not-better-known.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-followup.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-further.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-prep.html
@@ -162,6 +165,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/introduction.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ipsec.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails-application.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails-build.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails-intro.html

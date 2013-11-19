@@ -3,6 +3,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/create-port.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/fix-broken.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/maintain-port.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/mortal-coil.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/resources.html
@@ -10,6 +11,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/what-contribute.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/contrib-how.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributing/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/comparing-bsd-and-linux.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/index.html
@@ -39,6 +41,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/howto.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/adding-a-user.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/comments-welcome.html
@@ -73,6 +76,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/introduction.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/ipc.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/ipv6.html
+%%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kernel.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kernelbuild-new.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kernelbuild.html
@@ -159,6 +163,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/examples-formatted.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/examples.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/index.html
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/legalnotice.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/make-includes.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/overview-before.html
@@ -334,6 +339,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/introduction.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ipsec.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails-application.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails-build.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails-intro.html

@@ -18,6 +18,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/console-server/conserver-versions.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/console-server/freebsd.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/console-server/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/console-server/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/console-server/links.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/console-server/manpages.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/console-server/our-solution.html
@@ -28,8 +29,10 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/console-server/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/contrib-how.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributing/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/cups/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/cups/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/cups/printing-cups-clients.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/cups/printing-cups-configuring-printers.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/cups/printing-cups-configuring-server.html
@@ -175,6 +178,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/pr-guidelines/references.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pr-guidelines/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-followup.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-further.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-prep.html
@@ -373,6 +377,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/introduction.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ipsec.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kerberos5.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kerberosIV.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-building.html

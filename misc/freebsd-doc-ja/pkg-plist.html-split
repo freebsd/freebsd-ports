@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/contrib-how.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributing/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/contrib-386bsd.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/contrib-additional.html
@@ -8,6 +9,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/contrib-derived.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/contrib-develalumni.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributors/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/staff-committers.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/files.html
@@ -41,6 +43,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/solution.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-followup.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-further.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-prep.html
@@ -185,6 +188,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/introduction.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ipsec.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kerberos.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-building.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-config.html

@@ -18,6 +18,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/create-port.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/fix-broken.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/maintain-port.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/mortal-coil.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/resources.html
@@ -25,6 +26,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/what-contribute.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/contrib-how.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributing/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/contrib-386bsd.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/contrib-additional.html
@@ -32,6 +34,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/contrib-derived.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/contrib-develalumni.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributors/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/staff-committers.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/staff-core.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/staff-doc.html
@@ -88,6 +91,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/mh/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/howto.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/ar01s02.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/ar01s03.html
@@ -118,6 +122,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/pr-guidelines/ar01s04.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pr-guidelines/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-followup.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-further.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-prep.html
@@ -413,6 +418,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/ch12s04.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/ch12s05.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/index.html
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/legalnotice.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/overview.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/pr01.html
@@ -562,6 +568,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/introduction.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ipsec.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails-build.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails-intro.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails-terms.html
