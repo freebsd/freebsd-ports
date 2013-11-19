@@ -1,0 +1,38 @@
+%%SITE_PERL%%/Geo/JSON.pm
+%%SITE_PERL%%/Geo/JSON/Base.pm
+%%SITE_PERL%%/Geo/JSON/CRS.pm
+%%SITE_PERL%%/Geo/JSON/Feature.pm
+%%SITE_PERL%%/Geo/JSON/FeatureCollection.pm
+%%SITE_PERL%%/Geo/JSON/GeometryCollection.pm
+%%SITE_PERL%%/Geo/JSON/LineString.pm
+%%SITE_PERL%%/Geo/JSON/MultiLineString.pm
+%%SITE_PERL%%/Geo/JSON/MultiPoint.pm
+%%SITE_PERL%%/Geo/JSON/MultiPolygon.pm
+%%SITE_PERL%%/Geo/JSON/Point.pm
+%%SITE_PERL%%/Geo/JSON/Polygon.pm
+%%SITE_PERL%%/Geo/JSON/Role/Geometry.pm
+%%SITE_PERL%%/Geo/JSON/Role/ToJson.pm
+%%SITE_PERL%%/Geo/JSON/Types.pm
+%%SITE_PERL%%/Geo/JSON/Utils.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/JSON/.packlist
+%%PERL5_MAN3%%/Geo::JSON.3.gz
+%%PERL5_MAN3%%/Geo::JSON::Base.3.gz
+%%PERL5_MAN3%%/Geo::JSON::CRS.3.gz
+%%PERL5_MAN3%%/Geo::JSON::Feature.3.gz
+%%PERL5_MAN3%%/Geo::JSON::FeatureCollection.3.gz
+%%PERL5_MAN3%%/Geo::JSON::GeometryCollection.3.gz
+%%PERL5_MAN3%%/Geo::JSON::LineString.3.gz
+%%PERL5_MAN3%%/Geo::JSON::MultiLineString.3.gz
+%%PERL5_MAN3%%/Geo::JSON::MultiPoint.3.gz
+%%PERL5_MAN3%%/Geo::JSON::MultiPolygon.3.gz
+%%PERL5_MAN3%%/Geo::JSON::Point.3.gz
+%%PERL5_MAN3%%/Geo::JSON::Polygon.3.gz
+%%PERL5_MAN3%%/Geo::JSON::Role::Geometry.3.gz
+%%PERL5_MAN3%%/Geo::JSON::Role::ToJson.3.gz
+%%PERL5_MAN3%%/Geo::JSON::Types.3.gz
+%%PERL5_MAN3%%/Geo::JSON::Utils.3.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/JSON
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
+@dirrm %%SITE_PERL%%/Geo/JSON/Role
+@dirrm %%SITE_PERL%%/Geo/JSON
+@dirrmtry %%SITE_PERL%%/Geo
