@@ -10,6 +10,21 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20131119:
+AUTHOR: kwm@FreeBSD.org
+
+  The USE_GNOME component ltverhack no longer has a hard dependancy on 
+  libtool.
+  
+  If USE_AUTOTOOLS=libtool isn't defined it will try to patch ltmain.sh
+  and or libtool in ${WRKSRC}. If those files are located somewhere else
+  in ${WRKSRC} then it is possible to overwrite ltverhack_PATCH_FILES
+  with there new locations. configure script --distable-static will work also
+  after using the "new" ltverhack.
+
+  Please keep in mind that USE_AUTOTOOLS implies GNU_CONFIGURE so you might
+  need to add that back for the port to work.
+
 20131031:
 AUTHOR: rene@FreeBSD.org
 
