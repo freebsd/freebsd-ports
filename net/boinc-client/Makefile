@@ -9,12 +9,11 @@ MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Berkeley Open Infrastructure for Network Computing client
 
-USES=		gmake pkgconfig
+USES=		dos2unix gmake pkgconfig
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:env automake:env libtoolize:env
 USE_LDCONFIG=	yes
-USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.xpm
 
 USERS=		boinc
@@ -70,7 +69,7 @@ LINUX_USE=		LINUX=yes
 #OPTIMIZE_CONFIGURE_ENBABLE=	optimize
 
 X11_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
-X11_USE=		GL=glut XORG=xmu XORG=xi
+X11_USE=		GL=glut XORG=xmu,xi
 
 .include <bsd.port.options.mk>
 
