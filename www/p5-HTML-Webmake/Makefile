@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple perl based website content management system
 
+DEPRECATED=	Depends on expired textproc/p5-XML-Sablotron
+EXPIRATION_DATE=2013-12-19
+
 BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
 		p5-Text-EtText>=0:${PORTSDIR}/textproc/p5-Text-EtText \

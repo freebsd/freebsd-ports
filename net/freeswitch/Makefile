@@ -12,6 +12,9 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeSwitch meta-port to pull in all the components
 
+DEPRECATED=	Depends on expired net/freeswitch-core
+EXPIRATION_DATE=2013-12-19
+
 CONFLICTS=	freeswitch-devel-[0-9]*
 
 RUN_DEPENDS=	${LOCALBASE}/bin/freeswitch:${PORTSDIR}/net/freeswitch-core
