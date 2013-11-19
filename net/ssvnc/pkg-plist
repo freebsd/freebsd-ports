@@ -12,6 +12,9 @@ lib/ssvnc/util/ss_vncviewer
 lib/ssvnc/util/ssvnc.tcl
 lib/ssvnc/vncstorepw
 lib/ssvnc/vncviewer
+man/man1/ssvnc-gui.1.gz
+man/man1/ssvnc.1.gz
+man/man1/ssvncviewer.1.gz
 %%ULTRAFTP%%lib/ssvnc/ultraftp.jar
 share/applications/ssvnc.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README
