@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	irc
-PORTVERSION=	8.5.3
+PORTVERSION=	8.5.4
 CATEGORIES=	irc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,13 +18,14 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hgtools>0:${PORTSDIR}/devel/py-hgtools \
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
+PYDISTUTILS_AUTOPLIST=	yes
 USE_ZIP=	yes
 
 PORTEXAMPLES=	irccat.py irccat2.py servermap.py testbot.py \
 		dccreceive.py dccsend.py
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	EXAMPLES
 
 .include <bsd.port.pre.mk>
 
@@ -37,10 +38,8 @@ post-patch:
 		's|license="MIT",|license="MIT", zip_safe=False,|' ${WRKSRC}/setup.py
 	${CHMOD} -R o-w ${WRKSRC}/irc.egg-info
 
-.if ${PORT_OPTIONS:MEXAMPLES}
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${PORTEXAMPLES:S,^,${WRKSRC}/scripts/,} ${EXAMPLESDIR}/
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${PORTEXAMPLES:S,^,${WRKSRC}/scripts/,} ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.post.mk>
