@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	passenger
-PORTVERSION=	4.0.23
+PORTVERSION=	4.0.24
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
@@ -102,12 +102,12 @@ post-install:
 		's!-lpthread!${PTHREAD_LIBS}!g' \
 		${PREFIX}/${GEM_LIB_DIR}/lib/phusion_passenger/platform_info/cxx_portability.rb
 .if ${PORT_OPTIONS:MAPACHE22}
-	(${PREFIX}/bin/passenger-install-apache2-module --auto)
+	(CC=${CC} CXX=${CXX} ${PREFIX}/bin/passenger-install-apache2-module --auto)
 	@${CAT} ${PKGMESSAGE}
 .endif
 
 .if ${PORT_OPTIONS:MNGINX}
-	(cd ${PREFIX}/${GEM_LIB_DIR} && ${RAKE_BIN} nginx)
+	(cd ${PREFIX}/${GEM_LIB_DIR} && CC=${CC} CXX=${CXX} ${RAKE_BIN} nginx)
 .endif
 
 	${FIND} ${PREFIX}/${GEM_LIB_DIR} -name '*.o' -delete
