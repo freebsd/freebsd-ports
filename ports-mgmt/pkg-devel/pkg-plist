@@ -52,6 +52,7 @@ share/zsh/site-functions/_pkg
 @dirrmtry etc/bash_completion.d
 @dirrmtry etc/periodic/daily
 @dirrmtry etc/periodic/security
+@dirrmtry etc/periodic/weekly
 @dirrmtry etc/periodic
 @dirrmtry share/zsh/site-functions
 @dirrmtry share/zsh
