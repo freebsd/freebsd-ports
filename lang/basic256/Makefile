@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	basic256
-PORTVERSION=	0.9.9.64
+PORTVERSION=	1.0.0.0
 CATEGORIES=	lang
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	kidbasic/${PORTNAME}
@@ -18,17 +18,16 @@ BUILD_DEPENDS=	espeak:${PORTSDIR}/audio/espeak \
 
 WRKSRC=		${WRKDIR}
 
-USES=		bison
+USES=		bison dos2unix qmake
 USE_SDL=	sdl mixer
 USE_QT4=	corelib gui network xml webkit moc_build qmake_build rcc_build uic_build
-USE_DOS2UNIX=	yes
 HAS_CONFIGURE=	yes
+QMAKE_PRO=	BASIC256.pro
 
 MAKE_JOBS_UNSAFE=yes
 
-NO_STAGE=	yes
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-	${QMAKE} "PREFIX=${PREFIX}" BASIC256.pro
+post-patch:
+	@${REINPLACE_CMD} -e 's/mutex/mymutex/' ${WRKSRC}/*.cpp
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/${QMAKE_PRO}
 
 .include <bsd.port.mk>

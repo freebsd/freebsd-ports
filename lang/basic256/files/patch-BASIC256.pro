@@ -1,6 +1,15 @@
---- BASIC256.pro.orig	2013-02-11 23:43:57.000000000 +0100
-+++ BASIC256.pro	2013-02-11 23:47:27.000000000 +0100
-@@ -101,19 +101,19 @@
+--- BASIC256.pro.orig	2013-11-13 18:26:47.000000000 +0100
++++ BASIC256.pro	2013-11-13 18:36:29.000000000 +0100
+@@ -82,7 +82,7 @@
+ 
+ 	## TTS Option 2 - use the espeak library
+ 	DEFINES					+=	ESPEAK
+-	INCLUDEPATH				+=	/usr/include/espeak
++	INCLUDEPATH				+=	%%LOCALBASE%%/include/espeak
+ 	LIBS					+=	-lespeak
+ 
+ 	LIBS					+=	-lm
+@@ -113,19 +113,19 @@
  	# rules for make install
  	########
  	exampleFiles.files		=	./Examples
