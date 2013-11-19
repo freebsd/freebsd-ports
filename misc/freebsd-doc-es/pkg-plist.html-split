@@ -6,6 +6,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/casestudy-argentina.com/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/contrib-how.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributing/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/ar01s02.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/freebsdspecific.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/cvs-freebsd/index.html
@@ -63,6 +64,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/recurring.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/howto.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/p4-primer/Integrations.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/p4-primer/add-rm-files.html
@@ -82,6 +84,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/p4-primer/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/p4-primer/working-with-diffs.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-followup.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-further.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-prep.html
@@ -208,6 +211,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/introduction.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ipsec.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails-application.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails-build.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails-intro.html
