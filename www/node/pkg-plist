@@ -1,6 +1,5 @@
 bin/node
 lib/dtrace/node.d
 lib/node_modules/.keepme
-man/man1/node.1.gz
 @dirrm lib/node_modules
 @dirrm lib/dtrace
