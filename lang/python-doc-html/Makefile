@@ -24,7 +24,6 @@ PLIST=		${WRKDIR}/pkg-plist.${DOCFORMAT}
 
 DOCFORMAT?=	html
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .  if ${DOCFORMAT} == "html" || ${DOCFORMAT} == "text"
@@ -43,7 +42,7 @@ pre-install:
 		${ECHO_CMD} "@dirrmtry %%DOCSDIR%%") > ${PLIST}
 
 do-install:
-	${MKDIR} ${DOCSDIR}/
-	cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
