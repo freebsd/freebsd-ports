@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	symon
-PORTVERSION=	2.85
-PORTREVISION=	1
+PORTVERSION=	2.86
 CATEGORIES=	sysutils
 MASTER_SITES=	http://wpd.home.xs4all.nl/symon/philes/ \
 		${MASTER_SITE_LOCAL}
@@ -17,6 +16,8 @@ SUB_FILES=	pkg-message
 USES=		perl5
 USE_PERL5=	build
 MAKE_JOBS_UNSAFE=	yes
+
+USERS=		_symon
 
 # Synonym for WITHOUT_SYMUX
 .if defined(WITHOUT_RRD)
@@ -34,7 +35,6 @@ IGNORE=	you have defined both WITHOUT_SYMUX or WITHOUT_RRD *and* WITHOUT_SYMON
 SUBDIR=		lib
 .if !defined(WITHOUT_SYMON)
 SUBDIR+=	symon
-MAN8+=		symon.8
 PLIST_SUB+=	SYMON=""
 USE_RC_SUBR+=	symon
 .else
@@ -42,7 +42,6 @@ PLIST_SUB+=	SYMON="@comment "
 .endif
 .if !defined(WITHOUT_SYMUX)
 SUBDIR+=	symux
-MAN8+=		symux.8
 PLIST_SUB+=	SYMUX=""
 USE_RC_SUBR+=	symux
 .else
@@ -50,23 +49,18 @@ PLIST_SUB+=	SYMUX="@comment "
 .endif
 SUBDIR+=	client
 
-MAKE_ARGS+=	SUBDIR="${SUBDIR}" RRDDIR="${LOCALBASE}"
+MAKE_ARGS+=	SUBDIR="${SUBDIR}" RRDDIR="${LOCALBASE}" \
+		SYSCONFDIR="${PREFIX}/etc" PREFIX="${STAGEDIR}/${PREFIX}"
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
-.if ${OSVERSION} < 700000
+# We need to teach symon about mbstat changes/removal in r253351 and r253361.
+.if ${OSVERSION} > 1000000
 post-patch:
-	@${REINPLACE_CMD} 's/^LIBS+=/LIBS= -pthread /' ${WRKSRC}/symux/Makefile
+	@${RM} ${WRKSRC}/platform/FreeBSD/sm_mbuf.c
 .endif
-
-pre-install:
-	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

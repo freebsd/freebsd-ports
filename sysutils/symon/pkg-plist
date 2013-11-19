@@ -1,5 +1,7 @@
 %%SYMON%%bin/symon
+%%SYMON%%man/man8/symon.8.gz
 %%SYMUX%%bin/symux
+%%SYMUX%%man/man8/symux.8.gz
 %%SYMON%%%%EXAMPLESDIR%%/symon.conf
 %%SYMUX%%%%EXAMPLESDIR%%/symux.conf
 %%SYMON%%%%DATADIR%%/c_config.sh
