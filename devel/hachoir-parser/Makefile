@@ -15,5 +15,4 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_core/__init__.py:${PORTSDIR}/devel/hac
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
