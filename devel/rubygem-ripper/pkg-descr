@@ -1,7 +1,0 @@
-Ripper parses Ruby source and tokenizes or builds an AST.
-
-This gem is meant for Ruby 1.8.x builds. Ruby 1.9.x comes with a functioning
-ripper implementation out of the box. This gem is a port of the Ripper 1.9
-for Ruby 1.8.x. Ripper was written by Minero Aoki and ported by Loren Segal.
-
-WWW: http://github.com/lsegal/ripper18
