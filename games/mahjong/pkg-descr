@@ -1,7 +1,7 @@
-This is a set of three programs which provide a networked Mah Jong program,
-together with a computer player. Thus the game can be played by four humans, by
-a human and three computer players, or any other combination. There is a server
-program, which handles the game. An X client to allow humans to play naturally,
-and a computer player.
+This is a set of three programs which provide a networked Mah Jong
+program, together with a computer player. Thus the game can be played by
+four humans, by a human and three computer players, or any other
+combination. There is a server program, which handles the game. An X
+client to allow humans to play naturally, and a computer player.
 
 WWW: http://mahjong.julianbradfield.org/
