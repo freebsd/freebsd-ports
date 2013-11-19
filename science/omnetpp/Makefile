@@ -12,6 +12,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	A discrete event simulation environment
 
+DEPRECATED=	depends on expired textproc/libxml
+EXPIRATION_DATE=2013-12-05
+
 LIB_DEPENDS=	BLT24:${PORTSDIR}/x11-toolkits/blt
 
 GNU_CONFIGURE=	yes
