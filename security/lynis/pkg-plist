@@ -27,6 +27,7 @@ man/man8/lynis.8.gz
 %%DATADIR%%/include/tests_banners
 %%DATADIR%%/include/tests_boot_services
 %%DATADIR%%/include/tests_crypto
+%%DATADIR%%/include/tests_custom.template
 %%DATADIR%%/include/tests_databases
 %%DATADIR%%/include/tests_file_integrity
 %%DATADIR%%/include/tests_file_permissions

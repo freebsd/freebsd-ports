@@ -2,17 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	lynis
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.5
 CATEGORIES=	security
-MASTER_SITES=	http://www.rootkit.nl/files/ \
-		http://downloads.rootkit.nl/
+MASTER_SITES=	http://cisofy.com/files/
 
 MAINTAINER=	loon@noncensored.com
 COMMENT=	Security and system auditing tool
 
+LICENSE=	GPLv3
+
 NO_BUILD=	yes
 
-PORTDOCS=	CHANGELOG INSTALL FAQ LICENSE README
+PORTDOCS=	INSTALL FAQ LICENSE README
 
 post-patch:
 	@${REINPLACE_CMD} -e '/tINCLUDE_TARGETS/ s|".*"|"${DATADIR}/include"|; \
