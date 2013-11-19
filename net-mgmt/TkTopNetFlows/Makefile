@@ -3,36 +3,39 @@
 
 PORTNAME=	TkTopNetFlows
 PORTVERSION=	0.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://vfom.narod.ru/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI tool for NetFlow data visualisation
 
-RUN_DEPENDS=	${LOCALBASE}/lib/libBLT24.so.3:${PORTSDIR}/x11-toolkits/blt \
-		${LOCALBASE}/lib/Tktable2.10/libTktable2.10.so:${PORTSDIR}/x11-toolkits/tktable \
-		p5-Cflow>=0:${PORTSDIR}/net-mgmt/p5-Cflow
+OPTIONS_DEFINE=	DOCS
+
+LIB_DEPENDS+=	libBLT25.so:${PORTSDIR}/x11-toolkits/blt \
+		libTktable2.10.so:${PORTSDIR}/x11-toolkits/tktable
+RUN_DEPENDS=	flowdumper:${PORTSDIR}/net-mgmt/p5-Cflow
 
 NO_BUILD=	yes
-
-USE_TK=		yes
-USES=		perl5
-
+USES=		perl5 tk:85
 PORTDOCS=	*
-
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
+post-patch:
+	${REINPLACE_CMD} -e 's|/usr/local/bin/wish8.4|${WISH}|' \
+	    ${WRKSRC}/TkTopNetFlows.tcl
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/TkTopNetFlows.tcl ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/TkTopNetFlowsHist.tcl ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/flow_Server.pl ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/flow_Server.sh ${PREFIX}/etc/rc.d
-	${INSTALL_SCRIPT} ${WRKSRC}/view_definitions.pl.example ${PREFIX}/etc
-	@${MKDIR} ${PREFIX}/lib/${PORTNAME}-${PORTVERSION}
-	${INSTALL_SCRIPT} ${WRKSRC}/TkTopNetFlows_lib.tcl ${PREFIX}/lib/${PORTNAME}-${PORTVERSION}
-.if !defined(NOPORTDOCS)
+	${INSTALL_SCRIPT} ${WRKSRC}/TkTopNetFlows.tcl ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/TkTopNetFlowsHist.tcl ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/flow_Server.pl ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/flow_Server.sh ${STAGEDIR}${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} ${WRKSRC}/view_definitions.pl.example ${STAGEDIR}${PREFIX}/etc
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}-${PORTVERSION}
+	${INSTALL_SCRIPT} ${WRKSRC}/TkTopNetFlows_lib.tcl ${STAGEDIR}${PREFIX}/lib/${PORTNAME}-${PORTVERSION}
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif

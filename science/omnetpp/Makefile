@@ -3,7 +3,7 @@
 
 PORTNAME=	omnetpp
 PORTVERSION=	3.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	science
 MASTER_SITES=	http://www.omnetpp.org/download/release/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -15,13 +15,11 @@ COMMENT=	A discrete event simulation environment
 DEPRECATED=	depends on expired textproc/libxml
 EXPIRATION_DATE=2013-12-05
 
-LIB_DEPENDS=	BLT24:${PORTSDIR}/x11-toolkits/blt
+LIB_DEPENDS=	libBLT25.so:${PORTSDIR}/x11-toolkits/blt
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig perl5
+USES=		gmake pkgconfig perl5 tk
 USE_GNOME=	libxml libxslt
-USE_TCL=	yes
-USE_TK=		84+
 
 USE_LDCONFIG=	yes
 
