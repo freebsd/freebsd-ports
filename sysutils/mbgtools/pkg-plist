@@ -1,0 +1,11 @@
+sbin/mbgsvcd
+sbin/mbgsetsystime
+sbin/mbgctrl
+sbin/mbgirigcfg
+bin/mbgstatus
+bin/mbgshowsignal
+bin/mbggpscap
+bin/mbghrtime
+bin/mbgfasttstamp
+@cwd /
+%%KMODDIR%%/mbgclock.ko
