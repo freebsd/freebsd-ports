@@ -2039,6 +2039,7 @@
     SUBDIR += p5-Gearman-Client-Async
     SUBDIR += p5-Gearman-Server
     SUBDIR += p5-Gearman-XS
+    SUBDIR += p5-Geo-JSON
     SUBDIR += p5-Geo-ShapeFile
     SUBDIR += p5-Getargs-Long
     SUBDIR += p5-Getopt-ArgvFile
