@@ -575,6 +575,7 @@ man/man1/anki.1.gz
 %%DATADIR%%/locale/qt_zh_TW.qm
 %%DATADIR%%/locale/ro/LC_MESSAGES/anki.mo
 %%DATADIR%%/locale/ru/LC_MESSAGES/anki.mo
+%%DATADIR%%/locale/sk/LC_MESSAGES/anki.mo
 %%DATADIR%%/locale/sl/LC_MESSAGES/anki.mo
 %%DATADIR%%/locale/sr/LC_MESSAGES/anki.mo
 %%DATADIR%%/locale/sv/LC_MESSAGES/anki.mo
@@ -583,6 +584,7 @@ man/man1/anki.1.gz
 %%DATADIR%%/locale/tr/LC_MESSAGES/anki.mo
 %%DATADIR%%/locale/uk/LC_MESSAGES/anki.mo
 %%DATADIR%%/locale/vi/LC_MESSAGES/anki.mo
+%%DATADIR%%/locale/wo/LC_MESSAGES/anki.mo
 %%DATADIR%%/locale/zh_CN/LC_MESSAGES/anki.mo
 %%DATADIR%%/locale/zh_HK/LC_MESSAGES/anki.mo
 %%DATADIR%%/locale/zh_TW/LC_MESSAGES/anki.mo
@@ -752,6 +754,8 @@ share/pixmaps/anki.xpm
 @dirrm %%DATADIR%%/locale/zh_HK
 @dirrm %%DATADIR%%/locale/zh_CN/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/zh_CN
+@dirrm %%DATADIR%%/locale/wo/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/wo
 @dirrm %%DATADIR%%/locale/vi/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/vi
 @dirrm %%DATADIR%%/locale/uk/LC_MESSAGES
@@ -768,6 +772,8 @@ share/pixmaps/anki.xpm
 @dirrm %%DATADIR%%/locale/sr
 @dirrm %%DATADIR%%/locale/sl/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/sl
+@dirrm %%DATADIR%%/locale/sk/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/sk
 @dirrm %%DATADIR%%/locale/ru/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/ru
 @dirrm %%DATADIR%%/locale/ro/LC_MESSAGES

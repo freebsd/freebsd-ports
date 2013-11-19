@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	anki
-PORTVERSION=	2.0.14
+PORTVERSION=	2.0.18
 CATEGORIES=	games python
 MASTER_SITES=	http://ankisrs.net/download/mirror/
 EXTRACT_SUFX=	.tgz
