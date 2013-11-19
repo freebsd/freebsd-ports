@@ -2,6 +2,19 @@ bin/ext2sim
 bin/ext2spice
 bin/magic
 @comment bin/spice2sim
+man/man1/ext2sim.1.gz
+man/man1/ext2spice.1.gz
+man/man1/extcheck.1.gz
+man/man1/magic.1.gz
+man/man5/cmap.5.gz
+man/man5/displays.5.gz
+man/man5/dlys.5.gz
+man/man5/dstyle.5.gz
+man/man5/ext.5.gz
+man/man5/glyphs.5.gz
+man/man5/mag.5.gz
+man/man5/net.5.gz
+man/man5/sim.5.gz
 lib/magic/doc/addendum6_5.ps
 lib/magic/doc/copyright.ps
 lib/magic/doc/html/Makefile
