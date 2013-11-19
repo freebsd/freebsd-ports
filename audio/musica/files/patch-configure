@@ -1,0 +1,38 @@
+--- configure.orig	2013-11-19 16:47:26.000000000 +0100
++++ configure	2013-11-19 16:47:26.000000000 +0100
+@@ -1108,7 +1108,7 @@
+ cat > conftest.$ac_ext <<EOF
+ #line 1110 "configure"
+ #include "confdefs.h"
+-main(){return(0);}
++int main(){return(0);}
+ EOF
+ if { (eval echo configure:1114: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
+   ac_cv_prog_cc_works=yes
+@@ -1524,7 +1524,7 @@
+ cat > conftest.$ac_ext <<EOF
+ #line 1526 "configure"
+ #include "confdefs.h"
+-main(){return(0);}
++int main(){return(0);}
+ EOF
+ if { (eval echo configure:1530: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
+   ac_cv_prog_cc_works=yes
+@@ -1650,7 +1650,7 @@
+ cat > conftest.$ac_ext <<EOF
+ #line 1652 "configure"
+ #include "confdefs.h"
+-main(){return(0);}
++int main(){return(0);}
+ EOF
+ if { (eval echo configure:1656: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
+   ac_cv_prog_cxx_works=yes
+@@ -2639,7 +2639,7 @@
+ #line 2640 "configure"
+ #include "confdefs.h"
+ 
+-main()
++int main()
+ {
+   char c0 = 0x40, c1 = 0x80, c2 = 0x81;
+   exit(memcmp(&c0, &c2, 1) < 0 && memcmp(&c1, &c2, 1) < 0 ? 0 : 1);
