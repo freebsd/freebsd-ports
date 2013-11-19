@@ -1,12 +1,12 @@
 %%SITE_PERL%%/XML/XMLtoDBMS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XMLtoDBMS/.packlist
-%%PORTDOCS%%%%EXAMPLESDIR%%/sales.map
-%%PORTDOCS%%%%EXAMPLESDIR%%/sales.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/sales.sql
-%%PORTDOCS%%%%EXAMPLESDIR%%/sales.xml
-%%PORTDOCS%%%%EXAMPLESDIR%%/sales1.map
-%%PORTDOCS%%%%EXAMPLESDIR%%/sales2.map
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sales.map
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sales.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sales.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sales.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sales1.map
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sales2.map
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XMLtoDBMS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML

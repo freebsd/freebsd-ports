@@ -12,6 +12,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl port of Java package XML-DBMS v1.0
 
+OPTIONS_DEFINE=	EXAMPLES
+
 BUILD_DEPENDS=	p5-libxml>=0:${PORTSDIR}/textproc/p5-libxml \
 		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
 		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
@@ -19,15 +21,12 @@ BUILD_DEPENDS=	p5-libxml>=0:${PORTSDIR}/textproc/p5-libxml \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USES=		perl5
+USES=		dos2unix perl5
 USE_PERL5=	configure
 USE_DOS2UNIX=	yes
 
 post-install:
-.ifndef(NOPORTDOCS)
-	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/samples/*.* ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>

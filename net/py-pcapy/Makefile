@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 FETCH_BEFORE_ARGS=-o ${DISTFILES}
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
@@ -25,13 +25,9 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pcapy.so
 PORTDOCS=	README pcapy.html
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
