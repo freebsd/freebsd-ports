@@ -14,7 +14,7 @@ COMMENT=	Python module to read MS OLE2 files
 
 LICENSE=	MIT
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=OleFileIO_PL
