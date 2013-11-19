@@ -16,6 +16,4 @@ LIB_DEPENDS=	cl:${PORTSDIR}/security/cryptlib
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		PerlCryptLib.3
-
 .include <bsd.port.mk>
