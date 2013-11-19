@@ -4232,7 +4232,6 @@
     SUBDIR += rubygem-ref
     SUBDIR += rubygem-require_all
     SUBDIR += rubygem-rgl
-    SUBDIR += rubygem-ripper
     SUBDIR += rubygem-rr
     SUBDIR += rubygem-rscm
     SUBDIR += rubygem-rspec
