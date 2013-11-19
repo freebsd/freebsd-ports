@@ -22,7 +22,7 @@ OPTIONS_DEFINE=	DOCS
 USE_XORG=	xmu xext x11
 USE_GL=		yes
 USE_LDCONFIG=	${PREFIX}/lib/ayam
-USES+=		tk:84
+USES=		gmake tk:84
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 MAKEFILE=	Makefile.shared
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
