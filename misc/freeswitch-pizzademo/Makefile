@@ -15,6 +15,9 @@ DIST_SUBDIR=	${BASE_PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeSwitch pizza demo
 
+DEPRECATED=	Depends on expired net/freeswitch-core
+EXPIRATION_DATE=2013-12-19
+
 RUN_DEPENDS=    ${LOCALBASE}/bin/freeswitch:${PORTSDIR}/net/freeswitch-core \
 		${LOCALBASE}/share/${BASE_PORTNAME}/sounds/.freeswitch-sounds:${PORTSDIR}/audio/freeswitch-sounds
 

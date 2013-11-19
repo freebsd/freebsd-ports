@@ -13,6 +13,9 @@ DIST_SUBDIR=	${BASE_PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeSwitch Scripts
 
+DEPRECATED=	Depends on expired net/freeswitch-core
+EXPIRATION_DATE=2013-12-19
+
 RUN_DEPENDS=    ${LOCALBASE}/bin/freeswitch:${PORTSDIR}/net/freeswitch-core
 
 CONFLICTS=	freeswitch-scripts-devel-[0-9]*
