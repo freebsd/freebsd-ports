@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ilmbase
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1.0
 CATEGORIES=	graphics devel
 MASTER_SITES=	SAVANNAH/openexr/
 DISTNAME=	ilmbase-${PORTVERSION}
@@ -36,7 +36,8 @@ CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 .endif
 
-PLIST_SUB=	MAJORVER=2_0
+PLIST_SUB=	MAJORVER=2_1
+PLIST_SUB+=	VER=11
 
 regression-test regression test check:	build
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
