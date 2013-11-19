@@ -9,11 +9,13 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Beaker-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A Session and Caching library with WSGI Middleware
+COMMENT=	Session and Caching library with WSGI Middleware
+
+LICENSE=	BSD
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_PKGNAME=	Beaker
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
