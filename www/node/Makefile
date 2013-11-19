@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	0.10.21
+PORTVERSION=	0.10.22
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	linpct@gmail.com
 COMMENT=	V8 JavaScript for client and server
+
+LICENSE=	MIT
 
 LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
