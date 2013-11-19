@@ -2,6 +2,7 @@ bin/node
 lib/dtrace/node.d
 lib/node_modules/.keepme
 share/systemtap/tapset/node.stp
+man/man1/node.1.gz
 @dirrmtry share/systemtap/tapset
 @dirrmtry share/systemtap
 @dirrmtry lib/node_modules
