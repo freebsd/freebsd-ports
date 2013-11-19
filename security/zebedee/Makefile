@@ -10,38 +10,40 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Encrypted, secure compressed TCP tunnel
 
 USES=		perl5
-USE_OPENSSL=	YES
+USE_OPENSSL=	yes
 USE_PERL5=	build
 
 MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS=${PTHREAD_LIBS}
 
-MAN1=		zebedee.1 ftpgw.tcl.1
-
 EXAMPLES=	vncviewer.zbd vncserver.zbd server.key server.id client1.key \
 		client2.key clients.id
 DOCS=		README.txt LICENCE.txt CHANGES.txt zebedee.html ftpgw.tcl.html
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's| gcc| ${CC}|' \
 		${BUILD_WRKSRC}/${MAKEFILE}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/zebedee ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/ftpgw.tcl ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/zebedee.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/ftpgw.tcl.1 ${PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/server.zbd ${PREFIX}/etc/server.zbd.sample
-	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/zebedee ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/ftpgw.tcl ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/zebedee.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/ftpgw.tcl.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/server.zbd ${STAGEDIR}${PREFIX}/etc/server.zbd.sample
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for e in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${e} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${e} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for d in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${d} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${d} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
