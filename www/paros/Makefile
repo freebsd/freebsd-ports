@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/Paros/Version%20${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-unix
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An HTTP/HTTPS proxy for assessing web application vulnerability
+COMMENT=	HTTP/HTTPS proxy for assessing web application vulnerability
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -18,20 +18,20 @@ JAVA_VERSION=	1.6
 
 USE_ZIP=	yes
 NO_BUILD=	yes
-USE_DOS2UNIX=	release.txt
+USES=		dos2unix
+DOS2UNIX_FILES=	release.txt
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|java -jar \(paros.jar\)|cd ${DATADIR} \&\& java -jar ${DATADIR}/\1|g' \
 	${WRKSRC}/startserver.sh
 	${RM} ${WRKSRC}/startserver.sh.bak
 
 do-install:
-	@${MKDIR} ${JAVASHAREDIR}/${PORTNAME}
-	(cd ${WRKSRC} && ${COPYTREE_BIN} \* ${JAVASHAREDIR}/${PORTNAME} \
+	@${MKDIR} ${STAGEDIR}${JAVASHAREDIR}/${PORTNAME}
+	(cd ${WRKSRC} && ${COPYTREE_BIN} \* ${STAGEDIR}${JAVASHAREDIR}/${PORTNAME} \
 	"! -name startserver.sh")
-	${INSTALL_SCRIPT} ${WRKSRC}/startserver.sh ${PREFIX}/bin/paros
+	${INSTALL_SCRIPT} ${WRKSRC}/startserver.sh ${STAGEDIR}${PREFIX}/bin/paros
 
 .include <bsd.port.mk>
