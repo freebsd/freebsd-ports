@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# $Id: mbgsvcd 1.1 2011/07/06 13:26:01 martin TEST $
+#
+# $FreeBSD$
+#
+# PROVIDE: mbgsvcd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="mbgsvcd"
+rcvar=`set_rcvar`
+command="/usr/local/sbin/${name}"
+
+load_rc_config $name
+
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+# SET THEM IN THE /etc/rc.conf FILE
+#
+## utility_enable=${utility_enable-"NO"}
+## utility_pidfile=${utility_pidfile-"/var/run/utility.pid"}
+
+## pidfile="${utility_pidfile}"
+
+run_rc_command "$1"
