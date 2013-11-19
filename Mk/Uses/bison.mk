@@ -26,7 +26,7 @@ RUN_DEPENDS+=	${_BISON_DEPENDS}
 BUILD_DEPENDS+=	${_BISON_DEPENDS}
 RUN_DEPENDS+=	${_BISON_DEPENDS}
 .else
-IGNORE=	USES=bison - invalid args: [${bison_ARGS}] specifed
+IGNORE=	USES=bison - invalid args: [${bison_ARGS}] specified
 .endif
 
 .endif
