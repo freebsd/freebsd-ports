@@ -2,6 +2,7 @@
 
 PORTNAME=	poudriere
 PORTVERSION=	3.0.99.20131028
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://fossil.etoilebsd.net/poudriere/tarball/ \
 		LOCAL/bdrewery/${PORTNAME}/
