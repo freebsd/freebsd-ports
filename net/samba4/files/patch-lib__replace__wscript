@@ -1,10 +1,11 @@
---- ./lib/replace/wscript.orig	2013-02-05 12:25:25.000000000 +0000
-+++ ./lib/replace/wscript	2013-02-15 06:29:28.649888344 +0000
-@@ -344,7 +344,6 @@
-             conf.CHECK_FUNCS_IN('gettext', 'intl', checklibc=True, headers='libintl.h')
+--- lib/replace/wscript.orig	2013-09-06 09:39:57.000000000 +0000
++++ lib/replace/wscript	2013-10-15 15:11:25.307472084 +0000
+@@ -398,8 +398,6 @@
+                            'it with --with-gettext=</path/to/gettext> or ' +
+                            '--without-gettext to build without''')
  
-     conf.CHECK_FUNCS_IN('dgettext gettext', 'intl', headers='libintl.h')
 -    conf.CHECK_FUNCS_IN('pthread_create', 'pthread', checklibc=True, headers='pthread.h')
- 
+-
      conf.CHECK_FUNCS_IN('crypt', 'crypt', checklibc=True)
  
+     conf.CHECK_VARIABLE('rl_event_hook', define='HAVE_DECL_RL_EVENT_HOOK', always=True,
