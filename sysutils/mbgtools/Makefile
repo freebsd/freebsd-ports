@@ -11,13 +11,8 @@ COMMENT=	Drivers and tools for Meinberg PTP/GPS cards
 
 LICENSE=	BSD
 
-USES=		kmod
-
 USE_RC_SUBR=	mbgsvcd
 
-.include <bsd.port.pre.mk>
+USES=		kmod
 
-post-extract:
-	${CP} ${WRKSRC}/scripts/mbgsvcd ${FILESDIR}/mbgsvcd.in
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
