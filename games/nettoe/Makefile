@@ -2,31 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	nettoe
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.2
 CATEGORIES=	games
 MASTER_SITES=	SF \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	cs@FreeBSD.org
-COMMENT=	A tic-tac-toe game playable over the network
+COMMENT=	Tic tac toe game playable over the network
 
 LICENSE=	GPLv2
 
-PLIST_FILES=	bin/nettoe
+PLIST_FILES=	bin/nettoe man/man6/nettoe.6.gz
 
-MAN6=		nettoe.6
-
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
-NO_STAGE=	yes
-
 PORTDOCS=	AUTHORS BUGS ChangeLog NEWS README TO-DO
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
 post-install:
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for I in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/$I ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/$I ${STAGEDIR}${DOCSDIR}/
 .endfor
 .endif
 
