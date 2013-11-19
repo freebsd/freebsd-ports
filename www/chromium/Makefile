@@ -163,7 +163,7 @@ TEST_TARGETS=	base_unittests \
 		content_unittests
 EXCLUDED_TESTS=	GpuDriverBugListTest.CurrentDriverBugListValidation
 NINJA_TARGETS+=	${TEST_TARGETS}
-DISTFILES+=	${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}
+DISTFILES+=	${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}:testdata
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
