@@ -20,7 +20,6 @@ CONFIGURE_ARGS=	--libdir=${LOCALBASE}/lib --includedir=${LOCALBASE}/include
 
 PLIST_FILES=	bin/pdfcube
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e \
 		's|BOOSTLIBDIR/libboost_program_options\*\.{so,a}\*|BOOSTLIBDIR/libboost_program_options.so|' \
