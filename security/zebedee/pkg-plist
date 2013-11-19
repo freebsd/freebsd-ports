@@ -1,6 +1,8 @@
 bin/ftpgw.tcl
 bin/zebedee
 etc/server.zbd.sample
+man/man1/ftpgw.tcl.1.gz
+man/man1/zebedee.1.gz
 %%EXAMPLESDIR%%/client1.key
 %%EXAMPLESDIR%%/client2.key
 %%EXAMPLESDIR%%/clients.id
