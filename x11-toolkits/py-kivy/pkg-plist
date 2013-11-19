@@ -336,6 +336,9 @@ bin/garden
 %%PYTHON_SITELIBDIR%%/kivy/lib/osc/oscAPI.py
 %%PYTHON_SITELIBDIR%%/kivy/lib/osc/oscAPI.pyc
 %%PYTHON_SITELIBDIR%%/kivy/lib/osc/oscAPI.pyo
+%%PYTHON_SITELIBDIR%%/kivy/lib/vidcore_lite/__init__.py
+%%PYTHON_SITELIBDIR%%/kivy/lib/vidcore_lite/__init__.pyc
+%%PYTHON_SITELIBDIR%%/kivy/lib/vidcore_lite/__init__.pyo
 %%PYTHON_SITELIBDIR%%/kivy/loader.py
 %%PYTHON_SITELIBDIR%%/kivy/loader.pyc
 %%PYTHON_SITELIBDIR%%/kivy/loader.pyo
@@ -409,9 +412,9 @@ bin/garden
 %%PYTHON_SITELIBDIR%%/kivy/tools/packaging/factory.py
 %%PYTHON_SITELIBDIR%%/kivy/tools/packaging/factory.pyc
 %%PYTHON_SITELIBDIR%%/kivy/tools/packaging/factory.pyo
-%%PYTHON_SITELIBDIR%%/kivy/tools/packaging/osx/Info.plist
-%%PYTHON_SITELIBDIR%%/kivy/tools/packaging/osx/InfoPlist.strings
-%%PYTHON_SITELIBDIR%%/kivy/tools/packaging/osx/kivy.sh
+%%PYTHON_SITELIBDIR%%/kivy/tools/packaging/googlecode_upload.py
+%%PYTHON_SITELIBDIR%%/kivy/tools/packaging/googlecode_upload.pyc
+%%PYTHON_SITELIBDIR%%/kivy/tools/packaging/googlecode_upload.pyo
 %%PYTHON_SITELIBDIR%%/kivy/tools/packaging/pyinstaller_hooks/__init__.py
 %%PYTHON_SITELIBDIR%%/kivy/tools/packaging/pyinstaller_hooks/__init__.pyc
 %%PYTHON_SITELIBDIR%%/kivy/tools/packaging/pyinstaller_hooks/__init__.pyo
@@ -421,9 +424,6 @@ bin/garden
 %%PYTHON_SITELIBDIR%%/kivy/tools/packaging/pyinstaller_hooks/rt-hook-kivy.py
 %%PYTHON_SITELIBDIR%%/kivy/tools/packaging/pyinstaller_hooks/rt-hook-kivy.pyc
 %%PYTHON_SITELIBDIR%%/kivy/tools/packaging/pyinstaller_hooks/rt-hook-kivy.pyo
-%%PYTHON_SITELIBDIR%%/kivy/tools/packaging/win32/README.txt
-%%PYTHON_SITELIBDIR%%/kivy/tools/packaging/win32/kivy.bat
-%%PYTHON_SITELIBDIR%%/kivy/tools/packaging/win32/kivyenv.sh
 %%PYTHON_SITELIBDIR%%/kivy/tools/report.py
 %%PYTHON_SITELIBDIR%%/kivy/tools/report.pyc
 %%PYTHON_SITELIBDIR%%/kivy/tools/report.pyo
@@ -1447,15 +1447,14 @@ share/kivy-examples/widgets/videoplayer.py
 %%DOCS%%@dirrm %%DOCSDIR%%/_images
 %%DOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/kivy/uix
-@dirrm %%PYTHON_SITELIBDIR%%/kivy/tools/packaging/win32
 @dirrm %%PYTHON_SITELIBDIR%%/kivy/tools/packaging/pyinstaller_hooks
-@dirrm %%PYTHON_SITELIBDIR%%/kivy/tools/packaging/osx
 @dirrm %%PYTHON_SITELIBDIR%%/kivy/tools/packaging
 @dirrm %%PYTHON_SITELIBDIR%%/kivy/tools/highlight
 @dirrm %%PYTHON_SITELIBDIR%%/kivy/tools/extensions
 @dirrm %%PYTHON_SITELIBDIR%%/kivy/tools
 @dirrm %%PYTHON_SITELIBDIR%%/kivy/network
 @dirrm %%PYTHON_SITELIBDIR%%/kivy/modules
+@dirrm %%PYTHON_SITELIBDIR%%/kivy/lib/vidcore_lite
 @dirrm %%PYTHON_SITELIBDIR%%/kivy/lib/osc
 @dirrm %%PYTHON_SITELIBDIR%%/kivy/lib
 @dirrm %%PYTHON_SITELIBDIR%%/kivy/input/providers
