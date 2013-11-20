@@ -19,5 +19,6 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 PYDISTUTILS_PKGNAME=	python-memcached
 
-NO_STAGE=	yes
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+
 .include <bsd.port.mk>
