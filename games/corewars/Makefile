@@ -18,19 +18,11 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if defined(.PARSEDIR)
-USE_GMAKE=	yes
+USES=		gmake
 .endif
-
-MAN6=		corewars.6
-MLINKS=		corewars.6 corewars-cmd.6
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
