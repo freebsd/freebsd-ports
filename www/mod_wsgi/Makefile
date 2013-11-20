@@ -5,9 +5,7 @@ PORTNAME=	mod_wsgi
 PORTVERSION=	2.8
 PORTREVISION=	2
 CATEGORIES=	www python
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
-		http://apt.douglasthrift.net/files/${PORTNAME}/ \
-		http://code.douglasthrift.net/files/${PORTNAME}/
+MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	douglas@douglasthrift.net
@@ -17,12 +15,12 @@ LICENSE=	AL2
 
 
 LATEST_LINK=	mod_wsgi2
-CONFLICTS=	${PKGNAMEPREFIX}mod_wsgi-3.* mod_wsgi-3.*
+CONFLICTS=	${PKGNAMEPREFIX}mod_wsgi-3.* ${PKGNAMEPREFIX}mod_wsgi3.* mod_wsgi-3.*
 
 PROJECTHOST=	modwsgi
 
 USE_APACHE=	22
-USE_PYTHON=	2.5-2.7
+USE_PYTHON=	-2.7
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-apxs="${APXS}" --with-python="${PYTHON_CMD}"
@@ -31,7 +29,6 @@ SUB_FILES=	pkg-message
 
 PORTSCOUT=	limit:^2\.
 
-NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} "======================= ATTENTION! ======================"
 	@${ECHO_MSG}
@@ -42,6 +39,5 @@ pre-everything::
 
 post-install:
 	@${APXS} -e -a -n "${SHORTMODNAME}" "${APACHEMODDIR}/${MODULENAME}.so"
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
