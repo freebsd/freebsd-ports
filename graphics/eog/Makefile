@@ -1,55 +1,65 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/graphics/eog/Makefile,v 1.123 2010/11/16 10:11:41 kwm Exp $
+#   $MCom: ports/trunk/graphics/eog3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	eog
-PORTVERSION=	2.32.1
-PORTREVISION=	4
+PORTVERSION=	3.6.2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The Eye Of Gnome image viewer
 
 BUILD_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
-		update-mime-database:${PORTSDIR}/misc/shared-mime-info
+		itstool:${PORTSDIR}/textproc/itstool \
+		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
+LIB_DEPENDS=	libpeas-gtk-1.0.so:${PORTSDIR}/devel/libpeas \
+		liblcms.so:${PORTSDIR}/graphics/lcms
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
-		update-mime-database:${PORTSDIR}/misc/shared-mime-info
+		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-USE_BZIP2=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack librsvg2 desktopfileutils \
-		gconf2 gnomedesktop
-WANT_GNOME=	yes
+USE_XZ=		yes
+USE_GNOME=	gnomeprefix intlhack librsvg2 gtk30 gnomedesktop3 \
+		introspection:build
 INSTALLS_ICONS=	yes
-USES=		gettext gmake pkgconfig
-INSTALLS_OMF=	yes
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
+		shared-mime-info
 GNU_CONFIGURE=	yes
-GNOME_DESKTOP_VERSION=2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-GCONF_SCHEMAS=	eog.schemas
+GLIB_SCHEMAS=	org.gnome.eog.enums.xml \
+		org.gnome.eog.gschema.xml
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+PLIST_SUB+=	VERSION=3.0
+
+OPTIONS_DEFINE=	EXIF EXEMPI
+OPTIONS_DEFAULT=EXIF EXEMPI
+EXIF_DESC=	Digital camera file meta-data support
+EXEMPI_DESC=	XMP support
+
+.include <bsd.port.options.mk>
 
 _WITH_EXIF=	no
 _WITH_EXEMPI=	no
 
-.if !defined(WITHOUT_EXIF) || (exists(${LOCALBASE}/lib/libexif.so.12) || \
-	defined(WITH_EXIF))
-LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif
+.if ${PORT_OPTIONS:MEXIF}
+CONFIGURE_ARGS+=--with-libexif
+LIB_DEPENDS+=	libexif.so:${PORTSDIR}/graphics/libexif
 PLIST_SUB+=	EXIF=""
 _WITH_EXIF=	yes
 .else
+CONFIGURE_ARGS+=--without-libexif
 PLIST_SUB+=	EXIF="@comment "
 .endif
 
-.if !defined(WITHOUT_EXEMPI) || (exists(${LOCALBASE}/lib/libexempi.so)) || \
-    	defined(WITH_EXEMPI)
-LIB_DEPENDS+=	exempi.3:${PORTSDIR}/textproc/exempi
+.if ${PORT_OPTIONS:MEXEMPI}
+CONFIGURE_ARGS+=--with-xmp
+LIB_DEPENDS+=	libexempi.so:${PORTSDIR}/textproc/exempi
 _WITH_EXEMPI=	yes
+.else
+CONFIGURE_ARGS+=--without-xmp
 .endif
 
 .if ${_WITH_EXIF}=="yes" || ${_WITH_EXEMPI}=="yes"
@@ -58,14 +68,7 @@ PLIST_SUB+=	EXIFEXEMPI=""
 PLIST_SUB+=	EXIFEXEMPI="@comment "
 .endif
 
-.if ${HAVE_GNOME:Mpygtk2}!=""
-USE_GNOME+=	pygtk2
-CONFIGURE_ARGS+=--enable-python
-.else
-CONFIGURE_ARGS+=--disable-python
-.endif
-
 post-install:
-	@-update-desktop-database > /dev/null
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/eog/plugins/lib*.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

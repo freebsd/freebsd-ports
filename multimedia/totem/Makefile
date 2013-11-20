@@ -1,35 +1,40 @@
 # Created by: Hendrik Scholz <hendrik@scholz.net>
 # $FreeBSD$
-#   $MCom: ports/multimedia/totem/Makefile,v 1.151 2010/09/27 19:04:37 kwm Exp $
+#   $MCom: ports/trunk/multimedia/totem3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	totem
-PORTVERSION=	2.32.0
-PORTREVISION?=	2
+PORTVERSION=	3.6.3
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
-MAINTAINER?=	gnome@FreeBSD.org
-COMMENT?=	Gstreamer-based video player for the GNOME 2 Desktop
+MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Gstreamer-based video player for the GNOME 3 Desktop
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-LIB_DEPENDS=	gdata.7:${PORTSDIR}/devel/libgdata \
-		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
-		totem-plparser.17:${PORTSDIR}/multimedia/totem-pl-parser
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
+		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme \
+		grilo-plugins>=0.2:${PORTSDIR}/net/grilo-plugins
+LIB_DEPENDS=	libgdata.so.13:${PORTSDIR}/devel/libgdata \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libclutter-gst-2.0.so:${PORTSDIR}/multimedia/clutter-gst \
+		libclutter-gtk-1.0.so:${PORTSDIR}/graphics/clutter-gtk3 \
+		libpeas-1.0.so:${PORTSDIR}/devel/libpeas \
+		libtotem-plparser.so:${PORTSDIR}/multimedia/totem-pl-parser
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
-		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon \
-		${PYTHON_SITELIBDIR}/atom/__init__.py:${PORTSDIR}/devel/py-gdata
+		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme \
+		gnome-settings-daemon>=2.91.0:${PORTSDIR}/sysutils/gnome-settings-daemon \
+		gnome-icon-theme-symbolic>=2.91.0:${PORTSDIR}/x11-themes/gnome-icon-theme-symbolic \
+		grilo-plugins>=0.2:${PORTSDIR}/net/grilo-plugins
 
-CONFLICTS=	totem-3.[0-9]*
-
+NO_STAGE=	yes
 USE_PYTHON=	yes
-USE_BZIP2=	yes
-USES=		pathfix gettext desktop-file-utils pkgconfig
-USE_GNOME=	gnomeprefix intlhack nautilus2 \
-		ltverhack pygtk2 gnomehier
-USE_GSTREAMER=	core gconf hal good mpeg2dec soup ugly python gio
+USE_XORG=	x11 xproto xtst ice sm
+USE_XZ=		yes
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig shebangfix
+USE_GNOME=	gnomeprefix intlhack gtk30 libxml2 nautilus3 ltverhack \
+		pygobject3 gnomedocutils gnomehier introspection:build
+USE_GSTREAMER1=	core good bad soup ugly
 INSTALLS_ICONS=	yes
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 INSTALLS_OMF=	yes
@@ -39,40 +44,33 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	LIBS="-lXrandr" \
 		BROWSER_PLUGIN_DIR="${WEBPLUGINS_DIR}"
 CONFIGURE_ARGS=	--with-plugins="${TOTEM_PLUGINS}"
+SHEBANG_FILES=	data/totem-bugreport.py
 
 MAN1=		totem.1 totem-video-thumbnailer.1
-GCONF_SCHEMAS=	totem-handlers.schemas totem-video-thumbnail.schemas \
-		totem.schemas
+GLIB_SCHEMAS=	org.gnome.totem.enums.xml \
+		org.gnome.totem.gschema.xml \
+		org.gnome.totem.plugins.opensubtitles.gschema.xml
 
-OPTIONS_DEFINE=	LIRC GALAGO BROWSER_PLUGINS PUBLISH TRACKER
-GALAGO_DESC=	Galago support
+OPTIONS_DEFINE=	LIRC BROWSER_PLUGINS
 BROWSER_PLUGINS_DESC=	Plugins for gecko browser
-PUBLISH_DESC=	Publish (network playlist) plugin
 TRACKER_DESC=	Tracker local search plugin
 
-OPTIONS_DEFAULT=	BROWSER_PLUGINS
-# check configure script for allowed_plugins="..." for new plugins
-TOTEM_PLUGINS=	thumbnail screensaver ontop gromit media-player-keys \
-		properties skipto youtube opensubtitles screenshot \
-		brasero-disc-recorder coherence_upnp dbus-service iplayer
+OPTIONS_DEFAULT=BROWSER_PLUGINS
 
-NO_STAGE=	yes
-# Not using:
-# TOTEM_PLUGINS= mythtv bemused jamendo
+# check configure script for allowed_plugins="..." for new plugins
+TOTEM_PLUGINS=	brasero-disc-recorder chapters dbusservice im-status grilo gromit \
+		iplayer media-player-keys ontop opensubtitles properties \
+		screensaver screenshot sidebar-test skipto youtube
+
+# pythonconsole samplepython
+# vala rotation sample-vala
+# nautilus save-file
+# iplayer zeitgeist-dp grilo
 
 .include <bsd.port.options.mk>
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_PUBLISH)
-LIB_DEPENDS+=	epc-1.0.2:${PORTSDIR}/www/libepc
-PLIST_SUB+=	PUBLISH=""
-TOTEM_PLUGINS:=	${TOTEM_PLUGINS} publish
-.else
-PLIST_SUB+=	PUBLISH="@comment "
-.endif
 
 #.if defined(WITH_TRACKER)
-#LIB_DEPENDS+=	tracker-gtk.0:${PORTSDIR}/sysutils/tracker-libtrackergtk
+#LIB_DEPENDS+=	tracker-gtk:${PORTSDIR}/sysutils/tracker-libtrackergtk
 #TOTEM_PLUGINS:=	${TOTEM_PLUGINS} tracker
 #PLIST_SUB+=	TRACKER=""
 #.else
@@ -80,19 +78,11 @@ PLIST_SUB+=	TRACKER="@comment "
 #.endif
 
 .if ${PORT_OPTIONS:MLIRC}
-LIB_DEPENDS+=	lirc_client.2:${PORTSDIR}/comms/lirc
+LIB_DEPENDS+=	liblirc_client.so:${PORTSDIR}/comms/lirc
 PLIST_SUB+=	LIRC=""
 TOTEM_PLUGINS:=	${TOTEM_PLUGINS} lirc
 .else
 PLIST_SUB+=	LIRC="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGALAGO}
-LIB_DEPENDS+=	galago.3:${PORTSDIR}/devel/libgalago
-PLIST_SUB+=	GALAGO=""
-TOTEM_PLUGINS:=	${TOTEM_PLUGINS} galago
-.else
-PLIST_SUB+=	GALAGO="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MBROWSER_PLUGINS}
@@ -101,7 +91,7 @@ CONFIGURE_ARGS+=--enable-browser-plugins \
 		--enable-narrowspace-plugin
 PLIST_SUB+=	BROWSER_PLUGINS=""
 
-USE_WEBPLUGINS=		gecko19 webkit-gtk2
+USE_WEBPLUGINS=		webkit-gtk3
 WEBPLUGINS_FILES=	libtotem-cone-plugin.so libtotem-gmp-plugin.so \
 			libtotem-mully-plugin.so \
 			libtotem-narrowspace-plugin.so
@@ -117,7 +107,7 @@ PLIST_SUB+=	BROWSER_PLUGINS="@comment "
 .if defined(WITH_DVD_DEVICE)
 DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
 .else
-DEFAULT_DVD_DEVICE=/dev/acd0
+DEFAULT_DVD_DEVICE=/dev/cd0
 .endif
 
 pre-everything::
@@ -127,13 +117,13 @@ pre-everything::
 
 post-patch:
 	@${CP} -f ${FILESDIR}/pkg-message.in ${PKGMESSAGE}
-	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
-		${WRKSRC}/src/backend/bacon-video-widget-gst-0.10.c
 
 post-install:
-	${MKDIR} ${PREFIX}/share/vala/vapi
-	${INSTALL_DATA} ${WRKSRC}/bindings/vala/totem.vapi ${PREFIX}/share/vala/vapi
-	${INSTALL_DATA} ${WRKSRC}/bindings/vala/totem.deps ${PREFIX}/share/vala/vapi
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/totem/plugins/*/lib*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtotem.so.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/nautilus/extensions-3.0/libtotem-properties-page.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/browser_plugins/totem/libtotem-*-plugin.so
+# remove after stage conversion
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

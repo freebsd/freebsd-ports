@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2013-06-24 18:14:39.000000000 +0200
++++ Makefile.in	2013-06-24 18:15:04.000000000 +0200
+@@ -1061,7 +1061,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-cmakeDATA install-dist_bashcompletionDATA \
++install-data-am: install-cmakeDATA \
+ 	install-dist_vapiDATA install-pkgconfigDATA
+ 
+ install-dvi: install-dvi-recursive

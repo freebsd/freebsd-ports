@@ -1,0 +1,166 @@
+bin/gnome-audio-profiles-properties
+include/libgnome-media-profiles-3.0/libgnome-media-profiles/audio-profile-choose.h
+include/libgnome-media-profiles-3.0/libgnome-media-profiles/audio-profile-edit.h
+include/libgnome-media-profiles-3.0/libgnome-media-profiles/audio-profile.h
+include/libgnome-media-profiles-3.0/libgnome-media-profiles/audio-profiles-edit.h
+include/libgnome-media-profiles-3.0/libgnome-media-profiles/gnome-media-profiles.h
+lib/libgnome-media-profiles-3.0.a
+lib/libgnome-media-profiles-3.0.la
+lib/libgnome-media-profiles-3.0.so
+lib/libgnome-media-profiles-3.0.so.0
+libdata/pkgconfig/libgnome-media-profiles-3.0.pc
+share/gnome/help/gnome-audio-profiles/C/figures/gnome-audio-profiles-profile-window.png
+share/gnome/help/gnome-audio-profiles/C/figures/gnome-audio-profiles-profiles-window.png
+share/gnome/help/gnome-audio-profiles/C/gnome-audio-profiles.xml
+share/gnome/help/gnome-audio-profiles/C/legal.xml
+share/gnome/help/gnome-audio-profiles/da/figures/gnome-audio-profiles-profile-window.png
+share/gnome/help/gnome-audio-profiles/da/figures/gnome-audio-profiles-profiles-window.png
+share/gnome/help/gnome-audio-profiles/da/gnome-audio-profiles.xml
+share/gnome/help/gnome-audio-profiles/da/legal.xml
+share/gnome/help/gnome-audio-profiles/de/figures/gnome-audio-profiles-profile-window.png
+share/gnome/help/gnome-audio-profiles/de/figures/gnome-audio-profiles-profiles-window.png
+share/gnome/help/gnome-audio-profiles/de/gnome-audio-profiles.xml
+share/gnome/help/gnome-audio-profiles/de/legal.xml
+share/gnome/help/gnome-audio-profiles/el/figures/gnome-audio-profiles-profile-window.png
+share/gnome/help/gnome-audio-profiles/el/figures/gnome-audio-profiles-profiles-window.png
+share/gnome/help/gnome-audio-profiles/el/gnome-audio-profiles.xml
+share/gnome/help/gnome-audio-profiles/el/legal.xml
+share/gnome/help/gnome-audio-profiles/es/figures/gnome-audio-profiles-profile-window.png
+share/gnome/help/gnome-audio-profiles/es/figures/gnome-audio-profiles-profiles-window.png
+share/gnome/help/gnome-audio-profiles/es/gnome-audio-profiles.xml
+share/gnome/help/gnome-audio-profiles/es/legal.xml
+share/gnome/help/gnome-audio-profiles/fr/figures/gnome-audio-profiles-profile-window.png
+share/gnome/help/gnome-audio-profiles/fr/figures/gnome-audio-profiles-profiles-window.png
+share/gnome/help/gnome-audio-profiles/fr/gnome-audio-profiles.xml
+share/gnome/help/gnome-audio-profiles/fr/legal.xml
+share/gnome/help/gnome-audio-profiles/sl/figures/gnome-audio-profiles-profile-window.png
+share/gnome/help/gnome-audio-profiles/sl/figures/gnome-audio-profiles-profiles-window.png
+share/gnome/help/gnome-audio-profiles/sl/gnome-audio-profiles.xml
+share/gnome/help/gnome-audio-profiles/sl/legal.xml
+share/gnome/help/gnome-audio-profiles/sv/figures/gnome-audio-profiles-profile-window.png
+share/gnome/help/gnome-audio-profiles/sv/figures/gnome-audio-profiles-profiles-window.png
+share/gnome/help/gnome-audio-profiles/sv/gnome-audio-profiles.xml
+share/gnome/help/gnome-audio-profiles/sv/legal.xml
+share/gnome/help/gnome-audio-profiles/zh_CN/figures/gnome-audio-profiles-profile-window.png
+share/gnome/help/gnome-audio-profiles/zh_CN/figures/gnome-audio-profiles-profiles-window.png
+share/gnome/help/gnome-audio-profiles/zh_CN/gnome-audio-profiles.xml
+share/gnome/help/gnome-audio-profiles/zh_CN/legal.xml
+%%DATADIR%%/gnome-audio-profile-edit.ui
+%%DATADIR%%/gnome-audio-profile-new.ui
+share/locale/af/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/ar/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/as/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/ast/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/az/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/be/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/be@latin/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/bg/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/bn/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/bn_IN/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/br/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/bs/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/ca/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/ca@valencia/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/cs/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/cy/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/da/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/de/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/dz/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/el/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/en@shaw/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/en_CA/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/en_GB/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/es/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/et/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/eu/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/fa/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/fi/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/fr/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/ga/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/gl/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/gu/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/he/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/hi/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/hr/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/hu/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/id/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/it/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/ja/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/kn/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/ko/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/ku/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/lt/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/lv/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/mai/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/mg/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/mk/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/ml/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/mn/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/mr/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/ms/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/nb/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/nds/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/ne/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/nl/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/nn/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/oc/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/or/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/pa/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/pl/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/pt/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/pt_BR/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/ro/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/ru/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/si/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/sk/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/sl/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/sq/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/sr/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/sr@latin/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/sv/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/ta/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/te/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/th/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/tr/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/ug/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/uk/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/vi/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/wa/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/xh/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/zh_CN/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/zh_HK/LC_MESSAGES/libgnome-media-profiles.mo
+share/locale/zh_TW/LC_MESSAGES/libgnome-media-profiles.mo
+share/omf/gnome-audio-profiles/gnome-audio-profiles-C.omf
+share/omf/gnome-audio-profiles/gnome-audio-profiles-da.omf
+share/omf/gnome-audio-profiles/gnome-audio-profiles-de.omf
+share/omf/gnome-audio-profiles/gnome-audio-profiles-el.omf
+share/omf/gnome-audio-profiles/gnome-audio-profiles-es.omf
+share/omf/gnome-audio-profiles/gnome-audio-profiles-fr.omf
+share/omf/gnome-audio-profiles/gnome-audio-profiles-sl.omf
+share/omf/gnome-audio-profiles/gnome-audio-profiles-sv.omf
+share/omf/gnome-audio-profiles/gnome-audio-profiles-zh_CN.omf
+@dirrm share/omf/gnome-audio-profiles
+@dirrm share/libgnome-media-profiles
+@dirrm share/gnome/help/gnome-audio-profiles/zh_CN/figures
+@dirrm share/gnome/help/gnome-audio-profiles/zh_CN
+@dirrm share/gnome/help/gnome-audio-profiles/sv/figures
+@dirrm share/gnome/help/gnome-audio-profiles/sv
+@dirrm share/gnome/help/gnome-audio-profiles/sl/figures
+@dirrm share/gnome/help/gnome-audio-profiles/sl
+@dirrm share/gnome/help/gnome-audio-profiles/fr/figures
+@dirrm share/gnome/help/gnome-audio-profiles/fr
+@dirrm share/gnome/help/gnome-audio-profiles/es/figures
+@dirrm share/gnome/help/gnome-audio-profiles/es
+@dirrm share/gnome/help/gnome-audio-profiles/el/figures
+@dirrm share/gnome/help/gnome-audio-profiles/el
+@dirrm share/gnome/help/gnome-audio-profiles/de/figures
+@dirrm share/gnome/help/gnome-audio-profiles/de
+@dirrm share/gnome/help/gnome-audio-profiles/da/figures
+@dirrm share/gnome/help/gnome-audio-profiles/da
+@dirrm share/gnome/help/gnome-audio-profiles/C/figures
+@dirrm share/gnome/help/gnome-audio-profiles/C
+@dirrm share/gnome/help/gnome-audio-profiles
+@dirrmtry share/gnome/help
+@dirrmtry share/gnome
+@dirrm include/libgnome-media-profiles-3.0/libgnome-media-profiles
+@dirrm include/libgnome-media-profiles-3.0

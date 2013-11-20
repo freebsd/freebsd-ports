@@ -1,0 +1,8 @@
+geocode-glib is a convenience library for the Yahoo! Place Finder
+APIs.
+
+The Place Finder web service allows to do geocoding (finding longitude
+and latitude from an address), and reverse geocoding (finding an address
+from coordinates).
+
+WWW: http://developer.yahoo.com/geo/placefinder/

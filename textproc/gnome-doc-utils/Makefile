@@ -18,11 +18,12 @@ RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian \
 		${LOCALBASE}/share/xml/docbook/4.3/catalog.xml:${PORTSDIR}/textproc/docbook-xml-430 \
 		${LOCALBASE}/share/xml/docbook/4.4/catalog.xml:${PORTSDIR}/textproc/docbook-xml-440
 
+NO_STAGE=	yes
 USE_XZ=		yes
 MAKE_JOBS_UNSAFE=yes
 USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	gnomehier libxslt intlhack
-USE_PYTHON=	-2.7
+USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-omf-dir=${PREFIX}/share/omf
@@ -31,7 +32,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		xml2po.1
 
-NO_STAGE=	yes
 post-install:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${PYTHON_SITELIBDIR}/xml2po
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${PYTHON_SITELIBDIR}/xml2po/modes

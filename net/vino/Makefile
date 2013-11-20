@@ -1,39 +1,44 @@
 # Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 # $FreeBSD$
-#   $MCom: ports/net/vino/Makefile,v 1.81 2010/09/27 13:51:24 kwm Exp $
+#   $MCom: ports/trunk/net/vino3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	vino
-PORTVERSION=	2.32.2
-PORTREVISION=	4
+PORTVERSION=	3.6.2
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VNC server that allows for remote access to your GNOME desktop
 
-LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
-		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib \
-		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
+LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
+		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
+		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
+		libavahi-glib.so:${PORTSDIR}/net/avahi-app
 
-USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig
-USE_GNOME=	gnomeprefix intlhack gnomehack gnomepanel
-USE_XORG=	xtst
-GNOME_DESKTOP_VERSION=2
+USE_XZ=		yes
+USES=		gettext gmake pathfix pkgconfig
+USE_GNOME=	gnomeprefix gtk30 intlhack
+USE_XORG=	xdamage xfixes xtst
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ARGS=	--without-network-manager \
+		--disable-http-server
+CPPFLAGS+=	-I${LOCALBASE}/include -Wno-format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
+GLIB_SCHEMAS=	org.gnome.Vino.enums.xml org.gnome.Vino.gschema.xml
 
-GCONF_SCHEMAS=	vino-server.schemas
+OPTIONS_DEFINE=	NOTIFY
+OPTIONS_DEFAULT=NOTIFY
 
-.if !defined(WITHOUT_NOTIFY)
-LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
-CONFIGURE_ARGS+=--enable-libnotify=yes
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNOTIFY}
+LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
 .else
-CONFIGURE_ARGS+=--enable-libnotify=no
+CONFIGURE_ARGS+=--without-libnotify
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

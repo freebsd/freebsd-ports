@@ -1,8 +1,8 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/audio/libcanberra-gtk3/Makefile,v 1.8 2011/03/16 10:24:48 kwm Exp $
+#   $MCom: ports/trunk/audio/libcanberra-gtk3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio devel
 PKGNAMESUFFIX=	-gtk3
 
@@ -10,7 +10,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Implementation of the Freedesktop sound theme spec
 
 MASTERDIR=	${.CURDIR}/../../audio/libcanberra
-NO_STAGE=	yes
 SLAVEPORT=	gtk3
 PLIST=		${.CURDIR}/pkg-plist
 
@@ -25,13 +24,18 @@ do-build:
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libcanberra-gtk3.pc \
-		${PREFIX}/libdata/pkgconfig/
-.for i in .a .la .so .so.0
-	${INSTALL_DATA} ${WRKSRC}/src/.libs/libcanberra-gtk3${i} \
-		${PREFIX}/lib/
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/
+.for i in .a .so .so.0
+	${INSTALL_LIB} ${WRKSRC}/src/.libs/libcanberra-gtk3${i} \
+		${STAGEDIR}${PREFIX}/lib/
 .endfor
-	cd ${WRKSRC}/src && ${GMAKE} install-gtk3moduleLTLIBRARIES
-	cd ${PREFIX}/lib/gtk-3.0/modules && \
-		${LN} -sf libcanberra-gtk3-module.so libcanberra-gtk-module.so
+	${INSTALL_DATA} ${WRKSRC}/src/.libs/libcanberra-gtk3.la \
+		${STAGEDIR}${PREFIX}/lib/
+	cd ${WRKSRC}/src && env DESTDIR=${STAGEDIR} ${GMAKE} install-gtk3moduleLTLIBRARIES
+	${LN} -sf libcanberra-gtk3-module.so \
+		${STAGEDIR}${PREFIX}/lib/gtk-3.0/modules/libcanberra-gtk-module.so
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gtk-3.0/modules/libcanberra-gtk3-module.so
 
 .include "${MASTERDIR}/Makefile"

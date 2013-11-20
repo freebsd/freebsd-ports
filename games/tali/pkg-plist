@@ -1,0 +1,228 @@
+bin/tali
+man/man6/tali.6.gz
+share/applications/gtali.desktop
+@unexec [ -s %D/share/games/gtali.Colors.scores ] || rm -f %D/share/games/gtali.Colors.scores
+@unexec [ -s %D/share/games/gtali.Regular.scores ] || rm -f %D/share/games/gtali.Regular.scores
+share/help/C/gtali/figures/mainwindow.png
+share/help/C/gtali/figures/preferences.png
+share/help/C/gtali/index.docbook
+share/help/C/gtali/legal.xml
+share/help/ca/gtali/figures/mainwindow.png
+share/help/ca/gtali/figures/preferences.png
+share/help/ca/gtali/index.docbook
+share/help/ca/gtali/legal.xml
+share/help/cs/gtali/figures/mainwindow.png
+share/help/cs/gtali/figures/preferences.png
+share/help/cs/gtali/index.docbook
+share/help/cs/gtali/legal.xml
+share/help/da/gtali/figures/mainwindow.png
+share/help/da/gtali/figures/preferences.png
+share/help/da/gtali/index.docbook
+share/help/da/gtali/legal.xml
+share/help/de/gtali/figures/mainwindow.png
+share/help/de/gtali/figures/preferences.png
+share/help/de/gtali/index.docbook
+share/help/de/gtali/legal.xml
+share/help/el/gtali/figures/mainwindow.png
+share/help/el/gtali/figures/preferences.png
+share/help/el/gtali/index.docbook
+share/help/el/gtali/legal.xml
+share/help/en_GB/gtali/figures/mainwindow.png
+share/help/en_GB/gtali/figures/preferences.png
+share/help/en_GB/gtali/index.docbook
+share/help/en_GB/gtali/legal.xml
+share/help/es/gtali/figures/mainwindow.png
+share/help/es/gtali/figures/preferences.png
+share/help/es/gtali/index.docbook
+share/help/es/gtali/legal.xml
+share/help/eu/gtali/figures/mainwindow.png
+share/help/eu/gtali/figures/preferences.png
+share/help/eu/gtali/index.docbook
+share/help/eu/gtali/legal.xml
+share/help/fr/gtali/figures/mainwindow.png
+share/help/fr/gtali/figures/preferences.png
+share/help/fr/gtali/index.docbook
+share/help/fr/gtali/legal.xml
+share/help/gl/gtali/figures/mainwindow.png
+share/help/gl/gtali/figures/preferences.png
+share/help/gl/gtali/index.docbook
+share/help/gl/gtali/legal.xml
+share/help/it/gtali/figures/mainwindow.png
+share/help/it/gtali/figures/preferences.png
+share/help/it/gtali/index.docbook
+share/help/it/gtali/legal.xml
+share/help/oc/gtali/figures/mainwindow.png
+share/help/oc/gtali/figures/preferences.png
+share/help/oc/gtali/index.docbook
+share/help/oc/gtali/legal.xml
+share/help/pt_BR/gtali/figures/mainwindow.png
+share/help/pt_BR/gtali/figures/preferences.png
+share/help/pt_BR/gtali/index.docbook
+share/help/pt_BR/gtali/legal.xml
+share/help/sl/gtali/figures/mainwindow.png
+share/help/sl/gtali/figures/preferences.png
+share/help/sl/gtali/index.docbook
+share/help/sl/gtali/legal.xml
+share/help/sr/gtali/figures/mainwindow.png
+share/help/sr/gtali/figures/preferences.png
+share/help/sr/gtali/index.docbook
+share/help/sr/gtali/legal.xml
+share/help/sr@latin/gtali/figures/mainwindow.png
+share/help/sr@latin/gtali/figures/preferences.png
+share/help/sr@latin/gtali/index.docbook
+share/help/sr@latin/gtali/legal.xml
+share/help/sv/gtali/figures/mainwindow.png
+share/help/sv/gtali/figures/preferences.png
+share/help/sv/gtali/index.docbook
+share/help/sv/gtali/legal.xml
+share/help/zh_CN/gtali/figures/mainwindow.png
+share/help/zh_CN/gtali/figures/preferences.png
+share/help/zh_CN/gtali/index.docbook
+share/help/zh_CN/gtali/legal.xml
+share/icons/hicolor/16x16/apps/tali.png
+share/icons/hicolor/22x22/apps/tali.png
+share/icons/hicolor/24x24/apps/tali.png
+share/icons/hicolor/32x32/apps/tali.png
+share/icons/hicolor/48x48/apps/tali.png
+share/icons/hicolor/scalable/apps/tali.svg
+share/locale/af/LC_MESSAGES/tali.mo
+share/locale/am/LC_MESSAGES/tali.mo
+share/locale/ar/LC_MESSAGES/tali.mo
+share/locale/as/LC_MESSAGES/tali.mo
+share/locale/ast/LC_MESSAGES/tali.mo
+share/locale/az/LC_MESSAGES/tali.mo
+share/locale/be/LC_MESSAGES/tali.mo
+share/locale/bg/LC_MESSAGES/tali.mo
+share/locale/bn/LC_MESSAGES/tali.mo
+share/locale/bn_IN/LC_MESSAGES/tali.mo
+share/locale/br/LC_MESSAGES/tali.mo
+share/locale/ca/LC_MESSAGES/tali.mo
+share/locale/ca@valencia/LC_MESSAGES/tali.mo
+share/locale/cs/LC_MESSAGES/tali.mo
+share/locale/cy/LC_MESSAGES/tali.mo
+share/locale/da/LC_MESSAGES/tali.mo
+share/locale/de/LC_MESSAGES/tali.mo
+share/locale/dz/LC_MESSAGES/tali.mo
+share/locale/el/LC_MESSAGES/tali.mo
+share/locale/en@shaw/LC_MESSAGES/tali.mo
+share/locale/en_CA/LC_MESSAGES/tali.mo
+share/locale/en_GB/LC_MESSAGES/tali.mo
+share/locale/eo/LC_MESSAGES/tali.mo
+share/locale/es/LC_MESSAGES/tali.mo
+share/locale/et/LC_MESSAGES/tali.mo
+share/locale/eu/LC_MESSAGES/tali.mo
+share/locale/fa/LC_MESSAGES/tali.mo
+share/locale/fi/LC_MESSAGES/tali.mo
+share/locale/fr/LC_MESSAGES/tali.mo
+share/locale/ga/LC_MESSAGES/tali.mo
+share/locale/gl/LC_MESSAGES/tali.mo
+share/locale/gu/LC_MESSAGES/tali.mo
+share/locale/he/LC_MESSAGES/tali.mo
+share/locale/hi/LC_MESSAGES/tali.mo
+share/locale/hr/LC_MESSAGES/tali.mo
+share/locale/hu/LC_MESSAGES/tali.mo
+share/locale/id/LC_MESSAGES/tali.mo
+share/locale/is/LC_MESSAGES/tali.mo
+share/locale/it/LC_MESSAGES/tali.mo
+share/locale/ja/LC_MESSAGES/tali.mo
+share/locale/ka/LC_MESSAGES/tali.mo
+share/locale/kk/LC_MESSAGES/tali.mo
+share/locale/km/LC_MESSAGES/tali.mo
+share/locale/kn/LC_MESSAGES/tali.mo
+share/locale/ko/LC_MESSAGES/tali.mo
+share/locale/ku/LC_MESSAGES/tali.mo
+share/locale/lt/LC_MESSAGES/tali.mo
+share/locale/lv/LC_MESSAGES/tali.mo
+share/locale/mai/LC_MESSAGES/tali.mo
+share/locale/mk/LC_MESSAGES/tali.mo
+share/locale/ml/LC_MESSAGES/tali.mo
+share/locale/mn/LC_MESSAGES/tali.mo
+share/locale/mr/LC_MESSAGES/tali.mo
+share/locale/ms/LC_MESSAGES/tali.mo
+share/locale/nb/LC_MESSAGES/tali.mo
+share/locale/ne/LC_MESSAGES/tali.mo
+share/locale/nl/LC_MESSAGES/tali.mo
+share/locale/nn/LC_MESSAGES/tali.mo
+share/locale/oc/LC_MESSAGES/tali.mo
+share/locale/or/LC_MESSAGES/tali.mo
+share/locale/pa/LC_MESSAGES/tali.mo
+share/locale/pl/LC_MESSAGES/tali.mo
+share/locale/pt/LC_MESSAGES/tali.mo
+share/locale/pt_BR/LC_MESSAGES/tali.mo
+share/locale/ro/LC_MESSAGES/tali.mo
+share/locale/ru/LC_MESSAGES/tali.mo
+share/locale/rw/LC_MESSAGES/tali.mo
+share/locale/si/LC_MESSAGES/tali.mo
+share/locale/sk/LC_MESSAGES/tali.mo
+share/locale/sl/LC_MESSAGES/tali.mo
+share/locale/sq/LC_MESSAGES/tali.mo
+share/locale/sr/LC_MESSAGES/tali.mo
+share/locale/sr@latin/LC_MESSAGES/tali.mo
+share/locale/sv/LC_MESSAGES/tali.mo
+share/locale/ta/LC_MESSAGES/tali.mo
+share/locale/te/LC_MESSAGES/tali.mo
+share/locale/tg/LC_MESSAGES/tali.mo
+share/locale/th/LC_MESSAGES/tali.mo
+share/locale/tr/LC_MESSAGES/tali.mo
+share/locale/ug/LC_MESSAGES/tali.mo
+share/locale/uk/LC_MESSAGES/tali.mo
+share/locale/vi/LC_MESSAGES/tali.mo
+share/locale/wa/LC_MESSAGES/tali.mo
+share/locale/xh/LC_MESSAGES/tali.mo
+share/locale/zh_CN/LC_MESSAGES/tali.mo
+share/locale/zh_HK/LC_MESSAGES/tali.mo
+share/locale/zh_TW/LC_MESSAGES/tali.mo
+share/tali/gnome-dice-1.svg
+share/tali/gnome-dice-2.svg
+share/tali/gnome-dice-3.svg
+share/tali/gnome-dice-4.svg
+share/tali/gnome-dice-5.svg
+share/tali/gnome-dice-6.svg
+share/tali/gnome-dice-none.svg
+share/tali/kismet-none.svg
+share/tali/kismet1.svg
+share/tali/kismet2.svg
+share/tali/kismet3.svg
+share/tali/kismet4.svg
+share/tali/kismet5.svg
+share/tali/kismet6.svg
+@dirrmtry share/tali
+@dirrmtry share/help/zh_CN/gtali/figures
+@dirrmtry share/help/zh_CN/gtali
+@dirrmtry share/help/sv/gtali/figures
+@dirrmtry share/help/sv/gtali
+@dirrmtry share/help/sr@latin/gtali/figures
+@dirrmtry share/help/sr@latin/gtali
+@dirrmtry share/help/sr/gtali/figures
+@dirrmtry share/help/sr/gtali
+@dirrmtry share/help/sl/gtali/figures
+@dirrmtry share/help/sl/gtali
+@dirrmtry share/help/pt_BR/gtali/figures
+@dirrmtry share/help/pt_BR/gtali
+@dirrmtry share/help/oc/gtali/figures
+@dirrmtry share/help/oc/gtali
+@dirrmtry share/help/it/gtali/figures
+@dirrmtry share/help/it/gtali
+@dirrmtry share/help/gl/gtali/figures
+@dirrmtry share/help/gl/gtali
+@dirrmtry share/help/fr/gtali/figures
+@dirrmtry share/help/fr/gtali
+@dirrmtry share/help/eu/gtali/figures
+@dirrmtry share/help/eu/gtali
+@dirrmtry share/help/es/gtali/figures
+@dirrmtry share/help/es/gtali
+@dirrmtry share/help/en_GB/gtali/figures
+@dirrmtry share/help/en_GB/gtali
+@dirrmtry share/help/el/gtali/figures
+@dirrmtry share/help/el/gtali
+@dirrmtry share/help/de/gtali/figures
+@dirrmtry share/help/de/gtali
+@dirrmtry share/help/da/gtali/figures
+@dirrmtry share/help/da/gtali
+@dirrmtry share/help/cs/gtali/figures
+@dirrmtry share/help/cs/gtali
+@dirrmtry share/help/ca/gtali/figures
+@dirrmtry share/help/ca/gtali
+@dirrmtry share/help/C/gtali/figures
+@dirrmtry share/help/C/gtali
+@dirrmtry share/games

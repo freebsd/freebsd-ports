@@ -17,7 +17,6 @@ lib/vte-0.0/osc
 lib/vte-0.0/slowcat
 lib/vte-0.0/window
 libdata/pkgconfig/vte.pc
-libexec/gnome-pty-helper
 share/locale/am/LC_MESSAGES/vte-0.0.mo
 share/locale/ang/LC_MESSAGES/vte-0.0.mo
 share/locale/ar/LC_MESSAGES/vte-0.0.mo

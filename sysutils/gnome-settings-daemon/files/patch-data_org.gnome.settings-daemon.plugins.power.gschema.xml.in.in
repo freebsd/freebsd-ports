@@ -1,0 +1,42 @@
+--- data/org.gnome.settings-daemon.plugins.power.gschema.xml.in.in.orig	2011-04-17 08:34:12.000000000 +0200
++++ data/org.gnome.settings-daemon.plugins.power.gschema.xml.in.in	2011-04-17 09:05:45.000000000 +0200
+@@ -51,7 +51,7 @@
+       <description>The amount of time in seconds the computer on AC power needs to be inactive before it goes to sleep.</description>
+     </key>
+     <key name="sleep-inactive-ac-type" enum="org.gnome.settings-daemon.GsdPowerActionType">
+-      <default>'suspend'</default>
++      <default>'nothing'</default>
+       <summary>Whether to hibernate, suspend or do nothing when inactive</summary>
+       <description>The type of sleeping that should be performed when the computer is inactive.</description>
+     </key>
+@@ -66,7 +66,7 @@
+       <description>The amount of time in seconds the computer on battery power needs to be inactive before it goes to sleep.</description>
+     </key>
+     <key name="sleep-inactive-battery-type" enum="org.gnome.settings-daemon.GsdPowerActionType">
+-      <default>'suspend'</default>
++      <default>'nothing'</default>
+       <summary>Whether to hibernate, suspend or do nothing when inactive</summary>
+       <description>The type of sleeping that should be performed when the computer is inactive.</description>
+     </key>
+@@ -86,18 +86,18 @@
+       <description>The action to take when the system sleep (non-specific type) button is pressed.</description>
+     </key>
+     <key name="button-power" enum="org.gnome.settings-daemon.GsdPowerActionType">
+-      <default>'suspend'</default>
++      <default>'shutdown'</default>
+       <summary>Power button action</summary>
+       <description>The action to take when the system power button is pressed.</description>
+     </key>
+     <!-- See http://bugzilla.gnome.org/637473 for rationale -->
+     <key name="lid-close-battery-action" enum="org.gnome.settings-daemon.GsdPowerActionType">
+-      <default>'suspend'</default>
++      <default>'nothing'</default>
+       <summary>Laptop lid close action on battery</summary>
+       <description>The action to take when the laptop lid is closed and the laptop is on battery power.</description>
+     </key>
+     <key name="lid-close-ac-action" enum="org.gnome.settings-daemon.GsdPowerActionType">
+-      <default>'suspend'</default>
++      <default>'nothing'</default>
+       <summary>Laptop lid close action when on AC</summary>
+       <description>The action to take when the laptop lid is closed and the laptop is on AC power.</description>
+     </key>

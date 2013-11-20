@@ -1,0 +1,22 @@
+--- mail/Makefile.in.orig	2013-04-10 09:02:35.458585186 +0000
++++ mail/Makefile.in	2013-04-10 09:03:56.381576764 +0000
+@@ -727,8 +727,7 @@
+ 	$(GTKHTML_LIBS)					\
+ 	$(E_WIDGETS_LIBS)				\
+ 	$(SMIME_LIBS)					\
+-	$(LIBSOUP_LIBS)					\
+-	-lresolv
++	$(LIBSOUP_LIBS)
+ 
+ libevolution_mail_la_LDFLAGS = -avoid-version $(NO_UNDEFINED)
+ libevolution_mail_la_DEPENDENCIES = em-filter-i18n.h
+@@ -744,8 +743,7 @@
+ 
+ test_mail_autoconfig_LDADD = \
+ 	$(EVOLUTION_DATA_SERVER_LIBS)			\
+-	$(GNOME_PLATFORM_LIBS)				\
+-	-lresolv
++	$(GNOME_PLATFORM_LIBS)
+ 
+ 
+ # Misc data to install

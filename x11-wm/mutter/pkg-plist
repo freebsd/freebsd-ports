@@ -2,39 +2,43 @@ bin/mutter
 bin/mutter-message
 bin/mutter-theme-viewer
 bin/mutter-window-demo
-include/mutter/mutter-private/atomnames.h
-include/mutter/mutter-private/boxes.h
-include/mutter/mutter-private/common.h
-include/mutter/mutter-private/compositor-mutter.h
-include/mutter/mutter-private/compositor.h
-include/mutter/mutter-private/display.h
-include/mutter/mutter-private/errors.h
-include/mutter/mutter-private/gradient.h
-include/mutter/mutter-private/group.h
-include/mutter/mutter-private/keybindings.h
-include/mutter/mutter-private/main.h
-include/mutter/mutter-private/mutter-plugin.h
-include/mutter/mutter-private/mutter-window.h
-include/mutter/mutter-private/prefs.h
-include/mutter/mutter-private/preview-widget.h
-include/mutter/mutter-private/screen.h
-include/mutter/mutter-private/theme-parser.h
-include/mutter/mutter-private/theme.h
-include/mutter/mutter-private/types.h
-include/mutter/mutter-private/util.h
-include/mutter/mutter-private/window.h
-include/mutter/mutter-private/workspace.h
-lib/libmutter-private.a
-lib/libmutter-private.la
-lib/libmutter-private.so
-lib/libmutter-private.so.0
-lib/mutter/Meta-2.31.gir
-lib/mutter/Meta-2.31.typelib
+include/mutter/meta/atomnames.h
+include/mutter/meta/boxes.h
+include/mutter/meta/common.h
+include/mutter/meta/compositor-mutter.h
+include/mutter/meta/compositor.h
+include/mutter/meta/display.h
+include/mutter/meta/errors.h
+include/mutter/meta/gradient.h
+include/mutter/meta/group.h
+include/mutter/meta/keybindings.h
+include/mutter/meta/main.h
+include/mutter/meta/meta-background-actor.h
+include/mutter/meta/meta-plugin.h
+include/mutter/meta/meta-shadow-factory.h
+include/mutter/meta/meta-shaped-texture.h
+include/mutter/meta/meta-window-actor.h
+include/mutter/meta/prefs.h
+include/mutter/meta/preview-widget.h
+include/mutter/meta/screen.h
+include/mutter/meta/theme.h
+include/mutter/meta/types.h
+include/mutter/meta/util.h
+include/mutter/meta/window.h
+include/mutter/meta/workspace.h
+lib/libmutter.a
+lib/libmutter.la
+lib/libmutter.so
+lib/libmutter.so.0
+lib/mutter/Meta-3.0.gir
+lib/mutter/Meta-3.0.typelib
 lib/mutter/plugins/default.so
-libdata/pkgconfig/libmutter-private.pc
+libdata/pkgconfig/libmutter.pc
 libdata/pkgconfig/mutter-plugins.pc
+share/GConf/gsettings/mutter-schemas.convert
 share/applications/mutter.desktop
 share/gnome/wm-properties/mutter-wm.desktop
+share/gnome-control-center/keybindings/50-mutter-windows.xml
 share/locale/am/LC_MESSAGES/mutter.mo
 share/locale/ar/LC_MESSAGES/mutter.mo
 share/locale/as/LC_MESSAGES/mutter.mo
@@ -57,6 +61,7 @@ share/locale/dz/LC_MESSAGES/mutter.mo
 share/locale/el/LC_MESSAGES/mutter.mo
 share/locale/en_CA/LC_MESSAGES/mutter.mo
 share/locale/en_GB/LC_MESSAGES/mutter.mo
+share/locale/eo/LC_MESSAGES/mutter.mo
 share/locale/es/LC_MESSAGES/mutter.mo
 share/locale/et/LC_MESSAGES/mutter.mo
 share/locale/eu/LC_MESSAGES/mutter.mo
@@ -117,6 +122,7 @@ share/locale/te/LC_MESSAGES/mutter.mo
 share/locale/th/LC_MESSAGES/mutter.mo
 share/locale/tk/LC_MESSAGES/mutter.mo
 share/locale/tr/LC_MESSAGES/mutter.mo
+share/locale/ug/LC_MESSAGES/mutter.mo
 share/locale/uk/LC_MESSAGES/mutter.mo
 share/locale/vi/LC_MESSAGES/mutter.mo
 share/locale/wa/LC_MESSAGES/mutter.mo
@@ -128,18 +134,18 @@ share/locale/zh_TW/LC_MESSAGES/mutter.mo
 %%DATADIR%%/icons/mutter-window-demo.png
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrmtry lib/girepository-1.0
 @dirrm lib/mutter/plugins
 @dirrm lib/mutter
-@dirrm include/mutter/mutter-private
+@dirrm include/mutter/meta
 @dirrm include/mutter
-@dirrmtry share/gir-1.0
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/yo/LC_MESSAGES
 @dirrmtry share/locale/yo
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES

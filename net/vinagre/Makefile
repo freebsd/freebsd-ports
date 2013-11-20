@@ -1,62 +1,68 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/net/vinagre/Makefile,v 1.48 2012/09/01 23:02:11 mezz Exp $
+#  $MCom: ports/trunk/net/vinagre3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	vinagre
-PORTVERSION=	2.30.3
-PORTREVISION=	3
+PORTVERSION=	3.6.2
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VNC client for the GNOME Desktop
 
-LIB_DEPENDS=	gtk-vnc-1.0:${PORTSDIR}/net/gtk-vnc \
-    		avahi-core:${PORTSDIR}/net/avahi-app \
-		avahi-ui:${PORTSDIR}/net/avahi-gtk \
-		gdbm:${PORTSDIR}/databases/gdbm \
-		gnome-keyring:${PORTSDIR}/security/libgnome-keyring
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
+LIB_DEPENDS=	libgtk-vnc-2.0.so:${PORTSDIR}/net/gtk-vnc3 \
+    		libavahi-core.so:${PORTSDIR}/net/avahi-app \
+		libavahi-ui-gtk3.so:${PORTSDIR}/net/avahi-gtk3 \
+		libgdbm.so:${PORTSDIR}/databases/gdbm \
+		libsecret-1.so:${PORTSDIR}/security/libsecret \
+		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 
-CONFLICTS=	vinagre-3.[0-9]*
-
-USE_BZIP2=	yes
-USES=		pathfix gettext gmake pkgconfig
-USE_GNOME=	gnomeprefix intlhack vte gconf2 gnomedocutils gnomepanel
+USE_XZ=		yes
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
+		shared-mime-info
+USE_GNOME=	gnomeprefix gtk30 intlhack libxml2 vte3
 GNU_CONFIGURE=	yes
-INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-CONFIGURE_ARGS=	--enable-avahi --enable-applet -enable-ssh
-CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ARGS=	--disable-spice --enable-ssh
+CPPFLAGS+=	-I${LOCALBASE}/include -Wno-format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-GCONF_SCHEMAS=	vinagre.schemas
+GLIB_SCHEMAS=	org.gnome.Vinagre.gschema.xml
 
-MAN1=		vinagre.1
-
-OPTIONS_DEFINE=	TELEPATHY
-OPTIONS_DEFAULT=TELEPATHY
+OPTIONS_DEFINE=	TELEPATHY RDP
+OPTIONS_DEFAULT=TELEPATHY RDP
 TELEPATHY_DESC=	Telepathy integration
+RDP_DESC=	MS Windows remote desktop support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTELEPATHY}
-CONFIGURE_ARGS+=--enable-telepathy
-LIB_DEPENDS+=	telepathy-glib:${PORTSDIR}/net-im/telepathy-glib
+LIB_DEPENDS+=	libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 PLIST_SUB+=	TELEPATHY=""
 .else
-CONFIGURE_ARGS+=--disable-telepathy
+CONFIGURE_ARGS+=--without-telepathy
 PLIST_SUB+=	TELEPATHY="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MRDP}
+BUILD_DEPENDS+=	rdesktop:${PORTSDIR}/net/rdesktop
+RUN_DEPENDS+=	rdesktop:${PORTSDIR}/net/rdesktop
+CONFIGURE_ARGS+=--enable-rdp
+PLIST_SUB+=	RDP=""
+.else
+CONFIGURE_ARGS+=--disable-rdp
+PLIST_SUB+=	RDP="@comment "
+.endif
+
 post-install:
-	@-update-desktop-database > /dev/null
-	@-update-mime-database ${PREFIX}/share/mime > /dev/null
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.for f in AUTHORS COPYING ChangeLog MAINTAINERS NEWS README
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in AUTHORS COPYING ChangeLog NEWS README
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

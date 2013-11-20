@@ -1,9 +1,9 @@
---- configure.orig	2010-04-01 13:44:38.000000000 +0200
-+++ configure	2010-04-01 13:45:49.000000000 +0200
-@@ -24238,7 +24238,7 @@
+--- configure.orig	2011-04-05 20:58:36.000000000 +0200
++++ configure	2011-04-05 20:59:24.000000000 +0200
+@@ -18286,7 +18286,7 @@
  "
  
- METACITY_MINOR_VERSION=30
+ METACITY_MINOR_VERSION=34
 -if test $(( $(echo $METACITY_MINOR_VERSION) %2)) == "1"; then
 +if test $(( $(echo $METACITY_MINOR_VERSION) %2)) = "1"; then
     stable_version=$(( ($METACITY_MINOR_VERSION / 2) * 2))

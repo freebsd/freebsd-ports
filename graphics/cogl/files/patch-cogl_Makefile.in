@@ -1,0 +1,11 @@
+--- cogl/Makefile.in.orig	2013-04-23 19:50:18.000000000 +0000
++++ cogl/Makefile.in	2013-04-23 19:50:27.000000000 +0000
+@@ -192,7 +192,7 @@
+ @SUPPORT_SDL2_TRUE@       $(srcdir)/winsys/cogl-winsys-sdl2.c \
+ @SUPPORT_SDL2_TRUE@       $(srcdir)/cogl-sdl.c
+ 
+-@SUPPORT_GLX_TRUE@am__append_28 = -ldl
++@SUPPORT_GLX_TRUE@am__append_28 =
+ @HAVE_INTROSPECTION_TRUE@am__append_29 = Cogl-1.0.gir
+ @HAVE_INTROSPECTION_TRUE@am__append_30 = $(gir_DATA) $(typelib_DATA)
+ subdir = cogl

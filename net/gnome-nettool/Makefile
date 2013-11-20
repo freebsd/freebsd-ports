@@ -1,24 +1,22 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/net/gnome-nettool/Makefile,v 1.58 2010/09/28 09:03:44 kwm Exp $
+#   $MCom: ports/trunk/net/gnome-nettool3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gnome-nettool
-PORTVERSION=	2.32.0
-PORTREVISION=	1
+PORTVERSION=	3.2.0
 PORTEPOCH=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A GNOME utility that provides network information statistics
+COMMENT=	GNOME utility that provides network information statistics
 
-LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop
+LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop
 
-USE_BZIP2=	yes
-USE_GNOME=	gnomehack intlhack gnomeprefix libglade2 gconf2 gnomedocutils
-GNOME_DESKTOP_VERSION=2
-USES=		gettext gmake pkgconfig
+USE_XZ=		yes
+USE_GNOME=	intlhack gnomeprefix gtk30 gnomedocutils
+USES=		gettext gmake pathfix
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
@@ -26,9 +24,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-DHAVE_SOCKADDR_SA_LEN
 
-NO_STAGE=	yes
-post-install:
-	${LN} -sf ${PREFIX}/share/gnome-nettool/pixmaps/gnome-nettool.png \
-		${PREFIX}/share/pixmaps/gnome-nettool.png
+GLIB_SCHEMAS=	org.gnome.gnome-nettool.gschema.xml
 
 .include <bsd.port.mk>

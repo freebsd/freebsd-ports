@@ -12,7 +12,7 @@
 # *** WARNING: Disable MARCUSCOM before merge in FreeBSD!
 #     Please also remove this section before merging into FreeBSD.
 #
-#MARCUSCOM_CVS=yes
+MARCUSCOM_CVS=yes
 
 # ======================= USERS =================================
 #
@@ -76,20 +76,22 @@ _USE_GNOME_ALL= esound intlhack intltool introspection ltasneededhack lthack \
 _USE_GNOME_ALL+= gdkpixbuf glib12 gtk12 libxml imlib
 
 # GNOME 2 components
-_USE_GNOME_ALL+= atk atspi cairo desktopfileutils eel2 evolutiondataserver gal2 \
-		gdkpixbuf2 gconf2 glib20 gnomecontrolcenter2 gnomedesktop \
-		gnomedesktopsharp20 gnomedocutils gnomemenus gnomepanel gnomesharp20 \
+_USE_GNOME_ALL+= atk atspi cairo desktopfileutils eel2 gal2 \
+		gdkpixbuf2 gconf2 glib20 \
+		gnomedesktopsharp20 gnomedocutils gnomesharp20 \
 		gnomespeech gnomevfs2 gtk-update-icon-cache gtk20 gtkhtml3 gtksharp10 \
 		gtksharp20 gtksourceview gtksourceview2 gvfs libartlgpl2 libbonobo \
 		libbonoboui libgailgnome libgda2 libgda3 libgda4 libglade2 libgnome \
 		libgnomecanvas libgnomedb libgnomekbd libgnomeprint libgnomeprintui \
 		libgnomeui libgsf libgtkhtml libidl librsvg2 libwnck \
-		libxml2 libxslt libzvt linc metacity nautilus2 nautiluscdburner \
+		libxml2 libxslt libzvt linc \
 		orbit2 pango pangox-compat pygnome2 pygnomedesktop pygnomeextras pygobject pygtk2 \
 		pygtksourceview vte
 
 # GNOME 3 components
-_USE_GNOME_ALL+= dconf gtk30 gtksourceview3 libgda5 libgda5-ui pygobject3
+_USE_GNOME_ALL+=dconf evolutiondataserver3 gnomecontrolcenter3 gnomedesktop3 \
+		gnomemenus3 gnomepanel3 gtk30 gtkhtml4 gtksourceview3 libgda5 \
+		libgda5-ui libgnomekbd3 libwnck3 metacity3 nautilus3 pygobject3 vte3
 
 # C++ bindings
 _USE_GNOME_ALL+=atkmm cairomm gconfmm gconfmm26 glibmm gtkmm20 gtkmm24 \
@@ -173,9 +175,9 @@ gtkmm30_DETECT=		${LOCALBASE}/libdata/pkgconfig/gtkmm-3.0.pc
 gtkmm30_LIB_DEPENDS=	libgtkmm-3.0.so:${PORTSDIR}/x11-toolkits/gtkmm30
 gtkmm30_USE_GNOME_IMPL=	glibmm cairomm atkmm pangomm gtk30
 
-gtksourceviewmm3_DETECT=	${LOCALBASE}/libdata/pkgconfig/gtksourceviewmm-3.0.pc
-gtksourceviewmm3_LIB_DEPENDS=	libgtksourceviewmm-3.0.so:${PORTSDIR}/x11-toolkits/gtksourceviewmm3
-gtksourceviewmm3_USE_GNOME_IMPL=gtkmm30 gtksourceview3
+gtksourceviewmm3_DETECT=		${LOCALBASE}/libdata/pkgconfig/gtksourceviewmm-3.0.pc
+gtksourceviewmm3_LIB_DEPENDS=		libgtksourceviewmm-3.0.so:${PORTSDIR}/x11-toolkits/gtksourceviewmm3
+gtksourceviewmm3_USE_GNOME_IMPL=	gtkmm30 gtksourceview3
 
 libgdamm_DETECT=	${LOCALBASE}/libdata/pkgconfig/libgdamm-4.0.pc
 libgdamm_LIB_DEPENDS=	libgdamm-4.0.so:${PORTSDIR}/databases/libgdamm
@@ -303,7 +305,7 @@ libxml2_BUILD_DEPENDS=	xml2-config:${PORTSDIR}/textproc/libxml2
 libxml2_LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 libxml2_RUN_DEPENDS=	xml2-config:${PORTSDIR}/textproc/libxml2
 libxml2_DETECT=		${LOCALBASE}/libdata/pkgconfig/libxml-2.0.pc
-
+ 
 libxslt_BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 libxslt_LIB_DEPENDS=	libxslt.so:${PORTSDIR}/textproc/libxslt
 libxslt_RUN_DEPENDS=	${libxslt_BUILD_DEPENDS}
@@ -318,7 +320,7 @@ introspection_DETECT=		${LOCALBASE}/libdata/pkgconfig/gobject-introspection-1.0.
 introspection_BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 introspection_LIB_DEPENDS=	libgirepository-1.0.so:${PORTSDIR}/devel/gobject-introspection
 introspection_RUN_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-introspection_USE_GNOME_IMPL=	glib20
+introspection_USE_GNOME_IMPL=	glib20 gnomehier
 introspection_MAKE_ENV=		GI_SCANNER_DISABLE_CACHE=1
 
 gconf2_LIB_DEPENDS=	libgconf-2.so:${PORTSDIR}/devel/gconf2
@@ -368,14 +370,14 @@ libgtkhtml_LIB_DEPENDS=	libgtkhtml-2.so:${PORTSDIR}/www/libgtkhtml
 libgtkhtml_DETECT=	${LOCALBASE}/libdata/pkgconfig/libgtkhtml-2.0.pc
 libgtkhtml_USE_GNOME_IMPL=libxslt gnomevfs2
 
-gnomedesktop_LIB_DEPENDS=	libgnome-desktop-2.so:${PORTSDIR}/x11/gnome-desktop
-gnomedesktop_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-desktop-2.0.pc
-gnomedesktop_USE_GNOME_IMPL=	gconf2 gnomedocutils pygtk2
+gnomedesktop3_LIB_DEPENDS=	libgnome-desktop-3.so:${PORTSDIR}/x11/gnome-desktop
+gnomedesktop3_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-desktop-3.0.pc
+gnomedesktop3_USE_GNOME_IMPL=	gnomedocutils gtk30
 
 gnomedesktopsharp20_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-desktop-sharp-2.0.pc
 gnomedesktopsharp20_BUILD_DEPENDS=	${gnomedesktopsharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-desktop-sharp20
 gnomedesktopsharp20_RUN_DEPENDS=	${gnomedesktopsharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-desktop-sharp20
-gnomedesktopsharp20_USE_GNOME_IMPL=	gnomesharp20 gnomepanel gtkhtml3 librsvg2 vte libgnomeprintui gtksourceview2 libwnck nautiluscdburner
+gnomedesktopsharp20_USE_GNOME_IMPL=	gnomesharp20 gnomepanel3 gtkhtml3 librsvg2 vte libgnomeprintui gtksourceview2 libwnck nautiluscdburner
 gnomedesktopsharp20_GNOME_DESKTOP_VERSION=2
 
 libwnck_LIB_DEPENDS=	libwnck-1.so:${PORTSDIR}/x11-toolkits/libwnck
@@ -383,9 +385,18 @@ libwnck_DETECT=		${LOCALBASE}/libdata/pkgconfig/libwnck-1.0.pc
 libwnck_USE_GNOME_IMPL=	gtk20
 libwnck_GNOME_DESKTOP_VERSION=2
 
+libwnck3_LIB_DEPENDS=	libwnck-3.so:${PORTSDIR}/x11-toolkits/libwnck3
+libwnck3_DETECT=	${LOCALBASE}/libdata/pkgconfig/libwnck-3.0.pc
+libwnck3_USE_GNOME_IMPL=gtk30
+libwnck3_GNOME_DESKTOP_VERSION=3
+
 vte_LIB_DEPENDS=	libvte.so:${PORTSDIR}/x11-toolkits/vte
 vte_DETECT=		${LOCALBASE}/libdata/pkgconfig/vte.pc
 vte_USE_GNOME_IMPL=	gtk20
+
+vte3_LIB_DEPENDS=	libvte2_90.so:${PORTSDIR}/x11-toolkits/vte3
+vte3_DETECT=		${LOCALBASE}/libdata/pkgconfig/vte-2.90.pc
+vte3_USE_GNOME_IMPL=	gtk30
 
 libzvt_LIB_DEPENDS=	libzvt-2.0.so:${PORTSDIR}/x11-toolkits/libzvt
 libzvt_DETECT=	${LOCALBASE}/libdata/pkgconfig/libzvt-2.0.pc
@@ -399,29 +410,30 @@ eel2_LIB_DEPENDS=	libeel-2.so:${PORTSDIR}/x11-toolkits/eel
 eel2_DETECT=		${LOCALBASE}/libdata/pkgconfig/eel-2.0.pc
 eel2_USE_GNOME_IMPL=	gnomedesktop
 
-gnomepanel_LIB_DEPENDS=libpanel-applet-3.so:${PORTSDIR}/x11/gnome-panel
-gnomepanel_DETECT=	${LOCALBASE}/libdata/pkgconfig/libpanelapplet-3.0.pc
-gnomepanel_USE_GNOME_IMPL=gnomedesktop libwnck gnomemenus gnomedocutils librsvg2
-gnomepanel_GNOME_DESKTOP_VERSION=2
+gnomepanel3_LIB_DEPENDS=libpanel-applet-4.so:${PORTSDIR}/x11/gnome-panel
+gnomepanel3_DETECT=	${LOCALBASE}/libdata/pkgconfig/libpanelapplet-4.0.pc
+gnomepanel3_USE_GNOME_IMPL=gnomedesktop3 libwnck3 gnomemenus3 gnomedocutils librsvg2
+gnomepanel3_GNOME_DESKTOP_VERSION=3
 
-nautilus2_LIB_DEPENDS=	libnautilus-extension.so:${PORTSDIR}/x11-fm/nautilus
-nautilus2_DETECT=	${LOCALBASE}/share/gir-1.0/Nautilus-2.0.gir
-nautilus2_USE_GNOME_IMPL=librsvg2 gnomedesktop gvfs
-nautilus2_GNOME_DESKTOP_VERSION=2
+nautilus3_LIB_DEPENDS=	libnautilus-extension.so:${PORTSDIR}/x11-fm/nautilus
+nautilus3_DETECT=	${LOCALBASE}/share/gir-1.0/Nautilus-3.0.gir
+nautilus3_USE_GNOME_IMPL=gnomedesktop3 gvfs libxml2
+nautilus3_GNOME_DESKTOP_VERSION=3
 
-metacity_LIB_DEPENDS=	libmetacity-private.so:${PORTSDIR}/x11-wm/metacity
-metacity_DETECT=	${LOCALBASE}/libdata/pkgconfig/libmetacity-private.pc
-metacity_USE_GNOME_IMPL=gconf2
-metacity_GNOME_DESKTOP_VERSION=2
+metacity3_LIB_DEPENDS=	libmetacity-private.so:${PORTSDIR}/x11-wm/metacity3
+metacity3_DETECT=	${LOCALBASE}/libdata/pkgconfig/libmetacity-private.pc
+metacity3_USE_GNOME_IMPL=gconf2
+metacity3_GNOME_DESKTOP_VERSION=3
 
 gal2_LIB_DEPENDS=	libgal-2.4.so:${PORTSDIR}/x11-toolkits/gal2
 gal2_DETECT=		${LOCALBASE}/libdata/pkgconfig/gal-2.4.pc
 gal2_USE_GNOME_IMPL=gnomeui libgnomeprintui
 
-gnomecontrolcenter2_DETECT=	${LOCALBASE}/libdata/pkgconfig/gnome-window-settings-2.0.pc
-gnomecontrolcenter2_LIB_DEPENDS=libgnome-window-settings.so:${PORTSDIR}/sysutils/gnome-control-center
-gnomecontrolcenter2_USE_GNOME_IMPL=metacity gnomemenus libgnomekbd gnomedesktop librsvg2
-gnomecontrolcenter2_GNOME_DESKTOP_VERSION=2
+gnomecontrolcenter3_DETECT=	${LOCALBASE}/libdata/pkgconfig/gnome-keybindings.pc
+gnomecontrolcenter3_BUILD_DEPENDS=	${gnomecontrolcenter3_DETECT}:${PORTSDIR}/sysutils/gnome-control-center
+gnomecontrolcenter3_RUN_DEPENDS=	${gnomecontrolcenter3_DETECT}:${PORTSDIR}/sysutils/gnome-control-center
+gnomecontrolcenter3_USE_GNOME_IMPL=gnomemenus3 libgnomekbd3 gnomedesktop3 gconf2
+gnomecontrolcenter3_GNOME_DESKTOP_VERSION=3
 
 libgda2_LIB_DEPENDS=	libgda-2.so:${PORTSDIR}/databases/libgda2
 libgda2_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgda.pc
@@ -456,8 +468,8 @@ gtksourceview2_DETECT=	${LOCALBASE}/libdata/pkgconfig/gtksourceview-2.0.pc
 gtksourceview2_USE_GNOME_IMPL=gtk20 libxml2
 
 gtksourceview3_LIB_DEPENDS=	libgtksourceview-3.0.so:${PORTSDIR}/x11-toolkits/gtksourceview3
-gtksourceview3_DETECT=		${LOCALBASE}/libdata/pkgconfig/gtksoureview-3.0.pc
-gtksourceview3_USE_GNOME_IMPL=	gtk30 libxml2
+gtksourceview3_DETECT=	${LOCALBASE}/libdata/pkgconfig/gtksoureview-3.0.pc
+gtksourceview3_USE_GNOME_IMPL=gtk30 libxml2
 
 libgsf_LIB_DEPENDS=	libgsf-1.so:${PORTSDIR}/devel/libgsf
 libgsf_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgsf-1.pc
@@ -489,7 +501,7 @@ intltool_BUILD_DEPENDS=	${intltool_DETECT}:${PORTSDIR}/textproc/intltool
 intlhack_PRE_PATCH=		${FIND} ${WRKSRC} -name "intltool-merge.in" | ${XARGS} ${REINPLACE_CMD} -e \
 				's|mkdir $$lang or|mkdir $$lang, 0777 or| ; \
 				 s|^push @INC, "/.*|push @INC, "${LOCALBASE}/share/intltool";| ; \
-				 s|/usr/bin/iconv|${ICONV_CMD}|g ; \
+				 s|/usr/bin/iconv|${LOCALBASE}/bin/iconv|g ; \
 				 s|unpack *[(]'"'"'U\*'"'"'|unpack ('"'"'C*'"'"'|'
 intlhack_USE_GNOME_IMPL=intltool
 
@@ -497,30 +509,29 @@ gtkhtml3_LIB_DEPENDS=	libgtkhtml-3.14.so:${PORTSDIR}/www/gtkhtml3
 gtkhtml3_DETECT=	${LOCALBASE}/libdata/pkgconfig/libgtkhtml-3.14.pc
 gtkhtml3_USE_GNOME_IMPL=libglade2
 
+gtkhtml4_LIB_DEPENDS=	libgtkhtml-4.0.so:${PORTSDIR}/www/gtkhtml4
+gtkhtml4_DETECT=	${LOCALBASE}/libdata/pkgconfig/libgtkhtml-4.0.pc
+gtkhtml4_USE_GNOME_IMPL=gtk30 libxml2
+
 gnomespeech_LIB_DEPENDS=libgnomespeech.so:${PORTSDIR}/accessibility/gnome-speech
 gnomespeech_DETECT=	${LOCALBASE}/libdata/pkgconfig/gnome-speech-1.0.pc
 gnomespeech_USE_GNOME_IMPL=libbonobo
 
-evolutiondataserver_LIB_DEPENDS=libedataserverui-1.2.so:${PORTSDIR}/databases/evolution-data-server
-evolutiondataserver_DETECT=		${LOCALBASE}/libdata/pkgconfig/evolution-data-server-1.2.pc
-evolutiondataserver_USE_GNOME_IMPL=gconf2 libxml2
-evolutiondataserver_GNOME_DESKTOP_VERSION=2
+evolutiondataserver3_LIB_DEPENDS=	libedataserverui-3.0.so:${PORTSDIR}/databases/evolution-data-server
+evolutiondataserver3_DETECT=		${LOCALBASE}/libdata/pkgconfig/libedataserverui-3.0.pc
+evolutiondataserver3_USE_GNOME_IMPL=	gconf2 libxml2 gtk30
+evolutiondataserver3_GNOME_DESKTOP_VERSION=3
 
 desktopfileutils_BUILD_DEPENDS=update-desktop-database:${PORTSDIR}/devel/desktop-file-utils
 desktopfileutils_RUN_DEPENDS=update-desktop-database:${PORTSDIR}/devel/desktop-file-utils
 desktopfileutils_DETECT=	${LOCALBASE}/bin/update-desktop-database
 desktopfileutils_USE_GNOME_IMPL=glib20
 
-nautiluscdburner_LIB_DEPENDS=libnautilus-burn.so:${PORTSDIR}/sysutils/nautilus-cd-burner
-nautiluscdburner_DETECT=	${LOCALBASE}/libdata/pkgconfig/libnautilus-burn.pc
-nautiluscdburner_USE_GNOME_IMPL=nautilus2 desktopfileutils
-nautiluscdburner_GNOME_DESKTOP_VERSION=2
-
-gnomemenus_BUILD_DEPENDS=	gnome-menus<=2.39.0:${PORTSDIR}/x11/gnome-menus
-gnomemenus_RUN_DEPENDS=		gnome-menus<=2.39.0:${PORTSDIR}/x11/gnome-menus
-gnomemenus_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgnome-menu.pc
-gnomemenus_USE_GNOME_IMPL=	glib20
-gnomemenus_GNOME_DESKTOP_VERSION=2
+gnomemenus3_BUILD_DEPENDS=	gnome-menus>=3.2.0:${PORTSDIR}/x11/gnome-menus
+gnomemenus3_RUN_DEPENDS=	gnome-menus>=3.2.0:${PORTSDIR}/x11/gnome-menus
+gnomemenus3_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgnome-menu-3.0.pc
+gnomemenus3_USE_GNOME_IMPL=	glib20
+gnomemenus3_GNOME_DESKTOP_VERSION=3
 
 pygnomeextras_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-python-extras-2.0.pc
 pygnomeextras_BUILD_DEPENDS=	${pygnomeextras_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome-extras
@@ -553,10 +564,17 @@ gnomesharp20_BUILD_DEPENDS=	${gnomesharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnom
 gnomesharp20_RUN_DEPENDS=	${gnomesharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-sharp20
 gnomesharp20_USE_GNOME_IMPL=	gnomepanel3 gtkhtml3 gtksharp20 librsvg2 vte
 
+#libgnomekbd_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgnomekbd.pc
 libgnomekbd_DETECT=		${LOCALBASE}/lib/libgnomekbd.so.4
 libgnomekbd_LIB_DEPENDS=	libgnomekbd.so.4:${PORTSDIR}/x11/libgnomekbd
 libgnomekbd_USE_GNOME_IMPL=	gconf2
 libgnomekbd_GNOME_DESKTOP_VERSION=2
+
+#libgnomekbd3_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgnomekbd.pc
+libgnomekbd3_DETECT=		${LOCALBASE}/lib/libgnomekbd.so.8
+libgnomekbd3_LIB_DEPENDS=	libgnomekbd.so.8:${PORTSDIR}/x11/libgnomekbd3
+libgnomekbd3_USE_GNOME_IMPL=	gtk30
+libgnomekbd3_GNOME_DESKTOP_VERSION=3
 
 pygtksourceview_DETECT=		${LOCALBASE}/libdata/pkgconfig/pygtksourceview-2.0.pc
 pygtksourceview_BUILD_DEPENDS=	${pygtksourceview_DETECT}:${PORTSDIR}/x11-toolkits/py-gtksourceview
@@ -770,7 +788,7 @@ USE_CSTD=	gnu89
 _GNOME_NEED_LIBTOOL=1
 . endif
 
-# this is splitted out from the above entry because fmake trows a fit otherwise
+# this is splitted out from the above entry because fmake is trows a fit otherwise
 . if defined(USE_AUTOTOOLS) && ${USE_AUTOTOOLS:Mlibtool*}
 .  if ${USE_GNOME:Mltverhack*}!= ""
 _GNOME_NEED_LIBTOOL=1

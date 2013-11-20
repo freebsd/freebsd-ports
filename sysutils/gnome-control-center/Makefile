@@ -1,69 +1,85 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/sysutils/gnome-control-center/Makefile,v 1.214 2010/11/18 11:46:09 kwm Exp $
+#   $MCom: ports/trunk/sysutils/gnome-control-center3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gnome-control-center
-PORTVERSION=	2.32.1
-PORTREVISION=	1
+PORTVERSION=	3.6.3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Control center for GNOME 2 project
+COMMENT=	Control center for GNOME 3 project
 
-LIB_DEPENDS=	canberra-gtk.0:${PORTSDIR}/audio/libcanberra \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		polkit-gobject-1.0:${PORTSDIR}/sysutils/polkit \
-		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
-BUILD_DEPENDS=	${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
+BUILD_DEPENDS=	gnome-settings-daemon>=3.4.0:${PORTSDIR}/sysutils/gnome-settings-daemon \
+		gsettings-desktop-schemas>=3.2.2:${PORTSDIR}/devel/gsettings-desktop-schemas \
+		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
+		libxklavier.so:${PORTSDIR}/x11/libxklavier \
+		libupower-glib.so:${PORTSDIR}/sysutils/upower \
+		libcolord.so:${PORTSDIR}/graphics/colord \
+		libibus-1.0.so:${PORTSDIR}/textproc/ibus \
+		libgoa-1.0.so:${PORTSDIR}/net/gnome-online-accounts \
+		libsocialweb.so:${PORTSDIR}/www/libsocialweb \
+		libpwquality.so:${PORTSDIR}/security/libpwquality \
+		libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
 RUN_DEPENDS=	gnome-eject:${PORTSDIR}/sysutils/gnome-mount \
-		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
+		gnome-settings-daemon>=3.4.0:${PORTSDIR}/sysutils/gnome-settings-daemon \
+		gsettings-desktop-schemas>=3.2.2:${PORTSDIR}/devel/gsettings-desktop-schemas \
+		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
+		glxinfo:${PORTSDIR}/graphics/mesa-demos \
+		apg:${PORTSDIR}/security/apg \
+		gcm-calibrate:${PORTSDIR}/graphics/gnome-color-manager
 
-USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig
-GNOME_DESKTOP_VERSION=2
-USE_GSTREAMER=	good
-WANT_GNOME=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack metacity gnomemenus \
-		desktopfileutils libgnomekbd gnomedesktop librsvg2 gconf2
-USE_XORG=	xscrnsaver
+CONFLICTS=	gnome-media-2.[0-9]*
+
+USE_XZ=		yes
+USES=		gettext gmake pathfix pkgconfig shared-mime-info
+USE_GNOME=	gnomeprefix gnomehier intlhack libxml2 gnomemenus3 \
+		libgnomekbd3 gnomedesktop3 gconf2
+USE_XORG=	xscrnsaver x11 xxf86misc kbproto xi
 GNU_CONFIGURE=	yes
-INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--with-libsocialweb=yes --disable-systemd
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-GCONF_SCHEMAS=	control-center.schemas fontilus.schemas \
-		gnome-control-center.schemas
+OPTIONS_DEFINE=	CUPS
+OPTIONS_DEFAULT=CUPS
+CUPS_DESC=	Cups (printing) support
+CHEESE_DESC=	Cheese webcam support
 
-.if defined(PACKAGE_BUILDING)
-.undef WITHOUT_GNOME
-WITH_GNOME=	yes
+OPTIONS_DEFINE_i386=	CHEESE
+OPTIONS_DEFAULT_i386=	CHEESE
+OPTIONS_DEFINE_amd64=	CHEESE
+OPTIONS_DEFAULT_amd64=	CHEESE
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MCUPS}
+LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client
+PLIST_SUB+=	CUPS=""
+.else
+PLIST_SUB+=	CUPS="@comment "
+CONFIGURE_ARGS+=--disable-cups
 .endif
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mevolutiondataserver}!=""
-USE_GNOME+=	evolutiondataserver
-CONFIGURE_ARGS+=--enable-aboutme
-PLIST_SUB+=	ABOUTME=""
+.if ${PORT_OPTIONS:MCHEESE}
+CONFIGURE_ARGS+=--with-cheese
+BUILD_DEPENDS+=	cheese>=3.0.1:${PORTSDIR}/multimedia/cheese
+LIB_DEPENDS+=	libcheese.so:${PORTSDIR}/multimedia/cheese
 .else
-CONFIGURE_ARGS+=--disable-aboutme
-PLIST_SUB+=	ABOUTME="@comment "
+CONFIGURE_ARGS+=--without-cheese
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-	    	${WRKSRC}/capplets/common/gnome-theme-info.c
-	@${REINPLACE_CMD} -e 's|/usr/sbin|${PREFIX}/sbin|g' \
-		${WRKSRC}/capplets/display/org.gnome.randr.policy.in
-	@${REINPLACE_CMD} -e 's|"libslab"|"libnoslab"|g' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|datetime wacom|datetime|g' \
+		${WRKSRC}/panels/Makefile.in
 
 post-install:
-	@-update-desktop-database
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/control-center-1/panels/lib*.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

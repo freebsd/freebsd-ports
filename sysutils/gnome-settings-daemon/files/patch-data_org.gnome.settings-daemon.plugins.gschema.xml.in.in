@@ -1,0 +1,20 @@
+--- data/org.gnome.settings-daemon.plugins.gschema.xml.in.in.orig	2013-04-08 08:40:28.207584852 +0000
++++ data/org.gnome.settings-daemon.plugins.gschema.xml.in.in	2013-04-08 08:40:35.790584900 +0000
+@@ -7,17 +7,14 @@
+     <child name="color" schema="org.gnome.settings-daemon.plugins.color"/>
+     <child name="cursor" schema="org.gnome.settings-daemon.plugins.cursor"/>
+     <child name="font" schema="org.gnome.settings-daemon.plugins.font"/>
+-    <child name="gsdwacom" schema="org.gnome.settings-daemon.plugins.gsdwacom"/>
+     <child name="housekeeping" schema="org.gnome.settings-daemon.plugins.housekeeping"/>
+     <child name="keyboard" schema="org.gnome.settings-daemon.plugins.keyboard"/>
+     <child name="media-keys" schema="org.gnome.settings-daemon.plugins.media-keys"/>
+     <child name="mouse" schema="org.gnome.settings-daemon.plugins.mouse"/>
+-    <child name="orientation" schema="org.gnome.settings-daemon.plugins.orientation"/>
+     <child name="power" schema="org.gnome.settings-daemon.plugins.power"/>
+     <child name="print-notifications" schema="org.gnome.settings-daemon.plugins.print-notifications"/>
+     <child name="smartcard" schema="org.gnome.settings-daemon.plugins.smartcard"/>
+     <child name="sound" schema="org.gnome.settings-daemon.plugins.sound"/>
+-    <child name="updates" schema="org.gnome.settings-daemon.plugins.updates"/>
+     <child name="xrandr" schema="org.gnome.settings-daemon.plugins.xrandr"/>
+     <child name="xsettings" schema="org.gnome.settings-daemon.plugins.xsettings"/>
+   </schema>

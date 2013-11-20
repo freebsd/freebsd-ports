@@ -1,43 +1,34 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11/gnome-session/Makefile,v 1.187 2010/11/17 12:00:11 kwm Exp $
+#   $MCom: ports/trunk/x11/gnome-session3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gnome-session
-PORTVERSION=	2.32.1
-PORTREVISION=	2
+PORTVERSION=	3.6.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Session component for the GNOME 2 desktop
+COMMENT=	Session component for the GNOME 3 desktop
 
-CONFLICTS=	gnome-session-2.31.* gnome-session-2.90.* gnome-session-3.*
-
-BUILD_DEPENDS=	${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
-LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring \
-		notify.4:${PORTSDIR}/devel/libnotify \
-		execinfo:${PORTSDIR}/devel/libexecinfo \
-		upower-glib.1:${PORTSDIR}/sysutils/upower
-RUN_DEPENDS=	${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon \
-    		${LOCALBASE}/sbin/console-kit-daemon:${PORTSDIR}/sysutils/consolekit \
+LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
+		libupower-glib.so:${PORTSDIR}/sysutils/upower
+RUN_DEPENDS=	${LOCALBASE}/sbin/console-kit-daemon:${PORTSDIR}/sysutils/consolekit \
 		${LOCALBASE}/bin/xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
 INSTALLS_ICONS=	yes
-USES=		gettext gmake pkgconfig
-USE_BZIP2=	yes
-USE_XORG=	ice sm xau xrandr
-USE_GNOME=	gnomeprefix gnomehack intlhack gconf2
-GNOME_DESKTOP_VERSION=2
+USES=		gettext gmake pathfix pkgconfig
+USE_XZ=		yes
+USE_XORG=	ice sm xau xext xtst xrender xtrans xcomposite
+USE_GL=		gl
+USE_GNOME=	gnomeprefix intlhack gconf2 intltool gtk30
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-docbook-docs
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		gnome-session.1 gnome-wm.1 gnome-session-properties.1 \
-		gnome-session-save.1
-GCONF_SCHEMAS=	gnome-session.schemas
+GLIB_SCHEMAS=	org.gnome.SessionManager.gschema.xml
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

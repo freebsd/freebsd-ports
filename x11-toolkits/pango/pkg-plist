@@ -1,6 +1,6 @@
+@unexec /bin/rm %D/etc/pango/pango.modules
 bin/pango-querymodules
 bin/pango-view
-etc/pango/pango.modules
 include/pango-1.0/pango/pango-attributes.h
 include/pango-1.0/pango/pango-bidi-type.h
 include/pango-1.0/pango/pango-break.h
@@ -67,6 +67,8 @@ libdata/pkgconfig/pango.pc
 libdata/pkgconfig/pangocairo.pc
 libdata/pkgconfig/pangoft2.pc
 %%X11%%libdata/pkgconfig/pangoxft.pc
+man/man1/pango-querymodules.1.gz
+man/man1/pango-view.1.gz
 share/gir-1.0/Pango-1.0.gir
 share/gir-1.0/PangoCairo-1.0.gir
 share/gir-1.0/PangoFT2-1.0.gir
@@ -142,3 +144,4 @@ share/gtk-doc/html/pango/up.png
 @dirrm include/pango-1.0/pango
 @dirrm include/pango-1.0
 @dirrm etc/pango
+@exec %%LOCALBASE%%/bin/pango-querymodules > %D/etc/pango/pango.modules

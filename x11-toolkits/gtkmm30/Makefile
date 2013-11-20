@@ -14,15 +14,16 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ wrapper for Gtk+3
 
 USE_XZ=		yes
+NO_STAGE=	yes
 
 .if !defined(REFERENCE_PORT)
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
+USES=		gettext gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	gtk30 ltverhack glibmm cairomm atkmm pangomm
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -31,7 +32,6 @@ CONFIGURE_ARGS=	--disable-documentation \
 
 PLIST_SUB=	VERSION="3.0" API_VERSION="3.0"
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/tests//' \
 		${WRKSRC}/Makefile.in

@@ -1,0 +1,244 @@
+bin/evolution_kolab
+bin/tdriver
+bin/test-kolab-mail-access
+bin/test-kolab-util-cal-freebusy
+bin/test-kolab-util-http
+bin/test-kolab-util-ldap
+bin/unittest-libekolabconv
+lib/evolution-data-server/addressbook-backends/libebookbackendkolab.a
+lib/evolution-data-server/addressbook-backends/libebookbackendkolab.la
+lib/evolution-data-server/addressbook-backends/libebookbackendkolab.so
+lib/evolution-data-server/calendar-backends/libecalbackendkolab.a
+lib/evolution-data-server/calendar-backends/libecalbackendkolab.la
+lib/evolution-data-server/calendar-backends/libecalbackendkolab.so
+lib/evolution-data-server/camel-providers/libcamelkolab.a
+lib/evolution-data-server/camel-providers/libcamelkolab.la
+lib/evolution-data-server/camel-providers/libcamelkolab.so
+lib/evolution-data-server/camel-providers/libcamelkolab.urls
+lib/evolution-data-server/registry-modules/module-kolab-backend.a
+lib/evolution-data-server/registry-modules/module-kolab-backend.la
+lib/evolution-data-server/registry-modules/module-kolab-backend.so
+lib/evolution/%%VERSION%%/modules/module-kolab-configuration.a
+lib/evolution/%%VERSION%%/modules/module-kolab-configuration.la
+lib/evolution/%%VERSION%%/modules/module-kolab-configuration.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-kolab.a
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-kolab.la
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-kolab.so
+lib/evolution/%%VERSION%%/plugins/org-gnome-kolab.eplug
+lib/libekolabconv.a
+lib/libekolabconv.la
+lib/libekolabconv.so
+lib/libekolabconv.so.0
+share/doc/evolution-kolab_addressbook/EBookBackendKolab.html
+share/doc/evolution-kolab_addressbook/api-index-full.html
+share/doc/evolution-kolab_addressbook/ch01.html
+share/doc/evolution-kolab_addressbook/evolution-kolab-addressbook-kolab-util-contact-cache.html
+share/doc/evolution-kolab_addressbook/evolution-kolab-addressbook-kolab-util-contact.html
+share/doc/evolution-kolab_addressbook/evolution-kolab_addressbook.devhelp2
+share/doc/evolution-kolab_addressbook/home.png
+share/doc/evolution-kolab_addressbook/index.html
+share/doc/evolution-kolab_addressbook/index.sgml
+share/doc/evolution-kolab_addressbook/left.png
+share/doc/evolution-kolab_addressbook/object-tree.html
+share/doc/evolution-kolab_addressbook/right.png
+share/doc/evolution-kolab_addressbook/style.css
+share/doc/evolution-kolab_addressbook/up.png
+share/doc/evolution-kolab_calendar/ECalBackendKolab.html
+share/doc/evolution-kolab_calendar/api-index-full.html
+share/doc/evolution-kolab_calendar/ch01.html
+share/doc/evolution-kolab_calendar/evolution-kolab-calendar-KolabUtilCalendar.html
+share/doc/evolution-kolab_calendar/evolution-kolab-calendar-KolabUtilCalendarCache.html
+share/doc/evolution-kolab_calendar/evolution-kolab_calendar.devhelp2
+share/doc/evolution-kolab_calendar/home.png
+share/doc/evolution-kolab_calendar/index.html
+share/doc/evolution-kolab_calendar/index.sgml
+share/doc/evolution-kolab_calendar/left.png
+share/doc/evolution-kolab_calendar/object-tree.html
+share/doc/evolution-kolab_calendar/right.png
+share/doc/evolution-kolab_calendar/style.css
+share/doc/evolution-kolab_calendar/up.png
+share/doc/evolution-kolab_camel/api-index-full.html
+share/doc/evolution-kolab_camel/ch01.html
+share/doc/evolution-kolab_camel/evolution-kolab-camel-camel-kolab-imapx-provider.html
+share/doc/evolution-kolab_camel/evolution-kolab_camel.devhelp2
+share/doc/evolution-kolab_camel/home.png
+share/doc/evolution-kolab_camel/index.html
+share/doc/evolution-kolab_camel/index.sgml
+share/doc/evolution-kolab_camel/left.png
+share/doc/evolution-kolab_camel/object-tree.html
+share/doc/evolution-kolab_camel/right.png
+share/doc/evolution-kolab_camel/style.css
+share/doc/evolution-kolab_camel/up.png
+share/doc/evolution-kolab_eplugin/api-index-full.html
+share/doc/evolution-kolab_eplugin/ch01.html
+share/doc/evolution-kolab_eplugin/evolution-kolab_eplugin.devhelp2
+share/doc/evolution-kolab_eplugin/home.png
+share/doc/evolution-kolab_eplugin/index.html
+share/doc/evolution-kolab_eplugin/index.sgml
+share/doc/evolution-kolab_eplugin/left.png
+share/doc/evolution-kolab_eplugin/object-tree.html
+share/doc/evolution-kolab_eplugin/right.png
+share/doc/evolution-kolab_eplugin/style.css
+share/doc/evolution-kolab_eplugin/up.png
+share/doc/evolution-kolab_libekolab/api-index-full.html
+share/doc/evolution-kolab_libekolab/ch01.html
+share/doc/evolution-kolab_libekolab/evolution-kolab-libekolab-KolabFolderSummary.html
+share/doc/evolution-kolab_libekolab/evolution-kolab-libekolab-KolabMailAccess.html
+share/doc/evolution-kolab_libekolab/evolution-kolab-libekolab-KolabMailHandle.html
+share/doc/evolution-kolab_libekolab/evolution-kolab-libekolab-KolabMailImapClient.html
+share/doc/evolution-kolab_libekolab/evolution-kolab-libekolab-KolabMailInfoDb.html
+share/doc/evolution-kolab_libekolab/evolution-kolab-libekolab-KolabMailMimeBuilder.html
+share/doc/evolution-kolab_libekolab/evolution-kolab-libekolab-KolabMailSideCache.html
+share/doc/evolution-kolab_libekolab/evolution-kolab-libekolab-KolabMailSummary.html
+share/doc/evolution-kolab_libekolab/evolution-kolab-libekolab-KolabMailSynchronizer.html
+share/doc/evolution-kolab_libekolab/evolution-kolab-libekolab-KolabSettingsHandler.html
+share/doc/evolution-kolab_libekolab/evolution-kolab-libekolab-kolab-backend-types.html
+share/doc/evolution-kolab_libekolab/evolution-kolab-libekolab-kolab-mail-handle-friend.html
+share/doc/evolution-kolab_libekolab/evolution-kolab-libekolab-kolab-util-backend.html
+share/doc/evolution-kolab_libekolab/evolution-kolab_libekolab.devhelp2
+share/doc/evolution-kolab_libekolab/home.png
+share/doc/evolution-kolab_libekolab/index.html
+share/doc/evolution-kolab_libekolab/index.sgml
+share/doc/evolution-kolab_libekolab/left.png
+share/doc/evolution-kolab_libekolab/object-tree.html
+share/doc/evolution-kolab_libekolab/right.png
+share/doc/evolution-kolab_libekolab/style.css
+share/doc/evolution-kolab_libekolab/up.png
+share/doc/evolution-kolab_libekolabconv/api-index-full.html
+share/doc/evolution-kolab_libekolabconv/ch01.html
+share/doc/evolution-kolab_libekolabconv/evolution-kolab-libekolabconv-kolab-conv.html
+share/doc/evolution-kolab_libekolabconv/evolution-kolab_libekolabconv.devhelp2
+share/doc/evolution-kolab_libekolabconv/home.png
+share/doc/evolution-kolab_libekolabconv/index.html
+share/doc/evolution-kolab_libekolabconv/index.sgml
+share/doc/evolution-kolab_libekolabconv/left.png
+share/doc/evolution-kolab_libekolabconv/object-tree.html
+share/doc/evolution-kolab_libekolabconv/right.png
+share/doc/evolution-kolab_libekolabconv/style.css
+share/doc/evolution-kolab_libekolabconv/up.png
+share/doc/evolution_kolab/AUTHORS
+share/doc/evolution_kolab/COPYING
+share/doc/evolution_kolab/ChangeLog
+share/doc/evolution_kolab/INSTALL
+share/doc/evolution_kolab/NEWS
+share/doc/evolution_kolab/README
+share/locale/am/LC_MESSAGES/evolution_kolab.mo
+share/locale/ar/LC_MESSAGES/evolution_kolab.mo
+share/locale/as/LC_MESSAGES/evolution_kolab.mo
+share/locale/ast/LC_MESSAGES/evolution_kolab.mo
+share/locale/az/LC_MESSAGES/evolution_kolab.mo
+share/locale/bg/LC_MESSAGES/evolution_kolab.mo
+share/locale/bn/LC_MESSAGES/evolution_kolab.mo
+share/locale/bn_IN/LC_MESSAGES/evolution_kolab.mo
+share/locale/bs/LC_MESSAGES/evolution_kolab.mo
+share/locale/ca/LC_MESSAGES/evolution_kolab.mo
+share/locale/ca@valencia/LC_MESSAGES/evolution_kolab.mo
+share/locale/cs/LC_MESSAGES/evolution_kolab.mo
+share/locale/cy/LC_MESSAGES/evolution_kolab.mo
+share/locale/da/LC_MESSAGES/evolution_kolab.mo
+share/locale/de/LC_MESSAGES/evolution_kolab.mo
+share/locale/dz/LC_MESSAGES/evolution_kolab.mo
+share/locale/el/LC_MESSAGES/evolution_kolab.mo
+share/locale/en@shaw/LC_MESSAGES/evolution_kolab.mo
+share/locale/en_CA/LC_MESSAGES/evolution_kolab.mo
+share/locale/en_GB/LC_MESSAGES/evolution_kolab.mo
+share/locale/eo/LC_MESSAGES/evolution_kolab.mo
+share/locale/es/LC_MESSAGES/evolution_kolab.mo
+share/locale/et/LC_MESSAGES/evolution_kolab.mo
+share/locale/eu/LC_MESSAGES/evolution_kolab.mo
+share/locale/fa/LC_MESSAGES/evolution_kolab.mo
+share/locale/fi/LC_MESSAGES/evolution_kolab.mo
+share/locale/fr/LC_MESSAGES/evolution_kolab.mo
+share/locale/ga/LC_MESSAGES/evolution_kolab.mo
+share/locale/gl/LC_MESSAGES/evolution_kolab.mo
+share/locale/gu/LC_MESSAGES/evolution_kolab.mo
+share/locale/he/LC_MESSAGES/evolution_kolab.mo
+share/locale/hi/LC_MESSAGES/evolution_kolab.mo
+share/locale/hr/LC_MESSAGES/evolution_kolab.mo
+share/locale/hu/LC_MESSAGES/evolution_kolab.mo
+share/locale/id/LC_MESSAGES/evolution_kolab.mo
+share/locale/is/LC_MESSAGES/evolution_kolab.mo
+share/locale/it/LC_MESSAGES/evolution_kolab.mo
+share/locale/ja/LC_MESSAGES/evolution_kolab.mo
+share/locale/ka/LC_MESSAGES/evolution_kolab.mo
+share/locale/kn/LC_MESSAGES/evolution_kolab.mo
+share/locale/ko/LC_MESSAGES/evolution_kolab.mo
+share/locale/lt/LC_MESSAGES/evolution_kolab.mo
+share/locale/lv/LC_MESSAGES/evolution_kolab.mo
+share/locale/mai/LC_MESSAGES/evolution_kolab.mo
+share/locale/mk/LC_MESSAGES/evolution_kolab.mo
+share/locale/ml/LC_MESSAGES/evolution_kolab.mo
+share/locale/mn/LC_MESSAGES/evolution_kolab.mo
+share/locale/mr/LC_MESSAGES/evolution_kolab.mo
+share/locale/ms/LC_MESSAGES/evolution_kolab.mo
+share/locale/nb/LC_MESSAGES/evolution_kolab.mo
+share/locale/ne/LC_MESSAGES/evolution_kolab.mo
+share/locale/nl/LC_MESSAGES/evolution_kolab.mo
+share/locale/nn/LC_MESSAGES/evolution_kolab.mo
+share/locale/oc/LC_MESSAGES/evolution_kolab.mo
+share/locale/or/LC_MESSAGES/evolution_kolab.mo
+share/locale/pa/LC_MESSAGES/evolution_kolab.mo
+share/locale/pl/LC_MESSAGES/evolution_kolab.mo
+share/locale/pt/LC_MESSAGES/evolution_kolab.mo
+share/locale/pt_BR/LC_MESSAGES/evolution_kolab.mo
+share/locale/ro/LC_MESSAGES/evolution_kolab.mo
+share/locale/ru/LC_MESSAGES/evolution_kolab.mo
+share/locale/rw/LC_MESSAGES/evolution_kolab.mo
+share/locale/si/LC_MESSAGES/evolution_kolab.mo
+share/locale/sk/LC_MESSAGES/evolution_kolab.mo
+share/locale/sl/LC_MESSAGES/evolution_kolab.mo
+share/locale/sq/LC_MESSAGES/evolution_kolab.mo
+share/locale/sr/LC_MESSAGES/evolution_kolab.mo
+share/locale/sr@latin/LC_MESSAGES/evolution_kolab.mo
+share/locale/sv/LC_MESSAGES/evolution_kolab.mo
+share/locale/ta/LC_MESSAGES/evolution_kolab.mo
+share/locale/te/LC_MESSAGES/evolution_kolab.mo
+share/locale/th/LC_MESSAGES/evolution_kolab.mo
+share/locale/tr/LC_MESSAGES/evolution_kolab.mo
+share/locale/ug/LC_MESSAGES/evolution_kolab.mo
+share/locale/uk/LC_MESSAGES/evolution_kolab.mo
+share/locale/vi/LC_MESSAGES/evolution_kolab.mo
+share/locale/wa/LC_MESSAGES/evolution_kolab.mo
+share/locale/xh/LC_MESSAGES/evolution_kolab.mo
+share/locale/zh_CN/LC_MESSAGES/evolution_kolab.mo
+share/locale/zh_HK/LC_MESSAGES/evolution_kolab.mo
+share/locale/zh_TW/LC_MESSAGES/evolution_kolab.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
+@dirrm share/doc/evolution-kolab_libekolabconv
+@dirrm share/doc/evolution-kolab_libekolab
+@dirrm share/doc/evolution-kolab_eplugin
+@dirrm share/doc/evolution-kolab_camel
+@dirrm share/doc/evolution-kolab_calendar
+@dirrm share/doc/evolution-kolab_addressbook
+@dirrm share/doc/evolution_kolab

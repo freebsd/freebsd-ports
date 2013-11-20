@@ -1,10 +1,10 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
-# $FreeBSD$
-#   $MCom: ports/trunk/devel/dconf/Makefile 18669 2013-08-29 21:14:12Z kwm $
+# $FreeBSD: devel/dconf/Makefile 313956 2013-03-12 09:45:07Z kwm $
+#   $MCom: ports/trunk/devel/dconf/Makefile 18855 2013-11-07 12:12:25Z kwm $
 
 PORTNAME?=	dconf
-PORTVERSION=	0.14.1
-PORTREVISION?=	0
+PORTVERSION=	0.16.1
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DISTNAME=	dconf-${PORTVERSION}
@@ -28,7 +28,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 DCONF_SLAVE?=	no
 
-.if ${DCONF_SLAVE} == "editor"
+.if ${DCONF_SLAVE} == editor
 USE_GNOME+=	gtk30
 INSTALLS_ICONS=	yes
 GLIB_SCHEMAS=	ca.desrt.dconf-editor.gschema.xml
@@ -37,16 +37,13 @@ LIB_DEPENDS+=	libdconf.so:${PORTSDIR}/devel/dconf
 CONFIGURE_ARGS+=--disable-editor
 .endif
 
-.if ${DCONF_SLAVE} == "no"
-MAN1=		dconf-editor.1 dconf-service.1 dconf.1
-MAN7=		dconf.7
-.endif
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' \
 		${WRKSRC}/engine/dconf-engine.c \
-		${WRKSRC}/bin/dconf-update.c
+		${WRKSRC}/engine/dconf-engine-profile.c \
+		${WRKSRC}/engine/dconf-engine-source-system.c \
+		${WRKSRC}/bin/dconf-update.c \
+		${WRKSRC}/tests/engine.c
 	@${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}/|g' \
 		${WRKSRC}/editor/dconf-model.c
 	@${REINPLACE_CMD} -e 's|/usr/share|${LOCALBASE}/share|g' \
@@ -56,13 +53,8 @@ post-patch:
 		${WRKSRC}/client/Makefile.in \
 		${WRKSRC}/editor/Makefile.in
 
-#pre-build:
-#	${GMAKE} -C ${WRKSRC}/client dconf-client.c libdconf.so.0
-#	${GMAKE} -C ${WRKSRC}/dbus-1 dconf-dbus-1.c libdconf-dbus-1.so.0
-
 post-install:
-	-${LOCALBASE}/bin/gio-querymodules ${PREFIX}/lib/gio/modules
-	@${MKDIR} ${PREFIX}/etc/dconf/db
-	@${MKDIR} ${PREFIX}/etc/dconf/profile
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/dconf/db
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/dconf/profile
 
 .include <bsd.port.mk>

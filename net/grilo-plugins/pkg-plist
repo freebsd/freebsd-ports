@@ -1,0 +1,13 @@
+lib/grilo-0.2/grl-filesystem.xml
+lib/grilo-0.2/grl-gravatar.xml
+lib/grilo-0.2/grl-local-metadata.xml
+lib/grilo-0.2/libgrlfilesystem.a
+lib/grilo-0.2/libgrlfilesystem.la
+lib/grilo-0.2/libgrlfilesystem.so
+lib/grilo-0.2/libgrlgravatar.a
+lib/grilo-0.2/libgrlgravatar.la
+lib/grilo-0.2/libgrlgravatar.so
+lib/grilo-0.2/libgrllocalmetadata.a
+lib/grilo-0.2/libgrllocalmetadata.la
+lib/grilo-0.2/libgrllocalmetadata.so
+@dirrm lib/grilo-0.2

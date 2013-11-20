@@ -1,5 +1,5 @@
---- src/terminal-screen.c.orig	2009-08-13 14:39:24.000000000 +0200
-+++ src/terminal-screen.c	2009-08-20 10:41:58.000000000 +0200
+--- src/terminal-screen.c.orig	2010-12-03 01:12:50.000000000 +0000
++++ src/terminal-screen.c	2011-01-13 04:06:12.000000000 +0000
 @@ -18,6 +18,15 @@
  
  #include <config.h>
@@ -16,7 +16,7 @@
  #include <string.h>
  #include <stdlib.h>
  #include <unistd.h>
-@@ -184,15 +193,28 @@ G_DEFINE_TYPE (TerminalScreen, terminal_
+@@ -179,15 +188,28 @@ G_DEFINE_TYPE (TerminalScreen, terminal_
  static char *
  cwd_of_pid (int pid)
  {
@@ -45,7 +45,7 @@
    /* Try to get the working directory using various OS-specific mechanisms */
    for (i = 0; i < G_N_ELEMENTS (patterns); ++i)
      {
-@@ -230,6 +252,49 @@ cwd_of_pid (int pid)
+@@ -225,6 +247,49 @@ cwd_of_pid (int pid)
              return working_dir;
          }
      }

@@ -1,15 +1,15 @@
---- dbus-1/Makefile.orig.in	2013-03-26 19:18:48.870352031 +0000
-+++ dbus-1/Makefile.in	2013-03-26 19:18:57.583352154 +0000
-@@ -55,7 +55,7 @@
- DIST_COMMON = $(dconf_dbus_1include_HEADERS) $(srcdir)/Makefile.am \
- 	$(srcdir)/Makefile.in $(srcdir)/dconf-dbus-1.pc.in \
- 	$(top_srcdir)/Makefile.gtester
+--- dbus-1/Makefile.in.orig	2013-09-06 20:44:51.000000000 +0200
++++ dbus-1/Makefile.in	2013-09-06 20:47:45.000000000 +0200
+@@ -82,7 +82,7 @@
+ DIST_COMMON = $(top_srcdir)/Makefile.gtester $(srcdir)/Makefile.in \
+ 	$(srcdir)/Makefile.am $(srcdir)/dconf-dbus-1.pc.in \
+ 	$(top_srcdir)/aux/depcomp $(dconf_dbus_1include_HEADERS)
 -shlib_PROGRAMS = libdconf-dbus-1.so.0.0.0$(EXEEXT)
 +shlib_PROGRAMS = libdconf-dbus-1.so.0$(EXEEXT)
  subdir = dbus-1
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- am__aclocal_m4_deps = $(top_srcdir)/configure.ac
-@@ -341,7 +341,7 @@
+ am__aclocal_m4_deps = $(top_srcdir)/m4/gtk-doc.m4 \
+@@ -396,7 +396,7 @@
  
  libdconf_dbus_1_so_0_0_0_LDFLAGS = -shared -Wl,-soname=libdconf-dbus-1.so.0
  libdconf_dbus_1_so_0_0_0_SOURCES = dconf-dbus-1.c
@@ -18,11 +18,12 @@
  CLEANFILES = libdconf-dbus-1.so.0 libdconf-dbus-1.so
  all: all-am
  
-@@ -430,13 +430,12 @@
+@@ -489,14 +489,13 @@
  	cd "$(DESTDIR)$(shlibdir)" && rm -f $$files
  
  clean-shlibPROGRAMS:
 -	-test -z "$(shlib_PROGRAMS)" || rm -f $(shlib_PROGRAMS)
+ 
 -libdconf-dbus-1.so.0.0.0$(EXEEXT): $(libdconf_dbus_1_so_0_0_0_OBJECTS) $(libdconf_dbus_1_so_0_0_0_DEPENDENCIES) $(EXTRA_libdconf_dbus_1_so_0_0_0_DEPENDENCIES) 
 -	@rm -f libdconf-dbus-1.so.0.0.0$(EXEEXT)
 +libdconf-dbus-1.so.0$(EXEEXT): $(libdconf_dbus_1_so_0_0_0_OBJECTS) $(libdconf_dbus_1_so_0_0_0_DEPENDENCIES) $(EXTRA_libdconf_dbus_1_so_0_0_0_DEPENDENCIES) 
@@ -35,7 +36,7 @@
  
  distclean-compile:
  	-rm -f *.tab.c
-@@ -821,12 +820,8 @@
+@@ -882,12 +881,8 @@
  # run tests in cwd as part of make check
  check-local: test-nonrecursive
  

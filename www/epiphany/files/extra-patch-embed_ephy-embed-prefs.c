@@ -1,12 +1,10 @@
---- embed/ephy-embed-prefs.c.orig	2009-10-25 16:18:24.000000000 -0400
-+++ embed/ephy-embed-prefs.c	2009-10-25 16:19:05.000000000 -0400
-@@ -250,6 +250,9 @@ ephy_embed_prefs_init (void)
+--- embed/ephy-embed-prefs.c.orig	2011-04-26 00:08:02.000000000 +0200
++++ embed/ephy-embed-prefs.c	2011-04-28 08:59:55.000000000 +0200
+@@ -482,6 +482,7 @@ ephy_embed_prefs_init (void)
    /* Hardcoded settings */
-   g_object_set (settings, "auto-shrink-images", FALSE, NULL);
- 
-+  /* Enable spell-check by default */
-+  g_object_set (settings, "enable-spell-checking", TRUE, NULL);
-+
-   /* Connections */
-   connections = g_malloc (sizeof (guint) * G_N_ELEMENTS (webkit_pref_entries));
- 
+   g_object_set (webkit_settings,
+                 "enable-default-context-menu", FALSE,
++                "enable-spell-checking", TRUE,
+                 "enable-site-specific-quirks", TRUE,
+                 "enable-page-cache", TRUE,
+                 "enable-developer-extras", TRUE,

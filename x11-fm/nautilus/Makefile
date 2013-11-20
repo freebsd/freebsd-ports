@@ -1,52 +1,40 @@
 # Created by: ade, archie
 # $FreeBSD$
-#   $MCom: ports/x11-fm/nautilus/Makefile,v 1.212 2012/09/03 16:28:29 mezz Exp $
+#   $MCom: ports/trunk/x11-fm/nautilus3/Makefile 18474 2013-05-17 19:07:22Z kwm $
 
 PORTNAME=	nautilus
-PORTVERSION=	2.32.2.1
-PORTREVISION=	4
+PORTVERSION=	3.6.3
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT?=	File manager for the GNOME desktop
+COMMENT=	File manager for the GNOME desktop
 
-BUILD_DEPENDS=	g-ir-compiler:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	exif:${PORTSDIR}/graphics/libexif \
-		unique-1.0:${PORTSDIR}/x11-toolkits/unique \
-		exempi:${PORTSDIR}/textproc/exempi
+BUILD_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
+		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
+LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
+		libnotify.so:${PORTSDIR}/devel/libnotify \
+		libexempi.so:${PORTSDIR}/textproc/exempi
+RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
+		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-CONFLICTS=	nautilus-3.[0-9]*
-
-INSTALLS_ICONS=	yes
-USE_BZIP2=	yes
-USES=		gettext desktop-file-utils shared-mime-info gmake pkgconfig
-USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop \
-		librsvg2 ltverhack gvfs ltasneededhack
+USE_XZ=		yes
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
+		shared-mime-info
+USE_GNOME=	gnomeprefix intlhack gnomedesktop3 libxml2 \
+		ltverhack gvfs ltasneededhack introspection:build
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib ${ICONV_LIB}" \
-		LIBPNG="-L${LOCALBASE}/lib -lpng -lz"
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ARGS=	--enable-static --disable-packagekit
-MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	LIBS="-pthread"
+CONFIGURE_ARGS=	--disable-packagekit --disable-tracker
 
-GCONF_SCHEMAS=	apps_nautilus_preferences.schemas
-
-MAN1=		nautilus-connect-server.1 nautilus-file-management-properties.1 \
-		nautilus.1
-
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e 's|G_CONST_RETURN|const|g' \
-		${WRKSRC}/eel/eel-*.[ch] \
-		${WRKSRC}/libnautilus-private/*.[ch] \
-		${WRKSRC}/src/nautilus-zoom-control.c
-	@${REINPLACE_CMD} -e 's|-DG_DISABLE_DEPRECATED||g' \
-		${WRKSRC}/configure ${WRKSRC}/eel/Makefile.in
+GLIB_SCHEMAS=	org.gnome.nautilus.gschema.xml
 
 post-install:
-	@${MKDIR} ${PREFIX}/lib/nautilus/extensions-2.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnautilus-extension.so.1
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/nautilus/extensions-3.0/libnautilus-sendto.so
 
 .include <bsd.port.mk>

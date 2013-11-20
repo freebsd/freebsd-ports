@@ -12,16 +12,17 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library for parsing and rendering SVG vector-graphic files
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
-		croco-0.6:${PORTSDIR}/textproc/libcroco
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libcroco-0.6.so:${PORTSDIR}/textproc/libcroco
 RUN_DEPENDS=	gtk-engines2>=2.7.5_1:${PORTSDIR}/x11-themes/gtk-engines2
 
+NO_STAGE=	yes
 USE_XZ=		yes
+USES=		gettext gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehier gnomeprefix libgsf ltverhack gtk20 \
 		introspection:build
-USES=		gettext gmake pathfix pkgconfig
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-svgz \
@@ -30,7 +31,6 @@ CONFIGURE_ARGS=	--with-svgz \
 		--enable-gtk-theme
 MAN1=		rsvg-convert.1
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|GTK3_REQUIRED=3.0.0|GTK3_REQUIRED=9.90.0|g' \
 		${WRKSRC}/configure

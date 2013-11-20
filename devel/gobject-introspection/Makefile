@@ -1,6 +1,6 @@
 # Created by: Alexander Logvinov <avl@FreeBSD.org>
-# $FreeBSD$
-#   $MCom: ports/trunk/devel/gobject-introspection/Makefile 18652 2013-08-18 15:14:13Z kwm $
+# $FreeBSD: head/devel/gobject-introspection/Makefile 314706 2013-03-20 02:39:49Z mezz $
+#   $MCom: ports/trunk/devel/gobject-introspection/Makefile 18692 2013-09-22 00:45:30Z kwm $
 
 PORTNAME=	gobject-introspection
 PORTVERSION=	1.36.0
@@ -14,8 +14,9 @@ COMMENT=	Generate interface introspection data for GObject libraries
 
 # we need cairo otherwise the generated Cairo gir is broken
 BUILD_DEPENDS=	cairo-trace:${PORTSDIR}/graphics/cairo
-LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi
+LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
 
+NO_STAGE=	yes
 USES=		bison gettext gmake pathfix pkgconfig
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
@@ -32,7 +33,6 @@ MAKE_ENV=	HOME=${WRKDIR}
 
 MAN1=		g-ir-compiler.1 g-ir-generate.1 g-ir-scanner.1
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|'gcc'|'cc'|g' \
 		${WRKSRC}/giscanner/dumper.py

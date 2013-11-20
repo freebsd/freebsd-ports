@@ -1,8 +1,9 @@
+# Created by:  Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/net-im/telepathy-gabble/Makefile 17271 2013-04-01 15:16:27Z kwm $
+#    $MCom: ports/trunk/net-im/telepathy-gabble/Makefile 18791 2013-10-11 08:54:52Z gusi $
 
 PORTNAME=	telepathy-gabble
-PORTVERSION=	0.16.6
+PORTVERSION=	0.17.3
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -11,26 +12,26 @@ COMMENT=	Jabber Connection Manager for Telepathy Framework
 
 BUILD_DEPENDS=	telepathy-glib>=0.18.0:${PORTSDIR}/net-im/telepathy-glib \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
-LIB_DEPENDS=	soup-2.4:${PORTSDIR}/devel/libsoup \
-		nice:${PORTSDIR}/net-im/libnice \
-		telepathy-glib:${PORTSDIR}/net-im/telepathy-glib \
-		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		loudmouth-1:${PORTSDIR}/net-im/loudmouth
-RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
+		libnice.so:${PORTSDIR}/net-im/libnice \
+		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
+		libloudmouth-1.so:${PORTSDIR}/net-im/loudmouth
+RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
+		libnice-gst1>=0:${PORTSDIR}/net-im/libnice-gst1
 
 PORTSCOUT=	limitw:1,even
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		pathfix pkgconfig
+USES=		gmake pathfix pkgconfig
 USE_GNOME=	glib20 libxslt:build
 USE_SQLITE=	yes
 USE_OPENSSL=	yes
 USE_PYTHON_BUILD=	yes
+MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ARGS=	--with-ca-certificates=${LOCALBASE}/share/certs/ca-root-nss.crt
-
-MAN8=		telepathy-gabble.8
+CONFIGURE_ENV=	LIBS="-pthread"
 
 PLIST_SUB=	PVERSION=${PORTVERSION}
 
@@ -38,7 +39,6 @@ PLIST_SUB=	PVERSION=${PORTVERSION}
 CONFIGURE_ENV+=	OPENSSL_LIBS="-L/usr/lib -ssl -crypto" OPENSSL_CFLAGS="-I/usr/include"
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||g' \
 		${WRKSRC}/lib/ext/wocky/configure

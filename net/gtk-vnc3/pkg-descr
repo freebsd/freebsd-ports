@@ -1,0 +1,10 @@
+GTK-VNC is a VNC viewer widget for GTK+. It is built using coroutines,
+allowing it to be completely asynchronous while remaining single threaded.
+It supports RFB protocols 3.3 through 3.8 and the VeNCrypt authentication
+extension providing SSL/TLS encryption with x509 certificate authentication.
+The core library is written in C and a binding for Python using PyGTK is
+available. The networking layer supports connections over both IPv4 and IPv6.
+Example code illustrates how to build a vncviewer replacement using either C
+or Python.
+
+WWW: http://live.gnome.org/gtk-vnc

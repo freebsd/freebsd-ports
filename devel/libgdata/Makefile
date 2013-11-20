@@ -1,28 +1,34 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/devel/libgdata/Makefile,v 1.14 2010/09/30 19:39:17 kwm Exp $
+#    $MCom: ports/trunk/devel/libgdata/Makefile 18878 2013-11-11 19:28:42Z gusi $
 
 PORTNAME=	libgdata
-PORTVERSION=	0.6.6
-PORTREVISION=	1
+PORTVERSION=	0.14.0
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
 MAINTAINER=	kwm@FreeBSD.org
-COMMENT=	GLib based implementation of the GData protocol
+COMMENT=	GLib based implimentation of the GData protocol
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	soup-gnome-2.4.1:${PORTSDIR}/devel/libsoup-gnome
+BUILD_DEPENDS=	ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss
+LIB_DEPENDS=	libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome \
+		libgoa-1.0.so:${PORTSDIR}/net/gnome-online-accounts \
+		libgcr-3.so:${PORTSDIR}/security/gcr \
+		liboauth.so:${PORTSDIR}/net/liboauth
+RUN_DEPENDS=	ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss
 
-USE_BZIP2=	yes
+CONFLICTS=	libgdata-0.6.*
+
+USE_XZ=		yes
 USE_LDCONFIG=	yes
-USES=		gettext pkgconfig
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack intltool ltverhack glib20
-CPPFLAGS+=	-I${LOCALBASE}/include 
+USES=		gettext gmake pathfix pkgconfig
+USE_GNOME=	glib20 gnomeprefix intltool introspection:build ltverhack
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=--with-html-dir="${PREFIX}/share/doc"
+CONFIGURE_ARGS+=--with-ca-certs=${LOCALBASE}/share/certs/ca-root-nss.crt
 
-NO_STAGE=	yes
+post-install:
+	 @${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgdata.so.13
+
 .include <bsd.port.mk>

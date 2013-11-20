@@ -1,24 +1,25 @@
 # Created by: Andreas Kohn <andreas@syndrom23.de>
 # $FreeBSD$
-#   $MCom: ports/deskutils/notification-daemon/Makefile,v 1.11 2011/06/11 19:51:12 mezz Exp $
+#   $MCom: ports/trunk/deskutils/notification-daemon/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	notification-daemon
-PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTVERSION=	0.7.6
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Send small notifications to your desktop
 
-LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus \
-		canberra-gtk3.0:${PORTSDIR}/audio/libcanberra-gtk3
-
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnomeprefix intlhack gtk30
-USES=		gettext gmake pkgconfig
+
+LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
+		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
+
+NO_STAGE=	yes
+USE_XZ=		yes
+USE_GNOME=	gnomeprefix intlhack gtk30
+USES=		gettext gmake pathfix pkgconfig
 USE_XORG=	x11
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
@@ -28,5 +29,4 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFLICTS=	xfce4-notification-daemon-[0-9]* xfce4-notifyd-[0-9]*
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

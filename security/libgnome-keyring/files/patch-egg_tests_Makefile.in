@@ -1,0 +1,10 @@
+--- egg/tests/Makefile.in.orig	Sat Oct 27 14:39:25 2012
++++ egg/tests/Makefile.in	Sat Oct 27 14:39:52 2012
+@@ -313,6 +313,7 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ INCLUDES = \
++	-I$(top_srcdir) \
+ 	-I$(top_srcdir)/egg \
+ 	$(LIBRARY_CFLAGS)
+ 

@@ -11,5 +11,5 @@
 +      g_object_set (G_OBJECT (session), webkit_pref, langs_str, NULL);
 +  }
  
-   g_strfreev (langs);
+   g_strfreev (languages);
    g_free (langs_str);

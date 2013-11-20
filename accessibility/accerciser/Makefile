@@ -1,27 +1,32 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/accessibility/accerciser/Makefile,v 1.36 2010/04/27 21:38:19 kwm Exp $
+#   $MCom: ports/trunk/accessibility/accerciser3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	accerciser
-PORTVERSION=	1.12.1
-PORTREVISION=	2
+PORTVERSION=	3.6.2
 CATEGORIES=	accessibility gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Interactive Python accessibility explorer for GNOME
 
-USE_BZIP2=	yes
-USE_GNOME=	pygnomedesktop atspi intlhack
-USE_PYTHON=	-2.7
-USES=		display:configure gettext gmake pkgconfig
-INSTALLS_OMF=	yes
+BUILD_DEPENDS=	gsettings-desktop-schemas>=3.2.0:${PORTSDIR}/devel/gsettings-desktop-schemas \
+		itstool:${PORTSDIR}/textproc/itstool \
+		at-spi2-core>=2.1.5:${PORTSDIR}/accessibility/at-spi2-core
+RUN_DEPENDS=	gsettings-desktop-schemas>=3.2.0:${PORTSDIR}/devel/gsettings-desktop-schemas \
+		at-spi2-core>=2.1.5:${PORTSDIR}/accessibility/at-spi2-core
+
+USE_XZ=		yes
+USE_GNOME=	gtk30 pygobject3 intlhack
+USE_PYTHON=	yes
+USES=		gettext gmake pkgconfig shebangfix
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+SHEBANG_FILES=	plugins/ipython_view.py
 
-GCONF_SCHEMAS=	accerciser.schemas
+GLIB_SCHEMAS=	org.a11y.Accerciser.gschema.xml
 
 .include <bsd.port.mk>

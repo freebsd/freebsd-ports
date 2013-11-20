@@ -1,4 +1,5 @@
 bin/orca
+etc/xdg/autostart/orca-autostart.desktop
 %%PYTHON_SITELIBDIR%%/orca/__init__.py
 %%PYTHON_SITELIBDIR%%/orca/__init__.pyc
 %%PYTHON_SITELIBDIR%%/orca/__init__.pyo
@@ -11,6 +12,12 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/app_prefs.py
 %%PYTHON_SITELIBDIR%%/orca/app_prefs.pyc
 %%PYTHON_SITELIBDIR%%/orca/app_prefs.pyo
+%%PYTHON_SITELIBDIR%%/orca/backends/__init__.py
+%%PYTHON_SITELIBDIR%%/orca/backends/__init__.pyc
+%%PYTHON_SITELIBDIR%%/orca/backends/__init__.pyo
+%%PYTHON_SITELIBDIR%%/orca/backends/json_backend.py
+%%PYTHON_SITELIBDIR%%/orca/backends/json_backend.pyc
+%%PYTHON_SITELIBDIR%%/orca/backends/json_backend.pyo
 %%PYTHON_SITELIBDIR%%/orca/bookmarks.py
 %%PYTHON_SITELIBDIR%%/orca/bookmarks.pyc
 %%PYTHON_SITELIBDIR%%/orca/bookmarks.pyo
@@ -20,6 +27,9 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/braille_generator.py
 %%PYTHON_SITELIBDIR%%/orca/braille_generator.pyc
 %%PYTHON_SITELIBDIR%%/orca/braille_generator.pyo
+%%PYTHON_SITELIBDIR%%/orca/braille_rolenames.py
+%%PYTHON_SITELIBDIR%%/orca/braille_rolenames.pyc
+%%PYTHON_SITELIBDIR%%/orca/braille_rolenames.pyo
 %%PYTHON_SITELIBDIR%%/orca/brlmon.py
 %%PYTHON_SITELIBDIR%%/orca/brlmon.pyc
 %%PYTHON_SITELIBDIR%%/orca/brlmon.pyo
@@ -32,24 +42,15 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/common_keyboardmap.py
 %%PYTHON_SITELIBDIR%%/orca/common_keyboardmap.pyc
 %%PYTHON_SITELIBDIR%%/orca/common_keyboardmap.pyo
-%%PYTHON_SITELIBDIR%%/orca/dbusserver.py
-%%PYTHON_SITELIBDIR%%/orca/dbusserver.pyc
-%%PYTHON_SITELIBDIR%%/orca/dbusserver.pyo
 %%PYTHON_SITELIBDIR%%/orca/debug.py
 %%PYTHON_SITELIBDIR%%/orca/debug.pyc
 %%PYTHON_SITELIBDIR%%/orca/debug.pyo
-%%PYTHON_SITELIBDIR%%/orca/dectalk.py
-%%PYTHON_SITELIBDIR%%/orca/dectalk.pyc
-%%PYTHON_SITELIBDIR%%/orca/dectalk.pyo
-%%PYTHON_SITELIBDIR%%/orca/default.py
-%%PYTHON_SITELIBDIR%%/orca/default.pyc
-%%PYTHON_SITELIBDIR%%/orca/default.pyo
 %%PYTHON_SITELIBDIR%%/orca/desktop_keyboardmap.py
 %%PYTHON_SITELIBDIR%%/orca/desktop_keyboardmap.pyc
 %%PYTHON_SITELIBDIR%%/orca/desktop_keyboardmap.pyo
-%%PYTHON_SITELIBDIR%%/orca/espeechfactory.py
-%%PYTHON_SITELIBDIR%%/orca/espeechfactory.pyc
-%%PYTHON_SITELIBDIR%%/orca/espeechfactory.pyo
+%%PYTHON_SITELIBDIR%%/orca/event_manager.py
+%%PYTHON_SITELIBDIR%%/orca/event_manager.pyc
+%%PYTHON_SITELIBDIR%%/orca/event_manager.pyo
 %%PYTHON_SITELIBDIR%%/orca/eventsynthesizer.py
 %%PYTHON_SITELIBDIR%%/orca/eventsynthesizer.pyc
 %%PYTHON_SITELIBDIR%%/orca/eventsynthesizer.pyo
@@ -59,24 +60,12 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/flat_review.py
 %%PYTHON_SITELIBDIR%%/orca/flat_review.pyc
 %%PYTHON_SITELIBDIR%%/orca/flat_review.pyo
-%%PYTHON_SITELIBDIR%%/orca/focus_tracking_presenter.py
-%%PYTHON_SITELIBDIR%%/orca/focus_tracking_presenter.pyc
-%%PYTHON_SITELIBDIR%%/orca/focus_tracking_presenter.pyo
 %%PYTHON_SITELIBDIR%%/orca/formatting.py
 %%PYTHON_SITELIBDIR%%/orca/formatting.pyc
 %%PYTHON_SITELIBDIR%%/orca/formatting.pyo
 %%PYTHON_SITELIBDIR%%/orca/generator.py
 %%PYTHON_SITELIBDIR%%/orca/generator.pyc
 %%PYTHON_SITELIBDIR%%/orca/generator.pyo
-%%PYTHON_SITELIBDIR%%/orca/gnomespeechfactory.py
-%%PYTHON_SITELIBDIR%%/orca/gnomespeechfactory.pyc
-%%PYTHON_SITELIBDIR%%/orca/gnomespeechfactory.pyo
-%%PYTHON_SITELIBDIR%%/orca/gsmag.py
-%%PYTHON_SITELIBDIR%%/orca/gsmag.pyc
-%%PYTHON_SITELIBDIR%%/orca/gsmag.pyo
-%%PYTHON_SITELIBDIR%%/orca/httpserver.py
-%%PYTHON_SITELIBDIR%%/orca/httpserver.pyc
-%%PYTHON_SITELIBDIR%%/orca/httpserver.pyo
 %%PYTHON_SITELIBDIR%%/orca/input_event.py
 %%PYTHON_SITELIBDIR%%/orca/input_event.pyc
 %%PYTHON_SITELIBDIR%%/orca/input_event.pyo
@@ -86,24 +75,24 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/keynames.py
 %%PYTHON_SITELIBDIR%%/orca/keynames.pyc
 %%PYTHON_SITELIBDIR%%/orca/keynames.pyo
+%%PYTHON_SITELIBDIR%%/orca/label_inference.py
+%%PYTHON_SITELIBDIR%%/orca/label_inference.pyc
+%%PYTHON_SITELIBDIR%%/orca/label_inference.pyo
 %%PYTHON_SITELIBDIR%%/orca/laptop_keyboardmap.py
 %%PYTHON_SITELIBDIR%%/orca/laptop_keyboardmap.pyc
 %%PYTHON_SITELIBDIR%%/orca/laptop_keyboardmap.pyo
 %%PYTHON_SITELIBDIR%%/orca/liveregions.py
 %%PYTHON_SITELIBDIR%%/orca/liveregions.pyc
 %%PYTHON_SITELIBDIR%%/orca/liveregions.pyo
-%%PYTHON_SITELIBDIR%%/orca/mag.py
-%%PYTHON_SITELIBDIR%%/orca/mag.pyc
-%%PYTHON_SITELIBDIR%%/orca/mag.pyo
+%%PYTHON_SITELIBDIR%%/orca/logger.py
+%%PYTHON_SITELIBDIR%%/orca/logger.pyc
+%%PYTHON_SITELIBDIR%%/orca/logger.pyo
 %%PYTHON_SITELIBDIR%%/orca/mouse_review.py
 %%PYTHON_SITELIBDIR%%/orca/mouse_review.pyc
 %%PYTHON_SITELIBDIR%%/orca/mouse_review.pyo
 %%PYTHON_SITELIBDIR%%/orca/notification_messages.py
 %%PYTHON_SITELIBDIR%%/orca/notification_messages.pyc
 %%PYTHON_SITELIBDIR%%/orca/notification_messages.pyo
-%%PYTHON_SITELIBDIR%%/orca/openttsfactory.py
-%%PYTHON_SITELIBDIR%%/orca/openttsfactory.pyc
-%%PYTHON_SITELIBDIR%%/orca/openttsfactory.pyo
 %%PYTHON_SITELIBDIR%%/orca/orca.py
 %%PYTHON_SITELIBDIR%%/orca/orca.pyc
 %%PYTHON_SITELIBDIR%%/orca/orca.pyo
@@ -122,6 +111,12 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/orca_gui_prefs.py
 %%PYTHON_SITELIBDIR%%/orca/orca_gui_prefs.pyc
 %%PYTHON_SITELIBDIR%%/orca/orca_gui_prefs.pyo
+%%PYTHON_SITELIBDIR%%/orca/orca_gui_profile.py
+%%PYTHON_SITELIBDIR%%/orca/orca_gui_profile.pyc
+%%PYTHON_SITELIBDIR%%/orca/orca_gui_profile.pyo
+%%PYTHON_SITELIBDIR%%/orca/orca_gui_quit.py
+%%PYTHON_SITELIBDIR%%/orca/orca_gui_quit.pyc
+%%PYTHON_SITELIBDIR%%/orca/orca_gui_quit.pyo
 %%PYTHON_SITELIBDIR%%/orca/orca_gui_splash.py
 %%PYTHON_SITELIBDIR%%/orca/orca_gui_splash.pyc
 %%PYTHON_SITELIBDIR%%/orca/orca_gui_splash.pyo
@@ -131,39 +126,27 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/orca_platform.py
 %%PYTHON_SITELIBDIR%%/orca/orca_platform.pyc
 %%PYTHON_SITELIBDIR%%/orca/orca_platform.pyo
-%%PYTHON_SITELIBDIR%%/orca/orca_prefs.py
-%%PYTHON_SITELIBDIR%%/orca/orca_prefs.pyc
-%%PYTHON_SITELIBDIR%%/orca/orca_prefs.pyo
-%%PYTHON_SITELIBDIR%%/orca/orca_quit.py
-%%PYTHON_SITELIBDIR%%/orca/orca_quit.pyc
-%%PYTHON_SITELIBDIR%%/orca/orca_quit.pyo
 %%PYTHON_SITELIBDIR%%/orca/orca_state.py
 %%PYTHON_SITELIBDIR%%/orca/orca_state.pyc
 %%PYTHON_SITELIBDIR%%/orca/orca_state.pyo
 %%PYTHON_SITELIBDIR%%/orca/outline.py
 %%PYTHON_SITELIBDIR%%/orca/outline.pyc
 %%PYTHON_SITELIBDIR%%/orca/outline.pyo
-%%PYTHON_SITELIBDIR%%/orca/outloud.py
-%%PYTHON_SITELIBDIR%%/orca/outloud.pyc
-%%PYTHON_SITELIBDIR%%/orca/outloud.pyo
 %%PYTHON_SITELIBDIR%%/orca/phonnames.py
 %%PYTHON_SITELIBDIR%%/orca/phonnames.pyc
 %%PYTHON_SITELIBDIR%%/orca/phonnames.pyo
-%%PYTHON_SITELIBDIR%%/orca/presentation_manager.py
-%%PYTHON_SITELIBDIR%%/orca/presentation_manager.pyc
-%%PYTHON_SITELIBDIR%%/orca/presentation_manager.pyo
 %%PYTHON_SITELIBDIR%%/orca/pronunciation_dict.py
 %%PYTHON_SITELIBDIR%%/orca/pronunciation_dict.pyc
 %%PYTHON_SITELIBDIR%%/orca/pronunciation_dict.pyo
 %%PYTHON_SITELIBDIR%%/orca/punctuation_settings.py
 %%PYTHON_SITELIBDIR%%/orca/punctuation_settings.pyc
 %%PYTHON_SITELIBDIR%%/orca/punctuation_settings.pyo
-%%PYTHON_SITELIBDIR%%/orca/rolenames.py
-%%PYTHON_SITELIBDIR%%/orca/rolenames.pyc
-%%PYTHON_SITELIBDIR%%/orca/rolenames.pyo
 %%PYTHON_SITELIBDIR%%/orca/script.py
 %%PYTHON_SITELIBDIR%%/orca/script.pyc
 %%PYTHON_SITELIBDIR%%/orca/script.pyo
+%%PYTHON_SITELIBDIR%%/orca/script_manager.py
+%%PYTHON_SITELIBDIR%%/orca/script_manager.pyc
+%%PYTHON_SITELIBDIR%%/orca/script_manager.pyo
 %%PYTHON_SITELIBDIR%%/orca/script_utilities.py
 %%PYTHON_SITELIBDIR%%/orca/script_utilities.pyc
 %%PYTHON_SITELIBDIR%%/orca/script_utilities.pyo
@@ -293,6 +276,12 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gcalctool/speech_generator.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gcalctool/speech_generator.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gcalctool/speech_generator.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/gdm-simple-greeter/__init__.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/gdm-simple-greeter/__init__.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/gdm-simple-greeter/__init__.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/gdm-simple-greeter/script.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/gdm-simple-greeter/script.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/gdm-simple-greeter/script.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gdmlogin/__init__.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gdmlogin/__init__.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gdmlogin/__init__.pyo
@@ -488,18 +477,15 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice/structural_navigation.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice/structural_navigation.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice/structural_navigation.pyo
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp/__init__.py
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp/__init__.pyc
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp/__init__.pyo
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp/script.py
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp/script.pyc
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp/script.pyo
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp/script_settings.py
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp/script_settings.pyc
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp/script_settings.pyo
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp/script_utilities.py
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp/script_utilities.pyc
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp/script_utilities.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/xfwm4/__init__.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/xfwm4/__init__.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/xfwm4/__init__.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/xfwm4/script.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/xfwm4/script.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/xfwm4/script.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/default.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/default.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/default.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/self_voicing.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/self_voicing.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/self_voicing.pyo
@@ -560,12 +546,36 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/VCL.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/VCL.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/VCL.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/WebKitGtk/__init__.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/WebKitGtk/__init__.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/WebKitGtk/__init__.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/WebKitGtk/braille_generator.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/WebKitGtk/braille_generator.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/WebKitGtk/braille_generator.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/WebKitGtk/script.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/WebKitGtk/script.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/WebKitGtk/script.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/WebKitGtk/script_settings.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/WebKitGtk/script_settings.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/WebKitGtk/script_settings.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/WebKitGtk/script_utilities.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/WebKitGtk/script_utilities.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/WebKitGtk/script_utilities.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/WebKitGtk/speech_generator.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/WebKitGtk/speech_generator.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/WebKitGtk/speech_generator.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/WebKitGtk/structural_navigation.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/WebKitGtk/structural_navigation.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/WebKitGtk/structural_navigation.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/__init__.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/__init__.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/__init__.pyo
 %%PYTHON_SITELIBDIR%%/orca/settings.py
 %%PYTHON_SITELIBDIR%%/orca/settings.pyc
 %%PYTHON_SITELIBDIR%%/orca/settings.pyo
+%%PYTHON_SITELIBDIR%%/orca/settings_manager.py
+%%PYTHON_SITELIBDIR%%/orca/settings_manager.pyc
+%%PYTHON_SITELIBDIR%%/orca/settings_manager.pyo
 %%PYTHON_SITELIBDIR%%/orca/sound.py
 %%PYTHON_SITELIBDIR%%/orca/sound.pyc
 %%PYTHON_SITELIBDIR%%/orca/sound.pyo
@@ -593,8 +603,777 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/where_am_I.py
 %%PYTHON_SITELIBDIR%%/orca/where_am_I.pyc
 %%PYTHON_SITELIBDIR%%/orca/where_am_I.pyo
+man/man1/orca.1.gz
 share/applications/orca.desktop
 share/icons/hicolor/16x16/apps/orca.png
+share/help/C/orca/commands.page
+share/help/C/orca/commands_bookmarks.page
+share/help/C/orca/commands_braille.page
+share/help/C/orca/commands_chat.page
+share/help/C/orca/commands_controlling_orca.page
+share/help/C/orca/commands_debugging.page
+share/help/C/orca/commands_find.page
+share/help/C/orca/commands_flat_review.page
+share/help/C/orca/commands_live_regions.page
+share/help/C/orca/commands_mouse.page
+share/help/C/orca/commands_reading.page
+share/help/C/orca/commands_speech_settings.page
+share/help/C/orca/commands_structural_navigation.page
+share/help/C/orca/commands_table.page
+share/help/C/orca/commands_time_date_notifications.page
+share/help/C/orca/commands_where_am_i.page
+share/help/C/orca/figures/main_window.png
+share/help/C/orca/figures/orca-logo.png
+share/help/C/orca/figures/orca_find.png
+share/help/C/orca/figures/perferences_table_navigation.png
+share/help/C/orca/figures/preferences_Orca_modifier_keys.png
+share/help/C/orca/figures/preferences_abbreviated_role_names.png
+share/help/C/orca/figures/preferences_braille_contracted.png
+share/help/C/orca/figures/preferences_braille_indicators.png
+share/help/C/orca/figures/preferences_braille_verbosity.png
+share/help/C/orca/figures/preferences_break_speech_into_chunks.png
+share/help/C/orca/figures/preferences_character_echo.png
+share/help/C/orca/figures/preferences_chat.png
+share/help/C/orca/figures/preferences_date_and_time.png
+share/help/C/orca/figures/preferences_disable_eol_symbol.png
+share/help/C/orca/figures/preferences_enable_braille_monitor.png
+share/help/C/orca/figures/preferences_enable_braille_support.png
+share/help/C/orca/figures/preferences_enable_speech.png
+share/help/C/orca/figures/preferences_gecko_find_options.png
+share/help/C/orca/figures/preferences_gecko_page_navigation.png
+share/help/C/orca/figures/preferences_key_bindings_table.png
+share/help/C/orca/figures/preferences_key_echo.png
+share/help/C/orca/figures/preferences_keyboard_layout.png
+share/help/C/orca/figures/preferences_only_speak_displayed_text.png
+share/help/C/orca/figures/preferences_present_tooltips.png
+share/help/C/orca/figures/preferences_profiles.png
+share/help/C/orca/figures/preferences_progress_bar_updates.png
+share/help/C/orca/figures/preferences_pronunciation.png
+share/help/C/orca/figures/preferences_punctuation_level.png
+share/help/C/orca/figures/preferences_quit_Orca_without_confirmation.png
+share/help/C/orca/figures/preferences_rate_pitch_volume.png
+share/help/C/orca/figures/preferences_say_all_by.png
+share/help/C/orca/figures/preferences_show_Orca_main_window.png
+share/help/C/orca/figures/preferences_speak_multicase_strings_as_words.png
+share/help/C/orca/figures/preferences_speak_object_under_mouse.png
+share/help/C/orca/figures/preferences_speech_verbosity.png
+share/help/C/orca/figures/preferences_system_voice_options.png
+share/help/C/orca/figures/preferences_table_navigation.png
+share/help/C/orca/figures/preferences_table_rows.png
+share/help/C/orca/figures/preferences_text_attributes_braille.png
+share/help/C/orca/figures/preferences_text_attributes_rearranging.png
+share/help/C/orca/figures/preferences_text_attributes_table.png
+share/help/C/orca/figures/preferences_tts_options.png
+share/help/C/orca/figures/preferences_word_and_sentence_echo.png
+share/help/C/orca/figures/profiles_conflict.png
+share/help/C/orca/figures/profiles_load.png
+share/help/C/orca/figures/profiles_save_as.png
+share/help/C/orca/howto_bookmarks.page
+share/help/C/orca/howto_documents.page
+share/help/C/orca/howto_flat_review.page
+share/help/C/orca/howto_forms.page
+share/help/C/orca/howto_key_bindings.page
+share/help/C/orca/howto_keyboard_layout.page
+share/help/C/orca/howto_learn_modes.page
+share/help/C/orca/howto_live_regions.page
+share/help/C/orca/howto_mouse_review.page
+share/help/C/orca/howto_notifications.page
+share/help/C/orca/howto_orca_find.page
+share/help/C/orca/howto_profiles.page
+share/help/C/orca/howto_setting_up_orca.page
+share/help/C/orca/howto_structural_navigation.page
+share/help/C/orca/howto_tables.page
+share/help/C/orca/howto_text_attributes.page
+share/help/C/orca/howto_text_setup.page
+share/help/C/orca/howto_the_orca_modifier.page
+share/help/C/orca/howto_toggling_caps_lock.page
+share/help/C/orca/howto_whereami.page
+share/help/C/orca/index.page
+share/help/C/orca/introduction.page
+share/help/C/orca/preferences.page
+share/help/C/orca/preferences_braille.page
+share/help/C/orca/preferences_chat.page
+share/help/C/orca/preferences_gecko.page
+share/help/C/orca/preferences_general.page
+share/help/C/orca/preferences_introduction.page
+share/help/C/orca/preferences_key_bindings.page
+share/help/C/orca/preferences_key_echo.page
+share/help/C/orca/preferences_pronunciation.page
+share/help/C/orca/preferences_speech.page
+share/help/C/orca/preferences_table_navigation.page
+share/help/C/orca/preferences_text_attributes.page
+share/help/de/orca/commands.page
+share/help/de/orca/commands_bookmarks.page
+share/help/de/orca/commands_braille.page
+share/help/de/orca/commands_chat.page
+share/help/de/orca/commands_controlling_orca.page
+share/help/de/orca/commands_debugging.page
+share/help/de/orca/commands_find.page
+share/help/de/orca/commands_flat_review.page
+share/help/de/orca/commands_live_regions.page
+share/help/de/orca/commands_mouse.page
+share/help/de/orca/commands_reading.page
+share/help/de/orca/commands_speech_settings.page
+share/help/de/orca/commands_structural_navigation.page
+share/help/de/orca/commands_table.page
+share/help/de/orca/commands_time_date_notifications.page
+share/help/de/orca/commands_where_am_i.page
+share/help/de/orca/figures/main_window.png
+share/help/de/orca/figures/orca-logo.png
+share/help/de/orca/figures/orca_find.png
+share/help/de/orca/figures/perferences_table_navigation.png
+share/help/de/orca/figures/preferences_Orca_modifier_keys.png
+share/help/de/orca/figures/preferences_abbreviated_role_names.png
+share/help/de/orca/figures/preferences_braille_contracted.png
+share/help/de/orca/figures/preferences_braille_indicators.png
+share/help/de/orca/figures/preferences_braille_verbosity.png
+share/help/de/orca/figures/preferences_break_speech_into_chunks.png
+share/help/de/orca/figures/preferences_character_echo.png
+share/help/de/orca/figures/preferences_chat.png
+share/help/de/orca/figures/preferences_date_and_time.png
+share/help/de/orca/figures/preferences_disable_eol_symbol.png
+share/help/de/orca/figures/preferences_enable_braille_monitor.png
+share/help/de/orca/figures/preferences_enable_braille_support.png
+share/help/de/orca/figures/preferences_enable_speech.png
+share/help/de/orca/figures/preferences_gecko_find_options.png
+share/help/de/orca/figures/preferences_gecko_page_navigation.png
+share/help/de/orca/figures/preferences_key_bindings_table.png
+share/help/de/orca/figures/preferences_key_echo.png
+share/help/de/orca/figures/preferences_keyboard_layout.png
+share/help/de/orca/figures/preferences_only_speak_displayed_text.png
+share/help/de/orca/figures/preferences_present_tooltips.png
+share/help/de/orca/figures/preferences_profiles.png
+share/help/de/orca/figures/preferences_progress_bar_updates.png
+share/help/de/orca/figures/preferences_pronunciation.png
+share/help/de/orca/figures/preferences_punctuation_level.png
+share/help/de/orca/figures/preferences_quit_Orca_without_confirmation.png
+share/help/de/orca/figures/preferences_rate_pitch_volume.png
+share/help/de/orca/figures/preferences_say_all_by.png
+share/help/de/orca/figures/preferences_show_Orca_main_window.png
+share/help/de/orca/figures/preferences_speak_multicase_strings_as_words.png
+share/help/de/orca/figures/preferences_speak_object_under_mouse.png
+share/help/de/orca/figures/preferences_speech_verbosity.png
+share/help/de/orca/figures/preferences_system_voice_options.png
+share/help/de/orca/figures/preferences_table_navigation.png
+share/help/de/orca/figures/preferences_table_rows.png
+share/help/de/orca/figures/preferences_text_attributes_braille.png
+share/help/de/orca/figures/preferences_text_attributes_rearranging.png
+share/help/de/orca/figures/preferences_text_attributes_table.png
+share/help/de/orca/figures/preferences_tts_options.png
+share/help/de/orca/figures/preferences_word_and_sentence_echo.png
+share/help/de/orca/figures/profiles_conflict.png
+share/help/de/orca/figures/profiles_load.png
+share/help/de/orca/figures/profiles_save_as.png
+share/help/de/orca/howto_bookmarks.page
+share/help/de/orca/howto_documents.page
+share/help/de/orca/howto_flat_review.page
+share/help/de/orca/howto_forms.page
+share/help/de/orca/howto_key_bindings.page
+share/help/de/orca/howto_keyboard_layout.page
+share/help/de/orca/howto_learn_modes.page
+share/help/de/orca/howto_live_regions.page
+share/help/de/orca/howto_mouse_review.page
+share/help/de/orca/howto_notifications.page
+share/help/de/orca/howto_orca_find.page
+share/help/de/orca/howto_profiles.page
+share/help/de/orca/howto_setting_up_orca.page
+share/help/de/orca/howto_structural_navigation.page
+share/help/de/orca/howto_tables.page
+share/help/de/orca/howto_text_attributes.page
+share/help/de/orca/howto_text_setup.page
+share/help/de/orca/howto_the_orca_modifier.page
+share/help/de/orca/howto_toggling_caps_lock.page
+share/help/de/orca/howto_whereami.page
+share/help/de/orca/index.page
+share/help/de/orca/introduction.page
+share/help/de/orca/preferences.page
+share/help/de/orca/preferences_braille.page
+share/help/de/orca/preferences_chat.page
+share/help/de/orca/preferences_gecko.page
+share/help/de/orca/preferences_general.page
+share/help/de/orca/preferences_introduction.page
+share/help/de/orca/preferences_key_bindings.page
+share/help/de/orca/preferences_key_echo.page
+share/help/de/orca/preferences_pronunciation.page
+share/help/de/orca/preferences_speech.page
+share/help/de/orca/preferences_table_navigation.page
+share/help/de/orca/preferences_text_attributes.page
+share/help/el/orca/commands.page
+share/help/el/orca/commands_bookmarks.page
+share/help/el/orca/commands_braille.page
+share/help/el/orca/commands_chat.page
+share/help/el/orca/commands_controlling_orca.page
+share/help/el/orca/commands_debugging.page
+share/help/el/orca/commands_find.page
+share/help/el/orca/commands_flat_review.page
+share/help/el/orca/commands_live_regions.page
+share/help/el/orca/commands_mouse.page
+share/help/el/orca/commands_reading.page
+share/help/el/orca/commands_speech_settings.page
+share/help/el/orca/commands_structural_navigation.page
+share/help/el/orca/commands_table.page
+share/help/el/orca/commands_time_date_notifications.page
+share/help/el/orca/commands_where_am_i.page
+share/help/el/orca/figures/main_window.png
+share/help/el/orca/figures/orca-logo.png
+share/help/el/orca/figures/orca_find.png
+share/help/el/orca/figures/perferences_table_navigation.png
+share/help/el/orca/figures/preferences_Orca_modifier_keys.png
+share/help/el/orca/figures/preferences_abbreviated_role_names.png
+share/help/el/orca/figures/preferences_braille_contracted.png
+share/help/el/orca/figures/preferences_braille_indicators.png
+share/help/el/orca/figures/preferences_braille_verbosity.png
+share/help/el/orca/figures/preferences_break_speech_into_chunks.png
+share/help/el/orca/figures/preferences_character_echo.png
+share/help/el/orca/figures/preferences_chat.png
+share/help/el/orca/figures/preferences_date_and_time.png
+share/help/el/orca/figures/preferences_disable_eol_symbol.png
+share/help/el/orca/figures/preferences_enable_braille_monitor.png
+share/help/el/orca/figures/preferences_enable_braille_support.png
+share/help/el/orca/figures/preferences_enable_speech.png
+share/help/el/orca/figures/preferences_gecko_find_options.png
+share/help/el/orca/figures/preferences_gecko_page_navigation.png
+share/help/el/orca/figures/preferences_key_bindings_table.png
+share/help/el/orca/figures/preferences_key_echo.png
+share/help/el/orca/figures/preferences_keyboard_layout.png
+share/help/el/orca/figures/preferences_only_speak_displayed_text.png
+share/help/el/orca/figures/preferences_present_tooltips.png
+share/help/el/orca/figures/preferences_profiles.png
+share/help/el/orca/figures/preferences_progress_bar_updates.png
+share/help/el/orca/figures/preferences_pronunciation.png
+share/help/el/orca/figures/preferences_punctuation_level.png
+share/help/el/orca/figures/preferences_quit_Orca_without_confirmation.png
+share/help/el/orca/figures/preferences_rate_pitch_volume.png
+share/help/el/orca/figures/preferences_say_all_by.png
+share/help/el/orca/figures/preferences_show_Orca_main_window.png
+share/help/el/orca/figures/preferences_speak_multicase_strings_as_words.png
+share/help/el/orca/figures/preferences_speak_object_under_mouse.png
+share/help/el/orca/figures/preferences_speech_verbosity.png
+share/help/el/orca/figures/preferences_system_voice_options.png
+share/help/el/orca/figures/preferences_table_navigation.png
+share/help/el/orca/figures/preferences_table_rows.png
+share/help/el/orca/figures/preferences_text_attributes_braille.png
+share/help/el/orca/figures/preferences_text_attributes_rearranging.png
+share/help/el/orca/figures/preferences_text_attributes_table.png
+share/help/el/orca/figures/preferences_tts_options.png
+share/help/el/orca/figures/preferences_word_and_sentence_echo.png
+share/help/el/orca/figures/profiles_conflict.png
+share/help/el/orca/figures/profiles_load.png
+share/help/el/orca/figures/profiles_save_as.png
+share/help/el/orca/howto_bookmarks.page
+share/help/el/orca/howto_documents.page
+share/help/el/orca/howto_flat_review.page
+share/help/el/orca/howto_forms.page
+share/help/el/orca/howto_key_bindings.page
+share/help/el/orca/howto_keyboard_layout.page
+share/help/el/orca/howto_learn_modes.page
+share/help/el/orca/howto_live_regions.page
+share/help/el/orca/howto_mouse_review.page
+share/help/el/orca/howto_notifications.page
+share/help/el/orca/howto_orca_find.page
+share/help/el/orca/howto_profiles.page
+share/help/el/orca/howto_setting_up_orca.page
+share/help/el/orca/howto_structural_navigation.page
+share/help/el/orca/howto_tables.page
+share/help/el/orca/howto_text_attributes.page
+share/help/el/orca/howto_text_setup.page
+share/help/el/orca/howto_the_orca_modifier.page
+share/help/el/orca/howto_toggling_caps_lock.page
+share/help/el/orca/howto_whereami.page
+share/help/el/orca/index.page
+share/help/el/orca/introduction.page
+share/help/el/orca/preferences.page
+share/help/el/orca/preferences_braille.page
+share/help/el/orca/preferences_chat.page
+share/help/el/orca/preferences_gecko.page
+share/help/el/orca/preferences_general.page
+share/help/el/orca/preferences_introduction.page
+share/help/el/orca/preferences_key_bindings.page
+share/help/el/orca/preferences_key_echo.page
+share/help/el/orca/preferences_pronunciation.page
+share/help/el/orca/preferences_speech.page
+share/help/el/orca/preferences_table_navigation.page
+share/help/el/orca/preferences_text_attributes.page
+share/help/es/orca/commands.page
+share/help/es/orca/commands_bookmarks.page
+share/help/es/orca/commands_braille.page
+share/help/es/orca/commands_chat.page
+share/help/es/orca/commands_controlling_orca.page
+share/help/es/orca/commands_debugging.page
+share/help/es/orca/commands_find.page
+share/help/es/orca/commands_flat_review.page
+share/help/es/orca/commands_live_regions.page
+share/help/es/orca/commands_mouse.page
+share/help/es/orca/commands_reading.page
+share/help/es/orca/commands_speech_settings.page
+share/help/es/orca/commands_structural_navigation.page
+share/help/es/orca/commands_table.page
+share/help/es/orca/commands_time_date_notifications.page
+share/help/es/orca/commands_where_am_i.page
+share/help/es/orca/figures/main_window.png
+share/help/es/orca/figures/orca-logo.png
+share/help/es/orca/figures/orca_find.png
+share/help/es/orca/figures/perferences_table_navigation.png
+share/help/es/orca/figures/preferences_Orca_modifier_keys.png
+share/help/es/orca/figures/preferences_abbreviated_role_names.png
+share/help/es/orca/figures/preferences_braille_contracted.png
+share/help/es/orca/figures/preferences_braille_indicators.png
+share/help/es/orca/figures/preferences_braille_verbosity.png
+share/help/es/orca/figures/preferences_break_speech_into_chunks.png
+share/help/es/orca/figures/preferences_character_echo.png
+share/help/es/orca/figures/preferences_chat.png
+share/help/es/orca/figures/preferences_date_and_time.png
+share/help/es/orca/figures/preferences_disable_eol_symbol.png
+share/help/es/orca/figures/preferences_enable_braille_monitor.png
+share/help/es/orca/figures/preferences_enable_braille_support.png
+share/help/es/orca/figures/preferences_enable_speech.png
+share/help/es/orca/figures/preferences_gecko_find_options.png
+share/help/es/orca/figures/preferences_gecko_page_navigation.png
+share/help/es/orca/figures/preferences_key_bindings_table.png
+share/help/es/orca/figures/preferences_key_echo.png
+share/help/es/orca/figures/preferences_keyboard_layout.png
+share/help/es/orca/figures/preferences_only_speak_displayed_text.png
+share/help/es/orca/figures/preferences_present_tooltips.png
+share/help/es/orca/figures/preferences_profiles.png
+share/help/es/orca/figures/preferences_progress_bar_updates.png
+share/help/es/orca/figures/preferences_pronunciation.png
+share/help/es/orca/figures/preferences_punctuation_level.png
+share/help/es/orca/figures/preferences_quit_Orca_without_confirmation.png
+share/help/es/orca/figures/preferences_rate_pitch_volume.png
+share/help/es/orca/figures/preferences_say_all_by.png
+share/help/es/orca/figures/preferences_show_Orca_main_window.png
+share/help/es/orca/figures/preferences_speak_multicase_strings_as_words.png
+share/help/es/orca/figures/preferences_speak_object_under_mouse.png
+share/help/es/orca/figures/preferences_speech_verbosity.png
+share/help/es/orca/figures/preferences_system_voice_options.png
+share/help/es/orca/figures/preferences_table_navigation.png
+share/help/es/orca/figures/preferences_table_rows.png
+share/help/es/orca/figures/preferences_text_attributes_braille.png
+share/help/es/orca/figures/preferences_text_attributes_rearranging.png
+share/help/es/orca/figures/preferences_text_attributes_table.png
+share/help/es/orca/figures/preferences_tts_options.png
+share/help/es/orca/figures/preferences_word_and_sentence_echo.png
+share/help/es/orca/figures/profiles_conflict.png
+share/help/es/orca/figures/profiles_load.png
+share/help/es/orca/figures/profiles_save_as.png
+share/help/es/orca/howto_bookmarks.page
+share/help/es/orca/howto_documents.page
+share/help/es/orca/howto_flat_review.page
+share/help/es/orca/howto_forms.page
+share/help/es/orca/howto_key_bindings.page
+share/help/es/orca/howto_keyboard_layout.page
+share/help/es/orca/howto_learn_modes.page
+share/help/es/orca/howto_live_regions.page
+share/help/es/orca/howto_mouse_review.page
+share/help/es/orca/howto_notifications.page
+share/help/es/orca/howto_orca_find.page
+share/help/es/orca/howto_profiles.page
+share/help/es/orca/howto_setting_up_orca.page
+share/help/es/orca/howto_structural_navigation.page
+share/help/es/orca/howto_tables.page
+share/help/es/orca/howto_text_attributes.page
+share/help/es/orca/howto_text_setup.page
+share/help/es/orca/howto_the_orca_modifier.page
+share/help/es/orca/howto_toggling_caps_lock.page
+share/help/es/orca/howto_whereami.page
+share/help/es/orca/index.page
+share/help/es/orca/introduction.page
+share/help/es/orca/preferences.page
+share/help/es/orca/preferences_braille.page
+share/help/es/orca/preferences_chat.page
+share/help/es/orca/preferences_gecko.page
+share/help/es/orca/preferences_general.page
+share/help/es/orca/preferences_introduction.page
+share/help/es/orca/preferences_key_bindings.page
+share/help/es/orca/preferences_key_echo.page
+share/help/es/orca/preferences_pronunciation.page
+share/help/es/orca/preferences_speech.page
+share/help/es/orca/preferences_table_navigation.page
+share/help/es/orca/preferences_text_attributes.page
+share/help/fr/orca/commands.page
+share/help/fr/orca/commands_bookmarks.page
+share/help/fr/orca/commands_braille.page
+share/help/fr/orca/commands_chat.page
+share/help/fr/orca/commands_controlling_orca.page
+share/help/fr/orca/commands_debugging.page
+share/help/fr/orca/commands_find.page
+share/help/fr/orca/commands_flat_review.page
+share/help/fr/orca/commands_live_regions.page
+share/help/fr/orca/commands_mouse.page
+share/help/fr/orca/commands_reading.page
+share/help/fr/orca/commands_speech_settings.page
+share/help/fr/orca/commands_structural_navigation.page
+share/help/fr/orca/commands_table.page
+share/help/fr/orca/commands_time_date_notifications.page
+share/help/fr/orca/commands_where_am_i.page
+share/help/fr/orca/figures/main_window.png
+share/help/fr/orca/figures/orca-logo.png
+share/help/fr/orca/figures/orca_find.png
+share/help/fr/orca/figures/perferences_table_navigation.png
+share/help/fr/orca/figures/preferences_Orca_modifier_keys.png
+share/help/fr/orca/figures/preferences_abbreviated_role_names.png
+share/help/fr/orca/figures/preferences_braille_contracted.png
+share/help/fr/orca/figures/preferences_braille_indicators.png
+share/help/fr/orca/figures/preferences_braille_verbosity.png
+share/help/fr/orca/figures/preferences_break_speech_into_chunks.png
+share/help/fr/orca/figures/preferences_character_echo.png
+share/help/fr/orca/figures/preferences_chat.png
+share/help/fr/orca/figures/preferences_date_and_time.png
+share/help/fr/orca/figures/preferences_disable_eol_symbol.png
+share/help/fr/orca/figures/preferences_enable_braille_monitor.png
+share/help/fr/orca/figures/preferences_enable_braille_support.png
+share/help/fr/orca/figures/preferences_enable_speech.png
+share/help/fr/orca/figures/preferences_gecko_find_options.png
+share/help/fr/orca/figures/preferences_gecko_page_navigation.png
+share/help/fr/orca/figures/preferences_key_bindings_table.png
+share/help/fr/orca/figures/preferences_key_echo.png
+share/help/fr/orca/figures/preferences_keyboard_layout.png
+share/help/fr/orca/figures/preferences_only_speak_displayed_text.png
+share/help/fr/orca/figures/preferences_present_tooltips.png
+share/help/fr/orca/figures/preferences_profiles.png
+share/help/fr/orca/figures/preferences_progress_bar_updates.png
+share/help/fr/orca/figures/preferences_pronunciation.png
+share/help/fr/orca/figures/preferences_punctuation_level.png
+share/help/fr/orca/figures/preferences_quit_Orca_without_confirmation.png
+share/help/fr/orca/figures/preferences_rate_pitch_volume.png
+share/help/fr/orca/figures/preferences_say_all_by.png
+share/help/fr/orca/figures/preferences_show_Orca_main_window.png
+share/help/fr/orca/figures/preferences_speak_multicase_strings_as_words.png
+share/help/fr/orca/figures/preferences_speak_object_under_mouse.png
+share/help/fr/orca/figures/preferences_speech_verbosity.png
+share/help/fr/orca/figures/preferences_system_voice_options.png
+share/help/fr/orca/figures/preferences_table_navigation.png
+share/help/fr/orca/figures/preferences_table_rows.png
+share/help/fr/orca/figures/preferences_text_attributes_braille.png
+share/help/fr/orca/figures/preferences_text_attributes_rearranging.png
+share/help/fr/orca/figures/preferences_text_attributes_table.png
+share/help/fr/orca/figures/preferences_tts_options.png
+share/help/fr/orca/figures/preferences_word_and_sentence_echo.png
+share/help/fr/orca/figures/profiles_conflict.png
+share/help/fr/orca/figures/profiles_load.png
+share/help/fr/orca/figures/profiles_save_as.png
+share/help/fr/orca/howto_bookmarks.page
+share/help/fr/orca/howto_documents.page
+share/help/fr/orca/howto_flat_review.page
+share/help/fr/orca/howto_forms.page
+share/help/fr/orca/howto_key_bindings.page
+share/help/fr/orca/howto_keyboard_layout.page
+share/help/fr/orca/howto_learn_modes.page
+share/help/fr/orca/howto_live_regions.page
+share/help/fr/orca/howto_mouse_review.page
+share/help/fr/orca/howto_notifications.page
+share/help/fr/orca/howto_orca_find.page
+share/help/fr/orca/howto_profiles.page
+share/help/fr/orca/howto_setting_up_orca.page
+share/help/fr/orca/howto_structural_navigation.page
+share/help/fr/orca/howto_tables.page
+share/help/fr/orca/howto_text_attributes.page
+share/help/fr/orca/howto_text_setup.page
+share/help/fr/orca/howto_the_orca_modifier.page
+share/help/fr/orca/howto_toggling_caps_lock.page
+share/help/fr/orca/howto_whereami.page
+share/help/fr/orca/index.page
+share/help/fr/orca/introduction.page
+share/help/fr/orca/preferences.page
+share/help/fr/orca/preferences_braille.page
+share/help/fr/orca/preferences_chat.page
+share/help/fr/orca/preferences_gecko.page
+share/help/fr/orca/preferences_general.page
+share/help/fr/orca/preferences_introduction.page
+share/help/fr/orca/preferences_key_bindings.page
+share/help/fr/orca/preferences_key_echo.page
+share/help/fr/orca/preferences_pronunciation.page
+share/help/fr/orca/preferences_speech.page
+share/help/fr/orca/preferences_table_navigation.page
+share/help/fr/orca/preferences_text_attributes.page
+share/help/gl/orca/commands.page
+share/help/gl/orca/commands_bookmarks.page
+share/help/gl/orca/commands_braille.page
+share/help/gl/orca/commands_chat.page
+share/help/gl/orca/commands_controlling_orca.page
+share/help/gl/orca/commands_debugging.page
+share/help/gl/orca/commands_find.page
+share/help/gl/orca/commands_flat_review.page
+share/help/gl/orca/commands_live_regions.page
+share/help/gl/orca/commands_mouse.page
+share/help/gl/orca/commands_reading.page
+share/help/gl/orca/commands_speech_settings.page
+share/help/gl/orca/commands_structural_navigation.page
+share/help/gl/orca/commands_table.page
+share/help/gl/orca/commands_time_date_notifications.page
+share/help/gl/orca/commands_where_am_i.page
+share/help/gl/orca/figures/main_window.png
+share/help/gl/orca/figures/orca-logo.png
+share/help/gl/orca/figures/orca_find.png
+share/help/gl/orca/figures/perferences_table_navigation.png
+share/help/gl/orca/figures/preferences_Orca_modifier_keys.png
+share/help/gl/orca/figures/preferences_abbreviated_role_names.png
+share/help/gl/orca/figures/preferences_braille_contracted.png
+share/help/gl/orca/figures/preferences_braille_indicators.png
+share/help/gl/orca/figures/preferences_braille_verbosity.png
+share/help/gl/orca/figures/preferences_break_speech_into_chunks.png
+share/help/gl/orca/figures/preferences_character_echo.png
+share/help/gl/orca/figures/preferences_chat.png
+share/help/gl/orca/figures/preferences_date_and_time.png
+share/help/gl/orca/figures/preferences_disable_eol_symbol.png
+share/help/gl/orca/figures/preferences_enable_braille_monitor.png
+share/help/gl/orca/figures/preferences_enable_braille_support.png
+share/help/gl/orca/figures/preferences_enable_speech.png
+share/help/gl/orca/figures/preferences_gecko_find_options.png
+share/help/gl/orca/figures/preferences_gecko_page_navigation.png
+share/help/gl/orca/figures/preferences_key_bindings_table.png
+share/help/gl/orca/figures/preferences_key_echo.png
+share/help/gl/orca/figures/preferences_keyboard_layout.png
+share/help/gl/orca/figures/preferences_only_speak_displayed_text.png
+share/help/gl/orca/figures/preferences_present_tooltips.png
+share/help/gl/orca/figures/preferences_profiles.png
+share/help/gl/orca/figures/preferences_progress_bar_updates.png
+share/help/gl/orca/figures/preferences_pronunciation.png
+share/help/gl/orca/figures/preferences_punctuation_level.png
+share/help/gl/orca/figures/preferences_quit_Orca_without_confirmation.png
+share/help/gl/orca/figures/preferences_rate_pitch_volume.png
+share/help/gl/orca/figures/preferences_say_all_by.png
+share/help/gl/orca/figures/preferences_show_Orca_main_window.png
+share/help/gl/orca/figures/preferences_speak_multicase_strings_as_words.png
+share/help/gl/orca/figures/preferences_speak_object_under_mouse.png
+share/help/gl/orca/figures/preferences_speech_verbosity.png
+share/help/gl/orca/figures/preferences_system_voice_options.png
+share/help/gl/orca/figures/preferences_table_navigation.png
+share/help/gl/orca/figures/preferences_table_rows.png
+share/help/gl/orca/figures/preferences_text_attributes_braille.png
+share/help/gl/orca/figures/preferences_text_attributes_rearranging.png
+share/help/gl/orca/figures/preferences_text_attributes_table.png
+share/help/gl/orca/figures/preferences_tts_options.png
+share/help/gl/orca/figures/preferences_word_and_sentence_echo.png
+share/help/gl/orca/figures/profiles_conflict.png
+share/help/gl/orca/figures/profiles_load.png
+share/help/gl/orca/figures/profiles_save_as.png
+share/help/gl/orca/howto_bookmarks.page
+share/help/gl/orca/howto_documents.page
+share/help/gl/orca/howto_flat_review.page
+share/help/gl/orca/howto_forms.page
+share/help/gl/orca/howto_key_bindings.page
+share/help/gl/orca/howto_keyboard_layout.page
+share/help/gl/orca/howto_learn_modes.page
+share/help/gl/orca/howto_live_regions.page
+share/help/gl/orca/howto_mouse_review.page
+share/help/gl/orca/howto_notifications.page
+share/help/gl/orca/howto_orca_find.page
+share/help/gl/orca/howto_profiles.page
+share/help/gl/orca/howto_setting_up_orca.page
+share/help/gl/orca/howto_structural_navigation.page
+share/help/gl/orca/howto_tables.page
+share/help/gl/orca/howto_text_attributes.page
+share/help/gl/orca/howto_text_setup.page
+share/help/gl/orca/howto_the_orca_modifier.page
+share/help/gl/orca/howto_toggling_caps_lock.page
+share/help/gl/orca/howto_whereami.page
+share/help/gl/orca/index.page
+share/help/gl/orca/introduction.page
+share/help/gl/orca/preferences.page
+share/help/gl/orca/preferences_braille.page
+share/help/gl/orca/preferences_chat.page
+share/help/gl/orca/preferences_gecko.page
+share/help/gl/orca/preferences_general.page
+share/help/gl/orca/preferences_introduction.page
+share/help/gl/orca/preferences_key_bindings.page
+share/help/gl/orca/preferences_key_echo.page
+share/help/gl/orca/preferences_pronunciation.page
+share/help/gl/orca/preferences_speech.page
+share/help/gl/orca/preferences_table_navigation.page
+share/help/gl/orca/preferences_text_attributes.page
+share/help/hu/orca/commands.page
+share/help/hu/orca/commands_bookmarks.page
+share/help/hu/orca/commands_braille.page
+share/help/hu/orca/commands_chat.page
+share/help/hu/orca/commands_controlling_orca.page
+share/help/hu/orca/commands_debugging.page
+share/help/hu/orca/commands_find.page
+share/help/hu/orca/commands_flat_review.page
+share/help/hu/orca/commands_live_regions.page
+share/help/hu/orca/commands_mouse.page
+share/help/hu/orca/commands_reading.page
+share/help/hu/orca/commands_speech_settings.page
+share/help/hu/orca/commands_structural_navigation.page
+share/help/hu/orca/commands_table.page
+share/help/hu/orca/commands_time_date_notifications.page
+share/help/hu/orca/commands_where_am_i.page
+share/help/hu/orca/figures/main_window.png
+share/help/hu/orca/figures/orca-logo.png
+share/help/hu/orca/figures/orca_find.png
+share/help/hu/orca/figures/perferences_table_navigation.png
+share/help/hu/orca/figures/preferences_Orca_modifier_keys.png
+share/help/hu/orca/figures/preferences_abbreviated_role_names.png
+share/help/hu/orca/figures/preferences_braille_contracted.png
+share/help/hu/orca/figures/preferences_braille_indicators.png
+share/help/hu/orca/figures/preferences_braille_verbosity.png
+share/help/hu/orca/figures/preferences_break_speech_into_chunks.png
+share/help/hu/orca/figures/preferences_character_echo.png
+share/help/hu/orca/figures/preferences_chat.png
+share/help/hu/orca/figures/preferences_date_and_time.png
+share/help/hu/orca/figures/preferences_disable_eol_symbol.png
+share/help/hu/orca/figures/preferences_enable_braille_monitor.png
+share/help/hu/orca/figures/preferences_enable_braille_support.png
+share/help/hu/orca/figures/preferences_enable_speech.png
+share/help/hu/orca/figures/preferences_gecko_find_options.png
+share/help/hu/orca/figures/preferences_gecko_page_navigation.png
+share/help/hu/orca/figures/preferences_key_bindings_table.png
+share/help/hu/orca/figures/preferences_key_echo.png
+share/help/hu/orca/figures/preferences_keyboard_layout.png
+share/help/hu/orca/figures/preferences_only_speak_displayed_text.png
+share/help/hu/orca/figures/preferences_present_tooltips.png
+share/help/hu/orca/figures/preferences_profiles.png
+share/help/hu/orca/figures/preferences_progress_bar_updates.png
+share/help/hu/orca/figures/preferences_pronunciation.png
+share/help/hu/orca/figures/preferences_punctuation_level.png
+share/help/hu/orca/figures/preferences_quit_Orca_without_confirmation.png
+share/help/hu/orca/figures/preferences_rate_pitch_volume.png
+share/help/hu/orca/figures/preferences_say_all_by.png
+share/help/hu/orca/figures/preferences_show_Orca_main_window.png
+share/help/hu/orca/figures/preferences_speak_multicase_strings_as_words.png
+share/help/hu/orca/figures/preferences_speak_object_under_mouse.png
+share/help/hu/orca/figures/preferences_speech_verbosity.png
+share/help/hu/orca/figures/preferences_system_voice_options.png
+share/help/hu/orca/figures/preferences_table_navigation.png
+share/help/hu/orca/figures/preferences_table_rows.png
+share/help/hu/orca/figures/preferences_text_attributes_braille.png
+share/help/hu/orca/figures/preferences_text_attributes_rearranging.png
+share/help/hu/orca/figures/preferences_text_attributes_table.png
+share/help/hu/orca/figures/preferences_tts_options.png
+share/help/hu/orca/figures/preferences_word_and_sentence_echo.png
+share/help/hu/orca/figures/profiles_conflict.png
+share/help/hu/orca/figures/profiles_load.png
+share/help/hu/orca/figures/profiles_save_as.png
+share/help/hu/orca/howto_bookmarks.page
+share/help/hu/orca/howto_documents.page
+share/help/hu/orca/howto_flat_review.page
+share/help/hu/orca/howto_forms.page
+share/help/hu/orca/howto_key_bindings.page
+share/help/hu/orca/howto_keyboard_layout.page
+share/help/hu/orca/howto_learn_modes.page
+share/help/hu/orca/howto_live_regions.page
+share/help/hu/orca/howto_mouse_review.page
+share/help/hu/orca/howto_notifications.page
+share/help/hu/orca/howto_orca_find.page
+share/help/hu/orca/howto_profiles.page
+share/help/hu/orca/howto_setting_up_orca.page
+share/help/hu/orca/howto_structural_navigation.page
+share/help/hu/orca/howto_tables.page
+share/help/hu/orca/howto_text_attributes.page
+share/help/hu/orca/howto_text_setup.page
+share/help/hu/orca/howto_the_orca_modifier.page
+share/help/hu/orca/howto_toggling_caps_lock.page
+share/help/hu/orca/howto_whereami.page
+share/help/hu/orca/index.page
+share/help/hu/orca/introduction.page
+share/help/hu/orca/preferences.page
+share/help/hu/orca/preferences_braille.page
+share/help/hu/orca/preferences_chat.page
+share/help/hu/orca/preferences_gecko.page
+share/help/hu/orca/preferences_general.page
+share/help/hu/orca/preferences_introduction.page
+share/help/hu/orca/preferences_key_bindings.page
+share/help/hu/orca/preferences_key_echo.page
+share/help/hu/orca/preferences_pronunciation.page
+share/help/hu/orca/preferences_speech.page
+share/help/hu/orca/preferences_table_navigation.page
+share/help/hu/orca/preferences_text_attributes.page
+share/help/sl/orca/commands.page
+share/help/sl/orca/commands_bookmarks.page
+share/help/sl/orca/commands_braille.page
+share/help/sl/orca/commands_chat.page
+share/help/sl/orca/commands_controlling_orca.page
+share/help/sl/orca/commands_debugging.page
+share/help/sl/orca/commands_find.page
+share/help/sl/orca/commands_flat_review.page
+share/help/sl/orca/commands_live_regions.page
+share/help/sl/orca/commands_mouse.page
+share/help/sl/orca/commands_reading.page
+share/help/sl/orca/commands_speech_settings.page
+share/help/sl/orca/commands_structural_navigation.page
+share/help/sl/orca/commands_table.page
+share/help/sl/orca/commands_time_date_notifications.page
+share/help/sl/orca/commands_where_am_i.page
+share/help/sl/orca/figures/main_window.png
+share/help/sl/orca/figures/orca-logo.png
+share/help/sl/orca/figures/orca_find.png
+share/help/sl/orca/figures/perferences_table_navigation.png
+share/help/sl/orca/figures/preferences_Orca_modifier_keys.png
+share/help/sl/orca/figures/preferences_abbreviated_role_names.png
+share/help/sl/orca/figures/preferences_braille_contracted.png
+share/help/sl/orca/figures/preferences_braille_indicators.png
+share/help/sl/orca/figures/preferences_braille_verbosity.png
+share/help/sl/orca/figures/preferences_break_speech_into_chunks.png
+share/help/sl/orca/figures/preferences_character_echo.png
+share/help/sl/orca/figures/preferences_chat.png
+share/help/sl/orca/figures/preferences_date_and_time.png
+share/help/sl/orca/figures/preferences_disable_eol_symbol.png
+share/help/sl/orca/figures/preferences_enable_braille_monitor.png
+share/help/sl/orca/figures/preferences_enable_braille_support.png
+share/help/sl/orca/figures/preferences_enable_speech.png
+share/help/sl/orca/figures/preferences_gecko_find_options.png
+share/help/sl/orca/figures/preferences_gecko_page_navigation.png
+share/help/sl/orca/figures/preferences_key_bindings_table.png
+share/help/sl/orca/figures/preferences_key_echo.png
+share/help/sl/orca/figures/preferences_keyboard_layout.png
+share/help/sl/orca/figures/preferences_only_speak_displayed_text.png
+share/help/sl/orca/figures/preferences_present_tooltips.png
+share/help/sl/orca/figures/preferences_profiles.png
+share/help/sl/orca/figures/preferences_progress_bar_updates.png
+share/help/sl/orca/figures/preferences_pronunciation.png
+share/help/sl/orca/figures/preferences_punctuation_level.png
+share/help/sl/orca/figures/preferences_quit_Orca_without_confirmation.png
+share/help/sl/orca/figures/preferences_rate_pitch_volume.png
+share/help/sl/orca/figures/preferences_say_all_by.png
+share/help/sl/orca/figures/preferences_show_Orca_main_window.png
+share/help/sl/orca/figures/preferences_speak_multicase_strings_as_words.png
+share/help/sl/orca/figures/preferences_speak_object_under_mouse.png
+share/help/sl/orca/figures/preferences_speech_verbosity.png
+share/help/sl/orca/figures/preferences_system_voice_options.png
+share/help/sl/orca/figures/preferences_table_navigation.png
+share/help/sl/orca/figures/preferences_table_rows.png
+share/help/sl/orca/figures/preferences_text_attributes_braille.png
+share/help/sl/orca/figures/preferences_text_attributes_rearranging.png
+share/help/sl/orca/figures/preferences_text_attributes_table.png
+share/help/sl/orca/figures/preferences_tts_options.png
+share/help/sl/orca/figures/preferences_word_and_sentence_echo.png
+share/help/sl/orca/figures/profiles_conflict.png
+share/help/sl/orca/figures/profiles_load.png
+share/help/sl/orca/figures/profiles_save_as.png
+share/help/sl/orca/howto_bookmarks.page
+share/help/sl/orca/howto_documents.page
+share/help/sl/orca/howto_flat_review.page
+share/help/sl/orca/howto_forms.page
+share/help/sl/orca/howto_key_bindings.page
+share/help/sl/orca/howto_keyboard_layout.page
+share/help/sl/orca/howto_learn_modes.page
+share/help/sl/orca/howto_live_regions.page
+share/help/sl/orca/howto_mouse_review.page
+share/help/sl/orca/howto_notifications.page
+share/help/sl/orca/howto_orca_find.page
+share/help/sl/orca/howto_profiles.page
+share/help/sl/orca/howto_setting_up_orca.page
+share/help/sl/orca/howto_structural_navigation.page
+share/help/sl/orca/howto_tables.page
+share/help/sl/orca/howto_text_attributes.page
+share/help/sl/orca/howto_text_setup.page
+share/help/sl/orca/howto_the_orca_modifier.page
+share/help/sl/orca/howto_toggling_caps_lock.page
+share/help/sl/orca/howto_whereami.page
+share/help/sl/orca/index.page
+share/help/sl/orca/introduction.page
+share/help/sl/orca/preferences.page
+share/help/sl/orca/preferences_braille.page
+share/help/sl/orca/preferences_chat.page
+share/help/sl/orca/preferences_gecko.page
+share/help/sl/orca/preferences_general.page
+share/help/sl/orca/preferences_introduction.page
+share/help/sl/orca/preferences_key_bindings.page
+share/help/sl/orca/preferences_key_echo.page
+share/help/sl/orca/preferences_pronunciation.page
+share/help/sl/orca/preferences_speech.page
+share/help/sl/orca/preferences_table_navigation.page
+share/help/sl/orca/preferences_text_attributes.page
 share/icons/hicolor/22x22/apps/orca.png
 share/icons/hicolor/24x24/apps/orca.png
 share/icons/hicolor/32x32/apps/orca.png
@@ -602,6 +1381,7 @@ share/icons/hicolor/48x48/apps/orca.png
 share/icons/hicolor/scalable/apps/orca.svg
 share/locale/ar/LC_MESSAGES/orca.mo
 share/locale/ast/LC_MESSAGES/orca.mo
+share/locale/be/LC_MESSAGES/orca.mo
 share/locale/bg/LC_MESSAGES/orca.mo
 share/locale/bn/LC_MESSAGES/orca.mo
 share/locale/bn_IN/LC_MESSAGES/orca.mo
@@ -615,6 +1395,7 @@ share/locale/dz/LC_MESSAGES/orca.mo
 share/locale/el/LC_MESSAGES/orca.mo
 share/locale/en_CA/LC_MESSAGES/orca.mo
 share/locale/en_GB/LC_MESSAGES/orca.mo
+share/locale/eo/LC_MESSAGES/orca.mo
 share/locale/es/LC_MESSAGES/orca.mo
 share/locale/et/LC_MESSAGES/orca.mo
 share/locale/eu/LC_MESSAGES/orca.mo
@@ -626,6 +1407,7 @@ share/locale/gu/LC_MESSAGES/orca.mo
 share/locale/he/LC_MESSAGES/orca.mo
 share/locale/hi/LC_MESSAGES/orca.mo
 share/locale/hu/LC_MESSAGES/orca.mo
+share/locale/id/LC_MESSAGES/orca.mo
 share/locale/it/LC_MESSAGES/orca.mo
 share/locale/ja/LC_MESSAGES/orca.mo
 share/locale/kn/LC_MESSAGES/orca.mo
@@ -660,66 +1442,22 @@ share/locale/ta/LC_MESSAGES/orca.mo
 share/locale/te/LC_MESSAGES/orca.mo
 share/locale/th/LC_MESSAGES/orca.mo
 share/locale/tr/LC_MESSAGES/orca.mo
+share/locale/ug/LC_MESSAGES/orca.mo
 share/locale/uk/LC_MESSAGES/orca.mo
 share/locale/vi/LC_MESSAGES/orca.mo
 share/locale/zh_CN/LC_MESSAGES/orca.mo
 share/locale/zh_HK/LC_MESSAGES/orca.mo
 share/locale/zh_TW/LC_MESSAGES/orca.mo
 %%DATADIR%%/gfx/orca-splash.png
-%%DATADIR%%/ui/orca-advanced-magnification.ui
 %%DATADIR%%/ui/orca-find.ui
-%%DATADIR%%/ui/orca-mainwin.ui
-%%DATADIR%%/ui/orca-preferences-warning.ui
-%%DATADIR%%/ui/orca-quit.ui
 %%DATADIR%%/ui/orca-setup.ui
-%%DATADIR%%/ui/orca-splash.ui
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/CALLY
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/rhythmbox
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/planner
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/pidgin
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/notify-osd
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/notification-daemon
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/nautilus
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/metacity
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/liferea
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gtk-window-decorator
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-window-properties
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome_segv2
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-terminal
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-system-monitor
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-search-tool
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-screensaver-dialog
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-panel
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-mud
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-keyring-ask
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gedit
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gdmlogin
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gcalctool
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gajim
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/evolution
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/empathy
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/ekiga
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/ddu
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/acroread
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/Thunderbird
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/Mozilla
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/Instantbird
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/Eclipse
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/Banshee
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps
-@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts
-@dirrm %%PYTHON_SITELIBDIR%%/orca
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
@@ -742,3 +1480,73 @@ share/locale/zh_TW/LC_MESSAGES/orca.mo
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
+@dirrm share/help/sl/orca/figures
+@dirrm share/help/sl/orca
+@dirrmtry share/help/sl
+@dirrm share/help/hu/orca/figures
+@dirrm share/help/hu/orca
+@dirrmtry share/help/hu
+@dirrm share/help/gl/orca/figures
+@dirrm share/help/gl/orca
+@dirrmtry share/help/gl
+@dirrm share/help/fr/orca/figures
+@dirrm share/help/fr/orca
+@dirrmtry share/help/fr
+@dirrm share/help/es/orca/figures
+@dirrm share/help/es/orca
+@dirrmtry share/help/es
+@dirrm share/help/el/orca/figures
+@dirrm share/help/el/orca
+@dirrmtry share/help/el
+@dirrm share/help/de/orca/figures
+@dirrm share/help/de/orca
+@dirrmtry share/help/de
+@dirrm share/help/C/orca/figures
+@dirrm share/help/C/orca
+@dirrmtry share/help/C
+@dirrmtry share/help
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/WebKitGtk
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/CALLY
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/xfwm4
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/rhythmbox
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/planner
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/pidgin
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/notify-osd
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/notification-daemon
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/nautilus
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/metacity
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/liferea
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gtk-window-decorator
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome_segv2
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-window-properties
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-terminal
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-system-monitor
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-search-tool
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-screensaver-dialog
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-panel
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-mud
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gnome-keyring-ask
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gedit
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gdmlogin
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gdm-simple-greeter
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gcalctool
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gajim
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/evolution
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/empathy
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/ekiga
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/ddu
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/acroread
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/Thunderbird
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/Mozilla
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/Instantbird
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/Eclipse
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/Banshee
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts
+@dirrm %%PYTHON_SITELIBDIR%%/orca/backends
+@dirrm %%PYTHON_SITELIBDIR%%/orca

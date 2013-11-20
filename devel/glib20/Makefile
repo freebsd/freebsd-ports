@@ -1,9 +1,9 @@
 # Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
-# $FreeBSD$
-#   $MCom: ports/trunk/devel/glib20/Makefile 18634 2013-07-26 10:42:35Z kwm $
+# $FreeBSD: head/devel/glib20/Makefile 326307 2013-09-04 18:06:07Z madpilot $
+#   $MCom: ports/trunk/devel/glib20/Makefile 18887 2013-11-12 23:35:33Z kwm $
 
 PORTNAME=	glib
-PORTVERSION=	2.36.3
+PORTVERSION=	2.38.2
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
@@ -19,12 +19,12 @@ PORTSCOUT=	limitw:1,even
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre \
-		ffi:${PORTSDIR}/devel/libffi
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libffi.so:${PORTSDIR}/devel/libffi
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USES=		gettext gmake iconv pathfix pkgconfig shebangfix perl5
+USES=		gettext gmake iconv pathfix perl5 pkgconfig shebangfix
 USE_GNOME=	ltverhack
 USE_PYTHON=	yes
 CONFIGURE_ARGS=	--enable-static \
@@ -38,10 +38,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 SHEBANG_FILES=	*/*.pl glib/gen-iswide-table.py
 
-OPTIONS_DEFINE=	COLLATION_FIX DEBUG
+OPTIONS_DEFINE=	COLLATION_FIX DEBUG GDB
 COLLATION_FIX_DESC=	fix string collation
+GDB_DESC=	Install python gdb scripts
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # doesn't build yet
@@ -74,7 +74,7 @@ GLIB_ARCH=	${ARCH}
 CONFIGURE_TARGET=${GLIB_ARCH}-portbld-freebsd${OSREL}
 
 .if ${PORT_OPTIONS:MCOLLATION_FIX}
-LIB_DEPENDS+=	icui18n:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=	libicui18n.so:${PORTSDIR}/devel/icu
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-glib_Makefile.in \
 		${FILESDIR}/extra-patch-glib_gunicollate.c
 # Disable it until someone can figure why it causes net-im/pidgin crashed.
@@ -82,11 +82,17 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-glib_Makefile.in \
 #CONFIGURE_ENV+=	CFLAGS="-D__STDC_ISO_10646__"
 .endif
 
+.if ${PORT_OPTIONS:MGDB}
+PLIST_SUB+=	GDB=""
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-glib_gdbscripts \
+		${FILESDIR}/extra-gobject_gdbscripts
+PLIST_SUB+=	GDB="@comment "
+.endif
+
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug=yes \
 			--disable-silent-rules
-.else
-CONFIGURE_ARGS+=	--disable-modular-tests
 .endif
 
 post-patch:
@@ -99,10 +105,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|inotify_support=yes|inotify_support=no| ; \
 		s|-Werror|| ; \
 		s|#define HAVE_SYS_INOTIFY_H 1||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-2.0.so.0.$$(LT_CURRENT).$$(LT_REVISION)-gdb.py|-2.0.so.0-gdb.py|g' \
+		${WRKSRC}/glib/Makefile.in \
+		${WRKSRC}/gobject/Makefile.in
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/GConf/gsettings
-	-${PREFIX}/bin/gio-querymodules ${PREFIX}/lib/gio/modules
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/GConf/gsettings
 
 .include <bsd.port.post.mk>
 

@@ -1,28 +1,27 @@
 # Created by: Alexander Logvinov <avl@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/misc/gnome-icon-theme-extras/Makefile,v 1.3 2010/04/20 20:56:39 kwm Exp $
+#   $MCom: ports/trunk/misc/gnome-icon-theme-extras/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gnome-icon-theme-extras
-PORTVERSION=	2.30.1
-PORTREVISION=	1
+PORTVERSION=	3.6.2
 CATEGORIES=	misc gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	An additional collection of icons for the GNOME 2 desktop
+COMMENT=	Additional collection of icons for the GNOME desktop
 
 BUILD_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		icon-naming-utils>=0.8.7:${PORTSDIR}/x11-themes/icon-naming-utils
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USE_XZ=		yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack intlhack gtk20
+USES=		gmake pathfix pkgconfig
+USE_GNOME=	intlhack gtk-update-icon-cache
 INSTALLS_ICONS=	yes
+CONFIGURE_ARGS=	--enable-icon-mapping
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

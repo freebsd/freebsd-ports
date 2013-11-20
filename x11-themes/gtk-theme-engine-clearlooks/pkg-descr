@@ -1,0 +1,7 @@
+The Clearlooks engine was originally written by Richard Stellingwerff and
+Daniel Borgmann based on the Bluecurve engine. It became very popular and
+was adopted as the default theme in GNOME 2.12.
+Since then a lot of people have worked on it, and today it is a modular
+engine providing multiple styles such as glossy and gummy.
+
+WWW: http://www.gtk.org/

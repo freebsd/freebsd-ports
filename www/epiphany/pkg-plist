@@ -1,14 +1,14 @@
+bin/ephy-profile-migrator
 bin/epiphany
 include/epiphany/%%EPHY_VERSION%%/epiphany/epiphany.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-adblock-manager.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-adblock.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-bookmarks-type-builtins.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-bookmarks.h
-include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-dbus.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-dialog.h
+include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-download.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-embed-container.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-embed-event.h
-include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-embed-persist.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-embed-prefs.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-embed-shell.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-embed-single.h
@@ -17,210 +17,39 @@ include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-embed-utils.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-embed.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-extension.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-extensions-manager.h
-include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-history.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-lib-type-builtins.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-link.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-loader.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-node-db.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-node.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-notebook.h
+include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-overview.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-permission-manager.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-session.h
+include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-settings.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-shell.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-state.h
-include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-statusbar.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-type-builtins.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-web-view.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-window.h
-@comment libdata/pkgconfig/epiphany-%%EPHY_VERSION%%.pc
-libdata/pkgconfig/epiphany-2.30.pc
+lib/girepository-1.0/Epiphany-%%EPHY_VERSION%%.typelib
+libdata/pkgconfig/epiphany-%%EPHY_VERSION%%.pc
+man/man1/epiphany.1.gz
+share/GConf/gsettings/epiphany.convert
 share/aclocal/epiphany.m4
-share/applications/bme.desktop
 share/applications/epiphany.desktop
 share/dbus-1/services/org.gnome.Epiphany.service
-lib/girepository-1.0/Epiphany-2.30.typelib
-share/gir-1.0/Epiphany-2.30.gir
-%%DOCSDIR%%/EphyDialog.html
-%%DOCSDIR%%/EphyLocationAction.html
-%%DOCSDIR%%/EphyLocationEntry.html
-%%DOCSDIR%%/EphyNodeView.html
-%%DOCSDIR%%/EphySearchEntry.html
-%%DOCSDIR%%/EphySpinner.html
-%%DOCSDIR%%/EphyStatusbar.html
-%%DOCSDIR%%/EphyToolbar.html
-%%DOCSDIR%%/EphyTreeModelNode.html
-%%DOCSDIR%%/EphyTreeModelSort.html
-%%DOCSDIR%%/EphyWebView.html
-%%DOCSDIR%%/EphyWindow.html
-%%DOCSDIR%%/EphyZoomAction.html
-%%DOCSDIR%%/EphyZoomControl.html
-%%DOCSDIR%%/annotation-glossary.html
-%%DOCSDIR%%/ch01.html
-%%DOCSDIR%%/ch02.html
-%%DOCSDIR%%/ch03.html
-%%DOCSDIR%%/epiphany-Epiphany-Debug-Helpers.html
-%%DOCSDIR%%/epiphany-Epiphany-File-Helpers.html
-%%DOCSDIR%%/epiphany.devhelp
-%%DOCSDIR%%/epiphany.devhelp2
-%%DOCSDIR%%/home.png
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/index.sgml
-%%DOCSDIR%%/left.png
-%%DOCSDIR%%/right.png
-%%DOCSDIR%%/style.css
-%%DOCSDIR%%/up.png
-%%DATADIR%%/about.ini
-%%DATADIR%%/default-bookmarks.rdf
-%%DATADIR%%/epiphany-bookmark-editor-ui.xml
-%%DATADIR%%/epiphany-bookmarks-html.xsl
-%%DATADIR%%/epiphany-bookmarksbar.xml
-%%DATADIR%%/epiphany-fs-toolbar.xml
-%%DATADIR%%/epiphany-history-window-ui.xml
-%%DATADIR%%/epiphany-toolbar.xml
-%%DATADIR%%/epiphany-ui.xml
-%%DATADIR%%/epiphany.xhtml
-%%DATADIR%%/glade/certificate-dialogs.ui
-%%DATADIR%%/glade/epiphany.ui
-%%DATADIR%%/glade/form-signing-dialog.ui
-%%DATADIR%%/glade/prefs-dialog.ui
-%%DATADIR%%/glade/print.ui
-%%DATADIR%%/icons/hicolor/16x16/actions/bookmark-view.png
-%%DATADIR%%/icons/hicolor/16x16/actions/history-view.png
-%%DATADIR%%/icons/hicolor/16x16/actions/location-entry.png
-%%DATADIR%%/icons/hicolor/16x16/places/bookmark-web.png
-%%DATADIR%%/icons/hicolor/16x16/status/lock-broken.png
-%%DATADIR%%/icons/hicolor/16x16/status/lock-insecure.png
-%%DATADIR%%/icons/hicolor/16x16/status/lock-secure-checked.png
-%%DATADIR%%/icons/hicolor/16x16/status/lock-secure.png
-%%DATADIR%%/icons/hicolor/16x16/status/popup-hidden.png
-%%DATADIR%%/icons/hicolor/22x22/actions/bookmark-view.png
-%%DATADIR%%/icons/hicolor/22x22/actions/history-view.png
-%%DATADIR%%/icons/hicolor/22x22/actions/location-entry.png
-%%DATADIR%%/icons/hicolor/22x22/places/bookmark-web.png
-%%DATADIR%%/icons/hicolor/22x22/status/popup-hidden.png
-%%DATADIR%%/icons/hicolor/24x24/actions/bookmark-view.png
-%%DATADIR%%/icons/hicolor/24x24/actions/history-view.png
-%%DATADIR%%/icons/hicolor/24x24/actions/location-entry.png
-%%DATADIR%%/icons/hicolor/24x24/places/bookmark-web.png
-%%DATADIR%%/icons/hicolor/24x24/status/lock-broken.png
-%%DATADIR%%/icons/hicolor/24x24/status/lock-insecure.png
-%%DATADIR%%/icons/hicolor/24x24/status/lock-secure-checked.png
-%%DATADIR%%/icons/hicolor/24x24/status/lock-secure.png
-%%DATADIR%%/icons/hicolor/24x24/status/popup-hidden.png
-%%DATADIR%%/icons/hicolor/32x32/actions/bookmark-view.png
-%%DATADIR%%/icons/hicolor/32x32/actions/history-view.png
-%%DATADIR%%/icons/hicolor/32x32/actions/location-entry.png
-%%DATADIR%%/icons/hicolor/32x32/actions/location-entry.svg
-%%DATADIR%%/icons/hicolor/32x32/status/popup-hidden.png
-%%DATADIR%%/icons/hicolor/48x48/status/lock-broken.png
-%%DATADIR%%/icons/hicolor/48x48/status/lock-insecure.png
-%%DATADIR%%/icons/hicolor/48x48/status/lock-secure-checked.png
-%%DATADIR%%/icons/hicolor/48x48/status/lock-secure.png
-%%DATADIR%%/icons/hicolor/scalable/actions/bookmark-view.svg
-%%DATADIR%%/icons/hicolor/scalable/actions/history-view.svg
-%%DATADIR%%/icons/hicolor/scalable/actions/location-entry.svg
-%%DATADIR%%/icons/hicolor/scalable/status/popup-hidden.svg
-%%DATADIR%%/mime-types-permissions.xml
-share/gnome/help/epiphany/C/epiphany.xml
-share/gnome/help/epiphany/C/figures/ephy-addressbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/C/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/C/figures/ephy-history-window-screenshot.png
-share/gnome/help/epiphany/C/figures/ephy-screenshot.png
-share/gnome/help/epiphany/C/legal.xml
-share/gnome/help/epiphany/bg/epiphany.xml
-share/gnome/help/epiphany/bg/figures/ephy-addressbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/bg/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/bg/figures/ephy-history-window-screenshot.png
-share/gnome/help/epiphany/bg/figures/ephy-screenshot.png
-share/gnome/help/epiphany/ca/epiphany.xml
-share/gnome/help/epiphany/ca/figures/ephy-addressbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/ca/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/ca/figures/ephy-history-window-screenshot.png
-share/gnome/help/epiphany/ca/figures/ephy-screenshot.png
-share/gnome/help/epiphany/cs/epiphany.xml
-share/gnome/help/epiphany/cs/figures/ephy-addressbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/cs/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/cs/figures/ephy-history-window-screenshot.png
-share/gnome/help/epiphany/cs/figures/ephy-screenshot.png
-share/gnome/help/epiphany/de/epiphany.xml
-share/gnome/help/epiphany/de/figures/ephy-addressbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/de/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/de/figures/ephy-history-window-screenshot.png
-share/gnome/help/epiphany/de/figures/ephy-screenshot.png
-share/gnome/help/epiphany/el/epiphany.xml
-share/gnome/help/epiphany/el/figures/ephy-addressbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/el/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/el/figures/ephy-history-window-screenshot.png
-share/gnome/help/epiphany/el/figures/ephy-screenshot.png
-share/gnome/help/epiphany/en_GB/epiphany.xml
-share/gnome/help/epiphany/en_GB/figures/ephy-addressbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/en_GB/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/en_GB/figures/ephy-history-window-screenshot.png
-share/gnome/help/epiphany/en_GB/figures/ephy-screenshot.png
-share/gnome/help/epiphany/es/epiphany.xml
-share/gnome/help/epiphany/es/figures/ephy-addressbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/es/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/es/figures/ephy-history-window-screenshot.png
-share/gnome/help/epiphany/es/figures/ephy-screenshot.png
-share/gnome/help/epiphany/eu/epiphany.xml
-share/gnome/help/epiphany/eu/figures/ephy-addressbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/eu/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/eu/figures/ephy-history-window-screenshot.png
-share/gnome/help/epiphany/eu/figures/ephy-screenshot.png
-share/gnome/help/epiphany/fi/epiphany.xml
-share/gnome/help/epiphany/fi/figures/ephy-addressbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/fi/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/fi/figures/ephy-history-window-screenshot.png
-share/gnome/help/epiphany/fi/figures/ephy-screenshot.png
-share/gnome/help/epiphany/fr/epiphany.xml
-share/gnome/help/epiphany/fr/figures/ephy-addressbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/fr/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/fr/figures/ephy-history-window-screenshot.png
-share/gnome/help/epiphany/fr/figures/ephy-screenshot.png
-share/gnome/help/epiphany/it/epiphany.xml
-share/gnome/help/epiphany/it/figures/ephy-addressbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/it/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/it/figures/ephy-history-window-screenshot.png
-share/gnome/help/epiphany/it/figures/ephy-screenshot.png
-share/gnome/help/epiphany/ja/epiphany.xml
-share/gnome/help/epiphany/ja/figures/ephy-addressbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/ja/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/ja/figures/ephy-history-window-screenshot.png
-share/gnome/help/epiphany/ja/figures/ephy-screenshot.png
-share/gnome/help/epiphany/nl/epiphany.xml
-share/gnome/help/epiphany/nl/figures/ephy-addressbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/nl/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/nl/figures/ephy-history-window-screenshot.png
-share/gnome/help/epiphany/nl/figures/ephy-screenshot.png
-share/gnome/help/epiphany/oc/epiphany.xml
-share/gnome/help/epiphany/oc/figures/ephy-addressbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/oc/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/oc/figures/ephy-history-window-screenshot.png
-share/gnome/help/epiphany/oc/figures/ephy-screenshot.png
-share/gnome/help/epiphany/ru/epiphany.xml
-share/gnome/help/epiphany/ru/figures/ephy-addressbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/ru/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/ru/figures/ephy-history-window-screenshot.png
-share/gnome/help/epiphany/ru/figures/ephy-screenshot.png
-share/gnome/help/epiphany/sv/epiphany.xml
-share/gnome/help/epiphany/sv/figures/ephy-addressbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/sv/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/sv/figures/ephy-history-window-screenshot.png
-share/gnome/help/epiphany/sv/figures/ephy-screenshot.png
-share/gnome/help/epiphany/uk/epiphany.xml
-share/gnome/help/epiphany/uk/figures/ephy-addressbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/uk/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
-share/gnome/help/epiphany/uk/figures/ephy-history-window-screenshot.png
-share/gnome/help/epiphany/uk/figures/ephy-screenshot.png
-share/icons/HighContrastLargePrint/48x48/apps/gnome-web-browser.png
-share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-web-browser.png
-share/icons/LowContrastLargePrint/48x48/apps/gnome-web-browser.png
-share/icons/hicolor/16x16/apps/gnome-web-browser.png
-share/icons/hicolor/22x22/apps/gnome-web-browser.png
-share/icons/hicolor/24x24/apps/gnome-web-browser.png
-share/icons/hicolor/32x32/apps/gnome-web-browser.png
-share/icons/hicolor/48x48/apps/epiphany-bookmarks.png
-share/icons/hicolor/scalable/apps/gnome-web-browser.svg
+share/gir-1.0/Epiphany-%%EPHY_VERSION%%.gir
+share/epiphany/about.ini
+share/epiphany/default-bookmarks.rdf
+share/epiphany/epiphany-bookmarks-html.xsl
+share/epiphany/epiphany.xhtml
+share/epiphany/mime-types-permissions.xml
+share/epiphany/pages/about.css
+share/epiphany/pages/error.html
+share/epiphany/pages/recovery.html
+share/epiphany/icons/missing-thumbnail.png
+share/epiphany/icons/thumbnail-frame.png
 share/locale/am/LC_MESSAGES/epiphany.mo
 share/locale/an/LC_MESSAGES/epiphany.mo
 share/locale/ar/LC_MESSAGES/epiphany.mo
@@ -245,6 +74,7 @@ share/locale/el/LC_MESSAGES/epiphany.mo
 share/locale/en_CA/LC_MESSAGES/epiphany.mo
 share/locale/en_GB/LC_MESSAGES/epiphany.mo
 share/locale/en@shaw/LC_MESSAGES/epiphany.mo
+share/locale/eo/LC_MESSAGES/epiphany.mo
 share/locale/es/LC_MESSAGES/epiphany.mo
 share/locale/et/LC_MESSAGES/epiphany.mo
 share/locale/eu/LC_MESSAGES/epiphany.mo
@@ -254,6 +84,7 @@ share/locale/fr/LC_MESSAGES/epiphany.mo
 share/locale/ga/LC_MESSAGES/epiphany.mo
 share/locale/gl/LC_MESSAGES/epiphany.mo
 share/locale/gu/LC_MESSAGES/epiphany.mo
+share/locale/gv/LC_MESSAGES/epiphany.mo
 share/locale/he/LC_MESSAGES/epiphany.mo
 share/locale/hi/LC_MESSAGES/epiphany.mo
 share/locale/hr/LC_MESSAGES/epiphany.mo
@@ -265,6 +96,7 @@ share/locale/is/LC_MESSAGES/epiphany.mo
 share/locale/it/LC_MESSAGES/epiphany.mo
 share/locale/ja/LC_MESSAGES/epiphany.mo
 share/locale/ka/LC_MESSAGES/epiphany.mo
+share/locale/km/LC_MESSAGES/epiphany.mo
 share/locale/kn/LC_MESSAGES/epiphany.mo
 share/locale/ko/LC_MESSAGES/epiphany.mo
 share/locale/ku/LC_MESSAGES/epiphany.mo
@@ -306,6 +138,7 @@ share/locale/te/LC_MESSAGES/epiphany.mo
 share/locale/th/LC_MESSAGES/epiphany.mo
 share/locale/tk/LC_MESSAGES/epiphany.mo
 share/locale/tr/LC_MESSAGES/epiphany.mo
+share/locale/ug/LC_MESSAGES/epiphany.mo
 share/locale/uk/LC_MESSAGES/epiphany.mo
 share/locale/uz/LC_MESSAGES/epiphany.mo
 share/locale/uz@cyrillic/LC_MESSAGES/epiphany.mo
@@ -315,100 +148,14 @@ share/locale/yo/LC_MESSAGES/epiphany.mo
 share/locale/zh_CN/LC_MESSAGES/epiphany.mo
 share/locale/zh_HK/LC_MESSAGES/epiphany.mo
 share/locale/zh_TW/LC_MESSAGES/epiphany.mo
-share/omf/epiphany/epiphany-C.omf
-share/omf/epiphany/epiphany-bg.omf
-share/omf/epiphany/epiphany-ca.omf
-share/omf/epiphany/epiphany-cs.omf
-share/omf/epiphany/epiphany-de.omf
-share/omf/epiphany/epiphany-el.omf
-share/omf/epiphany/epiphany-en_GB.omf
-share/omf/epiphany/epiphany-es.omf
-share/omf/epiphany/epiphany-eu.omf
-share/omf/epiphany/epiphany-fi.omf
-share/omf/epiphany/epiphany-fr.omf
-share/omf/epiphany/epiphany-it.omf
-share/omf/epiphany/epiphany-ja.omf
-share/omf/epiphany/epiphany-nl.omf
-share/omf/epiphany/epiphany-oc.omf
-share/omf/epiphany/epiphany-ru.omf
-share/omf/epiphany/epiphany-sv.omf
-share/omf/epiphany/epiphany-uk.omf
-@dirrm share/omf/epiphany
-@dirrmtry share/icons/LowContrastLargePrint/48x48/apps
-@dirrmtry share/icons/LowContrastLargePrint/48x48
-@dirrmtry share/icons/LowContrastLargePrint
-@dirrm share/gnome/help/epiphany/uk/figures
-@dirrm share/gnome/help/epiphany/uk
-@dirrm share/gnome/help/epiphany/sv/figures
-@dirrm share/gnome/help/epiphany/sv
-@dirrm share/gnome/help/epiphany/ru/figures
-@dirrm share/gnome/help/epiphany/ru
-@dirrm share/gnome/help/epiphany/oc/figures
-@dirrm share/gnome/help/epiphany/oc
-@dirrm share/gnome/help/epiphany/nl/figures
-@dirrm share/gnome/help/epiphany/nl
-@dirrm share/gnome/help/epiphany/ja/figures
-@dirrm share/gnome/help/epiphany/ja
-@dirrm share/gnome/help/epiphany/it/figures
-@dirrm share/gnome/help/epiphany/it
-@dirrm share/gnome/help/epiphany/fr/figures
-@dirrm share/gnome/help/epiphany/fr
-@dirrm share/gnome/help/epiphany/fi/figures
-@dirrm share/gnome/help/epiphany/fi
-@dirrm share/gnome/help/epiphany/eu/figures
-@dirrm share/gnome/help/epiphany/eu
-@dirrm share/gnome/help/epiphany/es/figures
-@dirrm share/gnome/help/epiphany/es
-@dirrm share/gnome/help/epiphany/en_GB/figures
-@dirrm share/gnome/help/epiphany/en_GB
-@dirrm share/gnome/help/epiphany/el/figures
-@dirrm share/gnome/help/epiphany/el
-@dirrm share/gnome/help/epiphany/de/figures
-@dirrm share/gnome/help/epiphany/de
-@dirrm share/gnome/help/epiphany/cs/figures
-@dirrm share/gnome/help/epiphany/cs
-@dirrm share/gnome/help/epiphany/ca/figures
-@dirrm share/gnome/help/epiphany/ca
-@dirrm share/gnome/help/epiphany/bg/figures
-@dirrm share/gnome/help/epiphany/bg
-@dirrm share/gnome/help/epiphany/C/figures
-@dirrm share/gnome/help/epiphany/C
-@dirrm share/gnome/help/epiphany
-@dirrmtry %%DATADIR%%/icons/hicolor/scalable/status
-@dirrmtry %%DATADIR%%/icons/hicolor/scalable/actions
-@dirrmtry %%DATADIR%%/icons/hicolor/scalable
-@dirrmtry %%DATADIR%%/icons/hicolor/48x48/status
-@dirrmtry %%DATADIR%%/icons/hicolor/48x48
-@dirrmtry %%DATADIR%%/icons/hicolor/32x32/status
-@dirrmtry %%DATADIR%%/icons/hicolor/32x32/actions
-@dirrmtry %%DATADIR%%/icons/hicolor/32x32
-@dirrmtry %%DATADIR%%/icons/hicolor/24x24/status
-@dirrmtry %%DATADIR%%/icons/hicolor/24x24/places
-@dirrmtry %%DATADIR%%/icons/hicolor/24x24/actions
-@dirrmtry %%DATADIR%%/icons/hicolor/24x24
-@dirrmtry %%DATADIR%%/icons/hicolor/22x22/status
-@dirrmtry %%DATADIR%%/icons/hicolor/22x22/places
-@dirrmtry %%DATADIR%%/icons/hicolor/22x22/actions
-@dirrmtry %%DATADIR%%/icons/hicolor/22x22
-@dirrmtry %%DATADIR%%/icons/hicolor/16x16/status
-@dirrmtry %%DATADIR%%/icons/hicolor/16x16/places
-@dirrmtry %%DATADIR%%/icons/hicolor/16x16/actions
-@dirrmtry %%DATADIR%%/icons/hicolor/16x16
-@dirrmtry %%DATADIR%%/icons/hicolor
-@dirrmtry %%DATADIR%%/icons
-@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%/art
-@dirrmtry %%DATADIR%%
-@dirrmtry %%DOCSDIR%%
-@dirrm include/epiphany/%%EPHY_VERSION%%/epiphany
-@dirrm include/epiphany/%%EPHY_VERSION%%
-@dirrm include/epiphany
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/yo/LC_MESSAGES
 @dirrmtry share/locale/yo
 @dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
 @dirrmtry share/locale/uz@cyrillic
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
@@ -433,10 +180,14 @@ share/omf/epiphany/epiphany-uk.omf
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
 @dirrmtry share/locale/ig/LC_MESSAGES
 @dirrmtry share/locale/ig
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
+@dirrmtry share/locale/gv/LC_MESSAGES
+@dirrmtry share/locale/gv
 @dirrmtry share/locale/en@shaw/LC_MESSAGES
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
@@ -453,3 +204,10 @@ share/omf/epiphany/epiphany-uk.omf
 @dirrmtry share/locale/as
 @dirrmtry share/locale/an/LC_MESSAGES
 @dirrmtry share/locale/an
+@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/pages
+@dirrm %%DATADIR%%/icons
+@dirrmtry %%DATADIR%%
+@dirrm include/epiphany/%%EPHY_VERSION%%/epiphany
+@dirrm include/epiphany/%%EPHY_VERSION%%
+@dirrm include/epiphany

@@ -1,42 +1,36 @@
+# Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/net-im/telepathy-idle/Makefile,v 1.6 2012/08/17 19:06:45 kwm Exp $
+#    $MCom: ports/trunk/net-im/telepathy-idle/Makefile 18791 2013-10-11 08:54:52Z gusi $
 
 PORTNAME=	telepathy-idle
-PORTVERSION=	0.1.11
+PORTVERSION=	0.1.14
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	IRC Connection Manager for Telepathy Framework
 
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
-		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		telepathy-glib:${PORTSDIR}/net-im/telepathy-glib
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
 USE_OPENSSL=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack glib20
-
-MAN8=		telepathy-idle.8
+USES=		gmake pathfix pkgconfig
+USE_GNOME=	glib20 libxslt:build
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-#.if defined(WITH_OPENSSL_BASE)
-CONFIGURE_ENV+=	OPENSSL_LIBS="-L/usr/lib -lssl -lcrypto" OPENSSL_CFLAGS="-I/usr/include"
-#.endif
-#  OPENSSL_CFLAGS
-#              C compiler flags for OPENSSL, overriding pkg-config
-#  OPENSSL_LIBS
-#              linker flags for OPENSSL, overriding pkg-config
+.include <bsd.port.pre.mk>
 
-NO_STAGE=	yes
+.if defined(WITH_OPENSSL_BASE)
+CONFIGURE_ENV+=	OPENSSL_LIBS="-L/usr/lib -lssl -lcrypto" OPENSSL_CFLAGS="-I/usr/include"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|strnlen(\([^,]*\), [^)]*)|strlen(\1)|' \
 		${WRKSRC}/src/idle-connection.c \
 		${WRKSRC}/src/idle-parser.c
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

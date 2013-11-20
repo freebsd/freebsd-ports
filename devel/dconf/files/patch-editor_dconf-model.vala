@@ -1,5 +1,5 @@
---- editor/dconf-model.vala.orig	2013-05-01 21:47:59.000000000 +0000
-+++ editor/dconf-model.vala	2013-05-01 21:50:26.000000000 +0000
+--- editor/dconf-model.vala.orig	2013-09-07 00:35:35.000000000 +0200
++++ editor/dconf-model.vala	2013-09-07 00:35:37.000000000 +0200
 @@ -254,7 +254,7 @@
              string[] tokens = path.split("/", 2);
              string name = tokens[0];
@@ -112,33 +112,7 @@
          return false;
      }
  
-@@ -586,9 +603,14 @@
-         schemas = new SchemaList();
-         try
-         {
--            foreach (var dir in GLib.Environment.get_system_data_dirs())
-+            var dirs = GLib.Environment.get_system_data_dirs();
-+
-+            /* Walk directories in reverse so the schemas in the
-+             * directory which appears first in the XDG_DATA_DIRS are
-+             * not overridden. */
-+            for (int i = dirs.length - 1; i >= 0; i--)
-             {
--                var path = Path.build_filename (dir, "glib-2.0", "schemas", null);
-+                var path = Path.build_filename (dirs[i], "glib-2.0", "schemas");
-                 if (File.new_for_path (path).query_exists ())
-                     schemas.load_directory (path);
-             }
-@@ -601,7 +623,7 @@
-         }
- 
-         /* Add keys for the values in the schemas */
--        foreach (var schema in schemas.schemas)
-+        foreach (var schema in schemas.schemas.get_values())
-             root.load_schema(schema, schema.path[1:schema.path.length]);
-     }
- 
-@@ -639,8 +661,10 @@
+@@ -644,8 +661,10 @@
              return (Directory)iter.user_data;
      }
  
@@ -150,7 +124,7 @@
          if (!iter_nth_child(out iter, null, path.get_indices()[0]))
              return false;
  
-@@ -672,19 +696,23 @@
+@@ -677,19 +696,23 @@
  
      public bool iter_next(ref Gtk.TreeIter iter)
      {
@@ -177,7 +151,7 @@
          return true;
      }
  
-@@ -698,21 +726,28 @@
+@@ -703,21 +726,28 @@
          return (int) get_directory(iter).children.length();
      }
  

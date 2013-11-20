@@ -1,0 +1,23 @@
+include/telepathy-1.0/telepathy-farstream/channel.h
+include/telepathy-1.0/telepathy-farstream/content.h
+include/telepathy-1.0/telepathy-farstream/telepathy-farstream.h
+lib/girepository-1.0/TelepathyFarstream-0.6.typelib
+lib/libtelepathy-farstream.a
+lib/libtelepathy-farstream.la
+lib/libtelepathy-farstream.so
+lib/libtelepathy-farstream.so.3
+libdata/pkgconfig/telepathy-farstream.pc
+share/gir-1.0/TelepathyFarstream-0.6.gir
+share/doc/telepathy-farstream/TfChannel.html
+share/doc/telepathy-farstream/TfContent.html
+share/doc/telepathy-farstream/ch01.html
+share/doc/telepathy-farstream/home.png
+share/doc/telepathy-farstream/index.html
+share/doc/telepathy-farstream/index.sgml
+share/doc/telepathy-farstream/left.png
+share/doc/telepathy-farstream/right.png
+share/doc/telepathy-farstream/style.css
+share/doc/telepathy-farstream/up.png
+share/doc/telepathy-farstream/telepathy-farstream.devhelp2
+@dirrm share/doc/telepathy-farstream
+@dirrm include/telepathy-1.0/telepathy-farstream

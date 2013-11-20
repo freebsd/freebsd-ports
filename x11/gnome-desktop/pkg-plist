@@ -1,366 +1,216 @@
-bin/gnome-about
-include/gnome-desktop-2.0/libgnome/gnome-desktop-item.h
-include/gnome-desktop-2.0/libgnome/gnome-desktop-utils.h
-include/gnome-desktop-2.0/libgnomeui/gnome-bg.h
-include/gnome-desktop-2.0/libgnomeui/gnome-bg-crossfade.h
-include/gnome-desktop-2.0/libgnomeui/gnome-desktop-thumbnail.h
-include/gnome-desktop-2.0/libgnomeui/gnome-rr-config.h
-include/gnome-desktop-2.0/libgnomeui/gnome-rr-labeler.h
-include/gnome-desktop-2.0/libgnomeui/gnome-rr.h
-lib/libgnome-desktop-2.a
-lib/libgnome-desktop-2.la
-lib/libgnome-desktop-2.so
-lib/libgnome-desktop-2.so.17
-libdata/pkgconfig/gnome-desktop-2.0.pc
-share/applications/gnome-about.desktop
-share/gnome-about/contributors.list
-share/gnome-about/foundation-members.list
-share/gnome-about/gnome-64.png
-share/gnome-about/gnome-version.xml
-share/gnome-about/headers/header-bg-ancient01a.png
-share/gnome-about/headers/header-bg-city01.png
-share/gnome-about/headers/header-bg-clouds01.png
-share/gnome-about/headers/header-bg-clouds02.png
-share/gnome-about/headers/header-bg-hills01.png
-share/gnome-about/headers/header-bg-landscape01.png
-share/gnome-about/headers/header-bg-mountains01.png
-share/gnome-about/headers/header-bg-snow01.png
-share/gnome-about/headers/header-bg-sunset01.png
-share/gnome/help/fdl/C/fdl.xml
-share/gnome/help/fdl/ar/fdl.xml
-share/gnome/help/fdl/ca/fdl.xml
-share/gnome/help/fdl/de/fdl.xml
-share/gnome/help/fdl/el/fdl.xml
-share/gnome/help/fdl/es/fdl.xml
-share/gnome/help/fdl/eu/fdl.xml
-share/gnome/help/fdl/fr/fdl.xml
-share/gnome/help/fdl/hu/fdl.xml
-share/gnome/help/fdl/ko/fdl.xml
-share/gnome/help/fdl/oc/fdl.xml
-share/gnome/help/fdl/pl/fdl.xml
-share/gnome/help/fdl/sv/fdl.xml
-share/gnome/help/fdl/uk/fdl.xml
-share/gnome/help/fdl/vi/fdl.xml
-share/gnome/help/gpl/C/gpl.xml
-share/gnome/help/gpl/ar/gpl.xml
-share/gnome/help/gpl/ca/gpl.xml
-share/gnome/help/gpl/cs/gpl.xml
-share/gnome/help/gpl/de/gpl.xml
-share/gnome/help/gpl/el/gpl.xml
-share/gnome/help/gpl/es/gpl.xml
-share/gnome/help/gpl/eu/gpl.xml
-share/gnome/help/gpl/fi/gpl.xml
-share/gnome/help/gpl/fr/gpl.xml
-share/gnome/help/gpl/hu/gpl.xml
-share/gnome/help/gpl/ko/gpl.xml
-share/gnome/help/gpl/nds/gpl.xml
-share/gnome/help/gpl/oc/gpl.xml
-share/gnome/help/gpl/pa/gpl.xml
-share/gnome/help/gpl/sv/gpl.xml
-share/gnome/help/gpl/uk/gpl.xml
-share/gnome/help/gpl/vi/gpl.xml
-share/gnome/help/gpl/zh_CN/gpl.xml
-share/gnome/help/lgpl/C/lgpl.xml
-share/gnome/help/lgpl/ar/lgpl.xml
-share/gnome/help/lgpl/de/lgpl.xml
-share/gnome/help/lgpl/el/lgpl.xml
-share/gnome/help/lgpl/es/lgpl.xml
-share/gnome/help/lgpl/eu/lgpl.xml
-share/gnome/help/lgpl/fi/lgpl.xml
-share/gnome/help/lgpl/fr/lgpl.xml
-share/gnome/help/lgpl/hu/lgpl.xml
-share/gnome/help/lgpl/ko/lgpl.xml
-share/gnome/help/lgpl/oc/lgpl.xml
-share/gnome/help/lgpl/pa/lgpl.xml
-share/gnome/help/lgpl/sv/lgpl.xml
-share/gnome/help/lgpl/uk/lgpl.xml
-share/gnome/help/lgpl/vi/lgpl.xml
-share/gnome/help/lgpl/zh_CN/lgpl.xml
-share/libgnome-desktop/pnp.ids
-share/locale/af/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/am/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/an/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/ar/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/as/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/ast/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/az/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/be/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/be@latin/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/bg/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/bn/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/bn_IN/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/br/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/bs/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/ca/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/ca@valencia/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/crh/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/cs/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/cy/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/da/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/de/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/dz/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/el/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/en@shaw/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/en_CA/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/en_GB/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/eo/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/es/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/et/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/eu/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/fa/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/fi/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/fr/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/fur/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/ga/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/gl/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/gu/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/he/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/hi/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/hr/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/hu/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/hy/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/id/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/ig/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/is/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/it/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/ja/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/ka/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/kk/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/kn/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/ko/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/ku/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/ky/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/li/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/lo/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/lt/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/lv/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/mai/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/mg/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/mi/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/mk/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/ml/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/mn/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/mr/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/ms/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/nb/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/nds/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/ne/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/nl/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/nn/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/nso/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/oc/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/or/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/pa/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/pl/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/ps/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/pt/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/pt_BR/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/ro/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/ru/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/rw/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/si/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/sk/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/sl/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/sq/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/sr/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/sr@latin/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/sv/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/ta/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/te/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/th/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/tk/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/tr/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/ug/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/uk/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/ur/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/uz/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/uz@cyrillic/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/vi/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/wa/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/xh/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/yi/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/yo/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/zh_CN/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/zh_HK/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/zh_TW/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/zu/LC_MESSAGES/gnome-desktop-2.0.mo
-share/omf/fdl/fdl-C.omf
-share/omf/fdl/fdl-ar.omf
-share/omf/fdl/fdl-ca.omf
-share/omf/fdl/fdl-de.omf
-share/omf/fdl/fdl-el.omf
-share/omf/fdl/fdl-es.omf
-share/omf/fdl/fdl-eu.omf
-share/omf/fdl/fdl-fr.omf
-share/omf/fdl/fdl-hu.omf
-share/omf/fdl/fdl-ko.omf
-share/omf/fdl/fdl-oc.omf
-share/omf/fdl/fdl-pl.omf
-share/omf/fdl/fdl-sv.omf
-share/omf/fdl/fdl-uk.omf
-share/omf/fdl/fdl-vi.omf
-share/omf/gpl/gpl-C.omf
-share/omf/gpl/gpl-ar.omf
-share/omf/gpl/gpl-ca.omf
-share/omf/gpl/gpl-cs.omf
-share/omf/gpl/gpl-de.omf
-share/omf/gpl/gpl-el.omf
-share/omf/gpl/gpl-es.omf
-share/omf/gpl/gpl-eu.omf
-share/omf/gpl/gpl-fi.omf
-share/omf/gpl/gpl-fr.omf
-share/omf/gpl/gpl-hu.omf
-share/omf/gpl/gpl-ko.omf
-share/omf/gpl/gpl-nds.omf
-share/omf/gpl/gpl-oc.omf
-share/omf/gpl/gpl-pa.omf
-share/omf/gpl/gpl-sv.omf
-share/omf/gpl/gpl-uk.omf
-share/omf/gpl/gpl-vi.omf
-share/omf/gpl/gpl-zh_CN.omf
-share/omf/lgpl/lgpl-C.omf
-share/omf/lgpl/lgpl-ar.omf
-share/omf/lgpl/lgpl-de.omf
-share/omf/lgpl/lgpl-el.omf
-share/omf/lgpl/lgpl-es.omf
-share/omf/lgpl/lgpl-eu.omf
-share/omf/lgpl/lgpl-fi.omf
-share/omf/lgpl/lgpl-fr.omf
-share/omf/lgpl/lgpl-hu.omf
-share/omf/lgpl/lgpl-ko.omf
-share/omf/lgpl/lgpl-oc.omf
-share/omf/lgpl/lgpl-pa.omf
-share/omf/lgpl/lgpl-sv.omf
-share/omf/lgpl/lgpl-uk.omf
-share/omf/lgpl/lgpl-vi.omf
-share/omf/lgpl/lgpl-zh_CN.omf
-share/pixmaps/apple-green.png
-share/pixmaps/apple-red.png
-share/pixmaps/gnome-aorta.png
-share/pixmaps/gnome-applets.png
-share/pixmaps/gnome-background-image.png
-share/pixmaps/gnome-background-pattern.png
-share/pixmaps/gnome-background.png
-share/pixmaps/gnome-calc2.png
-share/pixmaps/gnome-calc3.png
-share/pixmaps/gnome-calendar.png
-share/pixmaps/gnome-ccbackground.png
-share/pixmaps/gnome-ccdesktop.png
-share/pixmaps/gnome-ccdialog.png
-share/pixmaps/gnome-ccmime.png
-share/pixmaps/gnome-ccperiph.png
-share/pixmaps/gnome-ccscreensaver.png
-share/pixmaps/gnome-ccwindowmanager.png
-share/pixmaps/gnome-color-browser.png
-share/pixmaps/gnome-color-xterm.png
-share/pixmaps/gnome-computer.png
-share/pixmaps/gnome-cromagnon.png
-share/pixmaps/gnome-day.png
-share/pixmaps/gnome-debian.png
-share/pixmaps/gnome-diskfree.png
-share/pixmaps/gnome-emacs.png
-share/pixmaps/gnome-eterm.png
-share/pixmaps/gnome-file-c.png
-share/pixmaps/gnome-file-h.png
-share/pixmaps/gnome-folder.png
-share/pixmaps/gnome-gemvt.png
-share/pixmaps/gnome-gimp.png
-share/pixmaps/gnome-gmenu.png
-share/pixmaps/gnome-gmush.png
-share/pixmaps/gnome-gnomoku.png
-share/pixmaps/gnome-home.png
-share/pixmaps/gnome-html.png
-share/pixmaps/gnome-image-gif.png
-share/pixmaps/gnome-image-jpeg.png
-share/pixmaps/gnome-irc.png
-share/pixmaps/gnome-laptop.png
-share/pixmaps/gnome-log.png
-share/pixmaps/gnome-logo-icon-transparent.png
-share/pixmaps/gnome-logo-icon.png
-share/pixmaps/gnome-logo-large.png
-share/pixmaps/gnome-mdi.png
-share/pixmaps/gnome-mnemonic.png
-share/pixmaps/gnome-month.png
-share/pixmaps/gnome-mouse.png
-share/pixmaps/gnome-news.png
-share/pixmaps/gnome-note.png
-share/pixmaps/gnome-qeye.png
-share/pixmaps/gnome-set-time.png
-share/pixmaps/gnome-spider.png
-share/pixmaps/gnome-squeak.png
-share/pixmaps/gnome-suse.png
-share/pixmaps/gnome-talk.png
-share/pixmaps/gnome-term-linux.png
-share/pixmaps/gnome-term-linux2.png
-share/pixmaps/gnome-term-night.png
-share/pixmaps/gnome-term-tiger.png
-share/pixmaps/gnome-term.png
-share/pixmaps/gnome-tigert.png
-share/pixmaps/gnome-touristinfo.png
-share/pixmaps/gnome-user-interface.png
-share/pixmaps/gnome-week.png
-share/pixmaps/gnome-windows.png
-share/pixmaps/gnome-word.png
-share/pixmaps/gnome-xterm.png
-share/pixmaps/gtkvim.png
-share/pixmaps/kterm.xpm
-share/pixmaps/monitor.png
-share/pixmaps/vnterm.xpm
-@dirrm share/omf/lgpl
-@dirrm share/omf/gpl
-@dirrm share/omf/fdl
-@dirrm share/gnome/help/lgpl/zh_CN
-@dirrm share/gnome/help/lgpl/vi
-@dirrm share/gnome/help/lgpl/uk
-@dirrm share/gnome/help/lgpl/sv
-@dirrm share/gnome/help/lgpl/pa
-@dirrm share/gnome/help/lgpl/oc
-@dirrm share/gnome/help/lgpl/ko
-@dirrm share/gnome/help/lgpl/hu
-@dirrm share/gnome/help/lgpl/fr
-@dirrm share/gnome/help/lgpl/fi
-@dirrm share/gnome/help/lgpl/eu
-@dirrm share/gnome/help/lgpl/es
-@dirrm share/gnome/help/lgpl/el
-@dirrm share/gnome/help/lgpl/de
-@dirrm share/gnome/help/lgpl/ar
-@dirrm share/gnome/help/gpl/zh_CN
-@dirrm share/gnome/help/gpl/vi
-@dirrm share/gnome/help/gpl/uk
-@dirrm share/gnome/help/gpl/sv
-@dirrm share/gnome/help/gpl/pa
-@dirrm share/gnome/help/gpl/oc
-@dirrm share/gnome/help/gpl/nds
-@dirrm share/gnome/help/gpl/ko
-@dirrm share/gnome/help/gpl/hu
-@dirrm share/gnome/help/gpl/fr
-@dirrm share/gnome/help/gpl/fi
-@dirrm share/gnome/help/gpl/eu
-@dirrm share/gnome/help/gpl/es
-@dirrm share/gnome/help/gpl/el
-@dirrm share/gnome/help/gpl/de
-@dirrm share/gnome/help/gpl/cs
-@dirrm share/gnome/help/gpl/ca
-@dirrm share/gnome/help/gpl/ar
-@dirrm share/gnome/help/fdl/vi
-@dirrm share/gnome/help/fdl/uk
-@dirrm share/gnome/help/fdl/sv
-@dirrm share/gnome/help/fdl/pl
-@dirrm share/gnome/help/fdl/oc
-@dirrm share/gnome/help/fdl/ko
-@dirrm share/gnome/help/fdl/hu
-@dirrm share/gnome/help/fdl/fr
-@dirrm share/gnome/help/fdl/eu
-@dirrm share/gnome/help/fdl/es
-@dirrm share/gnome/help/fdl/el
-@dirrm share/gnome/help/fdl/de
-@dirrm share/gnome/help/fdl/ca
-@dirrm share/gnome/help/fdl/ar
-@dirrm share/gnome-about/headers
-@dirrm include/gnome-desktop-2.0/libgnomeui
-@dirrm include/gnome-desktop-2.0/libgnome
-@dirrm include/gnome-desktop-2.0
-@dirrm share/libgnome-desktop
+include/gnome-desktop-3.0/libgnome-desktop/gnome-bg-crossfade.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-bg.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-desktop-thumbnail.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-desktop-utils.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-pnp-ids.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-rr-config.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-rr-labeler.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-rr.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-wall-clock.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-xkb-info.h
+lib/girepository-1.0/GnomeDesktop-3.0.typelib
+lib/libgnome-desktop-3.a
+lib/libgnome-desktop-3.la
+lib/libgnome-desktop-3.so
+lib/libgnome-desktop-3.so.4
+libdata/pkgconfig/gnome-desktop-3.0.pc
+libexec/gnome-rr-debug
+share/doc/gnome-desktop3/GnomeDesktopThumbnailFactory.html
+share/doc/gnome-desktop3/background.html
+share/doc/gnome-desktop3/gnome-desktop3-gnome-bg.html
+share/doc/gnome-desktop3/gnome-desktop3-gnome-desktop-utils.html
+share/doc/gnome-desktop3/gnome-desktop3-gnome-rr-config.html
+share/doc/gnome-desktop3/gnome-desktop3-gnome-rr-labeler.html
+share/doc/gnome-desktop3/gnome-desktop3.devhelp2
+share/doc/gnome-desktop3/home.png
+share/doc/gnome-desktop3/index.html
+share/doc/gnome-desktop3/index.sgml
+share/doc/gnome-desktop3/intro.html
+share/doc/gnome-desktop3/left.png
+share/doc/gnome-desktop3/libgnome.html
+share/doc/gnome-desktop3/randr.html
+share/doc/gnome-desktop3/right.png
+share/doc/gnome-desktop3/gnome-desktop3-gnome-rr.html
+share/doc/gnome-desktop3/style.css
+share/doc/gnome-desktop3/thumbnail.html
+share/doc/gnome-desktop3/up.png
+share/gnome/gnome-version.xml
+share/help/C/fdl/index.docbook
+share/help/C/gpl/index.docbook
+share/help/C/lgpl/index.docbook
+share/help/ar/fdl/index.docbook
+share/help/ar/gpl/index.docbook
+share/help/ar/lgpl/index.docbook
+share/help/ca/fdl/index.docbook
+share/help/ca/gpl/index.docbook
+share/help/cs/gpl/index.docbook
+share/help/de/fdl/index.docbook
+share/help/de/gpl/index.docbook
+share/help/de/lgpl/index.docbook
+share/help/el/fdl/index.docbook
+share/help/el/gpl/index.docbook
+share/help/el/lgpl/index.docbook
+share/help/es/fdl/index.docbook
+share/help/es/gpl/index.docbook
+share/help/es/lgpl/index.docbook
+share/help/eu/fdl/index.docbook
+share/help/eu/gpl/index.docbook
+share/help/eu/lgpl/index.docbook
+share/help/fi/gpl/index.docbook
+share/help/fi/lgpl/index.docbook
+share/help/fr/fdl/index.docbook
+share/help/fr/gpl/index.docbook
+share/help/fr/lgpl/index.docbook
+share/help/gl/fdl/index.docbook
+share/help/hu/fdl/index.docbook
+share/help/hu/gpl/index.docbook
+share/help/hu/lgpl/index.docbook
+share/help/ko/fdl/index.docbook
+share/help/ko/gpl/index.docbook
+share/help/ko/lgpl/index.docbook
+share/help/nds/gpl/index.docbook
+share/help/oc/fdl/index.docbook
+share/help/oc/gpl/index.docbook
+share/help/oc/lgpl/index.docbook
+share/help/pa/gpl/index.docbook
+share/help/pa/lgpl/index.docbook
+share/help/pl/fdl/index.docbook
+share/help/pt_BR/lgpl/index.docbook
+share/help/sl/fdl/index.docbook
+share/help/sl/gpl/index.docbook
+share/help/sl/lgpl/index.docbook
+share/help/sr/gpl/index.docbook
+share/help/sr@latin/gpl/index.docbook
+share/help/sv/fdl/index.docbook
+share/help/sv/gpl/index.docbook
+share/help/sv/lgpl/index.docbook
+share/help/uk/fdl/index.docbook
+share/help/uk/gpl/index.docbook
+share/help/uk/lgpl/index.docbook
+share/help/vi/fdl/index.docbook
+share/help/vi/gpl/index.docbook
+share/help/vi/lgpl/index.docbook
+share/help/zh_CN/fdl/index.docbook
+share/help/zh_CN/gpl/index.docbook
+share/help/zh_CN/lgpl/index.docbook
+share/gir-1.0/GnomeDesktop-3.0.gir
+share/libgnome-desktop-3.0/pnp.ids
+share/locale/af/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/am/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/an/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/ar/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/as/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/ast/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/az/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/be/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/be@latin/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/bg/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/bn/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/bn_IN/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/br/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/bs/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/ca/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/ca@valencia/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/crh/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/cs/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/csb/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/cy/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/da/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/de/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/dz/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/el/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/en@shaw/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/en_CA/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/en_GB/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/eo/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/es/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/et/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/eu/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/fa/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/fi/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/fr/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/fur/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/fy/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/ga/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/gl/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/gu/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/ha/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/he/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/hi/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/hr/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/hu/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/hy/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/id/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/ig/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/is/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/it/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/ja/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/ka/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/kg/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/kk/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/km/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/kn/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/ko/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/ku/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/ky/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/li/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/lo/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/lt/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/lv/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/mai/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/mg/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/mi/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/mk/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/ml/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/mn/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/mr/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/ms/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/nb/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/nds/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/ne/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/nl/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/nn/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/nso/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/oc/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/or/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/pa/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/pl/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/ps/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/pt/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/ro/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/ru/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/rw/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/si/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/sk/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/sl/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/sq/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/sr/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/sr@latin/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/sv/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/ta/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/te/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/th/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/tk/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/tr/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/ug/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/uk/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/ur/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/uz/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/uz@cyrillic/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/vi/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/wa/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/xh/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/yi/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/yo/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/zh_HK/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/zu/LC_MESSAGES/gnome-desktop-3.0.mo
+@dirrm share/libgnome-desktop-3.0
+@dirrm share/doc/gnome-desktop3
+@dirrm include/gnome-desktop-3.0/libgnome-desktop
+@dirrm include/gnome-desktop-3.0
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -407,18 +257,28 @@ share/pixmaps/vnterm.xpm
 @dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
 @dirrmtry share/locale/kk/LC_MESSAGES
 @dirrmtry share/locale/kk
+@dirrmtry share/locale/kg/LC_MESSAGES
+@dirrmtry share/locale/kg
 @dirrmtry share/locale/ig/LC_MESSAGES
 @dirrmtry share/locale/ig
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
+@dirrmtry share/locale/ha/LC_MESSAGES
+@dirrmtry share/locale/ha
+@dirrmtry share/locale/fy/LC_MESSAGES
+@dirrmtry share/locale/fy
 @dirrmtry share/locale/fur/LC_MESSAGES
 @dirrmtry share/locale/fur
 @dirrmtry share/locale/en@shaw/LC_MESSAGES
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/csb/LC_MESSAGES
+@dirrmtry share/locale/csb
 @dirrmtry share/locale/crh/LC_MESSAGES
 @dirrmtry share/locale/crh
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
@@ -433,3 +293,87 @@ share/pixmaps/vnterm.xpm
 @dirrmtry share/locale/as
 @dirrmtry share/locale/an/LC_MESSAGES
 @dirrmtry share/locale/an
+@dirrmtry share/help/zh_CN/lgpl
+@dirrmtry share/help/zh_CN/gpl
+@dirrmtry share/help/zh_CN/fdl
+@dirrmtry share/help/zh_CN
+@dirrmtry share/help/vi/lgpl
+@dirrmtry share/help/vi/gpl
+@dirrmtry share/help/vi/fdl
+@dirrmtry share/help/vi
+@dirrmtry share/help/uk/lgpl
+@dirrmtry share/help/uk/gpl
+@dirrmtry share/help/uk/fdl
+@dirrmtry share/help/uk
+@dirrmtry share/help/sv/lgpl
+@dirrmtry share/help/sv/gpl
+@dirrmtry share/help/sv/fdl
+@dirrmtry share/help/sv
+@dirrmtry share/help/sr@latin/gpl
+@dirrmtry share/help/sr@latin
+@dirrmtry share/help/sr/gpl
+@dirrmtry share/help/sr
+@dirrmtry share/help/sl/lgpl
+@dirrmtry share/help/sl/gpl
+@dirrmtry share/help/sl/fdl
+@dirrmtry share/help/sl
+@dirrmtry share/help/pt_BR/lgpl
+@dirrmtry share/help/pt_BR
+@dirrmtry share/help/pl/fdl
+@dirrmtry share/help/pl
+@dirrmtry share/help/pa/lgpl
+@dirrmtry share/help/pa/gpl
+@dirrmtry share/help/pa
+@dirrmtry share/help/oc/lgpl
+@dirrmtry share/help/oc/gpl
+@dirrmtry share/help/oc/fdl
+@dirrmtry share/help/oc
+@dirrmtry share/help/nds/gpl
+@dirrmtry share/help/nds
+@dirrmtry share/help/ko/lgpl
+@dirrmtry share/help/ko/gpl
+@dirrmtry share/help/ko/fdl
+@dirrmtry share/help/ko
+@dirrmtry share/help/hu/lgpl
+@dirrmtry share/help/hu/gpl
+@dirrmtry share/help/hu/fdl
+@dirrmtry share/help/hu
+@dirrmtry share/help/gl/fdl
+@dirrmtry share/help/gl
+@dirrmtry share/help/fr/lgpl
+@dirrmtry share/help/fr/gpl
+@dirrmtry share/help/fr/fdl
+@dirrmtry share/help/fr
+@dirrmtry share/help/fi/lgpl
+@dirrmtry share/help/fi/gpl
+@dirrmtry share/help/fi
+@dirrmtry share/help/eu/lgpl
+@dirrmtry share/help/eu/gpl
+@dirrmtry share/help/eu/fdl
+@dirrmtry share/help/eu
+@dirrmtry share/help/es/lgpl
+@dirrmtry share/help/es/gpl
+@dirrmtry share/help/es/fdl
+@dirrmtry share/help/es
+@dirrmtry share/help/el/lgpl
+@dirrmtry share/help/el/gpl
+@dirrmtry share/help/el/fdl
+@dirrmtry share/help/el
+@dirrmtry share/help/de/lgpl
+@dirrmtry share/help/de/gpl
+@dirrmtry share/help/de/fdl
+@dirrmtry share/help/de
+@dirrmtry share/help/cs/gpl
+@dirrmtry share/help/cs
+@dirrmtry share/help/ca/gpl
+@dirrmtry share/help/ca/fdl
+@dirrmtry share/help/ca
+@dirrmtry share/help/ar/lgpl
+@dirrmtry share/help/ar/gpl
+@dirrmtry share/help/ar/fdl
+@dirrmtry share/help/ar
+@dirrmtry share/help/C/lgpl
+@dirrmtry share/help/C/gpl
+@dirrmtry share/help/C/fdl
+@dirrmtry share/help/C
+@dirrmtry share/help

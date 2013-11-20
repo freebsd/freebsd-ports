@@ -1,0 +1,12 @@
+--- cheese-config.h.in	2012-05-17 20:48:10.000000000 +0200
++++ cheese-config.h.in	2012-06-13 10:31:28.000000000 +0200
+@@ -6,6 +6,9 @@
+ /* Define to 1 if you have the <dlfcn.h> header file. */
+ #undef HAVE_DLFCN_H
+ 
++/* Enable hal support */
++#undef HAVE_HAL
++
+ /* Define to 1 if you have the <inttypes.h> header file. */
+ #undef HAVE_INTTYPES_H
+ 

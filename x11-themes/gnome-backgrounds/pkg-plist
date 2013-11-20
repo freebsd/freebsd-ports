@@ -1,5 +1,22 @@
-share/gnome-background-properties/gnome-abstract.xml
-share/gnome-background-properties/gnome-nature.xml
+share/backgrounds/gnome/Blinds.jpg
+share/backgrounds/gnome/BlueMarbleWest.jpg
+share/backgrounds/gnome/Chmiri.jpg
+share/backgrounds/gnome/Fabric.jpg
+share/backgrounds/gnome/FootFall.png
+share/backgrounds/gnome/Mirror.jpg
+share/backgrounds/gnome/Road.jpg
+share/backgrounds/gnome/Sandstone.jpg
+share/backgrounds/gnome/Spaceflare.jpg
+share/backgrounds/gnome/Stripes.jpg
+share/backgrounds/gnome/Stripes34.jpg
+share/backgrounds/gnome/Sunset.jpg
+share/backgrounds/gnome/Terraform-green.jpg
+share/backgrounds/gnome/Tulip.jpg
+share/backgrounds/gnome/Wood.jpg
+share/backgrounds/gnome/UnderLit.jpg
+share/backgrounds/gnome/Waves.jpg
+share/backgrounds/gnome/ZvonecKonec.jpg
+share/gnome-background-properties/gnome-backgrounds.xml
 share/locale/af/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/an/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ar/LC_MESSAGES/gnome-backgrounds.mo
@@ -42,6 +59,7 @@ share/locale/it/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ja/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ka/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/kk/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/km/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/kn/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ko/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ku/LC_MESSAGES/gnome-backgrounds.mo
@@ -81,39 +99,26 @@ share/locale/ta/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/te/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/th/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/tr/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/ug/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/uk/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/uz/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/uz@cyrillic/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/vi/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/xh/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-backgrounds.mo
-share/pixmaps/backgrounds/gnome/abstract/Flow.png
-share/pixmaps/backgrounds/gnome/abstract/Gulp.png
-share/pixmaps/backgrounds/gnome/abstract/Silk.png
-share/pixmaps/backgrounds/gnome/abstract/Spring.png
-share/pixmaps/backgrounds/gnome/abstract/Waves.png
-share/pixmaps/backgrounds/gnome/nature/Aqua.jpg
-share/pixmaps/backgrounds/gnome/nature/Blinds.jpg
-share/pixmaps/backgrounds/gnome/nature/Dune.jpg
-share/pixmaps/backgrounds/gnome/nature/FreshFlower.jpg
-share/pixmaps/backgrounds/gnome/nature/Garden.jpg
-share/pixmaps/backgrounds/gnome/nature/GreenMeadow.jpg
-share/pixmaps/backgrounds/gnome/nature/LadyBird.jpg
-share/pixmaps/backgrounds/gnome/nature/RainDrops.jpg
-share/pixmaps/backgrounds/gnome/nature/Storm.jpg
-share/pixmaps/backgrounds/gnome/nature/TwoWings.jpg
-share/pixmaps/backgrounds/gnome/nature/Wood.jpg
-share/pixmaps/backgrounds/gnome/nature/YellowFlower.jpg
-@dirrm share/pixmaps/backgrounds/gnome/nature
-@dirrm share/pixmaps/backgrounds/gnome/abstract
-@dirrmtry share/pixmaps/backgrounds/gnome
-@dirrmtry share/pixmaps/backgrounds
+@dirrmtry share/backgrounds/gnome
+@dirrmtry share/backgrounds
 @dirrmtry share/gnome-background-properties
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
 @dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
 @dirrmtry share/locale/uz@cyrillic
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
@@ -138,6 +143,8 @@ share/pixmaps/backgrounds/gnome/nature/YellowFlower.jpg
 @dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
 @dirrmtry share/locale/kk/LC_MESSAGES
 @dirrmtry share/locale/kk
 @dirrmtry share/locale/hy/LC_MESSAGES

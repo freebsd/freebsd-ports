@@ -1,10 +1,10 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/www/webkit-gtk2/Makefile,v 1.92 2013/03/09 09:12:39 kwm Exp $
+#   $MCom: ports/trunk/www/webkit-gtk2/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	webkit
 PORTVERSION=	1.8.3
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	-gtk2
@@ -21,12 +21,11 @@ LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 
 USE_XZ=		yes
-USE_PYTHON_BUILD=	-2.7
 USE_GSTREAMER=	yes
 USE_XORG=	xt
-USES=		bison gmake pkgconfig gettext perl5
+USES=		bison gettext gmake perl5 pkgconfig
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gtk20 introspection:build libxslt ltverhack
+USE_GNOME=	gtk20 libxslt ltverhack introspection:build
 USE_SQLITE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -64,6 +63,10 @@ CONFIGURE_ARGS+=--enable-debug
 CONFIGURE_ARGS+=--disable-debug
 .endif
 
+.if ${ARCH} == powerpc64
+CFLAGS+=	-mminimal-toc
+.endif
+
 CCISCLANG!=     ${CC} --version
 
 .if !empty(CCISCLANG:M*clang*)
@@ -71,10 +74,6 @@ CPPFLAGS+=	-Wno-c++11-extensions
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == powerpc64
-CFLAGS+=	-mminimal-toc
-.endif
 
 .if ${PERL_LEVEL} >= 501400
 BUILD_DEPENDS+=	p5-Switch>0:${PORTSDIR}/lang/p5-Switch
@@ -96,5 +95,10 @@ post-patch:
 		${WRKSRC}/Source/WebCore/css/makevalues.pl \
 		${WRKSRC}/Source/WebCore/css/makeprop.pl \
 		${WRKSRC}/Source/WebCore/make-hash-tools.pl
+
+post-install:
+# Add work around for epiphany 2.x gobject-introspection build.
+	${LN} -sf ${PREFIX}/libdata/pkgconfig/webkit-1.0.pc \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/webkitgtk-1.0.pc
 
 .include <bsd.port.post.mk>

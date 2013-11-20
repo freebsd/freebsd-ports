@@ -1,0 +1,11 @@
+--- panels/info/Makefile.in.orig	2011-09-17 14:54:25.000000000 +0200
++++ panels/info/Makefile.in	2011-09-17 14:54:44.000000000 +0200
+@@ -775,7 +775,7 @@
+ 	uninstall-dist_uiDATA
+ 
+ 
+-all-local: check-local
++all-local:
+ 
+ check-local: test-hostname
+ 	$(builddir)/test-hostname $(srcdir)/hostnames-test.txt > /dev/null

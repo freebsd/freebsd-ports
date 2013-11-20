@@ -1,6 +1,6 @@
---- configure.orig	2012-05-16 12:57:04.000000000 +0200
-+++ configure	2012-05-16 14:00:03.000000000 +0200
-@@ -19144,8 +19144,8 @@
+--- configure.orig	2013-06-11 12:47:07.000000000 +0200
++++ configure	2013-06-22 10:50:41.000000000 +0200
+@@ -17508,8 +17508,8 @@
  .SECONDARY: $(gsettings_SCHEMAS)
  
  gsettings__base_list = \
@@ -11,12 +11,66 @@
  
  install-gsettings-schemas: $(gsettings_SCHEMAS:.xml=.valid) $(gsettings__enum_file)
  	@$(NORMAL_INSTALL)
-@@ -20440,7 +20440,7 @@
+@@ -17518,7 +17518,7 @@
+ 	for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  echo "$$d$$p"; \
+-	done | $(gsettings__base_list) | \
++	done | \
+ 	while read files; do \
+ 	  echo " $(INSTALL_DATA) $$files '\''$(DESTDIR)$(gsettingsschemadir)'\''"; \
+ 	  $(INSTALL_DATA) $$files "$(DESTDIR)$(gsettingsschemadir)" || exit $$?; \
+@@ -19538,8 +19538,8 @@
+ $as_echo "yes" >&6; }
  
- done
+ fi
+-    FREETYPE_CFLAGS+=" $HARFBUZZ_ICU_CFLAGS"
+-    FREETYPE_LIBS+=" $HARFBUZZ_ICU_LIBS"
++    FREETYPE_CFLAGS="${FREETYPE_CFLAGS} $HARFBUZZ_ICU_CFLAGS"
++    FREETYPE_LIBS="${FREETYPE_LIBS} $HARFBUZZ_ICU_LIBS"
+ fi
  
--    OPENGL_LIBS="-lGL -ldl"
-+    OPENGL_LIBS="-lGL"
+ 
+@@ -20144,7 +20144,7 @@
+ 
+ fi
+ 
+-acceleration_backend_description=$with_acceleration_backend
++acceleration_backend_description=${with_acceleration_backend}
+ if test "$with_acceleration_backend" = "clutter"; then
+ 
+ pkg_failed=no
+@@ -20341,18 +20341,18 @@
+ 
+ if test "$with_acceleration_backend" = "opengl"; then
+     if test "$enable_gles2" = "yes"; then
+-        acceleration_backend_description+= "(gles2"
++        acceleration_backend_description="${acceleration_backend_description} (gles2"
+         OPENGL_LIBS="-lGLESv2"
+     else
+-        acceleration_backend_description+="(gl"
++        acceleration_backend_description="${acceleration_backend_description} (gl"
+         OPENGL_LIBS="-lGL"
+     fi
+     if test "$enable_egl" = "yes"; then
+-        acceleration_backend_description+=", egl"
++        acceleration_backend_description="${acceleration_backend_description}, egl"
+         OPENGL_LIBS+=" -lEGL"
+     fi
+     if test "$enable_glx" = "yes"; then
+-        acceleration_backend_description+=", glx"
++        acceleration_backend_description="${acceleration_backend_description}, glx"
+     fi
+ 
+     # Check whether dlopen() is in the core libc like on FreeBSD, or in a separate
+@@ -20405,8 +20405,8 @@
+ 
+ 
+ 
+-    OPENGL_LIBS+=" $DLOPEN_LIBS"
+-    acceleration_backend_description+=")"
++    OPENGL_LIBS="${OPENGL_LIBS} $DLOPEN_LIBS"
++    acceleration_backend_description="${acceleration_backend_description})"
  fi
  
  

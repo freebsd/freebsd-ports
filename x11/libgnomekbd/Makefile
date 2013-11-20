@@ -1,10 +1,10 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11/libgnomekbd/Makefile,v 1.48 2010/09/28 08:01:11 kwm Exp $
+#   $MCom: ports/trunk/x11/libgnomekbd/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	libgnomekbd
 PORTVERSION=	2.32.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,23 +12,19 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME keyboard shared library
 
-LIB_DEPENDS=	xklavier.12:${PORTSDIR}/x11/libxklavier
+LIB_DEPENDS=	libxklavier.so:${PORTSDIR}/x11/libxklavier
+
+CONFLICTS=	libgnomekbd-3.[0-9]*
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomeprefix gnomehack ltverhack gconf2
+USE_GNOME=	gnomeprefix ltverhack gconf2
 USE_AUTOTOOLS=	libtool
 INSTALLS_ICONS=	yes
-USES=		gettext pkgconfig
+USES=		gettext gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	desktop_gnome_peripherals_keyboard_xkb.schemas
-
-NO_STAGE=	yes
-#post-patch:
-#	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-#	    	's|-Werror||g'
 
 .include <bsd.port.mk>

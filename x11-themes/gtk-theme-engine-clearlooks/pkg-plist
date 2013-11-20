@@ -1,0 +1,6 @@
+lib/gtk-3.0/%%GTK3_VERSION%%/theming-engines/libclearlooks.la
+lib/gtk-3.0/%%GTK3_VERSION%%/theming-engines/libclearlooks.so
+share/gtk-theme-engine-clearlooks/3.0/clearlooks.xml
+@dirrm share/gtk-theme-engine-clearlooks/3.0
+@dirrm share/gtk-theme-engine-clearlooks
+@dirrm lib/gtk-3.0/%%GTK3_VERSION%%/theming-engines

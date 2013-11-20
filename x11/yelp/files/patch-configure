@@ -1,0 +1,13 @@
+--- configure.orig	2010-08-14 15:11:31.000000000 -0400
++++ configure	2010-08-14 15:12:05.000000000 -0400
+@@ -2984,8 +2984,8 @@ install-data-am: install-gsettings-schem
+ .SECONDARY: $(gsettings_SCHEMAS)
+ 
+ gsettings__base_list = \
+-  sed "$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g" | \
+-  sed "$$!N;$$!N;$$!N;$$!N;s/\n/ /g"
++  sed '\''$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g'\'' | \
++  sed '\''$$!N;$$!N;$$!N;$$!N;s/\n/ /g'\''
+ 
+ install-gsettings-schemas: $(gsettings_SCHEMAS:.xml=.valid) $(gsettings__enum_file)
+ 	@$(NORMAL_INSTALL)

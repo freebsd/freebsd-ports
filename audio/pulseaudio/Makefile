@@ -1,34 +1,35 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports-stable/audio/pulseaudio/Makefile,v 1.7 2010/06/25 20:35:01 kwm Exp $
-
-# !!!NOTE!!! Any PORTVERSION update to this port must be accompanied by
-# PORTREVISION bumps to audio/gnome-media, sysutils/gnome-settings-daemon,
-# and audio/gstreamer-plugins-pulse.
+#   $MCom: ports/trunk/audio/pulseaudio/Makefile 18611 2013-06-30 16:33:55Z marcus $
 #
+# !!!NOTE!!! Any PORTVERSION update to this port must be accompanied by
+# PORTREVISION bumps of depending ports.
 
 PORTNAME=	pulseaudio
-PORTVERSION=	0.9.23
-PORTREVISION=	2
+PORTVERSION=	4.0
 CATEGORIES=	audio
 MASTER_SITES=	http://freedesktop.org/software/pulseaudio/releases/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Sound server for UNIX
 
-LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
-		sndfile.1:${PORTSDIR}/audio/libsndfile \
-		speexdsp.1:${PORTSDIR}/audio/speex \
-		dbus-1.3:${PORTSDIR}/devel/dbus \
-		gdbm.4:${PORTSDIR}/databases/gdbm \
-		execinfo:${PORTSDIR}/devel/libexecinfo \
-		ck-connector.0:${PORTSDIR}/sysutils/consolekit
+# keep the json version otherwise it will match json-glib
+LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
+		libsndfile.so:${PORTSDIR}/audio/libsndfile \
+		libspeexdsp.so:${PORTSDIR}/audio/speex \
+		libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
+		liborc-0.4.so:${PORTSDIR}/devel/orc \
+		libjson.so:${PORTSDIR}/devel/json-c \
+		libdbus-1.so:${PORTSDIR}/devel/dbus \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libck-connector.so:${PORTSDIR}/sysutils/consolekit
 
-USE_GNOME=	gnomehack glib20 intltool ltverhack
-NO_STAGE=	yes
+USE_XZ=		yes
+USE_GNOME=	glib20 intltool ltverhack gnomehier
 USE_XORG=	x11 sm xtst ice
 USE_LDCONFIG=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libltdl libtool
 MAKE_JOBS_UNSAFE=yes
@@ -37,39 +38,33 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		OPENSSL_CFLAGS="-I/usr/include" \
 		OPENSSL_LIBS="-lcrypto -lssl" \
 		LIBS="-lm -lintl" \
-		ac_cv_header_linux_input_h=
+		ac_cv_header_linux_input_h=""
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if ${CC} == clang
-CFLAGS+=	-fheinous-gnu-extensions
-.endif
-
 CONFIGURE_ARGS=	--localstatedir=/var \
-		--with-database=gdbm \
+		--with-database=simple \
 		--without-caps \
-		--disable-alsa \
 		--disable-udev \
-		--disable-gtk2 \
+		--disable-gtk3 \
+		--disable-neon-opt \
 		--disable-lirc # untested
+
+#FIXME --with-database=auto|tdb|gdbm|simple
 
 USERS=		pulse
 GROUPS=		pulse pulse-access pulse-rt
 
-OPTIONS_DEFINE=	JACK AVAHI HAL GCONF
-OPTIONS_DEFAULT=	AVAHI HAL GCONF
+OPTIONS_DEFINE=	JACK AVAHI GCONF ALSA SIMD
+OPTIONS_DEFAULT=AVAHI GCONF SIMD
 
 PULSE_VERSION=	${PORTVERSION}
 PLIST_SUB=	PULSE_VERSION=${PULSE_VERSION}
 
-MAN1=		esdcompat.1 pabrowse.1 pacat.1 pacmd.1 pactl.1 padsp.1 \
-		paplay.1 pasuspender.1 pax11publish.1 pulseaudio.1
-MAN5=		default.pa.5 pulse-client.conf.5 pulse-daemon.conf.5
-
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
 PLIST_SUB+=	JACK=""
 .else
 PLIST_SUB+=	JACK="@comment "
@@ -77,19 +72,11 @@ CONFIGURE_ARGS+=--disable-jack
 .endif
 
 .if ${PORT_OPTIONS:MAVAHI}
-LIB_DEPENDS+=	avahi-client.3:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS+=	libavahi-client.so:${PORTSDIR}/net/avahi-app
 PLIST_SUB+=	AVAHI=""
 .else
 CONFIGURE_ARGS+=--disable-avahi
 PLIST_SUB+=	AVAHI="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MHAL}
-LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
-PLIST_SUB+=	HAL=""
-.else
-CONFIGURE_ARGS+=--disable-hal
-PLIST_SUB+=	HAL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGCONF}
@@ -100,6 +87,24 @@ CONFIGURE_ARGS+=--disable-gconf
 PLIST_SUB+=	GCONF="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MALSA}
+LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
+PLIST_SUB+=	ALSA=""
+.else
+CONFIGURE_ARGS+=--disable-alsa
+PLIST_SUB+=	ALSA="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MSIMD}
+LIB_DEPENDS+=	liborc-0.4.so:${PORTSDIR}/devel/orc
+CONFIGURE_ARGS+=--enable-orc
+.else
+CONFIGURE_ARGS+=--disable-orc
+.endif
+
+.include <bsd.port.pre.mk>
+
+# OSVERSION wasn't bumped after the MFC. So we need to use the next bump.
 .if ((${OSVERSION} >= 800000) && (${OSVERSION} < 802504)) || \
 	((${OSVERSION} >= 900000) && (${OSVERSION} < 900037))
 EXTRA_PATCHES+=	${FILESDIR}/extra-src_modules_oss_module-oss.c
@@ -112,14 +117,13 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-	${MKDIR} ${PREFIX}/etc/pulse
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/pulse
 .for ii in default.pa daemon.conf client.conf system.pa
 	${INSTALL_DATA} ${WRKSRC}/src/${ii} \
-		${PREFIX}/etc/pulse/${ii}-dist
-. if !exists(${PREFIX}/etc/pulse/${II})
-	${INSTALL_DATA} ${WRKSRC}/src/${ii} \
-		${PREFIX}/etc/pulse/${ii}
-. endif
+		${STAGEDIR}${PREFIX}/etc/pulse/${ii}-dist
 .endfor
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pulseaudio/libpulse*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpulse*.so*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pulse-${PORTVERSION}/modules/*.so
 
 .include <bsd.port.post.mk>

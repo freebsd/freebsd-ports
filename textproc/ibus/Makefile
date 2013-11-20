@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ibus
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5.2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -13,21 +13,21 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:${PORTSDIR}/devel/py-dbus \
+		vapigen:${PORTSDIR}/lang/vala-vapigen \
 		librsvg2>=2.0:${PORTSDIR}/graphics/librsvg2
+LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify \
 		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
 		librsvg2>=2.0:${PORTSDIR}/graphics/librsvg2
-LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 USE_PYTHON=	yes
-USE_GNOME=	pygtk2 gconf2
 
 USE_LDCONFIG=	yes
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-GCONF_SCHEMAS=	ibus.schemas
+GLIB_SCHEMAS=	org.freedesktop.ibus.gschema.xml
 
 OPTIONS_DEFINE=	ISOCODES NLS GTK3 VALA GINTRO
 OPTIONS_DEFAULT=	ISOCODES GTK3 VALA GINTRO
@@ -37,7 +37,6 @@ GTK3_DESC=	Install GTK3 client
 VALA_DESC=	Install vala binding
 GINTRO_DESC=	Install GObject Introspection data
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MISOCODES}
@@ -56,7 +55,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGTK3}
-USE_GNOME+=	gtk30
+USE_GNOME+=	gtk30 dconf
 PLIST_SUB+=	GTK3=""
 .else
 CONFIGURE_ARGS+=	--disable-gtk3
@@ -72,8 +71,7 @@ PLIST_SUB+=	VALA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGINTRO}
-BUILD_DEPENDS+=		gobject-introspection>=0.6.8:${PORTSDIR}/devel/gobject-introspection
-RUN_DEPENDS+=		gobject-introspection>=0.6.8:${PORTSDIR}/devel/gobject-introspection
+USE_GNOME+=		introspection:build
 CONFIGURE_ARGS+=	--enable-introspection=yes
 PLIST_SUB+=		GINTRO=""
 .else
@@ -85,19 +83,17 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/share/xml/iso-codes/|${LOCALBASE}/share/xml/iso-codes/|g' ${WRKSRC}/ibus/lang.py
 	@${REINPLACE_CMD} -e 's|locale.bind_textdomain_codeset|gettext.bind_textdomain_codeset|g' ${WRKSRC}/setup/main.py
-	@${REINPLACE_CMD} -e 's|locale.bind_textdomain_codeset|gettext.bind_textdomain_codeset|g' ${WRKSRC}/ui/gtk/main.py
-	@${REINPLACE_CMD} -e 's|import locale|import gettext|g' ${WRKSRC}/ui/gtk/main.py
+#	@${REINPLACE_CMD} -e 's|locale.bind_textdomain_codeset|gettext.bind_textdomain_codeset|g' ${WRKSRC}/ui/gtk/main.py
+#	@${REINPLACE_CMD} -e 's|import locale|import gettext|g' ${WRKSRC}/ui/gtk/main.py
 	@${REINPLACE_CMD} -e 's|setpgrp ()|setpgrp (0,0)|g' ${WRKSRC}/bus/main.c
 	@${REINPLACE_CMD} -e 's|/var/lib/dbus|/var/db/dbus|g' ${WRKSRC}/src/ibusshare.c #devel/dbus/files/dbus.in
+	@${REINPLACE_CMD} -e 's|-Wno-unused-but-set-variable||g' \
+		${WRKSRC}/engine/Makefile.in ${WRKSRC}/tools/Makefile.in \
+		${WRKSRC}/ui/gtk3/Makefile.in
 
 post-install:
-	@${MKDIR} ${PREFIX}/etc/xdg/autostart
-	@${INSTALL_DATA} ${WRKSRC}/bus/ibus.desktop ${PREFIX}/etc/xdg/autostart
-.	if ${PORT_OPTIONS:MGTK3}
-		@${LOCALBASE}/bin/gtk-query-immodules-3.0 > ${LOCALBASE}/lib/gtk-3.0/${GTK3_VERSION}/immodules.cache
-.	endif
-	@${LOCALBASE}/bin/gtk-query-immodules-2.0 > ${LOCALBASE}/etc/gtk-2.0/gtk.immodules
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/xdg/autostart
+	@${INSTALL_DATA} ${WRKSRC}/bus/ibus.desktop ${STAGEDIR}${PREFIX}/etc/xdg/autostart
 	@${ECHO} To display this message again, type ${PKG_INFO} -D ${PKGNAME}
 
 .include <bsd.port.mk>

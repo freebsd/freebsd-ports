@@ -1,6 +1,6 @@
 #!/bin/sh
 # $FreeBSD$
-#    $MCom: ports/x11/gdm/files/gdm.in,v 1.50 2012/01/15 18:18:36 kwm Exp $
+#    $MCom: ports/trunk/x11/gdm3/files/gdm.in 18610 2013-06-30 16:33:05Z marcus $
 
 # PROVIDE: gdm
 # REQUIRE: LOGIN cleanvar moused syscons dbus
@@ -25,6 +25,7 @@ command="%%PREFIX%%/sbin/${name}"
 pidfile="/var/run/${name}.pid"
 procname="%%PREFIX%%/sbin/gdm-binary"
 start_cmd="gdm_start"
+stop_postcmd="gdm_poststop"
 
 gdm_start()
 {
@@ -56,6 +57,11 @@ gdm_start()
 	iter=$(expr ${iter} + 1)
     done
     LANG=${gdm_lang} ${command} ${gdm_flags} ) &
+}
+
+gdm_poststop()
+{
+	pkill gdm-session-worker
 }
 
 load_rc_config ${name}

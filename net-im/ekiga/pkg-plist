@@ -4,6 +4,7 @@ bin/ekiga-config-tool
 %%GCONF%%etc/ekiga/ekiga.schemas
 lib/ekiga/%%VERSION%%/libekiga.so
 lib/ekiga/%%VERSION%%/libekiga.la
+man/man1/ekiga.1.gz
 %%AVAHI%%lib/ekiga/%%VERSION%%/plugins/libgmavahi.so
 %%AVAHI%%lib/ekiga/%%VERSION%%/plugins/libgmavahi.la
 %%EVOLUTION%%lib/ekiga/4.0.1/plugins/libgmevolution.la

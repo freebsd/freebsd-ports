@@ -1,5 +1,6 @@
+# Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/net-im/telepathy-salut/Makefile,v 1.9 2012/08/17 19:06:46 kwm Exp $
+#   $MCom: ports/trunk/net-im/telepathy-salut/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	telepathy-salut
 PORTVERSION=	0.8.0
@@ -9,14 +10,14 @@ MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Link-local Connection Manager for Telepathy Framework
 
-LIB_DEPENDS=	avahi-glib.1:${PORTSDIR}/net/avahi-app \
-		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib \
-		soup-2.4.1:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS=	libavahi-glib.so:${PORTSDIR}/net/avahi-app \
+		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
+		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 
+NO_STAGE=	yes
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack glib20 libxslt:build
+USES=		gmake pathfix pkgconfig
+USE_GNOME=	glib20 libxslt:build
 USE_OPENSSL=	yes
 USE_PYTHON_BUILD=	yes
 USE_SQLITE=	3
@@ -26,7 +27,6 @@ LDFLAGS+=	${PTHREAD_LIBS}
 
 MAN8=		telepathy-salut.8
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|make -C|${GMAKE} -C|g' \
 		${WRKSRC}/src/Makefile.in \

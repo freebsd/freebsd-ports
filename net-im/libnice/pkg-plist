@@ -16,9 +16,6 @@ include/stun/usages/ice.h
 include/stun/usages/timer.h
 include/stun/usages/turn.h
 include/stun/win32_common.h
-lib/gstreamer-0.10/libgstnice010.a
-lib/gstreamer-0.10/libgstnice010.la
-lib/gstreamer-0.10/libgstnice010.so
 lib/libnice.a
 lib/libnice.la
 lib/libnice.so

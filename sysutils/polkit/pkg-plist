@@ -71,6 +71,7 @@ share/gir-1.0/PolkitAgent-1.0.gir
 share/locale/da/LC_MESSAGES/polkit-1.mo
 share/polkit-1/actions/org.freedesktop.policykit.examples.pkexec.policy
 share/polkit-1/actions/org.freedesktop.policykit.policy
+@dirrmtry share/polkit-1/rules.d
 @dirrmtry share/polkit-1/actions
 @dirrmtry share/polkit-1
 @dirrm lib/polkit-1/extensions
@@ -95,5 +96,7 @@ share/polkit-1/actions/org.freedesktop.policykit.policy
 @dirrmtry var/lib/polkit-1/localauthority/20-org.d
 @dirrmtry var/lib/polkit-1/localauthority/10-vendor.d
 @dirrmtry var/lib/polkit-1/localauthority
+@dirrmtry var/lib/polkit-1/localauthority
 @dirrmtry var/lib/polkit-1
 @dirrmtry var/lib
+@cwd

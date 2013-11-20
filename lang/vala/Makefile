@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
-# $FreeBSD$
-#   $MCom: ports/trunk/lang/vala/Makefile 18634 2013-07-26 10:42:35Z kwm $
+# $FreeBSD: head/lang/vala/Makefile 313635 2013-03-08 11:32:11Z bapt $
+#   $MCom: ports/trunk/lang/vala/Makefile 18692 2013-09-22 00:45:30Z kwm $
 
 PORTNAME=	vala
 PORTVERSION=	0.20.1
@@ -12,6 +12,7 @@ COMMENT=	Programming language and compiler that converts Vala code into C code
 
 LICENSE=	LGPL21
 
+NO_STAGE=	yes
 USES=		bison gettext gmake pathfix pkgconfig
 USE_XZ=		yes
 USE_GNOME=	glib20 gnomeprefix libxslt
@@ -26,7 +27,7 @@ VALA_VER=	${PORTVERSION:R}
 PLIST_SUB=	VERSION=${VALA_VER}
 
 .if defined(VALA_SLAVE)
-LIB_DEPENDS+=	vala-${VALA_VER}.0:${PORTSDIR}/lang/vala
+LIB_DEPENDS+=	libvala-${VALA_VER}.so:${PORTSDIR}/lang/vala
 CONFIGURE_ARGS+=--enable-vapigen
 BUILD_DEPENDS+=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 RUN_DEPENDS+=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
@@ -35,7 +36,6 @@ MAN1=		vala-gen-introspect.1 vapigen.1
 CONFIGURE_ARGS+=--disable-vapigen
 .endif
 
-NO_STAGE=	yes
 post-patch:
 # We cheat here, because vala records vapigen related stuff in its .pc file
 # This makes vapigen work again, although it might get weird when

@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-# $FreeBSD$
-#   $MCom: ports/x11-toolkits/gtksourceview3/Makefile,v 1.21 2012/05/31 11:57:38 kwm Exp $
+# $FreeBSD: head/x11-toolkits/gtksourceview3/Makefile 316407 2013-04-24 07:35:40Z ak $
+#   $MCom: ports/trunk/x11-toolkits/gtksourceview3/Makefile 18771 2013-10-06 11:56:38Z kwm $
 
 PORTNAME=	gtksourceview
-PORTVERSION=	3.4.2
+PORTVERSION=	3.6.3
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	3
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A text widget that adds syntax highlighting to the GtkTextView widget
+COMMENT=	Text widget that adds syntax highlighting to the GtkTextView widget
 
 USE_XZ=		yes
 
@@ -19,14 +19,13 @@ USE_XZ=		yes
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USES=		pathfix gettext gmake pkgconfig
-USE_GNOME=	gnomeprefix gtk30 libxml2 intlhack ltverhack referencehack
+USES=		gettext gmake pathfix pkgconfig
+USE_GNOME=	gnomeprefix gtk30 intlhack libxml2 ltverhack referencehack
 CONFIGURE_ARGS=	--enable-compile-warnings=no --enable-glade-catalog=no \
 		--enable-introspection
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|--warn-all||g' \
 		${WRKSRC}/gtksourceview/Makefile.in

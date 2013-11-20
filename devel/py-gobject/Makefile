@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/devel/py-gobject/Makefile,v 1.58 2012/12/30 18:15:16 mezz Exp $
+#   $MCom: ports/trunk/devel/py-gobject/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gobject
 PORTVERSION=	2.28.6
@@ -18,25 +18,22 @@ COMMENT=	Python bindings for GObject
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
-		${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
-LIB_DEPENDS+=	ffi:${PORTSDIR}/devel/libffi
-RUN_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
-		${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
+LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
 
-USES=		pathfix pkgconfig
+NO_STAGE=	yes
 USE_XZ=		yes
-USE_GMAKE=	yes
-USE_GNOME=	glib20
+USES=		gmake pathfix pkgconfig
+USE_GNOME=	glib20 introspection:build
 USE_PYTHON=	2.5+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-docs --disable-introspection --with-ffi
+CONFIGURE_ARGS=	--disable-docs --disable-introspection
 
 CONFLICTS=	py*-gtk-0*
 PLIST_SUB=	PYTHON_VER="${PYTHON_VER}"
 
-NO_STAGE=	yes
 post-install:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
 		${PREFIX}/share/pygobject/2.0/codegen

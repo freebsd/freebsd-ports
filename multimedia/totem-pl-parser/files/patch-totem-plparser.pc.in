@@ -1,0 +1,11 @@
+--- totem-plparser.pc.in.orig	2011-11-23 11:55:25.000000000 +0100
++++ totem-plparser.pc.in	2011-11-23 11:55:34.000000000 +0100
+@@ -9,7 +9,7 @@
+ Description: Totem Playlist Parser library
+ Version: @VERSION@
+ Requires: glib-2.0 gobject-2.0 gio-2.0
+-Requires.private: gthread-2.0 libxml-2.0 @GMIME@ @QUVI@ @ARCHIVE@
++Requires.private: gthread-2.0 libxml-2.0 @GMIME@ @QUVI@
+ Libs: -L${libdir} -ltotem-plparser
+ Cflags: -I${includedir}/totem-pl-parser/1/plparser
+ uselibcamel=@USEGMIME@

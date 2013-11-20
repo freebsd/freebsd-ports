@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/x11-toolkits/pangomm/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	pangomm
-PORTVERSION=	2.28.4
+PORTVERSION=	2.34.0
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
@@ -29,7 +29,6 @@ CONFIGURE_ARGS=	--disable-documentation \
 
 PLIST_SUB=	VERSION="2.4" API_VERSION="1.4"
 
-NO_STAGE=	yes
 post-patch:
 .for d in tests
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/${d}//' \

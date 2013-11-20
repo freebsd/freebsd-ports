@@ -1,0 +1,11 @@
+--- data/00-upstream-settings.orig	2013-08-26 09:40:51.130280797 +0000
++++ data/00-upstream-settings	2013-08-26 09:41:19.482277022 +0000
+@@ -13,7 +13,7 @@
+ show-desktop-icons=false
+ 
+ [org/gnome/desktop/default-applications/terminal]
+-exec='/bin/true'
++exec='/usr/bin/true'
+ 
+ [org/gnome/desktop/interface]
+ toolkit-accessibility=true

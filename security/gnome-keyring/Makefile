@@ -1,5 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
+#   $MCom: ports/trunk/security/gnome-keyring/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gnome-keyring
 PORTVERSION=	2.32.1
@@ -11,13 +12,16 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Program that keeps passwords and other secrets
 
-LIB_DEPENDS=	gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring
+LIB_DEPENDS=	libtasn1.so:${PORTSDIR}/security/libtasn1 \
+		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 
+CONFLICTS=	gnome-keyring-3.[0-9]* gcr-3.[0-9]*
+
+NO_STAGE=	yes
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnomeprefix gtk20 ltverhack intlhack
-USE_GMAKE=	yes
-USES=		gettext pkgconfig
+USE_GNOME=	gnomeprefix gtk20 ltverhack intlhack
+USES=		gettext gmake pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-pam-dir="${PREFIX}/lib" \
@@ -27,5 +31,4 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GLIB_SCHEMAS=	org.gnome.crypto.cache.gschema.xml \
 		org.gnome.crypto.pgp.gschema.xml
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

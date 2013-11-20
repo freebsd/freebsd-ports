@@ -1,0 +1,934 @@
+bin/cinnamon
+bin/cinnamon-extension-tool
+bin/cinnamon-launcher
+bin/cinnamon-looking-glass
+bin/cinnamon-menu-editor
+bin/cinnamon-screensaver-lock-dialog
+bin/cinnamon-settings
+bin/cinnamon2d
+bin/gnome-session-cinnamon
+bin/gnome-session-cinnamon2d
+etc/xdg/menus/cinnamon-applications.menu
+etc/xdg/menus/cinnamon-applications-merged
+lib/cinnamon/Cinnamon-0.1.typelib
+lib/cinnamon/Gvc-1.0.typelib
+lib/cinnamon/St-1.0.typelib
+lib/cinnamon/libcinnamon.la
+lib/cinnamon/libcinnamon.so
+lib/mozilla/plugins/libcinnamon-browser-plugin.la
+lib/mozilla/plugins/libcinnamon-browser-plugin.so
+libexec/cinnamon/cinnamon-hotplug-sniffer
+libexec/cinnamon/cinnamon-perf-helper
+man/man1/cinnamon-extension-tool.1.gz
+man/man1/cinnamon-launcher.1.gz
+man/man1/cinnamon-menu-editor.1.gz
+man/man1/cinnamon-settings.1.gz
+man/man1/cinnamon.1.gz
+man/man1/cinnamon2d.1.gz
+man/man1/gnome-session-cinnamon.1.gz
+man/man1/gnome-session-cinnamon2d.1.gz
+share/applications/cinnamon-add-panel-launcher.desktop
+share/applications/cinnamon-menu-editor.desktop
+share/applications/cinnamon-settings.desktop
+share/applications/cinnamon.desktop
+share/applications/cinnamon2d.desktop
+share/cinnamon-looking-glass/cinnamon-looking-glass.py
+%%DATADIR%%-looking-glass/lookingglass_proxy.py
+share/cinnamon-looking-glass/page_extensions.py
+share/cinnamon-looking-glass/page_inspect.py
+share/cinnamon-looking-glass/page_log.py
+share/cinnamon-looking-glass/page_memory.py
+share/cinnamon-looking-glass/page_results.py
+share/cinnamon-looking-glass/page_windows.py
+share/cinnamon-looking-glass/pageutils.py
+share/cinnamon-menu-editor/cinnamon-menu-editor.ui
+share/cinnamon-menu-editor/cme/MainWindow.py
+share/cinnamon-menu-editor/cme/MenuEditor.py
+share/cinnamon-menu-editor/cme/__init__.py
+share/cinnamon-menu-editor/cme/config.py
+share/cinnamon-menu-editor/cme/util.py
+share/cinnamon-settings/bin/ExtensionCore.py
+share/cinnamon-settings/bin/SettingsWidgets.py
+share/cinnamon-settings/bin/Spices.py
+share/cinnamon-settings/bin/XletSettings.py
+share/cinnamon-settings/bin/XletSettingsWidgets.py
+share/cinnamon-settings/bin/capi.py
+share/cinnamon-settings/bin/eyedropper.py
+share/cinnamon-settings/bin/imtools.py
+share/cinnamon-settings/bin/installSchema.py
+share/cinnamon-settings/bin/removeSchema.py
+share/cinnamon-settings/bin/xlet-settings.ui
+share/cinnamon-settings/cinnamon-settings.py
+share/cinnamon-settings/cinnamon-settings.ui
+share/cinnamon-settings/data/cinnamon.png
+share/cinnamon-settings/data/icons/applets.svg
+share/cinnamon-settings/data/icons/backgrounds.svg
+share/cinnamon-settings/data/icons/bluetooth.svg
+share/cinnamon-settings/data/icons/cat-appearance.svg
+share/cinnamon-settings/data/icons/cat-hardware.svg
+share/cinnamon-settings/data/icons/cat-prefs.svg
+share/cinnamon-settings/data/icons/clock.svg
+share/cinnamon-settings/data/icons/color.svg
+share/cinnamon-settings/data/icons/default-applications.svg
+share/cinnamon-settings/data/icons/desklets.svg
+share/cinnamon-settings/data/icons/desktop-effects.svg
+share/cinnamon-settings/data/icons/desktop.svg
+share/cinnamon-settings/data/icons/details.svg
+share/cinnamon-settings/data/icons/display.svg
+share/cinnamon-settings/data/icons/drivers.svg
+share/cinnamon-settings/data/icons/extensions.svg
+share/cinnamon-settings/data/icons/firewall.svg
+share/cinnamon-settings/data/icons/fonts.svg
+share/cinnamon-settings/data/icons/general.svg
+share/cinnamon-settings/data/icons/keyboard.svg
+share/cinnamon-settings/data/icons/language.svg
+share/cinnamon-settings/data/icons/login.svg
+share/cinnamon-settings/data/icons/menu.svg
+share/cinnamon-settings/data/icons/mouse.svg
+share/cinnamon-settings/data/icons/network.svg
+share/cinnamon-settings/data/icons/overview.svg
+share/cinnamon-settings/data/icons/panel.svg
+share/cinnamon-settings/data/icons/power.svg
+share/cinnamon-settings/data/icons/printer.svg
+share/cinnamon-settings/data/icons/region.svg
+share/cinnamon-settings/data/icons/screen.svg
+share/cinnamon-settings/data/icons/screensaver.svg
+share/cinnamon-settings/data/icons/sound.svg
+share/cinnamon-settings/data/icons/sources.svg
+share/cinnamon-settings/data/icons/startup-programs.svg
+share/cinnamon-settings/data/icons/themes.svg
+share/cinnamon-settings/data/icons/universal-access.svg
+share/cinnamon-settings/data/icons/user-accounts.svg
+share/cinnamon-settings/data/icons/windows.svg
+share/cinnamon-settings/data/icons/workspaces.svg
+share/cinnamon-settings/data/inactive.png
+share/cinnamon-settings/data/installed.svg
+share/cinnamon-settings/data/running.svg
+share/cinnamon-settings/data/spices/applet-detail.html
+share/cinnamon-settings/data/spices/jquery.js
+share/cinnamon-settings/data/system.svg
+share/cinnamon-settings/data/update.svg
+share/cinnamon-settings/data/user.png
+share/cinnamon-settings/modules/cs_applets.py
+share/cinnamon-settings/modules/cs_backgrounds.py
+share/cinnamon-settings/modules/cs_calendar.py
+share/cinnamon-settings/modules/cs_default.py
+share/cinnamon-settings/modules/cs_desklets.py
+share/cinnamon-settings/modules/cs_desktop.py
+share/cinnamon-settings/modules/cs_effects.py
+share/cinnamon-settings/modules/cs_extensions.py
+share/cinnamon-settings/modules/cs_fonts.py
+share/cinnamon-settings/modules/cs_general.py
+share/cinnamon-settings/modules/cs_hotcorner.py
+share/cinnamon-settings/modules/cs_info.py
+share/cinnamon-settings/modules/cs_keyboard.py
+share/cinnamon-settings/modules/cs_menu.py
+share/cinnamon-settings/modules/cs_mouse.py
+share/cinnamon-settings/modules/cs_panel.py
+share/cinnamon-settings/modules/cs_screensaver.py
+share/cinnamon-settings/modules/cs_themes.py
+share/cinnamon-settings/modules/cs_windows.py
+share/cinnamon-settings/modules/cs_workspaces.py
+share/cinnamon-screensaver-lock-dialog/cinnamon-screensaver-lock-dialog.glade
+share/cinnamon-screensaver-lock-dialog/cinnamon-screensaver-lock-dialog.py
+share/cinnamon/applets/a11y@cinnamon.org/applet.js
+share/cinnamon/applets/a11y@cinnamon.org/metadata.json
+share/cinnamon/applets/bluetooth@cinnamon.org/applet.js
+share/cinnamon/applets/bluetooth@cinnamon.org/metadata.json
+share/cinnamon/applets/brightness@cinnamon.org/applet.js
+share/cinnamon/applets/brightness@cinnamon.org/metadata.json
+share/cinnamon/applets/calendar@cinnamon.org/applet.js
+share/cinnamon/applets/calendar@cinnamon.org/metadata.json
+share/cinnamon/applets/expo@cinnamon.org/applet.js
+share/cinnamon/applets/expo@cinnamon.org/cinnamon-expo-symbolic.svg
+share/cinnamon/applets/expo@cinnamon.org/icon.png
+share/cinnamon/applets/expo@cinnamon.org/metadata.json
+share/cinnamon/applets/keyboard@cinnamon.org/applet.js
+share/cinnamon/applets/keyboard@cinnamon.org/flags/aa.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ad.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ae.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/af.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ag.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ai.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/al.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/am.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ao.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/aq.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ar.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ara.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/as.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/at.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/au.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/aw.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ax.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/az.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ba.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/bb.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/bd.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/be.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/bf.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/bg.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/bh.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/bi.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/bj.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/bl.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/bm.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/bn.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/bo.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/bq.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/br.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/brai.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/bs.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/bt.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/bv.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/bw.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/by.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/bz.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ca.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/cc.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/cd.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/cf.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/cg.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ch.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ci.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ck.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/cl.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/cm.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/cn.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/co.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/cr.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/cu.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/cv.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/cw.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/cx.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/cy.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/cz.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/de.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/dj.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/dk.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/dm.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/do.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/dz.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ec.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ee.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/eg.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/eh.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/epo.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/er.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/es.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/et.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/fi.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/fj.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/fk.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/fm.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/fo.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/fr.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ga.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/gb.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/gd.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ge.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/gf.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/gg.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/gh.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/gi.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/gl.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/gm.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/gn.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/gp.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/gq.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/gr.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/gs.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/gt.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/gu.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/gw.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/gy.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/hk.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/hm.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/hn.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/hr.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ht.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/hu.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/id.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ie.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/il.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/im.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/in.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/io.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/iq.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ir.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/is.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/it.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/je.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/jm.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/jo.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/jp.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ke.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/kg.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/kh.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ki.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/km.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/kn.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/kp.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/kr.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/kw.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ky.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/kz.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/la.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/lb.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/lc.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/li.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/lk.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/lr.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ls.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/lt.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/lu.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/lv.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ly.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ma.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/mc.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/md.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/me.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/mf.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/mg.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/mh.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/mk.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ml.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/mm.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/mn.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/mo.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/mp.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/mq.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/mr.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ms.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/mt.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/mu.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/mv.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/mw.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/mx.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/my.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/mz.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/na.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/nc.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ne.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/nf.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ng.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ni.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/nl.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/no.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/np.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/nr.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/nu.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/nz.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/om.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/pa.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/pe.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/pf.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/pg.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ph.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/pk.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/pl.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/pm.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/pn.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/pr.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ps.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/pt.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/pw.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/py.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/qa.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/re.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ro.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/rs.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ru.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/rw.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/sa.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/sb.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/sc.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/sd.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/se.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/sg.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/sh.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/si.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/sj.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/sk.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/sl.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/sm.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/sn.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/so.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/sr.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ss.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/st.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/sv.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/sx.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/sy.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/sz.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/tc.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/td.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/tf.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/tg.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/th.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/tj.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/tk.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/tl.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/tm.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/tn.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/to.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/tr.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/tt.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/tv.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/tw.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/tz.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ua.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ug.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/um.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/us.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/uy.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/uz.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/va.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/vc.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ve.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/vg.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/vi.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/vn.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/vu.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/wf.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ws.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/ye.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/yt.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/za.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/zm.png
+share/cinnamon/applets/keyboard@cinnamon.org/flags/zw.png
+share/cinnamon/applets/keyboard@cinnamon.org/metadata.json
+share/cinnamon/applets/menu@cinnamon.org/applet.js
+share/cinnamon/applets/menu@cinnamon.org/metadata.json
+share/cinnamon/applets/network@cinnamon.org/applet.js
+share/cinnamon/applets/network@cinnamon.org/metadata.json
+share/cinnamon/applets/notifications@cinnamon.org/alt-critical-notif-symbolic.svg
+share/cinnamon/applets/notifications@cinnamon.org/applet.js
+share/cinnamon/applets/notifications@cinnamon.org/critical-notif-symbolic.svg
+share/cinnamon/applets/notifications@cinnamon.org/empty-notif-symbolic.svg
+share/cinnamon/applets/notifications@cinnamon.org/icon.svg
+share/cinnamon/applets/notifications@cinnamon.org/low-notif-symbolic.svg
+share/cinnamon/applets/notifications@cinnamon.org/metadata.json
+share/cinnamon/applets/notifications@cinnamon.org/normal-notif-symbolic.svg
+share/cinnamon/applets/panel-launchers@cinnamon.org/applet.js
+share/cinnamon/applets/panel-launchers@cinnamon.org/cinnamon-add-panel-launcher.glade
+share/cinnamon/applets/panel-launchers@cinnamon.org/cinnamon-add-panel-launcher.py
+share/cinnamon/applets/panel-launchers@cinnamon.org/metadata.json
+share/cinnamon/applets/power@cinnamon.org/applet.js
+share/cinnamon/applets/power@cinnamon.org/metadata.json
+share/cinnamon/applets/recent@cinnamon.org/applet.js
+share/cinnamon/applets/recent@cinnamon.org/metadata.json
+share/cinnamon/applets/removable-drives@cinnamon.org/applet.js
+share/cinnamon/applets/removable-drives@cinnamon.org/metadata.json
+share/cinnamon/applets/scale@cinnamon.org/applet.js
+share/cinnamon/applets/scale@cinnamon.org/cinnamon-scale-symbolic.svg
+share/cinnamon/applets/scale@cinnamon.org/icon.png
+share/cinnamon/applets/scale@cinnamon.org/metadata.json
+share/cinnamon/applets/separator@cinnamon.org/applet.js
+share/cinnamon/applets/separator@cinnamon.org/metadata.json
+share/cinnamon/applets/settings@cinnamon.org/applet.js
+share/cinnamon/applets/settings@cinnamon.org/metadata.json
+share/cinnamon/applets/settings-example@cinnamon.org/applet.js
+share/cinnamon/applets/settings-example@cinnamon.org/metadata.json
+share/cinnamon/applets/settings-example@cinnamon.org/settings-schema.json
+share/cinnamon/applets/show-desktop@cinnamon.org/applet.js
+share/cinnamon/applets/show-desktop@cinnamon.org/metadata.json
+share/cinnamon/applets/spacer@cinnamon.org/applet.js
+share/cinnamon/applets/spacer@cinnamon.org/metadata.json
+share/cinnamon/applets/spacer@cinnamon.org/settings-schema.json
+share/cinnamon/applets/sound@cinnamon.org/applet.js
+share/cinnamon/applets/sound@cinnamon.org/metadata.json
+share/cinnamon/applets/systray@cinnamon.org/applet.js
+share/cinnamon/applets/systray@cinnamon.org/metadata.json
+share/cinnamon/applets/trash@cinnamon.org/applet.js
+share/cinnamon/applets/trash@cinnamon.org/metadata.json
+share/cinnamon/applets/window-list@cinnamon.org/applet.js
+share/cinnamon/applets/window-list@cinnamon.org/metadata.json
+share/cinnamon/applets/windows-quick-list@cinnamon.org/applet.js
+share/cinnamon/applets/windows-quick-list@cinnamon.org/icon.png
+share/cinnamon/applets/windows-quick-list@cinnamon.org/metadata.json
+share/cinnamon/applets/windows-quick-list@cinnamon.org/windows-quick-list-symbolic.svg
+share/cinnamon/applets/workspace-switcher@cinnamon.org/applet.js
+share/cinnamon/applets/workspace-switcher@cinnamon.org/metadata.json
+share/cinnamon/applets/xrandr@cinnamon.org/applet.js
+share/cinnamon/applets/xrandr@cinnamon.org/metadata.json
+share/cinnamon/applets/xrandr@cinnamon.org/stylesheet.css
+share/cinnamon/bumpmaps/birdnfish.png
+share/cinnamon/bumpmaps/brick.png
+share/cinnamon/bumpmaps/fish.png
+share/cinnamon/bumpmaps/frost.png
+share/cinnamon/bumpmaps/hex.png
+share/cinnamon/bumpmaps/lizard.png
+share/cinnamon/desklets/clock@cinnamon.org/desklet.js
+share/cinnamon/desklets/clock@cinnamon.org/metadata.json
+share/cinnamon/desklets/launcher@cinnamon.org/desklet.js
+share/cinnamon/desklets/launcher@cinnamon.org/editorDialog.py
+share/cinnamon/desklets/launcher@cinnamon.org/editorDialog.ui
+share/cinnamon/desklets/launcher@cinnamon.org/metadata.json
+share/cinnamon/desklets/photoframe@cinnamon.org/README
+share/cinnamon/desklets/photoframe@cinnamon.org/desklet.js
+share/cinnamon/desklets/photoframe@cinnamon.org/metadata.json
+share/cinnamon/desklets/photoframe@cinnamon.org/settings-schema.json
+share/cinnamon/desklets/photoframe@cinnamon.org/stylesheet.css
+share/cinnamon/icons/move-symbolic.svg
+share/cinnamon/js/misc/config.js
+share/cinnamon/js/misc/docInfo.js
+share/cinnamon/js/misc/fileUtils.js
+share/cinnamon/js/misc/format.js
+share/cinnamon/js/misc/gnomeSession.js
+share/cinnamon/js/misc/gridNavigator.js
+share/cinnamon/js/misc/history.js
+share/cinnamon/js/misc/modemManager.js
+share/cinnamon/js/misc/params.js
+share/cinnamon/js/misc/pointerTracker.js
+share/cinnamon/js/misc/screenSaver.js
+share/cinnamon/js/misc/util.js
+share/cinnamon/js/misc/windowUtils.js
+share/cinnamon/js/perf/core.js
+share/cinnamon/js/ui/appFavorites.js
+share/cinnamon/js/ui/appSwitcher/appSwitcher.js
+share/cinnamon/js/ui/appSwitcher/appSwitcher3D.js
+share/cinnamon/js/ui/appSwitcher/classicSwitcher.js
+share/cinnamon/js/ui/appSwitcher/coverflowSwitcher.js
+share/cinnamon/js/ui/appSwitcher/timelineSwitcher.js
+share/cinnamon/js/ui/applet.js
+share/cinnamon/js/ui/appletManager.js
+share/cinnamon/js/ui/automountManager.js
+share/cinnamon/js/ui/autorunManager.js
+share/cinnamon/js/ui/boxpointer.js
+share/cinnamon/js/ui/calendar.js
+share/cinnamon/js/ui/checkBox.js
+share/cinnamon/js/ui/cinnamonDBus.js
+share/cinnamon/js/ui/cinnamonEntry.js
+share/cinnamon/js/ui/cinnamonMountOperation.js
+share/cinnamon/js/ui/desklet.js
+share/cinnamon/js/ui/deskletManager.js
+share/cinnamon/js/ui/dnd.js
+share/cinnamon/js/ui/edgeFlip.js
+share/cinnamon/js/ui/endSessionDialog.js
+share/cinnamon/js/ui/environment.js
+share/cinnamon/js/ui/expo.js
+share/cinnamon/js/ui/expoThumbnail.js
+share/cinnamon/js/ui/extension.js
+share/cinnamon/js/ui/extensionSystem.js
+share/cinnamon/js/ui/flashspot.js
+share/cinnamon/js/ui/hotCorner.js
+share/cinnamon/js/ui/keybindings.js
+share/cinnamon/js/ui/keyboard.js
+share/cinnamon/js/ui/layout.js
+share/cinnamon/js/ui/lightbox.js
+share/cinnamon/js/ui/link.js
+share/cinnamon/js/ui/lookingGlass.js
+share/cinnamon/js/ui/lookingGlassDBus.js
+share/cinnamon/js/ui/magnifier.js
+share/cinnamon/js/ui/magnifierDBus.js
+share/cinnamon/js/ui/main.js
+share/cinnamon/js/ui/messageTray.js
+share/cinnamon/js/ui/modalDialog.js
+share/cinnamon/js/ui/networkAgent.js
+share/cinnamon/js/ui/notificationDaemon.js
+share/cinnamon/js/ui/overview.js
+share/cinnamon/js/ui/panel.js
+share/cinnamon/js/ui/panelMenu.js
+share/cinnamon/js/ui/placesManager.js
+share/cinnamon/js/ui/polkitAuthenticationAgent.js
+share/cinnamon/js/ui/popupMenu.js
+share/cinnamon/js/ui/radioButton.js
+share/cinnamon/js/ui/runDialog.js
+share/cinnamon/js/ui/scripting.js
+share/cinnamon/js/ui/search.js
+share/cinnamon/js/ui/settings.js
+share/cinnamon/js/ui/statusIconDispatcher.js
+share/cinnamon/js/ui/themeManager.js
+share/cinnamon/js/ui/tooltips.js
+share/cinnamon/js/ui/tweener.js
+share/cinnamon/js/ui/windowAttentionHandler.js
+share/cinnamon/js/ui/windowManager.js
+share/cinnamon/js/ui/workspace.js
+share/cinnamon/js/ui/workspacesView.js
+share/cinnamon/js/ui/xdndHandler.js
+share/locale/af/LC_MESSAGES/cinnamon.mo
+share/locale/am/LC_MESSAGES/cinnamon.mo
+share/locale/ar/LC_MESSAGES/cinnamon.mo
+share/locale/ast/LC_MESSAGES/cinnamon.mo
+share/locale/be/LC_MESSAGES/cinnamon.mo
+share/locale/bg/LC_MESSAGES/cinnamon.mo
+share/locale/bn/LC_MESSAGES/cinnamon.mo
+share/locale/bs/LC_MESSAGES/cinnamon.mo
+share/locale/ca/LC_MESSAGES/cinnamon.mo
+share/locale/cs/LC_MESSAGES/cinnamon.mo
+share/locale/csb/LC_MESSAGES/cinnamon.mo
+share/locale/cy/LC_MESSAGES/cinnamon.mo
+share/locale/da/LC_MESSAGES/cinnamon.mo
+share/locale/de/LC_MESSAGES/cinnamon.mo
+share/locale/el/LC_MESSAGES/cinnamon.mo
+share/locale/en_AU/LC_MESSAGES/cinnamon.mo
+share/locale/en_CA/LC_MESSAGES/cinnamon.mo
+share/locale/en_GB/LC_MESSAGES/cinnamon.mo
+share/locale/eo/LC_MESSAGES/cinnamon.mo
+share/locale/es/LC_MESSAGES/cinnamon.mo
+share/locale/et/LC_MESSAGES/cinnamon.mo
+share/locale/eu/LC_MESSAGES/cinnamon.mo
+share/locale/fa/LC_MESSAGES/cinnamon.mo
+share/locale/fi/LC_MESSAGES/cinnamon.mo
+share/locale/fil/LC_MESSAGES/cinnamon.mo
+share/locale/fo/LC_MESSAGES/cinnamon.mo
+share/locale/fr/LC_MESSAGES/cinnamon.mo
+share/locale/fr_CA/LC_MESSAGES/cinnamon.mo
+share/locale/ga/LC_MESSAGES/cinnamon.mo
+share/locale/gd/LC_MESSAGES/cinnamon.mo
+share/locale/gl/LC_MESSAGES/cinnamon.mo
+share/locale/gu/LC_MESSAGES/cinnamon.mo
+share/locale/he/LC_MESSAGES/cinnamon.mo
+share/locale/hi/LC_MESSAGES/cinnamon.mo
+share/locale/hr/LC_MESSAGES/cinnamon.mo
+share/locale/hu/LC_MESSAGES/cinnamon.mo
+share/locale/ia/LC_MESSAGES/cinnamon.mo
+share/locale/id/LC_MESSAGES/cinnamon.mo
+share/locale/is/LC_MESSAGES/cinnamon.mo
+share/locale/it/LC_MESSAGES/cinnamon.mo
+share/locale/ja/LC_MESSAGES/cinnamon.mo
+share/locale/jv/LC_MESSAGES/cinnamon.mo
+share/locale/km/LC_MESSAGES/cinnamon.mo
+share/locale/kn/LC_MESSAGES/cinnamon.mo
+share/locale/ko/LC_MESSAGES/cinnamon.mo
+share/locale/ksw/LC_MESSAGES/cinnamon.mo
+share/locale/la/LC_MESSAGES/cinnamon.mo
+share/locale/lt/LC_MESSAGES/cinnamon.mo
+share/locale/lv/LC_MESSAGES/cinnamon.mo
+share/locale/mk/LC_MESSAGES/cinnamon.mo
+share/locale/ml/LC_MESSAGES/cinnamon.mo
+share/locale/mr/LC_MESSAGES/cinnamon.mo
+share/locale/ms/LC_MESSAGES/cinnamon.mo
+share/locale/nb/LC_MESSAGES/cinnamon.mo
+share/locale/nds/LC_MESSAGES/cinnamon.mo
+share/locale/ne/LC_MESSAGES/cinnamon.mo
+share/locale/nl/LC_MESSAGES/cinnamon.mo
+share/locale/nn/LC_MESSAGES/cinnamon.mo
+share/locale/pa/LC_MESSAGES/cinnamon.mo
+share/locale/pl/LC_MESSAGES/cinnamon.mo
+share/locale/pt/LC_MESSAGES/cinnamon.mo
+share/locale/pt_BR/LC_MESSAGES/cinnamon.mo
+share/locale/ro/LC_MESSAGES/cinnamon.mo
+share/locale/ru/LC_MESSAGES/cinnamon.mo
+share/locale/rue/LC_MESSAGES/cinnamon.mo
+share/locale/si/LC_MESSAGES/cinnamon.mo
+share/locale/sk/LC_MESSAGES/cinnamon.mo
+share/locale/sl/LC_MESSAGES/cinnamon.mo
+share/locale/so/LC_MESSAGES/cinnamon.mo
+share/locale/sq/LC_MESSAGES/cinnamon.mo
+share/locale/sr/LC_MESSAGES/cinnamon.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/cinnamon.mo
+share/locale/sr@latin/LC_MESSAGES/cinnamon.mo
+share/locale/sv/LC_MESSAGES/cinnamon.mo
+share/locale/ta/LC_MESSAGES/cinnamon.mo
+share/locale/te/LC_MESSAGES/cinnamon.mo
+share/locale/th/LC_MESSAGES/cinnamon.mo
+share/locale/tlh/LC_MESSAGES/cinnamon.mo
+share/locale/tr/LC_MESSAGES/cinnamon.mo
+share/locale/ts/LC_MESSAGES/cinnamon.mo
+share/locale/uk/LC_MESSAGES/cinnamon.mo
+share/locale/ur/LC_MESSAGES/cinnamon.mo
+share/locale/uz/LC_MESSAGES/cinnamon.mo
+share/locale/vi/LC_MESSAGES/cinnamon.mo
+share/locale/yi/LC_MESSAGES/cinnamon.mo
+share/locale/zh_CN/LC_MESSAGES/cinnamon.mo
+share/locale/zh_HK/LC_MESSAGES/cinnamon.mo
+share/locale/zh_TW/LC_MESSAGES/cinnamon.mo
+share/cinnamon/search_providers/google.xml
+share/cinnamon/search_providers/wikipedia.xml
+share/cinnamon/shaders/dim-window.glsl
+share/cinnamon/theme/add-workspace-hover.png
+share/cinnamon/theme/add-workspace.png
+share/cinnamon/theme/calendar-arrow-left.svg
+share/cinnamon/theme/calendar-arrow-right.svg
+share/cinnamon/theme/calendar-today.svg
+share/cinnamon/theme/checkbox-focused.svg
+share/cinnamon/theme/checkbox-off-focused.svg
+share/cinnamon/theme/checkbox-off.svg
+share/cinnamon/theme/checkbox.svg
+share/cinnamon/theme/cinnamon.css
+share/cinnamon/theme/close-window.svg
+share/cinnamon/theme/close.svg
+share/cinnamon/theme/corner-ripple.png
+share/cinnamon/theme/menu.png
+share/cinnamon/theme/overview-hover.png
+share/cinnamon/theme/overview.png
+share/cinnamon/theme/player-paused.svg
+share/cinnamon/theme/player-playing.svg
+share/cinnamon/theme/player-stopped.svg
+share/cinnamon/theme/process-working.svg
+share/cinnamon/theme/radiobutton-off.svg
+share/cinnamon/theme/radiobutton.svg
+share/cinnamon/theme/scroll-hhandle.svg
+share/cinnamon/theme/scroll-vhandle.svg
+share/cinnamon/theme/thumbnail-generic.png
+share/cinnamon/theme/thumbnail.png
+share/cinnamon/theme/toggle-off-intl.svg
+share/cinnamon/theme/toggle-off-us.svg
+share/cinnamon/theme/toggle-on-intl.svg
+share/cinnamon/theme/toggle-on-us.svg
+share/cinnamon/theme/trash-icon.png
+share/dbus-1/services/org.Cinnamon.HotplugSniffer.service
+share/desktop-directories/cinnamon-audio-video.directory
+share/desktop-directories/cinnamon-c.directory
+share/desktop-directories/cinnamon-development.directory
+share/desktop-directories/cinnamon-education.directory
+share/desktop-directories/cinnamon-game.directory
+share/desktop-directories/cinnamon-graphics.directory
+share/desktop-directories/cinnamon-hardware.directory
+share/desktop-directories/cinnamon-internet-and-network.directory
+share/desktop-directories/cinnamon-look-and-feel.directory
+share/desktop-directories/cinnamon-menu-applications.directory
+share/desktop-directories/cinnamon-menu-system.directory
+share/desktop-directories/cinnamon-network.directory
+share/desktop-directories/cinnamon-office.directory
+share/desktop-directories/cinnamon-other.directory
+share/desktop-directories/cinnamon-personal.directory
+share/desktop-directories/cinnamon-settings-system.directory
+share/desktop-directories/cinnamon-settings.directory
+share/desktop-directories/cinnamon-system-tools.directory
+share/desktop-directories/cinnamon-system.directory
+share/desktop-directories/cinnamon-utility-accessibility.directory
+share/desktop-directories/cinnamon-utility.directory
+share/gnome-session/sessions/cinnamon.session
+share/gnome-session/sessions/cinnamon2d.session
+share/xsessions/cinnamon.desktop
+share/xsessions/cinnamon2d.desktop
+@dirrmtry share/xsessions
+@dirrmtry share/gnome-session/sessions
+@dirrmtry share/gnome-session
+@dirrm share/cinnamon/theme
+@dirrm share/cinnamon/shaders
+@dirrm share/cinnamon/search_providers
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/yi/LC_MESSAGES
+@dirrmtry share/locale/yi
+@dirrmtry share/locale/vi/LC_MESSAGES
+@dirrmtry share/locale/vi
+@dirrmtry share/locale/uz/LC_MESSAGES
+@dirrmtry share/locale/uz
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/ts/LC_MESSAGES
+@dirrmtry share/locale/ts
+@dirrmtry share/locale/tr/LC_MESSAGES
+@dirrmtry share/locale/tr
+@dirrmtry share/locale/tlh/LC_MESSAGES
+@dirrmtry share/locale/tlh
+@dirrmtry share/locale/th/LC_MESSAGES
+@dirrmtry share/locale/th
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/ta/LC_MESSAGES
+@dirrmtry share/locale/ta
+@dirrmtry share/locale/sv/LC_MESSAGES
+@dirrmtry share/locale/sv
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/sr@ijekavianlatin/LC_MESSAGES
+@dirrmtry share/locale/sr@ijekavianlatin
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sq/LC_MESSAGES
+@dirrmtry share/locale/sq
+@dirrmtry share/locale/so/LC_MESSAGES
+@dirrmtry share/locale/so
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/rue/LC_MESSAGES
+@dirrmtry share/locale/rue
+@dirrmtry share/locale/ru/LC_MESSAGES
+@dirrmtry share/locale/ru
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt_BR/LC_MESSAGES
+@dirrmtry share/locale/pt_BR
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/pa/LC_MESSAGES
+@dirrmtry share/locale/pa
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/nl/LC_MESSAGES
+@dirrmtry share/locale/nl
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/nb/LC_MESSAGES
+@dirrmtry share/locale/nb
+@dirrmtry share/locale/ms/LC_MESSAGES
+@dirrmtry share/locale/ms
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/ml/LC_MESSAGES
+@dirrmtry share/locale/ml
+@dirrmtry share/locale/mk/LC_MESSAGES
+@dirrmtry share/locale/mk
+@dirrmtry share/locale/lv/LC_MESSAGES
+@dirrmtry share/locale/lv
+@dirrmtry share/locale/lt/LC_MESSAGES
+@dirrmtry share/locale/lt
+@dirrmtry share/locale/la/LC_MESSAGES
+@dirrmtry share/locale/la
+@dirrmtry share/locale/ksw/LC_MESSAGES
+@dirrmtry share/locale/ksw
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/kn/LC_MESSAGES
+@dirrmtry share/locale/kn
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
+@dirrmtry share/locale/jv/LC_MESSAGES
+@dirrmtry share/locale/jv
+@dirrmtry share/locale/ja/LC_MESSAGES
+@dirrmtry share/locale/ja
+@dirrmtry share/locale/it/LC_MESSAGES
+@dirrmtry share/locale/it
+@dirrmtry share/locale/is/LC_MESSAGES
+@dirrmtry share/locale/is
+@dirrmtry share/locale/id/LC_MESSAGES
+@dirrmtry share/locale/id
+@dirrmtry share/locale/ia/LC_MESSAGES
+@dirrmtry share/locale/ia
+@dirrmtry share/locale/hu/LC_MESSAGES
+@dirrmtry share/locale/hu
+@dirrmtry share/locale/hr/LC_MESSAGES
+@dirrmtry share/locale/hr
+@dirrmtry share/locale/hi/LC_MESSAGES
+@dirrmtry share/locale/hi
+@dirrmtry share/locale/he/LC_MESSAGES
+@dirrmtry share/locale/he
+@dirrmtry share/locale/gu/LC_MESSAGES
+@dirrmtry share/locale/gu
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/gd/LC_MESSAGES
+@dirrmtry share/locale/gd
+@dirrmtry share/locale/ga/LC_MESSAGES
+@dirrmtry share/locale/ga
+@dirrmtry share/locale/fr_CA/LC_MESSAGES
+@dirrmtry share/locale/fr_CA
+@dirrmtry share/locale/fr/LC_MESSAGES
+@dirrmtry share/locale/fr
+@dirrmtry share/locale/fo/LC_MESSAGES
+@dirrmtry share/locale/fo
+@dirrmtry share/locale/fil/LC_MESSAGES
+@dirrmtry share/locale/fil
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/fa/LC_MESSAGES
+@dirrmtry share/locale/fa
+@dirrmtry share/locale/eu/LC_MESSAGES
+@dirrmtry share/locale/eu
+@dirrmtry share/locale/et/LC_MESSAGES
+@dirrmtry share/locale/et
+@dirrmtry share/locale/es/LC_MESSAGES
+@dirrmtry share/locale/es
+@dirrmtry share/locale/eo/LC_MESSAGES
+@dirrmtry share/locale/eo
+@dirrmtry share/locale/en_GB/LC_MESSAGES
+@dirrmtry share/locale/en_GB
+@dirrmtry share/locale/en_CA/LC_MESSAGES
+@dirrmtry share/locale/en_CA
+@dirrmtry share/locale/en_AU/LC_MESSAGES
+@dirrmtry share/locale/en_AU
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/de/LC_MESSAGES
+@dirrmtry share/locale/de
+@dirrmtry share/locale/da/LC_MESSAGES
+@dirrmtry share/locale/da
+@dirrmtry share/locale/cy/LC_MESSAGES
+@dirrmtry share/locale/cy
+@dirrmtry share/locale/csb/LC_MESSAGES
+@dirrmtry share/locale/csb
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/bs/LC_MESSAGES
+@dirrmtry share/locale/bs
+@dirrmtry share/locale/bn/LC_MESSAGES
+@dirrmtry share/locale/bn
+@dirrmtry share/locale/bg/LC_MESSAGES
+@dirrmtry share/locale/bg
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/ar/LC_MESSAGES
+@dirrmtry share/locale/ar
+@dirrmtry share/locale/am/LC_MESSAGES
+@dirrmtry share/locale/am
+@dirrmtry share/locale/af/LC_MESSAGES
+@dirrmtry share/locale/af
+@dirrmtry share/locale
+@dirrm share/cinnamon/js/ui/appSwitcher
+@dirrm share/cinnamon/js/ui
+@dirrm share/cinnamon/js/perf
+@dirrm share/cinnamon/js/misc
+@dirrm share/cinnamon/js
+@dirrm share/cinnamon/icons
+@dirrm share/cinnamon/desklets/photoframe@cinnamon.org
+@dirrm share/cinnamon/desklets/launcher@cinnamon.org
+@dirrm share/cinnamon/desklets/clock@cinnamon.org
+@dirrm share/cinnamon/desklets
+@dirrm share/cinnamon/bumpmaps
+@dirrm share/cinnamon/applets/xrandr@cinnamon.org
+@dirrm share/cinnamon/applets/workspace-switcher@cinnamon.org
+@dirrm share/cinnamon/applets/windows-quick-list@cinnamon.org
+@dirrm share/cinnamon/applets/window-list@cinnamon.org
+@dirrm share/cinnamon/applets/trash@cinnamon.org
+@dirrm share/cinnamon/applets/systray@cinnamon.org
+@dirrm share/cinnamon/applets/spacer@cinnamon.org
+@dirrm share/cinnamon/applets/sound@cinnamon.org
+@dirrm share/cinnamon/applets/show-desktop@cinnamon.org
+@dirrm share/cinnamon/applets/settings@cinnamon.org
+@dirrm share/cinnamon/applets/settings-example@cinnamon.org
+@dirrm share/cinnamon/applets/separator@cinnamon.org
+@dirrm share/cinnamon/applets/scale@cinnamon.org
+@dirrm share/cinnamon/applets/removable-drives@cinnamon.org
+@dirrm share/cinnamon/applets/recent@cinnamon.org
+@dirrm share/cinnamon/applets/power@cinnamon.org
+@dirrm share/cinnamon/applets/panel-launchers@cinnamon.org
+@dirrm share/cinnamon/applets/notifications@cinnamon.org
+@dirrm share/cinnamon/applets/network@cinnamon.org
+@dirrm share/cinnamon/applets/menu@cinnamon.org
+@dirrm share/cinnamon/applets/keyboard@cinnamon.org/flags
+@dirrm share/cinnamon/applets/keyboard@cinnamon.org
+@dirrm share/cinnamon/applets/expo@cinnamon.org
+@dirrm share/cinnamon/applets/calendar@cinnamon.org
+@dirrm share/cinnamon/applets/brightness@cinnamon.org
+@dirrm share/cinnamon/applets/bluetooth@cinnamon.org
+@dirrm share/cinnamon/applets/a11y@cinnamon.org
+@dirrm share/cinnamon/applets
+@dirrm share/cinnamon-settings/modules
+@dirrm share/cinnamon-settings/data/spices
+@dirrm share/cinnamon-settings/data/icons
+@dirrm share/cinnamon-settings/data
+@dirrm share/cinnamon-settings/bin
+@dirrm share/cinnamon-settings
+@dirrm share/cinnamon-screensaver-lock-dialog
+@dirrm share/cinnamon-menu-editor/cme
+@dirrm share/cinnamon-menu-editor
+@dirrm share/cinnamon-looking-glass
+@dirrm share/cinnamon
+@dirrm libexec/cinnamon
+@dirrmtry lib/mozilla/plugins
+@dirrmtry lib/mozilla
+@dirrm lib/cinnamon

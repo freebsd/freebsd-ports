@@ -1,17 +1,19 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/net/libproxy/Makefile,v 1.1 2011/01/12 13:10:52 kwm Exp $
+#    $MCom: ports/trunk/net/libproxy/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	libproxy
 PORTVERSION=	0.4.6
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	net devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	Library that provides automatic proxy configuration management
 
-USES+=		cmake
+NO_STAGE=	yes
+USES=		cmake
+USE_GNOME=	gnomehier
 
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
@@ -64,7 +66,6 @@ CMAKE_ARGS+=	-DWITH_MOZJS:BOOL=OFF
 . endif
 .endif
 
-NO_STAGE=	yes
 post-install:
 	@${MKDIR} ${PREFIX}/lib/libproxy/${PORTVERSION}/modules/
 

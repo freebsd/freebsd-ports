@@ -1,30 +1,27 @@
 # Created by: Anders Nordby <anders@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/archivers/file-roller/Makefile,v 1.184 2010/11/15 22:58:48 kwm Exp $
+#   $MCom: ports/trunk/archivers/file-roller/Makefile 18897 2013-11-18 16:14:39Z kwm $
 
 PORTNAME=	file-roller
-PORTVERSION=	2.32.1
-PORTREVISION=	1
+PORTVERSION=	3.6.2
 PORTEPOCH=	1
 CATEGORIES=	archivers gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An archive manager for zip files, tar, etc
 
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 RUN_DEPENDS=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar \
     		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 
-NO_STAGE=	yes
 USE_LDCONFIG=	yes
-USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig
-INSTALLS_OMF=	yes
+USE_XZ=		yes
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack desktopfileutils gnomedocutils \
-		gtk20 gconf2
-GNOME_DESKTOP_VERSION=2
+USE_GNOME=	gconf2 gnomeprefix gtk30 intlhack \
+		introspection:build
 USE_XORG=	sm
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -32,17 +29,16 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-packagekit
 
 PORTDOCS=	AUTHORS NEWS README TODO ChangeLog
-GCONF_SCHEMAS=	file-roller.schemas
+GLIB_SCHEMAS=	org.gnome.FileRoller.gschema.xml
 
-OPTIONS_DEFINE=	DOCS NAUTILUS
-NAUTILUS_DESC=	Enable Nautilus extension
-
+OPTIONS_DEFINE=	NAUTILUS
 OPTIONS_DEFAULT=NAUTILUS
+NAUTILUS_DESC=	Enable Nautilus extension
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNAUTILUS}
-USE_GNOME+=	nautilus2
+USE_GNOME+=	nautilus3
 PLIST_SUB+=	NAUTILUS=""
 .else
 PLIST_SUB+=	NAUTILUS="@comment "
@@ -55,12 +51,14 @@ post-patch:
 		${WRKSRC}/src/fr-command-zip.c
 
 post-install:
-	@-update-desktop-database
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${DOCSDIR}
 .endfor
 .endif
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/nautilus/extensions-3.0/libnautilus-fileroller.so
+
 
 .include <bsd.port.mk>
+

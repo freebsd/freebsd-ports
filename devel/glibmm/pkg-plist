@@ -26,6 +26,7 @@ include/giomm-%%API_VERSION%%/giomm/dbusconnection.h
 include/giomm-%%API_VERSION%%/giomm/dbuserror.h
 include/giomm-%%API_VERSION%%/giomm/dbuserrorutils.h
 include/giomm-%%API_VERSION%%/giomm/dbusinterface.h
+include/giomm-%%API_VERSION%%/giomm/dbusinterfaceskeleton.h
 include/giomm-%%API_VERSION%%/giomm/dbusinterfacevtable.h
 include/giomm-%%API_VERSION%%/giomm/dbusintrospection.h
 include/giomm-%%API_VERSION%%/giomm/dbusmenumodel.h
@@ -105,6 +106,7 @@ include/giomm-%%API_VERSION%%/giomm/private/dbusconnection_p.h
 include/giomm-%%API_VERSION%%/giomm/private/dbuserror_p.h
 include/giomm-%%API_VERSION%%/giomm/private/dbuserrorutils_p.h
 include/giomm-%%API_VERSION%%/giomm/private/dbusinterface_p.h
+include/giomm-%%API_VERSION%%/giomm/private/dbusinterfaceskeleton_p.h
 include/giomm-%%API_VERSION%%/giomm/private/dbusinterfacevtable_p.h
 include/giomm-%%API_VERSION%%/giomm/private/dbusintrospection_p.h
 include/giomm-%%API_VERSION%%/giomm/private/dbusmenumodel_p.h
@@ -180,6 +182,13 @@ include/giomm-%%API_VERSION%%/giomm/private/srvtarget_p.h
 include/giomm-%%API_VERSION%%/giomm/private/tcpconnection_p.h
 include/giomm-%%API_VERSION%%/giomm/private/themedicon_p.h
 include/giomm-%%API_VERSION%%/giomm/private/threadedsocketservice_p.h
+include/giomm-%%API_VERSION%%/giomm/private/tlscertificate_p.h
+include/giomm-%%API_VERSION%%/giomm/private/tlsclientconnection_p.h
+include/giomm-%%API_VERSION%%/giomm/private/tlsconnection_p.h
+include/giomm-%%API_VERSION%%/giomm/private/tlsdatabase_p.h
+include/giomm-%%API_VERSION%%/giomm/private/tlsinteraction_p.h
+include/giomm-%%API_VERSION%%/giomm/private/tlspassword_p.h
+include/giomm-%%API_VERSION%%/giomm/private/tlsserverconnection_p.h
 include/giomm-%%API_VERSION%%/giomm/private/unixconnection_p.h
 include/giomm-%%API_VERSION%%/giomm/private/unixcredentialsmessage_p.h
 include/giomm-%%API_VERSION%%/giomm/private/unixfdlist_p.h
@@ -214,6 +223,13 @@ include/giomm-%%API_VERSION%%/giomm/srvtarget.h
 include/giomm-%%API_VERSION%%/giomm/tcpconnection.h
 include/giomm-%%API_VERSION%%/giomm/themedicon.h
 include/giomm-%%API_VERSION%%/giomm/threadedsocketservice.h
+include/giomm-%%API_VERSION%%/giomm/tlscertificate.h
+include/giomm-%%API_VERSION%%/giomm/tlsclientconnection.h
+include/giomm-%%API_VERSION%%/giomm/tlsconnection.h
+include/giomm-%%API_VERSION%%/giomm/tlsdatabase.h
+include/giomm-%%API_VERSION%%/giomm/tlsinteraction.h
+include/giomm-%%API_VERSION%%/giomm/tlspassword.h
+include/giomm-%%API_VERSION%%/giomm/tlsserverconnection.h
 include/giomm-%%API_VERSION%%/giomm/unixconnection.h
 include/giomm-%%API_VERSION%%/giomm/unixcredentialsmessage.h
 include/giomm-%%API_VERSION%%/giomm/unixfdlist.h
@@ -229,6 +245,7 @@ include/giomm-%%API_VERSION%%/giomm/zlibdecompressor.h
 include/glibmm-%%API_VERSION%%/glibmm.h
 include/glibmm-%%API_VERSION%%/glibmm/arrayhandle.h
 include/glibmm-%%API_VERSION%%/glibmm/balancedtree.h
+include/glibmm-%%API_VERSION%%/glibmm/base64.h
 include/glibmm-%%API_VERSION%%/glibmm/bytearray.h
 include/glibmm-%%API_VERSION%%/glibmm/bytes.h
 include/glibmm-%%API_VERSION%%/glibmm/checksum.h
@@ -375,15 +392,12 @@ lib/glibmm-%%VERSION%%/proc/pm/Output.pm
 lib/glibmm-%%VERSION%%/proc/pm/Property.pm
 lib/glibmm-%%VERSION%%/proc/pm/Util.pm
 lib/glibmm-%%VERSION%%/proc/pm/WrapParser.pm
-lib/libgiomm-%%VERSION%%.a
 lib/libgiomm-%%VERSION%%.la
 lib/libgiomm-%%VERSION%%.so
 lib/libgiomm-%%VERSION%%.so.1
-lib/libglibmm-%%VERSION%%.a
 lib/libglibmm-%%VERSION%%.la
 lib/libglibmm-%%VERSION%%.so
 lib/libglibmm-%%VERSION%%.so.1
-lib/libglibmm_generate_extra_defs-%%VERSION%%.a
 lib/libglibmm_generate_extra_defs-%%VERSION%%.la
 lib/libglibmm_generate_extra_defs-%%VERSION%%.so
 lib/libglibmm_generate_extra_defs-%%VERSION%%.so.1

@@ -1,5 +1,6 @@
 # Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 # $FreeBSD$
+#   $MCom: ports/trunk/textproc/py-libxml2/Makefile 18396 2013-04-27 14:52:06Z kwm $
 
 PORTREVISION=	0
 CATEGORIES=	textproc gnome python
@@ -16,10 +17,9 @@ PLIST=		${.CURDIR}/pkg-plist
 
 USE_GNOME+=	libxml2
 USE_PYTHON=	-2.7
-USES=		iconv
 CPPFLAGS+=	`${PYTHON_VERSION}-config --cflags`
 LDFLAGS+=	-L${LOCALBASE}/lib `${PYTHON_VERSION}-config --libs`
-CONFIGURE_ARGS=	--with-iconv=${ICONV_PREFIX} \
+CONFIGURE_ARGS=	--with-iconv=${LOCALBASE} \
 		--with-html-dir=${PREFIX}/share/doc \
 		--with-html-subdir=${PORTNAME} \
 		--with-python=${PYTHON_CMD}
@@ -27,7 +27,6 @@ CONFIGURE_ARGS=	--with-iconv=${ICONV_PREFIX} \
 DOCSDIR=	${PREFIX}/share/doc/py-libxml2
 EXAMPLESDIR=	${PREFIX}/share/examples/py-libxml2
 
-NO_STAGE=	yes
 post-install:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${PYTHON_SITELIBDIR}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -l ${PYTHON_SITELIBDIR}

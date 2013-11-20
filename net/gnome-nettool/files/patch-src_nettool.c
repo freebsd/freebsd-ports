@@ -1,13 +1,5 @@
 --- src/nettool.c.orig	2009-06-18 13:51:14.000000000 -0400
 +++ src/nettool.c	2009-07-19 16:05:59.000000000 -0400
-@@ -24,6 +24,7 @@
- #include <string.h>
- #include <sys/types.h>
- #include <sys/socket.h>
-+#include <netinet/in.h>
- #include <signal.h>
- #include <errno.h>
- #include <sys/wait.h>
 @@ -374,6 +375,10 @@ netinfo_io_text_buffer_dialog (GIOChanne
  						 	len, NULL);
  			}

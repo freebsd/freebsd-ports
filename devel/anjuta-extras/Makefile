@@ -1,29 +1,27 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/devel/anjuta-extras/Makefile,v 1.11 2010/09/29 12:14:23 kwm Exp $
+#   $MCom: ports/trunk/devel/anjuta-extras3/Makefile 18393 2013-04-26 21:23:07Z kwm $
 
 PORTNAME=	anjuta-extras
-PORTVERSION=	2.32.1.1
-PORTREVISION=	1
+PORTVERSION=	3.4.0
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Extra anjuta plugins
+COMMENT=	Extra anjuta 3 plugins
 
-LIB_DEPENDS=	anjuta.0:${PORTSDIR}/devel/anjuta
+LIB_DEPENDS=	libanjuta-3.so:${PORTSDIR}/devel/anjuta
 		
-USE_BZIP2=	yes
+NO_STAGE=	yes
+USE_XZ=		yes
+USES=		gettext gmake pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_GNOME=	intltool
+USE_GNOME=	intltool libxml2 gtk30
 CPPFLAGS+=	-I${LOCALBASE}/include 
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=--disable-plugin-valgrind \
-		--localedir=${PREFIX}/share
 
-GCONF_SCHEMAS=	anjuta-editor-scintilla.schemas
+GLIB_SCHEMAS=	org.gnome.anjuta.plugins.scintilla.gschema.xml \
+		org.gnome.anjuta.plugins.scratchbox.gschema.xml
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 # Created by: Yukihiro Nakai <Nakai@technologist.com>
 # $FreeBSD$
-#    $MCom: ports/textproc/libxml2/Makefile,v 1.15 2012/11/26 19:55:23 kwm Exp $
+#    $MCom: ports/trunk/textproc/libxml2/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	libxml2
 PORTVERSION=	2.8.0
@@ -14,13 +14,14 @@ DIST_SUBDIR=	gnome2
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	XML parser library for GNOME
 
+NO_STAGE=	yes
+
 .if !defined(REFERENCE_PORT)
 
-USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
-USES=		pathfix gmake iconv pkgconfig
+USES=		gmake iconv pathfix pkgconfig
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS?=--with-iconv=${ICONV_PREFIX} \
+CONFIGURE_ARGS?=--with-iconv=${LOCALBASE} \
 		--with-html-dir=${PREFIX}/share/doc \
 		--with-html-subdir=${PORTNAME} \
 		--with-lzma=/usr \
@@ -38,7 +39,6 @@ MEM_DEBUG_DESC= Memory debugging (DEVELOPERS ONLY!)
 XMLLINT_HIST_DESC= History for xmllint
 THREAD_ALLOC_DESC= Per-thread memory (DEVELOPERS ONLY!)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MSCHEMA}

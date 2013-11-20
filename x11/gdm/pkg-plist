@@ -1,6 +1,10 @@
 bin/gdm-screenshot
 bin/gdmflexiserver
 etc/dbus-1/system.d/gdm.conf
+etc/dconf/db/gdm.d/00-upstream-settings
+etc/dconf/db/gdm.d/locks/00-upstream-settings-locks
+etc/dconf/profile/gdm
+@unexec /bin/rm -f %D/etc/dconf/db/gdm
 etc/gdm/Init/Default
 etc/gdm/PostLogin/Default.sample
 etc/gdm/PostSession/Default
@@ -9,57 +13,105 @@ etc/gdm/Xsession
 @unexec if cmp -s %D/etc/gdm/custom.conf %D/etc/gdm/custom.conf.default; then rm -f %D/etc/gdm/custom.conf; fi
 etc/gdm/custom.conf.default
 @exec [ -f %B/custom.conf ] || cp %B/%f %B/custom.conf
-etc/gdm/gdm.schemas
-etc/gdm/home/.local/share/applications/mime-dummy-handler.desktop
-etc/gdm/home/.local/share/applications/mimeapps.list
-etc/pam.d/gdm
-libdata/bonobo/servers/GNOME_FastUserSwitchApplet.server
+etc/gdm/home/.pulse/client.conf
+etc/pam.d/gdm-autologin
+etc/pam.d/gdm-launch-environment
+etc/pam.d/gdm-password
+include/gdm/gdm-client-glue.h
+include/gdm/gdm-client.h
+include/gdm/gdm-sessions.h
+include/gdm/gdm-user-switching.h
+include/gdm/simple-greeter/gdm-login-extension.h
+lib/gdm/simple-greeter/extensions/libfingerprint.la
+lib/gdm/simple-greeter/extensions/libfingerprint.so
+lib/gdm/simple-greeter/extensions/libpassword.la
+lib/gdm/simple-greeter/extensions/libpassword.so
+lib/gdm/simple-greeter/extensions/libsmartcard.la
+lib/gdm/simple-greeter/extensions/libsmartcard.so
+lib/girepository-1.0/Gdm-1.0.typelib
+lib/libgdm.la
+lib/libgdm.so
+lib/libgdm.so.1
+lib/libgdmsimplegreeter.la
+lib/libgdmsimplegreeter.so
+lib/libgdmsimplegreeter.so.1
+libdata/pkgconfig/gdm.pc
+libdata/pkgconfig/gdmsimplegreeter.pc
 libexec/gdm-crash-logger
-libexec/gdm-factory-slave
 libexec/gdm-host-chooser
-libexec/gdm-product-slave
 libexec/gdm-session-worker
 libexec/gdm-simple-chooser
 libexec/gdm-simple-greeter
 libexec/gdm-simple-slave
-libexec/gdm-user-switch-applet
+libexec/gdm-smartcard-worker
 libexec/gdm-xdmcp-chooser-slave
 sbin/gdm
 sbin/gdm-binary
-%%DATADIR%%/autostart/LoginWindow/at-spi-registryd-wrapper.desktop
-%%DATADIR%%/autostart/LoginWindow/gdm-simple-greeter.desktop
-%%DATADIR%%/autostart/LoginWindow/gnome-mag.desktop
-%%DATADIR%%/autostart/LoginWindow/gnome-power-manager.desktop
-%%DATADIR%%/autostart/LoginWindow/gnome-settings-daemon.desktop
-%%DATADIR%%/autostart/LoginWindow/gok.desktop
-%%DATADIR%%/autostart/LoginWindow/metacity.desktop
-%%DATADIR%%/autostart/LoginWindow/orca-screen-reader.desktop
-%%DATADIR%%/autostart/LoginWindow/polkit-gnome-authentication-agent-1.desktop
-%%DATADIR%%/gconf.path
 %%DATADIR%%/gdb-cmd
 %%DATADIR%%/gdm-greeter-login-window.ui
+%%DATADIR%%/gdm.schemas
+%%DATADIR%%/greeter/applications/gdm-simple-greeter.desktop
+%%DATADIR%%/greeter/applications/gnome-mag.desktop
+%%DATADIR%%/greeter/applications/gnome-shell.desktop
+%%DATADIR%%/greeter/applications/gok.desktop
+%%DATADIR%%/greeter/applications/mime-dummy-handler.desktop
+%%DATADIR%%/greeter/applications/mimeapps.list
+%%DATADIR%%/greeter/applications/polkit-gnome-authentication-agent-1.desktop
+%%DATADIR%%/greeter/autostart/orca-autostart.desktop
 %%DATADIR%%/locale.alias
-%%DATADIR%%/session-setup.entries
-share/gnome-2.0/ui/GNOME_FastUserSwitchApplet.xml
-share/gnome/help/gdm/C/gdm.xml
-share/gnome/help/gdm/C/legal.xml
-share/gnome/help/gdm/de/gdm.xml
-share/gnome/help/gdm/el/gdm.xml
-share/gnome/help/gdm/en_GB/gdm.xml
-share/gnome/help/gdm/es/gdm.xml
-share/gnome/help/gdm/fr/gdm.xml
-share/gnome/help/gdm/it/gdm.xml
-share/gnome/help/gdm/ko/gdm.xml
-share/gnome/help/gdm/oc/gdm.xml
-share/gnome/help/gdm/ru/gdm.xml
-share/gnome/help/gdm/sv/gdm.xml
-share/gnome/help/gdm/uk/gdm.xml
-share/gnome/help/gdm/zh_CN/gdm.xml
+%%DATADIR%%/simple-greeter/extensions/fingerprint/page.ui
+%%DATADIR%%/simple-greeter/extensions/password/page.ui
+%%DATADIR%%/simple-greeter/extensions/smartcard/page.ui
+%%DATADIR%%/simple-greeter/extensions/unified/page.ui
+share/gir-1.0/Gdm-1.0.gir
+share/gnome-session/sessions/gdm-fallback.session
+share/gnome-session/sessions/gdm-shell.session
+share/help/C/gdm/index.docbook
+share/help/C/gdm/legal.xml
+share/help/ca/gdm/index.docbook
+share/help/ca/gdm/legal.xml
+share/help/de/gdm/index.docbook
+share/help/de/gdm/legal.xml
+share/help/el/gdm/index.docbook
+share/help/el/gdm/legal.xml
+share/help/en_GB/gdm/index.docbook
+share/help/en_GB/gdm/legal.xml
+share/help/es/gdm/index.docbook
+share/help/es/gdm/legal.xml
+share/help/fr/gdm/index.docbook
+share/help/fr/gdm/legal.xml
+share/help/gl/gdm/index.docbook
+share/help/gl/gdm/legal.xml
+share/help/id/gdm/index.docbook
+share/help/id/gdm/legal.xml
+share/help/it/gdm/index.docbook
+share/help/it/gdm/legal.xml
+share/help/ko/gdm/index.docbook
+share/help/ko/gdm/legal.xml
+share/help/oc/gdm/index.docbook
+share/help/oc/gdm/legal.xml
+share/help/ru/gdm/index.docbook
+share/help/ru/gdm/legal.xml
+share/help/sl/gdm/index.docbook
+share/help/sl/gdm/legal.xml
+share/help/sv/gdm/index.docbook
+share/help/sv/gdm/legal.xml
+share/help/te/gdm/index.docbook
+share/help/te/gdm/legal.xml
+share/help/uk/gdm/index.docbook
+share/help/uk/gdm/legal.xml
+share/help/zh_CN/gdm/index.docbook
+share/help/zh_CN/gdm/legal.xml
+share/icons/hicolor/16x16/apps/gdm-fingerprint.png
+share/icons/hicolor/16x16/apps/gdm-smartcard.png
 share/icons/hicolor/16x16/apps/gdm-xnest.png
 share/icons/hicolor/32x32/apps/gdm-setup.png
 share/icons/hicolor/32x32/apps/gdm-xnest.png
+share/icons/hicolor/48x48/apps/gdm-fingerprint.png
+share/icons/hicolor/48x48/apps/gdm-smartcard.png
 share/locale/af/LC_MESSAGES/gdm.mo
 share/locale/am/LC_MESSAGES/gdm.mo
+share/locale/an/LC_MESSAGES/gdm.mo
 share/locale/ar/LC_MESSAGES/gdm.mo
 share/locale/as/LC_MESSAGES/gdm.mo
 share/locale/ast/LC_MESSAGES/gdm.mo
@@ -75,14 +127,15 @@ share/locale/ca/LC_MESSAGES/gdm.mo
 share/locale/ca@valencia/LC_MESSAGES/gdm.mo
 share/locale/crh/LC_MESSAGES/gdm.mo
 share/locale/cs/LC_MESSAGES/gdm.mo
+share/locale/csb/LC_MESSAGES/gdm.mo
 share/locale/cy/LC_MESSAGES/gdm.mo
 share/locale/da/LC_MESSAGES/gdm.mo
 share/locale/de/LC_MESSAGES/gdm.mo
 share/locale/dz/LC_MESSAGES/gdm.mo
 share/locale/el/LC_MESSAGES/gdm.mo
+share/locale/en@shaw/LC_MESSAGES/gdm.mo
 share/locale/en_CA/LC_MESSAGES/gdm.mo
 share/locale/en_GB/LC_MESSAGES/gdm.mo
-share/locale/en@shaw/LC_MESSAGES/gdm.mo
 share/locale/eo/LC_MESSAGES/gdm.mo
 share/locale/es/LC_MESSAGES/gdm.mo
 share/locale/et/LC_MESSAGES/gdm.mo
@@ -91,9 +144,11 @@ share/locale/fa/LC_MESSAGES/gdm.mo
 share/locale/fi/LC_MESSAGES/gdm.mo
 share/locale/fr/LC_MESSAGES/gdm.mo
 share/locale/fur/LC_MESSAGES/gdm.mo
+share/locale/fy/LC_MESSAGES/gdm.mo
 share/locale/ga/LC_MESSAGES/gdm.mo
 share/locale/gl/LC_MESSAGES/gdm.mo
 share/locale/gu/LC_MESSAGES/gdm.mo
+share/locale/gv/LC_MESSAGES/gdm.mo
 share/locale/he/LC_MESSAGES/gdm.mo
 share/locale/hi/LC_MESSAGES/gdm.mo
 share/locale/hr/LC_MESSAGES/gdm.mo
@@ -105,9 +160,11 @@ share/locale/it/LC_MESSAGES/gdm.mo
 share/locale/ja/LC_MESSAGES/gdm.mo
 share/locale/ka/LC_MESSAGES/gdm.mo
 share/locale/kk/LC_MESSAGES/gdm.mo
+share/locale/km/LC_MESSAGES/gdm.mo
 share/locale/kn/LC_MESSAGES/gdm.mo
 share/locale/ko/LC_MESSAGES/gdm.mo
 share/locale/ku/LC_MESSAGES/gdm.mo
+share/locale/ky/LC_MESSAGES/gdm.mo
 share/locale/lt/LC_MESSAGES/gdm.mo
 share/locale/lv/LC_MESSAGES/gdm.mo
 share/locale/mai/LC_MESSAGES/gdm.mo
@@ -156,43 +213,6 @@ share/locale/zh_CN/LC_MESSAGES/gdm.mo
 share/locale/zh_HK/LC_MESSAGES/gdm.mo
 share/locale/zh_TW/LC_MESSAGES/gdm.mo
 share/locale/zu/LC_MESSAGES/gdm.mo
-share/omf/gdm/gdm-C.omf
-share/omf/gdm/gdm-de.omf
-share/omf/gdm/gdm-el.omf
-share/omf/gdm/gdm-en_GB.omf
-share/omf/gdm/gdm-es.omf
-share/omf/gdm/gdm-fr.omf
-share/omf/gdm/gdm-it.omf
-share/omf/gdm/gdm-ko.omf
-share/omf/gdm/gdm-oc.omf
-share/omf/gdm/gdm-ru.omf
-share/omf/gdm/gdm-sv.omf
-share/omf/gdm/gdm-uk.omf
-share/omf/gdm/gdm-zh_CN.omf
-share/pixmaps/faces/astronaut.jpg
-share/pixmaps/faces/baseball.png
-share/pixmaps/faces/butterfly.png
-share/pixmaps/faces/cat-eye.jpg
-share/pixmaps/faces/chess.jpg
-share/pixmaps/faces/coffee.jpg
-share/pixmaps/faces/dice.jpg
-share/pixmaps/faces/energy-arc.jpg
-share/pixmaps/faces/fish.jpg
-share/pixmaps/faces/flake.jpg
-share/pixmaps/faces/flower.jpg
-share/pixmaps/faces/grapes.jpg
-share/pixmaps/faces/guitar.jpg
-share/pixmaps/faces/launch.jpg
-share/pixmaps/faces/leaf.jpg
-share/pixmaps/faces/lightning.jpg
-share/pixmaps/faces/penguin.jpg
-share/pixmaps/faces/puppy.jpg
-share/pixmaps/faces/sky.jpg
-share/pixmaps/faces/soccerball.png
-share/pixmaps/faces/sunflower.jpg
-share/pixmaps/faces/sunset.jpg
-share/pixmaps/faces/tennis-ball.png
-share/pixmaps/faces/yellow-rose.jpg
 share/pixmaps/gdm-foot-logo.png
 share/pixmaps/gdm-setup.png
 share/pixmaps/gdm-xnest.png
@@ -200,41 +220,65 @@ share/pixmaps/gdm.png
 share/pixmaps/nobody.png
 share/pixmaps/nohost.png
 @exec mkdir -p %D/share/xsessions
+@exec dconf update
+@unexec dconf update
+@unexec /bin/rm -f /var/run/gdm/
+@unexec /bin/rm -f /var/log/gdm/
+@dirrm /var/gdm
+@dirrm /var/cache/gdm
 @dirrmtry share/xsessions
-@dirrm share/pixmaps/faces
-@dirrm share/omf/gdm
-@dirrm share/gnome/help/gdm/zh_CN
-@dirrm share/gnome/help/gdm/uk
-@dirrm share/gnome/help/gdm/sv
-@dirrm share/gnome/help/gdm/ru
-@dirrm share/gnome/help/gdm/oc
-@dirrm share/gnome/help/gdm/ko
-@dirrm share/gnome/help/gdm/it
-@dirrm share/gnome/help/gdm/fr
-@dirrm share/gnome/help/gdm/es
-@dirrm share/gnome/help/gdm/en_GB
-@dirrm share/gnome/help/gdm/el
-@dirrm share/gnome/help/gdm/de
-@dirrm share/gnome/help/gdm/C
-@dirrm share/gnome/help/gdm
-@dirrm %%DATADIR%%/autostart/LoginWindow
-@dirrm %%DATADIR%%/autostart
+@dirrmtry share/help/zh_CN/gdm
+@dirrmtry share/help/uk/gdm
+@dirrmtry share/help/te/gdm
+@dirrmtry share/help/sv/gdm
+@dirrmtry share/help/sl/gdm
+@dirrmtry share/help/ru/gdm
+@dirrmtry share/help/oc/gdm
+@dirrmtry share/help/ko/gdm
+@dirrmtry share/help/it/gdm
+@dirrmtry share/help/id/gdm
+@dirrmtry share/help/gl/gdm
+@dirrmtry share/help/fr/gdm
+@dirrmtry share/help/es/gdm
+@dirrmtry share/help/en_GB/gdm
+@dirrmtry share/help/el/gdm
+@dirrmtry share/help/de/gdm
+@dirrmtry share/help/ca/gdm
+@dirrmtry share/help/C/gdm
+@dirrmtry share/gnome-session/sessions
+@dirrmtry share/gnome-session
+@dirrm %%DATADIR%%/simple-greeter/extensions/unified
+@dirrm %%DATADIR%%/simple-greeter/extensions/smartcard
+@dirrm %%DATADIR%%/simple-greeter/extensions/password
+@dirrm %%DATADIR%%/simple-greeter/extensions/fingerprint
+@dirrm %%DATADIR%%/simple-greeter/extensions
+@dirrm %%DATADIR%%/simple-greeter
+@dirrm %%DATADIR%%/greeter/applications
+@dirrm %%DATADIR%%/greeter/autostart
+@dirrm %%DATADIR%%/greeter
 @dirrm %%DATADIR%%
-@dirrm etc/gdm/Sessions
-@dirrm etc/gdm/PreSession
-@dirrm etc/gdm/PostSession
-@dirrm etc/gdm/PostLogin
-@dirrm etc/gdm/Init
+@dirrm lib/gdm/simple-greeter/extensions
+@dirrm lib/gdm/simple-greeter
+@dirrm lib/gdm
+@dirrm include/gdm/simple-greeter
+@dirrm include/gdm
 @dirrmtry etc/gdm/home/.local/share/applications
 @dirrmtry etc/gdm/home/.local/share
 @dirrmtry etc/gdm/home/.local
 @unexec rm -rf %D/etc/gdm/home/.gconf*
+@dirrmtry etc/gdm/home/.config/dconf
+@dirrmtry etc/gdm/home/.config
 @dirrmtry etc/gdm/home
+@dirrmtry etc/gdm/Sessions
+@dirrmtry etc/gdm/PreSession
+@dirrmtry etc/gdm/PostSession
+@dirrmtry etc/gdm/PostLogin
+@dirrmtry etc/gdm/Init
 @dirrmtry etc/gdm
 @dirrmtry etc/dm/Sessions
 @dirrmtry etc/dm
-@dirrmtry share/log/gdm
-@dirrmtry share/log
+@dirrm etc/dconf/db/gdm.d/locks
+@dirrm etc/dconf/db/gdm.d
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -271,10 +315,16 @@ share/pixmaps/nohost.png
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
 @dirrmtry share/locale/kk/LC_MESSAGES
 @dirrmtry share/locale/kk
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
+@dirrmtry share/locale/gv/LC_MESSAGES
+@dirrmtry share/locale/gv
+@dirrmtry share/locale/fy/LC_MESSAGES
+@dirrmtry share/locale/fy
 @dirrmtry share/locale/fur/LC_MESSAGES
 @dirrmtry share/locale/fur
 @dirrmtry share/locale/en@shaw/LC_MESSAGES
@@ -293,3 +343,5 @@ share/pixmaps/nohost.png
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrmtry share/locale/an/LC_MESSAGES
+@dirrmtry share/locale/an

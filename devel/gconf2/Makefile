@@ -1,10 +1,10 @@
 # Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/devel/gconf2/Makefile,v 1.124 2010/11/15 22:14:03 kwm Exp $
+#   $MCom: ports/trunk/devel/gconf2/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gconf2
-PORTVERSION=	2.32.0
-PORTREVISION?=	3
+PORTVERSION=	3.2.6
+PORTREVISION=	0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/GConf/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -12,35 +12,31 @@ DISTNAME=	GConf-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A configuration database system for GNOME
-
-USE_BZIP2=	yes
+COMMENT=	Configuration database system for GNOME
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USE_XZ=		yes
+
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		polkit-gobject-1:${PORTSDIR}/sysutils/polkit
+LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
 
-USES=		pathfix gettext gmake pkgconfig
+USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	gnomehier orbit2 gtk20 libxml2 ltverhack \
-		referencehack intlhack dconf
+		referencehack intlhack dconf introspection:build
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
+		--with-gtk=2.0 \
 		--disable-gtk-doc
-#		--enable-gconf-source=${PREFIX}/etc/gconf/schemas \
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAN1=		gconftool-2.1 gsettings-data-convert.1 \
-		gsettings-schema-convert.1
 
 OPTIONS_DEFINE=	LDAP
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLDAP}
@@ -53,7 +49,9 @@ PLIST_SUB+=	LDAP="@comment "
 .endif
 
 post-install:
-	-${LOCALBASE}/bin/gio-querymodules ${PREFIX}/lib/gio/modules
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/GConf/2/libgconfbackend-*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgconf-2.so.4
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gio/modules/libgsettingsgconfbackend.so
 
 .include <bsd.port.mk>
 

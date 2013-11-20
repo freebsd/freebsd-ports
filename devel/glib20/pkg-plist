@@ -35,6 +35,7 @@ include/glib-2.0/gio/gasyncinitable.h
 include/glib-2.0/gio/gasyncresult.h
 include/glib-2.0/gio/gbufferedinputstream.h
 include/glib-2.0/gio/gbufferedoutputstream.h
+include/glib-2.0/gio/gbytesicon.h
 include/glib-2.0/gio/gcancellable.h
 include/glib-2.0/gio/gcharsetconverter.h
 include/glib-2.0/gio/gcontenttype.h
@@ -113,6 +114,7 @@ include/glib-2.0/gio/gpermission.h
 include/glib-2.0/gio/gpollableinputstream.h
 include/glib-2.0/gio/gpollableoutputstream.h
 include/glib-2.0/gio/gpollableutils.h
+include/glib-2.0/gio/gpropertyaction.h
 include/glib-2.0/gio/gproxy.h
 include/glib-2.0/gio/gproxyaddress.h
 include/glib-2.0/gio/gproxyaddressenumerator.h
@@ -292,6 +294,8 @@ libdata/pkgconfig/gthread-2.0.pc
 share/aclocal/glib-2.0.m4
 share/aclocal/glib-gettext.m4
 share/aclocal/gsettings.m4
+%%GDB%%share/gdb/auto-load/libglib-2.0.so.0-gdb.py
+%%GDB%%share/gdb/auto-load/libgobject-2.0.so.0-gdb.py
 share/glib-2.0/codegen/__init__.py
 share/glib-2.0/codegen/__init__.pyc
 share/glib-2.0/codegen/__init__.pyo
@@ -316,10 +320,13 @@ share/glib-2.0/codegen/parser.pyo
 share/glib-2.0/codegen/utils.py
 share/glib-2.0/codegen/utils.pyc
 share/glib-2.0/codegen/utils.pyo
+%%GDB%%share/glib-2.0/gdb/glib.py
+%%GDB%%share/glib-2.0/gdb/gobject.py
 share/glib-2.0/gettext/po/Makefile.in.in
 share/glib-2.0/schemas/gschema.dtd
 share/locale/af/LC_MESSAGES/glib20.mo
 share/locale/am/LC_MESSAGES/glib20.mo
+share/locale/an/LC_MESSAGES/glib20.mo
 share/locale/ar/LC_MESSAGES/glib20.mo
 share/locale/as/LC_MESSAGES/glib20.mo
 share/locale/ast/LC_MESSAGES/glib20.mo
@@ -467,13 +474,18 @@ share/locale/zh_TW/LC_MESSAGES/glib20.mo
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrmtry share/locale/an/LC_MESSAGES
+@dirrmtry share/locale/an
 @exec mkdir -p %D/share/glib-2.0/schemas
 @exec glib-compile-schemas %D/share/glib-2.0/schemas
 @dirrm share/glib-2.0/schemas
 @dirrm share/glib-2.0/gettext/po
 @dirrm share/glib-2.0/gettext
+%%GDB%%@dirrm share/glib-2.0/gdb
 @dirrm share/glib-2.0/codegen
 @dirrm share/glib-2.0
+%%GDB%%@dirrmtry share/gdb/auto-load
+%%GDB%%@dirrmtry share/gdb
 @dirrmtry share/bash-completion/completions
 @dirrmtry share/bash-completion
 @exec mkdir -p %D/share/GConf/gsettings

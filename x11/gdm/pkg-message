@@ -4,3 +4,19 @@ Do _NOT_ use /etc/ttys to start gdm at boot time.  This will result in gdm
 hanging or restarting constantly. Instead, add gdm_enable="YES" to
 /etc/rc.conf. GDM will be started automatic on the next reboot.
 
+If Gnomekeyring/PAM integration was choosen, the keyring can be automatically
+unlocked if:
+
+1) the password protecting it is the same as the password user 
+2) and the following directives using pam_gnome_keyring are added
+   to ${LOCALBASE}/etc/pam.d/gdm-password:
+
+	auth		include		system
+	....
+	auth		optional	${LOCALBASE}/lib/pam_gnome_keyring.so
+
+	session		include		system
+	....
+	session		optional	${LOCALBASE}/lib/pam_gnome_keyring.so auto_start
+
+It is recommended to put thouse directives at least after the system directives.

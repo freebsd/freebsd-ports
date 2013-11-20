@@ -1,5 +1,5 @@
---- configure.orig	2013-08-29 23:29:13.255661322 +0200
-+++ configure	2013-08-29 23:48:08.845647995 +0200
+--- configure.orig	2013-09-26 18:07:07.000000000 +0200
++++ configure	2013-09-26 18:08:15.000000000 +0200
 @@ -603,6 +603,9 @@
  #ifdef HAVE_SYS_TYPES_H
  # include <sys/types.h>
@@ -10,7 +10,7 @@
  #ifdef HAVE_SYS_STAT_H
  # include <sys/stat.h>
  #endif
-@@ -5778,7 +5781,7 @@
+@@ -5977,7 +5980,7 @@
  fi
  
  GLIB_RUNTIME_LIBDIR="$with_runtime_libdir"
@@ -19,7 +19,7 @@
  
  
   if test "x$with_runtime_libdir" != "x"; then
-@@ -7444,13 +7447,12 @@
+@@ -7643,13 +7646,12 @@
  
        ;;
      native)
@@ -35,7 +35,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -8648,6 +8650,7 @@
+@@ -8684,6 +8686,7 @@
      ;;
    native)
  
@@ -43,7 +43,7 @@
  $as_echo "#define USE_LIBICONV_NATIVE 1" >>confdefs.h
  
      ;;
-@@ -23201,7 +23204,7 @@
+@@ -23369,7 +23372,7 @@
  fi
  done
  
@@ -52,16 +52,16 @@
  do :
    as_ac_var=`$as_echo "ac_cv_func_$ac_func" | $as_tr_sh`
  ac_fn_c_check_func "$LINENO" "$ac_func" "$as_ac_var"
-@@ -26741,10 +26744,10 @@
- #  b) FreeBSD doesn't do this either.
- #
- case $host in
+@@ -27013,10 +27016,10 @@
+   *android*)
+     G_THREAD_LIBS_FOR_GTHREAD="$G_THREAD_LIBS"
+     ;;
 -  *-*-freebsd*|*-*-linux*)
 +  *-*-linux*)
      G_THREAD_LIBS_FOR_GTHREAD="`echo $G_THREAD_LIBS | sed s/-pthread/-lpthread/`"
      ;;
 -  *-*-openbsd*)
-+  *-*-openbsd*|*-*-freebsd*)
++  *-*-freebsd*|*-*-openbsd*)
      LDFLAGS="$LDFLAGS -pthread"
      ;;
    *)

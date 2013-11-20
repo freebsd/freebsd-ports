@@ -1,0 +1,14 @@
+bin/yelp-build
+bin/yelp-check
+bin/yelp-new
+share/aclocal/yelp.m4
+share/yelp-tools/templates/task.page
+share/yelp-tools/xslt/comments.xsl
+share/yelp-tools/xslt/mal-epub.xsl
+share/yelp-tools/xslt/mal-ncx.xsl
+share/yelp-tools/xslt/mal-opf.xsl
+share/yelp-tools/xslt/mal-rng.xsl
+share/yelp-tools/xslt/mal-status.xsl
+@dirrm share/yelp-tools/xslt
+@dirrm share/yelp-tools/templates
+@dirrm share/yelp-tools

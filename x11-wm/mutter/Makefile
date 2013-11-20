@@ -1,42 +1,46 @@
 # Created by: Pawel Worach <pawel.worach@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/x11-wm/mutter/Makefile,v 1.14 2010/06/29 21:14:07 kwm Exp $
+#   $MCom: ports/trunk/x11-wm/mutter/Makefile 18577 2013-06-21 18:20:24Z kwm $
 
 PORTNAME=	mutter
-PORTVERSION=	2.31.2
-PORTREVISION=	2
+PORTVERSION=	3.6.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Window and compositing manager based on Clutter
 
-BUILD_DEPENDS=	zenity:${PORTSDIR}/x11/zenity
-LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
-		clutter-glx-1.0:${PORTSDIR}/graphics/clutter \
-		canberra-gtk.0:${PORTSDIR}/audio/libcanberra
-RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity
+BUILD_DEPENDS=	zenity3>=3.0.0:${PORTSDIR}/x11/zenity3 \
+		gsettings-desktop-schemas>=3.4.0:${PORTSDIR}/devel/gsettings-desktop-schemas
+LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
+		libclutter-1.0.so:${PORTSDIR}/graphics/clutter \
+		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
+RUN_DEPENDS=	zenity3>=3.0.0:${PORTSDIR}/x11/zenity3 \
+		gsettings-desktop-schemas>=3.4.0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-USE_BZIP2=	yes
-USE_XORG=	x11 xext xrandr xcomposite xcursor xinerama ice sm
-USES=		gettext gmake pkgconfig
+NO_STAGE=	yes
+USE_XZ=		yes
+USE_XORG=	x11 xext xrandr xcomposite xcursor xinerama ice sm xfixes \
+		xrender xdamage
+USE_PYTHON=	2.5+
+USES=		gettext gmake pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomeprefix gnomehack intlhack gtk20 gconf2 ltverhack
+USE_GNOME=	gnomehier gnomeprefix gtk30 intlhack introspection:build \
+		ltverhack
 USE_LDCONFIG=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -fno-omit-frame-pointer
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-GCONF_SCHEMAS=	mutter.schemas
+CONFIGURE_ARGS=	--enable-compile-warnings=maximum
+GLIB_SCHEMAS=	org.gnome.mutter.gschema.xml
 
 MAN1=		mutter-message.1 mutter-theme-viewer.1 \
 		mutter-window-demo.1 mutter.1
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+PLIST_SUB=	VERSION=${PORTVERSION:R}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-Werror||g' \
-	    	${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-Wcast-align||g' \
+		${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

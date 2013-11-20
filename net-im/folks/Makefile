@@ -1,49 +1,59 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/net-im/folks/Makefile,v 1.29 2012/08/17 19:06:45 kwm Exp $
+#   $MCom: ports/trunk/net-im/folks/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	folks
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	net-im
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	library to aggregates people from multiple sources
 
-BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen \
-		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	gee:${PORTSDIR}/devel/libgee06 \
-		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib
+BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen
+LIB_DEPENDS=	libgee.so.2:${PORTSDIR}/devel/libgee06 \
+		libgcr-3.so:${PORTSDIR}/security/gcr \
+		libzeitgeist-1.0.so:${PORTSDIR}/sysutils/libzeitgeist \
+		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
 
-IGNORE=		Doesn't build currently, missing components
 CONFLICTS=	folks-0.4.[0-9]*
 
 USE_XZ=		yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gnomehier gnomehack intlhack ltverhack evolutiondataserver3
-USES=		gettext
+USES=		gettext gmake pathfix pkgconfig
+USE_GNOME=	evolutiondataserver3 gnomehier intlhack \
+		introspection:build ltverhack
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-tracker-backend
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_SUB=	LIBVER=25 VERSION=33
+GLIB_SCHEMAS=	org.freedesktop.folks.gschema.xml
 
-#OPTIONS=	SOCIALWEB "Enable social web backend" on
+PLIST_SUB=	LIBVER=25 VERSION=37
 
-#.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	SOCIALWEB
+OPTIONS_DEFAULT=SOCIALWEB
+SOCIALWEB_DESC=	Social web backend
 
-#.if defined(WITH_SOCIALWEB)
-#LIB_DEPENDS+=	socialweb.0:${PORTSDIR}/www/libsocialweb
-#CONFIGURE_ARGS+=--enable-libsocialweb-backend=yes
-#.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSOCIALWEB}
+LIB_DEPENDS+=	libsocialweb.so:${PORTSDIR}/www/libsocialweb
+CONFIGURE_ARGS+=--enable-libsocialweb-backend=yes
+PLIST_SUB+=	SOCIAL=""
+.else
 CONFIGURE_ARGS+=--enable-libsocialweb-backend=no
-#.endif
+PLIST_SUB+=	SOCIAL="@comment "
+.endif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^build_old_libs=yes|build_old_libs=no|g' \
 		${WRKDIR}/gnome-libtool
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfolks*.so.*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/folks/*/backends/*/*.so
 
 .include <bsd.port.mk>

@@ -1,104 +1,75 @@
 # Created by: Anders F Bjorklund <afb@users.sourceforge.net>
 # $FreeBSD$
-#   $MCom: ports/ports-mgmt/packagekit/Makefile,v 1.26 2010/10/10 15:49:51 marcus Exp $
+#   $MCom: ports/trunk/ports-mgmt/packagekit/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
-PORTNAME=	PackageKit
-PORTVERSION=	0.6.11
-PORTREVISION?=	3
+PORTNAME=	packagekit
+PORTVERSION=	0.8.9
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	http://www.packagekit.org/releases/
+DISTNAME=	PackageKit-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT?=	DBUS packaging abstraction layer
+COMMENT=	A DBUS packaging abstraction layer
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/docbook2man:${PORTSDIR}/textproc/docbook-utils \
-		${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
-		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		polkit-gobject-1:${PORTSDIR}/sysutils/polkit \
-		ck-connector:${PORTSDIR}/sysutils/consolekit
-RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof \
-		${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection \
-		${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info
+BUILD_DEPENDS=	${LOCALBASE}/bin/docbook2man:${PORTSDIR}/textproc/docbook-utils
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
+RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 
-USES=		gettext gmake iconv pkgconfig
-USE_GNOME=	glib20 intltool gnomehier
-USE_SQLITE=	3
+NO_STAGE=	yes
+USE_XZ=		yes
+USES=		gettext gmake iconv pathfix shared-mime-info
+USE_GNOME=	glib20 intltool introspection
 USE_LDCONFIG=	yes
-USE_PYTHON_BUILD=	2.5+
+USE_SQLITE=	3
+USE_PYTHON=	-2.7
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 CONFIGURE_ARGS+=--with-security-framework=polkit \
 		--localstatedir=/var \
 		--disable-gtk-doc \
-		--disable-managed \
 		--disable-browser-plugin \
 		--disable-gstreamer-plugin \
 		--disable-networkmanager \
+		--disable-systemd \
+		--disable-bash-completion \
 		--disable-connman
 
-MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
+OPTIONS_DEFINE=	MANPAGES
 
-MAKE_JOBS_UNSAFE=yes
-
-.if !defined(SLAVEPORT)
-OPTIONS_DEFINE=	PORTS MANPAGES
-OPTIONS_DEFAULT=PORTS
-PORTS_DESC=Use portupgrade for management, dummy if disabled
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-. if ${PORT_OPTIONS:MMANPAGES}
+.if ${PORT_OPTIONS:MMANPAGES} || defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/4.1/dtd/catalog:${PORTSDIR}/textproc/docbook-410 \
-		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+USE_GNOME+=	libxslt:build
 MAN1=	pkcon.1 pkmon.1 pkgenpack.1 pk-debuginfo-install.1
-. else
+.else
 CONFIGURE_ARGS+=--disable-man-pages
-. endif
+.endif
 
-. if ${PORT_OPTIONS:MPORTS}
-RUN_DEPENDS+=	${LOCALBASE}/sbin/portupgrade:${PORTSDIR}/ports-mgmt/portupgrade
-USE_RUBY=	yes
-CONFIGURE_ARGS+=--enable-ports --with-default-backend=ports
-PLIST_SUB+=	PORTS=""
-. else
+# IMO we should just enable the new (not writted pkgng backend) on systems
+# where pkgng is enabled.
+
+#.if ${PORT_OPTIONS:MPORTS_BACKEND}
+#LIB_DEPENDS+=	pkg:${PORTSDIR}/ports-mgmt/pkg
+#CONFIGURE_ARGS+=--enable-ports --with-default-backend=ports
+#PLIST_SUB+=	PORTS=""
+#.else
 CONFIGURE_ARGS+=--disable-ports --with-default-backend=dummy
 PLIST_SUB+=	PORTS="@comment "
-. endif
+#.endif
 
+# gtk+3 module
 CONFIGURE_ARGS+=--disable-gtk-module
 PLIST_SUB+=	GTK="@comment "
 
-CONFIGURE_ARGS+=--disable-qt
-
-.elif defined(${SLAVEPORT}) && ${SLAVEPORT}=="qt4"
-LIB_DEPENDS+=	packagekit-glib2:${PORTSDIR}/ports-mgmt/packagekit
-
-CONFIGURE_ARGS+=--enable-qt
-LIB_DEPENDS+=	cppunit-1.12:${PORTSDIR}/devel/cppunit
-USE_QT4+=	dbus gui xml sql moc_build
-#.include "${PORTSDIR}/Mk/bsd.qt.mk"
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -E -e 's/.*WARNINGFLAGS_CPP.*-Werror/#$$&/' \
-		-e 's|-DG_DISABLE_DEPRECATED||g' \
-		-e 's|-Wmissing-include-dirs||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/src/pk-lsof.c
-	@${REINPLACE_CMD} -e 's|girepositry|girepository|g' \
-		${WRKSRC}/lib/packagekit-glib2/Makefile.in
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-	    	'/xsltproc/s|.xsl [$$]? &> /dev|.xsl $$? > /dev|g'
+		${WRKSRC}/src/plugins/pk-lsof.c
 
 post-install:
-.if !defined(SLAVEPORT)
-	@${INSTALL_DATA} ${WRKSRC}/data/transactions.db \
-	    	${PREFIX}/share/PackageKit/transactions.db
-	@-update-mime-database ${PREFIX}/share/mime > /dev/null
-.endif
+	@${MKDIR} /var/cache/PackageKit/downloads
 
 .include <bsd.port.mk>

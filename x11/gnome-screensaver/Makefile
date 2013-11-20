@@ -1,99 +1,47 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11/gnome-screensaver/Makefile,v 1.125 2012/09/03 16:28:29 mezz Exp $
+#   $MCom: ports/trunk/x11/gnome-screensaver3/Makefile 18580 2013-06-23 08:40:31Z kwm $
 
 PORTNAME=	gnome-screensaver
-PORTVERSION=	2.30.2
-PORTREVISION=	3
+PORTVERSION=	3.6.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME screen saver and locker
 
-LIB_DEPENDS=	notify:${PORTSDIR}/devel/libnotify
-RUN_DEPENDS=	xscreensaver-gl-helper:${PORTSDIR}/x11/xscreensaver-gnome-hacks
+BUILD_DEPENDS=	gsettings-desktop-schemas>=3.2.0:${PORTSDIR}/devel/gsettings-desktop-schemas
+LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+RUN_DEPENDS=	pam_helper:${PORTSDIR}/security/pam_helper \
+		gsettings-desktop-schemas>=3.2.0:${PORTSDIR}/devel/gsettings-desktop-schemas \
+		${LOCALBASE}/lib/pam_gnome_keyring.so:${PORTSDIR}/security/gnome-keyring3
 
-CONFLICTS=	gnome-screensaver-3.[0-9]*
-
-USE_BZIP2=	yes
+USE_XZ=		yes
+USES=		gettext gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
-USE_XORG=	xtst xxf86vm
-USES=		pathfix gettext gmake pkgconfig
-USE_GNOME=	gnomeprefix intlhack gnomemenus libgnomekbd gnomedesktop
-CONFIGURE_ARGS=	--with-gdm-config=${LOCALBASE}/etc/gdm/custom.conf \
-		--with-xscreensaverdir=${XSCREENSAVER_DIR} \
-		--with-xscreensaverhackdir=${LOCALBASE}/bin/xscreensaver-hacks
+USE_XORG=	x11 xext xxf86vm xxf86misc xscrnsaver
+USE_GNOME=	gnomedesktop3 gnomeprefix intlhack libgnomekbd3
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--with-pam-prefix=${PREFIX}/etc/pam.d \
+		--without-systemd
 
-GCONF_SCHEMAS=	gnome-screensaver.schemas
-MAN1=		gnome-screensaver-command.1 gnome-screensaver-preferences.1 \
-		gnome-screensaver.1
-
-PLIST=	${WRKDIR}/pkg-plist
 SUB_FILES+=	gnome-screensaver.pam
 
-XSCREENSAVER_DIR=	${LOCALBASE}/share/xscreensaver/config
-SCREENSAVER_DIR=	share/applications/screensavers
-
-XSCREENSAVER_EXCLUDE=	"(popsquares.xml)"
-
-OPTIONS_DEFINE=	PAM KEYRING
-OPTIONS_DEFAULT=PAM KEYRING
-PAM_DESC=	Pluggable Authentication Module support
-KEYRING_DESC=	GnomeKeyring integration (needs PAM)
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPAM}
-RUN_DEPENDS+=		pam_helper:${PORTSDIR}/security/pam_helper
-CONFIGURE_ARGS+=	--enable-authentication-scheme=helper \
-			--with-passwd-helper=${LOCALBASE}/bin/pam_helper
-PLIST_SUB+=		PAM=""
-.else
-CONFIGURE_ARGS+=	--disable-pam
-PLIST_SUB+=		PAM="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MKEYRING} && ${PORT_OPTIONS:MPAM}
-SUB_LIST+=		PAM_KEYRING=
-RUN_DEPENDS+=		${LOCALBASE}/lib/pam_gnome_keyring.so:${PORTSDIR}/security/gnome-keyring
-.else
-SUB_LIST+=		PAM_KEYRING=\#
-.endif
-
-pre-everything::
-.if !${PORT_OPTIONS:MPAM} && ${PORT_OPTIONS:MKEYRING}
-	@${ECHO_MSG} "Keyring integration is disabled because it needs PAM."
-.endif
-
 post-patch:
-.if ${PORT_OPTIONS:MPAM}
 	@${REINPLACE_CMD} -e 's|/etc/pam.d|${PREFIX}/etc/pam.d|g' \
 		${WRKSRC}/src/gs-auth-pam.c
-.endif
-
-pre-install:
-	@${CAT} ${.CURDIR}/pkg-plist > ${PLIST}
-	@cd ${XSCREENSAVER_DIR} && ${FIND} -s * -maxdepth 1 -type f -name "*.xml" | \
-		${GREP} -Ev ${XSCREENSAVER_EXCLUDE} | \
-		${SED} -e 's:^:${SCREENSAVER_DIR}/:' | \
-		${SED} -e 's:[.]xml$$:.desktop:' >> ${PLIST}
-	@${ECHO_CMD} @dirrm ${SCREENSAVER_DIR} >> ${PLIST}
+	@${REINPLACE_CMD} -e 's|@AUTH_SCHEME@|helper|g' \
+		${WRKSRC}/src/Makefile.in
+	@${ECHO} "#define PASSWD_HELPER_PROGRAM \"/usr/local/bin/pam_helper\"" \
+		>> ${WRKSRC}/config.h.in
 
 post-install:
-	${CHOWN} root ${PREFIX}/libexec/gnome-screensaver-dialog
-	${CHMOD} +s ${PREFIX}/libexec/gnome-screensaver-dialog
-	${MKDIR} ${PREFIX}/${SCREENSAVER_DIR}
-	cd ${PREFIX}/${SCREENSAVER_DIR} && \
-		${FIND} -s ${XSCREENSAVER_DIR} -maxdepth 1 -type f -name "*.xml" | \
-			${GREP} -Ev ${XSCREENSAVER_EXCLUDE} | \
-			${XARGS} ${WRKSRC}/data/migrate-xscreensaver-config.sh
-.if ${PORT_OPTIONS:MPAM}
-	${INSTALL_DATA} ${WRKDIR}/gnome-screensaver.pam ${PREFIX}/etc/pam.d/gnome-screensaver
-.endif
+#	${CHOWN} root ${PREFIX}/libexec/gnome-screensaver-dialog
+#	${CHMOD} +s ${PREFIX}/libexec/gnome-screensaver-dialog
+	${INSTALL_DATA} ${WRKDIR}/gnome-screensaver.pam \
+		${STAGEDIR}${PREFIX}/etc/pam.d/gnome-screensaver
 
 .include <bsd.port.mk>

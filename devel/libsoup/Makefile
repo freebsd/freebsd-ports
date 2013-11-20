@@ -1,27 +1,27 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-# $FreeBSD$
-#   $MCom: ports/trunk/devel/libsoup/Makefile 18456 2013-05-12 14:40:21Z kwm $
+# $FreeBSD: head/devel/libsoup/Makefile 313633 2013-03-08 10:51:34Z kwm $
+#   $MCom: ports/trunk/devel/libsoup/Makefile 18692 2013-09-22 00:45:30Z kwm $
 
 PORTNAME=	libsoup
-PORTVERSION=	2.40.3
-PORTREVISION?=	2
+PORTVERSION=	2.42.2
+PORTREVISION?=	0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A SOAP (Simple Object Access Protocol) implementation in C
+COMMENT=	SOAP (Simple Object Access Protocol) implementation in C
 
-BUILD_DEPENDS=	glib-networking>=2.29.18:${PORTSDIR}/net/glib-networking \
-		python2:${PORTSDIR}/lang/python2
-LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
+BUILD_DEPENDS=	glib-networking>=2.29.18:${PORTSDIR}/net/glib-networking
+LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 RUN_DEPENDS=	glib-networking>=2.29.18:${PORTSDIR}/net/glib-networking
 
 USE_XZ=		yes
+NO_STAGE=	yes
 
 .if !defined(REFERENCE_PORT)
 
-USES=		gettext pathfix gmake pkgconfig
+USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	gnomehier glib20 libxml2 ltverhack referencehack intltool
 USE_SQLITE=	3
 USE_LDCONFIG=	yes
@@ -35,15 +35,14 @@ PLIST_SUB=	VERSION="2.4"
 
 .if defined(SOUP_SLAVE)
 USE_SQLITE=	yes
-LIB_DEPENDS+=	soup-2.4:${PORTSDIR}/devel/libsoup \
-		gnome-keyring:${PORTSDIR}/security/libgnome-keyring
+LIB_DEPENDS+=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
+		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 CONFIGURE_ARGS+=--with-gnome
 .else
-BUILD_DEPENDS+=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
+USE_GNOME+=	introspection:build
 CONFIGURE_ARGS+=--without-gnome
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
 		${WRKSRC}/configure

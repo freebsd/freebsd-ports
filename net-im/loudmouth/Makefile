@@ -10,13 +10,14 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Lightweight Jabber client library
 
-LIB_DEPENDS=	idn:${PORTSDIR}/dns/libidn
+LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
 
+NO_STAGE=	yes
 USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack glib20 ltverhack
+USE_GNOME=	glib20 ltverhack
 CONFIGURE_ARGS=	--disable-gtk-doc
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-Wl,-Bsymbolic -L${LOCALBASE}/lib
@@ -25,11 +26,10 @@ OPTIONS_DEFAULT=GNUTLS
 OPTIONS_RADIO=	SSL
 OPTIONS_RADIO_SSL=	GNUTLS OPENSSL
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
 RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 .endif
 

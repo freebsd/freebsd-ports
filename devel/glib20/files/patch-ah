@@ -1,9 +1,9 @@
---- docs/reference/Makefile.in.orig	2007-12-21 16:54:10.000000000 -0500
-+++ docs/reference/Makefile.in	2007-12-21 16:54:40.000000000 -0500
-@@ -268,7 +268,7 @@ GTESTER_REPORT = $(top_builddir)/glib/gt
- # initialize variables for unconditional += appending
- EXTRA_DIST = 
- TEST_PROGS = 
+--- docs/reference/Makefile.in.orig	2013-09-26 18:08:36.000000000 +0200
++++ docs/reference/Makefile.in	2013-09-26 18:08:53.000000000 +0200
+@@ -422,7 +422,7 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
 -SUBDIRS = glib gobject gio
 +SUBDIRS = #glib gobject gio
  all: all-recursive

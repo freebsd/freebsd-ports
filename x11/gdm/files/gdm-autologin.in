@@ -1,0 +1,12 @@
+# $OpenBSD: gdm-autologin,v 1.4 2012/10/10 08:47:14 ajacoutot Exp $
+#
+# gdm-autologin settings for pam(3)
+
+auth		required	pam_permit.so
+
+account		required	pam_nologin.so
+account		include		system
+
+password	include		system
+
+session		include		system

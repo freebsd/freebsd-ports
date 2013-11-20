@@ -1,39 +1,60 @@
-%%PYTHON%%lib/eog/plugins/console.py
-%%PYTHON%%lib/eog/plugins/console.pyc
-%%PYTHON%%lib/eog/plugins/console.pyo
-%%EXIF%%lib/eog/plugins/exif-display.eog-plugin
-%%EXIF%%lib/eog/plugins/exif-display/exif-display-config.ui
-%%EXIF%%lib/eog/plugins/exif-display/exif-display.ui
-lib/eog/plugins/fit-to-width.eog-plugin
-%%EXIF%%lib/eog/plugins/libexif-display.la
-%%EXIF%%lib/eog/plugins/libexif-display.so
+lib/eog/plugins/exif-display.plugin
+%%PYTHON%%lib/eog/plugins/export-to-folder.plugin
+%%PYTHON%%lib/eog/plugins/export-to-folder.py
+%%PYTHON%%lib/eog/plugins/export-to-folder.pyc
+%%PYTHON%%lib/eog/plugins/export-to-folder.pyo
+lib/eog/plugins/fit-to-width.plugin
+%%PYTHON%%lib/eog/plugins/fullscreenbg.plugin
+%%PYTHON%%lib/eog/plugins/fullscreenbg.py
+%%PYTHON%%lib/eog/plugins/fullscreenbg.pyc
+%%PYTHON%%lib/eog/plugins/fullscreenbg.pyo
+lib/eog/plugins/hide-titlebar.plugin
+lib/eog/plugins/libexif-display.la
+lib/eog/plugins/libexif-display.so
 lib/eog/plugins/libfit-to-width.la
 lib/eog/plugins/libfit-to-width.so
+lib/eog/plugins/libhide-titlebar.la
+lib/eog/plugins/libhide-titlebar.so
+lib/eog/plugins/liblight-theme.la
+lib/eog/plugins/liblight-theme.so
 %%CHAMPLAIN%%lib/eog/plugins/libmap.la
 %%CHAMPLAIN%%lib/eog/plugins/libmap.so
 lib/eog/plugins/libpostasa.la
 lib/eog/plugins/libpostasa.so
 lib/eog/plugins/libsend-by-mail.la
 lib/eog/plugins/libsend-by-mail.so
-%%CHAMPLAIN%%lib/eog/plugins/map.eog-plugin
-lib/eog/plugins/postasa.eog-plugin
-lib/eog/plugins/postasa/postasa-config.xml
-lib/eog/plugins/postasa/postasa-uploads.xml
-%%PYTHON%%lib/eog/plugins/pythonconsole.eog-plugin
-%%PYTHON%%lib/eog/plugins/pythonconsole.py
-%%PYTHON%%lib/eog/plugins/pythonconsole.pyc
-%%PYTHON%%lib/eog/plugins/pythonconsole.pyo
-lib/eog/plugins/send-by-mail.eog-plugin
-%%PYTHON%%lib/eog/plugins/slideshowshuffle.eog-plugin
+lib/eog/plugins/light-theme.plugin
+%%CHAMPLAIN%%lib/eog/plugins/map.plugin
+lib/eog/plugins/postasa.plugin
+%%PYTHON%%lib/eog/plugins/pythonconsole.plugin
+%%PYTHON%%lib/eog/plugins/pythonconsole/__init__.py
+%%PYTHON%%lib/eog/plugins/pythonconsole/__init__.pyc
+%%PYTHON%%lib/eog/plugins/pythonconsole/__init__.pyo
+%%PYTHON%%lib/eog/plugins/pythonconsole/config.py
+%%PYTHON%%lib/eog/plugins/pythonconsole/config.pyc
+%%PYTHON%%lib/eog/plugins/pythonconsole/config.pyo
+%%PYTHON%%lib/eog/plugins/pythonconsole/console.py
+%%PYTHON%%lib/eog/plugins/pythonconsole/console.pyc
+%%PYTHON%%lib/eog/plugins/pythonconsole/console.pyo
+lib/eog/plugins/send-by-mail.plugin
+%%PYTHON%%lib/eog/plugins/slideshowshuffle.plugin
 %%PYTHON%%lib/eog/plugins/slideshowshuffle.py
 %%PYTHON%%lib/eog/plugins/slideshowshuffle.pyc
 %%PYTHON%%lib/eog/plugins/slideshowshuffle.pyo
+share/eog/plugins/exif-display/exif-display-config.ui
+share/eog/plugins/exif-display/exif-display.ui
+%%PYTHON%%share/eog/plugins/export-to-folder/preferences_dialog.ui
+%%PYTHON%%share/eog/plugins/fullscreenbg/preferences_dialog.ui
+share/eog/plugins/postasa/postasa-config.xml
+share/eog/plugins/postasa/postasa-uploads.xml
+%%PYTHON%%share/eog/plugins/pythonconsole/config.ui
 share/locale/ar/LC_MESSAGES/eog-plugins.mo
 share/locale/as/LC_MESSAGES/eog-plugins.mo
 share/locale/be@latin/LC_MESSAGES/eog-plugins.mo
 share/locale/bg/LC_MESSAGES/eog-plugins.mo
 share/locale/bn_IN/LC_MESSAGES/eog-plugins.mo
 share/locale/ca/LC_MESSAGES/eog-plugins.mo
+share/locale/ca@valencia/LC_MESSAGES/eog-plugins.mo
 share/locale/cs/LC_MESSAGES/eog-plugins.mo
 share/locale/da/LC_MESSAGES/eog-plugins.mo
 share/locale/de/LC_MESSAGES/eog-plugins.mo
@@ -45,12 +66,15 @@ share/locale/fi/LC_MESSAGES/eog-plugins.mo
 share/locale/fr/LC_MESSAGES/eog-plugins.mo
 share/locale/gl/LC_MESSAGES/eog-plugins.mo
 share/locale/gu/LC_MESSAGES/eog-plugins.mo
+share/locale/he/LC_MESSAGES/eog-plugins.mo
 share/locale/hu/LC_MESSAGES/eog-plugins.mo
 share/locale/id/LC_MESSAGES/eog-plugins.mo
 share/locale/it/LC_MESSAGES/eog-plugins.mo
 share/locale/ja/LC_MESSAGES/eog-plugins.mo
 share/locale/kn/LC_MESSAGES/eog-plugins.mo
+share/locale/ko/LC_MESSAGES/eog-plugins.mo
 share/locale/lt/LC_MESSAGES/eog-plugins.mo
+share/locale/lv/LC_MESSAGES/eog-plugins.mo
 share/locale/mk/LC_MESSAGES/eog-plugins.mo
 share/locale/ml/LC_MESSAGES/eog-plugins.mo
 share/locale/mr/LC_MESSAGES/eog-plugins.mo
@@ -60,8 +84,12 @@ share/locale/pa/LC_MESSAGES/eog-plugins.mo
 share/locale/pl/LC_MESSAGES/eog-plugins.mo
 share/locale/pt/LC_MESSAGES/eog-plugins.mo
 share/locale/pt_BR/LC_MESSAGES/eog-plugins.mo
+share/locale/ro/LC_MESSAGES/eog-plugins.mo
+share/locale/ru/LC_MESSAGES/eog-plugins.mo
 share/locale/sl/LC_MESSAGES/eog-plugins.mo
 share/locale/sq/LC_MESSAGES/eog-plugins.mo
+share/locale/sr/LC_MESSAGES/eog-plugins.mo
+share/locale/sr@latin/LC_MESSAGES/eog-plugins.mo
 share/locale/sv/LC_MESSAGES/eog-plugins.mo
 share/locale/ta/LC_MESSAGES/eog-plugins.mo
 share/locale/te/LC_MESSAGES/eog-plugins.mo
@@ -70,17 +98,26 @@ share/locale/vi/LC_MESSAGES/eog-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/eog-plugins.mo
 share/locale/zh_HK/LC_MESSAGES/eog-plugins.mo
 share/locale/zh_TW/LC_MESSAGES/eog-plugins.mo
-@dirrm lib/eog/plugins/postasa
-%%EXIF%%@dirrm lib/eog/plugins/exif-display
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+%%PYTHON%%@dirrm share/eog/plugins/pythonconsole
+@dirrm share/eog/plugins/postasa
+%%PYTHON%%@dirrm share/eog/plugins/fullscreenbg
+%%PYTHON%%@dirrm share/eog/plugins/export-to-folder
+@dirrm share/eog/plugins/exif-display
+@dirrm share/eog/plugins
+%%PYTHON%%@dirrm lib/eog/plugins/pythonconsole

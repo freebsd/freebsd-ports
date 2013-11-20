@@ -1,75 +1,35 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/games/gnome-games/Makefile,v 1.240 2012/09/01 23:02:09 mezz Exp $
+#   $MCom: ports/trunk/games/gnome-games3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gnome-games
-PORTVERSION=	2.32.1
-PORTREVISION=	4
+PORTVERSION=	3.8
 CATEGORIES=	games gnome
-MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+MASTER_SITES=	# empty
+DISTFILES=	# empty
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	The game applications package for the GNOME 2 Desktop Environment
+COMMENT=	Gnome games meta port
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile \
-		clutter-gtk-0.10:${PORTSDIR}/graphics/clutter-gtk \
-		clutter-glx-1.0:${PORTSDIR}/graphics/clutter
-RUN_DEPENDS=	seed:${PORTSDIR}/devel/seed
+RUN_DEPENDS=	gnome-chess:${PORTSDIR}/games/gnome-chess \
+		five-or-more:${PORTSDIR}/games/five-or-more \
+		four-in-a-row:${PORTSDIR}/games/four-in-a-row \
+		gnome-nibbles:${PORTSDIR}/games/gnome-nibbles \
+		gnome-robots:${PORTSDIR}/games/gnome-robots \
+		gnome-sudoku:${PORTSDIR}/games/gnome-sudoku \
+		gnome-mines:${PORTSDIR}/games/gnome-mines \
+		gnome-tetravex:${PORTSDIR}/games/gnome-tetravex \
+		gnome-klotski:${PORTSDIR}/games/gnome-klotski \
+		tali:${PORTSDIR}/games/tali \
+		iagno:${PORTSDIR}/games/iagno \
+		lightsoff:${PORTSDIR}/games/lightsoff \
+		gnome-mahjongg:${PORTSDIR}/games/gnome-mahjongg \
+		quadrapassel:${PORTSDIR}/games/quadrapassel \
+		swell-foop:${PORTSDIR}/games/swell-foop
 
-CONFLICTS=	sol-1.0.* glchess-[0-9]* gnomesudoku-[0-9]* gnome-games-3.[0-9]*
+NO_BUILD=	yes
+NO_INSTALL=	yes
+NO_MTREE=	yes
 
-USE_BZIP2=	yes
-USE_PYTHON=	yes
-INSTALLS_OMF=	yes
-INSTALLS_ICONS=	yes
-USE_GL=		gl
-USES=		pathfix gettext gmake pkgconfig
-USE_GNOME=	gnomeprefix intlhack librsvg2 desktopfileutils \
-		pygnomedesktop gnomedocutils
-USE_GSTREAMER=	vorbis ogg
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-sound=gstreamer \
-		--disable-tests
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-GCONF_SCHEMAS=	aisleriot.schemas glchess.schemas glines.schemas \
-		gnect.schemas gnibbles.schemas gnobots2.schemas \
-		gnome-sudoku.schemas gnomine.schemas gnotravex.schemas \
-		gnotski.schemas gtali.schemas iagno.schemas lightsoff.schemas \
-		mahjongg.schemas quadrapassel.schemas swell-foop.schemas
-
-#DSC_FILES=	iagno/iagno-client.dsc gnect/data/gnect-client.dsc \
-#		gnibbles/gnibbles-client.dsc
-
-MAN6=		glchess.6 glines.6 gnect.6 gnibbles.6 gnobots2.6 \
-		gnome-sudoku.6 gnomine.6 gnotravex.6 gnotski.6 \
-		gtali.6 iagno.6 mahjongg.6 quadrapassel.6 sol.6
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/lib/libavahi-client.a) || defined(WITH_MDNS)
-LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi-app
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
-		${WRKSRC}/gnome-sudoku/src/lib/defaults.py.in \
-		${WRKSRC}/glchess/src/lib/defaults.py.in
-	@${REINPLACE_CMD} -e 's|strip-prefix=games|strip-prefix=Games|' \
-		${WRKSRC}/libgames-support/Makefile.in
-
-post-install:
-	${MKDIR} ${PREFIX}/share/ggz/gnome-games
-	${CHGRP} games ${LOCALBASE}/share/games
-	${CHMOD} g=rwXs ${LOCALBASE}/share/games
-
-#.for dsc in ${DSC_FILES}
-#	${INSTALL_DATA} ${WRKSRC}/${dsc} ${PREFIX}/share/ggz/gnome-games/${dsc:T}
-#.endfor
-	@-update-desktop-database
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

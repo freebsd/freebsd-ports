@@ -1,0 +1,11 @@
+--- docs/reference/Makefile.in.orig	2010-12-01 14:53:44.000000000 +0100
++++ docs/reference/Makefile.in	2010-12-01 14:53:59.000000000 +0100
+@@ -254,7 +254,7 @@
+ # of using the various options.
+ 
+ # The name of the module, e.g. 'glib'.
+-DOC_MODULE = gdl
++DOC_MODULE = gdl3
+ 
+ # The top-level SGML file. You can change this if you want to.
+ DOC_MAIN_SGML_FILE = $(DOC_MODULE)-docs.sgml

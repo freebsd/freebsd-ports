@@ -19,6 +19,7 @@ include/gtksourceview-3.0/gtksourceview/gtksourceprintcompositor.h
 include/gtksourceview-3.0/gtksourceview/gtksourcestyle.h
 include/gtksourceview-3.0/gtksourceview/gtksourcestylescheme.h
 include/gtksourceview-3.0/gtksourceview/gtksourcestyleschememanager.h
+include/gtksourceview-3.0/gtksourceview/gtksourcetypes.h
 include/gtksourceview-3.0/gtksourceview/gtksourceundomanager.h
 include/gtksourceview-3.0/gtksourceview/gtksourceview-typebuiltins.h
 include/gtksourceview-3.0/gtksourceview/gtksourceview.h
@@ -31,6 +32,7 @@ libdata/pkgconfig/gtksourceview-3.0.pc
 share/gir-1.0/GtkSource-3.0.gir
 share/doc/gtksourceview-3.0/GtkSourceBuffer.html
 share/doc/gtksourceview-3.0/GtkSourceCompletion.html
+share/doc/gtksourceview-3.0/GtkSourceCompletionContext.html
 share/doc/gtksourceview-3.0/GtkSourceCompletionInfo.html
 share/doc/gtksourceview-3.0/GtkSourceCompletionItem.html
 share/doc/gtksourceview-3.0/GtkSourceCompletionProposal.html
@@ -53,7 +55,6 @@ share/doc/gtksourceview-3.0/api-index-full.html
 share/doc/gtksourceview-3.0/gtksourceview-3.0-GtkSourceGutterRenderer.html
 share/doc/gtksourceview-3.0/gtksourceview-3.0-GtkSourceGutterRendererPixbuf.html
 share/doc/gtksourceview-3.0/gtksourceview-3.0-GtkSourceGutterRendererText.html
-share/doc/gtksourceview-3.0/gtksourceview-3.0-completioncontext.html
 share/doc/gtksourceview-3.0/gtksourceview-3.0.devhelp2
 share/doc/gtksourceview-3.0/home.png
 share/doc/gtksourceview-3.0/index.html
@@ -68,6 +69,7 @@ share/doc/gtksourceview-3.0/style-reference.html
 share/doc/gtksourceview-3.0/style.css
 share/doc/gtksourceview-3.0/up.png
 share/gtksourceview-3.0/language-specs/R.lang
+share/gtksourceview-3.0/language-specs/actionscript.lang
 share/gtksourceview-3.0/language-specs/ada.lang
 share/gtksourceview-3.0/language-specs/asp.lang
 share/gtksourceview-3.0/language-specs/automake.lang
@@ -114,6 +116,7 @@ share/gtksourceview-3.0/language-specs/html.lang
 share/gtksourceview-3.0/language-specs/idl.lang
 share/gtksourceview-3.0/language-specs/imagej.lang
 share/gtksourceview-3.0/language-specs/ini.lang
+share/gtksourceview-3.0/language-specs/j.lang
 share/gtksourceview-3.0/language-specs/java.lang
 share/gtksourceview-3.0/language-specs/javascript.lang
 share/gtksourceview-3.0/language-specs/json.lang
@@ -128,7 +131,9 @@ share/gtksourceview-3.0/language-specs/makefile.lang
 share/gtksourceview-3.0/language-specs/mallard.lang
 share/gtksourceview-3.0/language-specs/markdown.lang
 share/gtksourceview-3.0/language-specs/matlab.lang
+share/gtksourceview-3.0/language-specs/mxml.lang
 share/gtksourceview-3.0/language-specs/nemerle.lang
+share/gtksourceview-3.0/language-specs/netrexx.lang
 share/gtksourceview-3.0/language-specs/nsis.lang
 share/gtksourceview-3.0/language-specs/objc.lang
 share/gtksourceview-3.0/language-specs/objj.lang
@@ -145,6 +150,7 @@ share/gtksourceview-3.0/language-specs/pkgconfig.lang
 share/gtksourceview-3.0/language-specs/po.lang
 share/gtksourceview-3.0/language-specs/prolog.lang
 share/gtksourceview-3.0/language-specs/protobuf.lang
+share/gtksourceview-3.0/language-specs/puppet.lang
 share/gtksourceview-3.0/language-specs/python.lang
 share/gtksourceview-3.0/language-specs/python3.lang
 share/gtksourceview-3.0/language-specs/rpmspec.lang

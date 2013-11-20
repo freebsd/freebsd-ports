@@ -1,7 +1,46 @@
 bin/gnome-help
 bin/yelp
+include/libyelp/yelp-bookmarks.h
+include/libyelp/yelp-docbook-document.h
+include/libyelp/yelp-document.h
+include/libyelp/yelp-help-list.h
+include/libyelp/yelp-info-document.h
+include/libyelp/yelp-location-entry.h
+include/libyelp/yelp-mallard-document.h
+include/libyelp/yelp-man-document.h
+include/libyelp/yelp-settings.h
+include/libyelp/yelp-simple-document.h
+include/libyelp/yelp-sqlite-storage.h
+include/libyelp/yelp-storage.h
+include/libyelp/yelp-transform.h
+include/libyelp/yelp-types.h
+include/libyelp/yelp-uri.h
+include/libyelp/yelp-view.h
+lib/libyelp.a
+lib/libyelp.la
+lib/libyelp.so
+lib/libyelp.so.0
 share/applications/yelp.desktop
-share/icons/hicolor/192x192/apps/yelp-icon-big.png
+share/doc/libyelp/YelpDocument.html
+share/doc/libyelp/YelpLocationEntry.html
+share/doc/libyelp/YelpSettings.html
+share/doc/libyelp/YelpSimpleDocument.html
+share/doc/libyelp/YelpUri.html
+share/doc/libyelp/YelpView.html
+share/doc/libyelp/api-index-full.html
+share/doc/libyelp/ch01.html
+share/doc/libyelp/ch01s02.html
+share/doc/libyelp/home.png
+share/doc/libyelp/index.html
+share/doc/libyelp/index.sgml
+share/doc/libyelp/left.png
+share/doc/libyelp/libyelp-yelp-error.html
+share/doc/libyelp/libyelp.devhelp
+share/doc/libyelp/libyelp.devhelp2
+share/doc/libyelp/object-tree.html
+share/doc/libyelp/right.png
+share/doc/libyelp/style.css
+share/doc/libyelp/up.png
 share/locale/af/LC_MESSAGES/yelp.mo
 share/locale/am/LC_MESSAGES/yelp.mo
 share/locale/ar/LC_MESSAGES/yelp.mo
@@ -24,7 +63,6 @@ share/locale/da/LC_MESSAGES/yelp.mo
 share/locale/de/LC_MESSAGES/yelp.mo
 share/locale/dz/LC_MESSAGES/yelp.mo
 share/locale/el/LC_MESSAGES/yelp.mo
-share/locale/en@shaw/LC_MESSAGES/yelp.mo
 share/locale/en_CA/LC_MESSAGES/yelp.mo
 share/locale/en_GB/LC_MESSAGES/yelp.mo
 share/locale/eo/LC_MESSAGES/yelp.mo
@@ -38,6 +76,7 @@ share/locale/fur/LC_MESSAGES/yelp.mo
 share/locale/ga/LC_MESSAGES/yelp.mo
 share/locale/gl/LC_MESSAGES/yelp.mo
 share/locale/gu/LC_MESSAGES/yelp.mo
+share/locale/km/LC_MESSAGES/yelp.mo
 share/locale/he/LC_MESSAGES/yelp.mo
 share/locale/hi/LC_MESSAGES/yelp.mo
 share/locale/hr/LC_MESSAGES/yelp.mo
@@ -103,40 +142,56 @@ share/locale/zh_CN/LC_MESSAGES/yelp.mo
 share/locale/zh_HK/LC_MESSAGES/yelp.mo
 share/locale/zh_TW/LC_MESSAGES/yelp.mo
 share/locale/zu/LC_MESSAGES/yelp.mo
-%%DATADIR%%/default.css
-%%DATADIR%%/icons/yelp-icon-caution.png
-%%DATADIR%%/icons/yelp-icon-important.png
-%%DATADIR%%/icons/yelp-icon-note.png
-%%DATADIR%%/icons/yelp-icon-tip.png
-%%DATADIR%%/icons/yelp-icon-warning.png
-%%DATADIR%%/icons/yelp-watermark-blockquote-00AB.png
-%%DATADIR%%/icons/yelp-watermark-blockquote-00BB.png
-%%DATADIR%%/icons/yelp-watermark-blockquote-201C.png
-%%DATADIR%%/icons/yelp-watermark-blockquote-201D.png
-%%DATADIR%%/icons/yelp-watermark-blockquote-201E.png
-%%DATADIR%%/important_docs.xml
-%%DATADIR%%/info.xml
-%%DATADIR%%/man.xml
-%%DATADIR%%/scrollkeeper.xml
-%%DATADIR%%/toc.xml
-%%DATADIR%%/ui/yelp-bookmarks-add.ui
-%%DATADIR%%/ui/yelp-bookmarks.ui
-%%DATADIR%%/ui/yelp-open-location.ui
-%%DATADIR%%/ui/yelp-preferences.ui
-%%DATADIR%%/ui/yelp-search-ui.xml
-%%DATADIR%%/ui/yelp-ui.xml
-%%DATADIR%%/xslt/db-title.xsl
+%%DATADIR%%/dtd/catalog
+%%DATADIR%%/dtd/docbookx.dtd
+%%DATADIR%%/dtd/isoamsa.ent
+%%DATADIR%%/dtd/isoamsb.ent
+%%DATADIR%%/dtd/isoamsc.ent
+%%DATADIR%%/dtd/isoamsn.ent
+%%DATADIR%%/dtd/isoamso.ent
+%%DATADIR%%/dtd/isoamsr.ent
+%%DATADIR%%/dtd/isobox.ent
+%%DATADIR%%/dtd/isocyr1.ent
+%%DATADIR%%/dtd/isocyr2.ent
+%%DATADIR%%/dtd/isodia.ent
+%%DATADIR%%/dtd/isogrk1.ent
+%%DATADIR%%/dtd/isogrk2.ent
+%%DATADIR%%/dtd/isogrk3.ent
+%%DATADIR%%/dtd/isogrk4.ent
+%%DATADIR%%/dtd/isolat1.ent
+%%DATADIR%%/dtd/isolat2.ent
+%%DATADIR%%/dtd/isonum.ent
+%%DATADIR%%/dtd/isopub.ent
+%%DATADIR%%/dtd/isotech.ent
+%%DATADIR%%/icons/hicolor/16x16/status/bookmark.png
+%%DATADIR%%/icons/hicolor/16x16/status/yelp-page-task.png
+%%DATADIR%%/icons/hicolor/16x16/status/yelp-page-tip.png
+%%DATADIR%%/icons/hicolor/16x16/status/yelp-page-ui.png
+%%DATADIR%%/icons/hicolor/16x16/status/yelp-page-video.png
+%%DATADIR%%/icons/hicolor/scalable/actions/yelp-bookmark-add-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/yelp-bookmark-remove-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/status/yelp-page-problem-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/status/yelp-page-search-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/status/yelp-page-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/status/yelp-page-task-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/status/yelp-page-tip-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/status/yelp-page-ui-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/status/yelp-page-video-symbolic.svg
 %%DATADIR%%/xslt/db2html.xsl
 %%DATADIR%%/xslt/info2html.xsl
 %%DATADIR%%/xslt/mal2html.xsl
 %%DATADIR%%/xslt/man2html.xsl
-%%DATADIR%%/xslt/search2html.xsl
-%%DATADIR%%/xslt/toc2html.xsl
 %%DATADIR%%/xslt/yelp-common.xsl
-%%DATADIR%%/yelp.js
+share/yelp-xsl/xslt/common/domains/yelp.xml
 @dirrm %%DATADIR%%/xslt
-@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%/icons/hicolor/scalable/status
+@dirrm %%DATADIR%%/icons/hicolor/scalable/actions
+@dirrm %%DATADIR%%/icons/hicolor/scalable
+@dirrm %%DATADIR%%/icons/hicolor/16x16/status
+@dirrm %%DATADIR%%/icons/hicolor/16x16
+@dirrm %%DATADIR%%/icons/hicolor
 @dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/dtd
 @dirrm %%DATADIR%%
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
@@ -178,12 +233,12 @@ share/locale/zu/LC_MESSAGES/yelp.mo
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/ks/LC_MESSAGES
 @dirrmtry share/locale/ks
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
 @dirrmtry share/locale/kk/LC_MESSAGES
 @dirrmtry share/locale/kk
 @dirrmtry share/locale/fur/LC_MESSAGES
 @dirrmtry share/locale/fur
-@dirrmtry share/locale/en@shaw/LC_MESSAGES
-@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/crh/LC_MESSAGES
@@ -198,3 +253,5 @@ share/locale/zu/LC_MESSAGES/yelp.mo
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrm share/doc/libyelp
+@dirrm include/libyelp

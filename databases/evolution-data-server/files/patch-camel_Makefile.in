@@ -1,0 +1,11 @@
+--- camel/Makefile.orig.in	2013-03-27 22:04:35.870715032 +0000
++++ camel/Makefile.in	2013-03-27 22:04:44.242711496 +0000
+@@ -2693,7 +2693,7 @@
+ 	 cp $< $@
+ 
+ camel-imapx-tokenise.h: camel-imapx-tokens.txt
+-	@GPERF@ -H imapx_hash -N imapx_tokenise_struct -L ANSI-C -o -t -k1,$$ $< --output-file=$@
++	@GPERF@ -H imapx_hash -N imapx_tokenise_struct -L ANSI-C -o -t -k1,$$ $< > $@
+ 
+ camel-enumtypes.h: camel-enumtypes.h.template $(ENUM_TYPES)
+ 	$(AM_V_GEN) (cd $(srcdir) && $(GLIB_MKENUMS) --template camel-enumtypes.h.template $(ENUM_TYPES)) > $@

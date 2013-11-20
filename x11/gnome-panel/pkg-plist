@@ -1,235 +1,195 @@
 bin/gnome-desktop-item-edit
 bin/gnome-panel
 bin/panel-test-applets
-%%BONOBO%%bin/panel-test-applets-bonobo
-@unexec gconftool-2 --direct --config-source=xml::%D/etc/gconf/gconf.xml.defaults --unload %D/etc/gconf/schemas/panel-default-setup.entries /apps/panel > /dev/null || /usr/bin/true
-@unexec gconftool-2 --direct --config-source=xml::%D/etc/gconf/gconf.xml.defaults --unload %D/etc/gconf/schemas/panel-default-setup.entries > /dev/null || /usr/bin/true
-etc/gconf/schemas/panel-default-setup.entries
-@exec gconftool-2 --direct --config-source=xml::%D/etc/gconf/gconf.xml.defaults --load %D/etc/gconf/schemas/panel-default-setup.entries > /dev/null || /usr/bin/true
-@exec gconftool-2 --direct --config-source=xml::%D/etc/gconf/gconf.xml.defaults --load %D/etc/gconf/schemas/panel-default-setup.entries /apps/panel > /dev/null || /usr/bin/true
-%%BONOBO%%include/panel-2.0/GNOME_Panel.h
-%%BONOBO%%include/panel-2.0/panel-applet-enums.h
-%%BONOBO%%include/panel-2.0/panel-applet-gconf.h
-%%BONOBO%%include/panel-2.0/panel-applet.h
-include/gnome-panel-3.0/libpanel-applet/panel-applet-enums.h
-include/gnome-panel-3.0/libpanel-applet/panel-applet-gconf.h
-include/gnome-panel-3.0/libpanel-applet/panel-applet.h
-lib/girepository-1.0/PanelApplet-3.0.typelib
-@exec mkdir -p %D/lib/gnome-panel/modules
-%%BONOBO%%lib/gnome-panel/modules/libpanel-applets-bonobo.a
-%%BONOBO%%lib/gnome-panel/modules/libpanel-applets-bonobo.la
-%%BONOBO%%lib/gnome-panel/modules/libpanel-applets-bonobo.so
-@exec %%LOCALBASE%%/bin/gio-querymodules %D/lib/gnome-panel/modules 2>/dev/null || /usr/bin/true
-@unexec /bin/rm -f %D/lib/gnome-panel/modules/giomodule.cache
-%%BONOBO%%lib/libpanel-applet-2.a
-%%BONOBO%%lib/libpanel-applet-2.la
-%%BONOBO%%lib/libpanel-applet-2.so
-%%BONOBO%%lib/libpanel-applet-2.so.0
-lib/libpanel-applet-3.a
-lib/libpanel-applet-3.la
-lib/libpanel-applet-3.so
-lib/libpanel-applet-3.so.0
-%%BONOBO%%libdata/pkgconfig/libpanelapplet-2.0.pc
-libdata/pkgconfig/libpanelapplet-3.0.pc
+include/gnome-panel-4.0/libpanel-applet/panel-applet-enums.h
+include/gnome-panel-4.0/libpanel-applet/panel-applet-gconf.h
+include/gnome-panel-4.0/libpanel-applet/panel-applet.h
+lib/girepository-1.0/PanelApplet-4.0.typelib
+lib/libpanel-applet-4.a
+lib/libpanel-applet-4.la
+lib/libpanel-applet-4.so
+lib/libpanel-applet-4.so.0
+libdata/pkgconfig/libpanelapplet-4.0.pc
 libexec/clock-applet
 libexec/fish-applet
 libexec/gnome-panel-add
 libexec/notification-area-applet
 libexec/wnck-applet
+man/man1/gnome-panel.1.gz
 share/applications/gnome-panel.desktop
 share/dbus-1/services/org.gnome.panel.applet.ClockAppletFactory.service
 share/dbus-1/services/org.gnome.panel.applet.FishAppletFactory.service
 share/dbus-1/services/org.gnome.panel.applet.NotificationAreaAppletFactory.service
 share/dbus-1/services/org.gnome.panel.applet.WnckletFactory.service
-%%BONOBO%%share/gnome-2.0/ui/GNOME_Panel_Popup.xml
-share/gir-1.0/PanelApplet-3.0.gir
-%%DATADIR%%/applets/org.gnome.panel.ClockApplet.panel-applet
-%%DATADIR%%/applets/org.gnome.panel.FishApplet.panel-applet
-%%DATADIR%%/applets/org.gnome.panel.NotificationAreaApplet.panel-applet
-%%DATADIR%%/applets/org.gnome.panel.Wncklet.panel-applet
-%%DATADIR%%/ui/clock.ui
-%%DATADIR%%/ui/clock-menu.xml
-%%DATADIR%%/ui/fish.ui
-%%DATADIR%%/ui/fish-menu.xml
-%%DATADIR%%/ui/notification-area-menu.xml
-%%BONOBO%%%%DATADIR%%/ui/panel-test-applets-bonobo.ui
-%%DATADIR%%/ui/panel-properties-dialog.ui
-%%DATADIR%%/ui/panel-run-dialog.ui
-%%DATADIR%%/ui/showdesktop-menu.xml
-%%DATADIR%%/ui/panel-test-applets.ui
-%%DATADIR%%/ui/window-list.ui
-%%DATADIR%%/ui/window-list-menu.xml
-%%DATADIR%%/ui/window-menu-menu.xml
-%%DATADIR%%/ui/workspace-switcher.ui
-%%DATADIR%%/ui/workspace-switcher-menu.xml
-%%DATADIR%%/pixmaps/clock-calendar-icon.png
-%%DATADIR%%/pixmaps/clock-face-large.svg
-%%DATADIR%%/pixmaps/clock-face-small-day.svg
-%%DATADIR%%/pixmaps/clock-face-small-evening.svg
-%%DATADIR%%/pixmaps/clock-face-small-morning.svg
-%%DATADIR%%/pixmaps/clock-face-small-night.svg
-%%DATADIR%%/pixmaps/clock-face-small.svg
-%%DATADIR%%/pixmaps/clock-map-location-current.png
-%%DATADIR%%/pixmaps/clock-map-location-hilight.png
-%%DATADIR%%/pixmaps/clock-map-location-marker.png
-%%DATADIR%%/pixmaps/clock-map.png
-%%DATADIR%%/pixmaps/fishanim.png
-%%DATADIR%%/pixmaps/footguy.png
-%%DATADIR%%/pixmaps/gnome-gegl2-2.png
-%%DATADIR%%/pixmaps/gnome-gegl2.png
-%%DATADIR%%/pixmaps/monkey.png
-%%DATADIR%%/pixmaps/oldwanda.png
-%%DATADIR%%/pixmaps/wanda.png
-share/gnome-panelrc
-share/gnome/help/clock/C/clock.xml
-share/gnome/help/clock/C/figures/clock_applet.png
-share/gnome/help/clock/C/legal.xml
-share/gnome/help/clock/ar/clock.xml
-share/gnome/help/clock/ar/figures/clock_applet.png
-share/gnome/help/clock/ar/legal.xml
-share/gnome/help/clock/ca/clock.xml
-share/gnome/help/clock/ca/figures/clock_applet.png
-share/gnome/help/clock/ca/legal.xml
-share/gnome/help/clock/cs/clock.xml
-share/gnome/help/clock/cs/figures/clock_applet.png
-share/gnome/help/clock/cs/legal.xml
-share/gnome/help/clock/da/clock.xml
-share/gnome/help/clock/da/figures/clock_applet.png
-share/gnome/help/clock/da/legal.xml
-share/gnome/help/clock/de/clock.xml
-share/gnome/help/clock/de/figures/clock_applet.png
-share/gnome/help/clock/de/legal.xml
-share/gnome/help/clock/el/clock.xml
-share/gnome/help/clock/el/figures/clock_applet.png
-share/gnome/help/clock/el/legal.xml
-share/gnome/help/clock/en_GB/clock.xml
-share/gnome/help/clock/en_GB/figures/clock_applet.png
-share/gnome/help/clock/en_GB/legal.xml
-share/gnome/help/clock/es/clock.xml
-share/gnome/help/clock/es/figures/clock_applet.png
-share/gnome/help/clock/es/legal.xml
-share/gnome/help/clock/eu/clock.xml
-share/gnome/help/clock/eu/figures/clock_applet.png
-share/gnome/help/clock/eu/legal.xml
-share/gnome/help/clock/fi/clock.xml
-share/gnome/help/clock/fi/figures/clock_applet.png
-share/gnome/help/clock/fi/legal.xml
-share/gnome/help/clock/fr/clock.xml
-share/gnome/help/clock/fr/figures/clock_applet.png
-share/gnome/help/clock/fr/legal.xml
-share/gnome/help/clock/it/clock.xml
-share/gnome/help/clock/it/figures/clock_applet.png
-share/gnome/help/clock/it/legal.xml
-share/gnome/help/clock/ja/clock.xml
-share/gnome/help/clock/ja/figures/clock_applet.png
-share/gnome/help/clock/ja/legal.xml
-share/gnome/help/clock/ko/clock.xml
-share/gnome/help/clock/ko/figures/clock_applet.png
-share/gnome/help/clock/ko/legal.xml
-share/gnome/help/clock/nl/clock.xml
-share/gnome/help/clock/nl/figures/clock_applet.png
-share/gnome/help/clock/nl/legal.xml
-share/gnome/help/clock/oc/clock.xml
-share/gnome/help/clock/oc/figures/clock_applet.png
-share/gnome/help/clock/oc/legal.xml
-share/gnome/help/clock/pa/clock.xml
-share/gnome/help/clock/pa/figures/clock_applet.png
-share/gnome/help/clock/pa/legal.xml
-share/gnome/help/clock/pt/clock.xml
-share/gnome/help/clock/pt/figures/clock_applet.png
-share/gnome/help/clock/pt/legal.xml
-share/gnome/help/clock/pt_BR/clock.xml
-share/gnome/help/clock/pt_BR/figures/clock_applet.png
-share/gnome/help/clock/pt_BR/legal.xml
-share/gnome/help/clock/ru/clock.xml
-share/gnome/help/clock/ru/figures/clock_applet.png
-share/gnome/help/clock/ru/legal.xml
-share/gnome/help/clock/sl/clock.xml
-share/gnome/help/clock/sl/figures/clock_applet.png
-share/gnome/help/clock/sl/legal.xml
-share/gnome/help/clock/sr/clock.xml
-share/gnome/help/clock/sr/figures/clock_applet.png
-share/gnome/help/clock/sr/legal.xml
-share/gnome/help/clock/sv/clock.xml
-share/gnome/help/clock/sv/figures/clock_applet.png
-share/gnome/help/clock/sv/legal.xml
-share/gnome/help/clock/th/clock.xml
-share/gnome/help/clock/th/figures/clock_applet.png
-share/gnome/help/clock/th/legal.xml
-share/gnome/help/clock/uk/clock.xml
-share/gnome/help/clock/uk/figures/clock_applet.png
-share/gnome/help/clock/uk/legal.xml
-share/gnome/help/clock/zh_CN/clock.xml
-share/gnome/help/clock/zh_CN/figures/clock_applet.png
-share/gnome/help/clock/zh_CN/legal.xml
-share/gnome/help/clock/zh_HK/clock.xml
-share/gnome/help/clock/zh_HK/figures/clock_applet.png
-share/gnome/help/clock/zh_HK/legal.xml
-share/gnome/help/clock/zh_TW/clock.xml
-share/gnome/help/clock/zh_TW/figures/clock_applet.png
-share/gnome/help/clock/zh_TW/legal.xml
-share/gnome/help/fish/C/figures/fish_applet.png
-share/gnome/help/fish/C/fish.xml
-share/gnome/help/fish/C/legal.xml
-share/gnome/help/fish/ca/figures/fish_applet.png
-share/gnome/help/fish/ca/fish.xml
-share/gnome/help/fish/ca/legal.xml
-share/gnome/help/fish/cs/figures/fish_applet.png
-share/gnome/help/fish/cs/fish.xml
-share/gnome/help/fish/cs/legal.xml
-share/gnome/help/fish/de/figures/fish_applet.png
-share/gnome/help/fish/de/fish.xml
-share/gnome/help/fish/de/legal.xml
-share/gnome/help/fish/el/figures/fish_applet.png
-share/gnome/help/fish/el/fish.xml
-share/gnome/help/fish/el/legal.xml
-share/gnome/help/fish/en_GB/figures/fish_applet.png
-share/gnome/help/fish/en_GB/fish.xml
-share/gnome/help/fish/en_GB/legal.xml
-share/gnome/help/fish/es/figures/fish_applet.png
-share/gnome/help/fish/es/fish.xml
-share/gnome/help/fish/es/legal.xml
-share/gnome/help/fish/eu/figures/fish_applet.png
-share/gnome/help/fish/eu/fish.xml
-share/gnome/help/fish/eu/legal.xml
-share/gnome/help/fish/fi/figures/fish_applet.png
-share/gnome/help/fish/fi/fish.xml
-share/gnome/help/fish/fi/legal.xml
-share/gnome/help/fish/fr/figures/fish_applet.png
-share/gnome/help/fish/fr/fish.xml
-share/gnome/help/fish/fr/legal.xml
-share/gnome/help/fish/it/figures/fish_applet.png
-share/gnome/help/fish/it/fish.xml
-share/gnome/help/fish/it/legal.xml
-share/gnome/help/fish/ja/figures/fish_applet.png
-share/gnome/help/fish/ja/fish.xml
-share/gnome/help/fish/ja/legal.xml
-share/gnome/help/fish/ko/figures/fish_applet.png
-share/gnome/help/fish/ko/fish.xml
-share/gnome/help/fish/ko/legal.xml
-share/gnome/help/fish/oc/figures/fish_applet.png
-share/gnome/help/fish/oc/fish.xml
-share/gnome/help/fish/oc/legal.xml
-share/gnome/help/fish/ru/figures/fish_applet.png
-share/gnome/help/fish/ru/fish.xml
-share/gnome/help/fish/ru/legal.xml
-share/gnome/help/fish/sl/figures/fish_applet.png
-share/gnome/help/fish/sl/fish.xml
-share/gnome/help/fish/sl/legal.xml
-share/gnome/help/fish/sv/figures/fish_applet.png
-share/gnome/help/fish/sv/fish.xml
-share/gnome/help/fish/sv/legal.xml
-share/gnome/help/fish/th/figures/fish_applet.png
-share/gnome/help/fish/th/fish.xml
-share/gnome/help/fish/th/legal.xml
-share/gnome/help/fish/uk/figures/fish_applet.png
-share/gnome/help/fish/uk/fish.xml
-share/gnome/help/fish/uk/legal.xml
-share/gnome/help/fish/zh_CN/figures/fish_applet.png
-share/gnome/help/fish/zh_CN/fish.xml
-share/gnome/help/fish/zh_CN/legal.xml
+share/doc/panel-applet-4.0/getting-started.concepts.html
+share/doc/panel-applet-4.0/getting-started.concepts.html.bak
+share/doc/panel-applet-4.0/getting-started.context-menu.html
+share/doc/panel-applet-4.0/getting-started.context-menu.html.bak
+share/doc/panel-applet-4.0/getting-started.example.html
+share/doc/panel-applet-4.0/getting-started.example.html.bak
+share/doc/panel-applet-4.0/getting-started.html
+share/doc/panel-applet-4.0/getting-started.html.bak
+share/doc/panel-applet-4.0/getting-started.in-out-process.html
+share/doc/panel-applet-4.0/getting-started.in-out-process.html.bak
+share/doc/panel-applet-4.0/getting-started.install.html
+share/doc/panel-applet-4.0/getting-started.install.html.bak
+share/doc/panel-applet-4.0/getting-started.integration.html
+share/doc/panel-applet-4.0/getting-started.integration.html.bak
+share/doc/panel-applet-4.0/getting-started.intro.html
+share/doc/panel-applet-4.0/getting-started.intro.html.bak
+share/doc/panel-applet-4.0/getting-started.introspection.html
+share/doc/panel-applet-4.0/getting-started.introspection.html.bak
+share/doc/panel-applet-4.0/getting-started.settings.html
+share/doc/panel-applet-4.0/getting-started.settings.html.bak
+share/doc/panel-applet-4.0/home.png
+share/doc/panel-applet-4.0/home.png.bak
+share/doc/panel-applet-4.0/index.html
+share/doc/panel-applet-4.0/index.html.bak
+share/doc/panel-applet-4.0/index.sgml
+share/doc/panel-applet-4.0/index.sgml.bak
+share/doc/panel-applet-4.0/left.png
+share/doc/panel-applet-4.0/left.png.bak
+share/doc/panel-applet-4.0/overview.html
+share/doc/panel-applet-4.0/overview.html.bak
+share/doc/panel-applet-4.0/panel-applet-4.0.devhelp2
+share/doc/panel-applet-4.0/panel-applet-GConf-Utilities.html
+share/doc/panel-applet-4.0/panel-applet-GConf-Utilities.html.bak
+share/doc/panel-applet-4.0/panel-applet-Panel-Applet-Factory.html
+share/doc/panel-applet-4.0/panel-applet-Panel-Applet-Factory.html.bak
+share/doc/panel-applet-4.0/panel-applet-Panel-Applet.html
+share/doc/panel-applet-4.0/panel-applet-Panel-Applet.html.bak
+share/doc/panel-applet-4.0/panel-applet.devhelp2.bak
+share/doc/panel-applet-4.0/port-gnome2.html
+share/doc/panel-applet-4.0/port-gnome2.html.bak
+share/doc/panel-applet-4.0/reference.html
+share/doc/panel-applet-4.0/reference.html.bak
+share/doc/panel-applet-4.0/right.png
+share/doc/panel-applet-4.0/right.png.bak
+share/doc/panel-applet-4.0/style.css
+share/doc/panel-applet-4.0/style.css.bak
+share/doc/panel-applet-4.0/up.png
+share/doc/panel-applet-4.0/up.png.bak
+share/gir-1.0/PanelApplet-4.0.gir
+%%DATADIR%%/4.0/applets/org.gnome.panel.ClockApplet.panel-applet
+%%DATADIR%%/4.0/applets/org.gnome.panel.FishApplet.panel-applet
+%%DATADIR%%/4.0/applets/org.gnome.panel.NotificationAreaApplet.panel-applet
+%%DATADIR%%/4.0/applets/org.gnome.panel.Wncklet.panel-applet
+%%DATADIR%%/fish/fishanim.fish
+%%DATADIR%%/fish/fishanim.png
+%%DATADIR%%/fish/footguy.fish
+%%DATADIR%%/fish/footguy.png
+%%DATADIR%%/fish/monkey.fish
+%%DATADIR%%/fish/monkey.png
+%%DATADIR%%/fish/oldwanda.fish
+%%DATADIR%%/fish/oldwanda.png
+%%DATADIR%%/fish/wanda.fish
+%%DATADIR%%/fish/wanda.png
+%%DATADIR%%/panel-default-layout.layout
+share/help/C/clock/index.docbook
+share/help/C/clock/legal.xml
+share/help/C/fish/index.docbook
+share/help/C/fish/legal.xml
+share/help/ar/clock/index.docbook
+share/help/ar/clock/legal.xml
+share/help/ca/clock/index.docbook
+share/help/ca/clock/legal.xml
+share/help/ca/fish/index.docbook
+share/help/ca/fish/legal.xml
+share/help/cs/clock/index.docbook
+share/help/cs/clock/legal.xml
+share/help/cs/fish/index.docbook
+share/help/cs/fish/legal.xml
+share/help/da/clock/index.docbook
+share/help/da/clock/legal.xml
+share/help/da/fish/index.docbook
+share/help/da/fish/legal.xml
+share/help/de/clock/index.docbook
+share/help/de/clock/legal.xml
+share/help/de/fish/index.docbook
+share/help/de/fish/legal.xml
+share/help/el/clock/index.docbook
+share/help/el/clock/legal.xml
+share/help/el/fish/index.docbook
+share/help/el/fish/legal.xml
+share/help/en_GB/clock/index.docbook
+share/help/en_GB/clock/legal.xml
+share/help/en_GB/fish/index.docbook
+share/help/en_GB/fish/legal.xml
+share/help/es/clock/index.docbook
+share/help/es/clock/legal.xml
+share/help/es/fish/index.docbook
+share/help/es/fish/legal.xml
+share/help/eu/clock/index.docbook
+share/help/eu/clock/legal.xml
+share/help/eu/fish/index.docbook
+share/help/eu/fish/legal.xml
+share/help/fi/clock/index.docbook
+share/help/fi/clock/legal.xml
+share/help/fi/fish/index.docbook
+share/help/fi/fish/legal.xml
+share/help/fr/clock/index.docbook
+share/help/fr/clock/legal.xml
+share/help/fr/fish/index.docbook
+share/help/fr/fish/legal.xml
+share/help/id/clock/index.docbook
+share/help/id/clock/legal.xml
+share/help/it/clock/index.docbook
+share/help/it/clock/legal.xml
+share/help/it/fish/index.docbook
+share/help/it/fish/legal.xml
+share/help/ja/clock/index.docbook
+share/help/ja/clock/legal.xml
+share/help/ja/fish/index.docbook
+share/help/ja/fish/legal.xml
+share/help/ko/clock/index.docbook
+share/help/ko/clock/legal.xml
+share/help/ko/fish/index.docbook
+share/help/ko/fish/legal.xml
+share/help/nl/clock/index.docbook
+share/help/nl/clock/legal.xml
+share/help/oc/clock/index.docbook
+share/help/oc/clock/legal.xml
+share/help/oc/fish/index.docbook
+share/help/oc/fish/legal.xml
+share/help/pa/clock/index.docbook
+share/help/pa/clock/legal.xml
+share/help/pt/clock/index.docbook
+share/help/pt/clock/legal.xml
+share/help/pt_BR/clock/index.docbook
+share/help/pt_BR/clock/legal.xml
+share/help/ru/clock/index.docbook
+share/help/ru/clock/legal.xml
+share/help/ru/fish/index.docbook
+share/help/ru/fish/legal.xml
+share/help/sl/clock/index.docbook
+share/help/sl/clock/legal.xml
+share/help/sl/fish/index.docbook
+share/help/sl/fish/legal.xml
+share/help/sr/clock/index.docbook
+share/help/sr/clock/legal.xml
+share/help/sv/clock/index.docbook
+share/help/sv/clock/legal.xml
+share/help/sv/fish/index.docbook
+share/help/sv/fish/legal.xml
+share/help/te/clock/index.docbook
+share/help/te/clock/legal.xml
+share/help/th/clock/index.docbook
+share/help/th/clock/legal.xml
+share/help/th/fish/index.docbook
+share/help/th/fish/legal.xml
+share/help/uk/clock/index.docbook
+share/help/uk/clock/legal.xml
+share/help/uk/fish/index.docbook
+share/help/uk/fish/legal.xml
+share/help/zh_CN/clock/index.docbook
+share/help/zh_CN/clock/legal.xml
+share/help/zh_CN/fish/index.docbook
+share/help/zh_CN/fish/legal.xml
+share/help/zh_HK/clock/index.docbook
+share/help/zh_HK/clock/legal.xml
+share/help/zh_TW/clock/index.docbook
+share/help/zh_TW/clock/legal.xml
 share/icons/hicolor/16x16/apps/gnome-panel-clock.png
-share/icons/hicolor/16x16/apps/gnome-panel-drawer.png
 share/icons/hicolor/16x16/apps/gnome-panel-fish.png
 share/icons/hicolor/16x16/apps/gnome-panel-force-quit.png
 share/icons/hicolor/16x16/apps/gnome-panel-launcher.png
@@ -240,7 +200,6 @@ share/icons/hicolor/16x16/apps/gnome-panel-window-menu.png
 share/icons/hicolor/16x16/apps/gnome-panel-workspace-switcher.png
 share/icons/hicolor/16x16/apps/gnome-panel.png
 share/icons/hicolor/22x22/apps/gnome-panel-clock.png
-share/icons/hicolor/22x22/apps/gnome-panel-drawer.png
 share/icons/hicolor/22x22/apps/gnome-panel-fish.png
 share/icons/hicolor/22x22/apps/gnome-panel-force-quit.png
 share/icons/hicolor/22x22/apps/gnome-panel-launcher.png
@@ -251,7 +210,6 @@ share/icons/hicolor/22x22/apps/gnome-panel-window-menu.png
 share/icons/hicolor/22x22/apps/gnome-panel-workspace-switcher.png
 share/icons/hicolor/22x22/apps/gnome-panel.png
 share/icons/hicolor/24x24/apps/gnome-panel-clock.png
-share/icons/hicolor/24x24/apps/gnome-panel-drawer.png
 share/icons/hicolor/24x24/apps/gnome-panel-fish.png
 share/icons/hicolor/24x24/apps/gnome-panel-force-quit.png
 share/icons/hicolor/24x24/apps/gnome-panel-launcher.png
@@ -262,7 +220,6 @@ share/icons/hicolor/24x24/apps/gnome-panel-window-menu.png
 share/icons/hicolor/24x24/apps/gnome-panel-workspace-switcher.png
 share/icons/hicolor/24x24/apps/gnome-panel.png
 share/icons/hicolor/32x32/apps/gnome-panel-clock.png
-share/icons/hicolor/32x32/apps/gnome-panel-drawer.png
 share/icons/hicolor/32x32/apps/gnome-panel-fish.png
 share/icons/hicolor/32x32/apps/gnome-panel-force-quit.png
 share/icons/hicolor/32x32/apps/gnome-panel-launcher.png
@@ -274,7 +231,6 @@ share/icons/hicolor/32x32/apps/gnome-panel-workspace-switcher.png
 share/icons/hicolor/32x32/apps/gnome-panel.png
 share/icons/hicolor/48x48/apps/gnome-panel.png
 share/icons/hicolor/scalable/apps/gnome-panel-clock.svg
-share/icons/hicolor/scalable/apps/gnome-panel-drawer.svg
 share/icons/hicolor/scalable/apps/gnome-panel-fish.svg
 share/icons/hicolor/scalable/apps/gnome-panel-force-quit.svg
 share/icons/hicolor/scalable/apps/gnome-panel-launcher.svg
@@ -284,276 +240,117 @@ share/icons/hicolor/scalable/apps/gnome-panel-window-list.svg
 share/icons/hicolor/scalable/apps/gnome-panel-window-menu.svg
 share/icons/hicolor/scalable/apps/gnome-panel-workspace-switcher.svg
 share/icons/hicolor/scalable/apps/gnome-panel.svg
-%%BONOBO%%share/idl/gnome-panel-2.0/GNOME_Panel.idl
-share/locale/af/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/am/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/ar/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/as/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/ast/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/az/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/be/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/be@latin/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/bg/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/bn/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/bn_IN/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/br/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/bs/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/ca/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/ca@valencia/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/crh/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/cs/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/cy/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/da/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/de/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/dz/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/el/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/en@shaw/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/en_CA/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/en_GB/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/eo/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/es/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/et/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/eu/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/fa/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/fi/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/fr/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/fur/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/fy/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/ga/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/gl/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/gu/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/gv/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/ha/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/he/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/hi/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/hr/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/hu/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/hy/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/id/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/ig/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/is/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/it/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/ja/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/ka/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/kk/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/kn/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/ko/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/ku/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/ky/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/la/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/li/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/lt/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/lv/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/mai/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/mg/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/mi/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/mk/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/ml/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/mn/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/mr/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/ms/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/nb/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/nds/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/ne/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/nl/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/nn/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/nso/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/oc/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/or/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/pa/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/pl/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/ps/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/pt/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/pt_BR/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/ro/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/ru/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/rw/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/si/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/sk/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/sl/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/sq/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/sr/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/sr@ije/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/sr@latin/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/sv/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/ta/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/te/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/th/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/tr/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/ug/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/uk/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/uz/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/uz@cyrillic/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/vi/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/wa/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/xh/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/yi/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/yo/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/zh_CN/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/zh_HK/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/zu/LC_MESSAGES/gnome-panel-2.0.mo
-share/omf/clock/clock-C.omf
-share/omf/clock/clock-ar.omf
-share/omf/clock/clock-ca.omf
-share/omf/clock/clock-cs.omf
-share/omf/clock/clock-da.omf
-share/omf/clock/clock-de.omf
-share/omf/clock/clock-el.omf
-share/omf/clock/clock-en_GB.omf
-share/omf/clock/clock-es.omf
-share/omf/clock/clock-eu.omf
-share/omf/clock/clock-fi.omf
-share/omf/clock/clock-fr.omf
-share/omf/clock/clock-it.omf
-share/omf/clock/clock-ja.omf
-share/omf/clock/clock-ko.omf
-share/omf/clock/clock-nl.omf
-share/omf/clock/clock-oc.omf
-share/omf/clock/clock-pa.omf
-share/omf/clock/clock-pt.omf
-share/omf/clock/clock-pt_BR.omf
-share/omf/clock/clock-ru.omf
-share/omf/clock/clock-sl.omf
-share/omf/clock/clock-sr.omf
-share/omf/clock/clock-sv.omf
-share/omf/clock/clock-th.omf
-share/omf/clock/clock-uk.omf
-share/omf/clock/clock-zh_CN.omf
-share/omf/clock/clock-zh_HK.omf
-share/omf/clock/clock-zh_TW.omf
-share/omf/fish/fish-C.omf
-share/omf/fish/fish-ca.omf
-share/omf/fish/fish-cs.omf
-share/omf/fish/fish-de.omf
-share/omf/fish/fish-el.omf
-share/omf/fish/fish-en_GB.omf
-share/omf/fish/fish-es.omf
-share/omf/fish/fish-eu.omf
-share/omf/fish/fish-fi.omf
-share/omf/fish/fish-fr.omf
-share/omf/fish/fish-it.omf
-share/omf/fish/fish-ja.omf
-share/omf/fish/fish-ko.omf
-share/omf/fish/fish-oc.omf
-share/omf/fish/fish-ru.omf
-share/omf/fish/fish-sl.omf
-share/omf/fish/fish-sv.omf
-share/omf/fish/fish-th.omf
-share/omf/fish/fish-uk.omf
-share/omf/fish/fish-zh_CN.omf
-@dirrm share/omf/fish
-@dirrm share/omf/clock
-%%BONOBO%%@dirrm share/idl/gnome-panel-2.0
-@dirrm share/gnome/help/fish/zh_CN/figures
-@dirrm share/gnome/help/fish/zh_CN
-@dirrm share/gnome/help/fish/uk/figures
-@dirrm share/gnome/help/fish/uk
-@dirrm share/gnome/help/fish/th/figures
-@dirrm share/gnome/help/fish/th
-@dirrm share/gnome/help/fish/sv/figures
-@dirrm share/gnome/help/fish/sv
-@dirrm share/gnome/help/fish/sl/figures
-@dirrm share/gnome/help/fish/sl
-@dirrm share/gnome/help/fish/ru/figures
-@dirrm share/gnome/help/fish/ru
-@dirrm share/gnome/help/fish/oc/figures
-@dirrm share/gnome/help/fish/oc
-@dirrm share/gnome/help/fish/ko/figures
-@dirrm share/gnome/help/fish/ko
-@dirrm share/gnome/help/fish/ja/figures
-@dirrm share/gnome/help/fish/ja
-@dirrm share/gnome/help/fish/it/figures
-@dirrm share/gnome/help/fish/it
-@dirrm share/gnome/help/fish/fr/figures
-@dirrm share/gnome/help/fish/fr
-@dirrm share/gnome/help/fish/fi/figures
-@dirrm share/gnome/help/fish/fi
-@dirrm share/gnome/help/fish/eu/figures
-@dirrm share/gnome/help/fish/eu
-@dirrm share/gnome/help/fish/es/figures
-@dirrm share/gnome/help/fish/es
-@dirrm share/gnome/help/fish/en_GB/figures
-@dirrm share/gnome/help/fish/en_GB
-@dirrm share/gnome/help/fish/el/figures
-@dirrm share/gnome/help/fish/el
-@dirrm share/gnome/help/fish/de/figures
-@dirrm share/gnome/help/fish/de
-@dirrm share/gnome/help/fish/cs/figures
-@dirrm share/gnome/help/fish/cs
-@dirrm share/gnome/help/fish/ca/figures
-@dirrm share/gnome/help/fish/ca
-@dirrm share/gnome/help/fish/C/figures
-@dirrm share/gnome/help/fish/C
-@dirrm share/gnome/help/fish
-@dirrm share/gnome/help/clock/zh_TW/figures
-@dirrm share/gnome/help/clock/zh_TW
-@dirrm share/gnome/help/clock/zh_HK/figures
-@dirrm share/gnome/help/clock/zh_HK
-@dirrm share/gnome/help/clock/zh_CN/figures
-@dirrm share/gnome/help/clock/zh_CN
-@dirrm share/gnome/help/clock/uk/figures
-@dirrm share/gnome/help/clock/uk
-@dirrm share/gnome/help/clock/th/figures
-@dirrm share/gnome/help/clock/th
-@dirrm share/gnome/help/clock/sv/figures
-@dirrm share/gnome/help/clock/sv
-@dirrm share/gnome/help/clock/sr/figures
-@dirrm share/gnome/help/clock/sr
-@dirrm share/gnome/help/clock/sl/figures
-@dirrm share/gnome/help/clock/sl
-@dirrm share/gnome/help/clock/ru/figures
-@dirrm share/gnome/help/clock/ru
-@dirrm share/gnome/help/clock/pt_BR/figures
-@dirrm share/gnome/help/clock/pt_BR
-@dirrm share/gnome/help/clock/pt/figures
-@dirrm share/gnome/help/clock/pt
-@dirrm share/gnome/help/clock/pa/figures
-@dirrm share/gnome/help/clock/pa
-@dirrm share/gnome/help/clock/oc/figures
-@dirrm share/gnome/help/clock/oc
-@dirrm share/gnome/help/clock/nl/figures
-@dirrm share/gnome/help/clock/nl
-@dirrm share/gnome/help/clock/ko/figures
-@dirrm share/gnome/help/clock/ko
-@dirrm share/gnome/help/clock/ja/figures
-@dirrm share/gnome/help/clock/ja
-@dirrm share/gnome/help/clock/it/figures
-@dirrm share/gnome/help/clock/it
-@dirrm share/gnome/help/clock/fr/figures
-@dirrm share/gnome/help/clock/fr
-@dirrm share/gnome/help/clock/fi/figures
-@dirrm share/gnome/help/clock/fi
-@dirrm share/gnome/help/clock/eu/figures
-@dirrm share/gnome/help/clock/eu
-@dirrm share/gnome/help/clock/es/figures
-@dirrm share/gnome/help/clock/es
-@dirrm share/gnome/help/clock/en_GB/figures
-@dirrm share/gnome/help/clock/en_GB
-@dirrm share/gnome/help/clock/el/figures
-@dirrm share/gnome/help/clock/el
-@dirrm share/gnome/help/clock/de/figures
-@dirrm share/gnome/help/clock/de
-@dirrm share/gnome/help/clock/da/figures
-@dirrm share/gnome/help/clock/da
-@dirrm share/gnome/help/clock/cs/figures
-@dirrm share/gnome/help/clock/cs
-@dirrm share/gnome/help/clock/ca/figures
-@dirrm share/gnome/help/clock/ca
-@dirrm share/gnome/help/clock/ar/figures
-@dirrm share/gnome/help/clock/ar
-@dirrm share/gnome/help/clock/C/figures
-@dirrm share/gnome/help/clock/C
-@dirrm share/gnome/help/clock
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%/applets
-@dirrm %%DATADIR%%
-@dirrmtry lib/gnome-panel/modules
-@dirrmtry lib/gnome-panel
-@dirrm include/gnome-panel-3.0/libpanel-applet
-@dirrm include/gnome-panel-3.0
-%%BONOBO%%@dirrm include/panel-2.0
+share/locale/af/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/am/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/ar/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/as/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/ast/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/az/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/be/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/be@latin/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/bg/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/bn/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/bn_IN/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/br/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/bs/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/ca/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/ca@valencia/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/crh/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/cs/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/csb/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/cy/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/da/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/de/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/dz/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/el/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/en@shaw/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/en_CA/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/en_GB/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/eo/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/es/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/et/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/eu/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/fa/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/fi/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/fr/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/fur/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/fy/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/ga/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/gl/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/gu/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/gv/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/ha/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/he/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/hi/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/hr/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/hu/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/hy/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/id/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/ig/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/is/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/it/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/ja/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/ka/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/kk/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/km/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/kn/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/ko/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/ku/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/ky/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/la/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/li/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/lt/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/lv/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/mai/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/mg/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/mi/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/mk/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/ml/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/mn/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/mr/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/ms/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/my/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/nb/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/nds/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/ne/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/nl/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/nn/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/nso/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/oc/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/or/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/pa/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/pl/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/ps/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/pt/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/ro/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/ru/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/rw/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/si/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/sk/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/sl/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/sq/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/sr/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/sr@ije/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/sr@latin/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/sv/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/ta/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/te/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/th/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/tr/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/ug/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/uk/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/uz/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/uz@cyrillic/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/vi/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/wa/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/xh/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/yi/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/yo/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/zh_HK/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/zu/LC_MESSAGES/gnome-panel-3.0.mo
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -586,6 +383,8 @@ share/omf/fish/fish-zh_CN.omf
 @dirrmtry share/locale/nso
 @dirrmtry share/locale/nds/LC_MESSAGES
 @dirrmtry share/locale/nds
+@dirrmtry share/locale/my/LC_MESSAGES
+@dirrmtry share/locale/my
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mi/LC_MESSAGES
@@ -600,6 +399,8 @@ share/omf/fish/fish-zh_CN.omf
 @dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
 @dirrmtry share/locale/kk/LC_MESSAGES
 @dirrmtry share/locale/kk
 @dirrmtry share/locale/ig/LC_MESSAGES
@@ -618,6 +419,8 @@ share/omf/fish/fish-zh_CN.omf
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/csb/LC_MESSAGES
+@dirrmtry share/locale/csb
 @dirrmtry share/locale/crh/LC_MESSAGES
 @dirrmtry share/locale/crh
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
@@ -630,3 +433,93 @@ share/omf/fish/fish-zh_CN.omf
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrm share/help/zh_TW/clock
+@dirrmtry share/help/zh_TW
+@dirrm share/help/zh_HK/clock
+@dirrmtry share/help/zh_HK
+@dirrm share/help/zh_CN/fish
+@dirrm share/help/zh_CN/clock
+@dirrmtry share/help/zh_CN
+@dirrm share/help/uk/fish
+@dirrm share/help/uk/clock
+@dirrmtry share/help/uk
+@dirrm share/help/th/fish
+@dirrm share/help/th/clock
+@dirrmtry share/help/th
+@dirrm share/help/te/clock
+@dirrmtry share/help/te
+@dirrm share/help/sv/fish
+@dirrm share/help/sv/clock
+@dirrmtry share/help/sv
+@dirrm share/help/sr/clock
+@dirrmtry share/help/sr
+@dirrm share/help/sl/fish
+@dirrm share/help/sl/clock
+@dirrmtry share/help/sl
+@dirrm share/help/ru/fish
+@dirrm share/help/ru/clock
+@dirrmtry share/help/ru
+@dirrm share/help/pt_BR/clock
+@dirrmtry share/help/pt_BR
+@dirrm share/help/pt/clock
+@dirrmtry share/help/pt
+@dirrm share/help/pa/clock
+@dirrmtry share/help/pa
+@dirrm share/help/oc/fish
+@dirrm share/help/oc/clock
+@dirrmtry share/help/oc
+@dirrm share/help/nl/clock
+@dirrmtry share/help/nl
+@dirrm share/help/ko/fish
+@dirrm share/help/ko/clock
+@dirrmtry share/help/ko
+@dirrm share/help/ja/fish
+@dirrm share/help/ja/clock
+@dirrmtry share/help/ja
+@dirrm share/help/it/fish
+@dirrm share/help/it/clock
+@dirrmtry share/help/it
+@dirrm share/help/id/clock
+@dirrmtry share/help/id
+@dirrm share/help/fr/fish
+@dirrm share/help/fr/clock
+@dirrmtry share/help/fr
+@dirrm share/help/fi/fish
+@dirrm share/help/fi/clock
+@dirrmtry share/help/fi
+@dirrm share/help/eu/fish
+@dirrm share/help/eu/clock
+@dirrmtry share/help/eu
+@dirrm share/help/es/fish
+@dirrm share/help/es/clock
+@dirrmtry share/help/es
+@dirrm share/help/en_GB/fish
+@dirrm share/help/en_GB/clock
+@dirrmtry share/help/en_GB
+@dirrm share/help/el/fish
+@dirrm share/help/el/clock
+@dirrmtry share/help/el
+@dirrm share/help/de/fish
+@dirrm share/help/de/clock
+@dirrmtry share/help/de
+@dirrm share/help/da/fish
+@dirrm share/help/da/clock
+@dirrmtry share/help/da
+@dirrm share/help/cs/fish
+@dirrm share/help/cs/clock
+@dirrmtry share/help/cs
+@dirrm share/help/ca/fish
+@dirrm share/help/ca/clock
+@dirrmtry share/help/ca
+@dirrm share/help/ar/clock
+@dirrmtry share/help/ar
+@dirrm share/help/C/fish
+@dirrm share/help/C/clock
+@dirrmtry share/help/C
+@dirrm %%DATADIR%%/fish
+@dirrm %%DATADIR%%/4.0/applets
+@dirrm %%DATADIR%%/4.0
+@dirrm %%DATADIR%%
+@dirrm share/doc/panel-applet-4.0
+@dirrm include/gnome-panel-4.0/libpanel-applet
+@dirrm include/gnome-panel-4.0

@@ -1,43 +1,37 @@
 # Created by: Adam Weinberger, based off kiesel's ximian-exchange port
 # $FreeBSD$
-#   $MCom: ports/mail/evolution-exchange/Makefile,v 1.172 2012/09/20 23:06:27 kwm Exp $
+#   $MCom: ports/trunk/mail/evolution-exchange3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	evolution-exchange
-PORTVERSION=	2.32.1
-PORTREVISION=	3
+PORTVERSION=	3.4.4
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Evolution plugin to connect to Microsoft Exchange servers
 
-EVO_PC_FILE=	${LOCALBASE}/libdata/pkgconfig/evolution-mail.pc
-BUILD_DEPENDS=	${EVO_PC_FILE}:${PORTSDIR}/mail/evolution
-RUN_DEPENDS=	${EVO_PC_FILE}:${PORTSDIR}/mail/evolution
+BUILD_DEPENDS=	evolution>=${EVO_VER}:${PORTSDIR}/mail/evolution
+RUN_DEPENDS=	evolution>=${EVO_VER}:${PORTSDIR}/mail/evolution
 
-CONFLICTS=	evolution-exchange-3.[0-9]*
-
-USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig
+EVO_VER=	3.4.3
+USE_XZ=	yes
+USES=		gettext gmake pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
-USE_BDB=	41
+USE_BDB=	5
 USE_OPENLDAP=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack ltasneededhack
+USE_GNOME=	gnomeprefix intlhack ltasneededhack
 CPPFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR}
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-openldap=${LOCALBASE} \
 		--with-static-ldap=no \
 		--with-libdb=${LOCALBASE}
 
-EVO_VERSION=	2.32
-VERSION=	2.32
-PLIST_SUB=	VERSION=${VERSION} EVO_VERSION=${EVO_VERSION} \
-		EDS_VERSION="1.2"
+VERSION=	3.4
+PLIST_SUB=	VERSION=${VERSION}
 
 GCONF_SCHEMAS=	apps_exchange_addressbook-${VERSION}.schemas
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(HEIMDAL_HOME) || defined(WITH_HEIMDAL) || defined(NO_KERBEROS)
@@ -62,8 +56,6 @@ IGNORE=	build fails when ${LOCALBASE}/include/mapi.h exists in system, run pkg_i
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldb|-l${BDB_LIB_NAME}|g' \
 		-e 's|-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi|${KRB5_LIB}|g' \
-		-e 's|-DGTK_DISABLE_DEPRECATED||g' \
-		-e 's|-DG_DISABLE_DEPRECATED||g' \
 		-e 's|-Wmissing-include-dirs||g' \
 		${WRKSRC}/configure
 

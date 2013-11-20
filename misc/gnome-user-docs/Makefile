@@ -1,25 +1,22 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/misc/gnome-user-docs/Makefile,v 1.62 2010/09/30 06:07:30 kwm Exp $
+#   $MCom: ports/trunk/misc/gnome-user-docs3/Makefile 18566 2013-06-18 07:35:39Z kwm $
 
 PORTNAME=	gnome-user-docs
-PORTVERSION=	2.32.0
+PORTVERSION=	3.6.2
 CATEGORIES=	misc gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	GNOME 2 users guide
+COMMENT=	GNOME 3 users guide
 
-BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
-RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
-USES=		pkgconfig
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USE_XZ=		yes
 GNU_CONFIGURE=	yes
-INSTALLS_OMF=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier gnomedocutils
+MAKE_JOBS_UNSAFE=yes
+USES=		gettext:build gmake pathfix
+USE_GNOME=	gnomeprefix gnomehier libxml2:build
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

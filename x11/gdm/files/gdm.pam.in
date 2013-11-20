@@ -1,6 +1,6 @@
 #
 # $FreeBSD$
-#    $MCom: ports/x11/gdm/files/gdm.pam.in,v 1.17 2011/06/02 11:58:24 kwm Exp $
+#    $MCom: ports/trunk/x11/gdm3/files/gdm.pam.in 17268 2013-04-01 05:13:11Z marcus $
 #
 # PAM configuration for the "gdm" service
 #
@@ -8,7 +8,7 @@
 # auth
 #auth		sufficient	pam_krb5.so		no_warn try_first_pass
 #auth		sufficient	pam_ssh.so		no_warn try_first_pass
-auth		required	pam_unix.so		no_warn try_first_pass
+auth		required	pam_permit.so		no_warn try_first_pass
 %%PAM_KEYRING%%auth		optional	%%LOCALBASE%%/lib/pam_gnome_keyring.so
 
 # account

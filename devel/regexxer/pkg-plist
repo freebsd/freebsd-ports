@@ -1,41 +1,54 @@
 bin/regexxer
 share/applications/regexxer.desktop
-share/regexxer/mainwindow.glade
-share/regexxer/prefdialog.glade
 share/icons/hicolor/48x48/apps/regexxer.png
 share/locale/ar/LC_MESSAGES/regexxer.mo
 share/locale/bg/LC_MESSAGES/regexxer.mo
 share/locale/ca/LC_MESSAGES/regexxer.mo
 share/locale/cs/LC_MESSAGES/regexxer.mo
+share/locale/da/LC_MESSAGES/regexxer.mo
 share/locale/de/LC_MESSAGES/regexxer.mo
 share/locale/dz/LC_MESSAGES/regexxer.mo
+share/locale/el/LC_MESSAGES/regexxer.mo
 share/locale/en_CA/LC_MESSAGES/regexxer.mo
 share/locale/en_GB/LC_MESSAGES/regexxer.mo
 share/locale/es/LC_MESSAGES/regexxer.mo
 share/locale/eu/LC_MESSAGES/regexxer.mo
 share/locale/fi/LC_MESSAGES/regexxer.mo
 share/locale/fr/LC_MESSAGES/regexxer.mo
+share/locale/gl/LC_MESSAGES/regexxer.mo
+share/locale/gu/LC_MESSAGES/regexxer.mo
 share/locale/hu/LC_MESSAGES/regexxer.mo
 share/locale/it/LC_MESSAGES/regexxer.mo
 share/locale/ja/LC_MESSAGES/regexxer.mo
+share/locale/nb/LC_MESSAGES/regexxer.mo
 share/locale/ne/LC_MESSAGES/regexxer.mo
 share/locale/nl/LC_MESSAGES/regexxer.mo
+share/locale/oc/LC_MESSAGES/regexxer.mo
 share/locale/pa/LC_MESSAGES/regexxer.mo
 share/locale/pl/LC_MESSAGES/regexxer.mo
 share/locale/pt/LC_MESSAGES/regexxer.mo
 share/locale/pt_BR/LC_MESSAGES/regexxer.mo
+share/locale/ru/LC_MESSAGES/regexxer.mo
 share/locale/rw/LC_MESSAGES/regexxer.mo
+share/locale/sk/LC_MESSAGES/regexxer.mo
 share/locale/sl/LC_MESSAGES/regexxer.mo
 share/locale/sr/LC_MESSAGES/regexxer.mo
-share/locale/sr@Latn/LC_MESSAGES/regexxer.mo
+share/locale/sr@latin/LC_MESSAGES/regexxer.mo
 share/locale/sv/LC_MESSAGES/regexxer.mo
+share/locale/ta/LC_MESSAGES/regexxer.mo
 share/locale/uk/LC_MESSAGES/regexxer.mo
 share/locale/vi/LC_MESSAGES/regexxer.mo
 share/locale/zh_CN/LC_MESSAGES/regexxer.mo
 share/locale/zh_HK/LC_MESSAGES/regexxer.mo
 share/locale/zh_TW/LC_MESSAGES/regexxer.mo
+share/regexxer/mainwindow.ui
+share/regexxer/prefdialog.ui
 @dirrm share/regexxer
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/or/LC_MESSAGES
+@dirrmtry share/locale/or
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz

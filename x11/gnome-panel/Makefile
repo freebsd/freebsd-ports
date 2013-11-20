@@ -1,70 +1,61 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11/gnome-panel/Makefile,v 1.237 2012/10/25 09:21:00 kwm Exp $
+#   $MCom: ports/trunk/x11/gnome-panel3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gnome-panel
-PORTVERSION=	2.32.1
-PORTREVISION?=	3
+PORTVERSION=	3.6.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Panel component for the GNOME 2 Desktop
+COMMENT=	Panel component for the GNOME 3 Desktop
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	gweather:${PORTSDIR}/net/libgweather \
-		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		canberra-gtk:${PORTSDIR}/audio/libcanberra
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
+LIB_DEPENDS=	libgweather-3.so:${PORTSDIR}/net/libgweather3 \
+		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
+		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
+		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
+RUN_DEPENDS=	${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon
 
-CONFLICTS=	gnome-panel-3.[0-9]*
-
+USES=		gettext gmake pathfix pkgconfig
 USE_XORG=	ice sm x11 xau xrandr
-USE_PYTHON=	-2.7
-INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USES=		pathfix gettext gmake pkgconfig
-USE_GNOME=	gnomeprefix intlhack gnomedesktop libwnck gnomemenus \
-		gnomedocutils ltverhack referencehack librsvg2
+USE_GNOME=	gnomeprefix intlhack gnomedesktop3 librsvg2 libwnck3 \
+		gnomemenus3 ltverhack referencehack
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-network-manager
-LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		gnome-panel.1
-GCONF_SCHEMAS=	clock.schemas fish.schemas \
-		panel-compatibility.schemas panel-general.schemas \
-		panel-global.schemas panel-object.schemas \
-		panel-toplevel.schemas window-list.schemas \
-		workspace-switcher.schemas
+GLIB_SCHEMAS=	org.gnome.gnome-panel.applet.clock.gschema.xml \
+		org.gnome.gnome-panel.applet.fish.gschema.xml \
+		org.gnome.gnome-panel.applet.window-list.gschema.xml \
+		org.gnome.gnome-panel.applet.workspace-switcher.gschema.xml \
+		org.gnome.gnome-panel.enums.xml \
+		org.gnome.gnome-panel.gschema.xml \
+		org.gnome.gnome-panel.launcher.gschema.xml \
+		org.gnome.gnome-panel.menu-button.gschema.xml \
+		org.gnome.gnome-panel.object.gschema.xml \
+		org.gnome.gnome-panel.toplevel.gschema.xml
 
-OPTIONS_DEFINE=	EVOLUTION BONOBO
-OPTIONS_DEFAULT=EVOLUTION BONOBO
-EVOLUTION_DESC=	Use the Evolution calendar
-BONOBO_DESC=	Support for bonobo applets aka Gnome 2 applets
+#OPTIONS_DEFINE=	EVOLUTION
+#OPTIONS_DEFAULT=EVOLUTION
+#EVOLUTION_DESC=	Evolution calendar support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MEVOLUTION}
-USE_GNOME+=	evolutiondataserver
+#.if ${PORT_OPTIONS:MEVOLUTION}
+#USE_GNOME+=	evolutiondataserver3
 #CONFIGURE_ARGS+=--enable-eds
-.else
+#.else
 CONFIGURE_ARGS+=--disable-eds
-.endif
-
-.if ${PORT_OPTIONS:MBONOBO}
-USE_GNOME+=	libbonoboui
-CONFIGURE_ARGS+=--enable-bonobo
-PLIST_SUB+=	BONOBO=""
-.else
-CONFIGURE_ARGS+=--disable-bonobo
-PLIST_SUB+=	BONOBO="@comment "
-.endif
+#.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | \
@@ -73,12 +64,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|xsltproc -o| xsltproc --nonet -o|g' \
 		${WRKSRC}/help/clock/Makefile.in \
 		${WRKSRC}/help/fish/Makefile.in
-	@${REINPLACE_CMD} -e 's|python.* python2\.0|${PYTHON_VERSION}|g' \
-		${WRKSRC}/configure
 
 post-install:
-	@${MKDIR} ${PREFIX}/lib/gnome-panel/modules
-	-${LOCALBASE}/bin/gio-querymodules ${PREFIX}/lib/gnome-panel/modules
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpanel-applet-4.so.0
 
 .include <bsd.port.mk>
 

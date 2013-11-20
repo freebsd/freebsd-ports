@@ -1,0 +1,577 @@
+bin/glade
+bin/glade-previewer
+include/libgladeui-2.0/gladeui/glade-app.h
+include/libgladeui-2.0/gladeui/glade-base-editor.h
+include/libgladeui-2.0/gladeui/glade-builtins.h
+include/libgladeui-2.0/gladeui/glade-catalog.h
+include/libgladeui-2.0/gladeui/glade-cell-renderer-icon.h
+include/libgladeui-2.0/gladeui/glade-clipboard.h
+include/libgladeui-2.0/gladeui/glade-command.h
+include/libgladeui-2.0/gladeui/glade-cursor.h
+include/libgladeui-2.0/gladeui/glade-debug.h
+include/libgladeui-2.0/gladeui/glade-design-view.h
+include/libgladeui-2.0/gladeui/glade-displayable-values.h
+include/libgladeui-2.0/gladeui/glade-editable.h
+include/libgladeui-2.0/gladeui/glade-editor-property.h
+include/libgladeui-2.0/gladeui/glade-editor-table.h
+include/libgladeui-2.0/gladeui/glade-editor.h
+include/libgladeui-2.0/gladeui/glade-inspector.h
+include/libgladeui-2.0/gladeui/glade-name-context.h
+include/libgladeui-2.0/gladeui/glade-palette.h
+include/libgladeui-2.0/gladeui/glade-placeholder.h
+include/libgladeui-2.0/gladeui/glade-project.h
+include/libgladeui-2.0/gladeui/glade-property-class.h
+include/libgladeui-2.0/gladeui/glade-property.h
+include/libgladeui-2.0/gladeui/glade-signal-class.h
+include/libgladeui-2.0/gladeui/glade-signal-editor.h
+include/libgladeui-2.0/gladeui/glade-signal-model.h
+include/libgladeui-2.0/gladeui/glade-signal.h
+include/libgladeui-2.0/gladeui/glade-utils.h
+include/libgladeui-2.0/gladeui/glade-widget-action.h
+include/libgladeui-2.0/gladeui/glade-widget-adaptor.h
+include/libgladeui-2.0/gladeui/glade-widget.h
+include/libgladeui-2.0/gladeui/glade-xml-utils.h
+include/libgladeui-2.0/gladeui/glade.h
+lib/girepository-1.0/Gladeui-2.0.typelib
+lib/glade/modules/libgladegtk.a
+lib/glade/modules/libgladegtk.la
+lib/glade/modules/libgladegtk.so
+%%PYTHON:%%lib/glade/modules/libgladepython.a
+%%PYTHON:%%lib/glade/modules/libgladepython.la
+%%PYTHON:%%lib/glade/modules/libgladepython.so
+lib/libgladeui-2.a
+lib/libgladeui-2.la
+lib/libgladeui-2.so
+lib/libgladeui-2.so.2
+libdata/pkgconfig/gladeui-2.0.pc
+share/applications/glade.desktop
+%%DOCSDIR%%/GladeApp.html
+%%DOCSDIR%%/GladeBaseEditor.html
+%%DOCSDIR%%/GladeClipboard.html
+%%DOCSDIR%%/GladeDesignView.html
+%%DOCSDIR%%/GladeEditorProperty.html
+%%DOCSDIR%%/GladeInspector.html
+%%DOCSDIR%%/GladePalette.html
+%%DOCSDIR%%/GladePlaceholder.html
+%%DOCSDIR%%/GladeProject.html
+%%DOCSDIR%%/GladeProperty.html
+%%DOCSDIR%%/GladeWidget.html
+%%DOCSDIR%%/GladeWidgetAction.html
+%%DOCSDIR%%/catalog.html
+%%DOCSDIR%%/catalogintro.html
+%%DOCSDIR%%/core.html
+%%DOCSDIR%%/dockables.html
+%%DOCSDIR%%/gladeui-Glade-Utils.html
+%%DOCSDIR%%/gladeui-GladeClipboardView.html
+%%DOCSDIR%%/gladeui-GladeFixed.html
+%%DOCSDIR%%/gladeui-GladePropertyClass.html
+%%DOCSDIR%%/gladeui-GladeSignalEditor.html
+%%DOCSDIR%%/gladeui-Xml-Utils.html
+%%DOCSDIR%%/gladeui-glade-command.html
+%%DOCSDIR%%/gladeui-glade-editor.html
+%%DOCSDIR%%/gladeui-glade-parameter.html
+%%DOCSDIR%%/gladeui-glade-widget-adaptor.html
+%%DOCSDIR%%/gladeui-2.devhelp2
+%%DOCSDIR%%/home.png
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/index.sgml
+%%DOCSDIR%%/ix01.html
+%%DOCSDIR%%/left.png
+%%DOCSDIR%%/misc.html
+%%DOCSDIR%%/properties.html
+%%DOCSDIR%%/pythonsupport.html
+%%DOCSDIR%%/right.png
+%%DOCSDIR%%/style.css
+%%DOCSDIR%%/up.png
+%%DOCSDIR%%/widgetclasses.html
+share/gir-1.0/Gladeui-2.0.gir
+share/glade/catalogs/glade-catalog.dtd
+share/glade/catalogs/gtk+.xml
+share/glade/catalogs/gtkunixprint.xml
+share/glade/pixmaps/atk.png
+share/glade/pixmaps/deprecated-16x16.png
+share/glade/pixmaps/deprecated-22x22.png
+share/glade/pixmaps/devhelp.png
+share/glade/pixmaps/fixed-bg.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-aboutdialog.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-accelgroup.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-accellabel.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-action.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-actiongroup.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-adjustment.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-alignment.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-appchooserbutton.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-appchooserdialog.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-appchooserwidget.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-arrow.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-aspectframe.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-assistant.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-box.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-button.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-buttonbox.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-calendar.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-cellareabox.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-cellrendereraccel.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-cellrenderercombo.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-cellrendererpixbuf.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-cellrendererprogress.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-cellrendererspin.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-cellrendererspinner.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-cellrenderertext.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-cellrenderertoggle.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-checkbutton.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-checkmenuitem.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-colorbutton.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-colorselection.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-colorselectiondialog.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-combobox.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-comboboxtext.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-default.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-dialog.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-drawingarea.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-entry.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-entrybuffer.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-entrycompletion.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-eventbox.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-expander.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-filechooserbutton.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-filechooserdialog.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-filechooserwidget.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-filefilter.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-fixed.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-fontbutton.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-fontselection.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-fontselectiondialog.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-frame.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-grid.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-handlebox.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-hbox.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-hbuttonbox.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-hpaned.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-hscale.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-hscrollbar.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-hseparator.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-iconfactory.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-iconview.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-image.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-imagemenuitem.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-infobar.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-inputdialog.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-label.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-layout.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-linkbutton.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-liststore.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-menu.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-menubar.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-menuitem.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-menutoolbutton.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-messagedialog.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-notebook.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-offscreenwindow.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-pagesetupdialog.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-paned.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-printdialog.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-progressbar.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-radioaction.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-radiobutton.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-radiomenuitem.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-radiotoolbutton.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-recentaction.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-recentchooser.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-recentchooserdialog.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-recentchoosermenu.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-recentfilter.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-recentmanager.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-scale.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-scalebutton.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-scrollbar.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-scrolledwindow.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-separator.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-separatormenuitem.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-separatortoolitem.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-sizegroup.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-spinbutton.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-spinner.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-statusbar.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-statusicon.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-switch.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-table.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-tearoffmenuitem.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-textbuffer.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-texttag.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-texttagtable.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-textview.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-toggleaction.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-togglebutton.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-toggletoolbutton.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-toolbar.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-toolbutton.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-toolitem.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-toolitemgroup.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-toolpalette.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-treemodelfilter.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-treemodelsort.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-treeselection.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-treestore.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-treeview.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-treeviewcolumn.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-vbox.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-vbuttonbox.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-viewport.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-volumebutton.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-vpaned.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-vscale.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-vscrollbar.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-vseparator.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-window.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-windowgroup.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-aboutdialog.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-accelgroup.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-accellabel.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-action.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-actiongroup.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-adjustment.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-alignment.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-appchooserbutton.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-appchooserdialog.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-appchooserwidget.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-arrow.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-aspectframe.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-assistant.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-box.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-button.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-buttonbox.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-calendar.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-cellareabox.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-cellrendereraccel.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-cellrenderercombo.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-cellrendererpixbuf.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-cellrendererprogress.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-cellrendererspin.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-cellrendererspinner.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-cellrenderertext.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-cellrenderertoggle.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-checkbutton.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-checkmenuitem.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-colorbutton.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-colorselection.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-colorselectiondialog.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-combobox.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-comboboxtext.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-default.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-dialog.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-drawingarea.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-entry.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-entrybuffer.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-entrycompletion.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-eventbox.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-expander.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-filechooserbutton.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-filechooserdialog.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-filechooserwidget.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-filefilter.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-fixed.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-fontbutton.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-fontselection.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-fontselectiondialog.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-frame.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-grid.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-handlebox.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-hbox.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-hbuttonbox.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-hpaned.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-hscale.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-hscrollbar.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-hseparator.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-iconfactory.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-iconview.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-image.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-imagemenuitem.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-infobar.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-inputdialog.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-label.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-layout.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-linkbutton.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-liststore.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-menu.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-menubar.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-menuitem.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-menutoolbutton.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-messagedialog.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-notebook.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-offscreenwindow.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-pagesetupdialog.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-paned.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-printdialog.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-progressbar.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-radioaction.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-radiobutton.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-radiomenuitem.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-radiotoolbutton.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-recentaction.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-recentchooser.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-recentchooserdialog.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-recentchoosermenu.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-recentfilter.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-recentmanager.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-scale.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-scalebutton.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-scrollbar.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-scrolledwindow.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-separator.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-separatormenuitem.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-separatortoolitem.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-sizegroup.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-spinbutton.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-spinner.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-statusbar.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-statusicon.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-switch.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-table.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-tearoffmenuitem.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-textbuffer.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-texttag.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-texttagtable.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-textview.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-toggleaction.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-togglebutton.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-toggletoolbutton.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-toolbar.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-toolbutton.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-toolitem.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-toolitemgroup.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-toolpalette.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-treemodelfilter.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-treemodelsort.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-treeselection.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-treestore.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-treeview.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-treeviewcolumn.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-vbox.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-vbuttonbox.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-viewport.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-volumebutton.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-vpaned.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-vscale.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-vscrollbar.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-vseparator.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-window.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-windowgroup.png
+share/glade/pixmaps/placeholder.png
+share/glade/pixmaps/plus.png
+share/gnome/help/glade/C/figures/main-window.png
+share/gnome/help/glade/C/glade.xml
+share/gnome/help/glade/C/legal.xml
+share/gnome/help/glade/bg/figures/main-window.png
+share/gnome/help/glade/bg/glade.xml
+share/gnome/help/glade/bg/legal.xml
+share/gnome/help/glade/ca/figures/main-window.png
+share/gnome/help/glade/ca/glade.xml
+share/gnome/help/glade/ca/legal.xml
+share/gnome/help/glade/cs/figures/main-window.png
+share/gnome/help/glade/cs/glade.xml
+share/gnome/help/glade/cs/legal.xml
+share/gnome/help/glade/de/figures/main-window.png
+share/gnome/help/glade/de/glade.xml
+share/gnome/help/glade/de/legal.xml
+share/gnome/help/glade/el/figures/main-window.png
+share/gnome/help/glade/el/glade.xml
+share/gnome/help/glade/el/legal.xml
+share/gnome/help/glade/en_GB/figures/main-window.png
+share/gnome/help/glade/en_GB/glade.xml
+share/gnome/help/glade/en_GB/legal.xml
+share/gnome/help/glade/es/figures/main-window.png
+share/gnome/help/glade/es/glade.xml
+share/gnome/help/glade/es/legal.xml
+share/gnome/help/glade/eu/figures/main-window.png
+share/gnome/help/glade/eu/glade.xml
+share/gnome/help/glade/eu/legal.xml
+share/gnome/help/glade/fr/figures/main-window.png
+share/gnome/help/glade/fr/glade.xml
+share/gnome/help/glade/fr/legal.xml
+share/gnome/help/glade/gl/figures/main-window.png
+share/gnome/help/glade/gl/glade.xml
+share/gnome/help/glade/gl/legal.xml
+share/gnome/help/glade/hi/figures/main-window.png
+share/gnome/help/glade/hi/glade.xml
+share/gnome/help/glade/hi/legal.xml
+share/gnome/help/glade/it/figures/main-window.png
+share/gnome/help/glade/it/glade.xml
+share/gnome/help/glade/it/legal.xml
+share/gnome/help/glade/ja/figures/main-window.png
+share/gnome/help/glade/ja/glade.xml
+share/gnome/help/glade/ja/legal.xml
+share/gnome/help/glade/oc/figures/main-window.png
+share/gnome/help/glade/oc/glade.xml
+share/gnome/help/glade/oc/legal.xml
+share/gnome/help/glade/pt_BR/figures/main-window.png
+share/gnome/help/glade/pt_BR/glade.xml
+share/gnome/help/glade/pt_BR/legal.xml
+share/gnome/help/glade/ru/figures/main-window.png
+share/gnome/help/glade/ru/glade.xml
+share/gnome/help/glade/ru/legal.xml
+share/gnome/help/glade/sl/figures/main-window.png
+share/gnome/help/glade/sl/glade.xml
+share/gnome/help/glade/sl/legal.xml
+share/gnome/help/glade/sv/figures/main-window.png
+share/gnome/help/glade/sv/glade.xml
+share/gnome/help/glade/sv/legal.xml
+share/gnome/help/glade/uk/figures/main-window.png
+share/gnome/help/glade/uk/glade.xml
+share/gnome/help/glade/uk/legal.xml
+share/gnome/help/glade/zh_CN/figures/main-window.png
+share/gnome/help/glade/zh_CN/glade.xml
+share/gnome/help/glade/zh_CN/legal.xml
+share/icons/hicolor/16x16/apps/glade.png
+share/icons/hicolor/22x22/apps/glade.png
+share/icons/hicolor/24x24/apps/glade.png
+share/icons/hicolor/256x256/apps/glade.png
+share/icons/hicolor/32x32/apps/glade.png
+share/icons/hicolor/48x48/apps/glade.png
+share/locale/ar/LC_MESSAGES/glade.mo
+share/locale/ast/LC_MESSAGES/glade.mo
+share/locale/az/LC_MESSAGES/glade.mo
+share/locale/bg/LC_MESSAGES/glade.mo
+share/locale/bn/LC_MESSAGES/glade.mo
+share/locale/bn_IN/LC_MESSAGES/glade.mo
+share/locale/ca/LC_MESSAGES/glade.mo
+share/locale/ca@valencia/LC_MESSAGES/glade.mo
+share/locale/cs/LC_MESSAGES/glade.mo
+share/locale/da/LC_MESSAGES/glade.mo
+share/locale/de/LC_MESSAGES/glade.mo
+share/locale/el/LC_MESSAGES/glade.mo
+share/locale/en@shaw/LC_MESSAGES/glade.mo
+share/locale/en_CA/LC_MESSAGES/glade.mo
+share/locale/en_GB/LC_MESSAGES/glade.mo
+share/locale/eo/LC_MESSAGES/glade.mo
+share/locale/es/LC_MESSAGES/glade.mo
+share/locale/et/LC_MESSAGES/glade.mo
+share/locale/eu/LC_MESSAGES/glade.mo
+share/locale/fi/LC_MESSAGES/glade.mo
+share/locale/fr/LC_MESSAGES/glade.mo
+share/locale/gl/LC_MESSAGES/glade.mo
+share/locale/gu/LC_MESSAGES/glade.mo
+share/locale/he/LC_MESSAGES/glade.mo
+share/locale/hi/LC_MESSAGES/glade.mo
+share/locale/hu/LC_MESSAGES/glade.mo
+share/locale/hy/LC_MESSAGES/glade.mo
+share/locale/id/LC_MESSAGES/glade.mo
+share/locale/it/LC_MESSAGES/glade.mo
+share/locale/ja/LC_MESSAGES/glade.mo
+share/locale/km/LC_MESSAGES/glade.mo
+share/locale/ko/LC_MESSAGES/glade.mo
+share/locale/lt/LC_MESSAGES/glade.mo
+share/locale/lv/LC_MESSAGES/glade.mo
+share/locale/mai/LC_MESSAGES/glade.mo
+share/locale/mk/LC_MESSAGES/glade.mo
+share/locale/ml/LC_MESSAGES/glade.mo
+share/locale/mr/LC_MESSAGES/glade.mo
+share/locale/ms/LC_MESSAGES/glade.mo
+share/locale/nb/LC_MESSAGES/glade.mo
+share/locale/nl/LC_MESSAGES/glade.mo
+share/locale/nn/LC_MESSAGES/glade.mo
+share/locale/oc/LC_MESSAGES/glade.mo
+share/locale/or/LC_MESSAGES/glade.mo
+share/locale/pa/LC_MESSAGES/glade.mo
+share/locale/pl/LC_MESSAGES/glade.mo
+share/locale/pt/LC_MESSAGES/glade.mo
+share/locale/pt_BR/LC_MESSAGES/glade.mo
+share/locale/ro/LC_MESSAGES/glade.mo
+share/locale/ru/LC_MESSAGES/glade.mo
+share/locale/si/LC_MESSAGES/glade.mo
+share/locale/sk/LC_MESSAGES/glade.mo
+share/locale/sl/LC_MESSAGES/glade.mo
+share/locale/sq/LC_MESSAGES/glade.mo
+share/locale/sr/LC_MESSAGES/glade.mo
+share/locale/sr@latin/LC_MESSAGES/glade.mo
+share/locale/sv/LC_MESSAGES/glade.mo
+share/locale/ta/LC_MESSAGES/glade.mo
+share/locale/te/LC_MESSAGES/glade.mo
+share/locale/th/LC_MESSAGES/glade.mo
+share/locale/tr/LC_MESSAGES/glade.mo
+share/locale/ug/LC_MESSAGES/glade.mo
+share/locale/uk/LC_MESSAGES/glade.mo
+share/locale/vi/LC_MESSAGES/glade.mo
+share/locale/zh_CN/LC_MESSAGES/glade.mo
+share/locale/zh_HK/LC_MESSAGES/glade.mo
+share/locale/zh_TW/LC_MESSAGES/glade.mo
+share/omf/glade/glade-C.omf
+share/omf/glade/glade-bg.omf
+share/omf/glade/glade-ca.omf
+share/omf/glade/glade-cs.omf
+share/omf/glade/glade-de.omf
+share/omf/glade/glade-el.omf
+share/omf/glade/glade-en_GB.omf
+share/omf/glade/glade-es.omf
+share/omf/glade/glade-eu.omf
+share/omf/glade/glade-gl.omf
+share/omf/glade/glade-fr.omf
+share/omf/glade/glade-hi.omf
+share/omf/glade/glade-it.omf
+share/omf/glade/glade-ja.omf
+share/omf/glade/glade-oc.omf
+share/omf/glade/glade-pt_BR.omf
+share/omf/glade/glade-ru.omf
+share/omf/glade/glade-sl.omf
+share/omf/glade/glade-sv.omf
+share/omf/glade/glade-uk.omf
+share/omf/glade/glade-zh_CN.omf
+@dirrm share/omf/glade
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
+@dirrm share/glade/pixmaps/hicolor/22x22/actions
+@dirrm share/glade/pixmaps/hicolor/22x22
+@dirrm share/glade/pixmaps/hicolor/16x16/actions
+@dirrm share/glade/pixmaps/hicolor/16x16
+@dirrm share/glade/pixmaps/hicolor
+@dirrm share/glade/pixmaps
+@dirrm share/gnome/help/glade/zh_CN/figures
+@dirrm share/gnome/help/glade/zh_CN
+@dirrm share/gnome/help/glade/uk/figures
+@dirrm share/gnome/help/glade/uk
+@dirrm share/gnome/help/glade/sv/figures
+@dirrm share/gnome/help/glade/sv
+@dirrm share/gnome/help/glade/sl/figures
+@dirrm share/gnome/help/glade/sl
+@dirrm share/gnome/help/glade/ru/figures
+@dirrm share/gnome/help/glade/ru
+@dirrm share/gnome/help/glade/pt_BR/figures
+@dirrm share/gnome/help/glade/pt_BR
+@dirrm share/gnome/help/glade/oc/figures
+@dirrm share/gnome/help/glade/oc
+@dirrm share/gnome/help/glade/ja/figures
+@dirrm share/gnome/help/glade/ja
+@dirrm share/gnome/help/glade/it/figures
+@dirrm share/gnome/help/glade/it
+@dirrm share/gnome/help/glade/hi/figures
+@dirrm share/gnome/help/glade/hi
+@dirrm share/gnome/help/glade/gl/figures
+@dirrm share/gnome/help/glade/gl
+@dirrm share/gnome/help/glade/fr/figures
+@dirrm share/gnome/help/glade/fr
+@dirrm share/gnome/help/glade/eu/figures
+@dirrm share/gnome/help/glade/eu
+@dirrm share/gnome/help/glade/es/figures
+@dirrm share/gnome/help/glade/es
+@dirrm share/gnome/help/glade/en_GB/figures
+@dirrm share/gnome/help/glade/en_GB
+@dirrm share/gnome/help/glade/el/figures
+@dirrm share/gnome/help/glade/el
+@dirrm share/gnome/help/glade/de/figures
+@dirrm share/gnome/help/glade/de
+@dirrm share/gnome/help/glade/cs/figures
+@dirrm share/gnome/help/glade/cs
+@dirrm share/gnome/help/glade/ca/figures
+@dirrm share/gnome/help/glade/ca
+@dirrm share/gnome/help/glade/bg/figures
+@dirrm share/gnome/help/glade/bg
+@dirrm share/gnome/help/glade/C/figures
+@dirrm share/gnome/help/glade/C
+@dirrm share/gnome/help/glade
+@dirrm share/glade/catalogs
+@dirrm share/glade
+@dirrm share/doc/gladeui-2
+@dirrm lib/glade/modules
+@dirrm lib/glade
+@dirrm include/libgladeui-2.0/gladeui
+@dirrm include/libgladeui-2.0

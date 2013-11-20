@@ -1,30 +1,31 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/deskutils/gucharmap/Makefile,v 1.75 2010/11/13 13:05:08 kwm Exp $
+#   $MCom: ports/trunk/deskutils/gucharmap3/Makefile 18553 2013-06-17 14:39:34Z kwm $
 
 PORTNAME=	gucharmap
-PORTVERSION=	2.32.1
-PORTREVISION=	1
+PORTVERSION=	3.6.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A Unicode/ISO10646 character map and font viewer
+COMMENT=	Unicode/ISO10646 character map and font viewer
 
-LIB_DEPENDS=	rarian.0:${PORTSDIR}/textproc/rarian
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
-USE_BZIP2=	yes
-USES=		gettext pkgconfig
-USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack gtk20 gnomedocutils gconf2
+USE_XZ=		yes
+USES=		gettext gmake pathfix pkgconfig
+USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build
 GNU_CONFIGURE=	yes
-INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--disable-Bsymbolic
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-GCONF_SCHEMAS=	gucharmap.schemas
+GLIB_SCHEMAS=	org.gnome.Charmap.enums.xml org.gnome.Charmap.gschema.xml
 
-NO_STAGE=	yes
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgucharmap_2_90.so.7
+
 .include <bsd.port.mk>
+

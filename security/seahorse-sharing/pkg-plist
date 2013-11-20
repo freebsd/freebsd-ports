@@ -1,0 +1,15 @@
+bin/seahorse-sharing
+etc/xdg/autostart/seahorse-sharing.desktop
+man/man1/seahorse-sharing.1.gz
+share/locale/cs/LC_MESSAGES/seahorse-sharing.mo
+share/locale/de/LC_MESSAGES/seahorse-sharing.mo
+share/locale/es/LC_MESSAGES/seahorse-sharing.mo
+share/locale/gl/LC_MESSAGES/seahorse-sharing.mo
+share/locale/lv/LC_MESSAGES/seahorse-sharing.mo
+share/locale/pl/LC_MESSAGES/seahorse-sharing.mo
+share/locale/sl/LC_MESSAGES/seahorse-sharing.mo
+share/locale/sr/LC_MESSAGES/seahorse-sharing.mo
+share/locale/sr@latin/LC_MESSAGES/seahorse-sharing.mo
+share/pixmaps/seahorse/22x22/seahorse-share-keys.png
+share/pixmaps/seahorse/48x48/seahorse-share-keys.png
+share/pixmaps/seahorse/scalable/seahorse-share-keys.svg

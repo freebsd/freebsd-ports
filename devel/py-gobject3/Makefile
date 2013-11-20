@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/py-gobject3/Makefile 17268 2013-04-01 05:13:11Z marcus $
+#   $MCom: ports/trunk/devel/py-gobject3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gobject
 PORTVERSION=	3.8.1
@@ -8,7 +8,6 @@ CATEGORIES=	devel python
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/pygobject/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-PKGNAMESUFFIX=	3
 DISTNAME=	pygobject-${PORTVERSION}
 DIST_SUBDIR=	gnome3
 
@@ -22,10 +21,12 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py
 LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
 
+NO_STAGE=	yes
+LATEST_LINK=	${PYTHON_PKGNAMEPREFIX}${PORTNAME}3
 USE_XZ=		yes
 USES=		gmake pathfix pkgconfig
 USE_GNOME=	glib20 introspection
-USE_PYTHON=	-2.7
+USE_PYTHON=	2.6+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

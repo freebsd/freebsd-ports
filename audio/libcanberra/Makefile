@@ -1,10 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-# $FreeBSD$
-#   $MCom: ports/audio/libcanberra/Makefile,v 1.28 2011/06/11 18:55:56 mezz Exp $
+# $FreeBSD: head/audio/libcanberra/Makefile 309632 2012-12-29 20:57:20Z mezz $
+#   $MCom: ports/trunk/audio/libcanberra/Makefile 18805 2013-10-27 09:10:09Z kwm $
 
 PORTNAME=	libcanberra
 PORTVERSION=	0.28
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio devel
 MASTER_SITES=	http://0pointer.de/lennart/projects/libcanberra/
 
@@ -14,11 +14,10 @@ COMMENT=	Implementation of the Freedesktop sound theme spec
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LGPL
 
-LIB_DEPENDS=	vorbisfile:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
 
-USES=		gmake pkgconfig
-NO_STAGE=	yes
-USE_GNOME=	gnomeprefix gnomehack gtk20 ltverhack gconf2
+USES=		gmake pathfix pkgconfig
+USE_GNOME=	gnomeprefix gnomehier gtk20 ltverhack gconf2
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool libltdl
 CONFIGURE_ARGS=	--disable-lynx --disable-tdb --disable-alsa
@@ -37,13 +36,13 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 
 .if defined(SLAVEPORT)
 USE_GNOME+=	gtk30
-LIB_DEPENDS+=	canberra:${PORTSDIR}/audio/libcanberra
+LIB_DEPENDS+=	libcanberra.so:${PORTSDIR}/audio/libcanberra
 CONFIGURE_ARGS+=--enable-gtk3
 .else
 CONFIGURE_ARGS+=--disable-gtk3
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 PLIST_SUB+=	PULSE=""
 .else
 CONFIGURE_ARGS+=--disable-pulse
@@ -64,4 +63,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
 	    	${WRKSRC}/configure
 
+.if !defined(SLAVEPORT)
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcanberra*.so.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcanberra-0.28/libcanberra-*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gtk-2.0/modules/libcanberra-gtk-module.so
+.endif
 .include <bsd.port.mk>

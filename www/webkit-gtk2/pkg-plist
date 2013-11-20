@@ -284,6 +284,7 @@ lib/libwebkitgtk-1.0.so
 lib/libwebkitgtk-1.0.so.0
 libdata/pkgconfig/javascriptcoregtk-1.0.pc
 libdata/pkgconfig/webkit-1.0.pc
+libdata/pkgconfig/webkitgtk-1.0.pc
 share/gir-1.0/JSCore-1.0.gir
 share/gir-1.0/WebKit-1.0.gir
 share/locale/ar/LC_MESSAGES/webkit-2.0.mo

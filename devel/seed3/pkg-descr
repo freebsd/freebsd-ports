@@ -1,7 +1,0 @@
-Seed is a library and interpreter, dynamically bridging (through
-GObjectIntrospection) the WebKit JavaScriptCore engine, with the GNOME
-platform. Seed serves as something which enables you to write standalone
-applications in JavaScript, or easily enable your application to be extensible
-in JavaScript.
-
-WWW: http://live.gnome.org/Seed

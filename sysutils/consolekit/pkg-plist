@@ -1,3 +1,6 @@
+@cwd /
+var/log/ConsoleKit/history
+@cwd
 bin/ck-history
 bin/ck-launch-session
 bin/ck-list-sessions
@@ -12,10 +15,13 @@ lib/ConsoleKit/scripts/ck-system-stop
 lib/libck-connector.la
 lib/libck-connector.so
 lib/libck-connector.so.0
+lib/pam_ck_connector.la
+lib/pam_ck_connector.so
 libdata/pkgconfig/ck-connector.pc
 libexec/ck-collect-session-info
 libexec/ck-get-x11-display-device
 libexec/ck-get-x11-server-pid
+man/man8/pam_ck_connector.8.gz
 sbin/console-kit-daemon
 share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Manager.xml
 share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Seat.xml
@@ -36,8 +42,7 @@ share/polkit-1/actions/org.freedesktop.consolekit.policy
 @dirrmtry etc/ConsoleKit/run-session.d
 @dirrmtry etc/ConsoleKit/run-seat.d
 @dirrm etc/ConsoleKit
-@exec mkdir -p /var/run/ConsoleKit
-@exec mkdir -p /var/log/ConsoleKit
-@exec touch -f /var/log/ConsoleKit/history
-@unexec rm -rf /var/run/ConsoleKit 2>/dev/null || true
-@unexec rm -rf /var/log/ConsoleKit 2>/dev/null || true
+@cwd /
+@dirrm var/run/ConsoleKit
+@dirrm var/log/ConsoleKit
+@cwd

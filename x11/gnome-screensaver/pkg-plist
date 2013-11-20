@@ -1,24 +1,12 @@
 bin/gnome-screensaver
 bin/gnome-screensaver-command
-bin/gnome-screensaver-preferences
-%%PAM%%etc/pam.d/gnome-screensaver
+etc/pam.d/gnome-screensaver
 etc/xdg/autostart/gnome-screensaver.desktop
-etc/xdg/menus/gnome-screensavers.menu
-libdata/pkgconfig/gnome-screensaver.pc
 libexec/gnome-screensaver-dialog
-libexec/gnome-screensaver-gl-helper
-libexec/gnome-screensaver/floaters
-libexec/gnome-screensaver/popsquares
-libexec/gnome-screensaver/slideshow
-share/applications/gnome-screensaver-preferences.desktop
-share/applications/screensavers/cosmos-slideshow.desktop
-share/applications/screensavers/footlogo-floaters.desktop
-share/applications/screensavers/personal-slideshow.desktop
-share/applications/screensavers/popsquares.desktop
-share/dbus-1/services/org.gnome.ScreenSaver.service
-share/desktop-directories/gnome-screensaver.directory
-%%DATADIR%%/gnome-screensaver-preferences.ui
-%%DATADIR%%/lock-dialog-default.ui
+man/man1/gnome-screensaver-command.1.gz
+man/man1/gnome-screensaver.1.gz
+share/locale/af/LC_MESSAGES/gnome-screensaver.mo
+share/locale/an/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ar/LC_MESSAGES/gnome-screensaver.mo
 share/locale/as/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ast/LC_MESSAGES/gnome-screensaver.mo
@@ -40,6 +28,7 @@ share/locale/el/LC_MESSAGES/gnome-screensaver.mo
 share/locale/en@shaw/LC_MESSAGES/gnome-screensaver.mo
 share/locale/en_CA/LC_MESSAGES/gnome-screensaver.mo
 share/locale/en_GB/LC_MESSAGES/gnome-screensaver.mo
+share/locale/eo/LC_MESSAGES/gnome-screensaver.mo
 share/locale/es/LC_MESSAGES/gnome-screensaver.mo
 share/locale/et/LC_MESSAGES/gnome-screensaver.mo
 share/locale/eu/LC_MESSAGES/gnome-screensaver.mo
@@ -58,6 +47,7 @@ share/locale/is/LC_MESSAGES/gnome-screensaver.mo
 share/locale/it/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ja/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ka/LC_MESSAGES/gnome-screensaver.mo
+share/locale/km/LC_MESSAGES/gnome-screensaver.mo
 share/locale/kn/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ko/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ku/LC_MESSAGES/gnome-screensaver.mo
@@ -69,6 +59,8 @@ share/locale/mk/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ml/LC_MESSAGES/gnome-screensaver.mo
 share/locale/mn/LC_MESSAGES/gnome-screensaver.mo
 share/locale/mr/LC_MESSAGES/gnome-screensaver.mo
+share/locale/ms/LC_MESSAGES/gnome-screensaver.mo
+share/locale/my/LC_MESSAGES/gnome-screensaver.mo
 share/locale/nb/LC_MESSAGES/gnome-screensaver.mo
 share/locale/nds/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ne/LC_MESSAGES/gnome-screensaver.mo
@@ -94,30 +86,19 @@ share/locale/ta/LC_MESSAGES/gnome-screensaver.mo
 share/locale/te/LC_MESSAGES/gnome-screensaver.mo
 share/locale/th/LC_MESSAGES/gnome-screensaver.mo
 share/locale/tr/LC_MESSAGES/gnome-screensaver.mo
+share/locale/ug/LC_MESSAGES/gnome-screensaver.mo
 share/locale/uk/LC_MESSAGES/gnome-screensaver.mo
 share/locale/vi/LC_MESSAGES/gnome-screensaver.mo
+share/locale/xh/LC_MESSAGES/gnome-screensaver.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-screensaver.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-screensaver.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-screensaver.mo
-share/backgrounds/cosmos/background-1.xml
-share/backgrounds/cosmos/blue-marble-west.jpg
-share/backgrounds/cosmos/cloud.jpg
-share/backgrounds/cosmos/comet.jpg
-share/backgrounds/cosmos/earth-horizon.jpg
-share/backgrounds/cosmos/galaxy-ngc3370.jpg
-share/backgrounds/cosmos/helix-nebula.jpg
-share/backgrounds/cosmos/jupiter.jpg
-share/backgrounds/cosmos/sombrero.jpg
-share/backgrounds/cosmos/whirlpool.jpg
-share/gnome-background-properties/cosmos.xml
-share/pixmaps/gnome-logo-white.svg
-@dirrm share/gnome-background-properties
-@dirrm share/backgrounds/cosmos
-@dirrmtry share/backgrounds
-@dirrm %%DATADIR%%
-@dirrm libexec/gnome-screensaver
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
@@ -130,6 +111,8 @@ share/pixmaps/gnome-logo-white.svg
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/nds/LC_MESSAGES
 @dirrmtry share/locale/nds
+@dirrmtry share/locale/my/LC_MESSAGES
+@dirrmtry share/locale/my
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
@@ -138,6 +121,8 @@ share/pixmaps/gnome-logo-white.svg
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
 @dirrmtry share/locale/en@shaw/LC_MESSAGES
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
@@ -154,3 +139,5 @@ share/pixmaps/gnome-logo-white.svg
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrmtry share/locale/an/LC_MESSAGES
+@dirrmtry share/locale/an

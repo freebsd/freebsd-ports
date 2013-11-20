@@ -1,27 +1,23 @@
 # Created by: Koop Mast<kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/sysutils/polkit/Makefile,v 1.23 2012/12/18 13:01:54 kwm Exp $
+#   $MCom: ports/trunk/sysutils/polkit/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	polkit
 PORTVERSION=	0.105
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils gnome
-MASTER_SITES=	http://www.freedesktop.org/software/polkit/releases/ \
-		http://miwibox.org/distfiles/
+MASTER_SITES=	http://www.freedesktop.org/software/polkit/releases/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Framework for controlling access to system-wide components
 
-BUILD_DEPENDS=	${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
-RUN_DEPENDS=	${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection \
-		dbus-launch:${PORTSDIR}/devel/dbus
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+RUN_DEPENDS=	dbus-launch:${PORTSDIR}/devel/dbus
 
-USE_GNOME=	gnomehack glib20 intlhack gnomehier
-USE_GMAKE=	yes
-MAKE_JOBS_UNSAFE=	yes
+NO_STAGE=	yes
+USE_GNOME=	glib20 intlhack gnomehier introspection
+USES=		gettext gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gettext
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \
 		--with-authfw=pam \
@@ -36,7 +32,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	MANPAGES
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMANPAGES}

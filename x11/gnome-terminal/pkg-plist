@@ -6,77 +6,84 @@ share/applications/gnome-terminal.desktop
 %%DATADIR%%/profile-manager.ui
 %%DATADIR%%/profile-new-dialog.ui
 %%DATADIR%%/profile-preferences.ui
-%%DATADIR%%/skey-challenge.ui
 %%DATADIR%%/terminal.about
 %%DATADIR%%/terminal.xml
-share/gnome/help/gnome-terminal/C/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/C/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/C/gnome-terminal.xml
-share/gnome/help/gnome-terminal/C/legal.xml
-share/gnome/help/gnome-terminal/bg/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/bg/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/bg/gnome-terminal.xml
-share/gnome/help/gnome-terminal/bg/legal.xml
-share/gnome/help/gnome-terminal/ca/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/ca/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/ca/gnome-terminal.xml
-share/gnome/help/gnome-terminal/cs/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/cs/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/cs/gnome-terminal.xml
-share/gnome/help/gnome-terminal/da/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/da/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/da/gnome-terminal.xml
-share/gnome/help/gnome-terminal/de/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/de/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/de/gnome-terminal.xml
-share/gnome/help/gnome-terminal/el/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/el/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/el/gnome-terminal.xml
-share/gnome/help/gnome-terminal/en_GB/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/en_GB/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/en_GB/gnome-terminal.xml
-share/gnome/help/gnome-terminal/es/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/es/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/es/gnome-terminal.xml
-share/gnome/help/gnome-terminal/fr/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/fr/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/fr/gnome-terminal.xml
-share/gnome/help/gnome-terminal/it/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/it/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/it/gnome-terminal.xml
-share/gnome/help/gnome-terminal/ja/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/ja/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/ja/gnome-terminal.xml
-share/gnome/help/gnome-terminal/ja/legal.xml
-share/gnome/help/gnome-terminal/ko/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/ko/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/ko/gnome-terminal.xml
-share/gnome/help/gnome-terminal/oc/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/oc/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/oc/gnome-terminal.xml
-share/gnome/help/gnome-terminal/pt_BR/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/pt_BR/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/pt_BR/gnome-terminal.xml
-share/gnome/help/gnome-terminal/ro/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/ro/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/ro/gnome-terminal.xml
-share/gnome/help/gnome-terminal/ro/legal.xml
-share/gnome/help/gnome-terminal/ru/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/ru/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/ru/gnome-terminal.xml
-share/gnome/help/gnome-terminal/sv/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/sv/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/sv/gnome-terminal.xml
-share/gnome/help/gnome-terminal/uk/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/uk/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/uk/gnome-terminal.xml
-share/gnome/help/gnome-terminal/zh_CN/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/zh_CN/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/zh_CN/gnome-terminal.xml
-share/gnome/help/gnome-terminal/zh_TW/figures/gnome-terminal-default.png
-share/gnome/help/gnome-terminal/zh_TW/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/zh_TW/gnome-terminal.xml
-share/gnome/help/gnome-terminal/zh_TW/legal.xml
+share/help/C/gnome-terminal/figures/gnome-terminal-default.png
+share/help/C/gnome-terminal/figures/gnome-terminal-tabbed.png
+share/help/C/gnome-terminal/index.docbook
+share/help/C/gnome-terminal/legal.xml
+share/help/ca/gnome-terminal/figures/gnome-terminal-default.png
+share/help/ca/gnome-terminal/figures/gnome-terminal-tabbed.png
+share/help/ca/gnome-terminal/index.docbook
+share/help/ca/gnome-terminal/legal.xml
+share/help/cs/gnome-terminal/figures/gnome-terminal-default.png
+share/help/cs/gnome-terminal/figures/gnome-terminal-tabbed.png
+share/help/cs/gnome-terminal/index.docbook
+share/help/cs/gnome-terminal/legal.xml
+share/help/da/gnome-terminal/figures/gnome-terminal-default.png
+share/help/da/gnome-terminal/figures/gnome-terminal-tabbed.png
+share/help/da/gnome-terminal/index.docbook
+share/help/da/gnome-terminal/legal.xml
+share/help/de/gnome-terminal/figures/gnome-terminal-default.png
+share/help/de/gnome-terminal/figures/gnome-terminal-tabbed.png
+share/help/de/gnome-terminal/index.docbook
+share/help/de/gnome-terminal/legal.xml
+share/help/el/gnome-terminal/figures/gnome-terminal-default.png
+share/help/el/gnome-terminal/figures/gnome-terminal-tabbed.png
+share/help/el/gnome-terminal/index.docbook
+share/help/el/gnome-terminal/legal.xml
+share/help/en_GB/gnome-terminal/figures/gnome-terminal-default.png
+share/help/en_GB/gnome-terminal/figures/gnome-terminal-tabbed.png
+share/help/en_GB/gnome-terminal/index.docbook
+share/help/en_GB/gnome-terminal/legal.xml
+share/help/es/gnome-terminal/figures/gnome-terminal-default.png
+share/help/es/gnome-terminal/figures/gnome-terminal-tabbed.png
+share/help/es/gnome-terminal/index.docbook
+share/help/es/gnome-terminal/legal.xml
+share/help/fr/gnome-terminal/figures/gnome-terminal-default.png
+share/help/fr/gnome-terminal/figures/gnome-terminal-tabbed.png
+share/help/fr/gnome-terminal/index.docbook
+share/help/fr/gnome-terminal/legal.xml
+share/help/gl/gnome-terminal/figures/gnome-terminal-default.png
+share/help/gl/gnome-terminal/figures/gnome-terminal-tabbed.png
+share/help/gl/gnome-terminal/index.docbook
+share/help/gl/gnome-terminal/legal.xml
+share/help/it/gnome-terminal/figures/gnome-terminal-default.png
+share/help/it/gnome-terminal/figures/gnome-terminal-tabbed.png
+share/help/it/gnome-terminal/index.docbook
+share/help/it/gnome-terminal/legal.xml
+share/help/ko/gnome-terminal/figures/gnome-terminal-default.png
+share/help/ko/gnome-terminal/figures/gnome-terminal-tabbed.png
+share/help/ko/gnome-terminal/index.docbook
+share/help/ko/gnome-terminal/legal.xml
+share/help/oc/gnome-terminal/figures/gnome-terminal-default.png
+share/help/oc/gnome-terminal/figures/gnome-terminal-tabbed.png
+share/help/oc/gnome-terminal/index.docbook
+share/help/oc/gnome-terminal/legal.xml
+share/help/pt_BR/gnome-terminal/figures/gnome-terminal-default.png
+share/help/pt_BR/gnome-terminal/figures/gnome-terminal-tabbed.png
+share/help/pt_BR/gnome-terminal/index.docbook
+share/help/pt_BR/gnome-terminal/legal.xml
+share/help/ru/gnome-terminal/figures/gnome-terminal-default.png
+share/help/ru/gnome-terminal/figures/gnome-terminal-tabbed.png
+share/help/ru/gnome-terminal/index.docbook
+share/help/ru/gnome-terminal/legal.xml
+share/help/sl/gnome-terminal/figures/gnome-terminal-default.png
+share/help/sl/gnome-terminal/figures/gnome-terminal-tabbed.png
+share/help/sl/gnome-terminal/index.docbook
+share/help/sl/gnome-terminal/legal.xml
+share/help/sv/gnome-terminal/figures/gnome-terminal-default.png
+share/help/sv/gnome-terminal/figures/gnome-terminal-tabbed.png
+share/help/sv/gnome-terminal/index.docbook
+share/help/sv/gnome-terminal/legal.xml
+share/help/uk/gnome-terminal/figures/gnome-terminal-default.png
+share/help/uk/gnome-terminal/figures/gnome-terminal-tabbed.png
+share/help/uk/gnome-terminal/index.docbook
+share/help/uk/gnome-terminal/legal.xml
+share/help/zh_CN/gnome-terminal/figures/gnome-terminal-default.png
+share/help/zh_CN/gnome-terminal/figures/gnome-terminal-tabbed.png
+share/help/zh_CN/gnome-terminal/index.docbook
+share/help/zh_CN/gnome-terminal/legal.xml
 share/locale/am/LC_MESSAGES/gnome-terminal.mo
 share/locale/ar/LC_MESSAGES/gnome-terminal.mo
 share/locale/as/LC_MESSAGES/gnome-terminal.mo
@@ -121,6 +128,7 @@ share/locale/it/LC_MESSAGES/gnome-terminal.mo
 share/locale/ja/LC_MESSAGES/gnome-terminal.mo
 share/locale/ka/LC_MESSAGES/gnome-terminal.mo
 share/locale/kk/LC_MESSAGES/gnome-terminal.mo
+share/locale/km/LC_MESSAGES/gnome-terminal.mo
 share/locale/kn/LC_MESSAGES/gnome-terminal.mo
 share/locale/ko/LC_MESSAGES/gnome-terminal.mo
 share/locale/ku/LC_MESSAGES/gnome-terminal.mo
@@ -167,71 +175,6 @@ share/locale/xh/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-terminal.mo
-share/omf/gnome-terminal/gnome-terminal-C.omf
-share/omf/gnome-terminal/gnome-terminal-bg.omf
-share/omf/gnome-terminal/gnome-terminal-ca.omf
-share/omf/gnome-terminal/gnome-terminal-cs.omf
-share/omf/gnome-terminal/gnome-terminal-da.omf
-share/omf/gnome-terminal/gnome-terminal-de.omf
-share/omf/gnome-terminal/gnome-terminal-el.omf
-share/omf/gnome-terminal/gnome-terminal-en_GB.omf
-share/omf/gnome-terminal/gnome-terminal-es.omf
-share/omf/gnome-terminal/gnome-terminal-fr.omf
-share/omf/gnome-terminal/gnome-terminal-it.omf
-share/omf/gnome-terminal/gnome-terminal-ja.omf
-share/omf/gnome-terminal/gnome-terminal-ko.omf
-share/omf/gnome-terminal/gnome-terminal-oc.omf
-share/omf/gnome-terminal/gnome-terminal-pt_BR.omf
-share/omf/gnome-terminal/gnome-terminal-ro.omf
-share/omf/gnome-terminal/gnome-terminal-ru.omf
-share/omf/gnome-terminal/gnome-terminal-sv.omf
-share/omf/gnome-terminal/gnome-terminal-uk.omf
-share/omf/gnome-terminal/gnome-terminal-zh_CN.omf
-share/omf/gnome-terminal/gnome-terminal-zh_TW.omf
-@dirrm share/omf/gnome-terminal
-@dirrm share/gnome/help/gnome-terminal/zh_TW/figures
-@dirrm share/gnome/help/gnome-terminal/zh_TW
-@dirrm share/gnome/help/gnome-terminal/zh_CN/figures
-@dirrm share/gnome/help/gnome-terminal/zh_CN
-@dirrm share/gnome/help/gnome-terminal/uk/figures
-@dirrm share/gnome/help/gnome-terminal/uk
-@dirrm share/gnome/help/gnome-terminal/sv/figures
-@dirrm share/gnome/help/gnome-terminal/sv
-@dirrm share/gnome/help/gnome-terminal/ru/figures
-@dirrm share/gnome/help/gnome-terminal/ru
-@dirrm share/gnome/help/gnome-terminal/ro/figures
-@dirrm share/gnome/help/gnome-terminal/ro
-@dirrm share/gnome/help/gnome-terminal/pt_BR/figures
-@dirrm share/gnome/help/gnome-terminal/pt_BR
-@dirrm share/gnome/help/gnome-terminal/oc/figures
-@dirrm share/gnome/help/gnome-terminal/oc
-@dirrm share/gnome/help/gnome-terminal/ko/figures
-@dirrm share/gnome/help/gnome-terminal/ko
-@dirrm share/gnome/help/gnome-terminal/ja/figures
-@dirrm share/gnome/help/gnome-terminal/ja
-@dirrm share/gnome/help/gnome-terminal/it/figures
-@dirrm share/gnome/help/gnome-terminal/it
-@dirrm share/gnome/help/gnome-terminal/fr/figures
-@dirrm share/gnome/help/gnome-terminal/fr
-@dirrm share/gnome/help/gnome-terminal/es/figures
-@dirrm share/gnome/help/gnome-terminal/es
-@dirrm share/gnome/help/gnome-terminal/en_GB/figures
-@dirrm share/gnome/help/gnome-terminal/en_GB
-@dirrm share/gnome/help/gnome-terminal/el/figures
-@dirrm share/gnome/help/gnome-terminal/el
-@dirrm share/gnome/help/gnome-terminal/de/figures
-@dirrm share/gnome/help/gnome-terminal/de
-@dirrm share/gnome/help/gnome-terminal/da/figures
-@dirrm share/gnome/help/gnome-terminal/da
-@dirrm share/gnome/help/gnome-terminal/cs/figures
-@dirrm share/gnome/help/gnome-terminal/cs
-@dirrm share/gnome/help/gnome-terminal/ca/figures
-@dirrm share/gnome/help/gnome-terminal/ca
-@dirrm share/gnome/help/gnome-terminal/bg/figures
-@dirrm share/gnome/help/gnome-terminal/bg
-@dirrm share/gnome/help/gnome-terminal/C/figures
-@dirrm share/gnome/help/gnome-terminal/C
-@dirrm share/gnome/help/gnome-terminal
 @dirrm %%DATADIR%%
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
@@ -281,3 +224,61 @@ share/omf/gnome-terminal/gnome-terminal-zh_TW.omf
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrmtry share/help/zh_CN/gnome-terminal/figures
+@dirrmtry share/help/zh_CN/gnome-terminal
+@dirrmtry share/help/zh_CN
+@dirrmtry share/help/uk/gnome-terminal/figures
+@dirrmtry share/help/uk/gnome-terminal
+@dirrmtry share/help/uk
+@dirrmtry share/help/sv/gnome-terminal/figures
+@dirrmtry share/help/sv/gnome-terminal
+@dirrmtry share/help/sv
+@dirrmtry share/help/sl/gnome-terminal/figures
+@dirrmtry share/help/sl/gnome-terminal
+@dirrmtry share/help/sl
+@dirrmtry share/help/ru/gnome-terminal/figures
+@dirrmtry share/help/ru/gnome-terminal
+@dirrmtry share/help/ru
+@dirrmtry share/help/pt_BR/gnome-terminal/figures
+@dirrmtry share/help/pt_BR/gnome-terminal
+@dirrmtry share/help/pt_BR
+@dirrmtry share/help/oc/gnome-terminal/figures
+@dirrmtry share/help/oc/gnome-terminal
+@dirrmtry share/help/oc
+@dirrmtry share/help/ko/gnome-terminal/figures
+@dirrmtry share/help/ko/gnome-terminal
+@dirrmtry share/help/ko
+@dirrmtry share/help/it/gnome-terminal/figures
+@dirrmtry share/help/it/gnome-terminal
+@dirrmtry share/help/it
+@dirrmtry share/help/gl/gnome-terminal/figures
+@dirrmtry share/help/gl/gnome-terminal
+@dirrmtry share/help/gl
+@dirrmtry share/help/fr/gnome-terminal/figures
+@dirrmtry share/help/fr/gnome-terminal
+@dirrmtry share/help/fr
+@dirrmtry share/help/es/gnome-terminal/figures
+@dirrmtry share/help/es/gnome-terminal
+@dirrmtry share/help/es
+@dirrmtry share/help/en_GB/gnome-terminal/figures
+@dirrmtry share/help/en_GB/gnome-terminal
+@dirrmtry share/help/en_GB
+@dirrmtry share/help/el/gnome-terminal/figures
+@dirrmtry share/help/el/gnome-terminal
+@dirrmtry share/help/el
+@dirrmtry share/help/de/gnome-terminal/figures
+@dirrmtry share/help/de/gnome-terminal
+@dirrmtry share/help/de
+@dirrmtry share/help/da/gnome-terminal/figures
+@dirrmtry share/help/da/gnome-terminal
+@dirrmtry share/help/da
+@dirrmtry share/help/cs/gnome-terminal/figures
+@dirrmtry share/help/cs/gnome-terminal
+@dirrmtry share/help/cs
+@dirrmtry share/help/ca/gnome-terminal/figures
+@dirrmtry share/help/ca/gnome-terminal
+@dirrmtry share/help/ca
+@dirrmtry share/help/C/gnome-terminal/figures
+@dirrmtry share/help/C/gnome-terminal
+@dirrmtry share/help/C
+@dirrmtry share/help

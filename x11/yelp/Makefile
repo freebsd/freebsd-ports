@@ -1,55 +1,45 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11/yelp/Makefile,v 1.171 2012/10/01 16:19:07 kwm Exp $
+#   $MCom: ports/trunk/x11/yelp3/Makefile 18692 2013-09-22 00:45:30Z kwm $
 
 PORTNAME=	yelp
-PORTVERSION=	2.30.2
-PORTREVISION=	7
+PORTVERSION=	3.6.2
 CATEGORIES=	x11 gnome
-MASTER_SITES=	LOCAL/kwm
-DISTNAME=	${PORTNAME}-webkit-${PORTVERSION}
-DIST_SUBDIR=	gnome2
+MASTER_SITES=	GNOME
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A help browser for the GNOME 2 desktop
+COMMENT=	Help browser for the GNOME 3 desktop
 
-LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		startup-notification-1:${PORTSDIR}/x11/startup-notification \
-		webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2 \
-		rarian:${PORTSDIR}/textproc/rarian
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	yelp-3.[0-9]*
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/yelp-xsl.pc:${PORTSDIR}/textproc/yelp-xsl \
+		itstool:${PORTSDIR}/textproc/itstool
+LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/yelp-xsl.pc:${PORTSDIR}/textproc/yelp-xsl
 
-USES=		desktop-file-utils gettext gmake pkgconfig
-USE_BZIP2=	yes
-USE_XORG=	ice
-USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 gnomedocutils
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig
+USE_XZ=		yes
+USE_XORG=	x11 ice
+USE_GNOME=	gnomeprefix intlhack gtk30 libxslt libxml2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
+USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
+GLIB_SCHEMAS=	org.gnome.yelp.gschema.xml
 
-GCONF_SCHEMAS=	yelp.schemas
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
-# Around the time GCC stack protection (aka Propolice) for userland
-# was enabled on src/share/mk/bsd.sys.mk
-# SVN rev 180012 on 2008-06-25 21:33:28Z by ru
-.if ${OSVERSION} >= 800040
-LDFLAGS+=	-fstack-protector
+.if ${OSVERSION} >= 900012 || (${OSVERSION} >= 800505 && ${OSVERSION} < 900000)
+CONFIGURE_ENV+=	YELP_LZMA_CFLAGS="-I/usr/include" \
+		YELP_LZMA_LIBS="-L/usr/lib -llzma"
+.else
+LIB_DEPENDS+=	liblzma.so:${PORTSDIR}/archivers/xz
 .endif
 
-post-extract:
-	${RM} -f ${WRKSRC}/data/yelp.schemas
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,[-/]unstable,,' \
-		-e 's/ --define-variable=includetype=unstable//' \
-		${WRKSRC}/configure
-
 post-install:
-	@-update-mime-database ${PREFIX}/share/mime
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libyelp.so.0
 
 .include <bsd.port.post.mk>

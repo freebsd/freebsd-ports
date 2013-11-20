@@ -1,62 +1,48 @@
 # $FreeBSD$
-#   $MCom: ports/deskutils/gnote/Makefile,v 1.14 2010/11/15 16:21:49 kwm Exp $
+#   $MCom: ports/trunk/deskutils/gnote/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gnote
-PORTVERSION=	0.7.6
-PORTREVISION=	4
+PORTVERSION=	3.10.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A port of Tomboy to C++, note taking application
+COMMENT=	C++ version of Tomboy, note taking application
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		pcre.3:${PORTSDIR}/devel/pcre \
-		gtkspell.0:${PORTSDIR}/textproc/gtkspell \
-		boost_filesystem:${PORTSDIR}/devel/boost-libs \
-		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
+		libsecret-1.so:${PORTSDIR}/security/libsecret \
+		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 
 USE_XZ=		yes
-USE_GNOME=	gnomehack gnomeprefix gconf2 gtk20 intltool libxml2 libxslt \
-		ltverhack gnomepanel
-USES=		gettext gmake pkgconfig
-INSTALLS_OMF=	yes
-GCONF_SCHEMAS=	gnote.schemas
+USE_GNOME=	gnomeprefix gtk30 intltool libxml2 libxslt \
+		ltverhack gnomedocutils gtkmm30
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig
+GLIB_SCHEMAS=	org.gnome.gnote.gschema.xml
 USE_AUTOTOOLS=	libtool
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PANELAPPLET_SERVER_DIR="${PREFIX}/libdata/bonobo/servers"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--disable-dbus
+CONFIGURE_ARGS=	--with-dbus-service-dir=${PREFIX}/share/dbus-1/services
 DOCS=		AUTHORS ChangeLog NEWS README TODO
-MAN1=		gnote.1
 
-.if !defined(WITHOUT_APPLET)
-LIB_DEPENDS+=	panelappletmm-2.6:${PORTSDIR}/x11-toolkits/libpanelappletmm
-CONFIGURE_ARGS+=--enable-applet
-PLIST_SUB+=	APPLET=""
-.else
-CONFIGURE_ARGS+=--disable-applet
-PLIST_SUB+=	APPLET="@comment "
-.endif
+.include <bsd.port.options.mk>
 
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/include/boost|${LOCALBASE}/include/boost|g' \
-		${WRKSRC}/configure
-
-.ifndef (NOPORTDOCS)
 post-install:
-	@${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgnote-${PORTVERSION:R}.so.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gnote/addins/${PORTVERSION}/*.so
 
 .include <bsd.port.mk>

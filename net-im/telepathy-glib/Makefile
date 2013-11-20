@@ -10,11 +10,12 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GLib utility library for the Telepathy framework
 
 BUILD_DEPENDS=	vala-vapigen>=0.20.0:${PORTSDIR}/lang/vala-vapigen
-LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen
 
 PORTSCOUT=	limitw:1,even
 
+NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USES=		gmake pathfix pkgconfig
@@ -24,5 +25,4 @@ MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-vala-bindings
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

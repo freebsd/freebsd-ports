@@ -1,41 +1,40 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/accessibility/orca/Makefile,v 1.90 2010/11/16 12:00:48 avl Exp $
+#   $MCom: ports/trunk/accessibility/orca3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	orca
-PORTVERSION=	2.32.1
-PORTREVISION=	2
+PORTVERSION=	3.6.2
+PORTREVISION=	1
 CATEGORIES=	accessibility gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Scriptable screen reader
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_dbus_bindings.so:${PORTSDIR}/devel/py-dbus \
-		${PYTHON_SITELIBDIR}/pyatspi/__init__.py:${PORTSDIR}/accessibility/at-spi \
-		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
-LIB_DEPENDS=	gnome-mag.2:${PORTSDIR}/accessibility/gnome-mag
+		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
+		${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo \
+		itstool:${PORTSDIR}/textproc/itstool
+LIB_DEPENDS=	libatspi.so:${PORTSDIR}/accessibility/at-spi2-core
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_dbus_bindings.so:${PORTSDIR}/devel/py-dbus \
-		${PYTHON_SITELIBDIR}/pyatspi/__init__.py:${PORTSDIR}/accessibility/at-spi \
-		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
+		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
+		${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo
 
-NO_STAGE=	yes
-USE_BZIP2=	yes
-USES=		gmake gettext pkgconfig
-USE_PYTHON=	-2.7
-USE_GNOME=	gnomeprefix gnomehack libgnomeui gnomespeech pygnome2 \
-		pygnomedesktop
+# conflict with py*-json-py because orca uses the json from python itself
+# and py*-json-py shadows this.
+CONFLICTS=	py*-json-py-[0-9]*
+
+USE_XZ=		yes
+USES=		gettext gmake pathfix pkgconfig
+USE_PYTHON=	yes
+USE_GNOME=	gnomeprefix gtk30 pygobject3
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		orca.1
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
-		${WRKSRC}/src/orca/orca.in
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 	    	${WRKSRC}/src/orca/orca_i18n.py
 

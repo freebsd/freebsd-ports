@@ -14,11 +14,18 @@ lib/libmetacity-private.la
 lib/libmetacity-private.so
 lib/libmetacity-private.so.0
 libdata/pkgconfig/libmetacity-private.pc
+man/man1/metacity-message.1.gz
+man/man1/metacity-theme-viewer.1.gz
+man/man1/metacity-window-demo.1.gz
+man/man1/metacity.1.gz
+share/GConf/gsettings/metacity-schemas.convert
 share/applications/metacity.desktop
-share/gnome-control-center/keybindings/50-metacity-desktop-key.xml
-share/gnome-control-center/keybindings/50-metacity-key.xml
-share/gnome/help/creating-metacity-themes/C/creating-metacity-themes.xml
+share/gnome-control-center/keybindings/50-metacity-navigation.xml
+share/gnome-control-center/keybindings/50-metacity-system.xml
+share/gnome-control-center/keybindings/50-metacity-windows.xml
 share/gnome/wm-properties/metacity-wm.desktop
+share/help/C/creating-metacity-themes/index.docbook
+share/help/de/creating-metacity-themes/index.docbook
 share/locale/am/LC_MESSAGES/metacity.mo
 share/locale/ar/LC_MESSAGES/metacity.mo
 share/locale/as/LC_MESSAGES/metacity.mo
@@ -104,6 +111,7 @@ share/locale/te/LC_MESSAGES/metacity.mo
 share/locale/th/LC_MESSAGES/metacity.mo
 share/locale/tk/LC_MESSAGES/metacity.mo
 share/locale/tr/LC_MESSAGES/metacity.mo
+share/locale/ug/LC_MESSAGES/metacity.mo
 share/locale/uk/LC_MESSAGES/metacity.mo
 share/locale/vi/LC_MESSAGES/metacity.mo
 share/locale/wa/LC_MESSAGES/metacity.mo
@@ -229,10 +237,12 @@ share/themes/Simple/metacity-1/minimize.png
 @dirrmtry share/themes/Atlanta
 @dirrm share/themes/AgingGorilla/metacity-1
 @dirrmtry share/themes/AgingGorilla
+@dirrm share/help/de/creating-metacity-themes
+@dirrm share/help/C/creating-metacity-themes
+@dirrmtry share/help/C
+@dirrmtry share/help
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrm share/gnome/help/creating-metacity-themes/C
-@dirrm share/gnome/help/creating-metacity-themes
 @dirrm include/metacity-1/metacity-private
 @dirrm include/metacity-1
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -241,6 +251,8 @@ share/themes/Simple/metacity-1/minimize.png
 @dirrmtry share/locale/yo
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
