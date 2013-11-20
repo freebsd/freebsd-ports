@@ -46,7 +46,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/a
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_XZ=		yes
-USES=		bison desktop-file-utils pkgconfig perl5 shebangfix
+USES=		bison compiler:c++11-lang desktop-file-utils pkgconfig \
+		perl5 shebangfix
 USE_PERL5=	build
 USE_PYTHON_BUILD=	2.6-2.7
 USE_XORG=	scrnsaverproto x11 xproto xscrnsaver xtst
@@ -91,10 +92,8 @@ SUB_FILES=	chromium-browser.desktop
 SUB_LIST=	COMMENT="${COMMENT}" \
 		DATADIR=${DATADIR}
 
-OPTIONS_DEFINE=	CODECS GCONF PULSEAUDIO GCC TEST DEBUG
-
+OPTIONS_DEFINE=	CODECS GCONF PULSEAUDIO TEST DEBUG
 CODECS_DESC=	Compile and enable patented codecs like H.264
-GCC_DESC=	Build Chromium with GCC 4.6+
 
 OPTIONS_DEFAULT=	CODECS GCONF
 
@@ -125,24 +124,6 @@ GYP_DEFINES+=	use_pulseaudio=0
 GYP_DEFINES+=	disable_sse2=1
 .endif
 
-.if ${PORT_OPTIONS:MGCC}
-USE_GCC?=	yes
-GYP_DEFINES+=	gcc_version=${CXX:S/g++//}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gcc
-.else
-.if ${OSVERSION} < 902000
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang32:${PORTSDIR}/lang/clang32
-CC=		${LOCALBASE}/bin/clang32
-CXX=		${LOCALBASE}/bin/clang++32
-.else
-CC=		clang
-CXX=		clang++
-.endif
-GYP_DEFINES+=	clang=1
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
-CONFIGURE_ENV+=	AR=/usr/bin/ar
-.endif
-
 .if ${OSVERSION} >= 1000052 && !exists(${LOCALBASE}/include/execinfo.h)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-fixup-execinfo
 .endif
@@ -163,11 +144,11 @@ TEST_TARGETS=	base_unittests \
 		content_unittests
 EXCLUDED_TESTS=	GpuDriverBugListTest.CurrentDriverBugListValidation
 NINJA_TARGETS+=	${TEST_TARGETS}
-DISTFILES+=	${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}:testdata
 .endif
+TEST_DISTFILES=	${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}:testdata
 
+DEBUG_MAKE_ENV=	V=1
 .if ${PORT_OPTIONS:MDEBUG}
-MAKE_ENV+=	V=1
 BUILDTYPE=	Debug
 GYP_DEFINES+=	remove_webcore_debug_symbols=1
 .else
@@ -189,6 +170,15 @@ MAKE_ENV+=	BUILDTYPE=${BUILDTYPE} \
 		GPERF=${LOCALBASE}/bin/gperf
 
 .include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+GYP_DEFINES+=	gcc_version=${CXX:S/g++//}
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gcc
+.else
+GYP_DEFINES+=	clang=1
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
+CONFIGURE_ENV+=	AR=/usr/bin/ar
+.endif
 
 pre-everything::
 	@${ECHO_MSG}
