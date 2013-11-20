@@ -578,7 +578,6 @@
     SUBDIR += gnome-vfs-monikers
     SUBDIR += gnome-vfs-reference
     SUBDIR += gnome-vfsmm
-    SUBDIR += gnome2-hacker-tools
     SUBDIR += gnucflow
     SUBDIR += gnulib
     SUBDIR += gnulibiberty
