@@ -14,11 +14,11 @@ COMMENT=	CSS Cascading Style Sheets library for Python
 LICENSE=	LGPL3
 
 OPTIONS_DEFINE=	EXAMPLES
+OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-NO_STAGE=	yes
-USE_ZIP=	yes
-USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
+USE_PYTHON=	yes
+USE_ZIP=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
@@ -26,8 +26,8 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}/
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>
