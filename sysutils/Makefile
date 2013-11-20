@@ -717,6 +717,7 @@
     SUBDIR += pstree
     SUBDIR += ptools
     SUBDIR += puppet
+    SUBDIR += puppet-mode.el
     SUBDIR += puppet27
     SUBDIR += puppet-lint
     SUBDIR += pv
