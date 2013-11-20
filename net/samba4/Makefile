@@ -3,7 +3,7 @@
 
 PORTNAME?=		${SAMBA4_PORTNAME}
 PORTVERSION?=		${SAMBA4_VERSION}
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	samba/stable samba/rc
@@ -519,6 +519,8 @@ post-install:
 .	endfor
 			@${LN} -sf smb.conf.5.gz ${STAGEDIR}${PREFIX}/man/man5/smb4.conf.5.gz
 .endif
+# Run post-install script
+			@${SETENV} STAGEDIR=${STAGEDIR} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .if ${PORT_OPTIONS:MDEVELOPER}
 test: build
