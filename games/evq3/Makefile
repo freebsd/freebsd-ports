@@ -12,9 +12,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The Marriage of XreaL and Icculus.org Q3 w/ Improvements
+COMMENT=	Marriage of XreaL and Icculus.org Q3 w/ Improvements
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
 USES=		gmake dos2unix
 USE_BZIP2=	yes
@@ -24,7 +24,7 @@ CFLAGS+=	-DMAP_ANONYMOUS=MAP_ANON
 
 OPTIONS_DEFINE=	CURL CURL_DLOPEN GAMELIBS OPENAL OPENAL_DLOPEN VOIP VORBIS OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=	CLIENT CURL CURL_DLOPEN DEDICATED OPTIMIZED_CFLAGS SMP VORBIS
-OPTIONS_MULTI=	TYPE 
+OPTIONS_MULTI=	TYPE
 OPTIONS_MULTI_TYPE=	CLIENT DEDICATED SMP
 CLIENT_DESC=	Build client
 CURL_DLOPEN_DESC=	Enable dynamic loading of curl
@@ -42,7 +42,6 @@ PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 VM_ARCHS=	amd64 i386
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../quake3-data/Makefile.include"
 
 .include <bsd.port.pre.mk>
@@ -60,7 +59,7 @@ MAKE_ENV+=	HAVE_VM_COMPILED=true
 .if ${PORT_OPTIONS:MCLIENT} || !empty(PORT_OPTIONS:MSMP)
 # curl
 .   if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 MAKE_ENV+=	USE_CURL=1
 .       if ${PORT_OPTIONS:MCURL_DLOPEN}
 MAKE_ENV+=	USE_CURL_DLOPEN=1
@@ -78,12 +77,12 @@ MAKE_ENV+=	USE_OPENAL_DLOPEN=1
 USE_SDL=	sdl
 # VOIP
 .   if ${PORT_OPTIONS:MVOIP}
-LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
+LIB_DEPENDS+=	libspeex.so:${PORTSDIR}/audio/speex
 MAKE_ENV+=	USE_VOIP=1
 .   endif
 # Vorbis
 .   if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 MAKE_ENV+=	USE_CODEC_VORBIS=1
 .   endif
 .endif
@@ -132,22 +131,20 @@ post-patch:
 		${WRKSRC}/code/qcommon/vm_x86.c
 
 do-install:
-	${MKDIR} ${LIBDIR}/baseq3
+	@${MKDIR} ${STAGEDIR}${LIBDIR}/baseq3
 	${INSTALL_DATA} ${DISTDIR}/pak-evq3.pk3 ${DISTDIR}/pak-5evq3.pk3 \
-		${LIBDIR}/baseq3
+		${STAGEDIR}${LIBDIR}/baseq3
 .for bin in ${Q3BIN}
-	${INSTALL_PROGRAM} ${WRKSRC}/build/release/${bin} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/build/release/${bin} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .if ${PORT_OPTIONS:MGAMELIBS} || !defined(HAVE_VM_COMPILED)
 . for dir in baseq3 missionpack
-	${MKDIR} ${LIBDIR}/${dir}
-	${INSTALL_PROGRAM} ${WRKSRC}/build/release/${dir}/*.so ${LIBDIR}/${dir}
+	@${MKDIR} ${STAGEDIR}${LIBDIR}/${dir}
+	${INSTALL_PROGRAM} ${WRKSRC}/build/release/${dir}/*.so ${STAGEDIR}${LIBDIR}/${dir}
 . endfor
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 maint-gen-distfile:
 	@if [ -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
