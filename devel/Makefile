@@ -4333,7 +4333,6 @@
     SUBDIR += sdts++
     SUBDIR += sedsed
     SUBDIR += seed
-    SUBDIR += seed3
     SUBDIR += semantic
     SUBDIR += serdisplib
     SUBDIR += sfio
