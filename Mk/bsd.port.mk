@@ -860,8 +860,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Default: ${WRKSRC}
 # CONFIGURE_SCRIPT
 #				- Name of configure script, relative to ${CONFIGURE_WRKSRC}.
-#				  Default: "Makefile.PL" if PERL_CONFIGURE is set,
-#				  "configure" otherwise.
+#				  Default: "Makefile.PL" if USES=perl5 and USE_PERL5=configure
+#				  are set, "configure" otherwise.
 # CONFIGURE_TARGET
 #				- The name of target to call when GNU_CONFIGURE is
 #				  defined.
@@ -876,8 +876,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  --mandir=${MANPREFIX}/man --build=${CONFIGURE_TARGET}" if
 #				  GNU_CONFIGURE is set, "CC=${CC} CFLAGS=${CFLAGS}
 #				  PREFIX=${PREFIX} INSTALLPRIVLIB=${PREFIX}/lib
-#				  INSTALLARCHLIB=${PREFIX}/lib" if PERL_CONFIGURE is set,
-#				  empty otherwise.
+#				  INSTALLARCHLIB=${PREFIX}/lib" if USES=perl5 and
+#				  USE_PERL5=configure are set, empty otherwise.
 # CONFIGURE_ENV	- Pass these env (shell-like) to configure if
 #				  ${HAS_CONFIGURE} is set.
 # CONFIGURE_LOG	- The name of configure log file. It will be printed to
