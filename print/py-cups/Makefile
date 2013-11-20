@@ -11,19 +11,21 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	CUPS bindings for Python
 
-LIB_DEPENDS=	cups:${PORTSDIR}/print/cups-client
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
+LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_BZIP2=	yes
-USES=		iconv
 USE_PYDISTUTILS=yes
 USE_PYTHON=	-2.7
+USES=		iconv
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/cups.so
 PYDISTUTILS_EGGINFO=	py${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}.egg-info
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
