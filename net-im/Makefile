@@ -150,7 +150,7 @@
     SUBDIR += skype-devel
     SUBDIR += tapioca-qt
     SUBDIR += telepathy-butterfly
-    SUBDIR += telepathy-farsight
+    SUBDIR += telepathy-farstream
     SUBDIR += telepathy-gabble
     SUBDIR += telepathy-glib
     SUBDIR += telepathy-haze
