@@ -25,7 +25,7 @@ RUN_DEPENDS+=	${_GETTEXT_DEPENDS}
 .elif ${gettext_ARGS} == "lib"
 LIB_DEPENDS+=	libintl.so:${PORTSDIR}/devel/gettext
 .else
-IGNORE=	USES=gettext - invalid args: [${gettext_ARGS}] specifed
+IGNORE=	USES=gettext - invalid args: [${gettext_ARGS}] specified
 .endif
 
 .endif
