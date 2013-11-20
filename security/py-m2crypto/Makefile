@@ -23,7 +23,6 @@ MAKE_ARGS=	PYTHON_VERSION=${PYTHON_VER}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|setuptools|do_not_use_&|; /test_suite/d' ${WRKSRC}/${PYSETUP}
-#	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|; s|$$(PYVER)|${PYTHON_VER}|' ${WRKSRC}/SWIG/Makefile
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/SWIG/Makefile
 
 .include <bsd.port.mk>
