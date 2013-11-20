@@ -898,7 +898,7 @@
     SUBDIR += scanssh
     SUBDIR += scrypt
     SUBDIR += seahorse
-    SUBDIR += seahorse-plugins
+    SUBDIR += seahorse-sharing
     SUBDIR += seccure
     SUBDIR += secpanel
     SUBDIR += sectok
