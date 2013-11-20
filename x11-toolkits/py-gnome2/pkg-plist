@@ -1,0 +1,105 @@
+include/gnome-python-2.0/pygnomevfs.h
+include/gnome-python-2.0/pygnomevfsbonobo.h
+lib/gnome-vfs-2.0/modules/libpythonmethod.la
+lib/gnome-vfs-2.0/modules/libpythonmethod.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo/__init__.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo/_bonobo.la
+%%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo/_bonobo.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo/activation.la
+%%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo/activation.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo/ui.la
+%%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo/ui.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gconf.la
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gconf.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/__init__.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/_gnome.la
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/_gnome.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/canvas.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/canvas.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/canvas.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/ui.la
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/ui.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/vfs.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/vfs.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/vfs.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomecanvas.la
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomecanvas.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomevfs/__init__.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomevfs/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomevfs/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomevfs/_gnomevfs.la
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomevfs/_gnomevfs.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomevfs/gnomevfsbonobo.la
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomevfs/gnomevfsbonobo.so
+libdata/pkgconfig/gnome-python-2.0.pc
+%%PORTDOCS%%share/examples/py-gnome/bonobo/bonobo-application.py
+%%PORTDOCS%%share/examples/py-gnome/bonobo/bonoboui/Bonobo_Sample_Hello.xml
+%%PORTDOCS%%share/examples/py-gnome/bonobo/bonoboui/hello.py
+%%PORTDOCS%%share/examples/py-gnome/bonobo/echo/README
+%%PORTDOCS%%share/examples/py-gnome/bonobo/echo/echo-client.py
+%%PORTDOCS%%share/examples/py-gnome/bonobo/unknown.py
+%%PORTDOCS%%share/examples/py-gnome/bug-buddy-integration.py
+%%PORTDOCS%%share/examples/py-gnome/canvas/canvas-curve.py
+%%PORTDOCS%%share/examples/py-gnome/canvas/canvas-example.py
+%%PORTDOCS%%share/examples/py-gnome/gconf/basic-gconf-app.py
+%%PORTDOCS%%share/examples/py-gnome/gconf/simple-controller.py
+%%PORTDOCS%%share/examples/py-gnome/gconf/simple-view.py
+%%PORTDOCS%%share/examples/py-gnome/popt/goption.py
+%%PORTDOCS%%share/examples/py-gnome/popt/popt.py
+%%PORTDOCS%%share/examples/py-gnome/vfs/async-xfer.py
+%%PORTDOCS%%share/examples/py-gnome/vfs/async.py
+%%PORTDOCS%%share/examples/py-gnome/vfs/cancellation.py
+%%PORTDOCS%%share/examples/py-gnome/vfs/pygvfsmethod/README
+%%PORTDOCS%%share/examples/py-gnome/vfs/pygvfsmethod/pyfs.conf
+%%PORTDOCS%%share/examples/py-gnome/vfs/pygvfsmethod/pyfs.py
+%%PORTDOCS%%share/examples/py-gnome/vfs/shell.py
+%%PORTDOCS%%share/examples/py-gnome/vfs/sync-xfer.py
+share/gtk-doc/html/pygnomevfs/class-gnomevfs-context.html
+share/gtk-doc/html/pygnomevfs/class-gnomevfs-directoryhandle.html
+share/gtk-doc/html/pygnomevfs/class-gnomevfs-drive.html
+share/gtk-doc/html/pygnomevfs/class-gnomevfs-fileinfo.html
+share/gtk-doc/html/pygnomevfs/class-gnomevfs-handle.html
+share/gtk-doc/html/pygnomevfs/class-gnomevfs-uri.html
+share/gtk-doc/html/pygnomevfs/class-gnomevfs-volume.html
+share/gtk-doc/html/pygnomevfs/gnomevfs-class-reference.html
+share/gtk-doc/html/pygnomevfs/gnomevfs-constants.html
+share/gtk-doc/html/pygnomevfs/gnomevfs-functions.html
+share/gtk-doc/html/pygnomevfs/index.html
+share/gtk-doc/html/pygnomevfs/index.sgml
+share/gtk-doc/html/pygnomevfs/pygnomevfs.devhelp
+share/pygtk/2.0/argtypes/bonobo-arg-types.py
+share/pygtk/2.0/argtypes/bonobo-arg-types.pyc
+share/pygtk/2.0/argtypes/bonobo-arg-types.pyo
+share/pygtk/2.0/argtypes/gconf-arg-types.py
+share/pygtk/2.0/argtypes/gconf-arg-types.pyc
+share/pygtk/2.0/argtypes/gconf-arg-types.pyo
+share/pygtk/2.0/defs/bonobo-types.defs
+share/pygtk/2.0/defs/bonobo.defs
+share/pygtk/2.0/defs/bonoboui-types.defs
+share/pygtk/2.0/defs/bonoboui.defs
+share/pygtk/2.0/defs/canvas.defs
+share/pygtk/2.0/defs/gconf.defs
+share/pygtk/2.0/defs/gnome-types.defs
+share/pygtk/2.0/defs/gnome.defs
+share/pygtk/2.0/defs/ui.defs
+@dirrmtry share/pygtk/2.0/argtypes
+@dirrm share/gtk-doc/html/pygnomevfs
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
+%%PORTDOCS%%@dirrm share/examples/py-gnome/vfs/pygvfsmethod
+%%PORTDOCS%%@dirrm share/examples/py-gnome/vfs
+%%PORTDOCS%%@dirrm share/examples/py-gnome/popt
+%%PORTDOCS%%@dirrm share/examples/py-gnome/gconf
+%%PORTDOCS%%@dirrm share/examples/py-gnome/canvas
+%%PORTDOCS%%@dirrm share/examples/py-gnome/bonobo/echo
+%%PORTDOCS%%@dirrm share/examples/py-gnome/bonobo/bonoboui
+%%PORTDOCS%%@dirrm share/examples/py-gnome/bonobo
+%%PORTDOCS%%@dirrm share/examples/py-gnome
+@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gnomevfs
+@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gnome
+@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo
+@dirrm include/gnome-python-2.0

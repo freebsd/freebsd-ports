@@ -87,6 +87,10 @@
     SUBDIR += gnome-shell
     SUBDIR += gnome-swallow
     SUBDIR += gnome-terminal
+    SUBDIR += gnome2
+    SUBDIR += gnome2-fifth-toe
+    SUBDIR += gnome2-lite
+    SUBDIR += gnome2-power-tools
     SUBDIR += gnustep-app
     SUBDIR += gpctool
     SUBDIR += grabc
@@ -238,6 +242,8 @@
     SUBDIR += rsibreak-kde4
     SUBDIR += rstart
     SUBDIR += ruby-X11
+    SUBDIR += ruby-gnome2
+    SUBDIR += rubygem-gnome2
     SUBDIR += rxvt
     SUBDIR += rxvt-devel
     SUBDIR += rxvt-unicode
