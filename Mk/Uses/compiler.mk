@@ -17,9 +17,12 @@
 # Variable to test after <bsd.port.pre.mk>
 #
 # COMPILER_TYPE:	can be gcc or clang
+# ALT_COMPILER_TYPE:	can be gcc or clang depending on COMPILER_TYPE and only set if the base system has 2 compiler
 # COMPILER_VERSION:	2 first digit of the version: 33 for clang 3.3.*, 46 for gcc 4.6.*
+# ALT_COMPILER_VERSION:	2 first digit of the version: 33 for clang 3.3.*, 46 for gcc 4.6.* of the ALT_COMPILER_TYPE
 #
 # COMPILER_FEATURES:	the list of features supported by the compiler include the standard C++ library.
+# CHOSEN_COMPILER_TYPE:	can be gcc or clang (type of compiler chosen by the famework)
 
 .if !defined(_INCLUDE_USES_COMPILER_MK)
 _INCLUDE_USES_COMPILER_MK=	yes
@@ -75,9 +78,12 @@ ALT_COMPILER_TYPE=	clang
 ALT_COMPILER_TYPE=	gcc
 .endif
 
+CHOSEN_COMPILER_TYPE=	${COMPILER_TYPE}
+
 .if ${_COMPILER_ARGS:Mopenmp}
 .if ${COMPILER_TYPE} == clang
 USE_GCC=	yes
+CHOSEN_COMPILER_TYPE=	gcc
 .endif
 .endif
 
@@ -107,8 +113,10 @@ COMPILER_FEATURES+=	${std}
 .if ${_COMPILER_ARGS:Mc++11-lib}
 .if !${COMPILER_FEATURES:Mc++11}
 USE_GCC=	yes
+CHOSEN_COMPILER_TYPE=	gcc
 .elif ${COMPILER_TYPE} == clang && ${COMPILER_FEATURES:Mlibstdc++}
 USE_GCC=	yes
+CHOSEN_COMPILER_TYPE=	gcc
 .endif
 .endif
 
@@ -116,16 +124,19 @@ USE_GCC=	yes
 .if !${COMPILER_FEATURES:Mc++11}
 .if defined(FAVORITE_COMPILER) && ${FAVORITE_COMPILER} == gcc
 USE_GCC=	yes
+CHOSEN_COMPILER_TYPE=	gcc
 .elif (${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 33) || ${COMPILER_TYPE} == gcc
 .if ${ALT_COMPILER_TYPE} == clang && ${ALT_COMPILER_VERSION} >= 33
 CPP=	clang-cpp
 CC=	clang
 CXX=	clang++
+CHOSEN_COMPILER_TYPE=	clang
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/bin/clang33:${PORTSDIR}/lang/clang33
 CPP=	${LOCALBASE}/bin/clang-cpp33
 CC=	${LOCALBASE}/bin/clang33
 CXX=	${LOCALBASE}/bin/clang++33
+CHOSEN_COMPILER_TYPE=	clang
 .if ${OSVERSION} < 900033
 USE_BINUTILS=	yes
 LDFLAGS+=	-B${LOCALBASE}/bin
@@ -139,8 +150,10 @@ LDFLAGS+=	-B${LOCALBASE}/bin
 .if !${COMPILER_FEATURES:Mc11}
 .if defined(FAVORITE_COMPILER) && ${FAVORITE_COMPILER} == gcc
 USE_GCC=	yes
+CHOSEN_COMPILER_TYPE=	gcc
 .elif (${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 33) || ${COMPILER_TYPE} == gcc
 BUILD_DEPENDS+=	${LOCALBASE}/bin/clang33:${PORTSDIR}/lang/clang33
+CHOSEN_COMPILER_TYPE=	clang
 CPP=	${LOCALBASE}/bin/clang-cpp33
 CC=	${LOCALBASE}/bin/clang33
 CXX=	${LOCALBASE}/bin/clang++33
