@@ -22,5 +22,5 @@ man/man3/cuse_uninit.3.gz
 man/man3/cuse_vmalloc.3.gz
 man/man3/cuse_vmfree.3.gz
 man/man3/cuse_wait_and_process.3.gz
-@cwd %%KMODDIR%%
+@cwd /%%KMODDIR%%
 %%KMODNAME%%.ko
