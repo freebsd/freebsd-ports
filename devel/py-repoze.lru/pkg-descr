@@ -2,4 +2,4 @@ repoze.lru is a LRU (least recently used) cache implementation.
 Keys and values that are not used frequently will be evicted
 from the cache faster than keys and values that are used frequently.
 
-WWW:	http://pypi.python.org/pypi/repoze.lru
+WWW: https://pypi.python.org/pypi/repoze.lru
