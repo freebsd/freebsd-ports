@@ -9,19 +9,19 @@ MASTER_SITES=	SF/${PORTNAME}/OldFiles
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Software for production and maintenance of web sites
 
+OPTIONS_DEFINE=	DOCS
+
+USES=		gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gwsmake=no --enable-iswmake=no
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--enable-docs=no
-.else
+.if ${PORT_OPTIONS:MDOCS}
 INFO=	wsmake iwsmake gwsmake
-MAN1=	wsmake.1
+.else
+CONFIGURE_ARGS+=	--enable-docs=no
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
