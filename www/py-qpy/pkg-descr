@@ -1,8 +1,7 @@
-Qpy provides a convenient mechanism for generating safely-quoted html
-text from python code.
+Qpy provides a convenient mechanism for generating safely-quoted html text from
+python code.
 
-It does this by implementing a quoted-string data type and a
-modification of the python compiler. (This main idea comes from
-Quixote's htmltext/PTL.)
+It does this by implementing a quoted-string data type and a modification of the
+python compiler. (This main idea comes from Quixote's htmltext/PTL.)
 
-WWW:      http://www.mems-exchange.org/software/qpy/
+WWW: http://www.mems-exchange.org/software/qpy/
