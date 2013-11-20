@@ -22,6 +22,7 @@ include/OpenEXR/ImfConvert.h
 include/OpenEXR/ImfDeepCompositing.h
 include/OpenEXR/ImfDeepFrameBuffer.h
 include/OpenEXR/ImfDeepImageState.h
+include/OpenEXR/ImfDeepImageStateAttribute.h
 include/OpenEXR/ImfDeepScanLineInputFile.h
 include/OpenEXR/ImfDeepScanLineInputPart.h
 include/OpenEXR/ImfDeepScanLineOutputFile.h
