@@ -12,8 +12,8 @@ COMMENT=	Free FPS game featuring two opposing teams: humans and aliens
 
 LICENSE=	GPLv2
 
+USES=		gmake
 USE_ZIP=	yes
-USE_GMAKE=	yes
 MAKE_ENV=	DEFAULT_BASEDIR="${DATADIR}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -37,7 +37,6 @@ SDL_AUDIO_DESC=		Use SDL for audio
 SDL_VIDEO_DESC=		Use SDL for video
 SMP_CLIENT_DESC=	Build SMP (threaded) client
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .for arch in ${ARCH}
@@ -73,7 +72,7 @@ USE_XORG=	x11 xxf86dga
 .  endif
 # Vorbis
 .  if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 MAKE_ENV+=	USE_CODEC_VORBIS=1
 .  endif
 .endif
@@ -102,7 +101,7 @@ PLIST_SUB+=	GAMELIBS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMASTER_SERVER}
-LIB_DEPENDS+=	tdb:${PORTSDIR}/databases/tdb
+LIB_DEPENDS+=	libtdb.so:${PORTSDIR}/databases/tdb
 MAKE_ENV+=	BUILD_MASTER_SERVER=1
 PLIST_SUB+=	MASTER_SERVER=""
 .else
@@ -130,19 +129,14 @@ post-patch:
 
 do-install:
 .for bin in ${TRBIN}
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/build/release/${bin} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/build/release/${bin} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .if ${PORT_OPTIONS:MMASTER_SERVER}
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/src/master/release/tremmaster \
-		${PREFIX}/bin
+		${STAGEDIR}${PREFIX}/bin
 .endif
-	@${MKDIR} ${DATADIR}/base
-	${INSTALL_DATA} ${WRKSRC}/base/* ${DATADIR}/base
-	${INSTALL_DATA} ${WRKSRC}/tremulous.xpm ${PREFIX}/share/pixmaps
-
-post-install:
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/base
+	${INSTALL_DATA} ${WRKSRC}/base/* ${STAGEDIR}${DATADIR}/base
+	${INSTALL_DATA} ${WRKSRC}/tremulous.xpm ${STAGEDIR}${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>

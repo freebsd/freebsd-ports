@@ -1,5 +1,5 @@
---- ./tremulous-1.1.0-src/src/master/Makefile.orig	Fri Jan 20 20:37:31 2006
-+++ ./tremulous-1.1.0-src/src/master/Makefile	Wed Jun  7 16:57:12 2006
+--- ./tremulous-1.1.0-src/src/master/Makefile.orig	2006-01-20 21:37:31.000000000 -0200
++++ ./tremulous-1.1.0-src/src/master/Makefile	2013-11-20 01:02:22.000000000 -0200
 @@ -1,5 +1,5 @@
  BD_DEBUG=debug-$(PLATFORM)-$(ARCH)
 -BD_RELEASE=release-$(PLATFORM)-$(ARCH)
@@ -7,7 +7,15 @@
  
  ifeq ($(PLATFORM),mingw32)
    BINEXT=.exe
-@@ -15,9 +15,11 @@
+@@ -9,15 +9,17 @@
+   MKDIR=mkdir
+ else
+   BINEXT=
+-  RELEASE_LDFLAGS=-static -ltdb
+-  DEBUG_LDFLAGS=-static -ltdb
++  RELEASE_LDFLAGS=-ltdb
++  DEBUG_LDFLAGS=-ltdb
+   RM=rm -f
    MKDIR=mkdir
  endif
  
