@@ -5,4 +5,4 @@ primarily of printable ASCII characters, but which may contain characters
 cannot be encoded as 7-bit ASCII or are non-printable characters which may
 confuse mail transfer agents.
 
-WWW:	http://www.fourmilab.ch/webtools/qprint/
+WWW: http://www.fourmilab.ch/webtools/qprint/
