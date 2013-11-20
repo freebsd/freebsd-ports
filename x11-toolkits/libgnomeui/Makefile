@@ -4,7 +4,7 @@
 
 PORTNAME=	libgnomeui
 PORTVERSION=	2.24.4
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,8 +16,8 @@ USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/gnome-keyring \
-		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+LIB_DEPENDS+=	libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
+		libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 
 USE_XORG=	sm
@@ -25,12 +25,15 @@ USES=		bison pathfix gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix gnomehier libbonoboui ltverhack \
 		referencehack gvfs
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgnomeui-2.so.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libglade/2.0/libgnome.so
+
 .include <bsd.port.mk>
 
 .endif
