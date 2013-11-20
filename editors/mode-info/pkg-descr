@@ -1,4 +1,0 @@
-This package provide functions to refer Manuals (info files)
-on Emacs with similar interface to describe-{function,variable}.
-
-WWW: http://www.namazu.org/~tsuchiya/elisp/mode-info.html

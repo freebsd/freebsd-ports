@@ -216,7 +216,6 @@
     SUBDIR += mg
     SUBDIR += mined
     SUBDIR += mlview
-    SUBDIR += mode-info
     SUBDIR += morla
     SUBDIR += mousepad
     SUBDIR += mp
