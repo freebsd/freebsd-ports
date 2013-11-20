@@ -19,6 +19,7 @@ IGNORE=	USES=pathfix does not require args
 
 PATHFIX_MAKEFILEIN?=	Makefile.in
 
+.PHONY: pathfix-pre-patch
 pre-patch: pathfix-pre-patch
 
 pathfix-pre-patch:

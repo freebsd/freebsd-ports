@@ -20,6 +20,7 @@ BUILD_DEPENDS+=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 RUN_DEPENDS+=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 # bolt our post-install target to post-install
+.PHONY: shared-mime-post-install
 post-install: shared-mime-post-install
 
 shared-mime-post-install:

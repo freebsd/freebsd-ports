@@ -33,6 +33,7 @@ MAKE_ENV+=	KMODDIR="${KMODDIR}" SYSDIR="${SRC_BASE}/sys"
 MAKE_ENV+=	NO_XREF=yes
 .endif
 
+.PHONY: kmod-preinstall kmod-post-install
 pre-install: kmod-pre-install
 kmod-pre-install:
 .if defined(NO_STAGE)

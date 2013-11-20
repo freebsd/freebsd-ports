@@ -48,6 +48,7 @@ IGNORE+=	missing definition for ${lang}_OLD_CMD
 _SHEBANG_REINPLACE_ARGS+=	-e "1s|^\#![[:space:]]*${${lang}_OLD_CMD}|\#!${${lang}_CMD}|"
 .endfor
 
+.PHONY: fix-shebang
 pre-patch: fix-shebang
 
 fix-shebang:

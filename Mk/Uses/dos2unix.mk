@@ -15,6 +15,7 @@ _INCLUDE_USES_DOS2UNIX_MK=	yes
 _DOS2UNIX_ALL=	yes
 .endif
 
+.PHONY: dos2unix
 pre-patch: dos2unix
 
 dos2unix:
