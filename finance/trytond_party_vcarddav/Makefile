@@ -16,7 +16,7 @@ RUN_DEPENDS=	trytond>=2.4.0:${PORTSDIR}/finance/trytond \
 		${PYTHON_PKGNAMEPREFIX}vobject>=0.8.1:${PORTSDIR}/deskutils/py-vobject \
 		${PYTHON_PKGNAMEPREFIX}PyWebDAV>=0:${PORTSDIR}/www/py-pywebdav
 
-CONFLICTS=	trytond_party_vcarddav-2.[68].*
+CONFLICTS=	trytond28_party_vcarddav-2.8.*
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install

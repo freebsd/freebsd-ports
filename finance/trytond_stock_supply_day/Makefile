@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	trytond>=2.4.0:${PORTSDIR}/finance/trytond \
 		trytond_purchase>=2.4.0:${PORTSDIR}/finance/trytond_purchase
 
-CONFLICTS=	trytond_stock_supply_day-2.[68].*
+CONFLICTS=	trytond28_stock_supply_day-2.8.*
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install

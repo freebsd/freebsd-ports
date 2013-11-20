@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/mx/__init__.py:${PORTSDIR}/lang/py-mx-base \
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-CONFLICTS=	trytond-2.[68].*
+CONFLICTS=	trytond28-2.8.*
 
 USERS=		trytond
 GROUPS=		trytond

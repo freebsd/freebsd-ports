@@ -1,0 +1,457 @@
+bin/tryton
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/tryton
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/bg_BG/LC_MESSAGES/tryton.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/ca_ES/LC_MESSAGES/tryton.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/cs_CZ/LC_MESSAGES/tryton.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/de_DE/LC_MESSAGES/tryton.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/es_AR/LC_MESSAGES/tryton.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/es_CO/LC_MESSAGES/tryton.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/es_ES/LC_MESSAGES/tryton.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/fr_FR/LC_MESSAGES/tryton.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/ja_JP/LC_MESSAGES/tryton.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/lt_LT/LC_MESSAGES/tryton.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/nl_NL/LC_MESSAGES/tryton.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/ru_RU/LC_MESSAGES/tryton.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/sl_SI/LC_MESSAGES/tryton.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-attachment-hi.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-attachment.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-bookmark.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-clear.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-close.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-connect.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-copy.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-delete.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-dialog-error.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-dialog-information.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-dialog-warning.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-disconnect.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-executable.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-find-replace.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-find.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-folder-new.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-fullscreen.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-go-home.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-go-jump.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-go-next.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-go-previous.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-help.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-icon.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-icon.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-list-add.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-list-remove.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-locale.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-lock.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-log-out.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-mail-message-new.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-mail-message.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-new.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-noimage.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-open.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-preferences-system-session.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-preferences-system.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-preferences.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-print-email.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-print-open.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-print.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-refresh.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-save-as.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-save.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-star.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-start-here.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-system-file-manager.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-system.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-text-background.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-text-foreground.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-text-markup.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-undo.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-unstar.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-web-browser.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/action/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/action/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/action/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/action/main.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/action/main.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/action/main.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/client.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/client.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/client.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/button.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/button.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/button.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrendererbinary.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrendererbinary.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrendererbinary.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrendererbutton.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrendererbutton.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrendererbutton.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrendererclickablepixbuf.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrendererclickablepixbuf.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrendererclickablepixbuf.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrenderercombo.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrenderercombo.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrenderercombo.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrendererdate.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrendererdate.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrendererdate.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrendererfloat.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrendererfloat.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrendererfloat.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrendererinteger.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrendererinteger.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrendererinteger.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrenderertext.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrenderertext.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrenderertext.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrenderertoggle.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrenderertoggle.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/cellrenderertoggle.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/common.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/common.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/common.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/completion.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/completion.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/completion.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/date_widget.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/date_widget.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/date_widget.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/datetime_strftime.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/datetime_strftime.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/datetime_strftime.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/domain_inversion.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/domain_inversion.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/domain_inversion.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/domain_parser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/domain_parser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/domain_parser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/environment.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/environment.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/environment.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/placeholder_entry.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/placeholder_entry.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/placeholder_entry.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/popup_menu.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/popup_menu.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/popup_menu.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/selection.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/selection.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common/selection.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/config.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/config.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/config.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/exceptions.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/exceptions.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/exceptions.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/fingerprints.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/fingerprints.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/fingerprints.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/main.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/main.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/main.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/about.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/about.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/about.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/attachment.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/attachment.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/attachment.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/board.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/board.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/board.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/dbcreate.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/dbcreate.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/dbcreate.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/dbdumpdrop.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/dbdumpdrop.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/dbdumpdrop.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/dblogin.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/dblogin.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/dblogin.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/dbrestore.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/dbrestore.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/dbrestore.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/email.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/email.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/email.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/form.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/form.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/form.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/limit.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/limit.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/limit.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/nomodal.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/nomodal.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/nomodal.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/preference.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/preference.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/preference.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/shortcuts.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/shortcuts.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/shortcuts.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/tabcontent.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/tabcontent.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/tabcontent.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/tips.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/tips.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/tips.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_board/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_board/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_board/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_board/action.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_board/action.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_board/action.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_board/parser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_board/parser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_board/parser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_board/view_board.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_board/view_board.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_board/view_board.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/model/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/model/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/model/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/model/field.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/model/field.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/model/field.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/model/group.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/model/group.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/model/group.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/model/record.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/model/record.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/model/record.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/screen/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/screen/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/screen/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/screen/screen.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/screen/screen.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/screen/screen.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/binary.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/binary.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/binary.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/calendar.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/calendar.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/calendar.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/char.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/char.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/char.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/checkbox.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/checkbox.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/checkbox.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/dictionary.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/dictionary.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/dictionary.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/float.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/float.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/float.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/float_time.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/float_time.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/float_time.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/image.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/image.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/image.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/integer.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/integer.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/integer.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/interface.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/interface.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/interface.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/many2many.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/many2many.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/many2many.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/many2one.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/many2one.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/many2one.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/one2many.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/one2many.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/one2many.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/one2one.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/one2one.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/one2one.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/parser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/parser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/parser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/progressbar.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/progressbar.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/progressbar.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/reference.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/reference.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/reference.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/richtextbox.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/richtextbox.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/richtextbox.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/selection.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/selection.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/selection.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/textbox.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/textbox.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/textbox.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/url.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/url.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk/url.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/graph.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/graph.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/graph.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/graph_gtk/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/graph_gtk/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/graph_gtk/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/graph_gtk/bar.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/graph_gtk/bar.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/graph_gtk/bar.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/graph_gtk/graph.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/graph_gtk/graph.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/graph_gtk/graph.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/graph_gtk/line.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/graph_gtk/line.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/graph_gtk/line.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/graph_gtk/parser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/graph_gtk/parser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/graph_gtk/parser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/graph_gtk/pie.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/graph_gtk/pie.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/graph_gtk/pie.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/interface.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/interface.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/interface.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/list.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/list.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/list.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/list_gtk/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/list_gtk/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/list_gtk/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/list_gtk/editabletree.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/list_gtk/editabletree.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/list_gtk/editabletree.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/list_gtk/parser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/list_gtk/parser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/list_gtk/parser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/screen_container.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/screen_container.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/screen_container.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/widget_parse.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/widget_parse.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/widget_parse.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/win_export.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/win_export.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/win_export.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/win_form.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/win_form.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/win_form.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/win_import.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/win_import.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/win_import.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/win_search.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/win_search.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/win_search.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/window.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/window.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/window.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/wizard.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/wizard.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/wizard.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/ipc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/ipc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/ipc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/jsonrpc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/jsonrpc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/jsonrpc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/plugins/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/plugins/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/plugins/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/plugins/translation/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/plugins/translation/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/plugins/translation/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/pyson.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/pyson.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/pyson.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/rpc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/rpc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/rpc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/signal_event.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/signal_event.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/signal_event.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/translate.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/translate.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/translate.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/version.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/version.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/version.pyo
+share/applications/tryton.desktop
+share/pixmaps/tryton-icon.png
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/plugins/translation
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/list_gtk
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/graph_gtk
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view/form_gtk
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/view
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/screen
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form/model
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_form
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window/view_board
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui/window
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/gui
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/common
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton/action
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/sl_SI/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/sl_SI
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/ru_RU/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/ru_RU
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/nl_NL/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/nl_NL
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/lt_LT/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/lt_LT
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/ja_JP/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/ja_JP
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/fr_FR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/fr_FR
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/es_ES/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/es_ES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/es_CO/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/es_CO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/es_AR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/es_AR
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/de_DE/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/de_DE
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/cs_CZ/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/cs_CZ
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/ca_ES/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/ca_ES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/bg_BG/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/bg_BG
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# $FreeBSD: ports/finance/trytond/files/trytond.in,v 1.1 2012/08/18 07:18:24 wen Exp $
+#
+# PROVIDE: trytond
+# REQUIRE: postgresql LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable trytond
+#
+#
+# trytond_enable (bool):  Set to "NO" by default,
+#                         Set it to "YES" to enable trytond
+
+. /etc/rc.subr
+
+name=trytond
+rcvar=trytond_enable
+
+load_rc_config $name
+
+trytond_enable="${trytond_enable:-"NO"}"
+trytond_config="${trytond_config:-"%%PREFIX%%/etc/trytond.conf"}"
+trytond_user="${trytond_user:-"trytond"}"
+trytond_logdir="${trytond_logdir:-"$(dirname `grep logfile %%PREFIX%%/etc/trytond.conf | awk -F "=" ' { print $2 } ' `)"}"
+
+command=%%PREFIX%%/bin/trytond
+command_interpreter=%%PYTHON%%
+command_args="--config=${trytond_config} >/dev/null 2>&1 &"
+
+pidfile="${trytond_pidfile:-"$(grep pidfile %%PREFIX%%/etc/trytond.conf | awk -F "=" ' { print $2 } ' |sed 's/[ ]//g' )"}"
+required_files="${trytond_config}"
+
+start_precmd="${name}_prestart"
+
+trytond_prestart ()
+{
+	install -d -o ${trytond_user} -g ${trytond_user} $(dirname "${pidfile}") "${trytond_logdir}"
+}
+
+run_rc_command "$1"
