@@ -1,7 +1,0 @@
-ptpd is an implementation of version 1 the Precision Time Protocol
-(IEEE 1588-2002)
-
-PTP was developed to provide very precise time coordination of LAN connected
-computers.
-
-WWW: http://ptpd.sourceforge.net/
