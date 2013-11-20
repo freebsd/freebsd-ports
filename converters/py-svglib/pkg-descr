@@ -6,4 +6,4 @@ variety of ReportLab-related contexts, e.g. as Platypus Flowable objects
 or in RML2PDF. As a command-line tool it converts SVG files into PDF
 ones.
 
-WWW:	http://pypi.python.org/pypi/svglib/
+WWW: https://pypi.python.org/pypi/svglib/
