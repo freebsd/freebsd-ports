@@ -9,11 +9,12 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Thread-safe collections and utilities for Ruby
 
+LICENSE=	AL2
+
 RUN_DEPENDS=	rubygem-atomic>=0:${PORTSDIR}/devel/rubygem-atomic
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-
 
 .include <bsd.port.mk>
