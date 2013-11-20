@@ -495,6 +495,7 @@
     SUBDIR += manck
     SUBDIR += mapchan
     SUBDIR += massadmin
+    SUBDIR += mbgtools
     SUBDIR += mbmon
     SUBDIR += mcelog
     SUBDIR += mcollective
