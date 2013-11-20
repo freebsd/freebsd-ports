@@ -3630,7 +3630,8 @@ patch-dos2unix:
 do-patch:
 .if defined(PATCHFILES)
 	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
-	@(cd ${_DISTDIR}; \
+	@(set -e;
+	cd ${_DISTDIR}; \
 	patch_dist_strip () { \
 		case "$$1" in \
 		${_PATCH_DIST_STRIP_CASES} \
