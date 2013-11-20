@@ -35,7 +35,6 @@ MAINFILE=	ut-server-436.tar.gz
 PATCH451FILE=	UTPGPatch451.tar.bz2
 EXTRA_PATCHES=	${WRKDIR}/patch-ngstatsut
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBONUSPACKS}
@@ -83,9 +82,6 @@ post-patch:
 	@${FIND} -E ${WRKSRC} -type f -name '*.orig' -exec ${RM} '{}' \;
 
 do-install:
-	@${CP} -Rp ${WRKSRC}/ ${PREFIX}/${UTDIR}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${CP} -Rp ${WRKSRC}/ ${STAGEDIR}${PREFIX}/${UTDIR}
 
 .include <bsd.port.mk>
