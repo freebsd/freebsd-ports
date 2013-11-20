@@ -2,41 +2,38 @@
 # $FreeBSD$
 
 PORTNAME=	fgrun
-PORTVERSION=	1.6.0
-PORTREVISION=	2
+PORTVERSION=	1.7.0
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	https://gitorious.org/${GO_ACCOUNT}/${GO_PROJECT}/archive/${GO_TAGNAME}.tar.gz?dummy=
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	A graphical frontend to run FlightGear Flight Simulator
 
-LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
-		osg.80:${PORTSDIR}/graphics/osg
-BUILD_DEPENDS=	simgear>=2.4.0:${PORTSDIR}/devel/simgear \
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
+		libosg.so:${PORTSDIR}/graphics/osg
+BUILD_DEPENDS=	simgear>=2.10.0:${PORTSDIR}/devel/simgear \
 		${LOCALBASE}/include/boost/version.hpp:${PORTSDIR}/devel/boost-libs
-RUN_DEPENDS=	simgear>=2.4.0:${PORTSDIR}/devel/simgear \
+RUN_DEPENDS=	simgear>=2.10.0:${PORTSDIR}/devel/simgear \
 		fgfs:${PORTSDIR}/games/flightgear
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-boost="${LOCALBASE}"
-USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/${GO_ACCOUNT}-${GO_PROJECT}
+
+CMAKE_ARGS+=	-DLIB_DIR=${PREFIX}/lib
+
+USE_GCC=	yes
+USES=		cmake
 USE_GL=		gl
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+GO_ACCOUNT=	fg
+GO_PROJECT=	fgrun
+GO_TAGNAME=	90e936c01e28feac4a9c3e28d5227980fb8f1e1d
+FETCH_ARGS?=	-o ${DISTDIR}/${DISTFILES}
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-CONFIGURE_ARGS+=	--disable-nls
-.endif
-
-post-patch:
-.if ! ${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} 's|SUBDIRS = src po msvc|SUBDIRS = src|' \
-		${WRKSRC}/Makefile.in
-.endif
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+NLS_USES=	gettext
+NLS_CMAKE_ON=	-DENABLE_NLS=yes
 
 .include <bsd.port.mk>
