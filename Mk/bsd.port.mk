@@ -6767,7 +6767,7 @@ show-dev-errors:
 	@${FALSE}
 check-makefile:: show-dev-errors
 .endif
-.endif #DVELOPER
+.endif #DEVELOPER
 .endif
 # End of post-makefile section.
 
