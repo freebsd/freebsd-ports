@@ -5,6 +5,40 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20131120:
+  AFFECTS: users of lang/perl5.12 lang/perl5.14 lang/perl5.16 and lang/perl5.18
+  AUTHOR: mat@FreeBSD.org
+
+  The THREADS option has been enabled by default in all Perl. If you're using
+  binary packages you need to do :
+
+    # pkg install -Rf perl5
+
+  If you're not using binary packages, and want to switch from non threaded
+  Perl to threaded Perl, you need to recompile and reinstall most ports
+  depending on Perl. Supposing you have Perl 5.16, you would do:
+
+  Portupgrade users:
+    0) Fix pkgdb.db (for safety):
+	pkgdb -Ff
+
+    1) Change the option in lang/perl5.16:
+        make -C /usr/ports/lang/perl5.16 config
+
+    2) Reinstall everything that depends on Perl:
+	portupgrade -fr lang/perl5.16
+
+  Portmaster users:
+    1) Change the option in lang/perl5.16:
+        make -C /usr/ports/lang/perl5.16 config
+
+    2) Reinstall everything that depends on Perl:
+	portmaster -r perl5-
+
+  Note: The installed Perl package was named perl and is now named perl5, if
+	you have not updated your installation in a long time, you may need to
+	use "perl-" here.
+
 20131112:
   AFFECTS: users of dns/nsd
   AUTHOR: erwin@FreeBSD.org
