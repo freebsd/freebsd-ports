@@ -166,6 +166,7 @@ WEBPLUGIN_DIR?=		${_WEBPLUGIN_LIBDIR:S,^${LOCALBASE}/,${PREFIX}/,}/${WEBPLUGIN_N
 
 PLIST_SUB+=		WEBPLUGIN_DIR="${WEBPLUGIN_DIR:S,^${PREFIX}/,,}"
 
+.PHONY: webplugin-post-install
 webplugin-post-install:
 	@${ECHO_CMD} "@cwd ${LOCALBASE}" >> ${TMPPLIST}
 .for d in ${_WEBPLUGIN_LINKFARMS}

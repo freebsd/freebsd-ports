@@ -18,6 +18,7 @@ IGNORE=	USES=charsetfix does not require args
 
 CHARSETFIX_MAKEFILEIN?=	Makefile.in
 
+.PHONY: charsetfix-post-patch
 post-patch: charsetfix-post-patch
 
 charsetfix-post-patch:
