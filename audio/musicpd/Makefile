@@ -62,7 +62,7 @@ SUB_LIST+=	MPDDIR=${MPDDIR}
 .include <bsd.port.options.mk>
 
 .ifdef MPDCONF
-.error Please remove the MPDCONF line from make.conf, then rename ${PREFIX}/etc/${MPDCONF} to musicpd.conf, if it exists
+IGNORE=Please remove the MPDCONF line from make.conf, then rename ${PREFIX}/etc/${MPDCONF} to musicpd.conf, if it exists
 .endif
 
 .include <bsd.port.pre.mk>
@@ -70,9 +70,9 @@ SUB_LIST+=	MPDDIR=${MPDDIR}
 .if exists(${PREFIX}/etc/mpd.conf)
 MSG=You still have ${PREFIX}/etc/mpd.conf in existence-- this file is no longer used by musicpd.
 .if !exists(${PREFIX}/etc/musicpd.conf)
-.error ${MSG}  Move it to ${PREFIX}/etc/musicpd.conf.
+IGNORE=${MSG}  Move it to ${PREFIX}/etc/musicpd.conf.
 .else
-.error ${MSG}  You also have musicpd.conf-- check carefully to see which one you want, and remove mpd.conf.
+IGNORE=${MSG}  You also have musicpd.conf-- check carefully to see which one you want, and remove mpd.conf.
 .endif
 .endif
 
