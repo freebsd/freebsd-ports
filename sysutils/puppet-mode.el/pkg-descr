@@ -1,8 +1,3 @@
-ParEdit (paredit.el) is a minor Emacs mode for performing structured
-editing of S-expression data. The typical example of this would be
-Lisp, Scheme or Clojure source code.
+puppet-mode.el is a major Emacs mode for editing puppet manifests.
 
-ParEdit helps keep parentheses balanced and adds many keys for
-moving S-expressions and moving around in S-expressions.
-
-WWW: http://www.emacswiki.org/emacs/ParEdit
+WWW: https://github.com/puppetlabs/puppet-syntax-emacs
