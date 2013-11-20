@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/greenridge/Bomns%20for%20Linux/Bomns%20for%20Linux%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The best old-school Deathmatch game ever (only for two players)
+COMMENT=	Best old-school Deathmatch game ever (only for two players)
 
 USES=		pkgconfig
 USE_BZIP2=	yes
@@ -26,23 +26,14 @@ OPTIONS_DEFAULT=	EDITOR LAUNCHER OPTIMIZED_CFLAGS
 EDITOR_DESC=	Enable building of the map editor
 LAUNCHER_DESC=	Enable building of the GTK2 launcher
 
-NO_STAGE=	yes
+OPTIONS_SUB=	yes
+
+EDITOR_CONFIGURE_ENABLE=	editor
+
+LAUNCHER_USE=	GNOME=gtk20
+LAUNCHER_CONFIGURE_ENABLE=	launcher2
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEDITOR}
-PLIST_SUB+=	EDITOR=""
-.else
-CONFIGURE_ARGS+=--disable-editor
-PLIST_SUB+=	EDITOR="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MLAUNCHER}
-USE_GNOME=	gtk20
-PLIST_SUB+=	LAUNCHER=""
-.else
-CONFIGURE_ARGS+=--disable-launcher2
-PLIST_SUB+=	LAUNCHER="@comment "
-.endif
 
 post-patch:
 # Fix SDL include statement.
