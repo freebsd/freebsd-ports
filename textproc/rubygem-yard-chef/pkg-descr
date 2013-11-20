@@ -1,0 +1,4 @@
+yard-chef is a YARD plugin for Chef that adds support for documenting Chef
+resources, providers, and definitions.
+
+WWW: https://github.com/rightscale/yard-chef
