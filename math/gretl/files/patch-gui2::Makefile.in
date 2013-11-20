@@ -1,11 +1,29 @@
---- gui2/Makefile.in.orig	2010-08-28 11:10:12.000000000 -0400
-+++ gui2/Makefile.in	2011-02-02 15:50:09.000000000 -0500
-@@ -221,7 +221,7 @@
- 	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) -s $(PROG) $(DESTDIR)$(bindir)/$(PROG)
+--- gui2/Makefile.in.orig	2013-03-30 13:23:00.000000000 -0400
++++ gui2/Makefile.in	2013-11-20 00:31:53.000000000 -0500
+@@ -122,7 +122,7 @@
+   PROG = gretl
+ else
+   PROG = gretl_x11$(EXEEXT)
+-  INSTALL_SCRIPT = install-script
++  INSTALL_SCRIPT_TARGET = install-script
+ endif
  
- install-data: installdirs
+ vpath %.c $(topsrc)/gui2
+@@ -215,7 +215,7 @@
+ 
+ .PHONY:
+ 
+-install: install-exec install-ui $(INSTALL_SCRIPT) install-data install-lang
++install: install-exec install-ui $(INSTALL_SCRIPT_TARGET) install-data install-lang
+ 
+ install-strip: $(PROG) install-data
+ 	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) -s $(PROG) $(DESTDIR)$(bindir)/$(PROG)
+@@ -229,7 +229,7 @@
+ 	$(INSTALL_DATA) $(topsrc)/gui2/gretlmodel.xml $(DESTDIR)$(uidir)
+ 
+ install-script: installdirs
 -	$(INSTALL_PROGRAM) ../gretl_sh $(DESTDIR)$(bindir)/gretl
 +	$(INSTALL_SCRIPT) ../gretl_sh $(DESTDIR)$(bindir)/gretl
- 	$(INSTALL_DATA) $(topsrc)/pixmaps/gretl-logo.xpm $(DESTDIR)$(gretldir)
- 	$(INSTALL_DATA) $(topsrc)/COPYING $(DESTDIR)$(gretldir)
  
+ install-exec: $(PROG) installdirs 
+ 	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $(PROG) $(DESTDIR)$(bindir)/$(PROG)

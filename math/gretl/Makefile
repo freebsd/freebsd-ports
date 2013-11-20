@@ -2,16 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	gretl
-PORTVERSION=	1.9.12
-PORTREVISION=	1
+PORTVERSION=	1.9.13
 CATEGORIES=	math finance
 MASTER_SITES=	SF
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	GNU Regression, Econometrics, and Time-series Library
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		fftw3:${PORTSDIR}/math/fftw3
+LICENSE=	GPLv3
+
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libfftw3.so:${PORTSDIR}/math/fftw3
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
@@ -30,30 +31,31 @@ CONFIGURE_ENV=		LAPACK_LIBS="${LAPACK} ${BLAS}"
 
 MAN1=			gretl.1
 
-OPTIONS_DEFINE =	ATLAS GUI ODBC OPENMP R
+OPTIONS_DEFINE =	ATLAS GUI ODBC OPENMP R UNZIP
 
 ATLAS_DESC =		Use ATLAS for BLAS and LAPACK
 GUI_DESC=		Graphical user interface and plugins
 R_DESC=			libR support
+UNZIP_DESC=		UnZip compression support via libgsf
 
-OPTIONS_DEFAULT=	GUI OPENMP
+OPTIONS_DEFAULT=	GUI OPENMP UNZIP
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MATLAS}
-LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
 BLAS=		-lf77blas
 LAPACK=		-lalapack -lcblas
 .else
-LIB_DEPENDS+=	blas:${PORTSDIR}/math/blas \
-		lapack:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas \
+		liblapack.so:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
 .endif
 
 .if ${PORT_OPTIONS:MGUI}
-CONFIGURE_ARGS+=	--enable-gui=yes
+CONFIGURE_ARGS+=	--enable-gtk2=yes --enable-gui=yes
 INSTALLS_ICONS=		yes
 USE_GNOME=		gtksourceview2
 USES+=			desktop-file-utils shared-mime-info
@@ -68,7 +70,7 @@ PLIST_SUB+=		GUI="@comment "
 
 .if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=	--enable-nls=yes
-USES+=		gettext
+USES+=			gettext
 PLIST_SUB+=		NLS=""
 .else
 CONFIGURE_ARGS+=	--enable-nls=no
@@ -77,7 +79,7 @@ PLIST_SUB+=		NLS="@comment "
 
 .if ${PORT_OPTIONS:MODBC}
 CONFIGURE_ARGS+=	--with-odbc
-LIB_DEPENDS+=		odbc:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=		libodbc.so:${PORTSDIR}/databases/unixODBC
 PLIST_SUB+=		ODBC=""
 .else
 CONFIGURE_ARGS+=	--without-odbc
@@ -90,9 +92,16 @@ CONFIGURE_ARGS+=	--enable-openmp
 
 .if ${PORT_OPTIONS:MR}
 CONFIGURE_ARGS+=	--with-libR
-LIB_DEPENDS+=		R:${PORTSDIR}/math/R
+LIB_DEPENDS+=		libR.so:${PORTSDIR}/math/R
 .else
 CONFIGURE_ARGS+=	--without-libR
+.endif
+
+.if ${PORT_OPTIONS:MUNZIP}
+CONFIGURE_ARGS+=	--with-gsf
+USE_GNOME+=		libgsf
+.else
+CONFIGURE_ARGS+=	--without-gsf
 .endif
 
 .if !empty(MACHINE_CPU:Msse2)
@@ -110,7 +119,7 @@ post-patch:
 		${WRKSRC}/cephes/iv.c
 
 regression-test test check: build
-	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} \
+	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 		${MAKE_ARGS} check
 
 .include <bsd.port.mk>
