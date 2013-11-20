@@ -12,11 +12,10 @@ COMMENT=	Process utilities module for Python
 
 LICENSE=	BSD
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	${PORTNAME}
+USE_PYDISTUTILS=yes
+USE_PYTHON=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|setuptools|distutils.core|' ${WRKSRC}/${PYSETUP}
 
