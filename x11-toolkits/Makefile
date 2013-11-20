@@ -188,7 +188,6 @@
     SUBDIR += py-fltk
     SUBDIR += py-gnome-desktop
     SUBDIR += py-gnome-extras
-    SUBDIR += py-gnome2
     SUBDIR += py-gtk2
     SUBDIR += py-gtkglext
     SUBDIR += py-gtksourceview
