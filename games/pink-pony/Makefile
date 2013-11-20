@@ -3,7 +3,7 @@
 
 PORTNAME=	pink-pony
 PORTVERSION=	1.2.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE \
 		http://mirror.amdmi3.ru/distfiles/

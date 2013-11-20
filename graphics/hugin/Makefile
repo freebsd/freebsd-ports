@@ -3,7 +3,7 @@
 
 PORTNAME=	hugin
 PORTVERSION=	2012.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -11,7 +11,6 @@ MAINTAINER=	vd@FreeBSD.org
 COMMENT=	A GUI for Panorama Tools, to stitch panoramic images
 
 LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
-		IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		Imath:${PORTSDIR}/graphics/ilmbase \
 		boost_thread:${PORTSDIR}/devel/boost-libs \
 		exiv2.12:${PORTSDIR}/graphics/exiv2 \
