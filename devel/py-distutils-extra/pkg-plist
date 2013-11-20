@@ -1,15 +1,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/__init__.pyo
-%%PYTHON32%%%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/auto.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/auto.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/auto.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/__init__.pyo
-%%PYTHON32%%%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON32%%%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/__pycache__/build_extra.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/build_extra.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/build_extra.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/build_extra.pyo
@@ -35,8 +32,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
-%%PYTHON32%%@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/__pycache__
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command
-%%PYTHON32%%@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/__pycache__
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
