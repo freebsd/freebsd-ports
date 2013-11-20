@@ -23,9 +23,6 @@ TEST_DEPENDS=	p5-Capture-Tiny>=0.07:${PORTSDIR}/devel/p5-Capture-Tiny \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		POE::Quickie.3
-
-NO_STAGE=	yes
 post-patch:
 	@${RM} ${WRKSRC}/lib/POE/Quickie.pm.orig
 
