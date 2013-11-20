@@ -21,21 +21,20 @@ OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	py${PORTNAME}
+USES=		shebangfix
 
 PORTDOCS=	CHANGELOG README
 
-NO_STAGE=	yes
+SHEBANG_FILES=	spf.py
+
 .include <bsd.port.options.mk>
 
-post-patch:
-	@${REINPLACE_CMD} -e '1 s|/usr/bin/python|${PYTHON_CMD}|' ${WRKSRC}/spf.py
-
 post-install:
-	${CHMOD} ${BINMODE} ${PYTHONPREFIX_SITELIBDIR}/spf.py
-	${LN} -s ${PYTHONPREFIX_SITELIBDIR}/spf.py ${PREFIX}/bin/
+	${CHMOD} ${BINMODE} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/spf.py
+	${LN} -s ${PYTHONPREFIX_SITELIBDIR}/spf.py ${STAGEDIR}${PREFIX}/bin/
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
