@@ -1,3 +1,4 @@
+bin/protoc-perl
 %%SITE_PERL%%/Google/ProtocolBuffers.pm
 %%SITE_PERL%%/Google/ProtocolBuffers/CodeGen.pm
 %%SITE_PERL%%/Google/ProtocolBuffers/Codec.pm
