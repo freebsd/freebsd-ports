@@ -15,7 +15,7 @@ RUN_DEPENDS=	trytond>=2.4.0:${PORTSDIR}/finance/trytond \
 		trytond_analytic_account>=2.4.1:${PORTSDIR}/finance/trytond_analytic_account \
 		trytond_account_invoice>=2.4.1:${PORTSDIR}/finance/trytond_account_invoice
 
-CONFLICTS=	trytond_analytic_invoice-2.[68].*
+CONFLICTS=	trytond28_analytic_invoice-2.8.*
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install

@@ -1,0 +1,7 @@
+trytond_party is the party module for trytond.
+
+The party module defines the concepts of party, category and
+contact mechanism. It also comes with reports to print labels
+and letters and a Check VIES wizard.
+
+WWW: http://www.tryton.org/

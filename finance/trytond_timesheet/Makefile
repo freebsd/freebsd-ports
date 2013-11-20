@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	trytond>=2.4.0:${PORTSDIR}/finance/trytond \
 		trytond_company_work_time>=2.4.0:${PORTSDIR}/finance/trytond_company_work_time
 
-CONFLICTS=	trytond_timesheet-2.[68].*
+CONFLICTS=	trytond28_timesheet-2.8.*
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install

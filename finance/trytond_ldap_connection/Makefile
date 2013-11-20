@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	trytond>=2.4.0:${PORTSDIR}/finance/trytond \
 		${PYTHON_PKGNAMEPREFIX}ldap2>=2.4.10:${PORTSDIR}/net/py-ldap2
 
-CONFLICTS=	trytond_ldap_connection-2.[68].*
+CONFLICTS=	trytond28_ldap_connection-2.8.*
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install

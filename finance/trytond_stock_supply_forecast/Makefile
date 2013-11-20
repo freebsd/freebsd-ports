@@ -15,7 +15,7 @@ RUN_DEPENDS=	trytond>=2.4.0:${PORTSDIR}/finance/trytond \
 		trytond_stock_supply>=2.4.0:${PORTSDIR}/finance/trytond_stock_supply \
 		trytond_stock_forecast>=2.4.0:${PORTSDIR}/finance/trytond_stock_forecast
 
-CONFLICTS=	trytond_stock_supply_forecast-2.[68].*
+CONFLICTS=	trytond28_stock_supply_forecast-2.8.*
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install

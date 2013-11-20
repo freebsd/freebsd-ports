@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:${PORTSDIR}/devel/py-dateutil 
 		trytond_stock>=2.4.0:${PORTSDIR}/finance/trytond_stock \
 		trytond_company>=2.4.0:${PORTSDIR}/finance/trytond_company
 
-CONFLICTS=	trytond_stock_forecast-2.[68].*
+CONFLICTS=	trytond28_stock_forecast-2.8.*
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
