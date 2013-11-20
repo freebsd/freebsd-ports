@@ -17,7 +17,7 @@ LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2
 
-DOS2UNIX_FILES=	opj_malloc.h
+DOS2UNIX_FILES=	libopenjpeg/opj_malloc.h
 GNU_CONFIGURE=	yes
 USES=		cmake dos2unix
 USE_LDCONFIG=	yes
