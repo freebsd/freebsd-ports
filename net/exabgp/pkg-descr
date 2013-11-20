@@ -3,4 +3,4 @@ your network (source some ipv4/ipv6 routes using both IPv4 and IPv6 TCP
 connections), mitigate DDOS using flowspec, or pass the route it receive
 in textual form to third party application.
 
-WWW: https://code.google.com/p/exabgp/
+WWW: https://github.com/Exa-Networks/exabgp
