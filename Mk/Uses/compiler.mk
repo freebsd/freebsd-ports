@@ -22,7 +22,7 @@
 # ALT_COMPILER_VERSION:	2 first digit of the version: 33 for clang 3.3.*, 46 for gcc 4.6.* of the ALT_COMPILER_TYPE
 #
 # COMPILER_FEATURES:	the list of features supported by the compiler include the standard C++ library.
-# CHOSEN_COMPILER_TYPE:	can be gcc or clang (type of compiler chosen by the famework)
+# CHOSEN_COMPILER_TYPE:	can be gcc or clang (type of compiler chosen by the framework)
 
 .if !defined(_INCLUDE_USES_COMPILER_MK)
 _INCLUDE_USES_COMPILER_MK=	yes
