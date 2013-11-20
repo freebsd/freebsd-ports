@@ -1,4 +1,3 @@
-# Created by: Takefu <takefu@airport.fm>
 # $FreeBSD$
 
 PORTNAME=	HTML-Defaultify
@@ -15,7 +14,5 @@ RUN_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
 
 USES=		perl5
 USE_PERL5=	configure
-MAN3=		HTML::Defaultify.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
