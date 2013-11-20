@@ -153,6 +153,7 @@ share/aclocal/yaz.m4
 %%PORTDOCS%%%%DOCSDIR%%/asn.pdu.html
 %%PORTDOCS%%%%DOCSDIR%%/asn.preparing.html
 %%PORTDOCS%%%%DOCSDIR%%/bib1.html
+%%PORTDOCS%%%%DOCSDIR%%/ch07s07.html
 %%PORTDOCS%%%%DOCSDIR%%/common/id.png
 %%PORTDOCS%%%%DOCSDIR%%/common/style1.css
 %%PORTDOCS%%%%DOCSDIR%%/comstack.addresses.html
