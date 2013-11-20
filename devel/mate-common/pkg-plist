@@ -1,0 +1,10 @@
+bin/mate-autogen
+bin/mate-doc-common
+man/man1/mate-autogen.1.gz
+man/man1/mate-doc-common.1.gz
+share/aclocal/mate-common.m4
+share/aclocal/mate-compiler-flags.m4
+%%DATADIR%%/data/omf.make
+%%DATADIR%%/data/xmldocs.make
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%

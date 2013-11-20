@@ -1,0 +1,5 @@
+Mate-dialogs allows dialog boxes to be created and displayed from the
+commandline.  This provides a simple way to create a GUI for
+a shell script.
+
+WWW: http://mate-desktop.org/

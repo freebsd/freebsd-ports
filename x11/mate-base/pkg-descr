@@ -1,0 +1,21 @@
+MATE is a fork of GNOME 2.
+
+It provides an intuitive and attractive desktop to users using
+traditional metaphors.
+
+--
+
+Where does the name come from?
+
+The name "MATE" comes from yerba mate, a species of holly native
+to subtropical South America. Its leaves contain caffeine and are
+used to make infusions and a beverage called mate.
+
+--
+
+This metaport installs only MATE base (lite, a lean desktop) with
+file manager without any of extra applications. If you want to
+have the most common user MATE applications, please install the
+x11/mate metaport.
+
+WWW: http://www.FreeBSD.org/gnome/

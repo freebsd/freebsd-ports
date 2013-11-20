@@ -1,0 +1,19 @@
+--- charpick/Makefile.am.orig	2013-08-18 12:39:28.000000000 +0200
++++ charpick/Makefile.am	2013-08-18 12:39:59.000000000 +0200
+@@ -7,13 +7,13 @@
+ 	$(MATE_APPLETS4_CFLAGS)		\
+ 	$(MUCHARMAP_CFLAGS)
+ 
+-libexec_PROGRAMS = charpick_applet2
++libexec_PROGRAMS = mate-charpick_applet2
+ 
+-charpick_applet2_SOURCES = charpick.c \
++mate_charpick_applet2_SOURCES = charpick.c \
+                           charpick.h \
+                           properties.c
+ 
+-charpick_applet2_LDADD = \
++mate_charpick_applet2_LDADD = \
+ 		       $(MATE_APPLETS4_LIBS)	\
+ 		       $(MUCHARMAP_LIBS)
+ 

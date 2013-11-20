@@ -5302,3 +5302,16 @@ x11/yelp3|x11/yelp|%DATE%|moved
 x11-fm/nautilus3|x11-fm/nautilus|%DATE%|moved
 x11-toolkits/gdl3|x11-toolkits/gdl|%DATE%|moved
 x11-wm/metacity3|x11-wm/metacity|%DATE%|moved
+devel/mate-corba||2013-03-28|No longer part of MATE packages.
+devel/mate-conf||2013-03-28|No longer part of MATE packages.
+devel/libmatecomponent||2013-03-28|No longer part of MATE packages.
+misc/mate-mime-data||2013-03-28|No longer part of MATE packages.
+devel/mate-vfs||2013-03-28|No longer part of MATE packages.
+x11/libmate||2013-03-28|No longer part of MATE packages.
+graphics/libmatecanvas||2013-03-28|No longer part of MATE packages.
+x11-toolkits/libmatecomponentui||2013-03-28|No longer part of MATE packages.
+x11-toolkits/libmateui||2013-03-28|No longer part of MATE packages.
+devel/libmatenotify||2013-03-28|No longer part of MATE packages.
+sysutils/mate-conf-editor||2013-03-28|No longer part of MATE packages.
+devel/python-corba||2013-03-28|No longer part of MATE packages.
+x11-toolkits/python-mate||2013-03-28|No longer part of MATE packages.

@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=GNOME
+Comment=Some comment about GNOME menu
+Icon=/usr/local/share/icons/gnome/48x48/places/gnome-main-menu.png
+Type=Directory

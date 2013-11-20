@@ -1,0 +1,75 @@
+etc/xdg/autostart/polkit-mate-authentication-agent-1.desktop
+include/polkit-gtk-mate-1/polkitgtkmate/polkitgtkmate.h
+include/polkit-gtk-mate-1/polkitgtkmate/polkitgtkmatetypes.h
+include/polkit-gtk-mate-1/polkitgtkmate/polkitlockbutton.h
+lib/girepository-1.0/PolkitGtkMate-1.0.typelib
+lib/libpolkit-gtk-mate-1.a
+lib/libpolkit-gtk-mate-1.la
+lib/libpolkit-gtk-mate-1.so
+lib/libpolkit-gtk-mate-1.so.0
+libdata/pkgconfig/polkit-gtk-mate-1.pc
+libexec/polkit-mate-authentication-agent-1
+share/gir-1.0/PolkitGtkMate-1.0.gir
+share/locale/am/LC_MESSAGES/mate-polkit.mo
+share/locale/ar/LC_MESSAGES/mate-polkit.mo
+share/locale/be/LC_MESSAGES/mate-polkit.mo
+share/locale/bn_IN/LC_MESSAGES/mate-polkit.mo
+share/locale/ca/LC_MESSAGES/mate-polkit.mo
+share/locale/cs/LC_MESSAGES/mate-polkit.mo
+share/locale/da/LC_MESSAGES/mate-polkit.mo
+share/locale/de/LC_MESSAGES/mate-polkit.mo
+share/locale/el/LC_MESSAGES/mate-polkit.mo
+share/locale/en_AU/LC_MESSAGES/mate-polkit.mo
+share/locale/en_GB/LC_MESSAGES/mate-polkit.mo
+share/locale/es/LC_MESSAGES/mate-polkit.mo
+share/locale/eu/LC_MESSAGES/mate-polkit.mo
+share/locale/fi/LC_MESSAGES/mate-polkit.mo
+share/locale/fr/LC_MESSAGES/mate-polkit.mo
+share/locale/gl/LC_MESSAGES/mate-polkit.mo
+share/locale/gu/LC_MESSAGES/mate-polkit.mo
+share/locale/he/LC_MESSAGES/mate-polkit.mo
+share/locale/hi/LC_MESSAGES/mate-polkit.mo
+share/locale/hu/LC_MESSAGES/mate-polkit.mo
+share/locale/id/LC_MESSAGES/mate-polkit.mo
+share/locale/it/LC_MESSAGES/mate-polkit.mo
+share/locale/ja/LC_MESSAGES/mate-polkit.mo
+share/locale/kn/LC_MESSAGES/mate-polkit.mo
+share/locale/ky/LC_MESSAGES/mate-polkit.mo
+share/locale/lt/LC_MESSAGES/mate-polkit.mo
+share/locale/lv/LC_MESSAGES/mate-polkit.mo
+share/locale/ml/LC_MESSAGES/mate-polkit.mo
+share/locale/mr/LC_MESSAGES/mate-polkit.mo
+share/locale/ms/LC_MESSAGES/mate-polkit.mo
+share/locale/nb/LC_MESSAGES/mate-polkit.mo
+share/locale/nl/LC_MESSAGES/mate-polkit.mo
+share/locale/or/LC_MESSAGES/mate-polkit.mo
+share/locale/pa/LC_MESSAGES/mate-polkit.mo
+share/locale/pl/LC_MESSAGES/mate-polkit.mo
+share/locale/pt/LC_MESSAGES/mate-polkit.mo
+share/locale/pt_BR/LC_MESSAGES/mate-polkit.mo
+share/locale/ro/LC_MESSAGES/mate-polkit.mo
+share/locale/ru/LC_MESSAGES/mate-polkit.mo
+share/locale/sk/LC_MESSAGES/mate-polkit.mo
+share/locale/sl/LC_MESSAGES/mate-polkit.mo
+share/locale/sq/LC_MESSAGES/mate-polkit.mo
+share/locale/sv/LC_MESSAGES/mate-polkit.mo
+share/locale/ta/LC_MESSAGES/mate-polkit.mo
+share/locale/te/LC_MESSAGES/mate-polkit.mo
+share/locale/th/LC_MESSAGES/mate-polkit.mo
+share/locale/tr/LC_MESSAGES/mate-polkit.mo
+share/locale/uk/LC_MESSAGES/mate-polkit.mo
+share/locale/zh_CN/LC_MESSAGES/mate-polkit.mo
+share/locale/zh_HK/LC_MESSAGES/mate-polkit.mo
+share/locale/zh_TW/LC_MESSAGES/mate-polkit.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrm include/polkit-gtk-mate-1/polkitgtkmate
+@dirrm include/polkit-gtk-mate-1

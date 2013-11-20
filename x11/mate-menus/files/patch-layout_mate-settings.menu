@@ -1,0 +1,60 @@
+--- layout/mate-settings.menu.orig	2013-04-13 22:55:06.000000000 -0500
++++ layout/mate-settings.menu	2013-04-13 22:55:49.000000000 -0500
+@@ -27,6 +27,7 @@
+         <Category>Settings</Category>
+         <Not>
+           <Or>
++            <Category>GNOME</Category>
+             <Category>System</Category>
+             <Filename>matecc.desktop</Filename>
+           </Or>
+@@ -43,10 +44,49 @@
+       <And>
+         <Category>Settings</Category>
+         <Category>System</Category>
++        <Not>
++          <Or>
++            <Category>GNOME</Category>
++          </Or>
++        </Not>
+       </And>
+     </Include>
+   </Menu>     <!-- End System Settings -->
+ 
++  <Menu>
++    <Name>GNOME</Name>
++    <Directory>GNOME.directory</Directory>
++    <Menu>
++      <Name>Preferences</Name>
++      <Directory>mate-settings.directory</Directory>
++      <Include>
++        <And>
++          <Category>GNOME</Category>
++          <Category>Settings</Category>
++          <Not>
++            <Or>
++              <Category>System</Category>
++              <Filename>matecc.desktop</Filename>
++            </Or>
++          </Not>
++        </And>
++      </Include>
++    </Menu>
++
++    <!-- System Settings -->
++    <Menu>
++      <Name>Administration</Name>
++      <Directory>mate-settings-system.directory</Directory>
++      <Include>
++        <And>
++          <Category>GNOME</Category>
++          <Category>Settings</Category>
++          <Category>System</Category>
++        </And>
++      </Include>
++    </Menu>     <!-- End System Settings -->
++  </Menu>
++
+   <Layout>
+     <Menuname>Preferences</Menuname>
+     <Menuname>Administration</Menuname>

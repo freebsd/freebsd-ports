@@ -1,0 +1,169 @@
+share/backgrounds/mate/abstract/Arc-Colors-Transparent-Wallpaper.png
+share/backgrounds/mate/abstract/Flow.png
+share/backgrounds/mate/abstract/Gulp.png
+share/backgrounds/mate/abstract/Silk.png
+share/backgrounds/mate/abstract/Spring.png
+share/backgrounds/mate/abstract/Waves.png
+share/backgrounds/mate/desktop/GreenTraditional.jpg
+share/backgrounds/mate/desktop/Stripes.png
+share/backgrounds/mate/nature/Aqua.jpg
+share/backgrounds/mate/nature/Blinds.jpg
+share/backgrounds/mate/nature/Dune.jpg
+share/backgrounds/mate/nature/FreshFlower.jpg
+share/backgrounds/mate/nature/Garden.jpg
+share/backgrounds/mate/nature/GreenMeadow.jpg
+share/backgrounds/mate/nature/LadyBird.jpg
+share/backgrounds/mate/nature/RainDrops.jpg
+share/backgrounds/mate/nature/Storm.jpg
+share/backgrounds/mate/nature/TwoWings.jpg
+share/backgrounds/mate/nature/Wood.jpg
+share/backgrounds/mate/nature/YellowFlower.jpg
+share/locale/af/LC_MESSAGES/mate-backgrounds.mo
+share/locale/an/LC_MESSAGES/mate-backgrounds.mo
+share/locale/ar/LC_MESSAGES/mate-backgrounds.mo
+share/locale/as/LC_MESSAGES/mate-backgrounds.mo
+share/locale/ast/LC_MESSAGES/mate-backgrounds.mo
+share/locale/be/LC_MESSAGES/mate-backgrounds.mo
+share/locale/be@latin/LC_MESSAGES/mate-backgrounds.mo
+share/locale/bg/LC_MESSAGES/mate-backgrounds.mo
+share/locale/bn/LC_MESSAGES/mate-backgrounds.mo
+share/locale/bn_IN/LC_MESSAGES/mate-backgrounds.mo
+share/locale/ca/LC_MESSAGES/mate-backgrounds.mo
+share/locale/ca@valencia/LC_MESSAGES/mate-backgrounds.mo
+share/locale/cs/LC_MESSAGES/mate-backgrounds.mo
+share/locale/cy/LC_MESSAGES/mate-backgrounds.mo
+share/locale/da/LC_MESSAGES/mate-backgrounds.mo
+share/locale/de/LC_MESSAGES/mate-backgrounds.mo
+share/locale/dz/LC_MESSAGES/mate-backgrounds.mo
+share/locale/el/LC_MESSAGES/mate-backgrounds.mo
+share/locale/en@shaw/LC_MESSAGES/mate-backgrounds.mo
+share/locale/en_CA/LC_MESSAGES/mate-backgrounds.mo
+share/locale/en_GB/LC_MESSAGES/mate-backgrounds.mo
+share/locale/eo/LC_MESSAGES/mate-backgrounds.mo
+share/locale/es/LC_MESSAGES/mate-backgrounds.mo
+share/locale/et/LC_MESSAGES/mate-backgrounds.mo
+share/locale/eu/LC_MESSAGES/mate-backgrounds.mo
+share/locale/fa/LC_MESSAGES/mate-backgrounds.mo
+share/locale/fi/LC_MESSAGES/mate-backgrounds.mo
+share/locale/fr/LC_MESSAGES/mate-backgrounds.mo
+share/locale/fur/LC_MESSAGES/mate-backgrounds.mo
+share/locale/fy/LC_MESSAGES/mate-backgrounds.mo
+share/locale/ga/LC_MESSAGES/mate-backgrounds.mo
+share/locale/gl/LC_MESSAGES/mate-backgrounds.mo
+share/locale/gu/LC_MESSAGES/mate-backgrounds.mo
+share/locale/he/LC_MESSAGES/mate-backgrounds.mo
+share/locale/hi/LC_MESSAGES/mate-backgrounds.mo
+share/locale/hu/LC_MESSAGES/mate-backgrounds.mo
+share/locale/hy/LC_MESSAGES/mate-backgrounds.mo
+share/locale/id/LC_MESSAGES/mate-backgrounds.mo
+share/locale/it/LC_MESSAGES/mate-backgrounds.mo
+share/locale/ja/LC_MESSAGES/mate-backgrounds.mo
+share/locale/ka/LC_MESSAGES/mate-backgrounds.mo
+share/locale/kk/LC_MESSAGES/mate-backgrounds.mo
+share/locale/kn/LC_MESSAGES/mate-backgrounds.mo
+share/locale/ko/LC_MESSAGES/mate-backgrounds.mo
+share/locale/ku/LC_MESSAGES/mate-backgrounds.mo
+share/locale/ky/LC_MESSAGES/mate-backgrounds.mo
+share/locale/lt/LC_MESSAGES/mate-backgrounds.mo
+share/locale/lv/LC_MESSAGES/mate-backgrounds.mo
+share/locale/mai/LC_MESSAGES/mate-backgrounds.mo
+share/locale/mg/LC_MESSAGES/mate-backgrounds.mo
+share/locale/mk/LC_MESSAGES/mate-backgrounds.mo
+share/locale/ml/LC_MESSAGES/mate-backgrounds.mo
+share/locale/mn/LC_MESSAGES/mate-backgrounds.mo
+share/locale/mr/LC_MESSAGES/mate-backgrounds.mo
+share/locale/ms/LC_MESSAGES/mate-backgrounds.mo
+share/locale/nb/LC_MESSAGES/mate-backgrounds.mo
+share/locale/nds/LC_MESSAGES/mate-backgrounds.mo
+share/locale/ne/LC_MESSAGES/mate-backgrounds.mo
+share/locale/nl/LC_MESSAGES/mate-backgrounds.mo
+share/locale/nn/LC_MESSAGES/mate-backgrounds.mo
+share/locale/oc/LC_MESSAGES/mate-backgrounds.mo
+share/locale/or/LC_MESSAGES/mate-backgrounds.mo
+share/locale/pa/LC_MESSAGES/mate-backgrounds.mo
+share/locale/pl/LC_MESSAGES/mate-backgrounds.mo
+share/locale/ps/LC_MESSAGES/mate-backgrounds.mo
+share/locale/pt/LC_MESSAGES/mate-backgrounds.mo
+share/locale/pt_BR/LC_MESSAGES/mate-backgrounds.mo
+share/locale/ro/LC_MESSAGES/mate-backgrounds.mo
+share/locale/ru/LC_MESSAGES/mate-backgrounds.mo
+share/locale/rw/LC_MESSAGES/mate-backgrounds.mo
+share/locale/si/LC_MESSAGES/mate-backgrounds.mo
+share/locale/sk/LC_MESSAGES/mate-backgrounds.mo
+share/locale/sl/LC_MESSAGES/mate-backgrounds.mo
+share/locale/sq/LC_MESSAGES/mate-backgrounds.mo
+share/locale/sr/LC_MESSAGES/mate-backgrounds.mo
+share/locale/sr@latin/LC_MESSAGES/mate-backgrounds.mo
+share/locale/sv/LC_MESSAGES/mate-backgrounds.mo
+share/locale/ta/LC_MESSAGES/mate-backgrounds.mo
+share/locale/te/LC_MESSAGES/mate-backgrounds.mo
+share/locale/th/LC_MESSAGES/mate-backgrounds.mo
+share/locale/tr/LC_MESSAGES/mate-backgrounds.mo
+share/locale/uk/LC_MESSAGES/mate-backgrounds.mo
+share/locale/uz/LC_MESSAGES/mate-backgrounds.mo
+share/locale/uz@cyrillic/LC_MESSAGES/mate-backgrounds.mo
+share/locale/vi/LC_MESSAGES/mate-backgrounds.mo
+share/locale/zh_CN/LC_MESSAGES/mate-backgrounds.mo
+share/locale/zh_HK/LC_MESSAGES/mate-backgrounds.mo
+share/locale/zh_TW/LC_MESSAGES/mate-backgrounds.mo
+share/mate-background-properties/mate-abstract.xml
+share/mate-background-properties/mate-desktop.xml
+share/mate-background-properties/mate-nature.xml
+@dirrm share/mate-background-properties
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
+@dirrmtry share/locale/uz@cyrillic
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ps/LC_MESSAGES
+@dirrmtry share/locale/ps
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/hy/LC_MESSAGES
+@dirrmtry share/locale/hy
+@dirrmtry share/locale/fy/LC_MESSAGES
+@dirrmtry share/locale/fy
+@dirrmtry share/locale/fur/LC_MESSAGES
+@dirrmtry share/locale/fur
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
+@dirrmtry share/locale/an/LC_MESSAGES
+@dirrmtry share/locale/an
+@dirrmtry share/backgrounds/mate/nature
+@dirrmtry share/backgrounds/mate/desktop
+@dirrmtry share/backgrounds/mate/abstract
+@dirrmtry share/backgrounds/mate
+@dirrmtry share/backgrounds
