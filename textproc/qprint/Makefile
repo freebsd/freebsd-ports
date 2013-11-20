@@ -1,4 +1,3 @@
-# Created by: Takefu
 # $FreeBSD$
 
 PORTNAME=	qprint
@@ -17,13 +16,13 @@ LICENSE_PERMS=	auto-accept
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes
 
-PLIST_FILES=	bin/qprint
-MAN1=		qprint.1
+PLIST_FILES=	bin/qprint \
+		man/man1/qprint.1.gz
+
 ALL_TARGET=	prog check wringer
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/qprint ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/qprint.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/qprint ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/qprint.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
