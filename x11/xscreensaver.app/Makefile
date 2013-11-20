@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAKE_ARGS=	"LDFLAGS+=-L${LOCALBASE}/lib"
+MAKE_ARGS=	"LDFLAGS+=-L${LOCALBASE}/lib -lX11"
 
 NO_STAGE=	yes
 .include <bsd.port.mk>
