@@ -197,7 +197,7 @@ lib/gretl-gtk2/vif.so
 lib/libgretl-1.0.a
 lib/libgretl-1.0.la
 lib/libgretl-1.0.so
-lib/libgretl-1.0.so.7
+lib/libgretl-1.0.so.8
 libdata/pkgconfig/gretl.pc
 %%GUI%%share/applications/gretl.desktop
 %%GUI%%%%DATADIR%%/COPYING
@@ -564,12 +564,15 @@ libdata/pkgconfig/gretl.pc
 %%GUI%%share/icons/hicolor/32x32/mimetypes/text-gretl.script.png
 %%GUI%%share/icons/hicolor/48x48/apps/gretl.png
 %%GUI%%share/icons/hicolor/64x64/apps/gretl.png
+%%NLS%%share/locale/bg/LC_MESSAGES/gretl.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/gretl.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gretl.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gretl.mo
 %%NLS%%share/locale/el/LC_MESSAGES/gretl.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gretl.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/gretl.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gretl.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/gretl.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gretl.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gretl.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/gretl.mo

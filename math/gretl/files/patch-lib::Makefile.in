@@ -1,11 +1,11 @@
---- lib/Makefile.in.orig	2013-04-20 18:39:30.000000000 -0400
-+++ lib/Makefile.in	2013-04-20 18:39:44.000000000 -0400
-@@ -68,7 +68,7 @@
+--- lib/Makefile.in.orig	2013-08-16 13:12:54.000000000 -0400
++++ lib/Makefile.in	2013-11-18 21:43:54.000000000 -0500
+@@ -70,7 +70,7 @@
  
  LIBGRETL = libgretl-1.0.la 
  
 -LIBS = $(LAPACK_LIBS) -lm -ldl -lz $(XML_LIBS) \
 +LIBS = $(LAPACK_LIBS) -lm -lz $(XML_LIBS) \
- 	$(GLIB_LIBS) $(GMP_LIBS) $(FFTW_LIBS) $(CURL_LIBS)
+ 	$(GLIB_LIBS) $(GMP_LIBS) $(FFTW_LIBS) $(CURL_LIBS) $(GSF_LIBS)
  
  #### End of system configuration section. ####
