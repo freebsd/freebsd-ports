@@ -1,0 +1,15 @@
+--- generic/Makefile.in.orig	2010-12-11 00:39:42.000000000 +0100
++++ generic/Makefile.in	2013-11-20 09:13:25.000000000 +0100
+@@ -216,10 +216,10 @@
+ 	$(INSTALL) -m 0755 $(bltsh) $(INSTALL_ROOT)$(bindir)
+ 
+ install-lib: $(lib_a) $(tcl_only_lib_a)
+-	$(INSTALL_DATA) $(lib_a) $(INSTALL_ROOT)$(libdir)/$(libvers_a)
++	$(INSTALL_DATA) -m 0644 $(lib_a) $(INSTALL_ROOT)$(libdir)/$(libvers_a)
+ 	(cd $(INSTALL_ROOT)$(libdir); $(RM) $(lib_a) ; $(LN_S) $(libvers_a) $(lib_a))
+ 	$(RANLIB) $(INSTALL_ROOT)$(libdir)/$(libvers_a)
+-	$(INSTALL_DATA) $(tcl_only_lib_a) $(INSTALL_ROOT)$(libdir)/$(tcl_only_libvers_a)
++	$(INSTALL_DATA) -m 0644 $(tcl_only_lib_a) $(INSTALL_ROOT)$(libdir)/$(tcl_only_libvers_a)
+ 	(cd $(INSTALL_ROOT)$(libdir); $(RM) $(tcl_only_lib_a) ; $(LN_S) $(tcl_only_libvers_a) $(tcl_only_lib_a))
+ 	$(RANLIB) $(INSTALL_ROOT)$(libdir)/$(tcl_only_libvers_a)
+ 	(cd shared; $(MAKE) install) 
