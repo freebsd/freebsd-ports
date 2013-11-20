@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Future.pm
+%%SITE_PERL%%/Future/Phrasebook.pod
+%%SITE_PERL%%/Future/Utils.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Future/.packlist
+%%PERL5_MAN3%%/Future.3.gz
+%%PERL5_MAN3%%/Future::Phrasebook.3.gz
+%%PERL5_MAN3%%/Future::Utils.3.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Future
+@dirrm %%SITE_PERL%%/Future
