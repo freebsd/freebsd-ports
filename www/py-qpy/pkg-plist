@@ -28,8 +28,8 @@ bin/qpyrun.py
 %%PYTHON_SITELIBDIR%%/qpy/translate.py
 %%PYTHON_SITELIBDIR%%/qpy/translate.pyc
 %%PYTHON_SITELIBDIR%%/qpy/translate.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/qpy
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/qpy
