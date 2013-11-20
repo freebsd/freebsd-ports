@@ -27,6 +27,7 @@
     SUBDIR += bricons
     SUBDIR += brightside
     SUBDIR += cl-clx
+    SUBDIR += cinnamon
     SUBDIR += compositeproto
     SUBDIR += damageproto
     SUBDIR += decurs
@@ -82,11 +83,14 @@
     SUBDIR += gnome-panel
     SUBDIR += gnome-panel-reference
     SUBDIR += gnome-pie
+    SUBDIR += gnome-shell-extensions
     SUBDIR += gnome-screensaver
     SUBDIR += gnome-session
     SUBDIR += gnome-shell
     SUBDIR += gnome-swallow
     SUBDIR += gnome-terminal
+    SUBDIR += gnome3
+    SUBDIR += gnome3-lite
     SUBDIR += gnustep-app
     SUBDIR += gpctool
     SUBDIR += grabc
@@ -167,8 +171,10 @@
     SUBDIR += libgnome-java
     SUBDIR += libgnome-reference
     SUBDIR += libgnomekbd
+    SUBDIR += libgnomekbd3
     SUBDIR += libgnomemm26
     SUBDIR += libkonq
+    SUBDIR += libmatekbd
     SUBDIR += liboldX
     SUBDIR += libsx
     SUBDIR += libsynaptics
@@ -189,6 +195,16 @@
     SUBDIR += lxmenu-data
     SUBDIR += lxpanel
     SUBDIR += lxrandr
+    SUBDIR += mate
+    SUBDIR += mate-applets
+    SUBDIR += mate-base
+    SUBDIR += mate-desktop
+    SUBDIR += mate-dialogs
+    SUBDIR += mate-menus
+    SUBDIR += mate-panel
+    SUBDIR += mate-screensaver
+    SUBDIR += mate-session-manager
+    SUBDIR += mate-terminal
     SUBDIR += menu-cache
     SUBDIR += metalock
     SUBDIR += metisse
@@ -477,5 +493,6 @@
     SUBDIR += yeahconsole
     SUBDIR += yelp
     SUBDIR += zenity
+    SUBDIR += zenity3
 
 .include <bsd.port.subdir.mk>

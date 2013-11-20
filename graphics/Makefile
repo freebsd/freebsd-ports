@@ -92,6 +92,8 @@
     SUBDIR += clutter
     SUBDIR += clutter-box2d
     SUBDIR += clutter-gtk
+    SUBDIR += clutter-gtk3
+    SUBDIR += cogl
     SUBDIR += colord
     SUBDIR += colord-gtk
     SUBDIR += comical
@@ -291,6 +293,8 @@
     SUBDIR += gmt
     SUBDIR += gnash
     SUBDIR += gnofract4d
+    SUBDIR += gnome-color-manager
+    SUBDIR += gnome-video-effects
     SUBDIR += gnustep-slideshow
     SUBDIR += gnustep-slideshowkit
     SUBDIR += gocr
@@ -492,6 +496,7 @@
     SUBDIR += libcaca
     SUBDIR += libcdr
     SUBDIR += libchamplain
+    SUBDIR += libchamplain08
     SUBDIR += libdmtx
     SUBDIR += libdrm
     SUBDIR += libecwj2
@@ -572,6 +577,8 @@
     SUBDIR += mapnik
     SUBDIR += mapserver
     SUBDIR += mapyrus
+    SUBDIR += mate-document-viewer
+    SUBDIR += mate-image-viewer
     SUBDIR += maverik
     SUBDIR += megapov
     SUBDIR += mesa-demos
@@ -958,6 +965,7 @@
     SUBDIR += seejpeg
     SUBDIR += seom
     SUBDIR += separate
+    SUBDIR += shared-color-profiles
     SUBDIR += sharpconstruct
     SUBDIR += shiva-collections
     SUBDIR += shotwell

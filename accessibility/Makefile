@@ -12,6 +12,7 @@
     SUBDIR += atk
     SUBDIR += atk-reference
     SUBDIR += atkmm
+    SUBDIR += caribou
     SUBDIR += dasher
     SUBDIR += eflite
     SUBDIR += gnome-mag

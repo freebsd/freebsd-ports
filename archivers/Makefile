@@ -77,6 +77,7 @@
     SUBDIR += lzmalib
     SUBDIR += lzo2
     SUBDIR += lzop
+    SUBDIR += mate-file-archiver
     SUBDIR += macutils
     SUBDIR += makeself
     SUBDIR += mar

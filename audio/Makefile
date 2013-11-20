@@ -453,6 +453,7 @@
     SUBDIR += malint
     SUBDIR += mangler
     SUBDIR += maplay
+    SUBDIR += mate-media
     SUBDIR += mbox
     SUBDIR += mbrolavox
     SUBDIR += mcplay

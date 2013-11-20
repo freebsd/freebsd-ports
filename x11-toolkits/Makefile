@@ -33,6 +33,7 @@
     SUBDIR += girara
     SUBDIR += gnocl
     SUBDIR += gnome-desktop-sharp20
+    SUBDIR += gnome-pty-helper
     SUBDIR += gnome-sharp20
     SUBDIR += gnomemm
     SUBDIR += gnustep-back
@@ -104,12 +105,14 @@
     SUBDIR += libgnomeuimm26
     SUBDIR += libgtk-java
     SUBDIR += libgtksourceviewmm
+    SUBDIR += libmatewnck
     SUBDIR += libpanelappletmm
     SUBDIR += libsexy
     SUBDIR += libsexymm
     SUBDIR += libunique3
     SUBDIR += libwnck
     SUBDIR += libwnck-reference
+    SUBDIR += libwnck3
     SUBDIR += libxaw3dxft
     SUBDIR += libxfce4gui
     SUBDIR += libzvt
@@ -264,6 +267,7 @@
     SUBDIR += vdkbuilder
     SUBDIR += viewklass
     SUBDIR += vte
+    SUBDIR += vte3
     SUBDIR += vte-reference
     SUBDIR += vtkfox
     SUBDIR += wmapp

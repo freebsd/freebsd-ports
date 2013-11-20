@@ -157,6 +157,7 @@
     SUBDIR += gnome-gpg
     SUBDIR += gnome-keyring
     SUBDIR += gnome-keyring-sharp
+    SUBDIR += gnome-keyring3
     SUBDIR += gnome-password-generator
     SUBDIR += gnome-ssh-askpass
     SUBDIR += gnomint
@@ -258,6 +259,7 @@
     SUBDIR += lasso
     SUBDIR += libassuan
     SUBDIR += libbf
+    SUBDIR += libcryptui
     SUBDIR += libecc
     SUBDIR += libfprint
     SUBDIR += libgcrypt
@@ -268,6 +270,7 @@
     SUBDIR += libident
     SUBDIR += libkpass
     SUBDIR += libksba
+    SUBDIR += libmatekeyring
     SUBDIR += libmcrypt
     SUBDIR += libntlm
     SUBDIR += libotr
@@ -275,8 +278,10 @@
     SUBDIR += libp11
     SUBDIR += libprelude
     SUBDIR += libpreludedb
+    SUBDIR += libpwquality
     SUBDIR += libpwstor
     SUBDIR += libscrypt
+    SUBDIR += libsecret
     SUBDIR += libsectok
     SUBDIR += libsodium
     SUBDIR += libsparkcrypto
@@ -307,6 +312,7 @@
     SUBDIR += manipulate_data
     SUBDIR += masscan
     SUBDIR += massh
+    SUBDIR += mate-keyring
     SUBDIR += matrixssl
     SUBDIR += mcrypt
     SUBDIR += md4coll

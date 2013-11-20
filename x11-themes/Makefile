@@ -134,6 +134,13 @@
     SUBDIR += linux-hicolor-icon-theme
     SUBDIR += lxappearance
     SUBDIR += lxde-icon-theme
+    SUBDIR += gnome-icon-theme-symbolic
+    SUBDIR += gnome-themes-standard
+    SUBDIR += gtk-theme-engine-clearlooks
+    SUBDIR += mate-backgrounds
+    SUBDIR += mate-icon-theme
+    SUBDIR += mate-icon-theme-faenza
+    SUBDIR += mate-themes
     SUBDIR += metacity-aluminumalloy-cryogenic-theme
     SUBDIR += metacity-aluminumalloy-smog-theme
     SUBDIR += metacity-aluminumalloy-toxic-theme

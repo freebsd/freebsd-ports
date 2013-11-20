@@ -164,6 +164,7 @@
     SUBDIR += ftelnetd
     SUBDIR += g2ipmsg
     SUBDIR += gateway6
+    SUBDIR += geocode-glib
     SUBDIR += get_iplayer
     SUBDIR += gini
     SUBDIR += gkrellmqst
@@ -175,6 +176,7 @@
     SUBDIR += gnome-mud
     SUBDIR += gnome-netstatus
     SUBDIR += gnome-nettool
+    SUBDIR += gnome-online-accounts
     SUBDIR += gnu-dico
     SUBDIR += gnu-radius
     SUBDIR += go.net
@@ -187,6 +189,8 @@
     SUBDIR += gpxe
     SUBDIR += gq
     SUBDIR += grdesktop
+    SUBDIR += grilo
+    SUBDIR += grilo-plugins
     SUBDIR += grive
     SUBDIR += grsync
     SUBDIR += gsk
@@ -196,6 +200,7 @@
     SUBDIR += gstreamer1-plugins-libmms
     SUBDIR += gtic
     SUBDIR += gtk-vnc
+    SUBDIR += gtk-vnc3
     SUBDIR += gtknetcat
     SUBDIR += gupnp
     SUBDIR += gupnp-av
@@ -311,8 +316,10 @@
     SUBDIR += libfixbuf
     SUBDIR += libgnetwork
     SUBDIR += libgweather
+    SUBDIR += libgweather3
     SUBDIR += libilbc
     SUBDIR += libkvkontakte
+    SUBDIR += libmateweather
     SUBDIR += libmediawiki
     SUBDIR += libmms
     SUBDIR += libmxp
@@ -348,6 +355,7 @@
     SUBDIR += libunp
     SUBDIR += libutp
     SUBDIR += libvncserver
+    SUBDIR += libzapojit
     SUBDIR += liferea
     SUBDIR += linc
     SUBDIR += linc-reference
@@ -894,7 +902,6 @@
     SUBDIR += py-amqp
     SUBDIR += py-amqplib
     SUBDIR += py-avahi
-    SUBDIR += py-pybeanstalk
     SUBDIR += py-beanstalkc
     SUBDIR += py-cloudfiles
     SUBDIR += py-dpkt
@@ -926,6 +933,7 @@
     SUBDIR += py-pcapy
     SUBDIR += py-pcs
     SUBDIR += py-port-for
+    SUBDIR += py-pybeanstalk
     SUBDIR += py-pynsq
     SUBDIR += py-pypcap
     SUBDIR += py-pysendfile
@@ -1206,8 +1214,8 @@
     SUBDIR += ttbudget
     SUBDIR += ttlscan
     SUBDIR += tucan
-    SUBDIR += turses
     SUBDIR += turnserver
+    SUBDIR += turses
     SUBDIR += twitux
     SUBDIR += u6rd
     SUBDIR += ucarp

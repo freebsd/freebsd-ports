@@ -15,9 +15,11 @@
     SUBDIR += gnome-commander2
     SUBDIR += gprename
     SUBDIR += krusader2
+    SUBDIR += mate-file-manager
     SUBDIR += mtoolsfm
     SUBDIR += mucommander
     SUBDIR += nautilus
+    SUBDIR += nemo
     SUBDIR += p5-PerlFM
     SUBDIR += pbi-thumbnailer
     SUBDIR += pcmanfm

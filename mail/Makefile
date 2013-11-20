@@ -122,7 +122,9 @@
     SUBDIR += epstools
     SUBDIR += esmtp
     SUBDIR += evolution
+    SUBDIR += evolution-ews
     SUBDIR += evolution-exchange
+    SUBDIR += evolution-kolab
     SUBDIR += evolution-mapi
     SUBDIR += exact
     SUBDIR += exilog
@@ -295,9 +297,9 @@
     SUBDIR += mu
     SUBDIR += mulberry
     SUBDIR += mutt
+    SUBDIR += mutt-lite
     SUBDIR += mutt14
     SUBDIR += mutt14-lite
-    SUBDIR += mutt-lite
     SUBDIR += mutt_vc_query
     SUBDIR += muttils
     SUBDIR += muttzilla

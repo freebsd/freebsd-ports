@@ -12,6 +12,7 @@
     SUBDIR += abck
     SUBDIR += abgx360
     SUBDIR += abgx360gui
+    SUBDIR += accountsservice
     SUBDIR += acpi_call
     SUBDIR += acpica-tools
     SUBDIR += adtool
@@ -107,14 +108,15 @@
     SUBDIR += cdroot
     SUBDIR += cdrtools
     SUBDIR += cdrtools-devel
-    SUBDIR += cfengine-devel
     SUBDIR += cfengine
+    SUBDIR += cfengine-devel
     SUBDIR += cfengine22
     SUBDIR += cfengine32
     SUBDIR += cfengine33
     SUBDIR += cfengine34
     SUBDIR += cfengine35
     SUBDIR += chgrep
+    SUBDIR += cinnamon-control-center
     SUBDIR += ciso
     SUBDIR += ck4up
     SUBDIR += ckl
@@ -190,6 +192,7 @@
     SUBDIR += dolly
     SUBDIR += downtime
     SUBDIR += downtimed
+    SUBDIR += drwright
     SUBDIR += dt
     SUBDIR += dtc
     SUBDIR += dtpstree
@@ -212,8 +215,8 @@
     SUBDIR += eiciel
     SUBDIR += eject
     SUBDIR += endian
-    SUBDIR += entr
     SUBDIR += enteruser
+    SUBDIR += entr
     SUBDIR += env4801
     SUBDIR += epylog
     SUBDIR += eroaster
@@ -368,8 +371,8 @@
     SUBDIR += hammerhead
     SUBDIR += hardlink
     SUBDIR += hatop
-    SUBDIR += hdup
     SUBDIR += hdrecover
+    SUBDIR += hdup
     SUBDIR += healthd
     SUBDIR += heartbeat
     SUBDIR += heirloom
@@ -495,6 +498,11 @@
     SUBDIR += manck
     SUBDIR += mapchan
     SUBDIR += massadmin
+    SUBDIR += mate-control-center
+    SUBDIR += mate-polkit
+    SUBDIR += mate-power-manager
+    SUBDIR += mate-settings-daemon
+    SUBDIR += mate-system-monitor
     SUBDIR += mbgtools
     SUBDIR += mbmon
     SUBDIR += mcelog
@@ -718,9 +726,9 @@
     SUBDIR += pstree
     SUBDIR += ptools
     SUBDIR += puppet
+    SUBDIR += puppet-lint
     SUBDIR += puppet-mode.el
     SUBDIR += puppet27
-    SUBDIR += puppet-lint
     SUBDIR += pv
     SUBDIR += pwd_unmkdb
     SUBDIR += pwgen
@@ -754,8 +762,8 @@
     SUBDIR += qpxtool
     SUBDIR += quicksynergy
     SUBDIR += qzeitgeist
-    SUBDIR += radeontool
     SUBDIR += racktables
+    SUBDIR += radeontool
     SUBDIR += radmind
     SUBDIR += raincoat
     SUBDIR += rclean

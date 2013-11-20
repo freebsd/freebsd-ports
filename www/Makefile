@@ -264,6 +264,7 @@
     SUBDIR += gstreamer-plugins-neon
     SUBDIR += gstreamer1-plugins-neon
     SUBDIR += gtkhtml3
+    SUBDIR += gtkhtml4
     SUBDIR += guile-www
     SUBDIR += gurlchecker
     SUBDIR += habari
@@ -390,6 +391,7 @@
     SUBDIR += libgtkhtml
     SUBDIR += libhtp-suricata
     SUBDIR += libmicrohttpd
+    SUBDIR += libsocialweb
     SUBDIR += libwww
     SUBDIR += libxul
     SUBDIR += lifetype

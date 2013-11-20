@@ -131,8 +131,8 @@
     SUBDIR += cgoban
     SUBDIR += chanta
     SUBDIR += chapping
-    SUBDIR += chessx
     SUBDIR += cheech
+    SUBDIR += chessx
     SUBDIR += childsplay
     SUBDIR += childsplay_plugins
     SUBDIR += chocolate-doom
@@ -252,6 +252,7 @@
     SUBDIR += fillets-ng
     SUBDIR += filters
     SUBDIR += fishsupper
+    SUBDIR += five-or-more
     SUBDIR += fkiss
     SUBDIR += flare
     SUBDIR += flightgear
@@ -266,6 +267,7 @@
     SUBDIR += formido
     SUBDIR += fortunate
     SUBDIR += fotaq
+    SUBDIR += four-in-a-row
     SUBDIR += freecell-solver
     SUBDIR += freeciv
     SUBDIR += freeciv-nox11
@@ -329,8 +331,16 @@
     SUBDIR += gnake
     SUBDIR += gnarr
     SUBDIR += gno3dtet
+    SUBDIR += gnome-chess
     SUBDIR += gnome-games
     SUBDIR += gnome-games-extra-data
+    SUBDIR += gnome-klotski
+    SUBDIR += gnome-mahjongg
+    SUBDIR += gnome-mines
+    SUBDIR += gnome-nibbles
+    SUBDIR += gnome-robots
+    SUBDIR += gnome-sudoku
+    SUBDIR += gnome-tetravex
     SUBDIR += gnomeattacks
     SUBDIR += gnomebreakout
     SUBDIR += gnomechess
@@ -392,6 +402,7 @@
     SUBDIR += hohlin
     SUBDIR += hoichess
     SUBDIR += holotz-castle
+    SUBDIR += iagno
     SUBDIR += icbm3d
     SUBDIR += icebreaker
     SUBDIR += iceicepenguin
@@ -498,6 +509,7 @@
     SUBDIR += libmaitretarot
     SUBDIR += libmt_client
     SUBDIR += libshhcards
+    SUBDIR += lightsoff
     SUBDIR += lincity
     SUBDIR += lincity-ng
     SUBDIR += linux-americasarmy
@@ -619,9 +631,9 @@
     SUBDIR += nethack34-nox11
     SUBDIR += netherearth
     SUBDIR += netpanzer
+    SUBDIR += netradiant
     SUBDIR += netrek-BRMH-bin
     SUBDIR += netrek-client-cow
-    SUBDIR += netradiant
     SUBDIR += netris
     SUBDIR += netspades
     SUBDIR += nettoe
@@ -776,6 +788,7 @@
     SUBDIR += qtv
     SUBDIR += quackle
     SUBDIR += quadra
+    SUBDIR += quadrapassel
     SUBDIR += quake-data
     SUBDIR += quake-dpmod
     SUBDIR += quake-extras
@@ -876,8 +889,8 @@
     SUBDIR += sokoban
     SUBDIR += sol
     SUBDIR += solarconquest
-    SUBDIR += solarwolf
     SUBDIR += solarus
+    SUBDIR += solarwolf
     SUBDIR += sopwith
     SUBDIR += spacejunk
     SUBDIR += speak
@@ -907,6 +920,7 @@
     SUBDIR += supertux
     SUBDIR += supertux-devel
     SUBDIR += supertuxkart
+    SUBDIR += swell-foop
     SUBDIR += sxsame
     SUBDIR += syobon
     SUBDIR += tads

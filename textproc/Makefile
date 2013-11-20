@@ -421,6 +421,7 @@
     SUBDIR += manued.el
     SUBDIR += markdown
     SUBDIR += markdown-mode.el
+    SUBDIR += mate-doc-utils
     SUBDIR += mathml-xsd
     SUBDIR += mdocml
     SUBDIR += meld
@@ -1556,6 +1557,8 @@
     SUBDIR += yamcha
     SUBDIR += yaml-mode.el
     SUBDIR += yaml-mode.el-emacs21
+    SUBDIR += yelp-tools
+    SUBDIR += yelp-xsl
     SUBDIR += yi-aspell
     SUBDIR += yi-hunspell
     SUBDIR += yodl
