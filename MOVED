@@ -5244,3 +5244,5 @@ lang/lua50|lang/lua|2013-11-18|Removed, lua50 is EOLed
 security/squidclamav|www/squidclamav|2013-11-18|Has expired: Obsolete and broken with clang, use www/squidclamav instead
 multimedia/tovid||2013-11-19|Has expired: No more public distfiles
 devel/rubygem-ripper||2013-11-20|Removed: it is only for Ruby 1.8 which is removed already
+editors/mode-info||2013-11-20|Has expired: Misbuilding since 2004, not maintained since 2008
+devel/netbsd-pkgsrc-mk-files||2013-11-20|Has expired: Imported for devel/mk-configure but no longer required
