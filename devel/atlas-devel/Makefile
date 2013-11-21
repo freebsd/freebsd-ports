@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Atlas
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	devel
 MASTER_SITES=	SF/worldforge/${PORTNAME}-C%2B%2B%20%28protocol%20lib%29/${PORTVERSION}
 DISTNAME=	${PORTNAME}-C++-${PORTVERSION:S/.r/rc/}
@@ -15,6 +15,7 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	YES
 USE_BZIP2=	YES
 USES=	pathfix
+USE_GCC=	4.7+
 
 CONFIGURE_ARGS+=--program-transform-name=
 
