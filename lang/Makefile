@@ -36,6 +36,7 @@
     SUBDIR += clang31
     SUBDIR += clang32
     SUBDIR += clang33
+    SUBDIR += clang34
     SUBDIR += clay
     SUBDIR += clisp
     SUBDIR += clojure

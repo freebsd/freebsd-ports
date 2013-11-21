@@ -1148,6 +1148,7 @@
     SUBDIR += llvm31
     SUBDIR += llvm32
     SUBDIR += llvm33
+    SUBDIR += llvm34
     SUBDIR += lmdbg
     SUBDIR += lndir
     SUBDIR += lockfree-malloc
