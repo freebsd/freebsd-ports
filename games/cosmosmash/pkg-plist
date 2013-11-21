@@ -1,4 +1,5 @@
 bin/cosmosmash
+man/man6/cosmosmash.6.gz
 share/applications/cosmosmash.desktop
 share/pixmaps/cosmosmash.png
 %%DATADIR%%/sounds/rock-hit-0.wav
@@ -18,5 +19,3 @@ share/pixmaps/cosmosmash.png
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
