@@ -3,6 +3,7 @@
 
 PORTNAME=	openjazz
 PORTVERSION=	20120819
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://alister.eu/jazz/oj/ \
 		LOCAL/martymac
@@ -13,15 +14,17 @@ COMMENT=	Free re-implementation of the Jazz Jackrabbit(tm) game engine
 
 LICENSE=	GPLv2
 
-NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
-USE_GMAKE=	yes
-ALL_TARGET=	OpenJazz
-USE_XORG=	x11 xext xrandr xrender xau xdmcp
-USE_SDL=	sdl
+WRKSRC=	${WRKDIR}/${PORTNAME}
+EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(h|cpp)
+
+USES=	gmake
+ALL_TARGET=	OpenJazz
+USE_XORG=	x11 xext xrandr xrender xau xdmcp
+USE_SDL=	sdl
 
 CPPFLAGS+=	-I${LOCALBASE}/include `${SDL_CONFIG} --cflags` \
 		-DDATAPATH=\\\"${DATADIR}/\\\" -DHOMEDIR
@@ -29,11 +32,16 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} `${SDL_CONFIG} --libs`
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
+pre-extract:
+	@${MKDIR} ${WRKSRC}
+
 do-install:
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/openjazz.000 ${DATADIR}/
-	@${INSTALL_SCRIPT} ${WRKDIR}/OpenJazz ${PREFIX}/bin/openjazz
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/openjazz.000 ${STAGEDIR}${DATADIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/OpenJazz ${STAGEDIR}${PREFIX}/bin/openjazz
 	@${CAT} ${PKGMESSAGE}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/openjazz
 
 .include <bsd.port.mk>
