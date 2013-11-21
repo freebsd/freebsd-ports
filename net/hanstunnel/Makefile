@@ -3,6 +3,7 @@
 
 PORTNAME=	hans
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	SF/hanstunnel/source
 
@@ -21,30 +22,22 @@ PLIST_FILES=	bin/hans
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLANG}
-.if ${OSVERSION} < 1000000
-CC=clang
-CXX=clang++
-.if ${OSVERSION} < 900033
-BUILD_DEPENDS+=	clang:${PORTSDIR}/lang/clang
-.endif
+.if ${OSVERSION} >= 900033 && exists(/usr/bin/clang)
+CC=		clang
+CXX=		clang++
+.else
+BUILD_DEPENDS+=	clang33:${PORTSDIR}/lang/clang33
+CC=		clang33
+CXX=		clang++33
 .endif
 .else
 USE_GCC=4.2+
-CC=gcc
-CXX=g++
-CPP=gcpp
 .endif
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/hans ${LOCALBASE}/bin
-
-post-install:	.SILENT
-	${ECHO_MSG}
-	${CAT} ${PKGMESSAGE}
-	${ECHO_MSG}
+	${INSTALL_PROGRAM} ${WRKSRC}/hans ${STAGEDIR}${LOCALBASE}/bin
 
 .include <bsd.port.mk>

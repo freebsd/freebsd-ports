@@ -1,6 +1,19 @@
---- tun.cpp.orig	2010-02-17 17:30:21.000000000 +0200
-+++ tun.cpp	2013-04-04 16:55:39.802818893 +0300
-@@ -68,23 +68,17 @@
+
+$FreeBSD$
+
+--- tun.cpp.orig
++++ tun.cpp
+@@ -41,8 +41,7 @@
+ 
+ 	if (device != NULL)
+ 	{
+-		strncpy(this->device, device, VTUN_DEV_LEN);
+-		this->device[VTUN_DEV_LEN] = 0;
++		strlcpy(this->device, device, VTUN_DEV_LEN);
+ 	}
+ 	else
+ 		this->device[0] = 0;
+@@ -68,23 +67,17 @@
  	string ips = Utility::formatIp(ip);
  	string destIps = Utility::formatIp(destIp);
  
