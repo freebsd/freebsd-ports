@@ -12,7 +12,10 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Light Color Management System -- a color management library
 
+LICENSE=	MIT
+
 OPTIONS_DEFINE=	DOCS JPEGICC TIFFICC
+OPTIONS_SUB=	yes
 JPEGICC_DESC=	Build color profile applier for JPEG
 TIFFICC_DESC=	Build color profile applier for TIFF
 
@@ -22,32 +25,19 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GNOME=	gnomehack lthack
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
+JPEGICC_CONFIGURE_OFF=	--without-jpeg
+JPEGICC_CONFIGURE_ON=	--with-jpeg=${LOCALBASE}
+JPEGICC_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+TIFFICC_CONFIGURE_OFF=	--without-tiff
+TIFFICC_CONFIGURE_ON=	--with-tiff=${LOCALBASE}
+TIFFICC_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MJPEGICC}
-LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
-CONFIGURE_ARGS+=--with-jpeg=${LOCALBASE}
-MAN1+=		jpegicc.1
-PLIST_SUB+=	JPEGICC=""
-.else
-CONFIGURE_ARGS+=--without-jpeg
-PLIST_SUB+=	JPEGICC="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MTIFFICC}
-LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff
-CONFIGURE_ARGS+=--with-tiff=${LOCALBASE}
-MAN1+=		tifficc.1
-PLIST_SUB+=	TIFFICC=""
-.else
-CONFIGURE_ARGS+=--without-tiff
-PLIST_SUB+=	TIFFICC="@comment "
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| python samples||' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|^testcms_LDFLAGS = .*$$|& -static|' ${WRKSRC}/testbed/Makefile.in
+#	@${REINPLACE_CMD} -e '/^#ifdef __sgi/d; /^#include "sgidefs.h"/d' ${WRKSRC}/include/icc34.h.in
+	@${REINPLACE_CMD} -e '/^testcms_LDFLAGS = / s|$$| -static|' ${WRKSRC}/testbed/Makefile.in
 .if !${PORT_OPTIONS:MJPEGICC}
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| jpegicc||' ${WRKSRC}/Makefile.in
 .endif
@@ -61,9 +51,9 @@ post-configure:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} doc/LCMSAPI.TXT doc/TUTORIAL.TXT tifficc/tifficc.c \
-		jpegicc/jpegicc.c jpegicc/iccjpeg.c samples/wtpt.c samples/icctrans.c ${DOCSDIR}/
+		jpegicc/jpegicc.c jpegicc/iccjpeg.c samples/wtpt.c samples/icctrans.c ${STAGEDIR}${DOCSDIR}/
 .endif
 
 regression-test test: build
