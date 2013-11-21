@@ -1,0 +1,4 @@
+SHA256 (cfe-3.4rc1.tar.gz) = 31fb9888909f78ff80cf98c8fbbbfe0c21c24890aa9e4d512ecb5fe747da19bc
+SIZE (cfe-3.4rc1.tar.gz) = 10404266
+SHA256 (llvm-3.4rc1.tar.gz) = 7d1cd192d594dbc85a4928e42fddd3e7f23c5c3015caf16cb57259e3d3dc39ba
+SIZE (llvm-3.4rc1.tar.gz) = 15431198
