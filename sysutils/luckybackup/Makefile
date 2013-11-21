@@ -13,12 +13,13 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 
+USES=		qmake
 USE_QT4=	gui qmake_build moc_build rcc_build uic_build
-MAKE_ENV=	INSTALL_ROOT=${STAGEDIR}${PREFIX}
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/usr||g' -e '/INSTALLS/s|debianmenu ||' \
-		-e '/manpage/s|share/||' ${WRKSRC}/luckybackup.pro
+	${REINPLACE_CMD} -e 's|/usr|$$$${PREFIX}|g' -e '/INSTALLS/s|debianmenu ||' \
+		-e '/manpage/s|share/||' -e 's|QMAKE_STRIP.*|QMAKE_STRIP = ${STRIP_CMD}|g' \
+		${WRKSRC}/luckybackup.pro
 	${REINPLACE_CMD} -e 's|/usr/bin/||g' -e 's|/usr/share/pixmaps/||g' \
 		${WRKSRC}/menu/*.desktop
 	${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g' \
@@ -26,9 +27,5 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' \
 		${WRKSRC}/src/global.h \
 		${WRKSRC}/src/scheduleDialog.cpp
-
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS}
 
 .include <bsd.port.mk>
