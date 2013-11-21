@@ -16,7 +16,7 @@ LICENSE=	GPLv3 # (or later)
 USES=		qmake dos2unix
 USE_ZIP=	yes
 DOS2UNIX_GLOB=	*.cpp *.h
-USE_QT4=	corelib gui moc_build qmake_build rcc_build uic_build
+USE_QT4=	corelib gui moc_build rcc_build uic_build
 
 PLIST_FILES=	bin/${PORTNAME}
 

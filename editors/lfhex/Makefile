@@ -12,7 +12,7 @@ COMMENT=	Large file hex editor
 
 LICENSE=	GPLv2
 
-USE_QT4=	corelib gui moc_build qmake_build rcc_build
+USE_QT4=	corelib gui moc_build rcc_build
 USES=		bison qmake
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

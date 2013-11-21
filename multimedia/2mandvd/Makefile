@@ -32,14 +32,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		desktop-file-utils gmake perl5 qmake:norecursive shebangfix
 SHEBANG_FILES=	fake.pl
 USE_QT4=	corelib gui opengl \
-		linguist_build moc_build qmake_build rcc_build uic_build
+		linguist_build moc_build rcc_build uic_build
 USE_GL=		glu
 USE_SDL=	sdl
 USE_PERL5=	run
 
 DATADIR=	${PREFIX}/share/2ManDVD
-
-LRELEASE=	${LOCALBASE}/bin/lrelease-qt4
 
 post-extract:
 	@${FIND} ${WRKSRC} -name "*~" -delete

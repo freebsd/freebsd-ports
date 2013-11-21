@@ -18,7 +18,7 @@ USES=		qmake dos2unix
 DOS2UNIX_GLOB=	*.pro *.cpp
 USE_ZIP=	yes
 USE_QT4=	gui sql corelib network script qtestlib \
-		qmake_build rcc_build uic_build moc_build \
+		rcc_build uic_build moc_build \
 		sql-sqlite2_run sql-sqlite3_run
 QMAKE_ARGS+=	DATADIR="${DATADIR}"
 WRKSRC=		${WRKDIR}/tipp10_source_v2-1-0
