@@ -61,7 +61,7 @@ post-patch:
 
 post-build:
 	cd ${WRKSRC}/src/output/RtAudio && \
-	${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS} && make
+	${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKE_ARGS} && make
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/last.fm.sh ${PREFIX}/bin/last.fm
