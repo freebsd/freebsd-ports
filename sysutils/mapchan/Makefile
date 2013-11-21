@@ -20,8 +20,6 @@ OPTIONS_DEFINE=	DOCS
 post-extract:
 	@${CP} ${WRKSRC}/doc/mapchan.F ${WRKSRC}/doc/mapchan.8
 
-.include <bsd.port.options.mk>
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
@@ -30,7 +28,8 @@ post-install:
 .include <bsd.port.pre.mk>
 
 post-patch:
-	${CP} ${WRKSRC}/examples/default ${WRKSRC}/examples/default.sample
+	@${MV} ${WRKSRC}/examples/default ${WRKSRC}/examples/default.sample
+	@${RM} ${WRKSRC}/examples/default.orig
 	${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|" ${WRKSRC}/mapchan.c
 .if ${OSVERSION} > 900007
 	${REINPLACE_CMD} -e "s|utmp.h|utmpx.h|" ${WRKSRC}/mapchan.c
