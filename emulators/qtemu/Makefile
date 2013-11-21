@@ -10,7 +10,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt 4 based frontend for QEMU
 
 USE_BZIP2=	yes
-USE_QT4=	gui xml uic_build moc_build qmake_build rcc_build
+USE_QT4=	gui xml uic_build moc_build rcc_build
 USES=		qmake
 CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
 
@@ -30,7 +30,7 @@ PLIST_SUB+=	NLS="@comment "
 
 post-configure:
 .if ${PORT_OPTIONS:MNLS}
-	(cd ${WRKSRC} && ${LOCALBASE}/bin/lrelease-qt4 qtemu.pro)
+	(cd ${WRKSRC} && ${LRELEASE} qtemu.pro)
 .endif
 
 do-install:

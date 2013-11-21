@@ -10,7 +10,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt Widgets for Technical Applications
 
 USES=		gmake qmake
-USE_QT4=	gui svg moc_build qmake_build
+USE_QT4=	gui svg moc_build
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 PORTSCOUT=	limit:^5\.

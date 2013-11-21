@@ -29,7 +29,7 @@ DESKTOP_ENTRIES=	"DBoxFE" "DOSBox configuration manager" \
 
 post-build:
 	@(cd ${WRKSRC}/dboxfetray && \
-		${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS} && \
+		${SETENV} ${QMAKE_ENV} ${QMAKE} ${QMAKE_ARGS} && \
 		${SETENV} ${MAKE_ENV} ${MAKE})
 
 do-install:

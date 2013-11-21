@@ -11,7 +11,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt 4 based diff frontend
 
 USES=		qmake
-USE_QT4=	gui moc_build rcc_build qmake_build
+USE_QT4=	gui moc_build rcc_build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

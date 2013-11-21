@@ -10,7 +10,7 @@ COMMENT=	2D CAD system
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmuparser.a:${PORTSDIR}/math/muparser
 
-USE_QT4=	help qt3support help-tools_build moc_build qmake_build \
+USE_QT4=	help qt3support help-tools_build moc_build \
 		rcc_build uic_build uic3_build
 USES=		qmake
 MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
@@ -42,7 +42,7 @@ post-patch:
 post-build:
 .if ${PORT_OPTIONS:MNLS}
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-		${LOCALBASE}/bin/lrelease-qt4 -compress librecad.pro
+		${LRELEASE} -compress librecad.pro
 	${MKDIR} ${WRKSRC}/unix/resources/qm
 	${INSTALL_DATA} ${WRKSRC}/ts/*.qm ${WRKSRC}/unix/resources/qm
 .endif

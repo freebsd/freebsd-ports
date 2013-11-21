@@ -9,15 +9,14 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	TV-like client for YouTube
 
 USE_QT4=	gui network xml dbus phonon phonon-gst \
-		qmake_build moc_build rcc_build imageformats_run
+		moc_build rcc_build imageformats_run
 USE_GSTREAMER=	ffmpeg
 USES=		qmake
 INSTALLS_ICONS=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-QMAKE_ARGS=	QMAKE_LRELEASE=${QT_LRELEASE}
+QMAKE_ARGS=	QMAKE_LRELEASE=${LRELEASE}
 QMAKE_PRO=	${WRKSRC}/${PORTNAME}.pro
-QT_LRELEASE=	${LOCALBASE}/bin/lrelease-qt4
 
 STRIP_FILES=	bin/minitube
 
