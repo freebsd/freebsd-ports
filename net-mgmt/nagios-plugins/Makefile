@@ -18,8 +18,8 @@ USE_AUTOTOOLS=	libtool aclocal autoconf automake
 ACLOCAL_ARGS=	-I m4 -I gl/m4
 AUTOMAKE_ARGS=	--add-missing
 
-OPTIONS_DEFINE=	QSTAT FPING NETSNMP RADIUS MYSQL PGSQL LDAP IPV6 JAIL NLS
-OPTIONS_DEFAULT=IPV6
+OPTIONS_DEFINE=	QSTAT FPING NETSNMP RADIUS MYSQL PGSQL LDAP IPV6 JAIL NLS DNS
+OPTIONS_DEFAULT=IPV6 DNS
 
 QSTAT_DESC=	Game server query support (check_game)
 FPING_DESC=	Support for non-flooding fast ping (check_fping)
@@ -28,6 +28,7 @@ RADIUS_DESC=	Radius support (check_radius)
 MYSQL_DESC=	MySQL support (check_mysql)
 PGSQL_DESC=	PostgreSQL support (check_pgsql)
 LDAP_DESC=	OpenLDAP support (check_ldap)
+DNS_DESC=	DNS support via dig (check_dns, check_dig)
 JAIL_DESC=	Compilation within jail(8) (see Makefile)
 
 GNU_CONFIGURE=	yes
@@ -68,6 +69,14 @@ CONFIGURE_ARGS+=	--enable-qstat
 PLIST_SUB+=	SUB_QSTAT=""
 .else
 PLIST_SUB+=	SUB_QSTAT="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MDNS}
+BUILD_DEPENDS+=	dig:${PORTSDIR}/dns/bind-tools
+RUN_DEPENDS+=	dig:${PORTSDIR}/dns/bind-tools
+PLIST_SUB+=	SUB_DNS=""
+.else
+PLIST_SUB+=	SUB_DNS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MIPV6}
