@@ -3,6 +3,7 @@
 
 PORTNAME=	grsync
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.opbyte.it/release/ \
 		LOCAL/martymac
@@ -16,7 +17,8 @@ RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync \
 		bash:${PORTSDIR}/shells/bash
 
 USE_GNOME=	gtk20
-USES=		desktop-file-utils gmake shared-mime-info pkgconfig
+USES=		desktop-file-utils gmake shared-mime-info pkgconfig shebangfix
+SHEBANG_FILES=	src/grsync-batch
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-unity
 
@@ -25,21 +27,14 @@ INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		grsync.1 grsync-batch.1
+OPTIONS_DEFINE=	NLS
+OPTIONS_DEFAULT=	NLS
+OPTIONS_SUB=	yes
+NLS_USES=	gettext
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} 's|/bin/bash|${LOCALBASE}/bin/bash|' \
-		${WRKSRC}/src/grsync-batch
 .if empty(PORT_OPTIONS:MNLS)
 	@${REINPLACE_CMD} 's/^ALL_LINGUAS=.*/ALL_LINGUAS=""/' \
 		${WRKSRC}/configure
