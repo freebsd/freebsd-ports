@@ -2,8 +2,6 @@ Grsync is a GUI (Graphical User Interface) for rsync, the commandline directory
 synchronization tool. It makes use of the GTK libraries and is released under
 the GPL license, so it is opensource. It doesn't support all of rsync features,
 but can be effectively used to synchronize local directories and supports
-remote targets in a limited way (read: manual). For example some people use
-grsync to synchronize their music collection with removable devices or to
-backup personal files to a networked drive.
+remote targets in a limited way (read: manual).
 
 WWW: http://www.opbyte.it/grsync
