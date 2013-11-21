@@ -103,14 +103,24 @@ QT_PREFIX?=	${LOCALBASE}
 QT_INCDIR?=	${QT_PREFIX}/${QT_INCDIR_REL}
 QT_LIBDIR?=	${QT_PREFIX}/${QT_LIBDIR_REL}
 QT_PLUGINDIR?=	${QT_PREFIX}/${QT_PLUGINDIR_REL}
+LRELEASE?=	${QT_PREFIX}/bin/lrelease-qt4
+LUPDATE?=	${QT_PREFIX}/bin/lupdate-qt4
 MOC?=		${QT_PREFIX}/bin/moc-qt4
 UIC?=		${QT_PREFIX}/bin/uic-qt4
 RCC?=		${QT_PREFIX}/bin/rcc
 QMAKE?=		${QT_PREFIX}/bin/qmake-qt4
+# QMAKEFLAGS will be superseded by QMAKE_ARGS
 QMAKEFLAGS+=	QMAKE_CC="${CC}" QMAKE_CXX="${CXX}" \
 		QMAKE_LINK="${CXX}" QMAKE_LINK_SHLIB="${CXX}" \
 		QMAKE_LINK_C="${CC}" QMAKE_LINK_C_SHLIB="${CC}" \
 		QMAKE_CFLAGS="${CFLAGS}" QMAKE_CXXFLAGS="${CXXFLAGS}"
+QMAKE_ENV?=	${CONFIGURE_ENV}
+QMAKE_ARGS+=	-spec ${QMAKESPEC} \
+		QMAKE_CC="${CC}" QMAKE_CXX="${CXX}" \
+		QMAKE_LINK="${CXX}" QMAKE_LINK_SHLIB="${CXX}" \
+		QMAKE_LINK_C="${CC}" QMAKE_LINK_C_SHLIB="${CC}" \
+		QMAKE_CFLAGS="${CFLAGS}" QMAKE_CXXFLAGS="${CXXFLAGS}" \
+		QMAKE_LFLAGS="${LDFLAGS}" PREFIX="${PREFIX}"
 
 QTCPPFLAGS?=
 QTCGFLIBS?=
@@ -337,9 +347,6 @@ QMAKESPEC?=	${QT_PREFIX}/share/qt4/mkspecs/freebsd-${QMAKE_COMPILER}
 .else
 # If something went wrong, default to the base configuration.
 QMAKESPEC?=	${QT_PREFIX}/share/qt4/mkspecs/freebsd-${QMAKE_BASE_COMPILER}
-QMAKE_ARGS+=	QMAKE_CC="${CC}" QMAKE_CXX="${CXX}" \
-		QMAKE_LINK="${CXX}" QMAKE_LINK_SHLIB="${CXX}" \
-		QMAKE_LINK_C="${CC}" QMAKE_LINK_C_SHLIB="${CC}"
 .endif
 
 .for component in ${_USE_QT4_ALL}
