@@ -1,0 +1,16 @@
+===============================================================================
+
+Free Awale has been installed.
+
+To start Free Awale please use
+
+for CLI
+
+    xawale
+
+
+for GUI
+
+    %%PREFIX%%/share/applications/awale.desktop
+
+===============================================================================
