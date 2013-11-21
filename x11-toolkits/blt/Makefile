@@ -3,6 +3,7 @@
 
 PORTNAME=	blt
 PORTVERSION=	2.5.3
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	SF/wize
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:R}
 
-USES+=		gmake tk:84,85
+USES+=		gmake tk
 USE_ZIP=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -42,4 +43,10 @@ post-patch:
 	${FIND} ${WRKSRC}/demos -name "*.tcl" | ${XARGS} \
 	    ${REINPLACE_CMD} -e 's|../src/bltwish|${LOCALBASE}/bin/bltwish|'
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${TCL_VER} > 8.5
+CFLAGS+=	-DUSE_INTERP_RESULT -DUSE_INTERP_ERRORLINE
+.endif
+
+.include <bsd.port.post.mk>

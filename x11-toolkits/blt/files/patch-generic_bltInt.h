@@ -14,7 +14,7 @@
  #ifdef TCL_UTF_MAX
  #define HAVE_UTF	1
 -extern FILE *Blt_OpenUtfFile _ANSI_ARGS_((char *fileName, char *mode));
-+extern FILE *Blt_OpenUtfFile _ANSI_ARGS_((CONST char *fileName, char *mode));
++extern FILE *Blt_OpenUtfFile _ANSI_ARGS_((CONST char *fileName, CONST char *mode));
  #define fopen(f,m)	Blt_OpenUtfFile((f),(m));
  #else
  #define HAVE_UTF	0
