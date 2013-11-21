@@ -264,6 +264,7 @@
     SUBDIR += cons-test
     SUBDIR += cook
     SUBDIR += covtool
+    SUBDIR += cowlib
     SUBDIR += cpan-upload
     SUBDIR += cpan-upload-http
     SUBDIR += cppcheck
