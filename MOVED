@@ -5247,3 +5247,4 @@ devel/rubygem-ripper||2013-11-20|Removed: it is only for Ruby 1.8 which is remov
 editors/mode-info||2013-11-20|Has expired: Misbuilding since 2004, not maintained since 2008
 devel/netbsd-pkgsrc-mk-files||2013-11-20|Has expired: Imported for devel/mk-configure but no longer required
 net/ptpd|net/ptpd2|2013-11-20|Protocol and software no longer supported
+audio/gstreamer1-plugins-celt||2013-11-20|Removed, audio/gstreamer1-plugins-opus can be used as replacement

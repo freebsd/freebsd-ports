@@ -3,7 +3,7 @@
 #    $MCom: ports/multimedia/gstreamer1-libav/Makefile,v 1.4 2013/01/15 21:43:45 kwm Exp $
 
 PORTNAME=	gstreamer1-libav
-PORTVERSION=	1.0.10
+PORTVERSION=	1.2.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-libav/
 DISTNAME=	gst-libav-${PORTVERSION}
@@ -18,18 +18,17 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 LIB_DEPENDS=	liborc-0.4.so:${PORTSDIR}/devel/orc
 
 USE_XZ=		yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GSTREAMER1=	yes
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		gmake pkgconfig
 LIBAV_CONFIG=	--cc=${CC} \
 		--enable-runtime-cpudetect \
 		--enable-pic
 LDFLAGS+=	-Wl,-Bsymbolic
 CFLAGS+=	-fno-force-addr
 
-PLIST_SUB=	VERSION="${GST1_VERSION}"
+PLIST_SUB=	VERSION="1.0"
 
 # sse hardware vector support
 .if defined(MACHINE_CPU) && (${MACHINE_CPU:Msse} == "sse" || ${MACHINE_CPU:Mamd64} == "amd64")
@@ -54,10 +53,11 @@ CONFIGURE_ARGS+=	--with-libav-extra-configure="${LIBAV_CONFIG}"
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900033
-
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 MAKE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
-
 .endif
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gstreamer-1.0/libgstlibav.so
 
 .include <bsd.port.post.mk>

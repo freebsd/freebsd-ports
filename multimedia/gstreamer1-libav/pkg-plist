@@ -1,4 +1,2 @@
-lib/gstreamer-%%VERSION%%/libgstavscale.la
-lib/gstreamer-%%VERSION%%/libgstavscale.so
 lib/gstreamer-%%VERSION%%/libgstlibav.la
 lib/gstreamer-%%VERSION%%/libgstlibav.so

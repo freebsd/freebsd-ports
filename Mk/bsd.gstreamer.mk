@@ -55,10 +55,10 @@ GST_SHLIB_VERSION=	1
 
 GSTREAMER1_PORT=	${PORTSDIR}/multimedia/gstreamer1-plugins
 _GST1_LIB_BASE=		${LOCALBASE}/lib/gstreamer-${GST1_VERSION}
-GST1_VERSION=		1.0
+GST1_VERSION=		1.2
 GST1_MINOR_VERSION=	.0
 GST1_SHLIB_VERSION=	0
-GST1_MINIMAL_VERSION=	.8
+GST1_MINIMAL_VERSION=	.0
 
 #
 # missing base: alsa ivorbisdec
@@ -89,8 +89,8 @@ _GSTREAMER_PLUGINS+= \
 # plugins only in 1.0
 .if defined(USE_GSTREAMER1)
 _GSTREAMER_PLUGINS+= \
-		assrender celt curl dvdread libav modplug png rtmp spandsp vpx \
-		x ximagesrc zbar
+		assrender curl dvdread kate libav modplug openjpeg png rtmp \
+		spandsp vpx webp x ximagesrc zbar
 .endif
 
 # other plugins
@@ -117,8 +117,6 @@ amrwbdec_DEPENDS=	audio/gstreamer-plugins-amrwbdec
 artsd_DEPENDS=	audio/gstreamer-plugins-artsd
 
 audiofile_DEPENDS=	audio/gstreamer-plugins-audiofile
-
-celt_DEPENDS=		audio/gstreamer-plugins-celt
 
 cdaudio_DEPENDS=	audio/gstreamer-plugins-cdaudio
 
@@ -242,7 +240,11 @@ libvisual_DEPENDS=	graphics/gstreamer-plugins-libvisual
 
 opencv_DEPENDS=	graphics/gstreamer-plugins-opencv
 
+openjpeg_DEPENDS=	graphics/gstreamer-plugins-openjpeg
+
 png_DEPENDS=	graphics/gstreamer-plugins-png
+
+webp_DEPENDS=	graphics/gstreamer-plugins-webp
 
 zbar_DEPENDS=	graphics/gstreamer-plugins-zbar
 
@@ -270,6 +272,8 @@ dvd_DEPENDS=	multimedia/gstreamer-plugins-dvd
 good_DEPENDS=	multimedia/gstreamer-plugins-good
 
 gnonlin_DEPENDS=	multimedia/gstreamer-plugins-gnonlin
+
+kate_DEPENDS=		multimedia/gstreamer-plugins-kate
 
 libav_DEPENDS=		multimedia/gstreamer-libav
 libav_GST_PREFIX=	gstreamer1-

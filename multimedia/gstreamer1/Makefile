@@ -3,7 +3,7 @@
 #    $MCom: ports/multimedia/gstreamer1/Makefile,v 1.5 2013/01/15 21:43:45 kwm Exp $
 
 PORTNAME=	gstreamer1
-PORTVERSION=	1.0.10
+PORTVERSION=	1.2.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/
 DISTNAME=	${PORTNAME:S/1//}-${PORTVERSION}
@@ -18,20 +18,17 @@ PORTSCOUT=	limitw:1,even
 CFLAGS:=	${CFLAGS} -O2 -Wno-format
 USES=		bison gettext gmake pathfix pkgconfig
 USE_XZ=		yes
-USE_GNOME=	glib20 gnomehier introspection:build ltverhack:0 ltasneededhack
-USE_AUTOTOOLS=	libtool
+USE_GNOME=	glib20 gnomehier introspection:build ltverhack
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tests \
 		--disable-examples \
 		--disable-failing-tests \
 		--disable-fatal-warnings \
 		--disable-gtk-doc
-#--enable-gst-debug --enable-debug
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	ac_cv_func_register_printf_function="no"
 PLIST_SUB=	VERSION=${GST10_VERSION}
 USE_LDCONFIG=	yes
-GST10_VERSION=	${PORTVERSION:R}
+GST10_VERSION=	1.0
 
 OPTIONS_DEFINE=	LIBCHECK
 LIBCHECK_DESC=	Unit tests support
