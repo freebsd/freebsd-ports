@@ -3,7 +3,7 @@
 
 PORTNAME=	gstreamer1-plugins-all
 PORTVERSION=	${GST1_VERSION}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -14,6 +14,7 @@ COMMENT=	Meta-port of all gstreamer 1.x plugins with options
 
 .MAKE.FreeBSD_UL=	yes
 NO_BUILD=	yes
+NO_INSTALL=	yes
 USE_GSTREAMER1=	yes
 
 .include "${.CURDIR}/../../Mk/bsd.gstreamer.mk"
@@ -40,7 +41,5 @@ OPTIONS_DEFINE_i386=	SPC
 USE_GSTREAMER1+=${f:L}
 .endif
 .endfor
-
-do-install:	# empty
 
 .include <bsd.port.mk>

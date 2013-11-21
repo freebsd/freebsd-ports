@@ -276,7 +276,6 @@
     SUBDIR += gstreamer1-plugins-amrnb
     SUBDIR += gstreamer1-plugins-amrwbdec
     SUBDIR += gstreamer1-plugins-cdparanoia
-    SUBDIR += gstreamer1-plugins-celt
     SUBDIR += gstreamer1-plugins-faac
     SUBDIR += gstreamer1-plugins-faad
     SUBDIR += gstreamer1-plugins-flac

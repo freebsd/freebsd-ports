@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTREVISION=	0
-CATEGORIES=	audio
+CATEGORIES=	multimedia
 
-COMMENT=	Gstreamer celt plugin
+COMMENT=	Gstreamer kate codec plugin
 
-GST_PLUGIN=	celt
+GST_PLUGIN=	kate
 DIST=		bad
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins

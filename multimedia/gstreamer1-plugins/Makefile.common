@@ -15,7 +15,6 @@ BASE_GST_ALL_PLUGINS= \
 
 BAD_GST_ALL_PLUGINS+= \
 		assrender \
-		celt \
 		curl \
 		dts \
 		faac \
@@ -23,6 +22,7 @@ BAD_GST_ALL_PLUGINS+= \
 		flite \
 		gme \
 		gsm \
+		kate \
 		libmms \
 		librfb \
 		modplug \
@@ -32,12 +32,14 @@ BAD_GST_ALL_PLUGINS+= \
 		ofa \
 		openal \
 		opencv \
+		openjpeg \
 		opus \
 		resindvd \
 		rtmp \
 		schro \
 		soundtouch \
 		spandsp \
+		webp \
 		zbar \
 
 # plugins not yet ported to the 1.0 API, or not portable
@@ -45,20 +47,15 @@ BAD_GST_ALL_PLUGINS+= \
 		apexsink \
 		cdaudio \
 		chromaprint \
-		cog \
 		decklink \
 		directfb \
-		dirac \
 		eglgles \
-		jasper \
-		kate \
 		ladspa \
 		linsys \
 		lv2 \
 		mimic \
 		mpg123 \
 		musepack \
-		musicbrainz \
 		mythtv \
 		nas \
 		opensles \
@@ -74,7 +71,6 @@ BAD_GST_ALL_PLUGINS+= \
 		voaacenc \
 		voamrwbenc \
 		wayland \
-		swfdec \
 		xvid
 
 BAD_GST_NON_PLUGINS= \
@@ -227,9 +223,6 @@ gst_cdparanoia_LIB_DEPENDS=	libcdda_interface.so:${PORTSDIR}/audio/cdparanoia
 # cdio
 gst_cdio_LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio
 
-# celt
-gst_celt_LIB_DEPENDS=	libcelt0.so:${PORTSDIR}/audio/celt
-
 # curl
 gst_curl_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
@@ -276,6 +269,9 @@ gst_jack_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 # jpeg
 gst_jpeg_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
+# kate
+gst_kate_LIB_DEPENDS=	libkate.so:${PORTSDIR}/multimedia/libkate
+
 # lame
 gst_lame_LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame
 
@@ -319,6 +315,9 @@ gst_ogg_LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
 
 # opencv
 gst_opencv_LIB_DEPENDS=	libopencv_highgui.so:${PORTSDIR}/graphics/opencv
+
+# openjpeg
+gst_openjpeg_LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg
 
 # opus
 gst_opus_LIB_DEPENDS=	libopus.so:${PORTSDIR}/audio/opus
@@ -393,6 +392,9 @@ gst_vpx_PLIST_FILES=	${GST_LIB_DIR}/libgstvpx.la \
 			share/gstreamer-${VERSION}/presets/GstVP8Enc.prs
 gst_vpx_PLIST_DIRSTRY=	share/gstreamer-${VERSION}/presets \
 			share/gstreamer-${VERSION}
+
+# webp
+gst_webp_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
 
 # X ximage and xvimage sinks aka output
 .if ${DIST} == base
