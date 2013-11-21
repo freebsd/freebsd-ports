@@ -1,0 +1,19 @@
+lib/erlang/lib/cowlib-%%VERSION%%/ebin/cow_cookie.beam
+lib/erlang/lib/cowlib-%%VERSION%%/ebin/cow_date.beam
+lib/erlang/lib/cowlib-%%VERSION%%/ebin/cow_http.beam
+lib/erlang/lib/cowlib-%%VERSION%%/ebin/cow_mimetypes.beam
+lib/erlang/lib/cowlib-%%VERSION%%/ebin/cow_qs.beam
+lib/erlang/lib/cowlib-%%VERSION%%/ebin/cow_spdy.beam
+lib/erlang/lib/cowlib-%%VERSION%%/ebin/cowlib.app
+lib/erlang/lib/cowlib-%%VERSION%%/src/cow_cookie.erl
+lib/erlang/lib/cowlib-%%VERSION%%/src/cow_date.erl
+lib/erlang/lib/cowlib-%%VERSION%%/src/cow_http.erl
+lib/erlang/lib/cowlib-%%VERSION%%/src/cow_mimetypes.erl
+lib/erlang/lib/cowlib-%%VERSION%%/src/cow_mimetypes.erl.src
+lib/erlang/lib/cowlib-%%VERSION%%/src/cow_qs.erl
+lib/erlang/lib/cowlib-%%VERSION%%/src/cow_spdy.erl
+lib/erlang/lib/cowlib-%%VERSION%%/src/cow_spdy.hrl
+lib/erlang/lib/cowlib-%%VERSION%%/src/cowlib.app.src
+@dirrmtry lib/erlang/lib/cowlib-%%VERSION%%/src
+@dirrmtry lib/erlang/lib/cowlib-%%VERSION%%/ebin
+@dirrmtry lib/erlang/lib/cowlib-%%VERSION%%
