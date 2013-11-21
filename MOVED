@@ -5001,7 +5001,7 @@ net/gnome-vnc||2013-10-05|Depends on EOLed gnome1
 news/grn||2013-10-05|Depends on EOLed gnome1
 security/fpm||2013-10-05|Depends on EOLed gnome1
 sysutils/xsu||2013-10-05|Depends on EOLed gnome1
-securty/fwbuilder-devel||2013-10-05|Appears not to be actively developed any more.
+securty/fwbuilder-devel||2013-10-05|Appears not to be actively developed any more
 devel/libglade||2013-10-07|Component of the obsolete gnome1
 databases/gnome-db||2013-10-07|Component of the obsolete gnome1
 databases/libgda||2013-10-07|Component of the obsolete gnome1
@@ -5165,7 +5165,7 @@ devel/ruby-io-reactor||2013-11-03|Has expired: Does not work with Ruby 1.9
 textproc/p5-Text-Emoticon-MSN||2013-11-03|Has expired: Primary MSN Messenger service terminated 30 APR 2013
 textproc/jakarta-poi|textproc/apache-poi|2013-11-04|Replaced with apache-poi
 net-im/qutim||2013-11-05|Has expired: Old version, a new one needs to be ported from scratch
-textproc/gtkdiff||2013-11-05|Has expired: Gnome1 EOLed by upstream for a while.
+textproc/gtkdiff||2013-11-05|Has expired: Gnome1 EOLed by upstream for a while
 net-p2p/libtorrent-rasterbar-16|net-p2p/libtorrent-rasterbar|2013-11-06|Moved to net-p2p/libtorrent-rasterbar since it's a stable version
 net-p2p/libtorrent-rasterbar-python-16|net-p2p/libtorrent-rasterbar-python|2013-11-06|Moved to net-p2p/libtorrent-rasterbar-python since it's a stable version
 devel/ORBit||2013-11-07|Has expired: EOLed upstream for very long
@@ -5182,12 +5182,12 @@ games/windstille||2013-11-12|Has expired: Unplayable, development ceased
 games/intensityengine||2013-11-12|Has expired: Unplayable, main server down, development ceased
 games/tmw|games/manaplus|2013-11-12|Replaced with games/manaplus
 graphics/mesagl||2013-11-14|Old unmaintained version. Use graphics/libosmesa instead
-editors/xxe||2013-11-15|Has expired: XXE becomes unfetchable every 3-4 months as distfile is replaced with new version.  This high-maintenance port requires a maintainer to avoid removal.
+editors/xxe||2013-11-15|Has expired: XXE becomes unfetchable every 3-4 months as distfile is replaced with new version.  This high-maintenance port requires a maintainer to avoid removal
 editors/xml2rfc-xxe||2013-11-15|Has expired: Depends on editors/xxe, which is due to be removed due to lack of maintainer
 devel/perltidy|devel/p5-Perl-Tidy|2013-11-15|Renamed to match upstream naming
 math/vtk|math/vtk5|2013-11-17|Removed, EOLed
 net-im/decibel||2013-11-17|Has expired: Deprecated and unsupported upstream for many years, not used by anything
-databases/postgresql-libpq++||2013-11-17|Has expired: Not maintained upstreams for 10+ years.
+databases/postgresql-libpq++||2013-11-17|Has expired: Not maintained upstreams for 10+ years
 audio/gmpeg-devel||2013-11-17|Removed, no active development since more than 8 years
 graphics/gqview-devel||2013-11-17|Removed, no active development since more than 8 years
 textproc/stardict2-dictd_mova|textproc/stardict-dictd_mova|2013-11-17|Renamed
