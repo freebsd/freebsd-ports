@@ -1,19 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	libmodbus
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 CATEGORIES=	comms
+MASTER_SITES=	http://libmodbus.org/site_media/build/
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Modbus library
 
 LICENSE=	LGPL21
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	stephane
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		pathfix
+USES=		gmake pathfix
 
 .include <bsd.port.mk>
