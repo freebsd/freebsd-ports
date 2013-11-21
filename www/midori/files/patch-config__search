@@ -1,5 +1,5 @@
---- ./config/search.orig	2013-08-14 18:32:02.000000000 +0000
-+++ ./config/search	2013-08-15 10:17:00.000000000 +0000
+--- ./config/search.orig	2013-11-20 01:26:52.000000000 +0000
++++ ./config/search	2013-11-20 18:03:47.000000000 +0000
 @@ -16,6 +16,12 @@
  uri=http://www.google.com/search?q=%s
  token=g
