@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	logstash
-PORTVERSION=	1.1.13
+PORTVERSION=	1.2.1
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://logstash.objects.dreamhost.com/release/ \
-		http://semicomplete.com/files/logstash/
+		https://download.elasticsearch.org/logstash/logstash/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-flatjar
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
@@ -32,20 +32,13 @@ PLIST_SUB+=	LOGSTASH_HOME=${LOGSTASH_HOME_REL} LOGSTASH_JAR=${LOGSTASH_JAR} \
 		LOGSTASH_RUN=${LOGSTASH_RUN} \
 		LOGSTASH_DATA_DIR=${LOGSTASH_DATA_DIR}
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${LOGSTASH_RUN}
-	${MKDIR} ${ETCDIR}
-	${MKDIR} ${LOGSTASH_HOME}
-	${MKDIR} ${LOGSTASH_DATA_DIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${LOGSTASH_JAR} ${LOGSTASH_HOME}
-	${INSTALL_DATA} ${FILESDIR}/logstash.conf.sample ${ETCDIR}
-	@if [ ! -f ${ETCDIR}/logstash.conf ]; then \
-		${CP} -p ${ETCDIR}/logstash.conf.sample ${ETCDIR}/logstash.conf ; \
-	fi
-	${INSTALL_DATA} ${FILESDIR}/elasticsearch.yml.sample ${ETCDIR}
-	@if [ ! -f ${ETCDIR}/elasticsearch.yml ]; then \
-		${CP} -p ${ETCDIR}/elasticsearch.yml.sample ${ETCDIR}/elasticsearch.yml ; \
-	fi
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${MKDIR} ${STAGEDIR}${LOGSTASH_HOME}
+	${MKDIR} ${STAGEDIR}${LOGSTASH_RUN}
+	${MKDIR} ${STAGEDIR}${LOGSTASH_DATA_DIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${LOGSTASH_JAR} ${STAGEDIR}${LOGSTASH_HOME}
+	${INSTALL_DATA} ${FILESDIR}/logstash.conf.sample ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${FILESDIR}/elasticsearch.yml.sample ${STAGEDIR}${ETCDIR}
 
 .include <bsd.port.mk>
