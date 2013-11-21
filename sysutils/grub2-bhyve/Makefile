@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grub2-bhyve
-DISTVERSION=	0.2
+DISTVERSION=	0.21
 CATEGORIES=	sysutils
 
 MAINTAINER=	kmoore@FreeBSD.org
