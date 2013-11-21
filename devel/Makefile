@@ -732,9 +732,9 @@
     SUBDIR += hs-filestore
     SUBDIR += hs-filesystem-conduit
     SUBDIR += hs-fsnotify
+    SUBDIR += hs-gconf
     SUBDIR += hs-generic-deriving
     SUBDIR += hs-geniplate
-    SUBDIR += hs-gconf
     SUBDIR += hs-ghc-events
     SUBDIR += hs-ghc-mtl
     SUBDIR += hs-ghc-paths
@@ -1385,10 +1385,10 @@
     SUBDIR += p5-AnyData
     SUBDIR += p5-AnyEvent
     SUBDIR += p5-AnyEvent-AIO
+    SUBDIR += p5-AnyEvent-Connection
     SUBDIR += p5-AnyEvent-DBI
     SUBDIR += p5-AnyEvent-DBI-Abstract
     SUBDIR += p5-AnyEvent-DBus
-    SUBDIR += p5-AnyEvent-Connection
     SUBDIR += p5-AnyEvent-Filesys-Notify
     SUBDIR += p5-AnyEvent-Gearman
     SUBDIR += p5-AnyEvent-Graphite
@@ -2240,8 +2240,8 @@
     SUBDIR += p5-Log-Trace
     SUBDIR += p5-Log-TraceMessages
     SUBDIR += p5-Logfile-Rotate
-    SUBDIR += p5-Lvalue
     SUBDIR += p5-Luka
+    SUBDIR += p5-Lvalue
     SUBDIR += p5-MRO-Compat
     SUBDIR += p5-MRO-Define
     SUBDIR += p5-Mac-FileSpec-Unixish
@@ -2553,8 +2553,8 @@
     SUBDIR += p5-Pod-Coverage-TrustPod
     SUBDIR += p5-Pod-Tests
     SUBDIR += p5-Pragmatic
-    SUBDIR += p5-Proc-Background
     SUBDIR += p5-Proc-BackOff
+    SUBDIR += p5-Proc-Background
     SUBDIR += p5-Proc-Daemon
     SUBDIR += p5-Proc-Fork
     SUBDIR += p5-Proc-Guard
@@ -3554,9 +3554,6 @@
     SUBDIR += py-five.globalrequest
     SUBDIR += py-five.localsitemanager
     SUBDIR += py-flake8
-    SUBDIR += py-futures
-    SUBDIR += py-paver
-    SUBDIR += py-pyflakes
     SUBDIR += py-flask-babel
     SUBDIR += py-flexmock
     SUBDIR += py-foolscap
@@ -3567,6 +3564,7 @@
     SUBDIR += py-fudge
     SUBDIR += py-funcparserlib
     SUBDIR += py-fusefs
+    SUBDIR += py-futures
     SUBDIR += py-game
     SUBDIR += py-gamin
     SUBDIR += py-gdata
@@ -3662,6 +3660,7 @@
     SUBDIR += py-parsedatetime
     SUBDIR += py-parsing
     SUBDIR += py-pathtools
+    SUBDIR += py-paver
     SUBDIR += py-pbr
     SUBDIR += py-pefile
     SUBDIR += py-period
@@ -3689,8 +3688,9 @@
     SUBDIR += py-pydasm
     SUBDIR += py-pyechonest
     SUBDIR += py-pyev
-    SUBDIR += py-pygithub
+    SUBDIR += py-pyflakes
     SUBDIR += py-pygit2
+    SUBDIR += py-pygithub
     SUBDIR += py-pygpx
     SUBDIR += py-pykde4
     SUBDIR += py-pykdeuic4
@@ -4159,11 +4159,11 @@
     SUBDIR += rubygem-iobuffer
     SUBDIR += rubygem-jammit
     SUBDIR += rubygem-jeweler
+    SUBDIR += rubygem-jquery-ui-themes
     SUBDIR += rubygem-jruby-jars
     SUBDIR += rubygem-json
     SUBDIR += rubygem-json146
     SUBDIR += rubygem-json_pure
-    SUBDIR += rubygem-jquery-ui-themes
     SUBDIR += rubygem-kgio
     SUBDIR += rubygem-launchy
     SUBDIR += rubygem-listen
