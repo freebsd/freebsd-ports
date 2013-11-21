@@ -6,31 +6,24 @@ PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	3
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Python WSGI adapter module for Apache
 
 LICENSE=	AL2
 
-#LATEST_LINK=	mod_wsgi
 CONFLICTS=	${PKGNAMEPREFIX}mod_wsgi-2.* mod_wsgi-2.*
 
 PROJECTHOST=	modwsgi
 
 USE_APACHE=	22+
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-apxs="${APXS}" --with-python="${PYTHON_CMD}"
 
 SUB_FILES=	pkg-message
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} >= 300 && ${PYTHON_REL} < 310
-IGNORE=		is unsupported with Python 3.0
-.endif
 
 pre-everything::
 	@${ECHO_MSG} "======================= ATTENTION! ======================"
@@ -42,6 +35,5 @@ pre-everything::
 
 post-install:
 	@${APXS} -e -a -n "${SHORTMODNAME}" "${APACHEMODDIR}/${MODULENAME}.so"
-	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
