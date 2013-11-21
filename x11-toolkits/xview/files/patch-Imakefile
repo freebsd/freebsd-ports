@@ -1,5 +1,5 @@
 --- Imakefile.orig	2005-03-28 06:41:59.000000000 -0800
-+++ Imakefile	2012-02-02 13:40:06.681898858 -0800
++++ Imakefile	2013-11-20 16:44:43.964144452 -0800
 @@ -10,8 +10,8 @@
  XCOMM # Top level Imakefile for ProductNameAndRelease
  XCOMM # @(#)Imakefile	1.7 1/7/92 SMI
@@ -28,6 +28,15 @@
  XCOMM # even if these SUBDIRS are not included in the general rules, be sure to
  XCOMM # do a make clean in them.
         CLEAN_SUBDIRS = clients contrib doc fonts bitmaps images lib misc util config
+@@ -52,7 +60,7 @@
+ 	$(MKDIRHIER) $(DESTDIR)$(XVDESTDIR)
+ #endif
+ 
+-InstallManPage(xview,$(MANDIR))
++InstallManPage(XView,$(MANDIR))
+ 
+ World::
+ 	@echo ""
 @@ -65,11 +73,11 @@
  	@echo ""
  	@date
