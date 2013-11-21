@@ -1,4 +1,5 @@
 bin/afternoonstalker
+man/man6/afternoonstalker.6.gz
 share/applications/afternoonstalker.desktop
 share/pixmaps/afternoonstalker.png
 %%DATADIR%%/maze0.set
