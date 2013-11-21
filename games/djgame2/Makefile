@@ -16,9 +16,6 @@ NO_BUILD=	yes
 USE_ZIP=	yes
 USE_QT4=	gui qt3support qmake_build uic_build rcc_build moc_build svg
 
-QMAKE?=		qmake-qt4
-QMAKESPEC?=	${LOCALBASE}/share/qt4/mkspecs/freebsd-g++
-
 WRKSRC=		${WRKDIR}/${DISTNAME}
 DATADIR=	${PREFIX}/share/djgame2
 
