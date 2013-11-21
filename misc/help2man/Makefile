@@ -19,9 +19,9 @@ USES=		gmake perl5
 
 INFO=		${PORTNAME}
 MAN1=		${PORTNAME}.1
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/help2man.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
