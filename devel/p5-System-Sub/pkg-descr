@@ -1,0 +1,4 @@
+System::Sub provides in your package a sub that wraps the call to
+an external program.
+
+WWW: https://metacpan.org/release/System-Sub
