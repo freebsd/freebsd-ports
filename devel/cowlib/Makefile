@@ -2,7 +2,7 @@
 
 PORTNAME=	cowlib
 PORTVERSION=	0.4.0
-CATEGORIES=	www
+CATEGORIES=	devel
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Erlang support library for manipulating Web protocols
