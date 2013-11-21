@@ -10,7 +10,7 @@ MASTER_SITES=	SF/worldforge/${PORTNAME}%20%28server%29/${PORTVERSION}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Server for WorldForge games
 
-LIB_DEPENDS=	Atlas-0.6.1:${PORTSDIR}/devel/atlas-devel \
+LIB_DEPENDS=	Atlas-0.6.2:${PORTSDIR}/devel/atlas-devel \
 		varconf-1.0.8:${PORTSDIR}/devel/varconf \
 		wfmath-1.0.1:${PORTSDIR}/math/wfmath \
 		mercator-0.3.3:${PORTSDIR}/devel/mercator \
