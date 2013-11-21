@@ -17,7 +17,7 @@ USES=		desktop-file-utils pkgconfig qmake
 USE_BZIP2=	yes
 USE_GHOSTSCRIPT_RUN=	yes
 USE_QT4=	gui network xml webkit \
-		moc_build qmake_build rcc_build uic_build
+		moc_build rcc_build uic_build
 USE_TEX=	latex dvipsk
 QMAKE_ARGS=	ICONDIR=${PREFIX}/share/pixmaps \
 		DESKTOPDIR=${DESKTOPDIR}

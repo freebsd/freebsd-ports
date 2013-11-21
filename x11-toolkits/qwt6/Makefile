@@ -10,7 +10,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt Widgets for Technical Applications
 
 USES=		gmake qmake
-USE_QT4=	gui opengl svg xml moc_build qmake_build
+USE_QT4=	gui opengl svg xml moc_build
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 DOCSDIR=	${PREFIX}/share/doc/qwt6
