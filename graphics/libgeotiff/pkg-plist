@@ -29,6 +29,7 @@ lib/libgeotiff.a
 lib/libgeotiff.la
 lib/libgeotiff.so
 lib/libgeotiff.so.3
+man/man1/listgeo.1.gz
 %%DATADIR%%/epsg_csv/alias.csv
 %%DATADIR%%/epsg_csv/area.csv
 %%DATADIR%%/epsg_csv/change.csv
