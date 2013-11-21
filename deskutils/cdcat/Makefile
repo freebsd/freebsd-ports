@@ -31,7 +31,7 @@ BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
 USES=		qmake
 USE_BZIP2=	yes
 USE_QT4=	corelib gui xml \
-		linguist_build moc_build qmake_build uic_build
+		linguist_build moc_build uic_build
 INSTALLS_ICONS=	yes
 
 QMAKE_ARGS+=	INCLUDEPATH+="${L7Z_WRKSRC}/Lib7Zip" \
@@ -45,7 +45,6 @@ QMAKE_ARGS+=	INCLUDEPATH+="${L7Z_WRKSRC}/Lib7Zip" \
 		DEFINES+="MEDIAINFO_UNICODE" \
 		DEFINES+="USE_LIBEXIF"
 QMAKE_PRO=	${PORTNAME}.pro
-LRELEASE=	${QT_PREFIX}/bin/lrelease-qt4
 
 # spoof tinderbox: build deps for multimedia/mediainfo
 USE_AUTOTOOLS=	autoconf:env automake:env libtool:env

@@ -14,7 +14,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_BZIP2=	yes
 USES=		desktop-file-utils qmake
-USE_QT4=	gui network qtestlib moc_build qmake_build rcc_build uic_build
+USE_QT4=	gui network qtestlib moc_build rcc_build uic_build
 
 PLIST_FILES=	bin/qgo share/applications/qgo.desktop share/pixmaps/qgo.png
 

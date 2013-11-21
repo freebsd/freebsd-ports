@@ -16,7 +16,7 @@ LICENSE=	GPLv3
 USES=		qmake dos2unix
 DOS2UNIX_FILES=	config.inc
 USE_XORG=	xscrnsaver
-USE_QT4=	qmake_build moc_build rcc_build uic_build designer_build \
+USE_QT4=	moc_build rcc_build uic_build designer_build \
 		webkit
 USE_LDCONFIG=	yes
 

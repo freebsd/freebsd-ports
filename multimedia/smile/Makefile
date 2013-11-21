@@ -16,7 +16,7 @@ RUN_DEPENDS=	sox>=14.0:${PORTSDIR}/audio/sox \
 		ImageMagick>=6.4:${PORTSDIR}/graphics/ImageMagick
 
 USES=		qmake
-USE_QT4=	qmake_build gui corelib rcc_build moc_build uic_build \
+USE_QT4=	gui corelib rcc_build moc_build uic_build \
 		opengl webkit
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -18,7 +18,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 USES=		qmake gmake
 USE_QT4=	gui xml \
-		moc_build qmake_build rcc_build uic_build \
+		moc_build rcc_build uic_build \
 		iconengines_run
 ALL_TARGET=	Alabastra
 

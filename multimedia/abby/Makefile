@@ -16,7 +16,7 @@ CCLIVE_DESC=	Use cclive backend (instead of clive)
 
 USES=		qmake
 USE_BZIP2=	yes
-USE_QT4=	gui network xml moc_build qmake_build rcc_build uic_build
+USE_QT4=	gui network xml moc_build rcc_build uic_build
 
 PLIST_FILES=	bin/abby
 

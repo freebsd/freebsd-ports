@@ -16,7 +16,7 @@ LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell \
 
 USES=		qmake shared-mime-info
 USE_SDL=	mixer
-USE_QT4=	moc_build qmake_build rcc_build uic_build corelib gui xml \
+USE_QT4=	moc_build rcc_build uic_build corelib gui xml \
 		svg opengl qt3support
 QMAKE_ARGS=	LOCALBASE=${LOCALBASE}
 

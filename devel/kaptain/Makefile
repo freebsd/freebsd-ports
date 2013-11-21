@@ -15,7 +15,7 @@ LICENSE=	GPLv2 # (or later)
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USES=		qmake
-USE_QT4=	qt3support moc_build qmake_build
+USE_QT4=	qt3support moc_build
 
 INFO=		kaptain
 PORTDOCS=	*
