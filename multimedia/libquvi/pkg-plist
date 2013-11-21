@@ -6,6 +6,7 @@ lib/libquvi.la
 lib/libquvi.so
 lib/libquvi.so.7
 libdata/pkgconfig/libquvi.pc
+man/man3/libquvi.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/About.txt
 %%PORTDOCS%%%%DOCSDIR%%/Help/Development.txt
 %%PORTDOCS%%%%DOCSDIR%%/Help/Help.txt
