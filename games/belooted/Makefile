@@ -13,8 +13,8 @@ COMMENT=	A popular 32-card trick-taking game played in France
 
 LICENSE=	GPLv2
 
-USES=		gmake pkgconfig
-USE_GNOME=	gtk20 desktopfileutils
+USES=		gmake pkgconfig desktop-file-utils
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -22,16 +22,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
-	@-update-desktop-database
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
