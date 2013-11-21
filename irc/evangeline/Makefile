@@ -5,18 +5,19 @@ PORTNAME=	evangeline
 PORTVERSION=	1.1.4
 CATEGORIES=	irc tcl
 MASTER_SITES=	http://www.averse.piasta.pl/_data/evangeline/${PORTVERSION}/
-DISTFILES=	${PORTNAME}-${PORTVERSION}-b1.tar.gz
+DISTNAME=	${PORTNAME}-${PORTVERSION}-b1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC Bot based on Eggdrop
 
+LICENSE=	GPLv2
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_TCL=	yes
-USE_GMAKE=	yes
+USES=		gmake tcl
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_VER:S/.//}.so \
-    		--with-tclinc=${LOCALBASE}/include/tcl${TCL_VER}/tcl.h
+CONFIGURE_ARGS+=--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_SHLIB_VER}.so \
+    		--with-tclinc=${TCL_INCLUDEDIR}/tcl.h
 
 PLIST_FILES=	bin/evangeline
 
@@ -24,7 +25,6 @@ OPTIONS_DEFINE=	IPV6 CRYPT
 OPTIONS_DEFAULT=	CRYPT
 CRYPT_DESC=	Enable Encryption
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}
@@ -59,5 +59,8 @@ post-configure:
 	    's,^char owner[^ ]* = [^;]*,const char* owner = "${OWNER_NAME}",' \
 	    ${WRKDIR}/evangeline/src/main.c
 .endif
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-${PORTVERSION}-B1 ${STAGEDIR}${PREFIX}/bin/evangeline
 
 .include <bsd.port.mk>
