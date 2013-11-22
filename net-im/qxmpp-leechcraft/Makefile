@@ -13,21 +13,18 @@ COMMENT=	XMPP client library based on C++ and Qt
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	speex:${PORTSDIR}/audio/speex
+LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
 
+USES=		qmake
 USE_BZIP2=	yes
-USE_QT4=	gui moc_build network qmake_build rcc_build uic_build xml
+USE_QT4=	gui moc_build network rcc_build uic_build xml
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|pkgconfig|../libdata/&|' \
 		${WRKSRC}/src/src.pro
 	@${REINPLACE_CMD} -E 's|(docs\.commands\|INSTALLS)|#&|' \
 		${WRKSRC}/${PORTNAME}.pro
-
-do-configure:
-	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS}
 
 .include <bsd.port.mk>

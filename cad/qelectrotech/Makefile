@@ -14,26 +14,26 @@ COMMENT=	QElectroTech is application to design electric diagrams
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_QT4=	gui moc_build network qmake_build rcc_build \
-		sql-sqlite3 svg uic_build xml designer
+USES=		qmake
+USE_QT4=	gui moc_build network rcc_build \
+		sql-sqlite3_run svg uic_build xml designer
 USE_GCC=	4.7+
 INSTALLS_ICONS=	yes
 
 CXXFLAGS+=	"-fno-ipa-sra"
-QMAKEFLAGS+=	QMAKE_RPATHDIR="${_GCC_RUNTIME}"
+QMAKE_ARGS+=	QMAKE_RPATHDIR="${_GCC_RUNTIME}"
 
 MAN1=		qelectrotech.1
 MANLANG=	"" cs el es fr.ISO8859-1 fr.UTF-8 fr it pl pt_PT
 MANCOMPRESSED=	yes
 
-do-configure:
+pre-configure:
 	${MV} ${WRKSRC}/man/files/pt ${WRKSRC}/man/files/pt_PT
-	${REINPLACE_CMD} -e 's,/usr/local/,${STAGEDIR}${PREFIX}/,g' \
+	${REINPLACE_CMD} -e 's,/usr/local/,${PREFIX}/,g' \
 		${WRKSRC}/${PORTNAME}.pro
 	${REINPLACE_CMD} -e 's,doc/,share/doc/,g' \
 		${WRKSRC}/${PORTNAME}.pro
 	${REINPLACE_CMD} -e 's,../share,share,g' \
 		${WRKSRC}/${PORTNAME}.pro
-	cd ${WRKSRC} && ${QMAKE} ${QMAKEFLAGS} ${PORTNAME}.pro
 
 .include <bsd.port.mk>

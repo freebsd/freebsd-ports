@@ -12,10 +12,10 @@ COMMENT=	Fast and lightweight image viewer
 
 LICENSE=	GPLv2
 
+USES=		qmake
 USE_BZIP2=	yes
-USE_QT4=	gui xml dbus imageformats linguist_build qmake_build \
+USE_QT4=	gui xml dbus imageformats_run linguist_build \
 		moc_build rcc_build uic_build
-QMAKEFLAGS+=	PREFIX="${PREFIX}"
 
 PLIST_FILES=	bin/qiviewer \
 		share/applications/qiviewer.desktop \
@@ -29,19 +29,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
 OPTIONS_DEFINE=	WEBP
 WEBP_DESC=	Support for WebP image format (experimental)
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MWEBP}
-QMAKEFLAGS+=	CONFIG+=enable-webp
-PLIST_SUB+=	WEBP=""
-.else
-PLIST_SUB+=	WEBP="@comment "
-.endif
-
-do-configure:
-	@cd ${WRKSRC} && ${QMAKE} ${QMAKEFLAGS}
+WEBP_QMAKE_ON=	CONFIG+=enable-webp
 
 post-configure:
 	${REINPLACE_CMD} -e 's|lrelease|lrelease-qt4|g' \

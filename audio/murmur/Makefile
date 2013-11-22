@@ -15,9 +15,11 @@ LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf
 
 USERS=		murmur
 GROUPS=		murmur
-USE_QT4=	qmake_build moc_build corelib network xml sql sql-sqlite3_run
+USES=		qmake
+USE_QT4=	moc_build corelib network xml sql sql-sqlite3_run
 
 CONFIG=		no-client
+QMAKE_ARGS=	"CONFIG+=${CONFIG}"
 
 USE_RC_SUBR=	murmur
 SUB_LIST+=	USERS="${USERS}" GROUPS="${GROUPS}"
@@ -49,10 +51,6 @@ CONFIG+=	no-bonjour
 
 post-patch:
 	@${ECHO_CMD} 'QMAKE_LFLAGS += -fstack-protector' >> ${WRKSRC}/src/murmur/murmur.pro
-
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} QMAKESPEC=${QMAKESPEC} \
-		${QMAKE} -unix PREFIX=${PREFIX} ${QMAKEFLAGS} main.pro "CONFIG+=${CONFIG}"
 
 pre-install:
 	@${SED} -i '' -e 's|database=.*|database=/var/db/murmur/murmur.sqlite|' ${WRKSRC}/scripts/murmur.ini

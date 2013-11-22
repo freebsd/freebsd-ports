@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/Mumble/${PORTVERSION}
 
 MAINTAINER=	feld@FreeBSD.org
-COMMENT=	A voice chat software primarily intended for use while gaming
+COMMENT=	Voice chat software primarily intended for use while gaming
 
 LIB_DEPENDS+=	libspeex.so:${PORTSDIR}/audio/speex \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile \
@@ -17,18 +17,18 @@ LIB_DEPENDS+=	libspeex.so:${PORTSDIR}/audio/speex \
 		libprotoc.so:${PORTSDIR}/devel/protobuf \
 		libopus.so:${PORTSDIR}/audio/opus
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig qmake
 USE_QT4=	gui svg iconengines_run xml sql network l10n \
-		linguist_build qmake_build moc_build rcc_build uic_build \
+		linguist_build moc_build rcc_build uic_build \
 		opengl sql-sqlite3_run
 
 USE_XORG=	ice
-HAS_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 MAKE_JOBS_UNSAFE=yes
 
 CONFIG=		no-server no-alsa no-speechd no-bundled-speex no-bundled-opus no-update \
 		bundled-celt no-g15 no-portaudio no-pulseaudio no-xevie no-embed-qt-translations
+QMAKE_ARGS=	"CONFIG+=${CONFIG}"
 
 OPTIONS_DEFINE=	DBUS BONJOUR
 OPTIONS_DEFAULT=	DBUS
@@ -50,9 +50,6 @@ LIB_DEPENDS+=	libdns_sd.so:${PORTSDIR}/net/mDNSResponder
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/overlay_gl/overlay_gl.pro
-
-do-configure:
-	cd ${WRKSRC} && ${SETENV} QMAKESPEC=${QMAKESPEC} ${QMAKE} PREFIX=${PREFIX} main.pro "CONFIG+=${CONFIG}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/release/mumble ${STAGEDIR}${PREFIX}/bin

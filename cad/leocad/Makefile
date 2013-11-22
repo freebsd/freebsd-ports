@@ -23,8 +23,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/ldraw/models/car.dat:${PORTSDIR}/cad/ldraw
 WRKSRC=		${WRKDIR}/${PORTNAME}
 LEOCAD_PIECES=	pieces-7439.zip
 
-USES=		desktop-file-utils gmake pkgconfig shared-mime-info
-USE_QT4=	moc_build qmake_build rcc_build uic_build iconengines imageformats \
+USES=		desktop-file-utils gmake pkgconfig qmake shared-mime-info
+USE_QT4=	moc_build rcc_build uic_build iconengines_run imageformats_run \
 		corelib gui network opengl
 
 USE_GL=		glut
@@ -39,7 +39,6 @@ ICON_SIZES=	16x16 24x24 32x32 48x48 128x128 256x256
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:
@@ -59,28 +58,24 @@ post-patch:
 	@cd ${WRKSRC}/tools/icon && ${CP} -a ${PORTNAME}_128x128.png icon128.png
 	@cd ${WRKSRC}/tools/icon && ${MV} icon.svg ${PORTNAME}.svg
 
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX}
-
 post-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/pieces/* ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/pieces/* ${STAGEDIR}${DATADIR}
 
 .for s in ${ICON_SIZES}
 	@${MKDIR} ${PREFIX}/share/icons/hicolor/${s}/apps
 	${INSTALL_DATA} ${WRKSRC}/tools/icon/${PORTNAME}_${s}.png \
-		${PREFIX}/share/icons/hicolor/${s}/apps/${PORTNAME}.png
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/${PORTNAME}.png
 .endfor
-	@${MKDIR} ${PREFIX}/share/icons/hicolor/scalable/apps
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
 	${INSTALL_DATA} ${WRKSRC}/tools/icon/${PORTNAME}.svg  \
-		${PREFIX}/share/icons/hicolor/scalable/apps/
-	@${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${PREFIX}/share/pixmaps/
-	${INSTALL_MAN} ${WRKSRC}/docs/${MAN1} ${MAN1PREFIX}/man/man1/
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/
+	@${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_MAN} ${WRKSRC}/docs/${MAN1} ${STAGEDIR}${MAN1PREFIX}/man/man1/
 
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

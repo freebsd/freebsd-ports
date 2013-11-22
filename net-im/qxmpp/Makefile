@@ -12,16 +12,15 @@ COMMENT=	QXmpp is an xmpp client library based on Qt & C++
 
 LICENSE=	LGPL21
 
-USE_QT4=	gui network xml qmake_build uic_build moc_build rcc_build
+USES=		qmake
+USE_QT4=	gui network xml uic_build moc_build rcc_build
 
 CONFLICTS=	${PORTNAME}-leechcraft-[0-9]*
 
-NO_STAGE=	yes
-do-configure:
+pre-configure:
 	${REINPLACE_CMD} -e 's|%%QT_LIBDIR_REL%%|${QT_LIBDIR_REL}|g' \
 		${WRKSRC}/src/src.pro
 	${REINPLACE_CMD} -e 's|%%DOCSDIR%%|${DOCSDIR}|g' \
 		${WRKSRC}/${PORTNAME}.pro
-	cd ${WRKSRC} && ${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX}
 
 .include <bsd.port.mk>

@@ -19,10 +19,11 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_QT4=	corelib gui xml moc_build qmake_build
+USES=		qmake
+USE_QT4=	corelib gui xml moc_build
 USE_PYTHON=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ENV=	QTDIR="${QT_PREFIX}"
+QMAKE_ARGS+=	VERSION_NUMBER="${PORTVERSION}"
+QMAKE_SOURCE_PATH=	${WRKSRC}/main.pro
 MAKE_JOBS_UNSAFE=	yes
 
 PORTDOCS=	NEWS README TODO USAGE evolvotron.html
@@ -44,20 +45,13 @@ CXXFLAGS+=	-include ${WRKSRC}/${i}/${i}_precompiled.h \
 		-I${WRKSRC}/${i}
 .endfor
 .else
-QMAKEFLAGS+=	CONFIG+=precompile_header
+QMAKE_ARGS+=	CONFIG+=precompile_header
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' \
-		${WRKSRC}/configure ${WRKSRC}/VERSION
 	@${REINPLACE_CMD} -e \
 		'/^CONFIG/s|precompile_header|| ; \
 		 /DEFINES/s|_LINUX|_BSD|' ${WRKSRC}/common.pro
-
-post-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX} \
-		VERSION_NUMBER="${PORTVERSION}" main.pro
 
 do-install:
 .for i in evolvotron evolvotron_mutate evolvotron_render
