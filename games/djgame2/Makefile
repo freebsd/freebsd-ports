@@ -28,7 +28,7 @@ post-patch:
 		${WRKSRC}/Base/src/PlayWave.cpp
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|g' \
 		${WRKSRC}/make_linux_output
-	@${REINPLACE_CMD} -e 's|qmake|${QMAKE}|' \
+	@${REINPLACE_CMD} -e 's|qmake|${QMAKE} ${QMAKE_ARGS}|' \
 		${WRKSRC}/make_linux_output
 	@${ECHO_CMD} "INCLUDEPATH += ${LOCALBASE}/include" \
 		>> ${WRKSRC}/Base/Base.pro
