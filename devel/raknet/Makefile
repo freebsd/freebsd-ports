@@ -53,15 +53,15 @@ pre-install:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/raknet
-	@(cd ${WRKSRC}/Source/ && ${COPYTREE_SHARE} \*.h ${STAGEDIR}${PREFIX}/include/raknet)
+	(cd ${WRKSRC}/Source/ && ${COPYTREE_SHARE} \*.h ${STAGEDIR}${PREFIX}/include/raknet)
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib
-	@${INSTALL_LIB} ${WRKSRC}/Lib/DLL/libRakNetDynamic.so \
+	${INSTALL_LIB} ${WRKSRC}/Lib/DLL/libRakNetDynamic.so \
 		${STAGEDIR}${PREFIX}/lib/libraknet.so.0
-	@${LN} -sf ${PREFIX}/lib/libraknet.so.0 ${STAGEDIR}${PREFIX}/lib/libraknet.so
-	@${INSTALL_LIB} ${WRKSRC}/Lib/LibStatic/libRakNetStatic.a \
+	${LN} -sf ${PREFIX}/lib/libraknet.so.0 ${STAGEDIR}${PREFIX}/lib/libraknet.so
+	${INSTALL_LIB} ${WRKSRC}/Lib/LibStatic/libRakNetStatic.a \
 		${STAGEDIR}${PREFIX}/lib/libraknet.a
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/Help
-	@(cd ${WRKSRC}/Help/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}/Help)
-	@${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/Help/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}/Help)
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
