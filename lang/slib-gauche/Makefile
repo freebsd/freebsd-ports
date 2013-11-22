@@ -12,6 +12,9 @@ DISTFILES=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SLIB installation for Gauche
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-12-22
+
 BROKEN=		does not build
 
 BUILD_DEPENDS=	${LOCALBASE}/share/slib/require.scm:${PORTSDIR}/lang/slib \

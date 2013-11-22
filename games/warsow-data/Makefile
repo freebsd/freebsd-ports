@@ -19,6 +19,9 @@ COMMENT=	Warsow data files
 # Package size below is for default set of OPTIONS
 NO_PACKAGE=	Package will be 574MB, set FORCE_PACKAGE if you really want it
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-12-22
+
 BROKEN=		warsow_0.61_unified.zip is unfetchable
 
 # Game port is restricted to these architectures, so it makes no sense to

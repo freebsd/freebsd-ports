@@ -12,6 +12,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A Ruby library to provide a high level interface to a CVS repository
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-12-22
+
 BROKEN=		Does not fetch
 
 # optional, but strongly suggested

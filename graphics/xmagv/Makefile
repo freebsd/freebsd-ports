@@ -11,6 +11,9 @@ DISTFILES=	xmagv111.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Viewer for X Window System
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-12-22
+
 BROKEN=		Does not build
 USES=		imake:env
 WRKSRC=		${WRKDIR}/${PORTNAME}
