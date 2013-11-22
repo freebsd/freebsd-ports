@@ -10,6 +10,7 @@ COMMENT=	Notification system compatible with Growl
 
 LICENSE=	BSD
 
+BUILD_DEPENDS=	desktop-file-install:${PORTSDIR}/devel/desktop-file-utils
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
