@@ -13,4 +13,3 @@ share/icons/hicolor/64x64/apps/qbittorrent.png
 share/icons/hicolor/72x72/apps/qbittorrent.png
 share/icons/hicolor/96x96/apps/qbittorrent.png
 share/pixmaps/qbittorrent.png
-@dirrmtry share/applications
