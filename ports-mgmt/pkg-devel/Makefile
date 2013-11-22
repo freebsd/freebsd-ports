@@ -39,6 +39,9 @@ NO_LATEST_LINK=	yes
 .	if !defined(PACKAGE_BUILDING)
 IGNORE=	WITH_PKGNG is not defined to 'devel', this version is the devel one
 .	endif
+.else
+LATEST_LINK=   pkg
+PKGNAMESUFFIX=
 .endif
 .if exists(${LOCALBASE}/sbin/pkg_info) || exists(/usr/sbin/pkg_info)
 NB_OLDPKGS!=	pkg_info 2>/dev/null | wc -l
