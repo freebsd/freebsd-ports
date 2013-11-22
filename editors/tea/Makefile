@@ -16,8 +16,9 @@ OPTIONS_RADIO=		SPELL
 OPTIONS_RADIO_SPELL=	ASPELL HUNSPELL
 OPTIONS_DEFAULT=	ASPELL
 
+USES=		qmake
 USE_BZIP2=	yes
-USE_QT4=	gui moc_build qmake_build rcc_build
+USE_QT4=	gui moc_build rcc_build
 
 PLIST_FILES=	bin/tea share/pixmaps/tea_icon_v2.png
 PORTDOCS=	*
@@ -25,21 +26,13 @@ PORTDOCS=	*
 DESKTOP_ENTRIES="TEA" "" "${PREFIX}/share/pixmaps/tea_icon_v2.png" \
 		"${PORTNAME}" "" ""
 
-.include <bsd.port.options.mk>
+ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
+ASPELL_QMAKE_ON=	USE_ASPELL=true
+ASPELL_QMAKE_OFF=	USE_ASPELL=false
 
-.if ${PORT_OPTIONS:MASPELL}
-LIB_DEPENDS+=	libaspell.so:${PORTSDIR}/textproc/aspell
-QMAKEFLAGS+=	USE_ASPELL=true
-.else
-QMAKEFLAGS+=	USE_ASPELL=false
-.endif
-
-.if ${PORT_OPTIONS:MHUNSPELL}
-LIB_DEPENDS+=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
-QMAKEFLAGS+=	USE_HUNSPELL=true
-.else
-QMAKEFLAGS+=	USE_HUNSPELL=false
-.endif
+HUNSPELL_LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
+HUNSPELL_QMAKE_ON=	USE_HUNSPELL=true
+HUNSPELL_QMAKE_OFF=	USE_HUNSPELL=false
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -47,14 +40,9 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/include|${LOCALBASE}/include|' ${WRKSRC}/src.pro
 
-do-configure:
-	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS}
-
 do-install:
-	(cd ${WRKSRC}/bin \
-		&& ${INSTALL_PROGRAM} tea ${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC}/icons \
-		&& ${INSTALL_DATA} tea_icon_v2.png ${STAGEDIR}${PREFIX}/share/pixmaps)
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/tea ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/icons/tea_icon_v2.png ${STAGEDIR}${PREFIX}/share/pixmaps
 	(cd ${WRKSRC}/manuals \
 		&& ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
