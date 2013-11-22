@@ -45,7 +45,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nbc ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/nbc
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in ${PORDOCS}
+.for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKDIR}/doc/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 
