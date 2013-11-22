@@ -2,6 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.4rc1
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/pre-releases/3.4/rc1/
 #MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
