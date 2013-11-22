@@ -10,46 +10,38 @@ MASTER_SITE_SUBDIR=	logging/${PORTNAME}/${PORTVERSION}
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Log4cxx is a port to C++ of the Log4j project
+COMMENT=	C++ port of the Log4j project
 
 LICENSE=	AL2
 
 LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1
 
-OPTIONS_DEFINE=	BOOST DOCS DOXYGEN
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
-BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
-.else
-CONFIGURE_ARGS+=	--disable-doxygen
-.endif
-
-.if ${PORT_OPTIONS:MBOOST}
-BUILD_DEPENDS+=	${LOCALBASE}/include/boost/regex.hpp:${PORTSDIR}/devel/boost-libs
-.endif
-
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake:env autoconf:env libtool:env
-
+USES=		pathfix
+USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-USE_LDCONFIG=	yes
+OPTIONS_DEFINE=	BOOST DOXYGEN
 
-.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
-PORTDOCS=	*
-.endif
+BOOST_BUILD_DEPENDS=	${LOCALBASE}/include/boost/regex.hpp:${PORTSDIR}/devel/boost-libs
 
-USES=	pathfix
+DOXYGEN_CONFIGURE_OFF=	--disable-doxygen
+DOXYGEN_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
+
+.include <bsd.port.options.mk>
+
+post-configure:
+	@${REINPLACE_CMD} -e 's|-dpR|-pr|' \
+		-e '/^htmldest/ s|$$(pkgdatadir)|${DOCSDIR}|' \
+		${WRKSRC}/src/site/doxy/Makefile
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
-	${MKDIR} ${DOCSDIR}
-	for f in ${PORTDOCS}; do \
-	  ${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
-	done
+.if ${PORT_OPTIONS:MDOXYGEN}
+	@cd ${STAGEDIR}${PREFIX} && \
+	${FIND} ${DOCSDIR:S|${PREFIX}/||} ! -type d >> ${TMPPLIST} && \
+	${FIND} ${DOCSDIR:S|${PREFIX}/||} -type d | ${SORT} -r | \
+	${SED} 's|^|@dirrm |' >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>
