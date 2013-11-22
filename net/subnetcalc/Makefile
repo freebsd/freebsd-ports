@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	subnetcalc
-PORTVERSION=	2.1.4
+PORTVERSION=	2.2.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.iem.uni-due.de/~dreibh/subnetcalc/download/ \
 		http://www.exp-math.uni-essen.de/~dreibh/subnetcalc/download/
@@ -12,14 +12,13 @@ COMMENT=	IPv4/IPv6 Subnet Calculator
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	GeoIP:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--with-geoip=${LOCALBASE}"
-USE_GMAKE=	yes
+USES=	gmake
 
-PLIST_FILES=	bin/subnetcalc
-MAN1=		subnetcalc.1
+PLIST_FILES=	bin/subnetcalc \
+		man/man1/subnetcalc.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
