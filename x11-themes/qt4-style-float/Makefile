@@ -15,16 +15,14 @@ COMMENT=	Style for Qt 4 and KDE
 
 LICENSE=	GPLv2
 
+USES=		qmake
 USE_BZIP2=	yes
-USE_QT4=	corelib gui qmake_build moc_build rcc_build
+USE_QT4=	corelib gui moc_build rcc_build
 
 WRKSRC=		${WRKDIR}/floatstyle-${PORTVERSION}
 
 PLIST_FILES=	${QT_PLUGINDIR_REL}/styles/libfloatstyle.so
 PLIST_DIRSTRY=	${QT_PLUGINDIR_REL}/styles
-
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${QT_PLUGINDIR_REL}/styles/
