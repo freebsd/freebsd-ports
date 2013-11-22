@@ -2,7 +2,7 @@
 
 PORTNAME=	pandas
 PORTVERSION=	0.12.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,6 +24,7 @@ TEST_DEPENDS=	nosetests:${PORTSDIR}/devel/py-nose \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:${PORTSDIR}/math/py-matplotlib \
 		${PYTHON_PKGNAMEPREFIX}xlrd>0:${PORTSDIR}/textproc/py-xlrd \
 		${PYTHON_PKGNAMEPREFIX}xlwt>0:${PORTSDIR}/textproc/py-xlwt \
+		${PYTHON_PKGNAMEPREFIX}openpyxl>0:${PORTSDIR}/textproc/py-openpyxl \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:${PORTSDIR}/www/py-beautifulsoup \
 		${PYTHON_PKGNAMEPREFIX}html5lib>0:${PORTSDIR}/www/py-html5lib \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml
@@ -32,6 +33,7 @@ SUB_FILES=	pkg-message
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_AUTOPLIST=	yes
 PYEASYINSTALL_ARCHDEP=	yes
 
 # Uncomment the following line to enable regression-test
@@ -43,9 +45,5 @@ regression-test: build
 		${PYTHON_CMD} ${PYSETUP} build_ext --inplace && \
 		${PYTHON_CMD} ${PYSETUP} nosetests \
 	)
-
-NO_STAGE=	yes
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
