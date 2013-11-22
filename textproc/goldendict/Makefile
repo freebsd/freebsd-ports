@@ -20,21 +20,15 @@ LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell \
 USE_BZIP2=	yes
 NO_WRKSUBDIR=	yes
 HAS_CONFIGURE=	yes
-USES=		dos2unix pkgconfig
+USES=		dos2unix pkgconfig qmake
 DOS2UNIX_FILES=	processwrapper.cc
 USE_XORG=	xtst
 USE_QT4=	corelib gui webkit phonon \
-		qmake_build linguist_build moc_build rcc_build script_build uic_build
-MAKE_ENV+=	INSTALL_ROOT=${STAGEDIR}
+		linguist_build moc_build rcc_build script_build uic_build
 INSTALLS_ICONS=	yes
 
 post-patch:
 	@${REINPLACE_CMD} 's:/usr:${PREFIX}:' ${WRKSRC}/redist/goldendict.desktop
-
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} -unix PREFIX=${PREFIX} INCLUDEPATH+=${LOCALBASE}/include \
-		LIBS+=-L${LOCALBASE}/lib ${PORTNAME}.pro
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/locale
