@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DBIx-Class-Schema-Loader
-PORTVERSION=	0.07037
+PORTVERSION=	0.07038
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -49,23 +49,10 @@ ORACLE_DESC=	Enable Oracle backend (experimental)
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-.endif
-
-.if ${PORT_OPTIONS:MORACLE}
-BUILD_DEPENDS+=	p5-DBD-Oracle>=0.19:${PORTSDIR}/databases/p5-DBD-Oracle
-RUN_DEPENDS+=	p5-DBD-Oracle>=0.19:${PORTSDIR}/databases/p5-DBD-Oracle
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE=	yes
-.endif
+MYSQL_USE=		MYSQL=yes
+ORACLE_BUILD_DEPENDS=	p5-DBD-Oracle>=0.19:${PORTSDIR}/databases/p5-DBD-Oracle
+ORACLE_RUN_DEPENDS=	p5-DBD-Oracle>=0.19:${PORTSDIR}/databases/p5-DBD-Oracle
+PGSQL_USE=		PGSQL=yes
+SQLITE_USE=		SQLITE=yes
 
 .include <bsd.port.mk>
