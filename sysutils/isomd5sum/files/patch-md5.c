@@ -17,12 +17,3 @@
  
  static void byteReverse(unsigned char *buf, unsigned longs);
  
-@@ -157,7 +157,7 @@
- 	MD5_Transform(ctx->buf, (uint32 *) ctx->in);
- 	if (ctx->doByteReverse) byteReverse((unsigned char *) ctx->buf, 4);
- 	memcpy(digest, ctx->buf, 16);
--	memset(ctx, 0, sizeof(ctx));	/* In case it's sensitive */
-+	memset(ctx, 0, sizeof(*ctx));	/* In case it's sensitive */
- }
- 
- #ifndef ASM_MD5
