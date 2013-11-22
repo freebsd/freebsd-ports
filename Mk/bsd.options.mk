@@ -93,6 +93,11 @@
 # ${opt}_CMAKE_OFF			When option is disabled, it will add its content to
 #							the CMAKE_ARGS.
 #
+# ${opt}_QMAKE_ON			When option is enabled, it will add its content to
+#							the QMAKE_ARGS.
+# ${opt}_QMAKE_OFF			When option is disabled, it will add its content to
+#							the QMAKE_ARGS.
+#
 # ${opt}_USE=	FOO=bar		When option is enabled, it will  enable
 #							USE_FOO+= bar
 #							If you need more than one option, you can do
@@ -398,12 +403,11 @@ CONFIGURE_ARGS+=	--enable-${iopt}
 CONFIGURE_ARGS+=	--with-${iopt}
 .      endfor
 .    endif
-.    if defined(${opt}_CONFIGURE_ON)
-CONFIGURE_ARGS+=	${${opt}_CONFIGURE_ON}
-.    endif
-.    if defined(${opt}_CMAKE_ON)
-CMAKE_ARGS+=	${${opt}_CMAKE_ON}
-.    endif
+.    for configure in CONFIGURE CMAKE QMAKE
+.      if defined(${opt}_${configure}_ON)
+${configure}_ARGS+=	${${opt}_${configure}_ON}
+.      endif
+.    endfor
 .    for flags in CFLAGS CPPFLAGS CXXFLAGS LDFLAGS CONFIGURE_ENV MAKE_ARGS \
          MAKE_ENV ALL_TARGET INSTALL_TARGET USES DISTFILES PLIST_FILES \
          PLIST_DIRS PLIST_DIRSTRY EXTRA_PATCHES PATCHFILES PATCH_SITES CATEGORIES
@@ -427,12 +431,11 @@ CONFIGURE_ARGS+=	--disable-${iopt}
 CONFIGURE_ARGS+=	--without-${iopt}
 .      endfor
 .    endif
-.    if defined(${opt}_CONFIGURE_OFF)
-CONFIGURE_ARGS+=	${${opt}_CONFIGURE_OFF}
-.    endif
-.    if defined(${opt}_CMAKE_OFF)
-CMAKE_ARGS+=	${${opt}_CMAKE_OFF}
-.    endif
+.    for configure in CONFIGURE CMAKE QMAKE
+.      if defined(${opt}_${configure}_OFF)
+${configure}_ARGS+=	${${opt}_${configure}_OFF}
+.      endif
+.    endfor
 .  endif
 .endfor
 
