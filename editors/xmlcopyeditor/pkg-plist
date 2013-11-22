@@ -66,7 +66,7 @@ share/pixmaps/xmlcopyeditor.png
 %%DATADIR%%/dtd/docbook/4.4/ent/isotech.ent
 %%DATADIR%%/dtd/docbook/4.4/htmltblx.mod
 %%DATADIR%%/dtd/docbook/4.4/soextblx.dtd
-%%DATADIR%%/dtd/docbook/5.0b/docbook.dtd
+%%DATADIR%%/dtd/docbook/5.0/docbook.dtd
 %%DATADIR%%/dtd/lzx.dtd
 %%DATADIR%%/dtd/moodle_glossary.dtd
 %%DATADIR%%/dtd/moodle_xml.dtd
@@ -289,8 +289,8 @@ share/pixmaps/xmlcopyeditor.png
 %%DATADIR%%/templates/DTD.dtd
 %%DATADIR%%/templates/DocBook_4.4_article.xml
 %%DATADIR%%/templates/DocBook_4.4_book.xml
-%%DATADIR%%/templates/DocBook_5.0b_article.xml
-%%DATADIR%%/templates/DocBook_5.0b_book.xml
+%%DATADIR%%/templates/DocBook_5.0_article.xml
+%%DATADIR%%/templates/DocBook_5.0_book.xml
 %%DATADIR%%/templates/Moodle_glossary.xml
 %%DATADIR%%/templates/Moodle_quiz.xml
 %%DATADIR%%/templates/NewsML_1.2.xml
@@ -363,7 +363,7 @@ share/pixmaps/xmlcopyeditor.png
 @dirrm %%DATADIR%%/dtd/tei/p5
 @dirrm %%DATADIR%%/dtd/tei/p4
 @dirrm %%DATADIR%%/dtd/tei
-@dirrm %%DATADIR%%/dtd/docbook/5.0b
+@dirrm %%DATADIR%%/dtd/docbook/5.0
 @dirrm %%DATADIR%%/dtd/docbook/4.4/ent
 @dirrm %%DATADIR%%/dtd/docbook/4.4
 @dirrm %%DATADIR%%/dtd/docbook
