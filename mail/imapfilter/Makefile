@@ -3,7 +3,7 @@
 
 PORTNAME=	imapfilter
 PORTVERSION=	2.5.6
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.gegenunendlich.de/distfiles/ \
 		GH
@@ -17,7 +17,6 @@ LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
 USE_LUA=	5.1
 USE_OPENSSL=	yes
-WITH_OPENSSL_PORT=yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
 
