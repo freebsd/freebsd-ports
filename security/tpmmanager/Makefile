@@ -13,19 +13,13 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libtspi.so:${PORTSDIR}/security/trousers
 
-QT_NONSTANDARD=	YES
-USE_QT4=	gui moc_build qmake_build rcc_build uic_build
-
-HAS_CONFIGURE=	YES
+USES=		qmake
+USE_QT4=	gui moc_build rcc_build uic_build
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
-
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} PREFIX=${PREFIX} tpmmanager.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/

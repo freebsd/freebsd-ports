@@ -13,19 +13,15 @@ COMMENT=	Word unscrambling game
 LICENSE=	GPLv3
 
 USE_BZIP2=	yes
-USES=		desktop-file-utils
-USE_QT4=	moc_build qmake_build rcc_build gui network iconengines \
-		imageformats
+USES=		desktop-file-utils qmake
+USE_QT4=	moc_build rcc_build gui network iconengines_run \
+		imageformats_run
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	CREDITS ChangeLog
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX}
 
 post-install:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} data ${DATADIR})

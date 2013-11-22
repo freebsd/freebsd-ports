@@ -13,8 +13,9 @@ COMMENT=	The Butterfly Effect
 BUILD_DEPENDS=	${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
+USES=		qmake
 USE_GMAKE=	yes
-USE_QT4=	qmake_build corelib gui moc_build rcc_build svg uic_build xml
+USE_QT4=	corelib gui moc_build rcc_build svg uic_build xml
 WRKSRC=		${WRKDIR}/TheButterflyEffect-M${PORTVERSION}rc3
 
 PLIST_FILES=	bin/tbe
@@ -34,10 +35,9 @@ post-patch:
 		@${REINPLACE_CMD} -e '/ensure that no-one tries to build/,$$d' \
 			${WRKSRC}/tbe.pro
 
-pre-build:
+pre-configure:
 		# This is supposedly done by the ./configure script
 		@cd ${WRKSRC}/3rdParty && ${GMAKE}
-		@cd ${WRKSRC} && ${QMAKE} ${QMAKEFLAGS}
 
 do-install:
 		@${MKDIR} ${PREFIX}/bin

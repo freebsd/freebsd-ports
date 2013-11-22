@@ -13,18 +13,15 @@ COMMENT=	Basic Sudoku game
 
 LICENSE=	GPLv3
 
+USES=		qmake
 USE_BZIP2=	yes
-USE_QT4=	moc_build qmake_build rcc_build uic_build iconengines imageformats
+USE_QT4=	moc_build rcc_build uic_build iconengines_run imageformats_run
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	CREDITS ChangeLog
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX}
 
 post-install:
 	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${PREFIX}/share/pixmaps/
