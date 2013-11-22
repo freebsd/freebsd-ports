@@ -43,8 +43,8 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MMUSIC}
-	@${INSTALL_DATA} ${WRKDIR}/trackballs-music/*.ogg ${STAGEDIR}${DATADIR}/music/
+	${INSTALL_DATA} ${WRKDIR}/trackballs-music/*.ogg ${STAGEDIR}${DATADIR}/music/
 .endif
-	@${INSTALL_DATA} ${WRKSRC}/share/icons/${PORTNAME}-48x48.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+	${INSTALL_DATA} ${WRKSRC}/share/icons/${PORTNAME}-48x48.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 .include <bsd.port.mk>
