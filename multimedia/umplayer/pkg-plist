@@ -1,4 +1,5 @@
 bin/umplayer
+man/man1/umplayer.1.gz
 share/applications/umplayer.desktop
 share/applications/umplayer_enqueue.desktop
 %%PORTDOCS%%%%DOCSDIR%%/Audio_equalizer.txt

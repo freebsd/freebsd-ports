@@ -17,22 +17,19 @@ USE_XZ=		yes
 USE_QT4=	gui network xml qmake_build moc_build rcc_build uic_build \
 		linguist_build
 INSTALLS_ICONS=	yes
-MAKE_ARGS=	QMAKE_OPTS="DEFINES+=NO_DEBUG_ON_CONSOLE" PREFIX="${PREFIX}"
+MAKE_ARGS+=	${PREFIX}
+QMAKE_ARGS+=	"DEFINES+=NO_DEBUG_ON_CONSOLE"
 ALL_TARGET=	src/umplayer
-
-MAN1=		umplayer.1
-MANCOMPRESSED=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| make| $$(MAKE)|' \
 		-e 's|cd src|(&| ; /cd src/s|$$|)|' \
-		-e 's|qmake|${QMAKE}|' \
-		-e 's|lrelease|${QT_PREFIX}/bin/lrelease-qt4|' \
+		-e 's|qmake|${QMAKE} ${QMAKE_ARGS}|' \
+		-e 's|lrelease|${LRELEASE}|' \
 		-e 's|/share/man|/man|' \
 		-e 's|/doc/packages|/doc|' \
 		-e 's|^.*/get_svn_revision.sh$$||' \
