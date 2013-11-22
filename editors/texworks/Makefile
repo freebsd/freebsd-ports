@@ -17,19 +17,19 @@ OPTIONS_DEFINE=	DOCS LUA PYTHON
 BUILD_DEPENDS=	hunspell:${PORTSDIR}/textproc/hunspell
 LIB_DEPENDS=	libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4
 
-USES=		pkgconfig
-USE_QT4=	qmake_build gui corelib rcc_build moc_build uic_build \
+USES=		pkgconfig qmake
+USE_QT4=	gui corelib rcc_build moc_build uic_build \
 		dbus xml scripttools designer_build
-QMAKEFLAGS=	QMAKE_LFLAGS="-lz"
-QMAKE_ARGS=	INSTALL_PREFIX=${STAGEDIR}${PREFIX} \
-		DATA_DIR=${STAGEDIR}${DATADIR} \
-		DOCS_DIR=${STAGEDIR}${DOCSDIR} \
-		ICON_DIR=${STAGEDIR}${PREFIX}/share/pixmaps \
-		DESKTOP_DIR=${STAGEDIR}${PREFIX}/share/applications \
-		MAN_DIR=${STAGEDIR}${PREFIX}/man/man1 \
+QMAKE_ARGS=	INSTALL_PREFIX=${PREFIX} \
+		DATA_DIR=${DATADIR} \
+		DOCS_DIR=${DOCSDIR} \
+		ICON_DIR=${PREFIX}/share/pixmaps \
+		DESKTOP_DIR=${PREFIX}/share/applications \
+		MAN_DIR=${PREFIX}/man/man1 \
 		TW_DICPATH=${LOCALBASE}/share/hunspell \
 		TW_HELPPATH=${DOCSDIR} \
 		TW_PLUGINPATH=${PREFIX}/lib/texworks
+LDFLAGS+=	-lz
 
 VCS_REVISION=	1281
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -73,16 +73,14 @@ post-patch:
 		${WRKSRC}/TeXworks.pro
 .endif
 
-do-configure:
-	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-	    ${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS} TeXworks.pro
+post-configure:
 .if ${PORT_OPTIONS:MLUA}
 	cd ${WRKSRC}/plugins-src/TWLuaPlugin && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS}/TWLuaPlugin.pro
+		${QMAKE} ${QMAKE_ARGS}
 .endif
 .if ${PORT_OPTIONS:MPYTHON}
 	cd ${WRKSRC}/plugins-src/TWPythonPlugin && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS}/TWPythonPlugin.pro
+		${QMAKE} ${QMAKE_ARGS}
 .endif
 
 post-build:
