@@ -4,4 +4,5 @@ bin/lrz
 bin/lsb
 bin/lsx
 bin/lsz
-share/locale/de/LC_MESSAGES/lrzsz.mo
+man/man1/lrz.1.gz
+man/man1/lsz.1.gz
