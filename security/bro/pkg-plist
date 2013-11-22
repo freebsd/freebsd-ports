@@ -1,57 +1,129 @@
+@exec mkdir -p %D/logs
+%%BROCTL%%@exec mkdir -p %D/spool/tmp
 bin/bro
 bin/bro-cut
-@exec mkdir -p %D/etc
-@exec mkdir -p %D/logs
 %%BROCTL%%bin/broctl
 %%BROCTL%%bin/capstats
 %%BROCTL%%bin/trace-summary
-%%BROCTL%%@unexec if cmp -s %D/etc/broctl.cfg.sample %D/etc/broctl.cfg ; then rm -f %D/etc/broctl.cfg; fi
-%%BROCTL%%etc/broctl.cfg.sample
-%%BROCTL%%@exec if [ ! -f %D/etc/broctl.cfg ] ; then cp -p %D/etc/broctl.cfg.sample %D/etc/broctl.cfg; fi
-%%BROCTL%%@unexec if cmp -s %D/etc/networks.cfg.sample %D/etc/networks.cfg ; then rm -f %D/etc/networks.cfg; fi
-%%BROCTL%%etc/networks.cfg.sample
-%%BROCTL%%@exec if [ ! -f %D/etc/networks.cfg ] ; then cp -p %D/etc/networks.cfg.sample %D/etc/networks.cfg; fi
-%%BROCTL%%@unexec if cmp -s %D/etc/node.cfg.sample %D/etc/node.cfg ; then rm -f %D/etc/node.cfg; fi
-%%BROCTL%%etc/node.cfg.sample
-%%BROCTL%%@exec if [ ! -f %D/etc/node.cfg ] ; then cp -p %D/etc/node.cfg.sample %D/etc/node.cfg; fi
+%%BROCTL%%@unexec if cmp -s %D/etc/broctl.cfg.example %D/etc/broctl.cfg ; then rm -f %D/etc/broctl.cfg; fi
+%%BROCTL%%etc/broctl.cfg.example
+%%BROCTL%%@exec if [ ! -f %D/etc/broctl.cfg ] ; then cp -p %D/etc/broctl.cfg.example %D/etc/broctl.cfg; fi
+%%BROCTL%%@unexec if cmp -s %D/etc/networks.cfg.example %D/etc/networks.cfg ; then rm -f %D/etc/networks.cfg; fi
+%%BROCTL%%etc/networks.cfg.example
+%%BROCTL%%@exec if [ ! -f %D/etc/networks.cfg ] ; then cp -p %D/etc/networks.cfg.example %D/etc/networks.cfg; fi
+%%BROCTL%%@unexec if cmp -s %D/etc/node.cfg.example %D/etc/node.cfg ; then rm -f %D/etc/node.cfg; fi
+%%BROCTL%%etc/node.cfg.example
+%%BROCTL%%@exec if [ ! -f %D/etc/node.cfg ] ; then cp -p %D/etc/node.cfg.example %D/etc/node.cfg; fi
 %%BROCTL%%lib/broctl/BroControl/__init__.py
-%%BROCTL%%lib/broctl/BroControl/__init__.pyc
+%%BROCTL%%@unexec rm -f %D/lib/broctl/BroControl/__init__.pyc
 %%BROCTL%%lib/broctl/BroControl/config.py
-%%BROCTL%%lib/broctl/BroControl/config.pyc
+%%BROCTL%%@unexec rm -f %D/lib/broctl/BroControl/config.pyc
 %%BROCTL%%lib/broctl/BroControl/control.py
-%%BROCTL%%lib/broctl/BroControl/control.pyc
+%%BROCTL%%@unexec rm -f %D/lib/broctl/BroControl/control.pyc
 %%BROCTL%%lib/broctl/BroControl/cron.py
-%%BROCTL%%lib/broctl/BroControl/cron.pyc
+%%BROCTL%%@unexec rm -f %D/lib/broctl/BroControl/cron.pyc
 %%BROCTL%%lib/broctl/BroControl/doc.py
-%%BROCTL%%lib/broctl/BroControl/doc.pyc
+%%BROCTL%%@unexec rm -f %D/lib/broctl/BroControl/doc.pyc
 %%BROCTL%%lib/broctl/BroControl/execute.py
-%%BROCTL%%lib/broctl/BroControl/execute.pyc
+%%BROCTL%%@unexec rm -f %D/lib/broctl/BroControl/execute.pyc
 %%BROCTL%%lib/broctl/BroControl/install.py
-%%BROCTL%%lib/broctl/BroControl/install.pyc
+%%BROCTL%%@unexec rm -f %D/lib/broctl/BroControl/install.pyc
 %%BROCTL%%lib/broctl/BroControl/node.py
-%%BROCTL%%lib/broctl/BroControl/node.pyc
+%%BROCTL%%@unexec rm -f %D/lib/broctl/BroControl/node.pyc
 %%BROCTL%%lib/broctl/BroControl/options.py
-%%BROCTL%%lib/broctl/BroControl/options.pyc
+%%BROCTL%%@unexec rm -f %D/lib/broctl/BroControl/options.pyc
 %%BROCTL%%lib/broctl/BroControl/plugin.py
-%%BROCTL%%lib/broctl/BroControl/plugin.pyc
+%%BROCTL%%@unexec rm -f %D/lib/broctl/BroControl/plugin.pyc
 %%BROCTL%%lib/broctl/BroControl/pluginreg.py
-%%BROCTL%%lib/broctl/BroControl/pluginreg.pyc
+%%BROCTL%%@unexec rm -f %D/lib/broctl/BroControl/pluginreg.pyc
 %%BROCTL%%lib/broctl/BroControl/util.py
-%%BROCTL%%lib/broctl/BroControl/util.pyc
+%%BROCTL%%@unexec rm -f %D/lib/broctl/BroControl/util.pyc
 %%BROCTL%%lib/broctl/SubnetTree.py
 %%BROCTL%%@unexec rm -f %D/lib/broctl/SubnetTree.pyc
 %%BROCTL%%lib/broctl/_SubnetTree.so
 %%BROCTL%%lib/broctl/plugins/TestPlugin.py
-%%BROCTL%%lib/broctl/plugins/TestPlugin.pyc
+%%BROCTL%%@unexec rm -f %D/lib/broctl/plugins/TestPlugin.pyc
 %%BROCTL%%lib/broctl/plugins/lb_myricom.py
-%%BROCTL%%lib/broctl/plugins/lb_myricom.pyc
+%%BROCTL%%@unexec rm -f %D/lib/broctl/plugins/lb_myricom.pyc
 %%BROCTL%%lib/broctl/plugins/lb_pf_ring.py
-%%BROCTL%%lib/broctl/plugins/lb_pf_ring.pyc
+%%BROCTL%%@unexec rm -f %D/lib/broctl/plugins/lb_pf_ring.pyc
 %%BROCTL%%lib/broctl/plugins/ps.py
-%%BROCTL%%lib/broctl/plugins/ps.pyc
-%%DATADIR%%/base/bro.bif.bro
-%%DATADIR%%/base/const.bif.bro
-%%DATADIR%%/base/event.bif.bro
+%%BROCTL%%@unexec rm -f %D/lib/broctl/plugins/ps.pyc
+%%DATADIR%%/base/bif/__load__.bro
+%%DATADIR%%/base/bif/analyzer.bif.bro
+%%DATADIR%%/base/bif/bloom-filter.bif.bro
+%%DATADIR%%/base/bif/bro.bif.bro
+%%DATADIR%%/base/bif/cardinality-counter.bif.bro
+%%DATADIR%%/base/bif/const.bif.bro
+%%DATADIR%%/base/bif/event.bif.bro
+%%DATADIR%%/base/bif/file_analysis.bif.bro
+%%DATADIR%%/base/bif/input.bif.bro
+%%DATADIR%%/base/bif/logging.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_ARP.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_AYIYA.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_BackDoor.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_BitTorrent.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_ConnSize.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_DCE_RPC.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_DHCP.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_DNP3.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_DNS.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_FTP.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_FTP.functions.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_File.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_FileExtract.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_FileExtract.functions.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_FileHash.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_Finger.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_GTPv1.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_Gnutella.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_HTTP.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_HTTP.functions.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_ICMP.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_IRC.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_Ident.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_InterConn.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_Login.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_Login.functions.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_MIME.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_Modbus.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_NCP.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_NTP.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_NetBIOS.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_NetBIOS.functions.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_NetFlow.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_PIA.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_POP3.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_RPC.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_SMB.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_SMTP.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_SMTP.functions.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_SOCKS.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_SSH.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_SSL.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_SSL.functions.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_SteppingStone.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_Syslog.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_TCP.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_TCP.functions.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_Teredo.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_UDP.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_Unified2.events.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_Unified2.types.bif.bro
+%%DATADIR%%/base/bif/plugins/Bro_ZIP.events.bif.bro
+%%DATADIR%%/base/bif/plugins/__load__.bro
+%%DATADIR%%/base/bif/reporter.bif.bro
+%%DATADIR%%/base/bif/strings.bif.bro
+%%DATADIR%%/base/bif/top-k.bif.bro
+%%DATADIR%%/base/bif/types.bif.bro
+%%DATADIR%%/base/files/extract/__load__.bro
+%%DATADIR%%/base/files/extract/main.bro
+%%DATADIR%%/base/files/hash/__load__.bro
+%%DATADIR%%/base/files/hash/main.bro
+%%DATADIR%%/base/files/unified2/__load__.bro
+%%DATADIR%%/base/files/unified2/main.bro
+%%DATADIR%%/base/frameworks/analyzer/__load__.bro
+%%DATADIR%%/base/frameworks/analyzer/main.bro
 %%DATADIR%%/base/frameworks/cluster/__load__.bro
 %%DATADIR%%/base/frameworks/cluster/main.bro
 %%DATADIR%%/base/frameworks/cluster/nodes/manager.bro
@@ -63,14 +135,19 @@ bin/bro-cut
 %%DATADIR%%/base/frameworks/control/__load__.bro
 %%DATADIR%%/base/frameworks/control/main.bro
 %%DATADIR%%/base/frameworks/dpd/__load__.bro
-%%DATADIR%%/base/frameworks/dpd/dpd.sig
 %%DATADIR%%/base/frameworks/dpd/main.bro
+%%DATADIR%%/base/frameworks/files/__load__.bro
+%%DATADIR%%/base/frameworks/files/main.bro
 %%DATADIR%%/base/frameworks/input/__load__.bro
 %%DATADIR%%/base/frameworks/input/main.bro
 %%DATADIR%%/base/frameworks/input/readers/ascii.bro
 %%DATADIR%%/base/frameworks/input/readers/benchmark.bro
+%%DATADIR%%/base/frameworks/input/readers/binary.bro
 %%DATADIR%%/base/frameworks/input/readers/raw.bro
+%%DATADIR%%/base/frameworks/input/readers/sqlite.bro
 %%DATADIR%%/base/frameworks/intel/__load__.bro
+%%DATADIR%%/base/frameworks/intel/cluster.bro
+%%DATADIR%%/base/frameworks/intel/input.bro
 %%DATADIR%%/base/frameworks/intel/main.bro
 %%DATADIR%%/base/frameworks/logging/__load__.bro
 %%DATADIR%%/base/frameworks/logging/main.bro
@@ -81,10 +158,7 @@ bin/bro-cut
 %%DATADIR%%/base/frameworks/logging/writers/dataseries.bro
 %%DATADIR%%/base/frameworks/logging/writers/elasticsearch.bro
 %%DATADIR%%/base/frameworks/logging/writers/none.bro
-%%DATADIR%%/base/frameworks/metrics/__load__.bro
-%%DATADIR%%/base/frameworks/metrics/cluster.bro
-%%DATADIR%%/base/frameworks/metrics/main.bro
-%%DATADIR%%/base/frameworks/metrics/non-cluster.bro
+%%DATADIR%%/base/frameworks/logging/writers/sqlite.bro
 %%DATADIR%%/base/frameworks/notice/__load__.bro
 %%DATADIR%%/base/frameworks/notice/actions/add-geodata.bro
 %%DATADIR%%/base/frameworks/notice/actions/drop.bro
@@ -94,108 +168,245 @@ bin/bro-cut
 %%DATADIR%%/base/frameworks/notice/cluster.bro
 %%DATADIR%%/base/frameworks/notice/extend-email/hostnames.bro
 %%DATADIR%%/base/frameworks/notice/main.bro
+%%DATADIR%%/base/frameworks/notice/non-cluster.bro
 %%DATADIR%%/base/frameworks/notice/weird.bro
 %%DATADIR%%/base/frameworks/packet-filter/__load__.bro
+%%DATADIR%%/base/frameworks/packet-filter/cluster.bro
 %%DATADIR%%/base/frameworks/packet-filter/main.bro
 %%DATADIR%%/base/frameworks/packet-filter/netstats.bro
+%%DATADIR%%/base/frameworks/packet-filter/utils.bro
 %%DATADIR%%/base/frameworks/reporter/__load__.bro
 %%DATADIR%%/base/frameworks/reporter/main.bro
 %%DATADIR%%/base/frameworks/signatures/__load__.bro
 %%DATADIR%%/base/frameworks/signatures/main.bro
 %%DATADIR%%/base/frameworks/software/__load__.bro
 %%DATADIR%%/base/frameworks/software/main.bro
+%%DATADIR%%/base/frameworks/sumstats/__load__.bro
+%%DATADIR%%/base/frameworks/sumstats/cluster.bro
+%%DATADIR%%/base/frameworks/sumstats/main.bro
+%%DATADIR%%/base/frameworks/sumstats/non-cluster.bro
+%%DATADIR%%/base/frameworks/sumstats/plugins/__load__.bro
+%%DATADIR%%/base/frameworks/sumstats/plugins/average.bro
+%%DATADIR%%/base/frameworks/sumstats/plugins/hll_unique.bro
+%%DATADIR%%/base/frameworks/sumstats/plugins/last.bro
+%%DATADIR%%/base/frameworks/sumstats/plugins/max.bro
+%%DATADIR%%/base/frameworks/sumstats/plugins/min.bro
+%%DATADIR%%/base/frameworks/sumstats/plugins/sample.bro
+%%DATADIR%%/base/frameworks/sumstats/plugins/std-dev.bro
+%%DATADIR%%/base/frameworks/sumstats/plugins/sum.bro
+%%DATADIR%%/base/frameworks/sumstats/plugins/topk.bro
+%%DATADIR%%/base/frameworks/sumstats/plugins/unique.bro
+%%DATADIR%%/base/frameworks/sumstats/plugins/variance.bro
 %%DATADIR%%/base/frameworks/tunnels/__load__.bro
 %%DATADIR%%/base/frameworks/tunnels/main.bro
 %%DATADIR%%/base/init-bare.bro
 %%DATADIR%%/base/init-default.bro
-%%DATADIR%%/base/input.bif.bro
-%%DATADIR%%/base/logging.bif.bro
+%%DATADIR%%/base/misc/find-checksum-offloading.bro
 %%DATADIR%%/base/misc/p0f.fp
 %%DATADIR%%/base/protocols/conn/__load__.bro
 %%DATADIR%%/base/protocols/conn/contents.bro
 %%DATADIR%%/base/protocols/conn/inactivity.bro
 %%DATADIR%%/base/protocols/conn/main.bro
+%%DATADIR%%/base/protocols/conn/polling.bro
+%%DATADIR%%/base/protocols/dhcp/__load__.bro
+%%DATADIR%%/base/protocols/dhcp/consts.bro
+%%DATADIR%%/base/protocols/dhcp/dpd.sig
+%%DATADIR%%/base/protocols/dhcp/main.bro
+%%DATADIR%%/base/protocols/dhcp/utils.bro
+%%DATADIR%%/base/protocols/dnp3/__load__.bro
+%%DATADIR%%/base/protocols/dnp3/consts.bro
+%%DATADIR%%/base/protocols/dnp3/dpd.sig
+%%DATADIR%%/base/protocols/dnp3/main.bro
 %%DATADIR%%/base/protocols/dns/__load__.bro
 %%DATADIR%%/base/protocols/dns/consts.bro
 %%DATADIR%%/base/protocols/dns/main.bro
 %%DATADIR%%/base/protocols/ftp/__load__.bro
-%%DATADIR%%/base/protocols/ftp/file-extract.bro
+%%DATADIR%%/base/protocols/ftp/dpd.sig
+%%DATADIR%%/base/protocols/ftp/files.bro
+%%DATADIR%%/base/protocols/ftp/gridftp.bro
+%%DATADIR%%/base/protocols/ftp/info.bro
 %%DATADIR%%/base/protocols/ftp/main.bro
 %%DATADIR%%/base/protocols/ftp/utils-commands.bro
+%%DATADIR%%/base/protocols/ftp/utils.bro
 %%DATADIR%%/base/protocols/http/__load__.bro
-%%DATADIR%%/base/protocols/http/file-extract.bro
-%%DATADIR%%/base/protocols/http/file-hash.bro
-%%DATADIR%%/base/protocols/http/file-ident.bro
-%%DATADIR%%/base/protocols/http/file-ident.sig
+%%DATADIR%%/base/protocols/http/dpd.sig
+%%DATADIR%%/base/protocols/http/entities.bro
+%%DATADIR%%/base/protocols/http/files.bro
 %%DATADIR%%/base/protocols/http/main.bro
 %%DATADIR%%/base/protocols/http/utils.bro
 %%DATADIR%%/base/protocols/irc/__load__.bro
 %%DATADIR%%/base/protocols/irc/dcc-send.bro
+%%DATADIR%%/base/protocols/irc/dpd.sig
+%%DATADIR%%/base/protocols/irc/files.bro
 %%DATADIR%%/base/protocols/irc/main.bro
+%%DATADIR%%/base/protocols/modbus/__load__.bro
+%%DATADIR%%/base/protocols/modbus/consts.bro
+%%DATADIR%%/base/protocols/modbus/main.bro
+%%DATADIR%%/base/protocols/pop3/__load__.bro
+%%DATADIR%%/base/protocols/pop3/dpd.sig
 %%DATADIR%%/base/protocols/smtp/__load__.bro
-%%DATADIR%%/base/protocols/smtp/entities-excerpt.bro
+%%DATADIR%%/base/protocols/smtp/dpd.sig
 %%DATADIR%%/base/protocols/smtp/entities.bro
+%%DATADIR%%/base/protocols/smtp/files.bro
 %%DATADIR%%/base/protocols/smtp/main.bro
 %%DATADIR%%/base/protocols/socks/__load__.bro
 %%DATADIR%%/base/protocols/socks/consts.bro
+%%DATADIR%%/base/protocols/socks/dpd.sig
 %%DATADIR%%/base/protocols/socks/main.bro
 %%DATADIR%%/base/protocols/ssh/__load__.bro
+%%DATADIR%%/base/protocols/ssh/dpd.sig
 %%DATADIR%%/base/protocols/ssh/main.bro
 %%DATADIR%%/base/protocols/ssl/__load__.bro
 %%DATADIR%%/base/protocols/ssl/consts.bro
+%%DATADIR%%/base/protocols/ssl/dpd.sig
 %%DATADIR%%/base/protocols/ssl/main.bro
 %%DATADIR%%/base/protocols/ssl/mozilla-ca-list.bro
 %%DATADIR%%/base/protocols/syslog/__load__.bro
 %%DATADIR%%/base/protocols/syslog/consts.bro
 %%DATADIR%%/base/protocols/syslog/main.bro
-%%DATADIR%%/base/reporter.bif.bro
-%%DATADIR%%/base/strings.bif.bro
-%%DATADIR%%/base/types.bif.bro
+%%DATADIR%%/base/protocols/tunnels/__load__.bro
+%%DATADIR%%/base/protocols/tunnels/dpd.sig
+%%DATADIR%%/base/utils/active-http.bro
 %%DATADIR%%/base/utils/addrs.bro
 %%DATADIR%%/base/utils/conn-ids.bro
+%%DATADIR%%/base/utils/dir.bro
 %%DATADIR%%/base/utils/directions-and-hosts.bro
+%%DATADIR%%/base/utils/exec.bro
 %%DATADIR%%/base/utils/files.bro
 %%DATADIR%%/base/utils/numbers.bro
 %%DATADIR%%/base/utils/paths.bro
 %%DATADIR%%/base/utils/patterns.bro
+%%DATADIR%%/base/utils/queue.bro
 %%DATADIR%%/base/utils/site.bro
 %%DATADIR%%/base/utils/strings.bro
 %%DATADIR%%/base/utils/thresholds.bro
+%%DATADIR%%/base/utils/time.bro
+%%DATADIR%%/base/utils/urls.bro
 %%BROCTL%%%%DATADIR%%/broctl/__load__.bro
 %%BROCTL%%%%DATADIR%%/broctl/auto.bro
 %%BROCTL%%%%DATADIR%%/broctl/check.bro
 %%BROCTL%%%%DATADIR%%/broctl/main.bro
 %%BROCTL%%%%DATADIR%%/broctl/process-trace.bro
 %%BROCTL%%%%DATADIR%%/broctl/standalone.bro
+%%DATADIR%%/magic/animation
+%%DATADIR%%/magic/archive
+%%DATADIR%%/magic/assembler
+%%DATADIR%%/magic/audio
+%%DATADIR%%/magic/c-lang
+%%DATADIR%%/magic/cafebabe
+%%DATADIR%%/magic/commands
+%%DATADIR%%/magic/compress
+%%DATADIR%%/magic/database
+%%DATADIR%%/magic/diff
+%%DATADIR%%/magic/elf
+%%DATADIR%%/magic/epoc
+%%DATADIR%%/magic/filesystems
+%%DATADIR%%/magic/flash
+%%DATADIR%%/magic/fonts
+%%DATADIR%%/magic/fortran
+%%DATADIR%%/magic/frame
+%%DATADIR%%/magic/gimp
+%%DATADIR%%/magic/gnu
+%%DATADIR%%/magic/gnumeric
+%%DATADIR%%/magic/icc
+%%DATADIR%%/magic/iff
+%%DATADIR%%/magic/images
+%%DATADIR%%/magic/java
+%%DATADIR%%/magic/javascript
+%%DATADIR%%/magic/jpeg
+%%DATADIR%%/magic/kde
+%%DATADIR%%/magic/kml
+%%DATADIR%%/magic/linux
+%%DATADIR%%/magic/lisp
+%%DATADIR%%/magic/lua
+%%DATADIR%%/magic/m4
+%%DATADIR%%/magic/macintosh
+%%DATADIR%%/magic/mail.news
+%%DATADIR%%/magic/make
+%%DATADIR%%/magic/marc21
+%%DATADIR%%/magic/matroska
+%%DATADIR%%/magic/misctools
+%%DATADIR%%/magic/msdos
+%%DATADIR%%/magic/neko
+%%DATADIR%%/magic/pascal
+%%DATADIR%%/magic/pdf
+%%DATADIR%%/magic/perl
+%%DATADIR%%/magic/pgp
+%%DATADIR%%/magic/pkgadd
+%%DATADIR%%/magic/printer
+%%DATADIR%%/magic/python
+%%DATADIR%%/magic/riff
+%%DATADIR%%/magic/rpm
+%%DATADIR%%/magic/rtf
+%%DATADIR%%/magic/ruby
+%%DATADIR%%/magic/sc
+%%DATADIR%%/magic/sgml
+%%DATADIR%%/magic/sniffer
+%%DATADIR%%/magic/tcl
+%%DATADIR%%/magic/tex
+%%DATADIR%%/magic/troff
+%%DATADIR%%/magic/vorbis
+%%DATADIR%%/magic/warc
+%%DATADIR%%/magic/windows
+%%DATADIR%%/magic/wordprocessors
+%%DATADIR%%/magic/xwindows
 %%DATADIR%%/policy/frameworks/communication/listen.bro
 %%DATADIR%%/policy/frameworks/control/controllee.bro
 %%DATADIR%%/policy/frameworks/control/controller.bro
 %%DATADIR%%/policy/frameworks/dpd/detect-protocols.bro
 %%DATADIR%%/policy/frameworks/dpd/packet-segment-logging.bro
-%%DATADIR%%/policy/frameworks/metrics/conn-example.bro
-%%DATADIR%%/policy/frameworks/metrics/http-example.bro
-%%DATADIR%%/policy/frameworks/metrics/ssl-example.bro
+%%DATADIR%%/policy/frameworks/files/detect-MHR.bro
+%%DATADIR%%/policy/frameworks/files/hash-all-files.bro
+%%DATADIR%%/policy/frameworks/intel/do_notice.bro
+%%DATADIR%%/policy/frameworks/intel/seen/__load__.bro
+%%DATADIR%%/policy/frameworks/intel/seen/conn-established.bro
+%%DATADIR%%/policy/frameworks/intel/seen/dns.bro
+%%DATADIR%%/policy/frameworks/intel/seen/file-hashes.bro
+%%DATADIR%%/policy/frameworks/intel/seen/file-names.bro
+%%DATADIR%%/policy/frameworks/intel/seen/http-headers.bro
+%%DATADIR%%/policy/frameworks/intel/seen/http-url.bro
+%%DATADIR%%/policy/frameworks/intel/seen/smtp-url-extraction.bro
+%%DATADIR%%/policy/frameworks/intel/seen/smtp.bro
+%%DATADIR%%/policy/frameworks/intel/seen/ssl.bro
+%%DATADIR%%/policy/frameworks/intel/seen/where-locations.bro
+%%DATADIR%%/policy/frameworks/packet-filter/shunt.bro
 %%DATADIR%%/policy/frameworks/signatures/detect-windows-shells.sig
 %%DATADIR%%/policy/frameworks/software/version-changes.bro
 %%DATADIR%%/policy/frameworks/software/vulnerable.bro
 %%DATADIR%%/policy/integration/barnyard2/__load__.bro
 %%DATADIR%%/policy/integration/barnyard2/main.bro
 %%DATADIR%%/policy/integration/barnyard2/types.bro
-%%DATADIR%%/policy/misc/analysis-groups.bro
+%%DATADIR%%/policy/integration/collective-intel/__load__.bro
+%%DATADIR%%/policy/integration/collective-intel/main.bro
+%%DATADIR%%/policy/misc/app-stats/__load__.bro
+%%DATADIR%%/policy/misc/app-stats/main.bro
+%%DATADIR%%/policy/misc/app-stats/plugins/__load__.bro
+%%DATADIR%%/policy/misc/app-stats/plugins/facebook.bro
+%%DATADIR%%/policy/misc/app-stats/plugins/gmail.bro
+%%DATADIR%%/policy/misc/app-stats/plugins/google.bro
+%%DATADIR%%/policy/misc/app-stats/plugins/netflix.bro
+%%DATADIR%%/policy/misc/app-stats/plugins/pandora.bro
+%%DATADIR%%/policy/misc/app-stats/plugins/youtube.bro
 %%DATADIR%%/policy/misc/capture-loss.bro
+%%DATADIR%%/policy/misc/detect-traceroute/__load__.bro
+%%DATADIR%%/policy/misc/detect-traceroute/detect-low-ttls.sig
+%%DATADIR%%/policy/misc/detect-traceroute/main.bro
+%%DATADIR%%/policy/misc/known-devices.bro
+%%DATADIR%%/policy/misc/load-balancing.bro
 %%DATADIR%%/policy/misc/loaded-scripts.bro
 %%DATADIR%%/policy/misc/profiling.bro
+%%DATADIR%%/policy/misc/scan.bro
 %%DATADIR%%/policy/misc/stats.bro
 %%DATADIR%%/policy/misc/trim-trace-file.bro
 %%DATADIR%%/policy/protocols/conn/known-hosts.bro
 %%DATADIR%%/policy/protocols/conn/known-services.bro
 %%DATADIR%%/policy/protocols/conn/weirds.bro
+%%DATADIR%%/policy/protocols/dhcp/known-devices-and-hostnames.bro
 %%DATADIR%%/policy/protocols/dns/auth-addl.bro
 %%DATADIR%%/policy/protocols/dns/detect-external-names.bro
+%%DATADIR%%/policy/protocols/ftp/detect-bruteforcing.bro
 %%DATADIR%%/policy/protocols/ftp/detect.bro
 %%DATADIR%%/policy/protocols/ftp/software.bro
-%%DATADIR%%/policy/protocols/http/detect-MHR.bro
-%%DATADIR%%/policy/protocols/http/detect-intel.bro
 %%DATADIR%%/policy/protocols/http/detect-sqli.bro
 %%DATADIR%%/policy/protocols/http/detect-webapps.bro
 %%DATADIR%%/policy/protocols/http/detect-webapps.sig
@@ -204,8 +415,11 @@ bin/bro-cut
 %%DATADIR%%/policy/protocols/http/software.bro
 %%DATADIR%%/policy/protocols/http/var-extraction-cookies.bro
 %%DATADIR%%/policy/protocols/http/var-extraction-uri.bro
+%%DATADIR%%/policy/protocols/modbus/known-masters-slaves.bro
+%%DATADIR%%/policy/protocols/modbus/track-memmap.bro
 %%DATADIR%%/policy/protocols/smtp/blocklists.bro
 %%DATADIR%%/policy/protocols/smtp/detect-suspicious-orig.bro
+%%DATADIR%%/policy/protocols/smtp/entities-excerpt.bro
 %%DATADIR%%/policy/protocols/smtp/software.bro
 %%DATADIR%%/policy/protocols/ssh/detect-bruteforcing.bro
 %%DATADIR%%/policy/protocols/ssh/geo-data.bro
@@ -215,9 +429,11 @@ bin/bro-cut
 %%DATADIR%%/policy/protocols/ssl/expiring-certs.bro
 %%DATADIR%%/policy/protocols/ssl/extract-certs-pem.bro
 %%DATADIR%%/policy/protocols/ssl/known-certs.bro
+%%DATADIR%%/policy/protocols/ssl/notary.bro
 %%DATADIR%%/policy/protocols/ssl/validate-certs.bro
 %%DATADIR%%/policy/tuning/__load__.bro
 %%DATADIR%%/policy/tuning/defaults/__load__.bro
+%%DATADIR%%/policy/tuning/defaults/extracted_file_limits.bro
 %%DATADIR%%/policy/tuning/defaults/packet-fragments.bro
 %%DATADIR%%/policy/tuning/defaults/warnings.bro
 %%DATADIR%%/policy/tuning/logs-to-elasticsearch.bro
@@ -234,7 +450,6 @@ bin/bro-cut
 %%BROCTL%%%%DATADIR%%ctl/scripts/create-link-for-log
 %%BROCTL%%%%DATADIR%%ctl/scripts/delete-log
 %%BROCTL%%%%DATADIR%%ctl/scripts/expire-logs
-%%BROCTL%%%%DATADIR%%ctl/scripts/fmt-time
 %%BROCTL%%%%DATADIR%%ctl/scripts/get-prof-log
 %%BROCTL%%%%DATADIR%%ctl/scripts/helpers/cat-file
 %%BROCTL%%%%DATADIR%%ctl/scripts/helpers/check-pid
@@ -251,27 +466,20 @@ bin/bro-cut
 %%BROCTL%%%%DATADIR%%ctl/scripts/helpers/top
 %%BROCTL%%%%DATADIR%%ctl/scripts/is-alive
 %%BROCTL%%%%DATADIR%%ctl/scripts/local-interfaces
-%%BROCTL%%%%DATADIR%%ctl/scripts/mail-contents
 %%BROCTL%%%%DATADIR%%ctl/scripts/make-archive-name
 %%BROCTL%%%%DATADIR%%ctl/scripts/post-terminate
 %%BROCTL%%%%DATADIR%%ctl/scripts/postprocessors/summarize-connections
 %%BROCTL%%%%DATADIR%%ctl/scripts/remove-link-for-log
-%%BROCTL%%%%DATADIR%%ctl/scripts/remove-log
 %%BROCTL%%%%DATADIR%%ctl/scripts/run-bro
 %%BROCTL%%%%DATADIR%%ctl/scripts/run-bro-on-trace
 %%BROCTL%%%%DATADIR%%ctl/scripts/send-mail
 %%BROCTL%%%%DATADIR%%ctl/scripts/set-bro-path
-%%BROCTL%%%%DATADIR%%ctl/scripts/stat-ctime
 %%BROCTL%%%%DATADIR%%ctl/scripts/stats-to-csv
 %%BROCTL%%%%DATADIR%%ctl/scripts/update
 %%BROCTL%%%%DATADIR%%ctl/scripts/update-stats
-%%BROCTL%%@dirrm %%DATADIR%%ctl/scripts/postprocessors
-%%BROCTL%%@dirrm %%DATADIR%%ctl/scripts/helpers
-%%BROCTL%%@dirrm %%DATADIR%%ctl/scripts
-%%BROCTL%%@dirrm %%DATADIR%%ctl
+%%BROCTL%%@unexec rm -f %D/logs/current
 %%BROCTL%%@unexec rm -f %D/spool/broctl-config.sh
 %%BROCTL%%@unexec rm -f %D/spool/broctl.dat
-%%BROCTL%%@unexec rm -f %D/logs/current
 %%BROCTL%%@unexec rm -f %D/spool/installed-scripts-do-not-touch/auto/broctl-config.bro
 %%BROCTL%%@unexec rm -f %D/spool/installed-scripts-do-not-touch/auto/local-networks.bro
 %%BROCTL%%@unexec rm -f %D/spool/installed-scripts-do-not-touch/auto/standalone-layout.bro
@@ -280,52 +488,68 @@ bin/bro-cut
 %%BROCTL%%@unexec rm -f %D/spool/installed-scripts-do-not-touch/site/local-worker.bro
 %%BROCTL%%@unexec rm -f %D/spool/installed-scripts-do-not-touch/site/local.bro
 %%BROCTL%%@dirrmtry spool/tmp
-%%BROCTL%%@dirrmtry spool/scripts
-%%BROCTL%%@dirrmtry spool/logs
-%%BROCTL%%@dirrm spool/installed-scripts-do-not-touch/site
-%%BROCTL%%@dirrm spool/installed-scripts-do-not-touch/auto
-%%BROCTL%%@dirrm spool/installed-scripts-do-not-touch
-%%BROCTL%%@dirrm spool
-%%BROCTL%%@dirrm %%DATADIR%%/broctl
-%%BROCTL%%@dirrm lib/broctl/plugins
-%%BROCTL%%@dirrm lib/broctl/BroControl
-%%BROCTL%%@dirrm lib/broctl
+%%BROCTL%%@dirrmtry spool/installed-scripts-do-not-touch/site
+%%BROCTL%%@dirrmtry spool/installed-scripts-do-not-touch/auto
+%%BROCTL%%@dirrmtry spool/installed-scripts-do-not-touch
+%%BROCTL%%@dirrmtry spool
+%%BROCTL%%@dirrm %%DATADIR%%ctl/scripts/postprocessors
+%%BROCTL%%@dirrm %%DATADIR%%ctl/scripts/helpers
+%%BROCTL%%@dirrm %%DATADIR%%ctl/scripts
+%%BROCTL%%@dirrm %%DATADIR%%ctl
 @dirrm %%DATADIR%%/site
 @dirrm %%DATADIR%%/policy/tuning/defaults
 @dirrm %%DATADIR%%/policy/tuning
 @dirrm %%DATADIR%%/policy/protocols/ssl
 @dirrm %%DATADIR%%/policy/protocols/ssh
 @dirrm %%DATADIR%%/policy/protocols/smtp
+@dirrm %%DATADIR%%/policy/protocols/modbus
 @dirrm %%DATADIR%%/policy/protocols/http
 @dirrm %%DATADIR%%/policy/protocols/ftp
 @dirrm %%DATADIR%%/policy/protocols/dns
+@dirrm %%DATADIR%%/policy/protocols/dhcp
 @dirrm %%DATADIR%%/policy/protocols/conn
 @dirrm %%DATADIR%%/policy/protocols
+@dirrm %%DATADIR%%/policy/misc/detect-traceroute
+@dirrm %%DATADIR%%/policy/misc/app-stats/plugins
+@dirrm %%DATADIR%%/policy/misc/app-stats
 @dirrm %%DATADIR%%/policy/misc
+@dirrm %%DATADIR%%/policy/integration/collective-intel
 @dirrm %%DATADIR%%/policy/integration/barnyard2
 @dirrm %%DATADIR%%/policy/integration
 @dirrm %%DATADIR%%/policy/frameworks/software
 @dirrm %%DATADIR%%/policy/frameworks/signatures
-@dirrm %%DATADIR%%/policy/frameworks/metrics
+@dirrm %%DATADIR%%/policy/frameworks/packet-filter
+@dirrm %%DATADIR%%/policy/frameworks/intel/seen
+@dirrm %%DATADIR%%/policy/frameworks/intel
+@dirrm %%DATADIR%%/policy/frameworks/files
 @dirrm %%DATADIR%%/policy/frameworks/dpd
 @dirrm %%DATADIR%%/policy/frameworks/control
 @dirrm %%DATADIR%%/policy/frameworks/communication
 @dirrm %%DATADIR%%/policy/frameworks
 @dirrm %%DATADIR%%/policy
+@dirrm %%DATADIR%%/magic
+%%BROCTL%%@dirrm %%DATADIR%%/broctl
 @dirrm %%DATADIR%%/base/utils
+@dirrm %%DATADIR%%/base/protocols/tunnels
 @dirrm %%DATADIR%%/base/protocols/syslog
 @dirrm %%DATADIR%%/base/protocols/ssl
 @dirrm %%DATADIR%%/base/protocols/ssh
 @dirrm %%DATADIR%%/base/protocols/socks
 @dirrm %%DATADIR%%/base/protocols/smtp
+@dirrm %%DATADIR%%/base/protocols/pop3
+@dirrm %%DATADIR%%/base/protocols/modbus
 @dirrm %%DATADIR%%/base/protocols/irc
 @dirrm %%DATADIR%%/base/protocols/http
 @dirrm %%DATADIR%%/base/protocols/ftp
 @dirrm %%DATADIR%%/base/protocols/dns
+@dirrm %%DATADIR%%/base/protocols/dnp3
+@dirrm %%DATADIR%%/base/protocols/dhcp
 @dirrm %%DATADIR%%/base/protocols/conn
 @dirrm %%DATADIR%%/base/protocols
 @dirrm %%DATADIR%%/base/misc
 @dirrm %%DATADIR%%/base/frameworks/tunnels
+@dirrm %%DATADIR%%/base/frameworks/sumstats/plugins
+@dirrm %%DATADIR%%/base/frameworks/sumstats
 @dirrm %%DATADIR%%/base/frameworks/software
 @dirrm %%DATADIR%%/base/frameworks/signatures
 @dirrm %%DATADIR%%/base/frameworks/reporter
@@ -333,25 +557,34 @@ bin/bro-cut
 @dirrm %%DATADIR%%/base/frameworks/notice/extend-email
 @dirrm %%DATADIR%%/base/frameworks/notice/actions
 @dirrm %%DATADIR%%/base/frameworks/notice
-@dirrm %%DATADIR%%/base/frameworks/metrics
 @dirrm %%DATADIR%%/base/frameworks/logging/writers
 @dirrm %%DATADIR%%/base/frameworks/logging/postprocessors
 @dirrm %%DATADIR%%/base/frameworks/logging
 @dirrm %%DATADIR%%/base/frameworks/intel
 @dirrm %%DATADIR%%/base/frameworks/input/readers
 @dirrm %%DATADIR%%/base/frameworks/input
+@dirrm %%DATADIR%%/base/frameworks/files
 @dirrm %%DATADIR%%/base/frameworks/dpd
 @dirrm %%DATADIR%%/base/frameworks/control
 @dirrm %%DATADIR%%/base/frameworks/communication
 @dirrm %%DATADIR%%/base/frameworks/cluster/nodes
 @dirrm %%DATADIR%%/base/frameworks/cluster
+@dirrm %%DATADIR%%/base/frameworks/analyzer
 @dirrm %%DATADIR%%/base/frameworks
+@dirrm %%DATADIR%%/base/files/unified2
+@dirrm %%DATADIR%%/base/files/hash
+@dirrm %%DATADIR%%/base/files/extract
+@dirrm %%DATADIR%%/base/files
+@dirrm %%DATADIR%%/base/bif/plugins
+@dirrm %%DATADIR%%/base/bif
 @dirrm %%DATADIR%%/base
 @dirrm %%DATADIR%%
 %%CLEANUP_PREFIX%%@dirrmtry share
 @dirrmtry logs
+%%BROCTL%%@dirrmtry lib/broctl/plugins
+%%BROCTL%%@dirrmtry lib/broctl/BroControl
+%%BROCTL%%@dirrmtry lib/broctl
 %%CLEANUP_PREFIX%%@dirrmtry lib
-%%CLEANUP_PREFIX%%@dirrmtry include
 %%CLEANUP_PREFIX%%@dirrmtry etc
 %%CLEANUP_PREFIX%%@dirrmtry bin
 %%CLEANUP_PREFIX%%@dirrmtry %D
