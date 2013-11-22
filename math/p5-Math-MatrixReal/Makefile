@@ -1,13 +1,11 @@
 # Created by: Sander Vesik <sander@haldjas.folklore.ee>
 # $FreeBSD$
 
-PORTNAME=	MatrixReal
+PORTNAME=	Math-MatrixReal
 PORTVERSION=	2.10
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	Math
 PKGNAMEPREFIX=	p5-
-DISTNAME=	Math-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module implementing a Matrix of Reals
