@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of small angular fonts
 
 DEPRECATED=	Broken for more than 6 month
-EXPIRATION_DATE=	2013-11-18
+EXPIRATION_DATE=	2013-12-18
 
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message

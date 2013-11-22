@@ -19,7 +19,7 @@ MAINTAINER=	dk@farm.org
 COMMENT=	The Portable MSX/MSX2/MSX2+ Emulator
 
 DEPRECATED=	Broken for more than 6 month
-EXPIRATION_DATE=	2013-11-18
+EXPIRATION_DATE=	2013-12-18
 
 USE_XORG=	xi x11
 USE_ZIP=	yes
