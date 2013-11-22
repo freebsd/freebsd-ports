@@ -48,9 +48,8 @@ PLIST_SUB+=	OPENGL="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/uuid.patch
 .endif
 
-post-install:
-	cd ${WRKSRC}/src/appl && ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} install-man
 .if ${PORT_OPTIONS:MDOCS}
+post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}/
 .endif
