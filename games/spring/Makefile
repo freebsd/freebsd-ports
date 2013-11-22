@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A project aiming to create a new and versatile RTS Engine
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-12-22
+
 BROKEN=		Does not build with recent boost
 
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \

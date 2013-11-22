@@ -13,6 +13,9 @@ PATCHFILES=	mico-2.3.12-secfix1.diff
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure, reliable, production-quality, standards-based CORBA middleware
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-12-22
+
 BROKEN=	fails to build
 
 PATCH_DIST_STRIP=	-p1

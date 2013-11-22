@@ -15,6 +15,9 @@ LIB_DEPENDS=	opensync.1:${PORTSDIR}/devel/libopensync
 
 CONFLICTS=	libopensync-plugin-python-0.2*
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-12-22
+
 BROKEN=		fails to build with recent libopensync
 
 USE_BZIP2=	yes

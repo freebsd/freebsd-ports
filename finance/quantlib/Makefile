@@ -21,6 +21,9 @@ CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-12-22
+
 BROKEN=		fails to build
 
 MAN1=		quantlib-config.1 quantlib-test-suite.1

@@ -9,6 +9,9 @@ CATEGORIES=	devel haskell
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Arrows for "deep application"
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-12-22
+
 LICENSE=	BSD
 
 USE_CABAL=	haskell-src mtl TypeCompose>=0.9.5

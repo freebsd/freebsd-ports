@@ -17,6 +17,9 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 BROKEN=		Overwrites bin/map from converters/p5-Unicode-Map
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-12-22
+
 USES=		perl5
 USE_PERL5=	configure
 
