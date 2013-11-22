@@ -132,6 +132,7 @@
     SUBDIR += py-jabberbot
     SUBDIR += py-punjab
     SUBDIR += py-pyxmpp
+    SUBDIR += py-skype4py
     SUBDIR += py-twistedWords
     SUBDIR += py-xmpppy
     SUBDIR += py-xmpppy-irc
