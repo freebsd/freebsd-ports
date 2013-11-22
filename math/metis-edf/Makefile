@@ -9,7 +9,7 @@ CATEGORIES=	math
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Meshes partitioning tool used by Code_Aster
 
-CONFLICTS=	metis-[0-9]*
+CONFLICTS=	metis-[0-9]* metis4-4*
 
 ALL_TARGET=	default
 MAKE_ENV+=	AR="${AR}" PICFLAG="${PICFLAG}"
