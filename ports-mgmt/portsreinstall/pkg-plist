@@ -18,4 +18,5 @@ lib/portsreinstall/libreinstall.sh
 lib/portsreinstall/libstr.sh
 lib/portsreinstall/libtemp.sh
 lib/portsreinstall/libusage.sh
+man/man8/portsreinstall.8.gz
 @dirrm lib/portsreinstall
