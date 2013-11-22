@@ -1,0 +1,39 @@
+--- po/Makefile.in.in.orig	1998-04-26 15:22:40.000000000 +0200
++++ po/Makefile.in.in	2013-11-22 20:12:26.000000000 +0100
+@@ -110,9 +110,9 @@
+ install-data-no: all
+ install-data-yes: all
+ 	if test -r $(MKINSTALLDIRS); then \
+-	  $(MKINSTALLDIRS) $(datadir); \
++	  $(MKINSTALLDIRS) ${DESTDIR}$(datadir); \
+ 	else \
+-	  $(top_srcdir)/mkinstalldirs $(datadir); \
++	  $(top_srcdir)/mkinstalldirs ${DESTDIR}$(datadir); \
+ 	fi
+ 	@catalogs='$(CATALOGS)'; \
+ 	for cat in $$catalogs; do \
+@@ -122,7 +122,7 @@
+ 	    *)     destdir=$(localedir);; \
+ 	  esac; \
+ 	  lang=`echo $$cat | sed 's/\$(CATOBJEXT)$$//'`; \
+-	  dir=$$destdir/$$lang/LC_MESSAGES; \
++	  dir=${DESTDIR}$$destdir/$$lang/LC_MESSAGES; \
+ 	  if test -r $(MKINSTALLDIRS); then \
+ 	    $(MKINSTALLDIRS) $$dir; \
+ 	  else \
+@@ -152,12 +152,12 @@
+ 	done
+ 	if test "$(PACKAGE)" = "gettext"; then \
+ 	  if test -r $(MKINSTALLDIRS); then \
+-	    $(MKINSTALLDIRS) $(gettextsrcdir); \
++	    $(MKINSTALLDIRS) ${DESTDIR}$(gettextsrcdir); \
+ 	  else \
+-	    $(top_srcdir)/mkinstalldirs $(gettextsrcdir); \
++	    $(top_srcdir)/mkinstalldirs ${DESTDIR}$(gettextsrcdir); \
+ 	  fi; \
+ 	  $(INSTALL_DATA) $(srcdir)/Makefile.in.in \
+-			  $(gettextsrcdir)/Makefile.in.in; \
++			  ${DESTDIR}$(gettextsrcdir)/Makefile.in.in; \
+ 	else \
+ 	  : ; \
+ 	fi
