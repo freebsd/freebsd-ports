@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ansible
-PORTVERSION=	1.3.4
+PORTVERSION=	1.4
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://ansibleworks.com/releases/
 
@@ -10,17 +10,16 @@ COMMENT=	Simple ssh-based configuration management and orchestration system
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml \
-		${PYTHON_PKGNAMEPREFIX}paramiko>=0:${PORTSDIR}/security/py-paramiko \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:${PORTSDIR}/devel/py-Jinja2
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml \
+		${PYTHON_PKGNAMEPREFIX}paramiko>0:${PORTSDIR}/security/py-paramiko \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>0:${PORTSDIR}/devel/py-Jinja2
 
-OPTIONS_DEFINE=	ACCELERATE EXAMPLES
+OPTIONS_DEFINE=		ACCELERATE EXAMPLES
 OPTIONS_DEFAULT=	ACCELERATE
 
-ACCELERATE_DESC=	Enable accelerate mode
-ACCELERATE_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}pycrypto>=0:${PORTSDIR}/security/py-pycrypto \
-		${PYTHON_PKGNAMEPREFIX}keyczar>=0:${PORTSDIR}/security/py-keyczar
+ACCELERATE_DESC=	Enable Accelerated Mode (Uses pycrypto and keyczar)
+ACCELERATE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto \
+			${PYTHON_PKGNAMEPREFIX}keyczar>0:${PORTSDIR}/security/py-keyczar
 
 USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
