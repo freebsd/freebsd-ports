@@ -149,10 +149,10 @@ you update your ports collection, before attempting any port upgrades.
 	pkgdb -Ff
 
     1) Reinstall new version of Perl (5.16):
-	portupgrade -o lang/perl5.16 -f perl-5.14.\*
+	portupgrade -o lang/perl5.16 -f lang/perl5.14
 
     2) Reinstall everything that depends on Perl:
-	portupgrade -fr perl
+	portupgrade -fr lang/perl5.16
 
   Portmaster users:
 	portmaster -o lang/perl5.16 lang/perl5.14
