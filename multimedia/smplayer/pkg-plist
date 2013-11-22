@@ -1,4 +1,5 @@
 bin/smplayer
+man/man1/smplayer.1.gz
 share/applications/smplayer.desktop
 share/applications/smplayer_enqueue.desktop
 share/icons/hicolor/128x128/apps/smplayer.png
