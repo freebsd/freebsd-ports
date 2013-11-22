@@ -12,7 +12,7 @@ COMMENT=	Graphical interface for an OCR program (cuneiform and tesseract)
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -32,7 +32,6 @@ USE_QT4=	corelib gui imageformats linguist_build \
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCUNEIFORM}
