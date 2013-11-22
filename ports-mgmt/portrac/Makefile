@@ -9,7 +9,7 @@ MASTER_SITES=	http://e-soul.org/distfiles/ \
 		http://home.e-soul.org/~mgp/distfiles/
 
 MAINTAINER=	mgp@e-soul.org
-COMMENT=	A simple GUI tool for tracking port updates
+COMMENT=	Simple GUI tool for tracking port updates
 
 LICENSE=	BSD
 
@@ -20,17 +20,13 @@ PLIST_FILES=	bin/portrac \
 
 PLIST_DIRS=	share/portrac
 
+USES=		qmake
 USE_BZIP2=	yes
-
-USE_QT4=	gui moc_build qmake_build
-
-NO_STAGE=	yes
-do-configure:
-		@cd ${WRKDIR}/${DISTNAME} && ${QMAKE} portrac.pro
+USE_QT4=	gui moc_build
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/portrac ${PREFIX}/bin && \
-		${MKDIR} ${DATADIR} && \
-		${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/*.png ${DATADIR}
+		${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/portrac ${STAGEDIR}${PREFIX}/bin && \
+		${MKDIR} ${STAGEDIR}${DATADIR} && \
+		${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/*.png ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

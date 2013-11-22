@@ -12,19 +12,12 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Tool for managing notes within a hierarchical tree
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_QT4=	gui xml qmake_build moc_build uic_build rcc_build
+USES=		qmake
+USE_QT4=	gui xml moc_build uic_build rcc_build
 
-MAKE_ENV=	QTDIR="${QT_PREFIX}"
 PLIST_FILES=	bin/tuxcards
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-		${QMAKE} -spec ${QMAKESPEC} tuxcards.pro
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
