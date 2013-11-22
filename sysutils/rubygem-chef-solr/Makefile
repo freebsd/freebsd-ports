@@ -3,7 +3,7 @@
 
 PORTNAME=	chef-solr
 PORTVERSION=	11.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -16,6 +16,8 @@ RUN_DEPENDS=	rubygem-chef>=${PORTVERSION}:${PORTSDIR}/sysutils/rubygem-chef \
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
 RUBYGEM_AUTOPLIST=	yes
+USERS=	chef_server
+GROUPS=	chef_server
 
 PLIST_FILES=	bin/chef-solr \
 		bin/chef-solr-installer
