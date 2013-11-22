@@ -10,21 +10,17 @@ MASTER_SITES=	SF/${PORTNAME}/OpenPref-Qt4/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	annulen@yandex.ru
 COMMENT=	Preferans game
 
-USE_QT4=	corelib gui qmake_build moc_build rcc_build uic_build
-HAS_CONFIGURE=	yes
+USES=		qmake
+USE_QT4=	corelib gui moc_build rcc_build uic_build
 MAKE_JOBS_UNSAFE=	yes
 
 DESKTOP_ENTRIES="OpenPref" "${COMMENT}" "${DATADIR}/openpref.png" \
-		"openpref" "Game;CardGame;" false
-
-NO_STAGE=	yes
-do-configure:
-	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS} )
+		"openpref" "Game;CardGame;" true
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/openpref ${PREFIX}/bin
-	${MKDIR} ${DATADIR}/i18n
-	${INSTALL_DATA} ${WRKSRC}/openpref_ru.qm ${DATADIR}/i18n
-	${INSTALL_DATA} ${WRKSRC}/pics/openpref.png ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/openpref ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}/i18n
+	${INSTALL_DATA} ${WRKSRC}/openpref_ru.qm ${STAGEDIR}${DATADIR}/i18n
+	${INSTALL_DATA} ${WRKSRC}/pics/openpref.png ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

@@ -8,28 +8,23 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/qKismet/${PORTVERSION}
 
 MAINTAINER=	vg@FreeBSD.org
-COMMENT=	This is graphical Kismet client writtent in Qt
+COMMENT=	Qt 4 GUI client for Kismet
 
 RUN_DEPENDS=	kismet:${PORTSDIR}/net-mgmt/kismet
 
+USES=		qmake
 USE_BZIP2=	yes
-USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build network
-
-QMAKE_PRO=	${PORTNAME}.pro
+USE_QT4=	gui xml uic_build moc_build rcc_build network
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
-NO_STAGE=	yes
 do-patch:
 	${REINPLACE_CMD} -e 's,:/img/,${DATADIR}/img/,g' \
 	${WRKSRC}/*.cpp
 
-do-configure:
-	cd ${WRKSRC} && ${QMAKE}
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/../build/release/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} img ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/../build/release/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} img ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

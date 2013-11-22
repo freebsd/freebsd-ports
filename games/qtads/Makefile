@@ -11,20 +11,16 @@ COMMENT=	Cross-platform multimedia interpreter for TADS games
 
 LICENSE=	GPLv2
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig qmake
 USE_BZIP2=	yes
-USE_QT4=	gui moc_build network qmake_build rcc_build uic_build
+USE_QT4=	gui moc_build network rcc_build uic_build
 USE_SDL=	sdl mixer sound
 
-QMAKEFLAGS+=	QMAKE_CFLAGS_RELEASE="" QMAKE_CXXFLAGS_RELEASE=""
+QMAKE_ARGS+=	QMAKE_CFLAGS_RELEASE="" QMAKE_CXXFLAGS_RELEASE=""
 
 PLIST_FILES=	bin/qtads
 
-NO_STAGE=	yes
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS}
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
