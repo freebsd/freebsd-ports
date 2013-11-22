@@ -4,10 +4,10 @@ libexec/nagios/check_by_ssh
 libexec/nagios/check_clamd
 libexec/nagios/check_cluster
 libexec/nagios/check_dhcp
-%%SUB_DNS%%libexec/nagios/check_dig
+libexec/nagios/check_dig
 libexec/nagios/check_disk
 libexec/nagios/check_disk_smb
-%%SUB_DNS%%libexec/nagios/check_dns
+libexec/nagios/check_dns
 libexec/nagios/check_dummy
 libexec/nagios/check_file_age
 libexec/nagios/check_flexlm
