@@ -1,0 +1,11 @@
+--- lib/chef/solr/application/solr.rb.orig  2013-11-22 16:45:43.000000000 +0900
++++ lib/chef/solr/application/solr.rb   2013-11-22 16:45:57.000000000 +0900
+@@ -22,6 +22,7 @@
+ require 'chef/application'
+ require 'chef/daemon'
+ require 'chef/solr'
++require 'chef/config_fetcher'
+ 
+ class Chef
+   class Solr
+

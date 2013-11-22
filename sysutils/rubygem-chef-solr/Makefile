@@ -3,7 +3,7 @@
 
 PORTNAME=	chef-solr
 PORTVERSION=	11.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -25,5 +25,9 @@ PLIST_FILES=	bin/chef-solr \
 DISTVERSIONSUFFIX=	.alpha.1
 GEM_NAME=	${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 MASTER_SITE_RUBYGEMS=	http://dist.reallyenglish.com/pub/gems/%SUBDIR%/
+
+post-install:
+	${PATCH} -p0 -d ${PREFIX}/${GEM_LIB_DIR} < ${PATCHDIR}/configfetcher.patch
+	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -name "*.orig" -delete
 
 .include <bsd.port.mk>
