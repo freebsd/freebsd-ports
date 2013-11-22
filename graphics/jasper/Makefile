@@ -16,8 +16,6 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
 LICENSE=	MIT
 
-NO_STAGE=	yes
-
 USE_AUTOTOOLS=	libtool
 USE_ZIP=	yes
 USE_GNOME=	lthack
@@ -50,17 +48,11 @@ PLIST_SUB+=	OPENGL="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/uuid.patch
 .endif
 
-.if !defined(NO_INSTALL_MANPAGES)
-MAN1=		imgcmp.1 imginfo.1 jasper.1 jiv.1
-.endif
-
 post-install:
-.if !defined(NO_INSTALL_MANPAGES)
-	@cd ${WRKSRC}/src/appl && make install-man
-.endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+	cd ${WRKSRC}/src/appl && ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} install-man
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>

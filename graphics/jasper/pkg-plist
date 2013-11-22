@@ -26,6 +26,10 @@ lib/libjasper.a
 lib/libjasper.la
 lib/libjasper.so
 lib/libjasper.so.4
+man/man1/imgcmp.1.gz
+man/man1/imginfo.1.gz
+man/man1/jasper.1.gz
+man/man1/jiv.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/jasper.pdf
 %%PORTDOCS%%%%DOCSDIR%%/jpeg2000.pdf
