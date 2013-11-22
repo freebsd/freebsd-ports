@@ -568,6 +568,7 @@
     SUBDIR += py-pymc
     SUBDIR += py-roman
     SUBDIR += py-scientific
+    SUBDIR += py-statsmodels
     SUBDIR += py-svgmath
     SUBDIR += py-symeig
     SUBDIR += py-sympy
