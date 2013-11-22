@@ -20,8 +20,8 @@ reload_cmd="named_reload"
 stop_cmd="named_stop"
 
 named_enable=${named_enable:-"NO"}		# Run named, the DNS server (or NO).
-named_program=${named_program:-"/usr/local/sbin/named"}		# Path to named, if you want a different one.
-named_conf=${named_conf:-"/usr/local/etc/namedb/named.conf"}	# Path to the configuration file
+named_program=${named_program:-"%%PREFIX%%/sbin/named"}	# Path to named, if you want a different one.
+named_conf=${named_conf:-"%%BIND_DESTETC%%/named.conf"}	# Path to the configuration file
 named_flags=${named_flags:-""}			# Use this for flags OTHER than -u and -c
 named_uid=${named_uid:-"bind"}			# User to run named as
 named_wait=${named_wait:-"NO"}			# Wait for working name service before exiting
