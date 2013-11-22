@@ -14,9 +14,9 @@ COMMENT=	Single player word finding game based on Boggle
 LICENSE=	GPLv3
 
 USE_BZIP2=	yes
-USES=		desktop-file-utils
-USE_QT4=	moc_build qmake_build rcc_build gui iconengines imageformats
-QMAKEFLAGS=	QMAKE_LFLAGS="-lz"
+USES=		desktop-file-utils qmake
+USE_QT4=	moc_build rcc_build gui iconengines_run imageformats_run
+LDFLAGS+=	-lz
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	CREDITS ChangeLog NEWS
@@ -27,10 +27,6 @@ NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e '/PKGCONFIG += zlib/d' \
 		${WRKSRC}/tanglet.pro
-
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX}
 
 post-install:
 	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${PREFIX}/share/pixmaps/

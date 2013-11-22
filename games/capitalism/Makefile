@@ -22,9 +22,9 @@ LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
 
 WRKSRC=		${WRKDIR}/Capitalism-${PORTVERSION}
 
-USES=		iconv
+USES=		iconv qmake
 USE_XORG=	ice sm x11 xau xcb xdmcp xext xrender
-USE_QT4=	moc_build qmake_build rcc_build uic_build iconengines imageformats \
+USE_QT4=	moc_build rcc_build uic_build iconengines_run imageformats_run \
 		corelib gui network script xml
 
 PORTDOCS=	README changelog readme.txt
@@ -33,7 +33,7 @@ INSTALLS_ICONS=	yes
 ICON_SIZES=	16x16 22x22 24x24 32x32 48x48 64x64
 
 DESKTOP_ENTRIES="Capitalism" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;BoardGame;" false
+		"${PORTNAME}" "Game;BoardGame;" true
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
@@ -42,13 +42,6 @@ NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
 
 .include <bsd.port.options.mk>
-
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-	${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX}
-
-post-configure:
-	@${REINPLACE_CMD} -e 's|-O2 -pthread||g' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Capitalism ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
