@@ -11,7 +11,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A C++ reference implementation of the Atlas protocol
 
 PKGNAMESUFFIX=	-devel
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	YES
 USE_BZIP2=	YES
 USES=	pathfix
