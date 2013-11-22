@@ -3,48 +3,45 @@
 
 PORTNAME=	abe
 PORTVERSION=	1.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
+		SF/nemysisfreebsdp/${CATEGORIES}/:icons
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}.png:icons
+EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Abe's Amazing Adventure
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bmptopnm:${PORTSDIR}/graphics/netpbm
-
+USES=		gmake
 USE_SDL=	mixer sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-data-dir=${DATADIR}
-USE_GMAKE=	yes
 
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
-PLIST_FILES=	bin/${PORTNAME} \
-		share/pixmaps/${PORTNAME}.png
-
-PORTDATA=	*
 PORTDOCS=	AUTHORS ChangeLog README
 
 DESKTOP_ENTRIES="Abe's Amazing Avanture" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" ${FALSE}
+		"${PORTNAME}" "Game;ArcadeGame;" false
 
-OPTIONS_DEFINE=	GOD_MODE OPTIMIZED_CFLAGS
-OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
+OPTIONS_DEFINE=	DOCS GOD_MODE OPTIMIZED_CFLAGS
+OPTIONS_DEFAULT=	GOD_MODE OPTIMIZED_CFLAGS
 GOD_MODE_DESC=	Enable God Mode (toggle with 'g')
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
-.if ${PORT_OPTIONS:MGOD_MODE} || !empty(PORT_OPTIONS:MOPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MGOD_MODE} || ! ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 .   if ${PORT_OPTIONS:MGOD_MODE}
-	@${REINPLACE_CMD} -e 's|\(#define GOD_MODE\) 0|\1 1|' \
+	@${REINPLACE_CMD} -e 's|#define GOD_MODE 0|#define GOD_MODE 1|' \
 		${WRKSRC}/src/Game.h
 .   endif
-.   if empty(PORT_OPTIONS:MOPTIMIZED_CFLAGS)
+.   if ! ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 	@${REINPLACE_CMD} -e 's|-O2||g ; \
 		s|-fomit-frame-pointer||g ; \
 		s|-ffast-math||g ; \
@@ -53,20 +50,14 @@ post-patch:
 .   endif
 .endif
 
-post-build:
-	@(cd ${WRKSRC} && ${TAR} xf ./images/images.tar abe.bmp && \
-		${LOCALBASE}/bin/bmptopnm abe.bmp | \
-		${LOCALBASE}/bin/pamscale .2487 | ${LOCALBASE}/bin/pnmtopng > ${PORTNAME}.png)
-
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png ${PREFIX}/share/pixmaps
-	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
+
 .for d in images maps sounds
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${DATADIR})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
