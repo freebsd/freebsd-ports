@@ -11,17 +11,14 @@ DISTNAME=	118297-qtResistors-201001102229
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Calculate resistance of resistor by the colors on the resistor
 
-USE_QT4=	gui qmake_build uic_build moc_build
+USES=		qmake
+USE_QT4=	gui uic_build moc_build
 
 WRKSRC=		${WRKDIR}/qtResistors
 
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
-do-configure:
-	cd ${WRKSRC} && ${QMAKE} ${QMAKEFLAGS}
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/qtResistors ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/qtResistors ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

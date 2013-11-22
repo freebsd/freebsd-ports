@@ -12,7 +12,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}-2-src
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Small ftp client unpretentious based on Qt4
 
-USE_QT4=	gui network corelib qmake_build uic_build moc_build rcc_build
+USES=		qmake
+USE_QT4=	gui network corelib uic_build moc_build rcc_build
 INSTALLS_ICONS=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -25,18 +26,13 @@ DESKTOP_ENTRIES=	"Scythia" \
 			"scythia" \
 			"scythia" \
 			"Network;FileTransfer;Qt;" \
-			"false"
+			"true"
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' \
 		-e '/unix:desktop/d' \
 		${WRKSRC}/scythia.pro
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' \
 		${WRKSRC}/src/main.cpp
-
-pre-build:
-	@cd ${BUILD_WRKSRC} && \
-	       ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX} scythia.pro
 
 .include <bsd.port.mk>

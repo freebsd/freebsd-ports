@@ -13,7 +13,8 @@ COMMENT=	Easy graphic editing program
 
 LICENSE=	GPLv3
 
-USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build
+USES=		qmake
+USE_QT4=	gui xml uic_build moc_build rcc_build
 QPROFILE=	easyPaint
 WRKSRC=		${WRKDIR}/${QPROFILE}
 
@@ -22,11 +23,7 @@ DESKTOP_ENTRIES="easyPaint" "${COMMENT}" "" "easypaint" \
 
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
-do-configure:
-	cd ${WRKSRC} && ${QMAKE}
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${QPROFILE} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/${QPROFILE} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
