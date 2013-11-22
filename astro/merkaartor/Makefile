@@ -9,46 +9,33 @@ MASTER_SITES=	http://merkaartor.be/attachments/download/301/ \
 		https://secure.ohos.nl/downloads/
 
 MAINTAINER=	dev2@heesakkers.info
-COMMENT=	An openstreetmap mapping program
+COMMENT=	Openstreetmap mapping program
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	gdal:${PORTSDIR}/graphics/gdal \
-		proj:${PORTSDIR}/graphics/proj
+LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal \
+		libproj.so:${PORTSDIR}/graphics/proj
 
-NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 
-USE_QT4=	qmake_build uic_build moc_build rcc_build \
+USE_QT4=	uic_build moc_build rcc_build \
 		gui network svg webkit xml imageformats script scripttools
 
-.if exists(${LOCALBASE}/bin/gnome-session)
-INSTALLS_ICONS=	yes
-.endif
-
-QMAKEFLAGS=	PREFIX=${PREFIX}
-
-OPTIONS_DEFINE=	GEOIMAGE ZBAR DEBUG
-GEOIMAGE_DESC=	Enable geotagged images (needs exiv2)
-ZBAR_DESC=	Read barcodes from walking papers
+OPTIONS_DEFINE=	GEOIMAGE ZBAR DEBUG NLS
 OPTIONS_DEFAULT=	GEOIMAGE
 
+GEOIMAGE_DESC=	Enable geotagged images (needs exiv2)
+GEOIMAGE_QMAKE_ON=	GEOIMAGE=1
+GEOIMAGE_LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2
+
+ZBAR_DESC=	Read barcodes from walking papers
+ZBAR_QMAKE_ON=	ZBAR=1
+ZBAR_LIB_DEPENDS=	libzbar.so:${PORTSDIR}/graphics/zbar
+
+DEBUG_QMAKE_OFF=	NODEBUG=1 RELEASE=1
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGEOIMAGE}
-QMAKEFLAGS+=	GEOIMAGE=1
-LIB_DEPENDS+=	exiv2:${PORTSDIR}/graphics/exiv2
-.endif
-
-.if ${PORT_OPTIONS:MZBAR}
-QMAKEFLAGS+=	ZBAR=1
-LIB_DEPENDS+=	zbar:${PORTSDIR}/graphics/zbar
-.endif
-
-.if empty(PORT_OPTIONS:MDEBUG)
-QMAKEFLAGS+=	NODEBUG=1 RELEASE=1
-.endif
 
 .if empty(PORT_OPTIONS:MNLS)
 PLIST_SUB+=	NLS="@comment "
@@ -57,11 +44,7 @@ PLIST_SUB+=	NLS=""
 USE_QT4+=	linguist_build
 
 pre-build:
-	@cd ${WRKSRC}/translations && lrelease-qt4 ../src/src.pro
+	@cd ${WRKSRC}/translations && ${LRELEASE} ../src/src.pro
 .endif
-
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS}
 
 .include <bsd.port.mk>
