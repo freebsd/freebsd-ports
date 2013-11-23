@@ -5,10 +5,10 @@
 actions: [file]
 post-install: |
   file=%D/%@
-  install-info --quiet %D/%@ ${file%/*}/dir
+  install-info --quiet %D/%@ %D/info/dir
 post-deinstall: |
   file=%D/%@
-  install-info --quiet --delete %D/%@ ${file%/*}/dir
+  install-info --quiet --delete %D/%@ %D/info/dir
   if [ $(info -d ${file%/*}  --output - 2>/dev/null | grep -c '^*') -eq 1 ]; then
     rm -f ${file%/*}/dir
   fi

@@ -68,24 +68,6 @@ compress-man:
 	done
 .endif
 
-.if !target(add-plist-info)
-add-plist-info:
-.for i in ${INFO}
-.if !defined(WITH_PKGNG)
-	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec install-info --quiet --delete %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
-		>> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec [ \`info -d %D/${INFO_PATH}  --output - 2>/dev/null | grep -c '^*'\` -eq 1 ] && rm -f %D/${INFO_PATH}/dir || :"\
-		>> ${TMPPLIST}
-	@${LS} ${STAGEDIR}${PREFIX}/${INFO_PATH}/$i.info* | ${SED} -e s:${STAGEDIR}${PREFIX}/::g >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec install-info --quiet %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
-		>> ${TMPPLIST}
-.else
-	@${LS} ${STAGEDIR}${PREFIX}/${INFO_PATH}/$i.info* | ${SED} -e s:${STAGEDIR}${PREFIX}/:@info\ :g >> ${TMPPLIST}
-.endif
-.endfor
-.endif
-
 .if !target(makeplist)
 makeplist: stage
 	@${SETENV} ${CO_ENV} ${SH} ${SCRIPTSDIR}/check-stagedir.sh makeplist
