@@ -3,6 +3,7 @@
 
 PORTNAME=	circe
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://bws.berkeley.edu/ports/
 
@@ -13,7 +14,6 @@ LICENSE=	BSD
 
 RUN_DEPENDS=	p5-Net-IP-Match-XS>=0:${PORTSDIR}/net-mgmt/p5-Net-IP-Match-XS \
 		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		p5-IO>=0:${PORTSDIR}/devel/p5-IO \
 		p5-Error>=0:${PORTSDIR}/lang/p5-Error \
 		p5-Sys-Syslog>=0:${PORTSDIR}/sysutils/p5-Sys-Syslog \
 		p5-TryCatch>=0:${PORTSDIR}/lang/p5-TryCatch \

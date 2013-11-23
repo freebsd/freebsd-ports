@@ -3,7 +3,7 @@
 
 PORTNAME=	ElasticSearch
 PORTVERSION=	0.65
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN/../by-authors/id/D/DR/DRTECH/
 PKGNAMEPREFIX=	p5-
@@ -24,7 +24,6 @@ RUN_DEPENDS:=	p5-ElasticSearch-SearchBuilder>=0:${PORTSDIR}/textproc/p5-ElasticS
 		p5-HTTP-Lite>=0:${PORTSDIR}/www/p5-HTTP-Lite \
 		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-HTTP-Tiny>=0:${PORTSDIR}/www/p5-HTTP-Tiny \
-		p5-IO>=0:${PORTSDIR}/devel/p5-IO \
 		p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
