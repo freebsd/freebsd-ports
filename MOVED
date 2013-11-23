@@ -5250,3 +5250,4 @@ net/ptpd|net/ptpd2|2013-11-20|Protocol and software no longer supported
 audio/gstreamer1-plugins-celt||2013-11-20|Removed, audio/gstreamer1-plugins-opus can be used as replacement
 math/p5-MatrixReal|math/p5-Math-MatrixReal|2013-11-22|Rename to match upstream naming
 lang/gcc42|lang/gcc46|2013-11-23|Superseded by GCC 4.6 or later
+devel/p5-IO||2013-11-23|Removed: newer versions are included in all supported Perl releases
