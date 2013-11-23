@@ -48,13 +48,12 @@ GCC_Include_MAINTAINER=		gerald@FreeBSD.org
 
 # All GCC versions supported by the ports framework.  Keep them in
 # ascending order and in sync with the table below. 
-GCCVERSIONS=	030402 040200 040400 040600 040700 040800 040900
+GCCVERSIONS=	030402 040400 040600 040700 040800 040900
 
 # The first field if the OSVERSION in which it appeared in the base.
 # The second field is the OSVERSION in which it disappeared from the base.
 # The third field is the version as USE_GCC would use.
 GCCVERSION_030402=	502126  700042 3.4
-GCCVERSION_040200=	700042 9999999 4.2
 GCCVERSION_040400=	     0       0 4.4
 GCCVERSION_040600=	     0       0 4.6
 GCCVERSION_040700=	     0       0 4.7
@@ -156,7 +155,7 @@ IGNORE=	Unknown version of GCC specified (USE_GCC=${USE_GCC})
 .endif
 
 # If the GCC package defined in USE_GCC does not exist, but a later
-# version is allowed (for example 4.2+), see if there is a later.
+# version is allowed (for example 4.7+), see if there is a later.
 # First check if the base installed version is good enough, otherwise
 # get the first available version.
 #
@@ -236,11 +235,9 @@ CPP:=			cpp
 BUILD_DEPENDS+=	${_GCC_PORT_DEPENDS}:${PORTSDIR}/lang/${_GCC_PORT}
 . if ${_USE_GCC} != 3.4
 RUN_DEPENDS+=	${_GCC_PORT_DEPENDS}:${PORTSDIR}/lang/${_GCC_PORT}
-.  if ${_USE_GCC} != 4.2
 # Later GCC ports already depend on binutils; make sure whatever we
 # build leverages this as well.
 USE_BINUTILS=	yes
-.  endif
 . endif
 .endif
 .endif # defined(_USE_GCC) && !defined(FORCE_BASE_CC_FOR_TESTING)

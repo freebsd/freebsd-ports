@@ -1,6 +1,0 @@
-GCC, the GNU Compiler Collection, supports a number of languages.  This
-port installs the C and C++ front ends as gcc42 and g++42, respectively.
-
-WWW: http://gcc.gnu.org/
-
-Gerald Pfeifer <gerald@FreeBSD.org>
