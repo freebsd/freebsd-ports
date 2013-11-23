@@ -972,6 +972,7 @@
     SUBDIR += libeio
     SUBDIR += libelf
     SUBDIR += libepp-nicbr
+    SUBDIR += libesedb
     SUBDIR += libestr
     SUBDIR += libev
     SUBDIR += libevent
