@@ -51,6 +51,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cc9043cf-7f7a-426e-b2cc-8d1980618113">
+    <topic>ruby -- Heap Overflow in Floating Point Parsing</topic>
+    <affects>
+      <package>
+	<name>ruby19</name>
+	<range><lt>1.9.3.484,1</lt></range>
+      </package>
+      <package>
+	<name>ruby20</name>
+	<range><lt>2.0.0.353,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ruby developers report:</p>
+	<blockquote cite="https://www.ruby-lang.org/en/news/2013/11/22/heap-overflow-in-floating-point-parsing-cve-2013-4164/">
+	  <p>Any time a string is converted to a floating point value, a
+	     specially crafted string can cause a heap overflow. This can lead
+	     to a denial of service attack via segmentation faults and possibly
+	     arbitrary code execution. Any program that converts input of
+	     unknown origin to floating point values (especially common when
+	     accepting JSON) are vulnerable.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.ruby-lang.org/en/news/2013/11/22/ruby-1-9-3-p484-is-released/</url>
+      <url>https://www.ruby-lang.org/en/news/2013/11/22/ruby-2-0-0-p353-is-released/</url>
+      <cvename>CVE-2013-4164</cvename>
+    </references>
+    <dates>
+      <discovery>2013-11-22</discovery>
+      <entry>2013-11-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="479efd57-516e-11e3-9b62-000c292e4fd8">
     <topic>samba -- Private key in key.pem world readable</topic>
     <affects>
