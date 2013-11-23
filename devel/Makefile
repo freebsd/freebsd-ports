@@ -2297,6 +2297,7 @@
     SUBDIR += p5-Module-Manifest
     SUBDIR += p5-Module-Math-Depends
     SUBDIR += p5-Module-Metadata
+    SUBDIR += p5-Module-Path
     SUBDIR += p5-Module-Pluggable
     SUBDIR += p5-Module-Pluggable-Fast
     SUBDIR += p5-Module-Pluggable-Ordered
