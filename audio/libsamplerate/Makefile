@@ -3,7 +3,7 @@
 
 PORTNAME=	libsamplerate
 PORTVERSION=	0.1.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/SRC/
 
@@ -14,7 +14,6 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=	pathfix pkgconfig
-NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
@@ -38,9 +37,9 @@ CONFIGURE_ARGS+=	--disable-fftw
 .endif
 
 .if ${PORT_OPTIONS:MEXAMPLES}
-LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 .elif defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
-BUILD_DEPENDS +=	${LOCALBASE}/lib/libsndfile.so:${PORTSDIR}/audio/libsndfile
+BUILD_DEPENDS +=	libsndfile>=0:${PORTSDIR}/audio/libsndfile
 .else
 CONFIGURE_ARGS+=	--disable-sndfile
 .endif
@@ -58,5 +57,8 @@ check regression-test test: build
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} \
 	check
 .endif
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsamplerate.so.1
 
 .include <bsd.port.mk>
