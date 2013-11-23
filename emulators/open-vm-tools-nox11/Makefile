@@ -3,6 +3,6 @@
 
 MASTERDIR=      ${.CURDIR}/../open-vm-tools
 PKGNAMESUFFIX=	-nox11
-OPTIONS_UNSET=	X11
+OPTIONS_UNSET=	X11 LIBNOTIFY
 
 .include "${MASTERDIR}/Makefile"
