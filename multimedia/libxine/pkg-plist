@@ -181,6 +181,7 @@ share/xine-lib/fonts/serif-64.xinefont.gz
 %%PLUGINSDIR%%/xineplug_vo_out_xcbxv.so
 %%PLUGINSDIR%%/xineplug_vo_out_xshm.so
 %%PLUGINSDIR%%/xineplug_vo_out_xv.so
+%%VAAPI%%%%PLUGINSDIR%%/xineplug_vo_out_vaapi.so
 %%WITH_XVMC%%%%PLUGINSDIR%%/xineplug_vo_out_xvmc.so
 %%WITH_XVMC%%%%PLUGINSDIR%%/xineplug_vo_out_xxmc.so
 %%WITH_WAVPACK%%%%PLUGINSDIR%%/xineplug_wavpack.so
