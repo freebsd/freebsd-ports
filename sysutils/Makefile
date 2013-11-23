@@ -495,7 +495,7 @@
     SUBDIR += manck
     SUBDIR += mapchan
     SUBDIR += massadmin
-    SUBDIR += mate-contol-center
+    SUBDIR += mate-control-center
     SUBDIR += mate-polkit
     SUBDIR += mate-power-manager
     SUBDIR += mate-settings-daemon
