@@ -44,7 +44,7 @@ CONFIGURE_ARGS=	--with-selinux=no --with-semanage=no \
 		--with-db-path=/var/db/sss --with-pipe-path=/var/run/sss \
 		--with-pubconf-path=/var/run/sss --with-mcache-path=/var/db/sss_mc \
 		--with-unicode-lib=libunistring --with-autofs=no
-CFLAGS=		-fstack-protector-all
+CFLAGS+=	-fstack-protector-all
 PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 #DEBUG_FLAGS=  -g
 MAKE_ENV+=	LINGUAS="bg de eu es fr hu id it ja nb nl pl pt ru sv tg tr uk zh_CN zh_TW"
