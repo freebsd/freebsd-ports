@@ -1,0 +1,16 @@
+YADIFA is a lightweight authoritative Name Server with DNSSEC capabilities.
+Developed by the passionate people behind the .eu top-level domain, YADIFA has
+been built from scratch to face today?s DNS challenges, with no compromise on
+security, speed and stability, to offer a better and safer Internet experience.
+
+YADIFA has a simple configuration syntax and can handle more queries per second
+while maintaining one of the lowest memory footprints in the industry. YADIFA
+also has one of the fastest zone file load times ever recorded on a name
+server.
+
+YADIFA was developed on FreeBSD and a GNU/Linux. It works on OSX and will be
+soon ported to other Unix flavours like OpenBSD and Solaris. A Microsoft
+Windows version is also on the cards.
+
+
+WWW: http://www.yadifa.eu/

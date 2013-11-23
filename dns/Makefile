@@ -165,6 +165,7 @@
     SUBDIR += validns
     SUBDIR += vizone
     SUBDIR += walker
+    SUBDIR += yadifa
     SUBDIR += zkt
     SUBDIR += zonecheck
     SUBDIR += zonenotify

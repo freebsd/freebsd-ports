@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: yadifad
+# REQUIRE: SERVERS cleanvar
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable yadifad:
+#
+# yadifad_enable="YES"
+# # optional
+# yadifad_config="%%PREFIX%%/etc/yadifad.conf"
+
+. /etc/rc.subr
+
+name=yadifad
+rcvar=yadifad_enable
+
+load_rc_config ${name}
+
+: ${yadifad_enable:="NO"}
+: ${yadifad_config="%%PREFIX%%/etc/yadifad.conf"}
+
+command=%%PREFIX%%/sbin/${name}
+procname=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid
+
+command_args="-c ${yadifad_config} -d"
+required_files=${yadifad_config}
+
+run_rc_command "$1"
