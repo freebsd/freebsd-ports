@@ -925,6 +925,7 @@
     SUBDIR += syobon
     SUBDIR += tads
     SUBDIR += taipan
+    SUBDIR += tali
     SUBDIR += tanglet
     SUBDIR += tank
     SUBDIR += tbclock
