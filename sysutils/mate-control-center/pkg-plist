@@ -1,0 +1,399 @@
+bin/mate-about-me
+bin/mate-appearance-properties
+bin/mate-at-properties
+bin/mate-control-center
+bin/mate-default-applications-properties
+bin/mate-display-properties
+bin/mate-font-viewer
+bin/mate-keybinding-properties
+bin/mate-keyboard-properties
+bin/mate-mouse-properties
+bin/mate-network-properties
+bin/mate-thumbnail-font
+bin/mate-typing-monitor
+bin/mate-window-properties
+etc/xdg/menus/matecc.menu
+include/libslab/app-resizer.h
+include/libslab/app-shell.h
+include/libslab/application-tile.h
+include/libslab/bookmark-agent.h
+include/libslab/directory-tile.h
+include/libslab/document-tile.h
+include/libslab/double-click-detector.h
+include/libslab/libslab-utils.h
+include/libslab/mate-utils.h
+include/libslab/nameplate-tile.h
+include/libslab/nld-marshal.c
+include/libslab/nld-marshal.h
+include/libslab/search-bar.h
+include/libslab/search-context-picker.h
+include/libslab/search-entry-watermark.h
+include/libslab/search-entry.h
+include/libslab/shell-window.h
+include/libslab/slab-mate-util.h
+include/libslab/slab-section.h
+include/libslab/slab.h
+include/libslab/system-tile.h
+include/libslab/tile.h
+include/mate-window-settings-2.0/mate-window-manager.h
+include/mate-window-settings-2.0/mate-wm-manager.h
+lib/libmate-window-settings.a
+lib/libmate-window-settings.la
+lib/libmate-window-settings.so
+lib/libmate-window-settings.so.1
+lib/libslab.a
+lib/libslab.la
+lib/libslab.so
+lib/libslab.so.0
+lib/window-manager-settings/libmarco.a
+lib/window-manager-settings/libmarco.la
+lib/window-manager-settings/libmarco.so
+libdata/pkgconfig/libslab.pc
+libdata/pkgconfig/mate-default-applications.pc
+libdata/pkgconfig/mate-keybindings.pc
+libdata/pkgconfig/mate-window-settings-2.0.pc
+man/man1/mate-about-me.1.gz
+man/man1/mate-appearance-properties.1.gz
+man/man1/mate-default-applications-properties.1.gz
+sbin/mate-display-properties-install-systemwide
+share/MateConf/gsettings/mate-control-center.convert
+share/applications/mate-at-properties.desktop
+share/applications/mate-default-applications-properties.desktop
+share/applications/mate-display-properties.desktop
+share/applications/mate-keyboard.desktop
+share/applications/mate-about-me.desktop
+share/applications/mate-appearance-properties.desktop
+share/applications/mate-font-viewer.desktop
+share/applications/mate-keybinding.desktop
+share/applications/mate-network-properties.desktop
+share/applications/mate-settings-mouse.desktop
+share/applications/mate-theme-installer.desktop
+share/applications/mate-window-properties.desktop
+share/applications/matecc.desktop
+share/desktop-directories/matecc.directory
+share/icons/hicolor/16x16/apps/mate-network-properties.png
+share/icons/hicolor/16x16/apps/mate-preferences-desktop-display.png
+share/icons/hicolor/22x22/apps/mate-network-properties.png
+share/icons/hicolor/22x22/apps/mate-preferences-desktop-display.png
+share/icons/hicolor/24x24/apps/mate-network-properties.png
+share/icons/hicolor/24x24/apps/mate-preferences-desktop-display.png
+share/icons/hicolor/32x32/apps/mate-network-properties.png
+share/icons/hicolor/32x32/apps/mate-preferences-desktop-display.png
+share/icons/hicolor/48x48/apps/mate-network-properties.png
+share/icons/hicolor/48x48/apps/mate-typing-monitor.png
+share/icons/hicolor/scalable/apps/mate-network-properties.svg
+share/icons/hicolor/scalable/apps/mate-preferences-desktop-display.svg
+share/icons/hicolor/scalable/apps/mate-typing-monitor.svg
+share/locale/af/LC_MESSAGES/mate-control-center.mo
+share/locale/am/LC_MESSAGES/mate-control-center.mo
+share/locale/ar/LC_MESSAGES/mate-control-center.mo
+share/locale/as/LC_MESSAGES/mate-control-center.mo
+share/locale/ast/LC_MESSAGES/mate-control-center.mo
+share/locale/az/LC_MESSAGES/mate-control-center.mo
+share/locale/be/LC_MESSAGES/mate-control-center.mo
+share/locale/be@latin/LC_MESSAGES/mate-control-center.mo
+share/locale/bg/LC_MESSAGES/mate-control-center.mo
+share/locale/bn/LC_MESSAGES/mate-control-center.mo
+share/locale/bn_IN/LC_MESSAGES/mate-control-center.mo
+share/locale/br/LC_MESSAGES/mate-control-center.mo
+share/locale/bs/LC_MESSAGES/mate-control-center.mo
+share/locale/ca/LC_MESSAGES/mate-control-center.mo
+share/locale/ca@valencia/LC_MESSAGES/mate-control-center.mo
+share/locale/crh/LC_MESSAGES/mate-control-center.mo
+share/locale/cs/LC_MESSAGES/mate-control-center.mo
+share/locale/cy/LC_MESSAGES/mate-control-center.mo
+share/locale/da/LC_MESSAGES/mate-control-center.mo
+share/locale/de/LC_MESSAGES/mate-control-center.mo
+share/locale/dz/LC_MESSAGES/mate-control-center.mo
+share/locale/el/LC_MESSAGES/mate-control-center.mo
+share/locale/en@shaw/LC_MESSAGES/mate-control-center.mo
+share/locale/en_AU/LC_MESSAGES/mate-control-center.mo
+share/locale/en_CA/LC_MESSAGES/mate-control-center.mo
+share/locale/en_GB/LC_MESSAGES/mate-control-center.mo
+share/locale/eo/LC_MESSAGES/mate-control-center.mo
+share/locale/es/LC_MESSAGES/mate-control-center.mo
+share/locale/et/LC_MESSAGES/mate-control-center.mo
+share/locale/eu/LC_MESSAGES/mate-control-center.mo
+share/locale/fa/LC_MESSAGES/mate-control-center.mo
+share/locale/fi/LC_MESSAGES/mate-control-center.mo
+share/locale/fr/LC_MESSAGES/mate-control-center.mo
+share/locale/ga/LC_MESSAGES/mate-control-center.mo
+share/locale/gl/LC_MESSAGES/mate-control-center.mo
+share/locale/gu/LC_MESSAGES/mate-control-center.mo
+share/locale/he/LC_MESSAGES/mate-control-center.mo
+share/locale/hi/LC_MESSAGES/mate-control-center.mo
+share/locale/hr/LC_MESSAGES/mate-control-center.mo
+share/locale/hu/LC_MESSAGES/mate-control-center.mo
+share/locale/id/LC_MESSAGES/mate-control-center.mo
+share/locale/is/LC_MESSAGES/mate-control-center.mo
+share/locale/it/LC_MESSAGES/mate-control-center.mo
+share/locale/ja/LC_MESSAGES/mate-control-center.mo
+share/locale/ka/LC_MESSAGES/mate-control-center.mo
+share/locale/kk/LC_MESSAGES/mate-control-center.mo
+share/locale/kn/LC_MESSAGES/mate-control-center.mo
+share/locale/ko/LC_MESSAGES/mate-control-center.mo
+share/locale/ku/LC_MESSAGES/mate-control-center.mo
+share/locale/lt/LC_MESSAGES/mate-control-center.mo
+share/locale/lv/LC_MESSAGES/mate-control-center.mo
+share/locale/mai/LC_MESSAGES/mate-control-center.mo
+share/locale/mg/LC_MESSAGES/mate-control-center.mo
+share/locale/mk/LC_MESSAGES/mate-control-center.mo
+share/locale/ml/LC_MESSAGES/mate-control-center.mo
+share/locale/mn/LC_MESSAGES/mate-control-center.mo
+share/locale/mr/LC_MESSAGES/mate-control-center.mo
+share/locale/ms/LC_MESSAGES/mate-control-center.mo
+share/locale/nb/LC_MESSAGES/mate-control-center.mo
+share/locale/nds/LC_MESSAGES/mate-control-center.mo
+share/locale/ne/LC_MESSAGES/mate-control-center.mo
+share/locale/nl/LC_MESSAGES/mate-control-center.mo
+share/locale/nn/LC_MESSAGES/mate-control-center.mo
+share/locale/nso/LC_MESSAGES/mate-control-center.mo
+share/locale/oc/LC_MESSAGES/mate-control-center.mo
+share/locale/or/LC_MESSAGES/mate-control-center.mo
+share/locale/pa/LC_MESSAGES/mate-control-center.mo
+share/locale/pl/LC_MESSAGES/mate-control-center.mo
+share/locale/pt/LC_MESSAGES/mate-control-center.mo
+share/locale/pt_BR/LC_MESSAGES/mate-control-center.mo
+share/locale/ro/LC_MESSAGES/mate-control-center.mo
+share/locale/ru/LC_MESSAGES/mate-control-center.mo
+share/locale/rw/LC_MESSAGES/mate-control-center.mo
+share/locale/si/LC_MESSAGES/mate-control-center.mo
+share/locale/sk/LC_MESSAGES/mate-control-center.mo
+share/locale/sl/LC_MESSAGES/mate-control-center.mo
+share/locale/sq/LC_MESSAGES/mate-control-center.mo
+share/locale/sr/LC_MESSAGES/mate-control-center.mo
+share/locale/sr@latin/LC_MESSAGES/mate-control-center.mo
+share/locale/sv/LC_MESSAGES/mate-control-center.mo
+share/locale/ta/LC_MESSAGES/mate-control-center.mo
+share/locale/te/LC_MESSAGES/mate-control-center.mo
+share/locale/th/LC_MESSAGES/mate-control-center.mo
+share/locale/tr/LC_MESSAGES/mate-control-center.mo
+share/locale/ug/LC_MESSAGES/mate-control-center.mo
+share/locale/uk/LC_MESSAGES/mate-control-center.mo
+share/locale/uz/LC_MESSAGES/mate-control-center.mo
+share/locale/uz@cyrillic/LC_MESSAGES/mate-control-center.mo
+share/locale/vi/LC_MESSAGES/mate-control-center.mo
+share/locale/wa/LC_MESSAGES/mate-control-center.mo
+share/locale/xh/LC_MESSAGES/mate-control-center.mo
+share/locale/zh_CN/LC_MESSAGES/mate-control-center.mo
+share/locale/zh_HK/LC_MESSAGES/mate-control-center.mo
+share/locale/zh_TW/LC_MESSAGES/mate-control-center.mo
+share/locale/zu/LC_MESSAGES/mate-control-center.mo
+%%DATADIR%%/keybindings/00-multimedia-key.xml
+%%DATADIR%%/keybindings/01-desktop-key.xml
+%%DATADIR%%/pixmaps/at-startup.png
+%%DATADIR%%/pixmaps/at-support.png
+%%DATADIR%%/pixmaps/bar-disabled.png
+%%DATADIR%%/pixmaps/bar-green.png
+%%DATADIR%%/pixmaps/bar-red.png
+%%DATADIR%%/pixmaps/bar.png
+%%DATADIR%%/pixmaps/double-click-maybe.png
+%%DATADIR%%/pixmaps/double-click-off.png
+%%DATADIR%%/pixmaps/double-click-on.png
+%%DATADIR%%/pixmaps/gtk-theme-thumbnailing.png
+%%DATADIR%%/pixmaps/icon-theme-thumbnailing.png
+%%DATADIR%%/pixmaps/left-index-finger.png
+%%DATADIR%%/pixmaps/left-index-finger.svg
+%%DATADIR%%/pixmaps/left-little-finger.png
+%%DATADIR%%/pixmaps/left-little-finger.svg
+%%DATADIR%%/pixmaps/left-middle-finger.png
+%%DATADIR%%/pixmaps/left-middle-finger.svg
+%%DATADIR%%/pixmaps/left-ring-finger.png
+%%DATADIR%%/pixmaps/left-ring-finger.svg
+%%DATADIR%%/pixmaps/left-thumb.png
+%%DATADIR%%/pixmaps/left-thumb.svg
+%%DATADIR%%/pixmaps/mouse-cursor-normal-large.png
+%%DATADIR%%/pixmaps/mouse-cursor-normal.png
+%%DATADIR%%/pixmaps/mouse-cursor-white-large.png
+%%DATADIR%%/pixmaps/mouse-cursor-white.png
+%%DATADIR%%/pixmaps/ocean-stripes.png
+%%DATADIR%%/pixmaps/print_error.png
+%%DATADIR%%/pixmaps/print_error.svg
+%%DATADIR%%/pixmaps/print_ok.png
+%%DATADIR%%/pixmaps/print_ok.svg
+%%DATADIR%%/pixmaps/right-index-finger.png
+%%DATADIR%%/pixmaps/right-index-finger.svg
+%%DATADIR%%/pixmaps/right-little-finger.png
+%%DATADIR%%/pixmaps/right-little-finger.svg
+%%DATADIR%%/pixmaps/right-middle-finger.png
+%%DATADIR%%/pixmaps/right-middle-finger.svg
+%%DATADIR%%/pixmaps/right-ring-finger.png
+%%DATADIR%%/pixmaps/right-ring-finger.svg
+%%DATADIR%%/pixmaps/right-thumb.png
+%%DATADIR%%/pixmaps/right-thumb.svg
+%%DATADIR%%/pixmaps/subpixel-bgr.png
+%%DATADIR%%/pixmaps/subpixel-rgb.png
+%%DATADIR%%/pixmaps/subpixel-vbgr.png
+%%DATADIR%%/pixmaps/subpixel-vrgb.png
+%%DATADIR%%/pixmaps/theme-thumbnailing.png
+%%DATADIR%%/pixmaps/window-theme-thumbnailing.png
+%%DATADIR%%/ui/appearance.ui
+%%DATADIR%%/ui/at-enable-dialog.ui
+%%DATADIR%%/ui/display-capplet.ui
+%%DATADIR%%/ui/mate-about-me-dialog.ui
+%%DATADIR%%/ui/mate-about-me-fingerprint.ui
+%%DATADIR%%/ui/mate-about-me-password.ui
+%%DATADIR%%/ui/mate-default-applications-properties.ui
+%%DATADIR%%/ui/mate-keybinding-properties.ui
+%%DATADIR%%/ui/mate-keyboard-properties-a11y-notifications.ui
+%%DATADIR%%/ui/mate-keyboard-properties-dialog.ui
+%%DATADIR%%/ui/mate-keyboard-properties-layout-chooser.ui
+%%DATADIR%%/ui/mate-keyboard-properties-model-chooser.ui
+%%DATADIR%%/ui/mate-keyboard-properties-options-dialog.ui
+%%DATADIR%%/ui/mate-mouse-properties.ui
+%%DATADIR%%/ui/mate-network-properties.ui
+%%DATADIR%%/ui/mate-window-properties.ui
+share/mate/cursor-fonts/cursor-large-white.pcf
+share/mate/cursor-fonts/cursor-large.pcf
+share/mate/cursor-fonts/cursor-white.pcf
+share/mate/help/mate-control-center/C/config-accessibility-keyboard.xml
+share/mate/help/mate-control-center/C/config-background.xml
+share/mate/help/mate-control-center/C/config-behavior.xml
+share/mate/help/mate-control-center/C/config-cds.xml
+share/mate/help/mate-control-center/C/config-default-apps.xml
+share/mate/help/mate-control-center/C/config-file-type.xml
+share/mate/help/mate-control-center/C/config-hints.xml
+share/mate/help/mate-control-center/C/config-html.xml
+share/mate/help/mate-control-center/C/config-kbd.xml
+share/mate/help/mate-control-center/C/config-keybindings.xml
+share/mate/help/mate-control-center/C/config-mouse.xml
+share/mate/help/mate-control-center/C/config-screensaver.xml
+share/mate/help/mate-control-center/C/config-themes.xml
+share/mate/help/mate-control-center/C/mate-control-center.xml
+share/mate/help/mate-control-center/ca/mate-control-center.xml
+share/mate/help/mate-control-center/ca@valencia/mate-control-center.xml
+share/mate/help/mate-control-center/cs/mate-control-center.xml
+share/mate/help/mate-control-center/de/mate-control-center.xml
+share/mate/help/mate-control-center/el/mate-control-center.xml
+share/mate/help/mate-control-center/en_GB/mate-control-center.xml
+share/mate/help/mate-control-center/es/mate-control-center.xml
+share/mate/help/mate-control-center/fr/mate-control-center.xml
+share/mate/help/mate-control-center/id/mate-control-center.xml
+share/mate/help/mate-control-center/it/mate-control-center.xml
+share/mate/help/mate-control-center/ja/mate-control-center.xml
+share/mate/help/mate-control-center/oc/mate-control-center.xml
+share/mate/help/mate-control-center/pa/mate-control-center.xml
+share/mate/help/mate-control-center/pl/mate-control-center.xml
+share/mate/help/mate-control-center/pt/mate-control-center.xml
+share/mate/help/mate-control-center/pt_BR/mate-control-center.xml
+share/mate/help/mate-control-center/ru/mate-control-center.xml
+share/mate/help/mate-control-center/sv/mate-control-center.xml
+share/mate/help/mate-control-center/th/mate-control-center.xml
+share/mate/help/mate-control-center/uk/mate-control-center.xml
+share/mate/help/mate-control-center/vi/mate-control-center.xml
+share/mate/help/mate-control-center/zh_CN/mate-control-center.xml
+share/mime/packages/mate-theme-package.xml
+share/omf/mate-control-center/mate-control-center-C.omf
+share/omf/mate-control-center/mate-control-center-ca.omf
+share/omf/mate-control-center/mate-control-center-ca@valencia.omf
+share/omf/mate-control-center/mate-control-center-cs.omf
+share/omf/mate-control-center/mate-control-center-de.omf
+share/omf/mate-control-center/mate-control-center-el.omf
+share/omf/mate-control-center/mate-control-center-en_GB.omf
+share/omf/mate-control-center/mate-control-center-es.omf
+share/omf/mate-control-center/mate-control-center-fr.omf
+share/omf/mate-control-center/mate-control-center-id.omf
+share/omf/mate-control-center/mate-control-center-it.omf
+share/omf/mate-control-center/mate-control-center-ja.omf
+share/omf/mate-control-center/mate-control-center-oc.omf
+share/omf/mate-control-center/mate-control-center-pa.omf
+share/omf/mate-control-center/mate-control-center-pl.omf
+share/omf/mate-control-center/mate-control-center-pt.omf
+share/omf/mate-control-center/mate-control-center-pt_BR.omf
+share/omf/mate-control-center/mate-control-center-ru.omf
+share/omf/mate-control-center/mate-control-center-sv.omf
+share/omf/mate-control-center/mate-control-center-th.omf
+share/omf/mate-control-center/mate-control-center-uk.omf
+share/omf/mate-control-center/mate-control-center-vi.omf
+share/omf/mate-control-center/mate-control-center-zh_CN.omf
+share/polkit-1/actions/org.mate.randr.policy
+share/thumbnailers/mate-font-viewer.thumbnailer
+share/mime/application/x-mate-theme-package.xml
+@dirrmtry share/thumbnailers
+@dirrmtry share/polkit-1/actions
+@dirrmtry share/polkit-1
+@dirrm share/omf/mate-control-center
+@dirrm share/mate/help/mate-control-center/zh_CN
+@dirrm share/mate/help/mate-control-center/vi
+@dirrm share/mate/help/mate-control-center/uk
+@dirrm share/mate/help/mate-control-center/th
+@dirrm share/mate/help/mate-control-center/sv
+@dirrm share/mate/help/mate-control-center/ru
+@dirrm share/mate/help/mate-control-center/pt_BR
+@dirrm share/mate/help/mate-control-center/pt
+@dirrm share/mate/help/mate-control-center/pl
+@dirrm share/mate/help/mate-control-center/pa
+@dirrm share/mate/help/mate-control-center/oc
+@dirrm share/mate/help/mate-control-center/ja
+@dirrm share/mate/help/mate-control-center/it
+@dirrm share/mate/help/mate-control-center/id
+@dirrm share/mate/help/mate-control-center/fr
+@dirrm share/mate/help/mate-control-center/es
+@dirrm share/mate/help/mate-control-center/en_GB
+@dirrm share/mate/help/mate-control-center/el
+@dirrm share/mate/help/mate-control-center/de
+@dirrm share/mate/help/mate-control-center/cs
+@dirrm share/mate/help/mate-control-center/ca@valencia
+@dirrm share/mate/help/mate-control-center/ca
+@dirrm share/mate/help/mate-control-center/C
+@dirrm share/mate/help/mate-control-center
+@dirrm share/mate/cursor-fonts
+@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/keybindings
+@dirrm %%DATADIR%%
+@dirrmtry share/locale/zu/LC_MESSAGES
+@dirrmtry share/locale/zu
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
+@dirrmtry share/locale/uz@cyrillic
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/nso/LC_MESSAGES
+@dirrmtry share/locale/nso
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/crh/LC_MESSAGES
+@dirrmtry share/locale/crh
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
+@dirrmtry share/desktop-directories
+@dirrm lib/window-manager-settings
+@dirrm include/mate-window-settings-2.0
+@dirrm include/libslab
+@dirrmtry etc/xdg/menus

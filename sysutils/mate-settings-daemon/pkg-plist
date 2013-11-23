@@ -1,0 +1,264 @@
+etc/dbus-1/system.d/org.mate.SettingsDaemon.DateTimeMechanism.conf
+etc/xdg/autostart/mate-settings-daemon.desktop
+include/mate-settings-daemon/mate-settings-client.h
+include/mate-settings-daemon/mate-settings-plugin.h
+lib/mate-settings-daemon/a11y-keyboard.mate-settings-plugin
+lib/mate-settings-daemon/background.mate-settings-plugin
+lib/mate-settings-daemon/clipboard.mate-settings-plugin
+lib/mate-settings-daemon/housekeeping.mate-settings-plugin
+lib/mate-settings-daemon/keybindings.mate-settings-plugin
+lib/mate-settings-daemon/keyboard.mate-settings-plugin
+lib/mate-settings-daemon/liba11y-keyboard.a
+lib/mate-settings-daemon/liba11y-keyboard.la
+lib/mate-settings-daemon/liba11y-keyboard.so
+lib/mate-settings-daemon/libbackground.a
+lib/mate-settings-daemon/libbackground.la
+lib/mate-settings-daemon/libbackground.so
+lib/mate-settings-daemon/libclipboard.a
+lib/mate-settings-daemon/libclipboard.la
+lib/mate-settings-daemon/libclipboard.so
+lib/mate-settings-daemon/libhousekeeping.a
+lib/mate-settings-daemon/libhousekeeping.la
+lib/mate-settings-daemon/libhousekeeping.so
+lib/mate-settings-daemon/libkeybindings.a
+lib/mate-settings-daemon/libkeybindings.la
+lib/mate-settings-daemon/libkeybindings.so
+lib/mate-settings-daemon/libkeyboard.a
+lib/mate-settings-daemon/libkeyboard.la
+lib/mate-settings-daemon/libkeyboard.so
+lib/mate-settings-daemon/libmedia-keys.a
+lib/mate-settings-daemon/libmedia-keys.la
+lib/mate-settings-daemon/libmedia-keys.so
+lib/mate-settings-daemon/libmouse.a
+lib/mate-settings-daemon/libmouse.la
+lib/mate-settings-daemon/libmouse.so
+lib/mate-settings-daemon/libmpris.a
+lib/mate-settings-daemon/libmpris.la
+lib/mate-settings-daemon/libmpris.so
+lib/mate-settings-daemon/libsmartcard.a
+lib/mate-settings-daemon/libsmartcard.la
+lib/mate-settings-daemon/libsmartcard.so
+lib/mate-settings-daemon/libsound.a
+lib/mate-settings-daemon/libsound.la
+lib/mate-settings-daemon/libsound.so
+lib/mate-settings-daemon/libtyping-break.a
+lib/mate-settings-daemon/libtyping-break.la
+lib/mate-settings-daemon/libtyping-break.so
+lib/mate-settings-daemon/libxrandr.a
+lib/mate-settings-daemon/libxrandr.la
+lib/mate-settings-daemon/libxrandr.so
+lib/mate-settings-daemon/libxrdb.a
+lib/mate-settings-daemon/libxrdb.la
+lib/mate-settings-daemon/libxrdb.so
+lib/mate-settings-daemon/libxsettings.a
+lib/mate-settings-daemon/libxsettings.la
+lib/mate-settings-daemon/libxsettings.so
+lib/mate-settings-daemon/media-keys.mate-settings-plugin
+lib/mate-settings-daemon/mouse.mate-settings-plugin
+lib/mate-settings-daemon/mpris.mate-settings-plugin
+lib/mate-settings-daemon/smartcard.mate-settings-plugin
+lib/mate-settings-daemon/sound.mate-settings-plugin
+lib/mate-settings-daemon/typing-break.mate-settings-plugin
+lib/mate-settings-daemon/xrandr.mate-settings-plugin
+lib/mate-settings-daemon/xrdb.mate-settings-plugin
+lib/mate-settings-daemon/xsettings.mate-settings-plugin
+libdata/pkgconfig/mate-settings-daemon.pc
+libexec/mate-settings-daemon
+libexec/msd-datetime-mechanism
+libexec/msd-locate-pointer
+share/MateConf/gsettings/mate-settings-daemon.convert
+share/dbus-1/services/org.mate.SettingsDaemon.service
+share/dbus-1/system-services/org.mate.SettingsDaemon.DateTimeMechanism.service
+share/icons/mate/16x16/actions/touchpad-disabled.png
+share/icons/mate/16x16/actions/touchpad-enabled.png
+share/icons/mate/16x16/apps/msd-xrandr.png
+share/icons/mate/22x22/actions/touchpad-disabled.png
+share/icons/mate/22x22/actions/touchpad-enabled.png
+share/icons/mate/22x22/apps/msd-xrandr.png
+share/icons/mate/24x24/actions/touchpad-disabled.png
+share/icons/mate/24x24/actions/touchpad-enabled.png
+share/icons/mate/24x24/apps/msd-xrandr.png
+share/icons/mate/32x32/actions/touchpad-disabled.png
+share/icons/mate/32x32/actions/touchpad-enabled.png
+share/icons/mate/32x32/apps/msd-xrandr.png
+share/icons/mate/scalable/actions/touchpad-disabled.svg
+share/icons/mate/scalable/actions/touchpad-enabled.svg
+share/icons/mate/scalable/apps/msd-xrandr.svg
+share/locale/af/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/am/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/ar/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/as/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/ast/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/az/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/be/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/be@latin/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/bg/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/bn/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/bn_IN/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/br/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/bs/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/ca/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/ca@valencia/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/crh/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/cs/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/cy/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/da/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/de/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/dz/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/el/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/en@shaw/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/en_AU/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/en_CA/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/en_GB/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/es/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/et/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/eu/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/fa/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/fi/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/fr/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/ga/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/gl/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/gu/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/he/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/hi/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/hr/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/hu/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/id/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/is/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/it/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/ja/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/ka/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/kn/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/ko/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/ku/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/lt/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/lv/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/mai/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/mg/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/mk/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/ml/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/mn/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/mr/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/ms/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/nb/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/nds/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/ne/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/nl/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/nn/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/nso/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/oc/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/or/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/pa/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/pl/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/pt/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/pt_BR/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/ro/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/ru/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/rw/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/si/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/sk/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/sl/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/sq/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/sr/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/sr@latin/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/sv/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/ta/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/te/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/th/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/tr/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/uk/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/vi/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/wa/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/xh/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/zh_CN/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/zh_HK/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/zh_TW/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/zu/LC_MESSAGES/mate-settings-daemon.mo
+%%DATADIR%%/acme.ui
+%%DATADIR%%/icons/hicolor/64x64/devices/kbd-capslock-off.png
+%%DATADIR%%/icons/hicolor/64x64/devices/kbd-capslock-on.png
+%%DATADIR%%/icons/hicolor/64x64/devices/kbd-numlock-off.png
+%%DATADIR%%/icons/hicolor/64x64/devices/kbd-numlock-on.png
+%%DATADIR%%/icons/hicolor/64x64/devices/kbd-scrolllock-off.png
+%%DATADIR%%/icons/hicolor/64x64/devices/kbd-scrolllock-on.png
+%%DATADIR%%/msd-a11y-preferences-dialog.ui
+%%DATADIR%%/xrdb/Editres.ad
+%%DATADIR%%/xrdb/Emacs.ad
+%%DATADIR%%/xrdb/General.ad
+%%DATADIR%%/xrdb/Motif.ad
+%%DATADIR%%/xrdb/Tk.ad
+%%DATADIR%%/xrdb/Xaw.ad
+share/polkit-1/actions/org.mate.settingsdaemon.datetimemechanism.policy
+@dirrmtry share/polkit-1/actions
+@dirrmtry share/polkit-1
+@dirrm %%DATADIR%%/xrdb
+@dirrm %%DATADIR%%/icons/hicolor/64x64/devices
+@dirrm %%DATADIR%%/icons/hicolor/64x64
+@dirrm %%DATADIR%%/icons/hicolor
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
+@dirrmtry share/locale/zu/LC_MESSAGES
+@dirrmtry share/locale/zu
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/nso/LC_MESSAGES
+@dirrmtry share/locale/nso
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/crh/LC_MESSAGES
+@dirrmtry share/locale/crh
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
+@dirrmtry share/icons/mate/scalable/apps
+@dirrmtry share/icons/mate/scalable/actions
+@dirrmtry share/icons/mate/scalable
+@dirrmtry share/icons/mate/32x32/apps
+@dirrmtry share/icons/mate/32x32/actions
+@dirrmtry share/icons/mate/32x32
+@dirrmtry share/icons/mate/24x24/apps
+@dirrmtry share/icons/mate/24x24/actions
+@dirrmtry share/icons/mate/24x24
+@dirrmtry share/icons/mate/22x22/apps
+@dirrmtry share/icons/mate/22x22/actions
+@dirrmtry share/icons/mate/22x22
+@dirrmtry share/icons/mate/16x16/apps
+@dirrmtry share/icons/mate/16x16/actions
+@dirrmtry share/icons/mate/16x16
+@dirrmtry share/icons/mate
+@dirrmtry share/icons
+@dirrm lib/mate-settings-daemon
+@dirrm include/mate-settings-daemon
+@dirrm etc/mate-settings-daemon/xrandr
+@dirrm etc/mate-settings-daemon

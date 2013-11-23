@@ -104,6 +104,7 @@
     SUBDIR += libgnomeuimm26
     SUBDIR += libgtk-java
     SUBDIR += libgtksourceviewmm
+    SUBDIR += libmatewnck
     SUBDIR += libpanelappletmm
     SUBDIR += libsexy
     SUBDIR += libsexymm

@@ -1,0 +1,20 @@
+--- geyes/Makefile.am.orig	2013-08-18 13:11:28.000000000 +0200
++++ geyes/Makefile.am	2013-08-18 13:13:31.000000000 +0200
+@@ -8,14 +8,14 @@
+ 	-DGEYES_THEMES_DIR=\""$(pkgdatadir)/geyes/"\"	\
+ 	-DGEYES_MENU_UI_DIR=\""$(uidir)"\"
+ 
+-libexec_PROGRAMS = geyes_applet2
++libexec_PROGRAMS = mate-geyes_applet2
+ 
+-geyes_applet2_SOURCES =	\
++mate_geyes_applet2_SOURCES =	\
+         geyes.c \
+ 	themes.c \
+ 	geyes.h
+ 
+-geyes_applet2_LDADD = 		\
++mate_geyes_applet2_LDADD = 		\
+ 	$(MATE_APPLETS4_LIBS) \
+ 	-lm
+ 

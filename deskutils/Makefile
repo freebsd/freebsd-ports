@@ -138,6 +138,11 @@
     SUBDIR += ljit
     SUBDIR += logjam
     SUBDIR += lxshortcut
+    SUBDIR += mate-character-map
+    SUBDIR += mate-file-manager-open-terminal
+    SUBDIR += mate-menu-editor
+    SUBDIR += mate-notification-daemon
+    SUBDIR += mate-utils
     SUBDIR += mcal
     SUBDIR += mdh
     SUBDIR += mencal

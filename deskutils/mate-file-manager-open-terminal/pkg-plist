@@ -1,0 +1,85 @@
+lib/caja/extensions-2.0/libcaja-open-terminal.a
+lib/caja/extensions-2.0/libcaja-open-terminal.la
+lib/caja/extensions-2.0/libcaja-open-terminal.so
+share/MateConf/gsettings/caja-open-terminal.convert
+share/locale/am/LC_MESSAGES/caja-open-terminal.mo
+share/locale/ar/LC_MESSAGES/caja-open-terminal.mo
+share/locale/ast/LC_MESSAGES/caja-open-terminal.mo
+share/locale/be/LC_MESSAGES/caja-open-terminal.mo
+share/locale/be@latin/LC_MESSAGES/caja-open-terminal.mo
+share/locale/bg/LC_MESSAGES/caja-open-terminal.mo
+share/locale/bn_IN/LC_MESSAGES/caja-open-terminal.mo
+share/locale/ca/LC_MESSAGES/caja-open-terminal.mo
+share/locale/cs/LC_MESSAGES/caja-open-terminal.mo
+share/locale/da/LC_MESSAGES/caja-open-terminal.mo
+share/locale/de/LC_MESSAGES/caja-open-terminal.mo
+share/locale/dz/LC_MESSAGES/caja-open-terminal.mo
+share/locale/el/LC_MESSAGES/caja-open-terminal.mo
+share/locale/en_AU/LC_MESSAGES/caja-open-terminal.mo
+share/locale/en_CA/LC_MESSAGES/caja-open-terminal.mo
+share/locale/en_GB/LC_MESSAGES/caja-open-terminal.mo
+share/locale/eo/LC_MESSAGES/caja-open-terminal.mo
+share/locale/es/LC_MESSAGES/caja-open-terminal.mo
+share/locale/et/LC_MESSAGES/caja-open-terminal.mo
+share/locale/eu/LC_MESSAGES/caja-open-terminal.mo
+share/locale/fi/LC_MESSAGES/caja-open-terminal.mo
+share/locale/fr/LC_MESSAGES/caja-open-terminal.mo
+share/locale/gl/LC_MESSAGES/caja-open-terminal.mo
+share/locale/gu/LC_MESSAGES/caja-open-terminal.mo
+share/locale/he/LC_MESSAGES/caja-open-terminal.mo
+share/locale/hr/LC_MESSAGES/caja-open-terminal.mo
+share/locale/hu/LC_MESSAGES/caja-open-terminal.mo
+share/locale/id/LC_MESSAGES/caja-open-terminal.mo
+share/locale/is/LC_MESSAGES/caja-open-terminal.mo
+share/locale/it/LC_MESSAGES/caja-open-terminal.mo
+share/locale/ja/LC_MESSAGES/caja-open-terminal.mo
+share/locale/ka/LC_MESSAGES/caja-open-terminal.mo
+share/locale/ko/LC_MESSAGES/caja-open-terminal.mo
+share/locale/ky/LC_MESSAGES/caja-open-terminal.mo
+share/locale/lt/LC_MESSAGES/caja-open-terminal.mo
+share/locale/lv/LC_MESSAGES/caja-open-terminal.mo
+share/locale/mk/LC_MESSAGES/caja-open-terminal.mo
+share/locale/ml/LC_MESSAGES/caja-open-terminal.mo
+share/locale/ms/LC_MESSAGES/caja-open-terminal.mo
+share/locale/nb/LC_MESSAGES/caja-open-terminal.mo
+share/locale/ne/LC_MESSAGES/caja-open-terminal.mo
+share/locale/nl/LC_MESSAGES/caja-open-terminal.mo
+share/locale/oc/LC_MESSAGES/caja-open-terminal.mo
+share/locale/or/LC_MESSAGES/caja-open-terminal.mo
+share/locale/pa/LC_MESSAGES/caja-open-terminal.mo
+share/locale/pl/LC_MESSAGES/caja-open-terminal.mo
+share/locale/pt/LC_MESSAGES/caja-open-terminal.mo
+share/locale/pt_BR/LC_MESSAGES/caja-open-terminal.mo
+share/locale/ro/LC_MESSAGES/caja-open-terminal.mo
+share/locale/ru/LC_MESSAGES/caja-open-terminal.mo
+share/locale/rw/LC_MESSAGES/caja-open-terminal.mo
+share/locale/sk/LC_MESSAGES/caja-open-terminal.mo
+share/locale/sl/LC_MESSAGES/caja-open-terminal.mo
+share/locale/sq/LC_MESSAGES/caja-open-terminal.mo
+share/locale/sr/LC_MESSAGES/caja-open-terminal.mo
+share/locale/sr@latin/LC_MESSAGES/caja-open-terminal.mo
+share/locale/sv/LC_MESSAGES/caja-open-terminal.mo
+share/locale/ta/LC_MESSAGES/caja-open-terminal.mo
+share/locale/th/LC_MESSAGES/caja-open-terminal.mo
+share/locale/tr/LC_MESSAGES/caja-open-terminal.mo
+share/locale/uk/LC_MESSAGES/caja-open-terminal.mo
+share/locale/vi/LC_MESSAGES/caja-open-terminal.mo
+share/locale/zh_CN/LC_MESSAGES/caja-open-terminal.mo
+share/locale/zh_TW/LC_MESSAGES/caja-open-terminal.mo
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry lib/caja/extensions-2.0

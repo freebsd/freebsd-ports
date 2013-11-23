@@ -1,0 +1,192 @@
+--- cpufreq/src/cpufreq-selector/cpufreq-selector-sysctl.h.orig	Sat Jun 24 01:52:35 2006
++++ cpufreq/src/cpufreq-selector/cpufreq-selector-sysctl.h	Sat Jun 24 02:13:05 2006
+@@ -0,0 +1,53 @@
++/*
++ * Copyright (C) 2001, 2002 Free Software Foundation
++ *
++ *  This library is free software; you can redistribute it and/or
++ *  modify it under the terms of the GNU General Public
++ *  License as published by the Free Software Foundation; either
++ *  version 2 of the License, or (at your option) any later version.
++ *
++ *  This library is distributed in the hope that it will be useful,
++ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ *  General Public License for more details.
++ *
++ *  You should have received a copy of the GNU General Public
++ *  License along with this library; if not, write to the Free
++ *  Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
++ *
++ * Authors : Joe Marcus Clarke <marcus@FreeBSD.org>
++ */
++
++#ifndef __CPUFREQ_SELECTOR_SYSCTL_H__
++#define __CPUFREQ_SELECTOR_SYSCTL_H__
++
++#include <glib-object.h>
++
++#include "cpufreq-selector.h"
++
++G_BEGIN_DECLS
++
++#define CPUFREQ_TYPE_SELECTOR_SYSCTL            (cpufreq_selector_sysctl_get_type ())
++#define CPUFREQ_SELECTOR_SYSCTL(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), CPUFREQ_TYPE_SELECTOR_SYSCTL, CPUFreqSelectorProcfs))
++#define CPUFREQ_SELECTOR_SYSCTL_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass), CPUFREQ_TYPE_SELECTOR_SYSCTL, CPUFreqSelectorProcfsClass))
++#define CPUFREQ_IS_SELECTOR_SYSCTL(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), CPUFREQ_TYPE_SELECTOR_SYSCTL))
++#define CPUFREQ_IS_SELECTOR_SYSCTL_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), CPUFREQ_TYPE_SELECTOR_SYSCTL))
++#define CPUFREQ_SELECTOR_SYSCTL_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), CPUFREQ_TYPE_SELECTOR_SYSCTL, CPUFreqSelectorProcfsClass))
++
++typedef struct _CPUFreqSelectorSysctl		CPUFreqSelectorSysctl;
++typedef struct _CPUFreqSelectorSysctlClass	CPUFreqSelectorSysctlClass;
++
++struct _CPUFreqSelectorSysctl {
++	CPUFreqSelector parent;
++};
++
++struct _CPUFreqSelectorSysctlClass {
++	CPUFreqSelectorClass parent_class;
++};
++
++GType		cpufreq_selector_sysctl_get_type (void) G_GNUC_CONST;
++CPUFreqSelector	*cpufreq_selector_sysctl_new     (guint cpu);
++
++G_END_DECLS
++
++#endif /* __CPUFREQ_SELECTOR_SYSCTL_H__ */
+--- cpufreq/src/cpufreq-selector/cpufreq-selector-sysctl.c.orig	Wed Jul 26 01:34:18 2006
++++ cpufreq/src/cpufreq-selector/cpufreq-selector-sysctl.c	Wed Jul 26 01:42:00 2006
+@@ -0,0 +1,87 @@
++/*
++ * Copyright (C) 2001, 2002 Free Software Foundation
++ *
++ *  This library is free software; you can redistribute it and/or
++ *  modify it under the terms of the GNU General Public
++ *  License as published by the Free Software Foundation; either
++ *  version 2 of the License, or (at your option) any later version.
++ *
++ *  This library is distributed in the hope that it will be useful,
++ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ *  General Public License for more details.
++ *
++ *  You should have received a copy of the GNU General Public
++ *  License along with this library; if not, write to the Free
++ *  Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
++ *
++ * Authors : Joe Marcus Clarke <marcus@FreeBSD.org>
++ */
++
++#include <glib.h>
++#include <stdio.h>
++#include <stdlib.h>
++
++#ifdef __FreeBSD__
++#include <sys/types.h>
++#include <sys/sysctl.h>
++#endif /* __FreeBSD__ */
++
++#include "cpufreq-selector-sysctl.h"
++
++static void cpufreq_selector_sysctl_init	(CPUFreqSelectorSysctl *selector);
++static void cpufreq_selector_sysctl_class_init	(CPUFreqSelectorSysctlClass *klass);
++
++static gboolean cpufreq_selector_sysctl_set_frequency	(CPUFreqSelector *selector, guint frequency, GError **error);
++static gboolean cpufreq_selector_sysctl_set_governor	(CPUFreqSelector *selector, const gchar *governor, GError **error);
++
++G_DEFINE_TYPE (CPUFreqSelectorSysctl, cpufreq_selector_sysctl, CPUFREQ_TYPE_SELECTOR)
++
++static void
++cpufreq_selector_sysctl_init (CPUFreqSelectorSysctl *selector)
++{
++}
++
++static void
++cpufreq_selector_sysctl_class_init (CPUFreqSelectorSysctlClass *klass)
++{
++	CPUFreqSelectorClass *selector_class = CPUFREQ_SELECTOR_CLASS (klass);
++
++	selector_class->set_frequency = cpufreq_selector_sysctl_set_frequency;
++	selector_class->set_governor = cpufreq_selector_sysctl_set_governor;
++}
++
++CPUFreqSelector *
++cpufreq_selector_sysctl_new (guint cpu)
++{
++	CPUFreqSelector *selector;
++
++	selector = CPUFREQ_SELECTOR (g_object_new (CPUFREQ_TYPE_SELECTOR_SYSCTL,
++				                   "cpu", cpu, NULL));
++
++	return selector;
++}
++
++static gboolean
++cpufreq_selector_sysctl_set_governor (CPUFreqSelector *selector, const gchar *governor, GError **error)
++{
++	return TRUE;
++}
++
++static gboolean
++cpufreq_selector_sysctl_set_frequency (CPUFreqSelector *selector, guint frequency, GError **error)
++{
++	   guint                 cpu, i;
++	   size_t                len;
++	   gchar                *freq_oid;
++
++	   g_object_get (G_OBJECT (selector), "cpu", &cpu, NULL);
++
++	   frequency = (guint) ((gdouble) frequency / 1000); /* Convert back to MHz*/
++           freq_oid = g_strdup_printf ("dev.cpu.%d.freq", (gint) 0);
++
++           sysctlbyname (freq_oid, NULL, &len, &frequency, sizeof (frequency));
++           g_free (freq_oid);
++
++	   return TRUE;
++}
+--- cpufreq/src/cpufreq-selector/cpufreq-selector-factory.c.orig	2008-06-16 14:33:25.000000000 -0400
++++ cpufreq/src/cpufreq-selector/cpufreq-selector-factory.c	2008-06-16 14:35:28.000000000 -0400
+@@ -27,20 +27,32 @@
+ #ifdef HAVE_LIBCPUFREQ
+ #include "cpufreq-selector-libcpufreq.h"
+ #endif
++#ifdef __FreeBSD__
++#include "cpufreq-selector-sysctl.h"
++#endif /* __FreeBSD__ */
+ 
+ CPUFreqSelector *
+ cpufreq_selector_factory_create_selector (guint cpu)
+ {
+ 	CPUFreqSelector *selector = NULL;
++#ifdef __FreeBSD__
++	size_t len;
++#endif
+ 	
+ #ifdef HAVE_LIBCPUFREQ
+ 	selector = cpufreq_selector_libcpufreq_new (cpu);
+ #else
++#ifndef __FreeBSD__
+ 	if (g_file_test ("/sys/devices/system/cpu/cpu0/cpufreq", G_FILE_TEST_EXISTS)) { /* 2.6 kernel */
+ 		selector = cpufreq_selector_sysfs_new (cpu);
+ 	} else if (g_file_test ("/proc/cpufreq", G_FILE_TEST_EXISTS)) { /* 2.4 kernel */
+ 		selector = cpufreq_selector_procfs_new (cpu);
+ 	}
++#else
++	if (sysctlbyname ("dev.cpu.0.freq", NULL, &len, NULL, 0) == 0) {
++		selector = cpufreq_selector_sysctl_new (cpu);
++	}
++#endif /* __FreeBSD__ */
+ #endif /* HAVE_LIBCPUFREQ */
+ 
+ 	return selector;
+--- cpufreq/src/cpufreq-selector/Makefile.am.orig	2012-07-29 15:41:47.000000000 -0500
++++ cpufreq/src/cpufreq-selector/Makefile.am	2012-07-29 15:42:08.000000000 -0500
+@@ -32,7 +32,7 @@
+ 	$(service_files)						\
+ 	cpufreq-selector-factory.c	 cpufreq-selector-factory.h	\
+ 	$(BUILT_SOURCES)						\
+-	main.c
++	main.c cpufreq-selector-sysctl.c cpufreq-selector-sysctl.h
+ 
+ mate_cpufreq_selector_LDADD = \
+ 	$(CPUFREQ_SELECTOR_LIBS) 	\

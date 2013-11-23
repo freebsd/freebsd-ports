@@ -1,0 +1,10 @@
+--- applets/inhibit/Makefile.am.orig	2013-10-19 12:05:52.000000000 +0200
++++ applets/inhibit/Makefile.am	2013-10-19 12:06:06.000000000 +0200
+@@ -34,6 +34,7 @@
+ 	gpm-common.h
+ 
+ mate_inhibit_applet_LDADD =					\
++	$(EXECINFO_LIBS)					\
+ 	$(DBUS_LIBS)						\
+ 	$(MATE_LIBS)						\
+ 	$(PANEL_LIBS)

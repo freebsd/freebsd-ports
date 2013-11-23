@@ -442,6 +442,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  or http://www.FreeBSD.org/gnome/docs/porting.html
 #				  for more details.
 ##
+# USE_MATE		- A list of the MATE dependencies the port has. Implies
+#				  that the port needs MATE. Implies inclusion of
+#				  bsd.mate.mk. See bsd.mate.mk for more details.
+##
 # USE_LUA		- If set, this port uses the Lua library and related
 #				  components. See bsd.lua.mk for more details.
 ##
@@ -1465,6 +1469,10 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .include "${PORTSDIR}/Mk/bsd.gnome.mk"
 .endif
 
+.if defined(USE_MATE)
+.include "${PORTSDIR}/Mk/bsd.mate.mk"
+.endif
+
 .if defined(WANT_LUA) || defined(USE_LUA) || defined(USE_LUA_NOT)
 .include "${PORTSDIR}/Mk/bsd.lua.mk"
 .endif
@@ -2031,6 +2039,10 @@ RUN_DEPENDS+=	${_GL_${_component}_RUN_DEPENDS}
 
 .if defined(WANT_GNOME) || defined(USE_GNOME)
 .include "${PORTSDIR}/Mk/bsd.gnome.mk"
+.endif
+
+.if defined(USE_MATE)
+.include "${PORTSDIR}/Mk/bsd.mate.mk"
 .endif
 
 .if defined(USE_XFCE)
@@ -2840,7 +2852,7 @@ VALID_CATEGORIES+= accessibility afterstep arabic archivers astro audio \
 	deskutils devel docs dns editors elisp emulators enlightenment finance french ftp \
 	games geography german gnome gnustep graphics hamradio haskell hebrew hungarian \
 	ipv6 irc japanese java kde kld korean lang linux lisp \
-	mail math mbone misc multimedia net net-im net-mgmt net-p2p news \
+	mail mate math mbone misc multimedia net net-im net-mgmt net-p2p news \
 	palm parallel pear perl5 plan9 polish portuguese ports-mgmt \
 	print python ruby rubygems russian \
 	scheme science security shells spanish sysutils \
@@ -6553,6 +6565,7 @@ desktop-categories:
 			lang)			c="Development"					;; \
 			lisp)			c="Development"					;; \
 			mail)			c="Office Email"				;; \
+			mate)			c="MATE GTK"		;; \
 			math)			c="Education Science Math"		;; \
 			mbone)			c="Network AudioVideo"			;; \
 			multimedia)		c="AudioVideo"					;; \
@@ -6613,7 +6626,7 @@ DESKTOP_CATEGORIES_ADDITIONAL=	Building Debugger IDE GUIDesigner Profiling \
 	ParallelComputing Amusement Archiving Compression Electronics Emulator \
 	Engineering FileTools FileManager TerminalEmulator Filesystem Monitor \
 	Security Accessibility Calculator Clock TextEditor Documentation Adult \
-	Core KDE GNOME XFCE GTK Qt Motif Java ConsoleOnly
+	Core KDE GNOME MATE XFCE GTK Qt Motif Java ConsoleOnly
 DESKTOP_CATEGORIES_RESERVED=	Screensaver TrayIcon Applet Shell
 
 VALID_DESKTOP_CATEGORIES+=	${DESKTOP_CATEGORIES_MAIN} \

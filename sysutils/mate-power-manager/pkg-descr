@@ -1,0 +1,7 @@
+MATE Power Manager is a MATE session daemon that acts as a policy agent
+on top of HAL (the Hardware Abstraction Layer). MATE Power Manager listens
+for HAL events and responds with user-configurable reactions.
+Currently it supports laptop batteries and AC adapters. Its goal is to be
+architecture neutral and free of polling and other hacks.
+
+WWW: http://mate-desktop.org/

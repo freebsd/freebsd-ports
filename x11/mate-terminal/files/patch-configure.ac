@@ -1,0 +1,13 @@
+--- configure.ac.orig	2009-05-03 15:25:26.000000000 -0400
++++ configure.ac	2009-05-03 15:26:34.000000000 -0400
+@@ -96,6 +96,10 @@ AC_SUBST([GLIB_GENMARSHAL])
+ GLIB_MKENUMS="$($PKG_CONFIG --variable=glib_mkenums glib-2.0)"
+ AC_SUBST([GLIB_MKENUMS])
+ 
++AC_CHECK_LIB(util, kinfo_getfile,
++	     [LIBS="${LIBS} -lutil"
++	      AC_DEFINE(HAVE_KINFO_GETFILE, 1, [Define if you have the kinfo_getfile function])], [:])
++
+ AC_PATH_PROG([GTK_BUILDER_CONVERT],[gtk-builder-convert],[false])
+ if test "$GTK_BUILDER_CONVERT" = "false"; then
+   AC_MSG_ERROR([gtk-builder-convert not found])

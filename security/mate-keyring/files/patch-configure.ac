@@ -1,0 +1,11 @@
+--- configure.ac.orig	2013-03-24 01:28:30.000000000 -0500
++++ configure.ac	2013-03-24 01:29:26.000000000 -0500
+@@ -284,7 +284,7 @@
+ 
+ pam_status="no"
+ if test "$enable_pam" != "no"; then
+-	AC_CHECK_HEADERS(security/pam_modules.h pam/pam_modules.h, [have_pam=yes; break], have_pam=no)
++	AC_CHECK_HEADERS(security/pam_modules.h, [have_pam=yes; break], have_pam=no)
+ 	if test "$enable_pam" = "yes" -a "$have_pam" = "no"; then
+ 		AC_MSG_ERROR(The PAM headers are missing)
+ 	elif test "$have_pam" = "yes"; then

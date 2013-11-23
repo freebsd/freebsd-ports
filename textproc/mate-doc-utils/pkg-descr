@@ -1,0 +1,7 @@
+The MATE Doc Utils is a collection of documentation utilities for the MATE
+project. Notably, it contains utilities for building documentation and all
+auxiliary files in the source tree, and it contains the DocBook XSLT
+stylesheets that were once distributed with Yelp. Yelp requires MATE Doc
+Utils for the XSLT.
+
+WWW: http://mate-desktop.org/

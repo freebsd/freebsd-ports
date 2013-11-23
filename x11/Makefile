@@ -173,6 +173,7 @@
     SUBDIR += libgnomekbd
     SUBDIR += libgnomemm26
     SUBDIR += libkonq
+    SUBDIR += libmatekbd
     SUBDIR += liboldX
     SUBDIR += libsx
     SUBDIR += libsynaptics
@@ -193,6 +194,16 @@
     SUBDIR += lxmenu-data
     SUBDIR += lxpanel
     SUBDIR += lxrandr
+    SUBDIR += mate
+    SUBDIR += mate-applets
+    SUBDIR += mate-base
+    SUBDIR += mate-desktop
+    SUBDIR += mate-dialogs
+    SUBDIR += mate-menus
+    SUBDIR += mate-panel
+    SUBDIR += mate-screensaver
+    SUBDIR += mate-session-manager
+    SUBDIR += mate-terminal
     SUBDIR += menu-cache
     SUBDIR += metalock
     SUBDIR += metisse

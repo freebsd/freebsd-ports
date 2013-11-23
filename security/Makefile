@@ -268,6 +268,7 @@
     SUBDIR += libident
     SUBDIR += libkpass
     SUBDIR += libksba
+    SUBDIR += libmatekeyring
     SUBDIR += libmcrypt
     SUBDIR += libntlm
     SUBDIR += libotr
@@ -307,6 +308,7 @@
     SUBDIR += manipulate_data
     SUBDIR += masscan
     SUBDIR += massh
+    SUBDIR += mate-keyring
     SUBDIR += matrixssl
     SUBDIR += mcrypt
     SUBDIR += md4coll

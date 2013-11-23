@@ -1,0 +1,536 @@
+bin/atril
+bin/atril-previewer
+bin/atril-thumbnailer
+include/atril/1.5.0/atril-document.h
+include/atril/1.5.0/atril-view.h
+include/atril/1.5.0/libdocument/ev-annotation.h
+include/atril/1.5.0/libdocument/ev-async-renderer.h
+include/atril/1.5.0/libdocument/ev-attachment.h
+include/atril/1.5.0/libdocument/ev-backends-manager.h
+include/atril/1.5.0/libdocument/ev-document-annotations.h
+include/atril/1.5.0/libdocument/ev-document-attachments.h
+include/atril/1.5.0/libdocument/ev-document-factory.h
+include/atril/1.5.0/libdocument/ev-document-find.h
+include/atril/1.5.0/libdocument/ev-document-fonts.h
+include/atril/1.5.0/libdocument/ev-document-forms.h
+include/atril/1.5.0/libdocument/ev-document-images.h
+include/atril/1.5.0/libdocument/ev-document-info.h
+include/atril/1.5.0/libdocument/ev-document-layers.h
+include/atril/1.5.0/libdocument/ev-document-links.h
+include/atril/1.5.0/libdocument/ev-document-misc.h
+include/atril/1.5.0/libdocument/ev-document-print.h
+include/atril/1.5.0/libdocument/ev-document-security.h
+include/atril/1.5.0/libdocument/ev-document-text.h
+include/atril/1.5.0/libdocument/ev-document-thumbnails.h
+include/atril/1.5.0/libdocument/ev-document-transition.h
+include/atril/1.5.0/libdocument/ev-document-type-builtins.h
+include/atril/1.5.0/libdocument/ev-document.h
+include/atril/1.5.0/libdocument/ev-file-exporter.h
+include/atril/1.5.0/libdocument/ev-file-helpers.h
+include/atril/1.5.0/libdocument/ev-form-field.h
+include/atril/1.5.0/libdocument/ev-image.h
+include/atril/1.5.0/libdocument/ev-init.h
+include/atril/1.5.0/libdocument/ev-layer.h
+include/atril/1.5.0/libdocument/ev-link-action.h
+include/atril/1.5.0/libdocument/ev-link-dest.h
+include/atril/1.5.0/libdocument/ev-link.h
+include/atril/1.5.0/libdocument/ev-mapping-list.h
+include/atril/1.5.0/libdocument/ev-page.h
+include/atril/1.5.0/libdocument/ev-render-context.h
+include/atril/1.5.0/libdocument/ev-selection.h
+include/atril/1.5.0/libdocument/ev-transition-effect.h
+include/atril/1.5.0/libdocument/ev-version.h
+include/atril/1.5.0/libview/ev-document-model.h
+include/atril/1.5.0/libview/ev-job-scheduler.h
+include/atril/1.5.0/libview/ev-jobs.h
+include/atril/1.5.0/libview/ev-print-operation.h
+include/atril/1.5.0/libview/ev-stock-icons.h
+include/atril/1.5.0/libview/ev-view-presentation.h
+include/atril/1.5.0/libview/ev-view-type-builtins.h
+include/atril/1.5.0/libview/ev-view.h
+%%COMICS%%lib/atril/3/backends/comicsdocument.atril-backend
+%%DJVU%%lib/atril/3/backends/djvudocument.atril-backend
+%%DVI%%lib/atril/3/backends/dvidocument.atril-backend
+%%COMICS%%lib/atril/3/backends/libcomicsdocument.a
+%%COMICS%%lib/atril/3/backends/libcomicsdocument.la
+%%COMICS%%lib/atril/3/backends/libcomicsdocument.so
+%%DJVU%%lib/atril/3/backends/libdjvudocument.a
+%%DJVU%%lib/atril/3/backends/libdjvudocument.la
+%%DJVU%%lib/atril/3/backends/libdjvudocument.so
+%%DVI%%lib/atril/3/backends/libdvidocument.a
+%%DVI%%lib/atril/3/backends/libdvidocument.la
+%%DVI%%lib/atril/3/backends/libdvidocument.so
+lib/atril/3/backends/libpdfdocument.a
+lib/atril/3/backends/libpdfdocument.la
+lib/atril/3/backends/libpdfdocument.so
+lib/atril/3/backends/libpsdocument.a
+lib/atril/3/backends/libpsdocument.la
+lib/atril/3/backends/libpsdocument.so
+lib/atril/3/backends/libtiffdocument.a
+lib/atril/3/backends/libtiffdocument.la
+lib/atril/3/backends/libtiffdocument.so
+lib/atril/3/backends/pdfdocument.atril-backend
+lib/atril/3/backends/psdocument.atril-backend
+lib/atril/3/backends/tiffdocument.atril-backend
+lib/libatrildocument.a
+lib/libatrildocument.la
+lib/libatrildocument.so
+lib/libatrildocument.so.3
+lib/libatrilview.a
+lib/libatrilview.la
+lib/libatrilview.so
+lib/libatrilview.so.3
+%%CAJA%%lib/caja/extensions-2.0/libatril-properties-page.a
+%%CAJA%%lib/caja/extensions-2.0/libatril-properties-page.la
+%%CAJA%%lib/caja/extensions-2.0/libatril-properties-page.so
+libdata/pkgconfig/atril-document-1.5.0.pc
+libdata/pkgconfig/atril-view-1.5.0.pc
+libexec/atril-convert-metadata
+libexec/atrild
+man/man1/atril-previewer.1.gz
+man/man1/atril-thumbnailer.1.gz
+man/man1/atril.1.gz
+share/MateConf/gsettings/atril.convert
+share/applications/atril.desktop
+share/dbus-1/services/org.mate.atril.Daemon.service
+share/gtk-doc/html/atril/EggFindBar.html
+share/gtk-doc/html/atril/EvFileMonitor.html
+share/gtk-doc/html/atril/EvHistory.html
+share/gtk-doc/html/atril/EvMessageArea.html
+share/gtk-doc/html/atril/EvNavigationAction.html
+share/gtk-doc/html/atril/EvNavigationActionWidget.html
+share/gtk-doc/html/atril/EvOpenRecentAction.html
+share/gtk-doc/html/atril/EvPageAction.html
+share/gtk-doc/html/atril/EvPageActionWidget.html
+share/gtk-doc/html/atril/EvPasswordView.html
+share/gtk-doc/html/atril/EvProgressMessageArea.html
+share/gtk-doc/html/atril/EvSidebar.html
+share/gtk-doc/html/atril/EvSidebarAttachments.html
+share/gtk-doc/html/atril/EvSidebarLayers.html
+share/gtk-doc/html/atril/EvSidebarLinks.html
+share/gtk-doc/html/atril/EvSidebarPage.html
+share/gtk-doc/html/atril/EvSidebarThumbnails.html
+share/gtk-doc/html/atril/EvWindow.html
+share/gtk-doc/html/atril/api-index-full.html
+share/gtk-doc/html/atril/atril-ev-application.html
+share/gtk-doc/html/atril/atril-ev-keyring.html
+share/gtk-doc/html/atril/atril-ev-media-player-keys.html
+share/gtk-doc/html/atril/atril-ev-metadata.html
+share/gtk-doc/html/atril/atril-ev-properties-dialog.html
+share/gtk-doc/html/atril/atril-ev-properties-fonts.html
+share/gtk-doc/html/atril/atril-ev-properties-license.html
+share/gtk-doc/html/atril/atril-ev-utils.html
+share/gtk-doc/html/atril/atril-ev-window-title.html
+share/gtk-doc/html/atril/atril-frontend.html
+share/gtk-doc/html/atril/atril.devhelp2
+share/gtk-doc/html/atril/home.png
+share/gtk-doc/html/atril/index.html
+share/gtk-doc/html/atril/index.sgml
+share/gtk-doc/html/atril/left.png
+share/gtk-doc/html/atril/licence.html
+share/gtk-doc/html/atril/object-tree.html
+share/gtk-doc/html/atril/right.png
+share/gtk-doc/html/atril/style.css
+share/gtk-doc/html/atril/up.png
+share/gtk-doc/html/libatrildocument-1.5.0/EvAnnotation.html
+share/gtk-doc/html/libatrildocument-1.5.0/EvAsyncRenderer.html
+share/gtk-doc/html/libatrildocument-1.5.0/EvAttachment.html
+share/gtk-doc/html/libatrildocument-1.5.0/EvDocument.html
+share/gtk-doc/html/libatrildocument-1.5.0/EvDocumentAnnotations.html
+share/gtk-doc/html/libatrildocument-1.5.0/EvDocumentAttachments.html
+share/gtk-doc/html/libatrildocument-1.5.0/EvDocumentFind.html
+share/gtk-doc/html/libatrildocument-1.5.0/EvDocumentFonts.html
+share/gtk-doc/html/libatrildocument-1.5.0/EvDocumentForms.html
+share/gtk-doc/html/libatrildocument-1.5.0/EvDocumentImages.html
+share/gtk-doc/html/libatrildocument-1.5.0/EvDocumentInfo.html
+share/gtk-doc/html/libatrildocument-1.5.0/EvDocumentLayers.html
+share/gtk-doc/html/libatrildocument-1.5.0/EvDocumentLinks.html
+share/gtk-doc/html/libatrildocument-1.5.0/EvDocumentPrint.html
+share/gtk-doc/html/libatrildocument-1.5.0/EvDocumentSecurity.html
+share/gtk-doc/html/libatrildocument-1.5.0/EvDocumentThumbnails.html
+share/gtk-doc/html/libatrildocument-1.5.0/EvDocumentTransition.html
+share/gtk-doc/html/libatrildocument-1.5.0/EvFileExporter.html
+share/gtk-doc/html/libatrildocument-1.5.0/EvFormField.html
+share/gtk-doc/html/libatrildocument-1.5.0/EvImage.html
+share/gtk-doc/html/libatrildocument-1.5.0/EvLayer.html
+share/gtk-doc/html/libatrildocument-1.5.0/EvPage.html
+share/gtk-doc/html/libatrildocument-1.5.0/EvRenderContext.html
+share/gtk-doc/html/libatrildocument-1.5.0/EvSelection.html
+share/gtk-doc/html/libatrildocument-1.5.0/api-index-full.html
+share/gtk-doc/html/libatrildocument-1.5.0/document-data.html
+share/gtk-doc/html/libatrildocument-1.5.0/document-helpers.html
+share/gtk-doc/html/libatrildocument-1.5.0/document-interfaces.html
+share/gtk-doc/html/libatrildocument-1.5.0/home.png
+share/gtk-doc/html/libatrildocument-1.5.0/index.html
+share/gtk-doc/html/libatrildocument-1.5.0/index.sgml
+share/gtk-doc/html/libatrildocument-1.5.0/left.png
+share/gtk-doc/html/libatrildocument-1.5.0/libatrildocument-1.5.0.devhelp2
+share/gtk-doc/html/libatrildocument-1.5.0/libatrildocument-EvDocumentMisc.html
+share/gtk-doc/html/libatrildocument-1.5.0/libatrildocument-Version-checks.html
+share/gtk-doc/html/libatrildocument-1.5.0/libatrildocument-ev-backends-manager.html
+share/gtk-doc/html/libatrildocument-1.5.0/libatrildocument-ev-document-factory.html
+share/gtk-doc/html/libatrildocument-1.5.0/libatrildocument-ev-file-helpers.html
+share/gtk-doc/html/libatrildocument-1.5.0/libatrildocument-ev-init.html
+share/gtk-doc/html/libatrildocument-1.5.0/libatrildocument-ev-link-action.html
+share/gtk-doc/html/libatrildocument-1.5.0/libatrildocument-ev-link-dest.html
+share/gtk-doc/html/libatrildocument-1.5.0/libatrildocument-ev-link.html
+share/gtk-doc/html/libatrildocument-1.5.0/libatrildocument-ev-mapping.html
+share/gtk-doc/html/libatrildocument-1.5.0/licence.html
+share/gtk-doc/html/libatrildocument-1.5.0/object-tree.html
+share/gtk-doc/html/libatrildocument-1.5.0/right.png
+share/gtk-doc/html/libatrildocument-1.5.0/style.css
+share/gtk-doc/html/libatrildocument-1.5.0/up.png
+share/gtk-doc/html/libatrilview-1.5.0/EvJob.html
+share/gtk-doc/html/libatrilview-1.5.0/api-index-full.html
+share/gtk-doc/html/libatrilview-1.5.0/home.png
+share/gtk-doc/html/libatrilview-1.5.0/index.html
+share/gtk-doc/html/libatrilview-1.5.0/index.sgml
+share/gtk-doc/html/libatrilview-1.5.0/left.png
+share/gtk-doc/html/libatrilview-1.5.0/libatrilview-1.5.0.devhelp2
+share/gtk-doc/html/libatrilview-1.5.0/libatrilview-ev-annotation-window.html
+share/gtk-doc/html/libatrilview-1.5.0/libatrilview-ev-document-model.html
+share/gtk-doc/html/libatrilview-1.5.0/libatrilview-ev-job-scheduler.html
+share/gtk-doc/html/libatrilview-1.5.0/libatrilview-ev-page-cache.html
+share/gtk-doc/html/libatrilview-1.5.0/libatrilview-ev-print-operation.html
+share/gtk-doc/html/libatrilview-1.5.0/libatrilview-ev-stock-icons.html
+share/gtk-doc/html/libatrilview-1.5.0/libatrilview-ev-view-cursor.html
+share/gtk-doc/html/libatrilview-1.5.0/libatrilview-ev-view-presentation.html
+share/gtk-doc/html/libatrilview-1.5.0/libatrilview-ev-view-type-builtins.html
+share/gtk-doc/html/libatrilview-1.5.0/libatrilview-ev-view.html
+share/gtk-doc/html/libatrilview-1.5.0/licence.html
+share/gtk-doc/html/libatrilview-1.5.0/object-tree.html
+share/gtk-doc/html/libatrilview-1.5.0/right.png
+share/gtk-doc/html/libatrilview-1.5.0/style.css
+share/gtk-doc/html/libatrilview-1.5.0/up.png
+share/gtk-doc/html/libatrilview-1.5.0/view-view.html
+share/icons/hicolor/16x16/apps/atril.png
+share/icons/hicolor/22x22/apps/atril.png
+share/icons/hicolor/24x24/apps/atril.png
+share/icons/hicolor/48x48/apps/atril.png
+share/icons/hicolor/scalable/apps/atril.svg
+share/locale/af/LC_MESSAGES/atril.mo
+share/locale/am/LC_MESSAGES/atril.mo
+share/locale/ar/LC_MESSAGES/atril.mo
+share/locale/as/LC_MESSAGES/atril.mo
+share/locale/ast/LC_MESSAGES/atril.mo
+share/locale/be/LC_MESSAGES/atril.mo
+share/locale/be@latin/LC_MESSAGES/atril.mo
+share/locale/bg/LC_MESSAGES/atril.mo
+share/locale/bn/LC_MESSAGES/atril.mo
+share/locale/bn_IN/LC_MESSAGES/atril.mo
+share/locale/br/LC_MESSAGES/atril.mo
+share/locale/ca/LC_MESSAGES/atril.mo
+share/locale/ca@valencia/LC_MESSAGES/atril.mo
+share/locale/cs/LC_MESSAGES/atril.mo
+share/locale/cy/LC_MESSAGES/atril.mo
+share/locale/da/LC_MESSAGES/atril.mo
+share/locale/de/LC_MESSAGES/atril.mo
+share/locale/dz/LC_MESSAGES/atril.mo
+share/locale/el/LC_MESSAGES/atril.mo
+share/locale/en@shaw/LC_MESSAGES/atril.mo
+share/locale/en_AU/LC_MESSAGES/atril.mo
+share/locale/en_CA/LC_MESSAGES/atril.mo
+share/locale/en_GB/LC_MESSAGES/atril.mo
+share/locale/eo/LC_MESSAGES/atril.mo
+share/locale/es/LC_MESSAGES/atril.mo
+share/locale/et/LC_MESSAGES/atril.mo
+share/locale/eu/LC_MESSAGES/atril.mo
+share/locale/fa/LC_MESSAGES/atril.mo
+share/locale/fi/LC_MESSAGES/atril.mo
+share/locale/fr/LC_MESSAGES/atril.mo
+share/locale/ga/LC_MESSAGES/atril.mo
+share/locale/gl/LC_MESSAGES/atril.mo
+share/locale/gu/LC_MESSAGES/atril.mo
+share/locale/he/LC_MESSAGES/atril.mo
+share/locale/hi/LC_MESSAGES/atril.mo
+share/locale/hu/LC_MESSAGES/atril.mo
+share/locale/id/LC_MESSAGES/atril.mo
+share/locale/it/LC_MESSAGES/atril.mo
+share/locale/ja/LC_MESSAGES/atril.mo
+share/locale/ka/LC_MESSAGES/atril.mo
+share/locale/kk/LC_MESSAGES/atril.mo
+share/locale/kn/LC_MESSAGES/atril.mo
+share/locale/ko/LC_MESSAGES/atril.mo
+share/locale/ks/LC_MESSAGES/atril.mo
+share/locale/ku/LC_MESSAGES/atril.mo
+share/locale/ky/LC_MESSAGES/atril.mo
+share/locale/lt/LC_MESSAGES/atril.mo
+share/locale/lv/LC_MESSAGES/atril.mo
+share/locale/mai/LC_MESSAGES/atril.mo
+share/locale/mg/LC_MESSAGES/atril.mo
+share/locale/mk/LC_MESSAGES/atril.mo
+share/locale/ml/LC_MESSAGES/atril.mo
+share/locale/mn/LC_MESSAGES/atril.mo
+share/locale/mr/LC_MESSAGES/atril.mo
+share/locale/ms/LC_MESSAGES/atril.mo
+share/locale/nb/LC_MESSAGES/atril.mo
+share/locale/nds/LC_MESSAGES/atril.mo
+share/locale/ne/LC_MESSAGES/atril.mo
+share/locale/nl/LC_MESSAGES/atril.mo
+share/locale/nn/LC_MESSAGES/atril.mo
+share/locale/oc/LC_MESSAGES/atril.mo
+share/locale/or/LC_MESSAGES/atril.mo
+share/locale/pa/LC_MESSAGES/atril.mo
+share/locale/pl/LC_MESSAGES/atril.mo
+share/locale/ps/LC_MESSAGES/atril.mo
+share/locale/pt/LC_MESSAGES/atril.mo
+share/locale/pt_BR/LC_MESSAGES/atril.mo
+share/locale/ro/LC_MESSAGES/atril.mo
+share/locale/ru/LC_MESSAGES/atril.mo
+share/locale/rw/LC_MESSAGES/atril.mo
+share/locale/si/LC_MESSAGES/atril.mo
+share/locale/sk/LC_MESSAGES/atril.mo
+share/locale/sl/LC_MESSAGES/atril.mo
+share/locale/sq/LC_MESSAGES/atril.mo
+share/locale/sr/LC_MESSAGES/atril.mo
+share/locale/sr@latin/LC_MESSAGES/atril.mo
+share/locale/sv/LC_MESSAGES/atril.mo
+share/locale/ta/LC_MESSAGES/atril.mo
+share/locale/te/LC_MESSAGES/atril.mo
+share/locale/th/LC_MESSAGES/atril.mo
+share/locale/tr/LC_MESSAGES/atril.mo
+share/locale/uk/LC_MESSAGES/atril.mo
+share/locale/vi/LC_MESSAGES/atril.mo
+share/locale/wa/LC_MESSAGES/atril.mo
+share/locale/zh_CN/LC_MESSAGES/atril.mo
+share/locale/zh_HK/LC_MESSAGES/atril.mo
+share/locale/zh_TW/LC_MESSAGES/atril.mo
+share/mate/help/atril/C/atril.xml
+share/mate/help/atril/C/figures/atril_start_window.png
+share/mate/help/atril/C/legal.xml
+share/mate/help/atril/bg/atril.xml
+share/mate/help/atril/bg/figures/atril_start_window.png
+share/mate/help/atril/ca/atril.xml
+share/mate/help/atril/ca/figures/atril_start_window.png
+share/mate/help/atril/cs/atril.xml
+share/mate/help/atril/cs/figures/atril_start_window.png
+share/mate/help/atril/de/atril.xml
+share/mate/help/atril/de/figures/atril_start_window.png
+share/mate/help/atril/el/atril.xml
+share/mate/help/atril/el/figures/atril_start_window.png
+share/mate/help/atril/en_GB/atril.xml
+share/mate/help/atril/en_GB/figures/atril_start_window.png
+share/mate/help/atril/es/atril.xml
+share/mate/help/atril/es/figures/atril_start_window.png
+share/mate/help/atril/eu/atril.xml
+share/mate/help/atril/eu/figures/atril_start_window.png
+share/mate/help/atril/fi/atril.xml
+share/mate/help/atril/fi/figures/atril_start_window.png
+share/mate/help/atril/fr/atril.xml
+share/mate/help/atril/fr/figures/atril_start_window.png
+share/mate/help/atril/it/atril.xml
+share/mate/help/atril/it/figures/atril_start_window.png
+share/mate/help/atril/ja/atril.xml
+share/mate/help/atril/ja/figures/atril_start_window.png
+share/mate/help/atril/nl/atril.xml
+share/mate/help/atril/nl/figures/atril_start_window.png
+share/mate/help/atril/oc/atril.xml
+share/mate/help/atril/oc/figures/atril_start_window.png
+share/mate/help/atril/pt_BR/atril.xml
+share/mate/help/atril/pt_BR/figures/atril_start_window.png
+share/mate/help/atril/ru/atril.xml
+share/mate/help/atril/ru/figures/atril_start_window.png
+share/mate/help/atril/sl/atril.xml
+share/mate/help/atril/sl/figures/atril_start_window.png
+share/mate/help/atril/sr/atril.xml
+share/mate/help/atril/sr/figures/atril_start_window.png
+share/mate/help/atril/sv/atril.xml
+share/mate/help/atril/sv/figures/atril_start_window.png
+share/mate/help/atril/uk/atril.xml
+share/mate/help/atril/uk/figures/atril_start_window.png
+share/mate/help/atril/vi/atril.xml
+share/mate/help/atril/vi/figures/atril_start_window.png
+share/mate/help/atril/zh_CN/atril.xml
+share/mate/help/atril/zh_CN/figures/atril_start_window.png
+%%DATADIR%%/atril-previewer-ui.xml
+%%DATADIR%%/atril-toolbar.xml
+%%DATADIR%%/atril-ui.xml
+%%DATADIR%%/hand-open.png
+%%DATADIR%%/icons/hicolor/16x16/actions/object-rotate-left.png
+%%DATADIR%%/icons/hicolor/16x16/actions/object-rotate-right.png
+%%DATADIR%%/icons/hicolor/16x16/actions/view-page-continuous.png
+%%DATADIR%%/icons/hicolor/16x16/actions/view-page-facing.png
+%%DATADIR%%/icons/hicolor/16x16/actions/zoom-fit-height.png
+%%DATADIR%%/icons/hicolor/16x16/actions/zoom-fit-width.png
+%%DATADIR%%/icons/hicolor/16x16/actions/zoom.png
+%%DATADIR%%/icons/hicolor/16x16/mimetypes/x-office-presentation.png
+%%DATADIR%%/icons/hicolor/22x22/actions/eye.png
+%%DATADIR%%/icons/hicolor/22x22/actions/object-rotate-left.png
+%%DATADIR%%/icons/hicolor/22x22/actions/object-rotate-right.png
+%%DATADIR%%/icons/hicolor/22x22/actions/view-page-continuous.png
+%%DATADIR%%/icons/hicolor/22x22/actions/view-page-facing.png
+%%DATADIR%%/icons/hicolor/22x22/actions/zoom-fit-page.png
+%%DATADIR%%/icons/hicolor/22x22/actions/zoom-fit-width.png
+%%DATADIR%%/icons/hicolor/22x22/actions/zoom.png
+%%DATADIR%%/icons/hicolor/22x22/mimetypes/x-office-presentation.png
+%%DATADIR%%/icons/hicolor/24x24/actions/object-rotate-left.png
+%%DATADIR%%/icons/hicolor/24x24/actions/object-rotate-right.png
+%%DATADIR%%/icons/hicolor/24x24/actions/stock_filters-invert.png
+%%DATADIR%%/icons/hicolor/24x24/actions/view-page-continuous.png
+%%DATADIR%%/icons/hicolor/24x24/actions/view-page-facing.png
+%%DATADIR%%/icons/hicolor/24x24/actions/zoom-fit-height.png
+%%DATADIR%%/icons/hicolor/24x24/actions/zoom-fit-width.png
+%%DATADIR%%/icons/hicolor/24x24/actions/zoom.png
+%%DATADIR%%/icons/hicolor/24x24/mimetypes/x-office-presentation.png
+%%DATADIR%%/icons/hicolor/32x32/actions/object-rotate-left.png
+%%DATADIR%%/icons/hicolor/32x32/actions/object-rotate-right.png
+%%DATADIR%%/icons/hicolor/32x32/actions/view-page-continuous.png
+%%DATADIR%%/icons/hicolor/32x32/actions/view-page-facing.png
+%%DATADIR%%/icons/hicolor/32x32/mimetypes/x-office-presentation.png
+%%DATADIR%%/icons/hicolor/48x48/actions/close.png
+%%DATADIR%%/icons/hicolor/48x48/actions/resize-se.png
+%%DATADIR%%/icons/hicolor/48x48/actions/resize-sw.png
+%%DATADIR%%/icons/hicolor/48x48/actions/view-page-continuous.png
+%%DATADIR%%/icons/hicolor/48x48/actions/view-page-facing.png
+%%DATADIR%%/icons/hicolor/scalable/actions/object-rotate-left.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/object-rotate-right.svg
+%%DATADIR%%/icons/hicolor/scalable/mimetypes/x-office-presentation.svg
+share/omf/atril/atril-C.omf
+share/omf/atril/atril-bg.omf
+share/omf/atril/atril-ca.omf
+share/omf/atril/atril-cs.omf
+share/omf/atril/atril-de.omf
+share/omf/atril/atril-el.omf
+share/omf/atril/atril-en_GB.omf
+share/omf/atril/atril-es.omf
+share/omf/atril/atril-eu.omf
+share/omf/atril/atril-fi.omf
+share/omf/atril/atril-fr.omf
+share/omf/atril/atril-it.omf
+share/omf/atril/atril-ja.omf
+share/omf/atril/atril-nl.omf
+share/omf/atril/atril-oc.omf
+share/omf/atril/atril-pt_BR.omf
+share/omf/atril/atril-ru.omf
+share/omf/atril/atril-sl.omf
+share/omf/atril/atril-sr.omf
+share/omf/atril/atril-sv.omf
+share/omf/atril/atril-uk.omf
+share/omf/atril/atril-vi.omf
+share/omf/atril/atril-zh_CN.omf
+share/thumbnailers/atril.thumbnailer
+@dirrmtry share/thumbnailers
+@dirrm share/omf/atril
+@dirrmtry %%DATADIR%%/icons/hicolor/scalable/mimetypes
+@dirrmtry %%DATADIR%%/icons/hicolor/scalable/actions
+@dirrmtry %%DATADIR%%/icons/hicolor/scalable
+@dirrmtry %%DATADIR%%/icons/hicolor/48x48/actions
+@dirrmtry %%DATADIR%%/icons/hicolor/48x48
+@dirrmtry %%DATADIR%%/icons/hicolor/32x32/mimetypes
+@dirrmtry %%DATADIR%%/icons/hicolor/32x32/actions
+@dirrmtry %%DATADIR%%/icons/hicolor/32x32
+@dirrmtry %%DATADIR%%/icons/hicolor/24x24/mimetypes
+@dirrmtry %%DATADIR%%/icons/hicolor/24x24/actions
+@dirrmtry %%DATADIR%%/icons/hicolor/24x24
+@dirrmtry %%DATADIR%%/icons/hicolor/22x22/mimetypes
+@dirrmtry %%DATADIR%%/icons/hicolor/22x22/actions
+@dirrmtry %%DATADIR%%/icons/hicolor/22x22
+@dirrmtry %%DATADIR%%/icons/hicolor/16x16/mimetypes
+@dirrmtry %%DATADIR%%/icons/hicolor/16x16/actions
+@dirrmtry %%DATADIR%%/icons/hicolor/16x16
+@dirrmtry %%DATADIR%%/icons/hicolor
+@dirrmtry %%DATADIR%%/icons
+@dirrmtry %%DATADIR%%
+@dirrm share/mate/help/atril/zh_CN/figures
+@dirrm share/mate/help/atril/zh_CN
+@dirrm share/mate/help/atril/vi/figures
+@dirrm share/mate/help/atril/vi
+@dirrm share/mate/help/atril/uk/figures
+@dirrm share/mate/help/atril/uk
+@dirrm share/mate/help/atril/sv/figures
+@dirrm share/mate/help/atril/sv
+@dirrm share/mate/help/atril/sr/figures
+@dirrm share/mate/help/atril/sr
+@dirrm share/mate/help/atril/sl/figures
+@dirrm share/mate/help/atril/sl
+@dirrm share/mate/help/atril/ru/figures
+@dirrm share/mate/help/atril/ru
+@dirrm share/mate/help/atril/pt_BR/figures
+@dirrm share/mate/help/atril/pt_BR
+@dirrm share/mate/help/atril/oc/figures
+@dirrm share/mate/help/atril/oc
+@dirrm share/mate/help/atril/nl/figures
+@dirrm share/mate/help/atril/nl
+@dirrm share/mate/help/atril/ja/figures
+@dirrm share/mate/help/atril/ja
+@dirrm share/mate/help/atril/it/figures
+@dirrm share/mate/help/atril/it
+@dirrm share/mate/help/atril/fr/figures
+@dirrm share/mate/help/atril/fr
+@dirrm share/mate/help/atril/fi/figures
+@dirrm share/mate/help/atril/fi
+@dirrm share/mate/help/atril/eu/figures
+@dirrm share/mate/help/atril/eu
+@dirrm share/mate/help/atril/es/figures
+@dirrm share/mate/help/atril/es
+@dirrm share/mate/help/atril/en_GB/figures
+@dirrm share/mate/help/atril/en_GB
+@dirrm share/mate/help/atril/el/figures
+@dirrm share/mate/help/atril/el
+@dirrm share/mate/help/atril/de/figures
+@dirrm share/mate/help/atril/de
+@dirrm share/mate/help/atril/cs/figures
+@dirrm share/mate/help/atril/cs
+@dirrm share/mate/help/atril/ca/figures
+@dirrm share/mate/help/atril/ca
+@dirrm share/mate/help/atril/bg/figures
+@dirrm share/mate/help/atril/bg
+@dirrm share/mate/help/atril/C/figures
+@dirrm share/mate/help/atril/C
+@dirrm share/mate/help/atril
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ps/LC_MESSAGES
+@dirrmtry share/locale/ps
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/ks/LC_MESSAGES
+@dirrmtry share/locale/ks
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
+@dirrmtry share/gtk-doc/html/libatrilview-1.5.0
+@dirrmtry share/gtk-doc/html/libatrildocument-1.5.0
+@dirrmtry share/gtk-doc/html/atril
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
+@dirrm lib/atril/3/backends
+@dirrm lib/atril/3
+@dirrm lib/atril
+@dirrm include/atril/1.5.0/libview
+@dirrm include/atril/1.5.0/libdocument
+@dirrm include/atril/1.5.0
+@dirrm include/atril

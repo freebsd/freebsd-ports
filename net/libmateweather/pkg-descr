@@ -1,0 +1,9 @@
+libmateweather is a library to access weather information from online
+services for numerous locations.
+
+libmateweather isn't supported in the devel platform, which means OS vendors
+won't guarantee the API/ABI long-term, but authors of open source apps
+should feel free to use libmateweather as users can always recompile against
+a new version.
+
+WWW: http://mate-desktop.org/

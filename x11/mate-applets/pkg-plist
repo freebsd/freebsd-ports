@@ -1,0 +1,2412 @@
+%%CPUFREQ%%bin/mate-cpufreq-selector
+bin/mate-invest-chart
+%%CPUFREQ%%etc/dbus-1/system.d/org.mate.CPUFreqSelector.conf
+%%BATTERY%%etc/sound/events/mate-battstat_applet.soundlist
+%%PYTHON_SITELIBDIR%%/mate_invest/__init__.py
+%%PYTHON_SITELIBDIR%%/mate_invest/__init__.pyc
+%%PYTHON_SITELIBDIR%%/mate_invest/__init__.pyo
+%%PYTHON_SITELIBDIR%%/mate_invest/about.py
+%%PYTHON_SITELIBDIR%%/mate_invest/about.pyc
+%%PYTHON_SITELIBDIR%%/mate_invest/about.pyo
+%%PYTHON_SITELIBDIR%%/mate_invest/applet.py
+%%PYTHON_SITELIBDIR%%/mate_invest/applet.pyc
+%%PYTHON_SITELIBDIR%%/mate_invest/applet.pyo
+%%PYTHON_SITELIBDIR%%/mate_invest/chart.py
+%%PYTHON_SITELIBDIR%%/mate_invest/chart.pyc
+%%PYTHON_SITELIBDIR%%/mate_invest/chart.pyo
+%%PYTHON_SITELIBDIR%%/mate_invest/currencies.py
+%%PYTHON_SITELIBDIR%%/mate_invest/currencies.pyc
+%%PYTHON_SITELIBDIR%%/mate_invest/currencies.pyo
+%%PYTHON_SITELIBDIR%%/mate_invest/defs.py
+%%PYTHON_SITELIBDIR%%/mate_invest/defs.pyc
+%%PYTHON_SITELIBDIR%%/mate_invest/defs.pyo
+%%PYTHON_SITELIBDIR%%/mate_invest/help.py
+%%PYTHON_SITELIBDIR%%/mate_invest/help.pyc
+%%PYTHON_SITELIBDIR%%/mate_invest/help.pyo
+%%PYTHON_SITELIBDIR%%/mate_invest/networkmanager.py
+%%PYTHON_SITELIBDIR%%/mate_invest/networkmanager.pyc
+%%PYTHON_SITELIBDIR%%/mate_invest/networkmanager.pyo
+%%PYTHON_SITELIBDIR%%/mate_invest/preferences.py
+%%PYTHON_SITELIBDIR%%/mate_invest/preferences.pyc
+%%PYTHON_SITELIBDIR%%/mate_invest/preferences.pyo
+%%PYTHON_SITELIBDIR%%/mate_invest/quotes.py
+%%PYTHON_SITELIBDIR%%/mate_invest/quotes.pyc
+%%PYTHON_SITELIBDIR%%/mate_invest/quotes.pyo
+%%PYTHON_SITELIBDIR%%/mate_invest/widgets.py
+%%PYTHON_SITELIBDIR%%/mate_invest/widgets.pyc
+%%PYTHON_SITELIBDIR%%/mate_invest/widgets.pyo
+libexec/mate-accessx-status-applet
+%%BATTERY%%libexec/mate-battstat-applet-2
+libexec/mate-charpick_applet2
+libexec/mate-drivemount_applet2
+libexec/mate-geyes_applet2
+libexec/mate-invest-applet
+%%CPUFREQ%%libexec/mate-cpufreq-applet
+libexec/mateweather-applet-2
+libexec/mate-multiload-applet-2
+libexec/mate-stickynotes_applet
+libexec/mate-trashapplet
+share/MateConf/gsettings/stickynotes-applet.convert
+share/dbus-1/services/org.mate.panel.applet.AccessxStatusAppletFactory.service
+%%BATTERY%%share/dbus-1/services/org.mate.panel.applet.BattstatAppletFactory.service
+%%CPUFREQ%%share/dbus-1/services/org.mate.panel.applet.CPUFreqAppletFactory.service
+share/dbus-1/services/org.mate.panel.applet.CharpickerAppletFactory.service
+share/dbus-1/services/org.mate.panel.applet.DriveMountAppletFactory.service
+share/dbus-1/services/org.mate.panel.applet.GeyesAppletFactory.service
+share/dbus-1/services/org.mate.panel.applet.InvestAppletFactory.service
+share/dbus-1/services/org.mate.panel.applet.MateWeatherAppletFactory.service
+share/dbus-1/services/org.mate.panel.applet.MultiLoadAppletFactory.service
+share/dbus-1/services/org.mate.panel.applet.StickyNotesAppletFactory.service
+share/dbus-1/services/org.mate.panel.applet.TrashAppletFactory.service
+%%CPUFREQ%%share/dbus-1/system-services/org.mate.CPUFreqSelector.service
+%%CPUFREQ%%share/icons/hicolor/16x16/apps/mate-cpu-frequency-applet.png
+share/icons/hicolor/16x16/apps/mate-eyes-applet.png
+share/icons/hicolor/16x16/apps/mate-invest-applet.png
+share/icons/hicolor/16x16/apps/mate-sticky-notes-applet.png
+%%CPUFREQ%%share/icons/hicolor/22x22/apps/mate-cpu-frequency-applet.png
+share/icons/hicolor/22x22/apps/mate-eyes-applet.png
+share/icons/hicolor/22x22/apps/mate-invest-applet.png
+share/icons/hicolor/22x22/apps/mate-sticky-notes-applet.png
+%%CPUFREQ%%share/icons/hicolor/24x24/apps/mate-cpu-frequency-applet.png
+share/icons/hicolor/24x24/apps/mate-eyes-applet.png
+share/icons/hicolor/24x24/apps/mate-sticky-notes-applet.png
+%%CPUFREQ%%share/icons/hicolor/32x32/apps/mate-cpu-frequency-applet.png
+share/icons/hicolor/32x32/apps/mate-eyes-applet.png
+share/icons/hicolor/32x32/apps/mate-sticky-notes-applet.png
+share/icons/hicolor/48x48/apps/mate-invest-applet.png
+%%CPUFREQ%%share/icons/hicolor/scalable/apps/mate-cpu-frequency-applet.svg
+share/icons/hicolor/scalable/apps/mate-eyes-applet.svg
+share/icons/hicolor/scalable/apps/mate-invest-applet.svg
+share/icons/hicolor/scalable/apps/mate-sticky-notes-applet.svg
+share/icons/mate/48x48/apps/ax-applet.png
+share/locale/af/LC_MESSAGES/mate-applets.mo
+share/locale/am/LC_MESSAGES/mate-applets.mo
+share/locale/ar/LC_MESSAGES/mate-applets.mo
+share/locale/as/LC_MESSAGES/mate-applets.mo
+share/locale/ast/LC_MESSAGES/mate-applets.mo
+share/locale/az/LC_MESSAGES/mate-applets.mo
+share/locale/be/LC_MESSAGES/mate-applets.mo
+share/locale/be@latin/LC_MESSAGES/mate-applets.mo
+share/locale/bg/LC_MESSAGES/mate-applets.mo
+share/locale/bn/LC_MESSAGES/mate-applets.mo
+share/locale/bn_IN/LC_MESSAGES/mate-applets.mo
+share/locale/br/LC_MESSAGES/mate-applets.mo
+share/locale/bs/LC_MESSAGES/mate-applets.mo
+share/locale/ca/LC_MESSAGES/mate-applets.mo
+share/locale/ca@valencia/LC_MESSAGES/mate-applets.mo
+share/locale/crh/LC_MESSAGES/mate-applets.mo
+share/locale/cs/LC_MESSAGES/mate-applets.mo
+share/locale/cy/LC_MESSAGES/mate-applets.mo
+share/locale/da/LC_MESSAGES/mate-applets.mo
+share/locale/de/LC_MESSAGES/mate-applets.mo
+share/locale/dz/LC_MESSAGES/mate-applets.mo
+share/locale/el/LC_MESSAGES/mate-applets.mo
+share/locale/en@shaw/LC_MESSAGES/mate-applets.mo
+share/locale/en_AU/LC_MESSAGES/mate-applets.mo
+share/locale/en_CA/LC_MESSAGES/mate-applets.mo
+share/locale/en_GB/LC_MESSAGES/mate-applets.mo
+share/locale/eo/LC_MESSAGES/mate-applets.mo
+share/locale/es/LC_MESSAGES/mate-applets.mo
+share/locale/es_AR/LC_MESSAGES/mate-applets.mo
+share/locale/es_CL/LC_MESSAGES/mate-applets.mo
+share/locale/es_CO/LC_MESSAGES/mate-applets.mo
+share/locale/es_CR/LC_MESSAGES/mate-applets.mo
+share/locale/es_DO/LC_MESSAGES/mate-applets.mo
+share/locale/es_EC/LC_MESSAGES/mate-applets.mo
+share/locale/es_ES/LC_MESSAGES/mate-applets.mo
+share/locale/es_GT/LC_MESSAGES/mate-applets.mo
+share/locale/es_HN/LC_MESSAGES/mate-applets.mo
+share/locale/es_MX/LC_MESSAGES/mate-applets.mo
+share/locale/es_NI/LC_MESSAGES/mate-applets.mo
+share/locale/es_PA/LC_MESSAGES/mate-applets.mo
+share/locale/es_PE/LC_MESSAGES/mate-applets.mo
+share/locale/es_PR/LC_MESSAGES/mate-applets.mo
+share/locale/es_SV/LC_MESSAGES/mate-applets.mo
+share/locale/es_UY/LC_MESSAGES/mate-applets.mo
+share/locale/es_VE/LC_MESSAGES/mate-applets.mo
+share/locale/et/LC_MESSAGES/mate-applets.mo
+share/locale/eu/LC_MESSAGES/mate-applets.mo
+share/locale/fa/LC_MESSAGES/mate-applets.mo
+share/locale/fi/LC_MESSAGES/mate-applets.mo
+share/locale/fr/LC_MESSAGES/mate-applets.mo
+share/locale/ga/LC_MESSAGES/mate-applets.mo
+share/locale/gl/LC_MESSAGES/mate-applets.mo
+share/locale/gu/LC_MESSAGES/mate-applets.mo
+share/locale/he/LC_MESSAGES/mate-applets.mo
+share/locale/hi/LC_MESSAGES/mate-applets.mo
+share/locale/hr/LC_MESSAGES/mate-applets.mo
+share/locale/hu/LC_MESSAGES/mate-applets.mo
+share/locale/hy/LC_MESSAGES/mate-applets.mo
+share/locale/id/LC_MESSAGES/mate-applets.mo
+share/locale/is/LC_MESSAGES/mate-applets.mo
+share/locale/it/LC_MESSAGES/mate-applets.mo
+share/locale/ja/LC_MESSAGES/mate-applets.mo
+share/locale/ka/LC_MESSAGES/mate-applets.mo
+share/locale/kk/LC_MESSAGES/mate-applets.mo
+share/locale/kn/LC_MESSAGES/mate-applets.mo
+share/locale/ko/LC_MESSAGES/mate-applets.mo
+share/locale/ku/LC_MESSAGES/mate-applets.mo
+share/locale/ky/LC_MESSAGES/mate-applets.mo
+share/locale/lt/LC_MESSAGES/mate-applets.mo
+share/locale/lv/LC_MESSAGES/mate-applets.mo
+share/locale/mai/LC_MESSAGES/mate-applets.mo
+share/locale/mg/LC_MESSAGES/mate-applets.mo
+share/locale/mk/LC_MESSAGES/mate-applets.mo
+share/locale/ml/LC_MESSAGES/mate-applets.mo
+share/locale/mn/LC_MESSAGES/mate-applets.mo
+share/locale/mr/LC_MESSAGES/mate-applets.mo
+share/locale/ms/LC_MESSAGES/mate-applets.mo
+share/locale/nb/LC_MESSAGES/mate-applets.mo
+share/locale/ne/LC_MESSAGES/mate-applets.mo
+share/locale/nl/LC_MESSAGES/mate-applets.mo
+share/locale/nn/LC_MESSAGES/mate-applets.mo
+share/locale/oc/LC_MESSAGES/mate-applets.mo
+share/locale/or/LC_MESSAGES/mate-applets.mo
+share/locale/pa/LC_MESSAGES/mate-applets.mo
+share/locale/pl/LC_MESSAGES/mate-applets.mo
+share/locale/ps/LC_MESSAGES/mate-applets.mo
+share/locale/pt/LC_MESSAGES/mate-applets.mo
+share/locale/pt_BR/LC_MESSAGES/mate-applets.mo
+share/locale/ro/LC_MESSAGES/mate-applets.mo
+share/locale/ru/LC_MESSAGES/mate-applets.mo
+share/locale/rw/LC_MESSAGES/mate-applets.mo
+share/locale/si/LC_MESSAGES/mate-applets.mo
+share/locale/sk/LC_MESSAGES/mate-applets.mo
+share/locale/sl/LC_MESSAGES/mate-applets.mo
+share/locale/sq/LC_MESSAGES/mate-applets.mo
+share/locale/sr/LC_MESSAGES/mate-applets.mo
+share/locale/sr@latin/LC_MESSAGES/mate-applets.mo
+share/locale/sv/LC_MESSAGES/mate-applets.mo
+share/locale/ta/LC_MESSAGES/mate-applets.mo
+share/locale/te/LC_MESSAGES/mate-applets.mo
+share/locale/th/LC_MESSAGES/mate-applets.mo
+share/locale/tr/LC_MESSAGES/mate-applets.mo
+share/locale/ug/LC_MESSAGES/mate-applets.mo
+share/locale/uk/LC_MESSAGES/mate-applets.mo
+share/locale/vi/LC_MESSAGES/mate-applets.mo
+share/locale/wa/LC_MESSAGES/mate-applets.mo
+share/locale/xh/LC_MESSAGES/mate-applets.mo
+share/locale/zh_CN/LC_MESSAGES/mate-applets.mo
+share/locale/zh_HK/LC_MESSAGES/mate-applets.mo
+share/locale/zh_TW/LC_MESSAGES/mate-applets.mo
+share/mate-2.0/ui/accessx-status-applet-menu.xml
+%%BATTERY%%share/mate-2.0/ui/battstat-applet-menu.xml
+share/mate-2.0/ui/charpick-applet-menu.xml
+%%CPUFREQ%%share/mate-2.0/ui/cpufreq-applet-menu.xml
+share/mate-2.0/ui/drivemount-applet-menu.xml
+share/mate-2.0/ui/geyes-applet-menu.xml
+share/mate-2.0/ui/mateweather-applet-menu.xml
+share/mate-2.0/ui/multiload-applet-menu.xml
+share/mate-2.0/ui/stickynotes-applet-menu.xml
+share/mate-2.0/ui/trashapplet-menu.xml
+%%DATADIR%%/Invest_Applet.xml
+%%BATTERY%%%%DATADIR%%/builder/battstat_applet.ui
+%%CPUFREQ%%%%DATADIR%%/builder/cpufreq-preferences.ui
+%%DATADIR%%/builder/financialchart.ui
+%%DATADIR%%/builder/prefs-dialog.ui
+%%DATADIR%%/builder/stickynotes.ui
+%%DATADIR%%/builder/trashapplet-empty-progress.ui
+%%DATADIR%%/geyes/Bizarre/Bizarre-eye.png
+%%DATADIR%%/geyes/Bizarre/Bizarre-pupil.png
+%%DATADIR%%/geyes/Bizarre/config
+%%DATADIR%%/geyes/Bloodshot/Bloodshot-eye.png
+%%DATADIR%%/geyes/Bloodshot/Bloodshot-pupil.png
+%%DATADIR%%/geyes/Bloodshot/config
+%%DATADIR%%/geyes/Default-tiny/Default-tiny-eye.png
+%%DATADIR%%/geyes/Default-tiny/Default-tiny-pupil.png
+%%DATADIR%%/geyes/Default-tiny/config
+%%DATADIR%%/geyes/Default/Default-eye.png
+%%DATADIR%%/geyes/Default/Default-pupil.png
+%%DATADIR%%/geyes/Default/config
+%%DATADIR%%/geyes/Horrid/config
+%%DATADIR%%/geyes/Horrid/horrid_eye.png
+%%DATADIR%%/geyes/Horrid/horrid_pupil.png
+%%DATADIR%%/geyes/Tango/config
+%%DATADIR%%/geyes/Tango/tango-eye.png
+%%DATADIR%%/geyes/Tango/tango-pupil.png
+%%DATADIR%%/invest-applet/invest-16_neutral.png
+%%DATADIR%%/invest-applet/invest-22_down.png
+%%DATADIR%%/invest-applet/invest-22_neutral.png
+%%DATADIR%%/invest-applet/invest-22_up.png
+%%DATADIR%%/invest-applet/invest_down.svg
+%%DATADIR%%/invest-applet/invest_neutral.svg
+%%DATADIR%%/invest-applet/invest_up.svg
+share/mate-panel/applets/org.mate.applets.AccessxStatusApplet.mate-panel-applet
+%%BATTERY%%share/mate-panel/applets/org.mate.applets.BattstatApplet.mate-panel-applet
+%%CPUFREQ%%share/mate-panel/applets/org.mate.applets.CPUFreqApplet.mate-panel-applet
+share/mate-panel/applets/org.mate.applets.CharpickerApplet.mate-panel-applet
+share/mate-panel/applets/org.mate.applets.DriveMountApplet.mate-panel-applet
+share/mate-panel/applets/org.mate.applets.GeyesApplet.mate-panel-applet
+share/mate-panel/applets/org.mate.applets.InvestApplet.mate-panel-applet
+share/mate-panel/applets/org.mate.applets.MateWeatherApplet.mate-panel-applet
+share/mate-panel/applets/org.mate.applets.MultiLoadApplet.mate-panel-applet
+share/mate-panel/applets/org.mate.applets.StickyNotesApplet.mate-panel-applet
+share/mate-panel/applets/org.mate.applets.TrashApplet.mate-panel-applet
+share/mate/help/mate-accessx-status/C/figures/accessx-status-applet.png
+share/mate/help/mate-accessx-status/C/figures/accessx-status-disabled.png
+share/mate/help/mate-accessx-status/C/figures/accessx_bounce-keys.png
+share/mate/help/mate-accessx-status/C/figures/accessx_mouse-keys.png
+share/mate/help/mate-accessx-status/C/figures/accessx_slow-keys.png
+share/mate/help/mate-accessx-status/C/figures/accessx_sticky-altGr-key.png
+share/mate/help/mate-accessx-status/C/figures/accessx_sticky-ctrl-key.png
+share/mate/help/mate-accessx-status/C/figures/accessx_sticky-keys.png
+share/mate/help/mate-accessx-status/C/figures/accessx_sticky-meta-key.png
+share/mate/help/mate-accessx-status/C/figures/accessx_sticky-shift-key.png
+share/mate/help/mate-accessx-status/C/figures/accessx_sticky-windows-key.png
+share/mate/help/mate-accessx-status/C/legal.xml
+share/mate/help/mate-accessx-status/C/mate-accessx-status.xml
+share/mate/help/mate-accessx-status/bg/figures/accessx-status-applet.png
+share/mate/help/mate-accessx-status/bg/figures/accessx-status-disabled.png
+share/mate/help/mate-accessx-status/bg/figures/accessx_bounce-keys.png
+share/mate/help/mate-accessx-status/bg/figures/accessx_mouse-keys.png
+share/mate/help/mate-accessx-status/bg/figures/accessx_slow-keys.png
+share/mate/help/mate-accessx-status/bg/figures/accessx_sticky-altGr-key.png
+share/mate/help/mate-accessx-status/bg/figures/accessx_sticky-ctrl-key.png
+share/mate/help/mate-accessx-status/bg/figures/accessx_sticky-keys.png
+share/mate/help/mate-accessx-status/bg/figures/accessx_sticky-meta-key.png
+share/mate/help/mate-accessx-status/bg/figures/accessx_sticky-shift-key.png
+share/mate/help/mate-accessx-status/bg/figures/accessx_sticky-windows-key.png
+share/mate/help/mate-accessx-status/bg/mate-accessx-status.xml
+share/mate/help/mate-accessx-status/ca/figures/accessx-status-applet.png
+share/mate/help/mate-accessx-status/ca/figures/accessx-status-disabled.png
+share/mate/help/mate-accessx-status/ca/figures/accessx_bounce-keys.png
+share/mate/help/mate-accessx-status/ca/figures/accessx_mouse-keys.png
+share/mate/help/mate-accessx-status/ca/figures/accessx_slow-keys.png
+share/mate/help/mate-accessx-status/ca/figures/accessx_sticky-altGr-key.png
+share/mate/help/mate-accessx-status/ca/figures/accessx_sticky-ctrl-key.png
+share/mate/help/mate-accessx-status/ca/figures/accessx_sticky-keys.png
+share/mate/help/mate-accessx-status/ca/figures/accessx_sticky-meta-key.png
+share/mate/help/mate-accessx-status/ca/figures/accessx_sticky-shift-key.png
+share/mate/help/mate-accessx-status/ca/figures/accessx_sticky-windows-key.png
+share/mate/help/mate-accessx-status/ca/mate-accessx-status.xml
+share/mate/help/mate-accessx-status/cs/figures/accessx-status-applet.png
+share/mate/help/mate-accessx-status/cs/figures/accessx-status-disabled.png
+share/mate/help/mate-accessx-status/cs/figures/accessx_bounce-keys.png
+share/mate/help/mate-accessx-status/cs/figures/accessx_mouse-keys.png
+share/mate/help/mate-accessx-status/cs/figures/accessx_slow-keys.png
+share/mate/help/mate-accessx-status/cs/figures/accessx_sticky-altGr-key.png
+share/mate/help/mate-accessx-status/cs/figures/accessx_sticky-ctrl-key.png
+share/mate/help/mate-accessx-status/cs/figures/accessx_sticky-keys.png
+share/mate/help/mate-accessx-status/cs/figures/accessx_sticky-meta-key.png
+share/mate/help/mate-accessx-status/cs/figures/accessx_sticky-shift-key.png
+share/mate/help/mate-accessx-status/cs/figures/accessx_sticky-windows-key.png
+share/mate/help/mate-accessx-status/cs/mate-accessx-status.xml
+share/mate/help/mate-accessx-status/de/figures/accessx-status-applet.png
+share/mate/help/mate-accessx-status/de/figures/accessx-status-disabled.png
+share/mate/help/mate-accessx-status/de/figures/accessx_bounce-keys.png
+share/mate/help/mate-accessx-status/de/figures/accessx_mouse-keys.png
+share/mate/help/mate-accessx-status/de/figures/accessx_slow-keys.png
+share/mate/help/mate-accessx-status/de/figures/accessx_sticky-altGr-key.png
+share/mate/help/mate-accessx-status/de/figures/accessx_sticky-ctrl-key.png
+share/mate/help/mate-accessx-status/de/figures/accessx_sticky-keys.png
+share/mate/help/mate-accessx-status/de/figures/accessx_sticky-meta-key.png
+share/mate/help/mate-accessx-status/de/figures/accessx_sticky-shift-key.png
+share/mate/help/mate-accessx-status/de/figures/accessx_sticky-windows-key.png
+share/mate/help/mate-accessx-status/de/mate-accessx-status.xml
+share/mate/help/mate-accessx-status/el/figures/accessx-status-applet.png
+share/mate/help/mate-accessx-status/el/figures/accessx-status-disabled.png
+share/mate/help/mate-accessx-status/el/figures/accessx_bounce-keys.png
+share/mate/help/mate-accessx-status/el/figures/accessx_mouse-keys.png
+share/mate/help/mate-accessx-status/el/figures/accessx_slow-keys.png
+share/mate/help/mate-accessx-status/el/figures/accessx_sticky-altGr-key.png
+share/mate/help/mate-accessx-status/el/figures/accessx_sticky-ctrl-key.png
+share/mate/help/mate-accessx-status/el/figures/accessx_sticky-keys.png
+share/mate/help/mate-accessx-status/el/figures/accessx_sticky-meta-key.png
+share/mate/help/mate-accessx-status/el/figures/accessx_sticky-shift-key.png
+share/mate/help/mate-accessx-status/el/figures/accessx_sticky-windows-key.png
+share/mate/help/mate-accessx-status/el/mate-accessx-status.xml
+share/mate/help/mate-accessx-status/en_GB/figures/accessx-status-applet.png
+share/mate/help/mate-accessx-status/en_GB/figures/accessx-status-disabled.png
+share/mate/help/mate-accessx-status/en_GB/figures/accessx_bounce-keys.png
+share/mate/help/mate-accessx-status/en_GB/figures/accessx_mouse-keys.png
+share/mate/help/mate-accessx-status/en_GB/figures/accessx_slow-keys.png
+share/mate/help/mate-accessx-status/en_GB/figures/accessx_sticky-altGr-key.png
+share/mate/help/mate-accessx-status/en_GB/figures/accessx_sticky-ctrl-key.png
+share/mate/help/mate-accessx-status/en_GB/figures/accessx_sticky-keys.png
+share/mate/help/mate-accessx-status/en_GB/figures/accessx_sticky-meta-key.png
+share/mate/help/mate-accessx-status/en_GB/figures/accessx_sticky-shift-key.png
+share/mate/help/mate-accessx-status/en_GB/figures/accessx_sticky-windows-key.png
+share/mate/help/mate-accessx-status/en_GB/mate-accessx-status.xml
+share/mate/help/mate-accessx-status/es/figures/accessx-status-applet.png
+share/mate/help/mate-accessx-status/es/figures/accessx-status-disabled.png
+share/mate/help/mate-accessx-status/es/figures/accessx_bounce-keys.png
+share/mate/help/mate-accessx-status/es/figures/accessx_mouse-keys.png
+share/mate/help/mate-accessx-status/es/figures/accessx_slow-keys.png
+share/mate/help/mate-accessx-status/es/figures/accessx_sticky-altGr-key.png
+share/mate/help/mate-accessx-status/es/figures/accessx_sticky-ctrl-key.png
+share/mate/help/mate-accessx-status/es/figures/accessx_sticky-keys.png
+share/mate/help/mate-accessx-status/es/figures/accessx_sticky-meta-key.png
+share/mate/help/mate-accessx-status/es/figures/accessx_sticky-shift-key.png
+share/mate/help/mate-accessx-status/es/figures/accessx_sticky-windows-key.png
+share/mate/help/mate-accessx-status/es/mate-accessx-status.xml
+share/mate/help/mate-accessx-status/eu/figures/accessx-status-applet.png
+share/mate/help/mate-accessx-status/eu/figures/accessx-status-disabled.png
+share/mate/help/mate-accessx-status/eu/figures/accessx_bounce-keys.png
+share/mate/help/mate-accessx-status/eu/figures/accessx_mouse-keys.png
+share/mate/help/mate-accessx-status/eu/figures/accessx_slow-keys.png
+share/mate/help/mate-accessx-status/eu/figures/accessx_sticky-altGr-key.png
+share/mate/help/mate-accessx-status/eu/figures/accessx_sticky-ctrl-key.png
+share/mate/help/mate-accessx-status/eu/figures/accessx_sticky-keys.png
+share/mate/help/mate-accessx-status/eu/figures/accessx_sticky-meta-key.png
+share/mate/help/mate-accessx-status/eu/figures/accessx_sticky-shift-key.png
+share/mate/help/mate-accessx-status/eu/figures/accessx_sticky-windows-key.png
+share/mate/help/mate-accessx-status/eu/mate-accessx-status.xml
+share/mate/help/mate-accessx-status/fi/figures/accessx-status-applet.png
+share/mate/help/mate-accessx-status/fi/figures/accessx-status-disabled.png
+share/mate/help/mate-accessx-status/fi/figures/accessx_bounce-keys.png
+share/mate/help/mate-accessx-status/fi/figures/accessx_mouse-keys.png
+share/mate/help/mate-accessx-status/fi/figures/accessx_slow-keys.png
+share/mate/help/mate-accessx-status/fi/figures/accessx_sticky-altGr-key.png
+share/mate/help/mate-accessx-status/fi/figures/accessx_sticky-ctrl-key.png
+share/mate/help/mate-accessx-status/fi/figures/accessx_sticky-keys.png
+share/mate/help/mate-accessx-status/fi/figures/accessx_sticky-meta-key.png
+share/mate/help/mate-accessx-status/fi/figures/accessx_sticky-shift-key.png
+share/mate/help/mate-accessx-status/fi/figures/accessx_sticky-windows-key.png
+share/mate/help/mate-accessx-status/fi/mate-accessx-status.xml
+share/mate/help/mate-accessx-status/fr/figures/accessx-status-applet.png
+share/mate/help/mate-accessx-status/fr/figures/accessx-status-disabled.png
+share/mate/help/mate-accessx-status/fr/figures/accessx_bounce-keys.png
+share/mate/help/mate-accessx-status/fr/figures/accessx_mouse-keys.png
+share/mate/help/mate-accessx-status/fr/figures/accessx_slow-keys.png
+share/mate/help/mate-accessx-status/fr/figures/accessx_sticky-altGr-key.png
+share/mate/help/mate-accessx-status/fr/figures/accessx_sticky-ctrl-key.png
+share/mate/help/mate-accessx-status/fr/figures/accessx_sticky-keys.png
+share/mate/help/mate-accessx-status/fr/figures/accessx_sticky-meta-key.png
+share/mate/help/mate-accessx-status/fr/figures/accessx_sticky-shift-key.png
+share/mate/help/mate-accessx-status/fr/figures/accessx_sticky-windows-key.png
+share/mate/help/mate-accessx-status/fr/mate-accessx-status.xml
+share/mate/help/mate-accessx-status/gl/figures/accessx-status-applet.png
+share/mate/help/mate-accessx-status/gl/figures/accessx-status-disabled.png
+share/mate/help/mate-accessx-status/gl/figures/accessx_bounce-keys.png
+share/mate/help/mate-accessx-status/gl/figures/accessx_mouse-keys.png
+share/mate/help/mate-accessx-status/gl/figures/accessx_slow-keys.png
+share/mate/help/mate-accessx-status/gl/figures/accessx_sticky-altGr-key.png
+share/mate/help/mate-accessx-status/gl/figures/accessx_sticky-ctrl-key.png
+share/mate/help/mate-accessx-status/gl/figures/accessx_sticky-keys.png
+share/mate/help/mate-accessx-status/gl/figures/accessx_sticky-meta-key.png
+share/mate/help/mate-accessx-status/gl/figures/accessx_sticky-shift-key.png
+share/mate/help/mate-accessx-status/gl/figures/accessx_sticky-windows-key.png
+share/mate/help/mate-accessx-status/gl/mate-accessx-status.xml
+share/mate/help/mate-accessx-status/it/figures/accessx-status-applet.png
+share/mate/help/mate-accessx-status/it/figures/accessx-status-disabled.png
+share/mate/help/mate-accessx-status/it/figures/accessx_bounce-keys.png
+share/mate/help/mate-accessx-status/it/figures/accessx_mouse-keys.png
+share/mate/help/mate-accessx-status/it/figures/accessx_slow-keys.png
+share/mate/help/mate-accessx-status/it/figures/accessx_sticky-altGr-key.png
+share/mate/help/mate-accessx-status/it/figures/accessx_sticky-ctrl-key.png
+share/mate/help/mate-accessx-status/it/figures/accessx_sticky-keys.png
+share/mate/help/mate-accessx-status/it/figures/accessx_sticky-meta-key.png
+share/mate/help/mate-accessx-status/it/figures/accessx_sticky-shift-key.png
+share/mate/help/mate-accessx-status/it/figures/accessx_sticky-windows-key.png
+share/mate/help/mate-accessx-status/it/mate-accessx-status.xml
+share/mate/help/mate-accessx-status/ko/figures/accessx-status-applet.png
+share/mate/help/mate-accessx-status/ko/figures/accessx-status-disabled.png
+share/mate/help/mate-accessx-status/ko/figures/accessx_bounce-keys.png
+share/mate/help/mate-accessx-status/ko/figures/accessx_mouse-keys.png
+share/mate/help/mate-accessx-status/ko/figures/accessx_slow-keys.png
+share/mate/help/mate-accessx-status/ko/figures/accessx_sticky-altGr-key.png
+share/mate/help/mate-accessx-status/ko/figures/accessx_sticky-ctrl-key.png
+share/mate/help/mate-accessx-status/ko/figures/accessx_sticky-keys.png
+share/mate/help/mate-accessx-status/ko/figures/accessx_sticky-meta-key.png
+share/mate/help/mate-accessx-status/ko/figures/accessx_sticky-shift-key.png
+share/mate/help/mate-accessx-status/ko/figures/accessx_sticky-windows-key.png
+share/mate/help/mate-accessx-status/ko/mate-accessx-status.xml
+share/mate/help/mate-accessx-status/nl/figures/accessx-status-applet.png
+share/mate/help/mate-accessx-status/nl/figures/accessx-status-disabled.png
+share/mate/help/mate-accessx-status/nl/figures/accessx_bounce-keys.png
+share/mate/help/mate-accessx-status/nl/figures/accessx_mouse-keys.png
+share/mate/help/mate-accessx-status/nl/figures/accessx_slow-keys.png
+share/mate/help/mate-accessx-status/nl/figures/accessx_sticky-altGr-key.png
+share/mate/help/mate-accessx-status/nl/figures/accessx_sticky-ctrl-key.png
+share/mate/help/mate-accessx-status/nl/figures/accessx_sticky-keys.png
+share/mate/help/mate-accessx-status/nl/figures/accessx_sticky-meta-key.png
+share/mate/help/mate-accessx-status/nl/figures/accessx_sticky-shift-key.png
+share/mate/help/mate-accessx-status/nl/figures/accessx_sticky-windows-key.png
+share/mate/help/mate-accessx-status/nl/mate-accessx-status.xml
+share/mate/help/mate-accessx-status/oc/figures/accessx-status-applet.png
+share/mate/help/mate-accessx-status/oc/figures/accessx-status-disabled.png
+share/mate/help/mate-accessx-status/oc/figures/accessx_bounce-keys.png
+share/mate/help/mate-accessx-status/oc/figures/accessx_mouse-keys.png
+share/mate/help/mate-accessx-status/oc/figures/accessx_slow-keys.png
+share/mate/help/mate-accessx-status/oc/figures/accessx_sticky-altGr-key.png
+share/mate/help/mate-accessx-status/oc/figures/accessx_sticky-ctrl-key.png
+share/mate/help/mate-accessx-status/oc/figures/accessx_sticky-keys.png
+share/mate/help/mate-accessx-status/oc/figures/accessx_sticky-meta-key.png
+share/mate/help/mate-accessx-status/oc/figures/accessx_sticky-shift-key.png
+share/mate/help/mate-accessx-status/oc/figures/accessx_sticky-windows-key.png
+share/mate/help/mate-accessx-status/oc/mate-accessx-status.xml
+share/mate/help/mate-accessx-status/sv/figures/accessx-status-applet.png
+share/mate/help/mate-accessx-status/sv/figures/accessx-status-disabled.png
+share/mate/help/mate-accessx-status/sv/figures/accessx_bounce-keys.png
+share/mate/help/mate-accessx-status/sv/figures/accessx_mouse-keys.png
+share/mate/help/mate-accessx-status/sv/figures/accessx_slow-keys.png
+share/mate/help/mate-accessx-status/sv/figures/accessx_sticky-altGr-key.png
+share/mate/help/mate-accessx-status/sv/figures/accessx_sticky-ctrl-key.png
+share/mate/help/mate-accessx-status/sv/figures/accessx_sticky-keys.png
+share/mate/help/mate-accessx-status/sv/figures/accessx_sticky-meta-key.png
+share/mate/help/mate-accessx-status/sv/figures/accessx_sticky-shift-key.png
+share/mate/help/mate-accessx-status/sv/figures/accessx_sticky-windows-key.png
+share/mate/help/mate-accessx-status/sv/mate-accessx-status.xml
+share/mate/help/mate-accessx-status/uk/figures/accessx-status-applet.png
+share/mate/help/mate-accessx-status/uk/figures/accessx-status-disabled.png
+share/mate/help/mate-accessx-status/uk/figures/accessx_bounce-keys.png
+share/mate/help/mate-accessx-status/uk/figures/accessx_mouse-keys.png
+share/mate/help/mate-accessx-status/uk/figures/accessx_slow-keys.png
+share/mate/help/mate-accessx-status/uk/figures/accessx_sticky-altGr-key.png
+share/mate/help/mate-accessx-status/uk/figures/accessx_sticky-ctrl-key.png
+share/mate/help/mate-accessx-status/uk/figures/accessx_sticky-keys.png
+share/mate/help/mate-accessx-status/uk/figures/accessx_sticky-meta-key.png
+share/mate/help/mate-accessx-status/uk/figures/accessx_sticky-shift-key.png
+share/mate/help/mate-accessx-status/uk/figures/accessx_sticky-windows-key.png
+share/mate/help/mate-accessx-status/uk/mate-accessx-status.xml
+share/mate/help/mate-accessx-status/zh_CN/figures/accessx-status-applet.png
+share/mate/help/mate-accessx-status/zh_CN/figures/accessx-status-disabled.png
+share/mate/help/mate-accessx-status/zh_CN/figures/accessx_bounce-keys.png
+share/mate/help/mate-accessx-status/zh_CN/figures/accessx_mouse-keys.png
+share/mate/help/mate-accessx-status/zh_CN/figures/accessx_slow-keys.png
+share/mate/help/mate-accessx-status/zh_CN/figures/accessx_sticky-altGr-key.png
+share/mate/help/mate-accessx-status/zh_CN/figures/accessx_sticky-ctrl-key.png
+share/mate/help/mate-accessx-status/zh_CN/figures/accessx_sticky-keys.png
+share/mate/help/mate-accessx-status/zh_CN/figures/accessx_sticky-meta-key.png
+share/mate/help/mate-accessx-status/zh_CN/figures/accessx_sticky-shift-key.png
+share/mate/help/mate-accessx-status/zh_CN/figures/accessx_sticky-windows-key.png
+share/mate/help/mate-accessx-status/zh_CN/mate-accessx-status.xml
+%%BATTERY%%share/mate/help/mate-battstat/C/figures/battstat-applet-expanded.png
+%%BATTERY%%share/mate/help/mate-battstat/C/figures/battstat-applet.png
+%%BATTERY%%share/mate/help/mate-battstat/C/figures/battstat-credits-hal.png
+%%BATTERY%%share/mate/help/mate-battstat/C/figures/battstat-preferences.png
+%%BATTERY%%share/mate/help/mate-battstat/C/figures/context-menu.png
+%%BATTERY%%share/mate/help/mate-battstat/C/legal.xml
+%%BATTERY%%share/mate/help/mate-battstat/C/mate-battstat.xml
+%%BATTERY%%share/mate/help/mate-battstat/bg/figures/battstat-applet-expanded.png
+%%BATTERY%%share/mate/help/mate-battstat/bg/figures/battstat-applet.png
+%%BATTERY%%share/mate/help/mate-battstat/bg/figures/battstat-credits-hal.png
+%%BATTERY%%share/mate/help/mate-battstat/bg/figures/battstat-preferences.png
+%%BATTERY%%share/mate/help/mate-battstat/bg/figures/context-menu.png
+%%BATTERY%%share/mate/help/mate-battstat/bg/mate-battstat.xml
+%%BATTERY%%share/mate/help/mate-battstat/ca/figures/battstat-applet-expanded.png
+%%BATTERY%%share/mate/help/mate-battstat/ca/figures/battstat-applet.png
+%%BATTERY%%share/mate/help/mate-battstat/ca/figures/battstat-credits-hal.png
+%%BATTERY%%share/mate/help/mate-battstat/ca/figures/battstat-preferences.png
+%%BATTERY%%share/mate/help/mate-battstat/ca/figures/context-menu.png
+%%BATTERY%%share/mate/help/mate-battstat/ca/mate-battstat.xml
+%%BATTERY%%share/mate/help/mate-battstat/cs/figures/battstat-applet-expanded.png
+%%BATTERY%%share/mate/help/mate-battstat/cs/figures/battstat-applet.png
+%%BATTERY%%share/mate/help/mate-battstat/cs/figures/battstat-credits-hal.png
+%%BATTERY%%share/mate/help/mate-battstat/cs/figures/battstat-preferences.png
+%%BATTERY%%share/mate/help/mate-battstat/cs/figures/context-menu.png
+%%BATTERY%%share/mate/help/mate-battstat/cs/mate-battstat.xml
+%%BATTERY%%share/mate/help/mate-battstat/da/figures/battstat-applet-expanded.png
+%%BATTERY%%share/mate/help/mate-battstat/da/figures/battstat-applet.png
+%%BATTERY%%share/mate/help/mate-battstat/da/figures/battstat-credits-hal.png
+%%BATTERY%%share/mate/help/mate-battstat/da/figures/battstat-preferences.png
+%%BATTERY%%share/mate/help/mate-battstat/da/figures/context-menu.png
+%%BATTERY%%share/mate/help/mate-battstat/da/mate-battstat.xml
+%%BATTERY%%share/mate/help/mate-battstat/de/figures/battstat-applet-expanded.png
+%%BATTERY%%share/mate/help/mate-battstat/de/figures/battstat-applet.png
+%%BATTERY%%share/mate/help/mate-battstat/de/figures/battstat-credits-hal.png
+%%BATTERY%%share/mate/help/mate-battstat/de/figures/battstat-preferences.png
+%%BATTERY%%share/mate/help/mate-battstat/de/figures/context-menu.png
+%%BATTERY%%share/mate/help/mate-battstat/de/mate-battstat.xml
+%%BATTERY%%share/mate/help/mate-battstat/el/figures/battstat-applet-expanded.png
+%%BATTERY%%share/mate/help/mate-battstat/el/figures/battstat-applet.png
+%%BATTERY%%share/mate/help/mate-battstat/el/figures/battstat-credits-hal.png
+%%BATTERY%%share/mate/help/mate-battstat/el/figures/battstat-preferences.png
+%%BATTERY%%share/mate/help/mate-battstat/el/figures/context-menu.png
+%%BATTERY%%share/mate/help/mate-battstat/el/mate-battstat.xml
+%%BATTERY%%share/mate/help/mate-battstat/en_GB/figures/battstat-applet-expanded.png
+%%BATTERY%%share/mate/help/mate-battstat/en_GB/figures/battstat-applet.png
+%%BATTERY%%share/mate/help/mate-battstat/en_GB/figures/battstat-credits-hal.png
+%%BATTERY%%share/mate/help/mate-battstat/en_GB/figures/battstat-preferences.png
+%%BATTERY%%share/mate/help/mate-battstat/en_GB/figures/context-menu.png
+%%BATTERY%%share/mate/help/mate-battstat/en_GB/mate-battstat.xml
+%%BATTERY%%share/mate/help/mate-battstat/es/figures/battstat-applet-expanded.png
+%%BATTERY%%share/mate/help/mate-battstat/es/figures/battstat-applet.png
+%%BATTERY%%share/mate/help/mate-battstat/es/figures/battstat-credits-hal.png
+%%BATTERY%%share/mate/help/mate-battstat/es/figures/battstat-preferences.png
+%%BATTERY%%share/mate/help/mate-battstat/es/figures/context-menu.png
+%%BATTERY%%share/mate/help/mate-battstat/es/mate-battstat.xml
+%%BATTERY%%share/mate/help/mate-battstat/eu/figures/battstat-applet-expanded.png
+%%BATTERY%%share/mate/help/mate-battstat/eu/figures/battstat-applet.png
+%%BATTERY%%share/mate/help/mate-battstat/eu/figures/battstat-credits-hal.png
+%%BATTERY%%share/mate/help/mate-battstat/eu/figures/battstat-preferences.png
+%%BATTERY%%share/mate/help/mate-battstat/eu/figures/context-menu.png
+%%BATTERY%%share/mate/help/mate-battstat/eu/mate-battstat.xml
+%%BATTERY%%share/mate/help/mate-battstat/fi/figures/battstat-applet-expanded.png
+%%BATTERY%%share/mate/help/mate-battstat/fi/figures/battstat-applet.png
+%%BATTERY%%share/mate/help/mate-battstat/fi/figures/battstat-credits-hal.png
+%%BATTERY%%share/mate/help/mate-battstat/fi/figures/battstat-preferences.png
+%%BATTERY%%share/mate/help/mate-battstat/fi/figures/context-menu.png
+%%BATTERY%%share/mate/help/mate-battstat/fi/mate-battstat.xml
+%%BATTERY%%share/mate/help/mate-battstat/fr/figures/battstat-applet-expanded.png
+%%BATTERY%%share/mate/help/mate-battstat/fr/figures/battstat-applet.png
+%%BATTERY%%share/mate/help/mate-battstat/fr/figures/battstat-credits-hal.png
+%%BATTERY%%share/mate/help/mate-battstat/fr/figures/battstat-preferences.png
+%%BATTERY%%share/mate/help/mate-battstat/fr/figures/context-menu.png
+%%BATTERY%%share/mate/help/mate-battstat/fr/mate-battstat.xml
+%%BATTERY%%share/mate/help/mate-battstat/ko/figures/battstat-applet-expanded.png
+%%BATTERY%%share/mate/help/mate-battstat/ko/figures/battstat-applet.png
+%%BATTERY%%share/mate/help/mate-battstat/ko/figures/battstat-credits-hal.png
+%%BATTERY%%share/mate/help/mate-battstat/ko/figures/battstat-preferences.png
+%%BATTERY%%share/mate/help/mate-battstat/ko/figures/context-menu.png
+%%BATTERY%%share/mate/help/mate-battstat/ko/mate-battstat.xml
+%%BATTERY%%share/mate/help/mate-battstat/oc/figures/battstat-applet-expanded.png
+%%BATTERY%%share/mate/help/mate-battstat/oc/figures/battstat-applet.png
+%%BATTERY%%share/mate/help/mate-battstat/oc/figures/battstat-credits-hal.png
+%%BATTERY%%share/mate/help/mate-battstat/oc/figures/battstat-preferences.png
+%%BATTERY%%share/mate/help/mate-battstat/oc/figures/context-menu.png
+%%BATTERY%%share/mate/help/mate-battstat/oc/mate-battstat.xml
+%%BATTERY%%share/mate/help/mate-battstat/pa/figures/battstat-applet-expanded.png
+%%BATTERY%%share/mate/help/mate-battstat/pa/figures/battstat-applet.png
+%%BATTERY%%share/mate/help/mate-battstat/pa/figures/battstat-credits-hal.png
+%%BATTERY%%share/mate/help/mate-battstat/pa/figures/battstat-preferences.png
+%%BATTERY%%share/mate/help/mate-battstat/pa/figures/context-menu.png
+%%BATTERY%%share/mate/help/mate-battstat/pa/mate-battstat.xml
+%%BATTERY%%share/mate/help/mate-battstat/pt_BR/figures/battstat-applet-expanded.png
+%%BATTERY%%share/mate/help/mate-battstat/pt_BR/figures/battstat-applet.png
+%%BATTERY%%share/mate/help/mate-battstat/pt_BR/figures/battstat-credits-hal.png
+%%BATTERY%%share/mate/help/mate-battstat/pt_BR/figures/battstat-preferences.png
+%%BATTERY%%share/mate/help/mate-battstat/pt_BR/figures/context-menu.png
+%%BATTERY%%share/mate/help/mate-battstat/pt_BR/mate-battstat.xml
+%%BATTERY%%share/mate/help/mate-battstat/sv/figures/battstat-applet-expanded.png
+%%BATTERY%%share/mate/help/mate-battstat/sv/figures/battstat-applet.png
+%%BATTERY%%share/mate/help/mate-battstat/sv/figures/battstat-credits-hal.png
+%%BATTERY%%share/mate/help/mate-battstat/sv/figures/battstat-preferences.png
+%%BATTERY%%share/mate/help/mate-battstat/sv/figures/context-menu.png
+%%BATTERY%%share/mate/help/mate-battstat/sv/mate-battstat.xml
+%%BATTERY%%share/mate/help/mate-battstat/uk/figures/battstat-applet-expanded.png
+%%BATTERY%%share/mate/help/mate-battstat/uk/figures/battstat-applet.png
+%%BATTERY%%share/mate/help/mate-battstat/uk/figures/battstat-credits-hal.png
+%%BATTERY%%share/mate/help/mate-battstat/uk/figures/battstat-preferences.png
+%%BATTERY%%share/mate/help/mate-battstat/uk/figures/context-menu.png
+%%BATTERY%%share/mate/help/mate-battstat/uk/mate-battstat.xml
+%%BATTERY%%share/mate/help/mate-battstat/zh_CN/figures/battstat-applet-expanded.png
+%%BATTERY%%share/mate/help/mate-battstat/zh_CN/figures/battstat-applet.png
+%%BATTERY%%share/mate/help/mate-battstat/zh_CN/figures/battstat-credits-hal.png
+%%BATTERY%%share/mate/help/mate-battstat/zh_CN/figures/battstat-preferences.png
+%%BATTERY%%share/mate/help/mate-battstat/zh_CN/figures/context-menu.png
+%%BATTERY%%share/mate/help/mate-battstat/zh_CN/mate-battstat.xml
+share/mate/help/mate-char-palette/C/figures/charpalette_applet.png
+share/mate/help/mate-char-palette/C/figures/charpalette_chargroup.png
+share/mate/help/mate-char-palette/C/figures/charpick-preferences.png
+share/mate/help/mate-char-palette/C/figures/charpick_characters.png
+share/mate/help/mate-char-palette/C/legal.xml
+share/mate/help/mate-char-palette/C/mate-char-palette.xml
+share/mate/help/mate-char-palette/bg/figures/charpalette_applet.png
+share/mate/help/mate-char-palette/bg/figures/charpalette_chargroup.png
+share/mate/help/mate-char-palette/bg/figures/charpick-preferences.png
+share/mate/help/mate-char-palette/bg/figures/charpick_characters.png
+share/mate/help/mate-char-palette/bg/mate-char-palette.xml
+share/mate/help/mate-char-palette/ca/figures/charpalette_applet.png
+share/mate/help/mate-char-palette/ca/figures/charpalette_chargroup.png
+share/mate/help/mate-char-palette/ca/figures/charpick-preferences.png
+share/mate/help/mate-char-palette/ca/figures/charpick_characters.png
+share/mate/help/mate-char-palette/ca/mate-char-palette.xml
+share/mate/help/mate-char-palette/cs/figures/charpalette_applet.png
+share/mate/help/mate-char-palette/cs/figures/charpalette_chargroup.png
+share/mate/help/mate-char-palette/cs/figures/charpick-preferences.png
+share/mate/help/mate-char-palette/cs/figures/charpick_characters.png
+share/mate/help/mate-char-palette/cs/mate-char-palette.xml
+share/mate/help/mate-char-palette/de/figures/charpalette_applet.png
+share/mate/help/mate-char-palette/de/figures/charpalette_chargroup.png
+share/mate/help/mate-char-palette/de/figures/charpick-preferences.png
+share/mate/help/mate-char-palette/de/figures/charpick_characters.png
+share/mate/help/mate-char-palette/de/mate-char-palette.xml
+share/mate/help/mate-char-palette/el/figures/charpalette_applet.png
+share/mate/help/mate-char-palette/el/figures/charpalette_chargroup.png
+share/mate/help/mate-char-palette/el/figures/charpick-preferences.png
+share/mate/help/mate-char-palette/el/figures/charpick_characters.png
+share/mate/help/mate-char-palette/el/mate-char-palette.xml
+share/mate/help/mate-char-palette/en_GB/figures/charpalette_applet.png
+share/mate/help/mate-char-palette/en_GB/figures/charpalette_chargroup.png
+share/mate/help/mate-char-palette/en_GB/figures/charpick-preferences.png
+share/mate/help/mate-char-palette/en_GB/figures/charpick_characters.png
+share/mate/help/mate-char-palette/en_GB/mate-char-palette.xml
+share/mate/help/mate-char-palette/es/figures/charpalette_applet.png
+share/mate/help/mate-char-palette/es/figures/charpalette_chargroup.png
+share/mate/help/mate-char-palette/es/figures/charpick-preferences.png
+share/mate/help/mate-char-palette/es/figures/charpick_characters.png
+share/mate/help/mate-char-palette/es/mate-char-palette.xml
+share/mate/help/mate-char-palette/eu/figures/charpalette_applet.png
+share/mate/help/mate-char-palette/eu/figures/charpalette_chargroup.png
+share/mate/help/mate-char-palette/eu/figures/charpick-preferences.png
+share/mate/help/mate-char-palette/eu/figures/charpick_characters.png
+share/mate/help/mate-char-palette/eu/mate-char-palette.xml
+share/mate/help/mate-char-palette/fi/figures/charpalette_applet.png
+share/mate/help/mate-char-palette/fi/figures/charpalette_chargroup.png
+share/mate/help/mate-char-palette/fi/figures/charpick-preferences.png
+share/mate/help/mate-char-palette/fi/figures/charpick_characters.png
+share/mate/help/mate-char-palette/fi/mate-char-palette.xml
+share/mate/help/mate-char-palette/fr/figures/charpalette_applet.png
+share/mate/help/mate-char-palette/fr/figures/charpalette_chargroup.png
+share/mate/help/mate-char-palette/fr/figures/charpick-preferences.png
+share/mate/help/mate-char-palette/fr/figures/charpick_characters.png
+share/mate/help/mate-char-palette/fr/mate-char-palette.xml
+share/mate/help/mate-char-palette/it/figures/charpalette_applet.png
+share/mate/help/mate-char-palette/it/figures/charpalette_chargroup.png
+share/mate/help/mate-char-palette/it/figures/charpick-preferences.png
+share/mate/help/mate-char-palette/it/figures/charpick_characters.png
+share/mate/help/mate-char-palette/it/mate-char-palette.xml
+share/mate/help/mate-char-palette/ko/figures/charpalette_applet.png
+share/mate/help/mate-char-palette/ko/figures/charpalette_chargroup.png
+share/mate/help/mate-char-palette/ko/figures/charpick-preferences.png
+share/mate/help/mate-char-palette/ko/figures/charpick_characters.png
+share/mate/help/mate-char-palette/ko/mate-char-palette.xml
+share/mate/help/mate-char-palette/nl/figures/charpalette_applet.png
+share/mate/help/mate-char-palette/nl/figures/charpalette_chargroup.png
+share/mate/help/mate-char-palette/nl/figures/charpick-preferences.png
+share/mate/help/mate-char-palette/nl/figures/charpick_characters.png
+share/mate/help/mate-char-palette/nl/mate-char-palette.xml
+share/mate/help/mate-char-palette/oc/figures/charpalette_applet.png
+share/mate/help/mate-char-palette/oc/figures/charpalette_chargroup.png
+share/mate/help/mate-char-palette/oc/figures/charpick-preferences.png
+share/mate/help/mate-char-palette/oc/figures/charpick_characters.png
+share/mate/help/mate-char-palette/oc/mate-char-palette.xml
+share/mate/help/mate-char-palette/pt_BR/figures/charpalette_applet.png
+share/mate/help/mate-char-palette/pt_BR/figures/charpalette_chargroup.png
+share/mate/help/mate-char-palette/pt_BR/figures/charpick-preferences.png
+share/mate/help/mate-char-palette/pt_BR/figures/charpick_characters.png
+share/mate/help/mate-char-palette/pt_BR/mate-char-palette.xml
+share/mate/help/mate-char-palette/ru/figures/charpalette_applet.png
+share/mate/help/mate-char-palette/ru/figures/charpalette_chargroup.png
+share/mate/help/mate-char-palette/ru/figures/charpick-preferences.png
+share/mate/help/mate-char-palette/ru/figures/charpick_characters.png
+share/mate/help/mate-char-palette/ru/mate-char-palette.xml
+share/mate/help/mate-char-palette/sv/figures/charpalette_applet.png
+share/mate/help/mate-char-palette/sv/figures/charpalette_chargroup.png
+share/mate/help/mate-char-palette/sv/figures/charpick-preferences.png
+share/mate/help/mate-char-palette/sv/figures/charpick_characters.png
+share/mate/help/mate-char-palette/sv/mate-char-palette.xml
+share/mate/help/mate-char-palette/uk/figures/charpalette_applet.png
+share/mate/help/mate-char-palette/uk/figures/charpalette_chargroup.png
+share/mate/help/mate-char-palette/uk/figures/charpick-preferences.png
+share/mate/help/mate-char-palette/uk/figures/charpick_characters.png
+share/mate/help/mate-char-palette/uk/mate-char-palette.xml
+share/mate/help/mate-char-palette/zh_CN/figures/charpalette_applet.png
+share/mate/help/mate-char-palette/zh_CN/figures/charpalette_chargroup.png
+share/mate/help/mate-char-palette/zh_CN/figures/charpick-preferences.png
+share/mate/help/mate-char-palette/zh_CN/figures/charpick_characters.png
+share/mate/help/mate-char-palette/zh_CN/mate-char-palette.xml
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/C/figures/cpufreq-100.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/C/figures/cpufreq-25.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/C/figures/cpufreq-50.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/C/figures/cpufreq-75.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/C/figures/cpufreq-applet-preferences-smp.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/C/figures/cpufreq-applet-preferences.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/C/figures/cpufreq-applet-selector-both.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/C/figures/cpufreq-applet-selector.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/C/figures/cpufreq-applet.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/C/legal.xml
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/C/mate-cpufreq-applet.xml
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/ca/figures/cpufreq-100.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/ca/figures/cpufreq-25.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/ca/figures/cpufreq-50.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/ca/figures/cpufreq-75.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/ca/figures/cpufreq-applet-preferences-smp.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/ca/figures/cpufreq-applet-preferences.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/ca/figures/cpufreq-applet-selector-both.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/ca/figures/cpufreq-applet-selector.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/ca/figures/cpufreq-applet.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/ca/mate-cpufreq-applet.xml
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/cs/figures/cpufreq-100.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/cs/figures/cpufreq-25.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/cs/figures/cpufreq-50.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/cs/figures/cpufreq-75.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/cs/figures/cpufreq-applet-preferences-smp.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/cs/figures/cpufreq-applet-preferences.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/cs/figures/cpufreq-applet-selector-both.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/cs/figures/cpufreq-applet-selector.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/cs/figures/cpufreq-applet.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/cs/mate-cpufreq-applet.xml
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/de/figures/cpufreq-100.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/de/figures/cpufreq-25.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/de/figures/cpufreq-50.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/de/figures/cpufreq-75.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/de/figures/cpufreq-applet-preferences-smp.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/de/figures/cpufreq-applet-preferences.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/de/figures/cpufreq-applet-selector-both.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/de/figures/cpufreq-applet-selector.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/de/figures/cpufreq-applet.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/de/mate-cpufreq-applet.xml
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/el/figures/cpufreq-100.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/el/figures/cpufreq-25.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/el/figures/cpufreq-50.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/el/figures/cpufreq-75.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/el/figures/cpufreq-applet-preferences-smp.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/el/figures/cpufreq-applet-preferences.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/el/figures/cpufreq-applet-selector-both.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/el/figures/cpufreq-applet-selector.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/el/figures/cpufreq-applet.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/el/mate-cpufreq-applet.xml
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/en_GB/figures/cpufreq-100.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/en_GB/figures/cpufreq-25.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/en_GB/figures/cpufreq-50.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/en_GB/figures/cpufreq-75.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/en_GB/figures/cpufreq-applet-preferences-smp.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/en_GB/figures/cpufreq-applet-preferences.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/en_GB/figures/cpufreq-applet-selector-both.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/en_GB/figures/cpufreq-applet-selector.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/en_GB/figures/cpufreq-applet.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/en_GB/mate-cpufreq-applet.xml
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/es/figures/cpufreq-100.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/es/figures/cpufreq-25.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/es/figures/cpufreq-50.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/es/figures/cpufreq-75.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/es/figures/cpufreq-applet-preferences-smp.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/es/figures/cpufreq-applet-preferences.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/es/figures/cpufreq-applet-selector-both.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/es/figures/cpufreq-applet-selector.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/es/figures/cpufreq-applet.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/es/mate-cpufreq-applet.xml
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/eu/figures/cpufreq-100.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/eu/figures/cpufreq-25.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/eu/figures/cpufreq-50.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/eu/figures/cpufreq-75.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/eu/figures/cpufreq-applet-preferences-smp.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/eu/figures/cpufreq-applet-preferences.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/eu/figures/cpufreq-applet-selector-both.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/eu/figures/cpufreq-applet-selector.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/eu/figures/cpufreq-applet.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/eu/mate-cpufreq-applet.xml
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/fi/figures/cpufreq-100.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/fi/figures/cpufreq-25.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/fi/figures/cpufreq-50.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/fi/figures/cpufreq-75.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/fi/figures/cpufreq-applet-preferences-smp.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/fi/figures/cpufreq-applet-preferences.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/fi/figures/cpufreq-applet-selector-both.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/fi/figures/cpufreq-applet-selector.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/fi/figures/cpufreq-applet.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/fi/mate-cpufreq-applet.xml
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/fr/figures/cpufreq-100.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/fr/figures/cpufreq-25.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/fr/figures/cpufreq-50.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/fr/figures/cpufreq-75.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/fr/figures/cpufreq-applet-preferences-smp.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/fr/figures/cpufreq-applet-preferences.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/fr/figures/cpufreq-applet-selector-both.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/fr/figures/cpufreq-applet-selector.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/fr/figures/cpufreq-applet.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/fr/mate-cpufreq-applet.xml
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/hu/figures/cpufreq-100.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/hu/figures/cpufreq-25.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/hu/figures/cpufreq-50.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/hu/figures/cpufreq-75.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/hu/figures/cpufreq-applet-preferences-smp.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/hu/figures/cpufreq-applet-preferences.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/hu/figures/cpufreq-applet-selector-both.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/hu/figures/cpufreq-applet-selector.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/hu/figures/cpufreq-applet.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/hu/mate-cpufreq-applet.xml
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/nl/figures/cpufreq-100.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/nl/figures/cpufreq-25.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/nl/figures/cpufreq-50.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/nl/figures/cpufreq-75.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/nl/figures/cpufreq-applet-preferences-smp.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/nl/figures/cpufreq-applet-preferences.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/nl/figures/cpufreq-applet-selector-both.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/nl/figures/cpufreq-applet-selector.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/nl/figures/cpufreq-applet.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/nl/mate-cpufreq-applet.xml
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/oc/figures/cpufreq-100.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/oc/figures/cpufreq-25.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/oc/figures/cpufreq-50.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/oc/figures/cpufreq-75.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/oc/figures/cpufreq-applet-preferences-smp.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/oc/figures/cpufreq-applet-preferences.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/oc/figures/cpufreq-applet-selector-both.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/oc/figures/cpufreq-applet-selector.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/oc/figures/cpufreq-applet.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/oc/mate-cpufreq-applet.xml
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/pt_BR/figures/cpufreq-100.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/pt_BR/figures/cpufreq-25.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/pt_BR/figures/cpufreq-50.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/pt_BR/figures/cpufreq-75.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/pt_BR/figures/cpufreq-applet-preferences-smp.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/pt_BR/figures/cpufreq-applet-preferences.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/pt_BR/figures/cpufreq-applet-selector-both.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/pt_BR/figures/cpufreq-applet-selector.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/pt_BR/figures/cpufreq-applet.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/pt_BR/mate-cpufreq-applet.xml
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/ru/figures/cpufreq-100.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/ru/figures/cpufreq-25.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/ru/figures/cpufreq-50.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/ru/figures/cpufreq-75.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/ru/figures/cpufreq-applet-preferences-smp.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/ru/figures/cpufreq-applet-preferences.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/ru/figures/cpufreq-applet-selector-both.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/ru/figures/cpufreq-applet-selector.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/ru/figures/cpufreq-applet.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/ru/mate-cpufreq-applet.xml
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/sv/figures/cpufreq-100.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/sv/figures/cpufreq-25.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/sv/figures/cpufreq-50.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/sv/figures/cpufreq-75.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/sv/figures/cpufreq-applet-preferences-smp.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/sv/figures/cpufreq-applet-preferences.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/sv/figures/cpufreq-applet-selector-both.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/sv/figures/cpufreq-applet-selector.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/sv/figures/cpufreq-applet.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/sv/mate-cpufreq-applet.xml
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/uk/figures/cpufreq-100.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/uk/figures/cpufreq-25.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/uk/figures/cpufreq-50.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/uk/figures/cpufreq-75.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/uk/figures/cpufreq-applet-preferences-smp.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/uk/figures/cpufreq-applet-preferences.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/uk/figures/cpufreq-applet-selector-both.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/uk/figures/cpufreq-applet-selector.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/uk/figures/cpufreq-applet.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/uk/mate-cpufreq-applet.xml
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_CN/figures/cpufreq-100.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_CN/figures/cpufreq-25.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_CN/figures/cpufreq-50.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_CN/figures/cpufreq-75.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_CN/figures/cpufreq-applet-preferences-smp.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_CN/figures/cpufreq-applet-preferences.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_CN/figures/cpufreq-applet-selector-both.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_CN/figures/cpufreq-applet-selector.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_CN/figures/cpufreq-applet.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_CN/mate-cpufreq-applet.xml
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_HK/figures/cpufreq-100.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_HK/figures/cpufreq-25.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_HK/figures/cpufreq-50.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_HK/figures/cpufreq-75.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_HK/figures/cpufreq-applet-preferences-smp.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_HK/figures/cpufreq-applet-preferences.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_HK/figures/cpufreq-applet-selector-both.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_HK/figures/cpufreq-applet-selector.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_HK/figures/cpufreq-applet.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_HK/mate-cpufreq-applet.xml
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_TW/figures/cpufreq-100.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_TW/figures/cpufreq-25.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_TW/figures/cpufreq-50.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_TW/figures/cpufreq-75.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_TW/figures/cpufreq-applet-preferences-smp.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_TW/figures/cpufreq-applet-preferences.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_TW/figures/cpufreq-applet-selector-both.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_TW/figures/cpufreq-applet-selector.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_TW/figures/cpufreq-applet.png
+%%CPUFREQ%%share/mate/help/mate-cpufreq-applet/zh_TW/mate-cpufreq-applet.xml
+share/mate/help/mate-drivemount/C/figures/drivemount-applet_eject.png
+share/mate/help/mate-drivemount/C/figures/drivemount-applet_example.png
+share/mate/help/mate-drivemount/C/figures/drivemount-applet_mount.png
+share/mate/help/mate-drivemount/C/figures/drivemount-applet_open.png
+share/mate/help/mate-drivemount/C/figures/drivemount-applet_status.png
+share/mate/help/mate-drivemount/C/legal.xml
+share/mate/help/mate-drivemount/C/mate-drivemount.xml
+share/mate/help/mate-drivemount/ca/figures/drivemount-applet_eject.png
+share/mate/help/mate-drivemount/ca/figures/drivemount-applet_example.png
+share/mate/help/mate-drivemount/ca/figures/drivemount-applet_mount.png
+share/mate/help/mate-drivemount/ca/figures/drivemount-applet_open.png
+share/mate/help/mate-drivemount/ca/figures/drivemount-applet_status.png
+share/mate/help/mate-drivemount/ca/mate-drivemount.xml
+share/mate/help/mate-drivemount/cs/figures/drivemount-applet_eject.png
+share/mate/help/mate-drivemount/cs/figures/drivemount-applet_example.png
+share/mate/help/mate-drivemount/cs/figures/drivemount-applet_mount.png
+share/mate/help/mate-drivemount/cs/figures/drivemount-applet_open.png
+share/mate/help/mate-drivemount/cs/figures/drivemount-applet_status.png
+share/mate/help/mate-drivemount/cs/mate-drivemount.xml
+share/mate/help/mate-drivemount/da/figures/drivemount-applet_eject.png
+share/mate/help/mate-drivemount/da/figures/drivemount-applet_example.png
+share/mate/help/mate-drivemount/da/figures/drivemount-applet_mount.png
+share/mate/help/mate-drivemount/da/figures/drivemount-applet_open.png
+share/mate/help/mate-drivemount/da/figures/drivemount-applet_status.png
+share/mate/help/mate-drivemount/da/mate-drivemount.xml
+share/mate/help/mate-drivemount/de/figures/drivemount-applet_eject.png
+share/mate/help/mate-drivemount/de/figures/drivemount-applet_example.png
+share/mate/help/mate-drivemount/de/figures/drivemount-applet_mount.png
+share/mate/help/mate-drivemount/de/figures/drivemount-applet_open.png
+share/mate/help/mate-drivemount/de/figures/drivemount-applet_status.png
+share/mate/help/mate-drivemount/de/mate-drivemount.xml
+share/mate/help/mate-drivemount/el/figures/drivemount-applet_eject.png
+share/mate/help/mate-drivemount/el/figures/drivemount-applet_example.png
+share/mate/help/mate-drivemount/el/figures/drivemount-applet_mount.png
+share/mate/help/mate-drivemount/el/figures/drivemount-applet_open.png
+share/mate/help/mate-drivemount/el/figures/drivemount-applet_status.png
+share/mate/help/mate-drivemount/el/mate-drivemount.xml
+share/mate/help/mate-drivemount/en_GB/figures/drivemount-applet_eject.png
+share/mate/help/mate-drivemount/en_GB/figures/drivemount-applet_example.png
+share/mate/help/mate-drivemount/en_GB/figures/drivemount-applet_mount.png
+share/mate/help/mate-drivemount/en_GB/figures/drivemount-applet_open.png
+share/mate/help/mate-drivemount/en_GB/figures/drivemount-applet_status.png
+share/mate/help/mate-drivemount/en_GB/mate-drivemount.xml
+share/mate/help/mate-drivemount/es/figures/drivemount-applet_eject.png
+share/mate/help/mate-drivemount/es/figures/drivemount-applet_example.png
+share/mate/help/mate-drivemount/es/figures/drivemount-applet_mount.png
+share/mate/help/mate-drivemount/es/figures/drivemount-applet_open.png
+share/mate/help/mate-drivemount/es/figures/drivemount-applet_status.png
+share/mate/help/mate-drivemount/es/mate-drivemount.xml
+share/mate/help/mate-drivemount/eu/figures/drivemount-applet_eject.png
+share/mate/help/mate-drivemount/eu/figures/drivemount-applet_example.png
+share/mate/help/mate-drivemount/eu/figures/drivemount-applet_mount.png
+share/mate/help/mate-drivemount/eu/figures/drivemount-applet_open.png
+share/mate/help/mate-drivemount/eu/figures/drivemount-applet_status.png
+share/mate/help/mate-drivemount/eu/mate-drivemount.xml
+share/mate/help/mate-drivemount/fi/figures/drivemount-applet_eject.png
+share/mate/help/mate-drivemount/fi/figures/drivemount-applet_example.png
+share/mate/help/mate-drivemount/fi/figures/drivemount-applet_mount.png
+share/mate/help/mate-drivemount/fi/figures/drivemount-applet_open.png
+share/mate/help/mate-drivemount/fi/figures/drivemount-applet_status.png
+share/mate/help/mate-drivemount/fi/mate-drivemount.xml
+share/mate/help/mate-drivemount/fr/figures/drivemount-applet_eject.png
+share/mate/help/mate-drivemount/fr/figures/drivemount-applet_example.png
+share/mate/help/mate-drivemount/fr/figures/drivemount-applet_mount.png
+share/mate/help/mate-drivemount/fr/figures/drivemount-applet_open.png
+share/mate/help/mate-drivemount/fr/figures/drivemount-applet_status.png
+share/mate/help/mate-drivemount/fr/mate-drivemount.xml
+share/mate/help/mate-drivemount/it/figures/drivemount-applet_eject.png
+share/mate/help/mate-drivemount/it/figures/drivemount-applet_example.png
+share/mate/help/mate-drivemount/it/figures/drivemount-applet_mount.png
+share/mate/help/mate-drivemount/it/figures/drivemount-applet_open.png
+share/mate/help/mate-drivemount/it/figures/drivemount-applet_status.png
+share/mate/help/mate-drivemount/it/mate-drivemount.xml
+share/mate/help/mate-drivemount/ko/figures/drivemount-applet_eject.png
+share/mate/help/mate-drivemount/ko/figures/drivemount-applet_example.png
+share/mate/help/mate-drivemount/ko/figures/drivemount-applet_mount.png
+share/mate/help/mate-drivemount/ko/figures/drivemount-applet_open.png
+share/mate/help/mate-drivemount/ko/figures/drivemount-applet_status.png
+share/mate/help/mate-drivemount/ko/mate-drivemount.xml
+share/mate/help/mate-drivemount/oc/figures/drivemount-applet_eject.png
+share/mate/help/mate-drivemount/oc/figures/drivemount-applet_example.png
+share/mate/help/mate-drivemount/oc/figures/drivemount-applet_mount.png
+share/mate/help/mate-drivemount/oc/figures/drivemount-applet_open.png
+share/mate/help/mate-drivemount/oc/figures/drivemount-applet_status.png
+share/mate/help/mate-drivemount/oc/mate-drivemount.xml
+share/mate/help/mate-drivemount/pa/figures/drivemount-applet_eject.png
+share/mate/help/mate-drivemount/pa/figures/drivemount-applet_example.png
+share/mate/help/mate-drivemount/pa/figures/drivemount-applet_mount.png
+share/mate/help/mate-drivemount/pa/figures/drivemount-applet_open.png
+share/mate/help/mate-drivemount/pa/figures/drivemount-applet_status.png
+share/mate/help/mate-drivemount/pa/mate-drivemount.xml
+share/mate/help/mate-drivemount/ru/figures/drivemount-applet_eject.png
+share/mate/help/mate-drivemount/ru/figures/drivemount-applet_example.png
+share/mate/help/mate-drivemount/ru/figures/drivemount-applet_mount.png
+share/mate/help/mate-drivemount/ru/figures/drivemount-applet_open.png
+share/mate/help/mate-drivemount/ru/figures/drivemount-applet_status.png
+share/mate/help/mate-drivemount/ru/mate-drivemount.xml
+share/mate/help/mate-drivemount/sv/figures/drivemount-applet_eject.png
+share/mate/help/mate-drivemount/sv/figures/drivemount-applet_example.png
+share/mate/help/mate-drivemount/sv/figures/drivemount-applet_mount.png
+share/mate/help/mate-drivemount/sv/figures/drivemount-applet_open.png
+share/mate/help/mate-drivemount/sv/figures/drivemount-applet_status.png
+share/mate/help/mate-drivemount/sv/mate-drivemount.xml
+share/mate/help/mate-drivemount/uk/figures/drivemount-applet_eject.png
+share/mate/help/mate-drivemount/uk/figures/drivemount-applet_example.png
+share/mate/help/mate-drivemount/uk/figures/drivemount-applet_mount.png
+share/mate/help/mate-drivemount/uk/figures/drivemount-applet_open.png
+share/mate/help/mate-drivemount/uk/figures/drivemount-applet_status.png
+share/mate/help/mate-drivemount/uk/mate-drivemount.xml
+share/mate/help/mate-drivemount/zh_CN/figures/drivemount-applet_eject.png
+share/mate/help/mate-drivemount/zh_CN/figures/drivemount-applet_example.png
+share/mate/help/mate-drivemount/zh_CN/figures/drivemount-applet_mount.png
+share/mate/help/mate-drivemount/zh_CN/figures/drivemount-applet_open.png
+share/mate/help/mate-drivemount/zh_CN/figures/drivemount-applet_status.png
+share/mate/help/mate-drivemount/zh_CN/mate-drivemount.xml
+share/mate/help/mate-geyes/C/figures/geyes_applet.png
+share/mate/help/mate-geyes/C/legal.xml
+share/mate/help/mate-geyes/C/mate-geyes.xml
+share/mate/help/mate-geyes/ast/figures/geyes_applet.png
+share/mate/help/mate-geyes/ast/mate-geyes.xml
+share/mate/help/mate-geyes/bg/figures/geyes_applet.png
+share/mate/help/mate-geyes/bg/mate-geyes.xml
+share/mate/help/mate-geyes/ca/figures/geyes_applet.png
+share/mate/help/mate-geyes/ca/mate-geyes.xml
+share/mate/help/mate-geyes/cs/figures/geyes_applet.png
+share/mate/help/mate-geyes/cs/mate-geyes.xml
+share/mate/help/mate-geyes/da/figures/geyes_applet.png
+share/mate/help/mate-geyes/da/mate-geyes.xml
+share/mate/help/mate-geyes/de/figures/geyes_applet.png
+share/mate/help/mate-geyes/de/mate-geyes.xml
+share/mate/help/mate-geyes/el/figures/geyes_applet.png
+share/mate/help/mate-geyes/el/mate-geyes.xml
+share/mate/help/mate-geyes/en_GB/figures/geyes_applet.png
+share/mate/help/mate-geyes/en_GB/mate-geyes.xml
+share/mate/help/mate-geyes/es/figures/geyes_applet.png
+share/mate/help/mate-geyes/es/mate-geyes.xml
+share/mate/help/mate-geyes/eu/figures/geyes_applet.png
+share/mate/help/mate-geyes/eu/mate-geyes.xml
+share/mate/help/mate-geyes/fi/figures/geyes_applet.png
+share/mate/help/mate-geyes/fi/mate-geyes.xml
+share/mate/help/mate-geyes/fr/figures/geyes_applet.png
+share/mate/help/mate-geyes/fr/mate-geyes.xml
+share/mate/help/mate-geyes/it/figures/geyes_applet.png
+share/mate/help/mate-geyes/it/mate-geyes.xml
+share/mate/help/mate-geyes/ko/figures/geyes_applet.png
+share/mate/help/mate-geyes/ko/mate-geyes.xml
+share/mate/help/mate-geyes/oc/figures/geyes_applet.png
+share/mate/help/mate-geyes/oc/mate-geyes.xml
+share/mate/help/mate-geyes/ru/figures/geyes_applet.png
+share/mate/help/mate-geyes/ru/mate-geyes.xml
+share/mate/help/mate-geyes/sv/figures/geyes_applet.png
+share/mate/help/mate-geyes/sv/mate-geyes.xml
+share/mate/help/mate-geyes/uk/figures/geyes_applet.png
+share/mate/help/mate-geyes/uk/mate-geyes.xml
+share/mate/help/mate-geyes/zh_CN/figures/geyes_applet.png
+share/mate/help/mate-geyes/zh_CN/mate-geyes.xml
+share/mate/help/mate-geyes/zh_HK/figures/geyes_applet.png
+share/mate/help/mate-geyes/zh_HK/mate-geyes.xml
+share/mate/help/mate-geyes/zh_TW/figures/geyes_applet.png
+share/mate/help/mate-geyes/zh_TW/mate-geyes.xml
+share/mate/help/mate-invest-applet/C/figures/symbol-search.png
+share/mate/help/mate-invest-applet/C/legal.xml
+share/mate/help/mate-invest-applet/C/mate-invest-applet.xml
+share/mate/help/mate-invest-applet/ca/figures/symbol-search.png
+share/mate/help/mate-invest-applet/ca/mate-invest-applet.xml
+share/mate/help/mate-invest-applet/de/figures/symbol-search.png
+share/mate/help/mate-invest-applet/de/mate-invest-applet.xml
+share/mate/help/mate-invest-applet/el/figures/symbol-search.png
+share/mate/help/mate-invest-applet/el/mate-invest-applet.xml
+share/mate/help/mate-invest-applet/en_GB/figures/symbol-search.png
+share/mate/help/mate-invest-applet/en_GB/mate-invest-applet.xml
+share/mate/help/mate-invest-applet/es/figures/symbol-search.png
+share/mate/help/mate-invest-applet/es/mate-invest-applet.xml
+share/mate/help/mate-invest-applet/fi/figures/symbol-search.png
+share/mate/help/mate-invest-applet/fi/mate-invest-applet.xml
+share/mate/help/mate-invest-applet/ru/figures/symbol-search.png
+share/mate/help/mate-invest-applet/ru/mate-invest-applet.xml
+share/mate/help/mate-invest-applet/sv/figures/symbol-search.png
+share/mate/help/mate-invest-applet/sv/mate-invest-applet.xml
+share/mate/help/mate-invest-applet/zh_CN/figures/symbol-search.png
+share/mate/help/mate-invest-applet/zh_CN/mate-invest-applet.xml
+share/mate/help/mate-multiload/C/figures/multiload-preferences.png
+share/mate/help/mate-multiload/C/figures/system-monitor-applet_window.png
+share/mate/help/mate-multiload/C/figures/system_monitor.png
+share/mate/help/mate-multiload/C/legal.xml
+share/mate/help/mate-multiload/C/mate-multiload.xml
+share/mate/help/mate-multiload/ca/figures/multiload-preferences.png
+share/mate/help/mate-multiload/ca/figures/system-monitor-applet_window.png
+share/mate/help/mate-multiload/ca/figures/system_monitor.png
+share/mate/help/mate-multiload/ca/mate-multiload.xml
+share/mate/help/mate-multiload/cs/figures/multiload-preferences.png
+share/mate/help/mate-multiload/cs/figures/system-monitor-applet_window.png
+share/mate/help/mate-multiload/cs/figures/system_monitor.png
+share/mate/help/mate-multiload/cs/mate-multiload.xml
+share/mate/help/mate-multiload/de/figures/multiload-preferences.png
+share/mate/help/mate-multiload/de/figures/system-monitor-applet_window.png
+share/mate/help/mate-multiload/de/figures/system_monitor.png
+share/mate/help/mate-multiload/de/mate-multiload.xml
+share/mate/help/mate-multiload/el/figures/multiload-preferences.png
+share/mate/help/mate-multiload/el/figures/system-monitor-applet_window.png
+share/mate/help/mate-multiload/el/figures/system_monitor.png
+share/mate/help/mate-multiload/el/mate-multiload.xml
+share/mate/help/mate-multiload/en_GB/figures/multiload-preferences.png
+share/mate/help/mate-multiload/en_GB/figures/system-monitor-applet_window.png
+share/mate/help/mate-multiload/en_GB/figures/system_monitor.png
+share/mate/help/mate-multiload/en_GB/mate-multiload.xml
+share/mate/help/mate-multiload/es/figures/multiload-preferences.png
+share/mate/help/mate-multiload/es/figures/system-monitor-applet_window.png
+share/mate/help/mate-multiload/es/figures/system_monitor.png
+share/mate/help/mate-multiload/es/mate-multiload.xml
+share/mate/help/mate-multiload/eu/figures/multiload-preferences.png
+share/mate/help/mate-multiload/eu/figures/system-monitor-applet_window.png
+share/mate/help/mate-multiload/eu/figures/system_monitor.png
+share/mate/help/mate-multiload/eu/mate-multiload.xml
+share/mate/help/mate-multiload/fi/figures/multiload-preferences.png
+share/mate/help/mate-multiload/fi/figures/system-monitor-applet_window.png
+share/mate/help/mate-multiload/fi/figures/system_monitor.png
+share/mate/help/mate-multiload/fi/mate-multiload.xml
+share/mate/help/mate-multiload/fr/figures/multiload-preferences.png
+share/mate/help/mate-multiload/fr/figures/system-monitor-applet_window.png
+share/mate/help/mate-multiload/fr/figures/system_monitor.png
+share/mate/help/mate-multiload/fr/mate-multiload.xml
+share/mate/help/mate-multiload/ko/figures/multiload-preferences.png
+share/mate/help/mate-multiload/ko/figures/system-monitor-applet_window.png
+share/mate/help/mate-multiload/ko/figures/system_monitor.png
+share/mate/help/mate-multiload/ko/mate-multiload.xml
+share/mate/help/mate-multiload/oc/figures/multiload-preferences.png
+share/mate/help/mate-multiload/oc/figures/system-monitor-applet_window.png
+share/mate/help/mate-multiload/oc/figures/system_monitor.png
+share/mate/help/mate-multiload/oc/mate-multiload.xml
+share/mate/help/mate-multiload/pa/figures/multiload-preferences.png
+share/mate/help/mate-multiload/pa/figures/system-monitor-applet_window.png
+share/mate/help/mate-multiload/pa/figures/system_monitor.png
+share/mate/help/mate-multiload/pa/mate-multiload.xml
+share/mate/help/mate-multiload/pt_BR/figures/multiload-preferences.png
+share/mate/help/mate-multiload/pt_BR/figures/system-monitor-applet_window.png
+share/mate/help/mate-multiload/pt_BR/figures/system_monitor.png
+share/mate/help/mate-multiload/pt_BR/mate-multiload.xml
+share/mate/help/mate-multiload/ru/figures/multiload-preferences.png
+share/mate/help/mate-multiload/ru/figures/system-monitor-applet_window.png
+share/mate/help/mate-multiload/ru/figures/system_monitor.png
+share/mate/help/mate-multiload/ru/mate-multiload.xml
+share/mate/help/mate-multiload/sv/figures/multiload-preferences.png
+share/mate/help/mate-multiload/sv/figures/system-monitor-applet_window.png
+share/mate/help/mate-multiload/sv/figures/system_monitor.png
+share/mate/help/mate-multiload/sv/mate-multiload.xml
+share/mate/help/mate-multiload/uk/figures/multiload-preferences.png
+share/mate/help/mate-multiload/uk/figures/system-monitor-applet_window.png
+share/mate/help/mate-multiload/uk/figures/system_monitor.png
+share/mate/help/mate-multiload/uk/mate-multiload.xml
+share/mate/help/mate-multiload/zh_CN/figures/multiload-preferences.png
+share/mate/help/mate-multiload/zh_CN/figures/system-monitor-applet_window.png
+share/mate/help/mate-multiload/zh_CN/figures/system_monitor.png
+share/mate/help/mate-multiload/zh_CN/mate-multiload.xml
+share/mate/help/mate-stickynotes_applet/C/figures/stickynote-right-menu-lock.png
+share/mate/help/mate-stickynotes_applet/C/figures/stickynote-right-menu-new.png
+share/mate/help/mate-stickynotes_applet/C/figures/stickynotes-note-prefs.png
+share/mate/help/mate-stickynotes_applet/C/figures/stickynotes-prefs.png
+share/mate/help/mate-stickynotes_applet/C/figures/stickynotes_applet.png
+share/mate/help/mate-stickynotes_applet/C/legal.xml
+share/mate/help/mate-stickynotes_applet/C/mate-stickynotes_applet.xml
+share/mate/help/mate-stickynotes_applet/ca/figures/stickynote-right-menu-lock.png
+share/mate/help/mate-stickynotes_applet/ca/figures/stickynote-right-menu-new.png
+share/mate/help/mate-stickynotes_applet/ca/figures/stickynotes-note-prefs.png
+share/mate/help/mate-stickynotes_applet/ca/figures/stickynotes-prefs.png
+share/mate/help/mate-stickynotes_applet/ca/figures/stickynotes_applet.png
+share/mate/help/mate-stickynotes_applet/ca/mate-stickynotes_applet.xml
+share/mate/help/mate-stickynotes_applet/cs/figures/stickynote-right-menu-lock.png
+share/mate/help/mate-stickynotes_applet/cs/figures/stickynote-right-menu-new.png
+share/mate/help/mate-stickynotes_applet/cs/figures/stickynotes-note-prefs.png
+share/mate/help/mate-stickynotes_applet/cs/figures/stickynotes-prefs.png
+share/mate/help/mate-stickynotes_applet/cs/figures/stickynotes_applet.png
+share/mate/help/mate-stickynotes_applet/cs/mate-stickynotes_applet.xml
+share/mate/help/mate-stickynotes_applet/de/figures/stickynote-right-menu-lock.png
+share/mate/help/mate-stickynotes_applet/de/figures/stickynote-right-menu-new.png
+share/mate/help/mate-stickynotes_applet/de/figures/stickynotes-note-prefs.png
+share/mate/help/mate-stickynotes_applet/de/figures/stickynotes-prefs.png
+share/mate/help/mate-stickynotes_applet/de/figures/stickynotes_applet.png
+share/mate/help/mate-stickynotes_applet/de/mate-stickynotes_applet.xml
+share/mate/help/mate-stickynotes_applet/el/figures/stickynote-right-menu-lock.png
+share/mate/help/mate-stickynotes_applet/el/figures/stickynote-right-menu-new.png
+share/mate/help/mate-stickynotes_applet/el/figures/stickynotes-note-prefs.png
+share/mate/help/mate-stickynotes_applet/el/figures/stickynotes-prefs.png
+share/mate/help/mate-stickynotes_applet/el/figures/stickynotes_applet.png
+share/mate/help/mate-stickynotes_applet/el/mate-stickynotes_applet.xml
+share/mate/help/mate-stickynotes_applet/en_GB/figures/stickynote-right-menu-lock.png
+share/mate/help/mate-stickynotes_applet/en_GB/figures/stickynote-right-menu-new.png
+share/mate/help/mate-stickynotes_applet/en_GB/figures/stickynotes-note-prefs.png
+share/mate/help/mate-stickynotes_applet/en_GB/figures/stickynotes-prefs.png
+share/mate/help/mate-stickynotes_applet/en_GB/figures/stickynotes_applet.png
+share/mate/help/mate-stickynotes_applet/en_GB/mate-stickynotes_applet.xml
+share/mate/help/mate-stickynotes_applet/es/figures/stickynote-right-menu-lock.png
+share/mate/help/mate-stickynotes_applet/es/figures/stickynote-right-menu-new.png
+share/mate/help/mate-stickynotes_applet/es/figures/stickynotes-note-prefs.png
+share/mate/help/mate-stickynotes_applet/es/figures/stickynotes-prefs.png
+share/mate/help/mate-stickynotes_applet/es/figures/stickynotes_applet.png
+share/mate/help/mate-stickynotes_applet/es/mate-stickynotes_applet.xml
+share/mate/help/mate-stickynotes_applet/eu/figures/stickynote-right-menu-lock.png
+share/mate/help/mate-stickynotes_applet/eu/figures/stickynote-right-menu-new.png
+share/mate/help/mate-stickynotes_applet/eu/figures/stickynotes-note-prefs.png
+share/mate/help/mate-stickynotes_applet/eu/figures/stickynotes-prefs.png
+share/mate/help/mate-stickynotes_applet/eu/figures/stickynotes_applet.png
+share/mate/help/mate-stickynotes_applet/eu/mate-stickynotes_applet.xml
+share/mate/help/mate-stickynotes_applet/fi/figures/stickynote-right-menu-lock.png
+share/mate/help/mate-stickynotes_applet/fi/figures/stickynote-right-menu-new.png
+share/mate/help/mate-stickynotes_applet/fi/figures/stickynotes-note-prefs.png
+share/mate/help/mate-stickynotes_applet/fi/figures/stickynotes-prefs.png
+share/mate/help/mate-stickynotes_applet/fi/figures/stickynotes_applet.png
+share/mate/help/mate-stickynotes_applet/fi/mate-stickynotes_applet.xml
+share/mate/help/mate-stickynotes_applet/fr/figures/stickynote-right-menu-lock.png
+share/mate/help/mate-stickynotes_applet/fr/figures/stickynote-right-menu-new.png
+share/mate/help/mate-stickynotes_applet/fr/figures/stickynotes-note-prefs.png
+share/mate/help/mate-stickynotes_applet/fr/figures/stickynotes-prefs.png
+share/mate/help/mate-stickynotes_applet/fr/figures/stickynotes_applet.png
+share/mate/help/mate-stickynotes_applet/fr/mate-stickynotes_applet.xml
+share/mate/help/mate-stickynotes_applet/ko/figures/stickynote-right-menu-lock.png
+share/mate/help/mate-stickynotes_applet/ko/figures/stickynote-right-menu-new.png
+share/mate/help/mate-stickynotes_applet/ko/figures/stickynotes-note-prefs.png
+share/mate/help/mate-stickynotes_applet/ko/figures/stickynotes-prefs.png
+share/mate/help/mate-stickynotes_applet/ko/figures/stickynotes_applet.png
+share/mate/help/mate-stickynotes_applet/ko/mate-stickynotes_applet.xml
+share/mate/help/mate-stickynotes_applet/oc/figures/stickynote-right-menu-lock.png
+share/mate/help/mate-stickynotes_applet/oc/figures/stickynote-right-menu-new.png
+share/mate/help/mate-stickynotes_applet/oc/figures/stickynotes-note-prefs.png
+share/mate/help/mate-stickynotes_applet/oc/figures/stickynotes-prefs.png
+share/mate/help/mate-stickynotes_applet/oc/figures/stickynotes_applet.png
+share/mate/help/mate-stickynotes_applet/oc/mate-stickynotes_applet.xml
+share/mate/help/mate-stickynotes_applet/pa/figures/stickynote-right-menu-lock.png
+share/mate/help/mate-stickynotes_applet/pa/figures/stickynote-right-menu-new.png
+share/mate/help/mate-stickynotes_applet/pa/figures/stickynotes-note-prefs.png
+share/mate/help/mate-stickynotes_applet/pa/figures/stickynotes-prefs.png
+share/mate/help/mate-stickynotes_applet/pa/figures/stickynotes_applet.png
+share/mate/help/mate-stickynotes_applet/pa/mate-stickynotes_applet.xml
+share/mate/help/mate-stickynotes_applet/pt_BR/figures/stickynote-right-menu-lock.png
+share/mate/help/mate-stickynotes_applet/pt_BR/figures/stickynote-right-menu-new.png
+share/mate/help/mate-stickynotes_applet/pt_BR/figures/stickynotes-note-prefs.png
+share/mate/help/mate-stickynotes_applet/pt_BR/figures/stickynotes-prefs.png
+share/mate/help/mate-stickynotes_applet/pt_BR/figures/stickynotes_applet.png
+share/mate/help/mate-stickynotes_applet/pt_BR/mate-stickynotes_applet.xml
+share/mate/help/mate-stickynotes_applet/ru/figures/stickynote-right-menu-lock.png
+share/mate/help/mate-stickynotes_applet/ru/figures/stickynote-right-menu-new.png
+share/mate/help/mate-stickynotes_applet/ru/figures/stickynotes-note-prefs.png
+share/mate/help/mate-stickynotes_applet/ru/figures/stickynotes-prefs.png
+share/mate/help/mate-stickynotes_applet/ru/figures/stickynotes_applet.png
+share/mate/help/mate-stickynotes_applet/ru/mate-stickynotes_applet.xml
+share/mate/help/mate-stickynotes_applet/sv/figures/stickynote-right-menu-lock.png
+share/mate/help/mate-stickynotes_applet/sv/figures/stickynote-right-menu-new.png
+share/mate/help/mate-stickynotes_applet/sv/figures/stickynotes-note-prefs.png
+share/mate/help/mate-stickynotes_applet/sv/figures/stickynotes-prefs.png
+share/mate/help/mate-stickynotes_applet/sv/figures/stickynotes_applet.png
+share/mate/help/mate-stickynotes_applet/sv/mate-stickynotes_applet.xml
+share/mate/help/mate-stickynotes_applet/uk/figures/stickynote-right-menu-lock.png
+share/mate/help/mate-stickynotes_applet/uk/figures/stickynote-right-menu-new.png
+share/mate/help/mate-stickynotes_applet/uk/figures/stickynotes-note-prefs.png
+share/mate/help/mate-stickynotes_applet/uk/figures/stickynotes-prefs.png
+share/mate/help/mate-stickynotes_applet/uk/figures/stickynotes_applet.png
+share/mate/help/mate-stickynotes_applet/uk/mate-stickynotes_applet.xml
+share/mate/help/mate-stickynotes_applet/zh_CN/figures/stickynote-right-menu-lock.png
+share/mate/help/mate-stickynotes_applet/zh_CN/figures/stickynote-right-menu-new.png
+share/mate/help/mate-stickynotes_applet/zh_CN/figures/stickynotes-note-prefs.png
+share/mate/help/mate-stickynotes_applet/zh_CN/figures/stickynotes-prefs.png
+share/mate/help/mate-stickynotes_applet/zh_CN/figures/stickynotes_applet.png
+share/mate/help/mate-stickynotes_applet/zh_CN/mate-stickynotes_applet.xml
+share/mate/help/mate-stickynotes_applet/zh_HK/figures/stickynote-right-menu-lock.png
+share/mate/help/mate-stickynotes_applet/zh_HK/figures/stickynote-right-menu-new.png
+share/mate/help/mate-stickynotes_applet/zh_HK/figures/stickynotes-note-prefs.png
+share/mate/help/mate-stickynotes_applet/zh_HK/figures/stickynotes-prefs.png
+share/mate/help/mate-stickynotes_applet/zh_HK/figures/stickynotes_applet.png
+share/mate/help/mate-stickynotes_applet/zh_HK/mate-stickynotes_applet.xml
+share/mate/help/mate-stickynotes_applet/zh_TW/figures/stickynote-right-menu-lock.png
+share/mate/help/mate-stickynotes_applet/zh_TW/figures/stickynote-right-menu-new.png
+share/mate/help/mate-stickynotes_applet/zh_TW/figures/stickynotes-note-prefs.png
+share/mate/help/mate-stickynotes_applet/zh_TW/figures/stickynotes-prefs.png
+share/mate/help/mate-stickynotes_applet/zh_TW/figures/stickynotes_applet.png
+share/mate/help/mate-stickynotes_applet/zh_TW/mate-stickynotes_applet.xml
+share/mate/help/mate-trashapplet/C/figures/trash-applet.png
+share/mate/help/mate-trashapplet/C/legal.xml
+share/mate/help/mate-trashapplet/C/mate-trashapplet.xml
+share/mate/help/mate-trashapplet/ca/figures/trash-applet.png
+share/mate/help/mate-trashapplet/ca/mate-trashapplet.xml
+share/mate/help/mate-trashapplet/cs/figures/trash-applet.png
+share/mate/help/mate-trashapplet/cs/mate-trashapplet.xml
+share/mate/help/mate-trashapplet/da/figures/trash-applet.png
+share/mate/help/mate-trashapplet/da/mate-trashapplet.xml
+share/mate/help/mate-trashapplet/de/figures/trash-applet.png
+share/mate/help/mate-trashapplet/de/mate-trashapplet.xml
+share/mate/help/mate-trashapplet/el/figures/trash-applet.png
+share/mate/help/mate-trashapplet/el/mate-trashapplet.xml
+share/mate/help/mate-trashapplet/en_GB/figures/trash-applet.png
+share/mate/help/mate-trashapplet/en_GB/mate-trashapplet.xml
+share/mate/help/mate-trashapplet/es/figures/trash-applet.png
+share/mate/help/mate-trashapplet/es/mate-trashapplet.xml
+share/mate/help/mate-trashapplet/eu/figures/trash-applet.png
+share/mate/help/mate-trashapplet/eu/mate-trashapplet.xml
+share/mate/help/mate-trashapplet/fi/figures/trash-applet.png
+share/mate/help/mate-trashapplet/fi/mate-trashapplet.xml
+share/mate/help/mate-trashapplet/fr/figures/trash-applet.png
+share/mate/help/mate-trashapplet/fr/mate-trashapplet.xml
+share/mate/help/mate-trashapplet/hu/figures/trash-applet.png
+share/mate/help/mate-trashapplet/hu/mate-trashapplet.xml
+share/mate/help/mate-trashapplet/it/figures/trash-applet.png
+share/mate/help/mate-trashapplet/it/mate-trashapplet.xml
+share/mate/help/mate-trashapplet/nl/figures/trash-applet.png
+share/mate/help/mate-trashapplet/nl/mate-trashapplet.xml
+share/mate/help/mate-trashapplet/oc/figures/trash-applet.png
+share/mate/help/mate-trashapplet/oc/mate-trashapplet.xml
+share/mate/help/mate-trashapplet/pa/figures/trash-applet.png
+share/mate/help/mate-trashapplet/pa/mate-trashapplet.xml
+share/mate/help/mate-trashapplet/pt_BR/figures/trash-applet.png
+share/mate/help/mate-trashapplet/pt_BR/mate-trashapplet.xml
+share/mate/help/mate-trashapplet/ru/figures/trash-applet.png
+share/mate/help/mate-trashapplet/ru/mate-trashapplet.xml
+share/mate/help/mate-trashapplet/sv/figures/trash-applet.png
+share/mate/help/mate-trashapplet/sv/mate-trashapplet.xml
+share/mate/help/mate-trashapplet/uk/figures/trash-applet.png
+share/mate/help/mate-trashapplet/uk/mate-trashapplet.xml
+share/mate/help/mate-trashapplet/zh_CN/figures/trash-applet.png
+share/mate/help/mate-trashapplet/zh_CN/mate-trashapplet.xml
+share/mate/help/mate-trashapplet/zh_HK/figures/trash-applet.png
+share/mate/help/mate-trashapplet/zh_HK/mate-trashapplet.xml
+share/mate/help/mate-trashapplet/zh_TW/figures/trash-applet.png
+share/mate/help/mate-trashapplet/zh_TW/mate-trashapplet.xml
+share/mate/help/mateweather/C/figures/mateweather-details.png
+share/mate/help/mateweather/C/figures/mateweather-menu-prefs.png
+share/mate/help/mateweather/C/figures/mateweather-prefs-general.png
+share/mate/help/mateweather/C/figures/mateweather-prefs-locations.png
+share/mate/help/mateweather/C/figures/mateweather_applet.png
+share/mate/help/mateweather/C/figures/stock_weather-cloudy.png
+share/mate/help/mateweather/C/figures/stock_weather-few-clouds.png
+share/mate/help/mateweather/C/figures/stock_weather-fog.png
+share/mate/help/mateweather/C/figures/stock_weather-night-clear.png
+share/mate/help/mateweather/C/figures/stock_weather-night-few-clouds.png
+share/mate/help/mateweather/C/figures/stock_weather-showers.png
+share/mate/help/mateweather/C/figures/stock_weather-snow.png
+share/mate/help/mateweather/C/figures/stock_weather-storm.png
+share/mate/help/mateweather/C/figures/stock_weather-sunny.png
+share/mate/help/mateweather/C/legal.xml
+share/mate/help/mateweather/C/mateweather.xml
+share/mate/help/mateweather/ar/figures/mateweather-details.png
+share/mate/help/mateweather/ar/figures/mateweather-menu-prefs.png
+share/mate/help/mateweather/ar/figures/mateweather-prefs-general.png
+share/mate/help/mateweather/ar/figures/mateweather-prefs-locations.png
+share/mate/help/mateweather/ar/figures/mateweather_applet.png
+share/mate/help/mateweather/ar/figures/stock_weather-cloudy.png
+share/mate/help/mateweather/ar/figures/stock_weather-few-clouds.png
+share/mate/help/mateweather/ar/figures/stock_weather-fog.png
+share/mate/help/mateweather/ar/figures/stock_weather-night-clear.png
+share/mate/help/mateweather/ar/figures/stock_weather-night-few-clouds.png
+share/mate/help/mateweather/ar/figures/stock_weather-showers.png
+share/mate/help/mateweather/ar/figures/stock_weather-snow.png
+share/mate/help/mateweather/ar/figures/stock_weather-storm.png
+share/mate/help/mateweather/ar/figures/stock_weather-sunny.png
+share/mate/help/mateweather/ar/mateweather.xml
+share/mate/help/mateweather/ca/figures/mateweather-details.png
+share/mate/help/mateweather/ca/figures/mateweather-menu-prefs.png
+share/mate/help/mateweather/ca/figures/mateweather-prefs-general.png
+share/mate/help/mateweather/ca/figures/mateweather-prefs-locations.png
+share/mate/help/mateweather/ca/figures/mateweather_applet.png
+share/mate/help/mateweather/ca/figures/stock_weather-cloudy.png
+share/mate/help/mateweather/ca/figures/stock_weather-few-clouds.png
+share/mate/help/mateweather/ca/figures/stock_weather-fog.png
+share/mate/help/mateweather/ca/figures/stock_weather-night-clear.png
+share/mate/help/mateweather/ca/figures/stock_weather-night-few-clouds.png
+share/mate/help/mateweather/ca/figures/stock_weather-showers.png
+share/mate/help/mateweather/ca/figures/stock_weather-snow.png
+share/mate/help/mateweather/ca/figures/stock_weather-storm.png
+share/mate/help/mateweather/ca/figures/stock_weather-sunny.png
+share/mate/help/mateweather/ca/mateweather.xml
+share/mate/help/mateweather/cs/figures/mateweather-details.png
+share/mate/help/mateweather/cs/figures/mateweather-menu-prefs.png
+share/mate/help/mateweather/cs/figures/mateweather-prefs-general.png
+share/mate/help/mateweather/cs/figures/mateweather-prefs-locations.png
+share/mate/help/mateweather/cs/figures/mateweather_applet.png
+share/mate/help/mateweather/cs/figures/stock_weather-cloudy.png
+share/mate/help/mateweather/cs/figures/stock_weather-few-clouds.png
+share/mate/help/mateweather/cs/figures/stock_weather-fog.png
+share/mate/help/mateweather/cs/figures/stock_weather-night-clear.png
+share/mate/help/mateweather/cs/figures/stock_weather-night-few-clouds.png
+share/mate/help/mateweather/cs/figures/stock_weather-showers.png
+share/mate/help/mateweather/cs/figures/stock_weather-snow.png
+share/mate/help/mateweather/cs/figures/stock_weather-storm.png
+share/mate/help/mateweather/cs/figures/stock_weather-sunny.png
+share/mate/help/mateweather/cs/mateweather.xml
+share/mate/help/mateweather/de/figures/mateweather-details.png
+share/mate/help/mateweather/de/figures/mateweather-menu-prefs.png
+share/mate/help/mateweather/de/figures/mateweather-prefs-general.png
+share/mate/help/mateweather/de/figures/mateweather-prefs-locations.png
+share/mate/help/mateweather/de/figures/mateweather_applet.png
+share/mate/help/mateweather/de/figures/stock_weather-cloudy.png
+share/mate/help/mateweather/de/figures/stock_weather-few-clouds.png
+share/mate/help/mateweather/de/figures/stock_weather-fog.png
+share/mate/help/mateweather/de/figures/stock_weather-night-clear.png
+share/mate/help/mateweather/de/figures/stock_weather-night-few-clouds.png
+share/mate/help/mateweather/de/figures/stock_weather-showers.png
+share/mate/help/mateweather/de/figures/stock_weather-snow.png
+share/mate/help/mateweather/de/figures/stock_weather-storm.png
+share/mate/help/mateweather/de/figures/stock_weather-sunny.png
+share/mate/help/mateweather/de/mateweather.xml
+share/mate/help/mateweather/el/figures/mateweather-details.png
+share/mate/help/mateweather/el/figures/mateweather-menu-prefs.png
+share/mate/help/mateweather/el/figures/mateweather-prefs-general.png
+share/mate/help/mateweather/el/figures/mateweather-prefs-locations.png
+share/mate/help/mateweather/el/figures/mateweather_applet.png
+share/mate/help/mateweather/el/figures/stock_weather-cloudy.png
+share/mate/help/mateweather/el/figures/stock_weather-few-clouds.png
+share/mate/help/mateweather/el/figures/stock_weather-fog.png
+share/mate/help/mateweather/el/figures/stock_weather-night-clear.png
+share/mate/help/mateweather/el/figures/stock_weather-night-few-clouds.png
+share/mate/help/mateweather/el/figures/stock_weather-showers.png
+share/mate/help/mateweather/el/figures/stock_weather-snow.png
+share/mate/help/mateweather/el/figures/stock_weather-storm.png
+share/mate/help/mateweather/el/figures/stock_weather-sunny.png
+share/mate/help/mateweather/el/mateweather.xml
+share/mate/help/mateweather/en_GB/figures/mateweather-details.png
+share/mate/help/mateweather/en_GB/figures/mateweather-menu-prefs.png
+share/mate/help/mateweather/en_GB/figures/mateweather-prefs-general.png
+share/mate/help/mateweather/en_GB/figures/mateweather-prefs-locations.png
+share/mate/help/mateweather/en_GB/figures/mateweather_applet.png
+share/mate/help/mateweather/en_GB/figures/stock_weather-cloudy.png
+share/mate/help/mateweather/en_GB/figures/stock_weather-few-clouds.png
+share/mate/help/mateweather/en_GB/figures/stock_weather-fog.png
+share/mate/help/mateweather/en_GB/figures/stock_weather-night-clear.png
+share/mate/help/mateweather/en_GB/figures/stock_weather-night-few-clouds.png
+share/mate/help/mateweather/en_GB/figures/stock_weather-showers.png
+share/mate/help/mateweather/en_GB/figures/stock_weather-snow.png
+share/mate/help/mateweather/en_GB/figures/stock_weather-storm.png
+share/mate/help/mateweather/en_GB/figures/stock_weather-sunny.png
+share/mate/help/mateweather/en_GB/mateweather.xml
+share/mate/help/mateweather/es/figures/mateweather-details.png
+share/mate/help/mateweather/es/figures/mateweather-menu-prefs.png
+share/mate/help/mateweather/es/figures/mateweather-prefs-general.png
+share/mate/help/mateweather/es/figures/mateweather-prefs-locations.png
+share/mate/help/mateweather/es/figures/mateweather_applet.png
+share/mate/help/mateweather/es/figures/stock_weather-cloudy.png
+share/mate/help/mateweather/es/figures/stock_weather-few-clouds.png
+share/mate/help/mateweather/es/figures/stock_weather-fog.png
+share/mate/help/mateweather/es/figures/stock_weather-night-clear.png
+share/mate/help/mateweather/es/figures/stock_weather-night-few-clouds.png
+share/mate/help/mateweather/es/figures/stock_weather-showers.png
+share/mate/help/mateweather/es/figures/stock_weather-snow.png
+share/mate/help/mateweather/es/figures/stock_weather-storm.png
+share/mate/help/mateweather/es/figures/stock_weather-sunny.png
+share/mate/help/mateweather/es/mateweather.xml
+share/mate/help/mateweather/eu/figures/mateweather-details.png
+share/mate/help/mateweather/eu/figures/mateweather-menu-prefs.png
+share/mate/help/mateweather/eu/figures/mateweather-prefs-general.png
+share/mate/help/mateweather/eu/figures/mateweather-prefs-locations.png
+share/mate/help/mateweather/eu/figures/mateweather_applet.png
+share/mate/help/mateweather/eu/figures/stock_weather-cloudy.png
+share/mate/help/mateweather/eu/figures/stock_weather-few-clouds.png
+share/mate/help/mateweather/eu/figures/stock_weather-fog.png
+share/mate/help/mateweather/eu/figures/stock_weather-night-clear.png
+share/mate/help/mateweather/eu/figures/stock_weather-night-few-clouds.png
+share/mate/help/mateweather/eu/figures/stock_weather-showers.png
+share/mate/help/mateweather/eu/figures/stock_weather-snow.png
+share/mate/help/mateweather/eu/figures/stock_weather-storm.png
+share/mate/help/mateweather/eu/figures/stock_weather-sunny.png
+share/mate/help/mateweather/eu/mateweather.xml
+share/mate/help/mateweather/fi/figures/mateweather-details.png
+share/mate/help/mateweather/fi/figures/mateweather-menu-prefs.png
+share/mate/help/mateweather/fi/figures/mateweather-prefs-general.png
+share/mate/help/mateweather/fi/figures/mateweather-prefs-locations.png
+share/mate/help/mateweather/fi/figures/mateweather_applet.png
+share/mate/help/mateweather/fi/figures/stock_weather-cloudy.png
+share/mate/help/mateweather/fi/figures/stock_weather-few-clouds.png
+share/mate/help/mateweather/fi/figures/stock_weather-fog.png
+share/mate/help/mateweather/fi/figures/stock_weather-night-clear.png
+share/mate/help/mateweather/fi/figures/stock_weather-night-few-clouds.png
+share/mate/help/mateweather/fi/figures/stock_weather-showers.png
+share/mate/help/mateweather/fi/figures/stock_weather-snow.png
+share/mate/help/mateweather/fi/figures/stock_weather-storm.png
+share/mate/help/mateweather/fi/figures/stock_weather-sunny.png
+share/mate/help/mateweather/fi/mateweather.xml
+share/mate/help/mateweather/fr/figures/mateweather-details.png
+share/mate/help/mateweather/fr/figures/mateweather-menu-prefs.png
+share/mate/help/mateweather/fr/figures/mateweather-prefs-general.png
+share/mate/help/mateweather/fr/figures/mateweather-prefs-locations.png
+share/mate/help/mateweather/fr/figures/mateweather_applet.png
+share/mate/help/mateweather/fr/figures/stock_weather-cloudy.png
+share/mate/help/mateweather/fr/figures/stock_weather-few-clouds.png
+share/mate/help/mateweather/fr/figures/stock_weather-fog.png
+share/mate/help/mateweather/fr/figures/stock_weather-night-clear.png
+share/mate/help/mateweather/fr/figures/stock_weather-night-few-clouds.png
+share/mate/help/mateweather/fr/figures/stock_weather-showers.png
+share/mate/help/mateweather/fr/figures/stock_weather-snow.png
+share/mate/help/mateweather/fr/figures/stock_weather-storm.png
+share/mate/help/mateweather/fr/figures/stock_weather-sunny.png
+share/mate/help/mateweather/fr/mateweather.xml
+share/mate/help/mateweather/ko/figures/mateweather-details.png
+share/mate/help/mateweather/ko/figures/mateweather-menu-prefs.png
+share/mate/help/mateweather/ko/figures/mateweather-prefs-general.png
+share/mate/help/mateweather/ko/figures/mateweather-prefs-locations.png
+share/mate/help/mateweather/ko/figures/mateweather_applet.png
+share/mate/help/mateweather/ko/figures/stock_weather-cloudy.png
+share/mate/help/mateweather/ko/figures/stock_weather-few-clouds.png
+share/mate/help/mateweather/ko/figures/stock_weather-fog.png
+share/mate/help/mateweather/ko/figures/stock_weather-night-clear.png
+share/mate/help/mateweather/ko/figures/stock_weather-night-few-clouds.png
+share/mate/help/mateweather/ko/figures/stock_weather-showers.png
+share/mate/help/mateweather/ko/figures/stock_weather-snow.png
+share/mate/help/mateweather/ko/figures/stock_weather-storm.png
+share/mate/help/mateweather/ko/figures/stock_weather-sunny.png
+share/mate/help/mateweather/ko/mateweather.xml
+share/mate/help/mateweather/nl/figures/mateweather-details.png
+share/mate/help/mateweather/nl/figures/mateweather-menu-prefs.png
+share/mate/help/mateweather/nl/figures/mateweather-prefs-general.png
+share/mate/help/mateweather/nl/figures/mateweather-prefs-locations.png
+share/mate/help/mateweather/nl/figures/mateweather_applet.png
+share/mate/help/mateweather/nl/figures/stock_weather-cloudy.png
+share/mate/help/mateweather/nl/figures/stock_weather-few-clouds.png
+share/mate/help/mateweather/nl/figures/stock_weather-fog.png
+share/mate/help/mateweather/nl/figures/stock_weather-night-clear.png
+share/mate/help/mateweather/nl/figures/stock_weather-night-few-clouds.png
+share/mate/help/mateweather/nl/figures/stock_weather-showers.png
+share/mate/help/mateweather/nl/figures/stock_weather-snow.png
+share/mate/help/mateweather/nl/figures/stock_weather-storm.png
+share/mate/help/mateweather/nl/figures/stock_weather-sunny.png
+share/mate/help/mateweather/nl/mateweather.xml
+share/mate/help/mateweather/oc/figures/mateweather-details.png
+share/mate/help/mateweather/oc/figures/mateweather-menu-prefs.png
+share/mate/help/mateweather/oc/figures/mateweather-prefs-general.png
+share/mate/help/mateweather/oc/figures/mateweather-prefs-locations.png
+share/mate/help/mateweather/oc/figures/mateweather_applet.png
+share/mate/help/mateweather/oc/figures/stock_weather-cloudy.png
+share/mate/help/mateweather/oc/figures/stock_weather-few-clouds.png
+share/mate/help/mateweather/oc/figures/stock_weather-fog.png
+share/mate/help/mateweather/oc/figures/stock_weather-night-clear.png
+share/mate/help/mateweather/oc/figures/stock_weather-night-few-clouds.png
+share/mate/help/mateweather/oc/figures/stock_weather-showers.png
+share/mate/help/mateweather/oc/figures/stock_weather-snow.png
+share/mate/help/mateweather/oc/figures/stock_weather-storm.png
+share/mate/help/mateweather/oc/figures/stock_weather-sunny.png
+share/mate/help/mateweather/oc/mateweather.xml
+share/mate/help/mateweather/pa/figures/mateweather-details.png
+share/mate/help/mateweather/pa/figures/mateweather-menu-prefs.png
+share/mate/help/mateweather/pa/figures/mateweather-prefs-general.png
+share/mate/help/mateweather/pa/figures/mateweather-prefs-locations.png
+share/mate/help/mateweather/pa/figures/mateweather_applet.png
+share/mate/help/mateweather/pa/figures/stock_weather-cloudy.png
+share/mate/help/mateweather/pa/figures/stock_weather-few-clouds.png
+share/mate/help/mateweather/pa/figures/stock_weather-fog.png
+share/mate/help/mateweather/pa/figures/stock_weather-night-clear.png
+share/mate/help/mateweather/pa/figures/stock_weather-night-few-clouds.png
+share/mate/help/mateweather/pa/figures/stock_weather-showers.png
+share/mate/help/mateweather/pa/figures/stock_weather-snow.png
+share/mate/help/mateweather/pa/figures/stock_weather-storm.png
+share/mate/help/mateweather/pa/figures/stock_weather-sunny.png
+share/mate/help/mateweather/pa/mateweather.xml
+share/mate/help/mateweather/pt_BR/figures/mateweather-details.png
+share/mate/help/mateweather/pt_BR/figures/mateweather-menu-prefs.png
+share/mate/help/mateweather/pt_BR/figures/mateweather-prefs-general.png
+share/mate/help/mateweather/pt_BR/figures/mateweather-prefs-locations.png
+share/mate/help/mateweather/pt_BR/figures/mateweather_applet.png
+share/mate/help/mateweather/pt_BR/figures/stock_weather-cloudy.png
+share/mate/help/mateweather/pt_BR/figures/stock_weather-few-clouds.png
+share/mate/help/mateweather/pt_BR/figures/stock_weather-fog.png
+share/mate/help/mateweather/pt_BR/figures/stock_weather-night-clear.png
+share/mate/help/mateweather/pt_BR/figures/stock_weather-night-few-clouds.png
+share/mate/help/mateweather/pt_BR/figures/stock_weather-showers.png
+share/mate/help/mateweather/pt_BR/figures/stock_weather-snow.png
+share/mate/help/mateweather/pt_BR/figures/stock_weather-storm.png
+share/mate/help/mateweather/pt_BR/figures/stock_weather-sunny.png
+share/mate/help/mateweather/pt_BR/mateweather.xml
+share/mate/help/mateweather/ru/figures/mateweather-details.png
+share/mate/help/mateweather/ru/figures/mateweather-menu-prefs.png
+share/mate/help/mateweather/ru/figures/mateweather-prefs-general.png
+share/mate/help/mateweather/ru/figures/mateweather-prefs-locations.png
+share/mate/help/mateweather/ru/figures/mateweather_applet.png
+share/mate/help/mateweather/ru/figures/stock_weather-cloudy.png
+share/mate/help/mateweather/ru/figures/stock_weather-few-clouds.png
+share/mate/help/mateweather/ru/figures/stock_weather-fog.png
+share/mate/help/mateweather/ru/figures/stock_weather-night-clear.png
+share/mate/help/mateweather/ru/figures/stock_weather-night-few-clouds.png
+share/mate/help/mateweather/ru/figures/stock_weather-showers.png
+share/mate/help/mateweather/ru/figures/stock_weather-snow.png
+share/mate/help/mateweather/ru/figures/stock_weather-storm.png
+share/mate/help/mateweather/ru/figures/stock_weather-sunny.png
+share/mate/help/mateweather/ru/mateweather.xml
+share/mate/help/mateweather/sv/figures/mateweather-details.png
+share/mate/help/mateweather/sv/figures/mateweather-menu-prefs.png
+share/mate/help/mateweather/sv/figures/mateweather-prefs-general.png
+share/mate/help/mateweather/sv/figures/mateweather-prefs-locations.png
+share/mate/help/mateweather/sv/figures/mateweather_applet.png
+share/mate/help/mateweather/sv/figures/stock_weather-cloudy.png
+share/mate/help/mateweather/sv/figures/stock_weather-few-clouds.png
+share/mate/help/mateweather/sv/figures/stock_weather-fog.png
+share/mate/help/mateweather/sv/figures/stock_weather-night-clear.png
+share/mate/help/mateweather/sv/figures/stock_weather-night-few-clouds.png
+share/mate/help/mateweather/sv/figures/stock_weather-showers.png
+share/mate/help/mateweather/sv/figures/stock_weather-snow.png
+share/mate/help/mateweather/sv/figures/stock_weather-storm.png
+share/mate/help/mateweather/sv/figures/stock_weather-sunny.png
+share/mate/help/mateweather/sv/mateweather.xml
+share/mate/help/mateweather/uk/figures/mateweather-details.png
+share/mate/help/mateweather/uk/figures/mateweather-menu-prefs.png
+share/mate/help/mateweather/uk/figures/mateweather-prefs-general.png
+share/mate/help/mateweather/uk/figures/mateweather-prefs-locations.png
+share/mate/help/mateweather/uk/figures/mateweather_applet.png
+share/mate/help/mateweather/uk/figures/stock_weather-cloudy.png
+share/mate/help/mateweather/uk/figures/stock_weather-few-clouds.png
+share/mate/help/mateweather/uk/figures/stock_weather-fog.png
+share/mate/help/mateweather/uk/figures/stock_weather-night-clear.png
+share/mate/help/mateweather/uk/figures/stock_weather-night-few-clouds.png
+share/mate/help/mateweather/uk/figures/stock_weather-showers.png
+share/mate/help/mateweather/uk/figures/stock_weather-snow.png
+share/mate/help/mateweather/uk/figures/stock_weather-storm.png
+share/mate/help/mateweather/uk/figures/stock_weather-sunny.png
+share/mate/help/mateweather/uk/mateweather.xml
+share/mate/help/mateweather/zh_CN/figures/mateweather-details.png
+share/mate/help/mateweather/zh_CN/figures/mateweather-menu-prefs.png
+share/mate/help/mateweather/zh_CN/figures/mateweather-prefs-general.png
+share/mate/help/mateweather/zh_CN/figures/mateweather-prefs-locations.png
+share/mate/help/mateweather/zh_CN/figures/mateweather_applet.png
+share/mate/help/mateweather/zh_CN/figures/stock_weather-cloudy.png
+share/mate/help/mateweather/zh_CN/figures/stock_weather-few-clouds.png
+share/mate/help/mateweather/zh_CN/figures/stock_weather-fog.png
+share/mate/help/mateweather/zh_CN/figures/stock_weather-night-clear.png
+share/mate/help/mateweather/zh_CN/figures/stock_weather-night-few-clouds.png
+share/mate/help/mateweather/zh_CN/figures/stock_weather-showers.png
+share/mate/help/mateweather/zh_CN/figures/stock_weather-snow.png
+share/mate/help/mateweather/zh_CN/figures/stock_weather-storm.png
+share/mate/help/mateweather/zh_CN/figures/stock_weather-sunny.png
+share/mate/help/mateweather/zh_CN/mateweather.xml
+share/omf/mate-accessx-status/mate-accessx-status-C.omf
+share/omf/mate-accessx-status/mate-accessx-status-bg.omf
+share/omf/mate-accessx-status/mate-accessx-status-ca.omf
+share/omf/mate-accessx-status/mate-accessx-status-cs.omf
+share/omf/mate-accessx-status/mate-accessx-status-de.omf
+share/omf/mate-accessx-status/mate-accessx-status-el.omf
+share/omf/mate-accessx-status/mate-accessx-status-en_GB.omf
+share/omf/mate-accessx-status/mate-accessx-status-es.omf
+share/omf/mate-accessx-status/mate-accessx-status-eu.omf
+share/omf/mate-accessx-status/mate-accessx-status-fi.omf
+share/omf/mate-accessx-status/mate-accessx-status-fr.omf
+share/omf/mate-accessx-status/mate-accessx-status-gl.omf
+share/omf/mate-accessx-status/mate-accessx-status-it.omf
+share/omf/mate-accessx-status/mate-accessx-status-ko.omf
+share/omf/mate-accessx-status/mate-accessx-status-nl.omf
+share/omf/mate-accessx-status/mate-accessx-status-oc.omf
+share/omf/mate-accessx-status/mate-accessx-status-sv.omf
+share/omf/mate-accessx-status/mate-accessx-status-uk.omf
+share/omf/mate-accessx-status/mate-accessx-status-zh_CN.omf
+share/omf/mate-battstat/mate-battstat-C.omf
+share/omf/mate-battstat/mate-battstat-bg.omf
+share/omf/mate-battstat/mate-battstat-ca.omf
+share/omf/mate-battstat/mate-battstat-cs.omf
+share/omf/mate-battstat/mate-battstat-da.omf
+share/omf/mate-battstat/mate-battstat-de.omf
+share/omf/mate-battstat/mate-battstat-el.omf
+share/omf/mate-battstat/mate-battstat-en_GB.omf
+share/omf/mate-battstat/mate-battstat-es.omf
+share/omf/mate-battstat/mate-battstat-eu.omf
+share/omf/mate-battstat/mate-battstat-fi.omf
+share/omf/mate-battstat/mate-battstat-fr.omf
+share/omf/mate-battstat/mate-battstat-ko.omf
+share/omf/mate-battstat/mate-battstat-oc.omf
+share/omf/mate-battstat/mate-battstat-pa.omf
+share/omf/mate-battstat/mate-battstat-pt_BR.omf
+share/omf/mate-battstat/mate-battstat-sv.omf
+share/omf/mate-battstat/mate-battstat-uk.omf
+share/omf/mate-battstat/mate-battstat-zh_CN.omf
+share/omf/mate-char-palette/mate-char-palette-C.omf
+share/omf/mate-char-palette/mate-char-palette-bg.omf
+share/omf/mate-char-palette/mate-char-palette-ca.omf
+share/omf/mate-char-palette/mate-char-palette-cs.omf
+share/omf/mate-char-palette/mate-char-palette-de.omf
+share/omf/mate-char-palette/mate-char-palette-el.omf
+share/omf/mate-char-palette/mate-char-palette-en_GB.omf
+share/omf/mate-char-palette/mate-char-palette-es.omf
+share/omf/mate-char-palette/mate-char-palette-eu.omf
+share/omf/mate-char-palette/mate-char-palette-fi.omf
+share/omf/mate-char-palette/mate-char-palette-fr.omf
+share/omf/mate-char-palette/mate-char-palette-it.omf
+share/omf/mate-char-palette/mate-char-palette-ko.omf
+share/omf/mate-char-palette/mate-char-palette-nl.omf
+share/omf/mate-char-palette/mate-char-palette-oc.omf
+share/omf/mate-char-palette/mate-char-palette-pt_BR.omf
+share/omf/mate-char-palette/mate-char-palette-ru.omf
+share/omf/mate-char-palette/mate-char-palette-sv.omf
+share/omf/mate-char-palette/mate-char-palette-uk.omf
+share/omf/mate-char-palette/mate-char-palette-zh_CN.omf
+share/omf/mate-cpufreq-applet/mate-cpufreq-applet-C.omf
+share/omf/mate-cpufreq-applet/mate-cpufreq-applet-ca.omf
+share/omf/mate-cpufreq-applet/mate-cpufreq-applet-cs.omf
+share/omf/mate-cpufreq-applet/mate-cpufreq-applet-de.omf
+share/omf/mate-cpufreq-applet/mate-cpufreq-applet-el.omf
+share/omf/mate-cpufreq-applet/mate-cpufreq-applet-en_GB.omf
+share/omf/mate-cpufreq-applet/mate-cpufreq-applet-es.omf
+share/omf/mate-cpufreq-applet/mate-cpufreq-applet-eu.omf
+share/omf/mate-cpufreq-applet/mate-cpufreq-applet-fi.omf
+share/omf/mate-cpufreq-applet/mate-cpufreq-applet-fr.omf
+share/omf/mate-cpufreq-applet/mate-cpufreq-applet-hu.omf
+share/omf/mate-cpufreq-applet/mate-cpufreq-applet-nl.omf
+share/omf/mate-cpufreq-applet/mate-cpufreq-applet-oc.omf
+share/omf/mate-cpufreq-applet/mate-cpufreq-applet-pt_BR.omf
+share/omf/mate-cpufreq-applet/mate-cpufreq-applet-ru.omf
+share/omf/mate-cpufreq-applet/mate-cpufreq-applet-sv.omf
+share/omf/mate-cpufreq-applet/mate-cpufreq-applet-uk.omf
+share/omf/mate-cpufreq-applet/mate-cpufreq-applet-zh_CN.omf
+share/omf/mate-cpufreq-applet/mate-cpufreq-applet-zh_HK.omf
+share/omf/mate-cpufreq-applet/mate-cpufreq-applet-zh_TW.omf
+share/omf/mate-drivemount/mate-drivemount-C.omf
+share/omf/mate-drivemount/mate-drivemount-ca.omf
+share/omf/mate-drivemount/mate-drivemount-cs.omf
+share/omf/mate-drivemount/mate-drivemount-da.omf
+share/omf/mate-drivemount/mate-drivemount-de.omf
+share/omf/mate-drivemount/mate-drivemount-el.omf
+share/omf/mate-drivemount/mate-drivemount-en_GB.omf
+share/omf/mate-drivemount/mate-drivemount-es.omf
+share/omf/mate-drivemount/mate-drivemount-eu.omf
+share/omf/mate-drivemount/mate-drivemount-fi.omf
+share/omf/mate-drivemount/mate-drivemount-fr.omf
+share/omf/mate-drivemount/mate-drivemount-it.omf
+share/omf/mate-drivemount/mate-drivemount-ko.omf
+share/omf/mate-drivemount/mate-drivemount-oc.omf
+share/omf/mate-drivemount/mate-drivemount-pa.omf
+share/omf/mate-drivemount/mate-drivemount-ru.omf
+share/omf/mate-drivemount/mate-drivemount-sv.omf
+share/omf/mate-drivemount/mate-drivemount-uk.omf
+share/omf/mate-drivemount/mate-drivemount-zh_CN.omf
+share/omf/mate-geyes/mate-geyes-C.omf
+share/omf/mate-geyes/mate-geyes-ast.omf
+share/omf/mate-geyes/mate-geyes-bg.omf
+share/omf/mate-geyes/mate-geyes-ca.omf
+share/omf/mate-geyes/mate-geyes-cs.omf
+share/omf/mate-geyes/mate-geyes-da.omf
+share/omf/mate-geyes/mate-geyes-de.omf
+share/omf/mate-geyes/mate-geyes-el.omf
+share/omf/mate-geyes/mate-geyes-en_GB.omf
+share/omf/mate-geyes/mate-geyes-es.omf
+share/omf/mate-geyes/mate-geyes-eu.omf
+share/omf/mate-geyes/mate-geyes-fi.omf
+share/omf/mate-geyes/mate-geyes-fr.omf
+share/omf/mate-geyes/mate-geyes-it.omf
+share/omf/mate-geyes/mate-geyes-ko.omf
+share/omf/mate-geyes/mate-geyes-oc.omf
+share/omf/mate-geyes/mate-geyes-ru.omf
+share/omf/mate-geyes/mate-geyes-sv.omf
+share/omf/mate-geyes/mate-geyes-uk.omf
+share/omf/mate-geyes/mate-geyes-zh_CN.omf
+share/omf/mate-geyes/mate-geyes-zh_HK.omf
+share/omf/mate-geyes/mate-geyes-zh_TW.omf
+share/omf/mate-invest-applet/mate-invest-applet-C.omf
+share/omf/mate-invest-applet/mate-invest-applet-ca.omf
+share/omf/mate-invest-applet/mate-invest-applet-de.omf
+share/omf/mate-invest-applet/mate-invest-applet-el.omf
+share/omf/mate-invest-applet/mate-invest-applet-en_GB.omf
+share/omf/mate-invest-applet/mate-invest-applet-es.omf
+share/omf/mate-invest-applet/mate-invest-applet-fi.omf
+share/omf/mate-invest-applet/mate-invest-applet-ru.omf
+share/omf/mate-invest-applet/mate-invest-applet-sv.omf
+share/omf/mate-invest-applet/mate-invest-applet-zh_CN.omf
+share/omf/mate-multiload/mate-multiload-C.omf
+share/omf/mate-multiload/mate-multiload-ca.omf
+share/omf/mate-multiload/mate-multiload-cs.omf
+share/omf/mate-multiload/mate-multiload-de.omf
+share/omf/mate-multiload/mate-multiload-el.omf
+share/omf/mate-multiload/mate-multiload-en_GB.omf
+share/omf/mate-multiload/mate-multiload-es.omf
+share/omf/mate-multiload/mate-multiload-eu.omf
+share/omf/mate-multiload/mate-multiload-fi.omf
+share/omf/mate-multiload/mate-multiload-fr.omf
+share/omf/mate-multiload/mate-multiload-ko.omf
+share/omf/mate-multiload/mate-multiload-oc.omf
+share/omf/mate-multiload/mate-multiload-pa.omf
+share/omf/mate-multiload/mate-multiload-pt_BR.omf
+share/omf/mate-multiload/mate-multiload-ru.omf
+share/omf/mate-multiload/mate-multiload-sv.omf
+share/omf/mate-multiload/mate-multiload-uk.omf
+share/omf/mate-multiload/mate-multiload-zh_CN.omf
+share/omf/mate-stickynotes_applet/mate-stickynotes_applet-C.omf
+share/omf/mate-stickynotes_applet/mate-stickynotes_applet-ca.omf
+share/omf/mate-stickynotes_applet/mate-stickynotes_applet-cs.omf
+share/omf/mate-stickynotes_applet/mate-stickynotes_applet-de.omf
+share/omf/mate-stickynotes_applet/mate-stickynotes_applet-el.omf
+share/omf/mate-stickynotes_applet/mate-stickynotes_applet-en_GB.omf
+share/omf/mate-stickynotes_applet/mate-stickynotes_applet-es.omf
+share/omf/mate-stickynotes_applet/mate-stickynotes_applet-eu.omf
+share/omf/mate-stickynotes_applet/mate-stickynotes_applet-fi.omf
+share/omf/mate-stickynotes_applet/mate-stickynotes_applet-fr.omf
+share/omf/mate-stickynotes_applet/mate-stickynotes_applet-ko.omf
+share/omf/mate-stickynotes_applet/mate-stickynotes_applet-oc.omf
+share/omf/mate-stickynotes_applet/mate-stickynotes_applet-pa.omf
+share/omf/mate-stickynotes_applet/mate-stickynotes_applet-pt_BR.omf
+share/omf/mate-stickynotes_applet/mate-stickynotes_applet-ru.omf
+share/omf/mate-stickynotes_applet/mate-stickynotes_applet-sv.omf
+share/omf/mate-stickynotes_applet/mate-stickynotes_applet-uk.omf
+share/omf/mate-stickynotes_applet/mate-stickynotes_applet-zh_CN.omf
+share/omf/mate-stickynotes_applet/mate-stickynotes_applet-zh_HK.omf
+share/omf/mate-stickynotes_applet/mate-stickynotes_applet-zh_TW.omf
+share/omf/mate-trashapplet/mate-trashapplet-C.omf
+share/omf/mate-trashapplet/mate-trashapplet-ca.omf
+share/omf/mate-trashapplet/mate-trashapplet-cs.omf
+share/omf/mate-trashapplet/mate-trashapplet-da.omf
+share/omf/mate-trashapplet/mate-trashapplet-de.omf
+share/omf/mate-trashapplet/mate-trashapplet-el.omf
+share/omf/mate-trashapplet/mate-trashapplet-en_GB.omf
+share/omf/mate-trashapplet/mate-trashapplet-es.omf
+share/omf/mate-trashapplet/mate-trashapplet-eu.omf
+share/omf/mate-trashapplet/mate-trashapplet-fi.omf
+share/omf/mate-trashapplet/mate-trashapplet-fr.omf
+share/omf/mate-trashapplet/mate-trashapplet-hu.omf
+share/omf/mate-trashapplet/mate-trashapplet-it.omf
+share/omf/mate-trashapplet/mate-trashapplet-nl.omf
+share/omf/mate-trashapplet/mate-trashapplet-oc.omf
+share/omf/mate-trashapplet/mate-trashapplet-pa.omf
+share/omf/mate-trashapplet/mate-trashapplet-pt_BR.omf
+share/omf/mate-trashapplet/mate-trashapplet-ru.omf
+share/omf/mate-trashapplet/mate-trashapplet-sv.omf
+share/omf/mate-trashapplet/mate-trashapplet-uk.omf
+share/omf/mate-trashapplet/mate-trashapplet-zh_CN.omf
+share/omf/mate-trashapplet/mate-trashapplet-zh_HK.omf
+share/omf/mate-trashapplet/mate-trashapplet-zh_TW.omf
+share/omf/mateweather/mateweather-C.omf
+share/omf/mateweather/mateweather-ar.omf
+share/omf/mateweather/mateweather-ca.omf
+share/omf/mateweather/mateweather-cs.omf
+share/omf/mateweather/mateweather-de.omf
+share/omf/mateweather/mateweather-el.omf
+share/omf/mateweather/mateweather-en_GB.omf
+share/omf/mateweather/mateweather-es.omf
+share/omf/mateweather/mateweather-eu.omf
+share/omf/mateweather/mateweather-fi.omf
+share/omf/mateweather/mateweather-fr.omf
+share/omf/mateweather/mateweather-ko.omf
+share/omf/mateweather/mateweather-nl.omf
+share/omf/mateweather/mateweather-oc.omf
+share/omf/mateweather/mateweather-pa.omf
+share/omf/mateweather/mateweather-pt_BR.omf
+share/omf/mateweather/mateweather-ru.omf
+share/omf/mateweather/mateweather-sv.omf
+share/omf/mateweather/mateweather-uk.omf
+share/omf/mateweather/mateweather-zh_CN.omf
+share/pixmaps/mate-accessx-status-applet/ax-applet.png
+share/pixmaps/mate-accessx-status-applet/ax-bouncekeys.png
+share/pixmaps/mate-accessx-status-applet/ax-key-base.png
+share/pixmaps/mate-accessx-status-applet/ax-key-inverse.png
+share/pixmaps/mate-accessx-status-applet/ax-key-no.png
+share/pixmaps/mate-accessx-status-applet/ax-key-none.png
+share/pixmaps/mate-accessx-status-applet/ax-key-yes.png
+share/pixmaps/mate-accessx-status-applet/ax-slowkeys-no.png
+share/pixmaps/mate-accessx-status-applet/ax-slowkeys-pending.png
+share/pixmaps/mate-accessx-status-applet/ax-slowkeys-yes.png
+share/pixmaps/mate-accessx-status-applet/ax-slowkeys.png
+share/pixmaps/mate-accessx-status-applet/mousekeys-base.png
+share/pixmaps/mate-accessx-status-applet/mousekeys-default-left.png
+share/pixmaps/mate-accessx-status-applet/mousekeys-default-middle.png
+share/pixmaps/mate-accessx-status-applet/mousekeys-default-right.png
+share/pixmaps/mate-accessx-status-applet/mousekeys-pressed-left.png
+share/pixmaps/mate-accessx-status-applet/mousekeys-pressed-middle.png
+share/pixmaps/mate-accessx-status-applet/mousekeys-pressed-right.png
+share/pixmaps/mate-accessx-status-applet/sticky-alt-latched.png
+share/pixmaps/mate-accessx-status-applet/sticky-alt-locked.png
+share/pixmaps/mate-accessx-status-applet/sticky-alt-none.png
+share/pixmaps/mate-accessx-status-applet/sticky-ctrl-latched.png
+share/pixmaps/mate-accessx-status-applet/sticky-ctrl-locked.png
+share/pixmaps/mate-accessx-status-applet/sticky-ctrl-none.png
+share/pixmaps/mate-accessx-status-applet/sticky-hyper-latched.png
+share/pixmaps/mate-accessx-status-applet/sticky-hyper-locked.png
+share/pixmaps/mate-accessx-status-applet/sticky-hyper-none.png
+share/pixmaps/mate-accessx-status-applet/sticky-meta-latched.png
+share/pixmaps/mate-accessx-status-applet/sticky-meta-locked.png
+share/pixmaps/mate-accessx-status-applet/sticky-meta-none.png
+share/pixmaps/mate-accessx-status-applet/sticky-shift-latched.png
+share/pixmaps/mate-accessx-status-applet/sticky-shift-locked.png
+share/pixmaps/mate-accessx-status-applet/sticky-shift-none.png
+share/pixmaps/mate-accessx-status-applet/sticky-super-latched.png
+share/pixmaps/mate-accessx-status-applet/sticky-super-locked.png
+share/pixmaps/mate-accessx-status-applet/sticky-super-none.png
+share/pixmaps/mate-cpufreq-applet/cpufreq-100.png
+share/pixmaps/mate-cpufreq-applet/cpufreq-25.png
+share/pixmaps/mate-cpufreq-applet/cpufreq-50.png
+share/pixmaps/mate-cpufreq-applet/cpufreq-75.png
+share/pixmaps/mate-cpufreq-applet/cpufreq-na.png
+share/pixmaps/mate-stickynotes/close.png
+share/pixmaps/mate-stickynotes/locked.png
+share/pixmaps/mate-stickynotes/resize_se.png
+share/pixmaps/mate-stickynotes/resize_sw.png
+share/pixmaps/mate-stickynotes/unlocked.png
+share/polkit-1/actions/org.mate.cpufreqselector.policy
+@dirrmtry share/polkit-1/actions
+@dirrmtry share/polkit-1
+@dirrm share/pixmaps/mate-stickynotes
+@dirrm share/pixmaps/mate-cpufreq-applet
+@dirrm share/pixmaps/mate-accessx-status-applet
+@dirrm share/omf/mateweather
+@dirrm share/omf/mate-trashapplet
+@dirrm share/omf/mate-stickynotes_applet
+@dirrm share/omf/mate-multiload
+@dirrm share/omf/mate-invest-applet
+@dirrm share/omf/mate-geyes
+@dirrm share/omf/mate-drivemount
+@dirrm share/omf/mate-cpufreq-applet
+@dirrm share/omf/mate-char-palette
+@dirrm share/omf/mate-battstat
+@dirrm share/omf/mate-accessx-status
+@dirrm share/mate/help/mateweather/zh_CN/figures
+@dirrm share/mate/help/mateweather/zh_CN
+@dirrm share/mate/help/mateweather/uk/figures
+@dirrm share/mate/help/mateweather/uk
+@dirrm share/mate/help/mateweather/sv/figures
+@dirrm share/mate/help/mateweather/sv
+@dirrm share/mate/help/mateweather/ru/figures
+@dirrm share/mate/help/mateweather/ru
+@dirrm share/mate/help/mateweather/pt_BR/figures
+@dirrm share/mate/help/mateweather/pt_BR
+@dirrm share/mate/help/mateweather/pa/figures
+@dirrm share/mate/help/mateweather/pa
+@dirrm share/mate/help/mateweather/oc/figures
+@dirrm share/mate/help/mateweather/oc
+@dirrm share/mate/help/mateweather/nl/figures
+@dirrm share/mate/help/mateweather/nl
+@dirrm share/mate/help/mateweather/ko/figures
+@dirrm share/mate/help/mateweather/ko
+@dirrm share/mate/help/mateweather/fr/figures
+@dirrm share/mate/help/mateweather/fr
+@dirrm share/mate/help/mateweather/fi/figures
+@dirrm share/mate/help/mateweather/fi
+@dirrm share/mate/help/mateweather/eu/figures
+@dirrm share/mate/help/mateweather/eu
+@dirrm share/mate/help/mateweather/es/figures
+@dirrm share/mate/help/mateweather/es
+@dirrm share/mate/help/mateweather/en_GB/figures
+@dirrm share/mate/help/mateweather/en_GB
+@dirrm share/mate/help/mateweather/el/figures
+@dirrm share/mate/help/mateweather/el
+@dirrm share/mate/help/mateweather/de/figures
+@dirrm share/mate/help/mateweather/de
+@dirrm share/mate/help/mateweather/cs/figures
+@dirrm share/mate/help/mateweather/cs
+@dirrm share/mate/help/mateweather/ca/figures
+@dirrm share/mate/help/mateweather/ca
+@dirrm share/mate/help/mateweather/ar/figures
+@dirrm share/mate/help/mateweather/ar
+@dirrm share/mate/help/mateweather/C/figures
+@dirrm share/mate/help/mateweather/C
+@dirrm share/mate/help/mateweather
+@dirrm share/mate/help/mate-trashapplet/zh_TW/figures
+@dirrm share/mate/help/mate-trashapplet/zh_TW
+@dirrm share/mate/help/mate-trashapplet/zh_HK/figures
+@dirrm share/mate/help/mate-trashapplet/zh_HK
+@dirrm share/mate/help/mate-trashapplet/zh_CN/figures
+@dirrm share/mate/help/mate-trashapplet/zh_CN
+@dirrm share/mate/help/mate-trashapplet/uk/figures
+@dirrm share/mate/help/mate-trashapplet/uk
+@dirrm share/mate/help/mate-trashapplet/sv/figures
+@dirrm share/mate/help/mate-trashapplet/sv
+@dirrm share/mate/help/mate-trashapplet/ru/figures
+@dirrm share/mate/help/mate-trashapplet/ru
+@dirrm share/mate/help/mate-trashapplet/pt_BR/figures
+@dirrm share/mate/help/mate-trashapplet/pt_BR
+@dirrm share/mate/help/mate-trashapplet/pa/figures
+@dirrm share/mate/help/mate-trashapplet/pa
+@dirrm share/mate/help/mate-trashapplet/oc/figures
+@dirrm share/mate/help/mate-trashapplet/oc
+@dirrm share/mate/help/mate-trashapplet/nl/figures
+@dirrm share/mate/help/mate-trashapplet/nl
+@dirrm share/mate/help/mate-trashapplet/it/figures
+@dirrm share/mate/help/mate-trashapplet/it
+@dirrm share/mate/help/mate-trashapplet/hu/figures
+@dirrm share/mate/help/mate-trashapplet/hu
+@dirrm share/mate/help/mate-trashapplet/fr/figures
+@dirrm share/mate/help/mate-trashapplet/fr
+@dirrm share/mate/help/mate-trashapplet/fi/figures
+@dirrm share/mate/help/mate-trashapplet/fi
+@dirrm share/mate/help/mate-trashapplet/eu/figures
+@dirrm share/mate/help/mate-trashapplet/eu
+@dirrm share/mate/help/mate-trashapplet/es/figures
+@dirrm share/mate/help/mate-trashapplet/es
+@dirrm share/mate/help/mate-trashapplet/en_GB/figures
+@dirrm share/mate/help/mate-trashapplet/en_GB
+@dirrm share/mate/help/mate-trashapplet/el/figures
+@dirrm share/mate/help/mate-trashapplet/el
+@dirrm share/mate/help/mate-trashapplet/de/figures
+@dirrm share/mate/help/mate-trashapplet/de
+@dirrm share/mate/help/mate-trashapplet/da/figures
+@dirrm share/mate/help/mate-trashapplet/da
+@dirrm share/mate/help/mate-trashapplet/cs/figures
+@dirrm share/mate/help/mate-trashapplet/cs
+@dirrm share/mate/help/mate-trashapplet/ca/figures
+@dirrm share/mate/help/mate-trashapplet/ca
+@dirrm share/mate/help/mate-trashapplet/C/figures
+@dirrm share/mate/help/mate-trashapplet/C
+@dirrm share/mate/help/mate-trashapplet
+@dirrm share/mate/help/mate-stickynotes_applet/zh_TW/figures
+@dirrm share/mate/help/mate-stickynotes_applet/zh_TW
+@dirrm share/mate/help/mate-stickynotes_applet/zh_HK/figures
+@dirrm share/mate/help/mate-stickynotes_applet/zh_HK
+@dirrm share/mate/help/mate-stickynotes_applet/zh_CN/figures
+@dirrm share/mate/help/mate-stickynotes_applet/zh_CN
+@dirrm share/mate/help/mate-stickynotes_applet/uk/figures
+@dirrm share/mate/help/mate-stickynotes_applet/uk
+@dirrm share/mate/help/mate-stickynotes_applet/sv/figures
+@dirrm share/mate/help/mate-stickynotes_applet/sv
+@dirrm share/mate/help/mate-stickynotes_applet/ru/figures
+@dirrm share/mate/help/mate-stickynotes_applet/ru
+@dirrm share/mate/help/mate-stickynotes_applet/pt_BR/figures
+@dirrm share/mate/help/mate-stickynotes_applet/pt_BR
+@dirrm share/mate/help/mate-stickynotes_applet/pa/figures
+@dirrm share/mate/help/mate-stickynotes_applet/pa
+@dirrm share/mate/help/mate-stickynotes_applet/oc/figures
+@dirrm share/mate/help/mate-stickynotes_applet/oc
+@dirrm share/mate/help/mate-stickynotes_applet/ko/figures
+@dirrm share/mate/help/mate-stickynotes_applet/ko
+@dirrm share/mate/help/mate-stickynotes_applet/fr/figures
+@dirrm share/mate/help/mate-stickynotes_applet/fr
+@dirrm share/mate/help/mate-stickynotes_applet/fi/figures
+@dirrm share/mate/help/mate-stickynotes_applet/fi
+@dirrm share/mate/help/mate-stickynotes_applet/eu/figures
+@dirrm share/mate/help/mate-stickynotes_applet/eu
+@dirrm share/mate/help/mate-stickynotes_applet/es/figures
+@dirrm share/mate/help/mate-stickynotes_applet/es
+@dirrm share/mate/help/mate-stickynotes_applet/en_GB/figures
+@dirrm share/mate/help/mate-stickynotes_applet/en_GB
+@dirrm share/mate/help/mate-stickynotes_applet/el/figures
+@dirrm share/mate/help/mate-stickynotes_applet/el
+@dirrm share/mate/help/mate-stickynotes_applet/de/figures
+@dirrm share/mate/help/mate-stickynotes_applet/de
+@dirrm share/mate/help/mate-stickynotes_applet/cs/figures
+@dirrm share/mate/help/mate-stickynotes_applet/cs
+@dirrm share/mate/help/mate-stickynotes_applet/ca/figures
+@dirrm share/mate/help/mate-stickynotes_applet/ca
+@dirrm share/mate/help/mate-stickynotes_applet/C/figures
+@dirrm share/mate/help/mate-stickynotes_applet/C
+@dirrm share/mate/help/mate-stickynotes_applet
+@dirrm share/mate/help/mate-multiload/zh_CN/figures
+@dirrm share/mate/help/mate-multiload/zh_CN
+@dirrm share/mate/help/mate-multiload/uk/figures
+@dirrm share/mate/help/mate-multiload/uk
+@dirrm share/mate/help/mate-multiload/sv/figures
+@dirrm share/mate/help/mate-multiload/sv
+@dirrm share/mate/help/mate-multiload/ru/figures
+@dirrm share/mate/help/mate-multiload/ru
+@dirrm share/mate/help/mate-multiload/pt_BR/figures
+@dirrm share/mate/help/mate-multiload/pt_BR
+@dirrm share/mate/help/mate-multiload/pa/figures
+@dirrm share/mate/help/mate-multiload/pa
+@dirrm share/mate/help/mate-multiload/oc/figures
+@dirrm share/mate/help/mate-multiload/oc
+@dirrm share/mate/help/mate-multiload/ko/figures
+@dirrm share/mate/help/mate-multiload/ko
+@dirrm share/mate/help/mate-multiload/fr/figures
+@dirrm share/mate/help/mate-multiload/fr
+@dirrm share/mate/help/mate-multiload/fi/figures
+@dirrm share/mate/help/mate-multiload/fi
+@dirrm share/mate/help/mate-multiload/eu/figures
+@dirrm share/mate/help/mate-multiload/eu
+@dirrm share/mate/help/mate-multiload/es/figures
+@dirrm share/mate/help/mate-multiload/es
+@dirrm share/mate/help/mate-multiload/en_GB/figures
+@dirrm share/mate/help/mate-multiload/en_GB
+@dirrm share/mate/help/mate-multiload/el/figures
+@dirrm share/mate/help/mate-multiload/el
+@dirrm share/mate/help/mate-multiload/de/figures
+@dirrm share/mate/help/mate-multiload/de
+@dirrm share/mate/help/mate-multiload/cs/figures
+@dirrm share/mate/help/mate-multiload/cs
+@dirrm share/mate/help/mate-multiload/ca/figures
+@dirrm share/mate/help/mate-multiload/ca
+@dirrm share/mate/help/mate-multiload/C/figures
+@dirrm share/mate/help/mate-multiload/C
+@dirrm share/mate/help/mate-multiload
+@dirrm share/mate/help/mate-invest-applet/zh_CN/figures
+@dirrm share/mate/help/mate-invest-applet/zh_CN
+@dirrm share/mate/help/mate-invest-applet/sv/figures
+@dirrm share/mate/help/mate-invest-applet/sv
+@dirrm share/mate/help/mate-invest-applet/ru/figures
+@dirrm share/mate/help/mate-invest-applet/ru
+@dirrm share/mate/help/mate-invest-applet/fi/figures
+@dirrm share/mate/help/mate-invest-applet/fi
+@dirrm share/mate/help/mate-invest-applet/es/figures
+@dirrm share/mate/help/mate-invest-applet/es
+@dirrm share/mate/help/mate-invest-applet/en_GB/figures
+@dirrm share/mate/help/mate-invest-applet/en_GB
+@dirrm share/mate/help/mate-invest-applet/el/figures
+@dirrm share/mate/help/mate-invest-applet/el
+@dirrm share/mate/help/mate-invest-applet/de/figures
+@dirrm share/mate/help/mate-invest-applet/de
+@dirrm share/mate/help/mate-invest-applet/ca/figures
+@dirrm share/mate/help/mate-invest-applet/ca
+@dirrm share/mate/help/mate-invest-applet/C/figures
+@dirrm share/mate/help/mate-invest-applet/C
+@dirrm share/mate/help/mate-invest-applet
+@dirrm share/mate/help/mate-geyes/zh_TW/figures
+@dirrm share/mate/help/mate-geyes/zh_TW
+@dirrm share/mate/help/mate-geyes/zh_HK/figures
+@dirrm share/mate/help/mate-geyes/zh_HK
+@dirrm share/mate/help/mate-geyes/zh_CN/figures
+@dirrm share/mate/help/mate-geyes/zh_CN
+@dirrm share/mate/help/mate-geyes/uk/figures
+@dirrm share/mate/help/mate-geyes/uk
+@dirrm share/mate/help/mate-geyes/sv/figures
+@dirrm share/mate/help/mate-geyes/sv
+@dirrm share/mate/help/mate-geyes/ru/figures
+@dirrm share/mate/help/mate-geyes/ru
+@dirrm share/mate/help/mate-geyes/oc/figures
+@dirrm share/mate/help/mate-geyes/oc
+@dirrm share/mate/help/mate-geyes/ko/figures
+@dirrm share/mate/help/mate-geyes/ko
+@dirrm share/mate/help/mate-geyes/it/figures
+@dirrm share/mate/help/mate-geyes/it
+@dirrm share/mate/help/mate-geyes/fr/figures
+@dirrm share/mate/help/mate-geyes/fr
+@dirrm share/mate/help/mate-geyes/fi/figures
+@dirrm share/mate/help/mate-geyes/fi
+@dirrm share/mate/help/mate-geyes/eu/figures
+@dirrm share/mate/help/mate-geyes/eu
+@dirrm share/mate/help/mate-geyes/es/figures
+@dirrm share/mate/help/mate-geyes/es
+@dirrm share/mate/help/mate-geyes/en_GB/figures
+@dirrm share/mate/help/mate-geyes/en_GB
+@dirrm share/mate/help/mate-geyes/el/figures
+@dirrm share/mate/help/mate-geyes/el
+@dirrm share/mate/help/mate-geyes/de/figures
+@dirrm share/mate/help/mate-geyes/de
+@dirrm share/mate/help/mate-geyes/da/figures
+@dirrm share/mate/help/mate-geyes/da
+@dirrm share/mate/help/mate-geyes/cs/figures
+@dirrm share/mate/help/mate-geyes/cs
+@dirrm share/mate/help/mate-geyes/ca/figures
+@dirrm share/mate/help/mate-geyes/ca
+@dirrm share/mate/help/mate-geyes/bg/figures
+@dirrm share/mate/help/mate-geyes/bg
+@dirrm share/mate/help/mate-geyes/ast/figures
+@dirrm share/mate/help/mate-geyes/ast
+@dirrm share/mate/help/mate-geyes/C/figures
+@dirrm share/mate/help/mate-geyes/C
+@dirrm share/mate/help/mate-geyes
+@dirrm share/mate/help/mate-drivemount/zh_CN/figures
+@dirrm share/mate/help/mate-drivemount/zh_CN
+@dirrm share/mate/help/mate-drivemount/uk/figures
+@dirrm share/mate/help/mate-drivemount/uk
+@dirrm share/mate/help/mate-drivemount/sv/figures
+@dirrm share/mate/help/mate-drivemount/sv
+@dirrm share/mate/help/mate-drivemount/ru/figures
+@dirrm share/mate/help/mate-drivemount/ru
+@dirrm share/mate/help/mate-drivemount/pa/figures
+@dirrm share/mate/help/mate-drivemount/pa
+@dirrm share/mate/help/mate-drivemount/oc/figures
+@dirrm share/mate/help/mate-drivemount/oc
+@dirrm share/mate/help/mate-drivemount/ko/figures
+@dirrm share/mate/help/mate-drivemount/ko
+@dirrm share/mate/help/mate-drivemount/it/figures
+@dirrm share/mate/help/mate-drivemount/it
+@dirrm share/mate/help/mate-drivemount/fr/figures
+@dirrm share/mate/help/mate-drivemount/fr
+@dirrm share/mate/help/mate-drivemount/fi/figures
+@dirrm share/mate/help/mate-drivemount/fi
+@dirrm share/mate/help/mate-drivemount/eu/figures
+@dirrm share/mate/help/mate-drivemount/eu
+@dirrm share/mate/help/mate-drivemount/es/figures
+@dirrm share/mate/help/mate-drivemount/es
+@dirrm share/mate/help/mate-drivemount/en_GB/figures
+@dirrm share/mate/help/mate-drivemount/en_GB
+@dirrm share/mate/help/mate-drivemount/el/figures
+@dirrm share/mate/help/mate-drivemount/el
+@dirrm share/mate/help/mate-drivemount/de/figures
+@dirrm share/mate/help/mate-drivemount/de
+@dirrm share/mate/help/mate-drivemount/da/figures
+@dirrm share/mate/help/mate-drivemount/da
+@dirrm share/mate/help/mate-drivemount/cs/figures
+@dirrm share/mate/help/mate-drivemount/cs
+@dirrm share/mate/help/mate-drivemount/ca/figures
+@dirrm share/mate/help/mate-drivemount/ca
+@dirrm share/mate/help/mate-drivemount/C/figures
+@dirrm share/mate/help/mate-drivemount/C
+@dirrm share/mate/help/mate-drivemount
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/zh_TW/figures
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/zh_TW
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/zh_HK/figures
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/zh_HK
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/zh_CN/figures
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/zh_CN
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/uk/figures
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/uk
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/sv/figures
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/sv
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/ru/figures
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/ru
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/pt_BR/figures
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/pt_BR
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/oc/figures
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/oc
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/nl/figures
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/nl
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/hu/figures
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/hu
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/fr/figures
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/fr
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/fi/figures
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/fi
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/eu/figures
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/eu
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/es/figures
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/es
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/en_GB/figures
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/en_GB
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/el/figures
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/el
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/de/figures
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/de
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/cs/figures
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/cs
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/ca/figures
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/ca
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/C/figures
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet/C
+%%CPUFREQ%%@dirrm share/mate/help/mate-cpufreq-applet
+@dirrm share/mate/help/mate-char-palette/zh_CN/figures
+@dirrm share/mate/help/mate-char-palette/zh_CN
+@dirrm share/mate/help/mate-char-palette/uk/figures
+@dirrm share/mate/help/mate-char-palette/uk
+@dirrm share/mate/help/mate-char-palette/sv/figures
+@dirrm share/mate/help/mate-char-palette/sv
+@dirrm share/mate/help/mate-char-palette/ru/figures
+@dirrm share/mate/help/mate-char-palette/ru
+@dirrm share/mate/help/mate-char-palette/pt_BR/figures
+@dirrm share/mate/help/mate-char-palette/pt_BR
+@dirrm share/mate/help/mate-char-palette/oc/figures
+@dirrm share/mate/help/mate-char-palette/oc
+@dirrm share/mate/help/mate-char-palette/nl/figures
+@dirrm share/mate/help/mate-char-palette/nl
+@dirrm share/mate/help/mate-char-palette/ko/figures
+@dirrm share/mate/help/mate-char-palette/ko
+@dirrm share/mate/help/mate-char-palette/it/figures
+@dirrm share/mate/help/mate-char-palette/it
+@dirrm share/mate/help/mate-char-palette/fr/figures
+@dirrm share/mate/help/mate-char-palette/fr
+@dirrm share/mate/help/mate-char-palette/fi/figures
+@dirrm share/mate/help/mate-char-palette/fi
+@dirrm share/mate/help/mate-char-palette/eu/figures
+@dirrm share/mate/help/mate-char-palette/eu
+@dirrm share/mate/help/mate-char-palette/es/figures
+@dirrm share/mate/help/mate-char-palette/es
+@dirrm share/mate/help/mate-char-palette/en_GB/figures
+@dirrm share/mate/help/mate-char-palette/en_GB
+@dirrm share/mate/help/mate-char-palette/el/figures
+@dirrm share/mate/help/mate-char-palette/el
+@dirrm share/mate/help/mate-char-palette/de/figures
+@dirrm share/mate/help/mate-char-palette/de
+@dirrm share/mate/help/mate-char-palette/cs/figures
+@dirrm share/mate/help/mate-char-palette/cs
+@dirrm share/mate/help/mate-char-palette/ca/figures
+@dirrm share/mate/help/mate-char-palette/ca
+@dirrm share/mate/help/mate-char-palette/bg/figures
+@dirrm share/mate/help/mate-char-palette/bg
+@dirrm share/mate/help/mate-char-palette/C/figures
+@dirrm share/mate/help/mate-char-palette/C
+@dirrm share/mate/help/mate-char-palette
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/zh_CN/figures
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/zh_CN
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/uk/figures
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/uk
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/sv/figures
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/sv
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/pt_BR/figures
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/pt_BR
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/pa/figures
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/pa
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/oc/figures
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/oc
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/ko/figures
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/ko
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/fr/figures
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/fr
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/fi/figures
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/fi
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/eu/figures
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/eu
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/es/figures
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/es
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/en_GB/figures
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/en_GB
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/el/figures
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/el
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/de/figures
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/de
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/da/figures
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/da
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/cs/figures
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/cs
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/ca/figures
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/ca
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/bg/figures
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/bg
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/C/figures
+%%BATTERY%%@dirrm share/mate/help/mate-battstat/C
+%%BATTERY%%@dirrm share/mate/help/mate-battstat
+@dirrm share/mate/help/mate-accessx-status/zh_CN/figures
+@dirrm share/mate/help/mate-accessx-status/zh_CN
+@dirrm share/mate/help/mate-accessx-status/uk/figures
+@dirrm share/mate/help/mate-accessx-status/uk
+@dirrm share/mate/help/mate-accessx-status/sv/figures
+@dirrm share/mate/help/mate-accessx-status/sv
+@dirrm share/mate/help/mate-accessx-status/oc/figures
+@dirrm share/mate/help/mate-accessx-status/oc
+@dirrm share/mate/help/mate-accessx-status/nl/figures
+@dirrm share/mate/help/mate-accessx-status/nl
+@dirrm share/mate/help/mate-accessx-status/ko/figures
+@dirrm share/mate/help/mate-accessx-status/ko
+@dirrm share/mate/help/mate-accessx-status/it/figures
+@dirrm share/mate/help/mate-accessx-status/it
+@dirrm share/mate/help/mate-accessx-status/gl/figures
+@dirrm share/mate/help/mate-accessx-status/gl
+@dirrm share/mate/help/mate-accessx-status/fr/figures
+@dirrm share/mate/help/mate-accessx-status/fr
+@dirrm share/mate/help/mate-accessx-status/fi/figures
+@dirrm share/mate/help/mate-accessx-status/fi
+@dirrm share/mate/help/mate-accessx-status/eu/figures
+@dirrm share/mate/help/mate-accessx-status/eu
+@dirrm share/mate/help/mate-accessx-status/es/figures
+@dirrm share/mate/help/mate-accessx-status/es
+@dirrm share/mate/help/mate-accessx-status/en_GB/figures
+@dirrm share/mate/help/mate-accessx-status/en_GB
+@dirrm share/mate/help/mate-accessx-status/el/figures
+@dirrm share/mate/help/mate-accessx-status/el
+@dirrm share/mate/help/mate-accessx-status/de/figures
+@dirrm share/mate/help/mate-accessx-status/de
+@dirrm share/mate/help/mate-accessx-status/cs/figures
+@dirrm share/mate/help/mate-accessx-status/cs
+@dirrm share/mate/help/mate-accessx-status/ca/figures
+@dirrm share/mate/help/mate-accessx-status/ca
+@dirrm share/mate/help/mate-accessx-status/bg/figures
+@dirrm share/mate/help/mate-accessx-status/bg
+@dirrm share/mate/help/mate-accessx-status/C/figures
+@dirrm share/mate/help/mate-accessx-status/C
+@dirrm share/mate/help/mate-accessx-status
+@dirrmtry share/mate-panel/applets
+@dirrmtry share/mate-panel
+@dirrm %%DATADIR%%/invest-applet
+@dirrm %%DATADIR%%/geyes/Tango
+@dirrm %%DATADIR%%/geyes/Horrid
+@dirrm %%DATADIR%%/geyes/Default-tiny
+@dirrm %%DATADIR%%/geyes/Default
+@dirrm %%DATADIR%%/geyes/Bloodshot
+@dirrm %%DATADIR%%/geyes/Bizarre
+@dirrm %%DATADIR%%/geyes
+@dirrm %%DATADIR%%/builder
+@dirrm %%DATADIR%%
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ps/LC_MESSAGES
+@dirrmtry share/locale/ps
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/hy/LC_MESSAGES
+@dirrmtry share/locale/hy
+@dirrmtry share/locale/es_VE/LC_MESSAGES
+@dirrmtry share/locale/es_VE
+@dirrmtry share/locale/es_UY/LC_MESSAGES
+@dirrmtry share/locale/es_UY
+@dirrmtry share/locale/es_SV/LC_MESSAGES
+@dirrmtry share/locale/es_SV
+@dirrmtry share/locale/es_PR/LC_MESSAGES
+@dirrmtry share/locale/es_PR
+@dirrmtry share/locale/es_PE/LC_MESSAGES
+@dirrmtry share/locale/es_PE
+@dirrmtry share/locale/es_PA/LC_MESSAGES
+@dirrmtry share/locale/es_PA
+@dirrmtry share/locale/es_NI/LC_MESSAGES
+@dirrmtry share/locale/es_NI
+@dirrmtry share/locale/es_HN/LC_MESSAGES
+@dirrmtry share/locale/es_HN
+@dirrmtry share/locale/es_GT/LC_MESSAGES
+@dirrmtry share/locale/es_GT
+@dirrmtry share/locale/es_EC/LC_MESSAGES
+@dirrmtry share/locale/es_EC
+@dirrmtry share/locale/es_DO/LC_MESSAGES
+@dirrmtry share/locale/es_DO
+@dirrmtry share/locale/es_CR/LC_MESSAGES
+@dirrmtry share/locale/es_CR
+@dirrmtry share/locale/es_CO/LC_MESSAGES
+@dirrmtry share/locale/es_CO
+@dirrmtry share/locale/es_CL/LC_MESSAGES
+@dirrmtry share/locale/es_CL
+@dirrmtry share/locale/es_AR/LC_MESSAGES
+@dirrmtry share/locale/es_AR
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/crh/LC_MESSAGES
+@dirrmtry share/locale/crh
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
+@dirrmtry share/icons/mate/48x48/apps
+@dirrmtry share/icons/mate/48x48
+@dirrmtry share/icons/mate
+@dirrmtry share/icons
+@dirrm %%PYTHON_SITELIBDIR%%/mate_invest

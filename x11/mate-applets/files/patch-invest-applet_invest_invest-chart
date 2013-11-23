@@ -1,0 +1,13 @@
+--- invest-applet/invest/mate-invest-chart.orig	2008-03-15 16:34:50.000000000 -0400
++++ invest-applet/invest/mate-invest-chart	2008-04-28 13:29:13.000000000 -0400
+@@ -6,8 +6,8 @@ import sys, mate_invest.chart, gtk
+ import gettext, locale
+ gettext.bindtextdomain(mate_invest.defs.GETTEXT_PACKAGE, mate_invest.defs.MATELOCALEDIR)
+ gettext.textdomain(mate_invest.defs.GETTEXT_PACKAGE)
+-locale.bindtextdomain(mate_invest.defs.GETTEXT_PACKAGE, mate_invest.defs.MATELOCALEDIR)
+-locale.textdomain(mate_invest.defs.GETTEXT_PACKAGE)
++#locale.bindtextdomain(mate_invest.defs.GETTEXT_PACKAGE, mate_invest.defs.MATELOCALEDIR)
++#locale.textdomain(mate_invest.defs.GETTEXT_PACKAGE)
+ 
+ if __name__ == "__main__":
+ 	win = mate_invest.chart.show_chart(sys.argv[1:])
