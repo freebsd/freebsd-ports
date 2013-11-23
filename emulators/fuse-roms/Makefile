@@ -13,7 +13,7 @@ DISTNAME=	fuse-emulator-roms-0.9.0-5.fc19.noarch.rpm:1 Opus-22.rom:2
 EXTRACT_SUFX=
 EXTRACT_ONLY=	fuse-emulator-roms-0.9.0-5.fc19.noarch.rpm
 
-MAINTAINER=	wulf@mail.mipt.ru
+MAINTAINER=	wulf@cicgroup.ru
 COMMENT=	Spectrum ROM files, for use with the Fuse emulator
 
 PORTSCOUT=	ignore:1
