@@ -1,0 +1,198 @@
+bin/matewnck-urgency-monitor
+bin/matewnckprop
+include/libmatewnck/libmatewnck/application.h
+include/libmatewnck/libmatewnck/class-group.h
+include/libmatewnck/libmatewnck/libmatewnck.h
+include/libmatewnck/libmatewnck/matewnck-enum-types.h
+include/libmatewnck/libmatewnck/pager.h
+include/libmatewnck/libmatewnck/screen.h
+include/libmatewnck/libmatewnck/selector.h
+include/libmatewnck/libmatewnck/tasklist.h
+include/libmatewnck/libmatewnck/util.h
+include/libmatewnck/libmatewnck/version.h
+include/libmatewnck/libmatewnck/window-action-menu.h
+include/libmatewnck/libmatewnck/window.h
+include/libmatewnck/libmatewnck/workspace.h
+lib/girepository-1.0/Matewnck-1.0.typelib
+lib/libmatewnck.a
+lib/libmatewnck.la
+lib/libmatewnck.so
+lib/libmatewnck.so.0
+libdata/pkgconfig/libmatewnck.pc
+%%DOCSDIR%%/MatewnckApplication.html
+%%DOCSDIR%%/MatewnckClassGroup.html
+%%DOCSDIR%%/MatewnckPager.html
+%%DOCSDIR%%/MatewnckScreen.html
+%%DOCSDIR%%/MatewnckSelector.html
+%%DOCSDIR%%/MatewnckTasklist.html
+%%DOCSDIR%%/MatewnckWindow.html
+%%DOCSDIR%%/MatewnckWorkspace.html
+%%DOCSDIR%%/core.html
+%%DOCSDIR%%/home.png
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/index.sgml
+%%DOCSDIR%%/indexes.html
+%%DOCSDIR%%/intro.html
+%%DOCSDIR%%/ix01.html
+%%DOCSDIR%%/ix02.html
+%%DOCSDIR%%/ix03.html
+%%DOCSDIR%%/ix04.html
+%%DOCSDIR%%/ix05.html
+%%DOCSDIR%%/ix06.html
+%%DOCSDIR%%/ix07.html
+%%DOCSDIR%%/ix08.html
+%%DOCSDIR%%/ix09.html
+%%DOCSDIR%%/ix10.html
+%%DOCSDIR%%/ix11.html
+%%DOCSDIR%%/ix12.html
+%%DOCSDIR%%/ix13.html
+%%DOCSDIR%%/left.png
+%%DOCSDIR%%/libmatewnck-Miscellaneous-Functions.html
+%%DOCSDIR%%/libmatewnck-Resource-Usage-of-X-Clients.html
+%%DOCSDIR%%/libmatewnck-Version-Information.html
+%%DOCSDIR%%/libmatewnck-Window-Action-Menu.html
+%%DOCSDIR%%/libmatewnck.devhelp2
+%%DOCSDIR%%/right.png
+%%DOCSDIR%%/style.css
+%%DOCSDIR%%/up.png
+%%DOCSDIR%%/utils.html
+%%DOCSDIR%%/widgets.html
+share/locale/am/LC_MESSAGES/libmatewnck.mo
+share/locale/ar/LC_MESSAGES/libmatewnck.mo
+share/locale/as/LC_MESSAGES/libmatewnck.mo
+share/locale/ast/LC_MESSAGES/libmatewnck.mo
+share/locale/az/LC_MESSAGES/libmatewnck.mo
+share/locale/be/LC_MESSAGES/libmatewnck.mo
+share/locale/be@latin/LC_MESSAGES/libmatewnck.mo
+share/locale/bg/LC_MESSAGES/libmatewnck.mo
+share/locale/bn/LC_MESSAGES/libmatewnck.mo
+share/locale/bn_IN/LC_MESSAGES/libmatewnck.mo
+share/locale/br/LC_MESSAGES/libmatewnck.mo
+share/locale/bs/LC_MESSAGES/libmatewnck.mo
+share/locale/ca/LC_MESSAGES/libmatewnck.mo
+share/locale/ca@valencia/LC_MESSAGES/libmatewnck.mo
+share/locale/crh/LC_MESSAGES/libmatewnck.mo
+share/locale/cs/LC_MESSAGES/libmatewnck.mo
+share/locale/cy/LC_MESSAGES/libmatewnck.mo
+share/locale/da/LC_MESSAGES/libmatewnck.mo
+share/locale/de/LC_MESSAGES/libmatewnck.mo
+share/locale/dz/LC_MESSAGES/libmatewnck.mo
+share/locale/el/LC_MESSAGES/libmatewnck.mo
+share/locale/en@shaw/LC_MESSAGES/libmatewnck.mo
+share/locale/en_AU/LC_MESSAGES/libmatewnck.mo
+share/locale/en_CA/LC_MESSAGES/libmatewnck.mo
+share/locale/en_GB/LC_MESSAGES/libmatewnck.mo
+share/locale/eo/LC_MESSAGES/libmatewnck.mo
+share/locale/es/LC_MESSAGES/libmatewnck.mo
+share/locale/et/LC_MESSAGES/libmatewnck.mo
+share/locale/eu/LC_MESSAGES/libmatewnck.mo
+share/locale/fa/LC_MESSAGES/libmatewnck.mo
+share/locale/fi/LC_MESSAGES/libmatewnck.mo
+share/locale/fr/LC_MESSAGES/libmatewnck.mo
+share/locale/ga/LC_MESSAGES/libmatewnck.mo
+share/locale/gl/LC_MESSAGES/libmatewnck.mo
+share/locale/gu/LC_MESSAGES/libmatewnck.mo
+share/locale/he/LC_MESSAGES/libmatewnck.mo
+share/locale/hi/LC_MESSAGES/libmatewnck.mo
+share/locale/hr/LC_MESSAGES/libmatewnck.mo
+share/locale/hu/LC_MESSAGES/libmatewnck.mo
+share/locale/id/LC_MESSAGES/libmatewnck.mo
+share/locale/is/LC_MESSAGES/libmatewnck.mo
+share/locale/it/LC_MESSAGES/libmatewnck.mo
+share/locale/ja/LC_MESSAGES/libmatewnck.mo
+share/locale/ka/LC_MESSAGES/libmatewnck.mo
+share/locale/kk/LC_MESSAGES/libmatewnck.mo
+share/locale/kn/LC_MESSAGES/libmatewnck.mo
+share/locale/ko/LC_MESSAGES/libmatewnck.mo
+share/locale/ku/LC_MESSAGES/libmatewnck.mo
+share/locale/ky/LC_MESSAGES/libmatewnck.mo
+share/locale/li/LC_MESSAGES/libmatewnck.mo
+share/locale/lt/LC_MESSAGES/libmatewnck.mo
+share/locale/lv/LC_MESSAGES/libmatewnck.mo
+share/locale/mai/LC_MESSAGES/libmatewnck.mo
+share/locale/mi/LC_MESSAGES/libmatewnck.mo
+share/locale/mk/LC_MESSAGES/libmatewnck.mo
+share/locale/ml/LC_MESSAGES/libmatewnck.mo
+share/locale/mn/LC_MESSAGES/libmatewnck.mo
+share/locale/mr/LC_MESSAGES/libmatewnck.mo
+share/locale/ms/LC_MESSAGES/libmatewnck.mo
+share/locale/nb/LC_MESSAGES/libmatewnck.mo
+share/locale/ne/LC_MESSAGES/libmatewnck.mo
+share/locale/nl/LC_MESSAGES/libmatewnck.mo
+share/locale/nn/LC_MESSAGES/libmatewnck.mo
+share/locale/oc/LC_MESSAGES/libmatewnck.mo
+share/locale/or/LC_MESSAGES/libmatewnck.mo
+share/locale/pa/LC_MESSAGES/libmatewnck.mo
+share/locale/pl/LC_MESSAGES/libmatewnck.mo
+share/locale/pt/LC_MESSAGES/libmatewnck.mo
+share/locale/pt_BR/LC_MESSAGES/libmatewnck.mo
+share/locale/ro/LC_MESSAGES/libmatewnck.mo
+share/locale/ru/LC_MESSAGES/libmatewnck.mo
+share/locale/rw/LC_MESSAGES/libmatewnck.mo
+share/locale/si/LC_MESSAGES/libmatewnck.mo
+share/locale/sk/LC_MESSAGES/libmatewnck.mo
+share/locale/sl/LC_MESSAGES/libmatewnck.mo
+share/locale/sq/LC_MESSAGES/libmatewnck.mo
+share/locale/sr/LC_MESSAGES/libmatewnck.mo
+share/locale/sr@latin/LC_MESSAGES/libmatewnck.mo
+share/locale/sv/LC_MESSAGES/libmatewnck.mo
+share/locale/ta/LC_MESSAGES/libmatewnck.mo
+share/locale/te/LC_MESSAGES/libmatewnck.mo
+share/locale/th/LC_MESSAGES/libmatewnck.mo
+share/locale/tr/LC_MESSAGES/libmatewnck.mo
+share/locale/ug/LC_MESSAGES/libmatewnck.mo
+share/locale/uk/LC_MESSAGES/libmatewnck.mo
+share/locale/vi/LC_MESSAGES/libmatewnck.mo
+share/locale/wa/LC_MESSAGES/libmatewnck.mo
+share/locale/xh/LC_MESSAGES/libmatewnck.mo
+share/locale/zh_CN/LC_MESSAGES/libmatewnck.mo
+share/locale/zh_HK/LC_MESSAGES/libmatewnck.mo
+share/locale/zh_TW/LC_MESSAGES/libmatewnck.mo
+share/gir-1.0/Matewnck-1.0.gir
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mi/LC_MESSAGES
+@dirrmtry share/locale/mi
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/crh/LC_MESSAGES
+@dirrmtry share/locale/crh
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
+@dirrm %%DOCSDIR%%
+@dirrm include/libmatewnck/libmatewnck
+@dirrm include/libmatewnck

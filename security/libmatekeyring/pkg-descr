@@ -1,0 +1,5 @@
+Mate-keyring is a program that keep password and other secrets for
+users. The library libmate-keyring is used by applications to integrate
+with the MATE keyring system.
+
+WWW: http://mate-desktop.org/

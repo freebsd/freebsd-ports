@@ -1,0 +1,288 @@
+bin/mate-terminal
+man/man1/mate-terminal.1.gz
+share/applications/mate-terminal.desktop
+share/locale/am/LC_MESSAGES/mate-terminal.mo
+share/locale/ar/LC_MESSAGES/mate-terminal.mo
+share/locale/as/LC_MESSAGES/mate-terminal.mo
+share/locale/ast/LC_MESSAGES/mate-terminal.mo
+share/locale/az/LC_MESSAGES/mate-terminal.mo
+share/locale/be/LC_MESSAGES/mate-terminal.mo
+share/locale/be@latin/LC_MESSAGES/mate-terminal.mo
+share/locale/bg/LC_MESSAGES/mate-terminal.mo
+share/locale/bn/LC_MESSAGES/mate-terminal.mo
+share/locale/bn_IN/LC_MESSAGES/mate-terminal.mo
+share/locale/br/LC_MESSAGES/mate-terminal.mo
+share/locale/bs/LC_MESSAGES/mate-terminal.mo
+share/locale/ca/LC_MESSAGES/mate-terminal.mo
+share/locale/ca@valencia/LC_MESSAGES/mate-terminal.mo
+share/locale/cs/LC_MESSAGES/mate-terminal.mo
+share/locale/cy/LC_MESSAGES/mate-terminal.mo
+share/locale/da/LC_MESSAGES/mate-terminal.mo
+share/locale/de/LC_MESSAGES/mate-terminal.mo
+share/locale/dz/LC_MESSAGES/mate-terminal.mo
+share/locale/el/LC_MESSAGES/mate-terminal.mo
+share/locale/en@shaw/LC_MESSAGES/mate-terminal.mo
+share/locale/en_AU/LC_MESSAGES/mate-terminal.mo
+share/locale/en_CA/LC_MESSAGES/mate-terminal.mo
+share/locale/en_GB/LC_MESSAGES/mate-terminal.mo
+share/locale/eo/LC_MESSAGES/mate-terminal.mo
+share/locale/es/LC_MESSAGES/mate-terminal.mo
+share/locale/et/LC_MESSAGES/mate-terminal.mo
+share/locale/eu/LC_MESSAGES/mate-terminal.mo
+share/locale/fa/LC_MESSAGES/mate-terminal.mo
+share/locale/fi/LC_MESSAGES/mate-terminal.mo
+share/locale/fr/LC_MESSAGES/mate-terminal.mo
+share/locale/fur/LC_MESSAGES/mate-terminal.mo
+share/locale/ga/LC_MESSAGES/mate-terminal.mo
+share/locale/gl/LC_MESSAGES/mate-terminal.mo
+share/locale/gu/LC_MESSAGES/mate-terminal.mo
+share/locale/he/LC_MESSAGES/mate-terminal.mo
+share/locale/hi/LC_MESSAGES/mate-terminal.mo
+share/locale/hr/LC_MESSAGES/mate-terminal.mo
+share/locale/hu/LC_MESSAGES/mate-terminal.mo
+share/locale/hy/LC_MESSAGES/mate-terminal.mo
+share/locale/id/LC_MESSAGES/mate-terminal.mo
+share/locale/it/LC_MESSAGES/mate-terminal.mo
+share/locale/ja/LC_MESSAGES/mate-terminal.mo
+share/locale/ka/LC_MESSAGES/mate-terminal.mo
+share/locale/kk/LC_MESSAGES/mate-terminal.mo
+share/locale/kn/LC_MESSAGES/mate-terminal.mo
+share/locale/ko/LC_MESSAGES/mate-terminal.mo
+share/locale/ku/LC_MESSAGES/mate-terminal.mo
+share/locale/ky/LC_MESSAGES/mate-terminal.mo
+share/locale/lt/LC_MESSAGES/mate-terminal.mo
+share/locale/lv/LC_MESSAGES/mate-terminal.mo
+share/locale/mai/LC_MESSAGES/mate-terminal.mo
+share/locale/mg/LC_MESSAGES/mate-terminal.mo
+share/locale/mk/LC_MESSAGES/mate-terminal.mo
+share/locale/ml/LC_MESSAGES/mate-terminal.mo
+share/locale/mn/LC_MESSAGES/mate-terminal.mo
+share/locale/mr/LC_MESSAGES/mate-terminal.mo
+share/locale/ms/LC_MESSAGES/mate-terminal.mo
+share/locale/nb/LC_MESSAGES/mate-terminal.mo
+share/locale/nds/LC_MESSAGES/mate-terminal.mo
+share/locale/ne/LC_MESSAGES/mate-terminal.mo
+share/locale/nl/LC_MESSAGES/mate-terminal.mo
+share/locale/nn/LC_MESSAGES/mate-terminal.mo
+share/locale/oc/LC_MESSAGES/mate-terminal.mo
+share/locale/or/LC_MESSAGES/mate-terminal.mo
+share/locale/pa/LC_MESSAGES/mate-terminal.mo
+share/locale/pl/LC_MESSAGES/mate-terminal.mo
+share/locale/ps/LC_MESSAGES/mate-terminal.mo
+share/locale/pt/LC_MESSAGES/mate-terminal.mo
+share/locale/pt_BR/LC_MESSAGES/mate-terminal.mo
+share/locale/ro/LC_MESSAGES/mate-terminal.mo
+share/locale/ru/LC_MESSAGES/mate-terminal.mo
+share/locale/rw/LC_MESSAGES/mate-terminal.mo
+share/locale/si/LC_MESSAGES/mate-terminal.mo
+share/locale/sk/LC_MESSAGES/mate-terminal.mo
+share/locale/sl/LC_MESSAGES/mate-terminal.mo
+share/locale/sq/LC_MESSAGES/mate-terminal.mo
+share/locale/sr/LC_MESSAGES/mate-terminal.mo
+share/locale/sr@latin/LC_MESSAGES/mate-terminal.mo
+share/locale/sv/LC_MESSAGES/mate-terminal.mo
+share/locale/ta/LC_MESSAGES/mate-terminal.mo
+share/locale/te/LC_MESSAGES/mate-terminal.mo
+share/locale/th/LC_MESSAGES/mate-terminal.mo
+share/locale/tr/LC_MESSAGES/mate-terminal.mo
+share/locale/ug/LC_MESSAGES/mate-terminal.mo
+share/locale/uk/LC_MESSAGES/mate-terminal.mo
+share/locale/vi/LC_MESSAGES/mate-terminal.mo
+share/locale/wa/LC_MESSAGES/mate-terminal.mo
+share/locale/xh/LC_MESSAGES/mate-terminal.mo
+share/locale/zh_CN/LC_MESSAGES/mate-terminal.mo
+share/locale/zh_HK/LC_MESSAGES/mate-terminal.mo
+share/locale/zh_TW/LC_MESSAGES/mate-terminal.mo
+%%DATADIR%%/encodings-dialog.ui
+%%DATADIR%%/find-dialog.ui
+%%DATADIR%%/keybinding-editor.ui
+%%DATADIR%%/profile-manager.ui
+%%DATADIR%%/profile-new-dialog.ui
+%%DATADIR%%/profile-preferences.ui
+%%DATADIR%%/skey-challenge.ui
+%%DATADIR%%/terminal.about
+%%DATADIR%%/terminal.xml
+share/mate/help/mate-terminal/C/figures/mate-terminal-default.png
+share/mate/help/mate-terminal/C/figures/mate-terminal-tabbed.png
+share/mate/help/mate-terminal/C/legal.xml
+share/mate/help/mate-terminal/C/mate-terminal.xml
+share/mate/help/mate-terminal/bg/figures/mate-terminal-default.png
+share/mate/help/mate-terminal/bg/figures/mate-terminal-tabbed.png
+share/mate/help/mate-terminal/bg/legal.xml
+share/mate/help/mate-terminal/bg/mate-terminal.xml
+share/mate/help/mate-terminal/ca/figures/mate-terminal-default.png
+share/mate/help/mate-terminal/ca/figures/mate-terminal-tabbed.png
+share/mate/help/mate-terminal/ca/mate-terminal.xml
+share/mate/help/mate-terminal/cs/figures/mate-terminal-default.png
+share/mate/help/mate-terminal/cs/figures/mate-terminal-tabbed.png
+share/mate/help/mate-terminal/cs/mate-terminal.xml
+share/mate/help/mate-terminal/da/figures/mate-terminal-default.png
+share/mate/help/mate-terminal/da/figures/mate-terminal-tabbed.png
+share/mate/help/mate-terminal/da/mate-terminal.xml
+share/mate/help/mate-terminal/de/figures/mate-terminal-default.png
+share/mate/help/mate-terminal/de/figures/mate-terminal-tabbed.png
+share/mate/help/mate-terminal/de/mate-terminal.xml
+share/mate/help/mate-terminal/el/figures/mate-terminal-default.png
+share/mate/help/mate-terminal/el/figures/mate-terminal-tabbed.png
+share/mate/help/mate-terminal/el/mate-terminal.xml
+share/mate/help/mate-terminal/en_GB/figures/mate-terminal-default.png
+share/mate/help/mate-terminal/en_GB/figures/mate-terminal-tabbed.png
+share/mate/help/mate-terminal/en_GB/mate-terminal.xml
+share/mate/help/mate-terminal/es/figures/mate-terminal-default.png
+share/mate/help/mate-terminal/es/figures/mate-terminal-tabbed.png
+share/mate/help/mate-terminal/es/mate-terminal.xml
+share/mate/help/mate-terminal/fr/figures/mate-terminal-default.png
+share/mate/help/mate-terminal/fr/figures/mate-terminal-tabbed.png
+share/mate/help/mate-terminal/fr/mate-terminal.xml
+share/mate/help/mate-terminal/it/figures/mate-terminal-default.png
+share/mate/help/mate-terminal/it/figures/mate-terminal-tabbed.png
+share/mate/help/mate-terminal/it/mate-terminal.xml
+share/mate/help/mate-terminal/ja/figures/mate-terminal-default.png
+share/mate/help/mate-terminal/ja/figures/mate-terminal-tabbed.png
+share/mate/help/mate-terminal/ja/legal.xml
+share/mate/help/mate-terminal/ja/mate-terminal.xml
+share/mate/help/mate-terminal/ko/figures/mate-terminal-default.png
+share/mate/help/mate-terminal/ko/figures/mate-terminal-tabbed.png
+share/mate/help/mate-terminal/ko/mate-terminal.xml
+share/mate/help/mate-terminal/oc/figures/mate-terminal-default.png
+share/mate/help/mate-terminal/oc/figures/mate-terminal-tabbed.png
+share/mate/help/mate-terminal/oc/mate-terminal.xml
+share/mate/help/mate-terminal/pt_BR/figures/mate-terminal-default.png
+share/mate/help/mate-terminal/pt_BR/figures/mate-terminal-tabbed.png
+share/mate/help/mate-terminal/pt_BR/mate-terminal.xml
+share/mate/help/mate-terminal/ro/figures/mate-terminal-default.png
+share/mate/help/mate-terminal/ro/figures/mate-terminal-tabbed.png
+share/mate/help/mate-terminal/ro/legal.xml
+share/mate/help/mate-terminal/ro/mate-terminal.xml
+share/mate/help/mate-terminal/ru/figures/mate-terminal-default.png
+share/mate/help/mate-terminal/ru/figures/mate-terminal-tabbed.png
+share/mate/help/mate-terminal/ru/mate-terminal.xml
+share/mate/help/mate-terminal/sv/figures/mate-terminal-default.png
+share/mate/help/mate-terminal/sv/figures/mate-terminal-tabbed.png
+share/mate/help/mate-terminal/sv/mate-terminal.xml
+share/mate/help/mate-terminal/uk/figures/mate-terminal-default.png
+share/mate/help/mate-terminal/uk/figures/mate-terminal-tabbed.png
+share/mate/help/mate-terminal/uk/mate-terminal.xml
+share/mate/help/mate-terminal/zh_CN/figures/mate-terminal-default.png
+share/mate/help/mate-terminal/zh_CN/figures/mate-terminal-tabbed.png
+share/mate/help/mate-terminal/zh_CN/mate-terminal.xml
+share/mate/help/mate-terminal/zh_TW/figures/mate-terminal-default.png
+share/mate/help/mate-terminal/zh_TW/figures/mate-terminal-tabbed.png
+share/mate/help/mate-terminal/zh_TW/legal.xml
+share/mate/help/mate-terminal/zh_TW/mate-terminal.xml
+share/omf/mate-terminal/mate-terminal-C.omf
+share/omf/mate-terminal/mate-terminal-bg.omf
+share/omf/mate-terminal/mate-terminal-ca.omf
+share/omf/mate-terminal/mate-terminal-cs.omf
+share/omf/mate-terminal/mate-terminal-da.omf
+share/omf/mate-terminal/mate-terminal-de.omf
+share/omf/mate-terminal/mate-terminal-el.omf
+share/omf/mate-terminal/mate-terminal-en_GB.omf
+share/omf/mate-terminal/mate-terminal-es.omf
+share/omf/mate-terminal/mate-terminal-fr.omf
+share/omf/mate-terminal/mate-terminal-it.omf
+share/omf/mate-terminal/mate-terminal-ja.omf
+share/omf/mate-terminal/mate-terminal-ko.omf
+share/omf/mate-terminal/mate-terminal-oc.omf
+share/omf/mate-terminal/mate-terminal-pt_BR.omf
+share/omf/mate-terminal/mate-terminal-ro.omf
+share/omf/mate-terminal/mate-terminal-ru.omf
+share/omf/mate-terminal/mate-terminal-sv.omf
+share/omf/mate-terminal/mate-terminal-uk.omf
+share/omf/mate-terminal/mate-terminal-zh_CN.omf
+share/omf/mate-terminal/mate-terminal-zh_TW.omf
+@dirrm share/omf/mate-terminal
+@dirrm share/mate/help/mate-terminal/zh_TW/figures
+@dirrm share/mate/help/mate-terminal/zh_TW
+@dirrm share/mate/help/mate-terminal/zh_CN/figures
+@dirrm share/mate/help/mate-terminal/zh_CN
+@dirrm share/mate/help/mate-terminal/uk/figures
+@dirrm share/mate/help/mate-terminal/uk
+@dirrm share/mate/help/mate-terminal/sv/figures
+@dirrm share/mate/help/mate-terminal/sv
+@dirrm share/mate/help/mate-terminal/ru/figures
+@dirrm share/mate/help/mate-terminal/ru
+@dirrm share/mate/help/mate-terminal/ro/figures
+@dirrm share/mate/help/mate-terminal/ro
+@dirrm share/mate/help/mate-terminal/pt_BR/figures
+@dirrm share/mate/help/mate-terminal/pt_BR
+@dirrm share/mate/help/mate-terminal/oc/figures
+@dirrm share/mate/help/mate-terminal/oc
+@dirrm share/mate/help/mate-terminal/ko/figures
+@dirrm share/mate/help/mate-terminal/ko
+@dirrm share/mate/help/mate-terminal/ja/figures
+@dirrm share/mate/help/mate-terminal/ja
+@dirrm share/mate/help/mate-terminal/it/figures
+@dirrm share/mate/help/mate-terminal/it
+@dirrm share/mate/help/mate-terminal/fr/figures
+@dirrm share/mate/help/mate-terminal/fr
+@dirrm share/mate/help/mate-terminal/es/figures
+@dirrm share/mate/help/mate-terminal/es
+@dirrm share/mate/help/mate-terminal/en_GB/figures
+@dirrm share/mate/help/mate-terminal/en_GB
+@dirrm share/mate/help/mate-terminal/el/figures
+@dirrm share/mate/help/mate-terminal/el
+@dirrm share/mate/help/mate-terminal/de/figures
+@dirrm share/mate/help/mate-terminal/de
+@dirrm share/mate/help/mate-terminal/da/figures
+@dirrm share/mate/help/mate-terminal/da
+@dirrm share/mate/help/mate-terminal/cs/figures
+@dirrm share/mate/help/mate-terminal/cs
+@dirrm share/mate/help/mate-terminal/ca/figures
+@dirrm share/mate/help/mate-terminal/ca
+@dirrm share/mate/help/mate-terminal/bg/figures
+@dirrm share/mate/help/mate-terminal/bg
+@dirrm share/mate/help/mate-terminal/C/figures
+@dirrm share/mate/help/mate-terminal/C
+@dirrm share/mate/help/mate-terminal
+@dirrm %%DATADIR%%
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ps/LC_MESSAGES
+@dirrmtry share/locale/ps
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/hy/LC_MESSAGES
+@dirrmtry share/locale/hy
+@dirrmtry share/locale/fur/LC_MESSAGES
+@dirrmtry share/locale/fur
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

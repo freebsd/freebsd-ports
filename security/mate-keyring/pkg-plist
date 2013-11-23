@@ -1,0 +1,246 @@
+bin/mate-keyring
+bin/mate-keyring-daemon
+etc/xdg/autostart/mate-keyring-gpg.desktop
+etc/xdg/autostart/mate-keyring-pkcs11.desktop
+etc/xdg/autostart/mate-keyring-secrets.desktop
+etc/xdg/autostart/mate-keyring-ssh.desktop
+include/gck/pkcs11.h
+include/gck/pkcs11n.h
+include/gck/pkcs11x.h
+include/mate-gck/gck.h
+include/mategcr/gcr/gcr-certificate-basics-widget.h
+include/mategcr/gcr/gcr-certificate-chain.h
+include/mategcr/gcr/gcr-certificate-details-widget.h
+include/mategcr/gcr/gcr-certificate-renderer.h
+include/mategcr/gcr/gcr-certificate-widget.h
+include/mategcr/gcr/gcr-certificate.h
+include/mategcr/gcr/gcr-importer.h
+include/mategcr/gcr/gcr-key-renderer.h
+include/mategcr/gcr/gcr-key-widget.h
+include/mategcr/gcr/gcr-library.h
+include/mategcr/gcr/gcr-parser.h
+include/mategcr/gcr/gcr-pkcs11-certificate.h
+include/mategcr/gcr/gcr-renderer.h
+include/mategcr/gcr/gcr-simple-certificate.h
+include/mategcr/gcr/gcr-trust.h
+include/mategcr/gcr/gcr-types.h
+include/mategcr/gcr/gcr-unlock-options-widget.h
+include/mategcr/gcr/gcr-unlock-options.h
+include/mategcr/gcr/gcr-viewer.h
+include/mategcr/gcr/gcr.h
+lib/libmategck.a
+lib/libmategck.la
+lib/libmategck.so
+lib/libmategck.so.0
+lib/libmategcr.a
+lib/libmategcr.la
+lib/libmategcr.so
+lib/libmategcr.so.0
+lib/mate-keyring/devel/gkm-mate2-store-standalone.a
+lib/mate-keyring/devel/gkm-mate2-store-standalone.la
+lib/mate-keyring/devel/gkm-mate2-store-standalone.so
+lib/mate-keyring/devel/gkm-roots-store-standalone.a
+lib/mate-keyring/devel/gkm-roots-store-standalone.la
+lib/mate-keyring/devel/gkm-roots-store-standalone.so
+lib/mate-keyring/devel/gkm-ssh-store-standalone.a
+lib/mate-keyring/devel/gkm-ssh-store-standalone.la
+lib/mate-keyring/devel/gkm-ssh-store-standalone.so
+lib/mate-keyring/devel/gkm-xdg-store-standalone.a
+lib/mate-keyring/devel/gkm-xdg-store-standalone.la
+lib/mate-keyring/devel/gkm-xdg-store-standalone.so
+lib/mate-keyring/standalone/gkm-secret-store-standalone.a
+lib/mate-keyring/standalone/gkm-secret-store-standalone.la
+lib/mate-keyring/standalone/gkm-secret-store-standalone.so
+lib/pam_mate_keyring.a
+lib/pam_mate_keyring.la
+lib/pam_mate_keyring.so
+lib/pkcs11/mate-keyring-pkcs11.a
+lib/pkcs11/mate-keyring-pkcs11.la
+lib/pkcs11/mate-keyring-pkcs11.so
+libdata/pkgconfig/mate-gck-0.pc
+libdata/pkgconfig/mate-gcr-0.pc
+libexec/mate-keyring-prompt
+share/MateConf/gsettings/org.mate.crypto.cache.convert
+share/MateConf/gsettings/org.mate.crypto.pgp.convert
+share/dbus-1/services/org.mate-freedesktop.secrets.service
+share/dbus-1/services/org.mate.keyring.service
+share/doc/mate-gck/GckModule.html
+share/doc/mate-gck/GckObject.html
+share/doc/mate-gck/GckSession.html
+share/doc/mate-gck/GckSlot.html
+share/doc/mate-gck/ch01.html
+share/doc/mate-gck/gck-Errors.html
+share/doc/mate-gck/gck-GckAttribute.html
+share/doc/mate-gck/gck-GckAttributes.html
+share/doc/mate-gck/gck-Miscellaneous-Functions.html
+share/doc/mate-gck/gck-PKCS11-URIs.html
+share/doc/mate-gck/gck.devhelp
+share/doc/mate-gck/gck.devhelp2
+share/doc/mate-gck/home.png
+share/doc/mate-gck/index.html
+share/doc/mate-gck/index.sgml
+share/doc/mate-gck/left.png
+share/doc/mate-gck/right.png
+share/doc/mate-gck/style.css
+share/doc/mate-gck/up.png
+share/doc/mate-gcr-0/GcrCertificateChain.html
+share/doc/mate-gcr-0/GcrPkcs11Certificate.html
+share/doc/mate-gcr-0/GcrSimpleCertificate.html
+share/doc/mate-gcr-0/certificates.html
+share/doc/mate-gcr-0/gcr-GcrCertificate.html
+share/doc/mate-gcr-0/gcr-Library-Settings.html
+share/doc/mate-gcr-0/gcr-Trust-Storage-and-Lookups.html
+share/doc/mate-gcr-0/gcr-gcr-importer.html
+share/doc/mate-gcr-0/gcr-gcr-initializer.html
+share/doc/mate-gcr-0/gcr-gcr-parser.html
+share/doc/mate-gcr-0/gcr.devhelp
+share/doc/mate-gcr-0/gcr.devhelp2
+share/doc/mate-gcr-0/home.png
+share/doc/mate-gcr-0/index.html
+share/doc/mate-gcr-0/index.sgml
+share/doc/mate-gcr-0/left.png
+share/doc/mate-gcr-0/misc.html
+share/doc/mate-gcr-0/right.png
+share/doc/mate-gcr-0/storage.html
+share/doc/mate-gcr-0/style.css
+share/doc/mate-gcr-0/up.png
+share/locale/af/LC_MESSAGES/mate-keyring.mo
+share/locale/am/LC_MESSAGES/mate-keyring.mo
+share/locale/ar/LC_MESSAGES/mate-keyring.mo
+share/locale/as/LC_MESSAGES/mate-keyring.mo
+share/locale/ast/LC_MESSAGES/mate-keyring.mo
+share/locale/az/LC_MESSAGES/mate-keyring.mo
+share/locale/be/LC_MESSAGES/mate-keyring.mo
+share/locale/be@latin/LC_MESSAGES/mate-keyring.mo
+share/locale/bg/LC_MESSAGES/mate-keyring.mo
+share/locale/bn/LC_MESSAGES/mate-keyring.mo
+share/locale/bn_IN/LC_MESSAGES/mate-keyring.mo
+share/locale/bs/LC_MESSAGES/mate-keyring.mo
+share/locale/ca/LC_MESSAGES/mate-keyring.mo
+share/locale/ca@valencia/LC_MESSAGES/mate-keyring.mo
+share/locale/cs/LC_MESSAGES/mate-keyring.mo
+share/locale/cy/LC_MESSAGES/mate-keyring.mo
+share/locale/da/LC_MESSAGES/mate-keyring.mo
+share/locale/de/LC_MESSAGES/mate-keyring.mo
+share/locale/dz/LC_MESSAGES/mate-keyring.mo
+share/locale/el/LC_MESSAGES/mate-keyring.mo
+share/locale/en@shaw/LC_MESSAGES/mate-keyring.mo
+share/locale/en_AU/LC_MESSAGES/mate-keyring.mo
+share/locale/en_CA/LC_MESSAGES/mate-keyring.mo
+share/locale/en_GB/LC_MESSAGES/mate-keyring.mo
+share/locale/es/LC_MESSAGES/mate-keyring.mo
+share/locale/et/LC_MESSAGES/mate-keyring.mo
+share/locale/eu/LC_MESSAGES/mate-keyring.mo
+share/locale/fa/LC_MESSAGES/mate-keyring.mo
+share/locale/fi/LC_MESSAGES/mate-keyring.mo
+share/locale/fr/LC_MESSAGES/mate-keyring.mo
+share/locale/ga/LC_MESSAGES/mate-keyring.mo
+share/locale/gl/LC_MESSAGES/mate-keyring.mo
+share/locale/gu/LC_MESSAGES/mate-keyring.mo
+share/locale/he/LC_MESSAGES/mate-keyring.mo
+share/locale/hi/LC_MESSAGES/mate-keyring.mo
+share/locale/hr/LC_MESSAGES/mate-keyring.mo
+share/locale/hu/LC_MESSAGES/mate-keyring.mo
+share/locale/id/LC_MESSAGES/mate-keyring.mo
+share/locale/is/LC_MESSAGES/mate-keyring.mo
+share/locale/it/LC_MESSAGES/mate-keyring.mo
+share/locale/ja/LC_MESSAGES/mate-keyring.mo
+share/locale/ka/LC_MESSAGES/mate-keyring.mo
+share/locale/kn/LC_MESSAGES/mate-keyring.mo
+share/locale/ko/LC_MESSAGES/mate-keyring.mo
+share/locale/ky/LC_MESSAGES/mate-keyring.mo
+share/locale/lt/LC_MESSAGES/mate-keyring.mo
+share/locale/lv/LC_MESSAGES/mate-keyring.mo
+share/locale/mai/LC_MESSAGES/mate-keyring.mo
+share/locale/mg/LC_MESSAGES/mate-keyring.mo
+share/locale/mk/LC_MESSAGES/mate-keyring.mo
+share/locale/ml/LC_MESSAGES/mate-keyring.mo
+share/locale/mn/LC_MESSAGES/mate-keyring.mo
+share/locale/mr/LC_MESSAGES/mate-keyring.mo
+share/locale/ms/LC_MESSAGES/mate-keyring.mo
+share/locale/nb/LC_MESSAGES/mate-keyring.mo
+share/locale/ne/LC_MESSAGES/mate-keyring.mo
+share/locale/nl/LC_MESSAGES/mate-keyring.mo
+share/locale/nn/LC_MESSAGES/mate-keyring.mo
+share/locale/oc/LC_MESSAGES/mate-keyring.mo
+share/locale/or/LC_MESSAGES/mate-keyring.mo
+share/locale/pa/LC_MESSAGES/mate-keyring.mo
+share/locale/pl/LC_MESSAGES/mate-keyring.mo
+share/locale/pt/LC_MESSAGES/mate-keyring.mo
+share/locale/pt_BR/LC_MESSAGES/mate-keyring.mo
+share/locale/ro/LC_MESSAGES/mate-keyring.mo
+share/locale/ru/LC_MESSAGES/mate-keyring.mo
+share/locale/rw/LC_MESSAGES/mate-keyring.mo
+share/locale/si/LC_MESSAGES/mate-keyring.mo
+share/locale/sk/LC_MESSAGES/mate-keyring.mo
+share/locale/sl/LC_MESSAGES/mate-keyring.mo
+share/locale/sq/LC_MESSAGES/mate-keyring.mo
+share/locale/sr/LC_MESSAGES/mate-keyring.mo
+share/locale/sr@latin/LC_MESSAGES/mate-keyring.mo
+share/locale/sv/LC_MESSAGES/mate-keyring.mo
+share/locale/ta/LC_MESSAGES/mate-keyring.mo
+share/locale/te/LC_MESSAGES/mate-keyring.mo
+share/locale/th/LC_MESSAGES/mate-keyring.mo
+share/locale/tr/LC_MESSAGES/mate-keyring.mo
+share/locale/ug/LC_MESSAGES/mate-keyring.mo
+share/locale/uk/LC_MESSAGES/mate-keyring.mo
+share/locale/vi/LC_MESSAGES/mate-keyring.mo
+share/locale/xh/LC_MESSAGES/mate-keyring.mo
+share/locale/zh_CN/LC_MESSAGES/mate-keyring.mo
+share/locale/zh_HK/LC_MESSAGES/mate-keyring.mo
+share/locale/zh_TW/LC_MESSAGES/mate-keyring.mo
+%%DATADIR%%/ui/gku-prompt.ui
+share/mategcr/ui/gcr-import-dialog.ui
+share/mategcr/ui/gcr-unlock-options-widget.ui
+@dirrm share/mategcr/ui
+@dirrm share/mategcr
+@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
+@dirrm share/doc/mate-gcr-0
+@dirrm share/doc/mate-gck
+@dirrmtry lib/pkcs11
+@dirrm lib/mate-keyring/standalone
+@dirrm lib/mate-keyring/devel
+@dirrm lib/mate-keyring
+@dirrm include/mategcr/gcr
+@dirrm include/mategcr
+@dirrm include/mate-gck
+@dirrm include/gck

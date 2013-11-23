@@ -80,6 +80,7 @@
     SUBDIR += macutils
     SUBDIR += makeself
     SUBDIR += mar
+    SUBDIR += mate-file-archiver
     SUBDIR += mscompress
     SUBDIR += mtf
     SUBDIR += nomarch

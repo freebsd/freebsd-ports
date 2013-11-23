@@ -213,6 +213,7 @@
     SUBDIR += libreoffice-zu
     SUBDIR += madedit
     SUBDIR += manedit
+    SUBDIR += mate-text-editor
     SUBDIR += mg
     SUBDIR += mined
     SUBDIR += mlview

@@ -239,6 +239,7 @@
     SUBDIR += ltl
     SUBDIR += ltl2ba
     SUBDIR += lybniz
+    SUBDIR += mate-calc
     SUBDIR += mathomatic
     SUBDIR += matio
     SUBDIR += matlab-R2012a-installer

@@ -313,6 +313,7 @@
     SUBDIR += libgweather
     SUBDIR += libilbc
     SUBDIR += libkvkontakte
+    SUBDIR += libmateweather
     SUBDIR += libmediawiki
     SUBDIR += libmms
     SUBDIR += libmxp

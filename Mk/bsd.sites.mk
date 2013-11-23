@@ -729,6 +729,11 @@ MASTER_SITE_LOGILAB+= \
 	ftp://ftp.logilab.fr/pub/%SUBDIR%/
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_MATE)
+MASTER_SITE_MATE+= \
+	http://pub.mate-desktop.org/releases/%SUBDIR%/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_MOZDEV)
 MASTER_SITE_MOZDEV+= \
 	http://ftp.scarlet.be/pub/mozdev/%SUBDIR%/ \
@@ -1473,6 +1478,7 @@ MASTER_SITES_SUBDIRS=	\
 			GNU:${PORTNAME} \
 			HORDE:${PORTNAME} \
 			LOGILAB:${PORTNAME} \
+			MATE:${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/} \
 			MOZDEV:${PORTNAME:L} \
 			NETLIB:${PORTNAME} \
 			PERL_CPAN:${PORTNAME:C/-.*//} \

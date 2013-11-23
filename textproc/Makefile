@@ -421,6 +421,7 @@
     SUBDIR += manued.el
     SUBDIR += markdown
     SUBDIR += markdown-mode.el
+    SUBDIR += mate-doc-utils
     SUBDIR += mathml-xsd
     SUBDIR += mdocml
     SUBDIR += meld

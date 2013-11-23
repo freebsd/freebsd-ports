@@ -1,0 +1,664 @@
+include/libmateweather/location-entry.h
+include/libmateweather/mateweather-enum-types.h
+include/libmateweather/mateweather-location.h
+include/libmateweather/mateweather-prefs.h
+include/libmateweather/mateweather-timezone.h
+include/libmateweather/mateweather-xml.h
+include/libmateweather/timezone-menu.h
+include/libmateweather/weather.h
+lib/libmateweather.a
+lib/libmateweather.la
+lib/libmateweather.so
+lib/libmateweather.so.1
+libdata/pkgconfig/mateweather.pc
+%%DOCSDIR%%/MateWeatherLocationEntry.html
+%%DOCSDIR%%/MateWeatherTimezoneMenu.html
+%%DOCSDIR%%/ch01.html
+%%DOCSDIR%%/home.png
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/index.sgml
+%%DOCSDIR%%/left.png
+%%DOCSDIR%%/libmateweather-mateweather-location.html
+%%DOCSDIR%%/libmateweather-mateweather-mateconf.html
+%%DOCSDIR%%/libmateweather-mateweather-prefs.html
+%%DOCSDIR%%/libmateweather-mateweather-timezone.html
+%%DOCSDIR%%/libmateweather-mateweather-xml.html
+%%DOCSDIR%%/libmateweather-weather.html
+%%DOCSDIR%%/libmateweather.devhelp2
+%%DOCSDIR%%/right.png
+%%DOCSDIR%%/style.css
+%%DOCSDIR%%/up.png
+share/icons/mate/16x16/status/weather-clear-night-000.png
+share/icons/mate/16x16/status/weather-clear-night-010.png
+share/icons/mate/16x16/status/weather-clear-night-020.png
+share/icons/mate/16x16/status/weather-clear-night-030.png
+share/icons/mate/16x16/status/weather-clear-night-040.png
+share/icons/mate/16x16/status/weather-clear-night-050.png
+share/icons/mate/16x16/status/weather-clear-night-060.png
+share/icons/mate/16x16/status/weather-clear-night-070.png
+share/icons/mate/16x16/status/weather-clear-night-080.png
+share/icons/mate/16x16/status/weather-clear-night-090.png
+share/icons/mate/16x16/status/weather-clear-night-100.png
+share/icons/mate/16x16/status/weather-clear-night-110.png
+share/icons/mate/16x16/status/weather-clear-night-120.png
+share/icons/mate/16x16/status/weather-clear-night-130.png
+share/icons/mate/16x16/status/weather-clear-night-140.png
+share/icons/mate/16x16/status/weather-clear-night-150.png
+share/icons/mate/16x16/status/weather-clear-night-160.png
+share/icons/mate/16x16/status/weather-clear-night-170.png
+share/icons/mate/16x16/status/weather-clear-night-190.png
+share/icons/mate/16x16/status/weather-clear-night-200.png
+share/icons/mate/16x16/status/weather-clear-night-210.png
+share/icons/mate/16x16/status/weather-clear-night-220.png
+share/icons/mate/16x16/status/weather-clear-night-230.png
+share/icons/mate/16x16/status/weather-clear-night-240.png
+share/icons/mate/16x16/status/weather-clear-night-250.png
+share/icons/mate/16x16/status/weather-clear-night-260.png
+share/icons/mate/16x16/status/weather-clear-night-270.png
+share/icons/mate/16x16/status/weather-clear-night-280.png
+share/icons/mate/16x16/status/weather-clear-night-290.png
+share/icons/mate/16x16/status/weather-clear-night-300.png
+share/icons/mate/16x16/status/weather-clear-night-310.png
+share/icons/mate/16x16/status/weather-clear-night-320.png
+share/icons/mate/16x16/status/weather-clear-night-330.png
+share/icons/mate/16x16/status/weather-clear-night-340.png
+share/icons/mate/16x16/status/weather-clear-night-350.png
+share/icons/mate/16x16/status/weather-few-clouds-night-000.png
+share/icons/mate/16x16/status/weather-few-clouds-night-010.png
+share/icons/mate/16x16/status/weather-few-clouds-night-020.png
+share/icons/mate/16x16/status/weather-few-clouds-night-030.png
+share/icons/mate/16x16/status/weather-few-clouds-night-040.png
+share/icons/mate/16x16/status/weather-few-clouds-night-050.png
+share/icons/mate/16x16/status/weather-few-clouds-night-060.png
+share/icons/mate/16x16/status/weather-few-clouds-night-070.png
+share/icons/mate/16x16/status/weather-few-clouds-night-080.png
+share/icons/mate/16x16/status/weather-few-clouds-night-090.png
+share/icons/mate/16x16/status/weather-few-clouds-night-100.png
+share/icons/mate/16x16/status/weather-few-clouds-night-110.png
+share/icons/mate/16x16/status/weather-few-clouds-night-120.png
+share/icons/mate/16x16/status/weather-few-clouds-night-130.png
+share/icons/mate/16x16/status/weather-few-clouds-night-140.png
+share/icons/mate/16x16/status/weather-few-clouds-night-150.png
+share/icons/mate/16x16/status/weather-few-clouds-night-160.png
+share/icons/mate/16x16/status/weather-few-clouds-night-170.png
+share/icons/mate/16x16/status/weather-few-clouds-night-190.png
+share/icons/mate/16x16/status/weather-few-clouds-night-200.png
+share/icons/mate/16x16/status/weather-few-clouds-night-210.png
+share/icons/mate/16x16/status/weather-few-clouds-night-220.png
+share/icons/mate/16x16/status/weather-few-clouds-night-230.png
+share/icons/mate/16x16/status/weather-few-clouds-night-240.png
+share/icons/mate/16x16/status/weather-few-clouds-night-250.png
+share/icons/mate/16x16/status/weather-few-clouds-night-260.png
+share/icons/mate/16x16/status/weather-few-clouds-night-270.png
+share/icons/mate/16x16/status/weather-few-clouds-night-280.png
+share/icons/mate/16x16/status/weather-few-clouds-night-290.png
+share/icons/mate/16x16/status/weather-few-clouds-night-300.png
+share/icons/mate/16x16/status/weather-few-clouds-night-310.png
+share/icons/mate/16x16/status/weather-few-clouds-night-320.png
+share/icons/mate/16x16/status/weather-few-clouds-night-330.png
+share/icons/mate/16x16/status/weather-few-clouds-night-340.png
+share/icons/mate/16x16/status/weather-few-clouds-night-350.png
+share/icons/mate/22x22/status/weather-clear-night-000.png
+share/icons/mate/22x22/status/weather-clear-night-010.png
+share/icons/mate/22x22/status/weather-clear-night-020.png
+share/icons/mate/22x22/status/weather-clear-night-030.png
+share/icons/mate/22x22/status/weather-clear-night-040.png
+share/icons/mate/22x22/status/weather-clear-night-050.png
+share/icons/mate/22x22/status/weather-clear-night-060.png
+share/icons/mate/22x22/status/weather-clear-night-070.png
+share/icons/mate/22x22/status/weather-clear-night-080.png
+share/icons/mate/22x22/status/weather-clear-night-090.png
+share/icons/mate/22x22/status/weather-clear-night-100.png
+share/icons/mate/22x22/status/weather-clear-night-110.png
+share/icons/mate/22x22/status/weather-clear-night-120.png
+share/icons/mate/22x22/status/weather-clear-night-130.png
+share/icons/mate/22x22/status/weather-clear-night-140.png
+share/icons/mate/22x22/status/weather-clear-night-150.png
+share/icons/mate/22x22/status/weather-clear-night-160.png
+share/icons/mate/22x22/status/weather-clear-night-170.png
+share/icons/mate/22x22/status/weather-clear-night-190.png
+share/icons/mate/22x22/status/weather-clear-night-200.png
+share/icons/mate/22x22/status/weather-clear-night-210.png
+share/icons/mate/22x22/status/weather-clear-night-220.png
+share/icons/mate/22x22/status/weather-clear-night-230.png
+share/icons/mate/22x22/status/weather-clear-night-240.png
+share/icons/mate/22x22/status/weather-clear-night-250.png
+share/icons/mate/22x22/status/weather-clear-night-260.png
+share/icons/mate/22x22/status/weather-clear-night-270.png
+share/icons/mate/22x22/status/weather-clear-night-280.png
+share/icons/mate/22x22/status/weather-clear-night-290.png
+share/icons/mate/22x22/status/weather-clear-night-300.png
+share/icons/mate/22x22/status/weather-clear-night-310.png
+share/icons/mate/22x22/status/weather-clear-night-320.png
+share/icons/mate/22x22/status/weather-clear-night-330.png
+share/icons/mate/22x22/status/weather-clear-night-340.png
+share/icons/mate/22x22/status/weather-clear-night-350.png
+share/icons/mate/22x22/status/weather-few-clouds-night-000.png
+share/icons/mate/22x22/status/weather-few-clouds-night-010.png
+share/icons/mate/22x22/status/weather-few-clouds-night-020.png
+share/icons/mate/22x22/status/weather-few-clouds-night-030.png
+share/icons/mate/22x22/status/weather-few-clouds-night-040.png
+share/icons/mate/22x22/status/weather-few-clouds-night-050.png
+share/icons/mate/22x22/status/weather-few-clouds-night-060.png
+share/icons/mate/22x22/status/weather-few-clouds-night-070.png
+share/icons/mate/22x22/status/weather-few-clouds-night-080.png
+share/icons/mate/22x22/status/weather-few-clouds-night-090.png
+share/icons/mate/22x22/status/weather-few-clouds-night-100.png
+share/icons/mate/22x22/status/weather-few-clouds-night-110.png
+share/icons/mate/22x22/status/weather-few-clouds-night-120.png
+share/icons/mate/22x22/status/weather-few-clouds-night-130.png
+share/icons/mate/22x22/status/weather-few-clouds-night-140.png
+share/icons/mate/22x22/status/weather-few-clouds-night-150.png
+share/icons/mate/22x22/status/weather-few-clouds-night-160.png
+share/icons/mate/22x22/status/weather-few-clouds-night-170.png
+share/icons/mate/22x22/status/weather-few-clouds-night-190.png
+share/icons/mate/22x22/status/weather-few-clouds-night-200.png
+share/icons/mate/22x22/status/weather-few-clouds-night-210.png
+share/icons/mate/22x22/status/weather-few-clouds-night-220.png
+share/icons/mate/22x22/status/weather-few-clouds-night-230.png
+share/icons/mate/22x22/status/weather-few-clouds-night-240.png
+share/icons/mate/22x22/status/weather-few-clouds-night-250.png
+share/icons/mate/22x22/status/weather-few-clouds-night-260.png
+share/icons/mate/22x22/status/weather-few-clouds-night-270.png
+share/icons/mate/22x22/status/weather-few-clouds-night-280.png
+share/icons/mate/22x22/status/weather-few-clouds-night-290.png
+share/icons/mate/22x22/status/weather-few-clouds-night-300.png
+share/icons/mate/22x22/status/weather-few-clouds-night-310.png
+share/icons/mate/22x22/status/weather-few-clouds-night-320.png
+share/icons/mate/22x22/status/weather-few-clouds-night-330.png
+share/icons/mate/22x22/status/weather-few-clouds-night-340.png
+share/icons/mate/22x22/status/weather-few-clouds-night-350.png
+share/icons/mate/24x24/status/weather-clear-night-000.png
+share/icons/mate/24x24/status/weather-clear-night-010.png
+share/icons/mate/24x24/status/weather-clear-night-020.png
+share/icons/mate/24x24/status/weather-clear-night-030.png
+share/icons/mate/24x24/status/weather-clear-night-040.png
+share/icons/mate/24x24/status/weather-clear-night-050.png
+share/icons/mate/24x24/status/weather-clear-night-060.png
+share/icons/mate/24x24/status/weather-clear-night-070.png
+share/icons/mate/24x24/status/weather-clear-night-080.png
+share/icons/mate/24x24/status/weather-clear-night-090.png
+share/icons/mate/24x24/status/weather-clear-night-100.png
+share/icons/mate/24x24/status/weather-clear-night-110.png
+share/icons/mate/24x24/status/weather-clear-night-120.png
+share/icons/mate/24x24/status/weather-clear-night-130.png
+share/icons/mate/24x24/status/weather-clear-night-140.png
+share/icons/mate/24x24/status/weather-clear-night-150.png
+share/icons/mate/24x24/status/weather-clear-night-160.png
+share/icons/mate/24x24/status/weather-clear-night-170.png
+share/icons/mate/24x24/status/weather-clear-night-190.png
+share/icons/mate/24x24/status/weather-clear-night-200.png
+share/icons/mate/24x24/status/weather-clear-night-210.png
+share/icons/mate/24x24/status/weather-clear-night-220.png
+share/icons/mate/24x24/status/weather-clear-night-230.png
+share/icons/mate/24x24/status/weather-clear-night-240.png
+share/icons/mate/24x24/status/weather-clear-night-250.png
+share/icons/mate/24x24/status/weather-clear-night-260.png
+share/icons/mate/24x24/status/weather-clear-night-270.png
+share/icons/mate/24x24/status/weather-clear-night-280.png
+share/icons/mate/24x24/status/weather-clear-night-290.png
+share/icons/mate/24x24/status/weather-clear-night-300.png
+share/icons/mate/24x24/status/weather-clear-night-310.png
+share/icons/mate/24x24/status/weather-clear-night-320.png
+share/icons/mate/24x24/status/weather-clear-night-330.png
+share/icons/mate/24x24/status/weather-clear-night-340.png
+share/icons/mate/24x24/status/weather-clear-night-350.png
+share/icons/mate/24x24/status/weather-few-clouds-night-000.png
+share/icons/mate/24x24/status/weather-few-clouds-night-010.png
+share/icons/mate/24x24/status/weather-few-clouds-night-020.png
+share/icons/mate/24x24/status/weather-few-clouds-night-030.png
+share/icons/mate/24x24/status/weather-few-clouds-night-040.png
+share/icons/mate/24x24/status/weather-few-clouds-night-050.png
+share/icons/mate/24x24/status/weather-few-clouds-night-060.png
+share/icons/mate/24x24/status/weather-few-clouds-night-070.png
+share/icons/mate/24x24/status/weather-few-clouds-night-080.png
+share/icons/mate/24x24/status/weather-few-clouds-night-090.png
+share/icons/mate/24x24/status/weather-few-clouds-night-100.png
+share/icons/mate/24x24/status/weather-few-clouds-night-110.png
+share/icons/mate/24x24/status/weather-few-clouds-night-120.png
+share/icons/mate/24x24/status/weather-few-clouds-night-130.png
+share/icons/mate/24x24/status/weather-few-clouds-night-140.png
+share/icons/mate/24x24/status/weather-few-clouds-night-150.png
+share/icons/mate/24x24/status/weather-few-clouds-night-160.png
+share/icons/mate/24x24/status/weather-few-clouds-night-170.png
+share/icons/mate/24x24/status/weather-few-clouds-night-190.png
+share/icons/mate/24x24/status/weather-few-clouds-night-200.png
+share/icons/mate/24x24/status/weather-few-clouds-night-210.png
+share/icons/mate/24x24/status/weather-few-clouds-night-220.png
+share/icons/mate/24x24/status/weather-few-clouds-night-230.png
+share/icons/mate/24x24/status/weather-few-clouds-night-240.png
+share/icons/mate/24x24/status/weather-few-clouds-night-250.png
+share/icons/mate/24x24/status/weather-few-clouds-night-260.png
+share/icons/mate/24x24/status/weather-few-clouds-night-270.png
+share/icons/mate/24x24/status/weather-few-clouds-night-280.png
+share/icons/mate/24x24/status/weather-few-clouds-night-290.png
+share/icons/mate/24x24/status/weather-few-clouds-night-300.png
+share/icons/mate/24x24/status/weather-few-clouds-night-310.png
+share/icons/mate/24x24/status/weather-few-clouds-night-320.png
+share/icons/mate/24x24/status/weather-few-clouds-night-330.png
+share/icons/mate/24x24/status/weather-few-clouds-night-340.png
+share/icons/mate/24x24/status/weather-few-clouds-night-350.png
+share/icons/mate/32x32/status/weather-clear-night-000.png
+share/icons/mate/32x32/status/weather-clear-night-010.png
+share/icons/mate/32x32/status/weather-clear-night-020.png
+share/icons/mate/32x32/status/weather-clear-night-030.png
+share/icons/mate/32x32/status/weather-clear-night-040.png
+share/icons/mate/32x32/status/weather-clear-night-050.png
+share/icons/mate/32x32/status/weather-clear-night-060.png
+share/icons/mate/32x32/status/weather-clear-night-070.png
+share/icons/mate/32x32/status/weather-clear-night-080.png
+share/icons/mate/32x32/status/weather-clear-night-090.png
+share/icons/mate/32x32/status/weather-clear-night-100.png
+share/icons/mate/32x32/status/weather-clear-night-110.png
+share/icons/mate/32x32/status/weather-clear-night-120.png
+share/icons/mate/32x32/status/weather-clear-night-130.png
+share/icons/mate/32x32/status/weather-clear-night-140.png
+share/icons/mate/32x32/status/weather-clear-night-150.png
+share/icons/mate/32x32/status/weather-clear-night-160.png
+share/icons/mate/32x32/status/weather-clear-night-170.png
+share/icons/mate/32x32/status/weather-clear-night-190.png
+share/icons/mate/32x32/status/weather-clear-night-200.png
+share/icons/mate/32x32/status/weather-clear-night-210.png
+share/icons/mate/32x32/status/weather-clear-night-220.png
+share/icons/mate/32x32/status/weather-clear-night-230.png
+share/icons/mate/32x32/status/weather-clear-night-240.png
+share/icons/mate/32x32/status/weather-clear-night-250.png
+share/icons/mate/32x32/status/weather-clear-night-260.png
+share/icons/mate/32x32/status/weather-clear-night-270.png
+share/icons/mate/32x32/status/weather-clear-night-280.png
+share/icons/mate/32x32/status/weather-clear-night-290.png
+share/icons/mate/32x32/status/weather-clear-night-300.png
+share/icons/mate/32x32/status/weather-clear-night-310.png
+share/icons/mate/32x32/status/weather-clear-night-320.png
+share/icons/mate/32x32/status/weather-clear-night-330.png
+share/icons/mate/32x32/status/weather-clear-night-340.png
+share/icons/mate/32x32/status/weather-clear-night-350.png
+share/icons/mate/32x32/status/weather-few-clouds-night-000.png
+share/icons/mate/32x32/status/weather-few-clouds-night-010.png
+share/icons/mate/32x32/status/weather-few-clouds-night-020.png
+share/icons/mate/32x32/status/weather-few-clouds-night-030.png
+share/icons/mate/32x32/status/weather-few-clouds-night-040.png
+share/icons/mate/32x32/status/weather-few-clouds-night-050.png
+share/icons/mate/32x32/status/weather-few-clouds-night-060.png
+share/icons/mate/32x32/status/weather-few-clouds-night-070.png
+share/icons/mate/32x32/status/weather-few-clouds-night-080.png
+share/icons/mate/32x32/status/weather-few-clouds-night-090.png
+share/icons/mate/32x32/status/weather-few-clouds-night-100.png
+share/icons/mate/32x32/status/weather-few-clouds-night-110.png
+share/icons/mate/32x32/status/weather-few-clouds-night-120.png
+share/icons/mate/32x32/status/weather-few-clouds-night-130.png
+share/icons/mate/32x32/status/weather-few-clouds-night-140.png
+share/icons/mate/32x32/status/weather-few-clouds-night-150.png
+share/icons/mate/32x32/status/weather-few-clouds-night-160.png
+share/icons/mate/32x32/status/weather-few-clouds-night-170.png
+share/icons/mate/32x32/status/weather-few-clouds-night-190.png
+share/icons/mate/32x32/status/weather-few-clouds-night-200.png
+share/icons/mate/32x32/status/weather-few-clouds-night-210.png
+share/icons/mate/32x32/status/weather-few-clouds-night-220.png
+share/icons/mate/32x32/status/weather-few-clouds-night-230.png
+share/icons/mate/32x32/status/weather-few-clouds-night-240.png
+share/icons/mate/32x32/status/weather-few-clouds-night-250.png
+share/icons/mate/32x32/status/weather-few-clouds-night-260.png
+share/icons/mate/32x32/status/weather-few-clouds-night-270.png
+share/icons/mate/32x32/status/weather-few-clouds-night-280.png
+share/icons/mate/32x32/status/weather-few-clouds-night-290.png
+share/icons/mate/32x32/status/weather-few-clouds-night-300.png
+share/icons/mate/32x32/status/weather-few-clouds-night-310.png
+share/icons/mate/32x32/status/weather-few-clouds-night-320.png
+share/icons/mate/32x32/status/weather-few-clouds-night-330.png
+share/icons/mate/32x32/status/weather-few-clouds-night-340.png
+share/icons/mate/32x32/status/weather-few-clouds-night-350.png
+share/icons/mate/scalable/status/weather-clear-night-000.svg
+share/icons/mate/scalable/status/weather-clear-night-010.svg
+share/icons/mate/scalable/status/weather-clear-night-020.svg
+share/icons/mate/scalable/status/weather-clear-night-030.svg
+share/icons/mate/scalable/status/weather-clear-night-040.svg
+share/icons/mate/scalable/status/weather-clear-night-050.svg
+share/icons/mate/scalable/status/weather-clear-night-060.svg
+share/icons/mate/scalable/status/weather-clear-night-070.svg
+share/icons/mate/scalable/status/weather-clear-night-080.svg
+share/icons/mate/scalable/status/weather-clear-night-090.svg
+share/icons/mate/scalable/status/weather-clear-night-100.svg
+share/icons/mate/scalable/status/weather-clear-night-110.svg
+share/icons/mate/scalable/status/weather-clear-night-120.svg
+share/icons/mate/scalable/status/weather-clear-night-130.svg
+share/icons/mate/scalable/status/weather-clear-night-140.svg
+share/icons/mate/scalable/status/weather-clear-night-150.svg
+share/icons/mate/scalable/status/weather-clear-night-160.svg
+share/icons/mate/scalable/status/weather-clear-night-170.svg
+share/icons/mate/scalable/status/weather-clear-night-190.svg
+share/icons/mate/scalable/status/weather-clear-night-200.svg
+share/icons/mate/scalable/status/weather-clear-night-210.svg
+share/icons/mate/scalable/status/weather-clear-night-220.svg
+share/icons/mate/scalable/status/weather-clear-night-230.svg
+share/icons/mate/scalable/status/weather-clear-night-240.svg
+share/icons/mate/scalable/status/weather-clear-night-250.svg
+share/icons/mate/scalable/status/weather-clear-night-260.svg
+share/icons/mate/scalable/status/weather-clear-night-270.svg
+share/icons/mate/scalable/status/weather-clear-night-280.svg
+share/icons/mate/scalable/status/weather-clear-night-290.svg
+share/icons/mate/scalable/status/weather-clear-night-300.svg
+share/icons/mate/scalable/status/weather-clear-night-310.svg
+share/icons/mate/scalable/status/weather-clear-night-320.svg
+share/icons/mate/scalable/status/weather-clear-night-330.svg
+share/icons/mate/scalable/status/weather-clear-night-340.svg
+share/icons/mate/scalable/status/weather-clear-night-350.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-000.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-010.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-020.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-030.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-040.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-050.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-060.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-070.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-080.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-090.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-100.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-110.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-120.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-130.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-140.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-150.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-160.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-170.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-190.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-200.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-210.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-220.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-230.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-240.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-250.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-260.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-270.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-280.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-290.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-300.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-310.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-320.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-330.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-340.svg
+share/icons/mate/scalable/status/weather-few-clouds-night-350.svg
+%%DATADIR%%/Locations.ang.xml
+%%DATADIR%%/Locations.ar.xml
+%%DATADIR%%/Locations.as.xml
+%%DATADIR%%/Locations.ast.xml
+%%DATADIR%%/Locations.az.xml
+%%DATADIR%%/Locations.be.xml
+%%DATADIR%%/Locations.be@latin.xml
+%%DATADIR%%/Locations.bg.xml
+%%DATADIR%%/Locations.bn.xml
+%%DATADIR%%/Locations.bn_IN.xml
+%%DATADIR%%/Locations.br.xml
+%%DATADIR%%/Locations.bs.xml
+%%DATADIR%%/Locations.ca.xml
+%%DATADIR%%/Locations.ca@valencia.xml
+%%DATADIR%%/Locations.crh.xml
+%%DATADIR%%/Locations.cs.xml
+%%DATADIR%%/Locations.cy.xml
+%%DATADIR%%/Locations.da.xml
+%%DATADIR%%/Locations.de.xml
+%%DATADIR%%/Locations.dz.xml
+%%DATADIR%%/Locations.el.xml
+%%DATADIR%%/Locations.en@shaw.xml
+%%DATADIR%%/Locations.en_CA.xml
+%%DATADIR%%/Locations.en_GB.xml
+%%DATADIR%%/Locations.eo.xml
+%%DATADIR%%/Locations.es.xml
+%%DATADIR%%/Locations.et.xml
+%%DATADIR%%/Locations.eu.xml
+%%DATADIR%%/Locations.fa.xml
+%%DATADIR%%/Locations.fi.xml
+%%DATADIR%%/Locations.fr.xml
+%%DATADIR%%/Locations.ga.xml
+%%DATADIR%%/Locations.gl.xml
+%%DATADIR%%/Locations.gu.xml
+%%DATADIR%%/Locations.he.xml
+%%DATADIR%%/Locations.hi.xml
+%%DATADIR%%/Locations.hr.xml
+%%DATADIR%%/Locations.hu.xml
+%%DATADIR%%/Locations.id.xml
+%%DATADIR%%/Locations.it.xml
+%%DATADIR%%/Locations.ja.xml
+%%DATADIR%%/Locations.ka.xml
+%%DATADIR%%/Locations.kn.xml
+%%DATADIR%%/Locations.ko.xml
+%%DATADIR%%/Locations.ku.xml
+%%DATADIR%%/Locations.ky.xml
+%%DATADIR%%/Locations.lt.xml
+%%DATADIR%%/Locations.lv.xml
+%%DATADIR%%/Locations.mai.xml
+%%DATADIR%%/Locations.mg.xml
+%%DATADIR%%/Locations.mk.xml
+%%DATADIR%%/Locations.ml.xml
+%%DATADIR%%/Locations.mn.xml
+%%DATADIR%%/Locations.mr.xml
+%%DATADIR%%/Locations.ms.xml
+%%DATADIR%%/Locations.nb.xml
+%%DATADIR%%/Locations.nds.xml
+%%DATADIR%%/Locations.ne.xml
+%%DATADIR%%/Locations.nl.xml
+%%DATADIR%%/Locations.nn.xml
+%%DATADIR%%/Locations.oc.xml
+%%DATADIR%%/Locations.or.xml
+%%DATADIR%%/Locations.pa.xml
+%%DATADIR%%/Locations.pl.xml
+%%DATADIR%%/Locations.pt.xml
+%%DATADIR%%/Locations.pt_BR.xml
+%%DATADIR%%/Locations.ro.xml
+%%DATADIR%%/Locations.ru.xml
+%%DATADIR%%/Locations.rw.xml
+%%DATADIR%%/Locations.si.xml
+%%DATADIR%%/Locations.sk.xml
+%%DATADIR%%/Locations.sl.xml
+%%DATADIR%%/Locations.sq.xml
+%%DATADIR%%/Locations.sr.xml
+%%DATADIR%%/Locations.sr@latin.xml
+%%DATADIR%%/Locations.sv.xml
+%%DATADIR%%/Locations.ta.xml
+%%DATADIR%%/Locations.te.xml
+%%DATADIR%%/Locations.th.xml
+%%DATADIR%%/Locations.tr.xml
+%%DATADIR%%/Locations.uk.xml
+%%DATADIR%%/Locations.vi.xml
+%%DATADIR%%/Locations.xml
+%%DATADIR%%/Locations.zh_CN.xml
+%%DATADIR%%/Locations.zh_HK.xml
+%%DATADIR%%/Locations.zh_TW.xml
+%%DATADIR%%/locations.dtd
+share/locale/af/LC_MESSAGES/libmateweather.mo
+share/locale/am/LC_MESSAGES/libmateweather.mo
+share/locale/ar/LC_MESSAGES/libmateweather.mo
+share/locale/as/LC_MESSAGES/libmateweather.mo
+share/locale/ast/LC_MESSAGES/libmateweather.mo
+share/locale/az/LC_MESSAGES/libmateweather.mo
+share/locale/be/LC_MESSAGES/libmateweather.mo
+share/locale/be@latin/LC_MESSAGES/libmateweather.mo
+share/locale/bg/LC_MESSAGES/libmateweather.mo
+share/locale/bn/LC_MESSAGES/libmateweather.mo
+share/locale/bn_IN/LC_MESSAGES/libmateweather.mo
+share/locale/br/LC_MESSAGES/libmateweather.mo
+share/locale/bs/LC_MESSAGES/libmateweather.mo
+share/locale/ca/LC_MESSAGES/libmateweather.mo
+share/locale/ca@valencia/LC_MESSAGES/libmateweather.mo
+share/locale/crh/LC_MESSAGES/libmateweather.mo
+share/locale/cs/LC_MESSAGES/libmateweather.mo
+share/locale/cy/LC_MESSAGES/libmateweather.mo
+share/locale/da/LC_MESSAGES/libmateweather.mo
+share/locale/de/LC_MESSAGES/libmateweather.mo
+share/locale/dz/LC_MESSAGES/libmateweather.mo
+share/locale/el/LC_MESSAGES/libmateweather.mo
+share/locale/en@shaw/LC_MESSAGES/libmateweather.mo
+share/locale/en_AU/LC_MESSAGES/libmateweather.mo
+share/locale/en_CA/LC_MESSAGES/libmateweather.mo
+share/locale/en_GB/LC_MESSAGES/libmateweather.mo
+share/locale/eo/LC_MESSAGES/libmateweather.mo
+share/locale/es/LC_MESSAGES/libmateweather.mo
+share/locale/es_AR/LC_MESSAGES/libmateweather.mo
+share/locale/es_CL/LC_MESSAGES/libmateweather.mo
+share/locale/es_CO/LC_MESSAGES/libmateweather.mo
+share/locale/es_CR/LC_MESSAGES/libmateweather.mo
+share/locale/es_DO/LC_MESSAGES/libmateweather.mo
+share/locale/es_EC/LC_MESSAGES/libmateweather.mo
+share/locale/es_ES/LC_MESSAGES/libmateweather.mo
+share/locale/es_GT/LC_MESSAGES/libmateweather.mo
+share/locale/es_HN/LC_MESSAGES/libmateweather.mo
+share/locale/es_MX/LC_MESSAGES/libmateweather.mo
+share/locale/es_NI/LC_MESSAGES/libmateweather.mo
+share/locale/es_PA/LC_MESSAGES/libmateweather.mo
+share/locale/es_PE/LC_MESSAGES/libmateweather.mo
+share/locale/es_PR/LC_MESSAGES/libmateweather.mo
+share/locale/es_SV/LC_MESSAGES/libmateweather.mo
+share/locale/es_UY/LC_MESSAGES/libmateweather.mo
+share/locale/es_VE/LC_MESSAGES/libmateweather.mo
+share/locale/et/LC_MESSAGES/libmateweather.mo
+share/locale/eu/LC_MESSAGES/libmateweather.mo
+share/locale/fa/LC_MESSAGES/libmateweather.mo
+share/locale/fi/LC_MESSAGES/libmateweather.mo
+share/locale/fr/LC_MESSAGES/libmateweather.mo
+share/locale/ga/LC_MESSAGES/libmateweather.mo
+share/locale/gl/LC_MESSAGES/libmateweather.mo
+share/locale/gu/LC_MESSAGES/libmateweather.mo
+share/locale/he/LC_MESSAGES/libmateweather.mo
+share/locale/hi/LC_MESSAGES/libmateweather.mo
+share/locale/hr/LC_MESSAGES/libmateweather.mo
+share/locale/hu/LC_MESSAGES/libmateweather.mo
+share/locale/hy/LC_MESSAGES/libmateweather.mo
+share/locale/id/LC_MESSAGES/libmateweather.mo
+share/locale/is/LC_MESSAGES/libmateweather.mo
+share/locale/it/LC_MESSAGES/libmateweather.mo
+share/locale/ja/LC_MESSAGES/libmateweather.mo
+share/locale/ka/LC_MESSAGES/libmateweather.mo
+share/locale/kn/LC_MESSAGES/libmateweather.mo
+share/locale/ko/LC_MESSAGES/libmateweather.mo
+share/locale/ku/LC_MESSAGES/libmateweather.mo
+share/locale/ky/LC_MESSAGES/libmateweather.mo
+share/locale/lt/LC_MESSAGES/libmateweather.mo
+share/locale/lv/LC_MESSAGES/libmateweather.mo
+share/locale/mai/LC_MESSAGES/libmateweather.mo
+share/locale/mg/LC_MESSAGES/libmateweather.mo
+share/locale/mk/LC_MESSAGES/libmateweather.mo
+share/locale/ml/LC_MESSAGES/libmateweather.mo
+share/locale/mn/LC_MESSAGES/libmateweather.mo
+share/locale/mr/LC_MESSAGES/libmateweather.mo
+share/locale/ms/LC_MESSAGES/libmateweather.mo
+share/locale/nb/LC_MESSAGES/libmateweather.mo
+share/locale/nds/LC_MESSAGES/libmateweather.mo
+share/locale/ne/LC_MESSAGES/libmateweather.mo
+share/locale/nl/LC_MESSAGES/libmateweather.mo
+share/locale/nn/LC_MESSAGES/libmateweather.mo
+share/locale/oc/LC_MESSAGES/libmateweather.mo
+share/locale/or/LC_MESSAGES/libmateweather.mo
+share/locale/pa/LC_MESSAGES/libmateweather.mo
+share/locale/pl/LC_MESSAGES/libmateweather.mo
+share/locale/pt/LC_MESSAGES/libmateweather.mo
+share/locale/pt_BR/LC_MESSAGES/libmateweather.mo
+share/locale/ro/LC_MESSAGES/libmateweather.mo
+share/locale/ru/LC_MESSAGES/libmateweather.mo
+share/locale/rw/LC_MESSAGES/libmateweather.mo
+share/locale/si/LC_MESSAGES/libmateweather.mo
+share/locale/sk/LC_MESSAGES/libmateweather.mo
+share/locale/sl/LC_MESSAGES/libmateweather.mo
+share/locale/sq/LC_MESSAGES/libmateweather.mo
+share/locale/sr/LC_MESSAGES/libmateweather.mo
+share/locale/sr@latin/LC_MESSAGES/libmateweather.mo
+share/locale/sv/LC_MESSAGES/libmateweather.mo
+share/locale/ta/LC_MESSAGES/libmateweather.mo
+share/locale/te/LC_MESSAGES/libmateweather.mo
+share/locale/th/LC_MESSAGES/libmateweather.mo
+share/locale/tr/LC_MESSAGES/libmateweather.mo
+share/locale/uk/LC_MESSAGES/libmateweather.mo
+share/locale/vi/LC_MESSAGES/libmateweather.mo
+share/locale/wa/LC_MESSAGES/libmateweather.mo
+share/locale/xh/LC_MESSAGES/libmateweather.mo
+share/locale/zh_CN/LC_MESSAGES/libmateweather.mo
+share/locale/zh_HK/LC_MESSAGES/libmateweather.mo
+share/locale/zh_TW/LC_MESSAGES/libmateweather.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/hy/LC_MESSAGES
+@dirrmtry share/locale/hy
+@dirrmtry share/locale/es_VE/LC_MESSAGES
+@dirrmtry share/locale/es_VE
+@dirrmtry share/locale/es_UY/LC_MESSAGES
+@dirrmtry share/locale/es_UY
+@dirrmtry share/locale/es_SV/LC_MESSAGES
+@dirrmtry share/locale/es_SV
+@dirrmtry share/locale/es_PR/LC_MESSAGES
+@dirrmtry share/locale/es_PR
+@dirrmtry share/locale/es_PE/LC_MESSAGES
+@dirrmtry share/locale/es_PE
+@dirrmtry share/locale/es_PA/LC_MESSAGES
+@dirrmtry share/locale/es_PA
+@dirrmtry share/locale/es_NI/LC_MESSAGES
+@dirrmtry share/locale/es_NI
+@dirrmtry share/locale/es_HN/LC_MESSAGES
+@dirrmtry share/locale/es_HN
+@dirrmtry share/locale/es_GT/LC_MESSAGES
+@dirrmtry share/locale/es_GT
+@dirrmtry share/locale/es_EC/LC_MESSAGES
+@dirrmtry share/locale/es_EC
+@dirrmtry share/locale/es_DO/LC_MESSAGES
+@dirrmtry share/locale/es_DO
+@dirrmtry share/locale/es_CR/LC_MESSAGES
+@dirrmtry share/locale/es_CR
+@dirrmtry share/locale/es_CO/LC_MESSAGES
+@dirrmtry share/locale/es_CO
+@dirrmtry share/locale/es_CL/LC_MESSAGES
+@dirrmtry share/locale/es_CL
+@dirrmtry share/locale/es_AR/LC_MESSAGES
+@dirrmtry share/locale/es_AR
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/crh/LC_MESSAGES
+@dirrmtry share/locale/crh
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
+@dirrm %%DATADIR%%
+@dirrmtry share/icons/mate/scalable/status
+@dirrmtry share/icons/mate/scalable
+@dirrmtry share/icons/mate/32x32/status
+@dirrmtry share/icons/mate/32x32
+@dirrmtry share/icons/mate/24x24/status
+@dirrmtry share/icons/mate/24x24
+@dirrmtry share/icons/mate/22x22/status
+@dirrmtry share/icons/mate/22x22
+@dirrmtry share/icons/mate/16x16/status
+@dirrmtry share/icons/mate/16x16
+@dirrmtry share/icons/mate
+@dirrmtry share/icons
+@dirrm %%DOCSDIR%%
+@dirrm include/libmateweather

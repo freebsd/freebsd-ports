@@ -574,6 +574,8 @@
     SUBDIR += mapnik
     SUBDIR += mapserver
     SUBDIR += mapyrus
+    SUBDIR += mate-document-viewer
+    SUBDIR += mate-image-viewer
     SUBDIR += maverik
     SUBDIR += megapov
     SUBDIR += mesa-demos

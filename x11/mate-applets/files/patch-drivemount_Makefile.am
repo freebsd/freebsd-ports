@@ -1,0 +1,22 @@
+--- drivemount/Makefile.am.orig	2013-08-18 12:45:02.000000000 +0200
++++ drivemount/Makefile.am	2013-08-18 12:45:33.000000000 +0200
+@@ -6,16 +6,16 @@
+ 	-DDRIVEMOUNT_MENU_UI_DIR=\""$(uidir)"\"	\
+ 	$(MATE_APPLETS4_CFLAGS)
+ 
+-libexec_PROGRAMS = drivemount_applet2
++libexec_PROGRAMS = mate-drivemount_applet2
+ 
+-drivemount_applet2_SOURCES =	\
++mate_drivemount_applet2_SOURCES =	\
+ 	drivemount.c		\
+ 	drive-list.c		\
+ 	drive-list.h		\
+ 	drive-button.c		\
+ 	drive-button.h
+ 
+-drivemount_applet2_LDADD =	\
++mate_drivemount_applet2_LDADD =	\
+ 	$(MATE_APPLETS4_LIBS)
+ 
+ 

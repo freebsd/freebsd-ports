@@ -1,0 +1,4 @@
+mucharmap is a Unicode/ISO10646 character map and font viewer. It uses
+GTK+ 2, and supports anti-aliased, scalable fonts.
+
+WWW: http://mate-desktop.org/

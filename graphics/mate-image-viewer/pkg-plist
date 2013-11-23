@@ -1,0 +1,474 @@
+bin/eom
+include/eom-2.20/eom/eom-application.h
+include/eom-2.20/eom/eom-debug.h
+include/eom-2.20/eom/eom-dialog.h
+include/eom-2.20/eom/eom-enums.h
+include/eom-2.20/eom/eom-error-message-area.h
+include/eom-2.20/eom/eom-exif-details.h
+include/eom-2.20/eom/eom-exif-util.h
+include/eom-2.20/eom/eom-file-chooser.h
+include/eom-2.20/eom/eom-image-save-info.h
+include/eom-2.20/eom/eom-image.h
+include/eom-2.20/eom/eom-job-queue.h
+include/eom-2.20/eom/eom-jobs.h
+include/eom-2.20/eom/eom-list-store.h
+include/eom-2.20/eom/eom-plugin.h
+include/eom-2.20/eom/eom-properties-dialog.h
+include/eom-2.20/eom/eom-scroll-view.h
+include/eom-2.20/eom/eom-sidebar.h
+include/eom-2.20/eom/eom-statusbar.h
+include/eom-2.20/eom/eom-thumb-nav.h
+include/eom-2.20/eom/eom-thumb-view.h
+include/eom-2.20/eom/eom-thumbnail.h
+include/eom-2.20/eom/eom-transform.h
+include/eom-2.20/eom/eom-window.h
+lib/eom/plugins/fullscreen.eom-plugin
+lib/eom/plugins/libfullscreen.a
+lib/eom/plugins/libfullscreen.la
+lib/eom/plugins/libfullscreen.so
+lib/eom/plugins/libreload.a
+lib/eom/plugins/libreload.la
+lib/eom/plugins/libreload.so
+lib/eom/plugins/libstatusbar-date.a
+lib/eom/plugins/libstatusbar-date.la
+lib/eom/plugins/libstatusbar-date.so
+lib/eom/plugins/reload.eom-plugin
+lib/eom/plugins/statusbar-date.eom-plugin
+libdata/pkgconfig/eom.pc
+man/man1/eom.1.gz
+share/MateConf/gsettings/eom.convert
+share/applications/eom.desktop
+share/doc/eom/EomDialog.html
+share/doc/eom/EomExifDetails.html
+share/doc/eom/EomFileChooser.html
+share/doc/eom/EomImageSaveInfo.html
+share/doc/eom/EomMetadataReaderJpg.html
+share/doc/eom/EomMetadataReaderPng.html
+share/doc/eom/EomPluginManager.html
+share/doc/eom/EomPreferencesDialog.html
+share/doc/eom/EomPrintImageSetup.html
+share/doc/eom/EomPrintPreview.html
+share/doc/eom/EomScrollView.html
+share/doc/eom/EomSidebar.html
+share/doc/eom/EomStatusbar.html
+share/doc/eom/ch01.html
+share/doc/eom/ch02.html
+share/doc/eom/ch03.html
+share/doc/eom/ch04.html
+share/doc/eom/ch05.html
+share/doc/eom/ch06.html
+share/doc/eom/ch07.html
+share/doc/eom/eom-eom-application.html
+share/doc/eom/eom-eom-config-keys.html
+share/doc/eom/eom-eom-debug.html
+share/doc/eom/eom-eom-error-message-area.html
+share/doc/eom/eom-eom-exif-util.html
+share/doc/eom/eom-eom-image.html
+share/doc/eom/eom-eom-job-queue.html
+share/doc/eom/eom-eom-jobs.html
+share/doc/eom/eom-eom-list-store.html
+share/doc/eom/eom-eom-metadata-reader.html
+share/doc/eom/eom-eom-pixbuf-util.html
+share/doc/eom/eom-eom-plugin-engine.html
+share/doc/eom/eom-eom-plugin.html
+share/doc/eom/eom-eom-print.html
+share/doc/eom/eom-eom-properties-dialog.html
+share/doc/eom/eom-eom-save-as-dialog-helper.html
+share/doc/eom/eom-eom-session.html
+share/doc/eom/eom-eom-thumb-nav.html
+share/doc/eom/eom-eom-thumb-view.html
+share/doc/eom/eom-eom-thumbnail.html
+share/doc/eom/eom-eom-transform.html
+share/doc/eom/eom-eom-uri-converter.html
+share/doc/eom/eom-eom-util.html
+share/doc/eom/eom-eom-window.html
+share/doc/eom/eom-uta.html
+share/doc/eom/eom-zoom.html
+share/doc/eom/eom.devhelp2
+share/doc/eom/home.png
+share/doc/eom/index.html
+share/doc/eom/index.sgml
+share/doc/eom/left.png
+share/doc/eom/right.png
+share/doc/eom/style.css
+share/doc/eom/up.png
+share/mate-image-viewer/eom-image-properties-dialog.ui
+share/mate-image-viewer/eom-multiple-save-as-dialog.ui
+share/mate-image-viewer/eom-preferences-dialog.ui
+share/mate-image-viewer/eom-toolbar.xml
+share/mate-image-viewer/eom-ui.xml
+share/mate-image-viewer/gtkrc
+share/mate-image-viewer/icons/hicolor/16x16/actions/eom-image-collection.png
+share/mate-image-viewer/icons/hicolor/16x16/actions/eom-plugin.png
+share/mate-image-viewer/icons/hicolor/16x16/actions/slideshow-play.png
+share/mate-image-viewer/icons/hicolor/22x22/actions/eom-image-collection.png
+share/mate-image-viewer/icons/hicolor/22x22/actions/eom-plugin.png
+share/mate-image-viewer/icons/hicolor/22x22/actions/slideshow-play.png
+share/mate-image-viewer/icons/hicolor/24x24/actions/eom-image-collection.png
+share/mate-image-viewer/icons/hicolor/24x24/actions/slideshow-play.png
+share/mate-image-viewer/icons/hicolor/32x32/actions/eom-image-collection.png
+share/mate-image-viewer/icons/hicolor/32x32/actions/eom-plugin.png
+share/mate-image-viewer/icons/hicolor/32x32/actions/slideshow-play.png
+share/mate-image-viewer/icons/hicolor/48x48/actions/slideshow-play.png
+share/mate-image-viewer/icons/hicolor/scalable/actions/eom-image-collection.svg
+share/mate-image-viewer/icons/hicolor/scalable/actions/eom-plugin.svg
+share/mate-image-viewer/icons/hicolor/scalable/actions/slideshow-play.svg
+share/mate-image-viewer/pixmaps/thumbnail-frame.png
+share/icons/hicolor/16x16/apps/eom.png
+share/icons/hicolor/22x22/apps/eom.png
+share/icons/hicolor/24x24/apps/eom.png
+share/icons/hicolor/32x32/apps/eom.png
+share/icons/hicolor/scalable/apps/eom.svg
+share/locale/af/LC_MESSAGES/eom.mo
+share/locale/am/LC_MESSAGES/eom.mo
+share/locale/ar/LC_MESSAGES/eom.mo
+share/locale/as/LC_MESSAGES/eom.mo
+share/locale/ast/LC_MESSAGES/eom.mo
+share/locale/az/LC_MESSAGES/eom.mo
+share/locale/be/LC_MESSAGES/eom.mo
+share/locale/be@latin/LC_MESSAGES/eom.mo
+share/locale/bg/LC_MESSAGES/eom.mo
+share/locale/bn/LC_MESSAGES/eom.mo
+share/locale/bn_IN/LC_MESSAGES/eom.mo
+share/locale/br/LC_MESSAGES/eom.mo
+share/locale/bs/LC_MESSAGES/eom.mo
+share/locale/ca/LC_MESSAGES/eom.mo
+share/locale/ca@valencia/LC_MESSAGES/eom.mo
+share/locale/cs/LC_MESSAGES/eom.mo
+share/locale/cy/LC_MESSAGES/eom.mo
+share/locale/da/LC_MESSAGES/eom.mo
+share/locale/de/LC_MESSAGES/eom.mo
+share/locale/dz/LC_MESSAGES/eom.mo
+share/locale/el/LC_MESSAGES/eom.mo
+share/locale/en@shaw/LC_MESSAGES/eom.mo
+share/locale/en_AU/LC_MESSAGES/eom.mo
+share/locale/en_CA/LC_MESSAGES/eom.mo
+share/locale/en_GB/LC_MESSAGES/eom.mo
+share/locale/eo/LC_MESSAGES/eom.mo
+share/locale/es/LC_MESSAGES/eom.mo
+share/locale/et/LC_MESSAGES/eom.mo
+share/locale/eu/LC_MESSAGES/eom.mo
+share/locale/fa/LC_MESSAGES/eom.mo
+share/locale/fi/LC_MESSAGES/eom.mo
+share/locale/fr/LC_MESSAGES/eom.mo
+share/locale/fur/LC_MESSAGES/eom.mo
+share/locale/ga/LC_MESSAGES/eom.mo
+share/locale/gl/LC_MESSAGES/eom.mo
+share/locale/gu/LC_MESSAGES/eom.mo
+share/locale/he/LC_MESSAGES/eom.mo
+share/locale/hi/LC_MESSAGES/eom.mo
+share/locale/hr/LC_MESSAGES/eom.mo
+share/locale/hu/LC_MESSAGES/eom.mo
+share/locale/id/LC_MESSAGES/eom.mo
+share/locale/is/LC_MESSAGES/eom.mo
+share/locale/it/LC_MESSAGES/eom.mo
+share/locale/ja/LC_MESSAGES/eom.mo
+share/locale/ka/LC_MESSAGES/eom.mo
+share/locale/kk/LC_MESSAGES/eom.mo
+share/locale/kn/LC_MESSAGES/eom.mo
+share/locale/ko/LC_MESSAGES/eom.mo
+share/locale/ks/LC_MESSAGES/eom.mo
+share/locale/ku/LC_MESSAGES/eom.mo
+share/locale/ky/LC_MESSAGES/eom.mo
+share/locale/lt/LC_MESSAGES/eom.mo
+share/locale/lv/LC_MESSAGES/eom.mo
+share/locale/mai/LC_MESSAGES/eom.mo
+share/locale/mg/LC_MESSAGES/eom.mo
+share/locale/mk/LC_MESSAGES/eom.mo
+share/locale/ml/LC_MESSAGES/eom.mo
+share/locale/mn/LC_MESSAGES/eom.mo
+share/locale/mr/LC_MESSAGES/eom.mo
+share/locale/ms/LC_MESSAGES/eom.mo
+share/locale/nb/LC_MESSAGES/eom.mo
+share/locale/nds/LC_MESSAGES/eom.mo
+share/locale/ne/LC_MESSAGES/eom.mo
+share/locale/nl/LC_MESSAGES/eom.mo
+share/locale/nn/LC_MESSAGES/eom.mo
+share/locale/nso/LC_MESSAGES/eom.mo
+share/locale/oc/LC_MESSAGES/eom.mo
+share/locale/or/LC_MESSAGES/eom.mo
+share/locale/pa/LC_MESSAGES/eom.mo
+share/locale/pl/LC_MESSAGES/eom.mo
+share/locale/ps/LC_MESSAGES/eom.mo
+share/locale/pt/LC_MESSAGES/eom.mo
+share/locale/pt_BR/LC_MESSAGES/eom.mo
+share/locale/ro/LC_MESSAGES/eom.mo
+share/locale/ru/LC_MESSAGES/eom.mo
+share/locale/rw/LC_MESSAGES/eom.mo
+share/locale/si/LC_MESSAGES/eom.mo
+share/locale/sk/LC_MESSAGES/eom.mo
+share/locale/sl/LC_MESSAGES/eom.mo
+share/locale/sq/LC_MESSAGES/eom.mo
+share/locale/sr/LC_MESSAGES/eom.mo
+share/locale/sr@latin/LC_MESSAGES/eom.mo
+share/locale/sv/LC_MESSAGES/eom.mo
+share/locale/ta/LC_MESSAGES/eom.mo
+share/locale/te/LC_MESSAGES/eom.mo
+share/locale/th/LC_MESSAGES/eom.mo
+share/locale/tk/LC_MESSAGES/eom.mo
+share/locale/tr/LC_MESSAGES/eom.mo
+share/locale/ug/LC_MESSAGES/eom.mo
+share/locale/uk/LC_MESSAGES/eom.mo
+share/locale/uz/LC_MESSAGES/eom.mo
+share/locale/uz@cyrillic/LC_MESSAGES/eom.mo
+share/locale/vi/LC_MESSAGES/eom.mo
+share/locale/wa/LC_MESSAGES/eom.mo
+share/locale/xh/LC_MESSAGES/eom.mo
+share/locale/zh_CN/LC_MESSAGES/eom.mo
+share/locale/zh_HK/LC_MESSAGES/eom.mo
+share/locale/zh_TW/LC_MESSAGES/eom.mo
+share/locale/zu/LC_MESSAGES/eom.mo
+share/mate/help/eom/C/eom.xml
+share/mate/help/eom/C/figures/eom_save_as_window.png
+share/mate/help/eom/C/figures/eom_start_window.png
+share/mate/help/eom/C/figures/eom_toolbar_editor_window.png
+share/mate/help/eom/C/legal.xml
+share/mate/help/eom/ar/eom.xml
+share/mate/help/eom/ar/figures/eom_save_as_window.png
+share/mate/help/eom/ar/figures/eom_start_window.png
+share/mate/help/eom/ar/figures/eom_toolbar_editor_window.png
+share/mate/help/eom/ca/eom.xml
+share/mate/help/eom/ca/figures/eom_save_as_window.png
+share/mate/help/eom/ca/figures/eom_start_window.png
+share/mate/help/eom/ca/figures/eom_toolbar_editor_window.png
+share/mate/help/eom/cs/eom.xml
+share/mate/help/eom/cs/figures/eom_save_as_window.png
+share/mate/help/eom/cs/figures/eom_start_window.png
+share/mate/help/eom/cs/figures/eom_toolbar_editor_window.png
+share/mate/help/eom/da/eom.xml
+share/mate/help/eom/da/figures/eom_save_as_window.png
+share/mate/help/eom/da/figures/eom_start_window.png
+share/mate/help/eom/da/figures/eom_toolbar_editor_window.png
+share/mate/help/eom/de/eom.xml
+share/mate/help/eom/de/figures/eom_save_as_window.png
+share/mate/help/eom/de/figures/eom_start_window.png
+share/mate/help/eom/de/figures/eom_toolbar_editor_window.png
+share/mate/help/eom/el/eom.xml
+share/mate/help/eom/el/figures/eom_save_as_window.png
+share/mate/help/eom/el/figures/eom_start_window.png
+share/mate/help/eom/el/figures/eom_toolbar_editor_window.png
+share/mate/help/eom/en_GB/eom.xml
+share/mate/help/eom/en_GB/figures/eom_save_as_window.png
+share/mate/help/eom/en_GB/figures/eom_start_window.png
+share/mate/help/eom/en_GB/figures/eom_toolbar_editor_window.png
+share/mate/help/eom/es/eom.xml
+share/mate/help/eom/es/figures/eom_save_as_window.png
+share/mate/help/eom/es/figures/eom_start_window.png
+share/mate/help/eom/es/figures/eom_toolbar_editor_window.png
+share/mate/help/eom/eu/eom.xml
+share/mate/help/eom/eu/figures/eom_save_as_window.png
+share/mate/help/eom/eu/figures/eom_start_window.png
+share/mate/help/eom/eu/figures/eom_toolbar_editor_window.png
+share/mate/help/eom/fi/eom.xml
+share/mate/help/eom/fi/figures/eom_save_as_window.png
+share/mate/help/eom/fi/figures/eom_start_window.png
+share/mate/help/eom/fi/figures/eom_toolbar_editor_window.png
+share/mate/help/eom/fr/eom.xml
+share/mate/help/eom/fr/figures/eom_save_as_window.png
+share/mate/help/eom/fr/figures/eom_start_window.png
+share/mate/help/eom/fr/figures/eom_toolbar_editor_window.png
+share/mate/help/eom/it/eom.xml
+share/mate/help/eom/it/figures/eom_save_as_window.png
+share/mate/help/eom/it/figures/eom_start_window.png
+share/mate/help/eom/it/figures/eom_toolbar_editor_window.png
+share/mate/help/eom/ja/eom.xml
+share/mate/help/eom/ja/figures/eom_save_as_window.png
+share/mate/help/eom/ja/figures/eom_start_window.png
+share/mate/help/eom/ja/figures/eom_toolbar_editor_window.png
+share/mate/help/eom/ko/eom.xml
+share/mate/help/eom/ko/figures/eom_save_as_window.png
+share/mate/help/eom/ko/figures/eom_start_window.png
+share/mate/help/eom/ko/figures/eom_toolbar_editor_window.png
+share/mate/help/eom/oc/eom.xml
+share/mate/help/eom/oc/figures/eom_save_as_window.png
+share/mate/help/eom/oc/figures/eom_start_window.png
+share/mate/help/eom/oc/figures/eom_toolbar_editor_window.png
+share/mate/help/eom/pa/eom.xml
+share/mate/help/eom/pa/figures/eom_save_as_window.png
+share/mate/help/eom/pa/figures/eom_start_window.png
+share/mate/help/eom/pa/figures/eom_toolbar_editor_window.png
+share/mate/help/eom/pl/eom.xml
+share/mate/help/eom/pl/figures/eom_save_as_window.png
+share/mate/help/eom/pl/figures/eom_start_window.png
+share/mate/help/eom/pl/figures/eom_toolbar_editor_window.png
+share/mate/help/eom/pt_BR/eom.xml
+share/mate/help/eom/pt_BR/figures/eom_save_as_window.png
+share/mate/help/eom/pt_BR/figures/eom_start_window.png
+share/mate/help/eom/pt_BR/figures/eom_toolbar_editor_window.png
+share/mate/help/eom/ru/eom.xml
+share/mate/help/eom/ru/figures/eom_save_as_window.png
+share/mate/help/eom/ru/figures/eom_start_window.png
+share/mate/help/eom/ru/figures/eom_toolbar_editor_window.png
+share/mate/help/eom/sv/eom.xml
+share/mate/help/eom/sv/figures/eom_save_as_window.png
+share/mate/help/eom/sv/figures/eom_start_window.png
+share/mate/help/eom/sv/figures/eom_toolbar_editor_window.png
+share/mate/help/eom/th/eom.xml
+share/mate/help/eom/th/figures/eom_save_as_window.png
+share/mate/help/eom/th/figures/eom_start_window.png
+share/mate/help/eom/th/figures/eom_toolbar_editor_window.png
+share/mate/help/eom/uk/eom.xml
+share/mate/help/eom/uk/figures/eom_save_as_window.png
+share/mate/help/eom/uk/figures/eom_start_window.png
+share/mate/help/eom/uk/figures/eom_toolbar_editor_window.png
+share/mate/help/eom/zh_CN/eom.xml
+share/mate/help/eom/zh_CN/figures/eom_save_as_window.png
+share/mate/help/eom/zh_CN/figures/eom_start_window.png
+share/mate/help/eom/zh_CN/figures/eom_toolbar_editor_window.png
+share/mate/help/eom/zh_TW/eom.xml
+share/mate/help/eom/zh_TW/figures/eom_save_as_window.png
+share/mate/help/eom/zh_TW/figures/eom_start_window.png
+share/mate/help/eom/zh_TW/figures/eom_toolbar_editor_window.png
+share/omf/eom/eom-C.omf
+share/omf/eom/eom-ar.omf
+share/omf/eom/eom-ca.omf
+share/omf/eom/eom-cs.omf
+share/omf/eom/eom-da.omf
+share/omf/eom/eom-de.omf
+share/omf/eom/eom-el.omf
+share/omf/eom/eom-en_GB.omf
+share/omf/eom/eom-es.omf
+share/omf/eom/eom-eu.omf
+share/omf/eom/eom-fi.omf
+share/omf/eom/eom-fr.omf
+share/omf/eom/eom-it.omf
+share/omf/eom/eom-ja.omf
+share/omf/eom/eom-ko.omf
+share/omf/eom/eom-oc.omf
+share/omf/eom/eom-pa.omf
+share/omf/eom/eom-pl.omf
+share/omf/eom/eom-pt_BR.omf
+share/omf/eom/eom-ru.omf
+share/omf/eom/eom-sv.omf
+share/omf/eom/eom-th.omf
+share/omf/eom/eom-uk.omf
+share/omf/eom/eom-zh_CN.omf
+share/omf/eom/eom-zh_TW.omf
+@dirrm share/omf/eom
+@dirrm share/mate/help/eom/zh_TW/figures
+@dirrm share/mate/help/eom/zh_TW
+@dirrm share/mate/help/eom/zh_CN/figures
+@dirrm share/mate/help/eom/zh_CN
+@dirrm share/mate/help/eom/uk/figures
+@dirrm share/mate/help/eom/uk
+@dirrm share/mate/help/eom/th/figures
+@dirrm share/mate/help/eom/th
+@dirrm share/mate/help/eom/sv/figures
+@dirrm share/mate/help/eom/sv
+@dirrm share/mate/help/eom/ru/figures
+@dirrm share/mate/help/eom/ru
+@dirrm share/mate/help/eom/pt_BR/figures
+@dirrm share/mate/help/eom/pt_BR
+@dirrm share/mate/help/eom/pl/figures
+@dirrm share/mate/help/eom/pl
+@dirrm share/mate/help/eom/pa/figures
+@dirrm share/mate/help/eom/pa
+@dirrm share/mate/help/eom/oc/figures
+@dirrm share/mate/help/eom/oc
+@dirrm share/mate/help/eom/ko/figures
+@dirrm share/mate/help/eom/ko
+@dirrm share/mate/help/eom/ja/figures
+@dirrm share/mate/help/eom/ja
+@dirrm share/mate/help/eom/it/figures
+@dirrm share/mate/help/eom/it
+@dirrm share/mate/help/eom/fr/figures
+@dirrm share/mate/help/eom/fr
+@dirrm share/mate/help/eom/fi/figures
+@dirrm share/mate/help/eom/fi
+@dirrm share/mate/help/eom/eu/figures
+@dirrm share/mate/help/eom/eu
+@dirrm share/mate/help/eom/es/figures
+@dirrm share/mate/help/eom/es
+@dirrm share/mate/help/eom/en_GB/figures
+@dirrm share/mate/help/eom/en_GB
+@dirrm share/mate/help/eom/el/figures
+@dirrm share/mate/help/eom/el
+@dirrm share/mate/help/eom/de/figures
+@dirrm share/mate/help/eom/de
+@dirrm share/mate/help/eom/da/figures
+@dirrm share/mate/help/eom/da
+@dirrm share/mate/help/eom/cs/figures
+@dirrm share/mate/help/eom/cs
+@dirrm share/mate/help/eom/ca/figures
+@dirrm share/mate/help/eom/ca
+@dirrm share/mate/help/eom/ar/figures
+@dirrm share/mate/help/eom/ar
+@dirrm share/mate/help/eom/C/figures
+@dirrm share/mate/help/eom/C
+@dirrm share/mate/help/eom
+@dirrmtry share/locale/zu/LC_MESSAGES
+@dirrmtry share/locale/zu
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
+@dirrmtry share/locale/uz@cyrillic
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ps/LC_MESSAGES
+@dirrmtry share/locale/ps
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/nso/LC_MESSAGES
+@dirrmtry share/locale/nso
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/ks/LC_MESSAGES
+@dirrmtry share/locale/ks
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/fur/LC_MESSAGES
+@dirrmtry share/locale/fur
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
+@dirrm share/mate-image-viewer/pixmaps
+@dirrm share/mate-image-viewer/icons/hicolor/scalable/actions
+@dirrm share/mate-image-viewer/icons/hicolor/scalable
+@dirrm share/mate-image-viewer/icons/hicolor/48x48/actions
+@dirrm share/mate-image-viewer/icons/hicolor/48x48
+@dirrm share/mate-image-viewer/icons/hicolor/32x32/actions
+@dirrm share/mate-image-viewer/icons/hicolor/32x32
+@dirrm share/mate-image-viewer/icons/hicolor/24x24/actions
+@dirrm share/mate-image-viewer/icons/hicolor/24x24
+@dirrm share/mate-image-viewer/icons/hicolor/22x22/actions
+@dirrm share/mate-image-viewer/icons/hicolor/22x22
+@dirrm share/mate-image-viewer/icons/hicolor/16x16/actions
+@dirrm share/mate-image-viewer/icons/hicolor/16x16
+@dirrm share/mate-image-viewer/icons/hicolor
+@dirrm share/mate-image-viewer/icons
+@dirrm share/mate-image-viewer
+@dirrm lib/eom/plugins
+@dirrm lib/eom
+@dirrm include/eom-2.20/eom
+@dirrm include/eom-2.20

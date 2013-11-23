@@ -1,0 +1,459 @@
+--- layout/mate-applications.menu.orig	2013-03-31 16:16:30.000000000 -0500
++++ layout/mate-applications.menu	2013-04-13 21:48:00.000000000 -0500
+@@ -6,9 +6,8 @@
+   <Name>Applications</Name>
+   <Directory>mate-menu-applications.directory</Directory>
+ 
+-  <!-- Scan legacy dirs first, as later items take priority -->
+-  <KDELegacyDirs/>
+-  <LegacyDir>/etc/X11/applnk</LegacyDir>
++  <!-- Scan legacy dirs first, as later items take priority
++  <LegacyDir>/etc/X11/applnk</LegacyDir> -->
+   <LegacyDir>/usr/share/mate/apps</LegacyDir>
+ 
+   <!-- Read standard .directory and .desktop file locations -->
+@@ -31,6 +30,9 @@
+ 	     applications here -->
+         <Not><Category>Accessibility</Category></Not>
+         <Not><Category>System</Category></Not>
++	<Not><Category>Qt</Category></Not>
++	<Not><Category>KDE</Category></Not>
++	<Not><Category>GNOME</Category></Not>
+       </And>
+     </Include>
+   </Menu> <!-- End Accessories -->
+@@ -43,6 +45,9 @@
+       <And>
+         <Category>Accessibility</Category>
+         <Not><Category>Settings</Category></Not>
++	<Not><Category>Qt</Category></Not>
++	<Not><Category>KDE</Category></Not>
++	<Not><Category>GNOME</Category></Not>
+       </And>
+     </Include>
+   </Menu> <!-- End Accessibility -->
+@@ -54,6 +59,9 @@
+     <Include>
+       <And>
+         <Category>Development</Category>
++        <Not><Category>Qt</Category></Not>
++        <Not><Category>KDE</Category></Not>
++	<Not><Category>GNOME</Category></Not>
+       </And>
+       <Filename>emacs.desktop</Filename>
+     </Include>
+@@ -66,6 +74,9 @@
+     <Include>
+       <And>
+         <Category>Education</Category>
++	<Not><Category>Qt</Category></Not>
++	<Not><Category>KDE</Category></Not>
++	<Not><Category>GNOME</Category></Not>
+       </And>
+     </Include>
+   </Menu> <!-- End Education -->
+@@ -77,6 +88,9 @@
+     <Include>
+       <And>
+         <Category>Game</Category>
++	<Not><Category>Qt</Category></Not>
++	<Not><Category>KDE</Category></Not>
++	<Not><Category>GNOME</Category></Not>
+       </And>
+     </Include>
+   </Menu> <!-- End Games -->
+@@ -88,6 +102,9 @@
+     <Include>
+       <And>
+         <Category>Graphics</Category>
++	<Not><Category>Qt</Category></Not>
++	<Not><Category>KDE</Category></Not>
++	<Not><Category>GNOME</Category></Not>
+       </And>
+     </Include>
+   </Menu> <!-- End Graphics -->
+@@ -99,6 +116,9 @@
+     <Include>
+       <And>
+         <Category>Network</Category>
++	<Not><Category>Qt</Category></Not>
++	<Not><Category>KDE</Category></Not>
++	<Not><Category>GNOME</Category></Not>
+       </And>
+     </Include>
+   </Menu>   <!-- End Internet -->
+@@ -110,6 +130,9 @@
+     <Include>
+       <And>
+         <Category>AudioVideo</Category>
++	<Not><Category>Qt</Category></Not>
++	<Not><Category>KDE</Category></Not>
++	<Not><Category>GNOME</Category></Not>
+       </And>
+     </Include>
+   </Menu>   <!-- End Multimedia -->
+@@ -121,6 +144,9 @@
+     <Include>
+       <And>
+         <Category>Office</Category>
++	<Not><Category>Qt</Category></Not>
++	<Not><Category>KDE</Category></Not>
++	<Not><Category>GNOME</Category></Not>
+       </And>
+     </Include>
+   </Menu> <!-- End Office -->
+@@ -133,6 +159,9 @@
+       <And>
+         <Category>System</Category>
+         <Not><Category>Settings</Category></Not>
++	<Not><Category>Qt</Category></Not>
++	<Not><Category>KDE</Category></Not>
++	<Not><Category>GNOME</Category></Not>
+       </And>
+     </Include>
+   </Menu>   <!-- End System Tools -->
+@@ -147,8 +176,344 @@
+         <Not><Category>Core</Category></Not>
+         <Not><Category>Settings</Category></Not>
+         <Not><Category>Screensaver</Category></Not>
++	<Not><Category>Qt</Category></Not>
++	<Not><Category>KDE</Category></Not>
++	<Not><Category>GNOME</Category></Not>
+       </And>
+     </Include>
+   </Menu> <!-- End Other -->
+ 
++  <!-- Read in overrides and child menus from applications-merged/ -->
++  <DefaultMergeDirs/>
++
++  <!-- GNOME -->
++  <Menu>
++    <Name>GNOME</Name>
++    <Directory>GNOME.directory</Directory>
++
++    <!-- GNOME Accessories submenu -->
++    <Menu>
++      <Name>Accessories</Name>
++      <Directory>mate-utility.directory</Directory>
++      <Include>
++        <And>
++          <Category>GNOME</Category>
++          <Category>Utility</Category>
++          <Not><Category>Accessibility</Category></Not>
++          <Not><Category>System</Category></Not>
++        </And>
++      </Include>
++    </Menu> <!-- End GNOME Accessories -->
++
++    <!-- GNOME Accessibility submenu -->
++    <Menu>
++      <Name>Universal Access</Name>
++      <Directory>mate-utility-accessibility.directory</Directory>
++      <Include>
++        <And>
++          <Category>GNOME</Category>
++          <Category>Accessibility</Category>
++          <Not><Category>Settings</Category></Not>
++        </And>
++      </Include>
++    </Menu> <!-- End GNOME Accessibility -->
++
++    <!-- GNOME Development Tools -->
++    <Menu>
++      <Name>Development</Name>
++      <Directory>mate-development.directory</Directory>
++      <Include>
++        <And>
++          <Category>GNOME</Category>
++          <Category>Development</Category>
++        </And>
++      </Include>
++    </Menu> <!-- End GNOME Development Tools -->
++
++    <!-- GNOME Education -->
++    <Menu>
++      <Name>Education</Name>
++      <Directory>mate-education.directory</Directory>
++      <Include>
++        <And>
++          <Category>GNOME</Category>
++          <Category>Education</Category>
++        </And>
++      </Include>
++    </Menu> <!-- End GNOME Education -->
++
++    <!-- GNOME Games -->
++    <Menu>
++      <Name>Games</Name>
++      <Directory>mate-game.directory</Directory>
++      <Include>
++        <And>
++          <Category>GNOME</Category>
++          <Category>Game</Category>
++        </And>
++      </Include>
++    </Menu> <!-- End GNOME Games -->
++
++    <!-- GNOME Graphics -->
++    <Menu>
++      <Name>Graphics</Name>
++      <Directory>mate-graphics.directory</Directory>
++      <Include>
++        <And>
++          <Category>GNOME</Category>
++          <Category>Graphics</Category>
++        </And>
++      </Include>
++    </Menu> <!-- End GNOME Graphics -->
++
++    <!-- GNOME Internet -->
++    <Menu>
++      <Name>Internet</Name>
++      <Directory>mate-network.directory</Directory>
++      <Include>
++        <And>
++          <Category>GNOME</Category>
++          <Category>Network</Category>
++        </And>
++      </Include>
++    </Menu> <!-- End GNOME Internet -->
++
++    <!-- GNOME Multimedia -->
++    <Menu>
++      <Name>Multimedia</Name>
++      <Directory>mate-audio-video.directory</Directory>
++      <Include>
++        <And>
++          <Category>GNOME</Category>
++          <Category>AudioVideo</Category>
++        </And>
++      </Include>
++    </Menu> <!-- End GNOME Multimedia -->
++
++    <!-- GNOME Office -->
++    <Menu>
++      <Name>Office</Name>
++      <Directory>mate-office.directory</Directory>
++      <Include>
++        <And>
++          <Category>GNOME</Category>
++          <Category>Office</Category>
++        </And>
++      </Include>
++    </Menu><!-- End GNOME Office -->
++
++    <!-- GNOME System Tools-->
++    <Menu>
++      <Name>System</Name>
++      <Directory>mate-system-tools.directory</Directory>
++      <Include>
++        <And>
++          <Category>GNOME</Category>
++          <Category>System</Category>
++          <Not><Category>Settings</Category></Not>
++        </And>
++      </Include>
++    </Menu>   <!-- End GNOME System Tools -->
++
++    <!-- GNOME Other -->
++    <Menu>
++      <Name>Other</Name>
++      <Directory>mate-other.directory</Directory>
++      <OnlyUnallocated/>
++      <Include>
++        <And>
++          <Category>GNOME</Category>
++          <Category>Application</Category>
++          <Not><Category>Core</Category></Not>
++          <Not><Category>Settings</Category></Not>
++          <Not><Category>Screensaver</Category></Not>
++        </And>
++      </Include>
++    </Menu> <!-- End GNOME Other -->
++  </Menu> <!-- GNOME -->
++
++  <!-- KDE -->
++  <Menu>
++    <KDELegacyDirs/>
++    <Name>KDE</Name>
++    <Directory>KDE.directory</Directory>
++
++    <!-- KAccessories submenu -->
++    <Menu>
++      <Name>Accessories</Name>
++      <Directory>mate-utility.directory</Directory>
++      <Include>
++        <And>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++          <Category>Utility</Category>
++          <Not>
++            <Category>System</Category>
++          </Not>
++        </And>
++      </Include>
++    </Menu> <!-- End KAccessories -->
++
++    <!-- KAccessibility submenu -->
++    <Menu>
++      <Name>Accessibility</Name>
++      <Directory>mate-utility-accessibility.directory</Directory>
++      <Include>
++        <And>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++          <Category>Accessibility</Category>
++          <Not>
++            <Category>Settings</Category>
++          </Not>
++        </And>
++      </Include>
++    </Menu> <!-- End KAccessibility -->
++
++    <!-- KDevelopment Tools -->
++    <Menu>
++      <Name>Development</Name>
++      <Directory>mate-development.directory</Directory>
++      <Include>
++        <And>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++          <Category>Development</Category>
++        </And>
++      </Include>
++    </Menu> <!-- End KDevelopment Tools -->
++
++    <!-- KEducation -->
++    <Menu>
++      <Name>Education</Name>
++      <Directory>mate-education.directory</Directory>
++      <Include>
++        <And>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++          <Category>Education</Category>
++        </And>
++      </Include>
++    </Menu> <!-- End KEducation -->
++
++    <!-- KGames -->
++    <Menu>
++      <Name>Games</Name>
++      <Directory>mate-game.directory</Directory>
++      <Include>
++        <And>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++          <Category>Game</Category>
++        </And>
++      </Include>
++    </Menu> <!-- End KGames -->
++
++    <!-- KGraphics -->
++    <Menu>
++      <Name>Graphics</Name>
++      <Directory>mate-graphics.directory</Directory>
++      <Include>
++        <And>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++          <Category>Graphics</Category>
++        </And>
++      </Include>
++    </Menu> <!-- End KGraphics -->
++
++    <!-- KInternet -->
++    <Menu>
++      <Name>Internet</Name>
++      <Directory>mate-network.directory</Directory>
++      <Include>
++        <And>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++          <Category>Network</Category>
++        </And>
++      </Include>
++    </Menu> <!-- End KInternet -->
++
++    <!-- KMultimedia -->
++    <Menu>
++      <Name>Multimedia</Name>
++      <Directory>mate-audio-video.directory</Directory>
++      <Include>
++        <And>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++          <Category>AudioVideo</Category>
++        </And>
++      </Include>
++    </Menu> <!-- End KMultimedia -->
++
++    <!-- KOffice -->
++    <Menu>
++      <Name>Office</Name>
++      <Directory>mate-office.directory</Directory>
++      <Include>
++        <And>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++          <Or>
++            <Category>Office</Category>
++          </Or>
++        </And>
++      </Include>
++    </Menu><!-- End KOffice -->
++
++    <!-- KSystem Tools-->
++    <Menu>
++      <Name>System</Name>
++      <Directory>mate-system-tools.directory</Directory>
++      <Include>
++        <And>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++          <Category>System</Category>
++          <Not><Category>Settings</Category></Not>
++        </And>
++      </Include>
++    </Menu>   <!-- End KSystem Tools -->
++
++    <!-- KOther -->
++    <Menu>
++      <Name>Other</Name>
++      <Directory>mate-other.directory</Directory>
++      <OnlyUnallocated/>
++      <Include>
++        <And>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++          <Category>Application</Category>
++          <Not><Category>Core</Category></Not>
++          <Not><Category>Settings</Category></Not>
++        </And>
++      </Include>
++    </Menu> <!-- End KOther -->
++  </Menu> <!-- KDE -->
++
+ </Menu> <!-- End Applications -->
