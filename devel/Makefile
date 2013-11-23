@@ -557,6 +557,7 @@
     SUBDIR += gitphp
     SUBDIR += gittrac
     SUBDIR += gjstest
+    SUBDIR += glade
     SUBDIR += glade2
     SUBDIR += glade3
     SUBDIR += glademm
