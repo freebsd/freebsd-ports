@@ -1,0 +1,4 @@
+Module::Path provides a single function, module_path(), which will
+find where a module is installed locally.
+
+WWW: http://metacpan.org/release/Module-Path
