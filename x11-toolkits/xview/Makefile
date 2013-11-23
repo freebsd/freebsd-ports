@@ -43,7 +43,7 @@ CFLAGS+=	-DCOMPAT_43TTY
 .endif
 
 post-extract:
-	@${MV} ${WRKSRC}/xview.man ${WRKSRC}.XView.man
+	@${MV} ${WRKSRC}/xview.man ${WRKSRC}/XView.man
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's+/usr/local+${PREFIX}+;' \
