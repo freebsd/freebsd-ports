@@ -158,6 +158,10 @@ NET_SNMP_WITH_MIB_MODULE_LIST+=	sctp-mib
 CONFIGURE_ARGS+=	--with-libs="-lssp_nonshared"
 .endif
 
+.if ${OSVERSION} >= 1000000
+CFLAGS+=	-D_WANT_IFADDR
+.endif
+
 .if ${PORT_OPTIONS:MMFD_REWRITES}
 CONFIGURE_ARGS+=--enable-mfd-rewrites
 NET_SNMP_WITH_MIB_MODULE_LIST+=	if-mib
