@@ -48,6 +48,7 @@ lib/gemrb/plugins/WAVReader.so
 lib/gemrb/plugins/WEDImporter.so
 lib/gemrb/plugins/WMPImporter.so
 lib/gemrb/plugins/ZLibManager.so
+man/man6/gemrb.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
