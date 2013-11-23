@@ -1,0 +1,17 @@
+bin/esedbexport
+bin/esedbinfo
+include/libesedb.h
+include/libesedb/codepage.h
+include/libesedb/definitions.h
+include/libesedb/error.h
+include/libesedb/extern.h
+include/libesedb/features.h
+include/libesedb/types.h
+lib/libesedb.a
+lib/libesedb.la
+lib/libesedb.so
+lib/libesedb.so.1
+libdata/pkgconfig/libesedb.pc
+man/man1/esedbinfo.1.gz
+man/man3/libesedb.3.gz
+@dirrm include/libesedb

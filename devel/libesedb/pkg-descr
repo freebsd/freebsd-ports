@@ -1,0 +1,5 @@
+Library and tools to access the Extensible Storage Engine (ESE) Database File
+(EDB) format.  ESEDB is used in many different applications like Windows Search,
+Windows Mail, Exchange, Active Directory, etc.
+
+WWW: http://code.google.com/p/libesedb/
