@@ -21,6 +21,7 @@
     SUBDIR += emesene
     SUBDIR += empathy
     SUBDIR += farsight2
+    SUBDIR += farstream
     SUBDIR += finch
     SUBDIR += folks
     SUBDIR += freetalk
