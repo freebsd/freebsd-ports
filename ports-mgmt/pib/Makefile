@@ -11,16 +11,17 @@ MASTER_SITE_SUBDIR=	msmith
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI Ports Collection management tool
 
-USE_TK=		84
-USE_TK_BUILD=	84
+USES=	tk:build
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
+post-patch:
+	${REINPLACE_CMD} 's/8.4/${TCL_VER}/g' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} 's/84/${TCL_VER:S,.,,}/g' ${WRKSRC}/Makefile
 do-install:
-	${MKDIR} ${PREFIX}/lib/pib
-	${INSTALL_SCRIPT} ${WRKSRC}/*.tcl ${PREFIX}/lib/pib
-	${INSTALL_DATA} ${WRKSRC}/libTkSteal.so.2* ${PREFIX}/lib/pib
-	${LN} -fs ${PREFIX}/lib/pib/pib.tcl ${PREFIX}/bin/pib
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/pib
+	${INSTALL_SCRIPT} ${WRKSRC}/*.tcl ${STAGEDIR}${PREFIX}/lib/pib
+	${INSTALL_DATA} ${WRKSRC}/libTkSteal.so.2* ${STAGEDIR}${PREFIX}/lib/pib
+	${LN} -fs ${PREFIX}/lib/pib/pib.tcl ${STAGEDIR}${PREFIX}/bin/pib
 
 .include <bsd.port.post.mk>
