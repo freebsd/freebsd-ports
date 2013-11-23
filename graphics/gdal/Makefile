@@ -14,9 +14,11 @@ COMMENT=	Translator library for raster geospatial data formats
 
 LICENSE=	MIT
 
-OPTIONS_DEFINE=	CFITSIO CURL ECW EXPAT GEOS GEOTIFF GIF GTA HDF5 ICONV JASPER \
-		JPEG KML LIBXML2 MYSQL NETCDF ODBC PCRE PGSQL PNG POPPLER PROJ \
-		SQLITE TIFF WEBP XERCES
+OPTIONS_DEFINE=	ARMADILLO CFITSIO CURL ECW EXPAT FREEXL GEOS GEOTIFF GIF GTA \
+		HDF5 ICONV JASPER JPEG KML LIBXML2 MYSQL NETCDF ODBC PCRE \
+		PGSQL PNG PROJ SQLITE TIFF WEBP XERCES
+OPTIONS_RADIO=	PDF
+OPTIONS_RADIO_PDF=	PODOFO POPPLER
 OPTIONS_DEFAULT=GEOTIFF GIF JASPER JPEG PNG TIFF
 PCRE_DESC=	Regular expression support for SQLite
 
@@ -31,6 +33,11 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USES=		gmake
 
+SLAVEDIRS=	graphics/p5-Geo-GDAL graphics/php-gdal graphics/py-gdal graphics/ruby-gdal
+
+ARMADILLO_CONFIGURE_OFF=--with-armadillo=no
+ARMADILLO_CONFIGURE_ON=	--with-armadillo=${LOCALBASE}
+ARMADILLO_LIB_DEPENDS=	libarmadillo.so:${PORTSDIR}/math/armadillo
 CFITSIO_CONFIGURE_OFF=	--with-cfitsio=no
 CFITSIO_CONFIGURE_ON=	--with-cfitsio=${LOCALBASE}
 CFITSIO_LIB_DEPENDS=	libcfitsio.so:${PORTSDIR}/astro/cfitsio
@@ -43,6 +50,9 @@ ECW_LIB_DEPENDS=	libNCSEcw.so:${PORTSDIR}/graphics/libecwj2
 EXPAT_CONFIGURE_OFF=	--with-expat=no
 EXPAT_CONFIGURE_ON=	--with-expat=${LOCALBASE}
 EXPAT_LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+FREEXL_CONFIGURE_OFF=	--with-freexl=no
+FREEXL_CONFIGURE_ON=	--with-freexl=${LOCALBASE}
+FREEXL_LIB_DEPENDS=	libfreexl.so:${PORTSDIR}/textproc/freexl
 GEOS_CONFIGURE_OFF=	--with-geos=no
 GEOS_CONFIGURE_ON=	--with-geos=${LOCALBASE}/bin/geos-config
 GEOS_LIB_DEPENDS=	libgeos.so:${PORTSDIR}/graphics/geos
@@ -60,7 +70,7 @@ HDF5_CONFIGURE_ON=	--with-hdf5=${LOCALBASE}
 HDF5_LIB_DEPENDS=	libhdf5.so.7:${PORTSDIR}/science/hdf5-18
 ICONV_CONFIGURE_OFF=	--with-libiconv-prefix=no
 ICONV_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG}
-ICONV_LDFLAGS=         -L${LOCALBASE}/lib ${ICONV_LIB}
+ICONV_LDFLAGS=		-L${LOCALBASE}/lib ${ICONV_LIB}
 ICONV_USES=		iconv
 JASPER_CONFIGURE_OFF=	--with-jasper=no
 JASPER_CONFIGURE_ON=	--with-jasper=${LOCALBASE}
@@ -92,6 +102,9 @@ PGSQL_USE=		PGSQL=yes
 PNG_CONFIGURE_OFF=	--with-png=internal
 PNG_CONFIGURE_ON=	--with-png=${LOCALBASE}
 PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+PODOFO_CONFIGURE_OFF=	--with-podofo=no
+PODOFO_CONFIGURE_ON=	--with-podofo=${LOCALBASE}
+PODOFO_LIB_DEPENDS=	libpodofo.so:${PORTSDIR}/graphics/podofo
 POPPLER_CONFIGURE_OFF=	--with-poppler=no
 POPPLER_CONFIGURE_ON=	--with-poppler=${LOCALBASE}
 POPPLER_LIB_DEPENDS=	libpoppler.so:${PORTSDIR}/graphics/poppler
@@ -110,8 +123,6 @@ WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
 XERCES_CONFIGURE_OFF=	--with-xerces=no
 XERCES_CONFIGURE_ON=	--with-xerces=${LOCALBASE}
 XERCES_LIB_DEPENDS=	libxerces-c.so:${PORTSDIR}/textproc/xerces-c3
-
-SLAVEDIRS=	graphics/p5-Geo-GDAL graphics/php-gdal graphics/py-gdal graphics/ruby-gdal
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|g' ${WRKSRC}/configure
