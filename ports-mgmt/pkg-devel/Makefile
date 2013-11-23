@@ -23,15 +23,16 @@ USES=		uidfix
 
 MAKE_ENV+=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null \
 		PORTREVISION=${PORTREVISION}
-.if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
-MAKE_ARGS+=	DEBUG_FLAGS="${DEBUG_FLAGS}"
-.endif
 
 # Use a submake as 'deinstall install' needs to reevaluate PKG_CMD
 # so that pkg-static is used from the wrkdir
 USE_SUBMAKE=	yes
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
+MAKE_ARGS+=	DEBUG_FLAGS="${DEBUG_FLAGS}"
+.endif
 
 .if defined(WITH_PKGNG)
 .if ${WITH_PKGNG} != devel
