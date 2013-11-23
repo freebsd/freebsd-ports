@@ -1,4 +1,5 @@
 bin/universalindentgui
+man/man1/universalindentgui.1.gz
 share/universalindentgui/config/UiGuiSyntaxHighlightConfig.ini
 share/universalindentgui/indenters/JsDecoder.js
 share/universalindentgui/indenters/example.cbl
