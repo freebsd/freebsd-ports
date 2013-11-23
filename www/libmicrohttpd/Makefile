@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libmicrohttpd
-PORTVERSION=	0.9.27
+PORTVERSION=	0.9.31
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	GNU
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	C library for embedding HTTP server functionality
@@ -14,27 +13,25 @@ LICENSE=	LGPL21
 
 OPTIONS_DEFINE=	GNUTLS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt \
-		gnutls:${PORTSDIR}/security/gnutls
-CONFIGURE_ARGS+=--with-gnutls=${LOCALBASE} --enable-https
-.endif
-
-USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAKE_ARGS+=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
+USE_LDCONFIG=	yes
 
-MAN3=		libmicrohttpd.3
+GNUTLS_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+			libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_CONFIGURE_ARGS=	--with-gnutls=${LOCALBASE} --enable-https
+
 INFO=		libmicrohttpd libmicrohttpd-tutorial
 
-PLIST_FILES=	lib/libmicrohttpd.so.27 \
+PLIST_FILES=	include/microhttpd.h \
+		lib/libmicrohttpd.a \
 		lib/libmicrohttpd.la \
 		lib/libmicrohttpd.so \
-		lib/libmicrohttpd.a \
+		lib/libmicrohttpd.so.30 \
 		libdata/pkgconfig/libmicrohttpd.pc \
-		include/microhttpd.h
+		man/man3/libmicrohttpd.3.gz
+
+post-build:
+	@${STRIP_CMD} ${WRKSRC}/src/microhttpd/.libs/libmicrohttpd.so.30
 
 .include <bsd.port.mk>
