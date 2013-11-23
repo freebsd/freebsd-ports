@@ -4,13 +4,12 @@
 PORTNAME=	joomla
 PORTVERSION=	3.1.1
 CATEGORIES=	www
+PKGNAMESUFFIX=	3
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Dynamic web content management system (CMS)
 
 LICENSE=	GPLv2
-
-LATEST_LINK=	joomla31
 
 GH_ACCOUNT=	${PORTNAME}
 GH_PROJECT=	${PORTNAME}-cms
