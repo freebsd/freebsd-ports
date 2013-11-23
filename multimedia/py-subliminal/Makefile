@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/bs4/__init__.py:${PORTSDIR}/www/py-beautifulso
 		${PYTHON_PKGNAMEPREFIX}charade>0:${PORTSDIR}/textproc/py-charade \
 		${PYTHON_PKGNAMEPREFIX}pysrt>0:${PORTSDIR}/textproc/py-pysrt \
 		${PYTHON_PKGNAMEPREFIX}babelfish>=0.4.0:${PORTSDIR}/devel/py-babelfish \
-		${PYTHON_PKGNAMEPREFIX}dogpile.cache>0:${PORTSDIR}/devel/py-dogpile.cache
+		${PYTHON_PKGNAMEPREFIX}dogpile.cache>=0.5.2:${PORTSDIR}/devel/py-dogpile.cache
 
 USE_PYTHON=	2.7
 USE_PYDISTUTILS=	easy_install
