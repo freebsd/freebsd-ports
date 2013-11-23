@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	testlink
-PORTVERSION=	1.9.8
+PORTVERSION=	1.9.9
 CATEGORIES=	www devel
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/TestLink%201.9/TestLink%20${PORTVERSION}
@@ -88,12 +88,17 @@ do-install:
 .endfor
 .endif
 
-x-generate-plist:
-	${FIND} ${WWWDIR} -type f | ${SORT} | ${SED} -e 's,${WWWDIR},%%WWWDIR%%,g' > pkg-plist.new
-	${FIND} ${WWWDIR} -type d -depth | ${SORT} -r | ${SED} -e 's,${WWWDIR},@dirrm %%WWWDIR%%,g' >> pkg-plist.new
+x-generate-plist: stage
+	${FIND} ${STAGEDIR}${WWWDIR} -type f | ${SORT} | ${SED} -e 's,${STAGEDIR}${WWWDIR},%%WWWDIR%%,g' > pkg-plist.new
+	${FIND} ${STAGEDIR}${WWWDIR} -type d -depth | ${SORT} -r | ${SED} -e 's,${STAGEDIR}${WWWDIR},@dirrm %%WWWDIR%%,g' >> pkg-plist.new
 .for f in gui/templates_c logs upload_area
 	${ECHO} '@exec mkdir -p %D/%%WWWDIR%%/${f}' >> pkg-plist.new
 .endfor
 	${ECHO} '@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%' >> pkg-plist.new
+	${REINPLACE_CMD} -E 's|@dirrm (%%WWWDIR%%/install)|@dirrmtry \1|' pkg-plist.new
+.for d in upload_area logs gui/templates_c gui gui
+	${REINPLACE_CMD} -E 's|@dirrm (%%WWWDIR%%/${d})$$|@dirrmtry \1|' pkg-plist.new
+.endfor
+	${REINPLACE_CMD} -E 's|@dirrm (%%WWWDIR%%)$$|@dirrmtry \1|' pkg-plist.new
 
 .include <bsd.port.mk>
