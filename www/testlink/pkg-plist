@@ -50,6 +50,7 @@
 %%WWWDIR%%/gui/niftycube/niftycube.js
 %%WWWDIR%%/gui/templates/attachment404.tpl
 %%WWWDIR%%/gui/templates/attachmentdelete.tpl
+%%WWWDIR%%/gui/templates/attachments.inc.tpl
 %%WWWDIR%%/gui/templates/attachmentupload.tpl
 %%WWWDIR%%/gui/templates/cfields/cfieldsEdit.tpl
 %%WWWDIR%%/gui/templates/cfields/cfieldsExport.tpl
@@ -193,6 +194,7 @@
 %%WWWDIR%%/gui/templates/results/resultsNavigator.tpl
 %%WWWDIR%%/gui/templates/results/resultsReqs.tpl
 %%WWWDIR%%/gui/templates/results/resultsTC.tpl
+%%WWWDIR%%/gui/templates/results/resultsTCLauncher.tpl
 %%WWWDIR%%/gui/templates/results/tcCreatedPerUser.tpl
 %%WWWDIR%%/gui/templates/results/tcCreatedPerUserGUI.tpl
 %%WWWDIR%%/gui/templates/results/tcCreatedPerUserOnTestProject.tpl
@@ -458,6 +460,12 @@
 %%WWWDIR%%/install/sql/alter_tables/1.9.8/mysql/DB.1.9.8/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.8/postgres/DB.1.9.8/step1/db_schema_update.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.8/postgres/DB.1.9.8/stepZ/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.9/mssql/DB.1.9.9/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.9/mssql/DB.1.9.9/stepZ/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.9/mysql/DB.1.9.9/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.9/mysql/DB.1.9.9/stepZ/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.9/postgres/DB.1.9.9/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.9/postgres/DB.1.9.9/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9/mssql/DB.1.3/step1/db_schema_update.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9/mssql/DB.1.3/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9/mysql/DB.1.3/step1/db_schema_update.sql
@@ -549,6 +557,7 @@
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientSample2.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientSetTestCaseExecutionType.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientSetupTicket-5451.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientTestLinkVersion.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientTestSuiteTestCaseStepsManagement.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientUpdateTestCase.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientUpdateTestCaseCustomFieldDesignValue.php
@@ -681,27 +690,31 @@
 %%WWWDIR%%/lib/inventory/setInventory.php
 %%WWWDIR%%/lib/issuetrackerintegration/bugzilladbInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/bugzillaxmlrpcInterface.class.php
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jiraOnDemandCfg.xml
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine-issue01.xml
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine-issue02.xml
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.bugzilladb.php
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.bugzillaxmlrpc.php
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.fogbugz.api.php
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.fogbugzrestInterface.class.php
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.gforgesoapInterface.class.php
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.jiraOnDemand.jirasoapInterface.class.php
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.jiradbInterface.class.php
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.jirasoapInterface.class.php
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.mantissoapInterface.class.php
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.redmine-fman.php
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.redmine-raw-api.01.php
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.redmine.01.php
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.redmine.rest.php
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.redminerestInterface.class.php
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.tracxmlrpc.php
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.youtrackrestInterface.class.php
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test2.redminerestInterface.class.php
-%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test2_int_mantissoap.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/bugzilla/test.bugzilladb.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/bugzilla/test.bugzillaxmlrpc.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/fogbugz/test.fogbugz.api.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/fogbugz/test.fogbugzrestInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/gforge/test.gforgesoapInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/jiraOnDemandCfg.xml
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/test.createIssue.jiraOnDemand.jirasoapInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/test.createIssueWithAffectedVersions.jiraOnDemand.jirasoapInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/test.createIssueWithCustomFields.jiraOnDemand.jirasoapInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/test.getIssue.jiraOnDemand.jirasoapInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/test.jiraOnDemand.jirasoapInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/test.jiradbInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira/test.jirasoapInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/mantis/test.mantissoapInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/mantis/test2_int_mantissoap.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/redmine-issue01.xml
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/redmine-issue02.xml
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/test.redmine-fman.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/test.redmine-raw-api.01.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/test.redmine.01.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/test.redmine.rest.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/test.redminerestInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/test2.redminerestInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/trac/test.tracxmlrpc.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/youtrack/test.youtrackrestInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/fogbugzdbInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/fogbugzrestInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/gforgesoapInterface.class.php
@@ -1227,6 +1240,22 @@
 %%WWWDIR%%/third_party/adodb/xsl/remove-0.3.xsl
 %%WWWDIR%%/third_party/adodb_xml/class.ADODB_XML.php
 %%WWWDIR%%/third_party/adodb_xml/class.xml.php
+%%WWWDIR%%/third_party/chosen/chosen-sprite.png
+%%WWWDIR%%/third_party/chosen/chosen-sprite@2x.png
+%%WWWDIR%%/third_party/chosen/chosen.css
+%%WWWDIR%%/third_party/chosen/chosen.jquery.js
+%%WWWDIR%%/third_party/chosen/chosen.jquery.min.js
+%%WWWDIR%%/third_party/chosen/chosen.min.css
+%%WWWDIR%%/third_party/chosen/chosen.proto.js
+%%WWWDIR%%/third_party/chosen/chosen.proto.min.js
+%%WWWDIR%%/third_party/chosen/docsupport/chosen.png
+%%WWWDIR%%/third_party/chosen/docsupport/oss-credit.png
+%%WWWDIR%%/third_party/chosen/docsupport/prism.css
+%%WWWDIR%%/third_party/chosen/docsupport/prism.js
+%%WWWDIR%%/third_party/chosen/docsupport/style.css
+%%WWWDIR%%/third_party/chosen/index.html
+%%WWWDIR%%/third_party/chosen/index.proto.html
+%%WWWDIR%%/third_party/chosen/options.html
 %%WWWDIR%%/third_party/ckeditor/CHANGES.html
 %%WWWDIR%%/third_party/ckeditor/INSTALL.html
 %%WWWDIR%%/third_party/ckeditor/LICENSE.html
@@ -4036,6 +4065,7 @@
 %%WWWDIR%%/third_party/fogbugz-php-api/test/data/login_expected.xml
 %%WWWDIR%%/third_party/fogbugz-php-api/test/fogbugz.php
 %%WWWDIR%%/third_party/images-icons/famfamfam_silk_icons_v013.zip
+%%WWWDIR%%/third_party/jquery/jquery-2.0.3.min.js
 %%WWWDIR%%/third_party/pchart/Fonts/GeosansLight.ttf
 %%WWWDIR%%/third_party/pchart/Fonts/MankSans.ttf
 %%WWWDIR%%/third_party/pchart/Fonts/Silkscreen.ttf
@@ -4993,6 +5023,7 @@
 @dirrm %%WWWDIR%%/third_party/pchart/pChart
 @dirrm %%WWWDIR%%/third_party/pchart/Fonts
 @dirrm %%WWWDIR%%/third_party/pchart
+@dirrm %%WWWDIR%%/third_party/jquery
 @dirrm %%WWWDIR%%/third_party/images-icons
 @dirrm %%WWWDIR%%/third_party/fogbugz-php-api/test/data
 @dirrm %%WWWDIR%%/third_party/fogbugz-php-api/test
@@ -5467,6 +5498,8 @@
 @dirrm %%WWWDIR%%/third_party/ckeditor/_samples/adobeair
 @dirrm %%WWWDIR%%/third_party/ckeditor/_samples
 @dirrm %%WWWDIR%%/third_party/ckeditor
+@dirrm %%WWWDIR%%/third_party/chosen/docsupport
+@dirrm %%WWWDIR%%/third_party/chosen
 @dirrm %%WWWDIR%%/third_party/adodb_xml
 @dirrm %%WWWDIR%%/third_party/adodb/xsl
 @dirrm %%WWWDIR%%/third_party/adodb/tests
@@ -5540,6 +5573,14 @@
 @dirrm %%WWWDIR%%/lib/plan
 @dirrm %%WWWDIR%%/lib/keywords
 @dirrm %%WWWDIR%%/lib/issuetrackers
+@dirrm %%WWWDIR%%/lib/issuetrackerintegration/code_testing/youtrack
+@dirrm %%WWWDIR%%/lib/issuetrackerintegration/code_testing/trac
+@dirrm %%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine
+@dirrm %%WWWDIR%%/lib/issuetrackerintegration/code_testing/mantis
+@dirrm %%WWWDIR%%/lib/issuetrackerintegration/code_testing/jira
+@dirrm %%WWWDIR%%/lib/issuetrackerintegration/code_testing/gforge
+@dirrm %%WWWDIR%%/lib/issuetrackerintegration/code_testing/fogbugz
+@dirrm %%WWWDIR%%/lib/issuetrackerintegration/code_testing/bugzilla
 @dirrm %%WWWDIR%%/lib/issuetrackerintegration/code_testing
 @dirrm %%WWWDIR%%/lib/issuetrackerintegration
 @dirrm %%WWWDIR%%/lib/inventory
@@ -5590,6 +5631,19 @@
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9/mssql/DB.1.3/step1
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9/mssql/DB.1.3
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9/mssql
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.9/postgres/DB.1.9.9/stepZ
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.9/postgres/DB.1.9.9/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.9/postgres/DB.1.9.9
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.9/postgres
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.9/mysql/DB.1.9.9/stepZ
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.9/mysql/DB.1.9.9/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.9/mysql/DB.1.9.9
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.9/mysql
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.9/mssql/DB.1.9.9/stepZ
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.9/mssql/DB.1.9.9/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.9/mssql/DB.1.9.9
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.9/mssql
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.9
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.8/postgres/DB.1.9.8/stepZ
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.8/postgres/DB.1.9.8/step1
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.8/postgres/DB.1.9.8
