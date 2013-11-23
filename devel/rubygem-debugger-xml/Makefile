@@ -6,7 +6,7 @@ PORTVERSION=	0.1.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	wulf@mail.mipt.ru
+MAINTAINER=	wulf@cicgroup.ru
 COMMENT=	XML interface for rubygem-debugger
 
 RUN_DEPENDS=	rubygem-debugger>=1.6.2:${PORTSDIR}/devel/rubygem-debugger \

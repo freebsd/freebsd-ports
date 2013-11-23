@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.cyrus2dovecot.sw.fu-berlin.de/download/
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	wulf@mail.mipt.ru
+MAINTAINER=	wulf@cicgroup.ru
 COMMENT=	Convert Cyrus folders to Dovecot
 
 LICENSE=	ART10 GPLv1
