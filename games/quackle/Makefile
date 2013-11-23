@@ -18,9 +18,9 @@ LICENSE_COMB=	dual
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/quacker
 
-USES=		gmake
+USES=		gmake qmake
 USE_GCC=	any
-USE_QT4=	gui moc_build qmake_build
+USE_QT4=	gui moc_build
 
 DESKTOP_ENTRIES="Quackle" "${COMMENT}" "" "quackle" "Game;BoardGame;" "true"
 
@@ -35,9 +35,9 @@ post-patch:
 		'/QFile::exists/s|("data")|("${DATADIR}")| ; \
 		 /setDataDirectory/s|("data")|("${DATADIR}")|' ${BUILD_WRKSRC}/settings.cpp
 
-do-configure:
-.for dir in . quackleio quacker
-	@(cd ${WRKSRC}/${dir} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS})
+post-configure:
+.for dir in quackleio quacker
+	@(cd ${WRKSRC}/${dir} && ${SETENV} ${QMAKE_ENV} ${QMAKE} ${QMAKE_ARGS})
 .endfor
 
 pre-build:
