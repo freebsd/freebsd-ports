@@ -169,6 +169,7 @@ callweaver:*:444:444::0:0:Callweaver account:/var/lib/callweaver:/usr/sbin/nolog
 courier:*:465:465::0:0:Courier Mail Server:/nonexistent:/usr/sbin/nologin
 condor:*:466:466::0:0:& user:/home/condor:/usr/sbin/nologin
 netmon:*:467:467::0:0:Network monitor account:/var/netmon:/usr/sbin/nologin
+slurm:*:468:468::0:0:SLURM Daemon:/home/slurm:/usr/sbin/nologin
 _bbstored:*:505:505::0:0:Box Backup Store Daemon:/nonexistent:/usr/sbin/nologin
 radmind:*:506:506::0:0:radmind User:/var/radmind:/usr/sbin/nologin
 skkserv:*:507:507::0:0:skkserv User:/nonexistent:/usr/sbin/nologin
