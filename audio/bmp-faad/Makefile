@@ -6,7 +6,6 @@ PKGNAMEPREFIX=	bmp-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Beep Media Player (BMP) plugin for faad
 
-NO_STAGE=	yes
 MASTERDIR=	${.CURDIR}/../xmms-faad
 
 .include "${MASTERDIR}/Makefile.inc"
