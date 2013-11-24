@@ -8,7 +8,7 @@ include/libssh/ssh2.h
 lib/libssh.a
 lib/libssh.so
 lib/libssh.so.4
-lib/libssh.so.4.2.2
+lib/libssh.so.4.2.5
 libdata/pkgconfig/libssh.pc
 libdata/pkgconfig/libssh_threads.pc
 @dirrm include/libssh
