@@ -1,6 +1,8 @@
 %%SITE_PERL%%/DBICx/TestDatabase.pm
 %%SITE_PERL%%/DBICx/TestDatabase/Subclass.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBICx/TestDatabase/.packlist
+%%PERL5_MAN3%%/DBICx::TestDatabase.3.gz
+%%PERL5_MAN3%%/DBICx::TestDatabase::Subclass.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBICx/TestDatabase
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBICx
 @dirrmtry %%SITE_PERL%%/DBICx/TestDatabase
