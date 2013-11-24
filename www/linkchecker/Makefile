@@ -87,7 +87,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.5:${PORTSDIR}/www/py-cssutils
 
 # To run the WSGI Web interface
 .if ${PORT_OPTIONS:MWSGI}
-RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_wsg>0:${PORTSDIR}/www/mod_wsgi2
+RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_wsg2>0:${PORTSDIR}/www/mod_wsgi2
 USE_APACHE_RUN=	22
 .endif
 
