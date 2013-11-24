@@ -1,0 +1,41 @@
+--- configure.orig	2013-09-10 16:44:33.000000000 -0500
++++ configure	2013-11-14 10:23:02.000000000 -0600
+@@ -21594,12 +21594,9 @@
+ main ()
+ {
+ 
+-					int main()
+-					{
+ 						MYSQL mysql;
+ 						(void) mysql_init(&mysql);
+ 						(void) mysql_close(&mysql);
+-					}
+ 
+   ;
+   return 0;
+@@ -21636,12 +21633,9 @@
+ main ()
+ {
+ 
+-						int main()
+-						{
+ 							MYSQL mysql;
+ 							(void) mysql_init(&mysql);
+ 							(void) mysql_close(&mysql);
+-						}
+ 
+   ;
+   return 0;
+@@ -21803,12 +21797,9 @@
+ main ()
+ {
+ 
+-				int main()
+-       	  			{
+ 					PGconn     *conn;
+ 					conn = PQconnectdb("dbname = postgres");
+        					(void) PQfinish(conn);
+-				}
+ 
+   ;
+   return 0;

@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# PROVIDE: slurmd
+# REQUIRE: DAEMON munge
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# slurmd_enable (bool):   Set to NO by default.
+#               Set it to YES to enable slurmd.
+#
+
+. /etc/rc.subr
+
+name="slurmd"
+rcvar=slurmd_enable
+
+pidfile=/var/run/$name.pid
+
+load_rc_config $name
+
+: ${slurmd_enable="NO"}
+
+start_cmd=slurmd_start
+stop_cmd=slurmd_stop
+
+slurmd_start() {
+    checkyesno slurmd_enable && echo "Starting $name." && \
+	%%PREFIX%%/sbin/$name $slurmd_flags
+}
+
+slurmd_stop() {
+    if [ -e $pidfile ]; then
+        checkyesno slurmd_enable && echo "Stopping $name." && \
+	    kill `cat $pidfile`
+    else
+        killall $name
+    fi
+}
+
+run_rc_command "$1"
