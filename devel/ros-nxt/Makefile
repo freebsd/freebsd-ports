@@ -36,7 +36,7 @@ RUN_DEPENDS=	roscore:${PORTSDIR}/devel/ros \
 		${LOCALBASE}/ros/stacks/common_msgs/stack.xml:${PORTSDIR}/devel/ros-common_msgs \
 		${LOCALBASE}/ros/stacks/geometry/stack.xml:${PORTSDIR}/math/ros-geometry \
 		${PYTHON_SITELIBDIR}/usb.so:${PORTSDIR}/devel/py-usb
-USE_PYTHON=	yes
+USE_PYTHON=	2
 USE_BZIP2=	yes
 
 # rosmake does its own threading
@@ -66,6 +66,12 @@ post-extract:
 	# remove nxt_rviz_plugin, it is unbuildable right now
 	# and keeping it here breaks rospack
 	${RM} -rf ${WRKSRC}/nxt_rviz_plugin
+
+post-patch:
+	@${GREP} -l -r "^#\!/usr/bin/env python" ${WRKSRC} | ${XARGS} \
+		${REINPLACE_CMD} -E -e "s|#!/usr/bin/env python|#!/usr/bin/env python2|"
+	@${REINPLACE_CMD} -e 's|python setup.py|python2 setup.py|' \
+		${WRKSRC}/nxt_python/Makefile
 
 do-build:
 	(cd ${WRKSRC} ; ${MAKE_ENV} ${LOCALBASE}/bin/rosmake ${MAKE_ARGS})
