@@ -67,7 +67,7 @@ post-install:
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR})
 .endif
 	@${CAT} ${PKGMESSAGE}
 

@@ -103,13 +103,13 @@ pre-everything::
 
 do-install:
 .if !defined(WITH_NEW_XORG)
-	cd ${WRKSRC}/src/mesa; ${GMAKE} install-dri
+	(cd ${WRKSRC}/src/mesa && ${GMAKE} install-dri)
 .else
-	cd ${WRKSRC}/src/mesa/libdricore; ${GMAKE} install
-	cd ${WRKSRC}/src/mesa/drivers/dri; ${GMAKE} install
+	(cd ${WRKSRC}/src/mesa/libdricore && ${GMAKE} install)
+	(cd ${WRKSRC}/src/mesa/drivers/dri && ${GMAKE} install)
 . if defined(WITH_GALLIUM) && (${ARCH} == i386 || ${ARCH} == amd64)
-	cd ${WRKSRC}/src/gallium/drivers/radeon; ${GMAKE} install
-	cd ${WRKSRC}/src/gallium/targets; ${GMAKE} install
+	(cd ${WRKSRC}/src/gallium/drivers/radeon && ${GMAKE} install)
+	(cd ${WRKSRC}/src/gallium/targets && ${GMAKE} install)
 . endif
 .endif
 

@@ -20,7 +20,7 @@ PORTDOCS=	CHANGES README doc/FAQ.pod doc/NSP-Class-diagram.pdf \
 .ifndef (NOPORTDOCS)
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 	@${ECHO_MSG} "===>   Installing documentation in ${DOCSDIR}"
 .endif
 

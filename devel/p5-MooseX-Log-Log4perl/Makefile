@@ -24,6 +24,6 @@ post-patch:
 		${WRKSRC}/Makefile.PL
 
 regression-test: build
-	cd ${WRKSRC}/ && ${MAKE} test
+	cd ${WRKSRC} && ${MAKE} test
 
 .include <bsd.port.mk>

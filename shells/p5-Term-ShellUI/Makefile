@@ -19,10 +19,10 @@ USE_PERL5=	configure
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
-	cd ${WRKSRC}/examples/ && ${INSTALL_SCRIPT} \
-		fileman-example synopsis synopsis-big tui-sample ${STAGEDIR}${EXAMPLESDIR}/
+	(cd ${WRKSRC}/examples/ && ${INSTALL_SCRIPT} \
+		fileman-example synopsis synopsis-big tui-sample ${STAGEDIR}${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>

@@ -39,6 +39,6 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC}/raddb/ && ${INSTALL_DATA} ${RADDBFILES} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/raddb/ && ${INSTALL_DATA} ${RADDBFILES} ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>

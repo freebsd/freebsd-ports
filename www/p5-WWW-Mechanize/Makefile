@@ -33,8 +33,8 @@ PORTDOCS=	${DOCS:T}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR})
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
