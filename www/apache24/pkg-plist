@@ -10,6 +10,7 @@ bin/htpasswd
 bin/httxt2dbm
 bin/logresolve
 %%ETCDIR%%/Includes/no-accf.conf
+%%ETCDIR%%/modules.d/README_modules.d
 include/apache24/ap_compat.h
 include/apache24/ap_config.h
 include/apache24/ap_config_auto.h
@@ -558,6 +559,7 @@ sbin/split-logfile
 @dirrmtry libexec/apache24
 @dirrmtry include/apache24
 @unexec rm -f %D/%%ETCDIR%%/httpd.conf.bak 2> /dev/null || true
+@dirrmtry %%ETCDIR%%/modules.d
 @dirrmtry %%ETCDIR%%/extra
 @dirrmtry %%ETCDIR%%/envvars.d
 @dirrmtry %%ETCDIR%%/Includes
