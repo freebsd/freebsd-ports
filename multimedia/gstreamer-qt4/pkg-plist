@@ -17,9 +17,9 @@ include/QtGStreamer/QGlib/global.h
 include/QtGStreamer/QGlib/init.h
 include/QtGStreamer/QGlib/object.h
 include/QtGStreamer/QGlib/paramspec.h
+include/QtGStreamer/QGlib/qglib_signal.h
 include/QtGStreamer/QGlib/quark.h
 include/QtGStreamer/QGlib/refpointer.h
-include/QtGStreamer/QGlib/signal.h
 include/QtGStreamer/QGlib/type.h
 include/QtGStreamer/QGlib/value.h
 include/QtGStreamer/QGlib/wrap.h
@@ -32,6 +32,7 @@ include/QtGStreamer/QGst/ChildProxy
 include/QtGStreamer/QGst/Clock
 include/QtGStreamer/QGst/ClockTime
 include/QtGStreamer/QGst/ColorBalance
+include/QtGStreamer/QGst/Discoverer
 include/QtGStreamer/QGst/DoubleRange
 include/QtGStreamer/QGst/Element
 include/QtGStreamer/QGst/ElementFactory
@@ -80,6 +81,7 @@ include/QtGStreamer/QGst/childproxy.h
 include/QtGStreamer/QGst/clock.h
 include/QtGStreamer/QGst/clocktime.h
 include/QtGStreamer/QGst/colorbalance.h
+include/QtGStreamer/QGst/discoverer.h
 include/QtGStreamer/QGst/element.h
 include/QtGStreamer/QGst/elementfactory.h
 include/QtGStreamer/QGst/enums.h
@@ -103,31 +105,34 @@ include/QtGStreamer/QGst/taglist.h
 include/QtGStreamer/QGst/urihandler.h
 include/QtGStreamer/QGst/videoorientation.h
 include/QtGStreamer/QGst/xoverlay.h
-lib/QtGStreamer/QtGStreamerConfig.cmake
-lib/QtGStreamer/QtGStreamerTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/QtGStreamer/QtGStreamerTargets.cmake
-lib/gstreamer-%%VERSION%%/libgstqtvideosink.so
+lib/cmake/QtGStreamer/QtGStreamerConfig.cmake
+lib/cmake/QtGStreamer/QtGStreamerConfigCommon.cmake
+lib/cmake/QtGStreamer/QtGStreamerConfigVersion.cmake
+lib/cmake/QtGStreamer/QtGStreamerTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/QtGStreamer/QtGStreamerTargets.cmake
+lib/gstreamer-%%GST_VERSION%%/libgstqtvideosink.so
 lib/libQtGLib-2.0.so
 lib/libQtGLib-2.0.so.0
-lib/libQtGLib-2.0.so.0.10.2
-lib/libQtGStreamer-0.10.so
-lib/libQtGStreamer-0.10.so.0
-lib/libQtGStreamer-0.10.so.0.10.2
-lib/libQtGStreamerUi-0.10.so
-lib/libQtGStreamerUi-0.10.so.0
-lib/libQtGStreamerUi-0.10.so.0.10.2
-lib/libQtGStreamerUtils-0.10.so
-lib/libQtGStreamerUtils-0.10.so.0
-lib/libQtGStreamerUtils-0.10.so.0.10.2
-%%QT_LIBDIR%%/imports/QtGStreamer/libQtGStreamerQML.so
+lib/libQtGLib-2.0.so.%%VERSION%%
+lib/libQtGStreamer-%%GST_VERSION%%.so
+lib/libQtGStreamer-%%GST_VERSION%%.so.0
+lib/libQtGStreamer-%%GST_VERSION%%.so.%%VERSION%%
+lib/libQtGStreamerUi-%%GST_VERSION%%.so
+lib/libQtGStreamerUi-%%GST_VERSION%%.so.0
+lib/libQtGStreamerUi-%%GST_VERSION%%.so.%%VERSION%%
+lib/libQtGStreamerUtils-%%GST_VERSION%%.so
+lib/libQtGStreamerUtils-%%GST_VERSION%%.so.0
+lib/libQtGStreamerUtils-%%GST_VERSION%%.so.%%VERSION%%
+%%QT_LIBDIR%%/imports/QtGStreamer/libQtGStreamerQuick1.so
 %%QT_LIBDIR%%/imports/QtGStreamer/qmldir
-libdata/pkgconfig/QtGLib-2.0.pc
-libdata/pkgconfig/QtGStreamer-0.10.pc
-libdata/pkgconfig/QtGStreamerUi-0.10.pc
-libdata/pkgconfig/QtGStreamerUtils-0.10.pc
+lib/pkgconfig/QtGLib-2.0.pc
+lib/pkgconfig/QtGStreamer-%%GST_VERSION%%.pc
+lib/pkgconfig/QtGStreamerUi-%%GST_VERSION%%.pc
+lib/pkgconfig/QtGStreamerUtils-%%GST_VERSION%%.pc
 @dirrm %%QT_LIBDIR%%/imports/QtGStreamer
 @dirrmtry %%QT_LIBDIR%%/imports
-@dirrm lib/QtGStreamer
+@dirrm lib/cmake/QtGStreamer
+@dirrmtry lib/cmake
 @dirrm include/QtGStreamer/QGst/Ui
 @dirrm include/QtGStreamer/QGst/Utils
 @dirrm include/QtGStreamer/QGst
