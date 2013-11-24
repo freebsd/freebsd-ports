@@ -3,7 +3,7 @@
 
 PORTNAME=	majordomo
 PORTVERSION=	1.94.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
 		ftp://ftp.sgi.com/other/majordomo/1.94.5/ \
