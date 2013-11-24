@@ -5,7 +5,7 @@
  @@LoadModule@@
  
 +# Third party modules
-+IncludeOptional @rel_sysconfdir@/modules.d/[0-9[0-9][0-9]_*.conf
++IncludeOptional @rel_sysconfdir@/modules.d/[0-9][0-9][0-9]_*.conf
 + 
  <IfModule unixd_module>
  #
