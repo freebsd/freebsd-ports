@@ -36,6 +36,12 @@ NO_STAGE=	yes
 BROKEN=		Does not configure on arm
 .endif
 
+# Workaround to build and segfault on > 10.x
+.if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 1000000
+USE_GCC=	yes
+LDFLAGS+=	-lc++
+.endif
+
 .if ${PORT_OPTIONS:MXMLRPC}
 CONFIGURE_ARGS+=	--with-xmlrpc-c
 LIB_DEPENDS+=	xmlrpc:${PORTSDIR}/net/xmlrpc-c-devel
