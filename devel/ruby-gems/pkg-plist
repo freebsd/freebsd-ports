@@ -84,7 +84,6 @@ bin/gem%%RUBY_VER_SHORT%%
 %%RUBY_SITELIBDIR%%/rubygems/source_index.rb
 %%RUBY_SITELIBDIR%%/rubygems/spec_fetcher.rb
 %%RUBY_SITELIBDIR%%/rubygems/specification.rb
-%%RUBY_SITELIBDIR%%/rubygems/ssl_certs/ca-bundle.pem
 %%RUBY_SITELIBDIR%%/rubygems/syck_hack.rb
 %%RUBY_SITELIBDIR%%/rubygems/test_case.rb
 %%RUBY_SITELIBDIR%%/rubygems/test_utilities.rb
