@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small window manager
 
 USE_XORG=	x11 xext
-USE_GMAKE=	yes
+USES=		gmake
 REINPLACE_ARGS=	-i '' -e
 CC=		${CXX}
 
