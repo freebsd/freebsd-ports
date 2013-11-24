@@ -7,13 +7,14 @@ MASTER_SITES=	http://download.zeromq.org/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	zeromq-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Open source message queue optimised for performance
+MAINTAINER=	koobs@FreeBSD.org
+COMMENT=	Lightweight messaging kernel
 
 USES=		pathfix
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules
-USE_LDCONFIG=	yes
 
 CONFLICTS=	zmq-[0-9]*
 
