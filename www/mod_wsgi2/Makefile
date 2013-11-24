@@ -7,14 +7,13 @@ PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Python WSGI adapter module for Apache
 
 LICENSE=	AL2
 
-
-LATEST_LINK=	mod_wsgi2
 CONFLICTS=	${PKGNAMEPREFIX}mod_wsgi-3.* ${PKGNAMEPREFIX}mod_wsgi3.* mod_wsgi-3.*
 
 PROJECTHOST=	modwsgi

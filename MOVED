@@ -5251,3 +5251,4 @@ audio/gstreamer1-plugins-celt||2013-11-20|Removed, audio/gstreamer1-plugins-opus
 math/p5-MatrixReal|math/p5-Math-MatrixReal|2013-11-22|Rename to match upstream naming
 lang/gcc42|lang/gcc46|2013-11-23|Superseded by GCC 4.6 or later
 devel/p5-IO||2013-11-23|Removed: newer versions are included in all supported Perl releases
+www/mod_wsgi|www/mod_wsgi2|2013-11-24|Rename to match version

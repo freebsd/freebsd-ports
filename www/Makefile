@@ -535,7 +535,7 @@
     SUBDIR += mod_vhs
     SUBDIR += mod_webkit
     SUBDIR += mod_whatkilledus
-    SUBDIR += mod_wsgi
+    SUBDIR += mod_wsgi2
     SUBDIR += mod_wsgi3
     SUBDIR += mod_xml2enc
     SUBDIR += mod_xmlns

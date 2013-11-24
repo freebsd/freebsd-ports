@@ -2,6 +2,7 @@
 
 PORTNAME=	automx
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.automx.org/download/
 
@@ -10,7 +11,7 @@ COMMENT=	Handles mail account profile requests from mail clients
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_wsgi.so:${PORTSDIR}/www/mod_wsgi \
+RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_wsgi.so:${PORTSDIR}/www/mod_wsgi2 \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:${PORTSDIR}/devel/py-lxml \
 		bash:${PORTSDIR}/shells/bash \
 		wget:${PORTSDIR}/ftp/wget

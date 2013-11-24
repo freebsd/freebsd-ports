@@ -1,0 +1,50 @@
+--- configure.ac.orig	Thu Oct 18 21:12:46 2012 +1100
++++ configure.ac	Thu Oct 18 21:14:28 2012 +1100
+@@ -75,7 +75,15 @@
+ 
+ PYTHON_VERSION=`${PYTHON} -c 'from sys import stdout; \
+     from distutils import sysconfig; \
+-    stdout.write((sysconfig.get_config_var("VERSION")))'`
++    stdout.write(sysconfig.get_config_var("VERSION"))'`
++
++PYTHON_LDVERSION=`${PYTHON} -c 'from sys import stdout; \
++    from distutils import sysconfig; \
++    stdout.write(sysconfig.get_config_var("LDVERSION") or "")'`
++
++if test x"${PYTHON_LDVERSION}" = x""; then
++    PYTHON_LDVERSION=${PYTHON_VERSION}
++fi
+ 
+ CPPFLAGS1=`${PYTHON} -c 'from sys import stdout; \
+     from distutils import sysconfig; \
+@@ -113,12 +121,28 @@
+     from distutils import sysconfig; \
+     stdout.write(sysconfig.get_config_var("PYTHONFRAMEWORK"))'`
+ 
++if test "${PYTHON_LDVERSION}" != "${PYTHON_VERSION}"; then
++    PYTHONCFGDIR="${PYTHONCFGDIR}-${PYTHON_LDVERSION}"
++fi
++
+ if test "${PYTHONFRAMEWORKDIR}" = "no-framework" -o \
+         "${ENABLE_FRAMEWORK}" != "yes"; then
+     LDFLAGS1="-L${PYTHONLIBDIR}"
+     LDFLAGS2="-L${PYTHONCFGDIR}"
+ 
+-    LDLIBS1="-lpython${PYTHON_VERSION}"
++    LDLIBS1="-lpython${PYTHON_LDVERSION}"
++
++    # MacOS X seems to be broken and doesn't use ABIFLAGS suffix
++    # so add a check to try and work out what we need to do.
++
++    if test -f "${PYTHONLIBDIR}/libpython${PYTHON_VERSION}.a"; then
++        LDLIBS1="-lpython${PYTHON_VERSION}"
++    fi
++
++    if test -f "${PYTHONCFGDIR}/libpython${PYTHON_VERSION}.a"; then
++        LDLIBS1="-lpython${PYTHON_VERSION}"
++    fi
++
+     LDLIBS2=`${PYTHON} -c 'from sys import stdout; \
+         from distutils import sysconfig; \
+         stdout.write(sysconfig.get_config_var("LIBS"))'`
+
