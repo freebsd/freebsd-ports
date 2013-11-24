@@ -4,7 +4,8 @@
 PORTNAME=	iso-codes
 PORTVERSION=	3.46
 CATEGORIES=	misc
-MASTER_SITES=	http://pkg-isocodes.alioth.debian.org/downloads/
+MASTER_SITES=	http://pkg-isocodes.alioth.debian.org/downloads/ \
+		LOCAL/kwm
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Lists of the country, language, and currency iso names
