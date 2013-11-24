@@ -30,7 +30,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/yaml/__init__.py:${PORTSDIR}/devel/py-yaml \
 		gmake:${PORTSDIR}/devel/gmake \
 		sudo:${PORTSDIR}/security/sudo \
 		wget:${PORTSDIR}/ftp/wget
-USE_PYTHON=	yes
+USE_PYTHON=	2
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USES=		pkgconfig
@@ -56,12 +56,19 @@ PORTDOCS=	AUTHORS README
 
 NO_STAGE=	yes
 post-patch:
+	${GREP} -l -r "^#! /usr/bin/env python" ${WRKSRC} | ${XARGS} \
+		${REINPLACE_CMD} -E -e "s|^#! /usr/bin/env python$$|#!/usr/bin/env python2|;"
+	${GREP} -l -r "^#!/usr/bin/env python$$" ${WRKSRC} | ${XARGS} \
+		${REINPLACE_CMD} -E -e "s|^#!/usr/bin/env python$$|#!/usr/bin/env python2|;"
 	# fix path to bash
 	${GREP} -l -r "^#\!/bin/bash" ${WRKSRC} | ${XARGS} \
-	    ${REINPLACE_CMD} -E -e "s|#!/bin/bash|#!${LOCALBASE}/bin/bash|"
+		${REINPLACE_CMD} -E -e "s|#!/bin/bash|#!${LOCALBASE}/bin/bash|"
 	# temporarily alter how ROS is built for the port build
 	${REINPLACE_CMD} -E -e "s|rosmake --rosdep-install|bin/rosmake --no-rosdep --disable-logging -i -a|" \
-	    ${WRKSRC}/Makefile
+		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's|COMMAND python|COMMAND python2|' \
+		${WRKSRC}/core/rosbuild/public.cmake \
+		${WRKSRC}/core/rosbuild/private.cmake
 
 post-build:
 	# restore original ROS Makefile

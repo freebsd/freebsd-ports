@@ -22,7 +22,7 @@ BUILD_DEPENDS=	rosmake:${PORTSDIR}/devel/ros \
 RUN_DEPENDS=	roscore:${PORTSDIR}/devel/ros \
 		f2py:${PORTSDIR}/math/py-numpy \
 		pilconvert.py:${PORTSDIR}/graphics/py-imaging
-USE_PYTHON=	yes
+USE_PYTHON=	2
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 
@@ -43,6 +43,8 @@ post-patch:
 	# fix path to bash
 	${GREP} -l -r "^#\!/bin/bash" ${WRKSRC} | ${XARGS} \
 	    ${REINPLACE_CMD} -E -e "s|#!/bin/bash|#!${LOCALBASE}/bin/bash|"
+	${GREP} -l -r "^#\!/usr/bin/env python" ${WRKSRC} | ${XARGS} \
+	    ${REINPLACE_CMD} -E -e "s|#!/usr/bin/env python|#!/usr/bin/env python2|"
 
 do-build:
 	(cd ${WRKSRC} ; ${MAKE_ENV} ${LOCALBASE}/bin/rosmake ${MAKE_ARGS})
@@ -58,7 +60,7 @@ do-install:
 	${FIND} ${WRKSRC}/${d} -name build -type d -or -name \*.bak -type f \
 	    -or -name .svnignore -type f -or -name .cvsignore -type f \
 	    -or -name \*.orig -type f | ${XARGS} ${RM} -rf
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${PREFIX}/ros/stacks/${STACKNAME})	
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${PREFIX}/ros/stacks/${STACKNAME})
 .endfor
 # strip and symlink ELF libraries
 .for f in clients/cpp/roscpp/lib/libros.so \
