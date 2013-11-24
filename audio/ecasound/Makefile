@@ -3,6 +3,7 @@
 
 PORTNAME=	ecasound
 PORTVERSION=	2.9.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/ \
 		http://nosignal.fi/download/ \
@@ -37,10 +38,10 @@ AUDIOFILE_CONFIGURE_ENABLE=	audiofile
 AUDIOFILE_LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
 JACK_CONFIGURE_ENABLE=	jack
 JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
-LO_CONFIGURE_ENABLE=	liblo
-LO_LIB_DEPENDS=		liblo.so:${PORTSDIR}/audio/liblo
-OIL_CONFIGURE_ENABLE=	liboil
-OIL_LIB_DEPENDS=	liboil-0.3.so:${PORTSDIR}/devel/liboil
+LIBLO_CONFIGURE_ENABLE=	liblo
+LIBLO_LIB_DEPENDS=	liblo.so:${PORTSDIR}/audio/liblo
+LIBOIL_CONFIGURE_ENABLE=liboil
+LIBOIL_LIB_DEPENDS=	liboil-0.3.so:${PORTSDIR}/devel/liboil
 PYTHON_CONFIGURE_ENABLE=pyecasound
 SAMPLERATE_CONFIGURE_ENABLE=	libsamplerate
 SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
@@ -50,6 +51,7 @@ SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
+CONFIGURE_ENV+=	PYTHONPATH="${PYTHON_CMD}"
 USE_PYTHON=	yes
 .endif
 
@@ -58,5 +60,9 @@ post-patch:
 		 s| $$EXTRAGCCFLAGS||g ; \
 		 s| $$EXTRACPPFLAGS||g ; \
 		 s| -D_P1003_1B_VISIBLE||' ${WRKSRC}/configure
+.if ${PORT_OPTIONS:MPYTHON}
+	@${REINPLACE_CMD} -e 's|python -c|${PYTHON_CMD} -c|' \
+		${WRKSRC}/configure
+.endif
 
 .include <bsd.port.mk>
