@@ -11,7 +11,7 @@ DISTNAME=	Slapd-Backend-Cyrus-${PORTVERSION}
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Slapd backend to translate DIT into Cyrus configuration
 
-BUILD_DEPENDS=	cyrus-imapd>=0:${PORTSDIR}/mail/cyrus-imapd24 \
+BUILD_DEPENDS=	cyrus-imapd24>=0:${PORTSDIR}/mail/cyrus-imapd24 \
 		p5-BerkeleyDB>=0:${PORTSDIR}/databases/p5-BerkeleyDB \
 		p5-Class-Accessor-Lvalue>=0:${PORTSDIR}/devel/p5-Class-Accessor-Lvalue \
 		p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
