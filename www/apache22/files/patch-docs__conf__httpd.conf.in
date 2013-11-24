@@ -1,5 +1,15 @@
 --- ./docs/conf/httpd.conf.in.orig	2007-12-21 06:43:00.000000000 -0500
 +++ ./docs/conf/httpd.conf.in	2010-05-06 19:37:54.224731824 -0400
+@@ -54,6 +54,9 @@
+ #
+ @@LoadModule@@
+ 
++# Third party modules
++Include @rel_sysconfdir@/modules.d/[0-9][0-9][0-9]_*.conf
++
+ <IfModule !mpm_netware_module>
+ <IfModule !mpm_winnt_module>
+ #
 @@ -63,8 +63,8 @@
  # It is usually good practice to create a dedicated user and group for
  # running httpd, as with most system services.

@@ -4,6 +4,7 @@
 @exec mkdir -p %D/%%ETCDIR%%/extra
 @exec mkdir -p %D/%%ETCDIR%%/Includes
 %%ETCDIR%%/Includes/no-accf.conf
+%%ETCDIR%%/modules.d/README_modules.d
 include/apache22/ap_compat.h
 include/apache22/ap_config.h
 include/apache22/ap_config_auto.h
@@ -475,6 +476,7 @@ sbin/split-logfile
 @dirrmtry libexec/apache22
 @dirrmtry include/apache22
 @unexec rm -f %D/%%ETCDIR%%/httpd.conf.bak 2> /dev/null || true
+@dirrmtry %%ETCDIR%%/modules.d
 @dirrmtry %%ETCDIR%%/extra
 @dirrmtry %%ETCDIR%%/envvars.d
 @dirrmtry %%ETCDIR%%/Includes

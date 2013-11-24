@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	apache22
-PORTVERSION=	2.2.25
-PORTREVISION?=	1
+PORTVERSION=	2.2.26
+#PORTREVISION?=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -62,7 +62,7 @@ SUEXEC_USERDIR_EXTRA_PATCHES=	${FILESDIR}/extra-patch-suexec_userdir
 
 .include <bsd.port.options.mk>
 
-ETC_SUBDIRS=		Includes envvars.d extra
+ETC_SUBDIRS=		Includes envvars.d extra modules.d
 
 .if ! ${PORT_OPTIONS:MDOCS}
 MAKE_ENV+=	NOPORTDOCS=yes
@@ -151,7 +151,8 @@ post-configure:
 
 post-install:
 	@${MKDIR} ${ETC_SUBDIRS:S|^|${STAGEDIR}${ETCDIR}/|}
-	@${INSTALL_DATA} ${FILESDIR}/no-accf.conf ${STAGEDIR}${ETCDIR}/Includes/
+	${INSTALL_DATA} ${FILESDIR}/no-accf.conf ${STAGEDIR}${ETCDIR}/Includes/
+	${INSTALL_DATA} ${FILESDIR}/README_modules.d ${STAGEDIR}/${ETCDIR}/modules.d/
 
 .if ${PORT_OPTIONS:MLOG_FORENSIC}
 	@${INSTALL_SCRIPT} ${WRKSRC}/support/check_forensic ${STAGEDIR}${PREFIX}/sbin
