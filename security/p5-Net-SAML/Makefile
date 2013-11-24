@@ -29,8 +29,8 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
-	cd ${WRKSRC}/../ && ${INSTALL_SCRIPT} zxid.pl zxidhlo.pl ${STAGEDIR}${EXAMPLESDIR}/
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/.. && ${INSTALL_SCRIPT} zxid.pl zxidhlo.pl ${STAGEDIR}${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>

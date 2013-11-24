@@ -23,10 +23,10 @@ PORTDOCS=	# suck all DOCSDIR
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc; ${FIND} . | ${CPIO} -padm ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}; ${FIND} utilities | ${CPIO} -padm ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} utilities ${STAGEDIR}${DOCSDIR})
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/demo; ${FIND} . | ${CPIO} -padm ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/demo && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
