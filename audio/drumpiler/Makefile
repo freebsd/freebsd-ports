@@ -10,7 +10,6 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drum machine compiler
 
-NO_STAGE=	yes
 USE_SDL=	sdl
 CFLAGS+=	`${SDL_CONFIG} --cflags` -Wno-return-type
 LIBS+=		`${SDL_CONFIG} --libs`
@@ -20,6 +19,6 @@ do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -DUSESDL -o drumpiler drumpiler.c ${LIBS}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/drumpiler ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/drumpiler ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
