@@ -108,4 +108,7 @@ WAVPACK_RUN_DEPENDS=	wavpack:${PORTSDIR}/audio/wavpack
 NLS_USES=	gettext
 NLS_CMAKE_OFF=	-DBUILD_po=FALSE
 
+post-patch:
+	${REINPLACE_CMD} "/-pedantic/d" ${WRKSRC}/CMakeLists.txt
+
 .include <bsd.port.mk>
