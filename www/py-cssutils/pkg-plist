@@ -298,21 +298,21 @@ bin/cssparse
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/encutils/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/encutils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/encutils/__init__.pyo
-%%EXAMPLESDIR%%/build.py
-%%EXAMPLESDIR%%/codec.py
-%%EXAMPLESDIR%%/cssencodings.py
-%%EXAMPLESDIR%%/customlog.py
-%%EXAMPLESDIR%%/imports.py
-%%EXAMPLESDIR%%/minify.py
-%%EXAMPLESDIR%%/parse.py
-%%EXAMPLESDIR%%/properties_with_same_name.py
-%%EXAMPLESDIR%%/selectors_tolower.py
-%%EXAMPLESDIR%%/serialize.py
-%%EXAMPLESDIR%%/style.py
-%%EXAMPLESDIR%%/styledeclaration.py
-%%EXAMPLESDIR%%/testutil.py
-%%EXAMPLESDIR%%/website.py
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/codec.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cssencodings.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/customlog.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/imports.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/minify.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parse.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/properties_with_same_name.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/selectors_tolower.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/serialize.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/style.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styledeclaration.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testutil.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/website.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/encutils
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cssutils/tests/test_encutils
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cssutils/tests

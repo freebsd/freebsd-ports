@@ -22,12 +22,8 @@ USE_ZIP=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}/
-.endif
 
 .include <bsd.port.mk>
