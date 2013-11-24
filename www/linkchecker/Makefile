@@ -3,6 +3,7 @@
 
 PORTNAME=	linkchecker
 PORTVERSION=	8.4
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	GHC
 DISTNAME=	LinkChecker-${PORTVERSION}
@@ -86,7 +87,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.5:${PORTSDIR}/www/py-cssutils
 
 # To run the WSGI Web interface
 .if ${PORT_OPTIONS:MWSGI}
-RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_wsg>0:${PORTSDIR}/www/mod_wsgi
+RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_wsg>0:${PORTSDIR}/www/mod_wsgi2
 USE_APACHE_RUN=	22
 .endif
 
