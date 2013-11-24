@@ -3,6 +3,7 @@
 
 PORTNAME=	python26
 PORTVERSION=	2.6.9
+PORTREVISION=	1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -11,26 +12,28 @@ DISTFILES=	${PYTHON_DISTFILE}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Interpreted object-oriented programming language
 
-DEPRECATED=	This port reached its EoL upstream, please migrate to lang/python27
+DEPRECATED=	Python 2.6 is now end-of-life, please migrate to lang/python27
 EXPIRATION_DATE=2014-01-01
 
 DIST_SUBDIR=	python
-WRKSRC=		${PYTHON_WRKSRC}/portbld.static
-PATCH_WRKSRC=	${PYTHON_WRKSRC}
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../configure # must be relative
-CONFIGURE_ENV=	SVNVERSION="echo freebsd"
+CONFIGURE_ENV=	SVNVERSION="echo freebsd" ac_cv_opt_olimit_ok=no
 MAKE_ENV=	VPATH="${PYTHON_WRKSRC}"
-USE_LDCONFIG=	yes
 INSTALL_TARGET=	altinstall
 MAN1=		${PYTHON_VERSION}.1
 
+USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_XZ=		yes
-PYTHON_VERSION=	python2.6
+
+PYTHON_VERSION=		python2.6
 PYTHON_NO_DEPENDS=	yes
 
+WRKSRC=		${PYTHON_WRKSRC}/portbld.static
 SHARED_WRKSRC=	${PYTHON_WRKSRC}/portbld.shared
+PATCH_WRKSRC=	${PYTHON_WRKSRC}
+
 PLIST=		${WRKDIR}/PLIST
 PLIST_TEMPLATE?=${PKGDIR}/pkg-plist
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
@@ -53,7 +56,7 @@ BINLINKS_SUB_PYTHON_VER=	${BINLINKS_SUB_TMPL:S/%%VERSION%%/${PYTHON_VER}/g}
 OPTIONS_DEFINE=		THREADS SEM PTH PYMALLOC IPV6 FPECTL EXAMPLES NLS
 OPTIONS_DEFAULT=	THREADS UCS4 PYMALLOC IPV6
 
-OPTIONS_SINGLE=	UCS
+OPTIONS_SINGLE=		UCS
 OPTIONS_SINGLE_UCS=	UCS2 UCS4
 
 NLS_DESC=	Enable Gettext support for the locale module
@@ -92,7 +95,7 @@ SUB_LIST=	SEM=${SEM_MSG}
 PLIST_SUB+=	THREADS=""
 .if ${PORT_OPTIONS:MPTH}
 CONFIGURE_ARGS+=	--with-pth
-EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-configure-pth
+CONFIGURE_ENV+=		ac_cv_pthread=no
 LIB_DEPENDS+=		pth:${PORTSDIR}/devel/pth
 _PTH_CPPFLAGS=		"-I${LOCALBASE}/include/pth"
 _PTH_LDFLAGS=		"-L${LOCALBASE}/lib/pth"
