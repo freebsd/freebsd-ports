@@ -812,6 +812,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib2to3/tests/data/bom.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/data/crlf.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/data/different_encoding.py
+%%PYTHON_LIBDIR%%/lib2to3/tests/data/false_encoding.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/data/fixers/bad_order.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/data/fixers/myfixes/__init__.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/data/fixers/myfixes/fix_explicit.py
@@ -1061,6 +1062,20 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/185test.db
 %%PYTHON_LIBDIR%%/test/Sine-1000Hz-300ms.aif
 %%PYTHON_LIBDIR%%/test/__init__.py
+%%PYTHON_LIBDIR%%/test/audiodata/pluck-pcm24.aiff
+%%PYTHON_LIBDIR%%/test/audiodata/pluck-pcm24.wav
+%%PYTHON_LIBDIR%%/test/audiodata/pluck-pcm16.aiff
+%%PYTHON_LIBDIR%%/test/audiodata/pluck-pcm16.au
+%%PYTHON_LIBDIR%%/test/audiodata/pluck-pcm16.wav
+%%PYTHON_LIBDIR%%/test/audiodata/pluck-pcm32.aiff
+%%PYTHON_LIBDIR%%/test/audiodata/pluck-pcm32.au
+%%PYTHON_LIBDIR%%/test/audiodata/pluck-pcm32.wav
+%%PYTHON_LIBDIR%%/test/audiodata/pluck-pcm8.aiff
+%%PYTHON_LIBDIR%%/test/audiodata/pluck-pcm8.au
+%%PYTHON_LIBDIR%%/test/audiodata/pluck-pcm8.wav
+%%PYTHON_LIBDIR%%/test/audiodata/pluck-ulaw.aifc
+%%PYTHON_LIBDIR%%/test/audiodata/pluck-ulaw.au
+%%PYTHON_LIBDIR%%/test/audiotests.py
 %%PYTHON_LIBDIR%%/test/audiotest.au
 %%PYTHON_LIBDIR%%/test/autotest.py
 %%PYTHON_LIBDIR%%/test/bad_coding.py
@@ -1275,6 +1290,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/mapping_tests.py
 %%PYTHON_LIBDIR%%/test/math_testcases.txt
 %%PYTHON_LIBDIR%%/test/mp_fork_bomb.py
+%%PYTHON_LIBDIR%%/test/nullbytecert.pem
 %%PYTHON_LIBDIR%%/test/nullcert.pem
 %%PYTHON_LIBDIR%%/test/outstanding_bugs.py
 %%PYTHON_LIBDIR%%/test/pickletester.py
@@ -1478,6 +1494,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_htmlparser.py
 %%PYTHON_LIBDIR%%/test/test_httplib.py
 %%PYTHON_LIBDIR%%/test/test_httpservers.py
+%%PYTHON_LIBDIR%%/test/test_idle.py
 %%PYTHON_LIBDIR%%/test/test_imageop.py
 %%PYTHON_LIBDIR%%/test/test_imaplib.py
 %%PYTHON_LIBDIR%%/test/test_imgfile.py
@@ -1510,6 +1527,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_macos.py
 %%PYTHON_LIBDIR%%/test/test_macostools.py
 %%PYTHON_LIBDIR%%/test/test_macpath.py
+%%PYTHON_LIBDIR%%/test/test_macurl2path.py
 %%PYTHON_LIBDIR%%/test/test_mailbox.py
 %%PYTHON_LIBDIR%%/test/test_marshal.py
 %%PYTHON_LIBDIR%%/test/test_math.py
@@ -1533,6 +1551,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_netrc.py
 %%PYTHON_LIBDIR%%/test/test_new.py
 %%PYTHON_LIBDIR%%/test/test_nis.py
+%%PYTHON_LIBDIR%%/test/test_nntplib.py
 %%PYTHON_LIBDIR%%/test/test_normalization.py
 %%PYTHON_LIBDIR%%/test/test_ntpath.py
 %%PYTHON_LIBDIR%%/test/test_old_mailbox.py
@@ -1613,6 +1632,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_sqlite.py
 %%PYTHON_LIBDIR%%/test/test_ssl.py
 %%PYTHON_LIBDIR%%/test/test_startfile.py
+%%PYTHON_LIBDIR%%/test/test_stat.py
 %%PYTHON_LIBDIR%%/test/test_str.py
 %%PYTHON_LIBDIR%%/test/test_strftime.py
 %%PYTHON_LIBDIR%%/test/test_string.py
@@ -1624,6 +1644,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_structmembers.py
 %%PYTHON_LIBDIR%%/test/test_structseq.py
 %%PYTHON_LIBDIR%%/test/test_subprocess.py
+%%PYTHON_LIBDIR%%/test/test_sunau.py
 %%PYTHON_LIBDIR%%/test/test_sunaudiodev.py
 %%PYTHON_LIBDIR%%/test/test_sundry.py
 %%PYTHON_LIBDIR%%/test/test_support.py
@@ -2367,6 +2388,7 @@ lib/libpython2.7.a
 @dirrm %%PYTHON_LIBDIR%%/wsgiref
 @dirrm %%PYTHON_LIBDIR%%/unittest/test
 @dirrm %%PYTHON_LIBDIR%%/unittest
+@dirrm %%PYTHON_LIBDIR%%/test/audiodata
 @dirrm %%PYTHON_LIBDIR%%/test/cjkencodings
 @dirrm %%PYTHON_LIBDIR%%/test/data
 @dirrm %%PYTHON_LIBDIR%%/test/decimaltestdata
