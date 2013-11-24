@@ -64,7 +64,7 @@ SSL_USE=			OPENSSL=yes
 
 .include <bsd.port.options.mk>
 
-ETC_SUBDIRS=		Includes envvars.d extra
+ETC_SUBDIRS=		Includes envvars.d extra modules.d
 
 .if ! ${PORT_OPTIONS:MDOCS}
 MAKE_ENV+=	NOPORTDOCS=yes
@@ -148,7 +148,8 @@ post-configure:
 
 post-install:
 	@${MKDIR} ${ETC_SUBDIRS:S|^|${STAGEDIR}${ETCDIR}/|}
-	@${INSTALL_DATA} ${FILESDIR}/no-accf.conf ${STAGEDIR}${ETCDIR}/Includes/
+	${INSTALL_DATA} ${FILESDIR}/no-accf.conf ${STAGEDIR}${ETCDIR}/Includes/
+	${INSTALL_DATA} ${FILESDIR}/README_modules.d ${STAGEDIR}/${ETCDIR}/modules.d/
 
 .if ${PORT_OPTIONS:MLOG_FORENSIC}
 	@${INSTALL_SCRIPT} ${WRKSRC}/support/check_forensic ${STAGEDIR}${PREFIX}/sbin
