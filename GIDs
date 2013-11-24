@@ -161,6 +161,7 @@ callweaver:*:444:
 courier:*:465:
 condor:*:466:
 netmon:*:467:
+slurm:*:468:
 _bbstored:*:505:
 radmind:*:506:
 skkserv:*:507:
