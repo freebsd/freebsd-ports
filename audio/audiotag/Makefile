@@ -7,7 +7,7 @@ CATEGORIES=	audio multimedia
 MASTER_SITES=	GHC
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A command-line tool for mass tagging/renaming of audio files
+COMMENT=	Command-line tool for mass tagging/renaming of audio files
 
 LICENSE=	GPLv2
 
@@ -16,7 +16,6 @@ OPTIONS_DEFAULT=	VORBIS ID3 MP4 FLAC
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 USES=		shebangfix perl5
 USE_BZIP2=	yes
 USE_PERL5=	run
@@ -26,32 +25,21 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 SHEBANG_FILES=	audiotag
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MVORBIS}
-RUN_DEPENDS+=	vorbiscomment:${PORTSDIR}/audio/vorbis-tools
-.endif
-.if ${PORT_OPTIONS:MFLAC}
-RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
-.endif
-.if ${PORT_OPTIONS:MID3}
-RUN_DEPENDS+=	id3tag:${PORTSDIR}/audio/id3lib
-.endif
-.if ${PORT_OPTIONS:MMP4}
-RUN_DEPENDS+=	AtomicParsley:${PORTSDIR}/multimedia/atomicparsley
-.endif
+VORBIS_RUN_DEPENDS=	vorbiscomment:${PORTSDIR}/audio/vorbis-tools
+FLAC_RUN_DEPENDS=	flac:${PORTSDIR}/audio/flac
+ID3_RUN_DEPENDS=	id3tag:${PORTSDIR}/audio/id3lib
+MP4_RUN_DEPENDS=	AtomicParsley:${PORTSDIR}/multimedia/atomicparsley
 
 PORTDOCS=	COPYING ChangeLog README
 PLIST_FILES=	bin/audiotag
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/audiotag ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/audiotag ${STAGEDIR}${PREFIX}/bin
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
