@@ -1,0 +1,35 @@
+--- configure.orig	2012-09-12 09:17:21.000000000 +0700
++++ configure	2013-02-24 02:48:14.000000000 +0700
+@@ -793,6 +793,7 @@
+ with_speex
+ with_curl
+ with_curl_config
++with_kate
+ enable_yp
+ with_openssl
+ '
+@@ -17610,6 +17611,16 @@
+ 
+ fi
+ 
++# Check whether --with-kate was given.
++if test "${with_kate+set}" = set; then :
++  withval=$with_kate; kate_prefix="$withval"
++fi
++
++if test "x$kate_prefix" = "xno"
++then
++  { $as_echo "$as_me:${as_lineno-$LINENO}: result: libkate support disabled by request" >&5
++$as_echo "libkate support disabled by request" >&6; }
++else
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for kate_decode_init in -lkate" >&5
+ $as_echo_n "checking for kate_decode_init in -lkate... " >&6; }
+@@ -17707,6 +17718,7 @@
+ fi
+ #ICECAST_OPTIONAL="$ICECAST_OPTIONAL format_kate.o"
+ 
++fi
+ 
+ 
+ 
