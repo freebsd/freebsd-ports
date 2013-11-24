@@ -8,6 +8,7 @@ bin/ocsptool3
 bin/p11tool3
 bin/psktool3
 bin/srptool3
+bin/tpmtool3
 include/gnutls3/gnutls/abstract.h
 include/gnutls3/gnutls/compat.h
 include/gnutls3/gnutls/crypto.h
