@@ -16,12 +16,11 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
 		MANDIR="${MAN1PREFIX}/man/man1" \
 		XEFILE=""
 
-NO_STAGE=	yes
-MAN1=		cam.1
-PLIST_FILES=	bin/cam
+PLIST_FILES=	bin/cam \
+		man/man1/cam.1.gz
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cam ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/cam.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/cam ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/cam.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
