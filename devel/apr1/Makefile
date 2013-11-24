@@ -11,7 +11,7 @@ DISTFILES=	apr-${APR_VERSION}.tar.gz apr-util-${APU_VERSION}.tar.gz
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache Portability Library
 
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 
 OPTIONS_GROUP=		APR APU
@@ -27,7 +27,7 @@ SSL_DESC=	OpenSSL crypto driver
 NSS_DESC=	NSS crypto driver
 
 APR_VERSION=	1.4.8
-APU_VERSION=	1.5.2
+APU_VERSION=	1.5.3
 
 USES=		iconv pathfix
 USE_LDCONFIG=	yes
@@ -37,12 +37,10 @@ NO_WRKSUBDIR=	yes
 APR_WRKDIR=	${WRKDIR}/apr-${APR_VERSION}
 APU_WRKDIR=	${WRKDIR}/apr-util-${APU_VERSION}
 
-PLIST_SUB=	SHLIB_APR_MAJOR="${SHLIB_APR_MAJOR}" SHLIB_APU_MAJOR="${SHLIB_APU_MAJOR}"
+PLIST_SUB+=	SHLIB_APR_MAJOR="${SHLIB_APR_MAJOR}" SHLIB_APU_MAJOR="${SHLIB_APU_MAJOR}"
 SHLIB_APR_MAJOR=	4
 SHLIB_APU_MAJOR=	5
 
-# candidate for next release
-#CFLAGS+=	-fPIC
 APR_CONF_ARGS=	--with-installbuilddir=${DATADIR}/build-1
 APU_CONF_ARGS=	--with-apr=${APR_WRKDIR} \
 		--with-expat=${LOCALBASE} \
@@ -73,7 +71,7 @@ APR_CONF_ARGS+=	--without-devrandom
 .if ${PORT_OPTIONS:MGDBM}
 PLIST_SUB+=	GDBM=""
 APU_EXTRAS=	yes
-LIB_DEPENDS+=	gdbm:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	libgdbm.so:${PORTSDIR}/databases/gdbm
 APU_CONF_ARGS+=	--with-gdbm=${LOCALBASE}
 .else
 PLIST_SUB+=	GDBM="@comment "
@@ -114,7 +112,7 @@ APU_CONF_ARGS+=	--without-ldap
 APU_EXTRAS=	yes
 PLIST_SUB+=	FREETDS=""
 APU_CONF_ARGS+=	--with-freetds=${LOCALBASE}
-LIB_DEPENDS+=	sybdb:${PORTSDIR}/databases/freetds
+LIB_DEPENDS+=	libsybdb.so:${PORTSDIR}/databases/freetds
 .else
 PLIST_SUB+=	FREETDS="@comment "
 APU_CONF_ARGS+=	--without-freetds
@@ -174,7 +172,7 @@ APU_CONF_ARGS+=	--without-openssl
 .if ${PORT_OPTIONS:MNSS}
 APU_EXTRAS=	yes
 PLIST_SUB+=	NSS=""
-LIB_DEPENDS+=	nss3:${PORTSDIR}/security/nss
+LIB_DEPENDS+=	libnss3.so:${PORTSDIR}/security/nss
 CPPFLAGS+=	-I${LOCALBASE}/include/nss
 LDFLAGS+=	-L${LOCALBASE}/lib/nss
 APU_CONF_ARGS+=	--with-nss=${LOCALBASE}
