@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.red-bean.com/decklin/aewm/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ICCCM-compliant window manager based on 9wm
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" XROOT="${LOCALBASE}"
 USE_XORG=	x11 xext xt xaw
 WANT_GNOME=	yes
