@@ -1,6 +1,6 @@
+bin/ldns-config
 %%EXAMPLES%%bin/ldns-chaos
 %%EXAMPLES%%bin/ldns-compare-zones
-%%EXAMPLES%%bin/ldns-config
 %%EXAMPLES%%bin/ldns-dpa
 %%EXAMPLES%%bin/ldns-dane
 %%EXAMPLES%%bin/ldns-gen-zone
