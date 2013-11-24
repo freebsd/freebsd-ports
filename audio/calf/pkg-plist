@@ -39,6 +39,8 @@ lib/calf/calf.so
 %%LV2%%lib/lv2/calf.lv2/presets-Monosynth.ttl
 %%LV2%%lib/lv2/calf.lv2/presets-Organ.ttl
 %%LV2%%lib/lv2/calf.lv2/presets-Reverb.ttl
+man/man1/calfjackhost.1.gz
+man/man7/calf.7.gz
 share/applications/calf.desktop
 %%DATADIR%%/background_black.png
 %%DATADIR%%/background_blue.png

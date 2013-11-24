@@ -13,44 +13,30 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	fftw3>0:${PORTSDIR}/math/fftw3
-LIB_DEPENDS=	fluidsynth:${PORTSDIR}/audio/fluidsynth \
-		jack:${PORTSDIR}/audio/jack \
-		fftw3f:${PORTSDIR}/math/fftw3-float \
-		expat:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth \
+		libjack.so:${PORTSDIR}/audio/jack \
+		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
+		libexpat.so:${PORTSDIR}/textproc/expat2
 
 OPTIONS_DEFINE=	LASH LV2
 OPTIONS_DEFAULT=LASH LV2
 LV2_DESC=	LV2 audio plugin
 
-NO_STAGE=	yes
 USES=		gmake pkgconfig
-USE_GCC=	any
 USE_GNOME=	gtk20
+USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		calfjackhost.1
-MAN7=		calf.7
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLASH}
-LIB_DEPENDS+=	lash:${PORTSDIR}/audio/lash
-.else
-CONFIGURE_ARGS+=--without-lash
-.endif
-
-.if ${PORT_OPTIONS:MLV2}
-BUILD_DEPENDS+=	lv2core>0:${PORTSDIR}/audio/lv2core
-RUN_DEPENDS+=	lv2core>0:${PORTSDIR}/audio/lv2core
-PLIST_SUB+=	LV2=""
-.else
-CONFIGURE_ARGS+=--without-lv2
-PLIST_SUB+=	LV2="@comment "
-.endif
+OPTIONS_SUB=	yes
+LASH_LIB_DEPENDS=	liblash.so:${PORTSDIR}/audio/lash
+LASH_CONFIGURE_WITH=	lash
+LV2_BUILD_DEPENDS+=	lv2core>0:${PORTSDIR}/audio/lv2core
+LV2_RUN_DEPENDS+=	lv2core>0:${PORTSDIR}/audio/lv2core
+LV2_CONFIGURE_WITH=	lv2
 
 post-patch:
 	@${FIND} ${BUILD_WRKSRC} -name '*.cpp' | ${XARGS} ${REINPLACE_CMD} -e \
@@ -60,9 +46,7 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install-data-local)
-.endif
 
 .include <bsd.port.mk>
