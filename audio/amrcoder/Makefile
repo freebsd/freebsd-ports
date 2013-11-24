@@ -11,10 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AMR encoder/decoder for Mbuni MMS Gateway (www.mbuni.org)
 
-MAN1=		amrdecoder.1 amrencoder.1
-
-NO_STAGE=	yes
-MANCOMPRESSED=	yes
+USES=		uidfix
 
 post-extract:
 	@${RM} ${WRKSRC}/*.o
