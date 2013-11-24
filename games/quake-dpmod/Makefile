@@ -20,7 +20,6 @@ NO_WRKSUBDIR=	yes
 
 DATADIR=	${Q1DIR}/${PORTNAME}
 
-NO_STAGE=	yes
 post-extract:
 # Remove CVS directories
 	@${FIND} ${WRKDIR} -type d -name CVS -print0 | ${XARGS} -0 ${RM} -rf
@@ -28,8 +27,8 @@ post-extract:
 	@${CHMOD} go-w ${WRKDIR}/dpmod/progs.dat
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	${CP} -a ${WRKSRC}/dpmod/* ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${CP} -a ${WRKSRC}/dpmod/* ${STAGEDIR}${DATADIR}
 
 .include "${.CURDIR}/../quake-data/Makefile.include"
 .include <bsd.port.mk>
