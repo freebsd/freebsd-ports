@@ -39,6 +39,15 @@ bin/aws_zsh_completer.sh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/argrename.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/argrename.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/argrename.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/cloudtrail.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/cloudtrail.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/cloudtrail.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/commands.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/commands.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/commands.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/configure.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/configure.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/configure.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/dryrundocs.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/dryrundocs.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/dryrundocs.pyo
@@ -75,6 +84,9 @@ bin/aws_zsh_completer.sh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/removals.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/removals.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/removals.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/route53resourceid.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/route53resourceid.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/route53resourceid.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/s3/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/s3/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/s3/__init__.pyo
@@ -87,6 +99,9 @@ bin/aws_zsh_completer.sh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/s3/description.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/s3/description.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/s3/description.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/s3/dochandler.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/s3/dochandler.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/s3/dochandler.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/s3/executer.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/s3/executer.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/s3/executer.pyo
@@ -114,6 +129,9 @@ bin/aws_zsh_completer.sh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/s3/utils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/s3/utils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/s3/utils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/service.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/service.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/service.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/sessendemail.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/sessendemail.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/sessendemail.pyo
@@ -132,6 +150,7 @@ bin/aws_zsh_completer.sh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/autoscaling/describe-auto-scaling-groups.rst
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/autoscaling/describe-auto-scaling-instances.rst
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/autoscaling/describe-scaling-activities.rst
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/autoscaling/update-auto-scaling-group.rst
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/cloudformation/create-stack.rst
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/cloudformation/describe-stacks.rst
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/cloudformation/get-template.rst
@@ -337,29 +356,32 @@ bin/aws_zsh_completer.sh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/table.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/table.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/table.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/text.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/text.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/text.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/utils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/utils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/utils.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/swf
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/storagegateway
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/sqs
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/sns
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/ses
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/s3api
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/s3
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/redshift
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/rds
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/opsworks
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/iam
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/ec2
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/cloudwatch
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/cloudformation
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/autoscaling
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/data
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/s3
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/swf
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/storagegateway
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/sqs
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/sns
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/ses
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/s3api
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/s3
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/redshift
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/rds
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/opsworks
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/iam
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/ec2
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/cloudwatch
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/cloudformation
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples/autoscaling
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/examples
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/data
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations/s3
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli/customizations
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/awscli
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
