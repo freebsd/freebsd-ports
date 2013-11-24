@@ -28,22 +28,21 @@ DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
 SUB_FILES=	q3demo
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} && ${TAIL} +165 ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
 		${TAR} zxf -
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/q3demo ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/x86/glibc-2.0/q3demo ${DATADIR}
-	@${CP} -R ${WRKSRC}/demoq3 ${DATADIR}
-	@${LN} -s ${LINUXBASE}/usr/X11R6/lib/libGL.so.1 ${DATADIR}/libGL.so
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	@${CP} -R ${WRKSRC}/Help/* ${DOCSDIR}
-.endif
+	${INSTALL_SCRIPT} ${WRKDIR}/q3demo ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/x86/glibc-2.0/q3demo ${STAGEDIR}${DATADIR}
+	${CP} -R ${WRKSRC}/demoq3 ${STAGEDIR}${DATADIR}
+	${LN} -s ${LINUXBASE}/usr/X11R6/lib/libGL.so.1 ${STAGEDIR}${DATADIR}/libGL.so
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${CP} -R ${WRKSRC}/Help/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
