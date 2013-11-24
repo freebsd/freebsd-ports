@@ -1,0 +1,23 @@
+--- ./resend.orig	2013-11-24 18:53:15.076805222 +0400
++++ ./resend	2013-11-24 18:50:15.000000000 +0400
+@@ -71,8 +71,9 @@
+ # getopts.pl was place where it's supposed to be.  This changes previous
+ # behavior which allowed getopts.pl to be in the same place as
+ # majordomo.cf.
+-require "getopts.pl";
+-&Getopts("C:c:Aa:df:h:I:l:M:p:Rr:s") || die("resend: Getopts() failed: $!");
++use Getopt::Std;
++
++getopts("C:c:Aa:df:h:I:l:M:p:Rr:s") || die("resend: Getopts() failed: $!");
+ 
+ if (! defined($opt_l)) {
+   die("resend: must specify '-l list'");
+@@ -105,7 +106,7 @@
+ chdir($homedir) || die("Can't chdir(\"$homedir\"): $!");
+ 
+ unshift(@INC, $homedir);
+-require "ctime.pl";  # For logging purposes
++use POSIX qw(ctime); # For logging purposes
+ require "majordomo.pl";
+ require "majordomo_version.pl";
+ require "config_parse.pl";
