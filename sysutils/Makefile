@@ -871,6 +871,7 @@
     SUBDIR += slmon
     SUBDIR += sloth
     SUBDIR += slst
+    SUBDIR += slurm-hpc
     SUBDIR += smartmontools
     SUBDIR += smp_utils
     SUBDIR += snap
