@@ -51,6 +51,73 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="742eb9e4-e3cb-4f5a-b94e-0e9a39420600">
+    <topic>ruby-gems -- Algorithmic Complexity Vulnerability</topic>
+    <affects>
+      <package>
+	<name>ruby19-gems</name>
+	<range><lt>1.8.27</lt></range>
+      </package>
+      <package>
+	<name>ruby20-gems</name>
+	<range><lt>1.8.27</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ruby Gem developers report:</p>
+	<blockquote cite="http://blog.rubygems.org/2013/09/24/CVE-2013-4363.html">
+	  <p>The patch for CVE-2013-4363 was insufficiently verified so the
+	     combined regular expression for verifying gem version remains
+	     vulnerable following CVE-2013-4363.</p>
+	  <p>RubyGems validates versions with a regular expression that is
+	     vulnerable to denial of service due to backtracking. For specially
+	     crafted RubyGems versions attackers can cause denial of service
+	     through CPU consumption.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4363</cvename>
+    </references>
+    <dates>
+      <discovery>2013-09-24</discovery>
+      <entry>2013-11-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="54237182-9635-4a8b-92d7-33bfaeed84cd">
+    <topic>ruby-gems -- Algorithmic Complexity Vulnerability</topic>
+    <affects>
+      <package>
+	<name>ruby19-gems</name>
+	<range><lt>1.8.26</lt></range>
+      </package>
+      <package>
+	<name>ruby20-gems</name>
+	<range><lt>1.8.26</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ruby Gem developers report:</p>
+	<blockquote cite="http://blog.rubygems.org/2013/09/09/CVE-2013-4287.html">
+	  <p>RubyGems validates versions with a regular expression that is
+	     vulnerable to denial of service due to backtracking. For specially
+	     crafted RubyGems versions attackers can cause denial of service
+	     through CPU consumption.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4287</cvename>
+    </references>
+    <dates>
+      <discovery>2013-09-09</discovery>
+      <entry>2013-11-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cc9043cf-7f7a-426e-b2cc-8d1980618113">
     <topic>ruby -- Heap Overflow in Floating Point Parsing</topic>
     <affects>
