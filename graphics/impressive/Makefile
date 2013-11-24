@@ -3,7 +3,7 @@
 
 PORTNAME=	impressive
 PORTVERSION=	0.10.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Impressive/${PORTVERSION}/
 DISTNAME=	Impressive-${PORTVERSION}
@@ -18,8 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opengl>=0:${PORTSDIR}/graphics/py-opengl \
 		xpdf:${PORTSDIR}/graphics/xpdf \
 		pdftk:${PORTSDIR}/print/pdftk \
 		xdg-open:${PORTSDIR}/devel/xdg-utils \
-		mplayer:${PORTSDIR}/multimedia/mplayer
-RUN_DEPENDS=	${PYGAME}
+		mplayer:${PORTSDIR}/multimedia/mplayer \
+		${PYGAME}
 
 USE_PYTHON=	yes
 USE_GHOSTSCRIPT_RUN=	yes
