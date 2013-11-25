@@ -20,6 +20,7 @@
     SUBDIR += code2001
     SUBDIR += comfortaa-ttf
     SUBDIR += consolamono-ttf
+    SUBDIR += cosmic-sans-neue-mono
     SUBDIR += croscorefonts-fonts-ttf
     SUBDIR += cyberbit-ttfonts
     SUBDIR += cyr-rfx
