@@ -19,10 +19,9 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PERL5=	configure
 USES=		perl5
 
-MAN1=		umph.1
 PLIST_DIRS=	${SITE_PERL_REL}/${PERL_ARCH}/auto/umph
 PLIST_FILES=	bin/umph \
-		${SITE_PERL_REL}/${PERL_ARCH}/auto/umph/.packlist
+		${SITE_PERL_REL}/${PERL_ARCH}/auto/umph/.packlist \
+		man/man1/umph.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
