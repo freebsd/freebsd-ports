@@ -8,52 +8,28 @@ CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	vg@FreeBSD.org
-COMMENT=	Simple notes based on QT4
+COMMENT=	Simple notes managment application based on Qt 4
 
 LICENSE=	GPLv3
 
-USE_QT4=	gui network xml qmake_build uic_build moc_build rcc_build \
+USES=		qmake
+USE_QT4=	gui network xml uic_build moc_build rcc_build \
 		linguist_build
+QMAKE_ARGS=	QMAKE_LRELEASE=${LRELEASE}
 
-DESKTOP_ENTRIES="zNotes" "Simple notes" \
+DESKTOP_ENTRIES="zNotes" "Notes managment" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.png" "${PORTNAME}" \
-		"Utility;TextEditor;Qt;" ${FALSE}
+		"Utility;TextEditor;Qt;" true
 
 OPTIONS_DEFINE=		NLS
 
-PLIST_FILES=	bin/${PORTNAME} \
-		share/pixmaps/${PORTNAME}.png
-
-NO_STAGE=	yes
 post-patch:
-	    @${REINPLACE_CMD} -e 's|lrelease|lrelease-qt4|g' \
+	@${REINPLACE_CMD} -e '/.path =/s|/usr|$$$$PREFIX|g' \
+		-e '/PREFIX = /d' \
 		${WRKSRC}/${PORTNAME}.pro
-	    @${REINPLACE_CMD} -i -e 's,QCoreApplication::applicationDirPath()+"/translations","${DATADIR}/translations",g' \
+	@${REINPLACE_CMD} -i -e 's,QCoreApplication::applicationDirPath()+"/translations","${DATADIR}/translations",g' \
 		${WRKSRC}/settings.cpp
-
-.include <bsd.port.options.mk>
-
-do-configure:
-	cd ${WRKSRC} && ${QMAKE} ${QMAKEFLAGS}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png ${PREFIX}/share/pixmaps/
-
-.if ${PORT_OPTIONS:MNLS}
-	${MKDIR} ${DATADIR}/translations
-	${INSTALL_DATA} ${WRKSRC}/translations/*.qm ${DATADIR}/translations
-PLIST_FILES+=	%%DATADIR%%/translations/${PORTNAME}_cs.qm \
-		%%DATADIR%%/translations/${PORTNAME}_es.qm \
-		%%DATADIR%%/translations/${PORTNAME}_en.qm \
-		%%DATADIR%%/translations/${PORTNAME}_ru.qm \
-		%%DATADIR%%/translations/${PORTNAME}_sk.qm \
-		%%DATADIR%%/translations/${PORTNAME}_pt_BR.qm \
-		%%DATADIR%%/translations/${PORTNAME}_uk.qm
-
-PLIST_DIRS+=	%%DATADIR%%/translations \
-		%%DATADIR%%
-.else
-.endif
+#Work around badly written .pro
+	${LRELEASE} ${WRKSRC}/${PORTNAME}.pro
 
 .include <bsd.port.mk>
