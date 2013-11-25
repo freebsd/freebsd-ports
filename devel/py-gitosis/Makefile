@@ -18,15 +18,16 @@ RUN_DEPENDS=	git:${PORTSDIR}/devel/git
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_AUTOPLIST=	yes
 USERS=		git
 GROUPS=		${USERS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PYDISTUTILS_PKGVERSION=	${PORTVERSION:R}
 
-NO_STAGE=	yes
+PLIST_DIRSTRY=	git
+
 post-install:
-	${CHMOD} +x ${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG}/gitosis/templates/admin/hooks/post-update
-	@${CAT} ${PKGMESSAGE}
+	${CHMOD} +x ${STAGEDIR}${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG}/gitosis/templates/admin/hooks/post-update
 
 .include <bsd.port.mk>
