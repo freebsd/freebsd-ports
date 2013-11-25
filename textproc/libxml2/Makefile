@@ -4,7 +4,7 @@
 
 PORTNAME=	libxml2
 PORTVERSION=	2.8.0
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	ftp://xmlsoft.org/libxml2/ \
 		http://xmlsoft.org/sources/ \
@@ -15,7 +15,6 @@ MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	XML parser library for GNOME
 
 .if !defined(REFERENCE_PORT)
-
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 USES=		pathfix gmake iconv pkgconfig
@@ -27,50 +26,31 @@ CONFIGURE_ARGS?=--with-iconv=${ICONV_PREFIX} \
 		--without-python
 
 .if !defined(MASTERDIR)
-MAN1=		xml2-config.1 xmllint.1 xmlcatalog.1
-MAN3=		libxml.3
-
 OPTIONS_DEFINE= SCHEMA THREADS MEM_DEBUG XMLLINT_HIST THREAD_ALLOC
 OPTIONS_DEFAULT=SCHEMA THREADS
+
 SCHEMA_DESC=	XML schema support
+SCHEMA_CONFIGURE_WITH=	schemas
 THREADS_DESC=	Threads support
+THREADS_CONFIGURE_WITH=	threads
 MEM_DEBUG_DESC= Memory debugging (DEVELOPERS ONLY!)
+MEM_DEBUG_CONFIGURE_WITH=	mem-debug
 XMLLINT_HIST_DESC= History for xmllint
+XMLLINT_HIST_CONFIGURE_WITH=	history
 THREAD_ALLOC_DESC= Per-thread memory (DEVELOPERS ONLY!)
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MSCHEMA}
-CONFIGURE_ARGS+=	--without-schemas
-.endif
-
-.if ! ${PORT_OPTIONS:MTHREADS}
-CONFIGURE_ARGS+=	--without-threads
-.endif
-
-.if ${PORT_OPTIONS:MMEM_DEBUG}
-CONFIGURE_ARGS+=	--with-mem-debug
-.endif
-
-.if ${PORT_OPTIONS:MXMLLINT_HIST}
-CONFIGURE_ARGS+=	--with-history
-.endif
-
-.if ${PORT_OPTIONS:MTHREAD_ALLOC}
-CONFIGURE_ARGS+=	--with-thread-alloc
-.endif
+THREAD_ALLOC_CONFIGURE_WITH=	thread-alloc
 .endif # !defined(MASTERDIR)
 
 post-patch:
 .for d in . doc doc/devhelp doc/examples
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-data-local||' \
-		${WRKSRC}/${d}/Makefile.in
+	    ${WRKSRC}/${d}/Makefile.in
 .endfor
 .for f in catalog.c xmlcatalog.c xmllint.c doc/xmllint.1
 	@${REINPLACE_CMD} -e \
-		's|/etc/xml/catalog|${LOCALBASE}/share/xml/catalog|g; \
-		 s|/etc/sgml/catalog|${LOCALBASE}/share/sgml/catalog|g' ${WRKSRC}/${f}
+	    's|/etc/xml/catalog|${LOCALBASE}/share/xml/catalog|g; \
+	     s|/etc/sgml/catalog|${LOCALBASE}/share/sgml/catalog|g' \
+	    ${WRKSRC}/${f}
 .endfor
 # manual patch because WITH_FBSD10_FIX break the python bindings
 	${FIND} ${WRKSRC} -type f -name configure \

@@ -55,5 +55,9 @@ lib/libxml2.so
 lib/libxml2.so.5
 libdata/pkgconfig/libxml-2.0.pc
 share/aclocal/libxml.m4
+man/man1/xml2-config.1.gz
+man/man1/xmlcatalog.1.gz
+man/man1/xmllint.1.gz
+man/man3/libxml.3.gz
 @dirrm include/libxml2/libxml
 @dirrm include/libxml2
