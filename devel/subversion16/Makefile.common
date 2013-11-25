@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=	--without-swig \
 CONFLICTS_BUILD+=	${PORTNAME}-1.[^6].[0-9]*
 LIB_DEPENDS+=		libsvn_client-1.so:${PORTSDIR}/devel/subversion16
 OPTIONSFILE=		${PORT_DBDIR}/${PORTNAME}16/options
-OPTIONS=		# Dirty hack: if OPTIONS is not defined, OPTIONSFILE will not be included
+OPTIONS_NAME=		devel_subversion16
 .endif
 
 # ===============================================================
