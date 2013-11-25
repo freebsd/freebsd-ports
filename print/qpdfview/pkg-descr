@@ -1,3 +1,5 @@
-qpdfview is a tabbed PDF viewer using the poppler library.
+qpdfview is a tabbed document viewer.  It uses Poppler for PDF
+support, libspectre for PS support, DjVuLibre for DjVu support,
+CUPS for printing support and the Qt toolkit for its interface.
 
 WWW: https://launchpad.net/qpdfview
