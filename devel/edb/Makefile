@@ -13,42 +13,30 @@ COMMENT=	Cross-platform x86/x86-64 debugger based on Qt 4
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
-USE_QT4=	gui network xml moc_build qmake_build rcc_build uic_build
-HAS_CONFIGURE=	yes
-QMAKE_ARGS=	-recursive PREFIX=${PREFIX} \
-		DEFAULT_PLUGIN_PATH="${PREFIX}/libexec/${PORTNAME}"
+USES=		qmake
+USE_QT4=	gui network xml moc_build rcc_build uic_build
+QMAKE_ARGS=	DEFAULT_PLUGIN_PATH="${PREFIX}/libexec/${PORTNAME}"
 
 WRKSRC=		${WRKDIR}/debugger
 
-MAN1=		edb.1
 PORTDOCS=	*
 
 ONLY_FOR_ARCHS=	i386 amd64
 
 STRIP_FILES=	bin/${PORTNAME} libexec/${PORTNAME}/*.so
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800505
-BROKEN=		doesn't build due to lack of memory map of ptrace
-.endif
-
 .include <bsd.port.options.mk>
-
-do-configure:
-	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKE_ARGS} ${QMAKEFLAGS}
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 .endif
-	${INSTALL_DATA} ${WRKSRC}/edb.desktop ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/src/images/edb48-logo.png ${PREFIX}/share/pixmaps/edb.png
-	${INSTALL_MAN} ${WRKSRC}/edb.1 ${MANPREFIX}/man/man1/edb.1
-	${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}
+	${INSTALL_DATA} ${WRKSRC}/edb.desktop ${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/src/images/edb48-logo.png ${STAGEDIR}${PREFIX}/share/pixmaps/edb.png
+	${INSTALL_MAN} ${WRKSRC}/edb.1 ${STAGEDIR}${MANPREFIX}/man/man1/edb.1
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	${STRIP_CMD} ${STRIP_FILES:S,^,${STAGEDIR}${PREFIX}/,}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
