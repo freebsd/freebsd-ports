@@ -1,7 +1,7 @@
 # Created by: Gerald Pfeifer <gerald@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	gcc47
+PORTNAME=	gcc44
 PORTVERSION=	4.4.7
 PORTEPOCH=	1
 CATEGORIES=	lang
