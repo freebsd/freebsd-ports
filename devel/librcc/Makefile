@@ -2,21 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	librcc
-PORTVERSION=	0.2.9
-PORTREVISION=	6
+PORTVERSION=	0.2.12
 CATEGORIES=	devel
-#MASTER_SITES=	SF/rusxmms/Charset%20Conversion%20Library/${PORTVERSION} \
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://ns.ael.ru/~fluffy.khv/distfiles/ \
-		http://dside.dyndns.org/files/rusxmms/
-MASTER_SITE_SUBDIR=	fluffy
+MASTER_SITES=	http://dside.dyndns.org/files/rusxmms/ \
+		LOCAL/fluffy
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Library used by rusxmms for language autodetection
 
-LIB_DEPENDS=	rcd.1:${PORTSDIR}/devel/librcd \
-		enca.5:${PORTSDIR}/converters/enca \
-		aspell.16:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS=	librcd.so:${PORTSDIR}/devel/librcd \
+		libenca.so:${PORTSDIR}/converters/enca \
+		libaspell.so:${PORTSDIR}/textproc/aspell
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -30,14 +26,14 @@ LIBS=		-L${LOCALBASE}/lib
 
 CONFIGURE_ENV=	LIBS="${LIBS}"
 
-OPTIONS_DEFINE=	BDB TRANSLATE TOOLS GTK1 GTK2
+OPTIONS_DEFINE=	BDB TRANSLATE TOOLS GTK1 GTK2 GTK3
 BDB_DESC=	Translation database support
 TRANSLATE_DESC=	Online translation support
 TOOLS_DESC=	Recode configuration utility
 
-OPTIONS_DEFAULT=	TOOLS GTK1 GTK2
+OPTIONS_DEFAULT=	TOOLS GTK2
 
-NO_STAGE=	yes
+#NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBDB}
@@ -68,8 +64,24 @@ PLIST_SUB+=	WITH_GTK1="@comment "
 USE_GNOME+=	gtk20
 PLIST_SUB+=	WITH_GTK2=""
 .else
-CONFIGURE_ARGS+=--disable-glib2 --disable-gtk2
+CONFIGURE_ARGS+=--disable-gtk2
 PLIST_SUB+=	WITH_GTK2="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MGTK3}
+USE_GNOME+=	gtk30
+PLIST_SUB+=	WITH_GTK3=""
+.else
+CONFIGURE_ARGS+=--disable-gtk3
+PLIST_SUB+=	WITH_GTK3="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGTK3}
+CONFIGURE_ARGS+=--enable-glib2
+PLIST_SUB+=	WITH_GLIB2=""
+.else
+CONFIGURE_ARGS+=--disable-glib2
+PLIST_SUB+=	WITH_GLIB2="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTOOLS}
