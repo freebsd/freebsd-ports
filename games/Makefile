@@ -9,7 +9,6 @@
     SUBDIR += 3dpong
     SUBDIR += 4stattack
     SUBDIR += 54321
-    SUBDIR += BillardGL
     SUBDIR += CaribbeanStud
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
