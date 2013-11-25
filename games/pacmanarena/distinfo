@@ -2,5 +2,5 @@ SHA256 (pacman-arena-0.15.tar.bz2) = 3f151518f3d4a9595ea03f9ef681e8a8829e88e76fb
 SIZE (pacman-arena-0.15.tar.bz2) = 100112
 SHA256 (pacman-data-0.0.zip) = 7949f080ca0ba4c02d737c5bb365856c3e66f103838329be8c1857d6c297b9b8
 SIZE (pacman-data-0.0.zip) = 11994364
-SHA256 (pacmanarena_icons.tar.gz) = 55a6e8e4144f4fc3c49597a11bb9482ff980935d43f993da9080db837fdcc3d7
-SIZE (pacmanarena_icons.tar.gz) = 14848
+SHA256 (pacmanarena_icons_1.tar.gz) = 70f4217e1141d07190e2a892b4f0d383c95af0a4036cbf25c7741a0d19b2b0a0
+SIZE (pacmanarena_icons_1.tar.gz) = 11532
