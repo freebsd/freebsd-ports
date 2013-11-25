@@ -17,7 +17,6 @@ USE_QT4=	corelib gui svg xml network linguist_build \
 QMAKE_ARGS+=	QMAKE_LRELEASE=${LRELEASE}
 
 OPTIONS_DEFINE=	STOCKFISH CRAFTY
-OPTIONS_DEFAULT=	STOCKFISH CRAFTY
 
 STOCKFISH_DESC=	Install Stockfish Chess Engine
 STOCKFISH_RUN_DEPENDS=	stockfish:${PORTSDIR}/games/stockfish
