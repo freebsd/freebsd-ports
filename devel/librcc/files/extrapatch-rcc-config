@@ -1,23 +1,11 @@
---- Makefile.in.orig	2009-10-11 10:58:12.000000000 +1100
-+++ Makefile.in	2010-01-13 00:18:18.951041257 +1000
-@@ -223,7 +223,7 @@
+--- Makefile.in.orig	2013-11-25 13:56:47.000000000 +1100
++++ Makefile.in	2013-11-25 13:57:14.868607062 +1100
+@@ -251,7 +251,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
  target_alias = @target_alias@
- top_builddir = @top_builddir@
- top_srcdir = @top_srcdir@
 -SUBDIRS = src engines external ui
 +SUBDIRS = src engines external ui examples
- EXTRA_DIST = librcd.spec
- ACLOCAL_AMFLAGS = -I m4
- all: config.h
---- examples/Makefile.in.orig	2009-10-11 10:58:12.000000000 +1100
-+++ examples/Makefile.in	2010-01-13 00:16:51.098228400 +1000
-@@ -31,8 +31,7 @@
- POST_UNINSTALL = :
- build_triplet = @build@
- host_triplet = @host@
--bin_PROGRAMS = example1$(EXEEXT) example2$(EXEEXT) $(am__EXEEXT_1) \
--	$(am__EXEEXT_2)
-+bin_PROGRAMS = $(am__EXEEXT_1) $(am__EXEEXT_2)
- @HAVE_GTK_TRUE@am__append_1 = rcc-gtk-config
- @HAVE_GTK2_TRUE@am__append_2 = rcc-gtk2-config
- subdir = examples
+ DIST_SUBDIRS = ${SUBDIRS} examples
+ EXTRA_DIST = librcc.spec
+ pkgconfigdir = $(prefix)/libdata/pkgconfig
