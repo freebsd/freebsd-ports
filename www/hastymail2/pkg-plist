@@ -429,9 +429,9 @@
 %%WWWDIR%%/plugins/html_mail/tiny_mce/plugins/spellchecker/classes/SpellChecker.php
 %%WWWDIR%%/plugins/html_mail/tiny_mce/plugins/spellchecker/classes/utils/JSON.php
 %%WWWDIR%%/plugins/html_mail/tiny_mce/plugins/spellchecker/classes/utils/Logger.php
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/spellchecker/config.php.sample %D/%%WWWDIR%%/plugins/spellchecker/config.php; then rm -f %D/%%WWWDIR%%/plugins/spellchecker/config.php; fi
+@unexec if cmp -s %D/%%WWWDIR%%/plugins/html_mail/tiny_mce/plugins/spellchecker/config.php.sample %D/%%WWWDIR%%/plugins/html_mail/tiny_mce/plugins/spellchecker/config.php; then rm -f %D/%%WWWDIR%%/plugins/html_mail/tiny_mce/plugins/spellchecker/config.php; fi
 %%WWWDIR%%/plugins/html_mail/tiny_mce/plugins/spellchecker/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/spellchecker/config.php ]; then cp -p %D/%F %B/config.php; fi
+@exec if [ ! -f %D/%%WWWDIR%%/plugins/html_mail/tiny_mce/plugins/spellchecker/config.php ]; then cp -p %D/%F %B/config.php; fi
 %%WWWDIR%%/plugins/html_mail/tiny_mce/plugins/spellchecker/css/content.css
 %%WWWDIR%%/plugins/html_mail/tiny_mce/plugins/spellchecker/editor_plugin.js
 %%WWWDIR%%/plugins/html_mail/tiny_mce/plugins/spellchecker/editor_plugin_src.js
