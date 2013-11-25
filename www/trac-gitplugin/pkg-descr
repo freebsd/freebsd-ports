@@ -1,4 +1,0 @@
-GitTrac is a plugin for Trac which enables Git to be used instead of Subversion
-as the VersioningSystemBackend for Trac.
-
-WWW: http://trac-hacks.org/wiki/GitPlugin

@@ -1972,7 +1972,6 @@
     SUBDIR += trac-fullblog
     SUBDIR += trac-fullblognotification
     SUBDIR += trac-gantt
-    SUBDIR += trac-gitplugin
     SUBDIR += trac-graphviz
     SUBDIR += trac-hierwiki
     SUBDIR += trac-iniadmin
