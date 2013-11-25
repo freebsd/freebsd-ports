@@ -3,7 +3,7 @@
 
 PORTNAME=	hastymail2
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	www mail
 MASTER_SITES=	SF/hastymail/Hastymail2%20Stable%20Releases/Hastymail2%201.1/
