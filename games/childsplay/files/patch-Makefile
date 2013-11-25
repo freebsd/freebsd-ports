@@ -1,7 +1,7 @@
 --- Makefile.orig	Sat May  7 23:13:35 2005
 +++ Makefile	Sat May  7 23:15:11 2005
 @@ -0,0 +1,7 @@
-+PYTHON = /usr/bin/env python
++PYTHON = /usr/bin/env python2
 +
 +install:
 +	./INSTALL.sh
