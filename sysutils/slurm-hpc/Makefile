@@ -7,6 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schedmd.com/download/archive/ \
 		http://www.schedmd.com/download/latest/ \
 		http://www.schedmd.com/download/development/
+PKGNAMESUFFIX=	-hpc
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Simple Linux Utility for Resource Management
