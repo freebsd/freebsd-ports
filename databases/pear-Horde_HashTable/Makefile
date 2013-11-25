@@ -11,7 +11,6 @@ COMMENT=	Horde Hash Table Interface
 OPTIONS_DEFINE=	MEMCACHE
 USE_HORDE_RUN=	Horde_Exception
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MMEMCACHE}

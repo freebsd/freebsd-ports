@@ -24,7 +24,6 @@ PEAR_CRYPT_RC4_DESC=	PEAR::Crypt_RC4 support
 
 PEAR_AUTOINSTALL=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPEAR_DB}

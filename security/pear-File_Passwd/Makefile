@@ -17,7 +17,6 @@ PEAR_CRYPT_CHAP_DESC=	PEAR::Crypt_CHAP support
 
 PEAR_AUTOINSTALL=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MPEAR_CRYPT_CHAP}

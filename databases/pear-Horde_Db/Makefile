@@ -18,7 +18,6 @@ USE_HORDE_RUN=	Horde_Date \
 		Horde_Exception \
 		Horde_Support
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

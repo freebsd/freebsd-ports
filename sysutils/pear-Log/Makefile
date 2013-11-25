@@ -21,7 +21,6 @@ PEAR_MDB2_DESC=	PEAR::MDB2 support
 PEAR_MAIL_DESC=	PEAR::Mail support
 PHP_SQLITE_DESC=	PHP sqlite support (php5 only)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPEAR_DB}

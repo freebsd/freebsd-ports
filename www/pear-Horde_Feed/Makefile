@@ -13,7 +13,6 @@ USE_HORDE_RUN=	Horde_Exception \
 		Horde_Http \
 		Horde_Xml_Element
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
 .include <bsd.port.post.mk>

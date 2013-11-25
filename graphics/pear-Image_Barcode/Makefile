@@ -20,7 +20,6 @@ PEAR_PHP_COMPAT_DESC=	"PEAR::PHP_Compat support"
 
 PEAR_AUTOINSTALL=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MPEAR_PHP_COMPAT}
