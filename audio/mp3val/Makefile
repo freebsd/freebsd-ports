@@ -10,14 +10,15 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Program for MPEG audio stream validation
 
+LICENSE=	GPLv2
+
 ALL_TARGET=	mp3val
-MAKEFILE=	${WRKSRC}/Makefile.linux
+MAKEFILE=	Makefile.linux
 USES=		gmake
-NO_STAGE=	yes
 
 PLIST_FILES=	bin/mp3val
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mp3val ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/mp3val ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
