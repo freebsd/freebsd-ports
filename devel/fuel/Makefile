@@ -13,18 +13,13 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/bin/fossil:${PORTSDIR}/devel/fossil
 
+USES=		qmake
 USE_QT4=	corelib gui \
-		qmake_build moc_build rcc_build uic_build
+		moc_build rcc_build uic_build
 
-HAS_CONFIGURE=	yes
-
-PLIST_FILES+=	bin/Fuel
-
-NO_STAGE=	yes
-do-configure:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS}
+PLIST_FILES=	bin/Fuel
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/Fuel ${PREFIX}/bin/Fuel
+	${INSTALL_PROGRAM} ${WRKSRC}/Fuel ${STAGEDIR}${PREFIX}/bin/Fuel
 
 .include <bsd.port.mk>
