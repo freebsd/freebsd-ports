@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pytsk
-DISTVERSION=	2013-09-10
-PORTREVISION=	1
+DISTVERSION=	2013-11-24
 CATEGORIES=	sysutils security devel python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,16 +17,17 @@ LIB_DEPENDS=	libtsk.so:${PORTSDIR}/sysutils/sleuthkit
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USES=		shebangfix
+SHEBANG_FILES=	samples/*.py
+python_OLD_CMD=	.*
+python_CMD=	${PYTHON_CMD}
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=pytsk3
-PYDISTUTILS_PKGVERSION=0.1
+PYDISTUTILS_PKGVERSION=4.1.2
 
 post-patch:
-	${REINPLACE_CMD} -e '/socket\.h/ { h; s|socket|types|; G; }' ${WRKSRC}/misc.h
-	${REINPLACE_CMD} -e 's|/usr/local/include/tsk/|${LOCALBASE}/include/tsk/|' \
-		-e "s|LIBRARY_DIRS = \[\]|LIBRARY_DIRS = ['${LOCALBASE}/lib']|" \
-		-e "s|= \[CONFIG\['TSK_HEADERS_LOCATION'\]\]|= ['${LOCALBASE}/include']|" \
+	${REINPLACE_CMD} -e "s|'/', 'usr', 'local'|'${LOCALBASE}'|" \
 		${WRKSRC}/setup.py
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
