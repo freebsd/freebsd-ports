@@ -3,6 +3,7 @@
 
 PORTNAME=	yadifa
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-2880
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://cdn.yadifa.eu/sites/default/files/releases/
@@ -33,6 +34,7 @@ post-configure:
 .include <bsd.port.options.mk>
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/etc/yadifad.conf.example ${STAGEDIR}${PREFIX}/etc/
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
