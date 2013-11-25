@@ -22,21 +22,19 @@ LIB_DEPENDS=	Imath:${PORTSDIR}/graphics/ilmbase \
 		jasper:${PORTSDIR}/graphics/jasper \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
-USE_QT4=	qmake_build moc_build rcc_build uic_build \
+USES=		qmake
+USE_QT4=	moc_build rcc_build uic_build \
 		linguist_build assistant_run qt3support \
 		dbus designer gui help-tools_build network script \
 		sql svg xml webkit qdoc3_build
-HAS_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	all docs
 INSTALL_TARGET=	install install_docs
 MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
-QMAKE_ARGS=	-recursive CONFIG+="configure" QTC_PREFIX=${PREFIX} ${QMAKE_PRO}
-QMAKE_PRO=	${WRKSRC}/${PORTNAME}.pro
-# stage support
-DESTDIRNAME=	INSTALL_ROOT
+QMAKE_ARGS=	CONFIG+="configure" QTC_PREFIX=${PREFIX}
+QMAKE_SOURCE_PATH=	${WRKSRC}
 
 # Build Qt Quick Designer (requires update on every Qt update).
 QT_DISTNAME=	qt-everywhere-opensource-src-${QT4_VERSION}
@@ -66,9 +64,7 @@ post-patch:
 
 	${RM} ${WRKSRC}/share/qtcreator/dumper/gbridge.py.bak
 
-do-configure:
+pre-configure:
 	${MKDIR} ${CONFIGURE_WRKSRC}
-	cd ${CONFIGURE_WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS}
 
 .include <bsd.port.mk>
