@@ -68,9 +68,11 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Do not define this in your Makefile.
 # PKGNAMEPREFIX	- Prefix to specify that port is language-specific, etc.
 #				  Optional.
-# PKGNAMESUFFIX	- Suffix to specify compilation options.  Optional.
-# PKGVERSION		- Always defined as
-#				  ${PORTVERSION}.
+# PKGNAMESUFFIX	- Suffix to specify compilation options or a version
+#				  designator (in case there are different versions of 
+#				  one port as is the case for Tcl).
+#				  Optional.
+# PKGVERSION	- Always defined as ${PORTVERSION}.
 #				  Do not define this in your Makefile.
 # UNIQUENAME	- A name for your port that is globally unique.  By default,
 #				  this is set to ${LATEST_LINK} when LATEST_LINK is set,
