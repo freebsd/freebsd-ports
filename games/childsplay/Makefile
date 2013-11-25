@@ -8,15 +8,20 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bruno@tinkerbox.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Educative games for children
 
 BUILD_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/pygame/pygame.h:${PORTSDIR}/devel/py-game
 RUN_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/pygame/pygame.h:${PORTSDIR}/devel/py-game
 LIB_DEPENDS=	assetml.0:${PORTSDIR}/devel/libassetml
 
-USE_PYTHON=	yes
+USES=		shebangfix
+USE_PYTHON=	2
 NO_BUILD=	yes
+
+python_OLD_CMD=	/usr/bin/env python
+python_CMD=	/usr/bin/env python2
+SHEBANG_FILES=	childsplay.py
 
 # avoid asking for translation to your local language on install
 MAKE_ENV=	LANG=C
