@@ -5252,3 +5252,14 @@ math/p5-MatrixReal|math/p5-Math-MatrixReal|2013-11-22|Rename to match upstream n
 lang/gcc42|lang/gcc46|2013-11-23|Superseded by GCC 4.6 or later
 devel/p5-IO||2013-11-23|Removed: newer versions are included in all supported Perl releases
 www/mod_wsgi|www/mod_wsgi2|2013-11-24|Rename to match version
+net/ftelnetd||2013-11-25|Has expired: "Unfetchable due to parked MASTER_SITES"
+games/BillardGL||2013-11-25|Has expired: Unplayable, development ceased
+sysutils/rsyslog6-pgsql||2013-11-25|Has expired: Use sysutils/rsyslog7
+sysutils/rsyslog6-relp||2013-11-25|Has expired: Use sysutils/rsyslog7
+sysutils/rsyslog6-gnutls||2013-11-25|Has expired: Use sysutils/rsyslog7
+sysutils/rsyslog6-rfc3195||2013-11-25|Has expired: Use sysutils/rsyslog7
+sysutils/rsyslog6-gssapi||2013-11-25|Has expired: Use sysutils/rsyslog7
+sysutils/rsyslog6||2013-11-25|Has expired: Use sysutils/rsyslog7
+sysutils/rsyslog6-snmp||2013-11-25|Has expired: Use sysutils/rsyslog7
+sysutils/rsyslog6-mysql||2013-11-25|Has expired: Use sysutils/rsyslog7
+sysutils/rsyslog6-dbi||2013-11-25|Has expired: Use sysutils/rsyslog7
