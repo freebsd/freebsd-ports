@@ -1,7 +1,9 @@
+%%ETCDIR%%/action.d/apf.conf
 %%ETCDIR%%/action.d/bsd-ipfw.conf
 %%ETCDIR%%/action.d/complain.conf
 %%ETCDIR%%/action.d/dshield.conf
 %%ETCDIR%%/action.d/dummy.conf
+%%ETCDIR%%/action.d/firewall-cmd-direct-new.conf
 %%ETCDIR%%/action.d/hostsdeny.conf
 %%ETCDIR%%/action.d/ipfilter.conf
 %%ETCDIR%%/action.d/ipfw.conf
@@ -9,6 +11,7 @@
 %%ETCDIR%%/action.d/iptables-blocktype.conf
 %%ETCDIR%%/action.d/iptables-ipset-proto4.conf
 %%ETCDIR%%/action.d/iptables-ipset-proto6.conf
+%%ETCDIR%%/action.d/iptables-ipset-proto6-allports.conf
 %%ETCDIR%%/action.d/iptables-multiport-log.conf
 %%ETCDIR%%/action.d/iptables-multiport.conf
 %%ETCDIR%%/action.d/iptables-new.conf
@@ -19,14 +22,18 @@
 %%ETCDIR%%/action.d/mail-whois.conf
 %%ETCDIR%%/action.d/mail.conf
 %%ETCDIR%%/action.d/mynetwatchman.conf
+%%ETCDIR%%/action.d/osx-afctl.conf
+%%ETCDIR%%/action.d/osx-ipfw.conf
 %%ETCDIR%%/action.d/pf.conf
 %%ETCDIR%%/action.d/route.conf
 %%ETCDIR%%/action.d/sendmail-buffered.conf
+%%ETCDIR%%/action.d/sendmail-common.conf
 %%ETCDIR%%/action.d/sendmail-whois-lines.conf
 %%ETCDIR%%/action.d/sendmail-whois.conf
 %%ETCDIR%%/action.d/sendmail.conf
 %%ETCDIR%%/action.d/shorewall.conf
 %%ETCDIR%%/fail2ban.conf
+%%ETCDIR%%/filter.d/3proxy.conf
 %%ETCDIR%%/filter.d/apache-auth.conf
 %%ETCDIR%%/filter.d/apache-badbots.conf
 %%ETCDIR%%/filter.d/apache-common.conf
@@ -45,24 +52,31 @@
 %%ETCDIR%%/filter.d/dovecot.conf
 %%ETCDIR%%/filter.d/dropbear.conf
 %%ETCDIR%%/filter.d/exim.conf
+%%ETCDIR%%/filter.d/exim-common.conf
+%%ETCDIR%%/filter.d/exim-spam.conf
 %%ETCDIR%%/filter.d/gssftpd.conf
 %%ETCDIR%%/filter.d/lighttpd-auth.conf
-%%ETCDIR%%/filter.d/lighttpd-fastcgi.conf
 %%ETCDIR%%/filter.d/mysqld-auth.conf
 %%ETCDIR%%/filter.d/named-refused.conf
+%%ETCDIR%%/filter.d/nginx-http-auth.conf
 %%ETCDIR%%/filter.d/pam-generic.conf
+%%ETCDIR%%/filter.d/perdition.conf
 %%ETCDIR%%/filter.d/php-url-fopen.conf
 %%ETCDIR%%/filter.d/postfix.conf
+%%ETCDIR%%/filter.d/postfix-sasl.conf
 %%ETCDIR%%/filter.d/proftpd.conf
 %%ETCDIR%%/filter.d/pure-ftpd.conf
 %%ETCDIR%%/filter.d/qmail.conf
 %%ETCDIR%%/filter.d/recidive.conf
 %%ETCDIR%%/filter.d/roundcube-auth.conf
-%%ETCDIR%%/filter.d/sasl.conf
+%%ETCDIR%%/filter.d/selinux-common.conf
+%%ETCDIR%%/filter.d/selinux-ssh.conf
 %%ETCDIR%%/filter.d/sieve.conf
 %%ETCDIR%%/filter.d/sogo-auth.conf
 %%ETCDIR%%/filter.d/sshd-ddos.conf
 %%ETCDIR%%/filter.d/sshd.conf
+%%ETCDIR%%/filter.d/suhosin.conf
+%%ETCDIR%%/filter.d/uwimap-auth.conf
 %%ETCDIR%%/filter.d/vsftpd.conf
 %%ETCDIR%%/filter.d/webmin-auth.conf
 %%ETCDIR%%/filter.d/wuftpd.conf
@@ -147,7 +161,9 @@
 bin/fail2ban-client
 bin/fail2ban-regex
 bin/fail2ban-server
+@dirrmtry %%ETCDIR%%/jail.d
 @dirrmtry %%ETCDIR%%/filter.d
+@dirrmtry %%ETCDIR%%/fail2ban.d
 @dirrmtry %%ETCDIR%%/action.d
 @dirrmtry %%ETCDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/server
