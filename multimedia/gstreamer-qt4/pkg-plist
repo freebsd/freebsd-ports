@@ -125,10 +125,10 @@ lib/libQtGStreamerUtils-%%GST_VERSION%%.so.0
 lib/libQtGStreamerUtils-%%GST_VERSION%%.so.%%VERSION%%
 %%QT_LIBDIR%%/imports/QtGStreamer/libQtGStreamerQuick1.so
 %%QT_LIBDIR%%/imports/QtGStreamer/qmldir
-lib/pkgconfig/QtGLib-2.0.pc
-lib/pkgconfig/QtGStreamer-%%GST_VERSION%%.pc
-lib/pkgconfig/QtGStreamerUi-%%GST_VERSION%%.pc
-lib/pkgconfig/QtGStreamerUtils-%%GST_VERSION%%.pc
+libdata/pkgconfig/QtGLib-2.0.pc
+libdata/pkgconfig/QtGStreamer-%%GST_VERSION%%.pc
+libdata/pkgconfig/QtGStreamerUi-%%GST_VERSION%%.pc
+libdata/pkgconfig/QtGStreamerUtils-%%GST_VERSION%%.pc
 @dirrm %%QT_LIBDIR%%/imports/QtGStreamer
 @dirrmtry %%QT_LIBDIR%%/imports
 @dirrm lib/cmake/QtGStreamer
