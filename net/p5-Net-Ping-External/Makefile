@@ -17,7 +17,4 @@ USE_ZIP=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::Ping::External.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
