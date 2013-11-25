@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pam_jail
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	security
 MASTER_SITES=	http://www.triades.net/downloads/
 
