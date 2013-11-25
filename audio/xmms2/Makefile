@@ -375,15 +375,15 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|%%WRKSRC%%|${WRKSRC}|" ${WRKSRC}/wscript
 
 do-configure:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf ${_MAKE_JOBS} configure \
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} waf ${_MAKE_JOBS} configure \
 		--conf-prefix=${LOCALBASE} --prefix=${PREFIX} \
 		--mandir=${PREFIX}/man ${EXCLUDE}
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf ${_MAKE_JOBS} build
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} waf ${_MAKE_JOBS} build
 
 do-install:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf install --destdir=${STAGEDIR} --without-ldconfig
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} waf install --destdir=${STAGEDIR} --without-ldconfig
 .if !defined(XMMS2_SLAVE)
 	if [ ! -d ${STAGEDIR}${DATADIR}/scripts/startup.d ]; then \
 		${MKDIR} ${STAGEDIR}${DATADIR}/scripts/startup.d; \
