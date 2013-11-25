@@ -4,14 +4,12 @@
 PORTNAME=	cakephp
 PORTVERSION=	1.3.15
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/tarball/${PORTVERSION}/ \
-		LOCAL/glarkin
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/tarball/${PORTVERSION}/
+PKGNAMESUFFIX=	13
 DISTNAME=	${PORTNAME}-${PORTNAME}-${PORTVERSION}-${GITVERSION}
 
 MAINTAINER=	theis@gmx.at
-COMMENT=	A framework for developing PHP web applications
-
-LATEST_LINK=	cakephp13
+COMMENT=	Framework for developing PHP web applications
 
 LICENSE=	MIT
 
