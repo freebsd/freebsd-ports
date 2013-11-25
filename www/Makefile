@@ -204,6 +204,7 @@
     SUBDIR += eyeos
     SUBDIR += eyeos-themes
     SUBDIR += fancybox
+    SUBDIR += faup
     SUBDIR += fcgi
     SUBDIR += fcgiwrap
     SUBDIR += feedjack

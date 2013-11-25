@@ -1,0 +1,23 @@
+bin/faup
+include/faup/compat.h
+include/faup/datadir.h
+include/faup/decode.h
+include/faup/faup.h
+include/faup/features.h
+include/faup/modules.h
+include/faup/options.h
+include/faup/output.h
+include/faup/portable.h
+include/faup/tld-tree.h
+include/faup/tld.h
+lib/libfaupl.so
+lib/libfaupl.so.1
+%%DATADIR%%/README.txt
+%%DATADIR%%/mozilla.tlds
+%%DATADIR%%/modules_available/emulation_ie.lua
+%%DATADIR%%/modules_available/uppercase.lua
+@exec mkdir -p %D/%%DATADIR%%/modules_enabled
+@dirrm %%DATADIR%%/modules_available
+@dirrm %%DATADIR%%/modules_enabled
+@dirrm %%DATADIR%%
+@dirrm include/faup

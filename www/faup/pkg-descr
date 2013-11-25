@@ -1,0 +1,6 @@
+Faup stands for Finally An Url Parser and is a library and command line tool to
+parse URLs and normalize fields with two constraints:
+- Work with real-life urls (resilient to badly formated ones)
+- Be fast: no allocation for string parsing and read characters only once
+
+WWW: http://stricaud.github.io/faup/
