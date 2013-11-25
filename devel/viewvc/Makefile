@@ -27,9 +27,10 @@ MODWSGI3_DESC=		Enable mod_wsgi3 support
 MODPYTHON3_DESC=	Enable mod_python3 support
 MYSQL_DESC=		Bonsai-like repository query facilities
 
+APACHE_USE=		APACHE_RUN=22+
 LIGHTTPD_RUN_DEPENDS=	lighttpd:${PORTSDIR}/www/lighttpd
 MODPYTHON3_RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_python>=3.3:${PORTSDIR}/www/mod_python3
-MODWSGI3_RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_wsgi>=3.3:${PORTSDIR}/www/mod_wsgi3
+MODWSGI3_RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_wsgi3>=3.3:${PORTSDIR}/www/mod_wsgi3
 SVN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion>=0:${PORTSDIR}/devel/py-subversion
 MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
 
@@ -42,10 +43,6 @@ SUB_FILES=	pkg-message
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
 		ECHO=${ECHO} EGREP=${EGREP} TOUCH=${TOUCH} \
 		CHOWN=${CHOWN} RM=${RM}
-
-.if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE_RUN=	22+
-.endif
 
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pygments>=1.6:${PORTSDIR}/textproc/py-pygments
 
