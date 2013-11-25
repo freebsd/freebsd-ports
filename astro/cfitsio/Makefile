@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cfitsio
-PORTVERSION=	3.330
+PORTVERSION=	3.350
 CATEGORIES=	astro
 MASTER_SITES=	http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
 		http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/oldvers/ \
@@ -16,7 +16,7 @@ COMMENT=	Library for reading and writing files in FITS data format
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	f2c:${PORTSDIR}/lang/f2c
+LIB_DEPENDS=	libf2c.so:${PORTSDIR}/lang/f2c
 
 OPTIONS_DEFINE=	DOCS
 
