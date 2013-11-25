@@ -1,20 +1,20 @@
 # $FreeBSD$
 
 PORTNAME=	fail2ban
-PORTVERSION=	0.8.10
+PORTVERSION=	0.8.11
 CATEGORIES=	security python
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/tarball/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PORTNAME}-${PORTVERSION}-${GITVERSION}
 
 MAINTAINER=	theis@gmx.at
 COMMENT=	Scans log files and bans IP that makes too many password failures
 
 LICENSE=	GPLv2
 
-GITVERSION=	0-g921d9a8
-FETCH_ARGS=	-pRr
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-d56f01a
+USE_GITHUB=	yes
+GH_ACCOUNT=	${PORTNAME}
+GH_PROJECT=	${PORTNAME}
+GH_COMMIT=	fc213a1
+GH_TAGNAME=	${PORTVERSION}
 
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
@@ -24,7 +24,7 @@ SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
 PYDISTUTILS_INSTALLARGS+=	--install-purelib=${PYTHON_SITELIBDIR} \
 				--install-data=${ETCDIR}
-PYDISTUTILS_PKGVERSION=	0.8.10
+PYDISTUTILS_PKGVERSION=	${PORTVERSION}
 
 PORTDOCS=	README.md DEVELOP
 
@@ -35,7 +35,6 @@ FILES=	${WRKSRC}/fail2ban-regex \
 		${WRKSRC}/client/configreader.py \
 		${WRKSRC}/fail2ban-client
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -46,13 +45,7 @@ post-patch:
 		${WRKSRC}/config/jail.conf
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${ECHO_MSG} "===> Installing additional documentation in ${DOCSDIR}."
-	@${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
