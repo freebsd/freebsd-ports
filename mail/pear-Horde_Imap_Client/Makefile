@@ -21,7 +21,6 @@ IMAP_DESC=	Require PHP imap extension
 MBSTRING_DESC=	Require PHP mbstring extension
 SASL_DESC=	Support SASL Authentication
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MIMAP}

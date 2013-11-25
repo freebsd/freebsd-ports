@@ -18,7 +18,6 @@ PEAR_AUTOINSTALL=	yes
 USE_PHP=mcrypt
 .endif
 
-NO_STAGE=	yes
 pre-fetch:
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "You may set envirtonment variable WITH_PHP_MCRYPT to include"

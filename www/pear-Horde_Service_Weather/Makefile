@@ -15,7 +15,6 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Http \
 		Horde_Url
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
 .include <bsd.port.post.mk>

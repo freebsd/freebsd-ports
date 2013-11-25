@@ -15,7 +15,6 @@ SCRIBE_DESC=	Enable scribe support
 USE_HORDE_RUN=	Horde_Constraint \
 		Horde_Exception
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MSCRIBE}

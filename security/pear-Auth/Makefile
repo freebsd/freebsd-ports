@@ -28,7 +28,6 @@ PEAR_FILE_SMBPASSWD_DESC=	PEAR::File_SMBPasswd support
 PEAR_SOAP_DESC=	PEAR::SOAP support
 PEAR_NET_VPOPMAILD_DESC=	PEAR::Net_Vpopmaild support
 
-NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e "s|@version@|${PORTVERSION}|" ${WRKSRC}/Auth.php
 

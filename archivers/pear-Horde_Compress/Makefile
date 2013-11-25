@@ -12,7 +12,6 @@ OPTIONS_DEFAULT=	ZLIB
 OPTIONS_DEFINE=		ZLIB
 ZLIB_DESC=	Depend on PHP zlib extension
 
-NO_STAGE=	yes
 USE_HORDE_RUN=	Horde_Exception \
 		Horde_Translation \
 		Horde_Util \
