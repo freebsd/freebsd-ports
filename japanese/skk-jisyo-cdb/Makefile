@@ -1,7 +1,7 @@
 # Created by: KOMATSU Shinichiro <koma2@jiro.c.u-tokyo.ac.jp>
 # $FreeBSD$
 
-MAINTAINER=	meta+ports@vmeta.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CDB jisyo (dictionary) files for the SKK Japanese-input software
 
 WITH_SKKJISYO_CDB=	yes
