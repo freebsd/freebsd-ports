@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.7.13
+PORTVERSION=	1.7.14
 PORTREVISION?=	0
 CATEGORIES+=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
@@ -36,7 +36,7 @@ CONFIGURE_ARGS+=	--without-swig \
 CONFLICTS_BUILD+=	${PORTNAME}-1.[^7].[0-9]*
 LIB_DEPENDS+=		libsvn_client-1.so:${PORTSDIR}/devel/subversion17
 OPTIONSFILE=		${PORT_DBDIR}/${PORTNAME}/options
-OPTIONS=		# Dirty hack: if OPTIONS is not defined, OPTIONSFILE will not be included
+OPTIONS_NAME=		devel_subversion17
 .endif
 
 # ===============================================================

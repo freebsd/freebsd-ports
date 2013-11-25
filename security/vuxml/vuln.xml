@@ -51,6 +51,48 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e3244a7b-5603-11e3-878d-20cf30e32f6d">
+    <topic>subversion -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>subversion</name>
+	<range><ge>1.8.0</ge><lt>1.8.5</lt></range>
+	<range><ge>1.7.0</ge><lt>1.7.14</lt></range>
+	<range><ge>1.6.0</ge><lt>1.6.24</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Subversion Project reports:</p>
+	<blockquote cite="http://subversion.apache.org/security/">
+	  <p>mod_dontdothat does not restrict requests from serf based clients</p>
+	  <p>mod_dontdothat allows you to block update REPORT requests against certain
+	    paths in the repository.  It expects the paths in the REPORT request
+	    to be absolute URLs.  Serf based clients send relative URLs instead
+	    of absolute URLs in many cases.  As a result these clients are not blocked
+	    as configured by mod_dontdothat.</p>
+	  <p>mod_dav_svn assertion triggered by non-canonical URLs in autoversioning commits</p>
+	  <p>When SVNAutoversioning is enabled via SVNAutoversioning on
+	    commits can be made by single HTTP requests such as MKCOL and
+	    PUT.  If Subversion is built with assertions enabled any such
+	    requests that have non-canonical URLs, such as URLs with a
+	    trailing /, may trigger an assert.  An assert will cause the
+	    Apache process to abort.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4505</cvename>
+      <cvename>CVE-2013-4558</cvename>
+      <url>http://subversion.apache.org/security/CVE-2013-4505-advisory.txt</url>
+      <url>http://subversion.apache.org/security/CVE-2013-4558-advisory.txt</url>
+    </references>
+    <dates>
+      <discovery>2013-11-15</discovery>
+      <entry>2013-11-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="742eb9e4-e3cb-4f5a-b94e-0e9a39420600">
     <topic>ruby-gems -- Algorithmic Complexity Vulnerability</topic>
     <affects>

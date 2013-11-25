@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.8.4
+PORTVERSION=	1.8.5
 PORTREVISION?=	0
 CATEGORIES+=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 DIST_SUBDIR=	subversion18
-MASTER_SITE_SUBDIR=	subversion/
+MASTER_SITE_SUBDIR=	subversion
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
@@ -30,7 +30,7 @@ CONFIGURE_ARGS+=	--without-swig \
 CONFLICTS_BUILD+=	${PORTNAME}-1.[^8].[0-9]*
 LIB_DEPENDS+=		libsvn_client-1.so:${PORTSDIR}/devel/subversion
 OPTIONSFILE=		${PORT_DBDIR}/${PORTNAME}/options
-OPTIONS=		# Dirty hack: if OPTIONS is not defined, OPTIONSFILE will not be included
+OPTIONS_NAME=		devel_subversion
 .endif
 
 # ===============================================================
