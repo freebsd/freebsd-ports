@@ -9,7 +9,7 @@ MASTER_SITES=	SF/fbsdports/distfiles/ \
 		http://www.live555.com/liveMedia/public/
 DISTNAME=	live.${PORTVERSION}
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LIVE.COM Streaming Media
 
 LICENSE=	LGPL21
