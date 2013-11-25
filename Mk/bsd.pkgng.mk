@@ -96,7 +96,7 @@ create-manifest:
 		[ -f $$a ] && ${CAT} $$a >> ${METADIR}/+PRE_DEINSTALL ; \
 	done ; \
 	${RM} -f ${METADIR}/+POST_DEINSTALL ; \
-	for a in ${PKGPOSRDEINSTALL}; do \
+	for a in ${PKGPOSTDEINSTALL}; do \
 		[ -f $$a ] && ${CAT} $$a >> ${METADIR}/+POST_DEINSTALL ; \
 	done ; \
 	[ -f ${PKGPOSTDEINSTALL} ] && ${CP} ${PKGPOSTDEINSTALL} ${METADIR}/+POST_DEINSTALL; \
