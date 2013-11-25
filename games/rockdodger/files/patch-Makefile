@@ -1,0 +1,41 @@
+--- ./Makefile.orig	2013-05-19 00:02:10.000000000 +0200
++++ ./Makefile	2013-11-25 00:26:42.000000000 +0100
+@@ -34,9 +34,9 @@
+ datadir = $(datarootdir)
+ bindir = $(exec_prefix)/bin
+ docdir = $(datarootdir)/doc/$(PACKAGENAME)
+-mandir = $(datarootdir)/man
+-localstatedir = $(prefix)/var
+-gamesdir = $(localstatedir)/games
++#mandir = $(datarootdir)/man
++#localstatedir = $(prefix)/var
++gamesdir = $(prefix)/share/$(PACKAGENAME)
+ 
+ NEWD=$(PACKAGENAME)-$(VERSION)
+ COMPILEDATE=$(shell date '+%Y-%m-%d')
+@@ -53,7 +53,7 @@
+ 	blubats.o greeblies.o powerup.o rocks.o spacedots.o ship.o engine_exhaust.o laser.o \
+ 	mood_item.o sparkles.o \
+ 	rockdodger_globals.o intro.o main.o
+-MANPAGE=rockdodger.6
++#MANPAGE=rockdodger.6
+ 
+ ifeq ($(profile),1)
+ 	OPTIONS+=-pg
+@@ -102,11 +102,11 @@
+ 	-chgrp games $(bindir)/$(EXENAME)
+ 	chmod g+s $(bindir)/$(EXENAME)
+ 	$(MAKE) -C data install
+-	touch $(gamesdir)/rockdodger.scores
+-	-chgrp games $(gamesdir)/rockdodger.scores
+-	chmod g+rw $(gamesdir)/rockdodger.scores
+-	mkdir -p $(mandir)/man6
+-	gzip  < $(MANPAGE) > $(mandir)/man6/$(MANPAGE).gz
++#	touch $(gamesdir)/rockdodger.scores
++#	-chgrp games $(gamesdir)/rockdodger.scores
++#	chmod g+rw $(gamesdir)/rockdodger.scores
++#	mkdir -p $(mandir)/man6
++#	gzip  < $(MANPAGE) > $(mandir)/man6/$(MANPAGE).gz
+ 
+ uninstall:
+ 	rm -f $(gamesdir)/rockdodger.scores

@@ -2,34 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	rockdodger
-PORTVERSION=	0.6.0a
-PORTREVISION=	6
+PORTVERSION=	0.9.0
 CATEGORIES=	games
-MASTER_SITES=	SF/spacerocks/spacerocks/${PORTVERSION}
+MASTER_SITES=	GOOGLE_CODE \
+		SF/nemysisfreebsdp/${CATEGORIES}/:icons
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}.png:icons
+EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Addictive rock-dodging greeblie-killing platform game
 
-USE_SDL=	mixer image sdl
+LICENSE=	GPLv2
+
 USES=		gmake
+USE_SDL=	mixer image sdl
 
-GAMESDIR?=	/var/games
+DESKTOP_ENTRIES="Rock Dodger" "${COMMENT}" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" false
 
-pre-patch:
-	@${REINPLACE_CMD} \
-		-e "s%/usr/share/rockdodger/.highscore%${GAMESDIR}/rockdodger.highscore%" \
-		-e "s%/usr/share/rockdodger%${PREFIX}/share/rockdodger%" \
-		-e "s%/usr/games%${PREFIX}/bin%" \
-		${WRKSRC}/main.c
-	@${REINPLACE_CMD} \
-		-e "s%/usr/share/rockdodger/.highscore%${STAGEDIR}${GAMESDIR}/rockdodger.highscore%" \
-		-e "s%/usr/games%${STAGEDIR}${PREFIX}/bin%" \
-		-e "s%/usr/share/rockdodger%${STAGEDIR}${PREFIX}/share/rockdodger%" \
-		-e "s%data/\*.{bmp,png,wav,mod}%data/*%" \
-		${WRKSRC}/Makefile
-	@cd ${WRKSRC} && ${REINPLACE_CMD} -e "s%#include <SDL/%#include <%" SFont.c SFont.h main.c sound.c
-
-pre-install:
-	@${MKDIR} ${STAGEDIR}${GAMESDIR}
+post-install:
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
 .include <bsd.port.mk>
