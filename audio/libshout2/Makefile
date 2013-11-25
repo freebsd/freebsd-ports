@@ -1,32 +1,32 @@
 # Created by: Zach Zurflu <zach@pabst.bendnet.com>
 # $FreeBSD$
 
-PORTNAME=	libshout2
+PORTNAME=	libshout
 PORTVERSION=	2.3.1
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio net
-MASTER_SITES=	http://downloads.xiph.org/releases/libshout/ \
+MASTER_SITES=	http://downloads.xiph.org/releases/${PORTNAME}/ \
 		LOCAL/sunpoet
-DISTNAME=	libshout-${PORTVERSION}
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Connect and transmit data to an Icecast media streaming server
 
-LIB_DEPENDS=	speex:${PORTSDIR}/audio/speex \
-		theora:${PORTSDIR}/multimedia/libtheora \
-		vorbis:${PORTSDIR}/audio/libvorbis
+LICENSE=	LGPL20
+
+LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex \
+		libtheora.so:${PORTSDIR}/multimedia/libtheora \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 CONFLICTS=	libshout-[0-9]*
 
-CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
-LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 USE_LDCONFIG=	yes
-NO_STAGE=	yes
+#NO_STAGE=	yes
 USES=		gmake pathfix pkgconfig
-
-DOCSDIR=	${PREFIX}/share/doc/libshout
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ffast-math||g' ${WRKSRC}/configure
