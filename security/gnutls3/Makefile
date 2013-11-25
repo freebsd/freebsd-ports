@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgpg-error.so:${PORTSDIR}/security/libgpg-error \
 		libidn.so:${PORTSDIR}/dns/libidn \
 		libtspi.so:${PORTSDIR}/security/trousers
 
-GNUTLS_SUFFIX=3
+GNUTLS_SUFFIX=	3
 
 USES=		gmake iconv pkgconfig
 USE_AUTOTOOLS=	libtool
@@ -34,7 +34,8 @@ CONFIGURE_ARGS=	--program-suffix=${GNUTLS_SUFFIX} \
 			--disable-guile \
 			--disable-nls \
 			--disable-silent-rules \
-			--disable-hardware-acceleration
+			--disable-hardware-acceleration \
+			--enable-local-libopts
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${GNUTLS_SUFFIX}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}${GNUTLS_SUFFIX}
