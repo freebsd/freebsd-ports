@@ -21,7 +21,7 @@ OPTIONS_DEFINE=	DOCS DOXYGEN
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-NO_STAGE=	yes
+#NO_STAGE=	yes
 USES=		pathfix pkgconfig
 
 PORTDOCS=	*
