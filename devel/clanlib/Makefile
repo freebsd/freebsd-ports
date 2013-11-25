@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.clanlib.org/download/releases-2.0/
 DISTNAME=	ClanLib-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform game SDK
 
 LICENSE=	ZLIB
