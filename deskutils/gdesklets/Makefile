@@ -39,6 +39,10 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gdbm>0:${PORTSDIR}/databases/py-gdbm
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|`python -c|`$$PYTHON -c|' \
+		${WRKSRC}/configure
+
 post-install:
 	@${MKDIR} ${DATADIR}/Displays
 	@${TOUCH} ${DATADIR}/Displays/.keep_me
