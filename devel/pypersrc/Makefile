@@ -32,9 +32,10 @@ post-patch:
 	${REINPLACE_CMD} -e \
 		'/INSTALL_DIR/s|=.*|=$$(PREFIX)/bin| ; \
 		 /MAN_DIR/s|\/usr\/local|$$(PREFIX)| ; \
+		 s|^PYTHON\(.*\)= python|PYTHON\1= ${PYTHON_CMD}| ; \
 		 /-O2/s|^|#|' ${WRKSRC}/GNUmakefile
-	${REINPLACE_CMD} -e \
-		's|/bin/bash|${SH}|g' ${WRKSRC}/configure.sh
+	${REINPLACE_CMD} -e 's|/bin/bash|${SH}|g ; \
+		s|python |${PYTHON_CMD} |' ${WRKSRC}/configure.sh
 	${REINPLACE_CMD} -e 's|g++|${CXX}|g' ${WRKSRC}/tests/GNUmakefile
 	@${REINPLACE_CMD} -e 's|tolower|::tolower|' ${WRKSRC}/src/cc/utils_string.hh
 
