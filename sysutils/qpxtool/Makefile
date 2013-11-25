@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION:C/\.[^.]*$/.x/}/${DISTVERSION}
 
 MAINTAINER=	horia@racoviceanu.com
-COMMENT=	A GUI for testing CD/DVD quality and transfer rate
+COMMENT=	GUI for testing CD/DVD quality and transfer rate
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
@@ -20,7 +20,7 @@ CONFIGURE_ENV=	PREFIX=${PREFIX}
 USE_LDCONFIG=	yes
 
 post-configure:
-	@${REINPLACE_CMD} -e 's|$$(QMAKE4)|& ${QMAKEFLAGS}|' \
+	@${REINPLACE_CMD} -e 's|$$(QMAKE4)|& ${QMAKE_AGRS}|' \
 		${WRKSRC}/gui/Makefile
 	@${REINPLACE_CMD} -e 's|S_ISBLK|S_ISCHR|' \
 		${WRKSRC}/lib/qpxtransport/qpx_mmc.cpp
