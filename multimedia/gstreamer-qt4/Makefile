@@ -3,6 +3,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.10.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/qt-${PORTNAME}/
 PKGNAMESUFFIX=	-qt4
@@ -32,7 +33,7 @@ CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH:STRING="${LOCALBASE}/include"
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-extract:
-	${REINPLACE_CMD} -e 's|$${LIB_INSTALL_DIR}/pkgconfig|libdata/pkgconfig|' \
-		${WRKSRC}/src/CMakeLists.txt
+	${REINPLACE_CMD} -e 's|$${CMAKE_INSTALL_LIBDIR}/pkgconfig|$${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|' \
+		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
