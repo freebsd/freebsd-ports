@@ -39,7 +39,7 @@ cat << EOF >> "${tmp}" || exit 1
       </body>
     </description>
     <references>
-      <url>INSERT SAME URL HERE</url>
+      <url>INSERT BLOCKQUOTE URL HERE</url>
     </references>
     <dates>
       <discovery>${discovery}</discovery>
