@@ -86,6 +86,7 @@ lib/seed7/lib/more.s7i
 lib/seed7/lib/multiscr.s7i
 lib/seed7/lib/null_file.s7i
 lib/seed7/lib/osfiles.s7i
+lib/seed7/lib/pic_util.s7i
 lib/seed7/lib/pic16.s7i
 lib/seed7/lib/pic32.s7i
 lib/seed7/lib/pixmap_file.s7i
