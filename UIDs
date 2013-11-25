@@ -271,4 +271,5 @@ shibd:*:971:971::0:0:Shibboleth SAML daemon:/nonexistent:/usr/sbin/nologin
 plex:*:972:972::0:0:Plex Media Server:/nonexistent:/usr/sbin/nologin
 boinc:*:973:973::0:0:BOINC user:/var/db/boinc:/usr/sbin/nologin
 radicale:*:974:974::0:0:Radicale daemon:/nonexistent:/usr/sbin/nologin
+unifi:*:975:975::0:0:Unifi Wireless Controller:/nonexistent:/usr/sbin/nologin
 nobody:*:65534:65534::0:0:Unprivileged user:/nonexistent:/usr/sbin/nologin
