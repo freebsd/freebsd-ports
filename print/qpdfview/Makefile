@@ -7,59 +7,40 @@ CATEGORIES=	print
 MASTER_SITES=	https://launchpadlibrarian.net/140746246/
 
 MAINTAINER=	vg@FreeBSD.org
-COMMENT=	Tabbed PDF viewer using the poppler library
+COMMENT=	Tabbed DjVu/PDF/PS document viewer
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	poppler-qt4:${PORTSDIR}/graphics/poppler-qt4 \
-		cups:${PORTSDIR}/print/cups-client
-
-USES=		pkgconfig
-USE_QT4=	corelib dbus gui imageformats linguist_build moc_build \
-		qmake_build rcc_build sql sql-sqlite3_run svg xml
-QMAKEFLAGS+=	QMAKE_CFLAGS_RELEASE="" QMAKE_CXXFLAGS_RELEASE=""
+USES=		desktop-file-utils pkgconfig qmake
+USE_QT4=	corelib dbus gui imageformats_run linguist_build moc_build \
+		rcc_build sql sql-sqlite3_run svg xml
+QMAKE_ARGS+=	QMAKE_CFLAGS_RELEASE="" QMAKE_CXXFLAGS_RELEASE=""
+QMAKE_SOURCE_PATH=	${PORTNAME}.pro
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
 
-MAN1=		${PORTNAME}.1
+OPTIONS_DEFINE=	CUPS
+OPTIONS_MULTI=	BACKEND
+OPTIONS_MULTI_BACKEND=	DJVU PDF PS
+BACKEND_DESC=	Documents support
+OPTIONS_DEFAULT=	CUPS PDF
+OPTIONS_SUB=	yes
 
-OPTIONS_DEFINE=	DJVU PDF PS
-DJVU_DESC=	DjVu support
-PS_DESC=	PostScript support
-OPTIONS_DEFAULT=	PDF
+CUPS_QMAKE_OFF=	"CONFIG+=without_cups"
+CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+DJVU_LIB_DEPENDS=	libdjvulibre.so:${PORTSDIR}/graphics/djvulibre
+DJVU_QMAKE_OFF=	"CONFIG+=without_djvu"
 
-.if ${PORT_OPTIONS:MDJVU}
-PLIST_SUB+=	DJVU=""
-LIB_DEPENDS+=	djvulibre:${PORTSDIR}/graphics/djvulibre
-.else
-QMAKEFLAGS+=	"CONFIG+=without_djvu"
-PLIST_SUB+=	DJVU="@comment "
-.endif
+PDF_LIB_DEPENDS=	libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4
+PDF_QMAKE_OFF=	"CONFIG+=without_pdf"
 
-.if ${PORT_OPTIONS:MPDF}
-PLIST_SUB+=	PDF=""
-.else
-QMAKEFLAGS+=	"CONFIG+=without_pdf"
-PLIST_SUB+=	PDF="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPS}
-PLIST_SUB+=	PS=""
-LIB_DEPENDS+=	spectre:${PORTSDIR}/print/libspectre
-.else
-QMAKEFLAGS+=	"CONFIG+=without_ps"
-PLIST_SUB+=	PS="@comment "
-.endif
+PS_LIB_DEPENDS=	libspectre.so:${PORTSDIR}/print/libspectre
+PS_QMAKE_OFF=	"CONFIG+=without_ps"
 
 pre-configure:
 	${REINPLACE_CMD} -e 's#/usr#${PREFIX}#g;s#${PREFIX}/share/man#${PREFIX}/man#g' \
 		${WRKSRC}/${PORTNAME}.pri
-
-do-configure:
-	cd ${WRKSRC} && lrelease-qt4 ${PORTNAME}.pro
-	cd ${WRKSRC} && ${QMAKE} ${QMAKEFLAGS} ${PORTNAME}.pro
+	cd ${WRKSRC} && ${LRELEASE} ${PORTNAME}.pro
 
 .include <bsd.port.mk>
