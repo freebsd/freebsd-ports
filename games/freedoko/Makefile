@@ -12,7 +12,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Play the card game Doppelkopf
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/../COPYING
 
 LIB_DEPENDS=	libgnet-2.0.so:${PORTSDIR}/net/gnet2 \
 		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
