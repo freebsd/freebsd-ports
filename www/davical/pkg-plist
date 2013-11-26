@@ -47,7 +47,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/dba/update-davical-database
 %%PORTDOCS%%%%DOCSDIR%%/dba/views/dav_principal.sql
 %%PORTDOCS%%%%DOCSDIR%%/dba/windows/create-database.bat
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/CalDAVSyncCalendar.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/_inc---CalDAVSyncCalendar.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/CalDAVClient.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/CalDAVSyncClient.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/CalendarInfo.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/RRule.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/RepeatRule.html
@@ -55,6 +58,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/RepeatRuleDateTime.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/RepeatRuleTimeZone.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/Rfc5545Duration.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/_inc---CalDAVSyncClient.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/_inc---RRule-v2.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/_inc---RRule.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/_inc---caldav-client-v2.php.html
@@ -66,6 +70,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/AtomEntry.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/AtomFeed.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/AtomXHTMLContent.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/CalDAVSyncCache.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/CalDAVSyncState.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/CheckResult.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/DAVTicket/DAVTicket.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/DAVTicket/_inc---DAVTicket.php.html
@@ -73,6 +79,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/DAViCalSession/Tools.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/DAViCalSession/_htdocs---tools.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/DAViCalSession/_inc---DAViCalSession.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/FakeSession.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/HTTPAuthSession/HTTPAuthSession.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/HTTPAuthSession/_inc---HTTPAuthSession.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/Principal/DAVPrincipal.html
@@ -106,6 +113,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_htdocs---upgrade.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_htdocs---well-known.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---AtomFeed.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---CalDAVSyncCache.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---CalDAVSyncState.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---FakeSession.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---WritableCollection.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---autodiscover-handler.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---caldav-LOCK.php.html
@@ -126,12 +136,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---pubsub.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---test-RRULE-v2.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---test-RRULE.php.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---vtimezone.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---ui---collection-edit.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---ui---external-browse.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---ui---principal-browse.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---ui---principal-edit.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---vcard.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---vtimezone.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---well-known.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/authentication/_inc---auth-functions.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_htdocs---caldav.php.html
@@ -140,8 +150,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-BIND.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-DELETE.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-DELTICKET.php.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-GET.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-GET-functions.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-GET.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-MKCOL.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-MKTICKET.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-MOVE.php.html
@@ -157,10 +167,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-REPORT.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---schedule-functions.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/external-bind/_inc---external-fetch.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/iSchedule-POST/FakeSession.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/iSchedule-POST/_inc---iSchedule-POST.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/iSchedule/_inc---iSchedule.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/iSchedule/iSchedule.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/iSchedule-POST/_inc---iSchedule-POST.php.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/iSchedule-POST/FakeSession.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/ldap/_inc---drivers_imap_pam.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/ldap/_inc---drivers_ldap.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/ldap/_inc---drivers_rimap.php.html
@@ -293,6 +303,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/docs/website/style.css
 %%PORTDOCS%%%%DOCSDIR%%/docs/website/wikiheader.css
 %%PORTDOCS%%%%DOCSDIR%%/httpd-davical.conf
+%%PORTDOCS%%%%DOCSDIR%%/scripts/archive-old-events.php
 %%PORTDOCS%%%%DOCSDIR%%/scripts/build-always.sh
 %%PORTDOCS%%%%DOCSDIR%%/scripts/cron-sync-ldap.php
 %%PORTDOCS%%%%DOCSDIR%%/scripts/export_calendar.php
@@ -301,7 +312,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/scripts/refresh-alarms.php
 %%PORTDOCS%%%%DOCSDIR%%/scripts/sync-remote-caldav.php
 %%PORTDOCS%%%%DOCSDIR%%/scripts/tz-update.php
-%%WWWDIR%%/config/example-config.php
+@unexec if cmp -s %D/%%WWWDIR%%/config/config.php.sample %D/%%WWWDIR%%/config/config.php; then rm -f %D/%%WWWDIR%%/config/config.php; fi
+%%WWWDIR%%/config/config.php.sample
+@exec if [ ! -f %D/%%WWWDIR%%/config/config.conf ] ; then cp -p %D/%F %B/config.php; fi
 %%WWWDIR%%/htdocs/.htaccess
 %%WWWDIR%%/htdocs/admin.php
 %%WWWDIR%%/htdocs/always.php
@@ -399,7 +412,7 @@
 %%WWWDIR%%/inc/well-known.php
 @dirrm %%WWWDIR%%/inc/ui
 @dirrm %%WWWDIR%%/inc/tz
-@dirrm %%WWWDIR%%/inc
+@dirrmtry %%WWWDIR%%/inc
 @dirrm %%WWWDIR%%/htdocs/js
 @dirrm %%WWWDIR%%/htdocs/images
 @dirrm %%WWWDIR%%/htdocs/css
@@ -443,5 +456,3 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/dba
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/config
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec touch %D/%%WWWDIR%%/inc/config.php;chown www %D/%%WWWDIR%%/inc/config.php
-@unexec if [ ! -s %D/%%WWWDIR%%/inc/config.php ];then rm -f %D/%%WWWDIR%%/inc/config.php;fi
