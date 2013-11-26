@@ -1,4 +1,9 @@
 %%SITE_PERL%%/Text/WikiFormat.pm
 %%SITE_PERL%%/Text/WikiFormat/Blocks.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/WikiFormat/.packlist
+%%PERL5_MAN3%%/Text::WikiFormat.3.gz
+%%PERL5_MAN3%%/Text::WikiFormat::Blocks.3.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/WikiFormat
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
 @dirrmtry %%SITE_PERL%%/Text/WikiFormat
 @dirrmtry %%SITE_PERL%%/Text
