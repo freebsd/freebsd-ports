@@ -120,9 +120,9 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' \
 		${WRKSRC}/src/mesa/drivers/dri/common/xmlconfig.c
+.if !defined(WITH_NEW_XORG)
 	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|' \
 		${WRKSRC}/src/gallium/auxiliary/util/Makefile
-.if !defined(WITH_NEW_XORG)
 	@${REINPLACE_CMD} -e 's|[$$](INSTALL_LIB_DIR)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/src/glu/Makefile \
 		${WRKSRC}/src/mesa/Makefile \
