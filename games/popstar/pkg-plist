@@ -1,0 +1,25 @@
+bin/popstar
+share/pixmaps/popstar.png
+%%DATADIR%%/images/bkgd1.png
+%%DATADIR%%/images/bkgd2.png
+%%DATADIR%%/images/bonus.png
+%%DATADIR%%/images/complete.png
+%%DATADIR%%/images/cursor.png
+%%DATADIR%%/images/gameover.png
+%%DATADIR%%/images/incomplete.png
+%%DATADIR%%/images/stars.png
+%%DATADIR%%/images/title.png
+%%DATADIR%%/music/bull_fight.ogg
+%%DATADIR%%/music/ethereal_jaunt.ogg
+%%DATADIR%%/music/ph1lipina_sunris3.ogg
+%%DATADIR%%/music/popstar_song2.ogg
+%%DATADIR%%/sounds/bonus.wav
+%%DATADIR%%/sounds/line_break.wav
+%%DATADIR%%/sounds/missed1.wav
+%%DATADIR%%/sounds/move.wav
+%%DATADIR%%/sounds/pop.wav
+%%DATADIR%%/sounds/select.wav
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%

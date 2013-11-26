@@ -728,6 +728,7 @@
     SUBDIR += pokerth
     SUBDIR += polypuzzle
     SUBDIR += pongix
+    SUBDIR += popstar
     SUBDIR += pouetchess
     SUBDIR += powder
     SUBDIR += powermanga
