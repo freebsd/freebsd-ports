@@ -20,7 +20,6 @@ USE_XORG+=	glproto dri2proto xext xdamage xfixes
 
 BUILD_WKRSRC=	${WRKSRC}/src/mapi/es2api
 INSTALL_WRKSRC=	${WRKSRC}/src/mapi/es2api
-NO_STAGE=	yes
 
 # this library doesn't exist in Mesa 7.6 so use newer
 WITH_NEW_XORG=yes
