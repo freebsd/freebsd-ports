@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	swi-pl
-PORTVERSION=	6.4.1
-PORTREVISION=	1
+PORTVERSION=	6.6.0
 CATEGORIES=	lang
 MASTER_SITES=	http://www.swi-prolog.org/download/stable/src/
 DISTNAME=	pl-${PORTVERSION}
@@ -23,12 +22,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 SWIPLDIR=	${PORTNAME:C/-//}-${PORTVERSION}
 
-MAN1=		swipl.1 swipl-rc.1 swipl-ld.1 xpce-client.1
-MANCOMPRESSED=	no
-
 NOPRECIOUSMAKEVARS=	yes
 USE_XORG=	xft xpm xt
-USES=		pkgconfig pathfix gmake
+USES=		pkgconfig pathfix gmake shebangfix
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ARCH=${ARCH}-${OPSYS:L}
@@ -37,9 +33,14 @@ CONFIGURE_ARGS=	--with-world --without-jpl
 MAKE_ARGS=	DISABLE_PKGS=jpl \
 		ac_cv_lib_ossp_uuid_uuid_create=no ac_cv_lib_uuid_uuid_create=no
 
+SHEBANG_LANG=	swipl
+swipl_OLD_CMD=	/usr/bin/swipl
+swipl_CMD=		${LOCALBASE}/bin/swipl
+SHEBANG_FILES=	library/dialect/sicstus/swipl-lfr.pl \
+		packages/http/examples/demo_inetd
+
 PLIST_SUB=	DISTNAME=${SWIPLDIR} ARCH=${ARCH} OS=${OPSYS:L}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUNIXODBC}
@@ -75,5 +76,9 @@ post-patch:
 	@${REINPLACE_CMD} -e '/EXAMPLEEXE/s/INSTALL_PROGRAM/INSTALL_SCRIPT/' \
 		${WRKSRC}/packages/http/Makefile.in \
 		${WRKSRC}/packages/pldoc/Makefile.in
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xpce-client \
+		${STAGEDIR}${PREFIX}/lib/${SWIPLDIR}/lib/${ARCH}-freebsd/pl2xpce.so
 
 .include <bsd.port.post.mk>
