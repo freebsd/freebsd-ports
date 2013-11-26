@@ -1,0 +1,62 @@
+diff --git COPYING COPYING
+index a8adb39..d6bd4e1 100644
+--- COPYING
++++ COPYING
+@@ -1,6 +1,6 @@
+ See the AUTHORS file to get the list of authors
+ 
+-Copyright (c) 2010-2012 <author(s)>
++Copyright (c) 2010-2013 <author(s)>
+ All rights reserved.
+ 
+ Redistribution and use in source and binary forms, with or without
+diff --git pkg/main.c pkg/main.c
+index c562ac8..ec382c5 100644
+--- pkg/main.c
++++ pkg/main.c
+@@ -442,17 +442,23 @@ show_repository_info(void)
+ 			break;
+ 		}
+ 
+-		printf("  %s: { \n    %-16s: %s,\n    %-16s: %s,\n    %-16s: %s,\n"
+-		    "    %-16s: %s,\n    %-16s: %s,\n    %-16s: %s\n  } \n",
++		printf("  %s: { \n    %-16s: \"%s\",\n    %-16s: %s",
+ 		    pkg_repo_ident(repo),
+                     "url", pkg_repo_url(repo),
+-		    "signature_type", sig,
+-		    "pubkey", pkg_repo_key(repo) == NULL ?
+-		        "" : pkg_repo_key(repo),
+-		    "fingerprints", pkg_repo_fingerprints(repo) == NULL ?
+-		        "" : pkg_repo_fingerprints(repo),
+-		    "enabled", pkg_repo_enabled(repo) ? "yes" : "no",
+-		    "mirror_type", mirror);
++		    "enabled", pkg_repo_enabled(repo) ? "yes" : "no");
++		if (pkg_repo_mirror_type(repo) != NOMIRROR)
++			printf(",\n    %-16s: \"%s\"",
++			    "mirror_type", mirror);
++		if (pkg_repo_signature_type(repo) != SIG_NONE)
++			printf(",\n    %-16s: \"%s\"",
++			    "signature_type", sig);
++		if (pkg_repo_fingerprints(repo) != NULL)
++			printf(",\n    %-16s: \"%s\"",
++			    "fingerprints", pkg_repo_fingerprints(repo));
++		if (pkg_repo_key(repo) != NULL)
++			printf(",\n    %-16s: \"%s\"",
++			    "pubkey", pkg_repo_key(repo));
++		printf("\n  }\n");
+ 	}
+ }
+ 
+diff --git pkg/rquery.c pkg/rquery.c
+index d4c3868..e97ece5 100644
+--- pkg/rquery.c
++++ pkg/rquery.c
+@@ -110,7 +110,7 @@ exec_rquery(int argc, char **argv)
+ 	bool auto_update;
+ 	bool onematched = false;
+ 	bool old_quiet;
+-	bool index_output = true;
++	bool index_output = false;
+ 
+ 	pkg_config_bool(PKG_CONFIG_REPO_AUTOUPDATE, &auto_update);
+ 
