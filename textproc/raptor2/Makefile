@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	raptor2
-PORTVERSION=	2.0.10
+PORTVERSION=	2.0.11
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/ \
 		SF/librdf/${PORTNAME}/${PORTVERSION}
