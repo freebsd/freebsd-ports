@@ -1,17 +1,18 @@
 # Created by: Mark Reidel <ports@mark.reidle.info>
 # $FreeBSD$
 
-PORTNAME=	mpc
+PORTNAME=	musicpc
 PORTVERSION=	0.22
 CATEGORIES=	audio ipv6
-MASTER_SITES=	SF/musicpd/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	SF/musicpd/mpc/${PORTVERSION}/
+DISTNAME=	mpc-${PORTVERSION}
 
-MAINTAINER=	ports@mark.reidel.info
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Command line client for the musicpd
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	mpdclient:${PORTSDIR}/audio/libmpdclient
+LIB_DEPENDS=	libmpdclient.so:${PORTSDIR}/audio/libmpdclient
 
 OPTIONS_DEFINE=	EXAMPLES DOCS ICONV
 OPTIONS_DEFAULT=	ICONV
@@ -23,12 +24,12 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
-MAN1=		${PORTNAME}.1
+MAN1=		mpc.1
 
 PORTDOCS=	AUTHORS README NEWS
 PORTEXAMPLES=	*
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/mpc
 
 .include <bsd.port.options.mk>
 
@@ -43,7 +44,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lintl|${ICONV_LIB}|g' ${WRKSRC}/configure
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/mpc ${PREFIX}/bin
 
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
@@ -52,9 +53,9 @@ do-install:
 
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}-completion.bash ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/mpc-completion.bash ${EXAMPLESDIR}
 .endif
 
-	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
