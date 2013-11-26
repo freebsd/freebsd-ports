@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
+		liblcms.so:${PORTSDIR}/graphics/lcms \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
 
@@ -27,7 +27,6 @@ CONFLICTS_INSTALL=	i386-wine-* wine-1.5* wine-1.7*
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_GCC=	any
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--verbose --disable-tests \
 		--without-alsa --without-capi --without-dbus \
@@ -43,7 +42,8 @@ WINELIBDIR?=	${PREFIX}/lib
 USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine
 .endif
 ONLY_FOR_ARCHS=	i386
-USES=		bison gmake
+USES=		bison compiler:c11 gmake shebangfix
+SHEBANG_FILES=	tools/winemaker tools/winedump/function_grep.pl
 USE_BZIP2=	yes
 USE_GL=		glu
 USE_XORG=	xcursor xi xpm xrandr xrender
