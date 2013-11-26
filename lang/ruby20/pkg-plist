@@ -927,15 +927,10 @@ include/ruby-2.0/ruby.h
 %%RUBY_LIBDIR%%/rubygems/source_specific_file.rb
 %%RUBY_LIBDIR%%/rubygems/spec_fetcher.rb
 %%RUBY_LIBDIR%%/rubygems/specification.rb
-%%RUBY_LIBDIR%%/rubygems/ssl_certs/AddTrustExternalCARoot.pem
 %%RUBY_LIBDIR%%/rubygems/ssl_certs/Class3PublicPrimaryCertificationAuthority.pem
 %%RUBY_LIBDIR%%/rubygems/ssl_certs/DigiCertHighAssuranceEVRootCA.pem
-%%RUBY_LIBDIR%%/rubygems/ssl_certs/Entrust_net-Secure-Server-Certification-Authority.pem
 %%RUBY_LIBDIR%%/rubygems/ssl_certs/EntrustnetSecureServerCertificationAuthority.pem
 %%RUBY_LIBDIR%%/rubygems/ssl_certs/GeoTrustGlobalCA.pem
-%%RUBY_LIBDIR%%/rubygems/ssl_certs/GeoTrust_Global_CA.pem
-%%RUBY_LIBDIR%%/rubygems/ssl_certs/VerisignClass3PublicPrimaryCertificationAuthority-G2.pem
-%%RUBY_LIBDIR%%/rubygems/ssl_certs/ca-bundle.pem
 %%RUBY_LIBDIR%%/rubygems/syck_hack.rb
 %%RUBY_LIBDIR%%/rubygems/test_case.rb
 %%RUBY_LIBDIR%%/rubygems/test_utilities.rb
