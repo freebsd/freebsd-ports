@@ -1,11 +1,18 @@
 ################################################################################
 
-FreeBSD/amd64 users:
-You need to manually install Wine 32bit binary from:
-http://www.mediafire.com/wine_fbsd64
+Q4Wine has been installed.
+
 
 For more info about running wine on FreeBSD please see:
+
 http://wiki.freebsd.org/Wine
+
+
+FreeBSD/amd64 users:
+You need to manually install Wine 32bit binary from:
+
+https://wiki.freebsd.org/i386-Wine
+
 
 This program will attempt to obtain some system information by accessing files
 in procfs. You must mount procfs filesystem for this to work correctly.
@@ -19,6 +26,6 @@ and then, as root, executing the command:
 mount /proc
 
 Also you need passwordless sudo for mdconfig, mount_cd9660, umount commands for
-work with ISO images
+work with ISO images.
 
 ################################################################################
