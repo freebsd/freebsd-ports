@@ -226,6 +226,7 @@
     SUBDIR += endgame-singularity-music
     SUBDIR += enigma
     SUBDIR += ensemblist
+    SUBDIR += entombed
     SUBDIR += enygma
     SUBDIR += epiar
     SUBDIR += etracer
