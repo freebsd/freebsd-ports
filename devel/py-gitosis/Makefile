@@ -25,8 +25,6 @@ GROUPS=		${USERS}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PYDISTUTILS_PKGVERSION=	${PORTVERSION:R}
 
-PLIST_DIRSTRY=	git
-
 post-install:
 	${CHMOD} +x ${STAGEDIR}${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG}/gitosis/templates/admin/hooks/post-update
 
