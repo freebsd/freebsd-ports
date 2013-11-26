@@ -20,9 +20,8 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .endif
 
-USES=		perl5
+USES=		gmake perl5
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal:env automake:env autoconf:env
 
 HAS_CONFIGURE=	yes
@@ -32,7 +31,6 @@ MAKEFILE=	GNUmakefile
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
 pre-configure:
 	cd ${WRKSRC}; ${SH} autogen.sh
 
