@@ -13,4 +13,7 @@ lib/libmei.so.0
 %%PYTHON_SITELIBDIR%%/mei/mei.py
 %%PYTHON_SITELIBDIR%%/mei/mei.pyc
 %%PYTHON_SITELIBDIR%%/mei/mei.pyo
+man/man1/mei-config.1.gz
 @dirrm %%PYTHON_SITELIBDIR%%/mei
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%
