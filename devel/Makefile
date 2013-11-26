@@ -1740,6 +1740,7 @@
     SUBDIR += p5-Date-Calc-XS
     SUBDIR += p5-Date-DayOfWeek
     SUBDIR += p5-Date-Easter
+    SUBDIR += p5-Date-Extract
     SUBDIR += p5-Date-EzDate
     SUBDIR += p5-Date-Holidays-DK
     SUBDIR += p5-Date-ICal
