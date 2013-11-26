@@ -1,7 +1,7 @@
 # Created by: John Polstra <jdp@polstra.com>
 # $FreeBSD$
 
-PORTNAME=	gcc
+PORTNAME=	gcc34
 PORTVERSION=	3.4.6
 PORTREVISION=	3
 PORTEPOCH=	1
@@ -17,7 +17,6 @@ MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 3.4
 
 SUFFIX=		34
-LATEST_LINK=	gcc${SUFFIX}${PKGNAMESUFFIX}
 USES=		bison gmake iconv perl5
 USE_BZIP2=	yes
 USE_PERL=	build
