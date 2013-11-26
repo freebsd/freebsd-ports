@@ -129,6 +129,7 @@
     SUBDIR += prodosemu
     SUBDIR += psim-freebsd
     SUBDIR += pyxmame
+    SUBDIR += q4wine
     SUBDIR += qemu
     SUBDIR += qemu-devel
     SUBDIR += qemu-launcher
