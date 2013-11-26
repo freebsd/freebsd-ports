@@ -1,0 +1,75 @@
+bin/entombed
+%%DATADIR%%/embedded/images/title.bmp.bz2
+%%DATADIR%%/images/1.png
+%%DATADIR%%/images/2.png
+%%DATADIR%%/images/brick1.png
+%%DATADIR%%/images/brick2.png
+%%DATADIR%%/images/brick3.png
+%%DATADIR%%/images/brick4.png
+%%DATADIR%%/images/brick5.png
+%%DATADIR%%/images/credits1.png
+%%DATADIR%%/images/credits2.png
+%%DATADIR%%/images/credits3.png
+%%DATADIR%%/images/credits4.png
+%%DATADIR%%/images/icon.png
+%%DATADIR%%/images/makebreak1.png
+%%DATADIR%%/images/makebreak2.png
+%%DATADIR%%/images/makebreak3.png
+%%DATADIR%%/images/makebreak4.png
+%%DATADIR%%/images/makebreak5.png
+%%DATADIR%%/images/man1.png
+%%DATADIR%%/images/man2.png
+%%DATADIR%%/images/numbers.png
+%%DATADIR%%/images/paused.png
+%%DATADIR%%/images/title.jpg
+%%DATADIR%%/images/woman1.png
+%%DATADIR%%/images/woman2.png
+%%DATADIR%%/images/zombie1.png
+%%DATADIR%%/images/zombie2.png
+%%DATADIR%%/images/zombie_mad1.png
+%%DATADIR%%/images/zombie_mad2.png
+%%DATADIR%%/images_halfsize/1.png
+%%DATADIR%%/images_halfsize/2.png
+%%DATADIR%%/images_halfsize/brick1.png
+%%DATADIR%%/images_halfsize/brick2.png
+%%DATADIR%%/images_halfsize/brick3.png
+%%DATADIR%%/images_halfsize/brick4.png
+%%DATADIR%%/images_halfsize/brick5.png
+%%DATADIR%%/images_halfsize/credits1.png
+%%DATADIR%%/images_halfsize/credits2.png
+%%DATADIR%%/images_halfsize/credits3.png
+%%DATADIR%%/images_halfsize/credits4.png
+%%DATADIR%%/images_halfsize/icon.png
+%%DATADIR%%/images_halfsize/makebreak1.png
+%%DATADIR%%/images_halfsize/makebreak2.png
+%%DATADIR%%/images_halfsize/makebreak3.png
+%%DATADIR%%/images_halfsize/makebreak4.png
+%%DATADIR%%/images_halfsize/makebreak5.png
+%%DATADIR%%/images_halfsize/man1.png
+%%DATADIR%%/images_halfsize/man2.png
+%%DATADIR%%/images_halfsize/numbers.png
+%%DATADIR%%/images_halfsize/paused.png
+%%DATADIR%%/images_halfsize/title.jpg
+%%DATADIR%%/images_halfsize/woman1.png
+%%DATADIR%%/images_halfsize/woman2.png
+%%DATADIR%%/images_halfsize/zombie1.png
+%%DATADIR%%/images_halfsize/zombie2.png
+%%DATADIR%%/images_halfsize/zombie_mad1.png
+%%DATADIR%%/images_halfsize/zombie_mad2.png
+%%DATADIR%%/music/AMAZE.S3M
+%%DATADIR%%/music/Suggestive_vibes_01.mod
+%%DATADIR%%/sounds/die.wav
+%%DATADIR%%/sounds/gameover.wav
+%%DATADIR%%/sounds/makebreak_get.wav
+%%DATADIR%%/sounds/makebreak_use.wav
+%%DATADIR%%/sounds/zombie_appear.wav
+%%DATADIR%%/sounds/zombie_eat.wav
+%%DATADIR%%/sounds/zombie_mad.wav
+share/pixmaps/entombed.png
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/images_halfsize
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/embedded/images
+@dirrm %%DATADIR%%/embedded
+@dirrm %%DATADIR%%
