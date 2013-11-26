@@ -20,6 +20,6 @@ QMAKE_ENV+=	BINDIR="${PREFIX}/bin" \
 		DOCDIR="${DOCSDIR}"
 
 post-install:
-	${STRIP_CMD} ${PREFIX}/bin/qbrew
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qbrew
 
 .include <bsd.port.mk>
