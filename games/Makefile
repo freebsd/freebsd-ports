@@ -96,6 +96,7 @@
     SUBDIR += bombz
     SUBDIR += bomns
     SUBDIR += boswars
+    SUBDIR += bouncy
     SUBDIR += bovo
     SUBDIR += braincurses
     SUBDIR += brainparty
