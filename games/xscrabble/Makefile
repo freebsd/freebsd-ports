@@ -11,12 +11,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}_en${EXTRACT_SUFX}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	X version of the popular board game
 
-NO_STAGE=	yes
-
 USES=		imake
 USE_BZIP2=	yes
 USE_XORG=	xaw
-NO_INSTALL_MANPAGES=	yes
 
 XSCRABBLEDIR=	${PREFIX}/lib/X11/xscrabble
 
@@ -32,15 +29,16 @@ post-patch:
 	@${SED} -e 's|/usr/share/games/scrabble/en|${XSCRABBLEDIR}|g' \
 		${WRKSRC}/../xscrabble_en/app-defaults/XScrabble_en \
 		> ${WRKSRC}/XScrabble
-	@${REINPLACE_CMD} -e 's|= -O|=$$(CDEBUGFLAGS)|g' ${WRKSRC}/Imakefile
+	${REINPLACE_CMD} -e 's|= -O|=$$(CDEBUGFLAGS)|g' ${WRKSRC}/Imakefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/xscrab ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/xscrabble ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/XScrabble ${PREFIX}/lib/X11/app-defaults
-	@${MKDIR} ${XSCRABBLEDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/xscrab ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/xscrabble ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/XScrabble ${STAGEDIR}${PREFIX}/lib/X11/app-defaults/
+	${MKDIR} ${STAGEDIR}${XSCRABBLEDIR}
 .for file in OSPD3.gz duplicate scrabble_rules scrabble_scores
-	${INSTALL_DATA} ${WRKSRC}/../xscrabble_en/lib/${file} ${XSCRABBLEDIR}
+	${INSTALL_DATA} ${WRKSRC}/../xscrabble_en/lib/${file} \
+		${STAGEDIR}${XSCRABBLEDIR}/
 .endfor
 
 .include <bsd.port.mk>
