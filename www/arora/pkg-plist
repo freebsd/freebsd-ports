@@ -2,6 +2,10 @@ bin/arora
 bin/arora-cacheinfo
 bin/arora-placesimport
 bin/htmlToXBel
+man/man1/arora.1.gz
+man/man1/arora-cacheinfo.1.gz
+man/man1/arora-placesimport.1.gz
+man/man1/htmlToXBel.1.gz
 share/applications/arora.desktop
 %%NLS%%share/arora/locale/ast.qm
 %%NLS%%share/arora/locale/ca.qm
