@@ -16,25 +16,19 @@ INSTALLS_ICONS=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 QMAKE_ARGS=	QMAKE_LRELEASE=${LRELEASE}
-QMAKE_PRO=	${WRKSRC}/${PORTNAME}.pro
 
 STRIP_FILES=	bin/minitube
 
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+NLS_USE=	QT4=linguist_build
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNLS}
-USE_QT4+=	linguist_build
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
-
 pre-configure:
-	${REINPLACE_CMD} -e 's,$$$$PKGDATADIR,${DATADIR},g' ${QMAKE_PRO}
+	${REINPLACE_CMD} -e 's,$$$$PKGDATADIR,${DATADIR},g' ${WRKSRC}/minitube.pro
 .if !${PORT_OPTIONS:MNLS}
-	${REINPLACE_CMD} -e '/include(locale\/locale.pri)/d' ${QMAKE_PRO}
+	${REINPLACE_CMD} -e '/include(locale\/locale.pri)/d' ${WRKSRC}/minitube.pro
 .endif
 
 post-install:
