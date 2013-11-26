@@ -2,6 +2,7 @@
 
 PORTNAME=	synergy
 PORTVERSION=	1.3.8
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-Source
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
@@ -23,15 +24,14 @@ PLIST_FILES=	bin/synergys bin/synergyc
 PORTEXAMPLES=	synergy.conf.example synergy.conf.example-basic \
 		synergy.conf.example-advanced
 
-NO_STAGE=	yes
 do-install:
 .for f in synergys synergyc
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ${PORTEXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 .endif
 
