@@ -11,22 +11,24 @@ MASTER_SITES=	http://www.ircservices.za.net/download/ \
 MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	A system of IRC services for IRC networks
 
+LICENSE=	GPLv2
+
 USES=		gmake perl5
+USE_GCC=	any
 USE_PERL5=	build
 HAS_CONFIGURE=	yes
 USE_RC_SUBR=	ircservices
+SUB_FILES=	pkg-message
 
 DIST_SUBDIR=	${PORTNAME}
-CONFIGURE_ARGS=	-bindest ${PREFIX}/sbin -datdest ${PREFIX}/etc/ircservices -cflags "${CFLAGS}" -cc "${CC}"
+CONFIGURE_ARGS=	-bindest ${PREFIX}/sbin -datdest ${PREFIX}/etc/ircservices \
+				-cflags "${CFLAGS}" -cc "${CC}"
+MAKE_JOBS_UNSAFE=	yes
+NEED_ROOT=	yes
 
 IRCSERVICES_LANG?=	EN_US
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 700042
-CFLAGS+=	-fno-stack-protector
-.endif
 
 .if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
@@ -41,19 +43,19 @@ pre-patch:
 	@${ECHO_MSG} "DE EN_US ES FR HU IT JA_EUC JA_SJIS NL PT TR"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|LANG_EN_US|LANG_${IRCSERVICES_LANG}|' \
+	@${REINPLACE_CMD} -e 's#LANG_EN_US#LANG_${IRCSERVICES_LANG}#' \
 		${WRKSRC}/defs.h
 
+post-build:
+	@${REINPLACE_CMD} -e 's#BINDEST=.*#BINDEST=${STAGEDIR}${PREFIX}/sbin# ; \
+		s#DATDEST=.*#DATDEST=${STAGEDIR}${PREFIX}/etc/ircservices#' \
+			${WRKSRC}/Makefile.inc
+	@${REINPLACE_CMD} -e 's#@BINDEST@#${PREFIX}/sbin# ; \
+		s#@DATDEST@#${PREFIX}/etc/ircservices#' \
+			${WRKSRC}/tools/ircservices-chk.in
+
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "**********          IMPORTANT           **********"
-	@${ECHO_MSG} "The configuration directory has changed to ${PREFIX}/etc/ircservices"
-	@${ECHO_MSG} "Please copy your old config files there if updating"
-	@${ECHO_MSG} "**********          IMPORTANT           *********"
-	@${ECHO_MSG} ""
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.post.mk>
