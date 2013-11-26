@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.1.4
-PORTREVISION=	10
+DISTVERSION=	1.2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://files.etoilebsd.net/pkg/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
@@ -77,7 +76,7 @@ pre-everything::
 PKG_DEPENDS=
 .undef INSTALLS_DEPENDS
 .if !exists(${LOCALBASE}/sbin/pkg)
-PKG_BIN=	${WRKSRC}/pkg-static/pkg-static
+PKG_BIN=	${WRKSRC}/pkg/pkg-static
 .endif
 .endif
 
