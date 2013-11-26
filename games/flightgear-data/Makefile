@@ -43,6 +43,6 @@ pre-install:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR})
+	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} '! -name .gitignore')
 
 .include <bsd.port.mk>
