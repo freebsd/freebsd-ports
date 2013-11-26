@@ -23,5 +23,7 @@ NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|CAMLreturn0|return 0|' \
 		${WRKSRC}/pycaml/pycaml_ml.c
+	@${REINPLACE_CMD} 's|shell python|shell ${PYTHON_CMD}|' \
+		${WRKSRC}/pycaml/Makefile
 
 .include <bsd.port.mk>
