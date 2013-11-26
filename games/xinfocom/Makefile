@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An Infocom game interpreter for X11
 
-NO_STAGE=	yes
-
 USES=		imake
 USE_XORG=	xt sm ice xext x11
 WRKSRC=		${WRKDIR}/xinfocom
