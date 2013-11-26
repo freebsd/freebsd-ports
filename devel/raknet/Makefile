@@ -61,7 +61,7 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/Lib/LibStatic/libRakNetStatic.a \
 		${STAGEDIR}${PREFIX}/lib/libraknet.a
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/Help
-	(cd ${WRKSRC}/Help/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}/Help)
+	(cd ${WRKSRC}/Help/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/Help)
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
