@@ -6,7 +6,7 @@ PORTVERSION=	1.4.1
 CATEGORIES=	devel net
 MASTER_SITES=	http://download.zeromq.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	High-level C Binding for zmq
 
 LICENSE=	LGPL3
