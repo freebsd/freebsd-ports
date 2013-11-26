@@ -266,5 +266,6 @@ plex:*:972:
 boinc:*:973:
 radicale:*:974:
 unifi:*:975:
+minetest:*:976:
 nogroup:*:65533:
 nobody:*:65534:
