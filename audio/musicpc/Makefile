@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	musicpc
-PORTVERSION=	0.22
+PORTVERSION=	0.25
 CATEGORIES=	audio ipv6
-MASTER_SITES=	SF/musicpd/mpc/${PORTVERSION}/
+MASTER_SITES=	http://musicpd.org/download/mpc/0/
 DISTNAME=	mpc-${PORTVERSION}
 
 MAINTAINER=	gblach@FreeBSD.org
@@ -18,18 +18,15 @@ OPTIONS_DEFINE=	EXAMPLES DOCS ICONV
 OPTIONS_DEFAULT=	ICONV
 
 USES=		pkgconfig
-NO_STAGE=	yes
-USE_BZIP2=	yes
+USE_XZ=		yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
-MAN1=		mpc.1
+PLIST_FILES=	bin/mpc man/man1/mpc.1.gz
 
 PORTDOCS=	AUTHORS README NEWS
 PORTEXAMPLES=	*
-
-PLIST_FILES=	bin/mpc
 
 .include <bsd.port.options.mk>
 
@@ -44,18 +41,18 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lintl|${ICONV_LIB}|g' ${WRKSRC}/configure
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/mpc ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/mpc ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/mpc.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/mpc-completion.bash ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/mpc-completion.bash \
+		${STAGEDIR}${EXAMPLESDIR}
 .endif
-
-	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
