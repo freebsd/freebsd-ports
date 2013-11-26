@@ -14,13 +14,10 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An Infocom game interpreter that runs under X11
 
-NO_STAGE=	yes
-
 USE_XORG=	x11
 WRKSRC=		${WRKDIR}/xzip
 ALL_TARGET=
 
-MAN1=		xzip.1
-PLIST_FILES=	bin/xzip
+PLIST_FILES=	bin/xzip man/man1/xzip.1.gz
 
 .include <bsd.port.mk>
