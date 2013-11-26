@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wrk
-PORTVERSION=	2.2.2
+PORTVERSION=	3.0.4
 CATEGORIES=	benchmarks www
 MASTER_SITES=	https://github.com/wg/wrk/archive/
 DISTNAME=	${PORTVERSION}
@@ -14,6 +14,7 @@ COMMENT=	The modern HTTP benchmarking tool
 LICENSE=	AL2
 
 FETCH_ARGS=	-pRr
+LIB_DEPENDS+=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		gmake
 CFLAGS+=	-std=c99 -D_DECLARE_C99_LDBL_MATH
@@ -28,9 +29,9 @@ BROKEN=		does not link on FreeBSD 7.x
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} '1d;2s/-lpthread/${PTHREAD_LIBS}/' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g;' ${WRKSRC}/Makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.post.mk>

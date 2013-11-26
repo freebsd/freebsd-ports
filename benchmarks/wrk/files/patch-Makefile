@@ -1,0 +1,41 @@
+--- Makefile.bak	2013-11-16 07:06:29.000000000 +0400
++++ Makefile	2013-11-26 07:17:32.000000000 +0400
+@@ -1,5 +1,4 @@
+-CFLAGS  := -std=c99 -Wall -O2 -D_REENTRANT
+-LIBS    := -lpthread -lm -lcrypto -lssl
++LIBS    := -pthread -lm -lcrypto -lssl
+ 
+ TARGET  := $(shell uname -s | tr [A-Z] [a-z] 2>/dev/null || echo unknown)
+ 
+@@ -23,10 +22,10 @@
+ ODIR := obj
+ OBJ  := $(patsubst %.c,$(ODIR)/%.o,$(SRC)) $(ODIR)/bytecode.o
+ 
+-LDIR     = deps/luajit/src
+-LIBS    := -lluajit $(LIBS)
+-CFLAGS  += -I $(LDIR)
+-LDFLAGS += -L $(LDIR)
++#LDIR     = deps/luajit/src
++LIBS    := -lluajit-5.1 $(LIBS)
++CFLAGS  += -I %%PREFIX%%/include/luajit-2.0
++LDFLAGS += -L %%PREFIX%%/lib
+ 
+ all: $(BIN)
+ 
+@@ -38,14 +37,14 @@
+ 	@echo LINK $(BIN)
+ 	@$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
+ 
+-$(OBJ): config.h Makefile $(LDIR)/libluajit.a | $(ODIR)
++$(OBJ): config.h Makefile | $(ODIR)
+ 
+ $(ODIR):
+ 	@mkdir -p $@
+ 
+ $(ODIR)/bytecode.o: scripts/wrk.lua
+ 	@echo LUAJIT $<
+-	@$(SHELL) -c 'cd $(LDIR) && ./luajit -b $(CURDIR)/$< $(CURDIR)/$@'
++	@$(SHELL) -c 'cd $(LDIR) && %%PREFIX%%/bin/luajit -b $(CURDIR)/$< $(CURDIR)/$@'
+ 
+ $(ODIR)/%.o : %.c
+ 	@echo CC $<
