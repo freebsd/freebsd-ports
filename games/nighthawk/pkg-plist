@@ -1,4 +1,11 @@
+@owner root
+@group games
+@mode 6755
 bin/nighthawk
+@owner
+@group
+@mode
+man/man6/nighthawk.6.gz
 %%DATADIR%%/data/Anoyle/Bridge.f
 %%DATADIR%%/data/Anoyle/Bridge.m
 %%DATADIR%%/data/Anoyle/Engineering.f
@@ -215,4 +222,4 @@ bin/nighthawk
 @dirrm %%DATADIR%%/data/Anoyle
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@unexec if [ -s /var/games/nighthawk.scores ] || rm -f /var/games/nighthawk.scores
+@unexec if [ ! -s /var/games/nighthawk.scores ]; then rm -f /var/games/nighthawk.scores; fi
