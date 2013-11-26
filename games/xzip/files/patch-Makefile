@@ -1,6 +1,6 @@
---- Makefile.orig	Sat Jul 11 18:27:32 1998
-+++ Makefile	Mon Jul 20 14:38:38 1998
-@@ -64,8 +64,10 @@
+--- Makefile.orig	2000-10-19 05:48:30.000000000 +0200
++++ Makefile	2013-11-26 06:29:42.000000000 +0100
+@@ -67,8 +67,10 @@
  # definitions for where the X lib and include directories are.
  # The following are defaults that might work.
  
@@ -13,12 +13,12 @@
  
  # If your compiler can't find these things, try commenting out the
  # above, and uncommenting various versions below. Also look around
-@@ -90,11 +92,11 @@
+@@ -97,11 +99,11 @@
  # --------------------
  
  # definition for where to install xzip executable and man page
 -DESTDIR = /usr/local
-+DESTDIR = $(PREFIX)
++PREFIX?= /usr/local
  
  # --------------------
  
@@ -27,14 +27,14 @@
  LDFLAGS =
  LIBS = -L$(XLIB) -lX11 $(SYSTEMLIBS)
  
-@@ -152,8 +154,8 @@
+@@ -159,8 +161,8 @@
  	$(CC) $(CFLAGS) $(FONTDEFAULTLIST) -c xinit.c
  
  install: $(PROGRAM)
 -	install -s $(PROGRAM) $(DESTDIR)/bin
 -	install $(PROGRAM).1 $(DESTDIR)/man/man1
-+	${BSD_INSTALL_PROGRAM} $(PROGRAM) $(DESTDIR)/bin
-+	${BSD_INSTALL_DATA} $(PROGRAM).1 $(DESTDIR)/man/man1
++	${BSD_INSTALL_PROGRAM} $(PROGRAM) $(DESTDIR)$(PREFIX)/bin/
++	${BSD_INSTALL_DATA} $(PROGRAM).1 $(DESTDIR)$(PREFIX)/man/man1/
  
  clean :
  	-rm -f *~ *.o $(PROGRAM) test
