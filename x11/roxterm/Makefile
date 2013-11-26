@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lockfile>0:${PORTSDIR}/devel/py-lockfile \
 		docbook-xsl>0:${PORTSDIR}/textproc/docbook-xsl \
 		xsltproc:${PORTSDIR}/textproc/libxslt
-LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 OPTIONS_DEFINE=	DOCS
@@ -26,12 +26,8 @@ USE_PYTHON_BUILD=	yes
 USE_AUTOTOOLS=	libtool:env
 INSTALLS_ICONS=	yes
 
-MAN1=	roxterm.1 \
-	roxterm-config.1
+MAITCHFLAGS=	CC=${CC};GCC=${CC};CPP=${CC};CFLAGS=${CFLAGS};PARALLEL=${MAKE_JOBS_NUMBER}
 
-MAITCHFLAGS=	CC=${CC};CPP=${CC};CFLAGS=${CFLAGS};PARALLEL=${MAKE_JOBS_NUMBER}
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -43,42 +39,39 @@ post-patch:
 do-configure:
 	@(cd ${WRKSRC} && ${SETENV} MAITCHFLAGS="${MAITCHFLAGS}" \
 		${PYTHON_CMD} mscript.py configure --prefix=${PREFIX} \
-		--disable-gtk3 --disable-gettext --disable-po4a --disable-git)
+		--disable-gtk3 --disable-po4a --disable-git)
 
 do-build:
 	@(cd ${WRKSRC} && ${PYTHON_CMD} mscript.py build)
-	@${MKDIR} ${WRKSRC}/build/po
-.for i in es fr pt_BR ru uk
-	@(cd ${WRKSRC}/po && ${LOCALBASE}/bin/msgfmt \
-		-o ${WRKSRC}/build/po/${i}.mo ${i}.po)
-.endfor
 
 do-install:
-	(cd ${WRKSRC}/build && ${INSTALL_PROGRAM} roxterm ${PREFIX}/bin)
-	(cd ${WRKSRC}/build && ${INSTALL_SCRIPT} roxterm-config ${PREFIX}/bin)
-	(cd ${WRKSRC}/build && ${INSTALL_MAN} *.1 ${MANPREFIX}/man/man1)
-	@${MKDIR} ${DESKTOPDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} roxterm.desktop ${DESKTOPDIR})
-	@${MKDIR} ${PREFIX}/share/icons/hicolor/scalable/apps
+	(cd ${WRKSRC}/build && ${INSTALL_PROGRAM} roxterm \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC}/build && ${INSTALL_SCRIPT} roxterm-config \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC}/build && ${INSTALL_MAN} *.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1)
+	(cd ${WRKSRC} && ${INSTALL_DATA} roxterm.desktop \
+		${STAGEDIR}${DESKTOPDIR})
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
 	(cd ${WRKSRC} && ${INSTALL_DATA} roxterm.svg \
-		${PREFIX}/share/icons/hicolor/scalable/apps)
-	@${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}/src && ${INSTALL_DATA} roxterm-config.ui ${DATADIR})
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} Config ${DATADIR})
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps)
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/src && ${INSTALL_DATA} roxterm-config.ui \
+		${STAGEDIR}${DATADIR})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} Config ${STAGEDIR}${DATADIR})
 .for i in es fr pt_BR ru uk
-	@${MKDIR} ${PREFIX}/share/locale/${i}/LC_MESSAGES
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${i}/LC_MESSAGES
 	(cd ${WRKSRC}/build/po && ${INSTALL_DATA} ${i}.mo \
-		${PREFIX}/share/locale/${i}/LC_MESSAGES/roxterm.mo)
+		${STAGEDIR}${PREFIX}/share/locale/${i}/LC_MESSAGES/roxterm.mo)
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in AUTHORS ChangeLog README
-	@(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+	@(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
 .endfor
-	@${MKDIR} ${DOCSDIR}/en
-	@(cd ${WRKSRC}/Help/en && ${INSTALL_DATA} * ${DOCSDIR}/en)
-	@${MKDIR} ${DOCSDIR}/lib
-	@(cd ${WRKSRC}/Help/lib && ${INSTALL_DATA} * ${DOCSDIR}/lib)
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/en
+	@(cd ${WRKSRC}/Help/en && ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR}/en)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/lib
+	@(cd ${WRKSRC}/Help/lib && ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR}/lib)
 
 .include <bsd.port.mk>
