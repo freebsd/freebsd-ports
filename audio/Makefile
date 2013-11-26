@@ -496,7 +496,6 @@
     SUBDIR += mp3unicode
     SUBDIR += mp3val
     SUBDIR += mp3wrap
-    SUBDIR += mpc
     SUBDIR += mpdas
     SUBDIR += mpdbrowser
     SUBDIR += mpdcon
@@ -515,6 +514,7 @@
     SUBDIR += musica
     SUBDIR += musicbox-tag-editor
     SUBDIR += musiccontrol
+    SUBDIR += musicpc
     SUBDIR += musicpd
     SUBDIR += mythplugin-mythmusic
     SUBDIR += napster

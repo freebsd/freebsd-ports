@@ -12,7 +12,7 @@ EXTRACT_ONLY=
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Loading a M3U file into musicpd
 
-RUN_DEPENDS=	${LOCALBASE}/bin/mpc:${PORTSDIR}/audio/mpc
+RUN_DEPENDS=	${LOCALBASE}/bin/mpc:${PORTSDIR}/audio/musicpc
 
 USES=		perl5
 NO_STAGE=	yes
