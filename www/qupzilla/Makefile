@@ -13,17 +13,12 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
 
-HAS_CONFIGURE=	yes
-USE_QT4=	gui moc_build qmake_build rcc_build uic_build webkit \
-		dbus xml script sql network imageformats linguist_build
-MAKE_ENV+=	QUPZILLA_PREFIX=${PREFIX}/ USE_LIBPATH=${PREFIX}/lib/
+USES=		desktop-file-utils qmake
+USE_QT4=	gui moc_build rcc_build uic_build webkit \
+		dbus xml script sql network imageformats_run linguist_build
+QMAKE_ENV=	QUPZILLA_PREFIX=${PREFIX}/
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-
-NO_STAGE=	yes
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS} QupZilla.pro
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g' \

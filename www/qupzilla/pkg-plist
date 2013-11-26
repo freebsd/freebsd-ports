@@ -7,6 +7,7 @@ lib/qupzilla/libAccessKeysNavigation.so
 lib/qupzilla/libGreaseMonkey.so
 lib/qupzilla/libMouseGestures.so
 lib/qupzilla/libPIM.so
+lib/qupzilla/libTestPlugin.so
 share/applications/qupzilla.desktop
 share/bash-completion/completions/qupzilla
 share/icons/hicolor/128x128/apps/qupzilla.png
