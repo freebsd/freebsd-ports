@@ -90,6 +90,7 @@ share/icons/hicolor/scalable/apps/audacious.svg
 %%NLS%%share/locale/ky/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/ml_IN/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/audacious.mo
@@ -118,6 +119,8 @@ share/icons/hicolor/scalable/apps/audacious.svg
 %%NLS%%@dirrmtry share/locale/es_AR
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
+%%NLS%%@dirrmtry share/locale/ml_IN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ml_IN
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
 @dirrm include/libaudgui
