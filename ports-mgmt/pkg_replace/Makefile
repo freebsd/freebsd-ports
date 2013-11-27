@@ -29,23 +29,11 @@ PLIST_SUB+=	PKGDB_FIX="@comment "
 
 OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's/pkg_replace/pkg_replace pkgdb_fix/' ${WRKSRC}/sbin/Makefile
 	@${REINPLACE_CMD} -e 's/mkdir -p $${FILESDIR}/@true/' ${WRKSRC}/share/zsh/Makefile
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/sbin/pkg_replace/pkg_replace ${STAGEDIR}${PREFIX}/sbin
-	${CP} ${WRKSRC}/etc/pkg_replace.conf ${STAGEDIR}${PREFIX}/etc/pkg_replace.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/sbin/pkg_replace/pkg_replace.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-.if ${PORT_OPTIONS:MZSH}
+pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${WRKSRC}/share/zsh/_pkg_replace ${STAGEDIR}${PREFIX}/share/zsh/site-functions
-.endif
-.if ${PORT_OPTIONS:MPKGDB_FIX}
-	${INSTALL_SCRIPT} ${WRKSRC}/sbin/pkgdb_fix/pkgdb_fix ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/sbin/pkgdb_fix/pkgdb_fix.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-.endif
 
 .include <bsd.port.mk>
