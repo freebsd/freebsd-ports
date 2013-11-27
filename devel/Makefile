@@ -2596,6 +2596,7 @@
     SUBDIR += p5-ResourcePool
     SUBDIR += p5-Resources
     SUBDIR += p5-Return-Value
+    SUBDIR += p5-Role-Basic
     SUBDIR += p5-Role-HasMessage
     SUBDIR += p5-Role-Identifiable
     SUBDIR += p5-Role-Tiny
