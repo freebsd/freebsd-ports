@@ -1,0 +1,47 @@
+=====================================================================
+
+To initialize RT's database:
+
+$ sudo perl rt-setup-database --action init --dba dba --dba-password X
+
+To clear a previously created RT database:
+
+$ sudo perl rt-setup-database --action drop --dba dba --dba-password X
+
+To complete the installation of this port, please follow these steps:
+
+1. Edit %%RT_ETC_PATH%%/RT_SiteConfig.pm, by referring to
+   the default config file (%%RT_ETC_PATH%%/RT_Config.pm).
+2. Configure the email and web gateways.  Please refer to
+   'SETTING UP THE MAIL GATEWAY' in %%DOCSDIR%%/README
+3. Restart Apache or whichever web delivery mechanism you selected..
+4. Do remember to *CHANGE* the root's password for the web interface.
+   The default is "password" (without the quotes.)
+5. Configure RT per the instructions at
+   http://www.bestpractical.com/rt/docs.html
+
+RT does not work with perl taint mode (-T) you must disable it.
+Note, some other ports like devel/bugzilla have you add this to your
+httpd.conf.  This isn't actually a flaw of RT, but of a subset of the
+CPAN modules that RT uses.
+
+If you're upgrading RT then it is worth reading the UPGRADING document
+at this point. Some extension you're using may have been integrated
+into core. It's recommended to use new clean directory when you're
+upgrading to new release (for example from 4.0.x to 4.2.x).
+
+To upgrade your database schema, preserving ticket history:
+
+1. Backup your RT database.
+2. If upgrading to a new major release, create a new database named
+   rt4 with appropriate rights for the rt_user and reload your
+   database backup into it.
+3. Run:
+
+# /usr/local/sbin/rt-setup-database \
+     --datadir %%DOCSDIR%%/upgrade \
+     --action upgrade --prompt-for-dba-password 
+
+and answer the prompts.
+
+=====================================================================
