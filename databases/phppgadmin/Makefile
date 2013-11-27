@@ -12,8 +12,6 @@ COMMENT=	Web Based Postgres Administration
 
 LICENSE=	GPLv2
 
-NO_STAGE=	yes
-
 USE_BZIP2=	YES
 .if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	pgsql pcre session
@@ -34,17 +32,8 @@ do-configure:
 	${RM} -f ${WRKSRC}/conf/config.inc.php \
 		${WRKSRC}/conf/config.inc.php-dist.bak
 
-.include <bsd.port.pre.mk>
-
 do-install:
-	${MKDIR} ${PREFIX}/${PGADMDIR}
-	${RM} -f ${WRKSRC}/classes/database/Postgres81.php.orig
-	${CP} -Rp ${WRKSRC}/ ${PREFIX}/${PGADMDIR}/
-.if exists(${PREFIX}/${PGADMOLDDIR}/conf/config.inc.php)
-	${CP} -np ${PREFIX}/${PGADMOLDDIR}/conf/config.inc.php \
-		${PREFIX}/${PGADMDIR}/conf/config.inc.php || ${TRUE}
-.endif
-	${CP} -np ${PREFIX}/${PGADMDIR}/conf/config.inc.php-dist \
-		${PREFIX}/${PGADMDIR}/conf/config.inc.php || ${TRUE}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${PGADMDIR}
+	${CP} -Rp ${WRKSRC}/ ${STAGEDIR}${PREFIX}/${PGADMDIR}/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
