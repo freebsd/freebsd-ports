@@ -27,10 +27,15 @@ uk_CATEGORY=	ukrainian
 vi_CATEGORY=	vietnamese
 
 en_GB_aspell_PORT_PREFIX=	en-
+en_GB_aspell_DETECT_PREFIX=	en-
 en_GB_hunspell_PORT_PREFIX=	en-
+en_GB_hunspell_DETECT_PREFIX=	en-
 
 ca@valencia_aspell_PORT_PREFIX=		ca-
 ca@valencia_aspell_DETECT_PREFIX=	ca-
+
+he_aspell_DETECT_PREFIX=	iw-
+he_hunspell_DETECT_PREFIX=	iw-
 
 pt_BR_aspell_PORT_SUFFIX=	-pt_BR
 pt_BR_hunspell_DETECT_PREFIX=	pt-
@@ -63,5 +68,5 @@ OPTIONS_DEFINE+=	HUNSPELL
 HUNSPELL_DESC=		Install hunspell dictionary
 .endif
 
-ASPELL_RUN_DEPENDS+=	${${KDE4_L10N}_aspell_DETECT}:${.CURDIR}/../../${${KDE4_L10N}_aspell_PORT}
-HUNSPELL_RUN_DEPENDS+=	${${KDE4_L10N}_hunspell_DETECT}:${.CURDIR}/../../${${KDE4_L10N}_hunspell_PORT}
+ASPELL_RUN_DEPENDS+=	${${KDE4_L10N}_aspell_DETECT}:${PORTSDIR}/${${KDE4_L10N}_aspell_PORT}
+HUNSPELL_RUN_DEPENDS+=	${${KDE4_L10N}_hunspell_DETECT}:${PORTSDIR}/${${KDE4_L10N}_hunspell_PORT}
