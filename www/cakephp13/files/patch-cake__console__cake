@@ -1,15 +1,8 @@
---- ./cake/console/cake.orig	2011-10-29 11:06:55.000000000 +0200
-+++ ./cake/console/cake	2011-10-29 11:08:00.000000000 +0200
+--- cake/console/cake.orig	2013-11-27 16:28:16.000000000 +0100
++++ cake/console/cake	2013-11-27 16:28:29.000000000 +0100
 @@ -1,4 +1,4 @@
--#!/bin/bash
+-#!/usr/bin/env bash
 +#!/bin/sh
  ################################################################################
  #
  # Bake is a shell script for running CakePHP bake script
-@@ -31,4 +31,4 @@
- 
- exec php -q ${LIB}cake.php -working "${APP}" "$@"
- 
--exit;
-\ No newline at end of file
-+exit;
