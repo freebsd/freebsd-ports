@@ -5,23 +5,26 @@ PORTNAME=	libbegemot
 PORTVERSION=	1.11
 PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	http://people.freebsd.org/~harti/libbegemot/
-DISTNAME=	libbegemot-${PORTVERSION}
+MASTER_SITES=	http://people.freebsd.org/~harti/libbegemot/ \
+		http://m1cro.tk/ports/distfiles/libbegemot/
 
 MAINTAINER=	rum1cro@yandex.ru
-COMMENT=	A function library for begemot tools
+COMMENT=	Function library for begemot tools
+
+LICENSE=	BSD2CLAUSE
+LICENSE_NAME=	FreeBSD BSD Variant (2 clause BSD)
+LICENSE_FILE=	${WRKDIR}/libbegemot-${PORTVERSION}/COPYRIGHT
+LICENSE_PERMS=	auto-accept
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=	gmake
 USE_AUTOTOOLS=	automake:env autoconf:env libltdl libtool
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-MAN1=	cstrc.1 frame.1 getfields.1 intro.1 panic.1 prstat.1 readline.1 \
+MAN_FILES=	cstrc.1 frame.1 getfields.1 intro.1 panic.1 prstat.1 readline.1 \
 		rpoll.1 strnchr.1 strnlen.1 strsave.1 strtrimsp.1 verb.1 xalloc.1
-MLINKS=	xalloc.1 xrealloc.1
 
-NO_STAGE=	yes
 run-autotools::
 	@(cd ${CONFIGURE_WRKSRC} && ${ACLOCAL} -I ${LIBTOOL_SHAREDIR}/libltdl/)
 	@(cd ${CONFIGURE_WRKSRC} && ${AUTOCONF})
@@ -30,9 +33,9 @@ run-autotools::
 			${WRKSRC}/configure
 
 post-install:
-.for i in ${MAN1}
+.for i in ${MAN_FILES}
 	@${CP} ${WRKSRC}/${i:S/.1/.man/} ${WRKSRC}/${i}
-	${INSTALL_MAN} ${WRKSRC}/${i} ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${MANPREFIX}/man/man1
 .endfor
 
 .include <bsd.port.mk>
