@@ -1,4 +1,0 @@
-MooseX::ChainedAccessors is a Moose Trait which allows for method chaining on
-accessors by returning $self on write/set operations.
-
-WWW: http://search.cpan.org/dist/MooseX-ChainedAccessors/
