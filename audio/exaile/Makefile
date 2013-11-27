@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	exaile
-PORTVERSION=	3.3.1
+PORTVERSION=	3.3.2
 CATEGORIES=	audio
-MASTER_SITES=	https://launchpadlibrarian.net/123112109/ \
+MASTER_SITES=	https://launchpadlibrarian.net/155081992/ \
 		http://wickedmachine.net/mirror/
 
 MAINTAINER=	jsa@FreeBSD.org
@@ -17,19 +17,15 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>=1.11:${PORTSDIR}/audio/py-mutagen
 FETCH_ARGS=	-pRr
 MAKE_ENV+=	PYTHON2_CMD=${PYTHON_CMD} XDGCONFDIR=${PREFIX}/etc/xdg
 USE_GNOME=	pygtk2 librsvg2
-NO_STAGE=	yes
 USE_GSTREAMER=	python good faad
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 
 # The reality with these options is that they all will be autodetected and used
 # if already installed. These just force Exaile to bring them in as well.
-OPTIONS_DEFINE=	BAD BDB CDDB DBUS HAL NOTIFY NLS SEXY
-OPTIONS_DEFAULT=BAD BDB CDDB DBUS HAL NOTIFY NLS SEXY
+OPTIONS_DEFINE=	BAD CDDB DBUS HAL NOTIFY NLS SEXY
+OPTIONS_DEFAULT=BAD CDDB DBUS HAL NOTIFY NLS SEXY
 BAD_DESC=	Install bad GStreamer plugins
 SEXY_DESC=	UI enhancements
-
-MANCOMPRESSED=	yes
-MAN1=		exaile.1
 
 .include <bsd.port.options.mk>
 
