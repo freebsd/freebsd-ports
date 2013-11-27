@@ -2,17 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	redaxo
-PORTVERSION=	4.5
+PORTVERSION=	4.5.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.redaxo.org/files/
-DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
+DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/g}
 
 MAINTAINER=	coco@executive-computing.de
-COMMENT=	The REDAXO content management system
+COMMENT=	REDAXO content management system
 
 LICENSE=	GPLv2
 
 NO_BUILD=	yes
+
 SUB_FILES+=	pkg-message pkg-deinstall
 USE_PHP=	mysql session xml zlib
 USE_ZIP=	yes
@@ -25,20 +26,11 @@ GD_DESC=	Enable Image Manager extension (requires gd)
 
 OPTIONS_DEFAULT=	APACHE MYSQLS GD
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+MYSQLS_USE=	MYSQL=server
 
-.if ${PORT_OPTIONS:MMYSQLS}
-USE_MYSQL=	server
-.endif
+APACHE_USE=	APACHE_RUN=22
 
-.if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE_RUN=	22
-.endif
-
-.if ${PORT_OPTIONS:MGD}
-USE_PHP+=	gd
-.endif
+GD_USE=	PHP=gd
 
 do-extract:
 	@${INSTALL} -d ${WRKDIR}
@@ -47,10 +39,6 @@ do-extract:
 do-install:
 	cd ${WRKSRC} && \
 	${FIND} . | \
-	${CPIO} --quiet -pdm -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	${CPIO} --quiet -pdm ${STAGEDIR}${WWWDIR}
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
