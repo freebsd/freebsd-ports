@@ -2705,6 +2705,7 @@
     SUBDIR += p5-Sub-Signatures
     SUBDIR += p5-Sub-Uplevel
     SUBDIR += p5-Sub-WrapPackages
+    SUBDIR += p5-Symbol-Global-Name
     SUBDIR += p5-Symbol-Util
     SUBDIR += p5-Syntax-Keyword-Junction
     SUBDIR += p5-Sys-Cpu
