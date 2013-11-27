@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PHPLOC
-PORTVERSION=	1.7.1
-PORTREVISION=	1
+PORTVERSION=	2.0.3
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-SebastianBergmann_
@@ -15,15 +14,12 @@ COMMENT=	Tool for quickly measuring the size of a PHP project
 LICENSE=	BSD
 
 BUILD_DEPENDS=	pear>=1.9.4:${PORTSDIR}/devel/pear \
-		pear-File_Iterator>=1.3.0:${PORTSDIR}/devel/pear-File_Iterator \
-		pear-ezc_ConsoleTools>=1.6:${PORTSDIR}/devel/pear-ezc_ConsoleTools \
-		pear-SebastianBergmann_FinderFacade>=1.0.4:${PORTSDIR}/devel/pear-SebastianBergmann_FinderFacade \
+		pear-Symfony_Component_Console>=1.1.0:${PORTSDIR}/devel/pear-Symfony_Component_Console \
+		pear-SebastianBergmann_FinderFacade>=1.1.0:${PORTSDIR}/devel/pear-SebastianBergmann_FinderFacade \
+		pear-SebastianBergmann_Git>=1.0.0:${PORTSDIR}/devel/pear-SebastianBergmann_Git \
+		pear-SebastianBergmann_Version>=1.0.0:${PORTSDIR}/devel/pear-SebastianBergmann_Version \
 		${PEARDIR}/.channels/pear.phpunit.de.reg:${PORTSDIR}/devel/pear-channel-phpunit
-RUN_DEPENDS=	pear>=1.9.4:${PORTSDIR}/devel/pear \
-		pear-File_Iterator>=1.3.0:${PORTSDIR}/devel/pear-File_Iterator \
-		pear-ezc_ConsoleTools>=1.6:${PORTSDIR}/devel/pear-ezc_ConsoleTools \
-		pear-SebastianBergmann_FinderFacade>=1.0.4:${PORTSDIR}/devel/pear-SebastianBergmann_FinderFacade \
-		${PEARDIR}/.channels/pear.phpunit.de.reg:${PORTSDIR}/devel/pear-channel-phpunit
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PHP=	tokenizer
 PEAR_CHANNEL=	phpunit
