@@ -31,6 +31,7 @@ MANCOMPRESSED=	yes
 USE_OPENSSL=	yes
 
 NO_STAGE=	yes
+MAKE_JOBS_UNSAFE=	yes
 .include <bsd.port.pre.mk>
 
 OPENSSLINC?=	/usr/include
