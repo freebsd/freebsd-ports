@@ -26,7 +26,7 @@ post-install:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} data ${STAGEDIR}${DATADIR})
 	@(cd ${WRKSRC}/icons && ${COPYTREE_SHARE} patterns ${STAGEDIR}${DATADIR})
 	@(cd ${WRKSRC}/icons && ${COPYTREE_SHARE} hicolor ${STAGEDIR}${PREFIX}/share/icons/)
-	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png
+	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
 			${STAGEDIR}${PREFIX}/share/pixmaps/
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
