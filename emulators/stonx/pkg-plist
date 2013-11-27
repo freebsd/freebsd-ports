@@ -22,10 +22,10 @@ lib/X11/fonts/misc/System2.pcf.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
 %%PORTDOCS%%%%DOCSDIR%%/TOS-VERSIONS
-%%PORTDOCS%%%%EXAMPLESDIR%%/bench1.pas
-%%PORTDOCS%%%%EXAMPLESDIR%%/bench1.prg
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench1.pas
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench1.prg
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%/gemdos_c/mint
 @dirrm %%DATADIR%%/gemdos_c
 @dirrm %%DATADIR%%
