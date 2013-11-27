@@ -1,0 +1,6 @@
+Symbol::Global::Name takes a reference and optional package name. It
+returns the name of the referenced variable as long as it's in the
+package or sub-package and it's a global variable. Returned name is
+prefixed with type sigil, eg. '$', '@', '%', '&' or '*'.
+
+WWW: http://search.cpan.org/dist/Symbol-Global-Name/
