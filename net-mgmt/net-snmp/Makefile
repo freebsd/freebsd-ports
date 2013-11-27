@@ -69,8 +69,8 @@ PYEASYUNINSTALL_UNINSTALLARGS?=	-q -N -m -S ${PYTHON_SITELIBDIR} \
 				-s ${PYEASYINSTALL_BINDIR} \
 				${PYDISTUTILS_PKGNAME}
 USE_PYTHON=	yes
-RUN_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-distribute
-BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-distribute
+RUN_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
+BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 CONFIGURE_ARGS+=--with-python-modules
 PLIST_SUB+=	WITH_PYTHON="" PYTHON_VER=${PYTHON_VER}
 PLIST_SUB+=	PYDISTUTILS_PKGVERSION=${PYDISTUTILS_PKGVERSION}
