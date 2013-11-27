@@ -16,10 +16,9 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST= yes
 
-NO_STAGE=	yes
 post-install:
 	${REINPLACE_CMD} -e 's|#{options|0 0 #{options|' \
-		${PREFIX}/${GEM_LIB_DIR}/lib/scruffy/renderers/base.rb
-	grep options ${PREFIX}/${GEM_LIB_DIR}/lib/scruffy/renderers/base.rb
+		${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/lib/scruffy/renderers/base.rb
+	grep options ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/lib/scruffy/renderers/base.rb
 
 .include <bsd.port.mk>

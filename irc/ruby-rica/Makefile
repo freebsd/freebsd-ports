@@ -26,21 +26,23 @@ MODULES=	rica.rb \
 DOCS=		CHANGES	README	classes_and_methods.txt	event.lst *.png
 EXAMPLES=	erica.* ricaco.rb rica-example.rb
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 do-install:
+	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
 .for f in ${MODULES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_SITELIBDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_SITELIBDIR}/
 .endfor
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
 .for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
 .endfor
 .endif
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
 .endif
 
