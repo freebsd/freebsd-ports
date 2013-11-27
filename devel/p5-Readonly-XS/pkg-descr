@@ -1,0 +1,19 @@
+This module corrects the speed problem, at least with respect to scalar
+variables. When Readonly::XS is installed, Readonly uses it to access the
+internals of scalar variables. Instead of creating a scalar variable object and
+tying it, Readonly simply flips the SvREADONLY bit in the scalar's FLAGS
+structure.
+
+Readonly arrays and hashes are not sped up by this, since the SvREADONLY flag
+only works for scalars. Arrays and hashes always use the tie interface.
+
+Programs that you write do not need to know whether Readonly::XS is installed or
+not. They should just "use Readonly" and let Readonly worry about whether or not
+it can use XS. If the Readonly::XS is present, Readonly will be faster. If not,
+it won't. Either way, it will still work, and your code will not have to change.
+
+Your program can check whether Readonly.pm is using XS or not by examining the
+$Readonly::XSokay variable. It will be true if the XS module was found and is
+being used. Please do not change this variable.
+
+WWW: http://search.cpan.org/dist/Readonly-XS/
