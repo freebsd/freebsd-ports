@@ -18,57 +18,54 @@ PATCHFILES=	xv-3.10a-enhancements.20070520-20081216.diff
 MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT?=	X11 program that displays images of various formats
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		tiff:${PORTSDIR}/graphics/tiff \
-		png15:${PORTSDIR}/graphics/png \
-		jasper:${PORTSDIR}/graphics/jasper
-
-NO_STAGE=	yes
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libjasper.so:${PORTSDIR}/graphics/jasper
 
 USES=		imake
 USE_XORG=	xext x11 xt
-.if !defined(NOMAN)
-MAN1=		bggen.1 vdcomp.1 xcmap.1 xv.1 xvp2p.1
-.endif
 
-XVDIST=		${DISTDIR}/${DIST_SUBDIR}
-CFLAGS+=	-I${LOCALBASE}/include/libpng15
+OPTIONS_DEFINE=	M17N
+M17N_DESC=	build with Multilingualization support
 
-pre-patch:
-	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/xv-3.10a-jumbo-fix-enh-patch-20070520.txt
-
-post-patch:
-	@${MV} ${WRKSRC}/config.h ${WRKSRC}/config.h.in
-	@${CAT} ${WRKSRC}/config.h.in | \
-		${SED} -e "s@%%LOCALBASE%%@${LOCALBASE}@" > ${WRKSRC}/config.h
-.for i in ${MAN1}
-	@${CP} ${WRKSRC}/docs/${i:R}.man ${WRKSRC}
-.endfor
-.if defined(NOMAN)
-	${REINPLACE_CMD} -e 's,^InstallManPage.*$$,/\* $$& \*/,' \
-		${WRKSRC}/Imakefile
-.endif
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README.jumbo ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README.pcd ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docs/epsf.ps ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docs/xpm.ps ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docs/xvdocs.ps ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docs/xvtitle.ps ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docs/help ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docs/bmp.doc ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docs/gif* ${DOCSDIR}
-.endif
-
+.include <bsd.port.options.mk>
 
 .if defined(CC) && ${CC:T:Mclang}
 # Optimizer crashes with
 # Assertion failed: (isPtrIV == IndVar->getType()->isPointerTy() && "IndVar type must match IVInit type")
 CFLAGS:= ${CFLAGS:S/-O2//g}
+.endif
+
+.if ${PORT_OPTIONS:MM17N}
+PKGNAMESUFFIX=	-m17n${PKGNAMESUFFIX2}
+MAKE_ENV=	LOCALE_EXTENSION=-DTV_MULTILINGUAL
+DESCR=	${FILESDIR}/pkg-descr
+.endif
+
+pre-patch:
+	${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/xv-3.10a-jumbo-fix-enh-patch-20070520.txt
+
+post-patch:
+	${REINPLACE_CMD} -e "s@%%LOCALBASE%%@${LOCALBASE}@" \
+		${WRKSRC}/config.h
+.for i in bggen.1 vdcomp.1 xcmap.1 xv.1 xvp2p.1
+	${CP} ${WRKSRC}/docs/${i:R}.man ${WRKSRC}
+.endfor
+
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README.jumbo ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README.pcd ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/docs/epsf.ps ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/docs/xpm.ps ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/docs/xvdocs.ps ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/docs/xvtitle.ps ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/docs/help ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/docs/bmp.doc ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/docs/gif* ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
