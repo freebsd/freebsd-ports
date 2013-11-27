@@ -21,5 +21,4 @@ RUN_DEPENDS=	R-cran-strucchange>0:${PORTSDIR}/finance/R-cran-strucchange \
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

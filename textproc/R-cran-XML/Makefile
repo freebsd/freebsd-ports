@@ -16,5 +16,4 @@ USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
 USE_GNOME=	libxml2
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

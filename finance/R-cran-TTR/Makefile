@@ -17,5 +17,4 @@ RUN_DEPENDS=	R-cran-xts>=0.9.3:${PORTSDIR}/math/R-cran-xts
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

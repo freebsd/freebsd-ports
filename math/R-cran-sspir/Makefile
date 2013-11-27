@@ -16,6 +16,5 @@ RUN_DEPENDS=	R-cran-mvtnorm>=0.9.96_11:${PORTSDIR}/math/R-cran-mvtnorm \
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 
 .include <bsd.port.mk>
