@@ -87,7 +87,7 @@ KDEVELOP_BRANCH?=	stable
 # KDE4 is installed into its own prefix to avoid conflicting with KDE3.
 #
 
-KDE4_PREFIX?=	${LOCALBASE}/kde4
+KDE4_PREFIX?=	${LOCALBASE}
 
 # Help cmake to find files when testing ports with non-default PREFIX
 CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH="${LOCALBASE};${KDE4_PREFIX}" \
