@@ -19,7 +19,6 @@ share/icons/oxygen/22x22/help-about.png
 share/icons/oxygen/22x22/media-playback-pause.png
 share/icons/oxygen/22x22/zoom-in.png
 share/icons/oxygen/22x22/zoom-out.png
-share/icons/oxygen/LGPL
 share/icons/oxygen/scalable/application-exit.svgz
 share/icons/oxygen/scalable/document-new.svgz
 share/icons/oxygen/scalable/games-config-options.svgz
@@ -30,11 +29,3 @@ share/icons/oxygen/scalable/media-playback-pause.svgz
 share/icons/oxygen/scalable/zoom-in.svgz
 share/icons/oxygen/scalable/zoom-out.svgz
 share/pixmaps/cutemaze.png
-@dirrmtry share/icons/oxygen/scalable
-@dirrmtry share/icons/oxygen/22x22
-@dirrmtry share/icons/oxygen/16x16
-@dirrmtry share/icons/oxygen
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
