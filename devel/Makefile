@@ -2585,6 +2585,7 @@
     SUBDIR += p5-ReadLine-Perl
     SUBDIR += p5-ReadLine-TTYtter
     SUBDIR += p5-Readonly
+    SUBDIR += p5-Readonly-XS
     SUBDIR += p5-Reflex
     SUBDIR += p5-Regexp-Assemble
     SUBDIR += p5-Regexp-Assemble-Compressed
