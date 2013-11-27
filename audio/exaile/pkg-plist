@@ -301,6 +301,7 @@ lib/exaile/xlgui/widgets/queue.pyo
 lib/exaile/xlgui/widgets/rating.py
 lib/exaile/xlgui/widgets/rating.pyc
 lib/exaile/xlgui/widgets/rating.pyo
+man/man1/exaile.1.gz
 share/applications/exaile.desktop
 share/dbus-1/services/org.exaile.Exaile.service
 %%DATADIR%%/data/images/16x16/artist.png
@@ -1010,6 +1011,7 @@ share/dbus-1/services/org.exaile.Exaile.service
 %%DATADIR%%/plugins/xkeys/__init__.py
 %%DATADIR%%/plugins/xkeys/__init__.pyc
 %%DATADIR%%/plugins/xkeys/__init__.pyo
+%%NLS%%share/locale/af/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/be/LC_MESSAGES/exaile.mo
@@ -1023,6 +1025,8 @@ share/dbus-1/services/org.exaile.Exaile.service
 %%NLS%%share/locale/da/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/de/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/el/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/en/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/en_AU/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/en_CA/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/exaile.mo
@@ -1031,8 +1035,10 @@ share/dbus-1/services/org.exaile.Exaile.service
 %%NLS%%share/locale/eu/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/fo/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/frp/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/fy/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/gu/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/he/LC_MESSAGES/exaile.mo
@@ -1053,11 +1059,13 @@ share/dbus-1/services/org.exaile.Exaile.service
 %%NLS%%share/locale/nb/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/oc/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/os/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/si/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/exaile.mo
@@ -1066,9 +1074,12 @@ share/dbus-1/services/org.exaile.Exaile.service
 %%NLS%%share/locale/sw/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/te/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/th/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/tl/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/ts/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/ur/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/zh/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/exaile.mo
@@ -1076,6 +1087,8 @@ share/dbus-1/services/org.exaile.Exaile.service
 share/pixmaps/exaile.png
 %%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ur
+%%NLS%%@dirrmtry share/locale/ts/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ts
 %%NLS%%@dirrmtry share/locale/tl/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/tl
 %%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
@@ -1084,10 +1097,14 @@ share/pixmaps/exaile.png
 %%NLS%%@dirrmtry share/locale/sw
 %%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/si
+%%NLS%%@dirrmtry share/locale/os/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/os
 %%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/oc
 %%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/kk
+%%NLS%%@dirrmtry share/locale/fy/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fy
 %%NLS%%@dirrmtry share/locale/frp/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/frp
 %%NLS%%@dirrmtry share/locale/fo/LC_MESSAGES
@@ -1187,8 +1204,6 @@ share/pixmaps/exaile.png
 @dirrm %%DATADIR%%/data/images
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@dirrm etc/xdg/exaile
-@dirrmtry etc/xdg
 @dirrm lib/exaile/xlgui/widgets
 @dirrm lib/exaile/xlgui/preferences
 @dirrm lib/exaile/xlgui/panel
@@ -1201,3 +1216,5 @@ share/pixmaps/exaile.png
 @dirrm lib/exaile/xl/metadata
 @dirrm lib/exaile/xl
 @dirrm lib/exaile
+@dirrm etc/xdg/exaile
+@dirrmtry etc/xdg
