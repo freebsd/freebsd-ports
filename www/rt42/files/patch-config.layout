@@ -1,0 +1,32 @@
+--- ./config.layout.orig	2013-11-13 18:25:50.000000000 +0000
++++ ./config.layout	2013-11-24 17:58:35.433301257 +0000
+@@ -110,7 +110,7 @@
+   sysconfdir:		${prefix}/etc+
+   mandir:		${prefix}/man
+   plugindir:		${prefix}/plugins
+-  libdir:		${prefix}/lib+
++  libdir:		/usr/local/lib/perl5/site_perl/5.16
+   datadir:		${prefix}/share+
+   htmldir:		${datadir}/html
+   lexdir:		${datadir}/po
+@@ -149,13 +149,13 @@
+   logfiledir:		${localstatedir}/log
+   masonstatedir:	${localstatedir}/mason_data
+   sessionstatedir:	${localstatedir}/session_data
+-  customdir:		${prefix}/local
+-  custometcdir:		${customdir}/etc
+-  customhtmldir:	${customdir}/html
+-  customlexdir:		${customdir}/po
+-  customstaticdir:	${customdir}/static
+-  customlibdir:		${customdir}/lib
+-  customplugindir:  ${customdir}/plugins
++  customdir:		${prefix}
++  custometcdir:		${datadir}/etc
++  customhtmldir:	${customdir}/www+
++  customlexdir:		${datadir}/po
++  customstaticdir:	${datadir}/static
++  customlibdir:		${datadir}/lib
++  customplugindir:  ${datadir}/plugins
+ </Layout>
+ 
+ #   RH path layout.
