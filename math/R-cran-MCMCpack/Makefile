@@ -19,5 +19,4 @@ USE_GCC=	4.2+
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

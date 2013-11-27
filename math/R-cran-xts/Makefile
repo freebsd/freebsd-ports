@@ -18,5 +18,4 @@ RUN_DEPENDS=	R-cran-zoo>=1.7.10:${PORTSDIR}/math/R-cran-zoo
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

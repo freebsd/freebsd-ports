@@ -17,5 +17,4 @@ RUN_DEPENDS=	R-cran-Rcpp>=0.10.5:${PORTSDIR}/devel/R-cran-Rcpp
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

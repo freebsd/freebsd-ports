@@ -16,5 +16,4 @@ RUN_DEPENDS=	R-cran-sandwich>=0:${PORTSDIR}/math/R-cran-sandwich
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

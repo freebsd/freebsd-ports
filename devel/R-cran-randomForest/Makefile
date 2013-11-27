@@ -14,5 +14,4 @@ RUN_DEPENDS=	R-cran-RColorBrewer>=1.0.5_6:${PORTSDIR}/graphics/R-cran-RColorBrew
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -20,5 +20,4 @@ RUN_DEPENDS=	R-cran-httpuv>=1.2.0:${PORTSDIR}/www/R-cran-httpuv \
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

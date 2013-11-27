@@ -18,5 +18,4 @@ RUN_DEPENDS=	R-cran-timeDate>=2150.95:${PORTSDIR}/finance/R-cran-timeDate
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
