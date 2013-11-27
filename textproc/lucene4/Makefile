@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lucene
-PORTVERSION=	4.5.1
+PORTVERSION=	4.6.0
 CATEGORIES=	textproc java devel
 MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	${PORTNAME}/java/${PORTVERSION}/
@@ -33,6 +33,7 @@ CONTRIBS=	benchmark \
 		classification \
 		codecs \
 		demo \
+		expressions \
 		facet	\
 		grouping \
 		highlighter \
