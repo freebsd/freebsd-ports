@@ -1,7 +1,7 @@
-@unexec if cmp -s %D/%%ETCDIR%%/ldapscripts.conf.sample %D/%%ETCDIR%%/ldapscripts.conf; then rm -f %D/%%ETCDIR%%/ldapscripts.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/ldapscripts.conf %D/%%ETCDIR%%/ldapscripts.conf.sample; then rm -f %D/%%ETCDIR%%/ldapscripts.conf; fi
 %%ETCDIR%%/ldapscripts.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/ldapscripts.conf ] ; then cp -p %D/%F %B/ldapscripts.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/ldapscripts.passwd.sample %D/%%ETCDIR%%/ldapscripts.passwd; then rm -f %D/%%ETCDIR%%/ldapscripts.passwd; fi
+@unexec if cmp -s %D/%%ETCDIR%%/ldapscripts.passwd %D/%%ETCDIR%%/ldapscripts.passwd.sample; then rm -f %D/%%ETCDIR%%/ldapscripts.passwd; fi
 %%ETCDIR%%/ldapscripts.passwd.sample
 @exec if [ ! -f %D/%%ETCDIR%%/ldapscripts.passwd ] ; then cp -p %D/%F %B/ldapscripts.passwd; fi
 %%ETCDIR%%/ldapaddgroup.template.sample
@@ -31,3 +31,25 @@ sbin/ldapid
 sbin/ldapmodifygroup
 sbin/ldapmodifymachine
 sbin/ldapmodifyuser
+man/man1/ldapaddgroup.1.gz
+man/man1/ldapaddmachine.1.gz
+man/man1/ldapadduser.1.gz
+man/man1/ldapaddusertogroup.1.gz
+man/man1/ldapdeletegroup.1.gz
+man/man1/ldapdeletemachine.1.gz
+man/man1/ldapdeleteuser.1.gz
+man/man1/ldapdeleteuserfromgroup.1.gz
+man/man1/ldapfinger.1.gz
+man/man1/ldapgid.1.gz
+man/man1/ldapid.1.gz
+man/man1/ldapinit.1.gz
+man/man1/ldapmodifygroup.1.gz
+man/man1/ldapmodifymachine.1.gz
+man/man1/ldapmodifyuser.1.gz
+man/man1/ldaprenamegroup.1.gz
+man/man1/ldaprenamemachine.1.gz
+man/man1/ldaprenameuser.1.gz
+man/man1/ldapsetpasswd.1.gz
+man/man1/ldapsetprimarygroup.1.gz
+man/man1/lsldap.1.gz
+man/man5/ldapscripts.5.gz
