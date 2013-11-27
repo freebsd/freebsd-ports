@@ -13,12 +13,12 @@ COMMENT=	SWF manipulation and generation utilities
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		gif.5:${PORTSDIR}/graphics/giflib \
-		fftw3:${PORTSDIR}/math/fftw3 \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libt1.so:${PORTSDIR}/devel/t1lib \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libgif.so:${PORTSDIR}/graphics/giflib \
+		libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
 NO_STAGE=	yes
 
@@ -56,11 +56,11 @@ PLIST_SUB+=	PDF="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's| -O | |g ; \
+	${REINPLACE_CMD} -e 's| -O | |g ; \
 		 s|/usr/include/fontconfig|${LOCALBASE}/include/fontconfig|g ; \
 		 s|/usr/local/include|${LOCALBASE}/include|g ; \
 		 s|/usr/local/lib|${LOCALBASE}/lib|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/python/d ; \
+	${REINPLACE_CMD} -e '/python/d ; \
 		 /avi2swf/d' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
