@@ -8,13 +8,14 @@ CATEGORIES=	biology
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An auto-adaptive genetic system designed for ALife research
+COMMENT=	Auto-adaptive genetic system designed for ALife research
 
 LICENSE=	GPLv3
 
 OPTIONS_DEFINE=	DOCS
 
 USES=		cmake:outsource ncurses
+CMAKE_ARGS=	-DAPTO_UNIT_TESTS:BOOL=OFF -DAVD_UNIT_TESTS:BOOL=OFF
 
 PORTDOCS=	*
 PLIST_FILES=	${BIN_FILES:S|^|bin/|} \
@@ -30,7 +31,6 @@ DATA_FILES=	analyze.cfg avida.cfg default-gx.org \
 		instset-heads-sex.cfg instset-heads.cfg instset-smt.cfg \
 		instset-transsmt.cfg
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
@@ -41,7 +41,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "CMakeLists.txt" | ${XARGS} \
 		${REINPLACE_CMD} -e \
 		's|-O[0-9]|| ; \
-		 s| pthread| ${PTHREAD_LIBS}|'
+		 s| pthread| -pthread|'
 	@${REINPLACE_CMD} -e '/long long int/s|std::abs|llabs|' \
 		${WRKSRC}/avida-core/source/main/cPopulationInterface.cc
 
@@ -52,20 +52,22 @@ pre-build:
 .endfor
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 .for exec in ${BIN_FILES}
-	(cd ${WRKSRC} \
-		&& ${INSTALL_SCRIPT} ${exec}.sh ${PREFIX}/bin/${exec})
-	(cd ${BUILD_WRKSRC}/bin \
-		&& ${INSTALL_PROGRAM} ${exec} ${PREFIX}/lib/${PORTNAME})
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} ${exec}.sh \
+		${STAGEDIR}${PREFIX}/bin/${exec})
+	(cd ${BUILD_WRKSRC}/bin && ${INSTALL_PROGRAM} ${exec} \
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME})
 .endfor
-	(cd ${WRKSRC}/avida-core/support/config \
-		&& ${INSTALL_DATA} *.cfg ${PREFIX}/lib/${PORTNAME} \
-		&& ${INSTALL_DATA} *.org ${PREFIX}/lib/${PORTNAME})
+	(cd ${WRKSRC}/avida-core/support/config && ${INSTALL_DATA} *.cfg \
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME})
+	(cd ${WRKSRC}/avida-core/support/config && ${INSTALL_DATA} *.org \
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME})
+
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/avida-core/documentation \
-		&& ${COPYTREE_SHARE} . ${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/avida-core/documentation && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.post.mk>
