@@ -1,5 +1,9 @@
-bin/newsx
 bin/newsq
+bin/newsx
+man/man1/newsq.1.gz
+man/man5/in.hosts.5.gz
+man/man5/newsx.conf.5.gz
+man/man8/newsx.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -9,6 +13,6 @@ bin/newsq
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm news/spool/inhosts
+@dirrmtry news/spool/inhosts
 @dirrmtry news/spool
 @dirrmtry news
