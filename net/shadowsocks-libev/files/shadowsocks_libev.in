@@ -8,15 +8,8 @@
 # Add the following lines to /etc/rc.conf to enable shadowsocks-libev:
 # shadowsocks_libev_enable (bool):  Set to "NO" by default.
 #      Set to "YES" to enable shadowsocks-libev.
-# shadowsocks_libev_host (ip addr/hostname): Set to "0.0.0.0" by default.
-# shadowsocks_libev_port (port number): Set to 8388 by default.
-# shadowsocks_libev_localport (local port): Set to 1080 by default.
-# shadowsocks_libev_password (password): Set to ""(null) by default.
-# shadowsocks_libev_encrypt_method (encrypt method): Set to rc4 by default.
-#      Available methods: table, rc4, aes-128-cfb, aes-192-cfb, aes-256-cfb,
-#      bf-cfb, camellia-128-cfb, camellia-192-cfb, camellia-256-cfb,
-#      cast5-cfb, des-cfb, idea-cfb, rc2-cfb and seed-cfb
-# shadowsocks_libev_timeout (time): Set to "300" seconds by default.
+# shadowsocks_libev_config (path): Shadowsocks config file.
+#      Defaults to "%%PREFIX%%/etc/shadowsocks-libev/config.json"
 
 
 . /etc/rc.subr
@@ -28,23 +21,12 @@ rcvar=shadowsocks_libev_enable
 load_rc_config $name
 
 : ${shadowsocks_libev_enable:="NO"}
-: ${shadowsocks_libev_host="0.0.0.0"}
-: ${shadowsocks_libev_port=8388}
-: ${shadowsocks_libev_localport=1080}
-: ${shadowsocks_libev_password=""}
-: ${shadowsocks_libev_encrypt_method="rc4"}
-: ${shadowsocks_libev_timeout="300"}
+: ${shadowsocks_libev_config="%%PREFIX%%/etc/shadowsocks-libev/config.json"}
 
 command="%%PREFIX%%/bin/ss-server" 
 pidfile="/var/run/shadowsocks-libev.pid"
+required_files="${shadowsocks_libev_config}"
 
-: ${shadowsocks_libev_flags:="-s ${shadowsocks_libev_host} \
-    -p ${shadowsocks_libev_port} \
-    -l ${shadowsocks_libev_localport} \
-    -k ${shadowsocks_libev_password} \
-    -m ${shadowsocks_libev_encrypt_method} \
-    -f ${pidfile} \
-    -t ${shadowsocks_libev_timeout}"}
-
+command_args="-f $pidfile -c $shadowsocks_libev_config"
 
 run_rc_command "$1"
