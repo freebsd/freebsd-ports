@@ -13,13 +13,13 @@ COMMENT=	Pencil - a traditional 2D animation software
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS+=	ming:${PORTSDIR}/graphics/ming \
-		png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		expat:${PORTSDIR}/textproc/expat2 \
-		pcre:${PORTSDIR}/devel/pcre \
-		drm:${PORTSDIR}/graphics/libdrm
+LIB_DEPENDS+=	libming.so:${PORTSDIR}/graphics/ming \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libdrm.so:${PORTSDIR}/graphics/libdrm
 
 USE_ZIP=	yes
 USES=		gettext iconv qmake
@@ -32,6 +32,7 @@ QMAKE_ARGS+=	INCLUDEPATH+=${LOCALBASE}/include/ming
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 
 PLIST_FILES=	bin/pencil
+
 PORTDOCS=	README TODO
 
 post-patch:
@@ -41,7 +42,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Pencil ${STAGEDIR}${PREFIX}/bin/pencil
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
