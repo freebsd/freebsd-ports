@@ -40,4 +40,8 @@ pre-everything::
 BROKEN=		Does not compile on powerpc
 .endif
 
+.if ${ARCH} == "i386"
+USE_GCC=	any
+.endif
+
 .include <bsd.port.post.mk>
