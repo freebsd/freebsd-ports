@@ -8,7 +8,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION} \
 		http://nfsen.sourceforge.net/
 
-MAINTAINER=	jmohacsi@bsd.hu
+MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Web based frontend to nfdump netflow collector
 
 LICENSE=	BSD
