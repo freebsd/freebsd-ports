@@ -39,7 +39,6 @@ SCRIPTUTILS=	cmerge2.pl draft.pl mextract.pl mf2bin.pl mpretty.pl \
 READMES=	README.FIRST README.chaos README.lagan README.mlagan \
 		README.tools README.shuffle
 
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
 		'/^CC/s|^|#| ; \
@@ -47,26 +46,27 @@ post-patch:
 		 s|$$(CC) -o|$$(CC) $$(CFLAGS) -o| ; \
 		 s|$$(CPP) -o|$$(CXX) $$(CXXFLAGS) -o| ; \
 		 s|$$(CLINKER) $$(OPTFLAGS)|$$(CXX) $$(LDFLAGS)|'
+	@${FIND} ${WRKSRC}/src -name "*.c" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|^inline |static inline |'
 
 do-install:
-	@${MKDIR} ${LAGAN_DIR}
+	@${MKDIR} ${STAGEDIR}${LAGAN_DIR}
 .for exe in ${EXECUTABLES}
-	${INSTALL_PROGRAM} ${WRKSRC}/${exe} ${LAGAN_DIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${exe} ${STAGEDIR}${LAGAN_DIR}
 .endfor
 .for script in ${SCRIPTS}
-	${INSTALL_SCRIPT} ${WRKSRC}/${script} ${LAGAN_DIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/${script} ${STAGEDIR}${LAGAN_DIR}
 .endfor
-	@${MKDIR} ${LAGAN_DIR}/utils
+	@${MKDIR} ${STAGEDIR}${LAGAN_DIR}/utils
 .for exeutil in ${EXEUTILS}
-	${INSTALL_PROGRAM} ${WRKSRC}/utils/${exeutil} ${LAGAN_DIR}/utils
+	${INSTALL_PROGRAM} ${WRKSRC}/utils/${exeutil} ${STAGEDIR}${LAGAN_DIR}/utils
 .endfor
 .for scriptutil in ${SCRIPTUTILS}
-	${INSTALL_SCRIPT} ${WRKSRC}/utils/${scriptutil} ${LAGAN_DIR}/utils
+	${INSTALL_SCRIPT} ${WRKSRC}/utils/${scriptutil} ${STAGEDIR}${LAGAN_DIR}/utils
 .endfor
-	@${MKDIR} ${LAGAN_DIR}/Readmes
+	@${MKDIR} ${STAGEDIR}${LAGAN_DIR}/Readmes
 .for readme in ${READMES}
-	${INSTALL_DATA} ${WRKSRC}/Readmes/${readme} ${LAGAN_DIR}/Readmes
+	${INSTALL_DATA} ${WRKSRC}/Readmes/${readme} ${STAGEDIR}${LAGAN_DIR}/Readmes
 .endfor
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
