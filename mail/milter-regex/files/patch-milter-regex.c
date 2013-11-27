@@ -1,14 +1,14 @@
---- milter-regex.c.orig	2011-11-21 13:13:33.000000000 +0100
-+++ milter-regex.c	2011-12-10 08:02:10.000000000 +0100
+--- milter-regex.c.orig	2013-11-25 09:41:55.000000000 +0100
++++ milter-regex.c	2013-11-27 05:25:43.000000000 +0100
 @@ -60,6 +60,7 @@
  
  static const char	*rule_file_name = "/etc/milter-regex.conf";
  static int		 debug = 0;
 +static int		 quiet = 0;
+ static unsigned		 maxlines = 0;
  static pthread_mutex_t	 mutex;
  
- struct context {
-@@ -95,6 +96,7 @@
+@@ -97,6 +98,7 @@
  
  #define USER		"_milter-regex"
  #define OCONN		"unix:/var/spool/milter-regex/sock"
@@ -16,7 +16,7 @@
  #define RCODE_REJECT	"554"
  #define RCODE_TEMPFAIL	"451"
  #define XCODE_REJECT	"5.7.1"
-@@ -630,6 +632,9 @@
+@@ -645,6 +647,9 @@
  	va_list ap;
  	char msg[8192];
  
@@ -26,7 +26,7 @@
  	va_start(ap, fmt);
  	if (context != NULL)
  		snprintf(msg, sizeof(msg), "%s [%s]: ", context->host_name,
-@@ -667,15 +672,19 @@
+@@ -682,15 +687,19 @@
  {
  	int ch;
  	const char *oconn = OCONN;
@@ -42,12 +42,12 @@
  	tzset();
  	openlog("milter-regex", LOG_PID | LOG_NDELAY, LOG_DAEMON);
  
--	while ((ch = getopt(argc, argv, "c:dj:p:u:")) != -1) {
-+	while ((ch = getopt(argc, argv, "c:dj:p:qr:u:")) != -1) {
+-	while ((ch = getopt(argc, argv, "c:dj:l:m:p:u:")) != -1) {
++	while ((ch = getopt(argc, argv, "c:dj:l:m:p:qr:u:")) != -1) {
  		switch (ch) {
  		case 'c':
  			rule_file_name = optarg;
-@@ -689,6 +698,12 @@
+@@ -710,6 +719,12 @@
  		case 'p':
  			oconn = optarg;
  			break;
@@ -60,7 +60,7 @@
  		case 'u':
  			user = optarg;
  			break;
-@@ -761,9 +776,22 @@
+@@ -782,9 +797,22 @@
  		perror("daemon");
  		goto done;
  	}
