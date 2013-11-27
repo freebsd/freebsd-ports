@@ -5266,3 +5266,4 @@ sysutils/rsyslog6-dbi||2013-11-25|Has expired: Use sysutils/rsyslog7
 www/trac-gitplugin||2013-11-25|Removed: this plugin has been included in the Trac 1.0 distribution
 audio/mpc|audio/musicpc|2013-11-19|Renamed to avoid conflict with math/mpc
 deskutils/q4wine|emulators/q4wine|2013-11-26|Move to better category
+devel/p5-MooseX-ChainedAccessors||2013-11-27|Has expired: Marked as depreciated upstream

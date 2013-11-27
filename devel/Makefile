@@ -2338,7 +2338,6 @@
     SUBDIR += p5-MooseX-AttributeHelpers
     SUBDIR += p5-MooseX-AttributeShortcuts
     SUBDIR += p5-MooseX-AuthorizedMethods
-    SUBDIR += p5-MooseX-ChainedAccessors
     SUBDIR += p5-MooseX-ClassAttribute
     SUBDIR += p5-MooseX-Clone
     SUBDIR += p5-MooseX-CompileTime-Traits
