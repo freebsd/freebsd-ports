@@ -2649,6 +2649,7 @@
     SUBDIR += p5-Set-NestedGroups
     SUBDIR += p5-Set-Object
     SUBDIR += p5-Set-Scalar
+    SUBDIR += p5-Set-Tiny
     SUBDIR += p5-Shape
     SUBDIR += p5-Shell-Base
     SUBDIR += p5-Shell-EnvImporter
