@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flexget
-PORTVERSION=	1.1.164
+PORTVERSION=	1.1.165
 PORTEPOCH=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
@@ -15,9 +15,9 @@ COMMENT=	Program to automate downloading from different sources
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paver>=0:${PORTSDIR}/devel/py-paver \
-		${PYTHON_PKGNAMEPREFIX}distribute>=0:${PORTSDIR}/devel/py-distribute
+		${PYTHON_PKGNAMEPREFIX}setuptools>=0:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=5.1.3:${PORTSDIR}/textproc/py-feedparser \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.7:${PORTSDIR}/databases/py-sqlalchemy \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy07>=0.7:${PORTSDIR}/databases/py-sqlalchemy \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_SITELIBDIR}/BeautifulSoup.py:${PORTSDIR}/www/py-beautifulsoup32 \
 		${PYTHON_SITELIBDIR}/bs4/__init__.py:${PORTSDIR}/www/py-beautifulsoup \
@@ -39,10 +39,11 @@ TEST_DEPENDS:=	${RUN_DEPENDS} \
 
 USE_PYTHON=		-2.7
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_PKGNAME=	FlexGet
 PYDISTUTILS_PKGVERSION=	${PORTVERSION:R}
 PYDISTUTILS_NOEGGINFO=	yes
+
+PLIST_SUB=		PYDISTUTILS_EGGINFO=${PYDISTUTILS_EGGINFO}
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
