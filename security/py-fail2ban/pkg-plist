@@ -158,6 +158,34 @@
 %%PYTHON_SITELIBDIR%%/server/ticket.pyc
 %%PYTHON_SITELIBDIR%%/server/transmitter.py
 %%PYTHON_SITELIBDIR%%/server/transmitter.pyc
+%%PYTHON_SITELIBDIR%%/testcases/__init__.py
+%%PYTHON_SITELIBDIR%%/testcases/__init__.pyc
+%%PYTHON_SITELIBDIR%%/testcases/actiontestcase.py
+%%PYTHON_SITELIBDIR%%/testcases/actiontestcase.pyc
+%%PYTHON_SITELIBDIR%%/testcases/actionstestcase.py
+%%PYTHON_SITELIBDIR%%/testcases/actionstestcase.pyc
+%%PYTHON_SITELIBDIR%%/testcases/banmanagertestcase.py
+%%PYTHON_SITELIBDIR%%/testcases/banmanagertestcase.pyc
+%%PYTHON_SITELIBDIR%%/testcases/clientreadertestcase.py
+%%PYTHON_SITELIBDIR%%/testcases/clientreadertestcase.pyc
+%%PYTHON_SITELIBDIR%%/testcases/datedetectortestcase.py
+%%PYTHON_SITELIBDIR%%/testcases/datedetectortestcase.pyc
+%%PYTHON_SITELIBDIR%%/testcases/dummyjail.py
+%%PYTHON_SITELIBDIR%%/testcases/dummyjail.pyc
+%%PYTHON_SITELIBDIR%%/testcases/failmanagertestcase.py
+%%PYTHON_SITELIBDIR%%/testcases/failmanagertestcase.pyc
+%%PYTHON_SITELIBDIR%%/testcases/filtertestcase.py
+%%PYTHON_SITELIBDIR%%/testcases/filtertestcase.pyc
+%%PYTHON_SITELIBDIR%%/testcases/misctestcase.py
+%%PYTHON_SITELIBDIR%%/testcases/misctestcase.pyc
+%%PYTHON_SITELIBDIR%%/testcases/samplestestcase.py
+%%PYTHON_SITELIBDIR%%/testcases/samplestestcase.pyc
+%%PYTHON_SITELIBDIR%%/testcases/servertestcase.py
+%%PYTHON_SITELIBDIR%%/testcases/servertestcase.pyc
+%%PYTHON_SITELIBDIR%%/testcases/sockettestcase.py
+%%PYTHON_SITELIBDIR%%/testcases/sockettestcase.pyc
+%%PYTHON_SITELIBDIR%%/testcases/utils.py
+%%PYTHON_SITELIBDIR%%/testcases/utils.pyc
 bin/fail2ban-client
 bin/fail2ban-regex
 bin/fail2ban-server
@@ -166,6 +194,7 @@ bin/fail2ban-server
 @dirrmtry %%ETCDIR%%/fail2ban.d
 @dirrmtry %%ETCDIR%%/action.d
 @dirrmtry %%ETCDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/testcases
 @dirrm %%PYTHON_SITELIBDIR%%/server
 @dirrm %%PYTHON_SITELIBDIR%%/common
 @dirrm %%PYTHON_SITELIBDIR%%/client
