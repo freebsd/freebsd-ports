@@ -39,7 +39,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/openjazz.000 ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/OpenJazz ${STAGEDIR}${PREFIX}/bin/openjazz
-	@${CAT} ${PKGMESSAGE}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/openjazz
