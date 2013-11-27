@@ -1,4 +1,6 @@
 libexec/vsftpd
+man/man5/vsftpd.conf.5.gz
+man/man8/vsftpd.8.gz
 @exec mkdir -p %D/share/vsftpd/empty
 @unexec if diff -q %D/etc/vsftpd.conf %D/etc/vsftpd.conf.dist; then rm %D/etc/vsftpd.conf; fi
 etc/vsftpd.conf.dist

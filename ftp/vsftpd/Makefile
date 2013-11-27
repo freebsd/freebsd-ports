@@ -14,11 +14,9 @@ COMMENT=	A FTP daemon that aims to be "very secure"
 
 LICENSE=	GPLv2
 
-NO_STAGE=	yes
+NEED_ROOT=	yes
 
 ALL_TARGET=	vsftpd
-MAN5=		vsftpd.conf.5
-MAN8=		vsftpd.8
 USE_RC_SUBR=	vsftpd
 DOCFILES=	AUDIT BENCHMARKS BUGS Changelog FAQ INSTALL LICENSE \
 		README README.security README.ssl REFS REWARD \
@@ -32,7 +30,7 @@ VSFTPD_SSL_DESC=Include support for SSL
 PIDFILE_DESC=	Unofficial support for pidfile
 STACKPROTECTOR_DESC=	Build with stack-protector
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MVSFTPD_SSL} && !defined(WITHOUT_SSL)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
@@ -92,30 +90,18 @@ pre-install:
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/vsftpd ${PREFIX}/libexec/
-	${INSTALL_DATA} ${WRKSRC}/vsftpd.conf ${PREFIX}/etc/vsftpd.conf.dist
-	${INSTALL} -d ${PREFIX}/share/vsftpd/empty
-	@if [ ! -e ${PREFIX}/etc/vsftpd.conf ]; then \
-		${INSTALL_DATA} ${WRKSRC}/vsftpd.conf ${PREFIX}/etc/ ; \
-	fi
-	${MKDIR} ${PREFIX}/share/vsftpd/empty
-	@for i in ${MAN8} ; do \
-		${INSTALL_MAN} -m 644 ${WRKSRC}/$${i} ${MANPREFIX}/man/man8/ ; \
-		done
-	@for i in ${MAN5} ; do \
-		${INSTALL_MAN} -m 644 ${WRKSRC}/$${i} ${MANPREFIX}/man/man5/ ; \
-		done
-	${MKDIR} /var/ftp
+	${INSTALL_PROGRAM} ${WRKSRC}/vsftpd ${STAGEDIR}${PREFIX}/libexec/
+	${INSTALL_DATA} ${WRKSRC}/vsftpd.conf ${STAGEDIR}${PREFIX}/etc/vsftpd.conf.dist
+	${INSTALL_MAN} ${WRKSRC}/vsftpd.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5/
+	${INSTALL_MAN} ${WRKSRC}/vsftpd.8 ${STAGEDIR}${MANPREFIX}/man/man8/
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.for i in ${DOCFILES}
-	${INSTALL_DATA} -m 644 ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} -m 644 ${DOCFILES:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 .for i in EXAMPLE SECURITY
-	${MKDIR} ${DOCSDIR}/${i}
-	${CP} -p -R -L ${WRKSRC}/${i}/./ ${DOCSDIR}/${i}/
-	${CHMOD} -R -L a+rX,go-w ${DOCSDIR}/${i}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/${i}
+	${CP} -p -R -L ${WRKSRC}/${i}/./ ${STAGEDIR}${DOCSDIR}/${i}/
+	${CHMOD} -R -L a+rX,go-w ${STAGEDIR}${DOCSDIR}/${i}/
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
