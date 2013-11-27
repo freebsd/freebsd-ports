@@ -1,0 +1,11 @@
+%%PERL5_MAN3%%/Plack::Middleware::Test::StashWarnings.3.gz
+%%SITE_PERL%%/Plack/Middleware/Test/StashWarnings.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/Test/StashWarnings/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/Test/StashWarnings
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/Test
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack
+@dirrmtry %%SITE_PERL%%/Plack/Middleware/Test
+@dirrmtry %%SITE_PERL%%/Plack/Middleware
+@dirrmtry %%SITE_PERL%%/Plack
+

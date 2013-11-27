@@ -1140,6 +1140,7 @@
     SUBDIR += p5-Plack-Middleware-Session
     SUBDIR += p5-Plack-Middleware-SocketIO
     SUBDIR += p5-Plack-Middleware-Status
+    SUBDIR += p5-Plack-Middleware-Test-StashWarnings
     SUBDIR += p5-Plack-Middleware-Throttle
     SUBDIR += p5-Plack-Middleware-XForwardedFor
     SUBDIR += p5-Plack-Server-Coro
