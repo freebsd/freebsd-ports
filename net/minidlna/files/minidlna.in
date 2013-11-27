@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: head/net/minidlna/files/minidlna.in 323762 2013-07-26 23:25:40Z wg $
 #
 # PROVIDE: minidlna
 # REQUIRE: LOGIN
