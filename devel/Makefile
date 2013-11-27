@@ -1828,6 +1828,7 @@
     SUBDIR += p5-Devel-Caller-IgnoreNamespaces
     SUBDIR += p5-Devel-Caller-Perl
     SUBDIR += p5-Devel-Callsite
+    SUBDIR += p5-Devel-CheckCompiler
     SUBDIR += p5-Devel-CheckLib
     SUBDIR += p5-Devel-CheckOS
     SUBDIR += p5-Devel-Constants
