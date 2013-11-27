@@ -11,17 +11,14 @@ PKGNAMEPREFIX=	trac-
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Trac plugin to enable logging by Google Analytics
 
-BUILD_DEPENDS=	tracd:${PORTSDIR}/www/trac \
-		${PYTHON_PKGNAMEPREFIX}Genshi>=0.5:${PORTSDIR}/textproc/py-genshi
-
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 LICENSE=	BSD
 
-USE_PYTHON=	2.5+
+BUILD_DEPENDS=	tracd:${PORTSDIR}/www/trac \
+		${PYTHON_PKGNAMEPREFIX}Genshi>=0.5:${PORTSDIR}/textproc/py-genshi
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_AUTOPLIST=	yes
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
