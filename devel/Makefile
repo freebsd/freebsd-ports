@@ -878,6 +878,7 @@
     SUBDIR += jcmdline
     SUBDIR += jech-dht
     SUBDIR += jenkins
+    SUBDIR += jenkins-lts
     SUBDIR += jep
     SUBDIR += jgoodies-common
     SUBDIR += jiic
