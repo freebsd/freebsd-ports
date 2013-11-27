@@ -8,18 +8,17 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF/gai/GAI%20-%20Applets/${PORTNAME}
 
 MAINTAINER=	douglas@douglasthrift.net
-COMMENT=	A GAI applet that displays the keyboard status leds
-
-LIB_DEPENDS=	gai:${PORTSDIR}/x11-toolkits/gai
+COMMENT=	GAI applet that displays the keyboard status leds
 
 LICENSE=	GPLv2
 
-GNU_CONFIGURE=	yes
-USES=		pkgconfig
-USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnomeprefix
+LIB_DEPENDS=	libgai.so:${PORTSDIR}/x11-toolkits/gai
 
-NO_STAGE=	yes
+GNU_CONFIGURE=	yes
+USES=		pathfix pkgconfig
+USE_BZIP2=	yes
+USE_GNOME=	gnomeprefix
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|\(GNOMEDIR=\).*|\1"${PREFIX}"|; \
