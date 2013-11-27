@@ -3394,7 +3394,7 @@ check-deprecated:
 # Check if the port is listed in the vulnerability database
 
 .if defined(WITH_PKGNG)
-AUDITFILE?=		${PKG_DBDIR}/auditfile
+AUDITFILE?=		${PKG_DBDIR}/vuln.xml
 _EXTRACT_AUDITFILE=	${CAT} "${AUDITFILE}"
 .else
 AUDITFILE?=		/var/db/portaudit/auditfile.tbz
