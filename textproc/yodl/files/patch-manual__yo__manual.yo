@@ -1,0 +1,11 @@
+--- ./manual/yo/manual.yo.orig	2013-11-27 11:59:12.000000000 +0100
++++ ./manual/yo/manual.yo	2013-11-27 12:06:02.000000000 +0100
+@@ -4,7 +4,7 @@
+ 
+ whenlatex(\
+     SETSYMBOL(XXusexlatin)
+-        (NOTRANS(\input{../../../../../wip/macros/xlatin1.tex}))
++        (NOTRANS(\input{xlatin1.tex}))
+ )
+ 
+ SUBST(YODL)(tt(Yodl))

@@ -1,0 +1,10 @@
+--- ./icmake/manual.orig	2013-10-09 14:21:36.000000000 +0200
++++ ./icmake/manual	2013-11-27 12:11:43.000000000 +0100
+@@ -35,6 +35,7 @@
+ 
+     if (conversion == "latex")
+     {
++        run("cp " + g_wip + "/macros/xlatin1.tex " + g_install + DOCDOC);
+         chdir(g_install + DOCDOC);
+ 
+         runP(P_NOCHECK, "latex yodl.latex");
