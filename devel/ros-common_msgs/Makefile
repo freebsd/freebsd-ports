@@ -5,7 +5,7 @@ PORTNAME=	ros-common_msgs
 PORTVERSION=	1.4.0
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/common_msgs/common_msgs-${PORTVERSION}/	
+MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/common_msgs/common_msgs-${PORTVERSION}/
 DISTNAME=	common_msgs-${PORTVERSION}
 DIST_SUBDIR=	ros
 
@@ -20,9 +20,17 @@ BUILD_DEPENDS=	rosmake:${PORTSDIR}/devel/ros \
  		${LOCALBASE}/ros/stacks/ros_comm/stack.xml:${PORTSDIR}/devel/ros_comm
 RUN_DEPENDS=	roscore:${PORTSDIR}/devel/ros \
  		${LOCALBASE}/ros/stacks/ros_comm/stack.xml:${PORTSDIR}/devel/ros_comm
-USE_PYTHON=	yes
+
+USES=		shebangfix
+USE_PYTHON=	2
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
+
+python_OLD_CMD=	/usr/bin/env python
+python_CMD=	/usr/bin/env python2
+SHEBANG_FILES=	actionlib_msgs/genaction.py \
+		stereo_msgs/migration_rules/split_rawstereo.py \
+		test_common_msgs/test/test_common_msgs_migration.py
 
 # rosmake does its own threading
 MAKE_JOBS_UNSAFE=	yes
@@ -55,7 +63,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/ros/stacks/${STACKNAME}
 .endfor
 #strip and symlink ELF libraries
-.for f in sensor_msgs/lib/libsensor_msgs.so 
+.for f in sensor_msgs/lib/libsensor_msgs.so
 	${STRIP_CMD} ${PREFIX}/ros/stacks/${STACKNAME}/${f}
 	${LN} -s ${PREFIX}/ros/stacks/${STACKNAME}/${f} ${PREFIX}/lib
 .endfor

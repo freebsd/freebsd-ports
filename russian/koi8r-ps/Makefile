@@ -20,7 +20,7 @@ NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(FONTMAP)
-FONTMAP!=	${SH} ${FILESDIR}/find-fontmap.sh
+FONTMAP!=	${SH} ${FILESDIR}/find-fontmap.sh 2>/dev/null || ${ECHO_CMD}
 .endif
 
 NO_PACKAGE=	Nothing to build, configurations only

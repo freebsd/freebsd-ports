@@ -121,6 +121,7 @@ share/audacious/ui/equalizer.ui
 share/audacious/ui/mainwin.ui
 share/audacious/ui/playlist.ui
 %%NLS%%share/locale/be/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/da/LC_MESSAGES/audacious-plugins.mo
@@ -143,6 +144,7 @@ share/audacious/ui/playlist.ui
 %%NLS%%share/locale/ky/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/ml_IN/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/pt_PT/LC_MESSAGES/audacious-plugins.mo
@@ -151,6 +153,7 @@ share/audacious/ui/playlist.ui
 %%NLS%%share/locale/sk/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/sr_RS/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/audacious-plugins.mo
@@ -245,4 +248,6 @@ lib/audacious/Container/pls.so
 %%NLS%%@dirrmtry share/locale/sr_RS
 %%NLS%%@dirrmtry share/locale/es_AR/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/es_AR
+%%NLS%%@dirrmtry share/locale/ml_IN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ml_IN
 @dirrmtry share/audacious

@@ -1,6 +1,0 @@
-fake telnet daemon (ftelnetd)
------------------------------
-ftelnetd is a small server faking various telnet daemons,
-logging all received logins to a file and doing more actions.
-
-WWW: http://www.corehack.org/

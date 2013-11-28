@@ -3,3 +3,4 @@ lib/librcd.a
 lib/librcd.la
 lib/librcd.so
 lib/librcd.so.1
+libdata/pkgconfig/librcd.pc

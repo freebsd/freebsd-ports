@@ -315,15 +315,10 @@ share/pixmaps/caja/thumbnail_frame.png
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrmtry share/glib-2.0/schemas
-@dirrmtry share/glib-2.0
 @dirrm share/doc/libcaja-extension
-@dirrmtry share/dbus-1/services
-@dirrmtry share/dbus-1
 @dirrm share/caja/ui
 @dirrm share/caja/patterns
 @dirrm share/caja
-@dirrmtry share/applications
 @dirrmtry lib/caja/extensions-2.0
 @dirrmtry lib/caja
 @dirrm include/caja/libcaja-extension

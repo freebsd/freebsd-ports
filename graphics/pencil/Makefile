@@ -13,34 +13,27 @@ COMMENT=	Pencil - a traditional 2D animation software
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS+=	ming:${PORTSDIR}/graphics/ming \
-		png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		expat:${PORTSDIR}/textproc/expat2 \
-		pcre:${PORTSDIR}/devel/pcre \
-		drm:${PORTSDIR}/graphics/libdrm
+LIB_DEPENDS+=	libming.so:${PORTSDIR}/graphics/ming \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libdrm.so:${PORTSDIR}/graphics/libdrm
 
 USE_ZIP=	yes
-USES=		gettext iconv
+USES=		gettext iconv qmake
 USE_GNOME=	glib20
-USE_QT4=	gui moc_build qmake_build rcc_build xml_build opengl_build
+USE_QT4=	gui moc_build rcc_build xml_build opengl_build
 USE_XORG=	xi xrender xrandr xfixes xcursor xinerama xext x11 xau xdmcp \
 		xxf86vm xdamage
 USE_GL=		gl glu
+QMAKE_ARGS+=	INCLUDEPATH+=${LOCALBASE}/include/ming
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 
 PLIST_FILES=	bin/pencil
+
 PORTDOCS=	README TODO
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} -unix PREFIX=${PREFIX} \
-		INCLUDEPATH+=${LOCALBASE}/include/ming \
-		${PORTNAME}.pro
 
 post-patch:
 	@${MKDIR} ${WRKSRC}/src/external/freebsd
@@ -48,12 +41,8 @@ post-patch:
 		${WRKSRC}/src/external/freebsd/freebsd.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/Pencil ${PREFIX}/bin/pencil
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/Pencil ${STAGEDIR}${PREFIX}/bin/pencil
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

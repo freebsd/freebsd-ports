@@ -12,7 +12,7 @@ COMMENT=	Qt Designer plugin for Qwt
 LIB_DEPENDS=	libqwt6.so:${PORTSDIR}/x11-toolkits/qwt6
 
 USES=		gmake qmake
-USE_QT4=	designer moc_build qmake_build rcc_build
+USE_QT4=	designer moc_build rcc_build
 USE_BZIP2=	yes
 QMAKE_ARGS+=	CONFIG+=QwtDesigner \
 		PLUGINDIR=${PREFIX}/${QT_PLUGINDIR_REL}

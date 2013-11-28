@@ -162,11 +162,8 @@ share/pixmaps/mate-logo-white.svg
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrmtry share/glib-2.0/schemas
-@dirrmtry share/glib-2.0
 @dirrmtry share/desktop-directories
 @dirrmtry share/backgrounds/cosmos
 @dirrmtry share/backgrounds
-@dirrmtry share/applications
 @dirrm libexec/mate-screensaver
 @dirrmtry etc/xdg/menus

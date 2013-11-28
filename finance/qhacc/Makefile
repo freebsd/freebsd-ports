@@ -17,8 +17,7 @@ LIB_DEPENDS=	libqwt6.so:${PORTSDIR}/x11-toolkits/qwt6
 OPTIONS_DEFINE=	DOCS
 
 USES=		qmake:norecursive
-USE_QT4=	corelib gui sql moc_build qmake_build rcc_build uic_build
-QMAKE_ARGS=	${QMAKEFLAGS}
+USE_QT4=	corelib gui sql moc_build rcc_build uic_build
 USE_GCC=	yes
 USE_LDCONFIG=	yes
 

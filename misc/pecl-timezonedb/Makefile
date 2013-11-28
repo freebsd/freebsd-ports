@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	timezonedb
-DISTVERSION=	2013.4
+DISTVERSION=	2013.8
 CATEGORIES=	misc
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -18,5 +18,4 @@ CONFIGURE_ARGS=	--enable-timezonedb
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

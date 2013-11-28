@@ -14,7 +14,7 @@
  
  	bool ok = false;
 -	int r = doCommand(qmake_path, QStringList() << "atest.pro");
-+	int r = doCommand(qmake_path, QStringList() << qc_getenv("QMAKEFLAGS") << "atest.pro");
++	int r = doCommand(qmake_path, QStringList() << qc_getenv("QMAKE_ARGS") << "atest.pro");
  	if(r == 0)
  	{
  		r = doCommand(maketool, QStringList());
@@ -22,7 +22,7 @@
  		args += "-spec";
  		args += qmakespec;
  	}
-+	args += qc_getenv("QMAKEFLAGS");
++	args += qc_getenv("QMAKE_ARGS");
  	args += proPath;
  	int ret = qc_runprogram(qmake_path, args, 0, true);
  	if(ret != 0)

@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	FRUGALWARE/games-extra/${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Arcade game that relies on quick reflexes
 
 LICENSE=	GPLv2

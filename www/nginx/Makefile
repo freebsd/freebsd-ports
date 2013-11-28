@@ -653,7 +653,7 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
-PASSENGER_VERSION=	4.0.24
+PASSENGER_VERSION=	4.0.25
 MASTER_SITES+=	http://s3.amazonaws.com/phusion-passenger/releases/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
@@ -701,12 +701,11 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-redis2-nginx-module-${GIT_REDIS2_
 .endif
 
 .if ${PORT_OPTIONS:MRTMP}
-NGINX_RTMP_VERSION=	1.0.3
-GIT_RTMP_VERSION=	0-g7749d54
+NGINX_RTMP_VERSION=	1.0.6
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/arut/nginx-rtmp-module/tarball/v${NGINX_RTMP_VERSION}/:rtmp
-DISTFILES+=	arut-rtmp-nginx-module-v${NGINX_RTMP_VERSION}-${GIT_RTMP_VERSION}.tar.gz:rtmp
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/arut-nginx-rtmp-module-${GIT_RTMP_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/arut/nginx-rtmp-module/archive/v${NGINX_RTMP_VERSION}/:rtmp
+DISTFILES+=	rtmp-nginx-module-v${NGINX_RTMP_VERSION}.tar.gz:rtmp
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-rtmp-module-${NGINX_RTMP_VERSION}
 .endif
 
 .if ${PORT_OPTIONS:MSET_MISC}

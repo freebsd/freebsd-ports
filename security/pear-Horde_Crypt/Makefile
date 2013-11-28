@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Crypt
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.0
 CATEGORIES=	security www pear
 PKGNAMEPREFIX=	pear-
 
@@ -19,7 +19,6 @@ USE_HORDE_RUN=	Horde_Exception \
 		Horde_Util
 USE_PHP=	hash openssl
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MBCMATH}

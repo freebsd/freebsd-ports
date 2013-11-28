@@ -13,15 +13,11 @@ COMMENT=	Easy to use musicpd client written in Qt4
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
-
+USES=		qmake
 USE_BZIP2=	yes
-NO_STAGE=	yes
-USE_QT4=	qmake_build moc_build rcc_build uic_build \
+USE_QT4=	moc_build rcc_build uic_build \
 		corelib gui network xml xmlpatterns
 INSTALLS_ICONS=	yes
-QMAKE_ARGS=	${QMAKE_PRO}
-QMAKE_PRO=	${PORTNAME}.pro
 
 OPTIONS_DEFINE=	DBUS NLS DEBUG
 
@@ -39,27 +35,23 @@ PLIST_SUB+=	NLS=""
 
 .if ${PORT_OPTIONS:MDBUS}
 USE_QT4+=	dbus
-QMAKEFLAGS+=	"CONFIG+=qdbus"
+QMAKE_ARGS+=	"CONFIG+=qdbus"
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
-QMAKEFLAGS+=	"CONFIG+=debug"
+QMAKE_ARGS+=	"CONFIG+=debug"
 .endif
 
 post-patch:
 .if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e '/INSTALLS += translations/d' \
-		${WRKSRC}/${QMAKE_PRO}
+		${WRKSRC}/${PORTNAME}.pro
 .endif
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
 		-e 's|lupdate|lupdate-qt4|' \
 		-e 's|lrelease|lrelease-qt4|' \
-		${WRKSRC}/${QMAKE_PRO}
+		${WRKSRC}/${PORTNAME}.pro
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' \
 		${WRKSRC}/src/notifications_dbus.cpp
-
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} \
-		${QMAKEFLAGS} ${QMAKE_ARGS}
 
 .include <bsd.port.mk>

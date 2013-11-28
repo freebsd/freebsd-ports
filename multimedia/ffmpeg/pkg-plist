@@ -88,7 +88,7 @@ include/libswscale/version.h
 lib/libavcodec.a
 lib/libavcodec.so
 lib/libavcodec.so.55
-lib/libavcodec.so.55.39.100
+lib/libavcodec.so.55.39.101
 lib/libavdevice.a
 lib/libavdevice.so
 lib/libavdevice.so.55
@@ -108,7 +108,7 @@ lib/libavresample.so.1.1.0
 lib/libavutil.a
 lib/libavutil.so
 lib/libavutil.so.52
-lib/libavutil.so.52.48.100
+lib/libavutil.so.52.48.101
 lib/libpostproc.a
 lib/libpostproc.so
 lib/libpostproc.so.52

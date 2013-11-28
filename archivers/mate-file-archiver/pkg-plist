@@ -353,8 +353,6 @@ share/omf/engrampa/engrampa-zh_CN.omf
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrmtry share/glib-2.0/schemas
-@dirrmtry share/glib-2.0
 @dirrm share/engrampa/ui
 @dirrm share/engrampa/icons/hicolor/24x24/actions
 @dirrm share/engrampa/icons/hicolor/24x24
@@ -363,5 +361,4 @@ share/omf/engrampa/engrampa-zh_CN.omf
 @dirrm share/engrampa/icons/hicolor
 @dirrm share/engrampa/icons
 @dirrm share/engrampa
-@dirrmtry share/applications
 @dirrm libexec/engrampa

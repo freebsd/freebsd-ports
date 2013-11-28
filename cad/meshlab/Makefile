@@ -14,10 +14,11 @@ COMMENT=	3D triangular meshes processing and editing tool
 EXTRACT_DEPENDS=7z:${PORTSDIR}/archivers/p7zip
 LIB_DEPENDS=	libQtSolutions_SOAP-head.so:${PORTSDIR}/devel/qt4-qtsolutions-soap
 
+USES=		dos2unix qmake
 USE_GL=		glew glu
-USE_QT4=	qmake_build moc_build rcc_build uic_build corelib gui xml \
+USE_QT4=	moc_build rcc_build uic_build corelib gui xml \
 		xmlpatterns opengl network script
-USE_DOS2UNIX=	external/structuresynth/ssynth/SyntopiaCore/GLEngine/Object3D.h \
+DOS2UNIX_FILES=	external/structuresynth/ssynth/SyntopiaCore/GLEngine/Object3D.h \
 		meshlabplugins/edit_arc3D/fillImage.cpp
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}/src
@@ -35,13 +36,11 @@ post-patch:
 	    ${REINPLACE_CMD} -e '/^CONFIG +=/s|$$| debug|'
 .endif
 
-do-configure:
-	cd ${WRKSRC}/external && ${QMAKE} -spec ${QMAKESPEC} -recursive external.pro
-	cd ${WRKSRC} && ${QMAKE} -spec ${QMAKESPEC} -recursive meshlab_full.pro
+pre-configure:
+	cd ${WRKSRC}/external && ${QMAKE} ${QMAKE_ARGS} -recursive external.pro
 
-do-build:
+pre-build:
 	cd ${WRKSRC}/external && ${MAKE}
-	cd ${WRKSRC} && ${MAKE}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/meshlab/plugins

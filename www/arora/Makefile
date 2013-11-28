@@ -8,32 +8,23 @@ CATEGORIES=	www
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	shanjobe@gmail.com
-COMMENT=	Simple Qt4 based browser
+COMMENT=	Simple Qt 4 based browser
 
 LICENSE=	GPLv3
 
-USE_QT4=	network webkit qmake_build moc_build uic_build rcc_build \
-		imageformats gui script sql
-HAS_CONFIGURE=	yes
-QMAKE_ARGS+=	-unix -recursive PREFIX=${PREFIX}
+USES=		desktop-file-utils qmake
+USE_QT4=	network webkit moc_build uic_build rcc_build \
+		imageformats_run gui script sql
 
-MAN1=		arora.1 arora-cacheinfo.1 arora-placesimport.1 htmlToXBel.1
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+NLS_USE=	QT4=linguist_build
 
-NO_STAGE=	yes
+BROKEN_ia64=		core dump on application startup
+
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == ia64
-BROKEN=		core dump on application startup
-.endif
-
-.if ! ${PORT_OPTIONS:MNLS}
-PLIST_SUB+=	NLS="@comment "
-.else
-USE_QT4+=	linguist_build
-PLIST_SUB+=	NLS=""
-.endif
-
-do-configure:
+pre-configure:
 .if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e "/INSTALLS/s|translations||" \
 		${WRKSRC}/src/src.pro
@@ -49,12 +40,8 @@ do-configure:
 		${WRKSRC}/src/locale/locale.pri
 	@${REINPLACE_CMD} "/pkg-config/d" \
 		${WRKSRC}/src/src.pro
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKE_ARGS}
 
 post-configure:
-	@${REINPLACE_CMD} -e \
-		's|^CC .*|CC=${CC}|; s|^CXX .*|CXX=${CXX}|; s|^LINK .*|LINK=${CXX}|' \
-		${WRKSRC}/src/Makefile
 	@${REINPLACE_CMD} 's|raster||' ${WRKSRC}/src/main.cpp
 
 post-install:
@@ -62,6 +49,6 @@ post-install:
 		${WRKSRC}/tools/cacheinfo/data/arora-cacheinfo.1 \
 		${WRKSRC}/tools/htmlToXBel/data/htmlToXBel.1 \
 		${WRKSRC}/tools/placesimport/data/arora-placesimport.1 \
-		${PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>

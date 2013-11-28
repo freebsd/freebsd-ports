@@ -9,9 +9,9 @@ top of the accounts
 
 	local   davical     davical_app   trust
 
-3. Copy and edit your config file
+3. Edit your config file in:
 
-       cp %%WWWDIR%%/config/example-config.php %%WWWDIR%%/config/config.php
+       %%WWWDIR%%/config/config.php
 
 4. Enable in apache by copying the httpd-davical.conf from the
 documentation directory to the Apache Include directory and restart

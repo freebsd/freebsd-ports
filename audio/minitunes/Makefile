@@ -8,24 +8,18 @@ CATEGORIES=	audio
 MASTER_SITES=	http://flavio.tordini.org/files/${PORTNAME}/
 
 MAINTAINER=	vg@FreeBSD.org
-COMMENT=	Minitunes is just another music player
+COMMENT=	Just another music player
 
-LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
 
-NO_STAGE=	yes
-USE_QT4=	dbus gui moc_build network phonon qmake_build rcc_build \
+USES=		qmake
+USE_QT4=	dbus gui moc_build network phonon rcc_build \
 		sql uic_build xml
 INSTALLS_ICONS=	yes
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-QMAKEFLAGS+=	PREFIX="${PREFIX}"
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS} ${PORTNAME}.pro
 
 .include <bsd.port.mk>

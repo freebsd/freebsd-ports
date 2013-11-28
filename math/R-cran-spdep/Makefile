@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spdep
-DISTVERSION=	0.5-65
-PORTREVISION=	2
+DISTVERSION=	0.5-68
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -21,5 +20,4 @@ RUN_DEPENDS=	R-cran-sp>=0.9:${PORTSDIR}/math/R-cran-sp \
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

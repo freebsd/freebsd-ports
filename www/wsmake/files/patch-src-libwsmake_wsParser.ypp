@@ -1,0 +1,10 @@
+--- src/libwsmake/wsParser.ypp.orig	2013-11-20 16:10:55.000000000 +0100
++++ src/libwsmake/wsParser.ypp	2013-11-20 16:10:42.000000000 +0100
+@@ -21,6 +21,7 @@
+  * mike@wsmake.org                                                     *
+  ***********************************************************************/
+ #include <stdio.h>
++#include <string.h>
+ 
+ #include "wsLoader.h"
+ #include "wsSite.h"

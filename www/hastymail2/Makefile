@@ -3,7 +3,7 @@
 
 PORTNAME=	hastymail2
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	www mail
 MASTER_SITES=	SF/hastymail/Hastymail2%20Stable%20Releases/Hastymail2%201.1/
@@ -19,8 +19,6 @@ SUB_FILES=	pkg-message
 
 CONFLICTS=	hastymail-* hastymail2-devel-*
 
-PLIST=		${WRKDIR}/pkg-plist
-
 WANT_PHP_WEB=	yes
 USE_PHP=	ctype pcre session xml
 
@@ -34,7 +32,6 @@ OPTIONS_DEFINE=	PGSQL MYSQL DB ICONV MBSTRING
 DB_DESC=	Use older pear DB (instead of MDB2)
 MBSTRING_DESC=	Support multi-byte character sets
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -64,29 +61,17 @@ USE_PHP+=	mbstring
 .endif
 
 post-patch:
-	@${SED} -I.orig -e "s#'/etc/hastymail2/hastymail2.rc'#'${PREFIX}/etc/hastymail2/hastymail2.rc'#" \
-		${WRKSRC}/index.php
-	@${SED} -I.orig -e "s# /etc/hastymail/hastyamil2.rc# ${PREFIX}/etc/hastymail2/hastyamil2.rc#" \
-		${WRKSRC}/hastymail2.conf.example
-
-pre-install:
-	@${FIND} -s -d ${WRKSRC}/ -type f ${FIND_SKIP_OPTS} \
-		| ${SED} "s#${WRKSRC}#${WWWDIR_REL}#g" > ${PLIST}
-	@${ECHO_CMD} etc/hastymail2/hastymail2.conf.sample >> ${PLIST}
-	@${FIND} -s -d ${WRKSRC}/ -type d ${FIND_SKIP_OPTS} \
-		| ${SED} "s#${WRKSRC}#@dirrm ${WWWDIR_REL}#g" >> ${PLIST}
-	@${ECHO_CMD} @dirrmtry etc/hastymail2 >> ${PLIST}
+	@${REINPLACE_CMD} -E "s#/etc/hastymail[2]*/hasty[ma][ma]il2.rc#${PREFIX}/etc/hastymail2/hastymail2.rc#" \
+		${WRKSRC}/index.php ${WRKSRC}/hastymail2.conf.example
+	@${FIND} ${WRKSRC}/plugins -name config.php | ${XARGS} -I % ${MV} % %.sample
 
 do-install:
-	@${MKDIR} ${WWWDIR}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	@cd ${WRKSRC} && ${FIND} . ${FIND_SKIP_OPTS} \
-		| ${PAX} -rwd ${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	@${MKDIR} ${PREFIX}/etc/hastymail2
+		| ${PAX} -rwd ${STAGEDIR}${WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/hastymail2.conf.example \
-		${PREFIX}/etc/hastymail2/hastymail2.conf.sample
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+		${STAGEDIR}${ETCDIR}/hastymail2.conf.sample
 
 .include <bsd.port.mk>

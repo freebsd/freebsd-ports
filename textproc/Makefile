@@ -1177,6 +1177,7 @@
     SUBDIR += py-paragrep
     SUBDIR += py-pss
     SUBDIR += py-pyctpp2
+    SUBDIR += py-pyelasticsearch
     SUBDIR += py-pygments
     SUBDIR += py-pysrt
     SUBDIR += py-pystache

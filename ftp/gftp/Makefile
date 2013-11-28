@@ -20,6 +20,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 WANT_GNOME=	yes
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-12-22
+
 BROKEN=		Dumps core when connecting to a host with pthread_mutex_lock: Operation not permitted
 
 OPTIONS_DEFINE=	X11 NLS

@@ -204,6 +204,7 @@
     SUBDIR += eyeos
     SUBDIR += eyeos-themes
     SUBDIR += fancybox
+    SUBDIR += faup
     SUBDIR += fcgi
     SUBDIR += fcgiwrap
     SUBDIR += feedjack
@@ -537,7 +538,7 @@
     SUBDIR += mod_vhs
     SUBDIR += mod_webkit
     SUBDIR += mod_whatkilledus
-    SUBDIR += mod_wsgi
+    SUBDIR += mod_wsgi2
     SUBDIR += mod_wsgi3
     SUBDIR += mod_xml2enc
     SUBDIR += mod_xmlns
@@ -1141,6 +1142,7 @@
     SUBDIR += p5-Plack-Middleware-Session
     SUBDIR += p5-Plack-Middleware-SocketIO
     SUBDIR += p5-Plack-Middleware-Status
+    SUBDIR += p5-Plack-Middleware-Test-StashWarnings
     SUBDIR += p5-Plack-Middleware-Throttle
     SUBDIR += p5-Plack-Middleware-XForwardedFor
     SUBDIR += p5-Plack-Server-Coro
@@ -1730,6 +1732,7 @@
     SUBDIR += rsstool
     SUBDIR += rt38
     SUBDIR += rt40
+    SUBDIR += rt42
     SUBDIR += ruboard
     SUBDIR += ruby-amazon
     SUBDIR += ruby-aws
@@ -1974,7 +1977,6 @@
     SUBDIR += trac-fullblog
     SUBDIR += trac-fullblognotification
     SUBDIR += trac-gantt
-    SUBDIR += trac-gitplugin
     SUBDIR += trac-graphviz
     SUBDIR += trac-hierwiki
     SUBDIR += trac-iniadmin
@@ -2020,6 +2022,7 @@
     SUBDIR += trafficserver
     SUBDIR += transmission-web
     SUBDIR += transproxy
+    SUBDIR += trytond28_google_maps
     SUBDIR += trytond_google_maps
     SUBDIR += tt-rss
     SUBDIR += ttf2eot

@@ -12,18 +12,14 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	bfoz@bfoz.net
 COMMENT=	Cross-platform software for the DIY line of PIC programmers
 
-USE_QT4=	qmake_build moc_build gui network
+USES=		qmake
+USE_QT4=	moc_build gui network
 
 WRKSRC=		${WRKDIR}/QProg
 
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
-do-configure:
-	( cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} -unix PREFIX=${PREFIX} QProg.pro )
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

@@ -12,6 +12,9 @@ MASTER_SITE_SUBDIR=	games
 MAINTAINER=	will@FreeBSD.org
 COMMENT=	Multi-way scrolling shoot 'em up game for X.  Strangely addictive
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-12-22
+
 BROKEN=		Does not build both with gcc and clang
 
 USES=		imake

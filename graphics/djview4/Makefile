@@ -21,7 +21,7 @@ USE_XORG=	sm ice xt
 QT_NONSTANDARD=	yes
 CONFIGURE_ARGS=	--x-includes="${LOCALBASE}/include" \
 		--x-libraries="${LOCALBASE}/lib"
-CONFIGURE_ENV=	QMAKE="${LOCALBASE}/bin/qmake-qt4" \
+CONFIGURE_ENV=	QMAKE="${QMAKE}" \
 		QMAKESPEC="${QMAKESPEC}"
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include

@@ -1,13 +1,14 @@
 # Created by: Gerald Pfeifer <gerald@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	gcc
+PORTNAME=	gcc46
 PORTVERSION=	4.6.4
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	releases/gcc-${DISTVERSION}
+DISTNAME=	gcc-${DISTVERSION}
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.6
@@ -22,14 +23,13 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 .endif
 
-CONFLICTS=	gcc-4.6.[123]*
+CONFLICTS=	gcc-4.6.*
 
 # DISTVERSION relates to downloads, GCC_VERSION and SUFFIX to names
 # of executables and directories once installed.
 DISTVERSION=	${PORTVERSION}
 GCC_VERSION=	${PORTVERSION:C/(.+)\.[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
-LATEST_LINK=	gcc${SUFFIX}${PKGNAMESUFFIX}
 ONLY_FOR_ARCHS=	amd64 i386 ia64 powerpc sparc64
 USES=		gmake iconv perl5
 USE_BINUTILS=	yes

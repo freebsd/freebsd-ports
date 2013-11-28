@@ -46,8 +46,8 @@ PYDISTUTILS_EGGINFO=	Recoll-1.0-py${PYTHON_VER}.egg-info
 .endif
 
 .if ${PORT_OPTIONS:MQT4}
-USE_QT4=	moc_build qmake_build rcc_build uic_build iconengines imageformats \
-		corelib gui xml webkit
+USE_QT4=	moc_build qmake_build rcc_build uic_build iconengines_run \
+		imageformats_run corelib gui xml webkit
 QT_NONSTANDARD=	yes
 CONFIGURE_ENV+=	QTDIR="${QT_PREFIX}" QMAKE="${QMAKE}"
 INSTALLS_ICONS=	yes
@@ -71,8 +71,8 @@ post-patch:
 
 post-configure:
 .if ${PORT_OPTIONS:MQT4}
-	@cd ${WRKSRC}/qtgui && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX}
+	@cd ${WRKSRC}/qtgui && ${SETENV} ${QMAKE_ENV} \
+		${QMAKE} ${QMAKE_ARGS}
 .endif
 
 .include <bsd.port.mk>

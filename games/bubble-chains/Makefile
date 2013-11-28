@@ -19,18 +19,19 @@ BUILD_DEPENDS=		7z:${PORTSDIR}/archivers/p7zip
 
 WRKSRC=		${WRKDIR}/chains-${PORTVERSION}-src
 
+USES=		qmake
 USE_SDL=	sdl image mixer
 USE_GL=		glut glew glu
 USE_XORG=	xrandr
 USE_DOS2UNIX=	*.pro *.cpp  *.h *.ui *.ui *.rc *.htm *.dat *.css
-USE_QT4=	moc_build qmake_build rcc_build uic_build iconengines imageformats \
+USE_QT4=	moc_build rcc_build uic_build iconengines_run imageformats_run \
 		corelib svg xml opengl network
-QMAKEFLAGS=	QMAKE_LFLAGS="-L${LOCALBASE}/lib -lX11 -lSDL-1.2"
+LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -lSDL-1.2
 
 PORTDOCS=	README
 
 DESKTOP_ENTRIES="Bubble Chains" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" false
+		"${PORTNAME}" "Game;ArcadeGame;" true
 
 OPTIONS_DEFINE=	DOCS
 
@@ -46,10 +47,6 @@ do-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/games/chains|${DATADIR}|' \
 		${WRKSRC}/main.cpp ${WRKSRC}/Game.pro
-
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX}
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|CFLAGS        =|CFLAGS        ?=|' \

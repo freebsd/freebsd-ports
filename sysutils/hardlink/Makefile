@@ -15,8 +15,8 @@ LICENSE=	MIT
 
 USES=		pkgconfig
 
-MAN1=		hardlink.1
-PLIST_FILES=	bin/hardlink
+PLIST_FILES=	bin/hardlink \
+		man/man1/hardlink.1.gz
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 
 OPTIONS_DEFINE=	PCRE
@@ -25,17 +25,16 @@ OPTIONS_DEFAULT=PCRE
 
 PORTSCOUT=	limit:(?<!~rc[0-9])$$
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_PCRE)
-MAKE_ENV+=	ENABLE=
+.if ${PORT_OPTIONS:MPCRE}
+LIB_DEPENDS+=	libpcreposix.so:${PORTSDIR}/devel/pcre
 .else
-LIB_DEPENDS+=	pcreposix:${PORTSDIR}/devel/pcre
+MAKE_ENV+=	ENABLE=
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/hardlink ${PREFIX}/bin/hardlink
-	${INSTALL_MAN} ${WRKSRC}/hardlink.1 ${MAN1PREFIX}/man/man1/hardlink.1
+	${INSTALL_PROGRAM} ${WRKSRC}/hardlink ${STAGEDIR}${PREFIX}/bin/hardlink
+	${INSTALL_MAN} ${WRKSRC}/hardlink.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/hardlink.1
 
 .include <bsd.port.mk>

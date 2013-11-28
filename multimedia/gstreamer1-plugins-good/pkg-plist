@@ -22,6 +22,8 @@ lib/gstreamer-%%VERSION%%/libgstdebug.la
 lib/gstreamer-%%VERSION%%/libgstdebug.so
 lib/gstreamer-%%VERSION%%/libgstdeinterlace.la
 lib/gstreamer-%%VERSION%%/libgstdeinterlace.so
+lib/gstreamer-%%VERSION%%/libgstdtmf.la
+lib/gstreamer-%%VERSION%%/libgstdtmf.so
 lib/gstreamer-%%VERSION%%/libgsteffectv.la
 lib/gstreamer-%%VERSION%%/libgsteffectv.so
 lib/gstreamer-%%VERSION%%/libgstequalizer.la

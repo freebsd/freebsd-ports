@@ -6,7 +6,7 @@
 #
 # Feature:		qmake
 # Usage:		USES=qmake or USES=qmake:ARGS
-#			Must be used along with	'USE_QT4= qmake_build'
+#			Must be used along with	'USE_QT4='
 # Valid ARGS:		norecursive
 # ARGS description:
 # norecursive		Don't pass -recursive argument to qmake binary
@@ -15,13 +15,13 @@
 # Variables for ports:
 # QMAKE_ENV		- Environment passed to qmake.
 #			Default: ${CONFIGURE_ENV}
-# QMAKE_ARGS		- Arguments passed to qmake
+# QMAKE_ARGS		- Arguments passed to qmake.
 #			Default: see below
-# QMAKE_PRO		- qmake project file.
+# QMAKE_SOURCE_PATH	- Path to qmake project files.
 #			Default: empty (autodetect)
 #
 # User defined variables:
-# QMAKE_VERBOSE		- Enable verbose configure output
+# QMAKE_VERBOSE		- Enable verbose configure output.
 #
 
 .if !defined(_INCLUDE_USES_QMAKE_MK)
@@ -39,17 +39,11 @@ IGNORE=	Incorrect 'USES+= qmake' usage: argument '${qmake_ARGS}' is not recogniz
 . endif
 .endif
 
-.if ${USE_QT4:Mqmake_build} == "" && ${USE_QT4:Mqmake} == ""
-IGNORE=	'USES+= qmake' must be accompanied with 'USE_QT4= qmake_build'
+.if !defined(USE_QT4)
+IGNORE=	'USES+= qmake' must be accompanied with 'USE_QT4= #'
 .endif
 
-# CC is respected via QMAKESPEC (see Mk/bsd.qt.mk)
-QMAKE_ARGS+=	-spec ${QMAKESPEC} \
-		QMAKE_CFLAGS="${CFLAGS}" \
-		QMAKE_CXXFLAGS="${CXXFLAGS}" \
-		QMAKE_LFLAGS="${LDFLAGS}" \
-		PREFIX=${PREFIX}
-QMAKE_ENV?=	${CONFIGURE_ENV}
+USE_QT4+=	qmake_build
 
 .if !defined(QMAKE_NORECURSIVE)
 QMAKE_ARGS+=	-recursive
@@ -59,9 +53,11 @@ QMAKE_ARGS+=	-recursive
 QMAKE_ARGS+=	-d
 .endif
 
+QMAKE_SOURCE_PATH?=	${QMAKE_PRO}
+
 .if !target(do-configure)
 do-configure:
-	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${QMAKE_ENV} ${QMAKE} ${QMAKE_ARGS} ${QMAKE_PRO}
+	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${QMAKE_ENV} ${QMAKE} ${QMAKE_ARGS} ${QMAKE_SOURCE_PATH}
 .endif
 
 .endif #!defined(_INCLUDE_USES_QMAKE_MK)

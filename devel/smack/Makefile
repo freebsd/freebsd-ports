@@ -27,10 +27,6 @@ OPTIONS_DEFINE=	EXAMPLES
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 802515 || ${OSVERSION} >= 900000 && ${OSVERSION} < 900501
-BROKEN=		requires posix_fadvise(2)
-.endif
-
 .if ${PORT_OPTIONS:MEXAMPLES}
 PLIST_SUB=	EXAMPLES=""
 CMAKE_ARGS=	-DENABLE_EXAMPLES=ON

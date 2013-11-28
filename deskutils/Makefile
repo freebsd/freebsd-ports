@@ -211,7 +211,6 @@
     SUBDIR += py-vobject
     SUBDIR += pybookreader
     SUBDIR += pypanel
-    SUBDIR += q4wine
     SUBDIR += qlabels
     SUBDIR += qorganizer
     SUBDIR += qrfcview

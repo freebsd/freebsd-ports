@@ -31,7 +31,6 @@ FULLGAME_DESC=	Install full game version
 QW_DATA_DESC=	Install QuakeWorld data
 QW_SKINS_DESC=	Install QuakeWorld skins
 
-NO_STAGE=	yes
 .include "Makefile.include"	# must be included before bsd.port.options.mk
 .include <bsd.port.options.mk>
 
@@ -66,21 +65,21 @@ pre-fetch:
 .endif
 
 do-install:
-	@${MKDIR} ${DATADIR}/id1
-	${INSTALL_DATA} ${WRKSRC}/id1/pak0.pak ${DATADIR}/id1
+	@${MKDIR} ${STAGEDIR}${DATADIR}/id1
+	${INSTALL_DATA} ${WRKSRC}/id1/pak0.pak ${STAGEDIR}${DATADIR}/id1
 .if ${PORT_OPTIONS:MFULLGAME}
-	${INSTALL_DATA} ${_DISTDIR}/pak1.pak ${DATADIR}/id1
+	${INSTALL_DATA} ${_DISTDIR}/pak1.pak ${STAGEDIR}${DATADIR}/id1
 .endif
 .if ${PORT_OPTIONS:MQW_DATA}
-	@${MKDIR} ${DATADIR}/qw
-	${INSTALL_DATA} ${WRKSRC}/qw/qwprogs.dat ${DATADIR}/qw
-	@${MKDIR} ${DATADIR}/qw/skins
-	${INSTALL_SCRIPT} ${WRKSRC}/qw/skins/fixskins.sh ${DATADIR}/qw/skins
+	@${MKDIR} ${STAGEDIR}${DATADIR}/qw
+	${INSTALL_DATA} ${WRKSRC}/qw/qwprogs.dat ${STAGEDIR}${DATADIR}/qw
+	@${MKDIR} ${STAGEDIR}${DATADIR}/qw/skins
+	${INSTALL_SCRIPT} ${WRKSRC}/qw/skins/fixskins.sh ${STAGEDIR}${DATADIR}/qw/skins
 . if ${PORT_OPTIONS:MQW_SKINS}
 .   for f in ${SKINFILES}
-	@${UNZIP_CMD} -nq ${_DISTDIR}/${f} -d ${DATADIR}/qw/skins
+	@${UNZIP_CMD} -nq ${_DISTDIR}/${f} -d ${STAGEDIR}${DATADIR}/qw/skins
 .   endfor
-	@(cd ${DATADIR}/qw/skins && LANG=C ./fixskins.sh *)
+	@(cd ${STAGEDIR}${DATADIR}/qw/skins && LANG=C ./fixskins.sh *)
 . endif
 .endif
 

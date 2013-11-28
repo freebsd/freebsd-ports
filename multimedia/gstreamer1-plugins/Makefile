@@ -27,29 +27,25 @@ RUN_DEPENDS+=	iso-codes>=0:${PORTSDIR}/misc/iso-codes
 
 PORTSCOUT=	limitw:1,even
 
-BASE_PORTVERSION=	1.0.10
+BASE_PORTVERSION=	1.2.1
 BASE_DISTNAME=		gst-plugins-base-${BASE_PORTVERSION}
 BASE_DISTFILE=		${BASE_DISTNAME}${EXTRACT_SUFX}
-BAD_PORTVERSION=	1.0.10
+BAD_PORTVERSION=	1.2.1
 BAD_DISTNAME=		gst-plugins-bad-${BAD_PORTVERSION}
 BAD_DISTFILE=		${BAD_DISTNAME}${EXTRACT_SUFX}
-GOOD_PORTVERSION=	1.0.10
+GOOD_PORTVERSION=	1.2.1
 GOOD_DISTNAME=		gst-plugins-good-${GOOD_PORTVERSION}
 GOOD_DISTFILE=		${GOOD_DISTNAME}${EXTRACT_SUFX}
-UGLY_PORTVERSION=	1.0.10
+UGLY_PORTVERSION=	1.2.1
 UGLY_DISTNAME=		gst-plugins-ugly-${UGLY_PORTVERSION}
 UGLY_DISTFILE=		${UGLY_DISTNAME}${EXTRACT_SUFX}
 DIST?=		base
 
-SHLIB_VERSION=	0
-VERSION=	${GST1_VERSION}
-
 USES=		gettext gmake pathfix pkgconfig
 WANT_GSTREAMER=	yes
 USE_XZ=		yes
-USE_GNOME+=	glib20 gnomehier introspection:build libxml2 ltverhack:0 \
-		ltasneededhack
-USE_AUTOTOOLS=	libtool
+USE_GNOME+=	glib20 gnomehier introspection:build libxml2 ltverhack
+GNU_CONFIGURE=	yes
 GST_PLUGIN?=	base
 USE_LDCONFIG=	yes
 
@@ -63,6 +59,13 @@ DEFAULT_AUDIOSRC?=	osssrc
 .if ${DIST}==""
 IGNORE=		DIST not specified
 .endif
+
+SHLIB_VERSION=	0
+VERSION=	1.0
+
+PLIST_SUB+=	VERSION="${VERSION}" \
+		SHLIB_VERSION="${SHLIB_VERSION}"
+
 
 .include <bsd.port.pre.mk>
 
@@ -89,9 +92,6 @@ RUN_DEPEDNS+=	gstreamer1-plugins>=${GST1_VERSION}${GST1_MINIMAL_VERSION}:${PORTS
 CONFIGURE_ARGS+=--with-default-audiosink="${DEFAULT_AUDIOSINK}" \
 		--with-default-audiosrc="${DEFAULT_AUDIOSRC}"
 .endif
-
-PLIST_SUB+=	VERSION="${VERSION}" \
-		SHLIB_VERSION="${SHLIB_VERSION}"
 
 .include "${MASTERDIR}/Makefile.common"
 
@@ -135,8 +135,8 @@ DEFAULT_DVD_DEVICE=/dev/cd0
 
 post-patch:
 .if ${DIST}=="bad"
-	@${REINPLACE_CMD} -e 's|opencv <= 2.3.1|opencv <= 2.3.99|g' \
-		${WRKSRC}/configure
+#	@${REINPLACE_CMD} -e 's|opencv <= 2.3.1|opencv <= 2.3.99|g' \
+#		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|g' \
 		${WRKSRC}/ext/resindvd/resindvdbin.c \
 		${WRKSRC}/ext/resindvd/resindvdsrc.c
@@ -146,6 +146,7 @@ post-patch:
 	${XARGS} -n 10 ${REINPLACE_CMD} -e \
 	's|$$(top_builddir)/gst-libs/gst/tag/libgsttag-@GST_API_VERSION@.la|${LOCALBASE}/lib/libgsttag-$$(GST_API_VERSION).la|; \
 	s|$$(top_builddir)/gst-libs/gst/audio/libgstaudio-@GST_API_VERSION@.la|${LOCALBASE}/lib/libgstaudio-$$(GST_API_VERSION).la|; \
+	s|$$(top_builddir)/gst-libs/gst/pbutils/libgstpbutils-@GST_API_VERSION@.la|${LOCALBASE}/lib/libgstpbutils-$$(GST_API_VERSION).la|; \
 	s|$$(top_builddir)/gst-libs/gst/riff/libgstriff-@GST_API_VERSION@.la|${LOCALBASE}/lib/libgstriff-$$(GST_API_VERSION).la|; \
 	s|$$(top_builddir)/gst-libs/gst/signalprocessor/libgstsignalprocessor-@GST_API_VERSION@.la|${LOCALBASE}/lib/libgstsignalprocessor-$$(GST_API_VERSION).la|; \
 	s|$$(top_builddir)/gst-libs/gst/video/libgstbasevideo-@GST_API_VERSION@.la|${LOCALBASE}/lib/libgstbasevideo-$$(GST_API_VERSION).la|; \
@@ -155,6 +156,7 @@ post-patch:
 	 ${XARGS} -n 10 ${REINPLACE_CMD} -e \
 	 's|$$(top_builddir)/gst-libs/gst/tag/libgsttag-$$(GST_API_VERSION).la|${LOCALBASE}/lib/libgsttag-$$(GST_API_VERSION).la|; \
 	  s|$$(top_builddir)/gst-libs/gst/audio/libgstaudio-$$(GST_API_VERSION).la|${LOCALBASE}/lib/libgstaudio-$$(GST_API_VERSION).la|; \
+	  s|$$(top_builddir)/gst-libs/gst/pbutils/libgstpbutils-$$(GST_API_VERSION).la|${LOCALBASE}/lib/libgstpbutils-$$(GST_API_VERSION).la|; \
 	  s|$$(top_builddir)/gst-libs/gst/riff/libgstriff-$$(GST_API_VERSION).la|${LOCALBASE}/lib/libgstriff-$$(GST_API_VERSION).la|; \
 	  s|$$(top_builddir)/gst-libs/gst/signalprocessor/libgstsignalprocessor-$$(GST_API_VERSION).la|${LOCALBASE}/lib/libgstsignalprocessor-$$(GST_API_VERSION).la|; \
 	  s|$$(top_builddir)/gst-libs/gst/video/libgstbasevideo-$$(GST_API_VERSION).la|${LOCALBASE}/lib/libgstbasevideo-$$(GST_API_VERSION).la|; \
@@ -172,10 +174,13 @@ post-patch:
 USE_GCC=	any
 .endif
 
+pre-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/gstreamer-1.0
+
 post-install:
-.if ${GST_PLUGIN}==base
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgst*.so.0
+.if ${GST_PLUGIN}==base || ${GST_PLUGIN}==bad
+	-@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgst*.so.0
 .endif
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gstreamer-1.0/libgst*.so
+	-@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gstreamer-1.0/libgst*.so
 
 .include <bsd.port.post.mk>

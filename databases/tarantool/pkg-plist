@@ -2,7 +2,7 @@ bin/tarancheck
 bin/tarantar
 bin/tarantool_box
 %%CLIENT%%bin/tarantool
-etc/tarantool.cfg.sample
+%%ETCDIR%%/tarantool.cfg.sample
 include/tarantool/tnt.h
 include/tarantool/tnt_buf.h
 include/tarantool/tnt_call.h
@@ -53,7 +53,10 @@ lib/libtarantoolrpl.a
 %%DOCSDIR%%/README.md
 %%DOCSDIR%%/box-protocol.txt
 %%DOCSDIR%%/LICENSE
-@dirrm %%DOCSDIR%%
+%%DATADIR%%/00000000000000000001.snap
+@dirrmtry %%ETCDIR%%
 @dirrm include/tarantool
-@dirrmtry lib/tarantool/plugins
-@dirrmtry lib/tarantool
+%%PLUGINS%%@dirrm lib/tarantool/plugins
+%%PLUGINS%%@dirrm lib/tarantool
+@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%

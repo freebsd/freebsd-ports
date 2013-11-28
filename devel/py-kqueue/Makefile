@@ -23,7 +23,9 @@ NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,@DEFS@,,' ${WRKSRC}/Makefile.pre.in
+	@${REINPLACE_CMD} -e 's,@DEFS@,,' \
+		-e 's,^PYTHON=\(.*\)python,PYTHON=\1${PYTHON_CMD},' \
+		${WRKSRC}/Makefile.pre.in
 
 do-configure:
 	@(cd ${WRKSRC} && \

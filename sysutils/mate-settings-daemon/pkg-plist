@@ -258,14 +258,7 @@ share/polkit-1/actions/org.mate.settingsdaemon.datetimemechanism.policy
 @dirrmtry share/icons/mate/16x16
 @dirrmtry share/icons/mate
 @dirrmtry share/icons
-@dirrmtry share/glib-2.0/schemas
-@dirrmtry share/glib-2.0
-@dirrmtry share/dbus-1/system-services
-@dirrmtry share/dbus-1/services
-@dirrmtry share/dbus-1
 @dirrm lib/mate-settings-daemon
 @dirrm include/mate-settings-daemon
 @dirrm etc/mate-settings-daemon/xrandr
 @dirrm etc/mate-settings-daemon
-@dirrmtry etc/dbus-1/system.d
-@dirrmtry etc/dbus-1

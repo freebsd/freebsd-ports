@@ -2,6 +2,7 @@ bin/eiciel
 lib/nautilus/extensions-2.0/libeiciel-nautilus.a
 lib/nautilus/extensions-2.0/libeiciel-nautilus.la
 lib/nautilus/extensions-2.0/libeiciel-nautilus.so
+man/man1/eiciel.1.gz
 share/applications/eiciel.desktop
 %%DATADIR%%/img/group-acl-default.png
 %%DATADIR%%/img/group-acl.png
@@ -40,10 +41,10 @@ share/gnome/help/eiciel/C/figures/user-acl-default.png
 share/gnome/help/eiciel/C/figures/user-acl.png
 share/gnome/help/eiciel/C/figures/user-default.png
 share/gnome/help/eiciel/C/figures/user.png
-%%NLS%%share/locale/ca/LC_MESSAGES/eiciel.mo
-%%NLS%%share/locale/de/LC_MESSAGES/eiciel.mo
-%%NLS%%share/locale/es/LC_MESSAGES/eiciel.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/eiciel.mo
+share/locale/ca/LC_MESSAGES/eiciel.mo
+share/locale/de/LC_MESSAGES/eiciel.mo
+share/locale/es/LC_MESSAGES/eiciel.mo
+share/locale/sv/LC_MESSAGES/eiciel.mo
 @dirrm share/gnome/help/eiciel/C/figures
 @dirrm share/gnome/help/eiciel/C
 @dirrm share/gnome/help/eiciel

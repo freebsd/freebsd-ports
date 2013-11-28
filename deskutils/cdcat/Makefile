@@ -31,7 +31,7 @@ BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
 USES=		qmake
 USE_BZIP2=	yes
 USE_QT4=	corelib gui xml \
-		linguist_build moc_build qmake_build uic_build
+		linguist_build moc_build uic_build
 INSTALLS_ICONS=	yes
 
 QMAKE_ARGS+=	INCLUDEPATH+="${L7Z_WRKSRC}/Lib7Zip" \
@@ -44,8 +44,7 @@ QMAKE_ARGS+=	INCLUDEPATH+="${L7Z_WRKSRC}/Lib7Zip" \
 		DEFINES+="MEDIAINFO_STATIC" \
 		DEFINES+="MEDIAINFO_UNICODE" \
 		DEFINES+="USE_LIBEXIF"
-QMAKE_PRO=	${PORTNAME}.pro
-LRELEASE=	${QT_PREFIX}/bin/lrelease-qt4
+QMAKE_SOURCE_PATH=	${BUILD_WRKSRC}/cdcat.pro
 
 # spoof tinderbox: build deps for multimedia/mediainfo
 USE_AUTOTOOLS=	autoconf:env automake:env libtool:env
@@ -77,7 +76,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		'/LIBS/s|^|#|' ${BUILD_WRKSRC}/${QMAKE_PRO}
+		'/LIBS/s|^|#|' ${BUILD_WRKSRC}/cdcat.pro
 	@${REINPLACE_CMD} -e \
 		's|/dev/sr0|/dev/cd0|' ${BUILD_WRKSRC}/config.cpp
 	@${REINPLACE_CMD} -e \
@@ -88,7 +87,7 @@ pre-configure:
 		CC="${CC}" CFLAGS="${CFLAGS}" \
 		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 		P7ZIP_SOURCE_DIR="${P7Z_WRKSRC}"
-	@${LRELEASE} ${BUILD_WRKSRC}/${QMAKE_PRO}
+	@${LRELEASE} ${BUILD_WRKSRC}/cdcat.pro
 
 pre-build:
 	@cd ${L7Z_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} \

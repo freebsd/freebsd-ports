@@ -1,6 +1,16 @@
 --- ./docs/conf/httpd.conf.in.orig	2012-11-08 04:05:38.000000000 +0100
 +++ ./docs/conf/httpd.conf.in	2013-10-26 19:29:20.000000000 +0200
-@@ -74,8 +74,8 @@
+@@ -65,6 +65,9 @@
+ #
+ @@LoadModule@@
+ 
++# Third party modules
++IncludeOptional @rel_sysconfdir@/modules.d/[0-9][0-9][0-9]_*.conf
++ 
+ <IfModule unixd_module>
+ #
+ # If you wish httpd to run as a different user or group, you must run
+@@ -74,8 +77,8 @@
  # It is usually good practice to create a dedicated user and group for
  # running httpd, as with most system services.
  #
@@ -11,7 +21,7 @@
  
  </IfModule>
  
-@@ -181,7 +181,7 @@
+@@ -181,7 +184,7 @@
  # logged here.  If you *do* define an error logfile for a <VirtualHost>
  # container, that host's errors will be logged there and not here.
  #
@@ -20,7 +30,7 @@
  
  #
  # LogLevel: Control the number of messages logged to the error_log.
-@@ -210,13 +210,13 @@
+@@ -210,13 +213,13 @@
      # define per-<VirtualHost> access logfiles, transactions will be
      # logged therein and *not* in this file.
      #
@@ -36,7 +46,7 @@
  </IfModule>
  
  <IfModule alias_module>
-@@ -418,3 +418,5 @@
+@@ -418,3 +421,5 @@
  #RequestHeader unset DNT env=bad_DNT
  #</IfModule>
  

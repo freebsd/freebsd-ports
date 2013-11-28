@@ -10,7 +10,7 @@
 name="crashplan"
 rcvar=${name}_enable
 
-command="%%PREFIX%%/share/crashplan/bin/CrashPlanEngine"
+command="/usr/bin/cpuset -l 0 %%PREFIX%%/share/crashplan/bin/CrashPlanEngine"
 
 pidfile="/var/run/CrashPlanEngine.pid"
 

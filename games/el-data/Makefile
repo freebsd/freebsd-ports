@@ -16,6 +16,9 @@ DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Eternal Lands data, sound, and music files
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-12-22
+
 USE_ZIP=	yes
 NO_PACKAGE=	Package will be 140MB, set FORCE_PACKAGE if you really want it
 NO_BUILD=	yes

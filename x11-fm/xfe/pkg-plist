@@ -3,29 +3,34 @@ bin/xfi
 bin/xfp
 bin/xfv
 bin/xfw
-share/locale/bs/LC_MESSAGES/xfe.mo
-share/locale/ca/LC_MESSAGES/xfe.mo
-share/locale/cs/LC_MESSAGES/xfe.mo
-share/locale/da/LC_MESSAGES/xfe.mo
-share/locale/de/LC_MESSAGES/xfe.mo
-share/locale/el/LC_MESSAGES/xfe.mo
-share/locale/es/LC_MESSAGES/xfe.mo
-share/locale/es_AR/LC_MESSAGES/xfe.mo
-share/locale/es_CO/LC_MESSAGES/xfe.mo
-share/locale/fr/LC_MESSAGES/xfe.mo
-share/locale/hu/LC_MESSAGES/xfe.mo
-share/locale/it/LC_MESSAGES/xfe.mo
-share/locale/ja/LC_MESSAGES/xfe.mo
-share/locale/nl/LC_MESSAGES/xfe.mo
-share/locale/no/LC_MESSAGES/xfe.mo
-share/locale/pl/LC_MESSAGES/xfe.mo
-share/locale/pt_BR/LC_MESSAGES/xfe.mo
-share/locale/pt_PT/LC_MESSAGES/xfe.mo
-share/locale/ru/LC_MESSAGES/xfe.mo
-share/locale/sv/LC_MESSAGES/xfe.mo
-share/locale/tr/LC_MESSAGES/xfe.mo
-share/locale/zh_CN/LC_MESSAGES/xfe.mo
-share/locale/zh_TW/LC_MESSAGES/xfe.mo
+man/man1/xfe.1.gz
+man/man1/xfi.1.gz
+man/man1/xfp.1.gz
+man/man1/xfv.1.gz
+man/man1/xfw.1.gz
+%%NLS%%share/locale/bs/LC_MESSAGES/xfe.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/xfe.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/xfe.mo
+%%NLS%%share/locale/da/LC_MESSAGES/xfe.mo
+%%NLS%%share/locale/de/LC_MESSAGES/xfe.mo
+%%NLS%%share/locale/el/LC_MESSAGES/xfe.mo
+%%NLS%%share/locale/es/LC_MESSAGES/xfe.mo
+%%NLS%%share/locale/es_AR/LC_MESSAGES/xfe.mo
+%%NLS%%share/locale/es_CO/LC_MESSAGES/xfe.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/xfe.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/xfe.mo
+%%NLS%%share/locale/it/LC_MESSAGES/xfe.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/xfe.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/xfe.mo
+%%NLS%%share/locale/no/LC_MESSAGES/xfe.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/xfe.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/xfe.mo
+%%NLS%%share/locale/pt_PT/LC_MESSAGES/xfe.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/xfe.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/xfe.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/xfe.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/xfe.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/xfe.mo
 share/pixmaps/xfe.png
 share/pixmaps/xfi.png
 share/pixmaps/xfp.png
@@ -2834,7 +2839,7 @@ share/applications/xfp.desktop
 @dirrm %%DATADIR%%/icons/blue-theme
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrmtry share/locale/es_CO/LC_MESSAGES
-@dirrmtry share/locale/es_CO
-@dirrmtry share/locale/es_AR/LC_MESSAGES
-@dirrmtry share/locale/es_AR
+%%NLS%%@dirrmtry share/locale/es_CO/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/es_CO
+%%NLS%%@dirrmtry share/locale/es_AR/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/es_AR

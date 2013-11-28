@@ -27,7 +27,8 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R
 
 PKGNAMEPREFIX?=	R-cran-
 
-R_MOD_DIR?=	lib/R/library/${PORTNAME}
+R_LIB_DIR=	lib/R/library
+R_MOD_DIR?=	${R_LIB_DIR}/${PORTNAME}
 PLIST_SUB+=	R_MOD_DIR=${R_MOD_DIR}
 WRKSRC?=	${WRKDIR}/${PORTNAME}
 
@@ -41,6 +42,12 @@ R_POSTCMD_CHECK_OPTIONS?=	--timings
 R_POSTCMD_CHECK_OPTIONS+=	--no-manual --no-rebuild-vignettes
 .endif
 
+.if defined(NO_STAGE)
+check-makevars::
+	@${ECHO_MSG} "Makefile error: USE_R_MOD cannot be used with NO_STAGE"
+	@${FALSE}
+.endif
+
 regression-test: build
 	@cd ${WRKDIR} ; ${SETENV} ${MAKE_ENV} _R_CHECK_FORCE_SUGGESTS_=FALSE \
 	${R_COMMAND} ${R_PRECMD_CHECK_OPTIONS} CMD check \
@@ -48,6 +55,7 @@ regression-test: build
 .endif
 
 .if !target(do-install)
+R_POSTCMD_INSTALL_OPTIONS+=	-l ${STAGEDIR}${PREFIX}/${R_LIB_DIR}
 .if defined(NOPORTDATA)
 R_POSTCMD_INSTALL_OPTIONS+=	--no-data --no-demo
 .else
@@ -59,6 +67,7 @@ R_POSTCMD_INSTALL_OPTIONS+=	--no-docs --no-html
 .endif
 
 do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${R_LIB_DIR}
 	@cd ${WRKDIR} ; ${SETENV} ${MAKE_ENV} ${R_COMMAND} \
 	${R_PRECMD_INSTALL_OPTIONS} CMD INSTALL \
 	${R_POSTCMD_INSTALL_OPTIONS} ${PORTNAME}
@@ -67,10 +76,10 @@ do-install:
 .if defined(R_MOD_AUTOPLIST)
 .if !target(post-install-script)
 post-install-script:
-	@${FIND} -ds ${PREFIX}/${R_MOD_DIR} \( -type f -or -type l \) -print | \
-		${SED} -E -e 's,^${PREFIX}/?,,' >> ${TMPPLIST}
-	@${FIND} -ds ${PREFIX}/${R_MOD_DIR} -type d -print | ${SED} -E -e \
-		's,^${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
+	@${FIND} -ds ${STAGEDIR}${PREFIX}/${R_MOD_DIR} \( -type f -or -type l \) -print | \
+		${SED} -E -e 's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST}
+	@${FIND} -ds ${STAGEDIR}${PREFIX}/${R_MOD_DIR} -type d -print | ${SED} -E -e \
+		's,^${STAGEDIR}${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
 .endif
 .endif
 

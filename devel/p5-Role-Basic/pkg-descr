@@ -1,0 +1,14 @@
+Sometimes you want roles. You're not sure about Moose, Mouse, Moo and
+what was that damned Squirrel thing anyway? Then there's Class::Trait,
+but it has a funky syntax and the maintainer's deprecated it in favor
+of Moose::Role and you really don't care that it handles overloading,
+instance application or has a workaround for the SUPER:: bug. You
+think a meta-object protocol sounds nifty, but you don't understand
+it. Maybe you're not sure you want the syntactic sugar for object
+declaration. Maybe you've convinced your colleagues that roles are a
+good idea but they're leery of dragging in Moose (your author has had
+this happen more than once and heard of others making the same
+complaint). Sometimes you just want good old-fashioned roles which let
+you separate class responsibility from code reuse.
+
+WWW: http://search.cpan.org/dist/Role-Basic/

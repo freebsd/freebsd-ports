@@ -6,12 +6,12 @@ PORTVERSION=	0.8.6
 PORTREVISION=	7
 CATEGORIES=	math
 MASTER_SITES=	SF/u-m-p/u-m-p/${PORTVERSION}
+PKGNAMESUFFIX=	-math
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A graphical, easy to use math program
 
 CONFLICTS=	ump-1.[0-9]*
-LATEST_LINK=	math-ump
 
 USES=		gmake pkgconfig
 USE_BZIP2=	yes

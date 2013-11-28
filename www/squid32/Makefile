@@ -101,6 +101,8 @@ WCCP_DESC=	Enable Web Cache Coordination Protocol
 OPTIONS_DEFAULT=	AUTH_KERB AUTH_NIS FS_AUFS HTCP IDENT KQUEUE \
 			SNMP WCCP WCCPV2
 
+ECAP_USES=		pkgconfig:build
+
 etc_files=	squid/cachemgr.conf.default \
 		squid/errorpage.css.default \
 		squid/mib.txt \
@@ -423,7 +425,6 @@ CONFIGURE_ARGS+=	--enable-ecap
 LIB_DEPENDS+=	ecap:${PORTSDIR}/www/libecap
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES+=		pkgconfig:build
 .else
 CONFIGURE_ARGS+=	--disable-ecap
 .endif

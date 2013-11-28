@@ -42,7 +42,7 @@ USE_GCC=4.2+
 
 post-patch:
 	${CP} ${WRKSRC}/dist/tarball_files/configure ${WRKSRC}/configure
-	${REINPLACE_CMD} -E -e 's|(.*"CONFIG-=debug")|\1 ${QMAKEFLAGS}|g' \
+	${REINPLACE_CMD} -E -e 's|(.*"CONFIG-=debug")|\1 ${QMAKE_ARGS}|g' \
 			-e 's|function header|header()|g' \
 			-e 's|function middle|middle()|g' \
 			-e 's|-pthread|-pthread -R/usr/local/share/last.fm|g' \
@@ -61,7 +61,7 @@ post-patch:
 
 post-build:
 	cd ${WRKSRC}/src/output/RtAudio && \
-	${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS} && make
+	${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKE_ARGS} && make
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/last.fm.sh ${PREFIX}/bin/last.fm

@@ -1,5 +1,4 @@
 bin/tidy_changelog
-man/man1/tidy_changelog.1.gz
 %%SITE_PERL%%/CPAN/Changes/Release.pm
 %%SITE_PERL%%/CPAN/Changes/Spec.pod
 %%SITE_PERL%%/CPAN/Changes.pm
@@ -9,6 +8,7 @@ man/man1/tidy_changelog.1.gz
 %%PERL5_MAN3%%/CPAN::Changes::Release.3.gz
 %%PERL5_MAN3%%/CPAN::Changes::Spec.3.gz
 %%PERL5_MAN3%%/Test::CPAN::Changes.3.gz
+man/man1/tidy_changelog.1.gz
 @dirrmtry %%SITE_PERL%%/CPAN/Changes
 @dirrmtry %%SITE_PERL%%/CPAN
 @dirrmtry %%SITE_PERL%%/Test/CPAN

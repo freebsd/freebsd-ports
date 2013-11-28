@@ -610,12 +610,7 @@ share/omf/mate-applet-fish/mate-applet-fish-zh_CN.omf
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrmtry share/glib-2.0/schemas
-@dirrmtry share/glib-2.0
 @dirrm share/doc/mate-panel-applet
-@dirrmtry share/dbus-1/services
-@dirrmtry share/dbus-1
-@dirrmtry share/applications
 @dirrmtry lib/mate-panel/modules
 @dirrmtry lib/mate-panel
 @dirrm include/mate-panel-4.0/libmate-panel-applet

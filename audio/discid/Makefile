@@ -13,7 +13,6 @@ COMMENT=	Identify audio cd in your drive
 
 WRKSRC=		${WRKDIR}/freebsd
 
-NO_STAGE=	yes
 PLIST_FILES=	bin/discid
 
 post-patch:
@@ -23,6 +22,6 @@ do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c
 
 do-install:
-	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin
+	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

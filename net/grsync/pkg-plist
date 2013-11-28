@@ -1,5 +1,7 @@
 bin/grsync
 bin/grsync-batch
+man/man1/grsync-batch.1.gz
+man/man1/grsync.1.gz
 %%DATADIR%%/grsync.glade
 share/applications/grsync.desktop
 share/icons/hicolor/48x48/mimetypes/application-x-grsync-session.png

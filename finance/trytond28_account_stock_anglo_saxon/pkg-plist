@@ -1,0 +1,49 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/account.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/invoice.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/invoice.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/invoice.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/locale/bg_BG.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/locale/ca_ES.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/locale/cs_CZ.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/locale/de_DE.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/locale/es_AR.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/locale/es_CO.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/locale/es_ES.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/locale/fr_FR.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/locale/nl_NL.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/locale/ru_RU.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/product.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/product.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/product.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/product.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/stock.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/stock.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/stock.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/tests/scenario_account_stock_anglo_saxon.rst
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/tests/test_account_stock_anglo_saxon.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/tests/test_account_stock_anglo_saxon.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/tests/test_account_stock_anglo_saxon.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/tryton.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/view/category_form.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/view/template_form.xml
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/view
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon/locale
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/account_stock_anglo_saxon
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

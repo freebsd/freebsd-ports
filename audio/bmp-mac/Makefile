@@ -12,10 +12,9 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monkey's Audio Codec non-win32 port
 
-LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player \
-		mac.2:${PORTSDIR}/audio/mac
+LIB_DEPENDS=	libbeep.so:${PORTSDIR}/multimedia/beep-media-player \
+		libmac.so:${PORTSDIR}/audio/mac
 
-NO_STAGE=	yes
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf libtool
@@ -29,7 +28,7 @@ post-patch:
 		's|-D.*_DISABLE_DEPRECATED||g'
 
 do-install:
-	@${MKDIR} ${PREFIX}/${PLUGDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/src/.libs/${PLUGFILE} ${PREFIX}/${PLUGDIR}/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${PLUGDIR}
+	${INSTALL_LIB} ${WRKSRC}/src/.libs/${PLUGFILE} ${STAGEDIR}${PREFIX}/${PLUGDIR}/
 
 .include <bsd.port.mk>

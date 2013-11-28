@@ -12,13 +12,14 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	GUPnP wrapper extension
 
+LICENSE=	PHP301
+
 LIB_DEPENDS=	libgupnp-1.0.so:${PORTSDIR}/net/gupnp
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
 USES=		pkgconfig
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's| -ldl||g' ${WRKSRC}/config.m4
 

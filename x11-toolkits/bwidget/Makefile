@@ -2,37 +2,37 @@
 # $FreeBSD$
 
 PORTNAME=	bwidget
-PORTVERSION=	1.9.2
+PORTVERSION=	1.9.7
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/tcllib/BWidget/${PORTVERSION}
-DISTNAME=	BWidget-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A high-level widget set for Tcl/Tk
+MAINTAINER=	tcltk@FreeBSD.org
+COMMENT=	High-level widget set for Tcl/Tk
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USE_TK_RUN=	84+
+OPTIONS_DEFINE=	DOCS
 
+USES=		tk:run
+USE_ZIP=	yes
 NO_BUILD=	yes
-
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 do-install:
-	@$(MKDIR) ${PREFIX}/lib/bwidget
-	${INSTALL_DATA} ${WRKSRC}/*.tcl ${PREFIX}/lib/bwidget
-	${TAR} -C ${WRKSRC} -cf - images lang | \
-		${TAR} -v -C ${PREFIX}/lib/bwidget --unlink -xf -
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/bwidget
-.if !defined(NOPORTDOCS)
-	@$(MKDIR) ${DOCSDIR}/BWman
-	${INSTALL_DATA} ${WRKSRC}/BWman/*.html ${DOCSDIR}/BWman
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/bwidget/images
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/bwidget/lang
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/bwidget
+	${INSTALL_DATA} ${WRKSRC}/*.tcl ${STAGEDIR}${PREFIX}/lib/bwidget
+	cd ${WRKSRC}/images && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/lib/bwidget/images
+	cd ${WRKSRC}/lang && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/lib/bwidget/lang
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/BWman
+	${INSTALL_DATA} ${WRKSRC}/BWman/*.html ${STAGEDIR}${DOCSDIR}/BWman
 . for FILE in CHANGES.txt ChangeLog README.txt
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}/${FILE}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}/${FILE}
 . endfor
 .endif
 

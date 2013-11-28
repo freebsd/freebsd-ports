@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	bro
-PORTVERSION=	2.1
-PORTREVISION=	3
+PORTVERSION=	2.2
 CATEGORIES=	security
-MASTER_SITES=	http://www.bro-ids.org/downloads/release/
+MASTER_SITES=	http://www.bro.org/downloads/release/
 
 MAINTAINER=	leres@ee.lbl.gov
 COMMENT=	System for detecting network intruders in real-time
+
+LICENSE=	BSD
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
 		swig:${PORTSDIR}/devel/swig13
@@ -23,6 +24,7 @@ NO_MTREE=	yes
 .if defined(BRO_PREFIX)
 PREFIX=${BRO_PREFIX}
 PLIST_SUB+=	CLEANUP_PREFIX=""
+NEED_ROOT=	yes
 .else
 PLIST_SUB+=	CLEANUP_PREFIX="@comment "
 .endif
@@ -50,7 +52,13 @@ PERFTOOLS_DESC=	Use Perftools to improve memory & CPU usage
 
 OPTIONS_EXCLUDE=NLS DOCS
 
-NO_STAGE=	yes
+.include <bsd.port.pre.mk>
+
+# Bro 2.2 requires libmagic >= 5.04
+.if ${OSVERSION} < 901000
+LIB_DEPENDS+=	magic:${PORTSDIR}/sysutils/file
+.endif
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBROCCOLI}
@@ -100,17 +108,17 @@ BUILD_DEPENDS+=	ipsumdump:${PORTSDIR}/net/ipsumdump
 RUN_DEPENDS+=	ipsumdump:${PORTSDIR}/net/ipsumdump
 .endif
 
-post-install:
 .if ${PORT_OPTIONS:MBROCTL}
-	@${MKDIR} ${PREFIX}/logs
-.for i in broctl.cfg networks.cfg node.cfg
-	@${MKDIR} ${PREFIX}/etc
-	@if [ ! -f ${PREFIX}/etc/${i} ]; then \
-		${CP} ${PREFIX}/etc/${i}.sample ${PREFIX}/etc/${i}; \
-	fi
-.endfor
-	@${PREFIX}/bin/broctl install
+post-stage::
+.if defined(BRO_PREFIX)
+	@${MKDIR} ${PREFIX}
 .endif
-	@${CAT} ${PKGMESSAGE}
+.for F in broctl.cfg
+	@${INSTALL_SCRIPT} ${INSTALL_WRKSRC}/aux/broctl/etc/${F} ${STAGEDIR}${PREFIX}/etc/${F}.example
+.endfor
+.for F in networks.cfg node.cfg
+	@${INSTALL_SCRIPT} ${WRKSRC}/aux/broctl/etc/${F} ${STAGEDIR}${PREFIX}/etc/${F}.example
+.endfor
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

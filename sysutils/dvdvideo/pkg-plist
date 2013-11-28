@@ -1,41 +1,43 @@
 bin/dvdvideo-backup-image
-%%PYTHON_SITELIBDIR%%/dvdvideo/ifo.py
-%%PYTHON_SITELIBDIR%%/dvdvideo/libdvdcss.pyc
-%%PYTHON_SITELIBDIR%%/dvdvideo/vob.pyc
-%%PYTHON_SITELIBDIR%%/dvdvideo/volume.py
-%%PYTHON_SITELIBDIR%%/dvdvideo/volume.pyc
-%%PYTHON_SITELIBDIR%%/dvdvideo/volume.pyo
-%%PYTHON_SITELIBDIR%%/dvdvideo/vob.py
-%%PYTHON_SITELIBDIR%%/dvdvideo/utils.pyc
-%%PYTHON_SITELIBDIR%%/dvdvideo/libdvdcss.py
-%%PYTHON_SITELIBDIR%%/dvdvideo/media.pyc
-%%PYTHON_SITELIBDIR%%/dvdvideo/__init__.pyo
-%%PYTHON_SITELIBDIR%%/dvdvideo/ifo.pyc
-%%PYTHON_SITELIBDIR%%/dvdvideo/udf/general.py
-%%PYTHON_SITELIBDIR%%/dvdvideo/udf/__init__.pyc
-%%PYTHON_SITELIBDIR%%/dvdvideo/udf/media.pyo
-%%PYTHON_SITELIBDIR%%/dvdvideo/udf/volume.pyo
-%%PYTHON_SITELIBDIR%%/dvdvideo/udf/filesystem.pyc
-%%PYTHON_SITELIBDIR%%/dvdvideo/udf/__init__.py
-%%PYTHON_SITELIBDIR%%/dvdvideo/udf/general.pyc
-%%PYTHON_SITELIBDIR%%/dvdvideo/udf/filesystem.py
-%%PYTHON_SITELIBDIR%%/dvdvideo/udf/__init__.pyo
-%%PYTHON_SITELIBDIR%%/dvdvideo/udf/media.pyc
-%%PYTHON_SITELIBDIR%%/dvdvideo/udf/general.pyo
-%%PYTHON_SITELIBDIR%%/dvdvideo/udf/volume.pyc
-%%PYTHON_SITELIBDIR%%/dvdvideo/udf/filesystem.pyo
-%%PYTHON_SITELIBDIR%%/dvdvideo/udf/volume.py
-%%PYTHON_SITELIBDIR%%/dvdvideo/udf/media.py
-%%PYTHON_SITELIBDIR%%/dvdvideo/libdvdcss.pyo
-%%PYTHON_SITELIBDIR%%/dvdvideo/vob.pyo
 %%PYTHON_SITELIBDIR%%/dvdvideo/__init__.py
+%%PYTHON_SITELIBDIR%%/dvdvideo/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/dvdvideo/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyo
+%%PYTHON_SITELIBDIR%%/dvdvideo/__pycache__/ifo.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/dvdvideo/__pycache__/ifo.cpython-%%PYTHON_SUFFIX%%.pyo
+%%PYTHON_SITELIBDIR%%/dvdvideo/__pycache__/libdvdcss.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/dvdvideo/__pycache__/libdvdcss.cpython-%%PYTHON_SUFFIX%%.pyo
+%%PYTHON_SITELIBDIR%%/dvdvideo/__pycache__/media.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/dvdvideo/__pycache__/media.cpython-%%PYTHON_SUFFIX%%.pyo
+%%PYTHON_SITELIBDIR%%/dvdvideo/__pycache__/utils.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/dvdvideo/__pycache__/utils.cpython-%%PYTHON_SUFFIX%%.pyo
+%%PYTHON_SITELIBDIR%%/dvdvideo/__pycache__/vob.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/dvdvideo/__pycache__/vob.cpython-%%PYTHON_SUFFIX%%.pyo
+%%PYTHON_SITELIBDIR%%/dvdvideo/__pycache__/volume.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/dvdvideo/__pycache__/volume.cpython-%%PYTHON_SUFFIX%%.pyo
+%%PYTHON_SITELIBDIR%%/dvdvideo/ifo.py
+%%PYTHON_SITELIBDIR%%/dvdvideo/libdvdcss.py
 %%PYTHON_SITELIBDIR%%/dvdvideo/media.py
+%%PYTHON_SITELIBDIR%%/dvdvideo/udf/__init__.py
+%%PYTHON_SITELIBDIR%%/dvdvideo/udf/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/dvdvideo/udf/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyo
+%%PYTHON_SITELIBDIR%%/dvdvideo/udf/__pycache__/filesystem.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/dvdvideo/udf/__pycache__/filesystem.cpython-%%PYTHON_SUFFIX%%.pyo
+%%PYTHON_SITELIBDIR%%/dvdvideo/udf/__pycache__/general.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/dvdvideo/udf/__pycache__/general.cpython-%%PYTHON_SUFFIX%%.pyo
+%%PYTHON_SITELIBDIR%%/dvdvideo/udf/__pycache__/media.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/dvdvideo/udf/__pycache__/media.cpython-%%PYTHON_SUFFIX%%.pyo
+%%PYTHON_SITELIBDIR%%/dvdvideo/udf/__pycache__/volume.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/dvdvideo/udf/__pycache__/volume.cpython-%%PYTHON_SUFFIX%%.pyo
+%%PYTHON_SITELIBDIR%%/dvdvideo/udf/filesystem.py
+%%PYTHON_SITELIBDIR%%/dvdvideo/udf/general.py
+%%PYTHON_SITELIBDIR%%/dvdvideo/udf/media.py
+%%PYTHON_SITELIBDIR%%/dvdvideo/udf/volume.py
 %%PYTHON_SITELIBDIR%%/dvdvideo/utils.py
-%%PYTHON_SITELIBDIR%%/dvdvideo/utils.pyo
-%%PYTHON_SITELIBDIR%%/dvdvideo/__init__.pyc
-%%PYTHON_SITELIBDIR%%/dvdvideo/media.pyo
-%%PYTHON_SITELIBDIR%%/dvdvideo/ifo.pyo
+%%PYTHON_SITELIBDIR%%/dvdvideo/vob.py
+%%PYTHON_SITELIBDIR%%/dvdvideo/volume.py
+@dirrm %%PYTHON_SITELIBDIR%%/dvdvideo/udf/__pycache__
 @dirrm %%PYTHON_SITELIBDIR%%/dvdvideo/udf
+@dirrm %%PYTHON_SITELIBDIR%%/dvdvideo/__pycache__
 @dirrm %%PYTHON_SITELIBDIR%%/dvdvideo
 @dirrmtry %%PYTHON_SITELIBDIR%%
 @dirrmtry %%PYTHON_LIBDIR%%

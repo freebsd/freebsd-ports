@@ -177,5 +177,4 @@ share/mozo/mozo.ui
 @dirrmtry share/locale/as
 @dirrmtry share/locale/an/LC_MESSAGES
 @dirrmtry share/locale/an
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/Mozo

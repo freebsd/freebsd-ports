@@ -1,0 +1,58 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/caldav.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/caldav.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/caldav.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/locale/bg_BG.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/locale/ca_ES.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/locale/cs_CZ.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/locale/de_DE.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/locale/es_AR.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/locale/es_CO.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/locale/es_ES.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/locale/fr_FR.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/locale/nl_NL.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/locale/ru_RU.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/tests/test_calendar_todo.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/tests/test_calendar_todo.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/tests/test_calendar_todo.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/todo.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/todo.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/todo.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/todo.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/tryton.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/view/attendee_form.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/view/attendee_tree.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/view/exdate_form.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/view/exdate_tree.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/view/exrule_form.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/view/exrule_tree.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/view/rdate_form.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/view/rdate_tree.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/view/rrule_form.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/view/rrule_tree.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/view/todo_form.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/view/todo_tree.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/view/todo_tree_occurence.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/webdav.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/webdav.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/webdav.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/view
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo/locale
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/calendar_todo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

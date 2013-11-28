@@ -9,7 +9,6 @@
     SUBDIR += 3dpong
     SUBDIR += 4stattack
     SUBDIR += 54321
-    SUBDIR += BillardGL
     SUBDIR += CaribbeanStud
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
@@ -97,6 +96,7 @@
     SUBDIR += bombz
     SUBDIR += bomns
     SUBDIR += boswars
+    SUBDIR += bouncy
     SUBDIR += bovo
     SUBDIR += braincurses
     SUBDIR += brainparty
@@ -227,6 +227,7 @@
     SUBDIR += endgame-singularity-music
     SUBDIR += enigma
     SUBDIR += ensemblist
+    SUBDIR += entombed
     SUBDIR += enygma
     SUBDIR += epiar
     SUBDIR += etracer
@@ -740,6 +741,7 @@
     SUBDIR += pokerth
     SUBDIR += polypuzzle
     SUBDIR += pongix
+    SUBDIR += popstar
     SUBDIR += pouetchess
     SUBDIR += powder
     SUBDIR += powermanga

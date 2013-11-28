@@ -1,0 +1,15 @@
+POST-INSTALL CONFIGURATION FOR TRYTOND
+==================================================
+
+Before you start the trytond server, you should:
+
+1) Install a PostgreSQL server.
+
+2) Use the configuration file %%PREFIX%%/etc/trytond.conf
+to customize the daemon.
+
+For more information, see the DOCUMENTATION:
+
+   http://www.tryton.org/documentation.html
+
+====================================================

@@ -452,8 +452,6 @@ share/omf/eom/eom-zh_TW.omf
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrmtry share/glib-2.0/schemas
-@dirrmtry share/glib-2.0
 @dirrm share/mate-image-viewer/pixmaps
 @dirrm share/mate-image-viewer/icons/hicolor/scalable/actions
 @dirrm share/mate-image-viewer/icons/hicolor/scalable
@@ -470,7 +468,6 @@ share/omf/eom/eom-zh_TW.omf
 @dirrm share/mate-image-viewer/icons/hicolor
 @dirrm share/mate-image-viewer/icons
 @dirrm share/mate-image-viewer
-@dirrmtry share/applications
 @dirrm lib/eom/plugins
 @dirrm lib/eom
 @dirrm include/eom-2.20/eom

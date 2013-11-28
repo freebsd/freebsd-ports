@@ -59,6 +59,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|g' \
 		${WRKSRC}/${f}
 .endfor
+	@${REINPLACE_CMD} -e 's|qmake-qt4|${QMAKE} ${QMAKE_ARGS}|' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-lboost_program_options|-lboost_program_options -lGLU|' \
 		${WRKSRC}/fracplanet.pro
 

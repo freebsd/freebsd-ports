@@ -2,7 +2,7 @@
 
 PORTNAME=	python31
 PORTVERSION=	3.1.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -11,26 +11,28 @@ DISTFILES=	${PYTHON_DISTFILE}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Interpreted object-oriented programming language
 
-DEPRECATED=	This port will reach it's EoL upstream soon, please migrate to lang/python33
+DEPRECATED=	Python 3.1 will be end-of-life soon, please migrate to lang/python33
 EXPIRATION_DATE=2014-06-01
 
 DIST_SUBDIR=	python
-WRKSRC=		${PYTHON_WRKSRC}/portbld.static
-PATCH_WRKSRC=	${PYTHON_WRKSRC}
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../configure # must be relative
-CONFIGURE_ENV=	OPT="" SVNVERSION="echo freebsd"
+CONFIGURE_ENV=	OPT="" SVNVERSION="echo freebsd" ac_cv_opt_olimit_ok=no
 MAKE_ENV=	VPATH="${PYTHON_WRKSRC}"
-USE_LDCONFIG=	yes
 INSTALL_TARGET=	altinstall
 MAN1=		${PYTHON_VERSION}.1
 
+USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_XZ=		yes
+
 PYTHON_VERSION=	python3.1
 PYTHON_NO_DEPENDS=	yes
 
+WRKSRC=		${PYTHON_WRKSRC}/portbld.static
 SHARED_WRKSRC=	${PYTHON_WRKSRC}/portbld.shared
+PATCH_WRKSRC=	${PYTHON_WRKSRC}
+
 PLIST=		${WRKDIR}/PLIST
 PLIST_TEMPLATE?=${PKGDIR}/pkg-plist
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \

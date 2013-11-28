@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	portsreinstall
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.4
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	SFJP/${PORTNAME}/59240/ \
+MASTER_SITES=	SFJP/${PORTNAME}/59894/ \
 		http://www.mwghennndo.com/software/${PORTNAME}/
 
 MAINTAINER=	sakaue.mamoru@samurai.mwghennn.net
@@ -13,9 +13,8 @@ COMMENT=	Ports upgrading utility for massive forced reinstall
 LICENSE=	BSD
 
 MAN8=		${PORTNAME}.8
-MANCOMPRESSED=	yes
+MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
-NO_STAGE=	yes
 post-install:
 	@${ECHO_MSG} "====================================================================="
 	@${ECHO_MSG} "This software invokes some installed files of portupgrade(1)"

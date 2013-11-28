@@ -16,15 +16,13 @@ COMMENT=	SVG themeable style for Qt 4 and KDE
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_QT4=	corelib gui svg qmake_build rcc_build uic_build moc_build
+USES=		qmake
+USE_QT4=	corelib gui svg rcc_build uic_build moc_build
 
 WRKSRC=		${WRKDIR}/QuantumStyle
 
 PLIST_FILES=	${QT_PLUGINDIR_REL}/styles/libquantumstyle.so
 PLIST_DIRSTRY=	${QT_PLUGINDIR_REL}/styles
-
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${QT_PLUGINDIR_REL}/styles/

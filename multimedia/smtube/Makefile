@@ -15,7 +15,7 @@ USE_BZIP2=	yes
 USES=		gmake
 ALL_TARGET=	#empty
 USE_QT4=	linguist_build moc_build qmake_build rcc_build uic_build
-QMAKEFLAGS+=	QMAKE_CXXFLAGS_RELEASE=""
+QMAKE_ARGS+=	QMAKE_CXXFLAGS_RELEASE=""
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	*
@@ -23,8 +23,8 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|qmake|${QMAKE} ${QMAKEFLAGS}|' \
-		-e 's|lrelease|${QT_PREFIX}/bin/lrelease-qt4|g' \
+	@${REINPLACE_CMD} -e 's|qmake|${QMAKE} ${QMAKE_ARGS}|' \
+		-e 's|lrelease|${LRELEASE}|g' \
 		-e 's|PREFIX=/usr/local|PREFIX=${PREFIX}|g' \
 		-e 's|$$(PREFIX)/share/smtube|${DATADIR}|g' \
 		-e 's|$$(PREFIX)/share/doc/smtube|${DOCSDIR}|' \

@@ -22,8 +22,12 @@ HAVE_CONFIGURE=	yes
 PORTDOCS=	COPYING README HISTORY
 WRKSRC=		${WRKDIR}/${PLUGIN}
 CONFIGURE_ARGS+=	--disable-vidix --disable-fb --disable-dfb --disable-cle266 --disable-alsa #--disable-yaepg
+BROKEN=		Broken after ffmpeg update (not sure it ever worked)
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2014-01-31
 
 NO_STAGE=	yes
+
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin

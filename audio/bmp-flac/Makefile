@@ -12,12 +12,11 @@ DISTNAME=	${PORTNAME}-CVS-${PORTVERSION}-with-bmp-plugin
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FLAC input plugin for beep-media-player
 
-LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player \
-		FLAC:${PORTSDIR}/audio/flac
+LIB_DEPENDS=	libbeep.so:${PORTSDIR}/multimedia/beep-media-player \
+		libFLAC.so:${PORTSDIR}/audio/flac
 
 PLIST_FILES=	lib/bmp/Input/libbmp-flac.so
 
-NO_STAGE=	yes
 USES=		iconv pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -38,8 +37,8 @@ post-configure:
 
 # This is to avoid libtool running ldconfig -m ${LOCALBASE}/lib/bmp/Input
 do-install:
-	@${MKDIR} ${PREFIX}/lib/bmp/Input
-	${INSTALL_DATA} ${WRKSRC}/src/plugin_bmp/.libs/libbmp-flac.so ${PREFIX}/lib/bmp/Input
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/bmp/Input
+	${INSTALL_LIB} ${WRKSRC}/src/plugin_bmp/.libs/libbmp-flac.so ${STAGEDIR}${PREFIX}/lib/bmp/Input
 
 .include <bsd.port.pre.mk>
 

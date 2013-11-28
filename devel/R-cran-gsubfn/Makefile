@@ -17,5 +17,4 @@ RUN_DEPENDS=    R-cran-proto>=0.3.9.2_6:${PORTSDIR}/devel/R-cran-proto
 USE_R_MOD=      yes
 R_MOD_AUTOPLIST=        yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

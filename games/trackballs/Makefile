@@ -3,7 +3,7 @@
 
 PORTNAME=	trackballs
 PORTVERSION=	1.1.4
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	games
 MASTER_SITES=	SF \
 		SF/${PORTNAME}/music/1.4/:music
@@ -15,44 +15,27 @@ COMMENT=	SDL-based Marble Madness clone
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_GL=		gl
 USE_SDL=	image mixer sdl ttf
-USES=		desktop-file-utils gettext
-USE_GMAKE=	yes
+USES=		gmake gettext desktop-file-utils
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 MAKE_ARGS=	mkinstalldirs="${MKDIR}"
 
-MAN6=	trackballs.6
-MANCOMPRESSED=	no
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
-OPTIONS_DEFINE=	NLS MUSIC
+OPTIONS_DEFINE=	MUSIC NLS
+OPTIONS_DEFAULT=	MUSIC NLS
+OPTIONS_SUB=	yes
 MUSIC_DESC=	Install additional music
-OPTIONS_DEFAULT=	NLS MUSIC
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CONFIGURE_ARGS+=	--enable-nls
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMUSIC}
-PLIST_SUB+=	MUSIC=""
-.else
-PLIST_SUB+=	MUSIC="@comment "
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|install -D|$$(INSTALL)|' \
@@ -60,8 +43,8 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MMUSIC}
-	@${INSTALL_DATA} ${WRKDIR}/trackballs-music/*.ogg ${DATADIR}/music/
+	${INSTALL_DATA} ${WRKDIR}/trackballs-music/*.ogg ${STAGEDIR}${DATADIR}/music/
 .endif
-	@${INSTALL_DATA} ${WRKSRC}/share/icons/${PORTNAME}-48x48.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
+	${INSTALL_DATA} ${WRKSRC}/share/icons/${PORTNAME}-48x48.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 .include <bsd.port.mk>

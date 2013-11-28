@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.10.2
-PORTREVISION=	2
+PORTVERSION=	0.10.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/qt-${PORTNAME}/
 PKGNAMESUFFIX=	-qt4
@@ -25,15 +25,15 @@ USE_KDE4=	automoc4
 USE_QT4=	corelib gui opengl declarative \
 		qmake_build moc_build rcc_build uic_build qtestlib_build
 
-PLIST_SUB=	VERSION="${GST_VERSION}"
+PLIST_SUB=	VERSION="${PORTVERSION}" GST_VERSION="${GST_VERSION}"
 
-GST_VERSION=${PORTVERSION:C/..$//}
+GST_VERSION=	${PORTVERSION:C/..$//}
 
 CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH:STRING="${LOCALBASE}/include"
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-extract:
-	${REINPLACE_CMD} -e 's|$${LIB_INSTALL_DIR}/pkgconfig|libdata/pkgconfig|' \
-		${WRKSRC}/src/CMakeLists.txt
+	${REINPLACE_CMD} -e 's|$${CMAKE_INSTALL_LIBDIR}/pkgconfig|$${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|' \
+		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

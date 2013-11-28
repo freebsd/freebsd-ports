@@ -89,6 +89,10 @@ include/epix/triples.h
 include/epix/utils.h
 include/epix/verbatim.h
 lib/epix/libepix.a
+man/man1/elaps.1.gz
+man/man1/epix.1.gz
+man/man1/flix.1.gz
+man/man1/laps.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/config/bash_completions
 %%PORTDOCS%%%%DOCSDIR%%/config/epix.el
 %%PORTDOCS%%%%DOCSDIR%%/manual.pdf.gz

@@ -242,8 +242,5 @@ share/omf/mucharmap/mucharmap-zh_CN.omf
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrmtry share/glib-2.0/schemas
-@dirrmtry share/glib-2.0
-@dirrmtry share/applications
 @dirrm include/mucharmap-2.0/mucharmap
 @dirrm include/mucharmap-2.0

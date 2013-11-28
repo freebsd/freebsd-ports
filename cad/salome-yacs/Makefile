@@ -10,6 +10,9 @@ PORTNAME=	salome
 PKGNAMESUFFIX=	-yacs
 SAL_MODULE_UPPER=	YACS
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-12-22
+
 BROKEN=		fails to build
 
 NO_STAGE=	yes

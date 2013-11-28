@@ -12,7 +12,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Library for manipulating PNG images
 
 PORTSCOUT=	limit:^1\.5\.
-NO_STAGE=	yes
 
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
@@ -21,9 +20,6 @@ USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DPNG_MAN_DIR:STRING=man
 SOSUFFIX=	.${PORTVERSION:E}
-
-MAN3=		libpng.3 libpngpf.3
-MAN5=		png.5
 
 OPTIONS_DEFINE=APNG
 OPTIONS_DEFAULT=APNG
@@ -62,18 +58,18 @@ post-build:
         ${FALSE}; \
         fi)
 
-pre-su-install:
-	@${MKDIR} ${PREFIX}/include/libpng
-	@${MKDIR} ${PREFIX}/libdata/pkgconfig
+pre-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/libpng
+	${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pngdebug.h ${WRKSRC}/pnginfo.h \
 		${WRKSRC}/pngpriv.h ${WRKSRC}/pngstruct.h \
-		${PREFIX}/include/libpng15/
-	-${RMDIR} ${PREFIX}/include/libpng
-	${RM} ${PREFIX}/libdata/pkgconfig/libpng.pc
-	${LN} -sf libpng15.pc ${PREFIX}/libdata/pkgconfig/libpng.pc
-	${RM} ${PREFIX}/lib/libpng15.so.15
-	${MV} ${PREFIX}/lib/libpng15.so.15${SOSUFFIX} ${PREFIX}/lib/libpng15.so.15
+		${STAGEDIR}${PREFIX}/include/libpng15/
+	-${RMDIR} ${STAGEDIR}${PREFIX}/include/libpng
+	${RM} ${STAGEDIR}${PREFIX}/libdata/pkgconfig/libpng.pc
+	${LN} -sf libpng15.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/libpng.pc
+	${RM} ${STAGEDIR}${PREFIX}/lib/libpng15.so.15
+	${MV} ${STAGEDIR}${PREFIX}/lib/libpng15.so.15${SOSUFFIX} ${STAGEDIR}${PREFIX}/lib/libpng15.so.15
 
 .include <bsd.port.mk>

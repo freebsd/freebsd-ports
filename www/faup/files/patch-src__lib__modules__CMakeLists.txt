@@ -1,0 +1,8 @@
+--- ./src/lib/modules/CMakeLists.txt.orig	2013-09-25 08:53:24.000000000 +0000
++++ ./src/lib/modules/CMakeLists.txt	2013-11-16 12:02:09.000000000 +0000
+@@ -5,4 +5,4 @@
+ 
+ install(FILES ${MODULES_AVAILABLE} DESTINATION share/faup/modules_available)
+ 
+-install(CODE "file(MAKE_DIRECTORY ${CMAKE_INSTALL_PREFIX}/share/faup/modules_enabled)")
++install(DIRECTORY DESTINATION share/faup/modules_enabled)

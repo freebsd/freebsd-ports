@@ -156,7 +156,7 @@ IGNORE=	Unknown version of GCC specified (USE_GCC=${USE_GCC})
 .endif
 
 # If the GCC package defined in USE_GCC does not exist, but a later
-# version is allowed (for example 4.2+), see if there is a later.
+# version is allowed (for example 4.7+), see if there is a later.
 # First check if the base installed version is good enough, otherwise
 # get the first available version.
 #
@@ -236,11 +236,9 @@ CPP:=			cpp
 BUILD_DEPENDS+=	${_GCC_PORT_DEPENDS}:${PORTSDIR}/lang/${_GCC_PORT}
 . if ${_USE_GCC} != 3.4
 RUN_DEPENDS+=	${_GCC_PORT_DEPENDS}:${PORTSDIR}/lang/${_GCC_PORT}
-.  if ${_USE_GCC} != 4.2
 # Later GCC ports already depend on binutils; make sure whatever we
 # build leverages this as well.
 USE_BINUTILS=	yes
-.  endif
 . endif
 .endif
 .endif # defined(_USE_GCC) && !defined(FORCE_BASE_CC_FOR_TESTING)

@@ -3,6 +3,7 @@
 
 PORTNAME=	xview
 PORTVERSION=	3.2.1.4.19c
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.physionet.org/physiotools/xview/src/ \
 		http://komquats.com/distfiles/ \
@@ -29,7 +30,7 @@ ALL_TARGET=	World
 SUB_FILES=	pkg-message
 CFLAGS+=	-Wno-return-type
 
-MAN1=		xview.1
+MAN1=		XView.1
 
 X11BASE2FIX=	clients/olwmslave/help_file.c	lib/libxview/help/help_file.c	\
 		lib/libxview/misc/gettext.h	lib/libxview/textsw/txt_e_menu.c
@@ -40,6 +41,9 @@ NO_STAGE=	yes
 .if ${OSVERSION} > 800089
 CFLAGS+=	-DCOMPAT_43TTY
 .endif
+
+post-extract:
+	@${MV} ${WRKSRC}/xview.man ${WRKSRC}/XView.man
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's+/usr/local+${PREFIX}+;' \

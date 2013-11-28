@@ -5001,7 +5001,7 @@ net/gnome-vnc||2013-10-05|Depends on EOLed gnome1
 news/grn||2013-10-05|Depends on EOLed gnome1
 security/fpm||2013-10-05|Depends on EOLed gnome1
 sysutils/xsu||2013-10-05|Depends on EOLed gnome1
-securty/fwbuilder-devel||2013-10-05|Appears not to be actively developed any more.
+securty/fwbuilder-devel||2013-10-05|Appears not to be actively developed any more
 devel/libglade||2013-10-07|Component of the obsolete gnome1
 databases/gnome-db||2013-10-07|Component of the obsolete gnome1
 databases/libgda||2013-10-07|Component of the obsolete gnome1
@@ -5165,7 +5165,7 @@ devel/ruby-io-reactor||2013-11-03|Has expired: Does not work with Ruby 1.9
 textproc/p5-Text-Emoticon-MSN||2013-11-03|Has expired: Primary MSN Messenger service terminated 30 APR 2013
 textproc/jakarta-poi|textproc/apache-poi|2013-11-04|Replaced with apache-poi
 net-im/qutim||2013-11-05|Has expired: Old version, a new one needs to be ported from scratch
-textproc/gtkdiff||2013-11-05|Has expired: Gnome1 EOLed by upstream for a while.
+textproc/gtkdiff||2013-11-05|Has expired: Gnome1 EOLed by upstream for a while
 net-p2p/libtorrent-rasterbar-16|net-p2p/libtorrent-rasterbar|2013-11-06|Moved to net-p2p/libtorrent-rasterbar since it's a stable version
 net-p2p/libtorrent-rasterbar-python-16|net-p2p/libtorrent-rasterbar-python|2013-11-06|Moved to net-p2p/libtorrent-rasterbar-python since it's a stable version
 devel/ORBit||2013-11-07|Has expired: EOLed upstream for very long
@@ -5182,12 +5182,12 @@ games/windstille||2013-11-12|Has expired: Unplayable, development ceased
 games/intensityengine||2013-11-12|Has expired: Unplayable, main server down, development ceased
 games/tmw|games/manaplus|2013-11-12|Replaced with games/manaplus
 graphics/mesagl||2013-11-14|Old unmaintained version. Use graphics/libosmesa instead
-editors/xxe||2013-11-15|Has expired: XXE becomes unfetchable every 3-4 months as distfile is replaced with new version.  This high-maintenance port requires a maintainer to avoid removal.
+editors/xxe||2013-11-15|Has expired: XXE becomes unfetchable every 3-4 months as distfile is replaced with new version.  This high-maintenance port requires a maintainer to avoid removal
 editors/xml2rfc-xxe||2013-11-15|Has expired: Depends on editors/xxe, which is due to be removed due to lack of maintainer
 devel/perltidy|devel/p5-Perl-Tidy|2013-11-15|Renamed to match upstream naming
 math/vtk|math/vtk5|2013-11-17|Removed, EOLed
 net-im/decibel||2013-11-17|Has expired: Deprecated and unsupported upstream for many years, not used by anything
-databases/postgresql-libpq++||2013-11-17|Has expired: Not maintained upstreams for 10+ years.
+databases/postgresql-libpq++||2013-11-17|Has expired: Not maintained upstreams for 10+ years
 audio/gmpeg-devel||2013-11-17|Removed, no active development since more than 8 years
 graphics/gqview-devel||2013-11-17|Removed, no active development since more than 8 years
 textproc/stardict2-dictd_mova|textproc/stardict-dictd_mova|2013-11-17|Renamed
@@ -5206,7 +5206,7 @@ security/linux-pam-docs||2013-11-18|Has expired: Broken for more than 6 month
 net-p2p/mooseekd||2013-11-18|Has expired: Broken for more than 6 month
 textproc/p5-Lucene||2013-11-18|Has expired: Broken for more than 6 month
 net-mgmt/zenpack-dellmonitor||2013-11-18|Has expired: Broken for more than 6 month
-x11-wm/fbpager||2013-11-18|Has expired: BRoken for more than 6 month
+x11-wm/fbpager||2013-11-18|Has expired: Broken for more than 6 month
 net/hf6to4||2013-11-18|Has expired: Broken for more than 6 month
 x11-themes/kde-icons-exquisite||2013-11-18|Has expired: Broken for more than 6 month
 x11-themes/kde-icons-marbles-translucent||2013-11-18|Has expired: Broken for more than 6 month
@@ -5219,7 +5219,7 @@ databases/drizzle||2013-11-18|Has expired: Broken for more than 6 month
 devel/p5-File-Lock||2013-11-18|Has expired: Broken for more than 6 month
 devel/valide||2013-11-18|Has expired: Broken for more than 6 month
 databases/gomysql||2013-11-18|Has expired: Broken for more than 6 month
-databases/p5-DBZ_File||2013-11-18|Has expired: BRoken for more than 6 month
+databases/p5-DBZ_File||2013-11-18|Has expired: Broken for more than 6 month
 devel/monodevelop-vala||2013-11-18|Has expired: Broken for more than 6 month
 devel/gonzui||2013-11-18|Has expired: Broken for more than 6 month
 devel/monodevelop-java||2013-11-18|Has expired: Broken for more than 6 month
@@ -5315,3 +5315,24 @@ devel/libmatenotify||2013-03-28|No longer part of MATE packages.
 sysutils/mate-conf-editor||2013-03-28|No longer part of MATE packages.
 devel/python-corba||2013-03-28|No longer part of MATE packages.
 x11-toolkits/python-mate||2013-03-28|No longer part of MATE packages.
+audio/gstreamer1-plugins-celt||2013-11-20|Removed, audio/gstreamer1-plugins-opus can be used as replacement
+math/p5-MatrixReal|math/p5-Math-MatrixReal|2013-11-22|Rename to match upstream naming
+lang/gcc42|lang/gcc46|2013-11-23|Superseded by GCC 4.6 or later
+devel/p5-IO||2013-11-23|Removed: newer versions are included in all supported Perl releases
+www/mod_wsgi|www/mod_wsgi2|2013-11-24|Rename to match version
+net/ftelnetd||2013-11-25|Has expired: "Unfetchable due to parked MASTER_SITES"
+games/BillardGL||2013-11-25|Has expired: Unplayable, development ceased
+sysutils/rsyslog6-pgsql||2013-11-25|Has expired: Use sysutils/rsyslog7
+sysutils/rsyslog6-relp||2013-11-25|Has expired: Use sysutils/rsyslog7
+sysutils/rsyslog6-gnutls||2013-11-25|Has expired: Use sysutils/rsyslog7
+sysutils/rsyslog6-rfc3195||2013-11-25|Has expired: Use sysutils/rsyslog7
+sysutils/rsyslog6-gssapi||2013-11-25|Has expired: Use sysutils/rsyslog7
+sysutils/rsyslog6||2013-11-25|Has expired: Use sysutils/rsyslog7
+sysutils/rsyslog6-snmp||2013-11-25|Has expired: Use sysutils/rsyslog7
+sysutils/rsyslog6-mysql||2013-11-25|Has expired: Use sysutils/rsyslog7
+sysutils/rsyslog6-dbi||2013-11-25|Has expired: Use sysutils/rsyslog7
+www/trac-gitplugin||2013-11-25|Removed: this plugin has been included in the Trac 1.0 distribution
+audio/mpc|audio/musicpc|2013-11-19|Renamed to avoid conflict with math/mpc
+deskutils/q4wine|emulators/q4wine|2013-11-26|Move to better category
+devel/p5-MooseX-ChainedAccessors||2013-11-27|Has expired: Marked as depreciated upstream
+devel/py-distribute|devel/py-setuptools|2013-11-27|Replaced with setuptools

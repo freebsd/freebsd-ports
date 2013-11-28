@@ -20,24 +20,21 @@ LIB_DEPENDS+=	qwt:${PORTSDIR}/x11-toolkits/qwt5 \
 
 USE_QT4=	gui qt3support qmake_build moc_build rcc_build uic_build
 
-QMAKE_DABSTICK=	${QMAKE} -unix PREFIX=${PREFIX} -o
-
 PORTDOCS=	*
 PLIST_FILES+=	bin/swreceiver bin/spectrum-viewer-${PORTVERSION} \
 		bin/mini-receiver bin/fmreceiver-${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-configure:
 	cd ${WRKSRC}/make-x64/swreceiver && ${SETENV} ${MAKE_ENV} \
-		${QMAKE_DABSTICK} Makefile swreceiver.pro
+		${QMAKE} ${QMAKE_ARGS}
 	cd ${WRKSRC}/make-x64/fmreceiver && ${SETENV} ${MAKE_ENV} \
-		${QMAKE_DABSTICK} Makefile fmreceiver.pro
+		${QMAKE} ${QMAKE_ARGS}
 	cd ${WRKSRC}/make-x64/spectrum-viewer && ${SETENV} ${MAKE_ENV} \
-		${QMAKE_DABSTICK} Makefile spectrum-viewer.pro
+		${QMAKE} ${QMAKE_ARGS}
 	cd ${WRKSRC}/make-x64/mini-receiver && ${SETENV} ${MAKE_ENV} \
-		${QMAKE_DABSTICK} Makefile mini-receiver.pro
+		${QMAKE} ${QMAKE_ARGS}
 
 do-build:
 	cd ${WRKSRC}/make-x64/swreceiver && ${SETENV} ${MAKE_ENV} \
@@ -52,14 +49,14 @@ do-build:
 do-install:
 	${INSTALL} ${WRKSRC}/make-x64/swreceiver/swreceiver \
 		${WRKSRC}/make-x64/mini-receiver/mini-receiver \
-		${PREFIX}/bin
+		${STAGEDIR}${PREFIX}/bin
 	${INSTALL} ${WRKSRC}/make-x64/spectrum-viewer/spectrum-viewer \
-		${PREFIX}/bin/spectrum-viewer-${PORTVERSION}
+		${STAGEDIR}${PREFIX}/bin/spectrum-viewer-${PORTVERSION}
 	${INSTALL} ${WRKSRC}/make-x64/fmreceiver/fmreceiver \
-		${PREFIX}/bin/fmreceiver-${PORTVERSION}
+		${STAGEDIR}${PREFIX}/bin/fmreceiver-${PORTVERSION}
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>

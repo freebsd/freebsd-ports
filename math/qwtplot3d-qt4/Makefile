@@ -11,11 +11,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	3D plotting widgets for scientific data and math expressions
 
-USES=		qmake
-USE_QT4=	gui moc_build qmake_build opengl
+USES=		dos2unix qmake
+USE_QT4=	gui moc_build opengl
 USE_GL=		glu
 USE_LDCONFIG=	yes
-USE_DOS2UNIX=	yes
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 

@@ -3,6 +3,8 @@ bin/gksudo
 lib/nautilus/extensions-2.0/libnautilus-gksu.la
 lib/nautilus/extensions-2.0/libnautilus-gksu.so
 lib/nautilus/extensions-2.0/libnautilus-gksu.a
+man/man1/gksu.1.gz
+man/man1/gksudo.1.gz
 share/applications/gksu.desktop
 share/pixmaps/gksu-icon.png
 share/pixmaps/gksu-root-terminal.png

@@ -1,0 +1,7 @@
+Cowlib provides Erlang libraries for parsing and building messages
+for various Web protocols, including SPDY, HTTP and Websocket.
+
+It is optimized for completeness rather than speed. No value is
+ignored, they are all returned.
+
+WWW: https://github.com/extend/cowlib

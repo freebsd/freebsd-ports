@@ -4,6 +4,11 @@ bin/vdcomp
 bin/xcmap
 bin/xvpictoppm
 lib/X11/xv_mgcsfx.sample
+man/man1/bggen.1.gz
+man/man1/vdcomp.1.gz
+man/man1/xcmap.1.gz
+man/man1/xv.1.gz
+man/man1/xvp2p.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.jumbo
 %%PORTDOCS%%%%DOCSDIR%%/README.pcd

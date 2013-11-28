@@ -8,23 +8,18 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	vg@FreeBSD.org
-COMMENT=	A simple media player using Qt/Phonon
+COMMENT=	Simple media player using Qt/Phonon
 
+USES=		qmake
 USE_BZIP2=	yes
-NO_STAGE=	yes
-USE_QT4=	gui xml qmake_build uic_build moc_build \
+USE_QT4=	gui xml uic_build moc_build \
 		rcc_build phonon
-
-QMAKE_PRO=	${PORTNAME}.pro
 
 WRKSRC=		${WRKDIR}/dev
 
 PLIST_FILES=	bin/${PORTNAME}
 
-do-configure:
-	cd ${WRKSRC} && ${QMAKE}
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

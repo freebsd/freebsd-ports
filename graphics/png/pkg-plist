@@ -19,5 +19,8 @@ lib/libpng/libpng15.cmake
 lib/libpng15.a
 lib/libpng15.so
 lib/libpng15.so.15
+man/man3/libpng.3.gz
+man/man3/libpngpf.3.gz
+man/man5/png.5.gz
 @dirrm lib/libpng
 @dirrm include/libpng15

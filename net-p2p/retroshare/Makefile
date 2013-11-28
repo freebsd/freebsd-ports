@@ -30,22 +30,18 @@ LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libxslt.so:${PORTSDIR}/textproc/libxslt
 RUN_DEPENDS=	pinentry-qt4:${PORTSDIR}/security/pinentry-qt4
 
+USES=		qmake
 USE_ZIP=	yes
 USE_GNOME=	glib20
 USE_XORG=	ice sm x11 xau xcb xdmcp xext xrender
 USE_QT4=	corelib gui network xml script designer_build uic_build \
-		qmake_build moc_build rcc_build multimedia
-HAS_CONFIGURE=	yes
+		moc_build rcc_build multimedia
 BINARY=		RetroShare
 MAKE_JOBS_UNSAFE=yes
 USE_LDCONFIG=	yes
 
 DESKTOP_ENTRIES="${BINARY}" "${COMMENT}" "${DATADIR}/retrosharelogo1.png" \
 		"${BINARY}" "Network;FileTransfer;" true
-
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} PREFIX=${PREFIX} ${BINARY}.pro
 
 USE_DOS2UNIX=	retroshare-gui/src/retroshare-gui.pro
 

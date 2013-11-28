@@ -15,7 +15,6 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	R-cran-sp>=1.0.11:${PORTSDIR}/math/R-cran-sp
 
-NO_STAGE=	yes
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
 

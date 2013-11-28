@@ -6,6 +6,8 @@ include/lcms.h
 lib/liblcms.so
 lib/liblcms.so.1
 libdata/pkgconfig/lcms.pc
+%%JPEGICC%%man/man1/jpegicc.1.gz
+%%TIFFICC%%man/man1/tifficc.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/LCMSAPI.TXT
 %%PORTDOCS%%%%DOCSDIR%%/TUTORIAL.TXT
 %%PORTDOCS%%%%DOCSDIR%%/iccjpeg.c

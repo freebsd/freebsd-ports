@@ -1,6 +1,6 @@
---- Makefile.in.orig	2012-07-18 05:38:34.000000000 +0900
-+++ Makefile.in	2012-08-10 01:18:07.000000000 +0900
-@@ -52,9 +52,7 @@
+--- Makefile.in.orig	2013-07-09 00:43:01.000000000 +0800
++++ Makefile.in	2013-11-25 05:28:16.512550644 +0800
+@@ -60,9 +60,7 @@
  		putcolj.c putcolk.c putcoluk.c putcoll.c putcols.c putcolsb.c \
  		putcolu.c putcolui.c putcoluj.c putkey.c region.c scalnull.c \
  		swapproc.c wcssub.c wcsutil.c imcompress.c quantize.c ricecomp.c \
@@ -11,12 +11,12 @@
  
  SOURCES = ${CORE_SOURCES} @F77_WRAPPERS@
  
-@@ -87,7 +85,7 @@
+@@ -95,7 +93,7 @@
  shared: libcfitsio${SHLIB_SUFFIX}
  
  libcfitsio${SHLIB_SUFFIX}: ${OBJECTS}
--		${SHLIB_LD} ${LDFLAGS} -o $@ ${OBJECTS} -lm ${LIBS}
-+		${SHLIB_LD} ${LDFLAGS} -o $@ ${OBJECTS} -lm -lz ${LIBS}
- 
- install:	libcfitsio.a $(INSTALL_DIRS)
- 		@if [ -f libcfitsio.a ]; then \
+-		${SHLIB_LD} ${LDFLAGS} -o ${CFITSIO_SHLIB} ${OBJECTS} -lm ${LIBS}
++		${SHLIB_LD} ${LDFLAGS} -o ${CFITSIO_SHLIB} ${OBJECTS} -lm -lz ${LIBS}
+ 		@if [ "x${CFITSIO_SHLIB_SONAME}" != x ]; then \
+ 			ln -sf ${CFITSIO_SHLIB} ${CFITSIO_SHLIB_SONAME}; \
+ 			ln -sf ${CFITSIO_SHLIB_SONAME} $@; \

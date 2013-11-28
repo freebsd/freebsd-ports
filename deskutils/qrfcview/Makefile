@@ -11,15 +11,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Graphical RFC viewer
 
-USE_QT4=	gui network corelib qmake_build uic_build moc_build rcc_build
+USES=		qmake
+USE_QT4=	gui network corelib uic_build moc_build rcc_build
 PLIST_FILES=	bin/qRFCView
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_DEFAULT=DOCS
-
-do-configure:
-	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS} -unix rfcview.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/qRFCView ${STAGEDIR}${PREFIX}/bin/

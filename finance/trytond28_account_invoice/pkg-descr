@@ -1,0 +1,4 @@
+The account invoice is a module for tryton. It defines data model
+and business logic for creating invoices.
+
+WWW: http://www.tryton.org/

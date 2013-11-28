@@ -1,0 +1,40 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/locale/bg_BG.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/locale/ca_ES.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/locale/cs_CZ.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/locale/de_DE.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/locale/es_AR.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/locale/es_CO.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/locale/es_ES.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/locale/fr_FR.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/locale/nl_NL.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/locale/ru_RU.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/sale.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/sale.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/sale.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/sale.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/tests/test_analytic_sale.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/tests/test_analytic_sale.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/tests/test_analytic_sale.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/tryton.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/view/sale_line_form.xml
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/view
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale/locale
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/analytic_sale
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

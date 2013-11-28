@@ -29,7 +29,17 @@ DOCSFILES=	Changelog INSTALL LICENSE docs/docs.html docs/docs.txt \
 		conf/db.rcpt conf/db.rdnsbl conf/db.sndr \
 		conf/policy.html conf/spamilter.rc
 
-.include <bsd.port.pre.mk>
+PLIST_FILES+=	bin/dnsblchk bin/dnsblupd bin/ipfwmtad bin/mxlookup \
+		bin/spamilter \
+		bin/spamilter-system-report bin/spamilter-user-report
+PORTDOCS=	Changelog INSTALL LICENSE docs.html docs.txt db.rcpt \
+		db.rdnsbl db.sndr policy.html spamilter.rc
+
+OPTIONS_DEFINE=	SMTP_AFTER_POP3 PAM LIBSPF
+SMTP_AFTER_POP3_DESC=	SMTP after POP3
+LIBSPF_DESC=	build with libspf
+
+.include <bsd.port.options.mk>
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
@@ -39,29 +49,23 @@ CONFIGURE_ARGS+=	--sendmail-dir "${LOCALBASE}"
 CONFIGURE_ARGS+=	--sendmail-dir "/usr"
 .endif
 
-.if defined(SMTP_AFTER_POP3)
+.if ${PORT_OPTIONS:MSMTP_AFTER_POP3}
 CONFIGURE_ARGS+=	--with-popauth
 .endif
 
-.if defined(WITH_PAM)
+.if ${PORT_OPTIONS:MPAM}
 CONFIGURE_ARGS+=	--with-pam
 .endif
 
-.if defined(WITH_LIBSPF)
+.if ${PORT_OPTIONS:MLIBSPF}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libspf.a:${PORTSDIR}/mail/libspf
 CONFIGURE_ARGS+=	--with-libspf ${LOCALBASE}
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
-PLIST_FILES+=	bin/dnsblchk bin/dnsblupd bin/ipfwmtad bin/mxlookup \
-		bin/spamilter \
-		bin/spamilter-system-report bin/spamilter-user-report
-PORTDOCS=	Changelog INSTALL LICENSE docs.html docs.txt db.rcpt \
-		db.rdnsbl db.sndr policy.html spamilter.rc
-
 post-extract:
-	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
+	${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 pre-configure:
 	${REINPLACE_CMD} \
@@ -81,11 +85,9 @@ post-install:
 .for i in ${BINFILES}
 	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${PREFIX}/bin/
 .endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in ${DOCSFILES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
-.endfor
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCSFILES:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -123,6 +123,7 @@
     SUBDIR += gstreamer1-plugins-dv
     SUBDIR += gstreamer1-plugins-dvdread
     SUBDIR += gstreamer1-plugins-good
+    SUBDIR += gstreamer1-plugins-kate
     SUBDIR += gstreamer1-plugins-mpeg2dec
     SUBDIR += gstreamer1-plugins-mpeg2enc
     SUBDIR += gstreamer1-plugins-resindvd

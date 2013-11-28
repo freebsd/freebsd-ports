@@ -12,7 +12,6 @@ COMMENT=	Real-time pitch correction plugin for LADSPA
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-NO_STAGE=	yes
 USES=		gmake
 
 MAKE_ARGS=	CXX="${CXX}" CC=${CC} CPP=${CPP} \
@@ -28,7 +27,7 @@ post-patch:
 	${REINPLACE_CMD} -e "s,-O3 -Wall -fomit-frame-pointer -fstrength-reduce -funroll-loops -ffast-math,${CFLAGS}," ${WRKSRC}/Makefile
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/ladspa
-	${INSTALL_DATA} ${WRKSRC}/autotalent.so ${PREFIX}/lib/ladspa
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ladspa
+	${INSTALL_LIB} ${WRKSRC}/autotalent.so ${STAGEDIR}${PREFIX}/lib/ladspa
 
 .include <bsd.port.mk>

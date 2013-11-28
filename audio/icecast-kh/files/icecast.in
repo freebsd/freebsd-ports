@@ -1,0 +1,41 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: icecast
+# REQUIRE: DAEMON
+# BEFORE:  LOGIN
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable `icecast'.
+#
+#icecast_enable="YES"
+#
+# To specify a non-default configuration file, set icecast_config
+# in /etc/rc.conf: 
+#
+#icecast_config="%%PREFIX%%/etc/icecast.xml"
+#
+# Make sure the <changeowner> section in your configuration file is
+# not commented out - icecast refuses to run as root.
+#
+
+. /etc/rc.subr
+
+name="icecast"
+rcvar=icecast_enable
+
+command="%%PREFIX%%/bin/icecast"
+command_args="-b 1>/dev/null"
+extra_commands="reload"
+
+# read configuration and set defaults
+load_rc_config "$name"
+: ${icecast_enable="NO"}
+: ${icecast_config="%%PREFIX%%/etc/${name}.xml"}
+: ${icecast_flags="-c ${icecast_config}"}
+
+required_files="${icecast_config}"
+
+run_rc_command "$1"

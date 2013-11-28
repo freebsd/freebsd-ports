@@ -1,0 +1,74 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/bom.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/bom.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/bom.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/bom.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/configuration.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/configuration.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/configuration.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/configuration.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/locale/bg_BG.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/locale/ca_ES.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/locale/cs_CZ.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/locale/de_DE.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/locale/es_AR.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/locale/es_CO.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/locale/es_ES.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/locale/fr_FR.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/locale/nl_NL.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/locale/ru_RU.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/product.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/product.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/product.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/product.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/production.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/production.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/production.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/production.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/stock.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/stock.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/stock.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/stock.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/tests/scenario_production.rst
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/tests/test_production.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/tests/test_production.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/tests/test_production.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/tryton.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/view/assign_failed_form.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/view/bom_form.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/view/bom_input_form.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/view/bom_input_list.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/view/bom_list.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/view/bom_output_form.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/view/bom_output_list.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/view/bom_tree_open_start_form.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/view/bom_tree_open_tree_form.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/view/bom_tree_tree.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/view/configuration_form.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/view/location_form.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/view/product_bom_form.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/view/product_bom_list.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/view/product_bom_list_sequence.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/view/product_form.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/view/production_form.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/view/production_list.xml
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/view
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production/locale
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/production
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

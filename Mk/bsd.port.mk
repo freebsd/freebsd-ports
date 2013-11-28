@@ -68,9 +68,11 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Do not define this in your Makefile.
 # PKGNAMEPREFIX	- Prefix to specify that port is language-specific, etc.
 #				  Optional.
-# PKGNAMESUFFIX	- Suffix to specify compilation options.  Optional.
-# PKGVERSION		- Always defined as
-#				  ${PORTVERSION}.
+# PKGNAMESUFFIX	- Suffix to specify compilation options or a version
+#				  designator (in case there are different versions of 
+#				  one port as is the case for Tcl).
+#				  Optional.
+# PKGVERSION	- Always defined as ${PORTVERSION}.
 #				  Do not define this in your Makefile.
 # UNIQUENAME	- A name for your port that is globally unique.  By default,
 #				  this is set to ${LATEST_LINK} when LATEST_LINK is set,
@@ -3392,7 +3394,7 @@ check-deprecated:
 # Check if the port is listed in the vulnerability database
 
 .if defined(WITH_PKGNG)
-AUDITFILE?=		${PKG_DBDIR}/auditfile
+AUDITFILE?=		${PKG_DBDIR}/vuln.xml
 _EXTRACT_AUDITFILE=	${CAT} "${AUDITFILE}"
 .else
 AUDITFILE?=		/var/db/portaudit/auditfile.tbz
@@ -6012,7 +6014,9 @@ add-plist-info:
 # Process GNU INFO files at package install/deinstall time
 .if defined(INFO)
 .for i in ${INFO}
+.if defined(NO_STAGE)
 	install-info --quiet ${PREFIX}/${INFO_PATH}/$i.info ${PREFIX}/${INFO_PATH}/dir
+.endif
 .if !defined(WITH_PKGNG)
 	@${ECHO_CMD} "@unexec install-info --quiet --delete %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
 		>> ${TMPPLIST}
@@ -6022,11 +6026,16 @@ add-plist-info:
 	@${ECHO_CMD} "@exec install-info --quiet %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
 		>> ${TMPPLIST}
 .else
-	@${LS} ${PREFIX}/${INFO_PATH}/$i.info* | ${SED} -e s:${PREFIX}/:@info\ :g >> ${TMPPLIST}
+	@${ECHO_CMD} "@info ${INFO_PATH}/$i.info" >> ${TMPPLIST}
+	@${LS} ${PREFIX}/${INFO_PATH}/$i.info-* 2>/dev/null | ${SED} -e s:${PREFIX}/:@info\ :g >> ${TMPPLIST}
 .endif
 .endfor
 .if defined(INFO_SUBDIR)
+.if !defined(WITH_PKGNG)
 	@${ECHO_CMD} "@unexec ${RMDIR} %D/${INFO_PATH}/${INFO_SUBDIR} 2> /dev/null || true" >> ${TMPPLIST}
+.else
+	@${ECHO_CMD} "@dirrmtry ${INFO_PATH}/${INFO_SUBDIR}" >> ${TMPPLIST}
+.endif
 .endif
 .if (${PREFIX} != "/usr")
 	@${ECHO_CMD} "@unexec if [ -f %D/${INFO_PATH}/dir ]; then if sed -e '1,/Menu:/d' %D/${INFO_PATH}/dir | grep -q '^[*] '; then true; else rm %D/${INFO_PATH}/dir; fi; fi" >> ${TMPPLIST}
@@ -6779,7 +6788,7 @@ show-dev-errors:
 	@${FALSE}
 check-makefile:: show-dev-errors
 .endif
-.endif #DVELOPER
+.endif #DEVELOPER
 .endif
 # End of post-makefile section.
 

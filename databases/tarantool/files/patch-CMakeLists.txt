@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2013-11-22 16:46:37.651143426 +0400
++++ CMakeLists.txt	2013-11-22 16:50:55.948120860 +0400
+@@ -147,7 +147,7 @@ if (NOT DEFINED CMAKE_SYSCONF_DIR)
+     set (CMAKE_SYSCONF_DIR "etc")
+ endif()
+ if (NOT DEFINED CMAKE_LOCALSTATE_DIR)
+-    set (CMAKE_LOCALSTATE_DIR "var")
++    set (CMAKE_LOCALSTATE_DIR "var/lib/tarantool")
+ endif()
+ if (NOT DEFINED CMAKE_MAN_DIR)
+     set (CMAKE_MAN_DIR "man")

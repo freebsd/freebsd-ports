@@ -3,7 +3,7 @@
 
 PORTNAME=	newsx
 PORTVERSION=	1.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	news
 MASTER_SITES=	http://www.kvaleberg.org/pub/
 
@@ -16,10 +16,6 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${LOCALBASE}/news/lib/libcnews.a:${PORTSDIR}/news/cnews
 .elif !defined(WITHOUT_INN_2-X)
 BUILD_DEPENDS=	${LOCALBASE}/news/lib/libinn.a:${PORTSDIR}/news/inn
-.endif
-
-.if defined(PACKAGE_BUILDING)
-IGNORE=		a configured INN is required
 .endif
 
 GNU_CONFIGURE=	yes
@@ -38,11 +34,8 @@ CONFIGURE_ARGS+=	--without-history
 
 DOCS=		AUTHORS COPYING ChangeLog FAQ INSTALL NEWS README TODO
 
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:g" ${WRKSRC}/configure
-
 pre-configure:
+	${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:g" ${WRKSRC}/configure
 	@${ECHO} "*********************************************************"
 	@${ECHO} "If the configure step fails, then you probably don't have"
 	@${ECHO} "a news server package installed.  Try installing INN from"
@@ -50,20 +43,19 @@ pre-configure:
 	@${ECHO} "again."
 	@${ECHO} "*********************************************************"
 
-pre-install:
-	@${STRIP_CMD} ${WRKSRC}/src/newsx
+post-build:
+.if !defined(WITH_DEBUG)
+	${STRIP_CMD} ${WRKSRC}/src/newsx
+.endif
 
 post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/news/spool/inhosts
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
 	@${ECHO} "Documentation installed in ${DOCSDIR}."
 .endif
-
-MAN1=	newsq.1
-MAN5=	newsx.conf.5 in.hosts.5
-MAN8=	newsx.8
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yad
-PORTVERSION=	0.24.0
+PORTVERSION=	0.24.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GOOGLE_CODE
 
@@ -28,16 +28,12 @@ OPTIONS_DEFAULT=	GTK2
 NLS_CONFIGURE_OFF=	--disable-nls
 NLS_USES=	gettext
 GTK2_CONFIGURE_ON=	--with-gtk=gtk2
+GTK2_USE=		GNOME=gtk20
 GTK3_CONFIGURE_ON=	--with-gtk=gtk3
+GTK3_USE=		GNOME=gtk30
 ICONBROWSER_CONFIGURE_ENABLE=	icon-browser
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGTK2}
-USE_GNOME=	gtk20
-.else
-USE_GNOME=	gtk30
-.endif
 
 post-configure:
 .if empty(PORT_OPTIONS:MNLS)

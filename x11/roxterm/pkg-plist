@@ -1,5 +1,7 @@
 bin/roxterm
 bin/roxterm-config
+man/man1/roxterm.1.gz
+man/man1/roxterm-config.1.gz
 share/applications/roxterm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog

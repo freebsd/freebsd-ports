@@ -7,17 +7,16 @@ CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.qtfm.org/
 
 MAINTAINER=	lichray@gmail.com
-COMMENT=	A small, lightweight file manager based on pure Qt
+COMMENT=	Small, lightweight file manager based on pure Qt
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix qmake
 DOS2UNIX_REGEX=	.*\.(h|cpp)
-USE_QT4=	gui network qmake_build moc_build rcc_build \
+USE_QT4=	gui network moc_build rcc_build \
 		imageformats_run
 
-NO_STAGE=	yes
 # Override -A option:
 FETCH_ARGS=	-Fpr
 
@@ -31,10 +30,6 @@ post-patch:
 	@cd ${WRKSRC}/src && \
 		${REINPLACE_CMD} -e s@/usr/@${LOCALBASE}/@g \
 		icondlg.cpp mainwindow.cpp mymodel.cpp
-
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} \
-		${QMAKEFLAGS} qtfm.pro
 
 post-install:
 	${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}

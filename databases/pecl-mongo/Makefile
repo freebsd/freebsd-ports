@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mongo
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 CATEGORIES=	databases pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -16,7 +16,6 @@ LICENSE=	AL2
 
 USE_PHP=	spl
 USE_PHP_BUILD=	yes
-USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 CONFIGURE_ARGS=	--enable-mongo
 SUB_FILES=	pkg-message

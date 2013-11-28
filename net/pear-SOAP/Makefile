@@ -21,7 +21,6 @@ PEAR_NET_DIME_DESC=	PEAR::Net::DIME support
 
 PEAR_AUTOINSTALL=yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPEAR_MAIL}

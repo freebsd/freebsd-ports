@@ -1,11 +1,12 @@
 # Created by: Gerald Pfeifer <gerald@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	gcc
-PORTVERSION=	4.7.4.20131109
+PORTNAME=	gcc47
+PORTVERSION=	4.7.4.20131123
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${DISTVERSION}
+DISTNAME=	gcc-${DISTVERSION}
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.7
@@ -27,7 +28,6 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 DISTVERSION=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.([0-9]+)/\1-\2/}
 GCC_VERSION=	${PORTVERSION:C/(.+)\.[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
-LATEST_LINK=	gcc${SUFFIX}${PKGNAMESUFFIX}
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 sparc64
 USES=		gmake iconv perl5
 USE_BINUTILS=	yes

@@ -1,5 +1,6 @@
 %%TOOLS%%%%WITH_GTK1%%bin/rcc-gtk-config
 %%TOOLS%%%%WITH_GTK2%%bin/rcc-gtk2-config
+%%TOOLS%%%%WITH_GTK3%%bin/rcc-gtk3-config
 include/librcc.h
 include/librccui.h
 lib/librcc.a
@@ -14,6 +15,10 @@ lib/librcc.so.2
 %%WITH_GTK2%%lib/librccgtk2.la
 %%WITH_GTK2%%lib/librccgtk2.so
 %%WITH_GTK2%%lib/librccgtk2.so.2
+%%WITH_GTK3%%lib/librccgtk3.a
+%%WITH_GTK3%%lib/librccgtk3.la
+%%WITH_GTK3%%lib/librccgtk3.so
+%%WITH_GTK3%%lib/librccgtk3.so.2
 lib/librccui.a
 lib/librccui.la
 lib/librccui.so
@@ -24,6 +29,7 @@ lib/rcc/engines/librcd_engine.so
 lib/rcc/engines/western_engine.a
 lib/rcc/engines/western_engine.la
 lib/rcc/engines/western_engine.so
-%%WITH_GTK2%%lib/rcc/rccexternal
+%%WITH_GLIB2%%lib/rcc/rccexternal
+libdata/pkgconfig/librcc.pc
 @dirrm lib/rcc/engines
 @dirrm lib/rcc

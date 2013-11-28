@@ -264,6 +264,7 @@
     SUBDIR += cons-test
     SUBDIR += cook
     SUBDIR += covtool
+    SUBDIR += cowlib
     SUBDIR += cpan-upload
     SUBDIR += cpan-upload-http
     SUBDIR += cppcheck
@@ -877,6 +878,7 @@
     SUBDIR += jcmdline
     SUBDIR += jech-dht
     SUBDIR += jenkins
+    SUBDIR += jenkins-lts
     SUBDIR += jep
     SUBDIR += jgoodies-common
     SUBDIR += jiic
@@ -971,6 +973,7 @@
     SUBDIR += libeio
     SUBDIR += libelf
     SUBDIR += libepp-nicbr
+    SUBDIR += libesedb
     SUBDIR += libestr
     SUBDIR += libev
     SUBDIR += libevent
@@ -1148,6 +1151,7 @@
     SUBDIR += llvm31
     SUBDIR += llvm32
     SUBDIR += llvm33
+    SUBDIR += llvm34
     SUBDIR += lmdbg
     SUBDIR += lndir
     SUBDIR += lockfree-malloc
@@ -1738,6 +1742,7 @@
     SUBDIR += p5-Date-Calc-XS
     SUBDIR += p5-Date-DayOfWeek
     SUBDIR += p5-Date-Easter
+    SUBDIR += p5-Date-Extract
     SUBDIR += p5-Date-EzDate
     SUBDIR += p5-Date-Holidays-DK
     SUBDIR += p5-Date-ICal
@@ -1824,6 +1829,7 @@
     SUBDIR += p5-Devel-Caller-IgnoreNamespaces
     SUBDIR += p5-Devel-Caller-Perl
     SUBDIR += p5-Devel-Callsite
+    SUBDIR += p5-Devel-CheckCompiler
     SUBDIR += p5-Devel-CheckLib
     SUBDIR += p5-Devel-CheckOS
     SUBDIR += p5-Devel-Constants
@@ -1840,6 +1846,7 @@
     SUBDIR += p5-Devel-EvalContext
     SUBDIR += p5-Devel-Events
     SUBDIR += p5-Devel-Events-Objects
+    SUBDIR += p5-Devel-FindPerl
     SUBDIR += p5-Devel-Gladiator
     SUBDIR += p5-Devel-GlobalDestruction
     SUBDIR += p5-Devel-GlobalDestruction-XS
@@ -2055,6 +2062,7 @@
     SUBDIR += p5-Git-PurePerl
     SUBDIR += p5-Git-Repository
     SUBDIR += p5-Git-Repository-Plugin-Log
+    SUBDIR += p5-Git-Sub
     SUBDIR += p5-Git-Wrapper
     SUBDIR += p5-Glib-Object-Introspection
     SUBDIR += p5-Glib2
@@ -2088,7 +2096,6 @@
     SUBDIR += p5-Heap-Simple-Perl
     SUBDIR += p5-Heap-Simple-XS
     SUBDIR += p5-Hook-LexWrap
-    SUBDIR += p5-IO
     SUBDIR += p5-IO-AIO
     SUBDIR += p5-IO-All
     SUBDIR += p5-IO-All-LWP
@@ -2264,6 +2271,7 @@
     SUBDIR += p5-Module-Build-Convert
     SUBDIR += p5-Module-Build-Kwalitee
     SUBDIR += p5-Module-Build-Tiny
+    SUBDIR += p5-Module-Build-XSUtil
     SUBDIR += p5-Module-CPANTS-Analyse
     SUBDIR += p5-Module-CPANfile
     SUBDIR += p5-Module-CheckDeps
@@ -2293,6 +2301,7 @@
     SUBDIR += p5-Module-Manifest
     SUBDIR += p5-Module-Math-Depends
     SUBDIR += p5-Module-Metadata
+    SUBDIR += p5-Module-Path
     SUBDIR += p5-Module-Pluggable
     SUBDIR += p5-Module-Pluggable-Fast
     SUBDIR += p5-Module-Pluggable-Ordered
@@ -2333,7 +2342,6 @@
     SUBDIR += p5-MooseX-AttributeHelpers
     SUBDIR += p5-MooseX-AttributeShortcuts
     SUBDIR += p5-MooseX-AuthorizedMethods
-    SUBDIR += p5-MooseX-ChainedAccessors
     SUBDIR += p5-MooseX-ClassAttribute
     SUBDIR += p5-MooseX-Clone
     SUBDIR += p5-MooseX-CompileTime-Traits
@@ -2578,6 +2586,7 @@
     SUBDIR += p5-ReadLine-Perl
     SUBDIR += p5-ReadLine-TTYtter
     SUBDIR += p5-Readonly
+    SUBDIR += p5-Readonly-XS
     SUBDIR += p5-Reflex
     SUBDIR += p5-Regexp-Assemble
     SUBDIR += p5-Regexp-Assemble-Compressed
@@ -2591,6 +2600,7 @@
     SUBDIR += p5-ResourcePool
     SUBDIR += p5-Resources
     SUBDIR += p5-Return-Value
+    SUBDIR += p5-Role-Basic
     SUBDIR += p5-Role-HasMessage
     SUBDIR += p5-Role-Identifiable
     SUBDIR += p5-Role-Tiny
@@ -2643,6 +2653,7 @@
     SUBDIR += p5-Set-NestedGroups
     SUBDIR += p5-Set-Object
     SUBDIR += p5-Set-Scalar
+    SUBDIR += p5-Set-Tiny
     SUBDIR += p5-Shape
     SUBDIR += p5-Shell-Base
     SUBDIR += p5-Shell-EnvImporter
@@ -2699,6 +2710,7 @@
     SUBDIR += p5-Sub-Signatures
     SUBDIR += p5-Sub-Uplevel
     SUBDIR += p5-Sub-WrapPackages
+    SUBDIR += p5-Symbol-Global-Name
     SUBDIR += p5-Symbol-Util
     SUBDIR += p5-Syntax-Keyword-Junction
     SUBDIR += p5-Sys-Cpu
@@ -2717,6 +2729,7 @@
     SUBDIR += p5-Sys-Trace
     SUBDIR += p5-Sys-Virt
     SUBDIR += p5-System-Command
+    SUBDIR += p5-System-Sub
     SUBDIR += p5-System2
     SUBDIR += p5-TAP-Formatter-JUnit
     SUBDIR += p5-TAP-Harness-JUnit
@@ -3745,6 +3758,7 @@
     SUBDIR += py-sdl2
     SUBDIR += py-serpent
     SUBDIR += py-setproctitle
+    SUBDIR += py-setuptools
     SUBDIR += py-setuptools-git
     SUBDIR += py-setuptools_darcs
     SUBDIR += py-setuptools_hg

@@ -12,13 +12,13 @@ COMMENT=	Table/data-grid framework for Django
 
 LICENSE=	BSD
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.2:${PORTSDIR}/www/py-django \
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django \
 		${PYTHON_PKGNAMEPREFIX}six>=0:${PORTSDIR}/devel/py-six
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=easy_install
+PYDISTUTILS_AUTOPLIST=yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|classifiers=\[|zip_safe=False, classifiers=\[|' \
 		${WRKSRC}/setup.py

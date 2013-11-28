@@ -12,7 +12,7 @@ COMMENT=	Card game suite
 
 USES=		qmake
 USE_QT4=	assistantclient corelib gui network \
-		moc_build qmake_build rcc_build uic_build
+		moc_build rcc_build uic_build
 ALL_TARGET=	qmake release
 MAKE_JOBS_UNSAFE=	yes
 

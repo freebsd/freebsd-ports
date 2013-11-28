@@ -20,7 +20,6 @@ LDAP_DESC=		Enable LDAP support
 # Not required but we want it
 USE_HORDE_RUN+=	Horde_Date
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MLDAP}

@@ -45,7 +45,7 @@ do-install:
 	${LN} -sf ${PREFIX}/lib/libtbbmalloc.so.4 \
 		${STAGEDIR}${PREFIX}/lib/libtbbmalloc.so; \
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/tbb/; \
-	cd include/tbb/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/include/tbb/
+	cd include/tbb/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/tbb/
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtbb.so.4

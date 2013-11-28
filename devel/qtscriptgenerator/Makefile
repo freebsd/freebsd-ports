@@ -15,16 +15,15 @@ OPTIONS_DEFINE=	PHONON
 PHONON_DESC=	Build Phonon support
 OPTIONS_DEFAULT=	PHONON
 
+USES=		gmake qmake
 USE_QT4=	corelib declarative designer doc help help-tools gui \
 		iconengines imageformats inputmethods linguist network \
 		opengl pixeltool porting qdbusviewer \
 		qt3support qtestlib qvfb script scripttools \
 		sql svg webkit xml xmlpatterns xmlpatterns-tool \
-		qmake_build moc_build rcc_build uic_build
-USE_GMAKE=	yes
+		moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPHONON}
@@ -37,30 +36,26 @@ PLIST_SUB+=	PHONON="@comment "
 
 do-configure:
 	@cd ${WRKSRC}/generator && \
-		${SETENV} ${CONFIGURE_ENV} ${QMAKE} \
-		PREFIX=${PREFIX} \
-		generator.pro
+		${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKE_ARGS}
 
 do-build:
 	@echo "--->  Building generator"
 	@cd ${WRKSRC}/generator && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS} && \
 		${SETENV} ${CONFIGURE_ENV} ./generator \
 		--include-paths=${PREFIX}/include/:${PREFIX}/include/qt4/
 	@echo "--->  Configuring generated files"
 	@cd ${WRKSRC}/qtbindings && \
-		${SETENV} ${CONFIGURE_ENV} ${QMAKE} \
-		PREFIX=${PREFIX} \
+		${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKE_ARGS} \
 		INCLUDEPATH+=${PREFIX}/include/qt4/phonon \
-		LIBS+=-L${PREFIX}/lib \
-		qtbindings.pro
+		LIBS+=-L${PREFIX}/lib
 	@echo "--->  Building generated files"
 	@cd ${WRKSRC}/qtbindings && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS}
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS}
 
 do-install:
-	${MKDIR} ${PREFIX}/${QT_PLUGINDIR_REL}/script
+	${MKDIR} ${STAGEDIR}${PREFIX}/${QT_PLUGINDIR_REL}/script
 	cd ${WRKSRC}/plugins/script && \
-		${COPYTREE_SHARE} \* ${PREFIX}/${QT_PLUGINDIR_REL}/script
+		${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/${QT_PLUGINDIR_REL}/script
 
 .include <bsd.port.mk>

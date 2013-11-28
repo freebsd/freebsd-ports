@@ -9,33 +9,26 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	TV-like client for YouTube
 
 USE_QT4=	gui network xml dbus phonon phonon-gst \
-		qmake_build moc_build rcc_build imageformats_run
+		moc_build rcc_build imageformats_run
 USE_GSTREAMER=	ffmpeg
 USES=		qmake
 INSTALLS_ICONS=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-QMAKE_ARGS=	QMAKE_LRELEASE=${QT_LRELEASE}
-QMAKE_PRO=	${WRKSRC}/${PORTNAME}.pro
-QT_LRELEASE=	${LOCALBASE}/bin/lrelease-qt4
+QMAKE_ARGS=	QMAKE_LRELEASE=${LRELEASE}
 
 STRIP_FILES=	bin/minitube
 
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+NLS_USE=	QT4=linguist_build
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNLS}
-USE_QT4+=	linguist_build
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
-
 pre-configure:
-	${REINPLACE_CMD} -e 's,$$$$PKGDATADIR,${DATADIR},g' ${QMAKE_PRO}
+	${REINPLACE_CMD} -e 's,$$$$PKGDATADIR,${DATADIR},g' ${WRKSRC}/minitube.pro
 .if !${PORT_OPTIONS:MNLS}
-	${REINPLACE_CMD} -e '/include(locale\/locale.pri)/d' ${QMAKE_PRO}
+	${REINPLACE_CMD} -e '/include(locale\/locale.pri)/d' ${WRKSRC}/minitube.pro
 .endif
 
 post-install:

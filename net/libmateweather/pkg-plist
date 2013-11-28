@@ -660,7 +660,5 @@ share/locale/zh_TW/LC_MESSAGES/libmateweather.mo
 @dirrmtry share/icons/mate/16x16
 @dirrmtry share/icons/mate
 @dirrmtry share/icons
-@dirrmtry share/glib-2.0/schemas
-@dirrmtry share/glib-2.0
 @dirrm %%DOCSDIR%%
 @dirrm include/libmateweather

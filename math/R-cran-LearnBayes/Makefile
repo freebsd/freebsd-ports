@@ -16,5 +16,4 @@ LICENSE_COMB=	dual
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

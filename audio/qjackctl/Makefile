@@ -31,12 +31,9 @@ MAKE_JOBS_UNSAFE=yes
 
 MAN1=		qjackctl.1
 
-LUPDATE=	${LOCALBASE}/bin/lupdate-qt4
-LRELEASE=	${LOCALBASE}/bin/lrelease-qt4
-
 post-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} -o ${PORTNAME}.mak \
-		${QMAKEFLAGS}
+		${QMAKE_ARGS}
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/${PORTNAME}

@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	arpack-ng
-PORTVERSION=	3.1.3
-PORTREVISION=	1
+PORTVERSION=	3.1.4
 CATEGORIES=	math
 MASTER_SITES=	http://forge.scilab.org/index.php/p/arpack-ng/downloads/get/ \
 		LOCAL/bf
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Revised Argand library for solving large-scale eigenvalue problems
@@ -24,12 +24,15 @@ CONFIGURE_ARGS =	--disable-mpi --with-blas="${BLAS}" \
 			--with-lapack="${LAPACK}"
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_FILES=	bin/dnsimp \
+PLIST_FILES=	bin/bug_1323 \
+		bin/dnsimp \
 		lib/libarpack.a \
 		lib/libarpack.la \
 		lib/libarpack.so \
 		lib/libarpack.so.2 \
 		libdata/pkgconfig/arpack.pc
+
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
@@ -47,16 +50,16 @@ WITH_BLAS?=	blas
 .if ${WITH_BLAS} == "gotoblas"
 BLAS=		-lgoto2p
 LAPACK =	-lgoto2p
-LIB_DEPENDS+=	goto2p:${PORTSDIR}/math/gotoblas
+LIB_DEPENDS+=	libgoto2p.so:${PORTSDIR}/math/gotoblas
 .elif ${WITH_BLAS} == "atlas"
 BLAS=		-lptf77blas
 LAPACK =	-lalapack -lptcblas
-LIB_DEPENDS+=	ptf77blas:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libptf77blas.so:${PORTSDIR}/math/atlas
 .elif ${WITH_BLAS} == "blas"
 BLAS=		-lblas
 LAPACK =	-llapack
-LIB_DEPENDS+=	blas:${PORTSDIR}/math/blas \
-		lapack:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas \
+		liblapack.so:${PORTSDIR}/math/lapack
 .else
 IGNORE =	unknown value of WITH_BLAS: ${WITH_BLAS}
 .endif
@@ -64,6 +67,11 @@ IGNORE =	unknown value of WITH_BLAS: ${WITH_BLAS}
 post-patch:
 	@${REINPLACE_CMD} -Ee 's|\(libdir\)(/pkgconfig)|(prefix)/libdata\1|' \
 	${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/BLAS_LIBS.*LAPACK_LIBS/ \
+	{s/LAPACK_LIBS/BLAS_LIBS/;s/BLAS_LIBS/LAPACK_LIBS/;}' \
+	${WRKSRC}/Makefile.in \
+	${WRKSRC}/arpack.pc.in \
+	${WRKSRC}/TESTS/Makefile.in
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}

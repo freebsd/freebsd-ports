@@ -1,4 +1,4 @@
-# Created by: nemysis@gmx.ch
+# Created by: nemysis <nemysis@gmx.ch>
 # $FreeBSD$
 
 PORTNAME=	gottet
@@ -7,34 +7,27 @@ CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/
 EXTRACT_SUFX=	-src.tar.bz2
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Tetris clone
 
 LICENSE=	GPLv3
 
+USES=		qmake
 USE_BZIP2=	yes
-USE_QT4=	moc_build qmake_build rcc_build iconengines imageformats
+USE_QT4=	moc_build rcc_build iconengines_run imageformats_run
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	CREDITS ChangeLog
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX}
-
-post-configure:
-	@${REINPLACE_CMD} 's|-O2 -Wall|-Wall|g' \
-		${WRKSRC}/Makefile
-
 post-install:
-	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${PREFIX}/share/pixmaps/
+	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
+		    ${STAGEDIR}${PREFIX}/share/pixmaps/
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

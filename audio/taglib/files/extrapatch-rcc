@@ -1,0 +1,676 @@
+diff -dPNur ./config.h.cmake ./config.h.cmake
+--- ./config.h.cmake	2013-10-08 17:50:01.000000000 +0200
++++ ./config.h.cmake	2013-11-11 13:43:48.500304915 +0100
+@@ -31,6 +31,9 @@
+ /* Defined if you have libz */
+ #cmakedefine   HAVE_ZLIB 1
+ 
++/* Defined if you have LibRCC from RusXMMS project */
++#cmakedefine   HAVE_LIBRCC 1
++
+ /* Indicates whether debug messages are shown even in release mode */
+ #cmakedefine   TRACE_IN_RELEASE 1
+ 
+diff -dPNur ./ConfigureChecks.cmake ./ConfigureChecks.cmake
+--- ./ConfigureChecks.cmake	2013-10-08 17:50:01.000000000 +0200
++++ ./ConfigureChecks.cmake	2013-11-11 13:42:53.017126134 +0100
+@@ -216,6 +216,7 @@
+   set(HAVE_ZLIB 0)
+ endif()
+ 
++SET(HAVE_LIBRCC 1)
+ 
+ set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules)
+ 
+diff -dPNur ./examples/tagreader_c.c ./examples/tagreader_c.c
+--- ./examples/tagreader_c.c	2013-10-08 17:50:01.000000000 +0200
++++ ./examples/tagreader_c.c	2013-11-11 13:42:53.017126134 +0100
+@@ -38,7 +38,7 @@
+   TagLib_Tag *tag;
+   const TagLib_AudioProperties *properties;
+ 
+-  taglib_set_strings_unicode(FALSE);
++//  taglib_set_strings_unicode(FALSE);
+ 
+   for(i = 1; i < argc; i++) {
+     printf("******************** \"%s\" ********************\n", argv[i]);
+diff -dPNur ./examples/tagwriter.cpp ./examples/tagwriter.cpp
+--- ./examples/tagwriter.cpp	2013-10-08 17:50:01.000000000 +0200
++++ ./examples/tagwriter.cpp	2013-11-11 13:42:53.028126368 +0100
+@@ -92,7 +92,7 @@
+     if(isArgument(argv[i]) && i + 1 < argc && !isArgument(argv[i + 1])) {
+ 
+       char field = argv[i][1];
+-      TagLib::String value = argv[i + 1];
++      TagLib::String value(argv[i + 1], TagLib::String::Locale);
+ 
+       TagLib::List<TagLib::FileRef>::Iterator it;
+       for(it = fileList.begin(); it != fileList.end(); ++it) {
+diff -dPNur ./taglib/CMakeLists.txt ./taglib/CMakeLists.txt
+--- ./taglib/CMakeLists.txt	2013-10-08 17:50:01.000000000 +0200
++++ ./taglib/CMakeLists.txt	2013-11-11 13:42:53.042126665 +0100
+@@ -36,6 +36,7 @@
+   audioproperties.h
+   taglib_export.h
+   ${CMAKE_BINARY_DIR}/taglib_config.h
++  toolkit/rccpatch.h
+   toolkit/taglib.h
+   toolkit/tstring.h
+   toolkit/tlist.h
+@@ -281,6 +282,7 @@
+ )
+ 
+ set(toolkit_SRCS
++  toolkit/rccpatch.cpp
+   toolkit/tstring.cpp
+   toolkit/tstringlist.cpp
+   toolkit/tbytevector.cpp
+@@ -310,7 +312,7 @@
+ add_library(tag ${tag_LIB_SRCS} ${tag_HDRS})
+ 
+ if(ZLIB_FOUND)
+-	target_link_libraries(tag ${ZLIB_LIBRARIES})
++	target_link_libraries(tag rcc ${ZLIB_LIBRARIES})
+ endif()
+ 
+ set_target_properties(tag PROPERTIES
+diff -dPNur ./taglib/mpeg/id3v1/id3v1tag.cpp ./taglib/mpeg/id3v1/id3v1tag.cpp
+--- ./taglib/mpeg/id3v1/id3v1tag.cpp	2013-10-08 17:50:01.000000000 +0200
++++ ./taglib/mpeg/id3v1/id3v1tag.cpp	2013-11-11 13:42:53.043126686 +0100
+@@ -64,17 +64,18 @@
+ 
+ String ID3v1::StringHandler::parse(const ByteVector &data) const
+ {
+-  return String(data, String::Latin1).stripWhiteSpace();
++  return String(data, String::Latin1ID3).stripWhiteSpace();
+ }
+ 
+ ByteVector ID3v1::StringHandler::render(const String &s) const
+ {
+   if(!s.isLatin1())
+   {
++   if (String::ID3WType(String::Latin1) == String::Latin1)
+     return ByteVector();
+   }
+ 
+-  return s.data(String::Latin1);
++  return s.data(String::Latin1ID3);
+ }
+ 
+ ////////////////////////////////////////////////////////////////////////////////
+@@ -257,7 +258,7 @@
+     d->track = uchar(data[offset + 29]);
+   }
+   else
+-    d->comment = data.mid(offset, 30);
++    d->comment = TagPrivate::stringHandler->parse(data.mid(offset, 30));
+ 
+   offset += 30;
+ 
+diff -dPNur ./taglib/mpeg/id3v2/frames/commentsframe.cpp ./taglib/mpeg/id3v2/frames/commentsframe.cpp
+--- ./taglib/mpeg/id3v2/frames/commentsframe.cpp	2013-10-08 17:50:01.000000000 +0200
++++ ./taglib/mpeg/id3v2/frames/commentsframe.cpp	2013-11-11 13:42:53.043126686 +0100
+@@ -150,10 +150,10 @@
+     return;
+   }
+ 
+-  d->textEncoding = String::Type(data[0]);
++  d->textEncoding = String::ID3Type(data[0]);
+   d->language = data.mid(1, 3);
+ 
+-  int byteAlign = d->textEncoding == String::Latin1 || d->textEncoding == String::UTF8 ? 1 : 2;
++  int byteAlign = (d->textEncoding == String::Latin1 || d->textEncoding == String::Latin1ID3 || d->textEncoding == String::Latin1ID3V2 || d->textEncoding == String::UTF8) ? 1 : 2;
+ 
+   ByteVectorList l = ByteVectorList::split(data.mid(4), textDelimiter(d->textEncoding), byteAlign, 2);
+ 
+@@ -174,10 +174,12 @@
+ 
+   String::Type encoding = d->textEncoding;
+ 
++  encoding = String::ID3WType(encoding);
++
+   encoding = checkTextEncoding(d->description, encoding);
+   encoding = checkTextEncoding(d->text, encoding);
+ 
+-  v.append(char(encoding));
++  v.append(char(String::ID3RealType(encoding)));
+   v.append(d->language.size() == 3 ? d->language : "XXX");
+   v.append(d->description.data(encoding));
+   v.append(textDelimiter(encoding));
+diff -dPNur ./taglib/mpeg/id3v2/frames/textidentificationframe.cpp ./taglib/mpeg/id3v2/frames/textidentificationframe.cpp
+--- ./taglib/mpeg/id3v2/frames/textidentificationframe.cpp	2013-10-08 17:50:01.000000000 +0200
++++ ./taglib/mpeg/id3v2/frames/textidentificationframe.cpp	2013-11-11 13:42:53.044126708 +0100
+@@ -187,12 +187,12 @@
+ 
+   // read the string data type (the first byte of the field data)
+ 
+-  d->textEncoding = String::Type(data[0]);
++  d->textEncoding = String::ID3Type(data[0]);
+ 
+   // split the byte array into chunks based on the string type (two byte delimiter
+   // for unicode encodings)
+ 
+-  int byteAlign = d->textEncoding == String::Latin1 || d->textEncoding == String::UTF8 ? 1 : 2;
++  int byteAlign = (d->textEncoding == String::Latin1 || d->textEncoding == String::Latin1ID3 || d->textEncoding == String::Latin1ID3V2 || d->textEncoding == String::UTF8) ? 1 : 2;
+ 
+   // build a small counter to strip nulls off the end of the field
+ 
+@@ -223,11 +223,14 @@
+ 
+ ByteVector TextIdentificationFrame::renderFields() const
+ {
+-  String::Type encoding = checkTextEncoding(d->fieldList, d->textEncoding);
++  String::Type encoding = d->textEncoding;
++
++  encoding = String::ID3WType(encoding);
++  encoding = checkTextEncoding(d->fieldList, encoding);
+ 
+   ByteVector v;
+ 
+-  v.append(char(encoding));
++  v.append(char(String::ID3RealType(encoding)));
+ 
+   for(StringList::ConstIterator it = d->fieldList.begin(); it != d->fieldList.end(); it++) {
+ 
+diff -dPNur ./taglib/mpeg/id3v2/id3v2frame.cpp ./taglib/mpeg/id3v2/id3v2frame.cpp
+--- ./taglib/mpeg/id3v2/id3v2frame.cpp	2013-10-08 17:50:01.000000000 +0200
++++ ./taglib/mpeg/id3v2/id3v2frame.cpp	2013-11-11 13:42:53.045126729 +0100
+@@ -302,7 +302,7 @@
+   if((encoding == String::UTF8 || encoding == String::UTF16BE) && version != 4)
+     return String::UTF16;
+ 
+-  if(encoding != String::Latin1)
++  if((encoding != String::Latin1)&&(encoding != String::Latin1ID3V2))
+     return encoding;
+ 
+   for(StringList::ConstIterator it = fields.begin(); it != fields.end(); ++it) {
+diff -dPNur ./taglib/toolkit/rccpatch.cpp ./taglib/toolkit/rccpatch.cpp
+--- ./taglib/toolkit/rccpatch.cpp	1970-01-01 01:00:00.000000000 +0100
++++ ./taglib/toolkit/rccpatch.cpp	2013-11-11 13:42:53.045126729 +0100
+@@ -0,0 +1,237 @@
++#include <stdlib.h>
++
++#include <string>
++#include "tstring.h"
++#include "tbytevector.h"
++
++//#define RCC_DEBUG
++
++
++#ifndef HAVE_LIBRCC
++# include <config.h>
++#endif
++
++#ifdef HAVE_LIBRCC
++# ifdef RCC_DEBUG
++#  include <stdio.h>
++# endif /* RCC_DEBUG */
++# include <librcc.h>
++# include <string.h>
++#endif /* HAVE_LIBRCC */
++
++
++#ifdef HAVE_LIBRCC
++# define ID3_CLASS 0
++# define ID3V2_CLASS 1
++# define UTF_CLASS 2
++# define OUT_CLASS 3
++static rcc_class classes[] = {
++    { "id3", RCC_CLASS_STANDARD, NULL, NULL, "ID3 Encoding", 0 },
++    { "id3v2", RCC_CLASS_STANDARD, "id3", NULL, "ID3 v.2 Encoding", 0 },
++    { "utf", RCC_CLASS_KNOWN, "UTF-8", NULL, "Unicode Encoding", 0},
++    { "out", RCC_CLASS_TRANSLATE_LOCALE, "LC_CTYPE", NULL, "Output Encoding", 0 },
++    { NULL, RCC_CLASS_STANDARD, NULL, NULL, NULL, 0 }
++};
++
++static int rcc_initialized = 0;
++
++static rcc_context ctx = NULL;
++#endif /* HAVE_LIBRCC */
++
++
++void rccTaglibPatchFree() {
++#ifdef HAVE_LIBRCC
++    if (rcc_initialized) {
++       rccFree();
++       rcc_initialized = 0;
++    }
++#endif /* HAVE_LIBRCC */
++}
++
++void rccTaglibPatchInit() {
++#ifdef HAVE_LIBRCC
++    if (rcc_initialized) return;
++    rccInit();
++    rccInitDefaultContext(NULL, 0, 0, classes, 0);
++    rccLoad(NULL, "xmms");
++    rccInitDb4(NULL, NULL, 0);
++    rcc_initialized = 1;
++#endif /* HAVE_LIBRCC */
++}
++
++void rccTaglibPatchSetContext(void *newctx) {
++#ifdef HAVE_LIBRCC
++    if (newctx) {
++	ctx = (rcc_context)newctx;
++	rcc_initialized = 1;
++    }
++#endif /* HAVE_LIBRCC */
++}
++
++static void rccTaglibPatchTryInit() {
++#ifdef HAVE_LIBRCC
++    if (!rcc_initialized) {
++	rccTaglibPatchInit();
++	if (rcc_initialized) atexit(rccTaglibPatchFree);	
++    }
++#endif /* HAVE_LIBRCC */
++}
++
++
++TagLib::ByteVector rccTaglibPatchRecodeOutput(const std::string &s) {
++    TagLib::ByteVector v;
++#ifdef HAVE_LIBRCC
++    size_t rlen;
++    char *res;
++
++    rccTaglibPatchTryInit();
++
++    res = rccSizedRecode(ctx, UTF_CLASS, OUT_CLASS, s.c_str(), s.length(), &rlen);
++#ifdef RCC_DEBUG
++    for (const unsigned char *c = (const unsigned char*)s.c_str(); *c; c++) {
++	if (*c > 127) {
++	    printf(" Output: %s - %s\n", s.c_str(), res?res:"null");
++	    break;
++	}
++    }
++#endif /* RCC_DEBUG */
++
++    if (res) v.setData(res, rlen);
++    else v.setData("", 0);
++    //v.setData(s.c_str(), s.length());
++
++    return v;
++#else
++    v.setData("", 0);
++    
++    return v;
++#endif /* HAVE_LIBRCC */
++}
++
++TagLib::ByteVector rccTaglibPatchRecodeOutputID3(const std::string &s, bool v2 = false) {
++    TagLib::ByteVector v;
++#ifdef HAVE_LIBRCC
++    size_t rlen;
++    char *res;
++
++    rccTaglibPatchTryInit();
++
++    res = rccSizedRecode(ctx, UTF_CLASS, v2?ID3V2_CLASS:ID3_CLASS, s.c_str(), s.length(), &rlen);
++#ifdef RCC_DEBUG
++    for (const unsigned char *c = (const unsigned char*)s.c_str(); *c; c++) {
++	if (*c > 127) {
++	    printf(" OutputID3(%i): %s - %s\n", v2, s.c_str(), res?res:"null");
++	    break;
++	}
++    }
++#endif /* RCC_DEBUG */
++
++    if (res) v.setData(res, rlen);
++    else v.setData("", 0);
++    //v.setData(s.c_str(), s.length());
++
++    return v;
++#else
++    v.setData("", 0);
++    
++    return v;
++#endif /* HAVE_LIBRCC */
++}
++
++TagLib::ByteVector rccTaglibPatchRecodeInput(const std::string &s) {
++    TagLib::ByteVector v;
++#ifdef HAVE_LIBRCC
++    size_t rlen;
++    char *res;
++
++    rccTaglibPatchTryInit();
++
++    res = rccSizedRecode(ctx, OUT_CLASS, UTF_CLASS, s.c_str(), s.length(), &rlen);
++#ifdef RCC_DEBUG
++    for (const unsigned char *c = (const unsigned char*)s.c_str(); *c; c++) {
++	if (*c > 127) {
++	    printf(" Input: %s - %s\n", s.c_str(), res?res:"null");
++	    break;
++	}
++    }
++#endif /* RCC_DEBUG */
++
++    if (res) v.setData(res, rlen);
++    else
++#endif /* HAVE_LIBRCC */
++    v.setData("", 0);
++    
++    return v;
++}
++
++TagLib::ByteVector rccTaglibPatchRecodeInputID3(const std::string &s, bool v2 = false) {
++    TagLib::ByteVector v;
++#ifdef HAVE_LIBRCC
++    size_t rlen;
++    char *res;
++
++    rccTaglibPatchTryInit();
++
++    res = rccSizedRecode(ctx, v2?ID3V2_CLASS:ID3_CLASS, UTF_CLASS, s.c_str(), s.length(), &rlen);
++#ifdef RCC_DEBUG
++    for (const unsigned char *c = (const unsigned char*)s.c_str(); *c; c++) {
++	if (*c > 127) {
++	    printf(" InputID3(%i): %s - %s\n", v2, s.c_str(), res?res:"null");
++	    break;
++	}
++    }
++#endif /* RCC_DEBUG */
++    if (res) v.setData(res, rlen + 1);
++    else
++#endif /* HAVE_LIBRCC */
++    v.setData("", 0);
++
++    return v;
++}
++
++TagLib::String::Type rccTaglibPatchGetLocaleType() {
++#ifdef HAVE_LIBRCC
++    size_t len;
++    char charset[32];
++
++    rccTaglibPatchTryInit();
++    if (!rccLocaleGetCharset(charset, NULL, 31)) {
++	if (!strncmp(charset, "UTF", 3)) {
++	    len = strlen(charset);
++	    
++	    if (charset[len-1]=='8') return TagLib::String::UTF8;
++	    if (!strcmp(charset+(len-2),"16")) return TagLib::String::UTF16;
++	    if (!strcmp(charset+(len-4),"16LE")) return TagLib::String::UTF16LE;
++	    if (!strcmp(charset+(len-4),"16BE")) return TagLib::String::UTF16BE;
++	}
++	return TagLib::String::Latin1;
++    }
++#endif /* HAVE_LIBRCC */
++    return TagLib::String::UTF8;
++}
++
++TagLib::String::Type rccTaglibPatchGetID3Type() {
++#ifdef HAVE_LIBRCC
++    size_t len;
++    const char *charset;
++
++    rccTaglibPatchTryInit();
++    
++    charset = rccGetCurrentCharsetName(ctx, ID3V2_CLASS);
++    if (charset) {
++	if (!strncmp(charset, "UTF", 3)) {
++	    len = strlen(charset);
++	    
++	    if (charset[len-1]=='8') return TagLib::String::UTF8;
++	    if (!strcmp(charset+(len-2),"16")) return TagLib::String::UTF16;
++	    if (!strcmp(charset+(len-4),"16LE")) return TagLib::String::UTF16LE;
++	    if (!strcmp(charset+(len-4),"16BE")) return TagLib::String::UTF16BE;
++	}
++	return TagLib::String::Latin1ID3V2;
++    } else {
++	// Error or no-language configured: If Latin1ID3V2 is returned we normally will use the default unicode encoding unless Latin1 is selected by taglib
++	return TagLib::String::Latin1ID3V2;
++    }
++#endif /* HAVE_LIBRCC */
++    return TagLib::String::Latin1;
++}
+diff -dPNur ./taglib/toolkit/rccpatch.h ./taglib/toolkit/rccpatch.h
+--- ./taglib/toolkit/rccpatch.h	1970-01-01 01:00:00.000000000 +0100
++++ ./taglib/toolkit/rccpatch.h	2013-11-11 13:42:53.045126729 +0100
+@@ -0,0 +1,20 @@
++#ifndef _RCC_PATCH_H
++#define _RCC_PATCH_H
++
++#include <string.h>
++#include "tstring.h"
++#include "tbytevector.h"
++
++void rccTaglibPatchFree();
++void rccTaglibPatchInit();
++void rccTaglibPatchSetContext(void *newctx);
++
++TagLib::ByteVector rccTaglibPatchRecodeOutput(const std::string &s);
++TagLib::ByteVector rccTaglibPatchRecodeInput(const std::string &s);
++TagLib::ByteVector rccTaglibPatchRecodeOutputID3(const std::string &s, bool v2 = false);
++TagLib::ByteVector rccTaglibPatchRecodeInputID3(const std::string &s, bool v2 = false);
++
++TagLib::String::Type rccTaglibPatchGetLocaleType();
++TagLib::String::Type rccTaglibPatchGetID3Type();
++
++#endif /* _RCC_PATCH_H */
+diff -dPNur ./taglib/toolkit/tstring.cpp ./taglib/toolkit/tstring.cpp
+--- ./taglib/toolkit/tstring.cpp	2013-10-08 17:50:01.000000000 +0200
++++ ./taglib/toolkit/tstring.cpp	2013-11-11 13:42:53.046126750 +0100
+@@ -29,6 +29,7 @@
+ #include <config.h>
+ #endif
+ 
++#include "rccpatch.h"
+ #include "tstring.h"
+ #include "tdebug.h"
+ #include "tstringlist.h"
+@@ -197,8 +198,11 @@
+ String::String(const std::string &s, Type t)
+   : d(new StringPrivate())
+ {
+-  if(t == Latin1)
+-    copyFromLatin1(&s[0], s.length());
++  if(t == Locale)
++    t = rccTaglibPatchGetLocaleType();
++
++  if(t == Latin1 || t == Latin1ID3 || t == Latin1ID3V2)
++    copyFromLatin1(&s[0], s.length(), true, t);
+   else if(t == String::UTF8)
+     copyFromUTF8(&s[0], s.length());
+   else {
+@@ -229,8 +233,11 @@
+ String::String(const char *s, Type t)
+   : d(new StringPrivate())
+ {
+-  if(t == Latin1)
+-    copyFromLatin1(s, ::strlen(s));
++  if(t == Locale)
++    t = rccTaglibPatchGetLocaleType();
++
++  if(t == Latin1 || t == Latin1ID3 || t == Latin1ID3V2)
++    copyFromLatin1(s, ::strlen(s), true, t);
+   else if(t == String::UTF8)
+     copyFromUTF8(s, ::strlen(s));
+   else {
+@@ -251,7 +258,10 @@
+ String::String(char c, Type t)
+   : d(new StringPrivate(1, static_cast<uchar>(c)))
+ {
+-  if(t != Latin1 && t != UTF8) {
++  if(t == Locale)
++    t = rccTaglibPatchGetLocaleType();
++
++  if(t != Latin1 && t != Latin1ID3 && t != Latin1ID3V2 && t != UTF8) {
+     debug("String::String() -- A char should not contain UTF16.");
+   }
+ }
+@@ -262,8 +272,11 @@
+   if(v.isEmpty())
+     return;
+ 
+-  if(t == Latin1) 
+-    copyFromLatin1(v.data(), v.size());
++  if(t == Locale)
++    t = rccTaglibPatchGetLocaleType();
++
++  if(t == Latin1 || t == Latin1ID3 || t == Latin1ID3V2)
++    copyFromLatin1(v.data(), v.size(), true, t);
+   else if(t == UTF8) 
+     copyFromUTF8(v.data(), v.size());
+   else 
+@@ -428,16 +441,46 @@
+ 
+ ByteVector String::data(Type t) const
+ {
+-  switch(t) 
+-  {
++  ByteVector v;
++
++  if (t == Locale) {
++        // The source is either Unicode or real Latin1 (if rcc is bypassed)
++    std::string s = to8Bit(true);
++
++        // In case of UTF8 locale, this probably will return NULL (no recoding needed), but we will take UTF8 path in the next swtich
++    v = rccTaglibPatchRecodeOutput(s);
++    if (v.size()) return v;
++
++    t = rccTaglibPatchGetLocaleType();
++  }
++
++  switch(t) {
++  case Latin1ID3:
++  case Latin1ID3V2:
++    {
++      std::string s = to8Bit(true);
++      if (t == Latin1ID3) v = rccTaglibPatchRecodeOutputID3(s, false);
++      else if (t == Latin1ID3V2) v = rccTaglibPatchRecodeOutputID3(s, true);
++      if (v.size()) 
++        return v;
++      
++          // we don't know if we got NULL because rcc is disabled (error) or UTF8 output is required
++      if ((t == Latin1ID3V2)&&(rccTaglibPatchGetID3Type() == UTF8)) {
++          v.setData(s.c_str(), s.length());
++      } else {
++          for(wstring::const_iterator it = d->data.begin(); it != d->data.end(); it++)
++            v.append(char(*it));
++      }
++      return v;
++    }
+   case Latin1:
+     {
+       ByteVector v(size(), 0);
+       char *p = v.data();
+-
++ 
+       for(wstring::const_iterator it = d->data.begin(); it != d->data.end(); it++)
+         *p++ = static_cast<char>(*it);
+-
++ 
+       return v;
+     }
+   case UTF8:
+@@ -763,12 +806,29 @@
+ // private members
+ ////////////////////////////////////////////////////////////////////////////////
+ 
+-void String::copyFromLatin1(const char *s, size_t length)
++void String::copyFromLatin1(const char *s, size_t length, bool prepare, Type t)
+ {
+   d->data.resize(length);
+-
+   for(size_t i = 0; i < length; ++i)
+     d->data[i] = static_cast<uchar>(s[i]);
++
++  // librcc conversation
++  if (prepare) {
++    std::string s = to8Bit(false);
++    ByteVector v;
++
++    if (t == Latin1ID3) v = rccTaglibPatchRecodeInputID3(s, false);
++    else if (t == Latin1ID3V2) v = rccTaglibPatchRecodeInputID3(s, true);
++    else /* Latin1 converted from Locale */ v = rccTaglibPatchRecodeInput(s);
++
++    if (v.size()) {
++      copyFromUTF8(v.data(), v.size());
++    } else {
++    // We don't know if we got UTF-8 encoded string or either rcc is disable or something is failed,
++    // since standard applications are really expecting here Latin1, it is safe to just check if we have violations of UTF8
++    //if (Unicode::isLegalUTF8(s)) t = UTF8;
++    }
++  }
+ }
+ 
+ void String::copyFromUTF8(const char *s, size_t length)
+@@ -874,7 +934,33 @@
+ 
+ std::ostream &operator<<(std::ostream &s, const TagLib::String &str)
+ {
+-  s << str.to8Bit();
++  TagLib::ByteVector bv = str.data(TagLib::String::Locale);
++  s << bv;
+   return s;
+ }
+ 
++TagLib::String::Type TagLib::String::ID3Type(int i)
++{
++  if(i == Latin1)
++    return Latin1ID3V2;
++  return Type(i);
++};
++
++TagLib::String::Type TagLib::String::ID3WType(Type type)
++{
++  Type rcc_type = rccTaglibPatchGetID3Type();
++  if((rcc_type == Latin1ID3)||(rcc_type == Latin1ID3V2)||(rcc_type == Latin1)) {
++    if(type == Latin1) return
++      rcc_type;
++    return type;
++  }
++
++  return rcc_type;
++};
++
++TagLib::String::Type TagLib::String::ID3RealType(Type type)
++{
++  if((type == Latin1ID3) || (type == Latin1ID3V2))
++    return Latin1;
++  return type;
++}
+diff -dPNur ./taglib/toolkit/tstring.h ./taglib/toolkit/tstring.h
+--- ./taglib/toolkit/tstring.h	2013-10-08 17:50:01.000000000 +0200
++++ ./taglib/toolkit/tstring.h	2013-11-11 13:42:53.047126771 +0100
+@@ -90,6 +90,18 @@
+      */
+     enum Type {
+       /*!
++       * Determine using current locale settings
++       */
++      Locale = -1,
++      /*!
++       * Latin1 for ID3 tags.
++       */
++      Latin1ID3 = 65,
++      /*!
++       * Latin1 for ID3v2 tags.
++       */
++      Latin1ID3V2 = 66,
++      /*!
+        * IS08859-1, or <i>Latin1</i> encoding.  8 bit characters.
+        */
+       Latin1 = 0,
+@@ -112,6 +124,10 @@
+       UTF16LE = 4
+     };
+ 
++    static Type ID3Type(int i);
++    static Type ID3WType(Type type);
++    static Type ID3RealType(Type type);
++
+     /*!
+      * Constructs an empty String.
+      */
+@@ -479,7 +495,7 @@
+      * Converts a \e Latin-1 string into \e UTF-16(without BOM/CPU byte order) 
+      * and copies it to the internal buffer.
+      */
+-    void copyFromLatin1(const char *s, size_t length);
++    void copyFromLatin1(const char *s, size_t length, bool prepare = false, Type t = Latin1);
+ 
+     /*!
+      * Converts a \e UTF-8 string into \e UTF-16(without BOM/CPU byte order) 

@@ -12,8 +12,9 @@ COMMENT=	Program to download videos from YouTube and etc
 
 LICENSE=	GPLv3
 
+USES=		qmake
 USE_BZIP2=	yes
-USE_QT4=	gui xml qmake_build uic_build moc_build \
+USE_QT4=	gui xml uic_build moc_build \
 		rcc_build network dbus webkit
 
 PLIST_FILES=	bin/${PORTNAME} \
@@ -26,19 +27,15 @@ PLIST_DIRS=	%%DATADIR%%
 
 DESKTOP_ENTRIES="Clipgrab" "Download and convert videos from YouTube and etc" \
 		"${DATADIR}/icon.png" "${PORTNAME}" \
-		"AudioVideo;" false
+		"AudioVideo;" true
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,img/,share/${PORTNAME}/,g' \
 	${WRKSRC}/*.cpp
 
-do-configure:
-	cd ${WRKSRC} && ${QMAKE}
-
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/*.png ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/*.png ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

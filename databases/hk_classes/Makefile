@@ -134,6 +134,8 @@ post-patch:
 		-I./pxlib|INCLUDES = -I../hk_classes -I./pxlib \
 		-I${LOCALBASE}/include|g" \
 		${WRKSRC}/hk_paradoxclasses/Makefile.in
+	${REINPLACE_CMD} -e "s|python setup.py|${PYTHON_CMD} setup.py|" \
+		${WRKSRC}/python/Makefile.in
 
 post-configure:
 	${REINPLACE_CMD} -e "s| -I|','|g" ${WRKSRC}/python/setup.py

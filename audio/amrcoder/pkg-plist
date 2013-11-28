@@ -1,2 +1,4 @@
 bin/amrencoder
 bin/amrdecoder
+man/man1/amrdecoder.1.gz
+man/man1/amrencoder.1.gz

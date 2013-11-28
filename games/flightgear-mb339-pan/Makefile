@@ -39,6 +39,6 @@ pre-install:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR})
+	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>

@@ -276,7 +276,6 @@
     SUBDIR += gstreamer1-plugins-amrnb
     SUBDIR += gstreamer1-plugins-amrwbdec
     SUBDIR += gstreamer1-plugins-cdparanoia
-    SUBDIR += gstreamer1-plugins-celt
     SUBDIR += gstreamer1-plugins-faac
     SUBDIR += gstreamer1-plugins-faad
     SUBDIR += gstreamer1-plugins-flac
@@ -312,6 +311,7 @@
     SUBDIR += hs-OpenAL
     SUBDIR += hs-libmpd
     SUBDIR += hydrogen
+    SUBDIR += icecast-kh
     SUBDIR += icecast2
     SUBDIR += icegenerator
     SUBDIR += ices
@@ -496,7 +496,6 @@
     SUBDIR += mp3unicode
     SUBDIR += mp3val
     SUBDIR += mp3wrap
-    SUBDIR += mpc
     SUBDIR += mpdas
     SUBDIR += mpdbrowser
     SUBDIR += mpdcon
@@ -515,6 +514,7 @@
     SUBDIR += musica
     SUBDIR += musicbox-tag-editor
     SUBDIR += musiccontrol
+    SUBDIR += musicpc
     SUBDIR += musicpd
     SUBDIR += mythplugin-mythmusic
     SUBDIR += napster

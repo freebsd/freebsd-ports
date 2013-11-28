@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-haml>0:${PORTSDIR}/www/rubygem-haml \
 		rubygem-rabbit>=2.0.0:${PORTSDIR}/misc/rubygem-rabbit \
 		rubygem-sinatra>0:${PORTSDIR}/www/rubygem-sinatra
 
-USE_GETTEXT=	yes
+USES=		gettext
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

@@ -432,6 +432,7 @@
     SUBDIR += p5-Math-MPC
     SUBDIR += p5-Math-MPFR
     SUBDIR += p5-Math-Matrix
+    SUBDIR += p5-Math-MatrixReal
     SUBDIR += p5-Math-NumberCruncher
     SUBDIR += p5-Math-Pari
     SUBDIR += p5-Math-Polygon
@@ -475,7 +476,6 @@
     SUBDIR += p5-Math-Vec
     SUBDIR += p5-Math-VecStat
     SUBDIR += p5-Math-VectorReal
-    SUBDIR += p5-MatrixReal
     SUBDIR += p5-NetCDF
     SUBDIR += p5-Number-Compare
     SUBDIR += p5-Number-Fraction
@@ -569,6 +569,7 @@
     SUBDIR += py-pymc
     SUBDIR += py-roman
     SUBDIR += py-scientific
+    SUBDIR += py-statsmodels
     SUBDIR += py-svgmath
     SUBDIR += py-symeig
     SUBDIR += py-sympy

@@ -22,6 +22,11 @@ MAN3=		tconfpy.3
 PORTDOCS=	READ-1ST.txt WHATSNEW.txt tconfpy-license.txt tconfpy.html tconfpy.pdf tconfpy.ps tconfpy.txt test-tc.html test-tc.pdf test-tc.ps test-tc.txt
 
 NO_STAGE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|python setup.py|${PYTHON_CMD} setup.py|' \
+		${WRKSRC}/Makefile
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

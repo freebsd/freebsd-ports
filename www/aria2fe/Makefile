@@ -17,7 +17,7 @@ RUN_DEPENDS=	aria2c:${PORTSDIR}/www/aria2 \
 
 USES=		qmake
 USE_BZIP2=	yes
-USE_QT4=	gui moc_build qmake_build rcc_build uic_build
+USE_QT4=	gui moc_build rcc_build uic_build
 
 PLIST_FILES=	bin/${PORTNAME}
 

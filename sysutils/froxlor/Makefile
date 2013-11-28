@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	froxlor
-DISTVERSION=	0.9.29
+DISTVERSION=	0.9.30
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://files.froxlor.org/releases/
 
@@ -85,24 +85,14 @@ LIGHTTPD_RUN_DEPENDS=	lighttpd:${PORTSDIR}/www/lighttpd
 
 NGINX_RUN_DEPENDS=	nginx:${PORTSDIR}/www/nginx
 
-.include <bsd.port.options.mk>
+APACHE_USE=	APACHE_RUN=22
 
-.if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE_RUN=	22
-.endif
+MYSQLS_USE=	MYSQL=server
 
-.if ${PORT_OPTIONS:MMYSQLS}
-USE_MYSQL=	server
-.endif
+PCNTL_USE=	PHP=pcntl
 
-.if ${PORT_OPTIONS:MPCNTL}
-USE_PHP+=	pcntl
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext:run
-USE_PHP+=	gettext
-.endif
+NLS_USES=	gettext:run
+NLS_USE=	PHP=gettext
 
 do-install:
 	cd ${WRKDIR}/${PORTNAME} && \

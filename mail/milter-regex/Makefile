@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	milter-regex
-PORTVERSION=	1.9
+PORTVERSION=	2.0
 CATEGORIES=	mail
 MASTER_SITES=	http://www.benzedrine.cx/
 
@@ -15,7 +15,6 @@ LICENSE_FILE=	${FILESDIR}/COPYRIGHT
 USE_RC_SUBR=	milterregex
 SUB_LIST=	SPOOLDIR=${SPOOLDIR}
 PLIST_SUB=	SPOOLDIR=${SPOOLDIR}
-PLIST_FILES=	libexec/milter-regex man/man8/milter-regex.8.gz
 
 MAILUSER?=	mailnull
 SPOOLDIR?=	/var/run/milter-regex
@@ -25,15 +24,15 @@ SPOOLDIR?=	/var/run/milter-regex
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
 post-patch:
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e \
 	    "s:/etc/milter-regex.conf:${PREFIX}/etc/milter-regex.conf:g; \
 	    s:/var/spool/milter-regex:${SPOOLDIR}:g; \
 	    s:_milter-regex:${MAILUSER}:g;" ${WRKSRC}/milter-regex.c
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e \
 	    "s:/etc/milter-regex.conf:${PREFIX}/etc/milter-regex.conf:g; \
 	    s:/var/spool/milter-regex:${SPOOLDIR}:g; \
 	    s:mailstats 1:mailstats 8:;" ${WRKSRC}/milter-regex.8
-	@${REINPLACE_CMD} -e "s:-lpthread:${PTHREAD_LIBS}:g; \
+	${REINPLACE_CMD} -e "s:-lpthread:${PTHREAD_LIBS}:g; \
 	    s:-I/usr/src/gnu/usr.sbin/sendmail/include:${PTHREAD_CFLAGS}:g; \
 	    s:-L/usr/local/lib:-L${LOCALBASE}/lib:g; \
 	    s/-Werror//g"  ${WRKSRC}/Makefile

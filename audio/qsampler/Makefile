@@ -14,8 +14,8 @@ COMMENT=	Qt-based front end to LinuxSampler
 LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	gig.10:${PORTSDIR}/audio/libgig \
-		lscp.6:${PORTSDIR}/audio/liblscp
+LIB_DEPENDS=	libgig.so:${PORTSDIR}/audio/libgig \
+		liblscp.so:${PORTSDIR}/audio/liblscp
 RUN_DEPENDS=	linuxsampler:${PORTSDIR}/audio/linuxsampler
 
 USE_QT4=	corelib gui \
@@ -30,15 +30,12 @@ CONFIGURE_ENV=	ac_cv_path_ac_qmake=${QMAKE} \
 		ac_cv_path_ac_lupdate=${LUPDATE} \
 		ac_cv_path_ac_lrelease=${LRELEASE}
 
-LUPDATE=	${LOCALBASE}/bin/lupdate-qt4
-LRELEASE=	${LOCALBASE}/bin/lrelease-qt4
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|make -f|$$(MAKE) -f|' ${WRKSRC}/Makefile.in
 
 post-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} -o ${PORTNAME}.mak \
-		${QMAKEFLAGS}
+		${QMAKE_ARGS}
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/qsampler

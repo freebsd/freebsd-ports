@@ -789,15 +789,6 @@
     SUBDIR += rsyncbackup
     SUBDIR += rsyncmanager
     SUBDIR += rsyncrypto
-    SUBDIR += rsyslog6
-    SUBDIR += rsyslog6-dbi
-    SUBDIR += rsyslog6-gnutls
-    SUBDIR += rsyslog6-gssapi
-    SUBDIR += rsyslog6-mysql
-    SUBDIR += rsyslog6-pgsql
-    SUBDIR += rsyslog6-relp
-    SUBDIR += rsyslog6-rfc3195
-    SUBDIR += rsyslog6-snmp
     SUBDIR += rsyslog7
     SUBDIR += rsyslog7-devel
     SUBDIR += rtty
@@ -874,6 +865,7 @@
     SUBDIR += slmon
     SUBDIR += sloth
     SUBDIR += slst
+    SUBDIR += slurm-hpc
     SUBDIR += smartmontools
     SUBDIR += smp_utils
     SUBDIR += snap

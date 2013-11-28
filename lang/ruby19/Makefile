@@ -12,11 +12,11 @@ DISTNAME=	${RUBY_DISTNAME}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT?=	An object-oriented interpreted scripting language
+COMMENT?=	Object-oriented interpreted scripting language
 
-LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi \
-		yaml-0.2:${PORTSDIR}/textproc/libyaml \
-		execinfo.1:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libffi.so:${PORTSDIR}/devel/libffi \
+		libyaml.so:${PORTSDIR}/textproc/libyaml
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${RUBY_WRKSRC}
@@ -37,8 +37,6 @@ USE_BZIP2=		yes
 USE_RUBY=		yes
 RUBY_NO_BUILD_DEPENDS=	yes
 RUBY_NO_RUN_DEPENDS=	yes
-_RUBY_SYSLIBDIR=	${PREFIX}/lib
-_RUBY_EXTDIR=		${PREFIX}/lib/ruby19
 
 MAKE_JOBS_UNSAFE=	yes
 

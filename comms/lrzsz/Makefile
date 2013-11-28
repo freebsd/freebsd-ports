@@ -10,10 +10,18 @@ MASTER_SITES=	http://ohse.de/uwe/releases/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Receive/Send files via X/Y/ZMODEM protocol.  (unrestrictive)
 
-NO_STAGE=	yes
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all # vcheck
-MAN1=		lrz.1 lsz.1
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USES+=		gettext
+PLIST_FILES+=	share/locale/de/LC_MESSAGES/lrzsz.mo
+.else
+CONFIGURE_ARGS+=	--disable-nls
+.endif
 
 .include <bsd.port.mk>

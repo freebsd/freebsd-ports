@@ -6,4 +6,4 @@ code and extends with following things:
     Ability to ignore unused import warnings (-i argument)
     Better sorting of warnings/errors
 
-WWW: http://pypi.python.org/pypi/py_static_check
+WWW: https://pypi.python.org/pypi/py_static_check

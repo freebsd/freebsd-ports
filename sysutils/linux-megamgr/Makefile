@@ -10,6 +10,9 @@ DISTNAME=		ut_linux_mgr_5.20
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		LSI MegaRAID controller management utility
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-12-22
+
 BROKEN=			Does not fetch
 
 NO_WRKSUBDIR=		yes

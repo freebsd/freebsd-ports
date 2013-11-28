@@ -1,0 +1,37 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/client.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/client.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/client.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/downtime.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/downtime.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/downtime.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/exceptions.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/exceptions.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/exceptions.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/tests/client_tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/tests/client_tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/tests/client_tests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/tests/downtime_pooling_tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/tests/downtime_pooling_tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/tests/downtime_pooling_tests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/tests/es_kwargs_tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/tests/es_kwargs_tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/tests/es_kwargs_tests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/tests/json_tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/tests/json_tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/tests/json_tests.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyelasticsearch
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

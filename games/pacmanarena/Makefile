@@ -1,15 +1,17 @@
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pacmanarena
 PORTVERSION=	0.15
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v0.0/ \
-		SF/nemysisfreebsdp/:icons
+		SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/:icons
 DISTFILES=	${DISTNAME:S/na/n-a/}.tar.bz2 \
 		${PORTNAME:S/arena/-data/}-0.0.zip \
-		${PORTNAME}_icons.tar.gz:icons
+		${PORTNAME}_icons_1.tar.gz:icons
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Pacman clone in full 3D with a few surprises
 
 LICENSE=	GPLv2
@@ -18,43 +20,37 @@ EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/arena//}
 
-GNU_CONFIGURE=	yes
 USE_SDL=	mixer net sdl
+GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/${PORTNAME} \
-		share/pixmaps/${PORTNAME}_48.png \
-		share/pixmaps/${PORTNAME}_64.png \
-		share/pixmaps/${PORTNAME}_72.png \
-		share/pixmaps/${PORTNAME}_96.png
-
-PORTDATA=	*
 PORTDOCS=	README
 
-NO_STAGE=	yes
-post-patch:
-# Fix data location
-	@${REINPLACE_CMD} -e 's|@prefix@|${DATADIR}|' \
-	-e 's|@datadir@/pacman|${DATADIR}|'  ${WRKSRC}/Makefile.in
+INSTALLS_ICONS=	yes
+ICON_SIZES=	32x32 48x48 64x64 72x72 96x96
 
-.include <bsd.port.options.mk>
+DESKTOP_ENTRIES="Pacman Arena" "${COMMENT}" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" false
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|@prefix@|${DATADIR}| ; \
+		s|@datadir@/pacman|${DATADIR}|' \
+		 ${WRKSRC}/Makefile.in
 
 do-install:
-# Executable
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME:S/arena//} ${PREFIX}/bin/${PORTNAME}
-
-# Data
-	${MKDIR} ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME:S/arena//} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 .for d in gfx sfx
-	@(cd ${WRKSRC}/../ && ${COPYTREE_SHARE} ${d} ${DATADIR})
+	@(cd ${WRKSRC}/../ && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
 .endfor
 
-# Pixmaps
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}*.png ${PREFIX}/share/pixmaps
+.for s in ${ICON_SIZES}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}_${s}.png \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/${PORTNAME}.png
+.endfor
+	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
-# Documentation
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

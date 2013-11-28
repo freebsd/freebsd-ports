@@ -21,5 +21,7 @@ CONFIGURE_ARGS=	--disable-static --enable-motif
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libGLw.so.1
+
 .include <bsd.port.mk>

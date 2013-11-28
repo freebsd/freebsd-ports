@@ -13,24 +13,24 @@ COMMENT=	Converts PNG files to Windows icon resource files
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
-
-MAN1=		png2ico.1
-PLIST_FILES=	bin/png2ico
-PORTDOCS=	bmp.txt
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+CPPFLAGS+=	$$(libpng-config --cflags)
+LDFLAGS+=	$$(libpng-config --ldflags)
+
+PORTDOCS=	bmp.txt
+PLIST_FILES=	bin/png2ico man/man1/png2ico.1.gz
+
+do-build:
+	(cd ${WRKSRC} && ${CXX} ${CXXFLAGS} ${CPPFLAGS} -o png2ico \
+		png2ico.cpp ${LDFLAGS})
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${MAN1PREFIX}/man/man1
-
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/png2ico ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/doc/png2ico.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

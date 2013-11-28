@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	broccoli
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	security
-MASTER_SITES=	http://www.bro-ids.org/downloads/release/
+MASTER_SITES=	http://www.bro.org/downloads/release/
 DISTNAME=	bro-${PORTVERSION}
 
 MAINTAINER=	leres@ee.lbl.gov
 COMMENT=	The Bro Client Communications Library
+
+LICENSE=	BSD
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
 		swig:${PORTSDIR}/devel/swig13
@@ -24,10 +26,12 @@ CMAKE_SOURCE_PATH=	${WRKSRC}/aux/broccoli
 .if defined(BRO_PREFIX)
 PREFIX=${BRO_PREFIX}
 PLIST_SUB+=	CLEANUP_PREFIX=""
+NEED_ROOT=	yes
 .else
 PLIST_SUB+=	CLEANUP_PREFIX="@comment "
 .endif
 CMAKE_ARGS+=	-D CMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
+		-D BRO_ETC_INSTALL_DIR:PATH=${PREFIX}/etc \
 		-D PY_MOD_INSTALL_DIR:PATH=${PREFIX}
 
 OPTIONS_DEFINE=	DEBUG PYTHON RUBY
@@ -36,7 +40,6 @@ DEBUG_DESC=	Compile in debugging mode
 PYTHON_DESC=	Build python bindings for broccoli
 RUBY_DESC=	Build ruby bindings for broccoli
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -59,10 +62,11 @@ CMAKE_ARGS+=		-D DISABLE_RUBY_BINDINGS:BOOL=true
 PLIST_SUB+=		RUBY="@comment "
 .endif
 
-post-install:
-	@${MKDIR} ${PREFIX}/etc
-	@${INSTALL_SCRIPT} ${WRKSRC}/aux/broccoli/broccoli.conf ${PREFIX}/etc/broccoli.conf.sample
-	@[ -f ${PREFIX}/etc/broccoli.conf ] || \
-	    ${CP} -p ${PREFIX}/etc/broccoli.conf.sample ${PREFIX}/etc/broccoli.conf
+post-stage::
+.if defined(BRO_PREFIX)
+	@${MKDIR} ${PREFIX}
+.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc
+	@${INSTALL_SCRIPT} ${WRKSRC}/aux/broccoli/broccoli.conf ${STAGEDIR}${PREFIX}/etc/broccoli.conf.example
 
 .include <bsd.port.mk>

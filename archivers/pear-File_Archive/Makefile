@@ -13,7 +13,6 @@ BUILD_DEPENDS=	${PEARDIR}/MIME/Type.php:${PORTSDIR}/mail/pear-MIME_Type \
 RUN_DEPENDS=	${PEARDIR}/MIME/Type.php:${PORTSDIR}/mail/pear-MIME_Type \
 		${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
-NO_STAGE=	yes
 USE_PHP=	bz2 pcre zlib
 LATEST_LINK=	pear-${PORTNAME}
 

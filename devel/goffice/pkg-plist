@@ -163,7 +163,6 @@ include/libgoffice-%%SHORT_VER%%/goffice/utils/go-undo.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/go-units.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/goffice-utils.h
 include/libgoffice-%%SHORT_VER%%/goffice/utils/regutf8.h
-lib/goffice/%%VERSION%%/plugins/plot_barcol/barcol.a
 lib/goffice/%%VERSION%%/plugins/plot_barcol/barcol.la
 lib/goffice/%%VERSION%%/plugins/plot_barcol/barcol.so
 lib/goffice/%%VERSION%%/plugins/plot_barcol/gog-area-prefs.ui
@@ -171,7 +170,6 @@ lib/goffice/%%VERSION%%/plugins/plot_barcol/gog-barcol-prefs.ui
 lib/goffice/%%VERSION%%/plugins/plot_barcol/gog-minmax-prefs.ui
 lib/goffice/%%VERSION%%/plugins/plot_barcol/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_barcol/plugin.xml
-lib/goffice/%%VERSION%%/plugins/plot_distrib/distrib.a
 lib/goffice/%%VERSION%%/plugins/plot_distrib/distrib.la
 lib/goffice/%%VERSION%%/plugins/plot_distrib/distrib.so
 lib/goffice/%%VERSION%%/plugins/plot_distrib/gog-boxplot-prefs.ui
@@ -182,7 +180,6 @@ lib/goffice/%%VERSION%%/plugins/plot_distrib/plugin.xml
 lib/goffice/%%VERSION%%/plugins/plot_pie/gog-pie-prefs.ui
 lib/goffice/%%VERSION%%/plugins/plot_pie/gog-pie-series.ui
 lib/goffice/%%VERSION%%/plugins/plot_pie/gog-ring-prefs.ui
-lib/goffice/%%VERSION%%/plugins/plot_pie/pie.a
 lib/goffice/%%VERSION%%/plugins/plot_pie/pie.la
 lib/goffice/%%VERSION%%/plugins/plot_pie/pie.so
 lib/goffice/%%VERSION%%/plugins/plot_pie/plot-types.xml
@@ -191,14 +188,12 @@ lib/goffice/%%VERSION%%/plugins/plot_radar/gog-color-polar-prefs.ui
 lib/goffice/%%VERSION%%/plugins/plot_radar/gog-polar-prefs.ui
 lib/goffice/%%VERSION%%/plugins/plot_radar/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_radar/plugin.xml
-lib/goffice/%%VERSION%%/plugins/plot_radar/radar.a
 lib/goffice/%%VERSION%%/plugins/plot_radar/radar.la
 lib/goffice/%%VERSION%%/plugins/plot_radar/radar.so
 lib/goffice/%%VERSION%%/plugins/plot_surface/gog-xyz-prefs.ui
 lib/goffice/%%VERSION%%/plugins/plot_surface/gog-xyz-surface-prefs.ui
 lib/goffice/%%VERSION%%/plugins/plot_surface/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_surface/plugin.xml
-lib/goffice/%%VERSION%%/plugins/plot_surface/surface.a
 lib/goffice/%%VERSION%%/plugins/plot_surface/surface.la
 lib/goffice/%%VERSION%%/plugins/plot_surface/surface.so
 lib/goffice/%%VERSION%%/plugins/plot_xy/gog-bubble-prefs.ui
@@ -208,15 +203,12 @@ lib/goffice/%%VERSION%%/plugins/plot_xy/gog-xy-prefs.ui
 lib/goffice/%%VERSION%%/plugins/plot_xy/gog-xy-series-prefs.ui
 lib/goffice/%%VERSION%%/plugins/plot_xy/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_xy/plugin.xml
-lib/goffice/%%VERSION%%/plugins/plot_xy/xy.a
 lib/goffice/%%VERSION%%/plugins/plot_xy/xy.la
 lib/goffice/%%VERSION%%/plugins/plot_xy/xy.so
-lib/goffice/%%VERSION%%/plugins/reg_linear/linreg.a
 lib/goffice/%%VERSION%%/plugins/reg_linear/linreg.la
 lib/goffice/%%VERSION%%/plugins/reg_linear/linreg.so
 lib/goffice/%%VERSION%%/plugins/reg_linear/plugin.xml
 lib/goffice/%%VERSION%%/plugins/reg_linear/reg-types.xml
-lib/goffice/%%VERSION%%/plugins/reg_logfit/logfit.a
 lib/goffice/%%VERSION%%/plugins/reg_logfit/logfit.la
 lib/goffice/%%VERSION%%/plugins/reg_logfit/logfit.so
 lib/goffice/%%VERSION%%/plugins/reg_logfit/plugin.xml
@@ -224,11 +216,9 @@ lib/goffice/%%VERSION%%/plugins/reg_logfit/reg-types.xml
 lib/goffice/%%VERSION%%/plugins/smoothing/gog-exp-smooth.ui
 lib/goffice/%%VERSION%%/plugins/smoothing/gog-moving-avg.ui
 lib/goffice/%%VERSION%%/plugins/smoothing/plugin.xml
-lib/goffice/%%VERSION%%/plugins/smoothing/smoothing.a
 lib/goffice/%%VERSION%%/plugins/smoothing/smoothing.la
 lib/goffice/%%VERSION%%/plugins/smoothing/smoothing.so
 lib/goffice/%%VERSION%%/plugins/smoothing/types.xml
-lib/libgoffice-%%SHORT_VER%%.a
 lib/libgoffice-%%SHORT_VER%%.la
 lib/libgoffice-%%SHORT_VER%%.so
 lib/libgoffice-%%SHORT_VER%%.so.8

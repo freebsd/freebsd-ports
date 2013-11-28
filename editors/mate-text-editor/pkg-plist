@@ -642,9 +642,6 @@ share/pluma/ui/pluma-ui.xml
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrmtry share/glib-2.0/schemas
-@dirrmtry share/glib-2.0
-@dirrmtry share/applications
 @dirrm libexec/pluma
 @dirrm lib/pluma/plugins/snippets
 @dirrm lib/pluma/plugins/quickopen

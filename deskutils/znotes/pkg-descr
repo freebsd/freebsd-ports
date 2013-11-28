@@ -1,4 +1,4 @@
-When I migrated from XFCE, I could not find a program simular to
-xfce4-Notes-plugin, so I created this program.
+Simple lightweight crossplatform application for notes managment
+based on Qt 4.
 
-WWW:	http://znotes.sourceforge.net/
+WWW: http://znotes.sourceforge.net

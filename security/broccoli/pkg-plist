@@ -1,8 +1,7 @@
 bin/broccoli-config
-@exec mkdir -p %B
-@unexec cmp -s %D/etc/broccoli.conf.sample %D/etc/broccoli.conf && rm %D/etc/broccoli.conf || true
-etc/broccoli.conf.sample
-@exec test -f %B/broccoli.conf || cp -p %D/%F %B/broccoli.conf
+@unexec cmp -s %D/etc/broccoli.conf.example %D/etc/broccoli.conf && rm %D/etc/broccoli.conf || true
+etc/broccoli.conf.example
+@exec test -f %D/etc/broccoli.conf || cp -p %D/%F %D/etc/broccoli.conf
 include/broccoli.h
 lib/libbroccoli.a
 lib/libbroccoli.so

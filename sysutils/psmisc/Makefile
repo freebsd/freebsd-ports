@@ -16,28 +16,17 @@ BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 CONFLICTS=	pidof-[0-9]* pstree-2.[0-9]*
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 OPTIONS_DEFINE=	NLS
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-MAN1=		killall.1 pstree.1
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CONFIGURE_ARGS=	--enable-nls
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+OPTIONS_SUB=	yes
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^#define COMM_LEN / s|16|254|' ${WRKSRC}/src/comm.h
 
 post-install:
-	@${LN} -fs ${PREFIX}/bin/killall ${PREFIX}/bin/pidof
+	@${LN} -fs killall ${STAGEDIR}${PREFIX}/bin/pidof
 
 .include <bsd.port.mk>

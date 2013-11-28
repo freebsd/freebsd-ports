@@ -4,9 +4,10 @@
 
 PORTNAME=	goffice
 PORTVERSION=	0.8.17
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
+PKGNAMESUFFIX=	08
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GLib/GTK+ set of document centric objects and utilities
@@ -16,24 +17,21 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 PORTSCOUT=	ignore
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USE_XZ=		yes
-USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix intlhack gtk20 libgsf ltverhack
-USES=		gettext pathfix pkgconfig
-USE_AUTOTOOLS=	libtool
+USES=		gettext gmake pathfix pkgconfig
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB=	VERSION=${PORTVERSION} \
 		SHORT_VER=0.8
 
-
 OPTIONS_DEFINE=	GCONF
 OPTIONS_DEFAULT=GCONF
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGCONF}
@@ -41,5 +39,9 @@ USE_GNOME+=	gconf2
 .else
 CONFIGURE_ARGS+=--with-config-backend=keyfile
 .endif
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgoffice-0.8.so.8
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/goffice/*/plugins/*/*.so
 
 .include <bsd.port.mk>

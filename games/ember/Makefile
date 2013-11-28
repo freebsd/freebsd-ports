@@ -39,6 +39,7 @@ USE_OPENAL=	al alut
 USES=	pathfix pkgconfig
 USE_BZIP2=	YES
 CPPFLAGS+=	-DBR_NO_MACROS
+USE_GCC=	4.7+
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
@@ -55,6 +56,8 @@ post-patch:
 		s|,Plugin_CgProgramManager||g' \
 		${WRKSRC}/ember.conf
 	@${REINPLACE_CMD} -e 's|/bash|/sh|g' ${WRKSRC}/ember.in
+	@${REINPLACE_CMD} -e 's|BOOST_THREAD_LIB =|& -L${_GCC_RUNTIME} -lstdc++ |g' \
+		${WRKSRC}/src/main/Makefile.in
 
 post-install:
 	(cd ${WRKDIR}/ember-media-${PORTVERSION}/media && ${FIND} . -type f -print | \

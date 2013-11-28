@@ -21,6 +21,7 @@ USE_BZIP2=	YES
 USES=		cmake
 USE_SDL=	sdl
 USE_XORG=	xaw
+USE_GCC=	4.7+
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>

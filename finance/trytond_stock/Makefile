@@ -17,7 +17,7 @@ RUN_DEPENDS=	trytond>=2.4.0:${PORTSDIR}/finance/trytond \
 		trytond_company>=2.4.0:${PORTSDIR}/finance/trytond_company \
 		trytond_currency>=2.4.0:${PORTSDIR}/finance/trytond_currency
 
-CONFLICTS=	trytond_stock-2.[68].*
+CONFLICTS=	trytond28_stock-2.8.*
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install

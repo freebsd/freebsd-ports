@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.1.4
-PORTREVISION=	10
+DISTVERSION=	1.2.1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://files.etoilebsd.net/pkg/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
@@ -24,15 +23,16 @@ SHEBANG_FILES=	scripts/completion/_pkg.bash.in
 
 MAKE_ENV+=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null \
 		PORTREVISION=${PORTREVISION}
-.if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
-MAKE_ARGS+=	DEBUG_FLAGS="${DEBUG_FLAGS}"
-.endif
 
 # Use a submake as 'deinstall install' needs to reevaluate PKG_CMD
 # so that pkg-static is used from the wrkdir
 USE_SUBMAKE=	yes
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
+MAKE_ARGS+=	DEBUG_FLAGS="${DEBUG_FLAGS}"
+.endif
 
 .if defined(WITH_PKGNG)
 .if ${WITH_PKGNG} == devel
@@ -76,7 +76,7 @@ pre-everything::
 PKG_DEPENDS=
 .undef INSTALLS_DEPENDS
 .if !exists(${LOCALBASE}/sbin/pkg)
-PKG_BIN=	${WRKSRC}/pkg-static/pkg-static
+PKG_BIN=	${WRKSRC}/pkg/pkg-static
 .endif
 .endif
 

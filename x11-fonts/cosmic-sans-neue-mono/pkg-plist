@@ -1,0 +1,5 @@
+lib/X11/fonts/cosmic-sans-neue-mono/CosmicSansNeueMono.otf
+lib/X11/fonts/cosmic-sans-neue-mono/CosmicSansNeueMonoBold.otf
+@dirrm lib/X11/fonts/cosmic-sans-neue-mono
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

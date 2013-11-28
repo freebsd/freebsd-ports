@@ -112,6 +112,8 @@ $ENV{'PATH'} = '/bin:/usr/bin:/sbin:/usr/sbin';
 
 # Where pkg_info lives
 my $PKG_INFO = '/usr/sbin/pkg_info';
+my $PKGNG = '/usr/local/sbin/pkg';
+my $PKGNGDB = '/var/db/pkg/local.sqlite';
 
 # Which regexp to use for laundering tainted file
 # and package names - note that this must not be let
@@ -124,6 +126,9 @@ my $cacheall = 1;
 # ### NO USER SERVICEABLE PARTS BELOW THIS LINE ###
 
 my $rc = 0;
+
+my $PKGNG_MODE = 0;
+if (-e $PKGNG and -e $PKGNGDB) { $PKGNG_MODE = 1; }
 
 # Clean environment a bit
 delete @ENV{qw(IFS CDPATH ENV BASH_ENV)};
@@ -157,13 +162,40 @@ unless (@ARGV) {
 	-message => "You must give a file or directory on the command line.");
 }
 
-# declare subroutines 
+# listing all files from pkgNG is quite slow, so avoid
+if ($PKGNG_MODE and $cacheall) { $cacheall = 0; }
+
+# declare subroutines
 
 sub wanted;
 sub debug;
 sub safebacktick(@);
 sub readcache();
 sub readorigins();
+
+my $pf2p;
+my $pfiles;
+my $pogn;
+my $pall;
+my $pallomap;
+my $pfilesmulti;
+
+if ($PKGNG_MODE) {
+    $pf2p = sub ($) { return safebacktick($PKGNG, 'which', '-q', $_[0]); };
+    $pfiles = sub ($) { return safebacktick($PKGNG, 'info', '-ql', $_[0]); };
+    $pogn = sub ($) { return safebacktick($PKGNG, 'info', '-qo', $_[0]); };
+    $pall = sub () { return safebacktick($PKGNG, 'info', '-q'); };
+    $pallomap = sub () { return map { s/\s+/:/; $_; }
+	safebacktick($PKGNG, 'info', '-o', '-a'); };
+    $pfilesmulti = sub (@) { return safebacktick($PKGNG, 'info', '-l', @_); };
+} else {
+    $pf2p = sub ($) { return safebacktick($PKG_INFO, '-qGW', $_[0]); };
+    $pfiles = sub ($) { return safebacktick($PKG_INFO, '-qGL', $_[0]); };
+    $pogn = sub ($) { return safebacktick($PKG_INFO, '-qGo', $_[0]); };
+    $pall = sub () { return safebacktick($PKG_INFO, '-EG', '-a'); };
+    $pallomap = sub () { return safebacktick($PKG_INFO, '-QGoa'); };
+    $pfilesmulti = sub (@) { return safebacktick($PKG_INFO, '-QGL', @_); };
+}
 
 # define variables
 
@@ -215,7 +247,7 @@ my $f;
 while ($f = each %ufiles) {
     # Find package for file $f and store in $p:
     debug "matching $f\n";
-    my $p = $cacheall ? $$f2p{$f} : safebacktick($PKG_INFO, '-qGW', $f);
+    my $p = $cacheall ? $$f2p{$f} : &$pf2p($f);
     if (!$p) {
 	debug "file $f not in packages\n";
 	push @notfound, $f;
@@ -233,7 +265,7 @@ while ($f = each %ufiles) {
 
     # Obtain file list for package and purge from %ufiles:
     push @pkgs, $p;
-    my @pf = $cacheall ? @{$$pfl{$p}} : safebacktick($PKG_INFO, '-qGL', $p);
+    my @pf = $cacheall ? @{$$pfl{$p}} : &$pfiles($p);
     chomp @pf;
     debug "deleting files @pf\n";
     delete @ufiles{@pf};
@@ -243,9 +275,9 @@ while ($f = each %ufiles) {
 # If desired, map package names to package origins:
 if ($origins) {
     if ($cacheall) {
-	@pkgs = map { $p2o{$_}; } @pkgs;
+	@pkgs = map { $_ = $p2o{$_}; } @pkgs;
     } else {
-	@pkgs = map { $_ = safebacktick($PKG_INFO, '-qGo', $_); chomp $_; $_; } @pkgs;
+	@pkgs = map { $_ = &$pogn($_); chomp $_; $_; } @pkgs;
     }
 }
 
@@ -293,7 +325,7 @@ sub safebacktick(@) {
 	@data = <KID>;
 	close KID
 	    or warn $! ? "Error reading from kid: $!"
-		       : "Exit status $? from kid.";
+		       : "Exit status $? from kid";
     } else {
 	debug "running '", join("' '", @args), "'\n";
 	exec { $args[0] } @args;
@@ -307,7 +339,7 @@ sub safebacktick(@) {
 sub readcache() {
     my %f2p = (); # file-to-package hash (string, string)
     my %pfl = (); # package-files hash (string, array)
-    my @pkgs = map { $_ =~ $UNTAINT; $1; } safebacktick($PKG_INFO, '-EG', '-a');
+    my @pkgs = map { $_ =~ $UNTAINT; $1; } &$pall();
     my $n = scalar @pkgs;
     debug "subreadcache: got $n packages.\n";
     # Request file lists of so many packages at once, to save the
@@ -315,7 +347,7 @@ sub readcache() {
     # This speeds up things by an order of magnitude or so.
     my $chunksize = 100;
     while (my @p = splice(@pkgs, 0, $chunksize)) {
-	my @fl = safebacktick($PKG_INFO, '-QGL', @p);
+	my @fl = &$pfilesmulti(@p);
 	chomp @fl;
 	my $pkg;
 	map {
@@ -324,10 +356,11 @@ sub readcache() {
 		$pkg = $1;
 		$pkg =~ s/:$//; # strip trailing colon
 	    }
+	    s/^\s+//o;
 	    if ($_) { # file name
 		if ($pkg) { $f2p{$_} = $pkg; push @{$pfl{$pkg}}, $_;}
 		else { warn "pkg_info fault, missed package prefix before line $_."; }
-	    } else {
+	    } elsif ($_ ne '') {
 		warn "tainted file name in $pkg: $_"; 
 	    }
 	} @fl;
@@ -339,7 +372,7 @@ sub readcache() {
 # build a hash of package-to-origin and return it
 sub readorigins() {
     my %p2o = ();
-    my @ol = safebacktick($PKG_INFO, '-QGoa');
+    my @ol = &$pallomap();
     chomp @ol;
     my ($k, $v);
     map { $_ =~ $UNTAINT;
@@ -372,6 +405,18 @@ as sh, ash, ksh, bash):
 L<pkg_info>(8), L<portmaster>(8), L<portupgrade>(8), L<pkg_which>(8)
 
 =head1 HISTORY
+
+0.4.0 2013-11-28
+  - support pkgNG. Known issue is that pkg which returns bogus exit
+    codes, spamming your screen.  pkgs_which works nonetheless.
+    https://github.com/freebsd/pkg/issues/657
+
+    Note that pkgNG always uses --nocache implictly for speed:
+    https://github.com/freebsd/pkg/issues/658
+
+    Known issue: the pkgNG detection is a hack. It just looks for the
+    executable and the database in default locations, but does not
+    attempt to run "pkg -N".
 
 0.3.0 2013-03-11
   - read pkg_info -L information in chunks of 100 packages at a time,

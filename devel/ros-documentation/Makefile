@@ -23,7 +23,7 @@ RUN_DEPENDS=	rosrun:${PORTSDIR}/devel/ros \
 		sphinx-build:${PORTSDIR}/textproc/py-sphinx \
 		doxygen:${PORTSDIR}/devel/doxygen \
 		epydoc:${PORTSDIR}/devel/epydoc
-USE_PYTHON=	yes
+USE_PYTHON=	2
 USE_BZIP2=	yes
 
 # rosmake does its own threading
@@ -40,6 +40,8 @@ MAKE_ARGS=	-i --no-rosdep --status-rate=0 --disable-logging
 
 NO_STAGE=	yes
 post-patch:
+	@${GREP} -l -r "^#\!/usr/bin/env python" ${WRKSRC} | ${XARGS} \
+		${REINPLACE_CMD} -E -e "s|#!/usr/bin/env python|#!/usr/bin/env python2|"
 	# fix path to bash
 	${GREP} -l -r "^#\! /bin/bash" ${WRKSRC} | ${XARGS} \
 	    ${REINPLACE_CMD} -E -e "s|#! /bin/bash|#!${LOCALBASE}/bin/bash|"

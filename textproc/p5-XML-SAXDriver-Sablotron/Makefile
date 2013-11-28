@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl SAX driver for the Sablotron XSLT
 
+DEPRECATED=	Depends on expired textproc/p5-XML-Sablotron
+EXPIRATION_DATE=	2013-12-19
+
 BUILD_DEPENDS=	p5-XML-Sablotron>=0:${PORTSDIR}/textproc/p5-XML-Sablotron \
 		p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX
 RUN_DEPENDS:=	${BUILD_DEPENDS}

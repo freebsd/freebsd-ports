@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnutls
-PORTVERSION=	3.1.16
-PORTREVISION=	1
+PORTVERSION=	3.1.17
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.gnutls.org/gcrypt/gnutls/v3.1/
 PKGNAMESUFFIX=	${GNUTLS_SUFFIX}
@@ -15,9 +14,10 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 LIB_DEPENDS=	libgpg-error.so:${PORTSDIR}/security/libgpg-error \
 		libnettle.so:${PORTSDIR}/security/nettle \
 		libp11-kit.so:${PORTSDIR}/security/p11-kit \
-		libidn.so:${PORTSDIR}/dns/libidn
+		libidn.so:${PORTSDIR}/dns/libidn \
+		libtspi.so:${PORTSDIR}/security/trousers
 
-GNUTLS_SUFFIX=3
+GNUTLS_SUFFIX=	3
 
 USES=		gmake iconv pkgconfig
 USE_AUTOTOOLS=	libtool
@@ -34,7 +34,8 @@ CONFIGURE_ARGS=	--program-suffix=${GNUTLS_SUFFIX} \
 			--disable-guile \
 			--disable-nls \
 			--disable-silent-rules \
-			--disable-hardware-acceleration
+			--disable-hardware-acceleration \
+			--enable-local-libopts
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${GNUTLS_SUFFIX}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}${GNUTLS_SUFFIX}

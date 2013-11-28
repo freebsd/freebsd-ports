@@ -1,3 +1,4 @@
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	cutemaze
@@ -7,39 +8,33 @@ CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Simple, top-down game in which mazes are randomly generated
 
 LICENSE=	GPLv3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+USES=		qmake
 USE_BZIP2=	yes
-USE_QT4=	moc_build qmake_build rcc_build uic_build iconengines imageformats
+USE_QT4=	moc_build rcc_build uic_build iconengines_run imageformats_run \
+		corelib gui svg
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	ChangeLog README
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX} ${WRKSRC}/${PORTNAME}.pro
+OPTIONS_DEFINE=	DOCS
 
 post-install:
-# Icons
-	@(cd ${WRKSRC}/icons && ${COPYTREE_SHARE} oxygen ${PREFIX}/share/icons/)
+.for d in 16x16 22x22 scalable
+	@(cd ${WRKSRC}/icons/oxygen && ${COPYTREE_SHARE} ${d} \
+		${STAGEDIR}${PREFIX}/share/icons/oxygen)
+.endfor
 
-# Pixmaps
-	${INSTALL_DATA} ${WRKSRC}/icons/${PORTNAME}.png ${PREFIX}/share/pixmaps/
+	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
-# Documentation
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.  for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.  endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

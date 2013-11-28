@@ -11,8 +11,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III Arena mod: Rocket Arena 3
 
-NO_PACKAGE=	package will be 131MB, set FORCE_PACKAGE if you really want it
-
 USE_ZIP=	yes
 NO_BUILD=	yes
 
@@ -21,18 +19,14 @@ DATADIR=	${Q3DIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../quake3-data/Makefile.include"
-.include <bsd.port.options.mk>
 
 do-install:
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for f in *.cfg *.pk3
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

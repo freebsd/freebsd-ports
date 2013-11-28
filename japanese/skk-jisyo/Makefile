@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-cdb
 .endif
 DIST_SUBDIR=	skk-jisyo
 
-MAINTAINER?=	meta+ports@vmeta.jp
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Jisyo (dictionary) files for the SKK Japanese-input software
 
 .if defined(WITH_SKKJISYO_CDB)

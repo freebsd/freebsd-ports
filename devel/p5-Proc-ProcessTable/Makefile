@@ -19,7 +19,7 @@ PORTDOCS=	README README.freebsd-kvm README.freebsd-procfs
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>

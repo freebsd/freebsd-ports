@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.2.0.rc1
+DISTVERSION=	1.2.1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://files.etoilebsd.net/pkg/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
@@ -23,9 +23,6 @@ USES=		uidfix
 
 MAKE_ENV+=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null \
 		PORTREVISION=${PORTREVISION}
-.if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
-MAKE_ARGS+=	DEBUG_FLAGS="${DEBUG_FLAGS}"
-.endif
 
 # Use a submake as 'deinstall install' needs to reevaluate PKG_CMD
 # so that pkg-static is used from the wrkdir
@@ -33,12 +30,19 @@ USE_SUBMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
+MAKE_ARGS+=	DEBUG_FLAGS="${DEBUG_FLAGS}"
+.endif
+
 .if defined(WITH_PKGNG)
 .if ${WITH_PKGNG} != devel
 NO_LATEST_LINK=	yes
 .	if !defined(PACKAGE_BUILDING)
 IGNORE=	WITH_PKGNG is not defined to 'devel', this version is the devel one
 .	endif
+.else
+LATEST_LINK=   pkg
+PKGNAMESUFFIX=
 .endif
 .if exists(${LOCALBASE}/sbin/pkg_info) || exists(/usr/sbin/pkg_info)
 NB_OLDPKGS!=	pkg_info 2>/dev/null | wc -l

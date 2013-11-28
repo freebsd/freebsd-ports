@@ -55,8 +55,8 @@ RUN_DEPENDS+=	p5-Mail-Sendmail>=0:${PORTSDIR}/mail/p5-Mail-Sendmail
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>

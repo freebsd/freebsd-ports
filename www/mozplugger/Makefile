@@ -27,6 +27,7 @@ post-patch:
 
 	@${REINPLACE_CMD} -e 's|"/etc|"${PREFIX}/etc|g' \
 		${WRKSRC}/mozplugger.c
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/configure
 
 post-install:
 	@${ECHO_MSG}

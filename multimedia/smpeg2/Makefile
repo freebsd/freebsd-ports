@@ -8,7 +8,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://www.libsdl.org/projects/smpeg/release/ \
 		http://rsync.macports.org/smpeg2/
 
-MAINTAINER=	wulf@mail.mipt.ru
+MAINTAINER=	wulf@cicgroup.ru
 COMMENT=	Free MPEG1 video player library with sound support
 
 LICENSE=	GPLv2

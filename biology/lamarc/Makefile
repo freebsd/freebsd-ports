@@ -32,10 +32,6 @@ PLIST_FILES+=	bin/lam_conv
 CONFIGURE_ARGS+=	--disable-converter
 .endif
 
-.if empty(PORT_OPTIONS:MDOCS)
-INSTALL_TARGET=	install-exec-am
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/html/lamarc|/${DOCSDIR_REL}|' ${WRKSRC}/Makefile.in

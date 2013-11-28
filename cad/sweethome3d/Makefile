@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sweethome3d
-PORTVERSION=	4.1
+PORTVERSION=	4.2
 CATEGORIES=	cad java
 MASTER_SITES=	SF/${PORTNAME}/SweetHome3D-source/${DISTNAME}/
 DISTNAME=	SweetHome3D-${PORTVERSION}-src
@@ -32,11 +32,10 @@ PLIST_FILES=	bin/sweethome3d \
 
 DESKTOP_ENTRIES="Sweet Home 3D" "" "${PORTNAME}-icon" "${PORTNAME}" "" false
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/install/${JARNAME} ${JAVAJARDIR}/${JARNAME}
-	${INSTALL_SCRIPT} ${WRKDIR}/sweethome3d.sh ${PREFIX}/bin/sweethome3d
+	${INSTALL_DATA} ${WRKSRC}/install/${JARNAME} ${STAGEDIR}${JAVAJARDIR}/${JARNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/sweethome3d.sh ${STAGEDIR}${PREFIX}/bin/sweethome3d
 	${INSTALL_DATA} ${WRKSRC}/deploy/SweetHome3DIcon32x32.png \
-		${PREFIX}/share/pixmaps/sweethome3d-icon.png
+		${STAGEDIR}${PREFIX}/share/pixmaps/sweethome3d-icon.png
 
 .include <bsd.port.mk>

@@ -12,7 +12,6 @@ COMMENT=	Update program for the HVSC C= 64 SID tune collection
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USES=		gmake
 WRKSRC=		${WRKDIR}/${PORTNAME:S/-/_/}_Tool_${PORTVERSION:S/.//g}
@@ -20,15 +19,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME:S/-/_/}_Tool_${PORTVERSION:S/.//g}
 PORTDOCS=	HVS_file_format.txt HVSC_Update.txt SID_file_format.txt
 PLIST_FILES=	bin/${PORTNAME}
 
-.include <bsd.port.options.mk>
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/Update ${PREFIX}/bin/${PORTNAME}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/Update ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

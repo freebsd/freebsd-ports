@@ -32,7 +32,6 @@ PEAR_AUTOINSTALL=	yes
 USE_PHP=	pdo
 WANT_PHP_CLI=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDBLIB}

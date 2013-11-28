@@ -8,7 +8,7 @@ MASTER_SITES=	http://ppa.launchpad.net/teknoraver/ppa/ubuntu/pool/main/a/aacplus
 DISTFILES=	${DISTNAME:S,-,_,}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An aacPlus v2 command-line encoder
+COMMENT=	AacPlus v2 command-line encoder
 
 USES=		gmake
 
@@ -17,13 +17,13 @@ RESTRICTED=	unclear legal status, probably need licenses from 3GPP, Via Licensin
 CONFLICTS=	libaacplus-[0-9]*
 
 PLIST_FILES=	bin/aacplusenc
-NO_STAGE=	yes
+MAKE_ARGS+=	INSTDIR=${STAGEDIR}${PREFIX}
 
 .if defined(WITHOUT_FFTW3)
 MAKE_ARGS+=	NOFFTW3=1
 .else
-LIB_DEPENDS+=	fftw3f:${PORTSDIR}/math/fftw3-float \
-		fftw3:${PORTSDIR}/math/fftw3
+LIB_DEPENDS+=	libfftw3f.so:${PORTSDIR}/math/fftw3-float \
+		libfftw3.so:${PORTSDIR}/math/fftw3
 CFLAGS+=	-I${LOCALBASE}/include
 .endif
 

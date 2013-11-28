@@ -5,6 +5,33 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20131127:
+  AFFECTS: users of devel/py-distribute (i.e you)
+  AUTHOR: wg@FreeBSD.org
+
+  devel/py-distribute was replaced with devel/py-setuptools. Please do
+  the following according to package manager used. py-distribute port
+  will be removed shortly.
+
+  # portmaster -o devel/py-setuptools devel/py-distribute
+    or
+  # portupgrade -fo devel/py-setuptools devel/py-distribute
+    or
+  # pkg set -o devel/py-distribute:devel/py-setuptools
+  # pkg install -f devel/py-setuptools
+
+20131125:
+  AFFECTS: users of www/mod_wsgi
+  AUTHOR: ohauer@FreeBSD.org
+
+  The port www/mod_wsgi moved to www/mod_wsgi2 to reflect the port version.
+
+  # portmaster -o www/mod_wsgi2 www/mod_wsgi
+    or
+  # portupgrade -fo www/mod_wsgi2 www/mod_wsgi
+    or
+  # pkg set -o www/mod_wsgi:www/mod_wsgi2
+
 20131120:
   AFFECTS: users of lang/perl5.12 lang/perl5.14 lang/perl5.16 and lang/perl5.18
   AUTHOR: mat@FreeBSD.org
@@ -149,10 +176,10 @@ you update your ports collection, before attempting any port upgrades.
 	pkgdb -Ff
 
     1) Reinstall new version of Perl (5.16):
-	portupgrade -o lang/perl5.16 -f perl-5.14.\*
+	portupgrade -o lang/perl5.16 -f lang/perl5.14
 
     2) Reinstall everything that depends on Perl:
-	portupgrade -fr perl
+	portupgrade -fr lang/perl5.16
 
   Portmaster users:
 	portmaster -o lang/perl5.16 lang/perl5.14

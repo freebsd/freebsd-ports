@@ -3,6 +3,7 @@
 
 PORTNAME=	ldapscripts
 PORTVERSION=	2.0.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://contribs.martymac.org/ldapscripts/
@@ -26,19 +27,9 @@ LIBDIR=	${PREFIX}/lib/${PORTNAME}
 MAKE_ENV+=	MANDIR=${MANPREFIX}/man \
 		ETCDIR=${ETCDIR}
 
-MANCOMPRESSED=	yes
-MAN1=	ldapaddgroup.1 ldapaddmachine.1 ldapadduser.1 ldapaddusertogroup.1 \
-	ldapdeletegroup.1 ldapdeleteuser.1 ldapdeleteuserfromgroup.1 \
-	ldaprenameuser.1 ldapsetprimarygroup.1 lsldap.1 ldaprenamemachine.1 \
-	ldaprenamegroup.1 ldapinit.1 ldapdeletemachine.1 ldapsetpasswd.1 \
-	ldapfinger.1 ldapgid.1 ldapid.1 ldapmodifygroup.1 ldapmodifymachine.1 \
-	ldapmodifyuser.1
-MAN5=	ldapscripts.5
+SUB_FILES=	pkg-message
 
 PORTDOCS=	README CHANGELOG VERSION TODO
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 # Unset 'all' target set by default to 'help'
 # and set paths to OpenLDAP binaries
@@ -57,12 +48,9 @@ post-patch:
 
 # Install remaining stuff
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${RM} ${STAGEDIR}${ETCDIR}/ldapscripts.conf \
+		${STAGEDIR}${ETCDIR}/ldapscripts.passwd
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

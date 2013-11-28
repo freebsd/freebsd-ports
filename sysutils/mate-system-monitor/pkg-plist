@@ -376,6 +376,3 @@ share/pixmaps/mate-system-monitor/upload.svg
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrmtry share/glib-2.0/schemas
-@dirrmtry share/glib-2.0
-@dirrmtry share/applications

@@ -2,29 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	mei
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	science parallel
-MASTER_SITES=	http://research.edf.com/fichiers/fckeditor/Commun/Innovation/logiciels/code_saturne/Releases/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
+MASTER_SITES=	http://code-saturne.org/releases/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code_Saturne Mathematical Expression Interpreter
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	bft.1:${PORTSDIR}/science/bft
+LIB_DEPENDS=	libbft.so:${PORTSDIR}/science/bft
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-USE_ZIP=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_path_PYEXE=${PYTHON_CMD}
 CONFIGURE_ARGS=	--with-bft=${LOCALBASE}
-
-MAN1=		mei-config.1
 
 .if defined(MAINTAINER_MODE)
 regression-test:

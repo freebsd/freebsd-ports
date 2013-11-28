@@ -221,8 +221,6 @@ man/man1/rudiments-config.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/classchat.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/classclient-members.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/classclient.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/html/classclientserverfactory-members.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/html/classclientserverfactory.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/classcodetree-members.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/classcodetree.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/classcommandline-members.html
@@ -367,8 +365,6 @@ man/man1/rudiments-config.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/classxmlsax.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/client_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/clientincludes_8h_source.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/html/clientserverfactory_8h_source.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/html/clientserverfactoryincludes_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/closed.png
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/codetree_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/codetreeincludes_8h_source.html
@@ -386,9 +382,9 @@ man/man1/rudiments-config.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/dictionaryincludes_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/dictionaryinlines_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/dictionarynode_8h_source.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/html/dictionarynodeinlines_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/dir_112db68a333403863d626f7c0db30bfe.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/dir_4df9bcb2c843055bc10a65c25bb4048a.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/html/dir_64fdbe0393e8a2dda2fc39e144de80a9.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/dir_d44c64559bbebec7f509842c48db8b23.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/directory_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/directoryincludes_8h_source.html
@@ -574,6 +570,7 @@ man/man1/rudiments-config.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/private_2pseudotty_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/private_2regularexpression_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/private_2rpcentry_8h_source.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/html/private_2save_2linkedlist_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/private_2semaphoreset_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/private_2serialport_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/private_2serialportprofile_8h_source.html
@@ -612,6 +609,10 @@ man/man1/rudiments-config.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/rpcentry_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/rpcentryincludes_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/rudimentsinlines_8h_source.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/html/save_2linkedlistincludes_8h_source.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/html/save_2linkedlistinlines_8h_source.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/html/save_2linkedlistnode_8h_source.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/html/save_2linkedlistutilinlines_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/semaphoreset_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/semaphoresetincludes_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/serialport_8h_source.html

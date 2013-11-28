@@ -1,5 +1,5 @@
---- configure.orig	Sun May 18 19:25:34 2003
-+++ configure	Sun May 18 23:45:15 2003
+--- configure.orig	2003-05-18 19:25:34.000000000 +0200
++++ configure	2013-11-27 17:22:07.000000000 +0100
 @@ -253,7 +253,7 @@
  #
  # Initializations.
@@ -29,3 +29,15 @@
  
  
  # Check whether --with-newshome or --without-newshome was given.
+@@ -1890,7 +1890,11 @@
+ 	    # it has been reported that some INN 2.1 had its own VERSION
+ 	    VERSION_save="$VERSION"
+ 	    VERSION=
++            prefix_orig="${prefix}"
++            exec_prefix_orig="${exec_prefix}"
+ 	    . $NEWSCONFIG
++            prefix="${prefix_orig}"
++            exec_prefix="${exec_prefix_orig}"
+ 	    INN_VERSION="$VERSION"
+ 	    VERSION="$VERSION_save"
+ 	    INN_NEWSUMASK=`umask`

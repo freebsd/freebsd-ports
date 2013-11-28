@@ -1,0 +1,18 @@
+
+===============================================================
+
+ Security warning :
+
+ For security reasons, ldapscripts.conf and ldapscripts.passwd
+ files are now set read-only for user and group owners. Do not
+ forget to fine-tune ownership of these two files before using
+ the scripts (and to make them read-only if they are not).
+
+ e.g. : chmod 0440 %%ETCDIR%%/ldapscripts.conf
+        chgrp ldapadmins %%ETCDIR%%/ldapscripts.conf
+        chmod 0440 %%ETCDIR%%/ldapscripts.passwd
+        chgrp ldapadmins %%ETCDIR%%/ldapscripts.passwd
+
+ The ldapscripts are now installed, enjoy !
+
+===============================================================

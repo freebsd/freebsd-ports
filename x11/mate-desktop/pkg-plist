@@ -226,10 +226,7 @@ share/mate-about/mate-version.xml
 @dirrmtry share/locale/an/LC_MESSAGES
 @dirrmtry share/locale/an
 @dirrm share/libmate-desktop
-@dirrmtry share/glib-2.0/schemas
-@dirrmtry share/glib-2.0
 @dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm include/mate-desktop-2.0/libmateui
 @dirrm include/mate-desktop-2.0/libmate
 @dirrm include/mate-desktop-2.0

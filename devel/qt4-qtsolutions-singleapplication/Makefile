@@ -10,33 +10,27 @@ MASTER_SITES=	ftp://ftp.pcbsd.org/pub/software/ \
 DISTNAME=	qt4-qtsolutions-singleinstance-${PORTVERSION}
 
 MAINTAINER=	yurkis@gmail.com
-COMMENT=	QT4 Solutions Single Application Framework
+COMMENT=	Qt 4 Solutions Single Application Framework
 
-USE_QT4?=	qmake_build moc_build rcc_build uic_build gui network
-HAS_CONFIGURE=	yes
+USES=		qmake
+USE_QT4=	moc_build rcc_build uic_build gui network
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/qt-solutions-qt-solutions/${SUB_PROJECT_NAME}
+WRKSRC=		${WRKDIR}/qt-solutions-qt-solutions/qtsingleapplication
 BUILD_WRKSRC=	${WRKSRC}/buildlib
+CONFIGURE_WRKSRC=	${BUILD_WRKSRC}
 
 PLIST_FILES=	${LIBRARY_HEADERS:S,^,include/,} \
 		lib/${LIBRARY_NAME} \
 		lib/${LIBRARY_NAME}.1
 
-SUB_PROJECT_NAME=	qtsingleapplication
-QMAKE_PRO=	buildlib.pro
-
 LIBRARY_NAME=	libQtSolutions_SingleApplication-head.so
 LIBRARY_HEADERS=	qtsingleapplication.h qtsinglecoreapplication.h
 
-NO_STAGE=	yes
-do-configure:
-	cd ${BUILD_WRKSRC} && ${QMAKE} ${QMAKEFLAGS} ${QMAKE_PRO}
-
 do-install:
-	${MKDIR} ${PREFIX}/include ${PREFIX}/lib
-	cd ${WRKSRC}/src && ${INSTALL_DATA} ${LIBRARY_HEADERS} ${PREFIX}/include
-	${INSTALL_LIB} ${WRKSRC}/lib/${LIBRARY_NAME}.1.0.0 ${PREFIX}/lib/${LIBRARY_NAME}.1
-	${LN} -sf ${PREFIX}/lib/${LIBRARY_NAME}.1 ${PREFIX}/lib/${LIBRARY_NAME}
+	${MKDIR} ${STAGEDIR}${PREFIX}/include ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${LIBRARY_HEADERS:S,^,${WRKSRC}/src/,} ${STAGEDIR}${PREFIX}/include
+	${INSTALL_LIB} ${WRKSRC}/lib/${LIBRARY_NAME}.1.0.0 ${STAGEDIR}${PREFIX}/lib/${LIBRARY_NAME}.1
+	${LN} -sf ${LIBRARY_NAME}.1 ${STAGEDIR}${PREFIX}/lib/${LIBRARY_NAME}
 
 .include <bsd.port.mk>

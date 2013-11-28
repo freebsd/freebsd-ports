@@ -11,19 +11,15 @@ DISTNAME=	dtmf-dial-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate DTMF dial tones from the command line
 
-NO_STAGE=	yes
 WRKSRC=		${WRKDIR}/dial
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 PORTDOCS=	README TODO
 
 PLIST_FILES=	bin/dtmfdial
 
-.include <bsd.port.options.mk>
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dial ${PREFIX}/bin/dtmfdial
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/dial ${STAGEDIR}${PREFIX}/bin/dtmfdial
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tcpflow
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.digitalcorpora.org/downloads/${PORTNAME}/
 
@@ -14,6 +14,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/icl/interval.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
 
+USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -24,11 +25,6 @@ PORTDOCS=	AUTHORS ChangeLog NEWS README
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
-
-.if ${ARCH} == i386 && ! ${CFLAGS:M-march=*}
-# Needed for __sync_add_and_fetch_8
-CFLAGS+=	-march=i586
-.endif
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}

@@ -1,11 +1,11 @@
---- cont.c.orig	2013-01-30 04:17:59.000000000 +0000
-+++ cont.c	2013-02-17 21:39:30.712834241 +0000
-@@ -15,7 +15,7 @@
- #include "gc.h"
- #include "eval_intern.h"
- 
--#if ((defined(_WIN32) && _WIN32_WINNT >= 0x0400) || (defined(HAVE_GETCONTEXT) && defined(HAVE_SETCONTEXT))) && !defined(__NetBSD__) && !defined(__sun) && !defined(__ia64) && !defined(FIBER_USE_NATIVE)
-+#if ((defined(_WIN32) && _WIN32_WINNT >= 0x0400) || (defined(HAVE_GETCONTEXT) && defined(HAVE_SETCONTEXT))) && !defined(__FreeBSD__) && !defined(__NetBSD__) && !defined(__sun) && !defined(__ia64) && !defined(FIBER_USE_NATIVE)
- #define FIBER_USE_NATIVE 1
- 
- /* FIBER_USE_NATIVE enables Fiber performance improvement using system
+--- cont.c.orig	2013-10-09 15:37:54.000000000 +0000
++++ cont.c	2013-11-22 15:05:19.138396780 +0000
+@@ -44,6 +44,8 @@
+ /* At least, Linux/ia64's getcontext(3) doesn't save register window.
+  */
+ #     define FIBER_USE_NATIVE 0
++#   elif defined(__FreeBSD__)
++#     define FIBER_USE_NATIVE 0
+ #   elif defined(__GNU__)
+ /* GNU/Hurd doesn't fully support getcontext, setcontext, makecontext
+  * and swapcontext functions. Disabling their usage till support is

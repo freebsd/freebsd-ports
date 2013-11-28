@@ -20,7 +20,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 .endif
 
-CONFLICTS=	gcc-4.6.4*,1
+CONFLICTS=	gcc46*
 
 # DISTVERSION relates to downloads, GCC_VERSION and SUFFIX to names
 # of executables and directories once installed.

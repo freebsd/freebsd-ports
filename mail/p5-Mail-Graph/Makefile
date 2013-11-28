@@ -28,14 +28,11 @@ MAN3=	Mail::Graph.3
 
 NO_STAGE=	yes
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	@${MKDIR} ${EXAMPLESDIR}/archive
-	@${MKDIR} ${EXAMPLESDIR}/index
-	@${MKDIR} ${EXAMPLESDIR}/output
-	cd ${WRKSRC} && \
+	@${MKDIR} ${EXAMPLESDIR}/archive ${EXAMPLESDIR}/index ${EXAMPLESDIR}/output
+	(cd ${WRKSRC} && \
 	${INSTALL_SCRIPT} ${EXAMPLESCRIPT} ${EXAMPLESDIR}  && \
 	${INSTALL_SCRIPT} ${EXAMPLEDUMMY} ${EXAMPLESDIR}/index && \
 	${INSTALL_SCRIPT} ${EXAMPLEOUTPUT} ${EXAMPLESDIR}/output && \
-	${INSTALL_SCRIPT} ${EXAMPLEARCHIVE} ${EXAMPLESDIR}/archive
+	${INSTALL_SCRIPT} ${EXAMPLEARCHIVE} ${EXAMPLESDIR}/archive)
 
 .include <bsd.port.mk>

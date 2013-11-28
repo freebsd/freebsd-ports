@@ -1,13 +1,11 @@
-# Created by: nemysis@gmx.ch
+# Created by: nemysis <nemysis@gmx.ch>
 # $FreeBSD$
 
 PORTNAME=	swine
-PORTVERSION=	1.0.3
-PORTREVISION=	3
+PORTVERSION=	1.0.4
 CATEGORIES=	emulators deskutils python
-MASTER_SITES=	https://github.com/downloads/dswd/Swine/
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Qt4 graphical Wine frontend
 
 LICENSE=	GPLv2
@@ -20,16 +18,22 @@ RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm \
 
 DATADIRLIB=	${PREFIX}/lib/${PORTNAME}
 
-FETCH_ARGS?=	-Fpr
+USE_GITHUB=	yes
+GH_ACCOUNT=	dswd
+GH_PROJECT=	Swine
+GH_TAGNAME=	${GH_COMMIT}
+GH_COMMIT=	1770c40
+
+USES=		gmake
 USE_PYTHON=	yes
 NO_BUILD=	yes
-USE_GMAKE=	yes
 USE_QT4=	linguist_build
 ONLY_FOR_ARCHS=	i386 amd64
 
 PORTDOCS=	README
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"
@@ -38,28 +42,18 @@ RUN_DEPENDS+=	wine:${PORTSDIR}/emulators/wine-devel
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' ${WRKSRC}/version.sh
-	@${REINPLACE_CMD} -e 's|/usr/share/swine/images/swine32.png|${PREFIX}/share/pixmaps/swine.png|' ${WRKSRC}/resources/swine.desktop
-	@${FIND} ${WRKSRC} -name "*.bak" -delete
+	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}| ; \
+			s|swine32.png|*|' \
+	${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/share/swine/images/swine32.png|swine|' \
+		-e 's|^Categories=.*|Categories=Wine;System;Emulator;Utility;Game;|' \
+		${WRKSRC}/resources/swine.desktop
 
-do-install:
-	${MKDIR} ${DATADIRLIB}
-	${INSTALL_SCRIPT} ${WRKSRC}/*.py ${DATADIRLIB}
-	${LN} -sf ${DATADIRLIB}/${PORTNAME}.py ${PREFIX}/bin/${PORTNAME}
-	${LN} -sf ${DATADIRLIB}/${PORTNAME}cli.py ${PREFIX}/bin/${PORTNAME}cli
-	${LN} -sf ${DATADIRLIB}/${PORTNAME}run.py ${PREFIX}/bin/${PORTNAME}run
-	${MKDIR} ${DATADIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "translations images" ${DATADIR})
+post-install:
+	${LN} -sf ${DATADIR}/images/swine32.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
-	${LN} -sf ${DATADIR}/images/swine32.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
-	${INSTALL_DATA} ${WRKSRC}/resources/*.desktop ${PREFIX}/share/applications/
-
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
-
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

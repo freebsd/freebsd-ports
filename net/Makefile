@@ -161,7 +161,6 @@
     SUBDIR += fspclient
     SUBDIR += fspd
     SUBDIR += fsplib
-    SUBDIR += ftelnetd
     SUBDIR += g2ipmsg
     SUBDIR += gateway6
     SUBDIR += geocode-glib

@@ -3,4 +3,4 @@ A setproctitle implementation for Python.
 The library allows a process to change its title (as displayed by system tools
 such as ps(1) and top(1).
 
-WWW:	http://pypi.python.org/pypi/setproctitle/
+WWW: https://pypi.python.org/pypi/setproctitle/

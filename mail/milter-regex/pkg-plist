@@ -1,3 +1,5 @@
+libexec/milter-regex
+man/man8/milter-regex.8.gz
 @cwd /
 @dirrmtry %%SPOOLDIR%%
 @cwd

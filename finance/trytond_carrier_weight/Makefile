@@ -15,7 +15,7 @@ RUN_DEPENDS=	trytond>=2.4.0:${PORTSDIR}/finance/trytond \
 		trytond_product_measurements>=2.4.0:${PORTSDIR}/finance/trytond_product_measurements \
 		trytond_carrier>=2.4.1:${PORTSDIR}/finance/trytond_carrier
 
-CONFLICTS=	trytond_carrier_weight-2.[68].*
+CONFLICTS=	trytond28_carrier_weight-2.8.*
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install

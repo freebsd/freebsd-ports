@@ -1,11 +1,12 @@
 # Created by: Pedro Giffuni <giffunip@asme.org>
 # $FreeBSD$
 
-PORTNAME=	metis
+PORTNAME=	metis4
 PORTVERSION=	4.0.3
 PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/OLD/
+DISTNAME=	metis-${PORTVERSION}
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A package for unstructured graph partitioning
@@ -19,7 +20,6 @@ CONFLICTS=	metis-5* metis-edf-[0-9]*
 
 USE_LDCONFIG=	yes
 
-LATEST_LINK=	metis4
 PORTSCOUT=	limit:4.*
 PROGRAMS=	graphchk kmetis mesh2dual mesh2nodal	\
 		oemetis onmetis partnmesh partdmesh pmetis

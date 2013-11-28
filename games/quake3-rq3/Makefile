@@ -12,6 +12,9 @@ DISTNAME=	ReactionQuake3-v${PORTVERSION}-Full
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Quake III Arena Mod: Reaction Quake 3
 
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2013-12-22
+
 BROKEN=		Does not fetch
 
 USE_ZIP=	yes

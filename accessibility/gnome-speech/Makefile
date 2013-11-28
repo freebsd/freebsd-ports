@@ -4,6 +4,7 @@
 
 PORTNAME=	gnome-speech
 PORTVERSION=	0.4.25
+PORTREVISION=	1
 CATEGORIES=	accessibility audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -11,7 +12,6 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME text-to-speech API
 
-NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomeprefix libbonobo
 USES=		gmake pathfix pkgconfig
@@ -28,15 +28,20 @@ FESTIVAL_DESC=	Festival speech synthesis support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MESPEAK}
-LIB_DEPENDS+=	espeak:${PORTSDIR}/audio/espeak
+LIB_DEPENDS+=	libespeak.so:${PORTSDIR}/audio/espeak
 CONFIGURE_ARGS+=--with-espeak-dir=${LOCALBASE}
 PLIST_SUB+=	ESPEAK:=""
 .else
+CONFIGURE_ARGS+=--without-espeak
 PLIST_SUB+=	ESPEAK:="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFESTIVAL}
 RUN_DEPENDS+=	festival:${PORTSDIR}/audio/festival
+PLIST_SUB+=	FESTIVAL=""
+.else
+CONFIGURE_ARGS+=--without-festival
+PLIST_SUB+=	FESTIVAL="@comment "
 .endif
 
 post-patch:
@@ -50,5 +55,9 @@ post-patch:
 		${WRKSRC}/drivers/viavoice/*.[ch] \
 		${WRKSRC}/drivers/loquendo/*.[ch] \
 		${WRKSRC}/drivers/espeak/*.[ch]
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgnomespeech.so.7
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/orbit-2.0/GNOME_Speech_module.so
 
 .include <bsd.port.mk>

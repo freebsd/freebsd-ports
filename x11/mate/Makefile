@@ -11,11 +11,12 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The "meta-port" for the MATE integrated X11 desktop
 
+#		mate-screensaver:${PORTSDIR}/x11/mate-screensaver \
+
 RUN_DEPENDS=	mate-base>=1.6.0:${PORTSDIR}/x11/mate-base \
 		mate-themes>=1.6.0:${PORTSDIR}/x11-themes/mate-themes \
 		mate-icon-theme-faenza>=1.6.0:${PORTSDIR}/x11-themes/mate-icon-theme-faenza \
 		mate-terminal:${PORTSDIR}/x11/mate-terminal \
-		mate-screensaver:${PORTSDIR}/x11/mate-screensaver \
 		mate-calc:${PORTSDIR}/math/mate-calc \
 		mate-screenshot:${PORTSDIR}/deskutils/mate-utils \
 		mate-system-monitor:${PORTSDIR}/sysutils/mate-system-monitor \
@@ -30,8 +31,7 @@ RUN_DEPENDS=	mate-base>=1.6.0:${PORTSDIR}/x11/mate-base \
 USE_MATE=	pluma:run 
 
 NO_BUILD=	yes
+NO_INSTALL=	yes
 NO_MTREE=	yes
-
-do-install:	# empty
 
 .include <bsd.port.mk>

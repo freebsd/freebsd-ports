@@ -17,11 +17,13 @@ LICENSE_FILE=	${WRKSRC}/doc/license.txt
 WANT_GSTREAMER=	yes
 MAKE_JOBS_UNSAFE=	yes
 USE_BZIP2=	yes
-USES=		compiler:features cmake pkgconfig
+USES=		cmake pkgconfig
 USE_DOS2UNIX=	yes
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/OpenCV-${DISTVERSION}
+
+CXXFLAGS+=	-DGTEST_USE_OWN_TR1_TUPLE=1
 
 NOT_FOR_ARCHS=	sparc64
 NOT_FOR_ARCHS_REASON_sparc64=	does not compile on sparc64
@@ -154,6 +156,9 @@ CMAKE_ARGS+=	-DBUILD_EXAMPLES:BOOL=Off \
 		-DWITH_PVAPI:BOOL=Off \
 		-DWITH_1394:BOOL=Off \
 		-DWITH_CUDA:BOOL=Off
+
+.include <bsd.port.options.mk>
+
 .endif # defined(_BUILDING_OPENCV_CORE) || defined(_BUILDING_OPENCV_PYTHON)
 
 .if defined(_BUILDING_OPENCV_PYTHON)
@@ -162,19 +167,13 @@ CMAKE_ARGS+=	-DBUILD_NEW_PYTHON_SUPPORT:BOOL=On
 CMAKE_ARGS+=	-DBUILD_NEW_PYTHON_SUPPORT:BOOL=Off
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${COMPILER_TYPE}=="clang"
-USE_CXXSTD=	c++11
-CXXFLAGS+=	-stdlib=libc++ -Wno-error -Wno-c++11-narrowing
-.endif
-
 post-patch:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 	@${REINPLACE_CMD} -e 's:set(OPENCV_SOVERSION.*:set(OPENCV_SOVERSION "$${OPENCV_VERSION_MAJOR}"):' \
 		-e 's:-pthread:${PTHREAD_LIBS}:g' \
 		-e 's:$${OPENCV_LIB_INSTALL_PATH}/pkgconfig:$${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig:g' \
 		-e 's:share/OpenCV/doc:share/doc/opencv:g' \
+		-e 's:-mcpu=G3::g' \
 		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|${PORTNAME}/samples|examples/${PORTNAME}|g' \
 		${WRKSRC}/samples/*/CMakeLists.txt \
@@ -210,4 +209,4 @@ post-patch:
 		${WRKSRC}/CMakeLists.txt
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

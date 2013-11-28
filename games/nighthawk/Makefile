@@ -5,28 +5,24 @@ PORTNAME=	nighthawk
 PORTVERSION=	3.0.0
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	games/arcade
+MASTER_SITES=	SUNSITE/games/arcade
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An X11 shoot-'em up which requires some lateral thinking
+COMMENT=	X11 shoot-'em up which requires some lateral thinking
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_BZIP2=	yes
+USES=		gmake
 USE_GL=		glut
-USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" CPP="${CXX}" CC_FLAGS="${CXXFLAGS}" \
-		LIB_FLAGS="${LDFLAGS}"
-
-MAN6=		nighthawk.6
+		LIB_FLAGS="${LDFLAGS}" GCC="${CC}" CFLAGS="${CFLAGS}"
 
 CFLAGS+=	-DINSTALL_DIR=\\\"\${DATADIR}\\\" \
 		-DSCORES_FILE=\\\"/var/games/nighthawk.scores\\\" \
 		-I${LOCALBASE}/include
 LDFLAGS+=	-lm -L${LOCALBASE}/lib -lX11 -lGL -lGLU -lglut
 
-NO_STAGE=	yes
 post-patch:
 	${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|make|$$(MAKE)|g ; \
@@ -36,16 +32,12 @@ post-patch:
 	${REINPLACE_CMD} -e 's|^|#|g' ${WRKSRC}/config.user
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/nighthawk ${PREFIX}/bin
-	${CHOWN} root:games ${PREFIX}/bin/nighthawk
-	${CHMOD} g+s ${PREFIX}/bin/nighthawk
-	${INSTALL_DATA} ${WRKSRC}/doc/nighthawk.6 ${MANPREFIX}/man/man6
-	@${MKDIR} ${DATADIR}
+	(cd ${WRKSRC}/src && ${INSTALL_PROGRAM} nighthawk \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC}/doc &&  ${INSTALL_MAN} nighthawk.6 \
+		${STAGEDIR}${MANPREFIX}/man/man6)
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${TAR} -C ${WRKSRC} --exclude ".xvpics" -cf - data | \
-		${TAR} -C ${DATADIR} --unlink -xf -
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
-	@${FIND} ${DATADIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
-	@${FIND} ${DATADIR} -type d | ${XARGS} ${CHMOD} a+rx
-	@${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
+		${TAR} -C ${STAGEDIR}${DATADIR} --unlink -xf -
 
 .include <bsd.port.mk>

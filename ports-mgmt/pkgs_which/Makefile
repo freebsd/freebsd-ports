@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkgs_which
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	ports-mgmt perl5
 MASTER_SITES=	# none
 DISTFILES=	# none

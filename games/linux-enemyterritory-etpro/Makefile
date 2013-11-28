@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	linux-enemyterritory-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	ET Pro - The Enemy Territory Competition Mod
+COMMENT=	ET Pro - Enemy Territory Competition Mod
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 
@@ -27,7 +27,6 @@ DATADIR=	${PREFIX}/lib/enemyterritory/${PORTNAME}
 
 PLIST_SUB=	VERSION="${PORTVERSION:S/./_/g}"
 
-NO_STAGE=	yes
 do-build:
 .for f in et etded
 	@(${ECHO} "#!/bin/sh"; \
@@ -37,9 +36,9 @@ do-build:
 
 do-install:
 .for f in et etded
-	${INSTALL_SCRIPT} ${WRKSRC}/${f}-${PORTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${f}-${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/${PORTNAME}/* ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${CP} -R ${WRKSRC}/${PORTNAME}/* ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

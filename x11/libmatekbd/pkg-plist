@@ -117,6 +117,4 @@ share/locale/zh_TW/LC_MESSAGES/libmatekbd.mo
 @dirrmtry share/locale/as
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
-@dirrmtry share/glib-2.0/schemas
-@dirrmtry share/glib-2.0
 @dirrm include/libmatekbd

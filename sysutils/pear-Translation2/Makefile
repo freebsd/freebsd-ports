@@ -27,7 +27,6 @@ PEAR_FILE_GETTEXT_DESC=	PEAR::File_Gettext support
 PEAR_I18NV2_DESC=	PEAR::I18Nv2 support
 PEAR_XML_SERIALIZER_DESC=	PEAR::XML_Serializer support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPEAR_CACHE_LITE}

@@ -33,6 +33,8 @@ rcvar=logstash_enable
 
 load_rc_config ${name}
 
+logdir="/var/log"
+
 : ${logstash_enable="NO"}
 : ${logstash_home="%%LOGSTASH_HOME%%"}
 : ${logstash_config="%%PREFIX%%/etc/${name}/${name}.conf"}
@@ -52,7 +54,6 @@ if [ -d $piddir ]; then
 	mkdir -p $piddir
 fi
 
-logdir="/var/log"
 command="/usr/sbin/daemon"
 
 java_cmd="${logstash_java_home}/bin/java"
@@ -67,12 +68,12 @@ if checkyesno logstash_log; then
 fi
 
 if [ ${logstash_mode} = "standalone" ]; then
-	logstash_args="agent -f ${logstash_config} -- web --port ${logstash_port} --backend elasticsearch:///?local ${logstash_log_options}"
+	logstash_args="agent -f ${logstash_config} ${logstash_log_options} -- web --port ${logstash_port}"
 	logstash_elastic_options="-Des.path.data=${logstash_elastic_datadir}"
 elif [ ${logstash_mode} = "agent" ]; then
 	logstash_args="agent -f ${logstash_config} ${logstash_log_options}"
 elif [ ${logstash_mode} = "web" ]; then
-	logstash_args="web --port ${logstash_port} --backend elasticsearch://${logstash_elastic_backend}/ ${logstash_log_options}"
+	logstash_args="web --port ${logstash_port} ${logstash_log_options}"
 fi
 
 command_args="-f -p ${pidfile} ${java_cmd} ${logstash_elastic_options} -jar ${logstash_jar} ${logstash_args}"

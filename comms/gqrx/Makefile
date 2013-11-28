@@ -14,25 +14,20 @@ COMMENT=	Qt-based software defined radio receiver
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	gnuradio-core:${PORTSDIR}/comms/gnuradio \
-		gnuradio-audio:${PORTSDIR}/comms/gnuradio \
-		gnuradio-osmosdr:${PORTSDIR}/comms/gr-osmosdr \
-		pulse:${PORTSDIR}/audio/pulseaudio \
-		pulse-simple:${PORTSDIR}/audio/pulseaudio \
-		boost_system:${PORTSDIR}/devel/boost-libs \
-		boost_program_options:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libgnuradio-core.so:${PORTSDIR}/comms/gnuradio \
+		libgnuradio-audio.so:${PORTSDIR}/comms/gnuradio \
+		libgnuradio-osmosdr.so:${PORTSDIR}/comms/gr-osmosdr \
+		libpulse.so:${PORTSDIR}/audio/pulseaudio \
+		libpulse-simple.so:${PORTSDIR}/audio/pulseaudio \
+		libboost_system.so:${PORTSDIR}/devel/boost-libs \
+		libboost_program_options.so:${PORTSDIR}/devel/boost-libs
 
-USES=	pkgconfig
-USE_QT4=	qmake_build moc_build rcc_build uic_build corelib gui svg
+USES=		pkgconfig qmake
+USE_QT4=	moc_build rcc_build uic_build corelib gui svg
 
 PLIST_FILES=	bin/gqrx
 
-NO_STAGE=	yes
-do-configure:
-	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS}
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gqrx ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/gqrx ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

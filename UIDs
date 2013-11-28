@@ -169,6 +169,7 @@ callweaver:*:444:444::0:0:Callweaver account:/var/lib/callweaver:/usr/sbin/nolog
 courier:*:465:465::0:0:Courier Mail Server:/nonexistent:/usr/sbin/nologin
 condor:*:466:466::0:0:& user:/home/condor:/usr/sbin/nologin
 netmon:*:467:467::0:0:Network monitor account:/var/netmon:/usr/sbin/nologin
+slurm:*:468:468::0:0:SLURM Daemon:/home/slurm:/usr/sbin/nologin
 _bbstored:*:505:505::0:0:Box Backup Store Daemon:/nonexistent:/usr/sbin/nologin
 radmind:*:506:506::0:0:radmind User:/var/radmind:/usr/sbin/nologin
 skkserv:*:507:507::0:0:skkserv User:/nonexistent:/usr/sbin/nologin
@@ -270,4 +271,6 @@ shibd:*:971:971::0:0:Shibboleth SAML daemon:/nonexistent:/usr/sbin/nologin
 plex:*:972:972::0:0:Plex Media Server:/nonexistent:/usr/sbin/nologin
 boinc:*:973:973::0:0:BOINC user:/var/db/boinc:/usr/sbin/nologin
 radicale:*:974:974::0:0:Radicale daemon:/nonexistent:/usr/sbin/nologin
+unifi:*:975:975::0:0:Unifi Wireless Controller:/nonexistent:/usr/sbin/nologin
+minetest:*:976:976::0:0:& server:/nonexistent:/usr/sbin/nologin
 nobody:*:65534:65534::0:0:Unprivileged user:/nonexistent:/usr/sbin/nologin

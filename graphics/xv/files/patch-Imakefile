@@ -51,7 +51,7 @@
  #endif
  
 +PNG    = -DDOPNG
-+PNGINC = -I${LOCALBASE}/include
++PNGINC = -I${LOCALBASE}/include/libpng15
 +PNGLIB = -L${LOCALBASE}/lib -lpng
 +
 +JP2K    = -DDOJP2K

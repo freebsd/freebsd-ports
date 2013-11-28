@@ -18,7 +18,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 BUILD_WRKSRC=	${WRKDIR}/${PORTNAME}/src
 
 USES=		gmake
-NO_STAGE=	yes
 MAKEFILE=	makefile
 MAKE_ARGS=	CXX="${CXX}" \
 		CXXFLAGS="${CXXFLAGS} -fPIC -I${LOCALBASE}/include"
@@ -31,7 +30,7 @@ post-patch:
 		${REINPLACE_CMD} -e "s|<malloc.h>|<stdlib.h>|g"
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/ladspa
-	${INSTALL_DATA} ${WRKSRC}/plugins/cmt.so ${PREFIX}/lib/ladspa/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ladspa
+	${INSTALL_LIB} ${WRKSRC}/plugins/cmt.so ${STAGEDIR}${PREFIX}/lib/ladspa/
 
 .include <bsd.port.mk>

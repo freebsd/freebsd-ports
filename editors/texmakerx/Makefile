@@ -9,46 +9,31 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/TexMakerX%20${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S:.0::}
 
 MAINTAINER=	lx@FreeBSD.org
-COMMENT=	A LaTeX IDE derived from Texmaker
+COMMENT=	LaTeX IDE derived from Texmaker
 
-LIB_DEPENDS=	poppler:${PORTSDIR}/graphics/poppler \
-		poppler-qt4:${PORTSDIR}/graphics/poppler-qt4
-RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
+LIB_DEPENDS=	libpoppler.so:${PORTSDIR}/graphics/poppler \
+		libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4
 
 WRKSRC=	${WRKDIR}/${PORTNAME}${PORTVERSION}
 
-USE_GHOSTSCRIPT=yes
-USE_QT4=	gui network xml moc_build qmake_build rcc_build \
+USES=		dos2unix qmake
+USE_GHOSTSCRIPT_RUN=	yes
+USE_QT4=	gui network xml moc_build rcc_build \
 		uic_build qtestlib script
 USE_TEX=	latex dvipsk
-USE_DOS2UNIX=	yes
-HAS_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	XDVI GV
 GV_DESC=	View ps files with gv
+GV_RUN_DEPENDS=	xdvi:${PORTSDIR}/print/xdvik
 XDVI_DESC=	View dvi files with xdvi
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MXDVI}
-RUN_DEPENDS+=	xdvi:${PORTSDIR}/print/xdvik
-.endif
-
-.if ${PORT_OPTIONS:MGV}
-RUN_DEPENDS+=	gv:${PORTSDIR}/print/gv
-.endif
+XDVI_RUN_DEPENDS=	gv:${PORTSDIR}/print/gv
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^\(utilities.path =\).*,\1 ${DATADIR},' \
 		-e 's,/usr/include,${LOCALBASE}/include,g' \
 		-e 's,/usr/lib,${LOCALBASE}/lib,g' \
 		${WRKSRC}/${PORTNAME}.pro
-
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} PREFIX=${PREFIX} ${PORTNAME}.pro
 
 .include <bsd.port.mk>

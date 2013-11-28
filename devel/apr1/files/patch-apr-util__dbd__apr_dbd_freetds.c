@@ -4,8 +4,8 @@
 #   I've made the FreeTDS-driver work again -- and submitted the patch to Apache:
 #   https://issues.apache.org/bugzilla/show_bug.cgi?id=53666
 ===================================================================================
---- ./apr-util-1.5.2/dbd/apr_dbd_freetds.c.orig	2012-08-05 23:09:15.000000000 +0200
-+++ ./apr-util-1.5.2/dbd/apr_dbd_freetds.c	2013-07-04 22:55:08.000000000 +0200
+--- ./apr-util-1.5.3/dbd/apr_dbd_freetds.c.orig	2012-08-05 23:09:15.000000000 +0200
++++ ./apr-util-1.5.3/dbd/apr_dbd_freetds.c	2013-07-04 22:55:08.000000000 +0200
 @@ -40,12 +40,12 @@
  #include <freetds/sybdb.h>
  #endif

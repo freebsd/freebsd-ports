@@ -329,6 +329,7 @@
     SUBDIR += p5-Data-Validate-Email
     SUBDIR += p5-Email-Abstract
     SUBDIR += p5-Email-Address
+    SUBDIR += p5-Email-Address-List
     SUBDIR += p5-Email-Address-Loose
     SUBDIR += p5-Email-AddressParser
     SUBDIR += p5-Email-Date
@@ -451,6 +452,7 @@
     SUBDIR += p5-SES
     SUBDIR += p5-Sendmail-AccessDB
     SUBDIR += p5-Sendmail-Milter
+    SUBDIR += p5-Test-Email
     SUBDIR += p5-URI-imap
     SUBDIR += p5-URI-imaps
     SUBDIR += p5-WWW-GMail

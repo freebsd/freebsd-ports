@@ -22,8 +22,8 @@ USES=		perl5
 
 .if !defined(NOPORTEXAMPLES)
 post-install:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} LICENSE test* ${STAGEDIR}${EXAMPLESDIR}/
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} LICENSE test* ${STAGEDIR}${EXAMPLESDIR})
 .endif
 
 .if defined(MAINTAINER_MODE) && !defined(BATCH)

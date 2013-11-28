@@ -36,6 +36,7 @@
     SUBDIR += clang31
     SUBDIR += clang32
     SUBDIR += clang33
+    SUBDIR += clang34
     SUBDIR += clay
     SUBDIR += clisp
     SUBDIR += clojure
@@ -90,7 +91,6 @@
     SUBDIR += gcc-aux
     SUBDIR += gcc-ecj45
     SUBDIR += gcc34
-    SUBDIR += gcc42
     SUBDIR += gcc44
     SUBDIR += gcc46
     SUBDIR += gcc47

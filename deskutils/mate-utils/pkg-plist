@@ -812,10 +812,5 @@ share/pixmaps/mate-search-tool/thumbnail_frame.png
 @dirrmtry share/icons/mate/24x24
 @dirrmtry share/icons/mate
 @dirrmtry share/icons
-@dirrmtry share/glib-2.0/schemas
-@dirrmtry share/glib-2.0
-@dirrmtry share/dbus-1/services
-@dirrmtry share/dbus-1
-@dirrmtry share/applications
 @dirrm include/mate-dict/gdict
 @dirrm include/mate-dict

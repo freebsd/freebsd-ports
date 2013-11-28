@@ -32,18 +32,19 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GLIB_SCHEMAS=	org.mate.screensaver.gschema.xml
 
-PLIST=		${WRKDIR}/pkg-plist
+#PLIST=		${WRKDIR}/pkg-plist
 SUB_FILES+=	mate-screensaver.pam
 
-XSCREENSAVER_DIR=	${LOCALBASE}/share/xscreensaver/config
+XSCREENSAVER_DIR=	${PREFIX}/share/xscreensaver/config
 SCREENSAVER_DIR=	share/applications/screensavers
 
 XSCREENSAVER_EXCLUDE=	"(popsquares.xml)"
 
-OPTIONS_DEFINE=	PAM KEYRING XSCREENSAVER
+OPTIONS_DEFINE=	PAM KEYRING HACKS
 OPTIONS_DEFAULT=PAM KEYRING
 PAM_DESC=	Pluggable Authentication Module support
 KEYRING_DESC=	MateKeyring integration (needs PAM)
+HACKS_DESC=	Install extra gnome xscreensavers
 
 .include <bsd.port.options.mk>
 
@@ -79,20 +80,24 @@ post-patch:
 		${WRKSRC}/src/gs-auth-pam.c
 .endif
 
-pre-install:
-	@${CAT} ${.CURDIR}/pkg-plist > ${PLIST}
-	@cd ${XSCREENSAVER_DIR} && ${FIND} -s * -maxdepth 1 -type f -name "*.xml" | \
-		${GREP} -Ev ${XSCREENSAVER_EXCLUDE} | \
-		${SED} -e 's:^:${SCREENSAVER_DIR}/:' | \
-		${SED} -e 's:[.]xml$$:.desktop:' >> ${PLIST}
-	@${ECHO_CMD} @dirrm ${SCREENSAVER_DIR} >> ${PLIST}
+#.if defined (HACKS)
+#pre-install:
+#	@${CAT} ${.CURDIR}/pkg-plist > ${PLIST}
+#	@cd ${STAGEDIR}${XSCREENSAVER_DIR} && ${FIND} -s * -maxdepth 1 -type f -name "*.xml" | \
+#		${GREP} -Ev ${XSCREENSAVER_EXCLUDE} | \
+#		${SED} -e 's:^:${SCREENSAVER_DIR}/:' | \
+#		${SED} -e 's:[.]xml$$:.desktop:' >> ${PLIST}
+#	@${ECHO_CMD} @dirrm ${SCREENSAVER_DIR} >> ${PLIST}
+#.endif
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${SCREENSAVER_DIR}
-	cd ${STAGEDIR}${PREFIX}/${SCREENSAVER_DIR} && \
-		${FIND} -s ${XSCREENSAVER_DIR} -maxdepth 1 -type f -name "*.xml" | \
-			${GREP} -Ev ${XSCREENSAVER_EXCLUDE} | \
-			${XARGS} ${WRKSRC}/data/migrate-xscreensaver-config.sh
+#.if defined(HACKS)
+#	${MKDIR} ${STAGEDIR}${PREFIX}/${SCREENSAVER_DIR}
+#	cd ${STAGEDIR}${PREFIX}/${SCREENSAVER_DIR} && \
+#		${FIND} -s ${STAGEDIR}${XSCREENSAVER_DIR} -maxdepth 1 -type f -name "*.xml" | \
+#			${GREP} -Ev ${XSCREENSAVER_EXCLUDE} | \
+#			${XARGS} ${WRKSRC}/data/migrate-xscreensaver-config.sh
+#.endif
 .if ${PORT_OPTIONS:MPAM}
 	${INSTALL_DATA} ${WRKDIR}/mate-screensaver.pam ${STAGEDIR}${PREFIX}/etc/pam.d/mate-screensaver
 .endif

@@ -3,7 +3,7 @@
 
 PORTNAME=	freetuxtv
 PORTVERSION=	0.6.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
 
@@ -46,6 +46,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$${pkgdatadir}/doc|$${PREFIX}/share/doc/${PORTNAME}|' \
 		-e 's|install-data-am: install-freetuxtvdocDATA|install-data-am: |' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's/libvlc_media_new_path/libvlc_media_new_location/' \
+		${WRKSRC}/lib/libvlc-gtk/gtk-libvlc-media-player.c
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -161,6 +161,7 @@ callweaver:*:444:
 courier:*:465:
 condor:*:466:
 netmon:*:467:
+slurm:*:468:
 _bbstored:*:505:
 radmind:*:506:
 skkserv:*:507:
@@ -264,5 +265,7 @@ shibd:*:971:
 plex:*:972:
 boinc:*:973:
 radicale:*:974:
+unifi:*:975:
+minetest:*:976:
 nogroup:*:65533:
 nobody:*:65534:

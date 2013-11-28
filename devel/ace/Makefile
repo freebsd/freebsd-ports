@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ace
-PORTVERSION=	6.2.2
+PORTVERSION=	6.2.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://download.dre.vanderbilt.edu/previous_versions/ \
 		http://download.dre.vanderbilt.edu/previous_versions/

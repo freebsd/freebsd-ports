@@ -12,12 +12,11 @@ MASTER_SITES=	http://download.osgeo.org/geotiff/libgeotiff/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for reading and writing GeoTIFF information tags
 
-LIB_DEPENDS=	jbig:${PORTSDIR}/graphics/jbigkit \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		proj:${PORTSDIR}/graphics/proj \
-		tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libjbig.so:${PORTSDIR}/graphics/jbigkit \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libproj.so:${PORTSDIR}/graphics/proj \
+		libtiff.so:${PORTSDIR}/graphics/tiff
 
-CPPFLAGS+=	-fPIC
 CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--disable-doxygen-doc \
 		--disable-doxygen-dot \
@@ -27,10 +26,8 @@ CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--with-proj=${LOCALBASE} \
 		--with-libtiff=${LOCALBASE} \
 		--with-zlib=/usr
+CPPFLAGS+=	-fPIC
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-MAN1=		listgeo.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -527,7 +527,6 @@ share/thumbnailers/atril.thumbnailer
 @dirrmtry share/gtk-doc/html/atril
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
-@dirrmtry share/applications
 @dirrm lib/atril/3/backends
 @dirrm lib/atril/3
 @dirrm lib/atril
