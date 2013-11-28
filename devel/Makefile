@@ -4531,7 +4531,6 @@
     SUBDIR += z80asm
     SUBDIR += z80ex
     SUBDIR += zmq
-    SUBDIR += zmq-devel
     SUBDIR += zookeeper
     SUBDIR += zpu-binutils
     SUBDIR += zpu-gcc
