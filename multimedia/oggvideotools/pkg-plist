@@ -78,5 +78,16 @@ include/oggvt/vorbisPosInterpreter.h
 include/oggvt/vorbisStreamParameter.h
 include/oggvt/wishList.h
 lib/liboggvideotools.so
+man/man1/mkThumbs.1.gz
+man/man1/oggCat.1.gz
+man/man1/oggCut.1.gz
+man/man1/oggDump.1.gz
+man/man1/oggJoin.1.gz
+man/man1/oggLength.1.gz
+man/man1/oggSilence.1.gz
+man/man1/oggSlideshow.1.gz
+man/man1/oggSplit.1.gz
+man/man1/oggThumb.1.gz
+man/man1/oggTranscode.1.gz
 sbin/mkThumbs
 @dirrm include/oggvt

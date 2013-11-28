@@ -12,20 +12,16 @@ COMMENT=	Toolbox for manipulating Ogg video files
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
-		ogg:${PORTSDIR}/audio/libogg \
-		theora:${PORTSDIR}/multimedia/libtheora \
-		vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
+		libogg.so:${PORTSDIR}/audio/libogg \
+		libtheora.so:${PORTSDIR}/multimedia/libtheora \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-USE_SDL=	sdl
 USES=		cmake pkgconfig
+USE_SDL=	sdl
 USE_LDCONFIG=	yes
 
+CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		mkThumbs.1 oggCat.1 oggCut.1 oggDump.1 oggJoin.1 \
-		oggLength.1 oggSilence.1 oggSlideshow.1 oggSplit.1 \
-		oggThumb.1 oggTranscode.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
