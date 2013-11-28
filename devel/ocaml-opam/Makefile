@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.ocamlpro.com/pub/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	opam-full-${PORTVERSION}
 
-MAINTAINER=	joris.gio@gmail.com
+MAINTAINER=	joris@giovannangeli.fr
 COMMENT=	Source-based package manager for OCaml
 
 LICENSE=	GPLv3
