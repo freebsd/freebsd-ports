@@ -14,7 +14,7 @@ COMMENT=	Corewars Redcode Evolver
 LICENSE=	GPLv2
 
 USES=		dos2unix
-DOS2UNIX_FILES=	*.txt
+DOS2UNIX_GLOB=	*.txt
 NO_WRKSUBDIR=	yes
 BUILD_WRKSRC=	${WRKSRC}/src
 
