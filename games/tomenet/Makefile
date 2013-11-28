@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tomenet
-PORTVERSION=	4.5.4
+PORTVERSION=	4.5.5
 CATEGORIES=	games
 MASTER_SITES=	http://tomenet.net/downloads/
 
@@ -11,31 +11,29 @@ COMMENT=	Online multiplayer rogue-like role-playing game
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-MAKEFILE=	${WRKSRC}/makefile
+MAKEFILE=	makefile
 
-USES=		ncurses
-USE_GMAKE=	yes
+USES=		gmake ncurses
 CFLAGS+=	-DDEFAULT_PATH="\\\"${DATADIR}/lib/\\\""
+MAKE_JOBS_UNSAFE=	yes
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 do-install:
 .for f in tomenet tomenet.server accedit evilmeta
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${MKDIR} ${DATADIR}
-	(cd ${WRKDIR}/${DISTNAME} && ${COPYTREE_SHARE} lib ${DATADIR})
-	${MKDIR} ${ETCDIR}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/.tomenetrc ${ETCDIR}/tomenetrc
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKDIR}/${DISTNAME} && ${COPYTREE_SHARE} lib ${STAGEDIR}${DATADIR})
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/.tomenetrc ${STAGEDIR}${ETCDIR}/tomenetrc
 
 .include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/TomeNET-Guide.txt ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/TomeNET-Guide.txt ${STAGEDIR}${DOCSDIR}
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
