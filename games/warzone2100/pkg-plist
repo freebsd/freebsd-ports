@@ -32,15 +32,6 @@ share/icons/warzone2100.png
 %%NLS%%share/locale/uk_UA/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/warzone2100.mo
-%%DATADIR%%/base.wz
-%%DATADIR%%/mp.wz
-%%DATADIR%%/music/menu.ogg
-%%DATADIR%%/music/music.wpl
-%%DATADIR%%/music/track1.ogg
-%%DATADIR%%/music/track2.ogg
-%%DATADIR%%/music/track3.ogg
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%
 %%NLS%%@dirrmtry share/locale/uk_UA/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/uk_UA
 %%NLS%%@dirrmtry share/locale/la/LC_MESSAGES
