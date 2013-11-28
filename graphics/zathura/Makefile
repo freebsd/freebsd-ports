@@ -2,37 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	zathura
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.5
 CATEGORIES=	graphics print
 MASTER_SITES=	http://pwmt.org/projects/zathura/download/
 
 MAINTAINER=	acieroid@awesom.eu
 COMMENT=	Customizable lightweight pdf viewer
 
-LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
-		girara-gtk2:${PORTSDIR}/x11-toolkits/girara
+LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
+		libgirara-gtk3.so:${PORTSDIR}/x11-toolkits/girara
+BUILD_DEPENDS+=	rst2html:${PORTSDIR}/textproc/py-docutils
 
-USE_GNOME=	glib20 gtk20
+USE_GNOME=	glib20 gtk30
 USES=		gmake pkgconfig
-MAKE_ENV=	SFLAGS="${STRIP}"
+MAKE_ENV=	SFLAGS="${STRIP}" \
+		RSTTOMAN=${LOCALBASE}/bin/rst2man
 
-OPTIONS_DEFINE=	DOCS NLS SQLITE
+OPTIONS_DEFINE=	NLS SQLITE
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSQLITE}
-LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 MAKE_ENV+=	WITH_SQLITE=1
 .else
 MAKE_ENV+=	WITH_SQLITE=0
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	rst2html:${PORTSDIR}/textproc/py-docutils
-MAN1+=		zathura.1
-MAN5+=		zathurarc.5
-MAKE_ENV+=	RSTTOMAN=${LOCALBASE}/bin/rst2man
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
@@ -48,12 +42,6 @@ post-patch:	.SILENT
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's|PLUGINDIR ?= .*$$|PLUGINDIR ?= ${PREFIX}/lib/zathura|'\
 		${WRKSRC}/config.mk
-.if ! ${PORT_OPTIONS:MDOCS}
-	${REINPLACE_CMD} -e 's|install-manpages$$||'\
-		${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's|RSTTOMAN ?= /usr/bin/rst2man|RSTTOMAN ?= ""|'\
-		${WRKSRC}/config.mk
-.endif
 .if ! ${PORT_OPTIONS:MNLS}
 	${REINPLACE_CMD} -e '/-C po/d'\
 		${WRKSRC}/Makefile
@@ -66,9 +54,6 @@ post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's|/etc|${PREFIX}&|g' \
 		${WRKSRC}/config.h \
 		${WRKSRC}/zathurarc.5.rst
-	(cd ${WRKSRC}; ${RM} -f ${MAN1} ${MAN5})
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	(cd ${WRKSRC}; ${RM} -f zathura.1 zathurarc.5)
 
 .include <bsd.port.mk>
