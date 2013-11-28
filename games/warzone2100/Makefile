@@ -15,14 +15,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
-LIB_DEPENDS=	physfs:${PORTSDIR}/devel/physfs \
-		png15:${PORTSDIR}/graphics/png \
-		vorbis:${PORTSDIR}/audio/libvorbis \
-		theora:${PORTSDIR}/multimedia/libtheora \
-		GLEW:${PORTSDIR}/graphics/glew \
-		fribidi:${PORTSDIR}/converters/fribidi \
-		freetype:${PORTSDIR}/print/freetype2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs \
+		libpng.so:${PORTSDIR}/graphics/png \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libtheora.so:${PORTSDIR}/multimedia/libtheora \
+		libGLEW.so:${PORTSDIR}/graphics/glew \
+		libfribidi.so:${PORTSDIR}/converters/fribidi \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
 
 USE_XZ=		yes
@@ -39,27 +39,25 @@ CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}" \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 REINPLACE_ARGS=	-i ''
-PORTDOCS=	*
-USE_GCC=	yes
 
-NO_STAGE=	yes
+PORTDOCS=	*
+PORTDATA=	*
+
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_DEFAILT=DOCS NLS
+OPTIONS_SUB=	yes
+
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=nls
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
+.if ${OSVERSION} < 1000000
+USE_GCC=	yes
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||g' ${WRKSRC}/configure
-.if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -Ee 's|install-dist_docDATA$$||' \
-		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|^install: install-am|install:|' \
-		${WRKSRC}/doc/Makefile.in
-.endif
+	@${REINPLACE_CMD} -e 's|./build_tools/autorevision|& -f|g' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

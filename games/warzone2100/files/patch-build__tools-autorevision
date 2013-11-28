@@ -1,14 +1,18 @@
-Update autorevision with latest, portable, version
 --- build_tools/autorevision.orig	2013-01-15 03:54:06.000000000 +0400
-+++ build_tools/autorevision	2013-01-21 20:38:26.811933361 +0400
-@@ -1,4 +1,4 @@
++++ build_tools/autorevision	2013-11-28 22:51:48.683986977 +0400
+@@ -1,12 +1,14 @@
 -#!/bin/bash
 +#!/bin/sh
  
- # Copyright (c) 2012 dak180
- # See http://opensource.org/licenses/bsd-license.php for licence terms
-@@ -6,7 +6,7 @@
- # autorevision - extracts metadata about the head version from your repository.
+-# Copyright (c) 2012 dak180
+-# See http://opensource.org/licenses/bsd-license.php for licence terms
++# Copyright (c) 2012 - 2013 dak180 and contributors. See
++# http://opensource.org/licenses/mit-license.php or the included
++# COPYING.md for licence terms.
+ #
+-# autorevision - extracts metadata about the head version from your repository.
++# autorevision - extracts metadata about the head version from your
++# repository.
  
  # Usage message.
 -function arUsage {
@@ -16,8 +20,19 @@ Update autorevision with latest, portable, version
  	cat > "/dev/stderr" << EOF
  usage: ./autorevision {-t output-type | -s symbol} [-o cache-file [-f] ] [-V]
  	Options include:
-@@ -29,6 +29,8 @@
+@@ -14,6 +16,7 @@
+ 	-s symbol		= specify symbol output
+ 	-o cache-file		= specify cache file location
+ 	-f			= force the use of cache data
++	-U			= check for untracked files in svn
+ 	-V			= emit version and exit
+ 	-?			= help message
+ 
+@@ -27,8 +30,11 @@
+ 	php			= PHP file
+ 	ini			= INI file
  	js			= javascript file
++	json			= JSON file
  	java			= Java file
  	javaprop		= Java properties file
 +	tex			= (La)TeX file
@@ -25,16 +40,29 @@ Update autorevision with latest, portable, version
  
  The following are valid symbols:
  	VCS_TYPE
-@@ -46,7 +48,7 @@
+@@ -46,9 +52,9 @@
  }
  
  # Config
 -ARVERSION="1.1"
-+ARVERSION="1.4"
++ARVERSION="&&ARVERSION&&"
  TARGETFILE="/dev/stdout"
- while getopts ":t:o:s:Vf" OPTION; do
+-while getopts ":t:o:s:Vf" OPTION; do
++while getopts ":t:o:s:VfU" OPTION; do
  	case "${OPTION}" in
-@@ -73,14 +75,14 @@
+ 		t)
+ 			AFILETYPE="${OPTARG}"
+@@ -62,6 +68,9 @@
+ 		s)
+ 			VAROUT="${OPTARG}"
+ 		;;
++		U)
++			UNTRACKEDFILES="1"
++		;;
+ 		V)
+ 			echo "autorevision ${ARVERSION}"
+ 			exit 0
+@@ -73,56 +82,70 @@
  	esac
  done
  
@@ -52,7 +80,13 @@ Update autorevision with latest, portable, version
  	# If -f is specified without -o:
  	arUsage
  fi
-@@ -88,20 +90,20 @@
+ 
++# Make sure that the path we are given is one we can source
++# (dash, we are looking at you).
++if [ ! -z "${CACHEFILE}" ] && ! echo "${CACHEFILE}" | grep -q '^\.*/'; then
++	CACHEFILE="./${CACHEFILE}"
++fi
++
  
  # Functions to extract data from different repo types.
  # For git repos
@@ -67,7 +101,7 @@ Update autorevision with latest, portable, version
 -	# Is the working copy clean?
 -	git diff --quiet HEAD &> /dev/null
 +	 # Is the working copy clean?
-+	test -z "$(git status -uno --porcelain)"
++	test -z "$(git status --untracked-files=normal --porcelain)"
  	VCS_WC_MODIFIED="${?}"
  
  	# Enumeration of changesets
@@ -77,7 +111,33 @@ Update autorevision with latest, portable, version
  		echo "warning: Counting the number of revisions may be slower due to an outdated git version less than 1.7.2.3. If something breaks, please update it." 1>&2
  		VCS_NUM="$(git rev-list HEAD | wc -l)"
  	fi
-@@ -122,7 +124,7 @@
+ 
+-	# The full revision hash
+-	VCS_FULL_HASH="$(git rev-parse HEAD)"
++	# This may be a git-svn remote.  If so, report the Subversion revision.
++	if [ -z "$(git config svn-remote.svn.url 2>/dev/null)" ]
++	then
++		# The full revision hash
++		VCS_FULL_HASH="$(git rev-parse HEAD)"
+ 
+-	# The short hash
+-	VCS_SHORT_HASH="$(echo "${VCS_FULL_HASH}" | cut -b 1-7)"
++		# The short hash
++		VCS_SHORT_HASH="$(echo "${VCS_FULL_HASH}" | cut -b 1-7)"
++	else
++		# The git-svn revision number
++		VCS_FULL_HASH="$(git svn find-rev HEAD)"
++		VCS_SHORT_HASH="${VCS_FULL_HASH}"
++	fi
+ 
+ 	# Current branch
+ 	VCS_BRANCH="$(git rev-parse --symbolic-full-name --verify "$(git name-rev --name-only --no-undefined HEAD 2>/dev/null)" 2>/dev/null | sed -e 's:refs/heads/::' | sed -e 's:refs/::')"
+ 
+ 	# Cache the description
+-	DESCRIPTION="$(git describe --long --tags 2>/dev/null)"
++	local DESCRIPTION="$(git describe --long --tags 2>/dev/null)"
+ 
+ 	# Current or last tag ancestor (empty if no tags)
  	VCS_TAG="$(echo "${DESCRIPTION}" | sed -e "s:-g${VCS_SHORT_HASH}\$::" | sed -e 's:-[0-9]*$::')"
  
  	# Distance to last tag or an alias of VCS_NUM if there is no tag
@@ -86,7 +146,7 @@ Update autorevision with latest, portable, version
  		VCS_TICK="$(echo "${DESCRIPTION}" | sed -e "s:${VCS_TAG}-::" -e "s:-g${VCS_SHORT_HASH}::")"
  	else
  		VCS_TICK="${VCS_NUM}"
-@@ -133,7 +135,7 @@
+@@ -133,7 +156,7 @@
  }
  
  # For hg repos
@@ -95,7 +155,16 @@ Update autorevision with latest, portable, version
  	cd "$(hg root)"
  
  	VCS_TYPE="hg"
-@@ -157,7 +159,7 @@
+@@ -141,7 +164,7 @@
+ 	VCS_BASENAME="$(basename "${PWD}")"
+ 
+ 	# Is the working copy clean?
+-	hg sum | grep -q 'commit: (clean)'
++	test -z "$(hg status -duram)"
+ 	VCS_WC_MODIFIED="${?}"
+ 
+ 	# Enumeration of changesets
+@@ -157,7 +180,7 @@
  	# or branch if no bookmark
  	VCS_BRANCH="$(hg id -B | cut -d ' ' -f 1)"
  	# Fall back to the branch if there are no bookmarks
@@ -104,7 +173,7 @@ Update autorevision with latest, portable, version
  		VCS_BRANCH="$(hg id -b)"
  	fi
  
-@@ -165,7 +167,7 @@
+@@ -165,7 +188,7 @@
  	VCS_TAG="$(hg log -r "${VCS_NUM}" -l 1 --template '{latesttag}\n' 2>/dev/null | sed -e 's:qtip::' -e 's:tip::' -e 's:qbase::' -e 's:qparent::' -e "s:$(hg --config 'extensions.color=' --color never qtop 2>/dev/null)::" | cut -d ' ' -f 1)"
  
  	# Distance to last tag or an alias of VCS_NUM if there is no tag
@@ -113,7 +182,7 @@ Update autorevision with latest, portable, version
  		VCS_TICK="$(hg log -r "${VCS_NUM}" -l 1 --template '{latesttagdistance}\n' 2>/dev/null)"
  	else
  		VCS_TICK="${VCS_NUM}"
-@@ -176,7 +178,7 @@
+@@ -176,7 +199,7 @@
  }
  
  # For bzr repos
@@ -122,7 +191,7 @@ Update autorevision with latest, portable, version
  	cd "$(bzr root)"
  
  	VCS_TYPE="bzr"
-@@ -194,7 +196,7 @@
+@@ -194,7 +217,7 @@
  	VCS_FULL_HASH="$(bzr version-info --custom --template='{revision_id}\n')"
  
  	# The short hash
@@ -131,7 +200,7 @@ Update autorevision with latest, portable, version
  
  	# Nick of the current branch
  	VCS_BRANCH="$(bzr nick)"
-@@ -203,7 +205,7 @@
+@@ -203,7 +226,7 @@
  	VCS_TAG="$(bzr tags --sort=time | sed '/?$/d' | tail -n1 | cut -d ' ' -f1)"
  
  	# Distance to last tag or an alias of VCS_NUM if there is no tag
@@ -140,7 +209,7 @@ Update autorevision with latest, portable, version
  		VCS_TICK="$(bzr log --line -r "tag:${VCS_TAG}.." | tail -n +2 | wc -l | sed -e 's:^ *::')"
  	else
  		VCS_TICK="${VCS_NUM}"
-@@ -214,17 +216,17 @@
+@@ -214,17 +237,17 @@
  }
  
  # For svn repos
@@ -150,10 +219,12 @@ Update autorevision with latest, portable, version
  
  	case "${PWD}" in
  	/*trunk*|/*branches*|/*tags*)
- 		fn="${PWD}"
+-		fn="${PWD}"
 -		while [[ "$(basename "${fn}")" != 'trunk' ]] && [[ "$(basename "${fn}")" != 'branches' ]] && [[ "$(basename "${fn}")" != 'tags' ]] && [[ "$(basename "${fn}")" != '/' ]]; do
+-			fn="$(dirname "${fn}")"
++		local fn="${PWD}"
 +		while [ "$(basename "${fn}")" != 'trunk' ] && [ "$(basename "${fn}")" != 'branches' ] && [ "$(basename "${fn}")" != 'tags' ] && [ "$(basename "${fn}")" != '/' ]; do
- 			fn="$(dirname "${fn}")"
++			local fn="$(dirname "${fn}")"
  		done
  		fn="$(dirname "${fn}")"
 -		if [[ "${fn}" == '/' ]]; then
@@ -161,7 +232,35 @@ Update autorevision with latest, portable, version
  			VCS_BASENAME="$(basename "${PWD}")"
  		else
  			VCS_BASENAME="$(basename "${fn}")"
-@@ -250,7 +252,7 @@
+@@ -234,13 +257,24 @@
+ 	esac
+ 
+ 	# Cache svnversion output
+-	SVNVERSION="$(svnversion)"
++	local SVNVERSION="$(svnversion)"
+ 
+ 	# Is the working copy clean?
+ 	echo "${SVNVERSION}" | grep -q "M"
+ 	case "${?}" in
+-		0) VCS_WC_MODIFIED="1";;
+-		1) VCS_WC_MODIFIED="0";;
++		0)
++			VCS_WC_MODIFIED="1"
++		;;
++		1)
++			if [ ! -z "${UNTRACKEDFILES}"]; then
++			# `svnversion` does not detect untracked files and `svn status` is really slow, so only run it if we really have to.
++				if [ -z "$(svn status)" ]; then
++					VCS_WC_MODIFIED="0"
++				else
++					VCS_WC_MODIFIED="1"
++				fi
++			fi
++		;;
+ 	esac
+ 
+ 	# Enumeration of changesets
+@@ -250,28 +284,28 @@
  	VCS_FULL_HASH="${SVNVERSION}"
  
  	# The short hash
@@ -170,7 +269,11 @@ Update autorevision with latest, portable, version
  
  	# Current branch
  	case "${PWD}" in
-@@ -260,13 +262,13 @@
+ 	/*trunk*|/*branches*|/*tags*)
+-		lastbase=""
+-		fn="${PWD}"
++		local lastbase=""
++		loacl fn="${PWD}"
  		while :
  		do
  			base="$(basename "${fn}")"
@@ -187,7 +290,14 @@ Update autorevision with latest, portable, version
  				VCS_BRANCH=""
  				break
  			fi
-@@ -290,7 +292,7 @@
+-			lastbase="${base}"
+-			fn="$(dirname "${fn}")"
++			local lastbase="${base}"
++			local fn="$(dirname "${fn}")"
+ 		done
+ 		;;
+ 	*) VCS_BRANCH="" ;;
+@@ -290,7 +324,7 @@
  
  # Functions to output data in different formats.
  # For header output
@@ -196,7 +306,7 @@ Update autorevision with latest, portable, version
  	cat > "${TARGETFILE}" << EOF
  /* Generated by autorevision - do not hand-hack! */
  #ifndef AUTOREVISION_H
-@@ -316,7 +318,7 @@
+@@ -316,7 +350,7 @@
  }
  
  # A header output for use with xcode to populate info.plist strings
@@ -205,7 +315,7 @@ Update autorevision with latest, portable, version
  	cat > "${TARGETFILE}" << EOF
  /* Generated by autorevision - do not hand-hack! */
  #ifndef AUTOREVISION_H
-@@ -342,7 +344,7 @@
+@@ -342,7 +376,7 @@
  }
  
  # For bash output
@@ -214,7 +324,7 @@ Update autorevision with latest, portable, version
  	cat > "${TARGETFILE}" << EOF
  # Generated by autorevision - do not hand-hack!
  
-@@ -364,7 +366,7 @@
+@@ -364,7 +398,7 @@
  }
  
  # For Python output
@@ -223,7 +333,7 @@ Update autorevision with latest, portable, version
  	case "${VCS_WC_MODIFIED}" in
  		0) VCS_WC_MODIFIED="False" ;;
  		1) VCS_WC_MODIFIED="True" ;;
-@@ -390,7 +392,7 @@
+@@ -390,7 +424,7 @@
  }
  
  # For Perl output
@@ -232,7 +342,7 @@ Update autorevision with latest, portable, version
  	cat << EOF
  # Generated by autorevision - do not hand-hack!
  
-@@ -412,7 +414,7 @@
+@@ -412,7 +446,7 @@
  }
  
  # For lua output
@@ -241,7 +351,7 @@ Update autorevision with latest, portable, version
  	case "${VCS_WC_MODIFIED}" in
  		0) VCS_WC_MODIFIED="false" ;;
  		1) VCS_WC_MODIFIED="true" ;;
-@@ -438,7 +440,7 @@
+@@ -438,7 +472,7 @@
  }
  
  # For php output
@@ -250,7 +360,7 @@ Update autorevision with latest, portable, version
  	case "${VCS_WC_MODIFIED}" in
  		0) VCS_WC_MODIFIED="false" ;;
  		1) VCS_WC_MODIFIED="true" ;;
-@@ -466,7 +468,7 @@
+@@ -466,7 +500,7 @@
  }
  
  # For ini output
@@ -259,7 +369,7 @@ Update autorevision with latest, portable, version
  	case "${VCS_WC_MODIFIED}" in
  		0) VCS_WC_MODIFIED="false" ;;
  		1) VCS_WC_MODIFIED="true" ;;
-@@ -489,7 +491,7 @@
+@@ -489,7 +523,7 @@
  }
  
  # For javascript output
@@ -268,16 +378,50 @@ Update autorevision with latest, portable, version
  	case "${VCS_WC_MODIFIED}" in
  		1) VCS_WC_MODIFIED="true" ;;
  		0) VCS_WC_MODIFIED="false" ;;
-@@ -522,7 +524,7 @@
+@@ -521,8 +555,32 @@
+ EOF
  }
  
++# For JSON output
++jsonOutput() {
++	case "${VCS_WC_MODIFIED}" in
++		1) VCS_WC_MODIFIED="true" ;;
++		0) VCS_WC_MODIFIED="false" ;;
++	esac
++	cat > "${TARGETFILE}" << EOF
++{
++	"VCS_TYPE": "${VCS_TYPE}",
++	"VCS_BASENAME": "${VCS_BASENAME}",
++	"VCS_NUM": ${VCS_NUM},
++	"VCS_DATE": "${VCS_DATE}",
++	"VCS_BRANCH":"${VCS_BRANCH}",
++	"VCS_TAG": "${VCS_TAG}",
++	"VCS_TICK": ${VCS_TICK},
++
++	"VCS_FULL_HASH": "${VCS_FULL_HASH}",
++	"VCS_SHORT_HASH": "${VCS_SHORT_HASH}",
++
++	"VCS_WC_MODIFIED": ${VCS_WC_MODIFIED}
++}
++EOF
++}
++
  # For Java output
 -function javaOutput {
 +javaOutput() {
  	case "${VCS_WC_MODIFIED}" in
  		1) VCS_WC_MODIFIED="true" ;;
  		0) VCS_WC_MODIFIED="false" ;;
-@@ -550,7 +552,7 @@
+@@ -536,7 +594,7 @@
+     public static final String VCS_TYPE = "${VCS_TYPE}";
+     public static final String VCS_BASENAME = "${VCS_BASENAME}";
+     public static final long VCS_NUM = ${VCS_NUM};
+-    public static final Date VCS_DATE = new Date($(date -d ${VCS_DATE} +%s));
++    public static final String VCS_DATE = "${VCS_DATE}";
+     public static final String VCS_BRANCH = "${VCS_BRANCH}";
+     public static final String VCS_TAG = "${VCS_TAG}";
+     public static final long VCS_TICK = ${VCS_TICK};
+@@ -550,7 +608,7 @@
  }
  
  # For Java properties output
@@ -286,7 +430,7 @@ Update autorevision with latest, portable, version
  	case "${VCS_WC_MODIFIED}" in
  		1) VCS_WC_MODIFIED="true" ;;
  		0) VCS_WC_MODIFIED="false" ;;
-@@ -573,22 +575,61 @@
+@@ -573,22 +631,63 @@
  EOF
  }
  
@@ -334,8 +478,9 @@ Update autorevision with latest, portable, version
 -if [[ -f "${CACHEFILE}" ]] && [[ "${CACHEFORCE}" = "1" ]]; then
 +if [ -f "${CACHEFILE}" ] && [ "${CACHEFORCE}" = "1" ]; then
  	# When requested only read from the cache to populate our symbols.
- 	source "${CACHEFILE}"
+-	source "${CACHEFILE}"
 -elif [[ ! -z "$(git rev-parse HEAD 2>/dev/null)" ]]; then
++	. "${CACHEFILE}"
 +elif [ ! -z "$(git rev-parse HEAD 2>/dev/null)" ]; then
  	gitRepo
 -elif [[ ! -z "$(hg root 2>/dev/null)" ]]; then
@@ -352,10 +497,12 @@ Update autorevision with latest, portable, version
  	# We are not in a repo; try to use a previously generated cache to populate our symbols.
 -	source "${CACHEFILE}"
 +	. "${CACHEFILE}"
++	# Do not overwrite the cache if we know we are not going to write anything new.
++	CACHEFORCE="1"
  else
  	echo "error: No repo or cache detected." 1>&2
  	exit 1
-@@ -596,55 +637,59 @@
+@@ -596,55 +695,64 @@
  
  
  # -s output is handled here.
@@ -391,6 +538,9 @@ Update autorevision with latest, portable, version
 -	elif [[ "${VAROUT}" = "VCS_WC_MODIFIED" ]]; then
 +	elif [ "${VAROUT}" = "VCS_WC_MODIFIED" ]; then
  		echo "${VCS_WC_MODIFIED}"
++	else
++		echo "error: Not a valid output symbol." 1>&2
++		exit 1
  	fi
  fi
  
@@ -426,6 +576,8 @@ Update autorevision with latest, portable, version
 +	elif [ "${AFILETYPE}" = "js" ]; then
  		jsOutput
 -	elif [[ "${AFILETYPE}" = "java" ]]; then
++	elif [ "${AFILETYPE}" = "json" ]; then
++		jsonOutput
 +	elif [ "${AFILETYPE}" = "java" ]; then
  		javaOutput
 -	elif [[ "${AFILETYPE}" = "javaprop" ]]; then
@@ -438,7 +590,7 @@ Update autorevision with latest, portable, version
  	else
  		echo "error: Not a valid output type." 1>&2
  		exit 1
-@@ -653,7 +698,7 @@
+@@ -653,7 +761,7 @@
  
  
  # If requested, make a cache file.
