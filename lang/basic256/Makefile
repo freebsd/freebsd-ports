@@ -21,12 +21,9 @@ WRKSRC=		${WRKDIR}
 USES=		bison dos2unix qmake
 USE_SDL=	sdl mixer
 USE_QT4=	corelib gui network xml webkit moc_build rcc_build uic_build
+QMAKE_PRO=	BASIC256.pro
 
 MAKE_JOBS_UNSAFE=	yes
-
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} "PREFIX=${PREFIX}" BASIC256.pro
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/mutex/mymutex/' ${WRKSRC}/*.cpp
