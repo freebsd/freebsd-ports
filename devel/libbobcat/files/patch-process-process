@@ -1,0 +1,13 @@
+--- process/process.orig	2013-11-13 11:45:02.000000000 +0100
++++ process/process	2013-11-27 16:52:35.000000000 +0100
+@@ -5,6 +5,10 @@
+ #include <ostream>
+ #include <istream>
+ 
++#ifdef __FreeBSD__
++#include <signal.h>
++#endif
++
+ #include <bobcat/fork>
+ #include <bobcat/string>
+ #include <bobcat/pipe>

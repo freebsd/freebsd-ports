@@ -1,0 +1,13 @@
+--- localsocketbase/localsocketbase.orig	2013-11-13 11:44:52.000000000 +0100
++++ localsocketbase/localsocketbase	2013-11-27 16:51:46.000000000 +0100
+@@ -5,6 +5,10 @@
+ #include <string>
+ #include <sys/socket.h>
+ 
++#ifdef __FreeBSD__
++#include <string.h>
++#endif
++
+ namespace FBB
+ {
+ 

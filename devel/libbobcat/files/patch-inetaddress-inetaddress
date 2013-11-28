@@ -1,0 +1,14 @@
+--- inetaddress/inetaddress.orig	2013-11-13 11:44:52.000000000 +0100
++++ inetaddress/inetaddress	2013-11-27 16:51:01.000000000 +0100
+@@ -1,6 +1,11 @@
+ #ifndef INCLUDED_BOBCAT_INETADDRESS_
+ #define INCLUDED_BOBCAT_INETADDRESS_
+ 
++#ifdef __FreeBSD__
++#include <sys/types.h>
++#include <sys/socket.h>
++#endif
++
+ #include <netinet/in.h>
+ #include <string>
+ 
