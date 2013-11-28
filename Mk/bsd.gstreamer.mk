@@ -90,7 +90,7 @@ _GSTREAMER_PLUGINS+= \
 .if defined(USE_GSTREAMER1)
 _GSTREAMER_PLUGINS+= \
 		assrender curl dvdread kate libav modplug openjpeg png rtmp \
-		spandsp vpx webp x ximagesrc zbar
+		spandsp vaapi vpx webp x ximagesrc zbar
 .endif
 
 # other plugins
@@ -299,6 +299,8 @@ qt4_GST_PREFIX=	gstreamer-
 rtmp_DEPENDS=	multimedia/gstreamer1-plugins-rtmp
 
 v4l2_DEPENDS=	multimedia/gstreamer-plugins-v4l2
+
+vaapi_DEPENDS=	multimedia/gstreamer-plugins-vaapi
 
 vp8_DEPENDS=	multimedia/gstreamer-plugins-vp8
 

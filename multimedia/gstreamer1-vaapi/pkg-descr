@@ -1,0 +1,8 @@
+gstreamer-vaapi is a collection of GStreamer plugins and helper
+libraries that allow hardware accelerated video decoding through
+VA-API. Depending on the underlying hardware, the following video
+decoders are supported: JPEG, MPEG-2, MPEG-4:2, H.264 and VC-1.
+Renderers are available for X11, GLX, Wayland and raw DRM for headless
+pipelines.
+
+WWW: https://gitorious.org/vaapi/gstreamer-vaapi
