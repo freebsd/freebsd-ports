@@ -1,9 +1,10 @@
 @comment $FreeBSD$
 bin/bisonc++
-share/bisoncpp-%%PORTVERSION%%/bisonc++.cc
-share/bisoncpp-%%PORTVERSION%%/bisonc++.h
-share/bisoncpp-%%PORTVERSION%%/bisonc++.ih
-share/bisoncpp-%%PORTVERSION%%/bisonc++base.h
-share/bisoncpp-%%PORTVERSION%%/bisonc++polymorphic
-share/bisoncpp-%%PORTVERSION%%/bisonc++polymorphic.inline
-@dirrm share/bisoncpp-%%PORTVERSION%%
+man/man1/bisonc++.1.gz
+share/bisonc++-%%PORTVERSION%%/bisonc++.cc
+share/bisonc++-%%PORTVERSION%%/bisonc++.h
+share/bisonc++-%%PORTVERSION%%/bisonc++.ih
+share/bisonc++-%%PORTVERSION%%/bisonc++base.h
+share/bisonc++-%%PORTVERSION%%/bisonc++polymorphic
+share/bisonc++-%%PORTVERSION%%/bisonc++polymorphic.inline
+@dirrm share/bisonc++-%%PORTVERSION%%
