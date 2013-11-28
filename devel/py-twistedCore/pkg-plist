@@ -5,6 +5,13 @@ bin/tap2rpm
 bin/tapconvert
 bin/trial
 bin/twistd
+man/man1/manhole.1.gz
+man/man1/pyhtmlizer.1.gz
+man/man1/tap2deb.1.gz
+man/man1/tap2rpm.1.gz
+man/man1/tapconvert.1.gz
+man/man1/trial.1.gz
+man/man1/twistd.1.gz
 %%PYTHON_SITELIBDIR%%/twisted/__init__.py
 %%PYTHON_SITELIBDIR%%/twisted/__init__.pyc
 %%PYTHON_SITELIBDIR%%/twisted/__init__.pyo
