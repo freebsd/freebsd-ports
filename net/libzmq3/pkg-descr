@@ -1,0 +1,8 @@
+ZeroMQ - Distributed Computing Made Simple
+
+ * The socket library that acts as a concurrency framework.
+ * Carries messages across inproc, IPC, TCP, and multicast.
+ * Connect N-to-N via fanout, pubsub, pipeline, request-reply.
+ * Asynch I/O for scalable multicore message-passing apps.
+
+WWW: http://www.zeromq.org/
