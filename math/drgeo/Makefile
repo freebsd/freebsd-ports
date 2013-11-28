@@ -10,16 +10,17 @@ MASTER_SITES=	SF/ofset/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	GTK interactive geometry software
 
-LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
 
+GNU_CONFIGURE=	yes
 USES=		gettext gmake pkgconfig
 USE_GNOME=	gnomehack gnomeprefix intlhack libglade2
-GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_GCC=	any # doesn't link otherwise
+USE_GCC=	yes # segfaults when built with clang
 
-NO_STAGE=	yes
+PORTDATA=	*
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!/bin/sh|g' \
 		${WRKSRC}/plugin/drgeo/progs/tm_drgeo
