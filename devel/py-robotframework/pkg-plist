@@ -39,7 +39,7 @@ bin/rebot
 %%PYTHON_SITELIBDIR%%/robot/htmldata/lib/jquery.min.js
 %%PYTHON_SITELIBDIR%%/robot/htmldata/lib/jquery.tablesorter.min.js
 %%PYTHON_SITELIBDIR%%/robot/htmldata/lib/jquery.tmpl.min.js
-%%PYTHON_SITELIBDIR%%/robot/htmldata/lib/jsxcompressor.js
+%%PYTHON_SITELIBDIR%%/robot/htmldata/lib/jsxcompressor.min.js
 %%PYTHON_SITELIBDIR%%/robot/htmldata/libdoc/libdoc.css
 %%PYTHON_SITELIBDIR%%/robot/htmldata/libdoc/libdoc.html
 %%PYTHON_SITELIBDIR%%/robot/htmldata/libdoc/print.css
@@ -282,6 +282,9 @@ bin/rebot
 %%PYTHON_SITELIBDIR%%/robot/parsing/restreader.py
 %%PYTHON_SITELIBDIR%%/robot/parsing/restreader.pyc
 %%PYTHON_SITELIBDIR%%/robot/parsing/restreader.pyo
+%%PYTHON_SITELIBDIR%%/robot/parsing/restsupport.py
+%%PYTHON_SITELIBDIR%%/robot/parsing/restsupport.pyc
+%%PYTHON_SITELIBDIR%%/robot/parsing/restsupport.pyo
 %%PYTHON_SITELIBDIR%%/robot/parsing/settings.py
 %%PYTHON_SITELIBDIR%%/robot/parsing/settings.pyc
 %%PYTHON_SITELIBDIR%%/robot/parsing/settings.pyo
@@ -342,6 +345,9 @@ bin/rebot
 %%PYTHON_SITELIBDIR%%/robot/result/executionresult.py
 %%PYTHON_SITELIBDIR%%/robot/result/executionresult.pyc
 %%PYTHON_SITELIBDIR%%/robot/result/executionresult.pyo
+%%PYTHON_SITELIBDIR%%/robot/result/flattenkeywordmatcher.py
+%%PYTHON_SITELIBDIR%%/robot/result/flattenkeywordmatcher.pyc
+%%PYTHON_SITELIBDIR%%/robot/result/flattenkeywordmatcher.pyo
 %%PYTHON_SITELIBDIR%%/robot/result/keyword.py
 %%PYTHON_SITELIBDIR%%/robot/result/keyword.pyc
 %%PYTHON_SITELIBDIR%%/robot/result/keyword.pyo
@@ -537,6 +543,9 @@ bin/rebot
 %%PYTHON_SITELIBDIR%%/robot/utils/robotenv.py
 %%PYTHON_SITELIBDIR%%/robot/utils/robotenv.pyc
 %%PYTHON_SITELIBDIR%%/robot/utils/robotenv.pyo
+%%PYTHON_SITELIBDIR%%/robot/utils/robotinspect.py
+%%PYTHON_SITELIBDIR%%/robot/utils/robotinspect.pyc
+%%PYTHON_SITELIBDIR%%/robot/utils/robotinspect.pyo
 %%PYTHON_SITELIBDIR%%/robot/utils/robotpath.py
 %%PYTHON_SITELIBDIR%%/robot/utils/robotpath.pyc
 %%PYTHON_SITELIBDIR%%/robot/utils/robotpath.pyo
@@ -552,6 +561,9 @@ bin/rebot
 %%PYTHON_SITELIBDIR%%/robot/utils/unic.py
 %%PYTHON_SITELIBDIR%%/robot/utils/unic.pyc
 %%PYTHON_SITELIBDIR%%/robot/utils/unic.pyo
+%%PYTHON_SITELIBDIR%%/robot/utils/utf8reader.py
+%%PYTHON_SITELIBDIR%%/robot/utils/utf8reader.pyc
+%%PYTHON_SITELIBDIR%%/robot/utils/utf8reader.pyo
 %%PYTHON_SITELIBDIR%%/robot/variables/__init__.py
 %%PYTHON_SITELIBDIR%%/robot/variables/__init__.pyc
 %%PYTHON_SITELIBDIR%%/robot/variables/__init__.pyo
