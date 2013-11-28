@@ -3,6 +3,7 @@
 
 PORTNAME=	yap
 PORTVERSION=	6.3.3
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.dcc.fc.up.pt/~vsc/Yap/
 PKGNAMESUFFIX=	-devel
