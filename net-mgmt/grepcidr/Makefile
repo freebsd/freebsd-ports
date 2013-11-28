@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grepcidr
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	net-mgmt textproc
 MASTER_SITES=	http://www.pc-tools.net/files/unix/ \
 		ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
@@ -11,14 +10,19 @@ MASTER_SITES=	http://www.pc-tools.net/files/unix/ \
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Filter IP addresses matching IPv4 CIDR/network specification
 
-PLIST_FILES=	bin/grepcidr
+LICENSE=	GPLv2
 
-NO_STAGE=	yes
+USES=		gmake
+
+PLIST_FILES=	bin/grepcidr \
+		man/man1/grepcidr.1.gz
+
 do-configure:
-	@${REINPLACE_CMD} \
-		-e 's|/usr/local/bin|${PREFIX}/bin|' \
-		-e 's|-s -O3 -Wall -pedantic|${CFLAGS} -DHAVE_STRING_H|' \
-		-e 's|gcc|${CC}|' \
+	${REINPLACE_CMD} \
+		-e 's|PREFIX=.*|PREFIX=${PREFIX}|' \
+		-e 's|CFLAGS=.*|CFLAGS=${CFLAGS}|' \
+		-e 's|DESTDIR=.*|DESTDIR=${STAGEDIR}|' \
+		-e 's|MANDIR=.*|MANDIR=${MANPREFIX}/man|' \
 		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
