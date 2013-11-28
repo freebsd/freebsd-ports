@@ -1,0 +1,14 @@
+--- syslogstream/syslogstream.orig	2013-11-13 11:44:53.000000000 +0100
++++ syslogstream/syslogstream	2013-11-27 14:17:49.000000000 +0100
+@@ -88,6 +88,11 @@
+ 
+ #include <ostream>
+ #include <syslog.h>
++
++#ifdef __FreeBSD__
++#include <errno.h>
++#endif
++
+                         
+ namespace FBB
+ {

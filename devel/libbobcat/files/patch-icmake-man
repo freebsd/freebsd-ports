@@ -1,5 +1,5 @@
---- icmake/man.orig	2011-05-25 13:00:10.000000000 +0200
-+++ icmake/man	2011-11-14 20:36:27.000000000 +0100
+--- icmake/man.orig	2013-11-13 11:44:52.000000000 +0100
++++ icmake/man	2013-11-27 12:47:25.000000000 +0100
 @@ -9,7 +9,10 @@
  
      special(0, 0);
@@ -14,22 +14,23 @@
  
 @@ -35,8 +38,10 @@
      
-             run("yodl2man  --no-warnings -r 15000 -o ../../tmp/man/man3/" + 
-                                                     base + ".3bobcat " + yodl);
+             run("yodl2man  --no-warnings -r 3 -o ../../tmp/man/man3/" + 
+                                             base + ".3" LIBRARY " " + yodl);
 +#ifdef MANHTML
-             run("yodl2html --no-warnings -r 15000 -o ../../tmp/manhtml/" + 
-                                                     base + ".3.html " + yodl);
+             run("yodl2html --no-warnings -r 3 -o ../../tmp/manhtml/" + 
+                                             base + ".3.html " + yodl);
 +#endif
          }
      }
  
-@@ -44,8 +49,10 @@
+@@ -44,9 +49,11 @@
      {
-         run("yodl2man  --no-warnings  -r 15000 -o ../../tmp/man/man7/bobcat.7 "
-                                                                 "bobcat.yo");
+         run("yodl2man  --no-warnings  -r 3 -o ../../tmp/man/man7/" 
+                                                 LIBRARY ".7 " LIBRARY ".yo");
 +#ifdef MANHTML
-         run("yodl2html --no-warnings  -r 15000 "
-                         "-o ../../tmp/manhtml/bobcat.7.html bobcat.yo");
+         run("yodl2html --no-warnings  -r 3 "
+                         "-o ../../tmp/manhtml/" LIBRARY ".7.html " 
+                                                             LIBRARY ".yo");
 +#endif
      }
  

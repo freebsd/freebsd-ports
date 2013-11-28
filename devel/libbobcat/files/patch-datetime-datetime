@@ -1,0 +1,13 @@
+--- datetime/datetime.orig	2013-11-13 11:44:52.000000000 +0100
++++ datetime/datetime	2013-11-27 16:22:41.000000000 +0100
+@@ -1,6 +1,10 @@
+ #ifndef INCLUDED_BOBCAT_DATETIME_
+ #define INCLUDED_BOBCAT_DATETIME_
+ 
++#ifdef __FreeBSD__
++#include <errno.h>
++#endif
++
+ #include <ctime>
+ #include <iosfwd>
+ 

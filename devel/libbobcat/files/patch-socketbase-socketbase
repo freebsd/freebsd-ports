@@ -1,0 +1,13 @@
+--- socketbase/socketbase.orig	2013-11-13 11:44:53.000000000 +0100
++++ socketbase/socketbase	2013-11-27 14:27:08.000000000 +0100
+@@ -1,6 +1,10 @@
+ #ifndef INCLUDED_BOBCAT_SOCKETBASE_
+ #define INCLUDED_BOBCAT_SOCKETBASE_
+ 
++#ifdef __FreeBSD__
++#include <sys/types.h>
++#endif
++
+ #include <string>
+ #include <sys/socket.h>
+ 
