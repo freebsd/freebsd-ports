@@ -1,0 +1,12 @@
+--- ./block/block.ih.orig	2013-06-23 20:13:49.000000000 +0200
++++ ./block/block.ih	2013-11-27 18:54:50.000000000 +0100
+@@ -5,6 +5,8 @@
+ #include <iterator>
+ #include <limits>
+ 
+-using namespace std;
++#include <bobcat/a2x>
+ 
++using namespace std;
++using namespace FBB;
+ 
