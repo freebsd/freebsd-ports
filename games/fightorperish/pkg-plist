@@ -1,0 +1,26 @@
+bin/fightorperish
+%%DATADIR%%/data/images/arrowsa.png
+%%DATADIR%%/data/images/arrowsb.png
+%%DATADIR%%/data/images/arrowsc.png
+%%DATADIR%%/data/images/arrowsd.png
+%%DATADIR%%/data/images/badguys.png
+%%DATADIR%%/data/images/blockers.png
+%%DATADIR%%/data/images/collectibles.png
+%%DATADIR%%/data/images/generators.png
+%%DATADIR%%/data/images/numbers.png
+%%DATADIR%%/data/images/playera.png
+%%DATADIR%%/data/images/playerb.png
+%%DATADIR%%/data/images/playerc.png
+%%DATADIR%%/data/images/playerd.png
+%%DATADIR%%/data/images/playerselect.png
+%%DATADIR%%/data/images/stats.png
+%%DATADIR%%/data/images/title.png
+%%DATADIR%%/data/maps/1.txt
+%%DATADIR%%/data/maps/2.txt
+%%DATADIR%%/data/maps/3.txt
+share/pixmaps/fightorperish.png
+@dirrm %%DATADIR%%/data/sounds
+@dirrm %%DATADIR%%/data/maps
+@dirrm %%DATADIR%%/data/images
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%

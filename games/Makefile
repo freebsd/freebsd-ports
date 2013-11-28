@@ -250,6 +250,7 @@
     SUBDIR += fbg2
     SUBDIR += fgkicker
     SUBDIR += fgrun
+    SUBDIR += fightorperish
     SUBDIR += fillets-ng
     SUBDIR += filters
     SUBDIR += fishsupper
