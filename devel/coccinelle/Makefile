@@ -10,6 +10,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	avg@icyb.net.ua
 COMMENT=	Coccinelle is a program matching and transformation engine
 
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+
 USES=		shebangfix gmake perl5
 GNU_CONFIGURE=	yes
 USE_PERL5=	build
