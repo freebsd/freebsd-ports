@@ -24,6 +24,10 @@ USE_QT4=	corelib gui network xml webkit moc_build rcc_build uic_build
 
 MAKE_JOBS_UNSAFE=	yes
 
+do-configure:
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
+		${QMAKE} "PREFIX=${PREFIX}" BASIC256.pro
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/mutex/mymutex/' ${WRKSRC}/*.cpp
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/BASIC256.pro
