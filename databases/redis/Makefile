@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-DISTVERSION=	2.6.16
+DISTVERSION=	2.8.0
 CATEGORIES=	databases
 MASTER_SITES=	http://download.redis.io/releases/
 
@@ -16,12 +16,12 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 OPTIONS_DEFINE=	TESTS
 OPTIONS_RADIO=	EXTLUA
 OPTIONS_RADIO_EXTLUA=	LUA LUAJIT
-
 LUA_DESC=	Use lang/lua instead of builtin lua
 LUAJIT_DESC=	Use lang/luajit instead of builtin lua
 TESTS_DESC=	Install lang/tcl for redis unit tests
 
 NO_STAGE=	yes
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLUA}
@@ -45,7 +45,7 @@ USE_TCL_BUILD=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lm -lexecinfo
 
-CONFLICTS?=	redis-devel-2.6.*
+CONFLICTS?=	redis-devel-2.*
 
 USE_GMAKE=	yes
 MAKE_ENV=	"V=yo"
