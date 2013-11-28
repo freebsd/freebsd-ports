@@ -16,13 +16,12 @@ BUILD_DEPENDS=	espeak:${PORTSDIR}/audio/espeak \
 		sqlite3:${PORTSDIR}/databases/sqlite3 \
 		flex:${PORTSDIR}/textproc/flex
 
-WRKSRC=		${WRKDIR}
-
 USES=		bison dos2unix qmake
 USE_SDL=	sdl mixer
 USE_QT4=	corelib gui network xml webkit moc_build rcc_build uic_build
-QMAKE_PRO=	BASIC256.pro
+QMAKE_SOURCE_PATH=	BASIC256.pro
 
+NO_WRKSUBDIR=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
