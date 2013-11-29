@@ -29,7 +29,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 NO_STAGE=	yes
 do-build:
-	@PYTHON="${PYTHON_CMD}" @${GMAKE} -C ${WRKSRC} check
+	@PYTHON="${PYTHON_CMD}" ${GMAKE} -C ${WRKSRC} check
 
 .if !defined(NOPORTEXAMPLES)
 post-install:
