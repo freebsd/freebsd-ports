@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	megacli
-PORTVERSION=	8.05.06
+PORTVERSION=	8.07.07
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.lsi.com/downloads/Public/MegaRAID%20Common%20Files/ \
-		CRITICAL
+MASTER_SITES=	http://www.lsi.com/downloads/Public/MegaRAID%20Common%20Files/${DISTNAME}${EXTRACT_SUFX}?source=1&
 DISTNAME=	${PORTVERSION}_MegaCLI
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	samflanker@gmail.com
 COMMENT=	SAS MegaRAID FreeBSD MegaCLI
@@ -17,28 +17,18 @@ FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	sbin/MegaCli
 
-NO_STAGE=	yes
-pre-fetch:
-	@${FETCH_BINARY} -o /dev/null http://www.lsi.com/magic.axd?x=e&file=http%3A//www.lsi.com/downloads/Public/MegaRAID%2520Common%2520Files/${PORT_VERSION}_MegaCLI.zip
+MEGACLI_ARCH=	MegaCli${ARCH:S/i386//:S/amd64/64/}
 
-.include <bsd.port.pre.mk>
 post-extract:
-.if ${ARCH} == "i386"
-	@cd ${WRKSRC}/MegaCli_FreeBSD && ${UNZIP_CMD} ${EXTRACT_BEFORE_ARGS} MegaCli.zip
-.elif ${ARCH} == "amd64"
-	@cd ${WRKSRC}/MegaCli_FreeBSD && ${UNZIP_CMD} ${EXTRACT_BEFORE_ARGS} MegaCli64.zip
-.endif
+	@${MV} ${WRKSRC}/freebsd/MegaCLI.zip ${WRKSRC}/freebsd/MegaCli.zip
+	@${TAR} ${EXTRACT_BEFORE_ARGS} ${WRKSRC}/freebsd/${MEGACLI_ARCH}.zip -C${WRKSRC}/freebsd
 
 do-install:
-.if ${ARCH} == "i386"
-		${INSTALL_PROGRAM} ${WRKSRC}/MegaCli_FreeBSD/MegaCli ${PREFIX}/sbin/MegaCli
-.elif ${ARCH} == "amd64"
-		${INSTALL_PROGRAM} ${WRKSRC}/MegaCli_FreeBSD/MegaCli64 ${PREFIX}/sbin/MegaCli
-.endif
-.include <bsd.port.post.mk>
+	${INSTALL_SCRIPT} ${WRKSRC}/freebsd/${MEGACLI_ARCH} ${STAGEDIR}${PREFIX}/sbin/MegaCli
+
+.include <bsd.port.mk>
