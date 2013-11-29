@@ -1,4 +1,12 @@
 bin/viewnior
+man/man1/viewnior.1.gz
+share/applications/viewnior.desktop
+share/icons/hicolor/16x16/apps/viewnior.png
+share/icons/hicolor/22x22/apps/viewnior.png
+share/icons/hicolor/24x24/apps/viewnior.png
+share/icons/hicolor/32x32/apps/viewnior.png
+share/icons/hicolor/48x48/apps/viewnior.png
+share/icons/hicolor/scalable/apps/viewnior.svg
 %%NLS%%share/locale/bg/LC_MESSAGES/viewnior.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/viewnior.mo
 %%NLS%%share/locale/da/LC_MESSAGES/viewnior.mo
@@ -25,13 +33,6 @@ bin/viewnior
 %%NLS%%share/locale/tr/LC_MESSAGES/viewnior.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/viewnior.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/viewnior.mo
-share/applications/viewnior.desktop
-share/icons/hicolor/16x16/apps/viewnior.png
-share/icons/hicolor/22x22/apps/viewnior.png
-share/icons/hicolor/24x24/apps/viewnior.png
-share/icons/hicolor/32x32/apps/viewnior.png
-share/icons/hicolor/48x48/apps/viewnior.png
-share/icons/hicolor/scalable/apps/viewnior.svg
 %%DATADIR%%/pixmaps/object-flip-horizontal.png
 %%DATADIR%%/pixmaps/object-flip-vertical.png
 %%DATADIR%%/pixmaps/object-rotate-left.png
@@ -40,19 +41,5 @@ share/icons/hicolor/scalable/apps/viewnior.svg
 %%DATADIR%%/vnr-preferences-dialog.ui
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
 %%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/oc
