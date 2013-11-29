@@ -5,9 +5,9 @@ PORTNAME=	xanim
 PORTVERSION=	2.92.0
 PORTREVISION=	2
 CATEGORIES=	multimedia graphics
-MASTER_SITES=	ftp://ftp.informatik.uni-hamburg.de/pub/soft/graphics/xanim/:main \
+MASTER_SITES=	ftp://ftp.nstu.ru/pub/mirrors/xanim.va.pubnix.com/ \
 		${MASTER_SITE_LOCAL} \
-		ftp://ftp.informatik.uni-hamburg.de/pub/soft/graphics/xanim/dlls/
+		ftp://ftp.nstu.ru/pub/mirrors/xanim.va.pubnix.com/dlls/
 MASTER_SITE_SUBDIR=	dinoex
 DISTNAME=	xanim2920
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main ${EXTRA_FILES}
