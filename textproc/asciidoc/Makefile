@@ -48,6 +48,7 @@ PLIST_SUB+=	VIM_DATADIR=""
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|${SETENV} python|&2|' ${WRKSRC}/a2x.py
 .for conf_file in ${CONF_FILES}
 	@cd ${WRKSRC}/ && ${MV} ${conf_file} ${conf_file}.sample
 .endfor
