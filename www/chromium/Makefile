@@ -6,6 +6,7 @@
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
 DISTVERSION=	31.0.1650.57
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/:testdata \
 		http://download.goodking.org/downloads/:browser \
@@ -88,9 +89,8 @@ GYP_DEFINES+=	google_api_key=AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8 \
 		google_default_client_id=996322985003.apps.googleusercontent.com \
 		google_default_client_secret=IR1za9-1VK0zZ0f_O8MVFicn
 
-SUB_FILES=	chromium-browser.desktop
-SUB_LIST=	COMMENT="${COMMENT}" \
-		DATADIR=${DATADIR}
+SUB_FILES=	chromium-browser.desktop chrome
+SUB_LIST+=	COMMENT="${COMMENT}"
 
 OPTIONS_DEFINE=	CODECS GCONF PULSEAUDIO TEST DEBUG
 CODECS_DESC=	Compile and enable patented codecs like H.264
@@ -194,10 +194,13 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|" \
 		${WRKSRC}/base/base.gypi \
 		${WRKSRC}/build/common.gypi \
-		${WRKSRC}/third_party/libvpx/libvpx.gyp \
 		${WRKSRC}/crypto/crypto.gyp \
+		${WRKSRC}/third_party/libvpx/libvpx.gyp \
+		${WRKSRC}/third_party/WebKit/Source/testing/testing.gyp \
 		${WRKSRC}/v8/tools/gyp/v8.gyp \
 		${WRKSRC}/v8/build/toolchain.gypi
+	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|" \
+		${WRKSRC}/chrome/common/chrome_paths.cc
 	@${REINPLACE_CMD} -e "s|/usr/bin/gcc|${CC}|" \
 		${WRKSRC}/third_party/WebKit/Source/core/core.gypi
 	@${REINPLACE_CMD} -e "s|'../courgette/courgette.gyp:courgette_lib',||" \
@@ -246,6 +249,6 @@ do-install:
 		${COPYTREE_SHARE} "locales resources" ${STAGEDIR}${DATADIR}
 	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKDIR}/chromium-browser.desktop ${STAGEDIR}${DESKTOPDIR}
-	${LN} -sf ${DATADIR}/chrome ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/chrome ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.post.mk>
