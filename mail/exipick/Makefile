@@ -8,7 +8,7 @@ MASTER_SITES=	http://jetmore.org/john/code/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display messages from Exim queue based on a variety of criteria
 
 PLIST_FILES=	bin/${PORTNAME}

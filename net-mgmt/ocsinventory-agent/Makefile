@@ -8,7 +8,7 @@ MASTER_SITES=	http://launchpad.net/ocsinventory-unix-agent/stable-2.0/${PORTVERS
 PKGNAMESUFFIX=	-Unix-Agent
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Keep track of the computers configuration and software
 
 LICENSE=	GPLv2

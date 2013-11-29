@@ -6,7 +6,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	https://launchpadlibrarian.net/99500930/
 DISTNAME=	OCSNG_UNIX_SERVER-${PORTVERSION}
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Computer and Software Inventory Next Generation
 
 LICENSE=	GPLv2

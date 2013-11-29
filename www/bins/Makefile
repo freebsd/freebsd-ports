@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://download.gna.org/bins/
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to generate HTML photo albums with XML support
 
 RUN_DEPENDS=	\

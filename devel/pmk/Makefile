@@ -6,7 +6,7 @@ PORTVERSION=	0.10.4
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pre Make Kit, a sane replacement for autoconf
 
 PKGINSTALL=	${WRKDIR}/pkg-install

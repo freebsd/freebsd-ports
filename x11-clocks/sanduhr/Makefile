@@ -7,7 +7,7 @@ PORTREVISION=	8
 CATEGORIES=	x11-clocks gnome
 MASTER_SITES=	http://seehuhn.de/media/programs/
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An alarm clock for GNOME desktop designed as a sand-glass
 
 USES=		gmake pkgconfig
