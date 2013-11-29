@@ -152,7 +152,7 @@ sbin/yadifad
 @unexec rmdir >/dev/null 2>&1 /var/yadifa/masters || :
 @unexec rmdir >/dev/null 2>&1 /var/yadifa/keys || :
 @unexec rmdir >/dev/null 2>&1 /var/yadifa || :
-@dirrmtry %%PORTEXAMPLES%%%%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
 @dirrmtry include/dnszone
 @dirrmtry include/dnsdb
 @dirrmtry include/dnscore
