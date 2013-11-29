@@ -22,7 +22,7 @@ CONFIGURE_ARGS=	--disable-epoll --enable-bittorrent --enable-metalink \
 		--with-libxml2 --with-libz --with-openssl --without-gnutls \
 		--without-libcares --without-libexpat --without-libgcrypt \
 		--without-libgmp --without-libnettle
-CONFIGURE_ENV=	OPENSSL_CFLAGS=-I${OPENSSLINC} OPENSSL_LIBS="-L${OPENSSLLIB} -lssl" \
+CONFIGURE_ENV=	OPENSSL_CFLAGS=-I${OPENSSLINC} OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl" \
 		ZLIB_CFLAGS=-I${INCLUDEDIR} ZLIB_LIBS="-L${LIBDIR} -lz" \
 		ac_cv_path_RST2HTML=no
 GNU_CONFIGURE=	yes
