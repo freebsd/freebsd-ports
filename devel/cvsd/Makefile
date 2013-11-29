@@ -10,48 +10,40 @@ MASTER_SITES=	http://arthurdejong.org/cvsd/ \
 MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	CVS pserver daemon
 
+LICENSE=	GPLv2
+
 EXTRA_PATCHES=	${FILESDIR}/extra-cvsd-buildroot.in
 
+USE_RC_SUBR=	cvsd
 USES=		perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libwrap
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
-MAN5=		cvsd.conf.5
-MAN8=		cvsd.8 cvsd-buginfo.8 cvsd-buildroot.8 cvsd-passwd.8
-PORTDOCS=	FAQ NEWS README
-PLIST_FILES=	etc/cvsd/cvsd.conf.sample sbin/cvsd sbin/cvsd-buginfo \
-		sbin/cvsd-buildroot sbin/cvsd-passwd
-PLIST_DIRSTRY=	etc/cvsd
-USE_RC_SUBR=	cvsd
-
 OPTIONS_DEFINE=	DOCS
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+
+PORTDOCS=	FAQ NEWS README
+
+.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 1000000
-BUILD_DEPENDS=	cvs:${PORTSDIR}/devel/cvs
-RUN_DEPENDS=	cvs:${PORTSDIR}/devel/cvs
+BUILD_DEPENDS+=	cvs:${PORTSDIR}/devel/cvs
+RUN_DEPENDS+=	cvs:${PORTSDIR}/devel/cvs
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cvsd ${PREFIX}/sbin/cvsd
+	${INSTALL_PROGRAM} ${WRKSRC}/cvsd ${STAGEDIR}${PREFIX}/sbin/cvsd
 .for f in cvsd-buginfo cvsd-buildroot cvsd-passwd
-	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/sbin
 .endfor
-	@${MKDIR} ${PREFIX}/etc/cvsd
-	${INSTALL_DATA} ${WRKSRC}/cvsd.conf-dist ${PREFIX}/etc/cvsd/cvsd.conf.sample
-.for FILE in ${MAN5}
-	${INSTALL_MAN} ${WRKSRC}/${FILE} ${MAN5PREFIX}/man/man5
-.endfor
-.for FILE in ${MAN8}
-	${INSTALL_MAN} ${WRKSRC}/${FILE} ${MAN8PREFIX}/man/man8
-.endfor
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/cvsd
+	${INSTALL_DATA} ${WRKSRC}/cvsd.conf-dist ${STAGEDIR}${PREFIX}/etc/cvsd/cvsd.conf.sample
+	${INSTALL_MAN} ${WRKSRC}/*.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/*.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
