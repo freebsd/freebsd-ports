@@ -24,7 +24,7 @@ CMAKE_ARGS=	-DCUSTOM_MANDIR="${PREFIX}/man" \
 PORTDATA=	*
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	CLIENT SERVER CURL NLS SOUND DOCS EXAMPLES
+OPTIONS_DEFINE=	CLIENT SERVER CURL NLS SOUND DOCS EXAMPLES FREETYPE LEVELDB LUAJIT
 OPTIONS_DEFAULT=CLIENT SERVER CURL SOUND
 OPTIONS_SUB=	yes
 
@@ -32,6 +32,9 @@ CLIENT_DESC=	Build client
 SERVER_DESC=	Build server
 CURL_DESC=	Enable cURL support for fetching media
 SOUND_DESC=	Enable sound
+LEVELDB_DESC=	Enable LevelDB backend
+FREETYPE_DESC=	Support for TrueType fonts with unicode
+LUAJIT_DESC=	LuaJIT support
 
 CLIENT_CMAKE_ON=	-DBUILD_CLIENT=1
 CLIENT_CMAKE_OFF=	-DBUILD_CLIENT=0
@@ -49,6 +52,13 @@ NLS_USES=		gettext
 NLS_LDFLAGS=		-L${LOCALBASE}/lib
 SOUND_CMAKE_ON=		-DENABLE_SOUND=1
 SOUND_CMAKE_OFF=	-DENABLE_SOUND=0
+LEVELDB_CMAKE_ON=	-DENABLE_LEVELDB=1
+LEVELDB_CMAKE_OFF=	-DENABLE_LEVELDB=0
+LEVELDB_LIB_DEPENDS=	libleveldb.so:${PORTSDIR}/databases/leveldb
+FREETYPE_CMAKE_ON=	-DENABLE_FREETYPE=1
+FREETYPE_CMAKE_OFF=	-DENABLE_FREETYPE=0
+FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
 
 .include <bsd.port.options.mk>
 
@@ -66,7 +76,11 @@ GROUPS=		${PORTNAME}
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/cmake/Modules/*.cmake
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|; /find_/ s|LUA_|NO&|g' \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
 		${WRKSRC}/src/CMakeLists.txt
+.if ! ${PORT_OPTIONS:MLUAJIT}
+	@${REINPLACE_CMD} -e '/find_/ s|LUA_|NO&|g' \
+		${WRKSRC}/src/CMakeLists.txt
+.endif
 
 .include <bsd.port.mk>
