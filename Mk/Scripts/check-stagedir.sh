@@ -107,9 +107,9 @@ cat ${WRKDIR}/.plist-dirs-unsorted ${WRKDIR}/.mtree | sort -u >${WRKDIR}/.traced
 find ${STAGEDIR} -type d | sed -e "s,^${STAGEDIR},,;/^$/d" | sort >${WRKDIR}/.staged-dirs
 comm -13 ${WRKDIR}/.traced-dirs ${WRKDIR}/.staged-dirs \
 	| sort -r | sed \
+	-e 's,^,@dirrmtry ,' \
 	-e "s,\(.*\)${DOCSDIR},%%PORTDOCS%%\1%%DOCSDIR%%,g" \
 	-e "s,\(.*\)${EXAMPLESDIR},%%PORTEXAMPLES%%\1%%EXAMPLESDIR%%,g" \
 	-e "s,${DATADIR},%%DATADIR%%,g" \
 	-e "s,${PREFIX}/,,g" \
-	-e 's,^,@dirrmtry ,' \
 	-e 's,@dirrmtry \(/.*\),@unexec rmdir >/dev/null 2>\&1 \1 || :,' | grep -v "^@dirrmtry share/licenses" || [ $? = 1 ]
