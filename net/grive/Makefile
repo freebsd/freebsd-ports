@@ -25,7 +25,6 @@ GH_TAGNAME=	${GH_COMMIT}
 
 USES=		cmake
 CXXFLAGS+=	-I${LOCALBASE}/include
-INSTALL_TARGET=	install/strip
 
 PLIST_FILES=	bin/grive man/man1/grive.1.gz
 
