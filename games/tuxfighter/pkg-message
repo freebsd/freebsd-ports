@@ -1,4 +1,5 @@
 ========================================================================
+
 Tuxfighter has been installed.
 
 Python errors will result in the first run of this game.
@@ -8,4 +9,5 @@ This issue is currently being resolved with upstream developers.
 
 All options are in the config file if you've made changes in the GUI.
     ~/.TuxFighter/TuxFighter.ini
+
 ========================================================================
