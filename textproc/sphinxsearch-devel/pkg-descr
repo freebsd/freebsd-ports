@@ -1,14 +1,27 @@
-Sphinx is a full-text search engine, distributed under GPL version
-2. Commercial license is also available for embedded use.
+Sphinx is an open source full text search server, designed from the
+ground up with performance, relevance (aka search quality), and
+integration simplicity in mind. It's written in C++ and works on Linux
+(RedHat, Ubuntu, etc), Windows, MacOS, Solaris, FreeBSD, and a few
+other systems.
 
-Generally, it's a standalone search engine, meant to provide fast,
-size-efficient and relevant fulltext search functions to other
-applications. Sphinx was specially designed to integrate well with SQL
-databases and scripting languages. Currently built-in data sources
-support fetching data either via direct connection to MySQL, or from
-an XML pipe.
+Sphinx lets you either batch index and search data stored in an SQL
+database, NoSQL storage, or just files quickly easily and or index and
+search data on the fly, working with Sphinx pretty much as with a
+database server.
 
-As for the name, Sphinx is an acronym which is officially decoded as
-SQL Phrase Index.
+A variety of text processing features enable fine-tuning Sphinx for
+your particular application requirements, and a number of relevance
+functions ensures you can tweak search quality as well.
 
-WWW: http://www.sphinxsearch.com/
+Searching via SphinxAPI is as simple as 3 lines of code, and querying
+via SphinxQL is even simpler, with search queries expressed in good
+old SQL.
+
+Sphinx clusters scale up to billions of documents and tens of millions
+search queries per day, powering top websites such as Craigslist,
+DailyMotion, NetLog, etc.
+
+And last but not least, it's open-sourced under GPLv2, and the
+community edition is free to use.
+
+WWW: http://sphinxsearch.com/

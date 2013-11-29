@@ -61,9 +61,9 @@ start_precmd=%%PORTNAME%%_prestart
 	    ${%%PORTNAME%%_logdir}
     fi
     if [ ! -d ${%%PORTNAME%%_dir} ]; then
-        mkdir -m 755 -p ${%%PORTNAME%%_dir} ${%%PORTNAME%%_dir}/data
-        chown -R ${%%PORTNAME%%_user}:${%%PORTNAME%%_group} \
-            ${%%PORTNAME%%_dir}
+	mkdir -m 755 -p ${%%PORTNAME%%_dir} ${%%PORTNAME%%_dir}/data
+	chown -R ${%%PORTNAME%%_user}:${%%PORTNAME%%_group} \
+	    ${%%PORTNAME%%_dir}
     fi
 }
 
