@@ -1,9 +1,9 @@
 bin/vdr-fbfe
 bin/vdr-sxfe
-lib/xine/plugins/2.2/xineplug_inp_xvdr.so
-lib/xine/plugins/2.2/post/xineplug_post_autocrop.so
-lib/xine/plugins/2.2/post/xineplug_post_swscale.so
-lib/xine/plugins/2.2/post/xineplug_post_audiochannel.so
+%%XINE_PLUGINSDIR%%/xineplug_inp_xvdr.so
+%%XINE_PLUGINSDIR%%/post/xineplug_post_autocrop.so
+%%XINE_PLUGINSDIR%%/post/xineplug_post_swscale.so
+%%XINE_PLUGINSDIR%%/post/xineplug_post_audiochannel.so
 lib/vdr/libvdr-xineliboutput.so.%%APIVERSION%%
 lib/vdr/libxineliboutput-sxfe.so.1.0.90-cvs
 @unexec if cmp -s %D/etc/vdr/plugins/xineliboutput/allowed_hosts.conf.sample %D/etc/vdr/plugins/xineliboutput/allowed_hosts.conf; then rm -f %D/etc/vdr/plugins/xineliboutput/allowed_hosts.conf; fi
