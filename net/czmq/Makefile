@@ -2,21 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	czmq
-PORTVERSION=	1.4.1
-CATEGORIES=	devel net
+PORTVERSION=	2.0.3
+CATEGORIES=	net
 MASTER_SITES=	http://download.zeromq.org/
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	High-level C Binding for zmq
+COMMENT=	High-level C Binding for ZeroMQ
 
 LICENSE=	LGPL3
 
-LIB_DEPENDS=	libzmq.so:${PORTSDIR}/devel/zmq
+LIB_DEPENDS=	libzmq.so:${PORTSDIR}/net/libzmq4
 
-USES=	pathfix gmake
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ac_cv_prog_czmq_have_asciidoc=no
-CONFIGURE_ARGS=	--with-libzmq=${LOCALBASE}
+USES=		pathfix
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-libzmq=${LOCALBASE}
+
+regression-test: build
+	@cd ${WRKSRC} && ${MAKE} check
 
 .include <bsd.port.mk>

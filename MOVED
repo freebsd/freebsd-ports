@@ -5269,3 +5269,4 @@ deskutils/q4wine|emulators/q4wine|2013-11-26|Move to better category
 devel/p5-MooseX-ChainedAccessors||2013-11-27|Has expired: Marked as depreciated upstream
 devel/py-distribute|devel/py-setuptools|2013-11-27|Replaced with setuptools
 devel/zmq-devel|net/libzmq3|2013-11-28|Rename according to upstream and move to more suitable category
+devel/czmq|net/czmq|2013-11-29|Move to a more suitable category and with other libzmq ports
