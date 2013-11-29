@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	All your system-independent infoz in one handy class
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-drydock>=0:${PORTSDIR}/devel/rubygem-drydock \
 		rubygem-storable>=0:${PORTSDIR}/devel/rubygem-storable
 
