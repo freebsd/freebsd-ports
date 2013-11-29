@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.psybnc.at/download/beta/ CENKES
 DISTNAME=	psyBNC-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Extremely powerful IRC bouncer
+COMMENT=	Powerful IRC bouncer
 
 WRKSRC=		${WRKDIR}/psybnc
 PSYBASE?=	${PREFIX}/psybnc
@@ -20,7 +20,6 @@ PLIST_SUB=	PSYBASE=${PSYBASE:S,^${PREFIX}/,,}
 OPTIONS_DEFINE=	MENUCONFIG
 MENUCONFIG_DESC=Configure using menu
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMENUCONFIG}
@@ -32,29 +31,28 @@ post-patch:
 
 do-configure:
 .if ${PORT_OPTIONS:MMENUCONFIG}
-	@cd ${WRKSRC} && make menuconfig
+	cd ${WRKSRC} && make menuconfig
 .else
 # Fool makefile.out into believing certs are unnecessary
-	@${TOUCH} ${WRKSRC}/key/psybnc.cert.pem
+	${TOUCH} ${WRKSRC}/key/psybnc.cert.pem
 .endif
 
 do-install:
-	@${INSTALL} -d ${PSYBASE}/lang/ ${PSYBASE}/key/ ${PSYBASE}/help/
-	@${INSTALL_DATA} ${WRKSRC}/lang/INFO ${PSYBASE}/lang/
-	@${INSTALL_DATA} ${WRKSRC}/lang/*.lng ${PSYBASE}/lang/
-	@${INSTALL_DATA} ${WRKSRC}/src/ssl.cnf ${PSYBASE}/key/
-	@${INSTALL_DATA} ${WRKSRC}/help/*.TXT ${PSYBASE}/help/
-	@${INSTALL_DATA} ${WRKSRC}/help/*.DEU ${PSYBASE}/help/
-	@${INSTALL_DATA} ${WRKSRC}/help/*.ITA ${PSYBASE}/help/
-	${INSTALL_PROGRAM} ${WRKSRC}/psybnc ${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/psybnc.conf ${PREFIX}/etc/psybnc.conf.sample
+	${INSTALL} -d ${STAGEDIR}${PSYBASE}/lang/ ${STAGEDIR}${PSYBASE}/key/ ${STAGEDIR}${PSYBASE}/help/
+	${INSTALL_DATA} ${WRKSRC}/lang/INFO ${STAGEDIR}${PSYBASE}/lang/
+	${INSTALL_DATA} ${WRKSRC}/lang/*.lng ${STAGEDIR}${PSYBASE}/lang/
+	${INSTALL_DATA} ${WRKSRC}/src/ssl.cnf ${STAGEDIR}${PSYBASE}/key/
+	${INSTALL_DATA} ${WRKSRC}/help/*.TXT ${STAGEDIR}${PSYBASE}/help/
+	${INSTALL_DATA} ${WRKSRC}/help/*.DEU ${STAGEDIR}${PSYBASE}/help/
+	${INSTALL_DATA} ${WRKSRC}/help/*.ITA ${STAGEDIR}${PSYBASE}/help/
+	${INSTALL_PROGRAM} ${WRKSRC}/psybnc ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/psybnc.conf ${STAGEDIR}${PREFIX}/etc/psybnc.conf.sample
 
 post-install:
-	@if [ -f ${WRKSRC}/key/psybnc.req.pem ]; then \
-	    ${INSTALL_DATA} ${WRKSRC}/key/psybnc.cert.pem ${PSYBASE}/key/; \
-	    ${INSTALL_DATA} ${WRKSRC}/key/psybnc.key.pem ${PSYBASE}/key/; \
-	    ${INSTALL_DATA} ${WRKSRC}/key/psybnc.req.pem ${PSYBASE}/key/; \
+	if [ -f ${WRKSRC}/key/psybnc.req.pem ]; then \
+	    ${INSTALL_DATA} ${WRKSRC}/key/psybnc.cert.pem ${STAGEDIR}${PSYBASE}/key/; \
+	    ${INSTALL_DATA} ${WRKSRC}/key/psybnc.key.pem ${STAGEDIR}${PSYBASE}/key/; \
+	    ${INSTALL_DATA} ${WRKSRC}/key/psybnc.req.pem ${STAGEDIR}${PSYBASE}/key/; \
 	fi
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
