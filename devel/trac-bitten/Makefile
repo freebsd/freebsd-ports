@@ -30,7 +30,7 @@ OPTIONS_DEFAULT=	BITTEN_MASTER
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-distribute
+BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 .if ${PORT_OPTIONS:MBITTEN_MASTER}
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 .endif
