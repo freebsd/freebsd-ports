@@ -4527,6 +4527,7 @@
     SUBDIR += yajl-tcl
     SUBDIR += yaml-cpp
     SUBDIR += yasm
+    SUBDIR += yasm-devel
     SUBDIR += z80-asm
     SUBDIR += z80asm
     SUBDIR += z80ex
