@@ -1,0 +1,11 @@
+etc/cvsd/cvsd.conf.sample
+man/man5/cvsd.conf.5.gz
+man/man8/cvsd-buginfo.8.gz
+man/man8/cvsd-buildroot.8.gz
+man/man8/cvsd-passwd.8.gz
+man/man8/cvsd.8.gz
+sbin/cvsd
+sbin/cvsd-buginfo
+sbin/cvsd-buildroot
+sbin/cvsd-passwd
+@dirrmtry etc/cvsd
