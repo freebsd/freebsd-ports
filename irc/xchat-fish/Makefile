@@ -17,10 +17,9 @@ COMMENT=	An encryption plugin for XChat
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmiracl.a:${PORTSDIR}/math/miracl
 RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat
 
-NO_STAGE=	yes
-
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
+USE_DOS2UNIX=	yes
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 CCFLAGS+=	-Wall -O2 -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -30,27 +29,19 @@ PLIST_FILES=	lib/xchat/plugins/xfish.so
 PORTDOCS=	FiSH-xchat.txt \
 		FiSH-xchat_History.txt
 
+.include <bsd.port.options.mk>
+
 post-patch:
-	@${CP} -pf ${FILESDIR}/Makefile ${WRKSRC}/
-	@${RM} -f ${WRKSRC}/mir*
-# \r\n -> \n
-	@${FIND} ${WRKSRC} -type f -exec \
-		${REINPLACE_CMD} -E \
-		-e 's|||' \
-		{} \;
+	${RM} -f ${WRKSRC}/mir*
+	${CP} -pf ${FILESDIR}/Makefile ${WRKSRC}/
 
 do-install:
-# docs
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} \
-		${DOCSDIR}/
-.endfor
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xchat/plugins
+	${INSTALL_PROGRAM} ${WRKSRC}/xfish.so \
+		${STAGEDIR}${PREFIX}/lib/xchat/plugins/
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 .endif
-# plugin
-	@${MKDIR} ${PREFIX}/lib/xchat/plugins
-	@${INSTALL_PROGRAM} ${WRKSRC}/xfish.so \
-		${PREFIX}/lib/xchat/plugins/
 
 .include <bsd.port.mk>
