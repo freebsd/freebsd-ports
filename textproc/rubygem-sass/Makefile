@@ -2,15 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	sass
-PORTVERSION=	3.2.9
+PORTVERSION=	3.2.12
 CATEGORIES=	textproc ruby
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Sass is an extension of CSS3
 
-USE_RUBY=		yes
-USE_RUBYGEMS=		yes
+LICENSE=	MIT
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/sass bin/sass-convert bin/scss
