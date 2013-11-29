@@ -9,12 +9,14 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides an open-source CSS authoring framework
 
-RUN_DEPENDS=	rubygem-sass>=3.1:${PORTSDIR}/textproc/rubygem-sass \
-		rubygem-fssm>=0.2.7:${PORTSDIR}/sysutils/rubygem-fssm \
-		rubygem-chunky_png>=1.2:${PORTSDIR}/graphics/rubygem-chunky_png
+LICENSE=	MIT
 
-USE_RUBY=		yes
-USE_RUBYGEMS=		yes
+RUN_DEPENDS=	rubygem-chunky_png>=1.2:${PORTSDIR}/graphics/rubygem-chunky_png \
+		rubygem-fssm>=0.2.7:${PORTSDIR}/sysutils/rubygem-fssm \
+		rubygem-sass>=3.1:${PORTSDIR}/textproc/rubygem-sass
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/compass
