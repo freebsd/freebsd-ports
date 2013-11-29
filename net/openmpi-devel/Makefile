@@ -1,13 +1,11 @@
+# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
 # $FreeBSD$
 
-# TODO:
-#  - etc/*.sample support
-
 PORTNAME=	openmpi
-DISTVERSION=	1.6.5
-PORTREVISION=	2
+DISTVERSION=	1.7.3
 CATEGORIES=	net parallel
-MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.6/downloads/
+MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.7/downloads/
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	High Performance Message Passing Library
@@ -16,7 +14,7 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libhwloc.so:${PORTSDIR}/devel/hwloc \
 		libltdl.so:${PORTSDIR}/devel/libltdl
 
-CONFLICTS=	openmpi-devel-1.7.*
+CONFLICTS=	openmpi-1.6.*
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
@@ -24,7 +22,7 @@ USES=		gmake pkgconfig
 USE_FORTRAN=	yes
 
 MPIBASE?=	mpi
-MPIDIR?=	${MPIBASE}/${UNIQUENAME}
+MPIDIR?=	${MPIBASE}/${UNIQUENAME}${PKGNAMESUFFIX}
 
 PLIST_SUB+=	MPIBASE=${MPIBASE}
 PLIST_SUB+=	MPIDIR=${MPIDIR}
@@ -65,8 +63,6 @@ SLURM_CONFIGURE_WITH=	slurm
 SLURM_LIB_DEPENDS=	libslurm.so:${PORTSDIR}/sysutils/slurm-hpc
 SLURM_PLIST_FILES=	${MPIDIR}/lib/openmpi/mca_ess_slurm.la \
 			${MPIDIR}/lib/openmpi/mca_ess_slurm.so \
-			${MPIDIR}/lib/openmpi/mca_ess_slurmd.la \
-			${MPIDIR}/lib/openmpi/mca_ess_slurmd.so \
 			${MPIDIR}/lib/openmpi/mca_plm_slurm.la \
 			${MPIDIR}/lib/openmpi/mca_plm_slurm.so \
 			${MPIDIR}/lib/openmpi/mca_ras_slurm.la \
@@ -77,10 +73,4 @@ SLURM_PLIST_FILES=	${MPIDIR}/lib/openmpi/mca_ess_slurm.la \
 VT_CONFIGURE_OFF=	--enable-contrib-no-build=vt --disable-vt
 VT_USE=			JAVA=yes
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

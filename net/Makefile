@@ -470,6 +470,7 @@
     SUBDIR += openldap24-server
     SUBDIR += openmcu
     SUBDIR += openmpi
+    SUBDIR += openmpi-devel
     SUBDIR += openmq
     SUBDIR += openmq-client
     SUBDIR += openntpd
