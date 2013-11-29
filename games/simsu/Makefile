@@ -15,7 +15,8 @@ LICENSE=	GPLv3
 
 USES=		qmake
 USE_BZIP2=	yes
-USE_QT4=	moc_build rcc_build uic_build iconengines_run imageformats_run
+USE_QT4=	moc_build rcc_build uic_build iconengines_run imageformats_run \
+		gui
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	CREDITS ChangeLog
