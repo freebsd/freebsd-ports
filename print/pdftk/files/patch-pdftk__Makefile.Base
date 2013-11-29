@@ -1,8 +1,8 @@
---- ./pdftk/Makefile.Base.orig	2010-11-17 14:25:44.000000000 -0500
-+++ ./pdftk/Makefile.Base	2010-11-17 14:27:49.000000000 -0500
-@@ -29,21 +29,21 @@
+--- pdftk/Makefile.Base.orig	2013-10-13 16:59:09.000000000 +0300
++++ pdftk/Makefile.Base	2013-10-13 17:14:39.000000000 +0300
+@@ -28,24 +28,24 @@
  #
- CPPFLAGS+= -DPDFTK_VER=\"1.44\"
+ CPPFLAGS+= -DPDFTK_VER=\"2.02\"
  
 -all : javalib pdftk
 +all : pdftk
@@ -18,12 +18,16 @@
 +report.o : javalib report.cc report.h pdftk.h
  	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -I$(JAVALIBPATH) report.cc -c
  
--pdftk.o : pdftk.cc pdftk.h attachments.h report.h $(JAVALIB) $(GCJ_LOCAL_LIB_FULL)
-+pdftk.o : javalib pdftk.cc pdftk.h attachments.h report.h $(GCJ_LOCAL_LIB_FULL)
+-passwords.o : passwords.cc passwords.h pdftk.h $(JAVALIB)
++passwords.o : javalib passwords.cc passwords.h pdftk.h
+ 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -I$(JAVALIBPATH) passwords.cc -c
+ 
+-pdftk.o : pdftk.cc pdftk.h attachments.h report.h passwords.h $(JAVALIB)
++pdftk.o : javalib pdftk.cc pdftk.h attachments.h report.h passwords.h
  	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -I$(JAVALIBPATH) pdftk.cc -c
  
--pdftk : pdftk.o attachments.o report.o $(JAVALIB) $(GCJ_LOCAL_LIB_FULL)
-+pdftk : javalib pdftk.o attachments.o report.o $(GCJ_LOCAL_LIB_FULL)
- 	$(CXX) $(CXXFLAGS) attachments.o report.o pdftk.o $(JAVALIB) $(GCJ_LOCAL_LIB_FULL) $(LDLIBS) -o pdftk
+-pdftk : pdftk.o attachments.o report.o passwords.o $(JAVALIB) $(LIBGCJ_SUPPLEMENT_FULL_O)
++pdftk : javalib pdftk.o attachments.o report.o passwords.o $(LIBGCJ_SUPPLEMENT_FULL_O)
+ 	$(CXX) $(CXXFLAGS) attachments.o report.o passwords.o pdftk.o $(JAVALIB) $(LIBGCJ_SUPPLEMENT_FULL_O) $(LDLIBS) -o pdftk
  
  install:
