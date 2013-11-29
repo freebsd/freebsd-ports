@@ -161,8 +161,8 @@ install-docs:
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}/${DOCSDIR})
 
 install-man:
-	(cd ${WRKSRC} && ${INSTALL_MAN} ${MAN1SRC} ${STAGEDIR}${MANPREFIX}/man/man1)
-	(cd ${WRKSRC} && ${INSTALL_MAN} ${MAN8SRC} ${STAGEDIR}${MANPREFIX}/man/man8)
+	(cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MAN1SRC} ${STAGEDIR}${MANPREFIX}/man/man1)
+	(cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MAN8SRC} ${STAGEDIR}${MANPREFIX}/man/man8)
 
 install-examples:
 .if ${PORT_OPTIONS:MEXAMPLES}
