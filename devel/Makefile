@@ -3766,6 +3766,7 @@
     SUBDIR += py-simpleparse
     SUBDIR += py-simpletal
     SUBDIR += py-simpy
+    SUBDIR += py-singledispatch
     SUBDIR += py-sip
     SUBDIR += py-six
     SUBDIR += py-smmap
