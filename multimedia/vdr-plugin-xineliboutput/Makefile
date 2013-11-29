@@ -3,7 +3,7 @@
 
 PORTNAME=	vdr-plugin-xineliboutput
 PORTVERSION=	1.0.90s20120511
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	multimedia
 MASTER_SITES=	SF:release \
 		LOCAL:snapshot
@@ -27,6 +27,7 @@ USE_GL=		gl glu glut
 PORTDOCS=	COPYING README HISTORY
 PORTEXAMPLES=	xine
 WRKSRC=		${WRKDIR}/vdr-${PLUGIN}
+XINE_PLUGINSDIR=	lib/xine/plugins/2.3
 
 OPTIONS_DEFINE=	LIBBLURAY LIBEXTRACTOR
 
@@ -36,6 +37,8 @@ NO_STAGE=	yes
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 .include <bsd.port.pre.mk>
+
+PLIST_SUB+=	XINE_PLUGINSDIR=${XINE_PLUGINSDIR}
 
 CONFIGURE_ARGS+=	--cc="${CC}" --cxx="${CXX}" --add-cflags=-I${VDRDIR}
 
