@@ -49,17 +49,20 @@ SVGALIB_CONFIGURE_WITH=	svgalib
 SVGALIB_CONFIGURE_ON=	--without-gtk
 ROMS_RUN_DEPENDS=	fuse-roms>0:${PORTSDIR}/emulators/fuse-roms
 
+PORTDOCS=	AUTHORS ChangeLog README THANKS README.copyright
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MICONS}
 INSTALLS_ICONS=	yes
 .endif
 
+post-extract:
+	${CP} ${WRKSRC}/roms/README.copyright ${WRKSRC}
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS ChangeLog README THANKS \
-		roms/README.copyright ${STAGEDIR}${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>
