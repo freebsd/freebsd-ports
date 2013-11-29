@@ -4,9 +4,19 @@ sbin/mount.crypto_LUKS
 sbin/umount.crypt
 sbin/umount.crypt_LUKS
 sbin/umount.crypto_LUKS
+sbin/pmvarrun
 etc/security/pam_mount.conf.xml.sample
 lib/pam_mount.so
-sbin/pmvarrun
+man/man5/pam_mount.conf.5.gz
+man/man8/mount.crypt.8.gz
+man/man8/mount.crypt_LUKS.8.gz
+man/man8/mount.crypto_LUKS.8.gz
+man/man8/pam_mount.8.gz
+man/man8/pmt-ehd.8.gz
+man/man8/pmvarrun.8.gz
+man/man8/umount.crypt.8.gz
+man/man8/umount.crypt_LUKS.8.gz
+man/man8/umount.crypto_LUKS.8.gz
 @dirrm share/xml/pam_mount/dtd
 @dirrm share/xml/pam_mount
 @dirrm etc/security
