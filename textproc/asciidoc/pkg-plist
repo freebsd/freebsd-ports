@@ -77,6 +77,9 @@ bin/asciidoc.py
 %%ETCDIR%%/javascripts/asciidoc.js
 %%ETCDIR%%/javascripts/slidy.js
 %%ETCDIR%%/javascripts/toc.js
+@unexec if cmp -s %D/%%ETCDIR%%/lang-cs.conf.sample %D/%%ETCDIR%%/lang-cs.conf; then rm -f %D/%%ETCDIR%%/lang-cs.conf; fi
+%%ETCDIR%%/lang-cs.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/lang-cs.conf ]; then cp -p %D/%F %B/lang-cs.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/lang-de.conf.sample %D/%%ETCDIR%%/lang-de.conf; then rm -f %D/%%ETCDIR%%/lang-de.conf; fi
 %%ETCDIR%%/lang-de.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/lang-de.conf ]; then cp -p %D/%F %B/lang-de.conf; fi
@@ -104,6 +107,9 @@ bin/asciidoc.py
 @unexec if cmp -s %D/%%ETCDIR%%/lang-pt-BR.conf.sample %D/%%ETCDIR%%/lang-pt-BR.conf; then rm -f %D/%%ETCDIR%%/lang-pt-BR.conf; fi
 %%ETCDIR%%/lang-pt-BR.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/lang-pt-BR.conf ]; then cp -p %D/%F %B/lang-pt-BR.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/lang-ro.conf.sample %D/%%ETCDIR%%/lang-ro.conf; then rm -f %D/%%ETCDIR%%/lang-ro.conf; fi
+%%ETCDIR%%/lang-ro.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/lang-ro.conf ]; then cp -p %D/%F %B/lang-ro.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/lang-ru.conf.sample %D/%%ETCDIR%%/lang-ru.conf; then rm -f %D/%%ETCDIR%%/lang-ru.conf; fi
 %%ETCDIR%%/lang-ru.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/lang-ru.conf ]; then cp -p %D/%F %B/lang-ru.conf; fi
@@ -127,9 +133,6 @@ bin/asciidoc.py
 @exec if [ ! -f %D/%%ETCDIR%%/text.conf ]; then cp -p %D/%F %B/text.conf; fi
 %%ETCDIR%%/themes/flask/flask.css
 %%ETCDIR%%/themes/volnitsky/volnitsky.css
-@unexec if cmp -s %D/%%ETCDIR%%/wordpress.conf.sample %D/%%ETCDIR%%/wordpress.conf; then rm -f %D/%%ETCDIR%%/wordpress.conf; fi
-%%ETCDIR%%/wordpress.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/wordpress.conf ]; then cp -p %D/%F %B/wordpress.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/xhtml11.conf.sample %D/%%ETCDIR%%/xhtml11.conf; then rm -f %D/%%ETCDIR%%/xhtml11.conf; fi
 %%ETCDIR%%/xhtml11.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/xhtml11.conf ]; then cp -p %D/%F %B/xhtml11.conf; fi
@@ -138,10 +141,8 @@ bin/asciidoc.py
 @exec if [ ! -f %D/%%ETCDIR%%/xhtml11-quirks.conf ]; then cp -p %D/%F %B/xhtml11-quirks.conf; fi
 man/man1/a2x.1.gz
 man/man1/asciidoc.1.gz
-%%VIM%%%%VIM_DATADIR%%share/vim/ftdetect/asciidoc_filetype.vim
-%%VIM%%%%VIM_DATADIR%%share/vim/syntax/asciidoc.vim
+%%VIM%%share/vim/%%VIM_DATADIR%%/syntax/asciidoc.vim
 %%VIM%%@dirrmtry share/vim/%%VIM_DATADIR%%/syntax
-%%VIM%%@dirrmtry share/vim/%%VIM_DATADIR%%/ftdetect
 %%VIM%%@dirrmtry share/vim/%%VIM_DATADIR%%
 %%VIM%%@dirrmtry share/vim
 @dirrm %%ETCDIR%%/themes/volnitsky
