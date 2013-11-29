@@ -56,7 +56,7 @@ LIRC_CONFIGURE_ENV=		LIRC_CFLAGS="-I${LOCALBASE}/include" \
 LIRC_CONFIGURE_ENABLE=	lirc
 
 CACA_LIB_DEPENDS=	libcaca.so:${PORTSDIR}/graphics/libcaca
-CACA_RUN_DEPENDS=	${LOCALBASE}/${XINE_PLUGINSDIR}/xineplug_vo_out_caca.so
+CACA_RUN_DEPENDS=	${LOCALBASE}/${XINE_PLUGINSDIR}/xineplug_vo_out_caca.so:${PORTSDIR}/multimedia/libxine
 CACA_CONFIGURE_OFF=	--without-caca
 
 AALIB_LIB_DEPENDS=	libaa.so:${PORTSDIR}/graphics/aalib
