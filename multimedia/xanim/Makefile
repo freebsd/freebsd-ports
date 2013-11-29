@@ -16,18 +16,16 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Play most popular animation formats and show pictures
 
 NO_CDROM=	redistributed without fee
-NO_STAGE=	yes
+#NO_STAGE=	yes
 
 # clang's cpp destroys whitespace, particularly hard tabs in makefiles,
 # which is fatal for imake.
 USES=		imake
 USE_GCC=	any
 USE_XORG=	xext xt sm ice xext x11
-MAN1=		xanim.1
 MAKE_ARGS+=	-j 2 # safe and helps even the single-CPU machines
 DLLDIR=		${PREFIX}/lib/X11/xanim
-PLIST_FILES+=	bin/xanim
-NO_CDROM=	without fee
+PLIST_FILES+=	bin/xanim man/man1/xanim.1.gz
 
 post-extract:
 	${CP} ${WRKSRC}/docs/xanim.man ${WRKSRC}
@@ -56,9 +54,9 @@ PLIST_FILES+=	lib/X11/xanim/cvid.readme lib/X11/xanim/cyuv.readme \
 PLIST_DIRS+=	lib/X11/xanim
 
 post-install:
-	@${MKDIR} ${DLLDIR}
-	${INSTALL_DATA} ${WRKDIR}/*.readme ${DLLDIR}
-	${INSTALL_DATA} ${WRKDIR}/*.xa ${DLLDIR}
+	${MKDIR} ${STAGEDIR}${DLLDIR}
+	${INSTALL_DATA} ${WRKDIR}/*.readme ${STAGEDIR}${DLLDIR}/
+	${INSTALL_DATA} ${WRKDIR}/*.xa ${STAGEDIR}${DLLDIR}/
 .endif
 
 .include <bsd.port.post.mk>
