@@ -14,9 +14,9 @@ MAINTAINER?=	ehaupt@FreeBSD.org
 COMMENT?=	List, test, and extract compressed files in a ZIP archive
 
 LICENSE=	Info-ZIP
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_NAME=	Info-ZIP license
 LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CONFLICTS?=	unzip-iconv-[0-9]* zh-unzip-[0-9]* ko-unzip-[0-9]* ru-unzip-[0-9]*
 
@@ -58,6 +58,8 @@ MAKE_ENV=	LOCAL_UNZIP="${LOCAL_UNZIP}" \
 .error You have `USE_UNZIP' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
@@ -88,8 +90,8 @@ pre-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unzip ${STAGEDIR}${PREFIX}/bin/${UNZIP_NAME}
-.for file in funzip unzipsfx
-	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
+.for f in funzip unzipsfx
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	${LN} -sf ${UNZIP_NAME} ${STAGEDIR}${PREFIX}/bin/zipinfo
 	${INSTALL_SCRIPT} ${WRKSRC}/unix/zipgrep ${STAGEDIR}${PREFIX}/bin
@@ -97,7 +99,7 @@ do-install:
 .for f in ${MAN1:Nunzip.1:Ninfo-unzip.1}
 	${INSTALL_MAN} ${WRKSRC}/man/${f} ${STAGEDIR}${MAN1PREFIX}/man/man1
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
