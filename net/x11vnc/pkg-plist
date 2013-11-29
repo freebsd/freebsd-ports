@@ -1,4 +1,5 @@
 bin/x11vnc
+man/man1/x11vnc.1.gz
 %%DATADIR%%/classes/ssl/README
 %%DATADIR%%/classes/ssl/SignedUltraViewerSSL.jar
 %%DATADIR%%/classes/ssl/SignedVncViewer.jar

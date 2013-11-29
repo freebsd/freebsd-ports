@@ -12,11 +12,9 @@ COMMENT=	VNC server for use with real X displays
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		dbus:${PORTSDIR}/devel/dbus \
-		pthread-stubs:${PORTSDIR}/devel/libpthread-stubs
-
-NO_STAGE=	yes
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libdbus-1.so:${PORTSDIR}/devel/dbus \
+		libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs
 
 USE_XORG=	x11 xcb xdamage xfixes xrandr xinerama xext xtst xau xrender \
 		xdmcp recordproto
@@ -27,36 +25,28 @@ USES=		iconv pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-MAN1=		x11vnc.1
 PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README README.LibVNCServer TODO
 
 OPTIONS_DEFINE=NLS AVAHI
 OPTIONS_DEFAULT=NLS AVAHI
 NO_OPTIONS_SORT=yes
+NLS_USES=	gettext
+AVAHI_LIB_DEPENDS=	libavahi-common.so:${PORTSDIR}/net/avahi-app
+AVAHI_CONFIGURE_OFF=	--without-avahi
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-.endif
-
-.if ${PORT_OPTIONS:MAVAHI}
-LIB_DEPENDS+=	avahi-common:${PORTSDIR}/net/avahi-app
-.else
-CONFIGURE_ARGS+=	--without-avahi
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|include_HEADERS = |noinst_HEADERS = |' \
+	${REINPLACE_CMD} -e 's|include_HEADERS = |noinst_HEADERS = |' \
 		-e 's|am__include_HEADERS_DIST|am__noinst_HEADERS_DIST|' \
 		-e 's|/include/rfb|/include|' ${WRKSRC}/Makefile.in
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
