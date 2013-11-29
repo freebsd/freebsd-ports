@@ -5,7 +5,7 @@ PORTVERSION=	0.11.1
 CATEGORIES=	net python
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pure python client library for beanstalkd queue
 
 LICENSE=	GPLv2

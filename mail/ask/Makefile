@@ -6,7 +6,7 @@ PORTVERSION=	2.5.3
 CATEGORIES=	mail
 MASTER_SITES=	SF/a-s-k/${PORTNAME}-beta/${PORTVERSION}
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Anti Spam Killer content filtering
 
 USE_PYTHON=	yes

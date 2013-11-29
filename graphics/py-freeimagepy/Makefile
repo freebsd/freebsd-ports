@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/FreeImagePy/V${PORTVERSION}
 PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	FreeImagePy_w_dll-${PORTVERSION}
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A FreeImage library python wrapper
 
 LIB_DEPENDS=	freeimage.3:${PORTSDIR}/graphics/freeimage
