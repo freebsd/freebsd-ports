@@ -1,4 +1,10 @@
 bin/aria2c
+include/aria2/aria2.h
+lib/libaria2.a
+lib/libaria2.la
+lib/libaria2.so
+lib/libaria2.so.0
+libdata/pkgconfig/libaria2.pc
 man/man1/aria2c.1.gz
 man/pt/man1/aria2c.1.gz
 man/ru/man1/aria2c.1.gz
@@ -71,3 +77,4 @@ man/ru/man1/aria2c.1.gz
 @dirrmtry man/ru
 @dirrmtry man/pt/man1
 @dirrmtry man/pt
+@dirrmtry include/aria2
