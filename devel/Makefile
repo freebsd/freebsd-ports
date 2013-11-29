@@ -3507,6 +3507,7 @@
     SUBDIR += py-botocore
     SUBDIR += py-cclib
     SUBDIR += py-celery
+    SUBDIR += py-cffi
     SUBDIR += py-cfgparse
     SUBDIR += py-cheetah
     SUBDIR += py-ciphon
