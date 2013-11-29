@@ -1,0 +1,4 @@
+python-librtmp is a Python interface to librtmp. It uses cffi to interface with
+the C library librtmp.
+
+WWW: https://github.com/chrippa/python-librtmp
