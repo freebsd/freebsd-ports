@@ -91,6 +91,7 @@
     SUBDIR += cvsupchk
     SUBDIR += cvsync
     SUBDIR += cyphesis
+    SUBDIR += czmq
     SUBDIR += daemonlogger
     SUBDIR += dante
     SUBDIR += daq
