@@ -1,8 +1,0 @@
-@comment $FreeBSD$
-*********************************************************************
-
-    The script %%PREFIX%%/bin/easy_install was already installed
-    on your system, so the only script %%PREFIX%%/bin/easy_install-%%PYVER%%
-    has been added.
-
-*********************************************************************

@@ -3544,7 +3544,6 @@
     SUBDIR += py-diazo
     SUBDIR += py-dirspec
     SUBDIR += py-distorm
-    SUBDIR += py-distribute
     SUBDIR += py-distutils-extra
     SUBDIR += py-docopt
     SUBDIR += py-dogpile.cache
