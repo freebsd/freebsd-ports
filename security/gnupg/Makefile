@@ -41,23 +41,28 @@ OPTIONS_DEFAULT=	CURL
 NO_OPTIONS_SORT=	YES
 OPTIONS_SUB=		YES
 
+DOCS_CONFIGURE_ENABLE=	doc
+PINENTRY_RUN_DEPENDS=	pinentry>0:${PORTSDIR}/security/pinentry
+GPGSM_RUN_DEPENDS=	dirmngr:${PORTSDIR}/security/dirmngr
+GPGSM_CONFIGURE_ENABLE=	gpgsm
+MKDNS_LIB_DEPENDS=	libadns.so:${PORTSDIR}/dns/adns
+MKDNS_CONFIGURE_ON=	--with-adns=${LOCALBASE}
+STD_SOCKET_CONFIGURE_ENABLE=	socket
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
+SCDAEMON_CONFIGURE_ENABLE=	scdaemon
+CURL_LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+CURL_CONFIGURE_ON=	--with-libcurl=${LOCALBASE}
+CURL_CONFIGURE_OFF=	--without-libcurl
+
 .include <bsd.port.options.mk>
 
-.if ! ${PORT_OPTIONS:MDOCS}
-CONFIGURE_ARGS+=	--disable-doc
-.else
+.if ${PORT_OPTIONS:MDOCS}
 INFO=		gnupg
 .endif
 
-.if ${PORT_OPTIONS:MPINENTRY}
-RUN_DEPENDS+=	pinentry>0:${PORTSDIR}/security/pinentry
-.endif
-
 .if ${PORT_OPTIONS:MGPGSM}
-RUN_DEPENDS+=	dirmngr:${PORTSDIR}/security/dirmngr
 PORT_OPTIONS+=	LDAP
-.else
-CONFIGURE_ARGS+=--disable-gpgsm
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}
@@ -67,35 +72,8 @@ CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 CONFIGURE_ARGS+=--disable-ldap
 .endif
 
-.if ${PORT_OPTIONS:MKDNS}
-LIB_DEPENDS+=	libadns.so:${PORTSDIR}/dns/adns
-CONFIGURE_ARGS+=	--with-adns=${LOCALBASE}
-.else
+.if ! ${PORT_OPTIONS:MKDNS}
 CONFIGURE_SUB=	-e '/GPGKEYS_KDNS=/s/".*"/""/'
-.endif
-
-.if ${PORT_OPTIONS:MSTD_SOCKET}
-CONFIGURE_ARGS+=--enable-standard-socket
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CONFIGURE_ARGS+=--enable-nls
-.else
-CONFIGURE_ARGS+=--disable-nls
-.endif
-
-.if ${PORT_OPTIONS:MSCDAEMON}
-CONFIGURE_ARGS+=--enable-scdaemon
-.else
-CONFIGURE_ARGS+=--disable-scdaemon
-.endif
-
-.if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
-CONFIGURE_ARGS+=--with-libcurl=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--without-libcurl
 .endif
 
 verify:	checksum
