@@ -17,6 +17,8 @@ BUILD_DEPENDS=	p5-Jifty>=0:${PORTSDIR}/www/p5-Jifty \
 		p5-LWPx-ParanoidAgent>=0:${PORTSDIR}/www/p5-LWPx-ParanoidAgent
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+BROKEN=		does not build
+
 USES=		perl5
 USE_PERL5=	configure
 
