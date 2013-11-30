@@ -226,7 +226,6 @@
     SUBDIR += gnomoradio
     SUBDIR += gnormalize
     SUBDIR += gnuitar
-    SUBDIR += gnump3d
     SUBDIR += gnupod
     SUBDIR += gnustep-cdplayer
     SUBDIR += gogglesmm
