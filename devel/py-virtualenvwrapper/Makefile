@@ -33,6 +33,10 @@ PYDISTUTILS_BUILD_TARGET+=	build_sphinx -a -E
 BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx \
 		${PKGNAMEPREFIX}sphinxcontrib-bitbucket>=1.0:${PORTSDIR}/textproc/py-sphinxcontrib-bitbucket
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|python setup.py|${PYTHON_CMD} setup.py|' \
+		${WRKSRC}/docs/source/conf.py
+
 post-install:
 	${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/build/sphinx/html && ${COPYTREE_SHARE} . ${DOCSDIR}
