@@ -166,6 +166,7 @@ liveMedia=		\
 		liveMedia/include/RTSPClient.hh \
 		liveMedia/include/RTSPCommon.hh \
 		liveMedia/include/RTSPServer.hh \
+		liveMedia/include/RTSPRegisterSender.hh \
 		liveMedia/include/RTSPServerSupportingHTTPStreaming.hh \
 		liveMedia/include/SIPClient.hh \
 		liveMedia/include/ServerMediaSession.hh \
