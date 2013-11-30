@@ -5272,3 +5272,4 @@ devel/zmq-devel|net/libzmq3|2013-11-28|Rename according to upstream and move to 
 devel/czmq|net/czmq|2013-11-29|Move to a more suitable category and with other libzmq ports
 lang/ruby-reference||2013-11-29|Removed: does not contain up-to-date ruby reference, upstream has disappeared
 audio/gnump3d||2013-11-30|Has expired: Development has been abandoned upstream
+audio/rubygem-ogginfo|audio/rubygem-ruby-ogginfo|2013-11-30|Rename to match upstream naming
