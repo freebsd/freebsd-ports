@@ -40,9 +40,10 @@ post-patch:
 .endfor
 
 post-install:
-	${SETENV} PYTHON=${PYTHON_CMD} ${SH} ${WRKSRC}/py-compile --destdir ${STAGEDIR} \
-		--basedir ${PYTHON_SITELIBDIR} \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/pygst.py
+	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -d \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -f ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -f ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/gst-0.10/gst/*.so
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/*.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gstreamer-0.10/libgstpython.so
