@@ -1,4 +1,4 @@
-# Created by: nemysis@gmx.ch
+# Created by: nemysis <nemysis@gmx.ch>
 # $FreeBSD$
 
 PORTNAME=	tong
@@ -7,13 +7,13 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.nongnu.org/tong/
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Tetris and Pong in the same place at the same time
 
 LICENSE=	GPLv3
 
+USES=		gmake
 USE_SDL=	image mixer sdl
-USE_GMAKE=	yes
 
 PORTDOCS=	CHANGELOG README making-of.txt notes.txt
 
@@ -22,8 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 DESKTOP_ENTRIES="TONG!" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" false
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|GAME_DATA_DIR := .|GAME_DATA_DIR := ${DATADIR}|' \
@@ -31,15 +30,19 @@ post-patch:
 		${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} "*.png" ${DATADIR}
-	${MKDIR} ${DATADIR}/media
-	@cd ${WRKSRC}/media && ${COPYTREE_SHARE} "*.png *.xcf *.ogg *.ico" ${DATADIR}/media
-	${LN} -sf ${DATADIR}/media/icon.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "*.png" ${STAGEDIR}${DATADIR}
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DATADIR}/media/
+
+.for d in *.png *.xcf *.ogg *.ico
+	@(cd ${WRKSRC}/media ; ${COPYTREE_SHARE} "${d}" ${STAGEDIR}${DATADIR}/media/)
+.endfor
+
+	${LN} -sf ${DATADIR}/media/icon.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
