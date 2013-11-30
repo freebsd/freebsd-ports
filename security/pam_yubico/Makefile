@@ -1,62 +1,48 @@
 # $FreeBSD$
 
 PORTNAME=	pam_yubico
-PORTVERSION=	2.13
-PORTREVISION=	1
+PORTVERSION=	2.14
 CATEGORIES=	security
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://opensource.yubico.com/yubico-pam/releases/
 
 MAINTAINER=	matt@mjslabs.com
 COMMENT=	PAM module for authenticating with a Yubico YubiKey
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	ykclient:${PORTSDIR}/security/ykclient \
-		ykpers-1:${PORTSDIR}/security/ykpers \
-		yubikey:${PORTSDIR}/security/libyubikey
+LIB_DEPENDS=	libykclient.so:${PORTSDIR}/security/ykclient \
+		libykpers-1.so:${PORTSDIR}/security/ykpers \
+		libyubikey.so:${PORTSDIR}/security/libyubikey
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
 
-PLIST_FILES=	include/drop_privs.h \
-		include/util.h \
-		lib/security/pam_yubico.la \
+PLIST_FILES=	lib/security/pam_yubico.la \
 		lib/security/pam_yubico.so
 PLIST_DIRS=	lib/security
 SUB_FILES=	pkg-message
 PORTDOCS=	*
 
-PROJECTHOST=	yubico-pam
-
-OPTIONS_DEFINE=	CR LDAP DOCS
+OPTIONS_DEFINE=	CR LDAP DOCS STATIC
 CR_DESC=	Include Challenge/response support
 OPTIONS_DEFAULT=	CR LDAP
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+CR_CONFIGURE_WITH=	cr
+CR_PLIST_FILES=	bin/ykpamcfg \
+		man/man1/ykpamcfg.1.gz
 
-.if ${PORT_OPTIONS:MCR}
-CONFIGURE_ARGS+=	--with-cr
-MAN1=		ykpamcfg.1
-PLIST_FILES+=	bin/ykpamcfg
-.else
-CONFIGURE_ARGS+=	--without-cr
-.endif
+LDAP_CONFIGURE_WITH=	ldap
+LDAP_USE=	OPENLDAP=yes
+LDAP_LDFLAGS=	-L${LOCALBASE}/lib
 
-.if ${PORT_OPTIONS:MLDAP}
-CONFIGURE_ARGS+=	--with-ldap
-.else
-CONFIGURE_ARGS+=	--without-ldap
-.endif
+STATIC_CONFIGURE_ENABLE=	static
+STATIC_PLIST_FILES=	lib/security/pam_yubico.a
 
 regression-test: build
 	@(cd ${WRKSRC}; ${MAKE} check)
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
