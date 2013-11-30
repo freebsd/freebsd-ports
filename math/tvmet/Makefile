@@ -9,40 +9,43 @@ MASTER_SITES=	SF/${PORTNAME}/Tar.Gz_Bz2%20Archive/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiny Vector and Matrix template library
 
+LICENSE=	LGPL21 # (or later)
+
+OPTIONS_DEFINE=	CPPUNIT DEBUG DOCS EXAMPLES
+
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_AUTOTOOLS=	libtool
-MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+CONFIGURE_ARGS=	--with-cxx=${CXX}
 
-MAN1=		tvmet-config.1
+.include <bsd.port.options.mk>
 
-.if defined(WITH_CPPUNIT)
-LIB_DEPENDS+=	cppunit-1.10.2:${PORTSDIR}/devel/cppunit
+.if ${PORT_OPTIONS:MCPPUNIT}
+LIB_DEPENDS+=	libcppunit-1.12.so:${PORTSDIR}/devel/cppunit
 CONFIGURE_ARGS+=	--with-cppunit-prefix=${LOCALBASE}
 .else
 CONFIGURE_ENV+=	ac_cv_path_CPPUNIT_CONFIG=no
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CXXFLAGS+=	-DTVMET_DEBUG
 .else
 CXXFLAGS+=	-DTVMET_OPTIMIZE
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|= -O |= |g' ${WRKSRC}/doc/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for ext in dox cc css h png
-	${INSTALL_DATA} ${WRKSRC}/doc/*.${ext} ${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} *.${ext} \
+		${STAGEDIR}${DOCSDIR})
 .endfor
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for ext in cc
-	${INSTALL_DATA} ${WRKSRC}/examples/*.${ext} ${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${INSTALL_DATA} *.${ext} \
+		${STAGEDIR}${EXAMPLESDIR})
 .endfor
-.endif
 
 .include <bsd.port.mk>
