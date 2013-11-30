@@ -3181,6 +3181,8 @@ man/man1/xsubpp.1.gz
 @dirrm lib/perl5/%%PERL_VER%%/App
 @dirrm lib/perl5/%%PERL_VER%%/pod
 @dirrm lib/perl5/%%PERL_VER%%/perl/man/man3
+@unexec /bin/rm -f %D/lib/perl5/%%PERL_VER%%/perl/man/whatis
+@exec /usr/bin/makewhatis %D/lib/perl5/%%PERL_VER%%/perl/man
 @dirrm lib/perl5/%%PERL_VER%%/perl/man
 @dirrm lib/perl5/%%PERL_VER%%/perl
 @dirrm lib/perl5/%%PERL_VER%%/overload
@@ -3190,6 +3192,8 @@ man/man1/xsubpp.1.gz
 @dirrm lib/perl5/%%PERL_VER%%/autodie/exception
 @dirrm lib/perl5/%%PERL_VER%%/autodie
 @dirrmtry lib/perl5/%%PERL_VER%%/man/man3
+@unexec /bin/rm -f %D/lib/perl5/%%PERL_VER%%/man/whatis
+@exec /usr/bin/makewhatis %D/lib/perl5/%%PERL_VER%%/man
 @dirrmtry lib/perl5/%%PERL_VER%%/man
 @dirrmtry lib/perl5/%%PERL_VER%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/sys
