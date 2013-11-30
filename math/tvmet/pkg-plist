@@ -1,5 +1,5 @@
-@comment $FreeBSD$
 bin/tvmet-config
+man/man1/tvmet-config.1.gz
 include/tvmet/AliasProxy.h
 include/tvmet/BinaryFunctionals.h
 include/tvmet/CommaInitializer.h
