@@ -1517,6 +1517,7 @@
     SUBDIR += py-django-reversion
     SUBDIR += py-django-sekizai
     SUBDIR += py-django-signals-ahoy
+    SUBDIR += py-django-simple-captcha
     SUBDIR += py-django-storages
     SUBDIR += py-django-tables2
     SUBDIR += py-django-tagging
