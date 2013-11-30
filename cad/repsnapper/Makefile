@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	repsnapper
-PORTVERSION=	2.3.0a4
+PORTVERSION=	2.3.2a3
 CATEGORIES=	cad
 MASTER_SITES=	https://codeload.github.com/timschmidt/repsnapper/tar.gz/
 DISTNAME=	${PORTVERSION}
