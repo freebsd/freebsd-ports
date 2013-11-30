@@ -2,12 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	activesupport
-PORTVERSION=	4.0.0
+PORTVERSION=	4.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
+PKGNAMESUFFIX=	4
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Utility classes and extension that are required by Rails MVC Framework
+
+LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-i18n>=0.6.4:${PORTSDIR}/devel/rubygem-i18n \
 		rubygem-minitest4>=4.2:${PORTSDIR}/devel/rubygem-minitest4 \
@@ -18,11 +21,8 @@ RUN_DEPENDS=	rubygem-i18n>=0.6.4:${PORTSDIR}/devel/rubygem-i18n \
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-
 USE_RUBY_FEATURES=	iconv
 
-PKGNAMESUFFIX=	4
-
-NOPORTDOCS=	yes
+#NOPORTDOCS=	yes
 
 .include <bsd.port.mk>
