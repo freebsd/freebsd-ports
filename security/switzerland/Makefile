@@ -7,7 +7,7 @@ CATEGORIES=	security python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/zero%20point%20one
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Test the integrity of communications over networks and firewalls
 
 LICENSE=	GPLv3
