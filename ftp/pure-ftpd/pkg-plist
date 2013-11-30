@@ -5,6 +5,15 @@ etc/pure-ftpd.conf.sample
 etc/pureftpd-ldap.conf.sample
 etc/pureftpd-mysql.conf.sample
 etc/pureftpd-pgsql.conf.sample
+man/man8/pure-authd.8.gz
+man/man8/pure-ftpd.8.gz
+man/man8/pure-ftpwho.8.gz
+man/man8/pure-mrtginfo.8.gz
+man/man8/pure-pw.8.gz
+man/man8/pure-pwconvert.8.gz
+man/man8/pure-quotacheck.8.gz
+man/man8/pure-statsdecode.8.gz
+man/man8/pure-uploadscript.8.gz
 sbin/pure-authd
 sbin/pure-config.pl
 sbin/pure-ftpd
