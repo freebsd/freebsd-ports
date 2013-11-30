@@ -26,7 +26,7 @@ SUB_FILES=	${PORTNAME}
 DESKTOP_ENTRIES="PyTowerDefense" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" false
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
