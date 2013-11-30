@@ -3,6 +3,7 @@
 
 PORTNAME=	taglib
 PORTVERSION=	1.9.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://taglib.github.io/releases/
 
@@ -17,6 +18,10 @@ USES=		cmake
 CMAKE_ARGS=	-DWITH_ASF:BOOL=ON \
 		-DWITH_MP4:BOOL=ON
 USE_LDCONFIG=	yes
+
+# clang will generate code that just doesn't work with clementine-player
+# if this isn't compiled as though it were C99.
+CFLAGS+=	-std=c99
 
 OPTIONS_DEFINE=	RCC
 OPTIONS_SUB=	yes
