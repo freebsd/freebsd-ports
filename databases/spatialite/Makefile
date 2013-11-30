@@ -3,6 +3,7 @@
 
 PORTNAME=	spatialite
 PORTVERSION=	4.1.1
+PORTREVISION=	1
 CATEGORIES=	databases geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
@@ -16,13 +17,13 @@ LIB_DEPENDS=	libgeos_c.so:${PORTSDIR}/graphics/geos \
 
 WRKSRC=		${WRKDIR}/lib${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
+USES=		gmake iconv pathfix pkgconfig
 USE_SQLITE=	yes
-USES=		gmake iconv
-USE_GCC=	yes
+USE_GNOME=	libxml2
 
-CPPFLAGS+=	-I${WRKSRC}/src/headers -I${LOCALBASE}/include
+CFLAGS+=	-I${WRKSRC}/src/headers -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
-CONFIGURE_ARGS+=CFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS+=--enable-libxml2=yes CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 
 NO_STAGE=	yes
@@ -30,13 +31,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl| |' ${WRKSRC}/src/Makefile.am
 	@${REINPLACE_CMD} -e 's|-ldl| |' ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|-ldl| |' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|$$(prefix)/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.in
 
-.include <bsd.port.pre.mk>
+BROKEN_powerpc=		Does not compile on powerpc: invokes i386 assembler
 
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc: invokes i386 assembler
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
