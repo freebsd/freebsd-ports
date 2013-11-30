@@ -2,30 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	libgaiagraphics
-PORTVERSION=	0.4b
+PORTVERSION=	0.5
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 
 MAINTAINER=	coder@tuxfamily.org
 COMMENT=	Library supporting common-utility raster handling methods
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff \
-		geotiff:${PORTSDIR}/graphics/libgeotiff \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		cairo:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libgeotiff.so:${PORTSDIR}/graphics/libgeotiff \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libcairo.so:${PORTSDIR}/graphics/cairo
 
-GNU_CONFIGURE=	yes
-USES=		iconv gmake pkgconfig
-
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
-CONFIGURE_ARGS+=CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+USES=		gmake iconv pathfix pkgconfig
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS= CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.mk>
