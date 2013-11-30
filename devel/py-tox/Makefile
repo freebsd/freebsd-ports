@@ -31,7 +31,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pytest>0:${PORTSDIR}/devel/py-pytest
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} != 2.7 && ${PYTHON_REL} < 3.2
+.if ${PYTHON_VER} != 2.7 && ${PYTHON_VER} < 3.2
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}argparse>0:${PORTSDIR}/devel/py-argparse
 .endif
 
