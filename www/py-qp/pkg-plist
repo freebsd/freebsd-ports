@@ -114,31 +114,3 @@ bin/qpcensus.py
 @dirrm %%PYTHON_SITELIBDIR%%/qp/fill
 @dirrm %%PYTHON_SITELIBDIR%%/qp/sites
 @dirrm %%PYTHON_SITELIBDIR%%/qp
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/echo/slash.qpy
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/echo/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/echo/var/here.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello/slash.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello/var/here.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/forms.qpy
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/qwiki.qpy
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/slash.qpy
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/static/all.css
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/static/favicon.ico
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/static/favicon.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/static/proto.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/var/here.txt
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/echo/var
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/echo
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hello/var
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hello
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/proto/static
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/proto/var
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/proto
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
