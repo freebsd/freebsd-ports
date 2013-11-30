@@ -665,8 +665,8 @@
     SUBDIR += ruby-taglib
     SUBDIR += ruby-xmms2
     SUBDIR += rubygem-librmpd
-    SUBDIR += rubygem-ogginfo
     SUBDIR += rubygem-ruby-mp3info
+    SUBDIR += rubygem-ruby-ogginfo
     SUBDIR += rubygem-shout
     SUBDIR += rubyripper
     SUBDIR += s3mod

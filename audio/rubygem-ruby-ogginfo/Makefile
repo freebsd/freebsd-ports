@@ -1,14 +1,15 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	ogginfo
-PORTVERSION=	0.6.11
+PORTNAME=	ruby-ogginfo
+PORTVERSION=	0.7.2
 CATEGORIES=	audio rubygems
 MASTER_SITES=	RG
-DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Ruby library to access to information on ogg files
+COMMENT=	Ruby library to access to information on ogg files
+
+LICENSE=	GPLv3
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
