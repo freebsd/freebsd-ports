@@ -1,0 +1,109 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/conf/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/conf/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/conf/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/conf/settings.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/conf/settings.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/conf/settings.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/fields.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/fields.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/fields.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/fonts/COPYRIGHT.TXT
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/fonts/README.TXT
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/fonts/Vera.ttf
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/helpers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/helpers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/helpers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/cs/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/cs/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/de/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/de/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/fr/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/fr/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/it/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/it/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/nl/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/nl/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/pl/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/pl/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/pt_BR/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/pt_BR/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/ru/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/ru/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/tr/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/tr/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/zh_CN/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/management/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/management/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/management/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/management/commands/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/management/commands/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/management/commands/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/management/commands/captcha_clean.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/management/commands/captcha_clean.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/management/commands/captcha_clean.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/migrations/0001_initial.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/migrations/0001_initial.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/migrations/0001_initial.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/migrations/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/migrations/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/migrations/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/models.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/models.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/models.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/tests/tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/tests/tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/tests/tests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/tests/urls.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/tests/urls.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/tests/urls.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/tests/views.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/tests/views.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/tests/views.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/urls.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/urls.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/urls.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/views.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/views.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/views.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/migrations
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/management/commands
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/management
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/zh_CN/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/zh_CN
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/tr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/tr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/ru/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/ru
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/pt_BR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/pt_BR
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/pl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/pl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/nl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/nl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/it/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/it
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/fr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/de/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/de
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/cs/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale/cs
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/locale
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/fonts
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha/conf
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/captcha
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
