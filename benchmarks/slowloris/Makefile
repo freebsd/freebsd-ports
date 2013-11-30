@@ -12,8 +12,10 @@ COMMENT=	The low bandwidth, yet greedy and poisonous HTTP client
 RUN_DEPENDS=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
 		p5-Getopt-Long>=0:${PORTSDIR}/devel/p5-Getopt-Long
 
-USES=		perl5
 NO_BUILD=	yes
+
+USES=		perl5
+USE_PERL5=	run
 
 PLIST_FILES=	bin/slowloris
 
