@@ -29,15 +29,6 @@ diff --git a/configure.in b/configure.in
 index 54993df..51b7cc2 100644
 --- configure.in
 +++ configure.in
-@@ -51,7 +51,7 @@ if test "$enable_ipv6" = yes ; then
- else
- 	ip=ipv4
- 	SUFFIX=""
--	all_protocols=bgp,ospf,pipe,rip,static
-+	all_protocols=bgp,ospf,pipe,rip,static,firewall
- fi
- 
- if test "$given_suffix" = yes ; then
 @@ -137,10 +137,13 @@ else
  		ipv4:netbsd*)	sysdesc=bsd
  				CPPFLAGS="$CPPFLAGS -I/usr/pkg/include"
@@ -105,33 +96,6 @@ index 24bc302..a01ec99 100644
  <chapt>Conclusions
  
  <sect>Future work
-diff --git a/nest/proto.c b/nest/proto.c
-index 53d3f1a..78d7600 100644
---- nest/proto.c
-+++ nest/proto.c
-@@ -707,6 +707,9 @@ protos_build(void)
- #ifdef CONFIG_BGP
-   proto_build(&proto_bgp);
- #endif
-+#ifdef CONFIG_FIREWALL
-+  proto_build(&proto_firewall);
-+#endif
-   proto_pool = rp_new(&root_pool, "Protocols");
-   proto_flush_event = ev_new(proto_pool);
-   proto_flush_event->hook = proto_flush_loop;
-diff --git a/nest/protocol.h b/nest/protocol.h
-index 11fcb16..c7275d6 100644
---- nest/protocol.h
-+++ nest/protocol.h
-@@ -75,7 +75,7 @@ void protos_dump_all(void);
- 
- extern struct protocol
-   proto_device, proto_radv, proto_rip, proto_static,
--  proto_ospf, proto_pipe, proto_bgp;
-+  proto_ospf, proto_pipe, proto_bgp, proto_firewall;
- 
- /*
-  *	Routing Protocol Instance
 diff --git a/nest/route.h b/nest/route.h
 index 524e69b..f3062a2 100644
 --- nest/route.h
@@ -512,22 +476,6 @@ index 0000000..c97ed38
 +#define FW_ERR(x, y...)	log_rl(&rl_fw_err, L_ERR x, ##y)
 +
 +#endif
-diff --git a/sysdep/autoconf.h.in b/sysdep/autoconf.h.in
-index ac6f7a8..2d5af5c 100644
---- sysdep/autoconf.h.in
-+++ sysdep/autoconf.h.in
-@@ -42,6 +42,11 @@
- #undef CONFIG_BGP
- #undef CONFIG_OSPF
- #undef CONFIG_PIPE
-+#undef CONFIG_FIREWALL
-+
-+#undef CONFIG_FIREWALL_IPFW
-+#undef CONFIG_FIREWALL_PF
-+#undef CONFIG_FIREWALL_IPSET
- 
- /* We have <syslog.h> and syslog() */
- #undef HAVE_SYSLOG
 diff --git a/sysdep/bsd/Modules b/sysdep/bsd/Modules
 index 3729587..0607321 100644
 --- sysdep/bsd/Modules
@@ -952,20 +900,6 @@ index 0000000..e841e06
 
 --- configure.orig	2012-08-07 13:28:04.000000000 +0400
 +++ configure	2012-08-15 15:54:05.000000000 +0400
-@@ -2355,11 +2355,11 @@
- if test "$enable_ipv6" = yes ; then
- 	ip=ipv6
- 	SUFFIX=6
--	all_protocols=bgp,ospf,pipe,radv,rip,static
-+	all_protocols=bgp,ospf,pipe,radv,rip,static,firewall
- else
- 	ip=ipv4
- 	SUFFIX=""
--	all_protocols=bgp,ospf,pipe,rip,static
-+	all_protocols=bgp,ospf,pipe,rip,static,firewall
- fi
- 
- if test "$given_suffix" = yes ; then
 @@ -4361,6 +4361,8 @@
  		ipv6:freebsd*)	sysdesc=bsd-v6
  				;;
@@ -975,3 +909,4 @@ index 0000000..e841e06
  				;;
  		ipv6:dragonfly*)	sysdesc=bsd-v6
  				;;
+
