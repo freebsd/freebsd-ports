@@ -9,6 +9,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Official Python client library for NSQ
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tornado>0:${PORTSDIR}/www/py-tornado
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tornado>0:${PORTSDIR}/www/py-tornado \
 		${PYTHON_PKGNAMEPREFIX}pytest>0:${PORTSDIR}/devel/py-pytest \
