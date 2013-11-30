@@ -13,7 +13,8 @@ COMMENT=	Pure Python TFTP Implementation
 
 LICENSE=	MIT
 
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
