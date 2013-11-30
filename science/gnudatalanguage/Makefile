@@ -3,7 +3,7 @@
 
 PORTNAME=	gnudatalanguage
 DISTVERSION=	0.9.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science lang
 MASTER_SITES=	SF/${PORTNAME}/gdl/${DISTVERSION}
 .if defined(BUILD_PYTHON_MODULE)
@@ -36,12 +36,10 @@ LIB_DEPENDS+=	libplplotd.so:${PORTSDIR}/math/plplot	\
 		libps.so:${PORTSDIR}/print/pslib	\
 		libgsl.so:${PORTSDIR}/math/gsl
 
-USE_DOS2UNIX=	src/plotting_xyouts.cpp
-
 USE_GCC=	yes
 USE_WX=		2.8
 USE_XORG=	x11
-USES=		pkgconfig cmake
+USES=		pkgconfig cmake dos2unix
 
 # Disable ncurses and readline from ports
 # Disable ImageMagick (does'nt work with plplot because dynamic drivers
@@ -67,7 +65,7 @@ PLIST_SUB+=	MASTER=""
 .endif
 
 .if !defined(WITHOUT_GRAPHICSMAGICK)
-LIB_DEPENDS+=	libGraphicsMagick.so.12:${PORTSDIR}/graphics/GraphicsMagick13
+LIB_DEPENDS+=	libGraphicsMagick.so.14:${PORTSDIR}/graphics/GraphicsMagick13
 CMAKE_ARGS+=	-DGRAPHICSMAGICK:BOOL=YES
 .else
 CMAKE_ARGS+=	-DGRAPHICSMAGICK:BOOL=NO

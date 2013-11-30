@@ -2,50 +2,44 @@
 # $FreeBSD$
 
 PORTNAME=	GraphicsMagick
-PORTVERSION=	1.3.16
-PORTREVISION=	1
+PORTVERSION=	1.3.18
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
 		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/1.3/
 MASTER_SITE_SUBDIR=	${PORTNAME:L}/${PORTNAME:L}/${PORTVERSION}
-PORTSCOUT=	limit:^1\.3\.
 PKGNAMESUFFIX=	13
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Fast image processing tools based on ImageMagick
 
-CONFLICTS=	GraphicsMagick-1.[12].* GraphicsMagick12-*
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2	\
+		libpng15.so:${PORTSDIR}/graphics/png		\
+		libjbig.so:${PORTSDIR}/graphics/jbigkit		\
+		libjasper.so:${PORTSDIR}/graphics/jasper	\
+		libjpeg.so:${PORTSDIR}/graphics/jpeg		\
+		liblcms.so:${PORTSDIR}/graphics/lcms		\
+		libtiff.so:${PORTSDIR}/graphics/tiff		\
+		libxml2.so:${PORTSDIR}/textproc/libxml2
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2	\
-		png15:${PORTSDIR}/graphics/png		\
-		jbig:${PORTSDIR}/graphics/jbigkit	\
-		xml2:${PORTSDIR}/textproc/libxml2
-OTHERGRAPHICS=	jasper jpeg lcms tiff
-LIB_DEPENDS+=	${OTHERGRAPHICS:C|(.+)|\1:${PORTSDIR}/graphics/\1|}
+CONFLICTS=	GraphicsMagick-1.[12].* GraphicsMagick12-*
 
 OPTIONS_DEFINE=	Q8BIT FPX OPENMP SSE TESTS X11 DOCS
 
 Q8BIT_DESC=	Use 8-bit pixels (speed) instead of 16 (quality)
 DPS_DESC=	Enable Display Ghostscript support
-NODPS_DESC=	Disable Display Ghostscript support
 TESTS_DESC=	Run bundled self-tests after build
 
 OPTIONS_DEFAULT=FPX DPS OPENMP X11 TESTS DOCS
 OPTIONS_SINGLE=	X11
-OPTIONS_SINGLE_X11=	DPS NODPS
+OPTIONS_SINGLE_X11=	DPS
+
+PORTSCOUT=	limit:^1\.3\.
 
 USES=		iconv
 USE_AUTOTOOLS=	libtool libltdl
 USE_BZIP2=	yes
 USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes
-
-MAN1=	GraphicsMagick++-config.1 \
-	GraphicsMagick-config.1 \
-	GraphicsMagickWand-config.1 \
-	gm.1
-MAN4=	miff.4
-MAN5=	quantize.5
 
 CONFIGURE_ARGS=	--without-perl --enable-shared --enable-static \
 		--with-ltdl-include=${LOCALBASE}/include \
@@ -57,9 +51,8 @@ ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 test check:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
 .include <bsd.port.options.mk>
 
@@ -82,14 +75,14 @@ CFLAGS+=	-msse3
 .endif
 
 .if ${PORT_OPTIONS:MFPX}
-LIB_DEPENDS+=		fpx.[2-9]:${PORTSDIR}/graphics/libfpx
+LIB_DEPENDS+=		libfpx.so.[2-9]:${PORTSDIR}/graphics/libfpx
 CONFIGURE_ARGS+=	--with-fpx
 .else
 CONFIGURE_ARGS+=	--without-fpx
 .endif
 
 .if ${PORT_OPTIONS:MDPS}
-LIB_DEPENDS+=		dps:${PORTSDIR}/x11/dgs
+LIB_DEPENDS+=		libdps.so:${PORTSDIR}/x11/dgs
 CONFIGURE_ARGS+=	--with-dps
 .else
 CONFIGURE_ARGS+=	--without-dps
@@ -117,18 +110,19 @@ CONFIGURE_ARGS+=	--with-windows-font-dir="${WINDOWS_FONT_DIR}"
 
 .if ${PORT_OPTIONS:MX11} == ""
 CONFIGURE_ARGS+=--without-x
-LIB_DEPENDS+=	wmflite:${PORTSDIR}/graphics/libwmf-nox11
+LIB_DEPENDS+=	libwmflite.so:${PORTSDIR}/graphics/libwmf-nox11
 .else
-LIB_DEPENDS+=	wmflite:${PORTSDIR}/graphics/libwmf
+LIB_DEPENDS+=	libwmflite.so:${PORTSDIR}/graphics/libwmf
 .endif
 
 .if ${PORT_OPTIONS:MQ8BIT}
 CONFIGURE_ARGS+=	--with-quantum-depth=8
-PLIST_SUB+=		Q=8
+QD=			8
 .else
 CONFIGURE_ARGS+=	--with-quantum-depth=16
-PLIST_SUB+=		Q=16
+QD=			16
 .endif
+PLIST_SUB+=		Q=${QD}
 
 .if ${PORT_OPTIONS:MTESTS}
 post-build::	test
@@ -139,5 +133,9 @@ post-build::
 	# and report any failures to ${MAINTAINER}.
 	#
 .endif
+
+post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/GraphicsMagick/modules-Q${QD}/coders	\
+		${STAGEDIR}${PREFIX}/lib/GraphicsMagick/modules-Q${QD}/filters
 
 .include <bsd.port.mk>
