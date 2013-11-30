@@ -21,5 +21,4 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Twisted_Web2
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
