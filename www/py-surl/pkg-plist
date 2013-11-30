@@ -1,4 +1,5 @@
 bin/surl
+man/man1/surl.1.gz
 %%PYTHON_SITELIBDIR%%/surl/__init__.py
 %%PYTHON_SITELIBDIR%%/surl/__init__.pyc
 %%PYTHON_SITELIBDIR%%/surl/__init__.pyo
@@ -22,3 +23,5 @@ bin/surl
 %%PYTHON_SITELIBDIR%%/surl/version.pyc
 %%PYTHON_SITELIBDIR%%/surl/version.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/surl
+@dirrmtry lib/python2.7/site-packages
+@dirrmtry lib/python2.7
