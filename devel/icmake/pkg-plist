@@ -8,6 +8,11 @@ etc/icmake/icmstart.rc
 lib/icmake-%%PORTVERSION%%/icm-comp
 lib/icmake-%%PORTVERSION%%/icm-exec
 lib/icmake-%%PORTVERSION%%/icm-pp
+man/man1/icmake.1.gz
+man/man1/icmbuild.1.gz
+man/man1/icmstart.1.gz
+man/man7/icmconf.7.gz
+man/man7/icmstart.rc.7.gz
 share/icmake-%%PORTVERSION%%/parser/grammar
 share/icmake-%%PORTVERSION%%/scanner/lexer
 share/icmake-%%PORTVERSION%%/scanner/scanner.ih

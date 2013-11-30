@@ -1,0 +1,14 @@
+--- syslogbuf/syslogbuf.orig	2013-11-13 11:45:02.000000000 +0100
++++ syslogbuf/syslogbuf	2013-11-27 14:19:23.000000000 +0100
+@@ -90,6 +90,11 @@
+ #include <syslog.h>
+ #include <streambuf>
+ #include <string>
++
++#ifdef __FreeBSD__
++#include <stdio.h>
++#endif
++
+                         
+ namespace FBB
+ {

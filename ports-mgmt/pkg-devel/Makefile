@@ -20,6 +20,7 @@ USE_XZ=		yes
 NO_CCACHE=	yes
 USE_LDCONFIG=	yes
 USES=		uidfix
+MAKE_ARGS+=	PKG_PORTSDIR=${PORTSDIR}
 
 MAKE_ENV+=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null \
 		PORTREVISION=${PORTREVISION}
@@ -27,6 +28,10 @@ MAKE_ENV+=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null \
 # Use a submake as 'deinstall install' needs to reevaluate PKG_CMD
 # so that pkg-static is used from the wrkdir
 USE_SUBMAKE=	yes
+
+.if !exists(/usr/include/jail.h)
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-pkg_pkg.8
+.endif
 
 .include <bsd.port.pre.mk>
 

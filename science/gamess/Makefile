@@ -3,7 +3,6 @@
 
 PORTNAME=	gamess
 PORTVERSION=    ${SNAPDATE}
-PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=   #http://www.msg.ameslab.gov/GAMESS/License_Agreement.html
 DISTNAME=	gamess-current
@@ -14,7 +13,7 @@ COMMENT=	A freely obtainable ab-initio molecular orbital calculation program
 
 USE_GMAKE=	yes
 WRKSRC=         ${WRKDIR}/gamess
-SNAPDATE=	20120501.2
+SNAPDATE=	20130501.1
 
 USE_FORTRAN=   yes
 
@@ -38,8 +37,8 @@ WITH_BLAS?=	reference
 .endif
 
 . if ${WITH_BLAS} == reference
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	blas:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
 .elif ${WITH_BLAS} == gotoblas

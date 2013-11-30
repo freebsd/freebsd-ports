@@ -358,3 +358,20 @@
  Check out a license for @var{feature}, returning 1 on success and 0
  on failure.
  
+--- doc/liboctave/liboctave.texi.orig	2013-02-22 05:19:23.000000000 +0900
++++ doc/liboctave/liboctave.texi	2013-10-27 00:04:40.000000000 +0900
+@@ -80,10 +80,10 @@
+ @end ifnottex
+ 
+ @titlepage
+-@title{Octave C++ Classes}
+-@subtitle{Edition 1.0 for Octave version @value{VERSION}}
+-@subtitle{September 1993}
+-@author{John W. Eaton}
++@title Octave C++ Classes
++@subtitle Edition 1.0 for Octave version @value{VERSION}
++@subtitle September 1993
++@author John W. Eaton
+ @page
+ @vskip 0pt plus 1filll
+ Copyright @copyright{} 1996, 1997 John W. Eaton.

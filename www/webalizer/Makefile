@@ -23,7 +23,6 @@ EXAMPLESDIR?=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 GD_PORT?=	graphics/gd
 
 CONFLICTS=	geolizer-2*
-NO_STAGE=	yes
 
 .if defined(BATCH)
 # no cosmetique spaces allowed
@@ -51,11 +50,11 @@ DISTFILES+=	webalizer-geodb-20130801.tgz:geodb
 
 # slave ports override with languages specific gd
 .if !defined(LIB_DEPENDS)
-LIB_DEPENDS=	gd:${PORTSDIR}/${GD_PORT}
+LIB_DEPENDS=	libgd.so:${PORTSDIR}/${GD_PORT}
 .endif
 
 .if ${PORT_OPTIONS:MGEOIP}
-LIB_DEPENDS+=	GeoIP:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS+=	libGeoIP.so:${PORTSDIR}/net/GeoIP
 .endif
 
 .if ${PORT_OPTIONS:MGEODB}
@@ -104,7 +103,7 @@ CFLAGS+=	-Wall
 MAN1=		${PKGNAMEPREFIX}webalizer.1 ${PKGNAMEPREFIX}wcmgr.1
 DOC1=		CHANGES Copyright INSTALL \
 		README README.FIRST DNS.README country-codes.txt
-DOC2=		INSTALL GeoIP.README
+EXAMPLES1=	msfree.png sample.conf webalizer.png
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src$//}
 PLIST_SUB+=	PKGNAMEPREFIX=${PKGNAMEPREFIX}
 SUPP_LANG=	albanian arabic catalan chinese croatian czech danish dutch \
@@ -170,36 +169,32 @@ pre-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/webalizer \
-		${PREFIX}/bin/${PKGNAMEPREFIX}webalizer
+		${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}webalizer
 	${INSTALL_PROGRAM} ${WRKSRC}/wcmgr \
-		${PREFIX}/bin/${PKGNAMEPREFIX}wcmgr
+		${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}wcmgr
 	${LN} -sf ${PKGNAMEPREFIX}webalizer \
-		${PREFIX}/bin/${PKGNAMEPREFIX}webazolver
+		${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}webazolver
 	${INSTALL_DATA} ${WRKSRC}/sample.conf \
-		${PREFIX}/etc/${PKGNAMEPREFIX}webalizer.conf-dist ;
+		${STAGEDIR}${PREFIX}/etc/${PKGNAMEPREFIX}webalizer.conf-dist ;
 
 post-install:
 .for i in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/${i:S/^${PKGNAMEPREFIX}//} ${PREFIX}/man/man1/${i}
+	${INSTALL_MAN} ${WRKSRC}/${i:S/^${PKGNAMEPREFIX}//} ${STAGEDIR}${PREFIX}/man/man1/${i}
 .endfor
 .if ${PORT_OPTIONS:MGEODB} || ${PORT_OPTIONS:MGEOIP} 
-	${MKDIR} ${PREFIX}/share/geolizer
-	@${INSTALL_DATA} ${WRKDIR}/flags/* ${PREFIX}/share/geolizer/
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/geolizer
+	${INSTALL_DATA} ${WRKDIR}/flags/* ${STAGEDIR}${PREFIX}/share/geolizer/
 .endif
 .if ${PORT_OPTIONS:MGEODB}
-	@${INSTALL_DATA} ${WRKDIR}/GeoDB.dat ${PREFIX}/share/geolizer/
+	${INSTALL_DATA} ${WRKDIR}/GeoDB.dat ${STAGEDIR}${PREFIX}/share/geolizer/
 .endif
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in ${DOC1}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}
-.endfor
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC1:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 .endif
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-.for i in msfree.png sample.conf webalizer.png
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${EXAMPLESDIR}/${i}
-.endfor
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${EXAMPLES1:S,^,${WRKSRC}/,} ${STAGEDIR}${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>

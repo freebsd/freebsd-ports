@@ -1,0 +1,13 @@
+--- stat/stat.orig	2013-11-13 11:44:53.000000000 +0100
++++ stat/stat	2013-11-27 14:25:52.000000000 +0100
+@@ -6,6 +6,10 @@
+ #include <unistd.h>
+ #include <string>
+ 
++#ifdef __FreeBSD__
++#include <errno.h>
++#endif
++
+ #include <bobcat/datetime>
+ #include <bobcat/gs>
+ 

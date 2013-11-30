@@ -14,14 +14,13 @@ LICENSE=	GPLv3
 
 USES=		qmake
 USE_BZIP2=	yes
-USE_QT4=	moc_build rcc_build iconengines_run imageformats_run
+USE_QT4=	moc_build rcc_build iconengines_run imageformats_run \
+		gui
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	CREDITS ChangeLog
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-install:
 	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \

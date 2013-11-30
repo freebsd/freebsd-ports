@@ -1,0 +1,13 @@
+--- signal/signal.orig	2013-10-02 12:35:59.000000000 +0200
++++ signal/signal	2013-11-27 14:28:38.000000000 +0100
+@@ -1,6 +1,10 @@
+ #ifndef INCLUDED_SIGNAL_
+ #define INCLUDED_SIGNAL_
+ 
++#ifdef __FreeBSD__
++#include <stdlib.h>
++#endif
++
+ #include <vector>
+ #include <signal.h>
+ 

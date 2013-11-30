@@ -6,7 +6,7 @@ PORTVERSION=	1.3.3
 CATEGORIES=	java misc
 MASTER_SITES=	http://www.toedter.com/download/
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Date Chooser
 
 USE_ZIP=	yes

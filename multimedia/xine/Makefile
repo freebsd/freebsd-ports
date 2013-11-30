@@ -12,24 +12,14 @@ COMMENT=	X11 multimedia player
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
-# Please update libxine PLUGINSDIR as well (see below)
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		xine:${PORTSDIR}/multimedia/libxine
-RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
-
-OPTIONS_DEFINE=	CACA AALIB LIRC CURL NLS XFT DOCS
-OPTIONS_DEFAULT=	CURL XFT
-OPTIONS_DEFINE_i386=	WIN32_CODECS
-OPTIONS_DEFAULT_i386=	WIN32_CODECS
-
-WIN32_CODECS_DESC=	Enable win32 codecs
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libxine.so:${PORTSDIR}/multimedia/libxine
 
 USE_XZ=		yes
 USE_XORG=	x11 xext xinerama xscrnsaver xt xtst xv xxf86vm
-USES=		gmake pkgconfig
+USES=		desktop-file-utils gmake pkgconfig shared-mime-info
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-vdr-keys \
 		--disable-nvtvsimple
@@ -39,74 +29,39 @@ INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MANLANG=	"" de es fr pl
-MAN1_EN=	aaxine.1 xine-bugreport.1 xine-check.1 xine-remote.1 xine.1
-MAN1_DE=	${MAN1_EN}
-MAN1_ES=	${MAN1_EN}
-MAN1_FR=	xine.1
-MAN1_PL=	aaxine.1 xine-remote.1 xine.1
-
 DOCSDIR=	${PREFIX}/share/doc/xine-ui
-XINE_PLUGINSDIR=	lib/xine/plugins/2.2
+XINE_PLUGINSDIR=	lib/xine/plugins/2.3
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	CACA AALIB LIRC CURL NLS XFT DOCS
+OPTIONS_DEFAULT=	CURL XFT
+OPTIONS_DEFINE_i386=	WIN32_CODECS
+OPTIONS_DEFAULT_i386=	WIN32_CODECS
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MWIN32_CODECS}
-RUN_DEPENDS+=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
+WIN32_CODECS_DESC=	Enable win32 codecs
+WIN32_CODECS_RUN_DEPENDS=	win32-codecs>=0:${PORTSDIR}/multimedia/win32-codecs
 
-CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs
-CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
-.endif
+NLS_USES=	gettext
+NLS_CONFIGURE_OFF=	--disable-nls
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+XFT_USE=	XORG=xft
+XFT_CONFIGURE_OFF=	--disable-xft
 
-.if ${PORT_OPTIONS:MXFT}
-USE_XORG+=	xft
-.else
-CONFIGURE_ARGS+=	--disable-xft
-.endif
+CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_CONFIGURE_OFF=	--without-curl
 
-.if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
-.else
-CONFIGURE_ARGS+=	--without-curl
-.endif
-
-.if ${PORT_OPTIONS:MLIRC}
-LIB_DEPENDS+=	lirc_client:${PORTSDIR}/comms/lirc
-CONFIGURE_ENV+=		LIRC_CFLAGS="-I${LOCALBASE}/include" \
+LIRC_LIB_DEPENDS=	liblirc_client.so:${PORTSDIR}/comms/lirc
+LIRC_CONFIGURE_ENV=		LIRC_CFLAGS="-I${LOCALBASE}/include" \
 			LIRC_LIBS="-L${LOCALBASE}/libs -llirc_client"
-CONFIGURE_ARGS+=	--enable-lirc
-.else
-CONFIGURE_ARGS+=	--disable-lirc
-.endif
+LIRC_CONFIGURE_ENABLE=	lirc
 
-.if ${PORT_OPTIONS:MCACA}
-.if !exists(${LOCALBASE}/${XINE_PLUGINSDIR}/xineplug_vo_out_caca.so)
-IGNORE=		libxine should be compiled with caca support
-.endif
-LIB_DEPENDS+=	caca:${PORTSDIR}/graphics/libcaca
-PLIST_SUB+=	CACA=""
-.else
-CONFIGURE_ARGS+=	--without-caca
-PLIST_SUB+=	CACA="@comment "
-.endif
+CACA_LIB_DEPENDS=	libcaca.so:${PORTSDIR}/graphics/libcaca
+CACA_RUN_DEPENDS=	${LOCALBASE}/${XINE_PLUGINSDIR}/xineplug_vo_out_caca.so:${PORTSDIR}/multimedia/libxine
+CACA_CONFIGURE_OFF=	--without-caca
 
-.if ${PORT_OPTIONS:MAALIB}
-LIB_DEPENDS+=	aa:${PORTSDIR}/graphics/aalib
-CONFIGURE_ARGS+=	--with-aalib
-PLIST_SUB+=	AALIB=""
-.else
-CONFIGURE_ARGS+=	--without-aalib --disable-aalibtest
-PLIST_SUB+=	AALIB="@comment "
-.endif
+AALIB_LIB_DEPENDS=	libaa.so:${PORTSDIR}/graphics/aalib
+AALIB_CONFIGURE_ON=	--with-aalib
+AALIB_CONFIGURE_OFF=	--without-aalib --disable-aalibtest
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -119,14 +74,9 @@ post-patch:
 .endfor
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc \
-		&& ${INSTALL_DATA} README* ${DOCSDIR}
-	@${MKDIR} ${PREFIX}/share/doc/xitk
-	cd ${WRKSRC}/src/xitk/xine-toolkit \
-		&& ${INSTALL_DATA} README ${PREFIX}/share/doc/xitk
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/README* ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/xitk
+	${INSTALL_DATA} ${WRKSRC}/src/xitk/xine-toolkit/README ${STAGEDIR}${PREFIX}/share/doc/xitk
 
 .include <bsd.port.mk>

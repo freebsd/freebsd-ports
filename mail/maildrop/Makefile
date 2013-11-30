@@ -10,7 +10,7 @@
 # MAILDROP_LOG_COLUMNS	lenght of 'File:' line in log - 8; default: 72
 
 PORTNAME=	maildrop
-PORTVERSION=	2.7.0
+PORTVERSION=	2.7.1
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
@@ -135,7 +135,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/etc/quotawarnmsg.sample
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS:S/maildir\//libs\/&/} ${STAGEDIR}${DOCSDIR}
 .if defined(MAILDROP_SUID)
-	${CHMOD} u+s ${STAGEDIR}${PREFIX}/bin/lockmail ${STAGEDIR}${PREFIX}/bin/maildrop 
+	${CHMOD} u+s ${STAGEDIR}${PREFIX}/bin/lockmail ${STAGEDIR}${PREFIX}/bin/maildrop
 .endif
 .if defined(MAILDROP_SGID)
 	${CHMOD} g+s ${STAGEDIR}${PREFIX}/bin/lockmail ${STAGEDIR}${PREFIX}/bin/maildrop

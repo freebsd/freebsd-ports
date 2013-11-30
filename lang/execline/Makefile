@@ -6,7 +6,7 @@ PORTVERSION=	1.08
 CATEGORIES=	lang shells
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight non-interactive sh(1)-like scripting language
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/skalibs/libstddjb.a:${PORTSDIR}/devel/skalibs

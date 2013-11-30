@@ -1,0 +1,13 @@
+--- ifilterstreambuf/ifilterstreambuf.orig	2013-11-13 11:44:52.000000000 +0100
++++ ifilterstreambuf/ifilterstreambuf	2013-11-27 14:52:22.000000000 +0100
+@@ -1,6 +1,10 @@
+ #ifndef INCLUDED_BOBCAT_IFILTERSTREAMBUF_
+ #define INCLUDED_BOBCAT_IFILTERSTREAMBUF_
+ 
++#ifdef __FreeBSD__
++#include <stdio.h>
++#endif
++
+ #include <streambuf>
+ #include <memory>
+ 

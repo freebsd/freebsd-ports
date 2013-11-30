@@ -122,6 +122,7 @@ bin/tomenet.server
 %%DATADIR%%/lib/user/font-ibm.prf
 %%DATADIR%%/lib/user/font-win.prf
 %%DATADIR%%/lib/user/font-win(solid).prf
+%%DATADIR%%/lib/user/font-x11.prf
 %%DATADIR%%/lib/user/graf-ami.prf
 %%DATADIR%%/lib/user/graf-win.prf
 %%DATADIR%%/lib/user/linux_caster.prf

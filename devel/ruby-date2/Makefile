@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.funaba.org/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An alternative date class for Ruby
 
 USE_RUBY=	yes

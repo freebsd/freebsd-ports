@@ -1,21 +1,30 @@
---- src/Makefile.orig	2012-08-01 14:06:03.000000000 +0400
-+++ src/Makefile	2012-08-02 22:24:01.000000000 +0400
-@@ -50,6 +50,9 @@
-   FINAL_LDFLAGS= $(LDFLAGS) $(REDIS_LDFLAGS) -g -ggdb
-   FINAL_LIBS= -ldl -lnsl -lsocket -lm -lpthread
-   DEBUG= -g -ggdb
-+else ifeq ($(uname_S),FreeBSD)
-+  FINAL_CFLAGS?= $(CFLAGS) $(REDIS_CFLAGS) -I${PREFIX}/include
-+  FINAL_LDFLAGS= $(LDFLAGS)
- else
-   FINAL_CFLAGS= $(STD) $(WARN) $(OPT) $(DEBUG) $(CFLAGS) $(REDIS_CFLAGS)
-   FINAL_LDFLAGS= $(LDFLAGS) $(REDIS_LDFLAGS) -g -rdynamic -ggdb
-@@ -79,7 +82,7 @@
- REDIS_CC=$(QUIET_CC)$(CC) $(FINAL_CFLAGS)
- REDIS_LD=$(QUIET_LINK)$(CC) $(FINAL_LDFLAGS)
+--- src/Makefile.orig	2013-07-30 22:20:02.000000000 +0400
++++ src/Makefile	2013-08-13 22:36:30.000000000 +0400
+@@ -22,7 +22,7 @@
+ WARN=-Wall
+ OPT=$(OPTIMIZATION)
  
 -PREFIX?=/usr/local
-+PREFIX:=${PREFIX}
- INSTALL_BIN= $(PREFIX)/bin
- INSTALL= cp -pf
++PREFIX:=$(PREFIX)
+ INSTALL_BIN=$(PREFIX)/bin
+ INSTALL=install
  
+@@ -52,14 +52,15 @@
+ FINAL_CFLAGS=$(STD) $(WARN) $(OPT) $(DEBUG) $(CFLAGS) $(REDIS_CFLAGS)
+ FINAL_LDFLAGS=$(LDFLAGS) $(REDIS_LDFLAGS) $(DEBUG)
+ FINAL_LIBS=-lm
+-DEBUG=-g -ggdb
++#DEBUG=-g -ggdb
+ 
+ ifeq ($(uname_S),SunOS)
+ 	INSTALL=cp -pf
+ 	FINAL_CFLAGS+= -D__EXTENSIONS__ -D_XPG6
+ 	FINAL_LIBS+= -ldl -lnsl -lsocket -lpthread
+-else ifeq ($(uname_S),Darwin)
+-	
++else ifeq ($(uname_S),FreeBSD)
++	FINAL_CFLAGS?= $(CFLAGS) $(REDIS_CFLAGS) -I${PREFIX}/include
++	FINAL_LDFLAGS= $(LDFLAGS)
+ else
+ 	FINAL_LDFLAGS+= -rdynamic
+ 	FINAL_LIBS+= -pthread

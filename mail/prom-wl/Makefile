@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www.h6.dion.ne.jp/~nytheta/software/pub/
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Procmail reader for Wanderlust on GNU Emacs
 
 # This port requires Wanderlust. But we can't decide which Wanderlust to

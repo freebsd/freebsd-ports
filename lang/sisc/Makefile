@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	lang scheme java
 MASTER_SITES=	SF/${PORTNAME}/SISC/${PORTVERSION}
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extensible Java-based Scheme interpreter
 
 USE_JAVA=	yes

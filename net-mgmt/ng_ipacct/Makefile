@@ -13,14 +13,13 @@ COMMENT=	Netgraph IP accounting
 
 LICENSE=	BSD
 
-USES=	kmod
+USES=	kmod uidfix
 
 MAKE_ENV=	BINDIR="${PREFIX}/sbin" KMODDIR=${KMODDIR} NO_XREF=yes
 
 USE_RC_SUBR=	ng_ipacct
 SUB_FILES=	pkg-message
 CFLAGS+=	-DMEM_USE_ZONE
-NEED_ROOT=	yes
 
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
@@ -30,6 +29,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/ng_ipacct/ng_ipacct.h ${STAGEDIR}${PREFIX}/include/netgraph
 	${INSTALL_DATA} ${FILESDIR}/ng_ipacct.conf \
 		${STAGEDIR}${PREFIX}/etc/ng_ipacct.conf.sample
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

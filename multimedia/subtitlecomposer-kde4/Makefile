@@ -1,18 +1,24 @@
 # $FreeBSD$
 
 PORTNAME=	subtitlecomposer
-PORTVERSION=	0.5.3
-PORTREVISION=	5
+PORTVERSION=	0.5.6
 CATEGORIES=	multimedia kde
-MASTER_SITES=	SF/subcomposer/subcomposer/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	GITHUB
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Subtitle editor for KDE
+
+LIB_DEPENDS=	libicui18n.so:${PORTSDIR}/devel/icu
 
 USE_BZIP2=	yes
 USES=		cmake:outsource gettext
 USE_KDE4=	kdeprefix kdelibs automoc4 sharedmime
 USE_QT4=	qmake_build moc_build rcc_build uic_build phonon
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	maxrd2
+GH_TAGNAME=	v${PORTVERSION}
+GH_COMMIT=	74f2f04
 
 OPTIONS_GROUP=	BACKEND
 BACKEND_DESC=	Additional video backens
@@ -25,7 +31,7 @@ XINE_DESC=	Build Xine backend
 XINE_LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine
 XINE_CMAKE_OFF=	-DWITH_Xine:Bool=Off
 
-GSTREAMER_DESC=	Build GStreamer backend (broken)
+GSTREAMER_DESC=	Build GStreamer backend
 GSTREAMER_USE=	GSTREAMER=yes
 GSTREAMER_CMAKE_OFF=	-DWITH_GStreamer:Bool=Off
 

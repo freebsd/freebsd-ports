@@ -31,14 +31,10 @@ post-configure:
 	${REINPLACE_CMD} -e 's|^docdir = .*|docdir = ${EXAMPLESDIR}|' ${WRKSRC}/etc/Makefile
 	${REINPLACE_CMD} -e 's|/usr/local/var|/var|' -e 's|/var/zones|/var/${PORTNAME}|' ${WRKSRC}/etc/yadifad.conf.example
 
-.include <bsd.port.options.mk>
-
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/yadifad.conf.example ${STAGEDIR}${PREFIX}/etc/
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.endif
 	@${MV} ${STAGEDIR}/var/zones ${STAGEDIR}/var/${PORTNAME}
 
 .include <bsd.port.mk>

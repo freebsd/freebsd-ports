@@ -22,7 +22,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 #   Twisted, but the user should feel free to install x11-toolits/py-gnome
 #   separately if desired.
 
-NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
@@ -32,9 +31,6 @@ REINPLACE_ARGS=	-i ''
 MAN1=		manhole.1 pyhtmlizer.1 tap2deb.1 tap2rpm.1 tapconvert.1 trial.1 twistd.1
 
 post-install:
-# permission safeness
-	@${CHMOD} -R ${SHAREMODE} ${PYTHONPREFIX_SITELIBDIR}/twisted/
-	@${CHMOD} -R a+X ${PYTHONPREFIX_SITELIBDIR}/twisted/
-	cd ${WRKSRC}/doc/man/ && ${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1/
+	cd ${WRKSRC}/doc/man/ && ${INSTALL_MAN} ${MAN1} ${STAGEDIR}${MANPREFIX}/man/man1/
 
 .include <bsd.port.mk>

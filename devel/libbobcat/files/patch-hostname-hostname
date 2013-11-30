@@ -1,0 +1,13 @@
+--- hostname/hostname.orig	2013-11-13 11:45:02.000000000 +0100
++++ hostname/hostname	2013-11-27 16:50:05.000000000 +0100
+@@ -1,6 +1,10 @@
+ #ifndef INCLUDED_BOBCAT_HOSTNAME_
+ #define INCLUDED_BOBCAT_HOSTNAME_
+ 
++#ifdef __FreeBSD__
++#include <sys/socket.h>
++#endif
++
+ #include <bobcat/hostent>
+ 
+ namespace FBB

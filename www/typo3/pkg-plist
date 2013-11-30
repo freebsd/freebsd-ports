@@ -4174,6 +4174,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Tests/Unit/ViewHelpers/Uri/EmailViewHelperTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Tests/Unit/ViewHelpers/Uri/ExternalViewHelperTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Tests/Unit/ViewHelpers/ViewHelperBaseTestcase.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Tests/Unit/ViewHelpers/Widget/Controller/PaginateControllerTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/ext_emconf.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/ext_icon.gif
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/ext_localconf.php
@@ -9847,6 +9848,8 @@
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Classes/Controller
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form/Classes
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/form
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Tests/Unit/ViewHelpers/Widget/Controller
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Tests/Unit/ViewHelpers/Widget
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Tests/Unit/ViewHelpers/Uri
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Tests/Unit/ViewHelpers/Security
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/fluid/Tests/Unit/ViewHelpers/Link

@@ -5,11 +5,18 @@ lib/gbrainy/gbrainy.Games.dll
 lib/gbrainy/gbrainy.exe
 lib/gbrainy/gbrainy.exe.config
 libdata/pkgconfig/gbrainy.pc
+man/man6/gbrainy.6.gz
 share/applications/gbrainy.desktop
 share/games/gbrainy/box.svg
 share/games/gbrainy/classic_background.svg
 share/games/gbrainy/clock.svg
 share/games/gbrainy/dartboard.svg
+share/games/gbrainy/faceboy1.svg
+share/games/gbrainy/faceboy2.svg
+share/games/gbrainy/faceboy3.svg
+share/games/gbrainy/facegirl1.svg
+share/games/gbrainy/facegirl2.svg
+share/games/gbrainy/facegirl3.svg
 share/games/gbrainy/family.svg
 share/games/gbrainy/father_son.svg
 share/games/gbrainy/games.xml
@@ -19,9 +26,11 @@ share/games/gbrainy/money.svg
 share/games/gbrainy/notebook_background.svg
 share/games/gbrainy/password.svg
 share/games/gbrainy/people_table.svg
+share/games/gbrainy/right.oga
 share/games/gbrainy/tennis.svg
 share/games/gbrainy/themes.xml
 share/games/gbrainy/verbal_analogies.xml
+share/games/gbrainy/wrong.oga
 share/gnome/help/gbrainy/C/customgame.page
 share/gnome/help/gbrainy/C/difficulty.page
 share/gnome/help/gbrainy/C/export.page
@@ -463,11 +472,13 @@ share/locale/fi/LC_MESSAGES/gbrainy.mo
 share/locale/fr/LC_MESSAGES/gbrainy.mo
 share/locale/gl/LC_MESSAGES/gbrainy.mo
 share/locale/hi/LC_MESSAGES/gbrainy.mo
+share/locale/hr/LC_MESSAGES/gbrainy.mo
 share/locale/hu/LC_MESSAGES/gbrainy.mo
 share/locale/id/LC_MESSAGES/gbrainy.mo
 share/locale/it/LC_MESSAGES/gbrainy.mo
 share/locale/ko/LC_MESSAGES/gbrainy.mo
 share/locale/lv/LC_MESSAGES/gbrainy.mo
+share/locale/oc/LC_MESSAGES/gbrainy.mo
 share/locale/nb/LC_MESSAGES/gbrainy.mo
 share/locale/nl/LC_MESSAGES/gbrainy.mo
 share/locale/pl/LC_MESSAGES/gbrainy.mo
@@ -480,10 +491,12 @@ share/locale/sl/LC_MESSAGES/gbrainy.mo
 share/locale/sr/LC_MESSAGES/gbrainy.mo
 share/locale/sr@latin/LC_MESSAGES/gbrainy.mo
 share/locale/sv/LC_MESSAGES/gbrainy.mo
+share/locale/ta/LC_MESSAGES/gbrainy.mo
 share/locale/te/LC_MESSAGES/gbrainy.mo
 share/locale/th/LC_MESSAGES/gbrainy.mo
 share/locale/tr/LC_MESSAGES/gbrainy.mo
 share/locale/ug/LC_MESSAGES/gbrainy.mo
+share/locale/uk/LC_MESSAGES/gbrainy.mo
 share/locale/vi/LC_MESSAGES/gbrainy.mo
 share/locale/zh_CN/LC_MESSAGES/gbrainy.mo
 share/locale/zh_HK/LC_MESSAGES/gbrainy.mo
@@ -500,6 +513,8 @@ share/pixmaps/gbrainy48.png
 @dirrmtry share/locale/zh_CN
 @dirrmtry share/locale/vi/LC_MESSAGES
 @dirrmtry share/locale/vi
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/tr/LC_MESSAGES
@@ -508,6 +523,8 @@ share/pixmaps/gbrainy48.png
 @dirrmtry share/locale/th
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/ta/LC_MESSAGES
+@dirrmtry share/locale/ta
 @dirrmtry share/locale/sv/LC_MESSAGES
 @dirrmtry share/locale/sv
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
@@ -532,6 +549,8 @@ share/pixmaps/gbrainy48.png
 @dirrmtry share/locale/lv
 @dirrmtry share/locale/nb/LC_MESSAGES
 @dirrmtry share/locale/nb
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/ko/LC_MESSAGES
 @dirrmtry share/locale/ko
 @dirrmtry share/locale/it/LC_MESSAGES
@@ -540,6 +559,8 @@ share/pixmaps/gbrainy48.png
 @dirrmtry share/locale/id
 @dirrmtry share/locale/hu/LC_MESSAGES
 @dirrmtry share/locale/hu
+@dirrmtry share/locale/hr/LC_MESSAGES
+@dirrmtry share/locale/hr
 @dirrmtry share/locale/hi/LC_MESSAGES
 @dirrmtry share/locale/hi
 @dirrmtry share/locale/gl/LC_MESSAGES

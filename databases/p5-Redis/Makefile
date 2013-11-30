@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Redis
-PORTVERSION=	1.9640
+PORTVERSION=	1.9650
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DAMS
@@ -25,4 +25,10 @@ TEST_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501800
+BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.63.02:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
+.endif
+
+.include <bsd.port.post.mk>

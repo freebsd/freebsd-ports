@@ -1,0 +1,91 @@
+--- icmake/install.orig	2013-06-21 11:16:34.000000000 +0200
++++ icmake/install	2013-11-27 22:05:08.000000000 +0100
+@@ -3,7 +3,6 @@
+     if (where == "")
+         where = defaultWhere;
+ 
+-    md(where);
+     return where;
+ }
+ 
+@@ -13,22 +12,15 @@
+ 
+     if (what == "program")
+     {
+-        if (where == "")
+-            where = BINARY;
+-
+-        path = get_path(where);
+-        if (path != "")
+-            md(path);
+-
++        where = setWhere(where + BINARY, BINARY);
+         printf("  INSTALLING the executable `", where, "'\n");
+-        run("icmbuild install program " + where);
++        run("cp tmp/bin/* " + where);
+         exit(0);
+     }
+ 
+     if (what == "skel")
+     {
+-        where = setWhere(where, SKEL);
+-
++        where = setWhere(where + SKEL, SKEL);
+         printf("  INSTALLING skeleton files at `" + where + "'\n");
+         md(where);
+         run("cp skeletons/* " + where);
+@@ -37,8 +29,7 @@
+ 
+     if (what == "man")
+     {
+-        where = setWhere(where, MAN);
+-
++        where = setWhere(where + MAN, MAN);
+         printf("  INSTALLING the manual page at `", where, "'\n");
+         run("gzip -9 < tmp/man/" PROGRAM ".1 > " + where + "/" PROGRAM ".1.gz");
+         exit(0);
+@@ -46,21 +37,18 @@
+ 
+     if (what == "manual")
+     {
+-        where = setWhere(where, MANUAL);
+-
++        where = setWhere(where + MANUAL, MANUAL);
+         printf("  INSTALLING the manual at `", where, "'\n");
+-        run("cp -r tmp/manual " + where);
+-
++        md(where);
++        run("cp -r tmp/manual/* " + where);
+         exit(0);
+     }
+ 
+     if (what == "std")
+     {
+-        where = setWhere(where, STD);
+-
++        where = setWhere(where + STD, STD);
+         printf("  INSTALLING the changelog at `", where, "\n");
+         run("gzip -9 < changelog > " + where + "/changelog.gz");
+-    
+         printf("  INSTALLING the html-manual page at `", where, "\n");
+         run("cp tmp/manhtml/" PROGRAM "man.html " + where);
+         exit(0);
+@@ -68,17 +56,14 @@
+ 
+     if (what == "extra")
+     {
+-        where = setWhere(where, EXTRA);
+-
++        where = setWhere(where + EXTRA, EXTRA);
+         printf("  INSTALLING original bison's docs at `", where + "'\n");
+         md(where + "/bison-docs");
+         run("cp -r documentation/html "
+                   "documentation/bison.ps.org " + where + "/bison-docs");
+-
+         printf("  INSTALLING examples at `", where + "'\n");
+         run("cp -r documentation/examples " + where);
+         run("cp -r documentation/man/calculator " + where + "/examples");
+-
+         printf("  INSTALLING regression tests at `", where + "'\n");
+         run("cp -r documentation/regression " + where);
+         exit(0);

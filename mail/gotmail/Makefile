@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	SF
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A script to fetch mail from a Hotmail or MSN mailbox
 
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \

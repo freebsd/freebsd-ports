@@ -5,7 +5,11 @@ share/icons/hicolor/72x72/apps/tuxfighter.png
 share/icons/hicolor/96x96/apps/tuxfighter.png
 share/pixmaps/tuxfighter.png
 %%DATADIR%%/TuxFighter54.py
+%%DATADIR%%/TuxFighter54.pyc
+%%DATADIR%%/TuxFighter54.pyo
 %%DATADIR%%/TuxFighter_modding.py
+%%DATADIR%%/TuxFighter_modding.pyc
+%%DATADIR%%/TuxFighter_modding.pyo
 %%DATADIR%%/data/babytux1.png
 %%DATADIR%%/data/babytux2.png
 %%DATADIR%%/data/babytux3.png
@@ -56,13 +60,3 @@ share/pixmaps/tuxfighter.png
 %%DATADIR%%/data/winlogoh3.png
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@dirrmtry share/icons/hicolor/96x96/apps
-@dirrmtry share/icons/hicolor/96x96
-@dirrmtry share/icons/hicolor/72x72/apps
-@dirrmtry share/icons/hicolor/72x72
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons

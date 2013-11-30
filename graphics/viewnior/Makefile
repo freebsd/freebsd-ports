@@ -1,4 +1,4 @@
-# Created by: nemysis@gmx.ch
+# Created by: nemysis <nemysis@gmx.ch>
 # $FreeBSD$
 
 PORTNAME=	viewnior
@@ -7,43 +7,33 @@ PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://cloud.github.com/downloads/xsisqox/Viewnior/
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Fast and simple image viewer
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
-RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
-
-GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig shared-mime-info
 USE_AUTOTOOLS=	autoconf
+GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20
 INSTALLS_ICONS=	yes
 
-MAN1=		viewnior.1
-
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 
-OPTIONS_DEFINE=	NLS
-OPTIONS_DEFAULT=	NLS
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$(prefix)/$$(DATADIRNAME)/locale|$$(datarootdir)/locale|' \
+		${WRKSRC}/po/Makefile.in.in
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/man/${MAN1} ${MAN1PREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

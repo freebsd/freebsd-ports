@@ -13,13 +13,13 @@ MASTER_SITES=	http://www.analog.cx/ \
 		http://analog.tzone.it/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Extremely fast program for analysing WWW logfiles
+COMMENT=	Fast program for analysing WWW logfiles
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png
 
 BUILD_WRKSRC=	${WRKSRC}/src
 
@@ -44,11 +44,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lang/* ${DATADIR}/lang
 	@${MKDIR} ${IMGDIR}
 	${INSTALL_DATA} ${WRKSRC}/images/* ${IMGDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.cfg ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/anlgform.html ${EXAMPLESDIR}

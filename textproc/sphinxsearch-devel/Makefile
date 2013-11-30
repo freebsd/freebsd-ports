@@ -1,16 +1,19 @@
 # Created by: Daniel Gerzo <danger@FreeBSD.org>
 # $FreeBSD$
 
+# Note: the Sphinx Storage Engine MySQL plugin is not supported by
+# this port.  You need a patched version of mysql server for that.
+# See http://www.infracaninophile.co.uk/articles/sphinxse.html
+
 PORTNAME=	sphinxsearch
-PORTVERSION=	2.0.1b
-PORTREVISION=	2
+PORTVERSION=	2.2.1
 PORTEPOCH=	1
 CATEGORIES=	textproc databases
-MASTER_SITES=	http://sphinxsearch.com/files/
+MASTER_SITES=	http://sphinxsearch.com/files/ \
+		http://snowball.tartarus.org/dist/:libstemmer
 PKGNAMESUFFIX?=	-devel
-DISTNAME=	sphinx-2.0.1-beta
-
-PATCH_DIST_STRIP=-p1
+DISTNAME=	sphinx-${PORTVERSION}-beta
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	danger@FreeBSD.org
 COMMENT=	Sphinx Full-Text Search Engine
@@ -19,66 +22,73 @@ LICENSE=	GPLv2
 
 LATEST_LINK=	sphinxsearch-devel
 
-CONFLICTS=	sphinxsearch-[0-9]* \
-		dpsearch-[0-9]* \
-		rdb-[0-9]* \
-		swish++-[0-9]* \
-		xaira-[0-9]*
-
 # If expat is present on the system and configure finds it, it will
 # unconditionally link the output binary against it.  There's no way
-# of turning this off. So for consistency, make sure it's always on.
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+# of turning this off.  So for consistency, make sure it's always on.
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
-OPTIONS_DEFINE=	MYSQL PGSQL ICONV OPTIMIZED_CFLAGS ID64 UNIXODBC \
-		DOCS EXAMPLES
-ID64_DESC=	64-bit document and word IDs
-OPTIONS_DEFAULT=	MYSQL ICONV
+OPTIONS_DEFINE=	ICONV ID64 LIBSTEMMER MYSQL OPTIMIZED_CFLAGS PGSQL \
+		SYSLOG UNIXODBC
+OPTIONS_DEFAULT=ICONV MYSQL SYSLOG
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-# The port will successfully compile with both PGSQL and MYSQL support
-# simultaneously.  Not sure how useful that is in practice though.
-
-.if ${PORT_OPTIONS:MMYSQL}
-CONFIGURE_ARGS+=	--with-mysql
-USE_MYSQL=		yes
-.else
-CONFIGURE_ARGS+=	--without-mysql
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-CONFIGURE_ARGS+=	--with-pgsql
-USE_PGSQL=		yes
-.else
-CONFIGURE_ARGS+=	--without-pgsql
-.endif
-
-.if ${PORT_OPTIONS:MICONV}
-CONFIGURE_ARGS+=        --with-iconv
-USES+=              	iconv
-.else
-CONFIGURE_ARGS+=        --without-iconv
-.endif
-
-.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-CXXFLAGS+=              -O3 -fomit-frame-pointer
-.endif
+ICONV_CONFIGURE_WITH=	iconv
+ICONV_USES=		iconv
+ICONV_LDFLAGS=		${ICONV_LIB}
 
 # Changes document and word IDs to a 64bit type, useful if you have
 # more than about 4.2E9 such items to deal with.  Means corresponding
 # changes in DB schema.  Disabled by default.
-.if ${PORT_OPTIONS:MID64}
-CONFIGURE_ARGS+=        --enable-id64
+ID64_DESC=		Use 64-bit document and word IDs
+ID64_CONFIGURE_ENABLE=	id64
+
+# Note: The snowball project doesn't release numbered versions of it's
+# pre-processors.  Instead, at arbitrary but fairly long intervals a
+# snapshot of their source repository is turned into a tarball (always
+# the same filename) and placed on their web site.  It's like they
+# want to make it as hard as possible for anyone to package and use
+# their software.
+#
+# Adds support for two additional word stemmming pre-processors from
+# the Snowball project (http://snowball.tartarus.org/) -- these
+# essentially do exactly the same thing as the built in English,
+# Russian and Czech stemmers but also support French, Spanish,
+# Portuguese, Italian, Romanian, German, Dutch, Swedish, Norwegian,
+# Danish, Finnish, Hungarian.  Disabled by default.
+LIBSTEMMER_DESC=	Compile with libstemmer support
+LIBSTEMMER_CONFIGURE_WITH=libstemmer
+LIBSTEMMER_DISTNAME=	libstemmer_c
+LIBSTEMMER_DISTFILES=	${LIBSTEMMER_DISTNAME}.tgz:libstemmer
+
+.if make(makesum) || defined(FETCH_ALL)
+OPTIONS_SET_FORCE= LIBSTEMMER
 .endif
 
-.if ${PORT_OPTIONS:MUNIXODBC}
-CONFIGURE_ARGS+=        --with-unixodbc
-LIB_DEPENDS+=           odbc.2:${PORTSDIR}/databases/unixODBC
-.else
-CONFIGURE_ARGS+=        --without-unixodbc
-.endif
+# The port will successfully compile with both PGSQL and MYSQL support
+# simultaneously.  Not sure how useful that is in practice though.
+
+MYSQL_CONFIGURE_WITH=	mysql
+MYSQL_CONFIGURE_ON=	--with-mysql-includes=${LOCALBASE}/include/mysql \
+			--with-mysql-libs=${LOCALBASE}/lib/mysql
+MYSQL_USE=		mysql
+
+OPTIMIZED_CFLAGS_CXXFLAGS=-O3 -fomit-frame-pointer
+
+PGSQL_CONFIGURE_WITH=	pgsql
+PGSQL_CONFIGURE_ON=	--with-pgsql-includes=${LOCALBASE}/include \
+			--with-pgsql-libs=${LOCALBASE}/lib
+PGSQL_USE=		pgsql
+
+SYSLOG_DESC=		Enable logging via syslog
+SYSLOG_CONFIGURE_WITH=	syslog
+
+UNIXODBC_CONFIGURE_WITH=unixodbc
+UNIXODBC_LIB_DEPENDS=	odbc:${PORTSDIR}/databases/unixODBC
+
+
+CONFLICTS=	sphinxsearch-[0-9]* dpsearch-[0-9]* rdb-[0-9]* \
+		swish++-[0-9]* xaira-[0-9]*
+
+.include <bsd.port.options.mk>
 
 USERS?=		_sphinx
 GROUPS?=	_sphinx
@@ -110,14 +120,17 @@ PORTEXAMPLES=	*
 
 .if ${PORT_OPTIONS:MDOCS}
 DOCS=		doc/sphinx.css doc/sphinx.html doc/sphinx.txt doc/sphinx.xml
+DOCSRC=		${WRKSRC}/doc
+MAN1SRC=	indexer.1 indextool.1 search.1 spelldump.1
+MAN8SRC=	searchd.8
 .endif
 
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
+post-extract:
+.if ${PORT_OPTIONS:MLIBSTEMMER}
+	@( cd ${WRKDIR} && ${COPYTREE_SHARE} ${LIBSTEMMER_DISTNAME} ${WRKSRC} )
 .endif
 
 # Fix up the sample configuration file to correspond to FreeBSD norms
-
 post-patch:
 	@${REINPLACE_CMD} \
 	    -e "s!@CONFDIR@/log/searchd.pid!${SPHINX_RUN}/searchd.pid!"	   \
@@ -125,34 +138,36 @@ post-patch:
 	    -e "s!@CONFDIR@/log/searchd.log!${SPHINX_LOG}/searchd.log!"	   \
 	    -e "s!@CONFDIR@!${SPHINX_DIR}!"				   \
 	    ${WRKSRC}/sphinx.conf.in
-
-do-install: install-bin install-docs install-examples
-
-install-bin:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/indexer ${PREFIX}/bin/indexer
-	${INSTALL_PROGRAM} ${WRKSRC}/src/search  ${PREFIX}/bin/search
-	${INSTALL_PROGRAM} ${WRKSRC}/src/searchd ${PREFIX}/sbin/searchd
-	${INSTALL_DATA}	   ${WRKSRC}/sphinx.conf.dist ${CFGFILE}.sample
-
-install-docs:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	${SED} -e 's/"1"/"8"/' ${DOCSRC}/searchd.1 > ${DOCSRC}/searchd.8
+.for man in ${MAN1}
+	${SED} -i~ -e 's/\\fBsearchd\\fR(1)/\\fBsearchd\\fR(8)/' \
+		${DOCSRC}/${man}
 .endfor
 .endif
+
+do-install: install-bin install-docs install-man install-examples
+
+install-bin:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/indexer   ${STAGEDIR}${PREFIX}/bin/indexer
+	${INSTALL_PROGRAM} ${WRKSRC}/src/indextool ${STAGEDIR}${PREFIX}/bin/indextool
+	${INSTALL_PROGRAM} ${WRKSRC}/src/search	   ${STAGEDIR}${PREFIX}/bin/search
+	${INSTALL_PROGRAM} ${WRKSRC}/src/spelldump ${STAGEDIR}${PREFIX}/bin/spelldump
+	${INSTALL_PROGRAM} ${WRKSRC}/src/searchd   ${STAGEDIR}${PREFIX}/sbin/searchd
+	${INSTALL_DATA}	   ${WRKSRC}/sphinx.conf.dist ${STAGEDIR}${CFGFILE}.sample
+
+install-docs:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}/${DOCSDIR})
+
+install-man:
+	(cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MAN1SRC} ${STAGEDIR}${MANPREFIX}/man/man1)
+	(cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MAN8SRC} ${STAGEDIR}${MANPREFIX}/man/man8)
 
 install-examples:
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-.for example in ${EXAMPLES}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${example} ${EXAMPLESDIR}
-.endfor
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${EXAMPLES} ${STAGEDIR}${EXAMPLESDIR})
 .endif
-
-post-install-cfg:
-	@if [ ! -f ${CFGFILE} ]; then \
-	  ${CP} -p ${CFGFILE}.sample ${CFGFILE} ; \
-	fi
 
 .include <bsd.port.mk>

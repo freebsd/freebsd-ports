@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION}
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetOffice is a free web based project-management environment
 
 NO_BUILD=	yes

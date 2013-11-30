@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# $FreeBSD$
+# KEYWORD: firstboot
+# PROVIDE: firstboot_pkgs
+# REQUIRE: NETWORKING
+# BEFORE: LOGIN
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf (in the disk
+# image, since this only runs on the first boot) to enable this:
+#
+# firstboot_pkgs_enable="YES"
+#
+# and place a list of packages in firstboot_pkgs_list, e.g.,
+#
+# firstboot_pkgs_list="apache22 php5 mysql56-server"
+
+. /etc/rc.subr
+
+: ${firstboot_pkgs_enable:="NO"}
+
+name="firstboot_pkgs"
+rcvar=firstboot_pkgs_enable
+start_cmd="firstboot_pkgs_run"
+stop_cmd=":"
+
+firstboot_pkgs_run()
+{
+
+	# Bootstrap if necessary
+	if ! pkg -N 2>/dev/null; then
+		env ASSUME_ALWAYS_YES=YES pkg bootstrap
+	fi
+
+	# Install requested packages, if any
+	if ! [ -z "$firstboot_pkgs_list" ]; then
+		env ASSUME_ALWAYS_YES=YES pkg install $firstboot_pkgs_list
+	fi
+}
+
+load_rc_config $name
+run_rc_command "$1"

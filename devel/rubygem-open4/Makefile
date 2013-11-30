@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Open4 manages child processes and their io handles
 
+LICENSE=	BSD	# and Ruby license
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

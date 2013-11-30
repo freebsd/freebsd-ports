@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}-java/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	java-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of BEEP core and BEEP mapping for TCP in Java
 
 RUN_DEPENDS=	${JAVALIBDIR}/xercesImpl.jar:${PORTSDIR}/textproc/xerces-j

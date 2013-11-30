@@ -1,0 +1,13 @@
+--- sharedmemory/sharedmemory.orig	2013-11-22 08:50:45.000000000 +0100
++++ sharedmemory/sharedmemory	2013-11-27 14:38:27.000000000 +0100
+@@ -1,6 +1,10 @@
+ #ifndef INCLUDED_BOBCAT_SHAREDMEMORY_
+ #define INCLUDED_BOBCAT_SHAREDMEMORY_
+ 
++#ifdef __FreeBSD__
++#include <stdio.h>
++#endif
++
+ #include <ios>
+ 
+ #include <bobcat/fswap>

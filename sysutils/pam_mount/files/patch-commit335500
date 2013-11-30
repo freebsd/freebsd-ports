@@ -1,0 +1,145 @@
+# Patch for commit 33550036cb0c9311c9dc4da9b3b359435319420e (pam-mount)
+# http://sourceforge.net/p/pam-mount/pam-mount/ci/33550036cb0c9311c9dc4da9b3b359435319420e/
+# Log: src: update for libHX 3.12
+# Authored by: Jan Engelhardt 2011-12-02
+
+--- ./configure.ac.orig	2011-10-06 22:48:08.000000000 +1100
++++ ./configure.ac	2013-06-08 14:52:22.855624000 +1000
+@@ -63,7 +63,7 @@
+ AM_CONDITIONAL([HAVE_MDIO], [test "x$ac_cv_header_sys_mdioctl_h" = "xyes"])
+ AM_CONDITIONAL([HAVE_VND], [test "x$ac_cv_header_dev_vndvar_h" = "xyes"])
+ 
+-PKG_CHECK_MODULES([libHX], [libHX >= 3.10.1])
++PKG_CHECK_MODULES([libHX], [libHX >= 3.12])
+ PKG_CHECK_MODULES([libxml], [libxml-2.0 >= 2.6])
+ 
+ AC_ARG_WITH(
+--- ./src/autoloop.c.orig	2011-10-06 22:48:08.000000000 +1100
++++ ./src/autoloop.c		2013-06-08 14:45:47.846247000 +1000
+@@ -54,7 +54,8 @@
+ 		HXOPT_AUTOHELP,
+ 		HXOPT_TABLEEND,
+ 	};
+-	if (HX_getopt(options_table, argc, argv, HXOPT_USAGEONERR) <= 0)
++	if (HX_getopt(options_table, argc, argv, HXOPT_USAGEONERR) !=
++	    HXOPT_ERR_SUCCESS)
+ 		return false;
+ 	if (*argc != 2) {
+ 		fprintf(stderr, "Usage: %s file\n", HX_basename(**argv));
+--- ./src/ehd.c.orig	2011-10-06 22:48:08.000000000 +1100
++++ ./src/ehd.c		2013-06-08 14:46:27.566540000 +1000
+@@ -526,7 +526,8 @@
+ 		HXOPT_TABLEEND,
+ 	};
+ 
+-	if (HX_getopt(options_table, argc, argv, HXOPT_USAGEONERR) <= 0)
++	if (HX_getopt(options_table, argc, argv, HXOPT_USAGEONERR) !=
++	    HXOPT_ERR_SUCCESS)
+ 		return false;
+ 
+ 	pg->interactive = isatty(fileno(stdin));
+--- ./src/misc.c.orig	2011-10-06 22:48:08.000000000 +1100
++++ ./src/misc.c	2013-06-08 14:47:27.515576000 +1000
+@@ -159,7 +159,7 @@
+ {
+ 	char *filled;
+ 
+-	if (HXformat2_aprintf(vinfo, &filled, arg) == 0)
++	if (HXformat_aprintf(vinfo, &filled, arg) == 0)
+ 		/*
+ 		 * This case may happen with e.g. %(before="-o" OPTIONS) where
+ 		 * OPTIONS is empty. And options expanding to nothing are
+--- ./src/mount.c.orig	2011-10-06 22:48:08.000000000 +1100
++++ ./src/mount.c	2013-06-08 14:47:54.655610000 +1000
+@@ -487,7 +487,7 @@
+ 	string = HXmc_meminit(NULL, 0);
+ 
+ 	for (i = config->command[CMD_FSCK]->first; i != NULL; i = i->next) {
+-		if (HXformat2_aprintf(vinfo, &current, i->ptr) > 0) {
++		if (HXformat_aprintf(vinfo, &current, i->ptr) > 0) {
+ 			HXmc_strcat(&string, current);
+ 			HXmc_strcat(&string, " ");
+ 		}
+--- ./src/mtab.c.orig	2011-10-06 22:48:08.000000000 +1100
++++ ./src/mtab.c	2013-06-08 14:48:18.965526000 +1000
+@@ -138,7 +138,7 @@
+ 			l0g("HX_dirname: %s\n", strerror(errno));
+ 			return -errno;
+ 		}
+-		ret = HX_mkdir(dirname);
++		ret = HX_mkdir(dirname, S_IRUGO | S_IXUGO | S_IWUSR);
+ 		free(dirname);
+ 		if (ret < 0) {
+ 			l0g("HX_mkdir: %s\n", strerror(-ret));
+--- ./src/mtcrypt.c.orig	2011-10-06 22:48:08.000000000 +1100
++++ ./src/mtcrypt.c		2013-06-08 14:49:23.036264000 +1000
+@@ -185,7 +185,8 @@
+ 	bool kfpt;
+ 	int ret;
+ 
+-	if (HX_getopt(options_table, argc, argv, HXOPT_USAGEONERR) <= 0)
++	if (HX_getopt(options_table, argc, argv, HXOPT_USAGEONERR) !=
++	    HXOPT_ERR_SUCCESS)
+ 		return false;
+ 
+ 	pmtlog_path[PMTLOG_DBG][PMTLOG_STDERR] = Debug;
+@@ -508,7 +509,8 @@
+ 	};
+ 	int ret;
+ 
+-	if (HX_getopt(options_table, argc, argv, HXOPT_USAGEONERR) <= 0)
++	if (HX_getopt(options_table, argc, argv, HXOPT_USAGEONERR) !=
++	    HXOPT_ERR_SUCCESS)
+ 		return false;
+ 
+ 	pmtlog_path[PMTLOG_DBG][PMTLOG_STDERR] = Debug;
+--- ./src/pam_mount.h	2011-10-06 22:48:08.000000000 +1100
++++ ./src/pam_mount.h	2013-06-08 14:50:03.445549000 +1000
+@@ -15,12 +15,6 @@
+ #	define EXPORT_SYMBOL
+ #endif
+ 
+-#ifndef S_IRXG
+-#	define S_IRXG (S_IRGRP | S_IXGRP)
+-#endif
+-#ifndef S_IRXO
+-#	define S_IRXO (S_IROTH | S_IXOTH)
+-#endif
+ #define sizeof_z(x) (sizeof(x) - 1)
+ 
+ /*
+--- ./src/pmvarrun.c.orig	2011-10-06 22:48:08.000000000 +1100
++++ ./src/pmvarrun.c		2013-06-08 14:51:23.506567000 +1000
+@@ -296,10 +296,11 @@
+  */
+ static int create_var_run(void)
+ {
++	static const unsigned int mode = S_IRUGO | S_IXUGO | S_IWUSR;
+ 	int ret;
+ 
+ 	w4rn("creating " VAR_RUN_PMT);
+-	if (HX_mkdir(VAR_RUN_PMT) < 0) {
++	if (HX_mkdir(VAR_RUN_PMT, mode) < 0) {
+ 		ret = -errno;
+ 		l0g("unable to create " VAR_RUN_PMT ": %s\n", strerror(errno));
+ 		return ret;
+@@ -314,7 +315,7 @@
+ 	 * 0755: `su` creates file group owned by user and then releases root
+ 	 * permissions. User needs to be able to access file on logout.
+ 	 */
+-	if (chmod(VAR_RUN_PMT, S_IRWXU | S_IRXG | S_IRXO) < 0) {
++	if (chmod(VAR_RUN_PMT, mode) < 0) {
+ 		ret = -errno;
+ 		l0g("unable to chmod " VAR_RUN_PMT ": %s\n", strerror(errno));
+ 		return ret;
+--- ./src/rdconf1.c.orig	2011-10-06 22:48:08.000000000 +1100
++++ ./src/rdconf1.c		2013-06-08 14:51:47.165542000 +1000
+@@ -126,7 +126,7 @@
+ 
+ 	if (*dest_pptr == NULL)
+ 		return true;
+-	HXformat2_aprintf(vinfo, &tmp, *dest_pptr);
++	HXformat_aprintf(vinfo, &tmp, *dest_pptr);
+ 	*dest_pptr = xstrdup(tmp);
+ 	HXmc_free(tmp);
+ 	return true;

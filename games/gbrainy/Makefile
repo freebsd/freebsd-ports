@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gbrainy
-PORTVERSION=	2.1.5
+PORTVERSION=	2.2.2
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	http://gent.softcatala.org/jmas/gbrainy/
@@ -22,10 +22,8 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN6=		gbrainy.6
 INSTALLS_ICONS=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

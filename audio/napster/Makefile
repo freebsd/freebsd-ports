@@ -6,7 +6,7 @@ PORTVERSION=	1.5.4
 CATEGORIES+=	audio net
 MASTER_SITES=	SF/nap/nap/${PORTVERSION}
 
-MAINTAINER?=	araujo@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	An MP3 sharing, search, and chat client for the OpenNAP network
 
 CONFLICTS?=	ru-nap-*

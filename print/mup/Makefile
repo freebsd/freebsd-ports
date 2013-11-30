@@ -7,7 +7,7 @@ CATEGORIES=	print audio
 MASTER_SITES=	ftp://ftp.arkkra.com/pub/unix/
 DISTFILES=	mup${PORTVERSION:S/.//}src.tar.gz
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A shareware program for typesetting music
 
 MAN1=		mup.1 mkmupfnt.1 mupdisp.1 mupprnt.1

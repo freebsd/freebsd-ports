@@ -17,69 +17,104 @@ bin/cxfreeze-quickstart
 %%PYTHON_SITELIBDIR%%/cx_Freeze/hooks.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/hooks.pyc
 %%PYTHON_SITELIBDIR%%/cx_Freeze/hooks.pyo
+%%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/Console.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/Console.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/Console.pyo
+%%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/ConsoleKeepPath.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/ConsoleKeepPath.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/ConsoleKeepPath.pyo
+%%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/ConsoleSetLibPath.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/ConsoleSetLibPath.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/ConsoleSetLibPath.pyo
+%%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/SharedLib.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/SharedLib.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/SharedLib.pyo
+%%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/SharedLibSource.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/SharedLibSource.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/SharedLibSource.pyo
 %%PYTHON_SITELIBDIR%%/cx_Freeze/macdist.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/macdist.pyc
 %%PYTHON_SITELIBDIR%%/cx_Freeze/macdist.pyo
-%%PYTHON_SITELIBDIR%%/cx_Freeze/setupwriter.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/setupwriter.pyc
-%%PYTHON_SITELIBDIR%%/cx_Freeze/setupwriter.pyo
-%%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/Console.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/Console3.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/ConsoleKeepPath.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/ConsoleKeepPath3.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/ConsoleSetLibPath.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/SharedLib.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/SharedLibSource.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/main.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/main.pyc
 %%PYTHON_SITELIBDIR%%/cx_Freeze/main.pyo
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/advanced/advanced_1.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/advanced/advanced_2.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/advanced/modules/testfreeze_1.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/advanced/modules/testfreeze_2.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/advanced/setup.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/matplotlib/setup.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/matplotlib/test_matplotlib.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/PyQt4/PyQt4app.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/PyQt4/PyQt4app.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/PyQt4/PyQt4app.pyo
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/PyQt4/setup.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/pkg1/__init__.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/pkg1/pkg2/__init__.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/pkg1/pkg2/sub3.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/pkg1/pkg2/sub5.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/pkg1/sub1.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/pkg1/sub2.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/pkg1/sub4.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/pkg1/sub6.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/relimport.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/setup.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/service/Config.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/service/ServiceHandler.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/service/setup.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/simple/hello.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/simple/setup.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/wx/setup.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/wx/wxapp.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/zope/setup.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/zope/qotd.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/PyQt4/setup.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/PyQt4/setup.pyo
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/Tkinter/SimpleTkApp.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/Tkinter/SimpleTkApp.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/Tkinter/SimpleTkApp.pyo
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/Tkinter/setup.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/Tkinter/setup.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/Tkinter/setup.pyo
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/advanced/advanced_1.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/advanced/advanced_1.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/advanced/advanced_1.pyo
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/advanced/advanced_2.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/advanced/advanced_2.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/advanced/advanced_2.pyo
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/advanced/setup.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/advanced/setup.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/advanced/setup.pyo
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/matplotlib/setup.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/matplotlib/setup.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/matplotlib/setup.pyo
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/matplotlib/test_matplotlib.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/matplotlib/test_matplotlib.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/matplotlib/test_matplotlib.pyo
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/relimport.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/relimport.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/relimport.pyo
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/setup.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/setup.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/setup.pyo
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/service/Config.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/service/Config.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/service/Config.pyo
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/service/ServiceHandler.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/service/ServiceHandler.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/service/ServiceHandler.pyo
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/service/setup.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/service/setup.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/service/setup.pyo
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/simple/hello.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/simple/hello.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/simple/hello.pyo
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/simple/setup.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/simple/setup.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/simple/setup.pyo
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/wx/setup.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/wx/setup.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/wx/setup.pyo
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/wx/wxapp.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/wx/wxapp.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/wx/wxapp.pyo
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/zope/qotd.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/zope/qotd.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/zope/qotd.pyo
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/zope/setup.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/zope/setup.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/zope/setup.pyo
+%%PYTHON_SITELIBDIR%%/cx_Freeze/setupwriter.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/setupwriter.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/setupwriter.pyo
 %%PYTHON_SITELIBDIR%%/cx_Freeze/util.so
 %%PYTHON_SITELIBDIR%%/cx_Freeze/windist.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/windist.pyc
 %%PYTHON_SITELIBDIR%%/cx_Freeze/windist.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/zope
-@dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/Tkinter
-@dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/wx
-@dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/service
-@dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/simple
-@dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/pkg1/pkg2
-@dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/pkg1
-@dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport
-@dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/matplotlib
-@dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/PyQt4
-@dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/advanced/modules
-@dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/advanced
-@dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples
-@dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts
-@dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/bases
-@dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze
+@dirrmtry %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/zope
+@dirrmtry %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/wx
+@dirrmtry %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/simple
+@dirrmtry %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/service
+@dirrmtry %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport
+@dirrmtry %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/matplotlib
+@dirrmtry %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/advanced
+@dirrmtry %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/Tkinter
+@dirrmtry %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/PyQt4
+@dirrmtry %%PYTHON_SITELIBDIR%%/cx_Freeze/samples
+@dirrmtry %%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts
+@dirrmtry %%PYTHON_SITELIBDIR%%/cx_Freeze/bases
+@dirrmtry %%PYTHON_SITELIBDIR%%/cx_Freeze

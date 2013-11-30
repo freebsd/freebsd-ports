@@ -14,6 +14,7 @@ LICENSE=	BSD
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYTHON_PY3K_PLIST_HACK=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|setuptools|do_not_use_&|' ${WRKSRC}/${PYSETUP}

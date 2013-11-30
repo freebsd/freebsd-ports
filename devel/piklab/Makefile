@@ -15,7 +15,7 @@ OPTIONS_DEFINE=	KDE4
 OPTIONS_DEFAULT=KDE4
 
 USE_BZIP2=	yes
-DOS2UNIX_FILES=	Piklab.cmake
+DOS2UNIX_FILES=	cmake/Piklab.cmake
 USE_QT4=	corelib gui qt3support qtestlib xml \
 		moc_build qmake_build rcc_build uic_build
 USES=		cmake gettext readline dos2unix

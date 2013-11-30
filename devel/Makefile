@@ -324,7 +324,6 @@
     SUBDIR += cxref
     SUBDIR += cxxtest
     SUBDIR += cxxtools
-    SUBDIR += czmq
     SUBDIR += d-feet
     SUBDIR += darts
     SUBDIR += dasm
@@ -3508,6 +3507,7 @@
     SUBDIR += py-botocore
     SUBDIR += py-cclib
     SUBDIR += py-celery
+    SUBDIR += py-cffi
     SUBDIR += py-cfgparse
     SUBDIR += py-cheetah
     SUBDIR += py-ciphon
@@ -3544,7 +3544,6 @@
     SUBDIR += py-diazo
     SUBDIR += py-dirspec
     SUBDIR += py-distorm
-    SUBDIR += py-distribute
     SUBDIR += py-distutils-extra
     SUBDIR += py-docopt
     SUBDIR += py-dogpile.cache
@@ -3697,6 +3696,7 @@
     SUBDIR += py-pycalendar
     SUBDIR += py-pycallgraph
     SUBDIR += py-pycerberus
+    SUBDIR += py-pycparser
     SUBDIR += py-pydasm
     SUBDIR += py-pyechonest
     SUBDIR += py-pyev
@@ -3767,6 +3767,7 @@
     SUBDIR += py-simpleparse
     SUBDIR += py-simpletal
     SUBDIR += py-simpy
+    SUBDIR += py-singledispatch
     SUBDIR += py-sip
     SUBDIR += py-six
     SUBDIR += py-smmap
@@ -4527,11 +4528,11 @@
     SUBDIR += yajl-tcl
     SUBDIR += yaml-cpp
     SUBDIR += yasm
+    SUBDIR += yasm-devel
     SUBDIR += z80-asm
     SUBDIR += z80asm
     SUBDIR += z80ex
     SUBDIR += zmq
-    SUBDIR += zmq-devel
     SUBDIR += zookeeper
     SUBDIR += zpu-binutils
     SUBDIR += zpu-gcc

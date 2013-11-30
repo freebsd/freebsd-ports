@@ -64,9 +64,6 @@ regression-test regression test check:	build
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/IlmImf/ImfDeepImageStateAttribute.h \
-		${STAGEDIR}${PREFIX}/include/${PORTNAME}/
-
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR2}

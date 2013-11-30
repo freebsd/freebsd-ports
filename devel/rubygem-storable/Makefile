@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Marshal Ruby classes into and out of multiple formats
 
+LICENSE=	MIT
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

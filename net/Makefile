@@ -91,6 +91,7 @@
     SUBDIR += cvsupchk
     SUBDIR += cvsync
     SUBDIR += cyphesis
+    SUBDIR += czmq
     SUBDIR += daemonlogger
     SUBDIR += dante
     SUBDIR += daq
@@ -355,6 +356,8 @@
     SUBDIR += libutp
     SUBDIR += libvncserver
     SUBDIR += libzapojit
+    SUBDIR += libzmq3
+    SUBDIR += libzmq4
     SUBDIR += liferea
     SUBDIR += linc
     SUBDIR += linc-reference
@@ -474,6 +477,7 @@
     SUBDIR += openldap24-server
     SUBDIR += openmcu
     SUBDIR += openmpi
+    SUBDIR += openmpi-devel
     SUBDIR += openmq
     SUBDIR += openmq-client
     SUBDIR += openntpd

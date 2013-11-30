@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES+=	devel
 MASTER_SITES=	http://public.perforce.com/public/perforce/utils/c4/
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A CVS-like Frontend to Perforce
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

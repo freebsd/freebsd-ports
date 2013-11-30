@@ -1,0 +1,12 @@
+--- arg/arg.orig	2013-11-13 11:44:52.000000000 +0100
++++ arg/arg	2013-11-27 16:37:01.000000000 +0100
+@@ -5,6 +5,9 @@
+         Singleton Class built around getopt() and getopt_long() (3)
+ */
+ 
++#ifdef __FreeBSD__
++#include <errno.h>
++#endif
+ 
+ #include <string>
+ #include <vector>

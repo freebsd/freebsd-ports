@@ -134,6 +134,7 @@
     SUBDIR += gstreamer1-plugins-v4l2
     SUBDIR += gstreamer1-plugins-vpx
     SUBDIR += gstreamer1-plugins-x264
+    SUBDIR += gstreamer1-vaapi
     SUBDIR += gstreamermm
     SUBDIR += gtk-recordmydesktop
     SUBDIR += gtk-youtube-viewer
@@ -202,6 +203,7 @@
     SUBDIR += linux_dvbwrapper-kmod
     SUBDIR += linux_v4l2wrapper-kmod
     SUBDIR += lives
+    SUBDIR += livestreamer
     SUBDIR += lsdvd
     SUBDIR += lxdvdrip
     SUBDIR += m2tstoavi
@@ -286,6 +288,7 @@
     SUBDIR += py-kaa-base
     SUBDIR += py-kaa-imlib2
     SUBDIR += py-kaa-metadata
+    SUBDIR += py-librtmp
     SUBDIR += py-mlt
     SUBDIR += py-openlp
     SUBDIR += py-periscope

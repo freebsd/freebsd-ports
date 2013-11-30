@@ -5,6 +5,25 @@ bin/xine
 bin/xine-bugreport
 bin/xine-check
 bin/xine-remote
+man/de/man1/aaxine.1.gz
+man/de/man1/xine-bugreport.1.gz
+man/de/man1/xine-check.1.gz
+man/de/man1/xine-remote.1.gz
+man/de/man1/xine.1.gz
+man/es/man1/aaxine.1.gz
+man/es/man1/xine-bugreport.1.gz
+man/es/man1/xine-check.1.gz
+man/es/man1/xine-remote.1.gz
+man/es/man1/xine.1.gz
+man/fr/man1/xine.1.gz
+man/man1/aaxine.1.gz
+man/man1/xine-bugreport.1.gz
+man/man1/xine-check.1.gz
+man/man1/xine-remote.1.gz
+man/man1/xine.1.gz
+man/pl/man1/aaxine.1.gz
+man/pl/man1/xine-remote.1.gz
+man/pl/man1/xine.1.gz
 share/applications/xine.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README.config_en
 %%PORTDOCS%%%%DOCSDIR%%/README.cs.0.Introduction
@@ -155,5 +174,3 @@ share/pixmaps/xine.xpm
 @dirrmtry man/es
 @dirrmtry man/de/man1
 @dirrmtry man/de
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

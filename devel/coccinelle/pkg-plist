@@ -1,76 +1,31 @@
 bin/spatch
-lib/dllpycaml_stubs.so
-share/coccinelle/commons/common.cmi
-share/coccinelle/commons/common_extra.cmi
-share/coccinelle/commons/glimpse.cmi
-share/coccinelle/commons/interfaces.cmi
-share/coccinelle/commons/oarray.cmi
-share/coccinelle/commons/oassoc.cmi
-share/coccinelle/commons/objet.cmi
-share/coccinelle/commons/ocollection.cmi
-share/coccinelle/commons/ofullcommon.cmi
-share/coccinelle/commons/ograph.cmi
-share/coccinelle/commons/ograph_extended.cmi
-share/coccinelle/commons/ograph_simple.cmi
-share/coccinelle/commons/osequence.cmi
-share/coccinelle/commons/oset.cmi
-share/coccinelle/commons/parser_combinators.cmi
-share/coccinelle/commons/seti.cmi
-share/coccinelle/commons/sexp_common.cmi
-share/coccinelle/ocaml/coccilib.cmi
-share/coccinelle/parsing_c/ast_c.cmi
-share/coccinelle/parsing_c/comment_annotater_c.cmi
-share/coccinelle/parsing_c/compare_c.cmi
-share/coccinelle/parsing_c/control_flow_c.cmi
-share/coccinelle/parsing_c/control_flow_c_build.cmi
-share/coccinelle/parsing_c/cpp_analysis_c.cmi
-share/coccinelle/parsing_c/cpp_ast_c.cmi
-share/coccinelle/parsing_c/cpp_token_c.cmi
-share/coccinelle/parsing_c/flag_parsing_c.cmi
-share/coccinelle/parsing_c/lexer_c.cmi
-share/coccinelle/parsing_c/lexer_parser.cmi
-share/coccinelle/parsing_c/lib_parsing_c.cmi
-share/coccinelle/parsing_c/parse_c.cmi
-share/coccinelle/parsing_c/parser_c.cmi
-share/coccinelle/parsing_c/parsing_consistency_c.cmi
-share/coccinelle/parsing_c/parsing_hacks.cmi
-share/coccinelle/parsing_c/parsing_recovery_c.cmi
-share/coccinelle/parsing_c/parsing_stat.cmi
-share/coccinelle/parsing_c/pretty_print_c.cmi
-share/coccinelle/parsing_c/semantic_c.cmi
-share/coccinelle/parsing_c/sexp_ast_c.cmi
-share/coccinelle/parsing_c/test_parsing_c.cmi
-share/coccinelle/parsing_c/token_c.cmi
-share/coccinelle/parsing_c/token_helpers.cmi
-share/coccinelle/parsing_c/token_views_c.cmi
-share/coccinelle/parsing_c/type_annoter_c.cmi
-share/coccinelle/parsing_c/type_c.cmi
-share/coccinelle/parsing_c/unparse_c.cmi
-share/coccinelle/parsing_c/unparse_cocci.cmi
-share/coccinelle/parsing_c/unparse_hrule.cmi
-share/coccinelle/parsing_c/visitor_c.cmi
-share/coccinelle/python/coccilib/__init__.py
-share/coccinelle/python/coccilib/coccigui/__init__.py
-share/coccinelle/python/coccilib/coccigui/coccigui.py
-share/coccinelle/python/coccilib/coccigui/pycoccimodel.py
-share/coccinelle/python/coccilib/coccigui/pygui.glade
-share/coccinelle/python/coccilib/coccigui/pygui.gladep
-share/coccinelle/python/coccilib/coccigui/vim.py
-share/coccinelle/python/coccilib/coccigui/vimcom.py
-share/coccinelle/python/coccilib/coccigui/vimeditor.py
-share/coccinelle/python/coccilib/coccigui/vimembed.py
-share/coccinelle/python/coccilib/elems.py
-share/coccinelle/python/coccilib/org.py
-share/coccinelle/python/coccilib/output.py
-share/coccinelle/python/coccilib/report.py
-share/coccinelle/python/coccilib/trac.py
-share/coccinelle/spatch
-share/coccinelle/standard.h
-share/coccinelle/standard.iso
-@dirrm share/coccinelle/python/coccilib/coccigui
-@dirrm share/coccinelle/python/coccilib
-@dirrm share/coccinelle/python
-@dirrm share/coccinelle/parsing_c
-@dirrm share/coccinelle/ocaml
-@dirrm share/coccinelle/commons
-@dirrm share/coccinelle
+bin/spatch.byte
+man/man1/spatch.1.gz
+man/man3/Coccilib.3cocci.gz
+%%DATADIR%%/dllpcre_stubs.so
+%%DATADIR%%/dllpycaml_stubs.so
+%%DATADIR%%/ocaml/coccilib.cmi
+%%DATADIR%%/python/coccilib/__init__.py
+%%DATADIR%%/python/coccilib/coccigui/__init__.py
+%%DATADIR%%/python/coccilib/coccigui/coccigui.py
+%%DATADIR%%/python/coccilib/coccigui/pycoccimodel.py
+%%DATADIR%%/python/coccilib/coccigui/pygui.glade
+%%DATADIR%%/python/coccilib/coccigui/pygui.gladep
+%%DATADIR%%/python/coccilib/coccigui/vim.py
+%%DATADIR%%/python/coccilib/coccigui/vimcom.py
+%%DATADIR%%/python/coccilib/coccigui/vimeditor.py
+%%DATADIR%%/python/coccilib/coccigui/vimembed.py
+%%DATADIR%%/python/coccilib/elems.py
+%%DATADIR%%/python/coccilib/org.py
+%%DATADIR%%/python/coccilib/output.py
+%%DATADIR%%/python/coccilib/report.py
+%%DATADIR%%/python/coccilib/trac.py
+%%DATADIR%%/python/coccilib/xml_firehose.py
+%%DATADIR%%/spatch
+%%DATADIR%%/standard.h
+%%DATADIR%%/standard.iso
+@dirrm %%DATADIR%%/python/coccilib/coccigui
+@dirrm %%DATADIR%%/python/coccilib
+@dirrm %%DATADIR%%/python
+@dirrm %%DATADIR%%/ocaml
+@dirrm %%DATADIR%%

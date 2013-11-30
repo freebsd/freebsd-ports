@@ -1175,6 +1175,7 @@
     SUBDIR += py-markdown2
     SUBDIR += py-openpyxl
     SUBDIR += py-paragrep
+    SUBDIR += py-pdfminer
     SUBDIR += py-pss
     SUBDIR += py-pyctpp2
     SUBDIR += py-pyelasticsearch

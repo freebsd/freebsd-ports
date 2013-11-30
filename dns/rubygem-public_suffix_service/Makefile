@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parse and decompose domain names into TLD, domain, and subdomains
 
+LICENSE=	MIT
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

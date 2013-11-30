@@ -1,9 +1,16 @@
 bin/indexer
+bin/indextool
 bin/search
+bin/spelldump
 sbin/searchd
 @unexec if cmp -s %D/etc/sphinx.conf.sample %D/etc/sphinx.conf; then rm -f %D/etc/sphinx.conf; fi
 etc/sphinx.conf.sample
 @exec if [ ! -f %D/etc/sphinx.conf ] ; then cp -p %D/%F %B/sphinx.conf; fi
+%%PORTDOCS%%man/man1/indexer.1.gz
+%%PORTDOCS%%man/man1/indextool.1.gz
+%%PORTDOCS%%man/man1/search.1.gz
+%%PORTDOCS%%man/man1/spelldump.1.gz
+%%PORTDOCS%%man/man8/searchd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/sphinx.css
 %%PORTDOCS%%%%DOCSDIR%%/sphinx.html
 %%PORTDOCS%%%%DOCSDIR%%/sphinx.txt

@@ -29,6 +29,8 @@ post-patch:
 		${WRKSRC}/${PORTNAME}.pro
 	@${REINPLACE_CMD} -i -e 's,QCoreApplication::applicationDirPath()+"/translations","${DATADIR}/translations",g' \
 		${WRKSRC}/settings.cpp
+
+pre-configure:
 #Work around badly written .pro
 	${LRELEASE} ${WRKSRC}/${PORTNAME}.pro
 

@@ -299,7 +299,6 @@
     SUBDIR += ruby-doc-stdlib
     SUBDIR += ruby-man
     SUBDIR += ruby-programmingruby
-    SUBDIR += ruby-reference
     SUBDIR += ruby-usersguide
     SUBDIR += ruby19
     SUBDIR += ruby20
