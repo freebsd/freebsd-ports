@@ -83,6 +83,7 @@ include/GraphicsMagick/wand/drawing_wand.h
 include/GraphicsMagick/wand/magick_wand.h
 include/GraphicsMagick/wand/pixel_wand.h
 include/GraphicsMagick/wand/wand_api.h
+include/GraphicsMagick/wand/wand_symbols.h
 lib/GraphicsMagick/config/delegates.mgk
 lib/GraphicsMagick/config/type-ghostscript.mgk
 lib/GraphicsMagick/config/type-solaris.mgk
@@ -95,14 +96,20 @@ lib/libGraphicsMagick++.so.9
 lib/libGraphicsMagick.a
 lib/libGraphicsMagick.la
 lib/libGraphicsMagick.so
-lib/libGraphicsMagick.so.12
+lib/libGraphicsMagick.so.14
 lib/libGraphicsMagickWand.a
 lib/libGraphicsMagickWand.la
 lib/libGraphicsMagickWand.so
-lib/libGraphicsMagickWand.so.7
+lib/libGraphicsMagickWand.so.8
 libdata/pkgconfig/GraphicsMagick++.pc
 libdata/pkgconfig/GraphicsMagick.pc
 libdata/pkgconfig/GraphicsMagickWand.pc
+man/man1/GraphicsMagick++-config.1.gz
+man/man1/GraphicsMagick-config.1.gz
+man/man1/GraphicsMagickWand-config.1.gz
+man/man1/gm.1.gz
+man/man4/miff.4.gz
+man/man5/quantize.5.gz
 %%DATADIR%%/config/colors.mgk
 %%DATADIR%%/config/log.mgk
 %%DATADIR%%/config/modules.mgk
@@ -118,6 +125,7 @@ libdata/pkgconfig/GraphicsMagickWand.pc
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2009
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2010
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2011
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2012
 %%PORTDOCS%%%%DOCSDIR%%/Copyright.txt
 %%PORTDOCS%%%%DOCSDIR%%/NEWS.txt
 %%PORTDOCS%%%%DOCSDIR%%/www/ChangeLog-2001.html
@@ -131,6 +139,7 @@ libdata/pkgconfig/GraphicsMagickWand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/ChangeLog-2009.html
 %%PORTDOCS%%%%DOCSDIR%%/www/ChangeLog-2010.html
 %%PORTDOCS%%%%DOCSDIR%%/www/ChangeLog-2011.html
+%%PORTDOCS%%%%DOCSDIR%%/www/ChangeLog-2012.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Changelog.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Changes.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Copyright.html
@@ -145,18 +154,15 @@ libdata/pkgconfig/GraphicsMagickWand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/ChangeLog.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/CoderInfo.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/Color.html
-%%PORTDOCS%%%%DOCSDIR%%/www/Magick++/Documentation.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/Drawable.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/Drawable_example_1.png
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/Enumerations.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/Exception.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/FormatCharacters.html
-%%PORTDOCS%%%%DOCSDIR%%/www/Magick++/Future.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/Geometry.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/Image.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/Image.png
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/ImageDesign.html
-%%PORTDOCS%%%%DOCSDIR%%/www/Magick++/Install.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/Montage.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/PixelPacket.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/Pixels.html
@@ -226,6 +232,8 @@ libdata/pkgconfig/GraphicsMagickWand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/api/types.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/widget.html
 %%PORTDOCS%%%%DOCSDIR%%/www/authors.html
+%%PORTDOCS%%%%DOCSDIR%%/www/batch.html
+%%PORTDOCS%%%%DOCSDIR%%/www/benchmark.html
 %%PORTDOCS%%%%DOCSDIR%%/www/benchmarks.html
 %%PORTDOCS%%%%DOCSDIR%%/www/bugs.html
 %%PORTDOCS%%%%DOCSDIR%%/www/color.html
@@ -265,8 +273,10 @@ libdata/pkgconfig/GraphicsMagickWand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/quantize.html
 %%PORTDOCS%%%%DOCSDIR%%/www/reference.html
 %%PORTDOCS%%%%DOCSDIR%%/www/smile.c
+%%PORTDOCS%%%%DOCSDIR%%/www/time.html
 %%PORTDOCS%%%%DOCSDIR%%/www/tools.html
 %%PORTDOCS%%%%DOCSDIR%%/www/utilities.html
+%%PORTDOCS%%%%DOCSDIR%%/www/version.html
 %%PORTDOCS%%%%DOCSDIR%%/www/wand/drawing_wand.html
 %%PORTDOCS%%%%DOCSDIR%%/www/wand/magick_wand.html
 %%PORTDOCS%%%%DOCSDIR%%/www/wand/pixel_wand.html
@@ -289,5 +299,3 @@ libdata/pkgconfig/GraphicsMagickWand.pc
 @dirrm include/GraphicsMagick/magick
 @dirrm include/GraphicsMagick/Magick++
 @dirrm include/GraphicsMagick
-@exec mkdir -p %D/lib/GraphicsMagick/modules-Q%%Q%%/filters
-@exec mkdir -p %D/lib/GraphicsMagick/modules-Q%%Q%%/coders

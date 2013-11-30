@@ -134,6 +134,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/introduction.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ipsec.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kerberos5.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kerberosIV.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-building.html

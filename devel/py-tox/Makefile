@@ -17,12 +17,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>=1.9.1:${PORTSDIR}/devel/py-virtu
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_AUTOPLIST=	yes
 
 OPTIONS_DEFINE=	PYTEST
 PYTEST_DESC=	Include the pytest test runner
 OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTEST}
@@ -31,7 +31,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pytest>0:${PORTSDIR}/devel/py-pytest
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_VER} <= 3.2
+.if ${PYTHON_VER} != 2.7 && ${PYTHON_VER} < 3.2
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}argparse>0:${PORTSDIR}/devel/py-argparse
 .endif
 

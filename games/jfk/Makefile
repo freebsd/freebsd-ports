@@ -8,7 +8,6 @@ CATEGORIES=	games
 MASTER_SITES=	http://hop.at/jfk/
 
 LICENSE=	GPLv2 # (or later)
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplayer 2D shoot'em up game

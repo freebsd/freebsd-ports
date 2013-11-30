@@ -150,6 +150,10 @@ post-patch:
 	    's/disabled_module_list =[^]]*/&, "nis"/' \
 		${PATCH_WRKSRC}/setup.py
 .endif
+# Fix for http://bugs.python.org/issue12852 (especially on 10.x+);
+# not needed for python33+
+	${REINPLACE_CMD} -e 's|_XOPEN_SOURCE 600|_XOPEN_SOURCE 700|' \
+		${PATCH_WRKSRC}/configure
 
 post-configure:
 	${TAR} -C ${WRKSRC} -cf - . | ${TAR} -C ${SHARED_WRKSRC} -xf -

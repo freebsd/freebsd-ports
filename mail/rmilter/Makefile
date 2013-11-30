@@ -1,16 +1,25 @@
 # $FreeBSD$
 
 PORTNAME=		rmilter
-PORTVERSION=		1.5.43
+PORTVERSION=		1.5.45
 CATEGORIES=		mail
-MASTER_SITES=		http://cdn.bitbucket.org/vstakhov/rmilter/downloads/
 
 MAINTAINER=		vsevolod@FreeBSD.org
 COMMENT=		Milter that performs spamd, clamav, and spf checks
 
 LICENSE=	BSD
 
-PLIST_FILES=	sbin/rmilter etc/rc.d/rmilter.sh etc/rmilter.conf.sample
+USE_GITHUB=		yes
+GH_ACCOUNT=		vstakhov
+GH_PROJECT=		${PORTNAME}
+GH_TAG=		${PORTVERSION}
+GH_COMMIT=		746ac47
+
+USE_RC_SUBR=	yes
+
+PLIST_FILES=	sbin/rmilter etc/rc.d/rmilter.sh \
+				etc/rmilter.conf.sample \
+				man/man8/rmilter.8.gz
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
@@ -24,23 +33,20 @@ WITH_SENDMAIL_BASE=	yes
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-LIB_DEPENDS+=		pcre:${PORTSDIR}/devel/pcre \
-			spf2:${PORTSDIR}/mail/libspf2 \
-			opendkim:${PORTSDIR}/mail/opendkim
+LIB_DEPENDS+=		libpcre.so:${PORTSDIR}/devel/pcre \
+			libspf2.so:${PORTSDIR}/mail/libspf2 \
+			libopendkim.so:${PORTSDIR}/mail/opendkim
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 LIBS+=		${PTHREAD_LIBS}
 
-MAN8=		rmilter.8
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/rmilter.sh ${PREFIX}/etc/rc.d/
-	${INSTALL_PROGRAM} ${WRKSRC}/rmilter ${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKSRC}/rmilter.conf.sample ${PREFIX}/etc/
-	${INSTALL_MAN} ${WRKSRC}/rmilter.8 ${MAN8PREFIX}/man/man8/
+	${INSTALL_SCRIPT} ${WRKSRC}/rmilter.sh ${STAGEDIR}${PREFIX}/etc/rc.d/
+	${INSTALL_PROGRAM} ${WRKSRC}/rmilter ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/rmilter.conf.sample ${STAGEDIR}${PREFIX}/etc/
+	${INSTALL_MAN} ${WRKSRC}/rmilter.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
 
 .include <bsd.port.post.mk>

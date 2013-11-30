@@ -2,34 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	squidview
-PORTVERSION=	0.79
+PORTVERSION=	0.80
 CATEGORIES=	www
 MASTER_SITES=	http://www.rillion.net/squidview/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Monitor squid statistics in realtime
+
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 
-MAN1=		squidview.1
 DOCS=		HOWTO README
 DATAFILES=	aliases users words
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/squidview ${PREFIX}/bin/
-
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${DATAFILES:S,^,${WRKSRC}/,} ${DATADIR}/
-
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
-.endif
-	${INSTALL_MAN} ${WRKSRC}/squidview.1 ${MAN1PREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/squidview ${STAGEDIR}${PREFIX}/bin/
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${DATAFILES:S,^,${WRKSRC}/,} ${STAGEDIR}${DATADIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_MAN} ${WRKSRC}/squidview.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
 
 .include <bsd.port.mk>

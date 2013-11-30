@@ -2,12 +2,12 @@ bin/uqm
 lib/uqm/uqm
 %%DATADIR%%/content/packages/uqm-0.7.0-content.uqm
 %%DATADIR%%/content/version
-%%VOICEADDON%%%%DATADIR%%/content/addons/uqm-0.7.0-voice.uqm
-%%MUSICADDON%%%%DATADIR%%/content/addons/uqm-0.7.0-3domusic.uqm
-%%REMIXPACK1ADDON%%%%DATADIR%%/content/addons/uqm-remix-disc1.uqm
-%%REMIXPACK2ADDON%%%%DATADIR%%/content/addons/uqm-remix-disc2.uqm
-%%REMIXPACK3ADDON%%%%DATADIR%%/content/addons/uqm-remix-disc3.uqm
-%%REMIXPACK4ADDON%%%%DATADIR%%/content/addons/uqm-remix-disc4.uqm
+%%VOICE%%%%DATADIR%%/content/addons/uqm-0.7.0-voice.uqm
+%%MUSIC%%%%DATADIR%%/content/addons/uqm-0.7.0-3domusic.uqm
+%%REMIX1%%%%DATADIR%%/content/addons/uqm-remix-disc1.uqm
+%%REMIX2%%%%DATADIR%%/content/addons/uqm-remix-disc2.uqm
+%%REMIX3%%%%DATADIR%%/content/addons/uqm-remix-disc3.uqm
+%%REMIX4%%%%DATADIR%%/content/addons/uqm-remix-disc4.uqm
 @dirrm %%DATADIR%%/content/packages
 @dirrm %%DATADIR%%/content/addons
 @dirrm %%DATADIR%%/content
