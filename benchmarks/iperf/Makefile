@@ -25,12 +25,8 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 THREADS_CONFIGURE_ENABLE=	threads
 THREADS_LDFLAGS=	-pthread
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} README doc/*.gif doc/*.html ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>
