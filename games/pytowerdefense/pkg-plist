@@ -1,0 +1,177 @@
+bin/pytowerdefense
+share/pixmaps/pytowerdefense.png
+%%DATADIR%%/Creeps.py
+%%DATADIR%%/Creeps.pyc
+%%DATADIR%%/Creeps.pyo
+%%DATADIR%%/Projectiles.py
+%%DATADIR%%/Projectiles.pyc
+%%DATADIR%%/Projectiles.pyo
+%%DATADIR%%/Towers.py
+%%DATADIR%%/Towers.pyc
+%%DATADIR%%/Towers.pyo
+%%DATADIR%%/audio/sfx/bow01.wav
+%%DATADIR%%/gridmap.py
+%%DATADIR%%/gridmap.pyc
+%%DATADIR%%/gridmap.pyo
+%%DATADIR%%/images/.directory
+%%DATADIR%%/images/Brick_tile(test).png
+%%DATADIR%%/images/Brick_tile(test)2.png
+%%DATADIR%%/images/Healthbar/healthbartest.psd
+%%DATADIR%%/images/Menus/New_Game.png
+%%DATADIR%%/images/Triforce.png
+%%DATADIR%%/images/ZombieInvasionBg1.png
+%%DATADIR%%/images/bluecreep_0.png
+%%DATADIR%%/images/bluecreep_45.png
+%%DATADIR%%/images/brick_tile.png
+%%DATADIR%%/images/brick_tile_orange.png
+%%DATADIR%%/images/creep_blue.svg
+%%DATADIR%%/images/creep_green.svg
+%%DATADIR%%/images/creep_pink.svg
+%%DATADIR%%/images/creep_yellow.svg
+%%DATADIR%%/images/creeps.png
+%%DATADIR%%/images/dg_undead32.gif
+%%DATADIR%%/images/effects/fire.png
+%%DATADIR%%/images/effects/fire.psd
+%%DATADIR%%/images/effects/fire2.png
+%%DATADIR%%/images/effects/fire2.psd
+%%DATADIR%%/images/effects/test subject with fire.png
+%%DATADIR%%/images/effects/test subject with fire.psd
+%%DATADIR%%/images/effects/test subject with fire2.png
+%%DATADIR%%/images/effects/test subject with fire2.psd
+%%DATADIR%%/images/effects/testsubject.png
+%%DATADIR%%/images/enemies/undead/fatto_0.png
+%%DATADIR%%/images/enemies/undead/fatto_45.png
+%%DATADIR%%/images/enemies/undead/insectghost_0.png
+%%DATADIR%%/images/enemies/undead/insectghost_45.png
+%%DATADIR%%/images/enemies/undead/skeleton_master_wizard_0.png
+%%DATADIR%%/images/enemies/undead/skeleton_master_wizard_45.png
+%%DATADIR%%/images/enemies/undead/zombie_0.png
+%%DATADIR%%/images/enemies/undead/zombie_45.png
+%%DATADIR%%/images/enemies/undead/zombie_brown_0.png
+%%DATADIR%%/images/enemies/undead/zombie_brown_45.png
+%%DATADIR%%/images/explosion1.png
+%%DATADIR%%/images/fonts/BIRTH_OF_A_HERO.ttf
+%%DATADIR%%/images/fonts/FFFTusj.ttf
+%%DATADIR%%/images/fonts/Vtks Revolt.ttf
+%%DATADIR%%/images/fonts/default.ttf
+%%DATADIR%%/images/greencreep_0.png
+%%DATADIR%%/images/greencreep_45.png
+%%DATADIR%%/images/magic_stones.png
+%%DATADIR%%/images/money/goldenpenny.png
+%%DATADIR%%/images/old_bluecreep.png
+%%DATADIR%%/images/old_graycreep.png
+%%DATADIR%%/images/old_pinkcreep.png
+%%DATADIR%%/images/paper.png
+%%DATADIR%%/images/pinkcreep_0.png
+%%DATADIR%%/images/pinkcreep_45.png
+%%DATADIR%%/images/projectiles/Arrow1.png
+%%DATADIR%%/images/projectiles/Arrow2.png
+%%DATADIR%%/images/projectiles/Fire_arrow.png
+%%DATADIR%%/images/projectiles/Frost_arrow.png
+%%DATADIR%%/images/projectiles/Silver_Arrow.png
+%%DATADIR%%/images/projectiles/cannon_ball.png
+%%DATADIR%%/images/projectiles/magicmissile.png
+%%DATADIR%%/images/rockytexture.jpg
+%%DATADIR%%/images/sand.jpg
+%%DATADIR%%/images/sandbackup.jpg
+%%DATADIR%%/images/sandyrock.jpg
+%%DATADIR%%/images/tower_round40x57.png
+%%DATADIR%%/images/tower_round40x74.png
+%%DATADIR%%/images/tower_square.png
+%%DATADIR%%/images/towers/Death_Note.png
+%%DATADIR%%/images/towers/Doom_Towerwip.png
+%%DATADIR%%/images/towers/Firetower.png
+%%DATADIR%%/images/towers/TreeOfPower.png
+%%DATADIR%%/images/towers/Wizards Tower.png
+%%DATADIR%%/images/towers/Wizards_Tower_Anim(1).png
+%%DATADIR%%/images/towers/Wizards_Tower_Anim(2213).png
+%%DATADIR%%/images/towers/Wizards_Tower_Anim(2214).png
+%%DATADIR%%/images/towers/arrow_tower_1.png
+%%DATADIR%%/images/towers/arrow_tower_2.png
+%%DATADIR%%/images/towers/basic_tower.png
+%%DATADIR%%/images/towers/basic_tower_dark.png
+%%DATADIR%%/images/towers/canon_tower_placeholder.png
+%%DATADIR%%/images/towers/frost_tower.png
+%%DATADIR%%/images/towers/magic tower.png
+%%DATADIR%%/images/towers/wizard_tower/.directory
+%%DATADIR%%/images/towers/wizard_tower/Wizards_Tower_Anim(1).png
+%%DATADIR%%/images/towers/wizard_tower/Wizards_Tower_Anim(10).png
+%%DATADIR%%/images/towers/wizard_tower/Wizards_Tower_Anim(11).png
+%%DATADIR%%/images/towers/wizard_tower/Wizards_Tower_Anim(12).png
+%%DATADIR%%/images/towers/wizard_tower/Wizards_Tower_Anim(13).png
+%%DATADIR%%/images/towers/wizard_tower/Wizards_Tower_Anim(14).png
+%%DATADIR%%/images/towers/wizard_tower/Wizards_Tower_Anim(15).png
+%%DATADIR%%/images/towers/wizard_tower/Wizards_Tower_Anim(16).png
+%%DATADIR%%/images/towers/wizard_tower/Wizards_Tower_Anim(17).png
+%%DATADIR%%/images/towers/wizard_tower/Wizards_Tower_Anim(18).png
+%%DATADIR%%/images/towers/wizard_tower/Wizards_Tower_Anim(19).png
+%%DATADIR%%/images/towers/wizard_tower/Wizards_Tower_Anim(2).png
+%%DATADIR%%/images/towers/wizard_tower/Wizards_Tower_Anim(3).png
+%%DATADIR%%/images/towers/wizard_tower/Wizards_Tower_Anim(4).png
+%%DATADIR%%/images/towers/wizard_tower/Wizards_Tower_Anim(5).png
+%%DATADIR%%/images/towers/wizard_tower/Wizards_Tower_Anim(6).png
+%%DATADIR%%/images/towers/wizard_tower/Wizards_Tower_Anim(7).png
+%%DATADIR%%/images/towers/wizard_tower/Wizards_Tower_Anim(8).png
+%%DATADIR%%/images/towers/wizard_tower/Wizards_Tower_Anim(9).png
+%%DATADIR%%/images/widgets/confirm.png
+%%DATADIR%%/images/widgets/confirm_full.png
+%%DATADIR%%/images/widgets/credits
+%%DATADIR%%/images/widgets/menu_title/bg.png
+%%DATADIR%%/images/widgets/menu_title/exit_game.png
+%%DATADIR%%/images/widgets/menu_title/help.png
+%%DATADIR%%/images/widgets/menu_title/py.png
+%%DATADIR%%/images/widgets/menu_title/start_game.png
+%%DATADIR%%/images/widgets/menu_title/tower_defense.png
+%%DATADIR%%/images/widgets/reject.png
+%%DATADIR%%/images/widgets/reject_full.png
+%%DATADIR%%/images/yellowcreep_0.png
+%%DATADIR%%/images/yellowcreep_45.png
+%%DATADIR%%/jelly.py
+%%DATADIR%%/jelly.pyc
+%%DATADIR%%/jelly.pyo
+%%DATADIR%%/main.py
+%%DATADIR%%/main.pyc
+%%DATADIR%%/main.pyo
+%%DATADIR%%/pathfinder.py
+%%DATADIR%%/pathfinder.pyc
+%%DATADIR%%/pathfinder.pyo
+%%DATADIR%%/priorityqueueset.py
+%%DATADIR%%/priorityqueueset.pyc
+%%DATADIR%%/priorityqueueset.pyo
+%%DATADIR%%/pyconsole.py
+%%DATADIR%%/pyconsole.pyc
+%%DATADIR%%/pyconsole.pyo
+%%DATADIR%%/pyconsole_syntax.py
+%%DATADIR%%/pyconsole_syntax.pyc
+%%DATADIR%%/pyconsole_syntax.pyo
+%%DATADIR%%/pygame2exe.py
+%%DATADIR%%/pygame2exe.pyc
+%%DATADIR%%/pygame2exe.pyo
+%%DATADIR%%/simpleanimation.py
+%%DATADIR%%/simpleanimation.pyc
+%%DATADIR%%/simpleanimation.pyo
+%%DATADIR%%/utils.py
+%%DATADIR%%/utils.pyc
+%%DATADIR%%/utils.pyo
+%%DATADIR%%/vec2d.py
+%%DATADIR%%/vec2d.pyc
+%%DATADIR%%/vec2d.pyo
+%%DATADIR%%/widgets.py
+%%DATADIR%%/widgets.pyc
+%%DATADIR%%/widgets.pyo
+@dirrm %%DATADIR%%/images/widgets/menu_title
+@dirrm %%DATADIR%%/images/widgets
+@dirrm %%DATADIR%%/images/towers/wizard_tower
+@dirrm %%DATADIR%%/images/towers
+@dirrm %%DATADIR%%/images/projectiles
+@dirrm %%DATADIR%%/images/money
+@dirrm %%DATADIR%%/images/fonts
+@dirrm %%DATADIR%%/images/enemies/undead
+@dirrm %%DATADIR%%/images/enemies
+@dirrm %%DATADIR%%/images/effects
+@dirrm %%DATADIR%%/images/Menus
+@dirrm %%DATADIR%%/images/Healthbar
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/audio/sfx
+@dirrm %%DATADIR%%/audio
+@dirrm %%DATADIR%%

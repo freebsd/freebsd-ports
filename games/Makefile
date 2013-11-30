@@ -765,6 +765,7 @@
     SUBDIR += pysycache-themes
     SUBDIR += pythonchess
     SUBDIR += pythonsudoku
+    SUBDIR += pytowerdefense
     SUBDIR += q2p
     SUBDIR += q2pro
     SUBDIR += q3cellshading
