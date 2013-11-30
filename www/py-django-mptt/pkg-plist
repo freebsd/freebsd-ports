@@ -29,6 +29,8 @@
 %%PYTHON_SITELIBDIR%%/mptt/models.py
 %%PYTHON_SITELIBDIR%%/mptt/models.pyc
 %%PYTHON_SITELIBDIR%%/mptt/models.pyo
+%%PYTHON_SITELIBDIR%%/mptt/templates/admin/grappelli_mptt_change_list.html
+%%PYTHON_SITELIBDIR%%/mptt/templates/admin/grappelli_mptt_change_list_results.html
 %%PYTHON_SITELIBDIR%%/mptt/templates/admin/mptt_change_list.html
 %%PYTHON_SITELIBDIR%%/mptt/templates/admin/mptt_change_list_results.html
 %%PYTHON_SITELIBDIR%%/mptt/templatetags/__init__.py
@@ -58,3 +60,5 @@
 @dirrm %%PYTHON_SITELIBDIR%%/mptt/locale/pl
 @dirrm %%PYTHON_SITELIBDIR%%/mptt/locale
 @dirrm %%PYTHON_SITELIBDIR%%/mptt
+@dirrmtry lib/python2.7/site-packages
+@dirrmtry lib/python2.7
