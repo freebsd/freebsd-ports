@@ -1,4 +1,3 @@
-@exec mkdir -p %D/com/aegis
 man/man1/ae-cvs-ci.1.gz
 man/man1/ae-repo-ci.1.gz
 man/man1/ae-sccs-put.1.gz
@@ -178,6 +177,8 @@ etc/profile.d/aegis.csh
 %%NLS%%share/locale/ro/LC_MESSAGES/aegis.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/aegis.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/aegis.mo
+@exec mkdir -p %D/com
+@exec install -d -o 3 -g 3 -m 0755 %D/com/aegis
+@unexec rm -d %D/com/aegis 2>/dev/null || true
 @dirrmtry etc/profile.d
-@dirrmtry com/aegis
 @dirrmtry com
