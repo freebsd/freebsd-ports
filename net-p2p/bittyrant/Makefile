@@ -48,9 +48,7 @@ SUB_LIST=	JARFILE="${PORTNAME}.jar" \
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "amd64"
 BROKEN=		Does not build
-.endif
 
 .if ${PORT_OPTIONS:MSWTDEVEL}
 SWT=		swt-devel
