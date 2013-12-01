@@ -1,5 +1,5 @@
 --- ./Makefile.in.orig	2013-11-13 18:25:50.000000000 +0000
-+++ ./Makefile.in	2013-11-25 07:19:20.572253485 +0000
++++ ./Makefile.in	2013-12-01 12:21:47.561534855 +0000
 @@ -59,7 +59,7 @@
  
  CONFIG_FILE_PATH	=	@CONFIG_FILE_PATH_R@
@@ -51,7 +51,7 @@
  	# Make the web ui readable by all. 
  	chmod -R  u+rwX,go-w,go+rX 	$(DESTDIR)$(MASON_HTML_PATH) \
  					$(DESTDIR)$(MASON_LOCAL_HTML_PATH) \
-@@ -352,9 +341,9 @@
+@@ -352,14 +341,14 @@
  	$(INSTALL) -m 0755 -d $(DESTDIR)$(LOCAL_LEXICON_PATH)
  	$(INSTALL) -m 0755 -d $(DESTDIR)$(LOCAL_STATIC_PATH)
  
@@ -62,8 +62,16 @@
 +files-install: libs-install etc-install config-install bin-install sbin-install html-install doc-install font-install po-install static-install
  
  config-install:
- @COMMENT_INPLACE_LAYOUT@	$(INSTALL) -m 0755 -o $(BIN_OWNER) -g $(RTGROUP) -d $(DESTDIR)$(CONFIG_FILE_PATH)
-@@ -449,13 +438,6 @@
+-@COMMENT_INPLACE_LAYOUT@	$(INSTALL) -m 0755 -o $(BIN_OWNER) -g $(RTGROUP) -d $(DESTDIR)$(CONFIG_FILE_PATH)
+-@COMMENT_INPLACE_LAYOUT@	-$(INSTALL) -m 0440 -o $(BIN_OWNER) -g $(RTGROUP)  etc/RT_Config.pm $(DESTDIR)$(CONFIG_FILE)
+-@COMMENT_INPLACE_LAYOUT@	[ -f $(DESTDIR)$(SITE_CONFIG_FILE) ] || $(INSTALL) -m 0640 -o $(BIN_OWNER) -g $(RTGROUP) etc/RT_SiteConfig.pm $(DESTDIR)$(SITE_CONFIG_FILE) 
++@COMMENT_INPLACE_LAYOUT@	$(INSTALL) -m 0755 -d $(DESTDIR)$(CONFIG_FILE_PATH)
++@COMMENT_INPLACE_LAYOUT@	-$(INSTALL) -m 0440 etc/RT_Config.pm $(DESTDIR)$(CONFIG_FILE)
++@COMMENT_INPLACE_LAYOUT@	[ -f $(DESTDIR)$(SITE_CONFIG_FILE) ] || $(INSTALL) -m 0640 etc/RT_SiteConfig.pm $(DESTDIR)$(SITE_CONFIG_FILE) 
+ @COMMENT_INPLACE_LAYOUT@	@echo "Installed configuration. About to install RT in  $(RT_PATH)"
+ 
+ test: 
+@@ -449,19 +438,12 @@
  @COMMENT_INPLACE_LAYOUT@	for file in $(ETC_FILES) ; do \
  @COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0644 "etc/$$file" "$(DESTDIR)$(RT_ETC_PATH)/" ; \
  @COMMENT_INPLACE_LAYOUT@	done
@@ -77,3 +85,19 @@
  
  
  sbin-install:
+ @COMMENT_INPLACE_LAYOUT@	$(INSTALL) -m 0755 -d $(DESTDIR)$(RT_SBIN_PATH)
+ @COMMENT_INPLACE_LAYOUT@	for file in $(SYSTEM_BINARIES) ; do \
+-@COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -o $(BIN_OWNER) -g $(RTGROUP) -m 0755 "sbin/$$file" "$(DESTDIR)$(RT_SBIN_PATH)/" ; \
++@COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0755 "sbin/$$file" "$(DESTDIR)$(RT_SBIN_PATH)/" ; \
+ @COMMENT_INPLACE_LAYOUT@	done
+ 
+ 
+@@ -469,7 +451,7 @@
+ bin-install:
+ @COMMENT_INPLACE_LAYOUT@	$(INSTALL) -m 0755 -d $(DESTDIR)$(RT_BIN_PATH)
+ @COMMENT_INPLACE_LAYOUT@	for file in $(BINARIES) ; do \
+-@COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -o $(BIN_OWNER) -g $(RTGROUP) -m 0755 "bin/$$file" "$(DESTDIR)$(RT_BIN_PATH)/" ; \
++@COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0755 "bin/$$file" "$(DESTDIR)$(RT_BIN_PATH)/" ; \
+ @COMMENT_INPLACE_LAYOUT@	done
+ 
+ local-install:
