@@ -3,7 +3,7 @@
 
 PORTNAME=	vym
 PORTVERSION=	2.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/vym/${PORTVERSION}
 
@@ -12,8 +12,8 @@ COMMENT=	VYM is a tool to generate and manipulate mind maps
 
 USES=		qmake
 USE_BZIP2=	yes
-USE_QT4=	uic_build moc_build \
-		qt3support network xml dbus svg
+USE_QT4=	uic_build moc_build qt3support_build \
+		network xml dbus svg
 QMAKE_ARGS=	DATADIR=${DATADIR:C,/vym$,,} \
 		DOCDIR=${DOCSDIR}
 
@@ -36,8 +36,10 @@ post-patch:
 .if !${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e '/INSTALLS += doc/d' ${WRKSRC}/vym.pro
 .endif
+
+pre-configure:
 .if ${PORT_OPTIONS:MNLS}
-	cd ${WRKSRC} && ${LRELEASE} vym.pro
+	${LRELEASE} ${WRKSRC}/vym.pro
 .endif
 
 post-install:
