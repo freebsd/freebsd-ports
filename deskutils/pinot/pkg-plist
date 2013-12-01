@@ -70,19 +70,12 @@ include/pinot/filters/HtmlFilter.h
 include/pinot/filters/HtmlParser.h
 include/pinot/filters/TextFilter.h
 include/pinot/filters/XmlFilter.h
-include/pinot/xdgmime/xdgmime.c
 include/pinot/xdgmime/xdgmime.h
-include/pinot/xdgmime/xdgmimealias.c
 include/pinot/xdgmime/xdgmimealias.h
-include/pinot/xdgmime/xdgmimecache.c
 include/pinot/xdgmime/xdgmimecache.h
-include/pinot/xdgmime/xdgmimeglob.c
 include/pinot/xdgmime/xdgmimeglob.h
-include/pinot/xdgmime/xdgmimeint.c
 include/pinot/xdgmime/xdgmimeint.h
-include/pinot/xdgmime/xdgmimemagic.c
 include/pinot/xdgmime/xdgmimemagic.h
-include/pinot/xdgmime/xdgmimeparent.c
 include/pinot/xdgmime/xdgmimeparent.h
 lib/pinot/backends/libxapianbackend.so
 lib/pinot/backends/libxapianbackend.so.1
@@ -112,9 +105,21 @@ lib/pinot/filters/libexiv2imagefilter.so
 lib/pinot/filters/libexternalfilter.so
 lib/pinot/filters/libmboxfilter.so
 lib/pinot/filters/libtaglibfilter.so
+man/man1/pinot-dbus-daemon.1.gz
+man/man1/pinot-index.1.gz
+man/man1/pinot-label.1.gz
+man/man1/pinot-search.1.gz
+man/man1/pinot.1.gz
 share/applications/pinot.desktop
 share/applications/pinot-prefs.desktop
 share/dbus-1/services/de.berlios.Pinot.service
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog-dijon
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 share/icons/hicolor/16x16/apps/pinot.png
 share/icons/hicolor/22x22/apps/pinot.png
 share/icons/hicolor/24x24/apps/pinot.png
@@ -159,6 +164,7 @@ share/locale/zh_TW/LC_MESSAGES/pinot.mo
 @dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/pinot/filters
 @dirrm lib/pinot/backends
 @dirrm lib/pinot

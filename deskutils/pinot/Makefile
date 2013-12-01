@@ -3,7 +3,7 @@
 
 PORTNAME=	pinot
 PORTVERSION=	1.06
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 #MASTER_SITES=	http://colinf.chez.com/pinot/
@@ -15,18 +15,18 @@ COMMENT=	Personal search and metasearch for the Free Desktop
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	update-desktop-database:${PORTSDIR}/devel/desktop-file-utils
-LIB_DEPENDS=	xapian:${PORTSDIR}/databases/xapian-core	\
-		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24	\
-		exttextcat-2.0:${PORTSDIR}/textproc/libexttextcat	\
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib	\
-		xml\\+\\+-2.6:${PORTSDIR}/textproc/libxml++26	\
-		boost_thread:${PORTSDIR}/devel/boost-libs	\
-		execinfo.1:${PORTSDIR}/devel/libexecinfo	\
-		exif.12:${PORTSDIR}/graphics/libexif		\
-		exiv2.12:${PORTSDIR}/graphics/exiv2		\
-		gmime-2.4:${PORTSDIR}/mail/gmime24		\
-		tag.1:${PORTSDIR}/audio/taglib			\
-		curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libxapian.so:${PORTSDIR}/databases/xapian-core		\
+		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24	\
+		libexttextcat-2.0.so:${PORTSDIR}/textproc/libexttextcat	\
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib		\
+		libxml\+\+-2.6.so:${PORTSDIR}/textproc/libxml++26	\
+		libboost_thread.so:${PORTSDIR}/devel/boost-libs		\
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo		\
+		libexif.so:${PORTSDIR}/graphics/libexif			\
+		libexiv2.so:${PORTSDIR}/graphics/exiv2			\
+		libgmime-2.4.so:${PORTSDIR}/mail/gmime24		\
+		libtag.so:${PORTSDIR}/audio/taglib			\
+		libcurl.so:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info	\
 		antiword:${PORTSDIR}/textproc/antiword			\
 		xdg-open:${PORTSDIR}/devel/xdg-utils			\
@@ -45,13 +45,14 @@ CONFIGURE_ARGS=	--with-http=curl --with-ssl=${OPENSSLBASE} --enable-libarchive	\
 CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-USE_DOS2UNIX=	textcat32_conf.txt
 USE_XORG=	pixman
-USES=		gettext pkgconfig
+USES=		gettext pkgconfig shebangfix
 USE_SQLITE=	3
 USE_PYTHON=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	${PREFIX}/lib/pinot/backends ${PREFIX}/lib/pinot/filters
+SHEBANG_LANG=	bash
+SHEBANG_FILES=	scripts/bash/*.sh
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug=yes
@@ -59,7 +60,7 @@ CONFIGURE_ARGS+=	--enable-debug=yes
 
 .if defined(WITH_CHMLIB)
 CONFIGURE_ARGS+=	--enable-chmlib=yes
-LIB_DEPENDS+=	chm:${PORTSDIR}/misc/chmlib
+LIB_DEPENDS+=	libchm.so:${PORTSDIR}/misc/chmlib
 PLIST_SUB+=	CHMLIB=""
 .else
 CONFIGURE_ARGS+=	--disable-chmlib
@@ -68,21 +69,11 @@ PLIST_SUB+=	CHMLIB="@comment "
 
 INSTALLS_ICONS=	yes
 
-MAN1=		pinot-dbus-daemon.1 pinot-index.1 pinot-label.1 pinot-search.1 pinot.1
-
-PORTDOCS=	AUTHORS ChangeLog ChangeLog-dijon INSTALL NEWS README TODO
+DOCS=		AUTHORS ChangeLog ChangeLog-dijon INSTALL NEWS README TODO
 
 LM2FIX=		textcat_conf.txt textcat3_conf.txt textcat31_conf.txt textcat32_conf.txt
 SHR2FIX=	Core/pinot-search.1 README
 UL2FIX=		Utils/xdgmime/xdgmime.c
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700041
-SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
-.endif
 
 post-extract:
 # remove pre-generated messages catalogs
@@ -107,15 +98,10 @@ pre-configure:
 		${WRKSRC}/*.desktop
 
 post-install:
-	${TOUCH} ${DATADIR}/stopwords/.empty_file
+	${TOUCH} ${STAGEDIR}${DATADIR}/stopwords/.empty_file
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
-.if ${OSVERSION} < 700041
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
