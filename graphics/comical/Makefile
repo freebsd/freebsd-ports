@@ -10,13 +10,13 @@ MASTER_SITES=	SF
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A sequential image viewer
 
-LIB_DEPENDS=	unrar:${PORTSDIR}/archivers/libunrar
+LIB_DEPENDS=	libunrar.so:${PORTSDIR}/archivers/libunrar
 
 LICENSE=	GPLv2
 
 MAKE_JOBS_UNSAFE=	yes
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_WX=		2.6+
 WX_PREMK=	yes
 WX_UNICODE=	yes
@@ -25,27 +25,28 @@ PLIST_FILES=	bin/comical
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|; \
+	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|; \
 		s|\`wx-config --cxx\`|${CXX}|; \
 		s|wx-config|${WX_CONFIG}|; \
 		s|unrar/libunrar.a u|u|; \
 		s|-lunrar|-L${LOCALBASE}/lib -lunrar|;' \
-			${WRKSRC}/Makefile
+		${WRKSRC}/Makefile
 
-	@${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|; \
+	${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|; \
 		s|-D_UNIX|-D_UNIX -DwxUSE_UNICODE|; \
 		s|CFLAGS =|CFLAGS=${CFLAGS} |; \
 		s|CPPFLAGS =|CPPFLAGS=${CXXFLAGS} |; \
 		s|$$(CC)|${CXX}|; \
 		s|-I../unrar|-I${LOCALBASE}/include/libunrar3|;' \
-			${WRKSRC}/src/Makefile
+		${WRKSRC}/src/Makefile
 
-	@${REINPLACE_CMD} -e 's|gcc|${CC}|; \
+	${REINPLACE_CMD} -e 's|gcc|${CC}|; \
 		s|CFLAGS=|CFLAGS+=|;' \
-			${WRKSRC}/unzip/Makefile
+		${WRKSRC}/unzip/Makefile
 
 .if ${WX_VERSION} == "2.8"
-	@${REINPLACE_CMD} -e 's|frame->SetIcon|//frame->SetIcon|' ${WRKSRC}/src/ComicalApp.cpp
+	${REINPLACE_CMD} -e 's|frame->SetIcon|//frame->SetIcon|' \
+		${WRKSRC}/src/ComicalApp.cpp
 .endif
 
 .include <bsd.port.post.mk>
