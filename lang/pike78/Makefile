@@ -2,7 +2,7 @@
 
 PORTNAME=	pike78
 PORTVERSION=	7.8.700
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		ftp://pike.ida.liu.se/pub/pike/beta/${PORTVERSION}/ \
@@ -13,12 +13,11 @@ DISTNAME=	Pike-v${PORTVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A dynamic programming language with a syntax similar to C++
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		tiff:${PORTSDIR}/graphics/tiff \
-		gdbm:${PORTSDIR}/databases/gdbm \
-		pcre:${PORTSDIR}/devel/pcre \
-		mird:${PORTSDIR}/databases/mird \
-		gmp:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libgdbm.so:${PORTSDIR}/databases/gdbm \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libgmp.so:${PORTSDIR}/math/gmp
 
 CONFLICTS=	pike7[26]-[0-9]*
 
@@ -52,6 +51,7 @@ CONFIGURE_ARGS+=	--without-debug \
 		 --with-jpeg \
 		 --with-tiff \
 		 --with-gdbm \
+		 --with-perl \
 		 --with-relocatable-dumped-modules \
 		 --without-GL --without-GLUT \
 		 --without-GTK \
@@ -76,29 +76,23 @@ MAKE_ENV=	"ac_cv_lib_nettle_nettle_md5_init=no"
 
 USES=		bison gettext gmake perl5
 
-# Allow building Embedded Perl
-CONFIGURE_ARGS+=	--with-perl
-
 PLIST_FILES=	bin/pike bin/pike78 bin/hilfe
 
 NO_STAGE=	yes
+
 .include <bsd.port.pre.mk>
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-.if ${OSVERSION} < 800000
-BROKEN=		Does not build on FreeBSD < 8.x
-.endif
-
 .if ${PORT_OPTIONS:MTTF}
-LIB_DEPENDS+=	ttf:${PORTSDIR}/print/freetype
+LIB_DEPENDS+=	libttf.so:${PORTSDIR}/print/freetype
 CONFIGURE_ARGS+=	--with-ttflib
 .else
 CONFIGURE_ARGS+=	--without-ttflib
 .endif
 
 .if ${PORT_OPTIONS:MFREETYPE}
-LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
 CONFIGURE_ARGS+=	--with-freetype
 .else
 CONFIGURE_ARGS+=	--without-freetype
