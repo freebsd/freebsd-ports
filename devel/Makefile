@@ -2323,6 +2323,7 @@
     SUBDIR += p5-Module-Versions
     SUBDIR += p5-Module-Versions-Report
     SUBDIR += p5-Moo
+    SUBDIR += p5-MooX-File-ConfigDir
     SUBDIR += p5-MooX-Options
     SUBDIR += p5-MooX-Types-MooseLike
     SUBDIR += p5-MooX-Types-MooseLike-Numeric
