@@ -12,8 +12,6 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Interprets Ruby code embedded in a text file like PHP/ePerl/ASP/JSP
 
-NO_STAGE=	yes
-
 USE_RUBY=	yes
 
 CONFIGURE_ARGS=	--enable-shared --with-charset="${DEFAULT_CHARSET}"
@@ -22,8 +20,6 @@ USE_LDCONFIG=	yes
 
 DEFAULT_CHARSET?=	ISO-8859-1
 
-MAN1=		eruby.1
-
 RUBY_RD_FILES=	eruby.rd
 
 DOCS_EN=	COPYING ChangeLog README.en \
@@ -31,33 +27,28 @@ DOCS_EN=	COPYING ChangeLog README.en \
 		${RUBY_RD_HTML_FILES}
 DOCS_JA=	README.ja
 
-do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} configure.rb ${CONFIGURE_ARGS}
-
-post-install:
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${RUBY_MODEXAMPLESDIR}/
-.endif
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}/ja
-.for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
-.endfor
-.for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
-.endfor
-.endif
-
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_PTHREADS)
-.if ${RUBY_VERSION} == 1.8.7.160
-# ruby18 -r rbconfig -e "p Config::CONFIG['LIBS']"  should output:
-# "-lcrypt -lm  -rpath=/usr/lib:/usr/local/lib -pthread"
-# but 1.8.7.160 missing pthread
-CONFIGURE_ENV+=	EXTRA_LDFLAGS="${EXTRA_LDFLAGS} -pthread"
+do-configure:
+	cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} configure.rb ${CONFIGURE_ARGS}
+	${REINPLACE_CMD} -e 's|^XLDFLAGS = .*|XLDFLAGS = -L${PREFIX}/lib|' \
+		-e 's|-Wl,$$(libdir)|-Wl,${PREFIX}/lib|' \
+		-e 's|-L$$(libdir)|-L${PREFIX}/lib|' \
+		${WRKSRC}/Makefile
+
+post-install:
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
 .endif
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja
+.for f in ${DOCS_EN}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
+.endfor
+.for f in ${DOCS_JA}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
+.endfor
 .endif
 
 .if ${RUBY_VER} == "1.9"
