@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpipam
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,34 +27,24 @@ SUB_LIST=	DISTNAME=${DISTNAME}
 
 OPTIONS_DEFINE=	LDAP
 
-USE_MYSQL=	yes
-USE_PHP=	ctype mysqli session gmp
+USE_PHP=	ctype gettext gmp json mysqli pcntl session simplexml
+LDAP_USE=	PHP=ldap
 WANT_PHP_WEB=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_PHP+=	ldap
-.endif
-
-.include <bsd.port.pre.mk>
-
 pre-install:
-	@${MV} ${WRKSRC}/${CFGFILE} ${WRKSRC}/${CFGFILE}.sample
+	@if [ -f ${WRKSRC}/${CFGFILE} ]; then \
+	${MV} ${WRKSRC}/${CFGFILE} ${WRKSRC}/${CFGFILE}.sample ; \
+	fi
 
 do-install:
 	cd ${WRKSRC} ; \
 	for src in $$( ${FIND} . ! -name '*.orig') ; do \
-		dst=${WWWDIR}$${src#.} ; \
+		dst=${STAGEDIR}${WWWDIR}$${src#.} ; \
 		if ${TEST} -d "$$src" ; then \
 			${MKDIR} "$$dst" ; \
 		else \
-			${INSTALL_DATA} -o root -g wheel "$$src" "$$dst" ; \
+			${INSTALL_DATA} "$$src" "$$dst" ; \
 		fi \
 	done
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
