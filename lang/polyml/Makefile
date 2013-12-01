@@ -12,10 +12,10 @@ MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Fast open-source implementation of Standard ML
 
 LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-x
+USE_GCC=	yes
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -26,10 +26,8 @@ PLIST_FILES=	bin/poly		\
 		lib/libpolyml.a		\
 		lib/libpolyml.la	\
 		lib/libpolyml.so	\
-		lib/libpolyml.so.4
+		lib/libpolyml.so.4	\
+		man/man1/poly.1.gz	\
+		man/man1/polyimport.1.gz
 
-MAN1=		poly.1 polyimport.1
-MANCOMPRESSED=	no
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
