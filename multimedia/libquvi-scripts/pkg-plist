@@ -1,4 +1,5 @@
 libdata/pkgconfig/libquvi-scripts.pc
+man/man7/libquvi-scripts.7.gz
 %%DATADIR%%/lua/README
 %%DATADIR%%/lua/util/charset.lua
 %%DATADIR%%/lua/util/content_type.lua
@@ -7,6 +8,7 @@ libdata/pkgconfig/libquvi-scripts.pc
 %%DATADIR%%/lua/website/101greatgoals.lua
 %%DATADIR%%/lua/website/1tvru.lua
 %%DATADIR%%/lua/website/ardmediathek.lua
+%%DATADIR%%/lua/website/arte.lua
 %%DATADIR%%/lua/website/audioboo.lua
 %%DATADIR%%/lua/website/bbc.lua
 %%NSFW%%%%DATADIR%%/lua/website/beeg.lua
@@ -23,9 +25,7 @@ libdata/pkgconfig/libquvi-scripts.pc
 %%DATADIR%%/lua/website/funnyordie.lua
 %%DATADIR%%/lua/website/gaskrank.lua
 %%DATADIR%%/lua/website/guardian.lua
-%%DATADIR%%/lua/website/imdb.lua
 %%NSFW%%%%DATADIR%%/lua/website/jizzhut.lua
-%%DATADIR%%/lua/website/justintv.lua
 %%NSFW%%%%DATADIR%%/lua/website/keezmovies.lua
 %%DATADIR%%/lua/website/lego.lua
 %%DATADIR%%/lua/website/liveleak.lua
@@ -56,7 +56,7 @@ libdata/pkgconfig/libquvi-scripts.pc
 %%DATADIR%%/lua/website/tvrain.lua
 %%DATADIR%%/lua/website/videa.lua
 %%DATADIR%%/lua/website/videobash.lua
-%%DATADIR%%/lua/website/wdrmaus.lua
+%%DATADIR%%/lua/website/vimeo.lua
 %%DATADIR%%/lua/website/wimp.lua
 %%NSFW%%%%DATADIR%%/lua/website/xhamster.lua
 %%NSFW%%%%DATADIR%%/lua/website/xnxx.lua
@@ -64,7 +64,6 @@ libdata/pkgconfig/libquvi-scripts.pc
 %%NSFW%%%%DATADIR%%/lua/website/youjizz.lua
 %%DATADIR%%/lua/website/youtube.lua
 %%DATADIR%%/version
-man/man7/libquvi-scripts.7.gz
 @dirrm %%DATADIR%%/lua/website/quvi
 @dirrm %%DATADIR%%/lua/website
 @dirrm %%DATADIR%%/lua/util
