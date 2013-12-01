@@ -1496,6 +1496,7 @@ sbin/standalone_httpd
 @unexec rmdir >/dev/null 2>&1 /var/run/rt42/mason_data/cache || :
 @unexec rmdir >/dev/null 2>&1 /var/run/rt42/mason_data || :
 @unexec rmdir >/dev/null 2>&1 /var/run/rt42 || :
+@dirrmtry www/rt42
 @dirrmtry %%DATADIR%%/static/js
 @dirrmtry %%DATADIR%%/static/images/tablesorter
 @dirrmtry %%DATADIR%%/static/images/jquery_ui
@@ -1576,15 +1577,9 @@ sbin/standalone_httpd
 @dirrmtry %%DATADIR%%/static/RichText/lang
 @dirrmtry %%DATADIR%%/static/RichText
 @dirrmtry %%DATADIR%%/static
-@dirrmtry %%DATADIR%%/share/rt42/plugins
-@dirrmtry %%DATADIR%%/share/rt42
-@dirrmtry %%DATADIR%%/share
 @dirrmtry %%DATADIR%%/po
-@dirrmtry %%DATADIR%%/local/po
-@dirrmtry %%DATADIR%%/local/lib
-@dirrmtry %%DATADIR%%/local/html
-@dirrmtry %%DATADIR%%/local/etc
-@dirrmtry %%DATADIR%%/local
+@dirrmtry %%DATADIR%%/plugins
+@dirrmtry %%DATADIR%%/lib
 @dirrmtry %%DATADIR%%/html/m/tickets
 @dirrmtry %%DATADIR%%/html/m/ticket
 @dirrmtry %%DATADIR%%/html/m/_elements
@@ -1688,6 +1683,7 @@ sbin/standalone_httpd
 @dirrmtry %%DATADIR%%/html/Admin
 @dirrmtry %%DATADIR%%/html
 @dirrmtry %%DATADIR%%/fonts
+@dirrmtry %%DATADIR%%/etc
 @dirrmtry %%DATADIR%%
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.2.1
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.9
