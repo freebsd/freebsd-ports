@@ -1,5 +1,0 @@
-InspIRCd is a highly modular C++ IRC daemon. It supports most features
-of other IRC daemons, and supports FreeBSD kqueue() for connection
-management.
-
-WWW: http://www.inspircd.org/

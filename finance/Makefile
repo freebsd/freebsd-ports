@@ -24,7 +24,6 @@
     SUBDIR += beanie
     SUBDIR += cbb
     SUBDIR += electrum
-    SUBDIR += eqonomize-kde4
     SUBDIR += expense
     SUBDIR += frontaccounting
     SUBDIR += gnucash

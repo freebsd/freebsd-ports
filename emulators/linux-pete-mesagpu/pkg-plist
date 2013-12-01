@@ -1,9 +1,0 @@
-lib/psemupro/plugins/libgpuPeteMesaGL.so.%%MAJOR%%.0.%%MINOR%%
-libexec/psemupro/cfg/cfgPeteMesaGL
-share/psemupro/cfg/gpuPeteMesaGL.cfg
-@dirrmtry lib/psemupro/plugins
-@dirrmtry lib/psemupro
-@dirrmtry libexec/psemupro/cfg
-@dirrmtry libexec/psemupro
-@dirrmtry share/psemupro/cfg
-@dirrmtry share/psemupro

@@ -824,8 +824,6 @@
     SUBDIR += py-blockdiagcontrib-cisco
     SUBDIR += py-cairo
     SUBDIR += py-chart
-    SUBDIR += py-clutter
-    SUBDIR += py-clutter-gtk
     SUBDIR += py-django-easy-thumbnails
     SUBDIR += py-editobj
     SUBDIR += py-exif

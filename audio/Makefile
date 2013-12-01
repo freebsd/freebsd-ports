@@ -439,7 +439,6 @@
     SUBDIR += linuxsampler
     SUBDIR += liquidsoap
     SUBDIR += listener
-    SUBDIR += liteamp
     SUBDIR += lmms
     SUBDIR += lpac
     SUBDIR += lua51-mpd
