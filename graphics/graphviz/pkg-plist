@@ -7,7 +7,7 @@ bin/diffimg
 bin/dijkstra
 bin/dot
 bin/dot2gxl
-%%WITH_XPM%%bin/dotty
+%%XPM%%bin/dotty
 bin/dot_builtins
 bin/fdp
 bin/gc
@@ -16,7 +16,7 @@ bin/graphml2gv
 bin/gv2gml
 bin/gv2gxl
 bin/gvcolor
-%%WITH_GVEDIT%%bin/gvedit
+%%GVEDIT%%bin/gvedit
 bin/gvgen
 bin/gvmap
 bin/gvmap.sh
@@ -24,9 +24,9 @@ bin/gvpack
 bin/gvpr
 bin/gxl2gv
 bin/gxl2dot
-%%WITH_XPM%%bin/lefty
-%%WITH_XPM%%bin/lneato
-%%WITH_ANN%%bin/mingle
+%%XPM%%bin/lefty
+%%XPM%%bin/lneato
+%%ANN%%bin/mingle
 bin/mm2gv
 bin/neato
 bin/nop
@@ -35,11 +35,11 @@ bin/patchwork
 bin/prune
 bin/sccmap
 bin/sfdp
-%%WITH_SMYRNA%%bin/smyrna
+%%SMYRNA%%bin/smyrna
 bin/tred
 bin/twopi
 bin/unflatten
-%%WITH_PANGOCAIRO%%%%WITH_XPM%%bin/vimdot
+%%PANGOCAIRO%%%%XPM%%bin/vimdot
 include/graphviz/agxbuf.h
 include/graphviz/arith.h
 include/graphviz/ast_common.h
@@ -81,7 +81,6 @@ include/graphviz/usershape.h
 include/graphviz/vis.h
 include/graphviz/vispath.h
 include/graphviz/xdot.h
-lib/graphviz/config6
 lib/graphviz/libcdt.so
 lib/graphviz/libcdt.so.5
 lib/graphviz/libcdt.la
@@ -110,117 +109,177 @@ lib/graphviz/libgvplugin_gd.so
 lib/graphviz/libgvplugin_gd.so.6
 lib/graphviz/libgvplugin_gd.la
 lib/graphviz/libgvplugin_gd.a
-%%WITH_GHOSTSCRIPT%%lib/graphviz/libgvplugin_gs.a
-%%WITH_GHOSTSCRIPT%%lib/graphviz/libgvplugin_gs.la
-%%WITH_GHOSTSCRIPT%%lib/graphviz/libgvplugin_gs.so
-%%WITH_GHOSTSCRIPT%%lib/graphviz/libgvplugin_gs.so.6
-%%WITH_GTK%%lib/graphviz/libgvplugin_gtk.a
-%%WITH_GTK%%lib/graphviz/libgvplugin_gtk.la
-%%WITH_GTK%%lib/graphviz/libgvplugin_gtk.so
-%%WITH_GTK%%lib/graphviz/libgvplugin_gtk.so.6
-%%WITH_MING%%lib/graphviz/libgvplugin_ming.a
-%%WITH_MING%%lib/graphviz/libgvplugin_ming.la
-%%WITH_MING%%lib/graphviz/libgvplugin_ming.so
-%%WITH_MING%%lib/graphviz/libgvplugin_ming.so.6
-%%WITH_PIXBUF%%lib/graphviz/libgvplugin_gdk_pixbuf.a
-%%WITH_PIXBUF%%lib/graphviz/libgvplugin_gdk_pixbuf.la
-%%WITH_PIXBUF%%lib/graphviz/libgvplugin_gdk_pixbuf.so
-%%WITH_PIXBUF%%lib/graphviz/libgvplugin_gdk_pixbuf.so.6
+%%GHOSTSCRIPT%%lib/graphviz/libgvplugin_gs.a
+%%GHOSTSCRIPT%%lib/graphviz/libgvplugin_gs.la
+%%GHOSTSCRIPT%%lib/graphviz/libgvplugin_gs.so
+%%GHOSTSCRIPT%%lib/graphviz/libgvplugin_gs.so.6
+%%GTK2%%lib/graphviz/libgvplugin_gtk.a
+%%GTK2%%lib/graphviz/libgvplugin_gtk.la
+%%GTK2%%lib/graphviz/libgvplugin_gtk.so
+%%GTK2%%lib/graphviz/libgvplugin_gtk.so.6
+%%MING%%lib/graphviz/libgvplugin_ming.a
+%%MING%%lib/graphviz/libgvplugin_ming.la
+%%MING%%lib/graphviz/libgvplugin_ming.so
+%%MING%%lib/graphviz/libgvplugin_ming.so.6
+%%GDK_PIXBUF%%lib/graphviz/libgvplugin_gdk_pixbuf.a
+%%GDK_PIXBUF%%lib/graphviz/libgvplugin_gdk_pixbuf.la
+%%GDK_PIXBUF%%lib/graphviz/libgvplugin_gdk_pixbuf.so
+%%GDK_PIXBUF%%lib/graphviz/libgvplugin_gdk_pixbuf.so.6
 lib/graphviz/libgvplugin_neato_layout.so
 lib/graphviz/libgvplugin_neato_layout.so.6
 lib/graphviz/libgvplugin_neato_layout.la
 lib/graphviz/libgvplugin_neato_layout.a
-%%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_pango.so
-%%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_pango.so.6
-%%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_pango.la
-%%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_pango.a
-%%WITH_POPPLER%%lib/graphviz/libgvplugin_poppler.a
-%%WITH_POPPLER%%lib/graphviz/libgvplugin_poppler.la
-%%WITH_POPPLER%%lib/graphviz/libgvplugin_poppler.so
-%%WITH_POPPLER%%lib/graphviz/libgvplugin_poppler.so.6
-%%WITH_PANGOCAIRO%%%%WITH_XPM%%lib/graphviz/libgvplugin_xlib.a
-%%WITH_PANGOCAIRO%%%%WITH_XPM%%lib/graphviz/libgvplugin_xlib.la
-%%WITH_PANGOCAIRO%%%%WITH_XPM%%lib/graphviz/libgvplugin_xlib.so
-%%WITH_PANGOCAIRO%%%%WITH_XPM%%lib/graphviz/libgvplugin_xlib.so.6
+%%PANGOCAIRO%%lib/graphviz/libgvplugin_pango.so
+%%PANGOCAIRO%%lib/graphviz/libgvplugin_pango.so.6
+%%PANGOCAIRO%%lib/graphviz/libgvplugin_pango.la
+%%PANGOCAIRO%%lib/graphviz/libgvplugin_pango.a
+%%POPPLER%%lib/graphviz/libgvplugin_poppler.a
+%%POPPLER%%lib/graphviz/libgvplugin_poppler.la
+%%POPPLER%%lib/graphviz/libgvplugin_poppler.so
+%%POPPLER%%lib/graphviz/libgvplugin_poppler.so.6
+%%PANGOCAIRO%%%%XPM%%lib/graphviz/libgvplugin_xlib.a
+%%PANGOCAIRO%%%%XPM%%lib/graphviz/libgvplugin_xlib.la
+%%PANGOCAIRO%%%%XPM%%lib/graphviz/libgvplugin_xlib.so
+%%PANGOCAIRO%%%%XPM%%lib/graphviz/libgvplugin_xlib.so.6
 lib/graphviz/libgvpr.a
 lib/graphviz/libgvpr.la
 lib/graphviz/libgvpr.so
 lib/graphviz/libgvpr.so.2
-%%WITH_GUILE%%lib/graphviz/guile/libgv_guile.a
-%%WITH_GUILE%%lib/graphviz/guile/libgv_guile.la
-%%WITH_GUILE%%lib/graphviz/guile/libgv_guile.so
-%%WITH_PHP%%lib/graphviz/php/gv.php
-%%WITH_PHP%%lib/graphviz/php/gv.so
-%%WITH_PHP%%lib/graphviz/php/libgv_php.a
-%%WITH_PHP%%lib/graphviz/php/libgv_php.la
-%%WITH_PHP%%lib/graphviz/php/libgv_php.so
-%%WITH_TCL%%lib/graphviz/tcl/libgdtclft.a
-%%WITH_TCL%%lib/graphviz/tcl/libgdtclft.la
-%%WITH_TCL%%lib/graphviz/tcl/libgdtclft.so
-%%WITH_TCL%%lib/graphviz/tcl/libgdtclft.so.0
-%%WITH_TCL%%lib/graphviz/tcl/libgv_tcl.a
-%%WITH_TCL%%lib/graphviz/tcl/libgv_tcl.la
-%%WITH_TCL%%lib/graphviz/tcl/libgv_tcl.so
-%%WITH_TCL%%lib/graphviz/tcl/libtcldot.a
-%%WITH_TCL%%lib/graphviz/tcl/libtcldot.la
-%%WITH_TCL%%lib/graphviz/tcl/libtcldot.so
-%%WITH_TCL%%lib/graphviz/tcl/libtcldot.so.0
-%%WITH_TCL%%lib/graphviz/tcl/libtcldot_builtin.a
-%%WITH_TCL%%lib/graphviz/tcl/libtcldot_builtin.la
-%%WITH_TCL%%lib/graphviz/tcl/libtcldot_builtin.so
-%%WITH_TCL%%lib/graphviz/tcl/libtcldot_builtin.so.0
-%%WITH_TCL%%lib/graphviz/tcl/libtclplan.a
-%%WITH_TCL%%lib/graphviz/tcl/libtclplan.la
-%%WITH_TCL%%lib/graphviz/tcl/libtclplan.so
-%%WITH_TCL%%lib/graphviz/tcl/libtclplan.so.0
-%%WITH_TCL%%lib/graphviz/tcl/pkgIndex.tcl
-%%WITH_TCL%%lib/tcl%%TCL_VER%%/graphviz
-%%WITH_TK%%lib/graphviz/tcl/libtkspline.a
-%%WITH_TK%%lib/graphviz/tcl/libtkspline.la
-%%WITH_TK%%lib/graphviz/tcl/libtkspline.so
-%%WITH_TK%%lib/graphviz/tcl/libtkspline.so.0
-%%WITH_LUA%%lib/graphviz/lua/gv.so
-%%WITH_LUA%%lib/graphviz/lua/libgv_lua.a
-%%WITH_LUA%%lib/graphviz/lua/libgv_lua.la
-%%WITH_LUA%%lib/graphviz/lua/libgv_lua.so
-%%WITH_LUA%%lib/lua/%%LUA_VER%%/gv.so
-%%WITH_PERL%%lib/graphviz/perl/gv.so
-%%WITH_PERL%%lib/graphviz/perl/gv.pm
-%%WITH_PERL%%lib/graphviz/perl/libgv_perl.a
-%%WITH_PERL%%lib/graphviz/perl/libgv_perl.la
-%%WITH_PERL%%lib/graphviz/perl/libgv_perl.so
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/gv.pm
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/gv.so
-%%WITH_PYTHON%%lib/graphviz/python/_gv.so
-%%WITH_PYTHON%%lib/graphviz/python/gv.py
-%%WITH_PYTHON%%lib/graphviz/python/libgv_python.a
-%%WITH_PYTHON%%lib/graphviz/python/libgv_python.la
-%%WITH_PYTHON%%lib/graphviz/python/libgv_python.so
-%%WITH_PYTHON%%%%PYTHON_LIBDIR%%/site-packages/_gv.so
-%%WITH_PYTHON%%%%PYTHON_LIBDIR%%/site-packages/gv.py
-%%WITH_RUBY%%lib/graphviz/ruby/gv.so
-%%WITH_RUBY%%lib/graphviz/ruby/libgv_ruby.a
-%%WITH_RUBY%%lib/graphviz/ruby/libgv_ruby.la
-%%WITH_RUBY%%lib/graphviz/ruby/libgv_ruby.so
-%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/gv.so
-%%WITH_RSVG%%lib/graphviz/libgvplugin_rsvg.a
-%%WITH_RSVG%%lib/graphviz/libgvplugin_rsvg.la
-%%WITH_RSVG%%lib/graphviz/libgvplugin_rsvg.so
-%%WITH_RSVG%%lib/graphviz/libgvplugin_rsvg.so.6
-%%WITH_DEVIL%%lib/graphviz/libgvplugin_devil.a
-%%WITH_DEVIL%%lib/graphviz/libgvplugin_devil.la
-%%WITH_DEVIL%%lib/graphviz/libgvplugin_devil.so
-%%WITH_DEVIL%%lib/graphviz/libgvplugin_devil.so.6
+%%GUILE%%lib/graphviz/guile/libgv_guile.a
+%%GUILE%%lib/graphviz/guile/libgv_guile.la
+%%GUILE%%lib/graphviz/guile/libgv_guile.so
+%%PHP%%lib/graphviz/php/gv.php
+%%PHP%%lib/graphviz/php/gv.so
+%%PHP%%lib/graphviz/php/libgv_php.a
+%%PHP%%lib/graphviz/php/libgv_php.la
+%%PHP%%lib/graphviz/php/libgv_php.so
+%%TCL%%lib/graphviz/tcl/libgdtclft.a
+%%TCL%%lib/graphviz/tcl/libgdtclft.la
+%%TCL%%lib/graphviz/tcl/libgdtclft.so
+%%TCL%%lib/graphviz/tcl/libgdtclft.so.0
+%%TCL%%lib/graphviz/tcl/libgv_tcl.a
+%%TCL%%lib/graphviz/tcl/libgv_tcl.la
+%%TCL%%lib/graphviz/tcl/libgv_tcl.so
+%%TCL%%lib/graphviz/tcl/libtcldot.a
+%%TCL%%lib/graphviz/tcl/libtcldot.la
+%%TCL%%lib/graphviz/tcl/libtcldot.so
+%%TCL%%lib/graphviz/tcl/libtcldot.so.0
+%%TCL%%lib/graphviz/tcl/libtcldot_builtin.a
+%%TCL%%lib/graphviz/tcl/libtcldot_builtin.la
+%%TCL%%lib/graphviz/tcl/libtcldot_builtin.so
+%%TCL%%lib/graphviz/tcl/libtcldot_builtin.so.0
+%%TCL%%lib/graphviz/tcl/libtclplan.a
+%%TCL%%lib/graphviz/tcl/libtclplan.la
+%%TCL%%lib/graphviz/tcl/libtclplan.so
+%%TCL%%lib/graphviz/tcl/libtclplan.so.0
+%%TCL%%lib/graphviz/tcl/pkgIndex.tcl
+%%TCL%%lib/tcl%%TCL_VER%%/graphviz
+%%TK%%lib/graphviz/tcl/libtkspline.a
+%%TK%%lib/graphviz/tcl/libtkspline.la
+%%TK%%lib/graphviz/tcl/libtkspline.so
+%%TK%%lib/graphviz/tcl/libtkspline.so.0
+%%LUA%%lib/graphviz/lua/gv.so
+%%LUA%%lib/graphviz/lua/libgv_lua.a
+%%LUA%%lib/graphviz/lua/libgv_lua.la
+%%LUA%%lib/graphviz/lua/libgv_lua.so
+%%LUA%%lib/lua/%%LUA_VER%%/gv.so
+%%PERL%%lib/graphviz/perl/gv.so
+%%PERL%%lib/graphviz/perl/gv.pm
+%%PERL%%lib/graphviz/perl/libgv_perl.a
+%%PERL%%lib/graphviz/perl/libgv_perl.la
+%%PERL%%lib/graphviz/perl/libgv_perl.so
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/gv.pm
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/gv.so
+%%PYTHON%%lib/graphviz/python/_gv.so
+%%PYTHON%%lib/graphviz/python/gv.py
+%%PYTHON%%lib/graphviz/python/libgv_python.a
+%%PYTHON%%lib/graphviz/python/libgv_python.la
+%%PYTHON%%lib/graphviz/python/libgv_python.so
+%%PYTHON%%%%PYTHON_LIBDIR%%/site-packages/_gv.so
+%%PYTHON%%%%PYTHON_LIBDIR%%/site-packages/gv.py
+%%RUBY%%lib/graphviz/ruby/gv.so
+%%RUBY%%lib/graphviz/ruby/libgv_ruby.a
+%%RUBY%%lib/graphviz/ruby/libgv_ruby.la
+%%RUBY%%lib/graphviz/ruby/libgv_ruby.so
+%%RUBY%%%%RUBY_SITEARCHLIBDIR%%/gv.so
+%%LIBRSVG2%%lib/graphviz/libgvplugin_rsvg.a
+%%LIBRSVG2%%lib/graphviz/libgvplugin_rsvg.la
+%%LIBRSVG2%%lib/graphviz/libgvplugin_rsvg.so
+%%LIBRSVG2%%lib/graphviz/libgvplugin_rsvg.so.6
+%%DEVIL%%lib/graphviz/libgvplugin_devil.a
+%%DEVIL%%lib/graphviz/libgvplugin_devil.la
+%%DEVIL%%lib/graphviz/libgvplugin_devil.so
+%%DEVIL%%lib/graphviz/libgvplugin_devil.so.6
 lib/graphviz/libxdot.a
 lib/graphviz/libxdot.la
 lib/graphviz/libxdot.so
 lib/graphviz/libxdot.so.4
+@exec %D/bin/dot -c
+@unexec rm -f %D/lib/graphviz/config6
 libdata/pkgconfig/libcdt.pc
 libdata/pkgconfig/libcgraph.pc
 libdata/pkgconfig/libpathplan.pc
 libdata/pkgconfig/libgvc.pc
 libdata/pkgconfig/libgvpr.pc
 libdata/pkgconfig/libxdot.pc
+man/man1/acyclic.1.gz
+man/man1/bcomps.1.gz
+man/man1/ccomps.1.gz
+man/man1/cluster.1.gz
+man/man1/diffimg.1.gz
+man/man1/dijkstra.1.gz
+man/man1/dot.1.gz
+%%XPM%%man/man1/dotty.1.gz
+man/man1/gc.1.gz
+man/man1/graphml2gv.1.gz
+man/man1/gml2gv.1.gz
+man/man1/gv2gxl.1.gz
+%%GVEDIT%%man/man1/gvedit.1.gz
+man/man1/gvgen.1.gz
+man/man1/gvmap.1.gz
+man/man1/gvmap.sh.1.gz
+man/man1/gvcolor.1.gz
+man/man1/gvpack.1.gz
+man/man1/gvpr.1.gz
+%%XPM%%man/man1/lefty.1.gz
+%%XPM%%man/man1/lneato.1.gz
+%%ANN%%man/man1/mingle.1.gz
+man/man1/mm2gv.1.gz
+man/man1/nop.1.gz
+man/man1/osage.1.gz
+man/man1/patchwork.1.gz
+man/man1/prune.1.gz
+man/man1/sccmap.1.gz
+%%SMYRNA%%man/man1/smyrna.1.gz
+man/man1/tred.1.gz
+man/man1/unflatten.1.gz
+man/man1/vimdot.1.gz
+man/man1/circo.1.gz
+man/man1/fdp.1.gz
+man/man1/neato.1.gz
+man/man1/sfdp.1.gz
+man/man1/twopi.1.gz
+man/man1/gv2gml.1.gz
+man/man1/gxl2gv.1.gz
+man/man3/cdt.3.gz
+man/man3/cgraph.3.gz
+man/man3/expr.3.gz
+%%TCL%%man/man3/gdtclft.3tcl.gz
+man/man3/graph.3.gz
+%%GUILE%%man/man3/gv.3guile.gz
+%%LUA%%man/man3/gv.3lua.gz
+%%PERL%%man/man3/gv.3perl.gz
+%%PHP%%man/man3/gv.3php.gz
+%%PYTHON%%man/man3/gv.3python.gz
+%%RUBY%%man/man3/gv.3ruby.gz
+%%TCL%%man/man3/gv.3tcl.gz
+man/man3/gvc.3.gz
+man/man3/pack.3.gz
+man/man3/pathplan.3.gz
+%%TCL%%man/man3/tcldot.3tcl.gz
+%%TK%%man/man3/tkspline.3tk.gz
+man/man3/xdot.3.gz
+man/man7/graphviz.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -432,76 +491,76 @@ libdata/pkgconfig/libxdot.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pathplan.tcl.README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spline.tcl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spline.tcl.README
-%%WITH_LUA%%%%DATADIR%%/demo/modgraph.lua
-%%WITH_PERL%%%%DATADIR%%/demo/modgraph.pl
-%%WITH_PHP%%%%DATADIR%%/demo/modgraph.php
-%%WITH_PYTHON%%%%DATADIR%%/demo/modgraph.py
-%%WITH_RUBY%%%%DATADIR%%/demo/modgraph.rb
-%%WITH_TCL%%%%DATADIR%%/demo/modgraph.tcl
+%%LUA%%%%DATADIR%%/demo/modgraph.lua
+%%PERL%%%%DATADIR%%/demo/modgraph.pl
+%%PHP%%%%DATADIR%%/demo/modgraph.php
+%%PYTHON%%%%DATADIR%%/demo/modgraph.py
+%%RUBY%%%%DATADIR%%/demo/modgraph.rb
+%%TCL%%%%DATADIR%%/demo/modgraph.tcl
 %%DATADIR%%/doc/html/schema/arguments.xml
 %%DATADIR%%/doc/html/schema/attributes.xml
 %%DATADIR%%/doc/html/schema/attributes.xslt
-%%WITH_SMYRNA%%%%DATADIR%%/examples/4elt.gv
-%%WITH_SMYRNA%%%%DATADIR%%/examples/world.gv
-%%WITH_MING%%%%DATADIR%%/font/Bitstream_Vera_Sans.fdb
-%%WITH_MING%%%%DATADIR%%/font/Bitstream_Vera_Serif.fdb
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/2D.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/3D.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/AntiselectRect.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/AntiselectRectX.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/add_edge.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/arial.tga
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/attrs.txt
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/attr_widgets.dot
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/center.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/cursor.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/deletE_edge.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/delete_node.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/details.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/edge.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/find_edge.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/find_node.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/fish.PNG
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/fisheye.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/fisheye.raw
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/fit.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/fit_to_screen.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/hourglass.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/magifier_zoom_out.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/magnifier.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/magnifier_zoom_in.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/mod_3D.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/mod_fisheye.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/mouse_actions.txt
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/move.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/new_delete.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/new_node.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/newzoom.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/no_fisheye.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/node.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/ok.raw
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/ok2.raw
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/ok3.raw
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/pan.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/pan.raw
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/preview.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/rect_select.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/rect_select2.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/rotate.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/rotate.raw
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/select.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/selectx.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/smyrna.glade
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/template.dot
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/zoom.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/zoom.raw
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/zoomin.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/zoomout.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/zoom_in.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/zoom_out.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/zoomminus.raw
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/zoomplus.raw
-%%WITH_GVEDIT%%%%DATADIR%%/gvedit/attrs.txt
+%%SMYRNA%%%%DATADIR%%/examples/4elt.gv
+%%SMYRNA%%%%DATADIR%%/examples/world.gv
+%%MING%%%%DATADIR%%/font/Bitstream_Vera_Sans.fdb
+%%MING%%%%DATADIR%%/font/Bitstream_Vera_Serif.fdb
+%%SMYRNA%%%%DATADIR%%/smyrna/2D.png
+%%SMYRNA%%%%DATADIR%%/smyrna/3D.png
+%%SMYRNA%%%%DATADIR%%/smyrna/AntiselectRect.png
+%%SMYRNA%%%%DATADIR%%/smyrna/AntiselectRectX.png
+%%SMYRNA%%%%DATADIR%%/smyrna/add_edge.png
+%%SMYRNA%%%%DATADIR%%/smyrna/arial.tga
+%%SMYRNA%%%%DATADIR%%/smyrna/attrs.txt
+%%SMYRNA%%%%DATADIR%%/smyrna/attr_widgets.dot
+%%SMYRNA%%%%DATADIR%%/smyrna/center.png
+%%SMYRNA%%%%DATADIR%%/smyrna/cursor.png
+%%SMYRNA%%%%DATADIR%%/smyrna/deletE_edge.png
+%%SMYRNA%%%%DATADIR%%/smyrna/delete_node.png
+%%SMYRNA%%%%DATADIR%%/smyrna/details.png
+%%SMYRNA%%%%DATADIR%%/smyrna/edge.png
+%%SMYRNA%%%%DATADIR%%/smyrna/find_edge.png
+%%SMYRNA%%%%DATADIR%%/smyrna/find_node.png
+%%SMYRNA%%%%DATADIR%%/smyrna/fish.PNG
+%%SMYRNA%%%%DATADIR%%/smyrna/fisheye.png
+%%SMYRNA%%%%DATADIR%%/smyrna/fisheye.raw
+%%SMYRNA%%%%DATADIR%%/smyrna/fit.png
+%%SMYRNA%%%%DATADIR%%/smyrna/fit_to_screen.png
+%%SMYRNA%%%%DATADIR%%/smyrna/hourglass.png
+%%SMYRNA%%%%DATADIR%%/smyrna/magifier_zoom_out.png
+%%SMYRNA%%%%DATADIR%%/smyrna/magnifier.png
+%%SMYRNA%%%%DATADIR%%/smyrna/magnifier_zoom_in.png
+%%SMYRNA%%%%DATADIR%%/smyrna/mod_3D.png
+%%SMYRNA%%%%DATADIR%%/smyrna/mod_fisheye.png
+%%SMYRNA%%%%DATADIR%%/smyrna/mouse_actions.txt
+%%SMYRNA%%%%DATADIR%%/smyrna/move.png
+%%SMYRNA%%%%DATADIR%%/smyrna/new_delete.png
+%%SMYRNA%%%%DATADIR%%/smyrna/new_node.png
+%%SMYRNA%%%%DATADIR%%/smyrna/newzoom.png
+%%SMYRNA%%%%DATADIR%%/smyrna/no_fisheye.png
+%%SMYRNA%%%%DATADIR%%/smyrna/node.png
+%%SMYRNA%%%%DATADIR%%/smyrna/ok.raw
+%%SMYRNA%%%%DATADIR%%/smyrna/ok2.raw
+%%SMYRNA%%%%DATADIR%%/smyrna/ok3.raw
+%%SMYRNA%%%%DATADIR%%/smyrna/pan.png
+%%SMYRNA%%%%DATADIR%%/smyrna/pan.raw
+%%SMYRNA%%%%DATADIR%%/smyrna/preview.png
+%%SMYRNA%%%%DATADIR%%/smyrna/rect_select.png
+%%SMYRNA%%%%DATADIR%%/smyrna/rect_select2.png
+%%SMYRNA%%%%DATADIR%%/smyrna/rotate.png
+%%SMYRNA%%%%DATADIR%%/smyrna/rotate.raw
+%%SMYRNA%%%%DATADIR%%/smyrna/select.png
+%%SMYRNA%%%%DATADIR%%/smyrna/selectx.png
+%%SMYRNA%%%%DATADIR%%/smyrna/smyrna.glade
+%%SMYRNA%%%%DATADIR%%/smyrna/template.dot
+%%SMYRNA%%%%DATADIR%%/smyrna/zoom.png
+%%SMYRNA%%%%DATADIR%%/smyrna/zoom.raw
+%%SMYRNA%%%%DATADIR%%/smyrna/zoomin.png
+%%SMYRNA%%%%DATADIR%%/smyrna/zoomout.png
+%%SMYRNA%%%%DATADIR%%/smyrna/zoom_in.png
+%%SMYRNA%%%%DATADIR%%/smyrna/zoom_out.png
+%%SMYRNA%%%%DATADIR%%/smyrna/zoomminus.raw
+%%SMYRNA%%%%DATADIR%%/smyrna/zoomplus.raw
+%%GVEDIT%%%%DATADIR%%/gvedit/attrs.txt
 %%DATADIR%%/lefty/box.lefty
 %%DATADIR%%/lefty/def.lefty
 %%DATADIR%%/lefty/fractal.lefty
@@ -509,11 +568,11 @@ libdata/pkgconfig/libxdot.pc
 %%DATADIR%%/lefty/slides.lefty
 %%DATADIR%%/lefty/tree.lefty
 %%DATADIR%%/lefty/lefty.psp
-%%WITH_XPM%%%%DATADIR%%/lefty/dotty.lefty
-%%WITH_XPM%%%%DATADIR%%/lefty/dotty_draw.lefty
-%%WITH_XPM%%%%DATADIR%%/lefty/dotty_edit.lefty
-%%WITH_XPM%%%%DATADIR%%/lefty/dotty_layout.lefty
-%%WITH_XPM%%%%DATADIR%%/lefty/dotty_ui.lefty
+%%XPM%%%%DATADIR%%/lefty/dotty.lefty
+%%XPM%%%%DATADIR%%/lefty/dotty_draw.lefty
+%%XPM%%%%DATADIR%%/lefty/dotty_edit.lefty
+%%XPM%%%%DATADIR%%/lefty/dotty_layout.lefty
+%%XPM%%%%DATADIR%%/lefty/dotty_ui.lefty
 %%DATADIR%%/graphs/directed/KW91.gv
 %%DATADIR%%/graphs/directed/Latin1.gv
 %%DATADIR%%/graphs/directed/NaN.gv
@@ -604,42 +663,42 @@ libdata/pkgconfig/libxdot.pc
 %%DATADIR%%/gvpr/span
 %%DATADIR%%/gvpr/topon
 %%DATADIR%%/gvpr/treetoclust
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/dot.PNG
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/glade-3.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/lcirco.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/ldot.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/lfdp.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/lneato.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/ltwopi.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/selectr.png
-%%WITH_SMYRNA%%%%DATADIR%%/smyrna/single_select.png
-%%WITH_TCL%%@dirrm lib/graphviz/tcl
-%%WITH_RUBY%%@dirrm lib/graphviz/ruby
-%%WITH_PYTHON%%@dirrm lib/graphviz/python
-%%WITH_PHP%%@dirrm lib/graphviz/php
-%%WITH_PERL%%@dirrm lib/graphviz/perl
-%%WITH_LUA%%@dirrm lib/graphviz/lua
-%%WITH_GUILE%%@dirrm lib/graphviz/guile
+%%SMYRNA%%%%DATADIR%%/smyrna/dot.PNG
+%%SMYRNA%%%%DATADIR%%/smyrna/glade-3.png
+%%SMYRNA%%%%DATADIR%%/smyrna/lcirco.png
+%%SMYRNA%%%%DATADIR%%/smyrna/ldot.png
+%%SMYRNA%%%%DATADIR%%/smyrna/lfdp.png
+%%SMYRNA%%%%DATADIR%%/smyrna/lneato.png
+%%SMYRNA%%%%DATADIR%%/smyrna/ltwopi.png
+%%SMYRNA%%%%DATADIR%%/smyrna/selectr.png
+%%SMYRNA%%%%DATADIR%%/smyrna/single_select.png
+%%TCL%%@dirrm lib/graphviz/tcl
+%%RUBY%%@dirrm lib/graphviz/ruby
+%%PYTHON%%@dirrm lib/graphviz/python
+%%PHP%%@dirrm lib/graphviz/php
+%%PERL%%@dirrm lib/graphviz/perl
+%%LUA%%@dirrm lib/graphviz/lua
+%%GUILE%%@dirrm lib/graphviz/guile
 @dirrm lib/graphviz
 @dirrm include/graphviz
-%%WITH_SMYRNA%%@dirrm %%DATADIR%%/smyrna
+%%SMYRNA%%@dirrm %%DATADIR%%/smyrna
 @dirrm %%DATADIR%%/lefty
 @dirrm %%DATADIR%%/gvpr
-%%WITH_GVEDIT%%@dirrm %%DATADIR%%/gvedit
+%%GVEDIT%%@dirrm %%DATADIR%%/gvedit
 @dirrm %%DATADIR%%/graphs/directed
 @dirrm %%DATADIR%%/graphs/undirected
 @dirrm %%DATADIR%%/graphs
-%%WITH_MING%%@dirrm %%DATADIR%%/font
-%%WITH_SMYRNA%%@dirrm %%DATADIR%%/examples
+%%MING%%@dirrm %%DATADIR%%/font
+%%SMYRNA%%@dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%/doc/html/schema
 @dirrm %%DATADIR%%/doc/html
 @dirrm %%DATADIR%%/doc
-%%WITH_LUA%%@dirrmtry %%DATADIR%%/demo
-%%WITH_PERL%%@dirrmtry %%DATADIR%%/demo
-%%WITH_PHP%%@dirrmtry %%DATADIR%%/demo
-%%WITH_PYTHON%%@dirrmtry %%DATADIR%%/demo
-%%WITH_RUBY%%@dirrmtry %%DATADIR%%/demo
-%%WITH_TCL%%@dirrmtry %%DATADIR%%/demo
+%%LUA%%@dirrmtry %%DATADIR%%/demo
+%%PERL%%@dirrmtry %%DATADIR%%/demo
+%%PHP%%@dirrmtry %%DATADIR%%/demo
+%%PYTHON%%@dirrmtry %%DATADIR%%/demo
+%%RUBY%%@dirrmtry %%DATADIR%%/demo
+%%TCL%%@dirrmtry %%DATADIR%%/demo
 @dirrm %%DATADIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pathplan_data
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
