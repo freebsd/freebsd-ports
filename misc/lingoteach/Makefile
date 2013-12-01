@@ -1,4 +1,3 @@
-# Created by: Marcus von Appen
 # $FreeBSD$
 
 PORTNAME=	lingoteach
@@ -11,7 +10,7 @@ DISTFILES=	${PORTNAME}-ui-${PORTVERSION}.tar.gz
 DISTFILES+=	${PORTNAME}-sound-${SOUNDV}.tar.gz
 .endif
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A language teaching program with sound
 
 LIB_DEPENDS=	lingoteach.3:${PORTSDIR}/textproc/liblingoteach
