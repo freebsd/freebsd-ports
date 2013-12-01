@@ -2,17 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	menu-cache
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	x11
-MASTER_SITES=	SF/lxde/menu-cache/menu-cache%20${PORTVERSION:S/.0/.x/}/
+MASTER_SITES=	SF/lxde/menu-cache/menu-cache%20$${PORTVERSION:R}.x/
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	The menu-cache portion of LXDE
 
-USES=		pkgconfig
+USES=		gmake pkgconfig
 USE_GNOME=	gnomehack glib20
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_FAM=	yes
 
