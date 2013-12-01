@@ -1,0 +1,4 @@
+Term::Size::Perl is yet another implementation of Term::Size in pure Perl, with
+the exception of a C probe run on build time.
+
+WWW: http://search.cpan.org/dist/Term-Size-Perl/
