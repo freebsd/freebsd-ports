@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.shikadi.net/utils/files/
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	XMMS input plugin to play midi files (via timidity)
 
-LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
 USE_LDCONFIG=	${PREFIX}/lib/xmms/Input
@@ -18,12 +18,12 @@ NO_STAGE=	yes
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
-CFLAGS+=	-I${LOCALBASE}/include `glib-config --cflags` -g -fPIC
+CXXFLAGS+=	-I${LOCALBASE}/include `glib-config --cflags` -g -fPIC
 
 FILES=	xmms-timidity.cpp
 PLIST_FILES=	lib/xmms/Input/libxmms-timidity.so
 
 do-build:
-	(cd ${WRKSRC} && ${CXX} ${CFLAGS} -c ${FILES} -o xmms-timidity.o)
+	(cd ${WRKSRC} && ${CXX} ${CXXFLAGS} -c ${FILES} -o xmms-timidity.o)
 
 .include <bsd.port.mk>
