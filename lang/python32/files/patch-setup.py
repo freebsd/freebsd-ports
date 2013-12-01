@@ -1,5 +1,5 @@
---- setup.py.orig	2013-05-16 02:33:58.000000000 +1000
-+++ setup.py	2013-09-08 02:31:44.216199627 +1000
+--- ./setup.py.orig	2013-05-16 02:33:58.000000000 +1000
++++ ./setup.py	2013-12-01 21:08:17.425989640 +1100
 @@ -21,7 +21,7 @@
  COMPILED_WITH_PYDEBUG = hasattr(sys, 'gettotalrefcount')
  
@@ -70,17 +70,23 @@
              # FreeBSD's P1003.1b semaphore support is very experimental
              # and has many known problems. (as of June 2008)
              macros = dict()
-@@ -1416,8 +1418,7 @@
+@@ -1416,9 +1418,12 @@
          # End multiprocessing
  
          # Platform-specific libraries
 -        if (platform in ('linux2', 'freebsd4', 'freebsd5', 'freebsd6',
 -                        'freebsd7', 'freebsd8')
-+        if (platform in ('freebsd7', 'freebsd8', 'freebsd9', 'freebsd10')
-             or platform.startswith("gnukfreebsd")):
+-            or platform.startswith("gnukfreebsd")):
++        #############################
++        # Backport Commit: http://hg.python.org/cpython/rev/50f1922bc1d5
++        # Backport Issue: http://bugs.python.org/issue12326
++        #############################
++        if any(platform.startswith(prefix)
++               for prefix in ("linux", "freebsd", "gnukfreebsd")):
              exts.append( Extension('ossaudiodev', ['ossaudiodev.c']) )
          else:
-@@ -1935,8 +1936,7 @@
+             missing.append('ossaudiodev')
+@@ -1935,8 +1940,7 @@
            # If you change the scripts installed here, you also need to
            # check the PyBuildScripts command above, and change the links
            # created by the bininstall target in Makefile.pre.in

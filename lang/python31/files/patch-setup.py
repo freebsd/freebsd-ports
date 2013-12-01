@@ -1,5 +1,5 @@
---- setup.py.orig	2010-11-26 19:56:26.000000000 +0800
-+++ setup.py	2010-12-14 10:53:36.000000000 +0800
+--- ./setup.py.orig	2012-04-10 09:25:37.000000000 +1000
++++ ./setup.py	2013-12-01 21:05:04.742891449 +1100
 @@ -17,7 +17,7 @@
  from distutils.spawn import find_executable
  
@@ -9,7 +9,7 @@
  
  def add_dir_to_list(dirlist, dir):
      """Add the directory 'dir' to the list 'dirlist' (at the front) if
-@@ -578,7 +578,7 @@
+@@ -601,7 +601,7 @@
          #    curses_library = readline_termcap_library
          # elif self.compiler.find_library_file(lib_dirs, 'ncursesw'):
          # (...)
@@ -18,7 +18,7 @@
              curses_library = 'ncursesw'
          elif self.compiler.find_library_file(lib_dirs, 'ncurses'):
              curses_library = 'ncurses'
-@@ -614,7 +614,7 @@
+@@ -637,7 +637,7 @@
                                                 'termcap'):
                  readline_libs.append('termcap')
              exts.append( Extension('readline', ['readline.c'],
@@ -27,7 +27,7 @@
                                     extra_link_args=readline_extra_link_args,
                                     libraries=readline_libs) )
          else:
-@@ -708,6 +708,8 @@
+@@ -731,6 +731,8 @@
              # OpenSSL doesn't do these until 0.9.8 so we'll bring our own hash
              exts.append( Extension('_sha256', ['sha256module.c']) )
              exts.append( Extension('_sha512', ['sha512module.c']) )
@@ -36,7 +36,7 @@
  
          if openssl_ver < 0x00907000:
              # no openssl at all, use our own md5 and sha1
-@@ -1116,12 +1118,13 @@
+@@ -1139,12 +1141,13 @@
          # provided by the ncurses library.
          panel_library = 'panel'
          if curses_library.startswith('ncurses'):
@@ -51,7 +51,7 @@
                                     libraries = curses_libs) )
          elif curses_library == 'curses' and platform != 'darwin':
                  # OSX has an old Berkeley curses, not good enough for
-@@ -1142,6 +1145,7 @@
+@@ -1165,6 +1168,7 @@
          if (module_enabled(exts, '_curses') and
              self.compiler.find_library_file(lib_dirs, panel_library)):
              exts.append( Extension('_curses_panel', ['_curses_panel.c'],
@@ -59,7 +59,7 @@
                                     libraries = [panel_library] + curses_libs) )
          else:
              missing.append('_curses_panel')
-@@ -1278,7 +1282,7 @@
+@@ -1301,7 +1305,7 @@
              macros = dict()
              libraries = []
  
@@ -68,17 +68,22 @@
              # FreeBSD's P1003.1b semaphore support is very experimental
              # and has many known problems. (as of June 2008)
              macros = dict()
-@@ -1321,8 +1325,7 @@
+@@ -1344,8 +1348,12 @@
          # End multiprocessing
  
          # Platform-specific libraries
 -        if platform in ('linux2', 'freebsd4', 'freebsd5', 'freebsd6',
 -                        'freebsd7', 'freebsd8'):
-+        if platform in ('linux2', 'freebsd6', 'freebsd7', 'freebsd8', 'freebsd9', 'freebsd10'):
++        #############################
++        # Backport Commit: http://hg.python.org/cpython/rev/50f1922bc1d5
++        # Backport Issue: http://bugs.python.org/issue12326
++        #############################
++        if any(platform.startswith(prefix)
++               for prefix in ("linux", "freebsd", "gnukfreebsd")):
              exts.append( Extension('ossaudiodev', ['ossaudiodev.c']) )
          else:
              missing.append('ossaudiodev')
-@@ -1808,8 +1811,7 @@
+@@ -1831,8 +1839,7 @@
            # called unless there's at least one extension module defined.
            ext_modules=[Extension('_struct', ['_struct.c'])],
  
