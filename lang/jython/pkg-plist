@@ -488,6 +488,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/_LWPCookieJar.py
 %%JYTHON_DIR%%/Lib/_MozillaCookieJar.py
 %%JYTHON_DIR%%/Lib/__future__.py
+%%JYTHON_DIR%%/Lib/_google_ipaddr_r234.py
 %%JYTHON_DIR%%/Lib/_rawffi.py
 %%JYTHON_DIR%%/Lib/_strptime.py
 %%JYTHON_DIR%%/Lib/_threading_local.py
@@ -1161,6 +1162,8 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/test/inspect_fodder.py
 %%JYTHON_DIR%%/Lib/test/inspect_fodder2.py
 %%JYTHON_DIR%%/Lib/test/invalid_utf_8_declared_encoding.py
+%%JYTHON_DIR%%/Lib/test/issue1811/__init__.py
+%%JYTHON_DIR%%/Lib/test/issue1811/foo.py
 %%JYTHON_DIR%%/Lib/test/jser2_classes.py
 %%JYTHON_DIR%%/Lib/test/junit_xml.py
 %%JYTHON_DIR%%/Lib/test/latin1_no_encoding.py
@@ -1348,8 +1351,10 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/test/test_ctypes.py
 %%JYTHON_DIR%%/Lib/test/test_curses.py
 %%JYTHON_DIR%%/Lib/test/test_datetime.py
+%%JYTHON_DIR%%//Lib/test/test_datetime_jy.py
 %%JYTHON_DIR%%/Lib/test/test_dbm.py
 %%JYTHON_DIR%%/Lib/test/test_decimal.py
+%%JYTHON_DIR%%/Lib/test/test_decimal_jy.py
 %%JYTHON_DIR%%/Lib/test/test_decorators.py
 %%JYTHON_DIR%%/Lib/test/test_decorators_jy.py
 %%JYTHON_DIR%%/Lib/test/test_defaultdict.py
@@ -1408,6 +1413,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/test/test_func_syntax_jy.py
 %%JYTHON_DIR%%/Lib/test/test_funcattrs.py
 %%JYTHON_DIR%%/Lib/test/test_functools.py
+%%JYTHON_DIR%%/Lib/test/test_functools_jy.py
 %%JYTHON_DIR%%/Lib/test/test_future.py
 %%JYTHON_DIR%%/Lib/test/test_future1.py
 %%JYTHON_DIR%%/Lib/test/test_future2.py
@@ -1451,6 +1457,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/test/test_inspect.py
 %%JYTHON_DIR%%/Lib/test/test_inspect_jy.py
 %%JYTHON_DIR%%/Lib/test/test_int_jy.py
+%%JYTHON_DIR%%/Lib/test/test_io_jy.py
 %%JYTHON_DIR%%/Lib/test/test_ioctl.py
 %%JYTHON_DIR%%/Lib/test/test_isatty.py
 %%JYTHON_DIR%%/Lib/test/test_isinstance.py
@@ -1480,6 +1487,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/test/test_locale.py
 %%JYTHON_DIR%%/Lib/test/test_logging.py
 %%JYTHON_DIR%%/Lib/test/test_long.py
+%%JYTHON_DIR%%/Lib/test/test_long_jy.py
 %%JYTHON_DIR%%/Lib/test/test_long_future.py
 %%JYTHON_DIR%%/Lib/test/test_long_int_args.py
 %%JYTHON_DIR%%/Lib/test/test_longexp.py
@@ -1520,6 +1528,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/test/test_operator_jy.py
 %%JYTHON_DIR%%/Lib/test/test_optparse.py
 %%JYTHON_DIR%%/Lib/test/test_os.py
+%%JYTHON_DIR%%/Lib/test/test_os_jy.py
 %%JYTHON_DIR%%/Lib/test/test_ossaudiodev.py
 %%JYTHON_DIR%%/Lib/test/test_parser.py
 %%JYTHON_DIR%%/Lib/test/test_pbcvm.py
@@ -1533,6 +1542,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/test/test_pickle.py
 %%JYTHON_DIR%%/Lib/test/test_pickletools.py
 %%JYTHON_DIR%%/Lib/test/test_pkg.py
+%%JYTHON_DIR%%/Lib/test/test_pkg_jy.py
 %%JYTHON_DIR%%/Lib/test/test_pkgimport.py
 %%JYTHON_DIR%%/Lib/test/test_platform.py
 %%JYTHON_DIR%%/Lib/test/test_plistlib.py
@@ -1583,7 +1593,6 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/test/test_slice.py
 %%JYTHON_DIR%%/Lib/test/test_slots_jy.py
 %%JYTHON_DIR%%/Lib/test/test_socket.py
-%%JYTHON_DIR%%/Lib/test/test_socket_jy.py
 %%JYTHON_DIR%%/Lib/test/test_socket_ssl.py
 %%JYTHON_DIR%%/Lib/test/test_socketserver.py
 %%JYTHON_DIR%%/Lib/test/test_socketserver_jython.py
@@ -1779,6 +1788,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/tests/java/javatests/BigDecimalTest.java
 %%JYTHON_DIR%%/tests/java/javatests/Dict2JavaTest.java
 %%JYTHON_DIR%%/tests/java/javatests/Foo.java
+%%JYTHON_DIR%%/tests/java/javatests/Issue1833.java
 %%JYTHON_DIR%%/tests/java/javatests/JOverload.java
 %%JYTHON_DIR%%/tests/java/javatests/ListTest.java
 %%JYTHON_DIR%%/tests/java/javatests/ProxyTests.java
@@ -1845,6 +1855,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/tests/java/org/python/tests/constructor_kwargs/KWArgsObject.java
 %%JYTHON_DIR%%/tests/java/org/python/tests/identity/IdentityObject.java
 %%JYTHON_DIR%%/tests/java/org/python/tests/identity/IdentityTest.java
+%%JYTHON_DIR%%/tests/java/org/python/tests/imp/ImportTests.java
 %%JYTHON_DIR%%/tests/java/org/python/tests/inbred/Metis.java
 %%JYTHON_DIR%%/tests/java/org/python/tests/inbred/Zeus.java
 %%JYTHON_DIR%%/tests/java/org/python/tests/mro/ConfusedOnGetitemAdd.java
@@ -1869,6 +1880,7 @@ etc/jython.reg
 @dirrm %%JYTHON_DIR%%/tests/java/org/python/tests/multihidden
 @dirrm %%JYTHON_DIR%%/tests/java/org/python/tests/mro
 @dirrm %%JYTHON_DIR%%/tests/java/org/python/tests/inbred
+@dirrm %%JYTHON_DIR%%/tests/java/org/python/tests/imp
 @dirrm %%JYTHON_DIR%%/tests/java/org/python/tests/identity
 @dirrm %%JYTHON_DIR%%/tests/java/org/python/tests/constructor_kwargs
 @dirrm %%JYTHON_DIR%%/tests/java/org/python/tests
@@ -1903,6 +1915,7 @@ etc/jython.reg
 @dirrm %%JYTHON_DIR%%/Lib/test/pbcvm
 @dirrm %%JYTHON_DIR%%/Lib/test/output
 @dirrm %%JYTHON_DIR%%/Lib/test/leakers
+@dirrm %%JYTHON_DIR%%/Lib/test/issue1811
 @dirrm %%JYTHON_DIR%%/Lib/test/decimaltestdata
 @dirrm %%JYTHON_DIR%%/Lib/test/crashers
 @dirrm %%JYTHON_DIR%%/Lib/test/bugs/pr133
