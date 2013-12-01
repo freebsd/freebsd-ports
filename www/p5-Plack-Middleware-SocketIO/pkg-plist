@@ -9,6 +9,16 @@
 %%SITE_PERL%%/Plack/Middleware/SocketIO/WebSocket.pm
 %%SITE_PERL%%/Plack/Middleware/SocketIO/XHRMultipart.pm
 %%SITE_PERL%%/Plack/Middleware/SocketIO/XHRPolling.pm
+%%PERL5_MAN3%%/Plack::Middleware::SocketIO.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::SocketIO::Base.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::SocketIO::Connection.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::SocketIO::Handle.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::SocketIO::Htmlfile.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::SocketIO::JSONPPolling.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::SocketIO::Resource.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::SocketIO::WebSocket.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::SocketIO::XHRMultipart.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::SocketIO::XHRPolling.3.gz
 @dirrm %%SITE_PERL%%/Plack/Middleware/SocketIO
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/SocketIO
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware
