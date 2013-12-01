@@ -6,7 +6,7 @@ PORTVERSION=	20050922
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://utenti.gufi.org/~drizzt/codes/ports/${PORTNAME}/
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive script for deinstalling 'leaf' packages
 
 NO_BUILD=	yes
