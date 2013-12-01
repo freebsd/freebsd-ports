@@ -4119,7 +4119,6 @@ misc/splitvt||2013-03-06|Has expired: Broken for more than 6 month
 sysutils/udesc_dump||2013-03-06|Has expired: Broken for more than 6 month
 textproc/gxditview||2013-03-06|Has expired: Broken for more than 6 month
 x11/powershell||2013-03-06|Has expired: Broken for more then 6 month
-devel/py-setuptools|devel/py-distribute|2013-03-06|Replaced with distribute
 devel/ZendOptimizer|www/pecl-zendoptimizerplus|2013-03-07|Replaced with supported open-source release
 net-im/jreen|net-im/libjreen|2013-03-07|Duplicate of net-im/libjreen
 databases/ruby-dbdbd||2013-03-08|Dead project, no known users
