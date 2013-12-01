@@ -9,7 +9,7 @@
  
  SERVER_OBJS   = radiusd.o files.o acct.o pam.o version.o proxy.o \
  			exec.o auth.o timestr.o cache.o readusers.o
-@@ -115,36 +115,36 @@
+@@ -115,35 +115,35 @@
  
  install:
  	# Install the binaries
@@ -62,6 +62,4 @@
 +		[ ! -f $(RADIUS_DIR)/$$i ] && cp $$i $(DESTROOT)$(RADIUS_DIR)/$$i.sample; \
  	done; true
  	@# Install the dictionary files
--	@sh dict-install.sh ../raddb $(RADIUS_DIR) $(SHAREDIR)
-+	@sh dict-install.sh ../raddb $(RADIUS_DIR) $(DESTROOT)$(SHAREDIR)
- 
+ 	@sh dict-install.sh ../raddb $(RADIUS_DIR) $(SHAREDIR)
