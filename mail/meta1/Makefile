@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	meta1
-PORTVERSION=	1.0.0a.15.0
-DISTVERSION=	1.0.Alpha15.0
+PORTVERSION=	1.0.0a.18.0
+DISTVERSION=	1.0.Alpha18.0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://www.MeTA1.org/download/.alpha/endoft/
+MASTER_SITES=	http://www.MeTA1.org/download/.alpha/dns/
 PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${BERKELEYDB_SUFFIX}${PMILTER_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -13,6 +13,7 @@ COMMENT=	Secure and efficient mail gateway
 NOT_FOR_ARCHS=	ia64
 MAKE_JOBS_UNSAFE=	yes
 CONFLICTS=	smx-*
+NEED_ROOT=	yes
 NO_STAGE=	yes
 
 .if !defined(SENDMAIL_WITHOUT_SHMEM) && !defined(BUILDING_INDEX)
@@ -183,7 +184,7 @@ post-install:
 .for i in ${EXTRA_SBIN}
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/sbin/
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
