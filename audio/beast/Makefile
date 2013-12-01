@@ -19,6 +19,8 @@ LIB_DEPENDS=	asound:${PORTSDIR}/audio/alsa-lib \
 		guile:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
+BROKEN=		Does not build
+
 OPTIONS_DEFINE_i386=	SSE
 
 USE_BZIP2=	yes
