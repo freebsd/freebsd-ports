@@ -1,4 +1,4 @@
-Turpial is a microblogging client for social networks like Twitter and
-Identi.ca.
+Turpial is a light and fast microblogging client written in Python. It supports
+Twitter and Identi.ca.
 
-WWW:	http://turpial.org.ve/
+WWW: http://turpial.org.ve/
