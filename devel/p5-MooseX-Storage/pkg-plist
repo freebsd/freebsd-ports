@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Storage/.packlist
 %%SITE_PERL%%/MooseX/Storage.pm
 %%SITE_PERL%%/MooseX/Storage/Base/WithChecksum.pm
 %%SITE_PERL%%/MooseX/Storage/Basic.pm
@@ -19,6 +18,29 @@
 %%SITE_PERL%%/MooseX/Storage/Traits/DisableCycleDetection.pm
 %%SITE_PERL%%/MooseX/Storage/Traits/OnlyWhenBuilt.pm
 %%SITE_PERL%%/MooseX/Storage/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Storage/.packlist
+%%PERL5_MAN3%%/MooseX::Storage.3.gz
+%%PERL5_MAN3%%/MooseX::Storage::Base::WithChecksum.3.gz
+%%PERL5_MAN3%%/MooseX::Storage::Basic.3.gz
+%%PERL5_MAN3%%/MooseX::Storage::Deferred.3.gz
+%%PERL5_MAN3%%/MooseX::Storage::Engine.3.gz
+%%PERL5_MAN3%%/MooseX::Storage::Engine::IO::AtomicFile.3.gz
+%%PERL5_MAN3%%/MooseX::Storage::Engine::IO::File.3.gz
+%%PERL5_MAN3%%/MooseX::Storage::Engine::Trait::DisableCycleDetection.3.gz
+%%PERL5_MAN3%%/MooseX::Storage::Engine::Trait::OnlyWhenBuilt.3.gz
+%%PERL5_MAN3%%/MooseX::Storage::Format::JSON.3.gz
+%%PERL5_MAN3%%/MooseX::Storage::Format::Storable.3.gz
+%%PERL5_MAN3%%/MooseX::Storage::Format::YAML.3.gz
+%%PERL5_MAN3%%/MooseX::Storage::IO::AtomicFile.3.gz
+%%PERL5_MAN3%%/MooseX::Storage::IO::File.3.gz
+%%PERL5_MAN3%%/MooseX::Storage::IO::StorableFile.3.gz
+%%PERL5_MAN3%%/MooseX::Storage::Meta::Attribute::DoNotSerialize.3.gz
+%%PERL5_MAN3%%/MooseX::Storage::Meta::Attribute::Trait::DoNotSerialize.3.gz
+%%PERL5_MAN3%%/MooseX::Storage::Traits::DisableCycleDetection.3.gz
+%%PERL5_MAN3%%/MooseX::Storage::Traits::OnlyWhenBuilt.3.gz
+%%PERL5_MAN3%%/MooseX::Storage::Util.3.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Storage
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
 @dirrmtry %%SITE_PERL%%/MooseX/Storage/Traits
 @dirrmtry %%SITE_PERL%%/MooseX/Storage/Meta/Attribute/Trait
 @dirrmtry %%SITE_PERL%%/MooseX/Storage/Meta/Attribute
@@ -31,5 +53,3 @@
 @dirrmtry %%SITE_PERL%%/MooseX/Storage/Base
 @dirrmtry %%SITE_PERL%%/MooseX/Storage
 @dirrmtry %%SITE_PERL%%/MooseX
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Storage
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
