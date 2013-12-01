@@ -3,6 +3,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	2.1.1
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -132,16 +133,13 @@ LIBSSH2_CONFIGURE_ENV=	SFTP_CFLAGS=-I${LOCALBASE} SFTP_LIBS=-lssh2\ -L${LOCALBAS
 LIRC_LIB_DEPENDS=	liblirc_client.so:${PORTSDIR}/comms/lirc
 LIRC_CONFIGURE_ENABLE=	lirc
 
-LIVEMEDIA_BUILD_DEPENDS=	${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
+LIVEMEDIA_LIB_DEPENDS=	libliveMedia.so:${PORTSDIR}/net/liveMedia
 LIVEMEDIA_CONFIGURE_ENABLE=	live555
-LIVEMEDIA_CPPFLAGS=	-I${LOCALBASE}/live/liveMedia/include \
-		-I${LOCALBASE}/live/BasicUsageEnvironment/include \
-		-I${LOCALBASE}/live/UsageEnvironment/include \
-		-I${LOCALBASE}/live/groupsock/include
-LIVEMEDIA_LDFLAGS=	-L${LOCALBASE}/live/groupsock \
-		-L${LOCALBASE}/live/liveMedia \
-		-L${LOCALBASE}/live/UsageEnvironment \
-		-L${LOCALBASE}/live/BasicUsageEnvironment
+LIVEMEDIA_CPPFLAGS=	-I${LOCALBASE}/include/liveMedia	\
+			-I${LOCALBASE}/include/UsageEnvironment	\
+			-I${LOCALBASE}/include/groupsock	\
+			-I${LOCALBASE}/include/BasicUsageEnvironment
+LIVEMEDIA_LDFLAGS=	-L${LOCALBASE}/lib
 
 MAD_LIB_DEPENDS=	libid3tag.so:${PORTSDIR}/audio/libid3tag \
 			libmad.so:${PORTSDIR}/audio/libmad
@@ -443,6 +441,5 @@ post-install:
 		}; \
 		done | ${SORT} -r | ${SED} \
 		-e "s,${PREFIX}/,,g" | ${GREP} -v "^@unexec rmdir %D/share/licenses" >> ${TMPPLIST} || ${TRUE}
-
 
 .include <bsd.port.post.mk>

@@ -1,5 +1,5 @@
---- configure.orig	2013-03-03 11:29:18.000000000 +0100
-+++ configure	2013-03-22 17:20:44.452775673 +0100
+--- configure.orig	2013-11-16 23:28:21.000000000 +0100
++++ configure	2013-11-16 23:36:32.000000000 +0100
 @@ -668,7 +668,7 @@
  _iwmmxt=auto
  _mtrr=auto
@@ -17,6 +17,15 @@
      ;;
  
    esac
+@@ -1592,7 +1591,7 @@
+   esac
+   echores "$cc_version"
+ else
+-  for _cc in "$_cc" gcc cc ; do
++  for _cc in "$_cc" clang cc ; do
+     cc_name_tmp=$($_cc -v 2>&1 | tail -n 1 | cut -d ' ' -f 1)
+     if test "$cc_name_tmp" = "gcc"; then
+       cc_name=$cc_name_tmp
 @@ -1669,7 +1668,7 @@
    case "$(uname -m 2>&1)" in
        x86_64|amd64|i[3-9]86*|i86pc|x86|x86pc|k5|k6|k6_2|k6_3|k6-2|k6-3|pentium*|athlon*|i586_i686|i586-i686) host_arch=i386 ;;
@@ -34,6 +43,146 @@
  _timer=timer-linux.c
  _getch=getch2.c
  
+@@ -1945,7 +1945,7 @@
+   if test "$_gcc3_ext" != ""; then
+     # If we had to disable SSE/SSE2 because the active kernel does not
+     # support this instruction set extension, we also have to tell
+-    # gcc3 to not generate SSE/SSE2 instructions for normal C code.
++    # clang to not generate SSE/SSE2 instructions for normal C code.
+     cflag_check $_march $_gcc3_ext && _march="$_march $_gcc3_ext"
+   fi
+ 
+@@ -1996,15 +1996,15 @@
+         # AMD CPUs just from their signature. Instead, we check directly
+         # whether it supports SSE.
+         if test "$_sse" = yes; then
+-            # gcc treats athlon-xp, athlon-4 and athlon-mp similarly.
++            # clang treats athlon-xp, athlon-4 and athlon-mp similarly.
+             proc=athlon-xp
+         else
+-            # Again, gcc treats athlon and athlon-tbird similarly.
++            # Again, clang treats athlon and athlon-tbird similarly.
+             proc=athlon
+         fi
+         ;;
+     15) iproc=686
+-        # k8 CPU type only supported in gcc >= 3.4.0, but that will be
++        # k8 CPU type only supported in clang >= 3.4.0, but that will be
+         # caught and remedied in the optimization tests below.
+         proc=k8
+         ;;
+@@ -2090,11 +2090,11 @@
+   fi # test "$_runtime_cpudetection" = no
+ 
+ 
+-    # check that gcc supports our CPU, if not, fall back to earlier ones
++    # check that clang supports our CPU, if not, fall back to earlier ones
+     # LGB: check -mcpu and -march swithing step by step with enabling
+     # to fall back till 386.
+ 
+-    # gcc >= 3.4.0  doesn't support -mcpu, we have to use -mtune instead
++    # clang >= 3.4.0  doesn't support -mcpu, we have to use -mtune instead
+ 
+     if [ "$cc_vendor" = "gnu" ] && ([ "$_cc_major" -gt 3 ] || ( [ "$_cc_major" = 3 ] && [ "$_cc_minor" -ge 4 ])) ; then
+         cpuopt=-mtune
+@@ -2224,7 +2224,7 @@
+     def_fast_64bit='#define HAVE_FAST_64BIT 1'
+     iproc='x86_64'
+ 
+-    # gcc >= 3.4.0  doesn't support -mcpu, we have to use -mtune instead
++    # clang >= 3.4.0  doesn't support -mcpu, we have to use -mtune instead
+     if test "$cc_vendor" = "gnu" && test "$_cc_major" -gt 3 -o "$_cc_major" -eq 3 -a "$_cc_minor" -ge 4 ; then
+         cpuopt=-mtune
+     else
+@@ -2280,7 +2280,7 @@
+       if test "$proc" = "k8"; then
+         cflag_check -march=$proc $cpuopt=$proc || proc=athlon-xp
+       fi
+-      # This will fail if gcc version < 3.3, which is OK because earlier
++      # This will fail if clang version < 3.3, which is OK because earlier
+       # versions don't really support 64-bit on amd64.
+       # Is this a valid assumption? -Corey
+       if test "$proc" = "athlon-xp"; then
+@@ -2400,7 +2400,7 @@
+         fi
+         ;;
+       NetBSD)
+-        # only gcc 3.4 works reliably with AltiVec code under NetBSD
++        # only clang 3.4 works reliably with AltiVec code under NetBSD
+         case $cc_version in
+             2*|3.0*|3.1*|3.2*|3.3*)
+                 ;;
+@@ -2437,7 +2437,7 @@
+             POWER3) _march='-mcpu=power3' _mcpu='-mtune=power3' ;;
+             *) ;;
+         esac
+-        # gcc 3.1(.1) and up supports 7400 and 7450
++        # clang 3.1(.1) and up supports 7400 and 7450
+         if test "$_cc_major" -ge "3" && test "$_cc_minor" -ge "1" || test "$_cc_major" -ge "4"; then
+             case "$proc" in
+                 7400*|7410*) _march='-mcpu=7400' _mcpu='-mtune=7400' ;;
+@@ -2445,7 +2445,7 @@
+                 *) ;;
+             esac
+         fi
+-        # gcc 3.2 and up supports 970
++        # clang 3.2 and up supports 970
+         if test "$_cc_major" -ge "3" && test "$_cc_minor" -ge "3" || test "$_cc_major" -ge "4"; then
+             case "$proc" in
+                 970*|PPC970*) _march='-mcpu=970' _mcpu='-mtune=970'
+@@ -2453,14 +2453,14 @@
+                 *) ;;
+             esac
+         fi
+-        # gcc 3.3 and up supports POWER4
++        # clang 3.3 and up supports POWER4
+         if test "$_cc_major" -ge "3" && test "$_cc_minor" -ge "3" || test "$_cc_major" -ge "4"; then
+             case "$proc" in
+                 POWER4) _march='-mcpu=power4' _mcpu='-mtune=power4' ;;
+                 *) ;;
+             esac
+         fi
+-        # gcc 3.4 and up supports 440*
++        # clang 3.4 and up supports 440*
+         if test "$_cc_major" -ge "3" && test "$_cc_minor" -ge "4" || test "$_cc_major" -ge "4"; then
+             case "$proc" in
+                 440EP*) _march='-mcpu=440fp' _mcpu='-mtune=440fp' ;;
+@@ -2468,7 +2468,7 @@
+                 *) ;;
+             esac
+         fi
+-        # gcc 4.0 and up supports POWER5
++        # clang 4.0 and up supports POWER5
+         if test "$_cc_major" -ge "4"; then
+             case "$proc" in
+                 POWER5*) _march='-mcpu=power5' _mcpu='-mtune=power5' ;;
+@@ -2545,7 +2545,7 @@
+             R5000) _march='-mips4' _mcpu='-mtune=r5000' ;;
+             R8000|R10000|R12000|R14000|R16000) _march='-mips4' _mcpu='-mtune=r8000' ;;
+         esac
+-        # gcc < 3.x does not support -mtune.
++        # clang < 3.x does not support -mtune.
+         if test "$cc_vendor" = "gnu" && test "$_cc_major" -lt 3 ; then
+             _mcpu=''
+         fi
+@@ -2669,7 +2669,7 @@
+ echocheck "GCC support of -mstackrealign"
+ # GCC 4.2 and some earlier Apple versions support this flag on x86. Since
+ # Mac OS X/Intel has an ABI different from Windows this is needed to avoid
+-# crashes when loading Win32 DLLs. Unfortunately some gcc versions create
++# crashes when loading Win32 DLLs. Unfortunately some clang versions create
+ # wrong code with this flag, but this can be worked around by adding
+ # -fno-unit-at-a-time as described in the blog post at
+ # http://www.dribin.org/dave/blog/archives/2006/12/05/missing_third_param/
+@@ -2862,7 +2862,7 @@
+         "xor %0, %0"
+         :"=b"(x)
+         // just adding ebx to clobber list seems unreliable with some
+-        // compilers, e.g. Haiku's gcc 2.95
++        // compilers, e.g. Haiku's clang 2.95
+     );
+     // and the above check does not work for OSX 64 bit...
+     __asm__ volatile("":::"%ebx");
 @@ -3765,7 +3765,7 @@
  if linux ; then
    THREAD_CFLAGS=-D_REENTRANT
@@ -52,17 +201,50 @@
      # for crosscompilation, we cannot execute the program, be happy if we can link statically
      cc_check $THREAD_CFLAGS $ld_tmp && (tmp_run || test "$ld_static") && ld_pthread="$ld_tmp" && _pthreads=yes && break
    done
+@@ -4031,7 +4031,7 @@
+ echocheck "termcap"
+ if test "$_termcap" = auto ; then
+   _termcap=no
+-  for ld_tmp in "-lncurses" "-ltinfo" "-ltermcap"; do
++  for ld_tmp in "/usr/lib/libncurses.so" "-ltinfo" "-ltermcap"; do
+     statement_check term.h 'tgetent(0, 0)' $ld_tmp &&
+       extra_ldflags="$extra_ldflags $ld_tmp" && _termcap=yes && break
+   done
+@@ -4464,7 +4464,7 @@
+     fi
+   done
+   if test $_cross_compile = no; then
+-    for I in /usr/X11/include /usr/X11R7/include /usr/local/include /usr/X11R6/include \
++    for I in /usr/X11/include /usr/X11R7/include /usr/local/include /usr/local/include \
+              /usr/include/X11R6 /usr/openwin/include ; do
+       if test -f "$I/X11/Xlib.h" ; then
+         extra_cflags="$extra_cflags -I$I"
+@@ -4479,8 +4479,8 @@
+ 
+ echocheck "X11"
+ if test "$_x11" = auto && test "$_x11_headers" = yes ; then
+-  for I in "" -L/usr/X11R7/lib -L/usr/local/lib -L/usr/X11R6/lib -L/usr/lib/X11R6 \
+-           -L/usr/X11/lib -L/usr/lib32 -L/usr/openwin/lib -L/usr/local/lib64 -L/usr/X11R6/lib64 \
++  for I in "" -L/usr/X11R7/lib -L/usr/local/lib -L/usr/local/lib -L/usr/lib/X11R6 \
++           -L/usr/X11/lib -L/usr/lib32 -L/usr/openwin/lib -L/usr/local/lib64 -L/usr/local/lib64 \
+            -L/usr/lib ; do
+     if netbsd; then
+       ld_tmp="$I -lXext -lX11 $ld_pthread -Wl,-R$(echo $I | sed s/^-L//)"
 @@ -5904,7 +5904,7 @@
  elif dragonfly ; then
    default_cdrom_device="/dev/cd0"
  elif freebsd ; then
 -  default_cdrom_device="/dev/acd0"
-+  default_cdrom_device="/dev/cdrom"
++  default_cdrom_device="/dev/cd0"
  elif openbsd ; then
    default_cdrom_device="/dev/rcd0c"
  elif sunos ; then
-@@ -5917,7 +5917,7 @@
-   default_cdrom_device="/dev/cdrom"
+@@ -5914,15 +5914,15 @@
+ elif amigaos ; then
+   default_cdrom_device="a1ide.device:2"
+ else
+-  default_cdrom_device="/dev/cdrom"
++  default_cdrom_device="/dev/cd0"
  fi
  
 -if win32 || os2 || dragonfly || freebsd || openbsd || sunos || amigaos ; then
@@ -70,6 +252,25 @@
    default_dvd_device=$default_cdrom_device
  elif darwin ; then
    default_dvd_device="/dev/rdiskN"
+ else
+-  default_dvd_device="/dev/dvd"
++  default_dvd_device="/dev/cd0"
+ fi
+ 
+ 
+@@ -6316,10 +6316,10 @@
+ echocheck "bzlib"
+ bzlib=no
+ def_bzlib='#define CONFIG_BZLIB 0'
+-statement_check bzlib.h 'BZ2_bzlibVersion()' -lbz2 && bzlib=yes
++statement_check bzlib.h 'BZ2_bzlibVersion()' /usr/lib/libbz2.so && bzlib=yes
+ if test "$bzlib" = yes ; then
+   def_bzlib='#define CONFIG_BZLIB 1'
+-  extra_ldflags="$extra_ldflags -lbz2"
++  extra_ldflags="$extra_ldflags /usr/lib/libbz2.so"
+ fi
+ echores "$bzlib"
+ 
 @@ -6470,7 +6470,7 @@
  echocheck "libgsm"
  if test "$_libgsm" = auto ; then
@@ -79,7 +280,21 @@
  fi
  if test "$_libgsm" = yes ; then
    def_libgsm='#define CONFIG_LIBGSM 1'
-@@ -6954,6 +6954,16 @@
+@@ -6888,11 +6888,12 @@
+   cat > $TMPCPP << EOF
+ #define RTSPCLIENT_SYNCHRONOUS_INTERFACE 1
+ #include <liveMedia.hh>
++// Patch from Armin K. <krejzi at email dot com>
+ #if (LIVEMEDIA_LIBRARY_VERSION_INT < 1141257600)
+ #error Please upgrade to version 2006.03.03 or later of the "LIVE555 Streaming Media" libraries - available from <www.live555.com/liveMedia/>
+ #endif
+ #include "BasicUsageEnvironment.hh"
+-int main(void) { RTSPClient::createNew(*BasicUsageEnvironment::createNew(*BasicTaskScheduler::createNew()), 0, "", 0); return 0; }
++int main(void) { RTSPClient::createNew(*BasicUsageEnvironment::createNew(*BasicTaskScheduler::createNew()), "", 0, "", 0); return 0; }
+ EOF
+ 
+   _live=no
+@@ -6954,6 +6955,16 @@
    nolibrtmp=no
    def_librtmp='#define CONFIG_LIBRTMP 1'
    inputmodules="librtmp $inputmodules"
@@ -96,7 +311,7 @@
  else
    nolibrtmp=yes
    _librtmp=no
-@@ -7346,7 +7356,7 @@
+@@ -7346,7 +7357,7 @@
  echocheck "mencoder"
  if test "$_mencoder" = no ; then
    # mpeg1video for vf_lavc, snow for vf_uspp / vf_mcdeint,
@@ -105,7 +320,7 @@
  fi
  echores "$_mencoder"
  
-@@ -7684,8 +7694,11 @@
+@@ -7684,8 +7695,11 @@
  if test "$_gui" = yes ; then
  
    # Required libraries
@@ -119,7 +334,16 @@
      die "The GUI requires libavcodec with PNG support (needs zlib)."
    fi
    test "$_freetype" = no && test "$_bitmap_font" = no &&
-@@ -8271,7 +8284,7 @@
+@@ -7969,7 +7983,7 @@
+ 
+ #############################################################################
+ 
+-CFLAGS="$CFLAGS -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE"
++CFLAGS="$CFLAGS -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_FILE_OFFSET_BITS=64"
+ 
+ CXXFLAGS=" $CFLAGS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS"
+ 
+@@ -8271,7 +8285,7 @@
  EXESUF      = $_exesuf
  EXESUFS_ALL = .exe
  
@@ -128,3 +352,12 @@
  $(mak_enable "$arch_all"    "$arch"    ARCH)
  $(mak_enable "$subarch_all" "$subarch" ARCH)
  $(mak_enable "$cpuexts_all" "$cpuexts" HAVE)
+@@ -8473,7 +8487,7 @@
+ AS_C       = -c
+ CC_C       = -c
+ CXX_C      = -c
+-LD         = gcc
++LD         = clang
+ RANLIB     = $_ranlib
+ YASM       = $_yasm
+ DEPYASM    = $_yasm

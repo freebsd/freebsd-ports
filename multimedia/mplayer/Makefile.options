@@ -135,15 +135,12 @@ CONFIGURE_ARGS+=	--disable-libschroedinger-lavc
 
 .if ${PORT_OPTIONS:MLIVEMEDIA}
 CONFIGURE_ARGS+=	--enable-live
-BUILD_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
-CFLAGS+=		-I${LOCALBASE}/live/liveMedia/include \
-			-I${LOCALBASE}/live/BasicUsageEnvironment/include \
-			-I${LOCALBASE}/live/UsageEnvironment/include \
-			-I${LOCALBASE}/live/groupsock/include
-LDFLAGS+=		-L${LOCALBASE}/live/liveMedia \
-			-L${LOCALBASE}/live/BasicUsageEnvironment \
-			-L${LOCALBASE}/live/UsageEnvironment \
-			-L${LOCALBASE}/live/groupsock \
+LIB_DEPENDS+=		libliveMedia.so:${PORTSDIR}/net/liveMedia
+CFLAGS+=		-I${LOCALBASE}/include/liveMedia	\
+			-I${LOCALBASE}/include/UsageEnvironment	\
+			-I${LOCALBASE}/include/groupsock	\
+			-I${LOCALBASE}/include/BasicUsageEnvironment
+LDFLAGS+=		-L${LOCALBASE}/lib	\
 			-lliveMedia \
 			-lUsageEnvironment \
 			-lBasicUsageEnvironment \
