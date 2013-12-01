@@ -1,5 +1,7 @@
 bin/itstool
+man/man1/itstool.1.gz
 %%DATADIR%%/its/docbook.its
+%%DATADIR%%/its/docbook5.its
 %%DATADIR%%/its/its.its
 %%DATADIR%%/its/mallard.its
 %%DATADIR%%/its/ttml.its
