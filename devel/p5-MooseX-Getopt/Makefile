@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-Getopt
-PORTVERSION=	0.58
+PORTVERSION=	0.59
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ETHER
@@ -21,10 +21,8 @@ BUILD_DEPENDS=	p5-Getopt-Long-Descriptive>=0.081:${PORTSDIR}/devel/p5-Getopt-Lon
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-MooseX-SimpleConfig>=0.07:${PORTSDIR}/devel/p5-MooseX-SimpleConfig \
-		p5-CPAN-Meta-Check>=0.007:${PORTSDIR}/devel/p5-CPAN-Meta-Check \
 		p5-Module-Runtime>=0:${PORTSDIR}/devel/p5-Module-Runtime \
 		p5-Path-Tiny>=0.009:${PORTSDIR}/devel/p5-Path-Tiny \
-		p5-Test-CheckDeps>=0.06:${PORTSDIR}/devel/p5-Test-CheckDeps \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Fatal>=0.003:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
@@ -34,17 +32,4 @@ TEST_DEPENDS=	p5-MooseX-SimpleConfig>=0.07:${PORTSDIR}/devel/p5-MooseX-SimpleCon
 USES=		perl5
 USE_PERL5=	modbuildtiny
 
-MAN3=		MooseX::Getopt.3 \
-		MooseX::Getopt::Basic.3 \
-		MooseX::Getopt::Dashes.3 \
-		MooseX::Getopt::GLD.3 \
-		MooseX::Getopt::Meta::Attribute.3 \
-		MooseX::Getopt::Meta::Attribute::NoGetopt.3 \
-		MooseX::Getopt::Meta::Attribute::Trait.3 \
-		MooseX::Getopt::Meta::Attribute::Trait::NoGetopt.3 \
-		MooseX::Getopt::OptionTypeMap.3 \
-		MooseX::Getopt::ProcessedArgv.3 \
-		MooseX::Getopt::Strict.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
