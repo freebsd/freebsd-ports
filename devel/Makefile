@@ -1960,6 +1960,7 @@
     SUBDIR += p5-File-Cache
     SUBDIR += p5-File-Cat
     SUBDIR += p5-File-ChangeNotify
+    SUBDIR += p5-File-ConfigDir
     SUBDIR += p5-File-Copy-Recursive
     SUBDIR += p5-File-CountLines
     SUBDIR += p5-File-CreationTime

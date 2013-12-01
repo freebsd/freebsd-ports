@@ -1,0 +1,16 @@
+File::ConfigDir is a helper for installing, reading and finding configuration
+file locations. It's intended to work in every supported Perl5 environment and
+will always try to Do The Right Thing(TM).
+
+File::ConfigDir is a module to help out when perl modules (especially
+applications) need to read and store configuration files from more than one
+location. Writing user configuration is easy thanks to File::HomeDir, but what
+when the system administrator needs to place some global configuration or there
+will be system related configuration (in /etc on UNIX(TM) or $ENV{windir} on
+Windows(TM)) and some network configuration in nfs mapped /etc/p5-app or
+$ENV{ALLUSERSPROFILE} . "\\Application Data\\p5-app", respectively.
+
+File::ConfigDir has no "do what I mean" mode - it's entirely up to the user to
+pick the right directory for each particular application.
+
+WWW: http://search.cpan.org/dist/File-ConfigDir/
