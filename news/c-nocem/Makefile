@@ -15,13 +15,12 @@ BUILD_DEPENDS=	${CNEWSWRK}/conf/substitutions:${PORTSDIR}/${CNEWS_PORT}:configur
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcnews.a:${PORTSDIR}/${CNEWS_PORT} \
 		gpgv:${PORTSDIR}/security/gnupg1
 
-NO_STAGE=	yes
-
-USES=		perl5
-USE_GMAKE=	yes
+USES=		perl5 gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-cnews=${CNEWSWRK}
+CONFIGURE_ENV+=	PERL=${PERL}
 WRKSRC=		${WRKDIR}/c-nocem
+
 PLIST_SUB+=	NEWSBIN=${NEWSBIN:S=${PREFIX}/==}
 PLIST_FILES=	%%NEWSBIN%%/fastcancel %%NEWSBIN%%/c-nocem
 
@@ -30,5 +29,12 @@ CNEWS_PORT?=	news/cnews
 # ${.CURDIR}/../.. can be diffrent from ${PORTSDIR}
 CNEWSWRK?=	${WRKDIRPREFIX}${.CURDIR}/../../${CNEWS_PORT}/work
 NEWSBIN?=	${PREFIX}/libexec/cnews
+
+post-patch:
+	${REINPLACE_CMD} -e 's|@newsbin@|${STAGEDIR}@newsbin@|' \
+		${WRKSRC}/Makefile.in
+
+pre-install:
+	${MKDIR} ${STAGEDIR}${NEWSBIN}
 
 .include <bsd.port.mk>
