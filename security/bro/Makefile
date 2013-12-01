@@ -13,7 +13,7 @@ LICENSE=	BSD
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
 		swig:${PORTSDIR}/devel/swig13
-LIB_DEPENDS=	GeoIP:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
 
 USES=		cmake:outsource perl5
 USE_PYTHON=	yes
@@ -56,13 +56,13 @@ OPTIONS_EXCLUDE=NLS DOCS
 
 # Bro 2.2 requires libmagic >= 5.04
 .if ${OSVERSION} < 901000
-LIB_DEPENDS+=	magic:${PORTSDIR}/sysutils/file
+LIB_DEPENDS+=	libmagic.so.1:${PORTSDIR}/sysutils/file
 .endif
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBROCCOLI}
-LIB_DEPENDS+=	broccoli:${PORTSDIR}/security/broccoli
+LIB_DEPENDS+=	libbroccoli.so:${PORTSDIR}/security/broccoli
 .endif
 
 .if ${PORT_OPTIONS:MBROCTL}
@@ -111,8 +111,10 @@ RUN_DEPENDS+=	ipsumdump:${PORTSDIR}/net/ipsumdump
 .if ${PORT_OPTIONS:MBROCTL}
 post-stage::
 .if defined(BRO_PREFIX)
-	@${MKDIR} ${PREFIX}
+	@${MKDIR} ${STAGEDIR}${PREFIX}
 .endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/spool/installed-scripts-do-not-touch/auto
+	@${MKDIR} ${STAGEDIR}${PREFIX}/spool/installed-scripts-do-not-touch/site
 .for F in broctl.cfg
 	@${INSTALL_SCRIPT} ${INSTALL_WRKSRC}/aux/broctl/etc/${F} ${STAGEDIR}${PREFIX}/etc/${F}.example
 .endfor
