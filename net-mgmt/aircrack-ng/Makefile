@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aircrack-ng
-DISTVERSION=	1.2b1
-PORTREVISION=	1
+DISTVERSION=	1.2b2
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://download.aircrack-ng.org/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
@@ -12,8 +11,8 @@ DISTNAME=	${PORTNAME}-${DISTVERSION:C/b/-beta/}
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	An 802.11 WEP and WPA-PSK keys cracking program
 
-USES=		gmake
-USE_DOS2UNIX=	src/osdep/byteorder.h
+USES=		gmake dos2unix
+DOS2UNIX_FILES=	src/osdep/byteorder.h
 MAKE_ARGS+=	unstable=true prefix=${PREFIX}
 USE_OPENSSL=	yes
 SUB_FILES=	pkg-message
