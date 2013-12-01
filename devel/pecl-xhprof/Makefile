@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	xhprof
-PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTVERSION=	0.9.4
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@mcdermottroe.com
-COMMENT=	A Hierarchical Profiler for PHP
+COMMENT=	Hierarchical Profiler for PHP
+
+LICENSE=	AL2
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/extension
 
@@ -19,5 +20,4 @@ USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
