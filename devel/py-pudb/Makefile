@@ -2,19 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	pudb
-PORTVERSION=	0.93.1
+PORTVERSION=	2013.3.5
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gslin@gslin.org
-COMMENT=	A full-screen, console-based Python debugger
+COMMENT=	Full-screen, console-based Python debugger
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>0:${PORTSDIR}/textproc/py-pygments \
 		${PYTHON_PKGNAMEPREFIX}urwid>0:${PORTSDIR}/devel/py-urwid
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
