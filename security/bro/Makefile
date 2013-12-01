@@ -111,7 +111,7 @@ RUN_DEPENDS+=	ipsumdump:${PORTSDIR}/net/ipsumdump
 .if ${PORT_OPTIONS:MBROCTL}
 post-stage::
 .if defined(BRO_PREFIX)
-	@${MKDIR} ${STAGEDIR}${PREFIX}
+	@${MKDIR} ${PREFIX}
 .endif
 	@${MKDIR} ${STAGEDIR}${PREFIX}/spool/installed-scripts-do-not-touch/auto
 	@${MKDIR} ${STAGEDIR}${PREFIX}/spool/installed-scripts-do-not-touch/site
