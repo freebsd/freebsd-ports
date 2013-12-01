@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-PORTVERSION=	1.7.6
+PORTVERSION=	1.7.7
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	LOCAL/dbn/repos/wine/${DIST_SUBDIR}/${PORTVERSION}
@@ -65,7 +65,6 @@ do-install:
 pkg-plist: extract
 	${TAR} -tf ${_DISTDIR}/${EXTRACT_ONLY} ${EXTRACT_AFTER_ARGS} | ${GREP} -v '/$$' | ${SED} 's|/usr/local/||g' | sort > ${WRKDIR}/pkg-plist
 	${TAR} -tf ${_DISTDIR}/${EXTRACT_ONLY} ${EXTRACT_AFTER_ARGS} | ${GREP} '/$$' | ${SED} 's|/usr/local/\(.*\)/$$|@dirrm \1|g' | sort -r >> ${WRKDIR}/pkg-plist
-	${REINPLACE_CMD} -e 's|@dirrm share/applications|@dirrmtry share/applications|' -e 's|/$$||g' ${WRKDIR}/pkg-plist
 	${MV} ${WRKDIR}/pkg-plist ${PLIST}
 
 port-update:
