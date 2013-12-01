@@ -10,8 +10,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}5/PyQwt-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyQwt-${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Bindings for the Qwt Class Library
+
+BROKEN=		do not build
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/qmake-qt4:${PORTSDIR}/devel/qmake4 \
 		${PYNUMPY} \
@@ -24,7 +26,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	qwt.5:${PORTSDIR}/x11-toolkits/qwt5
 
 USES=		gmake
-USE_PYTHON=	2.5+
+USE_PYTHON=	2.6+
 MAKEFILE=	GNUmakefile
 MAKE_JOBS_UNSAFE=	yes
 
