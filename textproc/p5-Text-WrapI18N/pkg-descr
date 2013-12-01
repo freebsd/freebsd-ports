@@ -1,0 +1,12 @@
+Text::WrapI18N intends to be a better Text::Wrap module. This module is needed
+to support multibyte character encodings such as UTF-8, EUC-JP, EUC-KR, GB2312,
+and Big5. This module also supports characters with irregular widths, such as
+combining characters (which occupy zero columns on terminal, like diacritical
+marks in UTF-8) and fullwidth characters (which occupy two columns on terminal,
+like most of east Asian characters). Also, minimal handling of languages which
+doesn't use whitespaces between words (like Chinese and Japanese) is supported.
+
+Like Text::Wrap, hyphenation and "kinsoku" processing are not supported, to keep
+simplicity.
+
+WWW: http://search.cpan.org/dist/Text-WrapI18N/
