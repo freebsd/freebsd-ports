@@ -150,7 +150,6 @@
     SUBDIR += twpsk
     SUBDIR += uarduno
     SUBDIR += uartlirc
-    SUBDIR += uhso-kmod
     SUBDIR += uird
     SUBDIR += unixcw
     SUBDIR += usbmuxd

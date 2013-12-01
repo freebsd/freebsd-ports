@@ -5273,3 +5273,19 @@ devel/czmq|net/czmq|2013-11-29|Move to a more suitable category and with other l
 lang/ruby-reference||2013-11-29|Removed: does not contain up-to-date ruby reference, upstream has disappeared
 audio/gnump3d||2013-11-30|Has expired: Development has been abandoned upstream
 audio/rubygem-ogginfo|audio/rubygem-ruby-ogginfo|2013-11-30|Rename to match upstream naming
+x11-fm/xnc||2013-12-01|Has expired: Latest release from 2005, upstream disappeared, does not build
+audio/liteamp||2013-12-01|Has expired: Dead upstream since 2004, does not build with clang
+net-im/tapioca-qt||2013-12-01|Has expired: Unmaintained upstream since 2007, not used by anything
+net-im/telepathy-qt|net-im/telepathy-qt4|2013-12-01|Has expired: Unmaintained upstream since 2007, use net-im/telepathy-qt4
+x11-toolkits/linux-f10-gtk||2013-12-01|Has expired: GTK1 is deprecated
+net-im/linux-ymessenger||2013-12-01|Has expired: Depends on deprecated Linux GTK1
+emulators/linux-pete-mesagpu||2013-12-01|Has expired: Depends on deprecated Linux GTK1
+emulators/linux-pete-xgl2gpu||2013-12-01|Has expired: Depends on deprecated Linux GTK1
+emulators/linux-peops-softgpu||2013-12-01|Has expired: Depends on deprecated Linux GTK1
+finance/eqonomize-kde4||2013-12-01|Has expired: No upstream releases since 2008, does not build on FreeBSD 10 and 11
+comms/uhso-kmod||2013-12-01|Has expired: included in base system on all supported releases
+deskutils/ecru||2013-12-01|Has expired: No longer maintained upstream
+editors/gphpedit||2013-12-01|Has expired: No longer maintaned upstream
+irc/inspircd12|irc/inspircd|2013-12-01|Has expired: No upstream support; known vulnerable. Please use irc/inspircd
+graphics/py-clutter||2013-12-01|Has expired: Broken for more than 6 month
+graphics/py-clutter-gtk||2013-12-01|Has expired: depends on expired graphics/py-clutter

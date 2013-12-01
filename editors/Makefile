@@ -81,7 +81,6 @@
     SUBDIR += gnotepad+
     SUBDIR += gnuserv
     SUBDIR += gobby
-    SUBDIR += gphpedit
     SUBDIR += gummi
     SUBDIR += gwrite
     SUBDIR += heme
