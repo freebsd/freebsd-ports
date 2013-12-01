@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Text/WrapI18N.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/WrapI18N/.packlist
+%%PERL5_MAN3%%/Text::WrapI18N.3.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/WrapI18N
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
+@dirrmtry %%SITE_PERL%%/Text
