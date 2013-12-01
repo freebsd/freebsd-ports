@@ -1,0 +1,8 @@
+%%SITE_PERL%%/MooX/ConfigFromFile.pm
+%%SITE_PERL%%/MooX/ConfigFromFile/ConfigData.pm
+%%SITE_PERL%%/MooX/ConfigFromFile/Role.pm
+%%PERL5_MAN3%%/MooX::ConfigFromFile.3.gz
+%%PERL5_MAN3%%/MooX::ConfigFromFile::ConfigData.3.gz
+%%PERL5_MAN3%%/MooX::ConfigFromFile::Role.3.gz
+@dirrm %%SITE_PERL%%/MooX/ConfigFromFile
+@dirrmtry %%SITE_PERL%%/MooX

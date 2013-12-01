@@ -1,0 +1,6 @@
+MooX::ConfigFromFile is intended to easy load initialization values for
+attributes on object construction from an appropriate config file. The building
+is done in MooX::ConfigFromFile::Rule - using MooX::ConfigFromFile ensures the
+role is applied.
+
+WWW: http://search.cpan.org/dist/MooX-ConfigFromFile/
