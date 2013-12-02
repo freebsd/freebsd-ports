@@ -17,6 +17,9 @@ LIB_DEPENDS=	sexy:${PORTSDIR}/x11-toolkits/libsexy \
 		canberra-gtk:${PORTSDIR}/audio/libcanberra \
 		notify:${PORTSDIR}/devel/libnotify
 
+DEPRECATED=	broken and no release since 2009
+EXPIRATION_DATE=2014-01-02
+
 USE_BZIP2=	yes
 USES=		pathfix desktop-file-utils gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix libgnomeui gnomedocutils
