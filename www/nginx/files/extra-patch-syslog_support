@@ -721,7 +721,7 @@ index 54e1c26..2b05157 100644
 +    SYSLOG_FACILITY="LOG_DAEMON"
 +fi
 +if test "${USE_SYSLOG}" = "YES"; then
-+    CFLAGS="$CFLAGS -DUSE_SYSLOG -DSYSLOG_FACILITY=${SYSLOG_FACILITY}"
++    CFLAGS="$CFLAGS -DNGX_ENABLE_SYSLOG -DSYSLOG_FACILITY=${SYSLOG_FACILITY}"
 +fi
  
  cat << END                                                     > $NGX_MAKEFILE
