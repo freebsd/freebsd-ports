@@ -16,19 +16,6 @@ COMMENT=		Controller for ISDN TK-Anlage (PBX) made by Istec
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 
-.if defined(WITHOUT_X11)
-NOX11_SUFFIX?=	-nox11
-X_OR_NOT=
-PLIST_SUB+=	WITHOUT_X=""
-PLIST_SUB+=	WITH_X="@comment "
-.else
-USE_XORG=	x11
-X_OR_NOT=-x
-PLIST_SUB+=	WITHOUT_X="@comment "
-PLIST_SUB+=	WITH_X=""
-.endif
-AUTHOR=		"Ullrich von Bassewitz" <uz@ibb.schwaben.com>
-
 # Personal Preferences, Where to install.
 PBX_VAR=${STAGEDIR}${PREFIX}/var/log/pbx
 PBX_ETC=${STAGEDIR}${PREFIX}/etc/pbx
@@ -37,10 +24,29 @@ PBX_BIN=${STAGEDIR}${PREFIX}/bin
 PBX_DOC=${STAGEDIR}${DOCSDIR}
 ESTIC=${WRKSRC}/estic
 AREACODE_DATAFILE=${PREFIX}/etc/pbx/areacodes
-
 MAKEFILE=make/freebsd${X_OR_NOT}.mak
+AUTHOR=		"Ullrich von Bassewitz" <uz@ibb.schwaben.com>
 
-.if defined(WITH_ESTIC_DTR_OFF)
+OPTIONS_DEFINE=	X11 DTR_OFF
+OPTIONS_DEFAULT=X11
+NO_OPTIONS_SORT=yes
+DTR_OFF_DESC=	use dtr-off patch
+X11_USE=	xorg=x11
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MX11}
+X_OR_NOT=-x
+PLIST_SUB+=	WITHOUT_X="@comment "
+PLIST_SUB+=	WITH_X=""
+.else
+NOX11_SUFFIX?=	-nox11
+X_OR_NOT=
+PLIST_SUB+=	WITHOUT_X=""
+PLIST_SUB+=	WITH_X="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MDTR_OFF}
 EXTRA_PATCHES+=		${FILESDIR}/dtr-off.patch
 .endif
 
@@ -59,27 +65,27 @@ do-build:
 	cd ${ESTIC} ; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE}
 
 do-install:
-.if defined(WITHOUT_X11)
-	${INSTALL_PROGRAM} ${ESTIC}/estic ${PBX_BIN}/
-.else
+.if ${PORT_OPTIONS:MX11}
 	${INSTALL_PROGRAM} ${ESTIC}/xestic ${PBX_BIN}/
+.else
+	${INSTALL_PROGRAM} ${ESTIC}/estic ${PBX_BIN}/
 .endif
 	${INSTALL_DATA} ${ESTIC}/estic.res ${PBX_BIN}/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@# estic doc says estic.res must be in bin path or current directory
-	@${MKDIR} ${PBX_DOC}
+	${MKDIR} ${PBX_DOC}
 	${INSTALL_MAN} ${ESTIC}/estic.doc ${PBX_DOC}/
 	@# estic.doc is not nroff format, & is in German, volunteers to create
 	@# _and maintain_ nroff formatted English should contact ${AUTHOR}
 	${INSTALL_MAN} ${FILESDIR}/README ${PBX_DOC}/
 .endif
 	@# ${FILESDIR}/README is not in nroff, but is a temporary document.
-	@${MKDIR} ${PBX_ETC} ${PBX_VAR}
+	${MKDIR} ${PBX_ETC} ${PBX_VAR}
 	${INSTALL_DATA} ${ESTIC}/samples/estic.ini ${PBX_ETC}/estic.ini.generic_example
 	${INSTALL_DATA} ${FILESDIR}/estic.ini ${PBX_ETC}/estic.ini.freebsd_example
 	${INSTALL_DATA} ${ESTIC}/samples/alias.dat ${PBX_ETC}/aliases.example
 	@# create config & debug so we can change mode to private
-	@${TOUCH} ${PBX_ETC}/config ${PBX_VAR}/debug
+	${TOUCH} ${PBX_ETC}/config ${PBX_VAR}/debug
 	${CHMOD} 600 ${PBX_VAR}/debug ${PBX_ETC}/config
 	${CHMOD} 700 ${PBX_VAR} # estic will create ./1996.11 etc
 
