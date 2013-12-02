@@ -1,0 +1,16 @@
+diff --git a/src/libuafs/MakefileProto.FBSD.in b/src/libuafs/MakefileProto.FBSD.in
+index 642fe6a..33f0c48 100644
+--- a/src/libuafs/MakefileProto.FBSD.in
++++ b/src/libuafs/MakefileProto.FBSD.in
+@@ -23,11 +23,7 @@ OPTF=-O
+ 
+ TEST_CFLAGS=-D_REENTRANT -DAFS_PTHREAD_ENV -DAFS_FBSD50_ENV $(XCFLAGS)
+ TEST_LDFLAGS=
+-<fbsd_50 fbsd_51 fbsd_52 fbsd_53 fbsd_60 fbsd_61>
+-TEST_LIBS=-lc_r
+-<all -fbsd_50 -fbsd_51 -fbsd_52 -fbsd_53 -fbsd_60 -fbsd_61>
+ TEST_LIBS=-lpthread
+-<all>
+ 
+ LIBUAFS = libuafs.a
+ LIBJUAFS = libjuafs.a

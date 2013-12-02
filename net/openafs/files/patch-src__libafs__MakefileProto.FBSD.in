@@ -1,0 +1,31 @@
+diff --git a/src/libafs/MakefileProto.FBSD.in b/src/libafs/MakefileProto.FBSD.in
+index efc5f9b..92461c9 100644
+--- a/src/libafs/MakefileProto.FBSD.in
++++ b/src/libafs/MakefileProto.FBSD.in
+@@ -42,9 +42,7 @@ KOPTS = -fPIC -mno-red-zone
+ 
+ KDEFS=-Wall -nostdinc -I/usr/include -D_KERNEL -DKLD_MODULE \
+ 	-elf \
+-<i386_fbsd_60>
+ 	-mno-mmx -mno-3dnow -mno-sse -mno-sse2 \
+-<all>
+ 	-mno-align-long-strings -fno-common -ffreestanding \
+ 	-I${KBLD} -include opt_global.h -fno-strict-aliasing
+ 
+@@ -72,15 +70,11 @@ setup:
+ 	-$(RM) -f  h net netinet rpc ufs nfs  machine sys vm
+ 	-ln -fs ${KSRC}/net net
+ <amd64 i386>
+-	-ln -fs ${KSRC}/x86/include machine
++	-ln -fs ${KSRC}/x86/include x86
+ <all>
+ 	-ln -fs ${KSRC}/netinet netinet
+ 	-ln -fs ${KSRC}/nfs nfs
+-<fbsd_50 fbsd_51 fbsd_52 fbsd_53 fbsd_60 fbsd_61 fbsd_62 fbsd_70>
+-	-ln -fs /usr/include/rpc rpc
+-<all -fbsd_50 -fbsd_51 -fbsd_52 -fbsd_53 -fbsd_60 -fbsd_61 -fbsd_62 -fbsd_70>
+ 	-ln -fs ${KSRC}/rpc rpc
+-<all>
+ 	-ln -fs ${KSRC}/sys sys
+ 	-ln -fs ${KSRC}/ufs/ufs ufs
+ 	-ln -fs ${KSRC}/sys h
