@@ -23,7 +23,6 @@ PLIST_FILES=	include/arena/align.h \
 		lib/libarena.a
 PLIST_DIRS=	include/arena
 
-NO_STAGE=	yes
 post-patch:
 .for i in Epilogue.mk Prologue.mk
 	@${REINPLACE_CMD} -e \
