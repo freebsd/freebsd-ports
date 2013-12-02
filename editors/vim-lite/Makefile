@@ -1,14 +1,12 @@
 # Created by: David O'Brien (obrien@NUXI.com)
 # $FreeBSD$
 
-LITE=		yes
-
-MASTERDIR=	${.CURDIR}/../vim
+PORTREVISION=	0
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Vi "workalike", with many additional features (Lite package)
 
-PORTREVISION=	2
+LITE=		yes
+MASTERDIR=	${.CURDIR}/../vim
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
