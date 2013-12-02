@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Object-relational mapping layer for Rails MVC Framework
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-activemodel>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-activemodel \
 		rubygem-tzinfo>=0.3.29:${PORTSDIR}/devel/rubygem-tzinfo \
@@ -26,18 +28,8 @@ OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
 
 GEM_ENV+=	LANG=en_US.UTF-8
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	${RUBY_PKGNAMEPREFIX}mysql>0:${PORTSDIR}/databases/ruby-mysql
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-RUN_DEPENDS+=	rubygem-pg>=0:${PORTSDIR}/databases/rubygem-pg
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE3}
-RUN_DEPENDS+=	rubygem-sqlite3>=1.2.1:${PORTSDIR}/databases/rubygem-sqlite3
-.endif
+MYSQL_RUN_DEPENDS=	${RUBY_PKGNAMEPREFIX}mysql>=0:${PORTSDIR}/databases/ruby-mysql
+PGSQL_RUN_DEPENDS=	rubygem-pg>=0:${PORTSDIR}/databases/rubygem-pg
+SQLITE3_RUN_DEPENDS=	rubygem-sqlite3>=1.2.1:${PORTSDIR}/databases/rubygem-sqlite3
 
 .include <bsd.port.mk>
