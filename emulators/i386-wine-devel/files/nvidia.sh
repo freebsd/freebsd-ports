@@ -86,7 +86,7 @@ terminate() {
 
 }
 
-args=`getopt -dn $*`
+args=`getopt dn $*`
 if [ $? -ne 0 ]
 then
   echo "Usage: $0 [-n]"

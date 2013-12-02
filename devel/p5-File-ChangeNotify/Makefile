@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	File-ChangeNotify
-PORTVERSION=	0.22
+PORTVERSION=	0.24
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -31,5 +31,4 @@ MAN3=		File::ChangeNotify.3 \
 USES=		perl5
 USE_PERL5=	modbuild
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

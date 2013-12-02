@@ -1,24 +1,30 @@
 # $FreeBSD$
 
-PORTNAME=	python31
-PORTVERSION=	3.1.5
-PORTREVISION=	5
-CATEGORIES=	lang python ipv6
-MASTER_SITES=	PYTHON
+PORTNAME=		python31
+PORTVERSION=		3.1.5
+PORTREVISION=		7
+CATEGORIES=		lang python ipv6
+MASTER_SITES=		PYTHON
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
-DISTFILES=	${PYTHON_DISTFILE}
+DISTFILES=		${PYTHON_DISTFILE}
+DIST_SUBDIR=		python
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Interpreted object-oriented programming language
 
-DEPRECATED=	Python 3.1 will be end-of-life soon, please migrate to lang/python33
-EXPIRATION_DATE=2014-06-01
+LICENSE=	PSFL
 
-DIST_SUBDIR=	python
-GNU_CONFIGURE=	yes
+LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
+
+DEPRECATED=		Python 3.1 will be end-of-life soon, please migrate to lang/python33
+EXPIRATION_DATE=	2014-06-01
+
+GNU_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	../configure # must be relative
-CONFIGURE_ENV=	OPT="" SVNVERSION="echo freebsd" ac_cv_opt_olimit_ok=no
-MAKE_ENV=	VPATH="${PYTHON_WRKSRC}"
+CONFIGURE_ARGS=		--with-system-ffi
+CONFIGURE_ENV=		OPT="" SVNVERSION="echo freebsd" ac_cv_opt_olimit_ok=no
+MAKE_ENV=		VPATH="${PYTHON_WRKSRC}"
+
 INSTALL_TARGET=	altinstall
 MAN1=		${PYTHON_VERSION}.1
 
@@ -26,7 +32,7 @@ USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_XZ=		yes
 
-PYTHON_VERSION=	python3.1
+PYTHON_VERSION=		python3.1
 PYTHON_NO_DEPENDS=	yes
 
 WRKSRC=		${PYTHON_WRKSRC}/portbld.static
@@ -43,7 +49,7 @@ DATADIR=	${PREFIX}/share/${PYTHON_VERSION}
 
 PLATFORMS=	plat-freebsd4 plat-freebsd5 plat-freebsd6 \
 		plat-freebsd7 plat-freebsd8 plat-freebsd9 \
-		plat-freebsd10
+		plat-freebsd10 plat-freebsd11
 
 BIN_SCRIPTS=	2to3 idle3 pydoc3
 BIN_FILES=	python python-shared python-config python-shared-config \
@@ -73,14 +79,14 @@ CONFIGURE_ENV+=	ac_cv_lib_intl_textdomain=no ac_cv_header_libintl_h=no
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MTHREADS}
-PLIST_SUB+=	THREADS=""
+PLIST_SUB+=		THREADS=""
 CONFIGURE_ARGS+=	--with-threads
 CFLAGS+=		${PTHREAD_CFLAGS}
 LDFLAGS+=		${PTHREAD_LIBS}
-.else # defined(WITHOUT_THREADS)
-PLIST_SUB+=	THREADS="@comment "
+.else
+PLIST_SUB+=		THREADS="@comment "
 CONFIGURE_ARGS+=	--without-threads
-.endif # !defined(WITHOUT_THREADS)
+.endif
 
 .if ${PORT_OPTIONS:MUCS4}
 CONFIGURE_ARGS+=	--with-wide-unicode
@@ -117,6 +123,8 @@ pre-patch:
 		${PATCH_WRKSRC}/Lib/plat-freebsd9
 	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
 		${PATCH_WRKSRC}/Lib/plat-freebsd10
+	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
+		${PATCH_WRKSRC}/Lib/plat-freebsd11
 	${MKDIR} ${WRKSRC} ${SHARED_WRKSRC}/Modules
 .for script in ${BIN_SCRIPTS}
 	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \

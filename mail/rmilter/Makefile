@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		rmilter
-PORTVERSION=		1.5.45
+PORTVERSION=		1.5.46
 CATEGORIES=		mail
 
 MAINTAINER=		vsevolod@FreeBSD.org
@@ -13,7 +13,7 @@ USE_GITHUB=		yes
 GH_ACCOUNT=		vstakhov
 GH_PROJECT=		${PORTNAME}
 GH_TAG=		${PORTVERSION}
-GH_COMMIT=		746ac47
+GH_COMMIT=		af8ceb6
 
 USE_RC_SUBR=	yes
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oauthlib
-PORTVERSION=	0.4.2
+PORTVERSION=	0.6.0
 CATEGORIES=	security net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -20,9 +20,10 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 
 GH_ACCOUNT=	idan
-GH_COMMIT=	1ea510c
+GH_COMMIT=	58abd88
 
-NO_STAGE=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 300

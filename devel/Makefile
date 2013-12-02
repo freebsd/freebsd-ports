@@ -1275,6 +1275,7 @@
     SUBDIR += noweb
     SUBDIR += npth
     SUBDIR += nspr
+    SUBDIR += ntopng-zmq
     SUBDIR += nxt-python
     SUBDIR += obby
     SUBDIR += obfuscatejs
@@ -1961,6 +1962,7 @@
     SUBDIR += p5-File-Cache
     SUBDIR += p5-File-Cat
     SUBDIR += p5-File-ChangeNotify
+    SUBDIR += p5-File-ConfigDir
     SUBDIR += p5-File-Copy-Recursive
     SUBDIR += p5-File-CountLines
     SUBDIR += p5-File-CreationTime
@@ -2018,6 +2020,7 @@
     SUBDIR += p5-File-Sync
     SUBDIR += p5-File-Tail
     SUBDIR += p5-File-Tail-Dir
+    SUBDIR += p5-File-Tail-Scribe
     SUBDIR += p5-File-Temp
     SUBDIR += p5-File-Tempdir
     SUBDIR += p5-File-Touch
@@ -2323,6 +2326,8 @@
     SUBDIR += p5-Module-Versions
     SUBDIR += p5-Module-Versions-Report
     SUBDIR += p5-Moo
+    SUBDIR += p5-MooX-ConfigFromFile
+    SUBDIR += p5-MooX-File-ConfigDir
     SUBDIR += p5-MooX-Options
     SUBDIR += p5-MooX-Types-MooseLike
     SUBDIR += p5-MooX-Types-MooseLike-Numeric
@@ -2757,6 +2762,8 @@
     SUBDIR += p5-Term-Screen
     SUBDIR += p5-Term-Shell
     SUBDIR += p5-Term-Size
+    SUBDIR += p5-Term-Size-Any
+    SUBDIR += p5-Term-Size-Perl
     SUBDIR += p5-Term-Sk
     SUBDIR += p5-Term-Title
     SUBDIR += p5-Term-UI

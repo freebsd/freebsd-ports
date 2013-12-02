@@ -1,9 +1,21 @@
-@unexec if cmp -s %%WWWDIR%%/config.php.sample %%WWWDIR%%/config.php; then rm -f %%WWWDIR%%/config.php; fi
 %%WWWDIR%%/.htaccess
 %%WWWDIR%%/INSTALL.txt
 %%WWWDIR%%/README
 %%WWWDIR%%/UPDATE
-%%WWWDIR%%/config.php.sample
+%%WWWDIR%%/api/README
+%%WWWDIR%%/api/_examples/apiClient.php
+%%WWWDIR%%/api/_examples/apiConfig.php
+%%WWWDIR%%/api/_examples/createNewSection.php
+%%WWWDIR%%/api/_examples/deleteSection.php
+%%WWWDIR%%/api/_examples/getAllSections.php
+%%WWWDIR%%/api/_examples/getAllSubnetsInSection.php
+%%WWWDIR%%/api/_examples/getSubnetById.php
+%%WWWDIR%%/api/_examples/updateSection.php
+%%WWWDIR%%/api/controllers/Sections.php
+%%WWWDIR%%/api/controllers/Subnets.php
+%%WWWDIR%%/api/index.php
+%%WWWDIR%%/api/models/section.php
+%%WWWDIR%%/api/models/subnet.php
 %%WWWDIR%%/css/bootstrap/bootstrap-custom.css
 %%WWWDIR%%/css/bootstrap/bootstrap-responsive.css
 %%WWWDIR%%/css/bootstrap/bootstrap-responsive.min.css
@@ -18,6 +30,7 @@
 %%WWWDIR%%/css/images/info.png
 %%WWWDIR%%/css/images/lan.png
 %%WWWDIR%%/css/images/li-bg.png
+%%WWWDIR%%/css/images/li.png
 %%WWWDIR%%/css/images/loading_dash.gif
 %%WWWDIR%%/css/images/note.png
 %%WWWDIR%%/css/images/phpipam-favicon.pxm
@@ -32,6 +45,8 @@
 %%WWWDIR%%/css/images/subnetSlaveTdBG.png
 %%WWWDIR%%/css/images/subnetSubSlaveTdBG.png
 %%WWWDIR%%/css/images/ul-bg.png
+%%WWWDIR%%/css/images/ul-li-bg-active.png
+%%WWWDIR%%/css/images/ul-li-bg.png
 %%WWWDIR%%/css/images/userAdmin.png
 %%WWWDIR%%/css/images/userIP.png
 %%WWWDIR%%/css/images/userNormal.png
@@ -44,18 +59,20 @@
 %%WWWDIR%%/css/img/glyphicons-halflings-white.png
 %%WWWDIR%%/css/img/glyphicons-halflings.png
 %%WWWDIR%%/db/SCHEMA.sql
-%%WWWDIR%%/db/UPDATE-v0.6.sql
-%%WWWDIR%%/db/UPDATE-v0.7.sql
-%%WWWDIR%%/functions/locale/changes.txt
-%%WWWDIR%%/functions/locale/template.tar
-%%WWWDIR%%/functions/locale/en/LC_MESSAGES/phpipam.mo
-%%WWWDIR%%/functions/locale/en/LC_MESSAGES/phpipam.po
-%%WWWDIR%%/functions/locale/sl_SI/LC_MESSAGES/phpipam.mo
-%%WWWDIR%%/functions/locale/sl_SI/LC_MESSAGES/phpipam.po
-%%WWWDIR%%/functions/locale/template/LC_MESSAGES/phpipam.mo
-%%WWWDIR%%/functions/locale/template/LC_MESSAGES/phpipam.po
+%%WWWDIR%%/db/UPDATE-v0.81.sql
+%%WWWDIR%%/db/UPDATE-v0.82.sql
+%%WWWDIR%%/db/UPDATE-v0.83.sql
+%%WWWDIR%%/db/UPDATE-v0.84.sql
+%%WWWDIR%%/db/UPDATE-v0.85.sql
+%%WWWDIR%%/db/UPDATE-v0.86.sql
+%%WWWDIR%%/db/UPDATE-v0.87.sql
+%%WWWDIR%%/db/UPDATE-v0.88.sql
+%%WWWDIR%%/db/UPDATE-v0.89.sql
+%%WWWDIR%%/db/UPDATE-v0.891.sql
+%%WWWDIR%%/db/UPDATE-v0.9.sql
 %%WWWDIR%%/functions/PEAR/Net/IPv4.php
 %%WWWDIR%%/functions/PEAR/Net/IPv6.php
+%%WWWDIR%%/functions/PEAR/Net/Ping.php
 %%WWWDIR%%/functions/PEAR/OLE/ChainedBlockStream.php
 %%WWWDIR%%/functions/PEAR/OLE/OLE.php
 %%WWWDIR%%/functions/PEAR/OLE/PPS.php
@@ -97,6 +114,26 @@
 %%WWWDIR%%/functions/functions-tools.php
 %%WWWDIR%%/functions/functions-upgrade.php
 %%WWWDIR%%/functions/functions.php
+%%WWWDIR%%/functions/locale/changes.txt
+%%WWWDIR%%/functions/locale/de_DE/LC_MESSAGES/phpipam.mo
+%%WWWDIR%%/functions/locale/de_DE/LC_MESSAGES/phpipam.po
+%%WWWDIR%%/functions/locale/en/LC_MESSAGES/phpipam.mo
+%%WWWDIR%%/functions/locale/en/LC_MESSAGES/phpipam.po
+%%WWWDIR%%/functions/locale/fr_FR/LC_MESSAGES/phpipam.mo
+%%WWWDIR%%/functions/locale/fr_FR/LC_MESSAGES/phpipam.po
+%%WWWDIR%%/functions/locale/nl_NL/LC_MESSAGES/phpipam.mo
+%%WWWDIR%%/functions/locale/nl_NL/LC_MESSAGES/phpipam.po
+%%WWWDIR%%/functions/locale/sl_SI/LC_MESSAGES/phpipam.mo
+%%WWWDIR%%/functions/locale/sl_SI/LC_MESSAGES/phpipam.po
+%%WWWDIR%%/functions/phpMailer/LICENSE
+%%WWWDIR%%/functions/phpMailer/PHPMailerAutoload.php
+%%WWWDIR%%/functions/phpMailer/README.md
+%%WWWDIR%%/functions/phpMailer/class.phpmailer.php
+%%WWWDIR%%/functions/phpMailer/class.pop3.php
+%%WWWDIR%%/functions/phpMailer/class.smtp.php
+%%WWWDIR%%/functions/phpMailer/composer.json
+%%WWWDIR%%/functions/scan/DiscoveryPingScript.php
+%%WWWDIR%%/functions/scan/config-scan.php
 %%WWWDIR%%/functions/scripts/Thread.php
 %%WWWDIR%%/functions/scripts/pingCheck.php
 %%WWWDIR%%/functions/scripts/resolveIPaddresses.php
@@ -190,19 +227,15 @@
 %%WWWDIR%%/site/admin/CSVimportSubmit.php
 %%WWWDIR%%/site/admin/CSVimportVerify.php
 %%WWWDIR%%/site/admin/adminMenu.php
-%%WWWDIR%%/site/admin/customIPFields.php
-%%WWWDIR%%/site/admin/customIPFieldsEdit.php
-%%WWWDIR%%/site/admin/customIPFieldsEditResult.php
-%%WWWDIR%%/site/admin/customIPFieldsOrder.php
-%%WWWDIR%%/site/admin/customSubnetFieldsEdit.php
-%%WWWDIR%%/site/admin/customSubnetFieldsEditResult.php
-%%WWWDIR%%/site/admin/customSubnetFieldsOrder.php
-%%WWWDIR%%/site/admin/customUserFieldsEdit.php
-%%WWWDIR%%/site/admin/customUserFieldsEditResult.php
-%%WWWDIR%%/site/admin/customUserFieldsOrder.php
-%%WWWDIR%%/site/admin/customVLANFieldsEdit.php
-%%WWWDIR%%/site/admin/customVLANFieldsEditResult.php
-%%WWWDIR%%/site/admin/customVLANFieldsOrder.php
+%%WWWDIR%%/site/admin/api.php
+%%WWWDIR%%/site/admin/apiEdit.php
+%%WWWDIR%%/site/admin/apiEditResult.php
+%%WWWDIR%%/site/admin/apiKeyGenerate.php
+%%WWWDIR%%/site/admin/csvtemplate.php
+%%WWWDIR%%/site/admin/customFields.php
+%%WWWDIR%%/site/admin/customFieldsEdit.php
+%%WWWDIR%%/site/admin/customFieldsEditResult.php
+%%WWWDIR%%/site/admin/customFieldsOrder.php
 %%WWWDIR%%/site/admin/databaseInstall.php
 %%WWWDIR%%/site/admin/databaseUpgrade.php
 %%WWWDIR%%/site/admin/export.php
@@ -238,6 +271,8 @@
 %%WWWDIR%%/site/admin/manageDevices.php
 %%WWWDIR%%/site/admin/manageDevicesEdit.php
 %%WWWDIR%%/site/admin/manageDevicesEditResult.php
+%%WWWDIR%%/site/admin/manageFolderEdit.php
+%%WWWDIR%%/site/admin/manageFolderEditSubmit.php
 %%WWWDIR%%/site/admin/manageRequestEdit.php
 %%WWWDIR%%/site/admin/manageRequestResult.php
 %%WWWDIR%%/site/admin/manageRequestResultMail.php
@@ -245,6 +280,8 @@
 %%WWWDIR%%/site/admin/manageSection.php
 %%WWWDIR%%/site/admin/manageSectionEdit.php
 %%WWWDIR%%/site/admin/manageSectionEditResult.php
+%%WWWDIR%%/site/admin/manageSectionOrder.php
+%%WWWDIR%%/site/admin/manageSectionOrderResult.php
 %%WWWDIR%%/site/admin/manageSubnet.php
 %%WWWDIR%%/site/admin/manageSubnetEdit.php
 %%WWWDIR%%/site/admin/manageSubnetEditResult.php
@@ -272,22 +309,27 @@
 %%WWWDIR%%/site/admin/settings.php
 %%WWWDIR%%/site/admin/settingsEdit.php
 %%WWWDIR%%/site/admin/showAll.php
+%%WWWDIR%%/site/admin/userADsearchForm.php
+%%WWWDIR%%/site/admin/userADsearchResult.php
 %%WWWDIR%%/site/admin/users.php
 %%WWWDIR%%/site/admin/usersEditEmailNotif.php
 %%WWWDIR%%/site/admin/usersEditPrint.php
 %%WWWDIR%%/site/admin/usersEditResult.php
 %%WWWDIR%%/site/admin/verifyDatabase.php
 %%WWWDIR%%/site/admin/versionCheck.php
-%%WWWDIR%%/site/dashboard/access_logs.php
-%%WWWDIR%%/site/dashboard/error_logs.php
 %%WWWDIR%%/site/dashboard/index.php
-%%WWWDIR%%/site/dashboard/statistics.php
-%%WWWDIR%%/site/dashboard/top10_hosts.php
-%%WWWDIR%%/site/dashboard/top10_percentage.php
+%%WWWDIR%%/site/dashboard/widgets/access_logs.php
+%%WWWDIR%%/site/dashboard/widgets/error_logs.php
+%%WWWDIR%%/site/dashboard/widgets/statistics.php
+%%WWWDIR%%/site/dashboard/widgets/top10_hosts_v4.php
+%%WWWDIR%%/site/dashboard/widgets/top10_hosts_v6.php
+%%WWWDIR%%/site/dashboard/widgets/top10_percentage.php
 %%WWWDIR%%/site/error.php
 %%WWWDIR%%/site/footer.php
 %%WWWDIR%%/site/install/index.php
 %%WWWDIR%%/site/ipaddr/exportSelectFields.php
+%%WWWDIR%%/site/ipaddr/folderDetails.php
+%%WWWDIR%%/site/ipaddr/folderDetailsSubnets.php
 %%WWWDIR%%/site/ipaddr/ipAddressPrintTable.php
 %%WWWDIR%%/site/ipaddr/ipAddressPrintTableOrphaned.php
 %%WWWDIR%%/site/ipaddr/ipAddressPrintTableSlaves.php
@@ -298,9 +340,20 @@
 %%WWWDIR%%/site/ipaddr/modifyIpAddress.php
 %%WWWDIR%%/site/ipaddr/modifyIpAddressCheck.php
 %%WWWDIR%%/site/ipaddr/moveIpAddress.php
+%%WWWDIR%%/site/ipaddr/pingCheck.php
+%%WWWDIR%%/site/ipaddr/printVlans.php
+%%WWWDIR%%/site/ipaddr/scan/subnetScan.php
+%%WWWDIR%%/site/ipaddr/scan/subnetScanDiscoveryPing.php
+%%WWWDIR%%/site/ipaddr/scan/subnetScanDiscoveryPingResult.php
+%%WWWDIR%%/site/ipaddr/scan/subnetScanUpdatePing.php
+%%WWWDIR%%/site/ipaddr/sectionAllSubnets.php
 %%WWWDIR%%/site/ipaddr/subnetDetails.php
 %%WWWDIR%%/site/ipaddr/subnetDetailsGraph.php
 %%WWWDIR%%/site/ipaddr/subnetDetailsSlaves.php
+%%WWWDIR%%/site/ipaddr/vlanDetails.php
+%%WWWDIR%%/site/ipaddr/vlanSubnets.php
+%%WWWDIR%%/site/ipaddr/vrfDetails.php
+%%WWWDIR%%/site/ipaddr/vrfSubnets.php
 %%WWWDIR%%/site/login/index.php
 %%WWWDIR%%/site/login/loginCheck.php
 %%WWWDIR%%/site/login/loginForm.php
@@ -309,10 +362,10 @@
 %%WWWDIR%%/site/login/requestIPresult.php
 %%WWWDIR%%/site/sections.php
 %%WWWDIR%%/site/subnets.php
+%%WWWDIR%%/site/tools/devices.php
 %%WWWDIR%%/site/tools/instructions.php
 %%WWWDIR%%/site/tools/ipCalc.php
 %%WWWDIR%%/site/tools/ipCalcResult.php
-%%WWWDIR%%/site/tools/devices.php
 %%WWWDIR%%/site/tools/requestIPform.php
 %%WWWDIR%%/site/tools/resolveDNS.php
 %%WWWDIR%%/site/tools/search.php
@@ -327,19 +380,27 @@
 %%WWWDIR%%/site/tools/vlan.php
 %%WWWDIR%%/site/tools/vrf.php
 %%WWWDIR%%/site/upgrade/index.php
+%%WWWDIR%%/site/upgrade/upgradePrint.php
 %%WWWDIR%%/site/userMenu.php
 %%WWWDIR%%/upgrade/index.php
+@unexec if cmp -s %D/%%WWWDIR%%/config.php.sample %D/%%WWWDIR%%/config.php ; then rm -f %D/%%WWWDIR%%/config.php ; fi
+%%WWWDIR%%/config.php.sample
+@exec if [ ! -f %D/%%WWWDIR%%/config.php ]; then cp -p %D/%F %B/config.php; fi
 @dirrm %%WWWDIR%%/upgrade
 @dirrm %%WWWDIR%%/site/upgrade
 @dirrm %%WWWDIR%%/site/tools
 @dirrm %%WWWDIR%%/site/login
+@dirrm %%WWWDIR%%/site/ipaddr/scan
 @dirrm %%WWWDIR%%/site/ipaddr
 @dirrm %%WWWDIR%%/site/install
+@dirrm %%WWWDIR%%/site/dashboard/widgets
 @dirrm %%WWWDIR%%/site/dashboard
 @dirrm %%WWWDIR%%/site/admin/csvupload
 @dirrm %%WWWDIR%%/site/admin
 @dirrm %%WWWDIR%%/site
 @dirrmtry %%WWWDIR%%/misc
+@dirrm %%WWWDIR%%/js/uploader
+@dirrmtry %%WWWDIR%%/js/flot
 @dirrm %%WWWDIR%%/js/ckeditor/skins/moono/images
 @dirrm %%WWWDIR%%/js/ckeditor/skins/moono
 @dirrm %%WWWDIR%%/js/ckeditor/skins
@@ -369,11 +430,22 @@
 @dirrm %%WWWDIR%%/js/ckeditor/plugins
 @dirrm %%WWWDIR%%/js/ckeditor/lang
 @dirrm %%WWWDIR%%/js/ckeditor
-@dirrmtry %%WWWDIR%%/js/flot
-@dirrm %%WWWDIR%%/js/uploader
 @dirrmtry %%WWWDIR%%/js
 @dirrm %%WWWDIR%%/install
 @dirrm %%WWWDIR%%/functions/scripts
+@dirrm %%WWWDIR%%/functions/scan
+@dirrm %%WWWDIR%%/functions/phpMailer
+@dirrm %%WWWDIR%%/functions/locale/sl_SI/LC_MESSAGES
+@dirrm %%WWWDIR%%/functions/locale/sl_SI
+@dirrm %%WWWDIR%%/functions/locale/nl_NL/LC_MESSAGES
+@dirrm %%WWWDIR%%/functions/locale/nl_NL
+@dirrm %%WWWDIR%%/functions/locale/fr_FR/LC_MESSAGES
+@dirrm %%WWWDIR%%/functions/locale/fr_FR
+@dirrm %%WWWDIR%%/functions/locale/en/LC_MESSAGES
+@dirrm %%WWWDIR%%/functions/locale/en
+@dirrm %%WWWDIR%%/functions/locale/de_DE/LC_MESSAGES
+@dirrm %%WWWDIR%%/functions/locale/de_DE
+@dirrmtry %%WWWDIR%%/functions/locale
 @dirrm %%WWWDIR%%/functions/adLDAP/src/collections
 @dirrm %%WWWDIR%%/functions/adLDAP/src/classes
 @dirrm %%WWWDIR%%/functions/adLDAP/src
@@ -385,13 +457,6 @@
 @dirrmtry %%WWWDIR%%/functions/PEAR/OLE
 @dirrmtry %%WWWDIR%%/functions/PEAR/Net
 @dirrmtry %%WWWDIR%%/functions/PEAR
-@dirrm %%WWWDIR%%/functions/locale/template/LC_MESSAGES
-@dirrm %%WWWDIR%%/functions/locale/template
-@dirrm %%WWWDIR%%/functions/locale/sl_SI/LC_MESSAGES
-@dirrm %%WWWDIR%%/functions/locale/sl_SI
-@dirrm %%WWWDIR%%/functions/locale/en/LC_MESSAGES
-@dirrm %%WWWDIR%%/functions/locale/en
-@dirrmtry %%WWWDIR%%/functions/locale
 @dirrmtry %%WWWDIR%%/functions
 @dirrm %%WWWDIR%%/db/bkp
 @dirrm %%WWWDIR%%/db
@@ -399,6 +464,10 @@
 @dirrmtry %%WWWDIR%%/css/images
 @dirrmtry %%WWWDIR%%/css/bootstrap
 @dirrmtry %%WWWDIR%%/css
+@dirrm %%WWWDIR%%/api/models
+@dirrm %%WWWDIR%%/api/controllers
+@dirrm %%WWWDIR%%/api/_examples
+@dirrm %%WWWDIR%%/api
 @dirrmtry %%WWWDIR%%
 @exec mkdir -p %D/%%WWWDIR%%/site/admin/csvupload
 @exec mkdir -p %D/%%WWWDIR%%/db/bkp

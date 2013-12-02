@@ -10,15 +10,16 @@ MASTER_SITE_SUBDIR=	lib/${PORTNAME}
 MAINTAINER=	rodrigo@bebik.net
 COMMENT=	Shared memory allocation library for pre-forked process models
 
+LICENSE=	BSD
+
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-MAN1=		mm-config.1
-MAN3=		mm.3
-
-NO_STAGE=	yes
 post-build:
 	@${ECHO_MSG} "===>  Use 'make test' to run a quick test suite."
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmm.so
 
 test:
 	@cd ${WRKSRC} && ${MAKE} test

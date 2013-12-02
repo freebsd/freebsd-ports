@@ -75,7 +75,6 @@
     SUBDIR += licq-osd
     SUBDIR += licq-qt-gui
     SUBDIR += linpopup
-    SUBDIR += linux-ymessenger
     SUBDIR += loudmouth
     SUBDIR += mbpurple
     SUBDIR += mcabber
@@ -152,7 +151,6 @@
     SUBDIR += sendxmpp
     SUBDIR += skype
     SUBDIR += skype-devel
-    SUBDIR += tapioca-qt
     SUBDIR += telepathy-butterfly
     SUBDIR += telepathy-farstream
     SUBDIR += telepathy-gabble
@@ -163,7 +161,6 @@
     SUBDIR += telepathy-logger-qt4
     SUBDIR += telepathy-mission-control
     SUBDIR += telepathy-python
-    SUBDIR += telepathy-qt
     SUBDIR += telepathy-qt4
     SUBDIR += telepathy-salut
     SUBDIR += telepathy-sofiasip

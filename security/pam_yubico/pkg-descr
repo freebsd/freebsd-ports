@@ -2,4 +2,4 @@ The Yubico authentication device Yubikey generates one-time passwords that can
 be used for authentication. This module allows you to use the Yubikey device to
 authenticate to the PAM system.
 
-WWW: https://code.google.com/p/yubico-pam/
+WWW: http://opensource.yubico.com/yubico-pam/

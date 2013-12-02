@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-Types
-PORTVERSION=	0.38
+PORTVERSION=	0.39
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ETHER
@@ -22,21 +22,9 @@ BUILD_DEPENDS=	p5-Carp-Clan>=6.00:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-namespace-autoclean>=0.08:${PORTSDIR}/devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
-		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
-		p5-Test-CheckDeps>=0.006:${PORTSDIR}/devel/p5-Test-CheckDeps
+		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
 USES=		perl5
 USE_PERL5=	modbuildtiny
 
-MAN3=		MooseX::Types.3 \
-		MooseX::Types::Base.3 \
-		MooseX::Types::CheckedUtilExports.3 \
-		MooseX::Types::Combine.3 \
-		MooseX::Types::Moose.3 \
-		MooseX::Types::TypeDecorator.3 \
-		MooseX::Types::UndefinedType.3 \
-		MooseX::Types::Util.3 \
-		MooseX::Types::Wrapper.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

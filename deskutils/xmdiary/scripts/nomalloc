@@ -3,8 +3,7 @@
 for f in `find $1 -type f -name \*.\[ch\] -print | xargs grep -l malloc.h`
 do
 
-patch -p << END_OF_PATCH
---- $f.orig
+patch -p0 << END_OF_PATCH
 +++ $f
 @@ -10,1 +10,1 @@
 -#include <malloc.h>

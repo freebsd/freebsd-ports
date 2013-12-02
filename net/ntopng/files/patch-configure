@@ -1,0 +1,40 @@
+--- configure.orig	2013-11-18 11:08:04.000000000 +0600
++++ configure	2013-11-18 11:09:19.000000000 +0600
+@@ -620,7 +620,6 @@
+ 
+ ac_subst_vars='LTLIBOBJS
+ LIBOBJS
+-SVN_WC_DB
+ SVN_DATE
+ GMAKE
+ SQLITE_LIB
+@@ -2953,15 +2952,15 @@
+ NTOPNG_VERS=`cat ./configure.in | head -1 | grep '_INIT' | cut -d " " -f 2|cut -d ')' -f 1`
+ CFLAGS="${CFLAGS} -I/usr/local/include -I/opt/local/include"
+ CPPFLAGS="${CPPFLAGS} -I/usr/local/include -I/opt/local/include"
+-LDFLAGS="${LDFLAGS} -L/usr/local/lib -L/opt/local/lib"
++LDFLAGS="${LDFLAGS}-L/usr/local/lib -L/opt/local/lib"
+ 
+-SVN_RELEASE=`svn info . | grep "^Revision"|cut -d " " -f 2`
++SVN_RELEASE="6939"
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define NTOPNG_SVN_RELEASE "r${SVN_RELEASE}"
+ _ACEOF
+ 
+-SVN_DATE=`svn info . | grep "^Last Changed Date"|cut -d " " -f 4-`
++SVN_DATE="2013-11-05 03:54:00 +0600 (Tue, 05 Nov 2013)"
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define NTOPNG_SVN_DATE "${SVN_DATE}"
+@@ -2969,10 +2968,6 @@
+ 
+ PACKAGE_VERSION="${NTOPNG_VERS}_${SVN_RELEASE}"
+ 
+-if test -f ".svn/wc.db"; then
+-   SVN_WC_DB=".svn/wc.db"
+-fi
+-
+ MACHINE=`uname -m`
+ SYSTEM=`uname -s`
+ 

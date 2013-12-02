@@ -23,6 +23,30 @@
 %%SITE_PERL%%/Email/Sender/Transport/Wrapper.pm
 %%SITE_PERL%%/Email/Sender/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Sender/.packlist
+%%PERL5_MAN3%%/Email::Sender.3.gz
+%%PERL5_MAN3%%/Email::Sender::Failure.3.gz
+%%PERL5_MAN3%%/Email::Sender::Failure::Multi.3.gz
+%%PERL5_MAN3%%/Email::Sender::Failure::Permanent.3.gz
+%%PERL5_MAN3%%/Email::Sender::Failure::Temporary.3.gz
+%%PERL5_MAN3%%/Email::Sender::Manual.3.gz
+%%PERL5_MAN3%%/Email::Sender::Manual::QuickStart.3.gz
+%%PERL5_MAN3%%/Email::Sender::Role::CommonSending.3.gz
+%%PERL5_MAN3%%/Email::Sender::Role::HasMessage.3.gz
+%%PERL5_MAN3%%/Email::Sender::Simple.3.gz
+%%PERL5_MAN3%%/Email::Sender::Success.3.gz
+%%PERL5_MAN3%%/Email::Sender::Success::Partial.3.gz
+%%PERL5_MAN3%%/Email::Sender::Transport.3.gz
+%%PERL5_MAN3%%/Email::Sender::Transport::DevNull.3.gz
+%%PERL5_MAN3%%/Email::Sender::Transport::Failable.3.gz
+%%PERL5_MAN3%%/Email::Sender::Transport::Maildir.3.gz
+%%PERL5_MAN3%%/Email::Sender::Transport::Mbox.3.gz
+%%PERL5_MAN3%%/Email::Sender::Transport::Print.3.gz
+%%PERL5_MAN3%%/Email::Sender::Transport::SMTP.3.gz
+%%PERL5_MAN3%%/Email::Sender::Transport::SMTP::Persistent.3.gz
+%%PERL5_MAN3%%/Email::Sender::Transport::Sendmail.3.gz
+%%PERL5_MAN3%%/Email::Sender::Transport::Test.3.gz
+%%PERL5_MAN3%%/Email::Sender::Transport::Wrapper.3.gz
+%%PERL5_MAN3%%/Email::Sender::Util.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Sender
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email
 @dirrmtry %%SITE_PERL%%/Email/Sender/Transport/SMTP

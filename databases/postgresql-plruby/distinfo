@@ -1,4 +1,2 @@
-SHA256 (ruby/plruby-0.5.4.tar.bz2) = 8ba24ea19d9e365dc8b32f28e7c287e0dfe993fc865d4ba392acf96947f03bc2
-SIZE (ruby/plruby-0.5.4.tar.bz2) = 96126
-SHA256 (ruby/df2c4d39cdda35e1cb842106b22aaa10df2760e6.diff) = 90a081b4dfd45a4793a1b97a1aef8554acf83afbefae674581703df0c43d0e2a
-SIZE (ruby/df2c4d39cdda35e1cb842106b22aaa10df2760e6.diff) = 261
+SHA256 (ruby/postgresql-plruby-0.5.4.tar.bz2) = 0d28a2450690f836ae9a810c476a29b1175fb51444e7a2a34c46016b04d6c86f
+SIZE (ruby/postgresql-plruby-0.5.4.tar.bz2) = 125753

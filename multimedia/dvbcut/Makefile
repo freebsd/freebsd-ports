@@ -2,44 +2,50 @@
 # $FreeBSD$
 
 PORTNAME=	dvbcut
-PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTVERSION=	0.6.2.a1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.mr511.de/dvbcut/
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Qt application for cutting of MPEG PS and MPEG TS streams (DVB)
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
+BUILD_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
+		ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
+		pkg-config:${PORTSDIR}/devel/pkgconf
 LIB_DEPENDS=	a52:${PORTSDIR}/audio/liba52 \
 		ao:${PORTSDIR}/audio/libao \
 		mad:${PORTSDIR}/audio/libmad \
 		avutil:${PORTSDIR}/multimedia/ffmpeg
-
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_GCC=	any
-USES=		cmake
-USE_QT4=	gui qt3support xml  moc_build qmake_build rcc_build uic_build
+USE_GITHUB=	yes
+GH_ACCOUNT=	nextghost
+GH_PROJECT=	dvbcut-qt4
+GH_TAGNAME=	${GH_COMMIT}
+GH_COMMIT=	81c31ed
+
+WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
+
+USES=		qmake
+USE_QT4=	gui linguist  moc_build rcc_build uic_build
+INSTALLS_ICONS=	yes
+
 CXXFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/libavcodec \
 		-I${LOCALBASE}/include/libavformat \
 		-I${LOCALBASE}/include/libswscale
 
-BROKEN=		Does not compile due to FFMPEG update - will be fixed soon
-
-pre-patch:
-		cd ${WRKSRC} && ${BZCAT} ${FILESDIR}/use-qt4.diff.bz2 | ${PATCH} -p2
+post-configure:
+		${REINPLACE_CMD} -e '/CXX.*moc_progress/s/ -o / -O0 -o /' ${WRKSRC}/src/Makefile
 
 post-build:
-		$(SED) -e 's;@prefix@/dvbcut/share/icons;'${PREFIX}/share/icons/dvbcut';' \
+		${SED} -e 's;@prefix@;${PREFIX};' \
 			< ${WRKSRC}/dvbcut.desktop.in \
 			> ${WRKSRC}/dvbcut.desktop
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/src/dvbcut ${STAGEDIR}${PREFIX}/bin/
+		${INSTALL_PROGRAM} ${WRKSRC}/bin/dvbcut ${STAGEDIR}${PREFIX}/bin/
 		${INSTALL_MAN} ${WRKSRC}/dvbcut.1 ${STAGEDIR}${MANPREFIX}/man/man1/
 		${MKDIR} $(STAGEDIR)$(PREFIX)/share/applications
 	        $(INSTALL_DATA) ${WRKSRC}/dvbcut.desktop $(STAGEDIR)$(PREFIX)/share/applications/

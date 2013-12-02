@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	graphillion
-PORTVERSION=	0.93
+PORTVERSION=	0.94
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,13 +17,13 @@ USE_PYDISTUTILS=	easy_install
 
 GH_ACCOUNT=	takemaru
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	6465281
+GH_COMMIT=	2c77c8d
 
+PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_PKGNAME=	Graphillion
 PYEASYINSTALL_ARCHDEP=	yes
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

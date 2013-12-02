@@ -13,7 +13,7 @@ COMMENT=	AnimeNfo client
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
+USES=		gmake
 PLIST_FILES=	bin/animenfo-client
 
 do-install:

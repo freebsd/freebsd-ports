@@ -3,6 +3,7 @@
 
 PORTNAME=	RT-Extension-SLA
 PORTVERSION=	0.07
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,16 +21,23 @@ LICENSE=	GPLv2
 USES+=		perl5
 USE_PERL5=	configure
 
-OPTIONS_DEFINE=	RT38
-RT38_DESC=	Install for rt-3.8.x (default rt-4.0.x)
+OPTIONS_SINGLE=                 RTVERSION
+OPTIONS_SINGLE_RTVERSION=       RT38 RT40 RT42
+RT38_DESC=                      Install for rt-3.8.x (www/rt38)
+RT40_DESC=                      Install for rt-4.0.x (www/rt40)
+RT42_DESC=                      Install for rt-4.2.x (www/rt42)
+OPTIONS_DEFAULT=                RT42
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MRT38}
-RT_VER=		38
-.else
-RT_VER=		40
+.for opt in 38 40 42
+.if ${PORT_OPTIONS:MRT${opt}}
+RT_VER=         ${opt}
 .endif
+.endfor
+
+### Temporary for debugging
+#WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work${RT_VER}
 
 BUILD_DEPENDS+=	${LOCALBASE}/bin/rt:${PORTSDIR}/www/rt${RT_VER}
 RUN_DEPENDS+=	${LOCALBASE}/bin/rt:${PORTSDIR}/www/rt${RT_VER}

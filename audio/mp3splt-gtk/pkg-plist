@@ -1,4 +1,5 @@
 bin/mp3splt-gtk
+man/man1/mp3splt-gtk.1.gz
 share/applications/mp3splt-gtk.desktop
 share/gnome/help/mp3splt-gtk/C/figures/FreeDBSearch.png
 share/gnome/help/mp3splt-gtk/C/figures/Preferences.png

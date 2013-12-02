@@ -4,3 +4,5 @@ lib/libmm.a
 lib/libmm.la
 lib/libmm.so
 lib/libmm.so.14
+man/man1/mm-config.1.gz
+man/man3/mm.3.gz

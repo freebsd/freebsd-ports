@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bird
-PORTVERSION=	1.3.11
-PORTREVISION=	2
+PORTVERSION=	1.4.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/ \
 		http://bird.mpls.in/distfiles/bird/
@@ -36,6 +35,23 @@ EXTRA_PATCHES+=	${FILESDIR}/firewall_support.patch
 
 .if ${PORT_OPTIONS:MAGG}
 EXTRA_PATCHES+=	${FILESDIR}/agg_support.patch
+.endif
+
+post-patch:
+.if ${PORT_OPTIONS:MAGG}
+	@${REINPLACE_CMD} -e 's/^\(all_protocols=".*\)"/\1 agg"/' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/proto_build(&proto_device);/{G;s/$$/  proto_build(\&proto_agg);/;}' ${WRKSRC}/nest/proto.c
+	@${REINPLACE_CMD} -e '/CONFIG_BFD/{G;s/$$/#undef CONFIG_AGG/;}' ${WRKSRC}/sysdep/autoconf.h.in
+	@${REINPLACE_CMD} -e 's/\(proto_bfd\)/\1, proto_agg/' ${WRKSRC}/nest/protocol.h
+.endif
+.if ${PORT_OPTIONS:MFIREWALL}
+	@${REINPLACE_CMD} -e 's/^\(all_protocols=".*\)"/\1 firewall"/' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/proto_build(&proto_device);/{G;s/$$/  proto_build(\&proto_firewall);/;}' ${WRKSRC}/nest/proto.c
+	@${REINPLACE_CMD} -e '/CONFIG_PIPE/{G;s/$$/#undef CONFIG_FIREWALL_IPSET/;}' ${WRKSRC}/sysdep/autoconf.h.in
+	@${REINPLACE_CMD} -e '/CONFIG_PIPE/{G;s/$$/#undef CONFIG_FIREWALL_PF/;}' ${WRKSRC}/sysdep/autoconf.h.in
+	@${REINPLACE_CMD} -e '/CONFIG_PIPE/{G;s/$$/#undef CONFIG_FIREWALL_IPFW/;}' ${WRKSRC}/sysdep/autoconf.h.in
+	@${REINPLACE_CMD} -e '/CONFIG_PIPE/{G;s/$$/#undef CONFIG_FIREWALL/;}' ${WRKSRC}/sysdep/autoconf.h.in
+	@${REINPLACE_CMD} -e 's/\(proto_bfd\)/\1, proto_firewall/' ${WRKSRC}/nest/protocol.h
 .endif
 
 post-install:

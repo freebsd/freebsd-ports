@@ -827,6 +827,7 @@ lib/libCoin.la
 lib/libCoin.so
 lib/libCoin.so.61
 libdata/pkgconfig/Coin.pc
+man/man1/coin-config.1.gz
 %%DATADIR%%/conf/coin-default.cfg
 %%DATADIR%%/draggerDefaults/centerballDragger.iv
 %%DATADIR%%/draggerDefaults/directionalLightDragger.iv

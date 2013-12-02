@@ -79,7 +79,7 @@ post-install-script:
 post-package-script:
 	if [ -n "${WITH_PKGNG}" -a -z "${PACKAGE_BUILDING}" ]; then \
 		${XZ_CMD} -dc ${PKGFILE} | \
-		${SED} -e "s/^\(arch: freebsd:.*:x86\):32/\1:64/" | \
+		${SED} -e 's/\(freebsd:.*:x86\):32/\1:64/' -e 's/\(freebsd:.*:x86\):32/\1:64/' | \
 		${XZ_CMD} > ${WRKDIR}/${PKGNAME}${PKG_SUFX}; \
 		${MV} ${WRKDIR}/${PKGNAME}${PKG_SUFX} ${PKGFILE}; \
 	fi

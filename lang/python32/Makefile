@@ -1,35 +1,40 @@
 # $FreeBSD$
 
-PORTNAME=	python32
-PORTVERSION=	3.2.5
-PORTREVISION=	3
-CATEGORIES=	lang python ipv6
-MASTER_SITES=	PYTHON
+PORTNAME=		python32
+PORTVERSION=		3.2.5
+PORTREVISION=		5
+CATEGORIES=		lang python ipv6
+MASTER_SITES=		PYTHON
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
-DISTFILES=	${PYTHON_DISTFILE}
+DISTFILES=		${PYTHON_DISTFILE}
+DIST_SUBDIR=		python
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Interpreted object-oriented programming language
 
-DIST_SUBDIR=	python
-WRKSRC=		${PYTHON_WRKSRC}/portbld.static
-PATCH_WRKSRC=	${PYTHON_WRKSRC}
-GNU_CONFIGURE=	yes
+LICENSE=	PSFL
+
+GNU_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	../configure # must be relative
-CONFIGURE_ENV=	OPT="" SVNVERSION="echo freebsd"
-MAKE_ENV=	VPATH="${PYTHON_WRKSRC}"
-USE_LDCONFIG=	yes
+CONFIGURE_ENV=		OPT="" SVNVERSION="echo freebsd"
+MAKE_ENV=		VPATH="${PYTHON_WRKSRC}"
+
 INSTALL_TARGET=	altinstall
 MAN1=		${PYTHON_VERSION}.1
 
+USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_XZ=		yes
-PYTHON_VERSION=	python3.2
+
+PYTHON_VERSION=		python3.2
 PYTHON_NO_DEPENDS=	yes
+
+WRKSRC=		${PYTHON_WRKSRC}/portbld.static
+SHARED_WRKSRC=	${PYTHON_WRKSRC}/portbld.shared
+PATCH_WRKSRC=	${PYTHON_WRKSRC}
 
 PYABIVER=	# default empty, for after appending
 
-SHARED_WRKSRC=	${PYTHON_WRKSRC}/portbld.shared
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
 		PYMAJOR=${PYTHON_MAJOR_VER} \
 		PYVER_WITHPAT=${PORTVERSION:S/.rc/rc/} \
@@ -39,7 +44,7 @@ DATADIR=	${PREFIX}/share/${PYTHON_VERSION}
 
 PLATFORMS=	plat-freebsd4 plat-freebsd5 plat-freebsd6 \
 		plat-freebsd7 plat-freebsd8 plat-freebsd9 \
-		plat-freebsd10
+		plat-freebsd10 plat-freebsd11
 
 BIN_SCRIPTS=	2to3 idle3 pydoc3
 BIN_FILES=	python python-shared python-config python-shared-config \
@@ -116,6 +121,8 @@ pre-patch:
 		${PATCH_WRKSRC}/Lib/plat-freebsd9
 	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
 		${PATCH_WRKSRC}/Lib/plat-freebsd10
+	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
+		${PATCH_WRKSRC}/Lib/plat-freebsd11
 	${MKDIR} ${WRKSRC} ${SHARED_WRKSRC}/Modules
 .for script in ${BIN_SCRIPTS}
 	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \

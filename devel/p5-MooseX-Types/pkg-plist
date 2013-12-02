@@ -8,6 +8,15 @@
 %%SITE_PERL%%/MooseX/Types/Util.pm
 %%SITE_PERL%%/MooseX/Types/Wrapper.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/.packlist
+%%PERL5_MAN3%%/MooseX::Types.3.gz
+%%PERL5_MAN3%%/MooseX::Types::Base.3.gz
+%%PERL5_MAN3%%/MooseX::Types::CheckedUtilExports.3.gz
+%%PERL5_MAN3%%/MooseX::Types::Combine.3.gz
+%%PERL5_MAN3%%/MooseX::Types::Moose.3.gz
+%%PERL5_MAN3%%/MooseX::Types::TypeDecorator.3.gz
+%%PERL5_MAN3%%/MooseX::Types::UndefinedType.3.gz
+%%PERL5_MAN3%%/MooseX::Types::Util.3.gz
+%%PERL5_MAN3%%/MooseX::Types::Wrapper.3.gz
 @dirrmtry %%SITE_PERL%%/MooseX/Types
 @dirrmtry %%SITE_PERL%%/MooseX
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types

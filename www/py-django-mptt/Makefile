@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-mptt
-PORTVERSION=	0.5.4
+PORTVERSION=	0.6.0
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,12 +16,11 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	django-mptt
-GH_COMMIT=	4310e7e
+GH_COMMIT=	cc92ea6
 GH_TAGNAME=	${PORTVERSION}
 
 USES=		gettext
 USE_PYDISTUTILS=yes
 USE_PYTHON=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -15,10 +15,11 @@ BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 USES=		gmake
 MAKE_ARGS=	CPP="${CXX}" CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -fPIC"
 
+PLIST_DIRSTRY=	lib/ladspa
 PLIST_FILES=	lib/ladspa/aw.so
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/ladspa
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ladspa
 	${INSTALL_LIB} ${WRKSRC}/aw.so ${STAGEDIR}${PREFIX}/lib/ladspa
 
 .include <bsd.port.mk>

@@ -191,7 +191,7 @@ unless ($opt_n) {
     foreach my $p (keys(%DEPPORTS)) {
 	print "- Updating Makefile of $p\n";
     next if $opt_c;
-	bumpMakefile "ports/$p";
+	bumpMakefile "$p";
     }
 }
 
@@ -199,12 +199,12 @@ unless ($opt_n) {
 # Commit the changes. Not automated.
 #
 print <<EOF;
-All portrevisions have been updated. You are nearly done, only one thing
-remains: The commiting in the ports tree. This program is not going to do
+All PORTREVISIONs have been updated.  You are nearly done, only one thing
+remains:  The committing to the ports tree. This program is not going to do
 that for you, you have to do it manually.
 
-\$ cd $TMPDIR/ports
-\$ cvs commit
+\$ cd $TMPDIR
+\$ svn commit
 
-Then, remove the temp directory.
+Then, remove the temp directory ($TMPDIR).
 EOF

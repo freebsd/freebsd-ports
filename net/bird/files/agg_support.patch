@@ -30,24 +30,6 @@ Subject: [PATCH 1/1] Implement general aggregation protocol, v7
  create mode 100644 proto/agg/agg.h
  create mode 100644 proto/agg/config.Y
 
-diff --git a/configure.in b/configure.in
-index dd57ab5..ca9d72d 100644
---- configure.in
-+++ configure.in
-@@ -47,11 +47,11 @@ AC_SUBST(runtimedir)
- if test "$enable_ipv6" = yes ; then
- 	ip=ipv6
- 	SUFFIX=6
--	all_protocols=bgp,ospf,pipe,radv,rip,static
-+	all_protocols=bgp,ospf,pipe,radv,rip,static,agg
- else
- 	ip=ipv4
- 	SUFFIX=""
--	all_protocols=bgp,ospf,pipe,rip,static
-+	all_protocols=bgp,ospf,pipe,rip,static,agg
- fi
- 
- if test "$given_suffix" = yes ; then
 diff --git a/doc/bird.conf.example b/doc/bird.conf.example
 index 5e07ab5..b48faad 100644
 --- doc/bird.conf.example
@@ -159,9 +141,9 @@ diff --git a/filter/filter.h b/filter/filter.h
 index 2386fc9..f2a5d06 100644
 --- filter/filter.h
 +++ filter/filter.h
-@@ -79,11 +79,13 @@ struct f_tree *build_tree(struct f_tree *);
- struct f_tree *find_tree(struct f_tree *t, struct f_val val);
+@@ -80,11 +80,13 @@
  int same_tree(struct f_tree *t1, struct f_tree *t2);
+ void tree_format(struct f_tree *t, buffer *buf);
  
 -struct f_trie *f_new_trie(linpool *lp);
 -void trie_add_prefix(struct f_trie *t, ip_addr px, int plen, int l, int h);
@@ -170,19 +152,19 @@ index 2386fc9..f2a5d06 100644
  int trie_match_prefix(struct f_trie *t, ip_addr px, int plen);
 +void *trie_match_longest_prefix(struct f_trie *t, ip_addr px, int plen);
  int trie_same(struct f_trie *t1, struct f_trie *t2);
- void trie_print(struct f_trie *t);
+ void trie_format(struct f_trie *t, buffer *buf);
 +void trie_walk(struct f_trie *t, void *func, void *data);
  
  void fprefix_get_bounds(struct f_prefix *px, int *l, int *h);
  
-@@ -186,6 +188,7 @@ struct f_trie
+@@ -204,6 +206,7 @@
  {
    linpool *lp;
    int zero;
 +  size_t node_size;
    struct f_trie_node root;
  };
- 
+
 diff --git a/filter/trie.c b/filter/trie.c
 index 581332c..eba239b 100644
 --- filter/trie.c
@@ -385,20 +367,6 @@ index e80f87e..22f22ca 100644
   * if_notify - notify instance about interface changes
   * @p: protocol instance
   * @flags: interface change flags
-diff --git a/nest/proto.c b/nest/proto.c
-index 887d3e5..4ebc9d6 100644
---- nest/proto.c
-+++ nest/proto.c
-@@ -705,6 +705,9 @@ protos_build(void)
- #ifdef CONFIG_BGP
-   proto_build(&proto_bgp);
- #endif
-+#ifdef CONFIG_AGG
-+  proto_build(&proto_agg);
-+#endif
-   proto_pool = rp_new(&root_pool, "Protocols");
-   proto_flush_event = ev_new(proto_pool);
-   proto_flush_event->hook = proto_flush_loop;
 diff --git a/nest/protocol.h b/nest/protocol.h
 index 8a63271..0a0d8f7 100644
 --- nest/protocol.h
@@ -427,15 +395,6 @@ index 8a63271..0a0d8f7 100644
  };
  
  void protos_build(void);
-@@ -75,7 +83,7 @@ void protos_dump_all(void);
- 
- extern struct protocol
-   proto_device, proto_radv, proto_rip, proto_static,
--  proto_ospf, proto_pipe, proto_bgp;
-+  proto_ospf, proto_pipe, proto_bgp, proto_agg;
- 
- /*
-  *	Routing Protocol Instance
 diff --git a/nest/rt-table.c b/nest/rt-table.c
 index 165f42b..f224cc4 100644
 --- nest/rt-table.c
@@ -2778,34 +2737,3 @@ index c3adf25..ae62c30 100644
  struct rta *bgp_decode_attrs(struct bgp_conn *conn, byte *a, unsigned int len, struct linpool *pool, int mandatory);
  int bgp_get_attr(struct eattr *e, byte *buf, int buflen);
  int bgp_rte_better(struct rte *, struct rte *);
-diff --git a/sysdep/autoconf.h.in b/sysdep/autoconf.h.in
-index ac6f7a8..4d4dba5 100644
---- sysdep/autoconf.h.in
-+++ sysdep/autoconf.h.in
-@@ -42,6 +42,7 @@
- #undef CONFIG_BGP
- #undef CONFIG_OSPF
- #undef CONFIG_PIPE
-+#undef CONFIG_AGG
- 
- /* We have <syslog.h> and syslog() */
- #undef HAVE_SYSLOG
--- 
-1.7.3.2
-
---- configure.orig	2012-08-07 13:28:04.000000000 +0400
-+++ configure	2012-08-15 15:54:05.000000000 +0400
-@@ -2355,11 +2355,11 @@
- if test "$enable_ipv6" = yes ; then
- 	ip=ipv6
- 	SUFFIX=6
--	all_protocols=bgp,ospf,pipe,radv,rip,static
-+	all_protocols=bgp,ospf,pipe,radv,rip,static,agg
- else
- 	ip=ipv4
- 	SUFFIX=""
--	all_protocols=bgp,ospf,pipe,rip,static
-+	all_protocols=bgp,ospf,pipe,rip,static,agg
- fi
- 
- if test "$given_suffix" = yes ; then

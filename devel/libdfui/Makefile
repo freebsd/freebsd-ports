@@ -4,13 +4,14 @@
 PORTNAME=	libdfui
 PORTVERSION=	4.1.20060122
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	philip
+MASTER_SITES=	LOCAL/philip
 
 MAINTAINER=	rodrigo@bebik.net
 COMMENT=	Abstract user interface protocol library
 
-LIB_DEPENDS=	aura3.3:${PORTSDIR}/devel/libaura
+LICENSE=	BSD
+
+LIB_DEPENDS=	libaura3.so:${PORTSDIR}/devel/libaura
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
@@ -33,25 +34,22 @@ PORTDOCS=	README
 
 MAKE_ENV=	SONAME=${SONAME} SOLINK=${SOLINK}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${SONAME} ${PREFIX}/lib/${SONAME}
-	${LN} -s ${PREFIX}/lib/${SONAME} ${PREFIX}/lib/${SOLINK}
-	${MKDIR} ${PREFIX}/include/dfui4
-	${INSTALL_DATA} ${WRKSRC}/conn_caps.h ${PREFIX}/include/dfui4/
-	${INSTALL_DATA} ${WRKSRC}/conn_npipe.h ${PREFIX}/include/dfui4/
-	${INSTALL_DATA} ${WRKSRC}/conn_tcp.h ${PREFIX}/include/dfui4/
-	${INSTALL_DATA} ${WRKSRC}/dfui.h ${PREFIX}/include/dfui4/
-	${INSTALL_DATA} ${WRKSRC}/dump.h ${PREFIX}/include/dfui4/
-	${INSTALL_DATA} ${WRKSRC}/encoding.h ${PREFIX}/include/dfui4/
-	${INSTALL_DATA} ${WRKSRC}/lang.h ${PREFIX}/include/dfui4/
-	${INSTALL_DATA} ${WRKSRC}/system.h ${PREFIX}/include/dfui4/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${SONAME} ${STAGEDIR}${PREFIX}/lib/${SONAME}
+	${LN} -s ${SONAME} ${STAGEDIR}${PREFIX}/lib/${SOLINK}
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/dfui4
+	${INSTALL_DATA} ${WRKSRC}/conn_caps.h ${STAGEDIR}${PREFIX}/include/dfui4/
+	${INSTALL_DATA} ${WRKSRC}/conn_npipe.h ${STAGEDIR}${PREFIX}/include/dfui4/
+	${INSTALL_DATA} ${WRKSRC}/conn_tcp.h ${STAGEDIR}${PREFIX}/include/dfui4/
+	${INSTALL_DATA} ${WRKSRC}/dfui.h ${STAGEDIR}${PREFIX}/include/dfui4/
+	${INSTALL_DATA} ${WRKSRC}/dump.h ${STAGEDIR}${PREFIX}/include/dfui4/
+	${INSTALL_DATA} ${WRKSRC}/encoding.h ${STAGEDIR}${PREFIX}/include/dfui4/
+	${INSTALL_DATA} ${WRKSRC}/lang.h ${STAGEDIR}${PREFIX}/include/dfui4/
+	${INSTALL_DATA} ${WRKSRC}/system.h ${STAGEDIR}${PREFIX}/include/dfui4/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

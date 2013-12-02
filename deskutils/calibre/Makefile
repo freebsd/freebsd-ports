@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	calibre
-PORTVERSION=	1.2.0
+PORTVERSION=	1.12.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -22,11 +22,11 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=0:${PORTSDIR}/devel/py-sip \
 		${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
 		${PYTHON_PKGNAMEPREFIX}qt4-network>=0:${PORTSDIR}/net/py-qt4-network \
 		${PYTHON_PKGNAMEPREFIX}qt4-webkit>=0:${PORTSDIR}/www/py-qt4-webkit \
-		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.9:${PORTSDIR}/www/py-cssutils \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:${PORTSDIR}/devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}imaging>=0:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:${PORTSDIR}/devel/py-lxml
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
+		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.9:${PORTSDIR}/www/py-cssutils \
 		${PYTHON_PKGNAMEPREFIX}dnspython>=0:${PORTSDIR}/dns/py-dnspython \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:${PORTSDIR}/devel/py-dateutil \
 		${PYTHON_SITELIBDIR}/BeautifulSoup.py:${PORTSDIR}/www/py-beautifulsoup32 \
@@ -50,7 +50,10 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
 USE_RC_SUBR=	calibre
 EXTRACT_BEFORE_ARGS=	-x -s '/^calibre/~-src/' -f
 
-USES=		shared-mime-info
+USES=		desktop-file-utils shared-mime-info shebangfix
+SHEBANG_FILES=	src/calibre/ebooks/metadata/odt.py \
+		src/calibre/utils/*.py \
+		src/odf/*.py
 USE_XZ=		yes
 USE_PYTHON=	2.7
 USE_QT4=	qmake_build moc_build
@@ -64,21 +67,19 @@ MAKE_ENV+=	FC_INC_DIR="${LOCALBASE}/include/fontconfig" \
 		OVERRIDE_LDFLAGS="${LDFLAGS}" \
 		PODOFO_LIB_DIR="${LOCALBASE}/lib" \
 		PODOFO_INC_DIR="${LOCALBASE}/include/podofo" \
-		WITH_USB=yes
+		WITH_USB=yes \
+		XDG_DATA_DIRS=${STAGEDIR}${PREFIX}/share
 
-NO_STAGE=	yes
 do-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
 		${PYSETUP} build)
 
 do-install:
-.for dir in desktop-directories applications  gnome/apps mime/packages icons/hicolor/128x128/apps zsh/site-functions
-	${MKDIR} ${PREFIX}/share/${dir}
+.for dir in bash-completion desktop-directories gnome/apps mime/packages icons/hicolor/128x128/apps zsh/site-functions
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/${dir}
 .endfor
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PYTHON_VERSION}/site-packages
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
-		${PYSETUP} ${INSTALL} --prefix ${PREFIX})
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+		${PYSETUP} ${INSTALL} --prefix ${PREFIX} --staging-root ${STAGEDIR}${PREFIX})
 
 .include <bsd.port.mk>

@@ -27,6 +27,7 @@
 %%SITE_PERL%%/Test/Deep/Methods.pm
 %%SITE_PERL%%/Test/Deep/NoTest.pm
 %%SITE_PERL%%/Test/Deep/Number.pm
+%%SITE_PERL%%/Test/Deep/Obj.pm
 %%SITE_PERL%%/Test/Deep/Ref.pm
 %%SITE_PERL%%/Test/Deep/RefType.pm
 %%SITE_PERL%%/Test/Deep/Regexp.pm

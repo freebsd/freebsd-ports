@@ -65,6 +65,11 @@ post-patch:
 	${RUBY} -i -pe 'sub %r:/win98/windows/FONTS:, "${LOCALBASE}/lib/X11/fonts/TrueType"' ${WRKSRC}/sample/gdtestttf.rb
 	${RUBY} -i -pe 'sub %r:%%GD%%:, "gd"' ${WRKSRC}/extconf.rb
 
+post-configure:
+	${REINPLACE_CMD} -e 's|^V = 0|V = 1|' \
+		-e 's|^libdir = .*|libdir = ${PREFIX}/lib|' \
+		${WRKSRC}/Makefile
+
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja

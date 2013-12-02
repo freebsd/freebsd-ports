@@ -17,10 +17,10 @@ LIB_DEPENDS=	libmenu-cache.so:${PORTSDIR}/x11/menu-cache
 RUN_DEPENDS=	${LOCALBASE}/share/desktop-directories/lxde-audio-video.directory:${PORTSDIR}/x11/lxmenu-data
 
 OPTIONS_DEFINE=	ALSA DOCS NLS
-OPTIONS_DEFAULT=
+
 OPTIONS_SUB=	yes
 
-ALSA_RUN_DEPENDS=	${LINUXBASE}/lib/libasound.so.2:${PORTSDIR}/audio/linux-f10-alsa-li
+ALSA_RUN_DEPENDS=	${LINUXBASE}/lib/libasound.so.2:${PORTSDIR}/audio/linux-f10-alsa-lib
 ALSA_CONFIGURE_ENABLE=	alsa
 
 NLS_USES=	gettext
@@ -42,13 +42,13 @@ PORTDOCS=	AUTHORS README
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,linux,sys,' \
+	@${REINPLACE_CMD} -e 's|linux|sys|' \
 		${WRKSRC}/src/plugins/volume/volume-impl.c
-	@${REINPLACE_CMD} -e 's,$$(DATADIRNAME)/locale,share/locale,' \
+	@${REINPLACE_CMD} -e 's|$$(DATADIRNAME)/locale|share/locale|' \
 		${WRKSRC}/po/Makefile.in.in
 
 .if ! ${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} -e 's,po man,man,' \
+	@${REINPLACE_CMD} -e 's|po man|man|' \
 		${WRKSRC}/Makefile.in
 .endif
 

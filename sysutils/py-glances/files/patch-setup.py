@@ -1,5 +1,5 @@
---- ./setup.py.orig	2013-08-20 19:49:41.000000000 +0800
-+++ ./setup.py	2013-08-23 01:16:53.000000000 +0800
+--- ./setup.py.orig	2013-11-01 17:12:25.000000000 +0800
++++ ./setup.py	2013-11-08 14:42:57.000000000 +0800
 @@ -11,10 +11,9 @@
                             'docs/glances-doc.html',
                             'glances/conf/glances.conf']),
@@ -14,14 +14,14 @@
  ]
  
  if hasattr(sys, 'real_prefix') or 'bsd' in sys.platform:
-@@ -23,10 +22,6 @@
-     etc_path = os.path.join('/etc', 'glances')
- elif 'darwin' in sys.platform:
-     etc_path = os.path.join('/usr/local', 'etc', 'glances')
--data_files.append((etc_path, ['glances/conf/glances.conf']))
+@@ -25,10 +24,6 @@
+     conf_path = os.path.join('/usr/local', 'etc', 'glances')
+ elif 'win32' in sys.platform:
+     conf_path = os.path.join(os.environ.get('APPDATA'), 'glances')
+-data_files.append((conf_path, ['glances/conf/glances.conf']))
 -
 -for mo in glob.glob('i18n/*/LC_MESSAGES/*.mo'):
 -    data_files.append((os.path.dirname(mo).replace('i18n/', 'share/locale/'), [mo]))
  
- setup(
-     name='Glances',
+ if sys.platform.startswith('win'):
+     requires = ['psutil>=0.5.1', 'colorconsole==0.6']

@@ -413,6 +413,7 @@
     SUBDIR += ncp
     SUBDIR += ncplib
     SUBDIR += ndisc6
+    SUBDIR += ndpi
     SUBDIR += nemesis
     SUBDIR += nepenthes
     SUBDIR += nepim
@@ -449,6 +450,7 @@
     SUBDIR += nstxd
     SUBDIR += ntlmaps
     SUBDIR += ntop
+    SUBDIR += ntopng
     SUBDIR += ntp
     SUBDIR += ntp-devel
     SUBDIR += ntp-rc

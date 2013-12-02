@@ -1,8 +1,0 @@
-The Tapioca project provides a set of convenience libraries to easily
-integrate VoIP and IM in your application, or even write new ones.
-
-Tapioca follows the standard defined by the Telepathy project and therefore,
-operates seamlessly with its connection managers and other software that
-follows it as well.
-
-WWW: http://tapioca-voip.sourceforge.net/

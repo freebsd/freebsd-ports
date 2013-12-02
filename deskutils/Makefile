@@ -41,7 +41,6 @@
     SUBDIR += dosage
     SUBDIR += drivel
     SUBDIR += easystroke
-    SUBDIR += ecru
     SUBDIR += egroupware
     SUBDIR += epoch
     SUBDIR += etask

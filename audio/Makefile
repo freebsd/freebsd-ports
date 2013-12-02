@@ -439,7 +439,6 @@
     SUBDIR += linuxsampler
     SUBDIR += liquidsoap
     SUBDIR += listener
-    SUBDIR += liteamp
     SUBDIR += lmms
     SUBDIR += lpac
     SUBDIR += lua51-mpd
@@ -665,8 +664,8 @@
     SUBDIR += ruby-taglib
     SUBDIR += ruby-xmms2
     SUBDIR += rubygem-librmpd
-    SUBDIR += rubygem-ogginfo
     SUBDIR += rubygem-ruby-mp3info
+    SUBDIR += rubygem-ruby-ogginfo
     SUBDIR += rubygem-shout
     SUBDIR += rubyripper
     SUBDIR += s3mod

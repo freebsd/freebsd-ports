@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	nbd
-PORTVERSION=	3.4
+PORTVERSION=	3.5
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-server
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Server for the Linux network block device (nbd)
 
 LICENSE=	GPLv2

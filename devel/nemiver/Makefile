@@ -23,6 +23,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/gdb:${PORTSDIR}/devel/gdb
 OPTIONS_DEFINE=	GHEX
 GHEX_DESC=	Enable memory view
 
+BROKEN=		Does not build with current environment, and some GTK3 bits are missing for an update
+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	ac_cv_path_GDB_PROG=${LOCALBASE}/bin/gdb

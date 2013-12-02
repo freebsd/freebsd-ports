@@ -1,0 +1,118 @@
+--- Makefile.in.orig	2013-11-04 06:15:16.000000000 +0600
++++ Makefile.in	2013-11-18 21:50:52.000000000 +0600
+@@ -1,5 +1,4 @@
+-SHELL=/bin/bash
+-OS := $(shell uname -s)
++OS=FreeBSD
+ ######
+ CREDIS_HOME=third-party/credis-0.2.3
+ CREDIS=$(CREDIS_HOME)/credis.o
+@@ -13,9 +12,7 @@
+ MONGOOSE_HOME=./third-party/mongoose
+ MONGOOSE_INC=-I$(MONGOOSE_HOME)
+ ######
+-LUAJIT_HOME=./third-party/LuaJIT-2.0.2
+-LUAJIT_INC=-I$(LUAJIT_HOME)/src
+-LUAJIT_LIB=$(LUAJIT_HOME)/src/libluajit.a
++%%LUAJIT_LIB%%
+ ######
+ LIBRRDTOOL_HOME=third-party/rrdtool-1.4.7
+ LIBRRDTOOL_INC=-I$(LIBRRDTOOL_HOME)/src/
+@@ -29,14 +26,14 @@
+ ######
+ ZEROMQ_HOME=./third-party/zeromq-3.2.3
+ ZEROMQ_INC=-I$(ZEROMQ_HOME)/include
+-ZEROMQ_LIB=$(ZEROMQ_HOME)/src/.libs/libzmq.a 
++%%ZEROMQ_LIB%%
+ ######
+ EWH_HOME=third-party/EWAHBoolArray
+ EWH_INC=$(EWH_HOME)/headers
+ ######
+ TARGET = ntopng
+-LIBS = @LDFLAGS@ $(NDPI_LIB) $(LIBPCAP) $(LUAJIT_LIB) $(LIBRRDTOOL_LIB) $(ZEROMQ_LIB) $(JSON_LIB) -lxml2 @SQLITE_LIB@ @LINK_OPTS@ @LIBGNUTLS@ @GEOIP_LIB@ @Z_LIB@ -lm -ldl -lpthread
+-CPPFLAGS = -g @CFLAGS@ $(CREDIS_INC) $(MONGOOSE_INC) -I$(JSON_INC) $(NDPI_INC) $(LUAJIT_INC) $(LIBRRDTOOL_INC) $(ZEROMQ_INC) @CPPFLAGS@ -I$(HTTPCLIENT_INC) -I$(EWH_INC) # -D_GLIBCXX_DEBUG
++LIBS = @LDFLAGS@ $(NDPI_LIB) $(LIBPCAP) $(LUAJIT_LIB) $(ZEROMQ_LIB) $(LIBRRDTOOL_LIB) $(JSON_LIB) -lxml2 @SQLITE_LIB@ @LINK_OPTS@ @LIBGNUTLS@ @GEOIP_LIB@ @Z_LIB@ -lm -lpthread
++CPPFLAGS = -g @CFLAGS@ $(CREDIS_INC) $(MONGOOSE_INC) -I$(JSON_INC) $(NDPI_INC) $(LIBRRDTOOL_INC) @CPPFLAGS@ -I$(HTTPCLIENT_INC) -I$(EWH_INC) # -D_GLIBCXX_DEBUG
+ ######
+ # ntopng-1.0_1234.x86_64.rpm 
+ PLATFORM = `uname -p`
+@@ -53,22 +50,22 @@
+ 
+ .PHONY: default all clean
+ 
+-default: $(NDPI_LIB) $(LUAJIT_LIB) $(LIBRRDTOOL_LIB) $(ZEROMQ_LIB) $(JSON_LIB) $(TARGET)
++default: $(NDPI_LIB) $(TARGET)
+ all: default
+ 
+ OBJECTS = $(patsubst %.cpp, %.o, $(wildcard *.cpp)) $(CREDIS)
+ HEADERS = $(wildcard *.h)
+ 
+ %.o: %.c $(HEADERS) Makefile
+-	g++ $(CPPFLAGS) -c $< -o $@
++	%%G++%% $(CPPFLAGS) -c $< -o $@
+ 
+ %.o: %.cpp $(HEADERS) Makefile
+-	g++ $(CPPFLAGS) -c $< -o $@
++	%%G++%% $(CPPFLAGS) -c $< -o $@
+ 
+ .PRECIOUS: $(TARGET) $(OBJECTS)
+ 
+-$(TARGET): $(OBJECTS) $(LIBRRDTOOL) Makefile
+-	g++ $(OBJECTS) -Wall $(LIBS) -o $@
++$(TARGET): $(OBJECTS) Makefile
++	%%G++%% $(OBJECTS) -Wall $(LIBS) -o $@
+ 
+ $(NDPI_LIB): nDPI
+ 	cd nDPI; ./configure; @GMAKE@
+@@ -76,18 +73,6 @@
+ nDPI:
+ 	svn co https://svn.ntop.org/svn/ntop/trunk/nDPI/
+ 
+-$(LUAJIT_LIB):
+-	cd $(LUAJIT_HOME); @GMAKE@
+-
+-$(ZEROMQ_LIB):
+-	cd $(ZEROMQ_HOME); ./configure --without-documentation; @GMAKE@
+-
+-$(LIBRRDTOOL_LIB):
+-	cd $(LIBRRDTOOL_HOME); ./configure --disable-rrd_graph --disable-libdbi --disable-libwrap --disable-rrdcgi --disable-libtool-lock --disable-nls --disable-rpath --disable-perl --disable-ruby --disable-lua --disable-tcl --disable-python --disable-dependency-tracking; cd src; @GMAKE@ librrd_th.la
+-
+-$(JSON_LIB):
+-	cd $(JSON_HOME); ./autogen.sh; ./configure; make
+-
+ clean:
+ 	-rm -f *.o *~ svn-commit.* #config.h
+ 	-rm -f $(TARGET)
+@@ -156,21 +141,14 @@
+ 	-rm -rf ntopng-data-@PACKAGE_VERSION@ ntopng-data_@PACKAGE_VERSION@_@SVN_RELEASE@.tgz
+ 
+ 
+-install: ntopng geoip
+-	@echo "While we provide you an install make target, we encourage you"
+-	@echo "to create a package and install that"
+-	@echo "rpm - do 'make build-rpm'"
+-	@echo "deb - do 'cd packages/ubuntu;./configure;make"
+-	mkdir -p /usr/local/share/ntopng /usr/local/man/man8 /usr/local/bin
+-	cp ntopng /usr/local/bin
+-	cp ./ntopng.8 /usr/local/man/man8
+-	cp -r ./httpdocs /usr/local/share/ntopng
+-	cp -r ./scripts /usr/local/share/ntopng
+-	find /usr/local/share/ntopng -name "*~"   | xargs /bin/rm -f
+-	find /usr/local/share/ntopng -name ".svn" | xargs /bin/rm -rf
+-
+-Makefile: @SVN_WC_DB@
+-	@echo ""
+-	@echo "Re-running configure as the SVN release has changed"
+-	@echo ""
+-	./configure
++install:
++	/bin/mkdir -p %%STAGEDIR%%%%DATADIR%%
++	/bin/mkdir -p %%STAGEDIR%%%%DATADIR%%/httpdocs
++	/bin/mkdir -p %%STAGEDIR%%%%DATADIR%%/httpdocs/geoip
++	/bin/mkdir -p %%STAGEDIR%%%%DATADIR%%/scripts
++	cd %%WRKSRC%% && %%INSTALL_PROGRAM%% %%PORTNAME%% %%STAGEDIR%%%%PREFIX%%/bin/
++	cd %%WRKSRC%% && %%INSTALL_MAN%% ntopng.8 %%STAGEDIR%%%%PREFIX%%/man/man8
++	cd %%WRKDIR%% && %%INSTALL_DATA%% GeoIPASNum.dat %%STAGEDIR%%%%DATADIR%%/httpdocs/geoip/
++	cd %%WRKDIR%% && %%INSTALL_DATA%% GeoIPASNumv6.dat %%STAGEDIR%%%%DATADIR%%/httpdocs/geoip/
++	cd %%WRKDIR%% && %%INSTALL_DATA%% GeoLiteCity.dat %%STAGEDIR%%%%DATADIR%%/httpdocs/geoip/
++	cd %%WRKDIR%% && %%INSTALL_DATA%% GeoLiteCityv6.dat %%STAGEDIR%%%%DATADIR%%/httpdocs/geoip/

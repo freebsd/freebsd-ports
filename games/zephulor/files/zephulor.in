@@ -4,4 +4,4 @@
 #
 
 cd "%%DATADIR%%"
-exec /usr/bin/env python ./zephulor.py
+exec %%PYTHON_CMD%% ./zephulor.py

@@ -13,6 +13,6 @@ $FreeBSD$
 +elif [ ! -x "${XULRUNNER}" ]; then
 +	echo ${XULRUNNER} is not executable.
 +else
-+	exec ${XULRUNNER} /usr/local/share/conkeror/application.ini
++	exec ${XULRUNNER} /usr/local/share/conkeror/application.ini "$@"
 +fi
 +

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	waitress
-PORTVERSION=	0.8.7
+PORTVERSION=	0.8.8
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,15 +14,9 @@ LICENSE=	ZPL21
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} >= 320
-.include "${PORTSDIR}/devel/py-virtualenv/files/py3k-fix-pkg-plist.inc"
-.endif
+PYDISTUTILS_AUTOPLIST=	yes
 
 pre-patch:
 	@${CP} ${FILESDIR}/MANIFEST.in ${WRKSRC}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

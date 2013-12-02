@@ -51,6 +51,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="620cf713-5a99-11e3-878d-20cf30e32f6d">
+    <topic>monitorix -- serious bug in the built-in HTTP server</topic>
+    <affects>
+      <package>
+	<name>monitorix</name>
+	<range><lt>3.3.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Monitorix Project reports:</p>
+	<blockquote cite="http://www.monitorix.org/news.html#N331">
+	  <p>A serious bug in the built-in HTTP server. It was discovered that the
+	    handle_request() routine did not properly perform input sanitization
+	    which led into a number of security vulnerabilities.  An unauthenticated,
+	    remote attacker could exploit this flaw to execute arbitrary commands on
+	    the remote host.  All users still using older versions are advised to
+	    upgrade to this version, which resolves this issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.monitorix.org/news.html#N331</url>
+      <url>https://github.com/mikaku/Monitorix/issues/30</url>
+    </references>
+    <dates>
+      <discovery>2013-11-21</discovery>
+      <entry>2013-12-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e3244a7b-5603-11e3-878d-20cf30e32f6d">
     <topic>subversion -- multiple vulnerabilities</topic>
     <affects>

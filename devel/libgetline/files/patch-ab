@@ -1,24 +1,11 @@
---- Makefile	Thu Jan 15 02:16:07 1998
-+++ Makefile	Sun Mar 21 18:04:04 1999
-@@ -1,46 +1,54 @@
+--- Makefile
++++ Makefile
+@@ -1,46 +1,43 @@
 -#CC     = gcc
 -#CFLAGS = -Wall -DPOSIX
 +PREFIX?=		/usr/local
- 
--CC= cc
--CFLAGS = -v -DPOSIX
-+AR=				/usr/bin/ar
-+CC=				/usr/bin/cc
-+INSTALL=		/usr/bin/install
-+LN=				/bin/ln
-+RANLIB=			/usr/bin/ranlib
-+
 +CFLAGS=			-DPOSIX -O
 +LDFLAGS=
-+
-+INST_INCDIR=	$(PREFIX)/include
-+INST_LIBDIR=	$(PREFIX)/lib
-+INST_MANDIR=	$(PREFIX)/man
 +
 +SHLIB_VERSION	= 1
 +SHLIB_CFLAGS	= -fpic -DPIC
@@ -32,6 +19,9 @@
 +testgl: libgetline.a testgl.o
 +	$(CC) $(LDFLAGS) $(CFLAGS) -o testgl testgl.o -L$(INST_MANDIR) -lgetline
  
+-CC= cc
+-CFLAGS = -v -DPOSIX
+-
 -LDFLAGS= 
 -INSTALL_PATH=/usr/local
 -INST_LIBDIR=$(INSTALL_PATH)/lib
@@ -84,7 +74,7 @@
 +	[ -d $(INST_LIBDIR) ] || $(INSTALL) -d $(INST_LIBDIR)
 +	$(INSTALL) -c -g bin -o bin -m 644 libgetline.a libgetline.so.1 \
 +		$(INST_LIBDIR)
-+	$(LN) -fs $(INST_LIBDIR)/libgetline.so.$(SHLIB_VERSION) \
++	$(LN) -fs libgetline.so.$(SHLIB_VERSION) \
 +		 $(INST_LIBDIR)/libgetline.so
 +	[ -d $(INST_MANDIR)/man3 ] || $(INSTALL) -d $(INST_MANDIR)/man3
 +	$(INSTALL) -c -g bin -o bin -m 644 getline.3 $(INST_MANDIR)/man3

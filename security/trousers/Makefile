@@ -32,9 +32,8 @@ GROUPS=		_tss
 
 OPTIONS_DEFINE=	EMULATOR DEBUG
 EMULATOR_DESC=	Build for use with the tpm-emulator
+DEBUG_CONFIGURE_ENABLE=	debug
 
-NO_STAGE=	yes
-.include "Makefile.man"
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEMULATOR}
@@ -52,10 +51,6 @@ CONFLICTS+=	tpm-emulator-[0-9]*
 PLIST_SUB+=	TDDL=""
 .endif
 
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=--enable-debug
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's/-liconv$$/${ICONV_LIB}/' \
 		${WRKSRC}/src/tspi/Makefile.am
@@ -67,10 +62,6 @@ run-autotools-autoreconf:
 
 post-install:
 	${INSTALL_DATA} -o ${USERS} -g ${GROUPS} -m 0600 \
-		${WRKSRC}/dist/tcsd.conf ${PREFIX}/etc/tcsd.conf.dist
-	@[ -f ${PREFIX}/etc/tcsd.conf ] || \
-		${INSTALL_DATA} -o ${USERS} -g ${GROUPS} -m 0600 \
-		${WRKSRC}/dist/tcsd.conf ${PREFIX}/etc/tcsd.conf
-	@${CAT} ${PKGMESSAGE}
+	    ${WRKSRC}/dist/tcsd.conf ${STAGEDIR}${PREFIX}/etc/tcsd.conf.dist
 
 .include <bsd.port.mk>

@@ -1,28 +1,27 @@
 # Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
 
-PORTNAME=	plruby
+PORTNAME=	postgresql-plruby
 PORTVERSION=	0.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases ruby
-MASTER_SITES=	RF/${PORTNAME} \
-		ftp://ftp.iDaemons.org/pub/distfiles/
-PKGNAMEPREFIX=	postgresql-
 DIST_SUBDIR=	ruby
-
-PATCHFILES=	df2c4d39cdda35e1cb842106b22aaa10df2760e6.diff
-PATCH_SITES=	http://github.com/knu/postgresql-plruby/commit/
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	PL/Ruby procedural language for the PostgreSQL database system
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	CraigCottingham
+GH_TAGNAME=	${GH_COMMIT}
+GH_COMMIT=	f8d9ced
+
+USES=	uidfix
 USE_BZIP2=	yes
 USE_PGSQL=	server
-WANT_PGSQL_VER=	84-
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_RUBY_RDOC=		yes
+NEED_ROOT=	yes
 
 POSTGRESQL_PORT?=	databases/postgresql${PGSQL_VER}-server
 PGSQL_PORTDIR?=		${PORTSDIR}/${POSTGRESQL_PORT}
@@ -39,8 +38,7 @@ DOCS=		Changes plruby.html plruby.rd
 
 PKGMESSAGE=	${WRKDIR}/createlang.sql
 
-NO_STAGE=	yes
-pre-patch:
+post-fetch:
 	cd ${PGSQL_PORTDIR} && ${MAKE} -DBATCH patch
 
 post-build:
@@ -53,18 +51,17 @@ post-build:
 .include <bsd.port.pre.mk>
 
 post-install:
+	@${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKDIR}/createlang.sql ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKDIR}/createlang.sql ${RUBY_MODEXAMPLESDIR}/
-	${MKDIR} ${RUBY_MODDOCDIR}
-	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} docs/doc ${RUBY_MODDOCDIR}/ README.en && ${INSTALL_DATA} ${DOCS} ${RUBY_MODDOCDIR}/)
-	@${FIND} -ds ${RUBY_MODDOCDIR} -type f -print | ${SED} -E -e \
-		's,^${PREFIX}/?,,' >> ${TMPPLIST}
-	@${FIND} -ds ${RUBY_MODDOCDIR} -type d -print | ${SED} -E -e \
-		's,^${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/share/doc/ruby19/ 2>/dev/null || true" \
+	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
+	cd ${WRKSRC}/ && ${COPYTREE_SHARE} docs/doc ${STAGEDIR}${RUBY_MODDOCDIR}/ README.markdown && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${RUBY_MODDOCDIR}/
+	${FIND} -ds ${STAGEDIR}${RUBY_MODDOCDIR} -type f -print | ${SED} -E -e \
+		's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST}
+	${FIND} -ds ${STAGEDIR}${RUBY_MODDOCDIR} -type d -print | ${SED} -E -e \
+		's,^${STAGEDIR}${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
+	${ECHO_CMD} "@unexec rmdir %D/share/doc/ruby19/ 2>/dev/null || true" \
 		>> ${TMPPLIST}
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

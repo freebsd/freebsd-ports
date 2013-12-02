@@ -14,9 +14,8 @@ lib/crtmpserver/applications/vptests/libvptests.so
 lib/crtmpserver/applications/admin/libadmin.so
 lib/crtmpserver/applications/proxypublish/libproxypublish.so
 lib/crtmpserver/applications/stresstest/libstresstest.so
+man/man1/crtmpserver.1.gz
 sbin/crtmpserver
-@dirrmtry var/crtmpserver/media
-@dirrmtry var/crtmpserver
 @dirrmtry lib/crtmpserver/applications/flvplayback
 @dirrmtry lib/crtmpserver/applications/appselector
 @dirrmtry lib/crtmpserver/applications/samplefactory
@@ -26,4 +25,7 @@ sbin/crtmpserver
 @dirrmtry lib/crtmpserver/applications/stresstest
 @dirrmtry lib/crtmpserver/applications
 @dirrmtry lib/crtmpserver
+@exec /bin/mkdir -p var/log/crtmpserver
 @dirrmtry var/log/crtmpserver
+@dirrmtry var/crtmpserver/media
+@dirrmtry var/crtmpserver

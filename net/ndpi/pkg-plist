@@ -1,0 +1,13 @@
+include/libndpi-%%MAJOR_VER%%/libndpi/ndpi_api.h
+include/libndpi-%%MAJOR_VER%%/libndpi/ndpi_debug_functions.h
+include/libndpi-%%MAJOR_VER%%/libndpi/ndpi_define.h
+include/libndpi-%%MAJOR_VER%%/libndpi/ndpi_macros.h
+include/libndpi-%%MAJOR_VER%%/libndpi/ndpi_protocols_osdpi.h
+include/libndpi-%%MAJOR_VER%%/libndpi/ndpi_public_functions.h
+lib/libndpi.a
+lib/libndpi.la
+lib/libndpi.so
+lib/libndpi.so.1
+libdata/pkgconfig/libndpi.pc
+@dirrm include/libndpi-%%MAJOR_VER%%/libndpi
+@dirrm include/libndpi-%%MAJOR_VER%%
