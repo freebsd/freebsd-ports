@@ -406,6 +406,7 @@
     SUBDIR += ncp
     SUBDIR += ncplib
     SUBDIR += ndisc6
+    SUBDIR += ndpi
     SUBDIR += nemesis
     SUBDIR += nepenthes
     SUBDIR += nepim
