@@ -8,11 +8,12 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Neatly packaged Modernizr JS assets
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-sprockets>=2.0:${PORTSDIR}/devel/rubygem-sprockets
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-
 
 .include <bsd.port.mk>
