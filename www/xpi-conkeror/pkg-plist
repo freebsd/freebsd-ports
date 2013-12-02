@@ -1,38 +1,49 @@
 bin/conkeror
 libexec/conkeror/conkeror-spawn-helper
+man/man1/conkeror.1.gz
 share/applications/conkeror.desktop
+%%DATADIR%%/COPYING
+%%DATADIR%%/CREDITS
+%%DATADIR%%/Info.plist
+%%DATADIR%%/chrome.manifest
+%%DATADIR%%/content-policy.manifest
 %%DATADIR%%/application.ini
 %%DATADIR%%/branding/brand.dtd
 %%DATADIR%%/branding/brand.properties
+%%DATADIR%%/branding/content/about.png
 %%DATADIR%%/chrome/chrome.manifest
 %%DATADIR%%/components/.autoreg
 %%DATADIR%%/components/application.js
-%%DATADIR%%/components/application.js.bak
-%%DATADIR%%/components/commandline.js
+%%DATADIR%%/components/command-line.js
+%%DATADIR%%/components/content-policy.js
 %%DATADIR%%/components/download_helper.js
 %%DATADIR%%/components/download_manager_ui.js
 %%DATADIR%%/conkeror-spawn-helper
+%%DATADIR%%/content/annotated-textbox.xml
 %%DATADIR%%/content/blank.html
 %%DATADIR%%/content/conkeror.xul
 %%DATADIR%%/content/downloads.css
 %%DATADIR%%/content/help.css
 %%DATADIR%%/content/hints.css
-%%DATADIR%%/contrib/build.sh
-%%DATADIR%%/contrib/debian/nightlybuild.sh
-%%DATADIR%%/contrib/debian/update.sh
-%%DATADIR%%/contrib/install.sh
-%%DATADIR%%/contrib/man/conkeror.1
-%%DATADIR%%/contrib/mketags.sh
-%%DATADIR%%/contrib/run-conkeror
-%%DATADIR%%/contrib/testrun.sh
+%%DATADIR%%/content/minibuffer-annotation.css
+%%DATADIR%%/content/minibuffer.css
+%%DATADIR%%/content/minibuffer.xul
+%%DATADIR%%/contrib/art/conker.svg
+%%DATADIR%%/contrib/art/nut.svg
+%%DATADIR%%/contrib/art/outline.svg
+%%DATADIR%%/contrib/config/common.js
+%%DATADIR%%/contrib/list-xulrunner-versions
+%%DATADIR%%/contrib/modules/mode-line-buttons.js
 %%DATADIR%%/contrib/xrev/application.ini
 %%DATADIR%%/contrib/xrev/chrome/chrome.manifest
+%%DATADIR%%/contrib/xrev/chrome.manifest
 %%DATADIR%%/contrib/xrev/content/main.xul
 %%DATADIR%%/contrib/xrev/content/xrev.js
 %%DATADIR%%/contrib/xrev/defaults/preferences/prefs.js
 %%DATADIR%%/defaults/preferences/debug.js
 %%DATADIR%%/defaults/preferences/default-modules.js
 %%DATADIR%%/defaults/preferences/download-manager.js
+%%DATADIR%%/defaults/preferences/gui.js
 %%DATADIR%%/defaults/preferences/history-frecency.js
 %%DATADIR%%/defaults/preferences/javascript-restrictions.js
 %%DATADIR%%/defaults/preferences/prefs.js
@@ -42,63 +53,83 @@ share/applications/conkeror.desktop
 %%DATADIR%%/help/manual.css
 %%DATADIR%%/help/tutorial.html
 %%DATADIR%%/locale/en-US/gui_context_menu.properties
-%%DATADIR%%/locale/en-US/netError.dtd
+%%DATADIR%%/locale/en-US/netErrorApp.dtd
 %%DATADIR%%/locale/sv-SE/gui_context_menu.properties
-%%DATADIR%%/locale/sv-SE/netError.dtd
+%%DATADIR%%/locale/sv-SE/netErrorApp.dtd
+%%DATADIR%%/modules/array.js
 %%DATADIR%%/modules/bindings/default/basic-commands.js
 %%DATADIR%%/modules/bindings/default/bindings.js
-%%DATADIR%%/modules/bindings/default/content-buffer/caret.js
+%%DATADIR%%/modules/bindings/default/caret.js
+%%DATADIR%%/modules/bindings/default/content-buffer/anchor.js
+%%DATADIR%%/modules/bindings/default/content-buffer/button.js
 %%DATADIR%%/modules/bindings/default/content-buffer/checkbox.js
 %%DATADIR%%/modules/bindings/default/content-buffer/element.js
+%%DATADIR%%/modules/bindings/default/content-buffer/embed.js
 %%DATADIR%%/modules/bindings/default/content-buffer/form.js
 %%DATADIR%%/modules/bindings/default/content-buffer/normal.js
-%%DATADIR%%/modules/bindings/default/content-buffer/quote.js
 %%DATADIR%%/modules/bindings/default/content-buffer/richedit.js
 %%DATADIR%%/modules/bindings/default/content-buffer/select.js
 %%DATADIR%%/modules/bindings/default/content-buffer/text.js
 %%DATADIR%%/modules/bindings/default/content-buffer/textarea.js
 %%DATADIR%%/modules/bindings/default/content-buffer/zoom.js
 %%DATADIR%%/modules/bindings/default/download-buffer.js
+%%DATADIR%%/modules/bindings/default/formfill.js
 %%DATADIR%%/modules/bindings/default/global.js
 %%DATADIR%%/modules/bindings/default/help-buffer.js
 %%DATADIR%%/modules/bindings/default/hints.js
 %%DATADIR%%/modules/bindings/default/isearch.js
 %%DATADIR%%/modules/bindings/default/minibuffer.js
-%%DATADIR%%/modules/bindings/default/universal_argument.js
+%%DATADIR%%/modules/bindings/default/quote.js
+%%DATADIR%%/modules/bindings/default/special-buffer.js
+%%DATADIR%%/modules/bindings/default/text.js
+%%DATADIR%%/modules/bindings/default/universal-argument.js
+%%DATADIR%%/modules/block-content-focus-change.js
 %%DATADIR%%/modules/buffer.js
+%%DATADIR%%/modules/builtin-commands.js
 %%DATADIR%%/modules/cache.js
+%%DATADIR%%/modules/caret.js
+%%DATADIR%%/modules/casual-spelling.jsx
 %%DATADIR%%/modules/clicks-in-new-buffer.js
+%%DATADIR%%/modules/client-redirect.jsx
 %%DATADIR%%/modules/command-line.js
 %%DATADIR%%/modules/commands.js
 %%DATADIR%%/modules/conkeror.js
 %%DATADIR%%/modules/content-buffer-input.js
 %%DATADIR%%/modules/content-buffer.js
+%%DATADIR%%/modules/content-handler.js
+%%DATADIR%%/modules/content-policy.js
 %%DATADIR%%/modules/cookie.js
 %%DATADIR%%/modules/coroutine.js
 %%DATADIR%%/modules/daemon.js
 %%DATADIR%%/modules/debug.js
+%%DATADIR%%/modules/dom.js
 %%DATADIR%%/modules/download-manager.js
 %%DATADIR%%/modules/element.js
+%%DATADIR%%/modules/env.js
 %%DATADIR%%/modules/extensions/adblockplus.js
 %%DATADIR%%/modules/extensions/dom-inspector.js
 %%DATADIR%%/modules/extensions/noscript.js
+%%DATADIR%%/modules/extensions/venkman.js
 %%DATADIR%%/modules/external-editor.js
 %%DATADIR%%/modules/eye-guide.js
 %%DATADIR%%/modules/favicon.js
-%%DATADIR%%/modules/find.js
 %%DATADIR%%/modules/follow-relationship.js
-%%DATADIR%%/modules/gitweb-webjump.js
+%%DATADIR%%/modules/formfill.js
 %%DATADIR%%/modules/global-overlay-keymap.js
 %%DATADIR%%/modules/help.js
 %%DATADIR%%/modules/hints.js
 %%DATADIR%%/modules/history.js
 %%DATADIR%%/modules/hook.js
+%%DATADIR%%/modules/index-webjump.js
+%%DATADIR%%/modules/input.js
 %%DATADIR%%/modules/interactive.js
 %%DATADIR%%/modules/io.js
-%%DATADIR%%/modules/keyboard.js
+%%DATADIR%%/modules/isearch.js
+%%DATADIR%%/modules/keymap.js
 %%DATADIR%%/modules/keywords.js
 %%DATADIR%%/modules/labels.js
 %%DATADIR%%/modules/load-spec.js
+%%DATADIR%%/modules/login.js
 %%DATADIR%%/modules/media.js
 %%DATADIR%%/modules/mime-type-override.js
 %%DATADIR%%/modules/mime.js
@@ -111,58 +142,88 @@ share/applications/conkeror.desktop
 %%DATADIR%%/modules/mode-line.js
 %%DATADIR%%/modules/mode.js
 %%DATADIR%%/modules/new-tabs.js
+%%DATADIR%%/modules/opensearch.js
 %%DATADIR%%/modules/page-modes/dailymotion.js
+%%DATADIR%%/modules/page-modes/duckduckgo.js
+%%DATADIR%%/modules/page-modes/facebook.js
+%%DATADIR%%/modules/page-modes/feedly.js
+%%DATADIR%%/modules/page-modes/github.js
 %%DATADIR%%/modules/page-modes/gmail.js
 %%DATADIR%%/modules/page-modes/gmane.js
 %%DATADIR%%/modules/page-modes/google-calendar.js
+%%DATADIR%%/modules/page-modes/google-gqueues.js
 %%DATADIR%%/modules/page-modes/google-images.js
 %%DATADIR%%/modules/page-modes/google-maps.js
 %%DATADIR%%/modules/page-modes/google-reader.js
 %%DATADIR%%/modules/page-modes/google-search-results.js
 %%DATADIR%%/modules/page-modes/google-video.js
+%%DATADIR%%/modules/page-modes/google-voice.js
+%%DATADIR%%/modules/page-modes/grooveshark.js
+%%DATADIR%%/modules/page-modes/key-kill.js
+%%DATADIR%%/modules/page-modes/newsblur.js
 %%DATADIR%%/modules/page-modes/reddit.js
-%%DATADIR%%/modules/page-modes/wikipedia-mode.js
+%%DATADIR%%/modules/page-modes/smbc.js
+%%DATADIR%%/modules/page-modes/stackexchange.js
+%%DATADIR%%/modules/page-modes/twitter.js
+%%DATADIR%%/modules/page-modes/wikipedia.js
 %%DATADIR%%/modules/page-modes/xkcd.js
-%%DATADIR%%/modules/page-modes/youporn.js
+%%DATADIR%%/modules/page-modes/youtube-player.js
 %%DATADIR%%/modules/page-modes/youtube.js
 %%DATADIR%%/modules/permission-manager.js
+%%DATADIR%%/modules/pref.js
+%%DATADIR%%/modules/pretty-print.js
+%%DATADIR%%/modules/quote.js
 %%DATADIR%%/modules/rc.js
 %%DATADIR%%/modules/save.js
 %%DATADIR%%/modules/scroll.js
-%%DATADIR%%/modules/search-engine.js
 %%DATADIR%%/modules/selectively-unstyle.js
+%%DATADIR%%/modules/services.js
 %%DATADIR%%/modules/session.js
+%%DATADIR%%/modules/source-code.js
 %%DATADIR%%/modules/spawn-process.js
 %%DATADIR%%/modules/special-buffer.js
 %%DATADIR%%/modules/ssl.js
+%%DATADIR%%/modules/string.js
+%%DATADIR%%/modules/stylesheet.js
 %%DATADIR%%/modules/suggest-file-name.js
 %%DATADIR%%/modules/tab-bar.js
+%%DATADIR%%/modules/text.js
 %%DATADIR%%/modules/theme.js
 %%DATADIR%%/modules/timer.js
 %%DATADIR%%/modules/universal-argument.js
+%%DATADIR%%/modules/user-agent.js
+%%DATADIR%%/modules/user-variable.js
 %%DATADIR%%/modules/utils.js
 %%DATADIR%%/modules/walnut.js
 %%DATADIR%%/modules/webjump.js
-%%DATADIR%%/modules/wikipedia-didyoumean.js
 %%DATADIR%%/modules/window.js
 %%DATADIR%%/modules/zoom.js
 %%DATADIR%%/search-engines/answers.xml
 %%DATADIR%%/search-engines/creativecommons.xml
+%%DATADIR%%/search-engines/duckduckgo.xml
 %%DATADIR%%/search-engines/eBay.xml
 %%DATADIR%%/search-engines/google.xml
 %%DATADIR%%/search-engines/mozilla-bugzilla.xml
 %%DATADIR%%/search-engines/wikipedia.xml
+%%DATADIR%%/search-engines/wiktionary.xml
 %%DATADIR%%/search-engines/yahoo.xml
 %%DATADIR%%/style/default/content-buffer-input.css
 %%DATADIR%%/style/default/eye-guide.css
-%%DATADIR%%/style/default/hints--url-panel.css
 %%DATADIR%%/style/default/minibuffer.css
 %%DATADIR%%/style/default/mode-line.css
 %%DATADIR%%/style/default/new-tabs.css
 %%DATADIR%%/style/default/tab-bar.css
 %%DATADIR%%/style/default/theme.json
-%%DATADIR%%/style/window.css
+%%DATADIR%%/style/default/window--panel.css
+%%DATADIR%%/style/gesso/mode-line--gesso.css
+%%DATADIR%%/style/gesso/new-tabs--gesso.css
+%%DATADIR%%/style/gesso/tab-bar--gesso.css
+%%DATADIR%%/style/gesso/theme.json
+%%DATADIR%%/style/mono/conkeror--mono.css
+%%DATADIR%%/style/mono/theme.json
 @dirrm %%DATADIR%%/style/default
+@dirrm %%DATADIR%%/style/gesso
+@dirrm %%DATADIR%%/style/mono
 @dirrm %%DATADIR%%/style
 @dirrm %%DATADIR%%/search-engines
 @dirrm %%DATADIR%%/modules/page-modes
@@ -177,17 +238,19 @@ share/applications/conkeror.desktop
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%/defaults/preferences
 @dirrm %%DATADIR%%/defaults
+@dirrm %%DATADIR%%/contrib/art
+@dirrm %%DATADIR%%/contrib/config
+@dirrm %%DATADIR%%/contrib/modules
 @dirrm %%DATADIR%%/contrib/xrev/defaults/preferences
 @dirrm %%DATADIR%%/contrib/xrev/defaults
 @dirrm %%DATADIR%%/contrib/xrev/content
 @dirrm %%DATADIR%%/contrib/xrev/chrome
 @dirrm %%DATADIR%%/contrib/xrev
-@dirrm %%DATADIR%%/contrib/man
-@dirrm %%DATADIR%%/contrib/debian
 @dirrm %%DATADIR%%/contrib
 @dirrm %%DATADIR%%/content
 @dirrm %%DATADIR%%/components
 @dirrm %%DATADIR%%/chrome
+@dirrm %%DATADIR%%/branding/content
 @dirrm %%DATADIR%%/branding
 @dirrm %%DATADIR%%
 @dirrm libexec/conkeror
