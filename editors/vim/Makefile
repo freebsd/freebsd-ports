@@ -13,7 +13,7 @@ PORTNAME?=	vim
 PATCHLEVEL=	1314
 PORTVERSION=	7.3.${PATCHLEVEL}
 RELEASE=	vim-${PORTVERSION:C/\.[0-9a-z]*$//}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	editors
 MASTER_SITES=	${MASTER_SITE_VIM}
 DISTFILES=	${RELEASE}${EXTRACT_SUFX}
@@ -35,16 +35,9 @@ SLAVEDIRS=	editors/vim-lite
 NO_STAGE=	yes
 
 .if !defined(LITE)
-.if defined(WITH_OPTIONS) || defined(WITH_VIM_OPTIONS)
 .include "${.CURDIR}/../vim/options"
 OPTIONS_DEFAULT+=	CSCOPE EXUBERANT_CTAGS PERL PYTHON RUBY \
 			TCL LUA X11 GTK2
-.else
-VIM_PORT_SCRIPT_LANGS?=	LUA PERL PYTHON RUBY TCL
-VIM_PORT_OPTIONS=	CSCOPE DOCS EXAMPLES EXUBERANT_CTAGS \
-			${VIM_PORT_SCRIPT_LANGS}
-PORT_OPTIONS?=	${VIM_PORT_OPTIONS}
-.endif
 .endif
 
 .include <bsd.port.options.mk>
@@ -234,10 +227,7 @@ post-install:
 	cd ${WRKDIR} ; ex < ex.script
 
 show-options:
-	@${MAKE} -DWITH_OPTIONS showconfig
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "Put \"WITH_OPTIONS=yes\" -or- \"WITH_VIM_OPTIONS=yes\""
-	@${ECHO_CMD} "in your /etc/make.conf or /etc/ports.conf file to enable OPTIONS processing.
+	@${MAKE} showconfig
 
 .if defined(ONT_CHECKSUM)
 checksum:
