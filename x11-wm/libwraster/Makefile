@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libwraster
-PORTVERSION=	0.95.4
-PORTREVISION=	1
+PORTVERSION=	0.95.5
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	http://windowmaker.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	source/release
@@ -13,10 +12,10 @@ COMMENT=	Window Maker raster graphics library
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	gif:${PORTSDIR}/graphics/giflib \
-		png15:${PORTSDIR}/graphics/png \
-		jbig:${PORTSDIR}/graphics/jbigkit \
-		tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libjbig.so:${PORTSDIR}/graphics/jbigkit \
+		libtiff.so:${PORTSDIR}/graphics/tiff
 
 USES=		pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
@@ -37,12 +36,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		get-wraster-flags.1
 
-NO_STAGE=	yes
 pre-build:
 	cd ${WRKSRC} && ${MAKE} config-paths.h
 
 post-install:
-	cd ${WRKSRC}/doc \
-		&& ${INSTALL_MAN} get-wraster-flags.1 ${MANPREFIX}/man/man1
+	cd ${WRKSRC}/doc && ${INSTALL_MAN} \
+	    get-wraster-flags.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
