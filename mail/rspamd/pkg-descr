@@ -2,4 +2,4 @@ Rspamd is fast, modular and lightweight spam filter. It is designed to work
 with big ammount of mail and can be easily extended with own filters written in
 lua.
 
-WWW:	http://bitbucket.org/vstakhov/rspamd/wiki/Home
+WWW: https://rspamd.com
