@@ -3,6 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.4.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
