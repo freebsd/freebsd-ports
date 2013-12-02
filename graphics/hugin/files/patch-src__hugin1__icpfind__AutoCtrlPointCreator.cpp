@@ -5,7 +5,7 @@
  
  #include <fstream>
 -#ifdef __GNUC__
-+#if defined(__GNUC__) && !defined(__clang__)
++#if defined(__GNUC__) && !defined(_LIBCPP_VERSION)
  #include <ext/stdio_filebuf.h>
  #endif
  
