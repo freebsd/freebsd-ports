@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 @exec mkdir -p %D/GNUstep/Applications/WPrefs.app/xpm
 @exec mkdir -p %D/share/WindowMaker/Sounds
 GNUstep/Applications/WPrefs.app/WPrefs
@@ -10,7 +11,9 @@ GNUstep/Applications/WPrefs.app/tiff/clip.tiff
 GNUstep/Applications/WPrefs.app/tiff/configs.tiff
 GNUstep/Applications/WPrefs.app/tiff/cycleworkspaces.tiff
 GNUstep/Applications/WPrefs.app/tiff/dock.tiff
+GNUstep/Applications/WPrefs.app/tiff/dockclipdrawersection.tiff
 GNUstep/Applications/WPrefs.app/tiff/dontlinkworkspaces.tiff
+GNUstep/Applications/WPrefs.app/tiff/drawer.tiff
 GNUstep/Applications/WPrefs.app/tiff/ergonomic.tiff
 GNUstep/Applications/WPrefs.app/tiff/expert.tiff
 GNUstep/Applications/WPrefs.app/tiff/fonts.tiff
@@ -111,7 +114,7 @@ lib/libWMaker.so.1
 lib/libWUtil.a
 lib/libWUtil.la
 lib/libWUtil.so
-lib/libWUtil.so.2
+lib/libWUtil.so.3
 libdata/pkgconfig/WINGs.pc
 share/WINGs/Images.tiff
 share/WINGs/Images.xpm
@@ -121,6 +124,7 @@ share/WindowMaker/Backgrounds/BlueImage.jpeg
 share/WindowMaker/IconSets/Default.iconset
 share/WindowMaker/Icons/BitchX.tiff
 share/WindowMaker/Icons/BitchX.xpm
+share/WindowMaker/Icons/Drawer.png
 share/WindowMaker/Icons/Ear.png
 share/WindowMaker/Icons/Ftp.png
 share/WindowMaker/Icons/GNUstep.tiff
@@ -342,12 +346,61 @@ share/WindowMaker/wmmacros
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/WindowMaker.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/WPrefs.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/WindowMaker.mo
+man/cs/man1/geticonset.1x.gz
+man/cs/man1/getstyle.1x.gz
+man/cs/man1/seticons.1x.gz
+man/cs/man1/setstyle.1x.gz
+man/cs/man1/wdwrite.1x.gz
+man/cs/man1/wmaker.1x.gz
+man/cs/man1/wmsetbg.1x.gz
+man/cs/man1/wxcopy.1x.gz
+man/cs/man1/wxpaste.1x.gz
+man/man1/WPrefs.1x.gz
+man/man1/WindowMaker.1x.gz
+man/man1/get-wings-flags.1.gz
+man/man1/get-wutil-flags.1.gz
+man/man1/geticonset.1x.gz
+man/man1/getstyle.1x.gz
+man/man1/seticons.1x.gz
+man/man1/setstyle.1x.gz
+man/man1/wdread.1.gz
+man/man1/wdwrite.1x.gz
+man/man1/wmagnify.1x.gz
+man/man1/wmaker.1x.gz
+man/man1/wmgenmenu.1.gz
+man/man1/wmmenugen.1.gz
+man/man1/wmsetbg.1x.gz
+man/man1/wxcopy.1x.gz
+man/man1/wxpaste.1x.gz
+man/man8/upgrade-windowmaker-defaults.8.gz
+man/ru/man1/geticonset.1x.gz
+man/ru/man1/getstyle.1x.gz
+man/ru/man1/seticons.1x.gz
+man/ru/man1/setstyle.1x.gz
+man/ru/man1/wdwrite.1x.gz
+man/ru/man1/wmaker.1x.gz
+man/ru/man1/wmsetbg.1x.gz
+man/ru/man1/wxcopy.1x.gz
+man/ru/man1/wxpaste.1x.gz
+man/sk/man1/geticonset.1x.gz
+man/sk/man1/getstyle.1x.gz
+man/sk/man1/seticons.1x.gz
+man/sk/man1/setstyle.1x.gz
+man/sk/man1/wdwrite.1x.gz
+man/sk/man1/wmaker.1x.gz
+man/sk/man1/wmsetbg.1x.gz
+man/sk/man1/wxcopy.1x.gz
+man/sk/man1/wxpaste.1x.gz
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
 @dirrm share/WindowMaker/Styles
 @dirrm share/WindowMaker/Sounds
 @dirrm share/WindowMaker/IconSets
 @dirrm share/WindowMaker/Backgrounds
+@dirrm share/WindowMaker/Themes
+@dirrm share/WindowMaker/Pixmaps
+@dirrm share/WindowMaker/Icons
+@dirrm share/WindowMaker
 @dirrm share/WINGs
 @dirrmtry man/sk/man1
 @dirrmtry man/sk
