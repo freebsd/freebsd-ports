@@ -10,10 +10,11 @@ MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Dumb Terminal Emulator
 
 ALL_TARGET=	picocom
-USE_GMAKE=	yes
+USES=		gmake
 
-PLIST_FILES=	bin/picocom
-MAN8=		picocom.8
+PLIST_FILES=	bin/picocom man/man8/picocom.8.gz
 
-NO_STAGE=	yes
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
 .include <bsd.port.mk>
