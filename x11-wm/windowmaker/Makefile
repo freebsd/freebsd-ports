@@ -42,7 +42,7 @@ LINGUAS=	be bg bs ca cs da de el es et fi fr gl hr hu hy it \
 		ja ko ms nl no pl pt ro ru sk sv tr zh_CN zh_TW
 
 OPTIONS_DEFINE=	DOCS NLS XRANDR
-OPTIONS_SUB=	NLS
+OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_ENV=	LINGUAS="${LINGUAS}"
 NLS_CONFIGURE_ENABLE=	locale
