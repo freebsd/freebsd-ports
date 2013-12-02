@@ -106,7 +106,7 @@ lib/avogadro/1_1/tools/manipulatetool.so
 lib/avogadro/1_1/tools/selectrotatetool.so
 lib/avogadro/AvogadroConfig.cmake
 lib/avogadro/AvogadroConfigVersion.cmake
-lib/avogadro/AvogadroTargets-release.cmake
+lib/avogadro/AvogadroTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/avogadro/AvogadroTargets.cmake
 lib/libavogadro.so
 lib/libavogadro.so.1
