@@ -1,5 +1,5 @@
-lib/libmtrie.a
-%%HURRRR%%lib/libmtrie_p.a
-lib/libmtrie.so.1
-lib/libmtrie.so
 include/mtrie.h
+lib/libmtrie.a
+lib/libmtrie.so
+lib/libmtrie.so.1
+%%HURRRR%%lib/libmtrie_p.a
