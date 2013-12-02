@@ -2,37 +2,34 @@
 # $FreeBSD$
 
 PORTNAME=	bsnmptools
-PORTVERSION=	0.0.20060818
-DISTVERSION=	20060818-01
-PORTREVISION=	2
+PORTVERSION=	0.0.20100516
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.ringlet.net/~shteryana/snmp/ CENKES
+MASTER_SITES=	http://people.freebsd.org/~syrinx/snmp/ CENKES
+DISTNAME=	bsnmptools-20100516-01
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	unixmania@gmail.com
 COMMENT=	Snmp client tools
 
+LICENSE=	BSD
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 900028
+IGNORE=		client tools (including SNMPv3 support) are part of the base system
+.endif
+
 USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/bsnmptools/usr.sbin/bsnmpd/tools
 MAKE_ARGS=	SHLIB_MAJOR=0 INCLUDEDIR=${PREFIX}/include LIBDIR=${PREFIX}/lib \
 		MANDIR=${MANPREFIX}/man/man NO_MANCOMPRESS=yes BINDIR=${PREFIX}/bin \
 		NO_PROFILE=yes
-CFLAGS=		-I${WRKSRC}/lib -L${WRKSRC}/lib
-PLIST_FILES=	${BIN_FILES:S,^,bin/,} include/${PORTNAME}.h include/bsnmptc.h \
-		lib/lib${PORTNAME}.a lib/lib${PORTNAME}.so lib/lib${PORTNAME}.so.0
+PLIST_FILES=	${BIN_FILES:S,^,bin/,} \
+		lib/lib${PORTNAME}.a lib/lib${PORTNAME}.so lib/lib${PORTNAME}.so.0 \
+		${BIN_FILES:S,^,man/man1/,:S,$,.1.gz,}
 BIN_FILES=	bsnmpget bsnmpset bsnmpwalk
-MAN1=	${BIN_FILES:S/$/.1/}
-MAN3=	${PORTNAME}.3
-
-NO_STAGE=	yes
-post-extract:
-	@${CHMOD} -R u+w ${WRKSRC}
-	@${MV} ${WRKSRC}/lib/libbsnmptools/libbsnmptools ${WRKSRC}/tlib
-	@${MV} ${WRKSRC}/usr.sbin/bsnmpd/tools ${WRKSRC}/
-	@${RM} -rf ${WRKSRC}/lib ${WRKSRC}/usr.sbin ${WRKSRC}/tools/Makefile.inc
-	@${MV} ${WRKSRC}/tlib ${WRKSRC}/lib
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/usr.sbin/tools/' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|$${DESTDIR}/usr/bin|$${STAGEDIR}$${BINDIR}|g' ${WRKSRC}/bsnmptools/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
