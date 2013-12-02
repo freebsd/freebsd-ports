@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Action Controller and Action View of Rails MVC Framework
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-activemodel>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-activemodel \
 		rubygem-builder>=3.0.0:${PORTSDIR}/devel/rubygem-builder \
