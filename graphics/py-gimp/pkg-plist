@@ -12,16 +12,12 @@ libexec/gimp/2.2/plug-ins/pyconsole.py
 libexec/gimp/2.2/plug-ins/python-console.py
 libexec/gimp/2.2/plug-ins/python-eval.py
 libexec/gimp/2.2/plug-ins/text-brush.py
-libexec/gimp/2.2/python/_gimpenums.a
 libexec/gimp/2.2/python/_gimpenums.la
 libexec/gimp/2.2/python/_gimpenums.so
-libexec/gimp/2.2/python/_gimpui.a
 libexec/gimp/2.2/python/_gimpui.la
 libexec/gimp/2.2/python/_gimpui.so
-libexec/gimp/2.2/python/gimp.a
 libexec/gimp/2.2/python/gimp.la
 libexec/gimp/2.2/python/gimp.so
-libexec/gimp/2.2/python/gimpcolor.a
 libexec/gimp/2.2/python/gimpcolor.la
 libexec/gimp/2.2/python/gimpcolor.so
 libexec/gimp/2.2/python/gimpenums.py
@@ -36,7 +32,6 @@ libexec/gimp/2.2/python/gimpplugin.pyo
 libexec/gimp/2.2/python/gimpshelf.py
 libexec/gimp/2.2/python/gimpshelf.pyc
 libexec/gimp/2.2/python/gimpshelf.pyo
-libexec/gimp/2.2/python/gimpthumb.a
 libexec/gimp/2.2/python/gimpthumb.la
 libexec/gimp/2.2/python/gimpthumb.so
 libexec/gimp/2.2/python/gimpui.py

@@ -224,39 +224,30 @@ include/gimp-2.0/libgimpwidgets/gimpwidgets.h
 include/gimp-2.0/libgimpwidgets/gimpwidgetsenums.h
 include/gimp-2.0/libgimpwidgets/gimpwidgetstypes.h
 include/gimp-2.0/libgimpwidgets/gimpzoommodel.h
-lib/libgimp-2.0.a
 lib/libgimp-2.0.la
 lib/libgimp-2.0.so
 lib/libgimp-2.0.so.0
-lib/libgimpbase-2.0.a
 lib/libgimpbase-2.0.la
 lib/libgimpbase-2.0.so
 lib/libgimpbase-2.0.so.0
-lib/libgimpcolor-2.0.a
 lib/libgimpcolor-2.0.la
 lib/libgimpcolor-2.0.so
 lib/libgimpcolor-2.0.so.0
-lib/libgimpconfig-2.0.a
 lib/libgimpconfig-2.0.la
 lib/libgimpconfig-2.0.so
 lib/libgimpconfig-2.0.so.0
-lib/libgimpmath-2.0.a
 lib/libgimpmath-2.0.la
 lib/libgimpmath-2.0.so
 lib/libgimpmath-2.0.so.0
-lib/libgimpmodule-2.0.a
 lib/libgimpmodule-2.0.la
 lib/libgimpmodule-2.0.so
 lib/libgimpmodule-2.0.so.0
-lib/libgimpthumb-2.0.a
 lib/libgimpthumb-2.0.la
 lib/libgimpthumb-2.0.so
 lib/libgimpthumb-2.0.so.0
-lib/libgimpui-2.0.a
 lib/libgimpui-2.0.la
 lib/libgimpui-2.0.so
 lib/libgimpui-2.0.so.0
-lib/libgimpwidgets-2.0.a
 lib/libgimpwidgets-2.0.la
 lib/libgimpwidgets-2.0.so
 lib/libgimpwidgets-2.0.so.0
@@ -265,31 +256,22 @@ libdata/pkgconfig/gimpthumb-2.0.pc
 libdata/pkgconfig/gimpui-2.0.pc
 libexec/gimp/2.2/environ/default.env
 libexec/gimp/2.2/interpreters/default.interp
-libexec/gimp/2.2/modules/libcolor-selector-cmyk.a
 libexec/gimp/2.2/modules/libcolor-selector-cmyk.la
 libexec/gimp/2.2/modules/libcolor-selector-cmyk.so
-libexec/gimp/2.2/modules/libcolor-selector-water.a
 libexec/gimp/2.2/modules/libcolor-selector-water.la
 libexec/gimp/2.2/modules/libcolor-selector-water.so
-libexec/gimp/2.2/modules/libcolor-selector-wheel.a
 libexec/gimp/2.2/modules/libcolor-selector-wheel.la
 libexec/gimp/2.2/modules/libcolor-selector-wheel.so
-libexec/gimp/2.2/modules/libcontroller-midi.a
 libexec/gimp/2.2/modules/libcontroller-midi.la
 libexec/gimp/2.2/modules/libcontroller-midi.so
-libexec/gimp/2.2/modules/libdisplay-filter-color-blind.a
 libexec/gimp/2.2/modules/libdisplay-filter-color-blind.la
 libexec/gimp/2.2/modules/libdisplay-filter-color-blind.so
-libexec/gimp/2.2/modules/libdisplay-filter-gamma.a
 libexec/gimp/2.2/modules/libdisplay-filter-gamma.la
 libexec/gimp/2.2/modules/libdisplay-filter-gamma.so
-libexec/gimp/2.2/modules/libdisplay-filter-high-contrast.a
 libexec/gimp/2.2/modules/libdisplay-filter-high-contrast.la
 libexec/gimp/2.2/modules/libdisplay-filter-high-contrast.so
-libexec/gimp/2.2/modules/libdisplay-filter-lcms.a
 libexec/gimp/2.2/modules/libdisplay-filter-lcms.la
 libexec/gimp/2.2/modules/libdisplay-filter-lcms.so
-libexec/gimp/2.2/modules/libdisplay-filter-proof.a
 libexec/gimp/2.2/modules/libdisplay-filter-proof.la
 libexec/gimp/2.2/modules/libdisplay-filter-proof.so
 libexec/gimp/2.2/plug-ins/alien-map
@@ -473,6 +455,7 @@ man/man1/gimptool-2.0.1.gz
 man/man5/gimprc-2.8.5.gz
 man/man5/gimprc.5.gz
 share/aclocal/gimp-2.0.m4
+share/appdata/gimp.appdata.xml
 share/applications/gimp.desktop
 share/doc/gimp/libgimp/GimpAspectPreview.html
 share/doc/gimp/libgimp/GimpBrushSelectButton.html
@@ -2290,6 +2273,7 @@ share/locale/zh_TW/LC_MESSAGES/gimp20.mo
 @dirrm share/doc/gimp/libgimpbase
 @dirrm share/doc/gimp/libgimp
 @dirrm share/doc/gimp
+@dirrmtry share/appdata
 @dirrm libexec/gimp/2.2/plug-ins
 @dirrm libexec/gimp/2.2/modules
 @dirrm libexec/gimp/2.2/interpreters
