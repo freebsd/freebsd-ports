@@ -15,17 +15,17 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz
 
 USE_PYTHON=		2.7+
 USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_AUTOPLIST=	yes
 
 PORTDOCS=	docs/*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docfile in ${PORTDOCS}
-	${CP} -r ${WRKSRC}/${docfile} ${DOCSDIR}
+	${CP} -r ${WRKSRC}/${docfile} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
