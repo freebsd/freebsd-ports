@@ -17,4 +17,4 @@ If no file is named on the command line, standard input is assumed.
 Note that the input file must be a decompressed archive (decompress
 with gzip).
 
-WWW: http://www.eecs.harvard.edu/~wkj/Software/9e/
+WWW: http://www.bebik.net/doku.php?id=software:9e
