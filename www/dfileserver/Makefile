@@ -10,11 +10,12 @@ MASTER_SITES=	http://rodrigo.osorio.free.fr/freebsd/distfiles/ \
 MAINTAINER=	rodrigo@bebik.net
 COMMENT=	Compact webserver designed to make sharing files easy
 
+LICENSE=	BSD
+
 PLIST_FILES=	bin/dfileserver
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} 's,g++,${CXX},;s,$$GCCFLAGS,${CXXFLAGS},; \
 		s,strip,${STRIP_CMD},' ${WRKSRC}/build.sh
@@ -24,6 +25,6 @@ do-build:
 	${SETENV} ${MAKE_ENV} ./build.sh)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/DFileServer.x86 ${PREFIX}/bin/dfileserver
+	${INSTALL_PROGRAM} ${WRKSRC}/DFileServer.x86 ${STAGEDIR}${PREFIX}/bin/dfileserver
 
 .include <bsd.port.mk>
