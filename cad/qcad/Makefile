@@ -18,6 +18,8 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash	\
 		${LOCALBASE}/lib/libopenNURBS.a:${PORTSDIR}/graphics/opennurbs
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
+CONFLICTS=	texlive-base-*
+
 FETCH_ARGS=	-Fpr
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_JOBS_UNSAFE=yes
