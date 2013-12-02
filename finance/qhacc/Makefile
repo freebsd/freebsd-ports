@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qhacc
-PORTVERSION=	4.2
+PORTVERSION=	4.2.1
 CATEGORIES=	finance
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -19,9 +19,8 @@ OPTIONS_DEFINE=	DOCS
 USES=		qmake:norecursive
 USE_QT4=	corelib gui sql moc_build rcc_build uic_build
 USE_GCC=	yes
+USE_CXXSTD=	c++0x
 USE_LDCONFIG=	yes
-
-CXXFLAGS+=	-fpermissive
 
 DESKTOP_ENTRIES="QHacc" "" "" "${PORTNAME}" "" ""
 
@@ -32,6 +31,7 @@ post-patch:
 		'/^INSTALLDIR/s|=.*|=${DATADIR}| ; \
 		 /^QWTINCS/s|=.*|=${LOCALBASE}/include/qwt6| ; \
 		 /^QWTLIBS/s|=.*|=${LOCALBASE}/lib -lqwt6| ; \
+		 /^QMAKE_/s|=.*|=| ; \
 		 /+= debug/s|^|#|' ${WRKSRC}/user.pri
 	@${REINPLACE_CMD} -e \
 		's|/usr/include|${LOCALBASE}/include| ; \
