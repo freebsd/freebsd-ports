@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kid3
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	audio kde
 MASTER_SITES=	SF
 
@@ -30,14 +30,10 @@ CONFLICTS_INSTALL=	kid3-3.*
 BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 
 USES+=		desktop-file-utils
+USE_QT4+=	corelib dbus gui network phonon xml
 USE_GNOME=	libxslt:build
 CMAKE_ARGS+=	-DWITH_APPS="${KID3_CLI}QT"
 PLIST_SUB+=	QT="" KDE="@comment "
-
-OPTIONS_DEFINE+=	PHONON
-PHONON_DESC=	Build with Phonon support
-PHONON_CMAKE_OFF=	-DWITH_PHONON=OFF
-PHONON_USE=	QT4=phonon
 .else
 CONFLICTS_INSTALL=	kid3-qt4-3.*
 
