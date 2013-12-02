@@ -25,6 +25,9 @@ bin/pto_gen
 bin/pto_merge
 bin/tca_correct
 bin/vig_optimize
+%%LOCALBASE%%/lib/python2.7/site-packages/_hsi.so
+%%LOCALBASE%%/lib/python2.7/site-packages/hpi.py
+%%LOCALBASE%%/lib/python2.7/site-packages/hsi.py
 lib/hugin/libceleste.so.0.0
 lib/hugin/libflann_cpp.so
 lib/hugin/libhugin_python_interface.so.0.0
