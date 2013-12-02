@@ -13,23 +13,17 @@ LICENSE=	LGPL21
 
 OPTIONS_DEFINE=	EXPAT
 OPTIONS_DEFAULT=EXPAT
+EXPAT_CONFIGURE_WITH=	expat
+EXPAT_LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
-USES=	pathfix
+USES=		pathfix
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-
-MAN1=	log4c-config.1
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEXPAT}
-LIB_DEPENDS+=	expat:${PORTSDIR}/textproc/expat2
-.else
-CONFIGURE_ARGS+=--without-expat
-.endif
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblog4c.so
 
 .include <bsd.port.mk>
