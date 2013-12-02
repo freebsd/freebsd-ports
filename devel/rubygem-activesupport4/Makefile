@@ -23,6 +23,6 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 USE_RUBY_FEATURES=	iconv
 
-#NOPORTDOCS=	yes
+NOPORTDOCS=	yes
 
 .include <bsd.port.mk>
