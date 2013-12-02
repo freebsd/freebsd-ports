@@ -28,7 +28,7 @@ BADPATCHES=	527 780 796 873 890 1104 1111
 PATCHFILES:=	${PATCHFILES:N7.3.${p}}
 .endfor
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	sunpoet@FreeBSD.org
 COMMENT?=	Vi "workalike", with many additional features
 
 SLAVEDIRS=	editors/vim-lite
