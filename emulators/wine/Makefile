@@ -23,7 +23,7 @@ LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
 
-CONFLICTS_INSTALL=	i386-wine-* wine-1.5* wine-1.7*
+CONFLICTS_INSTALL=	i386-wine-[0-9]* i386-wine-devel-[0-9]* wine-devel-[0-9]*
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
