@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pigz
-PORTVERSION=	2.3
+PORTVERSION=	2.3.1
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.zlib.net/pigz/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -10,11 +10,11 @@ MASTER_SITES=	http://www.zlib.net/pigz/ \
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Parallel GZIP
 
-NO_STAGE=	yes
 USES=		gmake
 
+PLIST_FILES=	bin/pigz bin/pigzn bin/pigzt bin/unpigz
 .if !defined(NO_INSTALL_MANPAGES)
-MAN1=	pigz.1
+PLIST_FILES+=	man/man1/pigz.1.gz
 .endif
 
 post-patch:
@@ -22,10 +22,10 @@ post-patch:
 
 do-install:
 .for FILE in pigz pigzn pigzt unpigz
-	${INSTALL_PROGRAM} ${WRKSRC}/${FILE} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${FILE} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .if !defined(NO_INSTALL_MANPAGES)
-	${INSTALL_MAN} ${WRKSRC}/pigz.1 ${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/pigz.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
 .endif
 
 .include <bsd.port.mk>
