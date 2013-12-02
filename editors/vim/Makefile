@@ -1,7 +1,7 @@
 # Created by: David O'Brien <obrien@cs.ucdavis.edu>
 # $FreeBSD$
 
-PORTNAME?=	vim
+PORTNAME=	vim
 #		! _NEVER_ reduce or lower PATCHLEVEL, even if the PATCHLEVEL
 #		! value # is added to BADPATCHES.  Doing otherwise will cause
 #		! PORTEPOCH to be needed, which we do NOT want.
@@ -10,22 +10,22 @@ PORTNAME?=	vim
 #		! Doing so is dis-genuine.  It implies we're at a level we are
 #		! not.  The "PATCHLEVEL" patch needs to apply before bumping
 #		! PATCHLEVEL to that level.
-PATCHLEVEL=	1314
-PORTVERSION=	7.3.${PATCHLEVEL}
-RELEASE=	vim-${PORTVERSION:C/\.[0-9a-z]*$//}
-PORTREVISION?=	1
+PATCHLEVEL=	110
+PORTVERSION=	7.4.${PATCHLEVEL}
+PORTREVISION?=	0
 CATEGORIES?=	editors
-MASTER_SITES=	${MASTER_SITE_VIM}
-DISTFILES=	${RELEASE}${EXTRACT_SUFX}
+MASTER_SITES=	VIM
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}
+DIST_SUBDIR=	${PORTNAME}
 
-PATCH_SITES=	${MASTER_SITES:S|unix|patches/${PORTVERSION:C/\.[0-9a-z]*$//}|}\
+PATCH_SITES=	${MASTER_SITES:S|unix|patches/${PORTVERSION:R}|}\
 		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/obrien/:local
 PATCHFILES!=	/usr/bin/jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 #	bits to remove
-BADPATCHES=	527 780 796 873 890 1104 1111
+BADPATCHES=	# empty
 .for p in ${BADPATCHES}
-PATCHFILES:=	${PATCHFILES:N7.3.${p}}
+PATCHFILES:=	${PATCHFILES:N${PORTVERSION:R}.${p}}
 .endfor
 
 MAINTAINER?=	sunpoet@FreeBSD.org
@@ -51,17 +51,17 @@ CONFLICTS+=	vim*-lite
 
 MAKE_JOBS_UNSAFE=	yes
 USE_BZIP2=	yes
-DIST_SUBDIR=	vim
-WRKSRC=		${WRKDIR}/vim${PORTVERSION:C/\.[0-9]*$//:S/.//g}/src
-PATCH_DIST_ARGS= -d ${WRKSRC:S/src$//} --batch --forward --quiet -E ${PATCH_DIST_STRIP}
+WRKSRC=		${WRKDIR}/vim${PORTVERSION:R:S/.//g}/src
+PATCH_DIST_ARGS=-d ${WRKSRC:S/src$//} --batch --forward --quiet -E ${PATCH_DIST_STRIP}
 # consider
 #PATCH_DIST_ARGS=	-t
 REINPLACE_ARGS=		-i ""
 MAKE_ARGS+=	CONF_ARGS="--prefix=${PREFIX} --with-tlib=termlib ${CSCOPE_ARG}"
 ALL_TARGET=	#
-_DATADIR=	${RELEASE:S/-//g:S/.//g}
+_DATADIR=	${PORTNAME}${PORTVERSION:R:S/.//g}
 DATADIR=	${PREFIX}/share/vim/${_DATADIR}
 PLIST_SUB=	VIM_VER=${_DATADIR}
+MANLANG=	""
 MAN1=		evim.1 vim.1 vimdiff.1 vimtutor.1 xxd.1
 MLINKS=		vim.1 rvim.1	vim.1 rview.1
 .if !defined(LITE)
@@ -70,8 +70,8 @@ MLINKS+=	vim.1 gvim.1	vim.1 gview.1	vimdiff.1 gvimdiff.1 \
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-MANLANG=	"" ru.KOI8-R ru.UTF-8 pl.ISO8859-2 pl.UTF-8 pl fr.ISO8859-1 \
-		fr.UTF-8 fr it.ISO8859-1 it.UTF-8 it
+MANLANG+=	fr.ISO8859-1 fr.UTF-8 it it.ISO8859-1 it.UTF-8 ja pl.ISO8859-2 \
+		pl.UTF-8 ru.KOI8-R ru.UTF-8
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
@@ -147,25 +147,23 @@ USE_XORG+=	xt
 . if ${PORT_OPTIONS:MGNOME}
 USE_GNOME=	libgnomeui
 PKGNAMESUFFIX=	-gnome2
-CONF_OPT_GUI="--enable-gui=gnome2"
+CONF_OPT_GUI=	"--enable-gui=gnome2"
 MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
 USE_XORG+=	xt glproto
 . endif
 
 . if ${PORT_OPTIONS:MMOTIF}
 USES+=		motif
-CONF_OPT_GUI="--enable-gui=motif --with-motif-lib=\"${MOTIFLIB}\""
+CONF_OPT_GUI=	"--enable-gui=motif --with-motif-lib=\"${MOTIFLIB}\""
 MAKE_ARGS+=	MOTIFHOME=${LOCALBASE}
 . endif
 
 .endif
 MAKE_ARGS+=	CONF_OPT_GUI=${CONF_OPT_GUI} ${I18N}
 
-
 .if exists(${LOCALBASE}/lib/libiconv.so)
 USES+=	iconv
 .endif
-
 
 post-patch:
 	@(${FIND} ${WRKSRC}/../runtime/ -name menu\*.vim -print0 | ${XARGS} -0 \
