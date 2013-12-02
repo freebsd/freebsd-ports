@@ -7,9 +7,7 @@ share/icons/dvbcut/dvbcut.svg
 share/icons/dvbcut/play.svgz
 share/icons/dvbcut/stop.png
 share/icons/dvbcut/play.png
-share/icons/dvbcut/icons.qrc.orig
 share/icons/dvbcut/bookmark.svgz
-share/icons/dvbcut/icons.qrc
 share/icons/dvbcut/chapter.png
 share/icons/dvbcut/stop.svgz
 man/man1/dvbcut.1.gz

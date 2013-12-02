@@ -1,22 +1,14 @@
---- src/defines.h.orig	2007-09-30 23:31:46.000000000 +0900
-+++ src/defines.h	2009-03-27 01:33:10.000000000 +0900
-@@ -42,6 +42,12 @@
+--- src/defines.h~	2013-06-16 11:57:51.000000000 +0200
++++ src/defines.h	2013-11-29 22:35:26.867434652 +0100
+@@ -42,6 +42,11 @@
  #endif
    }
  
-+#if defined(__FreeBSD__)
-+#define mbo32(x) htobe32(x)
-+#define htom32(x) htobe32(x)
-+#define mbo16(x) htobe16(x)
-+#define htom16(x) htobe16(x)
-+#else
++#ifdef __FreeBSD__
++#define __bswap_32(x) __bswap32(x)
++#define __bswap_16(x) __bswap16(x)
++#endif
++
  #if __BYTE_ORDER == __LITTLE_ENDIAN
  #define mbo32(x) \
        ((((x) & 0xff000000) >> 24) | (((x) & 0x00ff0000) >>  8) | \
-@@ -55,5 +61,6 @@
- #define mbo16(x) (x)
- #define htom16(x) (x)
- #endif
-+#endif
- 
- #endif
