@@ -5,6 +5,7 @@ share/applications/gpicview.desktop
 %%DATADIR%%/pixmaps/object-rotate-left.png
 %%DATADIR%%/pixmaps/object-rotate-right.png
 %%DATADIR%%/ui/pref-dlg.ui
+share/icons/hicolor/48x48/apps/gpicview.png
 %%NLS%%share/locale/af/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/gpicview.mo
@@ -54,7 +55,6 @@ share/applications/gpicview.desktop
 %%NLS%%share/locale/vi/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gpicview.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gpicview.mo
-share/pixmaps/gpicview.png
 %%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ur_PK
 %%NLS%%@dirrmtry share/locale/frp/LC_MESSAGES
