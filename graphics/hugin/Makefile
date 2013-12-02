@@ -68,6 +68,7 @@ MAN1=		\
 		pano_modify.1 \
 		pano_trafo.1 \
 		pto2mk.1 \
+		pto_gen.1 \
 		pto_merge.1 \
 		tca_correct.1 \
 		vig_optimize.1

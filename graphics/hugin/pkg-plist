@@ -21,11 +21,13 @@ bin/nona_gui
 bin/pano_modify
 bin/pano_trafo
 bin/pto2mk
+bin/pto_gen
 bin/pto_merge
 bin/tca_correct
 bin/vig_optimize
 lib/hugin/libceleste.so.0.0
 lib/hugin/libflann_cpp.so
+lib/hugin/libhugin_python_interface.so.0.0
 lib/hugin/libhuginbase.so.0.0
 lib/hugin/libhuginbasewx.so.0.0
 lib/hugin/libhuginlines.so.0.0
@@ -33,11 +35,20 @@ lib/hugin/libhuginvigraimpex.so.0.0
 lib/hugin/libicpfindlib.so.0.0
 lib/hugin/liblocalfeatures.so.0.0
 lib/hugin/libmakefilelib.so.0.0
-share/applications/hugin.desktop
 share/applications/PTBatcherGUI.desktop
+share/applications/calibrate_lens_gui.desktop
+share/applications/hugin.desktop
+share/applications/pto_gen.desktop
 %%DATADIR%%/Makefile.equirect.mk
 %%DATADIR%%/data/celeste.model
 %%DATADIR%%/data/default.setting
+%%DATADIR%%/data/plugins-templates/dual_use.py
+%%DATADIR%%/data/plugins-templates/plugin_skeleton.py
+%%DATADIR%%/data/plugins/top_five.py
+%%DATADIR%%/data/plugins/woa.py
+%%DATADIR%%/data/plugins/shooting_pattern.py
+%%DATADIR%%/data/plugins/crop_cp.py
+%%DATADIR%%/data/plugins/README_woa.txt
 %%DATADIR%%/xrc/about.xrc
 %%DATADIR%%/xrc/assistant_panel.xrc
 %%DATADIR%%/xrc/batch_frame.xrc
@@ -382,6 +393,7 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/help_en_EN/Portrait.html
 %%DATADIR%%/xrc/data/help_en_EN/Projections.html
 %%DATADIR%%/xrc/data/help_en_EN/Pto2mk.html
+%%DATADIR%%/xrc/data/help_en_EN/Pto_gen.html
 %%DATADIR%%/xrc/data/help_en_EN/Pto_merge.html
 %%DATADIR%%/xrc/data/help_en_EN/QTVR.html
 %%DATADIR%%/xrc/data/help_en_EN/Qtvr2img.html
@@ -607,6 +619,7 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/images_panel.xrc
 %%DATADIR%%/xrc/lens_panel.xrc
 %%DATADIR%%/xrc/lenscal_frame.xrc
+%%DATADIR%%/xrc/lensdb_dialogs.xrc
 %%DATADIR%%/xrc/main_frame.xrc
 %%DATADIR%%/xrc/main_menu.xrc
 %%DATADIR%%/xrc/main_tool.xrc
@@ -617,7 +630,6 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/pref_dialog.xrc
 %%DATADIR%%/xrc/preview_frame.xrc
 %%DATADIR%%/xrc/reset_dialog.xrc
-share/applications/calibrate_lens_gui.desktop
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-ptoptimizer-script.png
 share/locale/bg/LC_MESSAGES/hugin.mo
 share/locale/ca_ES/LC_MESSAGES/hugin.mo
@@ -657,6 +669,8 @@ share/pixmaps/ptbatcher.png
 @dirrmtry share/locale/cs_CZ
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
+@dirrm %%DATADIR%%/data/plugins
+@dirrm %%DATADIR%%/data/plugins-templates
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/xrc/data/help_en_EN
 @dirrm %%DATADIR%%/xrc/data/help_it_IT
