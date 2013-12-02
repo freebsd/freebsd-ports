@@ -8,6 +8,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Test spies, for rspec
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-rspec>=2.0:${PORTSDIR}/devel/rubygem-rspec
 
 USE_RUBY=	yes
