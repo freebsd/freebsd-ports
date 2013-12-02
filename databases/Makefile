@@ -726,6 +726,7 @@
     SUBDIR += py-MySQLdb55
     SUBDIR += py-PyGreSQL
     SUBDIR += py-Pyrseas
+    SUBDIR += py-alembic
     SUBDIR += py-apsw
     SUBDIR += py-bsddb
     SUBDIR += py-bsddb3

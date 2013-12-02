@@ -87,6 +87,9 @@ include/libspreadsheet-%%SHORT_VER%%/spreadsheet/rendered-value.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/search.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/selection.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/session.h
+include/libspreadsheet-%%SHORT_VER%%/spreadsheet/sf-bessel.h
+include/libspreadsheet-%%SHORT_VER%%/spreadsheet/sf-gamma.h
+include/libspreadsheet-%%SHORT_VER%%/spreadsheet/sf-trig.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/sheet-autofill.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/sheet-control-gui-priv.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/sheet-control-gui.h
@@ -207,16 +210,13 @@ lib/gnumeric/%%VERSION%%/plugins/fn-string/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/fn-tsa/plugin.la
 lib/gnumeric/%%VERSION%%/plugins/fn-tsa/plugin.so
 lib/gnumeric/%%VERSION%%/plugins/fn-tsa/plugin.xml
-%%GNOMEDB%%lib/gnumeric/%%VERSION%%/plugins/gdaif/gdaif.la
-%%GNOMEDB%%lib/gnumeric/%%VERSION%%/plugins/gdaif/gdaif.so
-%%GNOMEDB%%lib/gnumeric/%%VERSION%%/plugins/gdaif/plugin.xml
+%%GDA%%lib/gnumeric/%%VERSION%%/plugins/gdaif/gdaif.la
+%%GDA%%lib/gnumeric/%%VERSION%%/plugins/gdaif/gdaif.so
+%%GDA%%lib/gnumeric/%%VERSION%%/plugins/gdaif/plugin.xml
+%%GDA%%lib/gnumeric/%%VERSION%%/plugins/gdaif/ui.xml
 lib/gnumeric/%%VERSION%%/plugins/glpk/glpk.la
 lib/gnumeric/%%VERSION%%/plugins/glpk/glpk.so
 lib/gnumeric/%%VERSION%%/plugins/glpk/plugin.xml
-%%GNOMEDB%%lib/gnumeric/%%VERSION%%/plugins/gnome-db/gnomedb.la
-%%GNOMEDB%%lib/gnumeric/%%VERSION%%/plugins/gnome-db/gnomedb.so
-%%GNOMEDB%%lib/gnumeric/%%VERSION%%/plugins/gnome-db/plugin.xml
-%%GNOMEDB%%lib/gnumeric/%%VERSION%%/plugins/gnome-db/ui.xml
 lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/glossary-po-header
 lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/gnome_glossary.py
 lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/gnome_glossary.pyc
@@ -286,6 +286,12 @@ lib/libspreadsheet-%%VERSION%%.so
 lib/libspreadsheet.la
 lib/libspreadsheet.so
 libdata/pkgconfig/libspreadsheet-%%SHORT_VER%%.pc
+man/man1/gnumeric.1.gz
+man/man1/ssconvert.1.gz
+man/man1/ssdiff.1.gz
+man/man1/ssgrep.1.gz
+man/man1/ssindex.1.gz
+share/appdata/gnumeric.appdata.xml
 share/applications/gnumeric.desktop
 share/gnumeric/%%VERSION%%/GNOME_Gnumeric-gtk.xml
 share/gnumeric/%%VERSION%%/Gnumeric-embed.xml
@@ -973,6 +979,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm share/gnumeric/%%VERSION%%/autoformat-templates
 @dirrm share/gnumeric/%%VERSION%%
 @dirrm share/gnumeric
+@dirrmtry share/appdata
 @dirrm lib/goffice/%%GOFFICE%%/plugins/gnumeric
 @dirrm lib/gnumeric/%%VERSION%%/plugins/xbase
 @dirrm lib/gnumeric/%%VERSION%%/plugins/uihello
@@ -994,9 +1001,8 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/lotus
 @dirrm lib/gnumeric/%%VERSION%%/plugins/html
 @dirrm lib/gnumeric/%%VERSION%%/plugins/gnome-glossary
-%%GNOMEDB%%@dirrm lib/gnumeric/%%VERSION%%/plugins/gnome-db
 @dirrm lib/gnumeric/%%VERSION%%/plugins/glpk
-%%GNOMEDB%%@dirrm lib/gnumeric/%%VERSION%%/plugins/gdaif
+%%GDA%%@dirrm lib/gnumeric/%%VERSION%%/plugins/gdaif
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-tsa
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-string
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-stat
@@ -1031,6 +1037,8 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES

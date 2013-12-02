@@ -1,8 +1,0 @@
-If you have Perl and Test::Harness installed you can run the test suite
-for libtap by running
-
-    make check
-
-or
-
-    prove -r

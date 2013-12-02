@@ -3,34 +3,68 @@ bin/rspamd
 bin/rspamc-%%RSPAMDVERSION%%
 bin/rspamc
 %%REDIRECTOR%%bin/rspamd-redirector
-etc/rspamd.xml.sample
-%%ETCDIR%%/2tld.inc
-%%ETCDIR%%/surbl-whitelist.inc
-%%ETCDIR%%/plugins/lua/forged_recipients.lua
-%%ETCDIR%%/plugins/lua/maillist.lua
-%%ETCDIR%%/plugins/lua/multimap.lua
-%%ETCDIR%%/plugins/lua/once_received.lua
-%%ETCDIR%%/plugins/lua/received_rbl.lua
-%%ETCDIR%%/plugins/lua/ratelimit.lua
-%%ETCDIR%%/plugins/lua/whitelist.lua
-%%ETCDIR%%/plugins/lua/phishing.lua
-%%ETCDIR%%/plugins/lua/trie.lua
-%%ETCDIR%%/plugins/lua/emails.lua
-%%ETCDIR%%/plugins/lua/ip_score.lua
-%%ETCDIR%%/lua/regexp/drugs.lua
-%%ETCDIR%%/lua/regexp/fraud.lua
-%%ETCDIR%%/lua/regexp/headers.lua
-%%ETCDIR%%/lua/regexp/lotto.lua
-%%ETCDIR%%/lua/rspamd.lua
-%%ETCDIR%%/lua/rspamd.classifiers.lua
-lib/rspamd/librspamdclient.so.%%RSPAMDVERSION%%
-lib/rspamd/librspamdclient.so
-lib/rspamd/librspamdclient_static.a
+lib/librspamdclient.so.%%RSPAMDVERSION%%
+lib/librspamdclient.so
+lib/librspamdclient_static.a
 include/rspamd/librspamdclient.h
-@dirrmtry %%ETCDIR%%/plugins/lua
-@dirrmtry %%ETCDIR%%/plugins/
-@dirrmtry %%ETCDIR%%/lua/regexp
-@dirrmtry %%ETCDIR%%/lua/
-@dirrmtry %%ETCDIR%%
-@dirrmtry lib/rspamd
+
+etc/rspamd/lua/regexp/drugs.lua
+etc/rspamd/lua/regexp/fraud.lua
+etc/rspamd/lua/regexp/headers.lua
+etc/rspamd/lua/regexp/lotto.lua
+etc/rspamd/lua/rspamd.classifiers.lua
+etc/rspamd/lua/rspamd.lua
+%%DATADIR%%/lua/emails.lua
+%%DATADIR%%/lua/forged_recipients.lua
+%%DATADIR%%/lua/ip_score.lua
+%%DATADIR%%/lua/maillist.lua
+%%DATADIR%%/lua/multimap.lua
+%%DATADIR%%/lua/once_received.lua
+%%DATADIR%%/lua/phishing.lua
+%%DATADIR%%/lua/ratelimit.lua
+%%DATADIR%%/lua/rbl.lua
+%%DATADIR%%/lua/trie.lua
+%%DATADIR%%/lua/whitelist.lua
+
+@unexec if cmp -s %D/etc/rspamd/rspamd.conf %D/etc/rspamd/rspamd.conf.sample ; then rm -f %D/etc/rspamd/rspamd.conf ; fi
+etc/rspamd/rspamd.conf.sample
+@exec if [ ! -f %D/etc/rspamd/rspamd.conf ]; then cp -p %D/%F %B/rspamd.conf; fi
+@unexec if cmp -s %D/etc/rspamd/2tld.inc %D/etc/rspamd/2tld.inc.sample ; then rm -f %D/etc/rspamd/2tld.inc ; fi
+etc/rspamd/2tld.inc.sample
+@exec if [ ! -f %D/etc/rspamd/2tld.inc ]; then cp -p %D/%F %B/2tld.inc; fi
+@unexec if cmp -s %D/etc/rspamd/composites.conf %D/etc/rspamd/composites.conf.sample ; then rm -f %D/etc/rspamd/composites.conf ; fi
+etc/rspamd/composites.conf.sample
+@exec if [ ! -f %D/etc/rspamd/composites.conf ]; then cp -p %D/%F %B/composites.conf; fi
+@unexec if cmp -s %D/etc/rspamd/logging.conf %D/etc/rspamd/logging.conf.sample ; then rm -f %D/etc/rspamd/logging.conf ; fi
+etc/rspamd/logging.conf.sample
+@exec if [ ! -f %D/etc/rspamd/logging.conf ]; then cp -p %D/%F %B/logging.conf; fi
+@unexec if cmp -s %D/etc/rspamd/metrics.conf %D/etc/rspamd/metrics.conf.sample ; then rm -f %D/etc/rspamd/metrics.conf ; fi
+etc/rspamd/metrics.conf.sample
+@exec if [ ! -f %D/etc/rspamd/metrics.conf ]; then cp -p %D/%F %B/metrics.conf; fi
+@unexec if cmp -s %D/etc/rspamd/modules.conf %D/etc/rspamd/modules.conf.sample ; then rm -f %D/etc/rspamd/modules.conf ; fi
+etc/rspamd/modules.conf.sample
+@exec if [ ! -f %D/etc/rspamd/modules.conf ]; then cp -p %D/%F %B/modules.conf; fi
+@unexec if cmp -s %D/etc/rspamd/options.conf %D/etc/rspamd/options.conf.sample ; then rm -f %D/etc/rspamd/options.conf ; fi
+etc/rspamd/options.conf.sample
+@exec if [ ! -f %D/etc/rspamd/options.conf ]; then cp -p %D/%F %B/options.conf; fi
+@unexec if cmp -s %D/etc/rspamd/statistic.conf %D/etc/rspamd/statistic.conf.sample ; then rm -f %D/etc/rspamd/statistic.conf ; fi
+etc/rspamd/statistic.conf.sample
+@exec if [ ! -f %D/etc/rspamd/statistic.conf ]; then cp -p %D/%F %B/statistic.conf; fi
+@unexec if cmp -s %D/etc/rspamd/surbl-whitelist.inc %D/etc/rspamd/surbl-whitelist.inc.sample ; then rm -f %D/etc/rspamd/surbl-whitelist.inc ; fi
+etc/rspamd/surbl-whitelist.inc.sample
+@exec if [ ! -f %D/etc/rspamd/surbl-whitelist.inc ]; then cp -p %D/%F %B/surbl-whitelist.inc; fi
+@unexec if cmp -s %D/etc/rspamd/workers.conf %D/etc/rspamd/workers.conf.sample ; then rm -f %D/etc/rspamd/workers.conf ; fi
+etc/rspamd/workers.conf.sample
+@exec if [ ! -f %D/etc/rspamd/workers.conf ]; then cp -p %D/%F %B/workers.conf; fi
+
+man/man1/rspamc.1.gz
+man/man8/rspamd.8.gz
+
+
+@dirrmtry %%DATADIR%%/lua
+@dirrmtry %%DATADIR%%
+@dirrmtry etc/rspamd/lua/regexp
+@dirrmtry etc/rspamd/lua
+@dirrmtry etc/rspamd
 @dirrmtry include/rspamd
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

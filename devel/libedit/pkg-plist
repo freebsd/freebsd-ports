@@ -2,6 +2,25 @@ include/editline/history.h
 include/editline/readline.h
 include/histedit.h
 lib/libedit.a
-lib/libedit.so.6
 lib/libedit.so
+lib/libedit.so.6
+man/man3/editline.3.gz
+man/man3/el_deletestr.3.gz
+man/man3/el_end.3.gz
+man/man3/el_get.3.gz
+man/man3/el_getc.3.gz
+man/man3/el_gets.3.gz
+man/man3/el_init.3.gz
+man/man3/el_insertstr.3.gz
+man/man3/el_line.3.gz
+man/man3/el_parse.3.gz
+man/man3/el_push.3.gz
+man/man3/el_reset.3.gz
+man/man3/el_resize.3.gz
+man/man3/el_set.3.gz
+man/man3/el_source.3.gz
+man/man3/history.3.gz
+man/man3/history_end.3.gz
+man/man3/history_init.3.gz
+man/man5/editrc.5.gz
 @dirrm include/editline

@@ -3,6 +3,7 @@
 
 PORTNAME=	libxcb
 PORTVERSION=	1.9.1
+PORTREVISION=	1
 CATEGORIES=	x11 python
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
@@ -30,6 +31,7 @@ GNU_CONFIGURE=	yes
 .for f in XPROTO_CFLAGS XPROTO_LIBS XDMCP_CFLAGS XDMCP_LIBS NEEDED_CFLAGS NEEDED_LIBS
 CONFIGURE_ARGS+=${f}="${${f}}"
 .endfor
+CONFIGURE_ARGS+=--enable-xkb
 CONFIGURE_ENV=	LIBS="`pkg-config --libs pthread-stubs`"
 
 NEEDED_CFLAGS=	-I${LOCALBASE}/include
@@ -41,14 +43,12 @@ XDMCP_LIBS=	-L${LOCALBASE}/lib -lXdmcp
 XPROTO_CFLAGS=	-I${LOCALBASE}/include
 XPROTO_LIBS=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
-.include "${.CURDIR}/manpages"
-
 .include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MAKE} -C ${WRKSRC}/doc ${INSTALL_TARGET}
+	${SETENV} DESTDIR=${STAGEDIR} ${MAKE} -C ${WRKSRC}/doc ${INSTALL_TARGET}
 .endif
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libxcb*.so.*
 
 .include <bsd.port.mk>

@@ -630,6 +630,9 @@ share/applications/pto_gen.desktop
 %%DATADIR%%/xrc/pref_dialog.xrc
 %%DATADIR%%/xrc/preview_frame.xrc
 %%DATADIR%%/xrc/reset_dialog.xrc
+%%PYTHON_SITELIBDIR%%/_hsi.so
+%%PYTHON_SITELIBDIR%%/hpi.py
+%%PYTHON_SITELIBDIR%%/hsi.py
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-ptoptimizer-script.png
 share/locale/bg/LC_MESSAGES/hugin.mo
 share/locale/ca_ES/LC_MESSAGES/hugin.mo

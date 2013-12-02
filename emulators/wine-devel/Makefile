@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 
-CONFLICTS_INSTALL=	i386-wine-* wine-1.4* wine-1.6*
+CONFLICTS_INSTALL=	i386-wine-[0-9]* i386-wine-devel-[0-9]* wine-[0-9]*
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

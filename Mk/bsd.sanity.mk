@@ -51,6 +51,14 @@ DEV_ERROR+=	"USE_KDELIBS_VER is unsupported"
 DEV_ERROR+=	"USE_QT_VER is unsupported"
 .endif
 
+.if !empty(LIB_DEPENDS:M*/../*)
+DEV_ERROR+=	"LIB_DEPENDS contains unsupported relative path to dependency"
+.endif
+
+.if !empty(RUN_DEPENDS:M*/../*)
+DEV_ERROR+=	"RUN_DEPENDS contains unsupported relative path to dependency"
+.endif
+
 .if defined(USE_DISPLAY)
 DEV_WARNING+=	"USE_DISPLAY is deprecated, please use USES=display"
 .endif

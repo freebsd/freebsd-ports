@@ -9,11 +9,12 @@ MASTER_SITES=	LOCAL
 MASTER_SITE_SUBDIR=	hrs
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-beta/}
 
-MAINTAINER=	turutani@scphys.kyoto-u.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11-based MP3 player with nice graphical interface
 
+LICENSE=	GPLv2
+
 USE_GNOME=	gtk12 esound
-NO_STAGE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static

@@ -3,3 +3,4 @@ lib/libtap.a
 lib/libtap.la
 lib/libtap.so
 lib/libtap.so.0
+man/man3/tap.3.gz

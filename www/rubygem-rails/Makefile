@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	MVC web application framework
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-activerecord>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-activerecord \
 		rubygem-actionpack>=${PORTVERSION}:${PORTSDIR}/www/rubygem-actionpack \
@@ -34,33 +36,23 @@ RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-act
 # XXX: rails3 gem no longer has a lib/ dir
 # XXX: which breaks devel/ruby-gems specification.
 # XXX: and thus rdoc
-NOPORTDOCS=yes
+NOPORTDOCS=	yes
 
 USE_RUBY=	yes
 USE_RUBY_RDOC=	yes
 USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=  yes
+RUBYGEM_AUTOPLIST=	yes
 
-OPTIONS_DEFINE=FCGI PASSENGER MEMCACHE_CLIENT
+OPTIONS_DEFINE=	FCGI PASSENGER MEMCACHE_CLIENT
 FCGI_DESC=	FastCGI backend
 MONGRELCLUSTER_DESC=	Mongrel Cluster backend
 PASSENGER_DESC=	Passenger backend
 MEMCACHE_CLIENT_DESC=	MemCache-Client support
 OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MFCGI}
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/fcgi.so:${PORTSDIR}/www/ruby-fcgi
-.endif
-
-.if ${PORT_OPTIONS:MMEMCACHE_CLIENT}
-RUN_DEPENDS+=	rubygem-memcache-client>=1.2.0:${PORTSDIR}/databases/rubygem-memcache-client
-.endif
-
-.if ${PORT_OPTIONS:MPASSENGER}
-RUN_DEPENDS+=	rubygem-passenger>=2.2.15:${PORTSDIR}/www/rubygem-passenger
-.endif
+FCGI_RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/fcgi.so:${PORTSDIR}/www/ruby-fcgi
+MEMCACHE_CLIENT_RUN_DEPENDS=	rubygem-memcache-client>=1.2.0:${PORTSDIR}/databases/rubygem-memcache-client
+PASSENGER_RUN_DEPENDS=	rubygem-passenger>=2.2.15:${PORTSDIR}/www/rubygem-passenger
 
 .include <bsd.port.pre.mk>
 
