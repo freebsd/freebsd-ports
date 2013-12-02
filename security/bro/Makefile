@@ -55,8 +55,10 @@ OPTIONS_EXCLUDE=NLS DOCS
 .include <bsd.port.pre.mk>
 
 # Bro 2.2 requires libmagic >= 5.04
+# Cannot use LIB_DEPENDS since misc/compat5x also installs a libmagic.so.1
 .if ${OSVERSION} < 901000
-LIB_DEPENDS+=	libmagic.so.1:${PORTSDIR}/sysutils/file
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libmagic.so:${PORTSDIR}/sysutils/file
+RUN_DEPENDS+=	${LOCALBASE}/lib/libmagic.so:${PORTSDIR}/sysutils/file
 .endif
 
 .include <bsd.port.options.mk>
