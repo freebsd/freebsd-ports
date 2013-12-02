@@ -2,3 +2,4 @@ include/getline.h
 lib/libgetline.a
 lib/libgetline.so
 lib/libgetline.so.1
+man/man3/getline.3.gz
