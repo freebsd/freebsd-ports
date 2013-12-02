@@ -2,6 +2,7 @@
 
 PORTNAME=	openafs
 DISTVERSION=	${AFS_DISTVERSION}.${DBVERSION:S/-//g}
+PORTREVISION=	1
 CATEGORIES=	net kld
 MASTER_SITES=	http://dl.central.org/dl/openafs/${AFS_DISTVERSION}/:openafs \
 		http://dl.openafs.org/dl/openafs/${AFS_DISTVERSION}/:openafs \
@@ -41,6 +42,14 @@ PLIST_SUB+=	AFSMNTDIR=${AFSMNTDIR:C,^/,,} \
 		AFSSTATEDIR=${AFSSTATEDIR:C,^/,,} \
 		AFSCACHEDIR=${AFSCACHEDIR:C,^/,,}
 
+# clang (the base system compiler in __FreeBSD_version 1000024 and later)
+# is pickier about stack alignment than gcc; OpenAFS uses its own
+# lightweight process "threading" library which will produce a misaligned
+# stack under clang; we need to pass -mstackrealign to avoid SIGBUS at
+# runtime.  gcc does not understand this flag, so we use compiler.mk to
+# figure out what type of compiler is in use.
+USES+= compiler
+
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
@@ -60,9 +69,6 @@ IGNORE=	requires kernel configuration file ${_KERNCONF} to build
 
 .if ${OSVERSION} < 800000
 IGNORE=	supports FreeBSD 8.0 and later
-.endif
-.if ${OSVERSION} > 1000000
-IGNORE=	Does not build
 .endif
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
@@ -94,6 +100,11 @@ CONFLICTS=	coda-server-6.[0-9]* heimdal-[0-9]*
 post-extract:
 	${MKDIR} ${WRKDIR}/conf
 	cd ${KERNCONFDIR} && /usr/sbin/config -d ${WRKDIR}/conf ${_KERNCONF} >/dev/null
+
+post-patch:
+.if ${COMPILER_TYPE} == clang
+	${REINPLACE_CMD} -e 's/XCFLAGS="-O2 -pipe -fPIC"/XCFLAGS="-O2 -pipe -fPIC -mstackrealign"/' ${WRKSRC}/configure
+.endif
 
 create-sample-files:
 	@${ECHO_CMD} openafs.org > ${WRKDIR}/ThisCell
