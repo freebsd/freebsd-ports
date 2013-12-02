@@ -34,6 +34,6 @@ No attempts have been made to move old versions over. You must recompile.
 If you are running with spamd, you must add the following to rc.conf:
 spamd_enable="YES"
 
-Security Note:  If you did NOT deselected AS_ROOT, spamd will be running
+Security Note:  If you did NOT deselect AS_ROOT, spamd will be running
 as root. To change this, also add this to rc.conf:
 spamd_flags="-u spamd -H /var/spool/spamd"
