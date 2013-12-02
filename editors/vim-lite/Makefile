@@ -5,8 +5,8 @@ LITE=		yes
 
 MASTERDIR=	${.CURDIR}/../vim
 
-MAINTAINER?=	ports@FreeBSD.org
-COMMENT?=	Vi "workalike", with many additional features (Lite package)
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Vi "workalike", with many additional features (Lite package)
 
 PORTREVISION=	2
 
