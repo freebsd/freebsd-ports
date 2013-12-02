@@ -6,7 +6,7 @@ PORTVERSION=	20120409
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/jlaffaye
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Go support for Google's protocol buffers
 
 LICENSE=	BSD
