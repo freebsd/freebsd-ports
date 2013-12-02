@@ -1,0 +1,4 @@
+An open source message queue optimised for performance.
+This version is older than upstream and specific to ntopng.
+
+WWW: http://www.zeromq.org/
