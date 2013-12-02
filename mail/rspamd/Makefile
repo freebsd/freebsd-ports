@@ -1,18 +1,23 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	0.5.6
+PORTVERSION=	0.6.1
 CATEGORIES=	mail
-MASTER_SITES=	http://cdn.bitbucket.org/vstakhov/rspamd/downloads/
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Fast spam filtering system
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
-		gmime-2:${PORTSDIR}/mail/gmime2 \
-		event-1:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libgmime-2.4.so:${PORTSDIR}/mail/gmime24 \
+		libevent.so:${PORTSDIR}/devel/libevent
+
+USE_GITHUB=		yes
+GH_ACCOUNT=		vstakhov
+GH_PROJECT=		${PORTNAME}
+GH_TAG=		${PORTVERSION}
+GH_COMMIT=		b5fc214
 
 OPTIONS_DEFINE=	GPERF JUDY REDIRECTOR
 GPERF_DESC=		google perf-tools profiling
@@ -23,21 +28,23 @@ USE_RC_SUBR=	rspamd
 
 PLIST_SUB+=	ETCDIR=etc/rspamd \
 		RSPAMDVERSION=${PORTVERSION}
-CMAKE_ARGS+=	-DETC_PREFIX=${PREFIX}/etc -DPREFIX=${PREFIX} \
-		-DBUILD_PORT=yes -DNO_SHARED=ON
+CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
+				-DLOGDIR=/var/log/rspamd \
+				-DDBDIR=/var/lib/rspamd \
+				-DRUNDIR=/var/run/rspamd \
+				-DMANDIR=${MANPREFIX}/man \
+				-DCMAKE_INSTALL_PREFIX=${PREFIX} \
+				-DBUILD_PORT=yes \
+				-DLIBDIR=${PREFIX}/lib \
+				-DNO_SHARED=ON
 
 USES=		cmake gettext iconv pkgconfig
 USE_LDCONFIG=	yes
 
 USE_GNOME=	glib20
 USE_LUA=	5.1-
-USE_SQLITE=	yes
 USE_OPENSSL=	yes
 
-MAN8=	rspamd.8
-MAN1=	rspamc.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGPERF}
