@@ -3,6 +3,7 @@
 
 PORTNAME=	bs
 PORTVERSION=	2.9
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/bs/
 
@@ -15,19 +16,18 @@ USES=		gmake
 MAKE_ARGS=	CC="${CC}"
 ALL_TARGET=	# empty
 
-PLIST_FILES=	bin/bs \
-		man/man6/bs.6.gz \
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man6/${PORTNAME}.6.gz \
+		share/applications/${PORTNAME}.desktop \
 		share/pixmaps/battleship.png
 
 PORTDOCS=	NEWS README
 
 OPTIONS_DEFINE=	DOCS
 
-DESKTOP_ENTRIES="Battleships" "${COMMENT}" "battleship" \
-		"xterm -e ${PORTNAME}" "Game;ArcadeGame;" false
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/battleship.png ${STAGEDIR}${PREFIX}/share/pixmaps/
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/
 
