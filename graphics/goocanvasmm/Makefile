@@ -4,23 +4,25 @@
 
 PORTNAME=	goocanvasmm
 PORTVERSION=	0.15.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	C++ bindings for the goocanvas widget for GTK
 
-LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		goocanvas.3:${PORTSDIR}/graphics/goocanvas
+LIB_DEPENDS=	libgoocanvas.so:${PORTSDIR}/graphics/goocanvas
 
-USES=		pkgconfig
-USE_GNOME=	gnomehack ltverhack
-USE_AUTOTOOLS=	libtool
+PORTSCOUT=	ignore:1
+
+USES=		gmake pathfix pkgconfig
+USE_GNOME=	gtkmm24 ltverhack
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-documentation
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 
-NO_STAGE=	yes
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgoocanvasmm-1.0.so.5
+
 .include <bsd.port.mk>
