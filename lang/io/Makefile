@@ -17,7 +17,6 @@ GH_COMMIT=	23afbcc
 
 USE_LDCONFIG=	yes
 USES=		cmake:outsource
-CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=release
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
