@@ -14,9 +14,8 @@ COMMENT=	Hierarchical text notes manager
 LICENSE=	BSD
 
 USE_GNOME=	gtk20 gtksourceview2 gnomevfs2
-USES=		gmake desktop-file-utils gettext pkgconfig shared-mime-info
+USES=		dos2unix gmake desktop-file-utils gettext pkgconfig shared-mime-info
 
-USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(c|h|cpp)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

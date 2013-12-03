@@ -28,12 +28,11 @@ USE_WX=		2.9+
 WX_UNICODE=	yes
 USE_GL=	gl glew glu
 
-USE_DOS2UNIX=	yes
-DOS2UNIX_REGEX=	.*\.(h|c|cpp)
-
 USE_GCC=	yes
 
-USES=		cmake pkgconfig iconv
+USES=		dos2unix cmake pkgconfig iconv
+DOS2UNIX_REGEX=	.*\.(h|c|cpp)
+
 CMAKE_BUILD_TYPE=	Release
 # Disable ALSA (emulated) and ao (buggy)
 CMAKE_ARGS+=	-DOPENMP:BOOL=OFF \

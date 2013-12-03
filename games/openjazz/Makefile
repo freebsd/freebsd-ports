@@ -18,10 +18,8 @@ USE_ZIP=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
-USE_DOS2UNIX=	yes
+USES=	dos2unix gmake
 DOS2UNIX_REGEX=	.*\.(h|cpp)
-
-USES=	gmake
 ALL_TARGET=	OpenJazz
 USE_XORG=	x11 xext xrandr xrender xau xdmcp
 USE_SDL=	sdl

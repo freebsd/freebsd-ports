@@ -29,14 +29,13 @@ CONFIGURE_ARGS=	--enable-opengl --enable-libcdio
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-USE_DOS2UNIX=	yes
-DOS2UNIX_REGEX=	.*\.(c|h|cpp|hpp|am)
-
 USE_GNOME=	gtk30 glib20
-USES=		iconv gmake pkgconfig desktop-file-utils
 USE_XORG=	x11 xv xext xxf86vm xtst
 USE_SDL=	sdl
 USE_GL=	gl
+
+USES=		dos2unix iconv gmake pkgconfig desktop-file-utils
+DOS2UNIX_REGEX=	.*\.(c|h|cpp|hpp|am)
 
 PORTDOCS=	ChangeLog README
 
