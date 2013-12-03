@@ -524,8 +524,9 @@
  ----------------------------------------------------------------------------*/
  
 -void 
+-  main( unsigned int argc, char *argv[] )
 +int 
-   main( unsigned int argc, char *argv[] )
++  main( int argc, char *argv[] )
  {
 --- xdalarm/xtmAlarmProc.c	1997-05-04 18:02:19.000000000 -0400
 +++ xdalarm/xtmAlarmProc.c	2013-03-27 21:54:22.000000000 -0400
@@ -533,8 +534,9 @@
  ----------------------------------------------------------------------------*/
  
 -void 
+-  main( unsigned int argc, char *argv[] )
 +int 
-   main( unsigned int argc, char *argv[] )
++  main( int argc, char *argv[] )
  {
 --- xdcustom/xtmCustom.c	1997-05-04 18:02:16.000000000 -0400
 +++ xdcustom/xtmCustom.c	2013-03-27 21:55:45.000000000 -0400
@@ -542,8 +544,9 @@
  ----------------------------------------------------------------------------*/
  
 -void 
+-  main( unsigned int argc, char *argv[] )
 +int 
-   main( unsigned int argc, char *argv[] )
++  main( int argc, char *argv[] )
  {
 @@ -616,5 +616,5 @@
  
@@ -586,8 +589,9 @@
  ----------------------------------------------------------------------------*/
  
 -void 
+-  main( unsigned int argc, char **argv )
 +int 
-   main( unsigned int argc, char **argv )
++  main( int argc, char **argv )
  {
 --- xdnotify/xtmNotify.c	1997-05-04 18:02:15.000000000 -0400
 +++ xdnotify/xtmNotify.c	2013-03-27 21:57:28.000000000 -0400
@@ -595,8 +599,9 @@
  ----------------------------------------------------------------------------*/
  
 -void 
+-  main( unsigned int argc, char *argv[] )
 +int 
-   main( unsigned int argc, char *argv[] )
++  main( int argc, char *argv[] )
  {
 --- xdprformat/xtmPrFormat.c	1997-05-04 18:02:15.000000000 -0400
 +++ xdprformat/xtmPrFormat.c	2013-03-27 21:58:19.000000000 -0400
@@ -612,8 +617,9 @@
  ----------------------------------------------------------------------------*/
  
 -void 
+-  main( unsigned int argc, char *argv[] )
 +int 
-   main( unsigned int argc, char *argv[] )
++  main( int argc, char *argv[] )
  {
 --- xdrestore/xtmRestore.c	1997-05-04 18:02:14.000000000 -0400
 +++ xdrestore/xtmRestore.c	2013-03-27 21:59:54.000000000 -0400
