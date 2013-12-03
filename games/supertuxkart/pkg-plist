@@ -1,4 +1,4 @@
 bin/supertuxkart
 share/applications/supertuxkart.desktop
-share/pixmaps/supertuxkart_32.xpm
-share/pixmaps/supertuxkart_64.xpm
+share/pixmaps/supertuxkart_128.png
+share/pixmaps/supertuxkart_32.png
