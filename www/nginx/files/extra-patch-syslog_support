@@ -347,14 +347,16 @@ diff --git src/core/ngx_log.h src/core/ngx_log.h
 index 3233647..5e7fdbf 100644
 --- src/core/ngx_log.h
 +++ src/core/ngx_log.h
-@@ -12,6 +12,13 @@
+@@ -12,6 +12,15 @@
  #include <ngx_config.h>
  #include <ngx_core.h>
  
 +#if (NGX_ENABLE_SYSLOG)
 +#include <syslog.h>
 +
++#ifndef SYSLOG_FACILITY
 +#define SYSLOG_FACILITY LOG_LOCAL5
++#endif
 +#define ERR_SYSLOG_PRIORITY LOG_ERR
 +#endif
 +
@@ -721,7 +723,7 @@ index 54e1c26..2b05157 100644
 +    SYSLOG_FACILITY="LOG_DAEMON"
 +fi
 +if test "${USE_SYSLOG}" = "YES"; then
-+    CFLAGS="$CFLAGS -DUSE_SYSLOG -DSYSLOG_FACILITY=${SYSLOG_FACILITY}"
++    CFLAGS="$CFLAGS -DNGX_ENABLE_SYSLOG -DSYSLOG_FACILITY=${SYSLOG_FACILITY}"
 +fi
  
  cat << END                                                     > $NGX_MAKEFILE
