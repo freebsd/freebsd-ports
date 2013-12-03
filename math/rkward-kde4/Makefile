@@ -32,10 +32,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/rkward
 MAN1=		rkward.1
 
-.if defined(WITH_DEBUG)
-CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=Debug
-.endif
-
 OPTIONS_DEFINE=	RECDEP
 RECDEP_DESC=	Recommended runtime dependencies
 OPTIONS_DEFAULT=RECDEP
