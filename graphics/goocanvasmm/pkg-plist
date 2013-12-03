@@ -61,7 +61,6 @@ include/goocanvasmm-1.0/goocanvasmm/types.h
 include/goocanvasmm-1.0/goocanvasmm/widget.h
 include/goocanvasmm-1.0/goocanvasmm/wrap_init.h
 lib/goocanvasmm-1.0/include/goocanvasmmconfig.h
-lib/libgoocanvasmm-1.0.a
 lib/libgoocanvasmm-1.0.la
 lib/libgoocanvasmm-1.0.so
 lib/libgoocanvasmm-1.0.so.5
