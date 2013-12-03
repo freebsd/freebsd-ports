@@ -1,54 +1,54 @@
 bin/qyzis
-%%PL_NYZIS%%bin/nyzis
-%%PL_KYZIS%%bin/kyzis
-%%PL_KYZIS%%lib/kde4/yzispart.so
-%%PL_KYZIS%%@dirrmtry lib/kde4
+%%NYZIS%%bin/nyzis
+%%KYZIS%%bin/kyzis
+%%KYZIS%%lib/kde4/yzispart.so
+%%KYZIS%%@dirrmtry lib/kde4
 lib/libyzis.so.0.0.0
 lib/libyzis.so.0
 lib/libyzis.so
 share/applnk/Editors/qyzis.desktop
 @dirrmtry share/applnk/Editors
 @dirrmtry share/applnk
-%%PL_KYZIS%%share/apps/yzispart/yzispart.rc
-%%PL_KYZIS%%@dirrm share/apps/yzispart
-%%PL_KYZIS%%@dirrmtry share/apps
-%%PL_KYZIS%%share/kde4/services/yzispart.desktop
-%%PL_KYZIS%%@dirrmtry share/kde4/services
-%%PL_KYZIS%%@dirrmtry share/kde4
-%%PL_QYZIS%%share/icons/hicolor/128x128/apps/qyzis.png
-%%PL_QYZIS%%share/icons/hicolor/32x32/apps/qyzis.png
-%%PL_QYZIS%%share/icons/hicolor/64x64/apps/qyzis.png
-%%PL_QYZIS%%share/icons/hicolor/16x16/apps/qyzis.png
-%%PL_QYZIS%%@dirrmtry share/icons/hicolor/128x128/apps
-%%PL_QYZIS%%@dirrmtry share/icons/hicolor/128x128
-%%PL_QYZIS%%@dirrmtry share/icons/hicolor/32x32/apps
-%%PL_QYZIS%%@dirrmtry share/icons/hicolor/32x32
-%%PL_QYZIS%%@dirrmtry share/icons/hicolor/64x64/apps
-%%PL_QYZIS%%@dirrmtry share/icons/hicolor/64x64
-%%PL_QYZIS%%@dirrmtry share/icons/hicolor/16x16/apps
-%%PL_QYZIS%%@dirrmtry share/icons/hicolor/16x16
-%%PL_KYZIS%%share/icons/crystalsvg/128x128/apps/l10n/hicolor/qyzis.png
-%%PL_KYZIS%%share/icons/crystalsvg/32x32/apps/l10n/hicolor/qyzis.png
-%%PL_KYZIS%%share/icons/crystalsvg/64x64/apps/l10n/hicolor/qyzis.png
-%%PL_KYZIS%%share/icons/crystalsvg/16x16/apps/l10n/hicolor/qyzis.png
-%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/128x128/apps/l10n/hicolor
-%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/128x128/apps/l10n
-%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/128x128/apps
-%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/128x128
-%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/32x32/apps/l10n/hicolor
-%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/32x32/apps/l10n
-%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/32x32/apps
-%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/32x32
-%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/64x64/apps/l10n/hicolor
-%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/64x64/apps/l10n
-%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/64x64/apps
-%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/64x64
-%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/16x16/apps/l10n/hicolor
-%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/16x16/apps/l10n
-%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/16x16/apps
-%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg/16x16
-%%PL_KYZIS%%@dirrmtry share/icons/crystalsvg
-@dirrmtry share/icons/hicolor
+%%KYZIS%%share/apps/yzispart/yzispart.rc
+%%KYZIS%%@dirrm share/apps/yzispart
+%%KYZIS%%@dirrmtry share/apps
+%%KYZIS%%share/kde4/services/yzispart.desktop
+%%KYZIS%%@dirrmtry share/kde4/services
+%%KYZIS%%@dirrmtry share/kde4
+%%QYZIS%%share/icons/hicolor/128x128/apps/qyzis.png
+%%QYZIS%%share/icons/hicolor/32x32/apps/qyzis.png
+%%QYZIS%%share/icons/hicolor/64x64/apps/qyzis.png
+%%QYZIS%%share/icons/hicolor/16x16/apps/qyzis.png
+%%QYZIS%%@dirrmtry share/icons/hicolor/128x128/apps
+%%QYZIS%%@dirrmtry share/icons/hicolor/128x128
+%%QYZIS%%@dirrmtry share/icons/hicolor/32x32/apps
+%%QYZIS%%@dirrmtry share/icons/hicolor/32x32
+%%QYZIS%%@dirrmtry share/icons/hicolor/64x64/apps
+%%QYZIS%%@dirrmtry share/icons/hicolor/64x64
+%%QYZIS%%@dirrmtry share/icons/hicolor/16x16/apps
+%%QYZIS%%@dirrmtry share/icons/hicolor/16x16
+%%QYZIS%%@dirrmtry share/icons/hicolor
+%%KYZIS%%share/icons/crystalsvg/128x128/apps/l10n/hicolor/qyzis.png
+%%KYZIS%%share/icons/crystalsvg/32x32/apps/l10n/hicolor/qyzis.png
+%%KYZIS%%share/icons/crystalsvg/64x64/apps/l10n/hicolor/qyzis.png
+%%KYZIS%%share/icons/crystalsvg/16x16/apps/l10n/hicolor/qyzis.png
+%%KYZIS%%@dirrmtry share/icons/crystalsvg/128x128/apps/l10n/hicolor
+%%KYZIS%%@dirrmtry share/icons/crystalsvg/128x128/apps/l10n
+%%KYZIS%%@dirrmtry share/icons/crystalsvg/128x128/apps
+%%KYZIS%%@dirrmtry share/icons/crystalsvg/128x128
+%%KYZIS%%@dirrmtry share/icons/crystalsvg/32x32/apps/l10n/hicolor
+%%KYZIS%%@dirrmtry share/icons/crystalsvg/32x32/apps/l10n
+%%KYZIS%%@dirrmtry share/icons/crystalsvg/32x32/apps
+%%KYZIS%%@dirrmtry share/icons/crystalsvg/32x32
+%%KYZIS%%@dirrmtry share/icons/crystalsvg/64x64/apps/l10n/hicolor
+%%KYZIS%%@dirrmtry share/icons/crystalsvg/64x64/apps/l10n
+%%KYZIS%%@dirrmtry share/icons/crystalsvg/64x64/apps
+%%KYZIS%%@dirrmtry share/icons/crystalsvg/64x64
+%%KYZIS%%@dirrmtry share/icons/crystalsvg/16x16/apps/l10n/hicolor
+%%KYZIS%%@dirrmtry share/icons/crystalsvg/16x16/apps/l10n
+%%KYZIS%%@dirrmtry share/icons/crystalsvg/16x16/apps
+%%KYZIS%%@dirrmtry share/icons/crystalsvg/16x16
+%%KYZIS%%@dirrmtry share/icons/crystalsvg
 @dirrmtry share/icons
 share/yzis/syntax/language.dtd
 share/yzis/syntax/syntax.template
