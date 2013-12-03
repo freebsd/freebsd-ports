@@ -145,7 +145,7 @@ include/fltk-devel/FL/names.h
 include/fltk-devel/FL/win32.H
 include/fltk-devel/FL/x.H
 lib/FLTK-1.3/FLTKConfig.cmake
-lib/FLTK-1.3/FLTKLibraries-release.cmake
+lib/FLTK-1.3/FLTKLibraries-%%CMAKE_BUILD_TYPE%%.cmake
 lib/FLTK-1.3/FLTKLibraries.cmake
 lib/FLTK-1.3/UseFLTK.cmake
 lib/libfltk-devel.so
