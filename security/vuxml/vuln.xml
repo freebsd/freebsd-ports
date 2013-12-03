@@ -51,6 +51,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d2073237-5b52-11e3-80f7-c86000cbc6ec">
+    <topic>OpenTTD -- Denial of service using forcefully crashed aircrafts</topic>
+    <affects>
+      <package>
+	<name>openttd</name>
+	<range><ge>0.3.6</ge><lt>1.3.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenTTD Team reports:</p>
+	<blockquote cite="https://security.openttd.org/en/CVE-2013-6411">
+	  <p>The problem is caused by incorrectly handling the fact that
+	    the aircraft circling the corner airport will be outside of the
+	    bounds of the map.  In the 'out of fuel' crash code the height
+	    of the tile under the aircraft is determined.  In this case
+	    that means a tile outside of the allocated map array, which
+	    could occasionally trigger invalid reads.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-6411</cvename>
+      <url>https://security.openttd.org/en/CVE-2013-6411</url>
+      <url>http://bugs.openttd.org/task/5820</url>
+      <url>http://vcs.openttd.org/svn/changeset/26134</url>
+    </references>
+    <dates>
+      <discovery>2013-11-28</discovery>
+      <entry>2013-11-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="620cf713-5a99-11e3-878d-20cf30e32f6d">
     <topic>monitorix -- serious bug in the built-in HTTP server</topic>
     <affects>
@@ -12132,7 +12165,7 @@ executed in your Internet Explorer while displaying the email.</p>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>OpenTTD reports:</p>
+	<p>The OpenTTD Team reports:</p>
 	<blockquote cite="http://security.openttd.org/en/CVE-2012-3436">
 	  <p>Denial of service (server) using ships on half tiles and
 	    landscaping.</p>
@@ -28394,7 +28427,7 @@ executed in your Internet Explorer while displaying the email.</p>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>OpenTTD project reports:</p>
+	<p>The OpenTTD Team reports:</p>
 	<blockquote cite="http://security.openttd.org/en/CVE-2010-2534">
 	  <p>When multiple commands are queued (at the server) for execution
 	    in the next game tick and an client joins the server can get into
