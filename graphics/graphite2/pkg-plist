@@ -1,4 +1,4 @@
-%%DATADIR%%/graphite2-release.cmake
+%%DATADIR%%/graphite2-%%CMAKE_BUILD_TYPE%%.cmake
 %%DATADIR%%/graphite2.cmake
 bin/gr2fonttest
 include/graphite2/Log.h
