@@ -12,7 +12,7 @@ include/aces/aces_typesAndRationals.h
 include/aces/aces_writeattributes.h
 lib/cmake/AcesContainer/AcesContainerConfig.cmake
 lib/cmake/AcesContainer/AcesContainerConfigVersion.cmake
-lib/cmake/AcesContainer/AcesContainerTargets-release.cmake
+lib/cmake/AcesContainer/AcesContainerTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/AcesContainer/AcesContainerTargets.cmake
 lib/libAcesContainer.so
 libdata/pkgconfig/AcesContainer.pc
