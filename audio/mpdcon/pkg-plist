@@ -3,6 +3,9 @@ GNUstep/Local/Applications/MPDCon.app/Resources/COPYING
 GNUstep/Local/Applications/MPDCon.app/Resources/Collection.gorm/data.classes
 GNUstep/Local/Applications/MPDCon.app/Resources/Collection.gorm/data.info
 GNUstep/Local/Applications/MPDCon.app/Resources/Collection.gorm/objects.gorm
+GNUstep/Local/Applications/MPDCon.app/Resources/CollectionBrowser.gorm/data.classes
+GNUstep/Local/Applications/MPDCon.app/Resources/CollectionBrowser.gorm/data.info
+GNUstep/Local/Applications/MPDCon.app/Resources/CollectionBrowser.gorm/objects.gorm
 GNUstep/Local/Applications/MPDCon.app/Resources/Crossfade.tiff
 GNUstep/Local/Applications/MPDCon.app/Resources/CrossfadeView.gorm/data.classes
 GNUstep/Local/Applications/MPDCon.app/Resources/CrossfadeView.gorm/data.info
@@ -69,6 +72,7 @@ GNUstep/Local/Tools/MPDCon
 @dirrmtry GNUstep/Local/Applications/MPDCon.app/Resources/Player.gorm
 @dirrmtry GNUstep/Local/Applications/MPDCon.app/Resources/LyricsInspector.gorm
 @dirrmtry GNUstep/Local/Applications/MPDCon.app/Resources/CrossfadeView.gorm
+@dirrmtry GNUstep/Local/Applications/MPDCon.app/Resources/CollectionBrowser.gorm
 @dirrmtry GNUstep/Local/Applications/MPDCon.app/Resources/Collection.gorm
 @dirrmtry GNUstep/Local/Applications/MPDCon.app/Resources
 @dirrmtry GNUstep/Local/Applications/MPDCon.app
