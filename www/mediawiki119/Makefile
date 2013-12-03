@@ -5,6 +5,7 @@ PORTNAME=	mediawiki
 PORTVERSION=	1.19.8
 CATEGORIES=	www
 MASTER_SITES=	http://dumps.wikimedia.org/mediawiki/${PORTVERSION:R}/
+PKGNAMESUFFIX=	119
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	The wiki engine used by Wikipedia
@@ -14,7 +15,6 @@ LICENSE=	GPLv2
 CONFLICTS=	mediawiki-1.2[0-9].*
 
 FETCH_ARGS=	-pr
-NO_LATEST_LINK=	yes
 USE_PHP=	ctype iconv mbstring pcre session xml zlib readline dom
 IGNORE_WITH_PHP=4
 WANT_PHP_WEB=	yes
