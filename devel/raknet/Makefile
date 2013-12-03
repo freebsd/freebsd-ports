@@ -25,12 +25,12 @@ LICENSE_PERMS_SpecialAuth=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
-USE_LDCONFIG=	yes
-USE_DOS2UNIX=	yes
-DOS2UNIX_REGEX=	.*\.(cpp|h|txt)
 
+USE_LDCONFIG=	yes
 USE_GCC=	yes
-USES=		cmake gmake
+
+USES=		dos2unix cmake gmake
+DOS2UNIX_REGEX=	.*\.(cpp|h|txt)
 
 # XXX Do not provide Samples for the following reason :
 # - potential licensing problems
