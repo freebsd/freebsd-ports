@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-notification-daemon
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	deskutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -22,10 +22,9 @@ PORTSCOUT=	limitw:1,even
 
 USES=		gettext gmake pathfix pkgconfig
 USE_XZ=		yes
-USE_MATE=	autogen common:build intlhack libmatewnck
+USE_MATE=	libmatewnck
 USE_XORG=	x11
-USE_GNOME=	glib20 gnomehier gtk20 librsvg2
-USE_AUTOTOOLS=	aclocal:env autoconf:env automake:env libtool libtoolize:env
+USE_GNOME=	glib20 gnomehier gtk20 intlhack librsvg2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-dbus-services=${PREFIX}/share/dbus-1/services \
 		--with-gtk=2.0
@@ -35,5 +34,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PATHFIX_MAKEFILEIN=	Makefile.*
 
 GLIB_SCHEMAS=	org.mate.NotificationDaemon.gschema.xml
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mate-notification-daemon/engines/lib*.so
 
 .include <bsd.port.mk>

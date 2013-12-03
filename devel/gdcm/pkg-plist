@@ -396,7 +396,7 @@ lib/libsocketxx.so
 lib/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/GDCMConfig.cmake
 lib/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/GDCMConfigVersion.cmake
 lib/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/GDCMTargets.cmake
-lib/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/GDCMTargets-release.cmake
+lib/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/GDCMTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/UseGDCM.cmake
 lib/libgdcmCommon.so
 lib/libgdcmCommon.so.%%GDCM_MAJOR%%

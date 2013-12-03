@@ -2926,7 +2926,7 @@ lib/vtk-%%VER2%%/UseVTK.cmake
 lib/vtk-%%VER2%%/VTKBuildSettings.cmake
 lib/vtk-%%VER2%%/VTKConfig.cmake
 lib/vtk-%%VER2%%/VTKConfigVersion.cmake
-lib/vtk-%%VER2%%/VTKTargets-release.cmake
+lib/vtk-%%VER2%%/VTKTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/vtk-%%VER2%%/VTKTargets.cmake
 lib/vtk-%%VER2%%/doc/verdict/1.2.0/README
 lib/vtk-%%VER2%%/doc/verdict/1.2.0/Verdict.doc

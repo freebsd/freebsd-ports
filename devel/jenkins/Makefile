@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jenkins
-PORTVERSION=	1.541
+PORTVERSION=	1.542
 CATEGORIES=	devel java
 MASTER_SITES=	http://mirrors.jenkins-ci.org/war/${PORTVERSION}/
 DISTNAME=	jenkins
@@ -13,6 +13,8 @@ MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Open-source continuous integration server
 
 LICENSE=	MIT
+
+CONFLICTS=	jenkins-lts-[0-9]*
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

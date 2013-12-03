@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	guard-livereload
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 

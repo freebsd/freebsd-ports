@@ -4,6 +4,17 @@ lib/libredblack.a
 lib/libredblack.la
 lib/libredblack.so
 lib/libredblack.so.2
+man/man1/rbgen.1.gz
+man/man3/rbcloselist.3.gz
+man/man3/rbdelete.3.gz
+man/man3/rbdestroy.3.gz
+man/man3/rbfind.3.gz
+man/man3/rbinit.3.gz
+man/man3/rblookup.3.gz
+man/man3/rbopenlist.3.gz
+man/man3/rbreadlist.3.gz
+man/man3/rbsearch.3.gz
+man/man3/rbwalk.3.gz
 %%DATADIR%%/redblack.c
 %%DATADIR%%/redblack.h
 @dirrm %%DATADIR%%

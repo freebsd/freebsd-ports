@@ -3,6 +3,7 @@
 
 PORTNAME=	mercurial
 PORTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://mercurial.selenic.com/release/
 
@@ -13,6 +14,7 @@ LICENSE=	GPLv2
 
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
+USES=		shebangfix
 
 OPTIONS_DEFINE=	CA_BUNDLE DATA DOCS NLS
 OPTIONS_DEFAULT=DATA
@@ -55,6 +57,8 @@ CONTRIB_FILES=	bash_completion \
 		vim/patchreview.vim
 DOCS=		CONTRIBUTORS README
 
+SHEBANG_FILES=	contrib/tmplrewrite.py
+
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 NLS_USES=		gettext
 
@@ -71,6 +75,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-setup.py
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${STAGEDIR}${PREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/doc/*.5 ${STAGEDIR}${PREFIX}/man/man5/
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/*.so
 .if ${PORT_OPTIONS:MDATA}
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${MKDIR} ${STAGEDIR}${DATADIR}/contrib

@@ -1,4 +1,3 @@
-
 Automatic installation of database files
 ---------------------------------------------
 Since v0.4 phpipam can automatically install database files for you.
@@ -8,47 +7,10 @@ username and password).
 Finished! Launch browser, go to website and if something is missing / not 
 configured properly the error will appear.
 
-Manual installation of database files
-------------------------------------------
-Optional method to be used instead of automatic configuration.
-
-MySQL schema file is available under db folder.
-First you must create new database, and then import SCHEMA file into 
-database. Instructions below are for command-line import with local mysql 
-installation.
-------
-mysql -u root -p 
-create database phpipam;
-exit
-------
-
-Import database SCHEME.sql file:
-------
-mysql -u root -p phpipam < db/SCHEMA.sql
-------
-
-Create user for database interaction from website and grant permissions to 
-ipam tables. Please change the username and password (ipv6, ipv6admin) 
-according to your needs - you must also replace default ones in config file.
-------
-mysql -u root -p
-grant ALL on phpipam.* to ipv6@localhost identified by "ipv6admin";
-exit
-------
-
-#
-# !!! important !!!
-#
-
-since version 0.7 phpipam uses mod_rewrite to handle url's. Please make sure 
-you meet the following requirements:
-        1.) Apache2 with mod_rewrite support
-        2.) "AllowOverride all" set in vhost config for mod_rewrite to work
-
 In case your URL for phpipam is not root please set the following variables 
 (example for /phpipam/):
-        3.) Set BASE in config.php to /phpipam/
-        4.) RewriteBase /phpipam/ in .htaccess
+        1.) Set BASE in config.php to /phpipam/
+        2.) RewriteBase /phpipam/ in .htaccess
 
 %%DISTNAME%% has been installed into:
 
@@ -57,4 +19,3 @@ In case your URL for phpipam is not root please set the following variables
 config.php is where site configuration and database details are configured.
 
 Default user/password is Admin/ipamadmin
-

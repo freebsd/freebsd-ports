@@ -12,6 +12,7 @@ lib/mate-notification-daemon/engines/libstandard.a
 lib/mate-notification-daemon/engines/libstandard.la
 lib/mate-notification-daemon/engines/libstandard.so
 libexec/mate-notification-daemon
+man/man1/mate-notification-properties.1.gz
 share/MateConf/gsettings/mate-notification-daemon.convert
 share/applications/mate-notification-properties.desktop
 share/dbus-1/services/org.freedesktop.mate.Notifications.service
