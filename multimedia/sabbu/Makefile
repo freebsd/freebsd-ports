@@ -10,13 +10,10 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Program used to time subtitles
 
 LIB_DEPENDS=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0 \
-		sndfile:${PORTSDIR}/audio/libsndfile
+		libsndfile.so:${PORTSDIR}/audio/libsndfile
 
-NO_STAGE=	yes
-
-USES=		pkgconfig iconv
+USES=		pkgconfig iconv gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 USE_GNOME=	gtk20
@@ -25,6 +22,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib/ffmpeg0 -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lswscal
 
 OPTIONS_DEFINE=	GTKSPELL
 OPTIONS_DEFAULT=GTKSPELL
+
+GTKSPELL_LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell
 
 .include <bsd.port.options.mk>
 
@@ -35,13 +34,6 @@ PLIST_SUB+=	WITH_NLS=""
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	WITH_NLS="@comment "
 .endif
-
-.if ${PORT_OPTIONS:MGTKSPELL}
-LIB_DEPENDS+=	gtkspell:${PORTSDIR}/textproc/gtkspell
-.else
-.endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not configure on powerpc
@@ -55,4 +47,4 @@ post-patch:
 		-e 's,lavswscale,lavswscale0,g' \
 		${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
