@@ -343,7 +343,7 @@ lib/opencollada/libbuffer.so
 lib/opencollada/libftoa.so
 share/cmake/Modules/OpenCOLLADAConfig.cmake
 share/cmake/Modules/OpenCOLLADAConfigVersion.cmake
-share/cmake/Modules/OpenCOLLADATargets-release.cmake
+share/cmake/Modules/OpenCOLLADATargets-%%CMAKE_BUILD_TYPE%%.cmake
 share/cmake/Modules/OpenCOLLADATargets.cmake
 @dirrm lib/opencollada
 @dirrm include/opencollada/GeneratedSaxParser
