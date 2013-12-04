@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Ambassador of Pain
+GenericName=Ambassador of Pain game
+Comment=
+Icon=aop
+Exec=aop
+Categories=Game;LogicGame;
+Terminal=true
