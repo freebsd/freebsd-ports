@@ -3,7 +3,7 @@
 
 PORTNAME=	uartlirc
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms kld
 MASTER_SITES=	LOCAL/nox \
 		http://people.freebsd.org/~nox/tmp/
