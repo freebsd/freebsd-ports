@@ -1,6 +1,6 @@
---- modules/highgui/src/cap_libv4l.cpp.orig	2011-06-21 15:24:06.000000000 +0200
-+++ modules/highgui/src/cap_libv4l.cpp	2011-06-27 08:39:17.750223439 +0200
-@@ -236,7 +236,6 @@
+--- ./modules/highgui/src/cap_libv4l.cpp.orig	2013-07-10 07:49:00.000000000 -0400
++++ ./modules/highgui/src/cap_libv4l.cpp	2013-10-23 23:52:32.000000000 -0400
+@@ -237,7 +237,6 @@
  #include <sys/mman.h>
  #include <string.h>
  #include <stdlib.h>
@@ -8,7 +8,7 @@
  #include <assert.h>
  #include <sys/stat.h>
  #include <sys/ioctl.h>
-@@ -568,7 +567,7 @@
+@@ -574,7 +573,7 @@
  
  static void v4l2_scan_controls(CvCaptureCAM_V4L* capture) {
  

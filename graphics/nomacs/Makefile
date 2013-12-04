@@ -2,6 +2,7 @@
 
 PORTNAME=	nomacs
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/nomacs/nomacs-${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -18,7 +19,9 @@ USE_BZIP2=	yes
 USES=		cmake desktop-file-utils pkgconfig
 USE_QT4=	gui network linguist_build moc_build \
 		qmake_build rcc_build uic_build
-LDFLAGS+=	-lsysinfo -lkvm
+USE_DOS2UNIX=	yes
+DOS2UNIX_REGEX=	.*\.(cpp|h|txt)
+
 WRKTOP=		${WRKDIR}
 WRKSUBDIR=	${DISTNAME:S,-source,,}
 WRKSRC=		${WRKTOP}/${WRKSUBDIR}
@@ -30,7 +33,7 @@ OPTIONS_DEFAULT=	RAW TIFF
 
 .if ${PORT_OPTIONS:MRAW}
 LIB_DEPENDS+=	libraw.so:${PORTSDIR}/graphics/libraw \
-		libopencv_legacy.so:${PORTSDIR}/graphics/opencv
+		libopencv_core.so:${PORTSDIR}/graphics/opencv-core
 .else
 CMAKE_ARGS+=	-DENABLE_RAW=0
 .endif
@@ -41,7 +44,7 @@ LIB_DEPENDS+=	libtiff.so:${PORTSDIR}/graphics/tiff
 CMAKE_ARGS+=	-DENABLE_TIFF=0
 .endif
 
-post-extract:
+post-patch:
 	@${REINPLACE_CMD} -e 's|share/man/man1|man/man1|' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

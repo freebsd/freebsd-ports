@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20131130:
+  AFFECTS: users of graphics/opencv
+  AUTHOR: jhale@FreeBSD.org
+
+  OpenCV has been updated to 2.4.7.  Due to movement of files between the
+  opencv port and the opencv-core port, it will be necessary to remove
+  both packages before updating.
+
+  # pkg_delete -f opencv\*
+    or
+  # pkg delete -fg opencv\*
+    followed by
+  # portmaster -a
+    or
+  # portupgrade -a
+  
 20131127:
   AFFECTS: users of devel/py-distribute (i.e you)
   AUTHOR: wg@FreeBSD.org

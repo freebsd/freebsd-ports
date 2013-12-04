@@ -1,0 +1,2 @@
+%%PYTHON_SITELIBDIR%%/cv.py
+%%PYTHON_SITELIBDIR%%/cv2.so

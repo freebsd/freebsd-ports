@@ -2,28 +2,21 @@
 # $FreeBSD$
 
 PORTNAME?=	opencv
-PORTVERSION=	2.3.1
-PORTREVISION=	9
+PORTVERSION=	2.4.7
+PORTREVISION?=	0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}library/${PORTNAME}-unix/${PORTVERSION}
-DISTNAME=	OpenCV-${DISTVERSION}a
 
 MAINTAINER=	jhale@FreeBSD.org
-COMMENT=	Open Source Computer Vision library from Intel
+COMMENT=	Open Source Computer Vision library
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
 
+USES=		cmake pkgconfig
+USE_LDCONFIG=	yes
 WANT_GSTREAMER=	yes
 MAKE_JOBS_UNSAFE=	yes
-USE_BZIP2=	yes
-USES=		cmake pkgconfig
-USE_DOS2UNIX=	yes
-USE_LDCONFIG=	yes
-
-WRKSRC=		${WRKDIR}/OpenCV-${DISTVERSION}
-
-CXXFLAGS+=	-DGTEST_USE_OWN_TR1_TUPLE=1
 
 NOT_FOR_ARCHS=	sparc64
 NOT_FOR_ARCHS_REASON_sparc64=	does not compile on sparc64
@@ -31,182 +24,242 @@ NOT_FOR_ARCHS_REASON_sparc64=	does not compile on sparc64
 DATADIR=	${PREFIX}/share/OpenCV
 PLIST_SUB+=	VERSION=${DISTVERSION}
 
-.if !defined(_BUILDING_OPENCV_CORE) && !defined(_BUILDING_OPENCV_PYTHON)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-opencv
-LIB_DEPENDS+=	libopencv_core.so.2:${PORTSDIR}/graphics/opencv-core
-LDFLAGS+=	-L${LOCALBASE}/lib -lopencv_core
+CMAKE_ARGS+=	-DWITH_CUDA:BOOL=Off \
+		-DWITH_PVAPI:BOOL=Off \
+		-DWITH_UNICAP:BOOL=Off \
+		-DBUILD_TESTS:BOOL=Off \
+		-DBUILD_DOCS:BOOL=Off \
+		-DPYTHON_EXECUTABLE:FILEPATH=${PYTHON_CMD}
+CFLAGS+=	-I${LOCALBASE}/include
 
-PORTDOCS=	*
+SUB_FILES=	FindOpenCVCore.cmake
+SUB_LIST=	OCV_VERSION=${PORTVERSION}
 
-OPTIONS_DEFINE=		EIGEN3 FFMPEG GSTREAMER GTK2 JASPER JPEG OPENEXR PNG \
-			QT4 TBB TIFF V4L XINE EXAMPLES
+OCV_CORE_MODS=		core imgproc
+OCV_MODS=		calib3d contrib features2d flann gpu \
+			highgui legacy ml ocl objdetect photo \
+			stitching superres ts video videostab
+OCV_NONFREE_MODS=	nonfree
+OCV_JAVA_MODS=		java
+OCV_PYTHON_MODS=	python
+
+OPTIONS_DEFINE=		EXAMPLES DC1394 NONFREE
+OPTIONS_GROUP=		GUI IMAGE PERFORMANCE VIDEO
+OPTIONS_GROUP_GUI=	GTK2 QT4
+OPTIONS_GROUP_IMAGE=	JASPER JPEG OPENEXR PNG TIFF
+OPTIONS_GROUP_PERFORMANCE=	EIGEN3 TBB
+OPTIONS_GROUP_VIDEO=	FFMPEG GSTREAMER V4L XINE
 OPTIONS_DEFAULT=	EIGEN3 JASPER JPEG PNG TIFF V4L
-
-EIGEN3_DESC=		Eigen 3 support
-EIGEN3_BUILD_DEPENDS=	${LOCALBASE}/include/eigen3/Eigen/Eigen:${PORTSDIR}/math/eigen3
-EIGEN3_CMAKE_ON=	-DWITH_EIGEN:BOOL=On
-EIGEN3_CMAKE_OFF=	-DWITH_EIGEN:BOOL=Off
-
-FFMPEG_LIB_DEPENDS=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0
-FFMPEG_CMAKE_ON=	-DWITH_FFMPEG:BOOL=On
-FFMPEG_CMAKE_OFF=	-DWITH_FFMPEG:BOOL=Off
-FFMPEG_CXXFLAGS=	-I${LOCALBASE}/include/ffmpeg0
-
-GSTREAMER_USE=		GSTREAMER=yes
-GSTREAMER_CMAKE_ON=	-DWITH_GSTREAMER:BOOL=On
-GSTREAMER_CMAKE_OFF=	-DWITH_GSTREAMER:BOOL=Off
-
-GTK2_USE=		GNOME=gtk20
-GTK2_CMAKE_ON=		-DWITH_GTK:BOOL=On
-GTK2_CMAKE_OFF=		-DWITH_GTK:BOOL=Off
-
-JASPER_LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper
-JASPER_CMAKE_ON=	-DWITH_JASPER:BOOL=On
-JASPER_CMAKE_OFF=	-DWITH_JASPER:BOOL=Off
-
-JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
-JPEG_CMAKE_ON=		-DWITH_JPEG:BOOL=On
-JPEG_CMAKE_OFF=		-DWITH_JPEG:BOOL=Off
-
-OPENEXR_DESC=		OpenEXR support
-OPENEXR_LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
-OPENEXR_CMAKE_ON=	-DWITH_OPENEXR:BOOL=On
-OPENEXR_CMAKE_OFF=	-DWITH_OPENEXR:BOOL=Off
-
-PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
-PNG_CMAKE_ON=		-DWITH_PNG:BOOL=On
-PNG_CMAKE_OFF=		-DWITH_PNG:BOOL=Off
-
-QT4_USE=		QT4=opengl moc_build qmake_build rcc_build uic_build qtestlib
-QT4_CMAKE_ON=		-DWITH_QT:BOOL=On -DWITH_QT_OPENGL:BOOL=On
-QT4_CMAKE_OFF=		-DWITH_QT:BOOL=Off
-
-TBB_DESC=		TBB support
-TBB_LIB_DEPENDS=	libtbb.so:${PORTSDIR}/devel/tbb
-TBB_CMAKE_ON=		-DWITH_TBB:BOOL=On \
-			-DTBBLIB_FOUND:BOOL=1 -DTBB_FOUND:BOOL=On \
-			-DTBB_INCLUDE_DIRS:STRING="${LOCALBASE}/include" \
-			-DTBB_LIBRARY_DIRS:STRING="${LOCALBASE}/lib" \
-			-DTBB_LIBRARIES:STRING="tbb"
-TBB_CMAKE_OFF=		-DWITH_TBB:BOOL=Off
-
-TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
-TIFF_CMAKE_ON=		-DWITH_TIFF:BOOL=On
-TIFF_CMAKE_OFF=		-DWITH_TIFF:BOOL=Off
-
-V4L_LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
-V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
-V4L_CMAKE_ON=		-DWITH_V4L:BOOL=On \
-			-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
-V4L_CMAKE_OFF=		-DWITH_V4L:BOOL=Off
-
-XINE_LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine
-XINE_CMAKE_ON=		-DWITH_XINE:BOOL=On
-XINE_CMAKE_OFF=		-DWITH_XINE:BOOL=Off
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-CMAKE_ARGS+=	-DBUILD_EXAMPLES:BOOL=On -DINSTALL_C_EXAMPLES:BOOL=On
-PORTEXAMPLES+=	c cpp gpu
+OPTIONS_SUB=		yes
+.if defined(OCV_CORE)
+OPTIONS_EXCLUDE=	DC1394 EXAMPLES GTK2 QT4 JASPER JPEG NONFREE OPENEXR \
+			PNG TIFF FFMPEG GSTREAMER V4L XINE
+.elif defined(OCV_PYTHON)
+OPTIONS_EXCLUDE=	DC1394 GTK2 QT4 JASPER JPEG NONFREE OPENEXR \
+			PNG TIFF TBB EIGEN3 FFMPEG GSTREAMER V4L XINE
 .endif
 
-.else # defined(_BUILDING_OPENCV_CORE) || defined(_BUILDING_OPENCV_PYTHON)
-
-. if defined(_BUILDING_OPENCV_CORE)
-COMMENT=	OpenCV core libraries
-PLIST=		${PKGDIR}/pkg-plist.oc
-PKGNAMESUFFIX=	-core
-LATEST_LINK=	${PORTNAME}-core
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-opencv-core
-
-. elif defined(_BUILDING_OPENCV_PYTHON)
-COMMENT=	OpenCV Python library
-CATEGORIES=	graphics python
-PLIST=		${PKGDIR}/pkg-plist.python
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-PKGNAMESUFFIX=	# no suffix
-
-LIB_DEPENDS+=	libopencv_legacy.so.2:${PORTSDIR}/graphics/opencv
-CMAKE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-INSTALL_WRKSRC=	${WRKSRC}/modules/python
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-opencv-python
-
-USE_PYTHON=	yes
-BUILD_DEPENDS+=	${PYNUMPY}
-RUN_DEPENDS+=	${PYNUMPY}
-. endif	# defined(_BUILDING_OPENCV_PYTHON)
-CMAKE_ARGS+=	-DBUILD_EXAMPLES:BOOL=Off \
-		-DINSTALL_PYTHON_EXAMPLES:BOOL=Off \
-		-DBUILD_TESTS:BOOL=Off \
-		-DWITH_EIGEN:BOOL=Off \
-		-DWITH_FFMPEG:BOOL=Off \
-		-DWITH_GSTREAMER:BOOL=Off \
-		-DWITH_GTK:BOOL=Off \
-		-DWITH_JASPER:BOOL=Off \
-		-DWITH_JPEG:BOOL=Off \
-		-DWITH_OPENEXR:BOOL=Off \
-		-DWITH_PNG:BOOL=Off \
-		-DWITH_QT:BOOL=Off \
-		-DWITH_TBB:BOOL=Off \
-		-DWITH_V4L:BOOL=Off \
-		-DWITH_TIFF:BOOL=Off \
-		-DWITH_XINE:BOOL=Off \
-		-DWITH_PVAPI:BOOL=Off \
-		-DWITH_1394:BOOL=Off \
-		-DWITH_CUDA:BOOL=Off
+DC1394_DESC=		IEEE 1394 camera support
+EIGEN3_DESC=		Eigen 3 support
+IMAGE_DESC=		Image format support
+NONFREE_DESC=		Build functionality that has possible limitations of use
+PERFORMANCE_DESC=	Performance enhancing libraries
+TBB_DESC=		TBB support
 
 .include <bsd.port.options.mk>
 
-.endif # defined(_BUILDING_OPENCV_CORE) || defined(_BUILDING_OPENCV_PYTHON)
-
-.if defined(_BUILDING_OPENCV_PYTHON)
-CMAKE_ARGS+=	-DBUILD_NEW_PYTHON_SUPPORT:BOOL=On
+.if ${PORT_OPTIONS:MDC1394}
+LIB_DEPENDS+=	libdc1394.so:${PORTSDIR}/multimedia/libdc1394
+CMAKE_ARGS+=	-DWITH_1394:BOOL=On
 .else
-CMAKE_ARGS+=	-DBUILD_NEW_PYTHON_SUPPORT:BOOL=Off
+CMAKE_ARGS+=	-DWITH_1394:BOOL=Off
+.endif
+
+.if ${PORT_OPTIONS:MEIGEN3}
+BUILD_DEPENDS+=	${LOCALBASE}/include/eigen3/Eigen/Eigen:${PORTSDIR}/math/eigen3
+CMAKE_ARGS+=	-DWITH_EIGEN:BOOL=On
+.else
+CMAKE_ARGS=	-DWITH_EIGEN:BOOL=Off
+.endif
+
+.if ${PORT_OPTIONS:MEXAMPLES}
+PORTEXAMPLES=	*
+. if !defined(OCV_SLAVE)
+CMAKE_ARGS+=	-DBUILD_EXAMPLES:BOOL=On \
+		-DINSTALL_C_EXAMPLES:BOOL=On
+. endif
+.endif
+
+.if ${PORT_OPTIONS:MFFMPEG}
+LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+CMAKE_ARGS+=	-DWITH_FFMPEG:BOOL=On
+.else
+CMAKE_ARGS+=	-DWITH_FFMPEG:BOOL=Off
+.endif
+
+.if ${PORT_OPTIONS:MGSTREAMER}
+USE_GSTREAMER=	yes
+CMAKE_ARGS+=	-DWITH_GSTREAMER:BOOL=On
+.else
+CMAKE_ARGS+=	-DWITH_GSTREAMER:BOOL=Off
+.endif
+
+.if ${PORT_OPTIONS:MGTK2}
+USE_GNOME+=	gtk20
+CMAKE_ARGS+=	-DWITH_GTK:BOOL=On
+.else
+CMAKE_ARGS+=	-DWITH_GTK:BOOL=Off
+.endif
+
+.if ${PORT_OPTIONS:MJASPER}
+LIB_DEPENDS+=	libjasper.so:${PORTSDIR}/graphics/jasper
+CMAKE_ARGS+=	-DWITH_JASPER:BOOL=On
+.else
+CMAKE_ARGS+=	-DWITH_JASPER:BOOL=Off
+.endif
+
+.if ${PORT_OPTIONS:MJPEG}
+LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+CMAKE_ARGS+=	-DWITH_JPEG:BOOL=On
+.else
+CMAKE_ARGS+=	-DWITH_JPEG:BOOL=Off
+.endif
+
+.if ${PORT_OPTIONS:MNONFREE}
+CMAKE_ARGS+=	-DBUILD_opencv_nonfree:BOOL=On
+.else
+CMAKE_ARGS+=	-DBUILD_opencv_nonfree:BOOL=Off
+.endif
+
+.if ${PORT_OPTIONS:MOPENEXR}
+LIB_DEPENDS+=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
+CMAKE_ARGS+=	-DWITH_OPENEXR:BOOL=On
+.else
+CMAKE_ARGS+=	-DWITH_OPENEXR:BOOL=Off
+.endif
+
+.if ${PORT_OPTIONS:MPNG}
+LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
+CMAKE_ARGS+=	-DWITH_PNG:BOOL=On
+.else
+CMAKE_ARGS+=	-DWITH_PNG:BOOL=Off
+.endif
+
+.if ${PORT_OPTIONS:MQT4}
+USE_QT4+=	opengl moc_build qmake_build rcc_build uic_build qtestlib
+CMAKE_ARGS+=	-DWITH_QT:BOOL=On \
+		-DWITH_OPENGL:BOOL=On
+.else
+CMAKE_ARGS+=	-DWITH_QT:BOOL=Off
+.endif
+
+.if ${PORT_OPTIONS:MTBB}
+LIB_DEPENDS+=	libtbb.so:${PORTSDIR}/devel/tbb
+CMAKE_ARGS+=	-DWITH_TBB:BOOL=On \
+		-DTBB_INCLUDE_DIR:STRING="${LOCALBASE}/include"
+.else
+CMAKE_ARGS+=	-DWITH_TBB:BOOL=Off
+.endif
+
+.if ${PORT_OPTIONS:MTIFF}
+LIB_DEPENDS+=	libtiff.so:${PORTSDIR}/graphics/tiff
+CMAKE_ARGS+=	-DWITH_TIFF:BOOL=On
+.else
+CMAKE_ARGS+=	-DWITH_TIFF:BOOL=Off
+.endif
+
+.if ${PORT_OPTIONS:MV4L}
+LIB_DEPENDS+=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
+BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+CMAKE_ARGS+=	-DWITH_V4L:BOOL=On \
+		-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
+.else
+CMAKE_ARGS+=	-DWITH_V4L:BOOL=Off
+.endif
+
+.if ${PORT_OPTIONS:MXINE}
+LIB_DEPENDS+=	libxine.so:${PORTSDIR}/multimedia/libxine
+CMAKE_ARGS+=	-DWITH_XINE:BOOL=On
+.else
+CMAKE_ARGS+=	-DWITH_XINE:BOOL=Off
+.endif
+
+.if defined(OCV_CORE)
+. for module in ${OCV_MODS} ${OCV_JAVA_MODS} ${OCV_PYTHON_MODS}
+CMAKE_ARGS+=	-DBUILD_opencv_${module}:BOOL=Off
+. endfor
+.elif defined(OCV_PYTHON)
+LIB_DEPENDS+=	libopencv_legacy.so:${PORTSDIR}/graphics/opencv
+BUILD_DEPENDS+=	${PYNUMPY}
+RUN_DEPENDS+=	${PYNUMPY}
+USE_PYTHON=	yes
+CMAKE_ARGS+=	-DBUILD_opencv_python:BOOL=On
+. for module in ${OCV_MODS} ${OCV_CORE_MODS} ${OCV_JAVA_MODS}
+CMAKE_ARGS+=	-DBUILD_opencv_${module}:BOOL=Off
+. endfor
+CMAKE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+INSTALL_WRKSRC=	${WRKSRC}/modules/python
+.elif defined(OCV_JAVA)
+BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant
+LIB_DEPENDS+=	libopencv_legacy.so:${PORTSDIR}/graphics/opencv
+USE_JAVA=	yes
+USE_PYTHON_BUILD=	yes
+CMAKE_ARGS+=	-DBUILD_opencv_java:BOOL=On
+. for module in apps python stitching superres videostab
+CMAKE_ARGS+=	-DBUILD_opencv_${module}:BOOL=Off
+. endfor
+CMAKE_ENV+=	JAVA_HOME="${JAVA_HOME}"
+INSTALL_WRKSRC=	${WRKSRC}/modules/java
+.else
+LIB_DEPENDS+=	libopencv_core.so:${PORTSDIR}/graphics/opencv-core
+. for module in ${OCV_JAVA_MODS} ${OCV_PYTHON_MODS}
+CMAKE_ARGS+=	-DBUILD_opencv_${module}:BOOL=Off
+. endfor
 .endif
 
 post-patch:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
-	@${REINPLACE_CMD} -e 's:set(OPENCV_SOVERSION.*:set(OPENCV_SOVERSION "$${OPENCV_VERSION_MAJOR}"):' \
-		-e 's:-pthread:${PTHREAD_LIBS}:g' \
-		-e 's:$${OPENCV_LIB_INSTALL_PATH}/pkgconfig:$${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig:g' \
-		-e 's:share/OpenCV/doc:share/doc/opencv:g' \
-		-e 's:-mcpu=G3::g' \
+	@${REINPLACE_CMD} -e '/pkgconfig/s|$${OPENCV_LIB_INSTALL_PATH}|libdata|' \
+		 ${WRKSRC}/cmake/OpenCVGenPkgconfig.cmake
+	@${REINPLACE_CMD} -e 's|share/OpenCV/doc|share/doc/${PORTNAME}|g' \
 		${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's|${PORTNAME}/samples|examples/${PORTNAME}|g' \
+	@${REINPLACE_CMD} -e 's|[Oo]pen[Cc][Vv]/samples|examples/${PORTNAME}|g' \
 		${WRKSRC}/samples/*/CMakeLists.txt \
 		${WRKSRC}/samples/*/*/CMakeLists.txt
 	@${FIND} ${WRKSRC} -name '*.orig' -exec ${RM} {} \;
-	@${REINPLACE_CMD} \
-		-e 's,libavcodec ,libavcodec0 ,g' \
-		-e 's,libavformat ,libavformat0 ,g' \
-		-e 's,libswscale ,libswscale0 ,g' \
-		-e 's,libavutil ,libavutil0 ,g' \
-		${WRKSRC}/CMakeLists.txt
-
-.if defined(_BUILDING_OPENCV_CORE) && !defined(_BUILDING_OPENCV_PYTHON)
-	@${REINPLACE_CMD} -e '/add_subdirectory(data)/ d' \
-		-e '/add_subdirectory(include)/ d' \
-		-e 's|opencv.pc|opencv-core.pc|g' \
-		-e 's|OpenCVConfig.cmake|OpenCVConfig-core.cmake|g' \
-		-e 's|OpenCVConfig-version.cmake|OpenCVConfig-core-version.cmake|g' \
-		-e 's|    set(root_files README)||g' \
-		-e 's|    install(CODE "exec_program.*||g' \
-		${WRKSRC}/CMakeLists.txt
-	@${SED} -E -e \
-		's|Name:.*|Name: OpenCV-core|' -e \
-		's|Libs:.*|Libs: -L$${libdir} -lopencv_core@OPENCV_DLLVERSION@ -lopencv_imgproc@OPENCV_DLLVERSION@ -lopencv_video@OPENCV_DLLVERSION@ -lopencv_flann@OPENCV_DLLVERSION@|' \
-		${WRKSRC}/opencv.pc.cmake.in > ${WRKSRC}/opencv-core.pc.cmake.in
-	@${SED} -E -e \
-		's|    set\(OPENCV_LIB_COMPONENTS .*|    set\(OPENCV_LIB_COMPONENTS opencv_core opencv_imgproc opencv_video opencv_ml opencv_flann\)|g' \
-		${WRKSRC}/OpenCVConfig.cmake.in > ${WRKSRC}/OpenCVConfig-core.cmake.in
-	@${LN} -sf OpenCVConfig-version.cmake.in ${WRKSRC}/OpenCVConfig-core-version.cmake.in
+.if defined(OCV_CORE)
+	@${REINPLACE_CMD} -e 's|opencv.pc|opencv-core.pc|g' \
+		${WRKSRC}/cmake/OpenCVGenPkgconfig.cmake
+	@${REINPLACE_CMD} -e 's|Name:.*|Name: OpenCV-core|' \
+		${WRKSRC}/cmake/templates/opencv-XXX.pc.cmake.in
 .endif
-.if ! ${PORT_OPTIONS:MDOCS} || defined(_BUILDING_OPENCV_CORE) || defined(_BUILDING_OPENCV_PYTHON)
-	@${REINPLACE_CMD} -e '/add_subdirectory(doc)/ d' \
-		${WRKSRC}/CMakeLists.txt
+.if defined(OCV_PYTHON)
+. for module in ${OCV_CORE_MODS} ${OCV_MODS} ${OCV_NONFREE_MODS}
+	@${REINPLACE_CMD} -e 's|opencv_${module} | |' \
+		-e 's|opencv_${module}$$||' \
+		-e 's|opencv_${module})|)|' \
+		${WRKSRC}/modules/*/CMakeLists.txt
+. endfor
+	${REINPLACE_CMD} -e '/[Ee][Xx][Pp][Oo][Rr][Tt]/d' \
+		${WRKSRC}/cmake/OpenCVGenConfig.cmake
+.endif
+
+post-install:
+.if defined(OCV_CORE)
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/cmake/Modules
+	${INSTALL_DATA} ${WRKDIR}/FindOpenCVCore.cmake ${STAGEDIR}${PREFIX}/share/cmake/Modules
+.endif
+.if defined(OCV_PYTHON)
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/samples/python && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/python
+	cd ${WRKSRC}/samples/python2 && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/python2
+.endif
+.if defined(OCV_JAVA)
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/samples/java && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/java
 .endif
 
 .include <bsd.port.mk>
