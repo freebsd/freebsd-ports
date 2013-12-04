@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	joomla
-PORTVERSION=	2.5.11
+PORTVERSION=	2.5.16
 CATEGORIES=	www
 PKGNAMESUFFIX=	2
 
@@ -11,15 +11,17 @@ COMMENT=	Dynamic web content management system (CMS)
 
 LICENSE=	GPLv2
 
-CONFLICTS=	joomla-1.*.*
-
 GH_ACCOUNT=	${PORTNAME}
 GH_PROJECT=	${PORTNAME}-cms
-GH_COMMIT=	6897f9b
+GH_COMMIT=	fb69bf0
 
 NO_BUILD=	yes
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
+PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+php_OLD_CMD=	C:\\\xampp\\\php\\\.\\\php.exe
+
+REINPLACE_ARGS=	-i '' -e 's,${php_OLD_CMD},${LOCALBASE}/bin/php,g'
+REINPLACE_FILES=	tests/unit/phpunit.php tests/system/phpunit.php
 
 SUB_FILES=	pkg-message
 
@@ -28,19 +30,18 @@ USE_MYSQL=	yes
 USE_PHP=	gd json mbstring mysql mysqli pcre pdf session simplexml xml zip zlib
 
 WANT_PHP_WEB=	yes
+WWWDIR=	${PREFIX}/www/${PORTNAME}${PORTVERSION:R:R}
 
-NO_STAGE=	yes
+pre-patch:
+	@(cd ${WRKSRC} && ${REINPLACE_CMD} ${REINPLACE_FILES})
+
 do-install:
-	@${MKDIR} ${WWWDIR}
-	@cd ${WRKSRC} && \
-		${FIND} . -type d -exec ${MKDIR} ${WWWDIR}/{} \; \
-			-exec ${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/{} \;
-	@cd ${WRKSRC} && \
-		${FIND} . \! -type d -and \! \( -name .gitignore -or -name LICENSE.txt \) \
-			-exec ${INSTALL_DATA} {} ${WWWDIR}/{} \; \
-			-exec ${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/{} \;
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	@(cd ${WRKSRC} && \
+		${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${WWWDIR}/{} \;)
+	@(cd ${WRKSRC} && \
+		${FIND} . \! -type d -and \! \( -name .gitignore -or -name .travis.yml \
+			-or -name LICENSE.txt -or -name build.xml \) \
+			-exec ${INSTALL_DATA} {} ${STAGEDIR}${WWWDIR}/{} \;)
 
 .include <bsd.port.mk>
