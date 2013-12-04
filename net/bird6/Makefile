@@ -2,30 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	bird6
-PORTVERSION=	1.4.0
-CATEGORIES=	net
-MASTER_SITES=	ftp://bird.network.cz/pub/bird/ \
-		http://bird.mpls.in/distfiles/bird/
+COMMENT=	Dynamic IP routing daemon (IPv6 version)
 DISTNAME=	bird-${PORTVERSION}
 
-MAINTAINER=	melifaro@ipfw.ru
-COMMENT=	Dynamic IP routing daemon (IPv6 version)
+MASTERDIR=	${.CURDIR}/../bird
 
-LICENSE=	GPLv2
+OPTIONS_DEFINE=
 
-USES=		bison gmake
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-ipv6 --localstatedir=/var
-USE_CSTD=	gnu89
+USE_RC_SUBR=	${PORTNAME}
 
-MAKE_JOBS_UNSAFE=	yes
+PLIST_SUB=	VER="6"
 
-USE_RC_SUBR=	bird6
+CONFIGURE_ARGS=	--enable-ipv6
 
-NO_STAGE=	yes
-post-install:
-	@if [ ! -f ${PREFIX}/etc/bird6.conf ]; then \
-		${CP} -p ${PREFIX}/etc/bird6.conf.example ${PREFIX}/etc/bird6.conf ; \
-	fi
-
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"

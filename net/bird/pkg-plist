@@ -1,6 +1,6 @@
-@unexec if cmp -s %D/etc/bird.conf.example %D/etc/bird.conf; then rm -f %D/etc/bird.conf; fi
-etc/bird.conf.example
-@exec if [ ! -f %D/etc/bird.conf ] ; then cp -p %D/%F %B/bird.conf; fi
-sbin/bird
-sbin/birdc
-sbin/birdcl
+@unexec if cmp -s %D/etc/bird%%VER%%.conf.example %D/etc/bird%%VER%%.conf; then rm -f %D/etc/bird%%VER%%.conf; fi
+etc/bird%%VER%%.conf.example
+@exec if [ ! -f %D/etc/bird%%VER%%.conf ] ; then cp -p %D/%F %B/bird%%VER%%.conf; fi
+sbin/bird%%VER%%
+sbin/birdc%%VER%%
+sbin/birdcl%%VER%%
