@@ -1,0 +1,71 @@
+# HG changeset patch
+# User sgabdura
+# Date 1381896654 -3600
+#      Wed Oct 16 05:10:54 2013 +0100
+# Node ID 1ed7c9cea8c508e60d6df30c046ab48b1f1d3ab9
+# Parent  96aee3742c52d2d1a83a3db0be2c14892a511c67
+8016357: Update hotspot diagnostic class
+Summary: Add security check to HotSpotDiagnostic.dumpHeap
+Reviewed-by: fparain, sla, ahgross
+
+diff -r 96aee3742c52 -r 1ed7c9cea8c5 make/java/management/mapfile-vers
+--- jdk/make/java/management/mapfile-vers	Tue Oct 15 21:28:50 2013 +0100
++++ jdk/make/java/management/mapfile-vers	Wed Oct 16 05:10:54 2013 +0100
+@@ -50,7 +50,7 @@
+ 	    Java_sun_management_GcInfoBuilder_fillGcAttributeInfo;
+ 	    Java_sun_management_GcInfoBuilder_getLastGcInfo0;
+ 	    Java_sun_management_GcInfoBuilder_getNumGcExtAttributes;
+-	    Java_sun_management_HotSpotDiagnostic_dumpHeap;
++	    Java_sun_management_HotSpotDiagnostic_dumpHeap0;
+ 	    Java_sun_management_HotspotThread_getInternalThreadCount;
+ 	    Java_sun_management_HotspotThread_getInternalThreadTimes0;
+ 	    Java_sun_management_MemoryImpl_getMemoryManagers0;
+diff -r 96aee3742c52 -r 1ed7c9cea8c5 src/share/classes/com/sun/management/HotSpotDiagnosticMXBean.java
+--- jdk/src/share/classes/com/sun/management/HotSpotDiagnosticMXBean.java	Tue Oct 15 21:28:50 2013 +0100
++++ jdk/src/share/classes/com/sun/management/HotSpotDiagnosticMXBean.java	Wed Oct 16 05:10:54 2013 +0100
+@@ -54,6 +54,11 @@
+      *                     cannot be created, opened, or written to.
+      * @throws UnsupportedOperationException if this operation is not supported.
+      * @throws NullPointerException if <tt>outputFile</tt> is <tt>null</tt>.
++     * @throws SecurityException
++     *         If a security manager exists and its {@link
++     *         java.lang.SecurityManager#checkWrite(java.lang.String)}
++     *         method denies write access to the named file
++     *         or the caller does not have ManagmentPermission("control").
+      */
+     public void dumpHeap(String outputFile, boolean live) throws java.io.IOException;
+ 
+diff -r 96aee3742c52 -r 1ed7c9cea8c5 src/share/classes/sun/management/HotSpotDiagnostic.java
+--- jdk/src/share/classes/sun/management/HotSpotDiagnostic.java	Tue Oct 15 21:28:50 2013 +0100
++++ jdk/src/share/classes/sun/management/HotSpotDiagnostic.java	Wed Oct 16 05:10:54 2013 +0100
+@@ -38,7 +38,17 @@
+     public HotSpotDiagnostic() {
+     }
+ 
+-    public native void dumpHeap(String outputFile, boolean live) throws IOException;
++    public void dumpHeap(String outputFile, boolean live) throws IOException {
++        SecurityManager security = System.getSecurityManager();
++        if (security != null) {
++            security.checkWrite(outputFile);
++            ManagementFactory.checkControlAccess();
++        }
++
++        dumpHeap0(outputFile, live);
++    }
++
++    private native void dumpHeap0(String outputFile, boolean live) throws IOException;
+ 
+     public List<VMOption> getDiagnosticOptions() {
+         List<Flag> allFlags = Flag.getAllFlags();
+diff -r 96aee3742c52 -r 1ed7c9cea8c5 src/share/native/sun/management/HotSpotDiagnostic.c
+--- jdk/src/share/native/sun/management/HotSpotDiagnostic.c	Tue Oct 15 21:28:50 2013 +0100
++++ jdk/src/share/native/sun/management/HotSpotDiagnostic.c	Wed Oct 16 05:10:54 2013 +0100
+@@ -29,7 +29,7 @@
+ #include "sun_management_HotSpotDiagnostic.h"
+ 
+ JNIEXPORT void JNICALL
+-Java_sun_management_HotSpotDiagnostic_dumpHeap
++Java_sun_management_HotSpotDiagnostic_dumpHeap0
+   (JNIEnv *env, jobject dummy, jstring outputfile, jboolean live)
+ {
+     jmm_interface->DumpHeap0(env, outputfile, live);

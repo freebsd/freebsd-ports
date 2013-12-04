@@ -1,0 +1,45 @@
+# HG changeset patch
+# User dfuchs
+# Date 1367362161 -7200
+#      Wed May 01 00:49:21 2013 +0200
+# Node ID 47c881c5439a4542b19ab85f376e94fc2c0a5a57
+# Parent  0bf55b4c8a7bbea02a9d848b2a5451adbd6a6ac4
+8012243: about 30% regression on specjvm2008.serial on 7u25 comparing 7u21
+Reviewed-by: alanb, skoivu, smarks, mchung
+
+diff -r 0bf55b4c8a7b -r 47c881c5439a src/share/classes/java/io/ObjectStreamClass.java
+--- jdk/src/share/classes/java/io/ObjectStreamClass.java	Fri May 17 14:29:51 2013 -0700
++++ jdk/src/share/classes/java/io/ObjectStreamClass.java	Wed May 01 00:49:21 2013 +0200
+@@ -241,9 +241,11 @@
+         if (cl == null) {
+             return null;
+         }
+-        Class<?> caller = Reflection.getCallerClass();
+-        if (ReflectUtil.needsPackageAccessCheck(caller.getClassLoader(), cl.getClassLoader())) {
+-            ReflectUtil.checkPackageAccess(cl);
++        if (System.getSecurityManager() != null) {
++            Class<?> caller = Reflection.getCallerClass();
++            if (ReflectUtil.needsPackageAccessCheck(caller.getClassLoader(), cl.getClassLoader())) {
++                ReflectUtil.checkPackageAccess(cl);
++            }
+         }
+         return cl;
+     }
+diff -r 0bf55b4c8a7b -r 47c881c5439a src/share/classes/java/io/ObjectStreamField.java
+--- jdk/src/share/classes/java/io/ObjectStreamField.java	Fri May 17 14:29:51 2013 -0700
++++ jdk/src/share/classes/java/io/ObjectStreamField.java	Wed May 01 00:49:21 2013 +0200
+@@ -162,9 +162,11 @@
+      */
+     @CallerSensitive
+     public Class<?> getType() {
+-        Class<?> caller = Reflection.getCallerClass();
+-        if (ReflectUtil.needsPackageAccessCheck(caller.getClassLoader(), type.getClassLoader())) {
+-            ReflectUtil.checkPackageAccess(type);
++        if (System.getSecurityManager() != null) {
++            Class<?> caller = Reflection.getCallerClass();
++            if (ReflectUtil.needsPackageAccessCheck(caller.getClassLoader(), type.getClassLoader())) {
++                ReflectUtil.checkPackageAccess(type);
++            }
+         }
+         return type;
+     }

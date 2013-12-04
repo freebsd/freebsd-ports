@@ -1,0 +1,196 @@
+# HG changeset patch
+# User alexsch
+# Date 1381852031 -3600
+#      Tue Oct 15 16:47:11 2013 +0100
+# Node ID d10e47deb098d4af5d58a8bfe92dc8033e5ef6f7
+# Parent  a28b8ce4d90e7d7bc1fab599298831e0d62e171e
+8013744: Better tabling for AWT
+Reviewed-by: art, malenkov, skoivu
+
+diff -r a28b8ce4d90e -r d10e47deb098 src/share/classes/javax/swing/JTable.java
+--- jdk/src/share/classes/javax/swing/JTable.java	Tue Oct 15 16:35:33 2013 +0100
++++ jdk/src/share/classes/javax/swing/JTable.java	Tue Oct 15 16:47:11 2013 +0100
+@@ -52,6 +52,7 @@
+ 
+ import javax.print.attribute.*;
+ import javax.print.PrintService;
++import sun.reflect.misc.ReflectUtil;
+ 
+ import sun.swing.SwingUtilities2;
+ import sun.swing.SwingUtilities2.Section;
+@@ -5461,14 +5462,15 @@
+             // they have the option to replace the value with
+             // null or use escape to restore the original.
+             // For Strings, return "" for backward compatibility.
+-            if ("".equals(s)) {
+-                if (constructor.getDeclaringClass() == String.class) {
+-                    value = s;
+-                }
+-                super.stopCellEditing();
+-            }
+-
+             try {
++                if ("".equals(s)) {
++                    if (constructor.getDeclaringClass() == String.class) {
++                        value = s;
++                    }
++                    super.stopCellEditing();
++                }
++
++                SwingUtilities2.checkAccess(constructor.getModifiers());
+                 value = constructor.newInstance(new Object[]{s});
+             }
+             catch (Exception e) {
+@@ -5492,6 +5494,8 @@
+                 if (type == Object.class) {
+                     type = String.class;
+                 }
++                ReflectUtil.checkPackageAccess(type);
++                SwingUtilities2.checkAccess(type.getModifiers());
+                 constructor = type.getConstructor(argTypes);
+             }
+             catch (Exception e) {
+diff -r a28b8ce4d90e -r d10e47deb098 src/share/classes/javax/swing/UIDefaults.java
+--- jdk/src/share/classes/javax/swing/UIDefaults.java	Tue Oct 15 16:35:33 2013 +0100
++++ jdk/src/share/classes/javax/swing/UIDefaults.java	Tue Oct 15 16:47:11 2013 +0100
+@@ -53,6 +53,7 @@
+ 
+ import sun.reflect.misc.MethodUtil;
+ import sun.reflect.misc.ReflectUtil;
++import sun.swing.SwingUtilities2;
+ import sun.util.CoreResourceBundleControl;
+ 
+ /**
+@@ -1102,7 +1103,7 @@
+                         }
+                         ReflectUtil.checkPackageAccess(className);
+                         c = Class.forName(className, true, (ClassLoader)cl);
+-                        checkAccess(c.getModifiers());
++                        SwingUtilities2.checkAccess(c.getModifiers());
+                         if (methodName != null) {
+                             Class[] types = getClassArray(args);
+                             Method m = c.getMethod(methodName, types);
+@@ -1110,7 +1111,7 @@
+                         } else {
+                             Class[] types = getClassArray(args);
+                             Constructor constructor = c.getConstructor(types);
+-                            checkAccess(constructor.getModifiers());
++                            SwingUtilities2.checkAccess(constructor.getModifiers());
+                             return constructor.newInstance(args);
+                         }
+                     } catch(Exception e) {
+@@ -1125,13 +1126,6 @@
+             }, acc);
+         }
+         
+-        private void checkAccess(int modifiers) {
+-            if(System.getSecurityManager() != null && 
+-                    !Modifier.isPublic(modifiers)) {
+-                throw new SecurityException("Resource is not accessible");
+-            }
+-        }
+-
+         /* 
+          * Coerce the array of class types provided into one which
+          * looks the way the Reflection APIs expect.  This is done
+diff -r a28b8ce4d90e -r d10e47deb098 src/share/classes/javax/swing/text/DefaultFormatter.java
+--- jdk/src/share/classes/javax/swing/text/DefaultFormatter.java	Tue Oct 15 16:35:33 2013 +0100
++++ jdk/src/share/classes/javax/swing/text/DefaultFormatter.java	Tue Oct 15 16:47:11 2013 +0100
+@@ -24,7 +24,8 @@
+  */
+ package javax.swing.text;
+ 
+-import sun.reflect.misc.ConstructorUtil;
++import sun.reflect.misc.ReflectUtil;
++import sun.swing.SwingUtilities2;
+ 
+ import java.io.Serializable;
+ import java.lang.reflect.*;
+@@ -247,7 +248,9 @@
+             Constructor cons;
+ 
+             try {
+-                cons = ConstructorUtil.getConstructor(vc, new Class[]{String.class});
++                ReflectUtil.checkPackageAccess(vc);
++                SwingUtilities2.checkAccess(vc.getModifiers());
++                cons = vc.getConstructor(new Class[]{String.class});
+ 
+             } catch (NoSuchMethodException nsme) {
+                 cons = null;
+@@ -255,6 +258,7 @@
+ 
+             if (cons != null) {
+                 try {
++                    SwingUtilities2.checkAccess(cons.getModifiers());
+                     return cons.newInstance(new Object[] { string });
+                 } catch (Throwable ex) {
+                     throw new ParseException("Error creating instance", 0);
+diff -r a28b8ce4d90e -r d10e47deb098 src/share/classes/javax/swing/text/NumberFormatter.java
+--- jdk/src/share/classes/javax/swing/text/NumberFormatter.java	Tue Oct 15 16:35:33 2013 +0100
++++ jdk/src/share/classes/javax/swing/text/NumberFormatter.java	Tue Oct 15 16:47:11 2013 +0100
+@@ -28,6 +28,8 @@
+ import java.text.*;
+ import java.util.*;
+ import javax.swing.text.*;
++import sun.reflect.misc.ReflectUtil;
++import sun.swing.SwingUtilities2;
+ 
+ /**
+  * <code>NumberFormatter</code> subclasses <code>InternationalFormatter</code>
+@@ -466,10 +468,12 @@
+                         valueClass = value.getClass();
+                     }
+                     try {
++                        ReflectUtil.checkPackageAccess(valueClass);
++                        SwingUtilities2.checkAccess(valueClass.getModifiers());
+                         Constructor cons = valueClass.getConstructor(
+                                               new Class[] { String.class });
+-
+                         if (cons != null) {
++                            SwingUtilities2.checkAccess(cons.getModifiers());
+                             return cons.newInstance(new Object[]{string});
+                         }
+                     } catch (Throwable ex) { }
+diff -r a28b8ce4d90e -r d10e47deb098 src/share/classes/sun/swing/SwingLazyValue.java
+--- jdk/src/share/classes/sun/swing/SwingLazyValue.java	Tue Oct 15 16:35:33 2013 +0100
++++ jdk/src/share/classes/sun/swing/SwingLazyValue.java	Tue Oct 15 16:47:11 2013 +0100
+@@ -30,6 +30,7 @@
+ import java.security.AccessController;
+ import java.security.PrivilegedAction;
+ import javax.swing.UIDefaults;
++import sun.reflect.misc.ReflectUtil;
+ 
+ /**
+  * SwingLazyValue is a copy of ProxyLazyValue that does not snapshot the
+@@ -64,7 +65,7 @@
+     public Object createValue(final UIDefaults table) {
+         try {
+             Class c;
+-            Object cl;
++            ReflectUtil.checkPackageAccess(className);
+             c = Class.forName(className, true, null);
+             if (methodName != null) {
+                 Class[] types = getClassArray(args);
+diff -r a28b8ce4d90e -r d10e47deb098 src/share/classes/sun/swing/SwingUtilities2.java
+--- jdk/src/share/classes/sun/swing/SwingUtilities2.java	Tue Oct 15 16:35:33 2013 +0100
++++ jdk/src/share/classes/sun/swing/SwingUtilities2.java	Tue Oct 15 16:47:11 2013 +0100
+@@ -1319,6 +1319,19 @@
+     }
+ 
+     /**
++     * Utility method that throws SecurityException if SecurityManager is set
++     * and modifiers are not public
++     *
++     * @param modifiers a set of modifiers
++     */
++    public static void checkAccess(int modifiers) {
++        if (System.getSecurityManager() != null
++                && !Modifier.isPublic(modifiers)) {
++            throw new SecurityException("Resource is not accessible");
++        }
++    }
++
++    /**
+      * Returns true if EventQueue.getCurrentEvent() has the permissions to
+      * access the system clipboard and if it is allowed gesture (if
+      * checkGesture true)

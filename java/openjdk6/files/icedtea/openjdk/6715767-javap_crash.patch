@@ -1,0 +1,135 @@
+# HG changeset patch
+# User jjg
+# Date 1213833188 25200
+#      Wed Jun 18 16:53:08 2008 -0700
+# Node ID c9b0fee44d446f902102462387c40ca9d1020b6e
+# Parent  3cbaa3d49584846d4fd8459edeb696b02de5499b
+6715767: javap on java.lang.ClassLoader crashes
+Reviewed-by: ksrini
+
+diff -r 3cbaa3d49584 -r c9b0fee44d44 src/share/classes/com/sun/tools/classfile/ConstantPool.java
+--- langtools/src/share/classes/com/sun/tools/classfile/ConstantPool.java	Thu Oct 24 02:40:06 2013 +0100
++++ langtools/src/share/classes/com/sun/tools/classfile/ConstantPool.java	Wed Jun 18 16:53:08 2008 -0700
+@@ -153,7 +153,7 @@
+                 break;
+ 
+             case CONSTANT_String:
+-                pool[i] = new CONSTANT_String_info(cr);
++                pool[i] = new CONSTANT_String_info(this, cr);
+                 break;
+ 
+             case CONSTANT_Utf8:
+@@ -509,7 +509,8 @@
+     }
+ 
+     public static class CONSTANT_String_info extends CPInfo {
+-        CONSTANT_String_info(ClassReader cr) throws IOException {
++        CONSTANT_String_info(ConstantPool cp, ClassReader cr) throws IOException {
++            super(cp);
+             string_index = cr.readUnsignedShort();
+         }
+ 
+diff -r 3cbaa3d49584 -r c9b0fee44d44 src/share/classes/com/sun/tools/javap/AttributeWriter.java
+--- langtools/src/share/classes/com/sun/tools/javap/AttributeWriter.java	Thu Oct 24 02:40:06 2013 +0100
++++ langtools/src/share/classes/com/sun/tools/javap/AttributeWriter.java	Wed Jun 18 16:53:08 2008 -0700
+@@ -259,7 +259,7 @@
+         return null;
+     }
+ 
+-    String getJavaException(Exceptions_attribute attr, int index) {
++    private String getJavaException(Exceptions_attribute attr, int index) {
+         try {
+             return getJavaName(attr.getException(index, constant_pool));
+         } catch (ConstantPoolException e) {
+diff -r 3cbaa3d49584 -r c9b0fee44d44 src/share/classes/com/sun/tools/javap/ClassWriter.java
+--- langtools/src/share/classes/com/sun/tools/javap/ClassWriter.java	Thu Oct 24 02:40:06 2013 +0100
++++ langtools/src/share/classes/com/sun/tools/javap/ClassWriter.java	Wed Jun 18 16:53:08 2008 -0700
+@@ -291,7 +291,7 @@
+                     for (int i = 0; i < exceptions.number_of_exceptions; i++) {
+                         if (i > 0)
+                             print(", ");
+-                        print(attrWriter.getJavaException(exceptions, i));
++                        print(getJavaException(exceptions, i));
+                     }
+                 }
+             } else {
+@@ -441,6 +441,14 @@
+         }
+     }
+ 
++    String getJavaException(Exceptions_attribute attr, int index) {
++        try {
++            return getJavaName(attr.getException(index, constant_pool));
++        } catch (ConstantPoolException e) {
++            return report(e);
++        }
++    }
++
+     String getValue(Descriptor d) {
+         try {
+             return d.getValue(constant_pool);
+diff -r 3cbaa3d49584 -r c9b0fee44d44 src/share/classes/com/sun/tools/javap/JavapTask.java
+--- langtools/src/share/classes/com/sun/tools/javap/JavapTask.java	Thu Oct 24 02:40:06 2013 +0100
++++ langtools/src/share/classes/com/sun/tools/javap/JavapTask.java	Wed Jun 18 16:53:08 2008 -0700
+@@ -475,6 +475,7 @@
+                 t.printStackTrace(pw);
+                 pw.close();
+                 diagnosticListener.report(createDiagnostic("err.crash", t.toString(), sw.toString()));
++                ok = false;
+             }
+         }
+ 
+diff -r 3cbaa3d49584 -r c9b0fee44d44 test/tools/javap/T6715767.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ langtools/test/tools/javap/T6715767.java	Wed Jun 18 16:53:08 2008 -0700
+@@ -0,0 +1,50 @@
++/*
++ * Copyright 2008 Sun Microsystems, Inc.  All Rights Reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
++ * CA 95054 USA or visit www.sun.com if you need additional information or
++ * have any questions.
++ */
++
++/*
++ * @test
++ * @bug 6715767
++ * @summary javap on java.lang.ClassLoader crashes
++ */
++
++import java.io.*;
++
++public class T6715767 {
++    public static void main(String... args) throws Exception {
++        new T6715767().run();
++    }
++
++    void run() throws Exception {
++        StringWriter sw = new StringWriter();
++        PrintWriter pw = new PrintWriter(sw);
++        String[] args = { "java.lang.ClassLoader" };
++        int rc = com.sun.tools.javap.Main.run(args, pw);
++        if (rc != 0 ||
++            sw.toString().indexOf("at com.sun.tools.javap.JavapTask.run") != -1) {
++            System.err.println("rc: " + rc);
++            System.err.println("log:\n" + sw);
++            throw new Exception("unexpected result");
++        }
++    }
++}
++

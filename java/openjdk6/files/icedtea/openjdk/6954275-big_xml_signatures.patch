@@ -1,0 +1,194 @@
+# HG changeset patch
+# User mullan
+# Date 1287154559 14400
+#      Fri Oct 15 10:55:59 2010 -0400
+# Node ID 5e3c766d18092d498d9019827c1058a32f1c4e2a
+# Parent  e5a4a4ec7b21f3d092d0b29024ff903864d05543
+6954275: XML signatures with reference data larger 16KB and cacheRef on fails to validate
+Reviewed-by: xuelei
+
+diff -r e5a4a4ec7b21 -r 5e3c766d1809 src/share/classes/com/sun/org/apache/xml/internal/security/utils/UnsyncByteArrayOutputStream.java
+--- jdk/src/share/classes/com/sun/org/apache/xml/internal/security/utils/UnsyncByteArrayOutputStream.java	Mon Oct 28 21:46:43 2013 +0000
++++ jdk/src/share/classes/com/sun/org/apache/xml/internal/security/utils/UnsyncByteArrayOutputStream.java	Fri Oct 15 10:55:59 2010 -0400
+@@ -3,7 +3,7 @@
+  * DO NOT REMOVE OR ALTER!
+  */
+ /*
+- * Copyright  1999-2005 The Apache Software Foundation.
++ * Copyright 1999-2010 The Apache Software Foundation.
+  *
+  *  Licensed under the Apache License, Version 2.0 (the "License");
+  *  you may not use this file except in compliance with the License.
+@@ -23,66 +23,70 @@
+ import java.io.OutputStream;
+ 
+ /**
+- * A simple Unsynced ByteArryOutputStream
++ * A simple Unsynced ByteArrayOutputStream
+  * @author raul
+  *
+  */
+ public class UnsyncByteArrayOutputStream extends OutputStream  {
+-        private static ThreadLocal bufCahce = new ThreadLocal() {
++    private static final int INITIAL_SIZE = 8192;
++    private static ThreadLocal bufCache = new ThreadLocal() {
+         protected synchronized Object initialValue() {
+-            return new byte[8*1024];
++            return new byte[INITIAL_SIZE];
+         }
+     };
+-    byte[] buf;
+-        int size=8*1024;//buf.length;
+-        int pos=0;
+-        public UnsyncByteArrayOutputStream() {
+-                buf=(byte[])bufCahce.get();
++
++    private byte[] buf;
++    private int size = INITIAL_SIZE;
++    private int pos = 0;
++
++    public UnsyncByteArrayOutputStream() {
++        buf = (byte[])bufCache.get();
++    }
++
++    public void write(byte[] arg0) {
++        int newPos = pos + arg0.length;
++        if (newPos > size) {
++            expandSize(newPos);
+         }
+-        /** @inheritDoc */
+-        public void write(byte[] arg0) {
+-                int newPos=pos+arg0.length;
+-                if (newPos>size) {
+-                        expandSize();
+-                }
+-                System.arraycopy(arg0,0,buf,pos,arg0.length);
+-                pos=newPos;
++        System.arraycopy(arg0, 0, buf, pos, arg0.length);
++        pos = newPos;
++    }
++
++    public void write(byte[] arg0, int arg1, int arg2) {
++        int newPos = pos + arg2;
++        if (newPos > size) {
++            expandSize(newPos);
+         }
+-        /** @inheritDoc */
+-        public void write(byte[] arg0, int arg1, int arg2) {
+-                int newPos=pos+arg2;
+-                if (newPos>size) {
+-                        expandSize();
+-                }
+-                System.arraycopy(arg0,arg1,buf,pos,arg2);
+-                pos=newPos;
++        System.arraycopy(arg0, arg1, buf, pos, arg2);
++        pos = newPos;
++    }
++
++    public void write(int arg0) {
++        int newPos = pos + 1;
++        if (newPos > size) {
++            expandSize(newPos);
+         }
+-        /** @inheritDoc */
+-        public void write(int arg0) {
+-                if (pos>=size) {
+-                        expandSize();
+-                }
+-                buf[pos++]=(byte)arg0;
++        buf[pos++] = (byte)arg0;
++    }
++
++    public byte[] toByteArray() {
++        byte result[] = new byte[pos];
++        System.arraycopy(buf, 0, result, 0, pos);
++        return result;
++    }
++
++    public void reset() {
++        pos = 0;
++    }
++
++    private void expandSize(int newPos) {
++        int newSize = size;
++        while (newPos > newSize) {
++            newSize = newSize<<2;
+         }
+-        /** @inheritDoc */
+-        public byte[] toByteArray() {
+-                byte result[]=new byte[pos];
+-                System.arraycopy(buf,0,result,0,pos);
+-                return result;
+-        }
+-
+-        /** @inheritDoc */
+-        public void reset() {
+-                pos=0;
+-        }
+-
+-        /** @inheritDoc */
+-        void expandSize() {
+-                int newSize=size<<2;
+-                byte newBuf[]=new byte[newSize];
+-                System.arraycopy(buf,0,newBuf,0,pos);
+-                buf=newBuf;
+-                size=newSize;
+-
+-        }
++        byte newBuf[] = new byte[newSize];
++        System.arraycopy(buf, 0, newBuf, 0, pos);
++        buf = newBuf;
++        size = newSize;
++    }
+ }
+diff -r e5a4a4ec7b21 -r 5e3c766d1809 test/com/sun/org/apache/xml/internal/security/utils/UnsyncByteArrayOutputStream/BufferOverflowTest.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ jdk/test/com/sun/org/apache/xml/internal/security/utils/UnsyncByteArrayOutputStream/BufferOverflowTest.java	Fri Oct 15 10:55:59 2010 -0400
+@@ -0,0 +1,47 @@
++/*
++ * Copyright (c) 2010, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ */
++
++/**
++ * @test %I% %E%
++ * @bug 6954275
++ * @summary Check that UnsyncByteArrayOutputStream does not
++ *          throw ArrayIndexOutOfBoundsException
++ * @compile -XDignore.symbol.file BufferOverflowTest.java
++ * @run main BufferOverflowTest
++ */
++
++import com.sun.org.apache.xml.internal.security.utils.UnsyncByteArrayOutputStream;
++
++public class BufferOverflowTest {
++
++    public static void main(String[] args) throws Exception {
++        try {
++            UnsyncByteArrayOutputStream out = new UnsyncByteArrayOutputStream();
++            out.write(new byte[(8192) << 2 + 1]);
++            System.out.println("PASSED");
++        } catch (ArrayIndexOutOfBoundsException e) {
++            System.err.println("FAILED, got ArrayIndexOutOfBoundsException");
++            throw new Exception(e);
++        }
++    }
++}

@@ -1,0 +1,108 @@
+# HG changeset patch
+# User coffeys
+# Date 1382735937 -3600
+#      Fri Oct 25 22:18:57 2013 +0100
+# Node ID f7a7c7d70e4968eb99e42f812c59900f545d7fa7
+# Parent  695dd7ceb9e34fd4058374de63964c205f061002
+8000450: Restrict access to com/sun/corba/se/impl package
+Reviewed-by: alanb, chegar, lancea
+
+diff -r 695dd7ceb9e3 -r f7a7c7d70e49 src/share/lib/security/java.security
+--- jdk/src/share/lib/security/java.security	Fri Oct 25 22:17:00 2013 +0100
++++ jdk/src/share/lib/security/java.security	Fri Oct 25 22:18:57 2013 +0100
+@@ -128,6 +128,7 @@
+ # corresponding RuntimePermission ("accessClassInPackage."+package) has
+ # been granted.
+ package.access=sun.,\
++               com.sun.corba.se.impl.,\
+                com.sun.xml.internal.,\
+                com.sun.imageio.,\
+                com.sun.istack.internal.,\
+@@ -164,6 +165,7 @@
+ # checkPackageDefinition.
+ #
+ package.definition=sun.,\
++                   com.sun.corba.se.impl.,\
+                    com.sun.xml.internal.,\
+                    com.sun.imageio.,\
+                    com.sun.istack.internal.,\
+diff -r 695dd7ceb9e3 -r f7a7c7d70e49 src/share/lib/security/java.security-solaris
+--- jdk/src/share/lib/security/java.security-solaris	Fri Oct 25 22:17:00 2013 +0100
++++ jdk/src/share/lib/security/java.security-solaris	Fri Oct 25 22:18:57 2013 +0100
+@@ -129,6 +129,7 @@
+ # corresponding RuntimePermission ("accessClassInPackage."+package) has
+ # been granted.
+ package.access=sun.,\
++               com.sun.corba.se.impl.,\
+                com.sun.xml.internal.,\
+                com.sun.imageio.,\
+                com.sun.istack.internal.,\
+@@ -166,6 +167,7 @@
+ # checkPackageDefinition.
+ #
+ package.definition=sun.,\
++                   com.sun.corba.se.impl.,\
+                    com.sun.xml.internal.,\
+                    com.sun.imageio.,\
+                    com.sun.istack.internal.,\
+diff -r 695dd7ceb9e3 -r f7a7c7d70e49 src/share/lib/security/java.security-windows
+--- jdk/src/share/lib/security/java.security-windows	Fri Oct 25 22:17:00 2013 +0100
++++ jdk/src/share/lib/security/java.security-windows	Fri Oct 25 22:18:57 2013 +0100
+@@ -129,6 +129,7 @@
+ # corresponding RuntimePermission ("accessClassInPackage."+package) has
+ # been granted.
+ package.access=sun.,\
++               com.sun.corba.se.impl.,\
+                com.sun.xml.internal.,\
+                com.sun.imageio.,\
+                com.sun.istack.internal.,\
+@@ -167,6 +168,7 @@
+ # checkPackageDefinition.
+ #
+ package.definition=sun.,\
++                   com.sun.corba.se.impl.,\
+                    com.sun.xml.internal.,\
+                    com.sun.imageio.,\
+                    com.sun.istack.internal.,\
+diff -r 695dd7ceb9e3 -r f7a7c7d70e49 test/java/lang/SecurityManager/CheckPackageAccess.java
+--- jdk/test/java/lang/SecurityManager/CheckPackageAccess.java	Fri Oct 25 22:17:00 2013 +0100
++++ jdk/test/java/lang/SecurityManager/CheckPackageAccess.java	Fri Oct 25 22:18:57 2013 +0100
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2012, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2012, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -23,8 +23,8 @@
+ 
+ /*
+  * @test
+- * @bug 7146431
+- * @summary Test that internal JAXP packages cannot be accessed
++ * @bug 7146431 8000450
++ * @summary Test that internal packages cannot be accessed
+  */
+ 
+ public class CheckPackageAccess {
+@@ -32,6 +32,7 @@
+     public static void main(String[] args) throws Exception {
+ 
+         String[] pkgs = new String[] {
++            "com.sun.corba.se.impl.",
+             "com.sun.org.apache.xerces.internal.utils.",
+             "com.sun.org.apache.xalan.internal.utils." };
+         SecurityManager sm = new SecurityManager();
+@@ -40,7 +41,11 @@
+             System.out.println("Checking package access for " + pkg);
+             try {
+                 sm.checkPackageAccess(pkg);
+-                throw new Exception("Expected SecurityException not thrown");
++                throw new Exception("Expected PackageAccess SecurityException not thrown");
++            } catch (SecurityException se) { }
++            try {
++                sm.checkPackageDefinition(pkg);
++                throw new Exception("Expected PackageDefinition SecurityException not thrown");
+             } catch (SecurityException se) { }
+         }
+     }

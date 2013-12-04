@@ -1,0 +1,159 @@
+# HG changeset patch
+# User jjg
+# Date 1382713809 -3600
+#      Fri Oct 25 16:10:09 2013 +0100
+# Node ID 9083313d5733ca9be66bc52cf64b9b5d4dd2e39a
+# Parent  a7567fdabf3eae2c495726e6c25e2364e175261f
+6902264: fix indentation of tableswitch and lookupswitch
+Reviewed-by: ksrini
+
+diff -r a7567fdabf3e -r 9083313d5733 src/share/classes/com/sun/tools/classfile/Instruction.java
+--- langtools/src/share/classes/com/sun/tools/classfile/Instruction.java	Tue May 19 13:53:00 2009 -0700
++++ langtools/src/share/classes/com/sun/tools/classfile/Instruction.java	Fri Oct 25 16:10:09 2013 +0100
+@@ -106,9 +106,9 @@
+         /** See {@link Kind#LOCAL_UBYTE}. */
+         R visitLocalAndValue(Instruction instr, int index, int value, P p);
+         /** See {@link Kind#DYNAMIC}. */
+-        R visitLookupSwitch(Instruction instr, int default_, int npairs, int[] matches, int[] offsets);
++        R visitLookupSwitch(Instruction instr, int default_, int npairs, int[] matches, int[] offsets, P p);
+         /** See {@link Kind#DYNAMIC}. */
+-        R visitTableSwitch(Instruction instr, int default_, int low, int high, int[] offsets);
++        R visitTableSwitch(Instruction instr, int default_, int low, int high, int[] offsets, P p);
+         /** See {@link Kind#BYTE}, {@link Kind#SHORT}. */
+         R visitValue(Instruction instr, int value, P p);
+         /** Instruction is unrecognized. */
+@@ -282,7 +282,7 @@
+                         for (int i = 0; i < values.length; i++)
+                             values[i] = getInt(pad + 12 + 4 * i);
+                         return visitor.visitTableSwitch(
+-                                this, default_, low, high, values);
++                                this, default_, low, high, values, p);
+                     }
+                     case LOOKUPSWITCH: {
+                         int pad = align(pc + 1) - pc;
+@@ -295,7 +295,7 @@
+                             offsets[i] = getInt(pad + 12 + i * 8);
+                         }
+                         return visitor.visitLookupSwitch(
+-                                this, default_, npairs, matches, offsets);
++                                this, default_, npairs, matches, offsets, p);
+                     }
+                     default:
+                         throw new IllegalStateException();
+diff -r a7567fdabf3e -r 9083313d5733 src/share/classes/com/sun/tools/javap/CodeWriter.java
+--- langtools/src/share/classes/com/sun/tools/javap/CodeWriter.java	Tue May 19 13:53:00 2009 -0700
++++ langtools/src/share/classes/com/sun/tools/javap/CodeWriter.java	Fri Oct 25 16:10:09 2013 +0100
+@@ -117,28 +117,33 @@
+ 
+     public void writeInstr(Instruction instr) {
+         print(String.format("%4d: %-13s ", instr.getPC(), instr.getMnemonic()));
+-        instr.accept(instructionPrinter, null);
++        // compute the number of indentations for the body of multi-line instructions
++        // This is 6 (the width of "%4d: "), divided by the width of each indentation level,
++        // and rounded up to the next integer.
++        int indentWidth = options.indentWidth;
++        int indent = (6 + indentWidth - 1) / indentWidth;
++        instr.accept(instructionPrinter, indent);
+         println();
+     }
+     // where
+-    Instruction.KindVisitor<Void,Void> instructionPrinter =
+-            new Instruction.KindVisitor<Void,Void>() {
++    Instruction.KindVisitor<Void,Integer> instructionPrinter =
++            new Instruction.KindVisitor<Void,Integer>() {
+ 
+-        public Void visitNoOperands(Instruction instr, Void p) {
++        public Void visitNoOperands(Instruction instr, Integer indent) {
+             return null;
+         }
+ 
+-        public Void visitArrayType(Instruction instr, TypeKind kind, Void p) {
++        public Void visitArrayType(Instruction instr, TypeKind kind, Integer indent) {
+             print(" " + kind.name);
+             return null;
+         }
+ 
+-        public Void visitBranch(Instruction instr, int offset, Void p) {
++        public Void visitBranch(Instruction instr, int offset, Integer indent) {
+             print((instr.getPC() + offset));
+             return null;
+         }
+ 
+-        public Void visitConstantPoolRef(Instruction instr, int index, Void p) {
++        public Void visitConstantPoolRef(Instruction instr, int index, Integer indent) {
+             print("#" + index + ";");
+             tab();
+             print("// ");
+@@ -146,7 +151,7 @@
+             return null;
+         }
+ 
+-        public Void visitConstantPoolRefAndValue(Instruction instr, int index, int value, Void p) {
++        public Void visitConstantPoolRefAndValue(Instruction instr, int index, int value, Integer indent) {
+             print("#" + index + ",  " + value + ";");
+             tab();
+             print("// ");
+@@ -154,46 +159,48 @@
+             return null;
+         }
+ 
+-        public Void visitLocal(Instruction instr, int index, Void p) {
++        public Void visitLocal(Instruction instr, int index, Integer indent) {
+             print(index);
+             return null;
+         }
+ 
+-        public Void visitLocalAndValue(Instruction instr, int index, int value, Void p) {
++        public Void visitLocalAndValue(Instruction instr, int index, int value, Integer indent) {
+             print(index + ", " + value);
+             return null;
+         }
+ 
+-        public Void visitLookupSwitch(Instruction instr, int default_, int npairs, int[] matches, int[] offsets) {
++        public Void visitLookupSwitch(Instruction instr,
++                int default_, int npairs, int[] matches, int[] offsets, Integer indent) {
+             int pc = instr.getPC();
+             print("{ // " + npairs);
+-            indent(+1);
++            indent(indent);
+             for (int i = 0; i < npairs; i++) {
+-                print("\n" + matches[i] + ": " + (pc + offsets[i]) + ";");
++                print(String.format("%n%12d: %d", matches[i], (pc + offsets[i])));
+             }
+-            print("\ndefault: " + (pc + default_) + " }");
+-            indent(-1);
++            print("\n     default: " + (pc + default_) + "\n}");
++            indent(-indent);
+             return null;
+         }
+ 
+-        public Void visitTableSwitch(Instruction instr, int default_, int low, int high, int[] offsets) {
++        public Void visitTableSwitch(Instruction instr,
++                int default_, int low, int high, int[] offsets, Integer indent) {
+             int pc = instr.getPC();
+-            print("{ //" + low + " to " + high);
+-            indent(+1);
++            print("{ // " + low + " to " + high);
++            indent(indent);
+             for (int i = 0; i < offsets.length; i++) {
+-                print("\n" + (low + i) + ": " + (pc + offsets[i]) + ";");
++                print(String.format("%n%12d: %d", (low + i), (pc + offsets[i])));
+             }
+-            print("\ndefault: " + (pc + default_) + " }");
+-            indent(-1);
++            print("\n     default: " + (pc + default_) + "\n}");
++            indent(-indent);
+             return null;
+         }
+ 
+-        public Void visitValue(Instruction instr, int value, Void p) {
++        public Void visitValue(Instruction instr, int value, Integer indent) {
+             print(value);
+             return null;
+         }
+ 
+-        public Void visitUnknown(Instruction instr, Void p) {
++        public Void visitUnknown(Instruction instr, Integer indent) {
+             return null;
+         }
+     };
