@@ -264,7 +264,7 @@ CONFIGURE_ARGS+=--http-client-body-temp-path=${NGINX_TMPDIR}/client_body_temp \
 		--http-log-path=${NGINX_ACCESSLOG}
 
 .if ${PORT_OPTIONS:MHTTP_ACCEPT_LANGUAGE}
-GIT_ACCEPT_LANGUAGE_VERSION=	02262ce
+GIT_ACCEPT_LANGUAGE_VERSION=	2f69842
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/giom/nginx_accept_language_module/tarball/master/:accept_language
 DISTFILES+=	giom-nginx_accept_language_module-${GIT_ACCEPT_LANGUAGE_VERSION}.tar.gz:accept_language
