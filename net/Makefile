@@ -349,6 +349,7 @@
     SUBDIR += libunp
     SUBDIR += libutp
     SUBDIR += libvncserver
+    SUBDIR += libzmq2
     SUBDIR += libzmq3
     SUBDIR += libzmq4
     SUBDIR += liferea
