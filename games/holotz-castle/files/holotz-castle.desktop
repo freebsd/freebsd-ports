@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Holotz's Castle
+GenericName=Holotz's Castle game
+Comment=Platform game with high doses of mystery
+Icon=holotz-castle
+Exec=holotz-castle
+Categories=Game;LogicGame;
+Terminal=true
