@@ -5289,3 +5289,4 @@ irc/inspircd12|irc/inspircd|2013-12-01|Has expired: No upstream support; known v
 graphics/py-clutter||2013-12-01|Has expired: Broken for more than 6 month
 graphics/py-clutter-gtk||2013-12-01|Has expired: depends on expired graphics/py-clutter
 devel/zmq|net/zmq|2013-12-05|Rename according to upstream and move to more suitable category
+devel/rubygem-ruby-statsd|devel/rubygem-statsd|2013-12-05|Rename to match upstream naming
