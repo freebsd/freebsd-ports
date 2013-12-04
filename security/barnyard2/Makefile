@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	barnyard2
-PORTVERSION=	1.12
-PORTREVISION=	1
+PORTVERSION=	1.13
 CATEGORIES=	security
 
 MAINTAINER=	pauls@utdallas.edu
@@ -13,7 +12,7 @@ LICENSE=	GPLv2
 USE_GITHUB=	yes
 GH_ACCOUNT=	firnsy
 GH_TAGNAME=	v2-${PORTVERSION}
-GH_COMMIT=	3c1f553
+GH_COMMIT=	272eaf7
 
 OPTIONS_DEFINE=	64BIT ARUBA BRO GRE IPV6 MPLS MYSQL MYSQL_SSL ODBC PRELUDE PGSQL
 NO_OPTIONS_SORT=yes
@@ -42,7 +41,7 @@ GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 
 PORTDOCS1=	README RELEASE.NOTES
-PORTDOCS2=	INSTALL README.aruba README.database README.sguil README.snortsam
+PORTDOCS2=	INSTALL README.aruba README.database README.sguil README.sig_suppress README.snortsam
 EXAMPLES=	SCHEMA_ACCESS create_db2 create_mssql create_mysql create_oracle.sql create_postgresql
 
 .include <bsd.port.options.mk>
