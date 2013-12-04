@@ -2,6 +2,7 @@
 
 PORTNAME=	jzmq
 PORTVERSION=	2011.04.26
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	LOCAL/olgeni
 DISTNAME=	zeromq-${PORTNAME}-${PORTVERSION}
@@ -9,7 +10,7 @@ DISTNAME=	zeromq-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Java bindings for ZeroMQ
 
-LIB_DEPENDS=	zmq.1:${PORTSDIR}/devel/zmq
+LIB_DEPENDS=	zmq.1:${PORTSDIR}/net/libzmq2
 
 USES=		pkgconfig
 USE_AUTOTOOLS=	autoconf:env libtool automake:env
