@@ -157,6 +157,7 @@ CONFIGURE_ARGS+=	--disable-threads
 
 .if ${PORT_OPTIONS:MGSSAPI}
 CONFIGURE_ARGS+=	--with-gssapi
+LDFLAGS+=		-L${LIBDIR} -lgssapi_krb5
 .else
 CONFIGURE_ARGS+=	--without-gssapi
 .endif
