@@ -122,6 +122,8 @@ man/man5/tcsd.conf.5.gz
 man/man8/tcsd.8.gz
 @unexec cmp -s %D/etc/tcsd.conf %D/etc/tcsd.conf.dist && rm -f %D/etc/tcsd.conf || true
 etc/tcsd.conf.dist
+@exec chown _tss:_tss %D/etc/tcsd.conf.dist
+@exec chmod 0600 %D/etc/tcsd.conf.dist
 @exec [ -f %D/etc/tcsd.conf ] || cp -p %D/etc/tcsd.conf.dist %D/etc/tcsd.conf
 @dirrmtry var/lib/tpm
 @dirrmtry var/lib

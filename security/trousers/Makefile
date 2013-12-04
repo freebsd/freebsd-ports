@@ -61,7 +61,7 @@ run-autotools-autoreconf:
 	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} -i
 
 post-install:
-	${INSTALL_DATA} -o ${USERS} -g ${GROUPS} -m 0600 \
+	${INSTALL_DATA} \
 	    ${WRKSRC}/dist/tcsd.conf ${STAGEDIR}${PREFIX}/etc/tcsd.conf.dist
 
 .include <bsd.port.mk>
