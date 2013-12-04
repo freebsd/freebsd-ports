@@ -9,8 +9,10 @@ MASTER_SITES=	ftp://ftp.povray.org/pub/povray/%SUBDIR%/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.povray.org/pub/povray/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/povray/%SUBDIR%,}
 MASTER_SITE_SUBDIR=	Old-Versions/Official-3.1g/Unix
-DISTNAME=	povray31
+PKGNAMESUFFIX=	31
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}
 DISTFILES=	povuni_s.tgz povuni_d.tgz
+DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}
 
 MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	Persistence of Vision Ray Tracer
@@ -19,9 +21,6 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=	X11
-
-DIST_SUBDIR=	povray31
-LATEST_LINK=	povray31
 
 #
 #   I think all of this needs some explanation.
@@ -43,9 +42,9 @@ ALL_TARGET=	newunix
 POVBIN=		${BUILD_WRKSRC}/povray
 .endif
 
-MAN1=		${LATEST_LINK}.1
+MAN1=		${PORTNAME}${PKGNAMESUFFIX}.1
 
-POVLIB=		${PREFIX}/lib/${LATEST_LINK}
+POVLIB=		${PREFIX}/lib/${PORTNAME}${PKGNAMESUFFIX}
 
 BUILD_WRKSRC=	${WRKSRC}/source/unix
 MAKEFILE=	makefile
@@ -53,7 +52,7 @@ MAKEFILE=	makefile
 do-install:
 	@${MKDIR} ${POVLIB}/allscene
 	@${TOUCH} ${POVLIB}/allscene/.bla
-	@${INSTALL_PROGRAM} ${POVBIN} ${PREFIX}/bin/${LATEST_LINK}
+	@${INSTALL_PROGRAM} ${POVBIN} ${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
 	@(cd ${WRKSRC}; ${TAR} cpf - include scenes) | \
 		(cd ${POVLIB}; ${TAR} xpf -)
 	@${INSTALL_DATA} ${WRKSRC}/*.ini ${POVLIB}/
@@ -61,8 +60,8 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/*.txt ${POVLIB}/
 	@${INSTALL_DATA} ${WRKSRC}/*.gif ${WRKSRC}/*.xpm ${POVLIB}/
 	@${INSTALL_SCRIPT} ${WRKSRC}/allscene.sh ${POVLIB}/
-	@${MV} ${WRKSRC}/${PORTNAME}.1 ${WRKSRC}/${LATEST_LINK}.1
-	@${INSTALL_MAN} ${WRKSRC}/${LATEST_LINK}.1 ${PREFIX}/man/man1
+	@${MV} ${WRKSRC}/${PORTNAME}.1 ${WRKSRC}/${PORTNAME}${PKGNAMESUFFIX}.1
+	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}${PKGNAMESUFFIX}.1 ${PREFIX}/man/man1
 	@${CHMOD} -R a+rX,og-w ${POVLIB}
 
 post-install:
