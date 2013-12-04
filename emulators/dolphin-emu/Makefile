@@ -33,7 +33,6 @@ USE_GCC=	yes
 USES=		dos2unix cmake pkgconfig iconv
 DOS2UNIX_REGEX=	.*\.(h|c|cpp)
 
-CMAKE_BUILD_TYPE=	Release
 # Disable ALSA (emulated) and ao (buggy)
 CMAKE_ARGS+=	-DOPENMP:BOOL=OFF \
 		-DDISABLE_ALSA:BOOL=ON \
@@ -59,9 +58,6 @@ PLIST_SUB+=	NLS="@comment "
 
 .if ${PORT_OPTIONS:MDEBUG}
 CMAKE_ARGS+=	-DFASTLOG:BOOL=ON
-INSTALL_TARGET=	install
-CFLAGS+=	-g
-CXXFLAGS+=	-g
 MAKE_ENV+=	VERBOSE=yes
 .endif
 

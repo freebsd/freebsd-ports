@@ -301,7 +301,7 @@ include/libtomahawk/widgets/searchlineedit/SearchLineEdit.h
 lib/cmake/Tomahawk/TomahawkAddPlugin.cmake
 lib/cmake/Tomahawk/TomahawkConfig.cmake
 lib/cmake/Tomahawk/TomahawkConfigVersion.cmake
-lib/cmake/Tomahawk/TomahawkLibraryDepends-release.cmake
+lib/cmake/Tomahawk/TomahawkLibraryDepends-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Tomahawk/TomahawkLibraryDepends.cmake
 lib/cmake/Tomahawk/TomahawkUse.cmake
 lib/libtomahawk_account_google.so

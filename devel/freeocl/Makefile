@@ -21,15 +21,10 @@ WRKSRC=		${WRKDIR}/FreeOCL-${PORTVERSION}-Source
 USE_GCC=	yes
 USES=		cmake
 USE_LDCONFIG=	yes
-CMAKE_BUILD_TYPE=Release
 
 NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's:%%PREFIX%%:${PREFIX}:g' ${WRKSRC}/src/icd/icd_loader.cpp \
 		${WRKSRC}/CMakeLists.txt
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} < 800000
-BROKEN=		this port does not compile at 7.x: "src/program.cpp:531:37: error: 'RTLD_NOLOAD' was not declared in this scope"
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
