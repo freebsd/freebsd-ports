@@ -1,7 +1,9 @@
 %%PERL5_MAN3%%/CSS::Inliner.3.gz
 %%PERL5_MAN3%%/CSS::Inliner::Parser.3.gz
+%%PERL5_MAN3%%/CSS::Inliner::TreeBuilder.3.gz
 %%SITE_PERL%%/CSS/Inliner.pm
 %%SITE_PERL%%/CSS/Inliner/Parser.pm
+%%SITE_PERL%%/CSS/Inliner/TreeBuilder.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Inliner/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Inliner
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS
