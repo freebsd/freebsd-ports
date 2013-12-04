@@ -1,5 +1,6 @@
 bin/traingame
 bin/traingame-map
+share/applications/traingame.desktop
 share/icons/hicolor/32x32/apps/traingame.png
 share/icons/hicolor/48x48/apps/traingame.png
 share/icons/hicolor/64x64/apps/traingame.png
