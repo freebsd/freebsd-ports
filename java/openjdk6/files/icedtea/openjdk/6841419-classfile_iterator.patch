@@ -1,0 +1,142 @@
+# HG changeset patch
+# User jjg
+# Date 1242758630 25200
+#      Tue May 19 11:43:50 2009 -0700
+# Node ID 17dfaebe23044c48bcd5ed0730ce2358543ac459
+# Parent  00870be9028f778a169bf9b843a994ec44258c22
+6841419: classfile: add constant pool iterator
+Reviewed-by: mcimadamore
+
+diff -r 00870be9028f -r 17dfaebe2304 src/share/classes/com/sun/tools/classfile/ClassTranslator.java
+--- langtools/src/share/classes/com/sun/tools/classfile/ClassTranslator.java	Tue May 19 11:33:13 2009 -0700
++++ langtools/src/share/classes/com/sun/tools/classfile/ClassTranslator.java	Tue May 19 11:43:50 2009 -0700
+@@ -95,7 +95,7 @@
+         if (cp2 == null) {
+             ConstantPool.CPInfo[] pool2 = new ConstantPool.CPInfo[cp.size()];
+             boolean eq = true;
+-            for (int i = 0; i < cp.size(); i++) {
++            for (int i = 0; i < cp.size(); ) {
+                 ConstantPool.CPInfo cpInfo;
+                 try {
+                     cpInfo = cp.get(i);
+@@ -107,11 +107,7 @@
+                 pool2[i] = cpInfo2;
+                 if (cpInfo.getTag() != cpInfo2.getTag())
+                     throw new IllegalStateException();
+-                switch (cpInfo.getTag()) {
+-                    case ConstantPool.CONSTANT_Double:
+-                    case ConstantPool.CONSTANT_Long:
+-                        i += 1;
+-                }
++                i += cpInfo.size();
+             }
+ 
+             if (eq)
+diff -r 00870be9028f -r 17dfaebe2304 src/share/classes/com/sun/tools/classfile/ClassWriter.java
+--- langtools/src/share/classes/com/sun/tools/classfile/ClassWriter.java	Tue May 19 11:33:13 2009 -0700
++++ langtools/src/share/classes/com/sun/tools/classfile/ClassWriter.java	Tue May 19 11:43:50 2009 -0700
+@@ -118,13 +118,8 @@
+         ConstantPool pool = classFile.constant_pool;
+         int size = pool.size();
+         out.writeShort(size);
+-        try {
+-            for (int i = 1; i < size; ) {
+-                i += constantPoolWriter.write(pool.get(i), out);
+-            }
+-        } catch (ConstantPoolException e) {
+-            throw new Error(e); // ??
+-        }
++        for (CPInfo cpInfo: pool.entries())
++            constantPoolWriter.write(cpInfo, out);
+     }
+ 
+     protected void writeFields() throws IOException {
+diff -r 00870be9028f -r 17dfaebe2304 src/share/classes/com/sun/tools/classfile/ConstantPool.java
+--- langtools/src/share/classes/com/sun/tools/classfile/ConstantPool.java	Tue May 19 11:33:13 2009 -0700
++++ langtools/src/share/classes/com/sun/tools/classfile/ConstantPool.java	Tue May 19 11:43:50 2009 -0700
+@@ -26,6 +26,7 @@
+ package com.sun.tools.classfile;
+ 
+ import java.io.IOException;
++import java.util.Iterator;
+ 
+ /**
+  * See JVMS3, section 4.5.
+@@ -219,6 +220,40 @@
+         throw new EntryNotFound(value);
+     }
+ 
++    public Iterable<CPInfo> entries() {
++        return new Iterable<CPInfo>() {
++            public Iterator<CPInfo> iterator() {
++                return new Iterator<CPInfo>() {
++
++                    public boolean hasNext() {
++                        return next < pool.length;
++                    }
++
++                    public CPInfo next() {
++                        current = pool[next];
++                        switch (current.getTag()) {
++                            case CONSTANT_Double:
++                            case CONSTANT_Long:
++                                next += 2;
++                                break;
++                            default:
++                                next += 1;
++                        }
++                        return current;
++                    }
++
++                    public void remove() {
++                        throw new UnsupportedOperationException();
++                    }
++
++                    private CPInfo current;
++                    private int next = 1;
++
++                };
++            }
++        };
++    }
++
+     private CPInfo[] pool;
+ 
+     public interface Visitor<R,P> {
+@@ -246,6 +281,12 @@
+ 
+         public abstract int getTag();
+ 
++        /** The number of slots in the constant pool used by this entry.
++         * 2 for CONSTANT_Double and CONSTANT_Long; 1 for everything else. */
++        public int size() {
++            return 1;
++        }
++
+         public abstract <R,D> R accept(Visitor<R,D> visitor, D data);
+ 
+         protected final ConstantPool cp;
+@@ -346,6 +387,11 @@
+         }
+ 
+         @Override
++        public int size() {
++            return 2;
++        }
++
++        @Override
+         public String toString() {
+             return "CONSTANT_Double_info[value: " + value + "]";
+         }
+@@ -459,6 +505,11 @@
+         }
+ 
+         @Override
++        public int size() {
++            return 2;
++        }
++
++        @Override
+         public String toString() {
+             return "CONSTANT_Long_info[value: " + value + "]";
+         }

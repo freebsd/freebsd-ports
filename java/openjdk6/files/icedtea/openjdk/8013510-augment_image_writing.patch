@@ -1,0 +1,57 @@
+# HG changeset patch
+# User jchen
+# Date 1368123798 25200
+#      Thu May 09 11:23:18 2013 -0700
+# Node ID c428e65fa8fd127058ea33ef728391887ea108e6
+# Parent  8fb384d684f5b9bc76970bdc7e5603b9cd9944b8
+8013510: Augment image writing code
+Reviewed-by: bae, prr
+
+diff -r 8fb384d684f5 -r c428e65fa8fd src/share/classes/com/sun/imageio/plugins/jpeg/JPEGImageReader.java
+--- jdk/src/share/classes/com/sun/imageio/plugins/jpeg/JPEGImageReader.java	Tue Oct 15 16:30:19 2013 +0100
++++ jdk/src/share/classes/com/sun/imageio/plugins/jpeg/JPEGImageReader.java	Thu May 09 11:23:18 2013 -0700
+@@ -1178,6 +1178,11 @@
+             target = imRas;
+         }
+         int [] bandSizes = target.getSampleModel().getSampleSize();
++        for (int i = 0; i < bandSizes.length; i++) {
++            if (bandSizes[i] <= 0 || bandSizes[i] > 8) {
++                throw new IIOException("Illegal band size: should be 0 < size <= 8");
++            }
++        }
+ 
+         /*
+          * If the process is sequential, and we have restart markers,
+diff -r 8fb384d684f5 -r c428e65fa8fd src/share/classes/com/sun/imageio/plugins/jpeg/JPEGImageWriter.java
+--- jdk/src/share/classes/com/sun/imageio/plugins/jpeg/JPEGImageWriter.java	Tue Oct 15 16:30:19 2013 +0100
++++ jdk/src/share/classes/com/sun/imageio/plugins/jpeg/JPEGImageWriter.java	Thu May 09 11:23:18 2013 -0700
+@@ -490,8 +490,8 @@
+             // handle <= 8-bit samples.  We now check the band sizes and throw
+             // an exception for images, such as USHORT_GRAY, with > 8 bits
+             // per sample.
+-            if (bandSizes[i] > 8) {
+-                throw new IIOException("Sample size must be <= 8");
++            if (bandSizes[i] <= 0 || bandSizes[i] > 8) {
++                throw new IIOException("Illegal band size: should be 0 < size <= 8");
+             }
+             // 4450894 part 2: We expand IndexColorModel images to full 24-
+             // or 32-bit in grabPixels() for each scanline.  For indexed
+diff -r 8fb384d684f5 -r c428e65fa8fd src/share/native/sun/awt/image/jpeg/imageioJPEG.c
+--- jdk/src/share/native/sun/awt/image/jpeg/imageioJPEG.c	Tue Oct 15 16:30:19 2013 +0100
++++ jdk/src/share/native/sun/awt/image/jpeg/imageioJPEG.c	Thu May 09 11:23:18 2013 -0700
+@@ -2684,6 +2684,15 @@
+     bandSize = (*env)->GetIntArrayElements(env, bandSizes, NULL);
+ 
+     for (i = 0; i < numBands; i++) {
++        if (bandSize[i] <= 0 || bandSize[i] > JPEG_BAND_SIZE) {
++            (*env)->ReleaseIntArrayElements(env, bandSizes,
++                                            bandSize, JNI_ABORT);
++            JNU_ThrowByName(env, "javax/imageio/IIOException", "Invalid Image");
++            return JNI_FALSE;;
++        }
++    }
++
++    for (i = 0; i < numBands; i++) {
+         if (bandSize[i] != JPEG_BAND_SIZE) {
+             mustScale = TRUE;
+             break;

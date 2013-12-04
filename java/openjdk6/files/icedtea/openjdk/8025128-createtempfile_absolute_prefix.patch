@@ -1,0 +1,139 @@
+# HG changeset patch
+# User dxu
+# Date 1383019831 0
+#      Tue Oct 29 04:10:31 2013 +0000
+# Node ID 008e31b76d415f263617e710f19da6254135817f
+# Parent  8459b68eb028734b2153266176538e1eddbb87be
+8025128: File.createTempFile fails if prefix is absolute path
+Reviewed-by: alanb, darcy
+
+diff -r 8459b68eb028 -r 008e31b76d41 src/share/classes/java/io/File.java
+--- jdk/src/share/classes/java/io/File.java	Tue Oct 29 03:49:40 2013 +0000
++++ jdk/src/share/classes/java/io/File.java	Tue Oct 29 04:10:31 2013 +0000
+@@ -1801,11 +1801,19 @@
+         } else {
+             n = Math.abs(n);
+         }
+-            String name = prefix + Long.toString(n) + suffix;
+-            File f = new File(dir, name);
+-            if (!name.equals(f.getName()))
+-                throw new IOException("Unable to create temporary file");
+-            return f;
++
++	// Use only the file name from the supplied prefix
++	prefix = (new File(prefix)).getName();
++
++	String name = prefix + Long.toString(n) + suffix;
++	File f = new File(dir, name);
++	if (!name.equals(f.getName())) {
++	    if (System.getSecurityManager() != null)
++		throw new IOException("Unable to create temporary file");
++	    else
++		throw new IOException("Unable to create temporary file, " + f);
++	}
++	return f;
+     }
+ 
+     private static boolean checkAndCreate(String filename, SecurityManager sm,
+diff -r 8459b68eb028 -r 008e31b76d41 test/java/io/File/createTempFile/SpecialTempFile.java
+--- jdk/test/java/io/File/createTempFile/SpecialTempFile.java	Tue Oct 29 03:49:40 2013 +0000
++++ jdk/test/java/io/File/createTempFile/SpecialTempFile.java	Tue Oct 29 04:10:31 2013 +0000
+@@ -23,7 +23,7 @@
+ 
+ /*
+  * @test
+- * @bug 8013827 8011950
++ * @bug 8013827 8011950 8025128
+  * @summary Check whether File.createTempFile can handle special parameters
+  *          on Windows platforms
+  * @author Dan Xu
+@@ -34,7 +34,9 @@
+ 
+ public class SpecialTempFile {
+ 
+-    private static void test(String name, String[] prefix, String[] suffix) {
++    private static void test(String name, String[] prefix, String[] suffix,
++                             boolean expectedException) throws IOException
++    {
+         if (prefix == null || suffix == null
+             || prefix.length != suffix.length)
+         {
+@@ -42,39 +44,59 @@
+         }
+ 
+         final String exceptionMsg = "Unable to create temporary file";
+-        final String errMsg = "IOException is expected";
+ 
+         for (int i = 0; i < prefix.length; i++) {
+             boolean exceptionThrown = false;
+             File f = null;
+-            System.out.println("In test " + name
+-                               + ", creating temp file with prefix, "
+-                               + prefix[i] + ", suffix, " + suffix[i]);
+-            try {
+-                f = File.createTempFile(prefix[i], suffix[i]);
+-            } catch (IOException e) {
+-                if (exceptionMsg.equals(e.getMessage()))
+-                    exceptionThrown = true;
+-                else
+-                    System.out.println("Wrong error message:" + e.getMessage());
++
++            String[] dirs = { null, "." };
++
++            for (String dir : dirs ) {
++                System.out.println("In test " + name +
++                                   ", creating temp file with prefix, " +
++                                   prefix[i] + ", suffix, " + suffix[i] +
++                                   ", in dir, " + dir);
++
++                try {
++                    if (dir == null || dir.isEmpty())
++                        f = File.createTempFile(prefix[i], suffix[i]);
++                    else
++                        f = File.createTempFile(prefix[i], suffix[i], new File(dir));
++                } catch (IOException e) {
++                    if (expectedException) {
++                        if (e.getMessage().startsWith(exceptionMsg))
++                            exceptionThrown = true;
++                        else
++                            System.out.println("Wrong error message:" +
++                                               e.getMessage());
++                    } else {
++                        throw e;
++                    }
++                }
++
++                if (expectedException && (!exceptionThrown || f != null))
++                    throw new RuntimeException("IOException is expected");
+             }
+-            if (!exceptionThrown || f != null)
+-                throw new RuntimeException(errMsg);
+         }
+     }
+ 
+     public static void main(String[] args) throws Exception {
++        // Test JDK-8025128
++        String[] goodPre = { "///..///", "/foo" };
++        String[] goodSuf = { ".temp", ".tmp" };
++        test("goodName", goodPre, goodSuf, false);
++
++        // Test JDK-8011950
++        String[] slashPre = { "temp", "///..///", "/foo" };
++        String[] slashSuf = { "///..///..", "///..///..", "///..///.." };
++        test("SlashedName", slashPre, slashSuf, true);
++
+         if (!System.getProperty("os.name").startsWith("Windows"))
+             return;
+ 
+         // Test JDK-8013827
+         String[] resvPre = { "LPT1.package.zip", "com7.4.package.zip" };
+         String[] resvSuf = { ".temp", ".temp" };
+-        test("ReservedName", resvPre, resvSuf);
+-
+-        // Test JDK-8011950
+-        String[] slashPre = { "///..///", "temp", "///..///" };
+-        String[] slashSuf = { ".temp", "///..///..", "///..///.." };
+-        test("SlashedName", slashPre, slashSuf);
++        test("ReservedName", resvPre, resvSuf, true);
+     }
+ }

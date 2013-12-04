@@ -1,0 +1,148 @@
+# HG changeset patch
+# User weijun
+# Date 1382990980 0
+#      Mon Oct 28 20:09:40 2013 +0000
+# Node ID 42fd9f22ae5e9aea017af28a2b5ff7a498753e15
+# Parent  2adb9f71f6c0723acf40877f059d276557b71034
+8013739: Better LDAP resource management
+Reviewed-by: ahgross, mchung, xuelei
+
+diff -r 2adb9f71f6c0 -r 42fd9f22ae5e src/share/classes/com/sun/jndi/ldap/VersionHelper12.java
+--- jdk/src/share/classes/com/sun/jndi/ldap/VersionHelper12.java	Mon Jul 22 14:06:39 2013 -0700
++++ jdk/src/share/classes/com/sun/jndi/ldap/VersionHelper12.java	Mon Oct 28 20:09:40 2013 +0000
+@@ -25,11 +25,12 @@
+ 
+ package com.sun.jndi.ldap;
+ 
+-import java.net.URL;
+ import java.net.URLClassLoader;
+ import java.net.MalformedURLException;
++import java.security.AccessControlContext;
+ import java.security.AccessController;
+ import java.security.PrivilegedAction;
++import sun.misc.SharedSecrets;
+ 
+ final class VersionHelper12 extends VersionHelper {
+ 
+@@ -82,12 +83,16 @@
+     }
+ 
+     Thread createThread(final Runnable r) {
+-        return (Thread) AccessController.doPrivileged(
+-            new PrivilegedAction() {
+-                public Object run() {
+-                    return new Thread(r);
++        final AccessControlContext acc = AccessController.getContext();
++        // 4290486: doPrivileged is needed to create a thread in
++        // an environment that restricts "modifyThreadGroup".
++        return AccessController.doPrivileged(
++                new PrivilegedAction<Thread>() {
++                    public Thread run() {
++                        return SharedSecrets.getJavaLangAccess()
++                                .newThreadWithAcc(r, acc);
++                    }
+                 }
+-            }
+         );
+     }
+ }
+diff -r 2adb9f71f6c0 -r 42fd9f22ae5e src/share/classes/java/lang/System.java
+--- jdk/src/share/classes/java/lang/System.java	Mon Jul 22 14:06:39 2013 -0700
++++ jdk/src/share/classes/java/lang/System.java	Mon Oct 28 20:09:40 2013 +0000
+@@ -25,6 +25,7 @@
+ package java.lang;
+ 
+ import java.io.*;
++import java.security.AccessControlContext;
+ import java.util.Properties;
+ import java.util.PropertyPermission;
+ import java.util.StringTokenizer;
+@@ -1158,6 +1159,9 @@
+             public void blockedOn(Thread t, Interruptible b) {
+                 t.blockedOn(b);
+             }
++            public Thread newThreadWithAcc(Runnable target, AccessControlContext acc) {
++                return new Thread(target, acc);
++            }
+         });
+     }
+ }
+diff -r 2adb9f71f6c0 -r 42fd9f22ae5e src/share/classes/java/lang/Thread.java
+--- jdk/src/share/classes/java/lang/Thread.java	Mon Jul 22 14:06:39 2013 -0700
++++ jdk/src/share/classes/java/lang/Thread.java	Mon Oct 28 20:09:40 2013 +0000
+@@ -322,6 +322,15 @@
+     }
+ 
+     /**
++     * Initializes a Thread with the current AccessControlContext.
++     * @see #init(ThreadGroup,Runnable,String,long,AccessControlContext)
++     */
++    private void init(ThreadGroup g, Runnable target, String name,
++                      long stackSize) {
++        init(g, target, name, stackSize, null);
++    }
++
++    /**
+      * Initializes a Thread.
+      *
+      * @param g the Thread group
+@@ -329,9 +338,11 @@
+      * @param name the name of the new Thread
+      * @param stackSize the desired stack size for the new thread, or
+      *        zero to indicate that this parameter is to be ignored.
++     * @param acc the AccessControlContext to inherit, or
++     *            AccessController.getContext() if null
+      */
+     private void init(ThreadGroup g, Runnable target, String name,
+-                      long stackSize) {
++                      long stackSize, AccessControlContext acc) {
+         Thread parent = currentThread();
+         SecurityManager security = System.getSecurityManager();
+         if (g == null) {
+@@ -374,7 +385,8 @@
+             this.contextClassLoader = parent.getContextClassLoader();
+         else
+             this.contextClassLoader = parent.contextClassLoader;
+-        this.inheritedAccessControlContext = AccessController.getContext();
++        this.inheritedAccessControlContext =
++                acc != null ? acc : AccessController.getContext();
+         this.target = target;
+         setPriority(priority);
+         if (parent.inheritableThreadLocals != null)
+@@ -427,6 +439,14 @@
+     }
+ 
+     /**
++     * Creates a new Thread that inherits the given AccessControlContext.
++     * This is not a public constructor.
++     */
++    Thread(Runnable target, AccessControlContext acc) {
++        init(null, target, "Thread-" + nextThreadNum(), 0, acc);
++    }
++
++    /**
+      * Allocates a new <code>Thread</code> object. This constructor has
+      * the same effect as <code>Thread(null, null,</code>
+      * <i>gname</i><code>)</code>, where <b><i>gname</i></b> is
+diff -r 2adb9f71f6c0 -r 42fd9f22ae5e src/share/classes/sun/misc/JavaLangAccess.java
+--- jdk/src/share/classes/sun/misc/JavaLangAccess.java	Mon Jul 22 14:06:39 2013 -0700
++++ jdk/src/share/classes/sun/misc/JavaLangAccess.java	Mon Oct 28 20:09:40 2013 +0000
+@@ -25,6 +25,7 @@
+ 
+ package sun.misc;
+ 
++import java.security.AccessControlContext;
+ import sun.reflect.ConstantPool;
+ import sun.reflect.annotation.AnnotationType;
+ import sun.nio.ch.Interruptible;
+@@ -54,4 +55,10 @@
+ 
+     /** Set thread's blocker field. */
+     void blockedOn(Thread t, Interruptible b);
++
++    /**
++     * Returns a new Thread with the given Runnable and an
++     * inherited AccessControlContext.
++     */
++    Thread newThreadWithAcc(Runnable target, AccessControlContext acc);
+ }

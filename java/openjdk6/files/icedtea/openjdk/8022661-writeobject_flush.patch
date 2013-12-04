@@ -1,0 +1,20 @@
+# HG changeset patch
+# User chegar
+# Date 1376052613 -3600
+#      Fri Aug 09 13:50:13 2013 +0100
+# Node ID 6c0b775b1ff2a0a0ba0fe797cfe18c511f9ee3c1
+# Parent  a5d00a180798f25254bf6f15b7dc31a0d5df60c2
+8022661: InetAddress.writeObject() performs flush() on object output stream
+Reviewed-by: michaelm, alanb
+
+diff -r a5d00a180798 -r 6c0b775b1ff2 src/share/classes/java/net/InetAddress.java
+--- jdk/src/share/classes/java/net/InetAddress.java	Tue Oct 29 02:39:09 2013 +0000
++++ jdk/src/share/classes/java/net/InetAddress.java	Fri Aug 09 13:50:13 2013 +0100
+@@ -1586,7 +1586,6 @@
+         pf.put("address", holder().address);
+         pf.put("family", holder().family);
+         s.writeFields();
+-        s.flush();
+     }
+ }
+ 

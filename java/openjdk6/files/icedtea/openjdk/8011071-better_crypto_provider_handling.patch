@@ -1,0 +1,287 @@
+# HG changeset patch
+# User ascarpino
+# Date 1381846341 -3600
+#      Tue Oct 15 15:12:21 2013 +0100
+# Node ID df887df12ad1543894fe79f753983754ceef5c73
+# Parent  db4712506571ae3ae2d37b91e63641b18c3258f2
+8011071: Better crypto provider handling
+Reviewed-by: hawtin, valeriep
+
+diff -r db4712506571 -r df887df12ad1 src/share/classes/com/sun/crypto/provider/DHPrivateKey.java
+--- jdk/src/share/classes/com/sun/crypto/provider/DHPrivateKey.java	Mon Jul 08 14:34:36 2013 +0400
++++ jdk/src/share/classes/com/sun/crypto/provider/DHPrivateKey.java	Tue Oct 15 15:12:21 2013 +0100
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1997, 2007, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -279,22 +279,6 @@
+             return new DHParameterSpec(this.p, this.g);
+     }
+ 
+-    public String toString() {
+-        String LINE_SEP = System.getProperty("line.separator");
+-
+-        StringBuffer strbuf
+-            = new StringBuffer("SunJCE Diffie-Hellman Private Key:"
+-                               + LINE_SEP + "x:" + LINE_SEP
+-                               + Debug.toHexString(this.x)
+-                               + LINE_SEP + "p:" + LINE_SEP
+-                               + Debug.toHexString(this.p)
+-                               + LINE_SEP + "g:" + LINE_SEP
+-                               + Debug.toHexString(this.g));
+-        if (this.l != 0)
+-            strbuf.append(LINE_SEP + "l:" + LINE_SEP + "    " + this.l);
+-        return strbuf.toString();
+-    }
+-
+     private void parseKeyBits() throws InvalidKeyException {
+         try {
+             DerInputStream in = new DerInputStream(this.key);
+diff -r db4712506571 -r df887df12ad1 src/share/classes/sun/security/ec/ECPrivateKeyImpl.java
+--- jdk/src/share/classes/sun/security/ec/ECPrivateKeyImpl.java	Mon Jul 08 14:34:36 2013 +0400
++++ jdk/src/share/classes/sun/security/ec/ECPrivateKeyImpl.java	Tue Oct 15 15:12:21 2013 +0100
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2006, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2006, 2013 Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -153,12 +153,4 @@
+             throw new InvalidKeyException("Invalid EC private key", e);
+         }
+     }
+-
+-    // return a string representation of this key for debugging
+-    public String toString() {
+-        return "Sun EC private key, " + params.getCurve().getField().getFieldSize()
+-            + " bits\n  private value:  "
+-            + s + "\n  parameters: " + params;
+-    }
+-
+ }
+diff -r db4712506571 -r df887df12ad1 src/share/classes/sun/security/jgss/GSSCredentialImpl.java
+--- jdk/src/share/classes/sun/security/jgss/GSSCredentialImpl.java	Mon Jul 08 14:34:36 2013 +0400
++++ jdk/src/share/classes/sun/security/jgss/GSSCredentialImpl.java	Tue Oct 15 15:12:21 2013 +0100
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2006, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -630,7 +630,7 @@
+                 buffer.append(element.isAcceptorCredential() ?
+                               " Accept" : "");
+                 buffer.append(" [");
+-                buffer.append(element.toString());
++                buffer.append(element.getClass());
+                 buffer.append(']');
+             } catch (GSSException e) {
+                 // skip to next element
+diff -r db4712506571 -r df887df12ad1 src/share/classes/sun/security/pkcs/PKCS8Key.java
+--- jdk/src/share/classes/sun/security/pkcs/PKCS8Key.java	Mon Jul 08 14:34:36 2013 +0400
++++ jdk/src/share/classes/sun/security/pkcs/PKCS8Key.java	Tue Oct 15 15:12:21 2013 +0100
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1996, 2004, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1996, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -304,17 +304,6 @@
+         return encodedKey.clone();
+     }
+ 
+-    /*
+-     * Returns a printable representation of the key
+-     */
+-    public String toString ()
+-    {
+-        HexDumpEncoder  encoder = new HexDumpEncoder ();
+-
+-        return "algorithm = " + algid.toString ()
+-            + ", unparsed keybits = \n" + encoder.encodeBuffer (key);
+-    }
+-
+     /**
+      * Initialize an PKCS8Key object from an input stream.  The data
+      * on that input stream must be encoded using DER, obeying the
+diff -r db4712506571 -r df887df12ad1 src/share/classes/sun/security/pkcs11/P11Key.java
+--- jdk/src/share/classes/sun/security/pkcs11/P11Key.java	Mon Jul 08 14:34:36 2013 +0400
++++ jdk/src/share/classes/sun/security/pkcs11/P11Key.java	Tue Oct 15 15:12:21 2013 +0100
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2003, 2012, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2003, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -542,27 +542,6 @@
+             fetchValues();
+             return coeff;
+         }
+-        public String toString() {
+-            fetchValues();
+-            StringBuilder sb = new StringBuilder(super.toString());
+-            sb.append("\n  modulus:          ");
+-            sb.append(n);
+-            sb.append("\n  public exponent:  ");
+-            sb.append(e);
+-            sb.append("\n  private exponent: ");
+-            sb.append(d);
+-            sb.append("\n  prime p:          ");
+-            sb.append(p);
+-            sb.append("\n  prime q:          ");
+-            sb.append(q);
+-            sb.append("\n  prime exponent p: ");
+-            sb.append(pe);
+-            sb.append("\n  prime exponent q: ");
+-            sb.append(qe);
+-            sb.append("\n  crt coefficient:  ");
+-            sb.append(coeff);
+-            return sb.toString();
+-        }
+     }
+ 
+     // RSA non-CRT private key
+@@ -616,15 +595,6 @@
+             fetchValues();
+             return d;
+         }
+-        public String toString() {
+-            fetchValues();
+-            StringBuilder sb = new StringBuilder(super.toString());
+-            sb.append("\n  modulus:          ");
+-            sb.append(n);
+-            sb.append("\n  private exponent: ");
+-            sb.append(d);
+-            return sb.toString();
+-        }
+     }
+ 
+     private static final class P11RSAPublicKey extends P11Key
+@@ -794,11 +764,6 @@
+             fetchValues();
+             return params;
+         }
+-        public String toString() {
+-            fetchValues();
+-            return super.toString() +  "\n  x: " + x + "\n  p: " + params.getP()
+-                + "\n  q: " + params.getQ() + "\n  g: " + params.getG();
+-        }
+     }
+ 
+     private static final class P11DHPrivateKey extends P11Key
+@@ -856,11 +821,6 @@
+             fetchValues();
+             return params;
+         }
+-        public String toString() {
+-            fetchValues();
+-            return super.toString() +  "\n  x: " + x + "\n  p: " + params.getP()
+-                + "\n  g: " + params.getG();
+-        }
+     }
+ 
+     private static final class P11DHPublicKey extends P11Key
+@@ -977,12 +937,6 @@
+             fetchValues();
+             return params;
+         }
+-        public String toString() {
+-            fetchValues();
+-        return super.toString()
+-            + "\n  private value:  " + s
+-            + "\n  parameters: " + params;
+-        }
+     }
+ 
+     private static final class P11ECPublicKey extends P11Key
+diff -r db4712506571 -r df887df12ad1 src/share/classes/sun/security/provider/DSAPrivateKey.java
+--- jdk/src/share/classes/sun/security/provider/DSAPrivateKey.java	Mon Jul 08 14:34:36 2013 +0400
++++ jdk/src/share/classes/sun/security/provider/DSAPrivateKey.java	Tue Oct 15 15:12:21 2013 +0100
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1996, 2002, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1996, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -142,11 +142,6 @@
+         }
+     }
+ 
+-    public String toString() {
+-        return "Sun DSA Private Key \nparameters:" + algid + "\nx: " +
+-            Debug.toHexString(x) + "\n";
+-    }
+-
+     protected void parseKeyBits() throws InvalidKeyException {
+         try {
+             DerInputStream in = new DerInputStream(key);
+diff -r db4712506571 -r df887df12ad1 src/share/classes/sun/security/rsa/RSAPrivateCrtKeyImpl.java
+--- jdk/src/share/classes/sun/security/rsa/RSAPrivateCrtKeyImpl.java	Mon Jul 08 14:34:36 2013 +0400
++++ jdk/src/share/classes/sun/security/rsa/RSAPrivateCrtKeyImpl.java	Tue Oct 15 15:12:21 2013 +0100
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2003, 2008, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2003, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -225,29 +225,4 @@
+         }
+         return b;
+     }
+-
+-    // return a string representation of this key for debugging
+-    public String toString() {
+-        StringBuffer sb = new StringBuffer();
+-        sb.append("Sun RSA private CRT key, ");
+-        sb.append(n.bitLength());
+-        sb.append(" bits\n  modulus:          ");
+-        sb.append(n);
+-        sb.append("\n  public exponent:  ");
+-        sb.append(e);
+-        sb.append("\n  private exponent: ");
+-        sb.append(d);
+-        sb.append("\n  prime p:          ");
+-        sb.append(p);
+-        sb.append("\n  prime q:          ");
+-        sb.append(q);
+-        sb.append("\n  prime exponent p: ");
+-        sb.append(pe);
+-        sb.append("\n  prime exponent q: ");
+-        sb.append(qe);
+-        sb.append("\n  crt coefficient:  ");
+-        sb.append(coeff);
+-        return sb.toString();
+-    }
+-
+ }
+diff -r db4712506571 -r df887df12ad1 src/share/classes/sun/security/rsa/RSAPrivateKeyImpl.java
+--- jdk/src/share/classes/sun/security/rsa/RSAPrivateKeyImpl.java	Mon Jul 08 14:34:36 2013 +0400
++++ jdk/src/share/classes/sun/security/rsa/RSAPrivateKeyImpl.java	Tue Oct 15 15:12:21 2013 +0100
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2003, 2008, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2003, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -98,11 +98,4 @@
+     public BigInteger getPrivateExponent() {
+         return d;
+     }
+-
+-    // return a string representation of this key for debugging
+-    public String toString() {
+-        return "Sun RSA private key, " + n.bitLength() + " bits\n  modulus: "
+-                + n + "\n  private exponent: " + d;
+-    }
+-
+ }

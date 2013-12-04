@@ -1,0 +1,59 @@
+# HG changeset patch
+# User jjg
+# Date 1212524896 25200
+#      Tue Jun 03 13:28:16 2008 -0700
+# Node ID 566f427de7079a0ed32c2f625c952dcc45c348e3
+# Parent  d206cb658a9907c7842c8920f141b3c4eb5efc1f
+6708729: update jdk Makefiles for new javap
+Reviewed-by: ohair
+
+diff -r d206cb658a99 -r 566f427de707 make/common/Release.gmk
+--- jdk/make/common/Release.gmk	Mon Oct 21 18:05:56 2013 +0100
++++ jdk/make/common/Release.gmk	Tue Jun 03 13:28:16 2008 -0700
+@@ -357,6 +357,7 @@
+ 	com/sun/jarsigner	\
+ 	com/sun/mirror		\
+ 	com/sun/source          \
++	com/sun/tools/classfile \
+ 	com/sun/tools/doclets   \
+ 	com/sun/tools/example/debug/expr \
+ 	com/sun/tools/example/debug/tty  \
+@@ -366,6 +367,7 @@
+ 	com/sun/tools/javadoc   \
+ 	com/sun/tools/apt       \
+ 	com/sun/tools/javah     \
++	com/sun/tools/javap     \
+ 	com/sun/tools/corba     \
+ 	com/sun/tools/internal/xjc       \
+ 	com/sun/tools/internal/ws       \
+@@ -558,6 +560,8 @@
+ 	$(ECHO) "sun/tools/java/" >> $@
+ 	$(ECHO) "sun/tools/javac/" >> $@
+ 	$(ECHO) "sun/tools/javap/" >> $@
++	$(ECHO) "com/sun/tools/classfile/" >> $@
++	$(ECHO) "com/sun/tools/javap/" >> $@
+ 	$(ECHO) "sun/tools/jconsole/" >> $@
+ 	$(ECHO) "sun/tools/jps/" >> $@
+ 	$(ECHO) "sun/tools/jstat/" >> $@
+diff -r d206cb658a99 -r 566f427de707 make/common/internal/Defs-langtools.gmk
+--- jdk/make/common/internal/Defs-langtools.gmk	Mon Oct 21 18:05:56 2013 +0100
++++ jdk/make/common/internal/Defs-langtools.gmk	Tue Jun 03 13:28:16 2008 -0700
+@@ -31,13 +31,15 @@
+       javax/tools
+ 
+ IMPORT_TOOLS_PACKAGES +=            \
++      com/sun/javadoc               \
+       com/sun/mirror                \
+       com/sun/source                \
+       com/sun/tools/apt             \
++      com/sun/tools/classfile       \
++      com/sun/tools/doclets         \
+       com/sun/tools/javac           \
++      com/sun/tools/javadoc         \
+       com/sun/tools/javah           \
+-      com/sun/tools/javadoc         \
+-      com/sun/tools/doclets         \
+-      com/sun/javadoc               \
++      com/sun/tools/javap           \
+       sun/tools/javap
+ 

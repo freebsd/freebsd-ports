@@ -1,0 +1,267 @@
+# HG changeset patch
+# User jbachorik
+# Date 1366702651 -7200
+#      Tue Apr 23 09:37:31 2013 +0200
+# Node ID de77043ae6b9c9693ae149d0ab9bae4d5007ce19
+# Parent  df887df12ad1543894fe79f753983754ceef5c73
+8011081: Improve jhat
+Summary: Properly escape HTML output
+Reviewed-by: alanb, mschoene, sundar
+
+diff -r df887df12ad1 -r de77043ae6b9 src/share/classes/com/sun/tools/hat/internal/server/AllClassesQuery.java
+--- jdk/src/share/classes/com/sun/tools/hat/internal/server/AllClassesQuery.java	Tue Oct 15 15:12:21 2013 +0100
++++ jdk/src/share/classes/com/sun/tools/hat/internal/server/AllClassesQuery.java	Tue Apr 23 09:37:31 2013 +0200
+@@ -84,7 +84,7 @@
+             lastPackage = pkg;
+             printClass(clazz);
+             if (clazz.getId() != -1) {
+-                out.print(" [" + clazz.getIdString() + "]");
++                print(" [" + clazz.getIdString() + "]");
+             }
+             out.println("<br>");
+         }
+diff -r df887df12ad1 -r de77043ae6b9 src/share/classes/com/sun/tools/hat/internal/server/ClassQuery.java
+--- jdk/src/share/classes/com/sun/tools/hat/internal/server/ClassQuery.java	Tue Oct 15 15:12:21 2013 +0100
++++ jdk/src/share/classes/com/sun/tools/hat/internal/server/ClassQuery.java	Tue Apr 23 09:37:31 2013 +0200
+@@ -112,12 +112,12 @@
+         out.println("<h2>Instances</h2>");
+ 
+         printAnchorStart();
+-        out.print("instances/" + encodeForURL(clazz));
++        print("instances/" + encodeForURL(clazz));
+         out.print("\">");
+         out.println("Exclude subclasses</a><br>");
+ 
+         printAnchorStart();
+-        out.print("allInstances/" + encodeForURL(clazz));
++        print("allInstances/" + encodeForURL(clazz));
+         out.print("\">");
+         out.println("Include subclasses</a><br>");
+ 
+@@ -126,19 +126,19 @@
+             out.println("<h2>New Instances</h2>");
+ 
+             printAnchorStart();
+-            out.print("newInstances/" + encodeForURL(clazz));
++            print("newInstances/" + encodeForURL(clazz));
+             out.print("\">");
+             out.println("Exclude subclasses</a><br>");
+ 
+             printAnchorStart();
+-            out.print("allNewInstances/" + encodeForURL(clazz));
++            print("allNewInstances/" + encodeForURL(clazz));
+             out.print("\">");
+             out.println("Include subclasses</a><br>");
+         }
+ 
+         out.println("<h2>References summary by Type</h2>");
+         printAnchorStart();
+-        out.print("refsByType/" + encodeForURL(clazz));
++        print("refsByType/" + encodeForURL(clazz));
+         out.print("\">");
+         out.println("References summary by type</a>");
+ 
+diff -r df887df12ad1 -r de77043ae6b9 src/share/classes/com/sun/tools/hat/internal/server/HttpReader.java
+--- jdk/src/share/classes/com/sun/tools/hat/internal/server/HttpReader.java	Tue Oct 15 15:12:21 2013 +0100
++++ jdk/src/share/classes/com/sun/tools/hat/internal/server/HttpReader.java	Tue Apr 23 09:37:31 2013 +0200
+@@ -41,21 +41,17 @@
+ 
+ 
+ import java.net.Socket;
+-import java.net.ServerSocket;
+-import java.net.InetAddress;
+ 
+ import java.io.InputStream;
+ import java.io.BufferedInputStream;
+ import java.io.IOException;
+-import java.io.Writer;
+ import java.io.BufferedWriter;
+ import java.io.PrintWriter;
+-import java.io.OutputStream;
+ import java.io.OutputStreamWriter;
+-import java.io.BufferedOutputStream;
+ 
+ import com.sun.tools.hat.internal.model.Snapshot;
+ import com.sun.tools.hat.internal.oql.OQLEngine;
++import com.sun.tools.hat.internal.util.Misc;
+ 
+ public class HttpReader implements Runnable {
+ 
+@@ -87,7 +83,7 @@
+                 outputError("Protocol error");
+             }
+             int data;
+-            StringBuffer queryBuf = new StringBuffer();
++            StringBuilder queryBuf = new StringBuilder();
+             while ((data = in.read()) != -1 && data != ' ') {
+                 char ch = (char) data;
+                 queryBuf.append(ch);
+@@ -217,7 +213,7 @@
+     private void outputError(String msg) {
+         out.println();
+         out.println("<html><body bgcolor=\"#ffffff\">");
+-        out.println(msg);
++        out.println(Misc.encodeHtml(msg));
+         out.println("</body></html>");
+     }
+ 
+diff -r df887df12ad1 -r de77043ae6b9 src/share/classes/com/sun/tools/hat/internal/server/InstancesCountQuery.java
+--- jdk/src/share/classes/com/sun/tools/hat/internal/server/InstancesCountQuery.java	Tue Oct 15 15:12:21 2013 +0100
++++ jdk/src/share/classes/com/sun/tools/hat/internal/server/InstancesCountQuery.java	Tue Apr 23 09:37:31 2013 +0200
+@@ -102,7 +102,7 @@
+             int count = clazz.getInstancesCount(false);
+             print("" + count);
+             printAnchorStart();
+-            out.print("instances/" + encodeForURL(classes[i]));
++            print("instances/" + encodeForURL(classes[i]));
+             out.print("\"> ");
+             if (count == 1) {
+                 print("instance");
+@@ -121,7 +121,7 @@
+                 }
+                 print("(");
+                 printAnchorStart();
+-                out.print("newInstances/" + encodeForURL(classes[i]));
++                print("newInstances/" + encodeForURL(classes[i]));
+                 out.print("\">");
+                 print("" + newInst + " new");
+                 out.print("</a>) ");
+diff -r df887df12ad1 -r de77043ae6b9 src/share/classes/com/sun/tools/hat/internal/server/OQLHelp.java
+--- jdk/src/share/classes/com/sun/tools/hat/internal/server/OQLHelp.java	Tue Oct 15 15:12:21 2013 +0100
++++ jdk/src/share/classes/com/sun/tools/hat/internal/server/OQLHelp.java	Tue Apr 23 09:37:31 2013 +0200
+@@ -54,10 +54,7 @@
+                 out.print((char)ch);
+             }
+         } catch (Exception exp) {
+-            out.println(exp.getMessage());
+-            out.println("<pre>");
+-            exp.printStackTrace(out);
+-            out.println("</pre>");
++            printException(exp);
+         }
+     }
+ }
+diff -r df887df12ad1 -r de77043ae6b9 src/share/classes/com/sun/tools/hat/internal/server/OQLQuery.java
+--- jdk/src/share/classes/com/sun/tools/hat/internal/server/OQLQuery.java	Tue Oct 15 15:12:21 2013 +0100
++++ jdk/src/share/classes/com/sun/tools/hat/internal/server/OQLQuery.java	Tue Apr 23 09:37:31 2013 +0200
+@@ -32,10 +32,7 @@
+ 
+ package com.sun.tools.hat.internal.server;
+ 
+-import com.sun.tools.hat.internal.model.*;
+ import com.sun.tools.hat.internal.oql.*;
+-import com.sun.tools.hat.internal.util.ArraySorter;
+-import com.sun.tools.hat.internal.util.Comparer;
+ 
+ /**
+  * This handles Object Query Language (OQL) queries.
+@@ -68,7 +65,7 @@
+         out.println("<p align='center'>");
+         out.println("<textarea name='query' cols=80 rows=10>");
+         if (oql != null) {
+-            out.println(oql);
++            println(oql);
+         }
+         out.println("</textarea>");
+         out.println("</p>");
+@@ -91,10 +88,7 @@
+                          try {
+                              out.println(engine.toHtml(o));
+                          } catch (Exception e) {
+-                             out.println(e.getMessage());
+-                             out.println("<pre>");
+-                             e.printStackTrace(out);
+-                             out.println("</pre>");
++                             printException(e);
+                          }
+                          out.println("</td></tr>");
+                          return false;
+@@ -102,10 +96,7 @@
+                  });
+             out.println("</table>");
+         } catch (OQLException exp) {
+-            out.println(exp.getMessage());
+-            out.println("<pre>");
+-            exp.printStackTrace(out);
+-            out.println("</pre>");
++            printException(exp);
+         }
+     }
+ 
+diff -r df887df12ad1 -r de77043ae6b9 src/share/classes/com/sun/tools/hat/internal/server/QueryHandler.java
+--- jdk/src/share/classes/com/sun/tools/hat/internal/server/QueryHandler.java	Tue Oct 15 15:12:21 2013 +0100
++++ jdk/src/share/classes/com/sun/tools/hat/internal/server/QueryHandler.java	Tue Apr 23 09:37:31 2013 +0200
+@@ -36,6 +36,7 @@
+ 
+ import com.sun.tools.hat.internal.model.*;
+ import com.sun.tools.hat.internal.util.Misc;
++import java.io.StringWriter;
+ 
+ import java.net.URLEncoder;
+ import java.io.UnsupportedEncodingException;
+@@ -96,7 +97,7 @@
+     }
+ 
+     protected void error(String msg) {
+-        out.println(msg);
++        println(msg);
+     }
+ 
+     protected void printAnchorStart() {
+@@ -160,7 +161,6 @@
+             out.println("null");
+             return;
+         }
+-        String name = clazz.getName();
+         printAnchorStart();
+         out.print("class/");
+         print(encodeForURL(clazz));
+@@ -208,6 +208,15 @@
+         }
+     }
+ 
++    protected void printException(Throwable t) {
++        println(t.getMessage());
++        out.println("<pre>");
++        StringWriter sw = new StringWriter();
++        t.printStackTrace(new PrintWriter(sw));
++        print(sw.toString());
++        out.println("</pre>");
++    }
++
+     protected void printHex(long addr) {
+         if (snapshot.getIdentifierSize() == 4) {
+             out.print(Misc.toHex((int)addr));
+@@ -223,4 +232,8 @@
+     protected void print(String str) {
+         out.print(Misc.encodeHtml(str));
+     }
++
++    protected void println(String str) {
++        out.println(Misc.encodeHtml(str));
++    }
+ }
+diff -r df887df12ad1 -r de77043ae6b9 src/share/classes/com/sun/tools/hat/internal/server/RefsByTypeQuery.java
+--- jdk/src/share/classes/com/sun/tools/hat/internal/server/RefsByTypeQuery.java	Tue Oct 15 15:12:21 2013 +0100
++++ jdk/src/share/classes/com/sun/tools/hat/internal/server/RefsByTypeQuery.java	Tue Apr 23 09:37:31 2013 +0200
+@@ -89,7 +89,7 @@
+             out.println("<p align='center'>");
+             printClass(clazz);
+             if (clazz.getId() != -1) {
+-                out.println("[" + clazz.getIdString() + "]");
++                println("[" + clazz.getIdString() + "]");
+             }
+             out.println("</p>");
+ 
+@@ -125,9 +125,9 @@
+             JavaClass clazz = classes[i];
+             out.println("<tr><td>");
+             out.print("<a href='/refsByType/");
+-            out.print(clazz.getIdString());
++            print(clazz.getIdString());
+             out.print("'>");
+-            out.print(clazz.getName());
++            print(clazz.getName());
+             out.println("</a>");
+             out.println("</td><td>");
+             out.println(map.get(clazz));

@@ -1,0 +1,43 @@
+# HG changeset patch
+# User jfranck
+# Date 1382996803 0
+#      Mon Oct 28 21:46:43 2013 +0000
+# Node ID e5a4a4ec7b21f3d092d0b29024ff903864d05543
+# Parent  42fd9f22ae5e9aea017af28a2b5ff7a498753e15
+8014349: (cl) Class.getDeclaredClass problematic in some class loader configurations
+Reviewed-by: mchung, ahgross, darcy
+
+diff -r 42fd9f22ae5e -r e5a4a4ec7b21 src/share/classes/java/lang/Class.java
+--- jdk/src/share/classes/java/lang/Class.java	Mon Oct 28 20:09:40 2013 +0000
++++ jdk/src/share/classes/java/lang/Class.java	Mon Oct 28 21:46:43 2013 +0000
+@@ -1093,7 +1093,17 @@
+      * @return the declaring class for this class
+      * @since JDK1.1
+      */
+-    public native Class<?> getDeclaringClass();
++    @CallerSensitive
++    public Class<?> getDeclaringClass() {
++        final Class<?> candidate = getDeclaringClass0();
++
++        if (candidate != null)
++            candidate.checkPackageAccess(
++                    ClassLoader.getClassLoader(Reflection.getCallerClass()), true);
++        return candidate;
++    }
++
++    private native Class<?> getDeclaringClass0();
+ 
+ 
+     /**
+diff -r 42fd9f22ae5e -r e5a4a4ec7b21 src/share/native/java/lang/Class.c
+--- jdk/src/share/native/java/lang/Class.c	Mon Oct 28 20:09:40 2013 +0000
++++ jdk/src/share/native/java/lang/Class.c	Mon Oct 28 21:46:43 2013 +0000
+@@ -70,7 +70,7 @@
+     {"getProtectionDomain0", "()" PD,       (void *)&JVM_GetProtectionDomain},
+     {"setProtectionDomain0", "(" PD ")V",   (void *)&JVM_SetProtectionDomain},
+     {"getDeclaredClasses0",  "()[" CLS,      (void *)&JVM_GetDeclaredClasses},
+-    {"getDeclaringClass",   "()" CLS,      (void *)&JVM_GetDeclaringClass},
++    {"getDeclaringClass0",   "()" CLS,      (void *)&JVM_GetDeclaringClass},
+     {"getGenericSignature", "()" STR,       (void *)&JVM_GetClassSignature},
+     {"getRawAnnotations",      "()" BA,        (void *)&JVM_GetClassAnnotations},
+     {"getConstantPool",     "()" CPL,       (void *)&JVM_GetClassConstantPool},

@@ -1,0 +1,125 @@
+# HG changeset patch
+# User msheppar
+# Date 1381849187 -3600
+#      Tue Oct 15 15:59:47 2013 +0100
+# Node ID 468ec57a684409e4c7ed97be8ffa36322fb8a36b
+# Parent  de77043ae6b9c9693ae149d0ab9bae4d5007ce19
+8011157: Improve CORBA portablility
+Summary: fix also reviewed by Alexander Fomin
+Reviewed-by: alanb, coffeys, skoivu
+
+diff -r de77043ae6b9 -r 468ec57a6844 make/com/sun/jmx/Makefile
+--- jdk/make/com/sun/jmx/Makefile	Tue Apr 23 09:37:31 2013 +0200
++++ jdk/make/com/sun/jmx/Makefile	Tue Oct 15 15:59:47 2013 +0100
+@@ -1,5 +1,5 @@
+ #
+-# Copyright (c) 2003, 2012, Oracle and/or its affiliates. All rights reserved.
++# Copyright (c) 2003, 2013, Oracle and/or its affiliates. All rights reserved.
+ # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ #
+ # This code is free software; you can redistribute it and/or modify it
+@@ -126,11 +126,13 @@
+ 	$(RMIC) -classpath "$(CLASSDESTDIR)"    \
+                 -d $(CLASSDESTDIR)              \
+                 -iiop -v1.2                     \
++                -emitPermissionCheck            \
+                 $(subst /,.,$(<:$(CLASSDESTDIR)/%.class=%))
+ 	$(RMIC) $(HOTSPOT_INTERPRETER_FLAG) -classpath "$(CLASSDESTDIR)"    \
+                 -d $(CLASSDESTDIR)              \
+                 -iiop -v1.2                     \
+                 -standardPackage                \
++                -emitPermissionCheck            \
+                 $(subst /,.,$(<:$(CLASSDESTDIR)/%.class=%))
+ 	@$(java-vm-cleanup)
+ 
+diff -r de77043ae6b9 -r 468ec57a6844 src/share/classes/javax/management/modelmbean/RequiredModelMBean.java
+--- jdk/src/share/classes/javax/management/modelmbean/RequiredModelMBean.java	Tue Apr 23 09:37:31 2013 +0200
++++ jdk/src/share/classes/javax/management/modelmbean/RequiredModelMBean.java	Tue Oct 15 15:59:47 2013 +0100
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2012, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -299,11 +299,15 @@
+                     RequiredModelMBean.class.getName(),
+                 "setModelMBeanInfo(ModelMBeanInfo)",
+                 "Setting ModelMBeanInfo to " + printModelMBeanInfo(mbi));
++            int noOfNotifications = 0;
++            if (mbi.getNotifications() != null) {
++                noOfNotifications = mbi.getNotifications().length;
++            }
+             MODELMBEAN_LOGGER.logp(Level.FINER,
+                     RequiredModelMBean.class.getName(),
+                 "setModelMBeanInfo(ModelMBeanInfo)",
+                 "ModelMBeanInfo notifications has " +
+-                (mbi.getNotifications()).length + " elements");
++                noOfNotifications + " elements");
+         }
+ 
+         modelMBeanInfo = (ModelMBeanInfo)mbi.clone();
+@@ -3001,4 +3005,5 @@
+             Void.class.getName()
+         };
+     }
++
+ }
+diff -r de77043ae6b9 -r 468ec57a6844 src/share/classes/javax/management/remote/rmi/RMIConnector.java
+--- jdk/src/share/classes/javax/management/remote/rmi/RMIConnector.java	Tue Apr 23 09:37:31 2013 +0200
++++ jdk/src/share/classes/javax/management/remote/rmi/RMIConnector.java	Tue Oct 15 15:59:47 2013 +0100
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2002, 2007, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2002, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -60,6 +60,7 @@
+ import java.security.AccessController;
+ import java.security.PrivilegedAction;
+ import java.security.PrivilegedExceptionAction;
++import java.security.PrivilegedActionException;
+ import java.security.ProtectionDomain;
+ import java.util.Arrays;
+ import java.util.Collections;
+@@ -241,10 +242,21 @@
+     //--------------------------------------------------------------------
+     // implements JMXConnector interface
+     //--------------------------------------------------------------------
++
++    /**
++     * @throws IOException if the connection could not be made because of a
++     *   communication problem, or in the case of the {@code iiop} protocol,
++     *   that RMI/IIOP is not supported
++     */
+     public void connect() throws IOException {
+         connect(null);
+     }
+ 
++    /**
++     * @throws IOException if the connection could not be made because of a
++     *   communication problem, or in the case of the {@code iiop} protocol,
++     *   that RMI/IIOP is not supported
++     */
+     public synchronized void connect(Map<String,?> environment)
+             throws IOException {
+         final boolean tracing = logger.traceOn();
+@@ -2334,7 +2346,16 @@
+ 
+     private static RMIConnection shadowIiopStub(Stub stub)
+             throws InstantiationException, IllegalAccessException {
+-        Stub proxyStub = (Stub) proxyStubClass.newInstance();
++        Stub proxyStub = null;
++        try {
++            proxyStub = AccessController.doPrivileged(new PrivilegedExceptionAction<Stub>() {
++                public Stub run() throws Exception {
++		    return (Stub) proxyStubClass.newInstance();
++                }
++            });
++        } catch (PrivilegedActionException e) {
++            throw new InternalError();
++        }
+         proxyStub._set_delegate(stub._get_delegate());
+         return (RMIConnection) proxyStub;
+     }

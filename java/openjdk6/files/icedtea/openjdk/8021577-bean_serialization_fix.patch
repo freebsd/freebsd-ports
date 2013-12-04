@@ -1,0 +1,25 @@
+# HG changeset patch
+# User jbachorik
+# Date 1375098221 25200
+#      Mon Jul 29 04:43:41 2013 -0700
+# Node ID 21358b9e406319f4d9ddfd663572dd71a093ce08
+# Parent  42cdf6988c2b81b322bf89778ddeb47265cd3bba
+8021577: JCK test api/javax_management/jmx_serial/modelmbean/ModelMBeanNotificationInfo/serial/index.html#Input has failed since jdk 7u45 b01
+Reviewed-by: alanb, dfuchs, ahgross
+
+diff -r 42cdf6988c2b -r 21358b9e4063 src/share/classes/javax/management/MBeanNotificationInfo.java
+--- jdk/src/share/classes/javax/management/MBeanNotificationInfo.java	Fri Jul 19 16:29:26 2013 +0200
++++ jdk/src/share/classes/javax/management/MBeanNotificationInfo.java	Mon Jul 29 04:43:41 2013 -0700
+@@ -210,11 +210,6 @@
+         ObjectInputStream.GetField gf = ois.readFields();
+         String[] t = (String[])gf.get("types", null);
+ 
+-        if (t == null) {
+-            throw new InvalidObjectException("Trying to deserialize an invalid " +
+-                                             "instance of " + MBeanNotificationInfo.class +
+-                                             "[types=null]");
+-        }
+-        types = t.length == 0 ? t : t.clone();
++        types = (t != null && t.length != 0) ? t.clone() : NO_TYPES;
+     }
+ }

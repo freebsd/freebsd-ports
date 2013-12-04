@@ -1,0 +1,41 @@
+# HG changeset patch
+# User msheppar
+# Date 1376928111 -3600
+#      Mon Aug 19 17:01:51 2013 +0100
+# Node ID b449df31dbfbf08d0f58a887649c2acacd5d834f
+# Parent  2a415f9ee0976719ac79e6e5e2b1f00b29636427
+8022940: Enhance CORBA translations
+Reviewed-by: coffeys, alanb, skoivu
+
+diff -r 2a415f9ee097 -r b449df31dbfb src/share/classes/com/sun/corba/se/impl/presentation/rmi/IDLNameTranslatorImpl.java
+--- corba/src/share/classes/com/sun/corba/se/impl/presentation/rmi/IDLNameTranslatorImpl.java	Thu Jul 18 17:22:25 2013 -0700
++++ corba/src/share/classes/com/sun/corba/se/impl/presentation/rmi/IDLNameTranslatorImpl.java	Mon Aug 19 17:01:51 2013 +0100
+@@ -905,28 +905,4 @@
+ 
+         return contents.toString();
+     }
+-
+-    public static void main(String[] args) {
+-
+-        Class remoteInterface = java.rmi.Remote.class;
+-
+-        if( args.length > 0 ) {
+-            String className = args[0];
+-            try {
+-                remoteInterface = Class.forName(className);
+-            } catch(Exception e) {
+-                e.printStackTrace();
+-                System.exit(-1);
+-            }
+-        }
+-
+-        System.out.println("Building name translation for " + remoteInterface);
+-        try {
+-            IDLNameTranslator nameTranslator =
+-                IDLNameTranslatorImpl.get(remoteInterface);
+-            System.out.println(nameTranslator);
+-        } catch(IllegalStateException ise) {
+-            ise.printStackTrace();
+-        }
+-    }
+ }

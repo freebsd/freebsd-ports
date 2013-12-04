@@ -1,0 +1,20 @@
+# HG changeset patch
+# User andrew
+# Date 1383055466 0
+#      Tue Oct 29 14:04:26 2013 +0000
+# Node ID 4a15d8b1c94aa5e5a9c61bbd0feb7a6727343927
+# Parent  f587451cfca426297a5d9be67c7bfc36f1ad8e10
+OPENJDK6-21: Remove @Override annotation added on interface by 2013/10/15 security fixes
+Reviewed-by: omajid
+
+diff -r f587451cfca4 -r 4a15d8b1c94a src/share/classes/com/sun/corba/se/impl/presentation/rmi/InvocationHandlerFactoryImpl.java
+--- corba/src/share/classes/com/sun/corba/se/impl/presentation/rmi/InvocationHandlerFactoryImpl.java	Tue Oct 15 15:55:15 2013 +0100
++++ corba/src/share/classes/com/sun/corba/se/impl/presentation/rmi/InvocationHandlerFactoryImpl.java	Tue Oct 29 14:04:26 2013 +0000
+@@ -130,7 +130,6 @@
+             new CustomCompositeInvocationHandlerImpl( stub ) ;
+ 
+         AccessController.doPrivileged(new PrivilegedAction<Void>() {
+-            @Override
+             public Void run() {
+         handler.addInvocationHandler( DynamicStub.class,
+             dynamicStubHandler ) ;

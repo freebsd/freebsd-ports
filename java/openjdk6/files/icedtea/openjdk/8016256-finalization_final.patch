@@ -1,0 +1,24 @@
+# HG changeset patch
+# User sgabdura
+# Date 1373869363 -14400
+#      Mon Jul 15 10:22:43 2013 +0400
+# Node ID bbd051c9089f61c65fe7d95487d47920164c7ee0
+# Parent  918a90950fa69e5247e3af2599d2e7674d64e3d6
+8016256: Make finalization final
+Reviewed-by: hseigel
+
+diff -r 918a90950fa6 -r bbd051c9089f src/share/vm/classfile/classFileParser.cpp
+--- hotspot/src/share/vm/classfile/classFileParser.cpp	Thu Oct 10 16:41:17 2013 +0100
++++ hotspot/src/share/vm/classfile/classFileParser.cpp	Mon Jul 15 10:22:43 2013 +0400
+@@ -3762,9 +3762,8 @@
+   for (int index = 0; index < num_methods; index++) {
+     methodOop m = (methodOop)methods->obj_at(index);
+ 
+-    // skip private, static and <init> methods
+-    if ((!m->is_private()) &&
+-        (!m->is_static()) &&
++    // skip static and <init> methods
++    if ((!m->is_static()) &&
+         (m->name() != vmSymbols::object_initializer_name())) {
+ 
+       Symbol* name = m->name();

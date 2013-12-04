@@ -1,0 +1,1304 @@
+# HG changeset patch
+# User jjg
+# Date 1242759054 25200
+#      Tue May 19 11:50:54 2009 -0700
+# Node ID 4b55db11179d066331b829ca5c4722c33287deea
+# Parent  8f5d8429b3f18ee4c9820ac1fb597f63c55911f3
+6824493: experimental support for additional info for instructions
+Reviewed-by: mcimadamore
+
+diff -r 8f5d8429b3f1 -r 4b55db11179d src/share/classes/com/sun/tools/classfile/StackMapTable_attribute.java
+--- langtools/src/share/classes/com/sun/tools/classfile/StackMapTable_attribute.java	Tue Jul 08 18:06:19 2008 -0700
++++ langtools/src/share/classes/com/sun/tools/classfile/StackMapTable_attribute.java	Tue May 19 11:50:54 2009 -0700
+@@ -106,6 +106,8 @@
+             return 1;
+         }
+ 
++        public abstract int getOffsetDelta();
++
+         public abstract <R,D> R accept(Visitor<R,D> visitor, D data);
+ 
+         public final int frame_type;
+@@ -129,6 +131,10 @@
+         public <R, D> R accept(Visitor<R, D> visitor, D data) {
+             return visitor.visit_same_frame(this, data);
+         }
++
++        public int getOffsetDelta() {
++            return frame_type;
++        }
+     }
+ 
+     public static class same_locals_1_stack_item_frame extends stack_map_frame {
+@@ -148,6 +154,10 @@
+             return visitor.visit_same_locals_1_stack_item_frame(this, data);
+         }
+ 
++        public int getOffsetDelta() {
++            return frame_type - 64;
++        }
++
+         public final verification_type_info[] stack;
+     }
+ 
+@@ -169,6 +179,10 @@
+             return visitor.visit_same_locals_1_stack_item_frame_extended(this, data);
+         }
+ 
++        public int getOffsetDelta() {
++            return offset_delta;
++        }
++
+         public final int offset_delta;
+         public final verification_type_info[] stack;
+     }
+@@ -188,6 +202,10 @@
+             return visitor.visit_chop_frame(this, data);
+         }
+ 
++        public int getOffsetDelta() {
++            return offset_delta;
++        }
++
+         public final int offset_delta;
+     }
+ 
+@@ -206,6 +224,10 @@
+             return visitor.visit_same_frame_extended(this, data);
+         }
+ 
++        public int getOffsetDelta() {
++            return offset_delta;
++        }
++
+         public final int offset_delta;
+     }
+ 
+@@ -231,6 +253,10 @@
+             return visitor.visit_append_frame(this, data);
+         }
+ 
++        public int getOffsetDelta() {
++            return offset_delta;
++        }
++
+         public final int offset_delta;
+         public final verification_type_info[] locals;
+     }
+@@ -265,6 +291,10 @@
+             return visitor.visit_full_frame(this, data);
+         }
+ 
++        public int getOffsetDelta() {
++            return offset_delta;
++        }
++
+         public final int offset_delta;
+         public final int number_of_locals;
+         public final verification_type_info[] locals;
+@@ -307,7 +337,7 @@
+             }
+         }
+ 
+-        verification_type_info(int tag) {
++        protected verification_type_info(int tag) {
+             this.tag = tag;
+         }
+ 
+diff -r 8f5d8429b3f1 -r 4b55db11179d src/share/classes/com/sun/tools/javap/BasicWriter.java
+--- langtools/src/share/classes/com/sun/tools/javap/BasicWriter.java	Tue Jul 08 18:06:19 2008 -0700
++++ langtools/src/share/classes/com/sun/tools/javap/BasicWriter.java	Tue May 19 11:50:54 2009 -0700
+@@ -44,6 +44,9 @@
+     protected BasicWriter(Context context) {
+         lineWriter = LineWriter.instance(context);
+         out = context.get(PrintWriter.class);
++        messages = context.get(Messages.class);
++        if (messages == null)
++            throw new AssertionError();
+     }
+ 
+     protected void print(String s) {
+@@ -100,8 +103,26 @@
+         return "???";
+     }
+ 
++    protected String space(int w) {
++        if (w < spaces.length && spaces[w] != null)
++            return spaces[w];
++
++        StringBuilder sb = new StringBuilder();
++        for (int i = 0; i < w; i++)
++            sb.append(" ");
++
++        String s = sb.toString();
++        if (w < spaces.length)
++            spaces[w] = s;
++
++        return s;
++    }
++
++    private String[] spaces = new String[80];
++
+     private LineWriter lineWriter;
+     private PrintWriter out;
++    protected Messages messages;
+ 
+     private static class LineWriter {
+         static LineWriter instance(Context context) {
+diff -r 8f5d8429b3f1 -r 4b55db11179d src/share/classes/com/sun/tools/javap/ClassWriter.java
+--- langtools/src/share/classes/com/sun/tools/javap/ClassWriter.java	Tue Jul 08 18:06:19 2008 -0700
++++ langtools/src/share/classes/com/sun/tools/javap/ClassWriter.java	Tue May 19 11:50:54 2009 -0700
+@@ -26,7 +26,9 @@
+ package com.sun.tools.javap;
+ 
+ import java.net.URI;
++import java.text.DateFormat;
+ import java.util.Collection;
++import java.util.Date;
+ import java.util.List;
+ 
+ import com.sun.tools.classfile.AccessFlags;
+@@ -47,8 +49,6 @@
+ import com.sun.tools.classfile.SourceFile_attribute;
+ import com.sun.tools.classfile.Type;
+ 
+-import java.text.DateFormat;
+-import java.util.Date;
+ import static com.sun.tools.classfile.AccessFlags.*;
+ 
+ /*
+diff -r 8f5d8429b3f1 -r 4b55db11179d src/share/classes/com/sun/tools/javap/CodeWriter.java
+--- langtools/src/share/classes/com/sun/tools/javap/CodeWriter.java	Tue Jul 08 18:06:19 2008 -0700
++++ langtools/src/share/classes/com/sun/tools/javap/CodeWriter.java	Tue May 19 11:50:54 2009 -0700
+@@ -25,6 +25,9 @@
+ 
+ package com.sun.tools.javap;
+ 
++import java.util.ArrayList;
++import java.util.List;
++
+ import com.sun.tools.classfile.AccessFlags;
+ import com.sun.tools.classfile.Code_attribute;
+ import com.sun.tools.classfile.ConstantPool;
+@@ -33,9 +36,6 @@
+ import com.sun.tools.classfile.Instruction;
+ import com.sun.tools.classfile.Instruction.TypeKind;
+ import com.sun.tools.classfile.Method;
+-import com.sun.tools.classfile.Opcode;
+-
+-//import static com.sun.tools.classfile.OpCodes.*;
+ 
+ /*
+  *  Write the contents of a Code attribute.
+@@ -59,6 +59,12 @@
+         attrWriter = AttributeWriter.instance(context);
+         classWriter = ClassWriter.instance(context);
+         constantWriter = ConstantWriter.instance(context);
++        sourceWriter = SourceWriter.instance(context);
++        tryBlockWriter = TryBlockWriter.instance(context);
++        stackMapWriter = StackMapWriter.instance(context);
++        localVariableTableWriter = LocalVariableTableWriter.instance(context);
++        localVariableTypeTableWriter = LocalVariableTypeTableWriter.instance(context);
++        options = Options.instance(context);
+     }
+ 
+     void write(Code_attribute attr, ConstantPool constant_pool) {
+@@ -92,14 +98,21 @@
+     }
+ 
+     public void writeInstrs(Code_attribute attr) {
++        List<InstructionDetailWriter> detailWriters = getDetailWriters(attr);
++
+         for (Instruction instr: attr.getInstructions()) {
+             try {
++                for (InstructionDetailWriter w: detailWriters)
++                    w.writeDetails(instr);
+                 writeInstr(instr);
+             } catch (ArrayIndexOutOfBoundsException e) {
+                 println(report("error at or after byte " + instr.getPC()));
+                 break;
+             }
+         }
++
++        for (InstructionDetailWriter w: detailWriters)
++            w.flush();
+     }
+ 
+     public void writeInstr(Instruction instr) {
+@@ -213,11 +226,45 @@
+         constantWriter.write(index);
+     }
+ 
+-    private static int align(int n) {
+-        return (n + 3) & ~3;
++    private List<InstructionDetailWriter> getDetailWriters(Code_attribute attr) {
++        List<InstructionDetailWriter> detailWriters =
++                new ArrayList<InstructionDetailWriter>();
++        if (options.details.contains(InstructionDetailWriter.Kind.SOURCE)) {
++            sourceWriter.reset(classWriter.getClassFile(), attr);
++            detailWriters.add(sourceWriter);
++        }
++
++        if (options.details.contains(InstructionDetailWriter.Kind.LOCAL_VARS)) {
++            localVariableTableWriter.reset(attr);
++            detailWriters.add(localVariableTableWriter);
++        }
++
++        if (options.details.contains(InstructionDetailWriter.Kind.LOCAL_VAR_TYPES)) {
++            localVariableTypeTableWriter.reset(attr);
++            detailWriters.add(localVariableTypeTableWriter);
++        }
++
++        if (options.details.contains(InstructionDetailWriter.Kind.STACKMAPS)) {
++            stackMapWriter.reset(attr);
++            stackMapWriter.writeInitialDetails();
++            detailWriters.add(stackMapWriter);
++        }
++
++        if (options.details.contains(InstructionDetailWriter.Kind.TRY_BLOCKS)) {
++            tryBlockWriter.reset(attr);
++            detailWriters.add(tryBlockWriter);
++        }
++
++        return detailWriters;
+     }
+ 
+     private AttributeWriter attrWriter;
+     private ClassWriter classWriter;
+     private ConstantWriter constantWriter;
++    private LocalVariableTableWriter localVariableTableWriter;
++    private LocalVariableTypeTableWriter localVariableTypeTableWriter;
++    private SourceWriter sourceWriter;
++    private StackMapWriter stackMapWriter;
++    private TryBlockWriter tryBlockWriter;
++    private Options options;
+ }
+diff -r 8f5d8429b3f1 -r 4b55db11179d src/share/classes/com/sun/tools/javap/InstructionDetailWriter.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ langtools/src/share/classes/com/sun/tools/javap/InstructionDetailWriter.java	Tue May 19 11:50:54 2009 -0700
+@@ -0,0 +1,57 @@
++/*
++ * Copyright 2009 Sun Microsystems, Inc.  All Rights Reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Sun designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Sun in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
++ * CA 95054 USA or visit www.sun.com if you need additional information or
++ * have any questions.
++ */
++
++package com.sun.tools.javap;
++
++import com.sun.tools.classfile.Instruction;
++
++
++/*
++ *  Write additional details for an instruction.
++ *
++ *  <p><b>This is NOT part of any API supported by Sun Microsystems.  If
++ *  you write code that depends on this, you do so at your own risk.
++ *  This code and its internal interfaces are subject to change or
++ *  deletion without notice.</b>
++ */
++public abstract class InstructionDetailWriter extends BasicWriter {
++    public enum Kind {
++        LOCAL_VARS("localVariables"),
++        LOCAL_VAR_TYPES("localVariableTypes"),
++        SOURCE("source"),
++        STACKMAPS("stackMaps"),
++        TRY_BLOCKS("tryBlocks");
++        Kind(String option) {
++            this.option = option;
++        }
++        final String option;
++    }
++    InstructionDetailWriter(Context context) {
++        super(context);
++    }
++
++    abstract void writeDetails(Instruction instr);
++    void flush() { }
++}
+diff -r 8f5d8429b3f1 -r 4b55db11179d src/share/classes/com/sun/tools/javap/JavapTask.java
+--- langtools/src/share/classes/com/sun/tools/javap/JavapTask.java	Tue Jul 08 18:06:19 2008 -0700
++++ langtools/src/share/classes/com/sun/tools/javap/JavapTask.java	Tue May 19 11:50:54 2009 -0700
+@@ -40,6 +40,7 @@
+ import java.text.MessageFormat;
+ import java.util.ArrayList;
+ import java.util.Arrays;
++import java.util.EnumSet;
+ import java.util.HashMap;
+ import java.util.Iterator;
+ import java.util.List;
+@@ -66,7 +67,7 @@
+  *  This code and its internal interfaces are subject to change or
+  *  deletion without notice.</b>
+  */
+-public class JavapTask implements DisassemblerTool.DisassemblerTask {
++public class JavapTask implements DisassemblerTool.DisassemblerTask, Messages {
+     public class BadArgs extends Exception {
+         static final long serialVersionUID = 8765093759964640721L;
+         BadArgs(String key, Object... args) {
+@@ -242,6 +243,56 @@
+             }
+         },
+ 
++        new Option(false, "-XDdetails") {
++            void process(JavapTask task, String opt, String arg) {
++                task.options.details = EnumSet.allOf(InstructionDetailWriter.Kind.class);
++            }
++
++        },
++
++        new Option(false, "-XDdetails:") {
++            @Override
++            boolean matches(String opt) {
++                int sep = opt.indexOf(":");
++                return sep != -1 && super.matches(opt.substring(0, sep + 1));
++            }
++
++            void process(JavapTask task, String opt, String arg) throws BadArgs {
++                int sep = opt.indexOf(":");
++                for (String v: opt.substring(sep + 1).split("[,: ]+")) {
++                    if (!handleArg(task, v))
++                        throw task.new BadArgs("err.invalid.arg.for.option", v);
++                }
++            }
++
++            boolean handleArg(JavapTask task, String arg) {
++                if (arg.length() == 0)
++                    return true;
++
++                if (arg.equals("all")) {
++                    task.options.details = EnumSet.allOf(InstructionDetailWriter.Kind.class);
++                    return true;
++                }
++
++                boolean on = true;
++                if (arg.startsWith("-")) {
++                    on = false;
++                    arg = arg.substring(1);
++                }
++
++                for (InstructionDetailWriter.Kind k: InstructionDetailWriter.Kind.values()) {
++                    if (arg.equalsIgnoreCase(k.option)) {
++                        if (on)
++                            task.options.details.add(k);
++                        else
++                            task.options.details.remove(k);
++                        return true;
++                    }
++                }
++                return false;
++            }
++        },
++
+         new Option(false, "-constants") {
+             void process(JavapTask task, String opt, String arg) {
+                 task.options.showConstants = true;
+@@ -284,6 +335,7 @@
+ 
+     public JavapTask() {
+         context = new Context();
++        context.put(Messages.class, this);
+         options = Options.instance(context);
+         attributeFactory = new Attribute.Factory();
+     }
+@@ -489,6 +541,8 @@
+ 
+         context.put(PrintWriter.class, log);
+         ClassWriter classWriter = ClassWriter.instance(context);
++        SourceWriter sourceWriter = SourceWriter.instance(context);
++        sourceWriter.setFileManager(fileManager);
+ 
+         boolean ok = true;
+ 
+@@ -749,11 +803,11 @@
+ 
+     }
+ 
+-    private String getMessage(String key, Object... args) {
++    public String getMessage(String key, Object... args) {
+         return getMessage(task_locale, key, args);
+     }
+ 
+-    private String getMessage(Locale locale, String key, Object... args) {
++    public String getMessage(Locale locale, String key, Object... args) {
+         if (bundles == null) {
+             // could make this a HashMap<Locale,SoftReference<ResourceBundle>>
+             // and for efficiency, keep a hard reference to the bundle for the task
+diff -r 8f5d8429b3f1 -r 4b55db11179d src/share/classes/com/sun/tools/javap/Messages.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ langtools/src/share/classes/com/sun/tools/javap/Messages.java	Tue May 19 11:50:54 2009 -0700
+@@ -0,0 +1,42 @@
++/*
++ * Copyright 2007-2009 Sun Microsystems, Inc.  All Rights Reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Sun designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Sun in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
++ * CA 95054 USA or visit www.sun.com if you need additional information or
++ * have any questions.
++ */
++
++package com.sun.tools.javap;
++
++import java.util.Locale;
++
++/**
++ *  Access to javap messages.
++ *
++ *  <p><b>This is NOT part of any API supported by Sun Microsystems.  If
++ *  you write code that depends on this, you do so at your own risk.
++ *  This code and its internal interfaces are subject to change or
++ *  deletion without notice.</b>
++ */
++public interface Messages {
++    String getMessage(String key, Object... args);
++
++    String getMessage(Locale locale, String key, Object... args);
++}
+diff -r 8f5d8429b3f1 -r 4b55db11179d src/share/classes/com/sun/tools/javap/Options.java
+--- langtools/src/share/classes/com/sun/tools/javap/Options.java	Tue Jul 08 18:06:19 2008 -0700
++++ langtools/src/share/classes/com/sun/tools/javap/Options.java	Tue May 19 11:50:54 2009 -0700
+@@ -25,8 +25,10 @@
+ 
+ package com.sun.tools.javap;
+ 
++import java.util.EnumSet;
+ import java.util.HashSet;
+ import java.util.Set;
++
+ import com.sun.tools.classfile.AccessFlags;
+ 
+ /*
+@@ -77,6 +79,7 @@
+     public boolean showLineAndLocalVariableTables;
+     public int showAccess;
+     public Set<String> accessOptions = new HashSet<String>();
++    public Set<InstructionDetailWriter.Kind> details = EnumSet.noneOf(InstructionDetailWriter.Kind.class);
+     public boolean showDisassembled;
+     public boolean showInternalSignatures;
+     public boolean showAllAttrs;
+diff -r 8f5d8429b3f1 -r 4b55db11179d src/share/classes/com/sun/tools/javap/SourceWriter.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ langtools/src/share/classes/com/sun/tools/javap/SourceWriter.java	Tue May 19 11:50:54 2009 -0700
+@@ -0,0 +1,207 @@
++/*
++ * Copyright 2009 Sun Microsystems, Inc.  All Rights Reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Sun designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Sun in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
++ * CA 95054 USA or visit www.sun.com if you need additional information or
++ * have any questions.
++ */
++
++package com.sun.tools.javap;
++
++import java.io.BufferedReader;
++import java.io.IOException;
++import java.io.StringReader;
++import java.util.ArrayList;
++import java.util.List;
++import java.util.Set;
++import java.util.SortedMap;
++import java.util.SortedSet;
++import java.util.TreeMap;
++import java.util.TreeSet;
++import javax.tools.JavaFileManager;
++import javax.tools.JavaFileManager.Location;
++import javax.tools.JavaFileObject;
++import javax.tools.StandardLocation;
++
++import com.sun.tools.classfile.Attribute;
++import com.sun.tools.classfile.ClassFile;
++import com.sun.tools.classfile.Code_attribute;
++import com.sun.tools.classfile.ConstantPoolException;
++import com.sun.tools.classfile.Instruction;
++import com.sun.tools.classfile.LineNumberTable_attribute;
++import com.sun.tools.classfile.SourceFile_attribute;
++
++
++/**
++ * Annotate instructions with source code.
++ *
++ *  <p><b>This is NOT part of any API supported by Sun Microsystems.  If
++ *  you write code that depends on this, you do so at your own risk.
++ *  This code and its internal interfaces are subject to change or
++ *  deletion without notice.</b>
++ */
++public class SourceWriter extends InstructionDetailWriter {
++    static SourceWriter instance(Context context) {
++        SourceWriter instance = context.get(SourceWriter.class);
++        if (instance == null)
++            instance = new SourceWriter(context);
++        return instance;
++    }
++
++    protected SourceWriter(Context context) {
++        super(context);
++        context.put(SourceWriter.class, this);
++    }
++
++    void setFileManager(JavaFileManager fileManager) {
++        this.fileManager = fileManager;
++    }
++
++    public void reset(ClassFile cf, Code_attribute attr) {
++        setSource(cf);
++        setLineMap(attr);
++    }
++
++    public void writeDetails(Instruction instr) {
++        String indent = space(40); // could get from Options?
++        Set<Integer> lines = lineMap.get(instr.getPC());
++        if (lines != null) {
++            for (int line: lines) {
++                print(indent);
++                print(String.format(" %4d ", line));
++                if (line < sourceLines.length)
++                    print(sourceLines[line]);
++                println();
++                int nextLine = nextLine(line);
++                for (int i = line + 1; i < nextLine; i++) {
++                    print(indent);
++                    print(String.format("(%4d)", i));
++                    if (i < sourceLines.length)
++                        print(sourceLines[i]);
++                    println();
++                }
++            }
++        }
++
++    }
++
++    private void setLineMap(Code_attribute attr) {
++        SortedMap<Integer, SortedSet<Integer>> map =
++                new TreeMap<Integer, SortedSet<Integer>>();
++        SortedSet<Integer> allLines = new TreeSet<Integer>();
++        for (Attribute a: attr.attributes) {
++            if (a instanceof LineNumberTable_attribute) {
++                LineNumberTable_attribute t = (LineNumberTable_attribute) a;
++                for (LineNumberTable_attribute.Entry e: t.line_number_table) {
++                    int start_pc = e.start_pc;
++                    int line = e.line_number;
++                    SortedSet<Integer> pcLines = map.get(start_pc);
++                    if (pcLines == null) {
++                        pcLines = new TreeSet<Integer>();
++                        map.put(start_pc, pcLines);
++                    }
++                    pcLines.add(line);
++                    allLines.add(line);
++                }
++            }
++        }
++        lineMap = map;
++        lineList = new ArrayList<Integer>(allLines);
++    }
++
++    private void setSource(ClassFile cf) {
++        if (cf != classFile) {
++            classFile = cf;
++            sourceLines = splitLines(readSource(cf));
++        }
++    }
++
++    private String readSource(ClassFile cf) {
++        Location location;
++        if (fileManager.hasLocation((StandardLocation.SOURCE_PATH)))
++            location = StandardLocation.SOURCE_PATH;
++        else
++            location = StandardLocation.CLASS_PATH;
++
++        // Guess the source file for a class from the package name for this
++        // class and the base of the source file. This avoids having to read
++        // additional classes to determine the outmost class from any
++        // InnerClasses and EnclosingMethod attributes.
++        try {
++            String className = cf.getName();
++            SourceFile_attribute sf =
++                    (SourceFile_attribute) cf.attributes.get(Attribute.SourceFile);
++            if (sf == null) {
++                report(messages.getMessage("err.no.SourceFile.attribute"));
++                return null;
++            }
++            String sourceFile = sf.getSourceFile(cf.constant_pool);
++            String fileBase = sourceFile.endsWith(".java")
++                ? sourceFile.substring(0, sourceFile.length() - 5) : sourceFile;
++            int sep = className.lastIndexOf("/");
++            String pkgName = (sep == -1 ? "" : className.substring(0, sep+1));
++            String topClassName = (pkgName + fileBase).replace('/', '.');
++            JavaFileObject fo =
++                    fileManager.getJavaFileForInput(location,
++                    topClassName,
++                    JavaFileObject.Kind.SOURCE);
++            if (fo == null) {
++                report(messages.getMessage("err.source.file.not.found"));
++                return null;
++            }
++            return fo.getCharContent(true).toString();
++        } catch (ConstantPoolException e) {
++            report(e);
++            return null;
++        } catch (IOException e) {
++            report(e.getLocalizedMessage());
++            return null;
++        }
++    }
++
++    private static String[] splitLines(String text) {
++        if (text == null)
++            return new String[0];
++
++        List<String> lines = new ArrayList<String>();
++        lines.add(""); // dummy line 0
++        try {
++            BufferedReader r = new BufferedReader(new StringReader(text));
++            String line;
++            while ((line = r.readLine()) != null)
++                lines.add(line);
++        } catch (IOException ignore) {
++        }
++        return lines.toArray(new String[lines.size()]);
++    }
++
++    private int nextLine(int line) {
++        int i = lineList.indexOf(line);
++        if (i == -1 || i == lineList.size() - 1)
++            return - 1;
++        return lineList.get(i + 1);
++    }
++
++    private JavaFileManager fileManager;
++    private ClassFile classFile;
++    private SortedMap<Integer, SortedSet<Integer>> lineMap;
++    private List<Integer> lineList;
++    private String[] sourceLines;
++}
+diff -r 8f5d8429b3f1 -r 4b55db11179d src/share/classes/com/sun/tools/javap/StackMapWriter.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ langtools/src/share/classes/com/sun/tools/javap/StackMapWriter.java	Tue May 19 11:50:54 2009 -0700
+@@ -0,0 +1,291 @@
++/*
++ * Copyright 2009 Sun Microsystems, Inc.  All Rights Reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Sun designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Sun in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
++ * CA 95054 USA or visit www.sun.com if you need additional information or
++ * have any questions.
++ */
++
++package com.sun.tools.javap;
++
++import com.sun.tools.classfile.AccessFlags;
++import java.util.HashMap;
++import java.util.Map;
++
++import com.sun.tools.classfile.Attribute;
++import com.sun.tools.classfile.Code_attribute;
++import com.sun.tools.classfile.ConstantPool;
++import com.sun.tools.classfile.ConstantPoolException;
++import com.sun.tools.classfile.Descriptor;
++import com.sun.tools.classfile.Descriptor.InvalidDescriptor;
++import com.sun.tools.classfile.Instruction;
++import com.sun.tools.classfile.Method;
++import com.sun.tools.classfile.StackMapTable_attribute;
++import com.sun.tools.classfile.StackMapTable_attribute.*;
++
++import static com.sun.tools.classfile.StackMapTable_attribute.verification_type_info.*;
++
++/**
++ * Annotate instructions with stack map.
++ *
++ *  <p><b>This is NOT part of any API supported by Sun Microsystems.  If
++ *  you write code that depends on this, you do so at your own risk.
++ *  This code and its internal interfaces are subject to change or
++ *  deletion without notice.</b>
++ */
++public class StackMapWriter extends InstructionDetailWriter {
++    static StackMapWriter instance(Context context) {
++        StackMapWriter instance = context.get(StackMapWriter.class);
++        if (instance == null)
++            instance = new StackMapWriter(context);
++        return instance;
++    }
++
++    protected StackMapWriter(Context context) {
++        super(context);
++        context.put(StackMapWriter.class, this);
++        classWriter = ClassWriter.instance(context);
++    }
++
++    public void reset(Code_attribute attr) {
++        setStackMap((StackMapTable_attribute) attr.attributes.get(Attribute.StackMapTable));
++    }
++
++    void setStackMap(StackMapTable_attribute attr) {
++        if (attr == null) {
++            map = null;
++            return;
++        }
++
++        Method m = classWriter.getMethod();
++        Descriptor d = m.descriptor;
++        String[] args;
++        try {
++            ConstantPool cp = classWriter.getClassFile().constant_pool;
++            String argString = d.getParameterTypes(cp);
++            args = argString.substring(1, argString.length() - 1).split("[, ]+");
++        } catch (ConstantPoolException e) {
++            return;
++        } catch (InvalidDescriptor e) {
++            return;
++        }
++        boolean isStatic = m.access_flags.is(AccessFlags.ACC_STATIC);
++
++        verification_type_info[] initialLocals = new verification_type_info[(isStatic ? 0 : 1) + args.length];
++        if (!isStatic)
++            initialLocals[0] = new CustomVerificationTypeInfo("this");
++        for (int i = 0; i < args.length; i++) {
++            initialLocals[(isStatic ? 0 : 1) + i] =
++                    new CustomVerificationTypeInfo(args[i].replace(".", "/"));
++        }
++
++        map = new HashMap<Integer, StackMap>();
++        StackMapBuilder builder = new StackMapBuilder();
++
++        // using -1 as the pc for the initial frame effectively compensates for
++        // the difference in behavior for the first stack map frame (where the
++        // pc offset is just offset_delta) compared to subsequent frames (where
++        // the pc offset is always offset_delta+1).
++        int pc = -1;
++
++        map.put(pc, new StackMap(initialLocals, empty));
++
++        for (int i = 0; i < attr.entries.length; i++)
++            pc = attr.entries[i].accept(builder, pc);
++    }
++
++    public void writeInitialDetails() {
++        writeDetails(-1);
++    }
++
++    public void writeDetails(Instruction instr) {
++        writeDetails(instr.getPC());
++    }
++
++    private void writeDetails(int pc) {
++        if (map == null)
++            return;
++
++        StackMap m = map.get(pc);
++        if (m != null) {
++            print("StackMap locals: ", m.locals);
++            print("StackMap stack: ", m.stack);
++        }
++
++    }
++
++    void print(String label, verification_type_info[] entries) {
++        print(label);
++        for (int i = 0; i < entries.length; i++) {
++            print(" ");
++            print(entries[i]);
++        }
++        println();
++    }
++
++    void print(verification_type_info entry) {
++        if (entry == null) {
++            print("ERROR");
++            return;
++        }
++
++        switch (entry.tag) {
++            case -1:
++                print(((CustomVerificationTypeInfo) entry).text);
++                break;
++
++            case ITEM_Top:
++                print("top");
++                break;
++
++            case ITEM_Integer:
++                print("int");
++                break;
++
++            case ITEM_Float:
++                print("float");
++                break;
++
++            case ITEM_Long:
++                print("long");
++                break;
++
++            case ITEM_Double:
++                print("double");
++                break;
++
++            case ITEM_Null:
++                print("null");
++                break;
++
++            case ITEM_UninitializedThis:
++                print("uninit_this");
++                break;
++
++            case ITEM_Object:
++                try {
++                    ConstantPool cp = classWriter.getClassFile().constant_pool;
++                    ConstantPool.CONSTANT_Class_info class_info = cp.getClassInfo(((Object_variable_info) entry).cpool_index);
++                    print(cp.getUTF8Value(class_info.name_index));
++                } catch (ConstantPoolException e) {
++                    print("??");
++                }
++                break;
++
++            case ITEM_Uninitialized:
++                print(((Uninitialized_variable_info) entry).offset);
++                break;
++        }
++
++    }
++
++    private Map<Integer, StackMap> map;
++    private ClassWriter classWriter;
++
++    class StackMapBuilder
++            implements StackMapTable_attribute.stack_map_frame.Visitor<Integer, Integer> {
++
++        public Integer visit_same_frame(same_frame frame, Integer pc) {
++            int new_pc = pc + frame.getOffsetDelta() + 1;
++            StackMap m = map.get(pc);
++            assert (m != null);
++            map.put(new_pc, m);
++            return new_pc;
++        }
++
++        public Integer visit_same_locals_1_stack_item_frame(same_locals_1_stack_item_frame frame, Integer pc) {
++            int new_pc = pc + frame.getOffsetDelta() + 1;
++            StackMap prev = map.get(pc);
++            assert (prev != null);
++            StackMap m = new StackMap(prev.locals, frame.stack);
++            map.put(new_pc, m);
++            return new_pc;
++        }
++
++        public Integer visit_same_locals_1_stack_item_frame_extended(same_locals_1_stack_item_frame_extended frame, Integer pc) {
++            int new_pc = pc + frame.getOffsetDelta() + 1;
++            StackMap prev = map.get(pc);
++            assert (prev != null);
++            StackMap m = new StackMap(prev.locals, frame.stack);
++            map.put(new_pc, m);
++            return new_pc;
++        }
++
++        public Integer visit_chop_frame(chop_frame frame, Integer pc) {
++            int new_pc = pc + frame.getOffsetDelta() + 1;
++            StackMap prev = map.get(pc);
++            assert (prev != null);
++            int k = 251 - frame.frame_type;
++            verification_type_info[] new_locals = new verification_type_info[prev.locals.length - k];
++            System.arraycopy(prev.locals, 0, new_locals, 0, new_locals.length);
++            StackMap m = new StackMap(new_locals, empty);
++            map.put(new_pc, m);
++            return new_pc;
++        }
++
++        public Integer visit_same_frame_extended(same_frame_extended frame, Integer pc) {
++            int new_pc = pc + frame.getOffsetDelta();
++            StackMap m = map.get(pc);
++            assert (m != null);
++            map.put(new_pc, m);
++            return new_pc;
++        }
++
++        public Integer visit_append_frame(append_frame frame, Integer pc) {
++            int new_pc = pc + frame.getOffsetDelta() + 1;
++            StackMap prev = map.get(pc);
++            assert (prev != null);
++            verification_type_info[] new_locals = new verification_type_info[prev.locals.length + frame.locals.length];
++            System.arraycopy(prev.locals, 0, new_locals, 0, prev.locals.length);
++            System.arraycopy(frame.locals, 0, new_locals, prev.locals.length, frame.locals.length);
++            StackMap m = new StackMap(new_locals, empty);
++            map.put(new_pc, m);
++            return new_pc;
++        }
++
++        public Integer visit_full_frame(full_frame frame, Integer pc) {
++            int new_pc = pc + frame.getOffsetDelta() + 1;
++            StackMap m = new StackMap(frame.locals, frame.stack);
++            map.put(new_pc, m);
++            return new_pc;
++        }
++
++    }
++
++    class StackMap {
++        StackMap(verification_type_info[] locals, verification_type_info[] stack) {
++            this.locals = locals;
++            this.stack = stack;
++        }
++
++        private final verification_type_info[] locals;
++        private final verification_type_info[] stack;
++    }
++
++    class CustomVerificationTypeInfo extends verification_type_info {
++        public CustomVerificationTypeInfo(String text) {
++            super(-1);
++            this.text = text;
++        }
++        private String text;
++    }
++
++    private final verification_type_info[] empty = { };
++}
+diff -r 8f5d8429b3f1 -r 4b55db11179d src/share/classes/com/sun/tools/javap/TryBlockWriter.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ langtools/src/share/classes/com/sun/tools/javap/TryBlockWriter.java	Tue May 19 11:50:54 2009 -0700
+@@ -0,0 +1,142 @@
++/*
++ * Copyright 2009 Sun Microsystems, Inc.  All Rights Reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Sun designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Sun in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
++ * CA 95054 USA or visit www.sun.com if you need additional information or
++ * have any questions.
++ */
++
++package com.sun.tools.javap;
++
++import com.sun.tools.classfile.Code_attribute;
++import com.sun.tools.classfile.Code_attribute.Exception_data;
++import com.sun.tools.classfile.Instruction;
++import java.util.ArrayList;
++import java.util.HashMap;
++import java.util.List;
++import java.util.ListIterator;
++import java.util.Map;
++
++/**
++ * Annotate instructions with details about try blocks.
++ *
++ *  <p><b>This is NOT part of any API supported by Sun Microsystems.  If
++ *  you write code that depends on this, you do so at your own risk.
++ *  This code and its internal interfaces are subject to change or
++ *  deletion without notice.</b>
++ */
++public class TryBlockWriter extends InstructionDetailWriter {
++    public enum NoteKind {
++        START("try") {
++            public boolean match(Exception_data entry, int pc) {
++                return (pc == entry.start_pc);
++            }
++        },
++        END("end try") {
++            public boolean match(Exception_data entry, int pc) {
++                return (pc == entry.end_pc);
++            }
++        },
++        HANDLER("catch") {
++            public boolean match(Exception_data entry, int pc) {
++                return (pc == entry.handler_pc);
++            }
++        };
++        NoteKind(String text) {
++            this.text = text;
++        }
++        public abstract boolean match(Exception_data entry, int pc);
++        public final String text;
++    };
++
++    static TryBlockWriter instance(Context context) {
++        TryBlockWriter instance = context.get(TryBlockWriter.class);
++        if (instance == null)
++            instance = new TryBlockWriter(context);
++        return instance;
++    }
++
++    protected TryBlockWriter(Context context) {
++        super(context);
++        context.put(TryBlockWriter.class, this);
++        constantWriter = ConstantWriter.instance(context);
++    }
++
++    public void reset(Code_attribute attr) {
++        indexMap = new HashMap<Exception_data, Integer>();
++        pcMap = new HashMap<Integer, List<Exception_data>>();
++        for (int i = 0; i < attr.exception_table.length; i++) {
++            Exception_data entry = attr.exception_table[i];
++            indexMap.put(entry, i);
++            put(entry.start_pc, entry);
++            put(entry.end_pc, entry);
++            put(entry.handler_pc, entry);
++        }
++    }
++
++    public void writeDetails(Instruction instr) {
++        writeTrys(instr, NoteKind.END);
++        writeTrys(instr, NoteKind.START);
++        writeTrys(instr, NoteKind.HANDLER);
++    }
++
++    public void writeTrys(Instruction instr, NoteKind kind) {
++        String indent = space(2); // get from Options?
++        int pc = instr.getPC();
++        List<Exception_data> entries = pcMap.get(pc);
++        if (entries != null) {
++            for (ListIterator<Exception_data> iter =
++                    entries.listIterator(kind == NoteKind.END ? entries.size() : 0);
++                    kind == NoteKind.END ? iter.hasPrevious() : iter.hasNext() ; ) {
++                Exception_data entry =
++                        kind == NoteKind.END ? iter.previous() : iter.next();
++                if (kind.match(entry, pc)) {
++                    print(indent);
++                    print(kind.text);
++                    print("[");
++                    print(indexMap.get(entry));
++                    print("] ");
++                    if (entry.catch_type == 0)
++                        print("finally");
++                    else {
++                        print("#" + entry.catch_type);
++                        print(" // ");
++                        constantWriter.write(entry.catch_type);
++                    }
++                    println();
++                }
++            }
++        }
++    }
++
++    private void put(int pc, Exception_data entry) {
++        List<Exception_data> list = pcMap.get(pc);
++        if (list == null) {
++            list = new ArrayList<Exception_data>();
++            pcMap.put(pc, list);
++        }
++        if (!list.contains(entry))
++            list.add(entry);
++    }
++
++    private Map<Integer, List<Exception_data>> pcMap;
++    private Map<Exception_data, Integer> indexMap;
++    private ConstantWriter constantWriter;
++}
+diff -r 8f5d8429b3f1 -r 4b55db11179d src/share/classes/com/sun/tools/javap/resources/javap.properties
+--- langtools/src/share/classes/com/sun/tools/javap/resources/javap.properties	Tue Jul 08 18:06:19 2008 -0700
++++ langtools/src/share/classes/com/sun/tools/javap/resources/javap.properties	Tue May 19 11:50:54 2009 -0700
+@@ -9,6 +9,7 @@
+ err.h.not.supported=-h is no longer available - use the 'javah' program
+ err.incompatible.options=bad combination of options: {0}
+ err.internal.error=internal error: {0} {1} {2}
++err.invalid.arg.for.option=invalid argument for option: {0}
+ err.ioerror=IO error reading {0}: {1}
+ err.missing.arg=no value given for {0}
+ err.no.classes.specified=no classes specified
+@@ -16,6 +17,8 @@
+ err.unknown.option=unknown option: {0}
+ err.verify.not.supported=-verify not supported
+ err.Xold.not.supported.here=-Xold must be given as the first option
++err.no.SourceFile.attribute=no SourceFile attribute
++err.source.file.not.found=source file not found
+ 
+ main.usage=\
+ Usage: {0} <options> <classes>\n\
+diff -r 8f5d8429b3f1 -r 4b55db11179d test/tools/javap/T6824493.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ langtools/test/tools/javap/T6824493.java	Tue May 19 11:50:54 2009 -0700
+@@ -0,0 +1,116 @@
++/*
++ * Copyright 2009 Sun Microsystems, Inc.  All Rights Reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
++ * CA 95054 USA or visit www.sun.com if you need additional information or
++ * have any questions.
++ */
++
++import java.io.*;
++import java.util.*;
++
++/*
++ * @test
++ * @bug 6824493
++ * @summary experimental support for additional info for instructions
++ * @compile -g T6824493.java
++ * @run main T6824493
++ */
++public class T6824493 {
++    public static void main(String... args) {
++        new T6824493().run();
++    }
++
++    void run() {
++        // for each of the options, we run javap and check for some
++        // marker strings in the output that generally indicate the
++        // presence of the expected output, without being as specific
++        // as a full golden file test.
++        test("-XDdetails:source",
++            "for (int i = 0; i < 10; i++) {",
++            "System.out.println(s + i);");
++
++        test("-XDdetails:tryBlocks",
++                "try[0]",
++                "end try[0]",
++                "catch[0]");
++
++        test("-XDdetails:stackMaps",
++                "StackMap locals:  this java/lang/String int",
++                "StackMap stack:  java/lang/Throwable");
++
++        test("-XDdetails:localVariables",
++                "start local 3 // java.util.List list",
++                "end local 3 // java.util.List list");
++
++        test("-XDdetails:localVariableTypes",
++                "start generic local 3 // java.util.List<java.lang.String> list",
++                "end generic local 3 // java.util.List<java.lang.String> list");
++
++        if (errors > 0)
++            throw new Error(errors + " errors found");
++    }
++
++    void test(String option, String... expect) {
++        String[] args = {
++            "-c",
++            "-classpath",
++            testSrc + File.pathSeparator + testClasses,
++            option,
++            "Test"
++        };
++        StringWriter sw = new StringWriter();
++        PrintWriter pw = new PrintWriter(sw);
++        int rc = com.sun.tools.javap.Main.run(args, pw);
++        if (rc != 0) {
++            error("unexpected return code from javap: " + rc);
++            return;
++        }
++
++        String out = sw.toString();
++        System.out.println(out);
++        for (String e: expect) {
++            if (!out.contains(e))
++                error("Not found: " + e);
++        }
++    }
++
++    void error(String msg) {
++        System.err.println("Error: " + msg);
++        errors++;
++    }
++
++    private int errors;
++    private String testSrc = System.getProperty("test.src", ".");
++    private String testClasses = System.getProperty("test.classes", ".");
++}
++
++class Test {
++    void m(String s) {
++        for (int i = 0; i < 10; i++) {
++            try {
++                List<String> list = null;
++                System.out.println(s + i);
++            } catch (NullPointerException e) {
++                System.out.println("catch NPE");
++            } finally {
++                System.out.println("finally");
++            }
++        }
++    }
++}

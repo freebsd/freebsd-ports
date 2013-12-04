@@ -1,0 +1,35 @@
+# HG changeset patch
+# User iklam
+# Date 1377328486 25200
+#      Sat Aug 24 00:14:46 2013 -0700
+# Node ID 3091721c83780cbb9a946f05007651e0bd09490b
+# Parent  bbd051c9089f61c65fe7d95487d47920164c7ee0
+8023683: Enhance class file parsing
+Summary: Use the value returned by REALLOC_RESOURCE_ARRAY()
+Reviewed-by: coleenp, ahgross
+
+diff -r bbd051c9089f -r 3091721c8378 src/share/vm/classfile/classFileParser.cpp
+--- hotspot/src/share/vm/classfile/classFileParser.cpp	Mon Jul 15 10:22:43 2013 +0400
++++ hotspot/src/share/vm/classfile/classFileParser.cpp	Sat Aug 24 00:14:46 2013 -0700
+@@ -1821,8 +1821,8 @@
+           }
+           if (lvt_cnt == max_lvt_cnt) {
+             max_lvt_cnt <<= 1;
+-            REALLOC_RESOURCE_ARRAY(u2, localvariable_table_length, lvt_cnt, max_lvt_cnt);
+-            REALLOC_RESOURCE_ARRAY(u2*, localvariable_table_start, lvt_cnt, max_lvt_cnt);
++            localvariable_table_length = REALLOC_RESOURCE_ARRAY(u2, localvariable_table_length, lvt_cnt, max_lvt_cnt);
++            localvariable_table_start  = REALLOC_RESOURCE_ARRAY(u2*, localvariable_table_start, lvt_cnt, max_lvt_cnt);
+           }
+           localvariable_table_start[lvt_cnt] =
+             parse_localvariable_table(code_length,
+@@ -1851,8 +1851,8 @@
+           // Parse local variable type table
+           if (lvtt_cnt == max_lvtt_cnt) {
+             max_lvtt_cnt <<= 1;
+-            REALLOC_RESOURCE_ARRAY(u2, localvariable_type_table_length, lvtt_cnt, max_lvtt_cnt);
+-            REALLOC_RESOURCE_ARRAY(u2*, localvariable_type_table_start, lvtt_cnt, max_lvtt_cnt);
++            localvariable_type_table_length = REALLOC_RESOURCE_ARRAY(u2, localvariable_type_table_length, lvtt_cnt, max_lvtt_cnt);
++            localvariable_type_table_start  = REALLOC_RESOURCE_ARRAY(u2*, localvariable_type_table_start, lvtt_cnt, max_lvtt_cnt);
+           }
+           localvariable_type_table_start[lvtt_cnt] =
+             parse_localvariable_table(code_length,
