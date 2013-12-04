@@ -615,6 +615,7 @@
     SUBDIR += opencsg
     SUBDIR += opencv
     SUBDIR += opencv-core
+    SUBDIR += opencv-java
     SUBDIR += opendis
     SUBDIR += opendx
     SUBDIR += openexr_ctl

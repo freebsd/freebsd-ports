@@ -27,7 +27,7 @@ IGNORE=		cannot build OpenCV and gavl plugins simultaneously
 .endif
 
 .if defined(BUILDING_FREI0R_OPENCV)
-PORTREVISION=	2
+PORTREVISION=	3
 COMMENT=	Frei0r OpenCV plugins
 PKGNAMESUFFIX=  -plugins-opencv
 LIB_DEPENDS+=	opencv_legacy.2:${PORTSDIR}/graphics/opencv
@@ -57,6 +57,7 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 
 .if defined(FREI0R_PLUGINS)
 CPPFLAGS+=	"-I${LOCALBASE}/include"
+LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST=		${WRKSRC}/PLIST
 ALL_TARGET=
 BUILD_WRKSRC=	${WRKSRC}/src

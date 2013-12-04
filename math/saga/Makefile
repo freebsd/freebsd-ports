@@ -3,7 +3,7 @@
 
 PORTNAME=	saga
 PORTVERSION=	2.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]*$//}/SAGA%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
@@ -13,13 +13,13 @@ COMMENT=	System for Automated Geoscientific Analyses
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
-		gdal:${PORTSDIR}/graphics/gdal \
-		jasper:${PORTSDIR}/graphics/jasper \
-		tiff:${PORTSDIR}/graphics/tiff \
-		iodbc:${PORTSDIR}/databases/libiodbc \
-		las:${PORTSDIR}/devel/liblas \
-		opencv_legacy:${PORTSDIR}/graphics/opencv
+LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj \
+		libgdal.so:${PORTSDIR}/graphics/gdal \
+		libjasper.so:${PORTSDIR}/graphics/jasper \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libiodbc.so:${PORTSDIR}/databases/libiodbc \
+		liblas.so:${PORTSDIR}/devel/liblas \
+		libopencv_core.so:${PORTSDIR}/graphics/opencv-core
 
 USE_ZIP=	yes
 USE_WX=		2.9
@@ -107,9 +107,9 @@ post-extract:
 		${WRKSRC}/src/modules_geostatistics/geostatistics/geostatistics_kriging/Makefile.am
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lcv|-lopencv_legacy|g' \
+	@${REINPLACE_CMD} -e 's|-lcv|-lopencv_core -lopencv_imgproc|g' \
 		${WRKSRC}/src/modules_images/modules_opencv/opencv/Makefile.am
-	@${REINPLACE_CMD} -e 's|\[cv\]|\[opencv_legacy\]|' \
+	@${REINPLACE_CMD} -e 's|\[cv\]|\[opencv_core\]|' \
 		${WRKSRC}/configure.in
 	@${REINPLACE_CMD} -e 's|\\n"), SAGA_VERSION)| (rev. 1760)\\n"), SAGA_VERSION)|' \
 		${WRKSRC}/src/saga_core/saga_gui/dlg_about.cpp

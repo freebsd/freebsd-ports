@@ -1,7 +1,6 @@
 bin/opencv_createsamples
 bin/opencv_haartraining
 bin/opencv_performance
-bin/opencv_stitching
 bin/opencv_traincascade
 include/opencv/cv.h
 include/opencv/cv.hpp
@@ -16,23 +15,136 @@ include/opencv/highgui.h
 include/opencv/ml.h
 include/opencv2/calib3d/calib3d.hpp
 include/opencv2/contrib/contrib.hpp
+include/opencv2/contrib/detection_based_tracker.hpp
+include/opencv2/contrib/hybridtracker.hpp
+include/opencv2/contrib/openfabmap.hpp
 include/opencv2/contrib/retina.hpp
 include/opencv2/features2d/features2d.hpp
-include/opencv2/gpu/NCV.hpp
-include/opencv2/gpu/NPP_staging.hpp
+include/opencv2/flann/all_indices.h
+include/opencv2/flann/allocator.h
+include/opencv2/flann/any.h
+include/opencv2/flann/autotuned_index.h
+include/opencv2/flann/composite_index.h
+include/opencv2/flann/config.h
+include/opencv2/flann/defines.h
+include/opencv2/flann/dist.h
+include/opencv2/flann/dummy.h
+include/opencv2/flann/dynamic_bitset.h
+include/opencv2/flann/flann.hpp
+include/opencv2/flann/flann_base.hpp
+include/opencv2/flann/general.h
+include/opencv2/flann/ground_truth.h
+include/opencv2/flann/hdf5.h
+include/opencv2/flann/heap.h
+include/opencv2/flann/hierarchical_clustering_index.h
+include/opencv2/flann/index_testing.h
+include/opencv2/flann/kdtree_index.h
+include/opencv2/flann/kdtree_single_index.h
+include/opencv2/flann/kmeans_index.h
+include/opencv2/flann/linear_index.h
+include/opencv2/flann/logger.h
+include/opencv2/flann/lsh_index.h
+include/opencv2/flann/lsh_table.h
+include/opencv2/flann/matrix.h
+include/opencv2/flann/miniflann.hpp
+include/opencv2/flann/nn_index.h
+include/opencv2/flann/object_factory.h
+include/opencv2/flann/params.h
+include/opencv2/flann/random.h
+include/opencv2/flann/result_set.h
+include/opencv2/flann/sampling.h
+include/opencv2/flann/saving.h
+include/opencv2/flann/simplex_downhill.h
+include/opencv2/flann/timer.h
+include/opencv2/gpu/device/block.hpp
+include/opencv2/gpu/device/border_interpolate.hpp
+include/opencv2/gpu/device/color.hpp
+include/opencv2/gpu/device/common.hpp
+include/opencv2/gpu/device/datamov_utils.hpp
+include/opencv2/gpu/device/detail/color_detail.hpp
+include/opencv2/gpu/device/detail/reduce.hpp
+include/opencv2/gpu/device/detail/reduce_key_val.hpp
+include/opencv2/gpu/device/detail/transform_detail.hpp
+include/opencv2/gpu/device/detail/type_traits_detail.hpp
+include/opencv2/gpu/device/detail/vec_distance_detail.hpp
+include/opencv2/gpu/device/dynamic_smem.hpp
+include/opencv2/gpu/device/emulation.hpp
+include/opencv2/gpu/device/filters.hpp
+include/opencv2/gpu/device/funcattrib.hpp
+include/opencv2/gpu/device/functional.hpp
+include/opencv2/gpu/device/limits.hpp
+include/opencv2/gpu/device/reduce.hpp
+include/opencv2/gpu/device/saturate_cast.hpp
+include/opencv2/gpu/device/scan.hpp
+include/opencv2/gpu/device/simd_functions.hpp
+include/opencv2/gpu/device/static_check.hpp
+include/opencv2/gpu/device/transform.hpp
+include/opencv2/gpu/device/type_traits.hpp
+include/opencv2/gpu/device/utility.hpp
+include/opencv2/gpu/device/vec_distance.hpp
+include/opencv2/gpu/device/vec_math.hpp
+include/opencv2/gpu/device/vec_traits.hpp
+include/opencv2/gpu/device/warp.hpp
+include/opencv2/gpu/device/warp_reduce.hpp
+include/opencv2/gpu/device/warp_shuffle.hpp
 include/opencv2/gpu/devmem2d.hpp
 include/opencv2/gpu/gpu.hpp
 include/opencv2/gpu/gpumat.hpp
-include/opencv2/gpu/matrix_operations.hpp
 include/opencv2/gpu/stream_accessor.hpp
+include/opencv2/highgui/cap_ios.h
 include/opencv2/highgui/highgui.hpp
 include/opencv2/highgui/highgui_c.h
+include/opencv2/highgui/ios.h
 include/opencv2/legacy/blobtrack.hpp
 include/opencv2/legacy/compat.hpp
 include/opencv2/legacy/legacy.hpp
 include/opencv2/legacy/streams.hpp
+include/opencv2/ml/ml.hpp
+%%NONFREE%%include/opencv2/nonfree/features2d.hpp
+%%NONFREE%%include/opencv2/nonfree/gpu.hpp
+%%NONFREE%%include/opencv2/nonfree/nonfree.hpp
+%%NONFREE%%include/opencv2/nonfree/ocl.hpp
 include/opencv2/objdetect/objdetect.hpp
+include/opencv2/ocl/matrix_operations.hpp
+include/opencv2/ocl/ocl.hpp
 include/opencv2/opencv.hpp
+include/opencv2/opencv_modules.hpp
+include/opencv2/photo/photo.hpp
+include/opencv2/photo/photo_c.h
+include/opencv2/stitching/detail/autocalib.hpp
+include/opencv2/stitching/detail/blenders.hpp
+include/opencv2/stitching/detail/camera.hpp
+include/opencv2/stitching/detail/exposure_compensate.hpp
+include/opencv2/stitching/detail/matchers.hpp
+include/opencv2/stitching/detail/motion_estimators.hpp
+include/opencv2/stitching/detail/seam_finders.hpp
+include/opencv2/stitching/detail/util.hpp
+include/opencv2/stitching/detail/util_inl.hpp
+include/opencv2/stitching/detail/warpers.hpp
+include/opencv2/stitching/detail/warpers_inl.hpp
+include/opencv2/stitching/stitcher.hpp
+include/opencv2/stitching/warpers.hpp
+include/opencv2/superres/optical_flow.hpp
+include/opencv2/superres/superres.hpp
+include/opencv2/ts/gpu_perf.hpp
+include/opencv2/ts/gpu_test.hpp
+include/opencv2/ts/ts.hpp
+include/opencv2/ts/ts_gtest.h
+include/opencv2/ts/ts_perf.hpp
+include/opencv2/video/background_segm.hpp
+include/opencv2/video/tracking.hpp
+include/opencv2/video/video.hpp
+include/opencv2/videostab/deblurring.hpp
+include/opencv2/videostab/fast_marching.hpp
+include/opencv2/videostab/fast_marching_inl.hpp
+include/opencv2/videostab/frame_source.hpp
+include/opencv2/videostab/global_motion.hpp
+include/opencv2/videostab/inpainting.hpp
+include/opencv2/videostab/log.hpp
+include/opencv2/videostab/motion_stabilizing.hpp
+include/opencv2/videostab/optical_flow.hpp
+include/opencv2/videostab/stabilizer.hpp
+include/opencv2/videostab/videostab.hpp
 lib/libopencv_calib3d.so
 lib/libopencv_calib3d.so.2
 lib/libopencv_calib3d.so.%%VERSION%%
@@ -42,6 +154,9 @@ lib/libopencv_contrib.so.%%VERSION%%
 lib/libopencv_features2d.so
 lib/libopencv_features2d.so.2
 lib/libopencv_features2d.so.%%VERSION%%
+lib/libopencv_flann.so
+lib/libopencv_flann.so.2
+lib/libopencv_flann.so.%%VERSION%%
 lib/libopencv_gpu.so
 lib/libopencv_gpu.so.2
 lib/libopencv_gpu.so.%%VERSION%%
@@ -51,12 +166,39 @@ lib/libopencv_highgui.so.%%VERSION%%
 lib/libopencv_legacy.so
 lib/libopencv_legacy.so.2
 lib/libopencv_legacy.so.%%VERSION%%
+lib/libopencv_ml.so
+lib/libopencv_ml.so.2
+lib/libopencv_ml.so.%%VERSION%%
+%%NONFREE%%lib/libopencv_nonfree.so
+%%NONFREE%%lib/libopencv_nonfree.so.2
+%%NONFREE%%lib/libopencv_nonfree.so.%%VERSION%%
 lib/libopencv_objdetect.so
 lib/libopencv_objdetect.so.2
 lib/libopencv_objdetect.so.%%VERSION%%
+lib/libopencv_ocl.so
+lib/libopencv_ocl.so.2
+lib/libopencv_ocl.so.%%VERSION%%
+lib/libopencv_photo.so
+lib/libopencv_photo.so.2
+lib/libopencv_photo.so.%%VERSION%%
+lib/libopencv_stitching.so
+lib/libopencv_stitching.so.2
+lib/libopencv_stitching.so.%%VERSION%%
+lib/libopencv_superres.so
+lib/libopencv_superres.so.2
+lib/libopencv_superres.so.%%VERSION%%
+lib/libopencv_ts.a
+lib/libopencv_video.so
+lib/libopencv_video.so.2
+lib/libopencv_video.so.%%VERSION%%
+lib/libopencv_videostab.so
+lib/libopencv_videostab.so.2
+lib/libopencv_videostab.so.%%VERSION%%
 libdata/pkgconfig/opencv.pc
-%%DATADIR%%/OpenCVConfig.cmake
 %%DATADIR%%/OpenCVConfig-version.cmake
+%%DATADIR%%/OpenCVConfig.cmake
+%%DATADIR%%/OpenCVModules-%%CMAKE_BUILD_TYPE%%.cmake
+%%DATADIR%%/OpenCVModules.cmake
 %%DATADIR%%/haarcascades/haarcascade_eye.xml
 %%DATADIR%%/haarcascades/haarcascade_eye_tree_eyeglasses.xml
 %%DATADIR%%/haarcascades/haarcascade_frontalface_alt.xml
@@ -77,14 +219,31 @@ libdata/pkgconfig/opencv.pc
 %%DATADIR%%/haarcascades/haarcascade_mcs_upperbody.xml
 %%DATADIR%%/haarcascades/haarcascade_profileface.xml
 %%DATADIR%%/haarcascades/haarcascade_righteye_2splits.xml
+%%DATADIR%%/haarcascades/haarcascade_smile.xml
 %%DATADIR%%/haarcascades/haarcascade_upperbody.xml
 %%DATADIR%%/lbpcascades/lbpcascade_frontalface.xml
+%%DATADIR%%/lbpcascades/lbpcascade_profileface.xml
+%%DATADIR%%/lbpcascades/lbpcascade_silverware.xml
 @dirrm %%DATADIR%%/lbpcascades
 @dirrm %%DATADIR%%/haarcascades
+@dirrmtry %%DATADIR%%
+@dirrm include/opencv2/videostab
+@dirrm include/opencv2/video
+@dirrm include/opencv2/ts
+@dirrm include/opencv2/superres
+@dirrm include/opencv2/stitching/detail
+@dirrm include/opencv2/stitching
+@dirrm include/opencv2/photo
+@dirrm include/opencv2/ocl
 @dirrm include/opencv2/objdetect
+%%NONFREE%%@dirrm include/opencv2/nonfree
+@dirrm include/opencv2/ml
 @dirrm include/opencv2/legacy
 @dirrm include/opencv2/highgui
+@dirrm include/opencv2/gpu/device/detail
+@dirrm include/opencv2/gpu/device
 @dirrm include/opencv2/gpu
+@dirrm include/opencv2/flann
 @dirrm include/opencv2/features2d
 @dirrm include/opencv2/contrib
 @dirrm include/opencv2/calib3d

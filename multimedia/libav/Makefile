@@ -2,7 +2,7 @@
 
 PORTNAME=	libav
 PORTVERSION=	9.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://libav.org/releases/
 
@@ -89,8 +89,7 @@ JACK_CONFIGURE_ENABLE=		indev=jack
 LAME_LIB_DEPENDS=		libmp3lame.so:${PORTSDIR}/audio/lame
 LAME_CONFIGURE_ENABLE=		libmp3lame
 
-OPENCV_LIB_DEPENDS=		libopencv_imgproc.so:${PORTSDIR}/graphics/opencv-core \
-				libopencv_gpu.so:${PORTSDIR}/graphics/opencv
+OPENCV_LIB_DEPENDS=		libopencv_gpu.so:${PORTSDIR}/graphics/opencv
 OPENCV_CONFIGURE_ENABLE=	libopencv
 
 OPENJPEG_LIB_DEPENDS=		libopenjpeg.so:${PORTSDIR}/graphics/openjpeg

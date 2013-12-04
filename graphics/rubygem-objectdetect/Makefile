@@ -3,7 +3,7 @@
 
 PORTNAME=	objectdetect
 PORTVERSION=	0.0.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Simple library for detecting objects in pictures
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	opencv_legacy:${PORTSDIR}/graphics/opencv
+LIB_DEPENDS=	libopencv_legacy.so:${PORTSDIR}/graphics/opencv
 
 USES=		pkgconfig
 USE_RUBY=	yes
