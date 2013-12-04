@@ -1,8 +1,10 @@
 bin/holotz-castle
 bin/holotz-castle-editor
+%%SOLUTIONS%%bin/holotz-castle-solutions
 man/man6/holotz-castle-editor.6.gz
 man/man6/holotz-castle.6.gz
-%%SOLUTIONS%%bin/holotz-castle-solutions
+%%SOLUTIONS%%share/applications/holotz-castle-solutions.desktop
+share/applications/holotz-castle.desktop
 %%DATADIR%%/editor/EnemyMenu/0.tga
 %%DATADIR%%/editor/EnemyMenu/0_hi.tga
 %%DATADIR%%/editor/EnemyMenu/1.tga
