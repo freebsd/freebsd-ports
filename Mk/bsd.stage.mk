@@ -28,10 +28,6 @@ stage-dir:
 	@${MKDIR} ${STAGEDIR}${PREFIX}
 .if !defined(NO_MTREE)
 	@${MTREE_CMD} ${MTREE_ARGS} ${STAGEDIR}${PREFIX} > /dev/null
-.if defined(USE_LINUX) && ${PREFIX} != ${LINUXBASE}
-	@${MKDIR} ${STAGEDIR}${LINUXBASE}
-	@${MTREE_CMD} ${MTREE_ARGS} ${STAGEDIR}${LINUXBASE} > /dev/null
-.endif
 .endif
 .endif
 
