@@ -1,5 +1,5 @@
---- Makefile.tmpl.orig	Sun Nov 27 21:52:05 2005
-+++ Makefile.tmpl	Sat Dec 17 09:14:03 2005
+--- Makefile.tmpl.orig	2005-11-27 21:52:05.000000000 +0100
++++ Makefile.tmpl	2013-12-05 09:24:17.000000000 +0100
 @@ -26,17 +26,17 @@
  <ALL>INCLUDEDIR =	-I. -I${SMDIR}/include <WITH_LIBSPF -I${LIBSPFINC}>
  <INCDIRS>INCLUDEDIR +=		<X>
@@ -22,16 +22,36 @@
  <OpenBSD>LIBDIRS =	-L${SMDIR}/libmilter
  <SunOS>LIBDIRS =	-L${SMOBJDIR}/libmilter -L${SMOBJDIR}/libsmutil -L/usr/lib
  <Linux>LIBDIRS =	-L${SMOBJDIR}/libmilter -L${SMOBJDIR}/libsmutil -L/usr/lib
-@@ -62,7 +62,7 @@
+@@ -62,45 +62,45 @@
  <ALL>clean:
  <ALL>	rm -f *.o *core spamilter dnsblchk dnsblupd mxlookup iflookup <INC_FreeBSD ipfwmtad>
  <ALL>
 -<ALL>install: spamilter install-dnsblchk install-dnsblupd install-mxlookup <INC_FreeBSD install-ipfwmtad install-startup>
+-<ALL>	install -c -m ${BINMODE} -g ${BINGRP} -o ${BINOWN} spamilter ${BINDIR}
 +<ALL>install: spamilter install-dnsblchk install-dnsblupd install-mxlookup <INC_FreeBSD install-ipfwmtad>
- <ALL>	install -c -m ${BINMODE} -g ${BINGRP} -o ${BINOWN} spamilter ${BINDIR}
++<ALL>	install -c -m ${BINMODE} -g ${BINGRP} -o ${BINOWN} spamilter ${DESTDIR}${BINDIR}
  <ALL>
  <ALL>install-dnsblchk: dnsblchk
-@@ -84,23 +84,23 @@
+-<ALL>	install -c -m ${BINMODE} -g ${BINGRP} -o ${BINOWN} dnsblchk ${BINDIR}
++<ALL>	install -c -m ${BINMODE} -g ${BINGRP} -o ${BINOWN} dnsblchk ${DESTDIR}${BINDIR}
+ <ALL>
+ <ALL>install-dnsblupd: dnsblupd
+-<ALL>	install -c -m ${BINMODE} -g ${BINGRP} -o ${BINOWN} dnsblupd ${BINDIR}
++<ALL>	install -c -m ${BINMODE} -g ${BINGRP} -o ${BINOWN} dnsblupd ${DESTDIR}${BINDIR}
+ <ALL>
+ <ALL>install-mxlookup: mxlookup
+-<ALL>	install -c -m ${BINMODE} -g ${BINGRP} -o ${BINOWN} mxlookup ${BINDIR}
++<ALL>	install -c -m ${BINMODE} -g ${BINGRP} -o ${BINOWN} mxlookup ${DESTDIR}${BINDIR}
+ <ALL>
+ <FreeBSD>install-ipfwmtad: ipfwmtad
+-<FreeBSD>	install -c -m 0500 -g ${BINGRP} -o ${BINOWN} ipfwmtad ${BINDIR}
++<FreeBSD>	install -c -m 0500 -g ${BINGRP} -o ${BINOWN} ipfwmtad ${DESTDIR}${BINDIR}
+ <FreeBSD>
+ <FreeBSD>install-startup:
+-<FreeBSD>	if [ ! -e ${RCDIR}/${RCSHELL} ]; then install -c -m ${RCMODE} -g ${BINGRP} -o ${BINOWN} ${RCSHELL} ${RCDIR}; fi
++<FreeBSD>	if [ ! -e ${RCDIR}/${RCSHELL} ]; then install -c -m ${RCMODE} -g ${BINGRP} -o ${BINOWN} ${RCSHELL} ${DESTDIR}${RCDIR}; fi
+ <FreeBSD>
+ <ALL>tar: clean
  <ALL>	cd ..; tar --exclude CVS -cfvz spamilter.tgz spamilter/*
  <ALL>
  <ALL>spamilter: Makefile ${SRCS} <NOT_FreeBSD ${NRSRCS}> spamilter.o ${OBJS} <NOT_FreeBSD ${NROBJS}> <WITH_LIBSPF ${LIBSPFDIR}/libspf.a> ${INCLUDES}
