@@ -1,12 +1,12 @@
---- src/trspi/Makefile.am.orig	2010-03-12 05:41:54.000000000 +0900
-+++ src/trspi/Makefile.am	2010-10-24 21:04:04.839558584 +0900
+--- src/trspi/Makefile.am.orig	2012-09-20 02:24:48.000000000 +0900
++++ src/trspi/Makefile.am	2013-12-05 15:12:35.000000000 +0900
 @@ -1,7 +1,8 @@
  noinst_LTLIBRARIES=libtrousers.la
  
  libtrousers_la_SOURCES=trousers.c crypto/@CRYPTO_PACKAGE@/hash.c
 -libtrousers_la_CFLAGS=-DAPPID=\"TSPI\" -I${top_srcdir}/src/include
 +libtrousers_la_CFLAGS=-DAPPID=\"TSPI\" -I${top_srcdir}/src/include \
-+	-I${LOCALBASE}/include -I@prefix@/include
++	-I${ICONV_PREFIX}/include
  
  if TSS_BUILD_ASYM_CRYPTO
  libtrousers_la_SOURCES+=crypto/@CRYPTO_PACKAGE@/rsa.c
