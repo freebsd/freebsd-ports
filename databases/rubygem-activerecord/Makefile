@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	activerecord
-PORTVERSION=	3.2.15
+PORTVERSION=	3.2.16
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -11,10 +11,10 @@ COMMENT=	Object-relational mapping layer for Rails MVC Framework
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport \
-		rubygem-activemodel>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-activemodel \
-		rubygem-tzinfo>=0.3.29:${PORTSDIR}/devel/rubygem-tzinfo \
-		rubygem-arel>=3.0.2:${PORTSDIR}/databases/rubygem-arel
+RUN_DEPENDS=	rubygem-activemodel>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-activemodel \
+		rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport \
+		rubygem-arel>=3.0.2:${PORTSDIR}/databases/rubygem-arel \
+		rubygem-tzinfo>=0.3.29:${PORTSDIR}/devel/rubygem-tzinfo
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
