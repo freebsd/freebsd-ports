@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	taskjuggler
-PORTVERSION=	3.4.0
-CATEGORIES=	deskutils
+PORTVERSION=	3.5.0
+CATEGORIES=	deskutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A project management tool for UNIX based operating systems
+COMMENT=	Project management tool for UNIX based operating systems
 
 LICENSE=	GPLv2
 
@@ -18,11 +18,15 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/tj3 \
+		bin/tj3client \
+		bin/tj3d \
+		bin/tj3man \
+		bin/tj3ss_receiver \
+		bin/tj3ss_sender \
+		bin/tj3ts_receiver \
+		bin/tj3ts_sender \
+		bin/tj3ts_summary \
+		bin/tj3webd
 
-.if ${RUBY_VER} == 1.8
-IGNORE=	requires Ruby 1.9.3
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
