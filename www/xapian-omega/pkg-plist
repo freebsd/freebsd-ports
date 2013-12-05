@@ -5,10 +5,11 @@ bin/omindex
 bin/scriptindex
 man/man1/omindex.1.gz
 man/man1/scriptindex.1.gz
-share/omega/htdig2omega.script
-share/omega/mbox2omega.script
+%%DATADIR%%/omega/htdig2omega.script
+%%DATADIR%%/omega/mbox2omega.script
 %%WWWDIR%%/cgi-bin/omega
 %%WWWDIR%%/cgi-bin/outlookmsg2html
 @dirrm %%WWWDIR%%/cgi-bin
 @dirrm %%WWWDIR%%
-@dirrm share/omega
+@dirrm %%DATADIR%%/omega
+@dirrm %%DATADIR%%

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xapian-omega
-PORTVERSION=	1.2.15
+PORTVERSION=	1.2.16
 CATEGORIES=	www
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -21,12 +21,14 @@ ICONV_DESC=	Enable iconv character set conversion support
 
 PORTSCOUT=	limitw:1,even
 
+CONFIGURE_ARGS=	--datarootdir=${DATADIR} --docdir=${DOCSDIR}
 CONFIGURE_ENV=	PCRE_CONFIG=${LOCALBASE}/bin/pcre-config \
 		XAPIAN_CONFIG=${LOCALBASE}/bin/xapian-config
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
+USE_XZ=		yes
 USES=		perl5 shebangfix
 
 MORE_PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
@@ -41,25 +43,16 @@ ICONV_CONFIGURE_WITH=	iconv
 ICONV_LDFLAGS=		${ICONV_LIB}
 ICONV_USES=		iconv
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} \
 		-e '/^dist_sysconf_DATA = /d' \
 		-e '/^pkglibbindir = / s| = .*$$| = ${WWWDIR}/cgi-bin|' \
 			${WRKSRC}/Makefile.in
-.if !${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| docs||' ${WRKSRC}/Makefile.in
-.endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${MORE_PORTDOCS} ${STAGEDIR}${DOCSDIR}/
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}/
-.endif
 
 .include <bsd.port.mk>
