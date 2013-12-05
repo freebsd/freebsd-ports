@@ -34,8 +34,10 @@ CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl${TCL_VER} \
 		--enable-static-md5
 
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
 post-patch:
-.ifdef TRF_USE_MD
+.if defined(TRF_USE_MD) || ${OSREL} > 10
 	#
 	# Using FreeBSD's own -lmd instead of OpenSSL's -lcrypto
 	#
