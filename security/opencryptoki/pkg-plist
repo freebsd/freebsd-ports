@@ -26,10 +26,19 @@ sbin/pkcs11_startup
 sbin/pkcs_slot
 sbin/pkcsconf
 sbin/pkcsslotd
-@exec mkdir -p %D/var/lib/opencryptoki/swtok
-@exec mkdir -p %D/var/lib/opencryptoki/tpm
+man/man1/pkcs11_startup.1.gz
+man/man1/pkcsconf.1.gz
+man/man5/pk_config_data.5.gz
+man/man7/opencryptoki.7.gz
+man/man8/pkcsslotd.8.gz
+@owner _pkcs11
+@group _pkcs11
+@mode 0700
 @dirrmtry var/lib/opencryptoki/tpm
 @dirrmtry var/lib/opencryptoki/swtok
+@owner
+@group
+@mode
 @dirrmtry var/lib/opencryptoki
 @dirrmtry var/lib
 @dirrmtry var

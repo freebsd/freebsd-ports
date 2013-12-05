@@ -186,7 +186,7 @@ assp:*:587:
 avahi-autoipd:*:588:
 _xsi:*:600:
 _tss:*:601:
-_pkcs11:*:602:_pkcs11
+_pkcs11:*:602:
 freeswitch:*:610:
 monkeysphere:*:641:
 aox:*:666:
