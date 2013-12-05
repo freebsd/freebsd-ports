@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xapian-bindings
-PORTVERSION=	1.2.15
+PORTVERSION=	1.2.16
 CATEGORIES=	databases
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -24,6 +24,7 @@ CONFIGURE_ARGS=	--datarootdir=${DATADIR} --docdir=${DOCSDIR} \
 		--without-csharp --without-java --without-tcl
 GNU_CONFIGURE=	yes
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
+USE_XZ=		yes
 
 LUA_CONFIGURE_ENV=	LUA="${LUA_CMD}" LUA_INC="${LUA_INCDIR}" LUA_LIB="${LUA_MODLIBDIR}" LUA_SO=.so
 LUA_CONFIGURE_WITH=	lua
@@ -34,21 +35,15 @@ PERL_USES=		perl5
 PHP_CONFIGURE_ENV=	PHP_CONFIG=${LOCALBASE}/bin/php-config
 PHP_CONFIGURE_WITH=	php
 PHP_USE=		PHP=yes PHP_BUILD=yes
-PYTHON_CONFIGURE_ENV+=	PYTHON_LIB=${PYTHON_SITELIBDIR}
+PYTHON_CONFIGURE_ENV=	PYTHON_LIB=${PYTHON_SITELIBDIR}
 PYTHON_CONFIGURE_WITH=	python
 PYTHON_USE=		PYTHON=yes
 RUBY_CONFIGURE_WITH=	ruby
 RUBY_USE=		RUBY=yes RUBY_RDOC=no
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lstdc++||g' ${WRKSRC}/configure
 # do not install rdoc
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-data-local||' ${WRKSRC}/ruby/Makefile.in
-.if !${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-dist_docdataDATA install-dist_exampledataDATA ||' ${WRKSRC}/lua/Makefile.in ${WRKSRC}/php/Makefile.in ${WRKSRC}/python/Makefile.in
-	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-dist_docdataDATA||; 799 s|install-dist_exampledataDATA ||' ${WRKSRC}/ruby/Makefile.in
-.endif
 
 .include <bsd.port.mk>
