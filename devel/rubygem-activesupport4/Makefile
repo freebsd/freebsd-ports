@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	activesupport
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	4
@@ -20,8 +20,8 @@ RUN_DEPENDS=	rubygem-i18n>=0.6.4:${PORTSDIR}/devel/rubygem-i18n \
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
 USE_RUBY_FEATURES=	iconv
+RUBYGEM_AUTOPLIST=	yes
 
 NOPORTDOCS=	yes
 
