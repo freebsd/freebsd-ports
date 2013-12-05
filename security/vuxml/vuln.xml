@@ -51,6 +51,57 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="79356040-5da4-11e3-829e-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>31.0.1650.63</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>15 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[307159] Medium CVE-2013-6634: Session fixation in sync related
+	      to 302 redirects. Credit to Andrey Labunets.</li>
+	    <li>[314469] High CVE-2013-6635: Use-after-free in editing. Credit
+	      to cloudfuzzer.</li>
+	    <li>[322959] Medium CVE-2013-6636: Address bar spoofing related to
+	      modal dialogs. Credit to Bas Venis.</li>
+	    <li>[325501] CVE-2013-6637: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	    <li>[319722] Medium CVE-2013-6638: Buffer overflow in v8. This
+	      issue was fixed in v8 version 3.22.24.7. Credit to Jakob Kummerow
+	      of the Chromium project.</li>
+	    <li>[319835] High CVE-2013-6639: Out of bounds write in v8. This
+	      issue was fixed in v8 version 3.22.24.7. Credit to Jakob Kummerow
+	      of the Chromium project.</li>
+	    <li>[319860] Medium CVE-2013-6640: Out of bounds read in v8. This
+	      issue was fixed in v8 version 3.22.24.7. Credit to Jakob Kummerow
+	      of the Chromium project.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-6634</cvename>
+      <cvename>CVE-2013-6635</cvename>
+      <cvename>CVE-2013-6636</cvename>
+      <cvename>CVE-2013-6637</cvename>
+      <cvename>CVE-2013-6638</cvename>
+      <cvename>CVE-2013-6639</cvename>
+      <cvename>CVE-2013-6640</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2013-12-04</discovery>
+      <entry>2013-12-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4158c57e-5d39-11e3-bc1e-6cf0490a8c18">
     <topic>Joomla! -- Core XSS Vulnerabilities</topic>
     <affects>
