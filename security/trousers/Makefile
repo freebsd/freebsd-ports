@@ -3,7 +3,7 @@
 
 PORTNAME=	trousers
 PORTVERSION=	0.3.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
@@ -20,11 +20,12 @@ USE_OPENSSL=	YES
 USE_LDCONFIG=	YES
 USE_AUTOTOOLS=	autoconf automake libtool
 USE_RC_SUBR=	tcsd
-WRKSRC=		${WRKDIR}/${DISTNAME}
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-gui=none --enable-static \
 		--localstatedir=${PREFIX}/var \
 		--with-tssuser=${USERS} --with-tssgroup=${GROUPS}
+MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS} ICONV_LIB=${ICONV_LIB} \
+		ICONV_PREFIX=${ICONV_PREFIX}
 SUB_FILES=	pkg-message
 SUB_LIST=	USERS=${USERS} GROUPS=${GROUPS}
 USERS=		_tss
@@ -50,10 +51,6 @@ PKGNAMESUFFIX+=	-tddl
 CONFLICTS+=	tpm-emulator-[0-9]*
 PLIST_SUB+=	TDDL=""
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's/-liconv$$/${ICONV_LIB}/' \
-		${WRKSRC}/src/tspi/Makefile.am
 
 run-autotools:	run-autotools-autoreconf
 
