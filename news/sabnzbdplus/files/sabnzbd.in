@@ -34,68 +34,22 @@ load_rc_config ${name}
 : ${sabnzbd_group:=_sabnzbd}
 : ${sabnzbd_conf_dir="%%PREFIX%%/sabnzbd"}
 
-required_dirs=${sabnzbd_conf_dir}
+pidfile=/var/run/sabnzbd/sabnzbd-$(grep -m1 ^port ${sabnzbd_conf_dir}/sabnzbd.ini | tr -dc '[0-9]').pid
 
-start_cmd="${name}_start"
-status_cmd="${name}_status"
-stop_cmd="${name}_stop"
 start_precmd="${name}_prestart"
+extra_commands="status"
+command_interpreter="%%PYTHON_CMD%%"
+command="%%PREFIX%%/bin/SABnzbd.py"
+command_args="--daemon -f ${sabnzbd_conf_dir}/sabnzbd.ini --pid ${pidfile%/*}"
 
 sabnzbd_prestart()
 {
-	PATH=${PATH}:%%PREFIX%%/bin:%%PREFIX%%/sbin
-	if [ ! -f "${required_dirs}" -a ! -d "${required_dirs}" -a ! -L "${required_dirs}" ]; then
-		install -d -o ${sabnzbd_user} -g ${sabnzbd_group} ${required_dirs}
-	fi
-}
-
-sabnzbd_start()
-{
-	if [ ! -f "${sabnzbd_pid}" ]; then
-		su -m ${sabnzbd_user} -c "%%PREFIX%%/bin/SABnzbd.py --daemon -f ${sabnzbd_conf_dir}/sabnzbd.ini"
-		echo "Starting ${name}."
-	else
-		GETPROCESSPID=`/bin/ps -auxw | /usr/bin/awk '/SABnzbd.py/ && !/awk/ && !/sh/ {print $2}'`
-		PIDFROMFILE=`cat ${sabnzbd_pid}`
-		if [ "$GETPROCESSPID" = "$PIDFROMFILE" ]; then
-			echo "${name} already running with PID: ${PIDFROMFILE} ?"
-			echo "Remove ${sabnzbd_pid} manually if needed."
-		else
-			rm -f ${sabnzbd_pid}
-			su -m ${sabnzbd_user} -c "%%PREFIX%%/bin/SABnzbd.py --daemon -f ${sabnzbd_conf_dir}/sabnzbd.ini"
-			echo "Starting ${name}."
+	PATH=${PATH}:/usr/local/bin:/usr/local/sbin
+	for sabdir in ${sabnzbd_conf_dir} ${pidfile%/*}; do
+		if [ ! -d "${sabdir}" ]; then
+			install -d -o ${sabnzbd_user} -g ${sabnzbd_group} ${sabdir}
 		fi
-	fi
-}
-
-# SABnzbd can only be cleanly stopped by calling the http api
-sabnzbd_stop()
-{
-	echo "Stopping $name"
-	if [ -f "${sabnzbd_conf_dir}/sabnzbd.ini" ]; then
-		apikey=`grep ^api_key ${sabnzbd_conf_dir}/sabnzbd.ini | tr -d " _"`
-		host=`grep -m1 -E '^host\ =\ [0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' ${sabnzbd_conf_dir}/sabnzbd.ini | tr -dc '[0-9].'`
-		if [ ${host} = "0.0.0.0" ] ; then 
-			host="localhost" ;
-		fi
-		port=`grep -m1 ^port ${sabnzbd_conf_dir}/sabnzbd.ini | tr -dc '[0-9]'`
-		fetch -o /dev/null "http://${host}:${port}/api?mode=shutdown&${apikey}" > /dev/null 2>&1
-	else
-		sabnzbd_pid=`ps -U ${sabnzbd_user} | grep "python.*SABnzbd.py.*--daemon" | grep -v 'grep' | awk '{print $1}'`
-	        if [ -n "${sabnzbd_pid}" ]; then
-			kill ${sabnzbd_pid}
-		fi
-	fi
-}
-
-sabnzbd_status()
-{
-	sabnzbd_pid=`ps -U ${sabnzbd_user} | grep "python.*SABnzbd.py.*--daemon" | grep -v 'grep' | awk '{print $1}'`
-	if [ -n "${sabnzbd_pid}" ]; then
-		echo "$name is running as ${sabnzbd_pid}"
-	else
-		echo "$name is not running"
-	fi
+	done
 }
 
 run_rc_command "$1"
