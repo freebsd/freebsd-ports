@@ -114,7 +114,7 @@ COMMENT=	HTTP Caching Proxy
 
 SQUID_STABLE_VER=	9
 
-CONFLICTS_INSTALL=	squid-2.[^7]* squid-3.* cacheboy-[0-9]* lusca-head-[0-9]*
+CONFLICTS_INSTALL=	squid-2.[^7]* squid3?-* cacheboy-[0-9]* lusca-head-[0-9]*
 USES=		perl5
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

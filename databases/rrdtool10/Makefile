@@ -6,14 +6,14 @@ PORTVERSION=	1.0.50
 PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/rrdtool-1.0.x/
+PKGNAMESUFFIX=	10
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Round Robin Database Tools
 
 MAKE_ENV=	PERL=${PERL}
 
-CONFLICTS=	rrdtool-1.2*
-LATEST_LINK=	rrdtool10
+CONFLICTS=	rrdtool12-* rrdtool-1.*
 
 USES=		pkgconfig perl5
 USE_AUTOTOOLS=	libtool

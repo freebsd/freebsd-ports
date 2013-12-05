@@ -21,6 +21,7 @@ MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://www1.za.squid-cache.org/Versions/v3/${PORTVERSION:R}/
 MASTER_SITE_SUBDIR=	squid
 DIST_SUBDIR=	squid3.3
+PKGNAMESUFFIX=	33
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www2.us.squid-cache.org/%SUBDIR%/ \
@@ -39,11 +40,9 @@ COMMENT=	HTTP Caching Proxy
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LATEST_LINK=	squid33
-
 SQUID_STABLE_VER=	11
 
-CONFLICTS_INSTALL=	squid-2.[0-9].* squid-3.[!3].* cacheboy-[0-9]* lusca-head-[0-9]*
+CONFLICTS_INSTALL=	squid-2.[0-9].* squid32-* cacheboy-[0-9]* lusca-head-[0-9]*
 USES=		perl5
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

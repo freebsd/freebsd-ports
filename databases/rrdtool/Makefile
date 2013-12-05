@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libpangocairo-1.0.so:${PORTSDIR}/x11-toolkits/pango
 
-CONFLICTS=	rrdtool-1.0* rrdtool-1.2*
+CONFLICTS=	rrdtool10-* rrdtool12-*
 
 USE_RC_SUBR=	rrdcached
 USE_AUTOTOOLS=	libtool

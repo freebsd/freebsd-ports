@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Full screen visualization of network traffic
 
+CONFLICTS=	trafshow-4.* trafshow3-*
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 ALL_TARGET=	trafshow
