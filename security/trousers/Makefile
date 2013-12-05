@@ -3,7 +3,7 @@
 
 PORTNAME=	trousers
 PORTVERSION=	0.3.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
@@ -38,7 +38,7 @@ DEBUG_CONFIGURE_ENABLE=	debug
 
 .if ${PORT_OPTIONS:MEMULATOR}
 PKGNAMESUFFIX+=	-no_tddl
-LIB_DEPENDS+=	tddl.1:${PORTSDIR}/emulators/tpm-emulator
+LIB_DEPENDS+=	libtddl.so:${PORTSDIR}/emulators/tpm-emulator
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-src-tcs-Makefile.am \
 		${FILESDIR}/extra-patch-src-tcsd-Makefile.am \
@@ -63,5 +63,6 @@ run-autotools-autoreconf:
 post-install:
 	${INSTALL_DATA} \
 	    ${WRKSRC}/dist/tcsd.conf ${STAGEDIR}${PREFIX}/etc/tcsd.conf.dist
+	${MKDIR} ${STAGEDIR}${PREFIX}/var/lib/tpm
 
 .include <bsd.port.mk>
