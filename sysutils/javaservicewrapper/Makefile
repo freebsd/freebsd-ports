@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	javaservicewrapper
-PORTVERSION=	3.5.7
+PORTVERSION=	3.5.21
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://wrapper.tanukisoftware.com/download/${PORTVERSION}/
 DISTNAME=	wrapper_${PORTVERSION}_src
@@ -14,12 +14,13 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USE_JAVA=	1.4+
 USE_ANT=	yes
-USE_GMAKE=	yes
+USES=		gmake iconv
 
 DATADIR=	${PREFIX}/lib/${PORTNAME}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 .if (${ARCH} == amd64)
 MAKE_ARGS+=	-Dbits=64
@@ -28,18 +29,20 @@ MAKE_ARGS+=	-Dbits=32
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|gcc|${CC} ${CFLAGS} -fPIC|' \
+	@${REINPLACE_CMD} -e 's|gcc|${CC} ${CFLAGS}| ; \
+			s|/usr/local|${ICONV_PREFIX}|g ; \
+			s|-liconv|${ICONV_LIB}|' \
 		${WRKSRC}/src/c/Makefile-freebsd-x86-32.gmake \
 		${WRKSRC}/src/c/Makefile-freebsd-x86-64.gmake
 
 do-install:
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${CP} -rp bin conf lib test ${DATADIR}
-	${STRIP_CMD} ${DATADIR}/bin/wrapper
-	${LN} -sf ${DATADIR}/bin/wrapper ${PREFIX}/bin/${PORTNAME}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${CP} -r ${WRKSRC}/doc/* ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${CP} -rp bin conf lib test ${STAGEDIR}${DATADIR}
+	${STRIP_CMD} ${STAGEDIR}${DATADIR}/bin/wrapper
+	${LN} -sf ${DATADIR}/bin/wrapper ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
