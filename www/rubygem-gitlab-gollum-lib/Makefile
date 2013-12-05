@@ -6,7 +6,9 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Simple, Git-powered wiki with a sweet API and local frontend.
+COMMENT=	Simple, Git-powered wiki with a sweet API and local frontend
+
+LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-github-markdown>=0.5.3:${PORTSDIR}/textproc/rubygem-github-markdown \
 		rubygem-github-markup>=0.7.5:${PORTSDIR}/textproc/rubygem-github-markup \
@@ -19,6 +21,5 @@ RUN_DEPENDS=	rubygem-github-markdown>=0.5.3:${PORTSDIR}/textproc/rubygem-github-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-
 
 .include <bsd.port.mk>
