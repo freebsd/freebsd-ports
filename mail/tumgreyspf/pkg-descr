@@ -1,17 +1,13 @@
-Tumgreyspf, an external policy checker for the postfix mail
-server. It can optionally greylist and/or use spfquery to 
-check SPF records to determine if email should be accepted 
-by your server.
+Tumgreyspf, an external policy checker for the postfix mail server. It can
+optionally greylist and/or use spfquery to check SPF records to determine if
+email should be accepted by your server.
 
-Because of it's design, legitimate e-mail is never trapped 
-or rejected. Only spam and viruses are caught. Since adding 
-it to our mail server (which also uses Spam Assassin, ClamAV, 
-and an outsourced anti-spam system), our spam level has 
+Because of it's design, legitimate e-mail is never trapped or rejected. Only
+spam and viruses are caught. Since adding it to our mail server (which also uses
+Spam Assassin, ClamAV, and an outsourced anti-spam system), our spam level has
 dropped by an order of magnitude.
 
-It uses the file-system as it's database, no additional 
-database is required to use it. 
+It uses the file-system as it's database, no additional database is required to
+use it.
 
 WWW: http://www.tummy.com/Community/software/tumgreyspf/
-
-Marcus Alves Grando <mnag@FreeBSD.org>
