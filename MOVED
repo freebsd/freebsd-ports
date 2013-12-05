@@ -5292,3 +5292,4 @@ devel/zmq|net/zmq|2013-12-05|Rename according to upstream and move to more suita
 devel/rubygem-ruby-statsd|devel/rubygem-statsd|2013-12-05|Rename to match upstream naming
 x11-themes/lila-xfwm4||2013-12-05|Has expired: Upstream development dead
 science/omnetpp||2013-12-05|Has expired: depends on expired textproc/libxml
+textproc/libxml||2013-12-05|Has expired: No release since 2002, no support from upstream
