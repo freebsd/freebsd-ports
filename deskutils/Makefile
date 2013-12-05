@@ -212,6 +212,7 @@
     SUBDIR += rolo
     SUBDIR += rox-memo
     SUBDIR += rubrica
+    SUBDIR += rubygem-taskjuggler
     SUBDIR += semantik
     SUBDIR += silence
     SUBDIR += simpleagenda
@@ -230,7 +231,6 @@
     SUBDIR += systempreferences
     SUBDIR += tagutils
     SUBDIR += taskcoach
-    SUBDIR += taskjuggler
     SUBDIR += taskwarrior
     SUBDIR += teapot
     SUBDIR += tel
