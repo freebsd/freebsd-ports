@@ -1,10 +1,10 @@
---- common/safeuuid.h.orig	2013-04-17 02:03:07.000000000 +0200
-+++ common/safeuuid.h	2013-09-05 11:38:33.778061038 +0200
-@@ -54,6 +54,7 @@
- #else
+--- common/safeuuid.h.orig	2013-12-04 08:13:34.000000000 +0800
++++ common/safeuuid.h	2013-12-06 00:04:28.067689030 +0800
+@@ -55,6 +55,7 @@
  
- // FreeBSD/NetBSD UUID API.
+ // UUID API on FreeBSD, NetBSD and AIX.
+ 
 +# include <stdlib.h>
- # include <uuid.h>
- # include <cstring>
- # include <exception>
+ # ifdef _AIX
+ /* AIX uses a byte typedef in its <uuid.h> which collides with ours, so use a
+  * macro to rename theirs out of the way.
