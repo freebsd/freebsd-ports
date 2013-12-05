@@ -22,7 +22,7 @@ LICENSE_NAME=	IBM PUBLIC LICENSE VERSION 1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-CONFLICTS=	courier-0.* postfix-1.* postfix-2.* postfix-base-2.* \
+CONFLICTS=	courier-0.* postfix-1.* postfix-2.* postfix-base-2.* postfix2[789]-* \
 		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.* opensmtpd-[0-9]*
 
 USERS=		postfix

@@ -8,14 +8,13 @@ PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	sem
+PKGNAMESUFFIX=	3
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Full screen visualization of network traffic (an ancient version)
 
 CONFLICTS=	trafshow-[45].*
-
-LATEST_LINK=	trafshow3
 
 .if defined(WITH_TRAFSHOW_SLANG) || \
     (exists(${LOCALBASE}/lib/libslang.a) && !defined(WITHOUT_TRAFSHOW_SLANG))

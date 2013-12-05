@@ -6,6 +6,7 @@ PORTVERSION=	1.2.30
 PORTREVISION=	2
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
+PKGNAMESUFFIX=	12
 
 MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Round Robin Database Tools v1.2
@@ -14,9 +15,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl \
 		png15:${PORTSDIR}/graphics/png
 
-LATEST_LINK=	${PORTNAME}12
-
-CONFLICTS=	rrdtool-1.0* rrdtool-1.3*
+CONFLICTS=	rrdtool10-* rrdtool-1.*
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

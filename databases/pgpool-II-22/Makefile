@@ -6,6 +6,7 @@ PORTVERSION=	2.2.6
 PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/2478/
+PKGNAMESUFFIX=	22
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	A connection pool server for PostgreSQL
@@ -14,9 +15,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_PGSQL=	yes
 USE_LDCONFIG=	yes
-NO_LATEST_LINK=	yes
 
-CONFLICTS=	pgpool-3.* pgpool-II-*
+CONFLICTS=	pgpool-3.* pgpool-II-3.* pgpool-II-23-* pgpool-II-30-* 
 USE_RC_SUBR=	pgpool
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README README.euc_jp

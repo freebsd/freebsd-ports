@@ -21,7 +21,7 @@ PORTDOCS=	README
 
 SLAVE_PORT_MODULES=	REWRITE
 
-CONFLICTS=	cakephp-1.* cakephp-2.[23].*
+CONFLICTS=	cakephp-1?-* cakephp-2[2]-.* cakephp-2.3.*
 
 NO_BUILD=	yes
 USES=		gettext

@@ -22,7 +22,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 VDAVERSION=	2.10.0
-CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-9].* postfix-base-2.[0-9].* \
+CONFLICTS=	courier-0.* postfix-1.* postfix2?-* \
 		postfix-current-2.* postfix-current-base-2.* sendmail-8.* \
 		sendmail+*-8.* smail-3.* zmailer-2.* opensmtpd-[0-9]*
 
