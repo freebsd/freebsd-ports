@@ -1,4 +1,4 @@
-SHA256 (postgresql/postgresql-9.2.5.tar.bz2) = 22c1edfd6a404bb15fba655863e94f09a10716ded1910a8bc98ee85f413007a4
-SIZE (postgresql/postgresql-9.2.5.tar.bz2) = 16485711
+SHA256 (postgresql/postgresql-9.2.6.tar.bz2) = 4ba98053a66e5678af93dbc2956e8b04623f759e174f48940c41f4251cf0f886
+SIZE (postgresql/postgresql-9.2.6.tar.bz2) = 16491820
 SHA256 (postgresql/pg-910-icu-2012-12-19.diff.gz) = 61ef9c9b55b63b63b0fb108dfef086f92e9c43b5bd934fab9639b31f91193611
 SIZE (postgresql/pg-910-icu-2012-12-19.diff.gz) = 4386
