@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	parole
-PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTVERSION=	0.5.4
 CATEGORIES=	multimedia xfce
 MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}/
 DIST_SUBDIR=	xfce4
@@ -30,7 +29,7 @@ USE_GNOME=	gtk20 glib20 intltool intlhack
 USE_XFCE=	configenv libmenu libutil
 USE_XORG=	x11 sm
 USE_LDCONFIG=	yes
-USES=		desktop-file-utils pathfix pkgconfig gmake
+USES=		desktop-file-utils pkgconfig gmake
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SINGLE=	GSTREAMER
