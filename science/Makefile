@@ -109,7 +109,6 @@
     SUBDIR += netcdf3-ftn
     SUBDIR += netcdf4
     SUBDIR += nifticlib
-    SUBDIR += omnetpp
     SUBDIR += openbabel
     SUBDIR += p5-Algorithm-SVMLight
     SUBDIR += p5-Chemistry-3DBuilder
