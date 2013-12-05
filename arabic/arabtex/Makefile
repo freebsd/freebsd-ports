@@ -12,36 +12,30 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	TeX/LaTeX package to generate Arabic writing
 
-NO_STAGE=	yes
-USE_TEX=	base texmf
-NO_WRKSUBDIR=	yes
-NO_BUILD=	yes
-PLIST_SUB=	MKTEXLSR=${MKTEXLSR}
+LICENSE=	LPPL10
 
-TEXMFLOCAL=	${LOCALBASE}/share/texmf-local
-TEXMFLOCAL_LSR=	${TEXMFLOCAL}/ls-R
+ARABTEXDIRS=	fonts tex
+
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 
-FIND_DIRS=	-type d \! -empty
-FIND_DATA=	-type f
-FIND_HERE=	fonts tex
+NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
 
-.if !defined(NOPORTDOCS)
-FIND_HERE+=	doc
+OPTIONS_DEFINE=	DOCS
+.include <bsd.port.options.mk>
+.if ${PORT_OPTIONS:MDOCS}
+ARABTEXDIRS+=	doc
 .endif
 
-do-install:
-	@cd ${WRKSRC}; \
-	DIRS=$$(${FIND} ${FIND_HERE} ${FIND_DIRS}); \
-	for DIR in $${DIRS}; do \
-		${MKDIR} ${TEXMFLOCAL}/$${DIR}; \
-	done; \
-	FILES=$$(${FIND} ${FIND_HERE} ${FIND_DATA} ); \
-	for FILE in $${FILES}; do \
-		${INSTALL_DATA} $${FILE} ${TEXMFLOCAL}/$${FILE}; \
-	done;
+PLIST_SUB=	MKTEXLSR=${MKTEXLSR}
 
-post-install:
-	@${MKTEXLSR}
+USE_TEX=	base texmf
+
+do-install:
+.for dir in ${ARABTEXDIRS}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFLOCALDIR}/${dir}
+	(cd ${WRKDIR}/${dir} && \
+	${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${TEXMFLOCALDIR}/${dir})
+.endfor
 
 .include <bsd.port.mk>
