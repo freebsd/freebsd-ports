@@ -11,17 +11,15 @@ MASTER_SITES=	ftp://ftp.tummy.com/pub/tummy/tumgreyspf/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	External policy checker for the postfix mail server
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/spf.py:${PORTSDIR}/mail/py-spf
 
 OPTIONS_DEFINE=	DOCS
 
 NO_BUILD=	yes
-SHEBANG_LANG=	perl python
-SHEBANG_FILES=	*
 USE_PYTHON=	-2.7
 USES=		shebangfix
-python_OLD_CMD=	${SETENV} python
-python_CMD=	${PYTHON_CMD}
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGINSTALL=	${WRKDIR}/pkg-install
@@ -33,11 +31,14 @@ SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
 		TUMGREYSPF_USER=${TUMGREYSPF_USER} \
 		TUMGREYSPF_GROUP=${TUMGREYSPF_GROUP}
 
+SHEBANG_FILES=	*
+python_OLD_CMD=	${SETENV} python
+python_CMD=	${PYTHON_CMD}
+
 TUMGREYSPF_DIR?=	/var/db/${PORTNAME}
 TUMGREYSPF_USER?=	nobody
 TUMGREYSPF_GROUP?=	nobody
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-everything::
@@ -61,23 +62,21 @@ post-patch:
 			${WRKSRC}/tumgreyspf.conf ${WRKSRC}/tumgreyspfsupp.py
 
 do-install:
+	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/
 	cd ${WRKSRC}/ && \
-		${INSTALL_SCRIPT} tumgreyspf tumgreyspf-clean tumgreyspf-configtest tumgreyspf-stat ${PREFIX}/bin/ && \
-		${INSTALL_SCRIPT} gentest ${PREFIX}/bin/tumgreyspf-gentest && \
-		${INSTALL_SCRIPT} tumgreyspfsupp.py ${PYTHONPREFIX_SITELIBDIR}/ && \
-		${INSTALL_DATA} tumgreyspf.conf ${PREFIX}/etc/tumgreyspf.conf.default
+		${INSTALL_SCRIPT} tumgreyspf tumgreyspf-clean tumgreyspf-configtest tumgreyspf-stat ${STAGEDIR}${PREFIX}/bin/ && \
+		${INSTALL_SCRIPT} gentest ${STAGEDIR}${PREFIX}/bin/tumgreyspf-gentest && \
+		${INSTALL_SCRIPT} tumgreyspfsupp.py ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ && \
+		${INSTALL_DATA} tumgreyspf.conf ${STAGEDIR}${PREFIX}/etc/tumgreyspf.conf.default
 .if !exists(${PREFIX}/etc/tumgreyspf.conf)
-	${INSTALL_DATA} ${WRKSRC}/tumgreyspf.conf ${PREFIX}/etc/
+	${INSTALL_DATA} ${WRKSRC}/tumgreyspf.conf ${STAGEDIR}${PREFIX}/etc/
 .endif
 
 post-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/__default__.dist ${DATADIR}/
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/README* ${DOCSDIR}/
-.endif
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/__default__.dist ${STAGEDIR}${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README* ${STAGEDIR}${DOCSDIR}/
 .if !defined(PACKAGE_BUILDING)
 	@${SETENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
