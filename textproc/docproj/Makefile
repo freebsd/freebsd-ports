@@ -86,6 +86,10 @@ RUN_DEPENDS+=	${LOCALBASE}/share/fonts/OTF/ipam.otf:${PORTSDIR}/japanese/font-ip
 DEPENDS_ARGS+=	WITHOUT_X11=${WITHOUT_X11}
 .endif
 
+.if (${OSVERSION} >= 1000500 && ${OSVERSION} < 1000502)
+BROKEN=		Requires updated base iconv(3)
+.endif
+
 # generate MINIMALDOCPORTS for src/release/Makefile.inc.docports.
 # (XXX: incomplete yet)
 minimaldocports:
