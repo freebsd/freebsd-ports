@@ -2,7 +2,7 @@
 
 PORTNAME?=	bind99
 PORTVERSION=	9.9.4
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 
 CONFLICTS=	bind9*-9.[45678].* bind9*-sdb-9.[45678].* bind-tools-9.*
 
-OPTIONS_DEFAULT=	IPV6 SSL XML THREADS
+OPTIONS_DEFAULT=	IPV6 SSL XML THREADS GSSAPI
 OPTIONS_DEFINE=		SSL IDN REPLACE_BASE LARGE_FILE \
 			FIXED_RRSET SIGCHASE IPV6 THREADS GSSAPI FILTER_AAAA
 .if !defined(BIND_TOOLS_SLAVE)
@@ -283,7 +283,10 @@ post-install:
 .for DIR in dynamic slave working
 	${CHOWN} bind:bind ${BIND_DESTETC}/${DIR}
 .endfor
-	${INSTALL_DATA} ${WRKDIR}/named.conf ${BIND_DESTETC}
+	${INSTALL_DATA} ${WRKDIR}/named.conf ${BIND_DESTETC}/named.conf.sample
+.if !exists(${BIND_DESTETC}/named.conf)
+	${INSTALL_DATA} ${WRKDIR}/named.conf ${BIND_DESTETC}/named.conf
+.endif
 	${INSTALL_DATA} ${FILESDIR}/named.root ${BIND_DESTETC}
 	${INSTALL_DATA} ${FILESDIR}/empty.db ${BIND_DESTETC}/master
 	${INSTALL_DATA} ${FILESDIR}/localhost-forward.db ${BIND_DESTETC}/master

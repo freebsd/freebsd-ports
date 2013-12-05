@@ -216,7 +216,8 @@ sbin/rndc-confgen
 %%LINKS%%@unexec rmdir /var/named/usr 2>/dev/null || true
 @unexec rm -f %%BIND_DESTETC%%/rndc.conf.sample
 %%NOBASE%%etc/rc.d/named
-%%NOBASE%%%%BIND_DESTETC%%/named.conf
+%%NOBASE%%@unexec if cmp -s %%BIND_DESTETC%%/named.conf.sample %%BIND_DESTETC%%/named.conf; then rm -f %%BIND_DESTETC%%/named.conf; fi
+%%NOBASE%%%%BIND_DESTETC%%/named.conf.sample
 %%NOBASE%%%%BIND_DESTETC%%/named.root
 %%NOBASE%%%%BIND_DESTETC%%/master/empty.db
 %%NOBASE%%%%BIND_DESTETC%%/master/localhost-forward.db
