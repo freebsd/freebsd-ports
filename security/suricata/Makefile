@@ -3,6 +3,7 @@
 
 PORTNAME=	suricata
 PORTVERSION=	1.4.6
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.openinfosecfoundation.org/download/ \
 		http://mirrors.rit.edu/zi/
@@ -17,13 +18,12 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre		\
 		libnet.so:${PORTSDIR}/net/libnet                \
 		libyaml.so:${PORTSDIR}/textproc/libyaml
 
-OPTIONS_DEFINE=	IPFW PRELUDE PORTS_PCAP DAG TESTS
+OPTIONS_DEFINE=	IPFW PRELUDE PORTS_PCAP TESTS
 OPTIONS_DEFAULT=IPFW
 
 IPFW_DESC=	Enable IPFW and IP Divert support for inline IDP
 PRELUDE_DESC=	Enable Prelude support for NIDS alerts
 PORTS_PCAP_DESC=Use libpcap from ports
-DAG_DESC=	Enable Endace DAG capture support
 TESTS_DESC=	Enable unit tests in suricata binary
 
 USE_AUTOTOOLS=	autoconf libtool
@@ -78,12 +78,6 @@ CONFIGURE_ARGS+=	--with-libpcap-includes=${LOCALBASE}/include \
 .else
 CONFIGURE_ARGS+=	--with-libpcap-includes=/usr/include \
 			--with-libpcap-libraries=/usr/lib
-.endif
-
-.if ${PORT_OPTIONS:MDAG}
-CONFIGURE_ARGS+=	--enable-dag \
-			--with-dag-includes=${LOCALBASE}/include \
-			--with-dag-libraries=${LOCALBASE}/lib
 .endif
 
 .if ${PORT_OPTIONS:MTESTS}
