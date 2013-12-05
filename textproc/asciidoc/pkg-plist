@@ -141,10 +141,6 @@ bin/asciidoc.py
 @exec if [ ! -f %D/%%ETCDIR%%/xhtml11-quirks.conf ]; then cp -p %D/%F %B/xhtml11-quirks.conf; fi
 man/man1/a2x.1.gz
 man/man1/asciidoc.1.gz
-%%VIM%%share/vim/%%VIM_DATADIR%%/syntax/asciidoc.vim
-%%VIM%%@dirrmtry share/vim/%%VIM_DATADIR%%/syntax
-%%VIM%%@dirrmtry share/vim/%%VIM_DATADIR%%
-%%VIM%%@dirrmtry share/vim
 @dirrm %%ETCDIR%%/themes/volnitsky
 @dirrm %%ETCDIR%%/themes/flask
 @dirrm %%ETCDIR%%/themes
