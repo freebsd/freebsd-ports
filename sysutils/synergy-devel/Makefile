@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	synergy
-PORTVERSION=	1.4.12
+PORTVERSION=	1.4.15
 DISTVERSIONSUFFIX=	-Source
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	gnn@FreeBSD.org
 COMMENT=	Mouse and keyboard sharing utility
 
-EXTRACT_DEPENDS= unzip:${PORTSDIR}/archivers/unzip
+LICENSE=	GPLv2
 
 CONFLICTS=	synergy-[0-9]*
 USES=		cmake
@@ -24,20 +24,19 @@ PLIST_FILES=	bin/synergys bin/synergyc
 PORTEXAMPLES=	synergy.conf.example synergy.conf.example-basic \
 		synergy.conf.example-advanced
 
-NO_STAGE=	yes
 post-extract:
 	cd ${WRKSRC}/tools/
 	${MKDIR} ${WRKSRC}/tools/cryptopp562
-	(cd ${WRKSRC}/tools/cryptopp562 && unzip ${WRKSRC}/tools/cryptopp562.zip)
+	(cd ${WRKSRC}/tools/cryptopp562 && ${TAR} xfz ${WRKSRC}/tools/cryptopp562.zip)
 
 do-install:
 .for f in synergys synergyc
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ${PORTEXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 .endif
 
