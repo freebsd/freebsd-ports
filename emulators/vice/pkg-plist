@@ -11,7 +11,7 @@ bin/xcbm5x0
 bin/xpet
 bin/xplus4
 bin/xvic
-info/vice.txt
+%%PORTDOCS%%info/vice.txt
 %%NLS%%share/locale/da/LC_MESSAGES/vice.mo
 %%NLS%%share/locale/de/LC_MESSAGES/vice.mo
 %%NLS%%share/locale/es/LC_MESSAGES/vice.mo
@@ -185,6 +185,15 @@ lib/vice/VIC20/kernal
 lib/vice/VIC20/x11_pos.vkm
 lib/vice/VIC20/x11_sym.vkm
 lib/vice/fonts/CBM.ttf
+man/man1/c1541.1.gz
+man/man1/petcat.1.gz
+man/man1/vice.1.gz
+man/man1/x128.1.gz
+man/man1/x64.1.gz
+man/man1/xcbm2.1.gz
+man/man1/xpet.1.gz
+man/man1/xplus4.1.gz
+man/man1/xvic.1.gz
 %%FCCACHE%%lib/vice/fonts/vice-cbm.bdf
 %%NOFCCACHE%%lib/vice/fonts/vice-cbm.pcf
 %%NOFCCACHE%%lib/vice/fonts/fonts.dir
