@@ -51,6 +51,50 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d9649816-5e0d-11e3-8d23-3c970e169bc2">
+    <topic>drupal -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>drupal6</name>
+	<range><lt>6.29</lt></range>
+      </package>
+      <package>
+	<name>drupal7</name>
+	<range><lt>7.24</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Drupal Security Team reports:</p>
+	<blockquote cite="https://drupal.org/SA-CORE-2013-003">
+	  <p>Multiple vulnerabilities were fixed in the supported Drupal
+	    core versions 6 and 7.</p>
+	  <ul>
+	    <li>Multiple vulnerabilities due to optimistic cross-site
+	      request forgery protection (Form API validation - Drupal 6
+	      and 7)</li>
+	    <li>Multiple vulnerabilities due to weakness in pseudorandom
+	      number generation using mt_rand() (Form API, OpenID and
+	      random password generation - Drupal 6 and 7)</li>
+	    <li>Code execution prevention (Files directory .htaccess for
+	      Apache - Drupal 6 and 7)</li>
+	    <li>Access bypass (Security token validation - Drupal 6 and 7)</li>
+	    <li>Cross-site scripting (Image module - Drupal 7)</li>
+	    <li>Cross-site scripting (Color module - Drupal 7)</li>
+	    <li>Open redirect (Overlay module - Drupal 7)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://drupal.org/SA-CORE-2013-003</url>
+    </references>
+    <dates>
+      <discovery>2013-11-20</discovery>
+      <entry>2013-12-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="79356040-5da4-11e3-829e-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
