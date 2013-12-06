@@ -29,6 +29,8 @@ shebang() {
 		${PREFIX}/*) ;;
 		/usr/bin/awk) ;;
 		/usr/bin/sed) ;;
+		/usr/bin/nawk) ;;
+		/bin/csh) ;;
 		/bin/sh) ;;
 		*)
 			err "${interp} is an invalid shebang you need USES=shebangfix for ${f#${STAGEDIR}${PREFIX}/}"
