@@ -1,6 +1,7 @@
 #!/bin/sh
 #
 # $FreeBSD$
+#
 
 cd "%%DATADIR%%"
-exec /usr/bin/env python ./run_game.py "${@}"
+exec %%PYTHON_CMD%% ./run_game.py "${@}"
