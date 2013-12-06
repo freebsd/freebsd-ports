@@ -1,0 +1,8 @@
+bin/uftp
+bin/uftp_keymgt
+man/man1/uftp.1.gz
+man/man1/uftp_keymgt.1.gz
+man/man1/uftpd.1.gz
+man/man1/uftpproxyd.1.gz
+sbin/uftpd
+sbin/uftpproxyd
