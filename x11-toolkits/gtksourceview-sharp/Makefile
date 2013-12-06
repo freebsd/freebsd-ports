@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-2.0-${PORTVERSION}
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	gtksourview bindings for Mono.
 
+DEPRECATED=	Depends on expired devel/mono-tools
+EXPIRATION_DATE=2013-12-19
+
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono \
 		monodoc:${PORTSDIR}/devel/mono-tools
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono \
