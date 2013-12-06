@@ -9,11 +9,14 @@ MASTER_SITES=	http://host5.webstroy.ru/
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	RTMP flash streaming server written in erlang
 
+LICENSE=	GPLv3
+
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
+BROKEN=		Does not builds with current erlang from ports
+DEPRECATED=	Development of erlyvideo is abandoned upstream. Use flussonic instead
+EXPIRATON_DATE=	2014-01-06
 
 USE_GMAKE=	yes
 
