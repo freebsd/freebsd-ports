@@ -16,8 +16,8 @@ USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		popt:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libpopt.so:${PORTSDIR}/devel/popt
 
 USES=		bison pathfix gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix intlhack gnomehier glib20 pango libxml2 \
@@ -33,12 +33,11 @@ PLIST_SUB=	VERSION=${PORTVERSION} \
 OPTIONS_DEFINE=	CUPS
 OPTIONS_DEFAULT=CUPS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCUPS}
 CONFIGURE_ARGS+=	--with-cups
-LIB_DEPENDS+=		gnomecups-1:${PORTSDIR}/print/libgnomecups
+LIB_DEPENDS+=		libgnomecups-1.0.so:${PORTSDIR}/print/libgnomecups
 PLIST_SUB+=		CUPS:=""
 .else
 CONFIGURE_ARGS+=	--without-cups
@@ -52,8 +51,11 @@ post-patch:
 	@${REINPLACE_CMD} -e "/^SUBDIRS =/s|doc||" ${WRKSRC}/Makefile.in
 
 post-install:
-	@${MKDIR} ${PREFIX}/etc/gnome/libgnomeprint-2.0/fonts
-	@${TOUCH} ${PREFIX}/etc/gnome/libgnomeprint-2.0/fonts/gnome-print.fontmap
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/gnome/libgnomeprint-2.0/fonts
+	@${TOUCH} ${STAGEDIR}${PREFIX}/etc/gnome/libgnomeprint-2.0/fonts/gnome-print.fontmap
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgnomeprint-2-2.so.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgnomeprint/2.18.8/modules/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgnomeprint/2.18.8/modules/*/*.so
 
 .include <bsd.port.mk>
 
