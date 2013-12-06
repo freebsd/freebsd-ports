@@ -1,4 +1,5 @@
 bin/defendguin
+man/man6/defendguin.6.gz
 %%DATADIR%%/images/baiter/baiter0.bmp
 %%DATADIR%%/images/baiter/baiter1.bmp
 %%DATADIR%%/images/baiter/baiter2.bmp

@@ -7,13 +7,13 @@ PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/defendguin/src/ \
 		ftp://ftp.billsgames.com/unix/x/defendguin/src/ \
-		SF/nemysisfreebsdp/:icons
+		SF/nemysisfreebsdp/${CATEGORIES}/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Your mission is to defend little penguinoids
 
 LICENSE=	GPLv2
@@ -24,15 +24,10 @@ USE_SDL=	mixer sdl
 
 PORTDOCS=	AUTHORS.txt CHANGES.txt README.txt TODO.txt
 
-MAN6=		${PORTNAME}.6
+OPTIONS_DEFINE=	DOCS
 
-DESKTOP_ENTRIES="Defendguin" "${COMMENT}"  \
-		"share/pixmaps/${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" false
-
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+DESKTOP_ENTRIES="Defendguin" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -DDATA_PREFIX=\"${DATADIR}/\" \
@@ -40,14 +35,16 @@ do-build:
 		`${SDL_CONFIG} --libs` -lSDL_mixer
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	@(cd ${WRKSRC}/../data && ${COPYTREE_SHARE} "images music sounds" ${DATADIR})
-	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${PREFIX}/share/pixmaps/
-	${INSTALL_MAN} ${MAN6:S|^|${WRKSRC}/|} ${MAN6PREFIX}/man/man6/
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/../docs/|} ${DOCSDIR}
-.endif
+.for d in images music sounds
+	@(cd ${WRKSRC}/../data && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
+.endfor
+
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/
+
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/../docs/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
