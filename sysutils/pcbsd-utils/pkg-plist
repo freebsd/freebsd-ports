@@ -24,6 +24,8 @@ bin/pc-runxgui
 bin/pc-checkxdisplay
 bin/pc-installdialog
 bin/enable_user_pefs
+sbin/app
+sbin/pbi
 sbin/pc-sysinstall
 share/lpreserver/backend/zfsmon.sh
 share/lpreserver/backend/zfsrmsnap.sh
@@ -264,10 +266,6 @@ share/pcbsd/metaset/pcbsd/Development-Science/pkg-parent
 share/pcbsd/metaset/pcbsd/Development-Science/pkg-icon.png
 share/pcbsd/metaset/pcbsd/Development-Science/pkg-desc
 share/pcbsd/metaset/pcbsd/Development-Science/dl-only
-share/pcbsd/metaset/pcbsd/GNOME-Utilities/pkg-icon.png
-share/pcbsd/metaset/pcbsd/GNOME-Utilities/pkg-parent
-share/pcbsd/metaset/pcbsd/GNOME-Utilities/pkg-desc
-share/pcbsd/metaset/pcbsd/GNOME-Utilities/ports-list
 share/pcbsd/metaset/pcbsd/Development-Qt/pkg-icon.png
 share/pcbsd/metaset/pcbsd/Development-Qt/pkg-parent
 share/pcbsd/metaset/pcbsd/Development-Qt/pkg-desc
@@ -321,20 +319,21 @@ share/pcbsd/metaset/pcbsd/GNOME/pkg-parent
 share/pcbsd/metaset/pcbsd/GNOME/desktop
 share/pcbsd/metaset/pcbsd/GNOME/pkg-icon.png
 share/pcbsd/metaset/pcbsd/GNOME/pkg-desc
+share/pcbsd/metaset/pcbsd/Mate/ports-list
+share/pcbsd/metaset/pcbsd/Mate/pkg-parent
+share/pcbsd/metaset/pcbsd/Mate/desktop
+share/pcbsd/metaset/pcbsd/Mate/pkg-icon.png
+share/pcbsd/metaset/pcbsd/Mate/pkg-desc
 share/pcbsd/metaset/pcbsd/KDE/pkg-parent
 share/pcbsd/metaset/pcbsd/KDE/ports-list
 share/pcbsd/metaset/pcbsd/KDE/desktop
 share/pcbsd/metaset/pcbsd/KDE/pkg-icon.png
 share/pcbsd/metaset/pcbsd/KDE/pkg-desc
-share/pcbsd/metaset/pcbsd/GNOME-Net/pkg-desc
-share/pcbsd/metaset/pcbsd/GNOME-Net/pkg-parent
-share/pcbsd/metaset/pcbsd/GNOME-Net/pkg-icon.png
-share/pcbsd/metaset/pcbsd/GNOME-Net/ports-list
-share/pcbsd/metaset/pcbsd/GNOME-Games/ports-list
-share/pcbsd/metaset/pcbsd/GNOME-Games/pkg-icon.png
-share/pcbsd/metaset/pcbsd/GNOME-Games/pkg-parent
-share/pcbsd/metaset/pcbsd/GNOME-Games/pkg-desc
-share/pcbsd/metaset/pcbsd/GNOME-Games/dl-only
+share/pcbsd/metaset/pcbsd/Cinnamon/ports-list
+share/pcbsd/metaset/pcbsd/Cinnamon/pkg-parent
+share/pcbsd/metaset/pcbsd/Cinnamon/desktop
+share/pcbsd/metaset/pcbsd/Cinnamon/pkg-icon.png
+share/pcbsd/metaset/pcbsd/Cinnamon/pkg-desc
 share/pcbsd/metaset/pcbsd/Compiz/pkg-icon.png
 share/pcbsd/metaset/pcbsd/Compiz/ports-list
 share/pcbsd/metaset/pcbsd/Compiz/pkg-parent
@@ -421,10 +420,6 @@ share/pcbsd/metaset/pcbsd/NVIDIA/pkg-icon.png
 share/pcbsd/metaset/pcbsd/NVIDIA/post-remove.sh
 share/pcbsd/metaset/pcbsd/NVIDIA/post-install.sh
 share/pcbsd/metaset/pcbsd/NVIDIA/pkg-desc
-share/pcbsd/metaset/pcbsd/GNOME-Accessibility/pkg-desc
-share/pcbsd/metaset/pcbsd/GNOME-Accessibility/pkg-icon.png
-share/pcbsd/metaset/pcbsd/GNOME-Accessibility/ports-list
-share/pcbsd/metaset/pcbsd/GNOME-Accessibility/pkg-parent
 share/pcbsd/metaset/pcbsd/HPLIP/pkg-icon.png
 share/pcbsd/metaset/pcbsd/HPLIP/pkg-desc
 share/pcbsd/metaset/pcbsd/HPLIP/pkg-parent
@@ -591,7 +586,12 @@ sbin/pbi_update_hashdir
 sbin/pbi_patch
 sbin/pbid
 etc/pbi.conf
+etc/man.d/pbi.conf
 etc/rc.d/pbid
+share/pbi-manager/.pbime
+share/pbi-manager/.pbimount
+share/pbi-manager/.ldconfig
+share/pbi-manager/.mount_nullfs
 share/pbi-manager/.pbiwrapper-i386
 share/pbi-manager/.pbiwrapper-amd64
 share/pbi-manager/module-examples/gimp/xdg-menu/gimp.desktop
@@ -703,7 +703,6 @@ man/man8/pc-sysinstall.8.gz
 @dirrm share/pcbsd/metaset/pcbsd/I3
 @dirrm share/pcbsd/metaset/pcbsd/LXDE
 @dirrm share/pcbsd/metaset/pcbsd/Development-Science
-@dirrm share/pcbsd/metaset/pcbsd/GNOME-Utilities
 @dirrm share/pcbsd/metaset/pcbsd/Development-Qt
 @dirrm share/pcbsd/metaset/pcbsd/KDE-Calligra
 @dirrm share/pcbsd/metaset/pcbsd/IceWM
@@ -716,10 +715,10 @@ man/man8/pc-sysinstall.8.gz
 @dirrm share/pcbsd/metaset/pcbsd/KDE-Education
 @dirrm share/pcbsd/metaset/pcbsd/Openbox
 @dirrm share/pcbsd/metaset/pcbsd/Spectrwm
+@dirrm share/pcbsd/metaset/pcbsd/Cinnamon
+@dirrm share/pcbsd/metaset/pcbsd/Mate
 @dirrm share/pcbsd/metaset/pcbsd/GNOME
 @dirrm share/pcbsd/metaset/pcbsd/KDE
-@dirrm share/pcbsd/metaset/pcbsd/GNOME-Net
-@dirrm share/pcbsd/metaset/pcbsd/GNOME-Games
 @dirrm share/pcbsd/metaset/pcbsd/Compiz
 @dirrm share/pcbsd/metaset/pcbsd/Rekonq
 @dirrm share/pcbsd/metaset/pcbsd/KDE-L10N
@@ -739,7 +738,6 @@ man/man8/pc-sysinstall.8.gz
 @dirrm share/pcbsd/metaset/pcbsd/WindowLab
 @dirrm share/pcbsd/metaset/pcbsd/Window_Maker
 @dirrm share/pcbsd/metaset/pcbsd/NVIDIA
-@dirrm share/pcbsd/metaset/pcbsd/GNOME-Accessibility
 @dirrm share/pcbsd/metaset/pcbsd/HPLIP
 @dirrm share/pcbsd/metaset/pcbsd/KDE-SDK
 @dirrm share/pcbsd/metaset/pcbsd/KDE-Graphics
