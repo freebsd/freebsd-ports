@@ -215,7 +215,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  generated on the fly.
 #				  Default: not set.
 #
-# NOARCH			- Set this if port is architecture neutral.
+# NO_ARCH			- Set this if port is architecture neutral.
 #
 # Set these if your port only makes sense to certain architectures.
 # They are lists containing names for them (e.g., "amd64 i386").

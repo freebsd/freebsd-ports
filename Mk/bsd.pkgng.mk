@@ -45,7 +45,7 @@ create-manifest:
 	@${ECHO_CMD} "  "${COMMENT:Q} >> ${MANIFESTF}
 	@${ECHO_CMD} "maintainer: ${MAINTAINER}" >> ${MANIFESTF}
 	@${ECHO_CMD} "prefix: ${PREFIX}" >> ${MANIFESTF}
-.if defined(NOARCH)
+.if defined(NO_ARCH)
 	@${ECHO_CMD} "arch: `${PKG_BIN} config abi | ${CUT} -d: -f1,2`:*" >> ${MANIFESTF}
 .endif
 .if defined(WWW)
