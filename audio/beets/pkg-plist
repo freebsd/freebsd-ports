@@ -52,6 +52,12 @@ bin/beet
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/ihate.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/ihate.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/ihate.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/ftintitle.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/ftintitle.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/ftintitle.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/fromfilename.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/fromfilename.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/fromfilename.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/fetchart.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/fetchart.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beetsplug/fetchart.py
