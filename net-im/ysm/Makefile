@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}v${PORTVERSION:S/./_/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line ICQ client with ICQ2000 and recoding support
 
+BROKEN=		Fails to install
+
 USE_CSTD=	c89
 
 USES=		iconv gmake
