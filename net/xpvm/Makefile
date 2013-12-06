@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Graphical Console and Monitor for PVM
 
+BROKEN=		Fails to patch
+
 MAKE_JOBS_UNSAFE=	yes
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpvm3.a:${PORTSDIR}/net/pvm
