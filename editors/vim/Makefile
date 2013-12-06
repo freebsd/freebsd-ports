@@ -12,7 +12,7 @@ PORTNAME=	vim
 #		! PATCHLEVEL to that level.
 PATCHLEVEL=	110
 PORTVERSION=	7.4.${PATCHLEVEL}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	editors
 MASTER_SITES=	VIM
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
@@ -49,6 +49,7 @@ CONFLICTS+=	vim*
 CONFLICTS+=	vim*-lite
 .endif
 
+USES=		pkgconfig
 MAKE_JOBS_UNSAFE=	yes
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/vim${PORTVERSION:R:S/.//g}/src
@@ -101,7 +102,7 @@ MAKE_ARGS+=	CONF_OPT_LUA_PREFIX="--with-lua-prefix=${LOCALBASE}"
 .endif
 
 .if ${PORT_OPTIONS:MPERL}
-USES=	perl5
+USES+=	perl5
 MAKE_ARGS+=	CONF_OPT_PERL="--enable-perlinterp"
 .endif
 
