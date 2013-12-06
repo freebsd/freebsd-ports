@@ -8,6 +8,14 @@ bin/smime_keys
 @unexec if cmp -s %D/etc/Muttrc.dist %D/etc/Muttrc; then rm -f %D/etc/Muttrc; fi
 etc/Muttrc.dist
 etc/mime.types.dist
+man/man1/flea.1.gz
+man/man1/mutt.1.gz
+man/man1/mutt_dotlock.1.gz
+man/man1/muttbug.1.gz
+man/man1/smime_keys.1.gz
+man/man5/mbox.5.gz
+man/man5/mmdf.5.gz
+man/man5/muttrc.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/GPL
