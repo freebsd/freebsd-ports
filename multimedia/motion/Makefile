@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20-%20${PORTVERSION:R}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Motion detection application
 
+BROKEN=		Fails to build
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
