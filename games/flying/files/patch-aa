@@ -13,7 +13,7 @@
  XCOMM #####  macro should be set when using gcc-2.7.0 to create target
  XCOMM #####  pball.o without optimization
 -CXX          = gcc
-+CXX          = g++
++XCOMM # CXX          = gcc
  XCOMM # CXX_NOOPT    = -O0
  
  XCOMM #######################################################################
