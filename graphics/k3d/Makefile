@@ -13,6 +13,8 @@ COMMENT=	3D modeling, animation, and rendering system
 
 LICENSE=	GPLv2
 
+BROKEN=		Fails to configure
+
 BUILD_DEPENDS=	${LOCALBASE}/include/gmm/gmm.h:${PORTSDIR}/math/gmm++
 LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
 		execinfo:${PORTSDIR}/devel/libexecinfo \
