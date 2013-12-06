@@ -11,6 +11,8 @@ DISTNAME=	libAfterImage-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic imaging library originally designed for AfterStep
 
+BROKEN=		Fails to build
+
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		gif.5:${PORTSDIR}/graphics/giflib \
 		png15:${PORTSDIR}/graphics/png \
