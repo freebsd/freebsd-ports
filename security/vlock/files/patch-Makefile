@@ -1,0 +1,11 @@
+--- Makefile.orig	2013-11-20 17:41:38.000000000 +0100
++++ Makefile	2013-11-20 17:43:12.000000000 +0100
+@@ -59,7 +59,7 @@
+ 	$(MKDIR_P) -m 755 $(DESTDIR)$(PREFIX)/bin
+ 	$(INSTALL) -m 755 -o root -g $(ROOT_GROUP) vlock $(DESTDIR)$(BINDIR)/vlock
+ 	$(MKDIR_P) -m 755 $(DESTDIR)$(PREFIX)/sbin
+-	$(INSTALL) -m 4711 -o root -g $(ROOT_GROUP) vlock-main $(DESTDIR)$(SBINDIR)/vlock-main
++	$(INSTALL) -s -m 4711 -o root -g $(ROOT_GROUP) vlock-main $(DESTDIR)$(SBINDIR)/vlock-main
+ 
+ .PHONY: install-plugins
+ install-plugins: install-modules install-scripts
