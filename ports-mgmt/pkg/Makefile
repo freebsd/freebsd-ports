@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.2.1
+DISTVERSION=	1.2.2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://files.etoilebsd.net/pkg/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
@@ -18,8 +18,7 @@ USE_XZ=		yes
 # With no dependency at all
 NO_CCACHE=	yes
 USE_LDCONFIG=	yes
-USES=		uidfix shebangfix
-SHEBANG_FILES=	scripts/completion/_pkg.bash.in
+USES=		uidfix
 MAKE_ARGS+=	PKG_PORTSDIR=${PORTSDIR}
 
 MAKE_ENV+=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null \
