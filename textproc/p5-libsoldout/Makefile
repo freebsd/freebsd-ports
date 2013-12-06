@@ -15,13 +15,12 @@ COMMENT=	Convert Markdown text in (X)HTML
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	soldout:${PORTSDIR}/textproc/libsoldout
+LIB_DEPENDS=	libsoldout.so:${PORTSDIR}/textproc/libsoldout
 
 USES=		perl5
 USE_PERL5=	configure
-USE_LDCONFIG=	yes
 
-MAN3=		libsoldout.3
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/libsoldout/libsoldout.so
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
