@@ -3,7 +3,8 @@
 PORTNAME=	printscreen
 PORTVERSION=	1.4
 CATEGORIES=	x11
-DISTFILES=
+MASTER_SITES=	# none
+DISTFILES=	# none
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Simple screenshot program for X11
@@ -14,6 +15,7 @@ RUN_DEPENDS=	xwd:${PORTSDIR}/x11/xwd \
 		xwdtopnm:${PORTSDIR}/graphics/netpbm
 
 NO_WRKSUBDIR=	yes
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/printscreen

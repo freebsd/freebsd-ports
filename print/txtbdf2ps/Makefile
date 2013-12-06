@@ -14,15 +14,14 @@ COMMENT=	Translator TXT + BDF to PS
 PROJECTHOST=	ak-various-projects
 
 PLIST_FILES=	bin/txtbdf2ps
-USES=		perl5
+USES=		perl5 shebangfix
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	${WRKDIR}
+SHEBANG_FILES=	${DISTNAME}.txt
 NO_WRKSUBDIR=	yes
+NO_ARCH=	yes
 NO_BUILD=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|g' ${WRKSRC}/${DISTNAME}.txt
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME}.txt ${STAGEDIR}${PREFIX}/bin/txtbdf2ps
