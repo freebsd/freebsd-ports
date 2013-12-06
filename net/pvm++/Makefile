@@ -10,6 +10,8 @@ MASTER_SITES=	SF/pvm-plus-plus/pvm-plus-plus/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++-Library for PVM
 
+BROKEN=		Fails to patch
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpvm3.a:${PORTSDIR}/net/pvm
 
 USE_AUTOTOOLS=	libtool
