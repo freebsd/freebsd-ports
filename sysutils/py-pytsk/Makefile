@@ -4,7 +4,8 @@
 PORTNAME=	pytsk
 DISTVERSION=	2013-11-24
 CATEGORIES=	sysutils security devel python
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiScUxsUm54cG02RDA/ \
+		LOCAL/antoine
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 
