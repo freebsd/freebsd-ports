@@ -1,12 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	chosen-rails
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	box enhancer for jQuery and Protoype
+COMMENT=	Box enhancer for jQuery and Protoype
+
+LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-coffee-rails>=3.2:${PORTSDIR}/devel/rubygem-coffee-rails \
 		rubygem-compass-rails>=1.0:${PORTSDIR}/textproc/rubygem-compass-rails \
@@ -16,6 +18,5 @@ RUN_DEPENDS=	rubygem-coffee-rails>=3.2:${PORTSDIR}/devel/rubygem-coffee-rails \
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-
 
 .include <bsd.port.mk>
