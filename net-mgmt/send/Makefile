@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	anchie@FreeBSD.org
 COMMENT=	Secure Neighbor Discovery implementation for IPv6
 
+BROKEN=		Fails to link
+
 LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet
 
 USE_GMAKE=	yes
