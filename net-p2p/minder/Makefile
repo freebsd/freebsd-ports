@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.alhem.net/project/minder/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small network application for automatic maintenance of peer lists
 
+BROKEN=		Fails to link
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libSockets.a:${PORTSDIR}/net/Sockets
 
 USE_GMAKE=	yes
