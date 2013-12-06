@@ -88,6 +88,18 @@ share/pcbsd/icons/sysupdate.png
 share/pcbsd/icons/pkgmanager.png
 share/pcbsd/icons/zmanager.png
 share/pcbsd/doc/handbook_en.pdf
+share/wallpapers/PCBSD/PCBSD_10_Joule_WP_1024x600_v2.jpg
+share/wallpapers/PCBSD/PCBSD_10_Joule_WP_1024x768_v2.jpg
+share/wallpapers/PCBSD/PCBSD_10_Joule_WP_1280x1024_v2.jpg
+share/wallpapers/PCBSD/PCBSD_10_Joule_WP_1280x800_v2.jpg
+share/wallpapers/PCBSD/PCBSD_10_Joule_WP_1440x900_v2.jpg
+share/wallpapers/PCBSD/PCBSD_10_Joule_WP_1600x1200_v2.jpg
+share/wallpapers/PCBSD/PCBSD_10_Joule_WP_1920x1080_v2.jpg
+share/wallpapers/PCBSD/PCBSD_10_Joule_WP_1920x1200_v2.jpg
+share/wallpapers/PCBSD/PCBSD_10_Joule_WP_600x400_v2.jpg
+share/wallpapers/PCBSD/PCBSD_10_Joule_WP_800x600_v2.jpg
+share/wallpapers/pcbsd10-default/contents/.directory
+share/wallpapers/pcbsd10-default/contents/images/.directory
 share/wallpapers/pcbsd10-default/contents/images/1024x768.jpg
 share/wallpapers/pcbsd10-default/contents/images/1600x1200.jpg
 share/wallpapers/pcbsd10-default/contents/images/1280x800.jpg
@@ -2698,6 +2710,7 @@ share/applications/pc-updatecenter.desktop
 share/applications/pc-welcome.desktop
 share/applications/warden.desktop
 share/applications/EasyPBI.desktop
+share/applications/pc-dmconf.desktop
 lib/libpcbsd-ui.so.0.9.8
 lib/libpcbsd-ui.so
 lib/libpcbsd-ui.so.0
