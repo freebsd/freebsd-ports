@@ -9,23 +9,27 @@ MASTER_SITES=	http://www.eterm.org/download/ \
 		CRITICAL
 
 MAINTAINER=	rodrigo@bebik.net
-COMMENT=	A library of assorted spiffy things
+COMMENT=	Library of assorted spiffy things
 
-LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
+LICENSE=	BSD
+
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USE_AUTOTOOLS=	libtool
-USES=	pathfix
 USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
+USES=		pathfix
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MMX) && (${ARCH} == "i386")
 CONFIGURE_ARGS=	--enable-mmx
 .endif
+
+post-build:
+	@${STRIP_CMD} ${WRKSRC}/src/.libs/libast.so.2
 
 .include <bsd.port.post.mk>
