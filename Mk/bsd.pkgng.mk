@@ -39,12 +39,15 @@ ACTUAL-PACKAGE-DEPENDS?= \
 create-manifest:
 	@${MKDIR} ${METADIR}
 	@${ECHO_CMD} "name: ${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}" > ${MANIFESTF} 
-	@${ECHO_CMD} "version: ${PKGVERSION}" >> ${MANIFESTF} 
-	@${ECHO_CMD} "origin: ${PKGORIGIN}" >> ${MANIFESTF} 
+	@${ECHO_CMD} "version: ${PKGVERSION}" >> ${MANIFESTF}
+	@${ECHO_CMD} "origin: ${PKGORIGIN}" >> ${MANIFESTF}
 	@${ECHO_CMD} "comment: |" >> ${MANIFESTF}
 	@${ECHO_CMD} "  "${COMMENT:Q} >> ${MANIFESTF}
 	@${ECHO_CMD} "maintainer: ${MAINTAINER}" >> ${MANIFESTF}
 	@${ECHO_CMD} "prefix: ${PREFIX}" >> ${MANIFESTF}
+.if defined(NOARCH)
+	@${ECHO_CMD} "arch: `${PKG_BIN} config abi | ${CUT} -d: -f1,2`:*" >> ${MANIFESTF}
+.endif
 .if defined(WWW)
 	@${ECHO_CMD} "www: ${WWW}" >> ${MANIFESTF}
 .endif
