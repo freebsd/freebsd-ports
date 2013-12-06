@@ -1,4 +1,4 @@
 SHA256 (pkg_replace-0.8.0.tar.bz2) = 3092f5fc0d18529eb5d38776941c0ee4d0073ecb524ab17671c81ca69c29e214
 SIZE (pkg_replace-0.8.0.tar.bz2) = 17296
-SHA256 (pkg_replace-0.8.0_5.patch) = ce2a9f44c4592839423fe2098a247d4409b9d3e3d8da2a0b343219dca922be93
-SIZE (pkg_replace-0.8.0_5.patch) = 11168
+SHA256 (pkg_replace-0.8.0_6.patch) = 25010a2adfbc2c3f83c5fe5ebeca37d2c65570cf5e7eb875d0c802ca03c18e41
+SIZE (pkg_replace-0.8.0_6.patch) = 11248
