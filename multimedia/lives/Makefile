@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lives
-PORTVERSION=	2.0.6
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://salsaman.home.xs4all.nl/lives/current/
 DISTNAME=	LiVES-${PORTVERSION}
@@ -104,10 +103,6 @@ post-patch:
 	@${REINPLACE_CMD} '/cp -rf/ s|data/|data|g; /cp -rf/ s|icons/|icons|g' \
 		${WRKSRC}/lives-plugins/weed-plugins/cairo/Makefile.in \
 		${WRKSRC}/lives-plugins/weed-plugins/Makefile.in
-
-pre-install:
-	@cd ${WRKSRC}/po; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
-		 ${MAKEFILE} update-po
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
