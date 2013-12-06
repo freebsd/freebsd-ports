@@ -6,7 +6,7 @@
 
 PORTNAME=	mutt
 PORTVERSION=	${VERSION}.j${JP_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese mail
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/devel/:body \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/devel/:body \
@@ -42,7 +42,9 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	st@be.to
 COMMENT=	Text-based mail client (Japanised development version)
 
-LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libslang.so:${PORTSDIR}/japanese/libslang
 RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview \
 		${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
@@ -56,14 +58,14 @@ MANJADATE=	20050813
 FETCH_BEFORE_ARGS=	-A	# ha4.seikyou.ne.jp is running broken httpd
 
 NO_LATEST_LINK=	yes
-USE_GMAKE=	yes
-USES=		iconv
+USES=		gmake iconv shebangfix
+SHEBANG_FILES=	smime_keys.pl contrib/smime_keys_test.pl
 USE_AUTOTOOLS=	automake autoconf
-AUTOMAKE_ARGS=  --add-missing
+AUTOMAKE_ARGS=	--add-missing
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/mutt-${VERSION}
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CC="${CC} -D_DONT_USE_CTYPE_INLINE_ ${DB_CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/slang"
+LDFLAGS+=	-L${LOCALBASE}/lib -ltinfow
+CONFIGURE_ENV=	CC="${CC} -D_DONT_USE_CTYPE_INLINE_ -D_XLOCALE_CTYPE_H ${DB_CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/slang"
 CONFIGURE_ARGS=	--with-slang --enable-locales-fix \
 		${ICONV_CONFIGURE_ARG} \
 		--without-wc-funcs \
@@ -82,23 +84,24 @@ CYRUS_SASL2_DESC=	SASL2 authentication
 IMAP_HEADER_CACHE_DESC=	imap header cache
 MAILDIR_HEADER_CACHE_DESC=	maildir header cache
 
-NO_STAGE=	yes
+NEED_ROOT=	yes
 .include <bsd.port.options.mk>
 
-.if ! ${PORT_OPTIONS:MNLS}
+.if ${PORT_OPTIONS:MNLS}
 USES+=	gettext
 .endif
 .if ${PORT_OPTIONS:MCYRUS_SASL2}
-LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 .endif
 .if ${PORT_OPTIONS:MMAILDIR_HEADER_CACHE}
 PORT_OPTIONS+=	MAILDIR_HEADER_CACHE
 .endif
 .if ${PORT_OPTIONS:MIMAP_HEADER_CACHE}
 USE_BDB=	42+
+CONFIGURE_SED=	-e 's/BDB_VERSIONS="/&${BDB_LIB_NAME} db${BDB_VER} /'
 .endif
 .if ${PORT_OPTIONS:MIDN}
-LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
+LIB_DEPENDS+=	libidn.so:${PORTSDIR}/dns/libidn
 .endif
 
 .if ${PORT_OPTIONS:MCYRUS_SASL2}
@@ -124,11 +127,11 @@ CONFIGURE_ARGS+=	--disable-hcache
 CONFIGURE_ARGS+=	--without-qdbm
 .endif
 
-NOMANCOMPRESS=	yes
-MAN1=		flea.1 mutt.1 muttbug.1 mutt_dotlock.1 smime_keys.1
-MAN5=		muttrc.5 mbox.5 mmdf.5
-
 pre-configure:
+.if defined(CONFIGURE_SED)
+	@${REINPLACE_CMD} -E ${CONFIGURE_SED} \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}.ac
+.endif
 .if ! ${PORT_OPTIONS:MDOCS}
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-nodoc-contrib
 .endif
@@ -144,21 +147,23 @@ post-configure:
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
-	${INSTALL_DATA} ${_DISTDIR}/INSTALL.JA-PATCH.ja ${DOCSDIR}
-	${INSTALL_DATA} ${_DISTDIR}/README.JA-PATCH.ja ${DOCSDIR}
-	${INSTALL_DATA} ${_DISTDIR}/manual-ja-patch.ja.txt ${DOCSDIR}
-	${INSTALL_DATA} ${_DISTDIR}/usage-japanese.ja.txt ${DOCSDIR}
-	${INSTALL_DATA} ${_DISTDIR}/INSTALL.JA-PATCH.ja.html ${DOCSDIR}
-	${INSTALL_DATA} ${_DISTDIR}/README.JA-PATCH.ja.html ${DOCSDIR}
-	${INSTALL_DATA} ${_DISTDIR}/manual-ja-patch.ja.html ${DOCSDIR}
-	${INSTALL_DATA} ${_DISTDIR}/usage-japanese.ja.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/manual_ja.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/manual_ja.tex ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/manual_ja.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/manual_ja.sgml ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/manual.ja.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/manual.ja.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/manual.ja.sgml ${DOCSDIR}
+	${INSTALL_DATA} ${_DISTDIR}/INSTALL.JA-PATCH.ja ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${_DISTDIR}/README.JA-PATCH.ja ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${_DISTDIR}/manual-ja-patch.ja.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${_DISTDIR}/usage-japanese.ja.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${_DISTDIR}/INSTALL.JA-PATCH.ja.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${_DISTDIR}/README.JA-PATCH.ja.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${_DISTDIR}/manual-ja-patch.ja.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${_DISTDIR}/usage-japanese.ja.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/manual_ja.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/manual_ja.tex ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/manual_ja.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/manual_ja.sgml ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/manual.ja.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/manual.ja.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/manual.ja.sgml ${STAGEDIR}${DOCSDIR}
 .endif
+	# These are outside the path and do not belong there:
+	${RM} ${STAGEDIR}${PREFIX}/etc/Muttrc ${STAGEDIR}${PREFIX}/etc/mime.types
 
 .include <bsd.port.mk>
