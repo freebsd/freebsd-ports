@@ -13,6 +13,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby binding to the EsounD library
 
+BROKEN=	Fails to configure
+
 LIB_DEPENDS=	esd:${PORTSDIR}/audio/esound
 
 USES=		pkgconfig
