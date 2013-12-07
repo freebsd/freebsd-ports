@@ -28,7 +28,6 @@ PORTDOCS=	README langcover.txt status.txt unicover.txt
 SUB_FILES=	pkg-message
 SUB_LIST=	FONTSDIR=${FONTSDIR}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLINKS}
@@ -39,22 +38,18 @@ PLIST_SUB+=	FCDIR_LINKS="@comment "
 .endif
 
 do-install:
-	${MKDIR} ${FONTSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/fontconfig/*.conf ${FCDIR}/
-	${INSTALL_DATA} ${WRKSRC}/ttf/*.ttf ${FONTSDIR}/
+	${MKDIR} ${STAGEDIR}${FCDIR} ${STAGEDIR}${FONTSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/fontconfig/*.conf ${STAGEDIR}${FCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/ttf/*.ttf ${STAGEDIR}${FONTSDIR}/
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 .endif
 .if ${PORT_OPTIONS:MLINKS}
-	cd ${PREFIX}/${FCDIR_LINKS}/ && ${LN} -fs ../conf.avail/*dejavu*.conf .
+	cd ${STAGEDIR}${PREFIX}/${FCDIR_LINKS}/ && ${LN} -fs ../conf.avail/*dejavu*.conf .
 .endif
-
-post-install:
 	@${ECHO_MSG} "===> Running fc-cache"
 	-${LOCALBASE}/bin/fc-cache -f -v ${FONTSDIR}/
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
 .include <bsd.port.mk>
