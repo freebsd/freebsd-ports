@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	astyle
-PORTVERSION=	2.03
-PORTREVISION=	1
+PORTVERSION=	2.04
 CATEGORIES=	devel textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_linux
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Source code indenter and formatter for C, C++, C\#, and Java
+
+LICENSE=	LGPL3
 
 ALL_TARGET=	astyle
 CFLAGS+=	-W -Wall -fno-rtti -fno-exceptions
