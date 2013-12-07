@@ -19,7 +19,6 @@ CFLAGS+=	-fPIC
 USE_AUTOTOOLS=	autoconf
 WRKSRC=		${WRKDIR}/Libnet-${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
-MAN3=		libnet${PKGNAMESUFFIX}.3
 
 .include <bsd.port.options.mk>
 
