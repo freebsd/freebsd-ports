@@ -48,7 +48,7 @@ ARIA2_DISK_CACHE?=	16M
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1000500 && !exists(/usr/lib/libc++.so)
+.if ${OSVERSION} < 1000100 && !exists(/usr/lib/libc++.so)
 BROKEN=		Build with clang and libc++ only
 .endif
 
