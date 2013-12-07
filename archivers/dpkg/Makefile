@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dpkg
-PORTVERSION=	1.17.1
+PORTVERSION=	1.17.3
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	dpkg_${PORTVERSION}
@@ -20,6 +20,7 @@ RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar \
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USES=		gmake iconv perl5 pkgconfig
+NEED_ROOT=	yes
 WRKSRC=		${WRKDIR}/dpkg-${PORTVERSION}
 
 DPKGDIR?=	/var/db/dpkg
@@ -39,8 +40,6 @@ OPTIONS_SUB=	yes
 NLS_CONFIGURE_OFF=	--disable-nls
 NLS_USES=		gettext
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} 's|-t$$host|-t${ARCH}-freebsd|g' \
 		${WRKSRC}/configure
@@ -50,9 +49,6 @@ post-patch:
 		${WRKSRC}/scripts/Dpkg/Checksums.pm
 
 post-install:
-.for f in available diversions statoverride status
-	${TOUCH} ${STAGEDIR}${DPKGDIR}/${f}
-.endfor
 	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
