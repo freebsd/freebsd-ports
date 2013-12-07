@@ -578,6 +578,8 @@ share/clementine/projectm-presets/Aderrasi - What cannot be.milk
 share/clementine/projectm-presets/Unchained & Rovastar - Wormhole Pillars (Hall of Shadows mi.milk
 share/clementine/projectm-presets/Rovastar - Inner Thoughts (Clouded Judgement Mix).milk
 share/clementine/projectm-presets/Che - Burning Hus.milk
+@dirrmtry share/clementine/projectm-presets
+@dirrmtry share/clementine
 @dirrmtry share/icons/hicolor/64x64/apps
 @dirrmtry share/icons/hicolor/64x64
 @dirrmtry share/icons/hicolor/scalable/apps
