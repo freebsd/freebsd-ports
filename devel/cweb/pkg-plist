@@ -1,5 +1,6 @@
 bin/ctangle
 bin/cweave
+man/man1/cweb.1.gz
 %%DATADIR%%/c++lib.w
 %%PORTDOCS%%%%DOCSDIR%%/cwebman.tex
 share/emacs/site-lisp/cweb.el
