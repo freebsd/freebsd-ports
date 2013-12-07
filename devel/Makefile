@@ -3840,6 +3840,7 @@
     SUBDIR += py-yapps2
     SUBDIR += py-ydbf
     SUBDIR += py-yum-metadata-parser
+    SUBDIR += py-yunomi
     SUBDIR += py-z3c.autoinclude
     SUBDIR += py-z3c.batching
     SUBDIR += py-z3c.caching
