@@ -57,9 +57,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/icon_${s}.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/gtklife.png
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
