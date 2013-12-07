@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=dinoex
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Remultiplex an MPEG2 TS into a PS for DVD
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ARGS=	CFLAGS="${CFLAGS}" DEFINES="${CPPFLAGS} -DO_LARGEFILE=0 \
 		-DVERSION=\\\"$(PORTVERSION)\\\"" LIBS="${LDFLAGS}"
 PLIST_FILES=	bin/replex

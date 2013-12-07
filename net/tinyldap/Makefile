@@ -15,8 +15,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libowfat.a:${PORTSDIR}/${LIBOWFAT_PORT}
 LICENSE=	GPLv2
 
 SNAPSHOT=	20091122
+USES=		gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 CFLAGS+=	-DATTRIBS=512
 SBINFILES=	acl addindex bindrequest dumpacls dumpidx idx2ldif parse \
