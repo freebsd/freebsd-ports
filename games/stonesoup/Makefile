@@ -79,7 +79,7 @@ MAKE_ARGS+=	NO_LUA_BINDINGS=yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 1000500
+.if ${OSVERSION} >= 1000100
 CFLAGS+=	-std=c++0x
 .endif
 

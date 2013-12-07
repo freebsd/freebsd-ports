@@ -17,7 +17,7 @@ SUB_LIST=	DIG=${DIG}
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} >= 1000500
+.if ${OSVERSION} >= 1000100
 DIG=		drill
 .else
 DIG=		dig
