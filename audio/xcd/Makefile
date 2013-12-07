@@ -12,12 +12,7 @@ COMMENT=	Tcl/Tk CD player
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-BROKEN=		Does not build
-
-USES+=		tk
-NO_STAGE=	yes
-
-MAN1=		xcd.1
+USES=		tk
 
 WITH_CDROM_PLAYER?=	cd0
 
