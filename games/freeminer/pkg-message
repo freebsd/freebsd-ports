@@ -1,0 +1,9 @@
+Freeminer engine has been installed.
+
+Note that for offline play or for server hosting you also need
+to install game data. For now, only one game is available for
+freeminer and you can install it with games/freeminer-default
+port.
+
+For online play engine is sufficient as it will downloaded all
+required data automatically.

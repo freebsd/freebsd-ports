@@ -1,0 +1,76 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: freeminer
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf[.local] to enable freeminer server
+#
+# freeminer_enable (bool):  Set to "NO" by default
+#                          Set it to "YES" to enable freeminer server
+# freeminer_conffile (str): Path to config file (required).
+#                          (default: /usr/local/etc/freeminer.conf)
+# freeminer_rundir (str):   Path to directory holding a pidfile.
+#                          (default: /var/run/freeminer)
+# freeminer_user (str):     User to run as
+#                          (default: freeminer)
+# freeminer_group (str):    Group to run as
+#                          (default: freeminer)
+# freeminer_logdir (str):   Path to log directory
+#                          (default: /var/log/freeminer)
+# freeminer_dbdir (str):    Path to world database directory
+#                          (default: /var/db/freeminer)
+
+. /etc/rc.subr
+
+name=freeminer
+rcvar=freeminer_enable
+
+load_rc_config ${name}
+
+: ${freeminer_enable="NO"}
+: ${freeminer_config="/usr/local/etc/freeminer.conf"}
+: ${freeminer_rundir="/var/run/freeminer"}
+: ${freeminer_user="freeminer"}
+: ${freeminer_group="freeminer"}
+: ${freeminer_logdir="/var/log/freeminer"}
+: ${freeminer_dbdir="/var/db/freeminer"}
+: ${freeminer_args:="--logfile ${freeminer_logdir}/debug.log --world ${freeminer_dbdir}/world ${freeminer_flags}"}
+
+pidfile=
+
+case "${freeminer_args}" in
+*--config\ *)
+	echo "Warning \$freeminer_args includes --config option." \
+	     "Please use \$freeminer_conffile instead."
+	;;
+*)
+	freeminer_args="--config ${freeminer_config} ${freeminer_args}"
+	;;
+esac
+
+command=/usr/sbin/daemon
+procname=/usr/local/bin/freeminerserver
+pidfile=${freeminer_rundir}/freeminer.pid
+command_args="-c -f -p ${pidfile} ${procname} ${freeminer_args}"
+required_files=${freeminer_config}
+start_precmd=freeminer_prestart
+
+freeminer_prestart () {
+	if [ ! -d ${freeminer_rundir} ]; then
+		mkdir -m 755 -p ${freeminer_rundir}
+		chown -R ${freeminer_user}:${freeminer_group} ${freeminer_rundir}
+	fi
+	if [ ! -d ${freeminer_logdir} ]; then
+		mkdir -m 755 -p ${freeminer_logdir}
+		chown -R ${freeminer_user}:${freeminer_group} ${freeminer_logdir}
+	fi
+	if [ ! -d ${freeminer_dbdir} ]; then
+		mkdir -m 755 -p ${freeminer_dbdir}/data
+		chown -R ${freeminer_user}:${freeminer_group} ${freeminer_dbdir}
+	fi
+}
+
+run_rc_command "$1"
