@@ -20,12 +20,8 @@ MAKE_ENV+=	STAGEDIR=$(STAGEDIR)
 
 CONFLICTS=	cutils-[0-9]*
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/testset* ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
