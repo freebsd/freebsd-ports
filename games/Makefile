@@ -280,6 +280,8 @@
     SUBDIR += freedoko
     SUBDIR += freedroid
     SUBDIR += freedroidrpg
+    SUBDIR += freeminer
+    SUBDIR += freeminer-default
     SUBDIR += freera
     SUBDIR += freesweep
     SUBDIR += freesynd

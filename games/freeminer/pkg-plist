@@ -1,0 +1,7 @@
+%%CLIENT%%bin/freeminer
+%%SERVER%%bin/freeminerserver
+@unexec if cmp -s %D/etc/freeminer.conf.example %D/etc/freeminer.conf; then rm -f %D/etc/freeminer.conf; fi
+etc/freeminer.conf.example
+@exec if [ ! -f %B/freeminer.conf ]; then cp -p %D/%F %B/freeminer.conf; fi
+man/man6/freeminer.6.gz
+man/man6/freeminerserver.6.gz
