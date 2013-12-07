@@ -1,7 +1,0 @@
---- bootstrap.orig	2013-06-04 08:13:28.000000000 +0000
-+++ bootstrap	2013-07-23 20:06:15.000000000 +0000
-@@ -38,3 +38,3 @@
- amvers="no"
--for v in 13 12 11 10 9 8 7 6 5; do
-+for v in 14 13 12 11 10 9 8 7 6 5; do
-   if automake-1.${v} --version >/dev/null 2>&1; then

@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20131207:
+  AFFECTS: users of mail/opensmtpd
+  AUTHOR: ashish@FreeBSD.org
+
+  There has been changes to the OpenSMTPD configuration. Please refer to
+  smtpd.conf(5), and use "smtpd -nf smtpd.conf" to validate.
+
 20131203:
   AFFECTS: users of graphics/opencv, graphics/opencv-core
   AUTHOR: jhale@FreeBSD.org
