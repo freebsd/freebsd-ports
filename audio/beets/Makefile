@@ -23,36 +23,22 @@ NO_STAGE=	yes
 USE_PYTHON=	2.7+
 USE_PYDISTUTILS=	easy_install
 
-OPTIONS_DEFINE=	CHROMA BEATPORT DISCOGS FFMPEG REPLAYGAIN
+OPTIONS_DEFINE=	BEATPORT CHROMA DISCOGS FFMPEG REPLAYGAIN WEB
 OPTIONS_DEFAULT=
 
 CHROMA_DESC=	Audio Fingerprinting Plugin
-BEATPORT_DESC=	Beatport catalog autotagging support
-DISCOGS_DESC=	Discogs search plugin
-REPLAYGAIN_DESC=	Normalize audio loudness
+BEATPORT_DESC=	Beatport Catalog Autotagging Support
+DISCOGS_DESC=	Discogs Search Plugin
+REPLAYGAIN_DESC=	Normalize Audio Loudness
+WEB_DESC=	Webserver Music Player Plugin
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCHROMA}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}acoustid>=0:${PORTSDIR}/audio/py-pyacoustid
-.endif
-
-.if ${PORT_OPTIONS:MBEATPORT}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}requests>=0:${PORTSDIR}/www/py-requests
-.endif
-
-.if ${PORT_OPTIONS:MDISCOGS}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}discogs-client>=0:${PORTSDIR}/audio/py-discogs-client
-.endif
-
-.if ${PORT_OPTIONS:MFFMPEG}
-RUN_DEPENDS+=	ffmpeg>=2:${PORTSDIR}/multimedia/ffmpeg
-.endif
-
-.if ${PORT_OPTIONS:MREPLAYGAIN}
-RUN_DEPENDS+=	mp3gain>=0:${PORTSDIR}/audio/mp3gain \
-		aacgain>=0:${PORTSDIR}/audio/aacgain
-.endif
+CHROMA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyacoustid>=0:${PORTSDIR}/audio/py-pyacoustid
+BEATPORT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:${PORTSDIR}/www/py-requests
+DISCOGS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}discogs-client>=0:${PORTSDIR}/audio/py-discogs-client
+FFMPEG_RUN_DEPENDS=	ffmpeg>=2:${PORTSDIR}/multimedia/ffmpeg
+REPLAYGAIN_RUN_DEPENDS=	mp3gain>=0:${PORTSDIR}/audio/mp3gain
+REPLAYGAIN_RUN_DEPENDS+=	aacgain>=0:${PORTSDIR}/audio/aacgain
+WEB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0:${PORTSDIR}/www/py-flask
 
 .include <bsd.port.pre.mk>
 
