@@ -131,8 +131,8 @@
     SUBDIR += cgoban
     SUBDIR += chanta
     SUBDIR += chapping
-    SUBDIR += chessx
     SUBDIR += cheech
+    SUBDIR += chessx
     SUBDIR += childsplay
     SUBDIR += childsplay_plugins
     SUBDIR += chocolate-doom
@@ -623,9 +623,9 @@
     SUBDIR += nethack34-nox11
     SUBDIR += netherearth
     SUBDIR += netpanzer
+    SUBDIR += netradiant
     SUBDIR += netrek-BRMH-bin
     SUBDIR += netrek-client-cow
-    SUBDIR += netradiant
     SUBDIR += netris
     SUBDIR += netspades
     SUBDIR += nettoe
@@ -883,8 +883,8 @@
     SUBDIR += sokoban
     SUBDIR += sol
     SUBDIR += solarconquest
-    SUBDIR += solarwolf
     SUBDIR += solarus
+    SUBDIR += solarwolf
     SUBDIR += sopwith
     SUBDIR += spacejunk
     SUBDIR += speak
