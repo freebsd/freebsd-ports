@@ -3,6 +3,7 @@
 
 PORTNAME=	clementine
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-player
@@ -25,7 +26,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 PROJECTHOST=	${PORTNAME}${PKGNAMESUFFIX}
 
-USES=		cmake pkgconfig
+USES=		compiler:c++11-lib cmake pkgconfig
 NO_STAGE=	yes
 USE_GL=		glew
 USE_QT4=	dbus gui xml qmake_build uic_build moc_build rcc_build \
