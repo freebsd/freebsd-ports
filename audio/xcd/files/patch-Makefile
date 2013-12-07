@@ -1,5 +1,5 @@
---- Makefile.orig	1998-10-27 01:14:26.000000000 +0100
-+++ Makefile	2013-09-23 14:57:00.000000000 +0200
+--- ./Makefile.orig	1998-10-26 22:14:26.000000000 -0200
++++ ./Makefile	2013-12-07 16:02:51.000000000 -0200
 @@ -1,6 +1,6 @@
 -BINDIR = /usr/local/bin
 -CDDIR  = /usr/local/lib/xcd
@@ -10,3 +10,35 @@
  
  all: cdplayer xcd
  xcd:	xcd.in
+@@ -8,20 +8,20 @@
+ 		< xcd.in > $@
+ 	chmod ugo+x xcd
+ cdplayer: cdplayer.cc
+-	$(CC) $(CFLAGS) -o $@ cdplayer.cc -lm
++	$(CXX) $(CFLAGS) -o $@ cdplayer.cc -lm
+ 
+ install: xcd cdplayer
+-	mkdir -p $(BINDIR)
+-	mkdir -p $(MANDIR)
+-	mkdir -p $(CDDIR)
+-	install -c -s cdplayer $(CDDIR)
+-	install -c xcd $(BINDIR)
+-	install -c xcd.1 $(MANDIR)
++	mkdir -p ${DESTDIR}$(BINDIR)
++	mkdir -p ${DESTDIR}$(MANDIR)
++	mkdir -p ${DESTDIR}$(CDDIR)
++	install -c -s cdplayer ${DESTDIR}$(CDDIR)
++	install -c xcd ${DESTDIR}$(BINDIR)
++	install -c xcd.1 ${DESTDIR}$(MANDIR)
+ 	for f in bitmaps/*.xbm ; do \
+-		install -c $$f $(CDDIR); \
++		install -c $$f ${DESTDIR}$(CDDIR); \
+ 	done
+ 
+ install.prog: xcd cdplayer
+-	mkdir -p $(BINDIR)
+-	install -c -s cdplayer $(CDDIR)
+-	install -c xcd $(BINDIR)
++	mkdir -p ${DESTDIR}$(BINDIR)
++	install -c -s cdplayer ${DESTDIR}$(CDDIR)
++	install -c xcd ${DESTDIR}$(BINDIR)

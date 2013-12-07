@@ -1,4 +1,5 @@
 bin/xcd
+man/man1/xcd.1.gz
 lib/xcd/cdplayer
 lib/xcd/eject.xbm
 lib/xcd/eject_s.xbm
