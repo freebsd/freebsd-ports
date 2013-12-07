@@ -102,7 +102,6 @@
     SUBDIR += claroline
     SUBDIR += clearsilver
     SUBDIR += clearsilver-python
-    SUBDIR += clickheat
     SUBDIR += closure-compiler
     SUBDIR += closure-linter
     SUBDIR += cmsmadesimple
