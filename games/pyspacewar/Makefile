@@ -9,7 +9,7 @@ MASTER_SITES=	http://mg.pov.lt/${PORTNAME}/\
 		LOCAL/beech
 DIST_SUBDIR=	python
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Two ships duel in a gravity field
 
 LICENSE=	GPLv2
@@ -18,18 +18,16 @@ RUN_DEPENDS=	${PYGAME}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-NO_BUILD=	yes
 
 PORTDOCS=	NEWS.txt README.txt TODO.txt performance-notes.txt
+
+OPTIONS_DEFINE=	DOCS
 
 INSTALLS_ICONS=	yes
 ICON_SIZES=	16x16 22x22 32x32 48x48
 
-DESKTOP_ENTRIES="PySpaceWar" "${COMMENT}" ${PORTNAME} \
-		"${PORTNAME}" "Game;ArcadeGame;" false
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+DESKTOP_ENTRIES="PySpaceWar" "" ${PORTNAME} \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 post-patch:
 .for s in 16 22 32 48
@@ -39,15 +37,14 @@ post-patch:
 
 post-install:
 .for s in ${ICON_SIZES}
-	@${MKDIR} ${PREFIX}/share/icons/hicolor/${s}/apps
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps
 	${INSTALL_DATA} ${WRKSRC}/src/pyspacewar/icons/${PORTNAME}_${s}.png \
-		${PREFIX}/share/icons/hicolor/${s}/apps/${PORTNAME}.png
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/${PORTNAME}.png
 .endfor
-	@${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${PREFIX}/share/pixmaps
+	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
