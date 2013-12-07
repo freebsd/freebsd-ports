@@ -13,13 +13,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Graphical Console and Monitor for PVM
 
-BROKEN=		Fails to patch
-
 MAKE_JOBS_UNSAFE=	yes
 
+USE_GCC=	yes
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpvm3.a:${PORTSDIR}/net/pvm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
+LIB_DEPENDS=	libtk84.so:${PORTSDIR}/x11-toolkits/tk84
 
 WRKSRC=		${WRKDIR}/xpvm
 PVM_ROOT?=	${LOCALBASE}/lib/pvm
