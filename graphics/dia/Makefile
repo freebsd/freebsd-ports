@@ -72,7 +72,7 @@ post-patch:
 		's,\(^GTK_LIBS.*\),\1 ${PTHREAD_LIBS}, ; \
 		 s,\(^GTK_CFLAGS = \),\1 ${PTHREAD_CFLAGS} ,'
 	@${REINPLACE_CMD} -e 's|http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl|${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl| ; \
-		s|echo aout|echo elf|g ; s|/usr/include/libEMF|${LOCALBASE}/include/libEMF|g' \
-		${WRKSRC}/configure
+		s|echo aout|echo elf|g ; s|/usr/include/libEMF|${LOCALBASE}/include/libEMF|g ; \
+		s|-lstdc++||g'  ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
