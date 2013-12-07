@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- smtpd/Makefile.am.orig
-+++ smtpd/Makefile.am
-@@ -162,11 +162,7 @@
+--- mk/smtpd/Makefile.in.orig
++++ mk/smtpd/Makefile.in
+@@ -1906,11 +1906,7 @@
  	$(MKDIR_P) $(DESTDIR)$(mandir)/$(mansubdir)5
  	$(MKDIR_P) $(DESTDIR)$(mandir)/$(mansubdir)8
  
@@ -14,5 +14,5 @@ $FreeBSD$
 -	fi
 +	$(INSTALL) -m 644 smtpd.conf.out $(DESTDIR)$(sysconfdir)/smtpd.conf.sample
  
- 	ln -f $(DESTDIR)$(sbindir)/smtpctl$(EXEEXT)				\
- 		$(DESTDIR)$(bindir)/mailq$(EXEEXT);
+ 	$(INSTALL) -m 644 aliases.5.out		$(DESTDIR)$(mandir)/$(mansubdir)5/aliases.5
+ 	$(INSTALL) -m 644 forward.5.out		$(DESTDIR)$(mandir)/$(mansubdir)5/forward.5
