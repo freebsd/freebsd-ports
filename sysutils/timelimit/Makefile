@@ -14,6 +14,7 @@ LICENSE=	BSD
 CONFLICTS=	netpipes-[0-9]*
 
 PLIST_FILES=	bin/timelimit man/man1/timelimit.1.gz
+NO_ARCH=	yes
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/timelimit ${STAGEDIR}${PREFIX}/bin
