@@ -13,6 +13,7 @@ LICENSE=	BSD
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/symports.1.gz
 

@@ -9,7 +9,8 @@ MASTER_SITES=	SF
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Nonsense text generator
 
-NO_BUILD=	defined
+NO_BUILD=	yes
+NO_ARCH=	yes
 
 .include <bsd.port.options.mk>
 
