@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		mapserver
-PORTVERSION=		6.2.1
-PORTREVISION=		3
+PORTVERSION=		6.4.0
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
@@ -14,30 +13,25 @@ LIB_DEPENDS=		gd:${PORTSDIR}/graphics/gd \
 			proj:${PORTSDIR}/graphics/proj \
 			png15:${PORTSDIR}/graphics/png \
 			jpeg:${PORTSDIR}/graphics/jpeg \
-			gif:${PORTSDIR}/graphics/giflib \
-			curl:${PORTSDIR}/ftp/curl
+			gif:${PORTSDIR}/graphics/giflib
 
-USE_GMAKE=		yes
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--with-proj=${LOCALBASE} \
-			--with-gd=${LOCALBASE} \
-			--with-png=${LOCALBASE} \
-			--with-jpeg=${LOCALBASE} \
-			--with-gif=${LOCALBASE} \
-			--with-curl-config=${LOCALBASE}
+USES=			cmake
+LDFLAGS+=		-L${LOCALBASE} -pthread
+CMAKE_ARGS+=		-DCMAKE_PREFIX_PATH=${LOCALBASE} \
+			-DCMAKE_INSTALL_PREFIX=${PREFIX} \
+			-DWITH_GD=1
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=		AGG TIFF PDF GDAL GEOS KML MING MYGIS POSTGIS PHP PERL PYTHON \
-			WMS WFS MAPSERV FASTCGI DEBUG CAIRO CAIRO_SVG
-OPTIONS_DEFAULT=	AGG GDAL GEOS MAPSERV
-AGG_DESC=		AGG image rendering support
+OPTIONS_DEFINE=		FRIBIDI CURL GDAL GEOS KML POSTGIS PHP PERL PYTHON \
+			WMS WFS WCS MAPSERV FASTCGI DEBUG CAIRO CAIRO_SVG
+OPTIONS_DEFAULT=	FRIBIDI GDAL GEOS MAPSERV
 CAIRO_SVG_DESC=		Cairo SVG parser support
 GDAL_DESC=		GDAL library support
+FRIBIDI_DESC=		Fribidi library support
 KML_DESC=		KML support
-MING_DESC=		Macromedia Flash output support
-MYGIS_DESC=		MyGIS support
-WMS_DESC=		Web map service server and client support
-WFS_DESC=		Web feature service support
+WMS_DESC=		WMS Server support
+WFS_DESC=		WFS Server support
+WCS_DESC=               WCS Server support
 MAPSERV_DESC=		Mapserv cgi interface support
 
 NO_STAGE=	yes
@@ -53,7 +47,7 @@ PLIST_SUB+=		MAPSERV="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=		2.6
+USE_PYTHON=		2.7
 PLIST_SUB+=		PYTHON=""
 MAP_EGG=		MapScript-${PORTVERSION}-${PYTHON_VERSION:S/thon//}
 PLIST_SUB+=		MAP_EGG=${MAP_EGG}
@@ -61,154 +55,139 @@ PLIST_SUB+=		MAP_EGG=${MAP_EGG}
 PLIST_SUB+=		PYTHON="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MAGG}
-LIB_DEPENDS+=		agg:${PORTSDIR}/graphics/agg
-.endif
-
 .if ${PORT_OPTIONS:MCAIRO}
 LIB_DEPENDS+=		cairo:${PORTSDIR}/graphics/cairo \
 			expat:${PORTSDIR}/textproc/expat2
-CONFIGURE_ARGS+=	--with-cairo=yes --with-expat=${LOCALBASE}
-USES+=			pkgconfig
+CMAKE_ARGS+=		-DWITH_CAIRO=1
+.else
+CMAKE_ARGS+=		-DWITH_CAIRO=0
+.endif
+
+.if ${PORT_OPTIONS:MFRIBIDI}
+LIB_DEPENDS+=		fribidi:${PORTSDIR}/converters/fribidi
+CMAKE_ARGS+=		-DWITH_FRIBIDI=1
+.else
+CMAKE_ARGS+=		-DWITH_FRIBIDI=0
 .endif
 
 .if ${PORT_OPTIONS:MCAIRO_SVG}
 LIB_DEPENDS+=		cairo:${PORTSDIR}/graphics/cairo \
 			svg-cairo:${PORTSDIR}/graphics/libsvg-cairo \
 			expat:${PORTSDIR}/textproc/expat2
-CONFIGURE_ARGS+=	--with-cairo=yes \
-			--with-libsvg-cairo \
-			--with-expat=${LOCALBASE}
+CMAKE_ARGS+=		-DWITH_SVGCAIRO=1 -DWITH_CAIRO=1
 USES+=			pkgconfig
+.else
+CMAKE_ARGS+=		-DWITH_SVGCAIRO=0
 .endif
 
 .if ${PORT_OPTIONS:MKML}
 LIB_DEPENDS+=		xml2:${PORTSDIR}/textproc/libxml2
-CONFIGURE_ARGS+=	--with-kml --with-xml2-config=${LOCALBASE}/bin/xml2-config
-.endif
-
-.if ${PORT_OPTIONS:MTIFF}
-LIB_DEPENDS+=		tiff:${PORTSDIR}/graphics/tiff
-CONFIGURE_ARGS+=	--with-tiff
-.endif
-
-.if ${PORT_OPTIONS:MMING}
-LIB_DEPENDS+=		ming:${PORTSDIR}/graphics/ming
-CONFIGURE_ARGS+=	--with-ming=${LOCALBASE}
-.endif
-
-.if ${PORT_OPTIONS:MPDF}
-LIB_DEPENDS+=		pdf:${PORTSDIR}/print/pdflib \
-			tiff:${PORTSDIR}/graphics/tiff
-CONFIGURE_ARGS+=	--with-pdf=${LOCALBASE} --with-tiff=${LOCALBASE} --with-png=${LOCALBASE}
+CMAKE_ARGS+=		-DWITH_KML=1
+.else
+CMAKE_ARGS+=		-DWITH_KML=0
 .endif
 
 .if ${PORT_OPTIONS:MWMS}
-CONFIGURE_ARGS+=	--with-wms --with-wmsclient
+CMAKE_ARGS+=		-DWITH_WMS=1
+.else
+CMAKE_ARGS+=		-DWITH_WMS=0
 .endif
 
 .if ${PORT_OPTIONS:MWFS}
-LIB_DEPENDS+=		curl:${PORTSDIR}/ftp/curl \
-			gdal:${PORTSDIR}/graphics/gdal
-CONFIGURE_ARGS+=	--with-wfs --with-wfsclient --with-curl=${LOCALBASE} \
-			--with-gdal=${LOCALBASE}/bin/gdal-config \
-			--with-ogr=${LOCALBASE}/bin/gdal-config
+CMAKE_ARGS+=		-DWITH_WFS=1
+.else
+CMAKE_ARGS+=		-DWITH_WFS=0
+.endif
+
+.if ${PORT_OPTIONS:MWCS}
+CMAKE_ARGS+=		-DWITH_WCS=1
+.else
+CMAKE_ARGS+=		-DWITH_WCS=0
 .endif
 
 .if ${PORT_OPTIONS:MGDAL}
 LIB_DEPENDS+=		gdal:${PORTSDIR}/graphics/gdal
-CONFIGURE_ARGS+=	--with-gdal=${LOCALBASE}/bin/gdal-config \
-			--with-ogr=${LOCALBASE}/bin/gdal-config
+CMAKE_ARGS+=		-DWITH_GDAL=1
+.else
+CMAKE_ARGS+=		-DWITH_GDAL=0
 .endif
 
 .if ${PORT_OPTIONS:MGEOS}
 LIB_DEPENDS+=		geos:${PORTSDIR}/graphics/geos
-CONFIGURE_ARGS+=	--with-geos=${LOCALBASE}/bin/geos-config
-.endif
-
-.if ${PORT_OPTIONS:MMYGIS}
-USE_MYSQL=		yes
-CONFIGURE_ARGS+=	--with-mygis=${LOCALBASE}/bin/mysql_config
+CMAKE_ARGS+=		-DWITH_GEOS=1
+.else
+CMAKE_ARGS+=		-DWITH_GEOS=0
 .endif
 
 .if ${PORT_OPTIONS:MPOSTGIS}
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libpgport.a:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 USE_PGSQL=		yes
-DEFAULT_PGSQL_VER=	83
-CONFIGURE_ARGS+=	--with-postgis=${LOCALBASE}/bin/pg_config
+CMAKE_ARGS+=		-DWITH_POSTGIS=1
+.else
+CMAKE_ARGS+=		-DWITH_POSTGIS=0
 .endif
 
 .if ${PORT_OPTIONS:MPHP}
 BUILD_DEPENDS+=		${LOCALBASE}/bin/php-config:${PORTSDIR}/lang/php5
 RUN_BUILDS+=		${LOCALBASE}/bin/php-config:${PORTSDIR}/lang/php5
-CONFIGURE_ARGS+=	--with-php=${LOCALBASE}/bin/php-config
 PHP_EXTENSION_DIR!=	${LOCALBASE}/bin/php-config --extension-dir | ${SED} -e "s,/usr/local/,,"
+CMAKE_ARGS+=		-DWITH_PHP=1
 PLIST_SUB+=		PHP_EXTENSION_DIR=${PHP_EXTENSION_DIR}
 PLIST_SUB+=		PHP=""
 .else
+CMAKE_ARGS+=		-DWITH_PHP=0
 PLIST_SUB+=		PHP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPERL}
 USES+=		perl5
+BUILD_DEPENDS=	${LOCALBASE}/bin/swig2.0:${PORTSDIR}/devel/swig20
+CMAKE_ARGS+=	-DWITH_PERL=1
 PLIST_SUB+=	PERL=""
 .else
+CMAKE_ARGS+=	-DWITH_PERL=0
 PLIST_SUB+=	PERL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCURL}
 LIB_DEPENDS+=		curl:${PORTSDIR}/ftp/curl
-CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}
+CMAKE_ARGS+=		-DWITH_CURL=1
+.else
+CMAKE_ARGS+=		-DWITH_CURL=0
 .endif
 
 .if ${PORT_OPTIONS:MFASTCGI}
 BUILD_DEPENDS+=		${LOCALBASE}/bin/cgi-fcgi:${PORTSDIR}/www/fcgi
-CONFIGURE_ARGS+=	--with-fastcgi=${LOCALBASE}
+CMAKE_ARGS+=		-DWITH_FCGI=1
+.else
+CMAKE_ARGS+=		-DWITH_FCGI=0
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-debug
+CMAKE_ARGS+=		-DCMAKE_BUILD_TYPE=Debug
+.else
+CMAKE_ARGS+=		-DCMAKE_BUILD_TYPE=Release
 .endif
 
 PROG_FILES=		legend scalebar shp2img shptree shptreetst shptreevis \
 			sortshp msencrypt tile4ms
 
-post-patch:
-	# fix broken version check for libgd
-	${REINPLACE_CMD} -e 's#-lt 28#-lt 0#' ${WRKSRC}/configure
-.if ${PORT_OPTIONS:MMING}
-	${REINPLACE_CMD} -e 's#with_ming/include#with_ming/include/ming#g' \
-		${WRKSRC}/configure
-.endif
-
 post-build:
-.if ${PORT_OPTIONS:MPERL}
-	(cd ${WRKSRC}/mapscript/perl && ${PERL5} Makefile.PL && make)
-.endif
 
 do-install:
 .for f in ${PROG_FILES}
 	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/bin
 .endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/.libs/libmapserver-${PORTVERSION}.so ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/libmapserver.so.${PORTVERSION} ${PREFIX}/lib
 
 .if ${PORT_OPTIONS:MMAPSERV}
 	${MKDIR} ${LOCALBASE}/www/apache${APACHE_VERSION}/cgi-bin/
-	${INSTALL_SCRIPT} ${WRKSRC}/.libs/mapserv ${LOCALBASE}/www/apache${APACHE_VERSION}/cgi-bin/mapserv
+	${INSTALL_SCRIPT} ${WRKSRC}/mapserv ${LOCALBASE}/www/apache${APACHE_VERSION}/cgi-bin/mapserv
 .endif
 
 .if ${PORT_OPTIONS:MPHP}
 	@${MKDIR} ${LOCALBASE}/${PHP_EXTENSION_DIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/mapscript/php/.libs/php_mapscript.so \
+	${INSTALL_PROGRAM} ${WRKSRC}/mapscript/php/php_mapscript.so \
 		${LOCALBASE}/${PHP_EXTENSION_DIR}/
-.endif
-
-.if ${PORT_OPTIONS:MPERL}
-	(cd ${WRKSRC}/mapscript/perl && make install)
-.endif
-
-.if ${PORT_OPTIONS:MPYTHON}
-	(cd ${WRKSRC}/mapscript/python && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py install)
 .endif
 
 post-install:
