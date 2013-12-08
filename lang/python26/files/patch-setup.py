@@ -1,5 +1,5 @@
---- setup.py.orig	2010-07-17 20:31:09.000000000 +0800
-+++ setup.py	2010-09-03 08:59:33.000000000 +0800
+--- ./setup.py.orig	2013-10-30 02:04:39.000000000 +1100
++++ ./setup.py	2013-12-08 18:42:28.054900011 +1100
 @@ -18,7 +18,7 @@
  from distutils.spawn import find_executable
  
@@ -73,20 +73,26 @@
              libraries = []
  
 -        elif platform in ('freebsd4', 'freebsd5', 'freebsd6', 'freebsd7', 'freebsd8'):
-+        elif platform in ('freebsd4', 'freebsd5', 'freebsd6', 'freebsd7', 'freebsd8', 'freebsd9', 'freebsd10'):
++        elif platform in ('freebsd4', 'freebsd5', 'freebsd6', 'freebsd7', 'freebsd8', 'freebsd9', 'freebsd10', 'freebsd11'):
              # FreeBSD's P1003.1b semaphore support is very experimental
              # and has many known problems. (as of June 2008)
              macros = dict(                  # FreeBSD
-@@ -1450,7 +1454,7 @@
+@@ -1449,8 +1453,12 @@
+         else:
              missing.append('linuxaudiodev')
  
-         if platform in ('linux2', 'freebsd4', 'freebsd5', 'freebsd6',
+-        if platform in ('linux2', 'freebsd4', 'freebsd5', 'freebsd6',
 -                        'freebsd7', 'freebsd8'):
-+                        'freebsd7', 'freebsd8', 'freebsd9', 'freebsd10'):
++        #############################
++        # Backport Commit: http://hg.python.org/cpython/rev/50f1922bc1d5
++        # Backport Issue: http://bugs.python.org/issue12326
++        #############################
++        if any(platform.startswith(prefix)
++               for prefix in ("linux", "freebsd", "gnukfreebsd")):
              exts.append( Extension('ossaudiodev', ['ossaudiodev.c']) )
          else:
              missing.append('ossaudiodev')
-@@ -2026,9 +2030,7 @@
+@@ -2026,9 +2034,7 @@
            ext_modules=[Extension('_struct', ['_struct.c'])],
  
            # Scripts to install

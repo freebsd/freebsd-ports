@@ -46,7 +46,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
 DATADIR=	${PREFIX}/share/${PYTHON_VERSION}
 
 PLATFORMS=	plat-freebsd6 plat-freebsd7 plat-freebsd8 plat-freebsd9 \
-		plat-freebsd10
+		plat-freebsd10 plat-freebsd11
 
 BIN_SCRIPTS=	2to3 idle pydoc smtpd.py
 BIN_FILES=	python python-shared python-config python-shared-config \
@@ -160,6 +160,8 @@ pre-patch:
 		${PATCH_WRKSRC}/Lib/plat-freebsd9
 	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
 		${PATCH_WRKSRC}/Lib/plat-freebsd10
+	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
+		${PATCH_WRKSRC}/Lib/plat-freebsd11
 	${MKDIR} ${WRKSRC} ${SHARED_WRKSRC}/Modules
 	${LN} ${PATCH_WRKSRC}/Lib/smtpd.py ${PATCH_WRKSRC}/Tools/scripts/
 .for script in ${BIN_SCRIPTS}
