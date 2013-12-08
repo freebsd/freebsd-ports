@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MySQL server status displaying dockapp
 
 USE_MYSQL=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_XORG=	xpm
 
 ALL_TARGET=	clean all

@@ -1,0 +1,27 @@
+--- Makefile.orig	2001-08-16 13:04:23.000000000 +0000
++++ Makefile
+@@ -25,20 +25,20 @@ all:	${name}
+ #	${name}
+ 
+ jDockApp.o: jDockApp/jDockApp_main.xpm jDockApp/jDockApp.c
+-	cd $*; make $*.o
++	cd $*; $(MAKE) $*.o
+ 
+ xutils.o: xutils/xutils.c
+-	cd $*; make $*.o
++	cd $*; $(MAKE) $*.o
+ 
+ jprintf.o: jDockApp/jprintf.c
+-	cd jDockApp; make jprintf.o
++	cd jDockApp; $(MAKE) jprintf.o
+ 
+ ${name}: $(OBJS) ${name}.c
+ 	$(CC) $(CFLAGS) $(SYSTEM) -o ${name} $^ $(INCDIR) $(LIBDIR) $(LIBS)
+ 
+ install: all
+ 	sudo install ${owner} ${group} -s -m 755 ./${name}  ${prefix}/${name}
+-	make clean;
++	$(MAKE) clean;
+ 
+ clean:
+ 	rm -f *.o ${name} ${name}.c *.orig *.rej *.3
