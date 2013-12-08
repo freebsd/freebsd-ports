@@ -51,6 +51,91 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6a806960-3016-44ed-8575-8614a7cb57c7">
+    <topic>rails -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>rubygem-actionmailer</name>
+	<range><lt>3.2.16</lt></range>
+      </package>
+      <package>
+	<name>rubygem-actionpack</name>
+	<range><lt>3.2.16</lt></range>
+      </package>
+      <package>
+	<name>rubygem-actionpack4</name>
+	<range><lt>4.0.2</lt></range>
+      </package>
+      <package>
+	<name>rubygem-activemodel</name>
+	<range><lt>3.2.16</lt></range>
+      </package>
+      <package>
+	<name>rubygem-activerecord</name>
+	<range><lt>3.2.16</lt></range>
+      </package>
+      <package>
+	<name>rubygem-activeresource</name>
+	<range><lt>3.2.16</lt></range>
+      </package>
+      <package>
+	<name>rubygem-activesupport</name>
+	<range><lt>3.2.16</lt></range>
+      </package>
+      <package>
+	<name>rubygem-activesupport4</name>
+	<range><lt>4.0.2</lt></range>
+      </package>
+      <package>
+	<name>rubygem-rails</name>
+	<range><lt>3.2.16</lt></range>
+      </package>
+      <package>
+	<name>rubygem-railties</name>
+	<range><lt>3.2.16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Rails weblog:</p>
+	<blockquote cite="http://weblog.rubyonrails.org/2013/12/3/Rails_3_2_16_and_4_0_2_have_been_released/">
+	  <p>Rails 3.2.16 and 4.0.2 have been released! These two
+	    releases contain important security fixes, so please upgrade
+		as soon as possible! In order to make upgrading as smooth as
+		possible, we've only included commits directly related to
+		each security issue.</p>
+	  <p>The security fixes in 3.2.16 are:</p>
+	  <ul>
+	    <li>CVE-2013-6417</li>
+	    <li>CVE-2013-4491</li>
+	    <li>CVE-2013-6415</li>
+	    <li>CVE-2013-6414</li>
+	  </ul>
+	  <p>The security fixes in 4.0.2 are:</p>
+	  <ul>
+	    <li>CVE-2013-6417</li>
+	    <li>CVE-2013-4491</li>
+	    <li>CVE-2013-6415</li>
+	    <li>CVE-2013-6414</li>
+	    <li>CVE-2013-6416</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	  <cvename>CVE-2013-6417</cvename>
+	  <cvename>CVE-2013-4491</cvename>
+	  <cvename>CVE-2013-6415</cvename>
+	  <cvename>CVE-2013-6414</cvename>
+	  <cvename>CVE-2013-6416</cvename>
+      <url>http://weblog.rubyonrails.org/2013/12/3/Rails_3_2_16_and_4_0_2_have_been_released/</url>
+    </references>
+    <dates>
+      <discovery>2013-12-03</discovery>
+      <entry>2013-12-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d9649816-5e0d-11e3-8d23-3c970e169bc2">
     <topic>drupal -- multiple vulnerabilities</topic>
     <affects>
