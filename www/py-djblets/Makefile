@@ -21,9 +21,14 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.4.2<1.5:${PORTSDIR}/www/py-django1
 		${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz
 
+USES=		shebangfix
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Djblets
+
+python_OLD_CMD=	/usr/bin/env python
+python_CMD=	${PYTHON_CMD}
+SHEBANG_FILES=	contrib/internal/build-media.py
 
 NO_STAGE=	yes
 .include <bsd.port.mk>
