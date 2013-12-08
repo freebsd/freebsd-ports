@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/radius-engine/egp/
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Maze on the Isle of Crete
 
 LICENSE=	GPLv2 CCbyNCSA3
@@ -18,9 +18,9 @@ LICENSE_FILE_CCbyNCSA3=${WRKSRC}/License.txt
 LICENSE_PERMS_CCbyNCSA3=dist-mirror pkg-mirror auto-accept
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libradius-engine.a:${PORTSDIR}/graphics/radius-engine
-LIB_DEPENDS=	lua-5.1:${PORTSDIR}/lang/lua \
-		png15:${PORTSDIR}/graphics/png \
-		physfs.1:${PORTSDIR}/devel/physfs
+LIB_DEPENDS=	liblua-5.1.so:${PORTSDIR}/lang/lua \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libphysfs.so.1:${PORTSDIR}/devel/physfs
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 USES=		pkgconfig
@@ -35,5 +35,4 @@ PLIST_FILES=	bin/${PORTNAME} \
 		%%DATADIR%%/${PORTNAME}.zip
 PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
