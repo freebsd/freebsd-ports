@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Finds name and type of a global variable
 
+NO_ARCH=	yes
+
 USES=		perl5
 USE_PERL5=	configure
 

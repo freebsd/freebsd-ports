@@ -9,10 +9,11 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-php5/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	matthew@FreeBSD.org
-COMMENT=	A set of PHP-scripts to administer LDAP over the web
+COMMENT=	PHP application to administer LDAP over the web
 
 LICENSE=	GPLv2
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 USE_PHP=	gettext ldap openssl pcre session xml iconv hash
 DEFAULT_PHP_VER=	5

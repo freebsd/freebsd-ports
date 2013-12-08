@@ -16,6 +16,7 @@ RUN_DEPENDS=	sa-update:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 OPTIONS_DEFINE=	SACOMPILE
 SACOMPILE_DESC=	Enable sa-compile support
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	sa-utils
 

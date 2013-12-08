@@ -18,6 +18,8 @@ BUILD_DEPENDS=	p5-perl-ldap>0:${PORTSDIR}/net/p5-perl-ldap \
 		p5-Net-SSLeay>0:${PORTSDIR}/security/p5-Net-SSLeay
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
+
 USES+=		perl5
 USE_PERL5=	configure
 
@@ -47,7 +49,7 @@ MAN3PREFIX=	${PREFIX}
 PLIST_SUB+=	RTHOME=share/rt${RT_VER}
 
 # Note: You can install using an arbitrary $PREFIX but only if it
-# matches the $PREFIX used to install www/rt{38,40}.  Hence ignore
+# matches the $PREFIX used to install www/rt{38,40,42}.  Hence ignore
 # $PREFIX in the environment and inherit settings from RT.pm
 
 do-configure:

@@ -15,6 +15,8 @@ LICENSE=	BSD
 BUILD_DEPENDS=	p5-BerkeleyDB>0:${PORTSDIR}/databases/p5-BerkeleyDB
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
+
 # GraphViz not required for portindex to run or generate GraphViz
 # format output: this is only needed to render the output on the same
 # machine.
