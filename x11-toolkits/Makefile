@@ -33,6 +33,7 @@
     SUBDIR += girara
     SUBDIR += gnocl
     SUBDIR += gnome-desktop-sharp20
+    SUBDIR += gnome-pty-helper
     SUBDIR += gnome-sharp20
     SUBDIR += gnomemm
     SUBDIR += gnustep-back
@@ -264,6 +265,7 @@
     SUBDIR += vdkbuilder
     SUBDIR += viewklass
     SUBDIR += vte
+    SUBDIR += vte3
     SUBDIR += vte-reference
     SUBDIR += vtkfox
     SUBDIR += wmapp

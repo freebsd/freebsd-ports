@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20131208:
+  AFFECTS: users of x11-toolkits/vte
+  AUTHOR: kwm@FreeBSD.org
+
+  The gnome-pty-helper program has been split off from the vte package
+  to allow both vte and vte3 to be installed at the same time. To update
+  after this change please do the following:
+
+  # pkg_delete -f vte\*
+   or
+  # pkg delete -fg vte\* 
+   followed by
+  # portmaster x11-toolkits/vte 
+   or 
+  # portupgrade x11-toolkits/vte
+
 20131207:
   AFFECTS: users of mail/opensmtpd
   AUTHOR: ashish@FreeBSD.org
