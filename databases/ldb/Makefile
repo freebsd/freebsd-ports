@@ -18,12 +18,10 @@ CONFLICTS=		*samba3[0-4]-3.*
 USES=			pkgconfig
 USE_PYTHON_BUILD=	-2.7
 USE_LDCONFIG=		yes
-HAS_CONFIGURE=		yes
 WAF_TOOL=		buildtools/bin/waf
-CONFIGURE_SCRIPT=	${WAF_TOOL} configure
+CONFIGURE_LOG=		bin/config.log
 
 USE_OPENLDAP=		yes
-
 
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
 PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
@@ -101,6 +99,7 @@ PLIST_FILES+=		include/pyldb.h \
 PLIST_DIRSTRY+=		%%PYTHON_SITELIBDIR%% \
 			%%PYTHON_LIBDIR%%
 
+CONFIGURE_TARGET=	configure
 ALL_TARGET=		build
 INSTALL_TARGET=		install
 
@@ -120,6 +119,23 @@ pre-configure:
 				${ECHO_CMD}; \
 				${FALSE}; \
 			fi
+
+do-configure:
+			@(cd ${CONFIGURE_WRKSRC} && \
+			    ${SET_LATE_CONFIGURE_ARGS} \
+				if ! ${SETENV} CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
+					CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+					LDFLAGS="${LDFLAGS}" \
+					INSTALL="/usr/bin/install -c ${_BINOWNGRP}" \
+					INSTALL_DATA="${INSTALL_DATA}" \
+					INSTALL_LIB="${INSTALL_LIB}" \
+					INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+					INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
+					${CONFIGURE_ENV} ${PYTHON_CMD} ${CONFIGURE_WRKSRC}/${WAF_TOOL} ${CONFIGURE_ARGS} ${CONFIGURE_TARGET}; then \
+						${ECHO_MSG} "===>  Script \"${CONFIGURE_SCRIPT}\" failed unexpectedly."; \
+						(${ECHO_CMD} ${CONFIGURE_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
+						${FALSE}; \
+				fi)
 
 pre-build:
 			-${MKDIR} ${BUILD_WRKSRC}/bin/default/man
