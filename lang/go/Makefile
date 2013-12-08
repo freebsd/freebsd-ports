@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	go
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	GOOGLE_CODE
@@ -24,24 +24,20 @@ sh_OLD_CMD=	${SETENV} bash
 sh_CMD=		${SH}
 
 WRKSRC=		${WRKDIR}/go
-USE_GCC=	any
 ONLY_FOR_ARCHS=	i386 amd64
-SUB_FILES=	pkg-message
-SUB_LIST+=	GOOBJ=${GOOBJ} \
-		ARCH=${GOARCH} \
-		GOOS=${OPSYS:L}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
 GOARCH=386
 GOOBJ=8
-PLIST_SUB+=	ENAM="@comment "
+PLIST_SUB+=	I386_ONLY=""
+PLIST_SUB+=	AMD64_ONLY="@comment "
 .else
 GOARCH=amd64
 GOOBJ=6
-PLIST_SUB+=	ENAM=""
+PLIST_SUB+=	I386_ONLY="@comment "
+PLIST_SUB+=	AMD64_ONLY=""
 .endif
 
 PLIST_SUB+=	ARCH=${GOARCH} \
@@ -57,13 +53,10 @@ do-build:
 		GOBIN= GOARCH=${GOARCH} GOOS=${OPSYS:L} \
 		${SH} make.bash
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 do-install:
-	@${CP} -a ${WRKSRC} ${PREFIX}
-.for f in go godoc gofmt
-	@${LN} -sf ${PREFIX}/go/bin/${f} ${PREFIX}/bin/${f}
+	@${CP} -a ${WRKSRC} ${STAGEDIR}${PREFIX}
+.for f in go gofmt
+	@${LN} -sf ${PREFIX}/go/bin/${f} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
 
 regression-test: build
