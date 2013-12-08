@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20131208:
+  AFFECTS: users of java/subversion-java
+  AUTHOR: ohauer@FreeBSD.org
+
+  java/subversion-java was moved to java/java-subversion.
+  Please do the following according to package manager used.
+
+  # portmaster -o java/java-subversion java/subversion-java
+    or
+  # portupgrade -fo java/java-subversion java/subversion-java
+    or
+  # pkg set -o java/subversion-java:java/java-subversion
+
+20131208:
   AFFECTS: users of x11-toolkits/vte
   AUTHOR: kwm@FreeBSD.org
 
