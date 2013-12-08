@@ -14,12 +14,7 @@ COMMENT=	The animated simulation of an ideal gas
 
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xt
-MAN1=		xgas.1
-PLIST_FILES=	bin/xgas lib/X11/app-defaults/XGas
-
-NO_STAGE=	yes
-post-install:
-	@${CHMOD} 755 ${PREFIX}/bin/xgas
-	@${CHOWN} bin:bin ${PREFIX}/bin/xgas
+PLIST_FILES=	bin/xgas lib/X11/app-defaults/XGas \
+		man/man1/xgas.1.gz
 
 .include <bsd.port.mk>
