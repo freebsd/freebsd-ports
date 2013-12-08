@@ -16,8 +16,6 @@ COMMENT=	Required by many plugins for compatibility with SquirrelMail
 USES=		perl5
 USE_PERL5=	run
 
-CONFLICTS=	squirrelmail-compatibility-plugin-1.*
-
 NO_STAGE=	yes
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
 .include <bsd.port.mk>
