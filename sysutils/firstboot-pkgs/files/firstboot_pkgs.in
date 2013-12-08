@@ -44,7 +44,7 @@ firstboot_pkgs_run()
 	nscriptsn=`ls /usr/local/etc/rc.d | wc -l`
 
 	# If we have more scripts, request a reboot
-	if [ $nscriptso -ne $nscriptso ]; then
+	if [ $nscriptsn -ne $nscriptso ]; then
 		echo "Requesting reboot after installing packages with rc.d scripts."
 		touch ${firstboot_sentinel}-reboot
 	fi
