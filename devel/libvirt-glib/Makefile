@@ -16,6 +16,7 @@ USES=	pathfix pkgconfig gmake
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	intltool introspection
+USE_PYTHON=	-2.7
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 CONFIGURE_ARGS+=	--enable-introspection
