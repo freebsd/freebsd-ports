@@ -48,8 +48,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/spectrwm.conf ${STAGEDIR}${PREFIX}/etc/spectrwm.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/spectrwm.conf ${STAGEDIR}${PREFIX}/etc/spectrwm.conf
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	.for conf in ${PORTEXAMPLES}
-		${INSTALL_DATA} ${WRKSRC}/${conf} ${STAGEDIR}${EXAMPLESDIR}
-	.endfor
+.for conf in ${PORTEXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/${conf} ${STAGEDIR}${EXAMPLESDIR}
+.endfor
 
 .include <bsd.port.mk>
