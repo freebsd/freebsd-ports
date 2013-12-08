@@ -14,6 +14,7 @@ LIB_DEPENDS=	statgrab.8:${PORTSDIR}/devel/libstatgrab
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	INSTALL="${INSTALL}" INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 PLIST_FILES=	bin/freecolor
+USES=		pkgconfig
 
 .if !defined(WITHOUT_SETGID)
 BINGRP?=	kmem
