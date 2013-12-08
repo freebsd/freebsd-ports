@@ -9,4 +9,4 @@ diff -ruN wrapper.orig/boodler wrapper/boodler
 +export BOODLER_SOUND_PATH=${booroot}/boodler-snd/
 +export BOODLER_EFFECTS_PATH=${booroot}/effects/
 +
-+python ${booroot}/boodler.py "$@"
++python2 ${booroot}/boodler.py "$@"
