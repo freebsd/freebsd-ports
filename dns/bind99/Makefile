@@ -170,14 +170,14 @@ CONFIGURE_ARGS+=        --without-gssapi
 .endif
 
 .if ${PORT_OPTIONS:MREPLACE_BASE}
-.if ${OSVERSION} >= 1000100
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
 IGNORE=		REPLACE_BASE option is not supported on this release
 .endif
 PKGNAMESUFFIX=	-base
 PREFIX=		/usr
 BIND_DESTETC=	/etc/namedb
 .else
-.if ${OSVERSION} >= 1000100
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
 BIND_DESTETC=	${PREFIX}/etc/namedb
 .else
 BIND_DESTETC=	${PREFIX}/etc
@@ -188,7 +188,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--sysconfdir=${BIND_DESTETC}
 PLIST_SUB+=	BIND_DESTETC="${BIND_DESTETC}"
 
-.if ${OSVERSION} >= 1000100
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
 PLIST_SUB+=	NOBASE=""
 .else
 PLIST_SUB+=	NOBASE="@comment "
@@ -269,7 +269,7 @@ post-install:
 	${CP} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/FAQ \
 		${WRKSRC}/HISTORY ${WRKSRC}/README ${DOCSDIR}/
 .endif
-.if ${OSVERSION} >= 1000100
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
 .for FILE in named named.conf
 	${SED} -e 's#%%PREFIX%%#${PREFIX}#g' \
 		-e 's#%%BIND_DESTETC%%#${BIND_DESTETC}#g' \
