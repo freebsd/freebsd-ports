@@ -842,6 +842,7 @@
     SUBDIR += sarien
     SUBDIR += sauerbraten
     SUBDIR += scare
+    SUBDIR += schwarzweiss
     SUBDIR += scid
     SUBDIR += scorched3d
     SUBDIR += scourge
