@@ -1,5 +1,5 @@
-SHA256 (exim/exim-4.80.1.tar.bz2) = 9565b10f06be224fd03adafae2e07e6fdbb479f8873e3894ddb13f98eeebe78f
-SIZE (exim/exim-4.80.1.tar.bz2) = 1650082
+SHA256 (exim/exim-4.82.tar.bz2) = 46dedfb6ced2aa4a1eddc5d8ce46a790a961508bd389faa2e215302ae80d91cf
+SIZE (exim/exim-4.82.tar.bz2) = 1722771
 SHA256 (exim/sa-exim-4.2.tar.gz) = 72e0a735547f18b05785e6c58a71d24623858f0f5234a5dc0e24cb453999e99a
 SIZE (exim/sa-exim-4.2.tar.gz) = 66575
 SHA256 (exim/spamooborona1024-src-3.2.tar.gz) = ab22a430f3860460045f6b213c68c89700a0cd10cbb6c7a808ece326c53787ee
