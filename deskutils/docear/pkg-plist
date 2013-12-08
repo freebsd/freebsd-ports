@@ -102,6 +102,7 @@ share/java/docear/docear.sh
 share/java/docear/docearConsole.exe
 share/java/docear/framework.jar
 share/java/docear/freeplanelauncher.jar
+share/java/docear/gitinfo.txt
 share/java/docear/init.xargs
 share/java/docear/license.txt
 share/java/docear/plugins/org.docear.plugin.bibtex/lib/JabRef-2.7.1.jar
@@ -192,6 +193,7 @@ share/java/docear/plugins/org.freeplane.plugin.svg/META-INF/MANIFEST.MF
 share/java/docear/plugins/org.freeplane.plugin.workspace/lib/plugin.jar
 share/java/docear/plugins/org.freeplane.plugin.workspace/META-INF/MANIFEST.MF
 share/java/docear/props.xargs
+share/java/docear/resources/gitinfo.properties
 share/java/docear/resources/ortho/dictionary_de.ortho
 share/java/docear/resources/ortho/dictionary_en.ortho
 share/java/docear/resources/ortho/dictionary_fr.ortho
