@@ -13,7 +13,7 @@ COMMENT=	Various clock displays for Gnome 2.x
 
 RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
-USE_PYTHON=	yes
+USE_PYTHON=	2
 
 SUB_FILES=	pkg-message
 SUB_LIST=	NAME="${NAME}"
@@ -25,7 +25,7 @@ LANG=		de fr pt sq sr sr@Latn sv
 
 NO_STAGE=	yes
 do-build:
-	@${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
+	@${PYTHON_CMD} ${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
 	@${PATCH} ${WRKSRC}/Clock/__init__.py < ${FILESDIR}/Clock::__init__.py
 
 do-install:
