@@ -22,4 +22,9 @@ USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/lang/c++
 
 NO_STAGE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|COMMAND python|COMMAND "${PYTHON_CMD}"|' \
+		${WRKSRC}/CMakeLists.txt
+
 .include <bsd.port.mk>

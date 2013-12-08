@@ -20,7 +20,7 @@ GH_ACCOUNT=	waitman
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	41691d5
 
-USE_PYTHON=	yes
+USE_PYTHON_BUILD=	2
 
 NO_STAGE=	yes
 .include <bsd.port.mk>
