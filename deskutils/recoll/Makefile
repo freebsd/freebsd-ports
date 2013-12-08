@@ -68,6 +68,9 @@ post-patch:
 		-e 's|-pthread|${PTHREAD_LIBS}|' ${WRKSRC}/mk/${OPSYS}
 	@${REINPLACE_CMD} -e 's|@NOCMDLINE@||g' \
 		${WRKSRC}/recollinstall.in
+	@${REINPLACE_CMD} -e 's|python setup.py|${PYTHON_CMD} setup.py|' \
+		${WRKSRC}/python/recoll/Makefile \
+		${WRKSRC}/recollinstall.in
 
 post-configure:
 .if ${PORT_OPTIONS:MQT4}
