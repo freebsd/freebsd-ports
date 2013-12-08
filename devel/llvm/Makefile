@@ -25,9 +25,19 @@ DEPRECATED=	Migrate to devel/llvm32 or newer
 EXPIRATION_DATE=	2013-11-04
 
 GNU_CONFIGURE=	yes
-USES=		gmake perl5
+USES=		gmake perl5 shebangfix
 USE_LDCONFIG=	yes
-USE_PYTHON_BUILD=	yes
+USE_PYTHON_BUILD=	2
+
+python_OLD_CMD=	/usr/bin/env python
+python_CMD=	/usr/bin/env python2
+SHEBANG_FILES=	test/Scripts/coff-dump.py test/Scripts/elf-dump \
+		test/Scripts/macho-dumpx lib/Target/NVPTX/gen-register-defs.py \
+		utils/clang-parse-diagnostics-file utils/release/findRegressions-nightly.py \
+		utils/release/findRegressions-simple.py utils/Misc/zkill \
+		utils/llvm-lit/llvm-lit.in utils/Target/ARM/analyze-match-table.py \
+		utils/llvm-build/llvm-build utils/lit/lit.py utils/lit/lit/ProgressBar.py \
+		utils/lit/lit/main.py
 
 # Suggested tweaks from http://llvm.org/docs/Packaging.html
 CONFIGURE_ARGS+=	--enable-shared
