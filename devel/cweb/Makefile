@@ -36,7 +36,5 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/cwebman.tex ${STAGEDIR}${DOCSDIR}
 .endif
-	@${ECHO}
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
