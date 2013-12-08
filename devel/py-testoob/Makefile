@@ -29,7 +29,7 @@ NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MTWISTED}
-USE_TWISTED=	yes
+USES+=		twisted
 .endif
 
 .if ${PORT_OPTIONS:MHTML}

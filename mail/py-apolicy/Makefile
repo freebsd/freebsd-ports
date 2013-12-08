@@ -16,9 +16,9 @@ COMMENT=	An ACL system for Postfix, as a policy daemon
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/spf.py:${PORTSDIR}/mail/py-spf \
 		${PYTHON_SITELIBDIR}/IPy.py:${PORTSDIR}/net-mgmt/py-ipy
 
+USES=		twisted
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
-USE_TWISTED=	yes
 NO_BUILD=	yes
 USE_RC_SUBR=	apolicyd
 

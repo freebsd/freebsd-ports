@@ -21,7 +21,7 @@ LICENSE=	BSD
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Vertex
-USE_TWISTED=	yes
+USES=		twisted
 
 NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -192,19 +192,6 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #
 # PYEASYINSTALL_CMD - Full file path to easy_install command.
 #					  default: ${LOCALBASE}/bin/easy_install-${PYTHON_VER}
-#
-# USE_TWISTED		- If this option is just yes then build and run
-#					  the dependence to twistedCore is added. Alternatively
-#					  here can be listed specific components of twisted
-#					  framework, available components are: conch, lore,
-#					  mail, names, news, runner, web, web2 and words.
-#					  Note that core component is required for any of
-#					  this optional components.
-#
-# USE_TWISTED_BUILD	- Same as previous but add only build dependency.
-#
-# USE_TWISTED_RUN	- Same as USE_TWISTED but add only run dependency.
-#
 
 _PYTHON_PORTBRANCH=		2.7
 _PYTHON_ALLBRANCHES=	2.7 2.6 3.3 3.2 3.1	# preferred first
@@ -620,79 +607,8 @@ PLIST_SUB+=		PYTHON_INCLUDEDIR=${PYTHONPREFIX_INCLUDEDIR:S;${PREFIX}/;;} \
 				PYTHON_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;} \
 				PYTHON_VERSION=${PYTHON_VERSION}
 
-# Twisted specific routines
-.if defined(USE_TWISTED) || defined(USE_TWISTED_BUILD) || defined(USE_TWISTED_RUN)
-
-.if defined(USE_TWISTED_BUILD) && defined(USE_TWISTED_RUN)
-. if ${USE_TWISTED_BUILD} != ${USE_TWISTED_RUN}
-IGNORE=	: USE_TWISTED_BUILD and USE_TWISTED_RUN must have equal values
-. endif
-.endif
-
-.if defined(USE_TWISTED)
-TWISTED_BUILD_DEP=	yes
-TWISTED_RUN_DEP=	yes
-.else
-. if defined(USE_TWISTED_BUILD)
-TWISTED_BUILD_DEP=	yes
-USE_TWISTED=		${USE_TWISTED_BUILD}
-. endif
-. if defined(USE_TWISTED_RUN)
-TWISTED_RUN_DEP=	yes
-USE_TWISTED=		${USE_TWISTED_RUN}
-. endif
-.endif
-
-.if ${USE_TWISTED} == "20" || ${USE_TWISTED} == "yes"
-USE_TWISTED_VER=	${USE_TWISTED}
-. if defined(TWISTED_BUILD_DEP)
-BUILD_DEPENDS+=		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twistedCore
-. endif
-. if defined(TWISTED_RUN_DEP)
-RUN_DEPENDS+=		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twistedCore
-. endif
-.else
-USE_TWISTED_VER=	20
-# Checking for twisted components
-_TWISTED_COMPONENTS?=	conch lore mail names news runner web web2 words
-
-# XXX Should be here other dependencies types?
-conch_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/conch/__init__.py:${PORTSDIR}/security/py-twistedConch
-lore_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/lore/__init__.py:${PORTSDIR}/textproc/py-twistedLore
-mail_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/mail/__init__.py:${PORTSDIR}/mail/py-twistedMail
-names_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/names/__init__.py:${PORTSDIR}/dns/py-twistedNames
-news_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/news/__init__.py:${PORTSDIR}/news/py-twistedNews
-pair_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/pair/__init__.py:${PORTSDIR}/net/py-twistedPair
-runner_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/runner/__init__.py:${PORTSDIR}/devel/py-twistedRunner
-web2_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/web2/__init__.py:${PORTSDIR}/www/py-twistedWeb2
-web_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/web/__init__.py:${PORTSDIR}/www/py-twistedWeb
-words_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/words/__init__.py:${PORTSDIR}/net-im/py-twistedWords
-
-.for component in ${_TWISTED_COMPONENTS}
-_COMP_TEST=	${USE_TWISTED:M${component}}
-. if ${_COMP_TEST:S/${component}//}!=${_COMP_TEST:S/  / /g}
-.  if defined(TWISTED_BUILD_DEP)
-BUILD_DEPENDS+=	${${component}_DEPENDS}
-.  endif
-.  if defined(TWISTED_RUN_DEP)
-RUN_DEPENDS+=	${${component}_DEPENDS}
-.  endif
-. endif
-.endfor
-
-# Implicit dependency from core
-.if defined(TWISTED_BUILD_DEP)
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twistedCore
-.endif
-.if defined(TWISTED_RUN_DEP)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twistedCore
-.endif
-
-.endif
-
-.endif # defined(USE_TWISTED)
-
 # XXX Hm, should I export some of the variables above to *_ENV?
+
 
 # If multiple Python versions are installed and cmake is used, it might
 # happen that a cmake-enabled port using find_package(PythonLibs) and

@@ -16,9 +16,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyparsing.py:${PORTSDIR}/devel/py-parsing \
 
 GITVERSION=	aad8ded658b36337a08aeb7402b6b67eb8771bea
 
-USES=		gettext
+USES=		gettext twisted
 USE_PYTHON=	yes
-USE_TWISTED=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGVERSION=	0.0.0
 PYDISTUTILS_PKGNAME=	ldaptor

@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyptlib>=0.0.5:${PORTSDIR}/security/py-pyptl
 		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.1:${PORTSDIR}/security/py-pycrypto
 
 USE_PYTHON=	yes
-USE_TWISTED=	yes
+USES=		twisted
 USE_PYDISTUTILS=easy_install
 SUB_FILES=	pkg-message
 PYDISTUTILS_PKGNAME=obfsproxy

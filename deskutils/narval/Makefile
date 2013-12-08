@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xmlrpclib.py:${PORTSDIR}/net/py-xmlrpclib \
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_TWISTED=	yes
+USES=		twisted
 USE_GNOME=	pygtk2
 
 NO_STAGE=	yes

@@ -13,12 +13,11 @@ COMMENT=	${${PORTNAME}_DESC}
 
 CONFLICTS_INSTALL=	kdegames-4.[0-6].*
 
-USES=		cmake:outsource
+USES=		cmake:outsource twisted:run
 USE_KDE4=	kdehier kdelibs kdeprefix pykde4 automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_PYTHON=	yes
 USE_SQLITE=	3
-USE_TWISTED_RUN=	yes
 USE_XZ=		yes
 CMAKE_ARGS=	-DINSTALL_KAJONGG:BOOL=TRUE
 

@@ -13,7 +13,7 @@ COMMENT=	HTTP XMPP client interface
 
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
-USE_TWISTED=	words web conch names
+USES=		twisted:words,web,conch,names
 
 PORTDOCS=	README.txt INSTALL.txt PKG-INFO
 
