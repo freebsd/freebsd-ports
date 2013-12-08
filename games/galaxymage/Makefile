@@ -15,8 +15,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/_numpy.so:${PORTSDIR}/math/py-numeric 
 		${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl
 
 USE_PYTHON=	yes
-USE_TWISTED=	yes
-USES=		gettext
+USES=		gettext twisted
 NO_BUILD=	yes
 
 NO_STAGE=	yes

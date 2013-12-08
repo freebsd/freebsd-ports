@@ -19,10 +19,9 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cerealizer/__init__.py:${PORTSDIR}/security/py
 		${PYTHON_SITELIBDIR}/ogg/__init__.py:${PORTSDIR}/audio/py-vorbis
 
 USE_BZIP2=	yes
-USES=		gettext
+USES=		gettext twisted
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_TWISTED=	yes
 USE_GL=		glew
 USE_GMAKE=	yes
 

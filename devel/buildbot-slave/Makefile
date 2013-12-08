@@ -18,7 +18,7 @@ TEST_DEPENDS:=	${RUN_DEPENDS} \
 PROJECTHOST=		buildbot
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
-USE_TWISTED_RUN=	runner
+USES=			twisted:run,runner
 
 MAKE_ENV+=		NO_INSTALL_REQS=1
 
