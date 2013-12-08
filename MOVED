@@ -5295,3 +5295,4 @@ science/omnetpp||2013-12-05|Has expired: depends on expired textproc/libxml
 textproc/libxml||2013-12-05|Has expired: No release since 2002, no support from upstream
 deskutils/taskjuggler|deskutils/rubygem-taskjuggler|2013-12-05|Rename to match our rubygems naming
 www/clickheat||2013-12-07|Has expired: No more activity since 2011
+security/pdfcrack||2013-12-08|Has expired: Not active since several years
