@@ -4,6 +4,6 @@
 %%SQUIRRELDIR%%/plugins/web_search/hooks.php
 %%SQUIRRELDIR%%/plugins/web_search/setup.php
 %%SQUIRRELDIR%%/plugins/web_search/version
-%%SQUIRRELDIR%%/plugins/web_search/web_search.conf.php.dist
+%%SQUIRRELDIR%%/plugins/web_search/web_search.conf.php.sample
 @dirrm %%SQUIRRELDIR%%/plugins/web_search/
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin web_search; fi

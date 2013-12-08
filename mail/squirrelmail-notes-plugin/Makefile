@@ -4,19 +4,13 @@
 PORTNAME=		notes
 PORTVERSION=	1.2
 PORTREVISION=	1
-CATEGORIES=		mail www
-MASTER_SITES=	http://www.squirrelmail.org/plugins/
-PKGNAMEPREFIX=	squirrelmail-
-PKGNAMESUFFIX=	-plugin
 DISTNAME=		${PORTNAME}.${PORTVERSION}-1.4.0
-DIST_SUBDIR=	squirrelmail
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Allows you to create notes
 
-USES=		perl5
-USE_PERL5=	install
 USE_SM_COMPAT=	yes
+USE_GENERIC_PKGMESSAGE=	yes
 
 NO_STAGE=	yes
 

@@ -10,12 +10,11 @@ MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Provides buttons with customizable action (for reporting spam, etc.)
 
 USE_SM_COMPAT=	yes
-USES=		perl5
-USE_PERL5=	run
 
 SQUIRREL_PLUGIN_NAME=	${PORTNAME:S/-/_/}
 
 NO_STAGE=	yes
+.include <bsd.port.pre.mk>
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
 
 post-extract:
@@ -27,4 +26,4 @@ post-extract:
 	@${MV} ${WRKSRC}/${_SMSRCDIR}/docs ${WRKSRC}/${_SMSRCDIR}/doc
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
