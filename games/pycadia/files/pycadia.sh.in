@@ -1,6 +1,7 @@
 #!/bin/sh
 #
 # $FreeBSD$
+#
 
 cd "%%DATADIR%%"
-./pycadia.py
+exec %%PYTHON_CMD%% ./pycadia.py "${@}"

@@ -1,15 +1,15 @@
-# Created by: nemysis@gmx.ch
+# Created by: nemysis <nemysis@gmx.ch>
 # $FreeBSD$
 
 PORTNAME=	pycadia
 PORTVERSION=	0.5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games python
 MASTER_SITES=	${MASTER_SITE_GENTOO:S/%SUBDIR%/distfiles/} \
-		SF/nemysisfreebsdp/
+		SF/nemysisfreebsdp/games/
 DIST_SUBDIR=	python
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Home to vector gaming, Python style
 
 LICENSE=	GPLv2
@@ -20,35 +20,43 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GNOME=	pygtk2 libgnomeui
 USE_PYTHON=	yes
-NO_BUILD=	yes
 
-PLIST_FILES=	bin/${PORTNAME} \
-		share/pixmaps/${PORTNAME}.png
-
-PORTDATA=	*
 PORTDOCS=	CHANGELOG README TODO gravity.txt
 
-DESKTOP_ENTRIES="Pycadia" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" ${FALSE}
+OPTIONS_DEFINE=	DOCS
+
+DESKTOP_ENTRIES="Pycadia" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 SUB_FILES=	${PORTNAME}.sh
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.bak" -delete
+
+do-build:
+	@${PYTHON_CMD} -m compileall ${WRKSRC}
+	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
+	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|' \
+		${WRKDIR}/${PORTNAME}.sh
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
-	${MKDIR} ${DATADIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${DATADIR})
-	@(cd ${DATADIR} && ${CHMOD} 555 ${PORTNAME}.py spacewarpy.py vektoroids.py)
-	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.conf ${DATADIR}
+.for d in glade pixmaps sounds
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
+.endfor
 
-	${INSTALL_DATA} ${WRKSRC}/pixmaps/logo1.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
+.for d in  *.py *.pyc *.pyo
+	@(cd ${WRKSRC} ; ${INSTALL_SCRIPT} ${d} ${STAGEDIR}${DATADIR})
+.endfor
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${DOCSDIR}
-.endif
+	@(cd ${STAGEDIR}${DATADIR} && ${CHMOD} 555 ${PORTNAME}.py spacewarpy.py vektoroids.py)
+	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.conf ${STAGEDIR}${DATADIR}
+
+	${INSTALL_DATA} ${WRKSRC}/pixmaps/pysteroids.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
