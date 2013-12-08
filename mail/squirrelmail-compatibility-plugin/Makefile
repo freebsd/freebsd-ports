@@ -14,8 +14,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Required by many plugins for compatibility with SquirrelMail
 
 USES=		perl5
-USE_PERL5=	run
+USE_PERL5=	install
 
 NO_STAGE=	yes
+
+.include <bsd.port.pre.mk>
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
