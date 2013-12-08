@@ -5,7 +5,7 @@
  	LINKFLAGS="-lkvm -ldevstat"
  	;;
 -freebsd[5-9].*)
-+freebsd[5-9].* | freebsd10.*)
++freebsd[5-9].*|freebsd1[0-9].*)
  
  cat >>confdefs.h <<\_ACEOF
  #define ALLBSD
