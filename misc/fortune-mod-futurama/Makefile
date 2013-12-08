@@ -16,16 +16,11 @@ SUB_FILES=	pkg-message
 PLIST_FILES=	share/games/fortune/futurama share/games/fortune/futurama.dat
 PLIST_DIRS=	share/games/fortune share/games
 
-NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC} && /usr/games/strfile futurama
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/games
-	@${MKDIR} ${PREFIX}/share/games/fortune
-	@${INSTALL_DATA} ${WRKSRC}/futurama* ${PREFIX}/share/games/fortune
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/games/fortune
+	${INSTALL_DATA} ${WRKSRC}/futurama* ${STAGEDIR}${PREFIX}/share/games/fortune
 
 .include <bsd.port.mk>
