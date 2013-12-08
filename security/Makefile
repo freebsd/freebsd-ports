@@ -828,7 +828,6 @@
     SUBDIR += radiusniff
     SUBDIR += rainbowcrack
     SUBDIR += ranpwd
-    SUBDIR += rarcrack
     SUBDIR += ratproxy
     SUBDIR += rats
     SUBDIR += razorback-api
