@@ -9,19 +9,16 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Geek Code Generator
 
+LICENSE=	GPLv2
+
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 PLIST_FILES=	bin/geekcode
 PORTDOCS=	geekcode.txt
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/geekcode ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/geekcode.txt ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/geekcode ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/geekcode.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
