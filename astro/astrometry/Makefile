@@ -35,6 +35,10 @@ BROKEN=		Does not compile on ia64, powerpc, or sparc64
 post-patch:
 	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
 		${WRKSRC}/util/cairoutils.c
+	${REINPLACE_CMD} -e 's|python setup|${PYTHON_CMD} setup|' \
+		${WRKSRC}/util/Makefile \
+		${WRKSRC}/libkd/Makefile \
+		${WRKSRC}/blind/Makefile
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
