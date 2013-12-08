@@ -1,6 +1,0 @@
-bin/starfighter
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-share/pixmaps/starfighter.png
-%%DATADIR%%/starfighter.pak
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
