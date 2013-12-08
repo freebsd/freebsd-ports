@@ -1,0 +1,20 @@
+--- pvm++/internal.ii.orig	2013-11-16 19:59:44.000000000 +0100
++++ pvm++/internal.ii	2013-11-16 20:03:32.000000000 +0100
+@@ -25,7 +25,7 @@
+ namespace Pvm
+ {
+ 
+-  namespace Internal
++  namespace Internal_
+   {
+     
+     inline
+@@ -57,7 +57,7 @@
+       return AccessPrivate::Select (StructSet, EndSec, EnduSec);
+     }   
+ 
+-  } // namespace Internal
++  } // namespace Internal_
+ 
+ } // namespace Pvm
+ 

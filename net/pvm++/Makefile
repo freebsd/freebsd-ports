@@ -10,12 +10,11 @@ MASTER_SITES=	SF/pvm-plus-plus/pvm-plus-plus/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++-Library for PVM
 
-BROKEN=		Fails to patch
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpvm3.a:${PORTSDIR}/net/pvm
 
+USES=		gmake
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
+USE_GCC=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pvm-incs=${LOCALBASE}/include \
 		--with-pvm-libs=${LOCALBASE}/lib
