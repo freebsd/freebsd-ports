@@ -640,7 +640,6 @@
     SUBDIR += pbc
     SUBDIR += pbnj
     SUBDIR += pcsc-tools
-    SUBDIR += pdfcrack
     SUBDIR += pear-Auth
     SUBDIR += pear-Auth_HTTP
     SUBDIR += pear-Auth_OpenID
