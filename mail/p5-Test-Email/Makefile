@@ -17,6 +17,8 @@ BUILD_DEPENDS=	p5-Mail-POP3Client>=2:${PORTSDIR}/mail/p5-Mail-POP3Client \
 		p5-Test-Simple>=0.7:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
+
 USES=		perl5
 USE_PERL5=	configure
 

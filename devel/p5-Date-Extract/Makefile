@@ -15,6 +15,8 @@ BUILD_DEPENDS=	p5-DateTime-Format-Natural>0:${PORTSDIR}/devel/p5-DateTime-Format
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-MockTime>=0:${PORTSDIR}/devel/p5-Test-MockTime
 
+NO_ARCH=	yes
+
 USES=		perl5
 USE_PERL5=	configure
 

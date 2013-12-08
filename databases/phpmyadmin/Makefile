@@ -10,6 +10,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	A set of PHP-scripts to manage MySQL over the web
 
+NO_ARCH=	yes
 LICENSE=	GPLv2
 
 USE_XZ=		yes

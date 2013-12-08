@@ -13,6 +13,7 @@ COMMENT=	Just depend on a configurable, arbitrary set of other ports
 
 LICENSE=	BSD
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	${PORTNAME}   \
 		${PORTNAME}.1

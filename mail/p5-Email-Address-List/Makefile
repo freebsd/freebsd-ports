@@ -13,6 +13,8 @@ COMMENT=	RFC-close address list parsing
 BUILD_DEPENDS=	p5-Email-Address>0:${PORTSDIR}/mail/p5-Email-Address
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
+
 USES=		perl5
 USE_PERL5=	configure
 
