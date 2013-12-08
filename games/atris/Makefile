@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.sourcefiles.org/Games/Arcade/Block_Based/Tetris/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Atris: Alizarin Tetris
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_SDL=	sdl ttf
 
 GNU_CONFIGURE=	yes
@@ -24,6 +24,9 @@ post-patch:
 # Fix path to ${DATADIR}
 	${REINPLACE_CMD} -e 's|\(GAME_INSTALLDIR=\).*|\1"${DATADIR}"|' \
 			${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+# Fix install target to use gmake
+	${REINPLACE_CMD} -e '/^install:/,/^$$/s/make/$$(MAKE)/' \
+		${WRKSRC}/Makefile.in
 
 # Fix SDL include statement
 .for f in *.c *.h
