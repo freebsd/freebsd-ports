@@ -27,6 +27,7 @@ PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 REINPLACE_ARGS=	-i ''
 
 post-patch:
+	@${REINPLACE_CMD} -e '1 s|${SETENV} python|&2|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/deps/v8/build/common.gypi \
 		${WRKSRC}/deps/v8/tools/gyp/v8.gyp
