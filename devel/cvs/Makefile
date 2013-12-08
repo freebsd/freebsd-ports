@@ -21,7 +21,7 @@ MAKE_ARGS=	DESTDIR=${STAGEDIR}${PREFIX}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 900000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
 BROKEN=	does not link
 .endif
 
