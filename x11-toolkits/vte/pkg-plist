@@ -7,7 +7,7 @@ include/vte-0.0/vte/vtedeprecated.h
 include/vte-0.0/vte/vtepty.h
 include/vte-0.0/vte/vtetypebuiltins.h
 include/vte-0.0/vte/vteversion.h
-lib/libvte.a
+lib/girepository-1.0/Vte-0.0.typelib
 lib/libvte.la
 lib/libvte.so
 lib/libvte.so.9
@@ -17,7 +17,7 @@ lib/vte-0.0/osc
 lib/vte-0.0/slowcat
 lib/vte-0.0/window
 libdata/pkgconfig/vte.pc
-libexec/gnome-pty-helper
+share/gir-1.0/Vte-0.0.gir
 share/locale/am/LC_MESSAGES/vte-0.0.mo
 share/locale/ang/LC_MESSAGES/vte-0.0.mo
 share/locale/ar/LC_MESSAGES/vte-0.0.mo
