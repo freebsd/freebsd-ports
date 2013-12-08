@@ -7,15 +7,18 @@ CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
 DISTFILES=	${PYTHON_DISTFILE}
+DIST_SUBDIR=	python
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Interpreted object-oriented programming language
 
-DIST_SUBDIR=	python
-GNU_CONFIGURE=	yes
+LICENSE=	PSFL
+
+GNU_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	../configure # must be relative
-CONFIGURE_ENV=	SVNVERSION="echo freebsd" ac_cv_opt_olimit_ok=no
-MAKE_ENV=	VPATH="${PYTHON_WRKSRC}"
+CONFIGURE_ENV=		SVNVERSION="echo freebsd" ac_cv_opt_olimit_ok=no
+MAKE_ENV=		VPATH="${PYTHON_WRKSRC}"
+
 INSTALL_TARGET=	altinstall
 MAN1=		${PYTHON_VERSION}.1
 
