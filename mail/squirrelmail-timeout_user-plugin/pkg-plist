@@ -5,6 +5,6 @@
 %%SQUIRRELDIR%%/plugins/timeout_user/setup.php
 %%SQUIRRELDIR%%/plugins/timeout_user/INSTALL
 %%SQUIRRELDIR%%/plugins/timeout_user/functions.php
-%%SQUIRRELDIR%%/plugins/timeout_user/config.php
+%%SQUIRRELDIR%%/plugins/timeout_user/config.php.sample
 @dirrm %%SQUIRRELDIR%%/plugins/timeout_user
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi

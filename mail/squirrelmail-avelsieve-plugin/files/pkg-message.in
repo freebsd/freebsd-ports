@@ -1,8 +1,8 @@
 *** IMPORTANT *** IMPORTANT *** IMPORTANT ***
 
 To configure the plugin, please copy
-    %%PREFIX%%/%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/config/config_sample.php to
-    %%PREFIX%%/%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/config/config.php
+    %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/config/config_sample.php to
+    %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/config/config.php
 then review, and modify, its content for your environment.
 
 *** IMPORTANT *** IMPORTANT *** IMPORTANT ***

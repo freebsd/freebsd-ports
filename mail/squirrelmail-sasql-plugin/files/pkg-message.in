@@ -1,5 +1,0 @@
-For the port to work properly you must copy the file
-%%SQUIRRELDIR%%/plugins/sasql/sasql_conf.php.dist
-to
-%%SQUIRRELDIR%%/plugins/sasql/sasql_conf.php
-and edit the configuration to meet your needs.

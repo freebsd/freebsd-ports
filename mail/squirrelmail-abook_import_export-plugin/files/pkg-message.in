@@ -1,7 +1,7 @@
 ================================================================
 You may want to copy the file
-%%PREFIX%%/%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/config_default.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/config_default.php
 to
-%%PREFIX%%/%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/config.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/config.php
 and edit the configuration to meet your needs.
 ================================================================

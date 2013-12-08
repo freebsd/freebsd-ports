@@ -1,5 +1,0 @@
-For the port to work properly you must copy the file
-%%PREFIX%%/%%SQUIRRELDIR%%/plugins/web_search/web_search.conf.php.dist
-to
-%%PREFIX%%/%%SQUIRRELDIR%%/plugins/web_search/config.php
-and edit the configuration to meet your needs.

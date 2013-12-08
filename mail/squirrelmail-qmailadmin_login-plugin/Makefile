@@ -4,15 +4,17 @@
 PORTNAME=		qmailadmin_login
 PORTVERSION=	1.1
 PORTREVISION=	2
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1.4.3
-DIST_SUBDIR=	squirrelmail
+DISTNAME=		${PORTNAME}-${PORTVERSION}-1.4.3
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Using the QmailAdmin cgi interface from SquirrelMail
 
-SQUIRREL_PLUGIN_NAME=	${PORTNAME}
+RUN_DEPENDS=	${PREFIX}/www/cgi-bin.default/qmailadmin/qmailadmin:${PORTSDIR}/mail/qmailadmin
 
+USE_GENERIC_PKGMESSAGE=	yes
 
 NO_STAGE=	yes
+
+.include <bsd.port.pre.mk>
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
