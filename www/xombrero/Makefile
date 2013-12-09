@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xombrero
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.3
 CATEGORIES=	www
 MASTER_SITES=	https://opensource.conformal.com/snapshots/xombrero/
 EXTRACT_SUFX=	.tgz
@@ -19,19 +19,14 @@ USES=		pkgconfig perl5
 USE_PERL5=	build
 INSTALLS_ICONS=	yes
 
-MAN1=		xombrero.1
-PORTEXAMPLES=	favorites playflash.sh xombrero.conf
-
 BUILD_WRKSRC=	${WRKSRC}/freebsd
 
-OPTIONS_DEFINE=	EXAMPLES
 OPTIONS_SINGLE=	GTK
 OPTIONS_SINGLE_GTK=GTK2 GTK3
-OPTIONS_DEFAULT=EXAMPLES GTK3
+OPTIONS_DEFAULT=GTK3
 
 SUB_FILES=	xombrero
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 800041
@@ -54,24 +49,22 @@ post-patch:
 		-e 's|/etc/ssl/cert.pem|${LOCALBASE}/share/certs/ca-root-nss.crt|' \
 			unix.c xombrero.conf
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/xombrero ${PREFIX}/bin/xombrero
-	${INSTALL_PROGRAM} ${WRKSRC}/freebsd/xombrero ${PREFIX}/bin/xombrero-bin
-	${INSTALL_MAN} ${WRKSRC}/xombrero.1 ${MANPREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKDIR}/xombrero ${STAGEDIR}${PREFIX}/bin/xombrero
+	${INSTALL_PROGRAM} ${WRKSRC}/freebsd/xombrero ${STAGEDIR}${PREFIX}/bin/xombrero-bin
+	${INSTALL_MAN} ${WRKSRC}/xombrero.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .for i in 16 32 48 64 128
-	${MKDIR} ${PREFIX}/share/icons/hicolor/${i}x${i}/apps
-	${INSTALL_DATA}  ${WRKSRC}/xombreroicon${i}.png ${PREFIX}/share/icons/hicolor/${i}x${i}/apps
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${i}x${i}/apps
+	${INSTALL_DATA}  ${WRKSRC}/xombreroicon${i}.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/${i}x${i}/apps
 .endfor
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 .for i in hsts-preload style.css tld-rules
-	${INSTALL_DATA}  ${WRKSRC}/${i} ${DATADIR}
+	${INSTALL_DATA}  ${WRKSRC}/${i} ${STAGEDIR}${DATADIR}
 .endfor
-	${INSTALL_DATA}  ${WRKSRC}/xombrero.desktop ${PREFIX}/share/applications
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA}  ${WRKSRC}/xombrero.desktop ${STAGEDIR}${PREFIX}/share/applications
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for i in favorites xombrero.conf
-	${INSTALL_DATA} ${WRKSRC}/${i} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/playflash.sh ${EXAMPLESDIR}
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/playflash.sh ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
