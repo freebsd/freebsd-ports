@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Number-Delta
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,10 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tjs@cdpa.nsysu.edu.tw
 COMMENT=	Compare the difference between two numbers within a specified amount
 
+LICENSE=	AL2
+
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Test::Number::Delta.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
