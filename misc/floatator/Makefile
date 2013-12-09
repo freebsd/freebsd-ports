@@ -19,10 +19,9 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DNDEBUG" \
 PLIST_FILES=	bin/floatator bin/floatator_X_interface
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 do-install:
 .for f in floatator floatator_X_interface
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 
 .include <bsd.port.mk>
