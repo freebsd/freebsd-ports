@@ -2,39 +2,39 @@
 # $FreeBSD$
 
 PORTNAME=	vtwm
-PORTVERSION=	5.4.7
-PORTREVISION=	4
+PORTVERSION=	5.4.99.20130906
 CATEGORIES=	x11-wm
-MASTER_SITES=	SF http://www.vtwm.org/downloads/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+PROJECTHOST=	ak-various-projects
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Twm with a virtual desktop and optional Motif-like features
 
 LICENSE=	MIT
 
-USE_XORG=	x11 xext xpm xmu
-MAKEFILE=	${FILESDIR}/Makefile.bsd
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
-ETCDIR?=	${PREFIX}/etc
+USE_XZ=	yes
+
+USES=	pkgconfig
+
+GNU_CONFIGURE=	yes
+USE_XORG=	x11 xext xft xinerama xpm xmu xrandr
+
+WRKSRC=	${WRKDIR}/vtwm-20130906
 
 PLIST_FILES=	bin/vtwm \
+		bin/nexpm \
 		etc/system.vtwmrc \
 		man/man1/vtwm.1.gz
 
-OPTIONS_DEFINE=	SOUND NLS
-OPTIONS_DEFAULT=	SOUND NLS
+OPTIONS_DEFINE=	SOUND
+SOUND_DESC=	Sound support (via rplay)
 
-.include <bsd.port.options.mk>
+SOUND_CONFIGURE_ENABLE=	sound
+SOUND_LIB_DEPENDS=	librplay.so:${PORTSDIR}/audio/rplay
 
-.if ${PORT_OPTIONS:MSOUND}
-LIB_DEPENDS+=	librplay.so:${PORTSDIR}/audio/rplay
-MAKE_ENV+=	SOUND=yes
-.else
-MAKE_ENV+=	SOUND=no
-.endif
-
-.if ! ${PORT_OPTIONS:MNLS}
-CFLAGS+=	-DNO_I18N_SUPPORT
-.endif
+pre-patch:
+	@${REINPLACE_CMD} -e 's|\$${datadir}/X11/vtwm|\$${prefix}/etc|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
