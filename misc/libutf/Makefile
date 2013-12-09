@@ -15,7 +15,13 @@ GNU_CONFIGURE=	YES
 ALL_TARGET=	tst
 MAKE_ARGS=	ETCDIR=${EXAMPLESDIR}
 
-MAN3=		ure.3 utf.3
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/ure.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/utf.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_LIB} ${WRKSRC}/libutf.a ${STAGEDIR}${PREFIX}/lib
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/langcoll.utf ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_MAN} ${WRKSRC}/utf.3 ${STAGEDIR}${MAN3PREFIX}/man/man3
+	${INSTALL_MAN} ${WRKSRC}/ure.3 ${STAGEDIR}${MAN3PREFIX}/man/man3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
