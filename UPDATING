@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20131209:
+  AFFECTS: users of dns/bind96, dns/bind98 and bind99 on FreeBSD 10.0
+  AUTHOR: erwin@FreeBSD.org
+
+  Bind versions before 9.6.3.2.ESV.R10_2, 9.8.6_2, and 9.9.4_2 on
+  FreeBSD 10.0 will replace named.conf on upgrade.  Make sure to
+  backup any local changes before upgrading to the _2 versions.
+
 20131208:
   AFFECTS: users of java/subversion-java
   AUTHOR: ohauer@FreeBSD.org
