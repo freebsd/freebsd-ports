@@ -11,15 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produces a web page of statistics and quotes from IRC channel logs
 
 GNU_CONFIGURE=	YES
-USE_GMAKE=	YES
+USES=	gmake
 
-.if defined(NOPORTDOCS)
-MAKE_ARGS=	NOPORTDOCS=1
-.endif
-
-MAN1=		gruftistats.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's,strcasestr,strcasestr_x,g' ${WRKSRC}/ircstats.h \
