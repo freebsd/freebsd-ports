@@ -12,18 +12,14 @@ COMMENT=	Curses based user friendly windowing shell
 
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	cwish
-MAN1=		cwish.1
-PLIST_FILES=	bin/cwish
+PLIST_FILES=	bin/cwish man/man1/cwish.1.gz
+MAKEFILE=	Makefile.FreeBSD
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 65d ${WRKSRC}/cwish.h
 
-pre-configure:
-	${CP} ${WRKSRC}/Makefile.FreeBSD ${WRKSRC}/Makefile
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cwish ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/cwish.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/cwish ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/cwish.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
