@@ -1,192 +1,247 @@
 bin/drush
-%%DATADIR%%/README.txt
-%%DATADIR%%/commands/core/core.drush.inc
-%%DATADIR%%/commands/core/docs.drush.inc
-%%DATADIR%%/commands/core/drupal/batch_6.inc
-%%DATADIR%%/commands/core/drupal/batch.inc
-%%DATADIR%%/commands/core/drupal/environment_6.inc
-%%DATADIR%%/commands/core/drupal/environment.inc
-%%DATADIR%%/commands/core/drupal/site_install_6.inc
-%%DATADIR%%/commands/core/drupal/site_install.inc
-%%DATADIR%%/commands/core/drupal/update_6.inc
-%%DATADIR%%/commands/core/drupal/update.inc
-%%DATADIR%%/commands/core/field.drush.inc
-%%DATADIR%%/commands/core/help.drush.inc
-%%DATADIR%%/commands/core/image.drush.inc
-%%DATADIR%%/commands/core/rsync.core.inc
-%%DATADIR%%/commands/core/scratch.php
-%%DATADIR%%/commands/core/search.drush.inc
-%%DATADIR%%/commands/core/site_install.drush.inc
-%%DATADIR%%/commands/core/sitealias.drush.inc
-%%DATADIR%%/commands/core/test.drush.inc
-%%DATADIR%%/commands/core/topic.drush.inc
-%%DATADIR%%/commands/core/variable.drush.inc
-%%DATADIR%%/commands/core/watchdog.drush.inc
-%%DATADIR%%/commands/core/drupal/update_7.inc
-%%DATADIR%%/commands/core/usage.drush.inc
-%%DATADIR%%/commands/core/queue.drush.inc
-%%DATADIR%%/commands/core/ssh.drush.inc
-%%DATADIR%%/commands/core/shellalias.drush.inc
-%%DATADIR%%/commands/core/cache.drush.inc
-%%DATADIR%%/commands/core/archive.drush.inc
-%%DATADIR%%/commands/pm/release_info/updatexml.inc
-%%DATADIR%%/commands/pm/download.pm.inc
-%%DATADIR%%/commands/pm/info.pm.inc
-%%DATADIR%%/commands/pm/package_handler/git_drupalorg.inc
-%%DATADIR%%/commands/pm/package_handler/wget.inc
-%%DATADIR%%/commands/pm/pm.drush.inc
-%%DATADIR%%/commands/pm/update_info/drupal_6.inc
-%%DATADIR%%/commands/pm/update_info/drupal.inc
-%%DATADIR%%/commands/pm/updatecode.pm.inc
-%%DATADIR%%/commands/pm/version_control/backup.inc
-%%DATADIR%%/commands/pm/version_control/bzr.inc
-%%DATADIR%%/commands/pm/version_control/svn.inc
-%%DATADIR%%/commands/runserver/runserver-prepend.php
-%%DATADIR%%/commands/runserver/runserver-drupal.inc
-%%DATADIR%%/commands/runserver/runserver.drush.inc
-%%DATADIR%%/commands/make/make.download.inc
-%%DATADIR%%/commands/make/make.drush.inc
-%%DATADIR%%/commands/make/generate.make.inc
-%%DATADIR%%/commands/make/make.utilities.inc
-%%DATADIR%%/commands/make/make.project.inc
-%%DATADIR%%/commands/sql/sql.drush.inc
-%%DATADIR%%/commands/sql/sync.sql.inc
-%%DATADIR%%/commands/user/user.drush.inc
-%%DATADIR%%/docs/strict-options.html
-%%DATADIR%%/docs/shellaliases.html
-%%DATADIR%%/docs/bastion.html
-%%DATADIR%%/docs/cron.html
-%%DATADIR%%/docs/bootstrap.html
-%%DATADIR%%/docs/commands.html
-%%DATADIR%%/docs/context.html
-%%DATADIR%%/docs/drush.api.php
-%%DATADIR%%/docs/shellscripts.html
-%%DATADIR%%/docs/make.txt
-%%DATADIR%%/drush.complete.sh
-%%DATADIR%%/drush.info
-%%DATADIR%%/drush.php
-%%DATADIR%%/drush
-%%DATADIR%%/drush_logo-black.png
-%%DATADIR%%/examples/example.aliases.drushrc.php
-%%DATADIR%%/examples/example.bashrc
-%%DATADIR%%/examples/example.make
-%%DATADIR%%/examples/example.drush.ini
-%%DATADIR%%/examples/example.drushrc.php
-%%DATADIR%%/examples/helloworld.script
-%%DATADIR%%/examples/policy.drush.inc
-%%DATADIR%%/examples/sandwich-topic.txt
-%%DATADIR%%/examples/sandwich.drush.inc
-%%DATADIR%%/examples/sandwich.txt
-%%DATADIR%%/examples/xkcd.drush.inc
-%%DATADIR%%/examples/sync_enable.drush.inc
-%%DATADIR%%/examples/sync_via_http.drush.inc
-%%DATADIR%%/examples/sandwich-nocolor.txt
-%%DATADIR%%/includes/backend.inc
-%%DATADIR%%/includes/batch.inc
-%%DATADIR%%/includes/command.inc
-%%DATADIR%%/includes/context.inc
-%%DATADIR%%/includes/drush.inc
-%%DATADIR%%/includes/environment.inc
-%%DATADIR%%/includes/sitealias.inc
-%%DATADIR%%/includes/bootstrap.inc
-%%DATADIR%%/includes/cache.inc
-%%DATADIR%%/includes/dbtng.inc
-%%DATADIR%%/includes/complete.inc
-%%DATADIR%%/includes/drupal.inc
-%%DATADIR%%/includes/filesystem.inc
-%%DATADIR%%/includes/exec.inc
-%%DATADIR%%/includes/output.inc
-%%DATADIR%%/lib/README.txt
-%%DATADIR%%/tests/siteIntallD6Test.php
-%%DATADIR%%/tests/completeTest.php
-%%DATADIR%%/tests/filesystemTest.php
-%%DATADIR%%/tests/makefiles/bz2-singlefile.make
-%%DATADIR%%/tests/makefiles/gzip.make
-%%DATADIR%%/tests/makefiles/bz2.make
-%%DATADIR%%/tests/makefiles/defaults.make
-%%DATADIR%%/tests/makefiles/contrib-destination.make
-%%DATADIR%%/tests/makefiles/svn.make
-%%DATADIR%%/tests/makefiles/qd-devel.make
-%%DATADIR%%/tests/makefiles/translations-inside7.make
-%%DATADIR%%/tests/makefiles/recursion.make
-%%DATADIR%%/tests/makefiles/included2.make
-%%DATADIR%%/tests/makefiles/translations.make
-%%DATADIR%%/tests/makefiles/git.make
-%%DATADIR%%/tests/makefiles/translations-inside.make
-%%DATADIR%%/tests/makefiles/subtree.make
-%%DATADIR%%/tests/makefiles/included.make
-%%DATADIR%%/tests/makefiles/limited-projects-libraries.make
-%%DATADIR%%/tests/makefiles/md5-fail.make
-%%DATADIR%%/tests/makefiles/git-simple.make
-%%DATADIR%%/tests/makefiles/file-extract.make
-%%DATADIR%%/tests/makefiles/include.make
-%%DATADIR%%/tests/makefiles/bzr.make
-%%DATADIR%%/tests/makefiles/file.make
-%%DATADIR%%/tests/makefiles/get.make
-%%DATADIR%%/tests/makefiles/patches.make
-%%DATADIR%%/tests/makefiles/md5-succeed.make
-%%DATADIR%%/tests/drushScriptTest.php
-%%DATADIR%%/tests/quickDrupalTest.php
-%%DATADIR%%/tests/completetest.drush.inc
-%%DATADIR%%/tests/completetestsite.drush.inc
-%%DATADIR%%/tests/queueTest.php
+%%DATADIR%%/tests/watchdogTest.php
+%%DATADIR%%/tests/variableTest.php
+%%DATADIR%%/tests/userTest.php
+%%DATADIR%%/tests/unit.drush.inc
+%%DATADIR%%/tests/tablesUnitTest.php
+%%DATADIR%%/tests/sqlSyncTest.php
+%%DATADIR%%/tests/sqlDumpTest.php
+%%DATADIR%%/tests/sqlConnectTest.php
+%%DATADIR%%/tests/siteSshTest.php
+%%DATADIR%%/tests/siteSetUnitTest.php
 %%DATADIR%%/tests/siteSetTest.php
-%%DATADIR%%/tests/commandUnitTest.php
-%%DATADIR%%/tests/hooks/magic_help_alter/magic.drush.inc
+%%DATADIR%%/tests/siteIntallD6Test.php
+%%DATADIR%%/tests/siteAliasUnitTest.php
+%%DATADIR%%/tests/siteAliasTest.php
+%%DATADIR%%/tests/shellAliasTest.php
+%%DATADIR%%/tests/roleTest.php
+%%DATADIR%%/tests/resources/queue_script.php
 %%DATADIR%%/tests/resources/example.profile
 %%DATADIR%%/tests/resources/create_node_types.php
-%%DATADIR%%/tests/resources/queue_script.php
-%%DATADIR%%/tests/siteSetUnitTest.php
-%%DATADIR%%/tests/watchdogTest.php
-%%DATADIR%%/tests/commandSpecificTest.php
-%%DATADIR%%/tests/generateMakeTest.php
-%%DATADIR%%/tests/imageTest.php
-%%DATADIR%%/tests/makeTest.php
-%%DATADIR%%/tests/cacheCommandTest.php
-%%DATADIR%%/tests/shellAliasTest.php
-%%DATADIR%%/tests/batchTest.php
-%%DATADIR%%/tests/siteSshTest.php
-%%DATADIR%%/tests/sqlConnectTest.php
 %%DATADIR%%/tests/releaseInfoTest.php
-%%DATADIR%%/tests/sqlSyncTest.php
-%%DATADIR%%/tests/variableTest.php
-%%DATADIR%%/tests/siteAliasTest.php
-%%DATADIR%%/tests/COVERAGE.txt
-%%DATADIR%%/tests/drush_testcase.inc
-%%DATADIR%%/tests/phpunit.xml.dist
-%%DATADIR%%/tests/userTest.php
-%%DATADIR%%/tests/README.txt
-%%DATADIR%%/tests/runner.php
-%%DATADIR%%/tests/archiveDumpTest.php
-%%DATADIR%%/tests/pmDownloadTest.php
-%%DATADIR%%/tests/contextTest.php
-%%DATADIR%%/tests/backendTest.php
-%%DATADIR%%/tests/commandTest.php
+%%DATADIR%%/tests/quickDrupalTest.php
+%%DATADIR%%/tests/queueTest.php
 %%DATADIR%%/tests/pmUpdateCodeTest.php
 %%DATADIR%%/tests/pmEnDisUnListTest.php
-%%DATADIR%%/tests/coreTest.php
-%%DATADIR%%/tests/devel.xml
+%%DATADIR%%/tests/pmDownloadTest.php
+%%DATADIR%%/tests/phpunit.xml.dist
+%%DATADIR%%/tests/outputFormatUnitTest.php
+%%DATADIR%%/tests/outputFormatTest.php
+%%DATADIR%%/tests/makefiles/use-distribution-as-core.make
+%%DATADIR%%/tests/makefiles/translations.make
+%%DATADIR%%/tests/makefiles/translations-inside7.make
+%%DATADIR%%/tests/makefiles/translations-inside.make
+%%DATADIR%%/tests/makefiles/svn.make
+%%DATADIR%%/tests/makefiles/subtree.make
+%%DATADIR%%/tests/makefiles/recursion.make
+%%DATADIR%%/tests/makefiles/recursion-override.make
+%%DATADIR%%/tests/makefiles/qd-devel.make
+%%DATADIR%%/tests/makefiles/patches.make
+%%DATADIR%%/tests/makefiles/patches-local-test-wysiwyg.patch
+%%DATADIR%%/tests/makefiles/options-project.make
+%%DATADIR%%/tests/makefiles/options-array.make
+%%DATADIR%%/tests/makefiles/md5-succeed.make
+%%DATADIR%%/tests/makefiles/md5-fail.make
+%%DATADIR%%/tests/makefiles/limited-projects-libraries.make
+%%DATADIR%%/tests/makefiles/included2.make
+%%DATADIR%%/tests/makefiles/included.make
+%%DATADIR%%/tests/makefiles/include.make
+%%DATADIR%%/tests/makefiles/gzip.make
+%%DATADIR%%/tests/makefiles/git.make
+%%DATADIR%%/tests/makefiles/git-simple.make
+%%DATADIR%%/tests/makefiles/get.make
+%%DATADIR%%/tests/makefiles/file.make
+%%DATADIR%%/tests/makefiles/file-extract.make
+%%DATADIR%%/tests/makefiles/defaults.make
+%%DATADIR%%/tests/makefiles/contrib-destination.make
+%%DATADIR%%/tests/makefiles/bzr.make
+%%DATADIR%%/tests/makefiles/bz2.make
+%%DATADIR%%/tests/makefiles/bz2-singlefile.make
+%%DATADIR%%/tests/makeTest.php
+%%DATADIR%%/tests/imageTest.php
+%%DATADIR%%/tests/hooks/magic_help_alter/magic.drush.inc
+%%DATADIR%%/tests/generateMakeTest.php
+%%DATADIR%%/tests/filesystemTest.php
 %%DATADIR%%/tests/fieldTest.php
-%%DATADIR%%/tests/unit.drush.inc
-@dirrm %%DATADIR%%/includes
-@dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/docs
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/commands/user
-@dirrm %%DATADIR%%/commands/sql
-@dirrm %%DATADIR%%/commands/pm/version_control
-@dirrm %%DATADIR%%/commands/pm/update_info
-@dirrm %%DATADIR%%/commands/pm/package_handler
-@dirrm %%DATADIR%%/commands/pm/release_info
-@dirrm %%DATADIR%%/commands/pm
-@dirrm %%DATADIR%%/commands/core/drupal
-@dirrm %%DATADIR%%/commands/core
-@dirrm %%DATADIR%%/commands/make
-@dirrm %%DATADIR%%/commands/runserver
-@dirrm %%DATADIR%%/commands
+%%DATADIR%%/tests/expandWildcardTablesUnitTest.php
+%%DATADIR%%/tests/drush_testcase.inc
+%%DATADIR%%/tests/drushScriptTest.php
+%%DATADIR%%/tests/devel.xml
+%%DATADIR%%/tests/coreTest.php
+%%DATADIR%%/tests/contextTest.php
+%%DATADIR%%/tests/completetestsite.drush.inc
+%%DATADIR%%/tests/completetest.drush.inc
+%%DATADIR%%/tests/completeTest.php
+%%DATADIR%%/tests/commandUnitTest.php
+%%DATADIR%%/tests/commandTest.php
+%%DATADIR%%/tests/commandSpecificTest.php
+%%DATADIR%%/tests/cacheCommandTest.php
+%%DATADIR%%/tests/batchTest.php
+%%DATADIR%%/tests/backendTest.php
+%%DATADIR%%/tests/archiveDumpTest.php
+%%DATADIR%%/tests/README.txt
+%%DATADIR%%/tests/COVERAGE.txt
+%%DATADIR%%/misc/druplicon-no_color.txt
+%%DATADIR%%/misc/druplicon-color.txt
+%%DATADIR%%/lib/Yaml-2.2.1/.gitignore
+%%DATADIR%%/lib/Yaml-2.2.1/phpunit.xml.dist
+%%DATADIR%%/lib/Yaml-2.2.1/composer.json
+%%DATADIR%%/lib/Yaml-2.2.1/Yaml.php
+%%DATADIR%%/lib/Yaml-2.2.1/Unescaper.php
+%%DATADIR%%/lib/Yaml-2.2.1/Tests/YamlTest.php
+%%DATADIR%%/lib/Yaml-2.2.1/Tests/ParserTest.php
+%%DATADIR%%/lib/Yaml-2.2.1/Tests/InlineTest.php
+%%DATADIR%%/lib/Yaml-2.2.1/Tests/Fixtures/unindentedCollections.yml
+%%DATADIR%%/lib/Yaml-2.2.1/Tests/Fixtures/sfTests.yml
+%%DATADIR%%/lib/Yaml-2.2.1/Tests/Fixtures/sfQuotes.yml
+%%DATADIR%%/lib/Yaml-2.2.1/Tests/Fixtures/sfObjects.yml
+%%DATADIR%%/lib/Yaml-2.2.1/Tests/Fixtures/sfMergeKey.yml
+%%DATADIR%%/lib/Yaml-2.2.1/Tests/Fixtures/sfCompact.yml
+%%DATADIR%%/lib/Yaml-2.2.1/Tests/Fixtures/sfComments.yml
+%%DATADIR%%/lib/Yaml-2.2.1/Tests/Fixtures/index.yml
+%%DATADIR%%/lib/Yaml-2.2.1/Tests/Fixtures/escapedCharacters.yml
+%%DATADIR%%/lib/Yaml-2.2.1/Tests/Fixtures/embededPhp.yml
+%%DATADIR%%/lib/Yaml-2.2.1/Tests/Fixtures/YtsTypeTransfers.yml
+%%DATADIR%%/lib/Yaml-2.2.1/Tests/Fixtures/YtsSpecificationExamples.yml
+%%DATADIR%%/lib/Yaml-2.2.1/Tests/Fixtures/YtsNullsAndEmpties.yml
+%%DATADIR%%/lib/Yaml-2.2.1/Tests/Fixtures/YtsFoldedScalars.yml
+%%DATADIR%%/lib/Yaml-2.2.1/Tests/Fixtures/YtsFlowCollections.yml
+%%DATADIR%%/lib/Yaml-2.2.1/Tests/Fixtures/YtsErrorTests.yml
+%%DATADIR%%/lib/Yaml-2.2.1/Tests/Fixtures/YtsDocumentSeparator.yml
+%%DATADIR%%/lib/Yaml-2.2.1/Tests/Fixtures/YtsBlockMapping.yml
+%%DATADIR%%/lib/Yaml-2.2.1/Tests/Fixtures/YtsBasicTests.yml
+%%DATADIR%%/lib/Yaml-2.2.1/Tests/Fixtures/YtsAnchorAlias.yml
+%%DATADIR%%/lib/Yaml-2.2.1/Tests/DumperTest.php
+%%DATADIR%%/lib/Yaml-2.2.1/README.md
+%%DATADIR%%/lib/Yaml-2.2.1/Parser.php
+%%DATADIR%%/lib/Yaml-2.2.1/LICENSE
+%%DATADIR%%/lib/Yaml-2.2.1/Inline.php
+%%DATADIR%%/lib/Yaml-2.2.1/Exception/RuntimeException.php
+%%DATADIR%%/lib/Yaml-2.2.1/Exception/ParseException.php
+%%DATADIR%%/lib/Yaml-2.2.1/Exception/ExceptionInterface.php
+%%DATADIR%%/lib/Yaml-2.2.1/Exception/DumpException.php
+%%DATADIR%%/lib/Yaml-2.2.1/Escaper.php
+%%DATADIR%%/lib/Yaml-2.2.1/Dumper.php
+%%DATADIR%%/lib/Yaml-2.2.1/CHANGELOG.md
+%%DATADIR%%/lib/README.txt
+%%DATADIR%%/includes/sitealias.inc
+%%DATADIR%%/includes/output.inc
+%%DATADIR%%/includes/filesystem.inc
+%%DATADIR%%/includes/exec.inc
+%%DATADIR%%/includes/environment.inc
+%%DATADIR%%/includes/engines.inc
+%%DATADIR%%/includes/drush.inc
+%%DATADIR%%/includes/drupal.inc
+%%DATADIR%%/includes/dbtng.inc
+%%DATADIR%%/includes/context.inc
+%%DATADIR%%/includes/complete.inc
+%%DATADIR%%/includes/command.inc
+%%DATADIR%%/includes/cache.inc
+%%DATADIR%%/includes/bootstrap.inc
+%%DATADIR%%/includes/batch.inc
+%%DATADIR%%/includes/backend.inc
+%%DATADIR%%/drush_logo-black.png
+%%DATADIR%%/drush.php
+%%DATADIR%%/drush.info
+%%DATADIR%%/drush.complete.sh
+%%DATADIR%%/drush
+%%DATADIR%%/commands/user/user.drush.inc
+%%DATADIR%%/commands/sql/sync.sql.inc
+%%DATADIR%%/commands/sql/sql.drush.inc
+%%DATADIR%%/commands/runserver/runserver.drush.inc
+%%DATADIR%%/commands/runserver/runserver-prepend.php
+%%DATADIR%%/commands/runserver/runserver-drupal.inc
+%%DATADIR%%/commands/pm/version_control/svn.inc
+%%DATADIR%%/commands/pm/version_control/bzr.inc
+%%DATADIR%%/commands/pm/version_control/backup.inc
+%%DATADIR%%/commands/pm/updatestatus.pm.inc
+%%DATADIR%%/commands/pm/updatecode.pm.inc
+%%DATADIR%%/commands/pm/update_info/drupal_6.inc
+%%DATADIR%%/commands/pm/update_info/drupal.inc
+%%DATADIR%%/commands/pm/release_info/updatexml.inc
+%%DATADIR%%/commands/pm/pm.drush.inc
+%%DATADIR%%/commands/pm/package_handler/wget.inc
+%%DATADIR%%/commands/pm/package_handler/git_drupalorg.inc
+%%DATADIR%%/commands/pm/info.pm.inc
+%%DATADIR%%/commands/pm/download.pm.inc
+%%DATADIR%%/commands/make/make.utilities.inc
+%%DATADIR%%/commands/make/make.project.inc
+%%DATADIR%%/commands/make/make.drush.inc
+%%DATADIR%%/commands/make/make.download.inc
+%%DATADIR%%/commands/make/generate.make.inc
+%%DATADIR%%/commands/core/watchdog.drush.inc
+%%DATADIR%%/commands/core/variable.drush.inc
+%%DATADIR%%/commands/core/usage.drush.inc
+%%DATADIR%%/commands/core/topic.drush.inc
+%%DATADIR%%/commands/core/test.drush.inc
+%%DATADIR%%/commands/core/ssh.drush.inc
+%%DATADIR%%/commands/core/sitealias.drush.inc
+%%DATADIR%%/commands/core/site_install.drush.inc
+%%DATADIR%%/commands/core/shellalias.drush.inc
+%%DATADIR%%/commands/core/search.drush.inc
+%%DATADIR%%/commands/core/scratch.php
+%%DATADIR%%/commands/core/rsync.core.inc
+%%DATADIR%%/commands/core/role.drush.inc
+%%DATADIR%%/commands/core/queue.drush.inc
+%%DATADIR%%/commands/core/outputformat/yaml.inc
+%%DATADIR%%/commands/core/outputformat/variables.inc
+%%DATADIR%%/commands/core/outputformat/var_export.inc
+%%DATADIR%%/commands/core/outputformat/topics/table.html
+%%DATADIR%%/commands/core/outputformat/table.inc
+%%DATADIR%%/commands/core/outputformat/string.inc
+%%DATADIR%%/commands/core/outputformat/print_r.inc
+%%DATADIR%%/commands/core/outputformat/php.inc
+%%DATADIR%%/commands/core/outputformat/message.inc
+%%DATADIR%%/commands/core/outputformat/list.inc
+%%DATADIR%%/commands/core/outputformat/key_value.inc
+%%DATADIR%%/commands/core/outputformat/json.inc
+%%DATADIR%%/commands/core/outputformat/csv_or_string.inc
+%%DATADIR%%/commands/core/outputformat.drush.inc
+%%DATADIR%%/commands/core/notify.drush.inc
+%%DATADIR%%/commands/core/image.drush.inc
+%%DATADIR%%/commands/core/help.drush.inc
+%%DATADIR%%/commands/core/field.drush.inc
+%%DATADIR%%/commands/core/druplicon.drush.inc
+%%DATADIR%%/commands/core/drupal/update_7.inc
+%%DATADIR%%/commands/core/drupal/update_6.inc
+%%DATADIR%%/commands/core/drupal/update.inc
+%%DATADIR%%/commands/core/drupal/site_install_6.inc
+%%DATADIR%%/commands/core/drupal/site_install.inc
+%%DATADIR%%/commands/core/drupal/environment_7.inc
+%%DATADIR%%/commands/core/drupal/environment_6.inc
+%%DATADIR%%/commands/core/drupal/environment.inc
+%%DATADIR%%/commands/core/drupal/batch_6.inc
+%%DATADIR%%/commands/core/drupal/batch.inc
+%%DATADIR%%/commands/core/docs.drush.inc
+%%DATADIR%%/commands/core/core.drush.inc
+%%DATADIR%%/commands/core/cache.drush.inc
+%%DATADIR%%/commands/core/archive.drush.inc
+%%DATADIR%%/classes/DrushRole.php
 @dirrm %%DATADIR%%/tests/resources
 @dirrm %%DATADIR%%/tests/makefiles
 @dirrm %%DATADIR%%/tests/hooks/magic_help_alter
 @dirrm %%DATADIR%%/tests/hooks
 @dirrm %%DATADIR%%/tests
+@dirrm %%DATADIR%%/misc
+@dirrm %%DATADIR%%/lib/Yaml-2.2.1/Tests/Fixtures
+@dirrm %%DATADIR%%/lib/Yaml-2.2.1/Tests
+@dirrm %%DATADIR%%/lib/Yaml-2.2.1/Exception
+@dirrm %%DATADIR%%/lib/Yaml-2.2.1
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/includes
+@dirrm %%DATADIR%%/commands/user
+@dirrm %%DATADIR%%/commands/sql
+@dirrm %%DATADIR%%/commands/runserver
+@dirrm %%DATADIR%%/commands/pm/version_control
+@dirrm %%DATADIR%%/commands/pm/update_info
+@dirrm %%DATADIR%%/commands/pm/release_info
+@dirrm %%DATADIR%%/commands/pm/package_handler
+@dirrm %%DATADIR%%/commands/pm
+@dirrm %%DATADIR%%/commands/make
+@dirrm %%DATADIR%%/commands/core/outputformat/topics
+@dirrm %%DATADIR%%/commands/core/outputformat
+@dirrm %%DATADIR%%/commands/core/drupal
+@dirrm %%DATADIR%%/commands/core
+@dirrm %%DATADIR%%/commands
+@dirrm %%DATADIR%%/classes
 @dirrm %%DATADIR%%

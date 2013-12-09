@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	drush
-PORTVERSION=	5.9
+PORTVERSION=	6.1.0
 CATEGORIES=	www
-MASTER_SITES=	http://ftp.drupal.org/files/projects/
-DISTNAME=	drush-7.x-${PORTVERSION}
 
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Drupal command line and scripting interface
@@ -16,23 +14,43 @@ RUN_DEPENDS=	${LOCALBASE}/share/pear/Console/Table.php:${PORTSDIR}/devel/pear-Co
 
 NO_BUILD=	yes
 
+GH_ACCOUNT=	${PORTNAME}-ops
+GH_PROJECT=	${PORTNAME}
+GH_COMMIT=	d948558
+USE_GITHUB=	yes
+
 # set php requirements same as drupal itself
-USE_PHP=	gd pcre session xml mbstring ctype json hash simplexml dom pdo pdo_mysql
+USE_PHP=	gd pcre session xml mbstring ctype json hash simplexml dom pdo filter
 IGNORE_WITH_PHP=4
 WANT_PHP_CLI=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+PORTDOCS=	*
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
 
 do-configure:
-	@${REINPLACE_CMD} -e 's|XXXDATADIRXXX|${DATADIR}|g' ${WRKSRC}/drush
+	@${REINPLACE_CMD} -e 's|XXXDATADIRXXX|${STAGEDIR}${DATADIR}|g' ${WRKSRC}/drush
 
 do-install:
-	${MKDIR} ${DATADIR}
-	( cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${DATADIR} '! ( -name drush.bat -or -name *.orig -or -name *.bak -or -name .gitignore -or -name LICENSE.txt )' )
-	${CHMOD} 755 ${DATADIR}/drush
-	${LN} -s ${DATADIR}/drush ${PREFIX}/bin/drush
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	( cd ${WRKSRC} && \
+	${COPYTREE_SHARE} "classes commands includes lib misc tests drush_logo-black.png drush.php drush.info" ${STAGEDIR}${DATADIR} && \
+	${INSTALL_DATA} drush_logo-black.png drush.php ${STAGEDIR}${DATADIR} && \
+	${INSTALL_SCRIPT} drush drush.complete.sh ${STAGEDIR}${DATADIR} )
+	${LN} -s ${DATADIR}/drush ${STAGEDIR}${PREFIX}/bin/drush
 
-.include <bsd.port.post.mk>
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+		${MKDIR} ${STAGEDIR}${DOCSDIR}
+		( cd ${WRKSRC} && ${INSTALL_MAN} *.md docs/* ${STAGEDIR}${DOCSDIR} )
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
+		${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+		( cd ${WRKSRC} && ${INSTALL_MAN} examples/* ${STAGEDIR}${EXAMPLESDIR} )
+.endif
+
+.include <bsd.port.mk>
