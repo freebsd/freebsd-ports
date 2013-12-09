@@ -15,12 +15,11 @@ LIB_DEPENDS=	libocsync.so:${PORTSDIR}/net/owncloud-csync \
 		libinotify.so:${PORTSDIR}/devel/libinotify \
 		libqtkeychain.so:${PORTSDIR}/security/qtkeychain
 
-USES=		cmake:outsource pkgconfig gmake
+USES=		cmake:outsource pkgconfig gmake compiler:c++11-lang
 USE_BZIP2=
 USE_QT4=	corelib dbus gui linguist moc network qmake qtestlib rcc uic webkit xml
-CMAKE_ENV=	CSYNC_DIR=${LOCALBASE}
+CMAKE_ENV=	CSYNC_DIR=${LOCALBASE} INOTIFY_LIB=${LOCALBASE}/lib
 CMAKE_ARGS=	-DCSYNC_INCLUDE_PATH:STRING=${LOCALBASE}/include/ocsync/
-USE_GCC=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
