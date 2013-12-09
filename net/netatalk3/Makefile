@@ -48,7 +48,7 @@ KRB5_DESC=	Enable Kerberos V UAM
 DTRACE_DESC=	Enable DTrace support
 SENDFILE_DESC=	Enable Sendfile support
 MYSQL_DESC=	Enable MySQL CNID backend support
-ACL_DESCR=	Enable ACL support
+ACL_DESC=	Enable ACL support
 
 .include <bsd.port.options.mk>
 
