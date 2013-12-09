@@ -1,4 +1,6 @@
 bin/deco
+man/man1/deco.1.gz
+man/ru.KOI8-R/man1/deco.1.gz
 %%DATADIR%%/help/d.edit
 %%DATADIR%%/help/d.general
 %%DATADIR%%/help/d.hexview
