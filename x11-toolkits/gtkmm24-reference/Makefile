@@ -11,12 +11,9 @@ GNU_CONFIGURE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/gtkmm-2.4
 
-NO_STAGE=	yes
 do-install:
-.if !defined(NOPORTDOCS)
 .for d in docs
-	@cd ${WRKSRC}/${d} && ${GMAKE} install
+	@cd ${WRKSRC}/${d} && ${GMAKE} ${MAKE_ARGS} install
 .endfor
-.endif
 
 .include "${.CURDIR}/../../devel/glib20-reference/bsd.gnome-reference.mk"

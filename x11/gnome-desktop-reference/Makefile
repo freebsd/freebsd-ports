@@ -5,5 +5,4 @@ PORTREVISION=	1
 
 REFERENCE_SRC=	${WRKSRC}/docs/reference/gnome-desktop
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../devel/glib20-reference/bsd.gnome-reference.mk"

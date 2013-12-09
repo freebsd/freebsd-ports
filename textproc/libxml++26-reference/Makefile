@@ -12,10 +12,7 @@ GNU_CONFIGURE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/libxml++-2.6
 
-NO_STAGE=	yes
 do-install:
-.if !defined(NOPORTDOCS)
-	@cd ${WRKSRC} && ${GMAKE} install-data-local install-dist_referenceDATA
-.endif
+	@cd ${WRKSRC} && ${GMAKE} ${MAKE_ARGS} install-data-local install-dist_referenceDATA
 
 .include "${.CURDIR}/../../devel/glib20-reference/bsd.gnome-reference.mk"

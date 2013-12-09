@@ -8,12 +8,10 @@ DOCSDIR=	${PREFIX}/share/doc/fontconfig-devel
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/*.3 ${STAGEDIR}${PREFIX}/man/man3
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/fontconfig-devel.pdf \
 		${WRKSRC}/doc/fontconfig-devel.txt ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/doc/fontconfig-devel/* ${STAGEDIR}${DOCSDIR}/html
-.endif
 
 .include "${.CURDIR}/../../devel/glib20-reference/bsd.gnome-reference.mk"
