@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DateTime
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DROLSKY
@@ -28,12 +28,8 @@ USE_PERL5=	modbuild
 
 PORTDOCS=	CREDITS Changes TODO
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>
