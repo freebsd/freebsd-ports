@@ -1,0 +1,22 @@
+--- ./src/websearch/websearchabstract.cpp.orig	2012-10-15 16:12:00.000000000 +0000
++++ ./src/websearch/websearchabstract.cpp	2013-12-09 16:35:14.996924998 +0000
+@@ -68,7 +68,7 @@
+ const char* WebSearchAbstract::httpUnsafeChars = "%:/=+$?&\0";
+ 
+ 
+-HTTPEquivCookieJar::HTTPEquivCookieJar(QNetworkAccessManager *parent = NULL)
++HTTPEquivCookieJar::HTTPEquivCookieJar(QNetworkAccessManager *parent)
+         : QNetworkCookieJar(parent), m_nam(parent)
+ {
+     // nothing
+--- ./src/websearch/websearchabstract.h.orig	2012-10-15 16:12:00.000000000 +0000
++++ ./src/websearch/websearchabstract.h	2013-12-09 16:34:28.223924979 +0000
+@@ -45,7 +45,7 @@
+     Q_OBJECT
+ 
+ public:
+-    HTTPEquivCookieJar(QNetworkAccessManager *parent);
++    HTTPEquivCookieJar(QNetworkAccessManager *parent = NULL);
+ 
+     void checkForHttpEqiuv(const QString &htmlCode, const QUrl &url);
+ 
