@@ -81,6 +81,8 @@ man/man8/gdnsd-plugin-simplefo.8.gz
 man/man8/gdnsd-plugin-weighted.8.gz
 man/man8/gdnsd.8.gz
 @dirrm %%DOCSDIR%%
-@exec mkdir -p %D/%%ETCDIR%%/gdnsd/zones
+@exec mkdir -p %%ETCDIR%%/zones
+@unexec rmdir >/dev/null 2>&1 /var/run/gdnsd || :
 @dirrmtry etc/gdnsd/zones
+@dirrmtry etc/gdnsd/geoip
 @dirrmtry etc/gdnsd
