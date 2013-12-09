@@ -1,8 +1,8 @@
-@comment $FreeBSD$
 bin/dphys-config
 @unexec if cmp -s %D/etc/dphys-config %D/etc/dphys-config.sample; then rm -f %D/etc/dphys-config; fi
 etc/dphys-config.sample
 @exec [ -f %B/dphys-config ] || cp %B/%f %B/dphys-config
+man/man1/dphys-config.1.gz
 %%EXAMPLESDIR%%/cron.d.example
 %%EXAMPLESDIR%%/dphys-config.example
 %%EXAMPLESDIR%%/init.d.example
