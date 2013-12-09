@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	codeigniter
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.4
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.codeigniter.com/reactor/ \
 		http://www.codeigniter.org.tw/download_files/
 DISTNAME=	CodeIgniter_${PORTVERSION}
 
 MAINTAINER=	appleboy.tw@gmail.com
-COMMENT=	A framework for developing PHP web applications
+COMMENT=	Framework for developing PHP web applications
 
 USE_ZIP=	yes
 
@@ -21,7 +21,7 @@ WANT_PHP_WEB=	yes
 
 CI_SYS_DIR=	system
 CI_CONF_DIR=	application/config
-WRKSRC=		${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/CodeIgniter-${PORTVERSION}
 WWWDIR=		${PREFIX}/www/codeigniter
 PORTDOCS=	*
 
