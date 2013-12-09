@@ -164,6 +164,7 @@ include/fox-%%MAJORVER%%/FXICOImage.h
 include/fox-%%MAJORVER%%/FXIFFIcon.h
 include/fox-%%MAJORVER%%/FXIFFImage.h
 include/fox-%%MAJORVER%%/FXIO.h
+include/fox-%%MAJORVER%%/FXIOBuffer.h
 include/fox-%%MAJORVER%%/FXIODevice.h
 include/fox-%%MAJORVER%%/FXIcon.h
 include/fox-%%MAJORVER%%/FXIconDict.h
@@ -288,6 +289,7 @@ include/fox-%%MAJORVER%%/FXStatusLine.h
 include/fox-%%MAJORVER%%/FXStream.h
 include/fox-%%MAJORVER%%/FXString.h
 include/fox-%%MAJORVER%%/FXStringDict.h
+include/fox-%%MAJORVER%%/FXStringMap.h
 include/fox-%%MAJORVER%%/FXSwitcher.h
 include/fox-%%MAJORVER%%/FXSystem.h
 include/fox-%%MAJORVER%%/FXTGAIcon.h
