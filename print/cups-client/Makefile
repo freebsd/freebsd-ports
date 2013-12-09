@@ -2,7 +2,7 @@
 
 CATEGORIES=	print
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bsam@FreeBSD.org
 
 MASTERDIR?=	${.CURDIR}/../cups-base
  
