@@ -42,7 +42,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^MF3DCFLAGS =|MF3DCFLAGS = -fPIC|g' \
 		${WRKSRC}/MF3D/Makefile.mf3d
 	@${REINPLACE_CMD} -e \
-	   's|%%TCL_INCLUDEDIR%%|${TCL_INCLUDEDIR}|g; \
+	   's|%%TCL_INCLUDEDIR%%|${TCL_INCLUDEDIR}|g; s|make|$$(MAKE)|g; \
 	    s|%%TCL_LIBDIR%%|${LOCALBASE}/lib|g; s|%%TCL_SHLIB_VER%%|${TCL_SHLIB_VER}|g; \
 	    s|%%TK_INCLUDEDIR%%|${TK_INCLUDEDIR}|g; \
 	    s|%%TK_LIBDIR%%|${LOCALBASE}/lib|g; s|%%TK_SHLIB_VER%%|${TK_SHLIB_VER}|g' \
