@@ -1,4 +1,5 @@
 bin/leocad
+man/man1/leocad.1.gz
 share/applications/leocad.desktop
 share/icons/hicolor/128x128/apps/leocad.png
 share/icons/hicolor/16x16/apps/leocad.png
@@ -9,9 +10,5 @@ share/icons/hicolor/48x48/apps/leocad.png
 share/icons/hicolor/scalable/apps/leocad.svg
 share/icons/hicolor/scalable/mimetypes/application-vnd.leocad.svg
 %%DATADIR%%/library.bin
-share/mime/application/vnd.leocad.xml
-share/mime/packages/leocad.xml
 share/pixmaps/leocad.png
-@dirrmtry share/mime/application
-@dirrmtry share/mime
 @dirrm %%DATADIR%%

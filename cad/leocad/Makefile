@@ -30,16 +30,12 @@ USE_QT4=	moc_build rcc_build uic_build iconengines_run imageformats_run \
 USE_GL=		glut
 USE_GNOME=	gtk20
 
-MAN1=		leocad.1
-
 PORTDOCS=	CREDITS.txt README.txt TODO.txt
-
-INSTALLS_ICONS=	yes
-ICON_SIZES=	16x16 24x24 32x32 48x48 128x128 256x256
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
+INSTALLS_ICONS=	yes
+ICON_SIZES=	16x16 24x24 32x32 48x48 128x128 256x256
 
 post-extract:
 	@${UNZIP_CMD} -q -o ${_DISTDIR}/${LEOCAD_PIECES} -d ${WRKDIR}/pieces
@@ -63,19 +59,18 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/pieces/* ${STAGEDIR}${DATADIR}
 
 .for s in ${ICON_SIZES}
-	@${MKDIR} ${PREFIX}/share/icons/hicolor/${s}/apps
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps
 	${INSTALL_DATA} ${WRKSRC}/tools/icon/${PORTNAME}_${s}.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/${PORTNAME}.png
 .endfor
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
-	${INSTALL_DATA} ${WRKSRC}/tools/icon/${PORTNAME}.svg  \
+	${INSTALL_DATA} ${WRKSRC}/tools/icon/${PORTNAME}.svg \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/
-	@${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
-	${INSTALL_MAN} ${WRKSRC}/docs/${MAN1} ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	@${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_MAN} ${WRKSRC}/docs/leocad.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
 
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
