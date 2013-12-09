@@ -1,0 +1,88 @@
+--- ./src/kmancalaboard.cpp.orig	2011-04-28 13:04:29.000000000 +0000
++++ ./src/kmancalaboard.cpp	2013-12-09 16:43:06.361922818 +0000
+@@ -51,7 +51,7 @@
+ #define GAP_SCORE_WIDTH GAP_WIDTH*0.7
+ #define GAP_SCORE_HEIGHT 15
+ 
+-kMancalaBoard::kMancalaBoard ( QSize dim = QSize(850, 310), QWidget *parent = 0 )
++kMancalaBoard::kMancalaBoard ( QSize dim, QWidget *parent )
+         : QGraphicsView (parent) {
+ 
+ 	m_renderer 	= new kMancalaRenderer(this);
+--- ./src/kmancalaboard.h.orig	2011-04-24 18:27:55.000000000 +0000
++++ ./src/kmancalaboard.h	2013-12-09 16:38:43.938925422 +0000
+@@ -57,7 +57,7 @@
+ {
+     Q_OBJECT
+ public:
+-	kMancalaBoard(QSize dim, QWidget *parent);
++	kMancalaBoard(QSize dim = QSize(850, 310), QWidget *parent = 0);
+ 	~kMancalaBoard();
+ 
+ 	void init(board *b, player *p[2], int currentPlayer);
+--- ./src/kmancalahistory.cpp.orig	2011-04-24 22:18:37.000000000 +0000
++++ ./src/kmancalahistory.cpp	2013-12-09 16:53:22.348924892 +0000
+@@ -24,7 +24,7 @@
+ #include "kmancalahistory.h"
+ #include "kmancalahistoryitem.h"
+ 
+-kMancalaHistory::kMancalaHistory(QWidget *parent = 0)
++kMancalaHistory::kMancalaHistory(QWidget *parent)
+   : QListWidget(parent) {
+ }
+ 
+--- ./src/kmancalahistory.h.orig	2011-04-23 23:04:57.000000000 +0000
++++ ./src/kmancalahistory.h	2013-12-09 16:53:28.539924107 +0000
+@@ -30,7 +30,7 @@
+ class kMancalaHistory : public QListWidget {
+     Q_OBJECT
+ public:
+-	kMancalaHistory(QWidget *parent);
++	kMancalaHistory(QWidget *parent = 0);
+ 	void init(player **p, board *b);
+ 	void init(QList<kMancalaHistoryItem*>);
+ 
+--- ./src/kmancalahistoryitem.cpp.orig	2011-04-23 23:01:23.000000000 +0000
++++ ./src/kmancalahistoryitem.cpp	2013-12-09 16:55:40.967925279 +0000
+@@ -25,7 +25,7 @@
+ #include "board.h"
+ #include "player.h"
+ 
+-kMancalaHistoryItem::kMancalaHistoryItem(QListWidget *parent = 0, board *b = 0, player **p = 0, int playerLastTurn = 0, int playerNextTurn = 0, int move = -2)
++kMancalaHistoryItem::kMancalaHistoryItem(QListWidget *parent, board *b, player **p, int playerLastTurn, int playerNextTurn, int move)
+   : QListWidgetItem(parent, 0) {
+ 	if ( move == -1 ) {
+ 		setText(i18n("Game Start"));
+--- ./src/kmancalahistoryitem.h.orig	2011-04-23 23:05:02.000000000 +0000
++++ ./src/kmancalahistoryitem.h	2013-12-09 16:55:35.442923362 +0000
+@@ -26,7 +26,7 @@
+ 
+ class kMancalaHistoryItem : public QListWidgetItem {
+ public:
+-	kMancalaHistoryItem(QListWidget *parent, board *b, player **p, int playerLastTurn, int playerNextTurn, int move);
++	kMancalaHistoryItem(QListWidget *parent = 0, board *b = 0, player **p = 0, int playerLastTurn = 0, int playerNextTurn = 0, int move = -2);
+ 
+ 	board *getBoard(void);
+ 	player **getPlayers(void);
+--- ./src/kmancalarenderer.cpp.orig	2011-04-23 23:02:37.000000000 +0000
++++ ./src/kmancalarenderer.cpp	2013-12-09 16:45:19.888924757 +0000
+@@ -24,7 +24,7 @@
+ #include <QSvgRenderer>
+ #include <QDebug>
+ 
+-kMancalaRenderer::kMancalaRenderer(QObject *parent = NULL) :
++kMancalaRenderer::kMancalaRenderer(QObject *parent) :
+   QSvgRenderer(KStandardDirs::locate("appdata", "themes/default.svgz"), parent) {
+   
+ }
+--- ./src/kmancalarenderer.h.orig	2011-04-23 23:06:27.000000000 +0000
++++ ./src/kmancalarenderer.h	2013-12-09 16:45:26.187923485 +0000
+@@ -29,7 +29,7 @@
+   Q_OBJECT
+   
+ public:
+-    kMancalaRenderer(QObject* parent);
++    kMancalaRenderer(QObject* parent = NULL);
+     QPixmap renderPixmap(QString name, const QSize size);
+ 
+ public slots:
