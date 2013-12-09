@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2013-07-12 01:01:18.000000000 +0200
-+++ CMakeLists.txt	2013-11-05 21:12:26.000000000 +0100
-@@ -9,10 +9,8 @@
+--- ./CMakeLists.txt.orig	2013-11-26 05:11:29.000000000 +1030
++++ ./CMakeLists.txt	2013-11-28 23:52:39.202491493 +1030
+@@ -10,10 +10,8 @@
  set (OSO_FILE_VERSION_MAJOR 1)
  set (OSO_FILE_VERSION_MINOR 0)
  
@@ -13,7 +13,7 @@
  set (CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS TRUE)
  message (STATUS "Project source dir = ${PROJECT_SOURCE_DIR}")
  message (STATUS "Project build dir = ${CMAKE_BINARY_DIR}")
-@@ -21,6 +19,8 @@
+@@ -22,6 +20,8 @@
      message (FATAL_ERROR "Not allowed to run in-source build!")
  endif ()
  
@@ -22,57 +22,46 @@
  if (NOT CMAKE_BUILD_TYPE)
      set (CMAKE_BUILD_TYPE "Release")
  endif ()
-@@ -42,12 +42,11 @@
-                      OUTPUT_STRIP_TRAILING_WHITESPACE)
-     message (STATUS "Using gcc ${GCC_VERSION} as the compiler")
- endif ()
--if (NOT CMAKE_COMPILER_IS_CLANG)
--    string (REGEX MATCH clang CMAKE_COMPILER_IS_CLANG ${CMAKE_CXX_COMPILER})
--    if (CMAKE_COMPILER_IS_CLANG)
--        set (CMAKE_COMPILER_IS_CLANG 1)
--        message (STATUS "Using clang as the compiler")
--    endif ()
-+
-+message (STATUS "CMAKE_CXX_COMPILER_ID is ${CMAKE_CXX_COMPILER_ID}")
-+if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
-+    set (CMAKE_COMPILER_IS_CLANG 1)
-+    message (STATUS "Using clang as the compiler")
- endif ()
- 
- ## turn on more detailed warnings and consider warnings as errors
-@@ -121,6 +120,10 @@
+@@ -124,12 +124,11 @@
      endif ()
  endif ()
+ 
+-# Try to detect if this is an OSX distro new enough that the system library
+-# is libc++, in which case we should force use of Boost Wave (because that
+-# avoids a nonstandard g++ extension in the other code path).
+-if (EXISTS "/usr/lib/libc++.dylib" OR OSL_USE_LIBCPP)
+-    set (OSL_SYSTEM_HAS_LIBCPP ON)
+-endif ()
++# Try to detect libc++, in which case we should force use of Boost
++# Wave (because that avoids a nonstandard g++ extension in the other
++# code path).
++check_cxx_symbol_exists(_LIBCPP_VERSION string OSL_SYSTEM_HAS_LIBCPP)
++
+ 
+ set (VERBOSE OFF CACHE BOOL "Print lots of messages while compiling")
+ set (BUILDSTATIC OFF CACHE BOOL "Build static library instead of shared")
+@@ -167,7 +166,6 @@
+ 
+ if (CMAKE_COMPILER_IS_CLANG AND OSL_USE_LIBCPP)
+     message (STATUS "Using libc++")
+-    add_definitions ("-stdlib=libc++")
+ endif ()
+ 
+ set (CMAKE_MODULE_PATH
+@@ -202,6 +200,10 @@
+ 
+ message (STATUS "CMAKE_INSTALL_RPATH = ${CMAKE_INSTALL_RPATH}")
  
 +# Try to detect libc++, in which case we should force use of Boost
 +# Wave (because that avoids a nonstandard g++ extension in the other
 +# code path).
 +check_cxx_symbol_exists(_LIBCPP_VERSION string OSL_SYSTEM_HAS_LIBCPP)
  
- set (VERBOSE OFF CACHE BOOL "Print lots of messages while compiling")
- set (BUILDSTATIC OFF CACHE BOOL "Build static library instead of shared")
-@@ -129,12 +132,16 @@
-      "Use an externally built shared library version of the pugixml library")
- set (PUGIXML_HOME "" CACHE STRING "Hint about where to find external PugiXML library")
- if (WIN32)
--    set (USE_BOOST_WAVE ON CACHE BOOL "Use Boost Wave as preprocessor")
-     set (USE_LLVM_BITCODE OFF CACHE BOOL "Generate embedded LLVM bitcode")
- else ()
--    set (USE_BOOST_WAVE OFF CACHE BOOL "Use Boost Wave as preprocessor")
-     set (USE_LLVM_BITCODE ON CACHE BOOL "Generated embedded LLVM bitcode")
- endif ()
-+if (WIN32 OR OSL_SYSTEM_HAS_LIBCPP)
-+    set (USE_BOOST_WAVE ON CACHE BOOL "Use Boost Wave as preprocessor")
-+else ()
-+    set (USE_BOOST_WAVE OFF CACHE BOOL "Use Boost Wave as preprocessor")
-+endif ()
-+
- set (USE_PARTIO ON CACHE BOOL "Use Partio if found")
- 
- if (LLVM_NAMESPACE)
-@@ -149,6 +156,13 @@
-     add_definitions ("${EXTRA_CPP_DEFINITIONS}")
- endif()
+ ###########################################################################
+ if (MSVC)
+@@ -232,6 +234,13 @@
+ add_subdirectory (src/include)
+ add_subdirectory (src/doc)
  
 +if (USE_BOOST_WAVE)
 +    add_definitions ("-DUSE_BOOST_WAVE")
@@ -82,5 +71,5 @@
 +    message (STATUS "Using libc++")
 +endif ()
  
- set (CMAKE_MODULE_PATH
-      "${PROJECT_SOURCE_DIR}/cmake/modules"
+ 
+ #########################################################################
