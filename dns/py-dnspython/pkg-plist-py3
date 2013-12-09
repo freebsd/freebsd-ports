@@ -35,7 +35,6 @@
 %%PYTHON_SITELIBDIR%%/dns/version.py
 %%PYTHON_SITELIBDIR%%/dns/wiredata.py
 %%PYTHON_SITELIBDIR%%/dns/zone.py
-%%PYTHON_SITELIBDIR%%/dnspython-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/__init__.py
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/dsbase.py
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/mxbase.py
