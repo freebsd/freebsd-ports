@@ -7,6 +7,8 @@ bin/shptreetst
 bin/shptreevis
 bin/sortshp
 bin/tile4ms
+lib/libmapserver.so
+lib/libmapserver.so.1
 lib/libmapserver.so.6.4.0
 %%MAPSERV%%www/apache%%APA_VER%%/cgi-bin/mapserv
 %%PHP%%%%PHP_EXTENSION_DIR%%/php_mapscript.so
