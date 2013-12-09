@@ -10,16 +10,13 @@ GNU_CONFIGURE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/gtkmm-2.0
 
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC}/examples -name Makefile.in \
 		| ${XARGS} ${REINPLACE_CMD} -e '/^install-am:/ s| all-am||'
 
 do-install:
-.if !defined(NOPORTDOCS)
 .for d in docs examples
-	@cd ${WRKSRC}/${d} && ${GMAKE} install
+	@cd ${WRKSRC}/${d} && ${GMAKE} ${MAKE_ARGS} install
 .endfor
-.endif
 
 .include "${.CURDIR}/../../devel/glib20-reference/bsd.gnome-reference.mk"

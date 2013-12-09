@@ -24,9 +24,9 @@ x11/gnome-panel-reference:gnome-panel-reference \
 x11/libgnome-reference:libgnome-reference \
 x11-fonts/fontconfig-reference:fontconfig-reference \
 x11-toolkits/gal2-reference:gal2-reference \
-x11-toolkits/gtk20-reference:gtk-reference \
-x11-toolkits/gtkmm20-reference:gtkmm-reference \
-x11-toolkits/gtkmm24-reference:gtkmm-reference \
+x11-toolkits/gtk20-reference:gtk2-reference \
+x11-toolkits/gtkmm20-reference:gtkmm20-reference \
+x11-toolkits/gtkmm24-reference:gtkmm24-reference \
 x11-toolkits/gtksourceview-reference:gtksourceview-reference \
 x11-toolkits/libbonoboui-reference:libbonoboui-reference \
 x11-toolkits/libgnomeui-reference:libgnomeui-reference \

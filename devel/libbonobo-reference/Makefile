@@ -6,5 +6,4 @@ PORTREVISION=	0
 REFERENCE_SRC=	${WRKSRC}/doc
 BOOKS=		activation-api api
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../devel/glib20-reference/bsd.gnome-reference.mk"

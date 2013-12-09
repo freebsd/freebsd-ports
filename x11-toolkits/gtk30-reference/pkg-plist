@@ -9,6 +9,7 @@ share/doc/gdk3/api-index-3-0.html
 share/doc/gdk3/api-index-3-2.html
 share/doc/gdk3/api-index-3-4.html
 share/doc/gdk3/api-index-3-6.html
+share/doc/gdk3/api-index-3-8.html
 share/doc/gdk3/api-index-deprecated.html
 share/doc/gdk3/api-index-full.html
 share/doc/gdk3/arrow.png
@@ -45,6 +46,8 @@ share/doc/gdk3/gdk3-Drag-and-Drop.html
 share/doc/gdk3/gdk3-Event-Structures.html
 share/doc/gdk3/gdk3-Events.html
 share/doc/gdk3/gdk3-General.html
+share/doc/gdk3/gdk3-GdkFrameClock.html
+share/doc/gdk3/gdk3-GdkFrameTimings.html
 share/doc/gdk3/gdk3-Keyboard-Handling.html
 share/doc/gdk3/gdk3-Pango-Interaction.html
 share/doc/gdk3/gdk3-Pixbufs.html
@@ -123,6 +126,7 @@ share/doc/gtk3/Application.html
 share/doc/gtk3/ApplicationChoosing.html
 share/doc/gtk3/Builder.html
 share/doc/gtk3/ButtonWidgets.html
+share/doc/gtk3/DeprecatedObjects.html
 share/doc/gtk3/DisplayWidgets.html
 share/doc/gtk3/GtkAboutDialog.html
 share/doc/gtk3/GtkAccelLabel.html
@@ -337,6 +341,7 @@ share/doc/gtk3/api-index-3-0.html
 share/doc/gtk3/api-index-3-2.html
 share/doc/gtk3/api-index-3-4.html
 share/doc/gtk3/api-index-3-6.html
+share/doc/gtk3/api-index-3-8.html
 share/doc/gtk3/api-index-deprecated.html
 share/doc/gtk3/api-index-full.html
 share/doc/gtk3/appchooserbutton.png
@@ -353,13 +358,14 @@ share/doc/gtk3/border2.png
 share/doc/gtk3/border3.png
 share/doc/gtk3/box-expand.png
 share/doc/gtk3/box-packing.png
+share/doc/gtk3/broadwayd.html
 share/doc/gtk3/button.png
 share/doc/gtk3/ch02.html
 share/doc/gtk3/ch03.html
-share/doc/gtk3/ch24s02.html
-share/doc/gtk3/ch26s02.html
-share/doc/gtk3/ch28s02.html
-share/doc/gtk3/ch28s03.html
+share/doc/gtk3/ch25s02.html
+share/doc/gtk3/ch27s02.html
+share/doc/gtk3/ch29s02.html
+share/doc/gtk3/ch29s03.html
 share/doc/gtk3/chap-drawing-model.html
 share/doc/gtk3/check-button.png
 share/doc/gtk3/checklist-gdkeventexpose-region.html
@@ -500,6 +506,7 @@ share/doc/gtk3/gtk-select-color.png
 share/doc/gtk3/gtk-undelete-ltr.png
 share/doc/gtk3/gtk-undelete-rtl.png
 share/doc/gtk3/gtk-update-icon-cache.html
+share/doc/gtk3/gtk-wayland.html
 share/doc/gtk3/gtk-windows.html
 share/doc/gtk3/gtk-x11.html
 share/doc/gtk3/gtk-yes.png
