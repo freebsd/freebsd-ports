@@ -1,18 +1,21 @@
 bin/infobot
-etc/infobot/infobot-are.txt
-etc/infobot/infobot-is.txt
-etc/infobot/infobot.channels
-@unexec if cmp -s %D/etc/infobot/infobot.config %D/etc/infobot/infobot.config-dist; then rm -f %D/etc/infobot/infobot.config; fi
-etc/infobot/infobot.config-dist
-etc/infobot/infobot.crontab
-@unexec if cmp -s %D/etc/infobot/infobot.help %D/etc/infobot/infobot.help-dist; then rm -f %D/etc/infobot/infobot.help; fi
-etc/infobot/infobot.help-dist
-@unexec if cmp -s %D/etc/infobot/infobot.users %D/etc/infobot/infobot.users-dist; then rm -f %D/etc/infobot/infobot.users; fi
-etc/infobot/infobot.users-dist
-etc/infobot/magic8.txt
-etc/infobot/sane-are.txt
-etc/infobot/sane-ignore.txt
-etc/infobot/sane-is.txt
+%%ETCDIR%%/infobot-are.txt
+%%ETCDIR%%/infobot-is.txt
+%%ETCDIR%%/infobot.channels
+@unexec if cmp -s %D/%%ETCDIR%%/infobot.config %D/%%ETCDIR%%/infobot.config-dist; then rm -f %D/%%ETCDIR%%/infobot.config; fi
+%%ETCDIR%%/infobot.config-dist
+@exec if [ ! -f %D/%%ETCDIR%%/infobot.config ]; then cp -p %D/%F %B/infobot.config; fi
+%%ETCDIR%%/infobot.crontab
+@unexec if cmp -s %D/%%ETCDIR%%/infobot.help %D/%%ETCDIR%%/infobot.help-dist; then rm -f %D/%%ETCDIR%%/infobot.help; fi
+%%ETCDIR%%/infobot.help-dist
+@exec if [ ! -f %D/%%ETCDIR%%/infobot.help ]; then cp -p %D/%F %B/infobot.help; fi
+@unexec if cmp -s %D/%%ETCDIR%%/infobot.users %D/%%ETCDIR%%/infobot.users-dist; then rm -f %D/%%ETCDIR%%/infobot.users; fi
+%%ETCDIR%%/infobot.users-dist
+@exec if [ ! -f %D/%%ETCDIR%%/infobot.users ]; then cp -p %D/%F %B/infobot.users; fi
+%%ETCDIR%%/magic8.txt
+%%ETCDIR%%/sane-are.txt
+%%ETCDIR%%/sane-ignore.txt
+%%ETCDIR%%/sane-is.txt
 %%DATADIR%%/extras/ANSI.pl
 %%DATADIR%%/extras/Aviation.pl
 %%DATADIR%%/extras/DNS.pl
@@ -77,6 +80,6 @@ etc/infobot/sane-is.txt
 @dirrm %%DATADIR%%/extras
 @dirrm %%DATADIR%%/files
 @dirrm %%DATADIR%%/scripts
-@dirrmtry etc/infobot
-@dirrmtry share/infobot/src
-@dirrmtry share/infobot
+@dirrmtry %%DATADIR%%/src
+@dirrmtry %%DATADIR%%
+@dirrmtry %%ETCDIR%%

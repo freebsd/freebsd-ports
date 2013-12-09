@@ -46,8 +46,9 @@ NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s,/usr/local,${LOCALBASE}," ${WRKSRC}/Makefile ${WRKSRC}/scripts/init.sl
 
+.include <bsd.port.options.mk>
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${PREFIX}/share/doc/slirc
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/slirc/
