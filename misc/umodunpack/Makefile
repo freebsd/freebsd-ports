@@ -12,14 +12,18 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unpack umod files for Unreal and/or Unreal Tournament
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	${DISTNAME}
+
 USE_PERL5=	run
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/${DISTNAME}
 
-NO_STAGE=	yes
+post-extract:
+	${CP} ${DISTDIR}/${DISTNAME} ${WRKDIR}
+
 do-install:
-	@${INSTALL_SCRIPT} ${DISTDIR}/${DISTNAME} ${PREFIX}/bin/${DISTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME}  ${STAGEDIR}${PREFIX}/bin/${DISTNAME}
 
 .include <bsd.port.mk>
