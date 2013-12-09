@@ -5298,3 +5298,4 @@ www/clickheat||2013-12-07|Has expired: No more activity since 2011
 security/pdfcrack||2013-12-08|Has expired: Not active since several years
 security/rarcrack||2013-12-08|Has expired: Not active since several years
 java/subversion-java|java/java-subversion|2013-12-08|Rename to reflect subversion child port naming scheme
+games/flare|games/flare-game|2013-12-10|Flare port was split into engine and game counterparts, as upstream did
