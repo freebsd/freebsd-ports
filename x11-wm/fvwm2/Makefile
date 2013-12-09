@@ -28,14 +28,13 @@ USE_XORG=	xpm xft
 USE_BZIP2=	yes
 WANT_GNOME=	yes
 
-OPTIONS_DEFINE=	ICONS ICONV STROKE RPLAY SESSION_MGMT PNG SVG BIDI NLS IMLIB GNOME1
+OPTIONS_DEFINE=	ICONS ICONV STROKE RPLAY SESSION_MGMT PNG SVG BIDI NLS IMLIB
 OPTIONS_DEFAULT=	ICONV ICONV PNG
 STROKE_DESC=		support for mouse gestures
 RPLAY_DESC=		RPlay support in FvwmEvent
 SESSION_MGMT_DESC=	Session Management support
 BIDI_DESC=		Asian bi-directional text support
 IMLIB_DESC=		imlib library (requires gtk12)
-GNOME1_DESC=		GNOME 1 desktop support
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
@@ -119,12 +118,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment not installed: "
 .endif
 
-.if ${PORT_OPTIONS:MGNOME1}
-USE_GNOME+=gnomelibs
-CONFIGURE_ARGS+=	--with-gnome
-.else
 CONFIGURE_ARGS+=	--without-gnome
-.endif
 
 MAN1+=	FvwmAnimate.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmButtons.1 \
 	FvwmCommand.1 FvwmConsole.1 FvwmConsoleC.pl.1 FvwmCpp.1 FvwmDebug.1 \
