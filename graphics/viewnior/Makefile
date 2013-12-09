@@ -12,7 +12,8 @@ COMMENT=	Fast and simple image viewer
 
 LICENSE=	GPLv3
 
-USES=		gmake pkgconfig shared-mime-info
+USES=		gmake pathfix pkgconfig shared-mime-info
+PATHFIX_MAKEFILEIN=	Makefile.in.in
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20
@@ -23,12 +24,14 @@ PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
-NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
 
+.include <bsd.port.options.mk>
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$(prefix)/$$(DATADIRNAME)/locale|$$(datarootdir)/locale|' \
-		${WRKSRC}/po/Makefile.in.in
+.if ! ${PORT_OPTIONS:MNLS}
+	@${REINPLACE_CMD} -e 's|install: install-data|install:|' ${WRKSRC}/po/Makefile.in.in
+.endif
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
