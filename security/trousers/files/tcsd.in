@@ -33,6 +33,6 @@ tcsd_precmd()
 
 load_rc_config $name
 
-: tcsd_enable=${tcsd_enable-"NO"}
+: ${tcsd_enable:="NO"}
 
 run_rc_command "$1"
