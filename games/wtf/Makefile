@@ -10,6 +10,7 @@ MAINTAINER=	lifanov@mail.lifanov.com
 COMMENT=	Translates common Internet acronyms
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/misc|${DATADIR}|g' ${WRKSRC}/wtf*
