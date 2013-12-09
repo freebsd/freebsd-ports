@@ -1,8 +1,11 @@
 bin/aqemu
 man/man1/aqemu.1.gz
 share/applications/aqemu.desktop
+share/aqemu/English.qm
+share/aqemu/French.qm
 share/aqemu/German.qm
 share/aqemu/Russian.qm
+share/aqemu/Ukrainian.qm
 share/aqemu/aqemu_links.html
 share/aqemu/crystalsvg_icons.rcc
 share/aqemu/os_icons/alt.png
