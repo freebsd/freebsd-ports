@@ -24,13 +24,6 @@ CONFIGURE_ENV=	LIBS=${PTHREAD_LIBS}' -L${LOCALBASE}/lib' \
 CONFIGURE_ARGS=	--disable-beep_media_player_plugin
 PATCH_STRIP=	-p1
 
-MAN1=		osd_cat.1 xosd-config.1
-MAN3=		xosd.3 xosd_create.3 xosd_destroy.3 xosd_display.3 \
-		xosd_get_number_lines.3 xosd_hide.3 xosd_is_onscreen.3 \
-		xosd_set_align.3 xosd_set_bar_length.3 \
-		xosd_set_horizontal_offset.3 xosd_set_pos.3 \
-		xosd_set_shadow_offset.3 xosd_set_vertical_offset.3 \
-		xosd_show.3 xosd_uninit.3
 PORTDOCS=	AUTHORS ChangeLog TODO
 
 OPTIONS_DEFINE=	XMMS MSEC XFT DOCS
@@ -39,32 +32,27 @@ XMMS_DESC=	Build and install XMMS-OSD plugin
 MSEC_DESC=	Use milliseconds timeout (breaks compatibility!)
 XFT_DESC=	Unofficial Xft support
 
-NO_STAGE=	yes
+OPTIONS_SUB=	yes
+
+XMMS_LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms \
+			libgdk_pixbuf.so:${PORTSDIR}/graphics/gdk-pixbuf
+XMMS_CONFIGURE_ENABLE=	new-plugin
+
+MSEC_EXTRA_PATCHES=	${FILESDIR}/extra-patch-msec-timeout
+
+XFT_EXTRA_PATCHES=	${FILESDIR}/extra-patch-xft
+XFT_USE=		GNOME=pango XORG=xft
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXMMS}
 COMMENT+=	(with XMMS plugin)
-LIB_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms \
-		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
-# shlib version is needed for libgdk_pixbuf, otherwise it could be bogusly
-# satisfied by installed `graphics/gdk-pixbuf2'
-PLIST_SUB=	XMMS=""
-.else
-CONFIGURE_ARGS+=	--disable-new-plugin
-PLIST_SUB=	XMMS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMSEC}
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-msec-timeout
 DELAY_UNITS=	milliseconds
 .else
 DELAY_UNITS=	seconds
-.endif
-
-.if ${PORT_OPTIONS:MXFT}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-xft
-USE_GNOME=	pango
-USE_XORG+=	xft
 .endif
 
 post-patch:
@@ -81,9 +69,7 @@ post-patch:
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
