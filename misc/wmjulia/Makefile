@@ -10,13 +10,14 @@ MASTER_SITES=	http://web.novalis.org/programs/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp that creates an animated Julia set
 
+LICENSE=	GPLv2
+
 PLIST_FILES=	bin/wmjulia
 WRKSRC=	${WRKDIR}/${PORTNAME}.app/${PORTNAME}
-USE_GMAKE=	yes
+USES=		gmake
 USE_XORG=	xpm xext
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
