@@ -22,10 +22,9 @@ RUN_DEPENDS=	soya_editor:${PORTSDIR}/graphics/py-soya3d \
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_TWISTED=	yes
 USE_GL=		glew
 USE_SDL=	sdl mixer
-USES=		gettext
+USES=		gettext twisted
 
 PYDISTUTILS_PKGNAME=	Balazar
 PYDISTUTILS_EGGINFODIR=	${PREFIX}/share

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Train Game
+GenericName=Train Game
+Comment=Game about Trains
+Icon=traingame
+Exec=traingame-map
+Categories=Game;ArcadeGame;
+Terminal=true

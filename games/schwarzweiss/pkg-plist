@@ -1,0 +1,33 @@
+bin/schwarzweiss
+share/pixmaps/schwarzweiss.png
+%%DATADIR%%/data/__init__.py
+%%DATADIR%%/data/__init__.pyc
+%%DATADIR%%/data/__init__.pyo
+%%DATADIR%%/data/blip1.ogg
+%%DATADIR%%/data/blip2.ogg
+%%DATADIR%%/data/convert1.ogg
+%%DATADIR%%/data/convert2.ogg
+%%DATADIR%%/data/explo3.ogg
+%%DATADIR%%/data/explo4.ogg
+%%DATADIR%%/data/explo5.ogg
+%%DATADIR%%/data/ezmenu.py
+%%DATADIR%%/data/ezmenu.pyc
+%%DATADIR%%/data/ezmenu.pyo
+%%DATADIR%%/data/flattr_schwarzweiss.png
+%%DATADIR%%/data/gameover.ogg
+%%DATADIR%%/data/hit2.ogg
+%%DATADIR%%/data/menupic.png
+%%DATADIR%%/data/mg1.ogg
+%%DATADIR%%/data/schuss1.ogg
+%%DATADIR%%/data/schuss2.ogg
+%%DATADIR%%/data/schuss3.ogg
+%%DATADIR%%/data/schwarzweiss-flattr.pdf
+%%DATADIR%%/data/schwarzweiss.py
+%%DATADIR%%/data/schwarzweiss.pyc
+%%DATADIR%%/data/schwarzweiss.pyo
+%%DATADIR%%/data/vampir1.ogg
+%%DATADIR%%/schwarzweiss_start.py
+%%DATADIR%%/schwarzweiss_start.pyc
+%%DATADIR%%/schwarzweiss_start.pyo
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%

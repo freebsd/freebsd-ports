@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	binutils
-PORTVERSION=	2.23.2
+PORTVERSION=	2.24
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -15,7 +15,7 @@ USE_BZIP2=	yes
 USES=		gettext gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} --disable-werror \
-	--disable-nls CFLAGS="-I/usr/local/include"
+		--disable-nls CFLAGS="-I/usr/local/include"
 INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 
 post-install:
@@ -23,7 +23,7 @@ post-install:
 	${LN} -f ${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}$F  \
 		${STAGEDIR}${PREFIX}/${PKGNAMEPREFIX:S/-$//}/bin/$F
 .endfor
-	cd ${STAGEDIR}${PREFIX}/lib ; ${MV} libiberty.a \
+	cd ${WRKSRC}/libiberty ; ${CP} libiberty.a \
 		${STAGEDIR}${PREFIX}/${PKGNAMEPREFIX:S/-$//}/lib
 	${RM} -f ${STAGEDIR}${PREFIX}/${PKGNAMEPREFIX:S/-$//}/info/*
 	${RMDIR} ${STAGEDIR}${PREFIX}/${PKGNAMEPREFIX:S/-$//}/info

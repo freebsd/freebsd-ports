@@ -10,6 +10,23 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20131208:
+AUTHOR: mva@FreeBSD.org
+
+  New USES=twisted, to replace the old USE_TWISTED knob.
+
+  twisted can be configured with the arguments run or build to replace
+  the previous USE_TWISTED_RUN and USE_TWISTED_BUILD knobs. The twisted
+  components can be added as comma-separated arguments. If you previously
+  wrote
+    USE_TWISTED=	yes
+    USE_TWISTED=	conch names
+    USE_TWISTED_RUN=	yes
+  you now would write
+    USES=	twisted
+    USES=	twisted:conch,names
+    USES=	twisted:run
+  
 20131119:
 AUTHOR: kwm@FreeBSD.org
 

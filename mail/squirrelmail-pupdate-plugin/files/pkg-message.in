@@ -1,5 +1,0 @@
-For the port to work properly you must copy the file
-%%PREFIX%%/%%SQUIRRELDIR%%/plugins/pupdate/config.php.sample
-to
-%%PREFIX%%/%%SQUIRRELDIR%%/plugins/pupdate/config.php
-and edit the configuration to meet your needs.

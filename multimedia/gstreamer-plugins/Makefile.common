@@ -430,6 +430,7 @@ gst_ogg_DIST=	base
 
 # opencv
 gst_opencv_LIB_DEPENDS+=libopencv_highgui.so:${PORTSDIR}/graphics/opencv
+gst_opencv_CONFIGURE_ENV+=	OPENCV_CFLAGS="-I${LOCALBASE}/include/opencv"
 gst_opencv_PLIST_FILES= ${GST_LIB_DIR}/libgstopencv.la \
 			${GST_LIB_DIR}/libgstopencv.so
 gst_opencv_DIST=	bad

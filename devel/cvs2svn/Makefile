@@ -21,9 +21,14 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 # 2.4.0 -> svn r5392
 PATCHREV=	5433
 
-USE_PYTHON=		-2.7
+USES=			shebangfix
+USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
+
+python_OLD_CMD=		/usr/bin/env python
+python_CMD=		/usr/bin/env python2
+SHEBANG_FILES=		cvs2svn cvs2git cvs2bzr
 
 OPTIONS_MULTI=		SCM
 OPTIONS_MULTI_SCM=	SUBVERSION GIT BAZAAR

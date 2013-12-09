@@ -1,5 +1,6 @@
 bin/xombrero
 bin/xombrero-bin
+man/man1/xombrero.1.gz
 share/applications/xombrero.desktop
 share/icons/hicolor/128x128/apps/xombreroicon128.png
 share/icons/hicolor/16x16/apps/xombreroicon16.png
@@ -9,6 +10,10 @@ share/icons/hicolor/64x64/apps/xombreroicon64.png
 %%DATADIR%%/hsts-preload
 %%DATADIR%%/style.css
 %%DATADIR%%/tld-rules
+%%EXAMPLESDIR%%/favorites
+%%EXAMPLESDIR%%/playflash.sh
+%%EXAMPLESDIR%%/xombrero.conf
+@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%
 @dirrmtry share/icons/hicolor/64x64/apps
 @dirrmtry share/icons/hicolor/64x64

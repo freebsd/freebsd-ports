@@ -1,9 +1,0 @@
-@comment $FreeBSD$
-lib/libzmq.so.1
-lib/libzmq.la
-lib/libzmq.a
-lib/libzmq.so
-libdata/pkgconfig/libzmq.pc
-include/zmq.hpp
-include/zmq_utils.h
-include/zmq.h

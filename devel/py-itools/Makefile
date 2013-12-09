@@ -16,7 +16,8 @@ BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}reportlab2>=2.3:${PORTSDIR}/print/py-repo
 		${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:${PORTSDIR}/math/py-matplotlib \
 		${PYTHON_PKGNAMEPREFIX}gobject>=2.16.1:${PORTSDIR}/devel/py-gobject \
-		${PYTHON_PKGNAMEPREFIX}pygit2>=0:${PORTSDIR}/devel/py-pygit2
+		${PYTHON_PKGNAMEPREFIX}pygit2>=0:${PORTSDIR}/devel/py-pygit2 \
+		python:${PORTSDIR}/lang/python
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 LIB_DEPENDS=	glib:${PORTSDIR}/devel/glib20 \
 		soup:${PORTSDIR}/devel/libsoup

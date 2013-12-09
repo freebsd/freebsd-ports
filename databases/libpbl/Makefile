@@ -11,15 +11,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Peter Graf's Program Base Library
 
 MAKEFILE=	makefile
-PLIST_FILES=	lib/libpbl.a include/pbl.h
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-.ifndef(NOPORTDOCS)
+PLIST_FILES=lib/libpbl.a include/pbl.h
 PORTDOCS=	*
-.endif
 
-NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e 's/=  -Wall -O3/+=  -Wall -Werror/' \
 		-e 's/^CC=/CC?=/' -e '/^.rm -f/d' ${WRKSRC}/makefile
@@ -29,15 +26,12 @@ post-extract:
 		${WRKSRC}/*.c
 
 do-install:
-	${MKDIR} ${PREFIX}/lib ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/libpbl.a ${PREFIX}/lib/
-	${INSTALL_DATA} ${WRKSRC}/pbl.h ${PREFIX}/include/
-.ifndef(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/
-.endif
+	${INSTALL_DATA} ${WRKSRC}/libpbl.a ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/pbl.h ${STAGEDIR}${PREFIX}/include/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}/
 
-post-build test regression-test check:
+test regression-test check:
 	${MAKE} -C ${WRKSRC} test
 
 .include <bsd.port.mk>

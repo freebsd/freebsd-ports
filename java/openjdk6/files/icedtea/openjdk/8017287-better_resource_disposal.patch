@@ -1,0 +1,22 @@
+# HG changeset patch
+# User bae
+# Date 1382732366 -3600
+#      Fri Oct 25 21:19:26 2013 +0100
+# Node ID 768afb4062fb6653278e5f7e5304a623fcd80c9c
+# Parent  43b600fed0e8ac9d5ffe7556617d4850143e2dcd
+8017287: Better resource disposal
+Reviewed-by: vadim
+
+diff -r 43b600fed0e8 -r 768afb4062fb src/share/classes/sun/java2d/Disposer.java
+--- jdk/src/share/classes/sun/java2d/Disposer.java	Fri Oct 25 21:01:28 2013 +0100
++++ jdk/src/share/classes/sun/java2d/Disposer.java	Fri Oct 25 21:19:26 2013 +0100
+@@ -147,8 +147,7 @@
+                 obj = null;
+                 rec = null;
+             } catch (Exception e) {
+-                System.out.println("Exception while removing reference: " + e);
+-                e.printStackTrace();
++                System.out.println("Exception while removing reference.");
+             }
+         }
+     }

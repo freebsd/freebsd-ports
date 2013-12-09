@@ -1,5 +1,0 @@
-For the port to work properly you must copy the file
-%%SQUIRRELDIR%%/plugins/qmailadmin_login/config_default.php
-to
-%%SQUIRRELDIR%%/plugins/qmailadmin_login/config.php
-and edit the configuration to meet your needs.

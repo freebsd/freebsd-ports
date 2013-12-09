@@ -3,6 +3,7 @@
 
 PORTNAME=	ratbox-respond
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	irc sysutils
 MASTER_SITES=	http://respond.ratbox.org/download/
 EXTRACT_SUFX=	.tgz
@@ -16,24 +17,16 @@ BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 
-SUB_FILES=	pkg-message
-
-PORTDOCS=	*
+PORTDOCS=	challenge.txt
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/ratbox-respond bin/makekeypair
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/makekeypair ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} challenge.txt ${DOCSDIR}
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}/client-scripts
-	${INSTALL_DATA} ${WRKSRC}/client-scripts/* ${EXAMPLESDIR}/client-scripts
-.endif
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/makekeypair ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/challenge.txt ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/client-scripts/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

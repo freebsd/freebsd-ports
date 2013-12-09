@@ -6,6 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	#
 DISTFILES=	flex_sdk_2_194515.zip
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Adobe Flex SDK
@@ -14,8 +15,7 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
 RESTRICTED=	Need agreement before download
 
-CONFLICTS=	ja-flex-sdk-2.* flex-sdk-3.* flex-sdk-4.*
-NO_LATEST_LINK=	YES
+CONFLICTS=	ja-flex-sdk-2.* flex-sdk3-3.* flex-sdk-4.*
 USE_ZIP=	YES
 USE_JAVA=	YES
 JAVA_VERSION=	1.6+

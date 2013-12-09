@@ -1,0 +1,222 @@
+# HG changeset patch
+# User jjg
+# Date 1215565579 25200
+#      Tue Jul 08 18:06:19 2008 -0700
+# Node ID 8f5d8429b3f18ee4c9820ac1fb597f63c55911f3
+# Parent  4f38abed863c89ee101a3af495e7293df04a4a0e
+4501661: disallow mixing -public, -private, and -protected options at the same time
+Reviewed-by: ksrini
+
+diff -r 4f38abed863c -r 8f5d8429b3f1 src/share/classes/com/sun/tools/javap/JavapTask.java
+--- langtools/src/share/classes/com/sun/tools/javap/JavapTask.java	Sat Aug 08 17:56:37 2009 -0700
++++ langtools/src/share/classes/com/sun/tools/javap/JavapTask.java	Tue Jul 08 18:06:19 2008 -0700
+@@ -145,24 +145,31 @@
+ 
+         new Option(false, "-public") {
+             void process(JavapTask task, String opt, String arg) {
++                task.options.accessOptions.add(opt);
+                 task.options.showAccess = AccessFlags.ACC_PUBLIC;
+             }
+         },
+ 
+         new Option(false, "-protected") {
+             void process(JavapTask task, String opt, String arg) {
++                task.options.accessOptions.add(opt);
+                 task.options.showAccess = AccessFlags.ACC_PROTECTED;
+             }
+         },
+ 
+         new Option(false, "-package") {
+             void process(JavapTask task, String opt, String arg) {
++                task.options.accessOptions.add(opt);
+                 task.options.showAccess = 0;
+             }
+         },
+ 
+         new Option(false, "-p", "-private") {
+             void process(JavapTask task, String opt, String arg) {
++                if (!task.options.accessOptions.contains("-p") &&
++                        !task.options.accessOptions.contains("-private")) {
++                    task.options.accessOptions.add(opt);
++                }
+                 task.options.showAccess = AccessFlags.ACC_PRIVATE;
+             }
+         },
+@@ -422,6 +429,16 @@
+                 throw new BadArgs("err.unknown.option", arg).showUsage(true);
+         }
+ 
++        if (!options.compat && options.accessOptions.size() > 1) {
++            StringBuilder sb = new StringBuilder();
++            for (String opt: options.accessOptions) {
++                if (sb.length() > 0)
++                    sb.append(" ");
++                sb.append(opt);
++            }
++            throw new BadArgs("err.incompatible.options", sb);
++        }
++
+         if (options.ignoreSymbolFile && fileManager instanceof JavapFileManager)
+             ((JavapFileManager) fileManager).setIgnoreSymbolFile(true);
+ 
+diff -r 4f38abed863c -r 8f5d8429b3f1 src/share/classes/com/sun/tools/javap/Options.java
+--- langtools/src/share/classes/com/sun/tools/javap/Options.java	Sat Aug 08 17:56:37 2009 -0700
++++ langtools/src/share/classes/com/sun/tools/javap/Options.java	Tue Jul 08 18:06:19 2008 -0700
+@@ -25,6 +25,8 @@
+ 
+ package com.sun.tools.javap;
+ 
++import java.util.HashSet;
++import java.util.Set;
+ import com.sun.tools.classfile.AccessFlags;
+ 
+ /*
+@@ -74,6 +76,7 @@
+     public boolean showFlags;
+     public boolean showLineAndLocalVariableTables;
+     public int showAccess;
++    public Set<String> accessOptions = new HashSet<String>();
+     public boolean showDisassembled;
+     public boolean showInternalSignatures;
+     public boolean showAllAttrs;
+diff -r 4f38abed863c -r 8f5d8429b3f1 src/share/classes/com/sun/tools/javap/resources/javap.properties
+--- langtools/src/share/classes/com/sun/tools/javap/resources/javap.properties	Sat Aug 08 17:56:37 2009 -0700
++++ langtools/src/share/classes/com/sun/tools/javap/resources/javap.properties	Tue Jul 08 18:06:19 2008 -0700
+@@ -7,6 +7,7 @@
+ err.end.of.file=unexpected end of file while reading {0}
+ err.file.not.found=file not found: {0}
+ err.h.not.supported=-h is no longer available - use the 'javah' program
++err.incompatible.options=bad combination of options: {0}
+ err.internal.error=internal error: {0} {1} {2}
+ err.ioerror=IO error reading {0}: {1}
+ err.missing.arg=no value given for {0}
+diff -r 4f38abed863c -r 8f5d8429b3f1 test/tools/javap/T4501661.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ langtools/test/tools/javap/T4501661.java	Tue Jul 08 18:06:19 2008 -0700
+@@ -0,0 +1,126 @@
++/*
++ * Copyright 2008 Sun Microsystems, Inc.  All Rights Reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
++ * CA 95054 USA or visit www.sun.com if you need additional information or
++ * have any questions.
++ */
++
++import java.io.*;
++import java.util.*;
++
++/*
++ * @test
++ * @bug 4501661
++ * @summary disallow mixing -public, -private, and -protected
++ */
++public class T4501661 {
++    public static void main(String... args) throws Exception {
++        new T4501661().run();
++    }
++
++    void run() throws Exception {
++        File javaFile = writeTestFile();
++        File classFile = compileTestFile(javaFile);
++        boolean[] values = { false, true };
++        for (boolean priv: values) {
++            for (boolean prot: values) {
++                for (boolean publ: values) {
++                    test(priv, prot, publ, classFile);
++                }
++            }
++        }
++
++        if (errors > 0)
++            throw new Exception(errors + " errors found");
++    }
++
++    void test(boolean priv, boolean prot, boolean publ, File classFile) {
++        List<String> args = new ArrayList<String>();
++        if (priv)
++            args.add("-private");
++        if (prot)
++            args.add("-protected");
++        if (publ)
++            args.add("-public");
++        boolean expectOK = (args.size() <= 1);
++        args.add(classFile.getPath());
++        String out = javap(args, expectOK);
++        if (out == null)
++            return;
++        if (!priv && !prot && !publ)
++            checkNone(out, "private");
++        if (prot)
++            checkNone(out, "private", "package");
++        if (publ)
++            checkNone(out, "private", "package", "protected");
++    }
++
++    File writeTestFile() throws IOException {
++        File f = new File("Test.java");
++        PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(f)));
++        out.println("abstract class Test { ");
++        out.println("  public void public_m() { }");
++        out.println("  protected void protected_m() { }");
++        out.println("  private void private_m() { }");
++        out.println("  void package_m() { }");
++        out.println("}");
++        out.close();
++        return f;
++    }
++
++    File compileTestFile(File f) {
++        int rc = com.sun.tools.javac.Main.compile(new String[] { "-g", f.getPath() });
++        if (rc != 0)
++            throw new Error("compilation failed. rc=" + rc);
++        String path = f.getPath();
++        return new File(path.substring(0, path.length() - 5) + ".class");
++    }
++
++    String javap(List<String> args, boolean expectOK) {
++        StringWriter sw = new StringWriter();
++        PrintWriter pw = new PrintWriter(sw);
++        int rc = com.sun.tools.javap.Main.run(args.toArray(new String[args.size()]), pw);
++        System.err.println(args);
++        System.err.println(sw);
++        if (expectOK) {
++            if (rc == 0)
++                return sw.toString();
++            else
++                error("javap failed unexpectedly; rc=" + rc + "\n" + sw);
++        } else {
++            if (rc == 0)
++                error("javap succeeded unexpectedly");
++        }
++        return null;
++    }
++
++    void checkNone(String log, String... words) {
++        for (String word: words) {
++            if (log.indexOf(word) != -1)
++                error("\"" + word + "\" unexpectedly found in output");
++        }
++    }
++
++    void error(String msg) {
++        System.err.println("error: " + msg);
++        errors++;
++    }
++
++    int errors;
++}

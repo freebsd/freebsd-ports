@@ -11,9 +11,9 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Extension for Nautilus to configure programs to launch on files
 
-LIB_DEPENDS=	uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
+LIB_DEPENDS=	libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
 
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
@@ -28,9 +28,11 @@ PORTDOCS=	AUTHORS COPYING ChangeLog ChangeLog-2008 ChangeLog-2009 INSTALL \
 		MAINTAINERS NEWS README TODO export-format-id io-provider-id \
 		objects-hierarchy.odg
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 post-patch:
-.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's|-Werror"|"|g' ${WRKSRC}/configure
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's| install-dist_pkgdocDATA||g' \
 		${WRKSRC}/Makefile.in ${WRKSRC}/doc/Makefile.in
 .else
@@ -38,10 +40,12 @@ post-patch:
 		${WRKSRC}/Makefile.in ${WRKSRC}/doc/Makefile.in
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not compile on powerpc
 .endif
 
-.include <bsd.port.post.mk>
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/nautilus/extensions-2.0/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/nautilus-actions/*.so
+
+.include <bsd.port.mk>

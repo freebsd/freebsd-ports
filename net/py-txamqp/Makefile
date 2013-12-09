@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}thrift>0:${PORTSDIR}/devel/py-thrift
 
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=easy_install
-USE_TWISTED=	yes
+USES=		twisted
 
 WRKSRC=		${WRKDIR}/python-${PORTNAME}-${PORTVERSION}
 

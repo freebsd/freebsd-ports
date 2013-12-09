@@ -761,6 +761,7 @@
     SUBDIR += qjail2
     SUBDIR += qlogtools
     SUBDIR += qpxtool
+    SUBDIR += qsynergy
     SUBDIR += quicksynergy
     SUBDIR += qzeitgeist
     SUBDIR += racktables

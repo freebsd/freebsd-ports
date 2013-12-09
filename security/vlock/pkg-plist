@@ -1,12 +1,19 @@
 bin/vlock
-sbin/vlock-main
+man/man1/vlock.1.gz
+man/man5/vlock-plugins.5.gz
+man/man8/vlock-main.8.gz
+%%VLOCKSCRIPTS%%lib/vlock/scripts/amarok
+%%VLOCKSCRIPTS%%lib/vlock/scripts/example_script
+%%VLOCKSCRIPTS%%lib/vlock/scripts/mplayer
+%%VLOCKSCRIPTS%%@dirrm lib/vlock/scripts
 lib/vlock/modules/all.so
+%%CACASAVER%%lib/vlock/modules/caca.so
+@mode 4711
+sbin/vlock-main
+@mode 0750
+@group %%VLOCK_GRP%%
 lib/vlock/modules/new.so
-%%PL_CACASAVER%%lib/vlock/modules/caca.so
+@mode %%SHAREMODE%%
+@group %%SHAREGRP%%
 @dirrm lib/vlock/modules
-%%PL_VLOCKSCRIPTS%%lib/vlock/scripts/amarok
-%%PL_VLOCKSCRIPTS%%lib/vlock/scripts/example_script
-%%PL_VLOCKSCRIPTS%%lib/vlock/scripts/mplayer
-%%PL_VLOCKSCRIPTS%%@dirrm lib/vlock/scripts
 @dirrm lib/vlock
-@exec if ! pw groupshow vlock 2>/dev/null; then pw groupadd vlock -g 129; fi

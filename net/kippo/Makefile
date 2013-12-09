@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypt
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=	2.5+
-USE_TWISTED_RUN=	conch web
+USES=		twisted:run,conch,web
 NO_BUILD=	yes
 
 USE_RC_SUBR=	kippo

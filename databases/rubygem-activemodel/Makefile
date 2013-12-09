@@ -1,12 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	activemodel
-PORTVERSION=	3.2.15
+PORTVERSION=	3.2.16
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A toolkit for building modeling frameworks
+COMMENT=	Toolkit for building modeling frameworks
+
+LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-builder>=3.0.0:${PORTSDIR}/devel/rubygem-builder

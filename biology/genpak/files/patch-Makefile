@@ -42,7 +42,7 @@
  
  all: 
 -	cd src ; make PROGRAMS="$(PROGRAMS)" GDPROGRAMS="$(GDPROGRAMS)" CC=$(CC) \
-+	cd src ; ${GMAKE} PROGRAMS="$(PROGRAMS)" GDPROGRAMS="$(GDPROGRAMS)" CC=$(CC) \
++	cd src ; ${MAKE} PROGRAMS="$(PROGRAMS)" GDPROGRAMS="$(GDPROGRAMS)" CC=$(CC) \
  		LIBS="$(LIBS)" CFLAGS="$(CFLAGS)" ; 
  	@echo -e "\nAll programs compiled. \nType 'make install' to install all programs."
  

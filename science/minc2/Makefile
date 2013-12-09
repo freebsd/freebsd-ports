@@ -20,6 +20,8 @@ PKGNAMESUFFIX=	2
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Medical Imaging NetCDF
 
+BROKEN=		Does not build with new hdf5 version
+
 LICENSE=	BSD
 
 LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf \

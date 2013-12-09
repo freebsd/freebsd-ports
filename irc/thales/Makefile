@@ -16,59 +16,53 @@ USE_GMAKE=	yes
 USE_MYSQL=	yes
 USE_RC_SUBR=	thales
 
+OPTIONS_DEFINE=	MODES
+OPTIONS_RADIO=	IRCD
+OPTIONS_RADIO_IRCD=	HYBRID IRCDRU UNREAL
+OPTIONS_DEFAULT=MODES UNREAL
+MODES_DESC=		Support modes in the database
+HYBRID_DESC=	Build for ircd-hybrid
+IRCDRU_DESC=	Build for ircd-ru
+UNREAL_DESC=	Build for unreal ircd
+
+HYBRID_RUN_DEPENDS=	${LOCALBASE}/bin/ircd:${PORTSDIR}/irc/ircd-hybrid
+IRCDRU_RUN_DEPENDS=	${LOCALBASE}/sbin/ircd:${PORTSDIR}/irc/ircd-ru
+UNREAL_RUN_DEPENDS=	${LOCALBASE}/libexec/ircd:${PORTSDIR}/irc/unreal
+
 # Currently, not all supported IRCDs are handled here, only the ones
 # I could find corresponding RUN_DEPENDS in our Ports Collection.
-.if defined(WITH_IRCD) && ${WITH_IRCD} == hybrid
-RUN_DEPENDS=	${LOCALBASE}/bin/ircd:${PORTSDIR}/irc/ircd-hybrid
+.include <bsd.port.options.mk>
+.if ${PORT_OPTIONS:MHYBRID}
+_IRCD=	hybrid
 IS_INTERACTIVE=	yes
-.elif defined(WITH_IRCD) && ${WITH_IRCD} == ircdru
-RUN_DEPENDS=	${LOCALBASE}/sbin/ircd:${PORTSDIR}/irc/ircd-ru
+.elif ${PORT_OPTIONS:MIRCDRU}
+_IRCD=	ircdru
 IS_INTERACTIVE=	yes
 .else
-WITH_IRCD=	unreal
-RUN_DEPENDS=	${LOCALBASE}/libexec/ircd:${PORTSDIR}/irc/unreal
+_IRCD=	unreal
 .endif
 
 # ``Assign with expansion'' is needed here, otherwise we cannot override
 # WITH_IRCD value supplied as make(1) argument (which can be bogus).
-CONFIGURE_ARGS:=	--with-ircd=${WITH_IRCD} \
+CONFIGURE_ARGS:=	--with-ircd=${_IRCD} \
 			--prefix=${PREFIX}/sbin/thales \
 			--with-mysql=${LOCALBASE} \
 			--with-mysql-libraries=${LOCALBASE}/lib/mysql
 
-.if defined(WITHOUT_MODES)
-CONFIGURE_ARGS+=	--enable-no-modes
-.endif
-
-pre-everything:: .SILENT
-	${ECHO_CMD} ""
-	${ECHO_CMD} "You may specify the IRCD which thales is compiled for"
-	${ECHO_CMD} ""
-	${ECHO_CMD} "	WITH_IRCD=foo"
-	${ECHO_CMD} ""
-	${ECHO_CMD} "The default value is \"unreal\".  Other possible values are:"
-	${ECHO_CMD} "  bahamut, hybrid, ircdru, unreal, ultimate28, ultimate30"
-	${ECHO_CMD} ""
-	${ECHO_CMD} "Additinal tunables:"
-	${ECHO_CMD} ""
-	${ECHO_CMD} "	WITHOUT_MODES	Disable modes in the database (default: on)"
-	${ECHO_CMD} ""
+MODES_CONFIGURE_OFF=	--enable-no-modes
 
 post-patch: .SILENT
 	${FIND} -d ${WRKSRC} -type d -name CVS -exec ${RM} -rf {} \;
 	${REINPLACE_CMD} -e 's,thales.conf,${PREFIX}/etc/&,' \
 		${WRKSRC}/src/conf.h
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/src/thales ${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKSRC}/data/thales.conf.default ${PREFIX}/etc
-	${INSTALL_DATA} ${WRKSRC}/data/*.sql ${DATADIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR} ${DATADIR}/tools
-	${CP} -r ${WRKSRC}/examples/* ${EXAMPLESDIR}
-	${CP} -r ${WRKSRC}/tools/* ${DATADIR}/tools
-.endif
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/thales ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/data/thales.conf.default ${STAGEDIR}${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/data/*.sql ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${DATADIR}/tools
+	${CP} -r ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
+	${CP} -r ${WRKSRC}/tools/* ${STAGEDIR}${DATADIR}/tools
 
 .include <bsd.port.mk>

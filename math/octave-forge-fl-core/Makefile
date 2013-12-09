@@ -14,6 +14,7 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 OCTSRC=		${OCTAVE_PKGNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
+USE_DOS2UNIX=	yes
 
 NO_STAGE=	yes
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"

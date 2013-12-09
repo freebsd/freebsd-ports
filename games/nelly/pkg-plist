@@ -1,6 +1,10 @@
 bin/nelly
 %%DATADIR%%/collide.py
+%%DATADIR%%/collide.pyc
+%%DATADIR%%/collide.pyo
 %%DATADIR%%/font.py
+%%DATADIR%%/font.pyc
+%%DATADIR%%/font.pyo
 %%DATADIR%%/fonts/babelfish.ttf
 %%DATADIR%%/levels/level01.lvl
 %%DATADIR%%/levels/level02.lvl
@@ -18,7 +22,11 @@ bin/nelly
 %%DATADIR%%/levels/level14.lvl
 %%DATADIR%%/levels/level15.lvl
 %%DATADIR%%/nelly.py
+%%DATADIR%%/nelly.pyc
+%%DATADIR%%/nelly.pyo
 %%DATADIR%%/res.py
+%%DATADIR%%/res.pyc
+%%DATADIR%%/res.pyo
 %%DATADIR%%/textures/brick.jpg
 %%DATADIR%%/textures/dialog.png
 %%DATADIR%%/textures/dialog_ok.png

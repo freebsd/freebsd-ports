@@ -2,15 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	opendnssec
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	dns
 MASTER_SITES=	http://dist.opendnssec.org/source/
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Tool suite for maintaining DNSSEC
 
+LICENSE=	BSD
+
 BUILD_DEPENDS=	ldns>=1.6.16:${PORTSDIR}/dns/ldns
-LIB_DEPENDS=	ldns:${PORTSDIR}/dns/ldns
+LIB_DEPENDS=	libldns.so:${PORTSDIR}/dns/ldns
 
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	opendnssec

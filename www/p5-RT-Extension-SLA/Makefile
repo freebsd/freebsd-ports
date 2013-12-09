@@ -18,6 +18,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LICENSE=	GPLv2
 
+NO_ARCH=	yes
+
 USES+=		perl5
 USE_PERL5=	configure
 
@@ -50,7 +52,7 @@ SUB_LIST+=	INITIALDATA=plugins/RT-Extension-SLA/etc/initialdata \
 SUB_FILES+=	pkg-message
 
 # Note: You can install using an arbitrary $PREFIX but only if it
-# matches the $PREFIX used to install www/rt{38,40}.  Hence ignore
+# matches the $PREFIX used to install www/rt{38,40,42}.  Hence ignore
 # $PREFIX in the environment and inherit settings from RT.pm
 do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \

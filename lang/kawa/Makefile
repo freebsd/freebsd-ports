@@ -3,6 +3,7 @@
 
 PORTNAME=	kawa
 PORTVERSION=	1.14
+PORTREVISION=	1
 CATEGORIES=	lang scheme java
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	kawa
@@ -12,7 +13,7 @@ COMMENT=	Java-based Scheme implementation
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	makeinfo:${PORTSDIR}/print/texinfo
+BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 
 USES=		gmake
 USE_JAVA=	yes

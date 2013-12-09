@@ -26,21 +26,16 @@ PLIST_FILES=	bin/xpns \
 PLIST_DIRS=	%%DATADIR%% \
 		libexec/xpns
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/xpns
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_SCRIPT} xpns ${PREFIX}/bin)
-	@${MKDIR} ${PREFIX}/libexec/xpns
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} pns ${PREFIX}/libexec/xpns)
-	@${MKDIR} ${DATADIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} pns.hlp pns.shell ${DATADIR})
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} *.net ${DOCSDIR})
-.endif
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} xpns ${STAGEDIR}${PREFIX}/bin)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/xpns
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} pns ${STAGEDIR}${PREFIX}/libexec/xpns)
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} pns.hlp pns.shell ${STAGEDIR}${DATADIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} *.net ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

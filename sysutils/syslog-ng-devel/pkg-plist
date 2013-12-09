@@ -106,7 +106,7 @@ include/syslog-ng/rewrite/rewrite-set.h
 include/syslog-ng/rewrite/rewrite-subst.h
 include/syslog-ng/rewrite/rewrite-expr-parser.h
 include/syslog-ng/template/templates.h
-lib/libsyslog-ng-3.5.1.so
+lib/libsyslog-ng-3.5.2.so
 lib/libsyslog-ng.la
 lib/libsyslog-ng.so
 lib/syslog-ng/libafamqp.la

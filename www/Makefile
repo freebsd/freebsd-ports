@@ -102,7 +102,6 @@
     SUBDIR += claroline
     SUBDIR += clearsilver
     SUBDIR += clearsilver-python
-    SUBDIR += clickheat
     SUBDIR += closure-compiler
     SUBDIR += closure-linter
     SUBDIR += cmsmadesimple
@@ -1498,6 +1497,7 @@
     SUBDIR += py-django-classy-tags
     SUBDIR += py-django-cms
     SUBDIR += py-django-devel
+    SUBDIR += py-django-dpaste
     SUBDIR += py-django-evolution
     SUBDIR += py-django-extensions
     SUBDIR += py-django-filer

@@ -1,7 +1,7 @@
 ================================================================
 For the port to work properly you must copy the file
-%%PREFIX%%/%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/config_example.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/config_example.php
 to
-%%PREFIX%%/%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/config.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/config.php
 and edit the configuration to meet your needs.
 ================================================================

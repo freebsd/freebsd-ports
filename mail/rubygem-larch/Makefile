@@ -9,15 +9,18 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Larch copies messages from one IMAP server to another
 
+LICENSE=	GPLv2
+
+#		rubygem-sequel3>=3.14:${PORTSDIR}/devel/rubygem-sequel3 \
 RUN_DEPENDS=	rubygem-highline>=1.5:${PORTSDIR}/devel/rubygem-highline \
-		rubygem-sequel3>=3.14:${PORTSDIR}/devel/rubygem-sequel3 \
+		rubygem-sequel>=3.14:${PORTSDIR}/devel/rubygem-sequel \
 		rubygem-sqlite3>=1.3:${PORTSDIR}/databases/rubygem-sqlite3 \
 		rubygem-trollop>=1.13:${PORTSDIR}/devel/rubygem-trollop
 
-PLIST_FILES=	bin/larch
-
-USE_RUBY=		yes
-USE_RUBYGEMS=		yes
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
+PLIST_FILES=	bin/larch
 
 .include <bsd.port.mk>

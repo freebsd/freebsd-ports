@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	get_iplayer
-PORTVERSION=	2.83
-PORTREVISION=	2
+PORTVERSION=	2.85
 CATEGORIES=	net multimedia
 MASTER_SITES=	ftp://ftp.infradead.org/pub/${PORTNAME}/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
@@ -31,10 +30,9 @@ USE_RC_SUBR=	${PORTNAME}
 USERS=		get_iplayer
 GROUPS=		get_iplayer
 
-MAN1=		get_iplayer.1
-
 SCRIPTS=	${PORTNAME} ${PORTNAME}.cgi
-PLIST_FILES=	bin/${PORTNAME} ${SCRIPTS:S,^,${WWWDIR_REL}/,}
+PLIST_FILES=	bin/${PORTNAME} ${SCRIPTS:S,^,${WWWDIR_REL}/,} \
+		man/man1/${PORTNAME}.1.gz
 
 DATADIR=	${WWWDIR}
 PORTDATA=	html plugins
@@ -42,7 +40,6 @@ PORTDATA=	html plugins
 PORTDOCS=	CHANGELOG-get_iplayer.cgi.txt CHANGELOG.txt \
 		README-get_iplayer.cgi.txt README.md web.sh
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -54,21 +51,16 @@ post-patch:
 		${WRKSRC}/get_iplayer
 
 do-install:
-	${MKDIR} ${WWWDIR}
-	(cd ${WRKSRC}; ${INSTALL_SCRIPT} ${SCRIPTS} ${WWWDIR})
-	${LN} -sf ${WWWDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	(cd ${WRKSRC}; ${INSTALL_SCRIPT} ${SCRIPTS} ${STAGEDIR}${WWWDIR})
+	${LN} -sf ${WWWDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
 .for DIR in html plugins
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${DIR} ${WWWDIR})
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${DIR} ${STAGEDIR}${WWWDIR})
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 .endif
-
-post-install:
-	@${ECHO_MSG} ""
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>

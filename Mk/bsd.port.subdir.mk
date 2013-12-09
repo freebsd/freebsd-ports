@@ -86,7 +86,7 @@ WITH_PKGNG=	yes
 .endif
 
 .if !defined(_OSRELEASE)
-_OSRELEASE!=			uname -r
+_OSRELEASE!=			${UNAME} -r
 .endif
 .if !defined(OSREL)
 OSREL=	${_OSRELEASE:C/[-(].*//}

@@ -26,7 +26,7 @@ TEST_DEPENDS:=	${RUN_DEPENDS} \
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
-USE_TWISTED_RUN=	conch mail web words
+USES=			twisted:run,conch,mail,web,words
 
 MAKE_ENV+=		NO_INSTALL_REQS=1
 

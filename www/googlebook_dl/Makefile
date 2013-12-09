@@ -13,6 +13,7 @@ LICENSE=	BSD
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PORTNAME}

@@ -1,0 +1,42 @@
+--- ./CMakeLists.txt.orig	2013-12-02 09:23:52.000000000 -0500
++++ ./CMakeLists.txt	2013-12-02 09:25:24.000000000 -0500
+@@ -208,19 +178,12 @@
+     endif()
+ 	          
+ 	# OpenCV
+-	SET(OpenCV_LIBS "")
+-	if (PKG_CONFIG_FOUND) # not sure: pkgconfig is needed for old linux  with old old opencv systems
+-		pkg_check_modules(OpenCV  opencv>=2.1.0)
+-		SET(OpenCV_LIBS ${OpenCV_LIBRARIES})
+-	endif(PKG_CONFIG_FOUND)
+-	IF (OpenCV_LIBS STREQUAL "") 
+-		find_package(OpenCV 2.1.0 REQUIRED core imgproc)
+-	ENDIF()
++		find_package(OpenCVCore COMPONENTS core imgproc REQUIRED)
+ 	IF (OpenCV_VERSION VERSION_LESS 2.4.0 AND OpenCV_FOUND AND MSVC) # OpenCV didn't allow to define packages before version 2.4.0 ... nomacs was linking against all libs even if they were not compiled -> error
+ 		string(REGEX REPLACE "\\." "" OpenCV_SHORT_VERSION ${OpenCV_VERSION})
+ 		SET(OpenCV_LIBS "debug;opencv_imgproc${OpenCV_SHORT_VERSION}d;optimized;opencv_imgproc${OpenCV_SHORT_VERSION};debug;opencv_core${OpenCV_SHORT_VERSION}d;optimized;opencv_core${OpenCV_SHORT_VERSION};")
+ 	ENDIF()
+-	IF (NOT OpenCV_FOUND)
++	IF (NOT OPENCVCORE_FOUND)
+ 		message(FATAL_ERROR "OpenCV not found. It's mandatory when used with ENABLE_RAW enabled") 
+ 	ELSE()
+ 		add_definitions(-DWITH_OPENCV)
+@@ -285,6 +243,8 @@
+ 	
+ ENDIF(ENABLE_TIFF)
+ 
++# sysinfo library
++FIND_LIBRARY(SYSINFO_LIBRARY NAMES sysinfo)
+ 	
+ include_directories (
+ 	${QT_INCLUDES}
+@@ -427,7 +387,7 @@
+ 		set(EXE_NAME ${CMAKE_PROJECT_NAME})
+ 		link_directories(${LIBRAW_LIBRARY_DIRS} ${OpenCV_LIBRARY_DIRS} ${EXIV2_LIBRARY_DIRS})
+ 		add_executable(${EXE_NAME} WIN32 MACOSX_BUNDLE ${NOMACS_SOURCES} ${NOMACS_UI} ${NOMACS_MOC_SRC} ${NOMACS_RCC} ${NOMACS_HEADERS} ${NOMACS_RC} ${NOMACS_QM} ${NOMACS_TRANSLATIONS} ${LIBQPSD_SOURCES} ${LIBQPSD_HEADERS} ${LIBQPSD_MOC_SRC} ${WEBP_SOURCE})
+-		target_link_libraries(${EXE_NAME} ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_QTNETWORK_LIBRARY} ${QT_QTMAIN_LIBRARY} ${EXIV2_LIBRARIES} ${LIBRAW_LIBRARIES} ${OpenCV_LIBS} ${VERSION_LIB} ${TIFF_LIBRARIES})
++		target_link_libraries(${EXE_NAME} ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_QTNETWORK_LIBRARY} ${QT_QTMAIN_LIBRARY} ${EXIV2_LIBRARIES} ${LIBRAW_LIBRARIES} ${OpenCV_LIBS} ${VERSION_LIB} ${TIFF_LIBRARIES} ${SYSINFO_LIBRARY})
+ 
+ 		IF (CMAKE_SYSTEM_NAME MATCHES "Linux")
+ 			SET_TARGET_PROPERTIES(${EXE_NAME} PROPERTIES LINK_FLAGS -fopenmp)

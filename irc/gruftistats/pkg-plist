@@ -1,4 +1,5 @@
 bin/gruftistats
+man/man1/gruftistats.1.gz
 %%PORTDOCS%%share/doc/gruftistats/AUTHORS
 %%PORTDOCS%%share/doc/gruftistats/COPYING
 %%PORTDOCS%%share/doc/gruftistats/ChangeLog

@@ -282,6 +282,8 @@
     SUBDIR += freedoko
     SUBDIR += freedroid
     SUBDIR += freedroidrpg
+    SUBDIR += freeminer
+    SUBDIR += freeminer-default
     SUBDIR += freera
     SUBDIR += freesweep
     SUBDIR += freesynd
@@ -853,6 +855,8 @@
     SUBDIR += sarien
     SUBDIR += sauerbraten
     SUBDIR += scare
+    SUBDIR += schiff
+    SUBDIR += schwarzweiss
     SUBDIR += scid
     SUBDIR += scorched3d
     SUBDIR += scourge
@@ -921,6 +925,7 @@
     SUBDIR += sudoku_solver
     SUBDIR += sudsol
     SUBDIR += sumwars
+    SUBDIR += super_mario_bros_python
     SUBDIR += super_methane_brothers
     SUBDIR += supertux
     SUBDIR += supertux-devel

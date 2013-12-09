@@ -3,6 +3,7 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	3.1.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
@@ -36,7 +37,7 @@ CONFIGURE_ARGS+=	--enable-tcp-wrappers \
 			--with-libevent-header=${LOCALBASE}/include \
 			--with-libevent-lib=${LOCALBASE}/lib/event2
 
-OPTIONS_DEFINE=PAM KRB5 LDAP SENDFILE KERBEROS DTRACE DBUS MYSQL
+OPTIONS_DEFINE=PAM KRB5 LDAP SENDFILE KERBEROS DTRACE DBUS MYSQL ACL
 OPTIONS_DEFAULT=KERBEROS DBUS
 OPTIONS_RADIO=ZEROCONF
 OPTIONS_RADIO_ZEROCONF=AVAHI MDNSRESPONDER
@@ -47,6 +48,7 @@ KRB5_DESC=	Enable Kerberos V UAM
 DTRACE_DESC=	Enable DTrace support
 SENDFILE_DESC=	Enable Sendfile support
 MYSQL_DESC=	Enable MySQL CNID backend support
+ACL_DESC=	Enable ACL support
 
 .include <bsd.port.options.mk>
 
@@ -124,6 +126,13 @@ PLIST_SUB+=		DBUS="@comment "
 USE_MYSQL=	yes
 .else
 CONFIGURE_ARGS+=--with-mysql-config=/nonexistent
+.endif
+
+.if ${PORT_OPTIONS:MACL}
+LIB_DEPENDS+=	sunacl:${PORTSDIR}/sysutils/libsunacl
+CONFIGURE_ARGS+=--with-acls
+.else
+CONFIGURE_ARGS+=--without-acls
 .endif
 
 .if ${OSVERSION} < 800031

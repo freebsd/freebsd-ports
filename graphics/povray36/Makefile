@@ -9,6 +9,7 @@ MASTER_SITES=	ftp://ftp.povray.org/pub/povray/%SUBDIR%/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.povray.org/pub/povray/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/povray/%SUBDIR%,}
 MASTER_SITE_SUBDIR=	Official/Unix
+PKGNAMESUFFIX=	36
 DIST_SUBDIR=	povray36
 
 MAINTAINER=	maho@FreeBSD.org
@@ -26,7 +27,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf
-LATEST_LINK=	${PORTNAME}36
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
@@ -57,10 +57,10 @@ CONFIGURE_ARGS=	--x-includes="${LOCALBASE}/include" --includedir=${LOCALBASE} \
 		CXXFLAGS="${CXXFLAGS} -L${LOCALBASE}/lib" \
 		CFLAGS="${CFLAGS} -L${LOCALBASE}/lib" \
 		LDFLAGS="-L${LOCALBASE}/lib" COMPILED_BY=${MAINTAINER} \
-		--program-transform-name='s/${PORTNAME}/${UNIQUENAME}/' \
+		--program-transform-name='s/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/' \
 		--disable-optimiz
 
-MAN1=		${UNIQUENAME}.1
+MAN1=		${PORTNAME}${PKGNAMESUFFIX}.1
 
 post-patch:
 	#@${REINPLACE_CMD} -e 's+@PREFIX@+${PREFIX}+g;' ${WRKSRC}/povray.ini

@@ -3,7 +3,7 @@
 
 PORTNAME=	opencryptoki
 PORTVERSION=	2.3.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
@@ -39,19 +39,14 @@ SUB_LIST=	USERS=${USERS} GROUPS=${GROUPS}
 USERS=		_pkcs11
 GROUPS=		_pkcs11
 
-MAN1=		pkcs11_startup.1 pkcsconf.1
-MAN5=		pk_config_data.5
-MAN7=		opencryptoki.7
-MAN8=		pkcsslotd.8
-
 run-autotools:	run-autotools-autoreconf
 
-NO_STAGE=	yes
 run-autotools-autoreconf:
 	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} -i
 
 post-install:
-	@cd ${PREFIX}/lib && ${LN} -s opencryptoki/libopencryptoki* .
-	@${CAT} ${PKGMESSAGE}
+	cd ${STAGEDIR}${PREFIX}/lib && ${LN} -s opencryptoki/libopencryptoki* .
+	${MKDIR} ${STAGEDIR}${PREFIX}/var/lib/opencryptoki/swtok \
+	    ${STAGEDIR}${PREFIX}/var/lib/opencryptoki/tpm
 
 .include <bsd.port.mk>

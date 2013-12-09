@@ -14,8 +14,9 @@ COMMENT=	A Sendmail LibMilter filter to block spam
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_STAGE=	yes
+NEED_ROOT=	yes
 
+USES=		shebangfix
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--have-resn
 USE_RC_SUBR=	spamilter
@@ -25,6 +26,7 @@ LDFLAGS+=	${PTHREAD_LIBS}
 MAKE_ENV+=	__MAKE_CONF=/dev/null
 
 BINFILES=	spamilter-system-report spamilter-user-report
+SHEBANG_FILES=	${BINFILES}
 DOCSFILES=	Changelog INSTALL LICENSE docs/docs.html docs/docs.txt \
 		conf/db.rcpt conf/db.rdnsbl conf/db.sndr \
 		conf/policy.html conf/spamilter.rc
@@ -39,6 +41,13 @@ OPTIONS_DEFINE=	SMTP_AFTER_POP3 PAM LIBSPF
 SMTP_AFTER_POP3_DESC=	SMTP after POP3
 LIBSPF_DESC=	build with libspf
 
+SMTP_AFTER_POP3_CONFIGURE_ON=	--with-popauth
+PAM_CONFIGURE_ON=	--with-pam
+LIBSPF_BUILD_DEPENDS=	${LOCALBASE}/lib/libspf.a:${PORTSDIR}/mail/libspf
+LIBSPF_CONFIGURE_ON=	--with-libspf ${LOCALBASE}
+LIBSPF_CFLAGS=		-I${LOCALBASE}/include
+LIBSPF_LDFLAGS=		-L${LOCALBASE}/lib
+
 .include <bsd.port.options.mk>
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
@@ -47,21 +56,6 @@ LIBSPF_DESC=	build with libspf
 CONFIGURE_ARGS+=	--sendmail-dir "${LOCALBASE}"
 .else
 CONFIGURE_ARGS+=	--sendmail-dir "/usr"
-.endif
-
-.if ${PORT_OPTIONS:MSMTP_AFTER_POP3}
-CONFIGURE_ARGS+=	--with-popauth
-.endif
-
-.if ${PORT_OPTIONS:MPAM}
-CONFIGURE_ARGS+=	--with-pam
-.endif
-
-.if ${PORT_OPTIONS:MLIBSPF}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libspf.a:${PORTSDIR}/mail/libspf
-CONFIGURE_ARGS+=	--with-libspf ${LOCALBASE}
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 post-extract:
@@ -76,14 +70,9 @@ pre-configure:
 		-e "s=/usr/local/=${PREFIX}/=" \
 		${WRKSRC}/Makefile.tmpl
 
-xpost-configure:
-	${REINPLACE_CMD} \
-		-e "s| install-ipfwmtad | |" \
-		${WRKSRC}/Makefile
-
 post-install:
 .for i in ${BINFILES}
-	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin/
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

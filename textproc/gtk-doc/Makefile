@@ -25,7 +25,7 @@ CATALOG_DIR=		${PREFIX}/share/sgml/${PORTNAME}
 XMLCATMGR=		${LOCALBASE}/bin/xmlcatmgr
 CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 
-NO_STAGE=	yes
+USE_PYTHON_RUN=	2
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USES=		gmake pathfix perl5 pkgconfig

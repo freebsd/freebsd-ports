@@ -9,15 +9,17 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An sid and spf milter for Sendmail
 
 RESTRICTED=	may incorporate intellectual property, possible patent issues
-NO_STAGE=	yes
 
 WCONF=		${WRKSRC}/devtools/Site
 MAN8=		sid-filter.8
 DOCSFILES=	FEATURES INSTALL KNOWNBUGS LICENSE README README-SenderID \
 		RELEASE_NOTES rfc4406.txt rfc4407.txt rfc4408.txt
 INSTALL_WRKSRC=	${WRKSRC}/sid-filter
-PLIST_FILES=	libexec/sid-filter
+PLIST_FILES=	libexec/sid-filter man/man8/sid-filter.8.gz
+USE_RC_SUBR=	milter-sid
 PORTDOCS=	${DOCSFILES}
+
+SITE+=		${FILESDIR}/site.config.m4
 
 .if !defined(BUILDING_INDEX)
 IPCCHECK!=	ipcrm -q 0 2>&1 || true
@@ -26,19 +28,21 @@ IGNORE=		your system does not support sysvipc
 .endif
 .endif
 
-SITE+=		${FILESDIR}/site.config.m4
-.if defined(WITH_SIDMILTER_AR)
-MAN3=		ar.3
-PLIST_FILES+=	include/libar.h lib/libar.a
-.endif
-USE_RC_SUBR=	milter-sid
+OPTIONS_DEFINE=	LIBAR NH_MFROM
+LIBAR_DESC=	build and install libar
+NH_MFROM_DESC=	use NH_MFROM
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
 .if defined(WITH_SENDMAIL_PORT)
 SITE+=		${FILESDIR}/site.config.m4.milter
+.endif
+
+.if ${PORT_OPTIONS:MLIBAR}
+MAN3=		ar.3
+PLIST_FILES+=	include/libar.h lib/libar.a man/man3/ar.3.gz
 .endif
 
 pre-configure:
@@ -50,7 +54,7 @@ pre-configure:
 	${SED} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 		${SITE} > ${WCONF}/site.config.m4
-.if defined(WITH_NH_MFROM)
+.if ${PORT_OPTIONS:MNH_MFROM}
 	${ECHO_CMD} \
 		'APPENDDEF(`confENVDEF'\'', `-D_FFR_NH_MFROM'\'')' \
 		>> ${WCONF}/site.config.m4
@@ -58,22 +62,18 @@ pre-configure:
 
 post-install:
 .for i in ${MAN8}
-	@${RM} -f ${MANPREFIX}/man/cat8/${i} ${MANPREFIX}/man/cat8/${i}.gz
-	${INSTALL_MAN} ${WRKSRC}/*/${i} ${MANPREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/*/${i} ${STAGEDIR}${MANPREFIX}/man/man8/
 .endfor
-.if defined(WITH_SIDMILTER_AR)
-	@(cd ${WRKSRC}/libar && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
+.if ${PORT_OPTIONS:MLIBAR}
+	${INSTALL_LIB} ${WRKSRC}/*/libar/libar.a ${STAGEDIR}${PREFIX}/lib/libar.a
+	${INSTALL_DATA} ${WRKSRC}/libar/ar.h ${STAGEDIR}${PREFIX}/include/libar.h
 .for i in ${MAN3}
-	@${RM} -f ${MANPREFIX}/man/cat3/${i} ${MANPREFIX}/man/cat3/${i}.gz
-	${INSTALL_MAN} ${WRKSRC}/*/${i} ${MANPREFIX}/man/man3/
+	${INSTALL_MAN} ${WRKSRC}/*/${i} ${STAGEDIR}${MANPREFIX}/man/man3/
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/libar/ar.h ${PREFIX}/include/libar.h
 .endif
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in ${DOCSFILES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
-.endfor
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCSFILES:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

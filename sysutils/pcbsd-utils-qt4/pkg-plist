@@ -12,7 +12,7 @@ bin/pc-controlpanel
 bin/pbi-crashhandler-gui
 bin/pc-cupscfg
 bin/pc-firstboot
-bin/pc-gdmconf
+bin/pc-dmconf
 bin/pc-mounttray
 bin/pc-netmanager
 bin/pc-wificonfig
@@ -31,6 +31,7 @@ bin/pc-sysinstaller
 bin/pc-sysmanager
 bin/pc-systemupdatertray
 bin/pc-updategui
+bin/pc-updatecenter
 bin/pc-usermanager
 bin/pc-welcome
 bin/pc-xgui
@@ -43,7 +44,6 @@ bin/openwith
 bin/flashpluginctl
 bin/xorg-startupcheck
 sbin/PCDMd
-sbin/PCDM-xloop
 share/pcbsd/pc-installgui/load-usb-key.sh
 share/pcbsd/pc-installgui/get-zfs-restore-list.sh
 share/pcbsd/pc-installgui/setup-ssh-keys.sh
@@ -63,9 +63,6 @@ share/pcbsd/fluxboxinit/keys
 share/pcbsd/fluxboxinit/init
 share/pcbsd/fluxboxinit/overlay
 share/pcbsd/fluxboxinit/menu
-share/pcbsd/movies/PCBSD9_16-10_WUXGA.flv
-share/pcbsd/movies/PCBSD9_4-3_UXGA.flv
-share/pcbsd/movies/PCBSD9_16-9_1080p.flv
 share/pcbsd/scripts/first-boot.sh
 share/pcbsd/scripts/mythtv.sh
 share/pcbsd/scripts/lidchanged.sh
@@ -73,6 +70,7 @@ share/pcbsd/scripts/openhandbook.sh
 share/pcbsd/scripts/set-lang.sh
 share/pcbsd/scripts/sound-dev-changed.sh
 share/pcbsd/scripts/portsnap-noterm.sh
+share/pcbsd/icons/update-center.png
 share/pcbsd/icons/system-software-update.png
 share/pcbsd/icons/hwinfo.png
 share/pcbsd/icons/mythtv.png
@@ -90,16 +88,28 @@ share/pcbsd/icons/sysupdate.png
 share/pcbsd/icons/pkgmanager.png
 share/pcbsd/icons/zmanager.png
 share/pcbsd/doc/handbook_en.pdf
-share/wallpapers/pcbsd9-default/contents/images/1024x768.jpg
-share/wallpapers/pcbsd9-default/contents/images/1600x1200.jpg
-share/wallpapers/pcbsd9-default/contents/images/1280x800.jpg
-share/wallpapers/pcbsd9-default/contents/images/1280x1024.jpg
-share/wallpapers/pcbsd9-default/contents/images/1440x900.jpg
-share/wallpapers/pcbsd9-default/contents/images/1920x1200.jpg
-share/wallpapers/pcbsd9-default/contents/images/800x600.jpg
-share/wallpapers/pcbsd9-default/contents/images/1920x1080.jpg
-share/wallpapers/pcbsd9-default/contents/screenshot.jpg
-share/wallpapers/pcbsd9-default/metadata.desktop
+share/wallpapers/PCBSD/PCBSD_10_Joule_WP_1024x600_v2.jpg
+share/wallpapers/PCBSD/PCBSD_10_Joule_WP_1024x768_v2.jpg
+share/wallpapers/PCBSD/PCBSD_10_Joule_WP_1280x1024_v2.jpg
+share/wallpapers/PCBSD/PCBSD_10_Joule_WP_1280x800_v2.jpg
+share/wallpapers/PCBSD/PCBSD_10_Joule_WP_1440x900_v2.jpg
+share/wallpapers/PCBSD/PCBSD_10_Joule_WP_1600x1200_v2.jpg
+share/wallpapers/PCBSD/PCBSD_10_Joule_WP_1920x1080_v2.jpg
+share/wallpapers/PCBSD/PCBSD_10_Joule_WP_1920x1200_v2.jpg
+share/wallpapers/PCBSD/PCBSD_10_Joule_WP_600x400_v2.jpg
+share/wallpapers/PCBSD/PCBSD_10_Joule_WP_800x600_v2.jpg
+share/wallpapers/pcbsd10-default/contents/.directory
+share/wallpapers/pcbsd10-default/contents/images/.directory
+share/wallpapers/pcbsd10-default/contents/images/1024x768.jpg
+share/wallpapers/pcbsd10-default/contents/images/1600x1200.jpg
+share/wallpapers/pcbsd10-default/contents/images/1280x800.jpg
+share/wallpapers/pcbsd10-default/contents/images/1280x1024.jpg
+share/wallpapers/pcbsd10-default/contents/images/1440x900.jpg
+share/wallpapers/pcbsd10-default/contents/images/1920x1200.jpg
+share/wallpapers/pcbsd10-default/contents/images/800x600.jpg
+share/wallpapers/pcbsd10-default/contents/images/1920x1080.jpg
+share/wallpapers/pcbsd10-default/contents/screenshot.jpg
+share/wallpapers/pcbsd10-default/metadata.desktop
 share/wallpapers/pcbsd-default.jpg
 share/wallpapers/PCBSD/a_1280x1024.jpg
 share/wallpapers/PCBSD/d_1280x1024.jpg
@@ -480,7 +490,6 @@ share/pcbsd/pc-controlpanel/icons/cups-icon.png
 share/pcbsd/pc-controlpanel/items/system/pc-bootconfig.desktop
 share/pcbsd/pc-controlpanel/items/system/pbi-thefish.desktop
 share/pcbsd/pc-controlpanel/items/system/pc-dmconf.desktop
-share/pcbsd/pc-controlpanel/items/system/pc-gdmconf.desktop
 share/pcbsd/pc-controlpanel/items/system/lxde-lxtask.desktop
 share/pcbsd/pc-controlpanel/items/system/pcusermanager.desktop
 share/pcbsd/pc-controlpanel/items/system/ksystemlog.desktop
@@ -500,6 +509,7 @@ share/pcbsd/pc-controlpanel/items/tools/pbi-kbackup.desktop
 share/pcbsd/pc-controlpanel/items/tools/warden.desktop
 share/pcbsd/pc-controlpanel/items/tools/lifepreserver.desktop
 share/pcbsd/pc-controlpanel/items/tools/flash-player-properties.desktop
+share/pcbsd/pc-controlpanel/items/software/pc-updatecenter.desktop
 share/pcbsd/pc-controlpanel/items/software/pc-updategui.desktop
 share/pcbsd/pc-controlpanel/items/software/pbi-winecfg.desktop
 share/pcbsd/pc-controlpanel/items/software/pbi-q4wine.desktop
@@ -553,7 +563,7 @@ share/pcbsd/pc-controlpanel/items/hardware/cups.desktop
 share/pcbsd/pc-controlpanel/items/hardware/pc-mounttray.desktop
 share/pcbsd/pc-controlpanel/items/hardware/nvidia-settings.desktop
 share/pcbsd/icons/about.png
-share/pcbsd/icons/pc-gdmconf.png
+share/pcbsd/icons/pc-dmconf.png
 share/pcbsd/icons/appcafe.png
 share/pcbsd/i18n/libpcbsd_af.qm
 share/pcbsd/i18n/libpcbsd_zh_TW.qm
@@ -1198,71 +1208,71 @@ share/pcbsd/i18n/FirstBoot_bg.qm
 share/pcbsd/i18n/FirstBoot_az.qm
 share/pcbsd/i18n/FirstBoot_ar.qm
 share/pcbsd/i18n/FirstBoot_zu.qm
-share/pcbsd/i18n/pc-gdmconf_af.qm
-share/pcbsd/i18n/pc-gdmconf_zh_TW.qm
-share/pcbsd/i18n/pc-gdmconf_zh_HK.qm
-share/pcbsd/i18n/pc-gdmconf_zh_CN.qm
-share/pcbsd/i18n/pc-gdmconf_vi.qm
-share/pcbsd/i18n/pc-gdmconf_uz.qm
-share/pcbsd/i18n/pc-gdmconf_uk.qm
-share/pcbsd/i18n/pc-gdmconf_tr.qm
-share/pcbsd/i18n/pc-gdmconf_th.qm
-share/pcbsd/i18n/pc-gdmconf_tg.qm
-share/pcbsd/i18n/pc-gdmconf_ta.qm
-share/pcbsd/i18n/pc-gdmconf_sw.qm
-share/pcbsd/i18n/pc-gdmconf_sv.qm
-share/pcbsd/i18n/pc-gdmconf_sr.qm
-share/pcbsd/i18n/pc-gdmconf_sl.qm
-share/pcbsd/i18n/pc-gdmconf_sa.qm
-share/pcbsd/i18n/pc-gdmconf_sk.qm
-share/pcbsd/i18n/pc-gdmconf_ru.qm
-share/pcbsd/i18n/pc-gdmconf_ro.qm
-share/pcbsd/i18n/pc-gdmconf_pt_BR.qm
-share/pcbsd/i18n/pc-gdmconf_pt.qm
-share/pcbsd/i18n/pc-gdmconf_pl.qm
-share/pcbsd/i18n/pc-gdmconf_pa.qm
-share/pcbsd/i18n/pc-gdmconf_nl.qm
-share/pcbsd/i18n/pc-gdmconf_ne.qm
-share/pcbsd/i18n/pc-gdmconf_nb.qm
-share/pcbsd/i18n/pc-gdmconf_mt.qm
-share/pcbsd/i18n/pc-gdmconf_ms.qm
-share/pcbsd/i18n/pc-gdmconf_mn.qm
-share/pcbsd/i18n/pc-gdmconf_mk.qm
-share/pcbsd/i18n/pc-gdmconf_lv.qm
-share/pcbsd/i18n/pc-gdmconf_lt.qm
-share/pcbsd/i18n/pc-gdmconf_ko.qm
-share/pcbsd/i18n/pc-gdmconf_ka.qm
-share/pcbsd/i18n/pc-gdmconf_ja.qm
-share/pcbsd/i18n/pc-gdmconf_it.qm
-share/pcbsd/i18n/pc-gdmconf_is.qm
-share/pcbsd/i18n/pc-gdmconf_id.qm
-share/pcbsd/i18n/pc-gdmconf_hu.qm
-share/pcbsd/i18n/pc-gdmconf_hr.qm
-share/pcbsd/i18n/pc-gdmconf_hi.qm
-share/pcbsd/i18n/pc-gdmconf_he.qm
-share/pcbsd/i18n/pc-gdmconf_gl.qm
-share/pcbsd/i18n/pc-gdmconf_fur.qm
-share/pcbsd/i18n/pc-gdmconf_fr_CA.qm
-share/pcbsd/i18n/pc-gdmconf_fr.qm
-share/pcbsd/i18n/pc-gdmconf_fi.qm
-share/pcbsd/i18n/pc-gdmconf_fa.qm
-share/pcbsd/i18n/pc-gdmconf_eu.qm
-share/pcbsd/i18n/pc-gdmconf_et.qm
-share/pcbsd/i18n/pc-gdmconf_es.qm
-share/pcbsd/i18n/pc-gdmconf_en_ZA.qm
-share/pcbsd/i18n/pc-gdmconf_en_GB.qm
-share/pcbsd/i18n/pc-gdmconf_el.qm
-share/pcbsd/i18n/pc-gdmconf_de.qm
-share/pcbsd/i18n/pc-gdmconf_da.qm
-share/pcbsd/i18n/pc-gdmconf_cy.qm
-share/pcbsd/i18n/pc-gdmconf_cs.qm
-share/pcbsd/i18n/pc-gdmconf_ca.qm
-share/pcbsd/i18n/pc-gdmconf_bs.qm
-share/pcbsd/i18n/pc-gdmconf_bn.qm
-share/pcbsd/i18n/pc-gdmconf_bg.qm
-share/pcbsd/i18n/pc-gdmconf_az.qm
-share/pcbsd/i18n/pc-gdmconf_ar.qm
-share/pcbsd/i18n/pc-gdmconf_zu.qm
+share/pcbsd/i18n/pc-dmconf_af.qm
+share/pcbsd/i18n/pc-dmconf_zh_TW.qm
+share/pcbsd/i18n/pc-dmconf_zh_HK.qm
+share/pcbsd/i18n/pc-dmconf_zh_CN.qm
+share/pcbsd/i18n/pc-dmconf_vi.qm
+share/pcbsd/i18n/pc-dmconf_uz.qm
+share/pcbsd/i18n/pc-dmconf_uk.qm
+share/pcbsd/i18n/pc-dmconf_tr.qm
+share/pcbsd/i18n/pc-dmconf_th.qm
+share/pcbsd/i18n/pc-dmconf_tg.qm
+share/pcbsd/i18n/pc-dmconf_ta.qm
+share/pcbsd/i18n/pc-dmconf_sw.qm
+share/pcbsd/i18n/pc-dmconf_sv.qm
+share/pcbsd/i18n/pc-dmconf_sr.qm
+share/pcbsd/i18n/pc-dmconf_sl.qm
+share/pcbsd/i18n/pc-dmconf_sa.qm
+share/pcbsd/i18n/pc-dmconf_sk.qm
+share/pcbsd/i18n/pc-dmconf_ru.qm
+share/pcbsd/i18n/pc-dmconf_ro.qm
+share/pcbsd/i18n/pc-dmconf_pt_BR.qm
+share/pcbsd/i18n/pc-dmconf_pt.qm
+share/pcbsd/i18n/pc-dmconf_pl.qm
+share/pcbsd/i18n/pc-dmconf_pa.qm
+share/pcbsd/i18n/pc-dmconf_nl.qm
+share/pcbsd/i18n/pc-dmconf_ne.qm
+share/pcbsd/i18n/pc-dmconf_nb.qm
+share/pcbsd/i18n/pc-dmconf_mt.qm
+share/pcbsd/i18n/pc-dmconf_ms.qm
+share/pcbsd/i18n/pc-dmconf_mn.qm
+share/pcbsd/i18n/pc-dmconf_mk.qm
+share/pcbsd/i18n/pc-dmconf_lv.qm
+share/pcbsd/i18n/pc-dmconf_lt.qm
+share/pcbsd/i18n/pc-dmconf_ko.qm
+share/pcbsd/i18n/pc-dmconf_ka.qm
+share/pcbsd/i18n/pc-dmconf_ja.qm
+share/pcbsd/i18n/pc-dmconf_it.qm
+share/pcbsd/i18n/pc-dmconf_is.qm
+share/pcbsd/i18n/pc-dmconf_id.qm
+share/pcbsd/i18n/pc-dmconf_hu.qm
+share/pcbsd/i18n/pc-dmconf_hr.qm
+share/pcbsd/i18n/pc-dmconf_hi.qm
+share/pcbsd/i18n/pc-dmconf_he.qm
+share/pcbsd/i18n/pc-dmconf_gl.qm
+share/pcbsd/i18n/pc-dmconf_fur.qm
+share/pcbsd/i18n/pc-dmconf_fr_CA.qm
+share/pcbsd/i18n/pc-dmconf_fr.qm
+share/pcbsd/i18n/pc-dmconf_fi.qm
+share/pcbsd/i18n/pc-dmconf_fa.qm
+share/pcbsd/i18n/pc-dmconf_eu.qm
+share/pcbsd/i18n/pc-dmconf_et.qm
+share/pcbsd/i18n/pc-dmconf_es.qm
+share/pcbsd/i18n/pc-dmconf_en_ZA.qm
+share/pcbsd/i18n/pc-dmconf_en_GB.qm
+share/pcbsd/i18n/pc-dmconf_el.qm
+share/pcbsd/i18n/pc-dmconf_de.qm
+share/pcbsd/i18n/pc-dmconf_da.qm
+share/pcbsd/i18n/pc-dmconf_cy.qm
+share/pcbsd/i18n/pc-dmconf_cs.qm
+share/pcbsd/i18n/pc-dmconf_ca.qm
+share/pcbsd/i18n/pc-dmconf_bs.qm
+share/pcbsd/i18n/pc-dmconf_bn.qm
+share/pcbsd/i18n/pc-dmconf_bg.qm
+share/pcbsd/i18n/pc-dmconf_az.qm
+share/pcbsd/i18n/pc-dmconf_ar.qm
+share/pcbsd/i18n/pc-dmconf_zu.qm
 share/pcbsd/i18n/MountTray_af.qm
 share/pcbsd/i18n/MountTray_zh_TW.qm
 share/pcbsd/i18n/MountTray_zh_HK.qm
@@ -2696,10 +2706,11 @@ share/applications/softmanager.desktop
 share/applications/pcbsdpbu.desktop
 share/applications/pc-pkgmanager.desktop
 share/applications/pc-updategui.desktop
-share/applications/pcgdmconf.desktop
+share/applications/pc-updatecenter.desktop
 share/applications/pc-welcome.desktop
 share/applications/warden.desktop
 share/applications/EasyPBI.desktop
+share/applications/pc-dmconf.desktop
 lib/libpcbsd-ui.so.0.9.8
 lib/libpcbsd-ui.so
 lib/libpcbsd-ui.so.0
@@ -2727,7 +2738,6 @@ include/pcbsd-ui.h
 @dirrm share/pcbsd/icons
 @dirrmtry share/pcbsd/images
 @dirrm share/pcbsd/fluxboxinit
-@dirrm share/pcbsd/movies
 @dirrm share/pcbsd/pc-controlpanel/items/de
 @dirrm share/pcbsd/pc-controlpanel/items/network
 @dirrm share/pcbsd/pc-controlpanel/items/hardware
@@ -2757,9 +2767,9 @@ include/pcbsd-ui.h
 @dirrm share/pcbsd/xorg-gui/nvidia-detect
 @dirrm share/pcbsd/xorg-gui
 @dirrm share/pcbsd/xstartup
-@dirrm share/wallpapers/pcbsd9-default/contents/images
-@dirrm share/wallpapers/pcbsd9-default/contents
-@dirrm share/wallpapers/pcbsd9-default
+@dirrm share/wallpapers/pcbsd10-default/contents/images
+@dirrm share/wallpapers/pcbsd10-default/contents
+@dirrm share/wallpapers/pcbsd10-default
 @dirrm share/wallpapers/FreeBSD
 @dirrm share/wallpapers/PCBSD
 @dirrm share/wallpapers

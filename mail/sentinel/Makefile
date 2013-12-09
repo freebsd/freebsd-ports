@@ -10,7 +10,7 @@ MASTER_SITES=	SF/smfilter/${PORTNAME}/Sentinel%20${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A sendmail milter API implementation
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 NEED_ROOT=	yes
 

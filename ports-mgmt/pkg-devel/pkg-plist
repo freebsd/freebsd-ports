@@ -11,6 +11,7 @@ lib/libpkg.so
 lib/libpkg.so.1
 libdata/pkgconfig/pkg.pc
 man/man3/pkg_printf.3.gz
+man/man3/pkg_repos.3.gz
 man/man5/pkg-repository.5.gz
 man/man5/pkg.conf.5.gz
 man/man8/pkg-add.8.gz
@@ -20,6 +21,7 @@ man/man8/pkg-autoremove.8.gz
 man/man8/pkg-backup.8.gz
 man/man8/pkg-check.8.gz
 man/man8/pkg-clean.8.gz
+man/man8/pkg-config.8.gz
 man/man8/pkg-convert.8.gz
 man/man8/pkg-create.8.gz
 man/man8/pkg-delete.8.gz

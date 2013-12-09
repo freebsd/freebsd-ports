@@ -11,10 +11,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast 2D tank arcade game with multiplayer and split-screen modes
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
-		expat.6:${PORTSDIR}/textproc/expat2 \
-		vorbisfile.6:${PORTSDIR}/audio/libvorbis \
-		smpeg.1:${PORTSDIR}/multimedia/smpeg
+LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
+		libsmpeg.so:${PORTSDIR}/multimedia/smpeg
 
 USES=		pkgconfig
 USE_BZIP2=	yes

@@ -1,0 +1,7 @@
+=============================================================
+Before using the %%SQUIRREL_PLUGIN_NAME%% plugin, you must copy the file
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/%%SQUIRREL_PLUGIN_CONFIG%%.sample
+to
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/%%SQUIRREL_PLUGIN_CONFIG%%
+and edit the configuration to meet your needs.
+=============================================================

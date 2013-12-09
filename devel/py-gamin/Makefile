@@ -20,7 +20,7 @@ GAMIN_SLAVE=	yes
 
 USES=	pathfix
 USE_PYTHON=	yes
-CONFIGURE_ARGS=	--with-python=${LOCALBASE} \
+CONFIGURE_ARGS=	--with-python=${PYTHON_CMD} \
 		--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc
 
 NO_STAGE=	yes

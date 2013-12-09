@@ -8,6 +8,7 @@
     SUBDIR += azureus2
     SUBDIR += bitcoin
     SUBDIR += bitflu
+    SUBDIR += bitmessage
     SUBDIR += bittyrant
     SUBDIR += bnbt
     SUBDIR += btpd

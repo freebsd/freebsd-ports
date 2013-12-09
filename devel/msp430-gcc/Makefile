@@ -33,7 +33,7 @@ LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 		libmpfr.so:${PORTSDIR}/math/mpfr \
 		libmpc.so:${PORTSDIR}/math/mpc
 
-CONFLICTS=	msp430-gcc-3.*
+CONFLICTS=	msp430-gcc3-3.*
 
 GCCVERSION=	4.6.3
 LTSVERSION=	20120406

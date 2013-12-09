@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpMyAdmin
-DISTVERSION=	4.0.9
+DISTVERSION=	4.0.10
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${DISTVERSION}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
@@ -10,6 +10,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	A set of PHP-scripts to manage MySQL over the web
 
+NO_ARCH=	yes
 LICENSE=	GPLv2
 
 USE_XZ=		yes

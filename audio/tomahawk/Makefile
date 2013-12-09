@@ -23,9 +23,7 @@ LIB_DEPENDS=	attica:${PORTSDIR}/x11-toolkits/attica \
 		tag:${PORTSDIR}/audio/taglib
 RUN_DEPENDS=	qca-ossl>=2.0.0.b3_4:${PORTSDIR}/security/qca-ossl
 
-CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING="Release" \
-		-DWITH_BREAKPAD:BOOL="OFF" \
-		-DWITH_BUILD:STRING="Release" \
+CMAKE_ARGS+=	-DWITH_BREAKPAD:BOOL="OFF" \
 		-DCLUCENE_CONFIG_PATH:PATH="${LOCALBASE}/share/clucene"
 
 GH_ACCOUNT=	tomahawk-player

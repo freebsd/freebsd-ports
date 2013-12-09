@@ -12,6 +12,8 @@ WRKSRC=		${WRKDIR}/sumwars-${PORTVERSION}
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Role-playing game, featuring both a single and a multiplayer mode
 
+BROKEN=		Fails to build
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.8.1:${PORTSDIR}/graphics/ogre3d \
 		${LOCALBASE}/lib/libOIS-1.2.0.so:${PORTSDIR}/devel/ois \
 		${LOCALBASE}/lib/libenet.a:${PORTSDIR}/net/enet

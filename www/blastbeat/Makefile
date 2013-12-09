@@ -3,7 +3,7 @@
 
 PORTNAME=	blastbeat
 PORTVERSION=	20121205
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	GH GHC
 
@@ -17,7 +17,7 @@ LICENSE_PERMS=	auto-accept
 
 LIB_DEPENDS=	ev:${PORTSDIR}/devel/libev \
 		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		zmq:${PORTSDIR}/devel/zmq
+		zmq:${PORTSDIR}/net/libzmq2
 
 USE_GMAKE=	yes
 USE_GITHUB=	yes

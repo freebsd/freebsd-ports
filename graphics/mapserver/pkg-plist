@@ -7,14 +7,10 @@ bin/shptreetst
 bin/shptreevis
 bin/sortshp
 bin/tile4ms
-lib/libmapserver-6.2.1.so
+lib/libmapserver.so
+lib/libmapserver.so.1
+lib/libmapserver.so.6.4.0
 %%MAPSERV%%www/apache%%APA_VER%%/cgi-bin/mapserv
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/mapscript/mapscript.so
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/mapscript/mapscript.bs
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/mapscript/.packlist
-%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/mapscript.pm
-%%PERL%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/perllocal.pod
-%%PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/mapscript
 %%PHP%%%%PHP_EXTENSION_DIR%%/php_mapscript.so
 %%PHP%%@dirrmtry %%PHP_EXTENSION_DIR%%
 %%PHP%%@dirrmtry etc/php

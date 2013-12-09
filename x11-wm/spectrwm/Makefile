@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spectrwm
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://opensource.conformal.com/snapshots/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
@@ -19,7 +19,6 @@ RUN_DEPENDS+=	dmenu:${PORTSDIR}/x11/dmenu
 
 USE_XORG=	x11 xcb xcursor xft xrandr xt
 
-MAN1=		spectrwm.1
 USE_LDCONFIG=	yes
 PORTEXAMPLES=	spectrwm_cz.conf \
 		spectrwm_es.conf \
@@ -28,7 +27,6 @@ PORTEXAMPLES=	spectrwm_cz.conf \
 		spectrwm_se.conf \
 		spectrwm_us.conf
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/spectrwm.*
 
@@ -43,19 +41,15 @@ do-build:
 		-o ${WRKSRC}/libswmhack.so ${WRKSRC}/lib/swm_hack.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/screenshot.sh ${PREFIX}/bin
-	${INSTALL_LIB} ${WRKSRC}/libswmhack.so ${PREFIX}/lib
-	${INSTALL_MAN} ${WRKSRC}/spectrwm.1 ${MAN1PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/spectrwm.conf ${PREFIX}/etc/spectrwm.conf.sample
-	@if [ ! -f ${PREFIX}/etc/spectrwm.conf ]; then \
-		${INSTALL_DATA} ${PREFIX}/etc/spectrwm.conf.sample ${PREFIX}/etc/spectrwm.conf ; \
-	fi
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/screenshot.sh ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_LIB} ${WRKSRC}/libswmhack.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_MAN} ${WRKSRC}/spectrwm.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/spectrwm.conf ${STAGEDIR}${PREFIX}/etc/spectrwm.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/spectrwm.conf ${STAGEDIR}${PREFIX}/etc/spectrwm.conf
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for conf in ${PORTEXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${conf} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${conf} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

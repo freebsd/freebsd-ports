@@ -1,5 +1,0 @@
-For the port to work properly you must copy the file
-%%PREFIX%%/%%SQUIRRELDIR%%/plugins/multilogin/config.sample.php
-to
-%%PREFIX%%/%%SQUIRRELDIR%%/plugins/multilogin/config.php
-and edit the configuration to meet your needs.

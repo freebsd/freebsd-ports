@@ -25,7 +25,9 @@ OPTIONS_DEFINE=	RC5WATCH DEBUG
 OPTIONS_MULTI=	FIRMWARE
 OPTIONS_MULTI_FIRMWARE=	STELLAR NOVA
 OPTIONS_DEFAULT=	RC5WATCH NOVA
+OPTIONS_SUB=	yes
 RC5WATCH_DESC=	Build rc5watch IR utility
+DEBUG_ALL_TARGET=	debug
 STELLAR_DESC=	Build Terratec Cinergy Piranha FW
 NOVA_DESC=	Build Hauppauge WinTV MiniStick FW
 
@@ -35,36 +37,17 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	CHANGELOG README COPYING
 
-MAN4=	sms1xxx.4
-MANCOMPRESSED=	yes
-
 # Supported firmwares / firmwares to build
 STELLAR_FW=	stellar_dvbt
 NOVA_FW=	novab0_dvbbda
 BUILD_FWS=
 
-NO_STAGE=	yes
-
 USES=		kmod
-.include <bsd.port.pre.mk>
 
-.if ${OSVERSION} <= 800063
-IGNORE=		requires FreeBSD 8.0 or superior
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-ALL_TARGET=	debug
-.endif
-
-.if ${PORT_OPTIONS:MRC5WATCH}
-PLIST_SUB+=	PL_RC5WATCH=""
-.else
-PLIST_SUB+=	PL_RC5WATCH="@comment "
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSTELLAR}
 BUILD_FWS+=	${STELLAR_FW}
-PLIST_SUB+=	PL_STELLAR=""
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${STELLAR_FW}.fw)
 .if !defined(DISTFILE_INSTRUCTIONS)
 DISTFILE_INSTRUCTIONS=\n\
@@ -79,13 +62,10 @@ DISTFILE_INSTRUCTIONS+=	\
 	\t'Cinergy Piranha/BDA Driver 3.09.02.00/Windos XP (32Bit)/SMS100x_Dvbt.inp'\n\
 	mv 'SMS100x_Dvbt.inp' '${DISTDIR}/${DIST_SUBDIR}/${STELLAR_FW}.fw'\n
 .endif
-.else
-PLIST_SUB+=	PL_STELLAR="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNOVA}
 BUILD_FWS+=	${NOVA_FW}
-PLIST_SUB+=	PL_NOVA=""
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${NOVA_FW}.fw)
 .if !defined(DISTFILE_INSTRUCTIONS)
 DISTFILE_INSTRUCTIONS=\n\
@@ -100,8 +80,6 @@ DISTFILE_INSTRUCTIONS+=	\
 	\t'driver17/hcw17dvb.1b0'\n\
 	mv 'hcw17dvb.1b0' '${DISTDIR}/${DIST_SUBDIR}/${NOVA_FW}.fw'\n
 .endif
-.else
-PLIST_SUB+=	PL_NOVA="@comment "
 .endif
 
 .if defined(DISTFILE_INSTRUCTIONS)
@@ -134,14 +112,9 @@ post-build:
 
 post-install:
 .if ${PORT_OPTIONS:MRC5WATCH}
-	${INSTALL_PROGRAM} ${WRKSRC}/apps/rc5watch/rc5watch ${PREFIX}/bin/rc5watch
+	${INSTALL_PROGRAM} ${WRKSRC}/apps/rc5watch/rc5watch ${STAGEDIR}${PREFIX}/bin/rc5watch
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

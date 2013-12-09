@@ -22,7 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.${QT_VER}
 
 USES=		qmake
 USE_QT4=	corelib gui network moc_build rcc_build
-QMAKE_ARGS=	QMAKE_LFLAGS="-lz"
+LDFLAGS=	-lz
 
 PLIST_SUB=	_DB=${_DB} DB_DIR=${DB_DIR} _DB_F=${_DB_F}
 

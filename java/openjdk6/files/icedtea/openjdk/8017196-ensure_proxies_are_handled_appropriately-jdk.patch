@@ -1,0 +1,107 @@
+# HG changeset patch
+# User mchung
+# Date 1382731288 -3600
+#      Fri Oct 25 21:01:28 2013 +0100
+# Node ID 43b600fed0e8ac9d5ffe7556617d4850143e2dcd
+# Parent  a2b63addc0633a5ef8d196d1019d78b920cb4b1a
+8017196: Ensure Proxies are handled appropriately
+Reviewed-by: dfuchs, jrose, jdn, ahgross, chegar
+
+diff -r a2b63addc063 -r 43b600fed0e8 src/share/classes/java/lang/reflect/Proxy.java
+--- jdk/src/share/classes/java/lang/reflect/Proxy.java	Fri Oct 25 19:45:04 2013 +0100
++++ jdk/src/share/classes/java/lang/reflect/Proxy.java	Fri Oct 25 21:01:28 2013 +0100
+@@ -787,6 +787,7 @@
+      * @throws  IllegalArgumentException if the argument is not a
+      *          proxy instance
+      */
++    @CallerSensitive
+     public static InvocationHandler getInvocationHandler(Object proxy)
+         throws IllegalArgumentException
+     {
+@@ -797,8 +798,19 @@
+             throw new IllegalArgumentException("not a proxy instance");
+         }
+ 
+-        Proxy p = (Proxy) proxy;
+-        return p.h;
++        final Proxy p = (Proxy) proxy;
++        final InvocationHandler ih = p.h;
++        if (System.getSecurityManager() != null) {
++            Class<?> ihClass = ih.getClass();
++            Class<?> caller = Reflection.getCallerClass();
++            if (ReflectUtil.needsPackageAccessCheck(caller.getClassLoader(),
++                                                    ihClass.getClassLoader()))
++            {
++                ReflectUtil.checkPackageAccess(ihClass);
++            }
++        }
++
++        return ih;
+     }
+ 
+     private static native Class defineClass0(ClassLoader loader, String name,
+diff -r a2b63addc063 -r 43b600fed0e8 src/share/classes/sun/reflect/misc/ReflectUtil.java
+--- jdk/src/share/classes/sun/reflect/misc/ReflectUtil.java	Fri Oct 25 19:45:04 2013 +0100
++++ jdk/src/share/classes/sun/reflect/misc/ReflectUtil.java	Fri Oct 25 21:01:28 2013 +0100
+@@ -26,8 +26,10 @@
+ 
+ package sun.reflect.misc;
+ 
++import java.lang.reflect.Method;
+ import java.lang.reflect.Modifier;
+ import java.lang.reflect.Proxy;
++import java.util.Arrays;
+ import sun.reflect.Reflection;
+ 
+ public final class ReflectUtil {
+@@ -257,4 +259,50 @@
+         String pkg = (i != -1) ? name.substring(0, i) : "";
+         return Proxy.isProxyClass(cls) && !pkg.equals(PROXY_PACKAGE);
+     }
++
++    /**
++     * Check if the given method is a method declared in the proxy interface
++     * implemented by the given proxy instance.
++     *
++     * @param proxy a proxy instance
++     * @param method an interface method dispatched to a InvocationHandler
++     *
++     * @throws IllegalArgumentException if the given proxy or method is invalid.
++     */
++    public static void checkProxyMethod(Object proxy, Method method) {
++        // check if it is a valid proxy instance
++        if (proxy == null || !Proxy.isProxyClass(proxy.getClass())) {
++            throw new IllegalArgumentException("Not a Proxy instance");
+ }
++        if (Modifier.isStatic(method.getModifiers())) {
++            throw new IllegalArgumentException("Can't handle static method");
++        }
++
++        Class<?> c = method.getDeclaringClass();
++        if (c == Object.class) {
++            String name = method.getName();
++            if (name.equals("hashCode") || name.equals("equals") || name.equals("toString")) {
++                return;
++            }
++        }
++
++        if (isSuperInterface(proxy.getClass(), c)) {
++            return;
++        }
++
++        // disallow any method not declared in one of the proxy intefaces
++        throw new IllegalArgumentException("Can't handle: " + method);
++    }
++
++    private static boolean isSuperInterface(Class<?> c, Class<?> intf) {
++        for (Class<?> i : c.getInterfaces()) {
++            if (i == intf) {
++                return true;
++            }
++            if (isSuperInterface(i, intf)) {
++                return true;
++            }
++        }
++        return false;
++    }
++}

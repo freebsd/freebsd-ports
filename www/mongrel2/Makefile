@@ -3,13 +3,14 @@
 
 PORTNAME=	mongrel2
 PORTVERSION=	1.7.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://mongrel2.org/static/downloads/
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Is an application, language, and network arch
 
-LIB_DEPENDS=	zmq.1:${PORTSDIR}/devel/zmq \
+LIB_DEPENDS=	zmq.1:${PORTSDIR}/net/libzmq2 \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3
 
 USE_GMAKE=	yes

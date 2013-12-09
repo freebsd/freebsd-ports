@@ -39,8 +39,8 @@ include/OpenImageIO/pugiconfig.hpp
 include/OpenImageIO/version.h
 lib/libOpenImageIO.so
 lib/libOpenImageIO.so.1
-lib/libOpenImageIO.so.1.2
-lib/libOpenImageIO.so.1.2.3
+lib/libOpenImageIO.so.1.3
+lib/libOpenImageIO.so.1.3.9
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/openimageio.pdf

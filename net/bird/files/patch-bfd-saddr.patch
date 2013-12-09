@@ -1,0 +1,184 @@
+diff --git a/nest/iface.h b/nest/iface.h
+index 697ea54..56710e4 100644
+--- nest/iface.h
++++ nest/iface.h
+@@ -108,6 +108,7 @@ typedef struct neighbor {
+   node n;				/* Node in global neighbor list */
+   node if_n;				/* Node in per-interface neighbor list */
+   ip_addr addr;				/* Address of the neighbor */
++  struct ifa *ifa;			/* Ifa on related iface */
+   struct iface *iface;			/* Interface it's connected to */
+   struct proto *proto;			/* Protocol this belongs to */
+   void *data;				/* Protocol-specific data */
+diff --git a/nest/neighbor.c b/nest/neighbor.c
+index 11a980b..48b6b6a 100644
+--- nest/neighbor.c
++++ nest/neighbor.c
+@@ -56,14 +56,20 @@ neigh_hash(struct proto *p, ip_addr *a)
+ }
+ 
+ static int
+-if_connected(ip_addr *a, struct iface *i) /* -1=error, 1=match, 0=no match */
++if_connected(ip_addr *a, struct iface *i, struct ifa **ap)
+ {
+   struct ifa *b;
+ 
+   if (!(i->flags & IF_UP))
++  {
++    *ap = NULL;
+     return -1;
++  }
++
+   WALK_LIST(b, i->addrs)
+     {
++      *ap = b;
++
+       if (ipa_equal(*a, b->ip))
+ 	return SCOPE_HOST;
+       if (b->flags & IA_PEER)
+@@ -79,13 +85,18 @@ if_connected(ip_addr *a, struct iface *i) /* -1=error, 1=match, 0=no match */
+ 	      if ((b->pxlen < (BITS_PER_IP_ADDRESS - 1)) &&
+ 		  (ipa_equal(*a, b->prefix) ||	/* Network address */
+ 		   ipa_equal(*a, b->brd)))	/* Broadcast */
++	      {
++		*ap = NULL;
+ 		return -1;
++	      }
+ #endif
+ 
+ 	      return b->scope;
+ 	    }
+ 	}
+       }
++
++  *ap = NULL;
+   return -1;
+ }
+ 
+@@ -117,6 +128,7 @@ neigh_find2(struct proto *p, ip_addr *a, struct iface *ifa, unsigned flags)
+   int class, scope = -1;
+   unsigned int h = neigh_hash(p, a);
+   struct iface *i;
++  struct ifa *addr;
+ 
+   WALK_LIST(n, neigh_hash_table[h])	/* Search the cache */
+     if (n->proto == p && ipa_equal(*a, n->addr) && (!ifa || (ifa == n->iface)))
+@@ -132,7 +144,7 @@ neigh_find2(struct proto *p, ip_addr *a, struct iface *ifa, unsigned flags)
+ 
+   if (ifa)
+     {
+-      scope = if_connected(a, ifa);
++      scope = if_connected(a, ifa, &addr);
+       flags |= NEF_BIND;
+ 
+       if ((scope < 0) && (flags & NEF_ONLINK))
+@@ -140,7 +152,7 @@ neigh_find2(struct proto *p, ip_addr *a, struct iface *ifa, unsigned flags)
+     }
+   else
+     WALK_LIST(i, iface_list)
+-      if ((scope = if_connected(a, i)) >= 0)
++      if ((scope = if_connected(a, i, &addr)) >= 0)
+ 	{
+ 	  ifa = i;
+ 	  break;
+@@ -165,6 +177,7 @@ neigh_find2(struct proto *p, ip_addr *a, struct iface *ifa, unsigned flags)
+       scope = -1;
+     }
+   n->iface = ifa;
++  n->ifa = addr;
+   n->proto = p;
+   n->data = NULL;
+   n->aux = 0;
+@@ -216,9 +229,10 @@ neigh_dump_all(void)
+ }
+ 
+ static void
+-neigh_up(neighbor *n, struct iface *i, int scope)
++neigh_up(neighbor *n, struct iface *i, int scope, struct ifa *a)
+ {
+   n->iface = i;
++  n->ifa = a;
+   n->scope = scope;
+   add_tail(&i->neighbors, &n->if_n);
+   rem_node(&n->n);
+@@ -235,6 +249,7 @@ neigh_down(neighbor *n)
+   rem_node(&n->if_n);
+   if (! (n->flags & NEF_BIND))
+     n->iface = NULL;
++  n->ifa = NULL;
+   n->scope = -1;
+   if (n->proto->neigh_notify && n->proto->core_state != FS_FLUSHING)
+     n->proto->neigh_notify(n);
+@@ -245,13 +260,14 @@ neigh_down(neighbor *n)
+ 
+       /* Respawn neighbor if there is another matching prefix */
+       struct iface *i;
++      struct ifa *a;
+       int scope;
+ 
+       if (!n->iface)
+ 	WALK_LIST(i, iface_list)
+-	  if ((scope = if_connected(&n->addr, i)) >= 0)
++	  if ((scope = if_connected(&n->addr, i, &a)) >= 0)
+ 	    {
+-	      neigh_up(n, i, scope);
++	      neigh_up(n, i, scope, a);
+ 	      return;
+ 	    }
+     }
+@@ -272,13 +288,14 @@ neigh_down(neighbor *n)
+ void
+ neigh_if_up(struct iface *i)
+ {
++  struct ifa *a;
+   neighbor *n, *next;
+   int scope;
+ 
+   WALK_LIST_DELSAFE(n, next, sticky_neigh_list)
+     if ((!n->iface || n->iface == i) &&
+-	((scope = if_connected(&n->addr, i)) >= 0))
+-      neigh_up(n, i, scope);
++	((scope = if_connected(&n->addr, i, &a)) >= 0))
++      neigh_up(n, i, scope, a);
+ }
+ 
+ /**
+@@ -339,8 +356,9 @@ neigh_ifa_update(struct ifa *a)
+   /* Remove all neighbors whose scope has changed */
+   WALK_LIST_DELSAFE(x, y, i->neighbors)
+     {
++      struct ifa *aa;
+       neighbor *n = SKIP_BACK(neighbor, if_n, x);
+-      if (if_connected(&n->addr, i) != n->scope)
++      if (if_connected(&n->addr, i, &aa) != n->scope)
+ 	neigh_down(n);
+     }
+ 
+diff --git a/proto/bfd/bfd.c b/proto/bfd/bfd.c
+index 8935548..b697e84 100644
+--- proto/bfd/bfd.c
++++ proto/bfd/bfd.c
+@@ -740,7 +740,7 @@ bfd_neigh_notify(struct neighbor *nb)
+ 
+   if ((nb->scope > 0) && !n->req)
+   {
+-    ip_addr local = ipa_nonzero(n->local) ? n->local : nb->iface->addr->ip;
++    ip_addr local = ipa_nonzero(n->local) ? n->local : nb->ifa->ip;
+     n->req = bfd_request_session(p->p.pool, n->addr, local, nb->iface, NULL, NULL);
+   }
+ 
+diff --git a/proto/bgp/bgp.c b/proto/bgp/bgp.c
+index f5b6b8f..7cd0b0a 100644
+--- proto/bgp/bgp.c
++++ proto/bgp/bgp.c
+@@ -718,9 +718,8 @@ bgp_start_neighbor(struct bgp_proto *p)
+ {
+   /* Called only for single-hop BGP sessions */
+ 
+-  /* Remove this ? */
+   if (ipa_zero(p->source_addr))
+-    p->source_addr = p->neigh->iface->addr->ip; 
++    p->source_addr = p->neigh->ifa->ip; 
+ 
+ #ifdef IPV6
+   {

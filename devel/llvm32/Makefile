@@ -19,10 +19,22 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 UNIQUENAME=	${PORTNAME}${LLVM_SUFFIX}
 
-USES=		gmake perl5
+USES=		gmake perl5 shebangfix
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_PREFIX=	${LLVM_PREFIX}
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
+
+python_OLD_CMD=	/usr/bin/env python
+python_CMD=	/usr/bin/env python2
+SHEBANG_FILES=	test/Scripts/coff-dump.py test/Scripts/elf-dump \
+		test/Scripts/macho-dumpx lib/Target/NVPTX/gen-register-defs.py \
+		utils/clang-parse-diagnostics-file \
+		utils/release/findRegressions-nightly.py \
+		utils/release/findRegressions-simple.py \
+		utils/Misc/zkill utils/llvm-lit/llvm-lit.in \
+		utils/Target/ARM/analyze-match-table.py \
+		utils/llvm-build/llvm-build utils/lit/lit.py \
+		utils/lit/lit/ProgressBar.py utils/lit/lit/main.py
 
 SUB_FILES=	llvm-wrapper.sh
 SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"

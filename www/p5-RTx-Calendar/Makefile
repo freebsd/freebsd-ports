@@ -19,6 +19,8 @@ BUILD_DEPENDS=	p5-Date-ICal>0:${PORTSDIR}/devel/p5-Date-ICal      \
 		p5-DateTime-Set>0:${PORTSDIR}/devel/p5-DateTime-Set
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
+
 USES+=		perl5
 USE_PERL5=	configure
 

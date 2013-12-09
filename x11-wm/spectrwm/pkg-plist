@@ -1,6 +1,7 @@
 bin/spectrwm
 bin/screenshot.sh
 lib/libswmhack.so
+man/man1/spectrwm.1.gz
 @unexec if [ ! -f %D/etc/spectrwm.conf ] || cmp -s %D/etc/spectrwm.conf.sample %D/etc/spectrwm.conf; then rm -f %D/etc/spectrwm.conf; else echo %%PREFIX%%/etc/spectrwm.conf contains changes, remove it manually to delete this package completely.; fi
 etc/spectrwm.conf.sample
 @exec [ -f %D/etc/spectrwm.conf ] || cp -p %D/%F %D/etc/spectrwm.conf

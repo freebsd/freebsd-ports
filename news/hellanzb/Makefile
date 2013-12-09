@@ -20,7 +20,7 @@ RUN_DEPENDS=	par2:${PORTSDIR}/archivers/par2cmdline \
 
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
-USE_TWISTED_RUN=	web
+USES=		twisted:run,web
 PORTDOCS=	CHANGELOG CREDITS README
 
 NO_STAGE=	yes

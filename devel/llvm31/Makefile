@@ -21,10 +21,21 @@ BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 
 CONFLICTS=	llvm-[3]* llvm-devel-[23]* llvm29-*
 
-USES=		gmake perl5
+USES=		gmake perl5 shebangfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PYTHON_BUILD=	yes
+USE_PYTHON_BUILD=	2
+
+python_OLD_CMD=	/usr/bin/env python
+python_CMD=	/usr/bin/env python2
+SHEBANG_FILES=	test/Scripts/coff-dump.py test/Scripts/elf-dump \
+		test/Scripts/macho-dumpx utils/clang-parse-diagnostics-file \
+		utils/lit/lit/main.py utils/lit/lit/ProgressBar.py \
+		utils/lit/lit.py utils/llvm-build/llvm-build \
+		utils/llvm-lit/llvm-lit.in utils/Misc/zkill \
+		utils/release/findRegressions-nightly.py \
+		utils/release/findRegressions-simple.py \
+		utils/Target/ARM/analyze-match-table.py
 
 # Suggested tweaks from http://llvm.org/docs/Packaging.html
 CONFIGURE_ARGS+=	--enable-shared

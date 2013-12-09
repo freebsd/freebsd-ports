@@ -645,7 +645,6 @@
     SUBDIR += pbc
     SUBDIR += pbnj
     SUBDIR += pcsc-tools
-    SUBDIR += pdfcrack
     SUBDIR += pear-Auth
     SUBDIR += pear-Auth_HTTP
     SUBDIR += pear-Auth_OpenID
@@ -834,7 +833,6 @@
     SUBDIR += radiusniff
     SUBDIR += rainbowcrack
     SUBDIR += ranpwd
-    SUBDIR += rarcrack
     SUBDIR += ratproxy
     SUBDIR += rats
     SUBDIR += razorback-api

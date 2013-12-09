@@ -2,7 +2,7 @@
 
 PORTNAME=	bind96
 PORTVERSION=	9.6.3.2.ESV.R10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
@@ -135,14 +135,14 @@ CONFIGURE_ARGS+=	--disable-threads
 .endif
 
 .if ${PORT_OPTIONS:MREPLACE_BASE}
-.if ${OSVERSION} >= 1000500
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
 IGNORE=		REPLACE_BASE option not supported on this release
 .endif
 PKGNAMESUFFIX=	-base
 PREFIX=		/usr
 BIND_DESTETC=	/etc/namedb
 .else
-.if ${OSVERSION} >= 1000500
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
 BIND_DESTETC=	${PREFIX}/etc/namedb
 .else
 BIND_DESTETC=	${PREFIX}/etc
@@ -153,7 +153,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--sysconfdir=${BIND_DESTETC}
 PLIST_SUB+=	BIND_DESTETC="${BIND_DESTETC}"
 
-.if ${OSVERSION} >= 1000500
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
 PLIST_SUB+=	NOBASE=""
 .else
 PLIST_SUB+=	NOBASE="@comment "
@@ -221,7 +221,7 @@ post-install:
 	${CP} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/FAQ \
 	    ${WRKSRC}/NSEC3-NOTES ${WRKSRC}/README* ${DOCSDIR}/
 .endif
-.if ${OSVERSION} >= 1000500
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
 .for FILE in named named.conf
 	${SED} -e 's#%%PREFIX%%#${PREFIX}#g' \
 		-e 's#%%BIND_DESTETC%%#${BIND_DESTETC}#g' \
@@ -235,7 +235,10 @@ post-install:
 .for DIR in dynamic slave working
 	${CHOWN} bind:bind ${BIND_DESTETC}/${DIR}
 .endfor
-	${INSTALL_DATA} ${WRKDIR}/named.conf ${BIND_DESTETC}
+	${INSTALL_DATA} ${WRKDIR}/named.conf ${BIND_DESTETC}/named.conf.sample
+.if !exists(${BIND_DESTETC}/named.conf)
+	${INSTALL_DATA} ${WRKDIR}/named.conf ${BIND_DESTETC}/named.conf
+.endif
 	${INSTALL_DATA} ${FILESDIR}/named.root ${BIND_DESTETC}
 	${INSTALL_DATA} ${FILESDIR}/empty.db ${BIND_DESTETC}/master
 	${INSTALL_DATA} ${FILESDIR}/localhost-forward.db ${BIND_DESTETC}/master

@@ -1,6 +1,14 @@
-diff -ruN xpvm.orig/src/Makefile.aimk xpvm/src/Makefile.aimk
---- src/Makefile.aimk	Fri Apr 10 05:11:22 1998
-+++ src/Makefile.aimk	Thu Apr  1 13:38:57 2004
+--- src/Makefile.aimk.orig	1998-04-09 23:11:22.000000000 +0200
++++ src/Makefile.aimk	2013-11-16 20:41:32.000000000 +0100
+@@ -29,7 +29,7 @@
+ #CC			=	gcc
+ 
+ CFLAGS		=	$(CFLOPTS) $(PVMVERSION) -DIMA_$(PVM_ARCH) $(ARCHCFLAGS)
+-LFLAGS		=	$(ARCHCFLAGS)
++LFLAGS		=	$(LDFLAGS) $(ARCHCFLAGS)
+ 
+ AIMK		=	$(PVM_ROOT)/lib/aimk
+ 
 @@ -39,36 +39,39 @@
  #
  
@@ -100,3 +108,4 @@ diff -ruN xpvm.orig/src/Makefile.aimk xpvm/src/Makefile.aimk
 +				$(LOCALBASE)/include/pvmtev.h \
  				$(TRCDIR)/trcdef.h $(TRCDIR)/trctype.h \
  				$(TRCDIR)/trcproto.h $(TRCDIR)/trccompat.h
+ 

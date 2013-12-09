@@ -13,6 +13,8 @@ COMMENT=	Test your application's warnings
 BUILD_DEPENDS=	p5-Plack>0:${PORTSDIR}/www/p5-Plack
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
+
 USES=		perl5
 USE_PERL5=	configure
 

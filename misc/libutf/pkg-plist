@@ -1,5 +1,7 @@
 include/ure.h
 include/utf.h
+man/man3/ure.3.gz
+man/man3/utf.3.gz
 lib/libutf.a
 %%EXAMPLESDIR%%/langcoll.utf
 @dirrm %%EXAMPLESDIR%%

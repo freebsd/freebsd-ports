@@ -13,7 +13,7 @@ COMMENT=	Allows usage of special keys on internet/multimedia keyboards
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CONFIGURE_ARGS=	--with-db3-inc=${BDB_INCLUDE_DIR} \
@@ -23,20 +23,13 @@ CONFIGURE_ARGS=	--with-db3-inc=${BDB_INCLUDE_DIR} \
 USE_XORG=	x11 xkbfile xmu
 GNU_CONFIGURE=	yes
 USE_BDB=	yes
-USE_GMAKE=	yes
-
-MAN1=		hotkeys.1
+USES=		gmake
 
 OPTIONS_DEFINE=	OSD
 OPTIONS_DEFAULT=	OSD
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MOSD}
-LIB_DEPENDS+=	xosd.4:${PORTSDIR}/misc/xosd
-CONFIGURE_ARGS+=	--with-xosd
-.endif
+OSD_LIB_DEPENDS=	libxosd.so:${PORTSDIR}/misc/xosd
+OSD_CONFIGURE_WITH=	xosd
 
 post-extract:
 	@${CP} ${PATCHDIR}/error.h ${WRKSRC}/src
@@ -48,10 +41,6 @@ post-patch:
 		${WRKSRC}/src/Makefile.in
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/src/hotkeys.conf ${PREFIX}/etc/hotkeys.conf.sample
-	@if [ ! -f ${PREFIX}/etc/hotkeys.conf ]; then \
-	  ${CP} -p ${PREFIX}/etc/hotkeys.conf.sample ${PREFIX}/etc/hotkeys.conf ; \
-	fi
-	@${CAT} ${PKGMESSAGE}
+	@${INSTALL_DATA} ${WRKSRC}/src/hotkeys.conf ${STAGEDIR}${PREFIX}/etc/hotkeys.conf.sample
 
 .include <bsd.port.mk>

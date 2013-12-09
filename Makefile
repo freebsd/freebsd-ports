@@ -141,10 +141,13 @@ ${INDEXDIR}/${INDEXFILE}:
 			echo; \
 		fi; \
 		exit 1); \
-	cat $${tmpdir}/${INDEXFILE}.desc.* | (cd ${.CURDIR} ; ${MAKE_INDEX}) | \
+	cat $${tmpdir}/${INDEXFILE}.desc.* | \
+		sed -e 's|${.CURDIR}|${PORTSDIR}|g' | \
+		(cd ${.CURDIR} ; ${MAKE_INDEX}) | \
 		sed -e 's/  */ /g' -e 's/|  */|/g' -e 's/  *|/|/g' -e 's./..g' | \
 		sort -t '|' +1 -2 | \
 		sed -Ee 's../.g' -e ':a' -e 's|/[^/]+/\.\.||; ta' \
+		-e 's|${PORTSDIR}|/usr/ports|g' \
 		-e 's|${.CURDIR}|/usr/ports|g' > ${INDEXDIR}/${INDEXFILE}.tmp; \
 	if [ "${INDEX_PRISTINE}" != "" ]; then \
 		sed -e "s,$${LOCALBASE},/usr/local," ${INDEXDIR}/${INDEXFILE}.tmp > ${INDEXDIR}/${INDEXFILE}; \

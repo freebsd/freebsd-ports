@@ -46,8 +46,7 @@ LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu \
 		unwind:${PORTSDIR}/devel/libunwind \
 		glog:${PORTSDIR}/devel/glog
 
-OPTIONS_DEFINE=		DEBUG DOCS
-OPTIONS_DEFAULT=	DOCS
+OPTIONS_DEFINE=		DOCS
 
 ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	This program is developed for amd64 only
@@ -64,7 +63,6 @@ BUILD_DEPENDS+=	bison:${PORTSDIR}/devel/bison \
 
 WRKSRC=		${WRKDIR}/hiphop-php-HPHP-${PORTVERSION}
 
-GNU_CONFIGURE=	yes
 USES=		cmake gettext
 USE_MYSQL=	yes
 USE_GNOME=	libxml2
@@ -102,13 +100,6 @@ PORTDOCS=	*
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDEBUG}
-CMAKE_BUILD_TYPE=	Debug
-CONFIGURE_ARGS+=	-DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
-.endif
-
-.include <bsd.port.pre.mk>
 
 _CFLAGS=	${CFLAGS} -DHAVE_POSIX_FALLOCATE=1
 _CXXFLAGS=	${CXXFLAGS} -D_GLIBCXX_USE_C99 -DHAVE_POSIX_FALLOCATE=1
@@ -153,4 +144,4 @@ do-install:
 	${CP} -rf ${WRKSRC}/hphp/doc/ ${DOCSDIR}/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

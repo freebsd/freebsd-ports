@@ -1,5 +1,5 @@
-%%PL_RC5WATCH%%bin/rc5watch
-@cwd %%KMODDIR%%
-%%PL_NOVA%%novab0_dvbbda.ko
-%%PL_STELLAR%%stellar_dvbt.ko
-sms1xxx.ko
+%%RC5WATCH%%bin/rc5watch
+man/man4/sms1xxx.4.gz
+/%%KMODDIR%%/sms1xxx.ko
+%%NOVA%%/%%KMODDIR%%/novab0_dvbbda.ko
+%%STELLAR%%/%%KMODDIR%%/stellar_dvbt.ko

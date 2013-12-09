@@ -265,7 +265,7 @@ CONFIGURE_ARGS+=--http-client-body-temp-path=${NGINX_TMPDIR}/client_body_temp \
 		--http-log-path=${NGINX_ACCESSLOG}
 
 .if ${PORT_OPTIONS:MHTTP_ACCEPT_LANGUAGE}
-GIT_ACCEPT_LANGUAGE_VERSION=	02262ce
+GIT_ACCEPT_LANGUAGE_VERSION=	2f69842
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/giom/nginx_accept_language_module/tarball/master/:accept_language
 DISTFILES+=	giom-nginx_accept_language_module-${GIT_ACCEPT_LANGUAGE_VERSION}.tar.gz:accept_language
@@ -654,7 +654,7 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
-PASSENGER_VERSION=	4.0.26
+PASSENGER_VERSION=	4.0.27
 MASTER_SITES+=	http://s3.amazonaws.com/phusion-passenger/releases/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx

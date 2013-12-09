@@ -1,0 +1,90 @@
+# HG changeset patch
+# User mchung
+# Date 1382735820 -3600
+#      Fri Oct 25 22:17:00 2013 +0100
+# Node ID 695dd7ceb9e34fd4058374de63964c205f061002
+# Parent  5b485ecccea9064e5036e1bb040fc2af1f773c20
+8006882: Proxy generated classes in sun.proxy package breaks JMockit
+Reviewed-by: alanb, ahgross
+
+diff -r 5b485ecccea9 -r 695dd7ceb9e3 src/share/classes/java/lang/reflect/Proxy.java
+--- jdk/src/share/classes/java/lang/reflect/Proxy.java	Fri Oct 25 22:11:26 2013 +0100
++++ jdk/src/share/classes/java/lang/reflect/Proxy.java	Fri Oct 25 22:17:00 2013 +0100
+@@ -609,7 +609,7 @@
+             }
+ 
+             if (proxyPkg == null) {
+-                // if no non-public proxy interfaces, use sun.proxy package
++                // if no non-public proxy interfaces, use com.sun.proxy package
+                 proxyPkg = ReflectUtil.PROXY_PACKAGE + ".";
+             }
+ 
+diff -r 5b485ecccea9 -r 695dd7ceb9e3 src/share/classes/sun/reflect/misc/ReflectUtil.java
+--- jdk/src/share/classes/sun/reflect/misc/ReflectUtil.java	Fri Oct 25 22:11:26 2013 +0100
++++ jdk/src/share/classes/sun/reflect/misc/ReflectUtil.java	Fri Oct 25 22:17:00 2013 +0100
+@@ -246,7 +246,7 @@
+         }
+     }
+ 
+-    public static final String PROXY_PACKAGE = "sun.proxy";
++    public static final String PROXY_PACKAGE = "com.sun.proxy";
+ 
+     /**
+      * Test if the given class is a proxy class that implements
+diff -r 5b485ecccea9 -r 695dd7ceb9e3 src/share/lib/security/java.security
+--- jdk/src/share/lib/security/java.security	Fri Oct 25 22:11:26 2013 +0100
++++ jdk/src/share/lib/security/java.security	Fri Oct 25 22:17:00 2013 +0100
+@@ -132,6 +132,7 @@
+                com.sun.imageio.,\
+                com.sun.istack.internal.,\
+                com.sun.jmx.,\
++               com.sun.proxy.,\
+                com.sun.org.apache.bcel.internal.,\
+                com.sun.org.apache.regexp.internal.,\
+                com.sun.org.apache.xerces.internal.,\
+@@ -167,6 +168,7 @@
+                    com.sun.imageio.,\
+                    com.sun.istack.internal.,\
+                    com.sun.jmx.,\
++                   com.sun.proxy.,\
+                    com.sun.org.apache.bcel.internal.,\
+                    com.sun.org.apache.regexp.internal.,\
+                    com.sun.org.apache.xerces.internal.,\
+diff -r 5b485ecccea9 -r 695dd7ceb9e3 src/share/lib/security/java.security-solaris
+--- jdk/src/share/lib/security/java.security-solaris	Fri Oct 25 22:11:26 2013 +0100
++++ jdk/src/share/lib/security/java.security-solaris	Fri Oct 25 22:17:00 2013 +0100
+@@ -133,6 +133,7 @@
+                com.sun.imageio.,\
+                com.sun.istack.internal.,\
+                com.sun.jmx.,\
++               com.sun.proxy.,\
+                com.sun.org.apache.bcel.internal.,\
+                com.sun.org.apache.regexp.internal.,\
+                com.sun.org.apache.xerces.internal.,\
+@@ -169,6 +170,7 @@
+                    com.sun.imageio.,\
+                    com.sun.istack.internal.,\
+                    com.sun.jmx.,\
++                   com.sun.proxy.,\
+                    com.sun.org.apache.bcel.internal.,\
+                    com.sun.org.apache.regexp.internal.,\
+                    com.sun.org.apache.xerces.internal.,\
+diff -r 5b485ecccea9 -r 695dd7ceb9e3 src/share/lib/security/java.security-windows
+--- jdk/src/share/lib/security/java.security-windows	Fri Oct 25 22:11:26 2013 +0100
++++ jdk/src/share/lib/security/java.security-windows	Fri Oct 25 22:17:00 2013 +0100
+@@ -133,6 +133,7 @@
+                com.sun.imageio.,\
+                com.sun.istack.internal.,\
+                com.sun.jmx.,\
++               com.sun.proxy.,\
+                com.sun.org.apache.bcel.internal.,\
+                com.sun.org.apache.regexp.internal.,\
+                com.sun.org.apache.xerces.internal.,\
+@@ -170,6 +171,7 @@
+                    com.sun.imageio.,\
+                    com.sun.istack.internal.,\
+                    com.sun.jmx.,\
++                   com.sun.proxy.,\
+                    com.sun.org.apache.bcel.internal.,\
+                    com.sun.org.apache.regexp.internal.,\
+                    com.sun.org.apache.xerces.internal.,\

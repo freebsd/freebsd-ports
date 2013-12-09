@@ -4,4 +4,4 @@
 #
 
 cd "%%DATADIR%%"
-exec /usr/bin/env python ./nelly.py "${@}"
+exec %%PYTHON_CMD%% ./nelly.py "${@}"

@@ -1,9 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-toolkits/gnome-pty-helper/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/x11-toolkits/gnome-pty-helper/Makefile 18942 2013-12-08 01:31:37Z kwm $
 
 PORTNAME=	gnome-pty-helper
 PORTREVISION=	0
+PKGNAMESUFFIX=	#empty
 
 COMMENT=	utmp/wtmp/lastlog helper program for the vte Terminal widget
 
@@ -19,6 +20,5 @@ CONFIGURE_ARGS=	# empty
 PATCH_STRIP=	-p1
 EXTRA_PATCHES+=	${MASTERDIR}/files/patch-gnome-pty-helper_Makefile.in \
 		${MASTERDIR}/files/patch-gnome-pty-helper_gnome-pty-helper.c
-LATEST_LINK=	${PORTNAME}
 
 .include "${MASTERDIR}/Makefile"

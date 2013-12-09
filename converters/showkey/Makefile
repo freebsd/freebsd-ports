@@ -12,16 +12,14 @@ COMMENT=	Prints its input, with escapes such as "<NUL>"
 
 LICENSE=	MIT
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ARGS=	CC="${CC} ${CFLAGS}"
 ALL_TARGET=	showkey
 
-MAN1=		showkey.1
-PLIST_FILES=	bin/showkey
+PLIST_FILES=	bin/showkey man/man1/showkey.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/showkey ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/showkey.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/showkey ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/showkey.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

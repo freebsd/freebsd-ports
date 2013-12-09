@@ -51,6 +51,224 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6a806960-3016-44ed-8575-8614a7cb57c7">
+    <topic>rails -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>rubygem-actionmailer</name>
+	<range><lt>3.2.16</lt></range>
+      </package>
+      <package>
+	<name>rubygem-actionpack</name>
+	<range><lt>3.2.16</lt></range>
+      </package>
+      <package>
+	<name>rubygem-actionpack4</name>
+	<range><lt>4.0.2</lt></range>
+      </package>
+      <package>
+	<name>rubygem-activemodel</name>
+	<range><lt>3.2.16</lt></range>
+      </package>
+      <package>
+	<name>rubygem-activerecord</name>
+	<range><lt>3.2.16</lt></range>
+      </package>
+      <package>
+	<name>rubygem-activeresource</name>
+	<range><lt>3.2.16</lt></range>
+      </package>
+      <package>
+	<name>rubygem-activesupport</name>
+	<range><lt>3.2.16</lt></range>
+      </package>
+      <package>
+	<name>rubygem-activesupport4</name>
+	<range><lt>4.0.2</lt></range>
+      </package>
+      <package>
+	<name>rubygem-rails</name>
+	<range><lt>3.2.16</lt></range>
+      </package>
+      <package>
+	<name>rubygem-railties</name>
+	<range><lt>3.2.16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Rails weblog:</p>
+	<blockquote cite="http://weblog.rubyonrails.org/2013/12/3/Rails_3_2_16_and_4_0_2_have_been_released/">
+	  <p>Rails 3.2.16 and 4.0.2 have been released! These two
+	    releases contain important security fixes, so please upgrade
+		as soon as possible! In order to make upgrading as smooth as
+		possible, we've only included commits directly related to
+		each security issue.</p>
+	  <p>The security fixes in 3.2.16 are:</p>
+	  <ul>
+	    <li>CVE-2013-6417</li>
+	    <li>CVE-2013-4491</li>
+	    <li>CVE-2013-6415</li>
+	    <li>CVE-2013-6414</li>
+	  </ul>
+	  <p>The security fixes in 4.0.2 are:</p>
+	  <ul>
+	    <li>CVE-2013-6417</li>
+	    <li>CVE-2013-4491</li>
+	    <li>CVE-2013-6415</li>
+	    <li>CVE-2013-6414</li>
+	    <li>CVE-2013-6416</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	  <cvename>CVE-2013-6417</cvename>
+	  <cvename>CVE-2013-4491</cvename>
+	  <cvename>CVE-2013-6415</cvename>
+	  <cvename>CVE-2013-6414</cvename>
+	  <cvename>CVE-2013-6416</cvename>
+      <url>http://weblog.rubyonrails.org/2013/12/3/Rails_3_2_16_and_4_0_2_have_been_released/</url>
+    </references>
+    <dates>
+      <discovery>2013-12-03</discovery>
+      <entry>2013-12-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d9649816-5e0d-11e3-8d23-3c970e169bc2">
+    <topic>drupal -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>drupal6</name>
+	<range><lt>6.29</lt></range>
+      </package>
+      <package>
+	<name>drupal7</name>
+	<range><lt>7.24</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Drupal Security Team reports:</p>
+	<blockquote cite="https://drupal.org/SA-CORE-2013-003">
+	  <p>Multiple vulnerabilities were fixed in the supported Drupal
+	    core versions 6 and 7.</p>
+	  <ul>
+	    <li>Multiple vulnerabilities due to optimistic cross-site
+	      request forgery protection (Form API validation - Drupal 6
+	      and 7)</li>
+	    <li>Multiple vulnerabilities due to weakness in pseudorandom
+	      number generation using mt_rand() (Form API, OpenID and
+	      random password generation - Drupal 6 and 7)</li>
+	    <li>Code execution prevention (Files directory .htaccess for
+	      Apache - Drupal 6 and 7)</li>
+	    <li>Access bypass (Security token validation - Drupal 6 and 7)</li>
+	    <li>Cross-site scripting (Image module - Drupal 7)</li>
+	    <li>Cross-site scripting (Color module - Drupal 7)</li>
+	    <li>Open redirect (Overlay module - Drupal 7)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://drupal.org/SA-CORE-2013-003</url>
+    </references>
+    <dates>
+      <discovery>2013-11-20</discovery>
+      <entry>2013-12-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="79356040-5da4-11e3-829e-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>31.0.1650.63</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>15 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[307159] Medium CVE-2013-6634: Session fixation in sync related
+	      to 302 redirects. Credit to Andrey Labunets.</li>
+	    <li>[314469] High CVE-2013-6635: Use-after-free in editing. Credit
+	      to cloudfuzzer.</li>
+	    <li>[322959] Medium CVE-2013-6636: Address bar spoofing related to
+	      modal dialogs. Credit to Bas Venis.</li>
+	    <li>[325501] CVE-2013-6637: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	    <li>[319722] Medium CVE-2013-6638: Buffer overflow in v8. This
+	      issue was fixed in v8 version 3.22.24.7. Credit to Jakob Kummerow
+	      of the Chromium project.</li>
+	    <li>[319835] High CVE-2013-6639: Out of bounds write in v8. This
+	      issue was fixed in v8 version 3.22.24.7. Credit to Jakob Kummerow
+	      of the Chromium project.</li>
+	    <li>[319860] Medium CVE-2013-6640: Out of bounds read in v8. This
+	      issue was fixed in v8 version 3.22.24.7. Credit to Jakob Kummerow
+	      of the Chromium project.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-6634</cvename>
+      <cvename>CVE-2013-6635</cvename>
+      <cvename>CVE-2013-6636</cvename>
+      <cvename>CVE-2013-6637</cvename>
+      <cvename>CVE-2013-6638</cvename>
+      <cvename>CVE-2013-6639</cvename>
+      <cvename>CVE-2013-6640</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2013-12-04</discovery>
+      <entry>2013-12-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4158c57e-5d39-11e3-bc1e-6cf0490a8c18">
+    <topic>Joomla! -- Core XSS Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>joomla2</name>
+	<name>joomla3</name>
+	<range><ge>2.5.*</ge><le>2.5.14</le></range>
+	<range><ge>3.0.*</ge><le>3.1.5</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security/570-core-xss-20131101.html">
+	<h2>[20131101] Core XSS Vulnerability</h2>
+	  <p>Inadequate filtering leads to XSS vulnerability in com_contact.</p>
+	</blockquote>
+	<blockquote cite="http://developer.joomla.org/security/571-core-xss-20131102.html">
+	  <h2>[20131102] Core XSS Vulnerability</h2>
+	  <p>Inadequate filtering leads to XSS vulnerability in com_contact, com_weblinks, com_newsfeeds.</p>
+	</blockquote>
+	<blockquote cite="http://developer.joomla.org/security/572-core-xss-20131103.html">
+	  <h2>[20131103] Core XSS Vulnerability</h2>
+	  <p>Inadequate filtering leads to XSS vulnerability in com_contact.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://developer.joomla.org/security/570-core-xss-20131101.html</url>
+      <url>http://developer.joomla.org/security/571-core-xss-20131102.html</url>
+      <url>http://developer.joomla.org/security/572-core-xss-20131103.html</url>
+    </references>
+    <dates>
+      <discovery>2013-11-01</discovery>
+      <entry>2013-12-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d2073237-5b52-11e3-80f7-c86000cbc6ec">
     <topic>OpenTTD -- Denial of service using forcefully crashed aircrafts</topic>
     <affects>

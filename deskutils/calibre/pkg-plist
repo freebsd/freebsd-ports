@@ -420,6 +420,7 @@ lib/calibre/calibre/ebooks/oeb/polish/errors.py
 lib/calibre/calibre/ebooks/oeb/polish/jacket.py
 lib/calibre/calibre/ebooks/oeb/polish/main.py
 lib/calibre/calibre/ebooks/oeb/polish/parsing.py
+lib/calibre/calibre/ebooks/oeb/polish/pretty.py
 lib/calibre/calibre/ebooks/oeb/polish/replace.py
 lib/calibre/calibre/ebooks/oeb/polish/split.py
 lib/calibre/calibre/ebooks/oeb/polish/stats.py
@@ -718,6 +719,7 @@ lib/calibre/calibre/gui2/dialogs/__init__.py
 lib/calibre/calibre/gui2/dialogs/add_empty_book.py
 lib/calibre/calibre/gui2/dialogs/add_from_isbn.py
 lib/calibre/calibre/gui2/dialogs/add_from_isbn_ui.py
+lib/calibre/calibre/gui2/dialogs/authors_edit.py
 lib/calibre/calibre/gui2/dialogs/book_info.py
 lib/calibre/calibre/gui2/dialogs/catalog.py
 lib/calibre/calibre/gui2/dialogs/catalog_ui.py
@@ -1538,6 +1540,7 @@ share/applications/calibre-lrfviewer.desktop
 %%DATADIR%%/images/highlight_only_off.png
 %%DATADIR%%/images/highlight_only_on.png
 %%DATADIR%%/images/hotmail.png
+%%DATADIR%%/images/html-fix.png
 %%DATADIR%%/images/icon_choose.png
 %%DATADIR%%/images/identifiers.png
 %%DATADIR%%/images/insert-link.png
@@ -1550,6 +1553,7 @@ share/applications/calibre-lrfviewer.desktop
 %%DATADIR%%/images/lt.png
 %%DATADIR%%/images/mail.png
 %%DATADIR%%/images/marked.png
+%%DATADIR%%/images/merge.png
 %%DATADIR%%/images/merge_books.png
 %%DATADIR%%/images/metadata.png
 %%DATADIR%%/images/mimetypes/azw2.png

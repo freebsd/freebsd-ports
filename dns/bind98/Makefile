@@ -2,7 +2,7 @@
 
 PORTNAME=	bind98
 PORTVERSION=	9.8.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 
 CONFLICTS=	bind9*-9.[45679].* bind9*-sdb-9.[45679].* bind-tools-9.*
 
-OPTIONS_DEFAULT=	IPV6 SSL XML THREADS
+OPTIONS_DEFAULT=	IPV6 SSL XML THREADS GSSAPI
 OPTIONS_DEFINE=		SSL LINKS XML IDN REPLACE_BASE LARGE_FILE \
 			FIXED_RRSET RPZ_NSIP RPZ_NSDNAME RPZRRL_PATCH \
 			SIGCHASE IPV6 THREADS GSSAPI FILTER_AAAA
@@ -157,19 +157,20 @@ CONFIGURE_ARGS+=	--disable-threads
 
 .if ${PORT_OPTIONS:MGSSAPI}
 CONFIGURE_ARGS+=	--with-gssapi
+LDFLAGS+=		-L${LIBDIR} -lgssapi_krb5
 .else
 CONFIGURE_ARGS+=	--without-gssapi
 .endif
 
 .if ${PORT_OPTIONS:MREPLACE_BASE}
-.if ${OSVERSION} >= 1000500
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
 IGNORE=		REPLACE_BASE option is not supported on this release
 .endif
 PKGNAMESUFFIX=	-base
 PREFIX=		/usr
 BIND_DESTETC=	/etc/namedb
 .else
-.if ${OSVERSION} >= 1000500
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
 BIND_DESTETC=	${PREFIX}/etc/namedb
 .else
 BIND_DESTETC=	${PREFIX}/etc
@@ -180,7 +181,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--sysconfdir=${BIND_DESTETC}
 PLIST_SUB+=	BIND_DESTETC="${BIND_DESTETC}"
 
-.if ${OSVERSION} >= 1000500
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
 PLIST_SUB+=	NOBASE=""
 .else
 PLIST_SUB+=	NOBASE="@comment "
@@ -257,7 +258,7 @@ post-install:
 	${CP} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/FAQ \
 		${WRKSRC}/HISTORY ${WRKSRC}/README ${DOCSDIR}/
 .endif
-.if ${OSVERSION} >= 1000500
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
 .for FILE in named named.conf
 	${SED} -e 's#%%PREFIX%%#${PREFIX}#g' \
 		-e 's#%%BIND_DESTETC%%#${BIND_DESTETC}#g' \
@@ -271,7 +272,10 @@ post-install:
 .for DIR in dynamic slave working
 	${CHOWN} bind:bind ${BIND_DESTETC}/${DIR}
 .endfor
-	${INSTALL_DATA} ${WRKDIR}/named.conf ${BIND_DESTETC}
+	${INSTALL_DATA} ${WRKDIR}/named.conf ${BIND_DESTETC}/named.conf.sample
+.if !exists(${BIND_DESTETC}/named.conf)
+	${INSTALL_DATA} ${WRKDIR}/named.conf ${BIND_DESTETC}/named.conf
+.endif
 	${INSTALL_DATA} ${FILESDIR}/named.root ${BIND_DESTETC}
 	${INSTALL_DATA} ${FILESDIR}/empty.db ${BIND_DESTETC}/master
 	${INSTALL_DATA} ${FILESDIR}/localhost-forward.db ${BIND_DESTETC}/master

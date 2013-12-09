@@ -1,0 +1,58 @@
+# HG changeset patch
+# User tschatzl
+# Date 1379412251 -7200
+#      Tue Sep 17 12:04:11 2013 +0200
+# Node ID d0b5dc55e72cde11331399cbb960458b8f45ea4a
+# Parent  41d2a089e66401c8815af0c6b6efd2af9aeabe99
+8024914: Swapped usage of idx_t and bm_word_t types in bitMap.inline.hpp
+Summary: Incorrect usage of idx_t where bm_word_t is appropriate.
+Reviewed-by: tschatzl, brutisso
+Contributed-by: Dan Horak <dhorak@redhat.com>
+
+diff -r 41d2a089e664 -r d0b5dc55e72c src/share/vm/utilities/bitMap.inline.hpp
+--- hotspot/src/share/vm/utilities/bitMap.inline.hpp	Fri Oct 04 12:22:34 2013 -0400
++++ hotspot/src/share/vm/utilities/bitMap.inline.hpp	Tue Sep 17 12:04:11 2013 +0200
+@@ -52,16 +52,16 @@
+ 
+ inline bool BitMap::par_set_bit(idx_t bit) {
+   verify_index(bit);
+-  volatile idx_t* const addr = word_addr(bit);
+-  const idx_t mask = bit_mask(bit);
+-  idx_t old_val = *addr;
++  volatile bm_word_t* const addr = word_addr(bit);
++  const bm_word_t mask = bit_mask(bit);
++  bm_word_t old_val = *addr;
+ 
+   do {
+-    const idx_t new_val = old_val | mask;
++    const bm_word_t new_val = old_val | mask;
+     if (new_val == old_val) {
+       return false;     // Someone else beat us to it.
+     }
+-    const idx_t cur_val = (idx_t) Atomic::cmpxchg_ptr((void*) new_val,
++    const bm_word_t cur_val = (bm_word_t) Atomic::cmpxchg_ptr((void*) new_val,
+                                                       (volatile void*) addr,
+                                                       (void*) old_val);
+     if (cur_val == old_val) {
+@@ -73,16 +73,16 @@
+ 
+ inline bool BitMap::par_clear_bit(idx_t bit) {
+   verify_index(bit);
+-  volatile idx_t* const addr = word_addr(bit);
+-  const idx_t mask = ~bit_mask(bit);
+-  idx_t old_val = *addr;
++  volatile bm_word_t* const addr = word_addr(bit);
++  const bm_word_t mask = ~bit_mask(bit);
++  bm_word_t old_val = *addr;
+ 
+   do {
+-    const idx_t new_val = old_val & mask;
++    const bm_word_t new_val = old_val & mask;
+     if (new_val == old_val) {
+       return false;     // Someone else beat us to it.
+     }
+-    const idx_t cur_val = (idx_t) Atomic::cmpxchg_ptr((void*) new_val,
++    const bm_word_t cur_val = (bm_word_t) Atomic::cmpxchg_ptr((void*) new_val,
+                                                       (volatile void*) addr,
+                                                       (void*) old_val);
+     if (cur_val == old_val) {

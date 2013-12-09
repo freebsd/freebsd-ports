@@ -17,7 +17,6 @@ LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
 
 MAJORVERSION=	0.9.5
 USE_QT4=	corelib gui linguist_build moc_build network qt3support rcc_build sql uic_build xml
-NO_STAGE=	yes
 USE_SCONS=	yes
 USES=		pkgconfig
 

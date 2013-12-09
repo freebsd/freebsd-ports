@@ -14,16 +14,16 @@ COMMENT=	Visual database design tool
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	zip:${PORTSDIR}/archivers/libzip \
-		boost_system:${PORTSDIR}/devel/boost-libs \
-		sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
-		pcre:${PORTSDIR}/devel/pcre \
-		cairo:${PORTSDIR}/graphics/cairo \
-		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		gnome-keyring:${PORTSDIR}/security/libgnome-keyring \
-		ctemplate:${PORTSDIR}/textproc/google-ctemplate \
-		tinyxml:${PORTSDIR}/textproc/tinyxml \
-		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24
+LIB_DEPENDS=	libzip.so:${PORTSDIR}/archivers/libzip \
+		libboost_system.so:${PORTSDIR}/devel/boost-libs \
+		libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libcairo.so:${PORTSDIR}/graphics/cairo \
+		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
+		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
+		libctemplate.so:${PORTSDIR}/textproc/google-ctemplate \
+		libtinyxml.so:${PORTSDIR}/textproc/tinyxml \
+		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}pexpect>0:${PORTSDIR}/misc/py-pexpect \
@@ -32,7 +32,19 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
 OPTIONS_DEFINE=	PYTHON_UTILS UNIXODBC
 PYTHON_UTILS_DESC=	Python scripts useful for administering MySQL
 
-USES=		gettext gmake pathfix pkgconfig shared-mime-info
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
+		shebangfix shared-mime-info
+SHEBANG_FILES=	ext/ctemplate/ctemplate-src/src/htmlparser/*.py \
+		ext/mysql-utilities/*.py \
+		ext/mysql-utilities/scripts/*.py \
+		ext/scintilla/qt/ScintillaEditPy/*.py \
+		library/sshtunnel/*.py \
+		plugins/wb.admin/backend/config/gen-opt/*.py \
+		plugins/wb.admin/gen-opt/*.py \
+		plugins/wb.admin/gen-opt/new/*.py \
+		plugins/wb.admin/gen-opt/recat/*.py \
+		plugins/wb.query.analysis/*.py \
+		po/*.py
 USE_GCC=	any
 USE_GL=		gl
 USE_GNOME=	gnomehier gtk20 libxml2
@@ -43,8 +55,7 @@ USE_MYSQL=	client
 USE_SQLITE=	3
 USE_AUTOTOOLS=	libtoolize aclocal automake autoheader autoconf
 LIBTOOLIZE_ARGS=--copy --force
-ACLOCAL_ARGS=	# none
-AUTOMAKE_ARGS=	--copy --force-missing --foreign
+AUTOMAKE_ARGS=	--add-missing --copy --force-missing --foreign
 CONFIGURE_ENV=	LUA_CFLAGS="$$(pkg-config --cflags lua-${LUA_VER})" \
 		LUA_LIBS="$$(pkg-config --libs lua-${LUA_VER})" \
 		TINYXML_CFLAGS="-I${LOCALBASE}/include" \
@@ -61,7 +72,6 @@ PLIST_SUB=	VERSION="${PORTVERSION}" PYTHON_VER="${PYTHON_VER}"
 
 CONFLICTS=	mysql-workbench-oss*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON_UTILS}
@@ -72,13 +82,19 @@ PLIST_SUB+=	PYTHON_UTILS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MUNIXODBC}
-LIB_DEPENDS+=	odbccr:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	libodbccr.so:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=--with-unixodbc
 .else
-LIB_DEPENDS+=	iodbc:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS+=	libiodbc.so:${PORTSDIR}/databases/libiodbc
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e \
+		's|/bin/bash|/bin/sh|' \
+		${WRKSRC}/build/build_freetds.sh
+	@${REINPLACE_CMD} -e \
+		's| $$(pkgdatadir)| $$(DESTDIR)$$(pkgdatadir)|' \
+		${WRKSRC}/ext/Makefile.am
 	@${REINPLACE_CMD} -e \
 		'/spawn/s|/bin/bash|/bin/sh|' \
 		${WRKSRC}/ext/python/pexpect/pexpect.py
@@ -97,17 +113,17 @@ post-patch:
 		's|/usr/bin/sudo|${LOCALBASE}/bin/sudo| ; \
 		 s|/bin/bash|/bin/sh|' \
 		${WRKSRC}/plugins/wb.admin/frontend/wb_admin_grt.py
-	@${FIND} ${WRKSRC} -name "*.py" | ${XARGS} ${REINPLACE_CMD} -e \
-		'/^#!/s|/usr/bin/python.*|${SETENV} python|'
 
 post-install:
 .for i in lib/mysql-workbench/modules share/mysql-workbench/libraries
-	@${PYTHON_CMD} -m compileall ${PREFIX}/${i}
+	@(cd ${STAGEDIR}/${PREFIX} && ${PYTHON_CMD} -m compileall \
+		-d ${PREFIX} -f ${i})
 .endfor
 .if ${PORT_OPTIONS:MPYTHON_UTILS}
-	(cd ${WRKSRC}/ext && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
-		${MAKEFILE} ${MAKE_ARGS} DESTDIR="${DESTDIR}/"  \
-		install-utils install-connector)
+	(cd ${WRKSRC}/ext && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
+		${MAKEFILE} ${MAKE_ARGS} install-utils install-connector)
+	@(cd ${STAGEDIR}/${PREFIX} && ${PYTHON_CMD} -m compileall \
+		-d ${PREFIX} -f share/mysql-workbench/python)
 .endif
 
 .include <bsd.port.mk>

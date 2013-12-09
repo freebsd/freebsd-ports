@@ -16,7 +16,7 @@ RESTRICTED_FILES=	boodler-snd-021902.tar.gz
 
 NO_STAGE=	yes
 USES=		gmake
-USE_PYTHON=	yes
+USE_PYTHON=	2
 DRIVER?=	oss
 WRKSRC=		${WRKDIR}/${PORTNAME}
 BHOME=		${PREFIX}/share/boodler
@@ -44,6 +44,7 @@ PIC=	--PIC
 .endif
 
 post-patch:
+	${REINPLACE_CMD} -e "s|python|${PYTHON_CMD}|" ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e "s|^booroot=.*|booroot=${PREFIX}/share/boodler|" ${WRKSRC}/wrapper/boodler
 	@${RMDIR} ${WRKDIR}/boodler-snd/string
 

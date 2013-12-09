@@ -4,6 +4,11 @@ bin/bsescm
 bin/bsescm-%%VERSION%%
 bin/bsewavetool
 bin/sfidl
+man/man1/beast.1.gz
+man/man1/bsescm.1.gz
+man/man1/bsewavetool.1.gz
+man/man1/sfidl.1.gz
+man/man5/bse.5.gz
 include/birnet/birnet.hh
 include/birnet/birnetcdefs.h
 include/birnet/birnetconfig.h

@@ -23,11 +23,10 @@ OPTIONS_DEFAULT=CACHE
 CACHE_DESC=	Enable caching of remote media to local storage
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		compiler:c++11-lang pkgconfig
 USE_GNOME=	glib20
 USE_GECKO=	libxul
 USE_WEBPLUGINS=	native
-USE_GCC=	yes
 
 WEBPLUGINS_FILES=	${PORTNAME}.so
 .for p in dvx rm qt wmp

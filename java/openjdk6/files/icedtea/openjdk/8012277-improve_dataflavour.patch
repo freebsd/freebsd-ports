@@ -1,0 +1,83 @@
+# HG changeset patch
+# User malenkov
+# Date 1370018612 -14400
+#      Fri May 31 20:43:32 2013 +0400
+# Node ID 337232ddaec36c6d9843ff35906e6160446844eb
+# Parent  8521d2f3d9640e6516d8b71aa2f553bc4028362f
+8012277: Improve AWT DataFlavor
+Reviewed-by: art, skoivu
+
+diff -r 8521d2f3d964 -r 337232ddaec3 src/share/classes/java/awt/datatransfer/DataFlavor.java
+--- jdk/src/share/classes/java/awt/datatransfer/DataFlavor.java	Tue Oct 15 16:27:14 2013 +0100
++++ jdk/src/share/classes/java/awt/datatransfer/DataFlavor.java	Fri May 31 20:43:32 2013 +0400
+@@ -25,12 +25,14 @@
+ 
+ package java.awt.datatransfer;
+ 
+-import java.awt.Toolkit;
+ import java.io.*;
+ import java.nio.*;
+ import java.util.*;
+ 
+ import sun.awt.datatransfer.DataTransferer;
++import sun.reflect.misc.ReflectUtil;
++
++import static sun.security.util.SecurityConstants.GET_CLASSLOADER_PERMISSION;
+ 
+ /**
+  * A {@code DataFlavor} provides meta information about data. {@code DataFlavor}
+@@ -117,26 +119,36 @@
+                                                    ClassLoader fallback)
+         throws ClassNotFoundException
+     {
+-        ClassLoader systemClassLoader = (ClassLoader)
+-            java.security.AccessController.doPrivileged(
+-                new java.security.PrivilegedAction() {
+-                    public Object run() {
+-                        ClassLoader cl = Thread.currentThread().
+-                            getContextClassLoader();
+-                        return (cl != null)
+-                            ? cl
+-                            : ClassLoader.getSystemClassLoader();
++        ReflectUtil.checkPackageAccess(className);
++        try {
++            SecurityManager sm = System.getSecurityManager();
++            if (sm != null) {
++                sm.checkPermission(GET_CLASSLOADER_PERMISSION);
++            }
++            ClassLoader loader = ClassLoader.getSystemClassLoader();
++            try {
++                // bootstrap class loader and system class loader if present
++                return Class.forName(className, true, loader);
++            }
++            catch (ClassNotFoundException exception) {
++                // thread context class loader if and only if present
++                loader = Thread.currentThread().getContextClassLoader();
++                if (loader != null) {
++                    try {
++                        return Class.forName(className, true, loader);
+                     }
+-                    });
+-
+-        try {
+-            return Class.forName(className, true, systemClassLoader);
+-        } catch (ClassNotFoundException e2) {
+-            if (fallback != null) {
+-                return Class.forName(className, true, fallback);
+-            } else {
+-                throw new ClassNotFoundException(className);
++                    catch (ClassNotFoundException e) {
++                        // fallback to user's class loader
++                    }
++                }
+             }
++        } catch (SecurityException exception) {
++            // ignore secured class loaders
++        }
++        if (fallback != null) {
++            return Class.forName(className, true, fallback);
++        } else {
++            throw new ClassNotFoundException(className);
+         }
+     }
+ 

@@ -1,3 +1,7 @@
+man/man1/glib-genmarshal.1.gz
+man/man1/glib-gettextize.1.gz
+man/man1/glib-mkenums.1.gz
+man/man1/gobject-query.1.gz
 share/doc/gio/ExampleAnimal.html
 share/doc/gio/ExampleCat.html
 share/doc/gio/ExampleObject.html
@@ -82,6 +86,7 @@ share/doc/gio/GSimpleAction.html
 share/doc/gio/GSimpleActionGroup.html
 share/doc/gio/GSimpleAsyncResult.html
 share/doc/gio/GSimplePermission.html
+share/doc/gio/GSimpleProxyResolver.html
 share/doc/gio/GSocket.html
 share/doc/gio/GSocketAddress.html
 share/doc/gio/GSocketClient.html
@@ -91,6 +96,7 @@ share/doc/gio/GSocketControlMessage.html
 share/doc/gio/GSocketListener.html
 share/doc/gio/GSocketService.html
 share/doc/gio/GSrvTarget.html
+share/doc/gio/GTask.html
 share/doc/gio/GTcpConnection.html
 share/doc/gio/GTcpWrapperConnection.html
 share/doc/gio/GTestDBus.html
@@ -127,6 +133,7 @@ share/doc/gio/api-index-2-28.html
 share/doc/gio/api-index-2-30.html
 share/doc/gio/api-index-2-32.html
 share/doc/gio/api-index-2-34.html
+share/doc/gio/api-index-2-36.html
 share/doc/gio/api-index-deprecated.html
 share/doc/gio/api-index-full.html
 share/doc/gio/application.html
@@ -185,6 +192,7 @@ share/doc/gio/gio-Owning-Bus-Names.html
 share/doc/gio/gio-TLS-Overview.html
 share/doc/gio/gio-Unix-Mounts.html
 share/doc/gio/gio-Watching-Bus-Names.html
+share/doc/gio/gio-gnetworking.h.html
 share/doc/gio/gio-gpollableutils.html
 share/doc/gio/gio-hierarchy.html
 share/doc/gio/gio-querymodules.html
@@ -236,6 +244,7 @@ share/doc/glib/api-index-2-28.html
 share/doc/glib/api-index-2-30.html
 share/doc/glib/api-index-2-32.html
 share/doc/glib/api-index-2-34.html
+share/doc/glib/api-index-2-36.html
 share/doc/glib/api-index-2-4.html
 share/doc/glib/api-index-2-6.html
 share/doc/glib/api-index-2-8.html
@@ -357,6 +366,7 @@ share/doc/gobject/api-index-2-28.html
 share/doc/gobject/api-index-2-30.html
 share/doc/gobject/api-index-2-32.html
 share/doc/gobject/api-index-2-34.html
+share/doc/gobject/api-index-2-36.html
 share/doc/gobject/api-index-2-4.html
 share/doc/gobject/api-index-2-6.html
 share/doc/gobject/api-index-2-8.html

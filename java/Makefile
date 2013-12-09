@@ -79,6 +79,7 @@
     SUBDIR += java-checkstyle
     SUBDIR += java-cup
     SUBDIR += java-getopt
+    SUBDIR += java-subversion
     SUBDIR += java-zoneinfo
     SUBDIR += java3d
     SUBDIR += javahelp
@@ -138,7 +139,6 @@
     SUBDIR += springframework
     SUBDIR += springframework31
     SUBDIR += sqlitejdbc
-    SUBDIR += subversion-java
     SUBDIR += trove4j
     SUBDIR += veditor
     SUBDIR += visualvm

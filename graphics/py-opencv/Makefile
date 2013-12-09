@@ -1,8 +1,15 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
 # $FreeBSD$
 
-_BUILDING_OPENCV_PYTHON=	yes
-MASTERDIR=	${.CURDIR}/../opencv
+PORTREVISION=	0
+CATEGORIES=	graphics python
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-NO_STAGE=	yes
+COMMENT=	OpenCV Python library
+
+OCV_SLAVE=	python
+OCV_PYTHON=	yes
+MASTERDIR=	${.CURDIR:H}/opencv
+PLIST=		${.CURDIR}/pkg-plist
+
 .include "${MASTERDIR}/Makefile"

@@ -1,5 +1,5 @@
 bin/irssistats
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
+man/man1/irssistats.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/biseau.css
 %%DATADIR%%/biseau_corner1.gif
@@ -40,9 +40,9 @@ bin/irssistats
 %%DATADIR%%/vm.png
 %%DATADIR%%/zeduel.css
 %%DATADIR%%/zerezo.css
-%%EXAMPLESDIR%%/sample.configfile
-%%EXAMPLESDIR%%/sample.nickfile
-%%EXAMPLESDIR%%/sample.photofile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.configfile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.nickfile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.photofile
 @dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

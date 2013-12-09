@@ -1,14 +1,5 @@
 --- src/configure.default.orig	Wed May  5 12:08:35 2004
 +++ src/configure.default	Wed May  5 15:09:40 2004
-@@ -56,7 +56,7 @@
- 
- domainlist local_domains = @
- domainlist relay_to_domains =
--hostlist   relay_from_hosts = 127.0.0.1
-+hostlist   relay_from_hosts = localhost
- 
- # Most straightforward access control requirements can be obtained by
- # appropriate settings of the above options. In more complicated situations, you
 @@ -153,6 +153,8 @@
  # as if it were a normal user. This isn't usually a problem, as most sites have
  # an alias for root that redirects such mail to a human administrator.

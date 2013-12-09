@@ -9,6 +9,7 @@ MASTER_SITES=	LOCAL/vanilla
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Google\'s open source JavaScript engine
 
+BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
 USES=		gmake

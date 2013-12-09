@@ -38,6 +38,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/iroffer.cron ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/sample.config ${STAGEDIR}${EXAMPLESDIR}/
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

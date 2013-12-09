@@ -3517,6 +3517,7 @@
     SUBDIR += py-celery
     SUBDIR += py-cffi
     SUBDIR += py-cfgparse
+    SUBDIR += py-checkmanifest
     SUBDIR += py-cheetah
     SUBDIR += py-ciphon
     SUBDIR += py-circuits
@@ -3841,6 +3842,7 @@
     SUBDIR += py-yapps2
     SUBDIR += py-ydbf
     SUBDIR += py-yum-metadata-parser
+    SUBDIR += py-yunomi
     SUBDIR += py-z3c.autoinclude
     SUBDIR += py-z3c.batching
     SUBDIR += py-z3c.caching
@@ -4268,7 +4270,6 @@
     SUBDIR += rubygem-ruby-ole
     SUBDIR += rubygem-ruby-prof
     SUBDIR += rubygem-ruby-sdl-ffi
-    SUBDIR += rubygem-ruby-statsd
     SUBDIR += rubygem-ruby2ruby
     SUBDIR += rubygem-ruby_parser
     SUBDIR += rubygem-rubyforge
@@ -4293,6 +4294,7 @@
     SUBDIR += rubygem-sprockets
     SUBDIR += rubygem-spruz
     SUBDIR += rubygem-state_machine
+    SUBDIR += rubygem-statsd
     SUBDIR += rubygem-stella
     SUBDIR += rubygem-stemmer
     SUBDIR += rubygem-stomp
@@ -4540,7 +4542,6 @@
     SUBDIR += z80-asm
     SUBDIR += z80asm
     SUBDIR += z80ex
-    SUBDIR += zmq
     SUBDIR += zookeeper
     SUBDIR += zpu-binutils
     SUBDIR += zpu-gcc

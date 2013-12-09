@@ -128,7 +128,6 @@
     SUBDIR += kde4-windeco-dekorator
     SUBDIR += kde4-windeco-nitrogen
     SUBDIR += kdeartwork4
-    SUBDIR += lila-xfwm4
     SUBDIR += linux-f10-hicolor-icon-theme
     SUBDIR += linux-f10-qtcurve-gtk2
     SUBDIR += linux-hicolor-icon-theme

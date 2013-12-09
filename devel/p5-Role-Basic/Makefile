@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Just roles. Nothing else
 
+NO_ARCH=	yes
+PORTSCOUT=	limit:^0\.[1-9]
+
 USES=		perl5
 USE_PERL5=	configure
 

@@ -5,10 +5,17 @@ bin/emacs-%%EMACS_VER%%
 bin/emacsclient
 bin/etags
 bin/grep-changelog
+man/man1/emacs.1.gz
+man/man1/ctags.1.gz
+man/man1/etags.1.gz
+man/man1/grep-changelog.1.gz
+man/man1/emacsclient.1.gz
+man/man1/ebrowse.1.gz
 share/applications/emacs.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/site-lisp/site-start.el
 %%DATADIR%%/%%EMACS_VER%%/site-lisp/subdirs.el
 %%DATADIR%%/site-lisp/subdirs.el
+%%INFODIR%%/dir
 share/icons/hicolor/128x128/apps/emacs.png
 share/icons/hicolor/16x16/apps/emacs.png
 share/icons/hicolor/24x24/apps/emacs.png
@@ -16,6 +23,7 @@ share/icons/hicolor/32x32/apps/emacs.png
 share/icons/hicolor/48x48/apps/emacs.png
 share/icons/hicolor/scalable/apps/emacs.svg
 share/icons/hicolor/scalable/mimetypes/emacs-document.svg
+@dirrm %%INFODIR%%
 @dirrmtry %%DATADIR%%/%%EMACS_VER%%/site-lisp
 @dirrmtry share/icons/hicolor/scalable/mimetypes
 @dirrmtry share/icons/hicolor/scalable/apps

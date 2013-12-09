@@ -346,7 +346,7 @@ lib/libarmadillo.so.3
 lib/libarmadillo.so.3.800.1
 share/Armadillo/CMake/ArmadilloConfig.cmake
 share/Armadillo/CMake/ArmadilloConfigVersion.cmake
-share/Armadillo/CMake/ArmadilloLibraryDepends-release.cmake
+share/Armadillo/CMake/ArmadilloLibraryDepends-%%CMAKE_BUILD_TYPE%%.cmake
 share/Armadillo/CMake/ArmadilloLibraryDepends.cmake
 @dirrm share/Armadillo/CMake
 @dirrm share/Armadillo

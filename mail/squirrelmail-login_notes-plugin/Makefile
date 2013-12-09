@@ -2,20 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	login_notes
-PORTVERSION=	1.2
+PORTVERSION=1.2
 DISTNAME=	${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}-1.4.0
-DIST_SUBDIR=	squirrelmail
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Place notes on the login screen
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS+=	${SQUIRRELDIR}/plugins/compatibility:${PORTSDIR}/mail/squirrelmail-compatibility-plugin
-
-USES=		perl5
-USE_PERL5=	run
+USE_SM_COMPAT=	yes
+USE_GENERIC_PKGMESSAGE=	yes
 
 NO_STAGE=	yes
+
+.include <bsd.port.pre.mk>
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

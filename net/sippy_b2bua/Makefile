@@ -12,7 +12,7 @@ MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	SIP Back-to-back user agent (B2BUA) server with Radius support
 
 USE_PYTHON=		yes
-USE_TWISTED=	yes
+USES=		twisted
 USE_PYDISTUTILS=	yes
 NO_STAGE=	yes
 PYDISTUTILS_PKGNAME=	sippy

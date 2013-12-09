@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Convert simply formatted text into markup (e.g., HTML)
 
-USE_PYTHON=	yes
+USE_PYTHON=	2
 NO_BUILD=	yes
 
 PORTDOCS=	ChangeLog README userguide.pdf
@@ -18,6 +18,8 @@ SAMPLE_DIRS=	css img module
 
 NO_STAGE=	yes
 post-patch:
+	@${REINPLACE_CMD} -e 's|/env python|/env python2|' \
+		${WRKSRC}/txt2tags
 	@${MV} ${WRKSRC}/doc/userguide.pdf ${WRKSRC}/
 
 do-install:

@@ -1,16 +1,16 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-toolkits/vte/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/x11-toolkits/vte/Makefile 18940 2013-12-08 01:12:24Z kwm $
 
 PORTNAME=	vte
 PORTVERSION=	0.26.2
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER?=	gnome@FreeBSD.org
-COMMENT?=	Terminal widget with improved accessibility and I18N support
+COMMENT?=	Gtk 2 based terminal widget with accessibility and I18N support
 
 USE_BZIP2=	yes
 NO_STAGE=	yes
@@ -21,13 +21,15 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/gnome-pty-helper:${PORTSDIR}/x11-toolkits/gno
 
 USES=		bison gettext gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
-USE_GNOME?=	gnomeprefix gtk20 ltverhack referencehack
+GNU_CONFIGURE=	yes
+USE_GNOME?=	gnomeprefix gtk20 introspection:build ltverhack referencehack
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS?=--disable-python \
 		--disable-Bsymbolic \
 		--disable-freetypetest \
+		--disable-static \
+		--enable-introspection \
 		--disable-gnome-pty-helper
 
 .if !defined(MASTERDIR)
@@ -45,6 +47,9 @@ EXTRA_PATCHES+=		${FILESDIR}/extra-patch-gnome-pty-helper_gnome-utmp.c
 CONFIGURE_ARGS+=	--with-glX
 USE_GL=			yes
 .endif
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libvte.so.9
 
 .include <bsd.port.mk>
 

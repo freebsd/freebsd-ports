@@ -3,7 +3,7 @@
 
 PORTNAME=	bonnie++
 PORTVERSION=	1.97
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.coker.com.au/bonnie++/experimental/
 EXTRACT_SUFX=	.tgz
@@ -14,7 +14,7 @@ COMMENT=	Performance Test of Filesystem I/O
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USE_GCC=	yes
+USE_GCC=	any
 
 USES=	shebangfix
 SHEBANG_FILES=	bon_csv2txt.in

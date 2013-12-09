@@ -54,6 +54,7 @@ include/dpkg/pkg-show.h
 include/dpkg/pkg-spec.h
 include/dpkg/pkg.h
 include/dpkg/progname.h
+include/dpkg/program.h
 include/dpkg/progress.h
 include/dpkg/report.h
 include/dpkg/string.h
@@ -68,6 +69,7 @@ include/dpkg/version.h
 %%SITE_PERL%%/Dpkg/BuildEnv.pm
 %%SITE_PERL%%/Dpkg/BuildFlags.pm
 %%SITE_PERL%%/Dpkg/BuildOptions.pm
+%%SITE_PERL%%/Dpkg/BuildProfiles.pm
 %%SITE_PERL%%/Dpkg/Changelog.pm
 %%SITE_PERL%%/Dpkg/Changelog/Debian.pm
 %%SITE_PERL%%/Dpkg/Changelog/Entry.pm
@@ -151,6 +153,8 @@ libexec/dpkg/methods/multicd/update
 libexec/dpkg/parsechangelog/debian
 libexec/libdpkg.a
 libexec/pkgconfig/libdpkg.pc
+%%NLS%%man/de/man1/dpkg-architecture.1.gz
+%%NLS%%man/de/man1/dpkg-buildflags.1.gz
 %%NLS%%man/de/man1/dpkg-buildpackage.1.gz
 %%NLS%%man/de/man1/dpkg-checkbuilddeps.1.gz
 %%NLS%%man/de/man1/dpkg-deb.1.gz
@@ -158,6 +162,7 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/de/man1/dpkg-genchanges.1.gz
 %%NLS%%man/de/man1/dpkg-gencontrol.1.gz
 %%NLS%%man/de/man1/dpkg-gensymbols.1.gz
+%%NLS%%man/de/man1/dpkg-maintscript-helper.1.gz
 %%NLS%%man/de/man1/dpkg-mergechangelogs.1.gz
 %%NLS%%man/de/man1/dpkg-name.1.gz
 %%NLS%%man/de/man1/dpkg-parsechangelog.1.gz
@@ -187,10 +192,10 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/de/man5/dpkg.cfg.5.gz
 %%NLS%%man/de/man5/dselect.cfg.5.gz
 %%NLS%%man/de/man8/dpkg-divert.8.gz
+%%NLS%%man/de/man8/dpkg-statoverride.8.gz
 %%NLS%%man/de/man8/start-stop-daemon.8.gz
 %%NLS%%man/de/man8/update-alternatives.8.gz
 %%NLS%%man/es/man1/dpkg-buildpackage.1.gz
-%%NLS%%man/es/man1/dpkg-checkbuilddeps.1.gz
 %%NLS%%man/es/man1/dpkg-deb.1.gz
 %%NLS%%man/es/man1/dpkg-distaddfile.1.gz
 %%NLS%%man/es/man1/dpkg-genchanges.1.gz
@@ -228,7 +233,6 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/es/man8/start-stop-daemon.8.gz
 %%NLS%%man/es/man8/update-alternatives.8.gz
 %%NLS%%man/fr/man1/dpkg-buildpackage.1.gz
-%%NLS%%man/fr/man1/dpkg-checkbuilddeps.1.gz
 %%NLS%%man/fr/man1/dpkg-deb.1.gz
 %%NLS%%man/fr/man1/dpkg-distaddfile.1.gz
 %%NLS%%man/fr/man1/dpkg-genchanges.1.gz
@@ -294,7 +298,6 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/it/man8/start-stop-daemon.8.gz
 %%NLS%%man/it/man8/update-alternatives.8.gz
 %%NLS%%man/ja/man1/dpkg-buildpackage.1.gz
-%%NLS%%man/ja/man1/dpkg-checkbuilddeps.1.gz
 %%NLS%%man/ja/man1/dpkg-deb.1.gz
 %%NLS%%man/ja/man1/dpkg-distaddfile.1.gz
 %%NLS%%man/ja/man1/dpkg-genchanges.1.gz
@@ -357,6 +360,7 @@ man/man1/dselect.1.gz
 man/man3/Dpkg::BuildEnv.3.gz
 man/man3/Dpkg::BuildFlags.3.gz
 man/man3/Dpkg::BuildOptions.3.gz
+man/man3/Dpkg::BuildProfiles.3.gz
 man/man3/Dpkg::Changelog.3.gz
 man/man3/Dpkg::Changelog::Debian.3.gz
 man/man3/Dpkg::Changelog::Entry.3.gz
@@ -376,6 +380,7 @@ man/man3/Dpkg::Control::HashCore.3.gz
 man/man3/Dpkg::Control::Info.3.gz
 man/man3/Dpkg::Control::Types.3.gz
 man/man3/Dpkg::Deps.3.gz
+man/man3/Dpkg::Exit.3.gz
 man/man3/Dpkg::IPC.3.gz
 man/man3/Dpkg::Index.3.gz
 man/man3/Dpkg::Interface::Storable.3.gz
@@ -407,7 +412,6 @@ man/man8/dpkg-statoverride.8.gz
 man/man8/start-stop-daemon.8.gz
 man/man8/update-alternatives.8.gz
 %%NLS%%man/pl/man1/dpkg-buildpackage.1.gz
-%%NLS%%man/pl/man1/dpkg-checkbuilddeps.1.gz
 %%NLS%%man/pl/man1/dpkg-deb.1.gz
 %%NLS%%man/pl/man1/dpkg-distaddfile.1.gz
 %%NLS%%man/pl/man1/dpkg-genchanges.1.gz
@@ -445,7 +449,6 @@ man/man8/update-alternatives.8.gz
 %%NLS%%man/pl/man8/start-stop-daemon.8.gz
 %%NLS%%man/pl/man8/update-alternatives.8.gz
 %%NLS%%man/sv/man1/dpkg-buildpackage.1.gz
-%%NLS%%man/sv/man1/dpkg-checkbuilddeps.1.gz
 %%NLS%%man/sv/man1/dpkg-deb.1.gz
 %%NLS%%man/sv/man1/dpkg-distaddfile.1.gz
 %%NLS%%man/sv/man1/dpkg-genchanges.1.gz
@@ -634,6 +637,19 @@ sbin/start-stop-daemon
 @dirrmtry etc/dpkg
 @dirrmtry etc/alternatives
 @cwd /
+@exec mkdir -p %%DPKGDIR%%/alternatives
+@exec mkdir -p %%DPKGDIR%%/info
+@exec mkdir -p %%DPKGDIR%%/methods/disk
+@exec mkdir -p %%DPKGDIR%%/methods/floppy
+@exec mkdir -p %%DPKGDIR%%/methods/ftp
+@exec mkdir -p %%DPKGDIR%%/methods/mnt
+@exec mkdir -p %%DPKGDIR%%/methods/multicd
+@exec mkdir -p %%DPKGDIR%%/parts
+@exec mkdir -p %%DPKGDIR%%/updates
+@exec [ -e %%DPKGDIR%%/available ] || touch %%DPKGDIR%%/available
+@exec [ -e %%DPKGDIR%%/diversions ] || touch %%DPKGDIR%%/diversions
+@exec [ -e %%DPKGDIR%%/statoverride ] || touch %%DPKGDIR%%/statoverride
+@exec [ -e %%DPKGDIR%%/status ] || touch %%DPKGDIR%%/status
 @dirrmtry %%DPKGDIR%%/updates
 @dirrmtry %%DPKGDIR%%/parts
 @dirrmtry %%DPKGDIR%%/methods/multicd
