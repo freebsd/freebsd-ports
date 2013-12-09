@@ -12,9 +12,6 @@ COMMENT=	Efficiently pack items into bins
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Algorithm::BinPack.3
-
 PORTSCOUT=	limit:^\d+\.\d+
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
