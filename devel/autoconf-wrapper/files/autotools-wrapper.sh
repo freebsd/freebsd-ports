@@ -31,6 +31,8 @@
 bindir=%%PREFIX%%/bin
 tool=$(basename $0)
 
+exec 4<&0
+
 error() {
 	echo "$@" 1>&2
 	exit 1
@@ -85,5 +87,6 @@ if [ -n "${AUTOTOOLS_DEBUG}" ] ; then
 	    "(${bindir}/${tool}-${selected_version})" 1>&2
 fi
 
+exec 0<&4 4<&-
 exec ${bindir}/${tool}-${selected_version} "$@"
 }
