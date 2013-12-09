@@ -3,6 +3,7 @@
 
 PORTNAME=		mapserver
 PORTVERSION=		6.4.0
+PORTREVISION=		1
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
@@ -171,8 +172,6 @@ CMAKE_ARGS+=		-DCMAKE_BUILD_TYPE=Release
 PROG_FILES=		legend scalebar shp2img shptree shptreetst shptreevis \
 			sortshp msencrypt tile4ms
 
-post-build:
-
 do-install:
 .for f in ${PROG_FILES}
 	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/bin
@@ -191,6 +190,9 @@ do-install:
 .endif
 
 post-install:
+	@${LN} -s ${PREFIX}/lib/libmapserver.so.6.4.0 ${PREFIX}/lib/libmapserver.so.1
+	@${LN} -s ${PREFIX}/lib/libmapserver.so.1 ${PREFIX}/lib/libmapserver.so
+
 .if ${PORT_OPTIONS:MPHP}
 	@${ECHO_MSG} "Please add the line extension=php_mapscript.so to ${LOCALBASE}/etc/php/extensions.ini"
 .endif
