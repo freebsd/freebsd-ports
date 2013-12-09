@@ -17,7 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedCore>=${PORTVERSION}:${PORTSDIR}/deve
 
 NO_BUILD=	yes
 USE_PYTHON=	-2.7
-PYDISTUTILS_NOEGGINFO=	yes
 
 # Bypass infrastructure bug
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
