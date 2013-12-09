@@ -1,14 +1,3 @@
---- adie/FindInFiles.cpp.orig	2013-09-18 16:55:45.000000000 +0200
-+++ adie/FindInFiles.cpp	2013-09-18 16:57:42.000000000 +0200
-@@ -434,7 +434,7 @@
- 
- // File list double clicked
- long FindInFiles::onCmdFileDblClicked(FXObject*,FXSelector,void* ptr){
--  FXint index=(FXint)(FXival)ptr;
-+  index=(FXint)(FXival)ptr;
-   return 1;
-   }
-   
 --- tests/parallel.cpp.orig	2013-09-18 16:31:08.000000000 +0200
 +++ tests/parallel.cpp	2013-09-18 16:55:25.000000000 +0200
 @@ -146,6 +145,7 @@
