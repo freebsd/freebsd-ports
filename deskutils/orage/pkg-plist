@@ -8,8 +8,8 @@ man/man1/tz_convert.1.gz
 share/applications/globaltime.desktop
 share/applications/xfcalendar.desktop
 share/applications/xfce-xfcalendar-settings.desktop
-%%DBUS%%share/dbus-1/services/org.xfce.calendar.service
-%%DBUS%%share/dbus-1/services/org.xfce.orage.service
+share/dbus-1/services/org.xfce.calendar.service
+share/dbus-1/services/org.xfce.orage.service
 %%DOCSDIR%%/C/images/default_calendar.png
 %%DOCSDIR%%/C/images/orage_appointment.png
 %%DOCSDIR%%/C/images/orage_appointment_alarm.png
@@ -39,15 +39,10 @@ share/icons/hicolor/scalable/apps/xfcalendar.svg
 share/locale/am/LC_MESSAGES/orage.mo
 share/locale/ar/LC_MESSAGES/orage.mo
 share/locale/ast/LC_MESSAGES/orage.mo
-share/locale/az/LC_MESSAGES/orage.mo
 share/locale/be/LC_MESSAGES/orage.mo
 share/locale/bg/LC_MESSAGES/orage.mo
-share/locale/bn_IN/LC_MESSAGES/orage.mo
 share/locale/ca/LC_MESSAGES/orage.mo
 share/locale/cs/LC_MESSAGES/orage.mo
-share/locale/da/LC_MESSAGES/orage.mo
-share/locale/de/LC_MESSAGES/orage.mo
-share/locale/dz/LC_MESSAGES/orage.mo
 share/locale/el/LC_MESSAGES/orage.mo
 share/locale/en_AU/LC_MESSAGES/orage.mo
 share/locale/en_GB/LC_MESSAGES/orage.mo
@@ -55,30 +50,22 @@ share/locale/eo/LC_MESSAGES/orage.mo
 share/locale/es/LC_MESSAGES/orage.mo
 share/locale/et/LC_MESSAGES/orage.mo
 share/locale/eu/LC_MESSAGES/orage.mo
-share/locale/fa/LC_MESSAGES/orage.mo
-share/locale/fi/LC_MESSAGES/orage.mo
 share/locale/fr/LC_MESSAGES/orage.mo
 share/locale/gl/LC_MESSAGES/orage.mo
-share/locale/gu/LC_MESSAGES/orage.mo
 share/locale/he/LC_MESSAGES/orage.mo
-share/locale/hi/LC_MESSAGES/orage.mo
 share/locale/hr/LC_MESSAGES/orage.mo
 share/locale/hu/LC_MESSAGES/orage.mo
-share/locale/hy/LC_MESSAGES/orage.mo
 share/locale/id/LC_MESSAGES/orage.mo
 share/locale/it/LC_MESSAGES/orage.mo
 share/locale/ja/LC_MESSAGES/orage.mo
-share/locale/ka/LC_MESSAGES/orage.mo
 share/locale/kk/LC_MESSAGES/orage.mo
 share/locale/ko/LC_MESSAGES/orage.mo
-share/locale/ku/LC_MESSAGES/orage.mo
 share/locale/lt/LC_MESSAGES/orage.mo
 share/locale/lv/LC_MESSAGES/orage.mo
-share/locale/mk/LC_MESSAGES/orage.mo
-share/locale/mr/LC_MESSAGES/orage.mo
-share/locale/ms/LC_MESSAGES/orage.mo
 share/locale/nb/LC_MESSAGES/orage.mo
 share/locale/nl/LC_MESSAGES/orage.mo
+share/locale/nn/LC_MESSAGES/orage.mo
+share/locale/oc/LC_MESSAGES/orage.mo
 share/locale/pa/LC_MESSAGES/orage.mo
 share/locale/pl/LC_MESSAGES/orage.mo
 share/locale/pt/LC_MESSAGES/orage.mo
@@ -88,8 +75,8 @@ share/locale/ru/LC_MESSAGES/orage.mo
 share/locale/si/LC_MESSAGES/orage.mo
 share/locale/sk/LC_MESSAGES/orage.mo
 share/locale/sq/LC_MESSAGES/orage.mo
+share/locale/sr/LC_MESSAGES/orage.mo
 share/locale/sv/LC_MESSAGES/orage.mo
-share/locale/ta/LC_MESSAGES/orage.mo
 share/locale/tr/LC_MESSAGES/orage.mo
 share/locale/ug/LC_MESSAGES/orage.mo
 share/locale/uk/LC_MESSAGES/orage.mo
@@ -723,28 +710,18 @@ share/xfce4/panel-plugins/xfce4-orageclock-plugin.desktop
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/kk/LC_MESSAGES
 @dirrmtry share/locale/kk
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
 @dirrmtry share/icons/hicolor/160x160/apps
 @dirrmtry share/icons/hicolor/160x160
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
 @dirrm %%DOCSDIR%%/C/images
 @dirrm %%DOCSDIR%%/C
 @dirrm %%DOCSDIR%%
-%%DBUS%%@dirrmtry share/dbus-1/services
-%%DBUS%%@dirrmtry share/dbus-1
+@dirrmtry share/dbus-1/services
+@dirrmtry share/dbus-1
 @dirrmtry libexec/xfce4/panel-plugins
 @dirrmtry libexec/xfce4
