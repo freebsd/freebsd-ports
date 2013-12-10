@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pypy
-DISTVERSION=	2.2
+DISTVERSION=	2.2.1
 CATEGORIES=	lang python
 MASTER_SITES=	http://cdn.bitbucket.org/pypy/pypy/downloads/ https://bitbucket.org/pypy/pypy/downloads/
 PKGNAMESUFFIX=	-devel
@@ -147,26 +147,26 @@ PYPY_${inst}_OPT=	2
 #
 .if ${PYPY_ARCH:M*64}
 .  if ${PORT_OPTIONS:MPYPY}
-# 64bit + pypy = 5.9 GiB
-PYPY_TRANSLATION_MEMORY=	6062436
+# 64bit + pypy = 5.5 GiB
+PYPY_TRANSLATION_MEMORY=	5803684
 .  elif ${PORT_OPTIONS:MPYPY_MINMEM}
-# 64bit + pypy (minimum memory) = 3.6GiB
-PYPY_TRANSLATION_MEMORY=	3729228
+# 64bit + pypy (minimum memory) = 3.3 GiB
+PYPY_TRANSLATION_MEMORY=	3452308
 .  else
-# 64bit + python = 4.7 GiB
-PYPY_TRANSLATION_MEMORY=	4662460
+# 64bit + python = 4.5 GiB
+PYPY_TRANSLATION_MEMORY=	4716500
 .  endif
 # 64bit system += 366 MiB
 PYPY_MINIMUM_MEMORY=	$$((${PYPY_TRANSLATION_MEMORY} + 374784))
 .else
 .  if ${PORT_OPTIONS:MPYPY}
 # 32bit + pypy = 2.3GiB
-PYPY_TRANSLATION_MEMORY=	2523868
+PYPY_TRANSLATION_MEMORY=	2438856
 .  elif ${PORT_OPTIONS:MPYPY_MINMEM}
-# 32bit + pypy (minimum memory) = 2.2GiB
-PYPY_TRANSLATION_MEMORY=	2246768
-# 32bit + python = 2.3 GiB
-PYPY_TRANSLATION_MEMORY=	2523868
+# 32bit + pypy (minimum memory) = 2.0GiB
+PYPY_TRANSLATION_MEMORY=	2120844
+# 32bit + python = 2.2 GiB
+PYPY_TRANSLATION_MEMORY=	2286764
 .  endif
 # 32bit system += 168 MiB
 PYPY_MINIMUM_MEMORY=	$$((${PYPY_TRANSLATION_MEMORY} + 171787))
