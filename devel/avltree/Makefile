@@ -8,10 +8,8 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.gtlib.gatech.edu/pub/FreeBSD/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An in-memory index w/ binary and string keys and key counts
+COMMENT=	In-memory index w/ binary and string keys and key counts
 
-MAN3=		avltree.3
-MANCOMPRESSED=	yes
+MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
