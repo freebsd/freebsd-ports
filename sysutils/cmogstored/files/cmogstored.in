@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: cmogstored
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=cmogstored
+rcvar=cmogstored_enable
+
+load_rc_config cmogstored
+
+: ${cmogstored_enable:="NO"}
+: ${cmogstored_config:="%%PREFIX%%/etc/mogstored.conf"}
+
+required_files="${cmogstored_config}"
+
+command="%%PREFIX%%/sbin/${name}"
+command_args="--config='${cmogstored_config}' -d"
+
+run_rc_command "$1"
