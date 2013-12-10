@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=-src
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates an APNG animation from a PNG/TGA image sequence
 
 LICENSE=	ZLIB
