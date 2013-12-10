@@ -2,6 +2,7 @@
 
 PORTNAME=	symports
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://isis.poly.edu/~eitan/files/
 DISTNAME=	auto-symlink-virtual-${PORTVERSION}
