@@ -1,6 +1,8 @@
 %%PERL5_MAN3%%/Bundle::DBD::mysql.3.gz
 %%PERL5_MAN3%%/DBD::mysql.3.gz
 %%PERL5_MAN3%%/DBD::mysql::INSTALL.3.gz
+%%PERL5_MAN3%%/DBD::README.3.gz
+%%SITE_PERL%%/mach/DBD/README.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Bundle/DBD/mysql.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/mysql.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/mysql/GetInfo.pm
