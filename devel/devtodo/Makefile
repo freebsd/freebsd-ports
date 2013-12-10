@@ -14,25 +14,21 @@ CONFLICTS=	tdl-[0-9]* todo-[0-9]*
 
 GNU_CONFIGURE=	yes
 
+OPTIONS_DEFINE=	EXAMPLES
+
 # Note: without this define util/regex.c doesn't compile due to redeclaration
 # of malloc and realloc functions. Adding this define was the simplest
 # (although not elegant) solution.
 CFLAGS+=	-DSTDC_HEADERS
 
-MAN1=	devtodo.1
-MLINKS=	devtodo.1 tda.1 devtodo.1 tdd.1 devtodo.1 tde.1 devtodo.1 tdl.1 \
-	devtodo.1 tdr.1 devtodo.1 todo.1
-MANCOMPRESSED=	no
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/^\ttest -f.*todorc.*\n//' ${WRKSRC}/doc/Makefile.in
 
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for file in scripts.sh scripts.tcsh todorc.example
-	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/doc/todorc.example ${PREFIX}/etc/todorc.sample
+	${INSTALL_DATA} ${WRKSRC}/doc/todorc.example ${STAGEDIR}${PREFIX}/etc/todorc.sample
 
 .include <bsd.port.mk>
