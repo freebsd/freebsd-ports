@@ -17,13 +17,11 @@ COMMENT=	Free 8051 assembler
 USES=		bison gmake
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAN1=		as31.1
-PLIST_FILES=	bin/as31 %%X11%%bin/as31_gtk
+PLIST_FILES=	bin/as31 %%X11%%bin/as31_gtk man/man1/as31.1.gz
 
 OPTIONS_DEFINE=	X11
 OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
@@ -33,10 +31,10 @@ ALL_TARGET=	as31
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/as31 ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/as31.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/as31 ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/as31.1 ${STAGEDIR}${MANPREFIX}/man/man1
 .if ${PORT_OPTIONS:MX11}
-	${INSTALL_PROGRAM} ${WRKSRC}/as31_gtk ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/as31_gtk ${STAGEDIR}${PREFIX}/bin
 .endif
 
 .include <bsd.port.mk>
