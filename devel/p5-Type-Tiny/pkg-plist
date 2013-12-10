@@ -31,7 +31,15 @@
 %%SITE_PERL%%/Type/Tiny/Role.pm
 %%SITE_PERL%%/Type/Tiny/Union.pm
 %%SITE_PERL%%/Type/Utils.pm
+%%SITE_PERL%%/Types/Common/Numeric.pm
+%%SITE_PERL%%/Types/Common/String.pm
 %%SITE_PERL%%/Types/Standard.pm
+%%SITE_PERL%%/Types/Standard/ArrayRef.pm
+%%SITE_PERL%%/Types/Standard/Dict.pm
+%%SITE_PERL%%/Types/Standard/HashRef.pm
+%%SITE_PERL%%/Types/Standard/Map.pm
+%%SITE_PERL%%/Types/Standard/ScalarRef.pm
+%%SITE_PERL%%/Types/Standard/Tuple.pm
 %%SITE_PERL%%/Types/TypeTiny.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Type/Tiny/.packlist
 %%PERL5_MAN3%%/Devel::TypeTiny::Perl56Compat.3.gz
@@ -66,10 +74,20 @@
 %%PERL5_MAN3%%/Type::Tiny::Role.3.gz
 %%PERL5_MAN3%%/Type::Tiny::Union.3.gz
 %%PERL5_MAN3%%/Type::Utils.3.gz
+%%PERL5_MAN3%%/Types::Common::Numeric.3.gz
+%%PERL5_MAN3%%/Types::Common::String.3.gz
 %%PERL5_MAN3%%/Types::Standard.3.gz
+%%PERL5_MAN3%%/Types::Standard::ArrayRef.3.gz
+%%PERL5_MAN3%%/Types::Standard::Dict.3.gz
+%%PERL5_MAN3%%/Types::Standard::HashRef.3.gz
+%%PERL5_MAN3%%/Types::Standard::Map.3.gz
+%%PERL5_MAN3%%/Types::Standard::ScalarRef.3.gz
+%%PERL5_MAN3%%/Types::Standard::Tuple.3.gz
 %%PERL5_MAN3%%/Types::TypeTiny.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Type/Tiny
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Type
+@dirrmtry %%SITE_PERL%%/Types/Standard
+@dirrmtry %%SITE_PERL%%/Types/Common
 @dirrmtry %%SITE_PERL%%/Types
 @dirrmtry %%SITE_PERL%%/Type/Tiny/Manual
 @dirrmtry %%SITE_PERL%%/Type/Tiny
