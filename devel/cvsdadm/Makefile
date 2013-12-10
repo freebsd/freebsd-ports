@@ -22,20 +22,14 @@ PORTDOCS=	cvsdadm.README
 
 SHEBANG_FILES=	cvsdadm
 
-PLIST_FILES=	bin/cvsdadm
-
-MAN1=	cvsdadm.1
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+PLIST_FILES=	bin/cvsdadm \
+		man/man1/cvsdadm.1.gz
 
 do-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${POD2TEXT} ${WRKSRC}/cvsdadm > ${WRKSRC}/${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
-.endif
-	${INSTALL_SCRIPT} ${WRKSRC}/cvsdadm ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/cvsdadm.1 ${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/cvsdadm ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/cvsdadm.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
