@@ -255,7 +255,8 @@
     SUBDIR += filters
     SUBDIR += fishsupper
     SUBDIR += fkiss
-    SUBDIR += flare
+    SUBDIR += flare-engine
+    SUBDIR += flare-game
     SUBDIR += flightgear
     SUBDIR += flightgear-aircraft
     SUBDIR += flightgear-data
