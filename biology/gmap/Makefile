@@ -3,15 +3,15 @@
 
 PORTNAME=	gmap
 PORTVERSION=	2006.04.21
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://www.gene.com/share/gmap/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C|\.|-|g}
 
 MAINTAINER=	rpz@cse.wustl.edu
-COMMENT=	A Genomic Mapping and Alignment Program for mRNA and EST Sequences
+COMMENT=	Genomic Mapping and Alignment Program for mRNA and EST Sequences
 
-USE_GMAKE=	yes
+USES=		gmake perl5
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
