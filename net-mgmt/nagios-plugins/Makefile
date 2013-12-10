@@ -147,11 +147,6 @@ CONFIGURE_ARGS+=	--without-dbi
 PLIST_SUB+=	SUB_DBI="@comment "
 .endif
 
-# Restore check_users from 1.4.15 for hosts without getutxent(3)
-.if ${OSVERSION} < 900007
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-plugins__check_users.c
-.endif
-
 post-patch:
 .for file in check_by_ssh.c check_disk.c check_http.c check_mrtgtraf.c \
 	check_nagios.c check_ntp.c check_ntp_peer.c check_ntp_time.c \
