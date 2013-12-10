@@ -2,16 +2,16 @@
 
 PORTNAME=	cblog
 PORTVERSION=	0.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://files.etoilebsd.net/cblog/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Simple weblog in C using markdown
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libneo_cs.a:${PORTSDIR}/www/clearsilver \
-		${LOCALBASE}/lib/libcdb.a:${PORTSDIR}/databases/tinycdb
-LIB_DEPENDS=	libfcgi.so:${PORTSDIR}/www/fcgi
+BUILD_DEPENDS=	${LOCALBASE}/lib/libneo_cs.a:${PORTSDIR}/www/clearsilver
+LIB_DEPENDS=	libfcgi.so:${PORTSDIR}/www/fcgi \
+		libcdb.so:${PORTSDIR}/databases/tinycdb
 
 LICENSE=	BSD
 
