@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pypy
-DISTVERSION=	2.1
-PORTREVISION=	1
-CATEGORIES=	lang python java
-MASTER_SITES=	http://cdn.bitbucket.org/pypy/pypy/downloads/
+DISTVERSION=	2.2.1
+CATEGORIES=	lang python
+MASTER_SITES=	http://cdn.bitbucket.org/pypy/pypy/downloads/ https://bitbucket.org/pypy/pypy/downloads/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	dbn@FreeBSD.org
@@ -18,39 +17,42 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libffi.so:${PORTSDIR}/devel/libffi \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
-CLI_DESC=	(BROKEN) Translate a CLI (.NET) based pypy
-JVM_DESC=	(BROKEN) Translate a JVM (Java) based pypy
 PYTHON_DESC=	Use Python-2.7 to translate (slowest)
 PYPY_DESC=	Use PyPy to translate (fastest, highest memory usage)
 PYPY_MINMEM_DESC=	Use PyPy to translate (lowest memory usage)
-PYINST_DESC=	Translation method
+PYINST=		PyPy instances
 SANDBOX_DESC=	Translate a sandboxed pypy
+TRANS_DESC=	Translation method
 .if !defined(PYPY_INST)
-OPTIONS_DEFINE+=	CLI JVM SANDBOX
+OPTIONS_GROUP=	PYINST
+OPTIONS_GROUP_PYINST=	SANDBOX
 .endif
 LOCALBASE?=	/usr/local
 .if exists(${LOCALBASE}/bin/pypy)
-OPTIONS_SINGLE=	PYINST
-OPTIONS_SINGLE_PYINST=	PYTHON PYPY PYPY_MINMEM
+OPTIONS_SINGLE=	TRANS
+OPTIONS_SINGLE_TRANS=	PYTHON PYPY PYPY_MINMEM
 OPTIONS_DEFAULT+=	PYPY_MINMEM
 .endif
 
-CONFLICTS_INSTALL=	pypy-devel-[0-9]*
+CONFLICTS_INSTALL=	pypy-[0-9]*
+LATEST_LINK=	${PORTNAME}-devel
 
 ALL_TARGET=	${PYPY_NAMES}
 BUILD_WRKSRC=	${WRKDIR}
+DATE=		20130810
 USE_BZIP2=	yes
 USES=		compiler:c11 gettext iconv
 MAKEFILE=	${FILESDIR}/Makefile
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-WRKSRC=		${WRKDIR}/${DISTNAME}
 
 PYPY_VER=	${DISTVERSION:C|([0-9])\.([0-9]).*|\1.\2|}
 PYTHON_IMPL_VER=	2.7
-PYPY_LIBDIR=	lib/pypy-${PYPY_VER}
-PYPY_INCLUDEDIR=	include/pypy-${PYPY_VER}
-PYPYDIRS=	${PYPY_INCLUDEDIR} ${PYPY_LIBDIR}
+PYPY_LIBDIR=	lib/${PORTNAME}-${PYPY_VER}
+PYPY_INCLUDEDIR=	include/${PORTNAME}-${PYPY_VER}
+PYPYDIRS=	lib-python/${PYTHON_IMPL_VER}:${PYPY_LIBDIR} \
+		lib_pypy:${PYPY_LIBDIR}/lib_pypy \
+		include:${PYPY_INCLUDEDIR}
 
 PLIST_SUB+=	PYPY_LIBDIR=${PYPY_LIBDIR} \
 		PYPY_INCLUDEDIR=${PYPY_INCLUDEDIR}
@@ -59,7 +61,7 @@ MAKE_ENV+=	DISTVERSION=${DISTVERSION} PYTHON_CMD=${PYTHON_CMD} \
 		WRKSRC=${WRKSRC} PYPY_LOCALBASE=${LOCALBASE}
 
 LOCALBASE_REFIX=	\
-		${PYPY_LIBDIR}/lib_pypy/_sqlite3.py
+		lib_pypy/_sqlite3.py
 
 .include <bsd.port.options.mk>
 .include "${MASTERDIR}/files/bsd.pypy.inst.mk"
@@ -80,14 +82,6 @@ PYPY_INST=	DEFAULT
 PYPY_INST+=	SANDBOX
 .endif
 
-.if ${PORT_OPTIONS:MCLI}
-PYPY_INST+=	CLI
-.endif
-
-.if ${PORT_OPTIONS:MJVM}
-PYPY_INST+=	JVM
-.endif
-
 .endif # !defined(PYPY_INST)
 
 MAKE_ENV+=	PYPY_INST="${PYPY_INST}"
@@ -106,36 +100,10 @@ MAKE_ENV+=	PYPY_${inst}_NAME="${PYPY_${inst}_NAME}" \
 WITH_BOEHM_GC=	yes
 .endif
 
-# Check if the CLI (mono) backend will be used
-.if !empty(PYPY_${inst}_TRANSLATE_ARGS:M--backend=cli)
-WITH_CLI=	yes
-.endif
-
-# Check if the JVM (java) backend will be used
-.if !empty(PYPY_${inst}_TRANSLATE_ARGS:M--backend=jvm)
-WITH_JVM=	yes
-.endif
-
 .endfor # inst in ${PYPY_INST}
 
 .if defined(WITH_BOEHM_GC)
 LIB_DEPENDS+=	libgc.so:${PORTSDIR}/devel/boehm-gc
-.endif
-
-.if defined(WITH_CLI)
-BUILD_DEPENDS+=	mono:${PORTSDIR}/lang/mono
-RUN_DEPENDS+=	mono:${PORTSDIR}/lang/mono
-ONLY_FOR_ARCHS=	i386 powerpc
-ONLY_FOR_ARCHS_REASON=	only translates on 32bit systems
-BROKEN=		CLI backend broken, unsupported upstream
-.endif
-
-.if defined(WITH_JVM)
-USE_JAVA=	yes
-JAVA_VERSION=	1.5+
-ONLY_FOR_ARCHS=	i386 powerpc
-ONLY_FOR_ARCHS_REASON=	only translates on 32bit systems
-BROKEN=		JVM backend broken, partially supported upstream
 .endif
 
 # Translate FreeBSD ARCH types to PyPy ARCH types
@@ -161,6 +129,7 @@ PYPY_BITS=	32
 .endif
 PLIST_SUB+=	PYPY_ARCH="${PYPY_ARCH}"
 PLIST_SUB+=	PYPY_BITS="${PYPY_BITS}"
+PLIST_SUB+=	PYPY_VER="${PYPY_VER:C/\.//}"
 
 .if !defined(PYPY_JITTABLE)
 .for inst in ${PYPY_INST}
@@ -177,26 +146,26 @@ PYPY_${inst}_OPT=	2
 #
 .if ${PYPY_ARCH:M*64}
 .  if ${PORT_OPTIONS:MPYPY}
-# 64bit + pypy = 5.9 GiB
-PYPY_TRANSLATION_MEMORY=	6138872
+# 64bit + pypy = 5.5 GiB
+PYPY_TRANSLATION_MEMORY=	5803684
 .  elif ${PORT_OPTIONS:MPYPY_MINMEM}
-# 64bit + pypy (minimum memory) = 3.6GiB
-PYPY_TRANSLATION_MEMORY=	3855204
+# 64bit + pypy (minimum memory) = 3.3 GiB
+PYPY_TRANSLATION_MEMORY=	3452308
 .  else
-# 64bit + python = 4.7 GiB
-PYPY_TRANSLATION_MEMORY=	4957688
+# 64bit + python = 4.5 GiB
+PYPY_TRANSLATION_MEMORY=	4716500
 .  endif
 # 64bit system += 366 MiB
 PYPY_MINIMUM_MEMORY=	$$((${PYPY_TRANSLATION_MEMORY} + 374784))
 .else
 .  if ${PORT_OPTIONS:MPYPY}
 # 32bit + pypy = 2.3GiB
-PYPY_TRANSLATION_MEMORY=	2689508
+PYPY_TRANSLATION_MEMORY=	2438856
 .  elif ${PORT_OPTIONS:MPYPY_MINMEM}
-# 32bit + pypy (minimum memory) = 2.2GiB
-PYPY_TRANSLATION_MEMORY=	2329256
-# 32bit + python = 2.3 GiB
-PYPY_TRANSLATION_MEMORY=	2372640
+# 32bit + pypy (minimum memory) = 2.0GiB
+PYPY_TRANSLATION_MEMORY=	2120844
+# 32bit + python = 2.2 GiB
+PYPY_TRANSLATION_MEMORY=	2286764
 .  endif
 # 32bit system += 168 MiB
 PYPY_MINIMUM_MEMORY=	$$((${PYPY_TRANSLATION_MEMORY} + 171787))
@@ -211,9 +180,12 @@ PYPY_MEMORY_MULTIPLY=	1
 PYPY_IGNORE_MEMORY=	Memory checks non-fatal until revised figures are obtained.
 PYPY_MEM_WARNING=	\
 	${ECHO} "warn: this system has insufficient memory, expected at least $$((${PYPY_MINIMUM_MEMORY} / 1024 * ${PYPY_MEMORY_MULTIPLY} + 1))MiB RAM"
-.if defined(PYTHON_CMD) && ${PYTHON_CMD:M*pypy*}
+.if ${PORT_OPTIONS:MPYPY}
 PYPY_MEM_WARNING+=	;\
-	${ECHO} "warn: pypy is being used for translation, consider using cpython as it uses less memory"
+	${ECHO} "warn: PyPy is being used for translation, consider using Python or PyPy (minimum memory) as it uses less memory"
+.elif ${PORT_OPTIONS:MPYTHON}
+PYPY_MEM_WARNING+=	;\
+	${ECHO} "warn: Python is being used for translation, consider using PyPy (minimum memory) as it uses less memory"
 .endif
 .if ${PYPY_MEMORY_MULTIPLY} != 1
 PYPY_MEM_WARNING+=	;\
@@ -251,10 +223,11 @@ pre-fetch:
 	@if [ $$((`sysctl -n hw.physmem` / 1024)) -le $$((${PYPY_MINIMUM_MEMORY} * ${PYPY_MEMORY_MULTIPLY})) ]; then ${PYPY_MEM_WARNING}; fi
 
 post-extract:
-	${MKDIR} ${WRKSRC}/lib
-	${LN} -s ${WRKSRC}/lib ${WRKDIR}/lib
-	${MV} ${WRKSRC}/lib-python/${PYTHON_IMPL_VER} ${WRKSRC}/${PYPY_LIBDIR}
-	${MV} ${WRKSRC}/lib_pypy ${WRKSRC}/${PYPY_LIBDIR}/
+.for _path in ${PYPYDIRS}
+	${MKDIR} ${WRKDIR}/`${DIRNAME} ${_path:C/.*://}`
+	${LN} -s ${WRKSRC}/${_path:C/:.*//} ${WRKDIR}/${_path:C/.*://}
+.endfor
+	${LN} -s ${WRKDIR}/lib ${WRKSRC}/lib
 
 post-patch:
 .for file in ${LOCALBASE_REFIX}
@@ -270,27 +243,27 @@ do-configure:
 	${CP} ${WRKDIR}/use.pypy ${PKGDEINSTALL}
 
 post-build:
-	-${FIND} ${WRKSRC}/${PYPY_LIBDIR} -type d | \
-		${SETENV} PYTHON_PATH=${WRKSRC} ${XARGS} \
-		${WRKDIR}/${PYPY_PRIMARY} -m compileall -fl
 # UPDATING: check pypy/tool/release/package.py for list of cffi modules
 .for mod in _sqlite3 _curses syslog
 	${WRKDIR}/${PYPY_PRIMARY} -c 'import ${mod}'
 .endfor
-	${FIND} ${WRKSRC}/lib -name '*.orig' -delete -or \
+	${STRIP_CMD} ${WRKDIR}/${PYPY_LIBDIR}/lib_pypy/__pycache__/_cffi__*.pypy-${PYPY_VER:C/\.//}.so
+.for _path in ${PYPYDIRS}
+	-${FIND} ${WRKDIR}/${_path:C/.*://}/ -type d | \
+		${XARGS} -n1 ${WRKDIR}/${PYPY_PRIMARY} -m compileall -fl
+	${FIND} ${WRKDIR}/${_path:C/.*://}/ -name '*.orig' -delete -or \
 		-name '*.bak' -delete -or \
 		-name '*.c' -delete -or \
 		-name '*.o' -delete
 	${FIND} ${WRKDIR}/${_path:C/.*://}/ -name __pycache__ | \
 		${XARGS} -n1 -I {} ${FIND} {} -depth 1 -type d | \
 		${XARGS} ${RM} -r
-	${MV} ${WRKSRC}/include ${WRKSRC}/include~
-	${MKDIR} ${WRKSRC}/include
-	${MV} ${WRKSRC}/include~ ${WRKSRC}/${PYPY_INCLUDEDIR}
+.endfor
 
 do-install:
-.for dir in ${PYPYDIRS}
-	(cd ${WRKSRC}/${dir}; ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${dir})
+.for _path in ${PYPYDIRS}
+	${RM} -f ${STAGEDIR}${PREFIX}/${_path:C/.*://}
+	(cd ${WRKSRC}/${_path:C/:.*//}; ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${_path:C/.*://})
 .endfor
 .for name in ${PYPY_NAMES:O}
 	${STRIP_CMD} ${WRKDIR}/${name}
@@ -304,25 +277,31 @@ post-install:
 test: patch
 .for inst in ${PYPY_INST}
 	@${WHICH} ${PYPY_${inst}_NAME} > /dev/null 2>&1 || (${ECHO} "Unable to find ${PYPY_${inst}_NAME}, please install port first!"; exit 1)
-	(cd ${WRKSRC}; ${PYPY_${inst}_NAME} pypy/test_all.py ${PYPY_LIBDIR}/lib_pypy/pypy_test pypy/module)
+	(cd ${WRKSRC}; ${PYPY_${inst}_NAME} pypy/test_all.py lib_pypy/pypy_test pypy/module)
 .endfor
 
 pkg-plist: build
 	${RM} -f ${WRKDIR}/.plist-files-gen ${WRKDIR}/.plist-dirs-gen
-.for dir in ${PYPYDIRS}
-	cd ${WRKSRC} && ${FIND} ${dir} -type f >> ${WRKDIR}/.plist-files-gen
-	cd ${WRKSRC} && ${FIND} ${dir} -type d >> ${WRKDIR}/.plist-dirs-gen
+.for path in ${PYPYDIRS}
+	cd ${WRKDIR} && ${FIND} ${path:C/.*://}/ -type f >> ${WRKDIR}/.plist-files-gen
+	cd ${WRKDIR} && ${FIND} ${path:C/.*://}/ -type d | ${SED} 's|/$$||' >> ${WRKDIR}/.plist-dirs-gen
 .endfor
 	${REINPLACE_CMD} -e 's|^${PYPY_LIBDIR}|%%PYPY_LIBDIR%%|g' \
 		-e 's|^${PYPY_INCLUDEDIR}|%%PYPY_INCLUDEDIR%%|g' \
 		-e 's|${PYPY_ARCH}|%%PYPY_ARCH%%|g' \
 		-e 's|_${PYPY_BITS}_|_%%PYPY_BITS%%_|g' \
+		-e 's|-${PYPY_VER:C/\.//}\.|-%%PYPY_VER%%.|g' \
 			${WRKDIR}/.plist-files-gen
 	${REINPLACE_CMD} -e 's|^${PYPY_LIBDIR}|@dirrm %%PYPY_LIBDIR%%|g' \
 		-e 's|^${PYPY_INCLUDEDIR}|@dirrm %%PYPY_INCLUDEDIR%%|g' \
 			${WRKDIR}/.plist-dirs-gen
 	${SORT} ${WRKDIR}/.plist-files-gen > ${WRKDIR}/pkg-plist
 	${SORT} -r ${WRKDIR}/.plist-dirs-gen >> ${WRKDIR}/pkg-plist
+	${REINPLACE_CMD} \
+		-e 's|^@dirrm %%PYPY_LIBDIR%%/site-packages$$|@dirrmtry %%PYPY_LIBDIR%%/site-packages|' \
+		-e 's|^@dirrm %%PYPY_LIBDIR%%$$|@dirrmtry %%PYPY_LIBDIR%%|' \
+		-e 's|^@dirrm %%PYPY_INCLUDEDIR%%$$|@dirrmtry %%PYPY_INCLUDEDIR%%|' \
+			${WRKDIR}/pkg-plist
 	${CP} ${WRKDIR}/pkg-plist ${.CURDIR}/pkg-plist
 
 .include <bsd.port.mk>
