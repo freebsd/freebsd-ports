@@ -3,6 +3,7 @@
 
 PORTNAME=	txtbdf2ps
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://oldrus-ispell.sourceforge.net/

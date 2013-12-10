@@ -3,6 +3,7 @@
 
 PORTNAME=	kenny
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	misc perl5
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}\
 				http://www.cgarbs.de/stuff/
