@@ -15,11 +15,9 @@ COMMENT=	Free real-time Worms game
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
+USES=		gmake
 USE_BZIP2=	yes
 USE_SDL=	sdl net mixer ttf image
-USE_GMAKE=	yes
-
-MAKE_ENV=	"CXX=${CXX}"
 
 DATAVERSION=	2005-12-21
 DESKTOP_ENTRIES="Worms of Prey" \
@@ -29,8 +27,10 @@ DESKTOP_ENTRIES="Worms of Prey" \
 		"Game;ActionGame;" \
 		false
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+PORTDOCS=	*
+PORTDATA=	*
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|__va_copy|va_copy|g' ${WRKSRC}/src/string.cpp
@@ -42,22 +42,13 @@ post-patch:
 	@${REINPLACE_CMD} -e '/stdint.h/ d' ${WRKSRC}/src/attachableobject.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/wop ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/woprc ${PREFIX}/etc/woprc.sample
-	if [ ! -f ${PREFIX}/etc/woprc ]; then \
-		${INSTALL_DATA} ${WRKSRC}/woprc ${PREFIX}/etc; \
-	fi
-
-	@echo "Installing data files..."
-	@cd ${WRKDIR}/${PORTNAME}data-${DATAVERSION}; \
-		${FIND} . -type d -exec ${MKDIR} ${DATADIR}/{} \; ; \
-		${FIND} . -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
-
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/wop ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/woprc ${STAGEDIR}${PREFIX}/etc/woprc.sample
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKDIR}/${PORTNAME}data-${DATAVERSION} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in AUTHORS COPYING ChangeLog README README-COMMAND-LINE-OPTIONS.txt
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
 
 .include <bsd.port.mk>
