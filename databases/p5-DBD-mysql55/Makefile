@@ -11,5 +11,4 @@ WANT_MYSQL_VER=	55
 
 MASTERDIR=	${.CURDIR}/../p5-DBD-mysql
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
