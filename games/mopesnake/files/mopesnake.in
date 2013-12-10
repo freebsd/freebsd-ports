@@ -4,4 +4,4 @@
 #
 
 cd "%%DATADIR%%"
-exec /usr/bin/env python ./mopesnake.py "${@}"
+exec %%PYTHON_CMD%% ./mopesnake.py "${@}"
