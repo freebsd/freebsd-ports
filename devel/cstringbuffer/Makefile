@@ -12,11 +12,8 @@ COMMENT=	File-like IO for strings
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-MAN3=		csb.3
-MANCOMPRESSED=	no
 
 PLIST_FILES=	include/csb.h lib/libcsb.a lib/libcsb.la lib/libcsb.so \
-		lib/libcsb.so.1
+		lib/libcsb.so.1 man/man3/csb.3.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
