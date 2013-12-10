@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	nagios-plugins
-PORTVERSION=	1.4.16
-PORTREVISION=	3
+PORTVERSION=	1.5
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF/nagiosplug/nagiosplug/${PORTVERSION}
+MASTER_SITES=	https://www.nagios-plugins.org/download/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Plugins for Nagios
@@ -18,7 +17,7 @@ USE_AUTOTOOLS=	libtool aclocal autoconf automake
 ACLOCAL_ARGS=	-I m4 -I gl/m4
 AUTOMAKE_ARGS=	--add-missing
 
-OPTIONS_DEFINE=	QSTAT FPING NETSNMP RADIUS MYSQL PGSQL LDAP IPV6 JAIL NLS
+OPTIONS_DEFINE=	QSTAT FPING NETSNMP RADIUS MYSQL PGSQL LDAP IPV6 JAIL NLS DBI
 OPTIONS_DEFAULT=IPV6
 
 QSTAT_DESC=	Game server query support (check_game)
@@ -29,6 +28,7 @@ MYSQL_DESC=	MySQL support (check_mysql)
 PGSQL_DESC=	PostgreSQL support (check_pgsql)
 LDAP_DESC=	OpenLDAP support (check_ldap)
 JAIL_DESC=	Compilation within jail(8) (see Makefile)
+DBI_DESC=	Check database using DBI
 
 GNU_CONFIGURE=	yes
 
@@ -43,7 +43,8 @@ NAGIOSCGIURL?=	${NAGIOSHTMURL}/cgi-bin
 NAGIOSPOLLIP?=	127.0.0.1
 NAGIOSPOLLIP6?=	::1
 
-NO_STAGE=	yes
+NEED_ROOT=	yes # check_icmp, check_dhcp
+
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS=	--with-nagios-user=${NAGIOSUSER} \
@@ -98,9 +99,9 @@ PLIST_SUB+=	SUB_SNMP="@comment "
 
 .if ${PORT_OPTIONS:MRADIUS}
 LIB_DEPENDS+=	radiusclient-ng:${PORTSDIR}/net/radiusclient
-CONFIGURE_ARGS+=	--enable-radius
 PLIST_SUB+=	SUB_RADIUS=""
 .else
+CONFIGURE_ARGS+=	--without-radius
 PLIST_SUB+=	SUB_RADIUS="@comment "
 .endif
 
@@ -124,9 +125,9 @@ PLIST_SUB+=	SUB_PGSQL="@comment "
 
 .if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	YES
-CONFIGURE_ARGS+=	--enable-ldap
 PLIST_SUB+=	SUB_LDAP=""
 .else
+CONFIGURE_ARGS+=	--without-ldap
 PLIST_SUB+=	SUB_LDAP="@comment "
 .endif
 
@@ -136,6 +137,14 @@ PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MDBI}
+PLIST_SUB+=	SUB_DBI=""
+LIB_DEPENDS+=	libdbi.so:${PORTSDIR}/databases/libdbi
+.else
+CONFIGURE_ARGS+=	--without-dbi
+PLIST_SUB+=	SUB_DBI="@comment "
 .endif
 
 # Restore check_users from 1.4.15 for hosts without getutxent(3)

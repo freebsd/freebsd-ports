@@ -3,6 +3,7 @@ libexec/nagios/check_breeze
 libexec/nagios/check_by_ssh
 libexec/nagios/check_clamd
 libexec/nagios/check_cluster
+%%SUB_DBI%%libexec/nagios/check_dbi
 libexec/nagios/check_dhcp
 libexec/nagios/check_dig
 libexec/nagios/check_disk
