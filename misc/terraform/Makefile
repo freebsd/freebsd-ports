@@ -19,7 +19,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libtrio.a:${PORTSDIR}/devel/trio
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=        pathfix gettext gmake pkgconfig
+USES=		pathfix gettext gmake pkgconfig
+USE_GCC=	yes
 USE_GNOME=	gnomehier libgnomeprintui libgnomeui
 USE_AUTOTOOLS=	automake:env
 GNU_CONFIGURE=	yes
@@ -27,8 +28,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DOCS=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s| desktop-links docs | |' \
@@ -39,14 +39,12 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/desktop-links/Terraform.desktop \
-		${PREFIX}/share/applications
+		${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/desktop-links/terraform.png \
-		${PREFIX}/share/pixmaps
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+		${STAGEDIR}${PREFIX}/share/pixmaps
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in FAQ.sgml README.sgml UsersGuide.sgml i18n.txt
-	${INSTALL_DATA} ${WRKSRC}/docs/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
