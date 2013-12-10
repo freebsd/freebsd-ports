@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.2.18
+DISTVERSION=	4.2.20
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -24,6 +24,7 @@ UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 USE_RC_SUBR=	vboxguest vboxservice
 USES=		iconv kmod
+USE_GCC=	any
 ONLY_FOR_ARCHS=	i386 amd64
 FETCH_ARGS=	-pRr
 USE_BZIP2=	yes
@@ -39,6 +40,7 @@ CONFLICTS_INSTALL=	virtualbox-ose-additions-devel-[3,4]* virtualbox-ose-[3,4]* v
 
 OPTIONS_DEFINE=	DEBUG X11 OPENGL
 OPTIONS_DEFAULT=	X11
+OPTIONS_SUB=	DEBUG X11 OPENGL
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
@@ -58,27 +60,20 @@ MAKE_FLAGS=	SYSDIR=${SRC_BASE}/sys
 KMK_FLAGS+=	BUILD_TYPE=debug
 KMK_BUILDTYPE=	debug
 MAKE_FLAGS+=	DEBUG_FLAGS="-O1 -g"
-PLIST_SUB+=	WITH_DEBUG=""
-.else
-PLIST_SUB+=	WITH_DEBUG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MX11}
 VBOX_WITH_X11=	1
 USE_XORG=	xcursor xmu inputproto xorg-server xrandr
-PLIST_SUB+=	X11=""
 .else
 VBOX_WITH_X11=
-PLIST_SUB+=	X11="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOPENGL}
 USE_XORG+=	xcomposite xdamage xext xfixes
 USE_GL=		gl
-PLIST_SUB+=	OPENGL=""
 .else
 CONFIGURE_ARGS+=--disable-opengl
-PLIST_SUB+=	OPENGL="@comment "
 .endif
 
 .if ${ARCH} == i386
