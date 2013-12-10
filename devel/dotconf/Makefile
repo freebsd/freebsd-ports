@@ -7,30 +7,27 @@ CATEGORIES=	devel
 MASTER_SITES=	GENTOO/distfiles
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple, powerful configuration-file parser
+COMMENT=	Simple, powerful configuration-file parser
 
 LICENSE=	LGPL21
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USES=	pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^SUBDIR/s|=.*|= src|' ${WRKSRC}/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for ex in README argdouble caseinsensitive context duplicates errorhandler \
 	fallback libpool maketest.sh modules noinline simple
-	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} ${ex} ${EXAMPLESDIR})
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} ${ex} ${STAGEDIR}${EXAMPLESDIR})
 .endfor
-.endif
 
 .include <bsd.port.mk>
