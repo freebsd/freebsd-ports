@@ -102,43 +102,19 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>rubygem-actionmailer</name>
-	<range><lt>3.2.16</lt></range>
-      </package>
-      <package>
 	<name>rubygem-actionpack</name>
+	<name>rubygem-activemodel</name>
+	<name>rubygem-activerecord</name>
+	<name>rubygem-activeresource</name>
+	<name>rubygem-activesupport</name>
+	<name>rubygem-rails</name>
+	<name>rubygem-railties</name>
 	<range><lt>3.2.16</lt></range>
       </package>
       <package>
 	<name>rubygem-actionpack4</name>
-	<range><lt>4.0.2</lt></range>
-      </package>
-      <package>
-	<name>rubygem-activemodel</name>
-	<range><lt>3.2.16</lt></range>
-      </package>
-      <package>
-	<name>rubygem-activerecord</name>
-	<range><lt>3.2.16</lt></range>
-      </package>
-      <package>
-	<name>rubygem-activeresource</name>
-	<range><lt>3.2.16</lt></range>
-      </package>
-      <package>
-	<name>rubygem-activesupport</name>
-	<range><lt>3.2.16</lt></range>
-      </package>
-      <package>
 	<name>rubygem-activesupport4</name>
 	<range><lt>4.0.2</lt></range>
-      </package>
-      <package>
-	<name>rubygem-rails</name>
-	<range><lt>3.2.16</lt></range>
-      </package>
-      <package>
-	<name>rubygem-railties</name>
-	<range><lt>3.2.16</lt></range>
       </package>
     </affects>
     <description>
@@ -147,33 +123,33 @@ Note:  Please add new entries to the beginning of this file.
 	<blockquote cite="http://weblog.rubyonrails.org/2013/12/3/Rails_3_2_16_and_4_0_2_have_been_released/">
 	  <p>Rails 3.2.16 and 4.0.2 have been released! These two
 	    releases contain important security fixes, so please upgrade
-		as soon as possible! In order to make upgrading as smooth as
-		possible, we've only included commits directly related to
-		each security issue.</p>
+	    as soon as possible! In order to make upgrading as smooth as
+	    possible, we've only included commits directly related to
+	    each security issue.</p>
 	  <p>The security fixes in 3.2.16 are:</p>
 	  <ul>
-	    <li>CVE-2013-6417</li>
 	    <li>CVE-2013-4491</li>
-	    <li>CVE-2013-6415</li>
 	    <li>CVE-2013-6414</li>
+	    <li>CVE-2013-6415</li>
+	    <li>CVE-2013-6417</li>
 	  </ul>
 	  <p>The security fixes in 4.0.2 are:</p>
 	  <ul>
-	    <li>CVE-2013-6417</li>
 	    <li>CVE-2013-4491</li>
-	    <li>CVE-2013-6415</li>
 	    <li>CVE-2013-6414</li>
+	    <li>CVE-2013-6415</li>
 	    <li>CVE-2013-6416</li>
+	    <li>CVE-2013-6417</li>
 	  </ul>
 	</blockquote>
       </body>
     </description>
     <references>
-	  <cvename>CVE-2013-6417</cvename>
-	  <cvename>CVE-2013-4491</cvename>
-	  <cvename>CVE-2013-6415</cvename>
-	  <cvename>CVE-2013-6414</cvename>
-	  <cvename>CVE-2013-6416</cvename>
+      <cvename>CVE-2013-4491</cvename>
+      <cvename>CVE-2013-6414</cvename>
+      <cvename>CVE-2013-6415</cvename>
+      <cvename>CVE-2013-6416</cvename>
+      <cvename>CVE-2013-6417</cvename>
       <url>http://weblog.rubyonrails.org/2013/12/3/Rails_3_2_16_and_4_0_2_have_been_released/</url>
     </references>
     <dates>
