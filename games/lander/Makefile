@@ -11,21 +11,23 @@ MASTER_SITES=	http://www.nickg.me.uk/files/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Lunar Lander clone
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
-		boost_filesystem:${PORTSDIR}/devel/boost-libs
+LICENSE=	GPLv3
+
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
 
 GNU_CONFIGURE=	yes
 USES=		gettext pkgconfig
 USE_SDL=	sdl image mixer
 USE_GL=		gl glu
-USE_GCC=	4.2+
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-boost="${LOCALBASE}" \
-		--with-boost-filesystem=boost_filesystem
+		--with-boost-filesystem=boost_filesystem \
+		--disable-silent-rules
+LDFLAGS=	-L${LOCALBASE}/lib
 
 PORTDOCS=	*
+PORTDATA=	*
 
 DESKTOP_ENTRIES="Lunar Lander" \
 		"Lunar Lander clone" \
@@ -34,17 +36,10 @@ DESKTOP_ENTRIES="Lunar Lander" \
 		"Game;ArcadeGame;" \
 		false
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e '/LIBS=/ s|-lSDL_|`${SDL_CONFIG} --libs` &|' \
-		${WRKSRC}/configure
+OPTIONS_DEFINE=	DOCS
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
