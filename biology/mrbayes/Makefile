@@ -10,23 +10,20 @@ MASTER_SITES=	SF
 MAINTAINER=	mzaki@m.u-tokyo.ac.jp
 COMMENT=	Bayesian inference of phylogeny
 
-USE_GMAKE=	yes
+OPTIONS_DEFINE=	EXAMPLES
 
-LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
+USES=		gmake readline:port
 
 PLIST_FILES=	bin/mb
 
 PORTEXAMPLES=	adh.nex anolis.nex avian_ovomucoids.nex bglobin.nex \
 		cynmix.nex kim.nex primates.nex replicase.nex
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/mb ${PREFIX}/bin/
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_PROGRAM} ${WRKSRC}/mb ${STAGEDIR}${PREFIX}/bin/
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for file in ${PORTEXAMPLES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
