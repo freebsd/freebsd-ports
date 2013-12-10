@@ -9,15 +9,14 @@ MASTER_SITES=	http://people.xmms2.org/~alex/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DFUI curses frontend
 
-LIB_DEPENDS=	aura3.3:${PORTSDIR}/devel/libaura \
-		dfui4.4:${PORTSDIR}/devel/libdfui
+LIB_DEPENDS=	libaura3.so:${PORTSDIR}/devel/libaura \
+		libdfui4.so:${PORTSDIR}/devel/libdfui
 
 USE_BZIP2=	yes
 
 PLIST_FILES=	bin/dfuife_curses
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dfuife_curses ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/dfuife_curses ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
