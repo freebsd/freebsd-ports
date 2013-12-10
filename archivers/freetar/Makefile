@@ -12,12 +12,14 @@ COMMENT=	TAR archiver for GNUstep
 
 LICENSE=	GPLv2
 
-NO_STAGE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/FreeTar_1_1_1_Source
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${GNUSTEP_PREFIX}/Local/Applications/FreeTar.app/FreeTar
 
 .include <bsd.port.mk>
