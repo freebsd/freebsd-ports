@@ -1,5 +1,5 @@
---- src/VBox/Additions/common/crOpenGL/fakedri_drv.c.orig	2012-12-19 13:25:04.000000000 -0500
-+++ src/VBox/Additions/common/crOpenGL/fakedri_drv.c	2013-01-27 17:57:04.000000000 -0500
+--- src/VBox/Additions/common/crOpenGL/fakedri_drv.c.orig	2013-11-28 19:30:42.000000000 +0100
++++ src/VBox/Additions/common/crOpenGL/fakedri_drv.c	2013-12-06 16:03:16.000000000 +0100
 @@ -29,6 +29,15 @@
  #include <dlfcn.h>
  #include <elf.h>
@@ -20,12 +20,12 @@
  
  //@todo this could be different...
  #ifdef RT_ARCH_AMD64
--# define DRI_DEFAULT_DRIVER_DIR "/usr/lib64/dri:/usr/lib/dri:/usr/lib/x86_64-linux-gnu/dri"
+-# define DRI_DEFAULT_DRIVER_DIR "/usr/lib64/dri:/usr/lib/dri:/usr/lib/x86_64-linux-gnu/dri:/usr/lib/xorg/modules/dri"
 -# define DRI_XORG_DRV_DIR "/usr/lib/xorg/modules/drivers/"
 +# define DRI_DEFAULT_DRIVER_DIR "/usr/local/lib/dri"
 +# define DRI_XORG_DRV_DIR "/usr/local/lib/xorg/modules/drivers/"
  #else
--# define DRI_DEFAULT_DRIVER_DIR "/usr/lib/dri:/usr/lib/i386-linux-gnu/dri"
+-# define DRI_DEFAULT_DRIVER_DIR "/usr/lib/dri:/usr/lib/i386-linux-gnu/dri:/usr/lib/xorg/modules/dri"
 -# define DRI_XORG_DRV_DIR "/usr/lib/xorg/modules/drivers/"
 +# define DRI_DEFAULT_DRIVER_DIR "/usr/local/lib/dri"
 +# define DRI_XORG_DRV_DIR "/usr/local/lib/xorg/modules/drivers/"

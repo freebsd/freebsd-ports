@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.2.18
-PORTREVISION=	1
+DISTVERSION=	4.2.20
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -12,7 +11,6 @@ MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 DISTFILES=	VirtualBox-${DISTVERSION}${EXTRACT_SUFX} ${GADISTFILES}
 EXTRACT_ONLY=	VirtualBox-${DISTVERSION}${EXTRACT_SUFX}
 
-#for discussion please use emulation@FreeBSD.org
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	A general-purpose full virtualizer for x86 hardware
 
@@ -25,9 +23,9 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		kmk:${PORTSDIR}/devel/kBuild \
 		gtar:${PORTSDIR}/archivers/gtar \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		xslt.2:${PORTSDIR}/textproc/libxslt \
-		curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
+		libxslt.so:${PORTSDIR}/textproc/libxslt \
+		libcurl.so:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	${KMODDIR}/vboxdrv.ko:${PORTSDIR}/emulators/virtualbox-ose-kmod \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools
 
@@ -61,6 +59,7 @@ VBOX_GUEST_VER=	${PORTVERSION}
 
 OPTIONS_DEFINE=	QT4 DEBUG GUESTADDITIONS DBUS PULSEAUDIO UDPTUNNEL VDE VNC WEBSERVICE NLS X11
 OPTIONS_DEFAULT=	QT4 DBUS X11 UDPTUNNEL VNC
+OPTIONS_SUB=	X11 QT4 GUESTADDITIONS VNC NLS WEBSERVICE
 DEBUG_DESC=	Debug symbols, additional logs and assertions
 QT4_DESC=	Build with QT4 Frontend
 GUESTADDITIONS_DESC=	Build with Guest Additions
@@ -68,6 +67,18 @@ UDPTUNNEL_DESC=	Build with UDP tunnel support
 VDE_DESC=	Build with VDE support
 VNC_DESC=	Build with VNC support
 WEBSERVICE_DESC=	Build Webservice
+
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
+
+DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+DBUS_CONFIGURE_OFF=	--disable-dbus
+
+VNC_LIB_DEPENDS=	libvncserver.so:${PORTSDIR}/net/libvncserver
+VNC_CONFIGURE_ON=	--enable-vnc
+
+VDE_RUN_DEPENDS=	vde_switch:${PORTSDIR}/net/vde2
+VDE_CONFIGURE_ON=	--enable-vde
 
 # bmake doesn't know about unsetenv=true
 .if defined(.PARSEDIR)
@@ -86,8 +97,9 @@ PLIST_SUB+=	PYTHON_VER=${PYTHON_VER} \
 		PYTHON_VERU=${PYTHON_VER:S/./_/} \
 		GUEST_VER=${VBOX_GUEST_VER}
 
-SUB_LIST+=	VBOXUSER=${VBOXUSER}
-USE_RC_SUBR+=	vboxheadless
+SUB_LIST+=	VBOXUSER=${VBOXUSER} \
+		VBOXWSUSER=${VBOXWSUSER}
+USE_RC_SUBR+=	vboxheadless vboxwatchdog
 
 KMK_BUILDTYPE=	release
 KMK_CONFIG=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys
@@ -105,10 +117,8 @@ BROKEN=		QT4 frontend requires X11 support. Run 'make config' again!
 USE_SDL=	sdl
 USE_XORG=	xcursor xmu inputproto xinerama
 VBOX_FRONTENDS+=VBoxBFE VBoxSDL
-PLIST_SUB+=	X11=""
 .else
 CONFIGURE_ARGS+=--build-headless
-PLIST_SUB+=	X11="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MQT4}
@@ -116,10 +126,8 @@ QT_NONSTANDARD=	yes
 USE_QT4=	gui network moc_build uic_build rcc_build linguist
 INSTALLS_ICONS=	yes
 VBOX_FRONTENDS+=VirtualBox VBoxTestOGL
-PLIST_SUB+=	QT4=""
 .else
 CONFIGURE_ARGS+=--disable-qt4
-PLIST_SUB+=	QT4="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGUESTADDITIONS}
@@ -127,9 +135,6 @@ GUESTADDITIONS=	VBoxGuestAdditions_${VBOX_GUEST_VER}.iso
 GADISTFILES=	${GUESTADDITIONS}:guestadditions
 RESTRICTED=	for personal use only
 RESTRICTED_FILES=	${GUESTADDITIONS}
-PLIST_SUB+=	GUESTADDITIONS=""
-.else
-PLIST_SUB+=	GUESTADDITIONS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -137,45 +142,10 @@ KMK_BUILDTYPE=	debug
 KMK_FLAGS+=	BUILD_TYPE=debug
 .endif
 
-.if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
-.else
-CONFIGURE_ARGS+=--disable-dbus
-.endif
-
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
-.else
-CONFIGURE_ARGS+=--disable-pulse
-.endif
-
-.if ${PORT_OPTIONS:MVNC}
-LIB_DEPENDS+=	vncserver.0:${PORTSDIR}/net/libvncserver
-CONFIGURE_ARGS+=--enable-vnc
-PLIST_SUB+=	VNC=""
-.else
-PLIST_SUB+=	VNC="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MVDE}
-RUN_DEPENDS+=	vde_switch:${PORTSDIR}/net/vde2
-CONFIGURE_ARGS+=--enable-vde
-.endif
-
 .if ${PORT_OPTIONS:MWEBSERVICE}
 BUILD_DEPENDS+=	soapcpp2:${PORTSDIR}/devel/gsoap
 VBOX_WEB=	vboxwebsrv webtest
 USE_RC_SUBR+=	vboxwebsrv
-SUB_LIST+=	VBOXWSUSER=${VBOXWSUSER}
-PLIST_SUB+=	WEB=""
-.else
-PLIST_SUB+=	WEB="@comment "
 .endif
 
 .if ${ARCH} == i386
@@ -189,10 +159,6 @@ PLIST_SUB+=	I386="@comment "
 PLIST_SUB+=	ARCH="${KMK_ARCH}"
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 802000
-BROKEN=		Does not compile on FreeBSD < 8.2
-.endif
 
 .if ${OSVERSION} < 900000 && ${OSVERSION} > 801500
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-src-VBox-Devices-PC-vbox.dsl
@@ -210,7 +176,11 @@ pre-everything::
 post-patch:
 	@${ECHO} 'VBOX_PATH_APP_PRIVATE_ARCH = ${PREFIX}/lib/virtualbox' > ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_PATH_SHARED_LIBS = ${PREFIX}/lib/virtualbox' >> ${WRKSRC}/LocalConfig.kmk
+.if defined(_GCC_RUNTIME)
+	@${ECHO} 'VBOX_WITH_RUNPATH = ${_GCC_RUNTIME}:${PREFIX}/lib/virtualbox' >> ${WRKSRC}/LocalConfig.kmk
+.else
 	@${ECHO} 'VBOX_WITH_RUNPATH = ${PREFIX}/lib/virtualbox' >> ${WRKSRC}/LocalConfig.kmk
+.endif
 	@${ECHO} 'VBOX_PATH_APP_PRIVATE = ${DATADIR}' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_PATH_APP_DOCS = ${DOCSDIR}' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_INSTALLER = 1' >> ${WRKSRC}/LocalConfig.kmk
@@ -225,9 +195,6 @@ post-patch:
 	@${ECHO} 'VBOX_WITH_X11_ADDITIONS=' >> ${WRKSRC}/LocalConfig.kmk
 .if ${PORT_OPTIONS:MVNC}
 	@${ECHO} 'VBOX_WITH_EXTPACK_VNC = 1' >> ${WRKSRC}/LocalConfig.kmk
-.endif
-.if ${OSVERSION} < 800069
-	@${ECHO} 'VBOX_WITH_USB=' >> ${WRKSRC}/LocalConfig.kmk
 .endif
 .if ${PORT_OPTIONS:MUDPTUNNEL}
 	@${ECHO} 'VBOX_WITH_UDPTUNNEL = 1' >> ${WRKSRC}/LocalConfig.kmk
@@ -321,7 +288,9 @@ post-install:
 	@${FIND} ${PREFIX}/lib/virtualbox -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 
 .if ${PORT_OPTIONS:MQT4}
+	${MKDIR} ${PREFIX}/share/pixmaps/
 	${INSTALL_DATA} ${WRKSRC}/src/VBox/Frontends/VirtualBox/images/OSE/VirtualBox_48px.png ${PREFIX}/share/pixmaps/VBox.png
+	${MKDIR} ${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/src/VBox/Installer/freebsd/virtualbox.desktop ${PREFIX}/share/applications/virtualbox.desktop
 .endif
 	@${CAT} ${PKGMESSAGE}
