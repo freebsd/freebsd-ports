@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.corpit.ru/mjt/tinycdb/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analogous to cdb, but faster
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" prefix="${PREFIX}"
 ALL_TARGET=	static sharedlib
