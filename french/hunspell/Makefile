@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hunspell
-PORTVERSION=	4.12
+PORTVERSION=	5.0.1
 CATEGORIES=	french textproc
 MASTER_SITES=	http://www.dicollecte.org/download/fr/ \
 		LOCAL/sunpoet/${PORTNAME}
