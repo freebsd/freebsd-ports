@@ -13,10 +13,10 @@ PKGNAMESUFFIX=	44
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Libraries for KDE-PIM applications
 
-LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
-		sasl2:${PORTSDIR}/security/cyrus-sasl2 \
-		boost_thread:${PORTSDIR}/devel/boost-libs \
-		qca:${PORTSDIR}/devel/qca
+LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme \
+		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2 \
+		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libqca.so:${PORTSDIR}/devel/qca
 RUN_DEPENDS=	${KDE4_PREFIX}/bin/akonadi_mbox_resource:${PORTSDIR}/deskutils/kdepim44-runtime
 
 CONFLICTS_INSTALL=	kdepim-4.*

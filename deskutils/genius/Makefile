@@ -14,7 +14,7 @@ COMMENT=	Arbitrary precision calculator for Gnome Desktop Environment
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
-LIB_DEPENDS=	mpfr.4:${PORTSDIR}/math/mpfr
+LIB_DEPENDS=	libmpfr.so:${PORTSDIR}/math/mpfr
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
 USE_CSTD=	gnu89

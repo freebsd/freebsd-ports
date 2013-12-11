@@ -33,7 +33,7 @@ NO_STAGE=	yes
 
 .if ${PORT_OPTIONS:MPIDGIN}
 SENDTO_PLUGINS:=${SENDTO_PLUGINS} pidgin
-LIB_DEPENDS+=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS+=	pidgin:${PORTSDIR}/net-im/pidgin
 PLIST_SUB+=	PIDGIN=""
 .else
@@ -42,7 +42,7 @@ PLIST_SUB+=	PIDGIN="@comment "
 
 .if ${PORT_OPTIONS:MUPNP}
 SENDTO_PLUGINS:=${SENDTO_PLUGINS} upnp
-LIB_DEPENDS+=	gupnp-1:${PORTSDIR}/net/gupnp
+LIB_DEPENDS+=	libgupnp-1.so:${PORTSDIR}/net/gupnp
 PLIST_SUB+=	UPNP=""
 .else
 PLIST_SUB+=	UPNP="@comment "

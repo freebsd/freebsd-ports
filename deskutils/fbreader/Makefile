@@ -12,10 +12,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Powerful e-book reader
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		expat:${PORTSDIR}/textproc/expat2 \
-		fribidi:${PORTSDIR}/converters/fribidi \
-		unibreak:${PORTSDIR}/textproc/libunibreak
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libfribidi.so:${PORTSDIR}/converters/fribidi \
+		libunibreak.so:${PORTSDIR}/textproc/libunibreak
 
 .if defined(WITH_GTK2)
 UI=		gtk

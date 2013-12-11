@@ -21,13 +21,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .if defined(WITHOUT_GTOP)
 CONFIGURE_ARGS+=	--disable-gtop
 .else
-LIB_DEPENDS+=	gtop-2.0:${PORTSDIR}/devel/libgtop
+LIB_DEPENDS+=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop
 .endif
 
 .if defined(WITHOUT_CURL)
 CONFIGURE_ARGS+=	--disable-curl
 .else
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 .endif
 
 NO_STAGE=	yes

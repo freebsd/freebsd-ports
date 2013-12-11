@@ -10,7 +10,7 @@ MASTER_SITES=		http://gnome2-globalmenu.googlecode.com/files/
 MAINTAINER=		gustau.perez@gmail.com
 COMMENT=		Global menu for gnome
 
-LIB_DEPENDS=		notify.4:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=		libnotify.so:${PORTSDIR}/devel/libnotify
 
 USE_GNOME=		gnomepanel gnomedesktop
 

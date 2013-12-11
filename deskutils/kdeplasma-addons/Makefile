@@ -11,11 +11,11 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Extra plasmoids for KDE SC 4
 
-LIB_DEPENDS=	qalculate.5:${PORTSDIR}/math/libqalculate \
-		qwt.5:${PORTSDIR}/x11-toolkits/qwt5 \
-		qca.2:${PORTSDIR}/devel/qca \
-		qoauth.1:${PORTSDIR}/net/qoauth \
-		qjson.0:${PORTSDIR}/devel/qjson
+LIB_DEPENDS=	libqalculate.so:${PORTSDIR}/math/libqalculate \
+		libqwt.so:${PORTSDIR}/x11-toolkits/qwt5 \
+		libqca.so:${PORTSDIR}/devel/qca \
+		libqoauth.so:${PORTSDIR}/net/qoauth \
+		libqjson.so:${PORTSDIR}/devel/qjson
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2
 
@@ -50,7 +50,7 @@ PLIST_SUB+=	MARBLE="@comment "
 
 .if ${PORT_OPTIONS:MIBUS}
 IGNORE=		requires ibus version 1.4.2 or greater
-LIB_DEPENDS+=	ibus-1.0:${PORTSDIR}/textproc/ibus
+LIB_DEPENDS+=	libibus-1.0.so:${PORTSDIR}/textproc/ibus
 PLIST_SUB+=	IBUS=""
 .else
 CMAKE_ARGS+=	-DBUILD_ibus=off
@@ -58,7 +58,7 @@ PLIST_SUB+=	IBUS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSCIM}
-LIB_DEPENDS+=	scim-1.0.10:${PORTSDIR}/textproc/scim
+LIB_DEPENDS+=	libscim-1.0.so:${PORTSDIR}/textproc/scim
 PLIST_SUB+=	SCIM=""
 .else
 CMAKE_ARGS+=	-DBUILD_scim=off

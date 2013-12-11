@@ -10,8 +10,8 @@ MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sunbird plugin for the OpenSync framework
 
-LIB_DEPENDS=	opensync.0:${PORTSDIR}/devel/libopensync022 \
-		neon.27:${PORTSDIR}/www/neon29
+LIB_DEPENDS=	libopensync.so:${PORTSDIR}/devel/libopensync022 \
+		libneon.so:${PORTSDIR}/www/neon29
 
 USES=		pkgconfig
 USE_BZIP2=	yes

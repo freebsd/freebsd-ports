@@ -11,9 +11,9 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Libraries for KDE-PIM applications
 
-LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
-		kgapi.0:${PORTSDIR}/devel/libkgapi \
-		kolab:${PORTSDIR}/devel/libkolab
+LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libkgapi.so:${PORTSDIR}/devel/libkgapi \
+		libkolab.so:${PORTSDIR}/devel/libkolab
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
 CONFLICTS=		akonadi-google-0.*

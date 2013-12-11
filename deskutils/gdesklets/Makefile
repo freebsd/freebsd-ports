@@ -13,7 +13,7 @@ COMMENT=	A framework for Gnome 2.x for desktop applets
 
 USE_BZIP2=	yes
 
-LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop
+LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop
 
 OPTIONS_DEFINE=	GDBM
 

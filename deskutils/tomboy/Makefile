@@ -10,7 +10,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Personal note taking system for the GNOME desktop
 
-LIB_DEPENDS=	gtkspell:${PORTSDIR}/textproc/gtkspell
+LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell
 BUILD_DEPENDS=	${LOCALBASE}/lib/mono/gmime-sharp-2.4/gmime-sharp.dll:${PORTSDIR}/mail/gmime24-sharp \
 		${LOCALBASE}/libdata/pkgconfig/dbus-sharp-glib-1.0.pc:${PORTSDIR}/devel/dbus-sharp-glib \
 		mautil:${PORTSDIR}/devel/mono-addins
