@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-ac20050924p1
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Archive files using LZSS and Huffman compression (.lzh files)
 
-RESTRICTED=	no permission to redistribute
+RESTRICTED=	No redistribution allowed
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/lha-ac
